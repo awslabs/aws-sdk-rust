@@ -2,33 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSchemaMappingInput {
+pub struct CreateSchemaMappingInput  {
     /// <p>The name of the schema. There can't be multiple <code>SchemaMappings</code> with the same name.</p>
     pub schema_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the schema.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information that Entity Resolution uses for matching.</p>
-    pub mapped_input_fields: ::std::option::Option<::std::vec::Vec<crate::types::SchemaInputAttribute>>,
+    pub mapped_input_fields: ::std::option::Option<::std::vec::Vec::<crate::types::SchemaInputAttribute>>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateSchemaMappingInput {
+impl  CreateSchemaMappingInput  {
     /// <p>The name of the schema. There can't be multiple <code>SchemaMappings</code> with the same name.</p>
-    pub fn schema_name(&self) -> ::std::option::Option<&str> {
+    pub fn schema_name(&self) -> ::std::option::Option<& str> {
         self.schema_name.as_deref()
     }
     /// <p>A description of the schema.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information that Entity Resolution uses for matching.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mapped_input_fields.is_none()`.
-    pub fn mapped_input_fields(&self) -> &[crate::types::SchemaInputAttribute] {
-        self.mapped_input_fields.as_deref().unwrap_or_default()
+    pub fn mapped_input_fields(&self) -> & [crate::types::SchemaInputAttribute] {
+        self.mapped_input_fields.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -45,8 +46,8 @@ impl CreateSchemaMappingInput {
 pub struct CreateSchemaMappingInputBuilder {
     pub(crate) schema_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) mapped_input_fields: ::std::option::Option<::std::vec::Vec<crate::types::SchemaInputAttribute>>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) mapped_input_fields: ::std::option::Option<::std::vec::Vec::<crate::types::SchemaInputAttribute>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateSchemaMappingInputBuilder {
     /// <p>The name of the schema. There can't be multiple <code>SchemaMappings</code> with the same name.</p>
@@ -57,8 +58,7 @@ impl CreateSchemaMappingInputBuilder {
     }
     /// <p>The name of the schema. There can't be multiple <code>SchemaMappings</code> with the same name.</p>
     pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_name = input;
-        self
+        self.schema_name = input; self
     }
     /// <p>The name of the schema. There can't be multiple <code>SchemaMappings</code> with the same name.</p>
     pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl CreateSchemaMappingInputBuilder {
     }
     /// <p>A description of the schema.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the schema.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,17 +84,16 @@ impl CreateSchemaMappingInputBuilder {
     /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information that Entity Resolution uses for matching.</p>
     pub fn mapped_input_fields(mut self, input: crate::types::SchemaInputAttribute) -> Self {
         let mut v = self.mapped_input_fields.unwrap_or_default();
-        v.push(input);
-        self.mapped_input_fields = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.mapped_input_fields = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information that Entity Resolution uses for matching.</p>
-    pub fn set_mapped_input_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaInputAttribute>>) -> Self {
-        self.mapped_input_fields = input;
-        self
+    pub fn set_mapped_input_fields(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SchemaInputAttribute>>) -> Self {
+        self.mapped_input_fields = input; self
     }
     /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information that Entity Resolution uses for matching.</p>
-    pub fn get_mapped_input_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaInputAttribute>> {
+    pub fn get_mapped_input_fields(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SchemaInputAttribute>> {
         &self.mapped_input_fields
     }
     /// Adds a key-value pair to `tags`.
@@ -105,29 +103,32 @@ impl CreateSchemaMappingInputBuilder {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSchemaMappingInput`](crate::operation::create_schema_mapping::CreateSchemaMappingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_schema_mapping::CreateSchemaMappingInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_schema_mapping::CreateSchemaMappingInput {
-            schema_name: self.schema_name,
-            description: self.description,
-            mapped_input_fields: self.mapped_input_fields,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_schema_mapping::CreateSchemaMappingInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_schema_mapping::CreateSchemaMappingInput {
+                schema_name: self.schema_name
+                ,
+                description: self.description
+                ,
+                mapped_input_fields: self.mapped_input_fields
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

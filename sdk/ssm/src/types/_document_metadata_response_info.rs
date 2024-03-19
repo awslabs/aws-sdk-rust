@@ -3,16 +3,17 @@
 /// <p>Details about the response to a document review request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DocumentMetadataResponseInfo {
+pub struct DocumentMetadataResponseInfo  {
     /// <p>Details about a reviewer's response to a document review request.</p>
-    pub reviewer_response: ::std::option::Option<::std::vec::Vec<crate::types::DocumentReviewerResponseSource>>,
+    pub reviewer_response: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentReviewerResponseSource>>,
 }
-impl DocumentMetadataResponseInfo {
+impl  DocumentMetadataResponseInfo  {
     /// <p>Details about a reviewer's response to a document review request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reviewer_response.is_none()`.
-    pub fn reviewer_response(&self) -> &[crate::types::DocumentReviewerResponseSource] {
-        self.reviewer_response.as_deref().unwrap_or_default()
+    pub fn reviewer_response(&self) -> & [crate::types::DocumentReviewerResponseSource] {
+        self.reviewer_response.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DocumentMetadataResponseInfo {
@@ -26,7 +27,7 @@ impl DocumentMetadataResponseInfo {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DocumentMetadataResponseInfoBuilder {
-    pub(crate) reviewer_response: ::std::option::Option<::std::vec::Vec<crate::types::DocumentReviewerResponseSource>>,
+    pub(crate) reviewer_response: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentReviewerResponseSource>>,
 }
 impl DocumentMetadataResponseInfoBuilder {
     /// Appends an item to `reviewer_response`.
@@ -36,23 +37,24 @@ impl DocumentMetadataResponseInfoBuilder {
     /// <p>Details about a reviewer's response to a document review request.</p>
     pub fn reviewer_response(mut self, input: crate::types::DocumentReviewerResponseSource) -> Self {
         let mut v = self.reviewer_response.unwrap_or_default();
-        v.push(input);
-        self.reviewer_response = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.reviewer_response = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details about a reviewer's response to a document review request.</p>
-    pub fn set_reviewer_response(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentReviewerResponseSource>>) -> Self {
-        self.reviewer_response = input;
-        self
+    pub fn set_reviewer_response(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentReviewerResponseSource>>) -> Self {
+        self.reviewer_response = input; self
     }
     /// <p>Details about a reviewer's response to a document review request.</p>
-    pub fn get_reviewer_response(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentReviewerResponseSource>> {
+    pub fn get_reviewer_response(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DocumentReviewerResponseSource>> {
         &self.reviewer_response
     }
     /// Consumes the builder and constructs a [`DocumentMetadataResponseInfo`](crate::types::DocumentMetadataResponseInfo).
     pub fn build(self) -> crate::types::DocumentMetadataResponseInfo {
         crate::types::DocumentMetadataResponseInfo {
-            reviewer_response: self.reviewer_response,
+            reviewer_response: self.reviewer_response
+            ,
         }
     }
 }
+

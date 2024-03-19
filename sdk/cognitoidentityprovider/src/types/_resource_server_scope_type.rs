@@ -3,22 +3,20 @@
 /// <p>A resource server scope.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceServerScopeType {
+pub struct ResourceServerScopeType  {
     /// <p>The name of the scope.</p>
     pub scope_name: ::std::string::String,
     /// <p>A description of the scope.</p>
     pub scope_description: ::std::string::String,
 }
-impl ResourceServerScopeType {
+impl  ResourceServerScopeType  {
     /// <p>The name of the scope.</p>
-    pub fn scope_name(&self) -> &str {
-        use std::ops::Deref;
-        self.scope_name.deref()
+    pub fn scope_name(&self) -> & str {
+        use std::ops::Deref; self.scope_name.deref()
     }
     /// <p>A description of the scope.</p>
-    pub fn scope_description(&self) -> &str {
-        use std::ops::Deref;
-        self.scope_description.deref()
+    pub fn scope_description(&self) -> & str {
+        use std::ops::Deref; self.scope_description.deref()
     }
 }
 impl ResourceServerScopeType {
@@ -44,8 +42,7 @@ impl ResourceServerScopeTypeBuilder {
     }
     /// <p>The name of the scope.</p>
     pub fn set_scope_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scope_name = input;
-        self
+        self.scope_name = input; self
     }
     /// <p>The name of the scope.</p>
     pub fn get_scope_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl ResourceServerScopeTypeBuilder {
     }
     /// <p>A description of the scope.</p>
     pub fn set_scope_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scope_description = input;
-        self
+        self.scope_description = input; self
     }
     /// <p>A description of the scope.</p>
     pub fn get_scope_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl ResourceServerScopeTypeBuilder {
     /// - [`scope_name`](crate::types::builders::ResourceServerScopeTypeBuilder::scope_name)
     /// - [`scope_description`](crate::types::builders::ResourceServerScopeTypeBuilder::scope_description)
     pub fn build(self) -> ::std::result::Result<crate::types::ResourceServerScopeType, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResourceServerScopeType {
-            scope_name: self.scope_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "scope_name",
-                    "scope_name was not specified but it is required when building ResourceServerScopeType",
-                )
-            })?,
-            scope_description: self.scope_description.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "scope_description",
-                    "scope_description was not specified but it is required when building ResourceServerScopeType",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResourceServerScopeType {
+                scope_name: self.scope_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("scope_name", "scope_name was not specified but it is required when building ResourceServerScopeType")
+                    )?
+                ,
+                scope_description: self.scope_description
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("scope_description", "scope_description was not specified but it is required when building ResourceServerScopeType")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteStateMachineAliasInput {
+pub struct DeleteStateMachineAliasInput  {
     /// <p>The Amazon Resource Name (ARN) of the state machine alias to delete.</p>
     pub state_machine_alias_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteStateMachineAliasInput {
+impl  DeleteStateMachineAliasInput  {
     /// <p>The Amazon Resource Name (ARN) of the state machine alias to delete.</p>
-    pub fn state_machine_alias_arn(&self) -> ::std::option::Option<&str> {
+    pub fn state_machine_alias_arn(&self) -> ::std::option::Option<& str> {
         self.state_machine_alias_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteStateMachineAliasInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine alias to delete.</p>
     pub fn set_state_machine_alias_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_machine_alias_arn = input;
-        self
+        self.state_machine_alias_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine alias to delete.</p>
     pub fn get_state_machine_alias_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.state_machine_alias_arn
     }
     /// Consumes the builder and constructs a [`DeleteStateMachineAliasInput`](crate::operation::delete_state_machine_alias::DeleteStateMachineAliasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_state_machine_alias::DeleteStateMachineAliasInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_state_machine_alias::DeleteStateMachineAliasInput {
-            state_machine_alias_arn: self.state_machine_alias_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_state_machine_alias::DeleteStateMachineAliasInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_state_machine_alias::DeleteStateMachineAliasInput {
+                state_machine_alias_arn: self.state_machine_alias_arn
+                ,
+            }
+        )
     }
 }
+

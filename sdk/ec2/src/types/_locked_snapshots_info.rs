@@ -3,7 +3,7 @@
 /// <p>Information about a locked snapshot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LockedSnapshotsInfo {
+pub struct LockedSnapshotsInfo  {
     /// <p>The account ID of the Amazon Web Services account that owns the snapshot.</p>
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the snapshot.</p>
@@ -34,13 +34,13 @@ pub struct LockedSnapshotsInfo {
     /// <p>The date and time at which the lock will expire, in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p>
     pub lock_expires_on: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl LockedSnapshotsInfo {
+impl  LockedSnapshotsInfo  {
     /// <p>The account ID of the Amazon Web Services account that owns the snapshot.</p>
-    pub fn owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>The ID of the snapshot.</p>
-    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> ::std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The state of the snapshot lock. Valid states include:</p>
@@ -54,7 +54,7 @@ impl LockedSnapshotsInfo {
     /// <li>
     /// <p><code>expired</code> - The snapshot was locked in compliance or governance mode but the lock duration has expired. The snapshot is not locked and can be deleted.</p></li>
     /// </ul>
-    pub fn lock_state(&self) -> ::std::option::Option<&crate::types::LockState> {
+    pub fn lock_state(&self) -> ::std::option::Option<& crate::types::LockState> {
         self.lock_state.as_ref()
     }
     /// <p>The period of time for which the snapshot is locked, in days.</p>
@@ -66,20 +66,20 @@ impl LockedSnapshotsInfo {
         self.cool_off_period
     }
     /// <p>The date and time at which the compliance mode cooling-off period expires, in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p>
-    pub fn cool_off_period_expires_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn cool_off_period_expires_on(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.cool_off_period_expires_on.as_ref()
     }
     /// <p>The date and time at which the snapshot was locked, in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p>
-    pub fn lock_created_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn lock_created_on(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.lock_created_on.as_ref()
     }
     /// <p>The date and time at which the lock duration started, in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p>
     /// <p>If you lock a snapshot that is in the <code>pending</code> state, the lock duration starts only once the snapshot enters the <code>completed</code> state.</p>
-    pub fn lock_duration_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn lock_duration_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.lock_duration_start_time.as_ref()
     }
     /// <p>The date and time at which the lock will expire, in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p>
-    pub fn lock_expires_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn lock_expires_on(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.lock_expires_on.as_ref()
     }
 }
@@ -112,8 +112,7 @@ impl LockedSnapshotsInfoBuilder {
     }
     /// <p>The account ID of the Amazon Web Services account that owns the snapshot.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// <p>The account ID of the Amazon Web Services account that owns the snapshot.</p>
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +125,7 @@ impl LockedSnapshotsInfoBuilder {
     }
     /// <p>The ID of the snapshot.</p>
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_id = input;
-        self
+        self.snapshot_id = input; self
     }
     /// <p>The ID of the snapshot.</p>
     pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +158,7 @@ impl LockedSnapshotsInfoBuilder {
     /// <p><code>expired</code> - The snapshot was locked in compliance or governance mode but the lock duration has expired. The snapshot is not locked and can be deleted.</p></li>
     /// </ul>
     pub fn set_lock_state(mut self, input: ::std::option::Option<crate::types::LockState>) -> Self {
-        self.lock_state = input;
-        self
+        self.lock_state = input; self
     }
     /// <p>The state of the snapshot lock. Valid states include:</p>
     /// <ul>
@@ -184,8 +181,7 @@ impl LockedSnapshotsInfoBuilder {
     }
     /// <p>The period of time for which the snapshot is locked, in days.</p>
     pub fn set_lock_duration(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.lock_duration = input;
-        self
+        self.lock_duration = input; self
     }
     /// <p>The period of time for which the snapshot is locked, in days.</p>
     pub fn get_lock_duration(&self) -> &::std::option::Option<i32> {
@@ -198,8 +194,7 @@ impl LockedSnapshotsInfoBuilder {
     }
     /// <p>The compliance mode cooling-off period, in hours.</p>
     pub fn set_cool_off_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.cool_off_period = input;
-        self
+        self.cool_off_period = input; self
     }
     /// <p>The compliance mode cooling-off period, in hours.</p>
     pub fn get_cool_off_period(&self) -> &::std::option::Option<i32> {
@@ -212,8 +207,7 @@ impl LockedSnapshotsInfoBuilder {
     }
     /// <p>The date and time at which the compliance mode cooling-off period expires, in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p>
     pub fn set_cool_off_period_expires_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.cool_off_period_expires_on = input;
-        self
+        self.cool_off_period_expires_on = input; self
     }
     /// <p>The date and time at which the compliance mode cooling-off period expires, in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p>
     pub fn get_cool_off_period_expires_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -226,8 +220,7 @@ impl LockedSnapshotsInfoBuilder {
     }
     /// <p>The date and time at which the snapshot was locked, in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p>
     pub fn set_lock_created_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.lock_created_on = input;
-        self
+        self.lock_created_on = input; self
     }
     /// <p>The date and time at which the snapshot was locked, in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p>
     pub fn get_lock_created_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -242,8 +235,7 @@ impl LockedSnapshotsInfoBuilder {
     /// <p>The date and time at which the lock duration started, in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p>
     /// <p>If you lock a snapshot that is in the <code>pending</code> state, the lock duration starts only once the snapshot enters the <code>completed</code> state.</p>
     pub fn set_lock_duration_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.lock_duration_start_time = input;
-        self
+        self.lock_duration_start_time = input; self
     }
     /// <p>The date and time at which the lock duration started, in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p>
     /// <p>If you lock a snapshot that is in the <code>pending</code> state, the lock duration starts only once the snapshot enters the <code>completed</code> state.</p>
@@ -257,8 +249,7 @@ impl LockedSnapshotsInfoBuilder {
     }
     /// <p>The date and time at which the lock will expire, in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p>
     pub fn set_lock_expires_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.lock_expires_on = input;
-        self
+        self.lock_expires_on = input; self
     }
     /// <p>The date and time at which the lock will expire, in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p>
     pub fn get_lock_expires_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -267,15 +258,25 @@ impl LockedSnapshotsInfoBuilder {
     /// Consumes the builder and constructs a [`LockedSnapshotsInfo`](crate::types::LockedSnapshotsInfo).
     pub fn build(self) -> crate::types::LockedSnapshotsInfo {
         crate::types::LockedSnapshotsInfo {
-            owner_id: self.owner_id,
-            snapshot_id: self.snapshot_id,
-            lock_state: self.lock_state,
-            lock_duration: self.lock_duration,
-            cool_off_period: self.cool_off_period,
-            cool_off_period_expires_on: self.cool_off_period_expires_on,
-            lock_created_on: self.lock_created_on,
-            lock_duration_start_time: self.lock_duration_start_time,
-            lock_expires_on: self.lock_expires_on,
+            owner_id: self.owner_id
+            ,
+            snapshot_id: self.snapshot_id
+            ,
+            lock_state: self.lock_state
+            ,
+            lock_duration: self.lock_duration
+            ,
+            cool_off_period: self.cool_off_period
+            ,
+            cool_off_period_expires_on: self.cool_off_period_expires_on
+            ,
+            lock_created_on: self.lock_created_on
+            ,
+            lock_duration_start_time: self.lock_duration_start_time
+            ,
+            lock_expires_on: self.lock_expires_on
+            ,
         }
     }
 }
+

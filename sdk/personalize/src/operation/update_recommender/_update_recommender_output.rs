@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRecommenderOutput {
+pub struct UpdateRecommenderOutput  {
     /// <p>The same recommender Amazon Resource Name (ARN) as given in the request.</p>
     pub recommender_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl UpdateRecommenderOutput {
+impl  UpdateRecommenderOutput  {
     /// <p>The same recommender Amazon Resource Name (ARN) as given in the request.</p>
-    pub fn recommender_arn(&self) -> ::std::option::Option<&str> {
+    pub fn recommender_arn(&self) -> ::std::option::Option<& str> {
         self.recommender_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateRecommenderOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateRecommenderOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRecommenderOutput`](crate::operation::update_recommender::UpdateRecommenderOutput).
     pub fn builder() -> crate::operation::update_recommender::builders::UpdateRecommenderOutputBuilder {
@@ -40,27 +40,28 @@ impl UpdateRecommenderOutputBuilder {
     }
     /// <p>The same recommender Amazon Resource Name (ARN) as given in the request.</p>
     pub fn set_recommender_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommender_arn = input;
-        self
+        self.recommender_arn = input; self
     }
     /// <p>The same recommender Amazon Resource Name (ARN) as given in the request.</p>
     pub fn get_recommender_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.recommender_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateRecommenderOutput`](crate::operation::update_recommender::UpdateRecommenderOutput).
     pub fn build(self) -> crate::operation::update_recommender::UpdateRecommenderOutput {
         crate::operation::update_recommender::UpdateRecommenderOutput {
-            recommender_arn: self.recommender_arn,
+            recommender_arn: self.recommender_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,22 +3,20 @@
 /// <p>Identifies the specific version of an intent.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Intent {
+pub struct Intent  {
     /// <p>The name of the intent.</p>
     pub intent_name: ::std::string::String,
     /// <p>The version of the intent.</p>
     pub intent_version: ::std::string::String,
 }
-impl Intent {
+impl  Intent  {
     /// <p>The name of the intent.</p>
-    pub fn intent_name(&self) -> &str {
-        use std::ops::Deref;
-        self.intent_name.deref()
+    pub fn intent_name(&self) -> & str {
+        use std::ops::Deref; self.intent_name.deref()
     }
     /// <p>The version of the intent.</p>
-    pub fn intent_version(&self) -> &str {
-        use std::ops::Deref;
-        self.intent_version.deref()
+    pub fn intent_version(&self) -> & str {
+        use std::ops::Deref; self.intent_version.deref()
     }
 }
 impl Intent {
@@ -44,8 +42,7 @@ impl IntentBuilder {
     }
     /// <p>The name of the intent.</p>
     pub fn set_intent_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.intent_name = input;
-        self
+        self.intent_name = input; self
     }
     /// <p>The name of the intent.</p>
     pub fn get_intent_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl IntentBuilder {
     }
     /// <p>The version of the intent.</p>
     pub fn set_intent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.intent_version = input;
-        self
+        self.intent_version = input; self
     }
     /// <p>The version of the intent.</p>
     pub fn get_intent_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl IntentBuilder {
     /// - [`intent_name`](crate::types::builders::IntentBuilder::intent_name)
     /// - [`intent_version`](crate::types::builders::IntentBuilder::intent_version)
     pub fn build(self) -> ::std::result::Result<crate::types::Intent, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Intent {
-            intent_name: self.intent_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "intent_name",
-                    "intent_name was not specified but it is required when building Intent",
-                )
-            })?,
-            intent_version: self.intent_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "intent_version",
-                    "intent_version was not specified but it is required when building Intent",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Intent {
+                intent_name: self.intent_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("intent_name", "intent_name was not specified but it is required when building Intent")
+                    )?
+                ,
+                intent_version: self.intent_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("intent_version", "intent_version was not specified but it is required when building Intent")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,15 +3,15 @@
 /// <p>Contains details about an iteration of a Map state.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MapIterationEventDetails {
+pub struct MapIterationEventDetails  {
     /// <p>The name of the iteration’s parent Map state.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The index of the array belonging to the Map state iteration.</p>
     pub index: i32,
 }
-impl MapIterationEventDetails {
+impl  MapIterationEventDetails  {
     /// <p>The name of the iteration’s parent Map state.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The index of the array belonging to the Map state iteration.</p>
@@ -41,8 +41,7 @@ impl MapIterationEventDetailsBuilder {
     }
     /// <p>The name of the iteration’s parent Map state.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the iteration’s parent Map state.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl MapIterationEventDetailsBuilder {
     }
     /// <p>The index of the array belonging to the Map state iteration.</p>
     pub fn set_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.index = input;
-        self
+        self.index = input; self
     }
     /// <p>The index of the array belonging to the Map state iteration.</p>
     pub fn get_index(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,12 @@ impl MapIterationEventDetailsBuilder {
     /// Consumes the builder and constructs a [`MapIterationEventDetails`](crate::types::MapIterationEventDetails).
     pub fn build(self) -> crate::types::MapIterationEventDetails {
         crate::types::MapIterationEventDetails {
-            name: self.name,
-            index: self.index.unwrap_or_default(),
+            name: self.name
+            ,
+            index: self.index
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

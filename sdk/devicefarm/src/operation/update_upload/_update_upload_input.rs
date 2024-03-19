@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateUploadInput {
+pub struct UpdateUploadInput  {
     /// <p>The Amazon Resource Name (ARN) of the uploaded test spec.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file name must end with the <code>.yaml</code> or <code>.yml</code> file extension.</p>
@@ -12,17 +12,17 @@ pub struct UpdateUploadInput {
     /// <p>Set to true if the YAML file has changed and must be updated. Otherwise, set to false.</p>
     pub edit_content: ::std::option::Option<bool>,
 }
-impl UpdateUploadInput {
+impl  UpdateUploadInput  {
     /// <p>The Amazon Resource Name (ARN) of the uploaded test spec.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file name must end with the <code>.yaml</code> or <code>.yml</code> file extension.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The upload's content type (for example, <code>application/x-yaml</code>).</p>
-    pub fn content_type(&self) -> ::std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>Set to true if the YAML file has changed and must be updated. Otherwise, set to false.</p>
@@ -55,8 +55,7 @@ impl UpdateUploadInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the uploaded test spec.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the uploaded test spec.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl UpdateUploadInputBuilder {
     }
     /// <p>The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file name must end with the <code>.yaml</code> or <code>.yml</code> file extension.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file name must end with the <code>.yaml</code> or <code>.yml</code> file extension.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl UpdateUploadInputBuilder {
     }
     /// <p>The upload's content type (for example, <code>application/x-yaml</code>).</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>The upload's content type (for example, <code>application/x-yaml</code>).</p>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,22 +94,26 @@ impl UpdateUploadInputBuilder {
     }
     /// <p>Set to true if the YAML file has changed and must be updated. Otherwise, set to false.</p>
     pub fn set_edit_content(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.edit_content = input;
-        self
+        self.edit_content = input; self
     }
     /// <p>Set to true if the YAML file has changed and must be updated. Otherwise, set to false.</p>
     pub fn get_edit_content(&self) -> &::std::option::Option<bool> {
         &self.edit_content
     }
     /// Consumes the builder and constructs a [`UpdateUploadInput`](crate::operation::update_upload::UpdateUploadInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_upload::UpdateUploadInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_upload::UpdateUploadInput {
-            arn: self.arn,
-            name: self.name,
-            content_type: self.content_type,
-            edit_content: self.edit_content,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_upload::UpdateUploadInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_upload::UpdateUploadInput {
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                content_type: self.content_type
+                ,
+                edit_content: self.edit_content
+                ,
+            }
+        )
     }
 }
+

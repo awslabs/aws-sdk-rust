@@ -5,21 +5,20 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.considerations.html"> Considerations when you configure zonal autoshift</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ControlCondition {
+pub struct ControlCondition  {
     /// <p>The type of alarm specified for a practice run. The only valid value is <code>CLOUDWATCH</code>.</p>
     pub r#type: crate::types::ControlConditionType,
     /// <p>The Amazon Resource Name (ARN) for the Amazon CloudWatch alarm that you specify as a control condition for a practice run.</p>
     pub alarm_identifier: ::std::string::String,
 }
-impl ControlCondition {
+impl  ControlCondition  {
     /// <p>The type of alarm specified for a practice run. The only valid value is <code>CLOUDWATCH</code>.</p>
-    pub fn r#type(&self) -> &crate::types::ControlConditionType {
+    pub fn r#type(&self) -> & crate::types::ControlConditionType {
         &self.r#type
     }
     /// <p>The Amazon Resource Name (ARN) for the Amazon CloudWatch alarm that you specify as a control condition for a practice run.</p>
-    pub fn alarm_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.alarm_identifier.deref()
+    pub fn alarm_identifier(&self) -> & str {
+        use std::ops::Deref; self.alarm_identifier.deref()
     }
 }
 impl ControlCondition {
@@ -45,8 +44,7 @@ impl ControlConditionBuilder {
     }
     /// <p>The type of alarm specified for a practice run. The only valid value is <code>CLOUDWATCH</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ControlConditionType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of alarm specified for a practice run. The only valid value is <code>CLOUDWATCH</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ControlConditionType> {
@@ -60,8 +58,7 @@ impl ControlConditionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the Amazon CloudWatch alarm that you specify as a control condition for a practice run.</p>
     pub fn set_alarm_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alarm_identifier = input;
-        self
+        self.alarm_identifier = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the Amazon CloudWatch alarm that you specify as a control condition for a practice run.</p>
     pub fn get_alarm_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,19 +69,20 @@ impl ControlConditionBuilder {
     /// - [`r#type`](crate::types::builders::ControlConditionBuilder::r#type)
     /// - [`alarm_identifier`](crate::types::builders::ControlConditionBuilder::alarm_identifier)
     pub fn build(self) -> ::std::result::Result<crate::types::ControlCondition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ControlCondition {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building ControlCondition",
-                )
-            })?,
-            alarm_identifier: self.alarm_identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "alarm_identifier",
-                    "alarm_identifier was not specified but it is required when building ControlCondition",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ControlCondition {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building ControlCondition")
+                    )?
+                ,
+                alarm_identifier: self.alarm_identifier
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("alarm_identifier", "alarm_identifier was not specified but it is required when building ControlCondition")
+                    )?
+                ,
+            }
+        )
     }
 }
+

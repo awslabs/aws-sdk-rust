@@ -3,19 +3,19 @@
 /// <p>The Amazon SageMaker model.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExternalModelSummary {
+pub struct ExternalModelSummary  {
     /// <p>The endpoint of the Amazon SageMaker model.</p>
     pub model_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The source of the model.</p>
     pub model_source: ::std::option::Option<crate::types::ModelSource>,
 }
-impl ExternalModelSummary {
+impl  ExternalModelSummary  {
     /// <p>The endpoint of the Amazon SageMaker model.</p>
-    pub fn model_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn model_endpoint(&self) -> ::std::option::Option<& str> {
         self.model_endpoint.as_deref()
     }
     /// <p>The source of the model.</p>
-    pub fn model_source(&self) -> ::std::option::Option<&crate::types::ModelSource> {
+    pub fn model_source(&self) -> ::std::option::Option<& crate::types::ModelSource> {
         self.model_source.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ExternalModelSummaryBuilder {
     }
     /// <p>The endpoint of the Amazon SageMaker model.</p>
     pub fn set_model_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_endpoint = input;
-        self
+        self.model_endpoint = input; self
     }
     /// <p>The endpoint of the Amazon SageMaker model.</p>
     pub fn get_model_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ExternalModelSummaryBuilder {
     }
     /// <p>The source of the model.</p>
     pub fn set_model_source(mut self, input: ::std::option::Option<crate::types::ModelSource>) -> Self {
-        self.model_source = input;
-        self
+        self.model_source = input; self
     }
     /// <p>The source of the model.</p>
     pub fn get_model_source(&self) -> &::std::option::Option<crate::types::ModelSource> {
@@ -65,8 +63,11 @@ impl ExternalModelSummaryBuilder {
     /// Consumes the builder and constructs a [`ExternalModelSummary`](crate::types::ExternalModelSummary).
     pub fn build(self) -> crate::types::ExternalModelSummary {
         crate::types::ExternalModelSummary {
-            model_endpoint: self.model_endpoint,
-            model_source: self.model_source,
+            model_endpoint: self.model_endpoint
+            ,
+            model_source: self.model_source
+            ,
         }
     }
 }
+

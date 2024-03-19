@@ -2,21 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyClusterDbRevisionInput {
+pub struct ModifyClusterDbRevisionInput  {
     /// <p>The unique identifier of a cluster whose database revision you want to modify.</p>
     /// <p>Example: <code>examplecluster</code></p>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the database revision. You can retrieve this value from the response to the <code>DescribeClusterDbRevisions</code> request.</p>
     pub revision_target: ::std::option::Option<::std::string::String>,
 }
-impl ModifyClusterDbRevisionInput {
+impl  ModifyClusterDbRevisionInput  {
     /// <p>The unique identifier of a cluster whose database revision you want to modify.</p>
     /// <p>Example: <code>examplecluster</code></p>
-    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The identifier of the database revision. You can retrieve this value from the response to the <code>DescribeClusterDbRevisions</code> request.</p>
-    pub fn revision_target(&self) -> ::std::option::Option<&str> {
+    pub fn revision_target(&self) -> ::std::option::Option<& str> {
         self.revision_target.as_deref()
     }
 }
@@ -45,8 +45,7 @@ impl ModifyClusterDbRevisionInputBuilder {
     /// <p>The unique identifier of a cluster whose database revision you want to modify.</p>
     /// <p>Example: <code>examplecluster</code></p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_identifier = input;
-        self
+        self.cluster_identifier = input; self
     }
     /// <p>The unique identifier of a cluster whose database revision you want to modify.</p>
     /// <p>Example: <code>examplecluster</code></p>
@@ -61,23 +60,22 @@ impl ModifyClusterDbRevisionInputBuilder {
     }
     /// <p>The identifier of the database revision. You can retrieve this value from the response to the <code>DescribeClusterDbRevisions</code> request.</p>
     pub fn set_revision_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision_target = input;
-        self
+        self.revision_target = input; self
     }
     /// <p>The identifier of the database revision. You can retrieve this value from the response to the <code>DescribeClusterDbRevisions</code> request.</p>
     pub fn get_revision_target(&self) -> &::std::option::Option<::std::string::String> {
         &self.revision_target
     }
     /// Consumes the builder and constructs a [`ModifyClusterDbRevisionInput`](crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionInput {
-            cluster_identifier: self.cluster_identifier,
-            revision_target: self.revision_target,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionInput {
+                cluster_identifier: self.cluster_identifier
+                ,
+                revision_target: self.revision_target
+                ,
+            }
+        )
     }
 }
+

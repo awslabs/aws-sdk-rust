@@ -3,7 +3,7 @@
 /// <p>The properties of a managed product, such as an Amazon Web Services Managed Rules rule group or an Amazon Web Services Marketplace managed rule group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ManagedProductDescriptor {
+pub struct ManagedProductDescriptor  {
     /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule group.</p>
     pub vendor_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the managed rule group. For example, <code>AWSManagedRulesAnonymousIpList</code> or <code>AWSManagedRulesATPRuleSet</code>.</p>
@@ -23,33 +23,33 @@ pub struct ManagedProductDescriptor {
     /// <p>Indicates whether the rule group provides an advanced set of protections, such as the the Amazon Web Services Managed Rules rule groups that are used for WAF intelligent threat mitigation.</p>
     pub is_advanced_managed_rule_set: bool,
 }
-impl ManagedProductDescriptor {
+impl  ManagedProductDescriptor  {
     /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule group.</p>
-    pub fn vendor_name(&self) -> ::std::option::Option<&str> {
+    pub fn vendor_name(&self) -> ::std::option::Option<& str> {
         self.vendor_name.as_deref()
     }
     /// <p>The name of the managed rule group. For example, <code>AWSManagedRulesAnonymousIpList</code> or <code>AWSManagedRulesATPRuleSet</code>.</p>
-    pub fn managed_rule_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn managed_rule_set_name(&self) -> ::std::option::Option<& str> {
         self.managed_rule_set_name.as_deref()
     }
     /// <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-    pub fn product_id(&self) -> ::std::option::Option<&str> {
+    pub fn product_id(&self) -> ::std::option::Option<& str> {
         self.product_id.as_deref()
     }
     /// <p>For Amazon Web Services Marketplace managed rule groups only, the link to the rule group product page.</p>
-    pub fn product_link(&self) -> ::std::option::Option<&str> {
+    pub fn product_link(&self) -> ::std::option::Option<& str> {
         self.product_link.as_deref()
     }
     /// <p>The display name for the managed rule group. For example, <code>Anonymous IP list</code> or <code>Account takeover prevention</code>.</p>
-    pub fn product_title(&self) -> ::std::option::Option<&str> {
+    pub fn product_title(&self) -> ::std::option::Option<& str> {
         self.product_title.as_deref()
     }
     /// <p>A short description of the managed rule group.</p>
-    pub fn product_description(&self) -> ::std::option::Option<&str> {
+    pub fn product_description(&self) -> ::std::option::Option<& str> {
         self.product_description.as_deref()
     }
     /// <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to provide notification of changes to the managed rule group. You can subscribe to the SNS topic to receive notifications when the managed rule group is modified, such as for new versions and for version expiration. For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide</a>.</p>
-    pub fn sns_topic_arn(&self) -> ::std::option::Option<&str> {
+    pub fn sns_topic_arn(&self) -> ::std::option::Option<& str> {
         self.sns_topic_arn.as_deref()
     }
     /// <p>Indicates whether the rule group is versioned.</p>
@@ -90,8 +90,7 @@ impl ManagedProductDescriptorBuilder {
     }
     /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule group.</p>
     pub fn set_vendor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vendor_name = input;
-        self
+        self.vendor_name = input; self
     }
     /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule group.</p>
     pub fn get_vendor_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl ManagedProductDescriptorBuilder {
     }
     /// <p>The name of the managed rule group. For example, <code>AWSManagedRulesAnonymousIpList</code> or <code>AWSManagedRulesATPRuleSet</code>.</p>
     pub fn set_managed_rule_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.managed_rule_set_name = input;
-        self
+        self.managed_rule_set_name = input; self
     }
     /// <p>The name of the managed rule group. For example, <code>AWSManagedRulesAnonymousIpList</code> or <code>AWSManagedRulesATPRuleSet</code>.</p>
     pub fn get_managed_rule_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +116,7 @@ impl ManagedProductDescriptorBuilder {
     }
     /// <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_id = input;
-        self
+        self.product_id = input; self
     }
     /// <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +129,7 @@ impl ManagedProductDescriptorBuilder {
     }
     /// <p>For Amazon Web Services Marketplace managed rule groups only, the link to the rule group product page.</p>
     pub fn set_product_link(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_link = input;
-        self
+        self.product_link = input; self
     }
     /// <p>For Amazon Web Services Marketplace managed rule groups only, the link to the rule group product page.</p>
     pub fn get_product_link(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +142,7 @@ impl ManagedProductDescriptorBuilder {
     }
     /// <p>The display name for the managed rule group. For example, <code>Anonymous IP list</code> or <code>Account takeover prevention</code>.</p>
     pub fn set_product_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_title = input;
-        self
+        self.product_title = input; self
     }
     /// <p>The display name for the managed rule group. For example, <code>Anonymous IP list</code> or <code>Account takeover prevention</code>.</p>
     pub fn get_product_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +155,7 @@ impl ManagedProductDescriptorBuilder {
     }
     /// <p>A short description of the managed rule group.</p>
     pub fn set_product_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_description = input;
-        self
+        self.product_description = input; self
     }
     /// <p>A short description of the managed rule group.</p>
     pub fn get_product_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +168,7 @@ impl ManagedProductDescriptorBuilder {
     }
     /// <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to provide notification of changes to the managed rule group. You can subscribe to the SNS topic to receive notifications when the managed rule group is modified, such as for new versions and for version expiration. For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide</a>.</p>
     pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sns_topic_arn = input;
-        self
+        self.sns_topic_arn = input; self
     }
     /// <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to provide notification of changes to the managed rule group. You can subscribe to the SNS topic to receive notifications when the managed rule group is modified, such as for new versions and for version expiration. For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide</a>.</p>
     pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +181,7 @@ impl ManagedProductDescriptorBuilder {
     }
     /// <p>Indicates whether the rule group is versioned.</p>
     pub fn set_is_versioning_supported(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_versioning_supported = input;
-        self
+        self.is_versioning_supported = input; self
     }
     /// <p>Indicates whether the rule group is versioned.</p>
     pub fn get_is_versioning_supported(&self) -> &::std::option::Option<bool> {
@@ -202,8 +194,7 @@ impl ManagedProductDescriptorBuilder {
     }
     /// <p>Indicates whether the rule group provides an advanced set of protections, such as the the Amazon Web Services Managed Rules rule groups that are used for WAF intelligent threat mitigation.</p>
     pub fn set_is_advanced_managed_rule_set(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_advanced_managed_rule_set = input;
-        self
+        self.is_advanced_managed_rule_set = input; self
     }
     /// <p>Indicates whether the rule group provides an advanced set of protections, such as the the Amazon Web Services Managed Rules rule groups that are used for WAF intelligent threat mitigation.</p>
     pub fn get_is_advanced_managed_rule_set(&self) -> &::std::option::Option<bool> {
@@ -212,15 +203,27 @@ impl ManagedProductDescriptorBuilder {
     /// Consumes the builder and constructs a [`ManagedProductDescriptor`](crate::types::ManagedProductDescriptor).
     pub fn build(self) -> crate::types::ManagedProductDescriptor {
         crate::types::ManagedProductDescriptor {
-            vendor_name: self.vendor_name,
-            managed_rule_set_name: self.managed_rule_set_name,
-            product_id: self.product_id,
-            product_link: self.product_link,
-            product_title: self.product_title,
-            product_description: self.product_description,
-            sns_topic_arn: self.sns_topic_arn,
-            is_versioning_supported: self.is_versioning_supported.unwrap_or_default(),
-            is_advanced_managed_rule_set: self.is_advanced_managed_rule_set.unwrap_or_default(),
+            vendor_name: self.vendor_name
+            ,
+            managed_rule_set_name: self.managed_rule_set_name
+            ,
+            product_id: self.product_id
+            ,
+            product_link: self.product_link
+            ,
+            product_title: self.product_title
+            ,
+            product_description: self.product_description
+            ,
+            sns_topic_arn: self.sns_topic_arn
+            ,
+            is_versioning_supported: self.is_versioning_supported
+                .unwrap_or_default()
+            ,
+            is_advanced_managed_rule_set: self.is_advanced_managed_rule_set
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

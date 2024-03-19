@@ -18,7 +18,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttendeeCapabilities {
+pub struct AttendeeCapabilities  {
     /// <p>The audio capability assigned to an attendee.</p>
     pub audio: crate::types::MediaCapabilities,
     /// <p>The video capability assigned to an attendee.</p>
@@ -26,17 +26,17 @@ pub struct AttendeeCapabilities {
     /// <p>The content capability assigned to an attendee.</p>
     pub content: crate::types::MediaCapabilities,
 }
-impl AttendeeCapabilities {
+impl  AttendeeCapabilities  {
     /// <p>The audio capability assigned to an attendee.</p>
-    pub fn audio(&self) -> &crate::types::MediaCapabilities {
+    pub fn audio(&self) -> & crate::types::MediaCapabilities {
         &self.audio
     }
     /// <p>The video capability assigned to an attendee.</p>
-    pub fn video(&self) -> &crate::types::MediaCapabilities {
+    pub fn video(&self) -> & crate::types::MediaCapabilities {
         &self.video
     }
     /// <p>The content capability assigned to an attendee.</p>
-    pub fn content(&self) -> &crate::types::MediaCapabilities {
+    pub fn content(&self) -> & crate::types::MediaCapabilities {
         &self.content
     }
 }
@@ -64,8 +64,7 @@ impl AttendeeCapabilitiesBuilder {
     }
     /// <p>The audio capability assigned to an attendee.</p>
     pub fn set_audio(mut self, input: ::std::option::Option<crate::types::MediaCapabilities>) -> Self {
-        self.audio = input;
-        self
+        self.audio = input; self
     }
     /// <p>The audio capability assigned to an attendee.</p>
     pub fn get_audio(&self) -> &::std::option::Option<crate::types::MediaCapabilities> {
@@ -79,8 +78,7 @@ impl AttendeeCapabilitiesBuilder {
     }
     /// <p>The video capability assigned to an attendee.</p>
     pub fn set_video(mut self, input: ::std::option::Option<crate::types::MediaCapabilities>) -> Self {
-        self.video = input;
-        self
+        self.video = input; self
     }
     /// <p>The video capability assigned to an attendee.</p>
     pub fn get_video(&self) -> &::std::option::Option<crate::types::MediaCapabilities> {
@@ -94,8 +92,7 @@ impl AttendeeCapabilitiesBuilder {
     }
     /// <p>The content capability assigned to an attendee.</p>
     pub fn set_content(mut self, input: ::std::option::Option<crate::types::MediaCapabilities>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>The content capability assigned to an attendee.</p>
     pub fn get_content(&self) -> &::std::option::Option<crate::types::MediaCapabilities> {
@@ -107,25 +104,25 @@ impl AttendeeCapabilitiesBuilder {
     /// - [`video`](crate::types::builders::AttendeeCapabilitiesBuilder::video)
     /// - [`content`](crate::types::builders::AttendeeCapabilitiesBuilder::content)
     pub fn build(self) -> ::std::result::Result<crate::types::AttendeeCapabilities, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AttendeeCapabilities {
-            audio: self.audio.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "audio",
-                    "audio was not specified but it is required when building AttendeeCapabilities",
-                )
-            })?,
-            video: self.video.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "video",
-                    "video was not specified but it is required when building AttendeeCapabilities",
-                )
-            })?,
-            content: self.content.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "content",
-                    "content was not specified but it is required when building AttendeeCapabilities",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AttendeeCapabilities {
+                audio: self.audio
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("audio", "audio was not specified but it is required when building AttendeeCapabilities")
+                    )?
+                ,
+                video: self.video
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("video", "video was not specified but it is required when building AttendeeCapabilities")
+                    )?
+                ,
+                content: self.content
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("content", "content was not specified but it is required when building AttendeeCapabilities")
+                    )?
+                ,
+            }
+        )
     }
 }
+

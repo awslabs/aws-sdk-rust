@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateMaintenanceWindowInput {
+pub struct CreateMaintenanceWindowInput  {
     /// <p>The name of the maintenance window.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An optional description for the maintenance window. We recommend specifying a description to help you organize your maintenance windows.</p>
@@ -40,31 +40,31 @@ pub struct CreateMaintenanceWindowInput {
     /// </ul><note>
     /// <p>To add tags to an existing maintenance window, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateMaintenanceWindowInput {
+impl  CreateMaintenanceWindowInput  {
     /// <p>The name of the maintenance window.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>An optional description for the maintenance window. We recommend specifying a description to help you organize your maintenance windows.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active. <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future date.</p>
-    pub fn start_date(&self) -> ::std::option::Option<&str> {
+    pub fn start_date(&self) -> ::std::option::Option<& str> {
         self.start_date.as_deref()
     }
     /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become inactive. <code>EndDate</code> allows you to set a date and time in the future when the maintenance window will no longer run.</p>
-    pub fn end_date(&self) -> ::std::option::Option<&str> {
+    pub fn end_date(&self) -> ::std::option::Option<& str> {
         self.end_date.as_deref()
     }
     /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
-    pub fn schedule(&self) -> ::std::option::Option<&str> {
+    pub fn schedule(&self) -> ::std::option::Option<& str> {
         self.schedule.as_deref()
     }
     /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
-    pub fn schedule_timezone(&self) -> ::std::option::Option<&str> {
+    pub fn schedule_timezone(&self) -> ::std::option::Option<& str> {
         self.schedule_timezone.as_deref()
     }
     /// <p>The number of days to wait after the date and time specified by a cron expression before running the maintenance window.</p>
@@ -88,7 +88,7 @@ impl CreateMaintenanceWindowInput {
         self.allow_unassociated_targets
     }
     /// <p>User-provided idempotency token.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a maintenance window to identify the type of tasks it will run, the types of targets, and the environment it will run in. In this case, you could specify the following key-value pairs:</p>
@@ -102,13 +102,14 @@ impl CreateMaintenanceWindowInput {
     /// </ul><note>
     /// <p>To add tags to an existing maintenance window, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for CreateMaintenanceWindowInput {
+impl  ::std::fmt::Debug for CreateMaintenanceWindowInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMaintenanceWindowInput");
         formatter.field("name", &self.name);
@@ -148,7 +149,7 @@ pub struct CreateMaintenanceWindowInputBuilder {
     pub(crate) cutoff: ::std::option::Option<i32>,
     pub(crate) allow_unassociated_targets: ::std::option::Option<bool>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateMaintenanceWindowInputBuilder {
     /// <p>The name of the maintenance window.</p>
@@ -159,8 +160,7 @@ impl CreateMaintenanceWindowInputBuilder {
     }
     /// <p>The name of the maintenance window.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the maintenance window.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,8 +173,7 @@ impl CreateMaintenanceWindowInputBuilder {
     }
     /// <p>An optional description for the maintenance window. We recommend specifying a description to help you organize your maintenance windows.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>An optional description for the maintenance window. We recommend specifying a description to help you organize your maintenance windows.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -187,8 +186,7 @@ impl CreateMaintenanceWindowInputBuilder {
     }
     /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active. <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future date.</p>
     pub fn set_start_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start_date = input;
-        self
+        self.start_date = input; self
     }
     /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active. <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future date.</p>
     pub fn get_start_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -201,8 +199,7 @@ impl CreateMaintenanceWindowInputBuilder {
     }
     /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become inactive. <code>EndDate</code> allows you to set a date and time in the future when the maintenance window will no longer run.</p>
     pub fn set_end_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.end_date = input;
-        self
+        self.end_date = input; self
     }
     /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become inactive. <code>EndDate</code> allows you to set a date and time in the future when the maintenance window will no longer run.</p>
     pub fn get_end_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -216,8 +213,7 @@ impl CreateMaintenanceWindowInputBuilder {
     }
     /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
     pub fn set_schedule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schedule = input;
-        self
+        self.schedule = input; self
     }
     /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
     pub fn get_schedule(&self) -> &::std::option::Option<::std::string::String> {
@@ -230,8 +226,7 @@ impl CreateMaintenanceWindowInputBuilder {
     }
     /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
     pub fn set_schedule_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schedule_timezone = input;
-        self
+        self.schedule_timezone = input; self
     }
     /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
     pub fn get_schedule_timezone(&self) -> &::std::option::Option<::std::string::String> {
@@ -250,8 +245,7 @@ impl CreateMaintenanceWindowInputBuilder {
     /// <p><code>cron(30 23 ? * TUE#3 *)</code></p>
     /// <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days later.</p>
     pub fn set_schedule_offset(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.schedule_offset = input;
-        self
+        self.schedule_offset = input; self
     }
     /// <p>The number of days to wait after the date and time specified by a cron expression before running the maintenance window.</p>
     /// <p>For example, the following cron expression schedules a maintenance window to run on the third Tuesday of every month at 11:30 PM.</p>
@@ -268,8 +262,7 @@ impl CreateMaintenanceWindowInputBuilder {
     }
     /// <p>The duration of the maintenance window in hours.</p>
     pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration = input;
-        self
+        self.duration = input; self
     }
     /// <p>The duration of the maintenance window in hours.</p>
     pub fn get_duration(&self) -> &::std::option::Option<i32> {
@@ -283,8 +276,7 @@ impl CreateMaintenanceWindowInputBuilder {
     }
     /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
     pub fn set_cutoff(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.cutoff = input;
-        self
+        self.cutoff = input; self
     }
     /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
     pub fn get_cutoff(&self) -> &::std::option::Option<i32> {
@@ -300,8 +292,7 @@ impl CreateMaintenanceWindowInputBuilder {
     /// <p>Enables a maintenance window task to run on managed nodes, even if you haven't registered those nodes as targets. If enabled, then you must specify the unregistered managed nodes (by node ID) when you register a task with the maintenance window.</p>
     /// <p>If you don't enable this option, then you must specify previously-registered targets when you register a task with the maintenance window.</p>
     pub fn set_allow_unassociated_targets(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_unassociated_targets = input;
-        self
+        self.allow_unassociated_targets = input; self
     }
     /// <p>Enables a maintenance window task to run on managed nodes, even if you haven't registered those nodes as targets. If enabled, then you must specify the unregistered managed nodes (by node ID) when you register a task with the maintenance window.</p>
     /// <p>If you don't enable this option, then you must specify previously-registered targets when you register a task with the maintenance window.</p>
@@ -315,8 +306,7 @@ impl CreateMaintenanceWindowInputBuilder {
     }
     /// <p>User-provided idempotency token.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>User-provided idempotency token.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -339,9 +329,9 @@ impl CreateMaintenanceWindowInputBuilder {
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a maintenance window to identify the type of tasks it will run, the types of targets, and the environment it will run in. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
@@ -354,9 +344,8 @@ impl CreateMaintenanceWindowInputBuilder {
     /// </ul><note>
     /// <p>To add tags to an existing maintenance window, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a maintenance window to identify the type of tasks it will run, the types of targets, and the environment it will run in. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
@@ -369,30 +358,39 @@ impl CreateMaintenanceWindowInputBuilder {
     /// </ul><note>
     /// <p>To add tags to an existing maintenance window, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateMaintenanceWindowInput`](crate::operation::create_maintenance_window::CreateMaintenanceWindowInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_maintenance_window::CreateMaintenanceWindowInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_maintenance_window::CreateMaintenanceWindowInput {
-            name: self.name,
-            description: self.description,
-            start_date: self.start_date,
-            end_date: self.end_date,
-            schedule: self.schedule,
-            schedule_timezone: self.schedule_timezone,
-            schedule_offset: self.schedule_offset,
-            duration: self.duration,
-            cutoff: self.cutoff,
-            allow_unassociated_targets: self.allow_unassociated_targets,
-            client_token: self.client_token,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_maintenance_window::CreateMaintenanceWindowInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_maintenance_window::CreateMaintenanceWindowInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                start_date: self.start_date
+                ,
+                end_date: self.end_date
+                ,
+                schedule: self.schedule
+                ,
+                schedule_timezone: self.schedule_timezone
+                ,
+                schedule_offset: self.schedule_offset
+                ,
+                duration: self.duration
+                ,
+                cutoff: self.cutoff
+                ,
+                allow_unassociated_targets: self.allow_unassociated_targets
+                ,
+                client_token: self.client_token
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateMaintenanceWindowInputBuilder {
@@ -413,3 +411,4 @@ impl ::std::fmt::Debug for CreateMaintenanceWindowInputBuilder {
         formatter.finish()
     }
 }
+

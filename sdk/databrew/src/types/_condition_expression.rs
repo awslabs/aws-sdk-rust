@@ -5,7 +5,7 @@
 /// <p>If a recipe requires more than one condition, then the recipe must specify multiple <code>ConditionExpression</code> elements. Each condition is applied to the rows in a dataset first, before the recipe action is performed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConditionExpression {
+pub struct ConditionExpression  {
     /// <p>A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
     pub condition: ::std::string::String,
     /// <p>A value that the condition must evaluate to for the condition to succeed.</p>
@@ -13,20 +13,18 @@ pub struct ConditionExpression {
     /// <p>A column to apply this condition to.</p>
     pub target_column: ::std::string::String,
 }
-impl ConditionExpression {
+impl  ConditionExpression  {
     /// <p>A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
-    pub fn condition(&self) -> &str {
-        use std::ops::Deref;
-        self.condition.deref()
+    pub fn condition(&self) -> & str {
+        use std::ops::Deref; self.condition.deref()
     }
     /// <p>A value that the condition must evaluate to for the condition to succeed.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>A column to apply this condition to.</p>
-    pub fn target_column(&self) -> &str {
-        use std::ops::Deref;
-        self.target_column.deref()
+    pub fn target_column(&self) -> & str {
+        use std::ops::Deref; self.target_column.deref()
     }
 }
 impl ConditionExpression {
@@ -53,8 +51,7 @@ impl ConditionExpressionBuilder {
     }
     /// <p>A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
     pub fn set_condition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.condition = input;
-        self
+        self.condition = input; self
     }
     /// <p>A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
     pub fn get_condition(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +64,7 @@ impl ConditionExpressionBuilder {
     }
     /// <p>A value that the condition must evaluate to for the condition to succeed.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>A value that the condition must evaluate to for the condition to succeed.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +78,7 @@ impl ConditionExpressionBuilder {
     }
     /// <p>A column to apply this condition to.</p>
     pub fn set_target_column(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_column = input;
-        self
+        self.target_column = input; self
     }
     /// <p>A column to apply this condition to.</p>
     pub fn get_target_column(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,20 +89,22 @@ impl ConditionExpressionBuilder {
     /// - [`condition`](crate::types::builders::ConditionExpressionBuilder::condition)
     /// - [`target_column`](crate::types::builders::ConditionExpressionBuilder::target_column)
     pub fn build(self) -> ::std::result::Result<crate::types::ConditionExpression, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ConditionExpression {
-            condition: self.condition.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "condition",
-                    "condition was not specified but it is required when building ConditionExpression",
-                )
-            })?,
-            value: self.value,
-            target_column: self.target_column.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "target_column",
-                    "target_column was not specified but it is required when building ConditionExpression",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ConditionExpression {
+                condition: self.condition
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("condition", "condition was not specified but it is required when building ConditionExpression")
+                    )?
+                ,
+                value: self.value
+                ,
+                target_column: self.target_column
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("target_column", "target_column was not specified but it is required when building ConditionExpression")
+                    )?
+                ,
+            }
+        )
     }
 }
+

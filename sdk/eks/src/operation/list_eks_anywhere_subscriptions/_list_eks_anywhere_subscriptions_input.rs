@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListEksAnywhereSubscriptionsInput {
+pub struct ListEksAnywhereSubscriptionsInput  {
     /// <p>The maximum number of cluster results returned by ListEksAnywhereSubscriptions in paginated output. When you use this parameter, ListEksAnywhereSubscriptions returns only maxResults results in a single page along with a nextToken response element. You can see the remaining results of the initial request by sending another ListEksAnywhereSubscriptions request with the returned nextToken value. This value can be between 1 and 100. If you don't use this parameter, ListEksAnywhereSubscriptions returns up to 10 results and a nextToken value if applicable.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListEksAnywhereSubscriptions</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of subscription statuses to filter on.</p>
-    pub include_status: ::std::option::Option<::std::vec::Vec<crate::types::EksAnywhereSubscriptionStatus>>,
+    pub include_status: ::std::option::Option<::std::vec::Vec::<crate::types::EksAnywhereSubscriptionStatus>>,
 }
-impl ListEksAnywhereSubscriptionsInput {
+impl  ListEksAnywhereSubscriptionsInput  {
     /// <p>The maximum number of cluster results returned by ListEksAnywhereSubscriptions in paginated output. When you use this parameter, ListEksAnywhereSubscriptions returns only maxResults results in a single page along with a nextToken response element. You can see the remaining results of the initial request by sending another ListEksAnywhereSubscriptions request with the returned nextToken value. This value can be between 1 and 100. If you don't use this parameter, ListEksAnywhereSubscriptions returns up to 10 results and a nextToken value if applicable.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListEksAnywhereSubscriptions</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of subscription statuses to filter on.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.include_status.is_none()`.
-    pub fn include_status(&self) -> &[crate::types::EksAnywhereSubscriptionStatus] {
-        self.include_status.as_deref().unwrap_or_default()
+    pub fn include_status(&self) -> & [crate::types::EksAnywhereSubscriptionStatus] {
+        self.include_status.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ListEksAnywhereSubscriptionsInput {
@@ -39,7 +40,7 @@ impl ListEksAnywhereSubscriptionsInput {
 pub struct ListEksAnywhereSubscriptionsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) include_status: ::std::option::Option<::std::vec::Vec<crate::types::EksAnywhereSubscriptionStatus>>,
+    pub(crate) include_status: ::std::option::Option<::std::vec::Vec::<crate::types::EksAnywhereSubscriptionStatus>>,
 }
 impl ListEksAnywhereSubscriptionsInputBuilder {
     /// <p>The maximum number of cluster results returned by ListEksAnywhereSubscriptions in paginated output. When you use this parameter, ListEksAnywhereSubscriptions returns only maxResults results in a single page along with a nextToken response element. You can see the remaining results of the initial request by sending another ListEksAnywhereSubscriptions request with the returned nextToken value. This value can be between 1 and 100. If you don't use this parameter, ListEksAnywhereSubscriptions returns up to 10 results and a nextToken value if applicable.</p>
@@ -49,8 +50,7 @@ impl ListEksAnywhereSubscriptionsInputBuilder {
     }
     /// <p>The maximum number of cluster results returned by ListEksAnywhereSubscriptions in paginated output. When you use this parameter, ListEksAnywhereSubscriptions returns only maxResults results in a single page along with a nextToken response element. You can see the remaining results of the initial request by sending another ListEksAnywhereSubscriptions request with the returned nextToken value. This value can be between 1 and 100. If you don't use this parameter, ListEksAnywhereSubscriptions returns up to 10 results and a nextToken value if applicable.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of cluster results returned by ListEksAnywhereSubscriptions in paginated output. When you use this parameter, ListEksAnywhereSubscriptions returns only maxResults results in a single page along with a nextToken response element. You can see the remaining results of the initial request by sending another ListEksAnywhereSubscriptions request with the returned nextToken value. This value can be between 1 and 100. If you don't use this parameter, ListEksAnywhereSubscriptions returns up to 10 results and a nextToken value if applicable.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -63,8 +63,7 @@ impl ListEksAnywhereSubscriptionsInputBuilder {
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListEksAnywhereSubscriptions</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListEksAnywhereSubscriptions</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,30 +76,30 @@ impl ListEksAnywhereSubscriptionsInputBuilder {
     /// <p>An array of subscription statuses to filter on.</p>
     pub fn include_status(mut self, input: crate::types::EksAnywhereSubscriptionStatus) -> Self {
         let mut v = self.include_status.unwrap_or_default();
-        v.push(input);
-        self.include_status = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.include_status = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of subscription statuses to filter on.</p>
-    pub fn set_include_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EksAnywhereSubscriptionStatus>>) -> Self {
-        self.include_status = input;
-        self
+    pub fn set_include_status(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EksAnywhereSubscriptionStatus>>) -> Self {
+        self.include_status = input; self
     }
     /// <p>An array of subscription statuses to filter on.</p>
-    pub fn get_include_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EksAnywhereSubscriptionStatus>> {
+    pub fn get_include_status(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EksAnywhereSubscriptionStatus>> {
         &self.include_status
     }
     /// Consumes the builder and constructs a [`ListEksAnywhereSubscriptionsInput`](crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-            include_status: self.include_status,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                include_status: self.include_status
+                ,
+            }
+        )
     }
 }
+

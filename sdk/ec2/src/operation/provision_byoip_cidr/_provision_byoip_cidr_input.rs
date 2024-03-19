@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProvisionByoipCidrInput {
+pub struct ProvisionByoipCidrInput  {
     /// <p>The public IPv4 or IPv6 address range, in CIDR notation. The most specific IPv4 prefix that you can specify is /24. The most specific IPv6 address range that you can bring is /48 for CIDRs that are publicly advertisable and /56 for CIDRs that are not publicly advertisable. The address range cannot overlap with another address range that you've brought to this or another Region.</p>
     pub cidr: ::std::option::Option<::std::string::String>,
     /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP.</p>
@@ -15,7 +15,7 @@ pub struct ProvisionByoipCidrInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The tags to apply to the address pool.</p>
-    pub pool_tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub pool_tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
     /// <p>Reserved.</p>
     pub multi_region: ::std::option::Option<bool>,
     /// <p>If you have <a href="https://docs.aws.amazon.com/local-zones/latest/ug/how-local-zones-work.html">Local Zones</a> enabled, you can choose a network border group for Local Zones when you provision and advertise a BYOIPv4 CIDR. Choose the network border group carefully as the EIP and the Amazon Web Services resource it is associated with must reside in the same network border group.</p>
@@ -32,13 +32,13 @@ pub struct ProvisionByoipCidrInput {
     /// </note>
     pub network_border_group: ::std::option::Option<::std::string::String>,
 }
-impl ProvisionByoipCidrInput {
+impl  ProvisionByoipCidrInput  {
     /// <p>The public IPv4 or IPv6 address range, in CIDR notation. The most specific IPv4 prefix that you can specify is /24. The most specific IPv6 address range that you can bring is /48 for CIDRs that are publicly advertisable and /56 for CIDRs that are not publicly advertisable. The address range cannot overlap with another address range that you've brought to this or another Region.</p>
-    pub fn cidr(&self) -> ::std::option::Option<&str> {
+    pub fn cidr(&self) -> ::std::option::Option<& str> {
         self.cidr.as_deref()
     }
     /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP.</p>
-    pub fn cidr_authorization_context(&self) -> ::std::option::Option<&crate::types::CidrAuthorizationContext> {
+    pub fn cidr_authorization_context(&self) -> ::std::option::Option<& crate::types::CidrAuthorizationContext> {
         self.cidr_authorization_context.as_ref()
     }
     /// <p>(IPv6 only) Indicate whether the address range will be publicly advertised to the internet.</p>
@@ -47,7 +47,7 @@ impl ProvisionByoipCidrInput {
         self.publicly_advertisable
     }
     /// <p>A description for the address range and the address pool.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -55,10 +55,11 @@ impl ProvisionByoipCidrInput {
         self.dry_run
     }
     /// <p>The tags to apply to the address pool.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pool_tag_specifications.is_none()`.
-    pub fn pool_tag_specifications(&self) -> &[crate::types::TagSpecification] {
-        self.pool_tag_specifications.as_deref().unwrap_or_default()
+    pub fn pool_tag_specifications(&self) -> & [crate::types::TagSpecification] {
+        self.pool_tag_specifications.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Reserved.</p>
     pub fn multi_region(&self) -> ::std::option::Option<bool> {
@@ -76,7 +77,7 @@ impl ProvisionByoipCidrInput {
     /// </ul><note>
     /// <p>You cannot provision or advertise BYOIPv6 address ranges in Local Zones at this time.</p>
     /// </note>
-    pub fn network_border_group(&self) -> ::std::option::Option<&str> {
+    pub fn network_border_group(&self) -> ::std::option::Option<& str> {
         self.network_border_group.as_deref()
     }
 }
@@ -96,7 +97,7 @@ pub struct ProvisionByoipCidrInputBuilder {
     pub(crate) publicly_advertisable: ::std::option::Option<bool>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) pool_tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) pool_tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
     pub(crate) multi_region: ::std::option::Option<bool>,
     pub(crate) network_border_group: ::std::option::Option<::std::string::String>,
 }
@@ -109,8 +110,7 @@ impl ProvisionByoipCidrInputBuilder {
     }
     /// <p>The public IPv4 or IPv6 address range, in CIDR notation. The most specific IPv4 prefix that you can specify is /24. The most specific IPv6 address range that you can bring is /48 for CIDRs that are publicly advertisable and /56 for CIDRs that are not publicly advertisable. The address range cannot overlap with another address range that you've brought to this or another Region.</p>
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cidr = input;
-        self
+        self.cidr = input; self
     }
     /// <p>The public IPv4 or IPv6 address range, in CIDR notation. The most specific IPv4 prefix that you can specify is /24. The most specific IPv6 address range that you can bring is /48 for CIDRs that are publicly advertisable and /56 for CIDRs that are not publicly advertisable. The address range cannot overlap with another address range that you've brought to this or another Region.</p>
     pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +123,7 @@ impl ProvisionByoipCidrInputBuilder {
     }
     /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP.</p>
     pub fn set_cidr_authorization_context(mut self, input: ::std::option::Option<crate::types::CidrAuthorizationContext>) -> Self {
-        self.cidr_authorization_context = input;
-        self
+        self.cidr_authorization_context = input; self
     }
     /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP.</p>
     pub fn get_cidr_authorization_context(&self) -> &::std::option::Option<crate::types::CidrAuthorizationContext> {
@@ -139,8 +138,7 @@ impl ProvisionByoipCidrInputBuilder {
     /// <p>(IPv6 only) Indicate whether the address range will be publicly advertised to the internet.</p>
     /// <p>Default: true</p>
     pub fn set_publicly_advertisable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.publicly_advertisable = input;
-        self
+        self.publicly_advertisable = input; self
     }
     /// <p>(IPv6 only) Indicate whether the address range will be publicly advertised to the internet.</p>
     /// <p>Default: true</p>
@@ -154,8 +152,7 @@ impl ProvisionByoipCidrInputBuilder {
     }
     /// <p>A description for the address range and the address pool.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description for the address range and the address pool.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -168,8 +165,7 @@ impl ProvisionByoipCidrInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -182,17 +178,16 @@ impl ProvisionByoipCidrInputBuilder {
     /// <p>The tags to apply to the address pool.</p>
     pub fn pool_tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         let mut v = self.pool_tag_specifications.unwrap_or_default();
-        v.push(input);
-        self.pool_tag_specifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.pool_tag_specifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to apply to the address pool.</p>
-    pub fn set_pool_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
-        self.pool_tag_specifications = input;
-        self
+    pub fn set_pool_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>) -> Self {
+        self.pool_tag_specifications = input; self
     }
     /// <p>The tags to apply to the address pool.</p>
-    pub fn get_pool_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_pool_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>> {
         &self.pool_tag_specifications
     }
     /// <p>Reserved.</p>
@@ -202,8 +197,7 @@ impl ProvisionByoipCidrInputBuilder {
     }
     /// <p>Reserved.</p>
     pub fn set_multi_region(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.multi_region = input;
-        self
+        self.multi_region = input; self
     }
     /// <p>Reserved.</p>
     pub fn get_multi_region(&self) -> &::std::option::Option<bool> {
@@ -238,8 +232,7 @@ impl ProvisionByoipCidrInputBuilder {
     /// <p>You cannot provision or advertise BYOIPv6 address ranges in Local Zones at this time.</p>
     /// </note>
     pub fn set_network_border_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_border_group = input;
-        self
+        self.network_border_group = input; self
     }
     /// <p>If you have <a href="https://docs.aws.amazon.com/local-zones/latest/ug/how-local-zones-work.html">Local Zones</a> enabled, you can choose a network border group for Local Zones when you provision and advertise a BYOIPv4 CIDR. Choose the network border group carefully as the EIP and the Amazon Web Services resource it is associated with must reside in the same network border group.</p>
     /// <p>You can provision BYOIP address ranges to and advertise them in the following Local Zone network border groups:</p>
@@ -257,19 +250,27 @@ impl ProvisionByoipCidrInputBuilder {
         &self.network_border_group
     }
     /// Consumes the builder and constructs a [`ProvisionByoipCidrInput`](crate::operation::provision_byoip_cidr::ProvisionByoipCidrInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::provision_byoip_cidr::ProvisionByoipCidrInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::provision_byoip_cidr::ProvisionByoipCidrInput {
-            cidr: self.cidr,
-            cidr_authorization_context: self.cidr_authorization_context,
-            publicly_advertisable: self.publicly_advertisable,
-            description: self.description,
-            dry_run: self.dry_run,
-            pool_tag_specifications: self.pool_tag_specifications,
-            multi_region: self.multi_region,
-            network_border_group: self.network_border_group,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::provision_byoip_cidr::ProvisionByoipCidrInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::provision_byoip_cidr::ProvisionByoipCidrInput {
+                cidr: self.cidr
+                ,
+                cidr_authorization_context: self.cidr_authorization_context
+                ,
+                publicly_advertisable: self.publicly_advertisable
+                ,
+                description: self.description
+                ,
+                dry_run: self.dry_run
+                ,
+                pool_tag_specifications: self.pool_tag_specifications
+                ,
+                multi_region: self.multi_region
+                ,
+                network_border_group: self.network_border_group
+                ,
+            }
+        )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Describes the Classic Load Balancers and target groups to attach to a Spot Fleet request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoadBalancersConfig {
+pub struct LoadBalancersConfig  {
     /// <p>The Classic Load Balancers.</p>
     pub classic_load_balancers_config: ::std::option::Option<crate::types::ClassicLoadBalancersConfig>,
     /// <p>The target groups.</p>
     pub target_groups_config: ::std::option::Option<crate::types::TargetGroupsConfig>,
 }
-impl LoadBalancersConfig {
+impl  LoadBalancersConfig  {
     /// <p>The Classic Load Balancers.</p>
-    pub fn classic_load_balancers_config(&self) -> ::std::option::Option<&crate::types::ClassicLoadBalancersConfig> {
+    pub fn classic_load_balancers_config(&self) -> ::std::option::Option<& crate::types::ClassicLoadBalancersConfig> {
         self.classic_load_balancers_config.as_ref()
     }
     /// <p>The target groups.</p>
-    pub fn target_groups_config(&self) -> ::std::option::Option<&crate::types::TargetGroupsConfig> {
+    pub fn target_groups_config(&self) -> ::std::option::Option<& crate::types::TargetGroupsConfig> {
         self.target_groups_config.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl LoadBalancersConfigBuilder {
     }
     /// <p>The Classic Load Balancers.</p>
     pub fn set_classic_load_balancers_config(mut self, input: ::std::option::Option<crate::types::ClassicLoadBalancersConfig>) -> Self {
-        self.classic_load_balancers_config = input;
-        self
+        self.classic_load_balancers_config = input; self
     }
     /// <p>The Classic Load Balancers.</p>
     pub fn get_classic_load_balancers_config(&self) -> &::std::option::Option<crate::types::ClassicLoadBalancersConfig> {
@@ -55,8 +54,7 @@ impl LoadBalancersConfigBuilder {
     }
     /// <p>The target groups.</p>
     pub fn set_target_groups_config(mut self, input: ::std::option::Option<crate::types::TargetGroupsConfig>) -> Self {
-        self.target_groups_config = input;
-        self
+        self.target_groups_config = input; self
     }
     /// <p>The target groups.</p>
     pub fn get_target_groups_config(&self) -> &::std::option::Option<crate::types::TargetGroupsConfig> {
@@ -65,8 +63,11 @@ impl LoadBalancersConfigBuilder {
     /// Consumes the builder and constructs a [`LoadBalancersConfig`](crate::types::LoadBalancersConfig).
     pub fn build(self) -> crate::types::LoadBalancersConfig {
         crate::types::LoadBalancersConfig {
-            classic_load_balancers_config: self.classic_load_balancers_config,
-            target_groups_config: self.target_groups_config,
+            classic_load_balancers_config: self.classic_load_balancers_config
+            ,
+            target_groups_config: self.target_groups_config
+            ,
         }
     }
 }
+

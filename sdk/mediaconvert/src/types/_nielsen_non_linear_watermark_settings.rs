@@ -3,7 +3,7 @@
 /// Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to specifying these values, you also need to set up your cloud TIC server. These settings apply to every output in your job. The MediaConvert implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NielsenNonLinearWatermarkSettings {
+pub struct NielsenNonLinearWatermarkSettings  {
     /// Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW, you must provide a value for the setting SID. When you choose CBET, you must provide a value for the setting CSID. When you choose NAES 2, NW, and CBET, you must provide values for both of these settings.
     pub active_watermark_process: ::std::option::Option<crate::types::NielsenActiveWatermarkProcessType>,
     /// Optional. Use this setting when you want the service to include an ADI file in the Nielsen metadata .zip file. To provide an ADI file, store it in Amazon S3 and provide a URL to it here. The URL should be in the following format: S3://bucket/path/ADI-file. For more information about the metadata .zip file, see the setting Metadata destination.
@@ -27,33 +27,33 @@ pub struct NielsenNonLinearWatermarkSettings {
     /// To create assets that have the same TIC values in each audio track, keep the default value Share TICs. To create assets that have unique TIC values for each audio track, choose Use unique TICs.
     pub unique_tic_per_audio_track: ::std::option::Option<crate::types::NielsenUniqueTicPerAudioTrackType>,
 }
-impl NielsenNonLinearWatermarkSettings {
+impl  NielsenNonLinearWatermarkSettings  {
     /// Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW, you must provide a value for the setting SID. When you choose CBET, you must provide a value for the setting CSID. When you choose NAES 2, NW, and CBET, you must provide values for both of these settings.
-    pub fn active_watermark_process(&self) -> ::std::option::Option<&crate::types::NielsenActiveWatermarkProcessType> {
+    pub fn active_watermark_process(&self) -> ::std::option::Option<& crate::types::NielsenActiveWatermarkProcessType> {
         self.active_watermark_process.as_ref()
     }
     /// Optional. Use this setting when you want the service to include an ADI file in the Nielsen metadata .zip file. To provide an ADI file, store it in Amazon S3 and provide a URL to it here. The URL should be in the following format: S3://bucket/path/ADI-file. For more information about the metadata .zip file, see the setting Metadata destination.
-    pub fn adi_filename(&self) -> ::std::option::Option<&str> {
+    pub fn adi_filename(&self) -> ::std::option::Option<& str> {
         self.adi_filename.as_deref()
     }
     /// Use the asset ID that you provide to Nielsen to uniquely identify this asset. Required for all Nielsen non-linear watermarking.
-    pub fn asset_id(&self) -> ::std::option::Option<&str> {
+    pub fn asset_id(&self) -> ::std::option::Option<& str> {
         self.asset_id.as_deref()
     }
     /// Use the asset name that you provide to Nielsen for this asset. Required for all Nielsen non-linear watermarking.
-    pub fn asset_name(&self) -> ::std::option::Option<&str> {
+    pub fn asset_name(&self) -> ::std::option::Option<& str> {
         self.asset_name.as_deref()
     }
     /// Use the CSID that Nielsen provides to you. This CBET source ID should be unique to your Nielsen account but common to all of your output assets that have CBET watermarking. Required when you choose a value for the setting Watermark types that includes CBET.
-    pub fn cbet_source_id(&self) -> ::std::option::Option<&str> {
+    pub fn cbet_source_id(&self) -> ::std::option::Option<& str> {
         self.cbet_source_id.as_deref()
     }
     /// Optional. If this asset uses an episode ID with Nielsen, provide it here.
-    pub fn episode_id(&self) -> ::std::option::Option<&str> {
+    pub fn episode_id(&self) -> ::std::option::Option<& str> {
         self.episode_id.as_deref()
     }
     /// Specify the Amazon S3 location where you want MediaConvert to save your Nielsen non-linear metadata .zip file. This Amazon S3 bucket must be in the same Region as the one where you do your MediaConvert transcoding. If you want to include an ADI file in this .zip file, use the setting ADI file to specify it. MediaConvert delivers the Nielsen metadata .zip files only to your metadata destination Amazon S3 bucket. It doesn't deliver the .zip files to Nielsen. You are responsible for delivering the metadata .zip files to Nielsen.
-    pub fn metadata_destination(&self) -> ::std::option::Option<&str> {
+    pub fn metadata_destination(&self) -> ::std::option::Option<& str> {
         self.metadata_destination.as_deref()
     }
     /// Use the SID that Nielsen provides to you. This source ID should be unique to your Nielsen account but common to all of your output assets. Required for all Nielsen non-linear watermarking. This ID should be unique to your Nielsen account but common to all of your output assets. Required for all Nielsen non-linear watermarking.
@@ -61,15 +61,15 @@ impl NielsenNonLinearWatermarkSettings {
         self.source_id
     }
     /// Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you set this value to Watermarked, the service fails the job. Nielsen requires that you add non-linear watermarking to only clean content that doesn't already have non-linear Nielsen watermarks.
-    pub fn source_watermark_status(&self) -> ::std::option::Option<&crate::types::NielsenSourceWatermarkStatusType> {
+    pub fn source_watermark_status(&self) -> ::std::option::Option<& crate::types::NielsenSourceWatermarkStatusType> {
         self.source_watermark_status.as_ref()
     }
     /// Specify the endpoint for the TIC server that you have deployed and configured in the AWS Cloud. Required for all Nielsen non-linear watermarking. MediaConvert can't connect directly to a TIC server. Instead, you must use API Gateway to provide a RESTful interface between MediaConvert and a TIC server that you deploy in your AWS account. For more information on deploying a TIC server in your AWS account and the required API Gateway, contact Nielsen support.
-    pub fn tic_server_url(&self) -> ::std::option::Option<&str> {
+    pub fn tic_server_url(&self) -> ::std::option::Option<& str> {
         self.tic_server_url.as_deref()
     }
     /// To create assets that have the same TIC values in each audio track, keep the default value Share TICs. To create assets that have unique TIC values for each audio track, choose Use unique TICs.
-    pub fn unique_tic_per_audio_track(&self) -> ::std::option::Option<&crate::types::NielsenUniqueTicPerAudioTrackType> {
+    pub fn unique_tic_per_audio_track(&self) -> ::std::option::Option<& crate::types::NielsenUniqueTicPerAudioTrackType> {
         self.unique_tic_per_audio_track.as_ref()
     }
 }
@@ -104,8 +104,7 @@ impl NielsenNonLinearWatermarkSettingsBuilder {
     }
     /// Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW, you must provide a value for the setting SID. When you choose CBET, you must provide a value for the setting CSID. When you choose NAES 2, NW, and CBET, you must provide values for both of these settings.
     pub fn set_active_watermark_process(mut self, input: ::std::option::Option<crate::types::NielsenActiveWatermarkProcessType>) -> Self {
-        self.active_watermark_process = input;
-        self
+        self.active_watermark_process = input; self
     }
     /// Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW, you must provide a value for the setting SID. When you choose CBET, you must provide a value for the setting CSID. When you choose NAES 2, NW, and CBET, you must provide values for both of these settings.
     pub fn get_active_watermark_process(&self) -> &::std::option::Option<crate::types::NielsenActiveWatermarkProcessType> {
@@ -118,8 +117,7 @@ impl NielsenNonLinearWatermarkSettingsBuilder {
     }
     /// Optional. Use this setting when you want the service to include an ADI file in the Nielsen metadata .zip file. To provide an ADI file, store it in Amazon S3 and provide a URL to it here. The URL should be in the following format: S3://bucket/path/ADI-file. For more information about the metadata .zip file, see the setting Metadata destination.
     pub fn set_adi_filename(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.adi_filename = input;
-        self
+        self.adi_filename = input; self
     }
     /// Optional. Use this setting when you want the service to include an ADI file in the Nielsen metadata .zip file. To provide an ADI file, store it in Amazon S3 and provide a URL to it here. The URL should be in the following format: S3://bucket/path/ADI-file. For more information about the metadata .zip file, see the setting Metadata destination.
     pub fn get_adi_filename(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +130,7 @@ impl NielsenNonLinearWatermarkSettingsBuilder {
     }
     /// Use the asset ID that you provide to Nielsen to uniquely identify this asset. Required for all Nielsen non-linear watermarking.
     pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_id = input;
-        self
+        self.asset_id = input; self
     }
     /// Use the asset ID that you provide to Nielsen to uniquely identify this asset. Required for all Nielsen non-linear watermarking.
     pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +143,7 @@ impl NielsenNonLinearWatermarkSettingsBuilder {
     }
     /// Use the asset name that you provide to Nielsen for this asset. Required for all Nielsen non-linear watermarking.
     pub fn set_asset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_name = input;
-        self
+        self.asset_name = input; self
     }
     /// Use the asset name that you provide to Nielsen for this asset. Required for all Nielsen non-linear watermarking.
     pub fn get_asset_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +156,7 @@ impl NielsenNonLinearWatermarkSettingsBuilder {
     }
     /// Use the CSID that Nielsen provides to you. This CBET source ID should be unique to your Nielsen account but common to all of your output assets that have CBET watermarking. Required when you choose a value for the setting Watermark types that includes CBET.
     pub fn set_cbet_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cbet_source_id = input;
-        self
+        self.cbet_source_id = input; self
     }
     /// Use the CSID that Nielsen provides to you. This CBET source ID should be unique to your Nielsen account but common to all of your output assets that have CBET watermarking. Required when you choose a value for the setting Watermark types that includes CBET.
     pub fn get_cbet_source_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +169,7 @@ impl NielsenNonLinearWatermarkSettingsBuilder {
     }
     /// Optional. If this asset uses an episode ID with Nielsen, provide it here.
     pub fn set_episode_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.episode_id = input;
-        self
+        self.episode_id = input; self
     }
     /// Optional. If this asset uses an episode ID with Nielsen, provide it here.
     pub fn get_episode_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +182,7 @@ impl NielsenNonLinearWatermarkSettingsBuilder {
     }
     /// Specify the Amazon S3 location where you want MediaConvert to save your Nielsen non-linear metadata .zip file. This Amazon S3 bucket must be in the same Region as the one where you do your MediaConvert transcoding. If you want to include an ADI file in this .zip file, use the setting ADI file to specify it. MediaConvert delivers the Nielsen metadata .zip files only to your metadata destination Amazon S3 bucket. It doesn't deliver the .zip files to Nielsen. You are responsible for delivering the metadata .zip files to Nielsen.
     pub fn set_metadata_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata_destination = input;
-        self
+        self.metadata_destination = input; self
     }
     /// Specify the Amazon S3 location where you want MediaConvert to save your Nielsen non-linear metadata .zip file. This Amazon S3 bucket must be in the same Region as the one where you do your MediaConvert transcoding. If you want to include an ADI file in this .zip file, use the setting ADI file to specify it. MediaConvert delivers the Nielsen metadata .zip files only to your metadata destination Amazon S3 bucket. It doesn't deliver the .zip files to Nielsen. You are responsible for delivering the metadata .zip files to Nielsen.
     pub fn get_metadata_destination(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +195,7 @@ impl NielsenNonLinearWatermarkSettingsBuilder {
     }
     /// Use the SID that Nielsen provides to you. This source ID should be unique to your Nielsen account but common to all of your output assets. Required for all Nielsen non-linear watermarking. This ID should be unique to your Nielsen account but common to all of your output assets. Required for all Nielsen non-linear watermarking.
     pub fn set_source_id(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.source_id = input;
-        self
+        self.source_id = input; self
     }
     /// Use the SID that Nielsen provides to you. This source ID should be unique to your Nielsen account but common to all of your output assets. Required for all Nielsen non-linear watermarking. This ID should be unique to your Nielsen account but common to all of your output assets. Required for all Nielsen non-linear watermarking.
     pub fn get_source_id(&self) -> &::std::option::Option<i32> {
@@ -216,8 +208,7 @@ impl NielsenNonLinearWatermarkSettingsBuilder {
     }
     /// Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you set this value to Watermarked, the service fails the job. Nielsen requires that you add non-linear watermarking to only clean content that doesn't already have non-linear Nielsen watermarks.
     pub fn set_source_watermark_status(mut self, input: ::std::option::Option<crate::types::NielsenSourceWatermarkStatusType>) -> Self {
-        self.source_watermark_status = input;
-        self
+        self.source_watermark_status = input; self
     }
     /// Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you set this value to Watermarked, the service fails the job. Nielsen requires that you add non-linear watermarking to only clean content that doesn't already have non-linear Nielsen watermarks.
     pub fn get_source_watermark_status(&self) -> &::std::option::Option<crate::types::NielsenSourceWatermarkStatusType> {
@@ -230,8 +221,7 @@ impl NielsenNonLinearWatermarkSettingsBuilder {
     }
     /// Specify the endpoint for the TIC server that you have deployed and configured in the AWS Cloud. Required for all Nielsen non-linear watermarking. MediaConvert can't connect directly to a TIC server. Instead, you must use API Gateway to provide a RESTful interface between MediaConvert and a TIC server that you deploy in your AWS account. For more information on deploying a TIC server in your AWS account and the required API Gateway, contact Nielsen support.
     pub fn set_tic_server_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tic_server_url = input;
-        self
+        self.tic_server_url = input; self
     }
     /// Specify the endpoint for the TIC server that you have deployed and configured in the AWS Cloud. Required for all Nielsen non-linear watermarking. MediaConvert can't connect directly to a TIC server. Instead, you must use API Gateway to provide a RESTful interface between MediaConvert and a TIC server that you deploy in your AWS account. For more information on deploying a TIC server in your AWS account and the required API Gateway, contact Nielsen support.
     pub fn get_tic_server_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -244,8 +234,7 @@ impl NielsenNonLinearWatermarkSettingsBuilder {
     }
     /// To create assets that have the same TIC values in each audio track, keep the default value Share TICs. To create assets that have unique TIC values for each audio track, choose Use unique TICs.
     pub fn set_unique_tic_per_audio_track(mut self, input: ::std::option::Option<crate::types::NielsenUniqueTicPerAudioTrackType>) -> Self {
-        self.unique_tic_per_audio_track = input;
-        self
+        self.unique_tic_per_audio_track = input; self
     }
     /// To create assets that have the same TIC values in each audio track, keep the default value Share TICs. To create assets that have unique TIC values for each audio track, choose Use unique TICs.
     pub fn get_unique_tic_per_audio_track(&self) -> &::std::option::Option<crate::types::NielsenUniqueTicPerAudioTrackType> {
@@ -254,17 +243,29 @@ impl NielsenNonLinearWatermarkSettingsBuilder {
     /// Consumes the builder and constructs a [`NielsenNonLinearWatermarkSettings`](crate::types::NielsenNonLinearWatermarkSettings).
     pub fn build(self) -> crate::types::NielsenNonLinearWatermarkSettings {
         crate::types::NielsenNonLinearWatermarkSettings {
-            active_watermark_process: self.active_watermark_process,
-            adi_filename: self.adi_filename,
-            asset_id: self.asset_id,
-            asset_name: self.asset_name,
-            cbet_source_id: self.cbet_source_id,
-            episode_id: self.episode_id,
-            metadata_destination: self.metadata_destination,
-            source_id: self.source_id,
-            source_watermark_status: self.source_watermark_status,
-            tic_server_url: self.tic_server_url,
-            unique_tic_per_audio_track: self.unique_tic_per_audio_track,
+            active_watermark_process: self.active_watermark_process
+            ,
+            adi_filename: self.adi_filename
+            ,
+            asset_id: self.asset_id
+            ,
+            asset_name: self.asset_name
+            ,
+            cbet_source_id: self.cbet_source_id
+            ,
+            episode_id: self.episode_id
+            ,
+            metadata_destination: self.metadata_destination
+            ,
+            source_id: self.source_id
+            ,
+            source_watermark_status: self.source_watermark_status
+            ,
+            tic_server_url: self.tic_server_url
+            ,
+            unique_tic_per_audio_track: self.unique_tic_per_audio_track
+            ,
         }
     }
 }
+

@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSubnetCidrReservationInput {
+pub struct DeleteSubnetCidrReservationInput  {
     /// <p>The ID of the subnet CIDR reservation.</p>
     pub subnet_cidr_reservation_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl DeleteSubnetCidrReservationInput {
+impl  DeleteSubnetCidrReservationInput  {
     /// <p>The ID of the subnet CIDR reservation.</p>
-    pub fn subnet_cidr_reservation_id(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_cidr_reservation_id(&self) -> ::std::option::Option<& str> {
         self.subnet_cidr_reservation_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -41,8 +41,7 @@ impl DeleteSubnetCidrReservationInputBuilder {
     }
     /// <p>The ID of the subnet CIDR reservation.</p>
     pub fn set_subnet_cidr_reservation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_cidr_reservation_id = input;
-        self
+        self.subnet_cidr_reservation_id = input; self
     }
     /// <p>The ID of the subnet CIDR reservation.</p>
     pub fn get_subnet_cidr_reservation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,23 +54,22 @@ impl DeleteSubnetCidrReservationInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DeleteSubnetCidrReservationInput`](crate::operation::delete_subnet_cidr_reservation::DeleteSubnetCidrReservationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_subnet_cidr_reservation::DeleteSubnetCidrReservationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_subnet_cidr_reservation::DeleteSubnetCidrReservationInput {
-            subnet_cidr_reservation_id: self.subnet_cidr_reservation_id,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_subnet_cidr_reservation::DeleteSubnetCidrReservationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_subnet_cidr_reservation::DeleteSubnetCidrReservationInput {
+                subnet_cidr_reservation_id: self.subnet_cidr_reservation_id
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

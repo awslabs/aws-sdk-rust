@@ -5,23 +5,20 @@ pub use crate::operation::admin_set_user_settings::_admin_set_user_settings_inpu
 
 impl AdminSetUserSettingsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::admin_set_user_settings::AdminSetUserSettingsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::admin_set_user_settings::AdminSetUserSettingsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.admin_set_user_settings();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::admin_set_user_settings::AdminSetUserSettingsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::admin_set_user_settings::AdminSetUserSettingsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.admin_set_user_settings();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `AdminSetUserSettings`.
-///
+/// 
 /// <p><i>This action is no longer supported.</i> You can use it to configure only SMS MFA. You can't use it to configure time-based one-time password (TOTP) software token MFA. To configure either type of MFA, use <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserMFAPreference.html">AdminSetUserMFAPreference</a> instead.</p><note>
 /// <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.</p>
 /// <p class="title"><b>Learn more</b></p>
@@ -35,33 +32,32 @@ impl AdminSetUserSettingsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AdminSetUserSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::admin_set_user_settings::builders::AdminSetUserSettingsInputBuilder,
+                    inner: crate::operation::admin_set_user_settings::builders::AdminSetUserSettingsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::admin_set_user_settings::AdminSetUserSettingsOutput,
-        crate::operation::admin_set_user_settings::AdminSetUserSettingsError,
-    > for AdminSetUserSettingsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::admin_set_user_settings::AdminSetUserSettingsOutput,
-            crate::operation::admin_set_user_settings::AdminSetUserSettingsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::admin_set_user_settings::AdminSetUserSettingsOutput,
+                    crate::operation::admin_set_user_settings::AdminSetUserSettingsError,
+                > for AdminSetUserSettingsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::admin_set_user_settings::AdminSetUserSettingsOutput,
+                        crate::operation::admin_set_user_settings::AdminSetUserSettingsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl AdminSetUserSettingsFluentBuilder {
     /// Creates a new `AdminSetUserSettings`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -70,53 +66,44 @@ impl AdminSetUserSettingsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::admin_set_user_settings::AdminSetUserSettingsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::admin_set_user_settings::AdminSetUserSettingsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::admin_set_user_settings::AdminSetUserSettings::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::admin_set_user_settings::AdminSetUserSettings::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::admin_set_user_settings::AdminSetUserSettingsOutput,
-        crate::operation::admin_set_user_settings::AdminSetUserSettingsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::admin_set_user_settings::AdminSetUserSettingsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::admin_set_user_settings::AdminSetUserSettingsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::admin_set_user_settings::AdminSetUserSettings::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::admin_set_user_settings::AdminSetUserSettings::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::admin_set_user_settings::AdminSetUserSettingsOutput, crate::operation::admin_set_user_settings::AdminSetUserSettingsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID of the user pool that contains the user whose options you're setting.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
@@ -155,12 +142,13 @@ impl AdminSetUserSettingsFluentBuilder {
         self
     }
     /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
-    pub fn set_mfa_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>) -> Self {
+    pub fn set_mfa_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MfaOptionType>>) -> Self {
         self.inner = self.inner.set_mfa_options(input);
         self
     }
     /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
-    pub fn get_mfa_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>> {
+    pub fn get_mfa_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MfaOptionType>> {
         self.inner.get_mfa_options()
     }
 }
+

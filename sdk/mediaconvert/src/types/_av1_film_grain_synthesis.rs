@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let av1filmgrainsynthesis = unimplemented!();
 /// match av1filmgrainsynthesis {
@@ -30,16 +30,14 @@
 /// Specifically, when `av1filmgrainsynthesis` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Av1FilmGrainSynthesis::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Film grain synthesis replaces film grain present in your content with similar quality synthesized AV1 film grain. We recommend that you choose Enabled to reduce the bandwidth of your QVBR quality level 5, 6, 7, or 8 outputs. For QVBR quality level 9 or 10 outputs we recommend that you keep the default value, Disabled. When you include Film grain synthesis, you cannot include the Noise reducer preprocessor.
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum Av1FilmGrainSynthesis {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
@@ -47,61 +45,62 @@ pub enum Av1FilmGrainSynthesis {
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for Av1FilmGrainSynthesis {
-    fn from(s: &str) -> Self {
-        match s {
-            "DISABLED" => Av1FilmGrainSynthesis::Disabled,
-            "ENABLED" => Av1FilmGrainSynthesis::Enabled,
-            other => Av1FilmGrainSynthesis::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "DISABLED" => Av1FilmGrainSynthesis::Disabled,
+"ENABLED" => Av1FilmGrainSynthesis::Enabled,
+other => Av1FilmGrainSynthesis::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for Av1FilmGrainSynthesis {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(Av1FilmGrainSynthesis::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(Av1FilmGrainSynthesis::from(s))
+                    }
+                }
 impl Av1FilmGrainSynthesis {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Av1FilmGrainSynthesis::Disabled => "DISABLED",
-            Av1FilmGrainSynthesis::Enabled => "ENABLED",
-            Av1FilmGrainSynthesis::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "ENABLED"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Av1FilmGrainSynthesis::Disabled => "DISABLED",
+    Av1FilmGrainSynthesis::Enabled => "ENABLED",
+    Av1FilmGrainSynthesis::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DISABLED", "ENABLED"]
+                }
+            }
 impl ::std::convert::AsRef<str> for Av1FilmGrainSynthesis {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl Av1FilmGrainSynthesis {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for Av1FilmGrainSynthesis {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            Av1FilmGrainSynthesis::Disabled => write!(f, "DISABLED"),
-            Av1FilmGrainSynthesis::Enabled => write!(f, "ENABLED"),
-            Av1FilmGrainSynthesis::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                Av1FilmGrainSynthesis::Disabled => write!(f, "DISABLED"),
+Av1FilmGrainSynthesis::Enabled => write!(f, "ENABLED"),
+Av1FilmGrainSynthesis::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

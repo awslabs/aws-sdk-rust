@@ -3,7 +3,7 @@
 /// <p>A complex type that contains information about an instance that Cloud Map creates when you submit a <code>RegisterInstance</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Instance {
+pub struct Instance  {
     /// <p>An identifier that you want to associate with the instance. Note the following:</p>
     /// <ul>
     /// <li>
@@ -92,9 +92,9 @@ pub struct Instance {
     /// <p>This value is required if you specified settings for an <code>SRV</code> record or a Route&nbsp;53 health check when you created the service.</p>
     /// </dd>
     /// </dl>
-    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl Instance {
+impl  Instance  {
     /// <p>An identifier that you want to associate with the instance. Note the following:</p>
     /// <ul>
     /// <li>
@@ -108,12 +108,11 @@ impl Instance {
     /// <p>The health check isn't deleted immediately, so it will still appear for a while if you submit a <code>ListHealthChecks</code> request, for example.</p>
     /// </note></li>
     /// </ul>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>A unique string that identifies the request and that allows failed <code>RegisterInstance</code> requests to be retried without the risk of executing the operation twice. You must use a unique <code>CreatorRequestId</code> string every time you submit a <code>RegisterInstance</code> request if you're registering additional instances for the same namespace and service. <code>CreatorRequestId</code> can be any unique string (for example, a date/time stamp).</p>
-    pub fn creator_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn creator_request_id(&self) -> ::std::option::Option<& str> {
         self.creator_request_id.as_deref()
     }
     /// <p>A string map that contains the following information for the service that you specify in <code>ServiceId</code>:</p>
@@ -188,7 +187,7 @@ impl Instance {
     /// <p>This value is required if you specified settings for an <code>SRV</code> record or a Route&nbsp;53 health check when you created the service.</p>
     /// </dd>
     /// </dl>
-    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
 }
@@ -205,7 +204,7 @@ impl Instance {
 pub struct InstanceBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) creator_request_id: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl InstanceBuilder {
     /// <p>An identifier that you want to associate with the instance. Note the following:</p>
@@ -240,8 +239,7 @@ impl InstanceBuilder {
     /// </note></li>
     /// </ul>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>An identifier that you want to associate with the instance. Note the following:</p>
     /// <ul>
@@ -266,8 +264,7 @@ impl InstanceBuilder {
     }
     /// <p>A unique string that identifies the request and that allows failed <code>RegisterInstance</code> requests to be retried without the risk of executing the operation twice. You must use a unique <code>CreatorRequestId</code> string every time you submit a <code>RegisterInstance</code> request if you're registering additional instances for the same namespace and service. <code>CreatorRequestId</code> can be any unique string (for example, a date/time stamp).</p>
     pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creator_request_id = input;
-        self
+        self.creator_request_id = input; self
     }
     /// <p>A unique string that identifies the request and that allows failed <code>RegisterInstance</code> requests to be retried without the risk of executing the operation twice. You must use a unique <code>CreatorRequestId</code> string every time you submit a <code>RegisterInstance</code> request if you're registering additional instances for the same namespace and service. <code>CreatorRequestId</code> can be any unique string (for example, a date/time stamp).</p>
     pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -351,9 +348,9 @@ impl InstanceBuilder {
     /// </dl>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A string map that contains the following information for the service that you specify in <code>ServiceId</code>:</p>
     /// <ul>
@@ -427,9 +424,8 @@ impl InstanceBuilder {
     /// <p>This value is required if you specified settings for an <code>SRV</code> record or a Route&nbsp;53 health check when you created the service.</p>
     /// </dd>
     /// </dl>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>A string map that contains the following information for the service that you specify in <code>ServiceId</code>:</p>
     /// <ul>
@@ -503,22 +499,26 @@ impl InstanceBuilder {
     /// <p>This value is required if you specified settings for an <code>SRV</code> record or a Route&nbsp;53 health check when you created the service.</p>
     /// </dd>
     /// </dl>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`Instance`](crate::types::Instance).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::InstanceBuilder::id)
     pub fn build(self) -> ::std::result::Result<crate::types::Instance, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Instance {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building Instance",
-                )
-            })?,
-            creator_request_id: self.creator_request_id,
-            attributes: self.attributes,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Instance {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building Instance")
+                    )?
+                ,
+                creator_request_id: self.creator_request_id
+                ,
+                attributes: self.attributes
+                ,
+            }
+        )
     }
 }
+

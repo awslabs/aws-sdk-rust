@@ -3,13 +3,13 @@
 /// <p>Context about the current instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CurrentInstance {
+pub struct CurrentInstance  {
     /// <p>Resource ID of the current instance.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The name that you given an instance. This field shows as blank if you haven't given the instance a name.</p>
     pub instance_name: ::std::option::Option<::std::string::String>,
     /// <p>Cost allocation resource tags that are applied to the instance.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagValues>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::TagValues>>,
     /// <p>Details about the resource and utilization.</p>
     pub resource_details: ::std::option::Option<crate::types::ResourceDetails>,
     /// <p>Utilization information of the current instance during the lookback period.</p>
@@ -27,51 +27,52 @@ pub struct CurrentInstance {
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
     pub currency_code: ::std::option::Option<::std::string::String>,
 }
-impl CurrentInstance {
+impl  CurrentInstance  {
     /// <p>Resource ID of the current instance.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The name that you given an instance. This field shows as blank if you haven't given the instance a name.</p>
-    pub fn instance_name(&self) -> ::std::option::Option<&str> {
+    pub fn instance_name(&self) -> ::std::option::Option<& str> {
         self.instance_name.as_deref()
     }
     /// <p>Cost allocation resource tags that are applied to the instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::TagValues] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::TagValues] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Details about the resource and utilization.</p>
-    pub fn resource_details(&self) -> ::std::option::Option<&crate::types::ResourceDetails> {
+    pub fn resource_details(&self) -> ::std::option::Option<& crate::types::ResourceDetails> {
         self.resource_details.as_ref()
     }
     /// <p>Utilization information of the current instance during the lookback period.</p>
-    pub fn resource_utilization(&self) -> ::std::option::Option<&crate::types::ResourceUtilization> {
+    pub fn resource_utilization(&self) -> ::std::option::Option<& crate::types::ResourceUtilization> {
         self.resource_utilization.as_ref()
     }
     /// <p>The number of hours during the lookback period that's covered by reservations.</p>
-    pub fn reservation_covered_hours_in_lookback_period(&self) -> ::std::option::Option<&str> {
+    pub fn reservation_covered_hours_in_lookback_period(&self) -> ::std::option::Option<& str> {
         self.reservation_covered_hours_in_lookback_period.as_deref()
     }
     /// <p>The number of hours during the lookback period that's covered by Savings Plans.</p>
-    pub fn savings_plans_covered_hours_in_lookback_period(&self) -> ::std::option::Option<&str> {
+    pub fn savings_plans_covered_hours_in_lookback_period(&self) -> ::std::option::Option<& str> {
         self.savings_plans_covered_hours_in_lookback_period.as_deref()
     }
     /// <p>The number of hours during the lookback period that's billed at On-Demand rates.</p>
-    pub fn on_demand_hours_in_lookback_period(&self) -> ::std::option::Option<&str> {
+    pub fn on_demand_hours_in_lookback_period(&self) -> ::std::option::Option<& str> {
         self.on_demand_hours_in_lookback_period.as_deref()
     }
     /// <p>The total number of hours that the instance ran during the lookback period.</p>
-    pub fn total_running_hours_in_lookback_period(&self) -> ::std::option::Option<&str> {
+    pub fn total_running_hours_in_lookback_period(&self) -> ::std::option::Option<& str> {
         self.total_running_hours_in_lookback_period.as_deref()
     }
     /// <p>The current On-Demand cost of operating this instance on a monthly basis.</p>
-    pub fn monthly_cost(&self) -> ::std::option::Option<&str> {
+    pub fn monthly_cost(&self) -> ::std::option::Option<& str> {
         self.monthly_cost.as_deref()
     }
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
-    pub fn currency_code(&self) -> ::std::option::Option<&str> {
+    pub fn currency_code(&self) -> ::std::option::Option<& str> {
         self.currency_code.as_deref()
     }
 }
@@ -88,7 +89,7 @@ impl CurrentInstance {
 pub struct CurrentInstanceBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::TagValues>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::TagValues>>,
     pub(crate) resource_details: ::std::option::Option<crate::types::ResourceDetails>,
     pub(crate) resource_utilization: ::std::option::Option<crate::types::ResourceUtilization>,
     pub(crate) reservation_covered_hours_in_lookback_period: ::std::option::Option<::std::string::String>,
@@ -106,8 +107,7 @@ impl CurrentInstanceBuilder {
     }
     /// <p>Resource ID of the current instance.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>Resource ID of the current instance.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +120,7 @@ impl CurrentInstanceBuilder {
     }
     /// <p>The name that you given an instance. This field shows as blank if you haven't given the instance a name.</p>
     pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_name = input;
-        self
+        self.instance_name = input; self
     }
     /// <p>The name that you given an instance. This field shows as blank if you haven't given the instance a name.</p>
     pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,17 +133,16 @@ impl CurrentInstanceBuilder {
     /// <p>Cost allocation resource tags that are applied to the instance.</p>
     pub fn tags(mut self, input: crate::types::TagValues) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Cost allocation resource tags that are applied to the instance.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagValues>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagValues>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Cost allocation resource tags that are applied to the instance.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagValues>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagValues>> {
         &self.tags
     }
     /// <p>Details about the resource and utilization.</p>
@@ -154,8 +152,7 @@ impl CurrentInstanceBuilder {
     }
     /// <p>Details about the resource and utilization.</p>
     pub fn set_resource_details(mut self, input: ::std::option::Option<crate::types::ResourceDetails>) -> Self {
-        self.resource_details = input;
-        self
+        self.resource_details = input; self
     }
     /// <p>Details about the resource and utilization.</p>
     pub fn get_resource_details(&self) -> &::std::option::Option<crate::types::ResourceDetails> {
@@ -168,8 +165,7 @@ impl CurrentInstanceBuilder {
     }
     /// <p>Utilization information of the current instance during the lookback period.</p>
     pub fn set_resource_utilization(mut self, input: ::std::option::Option<crate::types::ResourceUtilization>) -> Self {
-        self.resource_utilization = input;
-        self
+        self.resource_utilization = input; self
     }
     /// <p>Utilization information of the current instance during the lookback period.</p>
     pub fn get_resource_utilization(&self) -> &::std::option::Option<crate::types::ResourceUtilization> {
@@ -182,8 +178,7 @@ impl CurrentInstanceBuilder {
     }
     /// <p>The number of hours during the lookback period that's covered by reservations.</p>
     pub fn set_reservation_covered_hours_in_lookback_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reservation_covered_hours_in_lookback_period = input;
-        self
+        self.reservation_covered_hours_in_lookback_period = input; self
     }
     /// <p>The number of hours during the lookback period that's covered by reservations.</p>
     pub fn get_reservation_covered_hours_in_lookback_period(&self) -> &::std::option::Option<::std::string::String> {
@@ -196,8 +191,7 @@ impl CurrentInstanceBuilder {
     }
     /// <p>The number of hours during the lookback period that's covered by Savings Plans.</p>
     pub fn set_savings_plans_covered_hours_in_lookback_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.savings_plans_covered_hours_in_lookback_period = input;
-        self
+        self.savings_plans_covered_hours_in_lookback_period = input; self
     }
     /// <p>The number of hours during the lookback period that's covered by Savings Plans.</p>
     pub fn get_savings_plans_covered_hours_in_lookback_period(&self) -> &::std::option::Option<::std::string::String> {
@@ -210,8 +204,7 @@ impl CurrentInstanceBuilder {
     }
     /// <p>The number of hours during the lookback period that's billed at On-Demand rates.</p>
     pub fn set_on_demand_hours_in_lookback_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.on_demand_hours_in_lookback_period = input;
-        self
+        self.on_demand_hours_in_lookback_period = input; self
     }
     /// <p>The number of hours during the lookback period that's billed at On-Demand rates.</p>
     pub fn get_on_demand_hours_in_lookback_period(&self) -> &::std::option::Option<::std::string::String> {
@@ -224,8 +217,7 @@ impl CurrentInstanceBuilder {
     }
     /// <p>The total number of hours that the instance ran during the lookback period.</p>
     pub fn set_total_running_hours_in_lookback_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.total_running_hours_in_lookback_period = input;
-        self
+        self.total_running_hours_in_lookback_period = input; self
     }
     /// <p>The total number of hours that the instance ran during the lookback period.</p>
     pub fn get_total_running_hours_in_lookback_period(&self) -> &::std::option::Option<::std::string::String> {
@@ -238,8 +230,7 @@ impl CurrentInstanceBuilder {
     }
     /// <p>The current On-Demand cost of operating this instance on a monthly basis.</p>
     pub fn set_monthly_cost(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monthly_cost = input;
-        self
+        self.monthly_cost = input; self
     }
     /// <p>The current On-Demand cost of operating this instance on a monthly basis.</p>
     pub fn get_monthly_cost(&self) -> &::std::option::Option<::std::string::String> {
@@ -252,8 +243,7 @@ impl CurrentInstanceBuilder {
     }
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
     pub fn set_currency_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.currency_code = input;
-        self
+        self.currency_code = input; self
     }
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
     pub fn get_currency_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -262,17 +252,29 @@ impl CurrentInstanceBuilder {
     /// Consumes the builder and constructs a [`CurrentInstance`](crate::types::CurrentInstance).
     pub fn build(self) -> crate::types::CurrentInstance {
         crate::types::CurrentInstance {
-            resource_id: self.resource_id,
-            instance_name: self.instance_name,
-            tags: self.tags,
-            resource_details: self.resource_details,
-            resource_utilization: self.resource_utilization,
-            reservation_covered_hours_in_lookback_period: self.reservation_covered_hours_in_lookback_period,
-            savings_plans_covered_hours_in_lookback_period: self.savings_plans_covered_hours_in_lookback_period,
-            on_demand_hours_in_lookback_period: self.on_demand_hours_in_lookback_period,
-            total_running_hours_in_lookback_period: self.total_running_hours_in_lookback_period,
-            monthly_cost: self.monthly_cost,
-            currency_code: self.currency_code,
+            resource_id: self.resource_id
+            ,
+            instance_name: self.instance_name
+            ,
+            tags: self.tags
+            ,
+            resource_details: self.resource_details
+            ,
+            resource_utilization: self.resource_utilization
+            ,
+            reservation_covered_hours_in_lookback_period: self.reservation_covered_hours_in_lookback_period
+            ,
+            savings_plans_covered_hours_in_lookback_period: self.savings_plans_covered_hours_in_lookback_period
+            ,
+            on_demand_hours_in_lookback_period: self.on_demand_hours_in_lookback_period
+            ,
+            total_running_hours_in_lookback_period: self.total_running_hours_in_lookback_period
+            ,
+            monthly_cost: self.monthly_cost
+            ,
+            currency_code: self.currency_code
+            ,
         }
     }
 }
+

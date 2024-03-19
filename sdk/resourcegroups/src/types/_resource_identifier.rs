@@ -3,19 +3,19 @@
 /// <p>A structure that contains the ARN of a resource and its resource type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceIdentifier {
+pub struct ResourceIdentifier  {
     /// <p>The ARN of a resource.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The resource type of a resource, such as <code>AWS::EC2::Instance</code>.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
 }
-impl ResourceIdentifier {
+impl  ResourceIdentifier  {
     /// <p>The ARN of a resource.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The resource type of a resource, such as <code>AWS::EC2::Instance</code>.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ResourceIdentifierBuilder {
     }
     /// <p>The ARN of a resource.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The ARN of a resource.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ResourceIdentifierBuilder {
     }
     /// <p>The resource type of a resource, such as <code>AWS::EC2::Instance</code>.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type of a resource, such as <code>AWS::EC2::Instance</code>.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ResourceIdentifierBuilder {
     /// Consumes the builder and constructs a [`ResourceIdentifier`](crate::types::ResourceIdentifier).
     pub fn build(self) -> crate::types::ResourceIdentifier {
         crate::types::ResourceIdentifier {
-            resource_arn: self.resource_arn,
-            resource_type: self.resource_type,
+            resource_arn: self.resource_arn
+            ,
+            resource_type: self.resource_type
+            ,
         }
     }
 }
+

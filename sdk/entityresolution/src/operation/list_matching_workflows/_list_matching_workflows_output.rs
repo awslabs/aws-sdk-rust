@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMatchingWorkflowsOutput {
+pub struct ListMatchingWorkflowsOutput  {
     /// <p>A list of <code>MatchingWorkflowSummary</code> objects, each of which contain the fields <code>WorkflowName</code>, <code>WorkflowArn</code>, <code>CreatedAt</code>, and <code>UpdatedAt</code>.</p>
-    pub workflow_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MatchingWorkflowSummary>>,
+    pub workflow_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::MatchingWorkflowSummary>>,
     /// <p>The pagination token from the previous API call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListMatchingWorkflowsOutput {
+impl  ListMatchingWorkflowsOutput  {
     /// <p>A list of <code>MatchingWorkflowSummary</code> objects, each of which contain the fields <code>WorkflowName</code>, <code>WorkflowArn</code>, <code>CreatedAt</code>, and <code>UpdatedAt</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workflow_summaries.is_none()`.
-    pub fn workflow_summaries(&self) -> &[crate::types::MatchingWorkflowSummary] {
-        self.workflow_summaries.as_deref().unwrap_or_default()
+    pub fn workflow_summaries(&self) -> & [crate::types::MatchingWorkflowSummary] {
+        self.workflow_summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The pagination token from the previous API call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListMatchingWorkflowsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListMatchingWorkflowsOutput {
     /// Creates a new builder-style object to manufacture [`ListMatchingWorkflowsOutput`](crate::operation::list_matching_workflows::ListMatchingWorkflowsOutput).
     pub fn builder() -> crate::operation::list_matching_workflows::builders::ListMatchingWorkflowsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListMatchingWorkflowsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMatchingWorkflowsOutputBuilder {
-    pub(crate) workflow_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MatchingWorkflowSummary>>,
+    pub(crate) workflow_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::MatchingWorkflowSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListMatchingWorkflowsOutputBuilder {
     /// <p>A list of <code>MatchingWorkflowSummary</code> objects, each of which contain the fields <code>WorkflowName</code>, <code>WorkflowArn</code>, <code>CreatedAt</code>, and <code>UpdatedAt</code>.</p>
     pub fn workflow_summaries(mut self, input: crate::types::MatchingWorkflowSummary) -> Self {
         let mut v = self.workflow_summaries.unwrap_or_default();
-        v.push(input);
-        self.workflow_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.workflow_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>MatchingWorkflowSummary</code> objects, each of which contain the fields <code>WorkflowName</code>, <code>WorkflowArn</code>, <code>CreatedAt</code>, and <code>UpdatedAt</code>.</p>
-    pub fn set_workflow_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MatchingWorkflowSummary>>) -> Self {
-        self.workflow_summaries = input;
-        self
+    pub fn set_workflow_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MatchingWorkflowSummary>>) -> Self {
+        self.workflow_summaries = input; self
     }
     /// <p>A list of <code>MatchingWorkflowSummary</code> objects, each of which contain the fields <code>WorkflowName</code>, <code>WorkflowArn</code>, <code>CreatedAt</code>, and <code>UpdatedAt</code>.</p>
-    pub fn get_workflow_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchingWorkflowSummary>> {
+    pub fn get_workflow_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MatchingWorkflowSummary>> {
         &self.workflow_summaries
     }
     /// <p>The pagination token from the previous API call.</p>
@@ -69,28 +69,30 @@ impl ListMatchingWorkflowsOutputBuilder {
     }
     /// <p>The pagination token from the previous API call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token from the previous API call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListMatchingWorkflowsOutput`](crate::operation::list_matching_workflows::ListMatchingWorkflowsOutput).
     pub fn build(self) -> crate::operation::list_matching_workflows::ListMatchingWorkflowsOutput {
         crate::operation::list_matching_workflows::ListMatchingWorkflowsOutput {
-            workflow_summaries: self.workflow_summaries,
-            next_token: self.next_token,
+            workflow_summaries: self.workflow_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -28,11 +28,7 @@ impl FindingDetails {
     /// Tries to convert the enum instance into [`ExternalAccessDetails`](crate::types::FindingDetails::ExternalAccessDetails), extracting the inner [`ExternalAccessDetails`](crate::types::ExternalAccessDetails).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_external_access_details(&self) -> ::std::result::Result<&crate::types::ExternalAccessDetails, &Self> {
-        if let FindingDetails::ExternalAccessDetails(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let FindingDetails::ExternalAccessDetails(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ExternalAccessDetails`](crate::types::FindingDetails::ExternalAccessDetails).
     pub fn is_external_access_details(&self) -> bool {
@@ -41,11 +37,7 @@ impl FindingDetails {
     /// Tries to convert the enum instance into [`UnusedIamRoleDetails`](crate::types::FindingDetails::UnusedIamRoleDetails), extracting the inner [`UnusedIamRoleDetails`](crate::types::UnusedIamRoleDetails).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_unused_iam_role_details(&self) -> ::std::result::Result<&crate::types::UnusedIamRoleDetails, &Self> {
-        if let FindingDetails::UnusedIamRoleDetails(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let FindingDetails::UnusedIamRoleDetails(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`UnusedIamRoleDetails`](crate::types::FindingDetails::UnusedIamRoleDetails).
     pub fn is_unused_iam_role_details(&self) -> bool {
@@ -54,11 +46,7 @@ impl FindingDetails {
     /// Tries to convert the enum instance into [`UnusedIamUserAccessKeyDetails`](crate::types::FindingDetails::UnusedIamUserAccessKeyDetails), extracting the inner [`UnusedIamUserAccessKeyDetails`](crate::types::UnusedIamUserAccessKeyDetails).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_unused_iam_user_access_key_details(&self) -> ::std::result::Result<&crate::types::UnusedIamUserAccessKeyDetails, &Self> {
-        if let FindingDetails::UnusedIamUserAccessKeyDetails(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let FindingDetails::UnusedIamUserAccessKeyDetails(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`UnusedIamUserAccessKeyDetails`](crate::types::FindingDetails::UnusedIamUserAccessKeyDetails).
     pub fn is_unused_iam_user_access_key_details(&self) -> bool {
@@ -67,11 +55,7 @@ impl FindingDetails {
     /// Tries to convert the enum instance into [`UnusedIamUserPasswordDetails`](crate::types::FindingDetails::UnusedIamUserPasswordDetails), extracting the inner [`UnusedIamUserPasswordDetails`](crate::types::UnusedIamUserPasswordDetails).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_unused_iam_user_password_details(&self) -> ::std::result::Result<&crate::types::UnusedIamUserPasswordDetails, &Self> {
-        if let FindingDetails::UnusedIamUserPasswordDetails(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let FindingDetails::UnusedIamUserPasswordDetails(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`UnusedIamUserPasswordDetails`](crate::types::FindingDetails::UnusedIamUserPasswordDetails).
     pub fn is_unused_iam_user_password_details(&self) -> bool {
@@ -80,11 +64,7 @@ impl FindingDetails {
     /// Tries to convert the enum instance into [`UnusedPermissionDetails`](crate::types::FindingDetails::UnusedPermissionDetails), extracting the inner [`UnusedPermissionDetails`](crate::types::UnusedPermissionDetails).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_unused_permission_details(&self) -> ::std::result::Result<&crate::types::UnusedPermissionDetails, &Self> {
-        if let FindingDetails::UnusedPermissionDetails(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let FindingDetails::UnusedPermissionDetails(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`UnusedPermissionDetails`](crate::types::FindingDetails::UnusedPermissionDetails).
     pub fn is_unused_permission_details(&self) -> bool {
@@ -95,3 +75,4 @@ impl FindingDetails {
         matches!(self, Self::Unknown)
     }
 }
+

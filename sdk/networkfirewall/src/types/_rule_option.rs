@@ -3,23 +3,23 @@
 /// <p>Additional settings for a stateful rule. This is part of the <code>StatefulRule</code> configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RuleOption {
+pub struct RuleOption  {
     /// <p>The keyword for the Suricata compatible rule option. You must include a <code>sid</code> (signature ID), and can optionally include other keywords. For information about Suricata compatible keywords, see <a href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule options</a> in the Suricata documentation.</p>
     pub keyword: ::std::string::String,
     /// <p>The settings of the Suricata compatible rule option. Rule options have zero or more setting values, and the number of possible and required settings depends on the <code>Keyword</code>. For more information about the settings for specific options, see <a href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule options</a>.</p>
-    pub settings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub settings: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl RuleOption {
+impl  RuleOption  {
     /// <p>The keyword for the Suricata compatible rule option. You must include a <code>sid</code> (signature ID), and can optionally include other keywords. For information about Suricata compatible keywords, see <a href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule options</a> in the Suricata documentation.</p>
-    pub fn keyword(&self) -> &str {
-        use std::ops::Deref;
-        self.keyword.deref()
+    pub fn keyword(&self) -> & str {
+        use std::ops::Deref; self.keyword.deref()
     }
     /// <p>The settings of the Suricata compatible rule option. Rule options have zero or more setting values, and the number of possible and required settings depends on the <code>Keyword</code>. For more information about the settings for specific options, see <a href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule options</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.settings.is_none()`.
-    pub fn settings(&self) -> &[::std::string::String] {
-        self.settings.as_deref().unwrap_or_default()
+    pub fn settings(&self) -> & [::std::string::String] {
+        self.settings.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RuleOption {
@@ -34,7 +34,7 @@ impl RuleOption {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleOptionBuilder {
     pub(crate) keyword: ::std::option::Option<::std::string::String>,
-    pub(crate) settings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) settings: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl RuleOptionBuilder {
     /// <p>The keyword for the Suricata compatible rule option. You must include a <code>sid</code> (signature ID), and can optionally include other keywords. For information about Suricata compatible keywords, see <a href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule options</a> in the Suricata documentation.</p>
@@ -45,8 +45,7 @@ impl RuleOptionBuilder {
     }
     /// <p>The keyword for the Suricata compatible rule option. You must include a <code>sid</code> (signature ID), and can optionally include other keywords. For information about Suricata compatible keywords, see <a href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule options</a> in the Suricata documentation.</p>
     pub fn set_keyword(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.keyword = input;
-        self
+        self.keyword = input; self
     }
     /// <p>The keyword for the Suricata compatible rule option. You must include a <code>sid</code> (signature ID), and can optionally include other keywords. For information about Suricata compatible keywords, see <a href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule options</a> in the Suricata documentation.</p>
     pub fn get_keyword(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,31 +58,33 @@ impl RuleOptionBuilder {
     /// <p>The settings of the Suricata compatible rule option. Rule options have zero or more setting values, and the number of possible and required settings depends on the <code>Keyword</code>. For more information about the settings for specific options, see <a href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule options</a>.</p>
     pub fn settings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.settings.unwrap_or_default();
-        v.push(input.into());
-        self.settings = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.settings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The settings of the Suricata compatible rule option. Rule options have zero or more setting values, and the number of possible and required settings depends on the <code>Keyword</code>. For more information about the settings for specific options, see <a href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule options</a>.</p>
-    pub fn set_settings(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.settings = input;
-        self
+    pub fn set_settings(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.settings = input; self
     }
     /// <p>The settings of the Suricata compatible rule option. Rule options have zero or more setting values, and the number of possible and required settings depends on the <code>Keyword</code>. For more information about the settings for specific options, see <a href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule options</a>.</p>
-    pub fn get_settings(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_settings(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.settings
     }
     /// Consumes the builder and constructs a [`RuleOption`](crate::types::RuleOption).
     /// This method will fail if any of the following fields are not set:
     /// - [`keyword`](crate::types::builders::RuleOptionBuilder::keyword)
     pub fn build(self) -> ::std::result::Result<crate::types::RuleOption, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RuleOption {
-            keyword: self.keyword.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "keyword",
-                    "keyword was not specified but it is required when building RuleOption",
-                )
-            })?,
-            settings: self.settings,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RuleOption {
+                keyword: self.keyword
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("keyword", "keyword was not specified but it is required when building RuleOption")
+                    )?
+                ,
+                settings: self.settings
+                ,
+            }
+        )
     }
 }
+

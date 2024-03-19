@@ -3,7 +3,7 @@
 /// <p>Summary of the information about a CloudFront origin access identity.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CloudFrontOriginAccessIdentitySummary {
+pub struct CloudFrontOriginAccessIdentitySummary  {
     /// <p>The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.</p>
     pub id: ::std::string::String,
     /// <p>The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin access identity read permission to an object in Amazon S3.</p>
@@ -11,21 +11,18 @@ pub struct CloudFrontOriginAccessIdentitySummary {
     /// <p>The comment for this origin access identity, as originally specified when created.</p>
     pub comment: ::std::string::String,
 }
-impl CloudFrontOriginAccessIdentitySummary {
+impl  CloudFrontOriginAccessIdentitySummary  {
     /// <p>The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin access identity read permission to an object in Amazon S3.</p>
-    pub fn s3_canonical_user_id(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_canonical_user_id.deref()
+    pub fn s3_canonical_user_id(&self) -> & str {
+        use std::ops::Deref; self.s3_canonical_user_id.deref()
     }
     /// <p>The comment for this origin access identity, as originally specified when created.</p>
-    pub fn comment(&self) -> &str {
-        use std::ops::Deref;
-        self.comment.deref()
+    pub fn comment(&self) -> & str {
+        use std::ops::Deref; self.comment.deref()
     }
 }
 impl CloudFrontOriginAccessIdentitySummary {
@@ -52,8 +49,7 @@ impl CloudFrontOriginAccessIdentitySummaryBuilder {
     }
     /// <p>The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +63,7 @@ impl CloudFrontOriginAccessIdentitySummaryBuilder {
     }
     /// <p>The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin access identity read permission to an object in Amazon S3.</p>
     pub fn set_s3_canonical_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_canonical_user_id = input;
-        self
+        self.s3_canonical_user_id = input; self
     }
     /// <p>The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin access identity read permission to an object in Amazon S3.</p>
     pub fn get_s3_canonical_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +77,7 @@ impl CloudFrontOriginAccessIdentitySummaryBuilder {
     }
     /// <p>The comment for this origin access identity, as originally specified when created.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// <p>The comment for this origin access identity, as originally specified when created.</p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,28 +88,26 @@ impl CloudFrontOriginAccessIdentitySummaryBuilder {
     /// - [`id`](crate::types::builders::CloudFrontOriginAccessIdentitySummaryBuilder::id)
     /// - [`s3_canonical_user_id`](crate::types::builders::CloudFrontOriginAccessIdentitySummaryBuilder::s3_canonical_user_id)
     /// - [`comment`](crate::types::builders::CloudFrontOriginAccessIdentitySummaryBuilder::comment)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::CloudFrontOriginAccessIdentitySummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CloudFrontOriginAccessIdentitySummary {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building CloudFrontOriginAccessIdentitySummary",
-                )
-            })?,
-            s3_canonical_user_id: self.s3_canonical_user_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_canonical_user_id",
-                    "s3_canonical_user_id was not specified but it is required when building CloudFrontOriginAccessIdentitySummary",
-                )
-            })?,
-            comment: self.comment.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "comment",
-                    "comment was not specified but it is required when building CloudFrontOriginAccessIdentitySummary",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::CloudFrontOriginAccessIdentitySummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::CloudFrontOriginAccessIdentitySummary {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building CloudFrontOriginAccessIdentitySummary")
+                    )?
+                ,
+                s3_canonical_user_id: self.s3_canonical_user_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_canonical_user_id", "s3_canonical_user_id was not specified but it is required when building CloudFrontOriginAccessIdentitySummary")
+                    )?
+                ,
+                comment: self.comment
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("comment", "comment was not specified but it is required when building CloudFrontOriginAccessIdentitySummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

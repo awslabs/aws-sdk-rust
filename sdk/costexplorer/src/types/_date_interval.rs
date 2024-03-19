@@ -3,22 +3,20 @@
 /// <p>The time period of the request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DateInterval {
+pub struct DateInterval  {
     /// <p>The beginning of the time period. The start date is inclusive. For example, if <code>start</code> is <code>2017-01-01</code>, Amazon Web Services retrieves cost and usage data starting at <code>2017-01-01</code> up to the end date. The start date must be equal to or no later than the current date to avoid a validation error.</p>
     pub start: ::std::string::String,
     /// <p>The end of the time period. The end date is exclusive. For example, if <code>end</code> is <code>2017-05-01</code>, Amazon Web Services retrieves cost and usage data from the start date up to, but not including, <code>2017-05-01</code>.</p>
     pub end: ::std::string::String,
 }
-impl DateInterval {
+impl  DateInterval  {
     /// <p>The beginning of the time period. The start date is inclusive. For example, if <code>start</code> is <code>2017-01-01</code>, Amazon Web Services retrieves cost and usage data starting at <code>2017-01-01</code> up to the end date. The start date must be equal to or no later than the current date to avoid a validation error.</p>
-    pub fn start(&self) -> &str {
-        use std::ops::Deref;
-        self.start.deref()
+    pub fn start(&self) -> & str {
+        use std::ops::Deref; self.start.deref()
     }
     /// <p>The end of the time period. The end date is exclusive. For example, if <code>end</code> is <code>2017-05-01</code>, Amazon Web Services retrieves cost and usage data from the start date up to, but not including, <code>2017-05-01</code>.</p>
-    pub fn end(&self) -> &str {
-        use std::ops::Deref;
-        self.end.deref()
+    pub fn end(&self) -> & str {
+        use std::ops::Deref; self.end.deref()
     }
 }
 impl DateInterval {
@@ -44,8 +42,7 @@ impl DateIntervalBuilder {
     }
     /// <p>The beginning of the time period. The start date is inclusive. For example, if <code>start</code> is <code>2017-01-01</code>, Amazon Web Services retrieves cost and usage data starting at <code>2017-01-01</code> up to the end date. The start date must be equal to or no later than the current date to avoid a validation error.</p>
     pub fn set_start(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start = input;
-        self
+        self.start = input; self
     }
     /// <p>The beginning of the time period. The start date is inclusive. For example, if <code>start</code> is <code>2017-01-01</code>, Amazon Web Services retrieves cost and usage data starting at <code>2017-01-01</code> up to the end date. The start date must be equal to or no later than the current date to avoid a validation error.</p>
     pub fn get_start(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl DateIntervalBuilder {
     }
     /// <p>The end of the time period. The end date is exclusive. For example, if <code>end</code> is <code>2017-05-01</code>, Amazon Web Services retrieves cost and usage data from the start date up to, but not including, <code>2017-05-01</code>.</p>
     pub fn set_end(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.end = input;
-        self
+        self.end = input; self
     }
     /// <p>The end of the time period. The end date is exclusive. For example, if <code>end</code> is <code>2017-05-01</code>, Amazon Web Services retrieves cost and usage data from the start date up to, but not including, <code>2017-05-01</code>.</p>
     pub fn get_end(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl DateIntervalBuilder {
     /// - [`start`](crate::types::builders::DateIntervalBuilder::start)
     /// - [`end`](crate::types::builders::DateIntervalBuilder::end)
     pub fn build(self) -> ::std::result::Result<crate::types::DateInterval, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DateInterval {
-            start: self.start.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start",
-                    "start was not specified but it is required when building DateInterval",
-                )
-            })?,
-            end: self.end.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "end",
-                    "end was not specified but it is required when building DateInterval",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DateInterval {
+                start: self.start
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start", "start was not specified but it is required when building DateInterval")
+                    )?
+                ,
+                end: self.end
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("end", "end was not specified but it is required when building DateInterval")
+                    )?
+                ,
+            }
+        )
     }
 }
+

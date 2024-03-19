@@ -3,35 +3,36 @@
 /// <p>The input value for <code>RemoveTagsFromVaultInput</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveTagsFromVaultInput {
+pub struct RemoveTagsFromVaultInput  {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the vault.</p>
     pub vault_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of tag keys. Each corresponding tag is removed from the vault.</p>
-    pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub tag_keys: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl RemoveTagsFromVaultInput {
+impl  RemoveTagsFromVaultInput  {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> ::std::option::Option<&str> {
+    pub fn vault_name(&self) -> ::std::option::Option<& str> {
         self.vault_name.as_deref()
     }
     /// <p>A list of tag keys. Each corresponding tag is removed from the vault.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_keys.is_none()`.
-    pub fn tag_keys(&self) -> &[::std::string::String] {
-        self.tag_keys.as_deref().unwrap_or_default()
+    pub fn tag_keys(&self) -> & [::std::string::String] {
+        self.tag_keys.as_deref()
+        .unwrap_or_default()
     }
 }
 impl crate::glacier_interceptors::GlacierAccountId for RemoveTagsFromVaultInput {
-    fn account_id_mut(&mut self) -> &mut Option<String> {
-        &mut self.account_id
-    }
-}
+                        fn account_id_mut(&mut self) -> &mut Option<String> {
+                            &mut self.account_id
+                        }
+                    }
 impl RemoveTagsFromVaultInput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsFromVaultInput`](crate::operation::remove_tags_from_vault::RemoveTagsFromVaultInput).
     pub fn builder() -> crate::operation::remove_tags_from_vault::builders::RemoveTagsFromVaultInputBuilder {
@@ -45,7 +46,7 @@ impl RemoveTagsFromVaultInput {
 pub struct RemoveTagsFromVaultInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) vault_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl RemoveTagsFromVaultInputBuilder {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
@@ -56,8 +57,7 @@ impl RemoveTagsFromVaultInputBuilder {
     }
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl RemoveTagsFromVaultInputBuilder {
     }
     /// <p>The name of the vault.</p>
     pub fn set_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vault_name = input;
-        self
+        self.vault_name = input; self
     }
     /// <p>The name of the vault.</p>
     pub fn get_vault_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,28 +84,30 @@ impl RemoveTagsFromVaultInputBuilder {
     /// <p>A list of tag keys. Each corresponding tag is removed from the vault.</p>
     pub fn tag_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tag_keys.unwrap_or_default();
-        v.push(input.into());
-        self.tag_keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.tag_keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tag keys. Each corresponding tag is removed from the vault.</p>
-    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.tag_keys = input;
-        self
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.tag_keys = input; self
     }
     /// <p>A list of tag keys. Each corresponding tag is removed from the vault.</p>
-    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.tag_keys
     }
     /// Consumes the builder and constructs a [`RemoveTagsFromVaultInput`](crate::operation::remove_tags_from_vault::RemoveTagsFromVaultInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::remove_tags_from_vault::RemoveTagsFromVaultInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::remove_tags_from_vault::RemoveTagsFromVaultInput {
-            account_id: self.account_id,
-            vault_name: self.vault_name,
-            tag_keys: self.tag_keys,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_tags_from_vault::RemoveTagsFromVaultInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::remove_tags_from_vault::RemoveTagsFromVaultInput {
+                account_id: self.account_id
+                ,
+                vault_name: self.vault_name
+                ,
+                tag_keys: self.tag_keys
+                ,
+            }
+        )
     }
 }
+

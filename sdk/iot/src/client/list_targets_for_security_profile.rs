@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTargetsForSecurityProfile`](crate::operation::list_targets_for_security_profile::builders::ListTargetsForSecurityProfileFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_targets_for_security_profile::builders::ListTargetsForSecurityProfileFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`security_profile_name(impl Into<String>)`](crate::operation::list_targets_for_security_profile::builders::ListTargetsForSecurityProfileFluentBuilder::security_profile_name) / [`set_security_profile_name(Option<String>)`](crate::operation::list_targets_for_security_profile::builders::ListTargetsForSecurityProfileFluentBuilder::set_security_profile_name):<br>required: **true**<br><p>The security profile.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_targets_for_security_profile::builders::ListTargetsForSecurityProfileFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_targets_for_security_profile::builders::ListTargetsForSecurityProfileFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_targets_for_security_profile::builders::ListTargetsForSecurityProfileFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_targets_for_security_profile::builders::ListTargetsForSecurityProfileFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return at one time.</p><br>
-    /// - On success, responds with [`ListTargetsForSecurityProfileOutput`](crate::operation::list_targets_for_security_profile::ListTargetsForSecurityProfileOutput) with field(s):
+                            /// - On success, responds with [`ListTargetsForSecurityProfileOutput`](crate::operation::list_targets_for_security_profile::ListTargetsForSecurityProfileOutput) with field(s):
     ///   - [`security_profile_targets(Option<Vec::<SecurityProfileTarget>>)`](crate::operation::list_targets_for_security_profile::ListTargetsForSecurityProfileOutput::security_profile_targets): <p>The thing groups to which the security profile is attached.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_targets_for_security_profile::ListTargetsForSecurityProfileOutput::next_token): <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<ListTargetsForSecurityProfileError>`](crate::operation::list_targets_for_security_profile::ListTargetsForSecurityProfileError)
-    pub fn list_targets_for_security_profile(
-        &self,
-    ) -> crate::operation::list_targets_for_security_profile::builders::ListTargetsForSecurityProfileFluentBuilder {
-        crate::operation::list_targets_for_security_profile::builders::ListTargetsForSecurityProfileFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListTargetsForSecurityProfileError>`](crate::operation::list_targets_for_security_profile::ListTargetsForSecurityProfileError)
+    pub fn list_targets_for_security_profile(&self) -> crate::operation::list_targets_for_security_profile::builders::ListTargetsForSecurityProfileFluentBuilder {
+                                crate::operation::list_targets_for_security_profile::builders::ListTargetsForSecurityProfileFluentBuilder::new(self.handle.clone())
+                            }
 }
+

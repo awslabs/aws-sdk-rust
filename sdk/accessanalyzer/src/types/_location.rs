@@ -3,20 +3,19 @@
 /// <p>A location in a policy that is represented as a path through the JSON representation and a corresponding span.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Location {
+pub struct Location  {
     /// <p>A path in a policy, represented as a sequence of path elements.</p>
-    pub path: ::std::vec::Vec<crate::types::PathElement>,
+    pub path: ::std::vec::Vec::<crate::types::PathElement>,
     /// <p>A span in a policy.</p>
     pub span: ::std::option::Option<crate::types::Span>,
 }
-impl Location {
+impl  Location  {
     /// <p>A path in a policy, represented as a sequence of path elements.</p>
-    pub fn path(&self) -> &[crate::types::PathElement] {
-        use std::ops::Deref;
-        self.path.deref()
+    pub fn path(&self) -> & [crate::types::PathElement] {
+        use std::ops::Deref; self.path.deref()
     }
     /// <p>A span in a policy.</p>
-    pub fn span(&self) -> ::std::option::Option<&crate::types::Span> {
+    pub fn span(&self) -> ::std::option::Option<& crate::types::Span> {
         self.span.as_ref()
     }
 }
@@ -31,7 +30,7 @@ impl Location {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LocationBuilder {
-    pub(crate) path: ::std::option::Option<::std::vec::Vec<crate::types::PathElement>>,
+    pub(crate) path: ::std::option::Option<::std::vec::Vec::<crate::types::PathElement>>,
     pub(crate) span: ::std::option::Option<crate::types::Span>,
 }
 impl LocationBuilder {
@@ -42,17 +41,16 @@ impl LocationBuilder {
     /// <p>A path in a policy, represented as a sequence of path elements.</p>
     pub fn path(mut self, input: crate::types::PathElement) -> Self {
         let mut v = self.path.unwrap_or_default();
-        v.push(input);
-        self.path = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.path = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A path in a policy, represented as a sequence of path elements.</p>
-    pub fn set_path(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PathElement>>) -> Self {
-        self.path = input;
-        self
+    pub fn set_path(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PathElement>>) -> Self {
+        self.path = input; self
     }
     /// <p>A path in a policy, represented as a sequence of path elements.</p>
-    pub fn get_path(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PathElement>> {
+    pub fn get_path(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PathElement>> {
         &self.path
     }
     /// <p>A span in a policy.</p>
@@ -63,8 +61,7 @@ impl LocationBuilder {
     }
     /// <p>A span in a policy.</p>
     pub fn set_span(mut self, input: ::std::option::Option<crate::types::Span>) -> Self {
-        self.span = input;
-        self
+        self.span = input; self
     }
     /// <p>A span in a policy.</p>
     pub fn get_span(&self) -> &::std::option::Option<crate::types::Span> {
@@ -74,14 +71,17 @@ impl LocationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`path`](crate::types::builders::LocationBuilder::path)
     pub fn build(self) -> ::std::result::Result<crate::types::Location, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Location {
-            path: self.path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "path",
-                    "path was not specified but it is required when building Location",
-                )
-            })?,
-            span: self.span,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Location {
+                path: self.path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("path", "path was not specified but it is required when building Location")
+                    )?
+                ,
+                span: self.span
+                ,
+            }
+        )
     }
 }
+

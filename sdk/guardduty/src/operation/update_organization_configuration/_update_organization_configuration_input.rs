@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateOrganizationConfigurationInput {
+pub struct UpdateOrganizationConfigurationInput  {
     /// <p>The ID of the detector that configures the delegated administrator.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>Represents whether or not to automatically enable member accounts in the organization.</p>
@@ -13,7 +13,7 @@ pub struct UpdateOrganizationConfigurationInput {
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
     pub data_sources: ::std::option::Option<crate::types::OrganizationDataSourceConfigurations>,
     /// <p>A list of features that will be configured for the organization.</p>
-    pub features: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationFeatureConfiguration>>,
+    pub features: ::std::option::Option<::std::vec::Vec::<crate::types::OrganizationFeatureConfiguration>>,
     /// <p>Indicates the auto-enablement configuration of GuardDuty for the member accounts in the organization. You must provide a value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>.</p>
     /// <p>Use one of the following configuration values for <code>autoEnableOrganizationMembers</code>:</p>
     /// <ul>
@@ -28,9 +28,9 @@ pub struct UpdateOrganizationConfigurationInput {
     /// </ul>
     pub auto_enable_organization_members: ::std::option::Option<crate::types::AutoEnableMembers>,
 }
-impl UpdateOrganizationConfigurationInput {
+impl  UpdateOrganizationConfigurationInput  {
     /// <p>The ID of the detector that configures the delegated administrator.</p>
-    pub fn detector_id(&self) -> ::std::option::Option<&str> {
+    pub fn detector_id(&self) -> ::std::option::Option<& str> {
         self.detector_id.as_deref()
     }
     /// <p>Represents whether or not to automatically enable member accounts in the organization.</p>
@@ -41,14 +41,15 @@ impl UpdateOrganizationConfigurationInput {
     }
     /// <p>Describes which data sources will be updated.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
-    pub fn data_sources(&self) -> ::std::option::Option<&crate::types::OrganizationDataSourceConfigurations> {
+    pub fn data_sources(&self) -> ::std::option::Option<& crate::types::OrganizationDataSourceConfigurations> {
         self.data_sources.as_ref()
     }
     /// <p>A list of features that will be configured for the organization.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.features.is_none()`.
-    pub fn features(&self) -> &[crate::types::OrganizationFeatureConfiguration] {
-        self.features.as_deref().unwrap_or_default()
+    pub fn features(&self) -> & [crate::types::OrganizationFeatureConfiguration] {
+        self.features.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates the auto-enablement configuration of GuardDuty for the member accounts in the organization. You must provide a value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>.</p>
     /// <p>Use one of the following configuration values for <code>autoEnableOrganizationMembers</code>:</p>
@@ -62,7 +63,7 @@ impl UpdateOrganizationConfigurationInput {
     /// <p><code>NONE</code>: Indicates that GuardDuty will not be automatically enabled for any account in the organization. The administrator must manage GuardDuty for each account in the organization individually.</p>
     /// <p>When you update the auto-enable setting from <code>ALL</code> or <code>NEW</code> to <code>NONE</code>, this action doesn't disable the corresponding option for your existing accounts. This configuration will apply to the new accounts that join the organization. After you update the auto-enable settings, no new account will have the corresponding option as enabled.</p></li>
     /// </ul>
-    pub fn auto_enable_organization_members(&self) -> ::std::option::Option<&crate::types::AutoEnableMembers> {
+    pub fn auto_enable_organization_members(&self) -> ::std::option::Option<& crate::types::AutoEnableMembers> {
         self.auto_enable_organization_members.as_ref()
     }
 }
@@ -80,7 +81,7 @@ pub struct UpdateOrganizationConfigurationInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) auto_enable: ::std::option::Option<bool>,
     pub(crate) data_sources: ::std::option::Option<crate::types::OrganizationDataSourceConfigurations>,
-    pub(crate) features: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationFeatureConfiguration>>,
+    pub(crate) features: ::std::option::Option<::std::vec::Vec::<crate::types::OrganizationFeatureConfiguration>>,
     pub(crate) auto_enable_organization_members: ::std::option::Option<crate::types::AutoEnableMembers>,
 }
 impl UpdateOrganizationConfigurationInputBuilder {
@@ -92,8 +93,7 @@ impl UpdateOrganizationConfigurationInputBuilder {
     }
     /// <p>The ID of the detector that configures the delegated administrator.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
     }
     /// <p>The ID of the detector that configures the delegated administrator.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +110,7 @@ impl UpdateOrganizationConfigurationInputBuilder {
     /// <p>Even though this is still supported, we recommend using <code>AutoEnableOrganizationMembers</code> to achieve the similar results. You must provide a value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>.</p>
     #[deprecated(note = "This field is deprecated, use AutoEnableOrganizationMembers instead")]
     pub fn set_auto_enable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_enable = input;
-        self
+        self.auto_enable = input; self
     }
     /// <p>Represents whether or not to automatically enable member accounts in the organization.</p>
     /// <p>Even though this is still supported, we recommend using <code>AutoEnableOrganizationMembers</code> to achieve the similar results. You must provide a value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>.</p>
@@ -128,8 +127,7 @@ impl UpdateOrganizationConfigurationInputBuilder {
     /// <p>Describes which data sources will be updated.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
     pub fn set_data_sources(mut self, input: ::std::option::Option<crate::types::OrganizationDataSourceConfigurations>) -> Self {
-        self.data_sources = input;
-        self
+        self.data_sources = input; self
     }
     /// <p>Describes which data sources will be updated.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
@@ -143,17 +141,16 @@ impl UpdateOrganizationConfigurationInputBuilder {
     /// <p>A list of features that will be configured for the organization.</p>
     pub fn features(mut self, input: crate::types::OrganizationFeatureConfiguration) -> Self {
         let mut v = self.features.unwrap_or_default();
-        v.push(input);
-        self.features = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.features = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of features that will be configured for the organization.</p>
-    pub fn set_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationFeatureConfiguration>>) -> Self {
-        self.features = input;
-        self
+    pub fn set_features(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OrganizationFeatureConfiguration>>) -> Self {
+        self.features = input; self
     }
     /// <p>A list of features that will be configured for the organization.</p>
-    pub fn get_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OrganizationFeatureConfiguration>> {
+    pub fn get_features(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OrganizationFeatureConfiguration>> {
         &self.features
     }
     /// <p>Indicates the auto-enablement configuration of GuardDuty for the member accounts in the organization. You must provide a value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>.</p>
@@ -185,8 +182,7 @@ impl UpdateOrganizationConfigurationInputBuilder {
     /// <p>When you update the auto-enable setting from <code>ALL</code> or <code>NEW</code> to <code>NONE</code>, this action doesn't disable the corresponding option for your existing accounts. This configuration will apply to the new accounts that join the organization. After you update the auto-enable settings, no new account will have the corresponding option as enabled.</p></li>
     /// </ul>
     pub fn set_auto_enable_organization_members(mut self, input: ::std::option::Option<crate::types::AutoEnableMembers>) -> Self {
-        self.auto_enable_organization_members = input;
-        self
+        self.auto_enable_organization_members = input; self
     }
     /// <p>Indicates the auto-enablement configuration of GuardDuty for the member accounts in the organization. You must provide a value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>.</p>
     /// <p>Use one of the following configuration values for <code>autoEnableOrganizationMembers</code>:</p>
@@ -204,20 +200,21 @@ impl UpdateOrganizationConfigurationInputBuilder {
         &self.auto_enable_organization_members
     }
     /// Consumes the builder and constructs a [`UpdateOrganizationConfigurationInput`](crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput {
-                detector_id: self.detector_id,
-                auto_enable: self.auto_enable,
-                data_sources: self.data_sources,
-                features: self.features,
-                auto_enable_organization_members: self.auto_enable_organization_members,
-            },
+                detector_id: self.detector_id
+                ,
+                auto_enable: self.auto_enable
+                ,
+                data_sources: self.data_sources
+                ,
+                features: self.features
+                ,
+                auto_enable_organization_members: self.auto_enable_organization_members
+                ,
+            }
         )
     }
 }
+

@@ -3,15 +3,14 @@
 /// <p>An object that represents an Amazon Connect contact object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Contact {
+pub struct Contact  {
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
     pub contact_arn: ::std::string::String,
 }
-impl Contact {
+impl  Contact  {
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
-    pub fn contact_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.contact_arn.deref()
+    pub fn contact_arn(&self) -> & str {
+        use std::ops::Deref; self.contact_arn.deref()
     }
 }
 impl Contact {
@@ -36,8 +35,7 @@ impl ContactBuilder {
     }
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
     pub fn set_contact_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_arn = input;
-        self
+        self.contact_arn = input; self
     }
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
     pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl ContactBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`contact_arn`](crate::types::builders::ContactBuilder::contact_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::Contact, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Contact {
-            contact_arn: self.contact_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "contact_arn",
-                    "contact_arn was not specified but it is required when building Contact",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Contact {
+                contact_arn: self.contact_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("contact_arn", "contact_arn was not specified but it is required when building Contact")
+                    )?
+                ,
+            }
+        )
     }
 }
+

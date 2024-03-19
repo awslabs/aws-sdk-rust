@@ -3,7 +3,7 @@
 /// <p>Detailed health information about an Amazon EC2 instance in your Elastic Beanstalk environment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SingleInstanceHealth {
+pub struct SingleInstanceHealth  {
     /// <p>The ID of the Amazon EC2 instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Returns the health status of the specified instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
@@ -11,7 +11,7 @@ pub struct SingleInstanceHealth {
     /// <p>Represents the color indicator that gives you information about the health of the EC2 instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
     pub color: ::std::option::Option<::std::string::String>,
     /// <p>Represents the causes, which provide more information about the current health status.</p>
-    pub causes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub causes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The time at which the EC2 instance was launched.</p>
     pub launched_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Request metrics from your application.</p>
@@ -25,47 +25,48 @@ pub struct SingleInstanceHealth {
     /// <p>The instance's type.</p>
     pub instance_type: ::std::option::Option<::std::string::String>,
 }
-impl SingleInstanceHealth {
+impl  SingleInstanceHealth  {
     /// <p>The ID of the Amazon EC2 instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>Returns the health status of the specified instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
-    pub fn health_status(&self) -> ::std::option::Option<&str> {
+    pub fn health_status(&self) -> ::std::option::Option<& str> {
         self.health_status.as_deref()
     }
     /// <p>Represents the color indicator that gives you information about the health of the EC2 instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
-    pub fn color(&self) -> ::std::option::Option<&str> {
+    pub fn color(&self) -> ::std::option::Option<& str> {
         self.color.as_deref()
     }
     /// <p>Represents the causes, which provide more information about the current health status.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.causes.is_none()`.
-    pub fn causes(&self) -> &[::std::string::String] {
-        self.causes.as_deref().unwrap_or_default()
+    pub fn causes(&self) -> & [::std::string::String] {
+        self.causes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The time at which the EC2 instance was launched.</p>
-    pub fn launched_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn launched_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.launched_at.as_ref()
     }
     /// <p>Request metrics from your application.</p>
-    pub fn application_metrics(&self) -> ::std::option::Option<&crate::types::ApplicationMetrics> {
+    pub fn application_metrics(&self) -> ::std::option::Option<& crate::types::ApplicationMetrics> {
         self.application_metrics.as_ref()
     }
     /// <p>Operating system metrics from the instance.</p>
-    pub fn system(&self) -> ::std::option::Option<&crate::types::SystemStatus> {
+    pub fn system(&self) -> ::std::option::Option<& crate::types::SystemStatus> {
         self.system.as_ref()
     }
     /// <p>Information about the most recent deployment to an instance.</p>
-    pub fn deployment(&self) -> ::std::option::Option<&crate::types::Deployment> {
+    pub fn deployment(&self) -> ::std::option::Option<& crate::types::Deployment> {
         self.deployment.as_ref()
     }
     /// <p>The availability zone in which the instance runs.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The instance's type.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<& str> {
         self.instance_type.as_deref()
     }
 }
@@ -83,7 +84,7 @@ pub struct SingleInstanceHealthBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) health_status: ::std::option::Option<::std::string::String>,
     pub(crate) color: ::std::option::Option<::std::string::String>,
-    pub(crate) causes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) causes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) launched_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) application_metrics: ::std::option::Option<crate::types::ApplicationMetrics>,
     pub(crate) system: ::std::option::Option<crate::types::SystemStatus>,
@@ -99,8 +100,7 @@ impl SingleInstanceHealthBuilder {
     }
     /// <p>The ID of the Amazon EC2 instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID of the Amazon EC2 instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +113,7 @@ impl SingleInstanceHealthBuilder {
     }
     /// <p>Returns the health status of the specified instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
     pub fn set_health_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.health_status = input;
-        self
+        self.health_status = input; self
     }
     /// <p>Returns the health status of the specified instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
     pub fn get_health_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +126,7 @@ impl SingleInstanceHealthBuilder {
     }
     /// <p>Represents the color indicator that gives you information about the health of the EC2 instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
     pub fn set_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.color = input;
-        self
+        self.color = input; self
     }
     /// <p>Represents the color indicator that gives you information about the health of the EC2 instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
     pub fn get_color(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,17 +139,16 @@ impl SingleInstanceHealthBuilder {
     /// <p>Represents the causes, which provide more information about the current health status.</p>
     pub fn causes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.causes.unwrap_or_default();
-        v.push(input.into());
-        self.causes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.causes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Represents the causes, which provide more information about the current health status.</p>
-    pub fn set_causes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.causes = input;
-        self
+    pub fn set_causes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.causes = input; self
     }
     /// <p>Represents the causes, which provide more information about the current health status.</p>
-    pub fn get_causes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_causes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.causes
     }
     /// <p>The time at which the EC2 instance was launched.</p>
@@ -161,8 +158,7 @@ impl SingleInstanceHealthBuilder {
     }
     /// <p>The time at which the EC2 instance was launched.</p>
     pub fn set_launched_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.launched_at = input;
-        self
+        self.launched_at = input; self
     }
     /// <p>The time at which the EC2 instance was launched.</p>
     pub fn get_launched_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -175,8 +171,7 @@ impl SingleInstanceHealthBuilder {
     }
     /// <p>Request metrics from your application.</p>
     pub fn set_application_metrics(mut self, input: ::std::option::Option<crate::types::ApplicationMetrics>) -> Self {
-        self.application_metrics = input;
-        self
+        self.application_metrics = input; self
     }
     /// <p>Request metrics from your application.</p>
     pub fn get_application_metrics(&self) -> &::std::option::Option<crate::types::ApplicationMetrics> {
@@ -189,8 +184,7 @@ impl SingleInstanceHealthBuilder {
     }
     /// <p>Operating system metrics from the instance.</p>
     pub fn set_system(mut self, input: ::std::option::Option<crate::types::SystemStatus>) -> Self {
-        self.system = input;
-        self
+        self.system = input; self
     }
     /// <p>Operating system metrics from the instance.</p>
     pub fn get_system(&self) -> &::std::option::Option<crate::types::SystemStatus> {
@@ -203,8 +197,7 @@ impl SingleInstanceHealthBuilder {
     }
     /// <p>Information about the most recent deployment to an instance.</p>
     pub fn set_deployment(mut self, input: ::std::option::Option<crate::types::Deployment>) -> Self {
-        self.deployment = input;
-        self
+        self.deployment = input; self
     }
     /// <p>Information about the most recent deployment to an instance.</p>
     pub fn get_deployment(&self) -> &::std::option::Option<crate::types::Deployment> {
@@ -217,8 +210,7 @@ impl SingleInstanceHealthBuilder {
     }
     /// <p>The availability zone in which the instance runs.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// <p>The availability zone in which the instance runs.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -231,8 +223,7 @@ impl SingleInstanceHealthBuilder {
     }
     /// <p>The instance's type.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The instance's type.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -241,16 +232,27 @@ impl SingleInstanceHealthBuilder {
     /// Consumes the builder and constructs a [`SingleInstanceHealth`](crate::types::SingleInstanceHealth).
     pub fn build(self) -> crate::types::SingleInstanceHealth {
         crate::types::SingleInstanceHealth {
-            instance_id: self.instance_id,
-            health_status: self.health_status,
-            color: self.color,
-            causes: self.causes,
-            launched_at: self.launched_at,
-            application_metrics: self.application_metrics,
-            system: self.system,
-            deployment: self.deployment,
-            availability_zone: self.availability_zone,
-            instance_type: self.instance_type,
+            instance_id: self.instance_id
+            ,
+            health_status: self.health_status
+            ,
+            color: self.color
+            ,
+            causes: self.causes
+            ,
+            launched_at: self.launched_at
+            ,
+            application_metrics: self.application_metrics
+            ,
+            system: self.system
+            ,
+            deployment: self.deployment
+            ,
+            availability_zone: self.availability_zone
+            ,
+            instance_type: self.instance_type
+            ,
         }
     }
 }
+

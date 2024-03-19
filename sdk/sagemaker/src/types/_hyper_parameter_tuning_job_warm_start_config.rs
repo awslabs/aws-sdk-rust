@@ -6,10 +6,10 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HyperParameterTuningJobWarmStartConfig {
+pub struct HyperParameterTuningJobWarmStartConfig  {
     /// <p>An array of hyperparameter tuning jobs that are used as the starting point for the new hyperparameter tuning job. For more information about warm starting a hyperparameter tuning job, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-warm-start.html">Using a Previous Hyperparameter Tuning Job as a Starting Point</a>.</p>
     /// <p>Hyperparameter tuning jobs created before October 1, 2018 cannot be used as parent jobs for warm start tuning jobs.</p>
-    pub parent_hyper_parameter_tuning_jobs: ::std::option::Option<::std::vec::Vec<crate::types::ParentHyperParameterTuningJob>>,
+    pub parent_hyper_parameter_tuning_jobs: ::std::option::Option<::std::vec::Vec::<crate::types::ParentHyperParameterTuningJob>>,
     /// <p>Specifies one of the following:</p>
     /// <dl>
     /// <dt>
@@ -27,13 +27,14 @@ pub struct HyperParameterTuningJobWarmStartConfig {
     /// </dl>
     pub warm_start_type: ::std::option::Option<crate::types::HyperParameterTuningJobWarmStartType>,
 }
-impl HyperParameterTuningJobWarmStartConfig {
+impl  HyperParameterTuningJobWarmStartConfig  {
     /// <p>An array of hyperparameter tuning jobs that are used as the starting point for the new hyperparameter tuning job. For more information about warm starting a hyperparameter tuning job, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-warm-start.html">Using a Previous Hyperparameter Tuning Job as a Starting Point</a>.</p>
     /// <p>Hyperparameter tuning jobs created before October 1, 2018 cannot be used as parent jobs for warm start tuning jobs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parent_hyper_parameter_tuning_jobs.is_none()`.
-    pub fn parent_hyper_parameter_tuning_jobs(&self) -> &[crate::types::ParentHyperParameterTuningJob] {
-        self.parent_hyper_parameter_tuning_jobs.as_deref().unwrap_or_default()
+    pub fn parent_hyper_parameter_tuning_jobs(&self) -> & [crate::types::ParentHyperParameterTuningJob] {
+        self.parent_hyper_parameter_tuning_jobs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies one of the following:</p>
     /// <dl>
@@ -50,7 +51,7 @@ impl HyperParameterTuningJobWarmStartConfig {
     /// <p>The new hyperparameter tuning job can include input data, hyperparameter ranges, maximum number of concurrent training jobs, and maximum number of training jobs that are different than those of its parent hyperparameter tuning jobs. The training image can also be a different version from the version used in the parent hyperparameter tuning job. You can also change hyperparameters from tunable to static, and from static to tunable, but the total number of static plus tunable hyperparameters must remain the same as it is in all parent jobs. The objective metric for the new tuning job must be the same as for all parent jobs.</p>
     /// </dd>
     /// </dl>
-    pub fn warm_start_type(&self) -> ::std::option::Option<&crate::types::HyperParameterTuningJobWarmStartType> {
+    pub fn warm_start_type(&self) -> ::std::option::Option<& crate::types::HyperParameterTuningJobWarmStartType> {
         self.warm_start_type.as_ref()
     }
 }
@@ -65,7 +66,7 @@ impl HyperParameterTuningJobWarmStartConfig {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HyperParameterTuningJobWarmStartConfigBuilder {
-    pub(crate) parent_hyper_parameter_tuning_jobs: ::std::option::Option<::std::vec::Vec<crate::types::ParentHyperParameterTuningJob>>,
+    pub(crate) parent_hyper_parameter_tuning_jobs: ::std::option::Option<::std::vec::Vec::<crate::types::ParentHyperParameterTuningJob>>,
     pub(crate) warm_start_type: ::std::option::Option<crate::types::HyperParameterTuningJobWarmStartType>,
 }
 impl HyperParameterTuningJobWarmStartConfigBuilder {
@@ -77,22 +78,18 @@ impl HyperParameterTuningJobWarmStartConfigBuilder {
     /// <p>Hyperparameter tuning jobs created before October 1, 2018 cannot be used as parent jobs for warm start tuning jobs.</p>
     pub fn parent_hyper_parameter_tuning_jobs(mut self, input: crate::types::ParentHyperParameterTuningJob) -> Self {
         let mut v = self.parent_hyper_parameter_tuning_jobs.unwrap_or_default();
-        v.push(input);
-        self.parent_hyper_parameter_tuning_jobs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parent_hyper_parameter_tuning_jobs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of hyperparameter tuning jobs that are used as the starting point for the new hyperparameter tuning job. For more information about warm starting a hyperparameter tuning job, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-warm-start.html">Using a Previous Hyperparameter Tuning Job as a Starting Point</a>.</p>
     /// <p>Hyperparameter tuning jobs created before October 1, 2018 cannot be used as parent jobs for warm start tuning jobs.</p>
-    pub fn set_parent_hyper_parameter_tuning_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ParentHyperParameterTuningJob>>,
-    ) -> Self {
-        self.parent_hyper_parameter_tuning_jobs = input;
-        self
+    pub fn set_parent_hyper_parameter_tuning_jobs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ParentHyperParameterTuningJob>>) -> Self {
+        self.parent_hyper_parameter_tuning_jobs = input; self
     }
     /// <p>An array of hyperparameter tuning jobs that are used as the starting point for the new hyperparameter tuning job. For more information about warm starting a hyperparameter tuning job, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-warm-start.html">Using a Previous Hyperparameter Tuning Job as a Starting Point</a>.</p>
     /// <p>Hyperparameter tuning jobs created before October 1, 2018 cannot be used as parent jobs for warm start tuning jobs.</p>
-    pub fn get_parent_hyper_parameter_tuning_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParentHyperParameterTuningJob>> {
+    pub fn get_parent_hyper_parameter_tuning_jobs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ParentHyperParameterTuningJob>> {
         &self.parent_hyper_parameter_tuning_jobs
     }
     /// <p>Specifies one of the following:</p>
@@ -131,8 +128,7 @@ impl HyperParameterTuningJobWarmStartConfigBuilder {
     /// </dd>
     /// </dl>
     pub fn set_warm_start_type(mut self, input: ::std::option::Option<crate::types::HyperParameterTuningJobWarmStartType>) -> Self {
-        self.warm_start_type = input;
-        self
+        self.warm_start_type = input; self
     }
     /// <p>Specifies one of the following:</p>
     /// <dl>
@@ -155,8 +151,11 @@ impl HyperParameterTuningJobWarmStartConfigBuilder {
     /// Consumes the builder and constructs a [`HyperParameterTuningJobWarmStartConfig`](crate::types::HyperParameterTuningJobWarmStartConfig).
     pub fn build(self) -> crate::types::HyperParameterTuningJobWarmStartConfig {
         crate::types::HyperParameterTuningJobWarmStartConfig {
-            parent_hyper_parameter_tuning_jobs: self.parent_hyper_parameter_tuning_jobs,
-            warm_start_type: self.warm_start_type,
+            parent_hyper_parameter_tuning_jobs: self.parent_hyper_parameter_tuning_jobs
+            ,
+            warm_start_type: self.warm_start_type
+            ,
         }
     }
 }
+

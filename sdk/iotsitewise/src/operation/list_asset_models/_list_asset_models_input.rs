@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAssetModelsInput {
+pub struct ListAssetModelsInput  {
     /// <p>The token to be used for the next set of paginated results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return for each paginated request.</p>
@@ -15,11 +15,11 @@ pub struct ListAssetModelsInput {
     /// <li>
     /// <p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
     /// </ul>
-    pub asset_model_types: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelType>>,
+    pub asset_model_types: ::std::option::Option<::std::vec::Vec::<crate::types::AssetModelType>>,
 }
-impl ListAssetModelsInput {
+impl  ListAssetModelsInput  {
     /// <p>The token to be used for the next set of paginated results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return for each paginated request.</p>
@@ -34,10 +34,11 @@ impl ListAssetModelsInput {
     /// <li>
     /// <p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.asset_model_types.is_none()`.
-    pub fn asset_model_types(&self) -> &[crate::types::AssetModelType] {
-        self.asset_model_types.as_deref().unwrap_or_default()
+    pub fn asset_model_types(&self) -> & [crate::types::AssetModelType] {
+        self.asset_model_types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ListAssetModelsInput {
@@ -53,7 +54,7 @@ impl ListAssetModelsInput {
 pub struct ListAssetModelsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) asset_model_types: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelType>>,
+    pub(crate) asset_model_types: ::std::option::Option<::std::vec::Vec::<crate::types::AssetModelType>>,
 }
 impl ListAssetModelsInputBuilder {
     /// <p>The token to be used for the next set of paginated results.</p>
@@ -63,8 +64,7 @@ impl ListAssetModelsInputBuilder {
     }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +79,7 @@ impl ListAssetModelsInputBuilder {
     /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
@@ -100,9 +99,9 @@ impl ListAssetModelsInputBuilder {
     /// </ul>
     pub fn asset_model_types(mut self, input: crate::types::AssetModelType) -> Self {
         let mut v = self.asset_model_types.unwrap_or_default();
-        v.push(input);
-        self.asset_model_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.asset_model_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The type of asset model.</p>
     /// <ul>
@@ -111,9 +110,8 @@ impl ListAssetModelsInputBuilder {
     /// <li>
     /// <p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
     /// </ul>
-    pub fn set_asset_model_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelType>>) -> Self {
-        self.asset_model_types = input;
-        self
+    pub fn set_asset_model_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetModelType>>) -> Self {
+        self.asset_model_types = input; self
     }
     /// <p>The type of asset model.</p>
     /// <ul>
@@ -122,17 +120,21 @@ impl ListAssetModelsInputBuilder {
     /// <li>
     /// <p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
     /// </ul>
-    pub fn get_asset_model_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelType>> {
+    pub fn get_asset_model_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetModelType>> {
         &self.asset_model_types
     }
     /// Consumes the builder and constructs a [`ListAssetModelsInput`](crate::operation::list_asset_models::ListAssetModelsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_asset_models::ListAssetModelsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_asset_models::ListAssetModelsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            asset_model_types: self.asset_model_types,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_asset_models::ListAssetModelsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_asset_models::ListAssetModelsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                asset_model_types: self.asset_model_types
+                ,
+            }
+        )
     }
 }
+

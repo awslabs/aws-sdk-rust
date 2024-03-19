@@ -3,19 +3,19 @@
 /// <p>The EC2 instance Savings Plans recommendation details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Ec2InstanceSavingsPlans {
+pub struct Ec2InstanceSavingsPlans  {
     /// <p>The EC2 instance Savings Plans configuration used for recommendations.</p>
     pub configuration: ::std::option::Option<crate::types::Ec2InstanceSavingsPlansConfiguration>,
     /// <p>Cost impact of the Savings Plans purchase recommendation.</p>
     pub cost_calculation: ::std::option::Option<crate::types::SavingsPlansCostCalculation>,
 }
-impl Ec2InstanceSavingsPlans {
+impl  Ec2InstanceSavingsPlans  {
     /// <p>The EC2 instance Savings Plans configuration used for recommendations.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::Ec2InstanceSavingsPlansConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::Ec2InstanceSavingsPlansConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>Cost impact of the Savings Plans purchase recommendation.</p>
-    pub fn cost_calculation(&self) -> ::std::option::Option<&crate::types::SavingsPlansCostCalculation> {
+    pub fn cost_calculation(&self) -> ::std::option::Option<& crate::types::SavingsPlansCostCalculation> {
         self.cost_calculation.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl Ec2InstanceSavingsPlansBuilder {
     }
     /// <p>The EC2 instance Savings Plans configuration used for recommendations.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::Ec2InstanceSavingsPlansConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>The EC2 instance Savings Plans configuration used for recommendations.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::Ec2InstanceSavingsPlansConfiguration> {
@@ -55,8 +54,7 @@ impl Ec2InstanceSavingsPlansBuilder {
     }
     /// <p>Cost impact of the Savings Plans purchase recommendation.</p>
     pub fn set_cost_calculation(mut self, input: ::std::option::Option<crate::types::SavingsPlansCostCalculation>) -> Self {
-        self.cost_calculation = input;
-        self
+        self.cost_calculation = input; self
     }
     /// <p>Cost impact of the Savings Plans purchase recommendation.</p>
     pub fn get_cost_calculation(&self) -> &::std::option::Option<crate::types::SavingsPlansCostCalculation> {
@@ -65,8 +63,11 @@ impl Ec2InstanceSavingsPlansBuilder {
     /// Consumes the builder and constructs a [`Ec2InstanceSavingsPlans`](crate::types::Ec2InstanceSavingsPlans).
     pub fn build(self) -> crate::types::Ec2InstanceSavingsPlans {
         crate::types::Ec2InstanceSavingsPlans {
-            configuration: self.configuration,
-            cost_calculation: self.cost_calculation,
+            configuration: self.configuration
+            ,
+            cost_calculation: self.cost_calculation
+            ,
         }
     }
 }
+

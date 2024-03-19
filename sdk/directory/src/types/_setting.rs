@@ -3,24 +3,22 @@
 /// <p>Contains information about the configurable settings for a directory.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Setting {
+pub struct Setting  {
     /// <p>The name of the directory setting. For example:</p>
     /// <p><code>TLS_1_0</code></p>
     pub name: ::std::string::String,
     /// <p>The value of the directory setting for which to retrieve information. For example, for <code>TLS_1_0</code>, the valid values are: <code>Enable</code> and <code>Disable</code>.</p>
     pub value: ::std::string::String,
 }
-impl Setting {
+impl  Setting  {
     /// <p>The name of the directory setting. For example:</p>
     /// <p><code>TLS_1_0</code></p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The value of the directory setting for which to retrieve information. For example, for <code>TLS_1_0</code>, the valid values are: <code>Enable</code> and <code>Disable</code>.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl Setting {
@@ -48,8 +46,7 @@ impl SettingBuilder {
     /// <p>The name of the directory setting. For example:</p>
     /// <p><code>TLS_1_0</code></p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the directory setting. For example:</p>
     /// <p><code>TLS_1_0</code></p>
@@ -64,8 +61,7 @@ impl SettingBuilder {
     }
     /// <p>The value of the directory setting for which to retrieve information. For example, for <code>TLS_1_0</code>, the valid values are: <code>Enable</code> and <code>Disable</code>.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the directory setting for which to retrieve information. For example, for <code>TLS_1_0</code>, the valid values are: <code>Enable</code> and <code>Disable</code>.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,19 +72,20 @@ impl SettingBuilder {
     /// - [`name`](crate::types::builders::SettingBuilder::name)
     /// - [`value`](crate::types::builders::SettingBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::Setting, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Setting {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building Setting",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building Setting",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Setting {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building Setting")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building Setting")
+                    )?
+                ,
+            }
+        )
     }
 }
+

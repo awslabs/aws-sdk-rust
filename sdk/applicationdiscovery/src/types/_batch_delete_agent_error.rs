@@ -3,7 +3,7 @@
 /// <p>An object representing the agent or data collector that failed to delete, each containing agentId, errorMessage, and errorCode.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDeleteAgentError {
+pub struct BatchDeleteAgentError  {
     /// <p>The ID of the agent or data collector to delete.</p>
     pub agent_id: ::std::string::String,
     /// <p>The description of the error that occurred for the delete failed agent.</p>
@@ -11,19 +11,17 @@ pub struct BatchDeleteAgentError {
     /// <p>The type of error that occurred for the delete failed agent. Valid status are: AGENT_IN_USE | NOT_FOUND | INTERNAL_SERVER_ERROR.</p>
     pub error_code: crate::types::DeleteAgentErrorCode,
 }
-impl BatchDeleteAgentError {
+impl  BatchDeleteAgentError  {
     /// <p>The ID of the agent or data collector to delete.</p>
-    pub fn agent_id(&self) -> &str {
-        use std::ops::Deref;
-        self.agent_id.deref()
+    pub fn agent_id(&self) -> & str {
+        use std::ops::Deref; self.agent_id.deref()
     }
     /// <p>The description of the error that occurred for the delete failed agent.</p>
-    pub fn error_message(&self) -> &str {
-        use std::ops::Deref;
-        self.error_message.deref()
+    pub fn error_message(&self) -> & str {
+        use std::ops::Deref; self.error_message.deref()
     }
     /// <p>The type of error that occurred for the delete failed agent. Valid status are: AGENT_IN_USE | NOT_FOUND | INTERNAL_SERVER_ERROR.</p>
-    pub fn error_code(&self) -> &crate::types::DeleteAgentErrorCode {
+    pub fn error_code(&self) -> & crate::types::DeleteAgentErrorCode {
         &self.error_code
     }
 }
@@ -51,8 +49,7 @@ impl BatchDeleteAgentErrorBuilder {
     }
     /// <p>The ID of the agent or data collector to delete.</p>
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_id = input;
-        self
+        self.agent_id = input; self
     }
     /// <p>The ID of the agent or data collector to delete.</p>
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl BatchDeleteAgentErrorBuilder {
     }
     /// <p>The description of the error that occurred for the delete failed agent.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The description of the error that occurred for the delete failed agent.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl BatchDeleteAgentErrorBuilder {
     }
     /// <p>The type of error that occurred for the delete failed agent. Valid status are: AGENT_IN_USE | NOT_FOUND | INTERNAL_SERVER_ERROR.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::DeleteAgentErrorCode>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The type of error that occurred for the delete failed agent. Valid status are: AGENT_IN_USE | NOT_FOUND | INTERNAL_SERVER_ERROR.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::DeleteAgentErrorCode> {
@@ -94,25 +89,25 @@ impl BatchDeleteAgentErrorBuilder {
     /// - [`error_message`](crate::types::builders::BatchDeleteAgentErrorBuilder::error_message)
     /// - [`error_code`](crate::types::builders::BatchDeleteAgentErrorBuilder::error_code)
     pub fn build(self) -> ::std::result::Result<crate::types::BatchDeleteAgentError, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BatchDeleteAgentError {
-            agent_id: self.agent_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "agent_id",
-                    "agent_id was not specified but it is required when building BatchDeleteAgentError",
-                )
-            })?,
-            error_message: self.error_message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_message",
-                    "error_message was not specified but it is required when building BatchDeleteAgentError",
-                )
-            })?,
-            error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_code",
-                    "error_code was not specified but it is required when building BatchDeleteAgentError",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BatchDeleteAgentError {
+                agent_id: self.agent_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("agent_id", "agent_id was not specified but it is required when building BatchDeleteAgentError")
+                    )?
+                ,
+                error_message: self.error_message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_message", "error_message was not specified but it is required when building BatchDeleteAgentError")
+                    )?
+                ,
+                error_code: self.error_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_code", "error_code was not specified but it is required when building BatchDeleteAgentError")
+                    )?
+                ,
+            }
+        )
     }
 }
+

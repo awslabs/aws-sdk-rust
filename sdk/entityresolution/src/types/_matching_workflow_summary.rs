@@ -3,7 +3,7 @@
 /// <p>A list of <code>MatchingWorkflowSummary</code> objects, each of which contain the fields <code>WorkflowName</code>, <code>WorkflowArn</code>, <code>CreatedAt</code>, <code>UpdatedAt</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MatchingWorkflowSummary {
+pub struct MatchingWorkflowSummary  {
     /// <p>The name of the workflow.</p>
     pub workflow_name: ::std::string::String,
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>MatchingWorkflow</code>.</p>
@@ -15,27 +15,25 @@ pub struct MatchingWorkflowSummary {
     /// <p>The method that has been specified for data matching, either using matching provided by Entity Resolution or through a provider service.</p>
     pub resolution_type: crate::types::ResolutionType,
 }
-impl MatchingWorkflowSummary {
+impl  MatchingWorkflowSummary  {
     /// <p>The name of the workflow.</p>
-    pub fn workflow_name(&self) -> &str {
-        use std::ops::Deref;
-        self.workflow_name.deref()
+    pub fn workflow_name(&self) -> & str {
+        use std::ops::Deref; self.workflow_name.deref()
     }
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>MatchingWorkflow</code>.</p>
-    pub fn workflow_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.workflow_arn.deref()
+    pub fn workflow_arn(&self) -> & str {
+        use std::ops::Deref; self.workflow_arn.deref()
     }
     /// <p>The timestamp of when the workflow was created.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The timestamp of when the workflow was last updated.</p>
-    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.updated_at
     }
     /// <p>The method that has been specified for data matching, either using matching provided by Entity Resolution or through a provider service.</p>
-    pub fn resolution_type(&self) -> &crate::types::ResolutionType {
+    pub fn resolution_type(&self) -> & crate::types::ResolutionType {
         &self.resolution_type
     }
 }
@@ -65,8 +63,7 @@ impl MatchingWorkflowSummaryBuilder {
     }
     /// <p>The name of the workflow.</p>
     pub fn set_workflow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_name = input;
-        self
+        self.workflow_name = input; self
     }
     /// <p>The name of the workflow.</p>
     pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +77,7 @@ impl MatchingWorkflowSummaryBuilder {
     }
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>MatchingWorkflow</code>.</p>
     pub fn set_workflow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_arn = input;
-        self
+        self.workflow_arn = input; self
     }
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>MatchingWorkflow</code>.</p>
     pub fn get_workflow_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +91,7 @@ impl MatchingWorkflowSummaryBuilder {
     }
     /// <p>The timestamp of when the workflow was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp of when the workflow was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -110,8 +105,7 @@ impl MatchingWorkflowSummaryBuilder {
     }
     /// <p>The timestamp of when the workflow was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The timestamp of when the workflow was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -125,8 +119,7 @@ impl MatchingWorkflowSummaryBuilder {
     }
     /// <p>The method that has been specified for data matching, either using matching provided by Entity Resolution or through a provider service.</p>
     pub fn set_resolution_type(mut self, input: ::std::option::Option<crate::types::ResolutionType>) -> Self {
-        self.resolution_type = input;
-        self
+        self.resolution_type = input; self
     }
     /// <p>The method that has been specified for data matching, either using matching provided by Entity Resolution or through a provider service.</p>
     pub fn get_resolution_type(&self) -> &::std::option::Option<crate::types::ResolutionType> {
@@ -140,37 +133,35 @@ impl MatchingWorkflowSummaryBuilder {
     /// - [`updated_at`](crate::types::builders::MatchingWorkflowSummaryBuilder::updated_at)
     /// - [`resolution_type`](crate::types::builders::MatchingWorkflowSummaryBuilder::resolution_type)
     pub fn build(self) -> ::std::result::Result<crate::types::MatchingWorkflowSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MatchingWorkflowSummary {
-            workflow_name: self.workflow_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "workflow_name",
-                    "workflow_name was not specified but it is required when building MatchingWorkflowSummary",
-                )
-            })?,
-            workflow_arn: self.workflow_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "workflow_arn",
-                    "workflow_arn was not specified but it is required when building MatchingWorkflowSummary",
-                )
-            })?,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building MatchingWorkflowSummary",
-                )
-            })?,
-            updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "updated_at",
-                    "updated_at was not specified but it is required when building MatchingWorkflowSummary",
-                )
-            })?,
-            resolution_type: self.resolution_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resolution_type",
-                    "resolution_type was not specified but it is required when building MatchingWorkflowSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MatchingWorkflowSummary {
+                workflow_name: self.workflow_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("workflow_name", "workflow_name was not specified but it is required when building MatchingWorkflowSummary")
+                    )?
+                ,
+                workflow_arn: self.workflow_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("workflow_arn", "workflow_arn was not specified but it is required when building MatchingWorkflowSummary")
+                    )?
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building MatchingWorkflowSummary")
+                    )?
+                ,
+                updated_at: self.updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("updated_at", "updated_at was not specified but it is required when building MatchingWorkflowSummary")
+                    )?
+                ,
+                resolution_type: self.resolution_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resolution_type", "resolution_type was not specified but it is required when building MatchingWorkflowSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

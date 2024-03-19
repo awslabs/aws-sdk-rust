@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateProjectInput {
+pub struct CreateProjectInput  {
     /// <p>The ID of the Amazon DataZone domain in which this project is created.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon DataZone project.</p>
@@ -10,29 +10,30 @@ pub struct CreateProjectInput {
     /// <p>The description of the Amazon DataZone project.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The glossary terms that can be used in this Amazon DataZone project.</p>
-    pub glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub glossary_terms: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl CreateProjectInput {
+impl  CreateProjectInput  {
     /// <p>The ID of the Amazon DataZone domain in which this project is created.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The name of the Amazon DataZone project.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the Amazon DataZone project.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The glossary terms that can be used in this Amazon DataZone project.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.glossary_terms.is_none()`.
-    pub fn glossary_terms(&self) -> &[::std::string::String] {
-        self.glossary_terms.as_deref().unwrap_or_default()
+    pub fn glossary_terms(&self) -> & [::std::string::String] {
+        self.glossary_terms.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for CreateProjectInput {
+impl  ::std::fmt::Debug for CreateProjectInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateProjectInput");
         formatter.field("domain_identifier", &self.domain_identifier);
@@ -56,7 +57,7 @@ pub struct CreateProjectInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl CreateProjectInputBuilder {
     /// <p>The ID of the Amazon DataZone domain in which this project is created.</p>
@@ -67,8 +68,7 @@ impl CreateProjectInputBuilder {
     }
     /// <p>The ID of the Amazon DataZone domain in which this project is created.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The ID of the Amazon DataZone domain in which this project is created.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +82,7 @@ impl CreateProjectInputBuilder {
     }
     /// <p>The name of the Amazon DataZone project.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Amazon DataZone project.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +95,7 @@ impl CreateProjectInputBuilder {
     }
     /// <p>The description of the Amazon DataZone project.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the Amazon DataZone project.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,29 +108,32 @@ impl CreateProjectInputBuilder {
     /// <p>The glossary terms that can be used in this Amazon DataZone project.</p>
     pub fn glossary_terms(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.glossary_terms.unwrap_or_default();
-        v.push(input.into());
-        self.glossary_terms = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.glossary_terms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The glossary terms that can be used in this Amazon DataZone project.</p>
-    pub fn set_glossary_terms(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.glossary_terms = input;
-        self
+    pub fn set_glossary_terms(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.glossary_terms = input; self
     }
     /// <p>The glossary terms that can be used in this Amazon DataZone project.</p>
-    pub fn get_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.glossary_terms
     }
     /// Consumes the builder and constructs a [`CreateProjectInput`](crate::operation::create_project::CreateProjectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_project::CreateProjectInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_project::CreateProjectInput {
-            domain_identifier: self.domain_identifier,
-            name: self.name,
-            description: self.description,
-            glossary_terms: self.glossary_terms,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_project::CreateProjectInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_project::CreateProjectInput {
+                domain_identifier: self.domain_identifier
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                glossary_terms: self.glossary_terms
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateProjectInputBuilder {
@@ -145,3 +146,4 @@ impl ::std::fmt::Debug for CreateProjectInputBuilder {
         formatter.finish()
     }
 }
+

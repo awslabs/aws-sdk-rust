@@ -3,7 +3,7 @@
 /// <p>Describes the sign-in credentials for the container image registry of an Amazon Lightsail account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContainerServiceRegistryLogin {
+pub struct ContainerServiceRegistryLogin  {
     /// <p>The container service registry username to use to push container images to the container image registry of a Lightsail account.</p>
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The container service registry password to use to push container images to the container image registry of a Lightsail account</p>
@@ -14,22 +14,22 @@ pub struct ContainerServiceRegistryLogin {
     /// <p>The address to use to push container images to the container image registry of a Lightsail account.</p>
     pub registry: ::std::option::Option<::std::string::String>,
 }
-impl ContainerServiceRegistryLogin {
+impl  ContainerServiceRegistryLogin  {
     /// <p>The container service registry username to use to push container images to the container image registry of a Lightsail account.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The container service registry password to use to push container images to the container image registry of a Lightsail account</p>
-    pub fn password(&self) -> ::std::option::Option<&str> {
+    pub fn password(&self) -> ::std::option::Option<& str> {
         self.password.as_deref()
     }
     /// <p>The timestamp of when the container image registry sign-in credentials expire.</p>
     /// <p>The log in credentials expire 12 hours after they are created, at which point you will need to create a new set of log in credentials using the <code>CreateContainerServiceRegistryLogin</code> action.</p>
-    pub fn expires_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn expires_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.expires_at.as_ref()
     }
     /// <p>The address to use to push container images to the container image registry of a Lightsail account.</p>
-    pub fn registry(&self) -> ::std::option::Option<&str> {
+    pub fn registry(&self) -> ::std::option::Option<& str> {
         self.registry.as_deref()
     }
 }
@@ -57,8 +57,7 @@ impl ContainerServiceRegistryLoginBuilder {
     }
     /// <p>The container service registry username to use to push container images to the container image registry of a Lightsail account.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The container service registry username to use to push container images to the container image registry of a Lightsail account.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl ContainerServiceRegistryLoginBuilder {
     }
     /// <p>The container service registry password to use to push container images to the container image registry of a Lightsail account</p>
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// <p>The container service registry password to use to push container images to the container image registry of a Lightsail account</p>
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +85,7 @@ impl ContainerServiceRegistryLoginBuilder {
     /// <p>The timestamp of when the container image registry sign-in credentials expire.</p>
     /// <p>The log in credentials expire 12 hours after they are created, at which point you will need to create a new set of log in credentials using the <code>CreateContainerServiceRegistryLogin</code> action.</p>
     pub fn set_expires_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.expires_at = input;
-        self
+        self.expires_at = input; self
     }
     /// <p>The timestamp of when the container image registry sign-in credentials expire.</p>
     /// <p>The log in credentials expire 12 hours after they are created, at which point you will need to create a new set of log in credentials using the <code>CreateContainerServiceRegistryLogin</code> action.</p>
@@ -102,8 +99,7 @@ impl ContainerServiceRegistryLoginBuilder {
     }
     /// <p>The address to use to push container images to the container image registry of a Lightsail account.</p>
     pub fn set_registry(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry = input;
-        self
+        self.registry = input; self
     }
     /// <p>The address to use to push container images to the container image registry of a Lightsail account.</p>
     pub fn get_registry(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,10 +108,15 @@ impl ContainerServiceRegistryLoginBuilder {
     /// Consumes the builder and constructs a [`ContainerServiceRegistryLogin`](crate::types::ContainerServiceRegistryLogin).
     pub fn build(self) -> crate::types::ContainerServiceRegistryLogin {
         crate::types::ContainerServiceRegistryLogin {
-            username: self.username,
-            password: self.password,
-            expires_at: self.expires_at,
-            registry: self.registry,
+            username: self.username
+            ,
+            password: self.password
+            ,
+            expires_at: self.expires_at
+            ,
+            registry: self.registry
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTaskProtectionOutput {
+pub struct GetTaskProtectionOutput  {
     /// <p>A list of tasks with the following information.</p>
     /// <ul>
     /// <li>
@@ -12,12 +12,12 @@ pub struct GetTaskProtectionOutput {
     /// <li>
     /// <p><code>expirationDate</code>: The epoch time when protection for the task will expire.</p></li>
     /// </ul>
-    pub protected_tasks: ::std::option::Option<::std::vec::Vec<crate::types::ProtectedTask>>,
+    pub protected_tasks: ::std::option::Option<::std::vec::Vec::<crate::types::ProtectedTask>>,
     /// <p>Any failures associated with the call.</p>
-    pub failures: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
+    pub failures: ::std::option::Option<::std::vec::Vec::<crate::types::Failure>>,
     _request_id: Option<String>,
 }
-impl GetTaskProtectionOutput {
+impl  GetTaskProtectionOutput  {
     /// <p>A list of tasks with the following information.</p>
     /// <ul>
     /// <li>
@@ -27,23 +27,25 @@ impl GetTaskProtectionOutput {
     /// <li>
     /// <p><code>expirationDate</code>: The epoch time when protection for the task will expire.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protected_tasks.is_none()`.
-    pub fn protected_tasks(&self) -> &[crate::types::ProtectedTask] {
-        self.protected_tasks.as_deref().unwrap_or_default()
+    pub fn protected_tasks(&self) -> & [crate::types::ProtectedTask] {
+        self.protected_tasks.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Any failures associated with the call.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failures.is_none()`.
-    pub fn failures(&self) -> &[crate::types::Failure] {
-        self.failures.as_deref().unwrap_or_default()
+    pub fn failures(&self) -> & [crate::types::Failure] {
+        self.failures.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetTaskProtectionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetTaskProtectionOutput {
     /// Creates a new builder-style object to manufacture [`GetTaskProtectionOutput`](crate::operation::get_task_protection::GetTaskProtectionOutput).
     pub fn builder() -> crate::operation::get_task_protection::builders::GetTaskProtectionOutputBuilder {
@@ -55,8 +57,8 @@ impl GetTaskProtectionOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetTaskProtectionOutputBuilder {
-    pub(crate) protected_tasks: ::std::option::Option<::std::vec::Vec<crate::types::ProtectedTask>>,
-    pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
+    pub(crate) protected_tasks: ::std::option::Option<::std::vec::Vec::<crate::types::ProtectedTask>>,
+    pub(crate) failures: ::std::option::Option<::std::vec::Vec::<crate::types::Failure>>,
     _request_id: Option<String>,
 }
 impl GetTaskProtectionOutputBuilder {
@@ -75,9 +77,9 @@ impl GetTaskProtectionOutputBuilder {
     /// </ul>
     pub fn protected_tasks(mut self, input: crate::types::ProtectedTask) -> Self {
         let mut v = self.protected_tasks.unwrap_or_default();
-        v.push(input);
-        self.protected_tasks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.protected_tasks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tasks with the following information.</p>
     /// <ul>
@@ -88,9 +90,8 @@ impl GetTaskProtectionOutputBuilder {
     /// <li>
     /// <p><code>expirationDate</code>: The epoch time when protection for the task will expire.</p></li>
     /// </ul>
-    pub fn set_protected_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProtectedTask>>) -> Self {
-        self.protected_tasks = input;
-        self
+    pub fn set_protected_tasks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProtectedTask>>) -> Self {
+        self.protected_tasks = input; self
     }
     /// <p>A list of tasks with the following information.</p>
     /// <ul>
@@ -101,7 +102,7 @@ impl GetTaskProtectionOutputBuilder {
     /// <li>
     /// <p><code>expirationDate</code>: The epoch time when protection for the task will expire.</p></li>
     /// </ul>
-    pub fn get_protected_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProtectedTask>> {
+    pub fn get_protected_tasks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProtectedTask>> {
         &self.protected_tasks
     }
     /// Appends an item to `failures`.
@@ -111,34 +112,36 @@ impl GetTaskProtectionOutputBuilder {
     /// <p>Any failures associated with the call.</p>
     pub fn failures(mut self, input: crate::types::Failure) -> Self {
         let mut v = self.failures.unwrap_or_default();
-        v.push(input);
-        self.failures = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failures = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>) -> Self {
-        self.failures = input;
-        self
+    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Failure>>) -> Self {
+        self.failures = input; self
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Failure>> {
+    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Failure>> {
         &self.failures
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetTaskProtectionOutput`](crate::operation::get_task_protection::GetTaskProtectionOutput).
     pub fn build(self) -> crate::operation::get_task_protection::GetTaskProtectionOutput {
         crate::operation::get_task_protection::GetTaskProtectionOutput {
-            protected_tasks: self.protected_tasks,
-            failures: self.failures,
+            protected_tasks: self.protected_tasks
+            ,
+            failures: self.failures
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

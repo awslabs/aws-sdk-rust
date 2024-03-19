@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListWebsiteAuthorizationProviders`](crate::operation::list_website_authorization_providers::builders::ListWebsiteAuthorizationProvidersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_website_authorization_providers::builders::ListWebsiteAuthorizationProvidersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`fleet_arn(impl Into<String>)`](crate::operation::list_website_authorization_providers::builders::ListWebsiteAuthorizationProvidersFluentBuilder::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::operation::list_website_authorization_providers::builders::ListWebsiteAuthorizationProvidersFluentBuilder::set_fleet_arn):<br>required: **true**<br><p>The ARN of the fleet.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_website_authorization_providers::builders::ListWebsiteAuthorizationProvidersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_website_authorization_providers::builders::ListWebsiteAuthorizationProvidersFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_website_authorization_providers::builders::ListWebsiteAuthorizationProvidersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_website_authorization_providers::builders::ListWebsiteAuthorizationProvidersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to be included in the next page.</p><br>
-    /// - On success, responds with [`ListWebsiteAuthorizationProvidersOutput`](crate::operation::list_website_authorization_providers::ListWebsiteAuthorizationProvidersOutput) with field(s):
+                            /// - On success, responds with [`ListWebsiteAuthorizationProvidersOutput`](crate::operation::list_website_authorization_providers::ListWebsiteAuthorizationProvidersOutput) with field(s):
     ///   - [`website_authorization_providers(Option<Vec::<WebsiteAuthorizationProviderSummary>>)`](crate::operation::list_website_authorization_providers::ListWebsiteAuthorizationProvidersOutput::website_authorization_providers): <p>The website authorization providers.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_website_authorization_providers::ListWebsiteAuthorizationProvidersOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    /// - On failure, responds with [`SdkError<ListWebsiteAuthorizationProvidersError>`](crate::operation::list_website_authorization_providers::ListWebsiteAuthorizationProvidersError)
+                            /// - On failure, responds with [`SdkError<ListWebsiteAuthorizationProvidersError>`](crate::operation::list_website_authorization_providers::ListWebsiteAuthorizationProvidersError)
     #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
-    pub fn list_website_authorization_providers(
-        &self,
-    ) -> crate::operation::list_website_authorization_providers::builders::ListWebsiteAuthorizationProvidersFluentBuilder {
-        crate::operation::list_website_authorization_providers::builders::ListWebsiteAuthorizationProvidersFluentBuilder::new(self.handle.clone())
-    }
+    pub fn list_website_authorization_providers(&self) -> crate::operation::list_website_authorization_providers::builders::ListWebsiteAuthorizationProvidersFluentBuilder {
+                                crate::operation::list_website_authorization_providers::builders::ListWebsiteAuthorizationProvidersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

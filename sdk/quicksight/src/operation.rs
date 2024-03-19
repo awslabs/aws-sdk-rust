@@ -513,3 +513,4 @@ pub mod update_user;
 
 /// Types for the `UpdateVPCConnection` operation.
 pub mod update_vpc_connection;
+

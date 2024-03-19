@@ -3,7 +3,7 @@
 /// <p>Lifecycle.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LifeCycle {
+pub struct LifeCycle  {
     /// <p>Lifecycle added to service data and time.</p>
     pub added_to_service_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Lifecycle replication initiation date and time.</p>
@@ -19,33 +19,33 @@ pub struct LifeCycle {
     /// <p>Lifecycle state.</p>
     pub state: ::std::option::Option<crate::types::LifeCycleState>,
 }
-impl LifeCycle {
+impl  LifeCycle  {
     /// <p>Lifecycle added to service data and time.</p>
-    pub fn added_to_service_date_time(&self) -> ::std::option::Option<&str> {
+    pub fn added_to_service_date_time(&self) -> ::std::option::Option<& str> {
         self.added_to_service_date_time.as_deref()
     }
     /// <p>Lifecycle replication initiation date and time.</p>
-    pub fn first_byte_date_time(&self) -> ::std::option::Option<&str> {
+    pub fn first_byte_date_time(&self) -> ::std::option::Option<& str> {
         self.first_byte_date_time.as_deref()
     }
     /// <p>Lifecycle elapsed time and duration.</p>
-    pub fn elapsed_replication_duration(&self) -> ::std::option::Option<&str> {
+    pub fn elapsed_replication_duration(&self) -> ::std::option::Option<& str> {
         self.elapsed_replication_duration.as_deref()
     }
     /// <p>Lifecycle last seen date and time.</p>
-    pub fn last_seen_by_service_date_time(&self) -> ::std::option::Option<&str> {
+    pub fn last_seen_by_service_date_time(&self) -> ::std::option::Option<& str> {
         self.last_seen_by_service_date_time.as_deref()
     }
     /// <p>Lifecycle last Test.</p>
-    pub fn last_test(&self) -> ::std::option::Option<&crate::types::LifeCycleLastTest> {
+    pub fn last_test(&self) -> ::std::option::Option<& crate::types::LifeCycleLastTest> {
         self.last_test.as_ref()
     }
     /// <p>Lifecycle last Cutover.</p>
-    pub fn last_cutover(&self) -> ::std::option::Option<&crate::types::LifeCycleLastCutover> {
+    pub fn last_cutover(&self) -> ::std::option::Option<& crate::types::LifeCycleLastCutover> {
         self.last_cutover.as_ref()
     }
     /// <p>Lifecycle state.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::LifeCycleState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::LifeCycleState> {
         self.state.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl LifeCycleBuilder {
     }
     /// <p>Lifecycle added to service data and time.</p>
     pub fn set_added_to_service_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.added_to_service_date_time = input;
-        self
+        self.added_to_service_date_time = input; self
     }
     /// <p>Lifecycle added to service data and time.</p>
     pub fn get_added_to_service_date_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl LifeCycleBuilder {
     }
     /// <p>Lifecycle replication initiation date and time.</p>
     pub fn set_first_byte_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.first_byte_date_time = input;
-        self
+        self.first_byte_date_time = input; self
     }
     /// <p>Lifecycle replication initiation date and time.</p>
     pub fn get_first_byte_date_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl LifeCycleBuilder {
     }
     /// <p>Lifecycle elapsed time and duration.</p>
     pub fn set_elapsed_replication_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.elapsed_replication_duration = input;
-        self
+        self.elapsed_replication_duration = input; self
     }
     /// <p>Lifecycle elapsed time and duration.</p>
     pub fn get_elapsed_replication_duration(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl LifeCycleBuilder {
     }
     /// <p>Lifecycle last seen date and time.</p>
     pub fn set_last_seen_by_service_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_seen_by_service_date_time = input;
-        self
+        self.last_seen_by_service_date_time = input; self
     }
     /// <p>Lifecycle last seen date and time.</p>
     pub fn get_last_seen_by_service_date_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl LifeCycleBuilder {
     }
     /// <p>Lifecycle last Test.</p>
     pub fn set_last_test(mut self, input: ::std::option::Option<crate::types::LifeCycleLastTest>) -> Self {
-        self.last_test = input;
-        self
+        self.last_test = input; self
     }
     /// <p>Lifecycle last Test.</p>
     pub fn get_last_test(&self) -> &::std::option::Option<crate::types::LifeCycleLastTest> {
@@ -146,8 +141,7 @@ impl LifeCycleBuilder {
     }
     /// <p>Lifecycle last Cutover.</p>
     pub fn set_last_cutover(mut self, input: ::std::option::Option<crate::types::LifeCycleLastCutover>) -> Self {
-        self.last_cutover = input;
-        self
+        self.last_cutover = input; self
     }
     /// <p>Lifecycle last Cutover.</p>
     pub fn get_last_cutover(&self) -> &::std::option::Option<crate::types::LifeCycleLastCutover> {
@@ -160,8 +154,7 @@ impl LifeCycleBuilder {
     }
     /// <p>Lifecycle state.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::LifeCycleState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Lifecycle state.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::LifeCycleState> {
@@ -170,13 +163,21 @@ impl LifeCycleBuilder {
     /// Consumes the builder and constructs a [`LifeCycle`](crate::types::LifeCycle).
     pub fn build(self) -> crate::types::LifeCycle {
         crate::types::LifeCycle {
-            added_to_service_date_time: self.added_to_service_date_time,
-            first_byte_date_time: self.first_byte_date_time,
-            elapsed_replication_duration: self.elapsed_replication_duration,
-            last_seen_by_service_date_time: self.last_seen_by_service_date_time,
-            last_test: self.last_test,
-            last_cutover: self.last_cutover,
-            state: self.state,
+            added_to_service_date_time: self.added_to_service_date_time
+            ,
+            first_byte_date_time: self.first_byte_date_time
+            ,
+            elapsed_replication_duration: self.elapsed_replication_duration
+            ,
+            last_seen_by_service_date_time: self.last_seen_by_service_date_time
+            ,
+            last_test: self.last_test
+            ,
+            last_cutover: self.last_cutover
+            ,
+            state: self.state
+            ,
         }
     }
 }
+

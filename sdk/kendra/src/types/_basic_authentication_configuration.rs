@@ -3,7 +3,7 @@
 /// <p>Provides the configuration information to connect to websites that require basic user authentication.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BasicAuthenticationConfiguration {
+pub struct BasicAuthenticationConfiguration  {
     /// <p>The name of the website host you want to connect to using authentication credentials.</p>
     /// <p>For example, the host name of https://a.example.com/page1.html is "a.example.com".</p>
     pub host: ::std::string::String,
@@ -14,12 +14,11 @@ pub struct BasicAuthenticationConfiguration {
     /// <p>You use a secret if basic authentication credentials are required to connect to a website. The secret stores your credentials of user name and password.</p>
     pub credentials: ::std::string::String,
 }
-impl BasicAuthenticationConfiguration {
+impl  BasicAuthenticationConfiguration  {
     /// <p>The name of the website host you want to connect to using authentication credentials.</p>
     /// <p>For example, the host name of https://a.example.com/page1.html is "a.example.com".</p>
-    pub fn host(&self) -> &str {
-        use std::ops::Deref;
-        self.host.deref()
+    pub fn host(&self) -> & str {
+        use std::ops::Deref; self.host.deref()
     }
     /// <p>The port number of the website host you want to connect to using authentication credentials.</p>
     /// <p>For example, the port for https://a.example.com/page1.html is 443, the standard port for HTTPS.</p>
@@ -28,9 +27,8 @@ impl BasicAuthenticationConfiguration {
     }
     /// <p>Your secret ARN, which you can create in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a></p>
     /// <p>You use a secret if basic authentication credentials are required to connect to a website. The secret stores your credentials of user name and password.</p>
-    pub fn credentials(&self) -> &str {
-        use std::ops::Deref;
-        self.credentials.deref()
+    pub fn credentials(&self) -> & str {
+        use std::ops::Deref; self.credentials.deref()
     }
 }
 impl BasicAuthenticationConfiguration {
@@ -59,8 +57,7 @@ impl BasicAuthenticationConfigurationBuilder {
     /// <p>The name of the website host you want to connect to using authentication credentials.</p>
     /// <p>For example, the host name of https://a.example.com/page1.html is "a.example.com".</p>
     pub fn set_host(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host = input;
-        self
+        self.host = input; self
     }
     /// <p>The name of the website host you want to connect to using authentication credentials.</p>
     /// <p>For example, the host name of https://a.example.com/page1.html is "a.example.com".</p>
@@ -77,8 +74,7 @@ impl BasicAuthenticationConfigurationBuilder {
     /// <p>The port number of the website host you want to connect to using authentication credentials.</p>
     /// <p>For example, the port for https://a.example.com/page1.html is 443, the standard port for HTTPS.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port number of the website host you want to connect to using authentication credentials.</p>
     /// <p>For example, the port for https://a.example.com/page1.html is 443, the standard port for HTTPS.</p>
@@ -95,8 +91,7 @@ impl BasicAuthenticationConfigurationBuilder {
     /// <p>Your secret ARN, which you can create in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a></p>
     /// <p>You use a secret if basic authentication credentials are required to connect to a website. The secret stores your credentials of user name and password.</p>
     pub fn set_credentials(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.credentials = input;
-        self
+        self.credentials = input; self
     }
     /// <p>Your secret ARN, which you can create in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a></p>
     /// <p>You use a secret if basic authentication credentials are required to connect to a website. The secret stores your credentials of user name and password.</p>
@@ -109,25 +104,25 @@ impl BasicAuthenticationConfigurationBuilder {
     /// - [`port`](crate::types::builders::BasicAuthenticationConfigurationBuilder::port)
     /// - [`credentials`](crate::types::builders::BasicAuthenticationConfigurationBuilder::credentials)
     pub fn build(self) -> ::std::result::Result<crate::types::BasicAuthenticationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BasicAuthenticationConfiguration {
-            host: self.host.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "host",
-                    "host was not specified but it is required when building BasicAuthenticationConfiguration",
-                )
-            })?,
-            port: self.port.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "port",
-                    "port was not specified but it is required when building BasicAuthenticationConfiguration",
-                )
-            })?,
-            credentials: self.credentials.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "credentials",
-                    "credentials was not specified but it is required when building BasicAuthenticationConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BasicAuthenticationConfiguration {
+                host: self.host
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("host", "host was not specified but it is required when building BasicAuthenticationConfiguration")
+                    )?
+                ,
+                port: self.port
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("port", "port was not specified but it is required when building BasicAuthenticationConfiguration")
+                    )?
+                ,
+                credentials: self.credentials
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("credentials", "credentials was not specified but it is required when building BasicAuthenticationConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

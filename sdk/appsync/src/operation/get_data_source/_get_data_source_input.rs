@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDataSourceInput {
+pub struct GetDataSourceInput  {
     /// <p>The API ID.</p>
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the data source.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl GetDataSourceInput {
+impl  GetDataSourceInput  {
     /// <p>The API ID.</p>
-    pub fn api_id(&self) -> ::std::option::Option<&str> {
+    pub fn api_id(&self) -> ::std::option::Option<& str> {
         self.api_id.as_deref()
     }
     /// <p>The name of the data source.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetDataSourceInputBuilder {
     }
     /// <p>The API ID.</p>
     pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_id = input;
-        self
+        self.api_id = input; self
     }
     /// <p>The API ID.</p>
     pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl GetDataSourceInputBuilder {
     }
     /// <p>The name of the data source.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the data source.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetDataSourceInput`](crate::operation::get_data_source::GetDataSourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_data_source::GetDataSourceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_data_source::GetDataSourceInput {
-            api_id: self.api_id,
-            name: self.name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_data_source::GetDataSourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_data_source::GetDataSourceInput {
+                api_id: self.api_id
+                ,
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

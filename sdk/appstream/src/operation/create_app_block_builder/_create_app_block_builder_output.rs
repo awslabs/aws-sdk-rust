@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAppBlockBuilderOutput {
+pub struct CreateAppBlockBuilderOutput  {
     /// <p>Describes an app block builder.</p>
     pub app_block_builder: ::std::option::Option<crate::types::AppBlockBuilder>,
     _request_id: Option<String>,
 }
-impl CreateAppBlockBuilderOutput {
+impl  CreateAppBlockBuilderOutput  {
     /// <p>Describes an app block builder.</p>
-    pub fn app_block_builder(&self) -> ::std::option::Option<&crate::types::AppBlockBuilder> {
+    pub fn app_block_builder(&self) -> ::std::option::Option<& crate::types::AppBlockBuilder> {
         self.app_block_builder.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateAppBlockBuilderOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateAppBlockBuilderOutput {
     /// Creates a new builder-style object to manufacture [`CreateAppBlockBuilderOutput`](crate::operation::create_app_block_builder::CreateAppBlockBuilderOutput).
     pub fn builder() -> crate::operation::create_app_block_builder::builders::CreateAppBlockBuilderOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateAppBlockBuilderOutputBuilder {
     }
     /// <p>Describes an app block builder.</p>
     pub fn set_app_block_builder(mut self, input: ::std::option::Option<crate::types::AppBlockBuilder>) -> Self {
-        self.app_block_builder = input;
-        self
+        self.app_block_builder = input; self
     }
     /// <p>Describes an app block builder.</p>
     pub fn get_app_block_builder(&self) -> &::std::option::Option<crate::types::AppBlockBuilder> {
         &self.app_block_builder
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateAppBlockBuilderOutput`](crate::operation::create_app_block_builder::CreateAppBlockBuilderOutput).
     pub fn build(self) -> crate::operation::create_app_block_builder::CreateAppBlockBuilderOutput {
         crate::operation::create_app_block_builder::CreateAppBlockBuilderOutput {
-            app_block_builder: self.app_block_builder,
+            app_block_builder: self.app_block_builder
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

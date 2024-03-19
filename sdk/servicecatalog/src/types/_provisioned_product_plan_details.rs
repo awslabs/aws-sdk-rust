@@ -3,7 +3,7 @@
 /// <p>Information about a plan.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProvisionedProductPlanDetails {
+pub struct ProvisionedProductPlanDetails  {
     /// <p>The UTC time stamp of the creation time.</p>
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>.</p>
@@ -27,79 +27,82 @@ pub struct ProvisionedProductPlanDetails {
     /// <p>The UTC time stamp when the plan was last updated.</p>
     pub updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
-    pub notification_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub notification_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
-    pub provisioning_parameters: ::std::option::Option<::std::vec::Vec<crate::types::UpdateProvisioningParameter>>,
+    pub provisioning_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateProvisioningParameter>>,
     /// <p>One or more tags.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The status message.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
 }
-impl ProvisionedProductPlanDetails {
+impl  ProvisionedProductPlanDetails  {
     /// <p>The UTC time stamp of the creation time.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>.</p>
-    pub fn path_id(&self) -> ::std::option::Option<&str> {
+    pub fn path_id(&self) -> ::std::option::Option<& str> {
         self.path_id.as_deref()
     }
     /// <p>The product identifier.</p>
-    pub fn product_id(&self) -> ::std::option::Option<&str> {
+    pub fn product_id(&self) -> ::std::option::Option<& str> {
         self.product_id.as_deref()
     }
     /// <p>The name of the plan.</p>
-    pub fn plan_name(&self) -> ::std::option::Option<&str> {
+    pub fn plan_name(&self) -> ::std::option::Option<& str> {
         self.plan_name.as_deref()
     }
     /// <p>The plan identifier.</p>
-    pub fn plan_id(&self) -> ::std::option::Option<&str> {
+    pub fn plan_id(&self) -> ::std::option::Option<& str> {
         self.plan_id.as_deref()
     }
     /// <p>The product identifier.</p>
-    pub fn provision_product_id(&self) -> ::std::option::Option<&str> {
+    pub fn provision_product_id(&self) -> ::std::option::Option<& str> {
         self.provision_product_id.as_deref()
     }
     /// <p>The user-friendly name of the provisioned product.</p>
-    pub fn provision_product_name(&self) -> ::std::option::Option<&str> {
+    pub fn provision_product_name(&self) -> ::std::option::Option<& str> {
         self.provision_product_name.as_deref()
     }
     /// <p>The plan type.</p>
-    pub fn plan_type(&self) -> ::std::option::Option<&crate::types::ProvisionedProductPlanType> {
+    pub fn plan_type(&self) -> ::std::option::Option<& crate::types::ProvisionedProductPlanType> {
         self.plan_type.as_ref()
     }
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn provisioning_artifact_id(&self) -> ::std::option::Option<&str> {
+    pub fn provisioning_artifact_id(&self) -> ::std::option::Option<& str> {
         self.provisioning_artifact_id.as_deref()
     }
     /// <p>The status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ProvisionedProductPlanStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ProvisionedProductPlanStatus> {
         self.status.as_ref()
     }
     /// <p>The UTC time stamp when the plan was last updated.</p>
-    pub fn updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_time.as_ref()
     }
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_arns.is_none()`.
-    pub fn notification_arns(&self) -> &[::std::string::String] {
-        self.notification_arns.as_deref().unwrap_or_default()
+    pub fn notification_arns(&self) -> & [::std::string::String] {
+        self.notification_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provisioning_parameters.is_none()`.
-    pub fn provisioning_parameters(&self) -> &[crate::types::UpdateProvisioningParameter] {
-        self.provisioning_parameters.as_deref().unwrap_or_default()
+    pub fn provisioning_parameters(&self) -> & [crate::types::UpdateProvisioningParameter] {
+        self.provisioning_parameters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>One or more tags.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The status message.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
 }
@@ -125,9 +128,9 @@ pub struct ProvisionedProductPlanDetailsBuilder {
     pub(crate) provisioning_artifact_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ProvisionedProductPlanStatus>,
     pub(crate) updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) notification_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) provisioning_parameters: ::std::option::Option<::std::vec::Vec<crate::types::UpdateProvisioningParameter>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) notification_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) provisioning_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateProvisioningParameter>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
 }
 impl ProvisionedProductPlanDetailsBuilder {
@@ -138,8 +141,7 @@ impl ProvisionedProductPlanDetailsBuilder {
     }
     /// <p>The UTC time stamp of the creation time.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The UTC time stamp of the creation time.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -152,8 +154,7 @@ impl ProvisionedProductPlanDetailsBuilder {
     }
     /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>.</p>
     pub fn set_path_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path_id = input;
-        self
+        self.path_id = input; self
     }
     /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>.</p>
     pub fn get_path_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +167,7 @@ impl ProvisionedProductPlanDetailsBuilder {
     }
     /// <p>The product identifier.</p>
     pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_id = input;
-        self
+        self.product_id = input; self
     }
     /// <p>The product identifier.</p>
     pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -180,8 +180,7 @@ impl ProvisionedProductPlanDetailsBuilder {
     }
     /// <p>The name of the plan.</p>
     pub fn set_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.plan_name = input;
-        self
+        self.plan_name = input; self
     }
     /// <p>The name of the plan.</p>
     pub fn get_plan_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,8 +193,7 @@ impl ProvisionedProductPlanDetailsBuilder {
     }
     /// <p>The plan identifier.</p>
     pub fn set_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.plan_id = input;
-        self
+        self.plan_id = input; self
     }
     /// <p>The plan identifier.</p>
     pub fn get_plan_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -208,8 +206,7 @@ impl ProvisionedProductPlanDetailsBuilder {
     }
     /// <p>The product identifier.</p>
     pub fn set_provision_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provision_product_id = input;
-        self
+        self.provision_product_id = input; self
     }
     /// <p>The product identifier.</p>
     pub fn get_provision_product_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -222,8 +219,7 @@ impl ProvisionedProductPlanDetailsBuilder {
     }
     /// <p>The user-friendly name of the provisioned product.</p>
     pub fn set_provision_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provision_product_name = input;
-        self
+        self.provision_product_name = input; self
     }
     /// <p>The user-friendly name of the provisioned product.</p>
     pub fn get_provision_product_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -236,8 +232,7 @@ impl ProvisionedProductPlanDetailsBuilder {
     }
     /// <p>The plan type.</p>
     pub fn set_plan_type(mut self, input: ::std::option::Option<crate::types::ProvisionedProductPlanType>) -> Self {
-        self.plan_type = input;
-        self
+        self.plan_type = input; self
     }
     /// <p>The plan type.</p>
     pub fn get_plan_type(&self) -> &::std::option::Option<crate::types::ProvisionedProductPlanType> {
@@ -250,8 +245,7 @@ impl ProvisionedProductPlanDetailsBuilder {
     }
     /// <p>The identifier of the provisioning artifact.</p>
     pub fn set_provisioning_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provisioning_artifact_id = input;
-        self
+        self.provisioning_artifact_id = input; self
     }
     /// <p>The identifier of the provisioning artifact.</p>
     pub fn get_provisioning_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -264,8 +258,7 @@ impl ProvisionedProductPlanDetailsBuilder {
     }
     /// <p>The status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ProvisionedProductPlanStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ProvisionedProductPlanStatus> {
@@ -278,8 +271,7 @@ impl ProvisionedProductPlanDetailsBuilder {
     }
     /// <p>The UTC time stamp when the plan was last updated.</p>
     pub fn set_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_time = input;
-        self
+        self.updated_time = input; self
     }
     /// <p>The UTC time stamp when the plan was last updated.</p>
     pub fn get_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -292,17 +284,16 @@ impl ProvisionedProductPlanDetailsBuilder {
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
     pub fn notification_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.notification_arns.unwrap_or_default();
-        v.push(input.into());
-        self.notification_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.notification_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
-    pub fn set_notification_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.notification_arns = input;
-        self
+    pub fn set_notification_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.notification_arns = input; self
     }
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
-    pub fn get_notification_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_notification_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.notification_arns
     }
     /// Appends an item to `provisioning_parameters`.
@@ -312,17 +303,16 @@ impl ProvisionedProductPlanDetailsBuilder {
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
     pub fn provisioning_parameters(mut self, input: crate::types::UpdateProvisioningParameter) -> Self {
         let mut v = self.provisioning_parameters.unwrap_or_default();
-        v.push(input);
-        self.provisioning_parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.provisioning_parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
-    pub fn set_provisioning_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateProvisioningParameter>>) -> Self {
-        self.provisioning_parameters = input;
-        self
+    pub fn set_provisioning_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateProvisioningParameter>>) -> Self {
+        self.provisioning_parameters = input; self
     }
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
-    pub fn get_provisioning_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateProvisioningParameter>> {
+    pub fn get_provisioning_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UpdateProvisioningParameter>> {
         &self.provisioning_parameters
     }
     /// Appends an item to `tags`.
@@ -332,17 +322,16 @@ impl ProvisionedProductPlanDetailsBuilder {
     /// <p>One or more tags.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>One or more tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The status message.</p>
@@ -352,8 +341,7 @@ impl ProvisionedProductPlanDetailsBuilder {
     }
     /// <p>The status message.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The status message.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -362,21 +350,37 @@ impl ProvisionedProductPlanDetailsBuilder {
     /// Consumes the builder and constructs a [`ProvisionedProductPlanDetails`](crate::types::ProvisionedProductPlanDetails).
     pub fn build(self) -> crate::types::ProvisionedProductPlanDetails {
         crate::types::ProvisionedProductPlanDetails {
-            created_time: self.created_time,
-            path_id: self.path_id,
-            product_id: self.product_id,
-            plan_name: self.plan_name,
-            plan_id: self.plan_id,
-            provision_product_id: self.provision_product_id,
-            provision_product_name: self.provision_product_name,
-            plan_type: self.plan_type,
-            provisioning_artifact_id: self.provisioning_artifact_id,
-            status: self.status,
-            updated_time: self.updated_time,
-            notification_arns: self.notification_arns,
-            provisioning_parameters: self.provisioning_parameters,
-            tags: self.tags,
-            status_message: self.status_message,
+            created_time: self.created_time
+            ,
+            path_id: self.path_id
+            ,
+            product_id: self.product_id
+            ,
+            plan_name: self.plan_name
+            ,
+            plan_id: self.plan_id
+            ,
+            provision_product_id: self.provision_product_id
+            ,
+            provision_product_name: self.provision_product_name
+            ,
+            plan_type: self.plan_type
+            ,
+            provisioning_artifact_id: self.provisioning_artifact_id
+            ,
+            status: self.status
+            ,
+            updated_time: self.updated_time
+            ,
+            notification_arns: self.notification_arns
+            ,
+            provisioning_parameters: self.provisioning_parameters
+            ,
+            tags: self.tags
+            ,
+            status_message: self.status_message
+            ,
         }
     }
 }
+

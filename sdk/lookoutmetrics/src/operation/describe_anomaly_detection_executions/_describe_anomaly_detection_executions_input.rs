@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAnomalyDetectionExecutionsInput {
+pub struct DescribeAnomalyDetectionExecutionsInput  {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
     pub anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of the anomaly detection job.</p>
@@ -12,13 +12,13 @@ pub struct DescribeAnomalyDetectionExecutionsInput {
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeAnomalyDetectionExecutionsInput {
+impl  DescribeAnomalyDetectionExecutionsInput  {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    pub fn anomaly_detector_arn(&self) -> ::std::option::Option<&str> {
+    pub fn anomaly_detector_arn(&self) -> ::std::option::Option<& str> {
         self.anomaly_detector_arn.as_deref()
     }
     /// <p>The timestamp of the anomaly detection job.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&str> {
+    pub fn timestamp(&self) -> ::std::option::Option<& str> {
         self.timestamp.as_deref()
     }
     /// <p>The number of items to return in the response.</p>
@@ -26,7 +26,7 @@ impl DescribeAnomalyDetectionExecutionsInput {
         self.max_results
     }
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl DescribeAnomalyDetectionExecutionsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
     pub fn set_anomaly_detector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.anomaly_detector_arn = input;
-        self
+        self.anomaly_detector_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
     pub fn get_anomaly_detector_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl DescribeAnomalyDetectionExecutionsInputBuilder {
     }
     /// <p>The timestamp of the anomaly detection job.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p>The timestamp of the anomaly detection job.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl DescribeAnomalyDetectionExecutionsInputBuilder {
     }
     /// <p>The number of items to return in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The number of items to return in the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -97,27 +94,26 @@ impl DescribeAnomalyDetectionExecutionsInputBuilder {
     }
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeAnomalyDetectionExecutionsInput`](crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsInput {
-                anomaly_detector_arn: self.anomaly_detector_arn,
-                timestamp: self.timestamp,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                anomaly_detector_arn: self.anomaly_detector_arn
+                ,
+                timestamp: self.timestamp
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

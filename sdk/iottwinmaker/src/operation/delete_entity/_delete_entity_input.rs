@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteEntityInput {
+pub struct DeleteEntityInput  {
     /// <p>The ID of the workspace that contains the entity to delete.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the entity to delete.</p>
@@ -10,13 +10,13 @@ pub struct DeleteEntityInput {
     /// <p>A Boolean value that specifies whether the operation deletes child entities.</p>
     pub is_recursive: ::std::option::Option<bool>,
 }
-impl DeleteEntityInput {
+impl  DeleteEntityInput  {
     /// <p>The ID of the workspace that contains the entity to delete.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// <p>The ID of the entity to delete.</p>
-    pub fn entity_id(&self) -> ::std::option::Option<&str> {
+    pub fn entity_id(&self) -> ::std::option::Option<& str> {
         self.entity_id.as_deref()
     }
     /// <p>A Boolean value that specifies whether the operation deletes child entities.</p>
@@ -48,8 +48,7 @@ impl DeleteEntityInputBuilder {
     }
     /// <p>The ID of the workspace that contains the entity to delete.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The ID of the workspace that contains the entity to delete.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DeleteEntityInputBuilder {
     }
     /// <p>The ID of the entity to delete.</p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>The ID of the entity to delete.</p>
     pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,21 +75,24 @@ impl DeleteEntityInputBuilder {
     }
     /// <p>A Boolean value that specifies whether the operation deletes child entities.</p>
     pub fn set_is_recursive(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_recursive = input;
-        self
+        self.is_recursive = input; self
     }
     /// <p>A Boolean value that specifies whether the operation deletes child entities.</p>
     pub fn get_is_recursive(&self) -> &::std::option::Option<bool> {
         &self.is_recursive
     }
     /// Consumes the builder and constructs a [`DeleteEntityInput`](crate::operation::delete_entity::DeleteEntityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_entity::DeleteEntityInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_entity::DeleteEntityInput {
-            workspace_id: self.workspace_id,
-            entity_id: self.entity_id,
-            is_recursive: self.is_recursive,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_entity::DeleteEntityInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_entity::DeleteEntityInput {
+                workspace_id: self.workspace_id
+                ,
+                entity_id: self.entity_id
+                ,
+                is_recursive: self.is_recursive
+                ,
+            }
+        )
     }
 }
+

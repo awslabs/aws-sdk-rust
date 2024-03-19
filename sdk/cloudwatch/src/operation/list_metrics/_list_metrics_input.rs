@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMetricsInput {
+pub struct ListMetricsInput  {
     /// <p>The metric namespace to filter against. Only the namespace that matches exactly will be returned.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The name of the metric to filter against. Only the metrics with names that match exactly will be returned.</p>
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The dimensions to filter against. Only the dimensions that match exactly will be returned.</p>
-    pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::DimensionFilter>>,
+    pub dimensions: ::std::option::Option<::std::vec::Vec::<crate::types::DimensionFilter>>,
     /// <p>The token returned by a previous call to indicate that there is more data available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>To filter the results to show only metrics that have had data points published in the past three hours, specify this parameter with a value of <code>PT3H</code>. This is the only valid value for this parameter.</p>
@@ -20,28 +20,29 @@ pub struct ListMetricsInput {
     /// <p>When you use this operation in a monitoring account, use this field to return metrics only from one source account. To do so, specify that source account ID in this field, and also specify <code>true</code> for <code>IncludeLinkedAccounts</code>.</p>
     pub owning_account: ::std::option::Option<::std::string::String>,
 }
-impl ListMetricsInput {
+impl  ListMetricsInput  {
     /// <p>The metric namespace to filter against. Only the namespace that matches exactly will be returned.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the metric to filter against. Only the metrics with names that match exactly will be returned.</p>
-    pub fn metric_name(&self) -> ::std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The dimensions to filter against. Only the dimensions that match exactly will be returned.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimensions.is_none()`.
-    pub fn dimensions(&self) -> &[crate::types::DimensionFilter] {
-        self.dimensions.as_deref().unwrap_or_default()
+    pub fn dimensions(&self) -> & [crate::types::DimensionFilter] {
+        self.dimensions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token returned by a previous call to indicate that there is more data available.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>To filter the results to show only metrics that have had data points published in the past three hours, specify this parameter with a value of <code>PT3H</code>. This is the only valid value for this parameter.</p>
     /// <p>The results that are returned are an approximation of the value you specify. There is a low probability that the returned results include metrics with last published data as much as 40 minutes more than the specified time interval.</p>
-    pub fn recently_active(&self) -> ::std::option::Option<&crate::types::RecentlyActive> {
+    pub fn recently_active(&self) -> ::std::option::Option<& crate::types::RecentlyActive> {
         self.recently_active.as_ref()
     }
     /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include metrics from source accounts in the returned data.</p>
@@ -50,7 +51,7 @@ impl ListMetricsInput {
         self.include_linked_accounts
     }
     /// <p>When you use this operation in a monitoring account, use this field to return metrics only from one source account. To do so, specify that source account ID in this field, and also specify <code>true</code> for <code>IncludeLinkedAccounts</code>.</p>
-    pub fn owning_account(&self) -> ::std::option::Option<&str> {
+    pub fn owning_account(&self) -> ::std::option::Option<& str> {
         self.owning_account.as_deref()
     }
 }
@@ -67,7 +68,7 @@ impl ListMetricsInput {
 pub struct ListMetricsInputBuilder {
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
-    pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<crate::types::DimensionFilter>>,
+    pub(crate) dimensions: ::std::option::Option<::std::vec::Vec::<crate::types::DimensionFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) recently_active: ::std::option::Option<crate::types::RecentlyActive>,
     pub(crate) include_linked_accounts: ::std::option::Option<bool>,
@@ -81,8 +82,7 @@ impl ListMetricsInputBuilder {
     }
     /// <p>The metric namespace to filter against. Only the namespace that matches exactly will be returned.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The metric namespace to filter against. Only the namespace that matches exactly will be returned.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +95,7 @@ impl ListMetricsInputBuilder {
     }
     /// <p>The name of the metric to filter against. Only the metrics with names that match exactly will be returned.</p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// <p>The name of the metric to filter against. Only the metrics with names that match exactly will be returned.</p>
     pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,17 +108,16 @@ impl ListMetricsInputBuilder {
     /// <p>The dimensions to filter against. Only the dimensions that match exactly will be returned.</p>
     pub fn dimensions(mut self, input: crate::types::DimensionFilter) -> Self {
         let mut v = self.dimensions.unwrap_or_default();
-        v.push(input);
-        self.dimensions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.dimensions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The dimensions to filter against. Only the dimensions that match exactly will be returned.</p>
-    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionFilter>>) -> Self {
-        self.dimensions = input;
-        self
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DimensionFilter>>) -> Self {
+        self.dimensions = input; self
     }
     /// <p>The dimensions to filter against. Only the dimensions that match exactly will be returned.</p>
-    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionFilter>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DimensionFilter>> {
         &self.dimensions
     }
     /// <p>The token returned by a previous call to indicate that there is more data available.</p>
@@ -129,8 +127,7 @@ impl ListMetricsInputBuilder {
     }
     /// <p>The token returned by a previous call to indicate that there is more data available.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token returned by a previous call to indicate that there is more data available.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +142,7 @@ impl ListMetricsInputBuilder {
     /// <p>To filter the results to show only metrics that have had data points published in the past three hours, specify this parameter with a value of <code>PT3H</code>. This is the only valid value for this parameter.</p>
     /// <p>The results that are returned are an approximation of the value you specify. There is a low probability that the returned results include metrics with last published data as much as 40 minutes more than the specified time interval.</p>
     pub fn set_recently_active(mut self, input: ::std::option::Option<crate::types::RecentlyActive>) -> Self {
-        self.recently_active = input;
-        self
+        self.recently_active = input; self
     }
     /// <p>To filter the results to show only metrics that have had data points published in the past three hours, specify this parameter with a value of <code>PT3H</code>. This is the only valid value for this parameter.</p>
     /// <p>The results that are returned are an approximation of the value you specify. There is a low probability that the returned results include metrics with last published data as much as 40 minutes more than the specified time interval.</p>
@@ -162,8 +158,7 @@ impl ListMetricsInputBuilder {
     /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include metrics from source accounts in the returned data.</p>
     /// <p>The default is <code>false</code>.</p>
     pub fn set_include_linked_accounts(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_linked_accounts = input;
-        self
+        self.include_linked_accounts = input; self
     }
     /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include metrics from source accounts in the returned data.</p>
     /// <p>The default is <code>false</code>.</p>
@@ -177,8 +172,7 @@ impl ListMetricsInputBuilder {
     }
     /// <p>When you use this operation in a monitoring account, use this field to return metrics only from one source account. To do so, specify that source account ID in this field, and also specify <code>true</code> for <code>IncludeLinkedAccounts</code>.</p>
     pub fn set_owning_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owning_account = input;
-        self
+        self.owning_account = input; self
     }
     /// <p>When you use this operation in a monitoring account, use this field to return metrics only from one source account. To do so, specify that source account ID in this field, and also specify <code>true</code> for <code>IncludeLinkedAccounts</code>.</p>
     pub fn get_owning_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -186,14 +180,24 @@ impl ListMetricsInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListMetricsInput`](crate::operation::list_metrics::ListMetricsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_metrics::ListMetricsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_metrics::ListMetricsInput {
-            namespace: self.namespace,
-            metric_name: self.metric_name,
-            dimensions: self.dimensions,
-            next_token: self.next_token,
-            recently_active: self.recently_active,
-            include_linked_accounts: self.include_linked_accounts,
-            owning_account: self.owning_account,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_metrics::ListMetricsInput {
+                namespace: self.namespace
+                ,
+                metric_name: self.metric_name
+                ,
+                dimensions: self.dimensions
+                ,
+                next_token: self.next_token
+                ,
+                recently_active: self.recently_active
+                ,
+                include_linked_accounts: self.include_linked_accounts
+                ,
+                owning_account: self.owning_account
+                ,
+            }
+        )
     }
 }
+

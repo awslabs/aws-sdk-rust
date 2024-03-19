@@ -3,15 +3,15 @@
 /// <p>Provides information about the status of a campaign.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CampaignState {
+pub struct CampaignState  {
     /// <p>The current status of the campaign, or the current status of a treatment that belongs to an A/B test campaign.</p>
     /// <p>If a campaign uses A/B testing, the campaign has a status of COMPLETED only if all campaign treatments have a status of COMPLETED. If you delete the segment that's associated with a campaign, the campaign fails and has a status of DELETED.</p>
     pub campaign_status: ::std::option::Option<crate::types::CampaignStatus>,
 }
-impl CampaignState {
+impl  CampaignState  {
     /// <p>The current status of the campaign, or the current status of a treatment that belongs to an A/B test campaign.</p>
     /// <p>If a campaign uses A/B testing, the campaign has a status of COMPLETED only if all campaign treatments have a status of COMPLETED. If you delete the segment that's associated with a campaign, the campaign fails and has a status of DELETED.</p>
-    pub fn campaign_status(&self) -> ::std::option::Option<&crate::types::CampaignStatus> {
+    pub fn campaign_status(&self) -> ::std::option::Option<& crate::types::CampaignStatus> {
         self.campaign_status.as_ref()
     }
 }
@@ -38,8 +38,7 @@ impl CampaignStateBuilder {
     /// <p>The current status of the campaign, or the current status of a treatment that belongs to an A/B test campaign.</p>
     /// <p>If a campaign uses A/B testing, the campaign has a status of COMPLETED only if all campaign treatments have a status of COMPLETED. If you delete the segment that's associated with a campaign, the campaign fails and has a status of DELETED.</p>
     pub fn set_campaign_status(mut self, input: ::std::option::Option<crate::types::CampaignStatus>) -> Self {
-        self.campaign_status = input;
-        self
+        self.campaign_status = input; self
     }
     /// <p>The current status of the campaign, or the current status of a treatment that belongs to an A/B test campaign.</p>
     /// <p>If a campaign uses A/B testing, the campaign has a status of COMPLETED only if all campaign treatments have a status of COMPLETED. If you delete the segment that's associated with a campaign, the campaign fails and has a status of DELETED.</p>
@@ -49,7 +48,9 @@ impl CampaignStateBuilder {
     /// Consumes the builder and constructs a [`CampaignState`](crate::types::CampaignState).
     pub fn build(self) -> crate::types::CampaignState {
         crate::types::CampaignState {
-            campaign_status: self.campaign_status,
+            campaign_status: self.campaign_status
+            ,
         }
     }
 }
+

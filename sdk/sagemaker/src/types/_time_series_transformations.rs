@@ -3,7 +3,7 @@
 /// <p>Transformations allowed on the dataset. Supported transformations are <code>Filling</code> and <code>Aggregation</code>. <code>Filling</code> specifies how to add values to missing values in the dataset. <code>Aggregation</code> defines how to aggregate data that does not align with forecast frequency.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TimeSeriesTransformations {
+pub struct TimeSeriesTransformations  {
     /// <p>A key value pair defining the filling method for a column, where the key is the column name and the value is an object which defines the filling logic. You can specify multiple filling methods for a single column.</p>
     /// <p>The supported filling methods and their corresponding options are:</p>
     /// <ul>
@@ -17,16 +17,14 @@ pub struct TimeSeriesTransformations {
     /// <p><code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code></p></li>
     /// </ul>
     /// <p>To set a filling method to a specific value, set the fill parameter to the chosen filling method value (for example <code>"backfill" : "value"</code>), and define the filling value in an additional parameter prefixed with "_value". For example, to set <code>backfill</code> to a value of <code>2</code>, you must include two parameters: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>.</p>
-    pub filling: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<crate::types::FillingType, ::std::string::String>>,
-    >,
+    pub filling: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<crate::types::FillingType, ::std::string::String>>>,
     /// <p>A key value pair defining the aggregation method for a column, where the key is the column name and the value is the aggregation method.</p>
     /// <p>The supported aggregation methods are <code>sum</code> (default), <code>avg</code>, <code>first</code>, <code>min</code>, <code>max</code>.</p><note>
     /// <p>Aggregation is only supported for the target column.</p>
     /// </note>
-    pub aggregation: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AggregationTransformationValue>>,
+    pub aggregation: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AggregationTransformationValue>>,
 }
-impl TimeSeriesTransformations {
+impl  TimeSeriesTransformations  {
     /// <p>A key value pair defining the filling method for a column, where the key is the column name and the value is an object which defines the filling logic. You can specify multiple filling methods for a single column.</p>
     /// <p>The supported filling methods and their corresponding options are:</p>
     /// <ul>
@@ -40,20 +38,14 @@ impl TimeSeriesTransformations {
     /// <p><code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code></p></li>
     /// </ul>
     /// <p>To set a filling method to a specific value, set the fill parameter to the chosen filling method value (for example <code>"backfill" : "value"</code>), and define the filling value in an additional parameter prefixed with "_value". For example, to set <code>backfill</code> to a value of <code>2</code>, you must include two parameters: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>.</p>
-    pub fn filling(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<crate::types::FillingType, ::std::string::String>>,
-    > {
+    pub fn filling(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<crate::types::FillingType, ::std::string::String>>> {
         self.filling.as_ref()
     }
     /// <p>A key value pair defining the aggregation method for a column, where the key is the column name and the value is the aggregation method.</p>
     /// <p>The supported aggregation methods are <code>sum</code> (default), <code>avg</code>, <code>first</code>, <code>min</code>, <code>max</code>.</p><note>
     /// <p>Aggregation is only supported for the target column.</p>
     /// </note>
-    pub fn aggregation(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AggregationTransformationValue>> {
+    pub fn aggregation(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::AggregationTransformationValue>> {
         self.aggregation.as_ref()
     }
 }
@@ -68,10 +60,8 @@ impl TimeSeriesTransformations {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TimeSeriesTransformationsBuilder {
-    pub(crate) filling: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<crate::types::FillingType, ::std::string::String>>,
-    >,
-    pub(crate) aggregation: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AggregationTransformationValue>>,
+    pub(crate) filling: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<crate::types::FillingType, ::std::string::String>>>,
+    pub(crate) aggregation: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AggregationTransformationValue>>,
 }
 impl TimeSeriesTransformationsBuilder {
     /// Adds a key-value pair to `filling`.
@@ -91,15 +81,11 @@ impl TimeSeriesTransformationsBuilder {
     /// <p><code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code></p></li>
     /// </ul>
     /// <p>To set a filling method to a specific value, set the fill parameter to the chosen filling method value (for example <code>"backfill" : "value"</code>), and define the filling value in an additional parameter prefixed with "_value". For example, to set <code>backfill</code> to a value of <code>2</code>, you must include two parameters: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>.</p>
-    pub fn filling(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::collections::HashMap<crate::types::FillingType, ::std::string::String>,
-    ) -> Self {
+    pub fn filling(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::collections::HashMap::<crate::types::FillingType, ::std::string::String>) -> Self {
         let mut hash_map = self.filling.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.filling = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.filling = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A key value pair defining the filling method for a column, where the key is the column name and the value is an object which defines the filling logic. You can specify multiple filling methods for a single column.</p>
     /// <p>The supported filling methods and their corresponding options are:</p>
@@ -114,14 +100,8 @@ impl TimeSeriesTransformationsBuilder {
     /// <p><code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code></p></li>
     /// </ul>
     /// <p>To set a filling method to a specific value, set the fill parameter to the chosen filling method value (for example <code>"backfill" : "value"</code>), and define the filling value in an additional parameter prefixed with "_value". For example, to set <code>backfill</code> to a value of <code>2</code>, you must include two parameters: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>.</p>
-    pub fn set_filling(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<crate::types::FillingType, ::std::string::String>>,
-        >,
-    ) -> Self {
-        self.filling = input;
-        self
+    pub fn set_filling(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<crate::types::FillingType, ::std::string::String>>>) -> Self {
+        self.filling = input; self
     }
     /// <p>A key value pair defining the filling method for a column, where the key is the column name and the value is an object which defines the filling logic. You can specify multiple filling methods for a single column.</p>
     /// <p>The supported filling methods and their corresponding options are:</p>
@@ -136,11 +116,7 @@ impl TimeSeriesTransformationsBuilder {
     /// <p><code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code></p></li>
     /// </ul>
     /// <p>To set a filling method to a specific value, set the fill parameter to the chosen filling method value (for example <code>"backfill" : "value"</code>), and define the filling value in an additional parameter prefixed with "_value". For example, to set <code>backfill</code> to a value of <code>2</code>, you must include two parameters: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>.</p>
-    pub fn get_filling(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<crate::types::FillingType, ::std::string::String>>,
-    > {
+    pub fn get_filling(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<crate::types::FillingType, ::std::string::String>>> {
         &self.filling
     }
     /// Adds a key-value pair to `aggregation`.
@@ -153,35 +129,32 @@ impl TimeSeriesTransformationsBuilder {
     /// </note>
     pub fn aggregation(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::AggregationTransformationValue) -> Self {
         let mut hash_map = self.aggregation.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.aggregation = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.aggregation = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A key value pair defining the aggregation method for a column, where the key is the column name and the value is the aggregation method.</p>
     /// <p>The supported aggregation methods are <code>sum</code> (default), <code>avg</code>, <code>first</code>, <code>min</code>, <code>max</code>.</p><note>
     /// <p>Aggregation is only supported for the target column.</p>
     /// </note>
-    pub fn set_aggregation(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AggregationTransformationValue>>,
-    ) -> Self {
-        self.aggregation = input;
-        self
+    pub fn set_aggregation(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AggregationTransformationValue>>) -> Self {
+        self.aggregation = input; self
     }
     /// <p>A key value pair defining the aggregation method for a column, where the key is the column name and the value is the aggregation method.</p>
     /// <p>The supported aggregation methods are <code>sum</code> (default), <code>avg</code>, <code>first</code>, <code>min</code>, <code>max</code>.</p><note>
     /// <p>Aggregation is only supported for the target column.</p>
     /// </note>
-    pub fn get_aggregation(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AggregationTransformationValue>> {
+    pub fn get_aggregation(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AggregationTransformationValue>> {
         &self.aggregation
     }
     /// Consumes the builder and constructs a [`TimeSeriesTransformations`](crate::types::TimeSeriesTransformations).
     pub fn build(self) -> crate::types::TimeSeriesTransformations {
         crate::types::TimeSeriesTransformations {
-            filling: self.filling,
-            aggregation: self.aggregation,
+            filling: self.filling
+            ,
+            aggregation: self.aggregation
+            ,
         }
     }
 }
+

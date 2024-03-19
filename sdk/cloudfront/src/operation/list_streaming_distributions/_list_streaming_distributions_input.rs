@@ -3,15 +3,15 @@
 /// <p>The request to list your streaming distributions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListStreamingDistributionsInput {
+pub struct ListStreamingDistributionsInput  {
     /// <p>The value that you provided for the <code>Marker</code> request parameter.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The value that you provided for the <code>MaxItems</code> request parameter.</p>
     pub max_items: ::std::option::Option<i32>,
 }
-impl ListStreamingDistributionsInput {
+impl  ListStreamingDistributionsInput  {
     /// <p>The value that you provided for the <code>Marker</code> request parameter.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The value that you provided for the <code>MaxItems</code> request parameter.</p>
@@ -41,8 +41,7 @@ impl ListStreamingDistributionsInputBuilder {
     }
     /// <p>The value that you provided for the <code>Marker</code> request parameter.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The value that you provided for the <code>Marker</code> request parameter.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,23 +54,22 @@ impl ListStreamingDistributionsInputBuilder {
     }
     /// <p>The value that you provided for the <code>MaxItems</code> request parameter.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>The value that you provided for the <code>MaxItems</code> request parameter.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
         &self.max_items
     }
     /// Consumes the builder and constructs a [`ListStreamingDistributionsInput`](crate::operation::list_streaming_distributions::ListStreamingDistributionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_streaming_distributions::ListStreamingDistributionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_streaming_distributions::ListStreamingDistributionsInput {
-            marker: self.marker,
-            max_items: self.max_items,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_streaming_distributions::ListStreamingDistributionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_streaming_distributions::ListStreamingDistributionsInput {
+                marker: self.marker
+                ,
+                max_items: self.max_items
+                ,
+            }
+        )
     }
 }
+

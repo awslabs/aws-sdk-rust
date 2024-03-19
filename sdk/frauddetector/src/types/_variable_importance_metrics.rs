@@ -3,16 +3,17 @@
 /// <p>The variable importance metrics details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VariableImportanceMetrics {
+pub struct VariableImportanceMetrics  {
     /// <p>List of variable metrics.</p>
-    pub log_odds_metrics: ::std::option::Option<::std::vec::Vec<crate::types::LogOddsMetric>>,
+    pub log_odds_metrics: ::std::option::Option<::std::vec::Vec::<crate::types::LogOddsMetric>>,
 }
-impl VariableImportanceMetrics {
+impl  VariableImportanceMetrics  {
     /// <p>List of variable metrics.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_odds_metrics.is_none()`.
-    pub fn log_odds_metrics(&self) -> &[crate::types::LogOddsMetric] {
-        self.log_odds_metrics.as_deref().unwrap_or_default()
+    pub fn log_odds_metrics(&self) -> & [crate::types::LogOddsMetric] {
+        self.log_odds_metrics.as_deref()
+        .unwrap_or_default()
     }
 }
 impl VariableImportanceMetrics {
@@ -26,7 +27,7 @@ impl VariableImportanceMetrics {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VariableImportanceMetricsBuilder {
-    pub(crate) log_odds_metrics: ::std::option::Option<::std::vec::Vec<crate::types::LogOddsMetric>>,
+    pub(crate) log_odds_metrics: ::std::option::Option<::std::vec::Vec::<crate::types::LogOddsMetric>>,
 }
 impl VariableImportanceMetricsBuilder {
     /// Appends an item to `log_odds_metrics`.
@@ -36,23 +37,24 @@ impl VariableImportanceMetricsBuilder {
     /// <p>List of variable metrics.</p>
     pub fn log_odds_metrics(mut self, input: crate::types::LogOddsMetric) -> Self {
         let mut v = self.log_odds_metrics.unwrap_or_default();
-        v.push(input);
-        self.log_odds_metrics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.log_odds_metrics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of variable metrics.</p>
-    pub fn set_log_odds_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogOddsMetric>>) -> Self {
-        self.log_odds_metrics = input;
-        self
+    pub fn set_log_odds_metrics(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LogOddsMetric>>) -> Self {
+        self.log_odds_metrics = input; self
     }
     /// <p>List of variable metrics.</p>
-    pub fn get_log_odds_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogOddsMetric>> {
+    pub fn get_log_odds_metrics(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LogOddsMetric>> {
         &self.log_odds_metrics
     }
     /// Consumes the builder and constructs a [`VariableImportanceMetrics`](crate::types::VariableImportanceMetrics).
     pub fn build(self) -> crate::types::VariableImportanceMetrics {
         crate::types::VariableImportanceMetrics {
-            log_odds_metrics: self.log_odds_metrics,
+            log_odds_metrics: self.log_odds_metrics
+            ,
         }
     }
 }
+

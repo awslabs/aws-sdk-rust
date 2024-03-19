@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListActionExecutionsOutput {
+pub struct ListActionExecutionsOutput  {
     /// <p>The details for a list of recent executions, such as action execution ID.</p>
-    pub action_execution_details: ::std::option::Option<::std::vec::Vec<crate::types::ActionExecutionDetail>>,
+    pub action_execution_details: ::std::option::Option<::std::vec::Vec::<crate::types::ActionExecutionDetail>>,
     /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent <code>ListActionExecutions</code> call to return the next set of action executions in the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListActionExecutionsOutput {
+impl  ListActionExecutionsOutput  {
     /// <p>The details for a list of recent executions, such as action execution ID.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.action_execution_details.is_none()`.
-    pub fn action_execution_details(&self) -> &[crate::types::ActionExecutionDetail] {
-        self.action_execution_details.as_deref().unwrap_or_default()
+    pub fn action_execution_details(&self) -> & [crate::types::ActionExecutionDetail] {
+        self.action_execution_details.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent <code>ListActionExecutions</code> call to return the next set of action executions in the list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListActionExecutionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListActionExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`ListActionExecutionsOutput`](crate::operation::list_action_executions::ListActionExecutionsOutput).
     pub fn builder() -> crate::operation::list_action_executions::builders::ListActionExecutionsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListActionExecutionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListActionExecutionsOutputBuilder {
-    pub(crate) action_execution_details: ::std::option::Option<::std::vec::Vec<crate::types::ActionExecutionDetail>>,
+    pub(crate) action_execution_details: ::std::option::Option<::std::vec::Vec::<crate::types::ActionExecutionDetail>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListActionExecutionsOutputBuilder {
     /// <p>The details for a list of recent executions, such as action execution ID.</p>
     pub fn action_execution_details(mut self, input: crate::types::ActionExecutionDetail) -> Self {
         let mut v = self.action_execution_details.unwrap_or_default();
-        v.push(input);
-        self.action_execution_details = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.action_execution_details = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The details for a list of recent executions, such as action execution ID.</p>
-    pub fn set_action_execution_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActionExecutionDetail>>) -> Self {
-        self.action_execution_details = input;
-        self
+    pub fn set_action_execution_details(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ActionExecutionDetail>>) -> Self {
+        self.action_execution_details = input; self
     }
     /// <p>The details for a list of recent executions, such as action execution ID.</p>
-    pub fn get_action_execution_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionExecutionDetail>> {
+    pub fn get_action_execution_details(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ActionExecutionDetail>> {
         &self.action_execution_details
     }
     /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent <code>ListActionExecutions</code> call to return the next set of action executions in the list.</p>
@@ -69,28 +69,30 @@ impl ListActionExecutionsOutputBuilder {
     }
     /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent <code>ListActionExecutions</code> call to return the next set of action executions in the list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent <code>ListActionExecutions</code> call to return the next set of action executions in the list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListActionExecutionsOutput`](crate::operation::list_action_executions::ListActionExecutionsOutput).
     pub fn build(self) -> crate::operation::list_action_executions::ListActionExecutionsOutput {
         crate::operation::list_action_executions::ListActionExecutionsOutput {
-            action_execution_details: self.action_execution_details,
-            next_token: self.next_token,
+            action_execution_details: self.action_execution_details
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

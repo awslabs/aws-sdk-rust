@@ -4,21 +4,21 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_artifact_encryption.html">Encrypting canary artifacts</a></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3EncryptionConfig {
+pub struct S3EncryptionConfig  {
     /// <p>The encryption method to use for artifacts created by this canary. Specify <code>SSE_S3</code> to use server-side encryption (SSE) with an Amazon S3-managed key. Specify <code>SSE-KMS</code> to use server-side encryption with a customer-managed KMS key.</p>
     /// <p>If you omit this parameter, an Amazon Web Services-managed KMS key is used.</p>
     pub encryption_mode: ::std::option::Option<crate::types::EncryptionMode>,
     /// <p>The ARN of the customer-managed KMS key to use, if you specify <code>SSE-KMS</code> for <code>EncryptionMode</code></p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
-impl S3EncryptionConfig {
+impl  S3EncryptionConfig  {
     /// <p>The encryption method to use for artifacts created by this canary. Specify <code>SSE_S3</code> to use server-side encryption (SSE) with an Amazon S3-managed key. Specify <code>SSE-KMS</code> to use server-side encryption with a customer-managed KMS key.</p>
     /// <p>If you omit this parameter, an Amazon Web Services-managed KMS key is used.</p>
-    pub fn encryption_mode(&self) -> ::std::option::Option<&crate::types::EncryptionMode> {
+    pub fn encryption_mode(&self) -> ::std::option::Option<& crate::types::EncryptionMode> {
         self.encryption_mode.as_ref()
     }
     /// <p>The ARN of the customer-managed KMS key to use, if you specify <code>SSE-KMS</code> for <code>EncryptionMode</code></p>
-    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
 }
@@ -46,8 +46,7 @@ impl S3EncryptionConfigBuilder {
     /// <p>The encryption method to use for artifacts created by this canary. Specify <code>SSE_S3</code> to use server-side encryption (SSE) with an Amazon S3-managed key. Specify <code>SSE-KMS</code> to use server-side encryption with a customer-managed KMS key.</p>
     /// <p>If you omit this parameter, an Amazon Web Services-managed KMS key is used.</p>
     pub fn set_encryption_mode(mut self, input: ::std::option::Option<crate::types::EncryptionMode>) -> Self {
-        self.encryption_mode = input;
-        self
+        self.encryption_mode = input; self
     }
     /// <p>The encryption method to use for artifacts created by this canary. Specify <code>SSE_S3</code> to use server-side encryption (SSE) with an Amazon S3-managed key. Specify <code>SSE-KMS</code> to use server-side encryption with a customer-managed KMS key.</p>
     /// <p>If you omit this parameter, an Amazon Web Services-managed KMS key is used.</p>
@@ -61,8 +60,7 @@ impl S3EncryptionConfigBuilder {
     }
     /// <p>The ARN of the customer-managed KMS key to use, if you specify <code>SSE-KMS</code> for <code>EncryptionMode</code></p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
     }
     /// <p>The ARN of the customer-managed KMS key to use, if you specify <code>SSE-KMS</code> for <code>EncryptionMode</code></p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +69,11 @@ impl S3EncryptionConfigBuilder {
     /// Consumes the builder and constructs a [`S3EncryptionConfig`](crate::types::S3EncryptionConfig).
     pub fn build(self) -> crate::types::S3EncryptionConfig {
         crate::types::S3EncryptionConfig {
-            encryption_mode: self.encryption_mode,
-            kms_key_arn: self.kms_key_arn,
+            encryption_mode: self.encryption_mode
+            ,
+            kms_key_arn: self.kms_key_arn
+            ,
         }
     }
 }
+

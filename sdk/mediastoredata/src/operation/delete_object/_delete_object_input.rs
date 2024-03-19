@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteObjectInput {
+pub struct DeleteObjectInput  {
     /// <p>The path (including the file name) where the object is stored in the container. Format: <folder name>
     /// /
     /// <folder name>
@@ -12,7 +12,7 @@ pub struct DeleteObjectInput {
     /// </folder></p>
     pub path: ::std::option::Option<::std::string::String>,
 }
-impl DeleteObjectInput {
+impl  DeleteObjectInput  {
     /// <p>The path (including the file name) where the object is stored in the container. Format: <folder name>
     /// /
     /// <folder name>
@@ -20,7 +20,7 @@ impl DeleteObjectInput {
     /// <file name></file>
     /// </folder>
     /// </folder></p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<& str> {
         self.path.as_deref()
     }
 }
@@ -58,8 +58,7 @@ impl DeleteObjectInputBuilder {
     /// </folder>
     /// </folder></p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>The path (including the file name) where the object is stored in the container. Format: <folder name>
     /// /
@@ -72,9 +71,13 @@ impl DeleteObjectInputBuilder {
         &self.path
     }
     /// Consumes the builder and constructs a [`DeleteObjectInput`](crate::operation::delete_object::DeleteObjectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_object::DeleteObjectInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_object::DeleteObjectInput { path: self.path })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_object::DeleteObjectInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_object::DeleteObjectInput {
+                path: self.path
+                ,
+            }
+        )
     }
 }
+

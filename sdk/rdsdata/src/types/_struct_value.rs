@@ -5,16 +5,17 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StructValue {
+pub struct StructValue  {
     /// <p>The attributes returned in the record.</p>
-    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::Value>>,
+    pub attributes: ::std::option::Option<::std::vec::Vec::<crate::types::Value>>,
 }
-impl StructValue {
+impl  StructValue  {
     /// <p>The attributes returned in the record.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
-    pub fn attributes(&self) -> &[crate::types::Value] {
-        self.attributes.as_deref().unwrap_or_default()
+    pub fn attributes(&self) -> & [crate::types::Value] {
+        self.attributes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl StructValue {
@@ -28,7 +29,7 @@ impl StructValue {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StructValueBuilder {
-    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::Value>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec::<crate::types::Value>>,
 }
 impl StructValueBuilder {
     /// Appends an item to `attributes`.
@@ -38,21 +39,24 @@ impl StructValueBuilder {
     /// <p>The attributes returned in the record.</p>
     pub fn attributes(mut self, input: crate::types::Value) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The attributes returned in the record.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Value>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Value>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>The attributes returned in the record.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Value>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Value>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`StructValue`](crate::types::StructValue).
     pub fn build(self) -> crate::types::StructValue {
-        crate::types::StructValue { attributes: self.attributes }
+        crate::types::StructValue {
+            attributes: self.attributes
+            ,
+        }
     }
 }
+

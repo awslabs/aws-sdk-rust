@@ -3,13 +3,13 @@
 /// <p>The details of the ingested event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IngestedEventsDetail {
+pub struct IngestedEventsDetail  {
     /// <p>The start and stop time of the ingested events.</p>
     pub ingested_events_time_window: ::std::option::Option<crate::types::IngestedEventsTimeWindow>,
 }
-impl IngestedEventsDetail {
+impl  IngestedEventsDetail  {
     /// <p>The start and stop time of the ingested events.</p>
-    pub fn ingested_events_time_window(&self) -> ::std::option::Option<&crate::types::IngestedEventsTimeWindow> {
+    pub fn ingested_events_time_window(&self) -> ::std::option::Option<& crate::types::IngestedEventsTimeWindow> {
         self.ingested_events_time_window.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl IngestedEventsDetailBuilder {
     }
     /// <p>The start and stop time of the ingested events.</p>
     pub fn set_ingested_events_time_window(mut self, input: ::std::option::Option<crate::types::IngestedEventsTimeWindow>) -> Self {
-        self.ingested_events_time_window = input;
-        self
+        self.ingested_events_time_window = input; self
     }
     /// <p>The start and stop time of the ingested events.</p>
     pub fn get_ingested_events_time_window(&self) -> &::std::option::Option<crate::types::IngestedEventsTimeWindow> {
@@ -45,7 +44,9 @@ impl IngestedEventsDetailBuilder {
     /// Consumes the builder and constructs a [`IngestedEventsDetail`](crate::types::IngestedEventsDetail).
     pub fn build(self) -> crate::types::IngestedEventsDetail {
         crate::types::IngestedEventsDetail {
-            ingested_events_time_window: self.ingested_events_time_window,
+            ingested_events_time_window: self.ingested_events_time_window
+            ,
         }
     }
 }
+

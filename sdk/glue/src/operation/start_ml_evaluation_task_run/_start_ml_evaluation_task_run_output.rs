@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartMlEvaluationTaskRunOutput {
+pub struct StartMlEvaluationTaskRunOutput  {
     /// <p>The unique identifier associated with this run.</p>
     pub task_run_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl StartMlEvaluationTaskRunOutput {
+impl  StartMlEvaluationTaskRunOutput  {
     /// <p>The unique identifier associated with this run.</p>
-    pub fn task_run_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_run_id(&self) -> ::std::option::Option<& str> {
         self.task_run_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartMlEvaluationTaskRunOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartMlEvaluationTaskRunOutput {
     /// Creates a new builder-style object to manufacture [`StartMlEvaluationTaskRunOutput`](crate::operation::start_ml_evaluation_task_run::StartMlEvaluationTaskRunOutput).
     pub fn builder() -> crate::operation::start_ml_evaluation_task_run::builders::StartMlEvaluationTaskRunOutputBuilder {
@@ -40,27 +40,28 @@ impl StartMlEvaluationTaskRunOutputBuilder {
     }
     /// <p>The unique identifier associated with this run.</p>
     pub fn set_task_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_run_id = input;
-        self
+        self.task_run_id = input; self
     }
     /// <p>The unique identifier associated with this run.</p>
     pub fn get_task_run_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_run_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartMlEvaluationTaskRunOutput`](crate::operation::start_ml_evaluation_task_run::StartMlEvaluationTaskRunOutput).
     pub fn build(self) -> crate::operation::start_ml_evaluation_task_run::StartMlEvaluationTaskRunOutput {
         crate::operation::start_ml_evaluation_task_run::StartMlEvaluationTaskRunOutput {
-            task_run_id: self.task_run_id,
+            task_run_id: self.task_run_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetProjectInput {
+pub struct GetProjectInput  {
     /// <p>The name of the space.</p>
     pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project in the space.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl GetProjectInput {
+impl  GetProjectInput  {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> ::std::option::Option<&str> {
+    pub fn space_name(&self) -> ::std::option::Option<& str> {
         self.space_name.as_deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetProjectInputBuilder {
     }
     /// <p>The name of the space.</p>
     pub fn set_space_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.space_name = input;
-        self
+        self.space_name = input; self
     }
     /// <p>The name of the space.</p>
     pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl GetProjectInputBuilder {
     }
     /// <p>The name of the project in the space.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the project in the space.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,9 +63,14 @@ impl GetProjectInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetProjectInput`](crate::operation::get_project::GetProjectInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_project::GetProjectInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_project::GetProjectInput {
-            space_name: self.space_name,
-            name: self.name,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_project::GetProjectInput {
+                space_name: self.space_name
+                ,
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

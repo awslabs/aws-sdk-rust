@@ -3,7 +3,7 @@
 /// <p>Contains information about a generation request made for the bot locale.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GenerationSummary {
+pub struct GenerationSummary  {
     /// <p>The unique identifier of the generation request.</p>
     pub generation_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the generation request.</p>
@@ -13,21 +13,21 @@ pub struct GenerationSummary {
     /// <p>The date and time at which the generation request was last updated.</p>
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl GenerationSummary {
+impl  GenerationSummary  {
     /// <p>The unique identifier of the generation request.</p>
-    pub fn generation_id(&self) -> ::std::option::Option<&str> {
+    pub fn generation_id(&self) -> ::std::option::Option<& str> {
         self.generation_id.as_deref()
     }
     /// <p>The status of the generation request.</p>
-    pub fn generation_status(&self) -> ::std::option::Option<&crate::types::GenerationStatus> {
+    pub fn generation_status(&self) -> ::std::option::Option<& crate::types::GenerationStatus> {
         self.generation_status.as_ref()
     }
     /// <p>The date and time at which the generation request was made.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time at which the generation request was last updated.</p>
-    pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl GenerationSummaryBuilder {
     }
     /// <p>The unique identifier of the generation request.</p>
     pub fn set_generation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.generation_id = input;
-        self
+        self.generation_id = input; self
     }
     /// <p>The unique identifier of the generation request.</p>
     pub fn get_generation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl GenerationSummaryBuilder {
     }
     /// <p>The status of the generation request.</p>
     pub fn set_generation_status(mut self, input: ::std::option::Option<crate::types::GenerationStatus>) -> Self {
-        self.generation_status = input;
-        self
+        self.generation_status = input; self
     }
     /// <p>The status of the generation request.</p>
     pub fn get_generation_status(&self) -> &::std::option::Option<crate::types::GenerationStatus> {
@@ -83,8 +81,7 @@ impl GenerationSummaryBuilder {
     }
     /// <p>The date and time at which the generation request was made.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>The date and time at which the generation request was made.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -97,8 +94,7 @@ impl GenerationSummaryBuilder {
     }
     /// <p>The date and time at which the generation request was last updated.</p>
     pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date_time = input;
-        self
+        self.last_updated_date_time = input; self
     }
     /// <p>The date and time at which the generation request was last updated.</p>
     pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -107,10 +103,15 @@ impl GenerationSummaryBuilder {
     /// Consumes the builder and constructs a [`GenerationSummary`](crate::types::GenerationSummary).
     pub fn build(self) -> crate::types::GenerationSummary {
         crate::types::GenerationSummary {
-            generation_id: self.generation_id,
-            generation_status: self.generation_status,
-            creation_date_time: self.creation_date_time,
-            last_updated_date_time: self.last_updated_date_time,
+            generation_id: self.generation_id
+            ,
+            generation_status: self.generation_status
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            last_updated_date_time: self.last_updated_date_time
+            ,
         }
     }
 }
+

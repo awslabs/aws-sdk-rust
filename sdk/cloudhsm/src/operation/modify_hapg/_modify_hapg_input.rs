@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyHapgInput {
+pub struct ModifyHapgInput  {
     /// <p>The ARN of the high-availability partition group to modify.</p>
     pub hapg_arn: ::std::option::Option<::std::string::String>,
     /// <p>The new label for the high-availability partition group.</p>
     pub label: ::std::option::Option<::std::string::String>,
     /// <p>The list of partition serial numbers to make members of the high-availability partition group.</p>
-    pub partition_serial_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub partition_serial_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ModifyHapgInput {
+impl  ModifyHapgInput  {
     /// <p>The ARN of the high-availability partition group to modify.</p>
-    pub fn hapg_arn(&self) -> ::std::option::Option<&str> {
+    pub fn hapg_arn(&self) -> ::std::option::Option<& str> {
         self.hapg_arn.as_deref()
     }
     /// <p>The new label for the high-availability partition group.</p>
-    pub fn label(&self) -> ::std::option::Option<&str> {
+    pub fn label(&self) -> ::std::option::Option<& str> {
         self.label.as_deref()
     }
     /// <p>The list of partition serial numbers to make members of the high-availability partition group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partition_serial_list.is_none()`.
-    pub fn partition_serial_list(&self) -> &[::std::string::String] {
-        self.partition_serial_list.as_deref().unwrap_or_default()
+    pub fn partition_serial_list(&self) -> & [::std::string::String] {
+        self.partition_serial_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ModifyHapgInput {
@@ -39,7 +40,7 @@ impl ModifyHapgInput {
 pub struct ModifyHapgInputBuilder {
     pub(crate) hapg_arn: ::std::option::Option<::std::string::String>,
     pub(crate) label: ::std::option::Option<::std::string::String>,
-    pub(crate) partition_serial_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) partition_serial_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ModifyHapgInputBuilder {
     /// <p>The ARN of the high-availability partition group to modify.</p>
@@ -50,8 +51,7 @@ impl ModifyHapgInputBuilder {
     }
     /// <p>The ARN of the high-availability partition group to modify.</p>
     pub fn set_hapg_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hapg_arn = input;
-        self
+        self.hapg_arn = input; self
     }
     /// <p>The ARN of the high-availability partition group to modify.</p>
     pub fn get_hapg_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl ModifyHapgInputBuilder {
     }
     /// <p>The new label for the high-availability partition group.</p>
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label = input;
-        self
+        self.label = input; self
     }
     /// <p>The new label for the high-availability partition group.</p>
     pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,25 +77,30 @@ impl ModifyHapgInputBuilder {
     /// <p>The list of partition serial numbers to make members of the high-availability partition group.</p>
     pub fn partition_serial_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.partition_serial_list.unwrap_or_default();
-        v.push(input.into());
-        self.partition_serial_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.partition_serial_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of partition serial numbers to make members of the high-availability partition group.</p>
-    pub fn set_partition_serial_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.partition_serial_list = input;
-        self
+    pub fn set_partition_serial_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.partition_serial_list = input; self
     }
     /// <p>The list of partition serial numbers to make members of the high-availability partition group.</p>
-    pub fn get_partition_serial_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_partition_serial_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.partition_serial_list
     }
     /// Consumes the builder and constructs a [`ModifyHapgInput`](crate::operation::modify_hapg::ModifyHapgInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::modify_hapg::ModifyHapgInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::modify_hapg::ModifyHapgInput {
-            hapg_arn: self.hapg_arn,
-            label: self.label,
-            partition_serial_list: self.partition_serial_list,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::modify_hapg::ModifyHapgInput {
+                hapg_arn: self.hapg_arn
+                ,
+                label: self.label
+                ,
+                partition_serial_list: self.partition_serial_list
+                ,
+            }
+        )
     }
 }
+

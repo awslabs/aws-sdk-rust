@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartMessageMoveTaskInput {
+pub struct StartMessageMoveTaskInput  {
     /// <p>The ARN of the queue that contains the messages to be moved to another queue. Currently, only ARNs of dead-letter queues (DLQs) whose sources are other Amazon SQS queues are accepted. DLQs whose sources are non-SQS queues, such as Lambda or Amazon SNS topics, are not currently supported.</p>
     pub source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the queue that receives the moved messages. You can use this field to specify the destination queue where you would like to redrive messages. If this field is left blank, the messages will be redriven back to their respective original source queues.</p>
@@ -10,13 +10,13 @@ pub struct StartMessageMoveTaskInput {
     /// <p>The number of messages to be moved per second (the message movement rate). You can use this field to define a fixed message movement rate. The maximum value for messages per second is 500. If this field is left blank, the system will optimize the rate based on the queue message backlog size, which may vary throughout the duration of the message movement task.</p>
     pub max_number_of_messages_per_second: ::std::option::Option<i32>,
 }
-impl StartMessageMoveTaskInput {
+impl  StartMessageMoveTaskInput  {
     /// <p>The ARN of the queue that contains the messages to be moved to another queue. Currently, only ARNs of dead-letter queues (DLQs) whose sources are other Amazon SQS queues are accepted. DLQs whose sources are non-SQS queues, such as Lambda or Amazon SNS topics, are not currently supported.</p>
-    pub fn source_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_arn(&self) -> ::std::option::Option<& str> {
         self.source_arn.as_deref()
     }
     /// <p>The ARN of the queue that receives the moved messages. You can use this field to specify the destination queue where you would like to redrive messages. If this field is left blank, the messages will be redriven back to their respective original source queues.</p>
-    pub fn destination_arn(&self) -> ::std::option::Option<&str> {
+    pub fn destination_arn(&self) -> ::std::option::Option<& str> {
         self.destination_arn.as_deref()
     }
     /// <p>The number of messages to be moved per second (the message movement rate). You can use this field to define a fixed message movement rate. The maximum value for messages per second is 500. If this field is left blank, the system will optimize the rate based on the queue message backlog size, which may vary throughout the duration of the message movement task.</p>
@@ -48,8 +48,7 @@ impl StartMessageMoveTaskInputBuilder {
     }
     /// <p>The ARN of the queue that contains the messages to be moved to another queue. Currently, only ARNs of dead-letter queues (DLQs) whose sources are other Amazon SQS queues are accepted. DLQs whose sources are non-SQS queues, such as Lambda or Amazon SNS topics, are not currently supported.</p>
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_arn = input;
-        self
+        self.source_arn = input; self
     }
     /// <p>The ARN of the queue that contains the messages to be moved to another queue. Currently, only ARNs of dead-letter queues (DLQs) whose sources are other Amazon SQS queues are accepted. DLQs whose sources are non-SQS queues, such as Lambda or Amazon SNS topics, are not currently supported.</p>
     pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl StartMessageMoveTaskInputBuilder {
     }
     /// <p>The ARN of the queue that receives the moved messages. You can use this field to specify the destination queue where you would like to redrive messages. If this field is left blank, the messages will be redriven back to their respective original source queues.</p>
     pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_arn = input;
-        self
+        self.destination_arn = input; self
     }
     /// <p>The ARN of the queue that receives the moved messages. You can use this field to specify the destination queue where you would like to redrive messages. If this field is left blank, the messages will be redriven back to their respective original source queues.</p>
     pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,22 +74,24 @@ impl StartMessageMoveTaskInputBuilder {
     }
     /// <p>The number of messages to be moved per second (the message movement rate). You can use this field to define a fixed message movement rate. The maximum value for messages per second is 500. If this field is left blank, the system will optimize the rate based on the queue message backlog size, which may vary throughout the duration of the message movement task.</p>
     pub fn set_max_number_of_messages_per_second(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_number_of_messages_per_second = input;
-        self
+        self.max_number_of_messages_per_second = input; self
     }
     /// <p>The number of messages to be moved per second (the message movement rate). You can use this field to define a fixed message movement rate. The maximum value for messages per second is 500. If this field is left blank, the system will optimize the rate based on the queue message backlog size, which may vary throughout the duration of the message movement task.</p>
     pub fn get_max_number_of_messages_per_second(&self) -> &::std::option::Option<i32> {
         &self.max_number_of_messages_per_second
     }
     /// Consumes the builder and constructs a [`StartMessageMoveTaskInput`](crate::operation::start_message_move_task::StartMessageMoveTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_message_move_task::StartMessageMoveTaskInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_message_move_task::StartMessageMoveTaskInput {
-            source_arn: self.source_arn,
-            destination_arn: self.destination_arn,
-            max_number_of_messages_per_second: self.max_number_of_messages_per_second,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_message_move_task::StartMessageMoveTaskInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_message_move_task::StartMessageMoveTaskInput {
+                source_arn: self.source_arn
+                ,
+                destination_arn: self.destination_arn
+                ,
+                max_number_of_messages_per_second: self.max_number_of_messages_per_second
+                ,
+            }
+        )
     }
 }
+

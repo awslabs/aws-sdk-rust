@@ -3,7 +3,7 @@
 /// <p>Represents an object when updating a rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RuleUpdate {
+pub struct RuleUpdate  {
     /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
     pub rule_identifier: ::std::string::String,
     /// <p>The rule match.</p>
@@ -13,14 +13,13 @@ pub struct RuleUpdate {
     /// <p>The rule action.</p>
     pub action: ::std::option::Option<crate::types::RuleAction>,
 }
-impl RuleUpdate {
+impl  RuleUpdate  {
     /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
-    pub fn rule_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.rule_identifier.deref()
+    pub fn rule_identifier(&self) -> & str {
+        use std::ops::Deref; self.rule_identifier.deref()
     }
     /// <p>The rule match.</p>
-    pub fn r#match(&self) -> ::std::option::Option<&crate::types::RuleMatch> {
+    pub fn r#match(&self) -> ::std::option::Option<& crate::types::RuleMatch> {
         self.r#match.as_ref()
     }
     /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
@@ -28,7 +27,7 @@ impl RuleUpdate {
         self.priority
     }
     /// <p>The rule action.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::RuleAction> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::RuleAction> {
         self.action.as_ref()
     }
 }
@@ -57,8 +56,7 @@ impl RuleUpdateBuilder {
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
     pub fn set_rule_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_identifier = input;
-        self
+        self.rule_identifier = input; self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
     pub fn get_rule_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +69,7 @@ impl RuleUpdateBuilder {
     }
     /// <p>The rule match.</p>
     pub fn set_match(mut self, input: ::std::option::Option<crate::types::RuleMatch>) -> Self {
-        self.r#match = input;
-        self
+        self.r#match = input; self
     }
     /// <p>The rule match.</p>
     pub fn get_match(&self) -> &::std::option::Option<crate::types::RuleMatch> {
@@ -85,8 +82,7 @@ impl RuleUpdateBuilder {
     }
     /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
@@ -99,8 +95,7 @@ impl RuleUpdateBuilder {
     }
     /// <p>The rule action.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::RuleAction>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>The rule action.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::RuleAction> {
@@ -110,16 +105,21 @@ impl RuleUpdateBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`rule_identifier`](crate::types::builders::RuleUpdateBuilder::rule_identifier)
     pub fn build(self) -> ::std::result::Result<crate::types::RuleUpdate, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RuleUpdate {
-            rule_identifier: self.rule_identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rule_identifier",
-                    "rule_identifier was not specified but it is required when building RuleUpdate",
-                )
-            })?,
-            r#match: self.r#match,
-            priority: self.priority,
-            action: self.action,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RuleUpdate {
+                rule_identifier: self.rule_identifier
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rule_identifier", "rule_identifier was not specified but it is required when building RuleUpdate")
+                    )?
+                ,
+                r#match: self.r#match
+                ,
+                priority: self.priority
+                ,
+                action: self.action
+                ,
+            }
+        )
     }
 }
+

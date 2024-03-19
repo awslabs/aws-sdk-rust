@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListIdentityProvidersOutput {
+pub struct ListIdentityProvidersOutput  {
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The identity providers.</p>
-    pub identity_providers: ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderSummary>>,
+    pub identity_providers: ::std::option::Option<::std::vec::Vec::<crate::types::IdentityProviderSummary>>,
     _request_id: Option<String>,
 }
-impl ListIdentityProvidersOutput {
+impl  ListIdentityProvidersOutput  {
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The identity providers.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.identity_providers.is_none()`.
-    pub fn identity_providers(&self) -> &[crate::types::IdentityProviderSummary] {
-        self.identity_providers.as_deref().unwrap_or_default()
+    pub fn identity_providers(&self) -> & [crate::types::IdentityProviderSummary] {
+        self.identity_providers.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListIdentityProvidersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListIdentityProvidersOutput {
     /// Creates a new builder-style object to manufacture [`ListIdentityProvidersOutput`](crate::operation::list_identity_providers::ListIdentityProvidersOutput).
     pub fn builder() -> crate::operation::list_identity_providers::builders::ListIdentityProvidersOutputBuilder {
@@ -38,7 +39,7 @@ impl ListIdentityProvidersOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIdentityProvidersOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) identity_providers: ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderSummary>>,
+    pub(crate) identity_providers: ::std::option::Option<::std::vec::Vec::<crate::types::IdentityProviderSummary>>,
     _request_id: Option<String>,
 }
 impl ListIdentityProvidersOutputBuilder {
@@ -49,8 +50,7 @@ impl ListIdentityProvidersOutputBuilder {
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListIdentityProvidersOutputBuilder {
     /// <p>The identity providers.</p>
     pub fn identity_providers(mut self, input: crate::types::IdentityProviderSummary) -> Self {
         let mut v = self.identity_providers.unwrap_or_default();
-        v.push(input);
-        self.identity_providers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.identity_providers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The identity providers.</p>
-    pub fn set_identity_providers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderSummary>>) -> Self {
-        self.identity_providers = input;
-        self
+    pub fn set_identity_providers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IdentityProviderSummary>>) -> Self {
+        self.identity_providers = input; self
     }
     /// <p>The identity providers.</p>
-    pub fn get_identity_providers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderSummary>> {
+    pub fn get_identity_providers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IdentityProviderSummary>> {
         &self.identity_providers
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListIdentityProvidersOutput`](crate::operation::list_identity_providers::ListIdentityProvidersOutput).
     pub fn build(self) -> crate::operation::list_identity_providers::ListIdentityProvidersOutput {
         crate::operation::list_identity_providers::ListIdentityProvidersOutput {
-            next_token: self.next_token,
-            identity_providers: self.identity_providers,
+            next_token: self.next_token
+            ,
+            identity_providers: self.identity_providers
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

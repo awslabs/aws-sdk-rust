@@ -3,7 +3,7 @@
 /// <p>A Device Defender security profile behavior.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Behavior {
+pub struct Behavior  {
     /// <p>The name you've given to the behavior.</p>
     pub name: ::std::string::String,
     /// <p>What is measured by the behavior.</p>
@@ -19,24 +19,23 @@ pub struct Behavior {
     /// <p>Value indicates exporting metrics related to the behavior when it is true.</p>
     pub export_metric: ::std::option::Option<bool>,
 }
-impl Behavior {
+impl  Behavior  {
     /// <p>The name you've given to the behavior.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>What is measured by the behavior.</p>
-    pub fn metric(&self) -> ::std::option::Option<&str> {
+    pub fn metric(&self) -> ::std::option::Option<& str> {
         self.metric.as_deref()
     }
     /// <p>The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric to only MQTT topics where the name matches the pattern specified in the dimension. This can't be used with custom metrics.</p>
-    pub fn metric_dimension(&self) -> ::std::option::Option<&crate::types::MetricDimension> {
+    pub fn metric_dimension(&self) -> ::std::option::Option<& crate::types::MetricDimension> {
         self.metric_dimension.as_ref()
     }
     /// <p>The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.</p><note>
     /// <p>In the IoT console, you can choose to be sent an alert through Amazon SNS when IoT Device Defender detects that a device is behaving anomalously.</p>
     /// </note>
-    pub fn criteria(&self) -> ::std::option::Option<&crate::types::BehaviorCriteria> {
+    pub fn criteria(&self) -> ::std::option::Option<& crate::types::BehaviorCriteria> {
         self.criteria.as_ref()
     }
     /// <p>Suppresses alerts.</p>
@@ -75,8 +74,7 @@ impl BehaviorBuilder {
     }
     /// <p>The name you've given to the behavior.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name you've given to the behavior.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl BehaviorBuilder {
     }
     /// <p>What is measured by the behavior.</p>
     pub fn set_metric(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric = input;
-        self
+        self.metric = input; self
     }
     /// <p>What is measured by the behavior.</p>
     pub fn get_metric(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +100,7 @@ impl BehaviorBuilder {
     }
     /// <p>The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric to only MQTT topics where the name matches the pattern specified in the dimension. This can't be used with custom metrics.</p>
     pub fn set_metric_dimension(mut self, input: ::std::option::Option<crate::types::MetricDimension>) -> Self {
-        self.metric_dimension = input;
-        self
+        self.metric_dimension = input; self
     }
     /// <p>The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric to only MQTT topics where the name matches the pattern specified in the dimension. This can't be used with custom metrics.</p>
     pub fn get_metric_dimension(&self) -> &::std::option::Option<crate::types::MetricDimension> {
@@ -121,8 +117,7 @@ impl BehaviorBuilder {
     /// <p>In the IoT console, you can choose to be sent an alert through Amazon SNS when IoT Device Defender detects that a device is behaving anomalously.</p>
     /// </note>
     pub fn set_criteria(mut self, input: ::std::option::Option<crate::types::BehaviorCriteria>) -> Self {
-        self.criteria = input;
-        self
+        self.criteria = input; self
     }
     /// <p>The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.</p><note>
     /// <p>In the IoT console, you can choose to be sent an alert through Amazon SNS when IoT Device Defender detects that a device is behaving anomalously.</p>
@@ -137,8 +132,7 @@ impl BehaviorBuilder {
     }
     /// <p>Suppresses alerts.</p>
     pub fn set_suppress_alerts(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.suppress_alerts = input;
-        self
+        self.suppress_alerts = input; self
     }
     /// <p>Suppresses alerts.</p>
     pub fn get_suppress_alerts(&self) -> &::std::option::Option<bool> {
@@ -151,8 +145,7 @@ impl BehaviorBuilder {
     }
     /// <p>Value indicates exporting metrics related to the behavior when it is true.</p>
     pub fn set_export_metric(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.export_metric = input;
-        self
+        self.export_metric = input; self
     }
     /// <p>Value indicates exporting metrics related to the behavior when it is true.</p>
     pub fn get_export_metric(&self) -> &::std::option::Option<bool> {
@@ -162,18 +155,25 @@ impl BehaviorBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::BehaviorBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::Behavior, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Behavior {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building Behavior",
-                )
-            })?,
-            metric: self.metric,
-            metric_dimension: self.metric_dimension,
-            criteria: self.criteria,
-            suppress_alerts: self.suppress_alerts,
-            export_metric: self.export_metric,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Behavior {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building Behavior")
+                    )?
+                ,
+                metric: self.metric
+                ,
+                metric_dimension: self.metric_dimension
+                ,
+                criteria: self.criteria
+                ,
+                suppress_alerts: self.suppress_alerts
+                ,
+                export_metric: self.export_metric
+                ,
+            }
+        )
     }
 }
+

@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeIamInstanceProfileAssociationsInput {
+pub struct DescribeIamInstanceProfileAssociationsInput  {
     /// <p>The IAM instance profile associations.</p>
-    pub association_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub association_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
@@ -12,18 +12,19 @@ pub struct DescribeIamInstanceProfileAssociationsInput {
     /// <li>
     /// <p><code>state</code> - The state of the association (<code>associating</code> | <code>associated</code> | <code>disassociating</code>).</p></li>
     /// </ul>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeIamInstanceProfileAssociationsInput {
+impl  DescribeIamInstanceProfileAssociationsInput  {
     /// <p>The IAM instance profile associations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.association_ids.is_none()`.
-    pub fn association_ids(&self) -> &[::std::string::String] {
-        self.association_ids.as_deref().unwrap_or_default()
+    pub fn association_ids(&self) -> & [::std::string::String] {
+        self.association_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The filters.</p>
     /// <ul>
@@ -32,17 +33,18 @@ impl DescribeIamInstanceProfileAssociationsInput {
     /// <li>
     /// <p><code>state</code> - The state of the association (<code>associating</code> | <code>associated</code> | <code>disassociating</code>).</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -57,8 +59,8 @@ impl DescribeIamInstanceProfileAssociationsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIamInstanceProfileAssociationsInputBuilder {
-    pub(crate) association_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) association_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -70,17 +72,16 @@ impl DescribeIamInstanceProfileAssociationsInputBuilder {
     /// <p>The IAM instance profile associations.</p>
     pub fn association_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.association_ids.unwrap_or_default();
-        v.push(input.into());
-        self.association_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.association_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IAM instance profile associations.</p>
-    pub fn set_association_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.association_ids = input;
-        self
+    pub fn set_association_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.association_ids = input; self
     }
     /// <p>The IAM instance profile associations.</p>
-    pub fn get_association_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_association_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.association_ids
     }
     /// Appends an item to `filters`.
@@ -96,9 +97,9 @@ impl DescribeIamInstanceProfileAssociationsInputBuilder {
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The filters.</p>
     /// <ul>
@@ -107,9 +108,8 @@ impl DescribeIamInstanceProfileAssociationsInputBuilder {
     /// <li>
     /// <p><code>state</code> - The state of the association (<code>associating</code> | <code>associated</code> | <code>disassociating</code>).</p></li>
     /// </ul>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The filters.</p>
     /// <ul>
@@ -118,7 +118,7 @@ impl DescribeIamInstanceProfileAssociationsInputBuilder {
     /// <li>
     /// <p><code>state</code> - The state of the association (<code>associating</code> | <code>associated</code> | <code>disassociating</code>).</p></li>
     /// </ul>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
@@ -128,8 +128,7 @@ impl DescribeIamInstanceProfileAssociationsInputBuilder {
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -142,27 +141,26 @@ impl DescribeIamInstanceProfileAssociationsInputBuilder {
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeIamInstanceProfileAssociationsInput`](crate::operation::describe_iam_instance_profile_associations::DescribeIamInstanceProfileAssociationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_iam_instance_profile_associations::DescribeIamInstanceProfileAssociationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_iam_instance_profile_associations::DescribeIamInstanceProfileAssociationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_iam_instance_profile_associations::DescribeIamInstanceProfileAssociationsInput {
-                association_ids: self.association_ids,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                association_ids: self.association_ids
+                ,
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

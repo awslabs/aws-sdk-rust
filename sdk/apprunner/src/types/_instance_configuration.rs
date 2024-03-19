@@ -3,7 +3,7 @@
 /// <p>Describes the runtime configuration of an App Runner service instance (scaling unit).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceConfiguration {
+pub struct InstanceConfiguration  {
     /// <p>The number of CPU units reserved for each instance of your App Runner service.</p>
     /// <p>Default: <code>1 vCPU</code></p>
     pub cpu: ::std::option::Option<::std::string::String>,
@@ -13,19 +13,19 @@ pub struct InstanceConfiguration {
     /// <p>The Amazon Resource Name (ARN) of an IAM role that provides permissions to your App Runner service. These are permissions that your code needs when it calls any Amazon Web Services APIs.</p>
     pub instance_role_arn: ::std::option::Option<::std::string::String>,
 }
-impl InstanceConfiguration {
+impl  InstanceConfiguration  {
     /// <p>The number of CPU units reserved for each instance of your App Runner service.</p>
     /// <p>Default: <code>1 vCPU</code></p>
-    pub fn cpu(&self) -> ::std::option::Option<&str> {
+    pub fn cpu(&self) -> ::std::option::Option<& str> {
         self.cpu.as_deref()
     }
     /// <p>The amount of memory, in MB or GB, reserved for each instance of your App Runner service.</p>
     /// <p>Default: <code>2 GB</code></p>
-    pub fn memory(&self) -> ::std::option::Option<&str> {
+    pub fn memory(&self) -> ::std::option::Option<& str> {
         self.memory.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that provides permissions to your App Runner service. These are permissions that your code needs when it calls any Amazon Web Services APIs.</p>
-    pub fn instance_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn instance_role_arn(&self) -> ::std::option::Option<& str> {
         self.instance_role_arn.as_deref()
     }
 }
@@ -54,8 +54,7 @@ impl InstanceConfigurationBuilder {
     /// <p>The number of CPU units reserved for each instance of your App Runner service.</p>
     /// <p>Default: <code>1 vCPU</code></p>
     pub fn set_cpu(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cpu = input;
-        self
+        self.cpu = input; self
     }
     /// <p>The number of CPU units reserved for each instance of your App Runner service.</p>
     /// <p>Default: <code>1 vCPU</code></p>
@@ -71,8 +70,7 @@ impl InstanceConfigurationBuilder {
     /// <p>The amount of memory, in MB or GB, reserved for each instance of your App Runner service.</p>
     /// <p>Default: <code>2 GB</code></p>
     pub fn set_memory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.memory = input;
-        self
+        self.memory = input; self
     }
     /// <p>The amount of memory, in MB or GB, reserved for each instance of your App Runner service.</p>
     /// <p>Default: <code>2 GB</code></p>
@@ -86,8 +84,7 @@ impl InstanceConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that provides permissions to your App Runner service. These are permissions that your code needs when it calls any Amazon Web Services APIs.</p>
     pub fn set_instance_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_role_arn = input;
-        self
+        self.instance_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that provides permissions to your App Runner service. These are permissions that your code needs when it calls any Amazon Web Services APIs.</p>
     pub fn get_instance_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,9 +93,13 @@ impl InstanceConfigurationBuilder {
     /// Consumes the builder and constructs a [`InstanceConfiguration`](crate::types::InstanceConfiguration).
     pub fn build(self) -> crate::types::InstanceConfiguration {
         crate::types::InstanceConfiguration {
-            cpu: self.cpu,
-            memory: self.memory,
-            instance_role_arn: self.instance_role_arn,
+            cpu: self.cpu
+            ,
+            memory: self.memory
+            ,
+            instance_role_arn: self.instance_role_arn
+            ,
         }
     }
 }
+

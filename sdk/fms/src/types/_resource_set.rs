@@ -3,7 +3,7 @@
 /// <p>A set of resources to include in a policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceSet {
+pub struct ResourceSet  {
     /// <p>A unique identifier for the resource set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The descriptive name of the resource set. You can't change the name of a resource set after you create it.</p>
@@ -15,7 +15,7 @@ pub struct ResourceSet {
     /// <p>To make a conditional change to the resource set, provide the token in your update request. Firewall Manager uses the token to ensure that the resource set hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the resource set again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token.</p>
     pub update_token: ::std::option::Option<::std::string::String>,
     /// <p>Determines the resources that can be associated to the resource set. Depending on your setting for max results and the number of resource sets, a single call might not return the full list.</p>
-    pub resource_type_list: ::std::vec::Vec<::std::string::String>,
+    pub resource_type_list: ::std::vec::Vec::<::std::string::String>,
     /// <p>The last time that the resource set was changed.</p>
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates whether the resource set is in or out of an admin's Region scope.</p>
@@ -27,33 +27,31 @@ pub struct ResourceSet {
     /// </ul>
     pub resource_set_status: ::std::option::Option<crate::types::ResourceSetStatus>,
 }
-impl ResourceSet {
+impl  ResourceSet  {
     /// <p>A unique identifier for the resource set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The descriptive name of the resource set. You can't change the name of a resource set after you create it.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>A description of the resource set.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An optional token that you can use for optimistic locking. Firewall Manager returns a token to your requests that access the resource set. The token marks the state of the resource set resource at the time of the request. Update tokens are not allowed when creating a resource set. After creation, each subsequent update call to the resource set requires the update token.</p>
     /// <p>To make an unconditional change to the resource set, omit the token in your update request. Without the token, Firewall Manager performs your updates regardless of whether the resource set has changed since you last retrieved it.</p>
     /// <p>To make a conditional change to the resource set, provide the token in your update request. Firewall Manager uses the token to ensure that the resource set hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the resource set again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token.</p>
-    pub fn update_token(&self) -> ::std::option::Option<&str> {
+    pub fn update_token(&self) -> ::std::option::Option<& str> {
         self.update_token.as_deref()
     }
     /// <p>Determines the resources that can be associated to the resource set. Depending on your setting for max results and the number of resource sets, a single call might not return the full list.</p>
-    pub fn resource_type_list(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.resource_type_list.deref()
+    pub fn resource_type_list(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.resource_type_list.deref()
     }
     /// <p>The last time that the resource set was changed.</p>
-    pub fn last_update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>Indicates whether the resource set is in or out of an admin's Region scope.</p>
@@ -63,7 +61,7 @@ impl ResourceSet {
     /// <li>
     /// <p><code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the resource set, but they can't edit or delete the resource set. Existing protections stay in place. Any new resource that come into scope of the resource set won't be protected.</p></li>
     /// </ul>
-    pub fn resource_set_status(&self) -> ::std::option::Option<&crate::types::ResourceSetStatus> {
+    pub fn resource_set_status(&self) -> ::std::option::Option<& crate::types::ResourceSetStatus> {
         self.resource_set_status.as_ref()
     }
 }
@@ -82,7 +80,7 @@ pub struct ResourceSetBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) update_token: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_type_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) resource_type_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) resource_set_status: ::std::option::Option<crate::types::ResourceSetStatus>,
 }
@@ -94,8 +92,7 @@ impl ResourceSetBuilder {
     }
     /// <p>A unique identifier for the resource set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>A unique identifier for the resource set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +106,7 @@ impl ResourceSetBuilder {
     }
     /// <p>The descriptive name of the resource set. You can't change the name of a resource set after you create it.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The descriptive name of the resource set. You can't change the name of a resource set after you create it.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +119,7 @@ impl ResourceSetBuilder {
     }
     /// <p>A description of the resource set.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the resource set.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +136,7 @@ impl ResourceSetBuilder {
     /// <p>To make an unconditional change to the resource set, omit the token in your update request. Without the token, Firewall Manager performs your updates regardless of whether the resource set has changed since you last retrieved it.</p>
     /// <p>To make a conditional change to the resource set, provide the token in your update request. Firewall Manager uses the token to ensure that the resource set hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the resource set again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token.</p>
     pub fn set_update_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.update_token = input;
-        self
+        self.update_token = input; self
     }
     /// <p>An optional token that you can use for optimistic locking. Firewall Manager returns a token to your requests that access the resource set. The token marks the state of the resource set resource at the time of the request. Update tokens are not allowed when creating a resource set. After creation, each subsequent update call to the resource set requires the update token.</p>
     /// <p>To make an unconditional change to the resource set, omit the token in your update request. Without the token, Firewall Manager performs your updates regardless of whether the resource set has changed since you last retrieved it.</p>
@@ -157,17 +151,16 @@ impl ResourceSetBuilder {
     /// <p>Determines the resources that can be associated to the resource set. Depending on your setting for max results and the number of resource sets, a single call might not return the full list.</p>
     pub fn resource_type_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_type_list.unwrap_or_default();
-        v.push(input.into());
-        self.resource_type_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_type_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Determines the resources that can be associated to the resource set. Depending on your setting for max results and the number of resource sets, a single call might not return the full list.</p>
-    pub fn set_resource_type_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.resource_type_list = input;
-        self
+    pub fn set_resource_type_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.resource_type_list = input; self
     }
     /// <p>Determines the resources that can be associated to the resource set. Depending on your setting for max results and the number of resource sets, a single call might not return the full list.</p>
-    pub fn get_resource_type_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_type_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.resource_type_list
     }
     /// <p>The last time that the resource set was changed.</p>
@@ -177,8 +170,7 @@ impl ResourceSetBuilder {
     }
     /// <p>The last time that the resource set was changed.</p>
     pub fn set_last_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_update_time = input;
-        self
+        self.last_update_time = input; self
     }
     /// <p>The last time that the resource set was changed.</p>
     pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -203,8 +195,7 @@ impl ResourceSetBuilder {
     /// <p><code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the resource set, but they can't edit or delete the resource set. Existing protections stay in place. Any new resource that come into scope of the resource set won't be protected.</p></li>
     /// </ul>
     pub fn set_resource_set_status(mut self, input: ::std::option::Option<crate::types::ResourceSetStatus>) -> Self {
-        self.resource_set_status = input;
-        self
+        self.resource_set_status = input; self
     }
     /// <p>Indicates whether the resource set is in or out of an admin's Region scope.</p>
     /// <ul>
@@ -221,24 +212,30 @@ impl ResourceSetBuilder {
     /// - [`name`](crate::types::builders::ResourceSetBuilder::name)
     /// - [`resource_type_list`](crate::types::builders::ResourceSetBuilder::resource_type_list)
     pub fn build(self) -> ::std::result::Result<crate::types::ResourceSet, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResourceSet {
-            id: self.id,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ResourceSet",
-                )
-            })?,
-            description: self.description,
-            update_token: self.update_token,
-            resource_type_list: self.resource_type_list.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_type_list",
-                    "resource_type_list was not specified but it is required when building ResourceSet",
-                )
-            })?,
-            last_update_time: self.last_update_time,
-            resource_set_status: self.resource_set_status,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResourceSet {
+                id: self.id
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ResourceSet")
+                    )?
+                ,
+                description: self.description
+                ,
+                update_token: self.update_token
+                ,
+                resource_type_list: self.resource_type_list
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_type_list", "resource_type_list was not specified but it is required when building ResourceSet")
+                    )?
+                ,
+                last_update_time: self.last_update_time
+                ,
+                resource_set_status: self.resource_set_status
+                ,
+            }
+        )
     }
 }
+

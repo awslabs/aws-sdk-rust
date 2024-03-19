@@ -3,25 +3,25 @@
 /// <p>Information about a related resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RelatedResource {
+pub struct RelatedResource  {
     /// <p>The type of resource.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>Information that identifies the resource.</p>
     pub resource_identifier: ::std::option::Option<crate::types::ResourceIdentifier>,
     /// <p>Other information about the resource.</p>
-    pub additional_info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub additional_info: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl RelatedResource {
+impl  RelatedResource  {
     /// <p>The type of resource.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>Information that identifies the resource.</p>
-    pub fn resource_identifier(&self) -> ::std::option::Option<&crate::types::ResourceIdentifier> {
+    pub fn resource_identifier(&self) -> ::std::option::Option<& crate::types::ResourceIdentifier> {
         self.resource_identifier.as_ref()
     }
     /// <p>Other information about the resource.</p>
-    pub fn additional_info(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn additional_info(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.additional_info.as_ref()
     }
 }
@@ -38,7 +38,7 @@ impl RelatedResource {
 pub struct RelatedResourceBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) resource_identifier: ::std::option::Option<crate::types::ResourceIdentifier>,
-    pub(crate) additional_info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) additional_info: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl RelatedResourceBuilder {
     /// <p>The type of resource.</p>
@@ -48,8 +48,7 @@ impl RelatedResourceBuilder {
     }
     /// <p>The type of resource.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of resource.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -62,8 +61,7 @@ impl RelatedResourceBuilder {
     }
     /// <p>Information that identifies the resource.</p>
     pub fn set_resource_identifier(mut self, input: ::std::option::Option<crate::types::ResourceIdentifier>) -> Self {
-        self.resource_identifier = input;
-        self
+        self.resource_identifier = input; self
     }
     /// <p>Information that identifies the resource.</p>
     pub fn get_resource_identifier(&self) -> &::std::option::Option<crate::types::ResourceIdentifier> {
@@ -74,34 +72,30 @@ impl RelatedResourceBuilder {
     /// To override the contents of this collection use [`set_additional_info`](Self::set_additional_info).
     ///
     /// <p>Other information about the resource.</p>
-    pub fn additional_info(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_info(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.additional_info.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.additional_info = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.additional_info = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Other information about the resource.</p>
-    pub fn set_additional_info(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.additional_info = input;
-        self
+    pub fn set_additional_info(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.additional_info = input; self
     }
     /// <p>Other information about the resource.</p>
-    pub fn get_additional_info(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_additional_info(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.additional_info
     }
     /// Consumes the builder and constructs a [`RelatedResource`](crate::types::RelatedResource).
     pub fn build(self) -> crate::types::RelatedResource {
         crate::types::RelatedResource {
-            resource_type: self.resource_type,
-            resource_identifier: self.resource_identifier,
-            additional_info: self.additional_info,
+            resource_type: self.resource_type
+            ,
+            resource_identifier: self.resource_identifier
+            ,
+            additional_info: self.additional_info
+            ,
         }
     }
 }
+

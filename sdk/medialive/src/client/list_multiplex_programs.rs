@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListMultiplexPrograms`](crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsFluentBuilder::set_max_results):<br>required: **false**<br>The maximum number of items to return.<br>
     ///   - [`multiplex_id(impl Into<String>)`](crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsFluentBuilder::multiplex_id) / [`set_multiplex_id(Option<String>)`](crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsFluentBuilder::set_multiplex_id):<br>required: **true**<br>The ID of the multiplex that the programs belong to.<br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsFluentBuilder::set_next_token):<br>required: **false**<br>The token to retrieve the next page of results.<br>
-    /// - On success, responds with [`ListMultiplexProgramsOutput`](crate::operation::list_multiplex_programs::ListMultiplexProgramsOutput) with field(s):
+                            /// - On success, responds with [`ListMultiplexProgramsOutput`](crate::operation::list_multiplex_programs::ListMultiplexProgramsOutput) with field(s):
     ///   - [`multiplex_programs(Option<Vec::<MultiplexProgramSummary>>)`](crate::operation::list_multiplex_programs::ListMultiplexProgramsOutput::multiplex_programs): List of multiplex programs.
     ///   - [`next_token(Option<String>)`](crate::operation::list_multiplex_programs::ListMultiplexProgramsOutput::next_token): Token for the next ListMultiplexProgram request.
-    /// - On failure, responds with [`SdkError<ListMultiplexProgramsError>`](crate::operation::list_multiplex_programs::ListMultiplexProgramsError)
+                            /// - On failure, responds with [`SdkError<ListMultiplexProgramsError>`](crate::operation::list_multiplex_programs::ListMultiplexProgramsError)
     pub fn list_multiplex_programs(&self) -> crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsFluentBuilder {
-        crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutConferencePreferenceInput {
+pub struct PutConferencePreferenceInput  {
     /// <p>The conference preference of a specific conference provider.</p>
     pub conference_preference: ::std::option::Option<crate::types::ConferencePreference>,
 }
-impl PutConferencePreferenceInput {
+impl  PutConferencePreferenceInput  {
     /// <p>The conference preference of a specific conference provider.</p>
-    pub fn conference_preference(&self) -> ::std::option::Option<&crate::types::ConferencePreference> {
+    pub fn conference_preference(&self) -> ::std::option::Option<& crate::types::ConferencePreference> {
         self.conference_preference.as_ref()
     }
 }
@@ -34,22 +34,20 @@ impl PutConferencePreferenceInputBuilder {
     }
     /// <p>The conference preference of a specific conference provider.</p>
     pub fn set_conference_preference(mut self, input: ::std::option::Option<crate::types::ConferencePreference>) -> Self {
-        self.conference_preference = input;
-        self
+        self.conference_preference = input; self
     }
     /// <p>The conference preference of a specific conference provider.</p>
     pub fn get_conference_preference(&self) -> &::std::option::Option<crate::types::ConferencePreference> {
         &self.conference_preference
     }
     /// Consumes the builder and constructs a [`PutConferencePreferenceInput`](crate::operation::put_conference_preference::PutConferencePreferenceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_conference_preference::PutConferencePreferenceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_conference_preference::PutConferencePreferenceInput {
-            conference_preference: self.conference_preference,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_conference_preference::PutConferencePreferenceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_conference_preference::PutConferencePreferenceInput {
+                conference_preference: self.conference_preference
+                ,
+            }
+        )
     }
 }
+

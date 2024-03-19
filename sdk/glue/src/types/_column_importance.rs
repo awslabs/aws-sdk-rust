@@ -4,15 +4,15 @@
 /// <p>Column importance helps you understand how columns contribute to your model, by identifying which columns in your records are more important than others.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ColumnImportance {
+pub struct ColumnImportance  {
     /// <p>The name of a column.</p>
     pub column_name: ::std::option::Option<::std::string::String>,
     /// <p>The column importance score for the column, as a decimal.</p>
     pub importance: ::std::option::Option<f64>,
 }
-impl ColumnImportance {
+impl  ColumnImportance  {
     /// <p>The name of a column.</p>
-    pub fn column_name(&self) -> ::std::option::Option<&str> {
+    pub fn column_name(&self) -> ::std::option::Option<& str> {
         self.column_name.as_deref()
     }
     /// <p>The column importance score for the column, as a decimal.</p>
@@ -42,8 +42,7 @@ impl ColumnImportanceBuilder {
     }
     /// <p>The name of a column.</p>
     pub fn set_column_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.column_name = input;
-        self
+        self.column_name = input; self
     }
     /// <p>The name of a column.</p>
     pub fn get_column_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl ColumnImportanceBuilder {
     }
     /// <p>The column importance score for the column, as a decimal.</p>
     pub fn set_importance(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.importance = input;
-        self
+        self.importance = input; self
     }
     /// <p>The column importance score for the column, as a decimal.</p>
     pub fn get_importance(&self) -> &::std::option::Option<f64> {
@@ -66,8 +64,11 @@ impl ColumnImportanceBuilder {
     /// Consumes the builder and constructs a [`ColumnImportance`](crate::types::ColumnImportance).
     pub fn build(self) -> crate::types::ColumnImportance {
         crate::types::ColumnImportance {
-            column_name: self.column_name,
-            importance: self.importance,
+            column_name: self.column_name
+            ,
+            importance: self.importance
+            ,
         }
     }
 }
+

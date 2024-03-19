@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDatasetImportJobOutput {
+pub struct DescribeDatasetImportJobOutput  {
     /// <p>Information about the dataset import job, including the status.</p>
     /// <p>The status is one of the following values:</p>
     /// <ul>
@@ -18,7 +18,7 @@ pub struct DescribeDatasetImportJobOutput {
     pub dataset_import_job: ::std::option::Option<crate::types::DatasetImportJob>,
     _request_id: Option<String>,
 }
-impl DescribeDatasetImportJobOutput {
+impl  DescribeDatasetImportJobOutput  {
     /// <p>Information about the dataset import job, including the status.</p>
     /// <p>The status is one of the following values:</p>
     /// <ul>
@@ -31,15 +31,15 @@ impl DescribeDatasetImportJobOutput {
     /// <li>
     /// <p>CREATE FAILED</p></li>
     /// </ul>
-    pub fn dataset_import_job(&self) -> ::std::option::Option<&crate::types::DatasetImportJob> {
+    pub fn dataset_import_job(&self) -> ::std::option::Option<& crate::types::DatasetImportJob> {
         self.dataset_import_job.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeDatasetImportJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeDatasetImportJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDatasetImportJobOutput`](crate::operation::describe_dataset_import_job::DescribeDatasetImportJobOutput).
     pub fn builder() -> crate::operation::describe_dataset_import_job::builders::DescribeDatasetImportJobOutputBuilder {
@@ -84,8 +84,7 @@ impl DescribeDatasetImportJobOutputBuilder {
     /// <p>CREATE FAILED</p></li>
     /// </ul>
     pub fn set_dataset_import_job(mut self, input: ::std::option::Option<crate::types::DatasetImportJob>) -> Self {
-        self.dataset_import_job = input;
-        self
+        self.dataset_import_job = input; self
     }
     /// <p>Information about the dataset import job, including the status.</p>
     /// <p>The status is one of the following values:</p>
@@ -103,19 +102,21 @@ impl DescribeDatasetImportJobOutputBuilder {
         &self.dataset_import_job
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeDatasetImportJobOutput`](crate::operation::describe_dataset_import_job::DescribeDatasetImportJobOutput).
     pub fn build(self) -> crate::operation::describe_dataset_import_job::DescribeDatasetImportJobOutput {
         crate::operation::describe_dataset_import_job::DescribeDatasetImportJobOutput {
-            dataset_import_job: self.dataset_import_job,
+            dataset_import_job: self.dataset_import_job
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

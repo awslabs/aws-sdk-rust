@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTemplateInput {
+pub struct DeleteTemplateInput  {
     /// <p>The ID of the Amazon Web Services account that contains the template that you're deleting.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>An ID for the template you want to delete.</p>
@@ -10,13 +10,13 @@ pub struct DeleteTemplateInput {
     /// <p>Specifies the version of the template that you want to delete. If you don't provide a version number, <code>DeleteTemplate</code> deletes all versions of the template.</p>
     pub version_number: ::std::option::Option<i64>,
 }
-impl DeleteTemplateInput {
+impl  DeleteTemplateInput  {
     /// <p>The ID of the Amazon Web Services account that contains the template that you're deleting.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>An ID for the template you want to delete.</p>
-    pub fn template_id(&self) -> ::std::option::Option<&str> {
+    pub fn template_id(&self) -> ::std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>Specifies the version of the template that you want to delete. If you don't provide a version number, <code>DeleteTemplate</code> deletes all versions of the template.</p>
@@ -48,8 +48,7 @@ impl DeleteTemplateInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that contains the template that you're deleting.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that contains the template that you're deleting.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DeleteTemplateInputBuilder {
     }
     /// <p>An ID for the template you want to delete.</p>
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_id = input;
-        self
+        self.template_id = input; self
     }
     /// <p>An ID for the template you want to delete.</p>
     pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,21 +75,24 @@ impl DeleteTemplateInputBuilder {
     }
     /// <p>Specifies the version of the template that you want to delete. If you don't provide a version number, <code>DeleteTemplate</code> deletes all versions of the template.</p>
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.version_number = input;
-        self
+        self.version_number = input; self
     }
     /// <p>Specifies the version of the template that you want to delete. If you don't provide a version number, <code>DeleteTemplate</code> deletes all versions of the template.</p>
     pub fn get_version_number(&self) -> &::std::option::Option<i64> {
         &self.version_number
     }
     /// Consumes the builder and constructs a [`DeleteTemplateInput`](crate::operation::delete_template::DeleteTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_template::DeleteTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_template::DeleteTemplateInput {
-            aws_account_id: self.aws_account_id,
-            template_id: self.template_id,
-            version_number: self.version_number,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_template::DeleteTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_template::DeleteTemplateInput {
+                aws_account_id: self.aws_account_id
+                ,
+                template_id: self.template_id
+                ,
+                version_number: self.version_number
+                ,
+            }
+        )
     }
 }
+

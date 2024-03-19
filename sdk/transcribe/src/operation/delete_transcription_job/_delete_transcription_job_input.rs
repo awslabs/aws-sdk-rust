@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTranscriptionJobInput {
+pub struct DeleteTranscriptionJobInput  {
     /// <p>The name of the transcription job you want to delete. Job names are case sensitive.</p>
     pub transcription_job_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteTranscriptionJobInput {
+impl  DeleteTranscriptionJobInput  {
     /// <p>The name of the transcription job you want to delete. Job names are case sensitive.</p>
-    pub fn transcription_job_name(&self) -> ::std::option::Option<&str> {
+    pub fn transcription_job_name(&self) -> ::std::option::Option<& str> {
         self.transcription_job_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteTranscriptionJobInputBuilder {
     }
     /// <p>The name of the transcription job you want to delete. Job names are case sensitive.</p>
     pub fn set_transcription_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transcription_job_name = input;
-        self
+        self.transcription_job_name = input; self
     }
     /// <p>The name of the transcription job you want to delete. Job names are case sensitive.</p>
     pub fn get_transcription_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.transcription_job_name
     }
     /// Consumes the builder and constructs a [`DeleteTranscriptionJobInput`](crate::operation::delete_transcription_job::DeleteTranscriptionJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_transcription_job::DeleteTranscriptionJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_transcription_job::DeleteTranscriptionJobInput {
-            transcription_job_name: self.transcription_job_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_transcription_job::DeleteTranscriptionJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_transcription_job::DeleteTranscriptionJobInput {
+                transcription_job_name: self.transcription_job_name
+                ,
+            }
+        )
     }
 }
+

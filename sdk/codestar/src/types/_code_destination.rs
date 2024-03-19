@@ -3,19 +3,19 @@
 /// <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the source code files provided with the project request are placed in the repository.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CodeDestination {
+pub struct CodeDestination  {
     /// <p>Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>
     pub code_commit: ::std::option::Option<crate::types::CodeCommitCodeDestination>,
     /// <p>Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>
     pub git_hub: ::std::option::Option<crate::types::GitHubCodeDestination>,
 }
-impl CodeDestination {
+impl  CodeDestination  {
     /// <p>Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>
-    pub fn code_commit(&self) -> ::std::option::Option<&crate::types::CodeCommitCodeDestination> {
+    pub fn code_commit(&self) -> ::std::option::Option<& crate::types::CodeCommitCodeDestination> {
         self.code_commit.as_ref()
     }
     /// <p>Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>
-    pub fn git_hub(&self) -> ::std::option::Option<&crate::types::GitHubCodeDestination> {
+    pub fn git_hub(&self) -> ::std::option::Option<& crate::types::GitHubCodeDestination> {
         self.git_hub.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl CodeDestinationBuilder {
     }
     /// <p>Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>
     pub fn set_code_commit(mut self, input: ::std::option::Option<crate::types::CodeCommitCodeDestination>) -> Self {
-        self.code_commit = input;
-        self
+        self.code_commit = input; self
     }
     /// <p>Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>
     pub fn get_code_commit(&self) -> &::std::option::Option<crate::types::CodeCommitCodeDestination> {
@@ -55,8 +54,7 @@ impl CodeDestinationBuilder {
     }
     /// <p>Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>
     pub fn set_git_hub(mut self, input: ::std::option::Option<crate::types::GitHubCodeDestination>) -> Self {
-        self.git_hub = input;
-        self
+        self.git_hub = input; self
     }
     /// <p>Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>
     pub fn get_git_hub(&self) -> &::std::option::Option<crate::types::GitHubCodeDestination> {
@@ -65,8 +63,11 @@ impl CodeDestinationBuilder {
     /// Consumes the builder and constructs a [`CodeDestination`](crate::types::CodeDestination).
     pub fn build(self) -> crate::types::CodeDestination {
         crate::types::CodeDestination {
-            code_commit: self.code_commit,
-            git_hub: self.git_hub,
+            code_commit: self.code_commit
+            ,
+            git_hub: self.git_hub
+            ,
         }
     }
 }
+

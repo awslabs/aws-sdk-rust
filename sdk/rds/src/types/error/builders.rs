@@ -288,3 +288,4 @@ pub use crate::types::error::_db_instance_role_already_exists_fault::DbInstanceR
 pub use crate::types::error::_db_cluster_role_quota_exceeded_fault::DbClusterRoleQuotaExceededFaultBuilder;
 
 pub use crate::types::error::_db_cluster_role_already_exists_fault::DbClusterRoleAlreadyExistsFaultBuilder;
+

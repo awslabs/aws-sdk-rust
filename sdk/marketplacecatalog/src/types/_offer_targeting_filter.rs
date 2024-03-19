@@ -3,16 +3,17 @@
 /// <p>Allows filtering on the <code>Targeting</code> of an offer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OfferTargetingFilter {
+pub struct OfferTargetingFilter  {
     /// <p>Allows filtering on the <code>Targeting</code> of an offer with list input.</p>
-    pub value_list: ::std::option::Option<::std::vec::Vec<crate::types::OfferTargetingString>>,
+    pub value_list: ::std::option::Option<::std::vec::Vec::<crate::types::OfferTargetingString>>,
 }
-impl OfferTargetingFilter {
+impl  OfferTargetingFilter  {
     /// <p>Allows filtering on the <code>Targeting</code> of an offer with list input.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.value_list.is_none()`.
-    pub fn value_list(&self) -> &[crate::types::OfferTargetingString] {
-        self.value_list.as_deref().unwrap_or_default()
+    pub fn value_list(&self) -> & [crate::types::OfferTargetingString] {
+        self.value_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl OfferTargetingFilter {
@@ -26,7 +27,7 @@ impl OfferTargetingFilter {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OfferTargetingFilterBuilder {
-    pub(crate) value_list: ::std::option::Option<::std::vec::Vec<crate::types::OfferTargetingString>>,
+    pub(crate) value_list: ::std::option::Option<::std::vec::Vec::<crate::types::OfferTargetingString>>,
 }
 impl OfferTargetingFilterBuilder {
     /// Appends an item to `value_list`.
@@ -36,21 +37,24 @@ impl OfferTargetingFilterBuilder {
     /// <p>Allows filtering on the <code>Targeting</code> of an offer with list input.</p>
     pub fn value_list(mut self, input: crate::types::OfferTargetingString) -> Self {
         let mut v = self.value_list.unwrap_or_default();
-        v.push(input);
-        self.value_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.value_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Allows filtering on the <code>Targeting</code> of an offer with list input.</p>
-    pub fn set_value_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OfferTargetingString>>) -> Self {
-        self.value_list = input;
-        self
+    pub fn set_value_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OfferTargetingString>>) -> Self {
+        self.value_list = input; self
     }
     /// <p>Allows filtering on the <code>Targeting</code> of an offer with list input.</p>
-    pub fn get_value_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OfferTargetingString>> {
+    pub fn get_value_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OfferTargetingString>> {
         &self.value_list
     }
     /// Consumes the builder and constructs a [`OfferTargetingFilter`](crate::types::OfferTargetingFilter).
     pub fn build(self) -> crate::types::OfferTargetingFilter {
-        crate::types::OfferTargetingFilter { value_list: self.value_list }
+        crate::types::OfferTargetingFilter {
+            value_list: self.value_list
+            ,
+        }
     }
 }
+

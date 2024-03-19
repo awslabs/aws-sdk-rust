@@ -3,30 +3,29 @@
 /// <p>A type of analysis rule that enables row-level analysis.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalysisRuleList {
+pub struct AnalysisRuleList  {
     /// <p>Columns that can be used to join a configured table with the table of the member who can query and other members' configured tables.</p>
-    pub join_columns: ::std::vec::Vec<::std::string::String>,
+    pub join_columns: ::std::vec::Vec::<::std::string::String>,
     /// <p>The logical operators (if any) that are to be used in an INNER JOIN match condition. Default is <code>AND</code>.</p>
-    pub allowed_join_operators: ::std::option::Option<::std::vec::Vec<crate::types::JoinOperator>>,
+    pub allowed_join_operators: ::std::option::Option<::std::vec::Vec::<crate::types::JoinOperator>>,
     /// <p>Columns that can be listed in the output.</p>
-    pub list_columns: ::std::vec::Vec<::std::string::String>,
+    pub list_columns: ::std::vec::Vec::<::std::string::String>,
 }
-impl AnalysisRuleList {
+impl  AnalysisRuleList  {
     /// <p>Columns that can be used to join a configured table with the table of the member who can query and other members' configured tables.</p>
-    pub fn join_columns(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.join_columns.deref()
+    pub fn join_columns(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.join_columns.deref()
     }
     /// <p>The logical operators (if any) that are to be used in an INNER JOIN match condition. Default is <code>AND</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_join_operators.is_none()`.
-    pub fn allowed_join_operators(&self) -> &[crate::types::JoinOperator] {
-        self.allowed_join_operators.as_deref().unwrap_or_default()
+    pub fn allowed_join_operators(&self) -> & [crate::types::JoinOperator] {
+        self.allowed_join_operators.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Columns that can be listed in the output.</p>
-    pub fn list_columns(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.list_columns.deref()
+    pub fn list_columns(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.list_columns.deref()
     }
 }
 impl AnalysisRuleList {
@@ -40,9 +39,9 @@ impl AnalysisRuleList {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalysisRuleListBuilder {
-    pub(crate) join_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) allowed_join_operators: ::std::option::Option<::std::vec::Vec<crate::types::JoinOperator>>,
-    pub(crate) list_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) join_columns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) allowed_join_operators: ::std::option::Option<::std::vec::Vec::<crate::types::JoinOperator>>,
+    pub(crate) list_columns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AnalysisRuleListBuilder {
     /// Appends an item to `join_columns`.
@@ -52,17 +51,16 @@ impl AnalysisRuleListBuilder {
     /// <p>Columns that can be used to join a configured table with the table of the member who can query and other members' configured tables.</p>
     pub fn join_columns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.join_columns.unwrap_or_default();
-        v.push(input.into());
-        self.join_columns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.join_columns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Columns that can be used to join a configured table with the table of the member who can query and other members' configured tables.</p>
-    pub fn set_join_columns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.join_columns = input;
-        self
+    pub fn set_join_columns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.join_columns = input; self
     }
     /// <p>Columns that can be used to join a configured table with the table of the member who can query and other members' configured tables.</p>
-    pub fn get_join_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_join_columns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.join_columns
     }
     /// Appends an item to `allowed_join_operators`.
@@ -72,17 +70,16 @@ impl AnalysisRuleListBuilder {
     /// <p>The logical operators (if any) that are to be used in an INNER JOIN match condition. Default is <code>AND</code>.</p>
     pub fn allowed_join_operators(mut self, input: crate::types::JoinOperator) -> Self {
         let mut v = self.allowed_join_operators.unwrap_or_default();
-        v.push(input);
-        self.allowed_join_operators = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.allowed_join_operators = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The logical operators (if any) that are to be used in an INNER JOIN match condition. Default is <code>AND</code>.</p>
-    pub fn set_allowed_join_operators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JoinOperator>>) -> Self {
-        self.allowed_join_operators = input;
-        self
+    pub fn set_allowed_join_operators(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::JoinOperator>>) -> Self {
+        self.allowed_join_operators = input; self
     }
     /// <p>The logical operators (if any) that are to be used in an INNER JOIN match condition. Default is <code>AND</code>.</p>
-    pub fn get_allowed_join_operators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JoinOperator>> {
+    pub fn get_allowed_join_operators(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::JoinOperator>> {
         &self.allowed_join_operators
     }
     /// Appends an item to `list_columns`.
@@ -92,17 +89,16 @@ impl AnalysisRuleListBuilder {
     /// <p>Columns that can be listed in the output.</p>
     pub fn list_columns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.list_columns.unwrap_or_default();
-        v.push(input.into());
-        self.list_columns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.list_columns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Columns that can be listed in the output.</p>
-    pub fn set_list_columns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.list_columns = input;
-        self
+    pub fn set_list_columns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.list_columns = input; self
     }
     /// <p>Columns that can be listed in the output.</p>
-    pub fn get_list_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_list_columns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.list_columns
     }
     /// Consumes the builder and constructs a [`AnalysisRuleList`](crate::types::AnalysisRuleList).
@@ -110,20 +106,22 @@ impl AnalysisRuleListBuilder {
     /// - [`join_columns`](crate::types::builders::AnalysisRuleListBuilder::join_columns)
     /// - [`list_columns`](crate::types::builders::AnalysisRuleListBuilder::list_columns)
     pub fn build(self) -> ::std::result::Result<crate::types::AnalysisRuleList, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AnalysisRuleList {
-            join_columns: self.join_columns.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "join_columns",
-                    "join_columns was not specified but it is required when building AnalysisRuleList",
-                )
-            })?,
-            allowed_join_operators: self.allowed_join_operators,
-            list_columns: self.list_columns.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "list_columns",
-                    "list_columns was not specified but it is required when building AnalysisRuleList",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AnalysisRuleList {
+                join_columns: self.join_columns
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("join_columns", "join_columns was not specified but it is required when building AnalysisRuleList")
+                    )?
+                ,
+                allowed_join_operators: self.allowed_join_operators
+                ,
+                list_columns: self.list_columns
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("list_columns", "list_columns was not specified but it is required when building AnalysisRuleList")
+                    )?
+                ,
+            }
+        )
     }
 }
+

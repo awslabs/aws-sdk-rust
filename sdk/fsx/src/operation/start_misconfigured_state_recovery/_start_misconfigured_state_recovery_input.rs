@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartMisconfiguredStateRecoveryInput {
+pub struct StartMisconfiguredStateRecoveryInput  {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
     pub file_system_id: ::std::option::Option<::std::string::String>,
 }
-impl StartMisconfiguredStateRecoveryInput {
+impl  StartMisconfiguredStateRecoveryInput  {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
+    pub fn file_system_id(&self) -> ::std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl StartMisconfiguredStateRecoveryInputBuilder {
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,25 +54,22 @@ impl StartMisconfiguredStateRecoveryInputBuilder {
     }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
     pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_system_id = input;
-        self
+        self.file_system_id = input; self
     }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
     pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_system_id
     }
     /// Consumes the builder and constructs a [`StartMisconfiguredStateRecoveryInput`](crate::operation::start_misconfigured_state_recovery::StartMisconfiguredStateRecoveryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_misconfigured_state_recovery::StartMisconfiguredStateRecoveryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_misconfigured_state_recovery::StartMisconfiguredStateRecoveryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::start_misconfigured_state_recovery::StartMisconfiguredStateRecoveryInput {
-                client_request_token: self.client_request_token,
-                file_system_id: self.file_system_id,
-            },
+                client_request_token: self.client_request_token
+                ,
+                file_system_id: self.file_system_id
+                ,
+            }
         )
     }
 }
+

@@ -3,23 +3,23 @@
 /// <p>Any error returned when the runtime version information for the function could not be retrieved.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct RuntimeVersionError {
+pub struct RuntimeVersionError  {
     /// <p>The error code.</p>
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>The error message.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl RuntimeVersionError {
+impl  RuntimeVersionError  {
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The error message.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
-impl ::std::fmt::Debug for RuntimeVersionError {
+impl  ::std::fmt::Debug for RuntimeVersionError  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RuntimeVersionError");
         formatter.field("error_code", &self.error_code);
@@ -49,8 +49,7 @@ impl RuntimeVersionErrorBuilder {
     }
     /// <p>The error code.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl RuntimeVersionErrorBuilder {
     }
     /// <p>The error message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The error message.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +71,10 @@ impl RuntimeVersionErrorBuilder {
     /// Consumes the builder and constructs a [`RuntimeVersionError`](crate::types::RuntimeVersionError).
     pub fn build(self) -> crate::types::RuntimeVersionError {
         crate::types::RuntimeVersionError {
-            error_code: self.error_code,
-            message: self.message,
+            error_code: self.error_code
+            ,
+            message: self.message
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for RuntimeVersionErrorBuilder {
         formatter.finish()
     }
 }
+

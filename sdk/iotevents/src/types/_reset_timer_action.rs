@@ -3,15 +3,14 @@
 /// <p>Information required to reset the timer. The timer is reset to the previously evaluated result of the duration. The duration expression isn't reevaluated when you reset the timer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResetTimerAction {
+pub struct ResetTimerAction  {
     /// <p>The name of the timer to reset.</p>
     pub timer_name: ::std::string::String,
 }
-impl ResetTimerAction {
+impl  ResetTimerAction  {
     /// <p>The name of the timer to reset.</p>
-    pub fn timer_name(&self) -> &str {
-        use std::ops::Deref;
-        self.timer_name.deref()
+    pub fn timer_name(&self) -> & str {
+        use std::ops::Deref; self.timer_name.deref()
     }
 }
 impl ResetTimerAction {
@@ -36,8 +35,7 @@ impl ResetTimerActionBuilder {
     }
     /// <p>The name of the timer to reset.</p>
     pub fn set_timer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.timer_name = input;
-        self
+        self.timer_name = input; self
     }
     /// <p>The name of the timer to reset.</p>
     pub fn get_timer_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl ResetTimerActionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`timer_name`](crate::types::builders::ResetTimerActionBuilder::timer_name)
     pub fn build(self) -> ::std::result::Result<crate::types::ResetTimerAction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResetTimerAction {
-            timer_name: self.timer_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "timer_name",
-                    "timer_name was not specified but it is required when building ResetTimerAction",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResetTimerAction {
+                timer_name: self.timer_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("timer_name", "timer_name was not specified but it is required when building ResetTimerAction")
+                    )?
+                ,
+            }
+        )
     }
 }
+

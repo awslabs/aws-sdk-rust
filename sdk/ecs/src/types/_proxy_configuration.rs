@@ -4,7 +4,7 @@
 /// <p>For tasks that use the EC2 launch type, the container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to use a proxy configuration. If your container instances are launched from the Amazon ECS optimized AMI version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProxyConfiguration {
+pub struct ProxyConfiguration  {
     /// <p>The proxy type. The only supported value is <code>APPMESH</code>.</p>
     pub r#type: ::std::option::Option<crate::types::ProxyConfigurationType>,
     /// <p>The name of the container that will serve as the App Mesh proxy.</p>
@@ -26,17 +26,16 @@ pub struct ProxyConfiguration {
     /// <li>
     /// <p><code>EgressIgnoredIPs</code> - (Required) The egress traffic going to the specified IP addresses is ignored and not redirected to the <code>ProxyEgressPort</code>. It can be an empty list.</p></li>
     /// </ul>
-    pub properties: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>,
+    pub properties: ::std::option::Option<::std::vec::Vec::<crate::types::KeyValuePair>>,
 }
-impl ProxyConfiguration {
+impl  ProxyConfiguration  {
     /// <p>The proxy type. The only supported value is <code>APPMESH</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ProxyConfigurationType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ProxyConfigurationType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the container that will serve as the App Mesh proxy.</p>
-    pub fn container_name(&self) -> &str {
-        use std::ops::Deref;
-        self.container_name.deref()
+    pub fn container_name(&self) -> & str {
+        use std::ops::Deref; self.container_name.deref()
     }
     /// <p>The set of network configuration parameters to provide the Container Network Interface (CNI) plugin, specified as key-value pairs.</p>
     /// <ul>
@@ -55,10 +54,11 @@ impl ProxyConfiguration {
     /// <li>
     /// <p><code>EgressIgnoredIPs</code> - (Required) The egress traffic going to the specified IP addresses is ignored and not redirected to the <code>ProxyEgressPort</code>. It can be an empty list.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.properties.is_none()`.
-    pub fn properties(&self) -> &[crate::types::KeyValuePair] {
-        self.properties.as_deref().unwrap_or_default()
+    pub fn properties(&self) -> & [crate::types::KeyValuePair] {
+        self.properties.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ProxyConfiguration {
@@ -74,7 +74,7 @@ impl ProxyConfiguration {
 pub struct ProxyConfigurationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ProxyConfigurationType>,
     pub(crate) container_name: ::std::option::Option<::std::string::String>,
-    pub(crate) properties: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>,
+    pub(crate) properties: ::std::option::Option<::std::vec::Vec::<crate::types::KeyValuePair>>,
 }
 impl ProxyConfigurationBuilder {
     /// <p>The proxy type. The only supported value is <code>APPMESH</code>.</p>
@@ -84,8 +84,7 @@ impl ProxyConfigurationBuilder {
     }
     /// <p>The proxy type. The only supported value is <code>APPMESH</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ProxyConfigurationType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The proxy type. The only supported value is <code>APPMESH</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ProxyConfigurationType> {
@@ -99,8 +98,7 @@ impl ProxyConfigurationBuilder {
     }
     /// <p>The name of the container that will serve as the App Mesh proxy.</p>
     pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.container_name = input;
-        self
+        self.container_name = input; self
     }
     /// <p>The name of the container that will serve as the App Mesh proxy.</p>
     pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,9 +127,9 @@ impl ProxyConfigurationBuilder {
     /// </ul>
     pub fn properties(mut self, input: crate::types::KeyValuePair) -> Self {
         let mut v = self.properties.unwrap_or_default();
-        v.push(input);
-        self.properties = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.properties = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The set of network configuration parameters to provide the Container Network Interface (CNI) plugin, specified as key-value pairs.</p>
     /// <ul>
@@ -150,9 +148,8 @@ impl ProxyConfigurationBuilder {
     /// <li>
     /// <p><code>EgressIgnoredIPs</code> - (Required) The egress traffic going to the specified IP addresses is ignored and not redirected to the <code>ProxyEgressPort</code>. It can be an empty list.</p></li>
     /// </ul>
-    pub fn set_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>) -> Self {
-        self.properties = input;
-        self
+    pub fn set_properties(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KeyValuePair>>) -> Self {
+        self.properties = input; self
     }
     /// <p>The set of network configuration parameters to provide the Container Network Interface (CNI) plugin, specified as key-value pairs.</p>
     /// <ul>
@@ -171,22 +168,26 @@ impl ProxyConfigurationBuilder {
     /// <li>
     /// <p><code>EgressIgnoredIPs</code> - (Required) The egress traffic going to the specified IP addresses is ignored and not redirected to the <code>ProxyEgressPort</code>. It can be an empty list.</p></li>
     /// </ul>
-    pub fn get_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>> {
+    pub fn get_properties(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KeyValuePair>> {
         &self.properties
     }
     /// Consumes the builder and constructs a [`ProxyConfiguration`](crate::types::ProxyConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`container_name`](crate::types::builders::ProxyConfigurationBuilder::container_name)
     pub fn build(self) -> ::std::result::Result<crate::types::ProxyConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ProxyConfiguration {
-            r#type: self.r#type,
-            container_name: self.container_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "container_name",
-                    "container_name was not specified but it is required when building ProxyConfiguration",
-                )
-            })?,
-            properties: self.properties,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ProxyConfiguration {
+                r#type: self.r#type
+                ,
+                container_name: self.container_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("container_name", "container_name was not specified but it is required when building ProxyConfiguration")
+                    )?
+                ,
+                properties: self.properties
+                ,
+            }
+        )
     }
 }
+

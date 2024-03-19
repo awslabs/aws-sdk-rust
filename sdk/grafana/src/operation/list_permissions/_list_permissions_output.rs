@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPermissionsOutput {
+pub struct ListPermissionsOutput  {
     /// <p>The token to use in a subsequent <code>ListPermissions</code> operation to return the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The permissions returned by the operation.</p>
-    pub permissions: ::std::vec::Vec<crate::types::PermissionEntry>,
+    pub permissions: ::std::vec::Vec::<crate::types::PermissionEntry>,
     _request_id: Option<String>,
 }
-impl ListPermissionsOutput {
+impl  ListPermissionsOutput  {
     /// <p>The token to use in a subsequent <code>ListPermissions</code> operation to return the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The permissions returned by the operation.</p>
-    pub fn permissions(&self) -> &[crate::types::PermissionEntry] {
-        use std::ops::Deref;
-        self.permissions.deref()
+    pub fn permissions(&self) -> & [crate::types::PermissionEntry] {
+        use std::ops::Deref; self.permissions.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListPermissionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListPermissionsOutput {
     /// Creates a new builder-style object to manufacture [`ListPermissionsOutput`](crate::operation::list_permissions::ListPermissionsOutput).
     pub fn builder() -> crate::operation::list_permissions::builders::ListPermissionsOutputBuilder {
@@ -37,7 +36,7 @@ impl ListPermissionsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPermissionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::PermissionEntry>>,
+    pub(crate) permissions: ::std::option::Option<::std::vec::Vec::<crate::types::PermissionEntry>>,
     _request_id: Option<String>,
 }
 impl ListPermissionsOutputBuilder {
@@ -48,8 +47,7 @@ impl ListPermissionsOutputBuilder {
     }
     /// <p>The token to use in a subsequent <code>ListPermissions</code> operation to return the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use in a subsequent <code>ListPermissions</code> operation to return the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,43 +60,43 @@ impl ListPermissionsOutputBuilder {
     /// <p>The permissions returned by the operation.</p>
     pub fn permissions(mut self, input: crate::types::PermissionEntry) -> Self {
         let mut v = self.permissions.unwrap_or_default();
-        v.push(input);
-        self.permissions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.permissions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The permissions returned by the operation.</p>
-    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionEntry>>) -> Self {
-        self.permissions = input;
-        self
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PermissionEntry>>) -> Self {
+        self.permissions = input; self
     }
     /// <p>The permissions returned by the operation.</p>
-    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionEntry>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PermissionEntry>> {
         &self.permissions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListPermissionsOutput`](crate::operation::list_permissions::ListPermissionsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`permissions`](crate::operation::list_permissions::builders::ListPermissionsOutputBuilder::permissions)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_permissions::ListPermissionsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_permissions::ListPermissionsOutput {
-            next_token: self.next_token,
-            permissions: self.permissions.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "permissions",
-                    "permissions was not specified but it is required when building ListPermissionsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_permissions::ListPermissionsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_permissions::ListPermissionsOutput {
+                next_token: self.next_token
+                ,
+                permissions: self.permissions
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("permissions", "permissions was not specified but it is required when building ListPermissionsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

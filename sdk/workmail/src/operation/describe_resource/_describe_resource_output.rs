@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeResourceOutput {
+pub struct DescribeResourceOutput  {
     /// <p>The identifier of the described resource.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The email of the described resource.</p>
@@ -25,41 +25,41 @@ pub struct DescribeResourceOutput {
     pub hidden_from_global_address_list: bool,
     _request_id: Option<String>,
 }
-impl DescribeResourceOutput {
+impl  DescribeResourceOutput  {
     /// <p>The identifier of the described resource.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The email of the described resource.</p>
-    pub fn email(&self) -> ::std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>The name of the described resource.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of the described resource.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.r#type.as_ref()
     }
     /// <p>The booking options for the described resource.</p>
-    pub fn booking_options(&self) -> ::std::option::Option<&crate::types::BookingOptions> {
+    pub fn booking_options(&self) -> ::std::option::Option<& crate::types::BookingOptions> {
         self.booking_options.as_ref()
     }
     /// <p>The state of the resource: enabled (registered to WorkMail), disabled (deregistered or never registered to WorkMail), or deleted.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::EntityState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::EntityState> {
         self.state.as_ref()
     }
     /// <p>The date and time when a resource was enabled for WorkMail, in UNIX epoch time format.</p>
-    pub fn enabled_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn enabled_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.enabled_date.as_ref()
     }
     /// <p>The date and time when a resource was disabled from WorkMail, in UNIX epoch time format.</p>
-    pub fn disabled_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn disabled_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.disabled_date.as_ref()
     }
     /// <p>Description of the resource.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>If enabled, the resource is hidden from the global address list.</p>
@@ -68,10 +68,10 @@ impl DescribeResourceOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeResourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeResourceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeResourceOutput`](crate::operation::describe_resource::DescribeResourceOutput).
     pub fn builder() -> crate::operation::describe_resource::builders::DescribeResourceOutputBuilder {
@@ -103,8 +103,7 @@ impl DescribeResourceOutputBuilder {
     }
     /// <p>The identifier of the described resource.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The identifier of the described resource.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +116,7 @@ impl DescribeResourceOutputBuilder {
     }
     /// <p>The email of the described resource.</p>
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
     }
     /// <p>The email of the described resource.</p>
     pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +129,7 @@ impl DescribeResourceOutputBuilder {
     }
     /// <p>The name of the described resource.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the described resource.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +142,7 @@ impl DescribeResourceOutputBuilder {
     }
     /// <p>The type of the described resource.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the described resource.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -159,8 +155,7 @@ impl DescribeResourceOutputBuilder {
     }
     /// <p>The booking options for the described resource.</p>
     pub fn set_booking_options(mut self, input: ::std::option::Option<crate::types::BookingOptions>) -> Self {
-        self.booking_options = input;
-        self
+        self.booking_options = input; self
     }
     /// <p>The booking options for the described resource.</p>
     pub fn get_booking_options(&self) -> &::std::option::Option<crate::types::BookingOptions> {
@@ -173,8 +168,7 @@ impl DescribeResourceOutputBuilder {
     }
     /// <p>The state of the resource: enabled (registered to WorkMail), disabled (deregistered or never registered to WorkMail), or deleted.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::EntityState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the resource: enabled (registered to WorkMail), disabled (deregistered or never registered to WorkMail), or deleted.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::EntityState> {
@@ -187,8 +181,7 @@ impl DescribeResourceOutputBuilder {
     }
     /// <p>The date and time when a resource was enabled for WorkMail, in UNIX epoch time format.</p>
     pub fn set_enabled_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.enabled_date = input;
-        self
+        self.enabled_date = input; self
     }
     /// <p>The date and time when a resource was enabled for WorkMail, in UNIX epoch time format.</p>
     pub fn get_enabled_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -201,8 +194,7 @@ impl DescribeResourceOutputBuilder {
     }
     /// <p>The date and time when a resource was disabled from WorkMail, in UNIX epoch time format.</p>
     pub fn set_disabled_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.disabled_date = input;
-        self
+        self.disabled_date = input; self
     }
     /// <p>The date and time when a resource was disabled from WorkMail, in UNIX epoch time format.</p>
     pub fn get_disabled_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -215,8 +207,7 @@ impl DescribeResourceOutputBuilder {
     }
     /// <p>Description of the resource.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Description of the resource.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -229,36 +220,47 @@ impl DescribeResourceOutputBuilder {
     }
     /// <p>If enabled, the resource is hidden from the global address list.</p>
     pub fn set_hidden_from_global_address_list(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.hidden_from_global_address_list = input;
-        self
+        self.hidden_from_global_address_list = input; self
     }
     /// <p>If enabled, the resource is hidden from the global address list.</p>
     pub fn get_hidden_from_global_address_list(&self) -> &::std::option::Option<bool> {
         &self.hidden_from_global_address_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeResourceOutput`](crate::operation::describe_resource::DescribeResourceOutput).
     pub fn build(self) -> crate::operation::describe_resource::DescribeResourceOutput {
         crate::operation::describe_resource::DescribeResourceOutput {
-            resource_id: self.resource_id,
-            email: self.email,
-            name: self.name,
-            r#type: self.r#type,
-            booking_options: self.booking_options,
-            state: self.state,
-            enabled_date: self.enabled_date,
-            disabled_date: self.disabled_date,
-            description: self.description,
-            hidden_from_global_address_list: self.hidden_from_global_address_list.unwrap_or_default(),
+            resource_id: self.resource_id
+            ,
+            email: self.email
+            ,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            booking_options: self.booking_options
+            ,
+            state: self.state
+            ,
+            enabled_date: self.enabled_date
+            ,
+            disabled_date: self.disabled_date
+            ,
+            description: self.description
+            ,
+            hidden_from_global_address_list: self.hidden_from_global_address_list
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

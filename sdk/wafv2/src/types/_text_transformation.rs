@@ -3,19 +3,19 @@
 /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TextTransformation {
+pub struct TextTransformation  {
     /// <p>Sets the relative processing order for multiple transformations. WAF processes all transformations, from lowest priority to highest, before inspecting the transformed content. The priorities don't need to be consecutive, but they must all be different.</p>
     pub priority: i32,
     /// <p>For detailed descriptions of each of the transformation types, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-transformation.html">Text transformations</a> in the <i>WAF Developer Guide</i>.</p>
     pub r#type: crate::types::TextTransformationType,
 }
-impl TextTransformation {
+impl  TextTransformation  {
     /// <p>Sets the relative processing order for multiple transformations. WAF processes all transformations, from lowest priority to highest, before inspecting the transformed content. The priorities don't need to be consecutive, but they must all be different.</p>
     pub fn priority(&self) -> i32 {
         self.priority
     }
     /// <p>For detailed descriptions of each of the transformation types, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-transformation.html">Text transformations</a> in the <i>WAF Developer Guide</i>.</p>
-    pub fn r#type(&self) -> &crate::types::TextTransformationType {
+    pub fn r#type(&self) -> & crate::types::TextTransformationType {
         &self.r#type
     }
 }
@@ -42,8 +42,7 @@ impl TextTransformationBuilder {
     }
     /// <p>Sets the relative processing order for multiple transformations. WAF processes all transformations, from lowest priority to highest, before inspecting the transformed content. The priorities don't need to be consecutive, but they must all be different.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// <p>Sets the relative processing order for multiple transformations. WAF processes all transformations, from lowest priority to highest, before inspecting the transformed content. The priorities don't need to be consecutive, but they must all be different.</p>
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
@@ -57,8 +56,7 @@ impl TextTransformationBuilder {
     }
     /// <p>For detailed descriptions of each of the transformation types, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-transformation.html">Text transformations</a> in the <i>WAF Developer Guide</i>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TextTransformationType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>For detailed descriptions of each of the transformation types, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-transformation.html">Text transformations</a> in the <i>WAF Developer Guide</i>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::TextTransformationType> {
@@ -68,14 +66,18 @@ impl TextTransformationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::TextTransformationBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::TextTransformation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TextTransformation {
-            priority: self.priority.unwrap_or_default(),
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building TextTransformation",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TextTransformation {
+                priority: self.priority
+                    .unwrap_or_default()
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building TextTransformation")
+                    )?
+                ,
+            }
+        )
     }
 }
+

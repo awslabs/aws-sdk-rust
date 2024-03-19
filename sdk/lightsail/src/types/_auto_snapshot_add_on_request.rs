@@ -14,7 +14,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutoSnapshotAddOnRequest {
+pub struct AutoSnapshotAddOnRequest  {
     /// <p>The daily time when an automatic snapshot will be created.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -27,7 +27,7 @@ pub struct AutoSnapshotAddOnRequest {
     /// </ul>
     pub snapshot_time_of_day: ::std::option::Option<::std::string::String>,
 }
-impl AutoSnapshotAddOnRequest {
+impl  AutoSnapshotAddOnRequest  {
     /// <p>The daily time when an automatic snapshot will be created.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -38,7 +38,7 @@ impl AutoSnapshotAddOnRequest {
     /// <li>
     /// <p>The snapshot will be automatically created between the time specified and up to 45 minutes after.</p></li>
     /// </ul>
-    pub fn snapshot_time_of_day(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_time_of_day(&self) -> ::std::option::Option<& str> {
         self.snapshot_time_of_day.as_deref()
     }
 }
@@ -81,8 +81,7 @@ impl AutoSnapshotAddOnRequestBuilder {
     /// <p>The snapshot will be automatically created between the time specified and up to 45 minutes after.</p></li>
     /// </ul>
     pub fn set_snapshot_time_of_day(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_time_of_day = input;
-        self
+        self.snapshot_time_of_day = input; self
     }
     /// <p>The daily time when an automatic snapshot will be created.</p>
     /// <p>Constraints:</p>
@@ -100,7 +99,9 @@ impl AutoSnapshotAddOnRequestBuilder {
     /// Consumes the builder and constructs a [`AutoSnapshotAddOnRequest`](crate::types::AutoSnapshotAddOnRequest).
     pub fn build(self) -> crate::types::AutoSnapshotAddOnRequest {
         crate::types::AutoSnapshotAddOnRequest {
-            snapshot_time_of_day: self.snapshot_time_of_day,
+            snapshot_time_of_day: self.snapshot_time_of_day
+            ,
         }
     }
 }
+

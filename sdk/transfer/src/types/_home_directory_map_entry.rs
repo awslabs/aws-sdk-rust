@@ -5,7 +5,7 @@
 /// <p><code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HomeDirectoryMapEntry {
+pub struct HomeDirectoryMapEntry  {
     /// <p>Represents an entry for <code>HomeDirectoryMappings</code>.</p>
     pub entry: ::std::string::String,
     /// <p>Represents the map target that is used in a <code>HomeDirectoryMapEntry</code>.</p>
@@ -15,21 +15,19 @@ pub struct HomeDirectoryMapEntry {
     /// </note>
     pub r#type: ::std::option::Option<crate::types::MapType>,
 }
-impl HomeDirectoryMapEntry {
+impl  HomeDirectoryMapEntry  {
     /// <p>Represents an entry for <code>HomeDirectoryMappings</code>.</p>
-    pub fn entry(&self) -> &str {
-        use std::ops::Deref;
-        self.entry.deref()
+    pub fn entry(&self) -> & str {
+        use std::ops::Deref; self.entry.deref()
     }
     /// <p>Represents the map target that is used in a <code>HomeDirectoryMapEntry</code>.</p>
-    pub fn target(&self) -> &str {
-        use std::ops::Deref;
-        self.target.deref()
+    pub fn target(&self) -> & str {
+        use std::ops::Deref; self.target.deref()
     }
     /// <p>Specifies the type of mapping. Set the type to <code>FILE</code> if you want the mapping to point to a file, or <code>DIRECTORY</code> for the directory to point to a directory.</p><note>
     /// <p>By default, home directory mappings have a <code>Type</code> of <code>DIRECTORY</code> when you create a Transfer Family server. You would need to explicitly set <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.</p>
     /// </note>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::MapType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::MapType> {
         self.r#type.as_ref()
     }
 }
@@ -57,8 +55,7 @@ impl HomeDirectoryMapEntryBuilder {
     }
     /// <p>Represents an entry for <code>HomeDirectoryMappings</code>.</p>
     pub fn set_entry(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entry = input;
-        self
+        self.entry = input; self
     }
     /// <p>Represents an entry for <code>HomeDirectoryMappings</code>.</p>
     pub fn get_entry(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +69,7 @@ impl HomeDirectoryMapEntryBuilder {
     }
     /// <p>Represents the map target that is used in a <code>HomeDirectoryMapEntry</code>.</p>
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
     }
     /// <p>Represents the map target that is used in a <code>HomeDirectoryMapEntry</code>.</p>
     pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +86,7 @@ impl HomeDirectoryMapEntryBuilder {
     /// <p>By default, home directory mappings have a <code>Type</code> of <code>DIRECTORY</code> when you create a Transfer Family server. You would need to explicitly set <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.</p>
     /// </note>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::MapType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Specifies the type of mapping. Set the type to <code>FILE</code> if you want the mapping to point to a file, or <code>DIRECTORY</code> for the directory to point to a directory.</p><note>
     /// <p>By default, home directory mappings have a <code>Type</code> of <code>DIRECTORY</code> when you create a Transfer Family server. You would need to explicitly set <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.</p>
@@ -104,20 +99,22 @@ impl HomeDirectoryMapEntryBuilder {
     /// - [`entry`](crate::types::builders::HomeDirectoryMapEntryBuilder::entry)
     /// - [`target`](crate::types::builders::HomeDirectoryMapEntryBuilder::target)
     pub fn build(self) -> ::std::result::Result<crate::types::HomeDirectoryMapEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::HomeDirectoryMapEntry {
-            entry: self.entry.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "entry",
-                    "entry was not specified but it is required when building HomeDirectoryMapEntry",
-                )
-            })?,
-            target: self.target.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "target",
-                    "target was not specified but it is required when building HomeDirectoryMapEntry",
-                )
-            })?,
-            r#type: self.r#type,
-        })
+        ::std::result::Result::Ok(
+            crate::types::HomeDirectoryMapEntry {
+                entry: self.entry
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("entry", "entry was not specified but it is required when building HomeDirectoryMapEntry")
+                    )?
+                ,
+                target: self.target
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("target", "target was not specified but it is required when building HomeDirectoryMapEntry")
+                    )?
+                ,
+                r#type: self.r#type
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLunaClientOutput {
+pub struct DescribeLunaClientOutput  {
     /// <p>The ARN of the client.</p>
     pub client_arn: ::std::option::Option<::std::string::String>,
     /// <p>The certificate installed on the HSMs used by this client.</p>
@@ -15,33 +15,33 @@ pub struct DescribeLunaClientOutput {
     pub label: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeLunaClientOutput {
+impl  DescribeLunaClientOutput  {
     /// <p>The ARN of the client.</p>
-    pub fn client_arn(&self) -> ::std::option::Option<&str> {
+    pub fn client_arn(&self) -> ::std::option::Option<& str> {
         self.client_arn.as_deref()
     }
     /// <p>The certificate installed on the HSMs used by this client.</p>
-    pub fn certificate(&self) -> ::std::option::Option<&str> {
+    pub fn certificate(&self) -> ::std::option::Option<& str> {
         self.certificate.as_deref()
     }
     /// <p>The certificate fingerprint.</p>
-    pub fn certificate_fingerprint(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_fingerprint(&self) -> ::std::option::Option<& str> {
         self.certificate_fingerprint.as_deref()
     }
     /// <p>The date and time the client was last modified.</p>
-    pub fn last_modified_timestamp(&self) -> ::std::option::Option<&str> {
+    pub fn last_modified_timestamp(&self) -> ::std::option::Option<& str> {
         self.last_modified_timestamp.as_deref()
     }
     /// <p>The label of the client.</p>
-    pub fn label(&self) -> ::std::option::Option<&str> {
+    pub fn label(&self) -> ::std::option::Option<& str> {
         self.label.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeLunaClientOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeLunaClientOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLunaClientOutput`](crate::operation::describe_luna_client::DescribeLunaClientOutput).
     pub fn builder() -> crate::operation::describe_luna_client::builders::DescribeLunaClientOutputBuilder {
@@ -68,8 +68,7 @@ impl DescribeLunaClientOutputBuilder {
     }
     /// <p>The ARN of the client.</p>
     pub fn set_client_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_arn = input;
-        self
+        self.client_arn = input; self
     }
     /// <p>The ARN of the client.</p>
     pub fn get_client_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +81,7 @@ impl DescribeLunaClientOutputBuilder {
     }
     /// <p>The certificate installed on the HSMs used by this client.</p>
     pub fn set_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate = input;
-        self
+        self.certificate = input; self
     }
     /// <p>The certificate installed on the HSMs used by this client.</p>
     pub fn get_certificate(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +94,7 @@ impl DescribeLunaClientOutputBuilder {
     }
     /// <p>The certificate fingerprint.</p>
     pub fn set_certificate_fingerprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_fingerprint = input;
-        self
+        self.certificate_fingerprint = input; self
     }
     /// <p>The certificate fingerprint.</p>
     pub fn get_certificate_fingerprint(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +107,7 @@ impl DescribeLunaClientOutputBuilder {
     }
     /// <p>The date and time the client was last modified.</p>
     pub fn set_last_modified_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_modified_timestamp = input;
-        self
+        self.last_modified_timestamp = input; self
     }
     /// <p>The date and time the client was last modified.</p>
     pub fn get_last_modified_timestamp(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,31 +120,36 @@ impl DescribeLunaClientOutputBuilder {
     }
     /// <p>The label of the client.</p>
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label = input;
-        self
+        self.label = input; self
     }
     /// <p>The label of the client.</p>
     pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
         &self.label
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeLunaClientOutput`](crate::operation::describe_luna_client::DescribeLunaClientOutput).
     pub fn build(self) -> crate::operation::describe_luna_client::DescribeLunaClientOutput {
         crate::operation::describe_luna_client::DescribeLunaClientOutput {
-            client_arn: self.client_arn,
-            certificate: self.certificate,
-            certificate_fingerprint: self.certificate_fingerprint,
-            last_modified_timestamp: self.last_modified_timestamp,
-            label: self.label,
+            client_arn: self.client_arn
+            ,
+            certificate: self.certificate
+            ,
+            certificate_fingerprint: self.certificate_fingerprint
+            ,
+            last_modified_timestamp: self.last_modified_timestamp
+            ,
+            label: self.label
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,21 +3,21 @@
 /// <p>A request to delete the BasePathMapping resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteBasePathMappingInput {
+pub struct DeleteBasePathMappingInput  {
     /// <p>The domain name of the BasePathMapping resource to delete.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The base path name of the BasePathMapping resource to delete.</p>
     /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
     pub base_path: ::std::option::Option<::std::string::String>,
 }
-impl DeleteBasePathMappingInput {
+impl  DeleteBasePathMappingInput  {
     /// <p>The domain name of the BasePathMapping resource to delete.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The base path name of the BasePathMapping resource to delete.</p>
     /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
-    pub fn base_path(&self) -> ::std::option::Option<&str> {
+    pub fn base_path(&self) -> ::std::option::Option<& str> {
         self.base_path.as_deref()
     }
 }
@@ -44,8 +44,7 @@ impl DeleteBasePathMappingInputBuilder {
     }
     /// <p>The domain name of the BasePathMapping resource to delete.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The domain name of the BasePathMapping resource to delete.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl DeleteBasePathMappingInputBuilder {
     /// <p>The base path name of the BasePathMapping resource to delete.</p>
     /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
     pub fn set_base_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.base_path = input;
-        self
+        self.base_path = input; self
     }
     /// <p>The base path name of the BasePathMapping resource to delete.</p>
     /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
@@ -70,13 +68,15 @@ impl DeleteBasePathMappingInputBuilder {
         &self.base_path
     }
     /// Consumes the builder and constructs a [`DeleteBasePathMappingInput`](crate::operation::delete_base_path_mapping::DeleteBasePathMappingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_base_path_mapping::DeleteBasePathMappingInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_base_path_mapping::DeleteBasePathMappingInput {
-            domain_name: self.domain_name,
-            base_path: self.base_path,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_base_path_mapping::DeleteBasePathMappingInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_base_path_mapping::DeleteBasePathMappingInput {
+                domain_name: self.domain_name
+                ,
+                base_path: self.base_path
+                ,
+            }
+        )
     }
 }
+

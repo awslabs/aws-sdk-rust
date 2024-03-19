@@ -3,7 +3,7 @@
 /// <p>A security group that can be used by interfaces in the VPC.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SecurityGroupForVpc {
+pub struct SecurityGroupForVpc  {
     /// <p>The security group's description.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The security group name.</p>
@@ -13,35 +13,36 @@ pub struct SecurityGroupForVpc {
     /// <p>The security group ID.</p>
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>The security group tags.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The VPC ID in which the security group was created.</p>
     pub primary_vpc_id: ::std::option::Option<::std::string::String>,
 }
-impl SecurityGroupForVpc {
+impl  SecurityGroupForVpc  {
     /// <p>The security group's description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The security group name.</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>The security group owner ID.</p>
-    pub fn owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>The security group ID.</p>
-    pub fn group_id(&self) -> ::std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<& str> {
         self.group_id.as_deref()
     }
     /// <p>The security group tags.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The VPC ID in which the security group was created.</p>
-    pub fn primary_vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn primary_vpc_id(&self) -> ::std::option::Option<& str> {
         self.primary_vpc_id.as_deref()
     }
 }
@@ -60,7 +61,7 @@ pub struct SecurityGroupForVpcBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) primary_vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl SecurityGroupForVpcBuilder {
@@ -71,8 +72,7 @@ impl SecurityGroupForVpcBuilder {
     }
     /// <p>The security group's description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The security group's description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +85,7 @@ impl SecurityGroupForVpcBuilder {
     }
     /// <p>The security group name.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>The security group name.</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +98,7 @@ impl SecurityGroupForVpcBuilder {
     }
     /// <p>The security group owner ID.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// <p>The security group owner ID.</p>
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +111,7 @@ impl SecurityGroupForVpcBuilder {
     }
     /// <p>The security group ID.</p>
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// <p>The security group ID.</p>
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,17 +124,16 @@ impl SecurityGroupForVpcBuilder {
     /// <p>The security group tags.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The security group tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The security group tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The VPC ID in which the security group was created.</p>
@@ -147,8 +143,7 @@ impl SecurityGroupForVpcBuilder {
     }
     /// <p>The VPC ID in which the security group was created.</p>
     pub fn set_primary_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.primary_vpc_id = input;
-        self
+        self.primary_vpc_id = input; self
     }
     /// <p>The VPC ID in which the security group was created.</p>
     pub fn get_primary_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,12 +152,19 @@ impl SecurityGroupForVpcBuilder {
     /// Consumes the builder and constructs a [`SecurityGroupForVpc`](crate::types::SecurityGroupForVpc).
     pub fn build(self) -> crate::types::SecurityGroupForVpc {
         crate::types::SecurityGroupForVpc {
-            description: self.description,
-            group_name: self.group_name,
-            owner_id: self.owner_id,
-            group_id: self.group_id,
-            tags: self.tags,
-            primary_vpc_id: self.primary_vpc_id,
+            description: self.description
+            ,
+            group_name: self.group_name
+            ,
+            owner_id: self.owner_id
+            ,
+            group_id: self.group_id
+            ,
+            tags: self.tags
+            ,
+            primary_vpc_id: self.primary_vpc_id
+            ,
         }
     }
 }
+

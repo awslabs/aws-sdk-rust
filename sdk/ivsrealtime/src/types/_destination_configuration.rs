@@ -3,7 +3,7 @@
 /// <p>Complex data type that defines destination-configuration objects.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DestinationConfiguration {
+pub struct DestinationConfiguration  {
     /// <p>Name that can be specified to help identify the destination.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An IVS channel to be used for broadcasting, for server-side composition. Either a <code>channel</code> or an <code>s3</code> must be specified.</p>
@@ -11,17 +11,17 @@ pub struct DestinationConfiguration {
     /// <p>An S3 storage configuration to be used for recording video data. Either a <code>channel</code> or an <code>s3</code> must be specified.</p>
     pub s3: ::std::option::Option<crate::types::S3DestinationConfiguration>,
 }
-impl DestinationConfiguration {
+impl  DestinationConfiguration  {
     /// <p>Name that can be specified to help identify the destination.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>An IVS channel to be used for broadcasting, for server-side composition. Either a <code>channel</code> or an <code>s3</code> must be specified.</p>
-    pub fn channel(&self) -> ::std::option::Option<&crate::types::ChannelDestinationConfiguration> {
+    pub fn channel(&self) -> ::std::option::Option<& crate::types::ChannelDestinationConfiguration> {
         self.channel.as_ref()
     }
     /// <p>An S3 storage configuration to be used for recording video data. Either a <code>channel</code> or an <code>s3</code> must be specified.</p>
-    pub fn s3(&self) -> ::std::option::Option<&crate::types::S3DestinationConfiguration> {
+    pub fn s3(&self) -> ::std::option::Option<& crate::types::S3DestinationConfiguration> {
         self.s3.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl DestinationConfigurationBuilder {
     }
     /// <p>Name that can be specified to help identify the destination.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name that can be specified to help identify the destination.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl DestinationConfigurationBuilder {
     }
     /// <p>An IVS channel to be used for broadcasting, for server-side composition. Either a <code>channel</code> or an <code>s3</code> must be specified.</p>
     pub fn set_channel(mut self, input: ::std::option::Option<crate::types::ChannelDestinationConfiguration>) -> Self {
-        self.channel = input;
-        self
+        self.channel = input; self
     }
     /// <p>An IVS channel to be used for broadcasting, for server-side composition. Either a <code>channel</code> or an <code>s3</code> must be specified.</p>
     pub fn get_channel(&self) -> &::std::option::Option<crate::types::ChannelDestinationConfiguration> {
@@ -76,8 +74,7 @@ impl DestinationConfigurationBuilder {
     }
     /// <p>An S3 storage configuration to be used for recording video data. Either a <code>channel</code> or an <code>s3</code> must be specified.</p>
     pub fn set_s3(mut self, input: ::std::option::Option<crate::types::S3DestinationConfiguration>) -> Self {
-        self.s3 = input;
-        self
+        self.s3 = input; self
     }
     /// <p>An S3 storage configuration to be used for recording video data. Either a <code>channel</code> or an <code>s3</code> must be specified.</p>
     pub fn get_s3(&self) -> &::std::option::Option<crate::types::S3DestinationConfiguration> {
@@ -86,9 +83,13 @@ impl DestinationConfigurationBuilder {
     /// Consumes the builder and constructs a [`DestinationConfiguration`](crate::types::DestinationConfiguration).
     pub fn build(self) -> crate::types::DestinationConfiguration {
         crate::types::DestinationConfiguration {
-            name: self.name,
-            channel: self.channel,
-            s3: self.s3,
+            name: self.name
+            ,
+            channel: self.channel
+            ,
+            s3: self.s3
+            ,
         }
     }
 }
+

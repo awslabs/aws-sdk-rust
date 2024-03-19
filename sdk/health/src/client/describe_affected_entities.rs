@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAffectedEntities`](crate::operation::describe_affected_entities::builders::DescribeAffectedEntitiesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_affected_entities::builders::DescribeAffectedEntitiesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filter(EntityFilter)`](crate::operation::describe_affected_entities::builders::DescribeAffectedEntitiesFluentBuilder::filter) / [`set_filter(Option<EntityFilter>)`](crate::operation::describe_affected_entities::builders::DescribeAffectedEntitiesFluentBuilder::set_filter):<br>required: **true**<br><p>Values to narrow the results returned. At least one event ARN is required.</p><br>
     ///   - [`locale(impl Into<String>)`](crate::operation::describe_affected_entities::builders::DescribeAffectedEntitiesFluentBuilder::locale) / [`set_locale(Option<String>)`](crate::operation::describe_affected_entities::builders::DescribeAffectedEntitiesFluentBuilder::set_locale):<br>required: **false**<br><p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_affected_entities::builders::DescribeAffectedEntitiesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_affected_entities::builders::DescribeAffectedEntitiesFluentBuilder::set_next_token):<br>required: **false**<br><p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_affected_entities::builders::DescribeAffectedEntitiesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_affected_entities::builders::DescribeAffectedEntitiesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p><br>
-    /// - On success, responds with [`DescribeAffectedEntitiesOutput`](crate::operation::describe_affected_entities::DescribeAffectedEntitiesOutput) with field(s):
+                            /// - On success, responds with [`DescribeAffectedEntitiesOutput`](crate::operation::describe_affected_entities::DescribeAffectedEntitiesOutput) with field(s):
     ///   - [`entities(Option<Vec::<AffectedEntity>>)`](crate::operation::describe_affected_entities::DescribeAffectedEntitiesOutput::entities): <p>The entities that match the filter criteria.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_affected_entities::DescribeAffectedEntitiesOutput::next_token): <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
-    /// - On failure, responds with [`SdkError<DescribeAffectedEntitiesError>`](crate::operation::describe_affected_entities::DescribeAffectedEntitiesError)
+                            /// - On failure, responds with [`SdkError<DescribeAffectedEntitiesError>`](crate::operation::describe_affected_entities::DescribeAffectedEntitiesError)
     pub fn describe_affected_entities(&self) -> crate::operation::describe_affected_entities::builders::DescribeAffectedEntitiesFluentBuilder {
-        crate::operation::describe_affected_entities::builders::DescribeAffectedEntitiesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_affected_entities::builders::DescribeAffectedEntitiesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

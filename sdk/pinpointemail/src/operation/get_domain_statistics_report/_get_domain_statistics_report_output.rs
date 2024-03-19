@@ -3,29 +3,28 @@
 /// <p>An object that includes statistics that are related to the domain that you specified.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDomainStatisticsReportOutput {
+pub struct GetDomainStatisticsReportOutput  {
     /// <p>An object that contains deliverability metrics for the domain that you specified. The data in this object is a summary of all of the data that was collected from the <code>StartDate</code> to the <code>EndDate</code>.</p>
     pub overall_volume: ::std::option::Option<crate::types::OverallVolume>,
     /// <p>An object that contains deliverability metrics for the domain that you specified. This object contains data for each day, starting on the <code>StartDate</code> and ending on the <code>EndDate</code>.</p>
-    pub daily_volumes: ::std::vec::Vec<crate::types::DailyVolume>,
+    pub daily_volumes: ::std::vec::Vec::<crate::types::DailyVolume>,
     _request_id: Option<String>,
 }
-impl GetDomainStatisticsReportOutput {
+impl  GetDomainStatisticsReportOutput  {
     /// <p>An object that contains deliverability metrics for the domain that you specified. The data in this object is a summary of all of the data that was collected from the <code>StartDate</code> to the <code>EndDate</code>.</p>
-    pub fn overall_volume(&self) -> ::std::option::Option<&crate::types::OverallVolume> {
+    pub fn overall_volume(&self) -> ::std::option::Option<& crate::types::OverallVolume> {
         self.overall_volume.as_ref()
     }
     /// <p>An object that contains deliverability metrics for the domain that you specified. This object contains data for each day, starting on the <code>StartDate</code> and ending on the <code>EndDate</code>.</p>
-    pub fn daily_volumes(&self) -> &[crate::types::DailyVolume] {
-        use std::ops::Deref;
-        self.daily_volumes.deref()
+    pub fn daily_volumes(&self) -> & [crate::types::DailyVolume] {
+        use std::ops::Deref; self.daily_volumes.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDomainStatisticsReportOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDomainStatisticsReportOutput {
     /// Creates a new builder-style object to manufacture [`GetDomainStatisticsReportOutput`](crate::operation::get_domain_statistics_report::GetDomainStatisticsReportOutput).
     pub fn builder() -> crate::operation::get_domain_statistics_report::builders::GetDomainStatisticsReportOutputBuilder {
@@ -38,7 +37,7 @@ impl GetDomainStatisticsReportOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDomainStatisticsReportOutputBuilder {
     pub(crate) overall_volume: ::std::option::Option<crate::types::OverallVolume>,
-    pub(crate) daily_volumes: ::std::option::Option<::std::vec::Vec<crate::types::DailyVolume>>,
+    pub(crate) daily_volumes: ::std::option::Option<::std::vec::Vec::<crate::types::DailyVolume>>,
     _request_id: Option<String>,
 }
 impl GetDomainStatisticsReportOutputBuilder {
@@ -50,8 +49,7 @@ impl GetDomainStatisticsReportOutputBuilder {
     }
     /// <p>An object that contains deliverability metrics for the domain that you specified. The data in this object is a summary of all of the data that was collected from the <code>StartDate</code> to the <code>EndDate</code>.</p>
     pub fn set_overall_volume(mut self, input: ::std::option::Option<crate::types::OverallVolume>) -> Self {
-        self.overall_volume = input;
-        self
+        self.overall_volume = input; self
     }
     /// <p>An object that contains deliverability metrics for the domain that you specified. The data in this object is a summary of all of the data that was collected from the <code>StartDate</code> to the <code>EndDate</code>.</p>
     pub fn get_overall_volume(&self) -> &::std::option::Option<crate::types::OverallVolume> {
@@ -64,46 +62,43 @@ impl GetDomainStatisticsReportOutputBuilder {
     /// <p>An object that contains deliverability metrics for the domain that you specified. This object contains data for each day, starting on the <code>StartDate</code> and ending on the <code>EndDate</code>.</p>
     pub fn daily_volumes(mut self, input: crate::types::DailyVolume) -> Self {
         let mut v = self.daily_volumes.unwrap_or_default();
-        v.push(input);
-        self.daily_volumes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.daily_volumes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An object that contains deliverability metrics for the domain that you specified. This object contains data for each day, starting on the <code>StartDate</code> and ending on the <code>EndDate</code>.</p>
-    pub fn set_daily_volumes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DailyVolume>>) -> Self {
-        self.daily_volumes = input;
-        self
+    pub fn set_daily_volumes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DailyVolume>>) -> Self {
+        self.daily_volumes = input; self
     }
     /// <p>An object that contains deliverability metrics for the domain that you specified. This object contains data for each day, starting on the <code>StartDate</code> and ending on the <code>EndDate</code>.</p>
-    pub fn get_daily_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DailyVolume>> {
+    pub fn get_daily_volumes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DailyVolume>> {
         &self.daily_volumes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDomainStatisticsReportOutput`](crate::operation::get_domain_statistics_report::GetDomainStatisticsReportOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`daily_volumes`](crate::operation::get_domain_statistics_report::builders::GetDomainStatisticsReportOutputBuilder::daily_volumes)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_domain_statistics_report::GetDomainStatisticsReportOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_domain_statistics_report::GetDomainStatisticsReportOutput {
-            overall_volume: self.overall_volume,
-            daily_volumes: self.daily_volumes.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "daily_volumes",
-                    "daily_volumes was not specified but it is required when building GetDomainStatisticsReportOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_domain_statistics_report::GetDomainStatisticsReportOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_domain_statistics_report::GetDomainStatisticsReportOutput {
+                overall_volume: self.overall_volume
+                ,
+                daily_volumes: self.daily_volumes
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("daily_volumes", "daily_volumes was not specified but it is required when building GetDomainStatisticsReportOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

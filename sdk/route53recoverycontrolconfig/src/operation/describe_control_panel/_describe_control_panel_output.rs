@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeControlPanelOutput {
+pub struct DescribeControlPanelOutput  {
     /// <p>Information about the control panel.</p>
     pub control_panel: ::std::option::Option<crate::types::ControlPanel>,
     _request_id: Option<String>,
 }
-impl DescribeControlPanelOutput {
+impl  DescribeControlPanelOutput  {
     /// <p>Information about the control panel.</p>
-    pub fn control_panel(&self) -> ::std::option::Option<&crate::types::ControlPanel> {
+    pub fn control_panel(&self) -> ::std::option::Option<& crate::types::ControlPanel> {
         self.control_panel.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeControlPanelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeControlPanelOutput {
     /// Creates a new builder-style object to manufacture [`DescribeControlPanelOutput`](crate::operation::describe_control_panel::DescribeControlPanelOutput).
     pub fn builder() -> crate::operation::describe_control_panel::builders::DescribeControlPanelOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeControlPanelOutputBuilder {
     }
     /// <p>Information about the control panel.</p>
     pub fn set_control_panel(mut self, input: ::std::option::Option<crate::types::ControlPanel>) -> Self {
-        self.control_panel = input;
-        self
+        self.control_panel = input; self
     }
     /// <p>Information about the control panel.</p>
     pub fn get_control_panel(&self) -> &::std::option::Option<crate::types::ControlPanel> {
         &self.control_panel
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeControlPanelOutput`](crate::operation::describe_control_panel::DescribeControlPanelOutput).
     pub fn build(self) -> crate::operation::describe_control_panel::DescribeControlPanelOutput {
         crate::operation::describe_control_panel::DescribeControlPanelOutput {
-            control_panel: self.control_panel,
+            control_panel: self.control_panel
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

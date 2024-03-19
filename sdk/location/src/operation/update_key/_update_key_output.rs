@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateKeyOutput {
+pub struct UpdateKeyOutput  {
     /// <p>The Amazon Resource Name (ARN) for the API key resource. Used when you need to specify a resource across all Amazon Web Services.</p>
     /// <ul>
     /// <li>
@@ -15,31 +15,29 @@ pub struct UpdateKeyOutput {
     pub update_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
-impl UpdateKeyOutput {
+impl  UpdateKeyOutput  {
     /// <p>The Amazon Resource Name (ARN) for the API key resource. Used when you need to specify a resource across all Amazon Web Services.</p>
     /// <ul>
     /// <li>
     /// <p>Format example: <code>arn:aws:geo:region:account-id:key/ExampleKey</code></p></li>
     /// </ul>
-    pub fn key_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.key_arn.deref()
+    pub fn key_arn(&self) -> & str {
+        use std::ops::Deref; self.key_arn.deref()
     }
     /// <p>The name of the API key resource.</p>
-    pub fn key_name(&self) -> &str {
-        use std::ops::Deref;
-        self.key_name.deref()
+    pub fn key_name(&self) -> & str {
+        use std::ops::Deref; self.key_name.deref()
     }
     /// <p>The timestamp for when the API key resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_time
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateKeyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateKeyOutput {
     /// Creates a new builder-style object to manufacture [`UpdateKeyOutput`](crate::operation::update_key::UpdateKeyOutput).
     pub fn builder() -> crate::operation::update_key::builders::UpdateKeyOutputBuilder {
@@ -73,8 +71,7 @@ impl UpdateKeyOutputBuilder {
     /// <p>Format example: <code>arn:aws:geo:region:account-id:key/ExampleKey</code></p></li>
     /// </ul>
     pub fn set_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_arn = input;
-        self
+        self.key_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the API key resource. Used when you need to specify a resource across all Amazon Web Services.</p>
     /// <ul>
@@ -92,8 +89,7 @@ impl UpdateKeyOutputBuilder {
     }
     /// <p>The name of the API key resource.</p>
     pub fn set_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_name = input;
-        self
+        self.key_name = input; self
     }
     /// <p>The name of the API key resource.</p>
     pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,48 +103,47 @@ impl UpdateKeyOutputBuilder {
     }
     /// <p>The timestamp for when the API key resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input;
-        self
+        self.update_time = input; self
     }
     /// <p>The timestamp for when the API key resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.update_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateKeyOutput`](crate::operation::update_key::UpdateKeyOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`key_arn`](crate::operation::update_key::builders::UpdateKeyOutputBuilder::key_arn)
     /// - [`key_name`](crate::operation::update_key::builders::UpdateKeyOutputBuilder::key_name)
     /// - [`update_time`](crate::operation::update_key::builders::UpdateKeyOutputBuilder::update_time)
     pub fn build(self) -> ::std::result::Result<crate::operation::update_key::UpdateKeyOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_key::UpdateKeyOutput {
-            key_arn: self.key_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key_arn",
-                    "key_arn was not specified but it is required when building UpdateKeyOutput",
-                )
-            })?,
-            key_name: self.key_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key_name",
-                    "key_name was not specified but it is required when building UpdateKeyOutput",
-                )
-            })?,
-            update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_time",
-                    "update_time was not specified but it is required when building UpdateKeyOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_key::UpdateKeyOutput {
+                key_arn: self.key_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key_arn", "key_arn was not specified but it is required when building UpdateKeyOutput")
+                    )?
+                ,
+                key_name: self.key_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key_name", "key_name was not specified but it is required when building UpdateKeyOutput")
+                    )?
+                ,
+                update_time: self.update_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_time", "update_time was not specified but it is required when building UpdateKeyOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

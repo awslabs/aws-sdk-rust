@@ -3,19 +3,19 @@
 /// <p>Describes the record format and relevant mapping information that should be applied to schematize the records on the stream.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecordFormat {
+pub struct RecordFormat  {
     /// <p>The type of record format.</p>
     pub record_format_type: crate::types::RecordFormatType,
     /// <p>When configuring application input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source.</p>
     pub mapping_parameters: ::std::option::Option<crate::types::MappingParameters>,
 }
-impl RecordFormat {
+impl  RecordFormat  {
     /// <p>The type of record format.</p>
-    pub fn record_format_type(&self) -> &crate::types::RecordFormatType {
+    pub fn record_format_type(&self) -> & crate::types::RecordFormatType {
         &self.record_format_type
     }
     /// <p>When configuring application input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source.</p>
-    pub fn mapping_parameters(&self) -> ::std::option::Option<&crate::types::MappingParameters> {
+    pub fn mapping_parameters(&self) -> ::std::option::Option<& crate::types::MappingParameters> {
         self.mapping_parameters.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl RecordFormatBuilder {
     }
     /// <p>The type of record format.</p>
     pub fn set_record_format_type(mut self, input: ::std::option::Option<crate::types::RecordFormatType>) -> Self {
-        self.record_format_type = input;
-        self
+        self.record_format_type = input; self
     }
     /// <p>The type of record format.</p>
     pub fn get_record_format_type(&self) -> &::std::option::Option<crate::types::RecordFormatType> {
@@ -56,8 +55,7 @@ impl RecordFormatBuilder {
     }
     /// <p>When configuring application input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source.</p>
     pub fn set_mapping_parameters(mut self, input: ::std::option::Option<crate::types::MappingParameters>) -> Self {
-        self.mapping_parameters = input;
-        self
+        self.mapping_parameters = input; self
     }
     /// <p>When configuring application input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source.</p>
     pub fn get_mapping_parameters(&self) -> &::std::option::Option<crate::types::MappingParameters> {
@@ -67,14 +65,17 @@ impl RecordFormatBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`record_format_type`](crate::types::builders::RecordFormatBuilder::record_format_type)
     pub fn build(self) -> ::std::result::Result<crate::types::RecordFormat, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RecordFormat {
-            record_format_type: self.record_format_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "record_format_type",
-                    "record_format_type was not specified but it is required when building RecordFormat",
-                )
-            })?,
-            mapping_parameters: self.mapping_parameters,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RecordFormat {
+                record_format_type: self.record_format_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("record_format_type", "record_format_type was not specified but it is required when building RecordFormat")
+                    )?
+                ,
+                mapping_parameters: self.mapping_parameters
+                ,
+            }
+        )
     }
 }
+

@@ -3,11 +3,11 @@
 /// <p>Configures conditions under which the processing job should be stopped, such as how long the processing job has been running. After the condition is met, the processing job is stopped.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProcessingStoppingCondition {
+pub struct ProcessingStoppingCondition  {
     /// <p>Specifies the maximum runtime in seconds.</p>
     pub max_runtime_in_seconds: ::std::option::Option<i32>,
 }
-impl ProcessingStoppingCondition {
+impl  ProcessingStoppingCondition  {
     /// <p>Specifies the maximum runtime in seconds.</p>
     pub fn max_runtime_in_seconds(&self) -> ::std::option::Option<i32> {
         self.max_runtime_in_seconds
@@ -35,8 +35,7 @@ impl ProcessingStoppingConditionBuilder {
     }
     /// <p>Specifies the maximum runtime in seconds.</p>
     pub fn set_max_runtime_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_runtime_in_seconds = input;
-        self
+        self.max_runtime_in_seconds = input; self
     }
     /// <p>Specifies the maximum runtime in seconds.</p>
     pub fn get_max_runtime_in_seconds(&self) -> &::std::option::Option<i32> {
@@ -45,7 +44,9 @@ impl ProcessingStoppingConditionBuilder {
     /// Consumes the builder and constructs a [`ProcessingStoppingCondition`](crate::types::ProcessingStoppingCondition).
     pub fn build(self) -> crate::types::ProcessingStoppingCondition {
         crate::types::ProcessingStoppingCondition {
-            max_runtime_in_seconds: self.max_runtime_in_seconds,
+            max_runtime_in_seconds: self.max_runtime_in_seconds
+            ,
         }
     }
 }
+

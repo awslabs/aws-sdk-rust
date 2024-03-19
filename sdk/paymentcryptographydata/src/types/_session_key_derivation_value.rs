@@ -22,11 +22,7 @@ impl SessionKeyDerivationValue {
     /// Tries to convert the enum instance into [`ApplicationCryptogram`](crate::types::SessionKeyDerivationValue::ApplicationCryptogram), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_application_cryptogram(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let SessionKeyDerivationValue::ApplicationCryptogram(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let SessionKeyDerivationValue::ApplicationCryptogram(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ApplicationCryptogram`](crate::types::SessionKeyDerivationValue::ApplicationCryptogram).
     pub fn is_application_cryptogram(&self) -> bool {
@@ -35,11 +31,7 @@ impl SessionKeyDerivationValue {
     /// Tries to convert the enum instance into [`ApplicationTransactionCounter`](crate::types::SessionKeyDerivationValue::ApplicationTransactionCounter), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_application_transaction_counter(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let SessionKeyDerivationValue::ApplicationTransactionCounter(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let SessionKeyDerivationValue::ApplicationTransactionCounter(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ApplicationTransactionCounter`](crate::types::SessionKeyDerivationValue::ApplicationTransactionCounter).
     pub fn is_application_transaction_counter(&self) -> bool {
@@ -50,3 +42,4 @@ impl SessionKeyDerivationValue {
         matches!(self, Self::Unknown)
     }
 }
+

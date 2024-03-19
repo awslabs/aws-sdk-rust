@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateNamedQueryInput {
+pub struct UpdateNamedQueryInput  {
     /// <p>The unique identifier (UUID) of the query.</p>
     pub named_query_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the query.</p>
@@ -12,21 +12,21 @@ pub struct UpdateNamedQueryInput {
     /// <p>The contents of the query with all query statements.</p>
     pub query_string: ::std::option::Option<::std::string::String>,
 }
-impl UpdateNamedQueryInput {
+impl  UpdateNamedQueryInput  {
     /// <p>The unique identifier (UUID) of the query.</p>
-    pub fn named_query_id(&self) -> ::std::option::Option<&str> {
+    pub fn named_query_id(&self) -> ::std::option::Option<& str> {
         self.named_query_id.as_deref()
     }
     /// <p>The name of the query.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The query description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The contents of the query with all query statements.</p>
-    pub fn query_string(&self) -> ::std::option::Option<&str> {
+    pub fn query_string(&self) -> ::std::option::Option<& str> {
         self.query_string.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl UpdateNamedQueryInputBuilder {
     }
     /// <p>The unique identifier (UUID) of the query.</p>
     pub fn set_named_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.named_query_id = input;
-        self
+        self.named_query_id = input; self
     }
     /// <p>The unique identifier (UUID) of the query.</p>
     pub fn get_named_query_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl UpdateNamedQueryInputBuilder {
     }
     /// <p>The name of the query.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the query.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl UpdateNamedQueryInputBuilder {
     }
     /// <p>The query description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The query description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,22 +96,26 @@ impl UpdateNamedQueryInputBuilder {
     }
     /// <p>The contents of the query with all query statements.</p>
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_string = input;
-        self
+        self.query_string = input; self
     }
     /// <p>The contents of the query with all query statements.</p>
     pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_string
     }
     /// Consumes the builder and constructs a [`UpdateNamedQueryInput`](crate::operation::update_named_query::UpdateNamedQueryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_named_query::UpdateNamedQueryInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_named_query::UpdateNamedQueryInput {
-            named_query_id: self.named_query_id,
-            name: self.name,
-            description: self.description,
-            query_string: self.query_string,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_named_query::UpdateNamedQueryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_named_query::UpdateNamedQueryInput {
+                named_query_id: self.named_query_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                query_string: self.query_string
+                ,
+            }
+        )
     }
 }
+

@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTrainingDatasetOutput {
+pub struct CreateTrainingDatasetOutput  {
     /// <p>The Amazon Resource Name (ARN) of the training dataset resource.</p>
     pub training_dataset_arn: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CreateTrainingDatasetOutput {
+impl  CreateTrainingDatasetOutput  {
     /// <p>The Amazon Resource Name (ARN) of the training dataset resource.</p>
-    pub fn training_dataset_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.training_dataset_arn.deref()
+    pub fn training_dataset_arn(&self) -> & str {
+        use std::ops::Deref; self.training_dataset_arn.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateTrainingDatasetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateTrainingDatasetOutput {
     /// Creates a new builder-style object to manufacture [`CreateTrainingDatasetOutput`](crate::operation::create_training_dataset::CreateTrainingDatasetOutput).
     pub fn builder() -> crate::operation::create_training_dataset::builders::CreateTrainingDatasetOutputBuilder {
@@ -42,37 +41,35 @@ impl CreateTrainingDatasetOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the training dataset resource.</p>
     pub fn set_training_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.training_dataset_arn = input;
-        self
+        self.training_dataset_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the training dataset resource.</p>
     pub fn get_training_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.training_dataset_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateTrainingDatasetOutput`](crate::operation::create_training_dataset::CreateTrainingDatasetOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`training_dataset_arn`](crate::operation::create_training_dataset::builders::CreateTrainingDatasetOutputBuilder::training_dataset_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_training_dataset::CreateTrainingDatasetOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_training_dataset::CreateTrainingDatasetOutput {
-            training_dataset_arn: self.training_dataset_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "training_dataset_arn",
-                    "training_dataset_arn was not specified but it is required when building CreateTrainingDatasetOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_training_dataset::CreateTrainingDatasetOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_training_dataset::CreateTrainingDatasetOutput {
+                training_dataset_arn: self.training_dataset_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("training_dataset_arn", "training_dataset_arn was not specified but it is required when building CreateTrainingDatasetOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

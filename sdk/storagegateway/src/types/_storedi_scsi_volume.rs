@@ -3,7 +3,7 @@
 /// <p>Describes an iSCSI stored volume.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StorediScsiVolume {
+pub struct StorediScsiVolume  {
     /// <p>The Amazon Resource Name (ARN) of the storage volume.</p>
     pub volume_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the volume, e.g., vol-AE4B946D.</p>
@@ -39,25 +39,25 @@ pub struct StorediScsiVolume {
     /// <p>If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new target name.</p>
     pub target_name: ::std::option::Option<::std::string::String>,
 }
-impl StorediScsiVolume {
+impl  StorediScsiVolume  {
     /// <p>The Amazon Resource Name (ARN) of the storage volume.</p>
-    pub fn volume_arn(&self) -> ::std::option::Option<&str> {
+    pub fn volume_arn(&self) -> ::std::option::Option<& str> {
         self.volume_arn.as_deref()
     }
     /// <p>The unique identifier of the volume, e.g., vol-AE4B946D.</p>
-    pub fn volume_id(&self) -> ::std::option::Option<&str> {
+    pub fn volume_id(&self) -> ::std::option::Option<& str> {
         self.volume_id.as_deref()
     }
     /// <p>One of the VolumeType enumeration values describing the type of the volume.</p>
-    pub fn volume_type(&self) -> ::std::option::Option<&str> {
+    pub fn volume_type(&self) -> ::std::option::Option<& str> {
         self.volume_type.as_deref()
     }
     /// <p>One of the VolumeStatus values that indicates the state of the storage volume.</p>
-    pub fn volume_status(&self) -> ::std::option::Option<&str> {
+    pub fn volume_status(&self) -> ::std::option::Option<& str> {
         self.volume_status.as_deref()
     }
     /// <p>A value that indicates whether a storage volume is attached to, detached from, or is in the process of detaching from a gateway. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving your volumes to a different gateway</a>.</p>
-    pub fn volume_attachment_status(&self) -> ::std::option::Option<&str> {
+    pub fn volume_attachment_status(&self) -> ::std::option::Option<& str> {
         self.volume_attachment_status.as_deref()
     }
     /// <p>The size of the volume in bytes.</p>
@@ -69,11 +69,11 @@ impl StorediScsiVolume {
         self.volume_progress
     }
     /// <p>The ID of the local disk that was specified in the <code>CreateStorediSCSIVolume</code> operation.</p>
-    pub fn volume_disk_id(&self) -> ::std::option::Option<&str> {
+    pub fn volume_disk_id(&self) -> ::std::option::Option<& str> {
         self.volume_disk_id.as_deref()
     }
     /// <p>If the stored volume was created from a snapshot, this field contains the snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not included.</p>
-    pub fn source_snapshot_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_snapshot_id(&self) -> ::std::option::Option<& str> {
         self.source_snapshot_id.as_deref()
     }
     /// <p>Indicates if when the stored volume was created, existing data on the underlying local disk was preserved.</p>
@@ -82,11 +82,11 @@ impl StorediScsiVolume {
         self.preserved_existing_data
     }
     /// <p>An <code>VolumeiSCSIAttributes</code> object that represents a collection of iSCSI attributes for one stored volume.</p>
-    pub fn volumei_scsi_attributes(&self) -> ::std::option::Option<&crate::types::VolumeiScsiAttributes> {
+    pub fn volumei_scsi_attributes(&self) -> ::std::option::Option<& crate::types::VolumeiScsiAttributes> {
         self.volumei_scsi_attributes.as_ref()
     }
     /// <p>The date the volume was created. Volumes created prior to March 28, 2017 don’t have this timestamp.</p>
-    pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size of the volume, which is the value that is used to calculate your bill.</p><note>
@@ -96,12 +96,12 @@ impl StorediScsiVolume {
         self.volume_used_in_bytes
     }
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
-    pub fn kms_key(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key(&self) -> ::std::option::Option<& str> {
         self.kms_key.as_deref()
     }
     /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p>
     /// <p>If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new target name.</p>
-    pub fn target_name(&self) -> ::std::option::Option<&str> {
+    pub fn target_name(&self) -> ::std::option::Option<& str> {
         self.target_name.as_deref()
     }
 }
@@ -140,8 +140,7 @@ impl StorediScsiVolumeBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the storage volume.</p>
     pub fn set_volume_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_arn = input;
-        self
+        self.volume_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the storage volume.</p>
     pub fn get_volume_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,8 +153,7 @@ impl StorediScsiVolumeBuilder {
     }
     /// <p>The unique identifier of the volume, e.g., vol-AE4B946D.</p>
     pub fn set_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_id = input;
-        self
+        self.volume_id = input; self
     }
     /// <p>The unique identifier of the volume, e.g., vol-AE4B946D.</p>
     pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -168,8 +166,7 @@ impl StorediScsiVolumeBuilder {
     }
     /// <p>One of the VolumeType enumeration values describing the type of the volume.</p>
     pub fn set_volume_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_type = input;
-        self
+        self.volume_type = input; self
     }
     /// <p>One of the VolumeType enumeration values describing the type of the volume.</p>
     pub fn get_volume_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -182,8 +179,7 @@ impl StorediScsiVolumeBuilder {
     }
     /// <p>One of the VolumeStatus values that indicates the state of the storage volume.</p>
     pub fn set_volume_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_status = input;
-        self
+        self.volume_status = input; self
     }
     /// <p>One of the VolumeStatus values that indicates the state of the storage volume.</p>
     pub fn get_volume_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -196,8 +192,7 @@ impl StorediScsiVolumeBuilder {
     }
     /// <p>A value that indicates whether a storage volume is attached to, detached from, or is in the process of detaching from a gateway. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving your volumes to a different gateway</a>.</p>
     pub fn set_volume_attachment_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_attachment_status = input;
-        self
+        self.volume_attachment_status = input; self
     }
     /// <p>A value that indicates whether a storage volume is attached to, detached from, or is in the process of detaching from a gateway. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving your volumes to a different gateway</a>.</p>
     pub fn get_volume_attachment_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -210,8 +205,7 @@ impl StorediScsiVolumeBuilder {
     }
     /// <p>The size of the volume in bytes.</p>
     pub fn set_volume_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.volume_size_in_bytes = input;
-        self
+        self.volume_size_in_bytes = input; self
     }
     /// <p>The size of the volume in bytes.</p>
     pub fn get_volume_size_in_bytes(&self) -> &::std::option::Option<i64> {
@@ -224,8 +218,7 @@ impl StorediScsiVolumeBuilder {
     }
     /// <p>Represents the percentage complete if the volume is restoring or bootstrapping that represents the percent of data transferred. This field does not appear in the response if the stored volume is not restoring or bootstrapping.</p>
     pub fn set_volume_progress(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.volume_progress = input;
-        self
+        self.volume_progress = input; self
     }
     /// <p>Represents the percentage complete if the volume is restoring or bootstrapping that represents the percent of data transferred. This field does not appear in the response if the stored volume is not restoring or bootstrapping.</p>
     pub fn get_volume_progress(&self) -> &::std::option::Option<f64> {
@@ -238,8 +231,7 @@ impl StorediScsiVolumeBuilder {
     }
     /// <p>The ID of the local disk that was specified in the <code>CreateStorediSCSIVolume</code> operation.</p>
     pub fn set_volume_disk_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_disk_id = input;
-        self
+        self.volume_disk_id = input; self
     }
     /// <p>The ID of the local disk that was specified in the <code>CreateStorediSCSIVolume</code> operation.</p>
     pub fn get_volume_disk_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -252,8 +244,7 @@ impl StorediScsiVolumeBuilder {
     }
     /// <p>If the stored volume was created from a snapshot, this field contains the snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not included.</p>
     pub fn set_source_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_snapshot_id = input;
-        self
+        self.source_snapshot_id = input; self
     }
     /// <p>If the stored volume was created from a snapshot, this field contains the snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not included.</p>
     pub fn get_source_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -268,8 +259,7 @@ impl StorediScsiVolumeBuilder {
     /// <p>Indicates if when the stored volume was created, existing data on the underlying local disk was preserved.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub fn set_preserved_existing_data(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.preserved_existing_data = input;
-        self
+        self.preserved_existing_data = input; self
     }
     /// <p>Indicates if when the stored volume was created, existing data on the underlying local disk was preserved.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code></p>
@@ -283,8 +273,7 @@ impl StorediScsiVolumeBuilder {
     }
     /// <p>An <code>VolumeiSCSIAttributes</code> object that represents a collection of iSCSI attributes for one stored volume.</p>
     pub fn set_volumei_scsi_attributes(mut self, input: ::std::option::Option<crate::types::VolumeiScsiAttributes>) -> Self {
-        self.volumei_scsi_attributes = input;
-        self
+        self.volumei_scsi_attributes = input; self
     }
     /// <p>An <code>VolumeiSCSIAttributes</code> object that represents a collection of iSCSI attributes for one stored volume.</p>
     pub fn get_volumei_scsi_attributes(&self) -> &::std::option::Option<crate::types::VolumeiScsiAttributes> {
@@ -297,8 +286,7 @@ impl StorediScsiVolumeBuilder {
     }
     /// <p>The date the volume was created. Volumes created prior to March 28, 2017 don’t have this timestamp.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>The date the volume was created. Volumes created prior to March 28, 2017 don’t have this timestamp.</p>
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -315,8 +303,7 @@ impl StorediScsiVolumeBuilder {
     /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
     /// </note>
     pub fn set_volume_used_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.volume_used_in_bytes = input;
-        self
+        self.volume_used_in_bytes = input; self
     }
     /// <p>The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size of the volume, which is the value that is used to calculate your bill.</p><note>
     /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
@@ -331,8 +318,7 @@ impl StorediScsiVolumeBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
     pub fn set_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key = input;
-        self
+        self.kms_key = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
     pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -347,8 +333,7 @@ impl StorediScsiVolumeBuilder {
     /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p>
     /// <p>If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new target name.</p>
     pub fn set_target_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_name = input;
-        self
+        self.target_name = input; self
     }
     /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p>
     /// <p>If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new target name.</p>
@@ -358,21 +343,39 @@ impl StorediScsiVolumeBuilder {
     /// Consumes the builder and constructs a [`StorediScsiVolume`](crate::types::StorediScsiVolume).
     pub fn build(self) -> crate::types::StorediScsiVolume {
         crate::types::StorediScsiVolume {
-            volume_arn: self.volume_arn,
-            volume_id: self.volume_id,
-            volume_type: self.volume_type,
-            volume_status: self.volume_status,
-            volume_attachment_status: self.volume_attachment_status,
-            volume_size_in_bytes: self.volume_size_in_bytes.unwrap_or_default(),
-            volume_progress: self.volume_progress,
-            volume_disk_id: self.volume_disk_id,
-            source_snapshot_id: self.source_snapshot_id,
-            preserved_existing_data: self.preserved_existing_data.unwrap_or_default(),
-            volumei_scsi_attributes: self.volumei_scsi_attributes,
-            created_date: self.created_date,
-            volume_used_in_bytes: self.volume_used_in_bytes,
-            kms_key: self.kms_key,
-            target_name: self.target_name,
+            volume_arn: self.volume_arn
+            ,
+            volume_id: self.volume_id
+            ,
+            volume_type: self.volume_type
+            ,
+            volume_status: self.volume_status
+            ,
+            volume_attachment_status: self.volume_attachment_status
+            ,
+            volume_size_in_bytes: self.volume_size_in_bytes
+                .unwrap_or_default()
+            ,
+            volume_progress: self.volume_progress
+            ,
+            volume_disk_id: self.volume_disk_id
+            ,
+            source_snapshot_id: self.source_snapshot_id
+            ,
+            preserved_existing_data: self.preserved_existing_data
+                .unwrap_or_default()
+            ,
+            volumei_scsi_attributes: self.volumei_scsi_attributes
+            ,
+            created_date: self.created_date
+            ,
+            volume_used_in_bytes: self.volume_used_in_bytes
+            ,
+            kms_key: self.kms_key
+            ,
+            target_name: self.target_name
+            ,
         }
     }
 }
+

@@ -3,15 +3,15 @@
 /// <p>Entity that comprises information on categorical values in data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CategoricalValues {
+pub struct CategoricalValues  {
     /// <p>Indicates whether there is a potential data issue related to categorical values.</p>
     pub status: crate::types::StatisticalIssueStatus,
     /// <p>Indicates the number of categories in the data.</p>
     pub number_of_category: ::std::option::Option<i32>,
 }
-impl CategoricalValues {
+impl  CategoricalValues  {
     /// <p>Indicates whether there is a potential data issue related to categorical values.</p>
-    pub fn status(&self) -> &crate::types::StatisticalIssueStatus {
+    pub fn status(&self) -> & crate::types::StatisticalIssueStatus {
         &self.status
     }
     /// <p>Indicates the number of categories in the data.</p>
@@ -42,8 +42,7 @@ impl CategoricalValuesBuilder {
     }
     /// <p>Indicates whether there is a potential data issue related to categorical values.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StatisticalIssueStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Indicates whether there is a potential data issue related to categorical values.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::StatisticalIssueStatus> {
@@ -56,8 +55,7 @@ impl CategoricalValuesBuilder {
     }
     /// <p>Indicates the number of categories in the data.</p>
     pub fn set_number_of_category(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_category = input;
-        self
+        self.number_of_category = input; self
     }
     /// <p>Indicates the number of categories in the data.</p>
     pub fn get_number_of_category(&self) -> &::std::option::Option<i32> {
@@ -67,14 +65,17 @@ impl CategoricalValuesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::CategoricalValuesBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::CategoricalValues, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CategoricalValues {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building CategoricalValues",
-                )
-            })?,
-            number_of_category: self.number_of_category,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CategoricalValues {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building CategoricalValues")
+                    )?
+                ,
+                number_of_category: self.number_of_category
+                ,
+            }
+        )
     }
 }
+

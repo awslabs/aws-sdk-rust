@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAccountAuditConfigurationInput {
+pub struct DeleteAccountAuditConfigurationInput  {
     /// <p>If true, all scheduled audits are deleted.</p>
     pub delete_scheduled_audits: ::std::option::Option<bool>,
 }
-impl DeleteAccountAuditConfigurationInput {
+impl  DeleteAccountAuditConfigurationInput  {
     /// <p>If true, all scheduled audits are deleted.</p>
     pub fn delete_scheduled_audits(&self) -> ::std::option::Option<bool> {
         self.delete_scheduled_audits
@@ -33,24 +33,20 @@ impl DeleteAccountAuditConfigurationInputBuilder {
     }
     /// <p>If true, all scheduled audits are deleted.</p>
     pub fn set_delete_scheduled_audits(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.delete_scheduled_audits = input;
-        self
+        self.delete_scheduled_audits = input; self
     }
     /// <p>If true, all scheduled audits are deleted.</p>
     pub fn get_delete_scheduled_audits(&self) -> &::std::option::Option<bool> {
         &self.delete_scheduled_audits
     }
     /// Consumes the builder and constructs a [`DeleteAccountAuditConfigurationInput`](crate::operation::delete_account_audit_configuration::DeleteAccountAuditConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_account_audit_configuration::DeleteAccountAuditConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_account_audit_configuration::DeleteAccountAuditConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_account_audit_configuration::DeleteAccountAuditConfigurationInput {
-                delete_scheduled_audits: self.delete_scheduled_audits,
-            },
+                delete_scheduled_audits: self.delete_scheduled_audits
+                ,
+            }
         )
     }
 }
+

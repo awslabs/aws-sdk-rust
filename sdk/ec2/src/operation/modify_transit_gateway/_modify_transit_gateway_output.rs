@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyTransitGatewayOutput {
+pub struct ModifyTransitGatewayOutput  {
     /// <p>Information about the transit gateway.</p>
     pub transit_gateway: ::std::option::Option<crate::types::TransitGateway>,
     _request_id: Option<String>,
 }
-impl ModifyTransitGatewayOutput {
+impl  ModifyTransitGatewayOutput  {
     /// <p>Information about the transit gateway.</p>
-    pub fn transit_gateway(&self) -> ::std::option::Option<&crate::types::TransitGateway> {
+    pub fn transit_gateway(&self) -> ::std::option::Option<& crate::types::TransitGateway> {
         self.transit_gateway.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ModifyTransitGatewayOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ModifyTransitGatewayOutput {
     /// Creates a new builder-style object to manufacture [`ModifyTransitGatewayOutput`](crate::operation::modify_transit_gateway::ModifyTransitGatewayOutput).
     pub fn builder() -> crate::operation::modify_transit_gateway::builders::ModifyTransitGatewayOutputBuilder {
@@ -40,27 +40,28 @@ impl ModifyTransitGatewayOutputBuilder {
     }
     /// <p>Information about the transit gateway.</p>
     pub fn set_transit_gateway(mut self, input: ::std::option::Option<crate::types::TransitGateway>) -> Self {
-        self.transit_gateway = input;
-        self
+        self.transit_gateway = input; self
     }
     /// <p>Information about the transit gateway.</p>
     pub fn get_transit_gateway(&self) -> &::std::option::Option<crate::types::TransitGateway> {
         &self.transit_gateway
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ModifyTransitGatewayOutput`](crate::operation::modify_transit_gateway::ModifyTransitGatewayOutput).
     pub fn build(self) -> crate::operation::modify_transit_gateway::ModifyTransitGatewayOutput {
         crate::operation::modify_transit_gateway::ModifyTransitGatewayOutput {
-            transit_gateway: self.transit_gateway,
+            transit_gateway: self.transit_gateway
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

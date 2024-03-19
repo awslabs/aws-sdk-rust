@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDeliveries`](crate::operation::describe_deliveries::builders::DescribeDeliveriesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_deliveries::builders::DescribeDeliveriesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_deliveries::builders::DescribeDeliveriesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_deliveries::builders::DescribeDeliveriesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of items to return. The token expires after 24 hours.</p><br>
     ///   - [`limit(i32)`](crate::operation::describe_deliveries::builders::DescribeDeliveriesFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::describe_deliveries::builders::DescribeDeliveriesFluentBuilder::set_limit):<br>required: **false**<br><p>Optionally specify the maximum number of deliveries to return in the response.</p><br>
-    /// - On success, responds with [`DescribeDeliveriesOutput`](crate::operation::describe_deliveries::DescribeDeliveriesOutput) with field(s):
+                            /// - On success, responds with [`DescribeDeliveriesOutput`](crate::operation::describe_deliveries::DescribeDeliveriesOutput) with field(s):
     ///   - [`deliveries(Option<Vec::<Delivery>>)`](crate::operation::describe_deliveries::DescribeDeliveriesOutput::deliveries): <p>An array of structures. Each structure contains information about one delivery in the account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_deliveries::DescribeDeliveriesOutput::next_token): <p>The token for the next set of items to return. The token expires after 24 hours.</p>
-    /// - On failure, responds with [`SdkError<DescribeDeliveriesError>`](crate::operation::describe_deliveries::DescribeDeliveriesError)
+                            /// - On failure, responds with [`SdkError<DescribeDeliveriesError>`](crate::operation::describe_deliveries::DescribeDeliveriesError)
     pub fn describe_deliveries(&self) -> crate::operation::describe_deliveries::builders::DescribeDeliveriesFluentBuilder {
-        crate::operation::describe_deliveries::builders::DescribeDeliveriesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_deliveries::builders::DescribeDeliveriesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

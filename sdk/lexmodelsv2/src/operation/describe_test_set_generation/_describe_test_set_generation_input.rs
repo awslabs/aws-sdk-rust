@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTestSetGenerationInput {
+pub struct DescribeTestSetGenerationInput  {
     /// <p>The unique identifier of the test set generation.</p>
     pub test_set_generation_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeTestSetGenerationInput {
+impl  DescribeTestSetGenerationInput  {
     /// <p>The unique identifier of the test set generation.</p>
-    pub fn test_set_generation_id(&self) -> ::std::option::Option<&str> {
+    pub fn test_set_generation_id(&self) -> ::std::option::Option<& str> {
         self.test_set_generation_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeTestSetGenerationInputBuilder {
     }
     /// <p>The unique identifier of the test set generation.</p>
     pub fn set_test_set_generation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.test_set_generation_id = input;
-        self
+        self.test_set_generation_id = input; self
     }
     /// <p>The unique identifier of the test set generation.</p>
     pub fn get_test_set_generation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.test_set_generation_id
     }
     /// Consumes the builder and constructs a [`DescribeTestSetGenerationInput`](crate::operation::describe_test_set_generation::DescribeTestSetGenerationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_test_set_generation::DescribeTestSetGenerationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_test_set_generation::DescribeTestSetGenerationInput {
-            test_set_generation_id: self.test_set_generation_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_test_set_generation::DescribeTestSetGenerationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_test_set_generation::DescribeTestSetGenerationInput {
+                test_set_generation_id: self.test_set_generation_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Configure Snowflake destination</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SnowflakeDestinationConfiguration {
+pub struct SnowflakeDestinationConfiguration  {
     /// <p>URL for accessing your Snowflake account. This URL must include your <a href="https://docs.snowflake.com/en/user-guide/admin-account-identifier">account identifier</a>. Note that the protocol (https://) and port number are optional.</p>
     pub account_url: ::std::string::String,
     /// <p>The private key used to encrypt your Snowflake client. For information, see <a href="https://docs.snowflake.com/en/user-guide/data-load-snowpipe-streaming-configuration#using-key-pair-authentication-key-rotation">Using Key Pair Authentication &amp; Key Rotation</a>.</p>
@@ -41,88 +41,81 @@ pub struct SnowflakeDestinationConfiguration {
     /// <p>Describes the configuration of a destination in Amazon S3.</p>
     pub s3_configuration: ::std::option::Option<crate::types::S3DestinationConfiguration>,
 }
-impl SnowflakeDestinationConfiguration {
+impl  SnowflakeDestinationConfiguration  {
     /// <p>URL for accessing your Snowflake account. This URL must include your <a href="https://docs.snowflake.com/en/user-guide/admin-account-identifier">account identifier</a>. Note that the protocol (https://) and port number are optional.</p>
-    pub fn account_url(&self) -> &str {
-        use std::ops::Deref;
-        self.account_url.deref()
+    pub fn account_url(&self) -> & str {
+        use std::ops::Deref; self.account_url.deref()
     }
     /// <p>The private key used to encrypt your Snowflake client. For information, see <a href="https://docs.snowflake.com/en/user-guide/data-load-snowpipe-streaming-configuration#using-key-pair-authentication-key-rotation">Using Key Pair Authentication &amp; Key Rotation</a>.</p>
-    pub fn private_key(&self) -> &str {
-        use std::ops::Deref;
-        self.private_key.deref()
+    pub fn private_key(&self) -> & str {
+        use std::ops::Deref; self.private_key.deref()
     }
     /// <p>Passphrase to decrypt the private key when the key is encrypted. For information, see <a href="https://docs.snowflake.com/en/user-guide/data-load-snowpipe-streaming-configuration#using-key-pair-authentication-key-rotation">Using Key Pair Authentication &amp; Key Rotation</a>.</p>
-    pub fn key_passphrase(&self) -> ::std::option::Option<&str> {
+    pub fn key_passphrase(&self) -> ::std::option::Option<& str> {
         self.key_passphrase.as_deref()
     }
     /// <p>User login name for the Snowflake account.</p>
-    pub fn user(&self) -> &str {
-        use std::ops::Deref;
-        self.user.deref()
+    pub fn user(&self) -> & str {
+        use std::ops::Deref; self.user.deref()
     }
     /// <p>All data in Snowflake is maintained in databases.</p>
-    pub fn database(&self) -> &str {
-        use std::ops::Deref;
-        self.database.deref()
+    pub fn database(&self) -> & str {
+        use std::ops::Deref; self.database.deref()
     }
     /// <p>Each database consists of one or more schemas, which are logical groupings of database objects, such as tables and views</p>
-    pub fn schema(&self) -> &str {
-        use std::ops::Deref;
-        self.schema.deref()
+    pub fn schema(&self) -> & str {
+        use std::ops::Deref; self.schema.deref()
     }
     /// <p>All data in Snowflake is stored in database tables, logically structured as collections of columns and rows.</p>
-    pub fn table(&self) -> &str {
-        use std::ops::Deref;
-        self.table.deref()
+    pub fn table(&self) -> & str {
+        use std::ops::Deref; self.table.deref()
     }
     /// <p>Optionally configure a Snowflake role. Otherwise the default user role will be used.</p>
-    pub fn snowflake_role_configuration(&self) -> ::std::option::Option<&crate::types::SnowflakeRoleConfiguration> {
+    pub fn snowflake_role_configuration(&self) -> ::std::option::Option<& crate::types::SnowflakeRoleConfiguration> {
         self.snowflake_role_configuration.as_ref()
     }
     /// <p>Choose to load JSON keys mapped to table column names or choose to split the JSON payload where content is mapped to a record content column and source metadata is mapped to a record metadata column.</p>
-    pub fn data_loading_option(&self) -> ::std::option::Option<&crate::types::SnowflakeDataLoadingOption> {
+    pub fn data_loading_option(&self) -> ::std::option::Option<& crate::types::SnowflakeDataLoadingOption> {
         self.data_loading_option.as_ref()
     }
     /// <p>The name of the record metadata column</p>
-    pub fn meta_data_column_name(&self) -> ::std::option::Option<&str> {
+    pub fn meta_data_column_name(&self) -> ::std::option::Option<& str> {
         self.meta_data_column_name.as_deref()
     }
     /// <p>The name of the record content column</p>
-    pub fn content_column_name(&self) -> ::std::option::Option<&str> {
+    pub fn content_column_name(&self) -> ::std::option::Option<& str> {
         self.content_column_name.as_deref()
     }
     /// <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format is com.amazonaws.vpce.[region].vpce-svc-&lt;[id]&gt;. For more information, see <a href="https://docs.snowflake.com/en/user-guide/admin-security-privatelink">Amazon PrivateLink &amp; Snowflake</a></p>
-    pub fn snowflake_vpc_configuration(&self) -> ::std::option::Option<&crate::types::SnowflakeVpcConfiguration> {
+    pub fn snowflake_vpc_configuration(&self) -> ::std::option::Option<& crate::types::SnowflakeVpcConfiguration> {
         self.snowflake_vpc_configuration.as_ref()
     }
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn cloud_watch_logging_options(&self) -> ::std::option::Option<&crate::types::CloudWatchLoggingOptions> {
+    pub fn cloud_watch_logging_options(&self) -> ::std::option::Option<& crate::types::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
     }
     /// <p>Describes a data processing configuration.</p>
-    pub fn processing_configuration(&self) -> ::std::option::Option<&crate::types::ProcessingConfiguration> {
+    pub fn processing_configuration(&self) -> ::std::option::Option<& crate::types::ProcessingConfiguration> {
         self.processing_configuration.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Snowflake role</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
     /// <p>The time period where Firehose will retry sending data to the chosen HTTP endpoint.</p>
-    pub fn retry_options(&self) -> ::std::option::Option<&crate::types::SnowflakeRetryOptions> {
+    pub fn retry_options(&self) -> ::std::option::Option<& crate::types::SnowflakeRetryOptions> {
         self.retry_options.as_ref()
     }
     /// <p>Choose an S3 backup mode</p>
-    pub fn s3_backup_mode(&self) -> ::std::option::Option<&crate::types::SnowflakeS3BackupMode> {
+    pub fn s3_backup_mode(&self) -> ::std::option::Option<& crate::types::SnowflakeS3BackupMode> {
         self.s3_backup_mode.as_ref()
     }
     /// <p>Describes the configuration of a destination in Amazon S3.</p>
-    pub fn s3_configuration(&self) -> ::std::option::Option<&crate::types::S3DestinationConfiguration> {
+    pub fn s3_configuration(&self) -> ::std::option::Option<& crate::types::S3DestinationConfiguration> {
         self.s3_configuration.as_ref()
     }
 }
-impl ::std::fmt::Debug for SnowflakeDestinationConfiguration {
+impl  ::std::fmt::Debug for SnowflakeDestinationConfiguration  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SnowflakeDestinationConfiguration");
         formatter.field("account_url", &"*** Sensitive Data Redacted ***");
@@ -185,8 +178,7 @@ impl SnowflakeDestinationConfigurationBuilder {
     }
     /// <p>URL for accessing your Snowflake account. This URL must include your <a href="https://docs.snowflake.com/en/user-guide/admin-account-identifier">account identifier</a>. Note that the protocol (https://) and port number are optional.</p>
     pub fn set_account_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_url = input;
-        self
+        self.account_url = input; self
     }
     /// <p>URL for accessing your Snowflake account. This URL must include your <a href="https://docs.snowflake.com/en/user-guide/admin-account-identifier">account identifier</a>. Note that the protocol (https://) and port number are optional.</p>
     pub fn get_account_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -200,8 +192,7 @@ impl SnowflakeDestinationConfigurationBuilder {
     }
     /// <p>The private key used to encrypt your Snowflake client. For information, see <a href="https://docs.snowflake.com/en/user-guide/data-load-snowpipe-streaming-configuration#using-key-pair-authentication-key-rotation">Using Key Pair Authentication &amp; Key Rotation</a>.</p>
     pub fn set_private_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.private_key = input;
-        self
+        self.private_key = input; self
     }
     /// <p>The private key used to encrypt your Snowflake client. For information, see <a href="https://docs.snowflake.com/en/user-guide/data-load-snowpipe-streaming-configuration#using-key-pair-authentication-key-rotation">Using Key Pair Authentication &amp; Key Rotation</a>.</p>
     pub fn get_private_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -214,8 +205,7 @@ impl SnowflakeDestinationConfigurationBuilder {
     }
     /// <p>Passphrase to decrypt the private key when the key is encrypted. For information, see <a href="https://docs.snowflake.com/en/user-guide/data-load-snowpipe-streaming-configuration#using-key-pair-authentication-key-rotation">Using Key Pair Authentication &amp; Key Rotation</a>.</p>
     pub fn set_key_passphrase(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_passphrase = input;
-        self
+        self.key_passphrase = input; self
     }
     /// <p>Passphrase to decrypt the private key when the key is encrypted. For information, see <a href="https://docs.snowflake.com/en/user-guide/data-load-snowpipe-streaming-configuration#using-key-pair-authentication-key-rotation">Using Key Pair Authentication &amp; Key Rotation</a>.</p>
     pub fn get_key_passphrase(&self) -> &::std::option::Option<::std::string::String> {
@@ -229,8 +219,7 @@ impl SnowflakeDestinationConfigurationBuilder {
     }
     /// <p>User login name for the Snowflake account.</p>
     pub fn set_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user = input;
-        self
+        self.user = input; self
     }
     /// <p>User login name for the Snowflake account.</p>
     pub fn get_user(&self) -> &::std::option::Option<::std::string::String> {
@@ -244,8 +233,7 @@ impl SnowflakeDestinationConfigurationBuilder {
     }
     /// <p>All data in Snowflake is maintained in databases.</p>
     pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>All data in Snowflake is maintained in databases.</p>
     pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
@@ -259,8 +247,7 @@ impl SnowflakeDestinationConfigurationBuilder {
     }
     /// <p>Each database consists of one or more schemas, which are logical groupings of database objects, such as tables and views</p>
     pub fn set_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema = input;
-        self
+        self.schema = input; self
     }
     /// <p>Each database consists of one or more schemas, which are logical groupings of database objects, such as tables and views</p>
     pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
@@ -274,8 +261,7 @@ impl SnowflakeDestinationConfigurationBuilder {
     }
     /// <p>All data in Snowflake is stored in database tables, logically structured as collections of columns and rows.</p>
     pub fn set_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table = input;
-        self
+        self.table = input; self
     }
     /// <p>All data in Snowflake is stored in database tables, logically structured as collections of columns and rows.</p>
     pub fn get_table(&self) -> &::std::option::Option<::std::string::String> {
@@ -288,8 +274,7 @@ impl SnowflakeDestinationConfigurationBuilder {
     }
     /// <p>Optionally configure a Snowflake role. Otherwise the default user role will be used.</p>
     pub fn set_snowflake_role_configuration(mut self, input: ::std::option::Option<crate::types::SnowflakeRoleConfiguration>) -> Self {
-        self.snowflake_role_configuration = input;
-        self
+        self.snowflake_role_configuration = input; self
     }
     /// <p>Optionally configure a Snowflake role. Otherwise the default user role will be used.</p>
     pub fn get_snowflake_role_configuration(&self) -> &::std::option::Option<crate::types::SnowflakeRoleConfiguration> {
@@ -302,8 +287,7 @@ impl SnowflakeDestinationConfigurationBuilder {
     }
     /// <p>Choose to load JSON keys mapped to table column names or choose to split the JSON payload where content is mapped to a record content column and source metadata is mapped to a record metadata column.</p>
     pub fn set_data_loading_option(mut self, input: ::std::option::Option<crate::types::SnowflakeDataLoadingOption>) -> Self {
-        self.data_loading_option = input;
-        self
+        self.data_loading_option = input; self
     }
     /// <p>Choose to load JSON keys mapped to table column names or choose to split the JSON payload where content is mapped to a record content column and source metadata is mapped to a record metadata column.</p>
     pub fn get_data_loading_option(&self) -> &::std::option::Option<crate::types::SnowflakeDataLoadingOption> {
@@ -316,8 +300,7 @@ impl SnowflakeDestinationConfigurationBuilder {
     }
     /// <p>The name of the record metadata column</p>
     pub fn set_meta_data_column_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.meta_data_column_name = input;
-        self
+        self.meta_data_column_name = input; self
     }
     /// <p>The name of the record metadata column</p>
     pub fn get_meta_data_column_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -330,8 +313,7 @@ impl SnowflakeDestinationConfigurationBuilder {
     }
     /// <p>The name of the record content column</p>
     pub fn set_content_column_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_column_name = input;
-        self
+        self.content_column_name = input; self
     }
     /// <p>The name of the record content column</p>
     pub fn get_content_column_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -344,8 +326,7 @@ impl SnowflakeDestinationConfigurationBuilder {
     }
     /// <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format is com.amazonaws.vpce.[region].vpce-svc-&lt;[id]&gt;. For more information, see <a href="https://docs.snowflake.com/en/user-guide/admin-security-privatelink">Amazon PrivateLink &amp; Snowflake</a></p>
     pub fn set_snowflake_vpc_configuration(mut self, input: ::std::option::Option<crate::types::SnowflakeVpcConfiguration>) -> Self {
-        self.snowflake_vpc_configuration = input;
-        self
+        self.snowflake_vpc_configuration = input; self
     }
     /// <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format is com.amazonaws.vpce.[region].vpce-svc-&lt;[id]&gt;. For more information, see <a href="https://docs.snowflake.com/en/user-guide/admin-security-privatelink">Amazon PrivateLink &amp; Snowflake</a></p>
     pub fn get_snowflake_vpc_configuration(&self) -> &::std::option::Option<crate::types::SnowflakeVpcConfiguration> {
@@ -358,8 +339,7 @@ impl SnowflakeDestinationConfigurationBuilder {
     }
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
     pub fn set_cloud_watch_logging_options(mut self, input: ::std::option::Option<crate::types::CloudWatchLoggingOptions>) -> Self {
-        self.cloud_watch_logging_options = input;
-        self
+        self.cloud_watch_logging_options = input; self
     }
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
     pub fn get_cloud_watch_logging_options(&self) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
@@ -372,8 +352,7 @@ impl SnowflakeDestinationConfigurationBuilder {
     }
     /// <p>Describes a data processing configuration.</p>
     pub fn set_processing_configuration(mut self, input: ::std::option::Option<crate::types::ProcessingConfiguration>) -> Self {
-        self.processing_configuration = input;
-        self
+        self.processing_configuration = input; self
     }
     /// <p>Describes a data processing configuration.</p>
     pub fn get_processing_configuration(&self) -> &::std::option::Option<crate::types::ProcessingConfiguration> {
@@ -387,8 +366,7 @@ impl SnowflakeDestinationConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Snowflake role</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Snowflake role</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -401,8 +379,7 @@ impl SnowflakeDestinationConfigurationBuilder {
     }
     /// <p>The time period where Firehose will retry sending data to the chosen HTTP endpoint.</p>
     pub fn set_retry_options(mut self, input: ::std::option::Option<crate::types::SnowflakeRetryOptions>) -> Self {
-        self.retry_options = input;
-        self
+        self.retry_options = input; self
     }
     /// <p>The time period where Firehose will retry sending data to the chosen HTTP endpoint.</p>
     pub fn get_retry_options(&self) -> &::std::option::Option<crate::types::SnowflakeRetryOptions> {
@@ -415,8 +392,7 @@ impl SnowflakeDestinationConfigurationBuilder {
     }
     /// <p>Choose an S3 backup mode</p>
     pub fn set_s3_backup_mode(mut self, input: ::std::option::Option<crate::types::SnowflakeS3BackupMode>) -> Self {
-        self.s3_backup_mode = input;
-        self
+        self.s3_backup_mode = input; self
     }
     /// <p>Choose an S3 backup mode</p>
     pub fn get_s3_backup_mode(&self) -> &::std::option::Option<crate::types::SnowflakeS3BackupMode> {
@@ -430,8 +406,7 @@ impl SnowflakeDestinationConfigurationBuilder {
     }
     /// <p>Describes the configuration of a destination in Amazon S3.</p>
     pub fn set_s3_configuration(mut self, input: ::std::option::Option<crate::types::S3DestinationConfiguration>) -> Self {
-        self.s3_configuration = input;
-        self
+        self.s3_configuration = input; self
     }
     /// <p>Describes the configuration of a destination in Amazon S3.</p>
     pub fn get_s3_configuration(&self) -> &::std::option::Option<crate::types::S3DestinationConfiguration> {
@@ -447,61 +422,67 @@ impl SnowflakeDestinationConfigurationBuilder {
     /// - [`table`](crate::types::builders::SnowflakeDestinationConfigurationBuilder::table)
     /// - [`role_arn`](crate::types::builders::SnowflakeDestinationConfigurationBuilder::role_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::SnowflakeDestinationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SnowflakeDestinationConfiguration {
-            account_url: self.account_url.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "account_url",
-                    "account_url was not specified but it is required when building SnowflakeDestinationConfiguration",
-                )
-            })?,
-            private_key: self.private_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "private_key",
-                    "private_key was not specified but it is required when building SnowflakeDestinationConfiguration",
-                )
-            })?,
-            key_passphrase: self.key_passphrase,
-            user: self.user.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user",
-                    "user was not specified but it is required when building SnowflakeDestinationConfiguration",
-                )
-            })?,
-            database: self.database.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "database",
-                    "database was not specified but it is required when building SnowflakeDestinationConfiguration",
-                )
-            })?,
-            schema: self.schema.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "schema",
-                    "schema was not specified but it is required when building SnowflakeDestinationConfiguration",
-                )
-            })?,
-            table: self.table.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "table",
-                    "table was not specified but it is required when building SnowflakeDestinationConfiguration",
-                )
-            })?,
-            snowflake_role_configuration: self.snowflake_role_configuration,
-            data_loading_option: self.data_loading_option,
-            meta_data_column_name: self.meta_data_column_name,
-            content_column_name: self.content_column_name,
-            snowflake_vpc_configuration: self.snowflake_vpc_configuration,
-            cloud_watch_logging_options: self.cloud_watch_logging_options,
-            processing_configuration: self.processing_configuration,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building SnowflakeDestinationConfiguration",
-                )
-            })?,
-            retry_options: self.retry_options,
-            s3_backup_mode: self.s3_backup_mode,
-            s3_configuration: self.s3_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SnowflakeDestinationConfiguration {
+                account_url: self.account_url
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("account_url", "account_url was not specified but it is required when building SnowflakeDestinationConfiguration")
+                    )?
+                ,
+                private_key: self.private_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("private_key", "private_key was not specified but it is required when building SnowflakeDestinationConfiguration")
+                    )?
+                ,
+                key_passphrase: self.key_passphrase
+                ,
+                user: self.user
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user", "user was not specified but it is required when building SnowflakeDestinationConfiguration")
+                    )?
+                ,
+                database: self.database
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("database", "database was not specified but it is required when building SnowflakeDestinationConfiguration")
+                    )?
+                ,
+                schema: self.schema
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("schema", "schema was not specified but it is required when building SnowflakeDestinationConfiguration")
+                    )?
+                ,
+                table: self.table
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("table", "table was not specified but it is required when building SnowflakeDestinationConfiguration")
+                    )?
+                ,
+                snowflake_role_configuration: self.snowflake_role_configuration
+                ,
+                data_loading_option: self.data_loading_option
+                ,
+                meta_data_column_name: self.meta_data_column_name
+                ,
+                content_column_name: self.content_column_name
+                ,
+                snowflake_vpc_configuration: self.snowflake_vpc_configuration
+                ,
+                cloud_watch_logging_options: self.cloud_watch_logging_options
+                ,
+                processing_configuration: self.processing_configuration
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building SnowflakeDestinationConfiguration")
+                    )?
+                ,
+                retry_options: self.retry_options
+                ,
+                s3_backup_mode: self.s3_backup_mode
+                ,
+                s3_configuration: self.s3_configuration
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for SnowflakeDestinationConfigurationBuilder {
@@ -528,3 +509,4 @@ impl ::std::fmt::Debug for SnowflakeDestinationConfigurationBuilder {
         formatter.finish()
     }
 }
+

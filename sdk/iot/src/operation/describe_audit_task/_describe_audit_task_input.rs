@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAuditTaskInput {
+pub struct DescribeAuditTaskInput  {
     /// <p>The ID of the audit whose information you want to get.</p>
     pub task_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeAuditTaskInput {
+impl  DescribeAuditTaskInput  {
     /// <p>The ID of the audit whose information you want to get.</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_id(&self) -> ::std::option::Option<& str> {
         self.task_id.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl DescribeAuditTaskInputBuilder {
     }
     /// <p>The ID of the audit whose information you want to get.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>The ID of the audit whose information you want to get.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_id
     }
     /// Consumes the builder and constructs a [`DescribeAuditTaskInput`](crate::operation::describe_audit_task::DescribeAuditTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_audit_task::DescribeAuditTaskInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_audit_task::DescribeAuditTaskInput { task_id: self.task_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_audit_task::DescribeAuditTaskInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_audit_task::DescribeAuditTaskInput {
+                task_id: self.task_id
+                ,
+            }
+        )
     }
 }
+

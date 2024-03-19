@@ -3,11 +3,11 @@
 /// Use these settings to insert a DVB Time and Date Table (TDT) in the transport stream of this output.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DvbTdtSettings {
+pub struct DvbTdtSettings  {
     /// The number of milliseconds between instances of this table in the output transport stream.
     pub tdt_interval: ::std::option::Option<i32>,
 }
-impl DvbTdtSettings {
+impl  DvbTdtSettings  {
     /// The number of milliseconds between instances of this table in the output transport stream.
     pub fn tdt_interval(&self) -> ::std::option::Option<i32> {
         self.tdt_interval
@@ -34,8 +34,7 @@ impl DvbTdtSettingsBuilder {
     }
     /// The number of milliseconds between instances of this table in the output transport stream.
     pub fn set_tdt_interval(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.tdt_interval = input;
-        self
+        self.tdt_interval = input; self
     }
     /// The number of milliseconds between instances of this table in the output transport stream.
     pub fn get_tdt_interval(&self) -> &::std::option::Option<i32> {
@@ -44,7 +43,9 @@ impl DvbTdtSettingsBuilder {
     /// Consumes the builder and constructs a [`DvbTdtSettings`](crate::types::DvbTdtSettings).
     pub fn build(self) -> crate::types::DvbTdtSettings {
         crate::types::DvbTdtSettings {
-            tdt_interval: self.tdt_interval,
+            tdt_interval: self.tdt_interval
+            ,
         }
     }
 }
+

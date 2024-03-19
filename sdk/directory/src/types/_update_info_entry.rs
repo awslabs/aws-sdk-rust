@@ -3,7 +3,7 @@
 /// <p>An entry of update information related to a requested update type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateInfoEntry {
+pub struct UpdateInfoEntry  {
     /// <p>The name of the Region.</p>
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The status of the update performed on the directory.</p>
@@ -21,37 +21,37 @@ pub struct UpdateInfoEntry {
     /// <p>The last updated date and time of a particular directory setting.</p>
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl UpdateInfoEntry {
+impl  UpdateInfoEntry  {
     /// <p>The name of the Region.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The status of the update performed on the directory.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::UpdateStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::UpdateStatus> {
         self.status.as_ref()
     }
     /// <p>The reason for the current status of the update type activity.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>This specifies if the update was initiated by the customer or by the service team.</p>
-    pub fn initiated_by(&self) -> ::std::option::Option<&str> {
+    pub fn initiated_by(&self) -> ::std::option::Option<& str> {
         self.initiated_by.as_deref()
     }
     /// <p>The new value of the target setting.</p>
-    pub fn new_value(&self) -> ::std::option::Option<&crate::types::UpdateValue> {
+    pub fn new_value(&self) -> ::std::option::Option<& crate::types::UpdateValue> {
         self.new_value.as_ref()
     }
     /// <p>The old value of the target setting.</p>
-    pub fn previous_value(&self) -> ::std::option::Option<&crate::types::UpdateValue> {
+    pub fn previous_value(&self) -> ::std::option::Option<& crate::types::UpdateValue> {
         self.previous_value.as_ref()
     }
     /// <p>The start time of the <code>UpdateDirectorySetup</code> for the particular type.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The last updated date and time of a particular directory setting.</p>
-    pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -83,8 +83,7 @@ impl UpdateInfoEntryBuilder {
     }
     /// <p>The name of the Region.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The name of the Region.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl UpdateInfoEntryBuilder {
     }
     /// <p>The status of the update performed on the directory.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::UpdateStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the update performed on the directory.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::UpdateStatus> {
@@ -111,8 +109,7 @@ impl UpdateInfoEntryBuilder {
     }
     /// <p>The reason for the current status of the update type activity.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>The reason for the current status of the update type activity.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +122,7 @@ impl UpdateInfoEntryBuilder {
     }
     /// <p>This specifies if the update was initiated by the customer or by the service team.</p>
     pub fn set_initiated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.initiated_by = input;
-        self
+        self.initiated_by = input; self
     }
     /// <p>This specifies if the update was initiated by the customer or by the service team.</p>
     pub fn get_initiated_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +135,7 @@ impl UpdateInfoEntryBuilder {
     }
     /// <p>The new value of the target setting.</p>
     pub fn set_new_value(mut self, input: ::std::option::Option<crate::types::UpdateValue>) -> Self {
-        self.new_value = input;
-        self
+        self.new_value = input; self
     }
     /// <p>The new value of the target setting.</p>
     pub fn get_new_value(&self) -> &::std::option::Option<crate::types::UpdateValue> {
@@ -153,8 +148,7 @@ impl UpdateInfoEntryBuilder {
     }
     /// <p>The old value of the target setting.</p>
     pub fn set_previous_value(mut self, input: ::std::option::Option<crate::types::UpdateValue>) -> Self {
-        self.previous_value = input;
-        self
+        self.previous_value = input; self
     }
     /// <p>The old value of the target setting.</p>
     pub fn get_previous_value(&self) -> &::std::option::Option<crate::types::UpdateValue> {
@@ -167,8 +161,7 @@ impl UpdateInfoEntryBuilder {
     }
     /// <p>The start time of the <code>UpdateDirectorySetup</code> for the particular type.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The start time of the <code>UpdateDirectorySetup</code> for the particular type.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -181,8 +174,7 @@ impl UpdateInfoEntryBuilder {
     }
     /// <p>The last updated date and time of a particular directory setting.</p>
     pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date_time = input;
-        self
+        self.last_updated_date_time = input; self
     }
     /// <p>The last updated date and time of a particular directory setting.</p>
     pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -191,14 +183,23 @@ impl UpdateInfoEntryBuilder {
     /// Consumes the builder and constructs a [`UpdateInfoEntry`](crate::types::UpdateInfoEntry).
     pub fn build(self) -> crate::types::UpdateInfoEntry {
         crate::types::UpdateInfoEntry {
-            region: self.region,
-            status: self.status,
-            status_reason: self.status_reason,
-            initiated_by: self.initiated_by,
-            new_value: self.new_value,
-            previous_value: self.previous_value,
-            start_time: self.start_time,
-            last_updated_date_time: self.last_updated_date_time,
+            region: self.region
+            ,
+            status: self.status
+            ,
+            status_reason: self.status_reason
+            ,
+            initiated_by: self.initiated_by
+            ,
+            new_value: self.new_value
+            ,
+            previous_value: self.previous_value
+            ,
+            start_time: self.start_time
+            ,
+            last_updated_date_time: self.last_updated_date_time
+            ,
         }
     }
 }
+

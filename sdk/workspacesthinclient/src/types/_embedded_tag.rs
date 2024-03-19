@@ -3,23 +3,23 @@
 /// <p>The resource and internal ID of a resource to tag.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct EmbeddedTag {
+pub struct EmbeddedTag  {
     /// <p>The Amazon Resource Name (ARN) of a resource to tag.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The internal ID of a resource to tag.</p>
     pub internal_id: ::std::option::Option<::std::string::String>,
 }
-impl EmbeddedTag {
+impl  EmbeddedTag  {
     /// <p>The Amazon Resource Name (ARN) of a resource to tag.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The internal ID of a resource to tag.</p>
-    pub fn internal_id(&self) -> ::std::option::Option<&str> {
+    pub fn internal_id(&self) -> ::std::option::Option<& str> {
         self.internal_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for EmbeddedTag {
+impl  ::std::fmt::Debug for EmbeddedTag  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EmbeddedTag");
         formatter.field("resource_arn", &"*** Sensitive Data Redacted ***");
@@ -49,8 +49,7 @@ impl EmbeddedTagBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a resource to tag.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of a resource to tag.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl EmbeddedTagBuilder {
     }
     /// <p>The internal ID of a resource to tag.</p>
     pub fn set_internal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.internal_id = input;
-        self
+        self.internal_id = input; self
     }
     /// <p>The internal ID of a resource to tag.</p>
     pub fn get_internal_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +71,10 @@ impl EmbeddedTagBuilder {
     /// Consumes the builder and constructs a [`EmbeddedTag`](crate::types::EmbeddedTag).
     pub fn build(self) -> crate::types::EmbeddedTag {
         crate::types::EmbeddedTag {
-            resource_arn: self.resource_arn,
-            internal_id: self.internal_id,
+            resource_arn: self.resource_arn
+            ,
+            internal_id: self.internal_id
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for EmbeddedTagBuilder {
         formatter.finish()
     }
 }
+

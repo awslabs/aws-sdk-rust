@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteFunctionDefinitionOutput {
+pub struct DeleteFunctionDefinitionOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for DeleteFunctionDefinitionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteFunctionDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFunctionDefinitionOutput`](crate::operation::delete_function_definition::DeleteFunctionDefinitionOutput).
     pub fn builder() -> crate::operation::delete_function_definition::builders::DeleteFunctionDefinitionOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DeleteFunctionDefinitionOutputBuilder {
 }
 impl DeleteFunctionDefinitionOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteFunctionDefinitionOutput`](crate::operation::delete_function_definition::DeleteFunctionDefinitionOutput).
     pub fn build(self) -> crate::operation::delete_function_definition::DeleteFunctionDefinitionOutput {
         crate::operation::delete_function_definition::DeleteFunctionDefinitionOutput {
@@ -40,3 +40,4 @@ impl DeleteFunctionDefinitionOutputBuilder {
         }
     }
 }
+

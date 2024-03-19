@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeChannelModeratedByAppInstanceUserInput {
+pub struct DescribeChannelModeratedByAppInstanceUserInput  {
     /// <p>The ARN of the moderated channel.</p>
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the <code>AppInstanceUser</code> in the moderated channel.</p>
@@ -10,24 +10,23 @@ pub struct DescribeChannelModeratedByAppInstanceUserInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: ::std::option::Option<::std::string::String>,
 }
-impl DescribeChannelModeratedByAppInstanceUserInput {
+impl  DescribeChannelModeratedByAppInstanceUserInput  {
     /// <p>The ARN of the moderated channel.</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn channel_arn(&self) -> ::std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> in the moderated channel.</p>
-    pub fn app_instance_user_arn(&self) -> ::std::option::Option<&str> {
+    pub fn app_instance_user_arn(&self) -> ::std::option::Option<& str> {
         self.app_instance_user_arn.as_deref()
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    pub fn chime_bearer(&self) -> ::std::option::Option<&str> {
+    pub fn chime_bearer(&self) -> ::std::option::Option<& str> {
         self.chime_bearer.as_deref()
     }
 }
 impl DescribeChannelModeratedByAppInstanceUserInput {
     /// Creates a new builder-style object to manufacture [`DescribeChannelModeratedByAppInstanceUserInput`](crate::operation::describe_channel_moderated_by_app_instance_user::DescribeChannelModeratedByAppInstanceUserInput).
-    pub fn builder(
-    ) -> crate::operation::describe_channel_moderated_by_app_instance_user::builders::DescribeChannelModeratedByAppInstanceUserInputBuilder {
+    pub fn builder() -> crate::operation::describe_channel_moderated_by_app_instance_user::builders::DescribeChannelModeratedByAppInstanceUserInputBuilder {
         crate::operation::describe_channel_moderated_by_app_instance_user::builders::DescribeChannelModeratedByAppInstanceUserInputBuilder::default()
     }
 }
@@ -49,8 +48,7 @@ impl DescribeChannelModeratedByAppInstanceUserInputBuilder {
     }
     /// <p>The ARN of the moderated channel.</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// <p>The ARN of the moderated channel.</p>
     pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl DescribeChannelModeratedByAppInstanceUserInputBuilder {
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> in the moderated channel.</p>
     pub fn set_app_instance_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_instance_user_arn = input;
-        self
+        self.app_instance_user_arn = input; self
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> in the moderated channel.</p>
     pub fn get_app_instance_user_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,26 +75,24 @@ impl DescribeChannelModeratedByAppInstanceUserInputBuilder {
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.chime_bearer = input;
-        self
+        self.chime_bearer = input; self
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
         &self.chime_bearer
     }
     /// Consumes the builder and constructs a [`DescribeChannelModeratedByAppInstanceUserInput`](crate::operation::describe_channel_moderated_by_app_instance_user::DescribeChannelModeratedByAppInstanceUserInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_channel_moderated_by_app_instance_user::DescribeChannelModeratedByAppInstanceUserInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_channel_moderated_by_app_instance_user::DescribeChannelModeratedByAppInstanceUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_channel_moderated_by_app_instance_user::DescribeChannelModeratedByAppInstanceUserInput {
-                channel_arn: self.channel_arn,
-                app_instance_user_arn: self.app_instance_user_arn,
-                chime_bearer: self.chime_bearer,
-            },
+                channel_arn: self.channel_arn
+                ,
+                app_instance_user_arn: self.app_instance_user_arn
+                ,
+                chime_bearer: self.chime_bearer
+                ,
+            }
         )
     }
 }
+

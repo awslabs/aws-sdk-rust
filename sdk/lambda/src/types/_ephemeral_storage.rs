@@ -3,11 +3,11 @@
 /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring ephemeral storage (console)</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EphemeralStorage {
+pub struct EphemeralStorage  {
     /// <p>The size of the function's <code>/tmp</code> directory.</p>
     pub size: i32,
 }
-impl EphemeralStorage {
+impl  EphemeralStorage  {
     /// <p>The size of the function's <code>/tmp</code> directory.</p>
     pub fn size(&self) -> i32 {
         self.size
@@ -35,8 +35,7 @@ impl EphemeralStorageBuilder {
     }
     /// <p>The size of the function's <code>/tmp</code> directory.</p>
     pub fn set_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.size = input;
-        self
+        self.size = input; self
     }
     /// <p>The size of the function's <code>/tmp</code> directory.</p>
     pub fn get_size(&self) -> &::std::option::Option<i32> {
@@ -46,13 +45,15 @@ impl EphemeralStorageBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`size`](crate::types::builders::EphemeralStorageBuilder::size)
     pub fn build(self) -> ::std::result::Result<crate::types::EphemeralStorage, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EphemeralStorage {
-            size: self.size.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "size",
-                    "size was not specified but it is required when building EphemeralStorage",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EphemeralStorage {
+                size: self.size
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("size", "size was not specified but it is required when building EphemeralStorage")
+                    )?
+                ,
+            }
+        )
     }
 }
+

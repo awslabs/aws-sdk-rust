@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct InvokeInput {
+pub struct InvokeInput  {
     /// <p>The name or ARN of the Lambda function, version, or alias.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
@@ -35,7 +35,7 @@ pub struct InvokeInput {
     /// <p>Specify a version or alias to invoke a published version of the function.</p>
     pub qualifier: ::std::option::Option<::std::string::String>,
 }
-impl InvokeInput {
+impl  InvokeInput  {
     /// <p>The name or ARN of the Lambda function, version, or alias.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
@@ -47,7 +47,7 @@ impl InvokeInput {
     /// <p><b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p></li>
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(&self) -> ::std::option::Option<&str> {
+    pub fn function_name(&self) -> ::std::option::Option<& str> {
         self.function_name.as_deref()
     }
     /// <p>Choose from the following options.</p>
@@ -59,28 +59,28 @@ impl InvokeInput {
     /// <li>
     /// <p><code>DryRun</code> – Validate parameter values and verify that the user or role has permission to invoke the function.</p></li>
     /// </ul>
-    pub fn invocation_type(&self) -> ::std::option::Option<&crate::types::InvocationType> {
+    pub fn invocation_type(&self) -> ::std::option::Option<& crate::types::InvocationType> {
         self.invocation_type.as_ref()
     }
     /// <p>Set to <code>Tail</code> to include the execution log in the response. Applies to synchronously invoked functions only.</p>
-    pub fn log_type(&self) -> ::std::option::Option<&crate::types::LogType> {
+    pub fn log_type(&self) -> ::std::option::Option<& crate::types::LogType> {
         self.log_type.as_ref()
     }
     /// <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object. Lambda passes the <code>ClientContext</code> object to your function for synchronous invocations only.</p>
-    pub fn client_context(&self) -> ::std::option::Option<&str> {
+    pub fn client_context(&self) -> ::std::option::Option<& str> {
         self.client_context.as_deref()
     }
     /// <p>The JSON that you want to provide to your Lambda function as input.</p>
     /// <p>You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>. You can also specify a file path. For example, <code>--payload file://payload.json</code>.</p>
-    pub fn payload(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn payload(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.payload.as_ref()
     }
     /// <p>Specify a version or alias to invoke a published version of the function.</p>
-    pub fn qualifier(&self) -> ::std::option::Option<&str> {
+    pub fn qualifier(&self) -> ::std::option::Option<& str> {
         self.qualifier.as_deref()
     }
 }
-impl ::std::fmt::Debug for InvokeInput {
+impl  ::std::fmt::Debug for InvokeInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("InvokeInput");
         formatter.field("function_name", &self.function_name);
@@ -139,8 +139,7 @@ impl InvokeInputBuilder {
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_name = input;
-        self
+        self.function_name = input; self
     }
     /// <p>The name or ARN of the Lambda function, version, or alias.</p>
     /// <p class="title"><b>Name formats</b></p>
@@ -179,8 +178,7 @@ impl InvokeInputBuilder {
     /// <p><code>DryRun</code> – Validate parameter values and verify that the user or role has permission to invoke the function.</p></li>
     /// </ul>
     pub fn set_invocation_type(mut self, input: ::std::option::Option<crate::types::InvocationType>) -> Self {
-        self.invocation_type = input;
-        self
+        self.invocation_type = input; self
     }
     /// <p>Choose from the following options.</p>
     /// <ul>
@@ -201,8 +199,7 @@ impl InvokeInputBuilder {
     }
     /// <p>Set to <code>Tail</code> to include the execution log in the response. Applies to synchronously invoked functions only.</p>
     pub fn set_log_type(mut self, input: ::std::option::Option<crate::types::LogType>) -> Self {
-        self.log_type = input;
-        self
+        self.log_type = input; self
     }
     /// <p>Set to <code>Tail</code> to include the execution log in the response. Applies to synchronously invoked functions only.</p>
     pub fn get_log_type(&self) -> &::std::option::Option<crate::types::LogType> {
@@ -215,8 +212,7 @@ impl InvokeInputBuilder {
     }
     /// <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object. Lambda passes the <code>ClientContext</code> object to your function for synchronous invocations only.</p>
     pub fn set_client_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_context = input;
-        self
+        self.client_context = input; self
     }
     /// <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object. Lambda passes the <code>ClientContext</code> object to your function for synchronous invocations only.</p>
     pub fn get_client_context(&self) -> &::std::option::Option<::std::string::String> {
@@ -231,8 +227,7 @@ impl InvokeInputBuilder {
     /// <p>The JSON that you want to provide to your Lambda function as input.</p>
     /// <p>You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>. You can also specify a file path. For example, <code>--payload file://payload.json</code>.</p>
     pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.payload = input;
-        self
+        self.payload = input; self
     }
     /// <p>The JSON that you want to provide to your Lambda function as input.</p>
     /// <p>You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>. You can also specify a file path. For example, <code>--payload file://payload.json</code>.</p>
@@ -246,8 +241,7 @@ impl InvokeInputBuilder {
     }
     /// <p>Specify a version or alias to invoke a published version of the function.</p>
     pub fn set_qualifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.qualifier = input;
-        self
+        self.qualifier = input; self
     }
     /// <p>Specify a version or alias to invoke a published version of the function.</p>
     pub fn get_qualifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -255,14 +249,22 @@ impl InvokeInputBuilder {
     }
     /// Consumes the builder and constructs a [`InvokeInput`](crate::operation::invoke::InvokeInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::invoke::InvokeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::invoke::InvokeInput {
-            function_name: self.function_name,
-            invocation_type: self.invocation_type,
-            log_type: self.log_type,
-            client_context: self.client_context,
-            payload: self.payload,
-            qualifier: self.qualifier,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::invoke::InvokeInput {
+                function_name: self.function_name
+                ,
+                invocation_type: self.invocation_type
+                ,
+                log_type: self.log_type
+                ,
+                client_context: self.client_context
+                ,
+                payload: self.payload
+                ,
+                qualifier: self.qualifier
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for InvokeInputBuilder {
@@ -277,3 +279,4 @@ impl ::std::fmt::Debug for InvokeInputBuilder {
         formatter.finish()
     }
 }
+

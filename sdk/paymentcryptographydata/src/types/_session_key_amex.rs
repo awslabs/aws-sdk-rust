@@ -3,25 +3,23 @@
 /// <p>Parameters to derive session key for an Amex payment card.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SessionKeyAmex {
+pub struct SessionKeyAmex  {
     /// <p>The Primary Account Number (PAN) of the cardholder. A PAN is a unique identifier for a payment credit or debit card and associates the card to a specific account holder.</p>
     pub primary_account_number: ::std::string::String,
     /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN).</p>
     pub pan_sequence_number: ::std::string::String,
 }
-impl SessionKeyAmex {
+impl  SessionKeyAmex  {
     /// <p>The Primary Account Number (PAN) of the cardholder. A PAN is a unique identifier for a payment credit or debit card and associates the card to a specific account holder.</p>
-    pub fn primary_account_number(&self) -> &str {
-        use std::ops::Deref;
-        self.primary_account_number.deref()
+    pub fn primary_account_number(&self) -> & str {
+        use std::ops::Deref; self.primary_account_number.deref()
     }
     /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN).</p>
-    pub fn pan_sequence_number(&self) -> &str {
-        use std::ops::Deref;
-        self.pan_sequence_number.deref()
+    pub fn pan_sequence_number(&self) -> & str {
+        use std::ops::Deref; self.pan_sequence_number.deref()
     }
 }
-impl ::std::fmt::Debug for SessionKeyAmex {
+impl  ::std::fmt::Debug for SessionKeyAmex  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SessionKeyAmex");
         formatter.field("primary_account_number", &"*** Sensitive Data Redacted ***");
@@ -52,8 +50,7 @@ impl SessionKeyAmexBuilder {
     }
     /// <p>The Primary Account Number (PAN) of the cardholder. A PAN is a unique identifier for a payment credit or debit card and associates the card to a specific account holder.</p>
     pub fn set_primary_account_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.primary_account_number = input;
-        self
+        self.primary_account_number = input; self
     }
     /// <p>The Primary Account Number (PAN) of the cardholder. A PAN is a unique identifier for a payment credit or debit card and associates the card to a specific account holder.</p>
     pub fn get_primary_account_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +64,7 @@ impl SessionKeyAmexBuilder {
     }
     /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN).</p>
     pub fn set_pan_sequence_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pan_sequence_number = input;
-        self
+        self.pan_sequence_number = input; self
     }
     /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN).</p>
     pub fn get_pan_sequence_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,20 +75,20 @@ impl SessionKeyAmexBuilder {
     /// - [`primary_account_number`](crate::types::builders::SessionKeyAmexBuilder::primary_account_number)
     /// - [`pan_sequence_number`](crate::types::builders::SessionKeyAmexBuilder::pan_sequence_number)
     pub fn build(self) -> ::std::result::Result<crate::types::SessionKeyAmex, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SessionKeyAmex {
-            primary_account_number: self.primary_account_number.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "primary_account_number",
-                    "primary_account_number was not specified but it is required when building SessionKeyAmex",
-                )
-            })?,
-            pan_sequence_number: self.pan_sequence_number.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "pan_sequence_number",
-                    "pan_sequence_number was not specified but it is required when building SessionKeyAmex",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SessionKeyAmex {
+                primary_account_number: self.primary_account_number
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("primary_account_number", "primary_account_number was not specified but it is required when building SessionKeyAmex")
+                    )?
+                ,
+                pan_sequence_number: self.pan_sequence_number
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("pan_sequence_number", "pan_sequence_number was not specified but it is required when building SessionKeyAmex")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for SessionKeyAmexBuilder {
@@ -103,3 +99,4 @@ impl ::std::fmt::Debug for SessionKeyAmexBuilder {
         formatter.finish()
     }
 }
+

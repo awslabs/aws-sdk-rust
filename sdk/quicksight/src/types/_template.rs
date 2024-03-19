@@ -4,7 +4,7 @@
 /// <p>You can share templates across Amazon Web Services accounts by allowing users in other Amazon Web Services accounts to create a template or a dashboard from an existing template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Template {
+pub struct Template  {
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the template.</p>
@@ -18,29 +18,29 @@ pub struct Template {
     /// <p>Time when this was created.</p>
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl Template {
+impl  Template  {
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The display name of the template.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A structure describing the versions of the template.</p>
-    pub fn version(&self) -> ::std::option::Option<&crate::types::TemplateVersion> {
+    pub fn version(&self) -> ::std::option::Option<& crate::types::TemplateVersion> {
         self.version.as_ref()
     }
     /// <p>The ID for the template. This is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn template_id(&self) -> ::std::option::Option<&str> {
+    pub fn template_id(&self) -> ::std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>Time when this was last updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>Time when this was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
 }
@@ -70,8 +70,7 @@ impl TemplateBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl TemplateBuilder {
     }
     /// <p>The display name of the template.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The display name of the template.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +96,7 @@ impl TemplateBuilder {
     }
     /// <p>A structure describing the versions of the template.</p>
     pub fn set_version(mut self, input: ::std::option::Option<crate::types::TemplateVersion>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>A structure describing the versions of the template.</p>
     pub fn get_version(&self) -> &::std::option::Option<crate::types::TemplateVersion> {
@@ -112,8 +109,7 @@ impl TemplateBuilder {
     }
     /// <p>The ID for the template. This is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_id = input;
-        self
+        self.template_id = input; self
     }
     /// <p>The ID for the template. This is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +122,7 @@ impl TemplateBuilder {
     }
     /// <p>Time when this was last updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>Time when this was last updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -140,8 +135,7 @@ impl TemplateBuilder {
     }
     /// <p>Time when this was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>Time when this was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -150,12 +144,19 @@ impl TemplateBuilder {
     /// Consumes the builder and constructs a [`Template`](crate::types::Template).
     pub fn build(self) -> crate::types::Template {
         crate::types::Template {
-            arn: self.arn,
-            name: self.name,
-            version: self.version,
-            template_id: self.template_id,
-            last_updated_time: self.last_updated_time,
-            created_time: self.created_time,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            version: self.version
+            ,
+            template_id: self.template_id
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            created_time: self.created_time
+            ,
         }
     }
 }
+

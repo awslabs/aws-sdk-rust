@@ -3,13 +3,13 @@
 /// Placeholder documentation for StartInputDeviceRequest
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartInputDeviceInput {
+pub struct StartInputDeviceInput  {
     /// The unique ID of the input device to start. For example, hd-123456789abcdef.
     pub input_device_id: ::std::option::Option<::std::string::String>,
 }
-impl StartInputDeviceInput {
+impl  StartInputDeviceInput  {
     /// The unique ID of the input device to start. For example, hd-123456789abcdef.
-    pub fn input_device_id(&self) -> ::std::option::Option<&str> {
+    pub fn input_device_id(&self) -> ::std::option::Option<& str> {
         self.input_device_id.as_deref()
     }
 }
@@ -35,19 +35,20 @@ impl StartInputDeviceInputBuilder {
     }
     /// The unique ID of the input device to start. For example, hd-123456789abcdef.
     pub fn set_input_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_device_id = input;
-        self
+        self.input_device_id = input; self
     }
     /// The unique ID of the input device to start. For example, hd-123456789abcdef.
     pub fn get_input_device_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.input_device_id
     }
     /// Consumes the builder and constructs a [`StartInputDeviceInput`](crate::operation::start_input_device::StartInputDeviceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_input_device::StartInputDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_input_device::StartInputDeviceInput {
-            input_device_id: self.input_device_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_input_device::StartInputDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_input_device::StartInputDeviceInput {
+                input_device_id: self.input_device_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,24 +3,26 @@
 /// <p>An auto detection source config.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutoDetectionS3SourceConfig {
+pub struct AutoDetectionS3SourceConfig  {
     /// <p>The config's templated path list.</p>
-    pub templated_path_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub templated_path_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The config's historical data path list.</p>
-    pub historical_data_path_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub historical_data_path_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl AutoDetectionS3SourceConfig {
+impl  AutoDetectionS3SourceConfig  {
     /// <p>The config's templated path list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.templated_path_list.is_none()`.
-    pub fn templated_path_list(&self) -> &[::std::string::String] {
-        self.templated_path_list.as_deref().unwrap_or_default()
+    pub fn templated_path_list(&self) -> & [::std::string::String] {
+        self.templated_path_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The config's historical data path list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.historical_data_path_list.is_none()`.
-    pub fn historical_data_path_list(&self) -> &[::std::string::String] {
-        self.historical_data_path_list.as_deref().unwrap_or_default()
+    pub fn historical_data_path_list(&self) -> & [::std::string::String] {
+        self.historical_data_path_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AutoDetectionS3SourceConfig {
@@ -34,8 +36,8 @@ impl AutoDetectionS3SourceConfig {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoDetectionS3SourceConfigBuilder {
-    pub(crate) templated_path_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) historical_data_path_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) templated_path_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) historical_data_path_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AutoDetectionS3SourceConfigBuilder {
     /// Appends an item to `templated_path_list`.
@@ -45,17 +47,16 @@ impl AutoDetectionS3SourceConfigBuilder {
     /// <p>The config's templated path list.</p>
     pub fn templated_path_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.templated_path_list.unwrap_or_default();
-        v.push(input.into());
-        self.templated_path_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.templated_path_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The config's templated path list.</p>
-    pub fn set_templated_path_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.templated_path_list = input;
-        self
+    pub fn set_templated_path_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.templated_path_list = input; self
     }
     /// <p>The config's templated path list.</p>
-    pub fn get_templated_path_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_templated_path_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.templated_path_list
     }
     /// Appends an item to `historical_data_path_list`.
@@ -65,24 +66,26 @@ impl AutoDetectionS3SourceConfigBuilder {
     /// <p>The config's historical data path list.</p>
     pub fn historical_data_path_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.historical_data_path_list.unwrap_or_default();
-        v.push(input.into());
-        self.historical_data_path_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.historical_data_path_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The config's historical data path list.</p>
-    pub fn set_historical_data_path_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.historical_data_path_list = input;
-        self
+    pub fn set_historical_data_path_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.historical_data_path_list = input; self
     }
     /// <p>The config's historical data path list.</p>
-    pub fn get_historical_data_path_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_historical_data_path_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.historical_data_path_list
     }
     /// Consumes the builder and constructs a [`AutoDetectionS3SourceConfig`](crate::types::AutoDetectionS3SourceConfig).
     pub fn build(self) -> crate::types::AutoDetectionS3SourceConfig {
         crate::types::AutoDetectionS3SourceConfig {
-            templated_path_list: self.templated_path_list,
-            historical_data_path_list: self.historical_data_path_list,
+            templated_path_list: self.templated_path_list
+            ,
+            historical_data_path_list: self.historical_data_path_list
+            ,
         }
     }
 }
+

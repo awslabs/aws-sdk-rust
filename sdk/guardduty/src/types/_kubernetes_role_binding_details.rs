@@ -3,7 +3,7 @@
 /// <p>Contains information about the role binding that grants the permission defined in a Kubernetes role.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KubernetesRoleBindingDetails {
+pub struct KubernetesRoleBindingDetails  {
     /// <p>The kind of the role. For role binding, this value will be <code>RoleBinding</code>.</p>
     pub kind: ::std::option::Option<::std::string::String>,
     /// <p>The name of the <code>RoleBinding</code>.</p>
@@ -15,25 +15,25 @@ pub struct KubernetesRoleBindingDetails {
     /// <p>The type of the role being referenced. This could be either <code>Role</code> or <code>ClusterRole</code>.</p>
     pub role_ref_kind: ::std::option::Option<::std::string::String>,
 }
-impl KubernetesRoleBindingDetails {
+impl  KubernetesRoleBindingDetails  {
     /// <p>The kind of the role. For role binding, this value will be <code>RoleBinding</code>.</p>
-    pub fn kind(&self) -> ::std::option::Option<&str> {
+    pub fn kind(&self) -> ::std::option::Option<& str> {
         self.kind.as_deref()
     }
     /// <p>The name of the <code>RoleBinding</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The unique identifier of the role binding.</p>
-    pub fn uid(&self) -> ::std::option::Option<&str> {
+    pub fn uid(&self) -> ::std::option::Option<& str> {
         self.uid.as_deref()
     }
     /// <p>The name of the role being referenced. This must match the name of the <code>Role</code> or <code>ClusterRole</code> that you want to bind to.</p>
-    pub fn role_ref_name(&self) -> ::std::option::Option<&str> {
+    pub fn role_ref_name(&self) -> ::std::option::Option<& str> {
         self.role_ref_name.as_deref()
     }
     /// <p>The type of the role being referenced. This could be either <code>Role</code> or <code>ClusterRole</code>.</p>
-    pub fn role_ref_kind(&self) -> ::std::option::Option<&str> {
+    pub fn role_ref_kind(&self) -> ::std::option::Option<& str> {
         self.role_ref_kind.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl KubernetesRoleBindingDetailsBuilder {
     }
     /// <p>The kind of the role. For role binding, this value will be <code>RoleBinding</code>.</p>
     pub fn set_kind(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kind = input;
-        self
+        self.kind = input; self
     }
     /// <p>The kind of the role. For role binding, this value will be <code>RoleBinding</code>.</p>
     pub fn get_kind(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl KubernetesRoleBindingDetailsBuilder {
     }
     /// <p>The name of the <code>RoleBinding</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the <code>RoleBinding</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl KubernetesRoleBindingDetailsBuilder {
     }
     /// <p>The unique identifier of the role binding.</p>
     pub fn set_uid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.uid = input;
-        self
+        self.uid = input; self
     }
     /// <p>The unique identifier of the role binding.</p>
     pub fn get_uid(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl KubernetesRoleBindingDetailsBuilder {
     }
     /// <p>The name of the role being referenced. This must match the name of the <code>Role</code> or <code>ClusterRole</code> that you want to bind to.</p>
     pub fn set_role_ref_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_ref_name = input;
-        self
+        self.role_ref_name = input; self
     }
     /// <p>The name of the role being referenced. This must match the name of the <code>Role</code> or <code>ClusterRole</code> that you want to bind to.</p>
     pub fn get_role_ref_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl KubernetesRoleBindingDetailsBuilder {
     }
     /// <p>The type of the role being referenced. This could be either <code>Role</code> or <code>ClusterRole</code>.</p>
     pub fn set_role_ref_kind(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_ref_kind = input;
-        self
+        self.role_ref_kind = input; self
     }
     /// <p>The type of the role being referenced. This could be either <code>Role</code> or <code>ClusterRole</code>.</p>
     pub fn get_role_ref_kind(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,11 +123,17 @@ impl KubernetesRoleBindingDetailsBuilder {
     /// Consumes the builder and constructs a [`KubernetesRoleBindingDetails`](crate::types::KubernetesRoleBindingDetails).
     pub fn build(self) -> crate::types::KubernetesRoleBindingDetails {
         crate::types::KubernetesRoleBindingDetails {
-            kind: self.kind,
-            name: self.name,
-            uid: self.uid,
-            role_ref_name: self.role_ref_name,
-            role_ref_kind: self.role_ref_kind,
+            kind: self.kind
+            ,
+            name: self.name
+            ,
+            uid: self.uid
+            ,
+            role_ref_name: self.role_ref_name
+            ,
+            role_ref_kind: self.role_ref_kind
+            ,
         }
     }
 }
+

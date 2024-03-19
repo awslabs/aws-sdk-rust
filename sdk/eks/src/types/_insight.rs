@@ -3,7 +3,7 @@
 /// <p>A check that provides recommendations to remedy potential upgrade-impacting issues.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Insight {
+pub struct Insight  {
     /// <p>The ID of the insight.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the insight.</p>
@@ -23,61 +23,62 @@ pub struct Insight {
     /// <p>A summary of how to remediate the finding of this insight if applicable.</p>
     pub recommendation: ::std::option::Option<::std::string::String>,
     /// <p>Links to sources that provide additional context on the insight.</p>
-    pub additional_info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub additional_info: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The details about each resource listed in the insight check result.</p>
-    pub resources: ::std::option::Option<::std::vec::Vec<crate::types::InsightResourceDetail>>,
+    pub resources: ::std::option::Option<::std::vec::Vec::<crate::types::InsightResourceDetail>>,
     /// <p>Summary information that relates to the category of the insight. Currently only returned with certain insights having category <code>UPGRADE_READINESS</code>.</p>
     pub category_specific_summary: ::std::option::Option<crate::types::InsightCategorySpecificSummary>,
 }
-impl Insight {
+impl  Insight  {
     /// <p>The ID of the insight.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the insight.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The category of the insight.</p>
-    pub fn category(&self) -> ::std::option::Option<&crate::types::Category> {
+    pub fn category(&self) -> ::std::option::Option<& crate::types::Category> {
         self.category.as_ref()
     }
     /// <p>The Kubernetes minor version associated with an insight if applicable.</p>
-    pub fn kubernetes_version(&self) -> ::std::option::Option<&str> {
+    pub fn kubernetes_version(&self) -> ::std::option::Option<& str> {
         self.kubernetes_version.as_deref()
     }
     /// <p>The time Amazon EKS last successfully completed a refresh of this insight check on the cluster.</p>
-    pub fn last_refresh_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_refresh_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_refresh_time.as_ref()
     }
     /// <p>The time the status of the insight last changed.</p>
-    pub fn last_transition_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_transition_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_transition_time.as_ref()
     }
     /// <p>The description of the insight which includes alert criteria, remediation recommendation, and additional resources (contains Markdown).</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An object containing more detail on the status of the insight resource.</p>
-    pub fn insight_status(&self) -> ::std::option::Option<&crate::types::InsightStatus> {
+    pub fn insight_status(&self) -> ::std::option::Option<& crate::types::InsightStatus> {
         self.insight_status.as_ref()
     }
     /// <p>A summary of how to remediate the finding of this insight if applicable.</p>
-    pub fn recommendation(&self) -> ::std::option::Option<&str> {
+    pub fn recommendation(&self) -> ::std::option::Option<& str> {
         self.recommendation.as_deref()
     }
     /// <p>Links to sources that provide additional context on the insight.</p>
-    pub fn additional_info(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn additional_info(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.additional_info.as_ref()
     }
     /// <p>The details about each resource listed in the insight check result.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
-    pub fn resources(&self) -> &[crate::types::InsightResourceDetail] {
-        self.resources.as_deref().unwrap_or_default()
+    pub fn resources(&self) -> & [crate::types::InsightResourceDetail] {
+        self.resources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Summary information that relates to the category of the insight. Currently only returned with certain insights having category <code>UPGRADE_READINESS</code>.</p>
-    pub fn category_specific_summary(&self) -> ::std::option::Option<&crate::types::InsightCategorySpecificSummary> {
+    pub fn category_specific_summary(&self) -> ::std::option::Option<& crate::types::InsightCategorySpecificSummary> {
         self.category_specific_summary.as_ref()
     }
 }
@@ -101,8 +102,8 @@ pub struct InsightBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) insight_status: ::std::option::Option<crate::types::InsightStatus>,
     pub(crate) recommendation: ::std::option::Option<::std::string::String>,
-    pub(crate) additional_info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::InsightResourceDetail>>,
+    pub(crate) additional_info: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) resources: ::std::option::Option<::std::vec::Vec::<crate::types::InsightResourceDetail>>,
     pub(crate) category_specific_summary: ::std::option::Option<crate::types::InsightCategorySpecificSummary>,
 }
 impl InsightBuilder {
@@ -113,8 +114,7 @@ impl InsightBuilder {
     }
     /// <p>The ID of the insight.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the insight.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +127,7 @@ impl InsightBuilder {
     }
     /// <p>The name of the insight.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the insight.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +140,7 @@ impl InsightBuilder {
     }
     /// <p>The category of the insight.</p>
     pub fn set_category(mut self, input: ::std::option::Option<crate::types::Category>) -> Self {
-        self.category = input;
-        self
+        self.category = input; self
     }
     /// <p>The category of the insight.</p>
     pub fn get_category(&self) -> &::std::option::Option<crate::types::Category> {
@@ -155,8 +153,7 @@ impl InsightBuilder {
     }
     /// <p>The Kubernetes minor version associated with an insight if applicable.</p>
     pub fn set_kubernetes_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kubernetes_version = input;
-        self
+        self.kubernetes_version = input; self
     }
     /// <p>The Kubernetes minor version associated with an insight if applicable.</p>
     pub fn get_kubernetes_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,8 +166,7 @@ impl InsightBuilder {
     }
     /// <p>The time Amazon EKS last successfully completed a refresh of this insight check on the cluster.</p>
     pub fn set_last_refresh_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_refresh_time = input;
-        self
+        self.last_refresh_time = input; self
     }
     /// <p>The time Amazon EKS last successfully completed a refresh of this insight check on the cluster.</p>
     pub fn get_last_refresh_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -183,8 +179,7 @@ impl InsightBuilder {
     }
     /// <p>The time the status of the insight last changed.</p>
     pub fn set_last_transition_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_transition_time = input;
-        self
+        self.last_transition_time = input; self
     }
     /// <p>The time the status of the insight last changed.</p>
     pub fn get_last_transition_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -197,8 +192,7 @@ impl InsightBuilder {
     }
     /// <p>The description of the insight which includes alert criteria, remediation recommendation, and additional resources (contains Markdown).</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the insight which includes alert criteria, remediation recommendation, and additional resources (contains Markdown).</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -211,8 +205,7 @@ impl InsightBuilder {
     }
     /// <p>An object containing more detail on the status of the insight resource.</p>
     pub fn set_insight_status(mut self, input: ::std::option::Option<crate::types::InsightStatus>) -> Self {
-        self.insight_status = input;
-        self
+        self.insight_status = input; self
     }
     /// <p>An object containing more detail on the status of the insight resource.</p>
     pub fn get_insight_status(&self) -> &::std::option::Option<crate::types::InsightStatus> {
@@ -225,8 +218,7 @@ impl InsightBuilder {
     }
     /// <p>A summary of how to remediate the finding of this insight if applicable.</p>
     pub fn set_recommendation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommendation = input;
-        self
+        self.recommendation = input; self
     }
     /// <p>A summary of how to remediate the finding of this insight if applicable.</p>
     pub fn get_recommendation(&self) -> &::std::option::Option<::std::string::String> {
@@ -237,26 +229,18 @@ impl InsightBuilder {
     /// To override the contents of this collection use [`set_additional_info`](Self::set_additional_info).
     ///
     /// <p>Links to sources that provide additional context on the insight.</p>
-    pub fn additional_info(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_info(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.additional_info.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.additional_info = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.additional_info = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Links to sources that provide additional context on the insight.</p>
-    pub fn set_additional_info(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.additional_info = input;
-        self
+    pub fn set_additional_info(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.additional_info = input; self
     }
     /// <p>Links to sources that provide additional context on the insight.</p>
-    pub fn get_additional_info(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_additional_info(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.additional_info
     }
     /// Appends an item to `resources`.
@@ -266,17 +250,16 @@ impl InsightBuilder {
     /// <p>The details about each resource listed in the insight check result.</p>
     pub fn resources(mut self, input: crate::types::InsightResourceDetail) -> Self {
         let mut v = self.resources.unwrap_or_default();
-        v.push(input);
-        self.resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The details about each resource listed in the insight check result.</p>
-    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InsightResourceDetail>>) -> Self {
-        self.resources = input;
-        self
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InsightResourceDetail>>) -> Self {
+        self.resources = input; self
     }
     /// <p>The details about each resource listed in the insight check result.</p>
-    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightResourceDetail>> {
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InsightResourceDetail>> {
         &self.resources
     }
     /// <p>Summary information that relates to the category of the insight. Currently only returned with certain insights having category <code>UPGRADE_READINESS</code>.</p>
@@ -286,8 +269,7 @@ impl InsightBuilder {
     }
     /// <p>Summary information that relates to the category of the insight. Currently only returned with certain insights having category <code>UPGRADE_READINESS</code>.</p>
     pub fn set_category_specific_summary(mut self, input: ::std::option::Option<crate::types::InsightCategorySpecificSummary>) -> Self {
-        self.category_specific_summary = input;
-        self
+        self.category_specific_summary = input; self
     }
     /// <p>Summary information that relates to the category of the insight. Currently only returned with certain insights having category <code>UPGRADE_READINESS</code>.</p>
     pub fn get_category_specific_summary(&self) -> &::std::option::Option<crate::types::InsightCategorySpecificSummary> {
@@ -296,18 +278,31 @@ impl InsightBuilder {
     /// Consumes the builder and constructs a [`Insight`](crate::types::Insight).
     pub fn build(self) -> crate::types::Insight {
         crate::types::Insight {
-            id: self.id,
-            name: self.name,
-            category: self.category,
-            kubernetes_version: self.kubernetes_version,
-            last_refresh_time: self.last_refresh_time,
-            last_transition_time: self.last_transition_time,
-            description: self.description,
-            insight_status: self.insight_status,
-            recommendation: self.recommendation,
-            additional_info: self.additional_info,
-            resources: self.resources,
-            category_specific_summary: self.category_specific_summary,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            category: self.category
+            ,
+            kubernetes_version: self.kubernetes_version
+            ,
+            last_refresh_time: self.last_refresh_time
+            ,
+            last_transition_time: self.last_transition_time
+            ,
+            description: self.description
+            ,
+            insight_status: self.insight_status
+            ,
+            recommendation: self.recommendation
+            ,
+            additional_info: self.additional_info
+            ,
+            resources: self.resources
+            ,
+            category_specific_summary: self.category_specific_summary
+            ,
         }
     }
 }
+

@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBucketsInput {}
+pub struct ListBucketsInput  {
+}
 impl ListBucketsInput {
     /// Creates a new builder-style object to manufacture [`ListBucketsInput`](crate::operation::list_buckets::ListBucketsInput).
     pub fn builder() -> crate::operation::list_buckets::builders::ListBucketsInputBuilder {
@@ -13,10 +14,15 @@ impl ListBucketsInput {
 /// A builder for [`ListBucketsInput`](crate::operation::list_buckets::ListBucketsInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct ListBucketsInputBuilder {}
+pub struct ListBucketsInputBuilder {
+}
 impl ListBucketsInputBuilder {
     /// Consumes the builder and constructs a [`ListBucketsInput`](crate::operation::list_buckets::ListBucketsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_buckets::ListBucketsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_buckets::ListBucketsInput {})
+        ::std::result::Result::Ok(
+            crate::operation::list_buckets::ListBucketsInput {
+            }
+        )
     }
 }
+

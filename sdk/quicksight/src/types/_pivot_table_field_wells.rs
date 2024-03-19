@@ -4,13 +4,13 @@
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PivotTableFieldWells {
+pub struct PivotTableFieldWells  {
     /// <p>The aggregated field well for the pivot table.</p>
     pub pivot_table_aggregated_field_wells: ::std::option::Option<crate::types::PivotTableAggregatedFieldWells>,
 }
-impl PivotTableFieldWells {
+impl  PivotTableFieldWells  {
     /// <p>The aggregated field well for the pivot table.</p>
-    pub fn pivot_table_aggregated_field_wells(&self) -> ::std::option::Option<&crate::types::PivotTableAggregatedFieldWells> {
+    pub fn pivot_table_aggregated_field_wells(&self) -> ::std::option::Option<& crate::types::PivotTableAggregatedFieldWells> {
         self.pivot_table_aggregated_field_wells.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl PivotTableFieldWellsBuilder {
     }
     /// <p>The aggregated field well for the pivot table.</p>
     pub fn set_pivot_table_aggregated_field_wells(mut self, input: ::std::option::Option<crate::types::PivotTableAggregatedFieldWells>) -> Self {
-        self.pivot_table_aggregated_field_wells = input;
-        self
+        self.pivot_table_aggregated_field_wells = input; self
     }
     /// <p>The aggregated field well for the pivot table.</p>
     pub fn get_pivot_table_aggregated_field_wells(&self) -> &::std::option::Option<crate::types::PivotTableAggregatedFieldWells> {
@@ -45,7 +44,9 @@ impl PivotTableFieldWellsBuilder {
     /// Consumes the builder and constructs a [`PivotTableFieldWells`](crate::types::PivotTableFieldWells).
     pub fn build(self) -> crate::types::PivotTableFieldWells {
         crate::types::PivotTableFieldWells {
-            pivot_table_aggregated_field_wells: self.pivot_table_aggregated_field_wells,
+            pivot_table_aggregated_field_wells: self.pivot_table_aggregated_field_wells
+            ,
         }
     }
 }
+

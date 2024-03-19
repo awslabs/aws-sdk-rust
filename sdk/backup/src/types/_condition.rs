@@ -3,7 +3,7 @@
 /// <p>Contains an array of triplets made up of a condition type (such as <code>StringEquals</code>), a key, and a value. Used to filter resources using their tags and assign them to a backup plan. Case sensitive.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Condition {
+pub struct Condition  {
     /// <p>An operation applied to a key-value pair used to assign resources to your backup plan. Condition only supports <code>StringEquals</code>. For more flexible assignment options, including <code>StringLike</code> and the ability to exclude resources from your backup plan, use <code>Conditions</code> (with an "s" on the end) for your <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BackupSelection.html"> <code>BackupSelection</code> </a>.</p>
     pub condition_type: crate::types::ConditionType,
     /// <p>The key in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Department</code> is the key.</p>
@@ -11,20 +11,18 @@ pub struct Condition {
     /// <p>The value in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Accounting</code> is the value.</p>
     pub condition_value: ::std::string::String,
 }
-impl Condition {
+impl  Condition  {
     /// <p>An operation applied to a key-value pair used to assign resources to your backup plan. Condition only supports <code>StringEquals</code>. For more flexible assignment options, including <code>StringLike</code> and the ability to exclude resources from your backup plan, use <code>Conditions</code> (with an "s" on the end) for your <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BackupSelection.html"> <code>BackupSelection</code> </a>.</p>
-    pub fn condition_type(&self) -> &crate::types::ConditionType {
+    pub fn condition_type(&self) -> & crate::types::ConditionType {
         &self.condition_type
     }
     /// <p>The key in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Department</code> is the key.</p>
-    pub fn condition_key(&self) -> &str {
-        use std::ops::Deref;
-        self.condition_key.deref()
+    pub fn condition_key(&self) -> & str {
+        use std::ops::Deref; self.condition_key.deref()
     }
     /// <p>The value in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Accounting</code> is the value.</p>
-    pub fn condition_value(&self) -> &str {
-        use std::ops::Deref;
-        self.condition_value.deref()
+    pub fn condition_value(&self) -> & str {
+        use std::ops::Deref; self.condition_value.deref()
     }
 }
 impl Condition {
@@ -51,8 +49,7 @@ impl ConditionBuilder {
     }
     /// <p>An operation applied to a key-value pair used to assign resources to your backup plan. Condition only supports <code>StringEquals</code>. For more flexible assignment options, including <code>StringLike</code> and the ability to exclude resources from your backup plan, use <code>Conditions</code> (with an "s" on the end) for your <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BackupSelection.html"> <code>BackupSelection</code> </a>.</p>
     pub fn set_condition_type(mut self, input: ::std::option::Option<crate::types::ConditionType>) -> Self {
-        self.condition_type = input;
-        self
+        self.condition_type = input; self
     }
     /// <p>An operation applied to a key-value pair used to assign resources to your backup plan. Condition only supports <code>StringEquals</code>. For more flexible assignment options, including <code>StringLike</code> and the ability to exclude resources from your backup plan, use <code>Conditions</code> (with an "s" on the end) for your <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BackupSelection.html"> <code>BackupSelection</code> </a>.</p>
     pub fn get_condition_type(&self) -> &::std::option::Option<crate::types::ConditionType> {
@@ -66,8 +63,7 @@ impl ConditionBuilder {
     }
     /// <p>The key in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Department</code> is the key.</p>
     pub fn set_condition_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.condition_key = input;
-        self
+        self.condition_key = input; self
     }
     /// <p>The key in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Department</code> is the key.</p>
     pub fn get_condition_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl ConditionBuilder {
     }
     /// <p>The value in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Accounting</code> is the value.</p>
     pub fn set_condition_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.condition_value = input;
-        self
+        self.condition_value = input; self
     }
     /// <p>The value in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Accounting</code> is the value.</p>
     pub fn get_condition_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,25 +89,25 @@ impl ConditionBuilder {
     /// - [`condition_key`](crate::types::builders::ConditionBuilder::condition_key)
     /// - [`condition_value`](crate::types::builders::ConditionBuilder::condition_value)
     pub fn build(self) -> ::std::result::Result<crate::types::Condition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Condition {
-            condition_type: self.condition_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "condition_type",
-                    "condition_type was not specified but it is required when building Condition",
-                )
-            })?,
-            condition_key: self.condition_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "condition_key",
-                    "condition_key was not specified but it is required when building Condition",
-                )
-            })?,
-            condition_value: self.condition_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "condition_value",
-                    "condition_value was not specified but it is required when building Condition",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Condition {
+                condition_type: self.condition_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("condition_type", "condition_type was not specified but it is required when building Condition")
+                    )?
+                ,
+                condition_key: self.condition_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("condition_key", "condition_key was not specified but it is required when building Condition")
+                    )?
+                ,
+                condition_value: self.condition_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("condition_value", "condition_value was not specified but it is required when building Condition")
+                    )?
+                ,
+            }
+        )
     }
 }
+

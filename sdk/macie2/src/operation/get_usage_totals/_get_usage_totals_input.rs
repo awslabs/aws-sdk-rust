@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetUsageTotalsInput {
+pub struct GetUsageTotalsInput  {
     /// <p>The inclusive time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value for this parameter, Amazon Macie provides aggregated usage data for the preceding 30 days.</p>
     pub time_range: ::std::option::Option<::std::string::String>,
 }
-impl GetUsageTotalsInput {
+impl  GetUsageTotalsInput  {
     /// <p>The inclusive time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value for this parameter, Amazon Macie provides aggregated usage data for the preceding 30 days.</p>
-    pub fn time_range(&self) -> ::std::option::Option<&str> {
+    pub fn time_range(&self) -> ::std::option::Option<& str> {
         self.time_range.as_deref()
     }
 }
@@ -33,17 +33,20 @@ impl GetUsageTotalsInputBuilder {
     }
     /// <p>The inclusive time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value for this parameter, Amazon Macie provides aggregated usage data for the preceding 30 days.</p>
     pub fn set_time_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.time_range = input;
-        self
+        self.time_range = input; self
     }
     /// <p>The inclusive time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value for this parameter, Amazon Macie provides aggregated usage data for the preceding 30 days.</p>
     pub fn get_time_range(&self) -> &::std::option::Option<::std::string::String> {
         &self.time_range
     }
     /// Consumes the builder and constructs a [`GetUsageTotalsInput`](crate::operation::get_usage_totals::GetUsageTotalsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_usage_totals::GetUsageTotalsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_usage_totals::GetUsageTotalsInput { time_range: self.time_range })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_usage_totals::GetUsageTotalsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_usage_totals::GetUsageTotalsInput {
+                time_range: self.time_range
+                ,
+            }
+        )
     }
 }
+

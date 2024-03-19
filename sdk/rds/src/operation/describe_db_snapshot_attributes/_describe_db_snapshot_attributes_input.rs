@@ -3,13 +3,13 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDbSnapshotAttributesInput {
+pub struct DescribeDbSnapshotAttributesInput  {
     /// <p>The identifier for the DB snapshot to describe the attributes for.</p>
     pub db_snapshot_identifier: ::std::option::Option<::std::string::String>,
 }
-impl DescribeDbSnapshotAttributesInput {
+impl  DescribeDbSnapshotAttributesInput  {
     /// <p>The identifier for the DB snapshot to describe the attributes for.</p>
-    pub fn db_snapshot_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_snapshot_identifier(&self) -> ::std::option::Option<& str> {
         self.db_snapshot_identifier.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl DescribeDbSnapshotAttributesInputBuilder {
     }
     /// <p>The identifier for the DB snapshot to describe the attributes for.</p>
     pub fn set_db_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_snapshot_identifier = input;
-        self
+        self.db_snapshot_identifier = input; self
     }
     /// <p>The identifier for the DB snapshot to describe the attributes for.</p>
     pub fn get_db_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_snapshot_identifier
     }
     /// Consumes the builder and constructs a [`DescribeDbSnapshotAttributesInput`](crate::operation::describe_db_snapshot_attributes::DescribeDbSnapshotAttributesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_db_snapshot_attributes::DescribeDbSnapshotAttributesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_db_snapshot_attributes::DescribeDbSnapshotAttributesInput {
-            db_snapshot_identifier: self.db_snapshot_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_db_snapshot_attributes::DescribeDbSnapshotAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_db_snapshot_attributes::DescribeDbSnapshotAttributesInput {
+                db_snapshot_identifier: self.db_snapshot_identifier
+                ,
+            }
+        )
     }
 }
+

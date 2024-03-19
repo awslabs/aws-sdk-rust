@@ -3,19 +3,19 @@
 /// <p>Specifies how a streaming image is encrypted.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StreamingImageEncryptionConfiguration {
+pub struct StreamingImageEncryptionConfiguration  {
     /// <p>The ARN for a KMS key that is used to encrypt studio data.</p>
     pub key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of KMS key that is used to encrypt studio data.</p>
     pub key_type: crate::types::StreamingImageEncryptionConfigurationKeyType,
 }
-impl StreamingImageEncryptionConfiguration {
+impl  StreamingImageEncryptionConfiguration  {
     /// <p>The ARN for a KMS key that is used to encrypt studio data.</p>
-    pub fn key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn key_arn(&self) -> ::std::option::Option<& str> {
         self.key_arn.as_deref()
     }
     /// <p>The type of KMS key that is used to encrypt studio data.</p>
-    pub fn key_type(&self) -> &crate::types::StreamingImageEncryptionConfigurationKeyType {
+    pub fn key_type(&self) -> & crate::types::StreamingImageEncryptionConfigurationKeyType {
         &self.key_type
     }
 }
@@ -41,8 +41,7 @@ impl StreamingImageEncryptionConfigurationBuilder {
     }
     /// <p>The ARN for a KMS key that is used to encrypt studio data.</p>
     pub fn set_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_arn = input;
-        self
+        self.key_arn = input; self
     }
     /// <p>The ARN for a KMS key that is used to encrypt studio data.</p>
     pub fn get_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl StreamingImageEncryptionConfigurationBuilder {
     }
     /// <p>The type of KMS key that is used to encrypt studio data.</p>
     pub fn set_key_type(mut self, input: ::std::option::Option<crate::types::StreamingImageEncryptionConfigurationKeyType>) -> Self {
-        self.key_type = input;
-        self
+        self.key_type = input; self
     }
     /// <p>The type of KMS key that is used to encrypt studio data.</p>
     pub fn get_key_type(&self) -> &::std::option::Option<crate::types::StreamingImageEncryptionConfigurationKeyType> {
@@ -66,17 +64,18 @@ impl StreamingImageEncryptionConfigurationBuilder {
     /// Consumes the builder and constructs a [`StreamingImageEncryptionConfiguration`](crate::types::StreamingImageEncryptionConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`key_type`](crate::types::builders::StreamingImageEncryptionConfigurationBuilder::key_type)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::StreamingImageEncryptionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StreamingImageEncryptionConfiguration {
-            key_arn: self.key_arn,
-            key_type: self.key_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key_type",
-                    "key_type was not specified but it is required when building StreamingImageEncryptionConfiguration",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::StreamingImageEncryptionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::StreamingImageEncryptionConfiguration {
+                key_arn: self.key_arn
+                ,
+                key_type: self.key_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key_type", "key_type was not specified but it is required when building StreamingImageEncryptionConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

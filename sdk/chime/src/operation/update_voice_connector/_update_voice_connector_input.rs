@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateVoiceConnectorInput {
+pub struct UpdateVoiceConnectorInput  {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     pub voice_connector_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Chime Voice Connector.</p>
@@ -10,13 +10,13 @@ pub struct UpdateVoiceConnectorInput {
     /// <p>When enabled, requires encryption for the Amazon Chime Voice Connector.</p>
     pub require_encryption: ::std::option::Option<bool>,
 }
-impl UpdateVoiceConnectorInput {
+impl  UpdateVoiceConnectorInput  {
     /// <p>The Amazon Chime Voice Connector ID.</p>
-    pub fn voice_connector_id(&self) -> ::std::option::Option<&str> {
+    pub fn voice_connector_id(&self) -> ::std::option::Option<& str> {
         self.voice_connector_id.as_deref()
     }
     /// <p>The name of the Amazon Chime Voice Connector.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>When enabled, requires encryption for the Amazon Chime Voice Connector.</p>
@@ -48,8 +48,7 @@ impl UpdateVoiceConnectorInputBuilder {
     }
     /// <p>The Amazon Chime Voice Connector ID.</p>
     pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.voice_connector_id = input;
-        self
+        self.voice_connector_id = input; self
     }
     /// <p>The Amazon Chime Voice Connector ID.</p>
     pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateVoiceConnectorInputBuilder {
     }
     /// <p>The name of the Amazon Chime Voice Connector.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Amazon Chime Voice Connector.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,22 +76,24 @@ impl UpdateVoiceConnectorInputBuilder {
     }
     /// <p>When enabled, requires encryption for the Amazon Chime Voice Connector.</p>
     pub fn set_require_encryption(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.require_encryption = input;
-        self
+        self.require_encryption = input; self
     }
     /// <p>When enabled, requires encryption for the Amazon Chime Voice Connector.</p>
     pub fn get_require_encryption(&self) -> &::std::option::Option<bool> {
         &self.require_encryption
     }
     /// Consumes the builder and constructs a [`UpdateVoiceConnectorInput`](crate::operation::update_voice_connector::UpdateVoiceConnectorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_voice_connector::UpdateVoiceConnectorInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_voice_connector::UpdateVoiceConnectorInput {
-            voice_connector_id: self.voice_connector_id,
-            name: self.name,
-            require_encryption: self.require_encryption,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_voice_connector::UpdateVoiceConnectorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_voice_connector::UpdateVoiceConnectorInput {
+                voice_connector_id: self.voice_connector_id
+                ,
+                name: self.name
+                ,
+                require_encryption: self.require_encryption
+                ,
+            }
+        )
     }
 }
+

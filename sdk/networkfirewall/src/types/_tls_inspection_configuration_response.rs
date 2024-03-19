@@ -3,7 +3,7 @@
 /// <p>The high-level properties of a TLS inspection configuration. This, along with the <code>TLSInspectionConfiguration</code>, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TlsInspectionConfigurationResponse {
+pub struct TlsInspectionConfigurationResponse  {
     /// <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
     pub tls_inspection_configuration_arn: ::std::string::String,
     /// <p>The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.</p>
@@ -15,7 +15,7 @@ pub struct TlsInspectionConfigurationResponse {
     /// <p>A description of the TLS inspection configuration.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The key:value pairs to associate with the resource.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The last time that the TLS inspection configuration was changed.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of firewall policies that use this TLS inspection configuration.</p>
@@ -23,42 +23,40 @@ pub struct TlsInspectionConfigurationResponse {
     /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your TLS inspection configuration.</p>
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     /// <p>A list of the certificates associated with the TLS inspection configuration.</p>
-    pub certificates: ::std::option::Option<::std::vec::Vec<crate::types::TlsCertificateData>>,
+    pub certificates: ::std::option::Option<::std::vec::Vec::<crate::types::TlsCertificateData>>,
     /// <p>Contains metadata about an Certificate Manager certificate.</p>
     pub certificate_authority: ::std::option::Option<crate::types::TlsCertificateData>,
 }
-impl TlsInspectionConfigurationResponse {
+impl  TlsInspectionConfigurationResponse  {
     /// <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
-    pub fn tls_inspection_configuration_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.tls_inspection_configuration_arn.deref()
+    pub fn tls_inspection_configuration_arn(&self) -> & str {
+        use std::ops::Deref; self.tls_inspection_configuration_arn.deref()
     }
     /// <p>The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.</p>
-    pub fn tls_inspection_configuration_name(&self) -> &str {
-        use std::ops::Deref;
-        self.tls_inspection_configuration_name.deref()
+    pub fn tls_inspection_configuration_name(&self) -> & str {
+        use std::ops::Deref; self.tls_inspection_configuration_name.deref()
     }
     /// <p>A unique identifier for the TLS inspection configuration. This ID is returned in the responses to create and list commands. You provide it to operations such as update and delete.</p>
-    pub fn tls_inspection_configuration_id(&self) -> &str {
-        use std::ops::Deref;
-        self.tls_inspection_configuration_id.deref()
+    pub fn tls_inspection_configuration_id(&self) -> & str {
+        use std::ops::Deref; self.tls_inspection_configuration_id.deref()
     }
     /// <p>Detailed information about the current status of a <code>TLSInspectionConfiguration</code>. You can retrieve this for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code> and providing the TLS inspection configuration name and ARN.</p>
-    pub fn tls_inspection_configuration_status(&self) -> ::std::option::Option<&crate::types::ResourceStatus> {
+    pub fn tls_inspection_configuration_status(&self) -> ::std::option::Option<& crate::types::ResourceStatus> {
         self.tls_inspection_configuration_status.as_ref()
     }
     /// <p>A description of the TLS inspection configuration.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The key:value pairs to associate with the resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The last time that the TLS inspection configuration was changed.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The number of firewall policies that use this TLS inspection configuration.</p>
@@ -66,17 +64,18 @@ impl TlsInspectionConfigurationResponse {
         self.number_of_associations
     }
     /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your TLS inspection configuration.</p>
-    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+    pub fn encryption_configuration(&self) -> ::std::option::Option<& crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
     /// <p>A list of the certificates associated with the TLS inspection configuration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificates.is_none()`.
-    pub fn certificates(&self) -> &[crate::types::TlsCertificateData] {
-        self.certificates.as_deref().unwrap_or_default()
+    pub fn certificates(&self) -> & [crate::types::TlsCertificateData] {
+        self.certificates.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Contains metadata about an Certificate Manager certificate.</p>
-    pub fn certificate_authority(&self) -> ::std::option::Option<&crate::types::TlsCertificateData> {
+    pub fn certificate_authority(&self) -> ::std::option::Option<& crate::types::TlsCertificateData> {
         self.certificate_authority.as_ref()
     }
 }
@@ -96,11 +95,11 @@ pub struct TlsInspectionConfigurationResponseBuilder {
     pub(crate) tls_inspection_configuration_id: ::std::option::Option<::std::string::String>,
     pub(crate) tls_inspection_configuration_status: ::std::option::Option<crate::types::ResourceStatus>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) number_of_associations: ::std::option::Option<i32>,
     pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
-    pub(crate) certificates: ::std::option::Option<::std::vec::Vec<crate::types::TlsCertificateData>>,
+    pub(crate) certificates: ::std::option::Option<::std::vec::Vec::<crate::types::TlsCertificateData>>,
     pub(crate) certificate_authority: ::std::option::Option<crate::types::TlsCertificateData>,
 }
 impl TlsInspectionConfigurationResponseBuilder {
@@ -112,8 +111,7 @@ impl TlsInspectionConfigurationResponseBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
     pub fn set_tls_inspection_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tls_inspection_configuration_arn = input;
-        self
+        self.tls_inspection_configuration_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
     pub fn get_tls_inspection_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +125,7 @@ impl TlsInspectionConfigurationResponseBuilder {
     }
     /// <p>The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.</p>
     pub fn set_tls_inspection_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tls_inspection_configuration_name = input;
-        self
+        self.tls_inspection_configuration_name = input; self
     }
     /// <p>The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.</p>
     pub fn get_tls_inspection_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +139,7 @@ impl TlsInspectionConfigurationResponseBuilder {
     }
     /// <p>A unique identifier for the TLS inspection configuration. This ID is returned in the responses to create and list commands. You provide it to operations such as update and delete.</p>
     pub fn set_tls_inspection_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tls_inspection_configuration_id = input;
-        self
+        self.tls_inspection_configuration_id = input; self
     }
     /// <p>A unique identifier for the TLS inspection configuration. This ID is returned in the responses to create and list commands. You provide it to operations such as update and delete.</p>
     pub fn get_tls_inspection_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,8 +152,7 @@ impl TlsInspectionConfigurationResponseBuilder {
     }
     /// <p>Detailed information about the current status of a <code>TLSInspectionConfiguration</code>. You can retrieve this for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code> and providing the TLS inspection configuration name and ARN.</p>
     pub fn set_tls_inspection_configuration_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
-        self.tls_inspection_configuration_status = input;
-        self
+        self.tls_inspection_configuration_status = input; self
     }
     /// <p>Detailed information about the current status of a <code>TLSInspectionConfiguration</code>. You can retrieve this for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code> and providing the TLS inspection configuration name and ARN.</p>
     pub fn get_tls_inspection_configuration_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {
@@ -170,8 +165,7 @@ impl TlsInspectionConfigurationResponseBuilder {
     }
     /// <p>A description of the TLS inspection configuration.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the TLS inspection configuration.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -184,17 +178,16 @@ impl TlsInspectionConfigurationResponseBuilder {
     /// <p>The key:value pairs to associate with the resource.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The key:value pairs to associate with the resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The key:value pairs to associate with the resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The last time that the TLS inspection configuration was changed.</p>
@@ -204,8 +197,7 @@ impl TlsInspectionConfigurationResponseBuilder {
     }
     /// <p>The last time that the TLS inspection configuration was changed.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The last time that the TLS inspection configuration was changed.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -218,8 +210,7 @@ impl TlsInspectionConfigurationResponseBuilder {
     }
     /// <p>The number of firewall policies that use this TLS inspection configuration.</p>
     pub fn set_number_of_associations(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_associations = input;
-        self
+        self.number_of_associations = input; self
     }
     /// <p>The number of firewall policies that use this TLS inspection configuration.</p>
     pub fn get_number_of_associations(&self) -> &::std::option::Option<i32> {
@@ -232,8 +223,7 @@ impl TlsInspectionConfigurationResponseBuilder {
     }
     /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your TLS inspection configuration.</p>
     pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
-        self.encryption_configuration = input;
-        self
+        self.encryption_configuration = input; self
     }
     /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your TLS inspection configuration.</p>
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
@@ -246,17 +236,16 @@ impl TlsInspectionConfigurationResponseBuilder {
     /// <p>A list of the certificates associated with the TLS inspection configuration.</p>
     pub fn certificates(mut self, input: crate::types::TlsCertificateData) -> Self {
         let mut v = self.certificates.unwrap_or_default();
-        v.push(input);
-        self.certificates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.certificates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the certificates associated with the TLS inspection configuration.</p>
-    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TlsCertificateData>>) -> Self {
-        self.certificates = input;
-        self
+    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TlsCertificateData>>) -> Self {
+        self.certificates = input; self
     }
     /// <p>A list of the certificates associated with the TLS inspection configuration.</p>
-    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TlsCertificateData>> {
+    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TlsCertificateData>> {
         &self.certificates
     }
     /// <p>Contains metadata about an Certificate Manager certificate.</p>
@@ -266,8 +255,7 @@ impl TlsInspectionConfigurationResponseBuilder {
     }
     /// <p>Contains metadata about an Certificate Manager certificate.</p>
     pub fn set_certificate_authority(mut self, input: ::std::option::Option<crate::types::TlsCertificateData>) -> Self {
-        self.certificate_authority = input;
-        self
+        self.certificate_authority = input; self
     }
     /// <p>Contains metadata about an Certificate Manager certificate.</p>
     pub fn get_certificate_authority(&self) -> &::std::option::Option<crate::types::TlsCertificateData> {
@@ -279,33 +267,41 @@ impl TlsInspectionConfigurationResponseBuilder {
     /// - [`tls_inspection_configuration_name`](crate::types::builders::TlsInspectionConfigurationResponseBuilder::tls_inspection_configuration_name)
     /// - [`tls_inspection_configuration_id`](crate::types::builders::TlsInspectionConfigurationResponseBuilder::tls_inspection_configuration_id)
     pub fn build(self) -> ::std::result::Result<crate::types::TlsInspectionConfigurationResponse, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TlsInspectionConfigurationResponse {
-            tls_inspection_configuration_arn: self.tls_inspection_configuration_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "tls_inspection_configuration_arn",
-                    "tls_inspection_configuration_arn was not specified but it is required when building TlsInspectionConfigurationResponse",
-                )
-            })?,
-            tls_inspection_configuration_name: self.tls_inspection_configuration_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "tls_inspection_configuration_name",
-                    "tls_inspection_configuration_name was not specified but it is required when building TlsInspectionConfigurationResponse",
-                )
-            })?,
-            tls_inspection_configuration_id: self.tls_inspection_configuration_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "tls_inspection_configuration_id",
-                    "tls_inspection_configuration_id was not specified but it is required when building TlsInspectionConfigurationResponse",
-                )
-            })?,
-            tls_inspection_configuration_status: self.tls_inspection_configuration_status,
-            description: self.description,
-            tags: self.tags,
-            last_modified_time: self.last_modified_time,
-            number_of_associations: self.number_of_associations,
-            encryption_configuration: self.encryption_configuration,
-            certificates: self.certificates,
-            certificate_authority: self.certificate_authority,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TlsInspectionConfigurationResponse {
+                tls_inspection_configuration_arn: self.tls_inspection_configuration_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("tls_inspection_configuration_arn", "tls_inspection_configuration_arn was not specified but it is required when building TlsInspectionConfigurationResponse")
+                    )?
+                ,
+                tls_inspection_configuration_name: self.tls_inspection_configuration_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("tls_inspection_configuration_name", "tls_inspection_configuration_name was not specified but it is required when building TlsInspectionConfigurationResponse")
+                    )?
+                ,
+                tls_inspection_configuration_id: self.tls_inspection_configuration_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("tls_inspection_configuration_id", "tls_inspection_configuration_id was not specified but it is required when building TlsInspectionConfigurationResponse")
+                    )?
+                ,
+                tls_inspection_configuration_status: self.tls_inspection_configuration_status
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+                last_modified_time: self.last_modified_time
+                ,
+                number_of_associations: self.number_of_associations
+                ,
+                encryption_configuration: self.encryption_configuration
+                ,
+                certificates: self.certificates
+                ,
+                certificate_authority: self.certificate_authority
+                ,
+            }
+        )
     }
 }
+

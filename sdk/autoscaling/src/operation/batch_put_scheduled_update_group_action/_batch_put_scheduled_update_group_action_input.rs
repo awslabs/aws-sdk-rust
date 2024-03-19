@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchPutScheduledUpdateGroupActionInput {
+pub struct BatchPutScheduledUpdateGroupActionInput  {
     /// <p>The name of the Auto Scaling group.</p>
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>One or more scheduled actions. The maximum number allowed is 50.</p>
-    pub scheduled_update_group_actions: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledUpdateGroupActionRequest>>,
+    pub scheduled_update_group_actions: ::std::option::Option<::std::vec::Vec::<crate::types::ScheduledUpdateGroupActionRequest>>,
 }
-impl BatchPutScheduledUpdateGroupActionInput {
+impl  BatchPutScheduledUpdateGroupActionInput  {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<& str> {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>One or more scheduled actions. The maximum number allowed is 50.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scheduled_update_group_actions.is_none()`.
-    pub fn scheduled_update_group_actions(&self) -> &[crate::types::ScheduledUpdateGroupActionRequest] {
-        self.scheduled_update_group_actions.as_deref().unwrap_or_default()
+    pub fn scheduled_update_group_actions(&self) -> & [crate::types::ScheduledUpdateGroupActionRequest] {
+        self.scheduled_update_group_actions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchPutScheduledUpdateGroupActionInput {
@@ -32,7 +33,7 @@ impl BatchPutScheduledUpdateGroupActionInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchPutScheduledUpdateGroupActionInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) scheduled_update_group_actions: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledUpdateGroupActionRequest>>,
+    pub(crate) scheduled_update_group_actions: ::std::option::Option<::std::vec::Vec::<crate::types::ScheduledUpdateGroupActionRequest>>,
 }
 impl BatchPutScheduledUpdateGroupActionInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
@@ -43,8 +44,7 @@ impl BatchPutScheduledUpdateGroupActionInputBuilder {
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auto_scaling_group_name = input;
-        self
+        self.auto_scaling_group_name = input; self
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,34 +57,28 @@ impl BatchPutScheduledUpdateGroupActionInputBuilder {
     /// <p>One or more scheduled actions. The maximum number allowed is 50.</p>
     pub fn scheduled_update_group_actions(mut self, input: crate::types::ScheduledUpdateGroupActionRequest) -> Self {
         let mut v = self.scheduled_update_group_actions.unwrap_or_default();
-        v.push(input);
-        self.scheduled_update_group_actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.scheduled_update_group_actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more scheduled actions. The maximum number allowed is 50.</p>
-    pub fn set_scheduled_update_group_actions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledUpdateGroupActionRequest>>,
-    ) -> Self {
-        self.scheduled_update_group_actions = input;
-        self
+    pub fn set_scheduled_update_group_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ScheduledUpdateGroupActionRequest>>) -> Self {
+        self.scheduled_update_group_actions = input; self
     }
     /// <p>One or more scheduled actions. The maximum number allowed is 50.</p>
-    pub fn get_scheduled_update_group_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledUpdateGroupActionRequest>> {
+    pub fn get_scheduled_update_group_actions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ScheduledUpdateGroupActionRequest>> {
         &self.scheduled_update_group_actions
     }
     /// Consumes the builder and constructs a [`BatchPutScheduledUpdateGroupActionInput`](crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionInput {
-                auto_scaling_group_name: self.auto_scaling_group_name,
-                scheduled_update_group_actions: self.scheduled_update_group_actions,
-            },
+                auto_scaling_group_name: self.auto_scaling_group_name
+                ,
+                scheduled_update_group_actions: self.scheduled_update_group_actions
+                ,
+            }
         )
     }
 }
+

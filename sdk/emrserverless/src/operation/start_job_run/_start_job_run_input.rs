@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartJobRunInput {
+pub struct StartJobRunInput  {
     /// <p>The ID of the application on which to run the job.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The client idempotency token of the job run to start. Its value must be unique for each request.</p>
@@ -14,35 +14,35 @@ pub struct StartJobRunInput {
     /// <p>The configuration overrides for the job run.</p>
     pub configuration_overrides: ::std::option::Option<crate::types::ConfigurationOverrides>,
     /// <p>The tags assigned to the job run.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The maximum duration for the job run to run. If the job run runs beyond this duration, it will be automatically cancelled.</p>
     pub execution_timeout_minutes: ::std::option::Option<i64>,
     /// <p>The optional job run name. This doesn't have to be unique.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl StartJobRunInput {
+impl  StartJobRunInput  {
     /// <p>The ID of the application on which to run the job.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The client idempotency token of the job run to start. Its value must be unique for each request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The execution role ARN for the job run.</p>
-    pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> ::std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
     /// <p>The job driver for the job run.</p>
-    pub fn job_driver(&self) -> ::std::option::Option<&crate::types::JobDriver> {
+    pub fn job_driver(&self) -> ::std::option::Option<& crate::types::JobDriver> {
         self.job_driver.as_ref()
     }
     /// <p>The configuration overrides for the job run.</p>
-    pub fn configuration_overrides(&self) -> ::std::option::Option<&crate::types::ConfigurationOverrides> {
+    pub fn configuration_overrides(&self) -> ::std::option::Option<& crate::types::ConfigurationOverrides> {
         self.configuration_overrides.as_ref()
     }
     /// <p>The tags assigned to the job run.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The maximum duration for the job run to run. If the job run runs beyond this duration, it will be automatically cancelled.</p>
@@ -50,7 +50,7 @@ impl StartJobRunInput {
         self.execution_timeout_minutes
     }
     /// <p>The optional job run name. This doesn't have to be unique.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -70,7 +70,7 @@ pub struct StartJobRunInputBuilder {
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) job_driver: ::std::option::Option<crate::types::JobDriver>,
     pub(crate) configuration_overrides: ::std::option::Option<crate::types::ConfigurationOverrides>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) execution_timeout_minutes: ::std::option::Option<i64>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
@@ -83,8 +83,7 @@ impl StartJobRunInputBuilder {
     }
     /// <p>The ID of the application on which to run the job.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The ID of the application on which to run the job.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +97,7 @@ impl StartJobRunInputBuilder {
     }
     /// <p>The client idempotency token of the job run to start. Its value must be unique for each request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The client idempotency token of the job run to start. Its value must be unique for each request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +111,7 @@ impl StartJobRunInputBuilder {
     }
     /// <p>The execution role ARN for the job run.</p>
     pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_role_arn = input;
-        self
+        self.execution_role_arn = input; self
     }
     /// <p>The execution role ARN for the job run.</p>
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +124,7 @@ impl StartJobRunInputBuilder {
     }
     /// <p>The job driver for the job run.</p>
     pub fn set_job_driver(mut self, input: ::std::option::Option<crate::types::JobDriver>) -> Self {
-        self.job_driver = input;
-        self
+        self.job_driver = input; self
     }
     /// <p>The job driver for the job run.</p>
     pub fn get_job_driver(&self) -> &::std::option::Option<crate::types::JobDriver> {
@@ -141,8 +137,7 @@ impl StartJobRunInputBuilder {
     }
     /// <p>The configuration overrides for the job run.</p>
     pub fn set_configuration_overrides(mut self, input: ::std::option::Option<crate::types::ConfigurationOverrides>) -> Self {
-        self.configuration_overrides = input;
-        self
+        self.configuration_overrides = input; self
     }
     /// <p>The configuration overrides for the job run.</p>
     pub fn get_configuration_overrides(&self) -> &::std::option::Option<crate::types::ConfigurationOverrides> {
@@ -155,17 +150,16 @@ impl StartJobRunInputBuilder {
     /// <p>The tags assigned to the job run.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags assigned to the job run.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags assigned to the job run.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The maximum duration for the job run to run. If the job run runs beyond this duration, it will be automatically cancelled.</p>
@@ -175,8 +169,7 @@ impl StartJobRunInputBuilder {
     }
     /// <p>The maximum duration for the job run to run. If the job run runs beyond this duration, it will be automatically cancelled.</p>
     pub fn set_execution_timeout_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.execution_timeout_minutes = input;
-        self
+        self.execution_timeout_minutes = input; self
     }
     /// <p>The maximum duration for the job run to run. If the job run runs beyond this duration, it will be automatically cancelled.</p>
     pub fn get_execution_timeout_minutes(&self) -> &::std::option::Option<i64> {
@@ -189,8 +182,7 @@ impl StartJobRunInputBuilder {
     }
     /// <p>The optional job run name. This doesn't have to be unique.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The optional job run name. This doesn't have to be unique.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -198,15 +190,26 @@ impl StartJobRunInputBuilder {
     }
     /// Consumes the builder and constructs a [`StartJobRunInput`](crate::operation::start_job_run::StartJobRunInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::start_job_run::StartJobRunInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_job_run::StartJobRunInput {
-            application_id: self.application_id,
-            client_token: self.client_token,
-            execution_role_arn: self.execution_role_arn,
-            job_driver: self.job_driver,
-            configuration_overrides: self.configuration_overrides,
-            tags: self.tags,
-            execution_timeout_minutes: self.execution_timeout_minutes,
-            name: self.name,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::start_job_run::StartJobRunInput {
+                application_id: self.application_id
+                ,
+                client_token: self.client_token
+                ,
+                execution_role_arn: self.execution_role_arn
+                ,
+                job_driver: self.job_driver
+                ,
+                configuration_overrides: self.configuration_overrides
+                ,
+                tags: self.tags
+                ,
+                execution_timeout_minutes: self.execution_timeout_minutes
+                ,
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

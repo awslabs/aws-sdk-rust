@@ -3,7 +3,7 @@
 /// <p>Specifies how DataSync can access a location using the NFS protocol.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NfsMountOptions {
+pub struct NfsMountOptions  {
     /// <p>Specifies the NFS version that you want DataSync to use when mounting your NFS share. If the server refuses to use the version specified, the task fails.</p>
     /// <p>You can specify the following options:</p>
     /// <ul>
@@ -20,7 +20,7 @@ pub struct NfsMountOptions {
     /// </note>
     pub version: ::std::option::Option<crate::types::NfsVersion>,
 }
-impl NfsMountOptions {
+impl  NfsMountOptions  {
     /// <p>Specifies the NFS version that you want DataSync to use when mounting your NFS share. If the server refuses to use the version specified, the task fails.</p>
     /// <p>You can specify the following options:</p>
     /// <ul>
@@ -35,7 +35,7 @@ impl NfsMountOptions {
     /// </ul><note>
     /// <p>DataSync currently only supports NFS version 3 with Amazon FSx for NetApp ONTAP locations.</p>
     /// </note>
-    pub fn version(&self) -> ::std::option::Option<&crate::types::NfsVersion> {
+    pub fn version(&self) -> ::std::option::Option<& crate::types::NfsVersion> {
         self.version.as_ref()
     }
 }
@@ -86,8 +86,7 @@ impl NfsMountOptionsBuilder {
     /// <p>DataSync currently only supports NFS version 3 with Amazon FSx for NetApp ONTAP locations.</p>
     /// </note>
     pub fn set_version(mut self, input: ::std::option::Option<crate::types::NfsVersion>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>Specifies the NFS version that you want DataSync to use when mounting your NFS share. If the server refuses to use the version specified, the task fails.</p>
     /// <p>You can specify the following options:</p>
@@ -108,6 +107,10 @@ impl NfsMountOptionsBuilder {
     }
     /// Consumes the builder and constructs a [`NfsMountOptions`](crate::types::NfsMountOptions).
     pub fn build(self) -> crate::types::NfsMountOptions {
-        crate::types::NfsMountOptions { version: self.version }
+        crate::types::NfsMountOptions {
+            version: self.version
+            ,
+        }
     }
 }
+

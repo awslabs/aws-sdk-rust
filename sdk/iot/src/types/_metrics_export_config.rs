@@ -3,22 +3,20 @@
 /// <p>Set configurations for metrics export.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetricsExportConfig {
+pub struct MetricsExportConfig  {
     /// <p>The MQTT topic that Device Defender Detect should publish messages to for metrics export.</p>
     pub mqtt_topic: ::std::string::String,
     /// <p>This role ARN has permission to publish MQTT messages, after which Device Defender Detect can assume the role and publish messages on your behalf.</p>
     pub role_arn: ::std::string::String,
 }
-impl MetricsExportConfig {
+impl  MetricsExportConfig  {
     /// <p>The MQTT topic that Device Defender Detect should publish messages to for metrics export.</p>
-    pub fn mqtt_topic(&self) -> &str {
-        use std::ops::Deref;
-        self.mqtt_topic.deref()
+    pub fn mqtt_topic(&self) -> & str {
+        use std::ops::Deref; self.mqtt_topic.deref()
     }
     /// <p>This role ARN has permission to publish MQTT messages, after which Device Defender Detect can assume the role and publish messages on your behalf.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
 }
 impl MetricsExportConfig {
@@ -44,8 +42,7 @@ impl MetricsExportConfigBuilder {
     }
     /// <p>The MQTT topic that Device Defender Detect should publish messages to for metrics export.</p>
     pub fn set_mqtt_topic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mqtt_topic = input;
-        self
+        self.mqtt_topic = input; self
     }
     /// <p>The MQTT topic that Device Defender Detect should publish messages to for metrics export.</p>
     pub fn get_mqtt_topic(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl MetricsExportConfigBuilder {
     }
     /// <p>This role ARN has permission to publish MQTT messages, after which Device Defender Detect can assume the role and publish messages on your behalf.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>This role ARN has permission to publish MQTT messages, after which Device Defender Detect can assume the role and publish messages on your behalf.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl MetricsExportConfigBuilder {
     /// - [`mqtt_topic`](crate::types::builders::MetricsExportConfigBuilder::mqtt_topic)
     /// - [`role_arn`](crate::types::builders::MetricsExportConfigBuilder::role_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::MetricsExportConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MetricsExportConfig {
-            mqtt_topic: self.mqtt_topic.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "mqtt_topic",
-                    "mqtt_topic was not specified but it is required when building MetricsExportConfig",
-                )
-            })?,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building MetricsExportConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MetricsExportConfig {
+                mqtt_topic: self.mqtt_topic
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("mqtt_topic", "mqtt_topic was not specified but it is required when building MetricsExportConfig")
+                    )?
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building MetricsExportConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

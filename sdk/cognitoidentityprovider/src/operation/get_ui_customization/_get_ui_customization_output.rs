@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetUiCustomizationOutput {
+pub struct GetUiCustomizationOutput  {
     /// <p>The UI customization information.</p>
     pub ui_customization: ::std::option::Option<crate::types::UiCustomizationType>,
     _request_id: Option<String>,
 }
-impl GetUiCustomizationOutput {
+impl  GetUiCustomizationOutput  {
     /// <p>The UI customization information.</p>
-    pub fn ui_customization(&self) -> ::std::option::Option<&crate::types::UiCustomizationType> {
+    pub fn ui_customization(&self) -> ::std::option::Option<& crate::types::UiCustomizationType> {
         self.ui_customization.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetUiCustomizationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetUiCustomizationOutput {
     /// Creates a new builder-style object to manufacture [`GetUiCustomizationOutput`](crate::operation::get_ui_customization::GetUiCustomizationOutput).
     pub fn builder() -> crate::operation::get_ui_customization::builders::GetUiCustomizationOutputBuilder {
@@ -41,27 +41,28 @@ impl GetUiCustomizationOutputBuilder {
     }
     /// <p>The UI customization information.</p>
     pub fn set_ui_customization(mut self, input: ::std::option::Option<crate::types::UiCustomizationType>) -> Self {
-        self.ui_customization = input;
-        self
+        self.ui_customization = input; self
     }
     /// <p>The UI customization information.</p>
     pub fn get_ui_customization(&self) -> &::std::option::Option<crate::types::UiCustomizationType> {
         &self.ui_customization
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetUiCustomizationOutput`](crate::operation::get_ui_customization::GetUiCustomizationOutput).
     pub fn build(self) -> crate::operation::get_ui_customization::GetUiCustomizationOutput {
         crate::operation::get_ui_customization::GetUiCustomizationOutput {
-            ui_customization: self.ui_customization,
+            ui_customization: self.ui_customization
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

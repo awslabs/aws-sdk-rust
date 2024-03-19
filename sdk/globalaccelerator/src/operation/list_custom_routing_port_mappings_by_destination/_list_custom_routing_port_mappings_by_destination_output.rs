@@ -2,36 +2,35 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCustomRoutingPortMappingsByDestinationOutput {
+pub struct ListCustomRoutingPortMappingsByDestinationOutput  {
     /// <p>The port mappings for the endpoint IP address that you specified in the request.</p>
-    pub destination_port_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DestinationPortMapping>>,
+    pub destination_port_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::DestinationPortMapping>>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListCustomRoutingPortMappingsByDestinationOutput {
+impl  ListCustomRoutingPortMappingsByDestinationOutput  {
     /// <p>The port mappings for the endpoint IP address that you specified in the request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_port_mappings.is_none()`.
-    pub fn destination_port_mappings(&self) -> &[crate::types::DestinationPortMapping] {
-        self.destination_port_mappings.as_deref().unwrap_or_default()
+    pub fn destination_port_mappings(&self) -> & [crate::types::DestinationPortMapping] {
+        self.destination_port_mappings.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListCustomRoutingPortMappingsByDestinationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListCustomRoutingPortMappingsByDestinationOutput {
     /// Creates a new builder-style object to manufacture [`ListCustomRoutingPortMappingsByDestinationOutput`](crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestinationOutput).
-    pub fn builder(
-    ) -> crate::operation::list_custom_routing_port_mappings_by_destination::builders::ListCustomRoutingPortMappingsByDestinationOutputBuilder {
-        crate::operation::list_custom_routing_port_mappings_by_destination::builders::ListCustomRoutingPortMappingsByDestinationOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_custom_routing_port_mappings_by_destination::builders::ListCustomRoutingPortMappingsByDestinationOutputBuilder {
+        crate::operation::list_custom_routing_port_mappings_by_destination::builders::ListCustomRoutingPortMappingsByDestinationOutputBuilder::default()
     }
 }
 
@@ -39,7 +38,7 @@ impl ListCustomRoutingPortMappingsByDestinationOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCustomRoutingPortMappingsByDestinationOutputBuilder {
-    pub(crate) destination_port_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DestinationPortMapping>>,
+    pub(crate) destination_port_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::DestinationPortMapping>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,17 +50,16 @@ impl ListCustomRoutingPortMappingsByDestinationOutputBuilder {
     /// <p>The port mappings for the endpoint IP address that you specified in the request.</p>
     pub fn destination_port_mappings(mut self, input: crate::types::DestinationPortMapping) -> Self {
         let mut v = self.destination_port_mappings.unwrap_or_default();
-        v.push(input);
-        self.destination_port_mappings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.destination_port_mappings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The port mappings for the endpoint IP address that you specified in the request.</p>
-    pub fn set_destination_port_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DestinationPortMapping>>) -> Self {
-        self.destination_port_mappings = input;
-        self
+    pub fn set_destination_port_mappings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DestinationPortMapping>>) -> Self {
+        self.destination_port_mappings = input; self
     }
     /// <p>The port mappings for the endpoint IP address that you specified in the request.</p>
-    pub fn get_destination_port_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DestinationPortMapping>> {
+    pub fn get_destination_port_mappings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DestinationPortMapping>> {
         &self.destination_port_mappings
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
@@ -71,28 +69,30 @@ impl ListCustomRoutingPortMappingsByDestinationOutputBuilder {
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListCustomRoutingPortMappingsByDestinationOutput`](crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestinationOutput).
     pub fn build(self) -> crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestinationOutput {
         crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestinationOutput {
-            destination_port_mappings: self.destination_port_mappings,
-            next_token: self.next_token,
+            destination_port_mappings: self.destination_port_mappings
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeUpdateActions`](crate::operation::describe_update_actions::builders::DescribeUpdateActionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_update_actions::builders::DescribeUpdateActionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`service_update_name(impl Into<String>)`](crate::operation::describe_update_actions::builders::DescribeUpdateActionsFluentBuilder::service_update_name) / [`set_service_update_name(Option<String>)`](crate::operation::describe_update_actions::builders::DescribeUpdateActionsFluentBuilder::set_service_update_name):<br>required: **false**<br><p>The unique ID of the service update</p><br>
     ///   - [`replication_group_ids(impl Into<String>)`](crate::operation::describe_update_actions::builders::DescribeUpdateActionsFluentBuilder::replication_group_ids) / [`set_replication_group_ids(Option<Vec::<String>>)`](crate::operation::describe_update_actions::builders::DescribeUpdateActionsFluentBuilder::set_replication_group_ids):<br>required: **false**<br><p>The replication group IDs</p><br>
     ///   - [`cache_cluster_ids(impl Into<String>)`](crate::operation::describe_update_actions::builders::DescribeUpdateActionsFluentBuilder::cache_cluster_ids) / [`set_cache_cluster_ids(Option<Vec::<String>>)`](crate::operation::describe_update_actions::builders::DescribeUpdateActionsFluentBuilder::set_cache_cluster_ids):<br>required: **false**<br><p>The cache cluster IDs</p><br>
@@ -14,11 +14,12 @@ impl super::Client {
     ///   - [`show_node_level_update_status(bool)`](crate::operation::describe_update_actions::builders::DescribeUpdateActionsFluentBuilder::show_node_level_update_status) / [`set_show_node_level_update_status(Option<bool>)`](crate::operation::describe_update_actions::builders::DescribeUpdateActionsFluentBuilder::set_show_node_level_update_status):<br>required: **false**<br><p>Dictates whether to include node level update status in the response</p><br>
     ///   - [`max_records(i32)`](crate::operation::describe_update_actions::builders::DescribeUpdateActionsFluentBuilder::max_records) / [`set_max_records(Option<i32>)`](crate::operation::describe_update_actions::builders::DescribeUpdateActionsFluentBuilder::set_max_records):<br>required: **false**<br><p>The maximum number of records to include in the response</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::describe_update_actions::builders::DescribeUpdateActionsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_update_actions::builders::DescribeUpdateActionsFluentBuilder::set_marker):<br>required: **false**<br><p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p><br>
-    /// - On success, responds with [`DescribeUpdateActionsOutput`](crate::operation::describe_update_actions::DescribeUpdateActionsOutput) with field(s):
+                            /// - On success, responds with [`DescribeUpdateActionsOutput`](crate::operation::describe_update_actions::DescribeUpdateActionsOutput) with field(s):
     ///   - [`marker(Option<String>)`](crate::operation::describe_update_actions::DescribeUpdateActionsOutput::marker): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     ///   - [`update_actions(Option<Vec::<UpdateAction>>)`](crate::operation::describe_update_actions::DescribeUpdateActionsOutput::update_actions): <p>Returns a list of update actions</p>
-    /// - On failure, responds with [`SdkError<DescribeUpdateActionsError>`](crate::operation::describe_update_actions::DescribeUpdateActionsError)
+                            /// - On failure, responds with [`SdkError<DescribeUpdateActionsError>`](crate::operation::describe_update_actions::DescribeUpdateActionsError)
     pub fn describe_update_actions(&self) -> crate::operation::describe_update_actions::builders::DescribeUpdateActionsFluentBuilder {
-        crate::operation::describe_update_actions::builders::DescribeUpdateActionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_update_actions::builders::DescribeUpdateActionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

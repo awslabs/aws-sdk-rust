@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTrafficMirrorFilterRuleOutput {
+pub struct CreateTrafficMirrorFilterRuleOutput  {
     /// <p>The Traffic Mirror rule.</p>
     pub traffic_mirror_filter_rule: ::std::option::Option<crate::types::TrafficMirrorFilterRule>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateTrafficMirrorFilterRuleOutput {
+impl  CreateTrafficMirrorFilterRuleOutput  {
     /// <p>The Traffic Mirror rule.</p>
-    pub fn traffic_mirror_filter_rule(&self) -> ::std::option::Option<&crate::types::TrafficMirrorFilterRule> {
+    pub fn traffic_mirror_filter_rule(&self) -> ::std::option::Option<& crate::types::TrafficMirrorFilterRule> {
         self.traffic_mirror_filter_rule.as_ref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateTrafficMirrorFilterRuleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateTrafficMirrorFilterRuleOutput {
     /// Creates a new builder-style object to manufacture [`CreateTrafficMirrorFilterRuleOutput`](crate::operation::create_traffic_mirror_filter_rule::CreateTrafficMirrorFilterRuleOutput).
     pub fn builder() -> crate::operation::create_traffic_mirror_filter_rule::builders::CreateTrafficMirrorFilterRuleOutputBuilder {
@@ -47,8 +47,7 @@ impl CreateTrafficMirrorFilterRuleOutputBuilder {
     }
     /// <p>The Traffic Mirror rule.</p>
     pub fn set_traffic_mirror_filter_rule(mut self, input: ::std::option::Option<crate::types::TrafficMirrorFilterRule>) -> Self {
-        self.traffic_mirror_filter_rule = input;
-        self
+        self.traffic_mirror_filter_rule = input; self
     }
     /// <p>The Traffic Mirror rule.</p>
     pub fn get_traffic_mirror_filter_rule(&self) -> &::std::option::Option<crate::types::TrafficMirrorFilterRule> {
@@ -61,28 +60,30 @@ impl CreateTrafficMirrorFilterRuleOutputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateTrafficMirrorFilterRuleOutput`](crate::operation::create_traffic_mirror_filter_rule::CreateTrafficMirrorFilterRuleOutput).
     pub fn build(self) -> crate::operation::create_traffic_mirror_filter_rule::CreateTrafficMirrorFilterRuleOutput {
         crate::operation::create_traffic_mirror_filter_rule::CreateTrafficMirrorFilterRuleOutput {
-            traffic_mirror_filter_rule: self.traffic_mirror_filter_rule,
-            client_token: self.client_token,
+            traffic_mirror_filter_rule: self.traffic_mirror_filter_rule
+            ,
+            client_token: self.client_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

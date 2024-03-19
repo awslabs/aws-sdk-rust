@@ -3,13 +3,13 @@
 /// <p>Specifies an experiment option for an experiment template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateExperimentTemplateExperimentOptionsInput {
+pub struct UpdateExperimentTemplateExperimentOptionsInput  {
     /// <p>The empty target resolution mode of the experiment template.</p>
     pub empty_target_resolution_mode: ::std::option::Option<crate::types::EmptyTargetResolutionMode>,
 }
-impl UpdateExperimentTemplateExperimentOptionsInput {
+impl  UpdateExperimentTemplateExperimentOptionsInput  {
     /// <p>The empty target resolution mode of the experiment template.</p>
-    pub fn empty_target_resolution_mode(&self) -> ::std::option::Option<&crate::types::EmptyTargetResolutionMode> {
+    pub fn empty_target_resolution_mode(&self) -> ::std::option::Option<& crate::types::EmptyTargetResolutionMode> {
         self.empty_target_resolution_mode.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl UpdateExperimentTemplateExperimentOptionsInputBuilder {
     }
     /// <p>The empty target resolution mode of the experiment template.</p>
     pub fn set_empty_target_resolution_mode(mut self, input: ::std::option::Option<crate::types::EmptyTargetResolutionMode>) -> Self {
-        self.empty_target_resolution_mode = input;
-        self
+        self.empty_target_resolution_mode = input; self
     }
     /// <p>The empty target resolution mode of the experiment template.</p>
     pub fn get_empty_target_resolution_mode(&self) -> &::std::option::Option<crate::types::EmptyTargetResolutionMode> {
@@ -44,7 +43,9 @@ impl UpdateExperimentTemplateExperimentOptionsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateExperimentTemplateExperimentOptionsInput`](crate::types::UpdateExperimentTemplateExperimentOptionsInput).
     pub fn build(self) -> crate::types::UpdateExperimentTemplateExperimentOptionsInput {
         crate::types::UpdateExperimentTemplateExperimentOptionsInput {
-            empty_target_resolution_mode: self.empty_target_resolution_mode,
+            empty_target_resolution_mode: self.empty_target_resolution_mode
+            ,
         }
     }
 }
+

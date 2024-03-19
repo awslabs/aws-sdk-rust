@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let invalidinputerrorcode = unimplemented!();
 /// match invalidinputerrorcode {
@@ -82,16 +82,14 @@
 /// Specifically, when `invalidinputerrorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InvalidInputErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum InvalidInputErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     AssessmentTargetNameAlreadyTaken,
@@ -203,272 +201,218 @@ pub enum InvalidInputErrorCode {
     InvalidUserAttributeValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for InvalidInputErrorCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ASSESSMENT_TARGET_NAME_ALREADY_TAKEN" => InvalidInputErrorCode::AssessmentTargetNameAlreadyTaken,
-            "ASSESSMENT_TEMPLATE_NAME_ALREADY_TAKEN" => InvalidInputErrorCode::AssessmentTemplateNameAlreadyTaken,
-            "INVALID_AGENT_ID" => InvalidInputErrorCode::InvalidAgentId,
-            "INVALID_ASSESSMENT_RUN_ARN" => InvalidInputErrorCode::InvalidAssessmentRunArn,
-            "INVALID_ASSESSMENT_RUN_COMPLETION_TIME_RANGE" => InvalidInputErrorCode::InvalidAssessmentRunCompletionTimeRange,
-            "INVALID_ASSESSMENT_RUN_DURATION_RANGE" => InvalidInputErrorCode::InvalidAssessmentRunDurationRange,
-            "INVALID_ASSESSMENT_RUN_START_TIME_RANGE" => InvalidInputErrorCode::InvalidAssessmentRunStartTimeRange,
-            "INVALID_ASSESSMENT_RUN_STATE" => InvalidInputErrorCode::InvalidAssessmentRunState,
-            "INVALID_ASSESSMENT_RUN_STATE_CHANGE_TIME_RANGE" => InvalidInputErrorCode::InvalidAssessmentRunStateChangeTimeRange,
-            "INVALID_ASSESSMENT_TARGET_ARN" => InvalidInputErrorCode::InvalidAssessmentTargetArn,
-            "INVALID_ASSESSMENT_TARGET_NAME" => InvalidInputErrorCode::InvalidAssessmentTargetName,
-            "INVALID_ASSESSMENT_TARGET_NAME_PATTERN" => InvalidInputErrorCode::InvalidAssessmentTargetNamePattern,
-            "INVALID_ASSESSMENT_TEMPLATE_ARN" => InvalidInputErrorCode::InvalidAssessmentTemplateArn,
-            "INVALID_ASSESSMENT_TEMPLATE_DURATION" => InvalidInputErrorCode::InvalidAssessmentTemplateDuration,
-            "INVALID_ASSESSMENT_TEMPLATE_DURATION_RANGE" => InvalidInputErrorCode::InvalidAssessmentTemplateDurationRange,
-            "INVALID_ASSESSMENT_TEMPLATE_NAME" => InvalidInputErrorCode::InvalidAssessmentTemplateName,
-            "INVALID_ASSESSMENT_TEMPLATE_NAME_PATTERN" => InvalidInputErrorCode::InvalidAssessmentTemplateNamePattern,
-            "INVALID_ATTRIBUTE" => InvalidInputErrorCode::InvalidAttribute,
-            "INVALID_AUTO_SCALING_GROUP" => InvalidInputErrorCode::InvalidAutoScalingGroup,
-            "INVALID_EVENT" => InvalidInputErrorCode::InvalidEvent,
-            "INVALID_FINDING_ARN" => InvalidInputErrorCode::InvalidFindingArn,
-            "INVALID_IAM_ROLE_ARN" => InvalidInputErrorCode::InvalidIamRoleArn,
-            "INVALID_LOCALE" => InvalidInputErrorCode::InvalidLocale,
-            "INVALID_MAX_RESULTS" => InvalidInputErrorCode::InvalidMaxResults,
-            "INVALID_NUMBER_OF_AGENT_IDS" => InvalidInputErrorCode::InvalidNumberOfAgentIds,
-            "INVALID_NUMBER_OF_ASSESSMENT_RUN_ARNS" => InvalidInputErrorCode::InvalidNumberOfAssessmentRunArns,
-            "INVALID_NUMBER_OF_ASSESSMENT_RUN_STATES" => InvalidInputErrorCode::InvalidNumberOfAssessmentRunStates,
-            "INVALID_NUMBER_OF_ASSESSMENT_TARGET_ARNS" => InvalidInputErrorCode::InvalidNumberOfAssessmentTargetArns,
-            "INVALID_NUMBER_OF_ASSESSMENT_TEMPLATE_ARNS" => InvalidInputErrorCode::InvalidNumberOfAssessmentTemplateArns,
-            "INVALID_NUMBER_OF_ATTRIBUTES" => InvalidInputErrorCode::InvalidNumberOfAttributes,
-            "INVALID_NUMBER_OF_AUTO_SCALING_GROUPS" => InvalidInputErrorCode::InvalidNumberOfAutoScalingGroups,
-            "INVALID_NUMBER_OF_FINDING_ARNS" => InvalidInputErrorCode::InvalidNumberOfFindingArns,
-            "INVALID_NUMBER_OF_RESOURCE_GROUP_ARNS" => InvalidInputErrorCode::InvalidNumberOfResourceGroupArns,
-            "INVALID_NUMBER_OF_RESOURCE_GROUP_TAGS" => InvalidInputErrorCode::InvalidNumberOfResourceGroupTags,
-            "INVALID_NUMBER_OF_RULES_PACKAGE_ARNS" => InvalidInputErrorCode::InvalidNumberOfRulesPackageArns,
-            "INVALID_NUMBER_OF_RULE_NAMES" => InvalidInputErrorCode::InvalidNumberOfRuleNames,
-            "INVALID_NUMBER_OF_SEVERITIES" => InvalidInputErrorCode::InvalidNumberOfSeverities,
-            "INVALID_NUMBER_OF_TAGS" => InvalidInputErrorCode::InvalidNumberOfTags,
-            "INVALID_NUMBER_OF_USER_ATTRIBUTES" => InvalidInputErrorCode::InvalidNumberOfUserAttributes,
-            "INVALID_PAGINATION_TOKEN" => InvalidInputErrorCode::InvalidPaginationToken,
-            "INVALID_RESOURCE_ARN" => InvalidInputErrorCode::InvalidResourceArn,
-            "INVALID_RESOURCE_GROUP_ARN" => InvalidInputErrorCode::InvalidResourceGroupArn,
-            "INVALID_RESOURCE_GROUP_TAG_KEY" => InvalidInputErrorCode::InvalidResourceGroupTagKey,
-            "INVALID_RESOURCE_GROUP_TAG_VALUE" => InvalidInputErrorCode::InvalidResourceGroupTagValue,
-            "INVALID_RULES_PACKAGE_ARN" => InvalidInputErrorCode::InvalidRulesPackageArn,
-            "INVALID_RULE_NAME" => InvalidInputErrorCode::InvalidRuleName,
-            "INVALID_SEVERITY" => InvalidInputErrorCode::InvalidSeverity,
-            "INVALID_SNS_TOPIC_ARN" => InvalidInputErrorCode::InvalidSnsTopicArn,
-            "INVALID_TAG" => InvalidInputErrorCode::InvalidTag,
-            "INVALID_TAG_KEY" => InvalidInputErrorCode::InvalidTagKey,
-            "INVALID_TAG_VALUE" => InvalidInputErrorCode::InvalidTagValue,
-            "INVALID_USER_ATTRIBUTE" => InvalidInputErrorCode::InvalidUserAttribute,
-            "INVALID_USER_ATTRIBUTE_KEY" => InvalidInputErrorCode::InvalidUserAttributeKey,
-            "INVALID_USER_ATTRIBUTE_VALUE" => InvalidInputErrorCode::InvalidUserAttributeValue,
-            other => InvalidInputErrorCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ASSESSMENT_TARGET_NAME_ALREADY_TAKEN" => InvalidInputErrorCode::AssessmentTargetNameAlreadyTaken,
+"ASSESSMENT_TEMPLATE_NAME_ALREADY_TAKEN" => InvalidInputErrorCode::AssessmentTemplateNameAlreadyTaken,
+"INVALID_AGENT_ID" => InvalidInputErrorCode::InvalidAgentId,
+"INVALID_ASSESSMENT_RUN_ARN" => InvalidInputErrorCode::InvalidAssessmentRunArn,
+"INVALID_ASSESSMENT_RUN_COMPLETION_TIME_RANGE" => InvalidInputErrorCode::InvalidAssessmentRunCompletionTimeRange,
+"INVALID_ASSESSMENT_RUN_DURATION_RANGE" => InvalidInputErrorCode::InvalidAssessmentRunDurationRange,
+"INVALID_ASSESSMENT_RUN_START_TIME_RANGE" => InvalidInputErrorCode::InvalidAssessmentRunStartTimeRange,
+"INVALID_ASSESSMENT_RUN_STATE" => InvalidInputErrorCode::InvalidAssessmentRunState,
+"INVALID_ASSESSMENT_RUN_STATE_CHANGE_TIME_RANGE" => InvalidInputErrorCode::InvalidAssessmentRunStateChangeTimeRange,
+"INVALID_ASSESSMENT_TARGET_ARN" => InvalidInputErrorCode::InvalidAssessmentTargetArn,
+"INVALID_ASSESSMENT_TARGET_NAME" => InvalidInputErrorCode::InvalidAssessmentTargetName,
+"INVALID_ASSESSMENT_TARGET_NAME_PATTERN" => InvalidInputErrorCode::InvalidAssessmentTargetNamePattern,
+"INVALID_ASSESSMENT_TEMPLATE_ARN" => InvalidInputErrorCode::InvalidAssessmentTemplateArn,
+"INVALID_ASSESSMENT_TEMPLATE_DURATION" => InvalidInputErrorCode::InvalidAssessmentTemplateDuration,
+"INVALID_ASSESSMENT_TEMPLATE_DURATION_RANGE" => InvalidInputErrorCode::InvalidAssessmentTemplateDurationRange,
+"INVALID_ASSESSMENT_TEMPLATE_NAME" => InvalidInputErrorCode::InvalidAssessmentTemplateName,
+"INVALID_ASSESSMENT_TEMPLATE_NAME_PATTERN" => InvalidInputErrorCode::InvalidAssessmentTemplateNamePattern,
+"INVALID_ATTRIBUTE" => InvalidInputErrorCode::InvalidAttribute,
+"INVALID_AUTO_SCALING_GROUP" => InvalidInputErrorCode::InvalidAutoScalingGroup,
+"INVALID_EVENT" => InvalidInputErrorCode::InvalidEvent,
+"INVALID_FINDING_ARN" => InvalidInputErrorCode::InvalidFindingArn,
+"INVALID_IAM_ROLE_ARN" => InvalidInputErrorCode::InvalidIamRoleArn,
+"INVALID_LOCALE" => InvalidInputErrorCode::InvalidLocale,
+"INVALID_MAX_RESULTS" => InvalidInputErrorCode::InvalidMaxResults,
+"INVALID_NUMBER_OF_AGENT_IDS" => InvalidInputErrorCode::InvalidNumberOfAgentIds,
+"INVALID_NUMBER_OF_ASSESSMENT_RUN_ARNS" => InvalidInputErrorCode::InvalidNumberOfAssessmentRunArns,
+"INVALID_NUMBER_OF_ASSESSMENT_RUN_STATES" => InvalidInputErrorCode::InvalidNumberOfAssessmentRunStates,
+"INVALID_NUMBER_OF_ASSESSMENT_TARGET_ARNS" => InvalidInputErrorCode::InvalidNumberOfAssessmentTargetArns,
+"INVALID_NUMBER_OF_ASSESSMENT_TEMPLATE_ARNS" => InvalidInputErrorCode::InvalidNumberOfAssessmentTemplateArns,
+"INVALID_NUMBER_OF_ATTRIBUTES" => InvalidInputErrorCode::InvalidNumberOfAttributes,
+"INVALID_NUMBER_OF_AUTO_SCALING_GROUPS" => InvalidInputErrorCode::InvalidNumberOfAutoScalingGroups,
+"INVALID_NUMBER_OF_FINDING_ARNS" => InvalidInputErrorCode::InvalidNumberOfFindingArns,
+"INVALID_NUMBER_OF_RESOURCE_GROUP_ARNS" => InvalidInputErrorCode::InvalidNumberOfResourceGroupArns,
+"INVALID_NUMBER_OF_RESOURCE_GROUP_TAGS" => InvalidInputErrorCode::InvalidNumberOfResourceGroupTags,
+"INVALID_NUMBER_OF_RULES_PACKAGE_ARNS" => InvalidInputErrorCode::InvalidNumberOfRulesPackageArns,
+"INVALID_NUMBER_OF_RULE_NAMES" => InvalidInputErrorCode::InvalidNumberOfRuleNames,
+"INVALID_NUMBER_OF_SEVERITIES" => InvalidInputErrorCode::InvalidNumberOfSeverities,
+"INVALID_NUMBER_OF_TAGS" => InvalidInputErrorCode::InvalidNumberOfTags,
+"INVALID_NUMBER_OF_USER_ATTRIBUTES" => InvalidInputErrorCode::InvalidNumberOfUserAttributes,
+"INVALID_PAGINATION_TOKEN" => InvalidInputErrorCode::InvalidPaginationToken,
+"INVALID_RESOURCE_ARN" => InvalidInputErrorCode::InvalidResourceArn,
+"INVALID_RESOURCE_GROUP_ARN" => InvalidInputErrorCode::InvalidResourceGroupArn,
+"INVALID_RESOURCE_GROUP_TAG_KEY" => InvalidInputErrorCode::InvalidResourceGroupTagKey,
+"INVALID_RESOURCE_GROUP_TAG_VALUE" => InvalidInputErrorCode::InvalidResourceGroupTagValue,
+"INVALID_RULES_PACKAGE_ARN" => InvalidInputErrorCode::InvalidRulesPackageArn,
+"INVALID_RULE_NAME" => InvalidInputErrorCode::InvalidRuleName,
+"INVALID_SEVERITY" => InvalidInputErrorCode::InvalidSeverity,
+"INVALID_SNS_TOPIC_ARN" => InvalidInputErrorCode::InvalidSnsTopicArn,
+"INVALID_TAG" => InvalidInputErrorCode::InvalidTag,
+"INVALID_TAG_KEY" => InvalidInputErrorCode::InvalidTagKey,
+"INVALID_TAG_VALUE" => InvalidInputErrorCode::InvalidTagValue,
+"INVALID_USER_ATTRIBUTE" => InvalidInputErrorCode::InvalidUserAttribute,
+"INVALID_USER_ATTRIBUTE_KEY" => InvalidInputErrorCode::InvalidUserAttributeKey,
+"INVALID_USER_ATTRIBUTE_VALUE" => InvalidInputErrorCode::InvalidUserAttributeValue,
+other => InvalidInputErrorCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for InvalidInputErrorCode {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(InvalidInputErrorCode::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(InvalidInputErrorCode::from(s))
+                    }
+                }
 impl InvalidInputErrorCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            InvalidInputErrorCode::AssessmentTargetNameAlreadyTaken => "ASSESSMENT_TARGET_NAME_ALREADY_TAKEN",
-            InvalidInputErrorCode::AssessmentTemplateNameAlreadyTaken => "ASSESSMENT_TEMPLATE_NAME_ALREADY_TAKEN",
-            InvalidInputErrorCode::InvalidAgentId => "INVALID_AGENT_ID",
-            InvalidInputErrorCode::InvalidAssessmentRunArn => "INVALID_ASSESSMENT_RUN_ARN",
-            InvalidInputErrorCode::InvalidAssessmentRunCompletionTimeRange => "INVALID_ASSESSMENT_RUN_COMPLETION_TIME_RANGE",
-            InvalidInputErrorCode::InvalidAssessmentRunDurationRange => "INVALID_ASSESSMENT_RUN_DURATION_RANGE",
-            InvalidInputErrorCode::InvalidAssessmentRunStartTimeRange => "INVALID_ASSESSMENT_RUN_START_TIME_RANGE",
-            InvalidInputErrorCode::InvalidAssessmentRunState => "INVALID_ASSESSMENT_RUN_STATE",
-            InvalidInputErrorCode::InvalidAssessmentRunStateChangeTimeRange => "INVALID_ASSESSMENT_RUN_STATE_CHANGE_TIME_RANGE",
-            InvalidInputErrorCode::InvalidAssessmentTargetArn => "INVALID_ASSESSMENT_TARGET_ARN",
-            InvalidInputErrorCode::InvalidAssessmentTargetName => "INVALID_ASSESSMENT_TARGET_NAME",
-            InvalidInputErrorCode::InvalidAssessmentTargetNamePattern => "INVALID_ASSESSMENT_TARGET_NAME_PATTERN",
-            InvalidInputErrorCode::InvalidAssessmentTemplateArn => "INVALID_ASSESSMENT_TEMPLATE_ARN",
-            InvalidInputErrorCode::InvalidAssessmentTemplateDuration => "INVALID_ASSESSMENT_TEMPLATE_DURATION",
-            InvalidInputErrorCode::InvalidAssessmentTemplateDurationRange => "INVALID_ASSESSMENT_TEMPLATE_DURATION_RANGE",
-            InvalidInputErrorCode::InvalidAssessmentTemplateName => "INVALID_ASSESSMENT_TEMPLATE_NAME",
-            InvalidInputErrorCode::InvalidAssessmentTemplateNamePattern => "INVALID_ASSESSMENT_TEMPLATE_NAME_PATTERN",
-            InvalidInputErrorCode::InvalidAttribute => "INVALID_ATTRIBUTE",
-            InvalidInputErrorCode::InvalidAutoScalingGroup => "INVALID_AUTO_SCALING_GROUP",
-            InvalidInputErrorCode::InvalidEvent => "INVALID_EVENT",
-            InvalidInputErrorCode::InvalidFindingArn => "INVALID_FINDING_ARN",
-            InvalidInputErrorCode::InvalidIamRoleArn => "INVALID_IAM_ROLE_ARN",
-            InvalidInputErrorCode::InvalidLocale => "INVALID_LOCALE",
-            InvalidInputErrorCode::InvalidMaxResults => "INVALID_MAX_RESULTS",
-            InvalidInputErrorCode::InvalidNumberOfAgentIds => "INVALID_NUMBER_OF_AGENT_IDS",
-            InvalidInputErrorCode::InvalidNumberOfAssessmentRunArns => "INVALID_NUMBER_OF_ASSESSMENT_RUN_ARNS",
-            InvalidInputErrorCode::InvalidNumberOfAssessmentRunStates => "INVALID_NUMBER_OF_ASSESSMENT_RUN_STATES",
-            InvalidInputErrorCode::InvalidNumberOfAssessmentTargetArns => "INVALID_NUMBER_OF_ASSESSMENT_TARGET_ARNS",
-            InvalidInputErrorCode::InvalidNumberOfAssessmentTemplateArns => "INVALID_NUMBER_OF_ASSESSMENT_TEMPLATE_ARNS",
-            InvalidInputErrorCode::InvalidNumberOfAttributes => "INVALID_NUMBER_OF_ATTRIBUTES",
-            InvalidInputErrorCode::InvalidNumberOfAutoScalingGroups => "INVALID_NUMBER_OF_AUTO_SCALING_GROUPS",
-            InvalidInputErrorCode::InvalidNumberOfFindingArns => "INVALID_NUMBER_OF_FINDING_ARNS",
-            InvalidInputErrorCode::InvalidNumberOfResourceGroupArns => "INVALID_NUMBER_OF_RESOURCE_GROUP_ARNS",
-            InvalidInputErrorCode::InvalidNumberOfResourceGroupTags => "INVALID_NUMBER_OF_RESOURCE_GROUP_TAGS",
-            InvalidInputErrorCode::InvalidNumberOfRulesPackageArns => "INVALID_NUMBER_OF_RULES_PACKAGE_ARNS",
-            InvalidInputErrorCode::InvalidNumberOfRuleNames => "INVALID_NUMBER_OF_RULE_NAMES",
-            InvalidInputErrorCode::InvalidNumberOfSeverities => "INVALID_NUMBER_OF_SEVERITIES",
-            InvalidInputErrorCode::InvalidNumberOfTags => "INVALID_NUMBER_OF_TAGS",
-            InvalidInputErrorCode::InvalidNumberOfUserAttributes => "INVALID_NUMBER_OF_USER_ATTRIBUTES",
-            InvalidInputErrorCode::InvalidPaginationToken => "INVALID_PAGINATION_TOKEN",
-            InvalidInputErrorCode::InvalidResourceArn => "INVALID_RESOURCE_ARN",
-            InvalidInputErrorCode::InvalidResourceGroupArn => "INVALID_RESOURCE_GROUP_ARN",
-            InvalidInputErrorCode::InvalidResourceGroupTagKey => "INVALID_RESOURCE_GROUP_TAG_KEY",
-            InvalidInputErrorCode::InvalidResourceGroupTagValue => "INVALID_RESOURCE_GROUP_TAG_VALUE",
-            InvalidInputErrorCode::InvalidRulesPackageArn => "INVALID_RULES_PACKAGE_ARN",
-            InvalidInputErrorCode::InvalidRuleName => "INVALID_RULE_NAME",
-            InvalidInputErrorCode::InvalidSeverity => "INVALID_SEVERITY",
-            InvalidInputErrorCode::InvalidSnsTopicArn => "INVALID_SNS_TOPIC_ARN",
-            InvalidInputErrorCode::InvalidTag => "INVALID_TAG",
-            InvalidInputErrorCode::InvalidTagKey => "INVALID_TAG_KEY",
-            InvalidInputErrorCode::InvalidTagValue => "INVALID_TAG_VALUE",
-            InvalidInputErrorCode::InvalidUserAttribute => "INVALID_USER_ATTRIBUTE",
-            InvalidInputErrorCode::InvalidUserAttributeKey => "INVALID_USER_ATTRIBUTE_KEY",
-            InvalidInputErrorCode::InvalidUserAttributeValue => "INVALID_USER_ATTRIBUTE_VALUE",
-            InvalidInputErrorCode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ASSESSMENT_TARGET_NAME_ALREADY_TAKEN",
-            "ASSESSMENT_TEMPLATE_NAME_ALREADY_TAKEN",
-            "INVALID_AGENT_ID",
-            "INVALID_ASSESSMENT_RUN_ARN",
-            "INVALID_ASSESSMENT_RUN_COMPLETION_TIME_RANGE",
-            "INVALID_ASSESSMENT_RUN_DURATION_RANGE",
-            "INVALID_ASSESSMENT_RUN_START_TIME_RANGE",
-            "INVALID_ASSESSMENT_RUN_STATE",
-            "INVALID_ASSESSMENT_RUN_STATE_CHANGE_TIME_RANGE",
-            "INVALID_ASSESSMENT_TARGET_ARN",
-            "INVALID_ASSESSMENT_TARGET_NAME",
-            "INVALID_ASSESSMENT_TARGET_NAME_PATTERN",
-            "INVALID_ASSESSMENT_TEMPLATE_ARN",
-            "INVALID_ASSESSMENT_TEMPLATE_DURATION",
-            "INVALID_ASSESSMENT_TEMPLATE_DURATION_RANGE",
-            "INVALID_ASSESSMENT_TEMPLATE_NAME",
-            "INVALID_ASSESSMENT_TEMPLATE_NAME_PATTERN",
-            "INVALID_ATTRIBUTE",
-            "INVALID_AUTO_SCALING_GROUP",
-            "INVALID_EVENT",
-            "INVALID_FINDING_ARN",
-            "INVALID_IAM_ROLE_ARN",
-            "INVALID_LOCALE",
-            "INVALID_MAX_RESULTS",
-            "INVALID_NUMBER_OF_AGENT_IDS",
-            "INVALID_NUMBER_OF_ASSESSMENT_RUN_ARNS",
-            "INVALID_NUMBER_OF_ASSESSMENT_RUN_STATES",
-            "INVALID_NUMBER_OF_ASSESSMENT_TARGET_ARNS",
-            "INVALID_NUMBER_OF_ASSESSMENT_TEMPLATE_ARNS",
-            "INVALID_NUMBER_OF_ATTRIBUTES",
-            "INVALID_NUMBER_OF_AUTO_SCALING_GROUPS",
-            "INVALID_NUMBER_OF_FINDING_ARNS",
-            "INVALID_NUMBER_OF_RESOURCE_GROUP_ARNS",
-            "INVALID_NUMBER_OF_RESOURCE_GROUP_TAGS",
-            "INVALID_NUMBER_OF_RULES_PACKAGE_ARNS",
-            "INVALID_NUMBER_OF_RULE_NAMES",
-            "INVALID_NUMBER_OF_SEVERITIES",
-            "INVALID_NUMBER_OF_TAGS",
-            "INVALID_NUMBER_OF_USER_ATTRIBUTES",
-            "INVALID_PAGINATION_TOKEN",
-            "INVALID_RESOURCE_ARN",
-            "INVALID_RESOURCE_GROUP_ARN",
-            "INVALID_RESOURCE_GROUP_TAG_KEY",
-            "INVALID_RESOURCE_GROUP_TAG_VALUE",
-            "INVALID_RULES_PACKAGE_ARN",
-            "INVALID_RULE_NAME",
-            "INVALID_SEVERITY",
-            "INVALID_SNS_TOPIC_ARN",
-            "INVALID_TAG",
-            "INVALID_TAG_KEY",
-            "INVALID_TAG_VALUE",
-            "INVALID_USER_ATTRIBUTE",
-            "INVALID_USER_ATTRIBUTE_KEY",
-            "INVALID_USER_ATTRIBUTE_VALUE",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    InvalidInputErrorCode::AssessmentTargetNameAlreadyTaken => "ASSESSMENT_TARGET_NAME_ALREADY_TAKEN",
+    InvalidInputErrorCode::AssessmentTemplateNameAlreadyTaken => "ASSESSMENT_TEMPLATE_NAME_ALREADY_TAKEN",
+    InvalidInputErrorCode::InvalidAgentId => "INVALID_AGENT_ID",
+    InvalidInputErrorCode::InvalidAssessmentRunArn => "INVALID_ASSESSMENT_RUN_ARN",
+    InvalidInputErrorCode::InvalidAssessmentRunCompletionTimeRange => "INVALID_ASSESSMENT_RUN_COMPLETION_TIME_RANGE",
+    InvalidInputErrorCode::InvalidAssessmentRunDurationRange => "INVALID_ASSESSMENT_RUN_DURATION_RANGE",
+    InvalidInputErrorCode::InvalidAssessmentRunStartTimeRange => "INVALID_ASSESSMENT_RUN_START_TIME_RANGE",
+    InvalidInputErrorCode::InvalidAssessmentRunState => "INVALID_ASSESSMENT_RUN_STATE",
+    InvalidInputErrorCode::InvalidAssessmentRunStateChangeTimeRange => "INVALID_ASSESSMENT_RUN_STATE_CHANGE_TIME_RANGE",
+    InvalidInputErrorCode::InvalidAssessmentTargetArn => "INVALID_ASSESSMENT_TARGET_ARN",
+    InvalidInputErrorCode::InvalidAssessmentTargetName => "INVALID_ASSESSMENT_TARGET_NAME",
+    InvalidInputErrorCode::InvalidAssessmentTargetNamePattern => "INVALID_ASSESSMENT_TARGET_NAME_PATTERN",
+    InvalidInputErrorCode::InvalidAssessmentTemplateArn => "INVALID_ASSESSMENT_TEMPLATE_ARN",
+    InvalidInputErrorCode::InvalidAssessmentTemplateDuration => "INVALID_ASSESSMENT_TEMPLATE_DURATION",
+    InvalidInputErrorCode::InvalidAssessmentTemplateDurationRange => "INVALID_ASSESSMENT_TEMPLATE_DURATION_RANGE",
+    InvalidInputErrorCode::InvalidAssessmentTemplateName => "INVALID_ASSESSMENT_TEMPLATE_NAME",
+    InvalidInputErrorCode::InvalidAssessmentTemplateNamePattern => "INVALID_ASSESSMENT_TEMPLATE_NAME_PATTERN",
+    InvalidInputErrorCode::InvalidAttribute => "INVALID_ATTRIBUTE",
+    InvalidInputErrorCode::InvalidAutoScalingGroup => "INVALID_AUTO_SCALING_GROUP",
+    InvalidInputErrorCode::InvalidEvent => "INVALID_EVENT",
+    InvalidInputErrorCode::InvalidFindingArn => "INVALID_FINDING_ARN",
+    InvalidInputErrorCode::InvalidIamRoleArn => "INVALID_IAM_ROLE_ARN",
+    InvalidInputErrorCode::InvalidLocale => "INVALID_LOCALE",
+    InvalidInputErrorCode::InvalidMaxResults => "INVALID_MAX_RESULTS",
+    InvalidInputErrorCode::InvalidNumberOfAgentIds => "INVALID_NUMBER_OF_AGENT_IDS",
+    InvalidInputErrorCode::InvalidNumberOfAssessmentRunArns => "INVALID_NUMBER_OF_ASSESSMENT_RUN_ARNS",
+    InvalidInputErrorCode::InvalidNumberOfAssessmentRunStates => "INVALID_NUMBER_OF_ASSESSMENT_RUN_STATES",
+    InvalidInputErrorCode::InvalidNumberOfAssessmentTargetArns => "INVALID_NUMBER_OF_ASSESSMENT_TARGET_ARNS",
+    InvalidInputErrorCode::InvalidNumberOfAssessmentTemplateArns => "INVALID_NUMBER_OF_ASSESSMENT_TEMPLATE_ARNS",
+    InvalidInputErrorCode::InvalidNumberOfAttributes => "INVALID_NUMBER_OF_ATTRIBUTES",
+    InvalidInputErrorCode::InvalidNumberOfAutoScalingGroups => "INVALID_NUMBER_OF_AUTO_SCALING_GROUPS",
+    InvalidInputErrorCode::InvalidNumberOfFindingArns => "INVALID_NUMBER_OF_FINDING_ARNS",
+    InvalidInputErrorCode::InvalidNumberOfResourceGroupArns => "INVALID_NUMBER_OF_RESOURCE_GROUP_ARNS",
+    InvalidInputErrorCode::InvalidNumberOfResourceGroupTags => "INVALID_NUMBER_OF_RESOURCE_GROUP_TAGS",
+    InvalidInputErrorCode::InvalidNumberOfRulesPackageArns => "INVALID_NUMBER_OF_RULES_PACKAGE_ARNS",
+    InvalidInputErrorCode::InvalidNumberOfRuleNames => "INVALID_NUMBER_OF_RULE_NAMES",
+    InvalidInputErrorCode::InvalidNumberOfSeverities => "INVALID_NUMBER_OF_SEVERITIES",
+    InvalidInputErrorCode::InvalidNumberOfTags => "INVALID_NUMBER_OF_TAGS",
+    InvalidInputErrorCode::InvalidNumberOfUserAttributes => "INVALID_NUMBER_OF_USER_ATTRIBUTES",
+    InvalidInputErrorCode::InvalidPaginationToken => "INVALID_PAGINATION_TOKEN",
+    InvalidInputErrorCode::InvalidResourceArn => "INVALID_RESOURCE_ARN",
+    InvalidInputErrorCode::InvalidResourceGroupArn => "INVALID_RESOURCE_GROUP_ARN",
+    InvalidInputErrorCode::InvalidResourceGroupTagKey => "INVALID_RESOURCE_GROUP_TAG_KEY",
+    InvalidInputErrorCode::InvalidResourceGroupTagValue => "INVALID_RESOURCE_GROUP_TAG_VALUE",
+    InvalidInputErrorCode::InvalidRulesPackageArn => "INVALID_RULES_PACKAGE_ARN",
+    InvalidInputErrorCode::InvalidRuleName => "INVALID_RULE_NAME",
+    InvalidInputErrorCode::InvalidSeverity => "INVALID_SEVERITY",
+    InvalidInputErrorCode::InvalidSnsTopicArn => "INVALID_SNS_TOPIC_ARN",
+    InvalidInputErrorCode::InvalidTag => "INVALID_TAG",
+    InvalidInputErrorCode::InvalidTagKey => "INVALID_TAG_KEY",
+    InvalidInputErrorCode::InvalidTagValue => "INVALID_TAG_VALUE",
+    InvalidInputErrorCode::InvalidUserAttribute => "INVALID_USER_ATTRIBUTE",
+    InvalidInputErrorCode::InvalidUserAttributeKey => "INVALID_USER_ATTRIBUTE_KEY",
+    InvalidInputErrorCode::InvalidUserAttributeValue => "INVALID_USER_ATTRIBUTE_VALUE",
+    InvalidInputErrorCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ASSESSMENT_TARGET_NAME_ALREADY_TAKEN", "ASSESSMENT_TEMPLATE_NAME_ALREADY_TAKEN", "INVALID_AGENT_ID", "INVALID_ASSESSMENT_RUN_ARN", "INVALID_ASSESSMENT_RUN_COMPLETION_TIME_RANGE", "INVALID_ASSESSMENT_RUN_DURATION_RANGE", "INVALID_ASSESSMENT_RUN_START_TIME_RANGE", "INVALID_ASSESSMENT_RUN_STATE", "INVALID_ASSESSMENT_RUN_STATE_CHANGE_TIME_RANGE", "INVALID_ASSESSMENT_TARGET_ARN", "INVALID_ASSESSMENT_TARGET_NAME", "INVALID_ASSESSMENT_TARGET_NAME_PATTERN", "INVALID_ASSESSMENT_TEMPLATE_ARN", "INVALID_ASSESSMENT_TEMPLATE_DURATION", "INVALID_ASSESSMENT_TEMPLATE_DURATION_RANGE", "INVALID_ASSESSMENT_TEMPLATE_NAME", "INVALID_ASSESSMENT_TEMPLATE_NAME_PATTERN", "INVALID_ATTRIBUTE", "INVALID_AUTO_SCALING_GROUP", "INVALID_EVENT", "INVALID_FINDING_ARN", "INVALID_IAM_ROLE_ARN", "INVALID_LOCALE", "INVALID_MAX_RESULTS", "INVALID_NUMBER_OF_AGENT_IDS", "INVALID_NUMBER_OF_ASSESSMENT_RUN_ARNS", "INVALID_NUMBER_OF_ASSESSMENT_RUN_STATES", "INVALID_NUMBER_OF_ASSESSMENT_TARGET_ARNS", "INVALID_NUMBER_OF_ASSESSMENT_TEMPLATE_ARNS", "INVALID_NUMBER_OF_ATTRIBUTES", "INVALID_NUMBER_OF_AUTO_SCALING_GROUPS", "INVALID_NUMBER_OF_FINDING_ARNS", "INVALID_NUMBER_OF_RESOURCE_GROUP_ARNS", "INVALID_NUMBER_OF_RESOURCE_GROUP_TAGS", "INVALID_NUMBER_OF_RULES_PACKAGE_ARNS", "INVALID_NUMBER_OF_RULE_NAMES", "INVALID_NUMBER_OF_SEVERITIES", "INVALID_NUMBER_OF_TAGS", "INVALID_NUMBER_OF_USER_ATTRIBUTES", "INVALID_PAGINATION_TOKEN", "INVALID_RESOURCE_ARN", "INVALID_RESOURCE_GROUP_ARN", "INVALID_RESOURCE_GROUP_TAG_KEY", "INVALID_RESOURCE_GROUP_TAG_VALUE", "INVALID_RULES_PACKAGE_ARN", "INVALID_RULE_NAME", "INVALID_SEVERITY", "INVALID_SNS_TOPIC_ARN", "INVALID_TAG", "INVALID_TAG_KEY", "INVALID_TAG_VALUE", "INVALID_USER_ATTRIBUTE", "INVALID_USER_ATTRIBUTE_KEY", "INVALID_USER_ATTRIBUTE_VALUE"]
+                }
+            }
 impl ::std::convert::AsRef<str> for InvalidInputErrorCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl InvalidInputErrorCode {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for InvalidInputErrorCode {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            InvalidInputErrorCode::AssessmentTargetNameAlreadyTaken => write!(f, "ASSESSMENT_TARGET_NAME_ALREADY_TAKEN"),
-            InvalidInputErrorCode::AssessmentTemplateNameAlreadyTaken => write!(f, "ASSESSMENT_TEMPLATE_NAME_ALREADY_TAKEN"),
-            InvalidInputErrorCode::InvalidAgentId => write!(f, "INVALID_AGENT_ID"),
-            InvalidInputErrorCode::InvalidAssessmentRunArn => write!(f, "INVALID_ASSESSMENT_RUN_ARN"),
-            InvalidInputErrorCode::InvalidAssessmentRunCompletionTimeRange => write!(f, "INVALID_ASSESSMENT_RUN_COMPLETION_TIME_RANGE"),
-            InvalidInputErrorCode::InvalidAssessmentRunDurationRange => write!(f, "INVALID_ASSESSMENT_RUN_DURATION_RANGE"),
-            InvalidInputErrorCode::InvalidAssessmentRunStartTimeRange => write!(f, "INVALID_ASSESSMENT_RUN_START_TIME_RANGE"),
-            InvalidInputErrorCode::InvalidAssessmentRunState => write!(f, "INVALID_ASSESSMENT_RUN_STATE"),
-            InvalidInputErrorCode::InvalidAssessmentRunStateChangeTimeRange => write!(f, "INVALID_ASSESSMENT_RUN_STATE_CHANGE_TIME_RANGE"),
-            InvalidInputErrorCode::InvalidAssessmentTargetArn => write!(f, "INVALID_ASSESSMENT_TARGET_ARN"),
-            InvalidInputErrorCode::InvalidAssessmentTargetName => write!(f, "INVALID_ASSESSMENT_TARGET_NAME"),
-            InvalidInputErrorCode::InvalidAssessmentTargetNamePattern => write!(f, "INVALID_ASSESSMENT_TARGET_NAME_PATTERN"),
-            InvalidInputErrorCode::InvalidAssessmentTemplateArn => write!(f, "INVALID_ASSESSMENT_TEMPLATE_ARN"),
-            InvalidInputErrorCode::InvalidAssessmentTemplateDuration => write!(f, "INVALID_ASSESSMENT_TEMPLATE_DURATION"),
-            InvalidInputErrorCode::InvalidAssessmentTemplateDurationRange => write!(f, "INVALID_ASSESSMENT_TEMPLATE_DURATION_RANGE"),
-            InvalidInputErrorCode::InvalidAssessmentTemplateName => write!(f, "INVALID_ASSESSMENT_TEMPLATE_NAME"),
-            InvalidInputErrorCode::InvalidAssessmentTemplateNamePattern => write!(f, "INVALID_ASSESSMENT_TEMPLATE_NAME_PATTERN"),
-            InvalidInputErrorCode::InvalidAttribute => write!(f, "INVALID_ATTRIBUTE"),
-            InvalidInputErrorCode::InvalidAutoScalingGroup => write!(f, "INVALID_AUTO_SCALING_GROUP"),
-            InvalidInputErrorCode::InvalidEvent => write!(f, "INVALID_EVENT"),
-            InvalidInputErrorCode::InvalidFindingArn => write!(f, "INVALID_FINDING_ARN"),
-            InvalidInputErrorCode::InvalidIamRoleArn => write!(f, "INVALID_IAM_ROLE_ARN"),
-            InvalidInputErrorCode::InvalidLocale => write!(f, "INVALID_LOCALE"),
-            InvalidInputErrorCode::InvalidMaxResults => write!(f, "INVALID_MAX_RESULTS"),
-            InvalidInputErrorCode::InvalidNumberOfAgentIds => write!(f, "INVALID_NUMBER_OF_AGENT_IDS"),
-            InvalidInputErrorCode::InvalidNumberOfAssessmentRunArns => write!(f, "INVALID_NUMBER_OF_ASSESSMENT_RUN_ARNS"),
-            InvalidInputErrorCode::InvalidNumberOfAssessmentRunStates => write!(f, "INVALID_NUMBER_OF_ASSESSMENT_RUN_STATES"),
-            InvalidInputErrorCode::InvalidNumberOfAssessmentTargetArns => write!(f, "INVALID_NUMBER_OF_ASSESSMENT_TARGET_ARNS"),
-            InvalidInputErrorCode::InvalidNumberOfAssessmentTemplateArns => write!(f, "INVALID_NUMBER_OF_ASSESSMENT_TEMPLATE_ARNS"),
-            InvalidInputErrorCode::InvalidNumberOfAttributes => write!(f, "INVALID_NUMBER_OF_ATTRIBUTES"),
-            InvalidInputErrorCode::InvalidNumberOfAutoScalingGroups => write!(f, "INVALID_NUMBER_OF_AUTO_SCALING_GROUPS"),
-            InvalidInputErrorCode::InvalidNumberOfFindingArns => write!(f, "INVALID_NUMBER_OF_FINDING_ARNS"),
-            InvalidInputErrorCode::InvalidNumberOfResourceGroupArns => write!(f, "INVALID_NUMBER_OF_RESOURCE_GROUP_ARNS"),
-            InvalidInputErrorCode::InvalidNumberOfResourceGroupTags => write!(f, "INVALID_NUMBER_OF_RESOURCE_GROUP_TAGS"),
-            InvalidInputErrorCode::InvalidNumberOfRulesPackageArns => write!(f, "INVALID_NUMBER_OF_RULES_PACKAGE_ARNS"),
-            InvalidInputErrorCode::InvalidNumberOfRuleNames => write!(f, "INVALID_NUMBER_OF_RULE_NAMES"),
-            InvalidInputErrorCode::InvalidNumberOfSeverities => write!(f, "INVALID_NUMBER_OF_SEVERITIES"),
-            InvalidInputErrorCode::InvalidNumberOfTags => write!(f, "INVALID_NUMBER_OF_TAGS"),
-            InvalidInputErrorCode::InvalidNumberOfUserAttributes => write!(f, "INVALID_NUMBER_OF_USER_ATTRIBUTES"),
-            InvalidInputErrorCode::InvalidPaginationToken => write!(f, "INVALID_PAGINATION_TOKEN"),
-            InvalidInputErrorCode::InvalidResourceArn => write!(f, "INVALID_RESOURCE_ARN"),
-            InvalidInputErrorCode::InvalidResourceGroupArn => write!(f, "INVALID_RESOURCE_GROUP_ARN"),
-            InvalidInputErrorCode::InvalidResourceGroupTagKey => write!(f, "INVALID_RESOURCE_GROUP_TAG_KEY"),
-            InvalidInputErrorCode::InvalidResourceGroupTagValue => write!(f, "INVALID_RESOURCE_GROUP_TAG_VALUE"),
-            InvalidInputErrorCode::InvalidRulesPackageArn => write!(f, "INVALID_RULES_PACKAGE_ARN"),
-            InvalidInputErrorCode::InvalidRuleName => write!(f, "INVALID_RULE_NAME"),
-            InvalidInputErrorCode::InvalidSeverity => write!(f, "INVALID_SEVERITY"),
-            InvalidInputErrorCode::InvalidSnsTopicArn => write!(f, "INVALID_SNS_TOPIC_ARN"),
-            InvalidInputErrorCode::InvalidTag => write!(f, "INVALID_TAG"),
-            InvalidInputErrorCode::InvalidTagKey => write!(f, "INVALID_TAG_KEY"),
-            InvalidInputErrorCode::InvalidTagValue => write!(f, "INVALID_TAG_VALUE"),
-            InvalidInputErrorCode::InvalidUserAttribute => write!(f, "INVALID_USER_ATTRIBUTE"),
-            InvalidInputErrorCode::InvalidUserAttributeKey => write!(f, "INVALID_USER_ATTRIBUTE_KEY"),
-            InvalidInputErrorCode::InvalidUserAttributeValue => write!(f, "INVALID_USER_ATTRIBUTE_VALUE"),
-            InvalidInputErrorCode::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                InvalidInputErrorCode::AssessmentTargetNameAlreadyTaken => write!(f, "ASSESSMENT_TARGET_NAME_ALREADY_TAKEN"),
+InvalidInputErrorCode::AssessmentTemplateNameAlreadyTaken => write!(f, "ASSESSMENT_TEMPLATE_NAME_ALREADY_TAKEN"),
+InvalidInputErrorCode::InvalidAgentId => write!(f, "INVALID_AGENT_ID"),
+InvalidInputErrorCode::InvalidAssessmentRunArn => write!(f, "INVALID_ASSESSMENT_RUN_ARN"),
+InvalidInputErrorCode::InvalidAssessmentRunCompletionTimeRange => write!(f, "INVALID_ASSESSMENT_RUN_COMPLETION_TIME_RANGE"),
+InvalidInputErrorCode::InvalidAssessmentRunDurationRange => write!(f, "INVALID_ASSESSMENT_RUN_DURATION_RANGE"),
+InvalidInputErrorCode::InvalidAssessmentRunStartTimeRange => write!(f, "INVALID_ASSESSMENT_RUN_START_TIME_RANGE"),
+InvalidInputErrorCode::InvalidAssessmentRunState => write!(f, "INVALID_ASSESSMENT_RUN_STATE"),
+InvalidInputErrorCode::InvalidAssessmentRunStateChangeTimeRange => write!(f, "INVALID_ASSESSMENT_RUN_STATE_CHANGE_TIME_RANGE"),
+InvalidInputErrorCode::InvalidAssessmentTargetArn => write!(f, "INVALID_ASSESSMENT_TARGET_ARN"),
+InvalidInputErrorCode::InvalidAssessmentTargetName => write!(f, "INVALID_ASSESSMENT_TARGET_NAME"),
+InvalidInputErrorCode::InvalidAssessmentTargetNamePattern => write!(f, "INVALID_ASSESSMENT_TARGET_NAME_PATTERN"),
+InvalidInputErrorCode::InvalidAssessmentTemplateArn => write!(f, "INVALID_ASSESSMENT_TEMPLATE_ARN"),
+InvalidInputErrorCode::InvalidAssessmentTemplateDuration => write!(f, "INVALID_ASSESSMENT_TEMPLATE_DURATION"),
+InvalidInputErrorCode::InvalidAssessmentTemplateDurationRange => write!(f, "INVALID_ASSESSMENT_TEMPLATE_DURATION_RANGE"),
+InvalidInputErrorCode::InvalidAssessmentTemplateName => write!(f, "INVALID_ASSESSMENT_TEMPLATE_NAME"),
+InvalidInputErrorCode::InvalidAssessmentTemplateNamePattern => write!(f, "INVALID_ASSESSMENT_TEMPLATE_NAME_PATTERN"),
+InvalidInputErrorCode::InvalidAttribute => write!(f, "INVALID_ATTRIBUTE"),
+InvalidInputErrorCode::InvalidAutoScalingGroup => write!(f, "INVALID_AUTO_SCALING_GROUP"),
+InvalidInputErrorCode::InvalidEvent => write!(f, "INVALID_EVENT"),
+InvalidInputErrorCode::InvalidFindingArn => write!(f, "INVALID_FINDING_ARN"),
+InvalidInputErrorCode::InvalidIamRoleArn => write!(f, "INVALID_IAM_ROLE_ARN"),
+InvalidInputErrorCode::InvalidLocale => write!(f, "INVALID_LOCALE"),
+InvalidInputErrorCode::InvalidMaxResults => write!(f, "INVALID_MAX_RESULTS"),
+InvalidInputErrorCode::InvalidNumberOfAgentIds => write!(f, "INVALID_NUMBER_OF_AGENT_IDS"),
+InvalidInputErrorCode::InvalidNumberOfAssessmentRunArns => write!(f, "INVALID_NUMBER_OF_ASSESSMENT_RUN_ARNS"),
+InvalidInputErrorCode::InvalidNumberOfAssessmentRunStates => write!(f, "INVALID_NUMBER_OF_ASSESSMENT_RUN_STATES"),
+InvalidInputErrorCode::InvalidNumberOfAssessmentTargetArns => write!(f, "INVALID_NUMBER_OF_ASSESSMENT_TARGET_ARNS"),
+InvalidInputErrorCode::InvalidNumberOfAssessmentTemplateArns => write!(f, "INVALID_NUMBER_OF_ASSESSMENT_TEMPLATE_ARNS"),
+InvalidInputErrorCode::InvalidNumberOfAttributes => write!(f, "INVALID_NUMBER_OF_ATTRIBUTES"),
+InvalidInputErrorCode::InvalidNumberOfAutoScalingGroups => write!(f, "INVALID_NUMBER_OF_AUTO_SCALING_GROUPS"),
+InvalidInputErrorCode::InvalidNumberOfFindingArns => write!(f, "INVALID_NUMBER_OF_FINDING_ARNS"),
+InvalidInputErrorCode::InvalidNumberOfResourceGroupArns => write!(f, "INVALID_NUMBER_OF_RESOURCE_GROUP_ARNS"),
+InvalidInputErrorCode::InvalidNumberOfResourceGroupTags => write!(f, "INVALID_NUMBER_OF_RESOURCE_GROUP_TAGS"),
+InvalidInputErrorCode::InvalidNumberOfRulesPackageArns => write!(f, "INVALID_NUMBER_OF_RULES_PACKAGE_ARNS"),
+InvalidInputErrorCode::InvalidNumberOfRuleNames => write!(f, "INVALID_NUMBER_OF_RULE_NAMES"),
+InvalidInputErrorCode::InvalidNumberOfSeverities => write!(f, "INVALID_NUMBER_OF_SEVERITIES"),
+InvalidInputErrorCode::InvalidNumberOfTags => write!(f, "INVALID_NUMBER_OF_TAGS"),
+InvalidInputErrorCode::InvalidNumberOfUserAttributes => write!(f, "INVALID_NUMBER_OF_USER_ATTRIBUTES"),
+InvalidInputErrorCode::InvalidPaginationToken => write!(f, "INVALID_PAGINATION_TOKEN"),
+InvalidInputErrorCode::InvalidResourceArn => write!(f, "INVALID_RESOURCE_ARN"),
+InvalidInputErrorCode::InvalidResourceGroupArn => write!(f, "INVALID_RESOURCE_GROUP_ARN"),
+InvalidInputErrorCode::InvalidResourceGroupTagKey => write!(f, "INVALID_RESOURCE_GROUP_TAG_KEY"),
+InvalidInputErrorCode::InvalidResourceGroupTagValue => write!(f, "INVALID_RESOURCE_GROUP_TAG_VALUE"),
+InvalidInputErrorCode::InvalidRulesPackageArn => write!(f, "INVALID_RULES_PACKAGE_ARN"),
+InvalidInputErrorCode::InvalidRuleName => write!(f, "INVALID_RULE_NAME"),
+InvalidInputErrorCode::InvalidSeverity => write!(f, "INVALID_SEVERITY"),
+InvalidInputErrorCode::InvalidSnsTopicArn => write!(f, "INVALID_SNS_TOPIC_ARN"),
+InvalidInputErrorCode::InvalidTag => write!(f, "INVALID_TAG"),
+InvalidInputErrorCode::InvalidTagKey => write!(f, "INVALID_TAG_KEY"),
+InvalidInputErrorCode::InvalidTagValue => write!(f, "INVALID_TAG_VALUE"),
+InvalidInputErrorCode::InvalidUserAttribute => write!(f, "INVALID_USER_ATTRIBUTE"),
+InvalidInputErrorCode::InvalidUserAttributeKey => write!(f, "INVALID_USER_ATTRIBUTE_KEY"),
+InvalidInputErrorCode::InvalidUserAttributeValue => write!(f, "INVALID_USER_ATTRIBUTE_VALUE"),
+InvalidInputErrorCode::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

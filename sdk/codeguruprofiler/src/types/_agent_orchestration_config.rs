@@ -3,11 +3,11 @@
 /// <p>Specifies whether profiling is enabled or disabled for a profiling group. It is used by <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a> to enable or disable profiling for a profiling group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AgentOrchestrationConfig {
+pub struct AgentOrchestrationConfig  {
     /// <p>A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling.</p>
     pub profiling_enabled: bool,
 }
-impl AgentOrchestrationConfig {
+impl  AgentOrchestrationConfig  {
     /// <p>A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling.</p>
     pub fn profiling_enabled(&self) -> bool {
         self.profiling_enabled
@@ -35,8 +35,7 @@ impl AgentOrchestrationConfigBuilder {
     }
     /// <p>A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling.</p>
     pub fn set_profiling_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.profiling_enabled = input;
-        self
+        self.profiling_enabled = input; self
     }
     /// <p>A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling.</p>
     pub fn get_profiling_enabled(&self) -> &::std::option::Option<bool> {
@@ -46,13 +45,15 @@ impl AgentOrchestrationConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`profiling_enabled`](crate::types::builders::AgentOrchestrationConfigBuilder::profiling_enabled)
     pub fn build(self) -> ::std::result::Result<crate::types::AgentOrchestrationConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AgentOrchestrationConfig {
-            profiling_enabled: self.profiling_enabled.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "profiling_enabled",
-                    "profiling_enabled was not specified but it is required when building AgentOrchestrationConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AgentOrchestrationConfig {
+                profiling_enabled: self.profiling_enabled
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("profiling_enabled", "profiling_enabled was not specified but it is required when building AgentOrchestrationConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

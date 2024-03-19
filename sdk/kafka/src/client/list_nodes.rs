@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListNodes`](crate::operation::list_nodes::builders::ListNodesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_nodes::builders::ListNodesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`cluster_arn(impl Into<String>)`](crate::operation::list_nodes::builders::ListNodesFluentBuilder::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::operation::list_nodes::builders::ListNodesFluentBuilder::set_cluster_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_nodes::builders::ListNodesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_nodes::builders::ListNodesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_nodes::builders::ListNodesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_nodes::builders::ListNodesFluentBuilder::set_next_token):<br>required: **false**<br><p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p><br>
-    /// - On success, responds with [`ListNodesOutput`](crate::operation::list_nodes::ListNodesOutput) with field(s):
+                            /// - On success, responds with [`ListNodesOutput`](crate::operation::list_nodes::ListNodesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_nodes::ListNodesOutput::next_token): <p>The paginated results marker. When the result of a ListNodes operation is truncated, the call returns NextToken in the response. To get another batch of nodes, provide this token in your next request.</p>
     ///   - [`node_info_list(Option<Vec::<NodeInfo>>)`](crate::operation::list_nodes::ListNodesOutput::node_info_list): <p>List containing a NodeInfo object.</p>
-    /// - On failure, responds with [`SdkError<ListNodesError>`](crate::operation::list_nodes::ListNodesError)
+                            /// - On failure, responds with [`SdkError<ListNodesError>`](crate::operation::list_nodes::ListNodesError)
     pub fn list_nodes(&self) -> crate::operation::list_nodes::builders::ListNodesFluentBuilder {
-        crate::operation::list_nodes::builders::ListNodesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_nodes::builders::ListNodesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

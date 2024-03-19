@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MergeBranchesByFastForwardInput {
+pub struct MergeBranchesByFastForwardInput  {
     /// <p>The name of the repository where you want to merge two branches.</p>
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
@@ -12,21 +12,21 @@ pub struct MergeBranchesByFastForwardInput {
     /// <p>The branch where the merge is applied.</p>
     pub target_branch: ::std::option::Option<::std::string::String>,
 }
-impl MergeBranchesByFastForwardInput {
+impl  MergeBranchesByFastForwardInput  {
     /// <p>The name of the repository where you want to merge two branches.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
-    pub fn source_commit_specifier(&self) -> ::std::option::Option<&str> {
+    pub fn source_commit_specifier(&self) -> ::std::option::Option<& str> {
         self.source_commit_specifier.as_deref()
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
-    pub fn destination_commit_specifier(&self) -> ::std::option::Option<&str> {
+    pub fn destination_commit_specifier(&self) -> ::std::option::Option<& str> {
         self.destination_commit_specifier.as_deref()
     }
     /// <p>The branch where the merge is applied.</p>
-    pub fn target_branch(&self) -> ::std::option::Option<&str> {
+    pub fn target_branch(&self) -> ::std::option::Option<& str> {
         self.target_branch.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl MergeBranchesByFastForwardInputBuilder {
     }
     /// <p>The name of the repository where you want to merge two branches.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The name of the repository where you want to merge two branches.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl MergeBranchesByFastForwardInputBuilder {
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
     pub fn set_source_commit_specifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_commit_specifier = input;
-        self
+        self.source_commit_specifier = input; self
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
     pub fn get_source_commit_specifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl MergeBranchesByFastForwardInputBuilder {
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
     pub fn set_destination_commit_specifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_commit_specifier = input;
-        self
+        self.destination_commit_specifier = input; self
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
     pub fn get_destination_commit_specifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,25 +96,26 @@ impl MergeBranchesByFastForwardInputBuilder {
     }
     /// <p>The branch where the merge is applied.</p>
     pub fn set_target_branch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_branch = input;
-        self
+        self.target_branch = input; self
     }
     /// <p>The branch where the merge is applied.</p>
     pub fn get_target_branch(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_branch
     }
     /// Consumes the builder and constructs a [`MergeBranchesByFastForwardInput`](crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardInput {
-            repository_name: self.repository_name,
-            source_commit_specifier: self.source_commit_specifier,
-            destination_commit_specifier: self.destination_commit_specifier,
-            target_branch: self.target_branch,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardInput {
+                repository_name: self.repository_name
+                ,
+                source_commit_specifier: self.source_commit_specifier
+                ,
+                destination_commit_specifier: self.destination_commit_specifier
+                ,
+                target_branch: self.target_branch
+                ,
+            }
+        )
     }
 }
+

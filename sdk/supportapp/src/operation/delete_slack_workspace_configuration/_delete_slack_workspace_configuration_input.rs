@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSlackWorkspaceConfigurationInput {
+pub struct DeleteSlackWorkspaceConfigurationInput  {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     pub team_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteSlackWorkspaceConfigurationInput {
+impl  DeleteSlackWorkspaceConfigurationInput  {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
-    pub fn team_id(&self) -> ::std::option::Option<&str> {
+    pub fn team_id(&self) -> ::std::option::Option<& str> {
         self.team_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteSlackWorkspaceConfigurationInputBuilder {
     }
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     pub fn set_team_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.team_id = input;
-        self
+        self.team_id = input; self
     }
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     pub fn get_team_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.team_id
     }
     /// Consumes the builder and constructs a [`DeleteSlackWorkspaceConfigurationInput`](crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationInput { team_id: self.team_id },
+            crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationInput {
+                team_id: self.team_id
+                ,
+            }
         )
     }
 }
+

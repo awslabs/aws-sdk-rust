@@ -4,7 +4,7 @@
 /// <p>An alarm is a way to monitor your Amazon Lightsail resource metrics. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms in Amazon Lightsail</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MonitoredResourceInfo {
+pub struct MonitoredResourceInfo  {
     /// <p>The Amazon Resource Name (ARN) of the resource being monitored.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Lightsail resource being monitored.</p>
@@ -13,18 +13,18 @@ pub struct MonitoredResourceInfo {
     /// <p>Instances, load balancers, and relational databases are the only Lightsail resources that can currently be monitored by alarms.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
 }
-impl MonitoredResourceInfo {
+impl  MonitoredResourceInfo  {
     /// <p>The Amazon Resource Name (ARN) of the resource being monitored.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the Lightsail resource being monitored.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Lightsail resource type of the resource being monitored.</p>
     /// <p>Instances, load balancers, and relational databases are the only Lightsail resources that can currently be monitored by alarms.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl MonitoredResourceInfoBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource being monitored.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource being monitored.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +64,7 @@ impl MonitoredResourceInfoBuilder {
     }
     /// <p>The name of the Lightsail resource being monitored.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Lightsail resource being monitored.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +79,7 @@ impl MonitoredResourceInfoBuilder {
     /// <p>The Lightsail resource type of the resource being monitored.</p>
     /// <p>Instances, load balancers, and relational databases are the only Lightsail resources that can currently be monitored by alarms.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The Lightsail resource type of the resource being monitored.</p>
     /// <p>Instances, load balancers, and relational databases are the only Lightsail resources that can currently be monitored by alarms.</p>
@@ -92,9 +89,13 @@ impl MonitoredResourceInfoBuilder {
     /// Consumes the builder and constructs a [`MonitoredResourceInfo`](crate::types::MonitoredResourceInfo).
     pub fn build(self) -> crate::types::MonitoredResourceInfo {
         crate::types::MonitoredResourceInfo {
-            arn: self.arn,
-            name: self.name,
-            resource_type: self.resource_type,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            resource_type: self.resource_type
+            ,
         }
     }
 }
+

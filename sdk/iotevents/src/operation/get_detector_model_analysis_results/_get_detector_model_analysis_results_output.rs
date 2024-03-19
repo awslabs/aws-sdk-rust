@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDetectorModelAnalysisResultsOutput {
+pub struct GetDetectorModelAnalysisResultsOutput  {
     /// <p>Contains information about one or more analysis results.</p>
-    pub analysis_results: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisResult>>,
+    pub analysis_results: ::std::option::Option<::std::vec::Vec::<crate::types::AnalysisResult>>,
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetDetectorModelAnalysisResultsOutput {
+impl  GetDetectorModelAnalysisResultsOutput  {
     /// <p>Contains information about one or more analysis results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.analysis_results.is_none()`.
-    pub fn analysis_results(&self) -> &[crate::types::AnalysisResult] {
-        self.analysis_results.as_deref().unwrap_or_default()
+    pub fn analysis_results(&self) -> & [crate::types::AnalysisResult] {
+        self.analysis_results.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDetectorModelAnalysisResultsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDetectorModelAnalysisResultsOutput {
     /// Creates a new builder-style object to manufacture [`GetDetectorModelAnalysisResultsOutput`](crate::operation::get_detector_model_analysis_results::GetDetectorModelAnalysisResultsOutput).
     pub fn builder() -> crate::operation::get_detector_model_analysis_results::builders::GetDetectorModelAnalysisResultsOutputBuilder {
@@ -37,7 +38,7 @@ impl GetDetectorModelAnalysisResultsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDetectorModelAnalysisResultsOutputBuilder {
-    pub(crate) analysis_results: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisResult>>,
+    pub(crate) analysis_results: ::std::option::Option<::std::vec::Vec::<crate::types::AnalysisResult>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl GetDetectorModelAnalysisResultsOutputBuilder {
     /// <p>Contains information about one or more analysis results.</p>
     pub fn analysis_results(mut self, input: crate::types::AnalysisResult) -> Self {
         let mut v = self.analysis_results.unwrap_or_default();
-        v.push(input);
-        self.analysis_results = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.analysis_results = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains information about one or more analysis results.</p>
-    pub fn set_analysis_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisResult>>) -> Self {
-        self.analysis_results = input;
-        self
+    pub fn set_analysis_results(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AnalysisResult>>) -> Self {
+        self.analysis_results = input; self
     }
     /// <p>Contains information about one or more analysis results.</p>
-    pub fn get_analysis_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisResult>> {
+    pub fn get_analysis_results(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AnalysisResult>> {
         &self.analysis_results
     }
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
@@ -69,28 +69,30 @@ impl GetDetectorModelAnalysisResultsOutputBuilder {
     }
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDetectorModelAnalysisResultsOutput`](crate::operation::get_detector_model_analysis_results::GetDetectorModelAnalysisResultsOutput).
     pub fn build(self) -> crate::operation::get_detector_model_analysis_results::GetDetectorModelAnalysisResultsOutput {
         crate::operation::get_detector_model_analysis_results::GetDetectorModelAnalysisResultsOutput {
-            analysis_results: self.analysis_results,
-            next_token: self.next_token,
+            analysis_results: self.analysis_results
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

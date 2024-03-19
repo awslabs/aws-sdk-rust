@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFindingV2Output {
+pub struct GetFindingV2Output  {
     /// <p>The time at which the resource-based policy or IAM entity that generated the finding was analyzed.</p>
     pub analyzed_at: ::aws_smithy_types::DateTime,
     /// <p>The time at which the finding was created.</p>
@@ -24,69 +24,66 @@ pub struct GetFindingV2Output {
     /// <p>The time at which the finding was updated.</p>
     pub updated_at: ::aws_smithy_types::DateTime,
     /// <p>A localized message that explains the finding and provides guidance on how to address it.</p>
-    pub finding_details: ::std::vec::Vec<crate::types::FindingDetails>,
+    pub finding_details: ::std::vec::Vec::<crate::types::FindingDetails>,
     /// <p>The type of the finding. For external access analyzers, the type is <code>ExternalAccess</code>. For unused access analyzers, the type can be <code>UnusedIAMRole</code>, <code>UnusedIAMUserAccessKey</code>, <code>UnusedIAMUserPassword</code>, or <code>UnusedPermission</code>.</p>
     pub finding_type: ::std::option::Option<crate::types::FindingType>,
     _request_id: Option<String>,
 }
-impl GetFindingV2Output {
+impl  GetFindingV2Output  {
     /// <p>The time at which the resource-based policy or IAM entity that generated the finding was analyzed.</p>
-    pub fn analyzed_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn analyzed_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.analyzed_at
     }
     /// <p>The time at which the finding was created.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>An error.</p>
-    pub fn error(&self) -> ::std::option::Option<&str> {
+    pub fn error(&self) -> ::std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>The ID of the finding to retrieve.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>A token used for pagination of results returned.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The resource that generated the finding.</p>
-    pub fn resource(&self) -> ::std::option::Option<&str> {
+    pub fn resource(&self) -> ::std::option::Option<& str> {
         self.resource.as_deref()
     }
     /// <p>The type of the resource identified in the finding.</p>
-    pub fn resource_type(&self) -> &crate::types::ResourceType {
+    pub fn resource_type(&self) -> & crate::types::ResourceType {
         &self.resource_type
     }
     /// <p>Tye Amazon Web Services account ID that owns the resource.</p>
-    pub fn resource_owner_account(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_owner_account.deref()
+    pub fn resource_owner_account(&self) -> & str {
+        use std::ops::Deref; self.resource_owner_account.deref()
     }
     /// <p>The status of the finding.</p>
-    pub fn status(&self) -> &crate::types::FindingStatus {
+    pub fn status(&self) -> & crate::types::FindingStatus {
         &self.status
     }
     /// <p>The time at which the finding was updated.</p>
-    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.updated_at
     }
     /// <p>A localized message that explains the finding and provides guidance on how to address it.</p>
-    pub fn finding_details(&self) -> &[crate::types::FindingDetails] {
-        use std::ops::Deref;
-        self.finding_details.deref()
+    pub fn finding_details(&self) -> & [crate::types::FindingDetails] {
+        use std::ops::Deref; self.finding_details.deref()
     }
     /// <p>The type of the finding. For external access analyzers, the type is <code>ExternalAccess</code>. For unused access analyzers, the type can be <code>UnusedIAMRole</code>, <code>UnusedIAMUserAccessKey</code>, <code>UnusedIAMUserPassword</code>, or <code>UnusedPermission</code>.</p>
-    pub fn finding_type(&self) -> ::std::option::Option<&crate::types::FindingType> {
+    pub fn finding_type(&self) -> ::std::option::Option<& crate::types::FindingType> {
         self.finding_type.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetFindingV2Output {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetFindingV2Output {
     /// Creates a new builder-style object to manufacture [`GetFindingV2Output`](crate::operation::get_finding_v2::GetFindingV2Output).
     pub fn builder() -> crate::operation::get_finding_v2::builders::GetFindingV2OutputBuilder {
@@ -108,7 +105,7 @@ pub struct GetFindingV2OutputBuilder {
     pub(crate) resource_owner_account: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::FindingStatus>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) finding_details: ::std::option::Option<::std::vec::Vec<crate::types::FindingDetails>>,
+    pub(crate) finding_details: ::std::option::Option<::std::vec::Vec::<crate::types::FindingDetails>>,
     pub(crate) finding_type: ::std::option::Option<crate::types::FindingType>,
     _request_id: Option<String>,
 }
@@ -121,8 +118,7 @@ impl GetFindingV2OutputBuilder {
     }
     /// <p>The time at which the resource-based policy or IAM entity that generated the finding was analyzed.</p>
     pub fn set_analyzed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.analyzed_at = input;
-        self
+        self.analyzed_at = input; self
     }
     /// <p>The time at which the resource-based policy or IAM entity that generated the finding was analyzed.</p>
     pub fn get_analyzed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -136,8 +132,7 @@ impl GetFindingV2OutputBuilder {
     }
     /// <p>The time at which the finding was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time at which the finding was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -150,8 +145,7 @@ impl GetFindingV2OutputBuilder {
     }
     /// <p>An error.</p>
     pub fn set_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>An error.</p>
     pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,8 +159,7 @@ impl GetFindingV2OutputBuilder {
     }
     /// <p>The ID of the finding to retrieve.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the finding to retrieve.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -179,8 +172,7 @@ impl GetFindingV2OutputBuilder {
     }
     /// <p>A token used for pagination of results returned.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token used for pagination of results returned.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -193,8 +185,7 @@ impl GetFindingV2OutputBuilder {
     }
     /// <p>The resource that generated the finding.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
     }
     /// <p>The resource that generated the finding.</p>
     pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
@@ -208,8 +199,7 @@ impl GetFindingV2OutputBuilder {
     }
     /// <p>The type of the resource identified in the finding.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of the resource identified in the finding.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -223,8 +213,7 @@ impl GetFindingV2OutputBuilder {
     }
     /// <p>Tye Amazon Web Services account ID that owns the resource.</p>
     pub fn set_resource_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_owner_account = input;
-        self
+        self.resource_owner_account = input; self
     }
     /// <p>Tye Amazon Web Services account ID that owns the resource.</p>
     pub fn get_resource_owner_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -238,8 +227,7 @@ impl GetFindingV2OutputBuilder {
     }
     /// <p>The status of the finding.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FindingStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the finding.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FindingStatus> {
@@ -253,8 +241,7 @@ impl GetFindingV2OutputBuilder {
     }
     /// <p>The time at which the finding was updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The time at which the finding was updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -267,17 +254,16 @@ impl GetFindingV2OutputBuilder {
     /// <p>A localized message that explains the finding and provides guidance on how to address it.</p>
     pub fn finding_details(mut self, input: crate::types::FindingDetails) -> Self {
         let mut v = self.finding_details.unwrap_or_default();
-        v.push(input);
-        self.finding_details = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.finding_details = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A localized message that explains the finding and provides guidance on how to address it.</p>
-    pub fn set_finding_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FindingDetails>>) -> Self {
-        self.finding_details = input;
-        self
+    pub fn set_finding_details(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FindingDetails>>) -> Self {
+        self.finding_details = input; self
     }
     /// <p>A localized message that explains the finding and provides guidance on how to address it.</p>
-    pub fn get_finding_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingDetails>> {
+    pub fn get_finding_details(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FindingDetails>> {
         &self.finding_details
     }
     /// <p>The type of the finding. For external access analyzers, the type is <code>ExternalAccess</code>. For unused access analyzers, the type can be <code>UnusedIAMRole</code>, <code>UnusedIAMUserAccessKey</code>, <code>UnusedIAMUserPassword</code>, or <code>UnusedPermission</code>.</p>
@@ -287,22 +273,21 @@ impl GetFindingV2OutputBuilder {
     }
     /// <p>The type of the finding. For external access analyzers, the type is <code>ExternalAccess</code>. For unused access analyzers, the type can be <code>UnusedIAMRole</code>, <code>UnusedIAMUserAccessKey</code>, <code>UnusedIAMUserPassword</code>, or <code>UnusedPermission</code>.</p>
     pub fn set_finding_type(mut self, input: ::std::option::Option<crate::types::FindingType>) -> Self {
-        self.finding_type = input;
-        self
+        self.finding_type = input; self
     }
     /// <p>The type of the finding. For external access analyzers, the type is <code>ExternalAccess</code>. For unused access analyzers, the type can be <code>UnusedIAMRole</code>, <code>UnusedIAMUserAccessKey</code>, <code>UnusedIAMUserPassword</code>, or <code>UnusedPermission</code>.</p>
     pub fn get_finding_type(&self) -> &::std::option::Option<crate::types::FindingType> {
         &self.finding_type
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetFindingV2Output`](crate::operation::get_finding_v2::GetFindingV2Output).
     /// This method will fail if any of the following fields are not set:
     /// - [`analyzed_at`](crate::operation::get_finding_v2::builders::GetFindingV2OutputBuilder::analyzed_at)
@@ -313,63 +298,60 @@ impl GetFindingV2OutputBuilder {
     /// - [`status`](crate::operation::get_finding_v2::builders::GetFindingV2OutputBuilder::status)
     /// - [`updated_at`](crate::operation::get_finding_v2::builders::GetFindingV2OutputBuilder::updated_at)
     /// - [`finding_details`](crate::operation::get_finding_v2::builders::GetFindingV2OutputBuilder::finding_details)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_finding_v2::GetFindingV2Output, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_finding_v2::GetFindingV2Output {
-            analyzed_at: self.analyzed_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "analyzed_at",
-                    "analyzed_at was not specified but it is required when building GetFindingV2Output",
-                )
-            })?,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building GetFindingV2Output",
-                )
-            })?,
-            error: self.error,
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building GetFindingV2Output",
-                )
-            })?,
-            next_token: self.next_token,
-            resource: self.resource,
-            resource_type: self.resource_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_type",
-                    "resource_type was not specified but it is required when building GetFindingV2Output",
-                )
-            })?,
-            resource_owner_account: self.resource_owner_account.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_owner_account",
-                    "resource_owner_account was not specified but it is required when building GetFindingV2Output",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building GetFindingV2Output",
-                )
-            })?,
-            updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "updated_at",
-                    "updated_at was not specified but it is required when building GetFindingV2Output",
-                )
-            })?,
-            finding_details: self.finding_details.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "finding_details",
-                    "finding_details was not specified but it is required when building GetFindingV2Output",
-                )
-            })?,
-            finding_type: self.finding_type,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_finding_v2::GetFindingV2Output, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_finding_v2::GetFindingV2Output {
+                analyzed_at: self.analyzed_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("analyzed_at", "analyzed_at was not specified but it is required when building GetFindingV2Output")
+                    )?
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building GetFindingV2Output")
+                    )?
+                ,
+                error: self.error
+                ,
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building GetFindingV2Output")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                resource: self.resource
+                ,
+                resource_type: self.resource_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_type", "resource_type was not specified but it is required when building GetFindingV2Output")
+                    )?
+                ,
+                resource_owner_account: self.resource_owner_account
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_owner_account", "resource_owner_account was not specified but it is required when building GetFindingV2Output")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building GetFindingV2Output")
+                    )?
+                ,
+                updated_at: self.updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("updated_at", "updated_at was not specified but it is required when building GetFindingV2Output")
+                    )?
+                ,
+                finding_details: self.finding_details
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("finding_details", "finding_details was not specified but it is required when building GetFindingV2Output")
+                    )?
+                ,
+                finding_type: self.finding_type
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

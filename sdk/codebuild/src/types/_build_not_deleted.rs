@@ -3,19 +3,19 @@
 /// <p>Information about a build that could not be successfully deleted.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BuildNotDeleted {
+pub struct BuildNotDeleted  {
     /// <p>The ID of the build that could not be successfully deleted.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Additional information about the build that could not be successfully deleted.</p>
     pub status_code: ::std::option::Option<::std::string::String>,
 }
-impl BuildNotDeleted {
+impl  BuildNotDeleted  {
     /// <p>The ID of the build that could not be successfully deleted.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Additional information about the build that could not be successfully deleted.</p>
-    pub fn status_code(&self) -> ::std::option::Option<&str> {
+    pub fn status_code(&self) -> ::std::option::Option<& str> {
         self.status_code.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl BuildNotDeletedBuilder {
     }
     /// <p>The ID of the build that could not be successfully deleted.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the build that could not be successfully deleted.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl BuildNotDeletedBuilder {
     }
     /// <p>Additional information about the build that could not be successfully deleted.</p>
     pub fn set_status_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_code = input;
-        self
+        self.status_code = input; self
     }
     /// <p>Additional information about the build that could not be successfully deleted.</p>
     pub fn get_status_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl BuildNotDeletedBuilder {
     /// Consumes the builder and constructs a [`BuildNotDeleted`](crate::types::BuildNotDeleted).
     pub fn build(self) -> crate::types::BuildNotDeleted {
         crate::types::BuildNotDeleted {
-            id: self.id,
-            status_code: self.status_code,
+            id: self.id
+            ,
+            status_code: self.status_code
+            ,
         }
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPolicyStoreInput {
+pub struct GetPolicyStoreInput  {
     /// <p>Specifies the ID of the policy store that you want information about.</p>
     pub policy_store_id: ::std::option::Option<::std::string::String>,
 }
-impl GetPolicyStoreInput {
+impl  GetPolicyStoreInput  {
     /// <p>Specifies the ID of the policy store that you want information about.</p>
-    pub fn policy_store_id(&self) -> ::std::option::Option<&str> {
+    pub fn policy_store_id(&self) -> ::std::option::Option<& str> {
         self.policy_store_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetPolicyStoreInputBuilder {
     }
     /// <p>Specifies the ID of the policy store that you want information about.</p>
     pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_store_id = input;
-        self
+        self.policy_store_id = input; self
     }
     /// <p>Specifies the ID of the policy store that you want information about.</p>
     pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_store_id
     }
     /// Consumes the builder and constructs a [`GetPolicyStoreInput`](crate::operation::get_policy_store::GetPolicyStoreInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_policy_store::GetPolicyStoreInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_policy_store::GetPolicyStoreInput {
-            policy_store_id: self.policy_store_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_policy_store::GetPolicyStoreInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_policy_store::GetPolicyStoreInput {
+                policy_store_id: self.policy_store_id
+                ,
+            }
+        )
     }
 }
+

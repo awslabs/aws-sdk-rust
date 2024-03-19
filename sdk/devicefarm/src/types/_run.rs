@@ -3,7 +3,7 @@
 /// <p>Represents a test run on a set of devices with a given app package, test parameters, and so on.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Run {
+pub struct Run  {
     /// <p>The run's ARN.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The run's name.</p>
@@ -158,13 +158,13 @@ pub struct Run {
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
 }
-impl Run {
+impl  Run  {
     /// <p>The run's ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The run's name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The run's type.</p>
@@ -209,7 +209,7 @@ impl Run {
     /// <li>
     /// <p>XCTEST_UI</p></li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::TestType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::TestType> {
         self.r#type.as_ref()
     }
     /// <p>The run's platform.</p>
@@ -220,11 +220,11 @@ impl Run {
     /// <li>
     /// <p>IOS</p></li>
     /// </ul>
-    pub fn platform(&self) -> ::std::option::Option<&crate::types::DevicePlatform> {
+    pub fn platform(&self) -> ::std::option::Option<& crate::types::DevicePlatform> {
         self.platform.as_ref()
     }
     /// <p>When the run was created.</p>
-    pub fn created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The run's status.</p>
@@ -249,7 +249,7 @@ impl Run {
     /// <li>
     /// <p>STOPPING</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ExecutionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>The run's result.</p>
@@ -270,23 +270,23 @@ impl Run {
     /// <li>
     /// <p>STOPPED</p></li>
     /// </ul>
-    pub fn result(&self) -> ::std::option::Option<&crate::types::ExecutionResult> {
+    pub fn result(&self) -> ::std::option::Option<& crate::types::ExecutionResult> {
         self.result.as_ref()
     }
     /// <p>The run's start time.</p>
-    pub fn started(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn started(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.started.as_ref()
     }
     /// <p>The run's stop time.</p>
-    pub fn stopped(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn stopped(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.stopped.as_ref()
     }
     /// <p>The run's result counters.</p>
-    pub fn counters(&self) -> ::std::option::Option<&crate::types::Counters> {
+    pub fn counters(&self) -> ::std::option::Option<& crate::types::Counters> {
         self.counters.as_ref()
     }
     /// <p>A message about the run's result.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The total number of jobs for the run.</p>
@@ -300,23 +300,23 @@ impl Run {
     /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p><note>
     /// <p>If you have unmetered device slots, you must set this to <code>unmetered</code> to use them. Otherwise, the run is counted toward metered device minutes.</p>
     /// </note>
-    pub fn billing_method(&self) -> ::std::option::Option<&crate::types::BillingMethod> {
+    pub fn billing_method(&self) -> ::std::option::Option<& crate::types::BillingMethod> {
         self.billing_method.as_ref()
     }
     /// <p>Represents the total (metered or unmetered) minutes used by the test run.</p>
-    pub fn device_minutes(&self) -> ::std::option::Option<&crate::types::DeviceMinutes> {
+    pub fn device_minutes(&self) -> ::std::option::Option<& crate::types::DeviceMinutes> {
         self.device_minutes.as_ref()
     }
     /// <p>The network profile being used for a test run.</p>
-    pub fn network_profile(&self) -> ::std::option::Option<&crate::types::NetworkProfile> {
+    pub fn network_profile(&self) -> ::std::option::Option<& crate::types::NetworkProfile> {
         self.network_profile.as_ref()
     }
     /// <p>Read-only URL for an object in an S3 bucket where you can get the parsing results of the test package. If the test package doesn't parse, the reason why it doesn't parse appears in the file that this URL points to.</p>
-    pub fn parsing_result_url(&self) -> ::std::option::Option<&str> {
+    pub fn parsing_result_url(&self) -> ::std::option::Option<& str> {
         self.parsing_result_url.as_deref()
     }
     /// <p>Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>. <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.</p>
-    pub fn result_code(&self) -> ::std::option::Option<&crate::types::ExecutionResultCode> {
+    pub fn result_code(&self) -> ::std::option::Option<& crate::types::ExecutionResultCode> {
         self.result_code.as_ref()
     }
     /// <p>For fuzz tests, this is a seed to use for randomizing the UI fuzz test. Using the same seed value between tests ensures identical event sequences.</p>
@@ -324,7 +324,7 @@ impl Run {
         self.seed
     }
     /// <p>An app to upload or that has been uploaded.</p>
-    pub fn app_upload(&self) -> ::std::option::Option<&str> {
+    pub fn app_upload(&self) -> ::std::option::Option<& str> {
         self.app_upload.as_deref()
     }
     /// <p>For fuzz tests, this is the number of events, between 1 and 10000, that the UI fuzz test should perform.</p>
@@ -336,27 +336,27 @@ impl Run {
         self.job_timeout_minutes
     }
     /// <p>The ARN of the device pool for the run.</p>
-    pub fn device_pool_arn(&self) -> ::std::option::Option<&str> {
+    pub fn device_pool_arn(&self) -> ::std::option::Option<& str> {
         self.device_pool_arn.as_deref()
     }
     /// <p>Information about the locale that is used for the run.</p>
-    pub fn locale(&self) -> ::std::option::Option<&str> {
+    pub fn locale(&self) -> ::std::option::Option<& str> {
         self.locale.as_deref()
     }
     /// <p>Information about the radio states for the run.</p>
-    pub fn radios(&self) -> ::std::option::Option<&crate::types::Radios> {
+    pub fn radios(&self) -> ::std::option::Option<& crate::types::Radios> {
         self.radios.as_ref()
     }
     /// <p>Information about the location that is used for the run.</p>
-    pub fn location(&self) -> ::std::option::Option<&crate::types::Location> {
+    pub fn location(&self) -> ::std::option::Option<& crate::types::Location> {
         self.location.as_ref()
     }
     /// <p>Output <code>CustomerArtifactPaths</code> object for the test run.</p>
-    pub fn customer_artifact_paths(&self) -> ::std::option::Option<&crate::types::CustomerArtifactPaths> {
+    pub fn customer_artifact_paths(&self) -> ::std::option::Option<& crate::types::CustomerArtifactPaths> {
         self.customer_artifact_paths.as_ref()
     }
     /// <p>The Device Farm console URL for the recording of the run.</p>
-    pub fn web_url(&self) -> ::std::option::Option<&str> {
+    pub fn web_url(&self) -> ::std::option::Option<& str> {
         self.web_url.as_deref()
     }
     /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
@@ -365,15 +365,15 @@ impl Run {
         self.skip_app_resign
     }
     /// <p>The ARN of the YAML-formatted test specification for the run.</p>
-    pub fn test_spec_arn(&self) -> ::std::option::Option<&str> {
+    pub fn test_spec_arn(&self) -> ::std::option::Option<& str> {
         self.test_spec_arn.as_deref()
     }
     /// <p>The results of a device filter used to select the devices for a test run.</p>
-    pub fn device_selection_result(&self) -> ::std::option::Option<&crate::types::DeviceSelectionResult> {
+    pub fn device_selection_result(&self) -> ::std::option::Option<& crate::types::DeviceSelectionResult> {
         self.device_selection_result.as_ref()
     }
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
-    pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
+    pub fn vpc_config(&self) -> ::std::option::Option<& crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
 }
@@ -429,8 +429,7 @@ impl RunBuilder {
     }
     /// <p>The run's ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The run's ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -443,8 +442,7 @@ impl RunBuilder {
     }
     /// <p>The run's name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The run's name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -539,8 +537,7 @@ impl RunBuilder {
     /// <p>XCTEST_UI</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TestType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The run's type.</p>
     /// <p>Must be one of the following values:</p>
@@ -608,8 +605,7 @@ impl RunBuilder {
     /// <p>IOS</p></li>
     /// </ul>
     pub fn set_platform(mut self, input: ::std::option::Option<crate::types::DevicePlatform>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// <p>The run's platform.</p>
     /// <p>Allowed values include:</p>
@@ -629,8 +625,7 @@ impl RunBuilder {
     }
     /// <p>When the run was created.</p>
     pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created = input;
-        self
+        self.created = input; self
     }
     /// <p>When the run was created.</p>
     pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -685,8 +680,7 @@ impl RunBuilder {
     /// <p>STOPPING</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ExecutionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The run's status.</p>
     /// <p>Allowed values include:</p>
@@ -754,8 +748,7 @@ impl RunBuilder {
     /// <p>STOPPED</p></li>
     /// </ul>
     pub fn set_result(mut self, input: ::std::option::Option<crate::types::ExecutionResult>) -> Self {
-        self.result = input;
-        self
+        self.result = input; self
     }
     /// <p>The run's result.</p>
     /// <p>Allowed values include:</p>
@@ -785,8 +778,7 @@ impl RunBuilder {
     }
     /// <p>The run's start time.</p>
     pub fn set_started(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.started = input;
-        self
+        self.started = input; self
     }
     /// <p>The run's start time.</p>
     pub fn get_started(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -799,8 +791,7 @@ impl RunBuilder {
     }
     /// <p>The run's stop time.</p>
     pub fn set_stopped(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.stopped = input;
-        self
+        self.stopped = input; self
     }
     /// <p>The run's stop time.</p>
     pub fn get_stopped(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -813,8 +804,7 @@ impl RunBuilder {
     }
     /// <p>The run's result counters.</p>
     pub fn set_counters(mut self, input: ::std::option::Option<crate::types::Counters>) -> Self {
-        self.counters = input;
-        self
+        self.counters = input; self
     }
     /// <p>The run's result counters.</p>
     pub fn get_counters(&self) -> &::std::option::Option<crate::types::Counters> {
@@ -827,8 +817,7 @@ impl RunBuilder {
     }
     /// <p>A message about the run's result.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>A message about the run's result.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -841,8 +830,7 @@ impl RunBuilder {
     }
     /// <p>The total number of jobs for the run.</p>
     pub fn set_total_jobs(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_jobs = input;
-        self
+        self.total_jobs = input; self
     }
     /// <p>The total number of jobs for the run.</p>
     pub fn get_total_jobs(&self) -> &::std::option::Option<i32> {
@@ -855,8 +843,7 @@ impl RunBuilder {
     }
     /// <p>The total number of completed jobs.</p>
     pub fn set_completed_jobs(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.completed_jobs = input;
-        self
+        self.completed_jobs = input; self
     }
     /// <p>The total number of completed jobs.</p>
     pub fn get_completed_jobs(&self) -> &::std::option::Option<i32> {
@@ -873,8 +860,7 @@ impl RunBuilder {
     /// <p>If you have unmetered device slots, you must set this to <code>unmetered</code> to use them. Otherwise, the run is counted toward metered device minutes.</p>
     /// </note>
     pub fn set_billing_method(mut self, input: ::std::option::Option<crate::types::BillingMethod>) -> Self {
-        self.billing_method = input;
-        self
+        self.billing_method = input; self
     }
     /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p><note>
     /// <p>If you have unmetered device slots, you must set this to <code>unmetered</code> to use them. Otherwise, the run is counted toward metered device minutes.</p>
@@ -889,8 +875,7 @@ impl RunBuilder {
     }
     /// <p>Represents the total (metered or unmetered) minutes used by the test run.</p>
     pub fn set_device_minutes(mut self, input: ::std::option::Option<crate::types::DeviceMinutes>) -> Self {
-        self.device_minutes = input;
-        self
+        self.device_minutes = input; self
     }
     /// <p>Represents the total (metered or unmetered) minutes used by the test run.</p>
     pub fn get_device_minutes(&self) -> &::std::option::Option<crate::types::DeviceMinutes> {
@@ -903,8 +888,7 @@ impl RunBuilder {
     }
     /// <p>The network profile being used for a test run.</p>
     pub fn set_network_profile(mut self, input: ::std::option::Option<crate::types::NetworkProfile>) -> Self {
-        self.network_profile = input;
-        self
+        self.network_profile = input; self
     }
     /// <p>The network profile being used for a test run.</p>
     pub fn get_network_profile(&self) -> &::std::option::Option<crate::types::NetworkProfile> {
@@ -917,8 +901,7 @@ impl RunBuilder {
     }
     /// <p>Read-only URL for an object in an S3 bucket where you can get the parsing results of the test package. If the test package doesn't parse, the reason why it doesn't parse appears in the file that this URL points to.</p>
     pub fn set_parsing_result_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parsing_result_url = input;
-        self
+        self.parsing_result_url = input; self
     }
     /// <p>Read-only URL for an object in an S3 bucket where you can get the parsing results of the test package. If the test package doesn't parse, the reason why it doesn't parse appears in the file that this URL points to.</p>
     pub fn get_parsing_result_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -931,8 +914,7 @@ impl RunBuilder {
     }
     /// <p>Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>. <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.</p>
     pub fn set_result_code(mut self, input: ::std::option::Option<crate::types::ExecutionResultCode>) -> Self {
-        self.result_code = input;
-        self
+        self.result_code = input; self
     }
     /// <p>Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>. <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.</p>
     pub fn get_result_code(&self) -> &::std::option::Option<crate::types::ExecutionResultCode> {
@@ -945,8 +927,7 @@ impl RunBuilder {
     }
     /// <p>For fuzz tests, this is a seed to use for randomizing the UI fuzz test. Using the same seed value between tests ensures identical event sequences.</p>
     pub fn set_seed(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.seed = input;
-        self
+        self.seed = input; self
     }
     /// <p>For fuzz tests, this is a seed to use for randomizing the UI fuzz test. Using the same seed value between tests ensures identical event sequences.</p>
     pub fn get_seed(&self) -> &::std::option::Option<i32> {
@@ -959,8 +940,7 @@ impl RunBuilder {
     }
     /// <p>An app to upload or that has been uploaded.</p>
     pub fn set_app_upload(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_upload = input;
-        self
+        self.app_upload = input; self
     }
     /// <p>An app to upload or that has been uploaded.</p>
     pub fn get_app_upload(&self) -> &::std::option::Option<::std::string::String> {
@@ -973,8 +953,7 @@ impl RunBuilder {
     }
     /// <p>For fuzz tests, this is the number of events, between 1 and 10000, that the UI fuzz test should perform.</p>
     pub fn set_event_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.event_count = input;
-        self
+        self.event_count = input; self
     }
     /// <p>For fuzz tests, this is the number of events, between 1 and 10000, that the UI fuzz test should perform.</p>
     pub fn get_event_count(&self) -> &::std::option::Option<i32> {
@@ -987,8 +966,7 @@ impl RunBuilder {
     }
     /// <p>The number of minutes the job executes before it times out.</p>
     pub fn set_job_timeout_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.job_timeout_minutes = input;
-        self
+        self.job_timeout_minutes = input; self
     }
     /// <p>The number of minutes the job executes before it times out.</p>
     pub fn get_job_timeout_minutes(&self) -> &::std::option::Option<i32> {
@@ -1001,8 +979,7 @@ impl RunBuilder {
     }
     /// <p>The ARN of the device pool for the run.</p>
     pub fn set_device_pool_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_pool_arn = input;
-        self
+        self.device_pool_arn = input; self
     }
     /// <p>The ARN of the device pool for the run.</p>
     pub fn get_device_pool_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -1015,8 +992,7 @@ impl RunBuilder {
     }
     /// <p>Information about the locale that is used for the run.</p>
     pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.locale = input;
-        self
+        self.locale = input; self
     }
     /// <p>Information about the locale that is used for the run.</p>
     pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
@@ -1029,8 +1005,7 @@ impl RunBuilder {
     }
     /// <p>Information about the radio states for the run.</p>
     pub fn set_radios(mut self, input: ::std::option::Option<crate::types::Radios>) -> Self {
-        self.radios = input;
-        self
+        self.radios = input; self
     }
     /// <p>Information about the radio states for the run.</p>
     pub fn get_radios(&self) -> &::std::option::Option<crate::types::Radios> {
@@ -1043,8 +1018,7 @@ impl RunBuilder {
     }
     /// <p>Information about the location that is used for the run.</p>
     pub fn set_location(mut self, input: ::std::option::Option<crate::types::Location>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>Information about the location that is used for the run.</p>
     pub fn get_location(&self) -> &::std::option::Option<crate::types::Location> {
@@ -1057,8 +1031,7 @@ impl RunBuilder {
     }
     /// <p>Output <code>CustomerArtifactPaths</code> object for the test run.</p>
     pub fn set_customer_artifact_paths(mut self, input: ::std::option::Option<crate::types::CustomerArtifactPaths>) -> Self {
-        self.customer_artifact_paths = input;
-        self
+        self.customer_artifact_paths = input; self
     }
     /// <p>Output <code>CustomerArtifactPaths</code> object for the test run.</p>
     pub fn get_customer_artifact_paths(&self) -> &::std::option::Option<crate::types::CustomerArtifactPaths> {
@@ -1071,8 +1044,7 @@ impl RunBuilder {
     }
     /// <p>The Device Farm console URL for the recording of the run.</p>
     pub fn set_web_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.web_url = input;
-        self
+        self.web_url = input; self
     }
     /// <p>The Device Farm console URL for the recording of the run.</p>
     pub fn get_web_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -1087,8 +1059,7 @@ impl RunBuilder {
     /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
     /// <p>For more information about how Device Farm re-signs your apps, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
     pub fn set_skip_app_resign(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.skip_app_resign = input;
-        self
+        self.skip_app_resign = input; self
     }
     /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
     /// <p>For more information about how Device Farm re-signs your apps, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
@@ -1102,8 +1073,7 @@ impl RunBuilder {
     }
     /// <p>The ARN of the YAML-formatted test specification for the run.</p>
     pub fn set_test_spec_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.test_spec_arn = input;
-        self
+        self.test_spec_arn = input; self
     }
     /// <p>The ARN of the YAML-formatted test specification for the run.</p>
     pub fn get_test_spec_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -1116,8 +1086,7 @@ impl RunBuilder {
     }
     /// <p>The results of a device filter used to select the devices for a test run.</p>
     pub fn set_device_selection_result(mut self, input: ::std::option::Option<crate::types::DeviceSelectionResult>) -> Self {
-        self.device_selection_result = input;
-        self
+        self.device_selection_result = input; self
     }
     /// <p>The results of a device filter used to select the devices for a test run.</p>
     pub fn get_device_selection_result(&self) -> &::std::option::Option<crate::types::DeviceSelectionResult> {
@@ -1130,8 +1099,7 @@ impl RunBuilder {
     }
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
-        self.vpc_config = input;
-        self
+        self.vpc_config = input; self
     }
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
@@ -1140,38 +1108,71 @@ impl RunBuilder {
     /// Consumes the builder and constructs a [`Run`](crate::types::Run).
     pub fn build(self) -> crate::types::Run {
         crate::types::Run {
-            arn: self.arn,
-            name: self.name,
-            r#type: self.r#type,
-            platform: self.platform,
-            created: self.created,
-            status: self.status,
-            result: self.result,
-            started: self.started,
-            stopped: self.stopped,
-            counters: self.counters,
-            message: self.message,
-            total_jobs: self.total_jobs,
-            completed_jobs: self.completed_jobs,
-            billing_method: self.billing_method,
-            device_minutes: self.device_minutes,
-            network_profile: self.network_profile,
-            parsing_result_url: self.parsing_result_url,
-            result_code: self.result_code,
-            seed: self.seed,
-            app_upload: self.app_upload,
-            event_count: self.event_count,
-            job_timeout_minutes: self.job_timeout_minutes,
-            device_pool_arn: self.device_pool_arn,
-            locale: self.locale,
-            radios: self.radios,
-            location: self.location,
-            customer_artifact_paths: self.customer_artifact_paths,
-            web_url: self.web_url,
-            skip_app_resign: self.skip_app_resign,
-            test_spec_arn: self.test_spec_arn,
-            device_selection_result: self.device_selection_result,
-            vpc_config: self.vpc_config,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            platform: self.platform
+            ,
+            created: self.created
+            ,
+            status: self.status
+            ,
+            result: self.result
+            ,
+            started: self.started
+            ,
+            stopped: self.stopped
+            ,
+            counters: self.counters
+            ,
+            message: self.message
+            ,
+            total_jobs: self.total_jobs
+            ,
+            completed_jobs: self.completed_jobs
+            ,
+            billing_method: self.billing_method
+            ,
+            device_minutes: self.device_minutes
+            ,
+            network_profile: self.network_profile
+            ,
+            parsing_result_url: self.parsing_result_url
+            ,
+            result_code: self.result_code
+            ,
+            seed: self.seed
+            ,
+            app_upload: self.app_upload
+            ,
+            event_count: self.event_count
+            ,
+            job_timeout_minutes: self.job_timeout_minutes
+            ,
+            device_pool_arn: self.device_pool_arn
+            ,
+            locale: self.locale
+            ,
+            radios: self.radios
+            ,
+            location: self.location
+            ,
+            customer_artifact_paths: self.customer_artifact_paths
+            ,
+            web_url: self.web_url
+            ,
+            skip_app_resign: self.skip_app_resign
+            ,
+            test_spec_arn: self.test_spec_arn
+            ,
+            device_selection_result: self.device_selection_result
+            ,
+            vpc_config: self.vpc_config
+            ,
         }
     }
 }
+

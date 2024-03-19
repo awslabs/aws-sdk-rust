@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UntagProjectInput {
+pub struct UntagProjectInput  {
     /// <p>The ID of the project to remove tags from.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The tags to remove from the project.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl UntagProjectInput {
+impl  UntagProjectInput  {
     /// <p>The ID of the project to remove tags from.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The tags to remove from the project.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[::std::string::String] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [::std::string::String] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UntagProjectInput {
@@ -32,7 +33,7 @@ impl UntagProjectInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UntagProjectInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl UntagProjectInputBuilder {
     /// <p>The ID of the project to remove tags from.</p>
@@ -43,8 +44,7 @@ impl UntagProjectInputBuilder {
     }
     /// <p>The ID of the project to remove tags from.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the project to remove tags from.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,26 +57,28 @@ impl UntagProjectInputBuilder {
     /// <p>The tags to remove from the project.</p>
     pub fn tags(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input.into());
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to remove from the project.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to remove from the project.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`UntagProjectInput`](crate::operation::untag_project::UntagProjectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::untag_project::UntagProjectInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::untag_project::UntagProjectInput {
-            id: self.id,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::untag_project::UntagProjectInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::untag_project::UntagProjectInput {
+                id: self.id
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

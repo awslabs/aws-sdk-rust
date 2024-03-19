@@ -3,23 +3,23 @@
 /// <p>Contains details about a Lambda function timeout that occurred during an execution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct LambdaFunctionTimedOutEventDetails {
+pub struct LambdaFunctionTimedOutEventDetails  {
     /// <p>The error code of the failure.</p>
     pub error: ::std::option::Option<::std::string::String>,
     /// <p>A more detailed explanation of the cause of the timeout.</p>
     pub cause: ::std::option::Option<::std::string::String>,
 }
-impl LambdaFunctionTimedOutEventDetails {
+impl  LambdaFunctionTimedOutEventDetails  {
     /// <p>The error code of the failure.</p>
-    pub fn error(&self) -> ::std::option::Option<&str> {
+    pub fn error(&self) -> ::std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>A more detailed explanation of the cause of the timeout.</p>
-    pub fn cause(&self) -> ::std::option::Option<&str> {
+    pub fn cause(&self) -> ::std::option::Option<& str> {
         self.cause.as_deref()
     }
 }
-impl ::std::fmt::Debug for LambdaFunctionTimedOutEventDetails {
+impl  ::std::fmt::Debug for LambdaFunctionTimedOutEventDetails  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("LambdaFunctionTimedOutEventDetails");
         formatter.field("error", &"*** Sensitive Data Redacted ***");
@@ -49,8 +49,7 @@ impl LambdaFunctionTimedOutEventDetailsBuilder {
     }
     /// <p>The error code of the failure.</p>
     pub fn set_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>The error code of the failure.</p>
     pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl LambdaFunctionTimedOutEventDetailsBuilder {
     }
     /// <p>A more detailed explanation of the cause of the timeout.</p>
     pub fn set_cause(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cause = input;
-        self
+        self.cause = input; self
     }
     /// <p>A more detailed explanation of the cause of the timeout.</p>
     pub fn get_cause(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +71,10 @@ impl LambdaFunctionTimedOutEventDetailsBuilder {
     /// Consumes the builder and constructs a [`LambdaFunctionTimedOutEventDetails`](crate::types::LambdaFunctionTimedOutEventDetails).
     pub fn build(self) -> crate::types::LambdaFunctionTimedOutEventDetails {
         crate::types::LambdaFunctionTimedOutEventDetails {
-            error: self.error,
-            cause: self.cause,
+            error: self.error
+            ,
+            cause: self.cause
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for LambdaFunctionTimedOutEventDetailsBuilder {
         formatter.finish()
     }
 }
+

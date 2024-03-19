@@ -3,7 +3,7 @@
 /// <p>Connection information for dataset input files stored in a database.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatabaseInputDefinition {
+pub struct DatabaseInputDefinition  {
     /// <p>The Glue Connection that stores the connection information for the target database.</p>
     pub glue_connection_name: ::std::string::String,
     /// <p>The table within the target database.</p>
@@ -13,22 +13,21 @@ pub struct DatabaseInputDefinition {
     /// <p>Custom SQL to run against the provided Glue connection. This SQL will be used as the input for DataBrew projects and jobs.</p>
     pub query_string: ::std::option::Option<::std::string::String>,
 }
-impl DatabaseInputDefinition {
+impl  DatabaseInputDefinition  {
     /// <p>The Glue Connection that stores the connection information for the target database.</p>
-    pub fn glue_connection_name(&self) -> &str {
-        use std::ops::Deref;
-        self.glue_connection_name.deref()
+    pub fn glue_connection_name(&self) -> & str {
+        use std::ops::Deref; self.glue_connection_name.deref()
     }
     /// <p>The table within the target database.</p>
-    pub fn database_table_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_table_name(&self) -> ::std::option::Option<& str> {
         self.database_table_name.as_deref()
     }
     /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
-    pub fn temp_directory(&self) -> ::std::option::Option<&crate::types::S3Location> {
+    pub fn temp_directory(&self) -> ::std::option::Option<& crate::types::S3Location> {
         self.temp_directory.as_ref()
     }
     /// <p>Custom SQL to run against the provided Glue connection. This SQL will be used as the input for DataBrew projects and jobs.</p>
-    pub fn query_string(&self) -> ::std::option::Option<&str> {
+    pub fn query_string(&self) -> ::std::option::Option<& str> {
         self.query_string.as_deref()
     }
 }
@@ -57,8 +56,7 @@ impl DatabaseInputDefinitionBuilder {
     }
     /// <p>The Glue Connection that stores the connection information for the target database.</p>
     pub fn set_glue_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.glue_connection_name = input;
-        self
+        self.glue_connection_name = input; self
     }
     /// <p>The Glue Connection that stores the connection information for the target database.</p>
     pub fn get_glue_connection_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +69,7 @@ impl DatabaseInputDefinitionBuilder {
     }
     /// <p>The table within the target database.</p>
     pub fn set_database_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_table_name = input;
-        self
+        self.database_table_name = input; self
     }
     /// <p>The table within the target database.</p>
     pub fn get_database_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +82,7 @@ impl DatabaseInputDefinitionBuilder {
     }
     /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
     pub fn set_temp_directory(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
-        self.temp_directory = input;
-        self
+        self.temp_directory = input; self
     }
     /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
     pub fn get_temp_directory(&self) -> &::std::option::Option<crate::types::S3Location> {
@@ -99,8 +95,7 @@ impl DatabaseInputDefinitionBuilder {
     }
     /// <p>Custom SQL to run against the provided Glue connection. This SQL will be used as the input for DataBrew projects and jobs.</p>
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_string = input;
-        self
+        self.query_string = input; self
     }
     /// <p>Custom SQL to run against the provided Glue connection. This SQL will be used as the input for DataBrew projects and jobs.</p>
     pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,16 +105,21 @@ impl DatabaseInputDefinitionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`glue_connection_name`](crate::types::builders::DatabaseInputDefinitionBuilder::glue_connection_name)
     pub fn build(self) -> ::std::result::Result<crate::types::DatabaseInputDefinition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DatabaseInputDefinition {
-            glue_connection_name: self.glue_connection_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "glue_connection_name",
-                    "glue_connection_name was not specified but it is required when building DatabaseInputDefinition",
-                )
-            })?,
-            database_table_name: self.database_table_name,
-            temp_directory: self.temp_directory,
-            query_string: self.query_string,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DatabaseInputDefinition {
+                glue_connection_name: self.glue_connection_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("glue_connection_name", "glue_connection_name was not specified but it is required when building DatabaseInputDefinition")
+                    )?
+                ,
+                database_table_name: self.database_table_name
+                ,
+                temp_directory: self.temp_directory
+                ,
+                query_string: self.query_string
+                ,
+            }
+        )
     }
 }
+

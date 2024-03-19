@@ -2,17 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDocumentClassifierSummaries`](crate::operation::list_document_classifier_summaries::builders::ListDocumentClassifierSummariesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_document_classifier_summaries::builders::ListDocumentClassifierSummariesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_document_classifier_summaries::builders::ListDocumentClassifierSummariesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_document_classifier_summaries::builders::ListDocumentClassifierSummariesFluentBuilder::set_next_token):<br>required: **false**<br><p>Identifies the next page of results to return.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_document_classifier_summaries::builders::ListDocumentClassifierSummariesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_document_classifier_summaries::builders::ListDocumentClassifierSummariesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return on each page. The default is 100.</p><br>
-    /// - On success, responds with [`ListDocumentClassifierSummariesOutput`](crate::operation::list_document_classifier_summaries::ListDocumentClassifierSummariesOutput) with field(s):
+                            /// - On success, responds with [`ListDocumentClassifierSummariesOutput`](crate::operation::list_document_classifier_summaries::ListDocumentClassifierSummariesOutput) with field(s):
     ///   - [`document_classifier_summaries_list(Option<Vec::<DocumentClassifierSummary>>)`](crate::operation::list_document_classifier_summaries::ListDocumentClassifierSummariesOutput::document_classifier_summaries_list): <p>The list of summaries of document classifiers.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_document_classifier_summaries::ListDocumentClassifierSummariesOutput::next_token): <p>Identifies the next page of results to return.</p>
-    /// - On failure, responds with [`SdkError<ListDocumentClassifierSummariesError>`](crate::operation::list_document_classifier_summaries::ListDocumentClassifierSummariesError)
-    pub fn list_document_classifier_summaries(
-        &self,
-    ) -> crate::operation::list_document_classifier_summaries::builders::ListDocumentClassifierSummariesFluentBuilder {
-        crate::operation::list_document_classifier_summaries::builders::ListDocumentClassifierSummariesFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListDocumentClassifierSummariesError>`](crate::operation::list_document_classifier_summaries::ListDocumentClassifierSummariesError)
+    pub fn list_document_classifier_summaries(&self) -> crate::operation::list_document_classifier_summaries::builders::ListDocumentClassifierSummariesFluentBuilder {
+                                crate::operation::list_document_classifier_summaries::builders::ListDocumentClassifierSummariesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

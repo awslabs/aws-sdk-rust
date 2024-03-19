@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for DisableVgwRoutePropagation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisableVgwRoutePropagationInput {
+pub struct DisableVgwRoutePropagationInput  {
     /// <p>The ID of the virtual private gateway.</p>
     pub gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the route table.</p>
@@ -11,13 +11,13 @@ pub struct DisableVgwRoutePropagationInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl DisableVgwRoutePropagationInput {
+impl  DisableVgwRoutePropagationInput  {
     /// <p>The ID of the virtual private gateway.</p>
-    pub fn gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_id(&self) -> ::std::option::Option<& str> {
         self.gateway_id.as_deref()
     }
     /// <p>The ID of the route table.</p>
-    pub fn route_table_id(&self) -> ::std::option::Option<&str> {
+    pub fn route_table_id(&self) -> ::std::option::Option<& str> {
         self.route_table_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -49,8 +49,7 @@ impl DisableVgwRoutePropagationInputBuilder {
     }
     /// <p>The ID of the virtual private gateway.</p>
     pub fn set_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_id = input;
-        self
+        self.gateway_id = input; self
     }
     /// <p>The ID of the virtual private gateway.</p>
     pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl DisableVgwRoutePropagationInputBuilder {
     }
     /// <p>The ID of the route table.</p>
     pub fn set_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.route_table_id = input;
-        self
+        self.route_table_id = input; self
     }
     /// <p>The ID of the route table.</p>
     pub fn get_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl DisableVgwRoutePropagationInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DisableVgwRoutePropagationInput`](crate::operation::disable_vgw_route_propagation::DisableVgwRoutePropagationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disable_vgw_route_propagation::DisableVgwRoutePropagationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::disable_vgw_route_propagation::DisableVgwRoutePropagationInput {
-            gateway_id: self.gateway_id,
-            route_table_id: self.route_table_id,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disable_vgw_route_propagation::DisableVgwRoutePropagationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disable_vgw_route_propagation::DisableVgwRoutePropagationInput {
+                gateway_id: self.gateway_id
+                ,
+                route_table_id: self.route_table_id
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

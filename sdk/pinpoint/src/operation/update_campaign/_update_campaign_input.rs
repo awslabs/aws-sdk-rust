@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateCampaignInput {
+pub struct UpdateCampaignInput  {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the campaign.</p>
@@ -10,17 +10,17 @@ pub struct UpdateCampaignInput {
     /// <p>Specifies the configuration and other settings for a campaign.</p>
     pub write_campaign_request: ::std::option::Option<crate::types::WriteCampaignRequest>,
 }
-impl UpdateCampaignInput {
+impl  UpdateCampaignInput  {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The unique identifier for the campaign.</p>
-    pub fn campaign_id(&self) -> ::std::option::Option<&str> {
+    pub fn campaign_id(&self) -> ::std::option::Option<& str> {
         self.campaign_id.as_deref()
     }
     /// <p>Specifies the configuration and other settings for a campaign.</p>
-    pub fn write_campaign_request(&self) -> ::std::option::Option<&crate::types::WriteCampaignRequest> {
+    pub fn write_campaign_request(&self) -> ::std::option::Option<& crate::types::WriteCampaignRequest> {
         self.write_campaign_request.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateCampaignInputBuilder {
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateCampaignInputBuilder {
     }
     /// <p>The unique identifier for the campaign.</p>
     pub fn set_campaign_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.campaign_id = input;
-        self
+        self.campaign_id = input; self
     }
     /// <p>The unique identifier for the campaign.</p>
     pub fn get_campaign_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,21 +76,24 @@ impl UpdateCampaignInputBuilder {
     }
     /// <p>Specifies the configuration and other settings for a campaign.</p>
     pub fn set_write_campaign_request(mut self, input: ::std::option::Option<crate::types::WriteCampaignRequest>) -> Self {
-        self.write_campaign_request = input;
-        self
+        self.write_campaign_request = input; self
     }
     /// <p>Specifies the configuration and other settings for a campaign.</p>
     pub fn get_write_campaign_request(&self) -> &::std::option::Option<crate::types::WriteCampaignRequest> {
         &self.write_campaign_request
     }
     /// Consumes the builder and constructs a [`UpdateCampaignInput`](crate::operation::update_campaign::UpdateCampaignInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_campaign::UpdateCampaignInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_campaign::UpdateCampaignInput {
-            application_id: self.application_id,
-            campaign_id: self.campaign_id,
-            write_campaign_request: self.write_campaign_request,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_campaign::UpdateCampaignInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_campaign::UpdateCampaignInput {
+                application_id: self.application_id
+                ,
+                campaign_id: self.campaign_id
+                ,
+                write_campaign_request: self.write_campaign_request
+                ,
+            }
+        )
     }
 }
+

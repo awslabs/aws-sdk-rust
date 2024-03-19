@@ -5,55 +5,51 @@ pub use crate::operation::get_query_suggestions::_get_query_suggestions_input::G
 
 impl GetQuerySuggestionsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_query_suggestions::GetQuerySuggestionsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_query_suggestions::GetQuerySuggestionsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_query_suggestions();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_query_suggestions::GetQuerySuggestionsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_query_suggestions::GetQuerySuggestionsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_query_suggestions();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetQuerySuggestions`.
-///
+/// 
 /// <p>Fetches the queries that are suggested to your users.</p>
 /// <p><code>GetQuerySuggestions</code> is currently not supported in the Amazon Web Services GovCloud (US-West) region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetQuerySuggestionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_query_suggestions::builders::GetQuerySuggestionsInputBuilder,
+                    inner: crate::operation::get_query_suggestions::builders::GetQuerySuggestionsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_query_suggestions::GetQuerySuggestionsOutput,
-        crate::operation::get_query_suggestions::GetQuerySuggestionsError,
-    > for GetQuerySuggestionsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_query_suggestions::GetQuerySuggestionsOutput,
-            crate::operation::get_query_suggestions::GetQuerySuggestionsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_query_suggestions::GetQuerySuggestionsOutput,
+                    crate::operation::get_query_suggestions::GetQuerySuggestionsError,
+                > for GetQuerySuggestionsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_query_suggestions::GetQuerySuggestionsOutput,
+                        crate::operation::get_query_suggestions::GetQuerySuggestionsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetQuerySuggestionsFluentBuilder {
     /// Creates a new `GetQuerySuggestions`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl GetQuerySuggestionsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_query_suggestions::GetQuerySuggestionsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_query_suggestions::GetQuerySuggestionsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::get_query_suggestions::GetQuerySuggestions::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::get_query_suggestions::GetQuerySuggestions::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_query_suggestions::GetQuerySuggestionsOutput,
-        crate::operation::get_query_suggestions::GetQuerySuggestionsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_query_suggestions::GetQuerySuggestionsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_query_suggestions::GetQuerySuggestionsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_query_suggestions::GetQuerySuggestions::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_query_suggestions::GetQuerySuggestions::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_query_suggestions::GetQuerySuggestionsOutput, crate::operation::get_query_suggestions::GetQuerySuggestionsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The identifier of the index you want to get query suggestions from.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.index_id(input.into());
@@ -171,14 +158,14 @@ impl GetQuerySuggestionsFluentBuilder {
     /// <p>The suggestions type to base query suggestions on. The suggestion types are query history or document fields/attributes. You can set one type or the other.</p>
     /// <p>If you set query history as your suggestions type, Amazon Kendra suggests queries relevant to your users based on popular queries in the query history.</p>
     /// <p>If you set document fields/attributes as your suggestions type, Amazon Kendra suggests queries relevant to your users based on the contents of document fields.</p>
-    pub fn set_suggestion_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SuggestionType>>) -> Self {
+    pub fn set_suggestion_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SuggestionType>>) -> Self {
         self.inner = self.inner.set_suggestion_types(input);
         self
     }
     /// <p>The suggestions type to base query suggestions on. The suggestion types are query history or document fields/attributes. You can set one type or the other.</p>
     /// <p>If you set query history as your suggestions type, Amazon Kendra suggests queries relevant to your users based on popular queries in the query history.</p>
     /// <p>If you set document fields/attributes as your suggestions type, Amazon Kendra suggests queries relevant to your users based on the contents of document fields.</p>
-    pub fn get_suggestion_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SuggestionType>> {
+    pub fn get_suggestion_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SuggestionType>> {
         self.inner.get_suggestion_types()
     }
     /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
@@ -196,3 +183,4 @@ impl GetQuerySuggestionsFluentBuilder {
         self.inner.get_attribute_suggestions_config()
     }
 }
+

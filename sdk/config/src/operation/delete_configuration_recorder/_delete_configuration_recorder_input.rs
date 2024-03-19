@@ -3,13 +3,13 @@
 /// <p>The request object for the <code>DeleteConfigurationRecorder</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteConfigurationRecorderInput {
+pub struct DeleteConfigurationRecorderInput  {
     /// <p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>
     pub configuration_recorder_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteConfigurationRecorderInput {
+impl  DeleteConfigurationRecorderInput  {
     /// <p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>
-    pub fn configuration_recorder_name(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_recorder_name(&self) -> ::std::option::Option<& str> {
         self.configuration_recorder_name.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl DeleteConfigurationRecorderInputBuilder {
     }
     /// <p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>
     pub fn set_configuration_recorder_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_recorder_name = input;
-        self
+        self.configuration_recorder_name = input; self
     }
     /// <p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>
     pub fn get_configuration_recorder_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_recorder_name
     }
     /// Consumes the builder and constructs a [`DeleteConfigurationRecorderInput`](crate::operation::delete_configuration_recorder::DeleteConfigurationRecorderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_configuration_recorder::DeleteConfigurationRecorderInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_configuration_recorder::DeleteConfigurationRecorderInput {
-            configuration_recorder_name: self.configuration_recorder_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_configuration_recorder::DeleteConfigurationRecorderInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_configuration_recorder::DeleteConfigurationRecorderInput {
+                configuration_recorder_name: self.configuration_recorder_name
+                ,
+            }
+        )
     }
 }
+

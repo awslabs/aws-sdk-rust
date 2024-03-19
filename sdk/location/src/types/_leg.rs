@@ -17,15 +17,15 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Leg {
+pub struct Leg  {
     /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p><note>
     /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>.</p>
     /// </note>
-    pub start_position: ::std::vec::Vec<f64>,
+    pub start_position: ::std::vec::Vec::<f64>,
     /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p><note>
     /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped to a nearby road</a>.</p>
     /// </note>
-    pub end_position: ::std::vec::Vec<f64>,
+    pub end_position: ::std::vec::Vec::<f64>,
     /// <p>The distance between the leg's <code>StartPosition</code> and <code>EndPosition</code> along a calculated route.</p>
     /// <ul>
     /// <li>
@@ -37,22 +37,20 @@ pub struct Leg {
     /// <p>Contains the calculated route's path as a linestring geometry.</p>
     pub geometry: ::std::option::Option<crate::types::LegGeometry>,
     /// <p>Contains a list of steps, which represent subsections of a leg. Each step provides instructions for how to move to the next step in the leg such as the step's start position, end position, travel distance, travel duration, and geometry offset.</p>
-    pub steps: ::std::vec::Vec<crate::types::Step>,
+    pub steps: ::std::vec::Vec::<crate::types::Step>,
 }
-impl Leg {
+impl  Leg  {
     /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p><note>
     /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>.</p>
     /// </note>
-    pub fn start_position(&self) -> &[f64] {
-        use std::ops::Deref;
-        self.start_position.deref()
+    pub fn start_position(&self) -> & [f64] {
+        use std::ops::Deref; self.start_position.deref()
     }
     /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p><note>
     /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped to a nearby road</a>.</p>
     /// </note>
-    pub fn end_position(&self) -> &[f64] {
-        use std::ops::Deref;
-        self.end_position.deref()
+    pub fn end_position(&self) -> & [f64] {
+        use std::ops::Deref; self.end_position.deref()
     }
     /// <p>The distance between the leg's <code>StartPosition</code> and <code>EndPosition</code> along a calculated route.</p>
     /// <ul>
@@ -67,16 +65,15 @@ impl Leg {
         self.duration_seconds
     }
     /// <p>Contains the calculated route's path as a linestring geometry.</p>
-    pub fn geometry(&self) -> ::std::option::Option<&crate::types::LegGeometry> {
+    pub fn geometry(&self) -> ::std::option::Option<& crate::types::LegGeometry> {
         self.geometry.as_ref()
     }
     /// <p>Contains a list of steps, which represent subsections of a leg. Each step provides instructions for how to move to the next step in the leg such as the step's start position, end position, travel distance, travel duration, and geometry offset.</p>
-    pub fn steps(&self) -> &[crate::types::Step] {
-        use std::ops::Deref;
-        self.steps.deref()
+    pub fn steps(&self) -> & [crate::types::Step] {
+        use std::ops::Deref; self.steps.deref()
     }
 }
-impl ::std::fmt::Debug for Leg {
+impl  ::std::fmt::Debug for Leg  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Leg");
         formatter.field("start_position", &"*** Sensitive Data Redacted ***");
@@ -99,12 +96,12 @@ impl Leg {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct LegBuilder {
-    pub(crate) start_position: ::std::option::Option<::std::vec::Vec<f64>>,
-    pub(crate) end_position: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub(crate) start_position: ::std::option::Option<::std::vec::Vec::<f64>>,
+    pub(crate) end_position: ::std::option::Option<::std::vec::Vec::<f64>>,
     pub(crate) distance: ::std::option::Option<f64>,
     pub(crate) duration_seconds: ::std::option::Option<f64>,
     pub(crate) geometry: ::std::option::Option<crate::types::LegGeometry>,
-    pub(crate) steps: ::std::option::Option<::std::vec::Vec<crate::types::Step>>,
+    pub(crate) steps: ::std::option::Option<::std::vec::Vec::<crate::types::Step>>,
 }
 impl LegBuilder {
     /// Appends an item to `start_position`.
@@ -116,21 +113,20 @@ impl LegBuilder {
     /// </note>
     pub fn start_position(mut self, input: f64) -> Self {
         let mut v = self.start_position.unwrap_or_default();
-        v.push(input);
-        self.start_position = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.start_position = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p><note>
     /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>.</p>
     /// </note>
-    pub fn set_start_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
-        self.start_position = input;
-        self
+    pub fn set_start_position(mut self, input: ::std::option::Option<::std::vec::Vec::<f64>>) -> Self {
+        self.start_position = input; self
     }
     /// <p>The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.</p><note>
     /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>.</p>
     /// </note>
-    pub fn get_start_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+    pub fn get_start_position(&self) -> &::std::option::Option<::std::vec::Vec::<f64>> {
         &self.start_position
     }
     /// Appends an item to `end_position`.
@@ -142,21 +138,20 @@ impl LegBuilder {
     /// </note>
     pub fn end_position(mut self, input: f64) -> Self {
         let mut v = self.end_position.unwrap_or_default();
-        v.push(input);
-        self.end_position = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.end_position = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p><note>
     /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped to a nearby road</a>.</p>
     /// </note>
-    pub fn set_end_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
-        self.end_position = input;
-        self
+    pub fn set_end_position(mut self, input: ::std::option::Option<::std::vec::Vec::<f64>>) -> Self {
+        self.end_position = input; self
     }
     /// <p>The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.</p><note>
     /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped to a nearby road</a>.</p>
     /// </note>
-    pub fn get_end_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+    pub fn get_end_position(&self) -> &::std::option::Option<::std::vec::Vec::<f64>> {
         &self.end_position
     }
     /// <p>The distance between the leg's <code>StartPosition</code> and <code>EndPosition</code> along a calculated route.</p>
@@ -175,8 +170,7 @@ impl LegBuilder {
     /// <p>The default measurement is <code>Kilometers</code> unless the request specifies a <code>DistanceUnit</code> of <code>Miles</code>.</p></li>
     /// </ul>
     pub fn set_distance(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.distance = input;
-        self
+        self.distance = input; self
     }
     /// <p>The distance between the leg's <code>StartPosition</code> and <code>EndPosition</code> along a calculated route.</p>
     /// <ul>
@@ -194,8 +188,7 @@ impl LegBuilder {
     }
     /// <p>The estimated travel time between the leg's <code>StartPosition</code> and <code>EndPosition</code>. The travel mode and departure time that you specify in the request determines the calculated time.</p>
     pub fn set_duration_seconds(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.duration_seconds = input;
-        self
+        self.duration_seconds = input; self
     }
     /// <p>The estimated travel time between the leg's <code>StartPosition</code> and <code>EndPosition</code>. The travel mode and departure time that you specify in the request determines the calculated time.</p>
     pub fn get_duration_seconds(&self) -> &::std::option::Option<f64> {
@@ -208,8 +201,7 @@ impl LegBuilder {
     }
     /// <p>Contains the calculated route's path as a linestring geometry.</p>
     pub fn set_geometry(mut self, input: ::std::option::Option<crate::types::LegGeometry>) -> Self {
-        self.geometry = input;
-        self
+        self.geometry = input; self
     }
     /// <p>Contains the calculated route's path as a linestring geometry.</p>
     pub fn get_geometry(&self) -> &::std::option::Option<crate::types::LegGeometry> {
@@ -222,17 +214,16 @@ impl LegBuilder {
     /// <p>Contains a list of steps, which represent subsections of a leg. Each step provides instructions for how to move to the next step in the leg such as the step's start position, end position, travel distance, travel duration, and geometry offset.</p>
     pub fn steps(mut self, input: crate::types::Step) -> Self {
         let mut v = self.steps.unwrap_or_default();
-        v.push(input);
-        self.steps = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.steps = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains a list of steps, which represent subsections of a leg. Each step provides instructions for how to move to the next step in the leg such as the step's start position, end position, travel distance, travel duration, and geometry offset.</p>
-    pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Step>>) -> Self {
-        self.steps = input;
-        self
+    pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Step>>) -> Self {
+        self.steps = input; self
     }
     /// <p>Contains a list of steps, which represent subsections of a leg. Each step provides instructions for how to move to the next step in the leg such as the step's start position, end position, travel distance, travel duration, and geometry offset.</p>
-    pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Step>> {
+    pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Step>> {
         &self.steps
     }
     /// Consumes the builder and constructs a [`Leg`](crate::types::Leg).
@@ -243,39 +234,37 @@ impl LegBuilder {
     /// - [`duration_seconds`](crate::types::builders::LegBuilder::duration_seconds)
     /// - [`steps`](crate::types::builders::LegBuilder::steps)
     pub fn build(self) -> ::std::result::Result<crate::types::Leg, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Leg {
-            start_position: self.start_position.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start_position",
-                    "start_position was not specified but it is required when building Leg",
-                )
-            })?,
-            end_position: self.end_position.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "end_position",
-                    "end_position was not specified but it is required when building Leg",
-                )
-            })?,
-            distance: self.distance.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "distance",
-                    "distance was not specified but it is required when building Leg",
-                )
-            })?,
-            duration_seconds: self.duration_seconds.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "duration_seconds",
-                    "duration_seconds was not specified but it is required when building Leg",
-                )
-            })?,
-            geometry: self.geometry,
-            steps: self.steps.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "steps",
-                    "steps was not specified but it is required when building Leg",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Leg {
+                start_position: self.start_position
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start_position", "start_position was not specified but it is required when building Leg")
+                    )?
+                ,
+                end_position: self.end_position
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("end_position", "end_position was not specified but it is required when building Leg")
+                    )?
+                ,
+                distance: self.distance
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("distance", "distance was not specified but it is required when building Leg")
+                    )?
+                ,
+                duration_seconds: self.duration_seconds
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("duration_seconds", "duration_seconds was not specified but it is required when building Leg")
+                    )?
+                ,
+                geometry: self.geometry
+                ,
+                steps: self.steps
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("steps", "steps was not specified but it is required when building Leg")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for LegBuilder {
@@ -290,3 +279,4 @@ impl ::std::fmt::Debug for LegBuilder {
         formatter.finish()
     }
 }
+

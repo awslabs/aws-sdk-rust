@@ -3,14 +3,14 @@
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateReceiptRuleOutput {
+pub struct CreateReceiptRuleOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for CreateReceiptRuleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateReceiptRuleOutput {
     /// Creates a new builder-style object to manufacture [`CreateReceiptRuleOutput`](crate::operation::create_receipt_rule::CreateReceiptRuleOutput).
     pub fn builder() -> crate::operation::create_receipt_rule::builders::CreateReceiptRuleOutputBuilder {
@@ -26,14 +26,14 @@ pub struct CreateReceiptRuleOutputBuilder {
 }
 impl CreateReceiptRuleOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateReceiptRuleOutput`](crate::operation::create_receipt_rule::CreateReceiptRuleOutput).
     pub fn build(self) -> crate::operation::create_receipt_rule::CreateReceiptRuleOutput {
         crate::operation::create_receipt_rule::CreateReceiptRuleOutput {
@@ -41,3 +41,4 @@ impl CreateReceiptRuleOutputBuilder {
         }
     }
 }
+

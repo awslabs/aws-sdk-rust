@@ -4,7 +4,7 @@
 /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BucketBundle {
+pub struct BucketBundle  {
     /// <p>The ID of the bundle.</p>
     pub bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the bundle.</p>
@@ -18,13 +18,13 @@ pub struct BucketBundle {
     /// <p>Indicates whether the bundle is active. Use for a new or existing bucket.</p>
     pub is_active: ::std::option::Option<bool>,
 }
-impl BucketBundle {
+impl  BucketBundle  {
     /// <p>The ID of the bundle.</p>
-    pub fn bundle_id(&self) -> ::std::option::Option<&str> {
+    pub fn bundle_id(&self) -> ::std::option::Option<& str> {
         self.bundle_id.as_deref()
     }
     /// <p>The name of the bundle.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The monthly price of the bundle, in US dollars.</p>
@@ -70,8 +70,7 @@ impl BucketBundleBuilder {
     }
     /// <p>The ID of the bundle.</p>
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bundle_id = input;
-        self
+        self.bundle_id = input; self
     }
     /// <p>The ID of the bundle.</p>
     pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl BucketBundleBuilder {
     }
     /// <p>The name of the bundle.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the bundle.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +96,7 @@ impl BucketBundleBuilder {
     }
     /// <p>The monthly price of the bundle, in US dollars.</p>
     pub fn set_price(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.price = input;
-        self
+        self.price = input; self
     }
     /// <p>The monthly price of the bundle, in US dollars.</p>
     pub fn get_price(&self) -> &::std::option::Option<f32> {
@@ -112,8 +109,7 @@ impl BucketBundleBuilder {
     }
     /// <p>The storage size of the bundle, in GB.</p>
     pub fn set_storage_per_month_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.storage_per_month_in_gb = input;
-        self
+        self.storage_per_month_in_gb = input; self
     }
     /// <p>The storage size of the bundle, in GB.</p>
     pub fn get_storage_per_month_in_gb(&self) -> &::std::option::Option<i32> {
@@ -126,8 +122,7 @@ impl BucketBundleBuilder {
     }
     /// <p>The monthly network transfer quota of the bundle.</p>
     pub fn set_transfer_per_month_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.transfer_per_month_in_gb = input;
-        self
+        self.transfer_per_month_in_gb = input; self
     }
     /// <p>The monthly network transfer quota of the bundle.</p>
     pub fn get_transfer_per_month_in_gb(&self) -> &::std::option::Option<i32> {
@@ -140,8 +135,7 @@ impl BucketBundleBuilder {
     }
     /// <p>Indicates whether the bundle is active. Use for a new or existing bucket.</p>
     pub fn set_is_active(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_active = input;
-        self
+        self.is_active = input; self
     }
     /// <p>Indicates whether the bundle is active. Use for a new or existing bucket.</p>
     pub fn get_is_active(&self) -> &::std::option::Option<bool> {
@@ -150,12 +144,19 @@ impl BucketBundleBuilder {
     /// Consumes the builder and constructs a [`BucketBundle`](crate::types::BucketBundle).
     pub fn build(self) -> crate::types::BucketBundle {
         crate::types::BucketBundle {
-            bundle_id: self.bundle_id,
-            name: self.name,
-            price: self.price,
-            storage_per_month_in_gb: self.storage_per_month_in_gb,
-            transfer_per_month_in_gb: self.transfer_per_month_in_gb,
-            is_active: self.is_active,
+            bundle_id: self.bundle_id
+            ,
+            name: self.name
+            ,
+            price: self.price
+            ,
+            storage_per_month_in_gb: self.storage_per_month_in_gb
+            ,
+            transfer_per_month_in_gb: self.transfer_per_month_in_gb
+            ,
+            is_active: self.is_active
+            ,
         }
     }
 }
+

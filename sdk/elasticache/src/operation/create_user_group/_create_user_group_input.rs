@@ -2,36 +2,38 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateUserGroupInput {
+pub struct CreateUserGroupInput  {
     /// <p>The ID of the user group.</p>
     pub user_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The current supported value is Redis.</p>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The list of user IDs that belong to the user group.</p>
-    pub user_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub user_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted. Available for Redis only.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateUserGroupInput {
+impl  CreateUserGroupInput  {
     /// <p>The ID of the user group.</p>
-    pub fn user_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_group_id(&self) -> ::std::option::Option<& str> {
         self.user_group_id.as_deref()
     }
     /// <p>The current supported value is Redis.</p>
-    pub fn engine(&self) -> ::std::option::Option<&str> {
+    pub fn engine(&self) -> ::std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The list of user IDs that belong to the user group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_ids.is_none()`.
-    pub fn user_ids(&self) -> &[::std::string::String] {
-        self.user_ids.as_deref().unwrap_or_default()
+    pub fn user_ids(&self) -> & [::std::string::String] {
+        self.user_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted. Available for Redis only.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateUserGroupInput {
@@ -47,8 +49,8 @@ impl CreateUserGroupInput {
 pub struct CreateUserGroupInputBuilder {
     pub(crate) user_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) engine: ::std::option::Option<::std::string::String>,
-    pub(crate) user_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) user_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateUserGroupInputBuilder {
     /// <p>The ID of the user group.</p>
@@ -59,8 +61,7 @@ impl CreateUserGroupInputBuilder {
     }
     /// <p>The ID of the user group.</p>
     pub fn set_user_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_group_id = input;
-        self
+        self.user_group_id = input; self
     }
     /// <p>The ID of the user group.</p>
     pub fn get_user_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +75,7 @@ impl CreateUserGroupInputBuilder {
     }
     /// <p>The current supported value is Redis.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine = input;
-        self
+        self.engine = input; self
     }
     /// <p>The current supported value is Redis.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,17 +88,16 @@ impl CreateUserGroupInputBuilder {
     /// <p>The list of user IDs that belong to the user group.</p>
     pub fn user_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.user_ids.unwrap_or_default();
-        v.push(input.into());
-        self.user_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.user_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of user IDs that belong to the user group.</p>
-    pub fn set_user_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.user_ids = input;
-        self
+    pub fn set_user_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.user_ids = input; self
     }
     /// <p>The list of user IDs that belong to the user group.</p>
-    pub fn get_user_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_user_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.user_ids
     }
     /// Appends an item to `tags`.
@@ -108,28 +107,32 @@ impl CreateUserGroupInputBuilder {
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted. Available for Redis only.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted. Available for Redis only.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted. Available for Redis only.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateUserGroupInput`](crate::operation::create_user_group::CreateUserGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_user_group::CreateUserGroupInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_user_group::CreateUserGroupInput {
-            user_group_id: self.user_group_id,
-            engine: self.engine,
-            user_ids: self.user_ids,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_user_group::CreateUserGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_user_group::CreateUserGroupInput {
+                user_group_id: self.user_group_id
+                ,
+                engine: self.engine
+                ,
+                user_ids: self.user_ids
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

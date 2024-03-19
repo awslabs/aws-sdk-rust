@@ -3,13 +3,13 @@
 /// <p>Provides details about the action to use in the place of the action that results from the rule group evaluation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsWafRegionalWebAclRulesListOverrideActionDetails {
+pub struct AwsWafRegionalWebAclRulesListOverrideActionDetails  {
     /// <p>Overrides the rule evaluation result in the rule group.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
 }
-impl AwsWafRegionalWebAclRulesListOverrideActionDetails {
+impl  AwsWafRegionalWebAclRulesListOverrideActionDetails  {
     /// <p>Overrides the rule evaluation result in the rule group.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AwsWafRegionalWebAclRulesListOverrideActionDetailsBuilder {
     }
     /// <p>Overrides the rule evaluation result in the rule group.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Overrides the rule evaluation result in the rule group.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl AwsWafRegionalWebAclRulesListOverrideActionDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`AwsWafRegionalWebAclRulesListOverrideActionDetails`](crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails).
     pub fn build(self) -> crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails {
-        crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails { r#type: self.r#type }
+        crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails {
+            r#type: self.r#type
+            ,
+        }
     }
 }
+

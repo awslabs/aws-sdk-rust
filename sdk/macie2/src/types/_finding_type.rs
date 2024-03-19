@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let findingtype = unimplemented!();
 /// match findingtype {
@@ -39,16 +39,14 @@
 /// Specifically, when `findingtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FindingType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The type of finding. For details about each type, see <a href="https://docs.aws.amazon.com/macie/latest/user/findings-types.html">Types of Amazon Macie findings</a> in the <i>Amazon Macie User Guide</i>. Possible values are:</p>
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum FindingType {
     #[allow(missing_docs)] // documentation missing in model
     PolicyIamUserS3BlockPublicAccessDisabled,
@@ -74,100 +72,89 @@ pub enum FindingType {
     SensitiveDataS3ObjectPersonal,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for FindingType {
-    fn from(s: &str) -> Self {
-        match s {
-            "Policy:IAMUser/S3BlockPublicAccessDisabled" => FindingType::PolicyIamUserS3BlockPublicAccessDisabled,
-            "Policy:IAMUser/S3BucketEncryptionDisabled" => FindingType::PolicyIamUserS3BucketEncryptionDisabled,
-            "Policy:IAMUser/S3BucketPublic" => FindingType::PolicyIamUserS3BucketPublic,
-            "Policy:IAMUser/S3BucketReplicatedExternally" => FindingType::PolicyIamUserS3BucketReplicatedExternally,
-            "Policy:IAMUser/S3BucketSharedExternally" => FindingType::PolicyIamUserS3BucketSharedExternally,
-            "Policy:IAMUser/S3BucketSharedWithCloudFront" => FindingType::PolicyIamUserS3BucketSharedWithCloudFront,
-            "SensitiveData:S3Object/Credentials" => FindingType::SensitiveDataS3ObjectCredentials,
-            "SensitiveData:S3Object/CustomIdentifier" => FindingType::SensitiveDataS3ObjectCustomIdentifier,
-            "SensitiveData:S3Object/Financial" => FindingType::SensitiveDataS3ObjectFinancial,
-            "SensitiveData:S3Object/Multiple" => FindingType::SensitiveDataS3ObjectMultiple,
-            "SensitiveData:S3Object/Personal" => FindingType::SensitiveDataS3ObjectPersonal,
-            other => FindingType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "Policy:IAMUser/S3BlockPublicAccessDisabled" => FindingType::PolicyIamUserS3BlockPublicAccessDisabled,
+"Policy:IAMUser/S3BucketEncryptionDisabled" => FindingType::PolicyIamUserS3BucketEncryptionDisabled,
+"Policy:IAMUser/S3BucketPublic" => FindingType::PolicyIamUserS3BucketPublic,
+"Policy:IAMUser/S3BucketReplicatedExternally" => FindingType::PolicyIamUserS3BucketReplicatedExternally,
+"Policy:IAMUser/S3BucketSharedExternally" => FindingType::PolicyIamUserS3BucketSharedExternally,
+"Policy:IAMUser/S3BucketSharedWithCloudFront" => FindingType::PolicyIamUserS3BucketSharedWithCloudFront,
+"SensitiveData:S3Object/Credentials" => FindingType::SensitiveDataS3ObjectCredentials,
+"SensitiveData:S3Object/CustomIdentifier" => FindingType::SensitiveDataS3ObjectCustomIdentifier,
+"SensitiveData:S3Object/Financial" => FindingType::SensitiveDataS3ObjectFinancial,
+"SensitiveData:S3Object/Multiple" => FindingType::SensitiveDataS3ObjectMultiple,
+"SensitiveData:S3Object/Personal" => FindingType::SensitiveDataS3ObjectPersonal,
+other => FindingType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for FindingType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(FindingType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(FindingType::from(s))
+                    }
+                }
 impl FindingType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FindingType::PolicyIamUserS3BlockPublicAccessDisabled => "Policy:IAMUser/S3BlockPublicAccessDisabled",
-            FindingType::PolicyIamUserS3BucketEncryptionDisabled => "Policy:IAMUser/S3BucketEncryptionDisabled",
-            FindingType::PolicyIamUserS3BucketPublic => "Policy:IAMUser/S3BucketPublic",
-            FindingType::PolicyIamUserS3BucketReplicatedExternally => "Policy:IAMUser/S3BucketReplicatedExternally",
-            FindingType::PolicyIamUserS3BucketSharedExternally => "Policy:IAMUser/S3BucketSharedExternally",
-            FindingType::PolicyIamUserS3BucketSharedWithCloudFront => "Policy:IAMUser/S3BucketSharedWithCloudFront",
-            FindingType::SensitiveDataS3ObjectCredentials => "SensitiveData:S3Object/Credentials",
-            FindingType::SensitiveDataS3ObjectCustomIdentifier => "SensitiveData:S3Object/CustomIdentifier",
-            FindingType::SensitiveDataS3ObjectFinancial => "SensitiveData:S3Object/Financial",
-            FindingType::SensitiveDataS3ObjectMultiple => "SensitiveData:S3Object/Multiple",
-            FindingType::SensitiveDataS3ObjectPersonal => "SensitiveData:S3Object/Personal",
-            FindingType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Policy:IAMUser/S3BlockPublicAccessDisabled",
-            "Policy:IAMUser/S3BucketEncryptionDisabled",
-            "Policy:IAMUser/S3BucketPublic",
-            "Policy:IAMUser/S3BucketReplicatedExternally",
-            "Policy:IAMUser/S3BucketSharedExternally",
-            "Policy:IAMUser/S3BucketSharedWithCloudFront",
-            "SensitiveData:S3Object/Credentials",
-            "SensitiveData:S3Object/CustomIdentifier",
-            "SensitiveData:S3Object/Financial",
-            "SensitiveData:S3Object/Multiple",
-            "SensitiveData:S3Object/Personal",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FindingType::PolicyIamUserS3BlockPublicAccessDisabled => "Policy:IAMUser/S3BlockPublicAccessDisabled",
+    FindingType::PolicyIamUserS3BucketEncryptionDisabled => "Policy:IAMUser/S3BucketEncryptionDisabled",
+    FindingType::PolicyIamUserS3BucketPublic => "Policy:IAMUser/S3BucketPublic",
+    FindingType::PolicyIamUserS3BucketReplicatedExternally => "Policy:IAMUser/S3BucketReplicatedExternally",
+    FindingType::PolicyIamUserS3BucketSharedExternally => "Policy:IAMUser/S3BucketSharedExternally",
+    FindingType::PolicyIamUserS3BucketSharedWithCloudFront => "Policy:IAMUser/S3BucketSharedWithCloudFront",
+    FindingType::SensitiveDataS3ObjectCredentials => "SensitiveData:S3Object/Credentials",
+    FindingType::SensitiveDataS3ObjectCustomIdentifier => "SensitiveData:S3Object/CustomIdentifier",
+    FindingType::SensitiveDataS3ObjectFinancial => "SensitiveData:S3Object/Financial",
+    FindingType::SensitiveDataS3ObjectMultiple => "SensitiveData:S3Object/Multiple",
+    FindingType::SensitiveDataS3ObjectPersonal => "SensitiveData:S3Object/Personal",
+    FindingType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Policy:IAMUser/S3BlockPublicAccessDisabled", "Policy:IAMUser/S3BucketEncryptionDisabled", "Policy:IAMUser/S3BucketPublic", "Policy:IAMUser/S3BucketReplicatedExternally", "Policy:IAMUser/S3BucketSharedExternally", "Policy:IAMUser/S3BucketSharedWithCloudFront", "SensitiveData:S3Object/Credentials", "SensitiveData:S3Object/CustomIdentifier", "SensitiveData:S3Object/Financial", "SensitiveData:S3Object/Multiple", "SensitiveData:S3Object/Personal"]
+                }
+            }
 impl ::std::convert::AsRef<str> for FindingType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl FindingType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for FindingType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            FindingType::PolicyIamUserS3BlockPublicAccessDisabled => write!(f, "Policy:IAMUser/S3BlockPublicAccessDisabled"),
-            FindingType::PolicyIamUserS3BucketEncryptionDisabled => write!(f, "Policy:IAMUser/S3BucketEncryptionDisabled"),
-            FindingType::PolicyIamUserS3BucketPublic => write!(f, "Policy:IAMUser/S3BucketPublic"),
-            FindingType::PolicyIamUserS3BucketReplicatedExternally => write!(f, "Policy:IAMUser/S3BucketReplicatedExternally"),
-            FindingType::PolicyIamUserS3BucketSharedExternally => write!(f, "Policy:IAMUser/S3BucketSharedExternally"),
-            FindingType::PolicyIamUserS3BucketSharedWithCloudFront => write!(f, "Policy:IAMUser/S3BucketSharedWithCloudFront"),
-            FindingType::SensitiveDataS3ObjectCredentials => write!(f, "SensitiveData:S3Object/Credentials"),
-            FindingType::SensitiveDataS3ObjectCustomIdentifier => write!(f, "SensitiveData:S3Object/CustomIdentifier"),
-            FindingType::SensitiveDataS3ObjectFinancial => write!(f, "SensitiveData:S3Object/Financial"),
-            FindingType::SensitiveDataS3ObjectMultiple => write!(f, "SensitiveData:S3Object/Multiple"),
-            FindingType::SensitiveDataS3ObjectPersonal => write!(f, "SensitiveData:S3Object/Personal"),
-            FindingType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                FindingType::PolicyIamUserS3BlockPublicAccessDisabled => write!(f, "Policy:IAMUser/S3BlockPublicAccessDisabled"),
+FindingType::PolicyIamUserS3BucketEncryptionDisabled => write!(f, "Policy:IAMUser/S3BucketEncryptionDisabled"),
+FindingType::PolicyIamUserS3BucketPublic => write!(f, "Policy:IAMUser/S3BucketPublic"),
+FindingType::PolicyIamUserS3BucketReplicatedExternally => write!(f, "Policy:IAMUser/S3BucketReplicatedExternally"),
+FindingType::PolicyIamUserS3BucketSharedExternally => write!(f, "Policy:IAMUser/S3BucketSharedExternally"),
+FindingType::PolicyIamUserS3BucketSharedWithCloudFront => write!(f, "Policy:IAMUser/S3BucketSharedWithCloudFront"),
+FindingType::SensitiveDataS3ObjectCredentials => write!(f, "SensitiveData:S3Object/Credentials"),
+FindingType::SensitiveDataS3ObjectCustomIdentifier => write!(f, "SensitiveData:S3Object/CustomIdentifier"),
+FindingType::SensitiveDataS3ObjectFinancial => write!(f, "SensitiveData:S3Object/Financial"),
+FindingType::SensitiveDataS3ObjectMultiple => write!(f, "SensitiveData:S3Object/Multiple"),
+FindingType::SensitiveDataS3ObjectPersonal => write!(f, "SensitiveData:S3Object/Personal"),
+FindingType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

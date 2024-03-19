@@ -2,17 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListUserAccessLoggingSettings`](crate::operation::list_user_access_logging_settings::builders::ListUserAccessLoggingSettingsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_user_access_logging_settings::builders::ListUserAccessLoggingSettingsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_user_access_logging_settings::builders::ListUserAccessLoggingSettingsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_user_access_logging_settings::builders::ListUserAccessLoggingSettingsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token used to retrieve the next page of results for this operation.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_user_access_logging_settings::builders::ListUserAccessLoggingSettingsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_user_access_logging_settings::builders::ListUserAccessLoggingSettingsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to be included in the next page.</p><br>
-    /// - On success, responds with [`ListUserAccessLoggingSettingsOutput`](crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettingsOutput) with field(s):
+                            /// - On success, responds with [`ListUserAccessLoggingSettingsOutput`](crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettingsOutput) with field(s):
     ///   - [`user_access_logging_settings(Option<Vec::<UserAccessLoggingSettingsSummary>>)`](crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettingsOutput::user_access_logging_settings): <p>The user access logging settings.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettingsOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
-    /// - On failure, responds with [`SdkError<ListUserAccessLoggingSettingsError>`](crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettingsError)
-    pub fn list_user_access_logging_settings(
-        &self,
-    ) -> crate::operation::list_user_access_logging_settings::builders::ListUserAccessLoggingSettingsFluentBuilder {
-        crate::operation::list_user_access_logging_settings::builders::ListUserAccessLoggingSettingsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListUserAccessLoggingSettingsError>`](crate::operation::list_user_access_logging_settings::ListUserAccessLoggingSettingsError)
+    pub fn list_user_access_logging_settings(&self) -> crate::operation::list_user_access_logging_settings::builders::ListUserAccessLoggingSettingsFluentBuilder {
+                                crate::operation::list_user_access_logging_settings::builders::ListUserAccessLoggingSettingsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

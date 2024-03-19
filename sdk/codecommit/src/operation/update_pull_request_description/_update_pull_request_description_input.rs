@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePullRequestDescriptionInput {
+pub struct UpdatePullRequestDescriptionInput  {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
     pub pull_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The updated content of the description for the pull request. This content replaces the existing description.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl UpdatePullRequestDescriptionInput {
+impl  UpdatePullRequestDescriptionInput  {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn pull_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn pull_request_id(&self) -> ::std::option::Option<& str> {
         self.pull_request_id.as_deref()
     }
     /// <p>The updated content of the description for the pull request. This content replaces the existing description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdatePullRequestDescriptionInputBuilder {
     }
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
     pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pull_request_id = input;
-        self
+        self.pull_request_id = input; self
     }
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
     pub fn get_pull_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl UpdatePullRequestDescriptionInputBuilder {
     }
     /// <p>The updated content of the description for the pull request. This content replaces the existing description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The updated content of the description for the pull request. This content replaces the existing description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdatePullRequestDescriptionInput`](crate::operation::update_pull_request_description::UpdatePullRequestDescriptionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_pull_request_description::UpdatePullRequestDescriptionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_pull_request_description::UpdatePullRequestDescriptionInput {
-            pull_request_id: self.pull_request_id,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_pull_request_description::UpdatePullRequestDescriptionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_pull_request_description::UpdatePullRequestDescriptionInput {
+                pull_request_id: self.pull_request_id
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

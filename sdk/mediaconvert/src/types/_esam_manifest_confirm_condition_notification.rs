@@ -3,13 +3,13 @@
 /// ESAM ManifestConfirmConditionNotification defined by OC-SP-ESAM-API-I03-131025.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EsamManifestConfirmConditionNotification {
+pub struct EsamManifestConfirmConditionNotification  {
     /// Provide your ESAM ManifestConfirmConditionNotification XML document inside your JSON job settings. Form the XML document as per OC-SP-ESAM-API-I03-131025. The transcoder will use the Manifest Conditioning instructions in the message that you supply.
     pub mcc_xml: ::std::option::Option<::std::string::String>,
 }
-impl EsamManifestConfirmConditionNotification {
+impl  EsamManifestConfirmConditionNotification  {
     /// Provide your ESAM ManifestConfirmConditionNotification XML document inside your JSON job settings. Form the XML document as per OC-SP-ESAM-API-I03-131025. The transcoder will use the Manifest Conditioning instructions in the message that you supply.
-    pub fn mcc_xml(&self) -> ::std::option::Option<&str> {
+    pub fn mcc_xml(&self) -> ::std::option::Option<& str> {
         self.mcc_xml.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl EsamManifestConfirmConditionNotificationBuilder {
     }
     /// Provide your ESAM ManifestConfirmConditionNotification XML document inside your JSON job settings. Form the XML document as per OC-SP-ESAM-API-I03-131025. The transcoder will use the Manifest Conditioning instructions in the message that you supply.
     pub fn set_mcc_xml(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mcc_xml = input;
-        self
+        self.mcc_xml = input; self
     }
     /// Provide your ESAM ManifestConfirmConditionNotification XML document inside your JSON job settings. Form the XML document as per OC-SP-ESAM-API-I03-131025. The transcoder will use the Manifest Conditioning instructions in the message that you supply.
     pub fn get_mcc_xml(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl EsamManifestConfirmConditionNotificationBuilder {
     }
     /// Consumes the builder and constructs a [`EsamManifestConfirmConditionNotification`](crate::types::EsamManifestConfirmConditionNotification).
     pub fn build(self) -> crate::types::EsamManifestConfirmConditionNotification {
-        crate::types::EsamManifestConfirmConditionNotification { mcc_xml: self.mcc_xml }
+        crate::types::EsamManifestConfirmConditionNotification {
+            mcc_xml: self.mcc_xml
+            ,
+        }
     }
 }
+

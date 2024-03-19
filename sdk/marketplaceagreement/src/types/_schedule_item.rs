@@ -3,19 +3,19 @@
 /// <p>An individual installment of the payment that includes the date and amount of the charge.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScheduleItem {
+pub struct ScheduleItem  {
     /// <p>The date that the customer would pay the price defined in this payment schedule term. Invoices are generated on the date provided.</p>
     pub charge_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The price that the customer would pay on the scheduled date (chargeDate).</p>
     pub charge_amount: ::std::option::Option<::std::string::String>,
 }
-impl ScheduleItem {
+impl  ScheduleItem  {
     /// <p>The date that the customer would pay the price defined in this payment schedule term. Invoices are generated on the date provided.</p>
-    pub fn charge_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn charge_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.charge_date.as_ref()
     }
     /// <p>The price that the customer would pay on the scheduled date (chargeDate).</p>
-    pub fn charge_amount(&self) -> ::std::option::Option<&str> {
+    pub fn charge_amount(&self) -> ::std::option::Option<& str> {
         self.charge_amount.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ScheduleItemBuilder {
     }
     /// <p>The date that the customer would pay the price defined in this payment schedule term. Invoices are generated on the date provided.</p>
     pub fn set_charge_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.charge_date = input;
-        self
+        self.charge_date = input; self
     }
     /// <p>The date that the customer would pay the price defined in this payment schedule term. Invoices are generated on the date provided.</p>
     pub fn get_charge_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -55,8 +54,7 @@ impl ScheduleItemBuilder {
     }
     /// <p>The price that the customer would pay on the scheduled date (chargeDate).</p>
     pub fn set_charge_amount(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.charge_amount = input;
-        self
+        self.charge_amount = input; self
     }
     /// <p>The price that the customer would pay on the scheduled date (chargeDate).</p>
     pub fn get_charge_amount(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ScheduleItemBuilder {
     /// Consumes the builder and constructs a [`ScheduleItem`](crate::types::ScheduleItem).
     pub fn build(self) -> crate::types::ScheduleItem {
         crate::types::ScheduleItem {
-            charge_date: self.charge_date,
-            charge_amount: self.charge_amount,
+            charge_date: self.charge_date
+            ,
+            charge_amount: self.charge_amount
+            ,
         }
     }
 }
+

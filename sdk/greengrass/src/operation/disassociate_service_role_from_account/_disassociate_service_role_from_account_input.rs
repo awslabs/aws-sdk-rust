@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateServiceRoleFromAccountInput {}
+pub struct DisassociateServiceRoleFromAccountInput  {
+}
 impl DisassociateServiceRoleFromAccountInput {
     /// Creates a new builder-style object to manufacture [`DisassociateServiceRoleFromAccountInput`](crate::operation::disassociate_service_role_from_account::DisassociateServiceRoleFromAccountInput).
     pub fn builder() -> crate::operation::disassociate_service_role_from_account::builders::DisassociateServiceRoleFromAccountInputBuilder {
@@ -13,15 +14,15 @@ impl DisassociateServiceRoleFromAccountInput {
 /// A builder for [`DisassociateServiceRoleFromAccountInput`](crate::operation::disassociate_service_role_from_account::DisassociateServiceRoleFromAccountInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct DisassociateServiceRoleFromAccountInputBuilder {}
+pub struct DisassociateServiceRoleFromAccountInputBuilder {
+}
 impl DisassociateServiceRoleFromAccountInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateServiceRoleFromAccountInput`](crate::operation::disassociate_service_role_from_account::DisassociateServiceRoleFromAccountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_service_role_from_account::DisassociateServiceRoleFromAccountInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::disassociate_service_role_from_account::DisassociateServiceRoleFromAccountInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_service_role_from_account::DisassociateServiceRoleFromAccountInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disassociate_service_role_from_account::DisassociateServiceRoleFromAccountInput {
+            }
+        )
     }
 }
+

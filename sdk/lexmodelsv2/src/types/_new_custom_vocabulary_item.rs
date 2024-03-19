@@ -3,7 +3,7 @@
 /// <p>The new custom vocabulary item from the custom vocabulary list.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NewCustomVocabularyItem {
+pub struct NewCustomVocabularyItem  {
     /// <p>The unique phrase for the new custom vocabulary item from the custom vocabulary list.</p>
     pub phrase: ::std::string::String,
     /// <p>The weight assigned to the new custom vocabulary item from the custom vocabulary list.</p>
@@ -11,18 +11,17 @@ pub struct NewCustomVocabularyItem {
     /// <p>The display as value assigned to the new custom vocabulary item from the custom vocabulary list.</p>
     pub display_as: ::std::option::Option<::std::string::String>,
 }
-impl NewCustomVocabularyItem {
+impl  NewCustomVocabularyItem  {
     /// <p>The unique phrase for the new custom vocabulary item from the custom vocabulary list.</p>
-    pub fn phrase(&self) -> &str {
-        use std::ops::Deref;
-        self.phrase.deref()
+    pub fn phrase(&self) -> & str {
+        use std::ops::Deref; self.phrase.deref()
     }
     /// <p>The weight assigned to the new custom vocabulary item from the custom vocabulary list.</p>
     pub fn weight(&self) -> ::std::option::Option<i32> {
         self.weight
     }
     /// <p>The display as value assigned to the new custom vocabulary item from the custom vocabulary list.</p>
-    pub fn display_as(&self) -> ::std::option::Option<&str> {
+    pub fn display_as(&self) -> ::std::option::Option<& str> {
         self.display_as.as_deref()
     }
 }
@@ -50,8 +49,7 @@ impl NewCustomVocabularyItemBuilder {
     }
     /// <p>The unique phrase for the new custom vocabulary item from the custom vocabulary list.</p>
     pub fn set_phrase(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phrase = input;
-        self
+        self.phrase = input; self
     }
     /// <p>The unique phrase for the new custom vocabulary item from the custom vocabulary list.</p>
     pub fn get_phrase(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl NewCustomVocabularyItemBuilder {
     }
     /// <p>The weight assigned to the new custom vocabulary item from the custom vocabulary list.</p>
     pub fn set_weight(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.weight = input;
-        self
+        self.weight = input; self
     }
     /// <p>The weight assigned to the new custom vocabulary item from the custom vocabulary list.</p>
     pub fn get_weight(&self) -> &::std::option::Option<i32> {
@@ -78,8 +75,7 @@ impl NewCustomVocabularyItemBuilder {
     }
     /// <p>The display as value assigned to the new custom vocabulary item from the custom vocabulary list.</p>
     pub fn set_display_as(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_as = input;
-        self
+        self.display_as = input; self
     }
     /// <p>The display as value assigned to the new custom vocabulary item from the custom vocabulary list.</p>
     pub fn get_display_as(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,15 +85,19 @@ impl NewCustomVocabularyItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`phrase`](crate::types::builders::NewCustomVocabularyItemBuilder::phrase)
     pub fn build(self) -> ::std::result::Result<crate::types::NewCustomVocabularyItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::NewCustomVocabularyItem {
-            phrase: self.phrase.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "phrase",
-                    "phrase was not specified but it is required when building NewCustomVocabularyItem",
-                )
-            })?,
-            weight: self.weight,
-            display_as: self.display_as,
-        })
+        ::std::result::Result::Ok(
+            crate::types::NewCustomVocabularyItem {
+                phrase: self.phrase
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("phrase", "phrase was not specified but it is required when building NewCustomVocabularyItem")
+                    )?
+                ,
+                weight: self.weight
+                ,
+                display_as: self.display_as
+                ,
+            }
+        )
     }
 }
+

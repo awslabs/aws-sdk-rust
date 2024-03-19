@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetKeyInput {
+pub struct GetKeyInput  {
     /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
     pub kvs_arn: ::std::option::Option<::std::string::String>,
     /// <p>The key to get.</p>
     pub key: ::std::option::Option<::std::string::String>,
 }
-impl GetKeyInput {
+impl  GetKeyInput  {
     /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
-    pub fn kvs_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kvs_arn(&self) -> ::std::option::Option<& str> {
         self.kvs_arn.as_deref()
     }
     /// <p>The key to get.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetKeyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
     pub fn set_kvs_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kvs_arn = input;
-        self
+        self.kvs_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
     pub fn get_kvs_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl GetKeyInputBuilder {
     }
     /// <p>The key to get.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The key to get.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,9 +63,14 @@ impl GetKeyInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetKeyInput`](crate::operation::get_key::GetKeyInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_key::GetKeyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_key::GetKeyInput {
-            kvs_arn: self.kvs_arn,
-            key: self.key,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_key::GetKeyInput {
+                kvs_arn: self.kvs_arn
+                ,
+                key: self.key
+                ,
+            }
+        )
     }
 }
+

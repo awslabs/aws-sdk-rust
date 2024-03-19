@@ -21,11 +21,7 @@ impl ErrorDetails {
     /// Tries to convert the enum instance into [`DefaultErrorDetails`](crate::types::ErrorDetails::DefaultErrorDetails), extracting the inner [`DefaultErrorDetails`](crate::types::DefaultErrorDetails).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_default_error_details(&self) -> ::std::result::Result<&crate::types::DefaultErrorDetails, &Self> {
-        if let ErrorDetails::DefaultErrorDetails(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ErrorDetails::DefaultErrorDetails(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`DefaultErrorDetails`](crate::types::ErrorDetails::DefaultErrorDetails).
     pub fn is_default_error_details(&self) -> bool {
@@ -36,3 +32,4 @@ impl ErrorDetails {
         matches!(self, Self::Unknown)
     }
 }
+

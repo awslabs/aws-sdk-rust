@@ -3,19 +3,19 @@
 /// <p>An object that contains additional attributes that are related an email address that is on the suppression list for your account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SuppressedDestinationAttributes {
+pub struct SuppressedDestinationAttributes  {
     /// <p>The unique identifier of the email message that caused the email address to be added to the suppression list for your account.</p>
     pub message_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier that's generated when an email address is added to the suppression list for your account.</p>
     pub feedback_id: ::std::option::Option<::std::string::String>,
 }
-impl SuppressedDestinationAttributes {
+impl  SuppressedDestinationAttributes  {
     /// <p>The unique identifier of the email message that caused the email address to be added to the suppression list for your account.</p>
-    pub fn message_id(&self) -> ::std::option::Option<&str> {
+    pub fn message_id(&self) -> ::std::option::Option<& str> {
         self.message_id.as_deref()
     }
     /// <p>A unique identifier that's generated when an email address is added to the suppression list for your account.</p>
-    pub fn feedback_id(&self) -> ::std::option::Option<&str> {
+    pub fn feedback_id(&self) -> ::std::option::Option<& str> {
         self.feedback_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl SuppressedDestinationAttributesBuilder {
     }
     /// <p>The unique identifier of the email message that caused the email address to be added to the suppression list for your account.</p>
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message_id = input;
-        self
+        self.message_id = input; self
     }
     /// <p>The unique identifier of the email message that caused the email address to be added to the suppression list for your account.</p>
     pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl SuppressedDestinationAttributesBuilder {
     }
     /// <p>A unique identifier that's generated when an email address is added to the suppression list for your account.</p>
     pub fn set_feedback_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.feedback_id = input;
-        self
+        self.feedback_id = input; self
     }
     /// <p>A unique identifier that's generated when an email address is added to the suppression list for your account.</p>
     pub fn get_feedback_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl SuppressedDestinationAttributesBuilder {
     /// Consumes the builder and constructs a [`SuppressedDestinationAttributes`](crate::types::SuppressedDestinationAttributes).
     pub fn build(self) -> crate::types::SuppressedDestinationAttributes {
         crate::types::SuppressedDestinationAttributes {
-            message_id: self.message_id,
-            feedback_id: self.feedback_id,
+            message_id: self.message_id
+            ,
+            feedback_id: self.feedback_id
+            ,
         }
     }
 }
+

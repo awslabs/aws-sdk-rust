@@ -5,54 +5,50 @@ pub use crate::operation::create_capacity_reservation_fleet::_create_capacity_re
 
 impl CreateCapacityReservationFleetInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_capacity_reservation_fleet();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_capacity_reservation_fleet();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateCapacityReservationFleet`.
-///
+/// 
 /// <p>Creates a Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-cr-fleets.html#create-crfleet">Create a Capacity Reservation Fleet</a> in the Amazon EC2 User Guide.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCapacityReservationFleetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_capacity_reservation_fleet::builders::CreateCapacityReservationFleetInputBuilder,
+                    inner: crate::operation::create_capacity_reservation_fleet::builders::CreateCapacityReservationFleetInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetOutput,
-        crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetError,
-    > for CreateCapacityReservationFleetFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetOutput,
-            crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetOutput,
+                    crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetError,
+                > for CreateCapacityReservationFleetFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetOutput,
+                        crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateCapacityReservationFleetFluentBuilder {
     /// Creates a new `CreateCapacityReservationFleet`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl CreateCapacityReservationFleetFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleet::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleet::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetOutput,
-        crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleet::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleet::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetOutput, crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The strategy used by the Capacity Reservation Fleet to determine which of the specified instance types to use. Currently, only the <code>prioritized</code> allocation strategy is supported. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#allocation-strategy"> Allocation strategy</a> in the Amazon EC2 User Guide.</p>
     /// <p>Valid values: <code>prioritized</code></p>
     pub fn allocation_strategy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -149,15 +136,12 @@ impl CreateCapacityReservationFleetFluentBuilder {
         self
     }
     /// <p>Information about the instance types for which to reserve the capacity.</p>
-    pub fn set_instance_type_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReservationFleetInstanceSpecification>>,
-    ) -> Self {
+    pub fn set_instance_type_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReservationFleetInstanceSpecification>>) -> Self {
         self.inner = self.inner.set_instance_type_specifications(input);
         self
     }
     /// <p>Information about the instance types for which to reserve the capacity.</p>
-    pub fn get_instance_type_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservationFleetInstanceSpecification>> {
+    pub fn get_instance_type_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReservationFleetInstanceSpecification>> {
         self.inner.get_instance_type_specifications()
     }
     /// <p>Indicates the tenancy of the Capacity Reservation Fleet. All Capacity Reservations in the Fleet inherit this tenancy. The Capacity Reservation Fleet can have one of the following tenancy settings:</p>
@@ -250,12 +234,12 @@ impl CreateCapacityReservationFleetFluentBuilder {
         self
     }
     /// <p>The tags to assign to the Capacity Reservation Fleet. The tags are automatically assigned to the Capacity Reservations in the Fleet.</p>
-    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags to assign to the Capacity Reservation Fleet. The tags are automatically assigned to the Capacity Reservations in the Fleet.</p>
-    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -273,3 +257,4 @@ impl CreateCapacityReservationFleetFluentBuilder {
         self.inner.get_dry_run()
     }
 }
+

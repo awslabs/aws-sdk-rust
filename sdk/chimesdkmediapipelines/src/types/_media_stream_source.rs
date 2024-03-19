@@ -3,24 +3,23 @@
 /// <p>Structure that contains the settings for media stream sources.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct MediaStreamSource {
+pub struct MediaStreamSource  {
     /// <p>The type of media stream source.</p>
     pub source_type: crate::types::MediaPipelineSourceType,
     /// <p>The ARN of the media stream source.</p>
     pub source_arn: ::std::string::String,
 }
-impl MediaStreamSource {
+impl  MediaStreamSource  {
     /// <p>The type of media stream source.</p>
-    pub fn source_type(&self) -> &crate::types::MediaPipelineSourceType {
+    pub fn source_type(&self) -> & crate::types::MediaPipelineSourceType {
         &self.source_type
     }
     /// <p>The ARN of the media stream source.</p>
-    pub fn source_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.source_arn.deref()
+    pub fn source_arn(&self) -> & str {
+        use std::ops::Deref; self.source_arn.deref()
     }
 }
-impl ::std::fmt::Debug for MediaStreamSource {
+impl  ::std::fmt::Debug for MediaStreamSource  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MediaStreamSource");
         formatter.field("source_type", &self.source_type);
@@ -51,8 +50,7 @@ impl MediaStreamSourceBuilder {
     }
     /// <p>The type of media stream source.</p>
     pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::MediaPipelineSourceType>) -> Self {
-        self.source_type = input;
-        self
+        self.source_type = input; self
     }
     /// <p>The type of media stream source.</p>
     pub fn get_source_type(&self) -> &::std::option::Option<crate::types::MediaPipelineSourceType> {
@@ -66,8 +64,7 @@ impl MediaStreamSourceBuilder {
     }
     /// <p>The ARN of the media stream source.</p>
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_arn = input;
-        self
+        self.source_arn = input; self
     }
     /// <p>The ARN of the media stream source.</p>
     pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,20 +75,20 @@ impl MediaStreamSourceBuilder {
     /// - [`source_type`](crate::types::builders::MediaStreamSourceBuilder::source_type)
     /// - [`source_arn`](crate::types::builders::MediaStreamSourceBuilder::source_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::MediaStreamSource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MediaStreamSource {
-            source_type: self.source_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_type",
-                    "source_type was not specified but it is required when building MediaStreamSource",
-                )
-            })?,
-            source_arn: self.source_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_arn",
-                    "source_arn was not specified but it is required when building MediaStreamSource",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MediaStreamSource {
+                source_type: self.source_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source_type", "source_type was not specified but it is required when building MediaStreamSource")
+                    )?
+                ,
+                source_arn: self.source_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source_arn", "source_arn was not specified but it is required when building MediaStreamSource")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for MediaStreamSourceBuilder {
@@ -102,3 +99,4 @@ impl ::std::fmt::Debug for MediaStreamSourceBuilder {
         formatter.finish()
     }
 }
+

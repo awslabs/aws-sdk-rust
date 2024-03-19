@@ -267,3 +267,4 @@ pub fn de_host(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<
     }
     Ok(builder.build())
 }
+

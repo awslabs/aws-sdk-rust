@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetServiceNetworkVpcAssociationOutput {
+pub struct GetServiceNetworkVpcAssociationOutput  {
     /// <p>The ID of the specified association between the service network and the VPC.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the association.</p>
@@ -22,7 +22,7 @@ pub struct GetServiceNetworkVpcAssociationOutput {
     /// <p>The ID of the VPC.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the security groups.</p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The failure message.</p>
     pub failure_message: ::std::option::Option<::std::string::String>,
     /// <p>The failure code.</p>
@@ -31,67 +31,68 @@ pub struct GetServiceNetworkVpcAssociationOutput {
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl GetServiceNetworkVpcAssociationOutput {
+impl  GetServiceNetworkVpcAssociationOutput  {
     /// <p>The ID of the specified association between the service network and the VPC.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The status of the association.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ServiceNetworkVpcAssociationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ServiceNetworkVpcAssociationStatus> {
         self.status.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The account that created the association.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&str> {
+    pub fn created_by(&self) -> ::std::option::Option<& str> {
         self.created_by.as_deref()
     }
     /// <p>The date and time that the association was created, specified in ISO-8601 format.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The ID of the service network.</p>
-    pub fn service_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn service_network_id(&self) -> ::std::option::Option<& str> {
         self.service_network_id.as_deref()
     }
     /// <p>The name of the service network.</p>
-    pub fn service_network_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_network_name(&self) -> ::std::option::Option<& str> {
         self.service_network_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service network.</p>
-    pub fn service_network_arn(&self) -> ::std::option::Option<&str> {
+    pub fn service_network_arn(&self) -> ::std::option::Option<& str> {
         self.service_network_arn.as_deref()
     }
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The IDs of the security groups.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
-    pub fn security_group_ids(&self) -> &[::std::string::String] {
-        self.security_group_ids.as_deref().unwrap_or_default()
+    pub fn security_group_ids(&self) -> & [::std::string::String] {
+        self.security_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The failure message.</p>
-    pub fn failure_message(&self) -> ::std::option::Option<&str> {
+    pub fn failure_message(&self) -> ::std::option::Option<& str> {
         self.failure_message.as_deref()
     }
     /// <p>The failure code.</p>
-    pub fn failure_code(&self) -> ::std::option::Option<&str> {
+    pub fn failure_code(&self) -> ::std::option::Option<& str> {
         self.failure_code.as_deref()
     }
     /// <p>The date and time that the association was last updated, specified in ISO-8601 format.</p>
-    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetServiceNetworkVpcAssociationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetServiceNetworkVpcAssociationOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceNetworkVpcAssociationOutput`](crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationOutput).
     pub fn builder() -> crate::operation::get_service_network_vpc_association::builders::GetServiceNetworkVpcAssociationOutputBuilder {
@@ -112,7 +113,7 @@ pub struct GetServiceNetworkVpcAssociationOutputBuilder {
     pub(crate) service_network_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_network_arn: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
-    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) failure_message: ::std::option::Option<::std::string::String>,
     pub(crate) failure_code: ::std::option::Option<::std::string::String>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -126,8 +127,7 @@ impl GetServiceNetworkVpcAssociationOutputBuilder {
     }
     /// <p>The ID of the specified association between the service network and the VPC.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the specified association between the service network and the VPC.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +140,7 @@ impl GetServiceNetworkVpcAssociationOutputBuilder {
     }
     /// <p>The status of the association.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ServiceNetworkVpcAssociationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the association.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ServiceNetworkVpcAssociationStatus> {
@@ -154,8 +153,7 @@ impl GetServiceNetworkVpcAssociationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -168,8 +166,7 @@ impl GetServiceNetworkVpcAssociationOutputBuilder {
     }
     /// <p>The account that created the association.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>The account that created the association.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -182,8 +179,7 @@ impl GetServiceNetworkVpcAssociationOutputBuilder {
     }
     /// <p>The date and time that the association was created, specified in ISO-8601 format.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time that the association was created, specified in ISO-8601 format.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -196,8 +192,7 @@ impl GetServiceNetworkVpcAssociationOutputBuilder {
     }
     /// <p>The ID of the service network.</p>
     pub fn set_service_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_network_id = input;
-        self
+        self.service_network_id = input; self
     }
     /// <p>The ID of the service network.</p>
     pub fn get_service_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -210,8 +205,7 @@ impl GetServiceNetworkVpcAssociationOutputBuilder {
     }
     /// <p>The name of the service network.</p>
     pub fn set_service_network_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_network_name = input;
-        self
+        self.service_network_name = input; self
     }
     /// <p>The name of the service network.</p>
     pub fn get_service_network_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -224,8 +218,7 @@ impl GetServiceNetworkVpcAssociationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the service network.</p>
     pub fn set_service_network_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_network_arn = input;
-        self
+        self.service_network_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the service network.</p>
     pub fn get_service_network_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -238,8 +231,7 @@ impl GetServiceNetworkVpcAssociationOutputBuilder {
     }
     /// <p>The ID of the VPC.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The ID of the VPC.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -252,17 +244,16 @@ impl GetServiceNetworkVpcAssociationOutputBuilder {
     /// <p>The IDs of the security groups.</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the security groups.</p>
-    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_group_ids = input; self
     }
     /// <p>The IDs of the security groups.</p>
-    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_group_ids
     }
     /// <p>The failure message.</p>
@@ -272,8 +263,7 @@ impl GetServiceNetworkVpcAssociationOutputBuilder {
     }
     /// <p>The failure message.</p>
     pub fn set_failure_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_message = input;
-        self
+        self.failure_message = input; self
     }
     /// <p>The failure message.</p>
     pub fn get_failure_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -286,8 +276,7 @@ impl GetServiceNetworkVpcAssociationOutputBuilder {
     }
     /// <p>The failure code.</p>
     pub fn set_failure_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_code = input;
-        self
+        self.failure_code = input; self
     }
     /// <p>The failure code.</p>
     pub fn get_failure_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -300,39 +289,52 @@ impl GetServiceNetworkVpcAssociationOutputBuilder {
     }
     /// <p>The date and time that the association was last updated, specified in ISO-8601 format.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input;
-        self
+        self.last_updated_at = input; self
     }
     /// <p>The date and time that the association was last updated, specified in ISO-8601 format.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetServiceNetworkVpcAssociationOutput`](crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationOutput).
     pub fn build(self) -> crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationOutput {
         crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociationOutput {
-            id: self.id,
-            status: self.status,
-            arn: self.arn,
-            created_by: self.created_by,
-            created_at: self.created_at,
-            service_network_id: self.service_network_id,
-            service_network_name: self.service_network_name,
-            service_network_arn: self.service_network_arn,
-            vpc_id: self.vpc_id,
-            security_group_ids: self.security_group_ids,
-            failure_message: self.failure_message,
-            failure_code: self.failure_code,
-            last_updated_at: self.last_updated_at,
+            id: self.id
+            ,
+            status: self.status
+            ,
+            arn: self.arn
+            ,
+            created_by: self.created_by
+            ,
+            created_at: self.created_at
+            ,
+            service_network_id: self.service_network_id
+            ,
+            service_network_name: self.service_network_name
+            ,
+            service_network_arn: self.service_network_arn
+            ,
+            vpc_id: self.vpc_id
+            ,
+            security_group_ids: self.security_group_ids
+            ,
+            failure_message: self.failure_message
+            ,
+            failure_code: self.failure_code
+            ,
+            last_updated_at: self.last_updated_at
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMonitoringSubscriptionInput {
+pub struct GetMonitoringSubscriptionInput  {
     /// <p>The ID of the distribution that you are getting metrics information for.</p>
     pub distribution_id: ::std::option::Option<::std::string::String>,
 }
-impl GetMonitoringSubscriptionInput {
+impl  GetMonitoringSubscriptionInput  {
     /// <p>The ID of the distribution that you are getting metrics information for.</p>
-    pub fn distribution_id(&self) -> ::std::option::Option<&str> {
+    pub fn distribution_id(&self) -> ::std::option::Option<& str> {
         self.distribution_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetMonitoringSubscriptionInputBuilder {
     }
     /// <p>The ID of the distribution that you are getting metrics information for.</p>
     pub fn set_distribution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.distribution_id = input;
-        self
+        self.distribution_id = input; self
     }
     /// <p>The ID of the distribution that you are getting metrics information for.</p>
     pub fn get_distribution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.distribution_id
     }
     /// Consumes the builder and constructs a [`GetMonitoringSubscriptionInput`](crate::operation::get_monitoring_subscription::GetMonitoringSubscriptionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_monitoring_subscription::GetMonitoringSubscriptionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_monitoring_subscription::GetMonitoringSubscriptionInput {
-            distribution_id: self.distribution_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_monitoring_subscription::GetMonitoringSubscriptionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_monitoring_subscription::GetMonitoringSubscriptionInput {
+                distribution_id: self.distribution_id
+                ,
+            }
+        )
     }
 }
+

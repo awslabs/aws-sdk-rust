@@ -3,7 +3,8 @@
 /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServiceManagedChannelS3StorageSummary {}
+pub struct ServiceManagedChannelS3StorageSummary  {
+}
 impl ServiceManagedChannelS3StorageSummary {
     /// Creates a new builder-style object to manufacture [`ServiceManagedChannelS3StorageSummary`](crate::types::ServiceManagedChannelS3StorageSummary).
     pub fn builder() -> crate::types::builders::ServiceManagedChannelS3StorageSummaryBuilder {
@@ -14,10 +15,13 @@ impl ServiceManagedChannelS3StorageSummary {
 /// A builder for [`ServiceManagedChannelS3StorageSummary`](crate::types::ServiceManagedChannelS3StorageSummary).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct ServiceManagedChannelS3StorageSummaryBuilder {}
+pub struct ServiceManagedChannelS3StorageSummaryBuilder {
+}
 impl ServiceManagedChannelS3StorageSummaryBuilder {
     /// Consumes the builder and constructs a [`ServiceManagedChannelS3StorageSummary`](crate::types::ServiceManagedChannelS3StorageSummary).
     pub fn build(self) -> crate::types::ServiceManagedChannelS3StorageSummary {
-        crate::types::ServiceManagedChannelS3StorageSummary {}
+        crate::types::ServiceManagedChannelS3StorageSummary {
+        }
     }
 }
+

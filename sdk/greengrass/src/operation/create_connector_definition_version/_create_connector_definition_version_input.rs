@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateConnectorDefinitionVersionInput {
+pub struct CreateConnectorDefinitionVersionInput  {
     /// A client token used to correlate requests and responses.
     pub amzn_client_token: ::std::option::Option<::std::string::String>,
     /// The ID of the connector definition.
     pub connector_definition_id: ::std::option::Option<::std::string::String>,
     /// A list of references to connectors in this version, with their corresponding configuration settings.
-    pub connectors: ::std::option::Option<::std::vec::Vec<crate::types::Connector>>,
+    pub connectors: ::std::option::Option<::std::vec::Vec::<crate::types::Connector>>,
 }
-impl CreateConnectorDefinitionVersionInput {
+impl  CreateConnectorDefinitionVersionInput  {
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(&self) -> ::std::option::Option<&str> {
+    pub fn amzn_client_token(&self) -> ::std::option::Option<& str> {
         self.amzn_client_token.as_deref()
     }
     /// The ID of the connector definition.
-    pub fn connector_definition_id(&self) -> ::std::option::Option<&str> {
+    pub fn connector_definition_id(&self) -> ::std::option::Option<& str> {
         self.connector_definition_id.as_deref()
     }
     /// A list of references to connectors in this version, with their corresponding configuration settings.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connectors.is_none()`.
-    pub fn connectors(&self) -> &[crate::types::Connector] {
-        self.connectors.as_deref().unwrap_or_default()
+    pub fn connectors(&self) -> & [crate::types::Connector] {
+        self.connectors.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateConnectorDefinitionVersionInput {
@@ -39,7 +40,7 @@ impl CreateConnectorDefinitionVersionInput {
 pub struct CreateConnectorDefinitionVersionInputBuilder {
     pub(crate) amzn_client_token: ::std::option::Option<::std::string::String>,
     pub(crate) connector_definition_id: ::std::option::Option<::std::string::String>,
-    pub(crate) connectors: ::std::option::Option<::std::vec::Vec<crate::types::Connector>>,
+    pub(crate) connectors: ::std::option::Option<::std::vec::Vec::<crate::types::Connector>>,
 }
 impl CreateConnectorDefinitionVersionInputBuilder {
     /// A client token used to correlate requests and responses.
@@ -49,8 +50,7 @@ impl CreateConnectorDefinitionVersionInputBuilder {
     }
     /// A client token used to correlate requests and responses.
     pub fn set_amzn_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.amzn_client_token = input;
-        self
+        self.amzn_client_token = input; self
     }
     /// A client token used to correlate requests and responses.
     pub fn get_amzn_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl CreateConnectorDefinitionVersionInputBuilder {
     }
     /// The ID of the connector definition.
     pub fn set_connector_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connector_definition_id = input;
-        self
+        self.connector_definition_id = input; self
     }
     /// The ID of the connector definition.
     pub fn get_connector_definition_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,32 +77,30 @@ impl CreateConnectorDefinitionVersionInputBuilder {
     /// A list of references to connectors in this version, with their corresponding configuration settings.
     pub fn connectors(mut self, input: crate::types::Connector) -> Self {
         let mut v = self.connectors.unwrap_or_default();
-        v.push(input);
-        self.connectors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.connectors = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of references to connectors in this version, with their corresponding configuration settings.
-    pub fn set_connectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Connector>>) -> Self {
-        self.connectors = input;
-        self
+    pub fn set_connectors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Connector>>) -> Self {
+        self.connectors = input; self
     }
     /// A list of references to connectors in this version, with their corresponding configuration settings.
-    pub fn get_connectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Connector>> {
+    pub fn get_connectors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Connector>> {
         &self.connectors
     }
     /// Consumes the builder and constructs a [`CreateConnectorDefinitionVersionInput`](crate::operation::create_connector_definition_version::CreateConnectorDefinitionVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_connector_definition_version::CreateConnectorDefinitionVersionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_connector_definition_version::CreateConnectorDefinitionVersionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_connector_definition_version::CreateConnectorDefinitionVersionInput {
-                amzn_client_token: self.amzn_client_token,
-                connector_definition_id: self.connector_definition_id,
-                connectors: self.connectors,
-            },
+                amzn_client_token: self.amzn_client_token
+                ,
+                connector_definition_id: self.connector_definition_id
+                ,
+                connectors: self.connectors
+                ,
+            }
         )
     }
 }
+

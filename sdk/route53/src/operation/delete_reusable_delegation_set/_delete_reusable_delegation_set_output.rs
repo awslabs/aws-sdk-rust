@@ -3,14 +3,14 @@
 /// <p>An empty element.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteReusableDelegationSetOutput {
+pub struct DeleteReusableDelegationSetOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for DeleteReusableDelegationSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteReusableDelegationSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteReusableDelegationSetOutput`](crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetOutput).
     pub fn builder() -> crate::operation::delete_reusable_delegation_set::builders::DeleteReusableDelegationSetOutputBuilder {
@@ -26,14 +26,14 @@ pub struct DeleteReusableDelegationSetOutputBuilder {
 }
 impl DeleteReusableDelegationSetOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteReusableDelegationSetOutput`](crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetOutput).
     pub fn build(self) -> crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetOutput {
         crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetOutput {
@@ -41,3 +41,4 @@ impl DeleteReusableDelegationSetOutputBuilder {
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Container for the parameters to the <code>Suggest</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SuggestInput {
+pub struct SuggestInput  {
     /// <p>Specifies the string for which you want to get suggestions.</p>
     pub query: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of the suggester to use to find suggested matches.</p>
@@ -11,13 +11,13 @@ pub struct SuggestInput {
     /// <p>Specifies the maximum number of suggestions to return.</p>
     pub size: ::std::option::Option<i64>,
 }
-impl SuggestInput {
+impl  SuggestInput  {
     /// <p>Specifies the string for which you want to get suggestions.</p>
-    pub fn query(&self) -> ::std::option::Option<&str> {
+    pub fn query(&self) -> ::std::option::Option<& str> {
         self.query.as_deref()
     }
     /// <p>Specifies the name of the suggester to use to find suggested matches.</p>
-    pub fn suggester(&self) -> ::std::option::Option<&str> {
+    pub fn suggester(&self) -> ::std::option::Option<& str> {
         self.suggester.as_deref()
     }
     /// <p>Specifies the maximum number of suggestions to return.</p>
@@ -49,8 +49,7 @@ impl SuggestInputBuilder {
     }
     /// <p>Specifies the string for which you want to get suggestions.</p>
     pub fn set_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query = input;
-        self
+        self.query = input; self
     }
     /// <p>Specifies the string for which you want to get suggestions.</p>
     pub fn get_query(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl SuggestInputBuilder {
     }
     /// <p>Specifies the name of the suggester to use to find suggested matches.</p>
     pub fn set_suggester(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.suggester = input;
-        self
+        self.suggester = input; self
     }
     /// <p>Specifies the name of the suggester to use to find suggested matches.</p>
     pub fn get_suggester(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +76,7 @@ impl SuggestInputBuilder {
     }
     /// <p>Specifies the maximum number of suggestions to return.</p>
     pub fn set_size(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.size = input;
-        self
+        self.size = input; self
     }
     /// <p>Specifies the maximum number of suggestions to return.</p>
     pub fn get_size(&self) -> &::std::option::Option<i64> {
@@ -87,10 +84,16 @@ impl SuggestInputBuilder {
     }
     /// Consumes the builder and constructs a [`SuggestInput`](crate::operation::suggest::SuggestInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::suggest::SuggestInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::suggest::SuggestInput {
-            query: self.query,
-            suggester: self.suggester,
-            size: self.size,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::suggest::SuggestInput {
+                query: self.query
+                ,
+                suggester: self.suggester
+                ,
+                size: self.size
+                ,
+            }
+        )
     }
 }
+

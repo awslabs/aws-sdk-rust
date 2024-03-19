@@ -3,15 +3,14 @@
 /// <p>An object that represents the virtual service that traffic is routed to.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GatewayRouteVirtualService {
+pub struct GatewayRouteVirtualService  {
     /// <p>The name of the virtual service that traffic is routed to.</p>
     pub virtual_service_name: ::std::string::String,
 }
-impl GatewayRouteVirtualService {
+impl  GatewayRouteVirtualService  {
     /// <p>The name of the virtual service that traffic is routed to.</p>
-    pub fn virtual_service_name(&self) -> &str {
-        use std::ops::Deref;
-        self.virtual_service_name.deref()
+    pub fn virtual_service_name(&self) -> & str {
+        use std::ops::Deref; self.virtual_service_name.deref()
     }
 }
 impl GatewayRouteVirtualService {
@@ -36,8 +35,7 @@ impl GatewayRouteVirtualServiceBuilder {
     }
     /// <p>The name of the virtual service that traffic is routed to.</p>
     pub fn set_virtual_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.virtual_service_name = input;
-        self
+        self.virtual_service_name = input; self
     }
     /// <p>The name of the virtual service that traffic is routed to.</p>
     pub fn get_virtual_service_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl GatewayRouteVirtualServiceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`virtual_service_name`](crate::types::builders::GatewayRouteVirtualServiceBuilder::virtual_service_name)
     pub fn build(self) -> ::std::result::Result<crate::types::GatewayRouteVirtualService, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GatewayRouteVirtualService {
-            virtual_service_name: self.virtual_service_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "virtual_service_name",
-                    "virtual_service_name was not specified but it is required when building GatewayRouteVirtualService",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GatewayRouteVirtualService {
+                virtual_service_name: self.virtual_service_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("virtual_service_name", "virtual_service_name was not specified but it is required when building GatewayRouteVirtualService")
+                    )?
+                ,
+            }
+        )
     }
 }
+

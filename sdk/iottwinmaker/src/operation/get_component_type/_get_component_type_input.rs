@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetComponentTypeInput {
+pub struct GetComponentTypeInput  {
     /// <p>The ID of the workspace that contains the component type.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the component type.</p>
     pub component_type_id: ::std::option::Option<::std::string::String>,
 }
-impl GetComponentTypeInput {
+impl  GetComponentTypeInput  {
     /// <p>The ID of the workspace that contains the component type.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// <p>The ID of the component type.</p>
-    pub fn component_type_id(&self) -> ::std::option::Option<&str> {
+    pub fn component_type_id(&self) -> ::std::option::Option<& str> {
         self.component_type_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetComponentTypeInputBuilder {
     }
     /// <p>The ID of the workspace that contains the component type.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The ID of the workspace that contains the component type.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl GetComponentTypeInputBuilder {
     }
     /// <p>The ID of the component type.</p>
     pub fn set_component_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_type_id = input;
-        self
+        self.component_type_id = input; self
     }
     /// <p>The ID of the component type.</p>
     pub fn get_component_type_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.component_type_id
     }
     /// Consumes the builder and constructs a [`GetComponentTypeInput`](crate::operation::get_component_type::GetComponentTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_component_type::GetComponentTypeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_component_type::GetComponentTypeInput {
-            workspace_id: self.workspace_id,
-            component_type_id: self.component_type_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_component_type::GetComponentTypeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_component_type::GetComponentTypeInput {
+                workspace_id: self.workspace_id
+                ,
+                component_type_id: self.component_type_id
+                ,
+            }
+        )
     }
 }
+

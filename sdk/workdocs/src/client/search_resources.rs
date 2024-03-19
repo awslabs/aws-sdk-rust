@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`SearchResources`](crate::operation::search_resources::builders::SearchResourcesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::search_resources::builders::SearchResourcesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`authentication_token(impl Into<String>)`](crate::operation::search_resources::builders::SearchResourcesFluentBuilder::authentication_token) / [`set_authentication_token(Option<String>)`](crate::operation::search_resources::builders::SearchResourcesFluentBuilder::set_authentication_token):<br>required: **false**<br><p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p><br>
     ///   - [`query_text(impl Into<String>)`](crate::operation::search_resources::builders::SearchResourcesFluentBuilder::query_text) / [`set_query_text(Option<String>)`](crate::operation::search_resources::builders::SearchResourcesFluentBuilder::set_query_text):<br>required: **false**<br><p>The String to search for. Searches across different text fields based on request parameters. Use double quotes around the query string for exact phrase matches.</p><br>
     ///   - [`query_scopes(SearchQueryScopeType)`](crate::operation::search_resources::builders::SearchResourcesFluentBuilder::query_scopes) / [`set_query_scopes(Option<Vec::<SearchQueryScopeType>>)`](crate::operation::search_resources::builders::SearchResourcesFluentBuilder::set_query_scopes):<br>required: **false**<br><p>Filter based on the text field type. A Folder has only a name and no content. A Comment has only content and no name. A Document or Document Version has a name and content</p><br>
@@ -13,11 +13,12 @@ impl super::Client {
     ///   - [`order_by(SearchSortResult)`](crate::operation::search_resources::builders::SearchResourcesFluentBuilder::order_by) / [`set_order_by(Option<Vec::<SearchSortResult>>)`](crate::operation::search_resources::builders::SearchResourcesFluentBuilder::set_order_by):<br>required: **false**<br><p>Order by results in one or more categories.</p><br>
     ///   - [`limit(i32)`](crate::operation::search_resources::builders::SearchResourcesFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::search_resources::builders::SearchResourcesFluentBuilder::set_limit):<br>required: **false**<br><p>Max results count per page.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::search_resources::builders::SearchResourcesFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::search_resources::builders::SearchResourcesFluentBuilder::set_marker):<br>required: **false**<br><p>The marker for the next set of results.</p><br>
-    /// - On success, responds with [`SearchResourcesOutput`](crate::operation::search_resources::SearchResourcesOutput) with field(s):
+                            /// - On success, responds with [`SearchResourcesOutput`](crate::operation::search_resources::SearchResourcesOutput) with field(s):
     ///   - [`items(Option<Vec::<ResponseItem>>)`](crate::operation::search_resources::SearchResourcesOutput::items): <p>List of Documents, Folders, Comments, and Document Versions matching the query.</p>
     ///   - [`marker(Option<String>)`](crate::operation::search_resources::SearchResourcesOutput::marker): <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    /// - On failure, responds with [`SdkError<SearchResourcesError>`](crate::operation::search_resources::SearchResourcesError)
+                            /// - On failure, responds with [`SdkError<SearchResourcesError>`](crate::operation::search_resources::SearchResourcesError)
     pub fn search_resources(&self) -> crate::operation::search_resources::builders::SearchResourcesFluentBuilder {
-        crate::operation::search_resources::builders::SearchResourcesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::search_resources::builders::SearchResourcesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

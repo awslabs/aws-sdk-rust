@@ -3,7 +3,7 @@
 /// <p>Summary information about a lifecycle policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LifecyclePolicySummary {
+pub struct LifecyclePolicySummary  {
     /// <p>The identifier of the lifecycle policy.</p>
     pub policy_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the lifecycle policy.</p>
@@ -11,7 +11,7 @@ pub struct LifecyclePolicySummary {
     /// <p>The activation state of the lifecycle policy.</p>
     pub state: ::std::option::Option<crate::types::GettablePolicyStateValues>,
     /// <p>The tags.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy manages the lifecycle of Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code> indicates that the policy manages the lifecycle of EBS-backed AMIs. <code>EVENT_BASED_POLICY</code> indicates that the policy automates cross-account snapshot copies for snapshots that are shared with your account.</p>
     pub policy_type: ::std::option::Option<crate::types::PolicyTypeValues>,
     /// <p><b>[Default policies only]</b> The type of default policy. Values include:</p>
@@ -23,25 +23,25 @@ pub struct LifecyclePolicySummary {
     /// </ul>
     pub default_policy: ::std::option::Option<bool>,
 }
-impl LifecyclePolicySummary {
+impl  LifecyclePolicySummary  {
     /// <p>The identifier of the lifecycle policy.</p>
-    pub fn policy_id(&self) -> ::std::option::Option<&str> {
+    pub fn policy_id(&self) -> ::std::option::Option<& str> {
         self.policy_id.as_deref()
     }
     /// <p>The description of the lifecycle policy.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The activation state of the lifecycle policy.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::GettablePolicyStateValues> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::GettablePolicyStateValues> {
         self.state.as_ref()
     }
     /// <p>The tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy manages the lifecycle of Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code> indicates that the policy manages the lifecycle of EBS-backed AMIs. <code>EVENT_BASED_POLICY</code> indicates that the policy automates cross-account snapshot copies for snapshots that are shared with your account.</p>
-    pub fn policy_type(&self) -> ::std::option::Option<&crate::types::PolicyTypeValues> {
+    pub fn policy_type(&self) -> ::std::option::Option<& crate::types::PolicyTypeValues> {
         self.policy_type.as_ref()
     }
     /// <p><b>[Default policies only]</b> The type of default policy. Values include:</p>
@@ -69,7 +69,7 @@ pub struct LifecyclePolicySummaryBuilder {
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::GettablePolicyStateValues>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) policy_type: ::std::option::Option<crate::types::PolicyTypeValues>,
     pub(crate) default_policy: ::std::option::Option<bool>,
 }
@@ -81,8 +81,7 @@ impl LifecyclePolicySummaryBuilder {
     }
     /// <p>The identifier of the lifecycle policy.</p>
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_id = input;
-        self
+        self.policy_id = input; self
     }
     /// <p>The identifier of the lifecycle policy.</p>
     pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +94,7 @@ impl LifecyclePolicySummaryBuilder {
     }
     /// <p>The description of the lifecycle policy.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the lifecycle policy.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +107,7 @@ impl LifecyclePolicySummaryBuilder {
     }
     /// <p>The activation state of the lifecycle policy.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::GettablePolicyStateValues>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The activation state of the lifecycle policy.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::GettablePolicyStateValues> {
@@ -123,17 +120,16 @@ impl LifecyclePolicySummaryBuilder {
     /// <p>The tags.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy manages the lifecycle of Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code> indicates that the policy manages the lifecycle of EBS-backed AMIs. <code>EVENT_BASED_POLICY</code> indicates that the policy automates cross-account snapshot copies for snapshots that are shared with your account.</p>
@@ -143,8 +139,7 @@ impl LifecyclePolicySummaryBuilder {
     }
     /// <p>The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy manages the lifecycle of Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code> indicates that the policy manages the lifecycle of EBS-backed AMIs. <code>EVENT_BASED_POLICY</code> indicates that the policy automates cross-account snapshot copies for snapshots that are shared with your account.</p>
     pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::PolicyTypeValues>) -> Self {
-        self.policy_type = input;
-        self
+        self.policy_type = input; self
     }
     /// <p>The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy manages the lifecycle of Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code> indicates that the policy manages the lifecycle of EBS-backed AMIs. <code>EVENT_BASED_POLICY</code> indicates that the policy automates cross-account snapshot copies for snapshots that are shared with your account.</p>
     pub fn get_policy_type(&self) -> &::std::option::Option<crate::types::PolicyTypeValues> {
@@ -169,8 +164,7 @@ impl LifecyclePolicySummaryBuilder {
     /// <p><code>INSTANCE</code> - Default policy for EBS-backed AMIs</p></li>
     /// </ul>
     pub fn set_default_policy(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.default_policy = input;
-        self
+        self.default_policy = input; self
     }
     /// <p><b>[Default policies only]</b> The type of default policy. Values include:</p>
     /// <ul>
@@ -185,12 +179,19 @@ impl LifecyclePolicySummaryBuilder {
     /// Consumes the builder and constructs a [`LifecyclePolicySummary`](crate::types::LifecyclePolicySummary).
     pub fn build(self) -> crate::types::LifecyclePolicySummary {
         crate::types::LifecyclePolicySummary {
-            policy_id: self.policy_id,
-            description: self.description,
-            state: self.state,
-            tags: self.tags,
-            policy_type: self.policy_type,
-            default_policy: self.default_policy,
+            policy_id: self.policy_id
+            ,
+            description: self.description
+            ,
+            state: self.state
+            ,
+            tags: self.tags
+            ,
+            policy_type: self.policy_type
+            ,
+            default_policy: self.default_policy
+            ,
         }
     }
 }
+

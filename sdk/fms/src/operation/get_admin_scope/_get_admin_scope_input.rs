@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAdminScopeInput {
+pub struct GetAdminScopeInput  {
     /// <p>The administator account that you want to get the details for.</p>
     pub admin_account: ::std::option::Option<::std::string::String>,
 }
-impl GetAdminScopeInput {
+impl  GetAdminScopeInput  {
     /// <p>The administator account that you want to get the details for.</p>
-    pub fn admin_account(&self) -> ::std::option::Option<&str> {
+    pub fn admin_account(&self) -> ::std::option::Option<& str> {
         self.admin_account.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetAdminScopeInputBuilder {
     }
     /// <p>The administator account that you want to get the details for.</p>
     pub fn set_admin_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.admin_account = input;
-        self
+        self.admin_account = input; self
     }
     /// <p>The administator account that you want to get the details for.</p>
     pub fn get_admin_account(&self) -> &::std::option::Option<::std::string::String> {
         &self.admin_account
     }
     /// Consumes the builder and constructs a [`GetAdminScopeInput`](crate::operation::get_admin_scope::GetAdminScopeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_admin_scope::GetAdminScopeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_admin_scope::GetAdminScopeInput {
-            admin_account: self.admin_account,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_admin_scope::GetAdminScopeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_admin_scope::GetAdminScopeInput {
+                admin_account: self.admin_account
+                ,
+            }
+        )
     }
 }
+

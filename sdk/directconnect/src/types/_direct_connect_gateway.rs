@@ -3,7 +3,7 @@
 /// <p>Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateway or transit gateways.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DirectConnectGateway {
+pub struct DirectConnectGateway  {
     /// <p>The ID of the Direct Connect gateway.</p>
     pub direct_connect_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Direct Connect gateway.</p>
@@ -27,13 +27,13 @@ pub struct DirectConnectGateway {
     /// <p>The error message if the state of an object failed to advance.</p>
     pub state_change_error: ::std::option::Option<::std::string::String>,
 }
-impl DirectConnectGateway {
+impl  DirectConnectGateway  {
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn direct_connect_gateway_id(&self) -> ::std::option::Option<& str> {
         self.direct_connect_gateway_id.as_deref()
     }
     /// <p>The name of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_name(&self) -> ::std::option::Option<&str> {
+    pub fn direct_connect_gateway_name(&self) -> ::std::option::Option<& str> {
         self.direct_connect_gateway_name.as_deref()
     }
     /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
@@ -41,7 +41,7 @@ impl DirectConnectGateway {
         self.amazon_side_asn
     }
     /// <p>The ID of the Amazon Web Services account that owns the Direct Connect gateway.</p>
-    pub fn owner_account(&self) -> ::std::option::Option<&str> {
+    pub fn owner_account(&self) -> ::std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>The state of the Direct Connect gateway. The following are the possible values:</p>
@@ -55,11 +55,11 @@ impl DirectConnectGateway {
     /// <li>
     /// <p><code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.</p></li>
     /// </ul>
-    pub fn direct_connect_gateway_state(&self) -> ::std::option::Option<&crate::types::DirectConnectGatewayState> {
+    pub fn direct_connect_gateway_state(&self) -> ::std::option::Option<& crate::types::DirectConnectGatewayState> {
         self.direct_connect_gateway_state.as_ref()
     }
     /// <p>The error message if the state of an object failed to advance.</p>
-    pub fn state_change_error(&self) -> ::std::option::Option<&str> {
+    pub fn state_change_error(&self) -> ::std::option::Option<& str> {
         self.state_change_error.as_deref()
     }
 }
@@ -89,8 +89,7 @@ impl DirectConnectGatewayBuilder {
     }
     /// <p>The ID of the Direct Connect gateway.</p>
     pub fn set_direct_connect_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.direct_connect_gateway_id = input;
-        self
+        self.direct_connect_gateway_id = input; self
     }
     /// <p>The ID of the Direct Connect gateway.</p>
     pub fn get_direct_connect_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl DirectConnectGatewayBuilder {
     }
     /// <p>The name of the Direct Connect gateway.</p>
     pub fn set_direct_connect_gateway_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.direct_connect_gateway_name = input;
-        self
+        self.direct_connect_gateway_name = input; self
     }
     /// <p>The name of the Direct Connect gateway.</p>
     pub fn get_direct_connect_gateway_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +115,7 @@ impl DirectConnectGatewayBuilder {
     }
     /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
     pub fn set_amazon_side_asn(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.amazon_side_asn = input;
-        self
+        self.amazon_side_asn = input; self
     }
     /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
     pub fn get_amazon_side_asn(&self) -> &::std::option::Option<i64> {
@@ -131,8 +128,7 @@ impl DirectConnectGatewayBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that owns the Direct Connect gateway.</p>
     pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_account = input;
-        self
+        self.owner_account = input; self
     }
     /// <p>The ID of the Amazon Web Services account that owns the Direct Connect gateway.</p>
     pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,8 +161,7 @@ impl DirectConnectGatewayBuilder {
     /// <p><code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.</p></li>
     /// </ul>
     pub fn set_direct_connect_gateway_state(mut self, input: ::std::option::Option<crate::types::DirectConnectGatewayState>) -> Self {
-        self.direct_connect_gateway_state = input;
-        self
+        self.direct_connect_gateway_state = input; self
     }
     /// <p>The state of the Direct Connect gateway. The following are the possible values:</p>
     /// <ul>
@@ -189,8 +184,7 @@ impl DirectConnectGatewayBuilder {
     }
     /// <p>The error message if the state of an object failed to advance.</p>
     pub fn set_state_change_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_change_error = input;
-        self
+        self.state_change_error = input; self
     }
     /// <p>The error message if the state of an object failed to advance.</p>
     pub fn get_state_change_error(&self) -> &::std::option::Option<::std::string::String> {
@@ -199,12 +193,19 @@ impl DirectConnectGatewayBuilder {
     /// Consumes the builder and constructs a [`DirectConnectGateway`](crate::types::DirectConnectGateway).
     pub fn build(self) -> crate::types::DirectConnectGateway {
         crate::types::DirectConnectGateway {
-            direct_connect_gateway_id: self.direct_connect_gateway_id,
-            direct_connect_gateway_name: self.direct_connect_gateway_name,
-            amazon_side_asn: self.amazon_side_asn,
-            owner_account: self.owner_account,
-            direct_connect_gateway_state: self.direct_connect_gateway_state,
-            state_change_error: self.state_change_error,
+            direct_connect_gateway_id: self.direct_connect_gateway_id
+            ,
+            direct_connect_gateway_name: self.direct_connect_gateway_name
+            ,
+            amazon_side_asn: self.amazon_side_asn
+            ,
+            owner_account: self.owner_account
+            ,
+            direct_connect_gateway_state: self.direct_connect_gateway_state
+            ,
+            state_change_error: self.state_change_error
+            ,
         }
     }
 }
+

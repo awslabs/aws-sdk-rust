@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeProjectOutput {
+pub struct DescribeProjectOutput  {
     /// <p>The ID of the project.</p>
     pub project_id: ::std::string::String,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>
@@ -20,46 +20,42 @@ pub struct DescribeProjectOutput {
     pub project_last_update_date: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
-impl DescribeProjectOutput {
+impl  DescribeProjectOutput  {
     /// <p>The ID of the project.</p>
-    pub fn project_id(&self) -> &str {
-        use std::ops::Deref;
-        self.project_id.deref()
+    pub fn project_id(&self) -> & str {
+        use std::ops::Deref; self.project_id.deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>
     /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code></p>
-    pub fn project_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.project_arn.deref()
+    pub fn project_arn(&self) -> & str {
+        use std::ops::Deref; self.project_arn.deref()
     }
     /// <p>The name of the project.</p>
-    pub fn project_name(&self) -> &str {
-        use std::ops::Deref;
-        self.project_name.deref()
+    pub fn project_name(&self) -> & str {
+        use std::ops::Deref; self.project_name.deref()
     }
     /// <p>The ID of the portal that the project is in.</p>
-    pub fn portal_id(&self) -> &str {
-        use std::ops::Deref;
-        self.portal_id.deref()
+    pub fn portal_id(&self) -> & str {
+        use std::ops::Deref; self.portal_id.deref()
     }
     /// <p>The project's description.</p>
-    pub fn project_description(&self) -> ::std::option::Option<&str> {
+    pub fn project_description(&self) -> ::std::option::Option<& str> {
         self.project_description.as_deref()
     }
     /// <p>The date the project was created, in Unix epoch time.</p>
-    pub fn project_creation_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn project_creation_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.project_creation_date
     }
     /// <p>The date the project was last updated, in Unix epoch time.</p>
-    pub fn project_last_update_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn project_last_update_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.project_last_update_date
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeProjectOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeProjectOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProjectOutput`](crate::operation::describe_project::DescribeProjectOutput).
     pub fn builder() -> crate::operation::describe_project::builders::DescribeProjectOutputBuilder {
@@ -89,8 +85,7 @@ impl DescribeProjectOutputBuilder {
     }
     /// <p>The ID of the project.</p>
     pub fn set_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_id = input;
-        self
+        self.project_id = input; self
     }
     /// <p>The ID of the project.</p>
     pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +101,7 @@ impl DescribeProjectOutputBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>
     /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code></p>
     pub fn set_project_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_arn = input;
-        self
+        self.project_arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>
     /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code></p>
@@ -122,8 +116,7 @@ impl DescribeProjectOutputBuilder {
     }
     /// <p>The name of the project.</p>
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
     }
     /// <p>The name of the project.</p>
     pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,8 +130,7 @@ impl DescribeProjectOutputBuilder {
     }
     /// <p>The ID of the portal that the project is in.</p>
     pub fn set_portal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.portal_id = input;
-        self
+        self.portal_id = input; self
     }
     /// <p>The ID of the portal that the project is in.</p>
     pub fn get_portal_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,8 +143,7 @@ impl DescribeProjectOutputBuilder {
     }
     /// <p>The project's description.</p>
     pub fn set_project_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_description = input;
-        self
+        self.project_description = input; self
     }
     /// <p>The project's description.</p>
     pub fn get_project_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +157,7 @@ impl DescribeProjectOutputBuilder {
     }
     /// <p>The date the project was created, in Unix epoch time.</p>
     pub fn set_project_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.project_creation_date = input;
-        self
+        self.project_creation_date = input; self
     }
     /// <p>The date the project was created, in Unix epoch time.</p>
     pub fn get_project_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -181,22 +171,21 @@ impl DescribeProjectOutputBuilder {
     }
     /// <p>The date the project was last updated, in Unix epoch time.</p>
     pub fn set_project_last_update_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.project_last_update_date = input;
-        self
+        self.project_last_update_date = input; self
     }
     /// <p>The date the project was last updated, in Unix epoch time.</p>
     pub fn get_project_last_update_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.project_last_update_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeProjectOutput`](crate::operation::describe_project::DescribeProjectOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`project_id`](crate::operation::describe_project::builders::DescribeProjectOutputBuilder::project_id)
@@ -205,48 +194,44 @@ impl DescribeProjectOutputBuilder {
     /// - [`portal_id`](crate::operation::describe_project::builders::DescribeProjectOutputBuilder::portal_id)
     /// - [`project_creation_date`](crate::operation::describe_project::builders::DescribeProjectOutputBuilder::project_creation_date)
     /// - [`project_last_update_date`](crate::operation::describe_project::builders::DescribeProjectOutputBuilder::project_last_update_date)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_project::DescribeProjectOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_project::DescribeProjectOutput {
-            project_id: self.project_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "project_id",
-                    "project_id was not specified but it is required when building DescribeProjectOutput",
-                )
-            })?,
-            project_arn: self.project_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "project_arn",
-                    "project_arn was not specified but it is required when building DescribeProjectOutput",
-                )
-            })?,
-            project_name: self.project_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "project_name",
-                    "project_name was not specified but it is required when building DescribeProjectOutput",
-                )
-            })?,
-            portal_id: self.portal_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "portal_id",
-                    "portal_id was not specified but it is required when building DescribeProjectOutput",
-                )
-            })?,
-            project_description: self.project_description,
-            project_creation_date: self.project_creation_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "project_creation_date",
-                    "project_creation_date was not specified but it is required when building DescribeProjectOutput",
-                )
-            })?,
-            project_last_update_date: self.project_last_update_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "project_last_update_date",
-                    "project_last_update_date was not specified but it is required when building DescribeProjectOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_project::DescribeProjectOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_project::DescribeProjectOutput {
+                project_id: self.project_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("project_id", "project_id was not specified but it is required when building DescribeProjectOutput")
+                    )?
+                ,
+                project_arn: self.project_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("project_arn", "project_arn was not specified but it is required when building DescribeProjectOutput")
+                    )?
+                ,
+                project_name: self.project_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("project_name", "project_name was not specified but it is required when building DescribeProjectOutput")
+                    )?
+                ,
+                portal_id: self.portal_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("portal_id", "portal_id was not specified but it is required when building DescribeProjectOutput")
+                    )?
+                ,
+                project_description: self.project_description
+                ,
+                project_creation_date: self.project_creation_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("project_creation_date", "project_creation_date was not specified but it is required when building DescribeProjectOutput")
+                    )?
+                ,
+                project_last_update_date: self.project_last_update_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("project_last_update_date", "project_last_update_date was not specified but it is required when building DescribeProjectOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

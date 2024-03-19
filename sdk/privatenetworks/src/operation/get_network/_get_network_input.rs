@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetNetworkInput {
+pub struct GetNetworkInput  {
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
     pub network_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetNetworkInput {
+impl  GetNetworkInput  {
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
-    pub fn network_arn(&self) -> ::std::option::Option<&str> {
+    pub fn network_arn(&self) -> ::std::option::Option<& str> {
         self.network_arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetNetworkInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
     pub fn set_network_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_arn = input;
-        self
+        self.network_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
     pub fn get_network_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,8 +42,12 @@ impl GetNetworkInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetNetworkInput`](crate::operation::get_network::GetNetworkInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_network::GetNetworkInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_network::GetNetworkInput {
-            network_arn: self.network_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_network::GetNetworkInput {
+                network_arn: self.network_arn
+                ,
+            }
+        )
     }
 }
+

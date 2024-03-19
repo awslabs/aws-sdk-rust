@@ -3,7 +3,7 @@
 /// Contains the information of an Agent Knowledge Base.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AgentKnowledgeBase {
+pub struct AgentKnowledgeBase  {
     /// Identifier for a resource.
     pub agent_id: ::std::string::String,
     /// Agent Version.
@@ -19,37 +19,33 @@ pub struct AgentKnowledgeBase {
     /// State of the knowledge base; whether it is enabled or disabled
     pub knowledge_base_state: crate::types::KnowledgeBaseState,
 }
-impl AgentKnowledgeBase {
+impl  AgentKnowledgeBase  {
     /// Identifier for a resource.
-    pub fn agent_id(&self) -> &str {
-        use std::ops::Deref;
-        self.agent_id.deref()
+    pub fn agent_id(&self) -> & str {
+        use std::ops::Deref; self.agent_id.deref()
     }
     /// Agent Version.
-    pub fn agent_version(&self) -> &str {
-        use std::ops::Deref;
-        self.agent_version.deref()
+    pub fn agent_version(&self) -> & str {
+        use std::ops::Deref; self.agent_version.deref()
     }
     /// Identifier for a resource.
-    pub fn knowledge_base_id(&self) -> &str {
-        use std::ops::Deref;
-        self.knowledge_base_id.deref()
+    pub fn knowledge_base_id(&self) -> & str {
+        use std::ops::Deref; self.knowledge_base_id.deref()
     }
     /// Description of the Resource.
-    pub fn description(&self) -> &str {
-        use std::ops::Deref;
-        self.description.deref()
+    pub fn description(&self) -> & str {
+        use std::ops::Deref; self.description.deref()
     }
     /// Time Stamp.
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// Time Stamp.
-    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.updated_at
     }
     /// State of the knowledge base; whether it is enabled or disabled
-    pub fn knowledge_base_state(&self) -> &crate::types::KnowledgeBaseState {
+    pub fn knowledge_base_state(&self) -> & crate::types::KnowledgeBaseState {
         &self.knowledge_base_state
     }
 }
@@ -81,8 +77,7 @@ impl AgentKnowledgeBaseBuilder {
     }
     /// Identifier for a resource.
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_id = input;
-        self
+        self.agent_id = input; self
     }
     /// Identifier for a resource.
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +91,7 @@ impl AgentKnowledgeBaseBuilder {
     }
     /// Agent Version.
     pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_version = input;
-        self
+        self.agent_version = input; self
     }
     /// Agent Version.
     pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +105,7 @@ impl AgentKnowledgeBaseBuilder {
     }
     /// Identifier for a resource.
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.knowledge_base_id = input;
-        self
+        self.knowledge_base_id = input; self
     }
     /// Identifier for a resource.
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +119,7 @@ impl AgentKnowledgeBaseBuilder {
     }
     /// Description of the Resource.
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Description of the Resource.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +133,7 @@ impl AgentKnowledgeBaseBuilder {
     }
     /// Time Stamp.
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// Time Stamp.
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -156,8 +147,7 @@ impl AgentKnowledgeBaseBuilder {
     }
     /// Time Stamp.
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// Time Stamp.
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -171,8 +161,7 @@ impl AgentKnowledgeBaseBuilder {
     }
     /// State of the knowledge base; whether it is enabled or disabled
     pub fn set_knowledge_base_state(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseState>) -> Self {
-        self.knowledge_base_state = input;
-        self
+        self.knowledge_base_state = input; self
     }
     /// State of the knowledge base; whether it is enabled or disabled
     pub fn get_knowledge_base_state(&self) -> &::std::option::Option<crate::types::KnowledgeBaseState> {
@@ -188,49 +177,45 @@ impl AgentKnowledgeBaseBuilder {
     /// - [`updated_at`](crate::types::builders::AgentKnowledgeBaseBuilder::updated_at)
     /// - [`knowledge_base_state`](crate::types::builders::AgentKnowledgeBaseBuilder::knowledge_base_state)
     pub fn build(self) -> ::std::result::Result<crate::types::AgentKnowledgeBase, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AgentKnowledgeBase {
-            agent_id: self.agent_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "agent_id",
-                    "agent_id was not specified but it is required when building AgentKnowledgeBase",
-                )
-            })?,
-            agent_version: self.agent_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "agent_version",
-                    "agent_version was not specified but it is required when building AgentKnowledgeBase",
-                )
-            })?,
-            knowledge_base_id: self.knowledge_base_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "knowledge_base_id",
-                    "knowledge_base_id was not specified but it is required when building AgentKnowledgeBase",
-                )
-            })?,
-            description: self.description.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "description",
-                    "description was not specified but it is required when building AgentKnowledgeBase",
-                )
-            })?,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building AgentKnowledgeBase",
-                )
-            })?,
-            updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "updated_at",
-                    "updated_at was not specified but it is required when building AgentKnowledgeBase",
-                )
-            })?,
-            knowledge_base_state: self.knowledge_base_state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "knowledge_base_state",
-                    "knowledge_base_state was not specified but it is required when building AgentKnowledgeBase",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AgentKnowledgeBase {
+                agent_id: self.agent_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("agent_id", "agent_id was not specified but it is required when building AgentKnowledgeBase")
+                    )?
+                ,
+                agent_version: self.agent_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("agent_version", "agent_version was not specified but it is required when building AgentKnowledgeBase")
+                    )?
+                ,
+                knowledge_base_id: self.knowledge_base_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("knowledge_base_id", "knowledge_base_id was not specified but it is required when building AgentKnowledgeBase")
+                    )?
+                ,
+                description: self.description
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("description", "description was not specified but it is required when building AgentKnowledgeBase")
+                    )?
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building AgentKnowledgeBase")
+                    )?
+                ,
+                updated_at: self.updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("updated_at", "updated_at was not specified but it is required when building AgentKnowledgeBase")
+                    )?
+                ,
+                knowledge_base_state: self.knowledge_base_state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("knowledge_base_state", "knowledge_base_state was not specified but it is required when building AgentKnowledgeBase")
+                    )?
+                ,
+            }
+        )
     }
 }
+

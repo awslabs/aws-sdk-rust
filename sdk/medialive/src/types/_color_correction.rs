@@ -3,7 +3,7 @@
 /// Property of ColorCorrectionSettings. Used for custom color space conversion. The object identifies one 3D LUT file and specifies the input/output color space combination that the file will be used for.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ColorCorrection {
+pub struct ColorCorrection  {
     /// The color space of the input.
     pub input_color_space: ::std::option::Option<crate::types::ColorSpace>,
     /// The color space of the output.
@@ -11,17 +11,17 @@ pub struct ColorCorrection {
     /// The URI of the 3D LUT file. The protocol must be 's3:' or 's3ssl:':.
     pub uri: ::std::option::Option<::std::string::String>,
 }
-impl ColorCorrection {
+impl  ColorCorrection  {
     /// The color space of the input.
-    pub fn input_color_space(&self) -> ::std::option::Option<&crate::types::ColorSpace> {
+    pub fn input_color_space(&self) -> ::std::option::Option<& crate::types::ColorSpace> {
         self.input_color_space.as_ref()
     }
     /// The color space of the output.
-    pub fn output_color_space(&self) -> ::std::option::Option<&crate::types::ColorSpace> {
+    pub fn output_color_space(&self) -> ::std::option::Option<& crate::types::ColorSpace> {
         self.output_color_space.as_ref()
     }
     /// The URI of the 3D LUT file. The protocol must be 's3:' or 's3ssl:':.
-    pub fn uri(&self) -> ::std::option::Option<&str> {
+    pub fn uri(&self) -> ::std::option::Option<& str> {
         self.uri.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl ColorCorrectionBuilder {
     }
     /// The color space of the input.
     pub fn set_input_color_space(mut self, input: ::std::option::Option<crate::types::ColorSpace>) -> Self {
-        self.input_color_space = input;
-        self
+        self.input_color_space = input; self
     }
     /// The color space of the input.
     pub fn get_input_color_space(&self) -> &::std::option::Option<crate::types::ColorSpace> {
@@ -64,8 +63,7 @@ impl ColorCorrectionBuilder {
     }
     /// The color space of the output.
     pub fn set_output_color_space(mut self, input: ::std::option::Option<crate::types::ColorSpace>) -> Self {
-        self.output_color_space = input;
-        self
+        self.output_color_space = input; self
     }
     /// The color space of the output.
     pub fn get_output_color_space(&self) -> &::std::option::Option<crate::types::ColorSpace> {
@@ -79,8 +77,7 @@ impl ColorCorrectionBuilder {
     }
     /// The URI of the 3D LUT file. The protocol must be 's3:' or 's3ssl:':.
     pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.uri = input;
-        self
+        self.uri = input; self
     }
     /// The URI of the 3D LUT file. The protocol must be 's3:' or 's3ssl:':.
     pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,9 +86,13 @@ impl ColorCorrectionBuilder {
     /// Consumes the builder and constructs a [`ColorCorrection`](crate::types::ColorCorrection).
     pub fn build(self) -> crate::types::ColorCorrection {
         crate::types::ColorCorrection {
-            input_color_space: self.input_color_space,
-            output_color_space: self.output_color_space,
-            uri: self.uri,
+            input_color_space: self.input_color_space
+            ,
+            output_color_space: self.output_color_space
+            ,
+            uri: self.uri
+            ,
         }
     }
 }
+

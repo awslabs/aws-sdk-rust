@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAccessGrantsInstanceOutput {
+pub struct CreateAccessGrantsInstanceOutput  {
     /// <p>The date and time when you created the S3 Access Grants instance.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the S3 Access Grants instance. The ID is <code>default</code>. You can have one S3 Access Grants instance per Region per account.</p>
@@ -13,29 +13,29 @@ pub struct CreateAccessGrantsInstanceOutput {
     pub identity_center_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateAccessGrantsInstanceOutput {
+impl  CreateAccessGrantsInstanceOutput  {
     /// <p>The date and time when you created the S3 Access Grants instance.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The ID of the S3 Access Grants instance. The ID is <code>default</code>. You can have one S3 Access Grants instance per Region per account.</p>
-    pub fn access_grants_instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn access_grants_instance_id(&self) -> ::std::option::Option<& str> {
         self.access_grants_instance_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the S3 Access Grants instance.</p>
-    pub fn access_grants_instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn access_grants_instance_arn(&self) -> ::std::option::Option<& str> {
         self.access_grants_instance_arn.as_deref()
     }
     /// <p>If you associated your S3 Access Grants instance with an Amazon Web Services IAM Identity Center instance, this field returns the Amazon Resource Name (ARN) of the IAM Identity Center instance application; a subresource of the original Identity Center instance passed in the request. S3 Access Grants creates this Identity Center application for this specific S3 Access Grants instance.</p>
-    pub fn identity_center_arn(&self) -> ::std::option::Option<&str> {
+    pub fn identity_center_arn(&self) -> ::std::option::Option<& str> {
         self.identity_center_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateAccessGrantsInstanceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateAccessGrantsInstanceOutput {
     /// Creates a new builder-style object to manufacture [`CreateAccessGrantsInstanceOutput`](crate::operation::create_access_grants_instance::CreateAccessGrantsInstanceOutput).
     pub fn builder() -> crate::operation::create_access_grants_instance::builders::CreateAccessGrantsInstanceOutputBuilder {
@@ -61,8 +61,7 @@ impl CreateAccessGrantsInstanceOutputBuilder {
     }
     /// <p>The date and time when you created the S3 Access Grants instance.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time when you created the S3 Access Grants instance.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -75,8 +74,7 @@ impl CreateAccessGrantsInstanceOutputBuilder {
     }
     /// <p>The ID of the S3 Access Grants instance. The ID is <code>default</code>. You can have one S3 Access Grants instance per Region per account.</p>
     pub fn set_access_grants_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_grants_instance_id = input;
-        self
+        self.access_grants_instance_id = input; self
     }
     /// <p>The ID of the S3 Access Grants instance. The ID is <code>default</code>. You can have one S3 Access Grants instance per Region per account.</p>
     pub fn get_access_grants_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl CreateAccessGrantsInstanceOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the S3 Access Grants instance.</p>
     pub fn set_access_grants_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_grants_instance_arn = input;
-        self
+        self.access_grants_instance_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the S3 Access Grants instance.</p>
     pub fn get_access_grants_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,30 +100,34 @@ impl CreateAccessGrantsInstanceOutputBuilder {
     }
     /// <p>If you associated your S3 Access Grants instance with an Amazon Web Services IAM Identity Center instance, this field returns the Amazon Resource Name (ARN) of the IAM Identity Center instance application; a subresource of the original Identity Center instance passed in the request. S3 Access Grants creates this Identity Center application for this specific S3 Access Grants instance.</p>
     pub fn set_identity_center_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_center_arn = input;
-        self
+        self.identity_center_arn = input; self
     }
     /// <p>If you associated your S3 Access Grants instance with an Amazon Web Services IAM Identity Center instance, this field returns the Amazon Resource Name (ARN) of the IAM Identity Center instance application; a subresource of the original Identity Center instance passed in the request. S3 Access Grants creates this Identity Center application for this specific S3 Access Grants instance.</p>
     pub fn get_identity_center_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_center_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateAccessGrantsInstanceOutput`](crate::operation::create_access_grants_instance::CreateAccessGrantsInstanceOutput).
     pub fn build(self) -> crate::operation::create_access_grants_instance::CreateAccessGrantsInstanceOutput {
         crate::operation::create_access_grants_instance::CreateAccessGrantsInstanceOutput {
-            created_at: self.created_at,
-            access_grants_instance_id: self.access_grants_instance_id,
-            access_grants_instance_arn: self.access_grants_instance_arn,
-            identity_center_arn: self.identity_center_arn,
+            created_at: self.created_at
+            ,
+            access_grants_instance_id: self.access_grants_instance_id
+            ,
+            access_grants_instance_arn: self.access_grants_instance_arn
+            ,
+            identity_center_arn: self.identity_center_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

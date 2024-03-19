@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdatePackageVersionInput {
+pub struct UpdatePackageVersionInput  {
     /// <p>The name of the associated software package.</p>
     pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the target package version.</p>
@@ -12,41 +12,41 @@ pub struct UpdatePackageVersionInput {
     /// <p>Metadata that can be used to define a package version’s configuration. For example, the Amazon S3 file location, configuration options that are being sent to the device or fleet.</p>
     /// <p><b>Note:</b> Attributes can be updated only when the package version is in a draft state.</p>
     /// <p>The combined size of all the attributes on a package version is limited to 3KB.</p>
-    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The status that the package version should be assigned. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
     pub action: ::std::option::Option<crate::types::PackageVersionAction>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl UpdatePackageVersionInput {
+impl  UpdatePackageVersionInput  {
     /// <p>The name of the associated software package.</p>
-    pub fn package_name(&self) -> ::std::option::Option<&str> {
+    pub fn package_name(&self) -> ::std::option::Option<& str> {
         self.package_name.as_deref()
     }
     /// <p>The name of the target package version.</p>
-    pub fn version_name(&self) -> ::std::option::Option<&str> {
+    pub fn version_name(&self) -> ::std::option::Option<& str> {
         self.version_name.as_deref()
     }
     /// <p>The package version description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Metadata that can be used to define a package version’s configuration. For example, the Amazon S3 file location, configuration options that are being sent to the device or fleet.</p>
     /// <p><b>Note:</b> Attributes can be updated only when the package version is in a draft state.</p>
     /// <p>The combined size of all the attributes on a package version is limited to 3KB.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>The status that the package version should be assigned. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::PackageVersionAction> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::PackageVersionAction> {
         self.action.as_ref()
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for UpdatePackageVersionInput {
+impl  ::std::fmt::Debug for UpdatePackageVersionInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePackageVersionInput");
         formatter.field("package_name", &self.package_name);
@@ -72,7 +72,7 @@ pub struct UpdatePackageVersionInputBuilder {
     pub(crate) package_name: ::std::option::Option<::std::string::String>,
     pub(crate) version_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) action: ::std::option::Option<crate::types::PackageVersionAction>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
@@ -85,8 +85,7 @@ impl UpdatePackageVersionInputBuilder {
     }
     /// <p>The name of the associated software package.</p>
     pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_name = input;
-        self
+        self.package_name = input; self
     }
     /// <p>The name of the associated software package.</p>
     pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +99,7 @@ impl UpdatePackageVersionInputBuilder {
     }
     /// <p>The name of the target package version.</p>
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_name = input;
-        self
+        self.version_name = input; self
     }
     /// <p>The name of the target package version.</p>
     pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +112,7 @@ impl UpdatePackageVersionInputBuilder {
     }
     /// <p>The package version description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The package version description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,21 +127,20 @@ impl UpdatePackageVersionInputBuilder {
     /// <p>The combined size of all the attributes on a package version is limited to 3KB.</p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Metadata that can be used to define a package version’s configuration. For example, the Amazon S3 file location, configuration options that are being sent to the device or fleet.</p>
     /// <p><b>Note:</b> Attributes can be updated only when the package version is in a draft state.</p>
     /// <p>The combined size of all the attributes on a package version is limited to 3KB.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>Metadata that can be used to define a package version’s configuration. For example, the Amazon S3 file location, configuration options that are being sent to the device or fleet.</p>
     /// <p><b>Note:</b> Attributes can be updated only when the package version is in a draft state.</p>
     /// <p>The combined size of all the attributes on a package version is limited to 3KB.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// <p>The status that the package version should be assigned. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
@@ -154,8 +150,7 @@ impl UpdatePackageVersionInputBuilder {
     }
     /// <p>The status that the package version should be assigned. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::PackageVersionAction>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>The status that the package version should be assigned. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::PackageVersionAction> {
@@ -168,26 +163,30 @@ impl UpdatePackageVersionInputBuilder {
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdatePackageVersionInput`](crate::operation::update_package_version::UpdatePackageVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_package_version::UpdatePackageVersionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_package_version::UpdatePackageVersionInput {
-            package_name: self.package_name,
-            version_name: self.version_name,
-            description: self.description,
-            attributes: self.attributes,
-            action: self.action,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_package_version::UpdatePackageVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_package_version::UpdatePackageVersionInput {
+                package_name: self.package_name
+                ,
+                version_name: self.version_name
+                ,
+                description: self.description
+                ,
+                attributes: self.attributes
+                ,
+                action: self.action
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdatePackageVersionInputBuilder {
@@ -202,3 +201,4 @@ impl ::std::fmt::Debug for UpdatePackageVersionInputBuilder {
         formatter.finish()
     }
 }
+

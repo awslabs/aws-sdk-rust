@@ -3,30 +3,31 @@
 /// <p>Provides information about an Amazon ECS container.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEcsContainerDetails {
+pub struct AwsEcsContainerDetails  {
     /// <p>The name of the container.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The image used for the container.</p>
     pub image: ::std::option::Option<::std::string::String>,
     /// <p>The mount points for data volumes in your container.</p>
-    pub mount_points: ::std::option::Option<::std::vec::Vec<crate::types::AwsMountPoint>>,
+    pub mount_points: ::std::option::Option<::std::vec::Vec::<crate::types::AwsMountPoint>>,
     /// <p>When this parameter is true, the container is given elevated privileges on the host container instance (similar to the root user).</p>
     pub privileged: ::std::option::Option<bool>,
 }
-impl AwsEcsContainerDetails {
+impl  AwsEcsContainerDetails  {
     /// <p>The name of the container.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The image used for the container.</p>
-    pub fn image(&self) -> ::std::option::Option<&str> {
+    pub fn image(&self) -> ::std::option::Option<& str> {
         self.image.as_deref()
     }
     /// <p>The mount points for data volumes in your container.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mount_points.is_none()`.
-    pub fn mount_points(&self) -> &[crate::types::AwsMountPoint] {
-        self.mount_points.as_deref().unwrap_or_default()
+    pub fn mount_points(&self) -> & [crate::types::AwsMountPoint] {
+        self.mount_points.as_deref()
+        .unwrap_or_default()
     }
     /// <p>When this parameter is true, the container is given elevated privileges on the host container instance (similar to the root user).</p>
     pub fn privileged(&self) -> ::std::option::Option<bool> {
@@ -46,7 +47,7 @@ impl AwsEcsContainerDetails {
 pub struct AwsEcsContainerDetailsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) image: ::std::option::Option<::std::string::String>,
-    pub(crate) mount_points: ::std::option::Option<::std::vec::Vec<crate::types::AwsMountPoint>>,
+    pub(crate) mount_points: ::std::option::Option<::std::vec::Vec::<crate::types::AwsMountPoint>>,
     pub(crate) privileged: ::std::option::Option<bool>,
 }
 impl AwsEcsContainerDetailsBuilder {
@@ -57,8 +58,7 @@ impl AwsEcsContainerDetailsBuilder {
     }
     /// <p>The name of the container.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the container.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl AwsEcsContainerDetailsBuilder {
     }
     /// <p>The image used for the container.</p>
     pub fn set_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image = input;
-        self
+        self.image = input; self
     }
     /// <p>The image used for the container.</p>
     pub fn get_image(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,17 +84,16 @@ impl AwsEcsContainerDetailsBuilder {
     /// <p>The mount points for data volumes in your container.</p>
     pub fn mount_points(mut self, input: crate::types::AwsMountPoint) -> Self {
         let mut v = self.mount_points.unwrap_or_default();
-        v.push(input);
-        self.mount_points = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.mount_points = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The mount points for data volumes in your container.</p>
-    pub fn set_mount_points(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsMountPoint>>) -> Self {
-        self.mount_points = input;
-        self
+    pub fn set_mount_points(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsMountPoint>>) -> Self {
+        self.mount_points = input; self
     }
     /// <p>The mount points for data volumes in your container.</p>
-    pub fn get_mount_points(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsMountPoint>> {
+    pub fn get_mount_points(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsMountPoint>> {
         &self.mount_points
     }
     /// <p>When this parameter is true, the container is given elevated privileges on the host container instance (similar to the root user).</p>
@@ -105,8 +103,7 @@ impl AwsEcsContainerDetailsBuilder {
     }
     /// <p>When this parameter is true, the container is given elevated privileges on the host container instance (similar to the root user).</p>
     pub fn set_privileged(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.privileged = input;
-        self
+        self.privileged = input; self
     }
     /// <p>When this parameter is true, the container is given elevated privileges on the host container instance (similar to the root user).</p>
     pub fn get_privileged(&self) -> &::std::option::Option<bool> {
@@ -115,10 +112,15 @@ impl AwsEcsContainerDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEcsContainerDetails`](crate::types::AwsEcsContainerDetails).
     pub fn build(self) -> crate::types::AwsEcsContainerDetails {
         crate::types::AwsEcsContainerDetails {
-            name: self.name,
-            image: self.image,
-            mount_points: self.mount_points,
-            privileged: self.privileged,
+            name: self.name
+            ,
+            image: self.image
+            ,
+            mount_points: self.mount_points
+            ,
+            privileged: self.privileged
+            ,
         }
     }
 }
+

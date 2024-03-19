@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLaunchTemplateDataOutput {
+pub struct GetLaunchTemplateDataOutput  {
     /// <p>The instance data.</p>
     pub launch_template_data: ::std::option::Option<crate::types::ResponseLaunchTemplateData>,
     _request_id: Option<String>,
 }
-impl GetLaunchTemplateDataOutput {
+impl  GetLaunchTemplateDataOutput  {
     /// <p>The instance data.</p>
-    pub fn launch_template_data(&self) -> ::std::option::Option<&crate::types::ResponseLaunchTemplateData> {
+    pub fn launch_template_data(&self) -> ::std::option::Option<& crate::types::ResponseLaunchTemplateData> {
         self.launch_template_data.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetLaunchTemplateDataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetLaunchTemplateDataOutput {
     /// Creates a new builder-style object to manufacture [`GetLaunchTemplateDataOutput`](crate::operation::get_launch_template_data::GetLaunchTemplateDataOutput).
     pub fn builder() -> crate::operation::get_launch_template_data::builders::GetLaunchTemplateDataOutputBuilder {
@@ -40,27 +40,28 @@ impl GetLaunchTemplateDataOutputBuilder {
     }
     /// <p>The instance data.</p>
     pub fn set_launch_template_data(mut self, input: ::std::option::Option<crate::types::ResponseLaunchTemplateData>) -> Self {
-        self.launch_template_data = input;
-        self
+        self.launch_template_data = input; self
     }
     /// <p>The instance data.</p>
     pub fn get_launch_template_data(&self) -> &::std::option::Option<crate::types::ResponseLaunchTemplateData> {
         &self.launch_template_data
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetLaunchTemplateDataOutput`](crate::operation::get_launch_template_data::GetLaunchTemplateDataOutput).
     pub fn build(self) -> crate::operation::get_launch_template_data::GetLaunchTemplateDataOutput {
         crate::operation::get_launch_template_data::GetLaunchTemplateDataOutput {
-            launch_template_data: self.launch_template_data,
+            launch_template_data: self.launch_template_data
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

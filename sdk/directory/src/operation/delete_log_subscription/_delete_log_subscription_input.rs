@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteLogSubscriptionInput {
+pub struct DeleteLogSubscriptionInput  {
     /// <p>Identifier of the directory whose log subscription you want to delete.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteLogSubscriptionInput {
+impl  DeleteLogSubscriptionInput  {
     /// <p>Identifier of the directory whose log subscription you want to delete.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteLogSubscriptionInputBuilder {
     }
     /// <p>Identifier of the directory whose log subscription you want to delete.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>Identifier of the directory whose log subscription you want to delete.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.directory_id
     }
     /// Consumes the builder and constructs a [`DeleteLogSubscriptionInput`](crate::operation::delete_log_subscription::DeleteLogSubscriptionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_log_subscription::DeleteLogSubscriptionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_log_subscription::DeleteLogSubscriptionInput {
-            directory_id: self.directory_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_log_subscription::DeleteLogSubscriptionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_log_subscription::DeleteLogSubscriptionInput {
+                directory_id: self.directory_id
+                ,
+            }
+        )
     }
 }
+

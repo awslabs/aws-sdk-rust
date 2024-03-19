@@ -3,7 +3,7 @@
 /// <p>The details of a blueprint run.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BlueprintRun {
+pub struct BlueprintRun  {
     /// <p>The name of the blueprint.</p>
     pub blueprint_name: ::std::option::Option<::std::string::String>,
     /// <p>The run ID for this blueprint run.</p>
@@ -35,17 +35,17 @@ pub struct BlueprintRun {
     /// <p>The role ARN. This role will be assumed by the Glue service and will be used to create the workflow and other entities of a workflow.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
-impl BlueprintRun {
+impl  BlueprintRun  {
     /// <p>The name of the blueprint.</p>
-    pub fn blueprint_name(&self) -> ::std::option::Option<&str> {
+    pub fn blueprint_name(&self) -> ::std::option::Option<& str> {
         self.blueprint_name.as_deref()
     }
     /// <p>The run ID for this blueprint run.</p>
-    pub fn run_id(&self) -> ::std::option::Option<&str> {
+    pub fn run_id(&self) -> ::std::option::Option<& str> {
         self.run_id.as_deref()
     }
     /// <p>The name of a workflow that is created as a result of a successful blueprint run. If a blueprint run has an error, there will not be a workflow created.</p>
-    pub fn workflow_name(&self) -> ::std::option::Option<&str> {
+    pub fn workflow_name(&self) -> ::std::option::Option<& str> {
         self.workflow_name.as_deref()
     }
     /// <p>The state of the blueprint run. Possible values are:</p>
@@ -59,31 +59,31 @@ impl BlueprintRun {
     /// <li>
     /// <p>Rolling Back — The blueprint run failed and rollback is in progress.</p></li>
     /// </ul>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::BlueprintRunState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::BlueprintRunState> {
         self.state.as_ref()
     }
     /// <p>The date and time that the blueprint run started.</p>
-    pub fn started_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn started_on(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.started_on.as_ref()
     }
     /// <p>The date and time that the blueprint run completed.</p>
-    pub fn completed_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn completed_on(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.completed_on.as_ref()
     }
     /// <p>Indicates any errors that are seen while running the blueprint.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>If there are any errors while creating the entities of a workflow, we try to roll back the created entities until that point and delete them. This attribute indicates the errors seen while trying to delete the entities that are created.</p>
-    pub fn rollback_error_message(&self) -> ::std::option::Option<&str> {
+    pub fn rollback_error_message(&self) -> ::std::option::Option<& str> {
         self.rollback_error_message.as_deref()
     }
     /// <p>The blueprint parameters as a string. You will have to provide a value for each key that is required from the parameter spec that is defined in the <code>Blueprint$ParameterSpec</code>.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&str> {
+    pub fn parameters(&self) -> ::std::option::Option<& str> {
         self.parameters.as_deref()
     }
     /// <p>The role ARN. This role will be assumed by the Glue service and will be used to create the workflow and other entities of a workflow.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -117,8 +117,7 @@ impl BlueprintRunBuilder {
     }
     /// <p>The name of the blueprint.</p>
     pub fn set_blueprint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.blueprint_name = input;
-        self
+        self.blueprint_name = input; self
     }
     /// <p>The name of the blueprint.</p>
     pub fn get_blueprint_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +130,7 @@ impl BlueprintRunBuilder {
     }
     /// <p>The run ID for this blueprint run.</p>
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.run_id = input;
-        self
+        self.run_id = input; self
     }
     /// <p>The run ID for this blueprint run.</p>
     pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +143,7 @@ impl BlueprintRunBuilder {
     }
     /// <p>The name of a workflow that is created as a result of a successful blueprint run. If a blueprint run has an error, there will not be a workflow created.</p>
     pub fn set_workflow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_name = input;
-        self
+        self.workflow_name = input; self
     }
     /// <p>The name of a workflow that is created as a result of a successful blueprint run. If a blueprint run has an error, there will not be a workflow created.</p>
     pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -179,8 +176,7 @@ impl BlueprintRunBuilder {
     /// <p>Rolling Back — The blueprint run failed and rollback is in progress.</p></li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::BlueprintRunState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the blueprint run. Possible values are:</p>
     /// <ul>
@@ -203,8 +199,7 @@ impl BlueprintRunBuilder {
     }
     /// <p>The date and time that the blueprint run started.</p>
     pub fn set_started_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.started_on = input;
-        self
+        self.started_on = input; self
     }
     /// <p>The date and time that the blueprint run started.</p>
     pub fn get_started_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -217,8 +212,7 @@ impl BlueprintRunBuilder {
     }
     /// <p>The date and time that the blueprint run completed.</p>
     pub fn set_completed_on(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.completed_on = input;
-        self
+        self.completed_on = input; self
     }
     /// <p>The date and time that the blueprint run completed.</p>
     pub fn get_completed_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -231,8 +225,7 @@ impl BlueprintRunBuilder {
     }
     /// <p>Indicates any errors that are seen while running the blueprint.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>Indicates any errors that are seen while running the blueprint.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -245,8 +238,7 @@ impl BlueprintRunBuilder {
     }
     /// <p>If there are any errors while creating the entities of a workflow, we try to roll back the created entities until that point and delete them. This attribute indicates the errors seen while trying to delete the entities that are created.</p>
     pub fn set_rollback_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rollback_error_message = input;
-        self
+        self.rollback_error_message = input; self
     }
     /// <p>If there are any errors while creating the entities of a workflow, we try to roll back the created entities until that point and delete them. This attribute indicates the errors seen while trying to delete the entities that are created.</p>
     pub fn get_rollback_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -259,8 +251,7 @@ impl BlueprintRunBuilder {
     }
     /// <p>The blueprint parameters as a string. You will have to provide a value for each key that is required from the parameter spec that is defined in the <code>Blueprint$ParameterSpec</code>.</p>
     pub fn set_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameters = input;
-        self
+        self.parameters = input; self
     }
     /// <p>The blueprint parameters as a string. You will have to provide a value for each key that is required from the parameter spec that is defined in the <code>Blueprint$ParameterSpec</code>.</p>
     pub fn get_parameters(&self) -> &::std::option::Option<::std::string::String> {
@@ -273,8 +264,7 @@ impl BlueprintRunBuilder {
     }
     /// <p>The role ARN. This role will be assumed by the Glue service and will be used to create the workflow and other entities of a workflow.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The role ARN. This role will be assumed by the Glue service and will be used to create the workflow and other entities of a workflow.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -283,16 +273,27 @@ impl BlueprintRunBuilder {
     /// Consumes the builder and constructs a [`BlueprintRun`](crate::types::BlueprintRun).
     pub fn build(self) -> crate::types::BlueprintRun {
         crate::types::BlueprintRun {
-            blueprint_name: self.blueprint_name,
-            run_id: self.run_id,
-            workflow_name: self.workflow_name,
-            state: self.state,
-            started_on: self.started_on,
-            completed_on: self.completed_on,
-            error_message: self.error_message,
-            rollback_error_message: self.rollback_error_message,
-            parameters: self.parameters,
-            role_arn: self.role_arn,
+            blueprint_name: self.blueprint_name
+            ,
+            run_id: self.run_id
+            ,
+            workflow_name: self.workflow_name
+            ,
+            state: self.state
+            ,
+            started_on: self.started_on
+            ,
+            completed_on: self.completed_on
+            ,
+            error_message: self.error_message
+            ,
+            rollback_error_message: self.rollback_error_message
+            ,
+            parameters: self.parameters
+            ,
+            role_arn: self.role_arn
+            ,
         }
     }
 }
+

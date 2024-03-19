@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddResourcePermissionsOutput {
+pub struct AddResourcePermissionsOutput  {
     /// <p>The share results.</p>
-    pub share_results: ::std::option::Option<::std::vec::Vec<crate::types::ShareResult>>,
+    pub share_results: ::std::option::Option<::std::vec::Vec::<crate::types::ShareResult>>,
     _request_id: Option<String>,
 }
-impl AddResourcePermissionsOutput {
+impl  AddResourcePermissionsOutput  {
     /// <p>The share results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.share_results.is_none()`.
-    pub fn share_results(&self) -> &[crate::types::ShareResult] {
-        self.share_results.as_deref().unwrap_or_default()
+    pub fn share_results(&self) -> & [crate::types::ShareResult] {
+        self.share_results.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for AddResourcePermissionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AddResourcePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`AddResourcePermissionsOutput`](crate::operation::add_resource_permissions::AddResourcePermissionsOutput).
     pub fn builder() -> crate::operation::add_resource_permissions::builders::AddResourcePermissionsOutputBuilder {
@@ -31,7 +32,7 @@ impl AddResourcePermissionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddResourcePermissionsOutputBuilder {
-    pub(crate) share_results: ::std::option::Option<::std::vec::Vec<crate::types::ShareResult>>,
+    pub(crate) share_results: ::std::option::Option<::std::vec::Vec::<crate::types::ShareResult>>,
     _request_id: Option<String>,
 }
 impl AddResourcePermissionsOutputBuilder {
@@ -42,33 +43,34 @@ impl AddResourcePermissionsOutputBuilder {
     /// <p>The share results.</p>
     pub fn share_results(mut self, input: crate::types::ShareResult) -> Self {
         let mut v = self.share_results.unwrap_or_default();
-        v.push(input);
-        self.share_results = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.share_results = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The share results.</p>
-    pub fn set_share_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ShareResult>>) -> Self {
-        self.share_results = input;
-        self
+    pub fn set_share_results(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ShareResult>>) -> Self {
+        self.share_results = input; self
     }
     /// <p>The share results.</p>
-    pub fn get_share_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ShareResult>> {
+    pub fn get_share_results(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ShareResult>> {
         &self.share_results
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AddResourcePermissionsOutput`](crate::operation::add_resource_permissions::AddResourcePermissionsOutput).
     pub fn build(self) -> crate::operation::add_resource_permissions::AddResourcePermissionsOutput {
         crate::operation::add_resource_permissions::AddResourcePermissionsOutput {
-            share_results: self.share_results,
+            share_results: self.share_results
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

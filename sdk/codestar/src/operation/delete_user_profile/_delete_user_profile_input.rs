@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteUserProfileInput {
+pub struct DeleteUserProfileInput  {
     /// <p>The Amazon Resource Name (ARN) of the user to delete from AWS CodeStar.</p>
     pub user_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteUserProfileInput {
+impl  DeleteUserProfileInput  {
     /// <p>The Amazon Resource Name (ARN) of the user to delete from AWS CodeStar.</p>
-    pub fn user_arn(&self) -> ::std::option::Option<&str> {
+    pub fn user_arn(&self) -> ::std::option::Option<& str> {
         self.user_arn.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl DeleteUserProfileInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the user to delete from AWS CodeStar.</p>
     pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_arn = input;
-        self
+        self.user_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the user to delete from AWS CodeStar.</p>
     pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_arn
     }
     /// Consumes the builder and constructs a [`DeleteUserProfileInput`](crate::operation::delete_user_profile::DeleteUserProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_user_profile::DeleteUserProfileInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_user_profile::DeleteUserProfileInput { user_arn: self.user_arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_user_profile::DeleteUserProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_user_profile::DeleteUserProfileInput {
+                user_arn: self.user_arn
+                ,
+            }
+        )
     }
 }
+

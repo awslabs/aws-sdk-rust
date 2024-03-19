@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisableDelegatedAdminAccountInput {
+pub struct DisableDelegatedAdminAccountInput  {
     /// <p>The Amazon Web Services account ID of the current Amazon Inspector delegated administrator.</p>
     pub delegated_admin_account_id: ::std::option::Option<::std::string::String>,
 }
-impl DisableDelegatedAdminAccountInput {
+impl  DisableDelegatedAdminAccountInput  {
     /// <p>The Amazon Web Services account ID of the current Amazon Inspector delegated administrator.</p>
-    pub fn delegated_admin_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn delegated_admin_account_id(&self) -> ::std::option::Option<& str> {
         self.delegated_admin_account_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DisableDelegatedAdminAccountInputBuilder {
     }
     /// <p>The Amazon Web Services account ID of the current Amazon Inspector delegated administrator.</p>
     pub fn set_delegated_admin_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delegated_admin_account_id = input;
-        self
+        self.delegated_admin_account_id = input; self
     }
     /// <p>The Amazon Web Services account ID of the current Amazon Inspector delegated administrator.</p>
     pub fn get_delegated_admin_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.delegated_admin_account_id
     }
     /// Consumes the builder and constructs a [`DisableDelegatedAdminAccountInput`](crate::operation::disable_delegated_admin_account::DisableDelegatedAdminAccountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disable_delegated_admin_account::DisableDelegatedAdminAccountInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::disable_delegated_admin_account::DisableDelegatedAdminAccountInput {
-            delegated_admin_account_id: self.delegated_admin_account_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disable_delegated_admin_account::DisableDelegatedAdminAccountInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disable_delegated_admin_account::DisableDelegatedAdminAccountInput {
+                delegated_admin_account_id: self.delegated_admin_account_id
+                ,
+            }
+        )
     }
 }
+

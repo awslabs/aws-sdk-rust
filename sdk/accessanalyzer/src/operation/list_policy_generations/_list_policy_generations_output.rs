@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPolicyGenerationsOutput {
+pub struct ListPolicyGenerationsOutput  {
     /// <p>A <code>PolicyGeneration</code> object that contains details about the generated policy.</p>
-    pub policy_generations: ::std::vec::Vec<crate::types::PolicyGeneration>,
+    pub policy_generations: ::std::vec::Vec::<crate::types::PolicyGeneration>,
     /// <p>A token used for pagination of results returned.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListPolicyGenerationsOutput {
+impl  ListPolicyGenerationsOutput  {
     /// <p>A <code>PolicyGeneration</code> object that contains details about the generated policy.</p>
-    pub fn policy_generations(&self) -> &[crate::types::PolicyGeneration] {
-        use std::ops::Deref;
-        self.policy_generations.deref()
+    pub fn policy_generations(&self) -> & [crate::types::PolicyGeneration] {
+        use std::ops::Deref; self.policy_generations.deref()
     }
     /// <p>A token used for pagination of results returned.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListPolicyGenerationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListPolicyGenerationsOutput {
     /// Creates a new builder-style object to manufacture [`ListPolicyGenerationsOutput`](crate::operation::list_policy_generations::ListPolicyGenerationsOutput).
     pub fn builder() -> crate::operation::list_policy_generations::builders::ListPolicyGenerationsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListPolicyGenerationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPolicyGenerationsOutputBuilder {
-    pub(crate) policy_generations: ::std::option::Option<::std::vec::Vec<crate::types::PolicyGeneration>>,
+    pub(crate) policy_generations: ::std::option::Option<::std::vec::Vec::<crate::types::PolicyGeneration>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListPolicyGenerationsOutputBuilder {
     /// <p>A <code>PolicyGeneration</code> object that contains details about the generated policy.</p>
     pub fn policy_generations(mut self, input: crate::types::PolicyGeneration) -> Self {
         let mut v = self.policy_generations.unwrap_or_default();
-        v.push(input);
-        self.policy_generations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.policy_generations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A <code>PolicyGeneration</code> object that contains details about the generated policy.</p>
-    pub fn set_policy_generations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyGeneration>>) -> Self {
-        self.policy_generations = input;
-        self
+    pub fn set_policy_generations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PolicyGeneration>>) -> Self {
+        self.policy_generations = input; self
     }
     /// <p>A <code>PolicyGeneration</code> object that contains details about the generated policy.</p>
-    pub fn get_policy_generations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyGeneration>> {
+    pub fn get_policy_generations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PolicyGeneration>> {
         &self.policy_generations
     }
     /// <p>A token used for pagination of results returned.</p>
@@ -68,38 +66,37 @@ impl ListPolicyGenerationsOutputBuilder {
     }
     /// <p>A token used for pagination of results returned.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token used for pagination of results returned.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListPolicyGenerationsOutput`](crate::operation::list_policy_generations::ListPolicyGenerationsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`policy_generations`](crate::operation::list_policy_generations::builders::ListPolicyGenerationsOutputBuilder::policy_generations)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_policy_generations::ListPolicyGenerationsOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_policy_generations::ListPolicyGenerationsOutput {
-            policy_generations: self.policy_generations.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy_generations",
-                    "policy_generations was not specified but it is required when building ListPolicyGenerationsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_policy_generations::ListPolicyGenerationsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_policy_generations::ListPolicyGenerationsOutput {
+                policy_generations: self.policy_generations
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy_generations", "policy_generations was not specified but it is required when building ListPolicyGenerationsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

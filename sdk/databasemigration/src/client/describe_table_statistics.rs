@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeTableStatistics`](crate::operation::describe_table_statistics::builders::DescribeTableStatisticsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_table_statistics::builders::DescribeTableStatisticsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`replication_task_arn(impl Into<String>)`](crate::operation::describe_table_statistics::builders::DescribeTableStatisticsFluentBuilder::replication_task_arn) / [`set_replication_task_arn(Option<String>)`](crate::operation::describe_table_statistics::builders::DescribeTableStatisticsFluentBuilder::set_replication_task_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the replication task.</p><br>
     ///   - [`max_records(i32)`](crate::operation::describe_table_statistics::builders::DescribeTableStatisticsFluentBuilder::max_records) / [`set_max_records(Option<i32>)`](crate::operation::describe_table_statistics::builders::DescribeTableStatisticsFluentBuilder::set_max_records):<br>required: **false**<br><p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 500.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::describe_table_statistics::builders::DescribeTableStatisticsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_table_statistics::builders::DescribeTableStatisticsFluentBuilder::set_marker):<br>required: **false**<br><p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p><br>
     ///   - [`filters(Filter)`](crate::operation::describe_table_statistics::builders::DescribeTableStatisticsFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::describe_table_statistics::builders::DescribeTableStatisticsFluentBuilder::set_filters):<br>required: **false**<br><p>Filters applied to table statistics.</p> <p>Valid filter names: schema-name | table-name | table-state</p> <p>A combination of filters creates an AND condition where each record matches all specified filters.</p><br>
-    /// - On success, responds with [`DescribeTableStatisticsOutput`](crate::operation::describe_table_statistics::DescribeTableStatisticsOutput) with field(s):
+                            /// - On success, responds with [`DescribeTableStatisticsOutput`](crate::operation::describe_table_statistics::DescribeTableStatisticsOutput) with field(s):
     ///   - [`replication_task_arn(Option<String>)`](crate::operation::describe_table_statistics::DescribeTableStatisticsOutput::replication_task_arn): <p>The Amazon Resource Name (ARN) of the replication task.</p>
     ///   - [`table_statistics(Option<Vec::<TableStatistics>>)`](crate::operation::describe_table_statistics::DescribeTableStatisticsOutput::table_statistics): <p>The table statistics.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_table_statistics::DescribeTableStatisticsOutput::marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    /// - On failure, responds with [`SdkError<DescribeTableStatisticsError>`](crate::operation::describe_table_statistics::DescribeTableStatisticsError)
+                            /// - On failure, responds with [`SdkError<DescribeTableStatisticsError>`](crate::operation::describe_table_statistics::DescribeTableStatisticsError)
     pub fn describe_table_statistics(&self) -> crate::operation::describe_table_statistics::builders::DescribeTableStatisticsFluentBuilder {
-        crate::operation::describe_table_statistics::builders::DescribeTableStatisticsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_table_statistics::builders::DescribeTableStatisticsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

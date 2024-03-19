@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListFirewallsOutput {
+pub struct ListFirewallsOutput  {
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The firewall metadata objects for the VPCs that you specified. Depending on your setting for max results and the number of firewalls you have, a single call might not be the full list.</p>
-    pub firewalls: ::std::option::Option<::std::vec::Vec<crate::types::FirewallMetadata>>,
+    pub firewalls: ::std::option::Option<::std::vec::Vec::<crate::types::FirewallMetadata>>,
     _request_id: Option<String>,
 }
-impl ListFirewallsOutput {
+impl  ListFirewallsOutput  {
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The firewall metadata objects for the VPCs that you specified. Depending on your setting for max results and the number of firewalls you have, a single call might not be the full list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.firewalls.is_none()`.
-    pub fn firewalls(&self) -> &[crate::types::FirewallMetadata] {
-        self.firewalls.as_deref().unwrap_or_default()
+    pub fn firewalls(&self) -> & [crate::types::FirewallMetadata] {
+        self.firewalls.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListFirewallsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListFirewallsOutput {
     /// Creates a new builder-style object to manufacture [`ListFirewallsOutput`](crate::operation::list_firewalls::ListFirewallsOutput).
     pub fn builder() -> crate::operation::list_firewalls::builders::ListFirewallsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListFirewallsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFirewallsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) firewalls: ::std::option::Option<::std::vec::Vec<crate::types::FirewallMetadata>>,
+    pub(crate) firewalls: ::std::option::Option<::std::vec::Vec::<crate::types::FirewallMetadata>>,
     _request_id: Option<String>,
 }
 impl ListFirewallsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListFirewallsOutputBuilder {
     }
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListFirewallsOutputBuilder {
     /// <p>The firewall metadata objects for the VPCs that you specified. Depending on your setting for max results and the number of firewalls you have, a single call might not be the full list.</p>
     pub fn firewalls(mut self, input: crate::types::FirewallMetadata) -> Self {
         let mut v = self.firewalls.unwrap_or_default();
-        v.push(input);
-        self.firewalls = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.firewalls = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The firewall metadata objects for the VPCs that you specified. Depending on your setting for max results and the number of firewalls you have, a single call might not be the full list.</p>
-    pub fn set_firewalls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FirewallMetadata>>) -> Self {
-        self.firewalls = input;
-        self
+    pub fn set_firewalls(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FirewallMetadata>>) -> Self {
+        self.firewalls = input; self
     }
     /// <p>The firewall metadata objects for the VPCs that you specified. Depending on your setting for max results and the number of firewalls you have, a single call might not be the full list.</p>
-    pub fn get_firewalls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FirewallMetadata>> {
+    pub fn get_firewalls(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FirewallMetadata>> {
         &self.firewalls
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListFirewallsOutput`](crate::operation::list_firewalls::ListFirewallsOutput).
     pub fn build(self) -> crate::operation::list_firewalls::ListFirewallsOutput {
         crate::operation::list_firewalls::ListFirewallsOutput {
-            next_token: self.next_token,
-            firewalls: self.firewalls,
+            next_token: self.next_token
+            ,
+            firewalls: self.firewalls
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

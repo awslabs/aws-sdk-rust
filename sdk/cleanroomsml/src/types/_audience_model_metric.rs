@@ -3,7 +3,7 @@
 /// <p>The audience model metrics.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AudienceModelMetric {
+pub struct AudienceModelMetric  {
     /// <p>The audience model metric.</p>
     pub r#type: crate::types::AudienceModelMetricType,
     /// <p>The number of users that were used to generate these model metrics.</p>
@@ -11,9 +11,9 @@ pub struct AudienceModelMetric {
     /// <p>The value of the audience model metric</p>
     pub value: f64,
 }
-impl AudienceModelMetric {
+impl  AudienceModelMetric  {
     /// <p>The audience model metric.</p>
-    pub fn r#type(&self) -> &crate::types::AudienceModelMetricType {
+    pub fn r#type(&self) -> & crate::types::AudienceModelMetricType {
         &self.r#type
     }
     /// <p>The number of users that were used to generate these model metrics.</p>
@@ -49,8 +49,7 @@ impl AudienceModelMetricBuilder {
     }
     /// <p>The audience model metric.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::AudienceModelMetricType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The audience model metric.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::AudienceModelMetricType> {
@@ -64,8 +63,7 @@ impl AudienceModelMetricBuilder {
     }
     /// <p>The number of users that were used to generate these model metrics.</p>
     pub fn set_for_top_k_item_predictions(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.for_top_k_item_predictions = input;
-        self
+        self.for_top_k_item_predictions = input; self
     }
     /// <p>The number of users that were used to generate these model metrics.</p>
     pub fn get_for_top_k_item_predictions(&self) -> &::std::option::Option<i32> {
@@ -79,8 +77,7 @@ impl AudienceModelMetricBuilder {
     }
     /// <p>The value of the audience model metric</p>
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the audience model metric</p>
     pub fn get_value(&self) -> &::std::option::Option<f64> {
@@ -92,25 +89,25 @@ impl AudienceModelMetricBuilder {
     /// - [`for_top_k_item_predictions`](crate::types::builders::AudienceModelMetricBuilder::for_top_k_item_predictions)
     /// - [`value`](crate::types::builders::AudienceModelMetricBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::AudienceModelMetric, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AudienceModelMetric {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building AudienceModelMetric",
-                )
-            })?,
-            for_top_k_item_predictions: self.for_top_k_item_predictions.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "for_top_k_item_predictions",
-                    "for_top_k_item_predictions was not specified but it is required when building AudienceModelMetric",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building AudienceModelMetric",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AudienceModelMetric {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building AudienceModelMetric")
+                    )?
+                ,
+                for_top_k_item_predictions: self.for_top_k_item_predictions
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("for_top_k_item_predictions", "for_top_k_item_predictions was not specified but it is required when building AudienceModelMetric")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building AudienceModelMetric")
+                    )?
+                ,
+            }
+        )
     }
 }
+

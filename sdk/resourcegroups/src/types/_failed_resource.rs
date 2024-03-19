@@ -3,7 +3,7 @@
 /// <p>A resource that failed to be added to or removed from a group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FailedResource {
+pub struct FailedResource  {
     /// <p>The ARN of the resource that failed to be added or removed.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The error message text associated with the failure.</p>
@@ -11,17 +11,17 @@ pub struct FailedResource {
     /// <p>The error code associated with the failure.</p>
     pub error_code: ::std::option::Option<::std::string::String>,
 }
-impl FailedResource {
+impl  FailedResource  {
     /// <p>The ARN of the resource that failed to be added or removed.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The error message text associated with the failure.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>The error code associated with the failure.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl FailedResourceBuilder {
     }
     /// <p>The ARN of the resource that failed to be added or removed.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The ARN of the resource that failed to be added or removed.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl FailedResourceBuilder {
     }
     /// <p>The error message text associated with the failure.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The error message text associated with the failure.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl FailedResourceBuilder {
     }
     /// <p>The error code associated with the failure.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code associated with the failure.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl FailedResourceBuilder {
     /// Consumes the builder and constructs a [`FailedResource`](crate::types::FailedResource).
     pub fn build(self) -> crate::types::FailedResource {
         crate::types::FailedResource {
-            resource_arn: self.resource_arn,
-            error_message: self.error_message,
-            error_code: self.error_code,
+            resource_arn: self.resource_arn
+            ,
+            error_message: self.error_message
+            ,
+            error_code: self.error_code
+            ,
         }
     }
 }
+

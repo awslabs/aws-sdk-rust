@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSecurityGroupsInput {
+pub struct DescribeSecurityGroupsInput  {
     /// <p>The filters. If using multiple filters for rules, the results include security groups for which any combination of rules - not necessarily a single rule - match all filters.</p>
     /// <ul>
     /// <li>
@@ -51,10 +51,10 @@ pub struct DescribeSecurityGroupsInput {
     /// <p><code>owner-id</code> - The Amazon Web Services account ID of the owner of the security group.</p></li>
     /// <li>
     /// <p><code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
+    /// <code>Owner</code> and the value 
+    /// <code>TeamA</code>, specify 
+    /// <code>tag:Owner</code> for the filter name and 
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
     /// <li>
@@ -62,13 +62,13 @@ pub struct DescribeSecurityGroupsInput {
     /// <li>
     /// <p><code>vpc-id</code> - The ID of the VPC specified when the security group was created.</p></li>
     /// </ul>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     /// <p>The IDs of the security groups. Required for security groups in a nondefault VPC.</p>
     /// <p>Default: Describes all of your security groups.</p>
-    pub group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>[Default VPC] The names of the security groups. You can specify either the security group name or the security group ID.</p>
     /// <p>Default: Describes all of your security groups.</p>
-    pub group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub group_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
@@ -76,7 +76,7 @@ pub struct DescribeSecurityGroupsInput {
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. This value can be between 5 and 1000. If this parameter is not specified, then all items are returned. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl DescribeSecurityGroupsInput {
+impl  DescribeSecurityGroupsInput  {
     /// <p>The filters. If using multiple filters for rules, the results include security groups for which any combination of rules - not necessarily a single rule - match all filters.</p>
     /// <ul>
     /// <li>
@@ -125,10 +125,10 @@ impl DescribeSecurityGroupsInput {
     /// <p><code>owner-id</code> - The Amazon Web Services account ID of the owner of the security group.</p></li>
     /// <li>
     /// <p><code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
+    /// <code>Owner</code> and the value 
+    /// <code>TeamA</code>, specify 
+    /// <code>tag:Owner</code> for the filter name and 
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
     /// <li>
@@ -136,31 +136,34 @@ impl DescribeSecurityGroupsInput {
     /// <li>
     /// <p><code>vpc-id</code> - The ID of the VPC specified when the security group was created.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The IDs of the security groups. Required for security groups in a nondefault VPC.</p>
     /// <p>Default: Describes all of your security groups.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_ids.is_none()`.
-    pub fn group_ids(&self) -> &[::std::string::String] {
-        self.group_ids.as_deref().unwrap_or_default()
+    pub fn group_ids(&self) -> & [::std::string::String] {
+        self.group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>[Default VPC] The names of the security groups. You can specify either the security group name or the security group ID.</p>
     /// <p>Default: Describes all of your security groups.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_names.is_none()`.
-    pub fn group_names(&self) -> &[::std::string::String] {
-        self.group_names.as_deref().unwrap_or_default()
+    pub fn group_names(&self) -> & [::std::string::String] {
+        self.group_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. This value can be between 5 and 1000. If this parameter is not specified, then all items are returned. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
@@ -179,9 +182,9 @@ impl DescribeSecurityGroupsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSecurityGroupsInputBuilder {
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    pub(crate) group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
+    pub(crate) group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) group_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -239,10 +242,10 @@ impl DescribeSecurityGroupsInputBuilder {
     /// <p><code>owner-id</code> - The Amazon Web Services account ID of the owner of the security group.</p></li>
     /// <li>
     /// <p><code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
+    /// <code>Owner</code> and the value 
+    /// <code>TeamA</code>, specify 
+    /// <code>tag:Owner</code> for the filter name and 
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
     /// <li>
@@ -252,9 +255,9 @@ impl DescribeSecurityGroupsInputBuilder {
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The filters. If using multiple filters for rules, the results include security groups for which any combination of rules - not necessarily a single rule - match all filters.</p>
     /// <ul>
@@ -304,10 +307,10 @@ impl DescribeSecurityGroupsInputBuilder {
     /// <p><code>owner-id</code> - The Amazon Web Services account ID of the owner of the security group.</p></li>
     /// <li>
     /// <p><code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
+    /// <code>Owner</code> and the value 
+    /// <code>TeamA</code>, specify 
+    /// <code>tag:Owner</code> for the filter name and 
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
     /// <li>
@@ -315,9 +318,8 @@ impl DescribeSecurityGroupsInputBuilder {
     /// <li>
     /// <p><code>vpc-id</code> - The ID of the VPC specified when the security group was created.</p></li>
     /// </ul>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The filters. If using multiple filters for rules, the results include security groups for which any combination of rules - not necessarily a single rule - match all filters.</p>
     /// <ul>
@@ -367,10 +369,10 @@ impl DescribeSecurityGroupsInputBuilder {
     /// <p><code>owner-id</code> - The Amazon Web Services account ID of the owner of the security group.</p></li>
     /// <li>
     /// <p><code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
+    /// <code>Owner</code> and the value 
+    /// <code>TeamA</code>, specify 
+    /// <code>tag:Owner</code> for the filter name and 
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
     /// <li>
@@ -378,7 +380,7 @@ impl DescribeSecurityGroupsInputBuilder {
     /// <li>
     /// <p><code>vpc-id</code> - The ID of the VPC specified when the security group was created.</p></li>
     /// </ul>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// Appends an item to `group_ids`.
@@ -389,19 +391,18 @@ impl DescribeSecurityGroupsInputBuilder {
     /// <p>Default: Describes all of your security groups.</p>
     pub fn group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the security groups. Required for security groups in a nondefault VPC.</p>
     /// <p>Default: Describes all of your security groups.</p>
-    pub fn set_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.group_ids = input;
-        self
+    pub fn set_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.group_ids = input; self
     }
     /// <p>The IDs of the security groups. Required for security groups in a nondefault VPC.</p>
     /// <p>Default: Describes all of your security groups.</p>
-    pub fn get_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.group_ids
     }
     /// Appends an item to `group_names`.
@@ -412,19 +413,18 @@ impl DescribeSecurityGroupsInputBuilder {
     /// <p>Default: Describes all of your security groups.</p>
     pub fn group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.group_names.unwrap_or_default();
-        v.push(input.into());
-        self.group_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.group_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>[Default VPC] The names of the security groups. You can specify either the security group name or the security group ID.</p>
     /// <p>Default: Describes all of your security groups.</p>
-    pub fn set_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.group_names = input;
-        self
+    pub fn set_group_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.group_names = input; self
     }
     /// <p>[Default VPC] The names of the security groups. You can specify either the security group name or the security group ID.</p>
     /// <p>Default: Describes all of your security groups.</p>
-    pub fn get_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_group_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.group_names
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -434,8 +434,7 @@ impl DescribeSecurityGroupsInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -448,8 +447,7 @@ impl DescribeSecurityGroupsInputBuilder {
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -462,27 +460,30 @@ impl DescribeSecurityGroupsInputBuilder {
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. This value can be between 5 and 1000. If this parameter is not specified, then all items are returned. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. This value can be between 5 and 1000. If this parameter is not specified, then all items are returned. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeSecurityGroupsInput`](crate::operation::describe_security_groups::DescribeSecurityGroupsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_security_groups::DescribeSecurityGroupsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_security_groups::DescribeSecurityGroupsInput {
-            filters: self.filters,
-            group_ids: self.group_ids,
-            group_names: self.group_names,
-            dry_run: self.dry_run,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_security_groups::DescribeSecurityGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_security_groups::DescribeSecurityGroupsInput {
+                filters: self.filters
+                ,
+                group_ids: self.group_ids
+                ,
+                group_names: self.group_names
+                ,
+                dry_run: self.dry_run
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

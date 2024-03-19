@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeWorldExportJobInput {
+pub struct DescribeWorldExportJobInput  {
     /// <p>The Amazon Resource Name (arn) of the world export job to describe.</p>
     pub job: ::std::option::Option<::std::string::String>,
 }
-impl DescribeWorldExportJobInput {
+impl  DescribeWorldExportJobInput  {
     /// <p>The Amazon Resource Name (arn) of the world export job to describe.</p>
-    pub fn job(&self) -> ::std::option::Option<&str> {
+    pub fn job(&self) -> ::std::option::Option<& str> {
         self.job.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DescribeWorldExportJobInputBuilder {
     }
     /// <p>The Amazon Resource Name (arn) of the world export job to describe.</p>
     pub fn set_job(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job = input;
-        self
+        self.job = input; self
     }
     /// <p>The Amazon Resource Name (arn) of the world export job to describe.</p>
     pub fn get_job(&self) -> &::std::option::Option<::std::string::String> {
         &self.job
     }
     /// Consumes the builder and constructs a [`DescribeWorldExportJobInput`](crate::operation::describe_world_export_job::DescribeWorldExportJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_world_export_job::DescribeWorldExportJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_world_export_job::DescribeWorldExportJobInput { job: self.job })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_world_export_job::DescribeWorldExportJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_world_export_job::DescribeWorldExportJobInput {
+                job: self.job
+                ,
+            }
+        )
     }
 }
+

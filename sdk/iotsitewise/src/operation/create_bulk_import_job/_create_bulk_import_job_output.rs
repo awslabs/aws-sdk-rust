@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateBulkImportJobOutput {
+pub struct CreateBulkImportJobOutput  {
     /// <p>The ID of the job.</p>
     pub job_id: ::std::string::String,
     /// <p>The unique name that helps identify the job request.</p>
@@ -25,16 +25,14 @@ pub struct CreateBulkImportJobOutput {
     pub job_status: crate::types::JobStatus,
     _request_id: Option<String>,
 }
-impl CreateBulkImportJobOutput {
+impl  CreateBulkImportJobOutput  {
     /// <p>The ID of the job.</p>
-    pub fn job_id(&self) -> &str {
-        use std::ops::Deref;
-        self.job_id.deref()
+    pub fn job_id(&self) -> & str {
+        use std::ops::Deref; self.job_id.deref()
     }
     /// <p>The unique name that helps identify the job request.</p>
-    pub fn job_name(&self) -> &str {
-        use std::ops::Deref;
-        self.job_name.deref()
+    pub fn job_name(&self) -> & str {
+        use std::ops::Deref; self.job_name.deref()
     }
     /// <p>The status of the bulk import job can be one of following values:</p>
     /// <ul>
@@ -51,15 +49,15 @@ impl CreateBulkImportJobOutput {
     /// <li>
     /// <p><code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p></li>
     /// </ul>
-    pub fn job_status(&self) -> &crate::types::JobStatus {
+    pub fn job_status(&self) -> & crate::types::JobStatus {
         &self.job_status
     }
 }
 impl ::aws_types::request_id::RequestId for CreateBulkImportJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateBulkImportJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateBulkImportJobOutput`](crate::operation::create_bulk_import_job::CreateBulkImportJobOutput).
     pub fn builder() -> crate::operation::create_bulk_import_job::builders::CreateBulkImportJobOutputBuilder {
@@ -85,8 +83,7 @@ impl CreateBulkImportJobOutputBuilder {
     }
     /// <p>The ID of the job.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The ID of the job.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +97,7 @@ impl CreateBulkImportJobOutputBuilder {
     }
     /// <p>The unique name that helps identify the job request.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// <p>The unique name that helps identify the job request.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +139,7 @@ impl CreateBulkImportJobOutputBuilder {
     /// <p><code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p></li>
     /// </ul>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
-        self.job_status = input;
-        self
+        self.job_status = input; self
     }
     /// <p>The status of the bulk import job can be one of following values:</p>
     /// <ul>
@@ -165,43 +160,40 @@ impl CreateBulkImportJobOutputBuilder {
         &self.job_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateBulkImportJobOutput`](crate::operation::create_bulk_import_job::CreateBulkImportJobOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`job_id`](crate::operation::create_bulk_import_job::builders::CreateBulkImportJobOutputBuilder::job_id)
     /// - [`job_name`](crate::operation::create_bulk_import_job::builders::CreateBulkImportJobOutputBuilder::job_name)
     /// - [`job_status`](crate::operation::create_bulk_import_job::builders::CreateBulkImportJobOutputBuilder::job_status)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_bulk_import_job::CreateBulkImportJobOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_bulk_import_job::CreateBulkImportJobOutput {
-            job_id: self.job_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "job_id",
-                    "job_id was not specified but it is required when building CreateBulkImportJobOutput",
-                )
-            })?,
-            job_name: self.job_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "job_name",
-                    "job_name was not specified but it is required when building CreateBulkImportJobOutput",
-                )
-            })?,
-            job_status: self.job_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "job_status",
-                    "job_status was not specified but it is required when building CreateBulkImportJobOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_bulk_import_job::CreateBulkImportJobOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_bulk_import_job::CreateBulkImportJobOutput {
+                job_id: self.job_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("job_id", "job_id was not specified but it is required when building CreateBulkImportJobOutput")
+                    )?
+                ,
+                job_name: self.job_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("job_name", "job_name was not specified but it is required when building CreateBulkImportJobOutput")
+                    )?
+                ,
+                job_status: self.job_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("job_status", "job_status was not specified but it is required when building CreateBulkImportJobOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

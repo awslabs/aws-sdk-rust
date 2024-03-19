@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSchemas`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::set_next_token):<br>required: **false**<br><p>A token returned from the previous call to <code>ListSchemas</code> for getting the next set of schemas (if they exist).</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of schemas to return.</p><br>
-    /// - On success, responds with [`ListSchemasOutput`](crate::operation::list_schemas::ListSchemasOutput) with field(s):
+                            /// - On success, responds with [`ListSchemasOutput`](crate::operation::list_schemas::ListSchemasOutput) with field(s):
     ///   - [`schemas(Option<Vec::<DatasetSchemaSummary>>)`](crate::operation::list_schemas::ListSchemasOutput::schemas): <p>A list of schemas.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_schemas::ListSchemasOutput::next_token): <p>A token used to get the next set of schemas (if they exist).</p>
-    /// - On failure, responds with [`SdkError<ListSchemasError>`](crate::operation::list_schemas::ListSchemasError)
+                            /// - On failure, responds with [`SdkError<ListSchemasError>`](crate::operation::list_schemas::ListSchemasError)
     pub fn list_schemas(&self) -> crate::operation::list_schemas::builders::ListSchemasFluentBuilder {
-        crate::operation::list_schemas::builders::ListSchemasFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_schemas::builders::ListSchemasFluentBuilder::new(self.handle.clone())
+                            }
 }
+

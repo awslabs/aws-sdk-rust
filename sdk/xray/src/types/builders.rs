@@ -106,3 +106,4 @@ pub use crate::types::_group_summary::GroupSummaryBuilder;
 pub use crate::types::_trace::TraceBuilder;
 
 pub use crate::types::_segment::SegmentBuilder;
+

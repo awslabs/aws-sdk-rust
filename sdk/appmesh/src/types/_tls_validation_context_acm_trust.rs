@@ -3,15 +3,14 @@
 /// <p>An object that represents a Transport Layer Security (TLS) validation context trust for an Certificate Manager certificate.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TlsValidationContextAcmTrust {
+pub struct TlsValidationContextAcmTrust  {
     /// <p>One or more ACM Amazon Resource Name (ARN)s.</p>
-    pub certificate_authority_arns: ::std::vec::Vec<::std::string::String>,
+    pub certificate_authority_arns: ::std::vec::Vec::<::std::string::String>,
 }
-impl TlsValidationContextAcmTrust {
+impl  TlsValidationContextAcmTrust  {
     /// <p>One or more ACM Amazon Resource Name (ARN)s.</p>
-    pub fn certificate_authority_arns(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.certificate_authority_arns.deref()
+    pub fn certificate_authority_arns(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.certificate_authority_arns.deref()
     }
 }
 impl TlsValidationContextAcmTrust {
@@ -25,7 +24,7 @@ impl TlsValidationContextAcmTrust {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TlsValidationContextAcmTrustBuilder {
-    pub(crate) certificate_authority_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) certificate_authority_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl TlsValidationContextAcmTrustBuilder {
     /// Appends an item to `certificate_authority_arns`.
@@ -35,30 +34,31 @@ impl TlsValidationContextAcmTrustBuilder {
     /// <p>One or more ACM Amazon Resource Name (ARN)s.</p>
     pub fn certificate_authority_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.certificate_authority_arns.unwrap_or_default();
-        v.push(input.into());
-        self.certificate_authority_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.certificate_authority_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more ACM Amazon Resource Name (ARN)s.</p>
-    pub fn set_certificate_authority_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.certificate_authority_arns = input;
-        self
+    pub fn set_certificate_authority_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.certificate_authority_arns = input; self
     }
     /// <p>One or more ACM Amazon Resource Name (ARN)s.</p>
-    pub fn get_certificate_authority_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_certificate_authority_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.certificate_authority_arns
     }
     /// Consumes the builder and constructs a [`TlsValidationContextAcmTrust`](crate::types::TlsValidationContextAcmTrust).
     /// This method will fail if any of the following fields are not set:
     /// - [`certificate_authority_arns`](crate::types::builders::TlsValidationContextAcmTrustBuilder::certificate_authority_arns)
     pub fn build(self) -> ::std::result::Result<crate::types::TlsValidationContextAcmTrust, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TlsValidationContextAcmTrust {
-            certificate_authority_arns: self.certificate_authority_arns.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "certificate_authority_arns",
-                    "certificate_authority_arns was not specified but it is required when building TlsValidationContextAcmTrust",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TlsValidationContextAcmTrust {
+                certificate_authority_arns: self.certificate_authority_arns
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("certificate_authority_arns", "certificate_authority_arns was not specified but it is required when building TlsValidationContextAcmTrust")
+                    )?
+                ,
+            }
+        )
     }
 }
+

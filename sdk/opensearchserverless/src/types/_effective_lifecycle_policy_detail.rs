@@ -3,7 +3,7 @@
 /// <p>Error information for an OpenSearch Serverless request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EffectiveLifecyclePolicyDetail {
+pub struct EffectiveLifecyclePolicyDetail  {
     /// <p>The type of lifecycle policy.</p>
     pub r#type: ::std::option::Option<crate::types::LifecyclePolicyType>,
     /// <p>The name of the OpenSearch Serverless index resource.</p>
@@ -17,25 +17,25 @@ pub struct EffectiveLifecyclePolicyDetail {
     /// <p>The minimum number of index retention days set. That is an optional param that will return as <code>true</code> if the minimum number of days or hours is not set to a index resource.</p>
     pub no_min_retention_period: ::std::option::Option<bool>,
 }
-impl EffectiveLifecyclePolicyDetail {
+impl  EffectiveLifecyclePolicyDetail  {
     /// <p>The type of lifecycle policy.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::LifecyclePolicyType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::LifecyclePolicyType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the OpenSearch Serverless index resource.</p>
-    pub fn resource(&self) -> ::std::option::Option<&str> {
+    pub fn resource(&self) -> ::std::option::Option<& str> {
         self.resource.as_deref()
     }
     /// <p>The name of the lifecycle policy.</p>
-    pub fn policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<& str> {
         self.policy_name.as_deref()
     }
     /// <p>The type of OpenSearch Serverless resource. Currently, the only supported resource is <code>index</code>.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The minimum number of index retention in days or hours. This is an optional parameter that will return only if it’s set.</p>
-    pub fn retention_period(&self) -> ::std::option::Option<&str> {
+    pub fn retention_period(&self) -> ::std::option::Option<& str> {
         self.retention_period.as_deref()
     }
     /// <p>The minimum number of index retention days set. That is an optional param that will return as <code>true</code> if the minimum number of days or hours is not set to a index resource.</p>
@@ -69,8 +69,7 @@ impl EffectiveLifecyclePolicyDetailBuilder {
     }
     /// <p>The type of lifecycle policy.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of lifecycle policy.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::LifecyclePolicyType> {
@@ -83,8 +82,7 @@ impl EffectiveLifecyclePolicyDetailBuilder {
     }
     /// <p>The name of the OpenSearch Serverless index resource.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
     }
     /// <p>The name of the OpenSearch Serverless index resource.</p>
     pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl EffectiveLifecyclePolicyDetailBuilder {
     }
     /// <p>The name of the lifecycle policy.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// <p>The name of the lifecycle policy.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl EffectiveLifecyclePolicyDetailBuilder {
     }
     /// <p>The type of OpenSearch Serverless resource. Currently, the only supported resource is <code>index</code>.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of OpenSearch Serverless resource. Currently, the only supported resource is <code>index</code>.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -125,8 +121,7 @@ impl EffectiveLifecyclePolicyDetailBuilder {
     }
     /// <p>The minimum number of index retention in days or hours. This is an optional parameter that will return only if it’s set.</p>
     pub fn set_retention_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.retention_period = input;
-        self
+        self.retention_period = input; self
     }
     /// <p>The minimum number of index retention in days or hours. This is an optional parameter that will return only if it’s set.</p>
     pub fn get_retention_period(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +134,7 @@ impl EffectiveLifecyclePolicyDetailBuilder {
     }
     /// <p>The minimum number of index retention days set. That is an optional param that will return as <code>true</code> if the minimum number of days or hours is not set to a index resource.</p>
     pub fn set_no_min_retention_period(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.no_min_retention_period = input;
-        self
+        self.no_min_retention_period = input; self
     }
     /// <p>The minimum number of index retention days set. That is an optional param that will return as <code>true</code> if the minimum number of days or hours is not set to a index resource.</p>
     pub fn get_no_min_retention_period(&self) -> &::std::option::Option<bool> {
@@ -149,12 +143,19 @@ impl EffectiveLifecyclePolicyDetailBuilder {
     /// Consumes the builder and constructs a [`EffectiveLifecyclePolicyDetail`](crate::types::EffectiveLifecyclePolicyDetail).
     pub fn build(self) -> crate::types::EffectiveLifecyclePolicyDetail {
         crate::types::EffectiveLifecyclePolicyDetail {
-            r#type: self.r#type,
-            resource: self.resource,
-            policy_name: self.policy_name,
-            resource_type: self.resource_type,
-            retention_period: self.retention_period,
-            no_min_retention_period: self.no_min_retention_period,
+            r#type: self.r#type
+            ,
+            resource: self.resource
+            ,
+            policy_name: self.policy_name
+            ,
+            resource_type: self.resource_type
+            ,
+            retention_period: self.retention_period
+            ,
+            no_min_retention_period: self.no_min_retention_period
+            ,
         }
     }
 }
+

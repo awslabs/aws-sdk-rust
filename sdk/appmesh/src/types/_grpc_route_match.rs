@@ -3,30 +3,31 @@
 /// <p>An object that represents the criteria for determining a request match.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GrpcRouteMatch {
+pub struct GrpcRouteMatch  {
     /// <p>The fully qualified domain name for the service to match from the request.</p>
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The method name to match from the request. If you specify a name, you must also specify a <code>serviceName</code>.</p>
     pub method_name: ::std::option::Option<::std::string::String>,
     /// <p>An object that represents the data to match from the request.</p>
-    pub metadata: ::std::option::Option<::std::vec::Vec<crate::types::GrpcRouteMetadata>>,
+    pub metadata: ::std::option::Option<::std::vec::Vec::<crate::types::GrpcRouteMetadata>>,
     /// <p>The port number to match on.</p>
     pub port: ::std::option::Option<i32>,
 }
-impl GrpcRouteMatch {
+impl  GrpcRouteMatch  {
     /// <p>The fully qualified domain name for the service to match from the request.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<& str> {
         self.service_name.as_deref()
     }
     /// <p>The method name to match from the request. If you specify a name, you must also specify a <code>serviceName</code>.</p>
-    pub fn method_name(&self) -> ::std::option::Option<&str> {
+    pub fn method_name(&self) -> ::std::option::Option<& str> {
         self.method_name.as_deref()
     }
     /// <p>An object that represents the data to match from the request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metadata.is_none()`.
-    pub fn metadata(&self) -> &[crate::types::GrpcRouteMetadata] {
-        self.metadata.as_deref().unwrap_or_default()
+    pub fn metadata(&self) -> & [crate::types::GrpcRouteMetadata] {
+        self.metadata.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The port number to match on.</p>
     pub fn port(&self) -> ::std::option::Option<i32> {
@@ -46,7 +47,7 @@ impl GrpcRouteMatch {
 pub struct GrpcRouteMatchBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) method_name: ::std::option::Option<::std::string::String>,
-    pub(crate) metadata: ::std::option::Option<::std::vec::Vec<crate::types::GrpcRouteMetadata>>,
+    pub(crate) metadata: ::std::option::Option<::std::vec::Vec::<crate::types::GrpcRouteMetadata>>,
     pub(crate) port: ::std::option::Option<i32>,
 }
 impl GrpcRouteMatchBuilder {
@@ -57,8 +58,7 @@ impl GrpcRouteMatchBuilder {
     }
     /// <p>The fully qualified domain name for the service to match from the request.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>The fully qualified domain name for the service to match from the request.</p>
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl GrpcRouteMatchBuilder {
     }
     /// <p>The method name to match from the request. If you specify a name, you must also specify a <code>serviceName</code>.</p>
     pub fn set_method_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.method_name = input;
-        self
+        self.method_name = input; self
     }
     /// <p>The method name to match from the request. If you specify a name, you must also specify a <code>serviceName</code>.</p>
     pub fn get_method_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,17 +84,16 @@ impl GrpcRouteMatchBuilder {
     /// <p>An object that represents the data to match from the request.</p>
     pub fn metadata(mut self, input: crate::types::GrpcRouteMetadata) -> Self {
         let mut v = self.metadata.unwrap_or_default();
-        v.push(input);
-        self.metadata = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.metadata = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An object that represents the data to match from the request.</p>
-    pub fn set_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GrpcRouteMetadata>>) -> Self {
-        self.metadata = input;
-        self
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GrpcRouteMetadata>>) -> Self {
+        self.metadata = input; self
     }
     /// <p>An object that represents the data to match from the request.</p>
-    pub fn get_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GrpcRouteMetadata>> {
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GrpcRouteMetadata>> {
         &self.metadata
     }
     /// <p>The port number to match on.</p>
@@ -105,8 +103,7 @@ impl GrpcRouteMatchBuilder {
     }
     /// <p>The port number to match on.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port number to match on.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -115,10 +112,15 @@ impl GrpcRouteMatchBuilder {
     /// Consumes the builder and constructs a [`GrpcRouteMatch`](crate::types::GrpcRouteMatch).
     pub fn build(self) -> crate::types::GrpcRouteMatch {
         crate::types::GrpcRouteMatch {
-            service_name: self.service_name,
-            method_name: self.method_name,
-            metadata: self.metadata,
-            port: self.port,
+            service_name: self.service_name
+            ,
+            method_name: self.method_name
+            ,
+            metadata: self.metadata
+            ,
+            port: self.port
+            ,
         }
     }
 }
+

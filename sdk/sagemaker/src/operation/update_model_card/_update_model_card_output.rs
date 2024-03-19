@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateModelCardOutput {
+pub struct UpdateModelCardOutput  {
     /// <p>The Amazon Resource Name (ARN) of the updated model card.</p>
     pub model_card_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl UpdateModelCardOutput {
+impl  UpdateModelCardOutput  {
     /// <p>The Amazon Resource Name (ARN) of the updated model card.</p>
-    pub fn model_card_arn(&self) -> ::std::option::Option<&str> {
+    pub fn model_card_arn(&self) -> ::std::option::Option<& str> {
         self.model_card_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateModelCardOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateModelCardOutput {
     /// Creates a new builder-style object to manufacture [`UpdateModelCardOutput`](crate::operation::update_model_card::UpdateModelCardOutput).
     pub fn builder() -> crate::operation::update_model_card::builders::UpdateModelCardOutputBuilder {
@@ -41,27 +41,28 @@ impl UpdateModelCardOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the updated model card.</p>
     pub fn set_model_card_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_card_arn = input;
-        self
+        self.model_card_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the updated model card.</p>
     pub fn get_model_card_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_card_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateModelCardOutput`](crate::operation::update_model_card::UpdateModelCardOutput).
     pub fn build(self) -> crate::operation::update_model_card::UpdateModelCardOutput {
         crate::operation::update_model_card::UpdateModelCardOutput {
-            model_card_arn: self.model_card_arn,
+            model_card_arn: self.model_card_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

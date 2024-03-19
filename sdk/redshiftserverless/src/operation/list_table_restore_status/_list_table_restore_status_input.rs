@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTableRestoreStatusInput {
+pub struct ListTableRestoreStatusInput  {
     /// <p>If your initial <code>ListTableRestoreStatus</code> operation returns a nextToken, you can include the returned <code>nextToken</code> in following <code>ListTableRestoreStatus</code> operations. This will return results on the next page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use nextToken to display the next page of results.</p>
@@ -12,9 +12,9 @@ pub struct ListTableRestoreStatusInput {
     /// <p>The workgroup from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations.</p>
     pub workgroup_name: ::std::option::Option<::std::string::String>,
 }
-impl ListTableRestoreStatusInput {
+impl  ListTableRestoreStatusInput  {
     /// <p>If your initial <code>ListTableRestoreStatus</code> operation returns a nextToken, you can include the returned <code>nextToken</code> in following <code>ListTableRestoreStatus</code> operations. This will return results on the next page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use nextToken to display the next page of results.</p>
@@ -22,11 +22,11 @@ impl ListTableRestoreStatusInput {
         self.max_results
     }
     /// <p>The namespace from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations .</p>
-    pub fn namespace_name(&self) -> ::std::option::Option<&str> {
+    pub fn namespace_name(&self) -> ::std::option::Option<& str> {
         self.namespace_name.as_deref()
     }
     /// <p>The workgroup from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations.</p>
-    pub fn workgroup_name(&self) -> ::std::option::Option<&str> {
+    pub fn workgroup_name(&self) -> ::std::option::Option<& str> {
         self.workgroup_name.as_deref()
     }
 }
@@ -54,8 +54,7 @@ impl ListTableRestoreStatusInputBuilder {
     }
     /// <p>If your initial <code>ListTableRestoreStatus</code> operation returns a nextToken, you can include the returned <code>nextToken</code> in following <code>ListTableRestoreStatus</code> operations. This will return results on the next page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If your initial <code>ListTableRestoreStatus</code> operation returns a nextToken, you can include the returned <code>nextToken</code> in following <code>ListTableRestoreStatus</code> operations. This will return results on the next page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl ListTableRestoreStatusInputBuilder {
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use nextToken to display the next page of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use nextToken to display the next page of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -82,8 +80,7 @@ impl ListTableRestoreStatusInputBuilder {
     }
     /// <p>The namespace from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations .</p>
     pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace_name = input;
-        self
+        self.namespace_name = input; self
     }
     /// <p>The namespace from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations .</p>
     pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,25 +93,26 @@ impl ListTableRestoreStatusInputBuilder {
     }
     /// <p>The workgroup from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations.</p>
     pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workgroup_name = input;
-        self
+        self.workgroup_name = input; self
     }
     /// <p>The workgroup from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations.</p>
     pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.workgroup_name
     }
     /// Consumes the builder and constructs a [`ListTableRestoreStatusInput`](crate::operation::list_table_restore_status::ListTableRestoreStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_table_restore_status::ListTableRestoreStatusInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_table_restore_status::ListTableRestoreStatusInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            namespace_name: self.namespace_name,
-            workgroup_name: self.workgroup_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_table_restore_status::ListTableRestoreStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_table_restore_status::ListTableRestoreStatusInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                namespace_name: self.namespace_name
+                ,
+                workgroup_name: self.workgroup_name
+                ,
+            }
+        )
     }
 }
+

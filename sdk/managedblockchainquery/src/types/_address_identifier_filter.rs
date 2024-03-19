@@ -3,15 +3,14 @@
 /// <p>This is the container for the unique public address on the blockchain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddressIdentifierFilter {
+pub struct AddressIdentifierFilter  {
     /// <p>The container for the recipient address of the transaction.</p>
-    pub transaction_event_to_address: ::std::vec::Vec<::std::string::String>,
+    pub transaction_event_to_address: ::std::vec::Vec::<::std::string::String>,
 }
-impl AddressIdentifierFilter {
+impl  AddressIdentifierFilter  {
     /// <p>The container for the recipient address of the transaction.</p>
-    pub fn transaction_event_to_address(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.transaction_event_to_address.deref()
+    pub fn transaction_event_to_address(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.transaction_event_to_address.deref()
     }
 }
 impl AddressIdentifierFilter {
@@ -25,7 +24,7 @@ impl AddressIdentifierFilter {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddressIdentifierFilterBuilder {
-    pub(crate) transaction_event_to_address: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) transaction_event_to_address: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AddressIdentifierFilterBuilder {
     /// Appends an item to `transaction_event_to_address`.
@@ -35,30 +34,31 @@ impl AddressIdentifierFilterBuilder {
     /// <p>The container for the recipient address of the transaction.</p>
     pub fn transaction_event_to_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.transaction_event_to_address.unwrap_or_default();
-        v.push(input.into());
-        self.transaction_event_to_address = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.transaction_event_to_address = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The container for the recipient address of the transaction.</p>
-    pub fn set_transaction_event_to_address(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.transaction_event_to_address = input;
-        self
+    pub fn set_transaction_event_to_address(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.transaction_event_to_address = input; self
     }
     /// <p>The container for the recipient address of the transaction.</p>
-    pub fn get_transaction_event_to_address(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_transaction_event_to_address(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.transaction_event_to_address
     }
     /// Consumes the builder and constructs a [`AddressIdentifierFilter`](crate::types::AddressIdentifierFilter).
     /// This method will fail if any of the following fields are not set:
     /// - [`transaction_event_to_address`](crate::types::builders::AddressIdentifierFilterBuilder::transaction_event_to_address)
     pub fn build(self) -> ::std::result::Result<crate::types::AddressIdentifierFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AddressIdentifierFilter {
-            transaction_event_to_address: self.transaction_event_to_address.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "transaction_event_to_address",
-                    "transaction_event_to_address was not specified but it is required when building AddressIdentifierFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AddressIdentifierFilter {
+                transaction_event_to_address: self.transaction_event_to_address
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("transaction_event_to_address", "transaction_event_to_address was not specified but it is required when building AddressIdentifierFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

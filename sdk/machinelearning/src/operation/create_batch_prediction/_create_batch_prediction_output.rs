@@ -4,22 +4,22 @@
 /// <p>The <code>CreateBatchPrediction</code> operation is asynchronous. You can poll for status updates by using the <code>&gt;GetBatchPrediction</code> operation and checking the <code>Status</code> parameter of the result.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateBatchPredictionOutput {
+pub struct CreateBatchPredictionOutput  {
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>. This value is identical to the value of the <code>BatchPredictionId</code> in the request.</p>
     pub batch_prediction_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateBatchPredictionOutput {
+impl  CreateBatchPredictionOutput  {
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>. This value is identical to the value of the <code>BatchPredictionId</code> in the request.</p>
-    pub fn batch_prediction_id(&self) -> ::std::option::Option<&str> {
+    pub fn batch_prediction_id(&self) -> ::std::option::Option<& str> {
         self.batch_prediction_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateBatchPredictionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateBatchPredictionOutput {
     /// Creates a new builder-style object to manufacture [`CreateBatchPredictionOutput`](crate::operation::create_batch_prediction::CreateBatchPredictionOutput).
     pub fn builder() -> crate::operation::create_batch_prediction::builders::CreateBatchPredictionOutputBuilder {
@@ -42,27 +42,28 @@ impl CreateBatchPredictionOutputBuilder {
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>. This value is identical to the value of the <code>BatchPredictionId</code> in the request.</p>
     pub fn set_batch_prediction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.batch_prediction_id = input;
-        self
+        self.batch_prediction_id = input; self
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>. This value is identical to the value of the <code>BatchPredictionId</code> in the request.</p>
     pub fn get_batch_prediction_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.batch_prediction_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateBatchPredictionOutput`](crate::operation::create_batch_prediction::CreateBatchPredictionOutput).
     pub fn build(self) -> crate::operation::create_batch_prediction::CreateBatchPredictionOutput {
         crate::operation::create_batch_prediction::CreateBatchPredictionOutput {
-            batch_prediction_id: self.batch_prediction_id,
+            batch_prediction_id: self.batch_prediction_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

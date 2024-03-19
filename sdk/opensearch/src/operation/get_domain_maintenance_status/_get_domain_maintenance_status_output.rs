@@ -3,7 +3,7 @@
 /// <p>The result of a <code>GetDomainMaintenanceStatus</code> request that information about the requested action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDomainMaintenanceStatusOutput {
+pub struct GetDomainMaintenanceStatusOutput  {
     /// <p>The status of the maintenance action.</p>
     pub status: ::std::option::Option<crate::types::MaintenanceStatus>,
     /// <p>The status message of the maintenance action.</p>
@@ -18,37 +18,37 @@ pub struct GetDomainMaintenanceStatusOutput {
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl GetDomainMaintenanceStatusOutput {
+impl  GetDomainMaintenanceStatusOutput  {
     /// <p>The status of the maintenance action.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::MaintenanceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::MaintenanceStatus> {
         self.status.as_ref()
     }
     /// <p>The status message of the maintenance action.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The node ID of the maintenance action.</p>
-    pub fn node_id(&self) -> ::std::option::Option<&str> {
+    pub fn node_id(&self) -> ::std::option::Option<& str> {
         self.node_id.as_deref()
     }
     /// <p>The action name.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::MaintenanceType> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::MaintenanceType> {
         self.action.as_ref()
     }
     /// <p>The time at which the action was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time at which the action was updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDomainMaintenanceStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDomainMaintenanceStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetDomainMaintenanceStatusOutput`](crate::operation::get_domain_maintenance_status::GetDomainMaintenanceStatusOutput).
     pub fn builder() -> crate::operation::get_domain_maintenance_status::builders::GetDomainMaintenanceStatusOutputBuilder {
@@ -76,8 +76,7 @@ impl GetDomainMaintenanceStatusOutputBuilder {
     }
     /// <p>The status of the maintenance action.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MaintenanceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the maintenance action.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::MaintenanceStatus> {
@@ -90,8 +89,7 @@ impl GetDomainMaintenanceStatusOutputBuilder {
     }
     /// <p>The status message of the maintenance action.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The status message of the maintenance action.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl GetDomainMaintenanceStatusOutputBuilder {
     }
     /// <p>The node ID of the maintenance action.</p>
     pub fn set_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.node_id = input;
-        self
+        self.node_id = input; self
     }
     /// <p>The node ID of the maintenance action.</p>
     pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl GetDomainMaintenanceStatusOutputBuilder {
     }
     /// <p>The action name.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::MaintenanceType>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>The action name.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::MaintenanceType> {
@@ -132,8 +128,7 @@ impl GetDomainMaintenanceStatusOutputBuilder {
     }
     /// <p>The time at which the action was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time at which the action was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -146,32 +141,38 @@ impl GetDomainMaintenanceStatusOutputBuilder {
     }
     /// <p>The time at which the action was updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The time at which the action was updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDomainMaintenanceStatusOutput`](crate::operation::get_domain_maintenance_status::GetDomainMaintenanceStatusOutput).
     pub fn build(self) -> crate::operation::get_domain_maintenance_status::GetDomainMaintenanceStatusOutput {
         crate::operation::get_domain_maintenance_status::GetDomainMaintenanceStatusOutput {
-            status: self.status,
-            status_message: self.status_message,
-            node_id: self.node_id,
-            action: self.action,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
+            node_id: self.node_id
+            ,
+            action: self.action
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

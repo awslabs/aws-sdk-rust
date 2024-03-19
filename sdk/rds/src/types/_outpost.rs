@@ -4,13 +4,13 @@
 /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Outpost {
+pub struct Outpost  {
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl Outpost {
+impl  Outpost  {
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -35,8 +35,7 @@ impl OutpostBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,6 +43,10 @@ impl OutpostBuilder {
     }
     /// Consumes the builder and constructs a [`Outpost`](crate::types::Outpost).
     pub fn build(self) -> crate::types::Outpost {
-        crate::types::Outpost { arn: self.arn }
+        crate::types::Outpost {
+            arn: self.arn
+            ,
+        }
     }
 }
+

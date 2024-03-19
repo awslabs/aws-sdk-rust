@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateEndpointGroupOutput {
+pub struct UpdateEndpointGroupOutput  {
     /// <p>The information about the endpoint group that was updated.</p>
     pub endpoint_group: ::std::option::Option<crate::types::EndpointGroup>,
     _request_id: Option<String>,
 }
-impl UpdateEndpointGroupOutput {
+impl  UpdateEndpointGroupOutput  {
     /// <p>The information about the endpoint group that was updated.</p>
-    pub fn endpoint_group(&self) -> ::std::option::Option<&crate::types::EndpointGroup> {
+    pub fn endpoint_group(&self) -> ::std::option::Option<& crate::types::EndpointGroup> {
         self.endpoint_group.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateEndpointGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateEndpointGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEndpointGroupOutput`](crate::operation::update_endpoint_group::UpdateEndpointGroupOutput).
     pub fn builder() -> crate::operation::update_endpoint_group::builders::UpdateEndpointGroupOutputBuilder {
@@ -40,27 +40,28 @@ impl UpdateEndpointGroupOutputBuilder {
     }
     /// <p>The information about the endpoint group that was updated.</p>
     pub fn set_endpoint_group(mut self, input: ::std::option::Option<crate::types::EndpointGroup>) -> Self {
-        self.endpoint_group = input;
-        self
+        self.endpoint_group = input; self
     }
     /// <p>The information about the endpoint group that was updated.</p>
     pub fn get_endpoint_group(&self) -> &::std::option::Option<crate::types::EndpointGroup> {
         &self.endpoint_group
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateEndpointGroupOutput`](crate::operation::update_endpoint_group::UpdateEndpointGroupOutput).
     pub fn build(self) -> crate::operation::update_endpoint_group::UpdateEndpointGroupOutput {
         crate::operation::update_endpoint_group::UpdateEndpointGroupOutput {
-            endpoint_group: self.endpoint_group,
+            endpoint_group: self.endpoint_group
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>The LifeCycle configuration for a SageMaker HyperPod cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClusterLifeCycleConfig {
+pub struct ClusterLifeCycleConfig  {
     /// <p>An Amazon S3 bucket path where your LifeCycle scripts are stored.</p>
     pub source_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The directory of the LifeCycle script under <code>SourceS3Uri</code>. This LifeCycle script runs during cluster creation.</p>
     pub on_create: ::std::option::Option<::std::string::String>,
 }
-impl ClusterLifeCycleConfig {
+impl  ClusterLifeCycleConfig  {
     /// <p>An Amazon S3 bucket path where your LifeCycle scripts are stored.</p>
-    pub fn source_s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn source_s3_uri(&self) -> ::std::option::Option<& str> {
         self.source_s3_uri.as_deref()
     }
     /// <p>The directory of the LifeCycle script under <code>SourceS3Uri</code>. This LifeCycle script runs during cluster creation.</p>
-    pub fn on_create(&self) -> ::std::option::Option<&str> {
+    pub fn on_create(&self) -> ::std::option::Option<& str> {
         self.on_create.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl ClusterLifeCycleConfigBuilder {
     }
     /// <p>An Amazon S3 bucket path where your LifeCycle scripts are stored.</p>
     pub fn set_source_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_s3_uri = input;
-        self
+        self.source_s3_uri = input; self
     }
     /// <p>An Amazon S3 bucket path where your LifeCycle scripts are stored.</p>
     pub fn get_source_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +56,7 @@ impl ClusterLifeCycleConfigBuilder {
     }
     /// <p>The directory of the LifeCycle script under <code>SourceS3Uri</code>. This LifeCycle script runs during cluster creation.</p>
     pub fn set_on_create(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.on_create = input;
-        self
+        self.on_create = input; self
     }
     /// <p>The directory of the LifeCycle script under <code>SourceS3Uri</code>. This LifeCycle script runs during cluster creation.</p>
     pub fn get_on_create(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +65,11 @@ impl ClusterLifeCycleConfigBuilder {
     /// Consumes the builder and constructs a [`ClusterLifeCycleConfig`](crate::types::ClusterLifeCycleConfig).
     pub fn build(self) -> crate::types::ClusterLifeCycleConfig {
         crate::types::ClusterLifeCycleConfig {
-            source_s3_uri: self.source_s3_uri,
-            on_create: self.on_create,
+            source_s3_uri: self.source_s3_uri
+            ,
+            on_create: self.on_create
+            ,
         }
     }
 }
+

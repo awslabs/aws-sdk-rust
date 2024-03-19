@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCustomDataIdentifierInput {
+pub struct DeleteCustomDataIdentifierInput  {
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteCustomDataIdentifierInput {
+impl  DeleteCustomDataIdentifierInput  {
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteCustomDataIdentifierInputBuilder {
     }
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     /// Consumes the builder and constructs a [`DeleteCustomDataIdentifierInput`](crate::operation::delete_custom_data_identifier::DeleteCustomDataIdentifierInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_custom_data_identifier::DeleteCustomDataIdentifierInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_custom_data_identifier::DeleteCustomDataIdentifierInput { id: self.id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_custom_data_identifier::DeleteCustomDataIdentifierInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_custom_data_identifier::DeleteCustomDataIdentifierInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

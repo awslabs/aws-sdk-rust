@@ -5,112 +5,96 @@ pub use crate::operation::update_ec2_deep_inspection_configuration::_update_ec2_
 
 impl UpdateEc2DeepInspectionConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_ec2_deep_inspection_configuration();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_ec2_deep_inspection_configuration();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateEc2DeepInspectionConfiguration`.
-///
+/// 
 /// <p>Activates, deactivates Amazon Inspector deep inspection, or updates custom paths for your account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateEc2DeepInspectionConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_ec2_deep_inspection_configuration::builders::UpdateEc2DeepInspectionConfigurationInputBuilder,
+                    inner: crate::operation::update_ec2_deep_inspection_configuration::builders::UpdateEc2DeepInspectionConfigurationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationOutput,
-        crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationError,
-    > for UpdateEc2DeepInspectionConfigurationFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationOutput,
-            crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationOutput,
+                    crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationError,
+                > for UpdateEc2DeepInspectionConfigurationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationOutput,
+                        crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateEc2DeepInspectionConfigurationFluentBuilder {
     /// Creates a new `UpdateEc2DeepInspectionConfiguration`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
     /// Access the UpdateEc2DeepInspectionConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_ec2_deep_inspection_configuration::builders::UpdateEc2DeepInspectionConfigurationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_ec2_deep_inspection_configuration::builders::UpdateEc2DeepInspectionConfigurationInputBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins =
-            crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfiguration::operation_runtime_plugins(
-                self.handle.runtime_plugins.clone(),
-                &self.handle.conf,
-                self.config_override,
-            );
-        crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfiguration::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationOutput,
-        crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfiguration::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfiguration::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationOutput, crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Specify <code>TRUE</code> to activate Amazon Inspector deep inspection in your account, or <code>FALSE</code> to deactivate. Member accounts in an organization cannot deactivate deep inspection, instead the delegated administrator for the organization can deactivate a member account using <a href="https://docs.aws.amazon.com/inspector/v2/APIReference/API_BatchUpdateMemberEc2DeepInspectionStatus.html">BatchUpdateMemberEc2DeepInspectionStatus</a>.</p>
     pub fn activate_deep_inspection(mut self, input: bool) -> Self {
         self.inner = self.inner.activate_deep_inspection(input);
@@ -135,12 +119,13 @@ impl UpdateEc2DeepInspectionConfigurationFluentBuilder {
         self
     }
     /// <p>The Amazon Inspector deep inspection custom paths you are adding for your account.</p>
-    pub fn set_package_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_package_paths(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_package_paths(input);
         self
     }
     /// <p>The Amazon Inspector deep inspection custom paths you are adding for your account.</p>
-    pub fn get_package_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_package_paths(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_package_paths()
     }
 }
+

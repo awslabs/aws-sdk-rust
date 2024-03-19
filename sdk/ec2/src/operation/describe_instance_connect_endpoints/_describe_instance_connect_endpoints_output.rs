@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeInstanceConnectEndpointsOutput {
+pub struct DescribeInstanceConnectEndpointsOutput  {
     /// <p>Information about the EC2 Instance Connect Endpoints.</p>
-    pub instance_connect_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::Ec2InstanceConnectEndpoint>>,
+    pub instance_connect_endpoints: ::std::option::Option<::std::vec::Vec::<crate::types::Ec2InstanceConnectEndpoint>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeInstanceConnectEndpointsOutput {
+impl  DescribeInstanceConnectEndpointsOutput  {
     /// <p>Information about the EC2 Instance Connect Endpoints.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_connect_endpoints.is_none()`.
-    pub fn instance_connect_endpoints(&self) -> &[crate::types::Ec2InstanceConnectEndpoint] {
-        self.instance_connect_endpoints.as_deref().unwrap_or_default()
+    pub fn instance_connect_endpoints(&self) -> & [crate::types::Ec2InstanceConnectEndpoint] {
+        self.instance_connect_endpoints.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeInstanceConnectEndpointsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeInstanceConnectEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceConnectEndpointsOutput`](crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsOutput).
     pub fn builder() -> crate::operation::describe_instance_connect_endpoints::builders::DescribeInstanceConnectEndpointsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeInstanceConnectEndpointsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInstanceConnectEndpointsOutputBuilder {
-    pub(crate) instance_connect_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::Ec2InstanceConnectEndpoint>>,
+    pub(crate) instance_connect_endpoints: ::std::option::Option<::std::vec::Vec::<crate::types::Ec2InstanceConnectEndpoint>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeInstanceConnectEndpointsOutputBuilder {
     /// <p>Information about the EC2 Instance Connect Endpoints.</p>
     pub fn instance_connect_endpoints(mut self, input: crate::types::Ec2InstanceConnectEndpoint) -> Self {
         let mut v = self.instance_connect_endpoints.unwrap_or_default();
-        v.push(input);
-        self.instance_connect_endpoints = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.instance_connect_endpoints = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the EC2 Instance Connect Endpoints.</p>
-    pub fn set_instance_connect_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Ec2InstanceConnectEndpoint>>) -> Self {
-        self.instance_connect_endpoints = input;
-        self
+    pub fn set_instance_connect_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Ec2InstanceConnectEndpoint>>) -> Self {
+        self.instance_connect_endpoints = input; self
     }
     /// <p>Information about the EC2 Instance Connect Endpoints.</p>
-    pub fn get_instance_connect_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Ec2InstanceConnectEndpoint>> {
+    pub fn get_instance_connect_endpoints(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Ec2InstanceConnectEndpoint>> {
         &self.instance_connect_endpoints
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
@@ -69,28 +69,30 @@ impl DescribeInstanceConnectEndpointsOutputBuilder {
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeInstanceConnectEndpointsOutput`](crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsOutput).
     pub fn build(self) -> crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsOutput {
         crate::operation::describe_instance_connect_endpoints::DescribeInstanceConnectEndpointsOutput {
-            instance_connect_endpoints: self.instance_connect_endpoints,
-            next_token: self.next_token,
+            instance_connect_endpoints: self.instance_connect_endpoints
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

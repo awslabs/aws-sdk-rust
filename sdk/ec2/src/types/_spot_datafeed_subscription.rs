@@ -3,7 +3,7 @@
 /// <p>Describes the data feed for a Spot Instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SpotDatafeedSubscription {
+pub struct SpotDatafeedSubscription  {
     /// <p>The name of the Amazon S3 bucket where the Spot Instance data feed is located.</p>
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The fault codes for the Spot Instance request, if any.</p>
@@ -15,25 +15,25 @@ pub struct SpotDatafeedSubscription {
     /// <p>The state of the Spot Instance data feed subscription.</p>
     pub state: ::std::option::Option<crate::types::DatafeedSubscriptionState>,
 }
-impl SpotDatafeedSubscription {
+impl  SpotDatafeedSubscription  {
     /// <p>The name of the Amazon S3 bucket where the Spot Instance data feed is located.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The fault codes for the Spot Instance request, if any.</p>
-    pub fn fault(&self) -> ::std::option::Option<&crate::types::SpotInstanceStateFault> {
+    pub fn fault(&self) -> ::std::option::Option<& crate::types::SpotInstanceStateFault> {
         self.fault.as_ref()
     }
     /// <p>The Amazon Web Services account ID of the account.</p>
-    pub fn owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>The prefix for the data feed files.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>The state of the Spot Instance data feed subscription.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::DatafeedSubscriptionState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::DatafeedSubscriptionState> {
         self.state.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl SpotDatafeedSubscriptionBuilder {
     }
     /// <p>The name of the Amazon S3 bucket where the Spot Instance data feed is located.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The name of the Amazon S3 bucket where the Spot Instance data feed is located.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl SpotDatafeedSubscriptionBuilder {
     }
     /// <p>The fault codes for the Spot Instance request, if any.</p>
     pub fn set_fault(mut self, input: ::std::option::Option<crate::types::SpotInstanceStateFault>) -> Self {
-        self.fault = input;
-        self
+        self.fault = input; self
     }
     /// <p>The fault codes for the Spot Instance request, if any.</p>
     pub fn get_fault(&self) -> &::std::option::Option<crate::types::SpotInstanceStateFault> {
@@ -90,8 +88,7 @@ impl SpotDatafeedSubscriptionBuilder {
     }
     /// <p>The Amazon Web Services account ID of the account.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// <p>The Amazon Web Services account ID of the account.</p>
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl SpotDatafeedSubscriptionBuilder {
     }
     /// <p>The prefix for the data feed files.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>The prefix for the data feed files.</p>
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl SpotDatafeedSubscriptionBuilder {
     }
     /// <p>The state of the Spot Instance data feed subscription.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::DatafeedSubscriptionState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the Spot Instance data feed subscription.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::DatafeedSubscriptionState> {
@@ -128,11 +123,17 @@ impl SpotDatafeedSubscriptionBuilder {
     /// Consumes the builder and constructs a [`SpotDatafeedSubscription`](crate::types::SpotDatafeedSubscription).
     pub fn build(self) -> crate::types::SpotDatafeedSubscription {
         crate::types::SpotDatafeedSubscription {
-            bucket: self.bucket,
-            fault: self.fault,
-            owner_id: self.owner_id,
-            prefix: self.prefix,
-            state: self.state,
+            bucket: self.bucket
+            ,
+            fault: self.fault
+            ,
+            owner_id: self.owner_id
+            ,
+            prefix: self.prefix
+            ,
+            state: self.state
+            ,
         }
     }
 }
+

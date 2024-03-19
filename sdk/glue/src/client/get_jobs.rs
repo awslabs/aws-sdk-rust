@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetJobs`](crate::operation::get_jobs::builders::GetJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_jobs::builders::GetJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_jobs::builders::GetJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_jobs::builders::GetJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>A continuation token, if this is a continuation call.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_jobs::builders::GetJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_jobs::builders::GetJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum size of the response.</p><br>
-    /// - On success, responds with [`GetJobsOutput`](crate::operation::get_jobs::GetJobsOutput) with field(s):
+                            /// - On success, responds with [`GetJobsOutput`](crate::operation::get_jobs::GetJobsOutput) with field(s):
     ///   - [`jobs(Option<Vec::<Job>>)`](crate::operation::get_jobs::GetJobsOutput::jobs): <p>A list of job definitions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_jobs::GetJobsOutput::next_token): <p>A continuation token, if not all job definitions have yet been returned.</p>
-    /// - On failure, responds with [`SdkError<GetJobsError>`](crate::operation::get_jobs::GetJobsError)
+                            /// - On failure, responds with [`SdkError<GetJobsError>`](crate::operation::get_jobs::GetJobsError)
     pub fn get_jobs(&self) -> crate::operation::get_jobs::builders::GetJobsFluentBuilder {
-        crate::operation::get_jobs::builders::GetJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_jobs::builders::GetJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

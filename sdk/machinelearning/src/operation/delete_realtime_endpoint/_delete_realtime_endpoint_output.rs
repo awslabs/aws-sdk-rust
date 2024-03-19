@@ -4,28 +4,28 @@
 /// <p>The result contains the <code>MLModelId</code> and the endpoint information for the <code>MLModel</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRealtimeEndpointOutput {
+pub struct DeleteRealtimeEndpointOutput  {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request.</p>
     pub ml_model_id: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint information of the <code>MLModel</code></p>
     pub realtime_endpoint_info: ::std::option::Option<crate::types::RealtimeEndpointInfo>,
     _request_id: Option<String>,
 }
-impl DeleteRealtimeEndpointOutput {
+impl  DeleteRealtimeEndpointOutput  {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request.</p>
-    pub fn ml_model_id(&self) -> ::std::option::Option<&str> {
+    pub fn ml_model_id(&self) -> ::std::option::Option<& str> {
         self.ml_model_id.as_deref()
     }
     /// <p>The endpoint information of the <code>MLModel</code></p>
-    pub fn realtime_endpoint_info(&self) -> ::std::option::Option<&crate::types::RealtimeEndpointInfo> {
+    pub fn realtime_endpoint_info(&self) -> ::std::option::Option<& crate::types::RealtimeEndpointInfo> {
         self.realtime_endpoint_info.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteRealtimeEndpointOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteRealtimeEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRealtimeEndpointOutput`](crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpointOutput).
     pub fn builder() -> crate::operation::delete_realtime_endpoint::builders::DeleteRealtimeEndpointOutputBuilder {
@@ -49,8 +49,7 @@ impl DeleteRealtimeEndpointOutputBuilder {
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request.</p>
     pub fn set_ml_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ml_model_id = input;
-        self
+        self.ml_model_id = input; self
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request.</p>
     pub fn get_ml_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,28 +62,30 @@ impl DeleteRealtimeEndpointOutputBuilder {
     }
     /// <p>The endpoint information of the <code>MLModel</code></p>
     pub fn set_realtime_endpoint_info(mut self, input: ::std::option::Option<crate::types::RealtimeEndpointInfo>) -> Self {
-        self.realtime_endpoint_info = input;
-        self
+        self.realtime_endpoint_info = input; self
     }
     /// <p>The endpoint information of the <code>MLModel</code></p>
     pub fn get_realtime_endpoint_info(&self) -> &::std::option::Option<crate::types::RealtimeEndpointInfo> {
         &self.realtime_endpoint_info
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteRealtimeEndpointOutput`](crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpointOutput).
     pub fn build(self) -> crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpointOutput {
         crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpointOutput {
-            ml_model_id: self.ml_model_id,
-            realtime_endpoint_info: self.realtime_endpoint_info,
+            ml_model_id: self.ml_model_id
+            ,
+            realtime_endpoint_info: self.realtime_endpoint_info
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

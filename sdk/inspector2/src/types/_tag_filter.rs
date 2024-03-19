@@ -3,7 +3,7 @@
 /// <p>The tag filter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TagFilter {
+pub struct TagFilter  {
     /// <p>The tag filter comparison value.</p>
     pub comparison: crate::types::TagComparison,
     /// <p>The tag filter key.</p>
@@ -11,20 +11,18 @@ pub struct TagFilter {
     /// <p>The tag filter value.</p>
     pub value: ::std::string::String,
 }
-impl TagFilter {
+impl  TagFilter  {
     /// <p>The tag filter comparison value.</p>
-    pub fn comparison(&self) -> &crate::types::TagComparison {
+    pub fn comparison(&self) -> & crate::types::TagComparison {
         &self.comparison
     }
     /// <p>The tag filter key.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>The tag filter value.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl TagFilter {
@@ -51,8 +49,7 @@ impl TagFilterBuilder {
     }
     /// <p>The tag filter comparison value.</p>
     pub fn set_comparison(mut self, input: ::std::option::Option<crate::types::TagComparison>) -> Self {
-        self.comparison = input;
-        self
+        self.comparison = input; self
     }
     /// <p>The tag filter comparison value.</p>
     pub fn get_comparison(&self) -> &::std::option::Option<crate::types::TagComparison> {
@@ -66,8 +63,7 @@ impl TagFilterBuilder {
     }
     /// <p>The tag filter key.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The tag filter key.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl TagFilterBuilder {
     }
     /// <p>The tag filter value.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The tag filter value.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,25 +89,25 @@ impl TagFilterBuilder {
     /// - [`key`](crate::types::builders::TagFilterBuilder::key)
     /// - [`value`](crate::types::builders::TagFilterBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::TagFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TagFilter {
-            comparison: self.comparison.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "comparison",
-                    "comparison was not specified but it is required when building TagFilter",
-                )
-            })?,
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building TagFilter",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building TagFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TagFilter {
+                comparison: self.comparison
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("comparison", "comparison was not specified but it is required when building TagFilter")
+                    )?
+                ,
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building TagFilter")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building TagFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

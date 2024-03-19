@@ -3,7 +3,7 @@
 /// <p>The optional configuration of totals cells in a <code>PivotTableVisual</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PivotTotalOptions {
+pub struct PivotTotalOptions  {
     /// <p>The visibility configuration for the total cells.</p>
     pub totals_visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The placement (start, end) for the total cells.</p>
@@ -19,42 +19,43 @@ pub struct PivotTotalOptions {
     /// <p>The cell styling options for the total of header cells.</p>
     pub metric_header_cell_style: ::std::option::Option<crate::types::TableCellStyle>,
     /// <p>The total aggregation options for each value field.</p>
-    pub total_aggregation_options: ::std::option::Option<::std::vec::Vec<crate::types::TotalAggregationOption>>,
+    pub total_aggregation_options: ::std::option::Option<::std::vec::Vec::<crate::types::TotalAggregationOption>>,
 }
-impl PivotTotalOptions {
+impl  PivotTotalOptions  {
     /// <p>The visibility configuration for the total cells.</p>
-    pub fn totals_visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+    pub fn totals_visibility(&self) -> ::std::option::Option<& crate::types::Visibility> {
         self.totals_visibility.as_ref()
     }
     /// <p>The placement (start, end) for the total cells.</p>
-    pub fn placement(&self) -> ::std::option::Option<&crate::types::TableTotalsPlacement> {
+    pub fn placement(&self) -> ::std::option::Option<& crate::types::TableTotalsPlacement> {
         self.placement.as_ref()
     }
     /// <p>The scroll status (pinned, scrolled) for the total cells.</p>
-    pub fn scroll_status(&self) -> ::std::option::Option<&crate::types::TableTotalsScrollStatus> {
+    pub fn scroll_status(&self) -> ::std::option::Option<& crate::types::TableTotalsScrollStatus> {
         self.scroll_status.as_ref()
     }
     /// <p>The custom label string for the total cells.</p>
-    pub fn custom_label(&self) -> ::std::option::Option<&str> {
+    pub fn custom_label(&self) -> ::std::option::Option<& str> {
         self.custom_label.as_deref()
     }
     /// <p>The cell styling options for the total cells.</p>
-    pub fn total_cell_style(&self) -> ::std::option::Option<&crate::types::TableCellStyle> {
+    pub fn total_cell_style(&self) -> ::std::option::Option<& crate::types::TableCellStyle> {
         self.total_cell_style.as_ref()
     }
     /// <p>The cell styling options for the totals of value cells.</p>
-    pub fn value_cell_style(&self) -> ::std::option::Option<&crate::types::TableCellStyle> {
+    pub fn value_cell_style(&self) -> ::std::option::Option<& crate::types::TableCellStyle> {
         self.value_cell_style.as_ref()
     }
     /// <p>The cell styling options for the total of header cells.</p>
-    pub fn metric_header_cell_style(&self) -> ::std::option::Option<&crate::types::TableCellStyle> {
+    pub fn metric_header_cell_style(&self) -> ::std::option::Option<& crate::types::TableCellStyle> {
         self.metric_header_cell_style.as_ref()
     }
     /// <p>The total aggregation options for each value field.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.total_aggregation_options.is_none()`.
-    pub fn total_aggregation_options(&self) -> &[crate::types::TotalAggregationOption] {
-        self.total_aggregation_options.as_deref().unwrap_or_default()
+    pub fn total_aggregation_options(&self) -> & [crate::types::TotalAggregationOption] {
+        self.total_aggregation_options.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PivotTotalOptions {
@@ -75,7 +76,7 @@ pub struct PivotTotalOptionsBuilder {
     pub(crate) total_cell_style: ::std::option::Option<crate::types::TableCellStyle>,
     pub(crate) value_cell_style: ::std::option::Option<crate::types::TableCellStyle>,
     pub(crate) metric_header_cell_style: ::std::option::Option<crate::types::TableCellStyle>,
-    pub(crate) total_aggregation_options: ::std::option::Option<::std::vec::Vec<crate::types::TotalAggregationOption>>,
+    pub(crate) total_aggregation_options: ::std::option::Option<::std::vec::Vec::<crate::types::TotalAggregationOption>>,
 }
 impl PivotTotalOptionsBuilder {
     /// <p>The visibility configuration for the total cells.</p>
@@ -85,8 +86,7 @@ impl PivotTotalOptionsBuilder {
     }
     /// <p>The visibility configuration for the total cells.</p>
     pub fn set_totals_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
-        self.totals_visibility = input;
-        self
+        self.totals_visibility = input; self
     }
     /// <p>The visibility configuration for the total cells.</p>
     pub fn get_totals_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
@@ -99,8 +99,7 @@ impl PivotTotalOptionsBuilder {
     }
     /// <p>The placement (start, end) for the total cells.</p>
     pub fn set_placement(mut self, input: ::std::option::Option<crate::types::TableTotalsPlacement>) -> Self {
-        self.placement = input;
-        self
+        self.placement = input; self
     }
     /// <p>The placement (start, end) for the total cells.</p>
     pub fn get_placement(&self) -> &::std::option::Option<crate::types::TableTotalsPlacement> {
@@ -113,8 +112,7 @@ impl PivotTotalOptionsBuilder {
     }
     /// <p>The scroll status (pinned, scrolled) for the total cells.</p>
     pub fn set_scroll_status(mut self, input: ::std::option::Option<crate::types::TableTotalsScrollStatus>) -> Self {
-        self.scroll_status = input;
-        self
+        self.scroll_status = input; self
     }
     /// <p>The scroll status (pinned, scrolled) for the total cells.</p>
     pub fn get_scroll_status(&self) -> &::std::option::Option<crate::types::TableTotalsScrollStatus> {
@@ -127,8 +125,7 @@ impl PivotTotalOptionsBuilder {
     }
     /// <p>The custom label string for the total cells.</p>
     pub fn set_custom_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_label = input;
-        self
+        self.custom_label = input; self
     }
     /// <p>The custom label string for the total cells.</p>
     pub fn get_custom_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +138,7 @@ impl PivotTotalOptionsBuilder {
     }
     /// <p>The cell styling options for the total cells.</p>
     pub fn set_total_cell_style(mut self, input: ::std::option::Option<crate::types::TableCellStyle>) -> Self {
-        self.total_cell_style = input;
-        self
+        self.total_cell_style = input; self
     }
     /// <p>The cell styling options for the total cells.</p>
     pub fn get_total_cell_style(&self) -> &::std::option::Option<crate::types::TableCellStyle> {
@@ -155,8 +151,7 @@ impl PivotTotalOptionsBuilder {
     }
     /// <p>The cell styling options for the totals of value cells.</p>
     pub fn set_value_cell_style(mut self, input: ::std::option::Option<crate::types::TableCellStyle>) -> Self {
-        self.value_cell_style = input;
-        self
+        self.value_cell_style = input; self
     }
     /// <p>The cell styling options for the totals of value cells.</p>
     pub fn get_value_cell_style(&self) -> &::std::option::Option<crate::types::TableCellStyle> {
@@ -169,8 +164,7 @@ impl PivotTotalOptionsBuilder {
     }
     /// <p>The cell styling options for the total of header cells.</p>
     pub fn set_metric_header_cell_style(mut self, input: ::std::option::Option<crate::types::TableCellStyle>) -> Self {
-        self.metric_header_cell_style = input;
-        self
+        self.metric_header_cell_style = input; self
     }
     /// <p>The cell styling options for the total of header cells.</p>
     pub fn get_metric_header_cell_style(&self) -> &::std::option::Option<crate::types::TableCellStyle> {
@@ -183,30 +177,38 @@ impl PivotTotalOptionsBuilder {
     /// <p>The total aggregation options for each value field.</p>
     pub fn total_aggregation_options(mut self, input: crate::types::TotalAggregationOption) -> Self {
         let mut v = self.total_aggregation_options.unwrap_or_default();
-        v.push(input);
-        self.total_aggregation_options = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.total_aggregation_options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The total aggregation options for each value field.</p>
-    pub fn set_total_aggregation_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TotalAggregationOption>>) -> Self {
-        self.total_aggregation_options = input;
-        self
+    pub fn set_total_aggregation_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TotalAggregationOption>>) -> Self {
+        self.total_aggregation_options = input; self
     }
     /// <p>The total aggregation options for each value field.</p>
-    pub fn get_total_aggregation_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TotalAggregationOption>> {
+    pub fn get_total_aggregation_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TotalAggregationOption>> {
         &self.total_aggregation_options
     }
     /// Consumes the builder and constructs a [`PivotTotalOptions`](crate::types::PivotTotalOptions).
     pub fn build(self) -> crate::types::PivotTotalOptions {
         crate::types::PivotTotalOptions {
-            totals_visibility: self.totals_visibility,
-            placement: self.placement,
-            scroll_status: self.scroll_status,
-            custom_label: self.custom_label,
-            total_cell_style: self.total_cell_style,
-            value_cell_style: self.value_cell_style,
-            metric_header_cell_style: self.metric_header_cell_style,
-            total_aggregation_options: self.total_aggregation_options,
+            totals_visibility: self.totals_visibility
+            ,
+            placement: self.placement
+            ,
+            scroll_status: self.scroll_status
+            ,
+            custom_label: self.custom_label
+            ,
+            total_cell_style: self.total_cell_style
+            ,
+            value_cell_style: self.value_cell_style
+            ,
+            metric_header_cell_style: self.metric_header_cell_style
+            ,
+            total_aggregation_options: self.total_aggregation_options
+            ,
         }
     }
 }
+

@@ -2,26 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetVoiceConnectorStreamingConfigurationOutput {
+pub struct GetVoiceConnectorStreamingConfigurationOutput  {
     /// <p>The details of the streaming configuration.</p>
     pub streaming_configuration: ::std::option::Option<crate::types::StreamingConfiguration>,
     _request_id: Option<String>,
 }
-impl GetVoiceConnectorStreamingConfigurationOutput {
+impl  GetVoiceConnectorStreamingConfigurationOutput  {
     /// <p>The details of the streaming configuration.</p>
-    pub fn streaming_configuration(&self) -> ::std::option::Option<&crate::types::StreamingConfiguration> {
+    pub fn streaming_configuration(&self) -> ::std::option::Option<& crate::types::StreamingConfiguration> {
         self.streaming_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetVoiceConnectorStreamingConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetVoiceConnectorStreamingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetVoiceConnectorStreamingConfigurationOutput`](crate::operation::get_voice_connector_streaming_configuration::GetVoiceConnectorStreamingConfigurationOutput).
-    pub fn builder() -> crate::operation::get_voice_connector_streaming_configuration::builders::GetVoiceConnectorStreamingConfigurationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_voice_connector_streaming_configuration::builders::GetVoiceConnectorStreamingConfigurationOutputBuilder {
         crate::operation::get_voice_connector_streaming_configuration::builders::GetVoiceConnectorStreamingConfigurationOutputBuilder::default()
     }
 }
@@ -41,27 +40,28 @@ impl GetVoiceConnectorStreamingConfigurationOutputBuilder {
     }
     /// <p>The details of the streaming configuration.</p>
     pub fn set_streaming_configuration(mut self, input: ::std::option::Option<crate::types::StreamingConfiguration>) -> Self {
-        self.streaming_configuration = input;
-        self
+        self.streaming_configuration = input; self
     }
     /// <p>The details of the streaming configuration.</p>
     pub fn get_streaming_configuration(&self) -> &::std::option::Option<crate::types::StreamingConfiguration> {
         &self.streaming_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetVoiceConnectorStreamingConfigurationOutput`](crate::operation::get_voice_connector_streaming_configuration::GetVoiceConnectorStreamingConfigurationOutput).
     pub fn build(self) -> crate::operation::get_voice_connector_streaming_configuration::GetVoiceConnectorStreamingConfigurationOutput {
         crate::operation::get_voice_connector_streaming_configuration::GetVoiceConnectorStreamingConfigurationOutput {
-            streaming_configuration: self.streaming_configuration,
+            streaming_configuration: self.streaming_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

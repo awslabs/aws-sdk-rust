@@ -3,7 +3,7 @@
 /// <p>The input for the ListPolicies operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPoliciesInput {
+pub struct ListPoliciesInput  {
     /// <p>The marker for the next set of results.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The result page size.</p>
@@ -11,9 +11,9 @@ pub struct ListPoliciesInput {
     /// <p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>
     pub ascending_order: ::std::option::Option<bool>,
 }
-impl ListPoliciesInput {
+impl  ListPoliciesInput  {
     /// <p>The marker for the next set of results.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The result page size.</p>
@@ -48,8 +48,7 @@ impl ListPoliciesInputBuilder {
     }
     /// <p>The marker for the next set of results.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The marker for the next set of results.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListPoliciesInputBuilder {
     }
     /// <p>The result page size.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// <p>The result page size.</p>
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
@@ -76,21 +74,24 @@ impl ListPoliciesInputBuilder {
     }
     /// <p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>
     pub fn set_ascending_order(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ascending_order = input;
-        self
+        self.ascending_order = input; self
     }
     /// <p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>
     pub fn get_ascending_order(&self) -> &::std::option::Option<bool> {
         &self.ascending_order
     }
     /// Consumes the builder and constructs a [`ListPoliciesInput`](crate::operation::list_policies::ListPoliciesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_policies::ListPoliciesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_policies::ListPoliciesInput {
-            marker: self.marker,
-            page_size: self.page_size,
-            ascending_order: self.ascending_order,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_policies::ListPoliciesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_policies::ListPoliciesInput {
+                marker: self.marker
+                ,
+                page_size: self.page_size
+                ,
+                ascending_order: self.ascending_order
+                ,
+            }
+        )
     }
 }
+

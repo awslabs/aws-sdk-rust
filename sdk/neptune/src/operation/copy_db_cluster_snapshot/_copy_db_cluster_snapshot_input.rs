@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CopyDbClusterSnapshotInput {
+pub struct CopyDbClusterSnapshotInput  {
     /// <p>The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -36,9 +36,9 @@ pub struct CopyDbClusterSnapshotInput {
     /// <p>True to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot, and otherwise false. The default is false.</p>
     pub copy_tags: ::std::option::Option<bool>,
     /// <p>The tags to assign to the new DB cluster snapshot copy.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CopyDbClusterSnapshotInput {
+impl  CopyDbClusterSnapshotInput  {
     /// <p>The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -48,7 +48,7 @@ impl CopyDbClusterSnapshotInput {
     /// <p>Specify a valid DB snapshot identifier.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot1</code></p>
-    pub fn source_db_cluster_snapshot_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn source_db_cluster_snapshot_identifier(&self) -> ::std::option::Option<& str> {
         self.source_db_cluster_snapshot_identifier.as_deref()
     }
     /// <p>The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This parameter is not case-sensitive.</p>
@@ -62,7 +62,7 @@ impl CopyDbClusterSnapshotInput {
     /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot2</code></p>
-    pub fn target_db_cluster_snapshot_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn target_db_cluster_snapshot_identifier(&self) -> ::std::option::Option<& str> {
         self.target_db_cluster_snapshot_identifier.as_deref()
     }
     /// <p>The Amazon Amazon KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
@@ -70,11 +70,11 @@ impl CopyDbClusterSnapshotInput {
     /// <p>If you copy an encrypted DB cluster snapshot that is shared from another Amazon account, then you must specify a value for <code>KmsKeyId</code>.</p>
     /// <p>KMS encryption keys are specific to the Amazon Region that they are created in, and you can't use encryption keys from one Amazon Region in another Amazon Region.</p>
     /// <p>You cannot encrypt an unencrypted DB cluster snapshot when you copy it. If you try to copy an unencrypted DB cluster snapshot and specify a value for the KmsKeyId parameter, an error is returned.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Not currently supported.</p>
-    pub fn pre_signed_url(&self) -> ::std::option::Option<&str> {
+    pub fn pre_signed_url(&self) -> ::std::option::Option<& str> {
         self.pre_signed_url.as_deref()
     }
     /// <p>True to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot, and otherwise false. The default is false.</p>
@@ -82,10 +82,11 @@ impl CopyDbClusterSnapshotInput {
         self.copy_tags
     }
     /// <p>The tags to assign to the new DB cluster snapshot copy.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CopyDbClusterSnapshotInput {
@@ -104,7 +105,7 @@ pub struct CopyDbClusterSnapshotInputBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) pre_signed_url: ::std::option::Option<::std::string::String>,
     pub(crate) copy_tags: ::std::option::Option<bool>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CopyDbClusterSnapshotInputBuilder {
     /// <p>The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.</p>
@@ -131,8 +132,7 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot1</code></p>
     pub fn set_source_db_cluster_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_db_cluster_snapshot_identifier = input;
-        self
+        self.source_db_cluster_snapshot_identifier = input; self
     }
     /// <p>The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -174,8 +174,7 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot2</code></p>
     pub fn set_target_db_cluster_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_db_cluster_snapshot_identifier = input;
-        self
+        self.target_db_cluster_snapshot_identifier = input; self
     }
     /// <p>The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -206,8 +205,7 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <p>KMS encryption keys are specific to the Amazon Region that they are created in, and you can't use encryption keys from one Amazon Region in another Amazon Region.</p>
     /// <p>You cannot encrypt an unencrypted DB cluster snapshot when you copy it. If you try to copy an unencrypted DB cluster snapshot and specify a value for the KmsKeyId parameter, an error is returned.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The Amazon Amazon KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
     /// <p>If you copy an encrypted DB cluster snapshot from your Amazon account, you can specify a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted with the same KMS key as the source DB cluster snapshot.</p>
@@ -224,8 +222,7 @@ impl CopyDbClusterSnapshotInputBuilder {
     }
     /// <p>Not currently supported.</p>
     pub fn set_pre_signed_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pre_signed_url = input;
-        self
+        self.pre_signed_url = input; self
     }
     /// <p>Not currently supported.</p>
     pub fn get_pre_signed_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -238,8 +235,7 @@ impl CopyDbClusterSnapshotInputBuilder {
     }
     /// <p>True to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot, and otherwise false. The default is false.</p>
     pub fn set_copy_tags(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.copy_tags = input;
-        self
+        self.copy_tags = input; self
     }
     /// <p>True to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot, and otherwise false. The default is false.</p>
     pub fn get_copy_tags(&self) -> &::std::option::Option<bool> {
@@ -252,31 +248,36 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// <p>The tags to assign to the new DB cluster snapshot copy.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to assign to the new DB cluster snapshot copy.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to assign to the new DB cluster snapshot copy.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CopyDbClusterSnapshotInput`](crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotInput {
-            source_db_cluster_snapshot_identifier: self.source_db_cluster_snapshot_identifier,
-            target_db_cluster_snapshot_identifier: self.target_db_cluster_snapshot_identifier,
-            kms_key_id: self.kms_key_id,
-            pre_signed_url: self.pre_signed_url,
-            copy_tags: self.copy_tags,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotInput {
+                source_db_cluster_snapshot_identifier: self.source_db_cluster_snapshot_identifier
+                ,
+                target_db_cluster_snapshot_identifier: self.target_db_cluster_snapshot_identifier
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                pre_signed_url: self.pre_signed_url
+                ,
+                copy_tags: self.copy_tags
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

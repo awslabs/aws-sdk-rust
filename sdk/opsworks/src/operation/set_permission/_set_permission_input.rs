@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetPermissionInput {
+pub struct SetPermissionInput  {
     /// <p>The stack ID.</p>
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
@@ -27,13 +27,13 @@ pub struct SetPermissionInput {
     /// <p>For more information about the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
     pub level: ::std::option::Option<::std::string::String>,
 }
-impl SetPermissionInput {
+impl  SetPermissionInput  {
     /// <p>The stack ID.</p>
-    pub fn stack_id(&self) -> ::std::option::Option<&str> {
+    pub fn stack_id(&self) -> ::std::option::Option<& str> {
         self.stack_id.as_deref()
     }
     /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
-    pub fn iam_user_arn(&self) -> ::std::option::Option<&str> {
+    pub fn iam_user_arn(&self) -> ::std::option::Option<& str> {
         self.iam_user_arn.as_deref()
     }
     /// <p>The user is allowed to use SSH to communicate with the instance.</p>
@@ -58,7 +58,7 @@ impl SetPermissionInput {
     /// <p><code>iam_only</code></p></li>
     /// </ul>
     /// <p>For more information about the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-    pub fn level(&self) -> ::std::option::Option<&str> {
+    pub fn level(&self) -> ::std::option::Option<& str> {
         self.level.as_deref()
     }
 }
@@ -88,8 +88,7 @@ impl SetPermissionInputBuilder {
     }
     /// <p>The stack ID.</p>
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_id = input;
-        self
+        self.stack_id = input; self
     }
     /// <p>The stack ID.</p>
     pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl SetPermissionInputBuilder {
     }
     /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
     pub fn set_iam_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_user_arn = input;
-        self
+        self.iam_user_arn = input; self
     }
     /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
     pub fn get_iam_user_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +115,7 @@ impl SetPermissionInputBuilder {
     }
     /// <p>The user is allowed to use SSH to communicate with the instance.</p>
     pub fn set_allow_ssh(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_ssh = input;
-        self
+        self.allow_ssh = input; self
     }
     /// <p>The user is allowed to use SSH to communicate with the instance.</p>
     pub fn get_allow_ssh(&self) -> &::std::option::Option<bool> {
@@ -131,8 +128,7 @@ impl SetPermissionInputBuilder {
     }
     /// <p>The user is allowed to use <b>sudo</b> to elevate privileges.</p>
     pub fn set_allow_sudo(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_sudo = input;
-        self
+        self.allow_sudo = input; self
     }
     /// <p>The user is allowed to use <b>sudo</b> to elevate privileges.</p>
     pub fn get_allow_sudo(&self) -> &::std::option::Option<bool> {
@@ -171,8 +167,7 @@ impl SetPermissionInputBuilder {
     /// </ul>
     /// <p>For more information about the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
     pub fn set_level(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.level = input;
-        self
+        self.level = input; self
     }
     /// <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p>
     /// <ul>
@@ -192,15 +187,21 @@ impl SetPermissionInputBuilder {
         &self.level
     }
     /// Consumes the builder and constructs a [`SetPermissionInput`](crate::operation::set_permission::SetPermissionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::set_permission::SetPermissionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::set_permission::SetPermissionInput {
-            stack_id: self.stack_id,
-            iam_user_arn: self.iam_user_arn,
-            allow_ssh: self.allow_ssh,
-            allow_sudo: self.allow_sudo,
-            level: self.level,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_permission::SetPermissionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::set_permission::SetPermissionInput {
+                stack_id: self.stack_id
+                ,
+                iam_user_arn: self.iam_user_arn
+                ,
+                allow_ssh: self.allow_ssh
+                ,
+                allow_sudo: self.allow_sudo
+                ,
+                level: self.level
+                ,
+            }
+        )
     }
 }
+

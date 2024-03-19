@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeactivateEvaluationFormOutput {
+pub struct DeactivateEvaluationFormOutput  {
     /// <p>The unique identifier for the evaluation form.</p>
     pub evaluation_form_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) for the evaluation form resource.</p>
@@ -11,16 +11,14 @@ pub struct DeactivateEvaluationFormOutput {
     pub evaluation_form_version: i32,
     _request_id: Option<String>,
 }
-impl DeactivateEvaluationFormOutput {
+impl  DeactivateEvaluationFormOutput  {
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn evaluation_form_id(&self) -> &str {
-        use std::ops::Deref;
-        self.evaluation_form_id.deref()
+    pub fn evaluation_form_id(&self) -> & str {
+        use std::ops::Deref; self.evaluation_form_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the evaluation form resource.</p>
-    pub fn evaluation_form_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.evaluation_form_arn.deref()
+    pub fn evaluation_form_arn(&self) -> & str {
+        use std::ops::Deref; self.evaluation_form_arn.deref()
     }
     /// <p>The version of the deactivated evaluation form resource.</p>
     pub fn evaluation_form_version(&self) -> i32 {
@@ -28,10 +26,10 @@ impl DeactivateEvaluationFormOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DeactivateEvaluationFormOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeactivateEvaluationFormOutput {
     /// Creates a new builder-style object to manufacture [`DeactivateEvaluationFormOutput`](crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormOutput).
     pub fn builder() -> crate::operation::deactivate_evaluation_form::builders::DeactivateEvaluationFormOutputBuilder {
@@ -57,8 +55,7 @@ impl DeactivateEvaluationFormOutputBuilder {
     }
     /// <p>The unique identifier for the evaluation form.</p>
     pub fn set_evaluation_form_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.evaluation_form_id = input;
-        self
+        self.evaluation_form_id = input; self
     }
     /// <p>The unique identifier for the evaluation form.</p>
     pub fn get_evaluation_form_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +69,7 @@ impl DeactivateEvaluationFormOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the evaluation form resource.</p>
     pub fn set_evaluation_form_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.evaluation_form_arn = input;
-        self
+        self.evaluation_form_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the evaluation form resource.</p>
     pub fn get_evaluation_form_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,47 +83,44 @@ impl DeactivateEvaluationFormOutputBuilder {
     }
     /// <p>The version of the deactivated evaluation form resource.</p>
     pub fn set_evaluation_form_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.evaluation_form_version = input;
-        self
+        self.evaluation_form_version = input; self
     }
     /// <p>The version of the deactivated evaluation form resource.</p>
     pub fn get_evaluation_form_version(&self) -> &::std::option::Option<i32> {
         &self.evaluation_form_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeactivateEvaluationFormOutput`](crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`evaluation_form_id`](crate::operation::deactivate_evaluation_form::builders::DeactivateEvaluationFormOutputBuilder::evaluation_form_id)
     /// - [`evaluation_form_arn`](crate::operation::deactivate_evaluation_form::builders::DeactivateEvaluationFormOutputBuilder::evaluation_form_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormOutput {
-            evaluation_form_id: self.evaluation_form_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "evaluation_form_id",
-                    "evaluation_form_id was not specified but it is required when building DeactivateEvaluationFormOutput",
-                )
-            })?,
-            evaluation_form_arn: self.evaluation_form_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "evaluation_form_arn",
-                    "evaluation_form_arn was not specified but it is required when building DeactivateEvaluationFormOutput",
-                )
-            })?,
-            evaluation_form_version: self.evaluation_form_version.unwrap_or_default(),
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormOutput {
+                evaluation_form_id: self.evaluation_form_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("evaluation_form_id", "evaluation_form_id was not specified but it is required when building DeactivateEvaluationFormOutput")
+                    )?
+                ,
+                evaluation_form_arn: self.evaluation_form_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("evaluation_form_arn", "evaluation_form_arn was not specified but it is required when building DeactivateEvaluationFormOutput")
+                    )?
+                ,
+                evaluation_form_version: self.evaluation_form_version
+                    .unwrap_or_default()
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

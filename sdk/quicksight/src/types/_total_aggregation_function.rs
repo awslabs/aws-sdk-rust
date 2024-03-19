@@ -3,13 +3,13 @@
 /// <p>An aggregation function that aggregates the total values of a measure.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TotalAggregationFunction {
+pub struct TotalAggregationFunction  {
     /// <p>A built in aggregation function for total values.</p>
     pub simple_total_aggregation_function: ::std::option::Option<crate::types::SimpleTotalAggregationFunction>,
 }
-impl TotalAggregationFunction {
+impl  TotalAggregationFunction  {
     /// <p>A built in aggregation function for total values.</p>
-    pub fn simple_total_aggregation_function(&self) -> ::std::option::Option<&crate::types::SimpleTotalAggregationFunction> {
+    pub fn simple_total_aggregation_function(&self) -> ::std::option::Option<& crate::types::SimpleTotalAggregationFunction> {
         self.simple_total_aggregation_function.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl TotalAggregationFunctionBuilder {
     }
     /// <p>A built in aggregation function for total values.</p>
     pub fn set_simple_total_aggregation_function(mut self, input: ::std::option::Option<crate::types::SimpleTotalAggregationFunction>) -> Self {
-        self.simple_total_aggregation_function = input;
-        self
+        self.simple_total_aggregation_function = input; self
     }
     /// <p>A built in aggregation function for total values.</p>
     pub fn get_simple_total_aggregation_function(&self) -> &::std::option::Option<crate::types::SimpleTotalAggregationFunction> {
@@ -44,7 +43,9 @@ impl TotalAggregationFunctionBuilder {
     /// Consumes the builder and constructs a [`TotalAggregationFunction`](crate::types::TotalAggregationFunction).
     pub fn build(self) -> crate::types::TotalAggregationFunction {
         crate::types::TotalAggregationFunction {
-            simple_total_aggregation_function: self.simple_total_aggregation_function,
+            simple_total_aggregation_function: self.simple_total_aggregation_function
+            ,
         }
     }
 }
+

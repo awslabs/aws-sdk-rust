@@ -3,13 +3,13 @@
 /// <p>The minimum and maximum amount of total local storage, in GB, that an Amazon EC2 instance uses.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails {
+pub struct AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails  {
     /// <p>The maximum amount of total local storage, in GB.</p>
     pub max: ::std::option::Option<f64>,
     /// <p>The minimum amount of total local storage, in GB.</p>
     pub min: ::std::option::Option<f64>,
 }
-impl AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails {
+impl  AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails  {
     /// <p>The maximum amount of total local storage, in GB.</p>
     pub fn max(&self) -> ::std::option::Option<f64> {
         self.max
@@ -41,8 +41,7 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetailsBuild
     }
     /// <p>The maximum amount of total local storage, in GB.</p>
     pub fn set_max(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.max = input;
-        self
+        self.max = input; self
     }
     /// <p>The maximum amount of total local storage, in GB.</p>
     pub fn get_max(&self) -> &::std::option::Option<f64> {
@@ -55,8 +54,7 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetailsBuild
     }
     /// <p>The minimum amount of total local storage, in GB.</p>
     pub fn set_min(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.min = input;
-        self
+        self.min = input; self
     }
     /// <p>The minimum amount of total local storage, in GB.</p>
     pub fn get_min(&self) -> &::std::option::Option<f64> {
@@ -65,8 +63,11 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetailsBuild
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails {
         crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails {
-            max: self.max,
-            min: self.min,
+            max: self.max
+            ,
+            min: self.min
+            ,
         }
     }
 }
+

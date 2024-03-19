@@ -3,7 +3,7 @@
 /// <p>Container for request parameters to the <code>PurchaseReservedInstanceOffering</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PurchaseReservedInstanceOfferingInput {
+pub struct PurchaseReservedInstanceOfferingInput  {
     /// <p>The ID of the Reserved Instance offering to purchase.</p>
     pub reserved_instance_offering_id: ::std::option::Option<::std::string::String>,
     /// <p>A customer-specified identifier to track this reservation.</p>
@@ -11,13 +11,13 @@ pub struct PurchaseReservedInstanceOfferingInput {
     /// <p>The number of OpenSearch instances to reserve.</p>
     pub instance_count: ::std::option::Option<i32>,
 }
-impl PurchaseReservedInstanceOfferingInput {
+impl  PurchaseReservedInstanceOfferingInput  {
     /// <p>The ID of the Reserved Instance offering to purchase.</p>
-    pub fn reserved_instance_offering_id(&self) -> ::std::option::Option<&str> {
+    pub fn reserved_instance_offering_id(&self) -> ::std::option::Option<& str> {
         self.reserved_instance_offering_id.as_deref()
     }
     /// <p>A customer-specified identifier to track this reservation.</p>
-    pub fn reservation_name(&self) -> ::std::option::Option<&str> {
+    pub fn reservation_name(&self) -> ::std::option::Option<& str> {
         self.reservation_name.as_deref()
     }
     /// <p>The number of OpenSearch instances to reserve.</p>
@@ -49,8 +49,7 @@ impl PurchaseReservedInstanceOfferingInputBuilder {
     }
     /// <p>The ID of the Reserved Instance offering to purchase.</p>
     pub fn set_reserved_instance_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reserved_instance_offering_id = input;
-        self
+        self.reserved_instance_offering_id = input; self
     }
     /// <p>The ID of the Reserved Instance offering to purchase.</p>
     pub fn get_reserved_instance_offering_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl PurchaseReservedInstanceOfferingInputBuilder {
     }
     /// <p>A customer-specified identifier to track this reservation.</p>
     pub fn set_reservation_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reservation_name = input;
-        self
+        self.reservation_name = input; self
     }
     /// <p>A customer-specified identifier to track this reservation.</p>
     pub fn get_reservation_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,26 +76,24 @@ impl PurchaseReservedInstanceOfferingInputBuilder {
     }
     /// <p>The number of OpenSearch instances to reserve.</p>
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.instance_count = input;
-        self
+        self.instance_count = input; self
     }
     /// <p>The number of OpenSearch instances to reserve.</p>
     pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
         &self.instance_count
     }
     /// Consumes the builder and constructs a [`PurchaseReservedInstanceOfferingInput`](crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOfferingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOfferingInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOfferingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOfferingInput {
-                reserved_instance_offering_id: self.reserved_instance_offering_id,
-                reservation_name: self.reservation_name,
-                instance_count: self.instance_count,
-            },
+                reserved_instance_offering_id: self.reserved_instance_offering_id
+                ,
+                reservation_name: self.reservation_name
+                ,
+                instance_count: self.instance_count
+                ,
+            }
         )
     }
 }
+

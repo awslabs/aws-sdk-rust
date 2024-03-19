@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDataSetDetailsInput {
+pub struct GetDataSetDetailsInput  {
     /// <p>The unique identifier of the application that this data set is associated with.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the data set.</p>
     pub data_set_name: ::std::option::Option<::std::string::String>,
 }
-impl GetDataSetDetailsInput {
+impl  GetDataSetDetailsInput  {
     /// <p>The unique identifier of the application that this data set is associated with.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The name of the data set.</p>
-    pub fn data_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn data_set_name(&self) -> ::std::option::Option<& str> {
         self.data_set_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetDataSetDetailsInputBuilder {
     }
     /// <p>The unique identifier of the application that this data set is associated with.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The unique identifier of the application that this data set is associated with.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl GetDataSetDetailsInputBuilder {
     }
     /// <p>The name of the data set.</p>
     pub fn set_data_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_name = input;
-        self
+        self.data_set_name = input; self
     }
     /// <p>The name of the data set.</p>
     pub fn get_data_set_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_set_name
     }
     /// Consumes the builder and constructs a [`GetDataSetDetailsInput`](crate::operation::get_data_set_details::GetDataSetDetailsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_data_set_details::GetDataSetDetailsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_data_set_details::GetDataSetDetailsInput {
-            application_id: self.application_id,
-            data_set_name: self.data_set_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_data_set_details::GetDataSetDetailsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_data_set_details::GetDataSetDetailsInput {
+                application_id: self.application_id
+                ,
+                data_set_name: self.data_set_name
+                ,
+            }
+        )
     }
 }
+

@@ -3,23 +3,23 @@
 /// <p>Contains a part of an agent response and citations for it.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct PayloadPart {
+pub struct PayloadPart  {
     /// <p>A part of the agent response in bytes.</p>
     pub bytes: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>Contains citations for a part of an agent response.</p>
     pub attribution: ::std::option::Option<crate::types::Attribution>,
 }
-impl PayloadPart {
+impl  PayloadPart  {
     /// <p>A part of the agent response in bytes.</p>
-    pub fn bytes(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn bytes(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.bytes.as_ref()
     }
     /// <p>Contains citations for a part of an agent response.</p>
-    pub fn attribution(&self) -> ::std::option::Option<&crate::types::Attribution> {
+    pub fn attribution(&self) -> ::std::option::Option<& crate::types::Attribution> {
         self.attribution.as_ref()
     }
 }
-impl ::std::fmt::Debug for PayloadPart {
+impl  ::std::fmt::Debug for PayloadPart  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PayloadPart");
         formatter.field("bytes", &"*** Sensitive Data Redacted ***");
@@ -49,8 +49,7 @@ impl PayloadPartBuilder {
     }
     /// <p>A part of the agent response in bytes.</p>
     pub fn set_bytes(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.bytes = input;
-        self
+        self.bytes = input; self
     }
     /// <p>A part of the agent response in bytes.</p>
     pub fn get_bytes(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -63,8 +62,7 @@ impl PayloadPartBuilder {
     }
     /// <p>Contains citations for a part of an agent response.</p>
     pub fn set_attribution(mut self, input: ::std::option::Option<crate::types::Attribution>) -> Self {
-        self.attribution = input;
-        self
+        self.attribution = input; self
     }
     /// <p>Contains citations for a part of an agent response.</p>
     pub fn get_attribution(&self) -> &::std::option::Option<crate::types::Attribution> {
@@ -73,8 +71,10 @@ impl PayloadPartBuilder {
     /// Consumes the builder and constructs a [`PayloadPart`](crate::types::PayloadPart).
     pub fn build(self) -> crate::types::PayloadPart {
         crate::types::PayloadPart {
-            bytes: self.bytes,
-            attribution: self.attribution,
+            bytes: self.bytes
+            ,
+            attribution: self.attribution
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for PayloadPartBuilder {
         formatter.finish()
     }
 }
+

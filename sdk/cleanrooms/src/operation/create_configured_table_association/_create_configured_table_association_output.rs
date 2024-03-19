@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateConfiguredTableAssociationOutput {
+pub struct CreateConfiguredTableAssociationOutput  {
     /// <p>The entire configured table association object.</p>
     pub configured_table_association: ::std::option::Option<crate::types::ConfiguredTableAssociation>,
     _request_id: Option<String>,
 }
-impl CreateConfiguredTableAssociationOutput {
+impl  CreateConfiguredTableAssociationOutput  {
     /// <p>The entire configured table association object.</p>
-    pub fn configured_table_association(&self) -> ::std::option::Option<&crate::types::ConfiguredTableAssociation> {
+    pub fn configured_table_association(&self) -> ::std::option::Option<& crate::types::ConfiguredTableAssociation> {
         self.configured_table_association.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateConfiguredTableAssociationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateConfiguredTableAssociationOutput {
     /// Creates a new builder-style object to manufacture [`CreateConfiguredTableAssociationOutput`](crate::operation::create_configured_table_association::CreateConfiguredTableAssociationOutput).
     pub fn builder() -> crate::operation::create_configured_table_association::builders::CreateConfiguredTableAssociationOutputBuilder {
@@ -41,27 +41,28 @@ impl CreateConfiguredTableAssociationOutputBuilder {
     }
     /// <p>The entire configured table association object.</p>
     pub fn set_configured_table_association(mut self, input: ::std::option::Option<crate::types::ConfiguredTableAssociation>) -> Self {
-        self.configured_table_association = input;
-        self
+        self.configured_table_association = input; self
     }
     /// <p>The entire configured table association object.</p>
     pub fn get_configured_table_association(&self) -> &::std::option::Option<crate::types::ConfiguredTableAssociation> {
         &self.configured_table_association
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateConfiguredTableAssociationOutput`](crate::operation::create_configured_table_association::CreateConfiguredTableAssociationOutput).
     pub fn build(self) -> crate::operation::create_configured_table_association::CreateConfiguredTableAssociationOutput {
         crate::operation::create_configured_table_association::CreateConfiguredTableAssociationOutput {
-            configured_table_association: self.configured_table_association,
+            configured_table_association: self.configured_table_association
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

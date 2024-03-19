@@ -3,19 +3,19 @@
 /// <p>Describes an alarm.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Alarm {
+pub struct Alarm  {
     /// <p>The name of the alarm.</p>
     pub alarm_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
     pub alarm_arn: ::std::option::Option<::std::string::String>,
 }
-impl Alarm {
+impl  Alarm  {
     /// <p>The name of the alarm.</p>
-    pub fn alarm_name(&self) -> ::std::option::Option<&str> {
+    pub fn alarm_name(&self) -> ::std::option::Option<& str> {
         self.alarm_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
-    pub fn alarm_arn(&self) -> ::std::option::Option<&str> {
+    pub fn alarm_arn(&self) -> ::std::option::Option<& str> {
         self.alarm_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AlarmBuilder {
     }
     /// <p>The name of the alarm.</p>
     pub fn set_alarm_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alarm_name = input;
-        self
+        self.alarm_name = input; self
     }
     /// <p>The name of the alarm.</p>
     pub fn get_alarm_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AlarmBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
     pub fn set_alarm_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alarm_arn = input;
-        self
+        self.alarm_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
     pub fn get_alarm_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AlarmBuilder {
     /// Consumes the builder and constructs a [`Alarm`](crate::types::Alarm).
     pub fn build(self) -> crate::types::Alarm {
         crate::types::Alarm {
-            alarm_name: self.alarm_name,
-            alarm_arn: self.alarm_arn,
+            alarm_name: self.alarm_name
+            ,
+            alarm_arn: self.alarm_arn
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The configuration for a Slack workspace that you added to an Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SlackWorkspaceConfiguration {
+pub struct SlackWorkspaceConfiguration  {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     pub team_id: ::std::string::String,
     /// <p>The name of the Slack workspace.</p>
@@ -11,14 +11,13 @@ pub struct SlackWorkspaceConfiguration {
     /// <p>Whether to allow member accounts to authorize Slack workspaces. Member accounts must be part of an organization in Organizations.</p>
     pub allow_organization_member_account: ::std::option::Option<bool>,
 }
-impl SlackWorkspaceConfiguration {
+impl  SlackWorkspaceConfiguration  {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
-    pub fn team_id(&self) -> &str {
-        use std::ops::Deref;
-        self.team_id.deref()
+    pub fn team_id(&self) -> & str {
+        use std::ops::Deref; self.team_id.deref()
     }
     /// <p>The name of the Slack workspace.</p>
-    pub fn team_name(&self) -> ::std::option::Option<&str> {
+    pub fn team_name(&self) -> ::std::option::Option<& str> {
         self.team_name.as_deref()
     }
     /// <p>Whether to allow member accounts to authorize Slack workspaces. Member accounts must be part of an organization in Organizations.</p>
@@ -50,8 +49,7 @@ impl SlackWorkspaceConfigurationBuilder {
     }
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     pub fn set_team_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.team_id = input;
-        self
+        self.team_id = input; self
     }
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     pub fn get_team_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl SlackWorkspaceConfigurationBuilder {
     }
     /// <p>The name of the Slack workspace.</p>
     pub fn set_team_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.team_name = input;
-        self
+        self.team_name = input; self
     }
     /// <p>The name of the Slack workspace.</p>
     pub fn get_team_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +75,7 @@ impl SlackWorkspaceConfigurationBuilder {
     }
     /// <p>Whether to allow member accounts to authorize Slack workspaces. Member accounts must be part of an organization in Organizations.</p>
     pub fn set_allow_organization_member_account(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_organization_member_account = input;
-        self
+        self.allow_organization_member_account = input; self
     }
     /// <p>Whether to allow member accounts to authorize Slack workspaces. Member accounts must be part of an organization in Organizations.</p>
     pub fn get_allow_organization_member_account(&self) -> &::std::option::Option<bool> {
@@ -89,15 +85,19 @@ impl SlackWorkspaceConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`team_id`](crate::types::builders::SlackWorkspaceConfigurationBuilder::team_id)
     pub fn build(self) -> ::std::result::Result<crate::types::SlackWorkspaceConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SlackWorkspaceConfiguration {
-            team_id: self.team_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "team_id",
-                    "team_id was not specified but it is required when building SlackWorkspaceConfiguration",
-                )
-            })?,
-            team_name: self.team_name,
-            allow_organization_member_account: self.allow_organization_member_account,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SlackWorkspaceConfiguration {
+                team_id: self.team_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("team_id", "team_id was not specified but it is required when building SlackWorkspaceConfiguration")
+                    )?
+                ,
+                team_name: self.team_name
+                ,
+                allow_organization_member_account: self.allow_organization_member_account
+                ,
+            }
+        )
     }
 }
+

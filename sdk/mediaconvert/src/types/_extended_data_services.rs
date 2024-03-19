@@ -3,19 +3,19 @@
 /// If your source content has EIA-608 Line 21 Data Services, enable this feature to specify what MediaConvert does with the Extended Data Services (XDS) packets. You can choose to pass through XDS packets, or remove them from the output. For more information about XDS, see EIA-608 Line Data Services, section 9.5.1.5 05h Content Advisory.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExtendedDataServices {
+pub struct ExtendedDataServices  {
     /// The action to take on copy and redistribution control XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
     pub copy_protection_action: ::std::option::Option<crate::types::CopyProtectionAction>,
     /// The action to take on content advisory XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
     pub vchip_action: ::std::option::Option<crate::types::VchipAction>,
 }
-impl ExtendedDataServices {
+impl  ExtendedDataServices  {
     /// The action to take on copy and redistribution control XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
-    pub fn copy_protection_action(&self) -> ::std::option::Option<&crate::types::CopyProtectionAction> {
+    pub fn copy_protection_action(&self) -> ::std::option::Option<& crate::types::CopyProtectionAction> {
         self.copy_protection_action.as_ref()
     }
     /// The action to take on content advisory XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
-    pub fn vchip_action(&self) -> ::std::option::Option<&crate::types::VchipAction> {
+    pub fn vchip_action(&self) -> ::std::option::Option<& crate::types::VchipAction> {
         self.vchip_action.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ExtendedDataServicesBuilder {
     }
     /// The action to take on copy and redistribution control XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
     pub fn set_copy_protection_action(mut self, input: ::std::option::Option<crate::types::CopyProtectionAction>) -> Self {
-        self.copy_protection_action = input;
-        self
+        self.copy_protection_action = input; self
     }
     /// The action to take on copy and redistribution control XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
     pub fn get_copy_protection_action(&self) -> &::std::option::Option<crate::types::CopyProtectionAction> {
@@ -55,8 +54,7 @@ impl ExtendedDataServicesBuilder {
     }
     /// The action to take on content advisory XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
     pub fn set_vchip_action(mut self, input: ::std::option::Option<crate::types::VchipAction>) -> Self {
-        self.vchip_action = input;
-        self
+        self.vchip_action = input; self
     }
     /// The action to take on content advisory XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
     pub fn get_vchip_action(&self) -> &::std::option::Option<crate::types::VchipAction> {
@@ -65,8 +63,11 @@ impl ExtendedDataServicesBuilder {
     /// Consumes the builder and constructs a [`ExtendedDataServices`](crate::types::ExtendedDataServices).
     pub fn build(self) -> crate::types::ExtendedDataServices {
         crate::types::ExtendedDataServices {
-            copy_protection_action: self.copy_protection_action,
-            vchip_action: self.vchip_action,
+            copy_protection_action: self.copy_protection_action
+            ,
+            vchip_action: self.vchip_action
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateApplicationInput {
+pub struct UpdateApplicationInput  {
     /// <p>Specifies the ARN of the application. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the updated name for the application.</p>
@@ -14,25 +14,25 @@ pub struct UpdateApplicationInput {
     /// <p>A structure that describes the options for the portal associated with an application.</p>
     pub portal_options: ::std::option::Option<crate::types::UpdateApplicationPortalOptions>,
 }
-impl UpdateApplicationInput {
+impl  UpdateApplicationInput  {
     /// <p>Specifies the ARN of the application. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn application_arn(&self) -> ::std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>Specifies the updated name for the application.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the .</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Specifies whether the application is enabled or disabled.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ApplicationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ApplicationStatus> {
         self.status.as_ref()
     }
     /// <p>A structure that describes the options for the portal associated with an application.</p>
-    pub fn portal_options(&self) -> ::std::option::Option<&crate::types::UpdateApplicationPortalOptions> {
+    pub fn portal_options(&self) -> ::std::option::Option<& crate::types::UpdateApplicationPortalOptions> {
         self.portal_options.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>Specifies the ARN of the application. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_arn = input;
-        self
+        self.application_arn = input; self
     }
     /// <p>Specifies the ARN of the application. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>Specifies the updated name for the application.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Specifies the updated name for the application.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>The description of the .</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the .</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>Specifies whether the application is enabled or disabled.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ApplicationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Specifies whether the application is enabled or disabled.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ApplicationStatus> {
@@ -118,23 +114,28 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>A structure that describes the options for the portal associated with an application.</p>
     pub fn set_portal_options(mut self, input: ::std::option::Option<crate::types::UpdateApplicationPortalOptions>) -> Self {
-        self.portal_options = input;
-        self
+        self.portal_options = input; self
     }
     /// <p>A structure that describes the options for the portal associated with an application.</p>
     pub fn get_portal_options(&self) -> &::std::option::Option<crate::types::UpdateApplicationPortalOptions> {
         &self.portal_options
     }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_application::UpdateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_application::UpdateApplicationInput {
-            application_arn: self.application_arn,
-            name: self.name,
-            description: self.description,
-            status: self.status,
-            portal_options: self.portal_options,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_application::UpdateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_application::UpdateApplicationInput {
+                application_arn: self.application_arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                status: self.status
+                ,
+                portal_options: self.portal_options
+                ,
+            }
+        )
     }
 }
+

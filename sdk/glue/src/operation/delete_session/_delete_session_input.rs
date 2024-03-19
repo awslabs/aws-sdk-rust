@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSessionInput {
+pub struct DeleteSessionInput  {
     /// <p>The ID of the session to be deleted.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the origin of the delete session request.</p>
     pub request_origin: ::std::option::Option<::std::string::String>,
 }
-impl DeleteSessionInput {
+impl  DeleteSessionInput  {
     /// <p>The ID of the session to be deleted.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the origin of the delete session request.</p>
-    pub fn request_origin(&self) -> ::std::option::Option<&str> {
+    pub fn request_origin(&self) -> ::std::option::Option<& str> {
         self.request_origin.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteSessionInputBuilder {
     }
     /// <p>The ID of the session to be deleted.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the session to be deleted.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,20 +54,22 @@ impl DeleteSessionInputBuilder {
     }
     /// <p>The name of the origin of the delete session request.</p>
     pub fn set_request_origin(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_origin = input;
-        self
+        self.request_origin = input; self
     }
     /// <p>The name of the origin of the delete session request.</p>
     pub fn get_request_origin(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_origin
     }
     /// Consumes the builder and constructs a [`DeleteSessionInput`](crate::operation::delete_session::DeleteSessionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_session::DeleteSessionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_session::DeleteSessionInput {
-            id: self.id,
-            request_origin: self.request_origin,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_session::DeleteSessionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_session::DeleteSessionInput {
+                id: self.id
+                ,
+                request_origin: self.request_origin
+                ,
+            }
+        )
     }
 }
+

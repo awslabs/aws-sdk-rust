@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestParsingInput {
+pub struct TestParsingInput  {
     /// <p>Specifies an <code>S3Location</code> object, which contains the Amazon S3 bucket and prefix for the location of the input file.</p>
     pub input_file: ::std::option::Option<crate::types::S3Location>,
     /// <p>Specifies that the currently supported file formats for EDI transformations are <code>JSON</code> and <code>XML</code>.</p>
@@ -10,17 +10,17 @@ pub struct TestParsingInput {
     /// <p>Specifies the details for the EDI standard that is being used for the transformer. Currently, only X12 is supported. X12 is a set of standards and corresponding messages that define specific business documents.</p>
     pub edi_type: ::std::option::Option<crate::types::EdiType>,
 }
-impl TestParsingInput {
+impl  TestParsingInput  {
     /// <p>Specifies an <code>S3Location</code> object, which contains the Amazon S3 bucket and prefix for the location of the input file.</p>
-    pub fn input_file(&self) -> ::std::option::Option<&crate::types::S3Location> {
+    pub fn input_file(&self) -> ::std::option::Option<& crate::types::S3Location> {
         self.input_file.as_ref()
     }
     /// <p>Specifies that the currently supported file formats for EDI transformations are <code>JSON</code> and <code>XML</code>.</p>
-    pub fn file_format(&self) -> ::std::option::Option<&crate::types::FileFormat> {
+    pub fn file_format(&self) -> ::std::option::Option<& crate::types::FileFormat> {
         self.file_format.as_ref()
     }
     /// <p>Specifies the details for the EDI standard that is being used for the transformer. Currently, only X12 is supported. X12 is a set of standards and corresponding messages that define specific business documents.</p>
-    pub fn edi_type(&self) -> ::std::option::Option<&crate::types::EdiType> {
+    pub fn edi_type(&self) -> ::std::option::Option<& crate::types::EdiType> {
         self.edi_type.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl TestParsingInputBuilder {
     }
     /// <p>Specifies an <code>S3Location</code> object, which contains the Amazon S3 bucket and prefix for the location of the input file.</p>
     pub fn set_input_file(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
-        self.input_file = input;
-        self
+        self.input_file = input; self
     }
     /// <p>Specifies an <code>S3Location</code> object, which contains the Amazon S3 bucket and prefix for the location of the input file.</p>
     pub fn get_input_file(&self) -> &::std::option::Option<crate::types::S3Location> {
@@ -63,8 +62,7 @@ impl TestParsingInputBuilder {
     }
     /// <p>Specifies that the currently supported file formats for EDI transformations are <code>JSON</code> and <code>XML</code>.</p>
     pub fn set_file_format(mut self, input: ::std::option::Option<crate::types::FileFormat>) -> Self {
-        self.file_format = input;
-        self
+        self.file_format = input; self
     }
     /// <p>Specifies that the currently supported file formats for EDI transformations are <code>JSON</code> and <code>XML</code>.</p>
     pub fn get_file_format(&self) -> &::std::option::Option<crate::types::FileFormat> {
@@ -78,8 +76,7 @@ impl TestParsingInputBuilder {
     }
     /// <p>Specifies the details for the EDI standard that is being used for the transformer. Currently, only X12 is supported. X12 is a set of standards and corresponding messages that define specific business documents.</p>
     pub fn set_edi_type(mut self, input: ::std::option::Option<crate::types::EdiType>) -> Self {
-        self.edi_type = input;
-        self
+        self.edi_type = input; self
     }
     /// <p>Specifies the details for the EDI standard that is being used for the transformer. Currently, only X12 is supported. X12 is a set of standards and corresponding messages that define specific business documents.</p>
     pub fn get_edi_type(&self) -> &::std::option::Option<crate::types::EdiType> {
@@ -87,10 +84,16 @@ impl TestParsingInputBuilder {
     }
     /// Consumes the builder and constructs a [`TestParsingInput`](crate::operation::test_parsing::TestParsingInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::test_parsing::TestParsingInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::test_parsing::TestParsingInput {
-            input_file: self.input_file,
-            file_format: self.file_format,
-            edi_type: self.edi_type,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::test_parsing::TestParsingInput {
+                input_file: self.input_file
+                ,
+                file_format: self.file_format
+                ,
+                edi_type: self.edi_type
+                ,
+            }
+        )
     }
 }
+

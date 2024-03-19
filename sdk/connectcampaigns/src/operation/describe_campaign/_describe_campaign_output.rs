@@ -3,22 +3,22 @@
 /// DescribeCampaignResponse
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCampaignOutput {
+pub struct DescribeCampaignOutput  {
     /// An Amazon Connect campaign.
     pub campaign: ::std::option::Option<crate::types::Campaign>,
     _request_id: Option<String>,
 }
-impl DescribeCampaignOutput {
+impl  DescribeCampaignOutput  {
     /// An Amazon Connect campaign.
-    pub fn campaign(&self) -> ::std::option::Option<&crate::types::Campaign> {
+    pub fn campaign(&self) -> ::std::option::Option<& crate::types::Campaign> {
         self.campaign.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeCampaignOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeCampaignOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCampaignOutput`](crate::operation::describe_campaign::DescribeCampaignOutput).
     pub fn builder() -> crate::operation::describe_campaign::builders::DescribeCampaignOutputBuilder {
@@ -41,27 +41,28 @@ impl DescribeCampaignOutputBuilder {
     }
     /// An Amazon Connect campaign.
     pub fn set_campaign(mut self, input: ::std::option::Option<crate::types::Campaign>) -> Self {
-        self.campaign = input;
-        self
+        self.campaign = input; self
     }
     /// An Amazon Connect campaign.
     pub fn get_campaign(&self) -> &::std::option::Option<crate::types::Campaign> {
         &self.campaign
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeCampaignOutput`](crate::operation::describe_campaign::DescribeCampaignOutput).
     pub fn build(self) -> crate::operation::describe_campaign::DescribeCampaignOutput {
         crate::operation::describe_campaign::DescribeCampaignOutput {
-            campaign: self.campaign,
+            campaign: self.campaign
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

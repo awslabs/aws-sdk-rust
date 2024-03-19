@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterTargetsInput {
+pub struct DeregisterTargetsInput  {
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
     pub target_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The targets to deregister.</p>
-    pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
+    pub targets: ::std::option::Option<::std::vec::Vec::<crate::types::Target>>,
 }
-impl DeregisterTargetsInput {
+impl  DeregisterTargetsInput  {
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn target_group_identifier(&self) -> ::std::option::Option<& str> {
         self.target_group_identifier.as_deref()
     }
     /// <p>The targets to deregister.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
-    pub fn targets(&self) -> &[crate::types::Target] {
-        self.targets.as_deref().unwrap_or_default()
+    pub fn targets(&self) -> & [crate::types::Target] {
+        self.targets.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DeregisterTargetsInput {
@@ -32,7 +33,7 @@ impl DeregisterTargetsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterTargetsInputBuilder {
     pub(crate) target_group_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
+    pub(crate) targets: ::std::option::Option<::std::vec::Vec::<crate::types::Target>>,
 }
 impl DeregisterTargetsInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
@@ -43,8 +44,7 @@ impl DeregisterTargetsInputBuilder {
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
     pub fn set_target_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_group_identifier = input;
-        self
+        self.target_group_identifier = input; self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
     pub fn get_target_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,26 +57,28 @@ impl DeregisterTargetsInputBuilder {
     /// <p>The targets to deregister.</p>
     pub fn targets(mut self, input: crate::types::Target) -> Self {
         let mut v = self.targets.unwrap_or_default();
-        v.push(input);
-        self.targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The targets to deregister.</p>
-    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
-        self.targets = input;
-        self
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Target>>) -> Self {
+        self.targets = input; self
     }
     /// <p>The targets to deregister.</p>
-    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Target>> {
         &self.targets
     }
     /// Consumes the builder and constructs a [`DeregisterTargetsInput`](crate::operation::deregister_targets::DeregisterTargetsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::deregister_targets::DeregisterTargetsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::deregister_targets::DeregisterTargetsInput {
-            target_group_identifier: self.target_group_identifier,
-            targets: self.targets,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_targets::DeregisterTargetsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::deregister_targets::DeregisterTargetsInput {
+                target_group_identifier: self.target_group_identifier
+                ,
+                targets: self.targets
+                ,
+            }
+        )
     }
 }
+

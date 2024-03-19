@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDashboards`](crate::operation::list_dashboards::builders::ListDashboardsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_dashboards::builders::ListDashboardsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`aws_account_id(impl Into<String>)`](crate::operation::list_dashboards::builders::ListDashboardsFluentBuilder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::operation::list_dashboards::builders::ListDashboardsFluentBuilder::set_aws_account_id):<br>required: **true**<br><p>The ID of the Amazon Web Services account that contains the dashboards that you're listing.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_dashboards::builders::ListDashboardsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_dashboards::builders::ListDashboardsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results, or null if there are no more results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_dashboards::builders::ListDashboardsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_dashboards::builders::ListDashboardsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to be returned per request.</p><br>
-    /// - On success, responds with [`ListDashboardsOutput`](crate::operation::list_dashboards::ListDashboardsOutput) with field(s):
+                            /// - On success, responds with [`ListDashboardsOutput`](crate::operation::list_dashboards::ListDashboardsOutput) with field(s):
     ///   - [`dashboard_summary_list(Option<Vec::<DashboardSummary>>)`](crate::operation::list_dashboards::ListDashboardsOutput::dashboard_summary_list): <p>A structure that contains all of the dashboards in your Amazon Web Services account. This structure provides basic information about the dashboards.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_dashboards::ListDashboardsOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     ///   - [`status(i32)`](crate::operation::list_dashboards::ListDashboardsOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::list_dashboards::ListDashboardsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
-    /// - On failure, responds with [`SdkError<ListDashboardsError>`](crate::operation::list_dashboards::ListDashboardsError)
+                            /// - On failure, responds with [`SdkError<ListDashboardsError>`](crate::operation::list_dashboards::ListDashboardsError)
     pub fn list_dashboards(&self) -> crate::operation::list_dashboards::builders::ListDashboardsFluentBuilder {
-        crate::operation::list_dashboards::builders::ListDashboardsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_dashboards::builders::ListDashboardsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

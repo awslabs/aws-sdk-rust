@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateSubnetCidrBlockOutput {
+pub struct DisassociateSubnetCidrBlockOutput  {
     /// <p>Information about the IPv6 CIDR block association.</p>
     pub ipv6_cidr_block_association: ::std::option::Option<crate::types::SubnetIpv6CidrBlockAssociation>,
     /// <p>The ID of the subnet.</p>
     pub subnet_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DisassociateSubnetCidrBlockOutput {
+impl  DisassociateSubnetCidrBlockOutput  {
     /// <p>Information about the IPv6 CIDR block association.</p>
-    pub fn ipv6_cidr_block_association(&self) -> ::std::option::Option<&crate::types::SubnetIpv6CidrBlockAssociation> {
+    pub fn ipv6_cidr_block_association(&self) -> ::std::option::Option<& crate::types::SubnetIpv6CidrBlockAssociation> {
         self.ipv6_cidr_block_association.as_ref()
     }
     /// <p>The ID of the subnet.</p>
-    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DisassociateSubnetCidrBlockOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DisassociateSubnetCidrBlockOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateSubnetCidrBlockOutput`](crate::operation::disassociate_subnet_cidr_block::DisassociateSubnetCidrBlockOutput).
     pub fn builder() -> crate::operation::disassociate_subnet_cidr_block::builders::DisassociateSubnetCidrBlockOutputBuilder {
@@ -47,8 +47,7 @@ impl DisassociateSubnetCidrBlockOutputBuilder {
     }
     /// <p>Information about the IPv6 CIDR block association.</p>
     pub fn set_ipv6_cidr_block_association(mut self, input: ::std::option::Option<crate::types::SubnetIpv6CidrBlockAssociation>) -> Self {
-        self.ipv6_cidr_block_association = input;
-        self
+        self.ipv6_cidr_block_association = input; self
     }
     /// <p>Information about the IPv6 CIDR block association.</p>
     pub fn get_ipv6_cidr_block_association(&self) -> &::std::option::Option<crate::types::SubnetIpv6CidrBlockAssociation> {
@@ -61,28 +60,30 @@ impl DisassociateSubnetCidrBlockOutputBuilder {
     }
     /// <p>The ID of the subnet.</p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
     }
     /// <p>The ID of the subnet.</p>
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.subnet_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DisassociateSubnetCidrBlockOutput`](crate::operation::disassociate_subnet_cidr_block::DisassociateSubnetCidrBlockOutput).
     pub fn build(self) -> crate::operation::disassociate_subnet_cidr_block::DisassociateSubnetCidrBlockOutput {
         crate::operation::disassociate_subnet_cidr_block::DisassociateSubnetCidrBlockOutput {
-            ipv6_cidr_block_association: self.ipv6_cidr_block_association,
-            subnet_id: self.subnet_id,
+            ipv6_cidr_block_association: self.ipv6_cidr_block_association
+            ,
+            subnet_id: self.subnet_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

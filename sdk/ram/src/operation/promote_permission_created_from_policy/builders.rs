@@ -5,23 +5,20 @@ pub use crate::operation::promote_permission_created_from_policy::_promote_permi
 
 impl PromotePermissionCreatedFromPolicyInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.promote_permission_created_from_policy();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.promote_permission_created_from_policy();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `PromotePermissionCreatedFromPolicy`.
-///
+/// 
 /// <p>When you attach a resource-based policy to a resource, RAM automatically creates a resource share of <code>featureSet</code>=<code>CREATED_FROM_POLICY</code> with a managed permission that has the same IAM permissions as the original resource-based policy. However, this type of managed permission is visible to only the resource share owner, and the associated resource share can't be modified by using RAM.</p>
 /// <p>This operation creates a separate, fully manageable customer managed permission that has the same IAM permissions as the original resource-based policy. You can associate this customer managed permission to any resource shares.</p>
 /// <p>Before you use <code>PromoteResourceShareCreatedFromPolicy</code>, you should first run this operation to ensure that you have an appropriate customer managed permission that can be associated with the promoted resource share.</p><note>
@@ -37,33 +34,32 @@ impl PromotePermissionCreatedFromPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PromotePermissionCreatedFromPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::promote_permission_created_from_policy::builders::PromotePermissionCreatedFromPolicyInputBuilder,
+                    inner: crate::operation::promote_permission_created_from_policy::builders::PromotePermissionCreatedFromPolicyInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyOutput,
-        crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyError,
-    > for PromotePermissionCreatedFromPolicyFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyOutput,
-            crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyOutput,
+                    crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyError,
+                > for PromotePermissionCreatedFromPolicyFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyOutput,
+                        crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl PromotePermissionCreatedFromPolicyFluentBuilder {
     /// Creates a new `PromotePermissionCreatedFromPolicy`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -72,53 +68,44 @@ impl PromotePermissionCreatedFromPolicyFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicy::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicy::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyOutput,
-        crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicy::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicy::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyOutput, crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the <code>CREATED_FROM_POLICY</code> permission that you want to promote. You can get this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> by calling the <code>ListResourceSharePermissions</code> operation.</p>
     pub fn permission_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.permission_arn(input.into());
@@ -168,3 +155,4 @@ impl PromotePermissionCreatedFromPolicyFluentBuilder {
         self.inner.get_client_token()
     }
 }
+

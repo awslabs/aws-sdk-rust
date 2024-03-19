@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDomainOutput {
+pub struct DeleteDomainOutput  {
     /// <p>The status of the domain.</p>
     pub status: crate::types::DomainStatus,
     _request_id: Option<String>,
 }
-impl DeleteDomainOutput {
+impl  DeleteDomainOutput  {
     /// <p>The status of the domain.</p>
-    pub fn status(&self) -> &crate::types::DomainStatus {
+    pub fn status(&self) -> & crate::types::DomainStatus {
         &self.status
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteDomainOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteDomainOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDomainOutput`](crate::operation::delete_domain::DeleteDomainOutput).
     pub fn builder() -> crate::operation::delete_domain::builders::DeleteDomainOutputBuilder {
@@ -41,36 +41,35 @@ impl DeleteDomainOutputBuilder {
     }
     /// <p>The status of the domain.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DomainStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the domain.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DomainStatus> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteDomainOutput`](crate::operation::delete_domain::DeleteDomainOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::operation::delete_domain::builders::DeleteDomainOutputBuilder::status)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_domain::DeleteDomainOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_domain::DeleteDomainOutput {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building DeleteDomainOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_domain::DeleteDomainOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_domain::DeleteDomainOutput {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building DeleteDomainOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

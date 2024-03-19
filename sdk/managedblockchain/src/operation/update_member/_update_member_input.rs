@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateMemberInput {
+pub struct UpdateMemberInput  {
     /// <p>The unique identifier of the Managed Blockchain network to which the member belongs.</p>
     pub network_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the member.</p>
@@ -10,17 +10,17 @@ pub struct UpdateMemberInput {
     /// <p>Configuration properties for publishing to Amazon CloudWatch Logs.</p>
     pub log_publishing_configuration: ::std::option::Option<crate::types::MemberLogPublishingConfiguration>,
 }
-impl UpdateMemberInput {
+impl  UpdateMemberInput  {
     /// <p>The unique identifier of the Managed Blockchain network to which the member belongs.</p>
-    pub fn network_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_id(&self) -> ::std::option::Option<& str> {
         self.network_id.as_deref()
     }
     /// <p>The unique identifier of the member.</p>
-    pub fn member_id(&self) -> ::std::option::Option<&str> {
+    pub fn member_id(&self) -> ::std::option::Option<& str> {
         self.member_id.as_deref()
     }
     /// <p>Configuration properties for publishing to Amazon CloudWatch Logs.</p>
-    pub fn log_publishing_configuration(&self) -> ::std::option::Option<&crate::types::MemberLogPublishingConfiguration> {
+    pub fn log_publishing_configuration(&self) -> ::std::option::Option<& crate::types::MemberLogPublishingConfiguration> {
         self.log_publishing_configuration.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateMemberInputBuilder {
     }
     /// <p>The unique identifier of the Managed Blockchain network to which the member belongs.</p>
     pub fn set_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_id = input;
-        self
+        self.network_id = input; self
     }
     /// <p>The unique identifier of the Managed Blockchain network to which the member belongs.</p>
     pub fn get_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateMemberInputBuilder {
     }
     /// <p>The unique identifier of the member.</p>
     pub fn set_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.member_id = input;
-        self
+        self.member_id = input; self
     }
     /// <p>The unique identifier of the member.</p>
     pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,21 +75,24 @@ impl UpdateMemberInputBuilder {
     }
     /// <p>Configuration properties for publishing to Amazon CloudWatch Logs.</p>
     pub fn set_log_publishing_configuration(mut self, input: ::std::option::Option<crate::types::MemberLogPublishingConfiguration>) -> Self {
-        self.log_publishing_configuration = input;
-        self
+        self.log_publishing_configuration = input; self
     }
     /// <p>Configuration properties for publishing to Amazon CloudWatch Logs.</p>
     pub fn get_log_publishing_configuration(&self) -> &::std::option::Option<crate::types::MemberLogPublishingConfiguration> {
         &self.log_publishing_configuration
     }
     /// Consumes the builder and constructs a [`UpdateMemberInput`](crate::operation::update_member::UpdateMemberInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_member::UpdateMemberInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_member::UpdateMemberInput {
-            network_id: self.network_id,
-            member_id: self.member_id,
-            log_publishing_configuration: self.log_publishing_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_member::UpdateMemberInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_member::UpdateMemberInput {
+                network_id: self.network_id
+                ,
+                member_id: self.member_id
+                ,
+                log_publishing_configuration: self.log_publishing_configuration
+                ,
+            }
+        )
     }
 }
+

@@ -5,54 +5,50 @@ pub use crate::operation::create_detector_version::_create_detector_version_inpu
 
 impl CreateDetectorVersionInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_detector_version::CreateDetectorVersionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_detector_version::CreateDetectorVersionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_detector_version();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_detector_version::CreateDetectorVersionOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_detector_version::CreateDetectorVersionError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_detector_version();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateDetectorVersion`.
-///
+/// 
 /// <p>Creates a detector version. The detector version starts in a <code>DRAFT</code> status.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDetectorVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_detector_version::builders::CreateDetectorVersionInputBuilder,
+                    inner: crate::operation::create_detector_version::builders::CreateDetectorVersionInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_detector_version::CreateDetectorVersionOutput,
-        crate::operation::create_detector_version::CreateDetectorVersionError,
-    > for CreateDetectorVersionFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_detector_version::CreateDetectorVersionOutput,
-            crate::operation::create_detector_version::CreateDetectorVersionError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_detector_version::CreateDetectorVersionOutput,
+                    crate::operation::create_detector_version::CreateDetectorVersionError,
+                > for CreateDetectorVersionFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_detector_version::CreateDetectorVersionOutput,
+                        crate::operation::create_detector_version::CreateDetectorVersionError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateDetectorVersionFluentBuilder {
     /// Creates a new `CreateDetectorVersion`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl CreateDetectorVersionFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_detector_version::CreateDetectorVersionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_detector_version::CreateDetectorVersionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_detector_version::CreateDetectorVersion::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_detector_version::CreateDetectorVersion::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_detector_version::CreateDetectorVersionOutput,
-        crate::operation::create_detector_version::CreateDetectorVersionError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_detector_version::CreateDetectorVersionOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_detector_version::CreateDetectorVersionError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_detector_version::CreateDetectorVersion::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_detector_version::CreateDetectorVersion::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_detector_version::CreateDetectorVersionOutput, crate::operation::create_detector_version::CreateDetectorVersionError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID of the detector under which you want to create a new version.</p>
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.detector_id(input.into());
@@ -146,12 +133,12 @@ impl CreateDetectorVersionFluentBuilder {
         self
     }
     /// <p>The Amazon Sagemaker model endpoints to include in the detector version.</p>
-    pub fn set_external_model_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_external_model_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_external_model_endpoints(input);
         self
     }
     /// <p>The Amazon Sagemaker model endpoints to include in the detector version.</p>
-    pub fn get_external_model_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_external_model_endpoints(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_external_model_endpoints()
     }
     /// Appends an item to `rules`.
@@ -164,12 +151,12 @@ impl CreateDetectorVersionFluentBuilder {
         self
     }
     /// <p>The rules to include in the detector version.</p>
-    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Rule>>) -> Self {
         self.inner = self.inner.set_rules(input);
         self
     }
     /// <p>The rules to include in the detector version.</p>
-    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Rule>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Rule>> {
         self.inner.get_rules()
     }
     /// Appends an item to `modelVersions`.
@@ -182,12 +169,12 @@ impl CreateDetectorVersionFluentBuilder {
         self
     }
     /// <p>The model versions to include in the detector version.</p>
-    pub fn set_model_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModelVersion>>) -> Self {
+    pub fn set_model_versions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ModelVersion>>) -> Self {
         self.inner = self.inner.set_model_versions(input);
         self
     }
     /// <p>The model versions to include in the detector version.</p>
-    pub fn get_model_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelVersion>> {
+    pub fn get_model_versions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ModelVersion>> {
         self.inner.get_model_versions()
     }
     /// <p>The rule execution mode for the rules included in the detector version.</p>
@@ -226,12 +213,13 @@ impl CreateDetectorVersionFluentBuilder {
         self
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
 }
+

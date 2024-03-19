@@ -3,22 +3,23 @@
 /// <p>One of the targets for the stack set. Returned by the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html">ListStackSetAutoDeploymentTargets</a> API operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StackSetAutoDeploymentTargetSummary {
+pub struct StackSetAutoDeploymentTargetSummary  {
     /// <p>The organization root ID or organizational unit (OU) IDs where the stack set is targeted.</p>
     pub organizational_unit_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of Regions targeted for this organization or OU.</p>
-    pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub regions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl StackSetAutoDeploymentTargetSummary {
+impl  StackSetAutoDeploymentTargetSummary  {
     /// <p>The organization root ID or organizational unit (OU) IDs where the stack set is targeted.</p>
-    pub fn organizational_unit_id(&self) -> ::std::option::Option<&str> {
+    pub fn organizational_unit_id(&self) -> ::std::option::Option<& str> {
         self.organizational_unit_id.as_deref()
     }
     /// <p>The list of Regions targeted for this organization or OU.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions.is_none()`.
-    pub fn regions(&self) -> &[::std::string::String] {
-        self.regions.as_deref().unwrap_or_default()
+    pub fn regions(&self) -> & [::std::string::String] {
+        self.regions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl StackSetAutoDeploymentTargetSummary {
@@ -33,7 +34,7 @@ impl StackSetAutoDeploymentTargetSummary {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StackSetAutoDeploymentTargetSummaryBuilder {
     pub(crate) organizational_unit_id: ::std::option::Option<::std::string::String>,
-    pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) regions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl StackSetAutoDeploymentTargetSummaryBuilder {
     /// <p>The organization root ID or organizational unit (OU) IDs where the stack set is targeted.</p>
@@ -43,8 +44,7 @@ impl StackSetAutoDeploymentTargetSummaryBuilder {
     }
     /// <p>The organization root ID or organizational unit (OU) IDs where the stack set is targeted.</p>
     pub fn set_organizational_unit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organizational_unit_id = input;
-        self
+        self.organizational_unit_id = input; self
     }
     /// <p>The organization root ID or organizational unit (OU) IDs where the stack set is targeted.</p>
     pub fn get_organizational_unit_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl StackSetAutoDeploymentTargetSummaryBuilder {
     /// <p>The list of Regions targeted for this organization or OU.</p>
     pub fn regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.regions.unwrap_or_default();
-        v.push(input.into());
-        self.regions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.regions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of Regions targeted for this organization or OU.</p>
-    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.regions = input;
-        self
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.regions = input; self
     }
     /// <p>The list of Regions targeted for this organization or OU.</p>
-    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.regions
     }
     /// Consumes the builder and constructs a [`StackSetAutoDeploymentTargetSummary`](crate::types::StackSetAutoDeploymentTargetSummary).
     pub fn build(self) -> crate::types::StackSetAutoDeploymentTargetSummary {
         crate::types::StackSetAutoDeploymentTargetSummary {
-            organizational_unit_id: self.organizational_unit_id,
-            regions: self.regions,
+            organizational_unit_id: self.organizational_unit_id
+            ,
+            regions: self.regions
+            ,
         }
     }
 }
+

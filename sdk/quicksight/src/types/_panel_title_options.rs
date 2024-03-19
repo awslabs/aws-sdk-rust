@@ -3,7 +3,7 @@
 /// <p>The options that determine the title styles for each small multiples panel.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PanelTitleOptions {
+pub struct PanelTitleOptions  {
     /// <p>Determines whether or not panel titles are displayed.</p>
     pub visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>Configures the display properties of the given text.</p>
@@ -11,17 +11,17 @@ pub struct PanelTitleOptions {
     /// <p>Sets the horizontal text alignment of the title within each panel.</p>
     pub horizontal_text_alignment: ::std::option::Option<crate::types::HorizontalTextAlignment>,
 }
-impl PanelTitleOptions {
+impl  PanelTitleOptions  {
     /// <p>Determines whether or not panel titles are displayed.</p>
-    pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+    pub fn visibility(&self) -> ::std::option::Option<& crate::types::Visibility> {
         self.visibility.as_ref()
     }
     /// <p>Configures the display properties of the given text.</p>
-    pub fn font_configuration(&self) -> ::std::option::Option<&crate::types::FontConfiguration> {
+    pub fn font_configuration(&self) -> ::std::option::Option<& crate::types::FontConfiguration> {
         self.font_configuration.as_ref()
     }
     /// <p>Sets the horizontal text alignment of the title within each panel.</p>
-    pub fn horizontal_text_alignment(&self) -> ::std::option::Option<&crate::types::HorizontalTextAlignment> {
+    pub fn horizontal_text_alignment(&self) -> ::std::option::Option<& crate::types::HorizontalTextAlignment> {
         self.horizontal_text_alignment.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl PanelTitleOptionsBuilder {
     }
     /// <p>Determines whether or not panel titles are displayed.</p>
     pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
-        self.visibility = input;
-        self
+        self.visibility = input; self
     }
     /// <p>Determines whether or not panel titles are displayed.</p>
     pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
@@ -62,8 +61,7 @@ impl PanelTitleOptionsBuilder {
     }
     /// <p>Configures the display properties of the given text.</p>
     pub fn set_font_configuration(mut self, input: ::std::option::Option<crate::types::FontConfiguration>) -> Self {
-        self.font_configuration = input;
-        self
+        self.font_configuration = input; self
     }
     /// <p>Configures the display properties of the given text.</p>
     pub fn get_font_configuration(&self) -> &::std::option::Option<crate::types::FontConfiguration> {
@@ -76,8 +74,7 @@ impl PanelTitleOptionsBuilder {
     }
     /// <p>Sets the horizontal text alignment of the title within each panel.</p>
     pub fn set_horizontal_text_alignment(mut self, input: ::std::option::Option<crate::types::HorizontalTextAlignment>) -> Self {
-        self.horizontal_text_alignment = input;
-        self
+        self.horizontal_text_alignment = input; self
     }
     /// <p>Sets the horizontal text alignment of the title within each panel.</p>
     pub fn get_horizontal_text_alignment(&self) -> &::std::option::Option<crate::types::HorizontalTextAlignment> {
@@ -86,9 +83,13 @@ impl PanelTitleOptionsBuilder {
     /// Consumes the builder and constructs a [`PanelTitleOptions`](crate::types::PanelTitleOptions).
     pub fn build(self) -> crate::types::PanelTitleOptions {
         crate::types::PanelTitleOptions {
-            visibility: self.visibility,
-            font_configuration: self.font_configuration,
-            horizontal_text_alignment: self.horizontal_text_alignment,
+            visibility: self.visibility
+            ,
+            font_configuration: self.font_configuration
+            ,
+            horizontal_text_alignment: self.horizontal_text_alignment
+            ,
         }
     }
 }
+

@@ -3,22 +3,22 @@
 /// <p>The output for the <code>GetStackPolicy</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetStackPolicyOutput {
+pub struct GetStackPolicyOutput  {
     /// <p>Structure containing the stack policy body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates to Stack Resources</a> in the <i>CloudFormation User Guide</i>.)</p>
     pub stack_policy_body: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetStackPolicyOutput {
+impl  GetStackPolicyOutput  {
     /// <p>Structure containing the stack policy body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates to Stack Resources</a> in the <i>CloudFormation User Guide</i>.)</p>
-    pub fn stack_policy_body(&self) -> ::std::option::Option<&str> {
+    pub fn stack_policy_body(&self) -> ::std::option::Option<& str> {
         self.stack_policy_body.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetStackPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetStackPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetStackPolicyOutput`](crate::operation::get_stack_policy::GetStackPolicyOutput).
     pub fn builder() -> crate::operation::get_stack_policy::builders::GetStackPolicyOutputBuilder {
@@ -41,27 +41,28 @@ impl GetStackPolicyOutputBuilder {
     }
     /// <p>Structure containing the stack policy body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates to Stack Resources</a> in the <i>CloudFormation User Guide</i>.)</p>
     pub fn set_stack_policy_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_policy_body = input;
-        self
+        self.stack_policy_body = input; self
     }
     /// <p>Structure containing the stack policy body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates to Stack Resources</a> in the <i>CloudFormation User Guide</i>.)</p>
     pub fn get_stack_policy_body(&self) -> &::std::option::Option<::std::string::String> {
         &self.stack_policy_body
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetStackPolicyOutput`](crate::operation::get_stack_policy::GetStackPolicyOutput).
     pub fn build(self) -> crate::operation::get_stack_policy::GetStackPolicyOutput {
         crate::operation::get_stack_policy::GetStackPolicyOutput {
-            stack_policy_body: self.stack_policy_body,
+            stack_policy_body: self.stack_policy_body
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

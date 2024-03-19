@@ -3,15 +3,15 @@
 /// <p>Details about license consumption.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConsumedLicenseSummary {
+pub struct ConsumedLicenseSummary  {
     /// <p>Resource type of the resource consuming a license.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>Number of licenses consumed by the resource.</p>
     pub consumed_licenses: ::std::option::Option<i64>,
 }
-impl ConsumedLicenseSummary {
+impl  ConsumedLicenseSummary  {
     /// <p>Resource type of the resource consuming a license.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>Number of licenses consumed by the resource.</p>
@@ -41,8 +41,7 @@ impl ConsumedLicenseSummaryBuilder {
     }
     /// <p>Resource type of the resource consuming a license.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>Resource type of the resource consuming a license.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -55,8 +54,7 @@ impl ConsumedLicenseSummaryBuilder {
     }
     /// <p>Number of licenses consumed by the resource.</p>
     pub fn set_consumed_licenses(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.consumed_licenses = input;
-        self
+        self.consumed_licenses = input; self
     }
     /// <p>Number of licenses consumed by the resource.</p>
     pub fn get_consumed_licenses(&self) -> &::std::option::Option<i64> {
@@ -65,8 +63,11 @@ impl ConsumedLicenseSummaryBuilder {
     /// Consumes the builder and constructs a [`ConsumedLicenseSummary`](crate::types::ConsumedLicenseSummary).
     pub fn build(self) -> crate::types::ConsumedLicenseSummary {
         crate::types::ConsumedLicenseSummary {
-            resource_type: self.resource_type,
-            consumed_licenses: self.consumed_licenses,
+            resource_type: self.resource_type
+            ,
+            consumed_licenses: self.consumed_licenses
+            ,
         }
     }
 }
+

@@ -5,7 +5,7 @@
 /// <p>To pass through existing artwork unchanged, set the <code>Merge Policy</code> to "Prepend", "Append", or "Fallback", and use an empty <code>Artwork</code> array.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Artwork {
+pub struct Artwork  {
     /// <p>The name of the file to be used as album art. To determine which Amazon S3 bucket contains the specified file, Elastic Transcoder checks the pipeline specified by <code>PipelineId</code>; the <code>InputBucket</code> object in that pipeline identifies the bucket.</p>
     /// <p>If the file name includes a prefix, for example, <code>cooking/pie.jpg</code>, include the prefix in the key. If the file isn't in the specified bucket, Elastic Transcoder returns an error.</p>
     pub input_key: ::std::option::Option<::std::string::String>,
@@ -36,18 +36,18 @@ pub struct Artwork {
     /// <p>The encryption settings, if any, that you want Elastic Transcoder to apply to your artwork.</p>
     pub encryption: ::std::option::Option<crate::types::Encryption>,
 }
-impl Artwork {
+impl  Artwork  {
     /// <p>The name of the file to be used as album art. To determine which Amazon S3 bucket contains the specified file, Elastic Transcoder checks the pipeline specified by <code>PipelineId</code>; the <code>InputBucket</code> object in that pipeline identifies the bucket.</p>
     /// <p>If the file name includes a prefix, for example, <code>cooking/pie.jpg</code>, include the prefix in the key. If the file isn't in the specified bucket, Elastic Transcoder returns an error.</p>
-    pub fn input_key(&self) -> ::std::option::Option<&str> {
+    pub fn input_key(&self) -> ::std::option::Option<& str> {
         self.input_key.as_deref()
     }
     /// <p>The maximum width of the output album art in pixels. If you specify <code>auto</code>, Elastic Transcoder uses 600 as the default value. If you specify a numeric value, enter an even integer between 32 and 4096, inclusive.</p>
-    pub fn max_width(&self) -> ::std::option::Option<&str> {
+    pub fn max_width(&self) -> ::std::option::Option<& str> {
         self.max_width.as_deref()
     }
     /// <p>The maximum height of the output album art in pixels. If you specify <code>auto</code>, Elastic Transcoder uses 600 as the default value. If you specify a numeric value, enter an even integer between 32 and 3072, inclusive.</p>
-    pub fn max_height(&self) -> ::std::option::Option<&str> {
+    pub fn max_height(&self) -> ::std::option::Option<& str> {
         self.max_height.as_deref()
     }
     /// <p>Specify one of the following values to control scaling of the output album art:</p>
@@ -65,19 +65,19 @@ impl Artwork {
     /// <li>
     /// <p><code>ShrinkToFill</code> Elastic Transcoder scales the output art down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping below either value. If you specify this option, Elastic Transcoder does not scale the art up.</p></li>
     /// </ul>
-    pub fn sizing_policy(&self) -> ::std::option::Option<&str> {
+    pub fn sizing_policy(&self) -> ::std::option::Option<& str> {
         self.sizing_policy.as_deref()
     }
     /// <p>When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic Transcoder may add white bars to the top and bottom and/or left and right sides of the output album art to make the total size of the output art match the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>.</p>
-    pub fn padding_policy(&self) -> ::std::option::Option<&str> {
+    pub fn padding_policy(&self) -> ::std::option::Option<& str> {
         self.padding_policy.as_deref()
     }
     /// <p>The format of album art, if any. Valid formats are <code>.jpg</code> and <code>.png</code>.</p>
-    pub fn album_art_format(&self) -> ::std::option::Option<&str> {
+    pub fn album_art_format(&self) -> ::std::option::Option<& str> {
         self.album_art_format.as_deref()
     }
     /// <p>The encryption settings, if any, that you want Elastic Transcoder to apply to your artwork.</p>
-    pub fn encryption(&self) -> ::std::option::Option<&crate::types::Encryption> {
+    pub fn encryption(&self) -> ::std::option::Option<& crate::types::Encryption> {
         self.encryption.as_ref()
     }
 }
@@ -110,8 +110,7 @@ impl ArtworkBuilder {
     /// <p>The name of the file to be used as album art. To determine which Amazon S3 bucket contains the specified file, Elastic Transcoder checks the pipeline specified by <code>PipelineId</code>; the <code>InputBucket</code> object in that pipeline identifies the bucket.</p>
     /// <p>If the file name includes a prefix, for example, <code>cooking/pie.jpg</code>, include the prefix in the key. If the file isn't in the specified bucket, Elastic Transcoder returns an error.</p>
     pub fn set_input_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_key = input;
-        self
+        self.input_key = input; self
     }
     /// <p>The name of the file to be used as album art. To determine which Amazon S3 bucket contains the specified file, Elastic Transcoder checks the pipeline specified by <code>PipelineId</code>; the <code>InputBucket</code> object in that pipeline identifies the bucket.</p>
     /// <p>If the file name includes a prefix, for example, <code>cooking/pie.jpg</code>, include the prefix in the key. If the file isn't in the specified bucket, Elastic Transcoder returns an error.</p>
@@ -125,8 +124,7 @@ impl ArtworkBuilder {
     }
     /// <p>The maximum width of the output album art in pixels. If you specify <code>auto</code>, Elastic Transcoder uses 600 as the default value. If you specify a numeric value, enter an even integer between 32 and 4096, inclusive.</p>
     pub fn set_max_width(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.max_width = input;
-        self
+        self.max_width = input; self
     }
     /// <p>The maximum width of the output album art in pixels. If you specify <code>auto</code>, Elastic Transcoder uses 600 as the default value. If you specify a numeric value, enter an even integer between 32 and 4096, inclusive.</p>
     pub fn get_max_width(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +137,7 @@ impl ArtworkBuilder {
     }
     /// <p>The maximum height of the output album art in pixels. If you specify <code>auto</code>, Elastic Transcoder uses 600 as the default value. If you specify a numeric value, enter an even integer between 32 and 3072, inclusive.</p>
     pub fn set_max_height(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.max_height = input;
-        self
+        self.max_height = input; self
     }
     /// <p>The maximum height of the output album art in pixels. If you specify <code>auto</code>, Elastic Transcoder uses 600 as the default value. If you specify a numeric value, enter an even integer between 32 and 3072, inclusive.</p>
     pub fn get_max_height(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +178,7 @@ impl ArtworkBuilder {
     /// <p><code>ShrinkToFill</code> Elastic Transcoder scales the output art down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping below either value. If you specify this option, Elastic Transcoder does not scale the art up.</p></li>
     /// </ul>
     pub fn set_sizing_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sizing_policy = input;
-        self
+        self.sizing_policy = input; self
     }
     /// <p>Specify one of the following values to control scaling of the output album art:</p>
     /// <ul>
@@ -209,8 +205,7 @@ impl ArtworkBuilder {
     }
     /// <p>When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic Transcoder may add white bars to the top and bottom and/or left and right sides of the output album art to make the total size of the output art match the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>.</p>
     pub fn set_padding_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.padding_policy = input;
-        self
+        self.padding_policy = input; self
     }
     /// <p>When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic Transcoder may add white bars to the top and bottom and/or left and right sides of the output album art to make the total size of the output art match the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>.</p>
     pub fn get_padding_policy(&self) -> &::std::option::Option<::std::string::String> {
@@ -223,8 +218,7 @@ impl ArtworkBuilder {
     }
     /// <p>The format of album art, if any. Valid formats are <code>.jpg</code> and <code>.png</code>.</p>
     pub fn set_album_art_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.album_art_format = input;
-        self
+        self.album_art_format = input; self
     }
     /// <p>The format of album art, if any. Valid formats are <code>.jpg</code> and <code>.png</code>.</p>
     pub fn get_album_art_format(&self) -> &::std::option::Option<::std::string::String> {
@@ -237,8 +231,7 @@ impl ArtworkBuilder {
     }
     /// <p>The encryption settings, if any, that you want Elastic Transcoder to apply to your artwork.</p>
     pub fn set_encryption(mut self, input: ::std::option::Option<crate::types::Encryption>) -> Self {
-        self.encryption = input;
-        self
+        self.encryption = input; self
     }
     /// <p>The encryption settings, if any, that you want Elastic Transcoder to apply to your artwork.</p>
     pub fn get_encryption(&self) -> &::std::option::Option<crate::types::Encryption> {
@@ -247,13 +240,21 @@ impl ArtworkBuilder {
     /// Consumes the builder and constructs a [`Artwork`](crate::types::Artwork).
     pub fn build(self) -> crate::types::Artwork {
         crate::types::Artwork {
-            input_key: self.input_key,
-            max_width: self.max_width,
-            max_height: self.max_height,
-            sizing_policy: self.sizing_policy,
-            padding_policy: self.padding_policy,
-            album_art_format: self.album_art_format,
-            encryption: self.encryption,
+            input_key: self.input_key
+            ,
+            max_width: self.max_width
+            ,
+            max_height: self.max_height
+            ,
+            sizing_policy: self.sizing_policy
+            ,
+            padding_policy: self.padding_policy
+            ,
+            album_art_format: self.album_art_format
+            ,
+            encryption: self.encryption
+            ,
         }
     }
 }
+

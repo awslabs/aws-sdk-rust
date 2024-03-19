@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartResourceScanOutput {
+pub struct StartResourceScanOutput  {
     /// <p>The Amazon Resource Name (ARN) of the resource scan. The format is <code>arn:${Partition}:cloudformation:${Region}:${Account}:resourceScan/${Id}</code>. An example is <code>arn:aws:cloudformation:<i>us-east-1</i>:<i>123456789012</i>:resourceScan/<i>f5b490f7-7ed4-428a-aa06-31ff25db0772</i> </code>.</p>
     pub resource_scan_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl StartResourceScanOutput {
+impl  StartResourceScanOutput  {
     /// <p>The Amazon Resource Name (ARN) of the resource scan. The format is <code>arn:${Partition}:cloudformation:${Region}:${Account}:resourceScan/${Id}</code>. An example is <code>arn:aws:cloudformation:<i>us-east-1</i>:<i>123456789012</i>:resourceScan/<i>f5b490f7-7ed4-428a-aa06-31ff25db0772</i> </code>.</p>
-    pub fn resource_scan_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_scan_id(&self) -> ::std::option::Option<& str> {
         self.resource_scan_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartResourceScanOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartResourceScanOutput {
     /// Creates a new builder-style object to manufacture [`StartResourceScanOutput`](crate::operation::start_resource_scan::StartResourceScanOutput).
     pub fn builder() -> crate::operation::start_resource_scan::builders::StartResourceScanOutputBuilder {
@@ -40,27 +40,28 @@ impl StartResourceScanOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource scan. The format is <code>arn:${Partition}:cloudformation:${Region}:${Account}:resourceScan/${Id}</code>. An example is <code>arn:aws:cloudformation:<i>us-east-1</i>:<i>123456789012</i>:resourceScan/<i>f5b490f7-7ed4-428a-aa06-31ff25db0772</i> </code>.</p>
     pub fn set_resource_scan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_scan_id = input;
-        self
+        self.resource_scan_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource scan. The format is <code>arn:${Partition}:cloudformation:${Region}:${Account}:resourceScan/${Id}</code>. An example is <code>arn:aws:cloudformation:<i>us-east-1</i>:<i>123456789012</i>:resourceScan/<i>f5b490f7-7ed4-428a-aa06-31ff25db0772</i> </code>.</p>
     pub fn get_resource_scan_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_scan_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartResourceScanOutput`](crate::operation::start_resource_scan::StartResourceScanOutput).
     pub fn build(self) -> crate::operation::start_resource_scan::StartResourceScanOutput {
         crate::operation::start_resource_scan::StartResourceScanOutput {
-            resource_scan_id: self.resource_scan_id,
+            resource_scan_id: self.resource_scan_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

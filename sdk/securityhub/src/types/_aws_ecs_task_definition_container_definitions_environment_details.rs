@@ -3,19 +3,19 @@
 /// <p>An environment variable to pass to the container.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails {
+pub struct AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails  {
     /// <p>The name of the environment variable.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the environment variable.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails {
+impl  AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails  {
     /// <p>The name of the environment variable.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The value of the environment variable.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetailsBuilder {
     }
     /// <p>The name of the environment variable.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the environment variable.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetailsBuilder {
     }
     /// <p>The value of the environment variable.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the environment variable.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails).
     pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails {
         crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

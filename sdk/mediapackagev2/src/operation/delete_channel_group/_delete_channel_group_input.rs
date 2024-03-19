@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteChannelGroupInput {
+pub struct DeleteChannelGroupInput  {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
     pub channel_group_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteChannelGroupInput {
+impl  DeleteChannelGroupInput  {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn channel_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn channel_group_name(&self) -> ::std::option::Option<& str> {
         self.channel_group_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteChannelGroupInputBuilder {
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
     pub fn set_channel_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_group_name = input;
-        self
+        self.channel_group_name = input; self
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
     pub fn get_channel_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.channel_group_name
     }
     /// Consumes the builder and constructs a [`DeleteChannelGroupInput`](crate::operation::delete_channel_group::DeleteChannelGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_channel_group::DeleteChannelGroupInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_channel_group::DeleteChannelGroupInput {
-            channel_group_name: self.channel_group_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_channel_group::DeleteChannelGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_channel_group::DeleteChannelGroupInput {
+                channel_group_name: self.channel_group_name
+                ,
+            }
+        )
     }
 }
+

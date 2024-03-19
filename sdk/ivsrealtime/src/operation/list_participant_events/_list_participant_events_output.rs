@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListParticipantEventsOutput {
+pub struct ListParticipantEventsOutput  {
     /// <p>List of the matching events.</p>
-    pub events: ::std::vec::Vec<crate::types::Event>,
+    pub events: ::std::vec::Vec::<crate::types::Event>,
     /// <p>If there are more events than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListParticipantEventsOutput {
+impl  ListParticipantEventsOutput  {
     /// <p>List of the matching events.</p>
-    pub fn events(&self) -> &[crate::types::Event] {
-        use std::ops::Deref;
-        self.events.deref()
+    pub fn events(&self) -> & [crate::types::Event] {
+        use std::ops::Deref; self.events.deref()
     }
     /// <p>If there are more events than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListParticipantEventsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListParticipantEventsOutput {
     /// Creates a new builder-style object to manufacture [`ListParticipantEventsOutput`](crate::operation::list_participant_events::ListParticipantEventsOutput).
     pub fn builder() -> crate::operation::list_participant_events::builders::ListParticipantEventsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListParticipantEventsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListParticipantEventsOutputBuilder {
-    pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
+    pub(crate) events: ::std::option::Option<::std::vec::Vec::<crate::types::Event>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListParticipantEventsOutputBuilder {
     /// <p>List of the matching events.</p>
     pub fn events(mut self, input: crate::types::Event) -> Self {
         let mut v = self.events.unwrap_or_default();
-        v.push(input);
-        self.events = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.events = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of the matching events.</p>
-    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Event>>) -> Self {
-        self.events = input;
-        self
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Event>>) -> Self {
+        self.events = input; self
     }
     /// <p>List of the matching events.</p>
-    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Event>> {
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Event>> {
         &self.events
     }
     /// <p>If there are more events than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
@@ -68,38 +66,37 @@ impl ListParticipantEventsOutputBuilder {
     }
     /// <p>If there are more events than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If there are more events than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListParticipantEventsOutput`](crate::operation::list_participant_events::ListParticipantEventsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`events`](crate::operation::list_participant_events::builders::ListParticipantEventsOutputBuilder::events)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_participant_events::ListParticipantEventsOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_participant_events::ListParticipantEventsOutput {
-            events: self.events.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "events",
-                    "events was not specified but it is required when building ListParticipantEventsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_participant_events::ListParticipantEventsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_participant_events::ListParticipantEventsOutput {
+                events: self.events
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("events", "events was not specified but it is required when building ListParticipantEventsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

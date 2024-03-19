@@ -3,7 +3,7 @@
 /// <p>Object to store detailed field information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFieldResponse {
+pub struct GetFieldResponse  {
     /// <p>Unique identifier of the field.</p>
     pub field_id: ::std::string::String,
     /// <p>Name of the field.</p>
@@ -17,38 +17,35 @@ pub struct GetFieldResponse {
     /// <p>Namespace of the field.</p>
     pub namespace: crate::types::FieldNamespace,
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>>,
 }
-impl GetFieldResponse {
+impl  GetFieldResponse  {
     /// <p>Unique identifier of the field.</p>
-    pub fn field_id(&self) -> &str {
-        use std::ops::Deref;
-        self.field_id.deref()
+    pub fn field_id(&self) -> & str {
+        use std::ops::Deref; self.field_id.deref()
     }
     /// <p>Name of the field.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the field.</p>
-    pub fn field_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.field_arn.deref()
+    pub fn field_arn(&self) -> & str {
+        use std::ops::Deref; self.field_arn.deref()
     }
     /// <p>Description of the field.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Type of the field.</p>
-    pub fn r#type(&self) -> &crate::types::FieldType {
+    pub fn r#type(&self) -> & crate::types::FieldType {
         &self.r#type
     }
     /// <p>Namespace of the field.</p>
-    pub fn namespace(&self) -> &crate::types::FieldNamespace {
+    pub fn namespace(&self) -> & crate::types::FieldNamespace {
         &self.namespace
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>> {
         self.tags.as_ref()
     }
 }
@@ -69,7 +66,7 @@ pub struct GetFieldResponseBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::FieldType>,
     pub(crate) namespace: ::std::option::Option<crate::types::FieldNamespace>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>>,
 }
 impl GetFieldResponseBuilder {
     /// <p>Unique identifier of the field.</p>
@@ -80,8 +77,7 @@ impl GetFieldResponseBuilder {
     }
     /// <p>Unique identifier of the field.</p>
     pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_id = input;
-        self
+        self.field_id = input; self
     }
     /// <p>Unique identifier of the field.</p>
     pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +91,7 @@ impl GetFieldResponseBuilder {
     }
     /// <p>Name of the field.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of the field.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +105,7 @@ impl GetFieldResponseBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the field.</p>
     pub fn set_field_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_arn = input;
-        self
+        self.field_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the field.</p>
     pub fn get_field_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +118,7 @@ impl GetFieldResponseBuilder {
     }
     /// <p>Description of the field.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Description of the field.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +132,7 @@ impl GetFieldResponseBuilder {
     }
     /// <p>Type of the field.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::FieldType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Type of the field.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::FieldType> {
@@ -154,8 +146,7 @@ impl GetFieldResponseBuilder {
     }
     /// <p>Namespace of the field.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<crate::types::FieldNamespace>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>Namespace of the field.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<crate::types::FieldNamespace> {
@@ -168,22 +159,16 @@ impl GetFieldResponseBuilder {
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::option::Option<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`GetFieldResponse`](crate::types::GetFieldResponse).
@@ -194,39 +179,39 @@ impl GetFieldResponseBuilder {
     /// - [`r#type`](crate::types::builders::GetFieldResponseBuilder::r#type)
     /// - [`namespace`](crate::types::builders::GetFieldResponseBuilder::namespace)
     pub fn build(self) -> ::std::result::Result<crate::types::GetFieldResponse, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GetFieldResponse {
-            field_id: self.field_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "field_id",
-                    "field_id was not specified but it is required when building GetFieldResponse",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building GetFieldResponse",
-                )
-            })?,
-            field_arn: self.field_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "field_arn",
-                    "field_arn was not specified but it is required when building GetFieldResponse",
-                )
-            })?,
-            description: self.description,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building GetFieldResponse",
-                )
-            })?,
-            namespace: self.namespace.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "namespace",
-                    "namespace was not specified but it is required when building GetFieldResponse",
-                )
-            })?,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GetFieldResponse {
+                field_id: self.field_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("field_id", "field_id was not specified but it is required when building GetFieldResponse")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building GetFieldResponse")
+                    )?
+                ,
+                field_arn: self.field_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("field_arn", "field_arn was not specified but it is required when building GetFieldResponse")
+                    )?
+                ,
+                description: self.description
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building GetFieldResponse")
+                    )?
+                ,
+                namespace: self.namespace
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("namespace", "namespace was not specified but it is required when building GetFieldResponse")
+                    )?
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

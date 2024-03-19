@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeConformancePackComplianceInput {
+pub struct DescribeConformancePackComplianceInput  {
     /// <p>Name of the conformance pack.</p>
     pub conformance_pack_name: ::std::option::Option<::std::string::String>,
     /// <p>A <code>ConformancePackComplianceFilters</code> object.</p>
@@ -12,13 +12,13 @@ pub struct DescribeConformancePackComplianceInput {
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeConformancePackComplianceInput {
+impl  DescribeConformancePackComplianceInput  {
     /// <p>Name of the conformance pack.</p>
-    pub fn conformance_pack_name(&self) -> ::std::option::Option<&str> {
+    pub fn conformance_pack_name(&self) -> ::std::option::Option<& str> {
         self.conformance_pack_name.as_deref()
     }
     /// <p>A <code>ConformancePackComplianceFilters</code> object.</p>
-    pub fn filters(&self) -> ::std::option::Option<&crate::types::ConformancePackComplianceFilters> {
+    pub fn filters(&self) -> ::std::option::Option<& crate::types::ConformancePackComplianceFilters> {
         self.filters.as_ref()
     }
     /// <p>The maximum number of Config rules within a conformance pack are returned on each page.</p>
@@ -26,7 +26,7 @@ impl DescribeConformancePackComplianceInput {
         self.limit
     }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl DescribeConformancePackComplianceInputBuilder {
     }
     /// <p>Name of the conformance pack.</p>
     pub fn set_conformance_pack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.conformance_pack_name = input;
-        self
+        self.conformance_pack_name = input; self
     }
     /// <p>Name of the conformance pack.</p>
     pub fn get_conformance_pack_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl DescribeConformancePackComplianceInputBuilder {
     }
     /// <p>A <code>ConformancePackComplianceFilters</code> object.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ConformancePackComplianceFilters>) -> Self {
-        self.filters = input;
-        self
+        self.filters = input; self
     }
     /// <p>A <code>ConformancePackComplianceFilters</code> object.</p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::ConformancePackComplianceFilters> {
@@ -83,8 +81,7 @@ impl DescribeConformancePackComplianceInputBuilder {
     }
     /// <p>The maximum number of Config rules within a conformance pack are returned on each page.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of Config rules within a conformance pack are returned on each page.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
@@ -97,27 +94,26 @@ impl DescribeConformancePackComplianceInputBuilder {
     }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeConformancePackComplianceInput`](crate::operation::describe_conformance_pack_compliance::DescribeConformancePackComplianceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_conformance_pack_compliance::DescribeConformancePackComplianceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_conformance_pack_compliance::DescribeConformancePackComplianceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_conformance_pack_compliance::DescribeConformancePackComplianceInput {
-                conformance_pack_name: self.conformance_pack_name,
-                filters: self.filters,
-                limit: self.limit,
-                next_token: self.next_token,
-            },
+                conformance_pack_name: self.conformance_pack_name
+                ,
+                filters: self.filters
+                ,
+                limit: self.limit
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

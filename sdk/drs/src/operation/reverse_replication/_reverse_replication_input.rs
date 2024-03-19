@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReverseReplicationInput {
+pub struct ReverseReplicationInput  {
     /// <p>The ID of the Recovery Instance that we want to reverse the replication for.</p>
     pub recovery_instance_id: ::std::option::Option<::std::string::String>,
 }
-impl ReverseReplicationInput {
+impl  ReverseReplicationInput  {
     /// <p>The ID of the Recovery Instance that we want to reverse the replication for.</p>
-    pub fn recovery_instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn recovery_instance_id(&self) -> ::std::option::Option<& str> {
         self.recovery_instance_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl ReverseReplicationInputBuilder {
     }
     /// <p>The ID of the Recovery Instance that we want to reverse the replication for.</p>
     pub fn set_recovery_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recovery_instance_id = input;
-        self
+        self.recovery_instance_id = input; self
     }
     /// <p>The ID of the Recovery Instance that we want to reverse the replication for.</p>
     pub fn get_recovery_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.recovery_instance_id
     }
     /// Consumes the builder and constructs a [`ReverseReplicationInput`](crate::operation::reverse_replication::ReverseReplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::reverse_replication::ReverseReplicationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::reverse_replication::ReverseReplicationInput {
-            recovery_instance_id: self.recovery_instance_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::reverse_replication::ReverseReplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::reverse_replication::ReverseReplicationInput {
+                recovery_instance_id: self.recovery_instance_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartConfigurationSessionInput {
+pub struct StartConfigurationSessionInput  {
     /// <p>The application ID or the application name.</p>
     pub application_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The environment ID or the environment name.</p>
@@ -12,17 +12,17 @@ pub struct StartConfigurationSessionInput {
     /// <p>Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that established the session can't call <code>GetLatestConfiguration</code> more frequently than every 60 seconds.</p>
     pub required_minimum_poll_interval_in_seconds: ::std::option::Option<i32>,
 }
-impl StartConfigurationSessionInput {
+impl  StartConfigurationSessionInput  {
     /// <p>The application ID or the application name.</p>
-    pub fn application_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn application_identifier(&self) -> ::std::option::Option<& str> {
         self.application_identifier.as_deref()
     }
     /// <p>The environment ID or the environment name.</p>
-    pub fn environment_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn environment_identifier(&self) -> ::std::option::Option<& str> {
         self.environment_identifier.as_deref()
     }
     /// <p>The configuration profile ID or the configuration profile name.</p>
-    pub fn configuration_profile_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_profile_identifier(&self) -> ::std::option::Option<& str> {
         self.configuration_profile_identifier.as_deref()
     }
     /// <p>Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that established the session can't call <code>GetLatestConfiguration</code> more frequently than every 60 seconds.</p>
@@ -55,8 +55,7 @@ impl StartConfigurationSessionInputBuilder {
     }
     /// <p>The application ID or the application name.</p>
     pub fn set_application_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_identifier = input;
-        self
+        self.application_identifier = input; self
     }
     /// <p>The application ID or the application name.</p>
     pub fn get_application_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl StartConfigurationSessionInputBuilder {
     }
     /// <p>The environment ID or the environment name.</p>
     pub fn set_environment_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_identifier = input;
-        self
+        self.environment_identifier = input; self
     }
     /// <p>The environment ID or the environment name.</p>
     pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl StartConfigurationSessionInputBuilder {
     }
     /// <p>The configuration profile ID or the configuration profile name.</p>
     pub fn set_configuration_profile_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_profile_identifier = input;
-        self
+        self.configuration_profile_identifier = input; self
     }
     /// <p>The configuration profile ID or the configuration profile name.</p>
     pub fn get_configuration_profile_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,25 +96,26 @@ impl StartConfigurationSessionInputBuilder {
     }
     /// <p>Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that established the session can't call <code>GetLatestConfiguration</code> more frequently than every 60 seconds.</p>
     pub fn set_required_minimum_poll_interval_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.required_minimum_poll_interval_in_seconds = input;
-        self
+        self.required_minimum_poll_interval_in_seconds = input; self
     }
     /// <p>Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that established the session can't call <code>GetLatestConfiguration</code> more frequently than every 60 seconds.</p>
     pub fn get_required_minimum_poll_interval_in_seconds(&self) -> &::std::option::Option<i32> {
         &self.required_minimum_poll_interval_in_seconds
     }
     /// Consumes the builder and constructs a [`StartConfigurationSessionInput`](crate::operation::start_configuration_session::StartConfigurationSessionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_configuration_session::StartConfigurationSessionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_configuration_session::StartConfigurationSessionInput {
-            application_identifier: self.application_identifier,
-            environment_identifier: self.environment_identifier,
-            configuration_profile_identifier: self.configuration_profile_identifier,
-            required_minimum_poll_interval_in_seconds: self.required_minimum_poll_interval_in_seconds,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_configuration_session::StartConfigurationSessionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_configuration_session::StartConfigurationSessionInput {
+                application_identifier: self.application_identifier
+                ,
+                environment_identifier: self.environment_identifier
+                ,
+                configuration_profile_identifier: self.configuration_profile_identifier
+                ,
+                required_minimum_poll_interval_in_seconds: self.required_minimum_poll_interval_in_seconds
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFirewallDomainsInput {
+pub struct UpdateFirewallDomainsInput  {
     /// <p>The ID of the domain list whose domains you want to update.</p>
     pub firewall_domain_list_id: ::std::option::Option<::std::string::String>,
     /// <p>What you want DNS Firewall to do with the domains that you are providing:</p>
@@ -27,11 +27,11 @@ pub struct UpdateFirewallDomainsInput {
     /// <li>
     /// <p>It must be from 1-255 characters in length.</p></li>
     /// </ul>
-    pub domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub domains: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl UpdateFirewallDomainsInput {
+impl  UpdateFirewallDomainsInput  {
     /// <p>The ID of the domain list whose domains you want to update.</p>
-    pub fn firewall_domain_list_id(&self) -> ::std::option::Option<&str> {
+    pub fn firewall_domain_list_id(&self) -> ::std::option::Option<& str> {
         self.firewall_domain_list_id.as_deref()
     }
     /// <p>What you want DNS Firewall to do with the domains that you are providing:</p>
@@ -43,7 +43,7 @@ impl UpdateFirewallDomainsInput {
     /// <li>
     /// <p><code>REPLACE</code> - Update the domain list to exactly match the list that you are providing.</p></li>
     /// </ul>
-    pub fn operation(&self) -> ::std::option::Option<&crate::types::FirewallDomainUpdateOperation> {
+    pub fn operation(&self) -> ::std::option::Option<& crate::types::FirewallDomainUpdateOperation> {
         self.operation.as_ref()
     }
     /// <p>A list of domains to use in the update operation.</p><important>
@@ -58,10 +58,11 @@ impl UpdateFirewallDomainsInput {
     /// <li>
     /// <p>It must be from 1-255 characters in length.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domains.is_none()`.
-    pub fn domains(&self) -> &[::std::string::String] {
-        self.domains.as_deref().unwrap_or_default()
+    pub fn domains(&self) -> & [::std::string::String] {
+        self.domains.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateFirewallDomainsInput {
@@ -77,7 +78,7 @@ impl UpdateFirewallDomainsInput {
 pub struct UpdateFirewallDomainsInputBuilder {
     pub(crate) firewall_domain_list_id: ::std::option::Option<::std::string::String>,
     pub(crate) operation: ::std::option::Option<crate::types::FirewallDomainUpdateOperation>,
-    pub(crate) domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) domains: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl UpdateFirewallDomainsInputBuilder {
     /// <p>The ID of the domain list whose domains you want to update.</p>
@@ -88,8 +89,7 @@ impl UpdateFirewallDomainsInputBuilder {
     }
     /// <p>The ID of the domain list whose domains you want to update.</p>
     pub fn set_firewall_domain_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.firewall_domain_list_id = input;
-        self
+        self.firewall_domain_list_id = input; self
     }
     /// <p>The ID of the domain list whose domains you want to update.</p>
     pub fn get_firewall_domain_list_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +119,7 @@ impl UpdateFirewallDomainsInputBuilder {
     /// <p><code>REPLACE</code> - Update the domain list to exactly match the list that you are providing.</p></li>
     /// </ul>
     pub fn set_operation(mut self, input: ::std::option::Option<crate::types::FirewallDomainUpdateOperation>) -> Self {
-        self.operation = input;
-        self
+        self.operation = input; self
     }
     /// <p>What you want DNS Firewall to do with the domains that you are providing:</p>
     /// <ul>
@@ -152,9 +151,9 @@ impl UpdateFirewallDomainsInputBuilder {
     /// </ul>
     pub fn domains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.domains.unwrap_or_default();
-        v.push(input.into());
-        self.domains = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.domains = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of domains to use in the update operation.</p><important>
     /// <p>There is a limit of 1000 domains per request.</p>
@@ -168,9 +167,8 @@ impl UpdateFirewallDomainsInputBuilder {
     /// <li>
     /// <p>It must be from 1-255 characters in length.</p></li>
     /// </ul>
-    pub fn set_domains(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.domains = input;
-        self
+    pub fn set_domains(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.domains = input; self
     }
     /// <p>A list of domains to use in the update operation.</p><important>
     /// <p>There is a limit of 1000 domains per request.</p>
@@ -184,18 +182,21 @@ impl UpdateFirewallDomainsInputBuilder {
     /// <li>
     /// <p>It must be from 1-255 characters in length.</p></li>
     /// </ul>
-    pub fn get_domains(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_domains(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.domains
     }
     /// Consumes the builder and constructs a [`UpdateFirewallDomainsInput`](crate::operation::update_firewall_domains::UpdateFirewallDomainsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_firewall_domains::UpdateFirewallDomainsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_firewall_domains::UpdateFirewallDomainsInput {
-            firewall_domain_list_id: self.firewall_domain_list_id,
-            operation: self.operation,
-            domains: self.domains,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_firewall_domains::UpdateFirewallDomainsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_firewall_domains::UpdateFirewallDomainsInput {
+                firewall_domain_list_id: self.firewall_domain_list_id
+                ,
+                operation: self.operation
+                ,
+                domains: self.domains
+                ,
+            }
+        )
     }
 }
+

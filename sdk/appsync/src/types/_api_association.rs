@@ -3,7 +3,7 @@
 /// <p>Describes an <code>ApiAssociation</code> object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApiAssociation {
+pub struct ApiAssociation  {
     /// <p>The domain name.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The API ID.</p>
@@ -21,13 +21,13 @@ pub struct ApiAssociation {
     /// <p>Details about the last deployment status.</p>
     pub deployment_detail: ::std::option::Option<::std::string::String>,
 }
-impl ApiAssociation {
+impl  ApiAssociation  {
     /// <p>The domain name.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The API ID.</p>
-    pub fn api_id(&self) -> ::std::option::Option<&str> {
+    pub fn api_id(&self) -> ::std::option::Option<& str> {
         self.api_id.as_deref()
     }
     /// <p>Identifies the status of an association.</p>
@@ -39,11 +39,11 @@ impl ApiAssociation {
     /// <li>
     /// <p><b>FAILED</b>: The API association has failed. You can modify associations after failure.</p></li>
     /// </ul>
-    pub fn association_status(&self) -> ::std::option::Option<&crate::types::AssociationStatus> {
+    pub fn association_status(&self) -> ::std::option::Option<& crate::types::AssociationStatus> {
         self.association_status.as_ref()
     }
     /// <p>Details about the last deployment status.</p>
-    pub fn deployment_detail(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_detail(&self) -> ::std::option::Option<& str> {
         self.deployment_detail.as_deref()
     }
 }
@@ -71,8 +71,7 @@ impl ApiAssociationBuilder {
     }
     /// <p>The domain name.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The domain name.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +84,7 @@ impl ApiAssociationBuilder {
     }
     /// <p>The API ID.</p>
     pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_id = input;
-        self
+        self.api_id = input; self
     }
     /// <p>The API ID.</p>
     pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +113,7 @@ impl ApiAssociationBuilder {
     /// <p><b>FAILED</b>: The API association has failed. You can modify associations after failure.</p></li>
     /// </ul>
     pub fn set_association_status(mut self, input: ::std::option::Option<crate::types::AssociationStatus>) -> Self {
-        self.association_status = input;
-        self
+        self.association_status = input; self
     }
     /// <p>Identifies the status of an association.</p>
     /// <ul>
@@ -137,8 +134,7 @@ impl ApiAssociationBuilder {
     }
     /// <p>Details about the last deployment status.</p>
     pub fn set_deployment_detail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_detail = input;
-        self
+        self.deployment_detail = input; self
     }
     /// <p>Details about the last deployment status.</p>
     pub fn get_deployment_detail(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,10 +143,15 @@ impl ApiAssociationBuilder {
     /// Consumes the builder and constructs a [`ApiAssociation`](crate::types::ApiAssociation).
     pub fn build(self) -> crate::types::ApiAssociation {
         crate::types::ApiAssociation {
-            domain_name: self.domain_name,
-            api_id: self.api_id,
-            association_status: self.association_status,
-            deployment_detail: self.deployment_detail,
+            domain_name: self.domain_name
+            ,
+            api_id: self.api_id
+            ,
+            association_status: self.association_status
+            ,
+            deployment_detail: self.deployment_detail
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSnapshotsInput {
+pub struct ListSnapshotsInput  {
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
@@ -18,9 +18,9 @@ pub struct ListSnapshotsInput {
     /// <p>The timestamp showing when the snapshot creation finished.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ListSnapshotsInput {
+impl  ListSnapshotsInput  {
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
@@ -28,23 +28,23 @@ impl ListSnapshotsInput {
         self.max_results
     }
     /// <p>The namespace from which to list all snapshots.</p>
-    pub fn namespace_name(&self) -> ::std::option::Option<&str> {
+    pub fn namespace_name(&self) -> ::std::option::Option<& str> {
         self.namespace_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the namespace from which to list all snapshots.</p>
-    pub fn namespace_arn(&self) -> ::std::option::Option<&str> {
+    pub fn namespace_arn(&self) -> ::std::option::Option<& str> {
         self.namespace_arn.as_deref()
     }
     /// <p>The owner Amazon Web Services account of the snapshot.</p>
-    pub fn owner_account(&self) -> ::std::option::Option<&str> {
+    pub fn owner_account(&self) -> ::std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>The time when the creation of the snapshot was initiated.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The timestamp showing when the snapshot creation finished.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -75,8 +75,7 @@ impl ListSnapshotsInputBuilder {
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +88,7 @@ impl ListSnapshotsInputBuilder {
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -103,8 +101,7 @@ impl ListSnapshotsInputBuilder {
     }
     /// <p>The namespace from which to list all snapshots.</p>
     pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace_name = input;
-        self
+        self.namespace_name = input; self
     }
     /// <p>The namespace from which to list all snapshots.</p>
     pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +114,7 @@ impl ListSnapshotsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the namespace from which to list all snapshots.</p>
     pub fn set_namespace_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace_arn = input;
-        self
+        self.namespace_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the namespace from which to list all snapshots.</p>
     pub fn get_namespace_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +127,7 @@ impl ListSnapshotsInputBuilder {
     }
     /// <p>The owner Amazon Web Services account of the snapshot.</p>
     pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_account = input;
-        self
+        self.owner_account = input; self
     }
     /// <p>The owner Amazon Web Services account of the snapshot.</p>
     pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +140,7 @@ impl ListSnapshotsInputBuilder {
     }
     /// <p>The time when the creation of the snapshot was initiated.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The time when the creation of the snapshot was initiated.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -159,25 +153,32 @@ impl ListSnapshotsInputBuilder {
     }
     /// <p>The timestamp showing when the snapshot creation finished.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The timestamp showing when the snapshot creation finished.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }
     /// Consumes the builder and constructs a [`ListSnapshotsInput`](crate::operation::list_snapshots::ListSnapshotsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_snapshots::ListSnapshotsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_snapshots::ListSnapshotsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            namespace_name: self.namespace_name,
-            namespace_arn: self.namespace_arn,
-            owner_account: self.owner_account,
-            start_time: self.start_time,
-            end_time: self.end_time,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_snapshots::ListSnapshotsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_snapshots::ListSnapshotsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                namespace_name: self.namespace_name
+                ,
+                namespace_arn: self.namespace_arn
+                ,
+                owner_account: self.owner_account
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+            }
+        )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>The structure representing the EoCloudCover filter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EoCloudCoverInput {
+pub struct EoCloudCoverInput  {
     /// <p>Lower bound for EoCloudCover.</p>
     pub lower_bound: f32,
     /// <p>Upper bound for EoCloudCover.</p>
     pub upper_bound: f32,
 }
-impl EoCloudCoverInput {
+impl  EoCloudCoverInput  {
     /// <p>Lower bound for EoCloudCover.</p>
     pub fn lower_bound(&self) -> f32 {
         self.lower_bound
@@ -42,8 +42,7 @@ impl EoCloudCoverInputBuilder {
     }
     /// <p>Lower bound for EoCloudCover.</p>
     pub fn set_lower_bound(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.lower_bound = input;
-        self
+        self.lower_bound = input; self
     }
     /// <p>Lower bound for EoCloudCover.</p>
     pub fn get_lower_bound(&self) -> &::std::option::Option<f32> {
@@ -57,8 +56,7 @@ impl EoCloudCoverInputBuilder {
     }
     /// <p>Upper bound for EoCloudCover.</p>
     pub fn set_upper_bound(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.upper_bound = input;
-        self
+        self.upper_bound = input; self
     }
     /// <p>Upper bound for EoCloudCover.</p>
     pub fn get_upper_bound(&self) -> &::std::option::Option<f32> {
@@ -69,19 +67,20 @@ impl EoCloudCoverInputBuilder {
     /// - [`lower_bound`](crate::types::builders::EoCloudCoverInputBuilder::lower_bound)
     /// - [`upper_bound`](crate::types::builders::EoCloudCoverInputBuilder::upper_bound)
     pub fn build(self) -> ::std::result::Result<crate::types::EoCloudCoverInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EoCloudCoverInput {
-            lower_bound: self.lower_bound.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "lower_bound",
-                    "lower_bound was not specified but it is required when building EoCloudCoverInput",
-                )
-            })?,
-            upper_bound: self.upper_bound.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "upper_bound",
-                    "upper_bound was not specified but it is required when building EoCloudCoverInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EoCloudCoverInput {
+                lower_bound: self.lower_bound
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("lower_bound", "lower_bound was not specified but it is required when building EoCloudCoverInput")
+                    )?
+                ,
+                upper_bound: self.upper_bound
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("upper_bound", "upper_bound was not specified but it is required when building EoCloudCoverInput")
+                    )?
+                ,
+            }
+        )
     }
 }
+

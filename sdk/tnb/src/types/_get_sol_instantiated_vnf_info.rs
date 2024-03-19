@@ -4,13 +4,13 @@
 /// <p>A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSolInstantiatedVnfInfo {
+pub struct GetSolInstantiatedVnfInfo  {
     /// <p>State of the network function.</p>
     pub vnf_state: ::std::option::Option<crate::types::VnfOperationalState>,
 }
-impl GetSolInstantiatedVnfInfo {
+impl  GetSolInstantiatedVnfInfo  {
     /// <p>State of the network function.</p>
-    pub fn vnf_state(&self) -> ::std::option::Option<&crate::types::VnfOperationalState> {
+    pub fn vnf_state(&self) -> ::std::option::Option<& crate::types::VnfOperationalState> {
         self.vnf_state.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl GetSolInstantiatedVnfInfoBuilder {
     }
     /// <p>State of the network function.</p>
     pub fn set_vnf_state(mut self, input: ::std::option::Option<crate::types::VnfOperationalState>) -> Self {
-        self.vnf_state = input;
-        self
+        self.vnf_state = input; self
     }
     /// <p>State of the network function.</p>
     pub fn get_vnf_state(&self) -> &::std::option::Option<crate::types::VnfOperationalState> {
@@ -44,6 +43,10 @@ impl GetSolInstantiatedVnfInfoBuilder {
     }
     /// Consumes the builder and constructs a [`GetSolInstantiatedVnfInfo`](crate::types::GetSolInstantiatedVnfInfo).
     pub fn build(self) -> crate::types::GetSolInstantiatedVnfInfo {
-        crate::types::GetSolInstantiatedVnfInfo { vnf_state: self.vnf_state }
+        crate::types::GetSolInstantiatedVnfInfo {
+            vnf_state: self.vnf_state
+            ,
+        }
     }
 }
+

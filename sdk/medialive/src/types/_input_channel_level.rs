@@ -3,13 +3,13 @@
 /// Input Channel Level
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputChannelLevel {
+pub struct InputChannelLevel  {
     /// Remixing value. Units are in dB and acceptable values are within the range from -60 (mute) and 6 dB.
     pub gain: ::std::option::Option<i32>,
     /// The index of the input channel used as a source.
     pub input_channel: ::std::option::Option<i32>,
 }
-impl InputChannelLevel {
+impl  InputChannelLevel  {
     /// Remixing value. Units are in dB and acceptable values are within the range from -60 (mute) and 6 dB.
     pub fn gain(&self) -> ::std::option::Option<i32> {
         self.gain
@@ -42,8 +42,7 @@ impl InputChannelLevelBuilder {
     }
     /// Remixing value. Units are in dB and acceptable values are within the range from -60 (mute) and 6 dB.
     pub fn set_gain(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.gain = input;
-        self
+        self.gain = input; self
     }
     /// Remixing value. Units are in dB and acceptable values are within the range from -60 (mute) and 6 dB.
     pub fn get_gain(&self) -> &::std::option::Option<i32> {
@@ -57,8 +56,7 @@ impl InputChannelLevelBuilder {
     }
     /// The index of the input channel used as a source.
     pub fn set_input_channel(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.input_channel = input;
-        self
+        self.input_channel = input; self
     }
     /// The index of the input channel used as a source.
     pub fn get_input_channel(&self) -> &::std::option::Option<i32> {
@@ -67,8 +65,11 @@ impl InputChannelLevelBuilder {
     /// Consumes the builder and constructs a [`InputChannelLevel`](crate::types::InputChannelLevel).
     pub fn build(self) -> crate::types::InputChannelLevel {
         crate::types::InputChannelLevel {
-            gain: self.gain,
-            input_channel: self.input_channel,
+            gain: self.gain
+            ,
+            input_channel: self.input_channel
+            ,
         }
     }
 }
+

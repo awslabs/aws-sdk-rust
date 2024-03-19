@@ -38,3 +38,4 @@ pub use crate::types::_cmaf_encryption::CmafEncryptionBuilder;
 pub use crate::types::_asset_shallow::AssetShallowBuilder;
 
 pub use crate::types::_egress_endpoint::EgressEndpointBuilder;
+

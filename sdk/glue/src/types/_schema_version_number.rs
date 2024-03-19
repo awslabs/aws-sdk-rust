@@ -3,13 +3,13 @@
 /// <p>A structure containing the schema version information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SchemaVersionNumber {
+pub struct SchemaVersionNumber  {
     /// <p>The latest version available for the schema.</p>
     pub latest_version: bool,
     /// <p>The version number of the schema.</p>
     pub version_number: ::std::option::Option<i64>,
 }
-impl SchemaVersionNumber {
+impl  SchemaVersionNumber  {
     /// <p>The latest version available for the schema.</p>
     pub fn latest_version(&self) -> bool {
         self.latest_version
@@ -41,8 +41,7 @@ impl SchemaVersionNumberBuilder {
     }
     /// <p>The latest version available for the schema.</p>
     pub fn set_latest_version(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.latest_version = input;
-        self
+        self.latest_version = input; self
     }
     /// <p>The latest version available for the schema.</p>
     pub fn get_latest_version(&self) -> &::std::option::Option<bool> {
@@ -55,8 +54,7 @@ impl SchemaVersionNumberBuilder {
     }
     /// <p>The version number of the schema.</p>
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.version_number = input;
-        self
+        self.version_number = input; self
     }
     /// <p>The version number of the schema.</p>
     pub fn get_version_number(&self) -> &::std::option::Option<i64> {
@@ -65,8 +63,12 @@ impl SchemaVersionNumberBuilder {
     /// Consumes the builder and constructs a [`SchemaVersionNumber`](crate::types::SchemaVersionNumber).
     pub fn build(self) -> crate::types::SchemaVersionNumber {
         crate::types::SchemaVersionNumber {
-            latest_version: self.latest_version.unwrap_or_default(),
-            version_number: self.version_number,
+            latest_version: self.latest_version
+                .unwrap_or_default()
+            ,
+            version_number: self.version_number
+            ,
         }
     }
 }
+

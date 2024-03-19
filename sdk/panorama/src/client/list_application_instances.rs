@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListApplicationInstances`](crate::operation::list_application_instances::builders::ListApplicationInstancesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_application_instances::builders::ListApplicationInstancesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`device_id(impl Into<String>)`](crate::operation::list_application_instances::builders::ListApplicationInstancesFluentBuilder::device_id) / [`set_device_id(Option<String>)`](crate::operation::list_application_instances::builders::ListApplicationInstancesFluentBuilder::set_device_id):<br>required: **false**<br><p>The application instances' device ID.</p><br>
     ///   - [`status_filter(StatusFilter)`](crate::operation::list_application_instances::builders::ListApplicationInstancesFluentBuilder::status_filter) / [`set_status_filter(Option<StatusFilter>)`](crate::operation::list_application_instances::builders::ListApplicationInstancesFluentBuilder::set_status_filter):<br>required: **false**<br><p>Only include instances with a specific status.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_application_instances::builders::ListApplicationInstancesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_application_instances::builders::ListApplicationInstancesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of application instances to return in one page of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_application_instances::builders::ListApplicationInstancesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_application_instances::builders::ListApplicationInstancesFluentBuilder::set_next_token):<br>required: **false**<br><p>Specify the pagination token from a previous request to retrieve the next page of results.</p><br>
-    /// - On success, responds with [`ListApplicationInstancesOutput`](crate::operation::list_application_instances::ListApplicationInstancesOutput) with field(s):
+                            /// - On success, responds with [`ListApplicationInstancesOutput`](crate::operation::list_application_instances::ListApplicationInstancesOutput) with field(s):
     ///   - [`application_instances(Option<Vec::<ApplicationInstance>>)`](crate::operation::list_application_instances::ListApplicationInstancesOutput::application_instances): <p>A list of application instances.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_application_instances::ListApplicationInstancesOutput::next_token): <p>A pagination token that's included if more results are available.</p>
-    /// - On failure, responds with [`SdkError<ListApplicationInstancesError>`](crate::operation::list_application_instances::ListApplicationInstancesError)
+                            /// - On failure, responds with [`SdkError<ListApplicationInstancesError>`](crate::operation::list_application_instances::ListApplicationInstancesError)
     pub fn list_application_instances(&self) -> crate::operation::list_application_instances::builders::ListApplicationInstancesFluentBuilder {
-        crate::operation::list_application_instances::builders::ListApplicationInstancesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_application_instances::builders::ListApplicationInstancesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

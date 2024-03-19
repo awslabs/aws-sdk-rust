@@ -3,7 +3,7 @@
 /// <p>Specifies how the lifecycle policy should apply actions to selected resources.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LifecyclePolicyDetailActionIncludeResources {
+pub struct LifecyclePolicyDetailActionIncludeResources  {
     /// <p>Specifies whether the lifecycle action should apply to distributed AMIs.</p>
     pub amis: bool,
     /// <p>Specifies whether the lifecycle action should apply to snapshots associated with distributed AMIs.</p>
@@ -11,7 +11,7 @@ pub struct LifecyclePolicyDetailActionIncludeResources {
     /// <p>Specifies whether the lifecycle action should apply to distributed containers.</p>
     pub containers: bool,
 }
-impl LifecyclePolicyDetailActionIncludeResources {
+impl  LifecyclePolicyDetailActionIncludeResources  {
     /// <p>Specifies whether the lifecycle action should apply to distributed AMIs.</p>
     pub fn amis(&self) -> bool {
         self.amis
@@ -48,8 +48,7 @@ impl LifecyclePolicyDetailActionIncludeResourcesBuilder {
     }
     /// <p>Specifies whether the lifecycle action should apply to distributed AMIs.</p>
     pub fn set_amis(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.amis = input;
-        self
+        self.amis = input; self
     }
     /// <p>Specifies whether the lifecycle action should apply to distributed AMIs.</p>
     pub fn get_amis(&self) -> &::std::option::Option<bool> {
@@ -62,8 +61,7 @@ impl LifecyclePolicyDetailActionIncludeResourcesBuilder {
     }
     /// <p>Specifies whether the lifecycle action should apply to snapshots associated with distributed AMIs.</p>
     pub fn set_snapshots(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.snapshots = input;
-        self
+        self.snapshots = input; self
     }
     /// <p>Specifies whether the lifecycle action should apply to snapshots associated with distributed AMIs.</p>
     pub fn get_snapshots(&self) -> &::std::option::Option<bool> {
@@ -76,8 +74,7 @@ impl LifecyclePolicyDetailActionIncludeResourcesBuilder {
     }
     /// <p>Specifies whether the lifecycle action should apply to distributed containers.</p>
     pub fn set_containers(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.containers = input;
-        self
+        self.containers = input; self
     }
     /// <p>Specifies whether the lifecycle action should apply to distributed containers.</p>
     pub fn get_containers(&self) -> &::std::option::Option<bool> {
@@ -86,9 +83,16 @@ impl LifecyclePolicyDetailActionIncludeResourcesBuilder {
     /// Consumes the builder and constructs a [`LifecyclePolicyDetailActionIncludeResources`](crate::types::LifecyclePolicyDetailActionIncludeResources).
     pub fn build(self) -> crate::types::LifecyclePolicyDetailActionIncludeResources {
         crate::types::LifecyclePolicyDetailActionIncludeResources {
-            amis: self.amis.unwrap_or_default(),
-            snapshots: self.snapshots.unwrap_or_default(),
-            containers: self.containers.unwrap_or_default(),
+            amis: self.amis
+                .unwrap_or_default()
+            ,
+            snapshots: self.snapshots
+                .unwrap_or_default()
+            ,
+            containers: self.containers
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

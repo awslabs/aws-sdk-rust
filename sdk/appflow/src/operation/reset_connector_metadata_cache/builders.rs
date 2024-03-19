@@ -5,55 +5,51 @@ pub use crate::operation::reset_connector_metadata_cache::_reset_connector_metad
 
 impl ResetConnectorMetadataCacheInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.reset_connector_metadata_cache();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.reset_connector_metadata_cache();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ResetConnectorMetadataCache`.
-///
+/// 
 /// <p>Resets metadata about your connector entities that Amazon AppFlow stored in its cache. Use this action when you want Amazon AppFlow to return the latest information about the data that you have in a source application.</p>
 /// <p>Amazon AppFlow returns metadata about your entities when you use the ListConnectorEntities or DescribeConnectorEntities actions. Following these actions, Amazon AppFlow caches the metadata to reduce the number of API requests that it must send to the source application. Amazon AppFlow automatically resets the cache once every hour, but you can use this action when you want to get the latest metadata right away.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResetConnectorMetadataCacheFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::reset_connector_metadata_cache::builders::ResetConnectorMetadataCacheInputBuilder,
+                    inner: crate::operation::reset_connector_metadata_cache::builders::ResetConnectorMetadataCacheInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheOutput,
-        crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheError,
-    > for ResetConnectorMetadataCacheFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheOutput,
-            crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheOutput,
+                    crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheError,
+                > for ResetConnectorMetadataCacheFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheOutput,
+                        crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ResetConnectorMetadataCacheFluentBuilder {
     /// Creates a new `ResetConnectorMetadataCache`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl ResetConnectorMetadataCacheFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCache::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCache::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheOutput,
-        crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCache::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCache::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheOutput, crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the connector profile that you want to reset cached metadata for.</p>
     /// <p>You can omit this parameter if you're resetting the cache for any of the following connectors: Amazon Connect, Amazon EventBridge, Amazon Lookout for Metrics, Amazon S3, or Upsolver. If you're resetting the cache for any other connector, you must include this parameter in your request.</p>
     pub fn connector_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -201,3 +188,4 @@ impl ResetConnectorMetadataCacheFluentBuilder {
         self.inner.get_api_version()
     }
 }
+

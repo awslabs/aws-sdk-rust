@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMemberInput {
+pub struct GetMemberInput  {
     /// <p>The unique identifier of the network to which the member belongs.</p>
     pub network_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the member.</p>
     pub member_id: ::std::option::Option<::std::string::String>,
 }
-impl GetMemberInput {
+impl  GetMemberInput  {
     /// <p>The unique identifier of the network to which the member belongs.</p>
-    pub fn network_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_id(&self) -> ::std::option::Option<& str> {
         self.network_id.as_deref()
     }
     /// <p>The unique identifier of the member.</p>
-    pub fn member_id(&self) -> ::std::option::Option<&str> {
+    pub fn member_id(&self) -> ::std::option::Option<& str> {
         self.member_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetMemberInputBuilder {
     }
     /// <p>The unique identifier of the network to which the member belongs.</p>
     pub fn set_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_id = input;
-        self
+        self.network_id = input; self
     }
     /// <p>The unique identifier of the network to which the member belongs.</p>
     pub fn get_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl GetMemberInputBuilder {
     }
     /// <p>The unique identifier of the member.</p>
     pub fn set_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.member_id = input;
-        self
+        self.member_id = input; self
     }
     /// <p>The unique identifier of the member.</p>
     pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,9 +63,14 @@ impl GetMemberInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetMemberInput`](crate::operation::get_member::GetMemberInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_member::GetMemberInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_member::GetMemberInput {
-            network_id: self.network_id,
-            member_id: self.member_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_member::GetMemberInput {
+                network_id: self.network_id
+                ,
+                member_id: self.member_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Configuration for validating an application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AppValidationConfiguration {
+pub struct AppValidationConfiguration  {
     /// <p>The ID of the validation.</p>
     pub validation_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configuration.</p>
@@ -13,21 +13,21 @@ pub struct AppValidationConfiguration {
     /// <p>The validation parameters.</p>
     pub ssm_validation_parameters: ::std::option::Option<crate::types::SsmValidationParameters>,
 }
-impl AppValidationConfiguration {
+impl  AppValidationConfiguration  {
     /// <p>The ID of the validation.</p>
-    pub fn validation_id(&self) -> ::std::option::Option<&str> {
+    pub fn validation_id(&self) -> ::std::option::Option<& str> {
         self.validation_id.as_deref()
     }
     /// <p>The name of the configuration.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The validation strategy.</p>
-    pub fn app_validation_strategy(&self) -> ::std::option::Option<&crate::types::AppValidationStrategy> {
+    pub fn app_validation_strategy(&self) -> ::std::option::Option<& crate::types::AppValidationStrategy> {
         self.app_validation_strategy.as_ref()
     }
     /// <p>The validation parameters.</p>
-    pub fn ssm_validation_parameters(&self) -> ::std::option::Option<&crate::types::SsmValidationParameters> {
+    pub fn ssm_validation_parameters(&self) -> ::std::option::Option<& crate::types::SsmValidationParameters> {
         self.ssm_validation_parameters.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl AppValidationConfigurationBuilder {
     }
     /// <p>The ID of the validation.</p>
     pub fn set_validation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.validation_id = input;
-        self
+        self.validation_id = input; self
     }
     /// <p>The ID of the validation.</p>
     pub fn get_validation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl AppValidationConfigurationBuilder {
     }
     /// <p>The name of the configuration.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the configuration.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl AppValidationConfigurationBuilder {
     }
     /// <p>The validation strategy.</p>
     pub fn set_app_validation_strategy(mut self, input: ::std::option::Option<crate::types::AppValidationStrategy>) -> Self {
-        self.app_validation_strategy = input;
-        self
+        self.app_validation_strategy = input; self
     }
     /// <p>The validation strategy.</p>
     pub fn get_app_validation_strategy(&self) -> &::std::option::Option<crate::types::AppValidationStrategy> {
@@ -97,8 +94,7 @@ impl AppValidationConfigurationBuilder {
     }
     /// <p>The validation parameters.</p>
     pub fn set_ssm_validation_parameters(mut self, input: ::std::option::Option<crate::types::SsmValidationParameters>) -> Self {
-        self.ssm_validation_parameters = input;
-        self
+        self.ssm_validation_parameters = input; self
     }
     /// <p>The validation parameters.</p>
     pub fn get_ssm_validation_parameters(&self) -> &::std::option::Option<crate::types::SsmValidationParameters> {
@@ -107,10 +103,15 @@ impl AppValidationConfigurationBuilder {
     /// Consumes the builder and constructs a [`AppValidationConfiguration`](crate::types::AppValidationConfiguration).
     pub fn build(self) -> crate::types::AppValidationConfiguration {
         crate::types::AppValidationConfiguration {
-            validation_id: self.validation_id,
-            name: self.name,
-            app_validation_strategy: self.app_validation_strategy,
-            ssm_validation_parameters: self.ssm_validation_parameters,
+            validation_id: self.validation_id
+            ,
+            name: self.name
+            ,
+            app_validation_strategy: self.app_validation_strategy
+            ,
+            ssm_validation_parameters: self.ssm_validation_parameters
+            ,
         }
     }
 }
+

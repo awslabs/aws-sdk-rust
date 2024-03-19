@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeNotificationConfigurationOutput {
+pub struct DescribeNotificationConfigurationOutput  {
     /// <p>The structure that contains the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
     pub notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
     _request_id: Option<String>,
 }
-impl DescribeNotificationConfigurationOutput {
+impl  DescribeNotificationConfigurationOutput  {
     /// <p>The structure that contains the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
-    pub fn notification_configuration(&self) -> ::std::option::Option<&crate::types::NotificationConfiguration> {
+    pub fn notification_configuration(&self) -> ::std::option::Option<& crate::types::NotificationConfiguration> {
         self.notification_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeNotificationConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeNotificationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeNotificationConfigurationOutput`](crate::operation::describe_notification_configuration::DescribeNotificationConfigurationOutput).
     pub fn builder() -> crate::operation::describe_notification_configuration::builders::DescribeNotificationConfigurationOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeNotificationConfigurationOutputBuilder {
     }
     /// <p>The structure that contains the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
     pub fn set_notification_configuration(mut self, input: ::std::option::Option<crate::types::NotificationConfiguration>) -> Self {
-        self.notification_configuration = input;
-        self
+        self.notification_configuration = input; self
     }
     /// <p>The structure that contains the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
     pub fn get_notification_configuration(&self) -> &::std::option::Option<crate::types::NotificationConfiguration> {
         &self.notification_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeNotificationConfigurationOutput`](crate::operation::describe_notification_configuration::DescribeNotificationConfigurationOutput).
     pub fn build(self) -> crate::operation::describe_notification_configuration::DescribeNotificationConfigurationOutput {
         crate::operation::describe_notification_configuration::DescribeNotificationConfigurationOutput {
-            notification_configuration: self.notification_configuration,
+            notification_configuration: self.notification_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

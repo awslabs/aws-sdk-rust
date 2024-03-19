@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEnabledControlOutput {
+pub struct GetEnabledControlOutput  {
     /// <p>Information about the enabled control.</p>
     pub enabled_control_details: ::std::option::Option<crate::types::EnabledControlDetails>,
     _request_id: Option<String>,
 }
-impl GetEnabledControlOutput {
+impl  GetEnabledControlOutput  {
     /// <p>Information about the enabled control.</p>
-    pub fn enabled_control_details(&self) -> ::std::option::Option<&crate::types::EnabledControlDetails> {
+    pub fn enabled_control_details(&self) -> ::std::option::Option<& crate::types::EnabledControlDetails> {
         self.enabled_control_details.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetEnabledControlOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetEnabledControlOutput {
     /// Creates a new builder-style object to manufacture [`GetEnabledControlOutput`](crate::operation::get_enabled_control::GetEnabledControlOutput).
     pub fn builder() -> crate::operation::get_enabled_control::builders::GetEnabledControlOutputBuilder {
@@ -41,27 +41,28 @@ impl GetEnabledControlOutputBuilder {
     }
     /// <p>Information about the enabled control.</p>
     pub fn set_enabled_control_details(mut self, input: ::std::option::Option<crate::types::EnabledControlDetails>) -> Self {
-        self.enabled_control_details = input;
-        self
+        self.enabled_control_details = input; self
     }
     /// <p>Information about the enabled control.</p>
     pub fn get_enabled_control_details(&self) -> &::std::option::Option<crate::types::EnabledControlDetails> {
         &self.enabled_control_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetEnabledControlOutput`](crate::operation::get_enabled_control::GetEnabledControlOutput).
     pub fn build(self) -> crate::operation::get_enabled_control::GetEnabledControlOutput {
         crate::operation::get_enabled_control::GetEnabledControlOutput {
-            enabled_control_details: self.enabled_control_details,
+            enabled_control_details: self.enabled_control_details
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

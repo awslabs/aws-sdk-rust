@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecuteQueryInput {
+pub struct ExecuteQueryInput  {
     /// <p>The IoT SiteWise query statement.</p>
     pub query_statement: ::std::option::Option<::std::string::String>,
     /// <p>The string that specifies the next page of results.</p>
@@ -10,13 +10,13 @@ pub struct ExecuteQueryInput {
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ExecuteQueryInput {
+impl  ExecuteQueryInput  {
     /// <p>The IoT SiteWise query statement.</p>
-    pub fn query_statement(&self) -> ::std::option::Option<&str> {
+    pub fn query_statement(&self) -> ::std::option::Option<& str> {
         self.query_statement.as_deref()
     }
     /// <p>The string that specifies the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
@@ -48,8 +48,7 @@ impl ExecuteQueryInputBuilder {
     }
     /// <p>The IoT SiteWise query statement.</p>
     pub fn set_query_statement(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_statement = input;
-        self
+        self.query_statement = input; self
     }
     /// <p>The IoT SiteWise query statement.</p>
     pub fn get_query_statement(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ExecuteQueryInputBuilder {
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,21 +74,24 @@ impl ExecuteQueryInputBuilder {
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ExecuteQueryInput`](crate::operation::execute_query::ExecuteQueryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::execute_query::ExecuteQueryInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::execute_query::ExecuteQueryInput {
-            query_statement: self.query_statement,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::execute_query::ExecuteQueryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::execute_query::ExecuteQueryInput {
+                query_statement: self.query_statement
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

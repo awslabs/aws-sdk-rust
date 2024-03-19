@@ -3,7 +3,7 @@
 /// <p>Provides metadata for a dataset.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Dataset {
+pub struct Dataset  {
     /// <p>The name of the dataset.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset that you want metadata for.</p>
@@ -44,17 +44,17 @@ pub struct Dataset {
     /// <p>The ID of the event tracker for an Action interactions dataset. You specify the tracker's ID in the <code>PutActionInteractions</code> API operation. Amazon Personalize uses it to direct new data to the Action interactions dataset in your dataset group.</p>
     pub tracking_id: ::std::option::Option<::std::string::String>,
 }
-impl Dataset {
+impl  Dataset  {
     /// <p>The name of the dataset.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset that you want metadata for.</p>
-    pub fn dataset_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
-    pub fn dataset_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_group_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_group_arn.as_deref()
     }
     /// <p>One of the following values:</p>
@@ -70,11 +70,11 @@ impl Dataset {
     /// <li>
     /// <p>Action_Interactions</p></li>
     /// </ul>
-    pub fn dataset_type(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_type(&self) -> ::std::option::Option<& str> {
         self.dataset_type.as_deref()
     }
     /// <p>The ARN of the associated schema.</p>
-    pub fn schema_arn(&self) -> ::std::option::Option<&str> {
+    pub fn schema_arn(&self) -> ::std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
     /// <p>The status of the dataset.</p>
@@ -85,23 +85,23 @@ impl Dataset {
     /// <li>
     /// <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The creation date and time (in Unix time) of the dataset.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>A time stamp that shows when the dataset was updated.</p>
-    pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>Describes the latest update to the dataset.</p>
-    pub fn latest_dataset_update(&self) -> ::std::option::Option<&crate::types::DatasetUpdateSummary> {
+    pub fn latest_dataset_update(&self) -> ::std::option::Option<& crate::types::DatasetUpdateSummary> {
         self.latest_dataset_update.as_ref()
     }
     /// <p>The ID of the event tracker for an Action interactions dataset. You specify the tracker's ID in the <code>PutActionInteractions</code> API operation. Amazon Personalize uses it to direct new data to the Action interactions dataset in your dataset group.</p>
-    pub fn tracking_id(&self) -> ::std::option::Option<&str> {
+    pub fn tracking_id(&self) -> ::std::option::Option<& str> {
         self.tracking_id.as_deref()
     }
 }
@@ -135,8 +135,7 @@ impl DatasetBuilder {
     }
     /// <p>The name of the dataset.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the dataset.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +148,7 @@ impl DatasetBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset that you want metadata for.</p>
     pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_arn = input;
-        self
+        self.dataset_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset that you want metadata for.</p>
     pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,8 +161,7 @@ impl DatasetBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
     pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_group_arn = input;
-        self
+        self.dataset_group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
     pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -201,8 +198,7 @@ impl DatasetBuilder {
     /// <p>Action_Interactions</p></li>
     /// </ul>
     pub fn set_dataset_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_type = input;
-        self
+        self.dataset_type = input; self
     }
     /// <p>One of the following values:</p>
     /// <ul>
@@ -227,8 +223,7 @@ impl DatasetBuilder {
     }
     /// <p>The ARN of the associated schema.</p>
     pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_arn = input;
-        self
+        self.schema_arn = input; self
     }
     /// <p>The ARN of the associated schema.</p>
     pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -255,8 +250,7 @@ impl DatasetBuilder {
     /// <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the dataset.</p>
     /// <p>A dataset can be in one of the following states:</p>
@@ -276,8 +270,7 @@ impl DatasetBuilder {
     }
     /// <p>The creation date and time (in Unix time) of the dataset.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>The creation date and time (in Unix time) of the dataset.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -290,8 +283,7 @@ impl DatasetBuilder {
     }
     /// <p>A time stamp that shows when the dataset was updated.</p>
     pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date_time = input;
-        self
+        self.last_updated_date_time = input; self
     }
     /// <p>A time stamp that shows when the dataset was updated.</p>
     pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -304,8 +296,7 @@ impl DatasetBuilder {
     }
     /// <p>Describes the latest update to the dataset.</p>
     pub fn set_latest_dataset_update(mut self, input: ::std::option::Option<crate::types::DatasetUpdateSummary>) -> Self {
-        self.latest_dataset_update = input;
-        self
+        self.latest_dataset_update = input; self
     }
     /// <p>Describes the latest update to the dataset.</p>
     pub fn get_latest_dataset_update(&self) -> &::std::option::Option<crate::types::DatasetUpdateSummary> {
@@ -318,8 +309,7 @@ impl DatasetBuilder {
     }
     /// <p>The ID of the event tracker for an Action interactions dataset. You specify the tracker's ID in the <code>PutActionInteractions</code> API operation. Amazon Personalize uses it to direct new data to the Action interactions dataset in your dataset group.</p>
     pub fn set_tracking_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tracking_id = input;
-        self
+        self.tracking_id = input; self
     }
     /// <p>The ID of the event tracker for an Action interactions dataset. You specify the tracker's ID in the <code>PutActionInteractions</code> API operation. Amazon Personalize uses it to direct new data to the Action interactions dataset in your dataset group.</p>
     pub fn get_tracking_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -328,16 +318,27 @@ impl DatasetBuilder {
     /// Consumes the builder and constructs a [`Dataset`](crate::types::Dataset).
     pub fn build(self) -> crate::types::Dataset {
         crate::types::Dataset {
-            name: self.name,
-            dataset_arn: self.dataset_arn,
-            dataset_group_arn: self.dataset_group_arn,
-            dataset_type: self.dataset_type,
-            schema_arn: self.schema_arn,
-            status: self.status,
-            creation_date_time: self.creation_date_time,
-            last_updated_date_time: self.last_updated_date_time,
-            latest_dataset_update: self.latest_dataset_update,
-            tracking_id: self.tracking_id,
+            name: self.name
+            ,
+            dataset_arn: self.dataset_arn
+            ,
+            dataset_group_arn: self.dataset_group_arn
+            ,
+            dataset_type: self.dataset_type
+            ,
+            schema_arn: self.schema_arn
+            ,
+            status: self.status
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            last_updated_date_time: self.last_updated_date_time
+            ,
+            latest_dataset_update: self.latest_dataset_update
+            ,
+            tracking_id: self.tracking_id
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSnapshotBlockInput {
+pub struct GetSnapshotBlockInput  {
     /// <p>The ID of the snapshot containing the block from which to get data.</p><important>
     /// <p>If the specified snapshot is encrypted, you must have permission to use the KMS key that was used to encrypt the snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// </important>
@@ -12,11 +12,11 @@ pub struct GetSnapshotBlockInput {
     /// <p>The block token of the block from which to get data. You can obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or <code>ListSnapshotBlocks</code> operations.</p>
     pub block_token: ::std::option::Option<::std::string::String>,
 }
-impl GetSnapshotBlockInput {
+impl  GetSnapshotBlockInput  {
     /// <p>The ID of the snapshot containing the block from which to get data.</p><important>
     /// <p>If the specified snapshot is encrypted, you must have permission to use the KMS key that was used to encrypt the snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// </important>
-    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> ::std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The block index of the block in which to read the data. A block index is a logical index in units of <code>512</code> KiB blocks. To identify the block index, divide the logical offset of the data in the logical volume by the block size (logical offset of data/<code>524288</code>). The logical offset of the data must be <code>512</code> KiB aligned.</p>
@@ -24,7 +24,7 @@ impl GetSnapshotBlockInput {
         self.block_index
     }
     /// <p>The block token of the block from which to get data. You can obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or <code>ListSnapshotBlocks</code> operations.</p>
-    pub fn block_token(&self) -> ::std::option::Option<&str> {
+    pub fn block_token(&self) -> ::std::option::Option<& str> {
         self.block_token.as_deref()
     }
 }
@@ -56,8 +56,7 @@ impl GetSnapshotBlockInputBuilder {
     /// <p>If the specified snapshot is encrypted, you must have permission to use the KMS key that was used to encrypt the snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// </important>
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_id = input;
-        self
+        self.snapshot_id = input; self
     }
     /// <p>The ID of the snapshot containing the block from which to get data.</p><important>
     /// <p>If the specified snapshot is encrypted, you must have permission to use the KMS key that was used to encrypt the snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
@@ -73,8 +72,7 @@ impl GetSnapshotBlockInputBuilder {
     }
     /// <p>The block index of the block in which to read the data. A block index is a logical index in units of <code>512</code> KiB blocks. To identify the block index, divide the logical offset of the data in the logical volume by the block size (logical offset of data/<code>524288</code>). The logical offset of the data must be <code>512</code> KiB aligned.</p>
     pub fn set_block_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.block_index = input;
-        self
+        self.block_index = input; self
     }
     /// <p>The block index of the block in which to read the data. A block index is a logical index in units of <code>512</code> KiB blocks. To identify the block index, divide the logical offset of the data in the logical volume by the block size (logical offset of data/<code>524288</code>). The logical offset of the data must be <code>512</code> KiB aligned.</p>
     pub fn get_block_index(&self) -> &::std::option::Option<i32> {
@@ -88,21 +86,24 @@ impl GetSnapshotBlockInputBuilder {
     }
     /// <p>The block token of the block from which to get data. You can obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or <code>ListSnapshotBlocks</code> operations.</p>
     pub fn set_block_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.block_token = input;
-        self
+        self.block_token = input; self
     }
     /// <p>The block token of the block from which to get data. You can obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or <code>ListSnapshotBlocks</code> operations.</p>
     pub fn get_block_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.block_token
     }
     /// Consumes the builder and constructs a [`GetSnapshotBlockInput`](crate::operation::get_snapshot_block::GetSnapshotBlockInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_snapshot_block::GetSnapshotBlockInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_snapshot_block::GetSnapshotBlockInput {
-            snapshot_id: self.snapshot_id,
-            block_index: self.block_index,
-            block_token: self.block_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_snapshot_block::GetSnapshotBlockInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_snapshot_block::GetSnapshotBlockInput {
+                snapshot_id: self.snapshot_id
+                ,
+                block_index: self.block_index
+                ,
+                block_token: self.block_token
+                ,
+            }
+        )
     }
 }
+

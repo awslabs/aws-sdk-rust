@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateKeyspaceOutput {
+pub struct CreateKeyspaceOutput  {
     /// <p>The unique identifier of the keyspace in the format of an Amazon Resource Name (ARN).</p>
     pub resource_arn: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CreateKeyspaceOutput {
+impl  CreateKeyspaceOutput  {
     /// <p>The unique identifier of the keyspace in the format of an Amazon Resource Name (ARN).</p>
-    pub fn resource_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_arn.deref()
+    pub fn resource_arn(&self) -> & str {
+        use std::ops::Deref; self.resource_arn.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateKeyspaceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateKeyspaceOutput {
     /// Creates a new builder-style object to manufacture [`CreateKeyspaceOutput`](crate::operation::create_keyspace::CreateKeyspaceOutput).
     pub fn builder() -> crate::operation::create_keyspace::builders::CreateKeyspaceOutputBuilder {
@@ -42,36 +41,35 @@ impl CreateKeyspaceOutputBuilder {
     }
     /// <p>The unique identifier of the keyspace in the format of an Amazon Resource Name (ARN).</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The unique identifier of the keyspace in the format of an Amazon Resource Name (ARN).</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateKeyspaceOutput`](crate::operation::create_keyspace::CreateKeyspaceOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_arn`](crate::operation::create_keyspace::builders::CreateKeyspaceOutputBuilder::resource_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_keyspace::CreateKeyspaceOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_keyspace::CreateKeyspaceOutput {
-            resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_arn",
-                    "resource_arn was not specified but it is required when building CreateKeyspaceOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_keyspace::CreateKeyspaceOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_keyspace::CreateKeyspaceOutput {
+                resource_arn: self.resource_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_arn", "resource_arn was not specified but it is required when building CreateKeyspaceOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

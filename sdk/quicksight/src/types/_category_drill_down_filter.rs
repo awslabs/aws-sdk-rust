@@ -3,21 +3,20 @@
 /// <p>The numeric equality type drill down filter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CategoryDrillDownFilter {
+pub struct CategoryDrillDownFilter  {
     /// <p>The column that the filter is applied to.</p>
     pub column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>A list of the string inputs that are the values of the category drill down filter.</p>
-    pub category_values: ::std::vec::Vec<::std::string::String>,
+    pub category_values: ::std::vec::Vec::<::std::string::String>,
 }
-impl CategoryDrillDownFilter {
+impl  CategoryDrillDownFilter  {
     /// <p>The column that the filter is applied to.</p>
-    pub fn column(&self) -> ::std::option::Option<&crate::types::ColumnIdentifier> {
+    pub fn column(&self) -> ::std::option::Option<& crate::types::ColumnIdentifier> {
         self.column.as_ref()
     }
     /// <p>A list of the string inputs that are the values of the category drill down filter.</p>
-    pub fn category_values(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.category_values.deref()
+    pub fn category_values(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.category_values.deref()
     }
 }
 impl CategoryDrillDownFilter {
@@ -32,7 +31,7 @@ impl CategoryDrillDownFilter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CategoryDrillDownFilterBuilder {
     pub(crate) column: ::std::option::Option<crate::types::ColumnIdentifier>,
-    pub(crate) category_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) category_values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl CategoryDrillDownFilterBuilder {
     /// <p>The column that the filter is applied to.</p>
@@ -43,8 +42,7 @@ impl CategoryDrillDownFilterBuilder {
     }
     /// <p>The column that the filter is applied to.</p>
     pub fn set_column(mut self, input: ::std::option::Option<crate::types::ColumnIdentifier>) -> Self {
-        self.column = input;
-        self
+        self.column = input; self
     }
     /// <p>The column that the filter is applied to.</p>
     pub fn get_column(&self) -> &::std::option::Option<crate::types::ColumnIdentifier> {
@@ -57,31 +55,33 @@ impl CategoryDrillDownFilterBuilder {
     /// <p>A list of the string inputs that are the values of the category drill down filter.</p>
     pub fn category_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.category_values.unwrap_or_default();
-        v.push(input.into());
-        self.category_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.category_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the string inputs that are the values of the category drill down filter.</p>
-    pub fn set_category_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.category_values = input;
-        self
+    pub fn set_category_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.category_values = input; self
     }
     /// <p>A list of the string inputs that are the values of the category drill down filter.</p>
-    pub fn get_category_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_category_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.category_values
     }
     /// Consumes the builder and constructs a [`CategoryDrillDownFilter`](crate::types::CategoryDrillDownFilter).
     /// This method will fail if any of the following fields are not set:
     /// - [`category_values`](crate::types::builders::CategoryDrillDownFilterBuilder::category_values)
     pub fn build(self) -> ::std::result::Result<crate::types::CategoryDrillDownFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CategoryDrillDownFilter {
-            column: self.column,
-            category_values: self.category_values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "category_values",
-                    "category_values was not specified but it is required when building CategoryDrillDownFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CategoryDrillDownFilter {
+                column: self.column
+                ,
+                category_values: self.category_values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("category_values", "category_values was not specified but it is required when building CategoryDrillDownFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

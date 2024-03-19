@@ -3,7 +3,7 @@
 /// <p>The parameters for a block device for an EBS volume.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LaunchTemplateEbsBlockDeviceRequest {
+pub struct LaunchTemplateEbsBlockDeviceRequest  {
     /// <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be attached to instances that support Amazon EBS encryption. If you are creating a volume from a snapshot, you can't specify an encryption value.</p>
     pub encrypted: ::std::option::Option<bool>,
     /// <p>Indicates whether the EBS volume is deleted on instance termination.</p>
@@ -45,7 +45,7 @@ pub struct LaunchTemplateEbsBlockDeviceRequest {
     /// <p>Valid Range: Minimum value of 125. Maximum value of 1000.</p>
     pub throughput: ::std::option::Option<i32>,
 }
-impl LaunchTemplateEbsBlockDeviceRequest {
+impl  LaunchTemplateEbsBlockDeviceRequest  {
     /// <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be attached to instances that support Amazon EBS encryption. If you are creating a volume from a snapshot, you can't specify an encryption value.</p>
     pub fn encrypted(&self) -> ::std::option::Option<bool> {
         self.encrypted
@@ -70,11 +70,11 @@ impl LaunchTemplateEbsBlockDeviceRequest {
         self.iops
     }
     /// <p>The ARN of the symmetric Key Management Service (KMS) CMK used for encryption.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The ID of the snapshot.</p>
-    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> ::std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. The following are the supported volumes sizes for each volume type:</p>
@@ -94,7 +94,7 @@ impl LaunchTemplateEbsBlockDeviceRequest {
         self.volume_size
     }
     /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon EBS volume types</a> in the <i>Amazon EBS User Guide</i>.</p>
-    pub fn volume_type(&self) -> ::std::option::Option<&crate::types::VolumeType> {
+    pub fn volume_type(&self) -> ::std::option::Option<& crate::types::VolumeType> {
         self.volume_type.as_ref()
     }
     /// <p>The throughput to provision for a <code>gp3</code> volume, with a maximum of 1,000 MiB/s.</p>
@@ -131,8 +131,7 @@ impl LaunchTemplateEbsBlockDeviceRequestBuilder {
     }
     /// <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be attached to instances that support Amazon EBS encryption. If you are creating a volume from a snapshot, you can't specify an encryption value.</p>
     pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.encrypted = input;
-        self
+        self.encrypted = input; self
     }
     /// <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be attached to instances that support Amazon EBS encryption. If you are creating a volume from a snapshot, you can't specify an encryption value.</p>
     pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
@@ -145,8 +144,7 @@ impl LaunchTemplateEbsBlockDeviceRequestBuilder {
     }
     /// <p>Indicates whether the EBS volume is deleted on instance termination.</p>
     pub fn set_delete_on_termination(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.delete_on_termination = input;
-        self
+        self.delete_on_termination = input; self
     }
     /// <p>Indicates whether the EBS volume is deleted on instance termination.</p>
     pub fn get_delete_on_termination(&self) -> &::std::option::Option<bool> {
@@ -181,8 +179,7 @@ impl LaunchTemplateEbsBlockDeviceRequestBuilder {
     /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
     /// <p>This parameter is supported for <code>io1</code>, <code>io2</code>, and <code>gp3</code> volumes only.</p>
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.iops = input;
-        self
+        self.iops = input; self
     }
     /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
     /// <p>The following are the supported values for each volume type:</p>
@@ -206,8 +203,7 @@ impl LaunchTemplateEbsBlockDeviceRequestBuilder {
     }
     /// <p>The ARN of the symmetric Key Management Service (KMS) CMK used for encryption.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The ARN of the symmetric Key Management Service (KMS) CMK used for encryption.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -220,8 +216,7 @@ impl LaunchTemplateEbsBlockDeviceRequestBuilder {
     }
     /// <p>The ID of the snapshot.</p>
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_id = input;
-        self
+        self.snapshot_id = input; self
     }
     /// <p>The ID of the snapshot.</p>
     pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -258,8 +253,7 @@ impl LaunchTemplateEbsBlockDeviceRequestBuilder {
     /// <p><code>standard</code>: 1 - 1024 GiB</p></li>
     /// </ul>
     pub fn set_volume_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.volume_size = input;
-        self
+        self.volume_size = input; self
     }
     /// <p>The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. The following are the supported volumes sizes for each volume type:</p>
     /// <ul>
@@ -284,8 +278,7 @@ impl LaunchTemplateEbsBlockDeviceRequestBuilder {
     }
     /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon EBS volume types</a> in the <i>Amazon EBS User Guide</i>.</p>
     pub fn set_volume_type(mut self, input: ::std::option::Option<crate::types::VolumeType>) -> Self {
-        self.volume_type = input;
-        self
+        self.volume_type = input; self
     }
     /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon EBS volume types</a> in the <i>Amazon EBS User Guide</i>.</p>
     pub fn get_volume_type(&self) -> &::std::option::Option<crate::types::VolumeType> {
@@ -300,8 +293,7 @@ impl LaunchTemplateEbsBlockDeviceRequestBuilder {
     /// <p>The throughput to provision for a <code>gp3</code> volume, with a maximum of 1,000 MiB/s.</p>
     /// <p>Valid Range: Minimum value of 125. Maximum value of 1000.</p>
     pub fn set_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.throughput = input;
-        self
+        self.throughput = input; self
     }
     /// <p>The throughput to provision for a <code>gp3</code> volume, with a maximum of 1,000 MiB/s.</p>
     /// <p>Valid Range: Minimum value of 125. Maximum value of 1000.</p>
@@ -311,14 +303,23 @@ impl LaunchTemplateEbsBlockDeviceRequestBuilder {
     /// Consumes the builder and constructs a [`LaunchTemplateEbsBlockDeviceRequest`](crate::types::LaunchTemplateEbsBlockDeviceRequest).
     pub fn build(self) -> crate::types::LaunchTemplateEbsBlockDeviceRequest {
         crate::types::LaunchTemplateEbsBlockDeviceRequest {
-            encrypted: self.encrypted,
-            delete_on_termination: self.delete_on_termination,
-            iops: self.iops,
-            kms_key_id: self.kms_key_id,
-            snapshot_id: self.snapshot_id,
-            volume_size: self.volume_size,
-            volume_type: self.volume_type,
-            throughput: self.throughput,
+            encrypted: self.encrypted
+            ,
+            delete_on_termination: self.delete_on_termination
+            ,
+            iops: self.iops
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            snapshot_id: self.snapshot_id
+            ,
+            volume_size: self.volume_size
+            ,
+            volume_type: self.volume_type
+            ,
+            throughput: self.throughput
+            ,
         }
     }
 }
+

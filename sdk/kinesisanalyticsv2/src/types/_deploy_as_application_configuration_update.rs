@@ -3,13 +3,13 @@
 /// <p>Updates to the configuration information required to deploy an Amazon Data Analytics Studio notebook as an application with durable state.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeployAsApplicationConfigurationUpdate {
+pub struct DeployAsApplicationConfigurationUpdate  {
     /// <p>Updates to the location that holds the data required to specify an Amazon Data Analytics application.</p>
     pub s3_content_location_update: ::std::option::Option<crate::types::S3ContentBaseLocationUpdate>,
 }
-impl DeployAsApplicationConfigurationUpdate {
+impl  DeployAsApplicationConfigurationUpdate  {
     /// <p>Updates to the location that holds the data required to specify an Amazon Data Analytics application.</p>
-    pub fn s3_content_location_update(&self) -> ::std::option::Option<&crate::types::S3ContentBaseLocationUpdate> {
+    pub fn s3_content_location_update(&self) -> ::std::option::Option<& crate::types::S3ContentBaseLocationUpdate> {
         self.s3_content_location_update.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl DeployAsApplicationConfigurationUpdateBuilder {
     }
     /// <p>Updates to the location that holds the data required to specify an Amazon Data Analytics application.</p>
     pub fn set_s3_content_location_update(mut self, input: ::std::option::Option<crate::types::S3ContentBaseLocationUpdate>) -> Self {
-        self.s3_content_location_update = input;
-        self
+        self.s3_content_location_update = input; self
     }
     /// <p>Updates to the location that holds the data required to specify an Amazon Data Analytics application.</p>
     pub fn get_s3_content_location_update(&self) -> &::std::option::Option<crate::types::S3ContentBaseLocationUpdate> {
@@ -44,7 +43,9 @@ impl DeployAsApplicationConfigurationUpdateBuilder {
     /// Consumes the builder and constructs a [`DeployAsApplicationConfigurationUpdate`](crate::types::DeployAsApplicationConfigurationUpdate).
     pub fn build(self) -> crate::types::DeployAsApplicationConfigurationUpdate {
         crate::types::DeployAsApplicationConfigurationUpdate {
-            s3_content_location_update: self.s3_content_location_update,
+            s3_content_location_update: self.s3_content_location_update
+            ,
         }
     }
 }
+

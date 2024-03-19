@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFlowTemplateInput {
+pub struct UpdateFlowTemplateInput  {
     /// <p>The ID of the workflow to be updated.</p>
     /// <p>The ID should be in the following format.</p>
     /// <p><code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code></p>
@@ -13,15 +13,15 @@ pub struct UpdateFlowTemplateInput {
     /// <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow to update.</p>
     pub compatible_namespace_version: ::std::option::Option<i64>,
 }
-impl UpdateFlowTemplateInput {
+impl  UpdateFlowTemplateInput  {
     /// <p>The ID of the workflow to be updated.</p>
     /// <p>The ID should be in the following format.</p>
     /// <p><code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code></p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The <code>DefinitionDocument</code> that contains the updated workflow definition.</p>
-    pub fn definition(&self) -> ::std::option::Option<&crate::types::DefinitionDocument> {
+    pub fn definition(&self) -> ::std::option::Option<& crate::types::DefinitionDocument> {
         self.definition.as_ref()
     }
     /// <p>The version of the user's namespace.</p>
@@ -58,8 +58,7 @@ impl UpdateFlowTemplateInputBuilder {
     /// <p>The ID should be in the following format.</p>
     /// <p><code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code></p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the workflow to be updated.</p>
     /// <p>The ID should be in the following format.</p>
@@ -75,8 +74,7 @@ impl UpdateFlowTemplateInputBuilder {
     }
     /// <p>The <code>DefinitionDocument</code> that contains the updated workflow definition.</p>
     pub fn set_definition(mut self, input: ::std::option::Option<crate::types::DefinitionDocument>) -> Self {
-        self.definition = input;
-        self
+        self.definition = input; self
     }
     /// <p>The <code>DefinitionDocument</code> that contains the updated workflow definition.</p>
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::DefinitionDocument> {
@@ -91,8 +89,7 @@ impl UpdateFlowTemplateInputBuilder {
     /// <p>The version of the user's namespace.</p>
     /// <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow to update.</p>
     pub fn set_compatible_namespace_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.compatible_namespace_version = input;
-        self
+        self.compatible_namespace_version = input; self
     }
     /// <p>The version of the user's namespace.</p>
     /// <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow to update.</p>
@@ -100,14 +97,17 @@ impl UpdateFlowTemplateInputBuilder {
         &self.compatible_namespace_version
     }
     /// Consumes the builder and constructs a [`UpdateFlowTemplateInput`](crate::operation::update_flow_template::UpdateFlowTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_flow_template::UpdateFlowTemplateInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_flow_template::UpdateFlowTemplateInput {
-            id: self.id,
-            definition: self.definition,
-            compatible_namespace_version: self.compatible_namespace_version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_flow_template::UpdateFlowTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_flow_template::UpdateFlowTemplateInput {
+                id: self.id
+                ,
+                definition: self.definition
+                ,
+                compatible_namespace_version: self.compatible_namespace_version
+                ,
+            }
+        )
     }
 }
+

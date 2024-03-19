@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListFrameworks`](crate::operation::list_frameworks::builders::ListFrameworksFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_frameworks::builders::ListFrameworksFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_frameworks::builders::ListFrameworksFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_frameworks::builders::ListFrameworksFluentBuilder::set_max_results):<br>required: **false**<br><p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_frameworks::builders::ListFrameworksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_frameworks::builders::ListFrameworksFluentBuilder::set_next_token):<br>required: **false**<br><p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p><br>
-    /// - On success, responds with [`ListFrameworksOutput`](crate::operation::list_frameworks::ListFrameworksOutput) with field(s):
+                            /// - On success, responds with [`ListFrameworksOutput`](crate::operation::list_frameworks::ListFrameworksOutput) with field(s):
     ///   - [`frameworks(Option<Vec::<Framework>>)`](crate::operation::list_frameworks::ListFrameworksOutput::frameworks): <p>A list of frameworks with details for each framework, including the framework name, Amazon Resource Name (ARN), description, number of controls, creation time, and deployment status.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_frameworks::ListFrameworksOutput::next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    /// - On failure, responds with [`SdkError<ListFrameworksError>`](crate::operation::list_frameworks::ListFrameworksError)
+                            /// - On failure, responds with [`SdkError<ListFrameworksError>`](crate::operation::list_frameworks::ListFrameworksError)
     pub fn list_frameworks(&self) -> crate::operation::list_frameworks::builders::ListFrameworksFluentBuilder {
-        crate::operation::list_frameworks::builders::ListFrameworksFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_frameworks::builders::ListFrameworksFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,13 +3,13 @@
 /// <p>The conditions that trigger an automatic scaling activity.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScalingTrigger {
+pub struct ScalingTrigger  {
     /// <p>The definition of a CloudWatch metric alarm. When the defined alarm conditions are met along with other trigger parameters, scaling activity begins.</p>
     pub cloud_watch_alarm_definition: ::std::option::Option<crate::types::CloudWatchAlarmDefinition>,
 }
-impl ScalingTrigger {
+impl  ScalingTrigger  {
     /// <p>The definition of a CloudWatch metric alarm. When the defined alarm conditions are met along with other trigger parameters, scaling activity begins.</p>
-    pub fn cloud_watch_alarm_definition(&self) -> ::std::option::Option<&crate::types::CloudWatchAlarmDefinition> {
+    pub fn cloud_watch_alarm_definition(&self) -> ::std::option::Option<& crate::types::CloudWatchAlarmDefinition> {
         self.cloud_watch_alarm_definition.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl ScalingTriggerBuilder {
     }
     /// <p>The definition of a CloudWatch metric alarm. When the defined alarm conditions are met along with other trigger parameters, scaling activity begins.</p>
     pub fn set_cloud_watch_alarm_definition(mut self, input: ::std::option::Option<crate::types::CloudWatchAlarmDefinition>) -> Self {
-        self.cloud_watch_alarm_definition = input;
-        self
+        self.cloud_watch_alarm_definition = input; self
     }
     /// <p>The definition of a CloudWatch metric alarm. When the defined alarm conditions are met along with other trigger parameters, scaling activity begins.</p>
     pub fn get_cloud_watch_alarm_definition(&self) -> &::std::option::Option<crate::types::CloudWatchAlarmDefinition> {
@@ -45,7 +44,9 @@ impl ScalingTriggerBuilder {
     /// Consumes the builder and constructs a [`ScalingTrigger`](crate::types::ScalingTrigger).
     pub fn build(self) -> crate::types::ScalingTrigger {
         crate::types::ScalingTrigger {
-            cloud_watch_alarm_definition: self.cloud_watch_alarm_definition,
+            cloud_watch_alarm_definition: self.cloud_watch_alarm_definition
+            ,
         }
     }
 }
+

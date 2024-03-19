@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeApplicationOutput {
+pub struct DescribeApplicationOutput  {
     /// <p>The unique Id of the web application.</p>
     pub application_id: ::std::string::String,
     /// <p>The ARN of the web application.</p>
@@ -26,36 +26,32 @@ pub struct DescribeApplicationOutput {
     /// <p>A message indicating why the <code>DescribeApplication</code> API failed.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>A set of key/value pairs that you can use to manage the web application resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl DescribeApplicationOutput {
+impl  DescribeApplicationOutput  {
     /// <p>The unique Id of the web application.</p>
-    pub fn application_id(&self) -> &str {
-        use std::ops::Deref;
-        self.application_id.deref()
+    pub fn application_id(&self) -> & str {
+        use std::ops::Deref; self.application_id.deref()
     }
     /// <p>The ARN of the web application.</p>
-    pub fn application_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.application_arn.deref()
+    pub fn application_arn(&self) -> & str {
+        use std::ops::Deref; self.application_arn.deref()
     }
     /// <p>The name of the web application.</p>
-    pub fn application_name(&self) -> &str {
-        use std::ops::Deref;
-        self.application_name.deref()
+    pub fn application_name(&self) -> & str {
+        use std::ops::Deref; self.application_name.deref()
     }
     /// <p>An optional description of the web application.</p>
-    pub fn application_description(&self) -> ::std::option::Option<&str> {
+    pub fn application_description(&self) -> ::std::option::Option<& str> {
         self.application_description.as_deref()
     }
     /// <p>The URL of the web application.</p>
-    pub fn application_url(&self) -> &str {
-        use std::ops::Deref;
-        self.application_url.deref()
+    pub fn application_url(&self) -> & str {
+        use std::ops::Deref; self.application_url.deref()
     }
     /// <p>The current state of the web application.</p>
-    pub fn application_state(&self) -> &crate::types::ApplicationState {
+    pub fn application_state(&self) -> & crate::types::ApplicationState {
         &self.application_state
     }
     /// <p>The date (in Unix epoch time) when the application was created.</p>
@@ -67,28 +63,27 @@ impl DescribeApplicationOutput {
         self.application_last_update_date
     }
     /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
     /// <p>The Id of the single sign-on client that you use to authenticate and authorize users on the web application.</p>
-    pub fn sso_client_id(&self) -> ::std::option::Option<&str> {
+    pub fn sso_client_id(&self) -> ::std::option::Option<& str> {
         self.sso_client_id.as_deref()
     }
     /// <p>A message indicating why the <code>DescribeApplication</code> API failed.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>A set of key/value pairs that you can use to manage the web application resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeApplicationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeApplicationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationOutput`](crate::operation::describe_application::DescribeApplicationOutput).
     pub fn builder() -> crate::operation::describe_application::builders::DescribeApplicationOutputBuilder {
@@ -111,7 +106,7 @@ pub struct DescribeApplicationOutputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sso_client_id: ::std::option::Option<::std::string::String>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeApplicationOutputBuilder {
@@ -123,8 +118,7 @@ impl DescribeApplicationOutputBuilder {
     }
     /// <p>The unique Id of the web application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The unique Id of the web application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +132,7 @@ impl DescribeApplicationOutputBuilder {
     }
     /// <p>The ARN of the web application.</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_arn = input;
-        self
+        self.application_arn = input; self
     }
     /// <p>The ARN of the web application.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +146,7 @@ impl DescribeApplicationOutputBuilder {
     }
     /// <p>The name of the web application.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The name of the web application.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +159,7 @@ impl DescribeApplicationOutputBuilder {
     }
     /// <p>An optional description of the web application.</p>
     pub fn set_application_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_description = input;
-        self
+        self.application_description = input; self
     }
     /// <p>An optional description of the web application.</p>
     pub fn get_application_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -182,8 +173,7 @@ impl DescribeApplicationOutputBuilder {
     }
     /// <p>The URL of the web application.</p>
     pub fn set_application_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_url = input;
-        self
+        self.application_url = input; self
     }
     /// <p>The URL of the web application.</p>
     pub fn get_application_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -197,8 +187,7 @@ impl DescribeApplicationOutputBuilder {
     }
     /// <p>The current state of the web application.</p>
     pub fn set_application_state(mut self, input: ::std::option::Option<crate::types::ApplicationState>) -> Self {
-        self.application_state = input;
-        self
+        self.application_state = input; self
     }
     /// <p>The current state of the web application.</p>
     pub fn get_application_state(&self) -> &::std::option::Option<crate::types::ApplicationState> {
@@ -212,8 +201,7 @@ impl DescribeApplicationOutputBuilder {
     }
     /// <p>The date (in Unix epoch time) when the application was created.</p>
     pub fn set_application_creation_date(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.application_creation_date = input;
-        self
+        self.application_creation_date = input; self
     }
     /// <p>The date (in Unix epoch time) when the application was created.</p>
     pub fn get_application_creation_date(&self) -> &::std::option::Option<i64> {
@@ -227,8 +215,7 @@ impl DescribeApplicationOutputBuilder {
     }
     /// <p>The date (in Unix epoch time) when the application was last updated.</p>
     pub fn set_application_last_update_date(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.application_last_update_date = input;
-        self
+        self.application_last_update_date = input; self
     }
     /// <p>The date (in Unix epoch time) when the application was last updated.</p>
     pub fn get_application_last_update_date(&self) -> &::std::option::Option<i64> {
@@ -242,8 +229,7 @@ impl DescribeApplicationOutputBuilder {
     }
     /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -256,8 +242,7 @@ impl DescribeApplicationOutputBuilder {
     }
     /// <p>The Id of the single sign-on client that you use to authenticate and authorize users on the web application.</p>
     pub fn set_sso_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sso_client_id = input;
-        self
+        self.sso_client_id = input; self
     }
     /// <p>The Id of the single sign-on client that you use to authenticate and authorize users on the web application.</p>
     pub fn get_sso_client_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -270,8 +255,7 @@ impl DescribeApplicationOutputBuilder {
     }
     /// <p>A message indicating why the <code>DescribeApplication</code> API failed.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>A message indicating why the <code>DescribeApplication</code> API failed.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -284,28 +268,27 @@ impl DescribeApplicationOutputBuilder {
     /// <p>A set of key/value pairs that you can use to manage the web application resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A set of key/value pairs that you can use to manage the web application resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A set of key/value pairs that you can use to manage the web application resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeApplicationOutput`](crate::operation::describe_application::DescribeApplicationOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`application_id`](crate::operation::describe_application::builders::DescribeApplicationOutputBuilder::application_id)
@@ -314,54 +297,56 @@ impl DescribeApplicationOutputBuilder {
     /// - [`application_url`](crate::operation::describe_application::builders::DescribeApplicationOutputBuilder::application_url)
     /// - [`application_state`](crate::operation::describe_application::builders::DescribeApplicationOutputBuilder::application_state)
     /// - [`role_arn`](crate::operation::describe_application::builders::DescribeApplicationOutputBuilder::role_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_application::DescribeApplicationOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_application::DescribeApplicationOutput {
-            application_id: self.application_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application_id",
-                    "application_id was not specified but it is required when building DescribeApplicationOutput",
-                )
-            })?,
-            application_arn: self.application_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application_arn",
-                    "application_arn was not specified but it is required when building DescribeApplicationOutput",
-                )
-            })?,
-            application_name: self.application_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application_name",
-                    "application_name was not specified but it is required when building DescribeApplicationOutput",
-                )
-            })?,
-            application_description: self.application_description,
-            application_url: self.application_url.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application_url",
-                    "application_url was not specified but it is required when building DescribeApplicationOutput",
-                )
-            })?,
-            application_state: self.application_state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application_state",
-                    "application_state was not specified but it is required when building DescribeApplicationOutput",
-                )
-            })?,
-            application_creation_date: self.application_creation_date.unwrap_or_default(),
-            application_last_update_date: self.application_last_update_date.unwrap_or_default(),
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building DescribeApplicationOutput",
-                )
-            })?,
-            sso_client_id: self.sso_client_id,
-            error_message: self.error_message,
-            tags: self.tags,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_application::DescribeApplicationOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_application::DescribeApplicationOutput {
+                application_id: self.application_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_id", "application_id was not specified but it is required when building DescribeApplicationOutput")
+                    )?
+                ,
+                application_arn: self.application_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_arn", "application_arn was not specified but it is required when building DescribeApplicationOutput")
+                    )?
+                ,
+                application_name: self.application_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_name", "application_name was not specified but it is required when building DescribeApplicationOutput")
+                    )?
+                ,
+                application_description: self.application_description
+                ,
+                application_url: self.application_url
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_url", "application_url was not specified but it is required when building DescribeApplicationOutput")
+                    )?
+                ,
+                application_state: self.application_state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_state", "application_state was not specified but it is required when building DescribeApplicationOutput")
+                    )?
+                ,
+                application_creation_date: self.application_creation_date
+                    .unwrap_or_default()
+                ,
+                application_last_update_date: self.application_last_update_date
+                    .unwrap_or_default()
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building DescribeApplicationOutput")
+                    )?
+                ,
+                sso_client_id: self.sso_client_id
+                ,
+                error_message: self.error_message
+                ,
+                tags: self.tags
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

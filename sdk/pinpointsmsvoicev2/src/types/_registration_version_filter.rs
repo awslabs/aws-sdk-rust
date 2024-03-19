@@ -3,21 +3,20 @@
 /// <p>The filter definition for filtering registration versions that meets a specified criteria.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegistrationVersionFilter {
+pub struct RegistrationVersionFilter  {
     /// <p>The name of the attribute to filter on.</p>
     pub name: crate::types::RegistrationVersionFilterName,
     /// <p>An array of values to filter on.</p>
-    pub values: ::std::vec::Vec<::std::string::String>,
+    pub values: ::std::vec::Vec::<::std::string::String>,
 }
-impl RegistrationVersionFilter {
+impl  RegistrationVersionFilter  {
     /// <p>The name of the attribute to filter on.</p>
-    pub fn name(&self) -> &crate::types::RegistrationVersionFilterName {
+    pub fn name(&self) -> & crate::types::RegistrationVersionFilterName {
         &self.name
     }
     /// <p>An array of values to filter on.</p>
-    pub fn values(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.values.deref()
+    pub fn values(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.values.deref()
     }
 }
 impl RegistrationVersionFilter {
@@ -32,7 +31,7 @@ impl RegistrationVersionFilter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegistrationVersionFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::RegistrationVersionFilterName>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl RegistrationVersionFilterBuilder {
     /// <p>The name of the attribute to filter on.</p>
@@ -43,8 +42,7 @@ impl RegistrationVersionFilterBuilder {
     }
     /// <p>The name of the attribute to filter on.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::RegistrationVersionFilterName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the attribute to filter on.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::RegistrationVersionFilterName> {
@@ -57,17 +55,16 @@ impl RegistrationVersionFilterBuilder {
     /// <p>An array of values to filter on.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of values to filter on.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>An array of values to filter on.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`RegistrationVersionFilter`](crate::types::RegistrationVersionFilter).
@@ -75,19 +72,20 @@ impl RegistrationVersionFilterBuilder {
     /// - [`name`](crate::types::builders::RegistrationVersionFilterBuilder::name)
     /// - [`values`](crate::types::builders::RegistrationVersionFilterBuilder::values)
     pub fn build(self) -> ::std::result::Result<crate::types::RegistrationVersionFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RegistrationVersionFilter {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building RegistrationVersionFilter",
-                )
-            })?,
-            values: self.values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "values",
-                    "values was not specified but it is required when building RegistrationVersionFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RegistrationVersionFilter {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building RegistrationVersionFilter")
+                    )?
+                ,
+                values: self.values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("values", "values was not specified but it is required when building RegistrationVersionFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

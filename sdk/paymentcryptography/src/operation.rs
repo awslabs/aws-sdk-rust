@@ -60,3 +60,4 @@ pub mod untag_resource;
 
 /// Types for the `UpdateAlias` operation.
 pub mod update_alias;
+

@@ -2,20 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListOrganizationPortfolioAccess`](crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`accept_language(impl Into<String>)`](crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessFluentBuilder::accept_language) / [`set_accept_language(Option<String>)`](crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessFluentBuilder::set_accept_language):<br>required: **false**<br><p>The language code.</p> <ul>  <li>   <p><code>jp</code> - Japanese</p></li>  <li>   <p><code>zh</code> - Chinese</p></li> </ul><br>
     ///   - [`portfolio_id(impl Into<String>)`](crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessFluentBuilder::portfolio_id) / [`set_portfolio_id(Option<String>)`](crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessFluentBuilder::set_portfolio_id):<br>required: **true**<br><p>The portfolio identifier. For example, <code>port-2abcdext3y5fk</code>.</p><br>
     ///   - [`organization_node_type(OrganizationNodeType)`](crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessFluentBuilder::organization_node_type) / [`set_organization_node_type(Option<OrganizationNodeType>)`](crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessFluentBuilder::set_organization_node_type):<br>required: **true**<br><p>The organization node type that will be returned in the output.</p> <ul>  <li>   <p><code>ORGANIZATION</code> - Organization that has access to the portfolio.</p></li>  <li>   <p><code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p></li>  <li>   <p><code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p></li> </ul><br>
     ///   - [`page_token(impl Into<String>)`](crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessFluentBuilder::page_token) / [`set_page_token(Option<String>)`](crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessFluentBuilder::set_page_token):<br>required: **false**<br><p>The page token for the next set of results. To retrieve the first set of results, use null.</p><br>
     ///   - [`page_size(i32)`](crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessFluentBuilder::page_size) / [`set_page_size(Option<i32>)`](crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessFluentBuilder::set_page_size):<br>required: **false**<br><p>The maximum number of items to return with this call.</p><br>
-    /// - On success, responds with [`ListOrganizationPortfolioAccessOutput`](crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessOutput) with field(s):
+                            /// - On success, responds with [`ListOrganizationPortfolioAccessOutput`](crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessOutput) with field(s):
     ///   - [`organization_nodes(Option<Vec::<OrganizationNode>>)`](crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessOutput::organization_nodes): <p>Displays information about the organization nodes.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    /// - On failure, responds with [`SdkError<ListOrganizationPortfolioAccessError>`](crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessError)
-    pub fn list_organization_portfolio_access(
-        &self,
-    ) -> crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessFluentBuilder {
-        crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListOrganizationPortfolioAccessError>`](crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessError)
+    pub fn list_organization_portfolio_access(&self) -> crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessFluentBuilder {
+                                crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessFluentBuilder::new(self.handle.clone())
+                            }
 }
+

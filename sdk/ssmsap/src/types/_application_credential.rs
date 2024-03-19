@@ -3,7 +3,7 @@
 /// <p>The credentials of your SAP application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ApplicationCredential {
+pub struct ApplicationCredential  {
     /// <p>The name of the SAP HANA database.</p>
     pub database_name: ::std::string::String,
     /// <p>The type of the application credentials.</p>
@@ -11,23 +11,21 @@ pub struct ApplicationCredential {
     /// <p>The secret ID created in AWS Secrets Manager to store the credentials of the SAP application.</p>
     pub secret_id: ::std::string::String,
 }
-impl ApplicationCredential {
+impl  ApplicationCredential  {
     /// <p>The name of the SAP HANA database.</p>
-    pub fn database_name(&self) -> &str {
-        use std::ops::Deref;
-        self.database_name.deref()
+    pub fn database_name(&self) -> & str {
+        use std::ops::Deref; self.database_name.deref()
     }
     /// <p>The type of the application credentials.</p>
-    pub fn credential_type(&self) -> &crate::types::CredentialType {
+    pub fn credential_type(&self) -> & crate::types::CredentialType {
         &self.credential_type
     }
     /// <p>The secret ID created in AWS Secrets Manager to store the credentials of the SAP application.</p>
-    pub fn secret_id(&self) -> &str {
-        use std::ops::Deref;
-        self.secret_id.deref()
+    pub fn secret_id(&self) -> & str {
+        use std::ops::Deref; self.secret_id.deref()
     }
 }
-impl ::std::fmt::Debug for ApplicationCredential {
+impl  ::std::fmt::Debug for ApplicationCredential  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ApplicationCredential");
         formatter.field("database_name", &self.database_name);
@@ -60,8 +58,7 @@ impl ApplicationCredentialBuilder {
     }
     /// <p>The name of the SAP HANA database.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the SAP HANA database.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +72,7 @@ impl ApplicationCredentialBuilder {
     }
     /// <p>The type of the application credentials.</p>
     pub fn set_credential_type(mut self, input: ::std::option::Option<crate::types::CredentialType>) -> Self {
-        self.credential_type = input;
-        self
+        self.credential_type = input; self
     }
     /// <p>The type of the application credentials.</p>
     pub fn get_credential_type(&self) -> &::std::option::Option<crate::types::CredentialType> {
@@ -90,8 +86,7 @@ impl ApplicationCredentialBuilder {
     }
     /// <p>The secret ID created in AWS Secrets Manager to store the credentials of the SAP application.</p>
     pub fn set_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_id = input;
-        self
+        self.secret_id = input; self
     }
     /// <p>The secret ID created in AWS Secrets Manager to store the credentials of the SAP application.</p>
     pub fn get_secret_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,26 +98,25 @@ impl ApplicationCredentialBuilder {
     /// - [`credential_type`](crate::types::builders::ApplicationCredentialBuilder::credential_type)
     /// - [`secret_id`](crate::types::builders::ApplicationCredentialBuilder::secret_id)
     pub fn build(self) -> ::std::result::Result<crate::types::ApplicationCredential, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ApplicationCredential {
-            database_name: self.database_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "database_name",
-                    "database_name was not specified but it is required when building ApplicationCredential",
-                )
-            })?,
-            credential_type: self.credential_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "credential_type",
-                    "credential_type was not specified but it is required when building ApplicationCredential",
-                )
-            })?,
-            secret_id: self.secret_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "secret_id",
-                    "secret_id was not specified but it is required when building ApplicationCredential",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ApplicationCredential {
+                database_name: self.database_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("database_name", "database_name was not specified but it is required when building ApplicationCredential")
+                    )?
+                ,
+                credential_type: self.credential_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("credential_type", "credential_type was not specified but it is required when building ApplicationCredential")
+                    )?
+                ,
+                secret_id: self.secret_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("secret_id", "secret_id was not specified but it is required when building ApplicationCredential")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ApplicationCredentialBuilder {
@@ -134,3 +128,4 @@ impl ::std::fmt::Debug for ApplicationCredentialBuilder {
         formatter.finish()
     }
 }
+

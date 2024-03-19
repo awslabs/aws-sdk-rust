@@ -5,56 +5,52 @@ pub use crate::operation::notify_when_uploaded::_notify_when_uploaded_input::Not
 
 impl NotifyWhenUploadedInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::notify_when_uploaded::NotifyWhenUploadedOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::notify_when_uploaded::NotifyWhenUploadedError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.notify_when_uploaded();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::notify_when_uploaded::NotifyWhenUploadedOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::notify_when_uploaded::NotifyWhenUploadedError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.notify_when_uploaded();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `NotifyWhenUploaded`.
-///
+/// 
 /// <p>Sends you notification through CloudWatch Events when all files written to your file share have been uploaded to Amazon S3.</p>
 /// <p>Storage Gateway can send a notification through Amazon CloudWatch Events when all files written to your file share up to that point in time have been uploaded to Amazon S3. These files include files written to the file share up to the time that you make a request for notification. When the upload is done, Storage Gateway sends you notification through an Amazon CloudWatch Event. You can configure CloudWatch Events to send the notification through event targets such as Amazon SNS or Lambda function. This operation is only supported for S3 File Gateways.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/filegateway/latest/files3/monitoring-file-gateway.html#get-notification">Getting file upload notification</a> in the <i>Amazon S3 File Gateway User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct NotifyWhenUploadedFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::notify_when_uploaded::builders::NotifyWhenUploadedInputBuilder,
+                    inner: crate::operation::notify_when_uploaded::builders::NotifyWhenUploadedInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::notify_when_uploaded::NotifyWhenUploadedOutput,
-        crate::operation::notify_when_uploaded::NotifyWhenUploadedError,
-    > for NotifyWhenUploadedFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::notify_when_uploaded::NotifyWhenUploadedOutput,
-            crate::operation::notify_when_uploaded::NotifyWhenUploadedError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::notify_when_uploaded::NotifyWhenUploadedOutput,
+                    crate::operation::notify_when_uploaded::NotifyWhenUploadedError,
+                > for NotifyWhenUploadedFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::notify_when_uploaded::NotifyWhenUploadedOutput,
+                        crate::operation::notify_when_uploaded::NotifyWhenUploadedError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl NotifyWhenUploadedFluentBuilder {
     /// Creates a new `NotifyWhenUploaded`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl NotifyWhenUploadedFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::notify_when_uploaded::NotifyWhenUploadedOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::notify_when_uploaded::NotifyWhenUploadedError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::notify_when_uploaded::NotifyWhenUploaded::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::notify_when_uploaded::NotifyWhenUploaded::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::notify_when_uploaded::NotifyWhenUploadedOutput,
-        crate::operation::notify_when_uploaded::NotifyWhenUploadedError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::notify_when_uploaded::NotifyWhenUploadedOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::notify_when_uploaded::NotifyWhenUploadedError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::notify_when_uploaded::NotifyWhenUploaded::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::notify_when_uploaded::NotifyWhenUploaded::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::notify_when_uploaded::NotifyWhenUploadedOutput, crate::operation::notify_when_uploaded::NotifyWhenUploadedError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The Amazon Resource Name (ARN) of the file share.</p>
     pub fn file_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_share_arn(input.into());
@@ -125,3 +112,4 @@ impl NotifyWhenUploadedFluentBuilder {
         self.inner.get_file_share_arn()
     }
 }
+

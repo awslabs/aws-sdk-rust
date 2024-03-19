@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartCrawlerScheduleInput {
+pub struct StartCrawlerScheduleInput  {
     /// <p>Name of the crawler to schedule.</p>
     pub crawler_name: ::std::option::Option<::std::string::String>,
 }
-impl StartCrawlerScheduleInput {
+impl  StartCrawlerScheduleInput  {
     /// <p>Name of the crawler to schedule.</p>
-    pub fn crawler_name(&self) -> ::std::option::Option<&str> {
+    pub fn crawler_name(&self) -> ::std::option::Option<& str> {
         self.crawler_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl StartCrawlerScheduleInputBuilder {
     }
     /// <p>Name of the crawler to schedule.</p>
     pub fn set_crawler_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.crawler_name = input;
-        self
+        self.crawler_name = input; self
     }
     /// <p>Name of the crawler to schedule.</p>
     pub fn get_crawler_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.crawler_name
     }
     /// Consumes the builder and constructs a [`StartCrawlerScheduleInput`](crate::operation::start_crawler_schedule::StartCrawlerScheduleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_crawler_schedule::StartCrawlerScheduleInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_crawler_schedule::StartCrawlerScheduleInput {
-            crawler_name: self.crawler_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_crawler_schedule::StartCrawlerScheduleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_crawler_schedule::StartCrawlerScheduleInput {
+                crawler_name: self.crawler_name
+                ,
+            }
+        )
     }
 }
+

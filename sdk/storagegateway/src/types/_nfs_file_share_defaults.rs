@@ -3,7 +3,7 @@
 /// <p>Describes Network File System (NFS) file share default values. Files and folders stored as Amazon S3 objects in S3 buckets don't, by default, have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that represent files and folders are assigned these default Unix permissions. This operation is only supported for S3 File Gateways.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NfsFileShareDefaults {
+pub struct NfsFileShareDefaults  {
     /// <p>The Unix file mode in the form "nnnn". For example, <code>0666</code> represents the default file mode inside the file share. The default value is <code>0666</code>.</p>
     pub file_mode: ::std::option::Option<::std::string::String>,
     /// <p>The Unix directory mode in the form "nnnn". For example, <code>0666</code> represents the default access mode for all directories inside the file share. The default value is <code>0777</code>.</p>
@@ -13,13 +13,13 @@ pub struct NfsFileShareDefaults {
     /// <p>The default owner ID for files in the file share (unless the files have another owner ID specified). The default value is <code>nfsnobody</code>.</p>
     pub owner_id: ::std::option::Option<i64>,
 }
-impl NfsFileShareDefaults {
+impl  NfsFileShareDefaults  {
     /// <p>The Unix file mode in the form "nnnn". For example, <code>0666</code> represents the default file mode inside the file share. The default value is <code>0666</code>.</p>
-    pub fn file_mode(&self) -> ::std::option::Option<&str> {
+    pub fn file_mode(&self) -> ::std::option::Option<& str> {
         self.file_mode.as_deref()
     }
     /// <p>The Unix directory mode in the form "nnnn". For example, <code>0666</code> represents the default access mode for all directories inside the file share. The default value is <code>0777</code>.</p>
-    pub fn directory_mode(&self) -> ::std::option::Option<&str> {
+    pub fn directory_mode(&self) -> ::std::option::Option<& str> {
         self.directory_mode.as_deref()
     }
     /// <p>The default group ID for the file share (unless the files have another group ID specified). The default value is <code>nfsnobody</code>.</p>
@@ -55,8 +55,7 @@ impl NfsFileShareDefaultsBuilder {
     }
     /// <p>The Unix file mode in the form "nnnn". For example, <code>0666</code> represents the default file mode inside the file share. The default value is <code>0666</code>.</p>
     pub fn set_file_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_mode = input;
-        self
+        self.file_mode = input; self
     }
     /// <p>The Unix file mode in the form "nnnn". For example, <code>0666</code> represents the default file mode inside the file share. The default value is <code>0666</code>.</p>
     pub fn get_file_mode(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl NfsFileShareDefaultsBuilder {
     }
     /// <p>The Unix directory mode in the form "nnnn". For example, <code>0666</code> represents the default access mode for all directories inside the file share. The default value is <code>0777</code>.</p>
     pub fn set_directory_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_mode = input;
-        self
+        self.directory_mode = input; self
     }
     /// <p>The Unix directory mode in the form "nnnn". For example, <code>0666</code> represents the default access mode for all directories inside the file share. The default value is <code>0777</code>.</p>
     pub fn get_directory_mode(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl NfsFileShareDefaultsBuilder {
     }
     /// <p>The default group ID for the file share (unless the files have another group ID specified). The default value is <code>nfsnobody</code>.</p>
     pub fn set_group_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// <p>The default group ID for the file share (unless the files have another group ID specified). The default value is <code>nfsnobody</code>.</p>
     pub fn get_group_id(&self) -> &::std::option::Option<i64> {
@@ -97,8 +94,7 @@ impl NfsFileShareDefaultsBuilder {
     }
     /// <p>The default owner ID for files in the file share (unless the files have another owner ID specified). The default value is <code>nfsnobody</code>.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// <p>The default owner ID for files in the file share (unless the files have another owner ID specified). The default value is <code>nfsnobody</code>.</p>
     pub fn get_owner_id(&self) -> &::std::option::Option<i64> {
@@ -107,10 +103,15 @@ impl NfsFileShareDefaultsBuilder {
     /// Consumes the builder and constructs a [`NfsFileShareDefaults`](crate::types::NfsFileShareDefaults).
     pub fn build(self) -> crate::types::NfsFileShareDefaults {
         crate::types::NfsFileShareDefaults {
-            file_mode: self.file_mode,
-            directory_mode: self.directory_mode,
-            group_id: self.group_id,
-            owner_id: self.owner_id,
+            file_mode: self.file_mode
+            ,
+            directory_mode: self.directory_mode
+            ,
+            group_id: self.group_id
+            ,
+            owner_id: self.owner_id
+            ,
         }
     }
 }
+

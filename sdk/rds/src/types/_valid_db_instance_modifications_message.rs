@@ -3,26 +3,28 @@
 /// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ValidDbInstanceModificationsMessage {
+pub struct ValidDbInstanceModificationsMessage  {
     /// <p>Valid storage options for your DB instance.</p>
-    pub storage: ::std::option::Option<::std::vec::Vec<crate::types::ValidStorageOptions>>,
+    pub storage: ::std::option::Option<::std::vec::Vec::<crate::types::ValidStorageOptions>>,
     /// <p>Valid processor features for your DB instance.</p>
-    pub valid_processor_features: ::std::option::Option<::std::vec::Vec<crate::types::AvailableProcessorFeature>>,
+    pub valid_processor_features: ::std::option::Option<::std::vec::Vec::<crate::types::AvailableProcessorFeature>>,
     /// <p>Indicates whether a DB instance supports using a dedicated log volume (DLV).</p>
     pub supports_dedicated_log_volume: ::std::option::Option<bool>,
 }
-impl ValidDbInstanceModificationsMessage {
+impl  ValidDbInstanceModificationsMessage  {
     /// <p>Valid storage options for your DB instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.storage.is_none()`.
-    pub fn storage(&self) -> &[crate::types::ValidStorageOptions] {
-        self.storage.as_deref().unwrap_or_default()
+    pub fn storage(&self) -> & [crate::types::ValidStorageOptions] {
+        self.storage.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Valid processor features for your DB instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.valid_processor_features.is_none()`.
-    pub fn valid_processor_features(&self) -> &[crate::types::AvailableProcessorFeature] {
-        self.valid_processor_features.as_deref().unwrap_or_default()
+    pub fn valid_processor_features(&self) -> & [crate::types::AvailableProcessorFeature] {
+        self.valid_processor_features.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether a DB instance supports using a dedicated log volume (DLV).</p>
     pub fn supports_dedicated_log_volume(&self) -> ::std::option::Option<bool> {
@@ -40,8 +42,8 @@ impl ValidDbInstanceModificationsMessage {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidDbInstanceModificationsMessageBuilder {
-    pub(crate) storage: ::std::option::Option<::std::vec::Vec<crate::types::ValidStorageOptions>>,
-    pub(crate) valid_processor_features: ::std::option::Option<::std::vec::Vec<crate::types::AvailableProcessorFeature>>,
+    pub(crate) storage: ::std::option::Option<::std::vec::Vec::<crate::types::ValidStorageOptions>>,
+    pub(crate) valid_processor_features: ::std::option::Option<::std::vec::Vec::<crate::types::AvailableProcessorFeature>>,
     pub(crate) supports_dedicated_log_volume: ::std::option::Option<bool>,
 }
 impl ValidDbInstanceModificationsMessageBuilder {
@@ -52,17 +54,16 @@ impl ValidDbInstanceModificationsMessageBuilder {
     /// <p>Valid storage options for your DB instance.</p>
     pub fn storage(mut self, input: crate::types::ValidStorageOptions) -> Self {
         let mut v = self.storage.unwrap_or_default();
-        v.push(input);
-        self.storage = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.storage = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Valid storage options for your DB instance.</p>
-    pub fn set_storage(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValidStorageOptions>>) -> Self {
-        self.storage = input;
-        self
+    pub fn set_storage(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ValidStorageOptions>>) -> Self {
+        self.storage = input; self
     }
     /// <p>Valid storage options for your DB instance.</p>
-    pub fn get_storage(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidStorageOptions>> {
+    pub fn get_storage(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ValidStorageOptions>> {
         &self.storage
     }
     /// Appends an item to `valid_processor_features`.
@@ -72,17 +73,16 @@ impl ValidDbInstanceModificationsMessageBuilder {
     /// <p>Valid processor features for your DB instance.</p>
     pub fn valid_processor_features(mut self, input: crate::types::AvailableProcessorFeature) -> Self {
         let mut v = self.valid_processor_features.unwrap_or_default();
-        v.push(input);
-        self.valid_processor_features = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.valid_processor_features = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Valid processor features for your DB instance.</p>
-    pub fn set_valid_processor_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AvailableProcessorFeature>>) -> Self {
-        self.valid_processor_features = input;
-        self
+    pub fn set_valid_processor_features(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AvailableProcessorFeature>>) -> Self {
+        self.valid_processor_features = input; self
     }
     /// <p>Valid processor features for your DB instance.</p>
-    pub fn get_valid_processor_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailableProcessorFeature>> {
+    pub fn get_valid_processor_features(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AvailableProcessorFeature>> {
         &self.valid_processor_features
     }
     /// <p>Indicates whether a DB instance supports using a dedicated log volume (DLV).</p>
@@ -92,8 +92,7 @@ impl ValidDbInstanceModificationsMessageBuilder {
     }
     /// <p>Indicates whether a DB instance supports using a dedicated log volume (DLV).</p>
     pub fn set_supports_dedicated_log_volume(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.supports_dedicated_log_volume = input;
-        self
+        self.supports_dedicated_log_volume = input; self
     }
     /// <p>Indicates whether a DB instance supports using a dedicated log volume (DLV).</p>
     pub fn get_supports_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
@@ -102,9 +101,13 @@ impl ValidDbInstanceModificationsMessageBuilder {
     /// Consumes the builder and constructs a [`ValidDbInstanceModificationsMessage`](crate::types::ValidDbInstanceModificationsMessage).
     pub fn build(self) -> crate::types::ValidDbInstanceModificationsMessage {
         crate::types::ValidDbInstanceModificationsMessage {
-            storage: self.storage,
-            valid_processor_features: self.valid_processor_features,
-            supports_dedicated_log_volume: self.supports_dedicated_log_volume,
+            storage: self.storage
+            ,
+            valid_processor_features: self.valid_processor_features
+            ,
+            supports_dedicated_log_volume: self.supports_dedicated_log_volume
+            ,
         }
     }
 }
+

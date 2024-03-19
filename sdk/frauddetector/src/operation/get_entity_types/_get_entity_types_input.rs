@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEntityTypesInput {
+pub struct GetEntityTypesInput  {
     /// <p>The name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The next token for the subsequent request.</p>
@@ -10,13 +10,13 @@ pub struct GetEntityTypesInput {
     /// <p>The maximum number of objects to return for the request.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl GetEntityTypesInput {
+impl  GetEntityTypesInput  {
     /// <p>The name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The next token for the subsequent request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of objects to return for the request.</p>
@@ -47,8 +47,7 @@ impl GetEntityTypesInputBuilder {
     }
     /// <p>The name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl GetEntityTypesInputBuilder {
     }
     /// <p>The next token for the subsequent request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The next token for the subsequent request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,21 +73,24 @@ impl GetEntityTypesInputBuilder {
     }
     /// <p>The maximum number of objects to return for the request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of objects to return for the request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetEntityTypesInput`](crate::operation::get_entity_types::GetEntityTypesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_entity_types::GetEntityTypesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_entity_types::GetEntityTypesInput {
-            name: self.name,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_entity_types::GetEntityTypesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_entity_types::GetEntityTypesInput {
+                name: self.name
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

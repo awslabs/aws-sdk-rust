@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTemplateStepGroups`](crate::operation::list_template_step_groups::builders::ListTemplateStepGroupsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_template_step_groups::builders::ListTemplateStepGroupsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_template_step_groups::builders::ListTemplateStepGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_template_step_groups::builders::ListTemplateStepGroupsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results that can be returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_template_step_groups::builders::ListTemplateStepGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_template_step_groups::builders::ListTemplateStepGroupsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token.</p><br>
     ///   - [`template_id(impl Into<String>)`](crate::operation::list_template_step_groups::builders::ListTemplateStepGroupsFluentBuilder::template_id) / [`set_template_id(Option<String>)`](crate::operation::list_template_step_groups::builders::ListTemplateStepGroupsFluentBuilder::set_template_id):<br>required: **true**<br><p>The ID of the template.</p><br>
-    /// - On success, responds with [`ListTemplateStepGroupsOutput`](crate::operation::list_template_step_groups::ListTemplateStepGroupsOutput) with field(s):
+                            /// - On success, responds with [`ListTemplateStepGroupsOutput`](crate::operation::list_template_step_groups::ListTemplateStepGroupsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_template_step_groups::ListTemplateStepGroupsOutput::next_token): <p>The pagination token.</p>
     ///   - [`template_step_group_summary(Vec::<TemplateStepGroupSummary>)`](crate::operation::list_template_step_groups::ListTemplateStepGroupsOutput::template_step_group_summary): <p>The summary of the step group in the template.</p>
-    /// - On failure, responds with [`SdkError<ListTemplateStepGroupsError>`](crate::operation::list_template_step_groups::ListTemplateStepGroupsError)
+                            /// - On failure, responds with [`SdkError<ListTemplateStepGroupsError>`](crate::operation::list_template_step_groups::ListTemplateStepGroupsError)
     pub fn list_template_step_groups(&self) -> crate::operation::list_template_step_groups::builders::ListTemplateStepGroupsFluentBuilder {
-        crate::operation::list_template_step_groups::builders::ListTemplateStepGroupsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_template_step_groups::builders::ListTemplateStepGroupsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

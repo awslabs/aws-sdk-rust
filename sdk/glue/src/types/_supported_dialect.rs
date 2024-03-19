@@ -3,19 +3,19 @@
 /// <p>A structure specifying the dialect and dialect version used by the query engine.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SupportedDialect {
+pub struct SupportedDialect  {
     /// <p>The dialect of the query engine.</p>
     pub dialect: ::std::option::Option<crate::types::ViewDialect>,
     /// <p>The version of the dialect of the query engine. For example, 3.0.0.</p>
     pub dialect_version: ::std::option::Option<::std::string::String>,
 }
-impl SupportedDialect {
+impl  SupportedDialect  {
     /// <p>The dialect of the query engine.</p>
-    pub fn dialect(&self) -> ::std::option::Option<&crate::types::ViewDialect> {
+    pub fn dialect(&self) -> ::std::option::Option<& crate::types::ViewDialect> {
         self.dialect.as_ref()
     }
     /// <p>The version of the dialect of the query engine. For example, 3.0.0.</p>
-    pub fn dialect_version(&self) -> ::std::option::Option<&str> {
+    pub fn dialect_version(&self) -> ::std::option::Option<& str> {
         self.dialect_version.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl SupportedDialectBuilder {
     }
     /// <p>The dialect of the query engine.</p>
     pub fn set_dialect(mut self, input: ::std::option::Option<crate::types::ViewDialect>) -> Self {
-        self.dialect = input;
-        self
+        self.dialect = input; self
     }
     /// <p>The dialect of the query engine.</p>
     pub fn get_dialect(&self) -> &::std::option::Option<crate::types::ViewDialect> {
@@ -55,8 +54,7 @@ impl SupportedDialectBuilder {
     }
     /// <p>The version of the dialect of the query engine. For example, 3.0.0.</p>
     pub fn set_dialect_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dialect_version = input;
-        self
+        self.dialect_version = input; self
     }
     /// <p>The version of the dialect of the query engine. For example, 3.0.0.</p>
     pub fn get_dialect_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl SupportedDialectBuilder {
     /// Consumes the builder and constructs a [`SupportedDialect`](crate::types::SupportedDialect).
     pub fn build(self) -> crate::types::SupportedDialect {
         crate::types::SupportedDialect {
-            dialect: self.dialect,
-            dialect_version: self.dialect_version,
+            dialect: self.dialect
+            ,
+            dialect_version: self.dialect_version
+            ,
         }
     }
 }
+

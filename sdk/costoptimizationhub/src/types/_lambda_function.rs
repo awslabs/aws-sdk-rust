@@ -3,19 +3,19 @@
 /// <p>The Lambda function recommendation details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LambdaFunction {
+pub struct LambdaFunction  {
     /// <p>The Lambda function configuration used for recommendations.</p>
     pub configuration: ::std::option::Option<crate::types::LambdaFunctionConfiguration>,
     /// <p>Cost impact of the recommendation.</p>
     pub cost_calculation: ::std::option::Option<crate::types::ResourceCostCalculation>,
 }
-impl LambdaFunction {
+impl  LambdaFunction  {
     /// <p>The Lambda function configuration used for recommendations.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::LambdaFunctionConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::LambdaFunctionConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>Cost impact of the recommendation.</p>
-    pub fn cost_calculation(&self) -> ::std::option::Option<&crate::types::ResourceCostCalculation> {
+    pub fn cost_calculation(&self) -> ::std::option::Option<& crate::types::ResourceCostCalculation> {
         self.cost_calculation.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl LambdaFunctionBuilder {
     }
     /// <p>The Lambda function configuration used for recommendations.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::LambdaFunctionConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>The Lambda function configuration used for recommendations.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::LambdaFunctionConfiguration> {
@@ -55,8 +54,7 @@ impl LambdaFunctionBuilder {
     }
     /// <p>Cost impact of the recommendation.</p>
     pub fn set_cost_calculation(mut self, input: ::std::option::Option<crate::types::ResourceCostCalculation>) -> Self {
-        self.cost_calculation = input;
-        self
+        self.cost_calculation = input; self
     }
     /// <p>Cost impact of the recommendation.</p>
     pub fn get_cost_calculation(&self) -> &::std::option::Option<crate::types::ResourceCostCalculation> {
@@ -65,8 +63,11 @@ impl LambdaFunctionBuilder {
     /// Consumes the builder and constructs a [`LambdaFunction`](crate::types::LambdaFunction).
     pub fn build(self) -> crate::types::LambdaFunction {
         crate::types::LambdaFunction {
-            configuration: self.configuration,
-            cost_calculation: self.cost_calculation,
+            configuration: self.configuration
+            ,
+            cost_calculation: self.cost_calculation
+            ,
         }
     }
 }
+

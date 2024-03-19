@@ -3,7 +3,7 @@
 /// <p>The structure that contains summary information about a stack instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StackInstanceSummary {
+pub struct StackInstanceSummary  {
     /// <p>The name or unique ID of the stack set that the stack instance is associated with.</p>
     pub stack_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Web Services Region that the stack instance is associated with.</p>
@@ -51,21 +51,21 @@ pub struct StackInstanceSummary {
     /// <p>The last unique ID of a StackSet operation performed on a stack instance.</p>
     pub last_operation_id: ::std::option::Option<::std::string::String>,
 }
-impl StackInstanceSummary {
+impl  StackInstanceSummary  {
     /// <p>The name or unique ID of the stack set that the stack instance is associated with.</p>
-    pub fn stack_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn stack_set_id(&self) -> ::std::option::Option<& str> {
         self.stack_set_id.as_deref()
     }
     /// <p>The name of the Amazon Web Services Region that the stack instance is associated with.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>[Self-managed permissions] The name of the Amazon Web Services account that the stack instance is associated with.</p>
-    pub fn account(&self) -> ::std::option::Option<&str> {
+    pub fn account(&self) -> ::std::option::Option<& str> {
         self.account.as_deref()
     }
     /// <p>The ID of the stack instance.</p>
-    pub fn stack_id(&self) -> ::std::option::Option<&str> {
+    pub fn stack_id(&self) -> ::std::option::Option<& str> {
         self.stack_id.as_deref()
     }
     /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set.</p>
@@ -83,19 +83,19 @@ impl StackInstanceSummary {
     /// <li>
     /// <p><code>CURRENT</code>: The stack is currently up to date with the stack set.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::StackInstanceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::StackInstanceStatus> {
         self.status.as_ref()
     }
     /// <p>The explanation for the specific status code assigned to this stack instance.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>The detailed status of the stack instance.</p>
-    pub fn stack_instance_status(&self) -> ::std::option::Option<&crate::types::StackInstanceComprehensiveStatus> {
+    pub fn stack_instance_status(&self) -> ::std::option::Option<& crate::types::StackInstanceComprehensiveStatus> {
         self.stack_instance_status.as_ref()
     }
     /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
-    pub fn organizational_unit_id(&self) -> ::std::option::Option<&str> {
+    pub fn organizational_unit_id(&self) -> ::std::option::Option<& str> {
         self.organizational_unit_id.as_deref()
     }
     /// <p>Status of the stack instance's actual configuration compared to the expected template and parameter configuration of the stack set to which it belongs.</p>
@@ -109,15 +109,15 @@ impl StackInstanceSummary {
     /// <li>
     /// <p><code>UNKNOWN</code>: This value is reserved for future use.</p></li>
     /// </ul>
-    pub fn drift_status(&self) -> ::std::option::Option<&crate::types::StackDriftStatus> {
+    pub fn drift_status(&self) -> ::std::option::Option<& crate::types::StackDriftStatus> {
         self.drift_status.as_ref()
     }
     /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack instance. This value will be <code>NULL</code> for any stack instance on which drift detection hasn't yet been performed.</p>
-    pub fn last_drift_check_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_drift_check_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_drift_check_timestamp.as_ref()
     }
     /// <p>The last unique ID of a StackSet operation performed on a stack instance.</p>
-    pub fn last_operation_id(&self) -> ::std::option::Option<&str> {
+    pub fn last_operation_id(&self) -> ::std::option::Option<& str> {
         self.last_operation_id.as_deref()
     }
 }
@@ -152,8 +152,7 @@ impl StackInstanceSummaryBuilder {
     }
     /// <p>The name or unique ID of the stack set that the stack instance is associated with.</p>
     pub fn set_stack_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_set_id = input;
-        self
+        self.stack_set_id = input; self
     }
     /// <p>The name or unique ID of the stack set that the stack instance is associated with.</p>
     pub fn get_stack_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +165,7 @@ impl StackInstanceSummaryBuilder {
     }
     /// <p>The name of the Amazon Web Services Region that the stack instance is associated with.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The name of the Amazon Web Services Region that the stack instance is associated with.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -180,8 +178,7 @@ impl StackInstanceSummaryBuilder {
     }
     /// <p>[Self-managed permissions] The name of the Amazon Web Services account that the stack instance is associated with.</p>
     pub fn set_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account = input;
-        self
+        self.account = input; self
     }
     /// <p>[Self-managed permissions] The name of the Amazon Web Services account that the stack instance is associated with.</p>
     pub fn get_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,8 +191,7 @@ impl StackInstanceSummaryBuilder {
     }
     /// <p>The ID of the stack instance.</p>
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_id = input;
-        self
+        self.stack_id = input; self
     }
     /// <p>The ID of the stack instance.</p>
     pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -236,8 +232,7 @@ impl StackInstanceSummaryBuilder {
     /// <p><code>CURRENT</code>: The stack is currently up to date with the stack set.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StackInstanceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set.</p>
     /// <ul>
@@ -264,8 +259,7 @@ impl StackInstanceSummaryBuilder {
     }
     /// <p>The explanation for the specific status code assigned to this stack instance.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>The explanation for the specific status code assigned to this stack instance.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -278,8 +272,7 @@ impl StackInstanceSummaryBuilder {
     }
     /// <p>The detailed status of the stack instance.</p>
     pub fn set_stack_instance_status(mut self, input: ::std::option::Option<crate::types::StackInstanceComprehensiveStatus>) -> Self {
-        self.stack_instance_status = input;
-        self
+        self.stack_instance_status = input; self
     }
     /// <p>The detailed status of the stack instance.</p>
     pub fn get_stack_instance_status(&self) -> &::std::option::Option<crate::types::StackInstanceComprehensiveStatus> {
@@ -292,8 +285,7 @@ impl StackInstanceSummaryBuilder {
     }
     /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
     pub fn set_organizational_unit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organizational_unit_id = input;
-        self
+        self.organizational_unit_id = input; self
     }
     /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
     pub fn get_organizational_unit_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -326,8 +318,7 @@ impl StackInstanceSummaryBuilder {
     /// <p><code>UNKNOWN</code>: This value is reserved for future use.</p></li>
     /// </ul>
     pub fn set_drift_status(mut self, input: ::std::option::Option<crate::types::StackDriftStatus>) -> Self {
-        self.drift_status = input;
-        self
+        self.drift_status = input; self
     }
     /// <p>Status of the stack instance's actual configuration compared to the expected template and parameter configuration of the stack set to which it belongs.</p>
     /// <ul>
@@ -350,8 +341,7 @@ impl StackInstanceSummaryBuilder {
     }
     /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack instance. This value will be <code>NULL</code> for any stack instance on which drift detection hasn't yet been performed.</p>
     pub fn set_last_drift_check_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_drift_check_timestamp = input;
-        self
+        self.last_drift_check_timestamp = input; self
     }
     /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack instance. This value will be <code>NULL</code> for any stack instance on which drift detection hasn't yet been performed.</p>
     pub fn get_last_drift_check_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -364,8 +354,7 @@ impl StackInstanceSummaryBuilder {
     }
     /// <p>The last unique ID of a StackSet operation performed on a stack instance.</p>
     pub fn set_last_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_operation_id = input;
-        self
+        self.last_operation_id = input; self
     }
     /// <p>The last unique ID of a StackSet operation performed on a stack instance.</p>
     pub fn get_last_operation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -374,17 +363,29 @@ impl StackInstanceSummaryBuilder {
     /// Consumes the builder and constructs a [`StackInstanceSummary`](crate::types::StackInstanceSummary).
     pub fn build(self) -> crate::types::StackInstanceSummary {
         crate::types::StackInstanceSummary {
-            stack_set_id: self.stack_set_id,
-            region: self.region,
-            account: self.account,
-            stack_id: self.stack_id,
-            status: self.status,
-            status_reason: self.status_reason,
-            stack_instance_status: self.stack_instance_status,
-            organizational_unit_id: self.organizational_unit_id,
-            drift_status: self.drift_status,
-            last_drift_check_timestamp: self.last_drift_check_timestamp,
-            last_operation_id: self.last_operation_id,
+            stack_set_id: self.stack_set_id
+            ,
+            region: self.region
+            ,
+            account: self.account
+            ,
+            stack_id: self.stack_id
+            ,
+            status: self.status
+            ,
+            status_reason: self.status_reason
+            ,
+            stack_instance_status: self.stack_instance_status
+            ,
+            organizational_unit_id: self.organizational_unit_id
+            ,
+            drift_status: self.drift_status
+            ,
+            last_drift_check_timestamp: self.last_drift_check_timestamp
+            ,
+            last_operation_id: self.last_operation_id
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetSolFunctionPackageOutput {
+pub struct GetSolFunctionPackageOutput  {
     /// <p>Function package ID.</p>
     pub id: ::std::string::String,
     /// <p>Function package ARN.</p>
@@ -25,59 +25,57 @@ pub struct GetSolFunctionPackageOutput {
     /// <p>A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
     pub metadata: ::std::option::Option<crate::types::GetSolFunctionPackageMetadata>,
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl GetSolFunctionPackageOutput {
+impl  GetSolFunctionPackageOutput  {
     /// <p>Function package ID.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>Function package ARN.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>Function package onboarding state.</p>
-    pub fn onboarding_state(&self) -> &crate::types::OnboardingState {
+    pub fn onboarding_state(&self) -> & crate::types::OnboardingState {
         &self.onboarding_state
     }
     /// <p>Function package operational state.</p>
-    pub fn operational_state(&self) -> &crate::types::OperationalState {
+    pub fn operational_state(&self) -> & crate::types::OperationalState {
         &self.operational_state
     }
     /// <p>Function package usage state.</p>
-    pub fn usage_state(&self) -> &crate::types::UsageState {
+    pub fn usage_state(&self) -> & crate::types::UsageState {
         &self.usage_state
     }
     /// <p>Function package descriptor ID.</p>
-    pub fn vnfd_id(&self) -> ::std::option::Option<&str> {
+    pub fn vnfd_id(&self) -> ::std::option::Option<& str> {
         self.vnfd_id.as_deref()
     }
     /// <p>Network function provider.</p>
-    pub fn vnf_provider(&self) -> ::std::option::Option<&str> {
+    pub fn vnf_provider(&self) -> ::std::option::Option<& str> {
         self.vnf_provider.as_deref()
     }
     /// <p>Network function product name.</p>
-    pub fn vnf_product_name(&self) -> ::std::option::Option<&str> {
+    pub fn vnf_product_name(&self) -> ::std::option::Option<& str> {
         self.vnf_product_name.as_deref()
     }
     /// <p>Function package descriptor version.</p>
-    pub fn vnfd_version(&self) -> ::std::option::Option<&str> {
+    pub fn vnfd_version(&self) -> ::std::option::Option<& str> {
         self.vnfd_version.as_deref()
     }
     /// <p>Metadata related to the function package.</p>
     /// <p>A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&crate::types::GetSolFunctionPackageMetadata> {
+    pub fn metadata(&self) -> ::std::option::Option<& crate::types::GetSolFunctionPackageMetadata> {
         self.metadata.as_ref()
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl ::std::fmt::Debug for GetSolFunctionPackageOutput {
+impl  ::std::fmt::Debug for GetSolFunctionPackageOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetSolFunctionPackageOutput");
         formatter.field("id", &self.id);
@@ -96,10 +94,10 @@ impl ::std::fmt::Debug for GetSolFunctionPackageOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetSolFunctionPackageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSolFunctionPackageOutput {
     /// Creates a new builder-style object to manufacture [`GetSolFunctionPackageOutput`](crate::operation::get_sol_function_package::GetSolFunctionPackageOutput).
     pub fn builder() -> crate::operation::get_sol_function_package::builders::GetSolFunctionPackageOutputBuilder {
@@ -121,7 +119,7 @@ pub struct GetSolFunctionPackageOutputBuilder {
     pub(crate) vnf_product_name: ::std::option::Option<::std::string::String>,
     pub(crate) vnfd_version: ::std::option::Option<::std::string::String>,
     pub(crate) metadata: ::std::option::Option<crate::types::GetSolFunctionPackageMetadata>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetSolFunctionPackageOutputBuilder {
@@ -133,8 +131,7 @@ impl GetSolFunctionPackageOutputBuilder {
     }
     /// <p>Function package ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Function package ID.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +145,7 @@ impl GetSolFunctionPackageOutputBuilder {
     }
     /// <p>Function package ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>Function package ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,8 +159,7 @@ impl GetSolFunctionPackageOutputBuilder {
     }
     /// <p>Function package onboarding state.</p>
     pub fn set_onboarding_state(mut self, input: ::std::option::Option<crate::types::OnboardingState>) -> Self {
-        self.onboarding_state = input;
-        self
+        self.onboarding_state = input; self
     }
     /// <p>Function package onboarding state.</p>
     pub fn get_onboarding_state(&self) -> &::std::option::Option<crate::types::OnboardingState> {
@@ -178,8 +173,7 @@ impl GetSolFunctionPackageOutputBuilder {
     }
     /// <p>Function package operational state.</p>
     pub fn set_operational_state(mut self, input: ::std::option::Option<crate::types::OperationalState>) -> Self {
-        self.operational_state = input;
-        self
+        self.operational_state = input; self
     }
     /// <p>Function package operational state.</p>
     pub fn get_operational_state(&self) -> &::std::option::Option<crate::types::OperationalState> {
@@ -193,8 +187,7 @@ impl GetSolFunctionPackageOutputBuilder {
     }
     /// <p>Function package usage state.</p>
     pub fn set_usage_state(mut self, input: ::std::option::Option<crate::types::UsageState>) -> Self {
-        self.usage_state = input;
-        self
+        self.usage_state = input; self
     }
     /// <p>Function package usage state.</p>
     pub fn get_usage_state(&self) -> &::std::option::Option<crate::types::UsageState> {
@@ -207,8 +200,7 @@ impl GetSolFunctionPackageOutputBuilder {
     }
     /// <p>Function package descriptor ID.</p>
     pub fn set_vnfd_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vnfd_id = input;
-        self
+        self.vnfd_id = input; self
     }
     /// <p>Function package descriptor ID.</p>
     pub fn get_vnfd_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -221,8 +213,7 @@ impl GetSolFunctionPackageOutputBuilder {
     }
     /// <p>Network function provider.</p>
     pub fn set_vnf_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vnf_provider = input;
-        self
+        self.vnf_provider = input; self
     }
     /// <p>Network function provider.</p>
     pub fn get_vnf_provider(&self) -> &::std::option::Option<::std::string::String> {
@@ -235,8 +226,7 @@ impl GetSolFunctionPackageOutputBuilder {
     }
     /// <p>Network function product name.</p>
     pub fn set_vnf_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vnf_product_name = input;
-        self
+        self.vnf_product_name = input; self
     }
     /// <p>Network function product name.</p>
     pub fn get_vnf_product_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -249,8 +239,7 @@ impl GetSolFunctionPackageOutputBuilder {
     }
     /// <p>Function package descriptor version.</p>
     pub fn set_vnfd_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vnfd_version = input;
-        self
+        self.vnfd_version = input; self
     }
     /// <p>Function package descriptor version.</p>
     pub fn get_vnfd_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -265,8 +254,7 @@ impl GetSolFunctionPackageOutputBuilder {
     /// <p>Metadata related to the function package.</p>
     /// <p>A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::GetSolFunctionPackageMetadata>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// <p>Metadata related to the function package.</p>
     /// <p>A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
@@ -280,28 +268,27 @@ impl GetSolFunctionPackageOutputBuilder {
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSolFunctionPackageOutput`](crate::operation::get_sol_function_package::GetSolFunctionPackageOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::operation::get_sol_function_package::builders::GetSolFunctionPackageOutputBuilder::id)
@@ -309,51 +296,49 @@ impl GetSolFunctionPackageOutputBuilder {
     /// - [`onboarding_state`](crate::operation::get_sol_function_package::builders::GetSolFunctionPackageOutputBuilder::onboarding_state)
     /// - [`operational_state`](crate::operation::get_sol_function_package::builders::GetSolFunctionPackageOutputBuilder::operational_state)
     /// - [`usage_state`](crate::operation::get_sol_function_package::builders::GetSolFunctionPackageOutputBuilder::usage_state)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_sol_function_package::GetSolFunctionPackageOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_sol_function_package::GetSolFunctionPackageOutput {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building GetSolFunctionPackageOutput",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building GetSolFunctionPackageOutput",
-                )
-            })?,
-            onboarding_state: self.onboarding_state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "onboarding_state",
-                    "onboarding_state was not specified but it is required when building GetSolFunctionPackageOutput",
-                )
-            })?,
-            operational_state: self.operational_state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "operational_state",
-                    "operational_state was not specified but it is required when building GetSolFunctionPackageOutput",
-                )
-            })?,
-            usage_state: self.usage_state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "usage_state",
-                    "usage_state was not specified but it is required when building GetSolFunctionPackageOutput",
-                )
-            })?,
-            vnfd_id: self.vnfd_id,
-            vnf_provider: self.vnf_provider,
-            vnf_product_name: self.vnf_product_name,
-            vnfd_version: self.vnfd_version,
-            metadata: self.metadata,
-            tags: self.tags,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_sol_function_package::GetSolFunctionPackageOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_sol_function_package::GetSolFunctionPackageOutput {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building GetSolFunctionPackageOutput")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building GetSolFunctionPackageOutput")
+                    )?
+                ,
+                onboarding_state: self.onboarding_state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("onboarding_state", "onboarding_state was not specified but it is required when building GetSolFunctionPackageOutput")
+                    )?
+                ,
+                operational_state: self.operational_state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("operational_state", "operational_state was not specified but it is required when building GetSolFunctionPackageOutput")
+                    )?
+                ,
+                usage_state: self.usage_state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("usage_state", "usage_state was not specified but it is required when building GetSolFunctionPackageOutput")
+                    )?
+                ,
+                vnfd_id: self.vnfd_id
+                ,
+                vnf_provider: self.vnf_provider
+                ,
+                vnf_product_name: self.vnf_product_name
+                ,
+                vnfd_version: self.vnfd_version
+                ,
+                metadata: self.metadata
+                ,
+                tags: self.tags
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for GetSolFunctionPackageOutputBuilder {
@@ -374,3 +359,4 @@ impl ::std::fmt::Debug for GetSolFunctionPackageOutputBuilder {
         formatter.finish()
     }
 }
+

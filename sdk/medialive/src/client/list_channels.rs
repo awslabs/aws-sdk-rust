@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListChannels`](crate::operation::list_channels::builders::ListChannelsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::set_max_results):<br>required: **false**<br>Placeholder documentation for MaxResults<br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_channels::builders::ListChannelsFluentBuilder::set_next_token):<br>required: **false**<br>Placeholder documentation for __string<br>
-    /// - On success, responds with [`ListChannelsOutput`](crate::operation::list_channels::ListChannelsOutput) with field(s):
+                            /// - On success, responds with [`ListChannelsOutput`](crate::operation::list_channels::ListChannelsOutput) with field(s):
     ///   - [`channels(Option<Vec::<ChannelSummary>>)`](crate::operation::list_channels::ListChannelsOutput::channels): Placeholder documentation for __listOfChannelSummary
     ///   - [`next_token(Option<String>)`](crate::operation::list_channels::ListChannelsOutput::next_token): Placeholder documentation for __string
-    /// - On failure, responds with [`SdkError<ListChannelsError>`](crate::operation::list_channels::ListChannelsError)
+                            /// - On failure, responds with [`SdkError<ListChannelsError>`](crate::operation::list_channels::ListChannelsError)
     pub fn list_channels(&self) -> crate::operation::list_channels::builders::ListChannelsFluentBuilder {
-        crate::operation::list_channels::builders::ListChannelsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_channels::builders::ListChannelsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

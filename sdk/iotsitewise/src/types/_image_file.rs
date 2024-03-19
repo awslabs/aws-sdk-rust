@@ -3,19 +3,19 @@
 /// <p>Contains an image file.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImageFile {
+pub struct ImageFile  {
     /// <p>The image file contents, represented as a base64-encoded string. The file size must be less than 1 MB.</p>
     pub data: ::aws_smithy_types::Blob,
     /// <p>The file type of the image.</p>
     pub r#type: crate::types::ImageFileType,
 }
-impl ImageFile {
+impl  ImageFile  {
     /// <p>The image file contents, represented as a base64-encoded string. The file size must be less than 1 MB.</p>
-    pub fn data(&self) -> &::aws_smithy_types::Blob {
+    pub fn data(&self) -> & ::aws_smithy_types::Blob {
         &self.data
     }
     /// <p>The file type of the image.</p>
-    pub fn r#type(&self) -> &crate::types::ImageFileType {
+    pub fn r#type(&self) -> & crate::types::ImageFileType {
         &self.r#type
     }
 }
@@ -42,8 +42,7 @@ impl ImageFileBuilder {
     }
     /// <p>The image file contents, represented as a base64-encoded string. The file size must be less than 1 MB.</p>
     pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
     }
     /// <p>The image file contents, represented as a base64-encoded string. The file size must be less than 1 MB.</p>
     pub fn get_data(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -57,8 +56,7 @@ impl ImageFileBuilder {
     }
     /// <p>The file type of the image.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ImageFileType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The file type of the image.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ImageFileType> {
@@ -69,19 +67,20 @@ impl ImageFileBuilder {
     /// - [`data`](crate::types::builders::ImageFileBuilder::data)
     /// - [`r#type`](crate::types::builders::ImageFileBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::ImageFile, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ImageFile {
-            data: self.data.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data",
-                    "data was not specified but it is required when building ImageFile",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building ImageFile",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ImageFile {
+                data: self.data
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data", "data was not specified but it is required when building ImageFile")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building ImageFile")
+                    )?
+                ,
+            }
+        )
     }
 }
+

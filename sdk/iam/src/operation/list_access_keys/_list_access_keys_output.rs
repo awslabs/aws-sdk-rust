@@ -3,35 +3,34 @@
 /// <p>Contains the response to a successful <code>ListAccessKeys</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAccessKeysOutput {
+pub struct ListAccessKeysOutput  {
     /// <p>A list of objects containing metadata about the access keys.</p>
-    pub access_key_metadata: ::std::vec::Vec<crate::types::AccessKeyMetadata>,
+    pub access_key_metadata: ::std::vec::Vec::<crate::types::AccessKeyMetadata>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListAccessKeysOutput {
+impl  ListAccessKeysOutput  {
     /// <p>A list of objects containing metadata about the access keys.</p>
-    pub fn access_key_metadata(&self) -> &[crate::types::AccessKeyMetadata] {
-        use std::ops::Deref;
-        self.access_key_metadata.deref()
+    pub fn access_key_metadata(&self) -> & [crate::types::AccessKeyMetadata] {
+        use std::ops::Deref; self.access_key_metadata.deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn is_truncated(&self) -> bool {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAccessKeysOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAccessKeysOutput {
     /// Creates a new builder-style object to manufacture [`ListAccessKeysOutput`](crate::operation::list_access_keys::ListAccessKeysOutput).
     pub fn builder() -> crate::operation::list_access_keys::builders::ListAccessKeysOutputBuilder {
@@ -43,7 +42,7 @@ impl ListAccessKeysOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccessKeysOutputBuilder {
-    pub(crate) access_key_metadata: ::std::option::Option<::std::vec::Vec<crate::types::AccessKeyMetadata>>,
+    pub(crate) access_key_metadata: ::std::option::Option<::std::vec::Vec::<crate::types::AccessKeyMetadata>>,
     pub(crate) is_truncated: ::std::option::Option<bool>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -56,17 +55,16 @@ impl ListAccessKeysOutputBuilder {
     /// <p>A list of objects containing metadata about the access keys.</p>
     pub fn access_key_metadata(mut self, input: crate::types::AccessKeyMetadata) -> Self {
         let mut v = self.access_key_metadata.unwrap_or_default();
-        v.push(input);
-        self.access_key_metadata = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.access_key_metadata = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of objects containing metadata about the access keys.</p>
-    pub fn set_access_key_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessKeyMetadata>>) -> Self {
-        self.access_key_metadata = input;
-        self
+    pub fn set_access_key_metadata(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AccessKeyMetadata>>) -> Self {
+        self.access_key_metadata = input; self
     }
     /// <p>A list of objects containing metadata about the access keys.</p>
-    pub fn get_access_key_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessKeyMetadata>> {
+    pub fn get_access_key_metadata(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AccessKeyMetadata>> {
         &self.access_key_metadata
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -76,8 +74,7 @@ impl ListAccessKeysOutputBuilder {
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn set_is_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_truncated = input;
-        self
+        self.is_truncated = input; self
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn get_is_truncated(&self) -> &::std::option::Option<bool> {
@@ -90,38 +87,40 @@ impl ListAccessKeysOutputBuilder {
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAccessKeysOutput`](crate::operation::list_access_keys::ListAccessKeysOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`access_key_metadata`](crate::operation::list_access_keys::builders::ListAccessKeysOutputBuilder::access_key_metadata)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_access_keys::ListAccessKeysOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_access_keys::ListAccessKeysOutput {
-            access_key_metadata: self.access_key_metadata.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "access_key_metadata",
-                    "access_key_metadata was not specified but it is required when building ListAccessKeysOutput",
-                )
-            })?,
-            is_truncated: self.is_truncated.unwrap_or_default(),
-            marker: self.marker,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_access_keys::ListAccessKeysOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_access_keys::ListAccessKeysOutput {
+                access_key_metadata: self.access_key_metadata
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("access_key_metadata", "access_key_metadata was not specified but it is required when building ListAccessKeysOutput")
+                    )?
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                marker: self.marker
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

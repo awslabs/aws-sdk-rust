@@ -3,7 +3,7 @@
 /// <p>Represents a member of the complex data structure. The data type of the property can be either primitive or another <code>struct</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomProperty {
+pub struct CustomProperty  {
     /// <p>The fully qualified name of the custom property. For example, the fully qualified name of a custom property might be <code>ComplexDataTypes.VehicleDataTypes.SVMCamera.FPS</code>.</p>
     pub fully_qualified_name: ::std::string::String,
     /// <p>The data type for the custom property.</p>
@@ -19,34 +19,33 @@ pub struct CustomProperty {
     /// <p>The fully qualified name of the struct node for the custom property if the data type of the custom property is <code>Struct</code> or <code>StructArray</code>.</p>
     pub struct_fully_qualified_name: ::std::option::Option<::std::string::String>,
 }
-impl CustomProperty {
+impl  CustomProperty  {
     /// <p>The fully qualified name of the custom property. For example, the fully qualified name of a custom property might be <code>ComplexDataTypes.VehicleDataTypes.SVMCamera.FPS</code>.</p>
-    pub fn fully_qualified_name(&self) -> &str {
-        use std::ops::Deref;
-        self.fully_qualified_name.deref()
+    pub fn fully_qualified_name(&self) -> & str {
+        use std::ops::Deref; self.fully_qualified_name.deref()
     }
     /// <p>The data type for the custom property.</p>
-    pub fn data_type(&self) -> &crate::types::NodeDataType {
+    pub fn data_type(&self) -> & crate::types::NodeDataType {
         &self.data_type
     }
     /// <p>Indicates whether the property is binary data.</p>
-    pub fn data_encoding(&self) -> ::std::option::Option<&crate::types::NodeDataEncoding> {
+    pub fn data_encoding(&self) -> ::std::option::Option<& crate::types::NodeDataEncoding> {
         self.data_encoding.as_ref()
     }
     /// <p>A brief description of the custom property.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
-    pub fn deprecation_message(&self) -> ::std::option::Option<&str> {
+    pub fn deprecation_message(&self) -> ::std::option::Option<& str> {
         self.deprecation_message.as_deref()
     }
     /// <p>A comment in addition to the description.</p>
-    pub fn comment(&self) -> ::std::option::Option<&str> {
+    pub fn comment(&self) -> ::std::option::Option<& str> {
         self.comment.as_deref()
     }
     /// <p>The fully qualified name of the struct node for the custom property if the data type of the custom property is <code>Struct</code> or <code>StructArray</code>.</p>
-    pub fn struct_fully_qualified_name(&self) -> ::std::option::Option<&str> {
+    pub fn struct_fully_qualified_name(&self) -> ::std::option::Option<& str> {
         self.struct_fully_qualified_name.as_deref()
     }
 }
@@ -78,8 +77,7 @@ impl CustomPropertyBuilder {
     }
     /// <p>The fully qualified name of the custom property. For example, the fully qualified name of a custom property might be <code>ComplexDataTypes.VehicleDataTypes.SVMCamera.FPS</code>.</p>
     pub fn set_fully_qualified_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fully_qualified_name = input;
-        self
+        self.fully_qualified_name = input; self
     }
     /// <p>The fully qualified name of the custom property. For example, the fully qualified name of a custom property might be <code>ComplexDataTypes.VehicleDataTypes.SVMCamera.FPS</code>.</p>
     pub fn get_fully_qualified_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +91,7 @@ impl CustomPropertyBuilder {
     }
     /// <p>The data type for the custom property.</p>
     pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::NodeDataType>) -> Self {
-        self.data_type = input;
-        self
+        self.data_type = input; self
     }
     /// <p>The data type for the custom property.</p>
     pub fn get_data_type(&self) -> &::std::option::Option<crate::types::NodeDataType> {
@@ -107,8 +104,7 @@ impl CustomPropertyBuilder {
     }
     /// <p>Indicates whether the property is binary data.</p>
     pub fn set_data_encoding(mut self, input: ::std::option::Option<crate::types::NodeDataEncoding>) -> Self {
-        self.data_encoding = input;
-        self
+        self.data_encoding = input; self
     }
     /// <p>Indicates whether the property is binary data.</p>
     pub fn get_data_encoding(&self) -> &::std::option::Option<crate::types::NodeDataEncoding> {
@@ -121,8 +117,7 @@ impl CustomPropertyBuilder {
     }
     /// <p>A brief description of the custom property.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A brief description of the custom property.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +130,7 @@ impl CustomPropertyBuilder {
     }
     /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
     pub fn set_deprecation_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deprecation_message = input;
-        self
+        self.deprecation_message = input; self
     }
     /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
     pub fn get_deprecation_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +143,7 @@ impl CustomPropertyBuilder {
     }
     /// <p>A comment in addition to the description.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// <p>A comment in addition to the description.</p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,8 +156,7 @@ impl CustomPropertyBuilder {
     }
     /// <p>The fully qualified name of the struct node for the custom property if the data type of the custom property is <code>Struct</code> or <code>StructArray</code>.</p>
     pub fn set_struct_fully_qualified_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.struct_fully_qualified_name = input;
-        self
+        self.struct_fully_qualified_name = input; self
     }
     /// <p>The fully qualified name of the struct node for the custom property if the data type of the custom property is <code>Struct</code> or <code>StructArray</code>.</p>
     pub fn get_struct_fully_qualified_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,24 +167,30 @@ impl CustomPropertyBuilder {
     /// - [`fully_qualified_name`](crate::types::builders::CustomPropertyBuilder::fully_qualified_name)
     /// - [`data_type`](crate::types::builders::CustomPropertyBuilder::data_type)
     pub fn build(self) -> ::std::result::Result<crate::types::CustomProperty, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CustomProperty {
-            fully_qualified_name: self.fully_qualified_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "fully_qualified_name",
-                    "fully_qualified_name was not specified but it is required when building CustomProperty",
-                )
-            })?,
-            data_type: self.data_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_type",
-                    "data_type was not specified but it is required when building CustomProperty",
-                )
-            })?,
-            data_encoding: self.data_encoding,
-            description: self.description,
-            deprecation_message: self.deprecation_message,
-            comment: self.comment,
-            struct_fully_qualified_name: self.struct_fully_qualified_name,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CustomProperty {
+                fully_qualified_name: self.fully_qualified_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("fully_qualified_name", "fully_qualified_name was not specified but it is required when building CustomProperty")
+                    )?
+                ,
+                data_type: self.data_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_type", "data_type was not specified but it is required when building CustomProperty")
+                    )?
+                ,
+                data_encoding: self.data_encoding
+                ,
+                description: self.description
+                ,
+                deprecation_message: self.deprecation_message
+                ,
+                comment: self.comment
+                ,
+                struct_fully_qualified_name: self.struct_fully_qualified_name
+                ,
+            }
+        )
     }
 }
+

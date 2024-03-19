@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let failurereason = unimplemented!();
 /// match failurereason {
@@ -45,16 +45,14 @@
 /// Specifically, when `failurereason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FailureReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum FailureReason {
     #[allow(missing_docs)] // documentation missing in model
     AdditionalVerificationRequired,
@@ -92,124 +90,107 @@ pub enum FailureReason {
     SlrNotFound,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for FailureReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADDITIONAL_VERIFICATION_REQUIRED" => FailureReason::AdditionalVerificationRequired,
-            "CAA_ERROR" => FailureReason::CaaError,
-            "DOMAIN_NOT_ALLOWED" => FailureReason::DomainNotAllowed,
-            "DOMAIN_VALIDATION_DENIED" => FailureReason::DomainValidationDenied,
-            "INVALID_PUBLIC_DOMAIN" => FailureReason::InvalidPublicDomain,
-            "NO_AVAILABLE_CONTACTS" => FailureReason::NoAvailableContacts,
-            "OTHER" => FailureReason::Other,
-            "PCA_ACCESS_DENIED" => FailureReason::PcaAccessDenied,
-            "PCA_INVALID_ARGS" => FailureReason::PcaInvalidArgs,
-            "PCA_INVALID_ARN" => FailureReason::PcaInvalidArn,
-            "PCA_INVALID_DURATION" => FailureReason::PcaInvalidDuration,
-            "PCA_INVALID_STATE" => FailureReason::PcaInvalidState,
-            "PCA_LIMIT_EXCEEDED" => FailureReason::PcaLimitExceeded,
-            "PCA_NAME_CONSTRAINTS_VALIDATION" => FailureReason::PcaNameConstraintsValidation,
-            "PCA_REQUEST_FAILED" => FailureReason::PcaRequestFailed,
-            "PCA_RESOURCE_NOT_FOUND" => FailureReason::PcaResourceNotFound,
-            "SLR_NOT_FOUND" => FailureReason::SlrNotFound,
-            other => FailureReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ADDITIONAL_VERIFICATION_REQUIRED" => FailureReason::AdditionalVerificationRequired,
+"CAA_ERROR" => FailureReason::CaaError,
+"DOMAIN_NOT_ALLOWED" => FailureReason::DomainNotAllowed,
+"DOMAIN_VALIDATION_DENIED" => FailureReason::DomainValidationDenied,
+"INVALID_PUBLIC_DOMAIN" => FailureReason::InvalidPublicDomain,
+"NO_AVAILABLE_CONTACTS" => FailureReason::NoAvailableContacts,
+"OTHER" => FailureReason::Other,
+"PCA_ACCESS_DENIED" => FailureReason::PcaAccessDenied,
+"PCA_INVALID_ARGS" => FailureReason::PcaInvalidArgs,
+"PCA_INVALID_ARN" => FailureReason::PcaInvalidArn,
+"PCA_INVALID_DURATION" => FailureReason::PcaInvalidDuration,
+"PCA_INVALID_STATE" => FailureReason::PcaInvalidState,
+"PCA_LIMIT_EXCEEDED" => FailureReason::PcaLimitExceeded,
+"PCA_NAME_CONSTRAINTS_VALIDATION" => FailureReason::PcaNameConstraintsValidation,
+"PCA_REQUEST_FAILED" => FailureReason::PcaRequestFailed,
+"PCA_RESOURCE_NOT_FOUND" => FailureReason::PcaResourceNotFound,
+"SLR_NOT_FOUND" => FailureReason::SlrNotFound,
+other => FailureReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for FailureReason {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(FailureReason::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(FailureReason::from(s))
+                    }
+                }
 impl FailureReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FailureReason::AdditionalVerificationRequired => "ADDITIONAL_VERIFICATION_REQUIRED",
-            FailureReason::CaaError => "CAA_ERROR",
-            FailureReason::DomainNotAllowed => "DOMAIN_NOT_ALLOWED",
-            FailureReason::DomainValidationDenied => "DOMAIN_VALIDATION_DENIED",
-            FailureReason::InvalidPublicDomain => "INVALID_PUBLIC_DOMAIN",
-            FailureReason::NoAvailableContacts => "NO_AVAILABLE_CONTACTS",
-            FailureReason::Other => "OTHER",
-            FailureReason::PcaAccessDenied => "PCA_ACCESS_DENIED",
-            FailureReason::PcaInvalidArgs => "PCA_INVALID_ARGS",
-            FailureReason::PcaInvalidArn => "PCA_INVALID_ARN",
-            FailureReason::PcaInvalidDuration => "PCA_INVALID_DURATION",
-            FailureReason::PcaInvalidState => "PCA_INVALID_STATE",
-            FailureReason::PcaLimitExceeded => "PCA_LIMIT_EXCEEDED",
-            FailureReason::PcaNameConstraintsValidation => "PCA_NAME_CONSTRAINTS_VALIDATION",
-            FailureReason::PcaRequestFailed => "PCA_REQUEST_FAILED",
-            FailureReason::PcaResourceNotFound => "PCA_RESOURCE_NOT_FOUND",
-            FailureReason::SlrNotFound => "SLR_NOT_FOUND",
-            FailureReason::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADDITIONAL_VERIFICATION_REQUIRED",
-            "CAA_ERROR",
-            "DOMAIN_NOT_ALLOWED",
-            "DOMAIN_VALIDATION_DENIED",
-            "INVALID_PUBLIC_DOMAIN",
-            "NO_AVAILABLE_CONTACTS",
-            "OTHER",
-            "PCA_ACCESS_DENIED",
-            "PCA_INVALID_ARGS",
-            "PCA_INVALID_ARN",
-            "PCA_INVALID_DURATION",
-            "PCA_INVALID_STATE",
-            "PCA_LIMIT_EXCEEDED",
-            "PCA_NAME_CONSTRAINTS_VALIDATION",
-            "PCA_REQUEST_FAILED",
-            "PCA_RESOURCE_NOT_FOUND",
-            "SLR_NOT_FOUND",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FailureReason::AdditionalVerificationRequired => "ADDITIONAL_VERIFICATION_REQUIRED",
+    FailureReason::CaaError => "CAA_ERROR",
+    FailureReason::DomainNotAllowed => "DOMAIN_NOT_ALLOWED",
+    FailureReason::DomainValidationDenied => "DOMAIN_VALIDATION_DENIED",
+    FailureReason::InvalidPublicDomain => "INVALID_PUBLIC_DOMAIN",
+    FailureReason::NoAvailableContacts => "NO_AVAILABLE_CONTACTS",
+    FailureReason::Other => "OTHER",
+    FailureReason::PcaAccessDenied => "PCA_ACCESS_DENIED",
+    FailureReason::PcaInvalidArgs => "PCA_INVALID_ARGS",
+    FailureReason::PcaInvalidArn => "PCA_INVALID_ARN",
+    FailureReason::PcaInvalidDuration => "PCA_INVALID_DURATION",
+    FailureReason::PcaInvalidState => "PCA_INVALID_STATE",
+    FailureReason::PcaLimitExceeded => "PCA_LIMIT_EXCEEDED",
+    FailureReason::PcaNameConstraintsValidation => "PCA_NAME_CONSTRAINTS_VALIDATION",
+    FailureReason::PcaRequestFailed => "PCA_REQUEST_FAILED",
+    FailureReason::PcaResourceNotFound => "PCA_RESOURCE_NOT_FOUND",
+    FailureReason::SlrNotFound => "SLR_NOT_FOUND",
+    FailureReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADDITIONAL_VERIFICATION_REQUIRED", "CAA_ERROR", "DOMAIN_NOT_ALLOWED", "DOMAIN_VALIDATION_DENIED", "INVALID_PUBLIC_DOMAIN", "NO_AVAILABLE_CONTACTS", "OTHER", "PCA_ACCESS_DENIED", "PCA_INVALID_ARGS", "PCA_INVALID_ARN", "PCA_INVALID_DURATION", "PCA_INVALID_STATE", "PCA_LIMIT_EXCEEDED", "PCA_NAME_CONSTRAINTS_VALIDATION", "PCA_REQUEST_FAILED", "PCA_RESOURCE_NOT_FOUND", "SLR_NOT_FOUND"]
+                }
+            }
 impl ::std::convert::AsRef<str> for FailureReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl FailureReason {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for FailureReason {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            FailureReason::AdditionalVerificationRequired => write!(f, "ADDITIONAL_VERIFICATION_REQUIRED"),
-            FailureReason::CaaError => write!(f, "CAA_ERROR"),
-            FailureReason::DomainNotAllowed => write!(f, "DOMAIN_NOT_ALLOWED"),
-            FailureReason::DomainValidationDenied => write!(f, "DOMAIN_VALIDATION_DENIED"),
-            FailureReason::InvalidPublicDomain => write!(f, "INVALID_PUBLIC_DOMAIN"),
-            FailureReason::NoAvailableContacts => write!(f, "NO_AVAILABLE_CONTACTS"),
-            FailureReason::Other => write!(f, "OTHER"),
-            FailureReason::PcaAccessDenied => write!(f, "PCA_ACCESS_DENIED"),
-            FailureReason::PcaInvalidArgs => write!(f, "PCA_INVALID_ARGS"),
-            FailureReason::PcaInvalidArn => write!(f, "PCA_INVALID_ARN"),
-            FailureReason::PcaInvalidDuration => write!(f, "PCA_INVALID_DURATION"),
-            FailureReason::PcaInvalidState => write!(f, "PCA_INVALID_STATE"),
-            FailureReason::PcaLimitExceeded => write!(f, "PCA_LIMIT_EXCEEDED"),
-            FailureReason::PcaNameConstraintsValidation => write!(f, "PCA_NAME_CONSTRAINTS_VALIDATION"),
-            FailureReason::PcaRequestFailed => write!(f, "PCA_REQUEST_FAILED"),
-            FailureReason::PcaResourceNotFound => write!(f, "PCA_RESOURCE_NOT_FOUND"),
-            FailureReason::SlrNotFound => write!(f, "SLR_NOT_FOUND"),
-            FailureReason::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                FailureReason::AdditionalVerificationRequired => write!(f, "ADDITIONAL_VERIFICATION_REQUIRED"),
+FailureReason::CaaError => write!(f, "CAA_ERROR"),
+FailureReason::DomainNotAllowed => write!(f, "DOMAIN_NOT_ALLOWED"),
+FailureReason::DomainValidationDenied => write!(f, "DOMAIN_VALIDATION_DENIED"),
+FailureReason::InvalidPublicDomain => write!(f, "INVALID_PUBLIC_DOMAIN"),
+FailureReason::NoAvailableContacts => write!(f, "NO_AVAILABLE_CONTACTS"),
+FailureReason::Other => write!(f, "OTHER"),
+FailureReason::PcaAccessDenied => write!(f, "PCA_ACCESS_DENIED"),
+FailureReason::PcaInvalidArgs => write!(f, "PCA_INVALID_ARGS"),
+FailureReason::PcaInvalidArn => write!(f, "PCA_INVALID_ARN"),
+FailureReason::PcaInvalidDuration => write!(f, "PCA_INVALID_DURATION"),
+FailureReason::PcaInvalidState => write!(f, "PCA_INVALID_STATE"),
+FailureReason::PcaLimitExceeded => write!(f, "PCA_LIMIT_EXCEEDED"),
+FailureReason::PcaNameConstraintsValidation => write!(f, "PCA_NAME_CONSTRAINTS_VALIDATION"),
+FailureReason::PcaRequestFailed => write!(f, "PCA_REQUEST_FAILED"),
+FailureReason::PcaResourceNotFound => write!(f, "PCA_RESOURCE_NOT_FOUND"),
+FailureReason::SlrNotFound => write!(f, "SLR_NOT_FOUND"),
+FailureReason::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

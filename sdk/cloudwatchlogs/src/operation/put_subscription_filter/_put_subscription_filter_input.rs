@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutSubscriptionFilterInput {
+pub struct PutSubscriptionFilterInput  {
     /// <p>The name of the log group.</p>
     pub log_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A name for the subscription filter. If you are updating an existing filter, you must specify the correct name in <code>filterName</code>. To find the name of the filter currently associated with a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
@@ -27,17 +27,17 @@ pub struct PutSubscriptionFilterInput {
     /// <p>The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis data stream.</p>
     pub distribution: ::std::option::Option<crate::types::Distribution>,
 }
-impl PutSubscriptionFilterInput {
+impl  PutSubscriptionFilterInput  {
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn log_group_name(&self) -> ::std::option::Option<& str> {
         self.log_group_name.as_deref()
     }
     /// <p>A name for the subscription filter. If you are updating an existing filter, you must specify the correct name in <code>filterName</code>. To find the name of the filter currently associated with a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
-    pub fn filter_name(&self) -> ::std::option::Option<&str> {
+    pub fn filter_name(&self) -> ::std::option::Option<& str> {
         self.filter_name.as_deref()
     }
     /// <p>A filter pattern for subscribing to a filtered stream of log events.</p>
-    pub fn filter_pattern(&self) -> ::std::option::Option<&str> {
+    pub fn filter_pattern(&self) -> ::std::option::Option<& str> {
         self.filter_pattern.as_deref()
     }
     /// <p>The ARN of the destination to deliver matching log events to. Currently, the supported destinations are:</p>
@@ -52,15 +52,15 @@ impl PutSubscriptionFilterInput {
     /// <li>
     /// <p>A Lambda function belonging to the same account as the subscription filter, for same-account delivery.</p></li>
     /// </ul>
-    pub fn destination_arn(&self) -> ::std::option::Option<&str> {
+    pub fn destination_arn(&self) -> ::std::option::Option<& str> {
         self.destination_arn.as_deref()
     }
     /// <p>The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log events to the destination stream. You don't need to provide the ARN when you are working with a logical destination for cross-account delivery.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis data stream.</p>
-    pub fn distribution(&self) -> ::std::option::Option<&crate::types::Distribution> {
+    pub fn distribution(&self) -> ::std::option::Option<& crate::types::Distribution> {
         self.distribution.as_ref()
     }
 }
@@ -91,8 +91,7 @@ impl PutSubscriptionFilterInputBuilder {
     }
     /// <p>The name of the log group.</p>
     pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_group_name = input;
-        self
+        self.log_group_name = input; self
     }
     /// <p>The name of the log group.</p>
     pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +105,7 @@ impl PutSubscriptionFilterInputBuilder {
     }
     /// <p>A name for the subscription filter. If you are updating an existing filter, you must specify the correct name in <code>filterName</code>. To find the name of the filter currently associated with a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
     pub fn set_filter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.filter_name = input;
-        self
+        self.filter_name = input; self
     }
     /// <p>A name for the subscription filter. If you are updating an existing filter, you must specify the correct name in <code>filterName</code>. To find the name of the filter currently associated with a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
     pub fn get_filter_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +119,7 @@ impl PutSubscriptionFilterInputBuilder {
     }
     /// <p>A filter pattern for subscribing to a filtered stream of log events.</p>
     pub fn set_filter_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.filter_pattern = input;
-        self
+        self.filter_pattern = input; self
     }
     /// <p>A filter pattern for subscribing to a filtered stream of log events.</p>
     pub fn get_filter_pattern(&self) -> &::std::option::Option<::std::string::String> {
@@ -158,8 +155,7 @@ impl PutSubscriptionFilterInputBuilder {
     /// <p>A Lambda function belonging to the same account as the subscription filter, for same-account delivery.</p></li>
     /// </ul>
     pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_arn = input;
-        self
+        self.destination_arn = input; self
     }
     /// <p>The ARN of the destination to deliver matching log events to. Currently, the supported destinations are:</p>
     /// <ul>
@@ -183,8 +179,7 @@ impl PutSubscriptionFilterInputBuilder {
     }
     /// <p>The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log events to the destination stream. You don't need to provide the ARN when you are working with a logical destination for cross-account delivery.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log events to the destination stream. You don't need to provide the ARN when you are working with a logical destination for cross-account delivery.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -197,25 +192,30 @@ impl PutSubscriptionFilterInputBuilder {
     }
     /// <p>The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis data stream.</p>
     pub fn set_distribution(mut self, input: ::std::option::Option<crate::types::Distribution>) -> Self {
-        self.distribution = input;
-        self
+        self.distribution = input; self
     }
     /// <p>The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis data stream.</p>
     pub fn get_distribution(&self) -> &::std::option::Option<crate::types::Distribution> {
         &self.distribution
     }
     /// Consumes the builder and constructs a [`PutSubscriptionFilterInput`](crate::operation::put_subscription_filter::PutSubscriptionFilterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_subscription_filter::PutSubscriptionFilterInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::put_subscription_filter::PutSubscriptionFilterInput {
-            log_group_name: self.log_group_name,
-            filter_name: self.filter_name,
-            filter_pattern: self.filter_pattern,
-            destination_arn: self.destination_arn,
-            role_arn: self.role_arn,
-            distribution: self.distribution,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_subscription_filter::PutSubscriptionFilterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_subscription_filter::PutSubscriptionFilterInput {
+                log_group_name: self.log_group_name
+                ,
+                filter_name: self.filter_name
+                ,
+                filter_pattern: self.filter_pattern
+                ,
+                destination_arn: self.destination_arn
+                ,
+                role_arn: self.role_arn
+                ,
+                distribution: self.distribution
+                ,
+            }
+        )
     }
 }
+

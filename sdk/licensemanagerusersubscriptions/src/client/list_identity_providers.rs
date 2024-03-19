@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListIdentityProviders`](crate::operation::list_identity_providers::builders::ListIdentityProvidersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_identity_providers::builders::ListIdentityProvidersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_identity_providers::builders::ListIdentityProvidersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_identity_providers::builders::ListIdentityProvidersFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results to return in a single call.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_identity_providers::builders::ListIdentityProvidersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_identity_providers::builders::ListIdentityProvidersFluentBuilder::set_next_token):<br>required: **false**<br><p>Token for the next set of results.</p><br>
-    /// - On success, responds with [`ListIdentityProvidersOutput`](crate::operation::list_identity_providers::ListIdentityProvidersOutput) with field(s):
+                            /// - On success, responds with [`ListIdentityProvidersOutput`](crate::operation::list_identity_providers::ListIdentityProvidersOutput) with field(s):
     ///   - [`identity_provider_summaries(Vec::<IdentityProviderSummary>)`](crate::operation::list_identity_providers::ListIdentityProvidersOutput::identity_provider_summaries): <p>Metadata that describes the list identity providers operation.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_identity_providers::ListIdentityProvidersOutput::next_token): <p>Token for the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListIdentityProvidersError>`](crate::operation::list_identity_providers::ListIdentityProvidersError)
+                            /// - On failure, responds with [`SdkError<ListIdentityProvidersError>`](crate::operation::list_identity_providers::ListIdentityProvidersError)
     pub fn list_identity_providers(&self) -> crate::operation::list_identity_providers::builders::ListIdentityProvidersFluentBuilder {
-        crate::operation::list_identity_providers::builders::ListIdentityProvidersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_identity_providers::builders::ListIdentityProvidersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

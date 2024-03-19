@@ -3,13 +3,13 @@
 /// <p>Represents a request to the get suite operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSuiteInput {
+pub struct GetSuiteInput  {
     /// <p>The suite's ARN.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl GetSuiteInput {
+impl  GetSuiteInput  {
     /// <p>The suite's ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -35,8 +35,7 @@ impl GetSuiteInputBuilder {
     }
     /// <p>The suite's ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The suite's ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,6 +43,12 @@ impl GetSuiteInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetSuiteInput`](crate::operation::get_suite::GetSuiteInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_suite::GetSuiteInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_suite::GetSuiteInput { arn: self.arn })
+        ::std::result::Result::Ok(
+            crate::operation::get_suite::GetSuiteInput {
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

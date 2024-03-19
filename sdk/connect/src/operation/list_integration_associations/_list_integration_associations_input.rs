@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListIntegrationAssociationsInput {
+pub struct ListIntegrationAssociationsInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The integration type.</p>
@@ -14,17 +14,17 @@ pub struct ListIntegrationAssociationsInput {
     /// <p>The Amazon Resource Name (ARN) of the integration.</p>
     pub integration_arn: ::std::option::Option<::std::string::String>,
 }
-impl ListIntegrationAssociationsInput {
+impl  ListIntegrationAssociationsInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The integration type.</p>
-    pub fn integration_type(&self) -> ::std::option::Option<&crate::types::IntegrationType> {
+    pub fn integration_type(&self) -> ::std::option::Option<& crate::types::IntegrationType> {
         self.integration_type.as_ref()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per page.</p>
@@ -32,7 +32,7 @@ impl ListIntegrationAssociationsInput {
         self.max_results
     }
     /// <p>The Amazon Resource Name (ARN) of the integration.</p>
-    pub fn integration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn integration_arn(&self) -> ::std::option::Option<& str> {
         self.integration_arn.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl ListIntegrationAssociationsInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl ListIntegrationAssociationsInputBuilder {
     }
     /// <p>The integration type.</p>
     pub fn set_integration_type(mut self, input: ::std::option::Option<crate::types::IntegrationType>) -> Self {
-        self.integration_type = input;
-        self
+        self.integration_type = input; self
     }
     /// <p>The integration type.</p>
     pub fn get_integration_type(&self) -> &::std::option::Option<crate::types::IntegrationType> {
@@ -90,8 +88,7 @@ impl ListIntegrationAssociationsInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl ListIntegrationAssociationsInputBuilder {
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -118,26 +114,28 @@ impl ListIntegrationAssociationsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the integration.</p>
     pub fn set_integration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.integration_arn = input;
-        self
+        self.integration_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the integration.</p>
     pub fn get_integration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.integration_arn
     }
     /// Consumes the builder and constructs a [`ListIntegrationAssociationsInput`](crate::operation::list_integration_associations::ListIntegrationAssociationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_integration_associations::ListIntegrationAssociationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_integration_associations::ListIntegrationAssociationsInput {
-            instance_id: self.instance_id,
-            integration_type: self.integration_type,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            integration_arn: self.integration_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_integration_associations::ListIntegrationAssociationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_integration_associations::ListIntegrationAssociationsInput {
+                instance_id: self.instance_id
+                ,
+                integration_type: self.integration_type
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                integration_arn: self.integration_arn
+                ,
+            }
+        )
     }
 }
+

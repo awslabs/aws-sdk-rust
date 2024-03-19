@@ -3,23 +3,23 @@
 /// <p>The project that has the subscription grant.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SubscribedProject {
+pub struct SubscribedProject  {
     /// <p>The identifier of the project that has the subscription grant.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project that has the subscription grant.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl SubscribedProject {
+impl  SubscribedProject  {
     /// <p>The identifier of the project that has the subscription grant.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the project that has the subscription grant.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
-impl ::std::fmt::Debug for SubscribedProject {
+impl  ::std::fmt::Debug for SubscribedProject  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SubscribedProject");
         formatter.field("id", &self.id);
@@ -49,8 +49,7 @@ impl SubscribedProjectBuilder {
     }
     /// <p>The identifier of the project that has the subscription grant.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the project that has the subscription grant.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl SubscribedProjectBuilder {
     }
     /// <p>The name of the project that has the subscription grant.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the project that has the subscription grant.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +71,10 @@ impl SubscribedProjectBuilder {
     /// Consumes the builder and constructs a [`SubscribedProject`](crate::types::SubscribedProject).
     pub fn build(self) -> crate::types::SubscribedProject {
         crate::types::SubscribedProject {
-            id: self.id,
-            name: self.name,
+            id: self.id
+            ,
+            name: self.name
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for SubscribedProjectBuilder {
         formatter.finish()
     }
 }
+

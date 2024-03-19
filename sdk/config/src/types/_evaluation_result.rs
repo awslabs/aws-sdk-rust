@@ -3,7 +3,7 @@
 /// <p>The details of an Config evaluation. Provides the Amazon Web Services resource that was evaluated, the compliance of the resource, related time stamps, and supplementary information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EvaluationResult {
+pub struct EvaluationResult  {
     /// <p>Uniquely identifies the evaluation result.</p>
     pub evaluation_result_identifier: ::std::option::Option<crate::types::EvaluationResultIdentifier>,
     /// <p>Indicates whether the Amazon Web Services resource complies with the Config rule that evaluated it.</p>
@@ -18,30 +18,30 @@ pub struct EvaluationResult {
     /// <p>An encrypted token that associates an evaluation with an Config rule. The token identifies the rule, the Amazon Web Services resource being evaluated, and the event that triggered the evaluation.</p>
     pub result_token: ::std::option::Option<::std::string::String>,
 }
-impl EvaluationResult {
+impl  EvaluationResult  {
     /// <p>Uniquely identifies the evaluation result.</p>
-    pub fn evaluation_result_identifier(&self) -> ::std::option::Option<&crate::types::EvaluationResultIdentifier> {
+    pub fn evaluation_result_identifier(&self) -> ::std::option::Option<& crate::types::EvaluationResultIdentifier> {
         self.evaluation_result_identifier.as_ref()
     }
     /// <p>Indicates whether the Amazon Web Services resource complies with the Config rule that evaluated it.</p>
     /// <p>For the <code>EvaluationResult</code> data type, Config supports only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code> values. Config does not support the <code>INSUFFICIENT_DATA</code> value for the <code>EvaluationResult</code> data type.</p>
-    pub fn compliance_type(&self) -> ::std::option::Option<&crate::types::ComplianceType> {
+    pub fn compliance_type(&self) -> ::std::option::Option<& crate::types::ComplianceType> {
         self.compliance_type.as_ref()
     }
     /// <p>The time when Config recorded the evaluation result.</p>
-    pub fn result_recorded_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn result_recorded_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.result_recorded_time.as_ref()
     }
     /// <p>The time when the Config rule evaluated the Amazon Web Services resource.</p>
-    pub fn config_rule_invoked_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn config_rule_invoked_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.config_rule_invoked_time.as_ref()
     }
     /// <p>Supplementary information about how the evaluation determined the compliance.</p>
-    pub fn annotation(&self) -> ::std::option::Option<&str> {
+    pub fn annotation(&self) -> ::std::option::Option<& str> {
         self.annotation.as_deref()
     }
     /// <p>An encrypted token that associates an evaluation with an Config rule. The token identifies the rule, the Amazon Web Services resource being evaluated, and the event that triggered the evaluation.</p>
-    pub fn result_token(&self) -> ::std::option::Option<&str> {
+    pub fn result_token(&self) -> ::std::option::Option<& str> {
         self.result_token.as_deref()
     }
 }
@@ -71,8 +71,7 @@ impl EvaluationResultBuilder {
     }
     /// <p>Uniquely identifies the evaluation result.</p>
     pub fn set_evaluation_result_identifier(mut self, input: ::std::option::Option<crate::types::EvaluationResultIdentifier>) -> Self {
-        self.evaluation_result_identifier = input;
-        self
+        self.evaluation_result_identifier = input; self
     }
     /// <p>Uniquely identifies the evaluation result.</p>
     pub fn get_evaluation_result_identifier(&self) -> &::std::option::Option<crate::types::EvaluationResultIdentifier> {
@@ -87,8 +86,7 @@ impl EvaluationResultBuilder {
     /// <p>Indicates whether the Amazon Web Services resource complies with the Config rule that evaluated it.</p>
     /// <p>For the <code>EvaluationResult</code> data type, Config supports only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code> values. Config does not support the <code>INSUFFICIENT_DATA</code> value for the <code>EvaluationResult</code> data type.</p>
     pub fn set_compliance_type(mut self, input: ::std::option::Option<crate::types::ComplianceType>) -> Self {
-        self.compliance_type = input;
-        self
+        self.compliance_type = input; self
     }
     /// <p>Indicates whether the Amazon Web Services resource complies with the Config rule that evaluated it.</p>
     /// <p>For the <code>EvaluationResult</code> data type, Config supports only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code> values. Config does not support the <code>INSUFFICIENT_DATA</code> value for the <code>EvaluationResult</code> data type.</p>
@@ -102,8 +100,7 @@ impl EvaluationResultBuilder {
     }
     /// <p>The time when Config recorded the evaluation result.</p>
     pub fn set_result_recorded_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.result_recorded_time = input;
-        self
+        self.result_recorded_time = input; self
     }
     /// <p>The time when Config recorded the evaluation result.</p>
     pub fn get_result_recorded_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -116,8 +113,7 @@ impl EvaluationResultBuilder {
     }
     /// <p>The time when the Config rule evaluated the Amazon Web Services resource.</p>
     pub fn set_config_rule_invoked_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.config_rule_invoked_time = input;
-        self
+        self.config_rule_invoked_time = input; self
     }
     /// <p>The time when the Config rule evaluated the Amazon Web Services resource.</p>
     pub fn get_config_rule_invoked_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -130,8 +126,7 @@ impl EvaluationResultBuilder {
     }
     /// <p>Supplementary information about how the evaluation determined the compliance.</p>
     pub fn set_annotation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.annotation = input;
-        self
+        self.annotation = input; self
     }
     /// <p>Supplementary information about how the evaluation determined the compliance.</p>
     pub fn get_annotation(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,8 +139,7 @@ impl EvaluationResultBuilder {
     }
     /// <p>An encrypted token that associates an evaluation with an Config rule. The token identifies the rule, the Amazon Web Services resource being evaluated, and the event that triggered the evaluation.</p>
     pub fn set_result_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.result_token = input;
-        self
+        self.result_token = input; self
     }
     /// <p>An encrypted token that associates an evaluation with an Config rule. The token identifies the rule, the Amazon Web Services resource being evaluated, and the event that triggered the evaluation.</p>
     pub fn get_result_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,12 +148,19 @@ impl EvaluationResultBuilder {
     /// Consumes the builder and constructs a [`EvaluationResult`](crate::types::EvaluationResult).
     pub fn build(self) -> crate::types::EvaluationResult {
         crate::types::EvaluationResult {
-            evaluation_result_identifier: self.evaluation_result_identifier,
-            compliance_type: self.compliance_type,
-            result_recorded_time: self.result_recorded_time,
-            config_rule_invoked_time: self.config_rule_invoked_time,
-            annotation: self.annotation,
-            result_token: self.result_token,
+            evaluation_result_identifier: self.evaluation_result_identifier
+            ,
+            compliance_type: self.compliance_type
+            ,
+            result_recorded_time: self.result_recorded_time
+            ,
+            config_rule_invoked_time: self.config_rule_invoked_time
+            ,
+            annotation: self.annotation
+            ,
+            result_token: self.result_token
+            ,
         }
     }
 }
+

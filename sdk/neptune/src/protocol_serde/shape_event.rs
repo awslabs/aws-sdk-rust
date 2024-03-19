@@ -87,3 +87,4 @@ pub fn de_event(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result
     }
     Ok(builder.build())
 }
+

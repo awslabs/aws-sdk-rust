@@ -3,7 +3,7 @@
 /// <p>Guardrail rules for an Amazon Q application. Amazon Q supports only one rule at a time.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Rule {
+pub struct Rule  {
     /// <p>Users and groups to be included in a rule.</p>
     pub included_users_and_groups: ::std::option::Option<crate::types::UsersAndGroups>,
     /// <p>Users and groups to be excluded from a rule.</p>
@@ -13,21 +13,21 @@ pub struct Rule {
     /// <p>The configuration information for a rule.</p>
     pub rule_configuration: ::std::option::Option<crate::types::RuleConfiguration>,
 }
-impl Rule {
+impl  Rule  {
     /// <p>Users and groups to be included in a rule.</p>
-    pub fn included_users_and_groups(&self) -> ::std::option::Option<&crate::types::UsersAndGroups> {
+    pub fn included_users_and_groups(&self) -> ::std::option::Option<& crate::types::UsersAndGroups> {
         self.included_users_and_groups.as_ref()
     }
     /// <p>Users and groups to be excluded from a rule.</p>
-    pub fn excluded_users_and_groups(&self) -> ::std::option::Option<&crate::types::UsersAndGroups> {
+    pub fn excluded_users_and_groups(&self) -> ::std::option::Option<& crate::types::UsersAndGroups> {
         self.excluded_users_and_groups.as_ref()
     }
     /// <p>The type of rule.</p>
-    pub fn rule_type(&self) -> &crate::types::RuleType {
+    pub fn rule_type(&self) -> & crate::types::RuleType {
         &self.rule_type
     }
     /// <p>The configuration information for a rule.</p>
-    pub fn rule_configuration(&self) -> ::std::option::Option<&crate::types::RuleConfiguration> {
+    pub fn rule_configuration(&self) -> ::std::option::Option<& crate::types::RuleConfiguration> {
         self.rule_configuration.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl RuleBuilder {
     }
     /// <p>Users and groups to be included in a rule.</p>
     pub fn set_included_users_and_groups(mut self, input: ::std::option::Option<crate::types::UsersAndGroups>) -> Self {
-        self.included_users_and_groups = input;
-        self
+        self.included_users_and_groups = input; self
     }
     /// <p>Users and groups to be included in a rule.</p>
     pub fn get_included_users_and_groups(&self) -> &::std::option::Option<crate::types::UsersAndGroups> {
@@ -69,8 +68,7 @@ impl RuleBuilder {
     }
     /// <p>Users and groups to be excluded from a rule.</p>
     pub fn set_excluded_users_and_groups(mut self, input: ::std::option::Option<crate::types::UsersAndGroups>) -> Self {
-        self.excluded_users_and_groups = input;
-        self
+        self.excluded_users_and_groups = input; self
     }
     /// <p>Users and groups to be excluded from a rule.</p>
     pub fn get_excluded_users_and_groups(&self) -> &::std::option::Option<crate::types::UsersAndGroups> {
@@ -84,8 +82,7 @@ impl RuleBuilder {
     }
     /// <p>The type of rule.</p>
     pub fn set_rule_type(mut self, input: ::std::option::Option<crate::types::RuleType>) -> Self {
-        self.rule_type = input;
-        self
+        self.rule_type = input; self
     }
     /// <p>The type of rule.</p>
     pub fn get_rule_type(&self) -> &::std::option::Option<crate::types::RuleType> {
@@ -98,8 +95,7 @@ impl RuleBuilder {
     }
     /// <p>The configuration information for a rule.</p>
     pub fn set_rule_configuration(mut self, input: ::std::option::Option<crate::types::RuleConfiguration>) -> Self {
-        self.rule_configuration = input;
-        self
+        self.rule_configuration = input; self
     }
     /// <p>The configuration information for a rule.</p>
     pub fn get_rule_configuration(&self) -> &::std::option::Option<crate::types::RuleConfiguration> {
@@ -109,16 +105,21 @@ impl RuleBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`rule_type`](crate::types::builders::RuleBuilder::rule_type)
     pub fn build(self) -> ::std::result::Result<crate::types::Rule, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Rule {
-            included_users_and_groups: self.included_users_and_groups,
-            excluded_users_and_groups: self.excluded_users_and_groups,
-            rule_type: self.rule_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rule_type",
-                    "rule_type was not specified but it is required when building Rule",
-                )
-            })?,
-            rule_configuration: self.rule_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Rule {
+                included_users_and_groups: self.included_users_and_groups
+                ,
+                excluded_users_and_groups: self.excluded_users_and_groups
+                ,
+                rule_type: self.rule_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rule_type", "rule_type was not specified but it is required when building Rule")
+                    )?
+                ,
+                rule_configuration: self.rule_configuration
+                ,
+            }
+        )
     }
 }
+

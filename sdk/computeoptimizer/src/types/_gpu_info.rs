@@ -3,16 +3,17 @@
 /// <p>Describes the GPU accelerator settings for the instance type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GpuInfo {
+pub struct GpuInfo  {
     /// <p>Describes the GPU accelerators for the instance type.</p>
-    pub gpus: ::std::option::Option<::std::vec::Vec<crate::types::Gpu>>,
+    pub gpus: ::std::option::Option<::std::vec::Vec::<crate::types::Gpu>>,
 }
-impl GpuInfo {
+impl  GpuInfo  {
     /// <p>Describes the GPU accelerators for the instance type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.gpus.is_none()`.
-    pub fn gpus(&self) -> &[crate::types::Gpu] {
-        self.gpus.as_deref().unwrap_or_default()
+    pub fn gpus(&self) -> & [crate::types::Gpu] {
+        self.gpus.as_deref()
+        .unwrap_or_default()
     }
 }
 impl GpuInfo {
@@ -26,7 +27,7 @@ impl GpuInfo {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GpuInfoBuilder {
-    pub(crate) gpus: ::std::option::Option<::std::vec::Vec<crate::types::Gpu>>,
+    pub(crate) gpus: ::std::option::Option<::std::vec::Vec::<crate::types::Gpu>>,
 }
 impl GpuInfoBuilder {
     /// Appends an item to `gpus`.
@@ -36,21 +37,24 @@ impl GpuInfoBuilder {
     /// <p>Describes the GPU accelerators for the instance type.</p>
     pub fn gpus(mut self, input: crate::types::Gpu) -> Self {
         let mut v = self.gpus.unwrap_or_default();
-        v.push(input);
-        self.gpus = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.gpus = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Describes the GPU accelerators for the instance type.</p>
-    pub fn set_gpus(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Gpu>>) -> Self {
-        self.gpus = input;
-        self
+    pub fn set_gpus(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Gpu>>) -> Self {
+        self.gpus = input; self
     }
     /// <p>Describes the GPU accelerators for the instance type.</p>
-    pub fn get_gpus(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Gpu>> {
+    pub fn get_gpus(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Gpu>> {
         &self.gpus
     }
     /// Consumes the builder and constructs a [`GpuInfo`](crate::types::GpuInfo).
     pub fn build(self) -> crate::types::GpuInfo {
-        crate::types::GpuInfo { gpus: self.gpus }
+        crate::types::GpuInfo {
+            gpus: self.gpus
+            ,
+        }
     }
 }
+

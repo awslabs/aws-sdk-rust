@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetMLTransforms`](crate::operation::get_ml_transforms::builders::GetMLTransformsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_ml_transforms::builders::GetMLTransformsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_ml_transforms::builders::GetMLTransformsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_ml_transforms::builders::GetMLTransformsFluentBuilder::set_next_token):<br>required: **false**<br><p>A paginated token to offset the results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_ml_transforms::builders::GetMLTransformsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_ml_transforms::builders::GetMLTransformsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`filter(TransformFilterCriteria)`](crate::operation::get_ml_transforms::builders::GetMLTransformsFluentBuilder::filter) / [`set_filter(Option<TransformFilterCriteria>)`](crate::operation::get_ml_transforms::builders::GetMLTransformsFluentBuilder::set_filter):<br>required: **false**<br><p>The filter transformation criteria.</p><br>
     ///   - [`sort(TransformSortCriteria)`](crate::operation::get_ml_transforms::builders::GetMLTransformsFluentBuilder::sort) / [`set_sort(Option<TransformSortCriteria>)`](crate::operation::get_ml_transforms::builders::GetMLTransformsFluentBuilder::set_sort):<br>required: **false**<br><p>The sorting criteria.</p><br>
-    /// - On success, responds with [`GetMlTransformsOutput`](crate::operation::get_ml_transforms::GetMlTransformsOutput) with field(s):
+                            /// - On success, responds with [`GetMlTransformsOutput`](crate::operation::get_ml_transforms::GetMlTransformsOutput) with field(s):
     ///   - [`transforms(Vec::<MlTransform>)`](crate::operation::get_ml_transforms::GetMlTransformsOutput::transforms): <p>A list of machine learning transforms.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_ml_transforms::GetMlTransformsOutput::next_token): <p>A pagination token, if more results are available.</p>
-    /// - On failure, responds with [`SdkError<GetMLTransformsError>`](crate::operation::get_ml_transforms::GetMLTransformsError)
+                            /// - On failure, responds with [`SdkError<GetMLTransformsError>`](crate::operation::get_ml_transforms::GetMLTransformsError)
     pub fn get_ml_transforms(&self) -> crate::operation::get_ml_transforms::builders::GetMLTransformsFluentBuilder {
-        crate::operation::get_ml_transforms::builders::GetMLTransformsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_ml_transforms::builders::GetMLTransformsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEngineDefaultParametersOutput {
+pub struct DescribeEngineDefaultParametersOutput  {
     /// <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
     pub engine_defaults: ::std::option::Option<crate::types::EngineDefaults>,
     _request_id: Option<String>,
 }
-impl DescribeEngineDefaultParametersOutput {
+impl  DescribeEngineDefaultParametersOutput  {
     /// <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
-    pub fn engine_defaults(&self) -> ::std::option::Option<&crate::types::EngineDefaults> {
+    pub fn engine_defaults(&self) -> ::std::option::Option<& crate::types::EngineDefaults> {
         self.engine_defaults.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeEngineDefaultParametersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeEngineDefaultParametersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEngineDefaultParametersOutput`](crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersOutput).
     pub fn builder() -> crate::operation::describe_engine_default_parameters::builders::DescribeEngineDefaultParametersOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeEngineDefaultParametersOutputBuilder {
     }
     /// <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
     pub fn set_engine_defaults(mut self, input: ::std::option::Option<crate::types::EngineDefaults>) -> Self {
-        self.engine_defaults = input;
-        self
+        self.engine_defaults = input; self
     }
     /// <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
     pub fn get_engine_defaults(&self) -> &::std::option::Option<crate::types::EngineDefaults> {
         &self.engine_defaults
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeEngineDefaultParametersOutput`](crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersOutput).
     pub fn build(self) -> crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersOutput {
         crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersOutput {
-            engine_defaults: self.engine_defaults,
+            engine_defaults: self.engine_defaults
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

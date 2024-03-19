@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartTranscriptionJobOutput {
+pub struct StartTranscriptionJobOutput  {
     /// <p>Provides detailed information about the current transcription job, including job status and, if applicable, failure reason.</p>
     pub transcription_job: ::std::option::Option<crate::types::TranscriptionJob>,
     _request_id: Option<String>,
 }
-impl StartTranscriptionJobOutput {
+impl  StartTranscriptionJobOutput  {
     /// <p>Provides detailed information about the current transcription job, including job status and, if applicable, failure reason.</p>
-    pub fn transcription_job(&self) -> ::std::option::Option<&crate::types::TranscriptionJob> {
+    pub fn transcription_job(&self) -> ::std::option::Option<& crate::types::TranscriptionJob> {
         self.transcription_job.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartTranscriptionJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartTranscriptionJobOutput {
     /// Creates a new builder-style object to manufacture [`StartTranscriptionJobOutput`](crate::operation::start_transcription_job::StartTranscriptionJobOutput).
     pub fn builder() -> crate::operation::start_transcription_job::builders::StartTranscriptionJobOutputBuilder {
@@ -40,27 +40,28 @@ impl StartTranscriptionJobOutputBuilder {
     }
     /// <p>Provides detailed information about the current transcription job, including job status and, if applicable, failure reason.</p>
     pub fn set_transcription_job(mut self, input: ::std::option::Option<crate::types::TranscriptionJob>) -> Self {
-        self.transcription_job = input;
-        self
+        self.transcription_job = input; self
     }
     /// <p>Provides detailed information about the current transcription job, including job status and, if applicable, failure reason.</p>
     pub fn get_transcription_job(&self) -> &::std::option::Option<crate::types::TranscriptionJob> {
         &self.transcription_job
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartTranscriptionJobOutput`](crate::operation::start_transcription_job::StartTranscriptionJobOutput).
     pub fn build(self) -> crate::operation::start_transcription_job::StartTranscriptionJobOutput {
         crate::operation::start_transcription_job::StartTranscriptionJobOutput {
-            transcription_job: self.transcription_job,
+            transcription_job: self.transcription_job
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

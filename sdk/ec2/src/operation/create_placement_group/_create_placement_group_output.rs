@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePlacementGroupOutput {
+pub struct CreatePlacementGroupOutput  {
     /// <p>Information about the placement group.</p>
     pub placement_group: ::std::option::Option<crate::types::PlacementGroup>,
     _request_id: Option<String>,
 }
-impl CreatePlacementGroupOutput {
+impl  CreatePlacementGroupOutput  {
     /// <p>Information about the placement group.</p>
-    pub fn placement_group(&self) -> ::std::option::Option<&crate::types::PlacementGroup> {
+    pub fn placement_group(&self) -> ::std::option::Option<& crate::types::PlacementGroup> {
         self.placement_group.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreatePlacementGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreatePlacementGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreatePlacementGroupOutput`](crate::operation::create_placement_group::CreatePlacementGroupOutput).
     pub fn builder() -> crate::operation::create_placement_group::builders::CreatePlacementGroupOutputBuilder {
@@ -40,27 +40,28 @@ impl CreatePlacementGroupOutputBuilder {
     }
     /// <p>Information about the placement group.</p>
     pub fn set_placement_group(mut self, input: ::std::option::Option<crate::types::PlacementGroup>) -> Self {
-        self.placement_group = input;
-        self
+        self.placement_group = input; self
     }
     /// <p>Information about the placement group.</p>
     pub fn get_placement_group(&self) -> &::std::option::Option<crate::types::PlacementGroup> {
         &self.placement_group
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreatePlacementGroupOutput`](crate::operation::create_placement_group::CreatePlacementGroupOutput).
     pub fn build(self) -> crate::operation::create_placement_group::CreatePlacementGroupOutput {
         crate::operation::create_placement_group::CreatePlacementGroupOutput {
-            placement_group: self.placement_group,
+            placement_group: self.placement_group
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

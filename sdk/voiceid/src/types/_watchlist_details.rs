@@ -3,15 +3,14 @@
 /// <p>Details of the watchlists in a domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WatchlistDetails {
+pub struct WatchlistDetails  {
     /// <p>The identifier of the default watchlist.</p>
     pub default_watchlist_id: ::std::string::String,
 }
-impl WatchlistDetails {
+impl  WatchlistDetails  {
     /// <p>The identifier of the default watchlist.</p>
-    pub fn default_watchlist_id(&self) -> &str {
-        use std::ops::Deref;
-        self.default_watchlist_id.deref()
+    pub fn default_watchlist_id(&self) -> & str {
+        use std::ops::Deref; self.default_watchlist_id.deref()
     }
 }
 impl WatchlistDetails {
@@ -36,8 +35,7 @@ impl WatchlistDetailsBuilder {
     }
     /// <p>The identifier of the default watchlist.</p>
     pub fn set_default_watchlist_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_watchlist_id = input;
-        self
+        self.default_watchlist_id = input; self
     }
     /// <p>The identifier of the default watchlist.</p>
     pub fn get_default_watchlist_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl WatchlistDetailsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`default_watchlist_id`](crate::types::builders::WatchlistDetailsBuilder::default_watchlist_id)
     pub fn build(self) -> ::std::result::Result<crate::types::WatchlistDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::WatchlistDetails {
-            default_watchlist_id: self.default_watchlist_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "default_watchlist_id",
-                    "default_watchlist_id was not specified but it is required when building WatchlistDetails",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::WatchlistDetails {
+                default_watchlist_id: self.default_watchlist_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("default_watchlist_id", "default_watchlist_id was not specified but it is required when building WatchlistDetails")
+                    )?
+                ,
+            }
+        )
     }
 }
+

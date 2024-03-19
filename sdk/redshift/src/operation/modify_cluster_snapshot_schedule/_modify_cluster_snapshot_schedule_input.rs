@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyClusterSnapshotScheduleInput {
+pub struct ModifyClusterSnapshotScheduleInput  {
     /// <p>A unique identifier for the cluster whose snapshot schedule you want to modify.</p>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A unique alphanumeric identifier for the schedule that you want to associate with the cluster.</p>
@@ -10,13 +10,13 @@ pub struct ModifyClusterSnapshotScheduleInput {
     /// <p>A boolean to indicate whether to remove the assoiciation between the cluster and the schedule.</p>
     pub disassociate_schedule: ::std::option::Option<bool>,
 }
-impl ModifyClusterSnapshotScheduleInput {
+impl  ModifyClusterSnapshotScheduleInput  {
     /// <p>A unique identifier for the cluster whose snapshot schedule you want to modify.</p>
-    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>A unique alphanumeric identifier for the schedule that you want to associate with the cluster.</p>
-    pub fn schedule_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn schedule_identifier(&self) -> ::std::option::Option<& str> {
         self.schedule_identifier.as_deref()
     }
     /// <p>A boolean to indicate whether to remove the assoiciation between the cluster and the schedule.</p>
@@ -48,8 +48,7 @@ impl ModifyClusterSnapshotScheduleInputBuilder {
     }
     /// <p>A unique identifier for the cluster whose snapshot schedule you want to modify.</p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_identifier = input;
-        self
+        self.cluster_identifier = input; self
     }
     /// <p>A unique identifier for the cluster whose snapshot schedule you want to modify.</p>
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ModifyClusterSnapshotScheduleInputBuilder {
     }
     /// <p>A unique alphanumeric identifier for the schedule that you want to associate with the cluster.</p>
     pub fn set_schedule_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schedule_identifier = input;
-        self
+        self.schedule_identifier = input; self
     }
     /// <p>A unique alphanumeric identifier for the schedule that you want to associate with the cluster.</p>
     pub fn get_schedule_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,24 +74,24 @@ impl ModifyClusterSnapshotScheduleInputBuilder {
     }
     /// <p>A boolean to indicate whether to remove the assoiciation between the cluster and the schedule.</p>
     pub fn set_disassociate_schedule(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.disassociate_schedule = input;
-        self
+        self.disassociate_schedule = input; self
     }
     /// <p>A boolean to indicate whether to remove the assoiciation between the cluster and the schedule.</p>
     pub fn get_disassociate_schedule(&self) -> &::std::option::Option<bool> {
         &self.disassociate_schedule
     }
     /// Consumes the builder and constructs a [`ModifyClusterSnapshotScheduleInput`](crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleInput {
-            cluster_identifier: self.cluster_identifier,
-            schedule_identifier: self.schedule_identifier,
-            disassociate_schedule: self.disassociate_schedule,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleInput {
+                cluster_identifier: self.cluster_identifier
+                ,
+                schedule_identifier: self.schedule_identifier
+                ,
+                disassociate_schedule: self.disassociate_schedule
+                ,
+            }
+        )
     }
 }
+

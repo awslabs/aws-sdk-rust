@@ -6,15 +6,15 @@
 /// <p>We don't recommend using gender binary predictions to make decisions that impact an individual's rights, privacy, or access to services.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Gender {
+pub struct Gender  {
     /// <p>The predicted gender of the face.</p>
     pub value: ::std::option::Option<crate::types::GenderType>,
     /// <p>Level of confidence in the prediction.</p>
     pub confidence: ::std::option::Option<f32>,
 }
-impl Gender {
+impl  Gender  {
     /// <p>The predicted gender of the face.</p>
-    pub fn value(&self) -> ::std::option::Option<&crate::types::GenderType> {
+    pub fn value(&self) -> ::std::option::Option<& crate::types::GenderType> {
         self.value.as_ref()
     }
     /// <p>Level of confidence in the prediction.</p>
@@ -44,8 +44,7 @@ impl GenderBuilder {
     }
     /// <p>The predicted gender of the face.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::GenderType>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The predicted gender of the face.</p>
     pub fn get_value(&self) -> &::std::option::Option<crate::types::GenderType> {
@@ -58,8 +57,7 @@ impl GenderBuilder {
     }
     /// <p>Level of confidence in the prediction.</p>
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.confidence = input;
-        self
+        self.confidence = input; self
     }
     /// <p>Level of confidence in the prediction.</p>
     pub fn get_confidence(&self) -> &::std::option::Option<f32> {
@@ -68,8 +66,11 @@ impl GenderBuilder {
     /// Consumes the builder and constructs a [`Gender`](crate::types::Gender).
     pub fn build(self) -> crate::types::Gender {
         crate::types::Gender {
-            value: self.value,
-            confidence: self.confidence,
+            value: self.value
+            ,
+            confidence: self.confidence
+            ,
         }
     }
 }
+

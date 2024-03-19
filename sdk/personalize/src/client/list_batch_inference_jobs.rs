@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListBatchInferenceJobs`](crate::operation::list_batch_inference_jobs::builders::ListBatchInferenceJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_batch_inference_jobs::builders::ListBatchInferenceJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`solution_version_arn(impl Into<String>)`](crate::operation::list_batch_inference_jobs::builders::ListBatchInferenceJobsFluentBuilder::solution_version_arn) / [`set_solution_version_arn(Option<String>)`](crate::operation::list_batch_inference_jobs::builders::ListBatchInferenceJobsFluentBuilder::set_solution_version_arn):<br>required: **false**<br><p>The Amazon Resource Name (ARN) of the solution version from which the batch inference jobs were created.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_batch_inference_jobs::builders::ListBatchInferenceJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_batch_inference_jobs::builders::ListBatchInferenceJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to request the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_batch_inference_jobs::builders::ListBatchInferenceJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_batch_inference_jobs::builders::ListBatchInferenceJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of batch inference job results to return in each page. The default value is 100.</p><br>
-    /// - On success, responds with [`ListBatchInferenceJobsOutput`](crate::operation::list_batch_inference_jobs::ListBatchInferenceJobsOutput) with field(s):
+                            /// - On success, responds with [`ListBatchInferenceJobsOutput`](crate::operation::list_batch_inference_jobs::ListBatchInferenceJobsOutput) with field(s):
     ///   - [`batch_inference_jobs(Option<Vec::<BatchInferenceJobSummary>>)`](crate::operation::list_batch_inference_jobs::ListBatchInferenceJobsOutput::batch_inference_jobs): <p>A list containing information on each job that is returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_batch_inference_jobs::ListBatchInferenceJobsOutput::next_token): <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<ListBatchInferenceJobsError>`](crate::operation::list_batch_inference_jobs::ListBatchInferenceJobsError)
+                            /// - On failure, responds with [`SdkError<ListBatchInferenceJobsError>`](crate::operation::list_batch_inference_jobs::ListBatchInferenceJobsError)
     pub fn list_batch_inference_jobs(&self) -> crate::operation::list_batch_inference_jobs::builders::ListBatchInferenceJobsFluentBuilder {
-        crate::operation::list_batch_inference_jobs::builders::ListBatchInferenceJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_batch_inference_jobs::builders::ListBatchInferenceJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

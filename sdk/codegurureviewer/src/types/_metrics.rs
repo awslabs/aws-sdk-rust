@@ -3,7 +3,7 @@
 /// <p>Information about the statistics from the code review.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Metrics {
+pub struct Metrics  {
     /// <p><code>MeteredLinesOfCodeCount</code> is the number of lines of code in the repository where the code review happened. This does not include non-code lines such as comments and blank lines.</p>
     pub metered_lines_of_code_count: ::std::option::Option<i64>,
     /// <p><code>SuppressedLinesOfCodeCount</code> is the number of lines of code in the repository where the code review happened that CodeGuru Reviewer did not analyze. The lines suppressed in the analysis is based on the <code>excludeFiles</code> variable in the <code>aws-codeguru-reviewer.yml</code> file. This number does not include non-code lines such as comments and blank lines.</p>
@@ -11,7 +11,7 @@ pub struct Metrics {
     /// <p>Total number of recommendations found in the code review.</p>
     pub findings_count: ::std::option::Option<i64>,
 }
-impl Metrics {
+impl  Metrics  {
     /// <p><code>MeteredLinesOfCodeCount</code> is the number of lines of code in the repository where the code review happened. This does not include non-code lines such as comments and blank lines.</p>
     pub fn metered_lines_of_code_count(&self) -> ::std::option::Option<i64> {
         self.metered_lines_of_code_count
@@ -48,8 +48,7 @@ impl MetricsBuilder {
     }
     /// <p><code>MeteredLinesOfCodeCount</code> is the number of lines of code in the repository where the code review happened. This does not include non-code lines such as comments and blank lines.</p>
     pub fn set_metered_lines_of_code_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.metered_lines_of_code_count = input;
-        self
+        self.metered_lines_of_code_count = input; self
     }
     /// <p><code>MeteredLinesOfCodeCount</code> is the number of lines of code in the repository where the code review happened. This does not include non-code lines such as comments and blank lines.</p>
     pub fn get_metered_lines_of_code_count(&self) -> &::std::option::Option<i64> {
@@ -62,8 +61,7 @@ impl MetricsBuilder {
     }
     /// <p><code>SuppressedLinesOfCodeCount</code> is the number of lines of code in the repository where the code review happened that CodeGuru Reviewer did not analyze. The lines suppressed in the analysis is based on the <code>excludeFiles</code> variable in the <code>aws-codeguru-reviewer.yml</code> file. This number does not include non-code lines such as comments and blank lines.</p>
     pub fn set_suppressed_lines_of_code_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.suppressed_lines_of_code_count = input;
-        self
+        self.suppressed_lines_of_code_count = input; self
     }
     /// <p><code>SuppressedLinesOfCodeCount</code> is the number of lines of code in the repository where the code review happened that CodeGuru Reviewer did not analyze. The lines suppressed in the analysis is based on the <code>excludeFiles</code> variable in the <code>aws-codeguru-reviewer.yml</code> file. This number does not include non-code lines such as comments and blank lines.</p>
     pub fn get_suppressed_lines_of_code_count(&self) -> &::std::option::Option<i64> {
@@ -76,8 +74,7 @@ impl MetricsBuilder {
     }
     /// <p>Total number of recommendations found in the code review.</p>
     pub fn set_findings_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.findings_count = input;
-        self
+        self.findings_count = input; self
     }
     /// <p>Total number of recommendations found in the code review.</p>
     pub fn get_findings_count(&self) -> &::std::option::Option<i64> {
@@ -86,9 +83,13 @@ impl MetricsBuilder {
     /// Consumes the builder and constructs a [`Metrics`](crate::types::Metrics).
     pub fn build(self) -> crate::types::Metrics {
         crate::types::Metrics {
-            metered_lines_of_code_count: self.metered_lines_of_code_count,
-            suppressed_lines_of_code_count: self.suppressed_lines_of_code_count,
-            findings_count: self.findings_count,
+            metered_lines_of_code_count: self.metered_lines_of_code_count
+            ,
+            suppressed_lines_of_code_count: self.suppressed_lines_of_code_count
+            ,
+            findings_count: self.findings_count
+            ,
         }
     }
 }
+

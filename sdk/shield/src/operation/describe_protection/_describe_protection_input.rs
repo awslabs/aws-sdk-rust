@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeProtectionInput {
+pub struct DescribeProtectionInput  {
     /// <p>The unique identifier (ID) for the <code>Protection</code> object to describe. You must provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code> of the protection, but not both.</p>
     pub protection_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the protected Amazon Web Services resource. You must provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code> of the protection, but not both.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeProtectionInput {
+impl  DescribeProtectionInput  {
     /// <p>The unique identifier (ID) for the <code>Protection</code> object to describe. You must provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code> of the protection, but not both.</p>
-    pub fn protection_id(&self) -> ::std::option::Option<&str> {
+    pub fn protection_id(&self) -> ::std::option::Option<& str> {
         self.protection_id.as_deref()
     }
     /// <p>The ARN (Amazon Resource Name) of the protected Amazon Web Services resource. You must provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code> of the protection, but not both.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl DescribeProtectionInputBuilder {
     }
     /// <p>The unique identifier (ID) for the <code>Protection</code> object to describe. You must provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code> of the protection, but not both.</p>
     pub fn set_protection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.protection_id = input;
-        self
+        self.protection_id = input; self
     }
     /// <p>The unique identifier (ID) for the <code>Protection</code> object to describe. You must provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code> of the protection, but not both.</p>
     pub fn get_protection_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,20 +53,22 @@ impl DescribeProtectionInputBuilder {
     }
     /// <p>The ARN (Amazon Resource Name) of the protected Amazon Web Services resource. You must provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code> of the protection, but not both.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The ARN (Amazon Resource Name) of the protected Amazon Web Services resource. You must provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code> of the protection, but not both.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
     /// Consumes the builder and constructs a [`DescribeProtectionInput`](crate::operation::describe_protection::DescribeProtectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_protection::DescribeProtectionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_protection::DescribeProtectionInput {
-            protection_id: self.protection_id,
-            resource_arn: self.resource_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_protection::DescribeProtectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_protection::DescribeProtectionInput {
+                protection_id: self.protection_id
+                ,
+                resource_arn: self.resource_arn
+                ,
+            }
+        )
     }
 }
+

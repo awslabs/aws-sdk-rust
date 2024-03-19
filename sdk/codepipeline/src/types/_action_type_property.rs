@@ -3,7 +3,7 @@
 /// <p>Represents information about each property specified in the action configuration, such as the description and key name that display for the customer using the action type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActionTypeProperty {
+pub struct ActionTypeProperty  {
     /// <p>The property name that is displayed to users.</p>
     pub name: ::std::string::String,
     /// <p>Whether the configuration property is an optional value.</p>
@@ -17,11 +17,10 @@ pub struct ActionTypeProperty {
     /// <p>The description of the property that is displayed to users.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl ActionTypeProperty {
+impl  ActionTypeProperty  {
     /// <p>The property name that is displayed to users.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Whether the configuration property is an optional value.</p>
     pub fn optional(&self) -> bool {
@@ -40,7 +39,7 @@ impl ActionTypeProperty {
         self.queryable
     }
     /// <p>The description of the property that is displayed to users.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -71,8 +70,7 @@ impl ActionTypePropertyBuilder {
     }
     /// <p>The property name that is displayed to users.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The property name that is displayed to users.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +84,7 @@ impl ActionTypePropertyBuilder {
     }
     /// <p>Whether the configuration property is an optional value.</p>
     pub fn set_optional(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.optional = input;
-        self
+        self.optional = input; self
     }
     /// <p>Whether the configuration property is an optional value.</p>
     pub fn get_optional(&self) -> &::std::option::Option<bool> {
@@ -101,8 +98,7 @@ impl ActionTypePropertyBuilder {
     }
     /// <p>Whether the configuration property is a key.</p>
     pub fn set_key(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>Whether the configuration property is a key.</p>
     pub fn get_key(&self) -> &::std::option::Option<bool> {
@@ -116,8 +112,7 @@ impl ActionTypePropertyBuilder {
     }
     /// <p>Whether to omit the field value entered by the customer in the log. If <code>true</code>, the value is not saved in CloudTrail logs for the action execution.</p>
     pub fn set_no_echo(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.no_echo = input;
-        self
+        self.no_echo = input; self
     }
     /// <p>Whether to omit the field value entered by the customer in the log. If <code>true</code>, the value is not saved in CloudTrail logs for the action execution.</p>
     pub fn get_no_echo(&self) -> &::std::option::Option<bool> {
@@ -130,8 +125,7 @@ impl ActionTypePropertyBuilder {
     }
     /// <p>Indicates that the property is used with polling. An action type can have up to one queryable property. If it has one, that property must be both required and not secret.</p>
     pub fn set_queryable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.queryable = input;
-        self
+        self.queryable = input; self
     }
     /// <p>Indicates that the property is used with polling. An action type can have up to one queryable property. If it has one, that property must be both required and not secret.</p>
     pub fn get_queryable(&self) -> &::std::option::Option<bool> {
@@ -144,8 +138,7 @@ impl ActionTypePropertyBuilder {
     }
     /// <p>The description of the property that is displayed to users.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the property that is displayed to users.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,18 +148,29 @@ impl ActionTypePropertyBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::ActionTypePropertyBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::ActionTypeProperty, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ActionTypeProperty {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ActionTypeProperty",
-                )
-            })?,
-            optional: self.optional.unwrap_or_default(),
-            key: self.key.unwrap_or_default(),
-            no_echo: self.no_echo.unwrap_or_default(),
-            queryable: self.queryable.unwrap_or_default(),
-            description: self.description,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ActionTypeProperty {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ActionTypeProperty")
+                    )?
+                ,
+                optional: self.optional
+                    .unwrap_or_default()
+                ,
+                key: self.key
+                    .unwrap_or_default()
+                ,
+                no_echo: self.no_echo
+                    .unwrap_or_default()
+                ,
+                queryable: self.queryable
+                    .unwrap_or_default()
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

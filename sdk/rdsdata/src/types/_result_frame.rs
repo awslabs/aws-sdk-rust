@@ -5,22 +5,23 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResultFrame {
+pub struct ResultFrame  {
     /// <p>The result-set metadata in the result set.</p>
     pub result_set_metadata: ::std::option::Option<crate::types::ResultSetMetadata>,
     /// <p>The records in the result set.</p>
-    pub records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
+    pub records: ::std::option::Option<::std::vec::Vec::<crate::types::Record>>,
 }
-impl ResultFrame {
+impl  ResultFrame  {
     /// <p>The result-set metadata in the result set.</p>
-    pub fn result_set_metadata(&self) -> ::std::option::Option<&crate::types::ResultSetMetadata> {
+    pub fn result_set_metadata(&self) -> ::std::option::Option<& crate::types::ResultSetMetadata> {
         self.result_set_metadata.as_ref()
     }
     /// <p>The records in the result set.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.records.is_none()`.
-    pub fn records(&self) -> &[crate::types::Record] {
-        self.records.as_deref().unwrap_or_default()
+    pub fn records(&self) -> & [crate::types::Record] {
+        self.records.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ResultFrame {
@@ -35,7 +36,7 @@ impl ResultFrame {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResultFrameBuilder {
     pub(crate) result_set_metadata: ::std::option::Option<crate::types::ResultSetMetadata>,
-    pub(crate) records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
+    pub(crate) records: ::std::option::Option<::std::vec::Vec::<crate::types::Record>>,
 }
 impl ResultFrameBuilder {
     /// <p>The result-set metadata in the result set.</p>
@@ -45,8 +46,7 @@ impl ResultFrameBuilder {
     }
     /// <p>The result-set metadata in the result set.</p>
     pub fn set_result_set_metadata(mut self, input: ::std::option::Option<crate::types::ResultSetMetadata>) -> Self {
-        self.result_set_metadata = input;
-        self
+        self.result_set_metadata = input; self
     }
     /// <p>The result-set metadata in the result set.</p>
     pub fn get_result_set_metadata(&self) -> &::std::option::Option<crate::types::ResultSetMetadata> {
@@ -59,24 +59,26 @@ impl ResultFrameBuilder {
     /// <p>The records in the result set.</p>
     pub fn records(mut self, input: crate::types::Record) -> Self {
         let mut v = self.records.unwrap_or_default();
-        v.push(input);
-        self.records = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.records = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The records in the result set.</p>
-    pub fn set_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Record>>) -> Self {
-        self.records = input;
-        self
+    pub fn set_records(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Record>>) -> Self {
+        self.records = input; self
     }
     /// <p>The records in the result set.</p>
-    pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Record>> {
+    pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Record>> {
         &self.records
     }
     /// Consumes the builder and constructs a [`ResultFrame`](crate::types::ResultFrame).
     pub fn build(self) -> crate::types::ResultFrame {
         crate::types::ResultFrame {
-            result_set_metadata: self.result_set_metadata,
-            records: self.records,
+            result_set_metadata: self.result_set_metadata
+            ,
+            records: self.records
+            ,
         }
     }
 }
+

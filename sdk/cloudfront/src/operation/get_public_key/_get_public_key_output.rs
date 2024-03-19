@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPublicKeyOutput {
+pub struct GetPublicKeyOutput  {
     /// <p>The public key.</p>
     pub public_key: ::std::option::Option<crate::types::PublicKey>,
     /// <p>The identifier for this version of the public key.</p>
     pub e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetPublicKeyOutput {
+impl  GetPublicKeyOutput  {
     /// <p>The public key.</p>
-    pub fn public_key(&self) -> ::std::option::Option<&crate::types::PublicKey> {
+    pub fn public_key(&self) -> ::std::option::Option<& crate::types::PublicKey> {
         self.public_key.as_ref()
     }
     /// <p>The identifier for this version of the public key.</p>
-    pub fn e_tag(&self) -> ::std::option::Option<&str> {
+    pub fn e_tag(&self) -> ::std::option::Option<& str> {
         self.e_tag.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetPublicKeyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetPublicKeyOutput {
     /// Creates a new builder-style object to manufacture [`GetPublicKeyOutput`](crate::operation::get_public_key::GetPublicKeyOutput).
     pub fn builder() -> crate::operation::get_public_key::builders::GetPublicKeyOutputBuilder {
@@ -47,8 +47,7 @@ impl GetPublicKeyOutputBuilder {
     }
     /// <p>The public key.</p>
     pub fn set_public_key(mut self, input: ::std::option::Option<crate::types::PublicKey>) -> Self {
-        self.public_key = input;
-        self
+        self.public_key = input; self
     }
     /// <p>The public key.</p>
     pub fn get_public_key(&self) -> &::std::option::Option<crate::types::PublicKey> {
@@ -61,28 +60,30 @@ impl GetPublicKeyOutputBuilder {
     }
     /// <p>The identifier for this version of the public key.</p>
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.e_tag = input;
-        self
+        self.e_tag = input; self
     }
     /// <p>The identifier for this version of the public key.</p>
     pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
         &self.e_tag
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetPublicKeyOutput`](crate::operation::get_public_key::GetPublicKeyOutput).
     pub fn build(self) -> crate::operation::get_public_key::GetPublicKeyOutput {
         crate::operation::get_public_key::GetPublicKeyOutput {
-            public_key: self.public_key,
-            e_tag: self.e_tag,
+            public_key: self.public_key
+            ,
+            e_tag: self.e_tag
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

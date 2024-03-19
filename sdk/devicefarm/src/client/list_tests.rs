@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTests`](crate::operation::list_tests::builders::ListTestsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_tests::builders::ListTestsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`arn(impl Into<String>)`](crate::operation::list_tests::builders::ListTestsFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::list_tests::builders::ListTestsFluentBuilder::set_arn):<br>required: **true**<br><p>The test suite's Amazon Resource Name (ARN).</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_tests::builders::ListTestsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_tests::builders::ListTestsFluentBuilder::set_next_token):<br>required: **false**<br><p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p><br>
-    /// - On success, responds with [`ListTestsOutput`](crate::operation::list_tests::ListTestsOutput) with field(s):
+                            /// - On success, responds with [`ListTestsOutput`](crate::operation::list_tests::ListTestsOutput) with field(s):
     ///   - [`tests(Option<Vec::<Test>>)`](crate::operation::list_tests::ListTestsOutput::tests): <p>Information about the tests.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_tests::ListTestsOutput::next_token): <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
-    /// - On failure, responds with [`SdkError<ListTestsError>`](crate::operation::list_tests::ListTestsError)
+                            /// - On failure, responds with [`SdkError<ListTestsError>`](crate::operation::list_tests::ListTestsError)
     pub fn list_tests(&self) -> crate::operation::list_tests::builders::ListTestsFluentBuilder {
-        crate::operation::list_tests::builders::ListTestsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_tests::builders::ListTestsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

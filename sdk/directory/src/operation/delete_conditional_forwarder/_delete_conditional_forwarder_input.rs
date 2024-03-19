@@ -3,19 +3,19 @@
 /// <p>Deletes a conditional forwarder.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteConditionalForwarderInput {
+pub struct DeleteConditionalForwarderInput  {
     /// <p>The directory ID for which you are deleting the conditional forwarder.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The fully qualified domain name (FQDN) of the remote domain with which you are deleting the conditional forwarder.</p>
     pub remote_domain_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteConditionalForwarderInput {
+impl  DeleteConditionalForwarderInput  {
     /// <p>The directory ID for which you are deleting the conditional forwarder.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The fully qualified domain name (FQDN) of the remote domain with which you are deleting the conditional forwarder.</p>
-    pub fn remote_domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn remote_domain_name(&self) -> ::std::option::Option<& str> {
         self.remote_domain_name.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DeleteConditionalForwarderInputBuilder {
     }
     /// <p>The directory ID for which you are deleting the conditional forwarder.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>The directory ID for which you are deleting the conditional forwarder.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,23 +56,22 @@ impl DeleteConditionalForwarderInputBuilder {
     }
     /// <p>The fully qualified domain name (FQDN) of the remote domain with which you are deleting the conditional forwarder.</p>
     pub fn set_remote_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.remote_domain_name = input;
-        self
+        self.remote_domain_name = input; self
     }
     /// <p>The fully qualified domain name (FQDN) of the remote domain with which you are deleting the conditional forwarder.</p>
     pub fn get_remote_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.remote_domain_name
     }
     /// Consumes the builder and constructs a [`DeleteConditionalForwarderInput`](crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderInput {
-            directory_id: self.directory_id,
-            remote_domain_name: self.remote_domain_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderInput {
+                directory_id: self.directory_id
+                ,
+                remote_domain_name: self.remote_domain_name
+                ,
+            }
+        )
     }
 }
+

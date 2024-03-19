@@ -3,19 +3,19 @@
 /// <p>Contains information about the debug session for a build. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DebugSession {
+pub struct DebugSession  {
     /// <p>Specifies if session debugging is enabled for this build.</p>
     pub session_enabled: ::std::option::Option<bool>,
     /// <p>Contains the identifier of the Session Manager session used for the build. To work with the paused build, you open this session to examine, control, and resume the build.</p>
     pub session_target: ::std::option::Option<::std::string::String>,
 }
-impl DebugSession {
+impl  DebugSession  {
     /// <p>Specifies if session debugging is enabled for this build.</p>
     pub fn session_enabled(&self) -> ::std::option::Option<bool> {
         self.session_enabled
     }
     /// <p>Contains the identifier of the Session Manager session used for the build. To work with the paused build, you open this session to examine, control, and resume the build.</p>
-    pub fn session_target(&self) -> ::std::option::Option<&str> {
+    pub fn session_target(&self) -> ::std::option::Option<& str> {
         self.session_target.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DebugSessionBuilder {
     }
     /// <p>Specifies if session debugging is enabled for this build.</p>
     pub fn set_session_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.session_enabled = input;
-        self
+        self.session_enabled = input; self
     }
     /// <p>Specifies if session debugging is enabled for this build.</p>
     pub fn get_session_enabled(&self) -> &::std::option::Option<bool> {
@@ -55,8 +54,7 @@ impl DebugSessionBuilder {
     }
     /// <p>Contains the identifier of the Session Manager session used for the build. To work with the paused build, you open this session to examine, control, and resume the build.</p>
     pub fn set_session_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_target = input;
-        self
+        self.session_target = input; self
     }
     /// <p>Contains the identifier of the Session Manager session used for the build. To work with the paused build, you open this session to examine, control, and resume the build.</p>
     pub fn get_session_target(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl DebugSessionBuilder {
     /// Consumes the builder and constructs a [`DebugSession`](crate::types::DebugSession).
     pub fn build(self) -> crate::types::DebugSession {
         crate::types::DebugSession {
-            session_enabled: self.session_enabled,
-            session_target: self.session_target,
+            session_enabled: self.session_enabled
+            ,
+            session_target: self.session_target
+            ,
         }
     }
 }
+

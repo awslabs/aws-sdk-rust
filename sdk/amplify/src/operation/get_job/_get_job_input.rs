@@ -3,7 +3,7 @@
 /// <p>The request structure for the get job request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetJobInput {
+pub struct GetJobInput  {
     /// <p>The unique ID for an Amplify app.</p>
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the branch to use for the job.</p>
@@ -11,17 +11,17 @@ pub struct GetJobInput {
     /// <p>The unique ID for the job.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
 }
-impl GetJobInput {
+impl  GetJobInput  {
     /// <p>The unique ID for an Amplify app.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the branch to use for the job.</p>
-    pub fn branch_name(&self) -> ::std::option::Option<&str> {
+    pub fn branch_name(&self) -> ::std::option::Option<& str> {
         self.branch_name.as_deref()
     }
     /// <p>The unique ID for the job.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl GetJobInputBuilder {
     }
     /// <p>The unique ID for an Amplify app.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The unique ID for an Amplify app.</p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl GetJobInputBuilder {
     }
     /// <p>The name of the branch to use for the job.</p>
     pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.branch_name = input;
-        self
+        self.branch_name = input; self
     }
     /// <p>The name of the branch to use for the job.</p>
     pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +77,7 @@ impl GetJobInputBuilder {
     }
     /// <p>The unique ID for the job.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The unique ID for the job.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,10 +85,16 @@ impl GetJobInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetJobInput`](crate::operation::get_job::GetJobInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_job::GetJobInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_job::GetJobInput {
-            app_id: self.app_id,
-            branch_name: self.branch_name,
-            job_id: self.job_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_job::GetJobInput {
+                app_id: self.app_id
+                ,
+                branch_name: self.branch_name
+                ,
+                job_id: self.job_id
+                ,
+            }
+        )
     }
 }
+

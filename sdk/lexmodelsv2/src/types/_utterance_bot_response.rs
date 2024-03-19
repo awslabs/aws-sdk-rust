@@ -3,7 +3,7 @@
 /// <p>An object that contains a response to the utterance from the bot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UtteranceBotResponse {
+pub struct UtteranceBotResponse  {
     /// <p>The text of the response to the utterance from the bot.</p>
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The type of the response. The following values are possible:</p>
@@ -22,9 +22,9 @@ pub struct UtteranceBotResponse {
     /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
     pub image_response_card: ::std::option::Option<crate::types::ImageResponseCard>,
 }
-impl UtteranceBotResponse {
+impl  UtteranceBotResponse  {
     /// <p>The text of the response to the utterance from the bot.</p>
-    pub fn content(&self) -> ::std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<& str> {
         self.content.as_deref()
     }
     /// <p>The type of the response. The following values are possible:</p>
@@ -38,12 +38,12 @@ impl UtteranceBotResponse {
     /// <li>
     /// <p><code>ImageResponseCard</code> – An image with buttons that the customer can select. See <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_ImageResponseCard.html">ImageResponseCard</a> for more information.</p></li>
     /// </ul>
-    pub fn content_type(&self) -> ::std::option::Option<&crate::types::UtteranceContentType> {
+    pub fn content_type(&self) -> ::std::option::Option<& crate::types::UtteranceContentType> {
         self.content_type.as_ref()
     }
     /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform.</p>
     /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
-    pub fn image_response_card(&self) -> ::std::option::Option<&crate::types::ImageResponseCard> {
+    pub fn image_response_card(&self) -> ::std::option::Option<& crate::types::ImageResponseCard> {
         self.image_response_card.as_ref()
     }
 }
@@ -70,8 +70,7 @@ impl UtteranceBotResponseBuilder {
     }
     /// <p>The text of the response to the utterance from the bot.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>The text of the response to the utterance from the bot.</p>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl UtteranceBotResponseBuilder {
     /// <p><code>ImageResponseCard</code> – An image with buttons that the customer can select. See <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_ImageResponseCard.html">ImageResponseCard</a> for more information.</p></li>
     /// </ul>
     pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::UtteranceContentType>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>The type of the response. The following values are possible:</p>
     /// <ul>
@@ -130,8 +128,7 @@ impl UtteranceBotResponseBuilder {
     /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform.</p>
     /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
     pub fn set_image_response_card(mut self, input: ::std::option::Option<crate::types::ImageResponseCard>) -> Self {
-        self.image_response_card = input;
-        self
+        self.image_response_card = input; self
     }
     /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform.</p>
     /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
@@ -141,9 +138,13 @@ impl UtteranceBotResponseBuilder {
     /// Consumes the builder and constructs a [`UtteranceBotResponse`](crate::types::UtteranceBotResponse).
     pub fn build(self) -> crate::types::UtteranceBotResponse {
         crate::types::UtteranceBotResponse {
-            content: self.content,
-            content_type: self.content_type,
-            image_response_card: self.image_response_card,
+            content: self.content
+            ,
+            content_type: self.content_type
+            ,
+            image_response_card: self.image_response_card
+            ,
         }
     }
 }
+

@@ -6,28 +6,29 @@
 /// <p>For more information about specifying filter parameters, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-view-cw-tools-cwim-query.html">Using the Amazon CloudWatch Internet Monitor query interface</a> in the Amazon CloudWatch Internet Monitor User Guide.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FilterParameter {
+pub struct FilterParameter  {
     /// <p>A data field that you want to filter, to further scope your application's Internet Monitor data in a repository that you created by running a query. A field might be <code>city</code>, for example. The field must be one of the fields that was returned by the specific query that you used to create the repository.</p>
     pub field: ::std::option::Option<::std::string::String>,
     /// <p>The operator to use with the filter field and a value, such as <code>not_equals</code>.</p>
     pub operator: ::std::option::Option<crate::types::Operator>,
     /// <p>One or more values to be used, together with the specified operator, to filter data for a query. For example, you could specify an array of values such as <code>["Seattle", "Redmond"]</code>. Values in the array are separated by commas.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl FilterParameter {
+impl  FilterParameter  {
     /// <p>A data field that you want to filter, to further scope your application's Internet Monitor data in a repository that you created by running a query. A field might be <code>city</code>, for example. The field must be one of the fields that was returned by the specific query that you used to create the repository.</p>
-    pub fn field(&self) -> ::std::option::Option<&str> {
+    pub fn field(&self) -> ::std::option::Option<& str> {
         self.field.as_deref()
     }
     /// <p>The operator to use with the filter field and a value, such as <code>not_equals</code>.</p>
-    pub fn operator(&self) -> ::std::option::Option<&crate::types::Operator> {
+    pub fn operator(&self) -> ::std::option::Option<& crate::types::Operator> {
         self.operator.as_ref()
     }
     /// <p>One or more values to be used, together with the specified operator, to filter data for a query. For example, you could specify an array of values such as <code>["Seattle", "Redmond"]</code>. Values in the array are separated by commas.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[::std::string::String] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [::std::string::String] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl FilterParameter {
@@ -43,7 +44,7 @@ impl FilterParameter {
 pub struct FilterParameterBuilder {
     pub(crate) field: ::std::option::Option<::std::string::String>,
     pub(crate) operator: ::std::option::Option<crate::types::Operator>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl FilterParameterBuilder {
     /// <p>A data field that you want to filter, to further scope your application's Internet Monitor data in a repository that you created by running a query. A field might be <code>city</code>, for example. The field must be one of the fields that was returned by the specific query that you used to create the repository.</p>
@@ -53,8 +54,7 @@ impl FilterParameterBuilder {
     }
     /// <p>A data field that you want to filter, to further scope your application's Internet Monitor data in a repository that you created by running a query. A field might be <code>city</code>, for example. The field must be one of the fields that was returned by the specific query that you used to create the repository.</p>
     pub fn set_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field = input;
-        self
+        self.field = input; self
     }
     /// <p>A data field that you want to filter, to further scope your application's Internet Monitor data in a repository that you created by running a query. A field might be <code>city</code>, for example. The field must be one of the fields that was returned by the specific query that you used to create the repository.</p>
     pub fn get_field(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +67,7 @@ impl FilterParameterBuilder {
     }
     /// <p>The operator to use with the filter field and a value, such as <code>not_equals</code>.</p>
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::Operator>) -> Self {
-        self.operator = input;
-        self
+        self.operator = input; self
     }
     /// <p>The operator to use with the filter field and a value, such as <code>not_equals</code>.</p>
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::Operator> {
@@ -81,25 +80,28 @@ impl FilterParameterBuilder {
     /// <p>One or more values to be used, together with the specified operator, to filter data for a query. For example, you could specify an array of values such as <code>["Seattle", "Redmond"]</code>. Values in the array are separated by commas.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more values to be used, together with the specified operator, to filter data for a query. For example, you could specify an array of values such as <code>["Seattle", "Redmond"]</code>. Values in the array are separated by commas.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>One or more values to be used, together with the specified operator, to filter data for a query. For example, you could specify an array of values such as <code>["Seattle", "Redmond"]</code>. Values in the array are separated by commas.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`FilterParameter`](crate::types::FilterParameter).
     pub fn build(self) -> crate::types::FilterParameter {
         crate::types::FilterParameter {
-            field: self.field,
-            operator: self.operator,
-            values: self.values,
+            field: self.field
+            ,
+            operator: self.operator
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

@@ -3,15 +3,15 @@
 /// <p>Information about the minimum number of healthy instances per Availability Zone.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MinimumHealthyHostsPerZone {
+pub struct MinimumHealthyHostsPerZone  {
     /// <p>The <code>type</code> associated with the <code>MinimumHealthyHostsPerZone</code> option.</p>
     pub r#type: ::std::option::Option<crate::types::MinimumHealthyHostsPerZoneType>,
     /// <p>The <code>value</code> associated with the <code>MinimumHealthyHostsPerZone</code> option.</p>
     pub value: i32,
 }
-impl MinimumHealthyHostsPerZone {
+impl  MinimumHealthyHostsPerZone  {
     /// <p>The <code>type</code> associated with the <code>MinimumHealthyHostsPerZone</code> option.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::MinimumHealthyHostsPerZoneType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::MinimumHealthyHostsPerZoneType> {
         self.r#type.as_ref()
     }
     /// <p>The <code>value</code> associated with the <code>MinimumHealthyHostsPerZone</code> option.</p>
@@ -41,8 +41,7 @@ impl MinimumHealthyHostsPerZoneBuilder {
     }
     /// <p>The <code>type</code> associated with the <code>MinimumHealthyHostsPerZone</code> option.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::MinimumHealthyHostsPerZoneType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The <code>type</code> associated with the <code>MinimumHealthyHostsPerZone</code> option.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::MinimumHealthyHostsPerZoneType> {
@@ -55,8 +54,7 @@ impl MinimumHealthyHostsPerZoneBuilder {
     }
     /// <p>The <code>value</code> associated with the <code>MinimumHealthyHostsPerZone</code> option.</p>
     pub fn set_value(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The <code>value</code> associated with the <code>MinimumHealthyHostsPerZone</code> option.</p>
     pub fn get_value(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,12 @@ impl MinimumHealthyHostsPerZoneBuilder {
     /// Consumes the builder and constructs a [`MinimumHealthyHostsPerZone`](crate::types::MinimumHealthyHostsPerZone).
     pub fn build(self) -> crate::types::MinimumHealthyHostsPerZone {
         crate::types::MinimumHealthyHostsPerZone {
-            r#type: self.r#type,
-            value: self.value.unwrap_or_default(),
+            r#type: self.r#type
+            ,
+            value: self.value
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

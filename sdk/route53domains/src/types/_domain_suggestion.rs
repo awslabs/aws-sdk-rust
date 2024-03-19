@@ -3,7 +3,7 @@
 /// <p>Information about one suggested domain name.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DomainSuggestion {
+pub struct DomainSuggestion  {
     /// <p>A suggested domain name.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>Whether the domain name is available for registering.</p><note>
@@ -68,9 +68,9 @@ pub struct DomainSuggestion {
     /// </dl>
     pub availability: ::std::option::Option<::std::string::String>,
 }
-impl DomainSuggestion {
+impl  DomainSuggestion  {
     /// <p>A suggested domain name.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>Whether the domain name is available for registering.</p><note>
@@ -133,7 +133,7 @@ impl DomainSuggestion {
     /// <p>The domain name is forbidden.</p>
     /// </dd>
     /// </dl>
-    pub fn availability(&self) -> ::std::option::Option<&str> {
+    pub fn availability(&self) -> ::std::option::Option<& str> {
         self.availability.as_deref()
     }
 }
@@ -159,8 +159,7 @@ impl DomainSuggestionBuilder {
     }
     /// <p>A suggested domain name.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>A suggested domain name.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -291,8 +290,7 @@ impl DomainSuggestionBuilder {
     /// </dd>
     /// </dl>
     pub fn set_availability(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability = input;
-        self
+        self.availability = input; self
     }
     /// <p>Whether the domain name is available for registering.</p><note>
     /// <p>You can register only the domains that are designated as <code>AVAILABLE</code>.</p>
@@ -360,8 +358,11 @@ impl DomainSuggestionBuilder {
     /// Consumes the builder and constructs a [`DomainSuggestion`](crate::types::DomainSuggestion).
     pub fn build(self) -> crate::types::DomainSuggestion {
         crate::types::DomainSuggestion {
-            domain_name: self.domain_name,
-            availability: self.availability,
+            domain_name: self.domain_name
+            ,
+            availability: self.availability
+            ,
         }
     }
 }
+

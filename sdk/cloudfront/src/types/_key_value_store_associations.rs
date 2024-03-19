@@ -3,22 +3,23 @@
 /// <p>The Key Value Store associations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KeyValueStoreAssociations {
+pub struct KeyValueStoreAssociations  {
     /// <p>The quantity of Key Value Store associations.</p>
     pub quantity: i32,
     /// <p>The items of the Key Value Store association.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::KeyValueStoreAssociation>>,
+    pub items: ::std::option::Option<::std::vec::Vec::<crate::types::KeyValueStoreAssociation>>,
 }
-impl KeyValueStoreAssociations {
+impl  KeyValueStoreAssociations  {
     /// <p>The quantity of Key Value Store associations.</p>
     pub fn quantity(&self) -> i32 {
         self.quantity
     }
     /// <p>The items of the Key Value Store association.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
-    pub fn items(&self) -> &[crate::types::KeyValueStoreAssociation] {
-        self.items.as_deref().unwrap_or_default()
+    pub fn items(&self) -> & [crate::types::KeyValueStoreAssociation] {
+        self.items.as_deref()
+        .unwrap_or_default()
     }
 }
 impl KeyValueStoreAssociations {
@@ -33,7 +34,7 @@ impl KeyValueStoreAssociations {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KeyValueStoreAssociationsBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::KeyValueStoreAssociation>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::KeyValueStoreAssociation>>,
 }
 impl KeyValueStoreAssociationsBuilder {
     /// <p>The quantity of Key Value Store associations.</p>
@@ -44,8 +45,7 @@ impl KeyValueStoreAssociationsBuilder {
     }
     /// <p>The quantity of Key Value Store associations.</p>
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.quantity = input;
-        self
+        self.quantity = input; self
     }
     /// <p>The quantity of Key Value Store associations.</p>
     pub fn get_quantity(&self) -> &::std::option::Option<i32> {
@@ -58,31 +58,33 @@ impl KeyValueStoreAssociationsBuilder {
     /// <p>The items of the Key Value Store association.</p>
     pub fn items(mut self, input: crate::types::KeyValueStoreAssociation) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The items of the Key Value Store association.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyValueStoreAssociation>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KeyValueStoreAssociation>>) -> Self {
+        self.items = input; self
     }
     /// <p>The items of the Key Value Store association.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyValueStoreAssociation>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KeyValueStoreAssociation>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`KeyValueStoreAssociations`](crate::types::KeyValueStoreAssociations).
     /// This method will fail if any of the following fields are not set:
     /// - [`quantity`](crate::types::builders::KeyValueStoreAssociationsBuilder::quantity)
     pub fn build(self) -> ::std::result::Result<crate::types::KeyValueStoreAssociations, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KeyValueStoreAssociations {
-            quantity: self.quantity.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "quantity",
-                    "quantity was not specified but it is required when building KeyValueStoreAssociations",
-                )
-            })?,
-            items: self.items,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KeyValueStoreAssociations {
+                quantity: self.quantity
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("quantity", "quantity was not specified but it is required when building KeyValueStoreAssociations")
+                    )?
+                ,
+                items: self.items
+                ,
+            }
+        )
     }
 }
+

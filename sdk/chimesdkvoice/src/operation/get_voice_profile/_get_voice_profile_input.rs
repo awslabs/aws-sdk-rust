@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetVoiceProfileInput {
+pub struct GetVoiceProfileInput  {
     /// <p>The voice profile ID.</p>
     pub voice_profile_id: ::std::option::Option<::std::string::String>,
 }
-impl GetVoiceProfileInput {
+impl  GetVoiceProfileInput  {
     /// <p>The voice profile ID.</p>
-    pub fn voice_profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn voice_profile_id(&self) -> ::std::option::Option<& str> {
         self.voice_profile_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetVoiceProfileInputBuilder {
     }
     /// <p>The voice profile ID.</p>
     pub fn set_voice_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.voice_profile_id = input;
-        self
+        self.voice_profile_id = input; self
     }
     /// <p>The voice profile ID.</p>
     pub fn get_voice_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.voice_profile_id
     }
     /// Consumes the builder and constructs a [`GetVoiceProfileInput`](crate::operation::get_voice_profile::GetVoiceProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_voice_profile::GetVoiceProfileInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_voice_profile::GetVoiceProfileInput {
-            voice_profile_id: self.voice_profile_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_voice_profile::GetVoiceProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_voice_profile::GetVoiceProfileInput {
+                voice_profile_id: self.voice_profile_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InvokeEndpointAsyncOutput {
+pub struct InvokeEndpointAsyncOutput  {
     /// <p>Identifier for an inference request. This will be the same as the <code>InferenceId</code> specified in the input. Amazon SageMaker will generate an identifier for you if you do not specify one.</p>
     pub inference_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 URI where the inference response payload is stored.</p>
@@ -11,25 +11,25 @@ pub struct InvokeEndpointAsyncOutput {
     pub failure_location: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl InvokeEndpointAsyncOutput {
+impl  InvokeEndpointAsyncOutput  {
     /// <p>Identifier for an inference request. This will be the same as the <code>InferenceId</code> specified in the input. Amazon SageMaker will generate an identifier for you if you do not specify one.</p>
-    pub fn inference_id(&self) -> ::std::option::Option<&str> {
+    pub fn inference_id(&self) -> ::std::option::Option<& str> {
         self.inference_id.as_deref()
     }
     /// <p>The Amazon S3 URI where the inference response payload is stored.</p>
-    pub fn output_location(&self) -> ::std::option::Option<&str> {
+    pub fn output_location(&self) -> ::std::option::Option<& str> {
         self.output_location.as_deref()
     }
     /// <p>The Amazon S3 URI where the inference failure response payload is stored.</p>
-    pub fn failure_location(&self) -> ::std::option::Option<&str> {
+    pub fn failure_location(&self) -> ::std::option::Option<& str> {
         self.failure_location.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for InvokeEndpointAsyncOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl InvokeEndpointAsyncOutput {
     /// Creates a new builder-style object to manufacture [`InvokeEndpointAsyncOutput`](crate::operation::invoke_endpoint_async::InvokeEndpointAsyncOutput).
     pub fn builder() -> crate::operation::invoke_endpoint_async::builders::InvokeEndpointAsyncOutputBuilder {
@@ -54,8 +54,7 @@ impl InvokeEndpointAsyncOutputBuilder {
     }
     /// <p>Identifier for an inference request. This will be the same as the <code>InferenceId</code> specified in the input. Amazon SageMaker will generate an identifier for you if you do not specify one.</p>
     pub fn set_inference_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inference_id = input;
-        self
+        self.inference_id = input; self
     }
     /// <p>Identifier for an inference request. This will be the same as the <code>InferenceId</code> specified in the input. Amazon SageMaker will generate an identifier for you if you do not specify one.</p>
     pub fn get_inference_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl InvokeEndpointAsyncOutputBuilder {
     }
     /// <p>The Amazon S3 URI where the inference response payload is stored.</p>
     pub fn set_output_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output_location = input;
-        self
+        self.output_location = input; self
     }
     /// <p>The Amazon S3 URI where the inference response payload is stored.</p>
     pub fn get_output_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl InvokeEndpointAsyncOutputBuilder {
     }
     /// <p>The Amazon S3 URI where the inference failure response payload is stored.</p>
     pub fn set_failure_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_location = input;
-        self
+        self.failure_location = input; self
     }
     /// <p>The Amazon S3 URI where the inference failure response payload is stored.</p>
     pub fn get_failure_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_location
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`InvokeEndpointAsyncOutput`](crate::operation::invoke_endpoint_async::InvokeEndpointAsyncOutput).
     pub fn build(self) -> crate::operation::invoke_endpoint_async::InvokeEndpointAsyncOutput {
         crate::operation::invoke_endpoint_async::InvokeEndpointAsyncOutput {
-            inference_id: self.inference_id,
-            output_location: self.output_location,
-            failure_location: self.failure_location,
+            inference_id: self.inference_id
+            ,
+            output_location: self.output_location
+            ,
+            failure_location: self.failure_location
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

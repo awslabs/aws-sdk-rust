@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMediaPipelinesOutput {
+pub struct ListMediaPipelinesOutput  {
     /// <p>The media pipeline objects in the list.</p>
-    pub media_pipelines: ::std::option::Option<::std::vec::Vec<crate::types::MediaPipelineSummary>>,
+    pub media_pipelines: ::std::option::Option<::std::vec::Vec::<crate::types::MediaPipelineSummary>>,
     /// <p>The token used to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListMediaPipelinesOutput {
+impl  ListMediaPipelinesOutput  {
     /// <p>The media pipeline objects in the list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.media_pipelines.is_none()`.
-    pub fn media_pipelines(&self) -> &[crate::types::MediaPipelineSummary] {
-        self.media_pipelines.as_deref().unwrap_or_default()
+    pub fn media_pipelines(&self) -> & [crate::types::MediaPipelineSummary] {
+        self.media_pipelines.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token used to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListMediaPipelinesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListMediaPipelinesOutput {
     /// Creates a new builder-style object to manufacture [`ListMediaPipelinesOutput`](crate::operation::list_media_pipelines::ListMediaPipelinesOutput).
     pub fn builder() -> crate::operation::list_media_pipelines::builders::ListMediaPipelinesOutputBuilder {
@@ -37,7 +38,7 @@ impl ListMediaPipelinesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMediaPipelinesOutputBuilder {
-    pub(crate) media_pipelines: ::std::option::Option<::std::vec::Vec<crate::types::MediaPipelineSummary>>,
+    pub(crate) media_pipelines: ::std::option::Option<::std::vec::Vec::<crate::types::MediaPipelineSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListMediaPipelinesOutputBuilder {
     /// <p>The media pipeline objects in the list.</p>
     pub fn media_pipelines(mut self, input: crate::types::MediaPipelineSummary) -> Self {
         let mut v = self.media_pipelines.unwrap_or_default();
-        v.push(input);
-        self.media_pipelines = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.media_pipelines = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The media pipeline objects in the list.</p>
-    pub fn set_media_pipelines(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MediaPipelineSummary>>) -> Self {
-        self.media_pipelines = input;
-        self
+    pub fn set_media_pipelines(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MediaPipelineSummary>>) -> Self {
+        self.media_pipelines = input; self
     }
     /// <p>The media pipeline objects in the list.</p>
-    pub fn get_media_pipelines(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaPipelineSummary>> {
+    pub fn get_media_pipelines(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MediaPipelineSummary>> {
         &self.media_pipelines
     }
     /// <p>The token used to retrieve the next page of results.</p>
@@ -69,28 +69,30 @@ impl ListMediaPipelinesOutputBuilder {
     }
     /// <p>The token used to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token used to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListMediaPipelinesOutput`](crate::operation::list_media_pipelines::ListMediaPipelinesOutput).
     pub fn build(self) -> crate::operation::list_media_pipelines::ListMediaPipelinesOutput {
         crate::operation::list_media_pipelines::ListMediaPipelinesOutput {
-            media_pipelines: self.media_pipelines,
-            next_token: self.next_token,
+            media_pipelines: self.media_pipelines
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

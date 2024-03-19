@@ -3,13 +3,13 @@
 /// <p>Object that allows filtering based on the last modified date of data products.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataProductLastModifiedDateFilter {
+pub struct DataProductLastModifiedDateFilter  {
     /// <p>Dates between which the data product was last modified.</p>
     pub date_range: ::std::option::Option<crate::types::DataProductLastModifiedDateFilterDateRange>,
 }
-impl DataProductLastModifiedDateFilter {
+impl  DataProductLastModifiedDateFilter  {
     /// <p>Dates between which the data product was last modified.</p>
-    pub fn date_range(&self) -> ::std::option::Option<&crate::types::DataProductLastModifiedDateFilterDateRange> {
+    pub fn date_range(&self) -> ::std::option::Option<& crate::types::DataProductLastModifiedDateFilterDateRange> {
         self.date_range.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl DataProductLastModifiedDateFilterBuilder {
     }
     /// <p>Dates between which the data product was last modified.</p>
     pub fn set_date_range(mut self, input: ::std::option::Option<crate::types::DataProductLastModifiedDateFilterDateRange>) -> Self {
-        self.date_range = input;
-        self
+        self.date_range = input; self
     }
     /// <p>Dates between which the data product was last modified.</p>
     pub fn get_date_range(&self) -> &::std::option::Option<crate::types::DataProductLastModifiedDateFilterDateRange> {
@@ -43,6 +42,10 @@ impl DataProductLastModifiedDateFilterBuilder {
     }
     /// Consumes the builder and constructs a [`DataProductLastModifiedDateFilter`](crate::types::DataProductLastModifiedDateFilter).
     pub fn build(self) -> crate::types::DataProductLastModifiedDateFilter {
-        crate::types::DataProductLastModifiedDateFilter { date_range: self.date_range }
+        crate::types::DataProductLastModifiedDateFilter {
+            date_range: self.date_range
+            ,
+        }
     }
 }
+

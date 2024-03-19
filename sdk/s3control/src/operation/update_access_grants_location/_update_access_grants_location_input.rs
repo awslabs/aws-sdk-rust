@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAccessGrantsLocationInput {
+pub struct UpdateAccessGrantsLocationInput  {
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the registered location that you are updating. S3 Access Grants assigns this ID when you register the location. S3 Access Grants assigns the ID <code>default</code> to the default location <code>s3://</code> and assigns an auto-generated ID to other locations that you register.</p>
@@ -12,19 +12,19 @@ pub struct UpdateAccessGrantsLocationInput {
     /// <p>The Amazon Resource Name (ARN) of the IAM role for the registered location. S3 Access Grants assumes this role to manage access to the registered location.</p>
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
 }
-impl UpdateAccessGrantsLocationInput {
+impl  UpdateAccessGrantsLocationInput  {
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The ID of the registered location that you are updating. S3 Access Grants assigns this ID when you register the location. S3 Access Grants assigns the ID <code>default</code> to the default location <code>s3://</code> and assigns an auto-generated ID to other locations that you register.</p>
     /// <p>The ID of the registered location to which you are granting access. S3 Access Grants assigned this ID when you registered the location. S3 Access Grants assigns the ID <code>default</code> to the default location <code>s3://</code> and assigns an auto-generated ID to other locations that you register.</p>
     /// <p>If you are passing the <code>default</code> location, you cannot create an access grant for the entire default location. You must also specify a bucket or a bucket and prefix in the <code>Subprefix</code> field.</p>
-    pub fn access_grants_location_id(&self) -> ::std::option::Option<&str> {
+    pub fn access_grants_location_id(&self) -> ::std::option::Option<& str> {
         self.access_grants_location_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role for the registered location. S3 Access Grants assumes this role to manage access to the registered location.</p>
-    pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn iam_role_arn(&self) -> ::std::option::Option<& str> {
         self.iam_role_arn.as_deref()
     }
 }
@@ -52,8 +52,7 @@ impl UpdateAccessGrantsLocationInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl UpdateAccessGrantsLocationInputBuilder {
     /// <p>The ID of the registered location to which you are granting access. S3 Access Grants assigned this ID when you registered the location. S3 Access Grants assigns the ID <code>default</code> to the default location <code>s3://</code> and assigns an auto-generated ID to other locations that you register.</p>
     /// <p>If you are passing the <code>default</code> location, you cannot create an access grant for the entire default location. You must also specify a bucket or a bucket and prefix in the <code>Subprefix</code> field.</p>
     pub fn set_access_grants_location_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_grants_location_id = input;
-        self
+        self.access_grants_location_id = input; self
     }
     /// <p>The ID of the registered location that you are updating. S3 Access Grants assigns this ID when you register the location. S3 Access Grants assigns the ID <code>default</code> to the default location <code>s3://</code> and assigns an auto-generated ID to other locations that you register.</p>
     /// <p>The ID of the registered location to which you are granting access. S3 Access Grants assigned this ID when you registered the location. S3 Access Grants assigns the ID <code>default</code> to the default location <code>s3://</code> and assigns an auto-generated ID to other locations that you register.</p>
@@ -88,24 +86,24 @@ impl UpdateAccessGrantsLocationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role for the registered location. S3 Access Grants assumes this role to manage access to the registered location.</p>
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_role_arn = input;
-        self
+        self.iam_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role for the registered location. S3 Access Grants assumes this role to manage access to the registered location.</p>
     pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.iam_role_arn
     }
     /// Consumes the builder and constructs a [`UpdateAccessGrantsLocationInput`](crate::operation::update_access_grants_location::UpdateAccessGrantsLocationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_access_grants_location::UpdateAccessGrantsLocationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_access_grants_location::UpdateAccessGrantsLocationInput {
-            account_id: self.account_id,
-            access_grants_location_id: self.access_grants_location_id,
-            iam_role_arn: self.iam_role_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_access_grants_location::UpdateAccessGrantsLocationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_access_grants_location::UpdateAccessGrantsLocationInput {
+                account_id: self.account_id
+                ,
+                access_grants_location_id: self.access_grants_location_id
+                ,
+                iam_role_arn: self.iam_role_arn
+                ,
+            }
+        )
     }
 }
+

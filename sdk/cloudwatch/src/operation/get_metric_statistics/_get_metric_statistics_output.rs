@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMetricStatisticsOutput {
+pub struct GetMetricStatisticsOutput  {
     /// <p>A label for the specified metric.</p>
     pub label: ::std::option::Option<::std::string::String>,
     /// <p>The data points for the specified metric.</p>
-    pub datapoints: ::std::option::Option<::std::vec::Vec<crate::types::Datapoint>>,
+    pub datapoints: ::std::option::Option<::std::vec::Vec::<crate::types::Datapoint>>,
     _request_id: Option<String>,
 }
-impl GetMetricStatisticsOutput {
+impl  GetMetricStatisticsOutput  {
     /// <p>A label for the specified metric.</p>
-    pub fn label(&self) -> ::std::option::Option<&str> {
+    pub fn label(&self) -> ::std::option::Option<& str> {
         self.label.as_deref()
     }
     /// <p>The data points for the specified metric.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.datapoints.is_none()`.
-    pub fn datapoints(&self) -> &[crate::types::Datapoint] {
-        self.datapoints.as_deref().unwrap_or_default()
+    pub fn datapoints(&self) -> & [crate::types::Datapoint] {
+        self.datapoints.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetMetricStatisticsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetMetricStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`GetMetricStatisticsOutput`](crate::operation::get_metric_statistics::GetMetricStatisticsOutput).
     pub fn builder() -> crate::operation::get_metric_statistics::builders::GetMetricStatisticsOutputBuilder {
@@ -38,7 +39,7 @@ impl GetMetricStatisticsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMetricStatisticsOutputBuilder {
     pub(crate) label: ::std::option::Option<::std::string::String>,
-    pub(crate) datapoints: ::std::option::Option<::std::vec::Vec<crate::types::Datapoint>>,
+    pub(crate) datapoints: ::std::option::Option<::std::vec::Vec::<crate::types::Datapoint>>,
     _request_id: Option<String>,
 }
 impl GetMetricStatisticsOutputBuilder {
@@ -49,8 +50,7 @@ impl GetMetricStatisticsOutputBuilder {
     }
     /// <p>A label for the specified metric.</p>
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label = input;
-        self
+        self.label = input; self
     }
     /// <p>A label for the specified metric.</p>
     pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl GetMetricStatisticsOutputBuilder {
     /// <p>The data points for the specified metric.</p>
     pub fn datapoints(mut self, input: crate::types::Datapoint) -> Self {
         let mut v = self.datapoints.unwrap_or_default();
-        v.push(input);
-        self.datapoints = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.datapoints = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The data points for the specified metric.</p>
-    pub fn set_datapoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Datapoint>>) -> Self {
-        self.datapoints = input;
-        self
+    pub fn set_datapoints(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Datapoint>>) -> Self {
+        self.datapoints = input; self
     }
     /// <p>The data points for the specified metric.</p>
-    pub fn get_datapoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Datapoint>> {
+    pub fn get_datapoints(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Datapoint>> {
         &self.datapoints
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetMetricStatisticsOutput`](crate::operation::get_metric_statistics::GetMetricStatisticsOutput).
     pub fn build(self) -> crate::operation::get_metric_statistics::GetMetricStatisticsOutput {
         crate::operation::get_metric_statistics::GetMetricStatisticsOutput {
-            label: self.label,
-            datapoints: self.datapoints,
+            label: self.label
+            ,
+            datapoints: self.datapoints
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,22 +3,22 @@
 /// <p>The structure representing the createProfilingGroupResponse.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateProfilingGroupOutput {
+pub struct CreateProfilingGroupOutput  {
     /// <p>The returned <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> object that contains information about the created profiling group.</p>
     pub profiling_group: ::std::option::Option<crate::types::ProfilingGroupDescription>,
     _request_id: Option<String>,
 }
-impl CreateProfilingGroupOutput {
+impl  CreateProfilingGroupOutput  {
     /// <p>The returned <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> object that contains information about the created profiling group.</p>
-    pub fn profiling_group(&self) -> ::std::option::Option<&crate::types::ProfilingGroupDescription> {
+    pub fn profiling_group(&self) -> ::std::option::Option<& crate::types::ProfilingGroupDescription> {
         self.profiling_group.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateProfilingGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateProfilingGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateProfilingGroupOutput`](crate::operation::create_profiling_group::CreateProfilingGroupOutput).
     pub fn builder() -> crate::operation::create_profiling_group::builders::CreateProfilingGroupOutputBuilder {
@@ -42,27 +42,28 @@ impl CreateProfilingGroupOutputBuilder {
     }
     /// <p>The returned <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> object that contains information about the created profiling group.</p>
     pub fn set_profiling_group(mut self, input: ::std::option::Option<crate::types::ProfilingGroupDescription>) -> Self {
-        self.profiling_group = input;
-        self
+        self.profiling_group = input; self
     }
     /// <p>The returned <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> object that contains information about the created profiling group.</p>
     pub fn get_profiling_group(&self) -> &::std::option::Option<crate::types::ProfilingGroupDescription> {
         &self.profiling_group
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateProfilingGroupOutput`](crate::operation::create_profiling_group::CreateProfilingGroupOutput).
     pub fn build(self) -> crate::operation::create_profiling_group::CreateProfilingGroupOutput {
         crate::operation::create_profiling_group::CreateProfilingGroupOutput {
-            profiling_group: self.profiling_group,
+            profiling_group: self.profiling_group
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -26,7 +26,7 @@ pub enum Error {
     &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
      \
     See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-Error) for what information is available for the error.")]
-    Unhandled(crate::error::sealed_unhandled::Unhandled),
+    Unhandled(crate::error::sealed_unhandled::Unhandled)
 }
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -39,246 +39,164 @@ impl ::std::fmt::Display for Error {
             Error::TextSizeLimitExceededException(inner) => inner.fmt(f),
             Error::TooManyRequestsException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
-            Error::Unhandled(_) => {
-                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
-                    write!(f, "unhandled error ({code})")
-                } else {
-                    f.write_str("unhandled error")
-                }
-            }
+            Error::Unhandled(_) => if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                                        write!(f, "unhandled error ({code})")
+                                    } else {
+                                        f.write_str("unhandled error")
+                                    }
         }
     }
 }
 impl From<::aws_smithy_types::error::operation::BuildError> for Error {
-    fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
-        Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source: value.into(),
-            meta: ::std::default::Default::default(),
-        })
-    }
-}
+                fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
+                    Error::Unhandled(crate::error::sealed_unhandled::Unhandled { source: value.into(), meta: ::std::default::Default::default() })
+                }
+            }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
-    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
-        match self {
-            Self::InternalServerException(inner) => inner.meta(),
-            Self::InvalidEncodingException(inner) => inner.meta(),
-            Self::InvalidRequestException(inner) => inner.meta(),
-            Self::ResourceNotFoundException(inner) => inner.meta(),
-            Self::ServiceUnavailableException(inner) => inner.meta(),
-            Self::TextSizeLimitExceededException(inner) => inner.meta(),
-            Self::TooManyRequestsException(inner) => inner.meta(),
-            Self::ValidationException(inner) => inner.meta(),
-            Self::Unhandled(inner) => &inner.meta,
-        }
-    }
-}
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobError,
-            R,
-        >,
-    ) -> Self {
+                fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+                    match self {
+                        Self::InternalServerException(inner) => inner.meta(),
+Self::InvalidEncodingException(inner) => inner.meta(),
+Self::InvalidRequestException(inner) => inner.meta(),
+Self::ResourceNotFoundException(inner) => inner.meta(),
+Self::ServiceUnavailableException(inner) => inner.meta(),
+Self::TextSizeLimitExceededException(inner) => inner.meta(),
+Self::TooManyRequestsException(inner) => inner.meta(),
+Self::ValidationException(inner) => inner.meta(),
+                        Self::Unhandled(inner) => &inner.meta,
+                    }
+                }
+            }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobError> for Error {
     fn from(err: crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobError) -> Self {
         match err {
-            crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
+            crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_icd10_cm_inference_job::DescribeICD10CMInferenceJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_icd10_cm_inference_job::DescribeICD10CMInferenceJobError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_icd10_cm_inference_job::DescribeICD10CMInferenceJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_icd10_cm_inference_job::DescribeICD10CMInferenceJobError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::describe_icd10_cm_inference_job::DescribeICD10CMInferenceJobError> for Error {
     fn from(err: crate::operation::describe_icd10_cm_inference_job::DescribeICD10CMInferenceJobError) -> Self {
         match err {
-            crate::operation::describe_icd10_cm_inference_job::DescribeICD10CMInferenceJobError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::describe_icd10_cm_inference_job::DescribeICD10CMInferenceJobError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::operation::describe_icd10_cm_inference_job::DescribeICD10CMInferenceJobError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::describe_icd10_cm_inference_job::DescribeICD10CMInferenceJobError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
+            crate::operation::describe_icd10_cm_inference_job::DescribeICD10CMInferenceJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_icd10_cm_inference_job::DescribeICD10CMInferenceJobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_icd10_cm_inference_job::DescribeICD10CMInferenceJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_icd10_cm_inference_job::DescribeICD10CMInferenceJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::describe_icd10_cm_inference_job::DescribeICD10CMInferenceJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_phi_detection_job::DescribePHIDetectionJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_phi_detection_job::DescribePHIDetectionJobError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_phi_detection_job::DescribePHIDetectionJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_phi_detection_job::DescribePHIDetectionJobError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::describe_phi_detection_job::DescribePHIDetectionJobError> for Error {
     fn from(err: crate::operation::describe_phi_detection_job::DescribePHIDetectionJobError) -> Self {
         match err {
-            crate::operation::describe_phi_detection_job::DescribePHIDetectionJobError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::describe_phi_detection_job::DescribePHIDetectionJobError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::operation::describe_phi_detection_job::DescribePHIDetectionJobError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::describe_phi_detection_job::DescribePHIDetectionJobError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
+            crate::operation::describe_phi_detection_job::DescribePHIDetectionJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_phi_detection_job::DescribePHIDetectionJobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_phi_detection_job::DescribePHIDetectionJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_phi_detection_job::DescribePHIDetectionJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::describe_phi_detection_job::DescribePHIDetectionJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobError> for Error {
     fn from(err: crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobError) -> Self {
         match err {
-            crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
+            crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_snomedct_inference_job::DescribeSNOMEDCTInferenceJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_snomedct_inference_job::DescribeSNOMEDCTInferenceJobError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_snomedct_inference_job::DescribeSNOMEDCTInferenceJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_snomedct_inference_job::DescribeSNOMEDCTInferenceJobError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::describe_snomedct_inference_job::DescribeSNOMEDCTInferenceJobError> for Error {
     fn from(err: crate::operation::describe_snomedct_inference_job::DescribeSNOMEDCTInferenceJobError) -> Self {
         match err {
-            crate::operation::describe_snomedct_inference_job::DescribeSNOMEDCTInferenceJobError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::describe_snomedct_inference_job::DescribeSNOMEDCTInferenceJobError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::operation::describe_snomedct_inference_job::DescribeSNOMEDCTInferenceJobError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::describe_snomedct_inference_job::DescribeSNOMEDCTInferenceJobError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
+            crate::operation::describe_snomedct_inference_job::DescribeSNOMEDCTInferenceJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_snomedct_inference_job::DescribeSNOMEDCTInferenceJobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_snomedct_inference_job::DescribeSNOMEDCTInferenceJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_snomedct_inference_job::DescribeSNOMEDCTInferenceJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::describe_snomedct_inference_job::DescribeSNOMEDCTInferenceJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::detect_entities::DetectEntitiesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::detect_entities::DetectEntitiesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::detect_entities::DetectEntitiesError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -289,25 +207,22 @@ impl From<crate::operation::detect_entities::DetectEntitiesError> for Error {
             crate::operation::detect_entities::DetectEntitiesError::InvalidEncodingException(inner) => Error::InvalidEncodingException(inner),
             crate::operation::detect_entities::DetectEntitiesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::detect_entities::DetectEntitiesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::detect_entities::DetectEntitiesError::TextSizeLimitExceededException(inner) => {
-                Error::TextSizeLimitExceededException(inner)
-            }
+            crate::operation::detect_entities::DetectEntitiesError::TextSizeLimitExceededException(inner) => Error::TextSizeLimitExceededException(inner),
             crate::operation::detect_entities::DetectEntitiesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::detect_entities::DetectEntitiesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::detect_entities_v2::DetectEntitiesV2Error, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::detect_entities_v2::DetectEntitiesV2Error, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::detect_entities_v2::DetectEntitiesV2Error, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -317,28 +232,23 @@ impl From<crate::operation::detect_entities_v2::DetectEntitiesV2Error> for Error
             crate::operation::detect_entities_v2::DetectEntitiesV2Error::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::detect_entities_v2::DetectEntitiesV2Error::InvalidEncodingException(inner) => Error::InvalidEncodingException(inner),
             crate::operation::detect_entities_v2::DetectEntitiesV2Error::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::detect_entities_v2::DetectEntitiesV2Error::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::operation::detect_entities_v2::DetectEntitiesV2Error::TextSizeLimitExceededException(inner) => {
-                Error::TextSizeLimitExceededException(inner)
-            }
+            crate::operation::detect_entities_v2::DetectEntitiesV2Error::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::detect_entities_v2::DetectEntitiesV2Error::TextSizeLimitExceededException(inner) => Error::TextSizeLimitExceededException(inner),
             crate::operation::detect_entities_v2::DetectEntitiesV2Error::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::detect_entities_v2::DetectEntitiesV2Error::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::detect_phi::DetectPHIError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::detect_phi::DetectPHIError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::detect_phi::DetectPHIError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -355,17 +265,16 @@ impl From<crate::operation::detect_phi::DetectPHIError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::infer_icd10_cm::InferICD10CMError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::infer_icd10_cm::InferICD10CMError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::infer_icd10_cm::InferICD10CMError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -376,25 +285,22 @@ impl From<crate::operation::infer_icd10_cm::InferICD10CMError> for Error {
             crate::operation::infer_icd10_cm::InferICD10CMError::InvalidEncodingException(inner) => Error::InvalidEncodingException(inner),
             crate::operation::infer_icd10_cm::InferICD10CMError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::infer_icd10_cm::InferICD10CMError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::infer_icd10_cm::InferICD10CMError::TextSizeLimitExceededException(inner) => {
-                Error::TextSizeLimitExceededException(inner)
-            }
+            crate::operation::infer_icd10_cm::InferICD10CMError::TextSizeLimitExceededException(inner) => Error::TextSizeLimitExceededException(inner),
             crate::operation::infer_icd10_cm::InferICD10CMError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::infer_icd10_cm::InferICD10CMError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::infer_rx_norm::InferRxNormError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::infer_rx_norm::InferRxNormError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::infer_rx_norm::InferRxNormError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -411,17 +317,16 @@ impl From<crate::operation::infer_rx_norm::InferRxNormError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::infer_snomedct::InferSNOMEDCTError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::infer_snomedct::InferSNOMEDCTError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::infer_snomedct::InferSNOMEDCTError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -432,539 +337,364 @@ impl From<crate::operation::infer_snomedct::InferSNOMEDCTError> for Error {
             crate::operation::infer_snomedct::InferSNOMEDCTError::InvalidEncodingException(inner) => Error::InvalidEncodingException(inner),
             crate::operation::infer_snomedct::InferSNOMEDCTError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::infer_snomedct::InferSNOMEDCTError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::infer_snomedct::InferSNOMEDCTError::TextSizeLimitExceededException(inner) => {
-                Error::TextSizeLimitExceededException(inner)
-            }
+            crate::operation::infer_snomedct::InferSNOMEDCTError::TextSizeLimitExceededException(inner) => Error::TextSizeLimitExceededException(inner),
             crate::operation::infer_snomedct::InferSNOMEDCTError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::infer_snomedct::InferSNOMEDCTError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsError> for Error {
     fn from(err: crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsError) -> Self {
         match err {
-            crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
+            crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_icd10_cm_inference_jobs::ListICD10CMInferenceJobsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_icd10_cm_inference_jobs::ListICD10CMInferenceJobsError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_icd10_cm_inference_jobs::ListICD10CMInferenceJobsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_icd10_cm_inference_jobs::ListICD10CMInferenceJobsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_icd10_cm_inference_jobs::ListICD10CMInferenceJobsError> for Error {
     fn from(err: crate::operation::list_icd10_cm_inference_jobs::ListICD10CMInferenceJobsError) -> Self {
         match err {
-            crate::operation::list_icd10_cm_inference_jobs::ListICD10CMInferenceJobsError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::list_icd10_cm_inference_jobs::ListICD10CMInferenceJobsError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::operation::list_icd10_cm_inference_jobs::ListICD10CMInferenceJobsError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::list_icd10_cm_inference_jobs::ListICD10CMInferenceJobsError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
+            crate::operation::list_icd10_cm_inference_jobs::ListICD10CMInferenceJobsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_icd10_cm_inference_jobs::ListICD10CMInferenceJobsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_icd10_cm_inference_jobs::ListICD10CMInferenceJobsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_icd10_cm_inference_jobs::ListICD10CMInferenceJobsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_icd10_cm_inference_jobs::ListICD10CMInferenceJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_phi_detection_jobs::ListPHIDetectionJobsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_phi_detection_jobs::ListPHIDetectionJobsError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_phi_detection_jobs::ListPHIDetectionJobsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_phi_detection_jobs::ListPHIDetectionJobsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_phi_detection_jobs::ListPHIDetectionJobsError> for Error {
     fn from(err: crate::operation::list_phi_detection_jobs::ListPHIDetectionJobsError) -> Self {
         match err {
-            crate::operation::list_phi_detection_jobs::ListPHIDetectionJobsError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::list_phi_detection_jobs::ListPHIDetectionJobsError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::operation::list_phi_detection_jobs::ListPHIDetectionJobsError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
+            crate::operation::list_phi_detection_jobs::ListPHIDetectionJobsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_phi_detection_jobs::ListPHIDetectionJobsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_phi_detection_jobs::ListPHIDetectionJobsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::list_phi_detection_jobs::ListPHIDetectionJobsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_phi_detection_jobs::ListPHIDetectionJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_rx_norm_inference_jobs::ListRxNormInferenceJobsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_rx_norm_inference_jobs::ListRxNormInferenceJobsError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_rx_norm_inference_jobs::ListRxNormInferenceJobsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_rx_norm_inference_jobs::ListRxNormInferenceJobsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_rx_norm_inference_jobs::ListRxNormInferenceJobsError> for Error {
     fn from(err: crate::operation::list_rx_norm_inference_jobs::ListRxNormInferenceJobsError) -> Self {
         match err {
-            crate::operation::list_rx_norm_inference_jobs::ListRxNormInferenceJobsError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::list_rx_norm_inference_jobs::ListRxNormInferenceJobsError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::operation::list_rx_norm_inference_jobs::ListRxNormInferenceJobsError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::list_rx_norm_inference_jobs::ListRxNormInferenceJobsError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
+            crate::operation::list_rx_norm_inference_jobs::ListRxNormInferenceJobsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_rx_norm_inference_jobs::ListRxNormInferenceJobsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_rx_norm_inference_jobs::ListRxNormInferenceJobsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_rx_norm_inference_jobs::ListRxNormInferenceJobsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_rx_norm_inference_jobs::ListRxNormInferenceJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_snomedct_inference_jobs::ListSNOMEDCTInferenceJobsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_snomedct_inference_jobs::ListSNOMEDCTInferenceJobsError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_snomedct_inference_jobs::ListSNOMEDCTInferenceJobsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_snomedct_inference_jobs::ListSNOMEDCTInferenceJobsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_snomedct_inference_jobs::ListSNOMEDCTInferenceJobsError> for Error {
     fn from(err: crate::operation::list_snomedct_inference_jobs::ListSNOMEDCTInferenceJobsError) -> Self {
         match err {
-            crate::operation::list_snomedct_inference_jobs::ListSNOMEDCTInferenceJobsError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::list_snomedct_inference_jobs::ListSNOMEDCTInferenceJobsError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::operation::list_snomedct_inference_jobs::ListSNOMEDCTInferenceJobsError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::list_snomedct_inference_jobs::ListSNOMEDCTInferenceJobsError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
+            crate::operation::list_snomedct_inference_jobs::ListSNOMEDCTInferenceJobsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_snomedct_inference_jobs::ListSNOMEDCTInferenceJobsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_snomedct_inference_jobs::ListSNOMEDCTInferenceJobsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_snomedct_inference_jobs::ListSNOMEDCTInferenceJobsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_snomedct_inference_jobs::ListSNOMEDCTInferenceJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_entities_detection_v2_job::StartEntitiesDetectionV2JobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_entities_detection_v2_job::StartEntitiesDetectionV2JobError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_entities_detection_v2_job::StartEntitiesDetectionV2JobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_entities_detection_v2_job::StartEntitiesDetectionV2JobError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::start_entities_detection_v2_job::StartEntitiesDetectionV2JobError> for Error {
     fn from(err: crate::operation::start_entities_detection_v2_job::StartEntitiesDetectionV2JobError) -> Self {
         match err {
-            crate::operation::start_entities_detection_v2_job::StartEntitiesDetectionV2JobError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::start_entities_detection_v2_job::StartEntitiesDetectionV2JobError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::operation::start_entities_detection_v2_job::StartEntitiesDetectionV2JobError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::start_entities_detection_v2_job::StartEntitiesDetectionV2JobError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
+            crate::operation::start_entities_detection_v2_job::StartEntitiesDetectionV2JobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_entities_detection_v2_job::StartEntitiesDetectionV2JobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::start_entities_detection_v2_job::StartEntitiesDetectionV2JobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_entities_detection_v2_job::StartEntitiesDetectionV2JobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::start_entities_detection_v2_job::StartEntitiesDetectionV2JobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_icd10_cm_inference_job::StartICD10CMInferenceJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_icd10_cm_inference_job::StartICD10CMInferenceJobError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_icd10_cm_inference_job::StartICD10CMInferenceJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_icd10_cm_inference_job::StartICD10CMInferenceJobError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::start_icd10_cm_inference_job::StartICD10CMInferenceJobError> for Error {
     fn from(err: crate::operation::start_icd10_cm_inference_job::StartICD10CMInferenceJobError) -> Self {
         match err {
-            crate::operation::start_icd10_cm_inference_job::StartICD10CMInferenceJobError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::start_icd10_cm_inference_job::StartICD10CMInferenceJobError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::operation::start_icd10_cm_inference_job::StartICD10CMInferenceJobError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::start_icd10_cm_inference_job::StartICD10CMInferenceJobError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
+            crate::operation::start_icd10_cm_inference_job::StartICD10CMInferenceJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_icd10_cm_inference_job::StartICD10CMInferenceJobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::start_icd10_cm_inference_job::StartICD10CMInferenceJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_icd10_cm_inference_job::StartICD10CMInferenceJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::start_icd10_cm_inference_job::StartICD10CMInferenceJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_phi_detection_job::StartPHIDetectionJobError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_phi_detection_job::StartPHIDetectionJobError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_phi_detection_job::StartPHIDetectionJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_phi_detection_job::StartPHIDetectionJobError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::start_phi_detection_job::StartPHIDetectionJobError> for Error {
     fn from(err: crate::operation::start_phi_detection_job::StartPHIDetectionJobError) -> Self {
         match err {
-            crate::operation::start_phi_detection_job::StartPHIDetectionJobError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::start_phi_detection_job::StartPHIDetectionJobError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::operation::start_phi_detection_job::StartPHIDetectionJobError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::start_phi_detection_job::StartPHIDetectionJobError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
+            crate::operation::start_phi_detection_job::StartPHIDetectionJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_phi_detection_job::StartPHIDetectionJobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::start_phi_detection_job::StartPHIDetectionJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_phi_detection_job::StartPHIDetectionJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::start_phi_detection_job::StartPHIDetectionJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobError> for Error {
     fn from(err: crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobError) -> Self {
         match err {
-            crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
+            crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_snomedct_inference_job::StartSNOMEDCTInferenceJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_snomedct_inference_job::StartSNOMEDCTInferenceJobError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_snomedct_inference_job::StartSNOMEDCTInferenceJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_snomedct_inference_job::StartSNOMEDCTInferenceJobError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::start_snomedct_inference_job::StartSNOMEDCTInferenceJobError> for Error {
     fn from(err: crate::operation::start_snomedct_inference_job::StartSNOMEDCTInferenceJobError) -> Self {
         match err {
-            crate::operation::start_snomedct_inference_job::StartSNOMEDCTInferenceJobError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::start_snomedct_inference_job::StartSNOMEDCTInferenceJobError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::operation::start_snomedct_inference_job::StartSNOMEDCTInferenceJobError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::start_snomedct_inference_job::StartSNOMEDCTInferenceJobError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
+            crate::operation::start_snomedct_inference_job::StartSNOMEDCTInferenceJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_snomedct_inference_job::StartSNOMEDCTInferenceJobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::start_snomedct_inference_job::StartSNOMEDCTInferenceJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_snomedct_inference_job::StartSNOMEDCTInferenceJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::start_snomedct_inference_job::StartSNOMEDCTInferenceJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobError> for Error {
     fn from(err: crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobError) -> Self {
         match err {
-            crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
+            crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError> for Error {
     fn from(err: crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError) -> Self {
         match err {
-            crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
+            crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_phi_detection_job::StopPHIDetectionJobError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_phi_detection_job::StopPHIDetectionJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_phi_detection_job::StopPHIDetectionJobError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::stop_phi_detection_job::StopPHIDetectionJobError> for Error {
     fn from(err: crate::operation::stop_phi_detection_job::StopPHIDetectionJobError) -> Self {
         match err {
-            crate::operation::stop_phi_detection_job::StopPHIDetectionJobError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::stop_phi_detection_job::StopPHIDetectionJobError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::operation::stop_phi_detection_job::StopPHIDetectionJobError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
+            crate::operation::stop_phi_detection_job::StopPHIDetectionJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::stop_phi_detection_job::StopPHIDetectionJobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::stop_phi_detection_job::StopPHIDetectionJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::stop_phi_detection_job::StopPHIDetectionJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobError> for Error {
     fn from(err: crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobError) -> Self {
         match err {
-            crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
+            crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_snomedct_inference_job::StopSNOMEDCTInferenceJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_snomedct_inference_job::StopSNOMEDCTInferenceJobError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_snomedct_inference_job::StopSNOMEDCTInferenceJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_snomedct_inference_job::StopSNOMEDCTInferenceJobError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::stop_snomedct_inference_job::StopSNOMEDCTInferenceJobError> for Error {
     fn from(err: crate::operation::stop_snomedct_inference_job::StopSNOMEDCTInferenceJobError) -> Self {
         match err {
-            crate::operation::stop_snomedct_inference_job::StopSNOMEDCTInferenceJobError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::stop_snomedct_inference_job::StopSNOMEDCTInferenceJobError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::operation::stop_snomedct_inference_job::StopSNOMEDCTInferenceJobError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::stop_snomedct_inference_job::StopSNOMEDCTInferenceJobError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
+            crate::operation::stop_snomedct_inference_job::StopSNOMEDCTInferenceJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::stop_snomedct_inference_job::StopSNOMEDCTInferenceJobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::stop_snomedct_inference_job::StopSNOMEDCTInferenceJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::stop_snomedct_inference_job::StopSNOMEDCTInferenceJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::stop_snomedct_inference_job::StopSNOMEDCTInferenceJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -980,7 +710,7 @@ impl ::std::error::Error for Error {
             Error::TextSizeLimitExceededException(inner) => inner.source(),
             Error::TooManyRequestsException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
-            Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
+            Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source)
         }
     }
 }
@@ -999,3 +729,4 @@ impl ::aws_types::request_id::RequestId for Error {
         }
     }
 }
+

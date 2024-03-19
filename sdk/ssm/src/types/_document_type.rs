@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let documenttype = unimplemented!();
 /// match documenttype {
@@ -43,16 +43,14 @@
 /// Specifically, when `documenttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DocumentType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum DocumentType {
     #[allow(missing_docs)] // documentation missing in model
     ApplicationConfiguration,
@@ -86,116 +84,101 @@ pub enum DocumentType {
     Session,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for DocumentType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ApplicationConfiguration" => DocumentType::ApplicationConfiguration,
-            "ApplicationConfigurationSchema" => DocumentType::ApplicationConfigurationSchema,
-            "Automation" => DocumentType::Automation,
-            "Automation.ChangeTemplate" => DocumentType::ChangeTemplate,
-            "ChangeCalendar" => DocumentType::ChangeCalendar,
-            "CloudFormation" => DocumentType::CloudFormation,
-            "Command" => DocumentType::Command,
-            "ConformancePackTemplate" => DocumentType::ConformancePackTemplate,
-            "DeploymentStrategy" => DocumentType::DeploymentStrategy,
-            "Package" => DocumentType::Package,
-            "Policy" => DocumentType::Policy,
-            "ProblemAnalysis" => DocumentType::ProblemAnalysis,
-            "ProblemAnalysisTemplate" => DocumentType::ProblemAnalysisTemplate,
-            "QuickSetup" => DocumentType::QuickSetup,
-            "Session" => DocumentType::Session,
-            other => DocumentType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ApplicationConfiguration" => DocumentType::ApplicationConfiguration,
+"ApplicationConfigurationSchema" => DocumentType::ApplicationConfigurationSchema,
+"Automation" => DocumentType::Automation,
+"Automation.ChangeTemplate" => DocumentType::ChangeTemplate,
+"ChangeCalendar" => DocumentType::ChangeCalendar,
+"CloudFormation" => DocumentType::CloudFormation,
+"Command" => DocumentType::Command,
+"ConformancePackTemplate" => DocumentType::ConformancePackTemplate,
+"DeploymentStrategy" => DocumentType::DeploymentStrategy,
+"Package" => DocumentType::Package,
+"Policy" => DocumentType::Policy,
+"ProblemAnalysis" => DocumentType::ProblemAnalysis,
+"ProblemAnalysisTemplate" => DocumentType::ProblemAnalysisTemplate,
+"QuickSetup" => DocumentType::QuickSetup,
+"Session" => DocumentType::Session,
+other => DocumentType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for DocumentType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(DocumentType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(DocumentType::from(s))
+                    }
+                }
 impl DocumentType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DocumentType::ApplicationConfiguration => "ApplicationConfiguration",
-            DocumentType::ApplicationConfigurationSchema => "ApplicationConfigurationSchema",
-            DocumentType::Automation => "Automation",
-            DocumentType::ChangeTemplate => "Automation.ChangeTemplate",
-            DocumentType::ChangeCalendar => "ChangeCalendar",
-            DocumentType::CloudFormation => "CloudFormation",
-            DocumentType::Command => "Command",
-            DocumentType::ConformancePackTemplate => "ConformancePackTemplate",
-            DocumentType::DeploymentStrategy => "DeploymentStrategy",
-            DocumentType::Package => "Package",
-            DocumentType::Policy => "Policy",
-            DocumentType::ProblemAnalysis => "ProblemAnalysis",
-            DocumentType::ProblemAnalysisTemplate => "ProblemAnalysisTemplate",
-            DocumentType::QuickSetup => "QuickSetup",
-            DocumentType::Session => "Session",
-            DocumentType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ApplicationConfiguration",
-            "ApplicationConfigurationSchema",
-            "Automation",
-            "Automation.ChangeTemplate",
-            "ChangeCalendar",
-            "CloudFormation",
-            "Command",
-            "ConformancePackTemplate",
-            "DeploymentStrategy",
-            "Package",
-            "Policy",
-            "ProblemAnalysis",
-            "ProblemAnalysisTemplate",
-            "QuickSetup",
-            "Session",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DocumentType::ApplicationConfiguration => "ApplicationConfiguration",
+    DocumentType::ApplicationConfigurationSchema => "ApplicationConfigurationSchema",
+    DocumentType::Automation => "Automation",
+    DocumentType::ChangeTemplate => "Automation.ChangeTemplate",
+    DocumentType::ChangeCalendar => "ChangeCalendar",
+    DocumentType::CloudFormation => "CloudFormation",
+    DocumentType::Command => "Command",
+    DocumentType::ConformancePackTemplate => "ConformancePackTemplate",
+    DocumentType::DeploymentStrategy => "DeploymentStrategy",
+    DocumentType::Package => "Package",
+    DocumentType::Policy => "Policy",
+    DocumentType::ProblemAnalysis => "ProblemAnalysis",
+    DocumentType::ProblemAnalysisTemplate => "ProblemAnalysisTemplate",
+    DocumentType::QuickSetup => "QuickSetup",
+    DocumentType::Session => "Session",
+    DocumentType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ApplicationConfiguration", "ApplicationConfigurationSchema", "Automation", "Automation.ChangeTemplate", "ChangeCalendar", "CloudFormation", "Command", "ConformancePackTemplate", "DeploymentStrategy", "Package", "Policy", "ProblemAnalysis", "ProblemAnalysisTemplate", "QuickSetup", "Session"]
+                }
+            }
 impl ::std::convert::AsRef<str> for DocumentType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl DocumentType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for DocumentType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            DocumentType::ApplicationConfiguration => write!(f, "ApplicationConfiguration"),
-            DocumentType::ApplicationConfigurationSchema => write!(f, "ApplicationConfigurationSchema"),
-            DocumentType::Automation => write!(f, "Automation"),
-            DocumentType::ChangeTemplate => write!(f, "Automation.ChangeTemplate"),
-            DocumentType::ChangeCalendar => write!(f, "ChangeCalendar"),
-            DocumentType::CloudFormation => write!(f, "CloudFormation"),
-            DocumentType::Command => write!(f, "Command"),
-            DocumentType::ConformancePackTemplate => write!(f, "ConformancePackTemplate"),
-            DocumentType::DeploymentStrategy => write!(f, "DeploymentStrategy"),
-            DocumentType::Package => write!(f, "Package"),
-            DocumentType::Policy => write!(f, "Policy"),
-            DocumentType::ProblemAnalysis => write!(f, "ProblemAnalysis"),
-            DocumentType::ProblemAnalysisTemplate => write!(f, "ProblemAnalysisTemplate"),
-            DocumentType::QuickSetup => write!(f, "QuickSetup"),
-            DocumentType::Session => write!(f, "Session"),
-            DocumentType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                DocumentType::ApplicationConfiguration => write!(f, "ApplicationConfiguration"),
+DocumentType::ApplicationConfigurationSchema => write!(f, "ApplicationConfigurationSchema"),
+DocumentType::Automation => write!(f, "Automation"),
+DocumentType::ChangeTemplate => write!(f, "Automation.ChangeTemplate"),
+DocumentType::ChangeCalendar => write!(f, "ChangeCalendar"),
+DocumentType::CloudFormation => write!(f, "CloudFormation"),
+DocumentType::Command => write!(f, "Command"),
+DocumentType::ConformancePackTemplate => write!(f, "ConformancePackTemplate"),
+DocumentType::DeploymentStrategy => write!(f, "DeploymentStrategy"),
+DocumentType::Package => write!(f, "Package"),
+DocumentType::Policy => write!(f, "Policy"),
+DocumentType::ProblemAnalysis => write!(f, "ProblemAnalysis"),
+DocumentType::ProblemAnalysisTemplate => write!(f, "ProblemAnalysisTemplate"),
+DocumentType::QuickSetup => write!(f, "QuickSetup"),
+DocumentType::Session => write!(f, "Session"),
+DocumentType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

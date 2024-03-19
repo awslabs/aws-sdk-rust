@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutTelemetryRecordsOutput {
+pub struct PutTelemetryRecordsOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for PutTelemetryRecordsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutTelemetryRecordsOutput {
     /// Creates a new builder-style object to manufacture [`PutTelemetryRecordsOutput`](crate::operation::put_telemetry_records::PutTelemetryRecordsOutput).
     pub fn builder() -> crate::operation::put_telemetry_records::builders::PutTelemetryRecordsOutputBuilder {
@@ -25,14 +25,14 @@ pub struct PutTelemetryRecordsOutputBuilder {
 }
 impl PutTelemetryRecordsOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutTelemetryRecordsOutput`](crate::operation::put_telemetry_records::PutTelemetryRecordsOutput).
     pub fn build(self) -> crate::operation::put_telemetry_records::PutTelemetryRecordsOutput {
         crate::operation::put_telemetry_records::PutTelemetryRecordsOutput {
@@ -40,3 +40,4 @@ impl PutTelemetryRecordsOutputBuilder {
         }
     }
 }
+

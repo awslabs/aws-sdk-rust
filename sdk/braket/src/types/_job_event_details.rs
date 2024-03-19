@@ -3,7 +3,7 @@
 /// <p>Details about the type and time events occurred related to the Amazon Braket job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobEventDetails {
+pub struct JobEventDetails  {
     /// <p>The type of event that occurred related to the Amazon Braket job.</p>
     pub event_type: ::std::option::Option<crate::types::JobEventType>,
     /// <p>The type of event that occurred related to the Amazon Braket job.</p>
@@ -11,17 +11,17 @@ pub struct JobEventDetails {
     /// <p>A message describing the event that occurred related to the Amazon Braket job.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl JobEventDetails {
+impl  JobEventDetails  {
     /// <p>The type of event that occurred related to the Amazon Braket job.</p>
-    pub fn event_type(&self) -> ::std::option::Option<&crate::types::JobEventType> {
+    pub fn event_type(&self) -> ::std::option::Option<& crate::types::JobEventType> {
         self.event_type.as_ref()
     }
     /// <p>The type of event that occurred related to the Amazon Braket job.</p>
-    pub fn time_of_event(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn time_of_event(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.time_of_event.as_ref()
     }
     /// <p>A message describing the event that occurred related to the Amazon Braket job.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl JobEventDetailsBuilder {
     }
     /// <p>The type of event that occurred related to the Amazon Braket job.</p>
     pub fn set_event_type(mut self, input: ::std::option::Option<crate::types::JobEventType>) -> Self {
-        self.event_type = input;
-        self
+        self.event_type = input; self
     }
     /// <p>The type of event that occurred related to the Amazon Braket job.</p>
     pub fn get_event_type(&self) -> &::std::option::Option<crate::types::JobEventType> {
@@ -62,8 +61,7 @@ impl JobEventDetailsBuilder {
     }
     /// <p>The type of event that occurred related to the Amazon Braket job.</p>
     pub fn set_time_of_event(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.time_of_event = input;
-        self
+        self.time_of_event = input; self
     }
     /// <p>The type of event that occurred related to the Amazon Braket job.</p>
     pub fn get_time_of_event(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -76,8 +74,7 @@ impl JobEventDetailsBuilder {
     }
     /// <p>A message describing the event that occurred related to the Amazon Braket job.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>A message describing the event that occurred related to the Amazon Braket job.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl JobEventDetailsBuilder {
     /// Consumes the builder and constructs a [`JobEventDetails`](crate::types::JobEventDetails).
     pub fn build(self) -> crate::types::JobEventDetails {
         crate::types::JobEventDetails {
-            event_type: self.event_type,
-            time_of_event: self.time_of_event,
-            message: self.message,
+            event_type: self.event_type
+            ,
+            time_of_event: self.time_of_event
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A summary of information about a data store.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatastoreSummary {
+pub struct DatastoreSummary  {
     /// <p>The name of the data store.</p>
     pub datastore_name: ::std::option::Option<::std::string::String>,
     /// <p>Where data in a data store is stored.</p>
@@ -23,39 +23,39 @@ pub struct DatastoreSummary {
     /// <p>Contains information about the partition dimensions in a data store.</p>
     pub datastore_partitions: ::std::option::Option<crate::types::DatastorePartitions>,
 }
-impl DatastoreSummary {
+impl  DatastoreSummary  {
     /// <p>The name of the data store.</p>
-    pub fn datastore_name(&self) -> ::std::option::Option<&str> {
+    pub fn datastore_name(&self) -> ::std::option::Option<& str> {
         self.datastore_name.as_deref()
     }
     /// <p>Where data in a data store is stored.</p>
-    pub fn datastore_storage(&self) -> ::std::option::Option<&crate::types::DatastoreStorageSummary> {
+    pub fn datastore_storage(&self) -> ::std::option::Option<& crate::types::DatastoreStorageSummary> {
         self.datastore_storage.as_ref()
     }
     /// <p>The status of the data store.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DatastoreStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DatastoreStatus> {
         self.status.as_ref()
     }
     /// <p>When the data store was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The last time the data store was updated.</p>
-    pub fn last_update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>The last time when a new message arrived in the data store.</p>
     /// <p>IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
     /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020.</p>
-    pub fn last_message_arrival_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_message_arrival_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_message_arrival_time.as_ref()
     }
     /// <p>The file format of the data in the data store.</p>
-    pub fn file_format_type(&self) -> ::std::option::Option<&crate::types::FileFormatType> {
+    pub fn file_format_type(&self) -> ::std::option::Option<& crate::types::FileFormatType> {
         self.file_format_type.as_ref()
     }
     /// <p>Contains information about the partition dimensions in a data store.</p>
-    pub fn datastore_partitions(&self) -> ::std::option::Option<&crate::types::DatastorePartitions> {
+    pub fn datastore_partitions(&self) -> ::std::option::Option<& crate::types::DatastorePartitions> {
         self.datastore_partitions.as_ref()
     }
 }
@@ -87,8 +87,7 @@ impl DatastoreSummaryBuilder {
     }
     /// <p>The name of the data store.</p>
     pub fn set_datastore_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.datastore_name = input;
-        self
+        self.datastore_name = input; self
     }
     /// <p>The name of the data store.</p>
     pub fn get_datastore_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +100,7 @@ impl DatastoreSummaryBuilder {
     }
     /// <p>Where data in a data store is stored.</p>
     pub fn set_datastore_storage(mut self, input: ::std::option::Option<crate::types::DatastoreStorageSummary>) -> Self {
-        self.datastore_storage = input;
-        self
+        self.datastore_storage = input; self
     }
     /// <p>Where data in a data store is stored.</p>
     pub fn get_datastore_storage(&self) -> &::std::option::Option<crate::types::DatastoreStorageSummary> {
@@ -115,8 +113,7 @@ impl DatastoreSummaryBuilder {
     }
     /// <p>The status of the data store.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DatastoreStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the data store.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DatastoreStatus> {
@@ -129,8 +126,7 @@ impl DatastoreSummaryBuilder {
     }
     /// <p>When the data store was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>When the data store was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -143,8 +139,7 @@ impl DatastoreSummaryBuilder {
     }
     /// <p>The last time the data store was updated.</p>
     pub fn set_last_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_update_time = input;
-        self
+        self.last_update_time = input; self
     }
     /// <p>The last time the data store was updated.</p>
     pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -161,8 +156,7 @@ impl DatastoreSummaryBuilder {
     /// <p>IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
     /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020.</p>
     pub fn set_last_message_arrival_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_message_arrival_time = input;
-        self
+        self.last_message_arrival_time = input; self
     }
     /// <p>The last time when a new message arrived in the data store.</p>
     /// <p>IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
@@ -177,8 +171,7 @@ impl DatastoreSummaryBuilder {
     }
     /// <p>The file format of the data in the data store.</p>
     pub fn set_file_format_type(mut self, input: ::std::option::Option<crate::types::FileFormatType>) -> Self {
-        self.file_format_type = input;
-        self
+        self.file_format_type = input; self
     }
     /// <p>The file format of the data in the data store.</p>
     pub fn get_file_format_type(&self) -> &::std::option::Option<crate::types::FileFormatType> {
@@ -191,8 +184,7 @@ impl DatastoreSummaryBuilder {
     }
     /// <p>Contains information about the partition dimensions in a data store.</p>
     pub fn set_datastore_partitions(mut self, input: ::std::option::Option<crate::types::DatastorePartitions>) -> Self {
-        self.datastore_partitions = input;
-        self
+        self.datastore_partitions = input; self
     }
     /// <p>Contains information about the partition dimensions in a data store.</p>
     pub fn get_datastore_partitions(&self) -> &::std::option::Option<crate::types::DatastorePartitions> {
@@ -201,14 +193,23 @@ impl DatastoreSummaryBuilder {
     /// Consumes the builder and constructs a [`DatastoreSummary`](crate::types::DatastoreSummary).
     pub fn build(self) -> crate::types::DatastoreSummary {
         crate::types::DatastoreSummary {
-            datastore_name: self.datastore_name,
-            datastore_storage: self.datastore_storage,
-            status: self.status,
-            creation_time: self.creation_time,
-            last_update_time: self.last_update_time,
-            last_message_arrival_time: self.last_message_arrival_time,
-            file_format_type: self.file_format_type,
-            datastore_partitions: self.datastore_partitions,
+            datastore_name: self.datastore_name
+            ,
+            datastore_storage: self.datastore_storage
+            ,
+            status: self.status
+            ,
+            creation_time: self.creation_time
+            ,
+            last_update_time: self.last_update_time
+            ,
+            last_message_arrival_time: self.last_message_arrival_time
+            ,
+            file_format_type: self.file_format_type
+            ,
+            datastore_partitions: self.datastore_partitions
+            ,
         }
     }
 }
+

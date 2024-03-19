@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateConnectPeerInput {
+pub struct DisassociateConnectPeerInput  {
     /// <p>The ID of the global network.</p>
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Connect peer to disassociate from a device.</p>
     pub connect_peer_id: ::std::option::Option<::std::string::String>,
 }
-impl DisassociateConnectPeerInput {
+impl  DisassociateConnectPeerInput  {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn global_network_id(&self) -> ::std::option::Option<& str> {
         self.global_network_id.as_deref()
     }
     /// <p>The ID of the Connect peer to disassociate from a device.</p>
-    pub fn connect_peer_id(&self) -> ::std::option::Option<&str> {
+    pub fn connect_peer_id(&self) -> ::std::option::Option<& str> {
         self.connect_peer_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DisassociateConnectPeerInputBuilder {
     }
     /// <p>The ID of the global network.</p>
     pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_network_id = input;
-        self
+        self.global_network_id = input; self
     }
     /// <p>The ID of the global network.</p>
     pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DisassociateConnectPeerInputBuilder {
     }
     /// <p>The ID of the Connect peer to disassociate from a device.</p>
     pub fn set_connect_peer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connect_peer_id = input;
-        self
+        self.connect_peer_id = input; self
     }
     /// <p>The ID of the Connect peer to disassociate from a device.</p>
     pub fn get_connect_peer_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.connect_peer_id
     }
     /// Consumes the builder and constructs a [`DisassociateConnectPeerInput`](crate::operation::disassociate_connect_peer::DisassociateConnectPeerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_connect_peer::DisassociateConnectPeerInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::disassociate_connect_peer::DisassociateConnectPeerInput {
-            global_network_id: self.global_network_id,
-            connect_peer_id: self.connect_peer_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_connect_peer::DisassociateConnectPeerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disassociate_connect_peer::DisassociateConnectPeerInput {
+                global_network_id: self.global_network_id
+                ,
+                connect_peer_id: self.connect_peer_id
+                ,
+            }
+        )
     }
 }
+

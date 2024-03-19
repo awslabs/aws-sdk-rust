@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateKeyInput {
+pub struct UpdateKeyInput  {
     /// <p>The name of the API key resource to update.</p>
     pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>Updates the description for the API key resource.</p>
@@ -19,17 +19,17 @@ pub struct UpdateKeyInput {
     /// <p>Updates the API key restrictions for the API key resource.</p>
     pub restrictions: ::std::option::Option<crate::types::ApiKeyRestrictions>,
 }
-impl UpdateKeyInput {
+impl  UpdateKeyInput  {
     /// <p>The name of the API key resource to update.</p>
-    pub fn key_name(&self) -> ::std::option::Option<&str> {
+    pub fn key_name(&self) -> ::std::option::Option<& str> {
         self.key_name.as_deref()
     }
     /// <p>Updates the description for the API key resource.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Updates the timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn expire_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn expire_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.expire_time.as_ref()
     }
     /// <p>Whether the API key should expire. Set to <code>true</code> to set the API key to have no expiration time.</p>
@@ -44,7 +44,7 @@ impl UpdateKeyInput {
         self.force_update
     }
     /// <p>Updates the API key restrictions for the API key resource.</p>
-    pub fn restrictions(&self) -> ::std::option::Option<&crate::types::ApiKeyRestrictions> {
+    pub fn restrictions(&self) -> ::std::option::Option<& crate::types::ApiKeyRestrictions> {
         self.restrictions.as_ref()
     }
 }
@@ -75,8 +75,7 @@ impl UpdateKeyInputBuilder {
     }
     /// <p>The name of the API key resource to update.</p>
     pub fn set_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_name = input;
-        self
+        self.key_name = input; self
     }
     /// <p>The name of the API key resource to update.</p>
     pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +88,7 @@ impl UpdateKeyInputBuilder {
     }
     /// <p>Updates the description for the API key resource.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Updates the description for the API key resource.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +101,7 @@ impl UpdateKeyInputBuilder {
     }
     /// <p>Updates the timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn set_expire_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.expire_time = input;
-        self
+        self.expire_time = input; self
     }
     /// <p>Updates the timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn get_expire_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -117,8 +114,7 @@ impl UpdateKeyInputBuilder {
     }
     /// <p>Whether the API key should expire. Set to <code>true</code> to set the API key to have no expiration time.</p>
     pub fn set_no_expiry(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.no_expiry = input;
-        self
+        self.no_expiry = input; self
     }
     /// <p>Whether the API key should expire. Set to <code>true</code> to set the API key to have no expiration time.</p>
     pub fn get_no_expiry(&self) -> &::std::option::Option<bool> {
@@ -137,8 +133,7 @@ impl UpdateKeyInputBuilder {
     /// <p><code>False</code> if force update is not preferred</p>
     /// <p>Default value: <code>False</code></p>
     pub fn set_force_update(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force_update = input;
-        self
+        self.force_update = input; self
     }
     /// <p>The boolean flag to be included for updating <code>ExpireTime</code> or <code>Restrictions</code> details.</p>
     /// <p>Must be set to <code>true</code> to update an API key resource that has been used in the past 7 days.</p>
@@ -154,8 +149,7 @@ impl UpdateKeyInputBuilder {
     }
     /// <p>Updates the API key restrictions for the API key resource.</p>
     pub fn set_restrictions(mut self, input: ::std::option::Option<crate::types::ApiKeyRestrictions>) -> Self {
-        self.restrictions = input;
-        self
+        self.restrictions = input; self
     }
     /// <p>Updates the API key restrictions for the API key resource.</p>
     pub fn get_restrictions(&self) -> &::std::option::Option<crate::types::ApiKeyRestrictions> {
@@ -163,13 +157,22 @@ impl UpdateKeyInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateKeyInput`](crate::operation::update_key::UpdateKeyInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_key::UpdateKeyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_key::UpdateKeyInput {
-            key_name: self.key_name,
-            description: self.description,
-            expire_time: self.expire_time,
-            no_expiry: self.no_expiry,
-            force_update: self.force_update,
-            restrictions: self.restrictions,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_key::UpdateKeyInput {
+                key_name: self.key_name
+                ,
+                description: self.description
+                ,
+                expire_time: self.expire_time
+                ,
+                no_expiry: self.no_expiry
+                ,
+                force_update: self.force_update
+                ,
+                restrictions: self.restrictions
+                ,
+            }
+        )
     }
 }
+

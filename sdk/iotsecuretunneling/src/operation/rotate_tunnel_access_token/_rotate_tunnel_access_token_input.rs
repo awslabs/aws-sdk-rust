@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RotateTunnelAccessTokenInput {
+pub struct RotateTunnelAccessTokenInput  {
     /// <p>The tunnel for which you want to rotate the access tokens.</p>
     pub tunnel_id: ::std::option::Option<::std::string::String>,
     /// <p>The mode of the client that will use the client token, which can be either the source or destination, or both source and destination.</p>
@@ -10,17 +10,17 @@ pub struct RotateTunnelAccessTokenInput {
     /// <p>The destination configuration.</p>
     pub destination_config: ::std::option::Option<crate::types::DestinationConfig>,
 }
-impl RotateTunnelAccessTokenInput {
+impl  RotateTunnelAccessTokenInput  {
     /// <p>The tunnel for which you want to rotate the access tokens.</p>
-    pub fn tunnel_id(&self) -> ::std::option::Option<&str> {
+    pub fn tunnel_id(&self) -> ::std::option::Option<& str> {
         self.tunnel_id.as_deref()
     }
     /// <p>The mode of the client that will use the client token, which can be either the source or destination, or both source and destination.</p>
-    pub fn client_mode(&self) -> ::std::option::Option<&crate::types::ClientMode> {
+    pub fn client_mode(&self) -> ::std::option::Option<& crate::types::ClientMode> {
         self.client_mode.as_ref()
     }
     /// <p>The destination configuration.</p>
-    pub fn destination_config(&self) -> ::std::option::Option<&crate::types::DestinationConfig> {
+    pub fn destination_config(&self) -> ::std::option::Option<& crate::types::DestinationConfig> {
         self.destination_config.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl RotateTunnelAccessTokenInputBuilder {
     }
     /// <p>The tunnel for which you want to rotate the access tokens.</p>
     pub fn set_tunnel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tunnel_id = input;
-        self
+        self.tunnel_id = input; self
     }
     /// <p>The tunnel for which you want to rotate the access tokens.</p>
     pub fn get_tunnel_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl RotateTunnelAccessTokenInputBuilder {
     }
     /// <p>The mode of the client that will use the client token, which can be either the source or destination, or both source and destination.</p>
     pub fn set_client_mode(mut self, input: ::std::option::Option<crate::types::ClientMode>) -> Self {
-        self.client_mode = input;
-        self
+        self.client_mode = input; self
     }
     /// <p>The mode of the client that will use the client token, which can be either the source or destination, or both source and destination.</p>
     pub fn get_client_mode(&self) -> &::std::option::Option<crate::types::ClientMode> {
@@ -77,24 +75,24 @@ impl RotateTunnelAccessTokenInputBuilder {
     }
     /// <p>The destination configuration.</p>
     pub fn set_destination_config(mut self, input: ::std::option::Option<crate::types::DestinationConfig>) -> Self {
-        self.destination_config = input;
-        self
+        self.destination_config = input; self
     }
     /// <p>The destination configuration.</p>
     pub fn get_destination_config(&self) -> &::std::option::Option<crate::types::DestinationConfig> {
         &self.destination_config
     }
     /// Consumes the builder and constructs a [`RotateTunnelAccessTokenInput`](crate::operation::rotate_tunnel_access_token::RotateTunnelAccessTokenInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::rotate_tunnel_access_token::RotateTunnelAccessTokenInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::rotate_tunnel_access_token::RotateTunnelAccessTokenInput {
-            tunnel_id: self.tunnel_id,
-            client_mode: self.client_mode,
-            destination_config: self.destination_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::rotate_tunnel_access_token::RotateTunnelAccessTokenInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::rotate_tunnel_access_token::RotateTunnelAccessTokenInput {
+                tunnel_id: self.tunnel_id
+                ,
+                client_mode: self.client_mode
+                ,
+                destination_config: self.destination_config
+                ,
+            }
+        )
     }
 }
+

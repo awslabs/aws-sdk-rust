@@ -3,13 +3,13 @@
 /// <p>The input structure for specifying ViewOffNadir property filter. ViewOffNadir refers to the angle from the sensor between nadir (straight down) and the scene center. Measured in degrees (0-90).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ViewOffNadirInput {
+pub struct ViewOffNadirInput  {
     /// <p>The minimum value for ViewOffNadir property filter. This filters items having ViewOffNadir greater than or equal to this value.</p>
     pub lower_bound: f32,
     /// <p>The maximum value for ViewOffNadir property filter. This filters items having ViewOffNadir lesser than or equal to this value.</p>
     pub upper_bound: f32,
 }
-impl ViewOffNadirInput {
+impl  ViewOffNadirInput  {
     /// <p>The minimum value for ViewOffNadir property filter. This filters items having ViewOffNadir greater than or equal to this value.</p>
     pub fn lower_bound(&self) -> f32 {
         self.lower_bound
@@ -42,8 +42,7 @@ impl ViewOffNadirInputBuilder {
     }
     /// <p>The minimum value for ViewOffNadir property filter. This filters items having ViewOffNadir greater than or equal to this value.</p>
     pub fn set_lower_bound(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.lower_bound = input;
-        self
+        self.lower_bound = input; self
     }
     /// <p>The minimum value for ViewOffNadir property filter. This filters items having ViewOffNadir greater than or equal to this value.</p>
     pub fn get_lower_bound(&self) -> &::std::option::Option<f32> {
@@ -57,8 +56,7 @@ impl ViewOffNadirInputBuilder {
     }
     /// <p>The maximum value for ViewOffNadir property filter. This filters items having ViewOffNadir lesser than or equal to this value.</p>
     pub fn set_upper_bound(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.upper_bound = input;
-        self
+        self.upper_bound = input; self
     }
     /// <p>The maximum value for ViewOffNadir property filter. This filters items having ViewOffNadir lesser than or equal to this value.</p>
     pub fn get_upper_bound(&self) -> &::std::option::Option<f32> {
@@ -69,19 +67,20 @@ impl ViewOffNadirInputBuilder {
     /// - [`lower_bound`](crate::types::builders::ViewOffNadirInputBuilder::lower_bound)
     /// - [`upper_bound`](crate::types::builders::ViewOffNadirInputBuilder::upper_bound)
     pub fn build(self) -> ::std::result::Result<crate::types::ViewOffNadirInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ViewOffNadirInput {
-            lower_bound: self.lower_bound.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "lower_bound",
-                    "lower_bound was not specified but it is required when building ViewOffNadirInput",
-                )
-            })?,
-            upper_bound: self.upper_bound.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "upper_bound",
-                    "upper_bound was not specified but it is required when building ViewOffNadirInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ViewOffNadirInput {
+                lower_bound: self.lower_bound
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("lower_bound", "lower_bound was not specified but it is required when building ViewOffNadirInput")
+                    )?
+                ,
+                upper_bound: self.upper_bound
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("upper_bound", "upper_bound was not specified but it is required when building ViewOffNadirInput")
+                    )?
+                ,
+            }
+        )
     }
 }
+

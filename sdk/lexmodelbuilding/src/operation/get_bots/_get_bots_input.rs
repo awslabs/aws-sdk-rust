@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBotsInput {
+pub struct GetBotsInput  {
     /// <p>A pagination token that fetches the next page of bots. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of bots, specify the pagination token in the next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of bots to return in the response that the request will return. The default is 10.</p>
@@ -10,9 +10,9 @@ pub struct GetBotsInput {
     /// <p>Substring to match in bot names. A bot will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
     pub name_contains: ::std::option::Option<::std::string::String>,
 }
-impl GetBotsInput {
+impl  GetBotsInput  {
     /// <p>A pagination token that fetches the next page of bots. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of bots, specify the pagination token in the next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of bots to return in the response that the request will return. The default is 10.</p>
@@ -20,7 +20,7 @@ impl GetBotsInput {
         self.max_results
     }
     /// <p>Substring to match in bot names. A bot will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
-    pub fn name_contains(&self) -> ::std::option::Option<&str> {
+    pub fn name_contains(&self) -> ::std::option::Option<& str> {
         self.name_contains.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl GetBotsInputBuilder {
     }
     /// <p>A pagination token that fetches the next page of bots. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of bots, specify the pagination token in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token that fetches the next page of bots. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of bots, specify the pagination token in the next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl GetBotsInputBuilder {
     }
     /// <p>The maximum number of bots to return in the response that the request will return. The default is 10.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of bots to return in the response that the request will return. The default is 10.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -75,8 +73,7 @@ impl GetBotsInputBuilder {
     }
     /// <p>Substring to match in bot names. A bot will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
     pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name_contains = input;
-        self
+        self.name_contains = input; self
     }
     /// <p>Substring to match in bot names. A bot will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
     pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,10 +81,16 @@ impl GetBotsInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetBotsInput`](crate::operation::get_bots::GetBotsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_bots::GetBotsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_bots::GetBotsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            name_contains: self.name_contains,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_bots::GetBotsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                name_contains: self.name_contains
+                ,
+            }
+        )
     }
 }
+

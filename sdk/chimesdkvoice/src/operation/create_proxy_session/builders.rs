@@ -5,54 +5,50 @@ pub use crate::operation::create_proxy_session::_create_proxy_session_input::Cre
 
 impl CreateProxySessionInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_proxy_session::CreateProxySessionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_proxy_session::CreateProxySessionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_proxy_session();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_proxy_session::CreateProxySessionOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_proxy_session::CreateProxySessionError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_proxy_session();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateProxySession`.
-///
+/// 
 /// <p>Creates a proxy session for the specified Amazon Chime SDK Voice Connector for the specified participant phone numbers.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateProxySessionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_proxy_session::builders::CreateProxySessionInputBuilder,
+                    inner: crate::operation::create_proxy_session::builders::CreateProxySessionInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_proxy_session::CreateProxySessionOutput,
-        crate::operation::create_proxy_session::CreateProxySessionError,
-    > for CreateProxySessionFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_proxy_session::CreateProxySessionOutput,
-            crate::operation::create_proxy_session::CreateProxySessionError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_proxy_session::CreateProxySessionOutput,
+                    crate::operation::create_proxy_session::CreateProxySessionError,
+                > for CreateProxySessionFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_proxy_session::CreateProxySessionOutput,
+                        crate::operation::create_proxy_session::CreateProxySessionError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateProxySessionFluentBuilder {
     /// Creates a new `CreateProxySession`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl CreateProxySessionFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_proxy_session::CreateProxySessionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_proxy_session::CreateProxySessionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_proxy_session::CreateProxySession::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_proxy_session::CreateProxySession::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_proxy_session::CreateProxySessionOutput,
-        crate::operation::create_proxy_session::CreateProxySessionError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_proxy_session::CreateProxySessionOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_proxy_session::CreateProxySessionError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_proxy_session::CreateProxySession::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_proxy_session::CreateProxySession::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_proxy_session::CreateProxySessionOutput, crate::operation::create_proxy_session::CreateProxySessionError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.voice_connector_id(input.into());
@@ -132,12 +119,12 @@ impl CreateProxySessionFluentBuilder {
         self
     }
     /// <p>The participant phone numbers.</p>
-    pub fn set_participant_phone_numbers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_participant_phone_numbers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_participant_phone_numbers(input);
         self
     }
     /// <p>The participant phone numbers.</p>
-    pub fn get_participant_phone_numbers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_participant_phone_numbers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_participant_phone_numbers()
     }
     /// <p>The name of the proxy session.</p>
@@ -178,12 +165,12 @@ impl CreateProxySessionFluentBuilder {
         self
     }
     /// <p>The proxy session's capabilities.</p>
-    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>) -> Self {
+    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Capability>>) -> Self {
         self.inner = self.inner.set_capabilities(input);
         self
     }
     /// <p>The proxy session's capabilities.</p>
-    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Capability>> {
+    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Capability>> {
         self.inner.get_capabilities()
     }
     /// <p>The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.</p>
@@ -229,3 +216,4 @@ impl CreateProxySessionFluentBuilder {
         self.inner.get_geo_match_params()
     }
 }
+

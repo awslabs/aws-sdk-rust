@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeEndpointAccess`](crate::operation::describe_endpoint_access::builders::DescribeEndpointAccessFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_endpoint_access::builders::DescribeEndpointAccessFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`cluster_identifier(impl Into<String>)`](crate::operation::describe_endpoint_access::builders::DescribeEndpointAccessFluentBuilder::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::operation::describe_endpoint_access::builders::DescribeEndpointAccessFluentBuilder::set_cluster_identifier):<br>required: **false**<br><p>The cluster identifier associated with the described endpoint.</p><br>
     ///   - [`resource_owner(impl Into<String>)`](crate::operation::describe_endpoint_access::builders::DescribeEndpointAccessFluentBuilder::resource_owner) / [`set_resource_owner(Option<String>)`](crate::operation::describe_endpoint_access::builders::DescribeEndpointAccessFluentBuilder::set_resource_owner):<br>required: **false**<br><p>The Amazon Web Services account ID of the owner of the cluster.</p><br>
     ///   - [`endpoint_name(impl Into<String>)`](crate::operation::describe_endpoint_access::builders::DescribeEndpointAccessFluentBuilder::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::operation::describe_endpoint_access::builders::DescribeEndpointAccessFluentBuilder::set_endpoint_name):<br>required: **false**<br><p>The name of the endpoint to be described.</p><br>
     ///   - [`vpc_id(impl Into<String>)`](crate::operation::describe_endpoint_access::builders::DescribeEndpointAccessFluentBuilder::vpc_id) / [`set_vpc_id(Option<String>)`](crate::operation::describe_endpoint_access::builders::DescribeEndpointAccessFluentBuilder::set_vpc_id):<br>required: **false**<br><p>The virtual private cloud (VPC) identifier with access to the cluster.</p><br>
     ///   - [`max_records(i32)`](crate::operation::describe_endpoint_access::builders::DescribeEndpointAccessFluentBuilder::max_records) / [`set_max_records(Option<i32>)`](crate::operation::describe_endpoint_access::builders::DescribeEndpointAccessFluentBuilder::set_max_records):<br>required: **false**<br><p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a <code>Marker</code> is included in the response so that the remaining results can be retrieved.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::describe_endpoint_access::builders::DescribeEndpointAccessFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_endpoint_access::builders::DescribeEndpointAccessFluentBuilder::set_marker):<br>required: **false**<br><p>An optional pagination token provided by a previous <code>DescribeEndpointAccess</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p><br>
-    /// - On success, responds with [`DescribeEndpointAccessOutput`](crate::operation::describe_endpoint_access::DescribeEndpointAccessOutput) with field(s):
+                            /// - On success, responds with [`DescribeEndpointAccessOutput`](crate::operation::describe_endpoint_access::DescribeEndpointAccessOutput) with field(s):
     ///   - [`endpoint_access_list(Option<Vec::<EndpointAccess>>)`](crate::operation::describe_endpoint_access::DescribeEndpointAccessOutput::endpoint_access_list): <p>The list of endpoints with access to the cluster.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_endpoint_access::DescribeEndpointAccessOutput::marker): <p>An optional pagination token provided by a previous <code>DescribeEndpointAccess</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
-    /// - On failure, responds with [`SdkError<DescribeEndpointAccessError>`](crate::operation::describe_endpoint_access::DescribeEndpointAccessError)
+                            /// - On failure, responds with [`SdkError<DescribeEndpointAccessError>`](crate::operation::describe_endpoint_access::DescribeEndpointAccessError)
     pub fn describe_endpoint_access(&self) -> crate::operation::describe_endpoint_access::builders::DescribeEndpointAccessFluentBuilder {
-        crate::operation::describe_endpoint_access::builders::DescribeEndpointAccessFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_endpoint_access::builders::DescribeEndpointAccessFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateProductInput {
+pub struct CreateProductInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -29,7 +29,7 @@ pub struct CreateProductInput {
     /// <p>The type of product.</p>
     pub product_type: ::std::option::Option<crate::types::ProductType>,
     /// <p>One or more tags.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The configuration of the provisioning artifact.</p>
     pub provisioning_artifact_parameters: ::std::option::Option<crate::types::ProvisioningArtifactProperties>,
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
@@ -43,7 +43,7 @@ pub struct CreateProductInput {
     /// </ul>
     pub source_connection: ::std::option::Option<crate::types::SourceConnection>,
 }
-impl CreateProductInput {
+impl  CreateProductInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -51,54 +51,55 @@ impl CreateProductInput {
     /// <li>
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
-    pub fn accept_language(&self) -> ::std::option::Option<&str> {
+    pub fn accept_language(&self) -> ::std::option::Option<& str> {
         self.accept_language.as_deref()
     }
     /// <p>The name of the product.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The owner of the product.</p>
-    pub fn owner(&self) -> ::std::option::Option<&str> {
+    pub fn owner(&self) -> ::std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>The description of the product.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The distributor of the product.</p>
-    pub fn distributor(&self) -> ::std::option::Option<&str> {
+    pub fn distributor(&self) -> ::std::option::Option<& str> {
         self.distributor.as_deref()
     }
     /// <p>The support information about the product.</p>
-    pub fn support_description(&self) -> ::std::option::Option<&str> {
+    pub fn support_description(&self) -> ::std::option::Option<& str> {
         self.support_description.as_deref()
     }
     /// <p>The contact email for product support.</p>
-    pub fn support_email(&self) -> ::std::option::Option<&str> {
+    pub fn support_email(&self) -> ::std::option::Option<& str> {
         self.support_email.as_deref()
     }
     /// <p>The contact URL for product support.</p>
     /// <p><code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.</p>
-    pub fn support_url(&self) -> ::std::option::Option<&str> {
+    pub fn support_url(&self) -> ::std::option::Option<& str> {
         self.support_url.as_deref()
     }
     /// <p>The type of product.</p>
-    pub fn product_type(&self) -> ::std::option::Option<&crate::types::ProductType> {
+    pub fn product_type(&self) -> ::std::option::Option<& crate::types::ProductType> {
         self.product_type.as_ref()
     }
     /// <p>One or more tags.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The configuration of the provisioning artifact.</p>
-    pub fn provisioning_artifact_parameters(&self) -> ::std::option::Option<&crate::types::ProvisioningArtifactProperties> {
+    pub fn provisioning_artifact_parameters(&self) -> ::std::option::Option<& crate::types::ProvisioningArtifactProperties> {
         self.provisioning_artifact_parameters.as_ref()
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    pub fn idempotency_token(&self) -> ::std::option::Option<&str> {
+    pub fn idempotency_token(&self) -> ::std::option::Option<& str> {
         self.idempotency_token.as_deref()
     }
     /// <p>Specifies connection details for the created product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
@@ -108,7 +109,7 @@ impl CreateProductInput {
     /// <li>
     /// <p><code>ConnectionParamters</code></p></li>
     /// </ul>
-    pub fn source_connection(&self) -> ::std::option::Option<&crate::types::SourceConnection> {
+    pub fn source_connection(&self) -> ::std::option::Option<& crate::types::SourceConnection> {
         self.source_connection.as_ref()
     }
 }
@@ -132,7 +133,7 @@ pub struct CreateProductInputBuilder {
     pub(crate) support_email: ::std::option::Option<::std::string::String>,
     pub(crate) support_url: ::std::option::Option<::std::string::String>,
     pub(crate) product_type: ::std::option::Option<crate::types::ProductType>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) provisioning_artifact_parameters: ::std::option::Option<crate::types::ProvisioningArtifactProperties>,
     pub(crate) idempotency_token: ::std::option::Option<::std::string::String>,
     pub(crate) source_connection: ::std::option::Option<crate::types::SourceConnection>,
@@ -157,8 +158,7 @@ impl CreateProductInputBuilder {
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accept_language = input;
-        self
+        self.accept_language = input; self
     }
     /// <p>The language code.</p>
     /// <ul>
@@ -178,8 +178,7 @@ impl CreateProductInputBuilder {
     }
     /// <p>The name of the product.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the product.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -193,8 +192,7 @@ impl CreateProductInputBuilder {
     }
     /// <p>The owner of the product.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// <p>The owner of the product.</p>
     pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -207,8 +205,7 @@ impl CreateProductInputBuilder {
     }
     /// <p>The description of the product.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the product.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -221,8 +218,7 @@ impl CreateProductInputBuilder {
     }
     /// <p>The distributor of the product.</p>
     pub fn set_distributor(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.distributor = input;
-        self
+        self.distributor = input; self
     }
     /// <p>The distributor of the product.</p>
     pub fn get_distributor(&self) -> &::std::option::Option<::std::string::String> {
@@ -235,8 +231,7 @@ impl CreateProductInputBuilder {
     }
     /// <p>The support information about the product.</p>
     pub fn set_support_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.support_description = input;
-        self
+        self.support_description = input; self
     }
     /// <p>The support information about the product.</p>
     pub fn get_support_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -249,8 +244,7 @@ impl CreateProductInputBuilder {
     }
     /// <p>The contact email for product support.</p>
     pub fn set_support_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.support_email = input;
-        self
+        self.support_email = input; self
     }
     /// <p>The contact email for product support.</p>
     pub fn get_support_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -265,8 +259,7 @@ impl CreateProductInputBuilder {
     /// <p>The contact URL for product support.</p>
     /// <p><code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.</p>
     pub fn set_support_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.support_url = input;
-        self
+        self.support_url = input; self
     }
     /// <p>The contact URL for product support.</p>
     /// <p><code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.</p>
@@ -281,8 +274,7 @@ impl CreateProductInputBuilder {
     }
     /// <p>The type of product.</p>
     pub fn set_product_type(mut self, input: ::std::option::Option<crate::types::ProductType>) -> Self {
-        self.product_type = input;
-        self
+        self.product_type = input; self
     }
     /// <p>The type of product.</p>
     pub fn get_product_type(&self) -> &::std::option::Option<crate::types::ProductType> {
@@ -295,17 +287,16 @@ impl CreateProductInputBuilder {
     /// <p>One or more tags.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>One or more tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The configuration of the provisioning artifact.</p>
@@ -315,8 +306,7 @@ impl CreateProductInputBuilder {
     }
     /// <p>The configuration of the provisioning artifact.</p>
     pub fn set_provisioning_artifact_parameters(mut self, input: ::std::option::Option<crate::types::ProvisioningArtifactProperties>) -> Self {
-        self.provisioning_artifact_parameters = input;
-        self
+        self.provisioning_artifact_parameters = input; self
     }
     /// <p>The configuration of the provisioning artifact.</p>
     pub fn get_provisioning_artifact_parameters(&self) -> &::std::option::Option<crate::types::ProvisioningArtifactProperties> {
@@ -330,8 +320,7 @@ impl CreateProductInputBuilder {
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.idempotency_token = input;
-        self
+        self.idempotency_token = input; self
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -356,8 +345,7 @@ impl CreateProductInputBuilder {
     /// <p><code>ConnectionParamters</code></p></li>
     /// </ul>
     pub fn set_source_connection(mut self, input: ::std::option::Option<crate::types::SourceConnection>) -> Self {
-        self.source_connection = input;
-        self
+        self.source_connection = input; self
     }
     /// <p>Specifies connection details for the created product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
     /// <ul>
@@ -370,23 +358,37 @@ impl CreateProductInputBuilder {
         &self.source_connection
     }
     /// Consumes the builder and constructs a [`CreateProductInput`](crate::operation::create_product::CreateProductInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_product::CreateProductInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_product::CreateProductInput {
-            accept_language: self.accept_language,
-            name: self.name,
-            owner: self.owner,
-            description: self.description,
-            distributor: self.distributor,
-            support_description: self.support_description,
-            support_email: self.support_email,
-            support_url: self.support_url,
-            product_type: self.product_type,
-            tags: self.tags,
-            provisioning_artifact_parameters: self.provisioning_artifact_parameters,
-            idempotency_token: self.idempotency_token,
-            source_connection: self.source_connection,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_product::CreateProductInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_product::CreateProductInput {
+                accept_language: self.accept_language
+                ,
+                name: self.name
+                ,
+                owner: self.owner
+                ,
+                description: self.description
+                ,
+                distributor: self.distributor
+                ,
+                support_description: self.support_description
+                ,
+                support_email: self.support_email
+                ,
+                support_url: self.support_url
+                ,
+                product_type: self.product_type
+                ,
+                tags: self.tags
+                ,
+                provisioning_artifact_parameters: self.provisioning_artifact_parameters
+                ,
+                idempotency_token: self.idempotency_token
+                ,
+                source_connection: self.source_connection
+                ,
+            }
+        )
     }
 }
+

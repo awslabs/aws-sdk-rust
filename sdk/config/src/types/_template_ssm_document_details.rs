@@ -4,7 +4,7 @@
 /// <p>The <code>TemplateSSMDocumentDetails</code> object contains the name of the SSM document and the version of the SSM document.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TemplateSsmDocumentDetails {
+pub struct TemplateSsmDocumentDetails  {
     /// <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a conformance pack. If you use the document name, Config checks only your account and Amazon Web Services Region for the SSM document.</p>
     pub document_name: ::std::string::String,
     /// <p>The version of the SSM document to use to create a conformance pack. By default, Config uses the latest version.</p><note>
@@ -12,16 +12,15 @@ pub struct TemplateSsmDocumentDetails {
     /// </note>
     pub document_version: ::std::option::Option<::std::string::String>,
 }
-impl TemplateSsmDocumentDetails {
+impl  TemplateSsmDocumentDetails  {
     /// <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a conformance pack. If you use the document name, Config checks only your account and Amazon Web Services Region for the SSM document.</p>
-    pub fn document_name(&self) -> &str {
-        use std::ops::Deref;
-        self.document_name.deref()
+    pub fn document_name(&self) -> & str {
+        use std::ops::Deref; self.document_name.deref()
     }
     /// <p>The version of the SSM document to use to create a conformance pack. By default, Config uses the latest version.</p><note>
     /// <p>This field is optional.</p>
     /// </note>
-    pub fn document_version(&self) -> ::std::option::Option<&str> {
+    pub fn document_version(&self) -> ::std::option::Option<& str> {
         self.document_version.as_deref()
     }
 }
@@ -48,8 +47,7 @@ impl TemplateSsmDocumentDetailsBuilder {
     }
     /// <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a conformance pack. If you use the document name, Config checks only your account and Amazon Web Services Region for the SSM document.</p>
     pub fn set_document_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_name = input;
-        self
+        self.document_name = input; self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the SSM document to use to create a conformance pack. If you use the document name, Config checks only your account and Amazon Web Services Region for the SSM document.</p>
     pub fn get_document_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,7 @@ impl TemplateSsmDocumentDetailsBuilder {
     /// <p>This field is optional.</p>
     /// </note>
     pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_version = input;
-        self
+        self.document_version = input; self
     }
     /// <p>The version of the SSM document to use to create a conformance pack. By default, Config uses the latest version.</p><note>
     /// <p>This field is optional.</p>
@@ -79,14 +76,17 @@ impl TemplateSsmDocumentDetailsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`document_name`](crate::types::builders::TemplateSsmDocumentDetailsBuilder::document_name)
     pub fn build(self) -> ::std::result::Result<crate::types::TemplateSsmDocumentDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TemplateSsmDocumentDetails {
-            document_name: self.document_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "document_name",
-                    "document_name was not specified but it is required when building TemplateSsmDocumentDetails",
-                )
-            })?,
-            document_version: self.document_version,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TemplateSsmDocumentDetails {
+                document_name: self.document_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("document_name", "document_name was not specified but it is required when building TemplateSsmDocumentDetails")
+                    )?
+                ,
+                document_version: self.document_version
+                ,
+            }
+        )
     }
 }
+

@@ -2,18 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateEventConfigurationByResourceTypesOutput {
+pub struct UpdateEventConfigurationByResourceTypesOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for UpdateEventConfigurationByResourceTypesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateEventConfigurationByResourceTypesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEventConfigurationByResourceTypesOutput`](crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesOutput).
-    pub fn builder() -> crate::operation::update_event_configuration_by_resource_types::builders::UpdateEventConfigurationByResourceTypesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_event_configuration_by_resource_types::builders::UpdateEventConfigurationByResourceTypesOutputBuilder {
         crate::operation::update_event_configuration_by_resource_types::builders::UpdateEventConfigurationByResourceTypesOutputBuilder::default()
     }
 }
@@ -26,14 +25,14 @@ pub struct UpdateEventConfigurationByResourceTypesOutputBuilder {
 }
 impl UpdateEventConfigurationByResourceTypesOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateEventConfigurationByResourceTypesOutput`](crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesOutput).
     pub fn build(self) -> crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesOutput {
         crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesOutput {
@@ -41,3 +40,4 @@ impl UpdateEventConfigurationByResourceTypesOutputBuilder {
         }
     }
 }
+

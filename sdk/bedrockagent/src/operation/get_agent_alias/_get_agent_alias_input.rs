@@ -3,19 +3,19 @@
 /// Get Agent Alias Request
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAgentAliasInput {
+pub struct GetAgentAliasInput  {
     /// Id generated at the server side when an Agent is created
     pub agent_id: ::std::option::Option<::std::string::String>,
     /// Id generated at the server side when an Agent Alias is created
     pub agent_alias_id: ::std::option::Option<::std::string::String>,
 }
-impl GetAgentAliasInput {
+impl  GetAgentAliasInput  {
     /// Id generated at the server side when an Agent is created
-    pub fn agent_id(&self) -> ::std::option::Option<&str> {
+    pub fn agent_id(&self) -> ::std::option::Option<& str> {
         self.agent_id.as_deref()
     }
     /// Id generated at the server side when an Agent Alias is created
-    pub fn agent_alias_id(&self) -> ::std::option::Option<&str> {
+    pub fn agent_alias_id(&self) -> ::std::option::Option<& str> {
         self.agent_alias_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl GetAgentAliasInputBuilder {
     }
     /// Id generated at the server side when an Agent is created
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_id = input;
-        self
+        self.agent_id = input; self
     }
     /// Id generated at the server side when an Agent is created
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,20 +56,22 @@ impl GetAgentAliasInputBuilder {
     }
     /// Id generated at the server side when an Agent Alias is created
     pub fn set_agent_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_alias_id = input;
-        self
+        self.agent_alias_id = input; self
     }
     /// Id generated at the server side when an Agent Alias is created
     pub fn get_agent_alias_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_alias_id
     }
     /// Consumes the builder and constructs a [`GetAgentAliasInput`](crate::operation::get_agent_alias::GetAgentAliasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_agent_alias::GetAgentAliasInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_agent_alias::GetAgentAliasInput {
-            agent_id: self.agent_id,
-            agent_alias_id: self.agent_alias_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_agent_alias::GetAgentAliasInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_agent_alias::GetAgentAliasInput {
+                agent_id: self.agent_id
+                ,
+                agent_alias_id: self.agent_alias_id
+                ,
+            }
+        )
     }
 }
+

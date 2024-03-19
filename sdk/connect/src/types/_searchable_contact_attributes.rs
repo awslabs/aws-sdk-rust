@@ -3,20 +3,19 @@
 /// <p>A structure that defines search criteria based on user-defined contact attributes that are configured for contact search.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchableContactAttributes {
+pub struct SearchableContactAttributes  {
     /// <p>The list of criteria based on user-defined contact attributes that are configured for contact search.</p>
-    pub criteria: ::std::vec::Vec<crate::types::SearchableContactAttributesCriteria>,
+    pub criteria: ::std::vec::Vec::<crate::types::SearchableContactAttributesCriteria>,
     /// <p>The match type combining search criteria using multiple searchable contact attributes.</p>
     pub match_type: ::std::option::Option<crate::types::SearchContactsMatchType>,
 }
-impl SearchableContactAttributes {
+impl  SearchableContactAttributes  {
     /// <p>The list of criteria based on user-defined contact attributes that are configured for contact search.</p>
-    pub fn criteria(&self) -> &[crate::types::SearchableContactAttributesCriteria] {
-        use std::ops::Deref;
-        self.criteria.deref()
+    pub fn criteria(&self) -> & [crate::types::SearchableContactAttributesCriteria] {
+        use std::ops::Deref; self.criteria.deref()
     }
     /// <p>The match type combining search criteria using multiple searchable contact attributes.</p>
-    pub fn match_type(&self) -> ::std::option::Option<&crate::types::SearchContactsMatchType> {
+    pub fn match_type(&self) -> ::std::option::Option<& crate::types::SearchContactsMatchType> {
         self.match_type.as_ref()
     }
 }
@@ -31,7 +30,7 @@ impl SearchableContactAttributes {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchableContactAttributesBuilder {
-    pub(crate) criteria: ::std::option::Option<::std::vec::Vec<crate::types::SearchableContactAttributesCriteria>>,
+    pub(crate) criteria: ::std::option::Option<::std::vec::Vec::<crate::types::SearchableContactAttributesCriteria>>,
     pub(crate) match_type: ::std::option::Option<crate::types::SearchContactsMatchType>,
 }
 impl SearchableContactAttributesBuilder {
@@ -42,17 +41,16 @@ impl SearchableContactAttributesBuilder {
     /// <p>The list of criteria based on user-defined contact attributes that are configured for contact search.</p>
     pub fn criteria(mut self, input: crate::types::SearchableContactAttributesCriteria) -> Self {
         let mut v = self.criteria.unwrap_or_default();
-        v.push(input);
-        self.criteria = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.criteria = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of criteria based on user-defined contact attributes that are configured for contact search.</p>
-    pub fn set_criteria(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchableContactAttributesCriteria>>) -> Self {
-        self.criteria = input;
-        self
+    pub fn set_criteria(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SearchableContactAttributesCriteria>>) -> Self {
+        self.criteria = input; self
     }
     /// <p>The list of criteria based on user-defined contact attributes that are configured for contact search.</p>
-    pub fn get_criteria(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchableContactAttributesCriteria>> {
+    pub fn get_criteria(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SearchableContactAttributesCriteria>> {
         &self.criteria
     }
     /// <p>The match type combining search criteria using multiple searchable contact attributes.</p>
@@ -62,8 +60,7 @@ impl SearchableContactAttributesBuilder {
     }
     /// <p>The match type combining search criteria using multiple searchable contact attributes.</p>
     pub fn set_match_type(mut self, input: ::std::option::Option<crate::types::SearchContactsMatchType>) -> Self {
-        self.match_type = input;
-        self
+        self.match_type = input; self
     }
     /// <p>The match type combining search criteria using multiple searchable contact attributes.</p>
     pub fn get_match_type(&self) -> &::std::option::Option<crate::types::SearchContactsMatchType> {
@@ -73,14 +70,17 @@ impl SearchableContactAttributesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`criteria`](crate::types::builders::SearchableContactAttributesBuilder::criteria)
     pub fn build(self) -> ::std::result::Result<crate::types::SearchableContactAttributes, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SearchableContactAttributes {
-            criteria: self.criteria.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "criteria",
-                    "criteria was not specified but it is required when building SearchableContactAttributes",
-                )
-            })?,
-            match_type: self.match_type,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SearchableContactAttributes {
+                criteria: self.criteria
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("criteria", "criteria was not specified but it is required when building SearchableContactAttributes")
+                    )?
+                ,
+                match_type: self.match_type
+                ,
+            }
+        )
     }
 }
+

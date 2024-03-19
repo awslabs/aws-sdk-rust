@@ -3,19 +3,19 @@
 /// <p>A function's environment variable settings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsLambdaFunctionEnvironment {
+pub struct AwsLambdaFunctionEnvironment  {
     /// <p>Environment variable key-value pairs.</p>
-    pub variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub variables: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>An <code>AwsLambdaFunctionEnvironmentError</code> object.</p>
     pub error: ::std::option::Option<crate::types::AwsLambdaFunctionEnvironmentError>,
 }
-impl AwsLambdaFunctionEnvironment {
+impl  AwsLambdaFunctionEnvironment  {
     /// <p>Environment variable key-value pairs.</p>
-    pub fn variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn variables(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.variables.as_ref()
     }
     /// <p>An <code>AwsLambdaFunctionEnvironmentError</code> object.</p>
-    pub fn error(&self) -> ::std::option::Option<&crate::types::AwsLambdaFunctionEnvironmentError> {
+    pub fn error(&self) -> ::std::option::Option<& crate::types::AwsLambdaFunctionEnvironmentError> {
         self.error.as_ref()
     }
 }
@@ -30,7 +30,7 @@ impl AwsLambdaFunctionEnvironment {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsLambdaFunctionEnvironmentBuilder {
-    pub(crate) variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) variables: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) error: ::std::option::Option<crate::types::AwsLambdaFunctionEnvironmentError>,
 }
 impl AwsLambdaFunctionEnvironmentBuilder {
@@ -41,17 +41,16 @@ impl AwsLambdaFunctionEnvironmentBuilder {
     /// <p>Environment variable key-value pairs.</p>
     pub fn variables(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.variables.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.variables = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.variables = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Environment variable key-value pairs.</p>
-    pub fn set_variables(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.variables = input;
-        self
+    pub fn set_variables(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.variables = input; self
     }
     /// <p>Environment variable key-value pairs.</p>
-    pub fn get_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_variables(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.variables
     }
     /// <p>An <code>AwsLambdaFunctionEnvironmentError</code> object.</p>
@@ -61,8 +60,7 @@ impl AwsLambdaFunctionEnvironmentBuilder {
     }
     /// <p>An <code>AwsLambdaFunctionEnvironmentError</code> object.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::AwsLambdaFunctionEnvironmentError>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>An <code>AwsLambdaFunctionEnvironmentError</code> object.</p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::AwsLambdaFunctionEnvironmentError> {
@@ -71,8 +69,11 @@ impl AwsLambdaFunctionEnvironmentBuilder {
     /// Consumes the builder and constructs a [`AwsLambdaFunctionEnvironment`](crate::types::AwsLambdaFunctionEnvironment).
     pub fn build(self) -> crate::types::AwsLambdaFunctionEnvironment {
         crate::types::AwsLambdaFunctionEnvironment {
-            variables: self.variables,
-            error: self.error,
+            variables: self.variables
+            ,
+            error: self.error
+            ,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>The status of <a href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_OffPeakWindow.html">off-peak window</a> options for a domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OffPeakWindowOptionsStatus {
+pub struct OffPeakWindowOptionsStatus  {
     /// <p>The domain's off-peak window configuration.</p>
     pub options: ::std::option::Option<crate::types::OffPeakWindowOptions>,
     /// <p>The current status of off-peak window options.</p>
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
-impl OffPeakWindowOptionsStatus {
+impl  OffPeakWindowOptionsStatus  {
     /// <p>The domain's off-peak window configuration.</p>
-    pub fn options(&self) -> ::std::option::Option<&crate::types::OffPeakWindowOptions> {
+    pub fn options(&self) -> ::std::option::Option<& crate::types::OffPeakWindowOptions> {
         self.options.as_ref()
     }
     /// <p>The current status of off-peak window options.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::OptionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::OptionStatus> {
         self.status.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl OffPeakWindowOptionsStatusBuilder {
     }
     /// <p>The domain's off-peak window configuration.</p>
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::OffPeakWindowOptions>) -> Self {
-        self.options = input;
-        self
+        self.options = input; self
     }
     /// <p>The domain's off-peak window configuration.</p>
     pub fn get_options(&self) -> &::std::option::Option<crate::types::OffPeakWindowOptions> {
@@ -55,8 +54,7 @@ impl OffPeakWindowOptionsStatusBuilder {
     }
     /// <p>The current status of off-peak window options.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of off-peak window options.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::OptionStatus> {
@@ -65,8 +63,11 @@ impl OffPeakWindowOptionsStatusBuilder {
     /// Consumes the builder and constructs a [`OffPeakWindowOptionsStatus`](crate::types::OffPeakWindowOptionsStatus).
     pub fn build(self) -> crate::types::OffPeakWindowOptionsStatus {
         crate::types::OffPeakWindowOptionsStatus {
-            options: self.options,
-            status: self.status,
+            options: self.options
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

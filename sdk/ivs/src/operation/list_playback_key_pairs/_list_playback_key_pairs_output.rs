@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPlaybackKeyPairsOutput {
+pub struct ListPlaybackKeyPairsOutput  {
     /// <p>List of key pairs.</p>
-    pub key_pairs: ::std::vec::Vec<crate::types::PlaybackKeyPairSummary>,
+    pub key_pairs: ::std::vec::Vec::<crate::types::PlaybackKeyPairSummary>,
     /// <p>If there are more key pairs than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListPlaybackKeyPairsOutput {
+impl  ListPlaybackKeyPairsOutput  {
     /// <p>List of key pairs.</p>
-    pub fn key_pairs(&self) -> &[crate::types::PlaybackKeyPairSummary] {
-        use std::ops::Deref;
-        self.key_pairs.deref()
+    pub fn key_pairs(&self) -> & [crate::types::PlaybackKeyPairSummary] {
+        use std::ops::Deref; self.key_pairs.deref()
     }
     /// <p>If there are more key pairs than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListPlaybackKeyPairsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListPlaybackKeyPairsOutput {
     /// Creates a new builder-style object to manufacture [`ListPlaybackKeyPairsOutput`](crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsOutput).
     pub fn builder() -> crate::operation::list_playback_key_pairs::builders::ListPlaybackKeyPairsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListPlaybackKeyPairsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPlaybackKeyPairsOutputBuilder {
-    pub(crate) key_pairs: ::std::option::Option<::std::vec::Vec<crate::types::PlaybackKeyPairSummary>>,
+    pub(crate) key_pairs: ::std::option::Option<::std::vec::Vec::<crate::types::PlaybackKeyPairSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListPlaybackKeyPairsOutputBuilder {
     /// <p>List of key pairs.</p>
     pub fn key_pairs(mut self, input: crate::types::PlaybackKeyPairSummary) -> Self {
         let mut v = self.key_pairs.unwrap_or_default();
-        v.push(input);
-        self.key_pairs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.key_pairs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of key pairs.</p>
-    pub fn set_key_pairs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlaybackKeyPairSummary>>) -> Self {
-        self.key_pairs = input;
-        self
+    pub fn set_key_pairs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PlaybackKeyPairSummary>>) -> Self {
+        self.key_pairs = input; self
     }
     /// <p>List of key pairs.</p>
-    pub fn get_key_pairs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlaybackKeyPairSummary>> {
+    pub fn get_key_pairs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PlaybackKeyPairSummary>> {
         &self.key_pairs
     }
     /// <p>If there are more key pairs than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
@@ -68,38 +66,37 @@ impl ListPlaybackKeyPairsOutputBuilder {
     }
     /// <p>If there are more key pairs than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If there are more key pairs than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListPlaybackKeyPairsOutput`](crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`key_pairs`](crate::operation::list_playback_key_pairs::builders::ListPlaybackKeyPairsOutputBuilder::key_pairs)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsOutput {
-            key_pairs: self.key_pairs.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key_pairs",
-                    "key_pairs was not specified but it is required when building ListPlaybackKeyPairsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsOutput {
+                key_pairs: self.key_pairs
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key_pairs", "key_pairs was not specified but it is required when building ListPlaybackKeyPairsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

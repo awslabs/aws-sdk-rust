@@ -3,7 +3,7 @@
 /// <p>Describes a <code>ClusterDbRevision</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClusterDbRevision {
+pub struct ClusterDbRevision  {
     /// <p>The unique identifier of the cluster.</p>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A string representing the current cluster version.</p>
@@ -11,26 +11,27 @@ pub struct ClusterDbRevision {
     /// <p>The date on which the database revision was released.</p>
     pub database_revision_release_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of <code>RevisionTarget</code> objects, where each object describes the database revision that a cluster can be updated to.</p>
-    pub revision_targets: ::std::option::Option<::std::vec::Vec<crate::types::RevisionTarget>>,
+    pub revision_targets: ::std::option::Option<::std::vec::Vec::<crate::types::RevisionTarget>>,
 }
-impl ClusterDbRevision {
+impl  ClusterDbRevision  {
     /// <p>The unique identifier of the cluster.</p>
-    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>A string representing the current cluster version.</p>
-    pub fn current_database_revision(&self) -> ::std::option::Option<&str> {
+    pub fn current_database_revision(&self) -> ::std::option::Option<& str> {
         self.current_database_revision.as_deref()
     }
     /// <p>The date on which the database revision was released.</p>
-    pub fn database_revision_release_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn database_revision_release_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.database_revision_release_date.as_ref()
     }
     /// <p>A list of <code>RevisionTarget</code> objects, where each object describes the database revision that a cluster can be updated to.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.revision_targets.is_none()`.
-    pub fn revision_targets(&self) -> &[crate::types::RevisionTarget] {
-        self.revision_targets.as_deref().unwrap_or_default()
+    pub fn revision_targets(&self) -> & [crate::types::RevisionTarget] {
+        self.revision_targets.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ClusterDbRevision {
@@ -47,7 +48,7 @@ pub struct ClusterDbRevisionBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) current_database_revision: ::std::option::Option<::std::string::String>,
     pub(crate) database_revision_release_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) revision_targets: ::std::option::Option<::std::vec::Vec<crate::types::RevisionTarget>>,
+    pub(crate) revision_targets: ::std::option::Option<::std::vec::Vec::<crate::types::RevisionTarget>>,
 }
 impl ClusterDbRevisionBuilder {
     /// <p>The unique identifier of the cluster.</p>
@@ -57,8 +58,7 @@ impl ClusterDbRevisionBuilder {
     }
     /// <p>The unique identifier of the cluster.</p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_identifier = input;
-        self
+        self.cluster_identifier = input; self
     }
     /// <p>The unique identifier of the cluster.</p>
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl ClusterDbRevisionBuilder {
     }
     /// <p>A string representing the current cluster version.</p>
     pub fn set_current_database_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.current_database_revision = input;
-        self
+        self.current_database_revision = input; self
     }
     /// <p>A string representing the current cluster version.</p>
     pub fn get_current_database_revision(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +84,7 @@ impl ClusterDbRevisionBuilder {
     }
     /// <p>The date on which the database revision was released.</p>
     pub fn set_database_revision_release_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.database_revision_release_date = input;
-        self
+        self.database_revision_release_date = input; self
     }
     /// <p>The date on which the database revision was released.</p>
     pub fn get_database_revision_release_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -99,26 +97,30 @@ impl ClusterDbRevisionBuilder {
     /// <p>A list of <code>RevisionTarget</code> objects, where each object describes the database revision that a cluster can be updated to.</p>
     pub fn revision_targets(mut self, input: crate::types::RevisionTarget) -> Self {
         let mut v = self.revision_targets.unwrap_or_default();
-        v.push(input);
-        self.revision_targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.revision_targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>RevisionTarget</code> objects, where each object describes the database revision that a cluster can be updated to.</p>
-    pub fn set_revision_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RevisionTarget>>) -> Self {
-        self.revision_targets = input;
-        self
+    pub fn set_revision_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RevisionTarget>>) -> Self {
+        self.revision_targets = input; self
     }
     /// <p>A list of <code>RevisionTarget</code> objects, where each object describes the database revision that a cluster can be updated to.</p>
-    pub fn get_revision_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RevisionTarget>> {
+    pub fn get_revision_targets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RevisionTarget>> {
         &self.revision_targets
     }
     /// Consumes the builder and constructs a [`ClusterDbRevision`](crate::types::ClusterDbRevision).
     pub fn build(self) -> crate::types::ClusterDbRevision {
         crate::types::ClusterDbRevision {
-            cluster_identifier: self.cluster_identifier,
-            current_database_revision: self.current_database_revision,
-            database_revision_release_date: self.database_revision_release_date,
-            revision_targets: self.revision_targets,
+            cluster_identifier: self.cluster_identifier
+            ,
+            current_database_revision: self.current_database_revision
+            ,
+            database_revision_release_date: self.database_revision_release_date
+            ,
+            revision_targets: self.revision_targets
+            ,
         }
     }
 }
+

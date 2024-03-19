@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDataRepositoryTasks`](crate::operation::describe_data_repository_tasks::builders::DescribeDataRepositoryTasksFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_data_repository_tasks::builders::DescribeDataRepositoryTasksFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`task_ids(impl Into<String>)`](crate::operation::describe_data_repository_tasks::builders::DescribeDataRepositoryTasksFluentBuilder::task_ids) / [`set_task_ids(Option<Vec::<String>>)`](crate::operation::describe_data_repository_tasks::builders::DescribeDataRepositoryTasksFluentBuilder::set_task_ids):<br>required: **false**<br><p>(Optional) IDs of the tasks whose descriptions you want to retrieve (String).</p><br>
     ///   - [`filters(DataRepositoryTaskFilter)`](crate::operation::describe_data_repository_tasks::builders::DescribeDataRepositoryTasksFluentBuilder::filters) / [`set_filters(Option<Vec::<DataRepositoryTaskFilter>>)`](crate::operation::describe_data_repository_tasks::builders::DescribeDataRepositoryTasksFluentBuilder::set_filters):<br>required: **false**<br><p>(Optional) You can use filters to narrow the <code>DescribeDataRepositoryTasks</code> response to include just tasks for specific file systems, or tasks in a specific lifecycle state.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_data_repository_tasks::builders::DescribeDataRepositoryTasksFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_data_repository_tasks::builders::DescribeDataRepositoryTasksFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_data_repository_tasks::builders::DescribeDataRepositoryTasksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_data_repository_tasks::builders::DescribeDataRepositoryTasksFluentBuilder::set_next_token):<br>required: **false**<br><p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p><br>
-    /// - On success, responds with [`DescribeDataRepositoryTasksOutput`](crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksOutput) with field(s):
+                            /// - On success, responds with [`DescribeDataRepositoryTasksOutput`](crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksOutput) with field(s):
     ///   - [`data_repository_tasks(Option<Vec::<DataRepositoryTask>>)`](crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksOutput::data_repository_tasks): <p>The collection of data repository task descriptions returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksOutput::next_token): <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
-    /// - On failure, responds with [`SdkError<DescribeDataRepositoryTasksError>`](crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksError)
-    pub fn describe_data_repository_tasks(
-        &self,
-    ) -> crate::operation::describe_data_repository_tasks::builders::DescribeDataRepositoryTasksFluentBuilder {
-        crate::operation::describe_data_repository_tasks::builders::DescribeDataRepositoryTasksFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeDataRepositoryTasksError>`](crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksError)
+    pub fn describe_data_repository_tasks(&self) -> crate::operation::describe_data_repository_tasks::builders::DescribeDataRepositoryTasksFluentBuilder {
+                                crate::operation::describe_data_repository_tasks::builders::DescribeDataRepositoryTasksFluentBuilder::new(self.handle.clone())
+                            }
 }
+

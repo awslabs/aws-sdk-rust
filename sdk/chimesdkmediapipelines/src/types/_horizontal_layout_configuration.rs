@@ -3,7 +3,7 @@
 /// <p>Defines the configuration settings for the horizontal layout.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HorizontalLayoutConfiguration {
+pub struct HorizontalLayoutConfiguration  {
     /// <p>Sets the automatic ordering of the video tiles.</p>
     pub tile_order: ::std::option::Option<crate::types::TileOrder>,
     /// <p>Sets the position of horizontal tiles.</p>
@@ -13,13 +13,13 @@ pub struct HorizontalLayoutConfiguration {
     /// <p>Specifies the aspect ratio of all video tiles.</p>
     pub tile_aspect_ratio: ::std::option::Option<::std::string::String>,
 }
-impl HorizontalLayoutConfiguration {
+impl  HorizontalLayoutConfiguration  {
     /// <p>Sets the automatic ordering of the video tiles.</p>
-    pub fn tile_order(&self) -> ::std::option::Option<&crate::types::TileOrder> {
+    pub fn tile_order(&self) -> ::std::option::Option<& crate::types::TileOrder> {
         self.tile_order.as_ref()
     }
     /// <p>Sets the position of horizontal tiles.</p>
-    pub fn tile_position(&self) -> ::std::option::Option<&crate::types::HorizontalTilePosition> {
+    pub fn tile_position(&self) -> ::std::option::Option<& crate::types::HorizontalTilePosition> {
         self.tile_position.as_ref()
     }
     /// <p>The maximum number of video tiles to display.</p>
@@ -27,7 +27,7 @@ impl HorizontalLayoutConfiguration {
         self.tile_count
     }
     /// <p>Specifies the aspect ratio of all video tiles.</p>
-    pub fn tile_aspect_ratio(&self) -> ::std::option::Option<&str> {
+    pub fn tile_aspect_ratio(&self) -> ::std::option::Option<& str> {
         self.tile_aspect_ratio.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl HorizontalLayoutConfigurationBuilder {
     }
     /// <p>Sets the automatic ordering of the video tiles.</p>
     pub fn set_tile_order(mut self, input: ::std::option::Option<crate::types::TileOrder>) -> Self {
-        self.tile_order = input;
-        self
+        self.tile_order = input; self
     }
     /// <p>Sets the automatic ordering of the video tiles.</p>
     pub fn get_tile_order(&self) -> &::std::option::Option<crate::types::TileOrder> {
@@ -69,8 +68,7 @@ impl HorizontalLayoutConfigurationBuilder {
     }
     /// <p>Sets the position of horizontal tiles.</p>
     pub fn set_tile_position(mut self, input: ::std::option::Option<crate::types::HorizontalTilePosition>) -> Self {
-        self.tile_position = input;
-        self
+        self.tile_position = input; self
     }
     /// <p>Sets the position of horizontal tiles.</p>
     pub fn get_tile_position(&self) -> &::std::option::Option<crate::types::HorizontalTilePosition> {
@@ -83,8 +81,7 @@ impl HorizontalLayoutConfigurationBuilder {
     }
     /// <p>The maximum number of video tiles to display.</p>
     pub fn set_tile_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.tile_count = input;
-        self
+        self.tile_count = input; self
     }
     /// <p>The maximum number of video tiles to display.</p>
     pub fn get_tile_count(&self) -> &::std::option::Option<i32> {
@@ -97,8 +94,7 @@ impl HorizontalLayoutConfigurationBuilder {
     }
     /// <p>Specifies the aspect ratio of all video tiles.</p>
     pub fn set_tile_aspect_ratio(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tile_aspect_ratio = input;
-        self
+        self.tile_aspect_ratio = input; self
     }
     /// <p>Specifies the aspect ratio of all video tiles.</p>
     pub fn get_tile_aspect_ratio(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl HorizontalLayoutConfigurationBuilder {
     /// Consumes the builder and constructs a [`HorizontalLayoutConfiguration`](crate::types::HorizontalLayoutConfiguration).
     pub fn build(self) -> crate::types::HorizontalLayoutConfiguration {
         crate::types::HorizontalLayoutConfiguration {
-            tile_order: self.tile_order,
-            tile_position: self.tile_position,
-            tile_count: self.tile_count,
-            tile_aspect_ratio: self.tile_aspect_ratio,
+            tile_order: self.tile_order
+            ,
+            tile_position: self.tile_position
+            ,
+            tile_count: self.tile_count
+            ,
+            tile_aspect_ratio: self.tile_aspect_ratio
+            ,
         }
     }
 }
+

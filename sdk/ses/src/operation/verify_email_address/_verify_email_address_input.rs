@@ -3,13 +3,13 @@
 /// <p>Represents a request to begin email address verification with Amazon SES. For information about email address verification, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#verify-email-addresses-procedure">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VerifyEmailAddressInput {
+pub struct VerifyEmailAddressInput  {
     /// <p>The email address to be verified.</p>
     pub email_address: ::std::option::Option<::std::string::String>,
 }
-impl VerifyEmailAddressInput {
+impl  VerifyEmailAddressInput  {
     /// <p>The email address to be verified.</p>
-    pub fn email_address(&self) -> ::std::option::Option<&str> {
+    pub fn email_address(&self) -> ::std::option::Option<& str> {
         self.email_address.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl VerifyEmailAddressInputBuilder {
     }
     /// <p>The email address to be verified.</p>
     pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email_address = input;
-        self
+        self.email_address = input; self
     }
     /// <p>The email address to be verified.</p>
     pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.email_address
     }
     /// Consumes the builder and constructs a [`VerifyEmailAddressInput`](crate::operation::verify_email_address::VerifyEmailAddressInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::verify_email_address::VerifyEmailAddressInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::verify_email_address::VerifyEmailAddressInput {
-            email_address: self.email_address,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::verify_email_address::VerifyEmailAddressInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::verify_email_address::VerifyEmailAddressInput {
+                email_address: self.email_address
+                ,
+            }
+        )
     }
 }
+

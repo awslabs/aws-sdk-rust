@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AcceptAdministratorInvitationInput {
+pub struct AcceptAdministratorInvitationInput  {
     /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
     pub administrator_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
     pub invitation_id: ::std::option::Option<::std::string::String>,
 }
-impl AcceptAdministratorInvitationInput {
+impl  AcceptAdministratorInvitationInput  {
     /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
-    pub fn administrator_id(&self) -> ::std::option::Option<&str> {
+    pub fn administrator_id(&self) -> ::std::option::Option<& str> {
         self.administrator_id.as_deref()
     }
     /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
-    pub fn invitation_id(&self) -> ::std::option::Option<&str> {
+    pub fn invitation_id(&self) -> ::std::option::Option<& str> {
         self.invitation_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AcceptAdministratorInvitationInputBuilder {
     }
     /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
     pub fn set_administrator_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.administrator_id = input;
-        self
+        self.administrator_id = input; self
     }
     /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
     pub fn get_administrator_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl AcceptAdministratorInvitationInputBuilder {
     }
     /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
     pub fn set_invitation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.invitation_id = input;
-        self
+        self.invitation_id = input; self
     }
     /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
     pub fn get_invitation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.invitation_id
     }
     /// Consumes the builder and constructs a [`AcceptAdministratorInvitationInput`](crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationInput {
-            administrator_id: self.administrator_id,
-            invitation_id: self.invitation_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationInput {
+                administrator_id: self.administrator_id
+                ,
+                invitation_id: self.invitation_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RebootDbShardGroupOutput {
+pub struct RebootDbShardGroupOutput  {
     /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB shard group.</p>
     pub db_shard_group_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the DB shard group.</p>
@@ -33,17 +33,17 @@ pub struct RebootDbShardGroupOutput {
     pub endpoint: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl RebootDbShardGroupOutput {
+impl  RebootDbShardGroupOutput  {
     /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB shard group.</p>
-    pub fn db_shard_group_resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn db_shard_group_resource_id(&self) -> ::std::option::Option<& str> {
         self.db_shard_group_resource_id.as_deref()
     }
     /// <p>The name of the DB shard group.</p>
-    pub fn db_shard_group_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_shard_group_identifier(&self) -> ::std::option::Option<& str> {
         self.db_shard_group_identifier.as_deref()
     }
     /// <p>The name of the primary DB cluster for the DB shard group.</p>
-    pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>The maximum capacity of the DB shard group in Aurora capacity units (ACUs).</p>
@@ -63,7 +63,7 @@ impl RebootDbShardGroupOutput {
         self.compute_redundancy
     }
     /// <p>The status of the DB shard group.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>Indicates whether the DB shard group is publicly accessible.</p>
@@ -75,15 +75,15 @@ impl RebootDbShardGroupOutput {
         self.publicly_accessible
     }
     /// <p>The connection endpoint for the DB shard group.</p>
-    pub fn endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint(&self) -> ::std::option::Option<& str> {
         self.endpoint.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for RebootDbShardGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RebootDbShardGroupOutput {
     /// Creates a new builder-style object to manufacture [`RebootDbShardGroupOutput`](crate::operation::reboot_db_shard_group::RebootDbShardGroupOutput).
     pub fn builder() -> crate::operation::reboot_db_shard_group::builders::RebootDbShardGroupOutputBuilder {
@@ -113,8 +113,7 @@ impl RebootDbShardGroupOutputBuilder {
     }
     /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB shard group.</p>
     pub fn set_db_shard_group_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_shard_group_resource_id = input;
-        self
+        self.db_shard_group_resource_id = input; self
     }
     /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB shard group.</p>
     pub fn get_db_shard_group_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +126,7 @@ impl RebootDbShardGroupOutputBuilder {
     }
     /// <p>The name of the DB shard group.</p>
     pub fn set_db_shard_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_shard_group_identifier = input;
-        self
+        self.db_shard_group_identifier = input; self
     }
     /// <p>The name of the DB shard group.</p>
     pub fn get_db_shard_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +139,7 @@ impl RebootDbShardGroupOutputBuilder {
     }
     /// <p>The name of the primary DB cluster for the DB shard group.</p>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_identifier = input;
-        self
+        self.db_cluster_identifier = input; self
     }
     /// <p>The name of the primary DB cluster for the DB shard group.</p>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +152,7 @@ impl RebootDbShardGroupOutputBuilder {
     }
     /// <p>The maximum capacity of the DB shard group in Aurora capacity units (ACUs).</p>
     pub fn set_max_acu(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.max_acu = input;
-        self
+        self.max_acu = input; self
     }
     /// <p>The maximum capacity of the DB shard group in Aurora capacity units (ACUs).</p>
     pub fn get_max_acu(&self) -> &::std::option::Option<f64> {
@@ -185,8 +181,7 @@ impl RebootDbShardGroupOutputBuilder {
     /// <p>2 - Creates a primary DB instance and two standby instances in different AZs for each physical shard.</p></li>
     /// </ul>
     pub fn set_compute_redundancy(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.compute_redundancy = input;
-        self
+        self.compute_redundancy = input; self
     }
     /// <p>Specifies whether to create standby instances for the DB shard group. Valid values are the following:</p>
     /// <ul>
@@ -207,8 +202,7 @@ impl RebootDbShardGroupOutputBuilder {
     }
     /// <p>The status of the DB shard group.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the DB shard group.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -229,8 +223,7 @@ impl RebootDbShardGroupOutputBuilder {
     /// <p>For more information, see <code>CreateDBShardGroup</code>.</p>
     /// <p>This setting is only for Aurora Limitless Database.</p>
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.publicly_accessible = input;
-        self
+        self.publicly_accessible = input; self
     }
     /// <p>Indicates whether the DB shard group is publicly accessible.</p>
     /// <p>When the DB shard group is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from within the DB shard group's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB shard group's VPC. Access to the DB shard group is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB shard group doesn't permit it.</p>
@@ -247,34 +240,42 @@ impl RebootDbShardGroupOutputBuilder {
     }
     /// <p>The connection endpoint for the DB shard group.</p>
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint = input;
-        self
+        self.endpoint = input; self
     }
     /// <p>The connection endpoint for the DB shard group.</p>
     pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RebootDbShardGroupOutput`](crate::operation::reboot_db_shard_group::RebootDbShardGroupOutput).
     pub fn build(self) -> crate::operation::reboot_db_shard_group::RebootDbShardGroupOutput {
         crate::operation::reboot_db_shard_group::RebootDbShardGroupOutput {
-            db_shard_group_resource_id: self.db_shard_group_resource_id,
-            db_shard_group_identifier: self.db_shard_group_identifier,
-            db_cluster_identifier: self.db_cluster_identifier,
-            max_acu: self.max_acu,
-            compute_redundancy: self.compute_redundancy,
-            status: self.status,
-            publicly_accessible: self.publicly_accessible,
-            endpoint: self.endpoint,
+            db_shard_group_resource_id: self.db_shard_group_resource_id
+            ,
+            db_shard_group_identifier: self.db_shard_group_identifier
+            ,
+            db_cluster_identifier: self.db_cluster_identifier
+            ,
+            max_acu: self.max_acu
+            ,
+            compute_redundancy: self.compute_redundancy
+            ,
+            status: self.status
+            ,
+            publicly_accessible: self.publicly_accessible
+            ,
+            endpoint: self.endpoint
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

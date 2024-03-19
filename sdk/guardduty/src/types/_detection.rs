@@ -3,13 +3,13 @@
 /// <p>Contains information about the detected behavior.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Detection {
+pub struct Detection  {
     /// <p>The details about the anomalous activity that caused GuardDuty to generate the finding.</p>
     pub anomaly: ::std::option::Option<crate::types::Anomaly>,
 }
-impl Detection {
+impl  Detection  {
     /// <p>The details about the anomalous activity that caused GuardDuty to generate the finding.</p>
-    pub fn anomaly(&self) -> ::std::option::Option<&crate::types::Anomaly> {
+    pub fn anomaly(&self) -> ::std::option::Option<& crate::types::Anomaly> {
         self.anomaly.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl DetectionBuilder {
     }
     /// <p>The details about the anomalous activity that caused GuardDuty to generate the finding.</p>
     pub fn set_anomaly(mut self, input: ::std::option::Option<crate::types::Anomaly>) -> Self {
-        self.anomaly = input;
-        self
+        self.anomaly = input; self
     }
     /// <p>The details about the anomalous activity that caused GuardDuty to generate the finding.</p>
     pub fn get_anomaly(&self) -> &::std::option::Option<crate::types::Anomaly> {
@@ -43,6 +42,10 @@ impl DetectionBuilder {
     }
     /// Consumes the builder and constructs a [`Detection`](crate::types::Detection).
     pub fn build(self) -> crate::types::Detection {
-        crate::types::Detection { anomaly: self.anomaly }
+        crate::types::Detection {
+            anomaly: self.anomaly
+            ,
+        }
     }
 }
+

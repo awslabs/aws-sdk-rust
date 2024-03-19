@@ -5,56 +5,52 @@ pub use crate::operation::get_open_id_token_for_developer_identity::_get_open_id
 
 impl GetOpenIdTokenForDeveloperIdentityInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_open_id_token_for_developer_identity();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_open_id_token_for_developer_identity();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetOpenIdTokenForDeveloperIdentity`.
-///
+/// 
 /// <p>Registers (or retrieves) a Cognito <code>IdentityId</code> and an OpenID Connect token for a user authenticated by your backend authentication process. Supplying multiple logins will create an implicit linked account. You can only specify one developer provider as part of the <code>Logins</code> map, which is linked to the identity pool. The developer provider is the "domain" by which Cognito will refer to your users.</p>
 /// <p>You can use <code>GetOpenIdTokenForDeveloperIdentity</code> to create a new identity and to link new logins (that is, user credentials issued by a public provider or developer provider) to an existing identity. When you want to create a new identity, the <code>IdentityId</code> should be null. When you want to associate a new login with an existing authenticated/unauthenticated identity, you can do so by providing the existing <code>IdentityId</code>. This API will create the identity in the specified <code>IdentityPoolId</code>.</p>
 /// <p>You must use AWS Developer credentials to call this API.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetOpenIdTokenForDeveloperIdentityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_open_id_token_for_developer_identity::builders::GetOpenIdTokenForDeveloperIdentityInputBuilder,
+                    inner: crate::operation::get_open_id_token_for_developer_identity::builders::GetOpenIdTokenForDeveloperIdentityInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityOutput,
-        crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityError,
-    > for GetOpenIdTokenForDeveloperIdentityFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityOutput,
-            crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityOutput,
+                    crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityError,
+                > for GetOpenIdTokenForDeveloperIdentityFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityOutput,
+                        crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetOpenIdTokenForDeveloperIdentityFluentBuilder {
     /// Creates a new `GetOpenIdTokenForDeveloperIdentity`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,54 +59,44 @@ impl GetOpenIdTokenForDeveloperIdentityFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins =
-            crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentity::operation_runtime_plugins(
-                self.handle.runtime_plugins.clone(),
-                &self.handle.conf,
-                self.config_override,
-            );
-        crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentity::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityOutput,
-        crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentity::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentity::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityOutput, crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     pub fn identity_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_pool_id(input.into());
@@ -149,12 +135,12 @@ impl GetOpenIdTokenForDeveloperIdentityFluentBuilder {
         self
     }
     /// <p>A set of optional name-value pairs that map provider names to provider tokens. Each name-value pair represents a user from a public provider or developer provider. If the user is from a developer provider, the name-value pair will follow the syntax <code>"developer_provider_name": "developer_user_identifier"</code>. The developer provider is the "domain" by which Cognito will refer to your users; you provided this domain while creating/updating the identity pool. The developer user identifier is an identifier from your backend that uniquely identifies a user. When you create an identity pool, you can specify the supported logins.</p>
-    pub fn set_logins(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+    pub fn set_logins(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_logins(input);
         self
     }
     /// <p>A set of optional name-value pairs that map provider names to provider tokens. Each name-value pair represents a user from a public provider or developer provider. If the user is from a developer provider, the name-value pair will follow the syntax <code>"developer_provider_name": "developer_user_identifier"</code>. The developer provider is the "domain" by which Cognito will refer to your users; you provided this domain while creating/updating the identity pool. The developer user identifier is an identifier from your backend that uniquely identifies a user. When you create an identity pool, you can specify the supported logins.</p>
-    pub fn get_logins(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_logins(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_logins()
     }
     /// Adds a key-value pair to `PrincipalTags`.
@@ -162,24 +148,17 @@ impl GetOpenIdTokenForDeveloperIdentityFluentBuilder {
     /// To override the contents of this collection use [`set_principal_tags`](Self::set_principal_tags).
     ///
     /// <p>Use this operation to configure attribute mappings for custom providers.</p>
-    pub fn principal_tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn principal_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.principal_tags(k.into(), v.into());
         self
     }
     /// <p>Use this operation to configure attribute mappings for custom providers.</p>
-    pub fn set_principal_tags(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
+    pub fn set_principal_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_principal_tags(input);
         self
     }
     /// <p>Use this operation to configure attribute mappings for custom providers.</p>
-    pub fn get_principal_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_principal_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_principal_tags()
     }
     /// <p>The expiration time of the token, in seconds. You can specify a custom expiration time for the token so that you can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one hour. The maximum token duration you can set is 24 hours. You should take care in setting the expiration time for a token, as there are significant security implications: an attacker could use a leaked token to access your AWS resources for the token's duration.</p><note>
@@ -203,3 +182,4 @@ impl GetOpenIdTokenForDeveloperIdentityFluentBuilder {
         self.inner.get_token_duration()
     }
 }
+

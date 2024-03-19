@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDatabaseInput {
+pub struct DeleteDatabaseInput  {
     /// <p>The name of the Timestream database to be deleted.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteDatabaseInput {
+impl  DeleteDatabaseInput  {
     /// <p>The name of the Timestream database to be deleted.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteDatabaseInputBuilder {
     }
     /// <p>The name of the Timestream database to be deleted.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the Timestream database to be deleted.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.database_name
     }
     /// Consumes the builder and constructs a [`DeleteDatabaseInput`](crate::operation::delete_database::DeleteDatabaseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_database::DeleteDatabaseInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_database::DeleteDatabaseInput {
-            database_name: self.database_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_database::DeleteDatabaseInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_database::DeleteDatabaseInput {
+                database_name: self.database_name
+                ,
+            }
+        )
     }
 }
+

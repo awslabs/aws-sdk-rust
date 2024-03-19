@@ -3,7 +3,7 @@
 /// <p>An API key resource listed in your Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListKeysResponseEntry {
+pub struct ListKeysResponseEntry  {
     /// <p>The name of the API key resource.</p>
     pub key_name: ::std::string::String,
     /// <p>The timestamp for when the API key resource will expire, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
@@ -17,30 +17,29 @@ pub struct ListKeysResponseEntry {
     /// <p>The timestamp of when the API key was last updated, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub update_time: ::aws_smithy_types::DateTime,
 }
-impl ListKeysResponseEntry {
+impl  ListKeysResponseEntry  {
     /// <p>The name of the API key resource.</p>
-    pub fn key_name(&self) -> &str {
-        use std::ops::Deref;
-        self.key_name.deref()
+    pub fn key_name(&self) -> & str {
+        use std::ops::Deref; self.key_name.deref()
     }
     /// <p>The timestamp for when the API key resource will expire, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn expire_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn expire_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.expire_time
     }
     /// <p>The optional description for the API key resource.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>API Restrictions on the allowed actions, resources, and referers for an API key resource.</p>
-    pub fn restrictions(&self) -> ::std::option::Option<&crate::types::ApiKeyRestrictions> {
+    pub fn restrictions(&self) -> ::std::option::Option<& crate::types::ApiKeyRestrictions> {
         self.restrictions.as_ref()
     }
     /// <p>The timestamp of when the API key was created, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn create_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.create_time
     }
     /// <p>The timestamp of when the API key was last updated, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_time
     }
 }
@@ -71,8 +70,7 @@ impl ListKeysResponseEntryBuilder {
     }
     /// <p>The name of the API key resource.</p>
     pub fn set_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_name = input;
-        self
+        self.key_name = input; self
     }
     /// <p>The name of the API key resource.</p>
     pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +84,7 @@ impl ListKeysResponseEntryBuilder {
     }
     /// <p>The timestamp for when the API key resource will expire, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn set_expire_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.expire_time = input;
-        self
+        self.expire_time = input; self
     }
     /// <p>The timestamp for when the API key resource will expire, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn get_expire_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -100,8 +97,7 @@ impl ListKeysResponseEntryBuilder {
     }
     /// <p>The optional description for the API key resource.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The optional description for the API key resource.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +111,7 @@ impl ListKeysResponseEntryBuilder {
     }
     /// <p>API Restrictions on the allowed actions, resources, and referers for an API key resource.</p>
     pub fn set_restrictions(mut self, input: ::std::option::Option<crate::types::ApiKeyRestrictions>) -> Self {
-        self.restrictions = input;
-        self
+        self.restrictions = input; self
     }
     /// <p>API Restrictions on the allowed actions, resources, and referers for an API key resource.</p>
     pub fn get_restrictions(&self) -> &::std::option::Option<crate::types::ApiKeyRestrictions> {
@@ -130,8 +125,7 @@ impl ListKeysResponseEntryBuilder {
     }
     /// <p>The timestamp of when the API key was created, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The timestamp of when the API key was created, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -145,8 +139,7 @@ impl ListKeysResponseEntryBuilder {
     }
     /// <p>The timestamp of when the API key was last updated, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input;
-        self
+        self.update_time = input; self
     }
     /// <p>The timestamp of when the API key was last updated, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -159,33 +152,34 @@ impl ListKeysResponseEntryBuilder {
     /// - [`create_time`](crate::types::builders::ListKeysResponseEntryBuilder::create_time)
     /// - [`update_time`](crate::types::builders::ListKeysResponseEntryBuilder::update_time)
     pub fn build(self) -> ::std::result::Result<crate::types::ListKeysResponseEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ListKeysResponseEntry {
-            key_name: self.key_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key_name",
-                    "key_name was not specified but it is required when building ListKeysResponseEntry",
-                )
-            })?,
-            expire_time: self.expire_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "expire_time",
-                    "expire_time was not specified but it is required when building ListKeysResponseEntry",
-                )
-            })?,
-            description: self.description,
-            restrictions: self.restrictions,
-            create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "create_time",
-                    "create_time was not specified but it is required when building ListKeysResponseEntry",
-                )
-            })?,
-            update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_time",
-                    "update_time was not specified but it is required when building ListKeysResponseEntry",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ListKeysResponseEntry {
+                key_name: self.key_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key_name", "key_name was not specified but it is required when building ListKeysResponseEntry")
+                    )?
+                ,
+                expire_time: self.expire_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("expire_time", "expire_time was not specified but it is required when building ListKeysResponseEntry")
+                    )?
+                ,
+                description: self.description
+                ,
+                restrictions: self.restrictions
+                ,
+                create_time: self.create_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("create_time", "create_time was not specified but it is required when building ListKeysResponseEntry")
+                    )?
+                ,
+                update_time: self.update_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_time", "update_time was not specified but it is required when building ListKeysResponseEntry")
+                    )?
+                ,
+            }
+        )
     }
 }
+

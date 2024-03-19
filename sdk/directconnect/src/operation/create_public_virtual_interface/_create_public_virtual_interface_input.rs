@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePublicVirtualInterfaceInput {
+pub struct CreatePublicVirtualInterfaceInput  {
     /// <p>The ID of the connection.</p>
     pub connection_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the public virtual interface.</p>
     pub new_public_virtual_interface: ::std::option::Option<crate::types::NewPublicVirtualInterface>,
 }
-impl CreatePublicVirtualInterfaceInput {
+impl  CreatePublicVirtualInterfaceInput  {
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(&self) -> ::std::option::Option<&str> {
+    pub fn connection_id(&self) -> ::std::option::Option<& str> {
         self.connection_id.as_deref()
     }
     /// <p>Information about the public virtual interface.</p>
-    pub fn new_public_virtual_interface(&self) -> ::std::option::Option<&crate::types::NewPublicVirtualInterface> {
+    pub fn new_public_virtual_interface(&self) -> ::std::option::Option<& crate::types::NewPublicVirtualInterface> {
         self.new_public_virtual_interface.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl CreatePublicVirtualInterfaceInputBuilder {
     }
     /// <p>The ID of the connection.</p>
     pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_id = input;
-        self
+        self.connection_id = input; self
     }
     /// <p>The ID of the connection.</p>
     pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl CreatePublicVirtualInterfaceInputBuilder {
     }
     /// <p>Information about the public virtual interface.</p>
     pub fn set_new_public_virtual_interface(mut self, input: ::std::option::Option<crate::types::NewPublicVirtualInterface>) -> Self {
-        self.new_public_virtual_interface = input;
-        self
+        self.new_public_virtual_interface = input; self
     }
     /// <p>Information about the public virtual interface.</p>
     pub fn get_new_public_virtual_interface(&self) -> &::std::option::Option<crate::types::NewPublicVirtualInterface> {
         &self.new_public_virtual_interface
     }
     /// Consumes the builder and constructs a [`CreatePublicVirtualInterfaceInput`](crate::operation::create_public_virtual_interface::CreatePublicVirtualInterfaceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_public_virtual_interface::CreatePublicVirtualInterfaceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_public_virtual_interface::CreatePublicVirtualInterfaceInput {
-            connection_id: self.connection_id,
-            new_public_virtual_interface: self.new_public_virtual_interface,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_public_virtual_interface::CreatePublicVirtualInterfaceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_public_virtual_interface::CreatePublicVirtualInterfaceInput {
+                connection_id: self.connection_id
+                ,
+                new_public_virtual_interface: self.new_public_virtual_interface
+                ,
+            }
+        )
     }
 }
+

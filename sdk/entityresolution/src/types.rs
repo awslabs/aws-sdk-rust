@@ -128,3 +128,4 @@ pub mod builders;
 
 /// Error types that AWS EntityResolution can respond with.
 pub mod error;
+

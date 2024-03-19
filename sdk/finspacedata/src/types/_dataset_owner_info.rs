@@ -3,7 +3,7 @@
 /// <p>A structure for Dataset owner info.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DatasetOwnerInfo {
+pub struct DatasetOwnerInfo  {
     /// <p>The name of the Dataset owner.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Phone number for the Dataset owner.</p>
@@ -11,21 +11,21 @@ pub struct DatasetOwnerInfo {
     /// <p>Email address for the Dataset owner.</p>
     pub email: ::std::option::Option<::std::string::String>,
 }
-impl DatasetOwnerInfo {
+impl  DatasetOwnerInfo  {
     /// <p>The name of the Dataset owner.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Phone number for the Dataset owner.</p>
-    pub fn phone_number(&self) -> ::std::option::Option<&str> {
+    pub fn phone_number(&self) -> ::std::option::Option<& str> {
         self.phone_number.as_deref()
     }
     /// <p>Email address for the Dataset owner.</p>
-    pub fn email(&self) -> ::std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<& str> {
         self.email.as_deref()
     }
 }
-impl ::std::fmt::Debug for DatasetOwnerInfo {
+impl  ::std::fmt::Debug for DatasetOwnerInfo  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DatasetOwnerInfo");
         formatter.field("name", &self.name);
@@ -57,8 +57,7 @@ impl DatasetOwnerInfoBuilder {
     }
     /// <p>The name of the Dataset owner.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Dataset owner.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl DatasetOwnerInfoBuilder {
     }
     /// <p>Phone number for the Dataset owner.</p>
     pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone_number = input;
-        self
+        self.phone_number = input; self
     }
     /// <p>Phone number for the Dataset owner.</p>
     pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl DatasetOwnerInfoBuilder {
     }
     /// <p>Email address for the Dataset owner.</p>
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
     }
     /// <p>Email address for the Dataset owner.</p>
     pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,9 +92,12 @@ impl DatasetOwnerInfoBuilder {
     /// Consumes the builder and constructs a [`DatasetOwnerInfo`](crate::types::DatasetOwnerInfo).
     pub fn build(self) -> crate::types::DatasetOwnerInfo {
         crate::types::DatasetOwnerInfo {
-            name: self.name,
-            phone_number: self.phone_number,
-            email: self.email,
+            name: self.name
+            ,
+            phone_number: self.phone_number
+            ,
+            email: self.email
+            ,
         }
     }
 }
@@ -110,3 +110,4 @@ impl ::std::fmt::Debug for DatasetOwnerInfoBuilder {
         formatter.finish()
     }
 }
+

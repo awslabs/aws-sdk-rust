@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let automlmetricextendedenum = unimplemented!();
 /// match automlmetricextendedenum {
@@ -54,16 +54,14 @@
 /// Specifically, when `automlmetricextendedenum` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AutoMlMetricExtendedEnum::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum AutoMlMetricExtendedEnum {
     #[allow(missing_docs)] // documentation missing in model
     Auc,
@@ -119,160 +117,134 @@ pub enum AutoMlMetricExtendedEnum {
     Wape,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for AutoMlMetricExtendedEnum {
-    fn from(s: &str) -> Self {
-        match s {
-            "AUC" => AutoMlMetricExtendedEnum::Auc,
-            "Accuracy" => AutoMlMetricExtendedEnum::Accuracy,
-            "AverageWeightedQuantileLoss" => AutoMlMetricExtendedEnum::AverageWeightedQuantileLoss,
-            "BalancedAccuracy" => AutoMlMetricExtendedEnum::BalancedAccuracy,
-            "F1" => AutoMlMetricExtendedEnum::F1,
-            "F1macro" => AutoMlMetricExtendedEnum::F1Macro,
-            "InferenceLatency" => AutoMlMetricExtendedEnum::InferenceLatency,
-            "LogLoss" => AutoMlMetricExtendedEnum::LogLoss,
-            "MAE" => AutoMlMetricExtendedEnum::Mae,
-            "MAPE" => AutoMlMetricExtendedEnum::Mape,
-            "MASE" => AutoMlMetricExtendedEnum::Mase,
-            "MSE" => AutoMlMetricExtendedEnum::Mse,
-            "Perplexity" => AutoMlMetricExtendedEnum::Perplexity,
-            "Precision" => AutoMlMetricExtendedEnum::Precision,
-            "PrecisionMacro" => AutoMlMetricExtendedEnum::PrecisionMacro,
-            "R2" => AutoMlMetricExtendedEnum::R2,
-            "RMSE" => AutoMlMetricExtendedEnum::Rmse,
-            "Recall" => AutoMlMetricExtendedEnum::Recall,
-            "RecallMacro" => AutoMlMetricExtendedEnum::RecallMacro,
-            "Rouge1" => AutoMlMetricExtendedEnum::Rouge1,
-            "Rouge2" => AutoMlMetricExtendedEnum::Rouge2,
-            "RougeL" => AutoMlMetricExtendedEnum::Rougel,
-            "RougeLSum" => AutoMlMetricExtendedEnum::RougelSum,
-            "TrainingLoss" => AutoMlMetricExtendedEnum::TrainingLoss,
-            "ValidationLoss" => AutoMlMetricExtendedEnum::ValidationLoss,
-            "WAPE" => AutoMlMetricExtendedEnum::Wape,
-            other => AutoMlMetricExtendedEnum::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "AUC" => AutoMlMetricExtendedEnum::Auc,
+"Accuracy" => AutoMlMetricExtendedEnum::Accuracy,
+"AverageWeightedQuantileLoss" => AutoMlMetricExtendedEnum::AverageWeightedQuantileLoss,
+"BalancedAccuracy" => AutoMlMetricExtendedEnum::BalancedAccuracy,
+"F1" => AutoMlMetricExtendedEnum::F1,
+"F1macro" => AutoMlMetricExtendedEnum::F1Macro,
+"InferenceLatency" => AutoMlMetricExtendedEnum::InferenceLatency,
+"LogLoss" => AutoMlMetricExtendedEnum::LogLoss,
+"MAE" => AutoMlMetricExtendedEnum::Mae,
+"MAPE" => AutoMlMetricExtendedEnum::Mape,
+"MASE" => AutoMlMetricExtendedEnum::Mase,
+"MSE" => AutoMlMetricExtendedEnum::Mse,
+"Perplexity" => AutoMlMetricExtendedEnum::Perplexity,
+"Precision" => AutoMlMetricExtendedEnum::Precision,
+"PrecisionMacro" => AutoMlMetricExtendedEnum::PrecisionMacro,
+"R2" => AutoMlMetricExtendedEnum::R2,
+"RMSE" => AutoMlMetricExtendedEnum::Rmse,
+"Recall" => AutoMlMetricExtendedEnum::Recall,
+"RecallMacro" => AutoMlMetricExtendedEnum::RecallMacro,
+"Rouge1" => AutoMlMetricExtendedEnum::Rouge1,
+"Rouge2" => AutoMlMetricExtendedEnum::Rouge2,
+"RougeL" => AutoMlMetricExtendedEnum::Rougel,
+"RougeLSum" => AutoMlMetricExtendedEnum::RougelSum,
+"TrainingLoss" => AutoMlMetricExtendedEnum::TrainingLoss,
+"ValidationLoss" => AutoMlMetricExtendedEnum::ValidationLoss,
+"WAPE" => AutoMlMetricExtendedEnum::Wape,
+other => AutoMlMetricExtendedEnum::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for AutoMlMetricExtendedEnum {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(AutoMlMetricExtendedEnum::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(AutoMlMetricExtendedEnum::from(s))
+                    }
+                }
 impl AutoMlMetricExtendedEnum {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AutoMlMetricExtendedEnum::Auc => "AUC",
-            AutoMlMetricExtendedEnum::Accuracy => "Accuracy",
-            AutoMlMetricExtendedEnum::AverageWeightedQuantileLoss => "AverageWeightedQuantileLoss",
-            AutoMlMetricExtendedEnum::BalancedAccuracy => "BalancedAccuracy",
-            AutoMlMetricExtendedEnum::F1 => "F1",
-            AutoMlMetricExtendedEnum::F1Macro => "F1macro",
-            AutoMlMetricExtendedEnum::InferenceLatency => "InferenceLatency",
-            AutoMlMetricExtendedEnum::LogLoss => "LogLoss",
-            AutoMlMetricExtendedEnum::Mae => "MAE",
-            AutoMlMetricExtendedEnum::Mape => "MAPE",
-            AutoMlMetricExtendedEnum::Mase => "MASE",
-            AutoMlMetricExtendedEnum::Mse => "MSE",
-            AutoMlMetricExtendedEnum::Perplexity => "Perplexity",
-            AutoMlMetricExtendedEnum::Precision => "Precision",
-            AutoMlMetricExtendedEnum::PrecisionMacro => "PrecisionMacro",
-            AutoMlMetricExtendedEnum::R2 => "R2",
-            AutoMlMetricExtendedEnum::Rmse => "RMSE",
-            AutoMlMetricExtendedEnum::Recall => "Recall",
-            AutoMlMetricExtendedEnum::RecallMacro => "RecallMacro",
-            AutoMlMetricExtendedEnum::Rouge1 => "Rouge1",
-            AutoMlMetricExtendedEnum::Rouge2 => "Rouge2",
-            AutoMlMetricExtendedEnum::Rougel => "RougeL",
-            AutoMlMetricExtendedEnum::RougelSum => "RougeLSum",
-            AutoMlMetricExtendedEnum::TrainingLoss => "TrainingLoss",
-            AutoMlMetricExtendedEnum::ValidationLoss => "ValidationLoss",
-            AutoMlMetricExtendedEnum::Wape => "WAPE",
-            AutoMlMetricExtendedEnum::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AUC",
-            "Accuracy",
-            "AverageWeightedQuantileLoss",
-            "BalancedAccuracy",
-            "F1",
-            "F1macro",
-            "InferenceLatency",
-            "LogLoss",
-            "MAE",
-            "MAPE",
-            "MASE",
-            "MSE",
-            "Perplexity",
-            "Precision",
-            "PrecisionMacro",
-            "R2",
-            "RMSE",
-            "Recall",
-            "RecallMacro",
-            "Rouge1",
-            "Rouge2",
-            "RougeL",
-            "RougeLSum",
-            "TrainingLoss",
-            "ValidationLoss",
-            "WAPE",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AutoMlMetricExtendedEnum::Auc => "AUC",
+    AutoMlMetricExtendedEnum::Accuracy => "Accuracy",
+    AutoMlMetricExtendedEnum::AverageWeightedQuantileLoss => "AverageWeightedQuantileLoss",
+    AutoMlMetricExtendedEnum::BalancedAccuracy => "BalancedAccuracy",
+    AutoMlMetricExtendedEnum::F1 => "F1",
+    AutoMlMetricExtendedEnum::F1Macro => "F1macro",
+    AutoMlMetricExtendedEnum::InferenceLatency => "InferenceLatency",
+    AutoMlMetricExtendedEnum::LogLoss => "LogLoss",
+    AutoMlMetricExtendedEnum::Mae => "MAE",
+    AutoMlMetricExtendedEnum::Mape => "MAPE",
+    AutoMlMetricExtendedEnum::Mase => "MASE",
+    AutoMlMetricExtendedEnum::Mse => "MSE",
+    AutoMlMetricExtendedEnum::Perplexity => "Perplexity",
+    AutoMlMetricExtendedEnum::Precision => "Precision",
+    AutoMlMetricExtendedEnum::PrecisionMacro => "PrecisionMacro",
+    AutoMlMetricExtendedEnum::R2 => "R2",
+    AutoMlMetricExtendedEnum::Rmse => "RMSE",
+    AutoMlMetricExtendedEnum::Recall => "Recall",
+    AutoMlMetricExtendedEnum::RecallMacro => "RecallMacro",
+    AutoMlMetricExtendedEnum::Rouge1 => "Rouge1",
+    AutoMlMetricExtendedEnum::Rouge2 => "Rouge2",
+    AutoMlMetricExtendedEnum::Rougel => "RougeL",
+    AutoMlMetricExtendedEnum::RougelSum => "RougeLSum",
+    AutoMlMetricExtendedEnum::TrainingLoss => "TrainingLoss",
+    AutoMlMetricExtendedEnum::ValidationLoss => "ValidationLoss",
+    AutoMlMetricExtendedEnum::Wape => "WAPE",
+    AutoMlMetricExtendedEnum::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AUC", "Accuracy", "AverageWeightedQuantileLoss", "BalancedAccuracy", "F1", "F1macro", "InferenceLatency", "LogLoss", "MAE", "MAPE", "MASE", "MSE", "Perplexity", "Precision", "PrecisionMacro", "R2", "RMSE", "Recall", "RecallMacro", "Rouge1", "Rouge2", "RougeL", "RougeLSum", "TrainingLoss", "ValidationLoss", "WAPE"]
+                }
+            }
 impl ::std::convert::AsRef<str> for AutoMlMetricExtendedEnum {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl AutoMlMetricExtendedEnum {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for AutoMlMetricExtendedEnum {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            AutoMlMetricExtendedEnum::Auc => write!(f, "AUC"),
-            AutoMlMetricExtendedEnum::Accuracy => write!(f, "Accuracy"),
-            AutoMlMetricExtendedEnum::AverageWeightedQuantileLoss => write!(f, "AverageWeightedQuantileLoss"),
-            AutoMlMetricExtendedEnum::BalancedAccuracy => write!(f, "BalancedAccuracy"),
-            AutoMlMetricExtendedEnum::F1 => write!(f, "F1"),
-            AutoMlMetricExtendedEnum::F1Macro => write!(f, "F1macro"),
-            AutoMlMetricExtendedEnum::InferenceLatency => write!(f, "InferenceLatency"),
-            AutoMlMetricExtendedEnum::LogLoss => write!(f, "LogLoss"),
-            AutoMlMetricExtendedEnum::Mae => write!(f, "MAE"),
-            AutoMlMetricExtendedEnum::Mape => write!(f, "MAPE"),
-            AutoMlMetricExtendedEnum::Mase => write!(f, "MASE"),
-            AutoMlMetricExtendedEnum::Mse => write!(f, "MSE"),
-            AutoMlMetricExtendedEnum::Perplexity => write!(f, "Perplexity"),
-            AutoMlMetricExtendedEnum::Precision => write!(f, "Precision"),
-            AutoMlMetricExtendedEnum::PrecisionMacro => write!(f, "PrecisionMacro"),
-            AutoMlMetricExtendedEnum::R2 => write!(f, "R2"),
-            AutoMlMetricExtendedEnum::Rmse => write!(f, "RMSE"),
-            AutoMlMetricExtendedEnum::Recall => write!(f, "Recall"),
-            AutoMlMetricExtendedEnum::RecallMacro => write!(f, "RecallMacro"),
-            AutoMlMetricExtendedEnum::Rouge1 => write!(f, "Rouge1"),
-            AutoMlMetricExtendedEnum::Rouge2 => write!(f, "Rouge2"),
-            AutoMlMetricExtendedEnum::Rougel => write!(f, "RougeL"),
-            AutoMlMetricExtendedEnum::RougelSum => write!(f, "RougeLSum"),
-            AutoMlMetricExtendedEnum::TrainingLoss => write!(f, "TrainingLoss"),
-            AutoMlMetricExtendedEnum::ValidationLoss => write!(f, "ValidationLoss"),
-            AutoMlMetricExtendedEnum::Wape => write!(f, "WAPE"),
-            AutoMlMetricExtendedEnum::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                AutoMlMetricExtendedEnum::Auc => write!(f, "AUC"),
+AutoMlMetricExtendedEnum::Accuracy => write!(f, "Accuracy"),
+AutoMlMetricExtendedEnum::AverageWeightedQuantileLoss => write!(f, "AverageWeightedQuantileLoss"),
+AutoMlMetricExtendedEnum::BalancedAccuracy => write!(f, "BalancedAccuracy"),
+AutoMlMetricExtendedEnum::F1 => write!(f, "F1"),
+AutoMlMetricExtendedEnum::F1Macro => write!(f, "F1macro"),
+AutoMlMetricExtendedEnum::InferenceLatency => write!(f, "InferenceLatency"),
+AutoMlMetricExtendedEnum::LogLoss => write!(f, "LogLoss"),
+AutoMlMetricExtendedEnum::Mae => write!(f, "MAE"),
+AutoMlMetricExtendedEnum::Mape => write!(f, "MAPE"),
+AutoMlMetricExtendedEnum::Mase => write!(f, "MASE"),
+AutoMlMetricExtendedEnum::Mse => write!(f, "MSE"),
+AutoMlMetricExtendedEnum::Perplexity => write!(f, "Perplexity"),
+AutoMlMetricExtendedEnum::Precision => write!(f, "Precision"),
+AutoMlMetricExtendedEnum::PrecisionMacro => write!(f, "PrecisionMacro"),
+AutoMlMetricExtendedEnum::R2 => write!(f, "R2"),
+AutoMlMetricExtendedEnum::Rmse => write!(f, "RMSE"),
+AutoMlMetricExtendedEnum::Recall => write!(f, "Recall"),
+AutoMlMetricExtendedEnum::RecallMacro => write!(f, "RecallMacro"),
+AutoMlMetricExtendedEnum::Rouge1 => write!(f, "Rouge1"),
+AutoMlMetricExtendedEnum::Rouge2 => write!(f, "Rouge2"),
+AutoMlMetricExtendedEnum::Rougel => write!(f, "RougeL"),
+AutoMlMetricExtendedEnum::RougelSum => write!(f, "RougeLSum"),
+AutoMlMetricExtendedEnum::TrainingLoss => write!(f, "TrainingLoss"),
+AutoMlMetricExtendedEnum::ValidationLoss => write!(f, "ValidationLoss"),
+AutoMlMetricExtendedEnum::Wape => write!(f, "WAPE"),
+AutoMlMetricExtendedEnum::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

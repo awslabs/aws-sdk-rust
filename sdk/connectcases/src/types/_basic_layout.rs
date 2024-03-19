@@ -3,19 +3,19 @@
 /// <p>Content specific to <code>BasicLayout</code> type. It configures fields in the top panel and More Info tab of agent application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BasicLayout {
+pub struct BasicLayout  {
     /// <p>This represents sections in a panel of the page layout.</p>
     pub top_panel: ::std::option::Option<crate::types::LayoutSections>,
     /// <p>This represents sections in a tab of the page layout.</p>
     pub more_info: ::std::option::Option<crate::types::LayoutSections>,
 }
-impl BasicLayout {
+impl  BasicLayout  {
     /// <p>This represents sections in a panel of the page layout.</p>
-    pub fn top_panel(&self) -> ::std::option::Option<&crate::types::LayoutSections> {
+    pub fn top_panel(&self) -> ::std::option::Option<& crate::types::LayoutSections> {
         self.top_panel.as_ref()
     }
     /// <p>This represents sections in a tab of the page layout.</p>
-    pub fn more_info(&self) -> ::std::option::Option<&crate::types::LayoutSections> {
+    pub fn more_info(&self) -> ::std::option::Option<& crate::types::LayoutSections> {
         self.more_info.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl BasicLayoutBuilder {
     }
     /// <p>This represents sections in a panel of the page layout.</p>
     pub fn set_top_panel(mut self, input: ::std::option::Option<crate::types::LayoutSections>) -> Self {
-        self.top_panel = input;
-        self
+        self.top_panel = input; self
     }
     /// <p>This represents sections in a panel of the page layout.</p>
     pub fn get_top_panel(&self) -> &::std::option::Option<crate::types::LayoutSections> {
@@ -55,8 +54,7 @@ impl BasicLayoutBuilder {
     }
     /// <p>This represents sections in a tab of the page layout.</p>
     pub fn set_more_info(mut self, input: ::std::option::Option<crate::types::LayoutSections>) -> Self {
-        self.more_info = input;
-        self
+        self.more_info = input; self
     }
     /// <p>This represents sections in a tab of the page layout.</p>
     pub fn get_more_info(&self) -> &::std::option::Option<crate::types::LayoutSections> {
@@ -65,8 +63,11 @@ impl BasicLayoutBuilder {
     /// Consumes the builder and constructs a [`BasicLayout`](crate::types::BasicLayout).
     pub fn build(self) -> crate::types::BasicLayout {
         crate::types::BasicLayout {
-            top_panel: self.top_panel,
-            more_info: self.more_info,
+            top_panel: self.top_panel
+            ,
+            more_info: self.more_info
+            ,
         }
     }
 }
+

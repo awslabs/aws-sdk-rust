@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAccountAssignments`](crate::operation::list_account_assignments::builders::ListAccountAssignmentsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_account_assignments::builders::ListAccountAssignmentsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`instance_arn(impl Into<String>)`](crate::operation::list_account_assignments::builders::ListAccountAssignmentsFluentBuilder::instance_arn) / [`set_instance_arn(Option<String>)`](crate::operation::list_account_assignments::builders::ListAccountAssignmentsFluentBuilder::set_instance_arn):<br>required: **true**<br><p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p><br>
     ///   - [`account_id(impl Into<String>)`](crate::operation::list_account_assignments::builders::ListAccountAssignmentsFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::list_account_assignments::builders::ListAccountAssignmentsFluentBuilder::set_account_id):<br>required: **true**<br><p>The identifier of the Amazon Web Services account from which to list the assignments.</p><br>
     ///   - [`permission_set_arn(impl Into<String>)`](crate::operation::list_account_assignments::builders::ListAccountAssignmentsFluentBuilder::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::operation::list_account_assignments::builders::ListAccountAssignmentsFluentBuilder::set_permission_set_arn):<br>required: **true**<br><p>The ARN of the permission set from which to list assignments.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_account_assignments::builders::ListAccountAssignmentsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_account_assignments::builders::ListAccountAssignmentsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to display for the assignment.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_account_assignments::builders::ListAccountAssignmentsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_account_assignments::builders::ListAccountAssignmentsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p><br>
-    /// - On success, responds with [`ListAccountAssignmentsOutput`](crate::operation::list_account_assignments::ListAccountAssignmentsOutput) with field(s):
+                            /// - On success, responds with [`ListAccountAssignmentsOutput`](crate::operation::list_account_assignments::ListAccountAssignmentsOutput) with field(s):
     ///   - [`account_assignments(Option<Vec::<AccountAssignment>>)`](crate::operation::list_account_assignments::ListAccountAssignmentsOutput::account_assignments): <p>The list of assignments that match the input Amazon Web Services account and permission set.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_account_assignments::ListAccountAssignmentsOutput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-    /// - On failure, responds with [`SdkError<ListAccountAssignmentsError>`](crate::operation::list_account_assignments::ListAccountAssignmentsError)
+                            /// - On failure, responds with [`SdkError<ListAccountAssignmentsError>`](crate::operation::list_account_assignments::ListAccountAssignmentsError)
     pub fn list_account_assignments(&self) -> crate::operation::list_account_assignments::builders::ListAccountAssignmentsFluentBuilder {
-        crate::operation::list_account_assignments::builders::ListAccountAssignmentsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_account_assignments::builders::ListAccountAssignmentsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

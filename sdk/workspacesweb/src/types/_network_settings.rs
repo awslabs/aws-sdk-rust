@@ -3,45 +3,47 @@
 /// <p>A network settings resource that can be associated with a web portal. Once associated with a web portal, network settings define how streaming instances will connect with your specified VPC.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkSettings {
+pub struct NetworkSettings  {
     /// <p>The ARN of the network settings.</p>
     pub network_settings_arn: ::std::string::String,
     /// <p>A list of web portal ARNs that this network settings is associated with.</p>
-    pub associated_portal_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub associated_portal_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The VPC that streaming instances will connect to.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The subnets in which network interfaces are created to connect streaming instances to your VPC. At least two of these subnets must be in different availability zones.</p>
-    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>One or more security groups used to control access from streaming instances to your VPC.</p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl NetworkSettings {
+impl  NetworkSettings  {
     /// <p>The ARN of the network settings.</p>
-    pub fn network_settings_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.network_settings_arn.deref()
+    pub fn network_settings_arn(&self) -> & str {
+        use std::ops::Deref; self.network_settings_arn.deref()
     }
     /// <p>A list of web portal ARNs that this network settings is associated with.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_portal_arns.is_none()`.
-    pub fn associated_portal_arns(&self) -> &[::std::string::String] {
-        self.associated_portal_arns.as_deref().unwrap_or_default()
+    pub fn associated_portal_arns(&self) -> & [::std::string::String] {
+        self.associated_portal_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The VPC that streaming instances will connect to.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The subnets in which network interfaces are created to connect streaming instances to your VPC. At least two of these subnets must be in different availability zones.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
-    pub fn subnet_ids(&self) -> &[::std::string::String] {
-        self.subnet_ids.as_deref().unwrap_or_default()
+    pub fn subnet_ids(&self) -> & [::std::string::String] {
+        self.subnet_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>One or more security groups used to control access from streaming instances to your VPC.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
-    pub fn security_group_ids(&self) -> &[::std::string::String] {
-        self.security_group_ids.as_deref().unwrap_or_default()
+    pub fn security_group_ids(&self) -> & [::std::string::String] {
+        self.security_group_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl NetworkSettings {
@@ -56,10 +58,10 @@ impl NetworkSettings {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkSettingsBuilder {
     pub(crate) network_settings_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) associated_portal_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) associated_portal_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
-    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl NetworkSettingsBuilder {
     /// <p>The ARN of the network settings.</p>
@@ -70,8 +72,7 @@ impl NetworkSettingsBuilder {
     }
     /// <p>The ARN of the network settings.</p>
     pub fn set_network_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_settings_arn = input;
-        self
+        self.network_settings_arn = input; self
     }
     /// <p>The ARN of the network settings.</p>
     pub fn get_network_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,17 +85,16 @@ impl NetworkSettingsBuilder {
     /// <p>A list of web portal ARNs that this network settings is associated with.</p>
     pub fn associated_portal_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.associated_portal_arns.unwrap_or_default();
-        v.push(input.into());
-        self.associated_portal_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.associated_portal_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of web portal ARNs that this network settings is associated with.</p>
-    pub fn set_associated_portal_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.associated_portal_arns = input;
-        self
+    pub fn set_associated_portal_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.associated_portal_arns = input; self
     }
     /// <p>A list of web portal ARNs that this network settings is associated with.</p>
-    pub fn get_associated_portal_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_associated_portal_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.associated_portal_arns
     }
     /// <p>The VPC that streaming instances will connect to.</p>
@@ -104,8 +104,7 @@ impl NetworkSettingsBuilder {
     }
     /// <p>The VPC that streaming instances will connect to.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The VPC that streaming instances will connect to.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,17 +117,16 @@ impl NetworkSettingsBuilder {
     /// <p>The subnets in which network interfaces are created to connect streaming instances to your VPC. At least two of these subnets must be in different availability zones.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The subnets in which network interfaces are created to connect streaming instances to your VPC. At least two of these subnets must be in different availability zones.</p>
-    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
     /// <p>The subnets in which network interfaces are created to connect streaming instances to your VPC. At least two of these subnets must be in different availability zones.</p>
-    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnet_ids
     }
     /// Appends an item to `security_group_ids`.
@@ -138,34 +136,39 @@ impl NetworkSettingsBuilder {
     /// <p>One or more security groups used to control access from streaming instances to your VPC.</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more security groups used to control access from streaming instances to your VPC.</p>
-    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_group_ids = input; self
     }
     /// <p>One or more security groups used to control access from streaming instances to your VPC.</p>
-    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_group_ids
     }
     /// Consumes the builder and constructs a [`NetworkSettings`](crate::types::NetworkSettings).
     /// This method will fail if any of the following fields are not set:
     /// - [`network_settings_arn`](crate::types::builders::NetworkSettingsBuilder::network_settings_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::NetworkSettings, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::NetworkSettings {
-            network_settings_arn: self.network_settings_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "network_settings_arn",
-                    "network_settings_arn was not specified but it is required when building NetworkSettings",
-                )
-            })?,
-            associated_portal_arns: self.associated_portal_arns,
-            vpc_id: self.vpc_id,
-            subnet_ids: self.subnet_ids,
-            security_group_ids: self.security_group_ids,
-        })
+        ::std::result::Result::Ok(
+            crate::types::NetworkSettings {
+                network_settings_arn: self.network_settings_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("network_settings_arn", "network_settings_arn was not specified but it is required when building NetworkSettings")
+                    )?
+                ,
+                associated_portal_arns: self.associated_portal_arns
+                ,
+                vpc_id: self.vpc_id
+                ,
+                subnet_ids: self.subnet_ids
+                ,
+                security_group_ids: self.security_group_ids
+                ,
+            }
+        )
     }
 }
+

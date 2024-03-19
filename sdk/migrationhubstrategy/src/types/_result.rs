@@ -3,7 +3,7 @@
 /// <p>The error in server analysis.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Result {
+pub struct Result  {
     /// <p>The error in server analysis.</p>
     pub analysis_type: ::std::option::Option<crate::types::AnalysisType>,
     /// <p>The error in server analysis.</p>
@@ -11,26 +11,27 @@ pub struct Result {
     /// <p>The error in server analysis.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The error in server analysis.</p>
-    pub antipattern_report_result_list: ::std::option::Option<::std::vec::Vec<crate::types::AntipatternReportResult>>,
+    pub antipattern_report_result_list: ::std::option::Option<::std::vec::Vec::<crate::types::AntipatternReportResult>>,
 }
-impl Result {
+impl  Result  {
     /// <p>The error in server analysis.</p>
-    pub fn analysis_type(&self) -> ::std::option::Option<&crate::types::AnalysisType> {
+    pub fn analysis_type(&self) -> ::std::option::Option<& crate::types::AnalysisType> {
         self.analysis_type.as_ref()
     }
     /// <p>The error in server analysis.</p>
-    pub fn analysis_status(&self) -> ::std::option::Option<&crate::types::AnalysisStatusUnion> {
+    pub fn analysis_status(&self) -> ::std::option::Option<& crate::types::AnalysisStatusUnion> {
         self.analysis_status.as_ref()
     }
     /// <p>The error in server analysis.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The error in server analysis.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.antipattern_report_result_list.is_none()`.
-    pub fn antipattern_report_result_list(&self) -> &[crate::types::AntipatternReportResult] {
-        self.antipattern_report_result_list.as_deref().unwrap_or_default()
+    pub fn antipattern_report_result_list(&self) -> & [crate::types::AntipatternReportResult] {
+        self.antipattern_report_result_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Result {
@@ -47,7 +48,7 @@ pub struct ResultBuilder {
     pub(crate) analysis_type: ::std::option::Option<crate::types::AnalysisType>,
     pub(crate) analysis_status: ::std::option::Option<crate::types::AnalysisStatusUnion>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
-    pub(crate) antipattern_report_result_list: ::std::option::Option<::std::vec::Vec<crate::types::AntipatternReportResult>>,
+    pub(crate) antipattern_report_result_list: ::std::option::Option<::std::vec::Vec::<crate::types::AntipatternReportResult>>,
 }
 impl ResultBuilder {
     /// <p>The error in server analysis.</p>
@@ -57,8 +58,7 @@ impl ResultBuilder {
     }
     /// <p>The error in server analysis.</p>
     pub fn set_analysis_type(mut self, input: ::std::option::Option<crate::types::AnalysisType>) -> Self {
-        self.analysis_type = input;
-        self
+        self.analysis_type = input; self
     }
     /// <p>The error in server analysis.</p>
     pub fn get_analysis_type(&self) -> &::std::option::Option<crate::types::AnalysisType> {
@@ -71,8 +71,7 @@ impl ResultBuilder {
     }
     /// <p>The error in server analysis.</p>
     pub fn set_analysis_status(mut self, input: ::std::option::Option<crate::types::AnalysisStatusUnion>) -> Self {
-        self.analysis_status = input;
-        self
+        self.analysis_status = input; self
     }
     /// <p>The error in server analysis.</p>
     pub fn get_analysis_status(&self) -> &::std::option::Option<crate::types::AnalysisStatusUnion> {
@@ -85,8 +84,7 @@ impl ResultBuilder {
     }
     /// <p>The error in server analysis.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The error in server analysis.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,29 +97,30 @@ impl ResultBuilder {
     /// <p>The error in server analysis.</p>
     pub fn antipattern_report_result_list(mut self, input: crate::types::AntipatternReportResult) -> Self {
         let mut v = self.antipattern_report_result_list.unwrap_or_default();
-        v.push(input);
-        self.antipattern_report_result_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.antipattern_report_result_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The error in server analysis.</p>
-    pub fn set_antipattern_report_result_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AntipatternReportResult>>,
-    ) -> Self {
-        self.antipattern_report_result_list = input;
-        self
+    pub fn set_antipattern_report_result_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AntipatternReportResult>>) -> Self {
+        self.antipattern_report_result_list = input; self
     }
     /// <p>The error in server analysis.</p>
-    pub fn get_antipattern_report_result_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AntipatternReportResult>> {
+    pub fn get_antipattern_report_result_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AntipatternReportResult>> {
         &self.antipattern_report_result_list
     }
     /// Consumes the builder and constructs a [`Result`](crate::types::Result).
     pub fn build(self) -> crate::types::Result {
         crate::types::Result {
-            analysis_type: self.analysis_type,
-            analysis_status: self.analysis_status,
-            status_message: self.status_message,
-            antipattern_report_result_list: self.antipattern_report_result_list,
+            analysis_type: self.analysis_type
+            ,
+            analysis_status: self.analysis_status
+            ,
+            status_message: self.status_message
+            ,
+            antipattern_report_result_list: self.antipattern_report_result_list
+            ,
         }
     }
 }
+

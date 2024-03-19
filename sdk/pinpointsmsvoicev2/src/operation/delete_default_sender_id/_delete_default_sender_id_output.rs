@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDefaultSenderIdOutput {
+pub struct DeleteDefaultSenderIdOutput  {
     /// <p>The Amazon Resource Name (ARN) of the configuration set.</p>
     pub configuration_set_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configuration set.</p>
@@ -11,25 +11,25 @@ pub struct DeleteDefaultSenderIdOutput {
     pub sender_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DeleteDefaultSenderIdOutput {
+impl  DeleteDefaultSenderIdOutput  {
     /// <p>The Amazon Resource Name (ARN) of the configuration set.</p>
-    pub fn configuration_set_arn(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_set_arn(&self) -> ::std::option::Option<& str> {
         self.configuration_set_arn.as_deref()
     }
     /// <p>The name of the configuration set.</p>
-    pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> ::std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>The current sender ID for the configuration set.</p>
-    pub fn sender_id(&self) -> ::std::option::Option<&str> {
+    pub fn sender_id(&self) -> ::std::option::Option<& str> {
         self.sender_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteDefaultSenderIdOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteDefaultSenderIdOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDefaultSenderIdOutput`](crate::operation::delete_default_sender_id::DeleteDefaultSenderIdOutput).
     pub fn builder() -> crate::operation::delete_default_sender_id::builders::DeleteDefaultSenderIdOutputBuilder {
@@ -54,8 +54,7 @@ impl DeleteDefaultSenderIdOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the configuration set.</p>
     pub fn set_configuration_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_set_arn = input;
-        self
+        self.configuration_set_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the configuration set.</p>
     pub fn get_configuration_set_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl DeleteDefaultSenderIdOutputBuilder {
     }
     /// <p>The name of the configuration set.</p>
     pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_set_name = input;
-        self
+        self.configuration_set_name = input; self
     }
     /// <p>The name of the configuration set.</p>
     pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl DeleteDefaultSenderIdOutputBuilder {
     }
     /// <p>The current sender ID for the configuration set.</p>
     pub fn set_sender_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sender_id = input;
-        self
+        self.sender_id = input; self
     }
     /// <p>The current sender ID for the configuration set.</p>
     pub fn get_sender_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.sender_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteDefaultSenderIdOutput`](crate::operation::delete_default_sender_id::DeleteDefaultSenderIdOutput).
     pub fn build(self) -> crate::operation::delete_default_sender_id::DeleteDefaultSenderIdOutput {
         crate::operation::delete_default_sender_id::DeleteDefaultSenderIdOutput {
-            configuration_set_arn: self.configuration_set_arn,
-            configuration_set_name: self.configuration_set_name,
-            sender_id: self.sender_id,
+            configuration_set_arn: self.configuration_set_arn
+            ,
+            configuration_set_name: self.configuration_set_name
+            ,
+            sender_id: self.sender_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

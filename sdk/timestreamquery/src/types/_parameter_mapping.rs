@@ -3,20 +3,19 @@
 /// <p>Mapping for named parameters.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ParameterMapping {
+pub struct ParameterMapping  {
     /// <p>Parameter name.</p>
     pub name: ::std::string::String,
     /// <p>Contains the data type of a column in a query result set. The data type can be scalar or complex. The supported scalar data types are integers, Boolean, string, double, timestamp, date, time, and intervals. The supported complex data types are arrays, rows, and timeseries.</p>
     pub r#type: ::std::option::Option<crate::types::Type>,
 }
-impl ParameterMapping {
+impl  ParameterMapping  {
     /// <p>Parameter name.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Contains the data type of a column in a query result set. The data type can be scalar or complex. The supported scalar data types are integers, Boolean, string, double, timestamp, date, time, and intervals. The supported complex data types are arrays, rows, and timeseries.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::Type> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::Type> {
         self.r#type.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl ParameterMappingBuilder {
     }
     /// <p>Parameter name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Parameter name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl ParameterMappingBuilder {
     }
     /// <p>Contains the data type of a column in a query result set. The data type can be scalar or complex. The supported scalar data types are integers, Boolean, string, double, timestamp, date, time, and intervals. The supported complex data types are arrays, rows, and timeseries.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Contains the data type of a column in a query result set. The data type can be scalar or complex. The supported scalar data types are integers, Boolean, string, double, timestamp, date, time, and intervals. The supported complex data types are arrays, rows, and timeseries.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
@@ -69,14 +66,17 @@ impl ParameterMappingBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::ParameterMappingBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::ParameterMapping, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ParameterMapping {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ParameterMapping",
-                )
-            })?,
-            r#type: self.r#type,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ParameterMapping {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ParameterMapping")
+                    )?
+                ,
+                r#type: self.r#type
+                ,
+            }
+        )
     }
 }
+

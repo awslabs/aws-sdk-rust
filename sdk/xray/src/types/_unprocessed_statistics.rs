@@ -3,7 +3,7 @@
 /// <p>Sampling statistics from a call to <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a> that X-Ray could not process.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnprocessedStatistics {
+pub struct UnprocessedStatistics  {
     /// <p>The name of the sampling rule.</p>
     pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The error code.</p>
@@ -11,17 +11,17 @@ pub struct UnprocessedStatistics {
     /// <p>The error message.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl UnprocessedStatistics {
+impl  UnprocessedStatistics  {
     /// <p>The name of the sampling rule.</p>
-    pub fn rule_name(&self) -> ::std::option::Option<&str> {
+    pub fn rule_name(&self) -> ::std::option::Option<& str> {
         self.rule_name.as_deref()
     }
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The error message.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UnprocessedStatisticsBuilder {
     }
     /// <p>The name of the sampling rule.</p>
     pub fn set_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_name = input;
-        self
+        self.rule_name = input; self
     }
     /// <p>The name of the sampling rule.</p>
     pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UnprocessedStatisticsBuilder {
     }
     /// <p>The error code.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl UnprocessedStatisticsBuilder {
     }
     /// <p>The error message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The error message.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl UnprocessedStatisticsBuilder {
     /// Consumes the builder and constructs a [`UnprocessedStatistics`](crate::types::UnprocessedStatistics).
     pub fn build(self) -> crate::types::UnprocessedStatistics {
         crate::types::UnprocessedStatistics {
-            rule_name: self.rule_name,
-            error_code: self.error_code,
-            message: self.message,
+            rule_name: self.rule_name
+            ,
+            error_code: self.error_code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

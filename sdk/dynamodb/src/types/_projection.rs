@@ -3,7 +3,7 @@
 /// <p>Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Projection {
+pub struct Projection  {
     /// <p>The set of attributes that are projected into the index:</p>
     /// <ul>
     /// <li>
@@ -17,9 +17,9 @@ pub struct Projection {
     pub projection_type: ::std::option::Option<crate::types::ProjectionType>,
     /// <p>Represents the non-key attribute names which will be projected into the index.</p>
     /// <p>For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
-    pub non_key_attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub non_key_attributes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl Projection {
+impl  Projection  {
     /// <p>The set of attributes that are projected into the index:</p>
     /// <ul>
     /// <li>
@@ -30,15 +30,16 @@ impl Projection {
     /// <p><code>ALL</code> - All of the table attributes are projected into the index.</p></li>
     /// </ul>
     /// <p>When using the DynamoDB console, <code>ALL</code> is selected by default.</p>
-    pub fn projection_type(&self) -> ::std::option::Option<&crate::types::ProjectionType> {
+    pub fn projection_type(&self) -> ::std::option::Option<& crate::types::ProjectionType> {
         self.projection_type.as_ref()
     }
     /// <p>Represents the non-key attribute names which will be projected into the index.</p>
     /// <p>For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.non_key_attributes.is_none()`.
-    pub fn non_key_attributes(&self) -> &[::std::string::String] {
-        self.non_key_attributes.as_deref().unwrap_or_default()
+    pub fn non_key_attributes(&self) -> & [::std::string::String] {
+        self.non_key_attributes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Projection {
@@ -53,7 +54,7 @@ impl Projection {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProjectionBuilder {
     pub(crate) projection_type: ::std::option::Option<crate::types::ProjectionType>,
-    pub(crate) non_key_attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) non_key_attributes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ProjectionBuilder {
     /// <p>The set of attributes that are projected into the index:</p>
@@ -81,8 +82,7 @@ impl ProjectionBuilder {
     /// </ul>
     /// <p>When using the DynamoDB console, <code>ALL</code> is selected by default.</p>
     pub fn set_projection_type(mut self, input: ::std::option::Option<crate::types::ProjectionType>) -> Self {
-        self.projection_type = input;
-        self
+        self.projection_type = input; self
     }
     /// <p>The set of attributes that are projected into the index:</p>
     /// <ul>
@@ -105,26 +105,28 @@ impl ProjectionBuilder {
     /// <p>For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
     pub fn non_key_attributes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.non_key_attributes.unwrap_or_default();
-        v.push(input.into());
-        self.non_key_attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.non_key_attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Represents the non-key attribute names which will be projected into the index.</p>
     /// <p>For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
-    pub fn set_non_key_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.non_key_attributes = input;
-        self
+    pub fn set_non_key_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.non_key_attributes = input; self
     }
     /// <p>Represents the non-key attribute names which will be projected into the index.</p>
     /// <p>For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
-    pub fn get_non_key_attributes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_non_key_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.non_key_attributes
     }
     /// Consumes the builder and constructs a [`Projection`](crate::types::Projection).
     pub fn build(self) -> crate::types::Projection {
         crate::types::Projection {
-            projection_type: self.projection_type,
-            non_key_attributes: self.non_key_attributes,
+            projection_type: self.projection_type
+            ,
+            non_key_attributes: self.non_key_attributes
+            ,
         }
     }
 }
+

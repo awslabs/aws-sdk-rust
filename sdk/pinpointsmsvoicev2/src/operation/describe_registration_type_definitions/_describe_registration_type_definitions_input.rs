@@ -2,31 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRegistrationTypeDefinitionsInput {
+pub struct DescribeRegistrationTypeDefinitionsInput  {
     /// <p>The type of registration form. The list of <b>RegistrationTypes</b> can be found using the <code>DescribeRegistrationTypeDefinitions</code> action.</p>
-    pub registration_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub registration_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>An array of RegistrationFilter objects to filter the results.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationTypeFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::RegistrationTypeFilter>>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per each request.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl DescribeRegistrationTypeDefinitionsInput {
+impl  DescribeRegistrationTypeDefinitionsInput  {
     /// <p>The type of registration form. The list of <b>RegistrationTypes</b> can be found using the <code>DescribeRegistrationTypeDefinitions</code> action.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.registration_types.is_none()`.
-    pub fn registration_types(&self) -> &[::std::string::String] {
-        self.registration_types.as_deref().unwrap_or_default()
+    pub fn registration_types(&self) -> & [::std::string::String] {
+        self.registration_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of RegistrationFilter objects to filter the results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::RegistrationTypeFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::RegistrationTypeFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per each request.</p>
@@ -45,8 +47,8 @@ impl DescribeRegistrationTypeDefinitionsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRegistrationTypeDefinitionsInputBuilder {
-    pub(crate) registration_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationTypeFilter>>,
+    pub(crate) registration_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::RegistrationTypeFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -58,17 +60,16 @@ impl DescribeRegistrationTypeDefinitionsInputBuilder {
     /// <p>The type of registration form. The list of <b>RegistrationTypes</b> can be found using the <code>DescribeRegistrationTypeDefinitions</code> action.</p>
     pub fn registration_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.registration_types.unwrap_or_default();
-        v.push(input.into());
-        self.registration_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.registration_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The type of registration form. The list of <b>RegistrationTypes</b> can be found using the <code>DescribeRegistrationTypeDefinitions</code> action.</p>
-    pub fn set_registration_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.registration_types = input;
-        self
+    pub fn set_registration_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.registration_types = input; self
     }
     /// <p>The type of registration form. The list of <b>RegistrationTypes</b> can be found using the <code>DescribeRegistrationTypeDefinitions</code> action.</p>
-    pub fn get_registration_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_registration_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.registration_types
     }
     /// Appends an item to `filters`.
@@ -78,17 +79,16 @@ impl DescribeRegistrationTypeDefinitionsInputBuilder {
     /// <p>An array of RegistrationFilter objects to filter the results.</p>
     pub fn filters(mut self, input: crate::types::RegistrationTypeFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of RegistrationFilter objects to filter the results.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationTypeFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RegistrationTypeFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>An array of RegistrationFilter objects to filter the results.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegistrationTypeFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RegistrationTypeFilter>> {
         &self.filters
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
@@ -98,8 +98,7 @@ impl DescribeRegistrationTypeDefinitionsInputBuilder {
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,27 +111,26 @@ impl DescribeRegistrationTypeDefinitionsInputBuilder {
     }
     /// <p>The maximum number of results to return per each request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return per each request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeRegistrationTypeDefinitionsInput`](crate::operation::describe_registration_type_definitions::DescribeRegistrationTypeDefinitionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_registration_type_definitions::DescribeRegistrationTypeDefinitionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_registration_type_definitions::DescribeRegistrationTypeDefinitionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_registration_type_definitions::DescribeRegistrationTypeDefinitionsInput {
-                registration_types: self.registration_types,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                registration_types: self.registration_types
+                ,
+                filters: self.filters
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSchemaInput {
+pub struct GetSchemaInput  {
     /// <p>Specifies the ID of the policy store that contains the schema.</p>
     pub policy_store_id: ::std::option::Option<::std::string::String>,
 }
-impl GetSchemaInput {
+impl  GetSchemaInput  {
     /// <p>Specifies the ID of the policy store that contains the schema.</p>
-    pub fn policy_store_id(&self) -> ::std::option::Option<&str> {
+    pub fn policy_store_id(&self) -> ::std::option::Option<& str> {
         self.policy_store_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetSchemaInputBuilder {
     }
     /// <p>Specifies the ID of the policy store that contains the schema.</p>
     pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_store_id = input;
-        self
+        self.policy_store_id = input; self
     }
     /// <p>Specifies the ID of the policy store that contains the schema.</p>
     pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,8 +42,12 @@ impl GetSchemaInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetSchemaInput`](crate::operation::get_schema::GetSchemaInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_schema::GetSchemaInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_schema::GetSchemaInput {
-            policy_store_id: self.policy_store_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_schema::GetSchemaInput {
+                policy_store_id: self.policy_store_id
+                ,
+            }
+        )
     }
 }
+

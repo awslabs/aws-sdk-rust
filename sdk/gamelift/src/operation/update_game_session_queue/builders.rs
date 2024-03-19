@@ -5,56 +5,52 @@ pub use crate::operation::update_game_session_queue::_update_game_session_queue_
 
 impl UpdateGameSessionQueueInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_game_session_queue::UpdateGameSessionQueueOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_game_session_queue::UpdateGameSessionQueueError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_game_session_queue();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_game_session_queue::UpdateGameSessionQueueOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_game_session_queue::UpdateGameSessionQueueError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_game_session_queue();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateGameSessionQueue`.
-///
+/// 
 /// <p>Updates the configuration of a game session queue, which determines how the queue processes new game session requests. To update settings, specify the queue name to be updated and provide the new settings. When updating destinations, provide a complete list of destinations.</p>
 /// <p><b>Learn more</b></p>
 /// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html"> Using Multi-Region Queues</a></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateGameSessionQueueFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_game_session_queue::builders::UpdateGameSessionQueueInputBuilder,
+                    inner: crate::operation::update_game_session_queue::builders::UpdateGameSessionQueueInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_game_session_queue::UpdateGameSessionQueueOutput,
-        crate::operation::update_game_session_queue::UpdateGameSessionQueueError,
-    > for UpdateGameSessionQueueFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_game_session_queue::UpdateGameSessionQueueOutput,
-            crate::operation::update_game_session_queue::UpdateGameSessionQueueError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_game_session_queue::UpdateGameSessionQueueOutput,
+                    crate::operation::update_game_session_queue::UpdateGameSessionQueueError,
+                > for UpdateGameSessionQueueFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_game_session_queue::UpdateGameSessionQueueOutput,
+                        crate::operation::update_game_session_queue::UpdateGameSessionQueueError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateGameSessionQueueFluentBuilder {
     /// Creates a new `UpdateGameSessionQueue`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl UpdateGameSessionQueueFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_game_session_queue::UpdateGameSessionQueueOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_game_session_queue::UpdateGameSessionQueueError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_game_session_queue::UpdateGameSessionQueue::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_game_session_queue::UpdateGameSessionQueue::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_game_session_queue::UpdateGameSessionQueueOutput,
-        crate::operation::update_game_session_queue::UpdateGameSessionQueueError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_game_session_queue::UpdateGameSessionQueueOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_game_session_queue::UpdateGameSessionQueueError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_game_session_queue::UpdateGameSessionQueue::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_game_session_queue::UpdateGameSessionQueue::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_game_session_queue::UpdateGameSessionQueueOutput, crate::operation::update_game_session_queue::UpdateGameSessionQueueError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region. You can use either the queue ID or ARN value.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -148,12 +135,12 @@ impl UpdateGameSessionQueueFluentBuilder {
         self
     }
     /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most players in a game session. These policies ensure that no individual player can be placed into a game with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest value. When updating policies, provide a complete collection of policies.</p>
-    pub fn set_player_latency_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlayerLatencyPolicy>>) -> Self {
+    pub fn set_player_latency_policies(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PlayerLatencyPolicy>>) -> Self {
         self.inner = self.inner.set_player_latency_policies(input);
         self
     }
     /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most players in a game session. These policies ensure that no individual player can be placed into a game with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest value. When updating policies, provide a complete collection of policies.</p>
-    pub fn get_player_latency_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlayerLatencyPolicy>> {
+    pub fn get_player_latency_policies(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PlayerLatencyPolicy>> {
         self.inner.get_player_latency_policies()
     }
     /// Appends an item to `Destinations`.
@@ -166,12 +153,12 @@ impl UpdateGameSessionQueueFluentBuilder {
         self
     }
     /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference. When updating this list, provide a complete list of destinations.</p>
-    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueueDestination>>) -> Self {
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GameSessionQueueDestination>>) -> Self {
         self.inner = self.inner.set_destinations(input);
         self
     }
     /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference. When updating this list, provide a complete list of destinations.</p>
-    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueueDestination>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GameSessionQueueDestination>> {
         self.inner.get_destinations()
     }
     /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. To remove an existing filter configuration, pass in an empty set.</p>
@@ -231,3 +218,4 @@ impl UpdateGameSessionQueueFluentBuilder {
         self.inner.get_notification_target()
     }
 }
+

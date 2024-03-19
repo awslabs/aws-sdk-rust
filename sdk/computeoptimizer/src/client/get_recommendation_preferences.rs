@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetRecommendationPreferences`](crate::operation::get_recommendation_preferences::builders::GetRecommendationPreferencesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_recommendation_preferences::builders::GetRecommendationPreferencesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`resource_type(ResourceType)`](crate::operation::get_recommendation_preferences::builders::GetRecommendationPreferencesFluentBuilder::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::operation::get_recommendation_preferences::builders::GetRecommendationPreferencesFluentBuilder::set_resource_type):<br>required: **true**<br><p>The target resource type of the recommendation preference for which to return preferences.</p> <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p><note>  <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p> </note><br>
     ///   - [`scope(Scope)`](crate::operation::get_recommendation_preferences::builders::GetRecommendationPreferencesFluentBuilder::scope) / [`set_scope(Option<Scope>)`](crate::operation::get_recommendation_preferences::builders::GetRecommendationPreferencesFluentBuilder::set_scope):<br>required: **false**<br><p>An object that describes the scope of the recommendation preference to return.</p> <p>You can return recommendation preferences that are created at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_recommendation_preferences::builders::GetRecommendationPreferencesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_recommendation_preferences::builders::GetRecommendationPreferencesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to advance to the next page of recommendation preferences.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_recommendation_preferences::builders::GetRecommendationPreferencesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_recommendation_preferences::builders::GetRecommendationPreferencesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of recommendation preferences to return with a single request.</p> <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p><br>
-    /// - On success, responds with [`GetRecommendationPreferencesOutput`](crate::operation::get_recommendation_preferences::GetRecommendationPreferencesOutput) with field(s):
+                            /// - On success, responds with [`GetRecommendationPreferencesOutput`](crate::operation::get_recommendation_preferences::GetRecommendationPreferencesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::get_recommendation_preferences::GetRecommendationPreferencesOutput::next_token): <p>The token to use to advance to the next page of recommendation preferences.</p> <p>This value is null when there are no more pages of recommendation preferences to return.</p>
     ///   - [`recommendation_preferences_details(Option<Vec::<RecommendationPreferencesDetail>>)`](crate::operation::get_recommendation_preferences::GetRecommendationPreferencesOutput::recommendation_preferences_details): <p>An array of objects that describe recommendation preferences.</p>
-    /// - On failure, responds with [`SdkError<GetRecommendationPreferencesError>`](crate::operation::get_recommendation_preferences::GetRecommendationPreferencesError)
-    pub fn get_recommendation_preferences(
-        &self,
-    ) -> crate::operation::get_recommendation_preferences::builders::GetRecommendationPreferencesFluentBuilder {
-        crate::operation::get_recommendation_preferences::builders::GetRecommendationPreferencesFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<GetRecommendationPreferencesError>`](crate::operation::get_recommendation_preferences::GetRecommendationPreferencesError)
+    pub fn get_recommendation_preferences(&self) -> crate::operation::get_recommendation_preferences::builders::GetRecommendationPreferencesFluentBuilder {
+                                crate::operation::get_recommendation_preferences::builders::GetRecommendationPreferencesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePrimaryRegionInput {
+pub struct UpdatePrimaryRegionInput  {
     /// <p>Identifies the current primary key. When the operation completes, this KMS key will be a replica key.</p>
     /// <p>Specify the key ID or key ARN of a multi-Region primary key.</p>
     /// <p>For example:</p>
@@ -18,7 +18,7 @@ pub struct UpdatePrimaryRegionInput {
     /// <p>When the operation completes, the multi-Region key in this Region will be the primary key.</p>
     pub primary_region: ::std::option::Option<::std::string::String>,
 }
-impl UpdatePrimaryRegionInput {
+impl  UpdatePrimaryRegionInput  {
     /// <p>Identifies the current primary key. When the operation completes, this KMS key will be a replica key.</p>
     /// <p>Specify the key ID or key ARN of a multi-Region primary key.</p>
     /// <p>For example:</p>
@@ -29,12 +29,12 @@ impl UpdatePrimaryRegionInput {
     /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/mrk-1234abcd12ab34cd56ef1234567890ab</code></p></li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
-    pub fn key_id(&self) -> ::std::option::Option<&str> {
+    pub fn key_id(&self) -> ::std::option::Option<& str> {
         self.key_id.as_deref()
     }
     /// <p>The Amazon Web Services Region of the new primary key. Enter the Region ID, such as <code>us-east-1</code> or <code>ap-southeast-2</code>. There must be an existing replica key in this Region.</p>
     /// <p>When the operation completes, the multi-Region key in this Region will be the primary key.</p>
-    pub fn primary_region(&self) -> ::std::option::Option<&str> {
+    pub fn primary_region(&self) -> ::std::option::Option<& str> {
         self.primary_region.as_deref()
     }
 }
@@ -79,8 +79,7 @@ impl UpdatePrimaryRegionInputBuilder {
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_id = input;
-        self
+        self.key_id = input; self
     }
     /// <p>Identifies the current primary key. When the operation completes, this KMS key will be a replica key.</p>
     /// <p>Specify the key ID or key ARN of a multi-Region primary key.</p>
@@ -105,8 +104,7 @@ impl UpdatePrimaryRegionInputBuilder {
     /// <p>The Amazon Web Services Region of the new primary key. Enter the Region ID, such as <code>us-east-1</code> or <code>ap-southeast-2</code>. There must be an existing replica key in this Region.</p>
     /// <p>When the operation completes, the multi-Region key in this Region will be the primary key.</p>
     pub fn set_primary_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.primary_region = input;
-        self
+        self.primary_region = input; self
     }
     /// <p>The Amazon Web Services Region of the new primary key. Enter the Region ID, such as <code>us-east-1</code> or <code>ap-southeast-2</code>. There must be an existing replica key in this Region.</p>
     /// <p>When the operation completes, the multi-Region key in this Region will be the primary key.</p>
@@ -114,13 +112,15 @@ impl UpdatePrimaryRegionInputBuilder {
         &self.primary_region
     }
     /// Consumes the builder and constructs a [`UpdatePrimaryRegionInput`](crate::operation::update_primary_region::UpdatePrimaryRegionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_primary_region::UpdatePrimaryRegionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_primary_region::UpdatePrimaryRegionInput {
-            key_id: self.key_id,
-            primary_region: self.primary_region,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_primary_region::UpdatePrimaryRegionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_primary_region::UpdatePrimaryRegionInput {
+                key_id: self.key_id
+                ,
+                primary_region: self.primary_region
+                ,
+            }
+        )
     }
 }
+

@@ -22,11 +22,7 @@ impl FormStyleConfig {
     /// Tries to convert the enum instance into [`TokenReference`](crate::types::FormStyleConfig::TokenReference), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_token_reference(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let FormStyleConfig::TokenReference(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let FormStyleConfig::TokenReference(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`TokenReference`](crate::types::FormStyleConfig::TokenReference).
     pub fn is_token_reference(&self) -> bool {
@@ -35,11 +31,7 @@ impl FormStyleConfig {
     /// Tries to convert the enum instance into [`Value`](crate::types::FormStyleConfig::Value), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_value(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let FormStyleConfig::Value(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let FormStyleConfig::Value(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Value`](crate::types::FormStyleConfig::Value).
     pub fn is_value(&self) -> bool {
@@ -50,3 +42,4 @@ impl FormStyleConfig {
         matches!(self, Self::Unknown)
     }
 }
+

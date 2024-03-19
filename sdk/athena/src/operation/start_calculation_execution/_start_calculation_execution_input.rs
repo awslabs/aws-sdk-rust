@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartCalculationExecutionInput {
+pub struct StartCalculationExecutionInput  {
     /// <p>The session ID.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the calculation.</p>
@@ -17,28 +17,28 @@ pub struct StartCalculationExecutionInput {
     /// </important>
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
-impl StartCalculationExecutionInput {
+impl  StartCalculationExecutionInput  {
     /// <p>The session ID.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>A description of the calculation.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Contains configuration information for the calculation.</p>
     #[deprecated(note = "Kepler Post GA Tasks : https://sim.amazon.com/issues/ATHENA-39828")]
-    pub fn calculation_configuration(&self) -> ::std::option::Option<&crate::types::CalculationConfiguration> {
+    pub fn calculation_configuration(&self) -> ::std::option::Option<& crate::types::CalculationConfiguration> {
         self.calculation_configuration.as_ref()
     }
     /// <p>A string that contains the code of the calculation. Use this parameter instead of <code>CalculationConfiguration$CodeBlock</code>, which is deprecated.</p>
-    pub fn code_block(&self) -> ::std::option::Option<&str> {
+    pub fn code_block(&self) -> ::std::option::Option<& str> {
         self.code_block.as_deref()
     }
     /// <p>A unique case-sensitive string used to ensure the request to create the calculation is idempotent (executes only once). If another <code>StartCalculationExecutionRequest</code> is received, the same response is returned and another calculation is not created. If a parameter has changed, an error is returned.</p><important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
 }
@@ -68,8 +68,7 @@ impl StartCalculationExecutionInputBuilder {
     }
     /// <p>The session ID.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>The session ID.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +81,7 @@ impl StartCalculationExecutionInputBuilder {
     }
     /// <p>A description of the calculation.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the calculation.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +96,7 @@ impl StartCalculationExecutionInputBuilder {
     /// <p>Contains configuration information for the calculation.</p>
     #[deprecated(note = "Kepler Post GA Tasks : https://sim.amazon.com/issues/ATHENA-39828")]
     pub fn set_calculation_configuration(mut self, input: ::std::option::Option<crate::types::CalculationConfiguration>) -> Self {
-        self.calculation_configuration = input;
-        self
+        self.calculation_configuration = input; self
     }
     /// <p>Contains configuration information for the calculation.</p>
     #[deprecated(note = "Kepler Post GA Tasks : https://sim.amazon.com/issues/ATHENA-39828")]
@@ -113,8 +110,7 @@ impl StartCalculationExecutionInputBuilder {
     }
     /// <p>A string that contains the code of the calculation. Use this parameter instead of <code>CalculationConfiguration$CodeBlock</code>, which is deprecated.</p>
     pub fn set_code_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code_block = input;
-        self
+        self.code_block = input; self
     }
     /// <p>A string that contains the code of the calculation. Use this parameter instead of <code>CalculationConfiguration$CodeBlock</code>, which is deprecated.</p>
     pub fn get_code_block(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +127,7 @@ impl StartCalculationExecutionInputBuilder {
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A unique case-sensitive string used to ensure the request to create the calculation is idempotent (executes only once). If another <code>StartCalculationExecutionRequest</code> is received, the same response is returned and another calculation is not created. If a parameter has changed, an error is returned.</p><important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
@@ -141,18 +136,21 @@ impl StartCalculationExecutionInputBuilder {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`StartCalculationExecutionInput`](crate::operation::start_calculation_execution::StartCalculationExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_calculation_execution::StartCalculationExecutionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_calculation_execution::StartCalculationExecutionInput {
-            session_id: self.session_id,
-            description: self.description,
-            calculation_configuration: self.calculation_configuration,
-            code_block: self.code_block,
-            client_request_token: self.client_request_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_calculation_execution::StartCalculationExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_calculation_execution::StartCalculationExecutionInput {
+                session_id: self.session_id
+                ,
+                description: self.description
+                ,
+                calculation_configuration: self.calculation_configuration
+                ,
+                code_block: self.code_block
+                ,
+                client_request_token: self.client_request_token
+                ,
+            }
+        )
     }
 }
+

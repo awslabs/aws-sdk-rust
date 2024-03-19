@@ -3,7 +3,7 @@
 /// <p>Updates to the severity information for a finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SeverityUpdate {
+pub struct SeverityUpdate  {
     /// <p>The normalized severity for the finding. This attribute is to be deprecated in favor of <code>Label</code>.</p>
     /// <p>If you provide <code>Normalized</code> and do not provide <code>Label</code>, <code>Label</code> is set automatically as follows.</p>
     /// <ul>
@@ -36,7 +36,7 @@ pub struct SeverityUpdate {
     /// </ul>
     pub label: ::std::option::Option<crate::types::SeverityLabel>,
 }
-impl SeverityUpdate {
+impl  SeverityUpdate  {
     /// <p>The normalized severity for the finding. This attribute is to be deprecated in favor of <code>Label</code>.</p>
     /// <p>If you provide <code>Normalized</code> and do not provide <code>Label</code>, <code>Label</code> is set automatically as follows.</p>
     /// <ul>
@@ -71,7 +71,7 @@ impl SeverityUpdate {
     /// <li>
     /// <p><code>CRITICAL</code> - The issue must be remediated immediately to avoid it escalating.</p></li>
     /// </ul>
-    pub fn label(&self) -> ::std::option::Option<&crate::types::SeverityLabel> {
+    pub fn label(&self) -> ::std::option::Option<& crate::types::SeverityLabel> {
         self.label.as_ref()
     }
 }
@@ -124,8 +124,7 @@ impl SeverityUpdateBuilder {
     /// <p>90–100 - <code>CRITICAL</code></p></li>
     /// </ul>
     pub fn set_normalized(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.normalized = input;
-        self
+        self.normalized = input; self
     }
     /// <p>The normalized severity for the finding. This attribute is to be deprecated in favor of <code>Label</code>.</p>
     /// <p>If you provide <code>Normalized</code> and do not provide <code>Label</code>, <code>Label</code> is set automatically as follows.</p>
@@ -151,8 +150,7 @@ impl SeverityUpdateBuilder {
     }
     /// <p>The native severity as defined by the Amazon Web Services service or integrated partner product that generated the finding.</p>
     pub fn set_product(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.product = input;
-        self
+        self.product = input; self
     }
     /// <p>The native severity as defined by the Amazon Web Services service or integrated partner product that generated the finding.</p>
     pub fn get_product(&self) -> &::std::option::Option<f64> {
@@ -189,8 +187,7 @@ impl SeverityUpdateBuilder {
     /// <p><code>CRITICAL</code> - The issue must be remediated immediately to avoid it escalating.</p></li>
     /// </ul>
     pub fn set_label(mut self, input: ::std::option::Option<crate::types::SeverityLabel>) -> Self {
-        self.label = input;
-        self
+        self.label = input; self
     }
     /// <p>The severity value of the finding. The allowed values are the following.</p>
     /// <ul>
@@ -211,9 +208,13 @@ impl SeverityUpdateBuilder {
     /// Consumes the builder and constructs a [`SeverityUpdate`](crate::types::SeverityUpdate).
     pub fn build(self) -> crate::types::SeverityUpdate {
         crate::types::SeverityUpdate {
-            normalized: self.normalized,
-            product: self.product,
-            label: self.label,
+            normalized: self.normalized
+            ,
+            product: self.product
+            ,
+            label: self.label
+            ,
         }
     }
 }
+

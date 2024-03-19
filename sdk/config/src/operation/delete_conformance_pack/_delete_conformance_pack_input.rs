@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteConformancePackInput {
+pub struct DeleteConformancePackInput  {
     /// <p>Name of the conformance pack you want to delete.</p>
     pub conformance_pack_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteConformancePackInput {
+impl  DeleteConformancePackInput  {
     /// <p>Name of the conformance pack you want to delete.</p>
-    pub fn conformance_pack_name(&self) -> ::std::option::Option<&str> {
+    pub fn conformance_pack_name(&self) -> ::std::option::Option<& str> {
         self.conformance_pack_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteConformancePackInputBuilder {
     }
     /// <p>Name of the conformance pack you want to delete.</p>
     pub fn set_conformance_pack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.conformance_pack_name = input;
-        self
+        self.conformance_pack_name = input; self
     }
     /// <p>Name of the conformance pack you want to delete.</p>
     pub fn get_conformance_pack_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.conformance_pack_name
     }
     /// Consumes the builder and constructs a [`DeleteConformancePackInput`](crate::operation::delete_conformance_pack::DeleteConformancePackInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_conformance_pack::DeleteConformancePackInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_conformance_pack::DeleteConformancePackInput {
-            conformance_pack_name: self.conformance_pack_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_conformance_pack::DeleteConformancePackInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_conformance_pack::DeleteConformancePackInput {
+                conformance_pack_name: self.conformance_pack_name
+                ,
+            }
+        )
     }
 }
+

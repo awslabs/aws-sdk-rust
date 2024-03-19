@@ -3,24 +3,25 @@
 /// <p>Container for the parameters to the <code><code>DescribeIndexFields</code></code> operation. Specifies the name of the domain you want to describe. To restrict the response to particular index fields, specify the names of the index fields you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeIndexFieldsInput {
+pub struct DescribeIndexFieldsInput  {
     /// <p>The name of the domain you want to describe.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of the index fields you want to describe. If not specified, information is returned for all configured index fields.</p>
-    pub field_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub field_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
     pub deployed: ::std::option::Option<bool>,
 }
-impl DescribeIndexFieldsInput {
+impl  DescribeIndexFieldsInput  {
     /// <p>The name of the domain you want to describe.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>A list of the index fields you want to describe. If not specified, information is returned for all configured index fields.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.field_names.is_none()`.
-    pub fn field_names(&self) -> &[::std::string::String] {
-        self.field_names.as_deref().unwrap_or_default()
+    pub fn field_names(&self) -> & [::std::string::String] {
+        self.field_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
     pub fn deployed(&self) -> ::std::option::Option<bool> {
@@ -39,7 +40,7 @@ impl DescribeIndexFieldsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIndexFieldsInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
-    pub(crate) field_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) field_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) deployed: ::std::option::Option<bool>,
 }
 impl DescribeIndexFieldsInputBuilder {
@@ -51,8 +52,7 @@ impl DescribeIndexFieldsInputBuilder {
     }
     /// <p>The name of the domain you want to describe.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The name of the domain you want to describe.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,17 +65,16 @@ impl DescribeIndexFieldsInputBuilder {
     /// <p>A list of the index fields you want to describe. If not specified, information is returned for all configured index fields.</p>
     pub fn field_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.field_names.unwrap_or_default();
-        v.push(input.into());
-        self.field_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.field_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the index fields you want to describe. If not specified, information is returned for all configured index fields.</p>
-    pub fn set_field_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.field_names = input;
-        self
+    pub fn set_field_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.field_names = input; self
     }
     /// <p>A list of the index fields you want to describe. If not specified, information is returned for all configured index fields.</p>
-    pub fn get_field_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_field_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.field_names
     }
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
@@ -85,22 +84,24 @@ impl DescribeIndexFieldsInputBuilder {
     }
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
     pub fn set_deployed(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.deployed = input;
-        self
+        self.deployed = input; self
     }
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
     pub fn get_deployed(&self) -> &::std::option::Option<bool> {
         &self.deployed
     }
     /// Consumes the builder and constructs a [`DescribeIndexFieldsInput`](crate::operation::describe_index_fields::DescribeIndexFieldsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_index_fields::DescribeIndexFieldsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_index_fields::DescribeIndexFieldsInput {
-            domain_name: self.domain_name,
-            field_names: self.field_names,
-            deployed: self.deployed,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_index_fields::DescribeIndexFieldsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_index_fields::DescribeIndexFieldsInput {
+                domain_name: self.domain_name
+                ,
+                field_names: self.field_names
+                ,
+                deployed: self.deployed
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains information about the specific model version.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModelVersionSummary {
+pub struct ModelVersionSummary  {
     /// <p>The name of the model that this model version is a version of.</p>
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the model that this model version is a version of.</p>
@@ -23,13 +23,13 @@ pub struct ModelVersionSummary {
     /// <p>For information about improving the quality of a model, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best practices with Amazon Lookout for Equipment</a>.</p>
     pub model_quality: ::std::option::Option<crate::types::ModelQuality>,
 }
-impl ModelVersionSummary {
+impl  ModelVersionSummary  {
     /// <p>The name of the model that this model version is a version of.</p>
-    pub fn model_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<& str> {
         self.model_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the model that this model version is a version of.</p>
-    pub fn model_arn(&self) -> ::std::option::Option<&str> {
+    pub fn model_arn(&self) -> ::std::option::Option<& str> {
         self.model_arn.as_deref()
     }
     /// <p>The version of the model.</p>
@@ -37,25 +37,25 @@ impl ModelVersionSummary {
         self.model_version
     }
     /// <p>The Amazon Resource Name (ARN) of the model version.</p>
-    pub fn model_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn model_version_arn(&self) -> ::std::option::Option<& str> {
         self.model_version_arn.as_deref()
     }
     /// <p>The time when this model version was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The current status of the model version.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ModelVersionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ModelVersionStatus> {
         self.status.as_ref()
     }
     /// <p>Indicates how this model version was generated.</p>
-    pub fn source_type(&self) -> ::std::option::Option<&crate::types::ModelVersionSourceType> {
+    pub fn source_type(&self) -> ::std::option::Option<& crate::types::ModelVersionSourceType> {
         self.source_type.as_ref()
     }
     /// <p>Provides a quality assessment for a model that uses labels. If Lookout for Equipment determines that the model quality is poor based on training metrics, the value is <code>POOR_QUALITY_DETECTED</code>. Otherwise, the value is <code>QUALITY_THRESHOLD_MET</code>.</p>
     /// <p>If the model is unlabeled, the model quality can't be assessed and the value of <code>ModelQuality</code> is <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model quality assessment by adding labels to the input dataset and retraining the model.</p>
     /// <p>For information about improving the quality of a model, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best practices with Amazon Lookout for Equipment</a>.</p>
-    pub fn model_quality(&self) -> ::std::option::Option<&crate::types::ModelQuality> {
+    pub fn model_quality(&self) -> ::std::option::Option<& crate::types::ModelQuality> {
         self.model_quality.as_ref()
     }
 }
@@ -87,8 +87,7 @@ impl ModelVersionSummaryBuilder {
     }
     /// <p>The name of the model that this model version is a version of.</p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_name = input;
-        self
+        self.model_name = input; self
     }
     /// <p>The name of the model that this model version is a version of.</p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +100,7 @@ impl ModelVersionSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the model that this model version is a version of.</p>
     pub fn set_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_arn = input;
-        self
+        self.model_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the model that this model version is a version of.</p>
     pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +113,7 @@ impl ModelVersionSummaryBuilder {
     }
     /// <p>The version of the model.</p>
     pub fn set_model_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.model_version = input;
-        self
+        self.model_version = input; self
     }
     /// <p>The version of the model.</p>
     pub fn get_model_version(&self) -> &::std::option::Option<i64> {
@@ -129,8 +126,7 @@ impl ModelVersionSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the model version.</p>
     pub fn set_model_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_version_arn = input;
-        self
+        self.model_version_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the model version.</p>
     pub fn get_model_version_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +139,7 @@ impl ModelVersionSummaryBuilder {
     }
     /// <p>The time when this model version was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time when this model version was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -157,8 +152,7 @@ impl ModelVersionSummaryBuilder {
     }
     /// <p>The current status of the model version.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ModelVersionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the model version.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ModelVersionStatus> {
@@ -171,8 +165,7 @@ impl ModelVersionSummaryBuilder {
     }
     /// <p>Indicates how this model version was generated.</p>
     pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::ModelVersionSourceType>) -> Self {
-        self.source_type = input;
-        self
+        self.source_type = input; self
     }
     /// <p>Indicates how this model version was generated.</p>
     pub fn get_source_type(&self) -> &::std::option::Option<crate::types::ModelVersionSourceType> {
@@ -189,8 +182,7 @@ impl ModelVersionSummaryBuilder {
     /// <p>If the model is unlabeled, the model quality can't be assessed and the value of <code>ModelQuality</code> is <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model quality assessment by adding labels to the input dataset and retraining the model.</p>
     /// <p>For information about improving the quality of a model, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best practices with Amazon Lookout for Equipment</a>.</p>
     pub fn set_model_quality(mut self, input: ::std::option::Option<crate::types::ModelQuality>) -> Self {
-        self.model_quality = input;
-        self
+        self.model_quality = input; self
     }
     /// <p>Provides a quality assessment for a model that uses labels. If Lookout for Equipment determines that the model quality is poor based on training metrics, the value is <code>POOR_QUALITY_DETECTED</code>. Otherwise, the value is <code>QUALITY_THRESHOLD_MET</code>.</p>
     /// <p>If the model is unlabeled, the model quality can't be assessed and the value of <code>ModelQuality</code> is <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model quality assessment by adding labels to the input dataset and retraining the model.</p>
@@ -201,14 +193,23 @@ impl ModelVersionSummaryBuilder {
     /// Consumes the builder and constructs a [`ModelVersionSummary`](crate::types::ModelVersionSummary).
     pub fn build(self) -> crate::types::ModelVersionSummary {
         crate::types::ModelVersionSummary {
-            model_name: self.model_name,
-            model_arn: self.model_arn,
-            model_version: self.model_version,
-            model_version_arn: self.model_version_arn,
-            created_at: self.created_at,
-            status: self.status,
-            source_type: self.source_type,
-            model_quality: self.model_quality,
+            model_name: self.model_name
+            ,
+            model_arn: self.model_arn
+            ,
+            model_version: self.model_version
+            ,
+            model_version_arn: self.model_version_arn
+            ,
+            created_at: self.created_at
+            ,
+            status: self.status
+            ,
+            source_type: self.source_type
+            ,
+            model_quality: self.model_quality
+            ,
         }
     }
 }
+

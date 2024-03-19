@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeInferenceExperimentInput {
+pub struct DescribeInferenceExperimentInput  {
     /// <p>The name of the inference experiment to describe.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeInferenceExperimentInput {
+impl  DescribeInferenceExperimentInput  {
     /// <p>The name of the inference experiment to describe.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DescribeInferenceExperimentInputBuilder {
     }
     /// <p>The name of the inference experiment to describe.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the inference experiment to describe.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     /// Consumes the builder and constructs a [`DescribeInferenceExperimentInput`](crate::operation::describe_inference_experiment::DescribeInferenceExperimentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_inference_experiment::DescribeInferenceExperimentInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_inference_experiment::DescribeInferenceExperimentInput { name: self.name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_inference_experiment::DescribeInferenceExperimentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_inference_experiment::DescribeInferenceExperimentInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

@@ -3,23 +3,23 @@
 /// <p>Describes the credentials for the service account used by the fleet or image builder to connect to the directory.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ServiceAccountCredentials {
+pub struct ServiceAccountCredentials  {
     /// <p>The user name of the account. This account must have the following privileges: create computer objects, join computers to the domain, and change/reset the password on descendant computer objects for the organizational units specified.</p>
     pub account_name: ::std::option::Option<::std::string::String>,
     /// <p>The password for the account.</p>
     pub account_password: ::std::option::Option<::std::string::String>,
 }
-impl ServiceAccountCredentials {
+impl  ServiceAccountCredentials  {
     /// <p>The user name of the account. This account must have the following privileges: create computer objects, join computers to the domain, and change/reset the password on descendant computer objects for the organizational units specified.</p>
-    pub fn account_name(&self) -> ::std::option::Option<&str> {
+    pub fn account_name(&self) -> ::std::option::Option<& str> {
         self.account_name.as_deref()
     }
     /// <p>The password for the account.</p>
-    pub fn account_password(&self) -> ::std::option::Option<&str> {
+    pub fn account_password(&self) -> ::std::option::Option<& str> {
         self.account_password.as_deref()
     }
 }
-impl ::std::fmt::Debug for ServiceAccountCredentials {
+impl  ::std::fmt::Debug for ServiceAccountCredentials  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceAccountCredentials");
         formatter.field("account_name", &"*** Sensitive Data Redacted ***");
@@ -50,8 +50,7 @@ impl ServiceAccountCredentialsBuilder {
     }
     /// <p>The user name of the account. This account must have the following privileges: create computer objects, join computers to the domain, and change/reset the password on descendant computer objects for the organizational units specified.</p>
     pub fn set_account_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_name = input;
-        self
+        self.account_name = input; self
     }
     /// <p>The user name of the account. This account must have the following privileges: create computer objects, join computers to the domain, and change/reset the password on descendant computer objects for the organizational units specified.</p>
     pub fn get_account_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +64,7 @@ impl ServiceAccountCredentialsBuilder {
     }
     /// <p>The password for the account.</p>
     pub fn set_account_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_password = input;
-        self
+        self.account_password = input; self
     }
     /// <p>The password for the account.</p>
     pub fn get_account_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +73,10 @@ impl ServiceAccountCredentialsBuilder {
     /// Consumes the builder and constructs a [`ServiceAccountCredentials`](crate::types::ServiceAccountCredentials).
     pub fn build(self) -> crate::types::ServiceAccountCredentials {
         crate::types::ServiceAccountCredentials {
-            account_name: self.account_name,
-            account_password: self.account_password,
+            account_name: self.account_name
+            ,
+            account_password: self.account_password
+            ,
         }
     }
 }
@@ -88,3 +88,4 @@ impl ::std::fmt::Debug for ServiceAccountCredentialsBuilder {
         formatter.finish()
     }
 }
+

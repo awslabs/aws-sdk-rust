@@ -4,13 +4,13 @@
 /// <p>Configure these settings for Canvas users starting chats with generative AI foundation models. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/canvas-fm-chat.html"> Use generative AI with foundation models</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GenerativeAiSettings {
+pub struct GenerativeAiSettings  {
     /// <p>The ARN of an Amazon Web Services IAM role that allows fine-tuning of large language models (LLMs) in Amazon Bedrock. The IAM role should have Amazon S3 read and write permissions, as well as a trust relationship that establishes <code>bedrock.amazonaws.com</code> as a service principal.</p>
     pub amazon_bedrock_role_arn: ::std::option::Option<::std::string::String>,
 }
-impl GenerativeAiSettings {
+impl  GenerativeAiSettings  {
     /// <p>The ARN of an Amazon Web Services IAM role that allows fine-tuning of large language models (LLMs) in Amazon Bedrock. The IAM role should have Amazon S3 read and write permissions, as well as a trust relationship that establishes <code>bedrock.amazonaws.com</code> as a service principal.</p>
-    pub fn amazon_bedrock_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn amazon_bedrock_role_arn(&self) -> ::std::option::Option<& str> {
         self.amazon_bedrock_role_arn.as_deref()
     }
 }
@@ -35,8 +35,7 @@ impl GenerativeAiSettingsBuilder {
     }
     /// <p>The ARN of an Amazon Web Services IAM role that allows fine-tuning of large language models (LLMs) in Amazon Bedrock. The IAM role should have Amazon S3 read and write permissions, as well as a trust relationship that establishes <code>bedrock.amazonaws.com</code> as a service principal.</p>
     pub fn set_amazon_bedrock_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.amazon_bedrock_role_arn = input;
-        self
+        self.amazon_bedrock_role_arn = input; self
     }
     /// <p>The ARN of an Amazon Web Services IAM role that allows fine-tuning of large language models (LLMs) in Amazon Bedrock. The IAM role should have Amazon S3 read and write permissions, as well as a trust relationship that establishes <code>bedrock.amazonaws.com</code> as a service principal.</p>
     pub fn get_amazon_bedrock_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -45,7 +44,9 @@ impl GenerativeAiSettingsBuilder {
     /// Consumes the builder and constructs a [`GenerativeAiSettings`](crate::types::GenerativeAiSettings).
     pub fn build(self) -> crate::types::GenerativeAiSettings {
         crate::types::GenerativeAiSettings {
-            amazon_bedrock_role_arn: self.amazon_bedrock_role_arn,
+            amazon_bedrock_role_arn: self.amazon_bedrock_role_arn
+            ,
         }
     }
 }
+

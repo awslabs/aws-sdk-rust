@@ -3,19 +3,19 @@
 /// <p>Contains the category by which the session analytics were grouped and a member of that category.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalyticsSessionGroupByKey {
+pub struct AnalyticsSessionGroupByKey  {
     /// <p>The category by which the session analytics were grouped.</p>
     pub name: ::std::option::Option<crate::types::AnalyticsSessionField>,
     /// <p>A member of the category by which the session analytics were grouped.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl AnalyticsSessionGroupByKey {
+impl  AnalyticsSessionGroupByKey  {
     /// <p>The category by which the session analytics were grouped.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::AnalyticsSessionField> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::AnalyticsSessionField> {
         self.name.as_ref()
     }
     /// <p>A member of the category by which the session analytics were grouped.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AnalyticsSessionGroupByKeyBuilder {
     }
     /// <p>The category by which the session analytics were grouped.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsSessionField>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The category by which the session analytics were grouped.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::AnalyticsSessionField> {
@@ -55,8 +54,7 @@ impl AnalyticsSessionGroupByKeyBuilder {
     }
     /// <p>A member of the category by which the session analytics were grouped.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>A member of the category by which the session analytics were grouped.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AnalyticsSessionGroupByKeyBuilder {
     /// Consumes the builder and constructs a [`AnalyticsSessionGroupByKey`](crate::types::AnalyticsSessionGroupByKey).
     pub fn build(self) -> crate::types::AnalyticsSessionGroupByKey {
         crate::types::AnalyticsSessionGroupByKey {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

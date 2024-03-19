@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEnvironmentBlueprintConfigurationInput {
+pub struct GetEnvironmentBlueprintConfigurationInput  {
     /// <p>The ID of the Amazon DataZone domain where this blueprint exists.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>He ID of the blueprint.</p>
     pub environment_blueprint_identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetEnvironmentBlueprintConfigurationInput {
+impl  GetEnvironmentBlueprintConfigurationInput  {
     /// <p>The ID of the Amazon DataZone domain where this blueprint exists.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>He ID of the blueprint.</p>
-    pub fn environment_blueprint_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn environment_blueprint_identifier(&self) -> ::std::option::Option<& str> {
         self.environment_blueprint_identifier.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetEnvironmentBlueprintConfigurationInputBuilder {
     }
     /// <p>The ID of the Amazon DataZone domain where this blueprint exists.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The ID of the Amazon DataZone domain where this blueprint exists.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl GetEnvironmentBlueprintConfigurationInputBuilder {
     }
     /// <p>He ID of the blueprint.</p>
     pub fn set_environment_blueprint_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_blueprint_identifier = input;
-        self
+        self.environment_blueprint_identifier = input; self
     }
     /// <p>He ID of the blueprint.</p>
     pub fn get_environment_blueprint_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_blueprint_identifier
     }
     /// Consumes the builder and constructs a [`GetEnvironmentBlueprintConfigurationInput`](crate::operation::get_environment_blueprint_configuration::GetEnvironmentBlueprintConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_environment_blueprint_configuration::GetEnvironmentBlueprintConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_environment_blueprint_configuration::GetEnvironmentBlueprintConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_environment_blueprint_configuration::GetEnvironmentBlueprintConfigurationInput {
-                domain_identifier: self.domain_identifier,
-                environment_blueprint_identifier: self.environment_blueprint_identifier,
-            },
+                domain_identifier: self.domain_identifier
+                ,
+                environment_blueprint_identifier: self.environment_blueprint_identifier
+                ,
+            }
         )
     }
 }
+

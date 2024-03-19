@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct TestStateInput {
+pub struct TestStateInput  {
     /// <p>The <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a> (ASL) definition of the state.</p>
     pub definition: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the execution role with the required IAM permissions for the state.</p>
@@ -25,17 +25,17 @@ pub struct TestStateInput {
     /// <p>By default, <code>revealSecrets</code> is set to <code>false</code>.</p>
     pub reveal_secrets: ::std::option::Option<bool>,
 }
-impl TestStateInput {
+impl  TestStateInput  {
     /// <p>The <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a> (ASL) definition of the state.</p>
-    pub fn definition(&self) -> ::std::option::Option<&str> {
+    pub fn definition(&self) -> ::std::option::Option<& str> {
         self.definition.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the execution role with the required IAM permissions for the state.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>A string that contains the JSON input data for the state.</p>
-    pub fn input(&self) -> ::std::option::Option<&str> {
+    pub fn input(&self) -> ::std::option::Option<& str> {
         self.input.as_deref()
     }
     /// <p>Determines the values to return when a state is tested. You can specify one of the following types:</p>
@@ -48,7 +48,7 @@ impl TestStateInput {
     /// <p><code>TRACE</code>: Shows the HTTP request and response for an HTTP Task. This level also shows the final state output along with the input and output data processing result.</p></li>
     /// </ul>
     /// <p>Each of these levels also provide information about the status of the state execution and the next state to transition to.</p>
-    pub fn inspection_level(&self) -> ::std::option::Option<&crate::types::InspectionLevel> {
+    pub fn inspection_level(&self) -> ::std::option::Option<& crate::types::InspectionLevel> {
         self.inspection_level.as_ref()
     }
     /// <p>Specifies whether or not to include secret information in the test result. For HTTP Tasks, a secret includes the data that an EventBridge connection adds to modify the HTTP request headers, query parameters, and body. Step Functions doesn't omit any information included in the state definition or the HTTP response.</p>
@@ -58,7 +58,7 @@ impl TestStateInput {
         self.reveal_secrets
     }
 }
-impl ::std::fmt::Debug for TestStateInput {
+impl  ::std::fmt::Debug for TestStateInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TestStateInput");
         formatter.field("definition", &"*** Sensitive Data Redacted ***");
@@ -95,8 +95,7 @@ impl TestStateInputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a> (ASL) definition of the state.</p>
     pub fn set_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.definition = input;
-        self
+        self.definition = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a> (ASL) definition of the state.</p>
     pub fn get_definition(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +109,7 @@ impl TestStateInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the execution role with the required IAM permissions for the state.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the execution role with the required IAM permissions for the state.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +122,7 @@ impl TestStateInputBuilder {
     }
     /// <p>A string that contains the JSON input data for the state.</p>
     pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
     }
     /// <p>A string that contains the JSON input data for the state.</p>
     pub fn get_input(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,8 +153,7 @@ impl TestStateInputBuilder {
     /// </ul>
     /// <p>Each of these levels also provide information about the status of the state execution and the next state to transition to.</p>
     pub fn set_inspection_level(mut self, input: ::std::option::Option<crate::types::InspectionLevel>) -> Self {
-        self.inspection_level = input;
-        self
+        self.inspection_level = input; self
     }
     /// <p>Determines the values to return when a state is tested. You can specify one of the following types:</p>
     /// <ul>
@@ -183,8 +179,7 @@ impl TestStateInputBuilder {
     /// <p>If you set <code>revealSecrets</code> to <code>true</code>, you must make sure that the IAM user that calls the <code>TestState</code> API has permission for the <code>states:RevealSecrets</code> action. For an example of IAM policy that sets the <code>states:RevealSecrets</code> permission, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/test-state-isolation.html#test-state-permissions">IAM permissions to test a state</a>. Without this permission, Step Functions throws an access denied error.</p>
     /// <p>By default, <code>revealSecrets</code> is set to <code>false</code>.</p>
     pub fn set_reveal_secrets(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.reveal_secrets = input;
-        self
+        self.reveal_secrets = input; self
     }
     /// <p>Specifies whether or not to include secret information in the test result. For HTTP Tasks, a secret includes the data that an EventBridge connection adds to modify the HTTP request headers, query parameters, and body. Step Functions doesn't omit any information included in the state definition or the HTTP response.</p>
     /// <p>If you set <code>revealSecrets</code> to <code>true</code>, you must make sure that the IAM user that calls the <code>TestState</code> API has permission for the <code>states:RevealSecrets</code> action. For an example of IAM policy that sets the <code>states:RevealSecrets</code> permission, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/test-state-isolation.html#test-state-permissions">IAM permissions to test a state</a>. Without this permission, Step Functions throws an access denied error.</p>
@@ -194,13 +189,20 @@ impl TestStateInputBuilder {
     }
     /// Consumes the builder and constructs a [`TestStateInput`](crate::operation::test_state::TestStateInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::test_state::TestStateInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::test_state::TestStateInput {
-            definition: self.definition,
-            role_arn: self.role_arn,
-            input: self.input,
-            inspection_level: self.inspection_level,
-            reveal_secrets: self.reveal_secrets,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::test_state::TestStateInput {
+                definition: self.definition
+                ,
+                role_arn: self.role_arn
+                ,
+                input: self.input
+                ,
+                inspection_level: self.inspection_level
+                ,
+                reveal_secrets: self.reveal_secrets
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for TestStateInputBuilder {
@@ -214,3 +216,4 @@ impl ::std::fmt::Debug for TestStateInputBuilder {
         formatter.finish()
     }
 }
+

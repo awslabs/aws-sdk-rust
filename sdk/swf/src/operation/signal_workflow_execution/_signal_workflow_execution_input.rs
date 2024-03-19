@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SignalWorkflowExecutionInput {
+pub struct SignalWorkflowExecutionInput  {
     /// <p>The name of the domain containing the workflow execution to signal.</p>
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The workflowId of the workflow execution to signal.</p>
@@ -14,25 +14,25 @@ pub struct SignalWorkflowExecutionInput {
     /// <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target workflow execution's history.</p>
     pub input: ::std::option::Option<::std::string::String>,
 }
-impl SignalWorkflowExecutionInput {
+impl  SignalWorkflowExecutionInput  {
     /// <p>The name of the domain containing the workflow execution to signal.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The workflowId of the workflow execution to signal.</p>
-    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
+    pub fn workflow_id(&self) -> ::std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>The runId of the workflow execution to signal.</p>
-    pub fn run_id(&self) -> ::std::option::Option<&str> {
+    pub fn run_id(&self) -> ::std::option::Option<& str> {
         self.run_id.as_deref()
     }
     /// <p>The name of the signal. This name must be meaningful to the target workflow.</p>
-    pub fn signal_name(&self) -> ::std::option::Option<&str> {
+    pub fn signal_name(&self) -> ::std::option::Option<& str> {
         self.signal_name.as_deref()
     }
     /// <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target workflow execution's history.</p>
-    pub fn input(&self) -> ::std::option::Option<&str> {
+    pub fn input(&self) -> ::std::option::Option<& str> {
         self.input.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl SignalWorkflowExecutionInputBuilder {
     }
     /// <p>The name of the domain containing the workflow execution to signal.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The name of the domain containing the workflow execution to signal.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl SignalWorkflowExecutionInputBuilder {
     }
     /// <p>The workflowId of the workflow execution to signal.</p>
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_id = input;
-        self
+        self.workflow_id = input; self
     }
     /// <p>The workflowId of the workflow execution to signal.</p>
     pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl SignalWorkflowExecutionInputBuilder {
     }
     /// <p>The runId of the workflow execution to signal.</p>
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.run_id = input;
-        self
+        self.run_id = input; self
     }
     /// <p>The runId of the workflow execution to signal.</p>
     pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +103,7 @@ impl SignalWorkflowExecutionInputBuilder {
     }
     /// <p>The name of the signal. This name must be meaningful to the target workflow.</p>
     pub fn set_signal_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.signal_name = input;
-        self
+        self.signal_name = input; self
     }
     /// <p>The name of the signal. This name must be meaningful to the target workflow.</p>
     pub fn get_signal_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,26 +116,28 @@ impl SignalWorkflowExecutionInputBuilder {
     }
     /// <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target workflow execution's history.</p>
     pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
     }
     /// <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target workflow execution's history.</p>
     pub fn get_input(&self) -> &::std::option::Option<::std::string::String> {
         &self.input
     }
     /// Consumes the builder and constructs a [`SignalWorkflowExecutionInput`](crate::operation::signal_workflow_execution::SignalWorkflowExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::signal_workflow_execution::SignalWorkflowExecutionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::signal_workflow_execution::SignalWorkflowExecutionInput {
-            domain: self.domain,
-            workflow_id: self.workflow_id,
-            run_id: self.run_id,
-            signal_name: self.signal_name,
-            input: self.input,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::signal_workflow_execution::SignalWorkflowExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::signal_workflow_execution::SignalWorkflowExecutionInput {
+                domain: self.domain
+                ,
+                workflow_id: self.workflow_id
+                ,
+                run_id: self.run_id
+                ,
+                signal_name: self.signal_name
+                ,
+                input: self.input
+                ,
+            }
+        )
     }
 }
+

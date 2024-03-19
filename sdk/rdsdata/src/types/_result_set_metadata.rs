@@ -3,22 +3,23 @@
 /// <p>The metadata of the result set returned by a SQL statement.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResultSetMetadata {
+pub struct ResultSetMetadata  {
     /// <p>The number of columns in the result set.</p>
     pub column_count: i64,
     /// <p>The metadata of the columns in the result set.</p>
-    pub column_metadata: ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>,
+    pub column_metadata: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnMetadata>>,
 }
-impl ResultSetMetadata {
+impl  ResultSetMetadata  {
     /// <p>The number of columns in the result set.</p>
     pub fn column_count(&self) -> i64 {
         self.column_count
     }
     /// <p>The metadata of the columns in the result set.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_metadata.is_none()`.
-    pub fn column_metadata(&self) -> &[crate::types::ColumnMetadata] {
-        self.column_metadata.as_deref().unwrap_or_default()
+    pub fn column_metadata(&self) -> & [crate::types::ColumnMetadata] {
+        self.column_metadata.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ResultSetMetadata {
@@ -33,7 +34,7 @@ impl ResultSetMetadata {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResultSetMetadataBuilder {
     pub(crate) column_count: ::std::option::Option<i64>,
-    pub(crate) column_metadata: ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>,
+    pub(crate) column_metadata: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnMetadata>>,
 }
 impl ResultSetMetadataBuilder {
     /// <p>The number of columns in the result set.</p>
@@ -43,8 +44,7 @@ impl ResultSetMetadataBuilder {
     }
     /// <p>The number of columns in the result set.</p>
     pub fn set_column_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.column_count = input;
-        self
+        self.column_count = input; self
     }
     /// <p>The number of columns in the result set.</p>
     pub fn get_column_count(&self) -> &::std::option::Option<i64> {
@@ -57,24 +57,27 @@ impl ResultSetMetadataBuilder {
     /// <p>The metadata of the columns in the result set.</p>
     pub fn column_metadata(mut self, input: crate::types::ColumnMetadata) -> Self {
         let mut v = self.column_metadata.unwrap_or_default();
-        v.push(input);
-        self.column_metadata = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.column_metadata = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The metadata of the columns in the result set.</p>
-    pub fn set_column_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>) -> Self {
-        self.column_metadata = input;
-        self
+    pub fn set_column_metadata(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnMetadata>>) -> Self {
+        self.column_metadata = input; self
     }
     /// <p>The metadata of the columns in the result set.</p>
-    pub fn get_column_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>> {
+    pub fn get_column_metadata(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ColumnMetadata>> {
         &self.column_metadata
     }
     /// Consumes the builder and constructs a [`ResultSetMetadata`](crate::types::ResultSetMetadata).
     pub fn build(self) -> crate::types::ResultSetMetadata {
         crate::types::ResultSetMetadata {
-            column_count: self.column_count.unwrap_or_default(),
-            column_metadata: self.column_metadata,
+            column_count: self.column_count
+                .unwrap_or_default()
+            ,
+            column_metadata: self.column_metadata
+            ,
         }
     }
 }
+

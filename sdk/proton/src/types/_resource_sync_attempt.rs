@@ -3,7 +3,7 @@
 /// <p>Detail data for a resource sync attempt activated by a push to a repository.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceSyncAttempt {
+pub struct ResourceSyncAttempt  {
     /// <p>Detail data for the initial repository commit, path and push.</p>
     pub initial_revision: ::std::option::Option<crate::types::Revision>,
     /// <p>Detail data for the target revision.</p>
@@ -15,34 +15,32 @@ pub struct ResourceSyncAttempt {
     /// <p>The status of the sync attempt.</p>
     pub status: crate::types::ResourceSyncStatus,
     /// <p>An array of events with detail data.</p>
-    pub events: ::std::vec::Vec<crate::types::ResourceSyncEvent>,
+    pub events: ::std::vec::Vec::<crate::types::ResourceSyncEvent>,
 }
-impl ResourceSyncAttempt {
+impl  ResourceSyncAttempt  {
     /// <p>Detail data for the initial repository commit, path and push.</p>
-    pub fn initial_revision(&self) -> ::std::option::Option<&crate::types::Revision> {
+    pub fn initial_revision(&self) -> ::std::option::Option<& crate::types::Revision> {
         self.initial_revision.as_ref()
     }
     /// <p>Detail data for the target revision.</p>
-    pub fn target_revision(&self) -> ::std::option::Option<&crate::types::Revision> {
+    pub fn target_revision(&self) -> ::std::option::Option<& crate::types::Revision> {
         self.target_revision.as_ref()
     }
     /// <p>The resource that is synced to.</p>
-    pub fn target(&self) -> &str {
-        use std::ops::Deref;
-        self.target.deref()
+    pub fn target(&self) -> & str {
+        use std::ops::Deref; self.target.deref()
     }
     /// <p>The time when the sync attempt started.</p>
-    pub fn started_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn started_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.started_at
     }
     /// <p>The status of the sync attempt.</p>
-    pub fn status(&self) -> &crate::types::ResourceSyncStatus {
+    pub fn status(&self) -> & crate::types::ResourceSyncStatus {
         &self.status
     }
     /// <p>An array of events with detail data.</p>
-    pub fn events(&self) -> &[crate::types::ResourceSyncEvent] {
-        use std::ops::Deref;
-        self.events.deref()
+    pub fn events(&self) -> & [crate::types::ResourceSyncEvent] {
+        use std::ops::Deref; self.events.deref()
     }
 }
 impl ResourceSyncAttempt {
@@ -61,7 +59,7 @@ pub struct ResourceSyncAttemptBuilder {
     pub(crate) target: ::std::option::Option<::std::string::String>,
     pub(crate) started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::ResourceSyncStatus>,
-    pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::ResourceSyncEvent>>,
+    pub(crate) events: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceSyncEvent>>,
 }
 impl ResourceSyncAttemptBuilder {
     /// <p>Detail data for the initial repository commit, path and push.</p>
@@ -72,8 +70,7 @@ impl ResourceSyncAttemptBuilder {
     }
     /// <p>Detail data for the initial repository commit, path and push.</p>
     pub fn set_initial_revision(mut self, input: ::std::option::Option<crate::types::Revision>) -> Self {
-        self.initial_revision = input;
-        self
+        self.initial_revision = input; self
     }
     /// <p>Detail data for the initial repository commit, path and push.</p>
     pub fn get_initial_revision(&self) -> &::std::option::Option<crate::types::Revision> {
@@ -87,8 +84,7 @@ impl ResourceSyncAttemptBuilder {
     }
     /// <p>Detail data for the target revision.</p>
     pub fn set_target_revision(mut self, input: ::std::option::Option<crate::types::Revision>) -> Self {
-        self.target_revision = input;
-        self
+        self.target_revision = input; self
     }
     /// <p>Detail data for the target revision.</p>
     pub fn get_target_revision(&self) -> &::std::option::Option<crate::types::Revision> {
@@ -102,8 +98,7 @@ impl ResourceSyncAttemptBuilder {
     }
     /// <p>The resource that is synced to.</p>
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
     }
     /// <p>The resource that is synced to.</p>
     pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +112,7 @@ impl ResourceSyncAttemptBuilder {
     }
     /// <p>The time when the sync attempt started.</p>
     pub fn set_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.started_at = input;
-        self
+        self.started_at = input; self
     }
     /// <p>The time when the sync attempt started.</p>
     pub fn get_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -132,8 +126,7 @@ impl ResourceSyncAttemptBuilder {
     }
     /// <p>The status of the sync attempt.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceSyncStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the sync attempt.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourceSyncStatus> {
@@ -146,17 +139,16 @@ impl ResourceSyncAttemptBuilder {
     /// <p>An array of events with detail data.</p>
     pub fn events(mut self, input: crate::types::ResourceSyncEvent) -> Self {
         let mut v = self.events.unwrap_or_default();
-        v.push(input);
-        self.events = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.events = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of events with detail data.</p>
-    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceSyncEvent>>) -> Self {
-        self.events = input;
-        self
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceSyncEvent>>) -> Self {
+        self.events = input; self
     }
     /// <p>An array of events with detail data.</p>
-    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceSyncEvent>> {
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceSyncEvent>> {
         &self.events
     }
     /// Consumes the builder and constructs a [`ResourceSyncAttempt`](crate::types::ResourceSyncAttempt).
@@ -166,33 +158,34 @@ impl ResourceSyncAttemptBuilder {
     /// - [`status`](crate::types::builders::ResourceSyncAttemptBuilder::status)
     /// - [`events`](crate::types::builders::ResourceSyncAttemptBuilder::events)
     pub fn build(self) -> ::std::result::Result<crate::types::ResourceSyncAttempt, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResourceSyncAttempt {
-            initial_revision: self.initial_revision,
-            target_revision: self.target_revision,
-            target: self.target.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "target",
-                    "target was not specified but it is required when building ResourceSyncAttempt",
-                )
-            })?,
-            started_at: self.started_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "started_at",
-                    "started_at was not specified but it is required when building ResourceSyncAttempt",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building ResourceSyncAttempt",
-                )
-            })?,
-            events: self.events.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "events",
-                    "events was not specified but it is required when building ResourceSyncAttempt",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResourceSyncAttempt {
+                initial_revision: self.initial_revision
+                ,
+                target_revision: self.target_revision
+                ,
+                target: self.target
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("target", "target was not specified but it is required when building ResourceSyncAttempt")
+                    )?
+                ,
+                started_at: self.started_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("started_at", "started_at was not specified but it is required when building ResourceSyncAttempt")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building ResourceSyncAttempt")
+                    )?
+                ,
+                events: self.events
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("events", "events was not specified but it is required when building ResourceSyncAttempt")
+                    )?
+                ,
+            }
+        )
     }
 }
+

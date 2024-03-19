@@ -2,37 +2,38 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AddResourcePermissionsInput {
+pub struct AddResourcePermissionsInput  {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub authentication_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resource.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The users, groups, or organization being granted permission.</p>
-    pub principals: ::std::option::Option<::std::vec::Vec<crate::types::SharePrincipal>>,
+    pub principals: ::std::option::Option<::std::vec::Vec::<crate::types::SharePrincipal>>,
     /// <p>The notification options.</p>
     pub notification_options: ::std::option::Option<crate::types::NotificationOptions>,
 }
-impl AddResourcePermissionsInput {
+impl  AddResourcePermissionsInput  {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(&self) -> ::std::option::Option<&str> {
+    pub fn authentication_token(&self) -> ::std::option::Option<& str> {
         self.authentication_token.as_deref()
     }
     /// <p>The ID of the resource.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The users, groups, or organization being granted permission.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.principals.is_none()`.
-    pub fn principals(&self) -> &[crate::types::SharePrincipal] {
-        self.principals.as_deref().unwrap_or_default()
+    pub fn principals(&self) -> & [crate::types::SharePrincipal] {
+        self.principals.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The notification options.</p>
-    pub fn notification_options(&self) -> ::std::option::Option<&crate::types::NotificationOptions> {
+    pub fn notification_options(&self) -> ::std::option::Option<& crate::types::NotificationOptions> {
         self.notification_options.as_ref()
     }
 }
-impl ::std::fmt::Debug for AddResourcePermissionsInput {
+impl  ::std::fmt::Debug for AddResourcePermissionsInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AddResourcePermissionsInput");
         formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
@@ -55,7 +56,7 @@ impl AddResourcePermissionsInput {
 pub struct AddResourcePermissionsInputBuilder {
     pub(crate) authentication_token: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
-    pub(crate) principals: ::std::option::Option<::std::vec::Vec<crate::types::SharePrincipal>>,
+    pub(crate) principals: ::std::option::Option<::std::vec::Vec::<crate::types::SharePrincipal>>,
     pub(crate) notification_options: ::std::option::Option<crate::types::NotificationOptions>,
 }
 impl AddResourcePermissionsInputBuilder {
@@ -66,8 +67,7 @@ impl AddResourcePermissionsInputBuilder {
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.authentication_token = input;
-        self
+        self.authentication_token = input; self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +81,7 @@ impl AddResourcePermissionsInputBuilder {
     }
     /// <p>The ID of the resource.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The ID of the resource.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,17 +94,16 @@ impl AddResourcePermissionsInputBuilder {
     /// <p>The users, groups, or organization being granted permission.</p>
     pub fn principals(mut self, input: crate::types::SharePrincipal) -> Self {
         let mut v = self.principals.unwrap_or_default();
-        v.push(input);
-        self.principals = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.principals = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The users, groups, or organization being granted permission.</p>
-    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SharePrincipal>>) -> Self {
-        self.principals = input;
-        self
+    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SharePrincipal>>) -> Self {
+        self.principals = input; self
     }
     /// <p>The users, groups, or organization being granted permission.</p>
-    pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SharePrincipal>> {
+    pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SharePrincipal>> {
         &self.principals
     }
     /// <p>The notification options.</p>
@@ -115,26 +113,26 @@ impl AddResourcePermissionsInputBuilder {
     }
     /// <p>The notification options.</p>
     pub fn set_notification_options(mut self, input: ::std::option::Option<crate::types::NotificationOptions>) -> Self {
-        self.notification_options = input;
-        self
+        self.notification_options = input; self
     }
     /// <p>The notification options.</p>
     pub fn get_notification_options(&self) -> &::std::option::Option<crate::types::NotificationOptions> {
         &self.notification_options
     }
     /// Consumes the builder and constructs a [`AddResourcePermissionsInput`](crate::operation::add_resource_permissions::AddResourcePermissionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::add_resource_permissions::AddResourcePermissionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::add_resource_permissions::AddResourcePermissionsInput {
-            authentication_token: self.authentication_token,
-            resource_id: self.resource_id,
-            principals: self.principals,
-            notification_options: self.notification_options,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_resource_permissions::AddResourcePermissionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::add_resource_permissions::AddResourcePermissionsInput {
+                authentication_token: self.authentication_token
+                ,
+                resource_id: self.resource_id
+                ,
+                principals: self.principals
+                ,
+                notification_options: self.notification_options
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for AddResourcePermissionsInputBuilder {
@@ -147,3 +145,4 @@ impl ::std::fmt::Debug for AddResourcePermissionsInputBuilder {
         formatter.finish()
     }
 }
+

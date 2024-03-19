@@ -3,13 +3,13 @@
 /// <p>The source for an image.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImageSource {
+pub struct ImageSource  {
     /// <p>The type of the image.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
 }
-impl ImageSource {
+impl  ImageSource  {
     /// <p>The type of the image.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl ImageSourceBuilder {
     }
     /// <p>The type of the image.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the image.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl ImageSourceBuilder {
     }
     /// Consumes the builder and constructs a [`ImageSource`](crate::types::ImageSource).
     pub fn build(self) -> crate::types::ImageSource {
-        crate::types::ImageSource { r#type: self.r#type }
+        crate::types::ImageSource {
+            r#type: self.r#type
+            ,
+        }
     }
 }
+

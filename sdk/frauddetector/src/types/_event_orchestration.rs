@@ -3,11 +3,11 @@
 /// <p>The event orchestration status.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EventOrchestration {
+pub struct EventOrchestration  {
     /// <p>Specifies if event orchestration is enabled through Amazon EventBridge.</p>
     pub event_bridge_enabled: bool,
 }
-impl EventOrchestration {
+impl  EventOrchestration  {
     /// <p>Specifies if event orchestration is enabled through Amazon EventBridge.</p>
     pub fn event_bridge_enabled(&self) -> bool {
         self.event_bridge_enabled
@@ -35,8 +35,7 @@ impl EventOrchestrationBuilder {
     }
     /// <p>Specifies if event orchestration is enabled through Amazon EventBridge.</p>
     pub fn set_event_bridge_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.event_bridge_enabled = input;
-        self
+        self.event_bridge_enabled = input; self
     }
     /// <p>Specifies if event orchestration is enabled through Amazon EventBridge.</p>
     pub fn get_event_bridge_enabled(&self) -> &::std::option::Option<bool> {
@@ -46,13 +45,15 @@ impl EventOrchestrationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`event_bridge_enabled`](crate::types::builders::EventOrchestrationBuilder::event_bridge_enabled)
     pub fn build(self) -> ::std::result::Result<crate::types::EventOrchestration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EventOrchestration {
-            event_bridge_enabled: self.event_bridge_enabled.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "event_bridge_enabled",
-                    "event_bridge_enabled was not specified but it is required when building EventOrchestration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EventOrchestration {
+                event_bridge_enabled: self.event_bridge_enabled
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("event_bridge_enabled", "event_bridge_enabled was not specified but it is required when building EventOrchestration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

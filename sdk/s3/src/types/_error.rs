@@ -3,7 +3,7 @@
 /// <p>Container for all error elements.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Error {
+pub struct Error  {
     /// <p>The error key.</p>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The version ID of the error.</p><note>
@@ -986,15 +986,15 @@ pub struct Error {
     /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl Error {
+impl  Error  {
     /// <p>The error key.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The version ID of the error.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn version_id(&self) -> ::std::option::Option<&str> {
+    pub fn version_id(&self) -> ::std::option::Option<& str> {
         self.version_id.as_deref()
     }
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. The following is a list of Amazon S3 error codes. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error responses</a>.</p>
@@ -1969,11 +1969,11 @@ impl Error {
     /// </ul></li>
     /// </ul>
     /// <p></p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -2001,8 +2001,7 @@ impl ErrorBuilder {
     }
     /// <p>The error key.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The error key.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -2019,8 +2018,7 @@ impl ErrorBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_id = input;
-        self
+        self.version_id = input; self
     }
     /// <p>The version ID of the error.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -3977,8 +3975,7 @@ impl ErrorBuilder {
     /// </ul>
     /// <p></p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. The following is a list of Amazon S3 error codes. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error responses</a>.</p>
     /// <ul>
@@ -4962,8 +4959,7 @@ impl ErrorBuilder {
     }
     /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -4972,10 +4968,15 @@ impl ErrorBuilder {
     /// Consumes the builder and constructs a [`Error`](crate::types::Error).
     pub fn build(self) -> crate::types::Error {
         crate::types::Error {
-            key: self.key,
-            version_id: self.version_id,
-            code: self.code,
-            message: self.message,
+            key: self.key
+            ,
+            version_id: self.version_id
+            ,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

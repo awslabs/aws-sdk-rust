@@ -7,19 +7,19 @@
 /// <p>The country from which web requests originate that you want AWS WAF to search for.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GeoMatchConstraint {
+pub struct GeoMatchConstraint  {
     /// <p>The type of geographical area you want AWS WAF to search for. Currently <code>Country</code> is the only valid value.</p>
     pub r#type: crate::types::GeoMatchConstraintType,
     /// <p>The country that you want AWS WAF to search for.</p>
     pub value: crate::types::GeoMatchConstraintValue,
 }
-impl GeoMatchConstraint {
+impl  GeoMatchConstraint  {
     /// <p>The type of geographical area you want AWS WAF to search for. Currently <code>Country</code> is the only valid value.</p>
-    pub fn r#type(&self) -> &crate::types::GeoMatchConstraintType {
+    pub fn r#type(&self) -> & crate::types::GeoMatchConstraintType {
         &self.r#type
     }
     /// <p>The country that you want AWS WAF to search for.</p>
-    pub fn value(&self) -> &crate::types::GeoMatchConstraintValue {
+    pub fn value(&self) -> & crate::types::GeoMatchConstraintValue {
         &self.value
     }
 }
@@ -46,8 +46,7 @@ impl GeoMatchConstraintBuilder {
     }
     /// <p>The type of geographical area you want AWS WAF to search for. Currently <code>Country</code> is the only valid value.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::GeoMatchConstraintType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of geographical area you want AWS WAF to search for. Currently <code>Country</code> is the only valid value.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::GeoMatchConstraintType> {
@@ -61,8 +60,7 @@ impl GeoMatchConstraintBuilder {
     }
     /// <p>The country that you want AWS WAF to search for.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::GeoMatchConstraintValue>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The country that you want AWS WAF to search for.</p>
     pub fn get_value(&self) -> &::std::option::Option<crate::types::GeoMatchConstraintValue> {
@@ -73,19 +71,20 @@ impl GeoMatchConstraintBuilder {
     /// - [`r#type`](crate::types::builders::GeoMatchConstraintBuilder::r#type)
     /// - [`value`](crate::types::builders::GeoMatchConstraintBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::GeoMatchConstraint, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GeoMatchConstraint {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building GeoMatchConstraint",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building GeoMatchConstraint",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GeoMatchConstraint {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building GeoMatchConstraint")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building GeoMatchConstraint")
+                    )?
+                ,
+            }
+        )
     }
 }
+

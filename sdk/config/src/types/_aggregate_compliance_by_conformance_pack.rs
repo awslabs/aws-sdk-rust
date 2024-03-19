@@ -4,7 +4,7 @@
 /// <p>A conformance pack is compliant if all of the rules in a conformance packs are compliant. It is noncompliant if any of the rules are not compliant. The compliance status of a conformance pack is INSUFFICIENT_DATA only if all rules within a conformance pack cannot be evaluated due to insufficient data. If some of the rules in a conformance pack are compliant but the compliance status of other rules in that same conformance pack is INSUFFICIENT_DATA, the conformance pack shows compliant.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AggregateComplianceByConformancePack {
+pub struct AggregateComplianceByConformancePack  {
     /// <p>The name of the conformance pack.</p>
     pub conformance_pack_name: ::std::option::Option<::std::string::String>,
     /// <p>The compliance status of the conformance pack.</p>
@@ -14,21 +14,21 @@ pub struct AggregateComplianceByConformancePack {
     /// <p>The source Amazon Web Services Region from where the data is aggregated.</p>
     pub aws_region: ::std::option::Option<::std::string::String>,
 }
-impl AggregateComplianceByConformancePack {
+impl  AggregateComplianceByConformancePack  {
     /// <p>The name of the conformance pack.</p>
-    pub fn conformance_pack_name(&self) -> ::std::option::Option<&str> {
+    pub fn conformance_pack_name(&self) -> ::std::option::Option<& str> {
         self.conformance_pack_name.as_deref()
     }
     /// <p>The compliance status of the conformance pack.</p>
-    pub fn compliance(&self) -> ::std::option::Option<&crate::types::AggregateConformancePackCompliance> {
+    pub fn compliance(&self) -> ::std::option::Option<& crate::types::AggregateConformancePackCompliance> {
         self.compliance.as_ref()
     }
     /// <p>The 12-digit Amazon Web Services account ID of the source account.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The source Amazon Web Services Region from where the data is aggregated.</p>
-    pub fn aws_region(&self) -> ::std::option::Option<&str> {
+    pub fn aws_region(&self) -> ::std::option::Option<& str> {
         self.aws_region.as_deref()
     }
 }
@@ -56,8 +56,7 @@ impl AggregateComplianceByConformancePackBuilder {
     }
     /// <p>The name of the conformance pack.</p>
     pub fn set_conformance_pack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.conformance_pack_name = input;
-        self
+        self.conformance_pack_name = input; self
     }
     /// <p>The name of the conformance pack.</p>
     pub fn get_conformance_pack_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl AggregateComplianceByConformancePackBuilder {
     }
     /// <p>The compliance status of the conformance pack.</p>
     pub fn set_compliance(mut self, input: ::std::option::Option<crate::types::AggregateConformancePackCompliance>) -> Self {
-        self.compliance = input;
-        self
+        self.compliance = input; self
     }
     /// <p>The compliance status of the conformance pack.</p>
     pub fn get_compliance(&self) -> &::std::option::Option<crate::types::AggregateConformancePackCompliance> {
@@ -84,8 +82,7 @@ impl AggregateComplianceByConformancePackBuilder {
     }
     /// <p>The 12-digit Amazon Web Services account ID of the source account.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The 12-digit Amazon Web Services account ID of the source account.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +95,7 @@ impl AggregateComplianceByConformancePackBuilder {
     }
     /// <p>The source Amazon Web Services Region from where the data is aggregated.</p>
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_region = input;
-        self
+        self.aws_region = input; self
     }
     /// <p>The source Amazon Web Services Region from where the data is aggregated.</p>
     pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,10 +104,15 @@ impl AggregateComplianceByConformancePackBuilder {
     /// Consumes the builder and constructs a [`AggregateComplianceByConformancePack`](crate::types::AggregateComplianceByConformancePack).
     pub fn build(self) -> crate::types::AggregateComplianceByConformancePack {
         crate::types::AggregateComplianceByConformancePack {
-            conformance_pack_name: self.conformance_pack_name,
-            compliance: self.compliance,
-            account_id: self.account_id,
-            aws_region: self.aws_region,
+            conformance_pack_name: self.conformance_pack_name
+            ,
+            compliance: self.compliance
+            ,
+            account_id: self.account_id
+            ,
+            aws_region: self.aws_region
+            ,
         }
     }
 }
+

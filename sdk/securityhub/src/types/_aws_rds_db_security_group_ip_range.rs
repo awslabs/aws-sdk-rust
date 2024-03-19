@@ -3,19 +3,19 @@
 /// <p>IP range information for an RDS DB security group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsRdsDbSecurityGroupIpRange {
+pub struct AwsRdsDbSecurityGroupIpRange  {
     /// <p>Specifies the IP range.</p>
     pub cidr_ip: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the status of the IP range.</p>
     pub status: ::std::option::Option<::std::string::String>,
 }
-impl AwsRdsDbSecurityGroupIpRange {
+impl  AwsRdsDbSecurityGroupIpRange  {
     /// <p>Specifies the IP range.</p>
-    pub fn cidr_ip(&self) -> ::std::option::Option<&str> {
+    pub fn cidr_ip(&self) -> ::std::option::Option<& str> {
         self.cidr_ip.as_deref()
     }
     /// <p>Specifies the status of the IP range.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AwsRdsDbSecurityGroupIpRangeBuilder {
     }
     /// <p>Specifies the IP range.</p>
     pub fn set_cidr_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cidr_ip = input;
-        self
+        self.cidr_ip = input; self
     }
     /// <p>Specifies the IP range.</p>
     pub fn get_cidr_ip(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AwsRdsDbSecurityGroupIpRangeBuilder {
     }
     /// <p>Specifies the status of the IP range.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Specifies the status of the IP range.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AwsRdsDbSecurityGroupIpRangeBuilder {
     /// Consumes the builder and constructs a [`AwsRdsDbSecurityGroupIpRange`](crate::types::AwsRdsDbSecurityGroupIpRange).
     pub fn build(self) -> crate::types::AwsRdsDbSecurityGroupIpRange {
         crate::types::AwsRdsDbSecurityGroupIpRange {
-            cidr_ip: self.cidr_ip,
-            status: self.status,
+            cidr_ip: self.cidr_ip
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

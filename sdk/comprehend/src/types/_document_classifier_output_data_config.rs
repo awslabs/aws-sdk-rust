@@ -3,7 +3,7 @@
 /// <p>Provide the location for output data from a custom classifier job. This field is mandatory if you are training a native document model.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DocumentClassifierOutputDataConfig {
+pub struct DocumentClassifierOutputDataConfig  {
     /// <p>When you use the <code>OutputDataConfig</code> object while creating a custom classifier, you specify the Amazon S3 location where you want to write the confusion matrix and other output files. The URI must be in the same Region as the API endpoint that you are calling. The location is used as the prefix for the actual location of this output file.</p>
     /// <p>When the custom classifier job is finished, the service creates the output file in a directory specific to the job. The <code>S3Uri</code> field contains the location of the output file, called <code>output.tar.gz</code>. It is a compressed archive that contains the confusion matrix.</p>
     pub s3_uri: ::std::option::Option<::std::string::String>,
@@ -22,10 +22,10 @@ pub struct DocumentClassifierOutputDataConfig {
     /// <p>The Amazon S3 prefix for the data lake location of the flywheel statistics.</p>
     pub flywheel_stats_s3_prefix: ::std::option::Option<::std::string::String>,
 }
-impl DocumentClassifierOutputDataConfig {
+impl  DocumentClassifierOutputDataConfig  {
     /// <p>When you use the <code>OutputDataConfig</code> object while creating a custom classifier, you specify the Amazon S3 location where you want to write the confusion matrix and other output files. The URI must be in the same Region as the API endpoint that you are calling. The location is used as the prefix for the actual location of this output file.</p>
     /// <p>When the custom classifier job is finished, the service creates the output file in a directory specific to the job. The <code>S3Uri</code> field contains the location of the output file, called <code>output.tar.gz</code>. It is a compressed archive that contains the confusion matrix.</p>
-    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn s3_uri(&self) -> ::std::option::Option<& str> {
         self.s3_uri.as_deref()
     }
     /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the output results from an analysis job. The KmsKeyId can be one of the following formats:</p>
@@ -39,11 +39,11 @@ impl DocumentClassifierOutputDataConfig {
     /// <li>
     /// <p>ARN of a KMS Key Alias: <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code></p></li>
     /// </ul>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The Amazon S3 prefix for the data lake location of the flywheel statistics.</p>
-    pub fn flywheel_stats_s3_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn flywheel_stats_s3_prefix(&self) -> ::std::option::Option<& str> {
         self.flywheel_stats_s3_prefix.as_deref()
     }
 }
@@ -72,8 +72,7 @@ impl DocumentClassifierOutputDataConfigBuilder {
     /// <p>When you use the <code>OutputDataConfig</code> object while creating a custom classifier, you specify the Amazon S3 location where you want to write the confusion matrix and other output files. The URI must be in the same Region as the API endpoint that you are calling. The location is used as the prefix for the actual location of this output file.</p>
     /// <p>When the custom classifier job is finished, the service creates the output file in a directory specific to the job. The <code>S3Uri</code> field contains the location of the output file, called <code>output.tar.gz</code>. It is a compressed archive that contains the confusion matrix.</p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
     }
     /// <p>When you use the <code>OutputDataConfig</code> object while creating a custom classifier, you specify the Amazon S3 location where you want to write the confusion matrix and other output files. The URI must be in the same Region as the API endpoint that you are calling. The location is used as the prefix for the actual location of this output file.</p>
     /// <p>When the custom classifier job is finished, the service creates the output file in a directory specific to the job. The <code>S3Uri</code> field contains the location of the output file, called <code>output.tar.gz</code>. It is a compressed archive that contains the confusion matrix.</p>
@@ -107,8 +106,7 @@ impl DocumentClassifierOutputDataConfigBuilder {
     /// <p>ARN of a KMS Key Alias: <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code></p></li>
     /// </ul>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the output results from an analysis job. The KmsKeyId can be one of the following formats:</p>
     /// <ul>
@@ -131,8 +129,7 @@ impl DocumentClassifierOutputDataConfigBuilder {
     }
     /// <p>The Amazon S3 prefix for the data lake location of the flywheel statistics.</p>
     pub fn set_flywheel_stats_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flywheel_stats_s3_prefix = input;
-        self
+        self.flywheel_stats_s3_prefix = input; self
     }
     /// <p>The Amazon S3 prefix for the data lake location of the flywheel statistics.</p>
     pub fn get_flywheel_stats_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,9 +138,13 @@ impl DocumentClassifierOutputDataConfigBuilder {
     /// Consumes the builder and constructs a [`DocumentClassifierOutputDataConfig`](crate::types::DocumentClassifierOutputDataConfig).
     pub fn build(self) -> crate::types::DocumentClassifierOutputDataConfig {
         crate::types::DocumentClassifierOutputDataConfig {
-            s3_uri: self.s3_uri,
-            kms_key_id: self.kms_key_id,
-            flywheel_stats_s3_prefix: self.flywheel_stats_s3_prefix,
+            s3_uri: self.s3_uri
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            flywheel_stats_s3_prefix: self.flywheel_stats_s3_prefix
+            ,
         }
     }
 }
+

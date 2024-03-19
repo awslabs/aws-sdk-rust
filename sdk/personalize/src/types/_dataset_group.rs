@@ -4,7 +4,7 @@
 /// <p>You can specify an Key Management Service (KMS) key to encrypt the datasets in the group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatasetGroup {
+pub struct DatasetGroup  {
     /// <p>The name of the dataset group.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
@@ -31,13 +31,13 @@ pub struct DatasetGroup {
     /// <p>The domain of a Domain dataset group.</p>
     pub domain: ::std::option::Option<crate::types::Domain>,
 }
-impl DatasetGroup {
+impl  DatasetGroup  {
     /// <p>The name of the dataset group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
-    pub fn dataset_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_group_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_group_arn.as_deref()
     }
     /// <p>The current status of the dataset group.</p>
@@ -48,31 +48,31 @@ impl DatasetGroup {
     /// <li>
     /// <p>DELETE PENDING</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management Service (KMS) key. Supplying an IAM role is only valid when also specifying a KMS key.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the datasets.</p>
-    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The creation date and time (in Unix time) of the dataset group.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The last update date and time (in Unix time) of the dataset group.</p>
-    pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>If creating a dataset group fails, provides the reason why.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The domain of a Domain dataset group.</p>
-    pub fn domain(&self) -> ::std::option::Option<&crate::types::Domain> {
+    pub fn domain(&self) -> ::std::option::Option<& crate::types::Domain> {
         self.domain.as_ref()
     }
 }
@@ -105,8 +105,7 @@ impl DatasetGroupBuilder {
     }
     /// <p>The name of the dataset group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the dataset group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +118,7 @@ impl DatasetGroupBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
     pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_group_arn = input;
-        self
+        self.dataset_group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
     pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +145,7 @@ impl DatasetGroupBuilder {
     /// <p>DELETE PENDING</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the dataset group.</p>
     /// <p>A dataset group can be in one of the following states:</p>
@@ -168,8 +165,7 @@ impl DatasetGroupBuilder {
     }
     /// <p>The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management Service (KMS) key. Supplying an IAM role is only valid when also specifying a KMS key.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management Service (KMS) key. Supplying an IAM role is only valid when also specifying a KMS key.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -182,8 +178,7 @@ impl DatasetGroupBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the datasets.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the datasets.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -196,8 +191,7 @@ impl DatasetGroupBuilder {
     }
     /// <p>The creation date and time (in Unix time) of the dataset group.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>The creation date and time (in Unix time) of the dataset group.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -210,8 +204,7 @@ impl DatasetGroupBuilder {
     }
     /// <p>The last update date and time (in Unix time) of the dataset group.</p>
     pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date_time = input;
-        self
+        self.last_updated_date_time = input; self
     }
     /// <p>The last update date and time (in Unix time) of the dataset group.</p>
     pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -224,8 +217,7 @@ impl DatasetGroupBuilder {
     }
     /// <p>If creating a dataset group fails, provides the reason why.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>If creating a dataset group fails, provides the reason why.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -238,8 +230,7 @@ impl DatasetGroupBuilder {
     }
     /// <p>The domain of a Domain dataset group.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<crate::types::Domain>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The domain of a Domain dataset group.</p>
     pub fn get_domain(&self) -> &::std::option::Option<crate::types::Domain> {
@@ -248,15 +239,25 @@ impl DatasetGroupBuilder {
     /// Consumes the builder and constructs a [`DatasetGroup`](crate::types::DatasetGroup).
     pub fn build(self) -> crate::types::DatasetGroup {
         crate::types::DatasetGroup {
-            name: self.name,
-            dataset_group_arn: self.dataset_group_arn,
-            status: self.status,
-            role_arn: self.role_arn,
-            kms_key_arn: self.kms_key_arn,
-            creation_date_time: self.creation_date_time,
-            last_updated_date_time: self.last_updated_date_time,
-            failure_reason: self.failure_reason,
-            domain: self.domain,
+            name: self.name
+            ,
+            dataset_group_arn: self.dataset_group_arn
+            ,
+            status: self.status
+            ,
+            role_arn: self.role_arn
+            ,
+            kms_key_arn: self.kms_key_arn
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            last_updated_date_time: self.last_updated_date_time
+            ,
+            failure_reason: self.failure_reason
+            ,
+            domain: self.domain
+            ,
         }
     }
 }
+

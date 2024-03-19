@@ -3,7 +3,7 @@
 /// <p>The type and amount of resources to assign to a container. The supported resources include <code>memory</code>, <code>cpu</code>, and <code>nvidia.com/gpu</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource management for pods and containers</a> in the <i>Kubernetes documentation</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EksContainerResourceRequirements {
+pub struct EksContainerResourceRequirements  {
     /// <p>The type and quantity of the resources to reserve for the container. The values vary based on the <code>name</code> that's specified. Resources can be requested using either the <code>limits</code> or the <code>requests</code> objects.</p>
     /// <dl>
     /// <dt>
@@ -27,7 +27,7 @@ pub struct EksContainerResourceRequirements {
     /// <p>The number of GPUs that's reserved for the container. Values must be a whole integer. <code>memory</code> can be specified in <code>limits</code>, <code>requests</code>, or both. If <code>memory</code> is specified in both places, then the value that's specified in <code>limits</code> must be equal to the value that's specified in <code>requests</code>.</p>
     /// </dd>
     /// </dl>
-    pub limits: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub limits: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The type and quantity of the resources to request for the container. The values vary based on the <code>name</code> that's specified. Resources can be requested by using either the <code>limits</code> or the <code>requests</code> objects.</p>
     /// <dl>
     /// <dt>
@@ -51,9 +51,9 @@ pub struct EksContainerResourceRequirements {
     /// <p>The number of GPUs that are reserved for the container. Values must be a whole integer. <code>nvidia.com/gpu</code> can be specified in <code>limits</code>, <code>requests</code>, or both. If <code>nvidia.com/gpu</code> is specified in both, then the value that's specified in <code>limits</code> must be equal to the value that's specified in <code>requests</code>.</p>
     /// </dd>
     /// </dl>
-    pub requests: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub requests: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl EksContainerResourceRequirements {
+impl  EksContainerResourceRequirements  {
     /// <p>The type and quantity of the resources to reserve for the container. The values vary based on the <code>name</code> that's specified. Resources can be requested using either the <code>limits</code> or the <code>requests</code> objects.</p>
     /// <dl>
     /// <dt>
@@ -77,7 +77,7 @@ impl EksContainerResourceRequirements {
     /// <p>The number of GPUs that's reserved for the container. Values must be a whole integer. <code>memory</code> can be specified in <code>limits</code>, <code>requests</code>, or both. If <code>memory</code> is specified in both places, then the value that's specified in <code>limits</code> must be equal to the value that's specified in <code>requests</code>.</p>
     /// </dd>
     /// </dl>
-    pub fn limits(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn limits(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.limits.as_ref()
     }
     /// <p>The type and quantity of the resources to request for the container. The values vary based on the <code>name</code> that's specified. Resources can be requested by using either the <code>limits</code> or the <code>requests</code> objects.</p>
@@ -103,7 +103,7 @@ impl EksContainerResourceRequirements {
     /// <p>The number of GPUs that are reserved for the container. Values must be a whole integer. <code>nvidia.com/gpu</code> can be specified in <code>limits</code>, <code>requests</code>, or both. If <code>nvidia.com/gpu</code> is specified in both, then the value that's specified in <code>limits</code> must be equal to the value that's specified in <code>requests</code>.</p>
     /// </dd>
     /// </dl>
-    pub fn requests(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn requests(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.requests.as_ref()
     }
 }
@@ -118,8 +118,8 @@ impl EksContainerResourceRequirements {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EksContainerResourceRequirementsBuilder {
-    pub(crate) limits: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) requests: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) limits: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) requests: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl EksContainerResourceRequirementsBuilder {
     /// Adds a key-value pair to `limits`.
@@ -151,9 +151,9 @@ impl EksContainerResourceRequirementsBuilder {
     /// </dl>
     pub fn limits(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.limits.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.limits = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.limits = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The type and quantity of the resources to reserve for the container. The values vary based on the <code>name</code> that's specified. Resources can be requested using either the <code>limits</code> or the <code>requests</code> objects.</p>
     /// <dl>
@@ -178,9 +178,8 @@ impl EksContainerResourceRequirementsBuilder {
     /// <p>The number of GPUs that's reserved for the container. Values must be a whole integer. <code>memory</code> can be specified in <code>limits</code>, <code>requests</code>, or both. If <code>memory</code> is specified in both places, then the value that's specified in <code>limits</code> must be equal to the value that's specified in <code>requests</code>.</p>
     /// </dd>
     /// </dl>
-    pub fn set_limits(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.limits = input;
-        self
+    pub fn set_limits(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.limits = input; self
     }
     /// <p>The type and quantity of the resources to reserve for the container. The values vary based on the <code>name</code> that's specified. Resources can be requested using either the <code>limits</code> or the <code>requests</code> objects.</p>
     /// <dl>
@@ -205,7 +204,7 @@ impl EksContainerResourceRequirementsBuilder {
     /// <p>The number of GPUs that's reserved for the container. Values must be a whole integer. <code>memory</code> can be specified in <code>limits</code>, <code>requests</code>, or both. If <code>memory</code> is specified in both places, then the value that's specified in <code>limits</code> must be equal to the value that's specified in <code>requests</code>.</p>
     /// </dd>
     /// </dl>
-    pub fn get_limits(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_limits(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.limits
     }
     /// Adds a key-value pair to `requests`.
@@ -237,9 +236,9 @@ impl EksContainerResourceRequirementsBuilder {
     /// </dl>
     pub fn requests(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.requests.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.requests = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.requests = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The type and quantity of the resources to request for the container. The values vary based on the <code>name</code> that's specified. Resources can be requested by using either the <code>limits</code> or the <code>requests</code> objects.</p>
     /// <dl>
@@ -264,9 +263,8 @@ impl EksContainerResourceRequirementsBuilder {
     /// <p>The number of GPUs that are reserved for the container. Values must be a whole integer. <code>nvidia.com/gpu</code> can be specified in <code>limits</code>, <code>requests</code>, or both. If <code>nvidia.com/gpu</code> is specified in both, then the value that's specified in <code>limits</code> must be equal to the value that's specified in <code>requests</code>.</p>
     /// </dd>
     /// </dl>
-    pub fn set_requests(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.requests = input;
-        self
+    pub fn set_requests(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.requests = input; self
     }
     /// <p>The type and quantity of the resources to request for the container. The values vary based on the <code>name</code> that's specified. Resources can be requested by using either the <code>limits</code> or the <code>requests</code> objects.</p>
     /// <dl>
@@ -291,14 +289,17 @@ impl EksContainerResourceRequirementsBuilder {
     /// <p>The number of GPUs that are reserved for the container. Values must be a whole integer. <code>nvidia.com/gpu</code> can be specified in <code>limits</code>, <code>requests</code>, or both. If <code>nvidia.com/gpu</code> is specified in both, then the value that's specified in <code>limits</code> must be equal to the value that's specified in <code>requests</code>.</p>
     /// </dd>
     /// </dl>
-    pub fn get_requests(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_requests(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.requests
     }
     /// Consumes the builder and constructs a [`EksContainerResourceRequirements`](crate::types::EksContainerResourceRequirements).
     pub fn build(self) -> crate::types::EksContainerResourceRequirements {
         crate::types::EksContainerResourceRequirements {
-            limits: self.limits,
-            requests: self.requests,
+            limits: self.limits
+            ,
+            requests: self.requests
+            ,
         }
     }
 }
+

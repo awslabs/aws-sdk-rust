@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFileSystemPolicyOutput {
+pub struct DescribeFileSystemPolicyOutput  {
     /// <p>Specifies the EFS file system to which the <code>FileSystemPolicy</code> applies.</p>
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The JSON formatted <code>FileSystemPolicy</code> for the EFS file system.</p>
     pub policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeFileSystemPolicyOutput {
+impl  DescribeFileSystemPolicyOutput  {
     /// <p>Specifies the EFS file system to which the <code>FileSystemPolicy</code> applies.</p>
-    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
+    pub fn file_system_id(&self) -> ::std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
     /// <p>The JSON formatted <code>FileSystemPolicy</code> for the EFS file system.</p>
-    pub fn policy(&self) -> ::std::option::Option<&str> {
+    pub fn policy(&self) -> ::std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeFileSystemPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeFileSystemPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFileSystemPolicyOutput`](crate::operation::describe_file_system_policy::DescribeFileSystemPolicyOutput).
     pub fn builder() -> crate::operation::describe_file_system_policy::builders::DescribeFileSystemPolicyOutputBuilder {
@@ -47,8 +47,7 @@ impl DescribeFileSystemPolicyOutputBuilder {
     }
     /// <p>Specifies the EFS file system to which the <code>FileSystemPolicy</code> applies.</p>
     pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_system_id = input;
-        self
+        self.file_system_id = input; self
     }
     /// <p>Specifies the EFS file system to which the <code>FileSystemPolicy</code> applies.</p>
     pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl DescribeFileSystemPolicyOutputBuilder {
     }
     /// <p>The JSON formatted <code>FileSystemPolicy</code> for the EFS file system.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>The JSON formatted <code>FileSystemPolicy</code> for the EFS file system.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeFileSystemPolicyOutput`](crate::operation::describe_file_system_policy::DescribeFileSystemPolicyOutput).
     pub fn build(self) -> crate::operation::describe_file_system_policy::DescribeFileSystemPolicyOutput {
         crate::operation::describe_file_system_policy::DescribeFileSystemPolicyOutput {
-            file_system_id: self.file_system_id,
-            policy: self.policy,
+            file_system_id: self.file_system_id
+            ,
+            policy: self.policy
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

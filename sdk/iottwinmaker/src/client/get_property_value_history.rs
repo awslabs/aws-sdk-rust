@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetPropertyValueHistory`](crate::operation::get_property_value_history::builders::GetPropertyValueHistoryFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_property_value_history::builders::GetPropertyValueHistoryFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`workspace_id(impl Into<String>)`](crate::operation::get_property_value_history::builders::GetPropertyValueHistoryFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::get_property_value_history::builders::GetPropertyValueHistoryFluentBuilder::set_workspace_id):<br>required: **true**<br><p>The ID of the workspace.</p><br>
     ///   - [`entity_id(impl Into<String>)`](crate::operation::get_property_value_history::builders::GetPropertyValueHistoryFluentBuilder::entity_id) / [`set_entity_id(Option<String>)`](crate::operation::get_property_value_history::builders::GetPropertyValueHistoryFluentBuilder::set_entity_id):<br>required: **false**<br><p>The ID of the entity.</p><br>
     ///   - [`component_name(impl Into<String>)`](crate::operation::get_property_value_history::builders::GetPropertyValueHistoryFluentBuilder::component_name) / [`set_component_name(Option<String>)`](crate::operation::get_property_value_history::builders::GetPropertyValueHistoryFluentBuilder::set_component_name):<br>required: **false**<br><p>The name of the component.</p><br>
@@ -19,11 +19,12 @@ impl super::Client {
     ///   - [`order_by_time(OrderByTime)`](crate::operation::get_property_value_history::builders::GetPropertyValueHistoryFluentBuilder::order_by_time) / [`set_order_by_time(Option<OrderByTime>)`](crate::operation::get_property_value_history::builders::GetPropertyValueHistoryFluentBuilder::set_order_by_time):<br>required: **false**<br><p>The time direction to use in the result order.</p><br>
     ///   - [`start_time(impl Into<String>)`](crate::operation::get_property_value_history::builders::GetPropertyValueHistoryFluentBuilder::start_time) / [`set_start_time(Option<String>)`](crate::operation::get_property_value_history::builders::GetPropertyValueHistoryFluentBuilder::set_start_time):<br>required: **false**<br><p>The ISO8601 DateTime of the earliest property value to return.</p> <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_PropertyValue.html">PropertyValue</a>.</p><br>
     ///   - [`end_time(impl Into<String>)`](crate::operation::get_property_value_history::builders::GetPropertyValueHistoryFluentBuilder::end_time) / [`set_end_time(Option<String>)`](crate::operation::get_property_value_history::builders::GetPropertyValueHistoryFluentBuilder::set_end_time):<br>required: **false**<br><p>The ISO8601 DateTime of the latest property value to return.</p> <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_PropertyValue.html">PropertyValue</a>.</p><br>
-    /// - On success, responds with [`GetPropertyValueHistoryOutput`](crate::operation::get_property_value_history::GetPropertyValueHistoryOutput) with field(s):
+                            /// - On success, responds with [`GetPropertyValueHistoryOutput`](crate::operation::get_property_value_history::GetPropertyValueHistoryOutput) with field(s):
     ///   - [`property_values(Vec::<PropertyValueHistory>)`](crate::operation::get_property_value_history::GetPropertyValueHistoryOutput::property_values): <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_property_value_history::GetPropertyValueHistoryOutput::next_token): <p>The string that specifies the next page of results.</p>
-    /// - On failure, responds with [`SdkError<GetPropertyValueHistoryError>`](crate::operation::get_property_value_history::GetPropertyValueHistoryError)
+                            /// - On failure, responds with [`SdkError<GetPropertyValueHistoryError>`](crate::operation::get_property_value_history::GetPropertyValueHistoryError)
     pub fn get_property_value_history(&self) -> crate::operation::get_property_value_history::builders::GetPropertyValueHistoryFluentBuilder {
-        crate::operation::get_property_value_history::builders::GetPropertyValueHistoryFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_property_value_history::builders::GetPropertyValueHistoryFluentBuilder::new(self.handle.clone())
+                            }
 }
+

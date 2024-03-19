@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`SearchRooms`](crate::operation::search_rooms::builders::SearchRoomsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::search_rooms::builders::SearchRoomsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::search_rooms::builders::SearchRoomsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::search_rooms::builders::SearchRoomsFluentBuilder::set_next_token):<br>required: **false**<br><p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::search_rooms::builders::SearchRoomsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::search_rooms::builders::SearchRoomsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p><br>
     ///   - [`filters(Filter)`](crate::operation::search_rooms::builders::SearchRoomsFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::search_rooms::builders::SearchRoomsFluentBuilder::set_filters):<br>required: **false**<br><p>The filters to use to list a specified set of rooms. The supported filter keys are RoomName and ProfileName.</p><br>
     ///   - [`sort_criteria(Sort)`](crate::operation::search_rooms::builders::SearchRoomsFluentBuilder::sort_criteria) / [`set_sort_criteria(Option<Vec::<Sort>>)`](crate::operation::search_rooms::builders::SearchRoomsFluentBuilder::set_sort_criteria):<br>required: **false**<br><p>The sort order to use in listing the specified set of rooms. The supported sort keys are RoomName and ProfileName.</p><br>
-    /// - On success, responds with [`SearchRoomsOutput`](crate::operation::search_rooms::SearchRoomsOutput) with field(s):
+                            /// - On success, responds with [`SearchRoomsOutput`](crate::operation::search_rooms::SearchRoomsOutput) with field(s):
     ///   - [`rooms(Option<Vec::<RoomData>>)`](crate::operation::search_rooms::SearchRoomsOutput::rooms): <p>The rooms that meet the specified set of filter criteria, in sort order.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_rooms::SearchRoomsOutput::next_token): <p>The token returned to indicate that there is more data available.</p>
     ///   - [`total_count(Option<i32>)`](crate::operation::search_rooms::SearchRoomsOutput::total_count): <p>The total number of rooms returned.</p>
-    /// - On failure, responds with [`SdkError<SearchRoomsError>`](crate::operation::search_rooms::SearchRoomsError)
+                            /// - On failure, responds with [`SdkError<SearchRoomsError>`](crate::operation::search_rooms::SearchRoomsError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn search_rooms(&self) -> crate::operation::search_rooms::builders::SearchRoomsFluentBuilder {
-        crate::operation::search_rooms::builders::SearchRoomsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::search_rooms::builders::SearchRoomsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

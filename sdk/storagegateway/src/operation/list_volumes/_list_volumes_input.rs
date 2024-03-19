@@ -9,7 +9,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListVolumesInput {
+pub struct ListVolumesInput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>A string that indicates the position at which to begin the returned list of volumes. Obtain the marker from the response of a previous List iSCSI Volumes request.</p>
@@ -17,13 +17,13 @@ pub struct ListVolumesInput {
     /// <p>Specifies that the list of volumes returned be limited to the specified number of items.</p>
     pub limit: ::std::option::Option<i32>,
 }
-impl ListVolumesInput {
+impl  ListVolumesInput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     /// <p>A string that indicates the position at which to begin the returned list of volumes. Obtain the marker from the response of a previous List iSCSI Volumes request.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Specifies that the list of volumes returned be limited to the specified number of items.</p>
@@ -54,8 +54,7 @@ impl ListVolumesInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl ListVolumesInputBuilder {
     }
     /// <p>A string that indicates the position at which to begin the returned list of volumes. Obtain the marker from the response of a previous List iSCSI Volumes request.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>A string that indicates the position at which to begin the returned list of volumes. Obtain the marker from the response of a previous List iSCSI Volumes request.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +80,7 @@ impl ListVolumesInputBuilder {
     }
     /// <p>Specifies that the list of volumes returned be limited to the specified number of items.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>Specifies that the list of volumes returned be limited to the specified number of items.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
@@ -91,10 +88,16 @@ impl ListVolumesInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListVolumesInput`](crate::operation::list_volumes::ListVolumesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_volumes::ListVolumesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_volumes::ListVolumesInput {
-            gateway_arn: self.gateway_arn,
-            marker: self.marker,
-            limit: self.limit,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_volumes::ListVolumesInput {
+                gateway_arn: self.gateway_arn
+                ,
+                marker: self.marker
+                ,
+                limit: self.limit
+                ,
+            }
+        )
     }
 }
+

@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListConfiguredTableAssociations`](crate::operation::list_configured_table_associations::builders::ListConfiguredTableAssociationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_configured_table_associations::builders::ListConfiguredTableAssociationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`membership_identifier(impl Into<String>)`](crate::operation::list_configured_table_associations::builders::ListConfiguredTableAssociationsFluentBuilder::membership_identifier) / [`set_membership_identifier(Option<String>)`](crate::operation::list_configured_table_associations::builders::ListConfiguredTableAssociationsFluentBuilder::set_membership_identifier):<br>required: **true**<br><p>A unique identifier for the membership to list configured table associations for. Currently accepts the membership ID.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_configured_table_associations::builders::ListConfiguredTableAssociationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_configured_table_associations::builders::ListConfiguredTableAssociationsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token value retrieved from a previous call to access the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_configured_table_associations::builders::ListConfiguredTableAssociationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_configured_table_associations::builders::ListConfiguredTableAssociationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum size of the results that is returned per call.</p><br>
-    /// - On success, responds with [`ListConfiguredTableAssociationsOutput`](crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsOutput) with field(s):
+                            /// - On success, responds with [`ListConfiguredTableAssociationsOutput`](crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsOutput) with field(s):
     ///   - [`configured_table_association_summaries(Vec::<ConfiguredTableAssociationSummary>)`](crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsOutput::configured_table_association_summaries): <p>The retrieved list of configured table associations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsOutput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListConfiguredTableAssociationsError>`](crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsError)
-    pub fn list_configured_table_associations(
-        &self,
-    ) -> crate::operation::list_configured_table_associations::builders::ListConfiguredTableAssociationsFluentBuilder {
-        crate::operation::list_configured_table_associations::builders::ListConfiguredTableAssociationsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListConfiguredTableAssociationsError>`](crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsError)
+    pub fn list_configured_table_associations(&self) -> crate::operation::list_configured_table_associations::builders::ListConfiguredTableAssociationsFluentBuilder {
+                                crate::operation::list_configured_table_associations::builders::ListConfiguredTableAssociationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

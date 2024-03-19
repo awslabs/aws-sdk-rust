@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSupportedResourceTypesInput {}
+pub struct GetSupportedResourceTypesInput  {
+}
 impl GetSupportedResourceTypesInput {
     /// Creates a new builder-style object to manufacture [`GetSupportedResourceTypesInput`](crate::operation::get_supported_resource_types::GetSupportedResourceTypesInput).
     pub fn builder() -> crate::operation::get_supported_resource_types::builders::GetSupportedResourceTypesInputBuilder {
@@ -13,15 +14,15 @@ impl GetSupportedResourceTypesInput {
 /// A builder for [`GetSupportedResourceTypesInput`](crate::operation::get_supported_resource_types::GetSupportedResourceTypesInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetSupportedResourceTypesInputBuilder {}
+pub struct GetSupportedResourceTypesInputBuilder {
+}
 impl GetSupportedResourceTypesInputBuilder {
     /// Consumes the builder and constructs a [`GetSupportedResourceTypesInput`](crate::operation::get_supported_resource_types::GetSupportedResourceTypesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_supported_resource_types::GetSupportedResourceTypesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_supported_resource_types::GetSupportedResourceTypesInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_supported_resource_types::GetSupportedResourceTypesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_supported_resource_types::GetSupportedResourceTypesInput {
+            }
+        )
     }
 }
+

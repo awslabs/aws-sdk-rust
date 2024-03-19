@@ -3,19 +3,19 @@
 /// <p>An LDAP attribute of an Active Directory computer account, in the form of a name:value pair.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActiveDirectoryComputerAttribute {
+pub struct ActiveDirectoryComputerAttribute  {
     /// <p>The name for the LDAP attribute.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value for the LDAP attribute.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl ActiveDirectoryComputerAttribute {
+impl  ActiveDirectoryComputerAttribute  {
     /// <p>The name for the LDAP attribute.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The value for the LDAP attribute.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ActiveDirectoryComputerAttributeBuilder {
     }
     /// <p>The name for the LDAP attribute.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name for the LDAP attribute.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ActiveDirectoryComputerAttributeBuilder {
     }
     /// <p>The value for the LDAP attribute.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value for the LDAP attribute.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ActiveDirectoryComputerAttributeBuilder {
     /// Consumes the builder and constructs a [`ActiveDirectoryComputerAttribute`](crate::types::ActiveDirectoryComputerAttribute).
     pub fn build(self) -> crate::types::ActiveDirectoryComputerAttribute {
         crate::types::ActiveDirectoryComputerAttribute {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The forecast properties setup of a forecast in the line chart.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TimeBasedForecastProperties {
+pub struct TimeBasedForecastProperties  {
     /// <p>The periods forward setup of a forecast computation.</p>
     pub periods_forward: ::std::option::Option<i32>,
     /// <p>The periods backward setup of a forecast computation.</p>
@@ -23,7 +23,7 @@ pub struct TimeBasedForecastProperties {
     /// </ul>
     pub seasonality: ::std::option::Option<i32>,
 }
-impl TimeBasedForecastProperties {
+impl  TimeBasedForecastProperties  {
     /// <p>The periods forward setup of a forecast computation.</p>
     pub fn periods_forward(&self) -> ::std::option::Option<i32> {
         self.periods_forward
@@ -81,8 +81,7 @@ impl TimeBasedForecastPropertiesBuilder {
     }
     /// <p>The periods forward setup of a forecast computation.</p>
     pub fn set_periods_forward(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.periods_forward = input;
-        self
+        self.periods_forward = input; self
     }
     /// <p>The periods forward setup of a forecast computation.</p>
     pub fn get_periods_forward(&self) -> &::std::option::Option<i32> {
@@ -95,8 +94,7 @@ impl TimeBasedForecastPropertiesBuilder {
     }
     /// <p>The periods backward setup of a forecast computation.</p>
     pub fn set_periods_backward(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.periods_backward = input;
-        self
+        self.periods_backward = input; self
     }
     /// <p>The periods backward setup of a forecast computation.</p>
     pub fn get_periods_backward(&self) -> &::std::option::Option<i32> {
@@ -109,8 +107,7 @@ impl TimeBasedForecastPropertiesBuilder {
     }
     /// <p>The upper boundary setup of a forecast computation.</p>
     pub fn set_upper_boundary(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.upper_boundary = input;
-        self
+        self.upper_boundary = input; self
     }
     /// <p>The upper boundary setup of a forecast computation.</p>
     pub fn get_upper_boundary(&self) -> &::std::option::Option<f64> {
@@ -123,8 +120,7 @@ impl TimeBasedForecastPropertiesBuilder {
     }
     /// <p>The lower boundary setup of a forecast computation.</p>
     pub fn set_lower_boundary(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.lower_boundary = input;
-        self
+        self.lower_boundary = input; self
     }
     /// <p>The lower boundary setup of a forecast computation.</p>
     pub fn get_lower_boundary(&self) -> &::std::option::Option<f64> {
@@ -137,8 +133,7 @@ impl TimeBasedForecastPropertiesBuilder {
     }
     /// <p>The prediction interval setup of a forecast computation.</p>
     pub fn set_prediction_interval(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.prediction_interval = input;
-        self
+        self.prediction_interval = input; self
     }
     /// <p>The prediction interval setup of a forecast computation.</p>
     pub fn get_prediction_interval(&self) -> &::std::option::Option<i32> {
@@ -163,8 +158,7 @@ impl TimeBasedForecastPropertiesBuilder {
     /// <p><code>NON_NULL</code>: The input is set to a custom value.</p></li>
     /// </ul>
     pub fn set_seasonality(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.seasonality = input;
-        self
+        self.seasonality = input; self
     }
     /// <p>The seasonality setup of a forecast computation. Choose one of the following options:</p>
     /// <ul>
@@ -179,12 +173,19 @@ impl TimeBasedForecastPropertiesBuilder {
     /// Consumes the builder and constructs a [`TimeBasedForecastProperties`](crate::types::TimeBasedForecastProperties).
     pub fn build(self) -> crate::types::TimeBasedForecastProperties {
         crate::types::TimeBasedForecastProperties {
-            periods_forward: self.periods_forward,
-            periods_backward: self.periods_backward,
-            upper_boundary: self.upper_boundary,
-            lower_boundary: self.lower_boundary,
-            prediction_interval: self.prediction_interval,
-            seasonality: self.seasonality,
+            periods_forward: self.periods_forward
+            ,
+            periods_backward: self.periods_backward
+            ,
+            upper_boundary: self.upper_boundary
+            ,
+            lower_boundary: self.lower_boundary
+            ,
+            prediction_interval: self.prediction_interval
+            ,
+            seasonality: self.seasonality
+            ,
         }
     }
 }
+

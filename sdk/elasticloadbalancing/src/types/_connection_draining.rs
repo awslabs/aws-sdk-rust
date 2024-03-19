@@ -3,13 +3,13 @@
 /// <p>Information about the <code>ConnectionDraining</code> attribute.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConnectionDraining {
+pub struct ConnectionDraining  {
     /// <p>Specifies whether connection draining is enabled for the load balancer.</p>
     pub enabled: bool,
     /// <p>The maximum time, in seconds, to keep the existing connections open before deregistering the instances.</p>
     pub timeout: ::std::option::Option<i32>,
 }
-impl ConnectionDraining {
+impl  ConnectionDraining  {
     /// <p>Specifies whether connection draining is enabled for the load balancer.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
@@ -42,8 +42,7 @@ impl ConnectionDrainingBuilder {
     }
     /// <p>Specifies whether connection draining is enabled for the load balancer.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Specifies whether connection draining is enabled for the load balancer.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -56,8 +55,7 @@ impl ConnectionDrainingBuilder {
     }
     /// <p>The maximum time, in seconds, to keep the existing connections open before deregistering the instances.</p>
     pub fn set_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.timeout = input;
-        self
+        self.timeout = input; self
     }
     /// <p>The maximum time, in seconds, to keep the existing connections open before deregistering the instances.</p>
     pub fn get_timeout(&self) -> &::std::option::Option<i32> {
@@ -66,8 +64,12 @@ impl ConnectionDrainingBuilder {
     /// Consumes the builder and constructs a [`ConnectionDraining`](crate::types::ConnectionDraining).
     pub fn build(self) -> crate::types::ConnectionDraining {
         crate::types::ConnectionDraining {
-            enabled: self.enabled.unwrap_or_default(),
-            timeout: self.timeout,
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
+            timeout: self.timeout
+            ,
         }
     }
 }
+

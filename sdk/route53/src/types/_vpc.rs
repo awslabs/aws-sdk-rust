@@ -4,19 +4,19 @@
 /// <p>If you associate a private hosted zone with an Amazon VPC when you make a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html">CreateHostedZone</a> request, the following parameters are also required.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Vpc {
+pub struct Vpc  {
     /// <p>(Private hosted zones only) The region that an Amazon VPC was created in.</p>
     pub vpc_region: ::std::option::Option<crate::types::VpcRegion>,
     /// <p>(Private hosted zones only) The ID of an Amazon VPC.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
 }
-impl Vpc {
+impl  Vpc  {
     /// <p>(Private hosted zones only) The region that an Amazon VPC was created in.</p>
-    pub fn vpc_region(&self) -> ::std::option::Option<&crate::types::VpcRegion> {
+    pub fn vpc_region(&self) -> ::std::option::Option<& crate::types::VpcRegion> {
         self.vpc_region.as_ref()
     }
     /// <p>(Private hosted zones only) The ID of an Amazon VPC.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl VpcBuilder {
     }
     /// <p>(Private hosted zones only) The region that an Amazon VPC was created in.</p>
     pub fn set_vpc_region(mut self, input: ::std::option::Option<crate::types::VpcRegion>) -> Self {
-        self.vpc_region = input;
-        self
+        self.vpc_region = input; self
     }
     /// <p>(Private hosted zones only) The region that an Amazon VPC was created in.</p>
     pub fn get_vpc_region(&self) -> &::std::option::Option<crate::types::VpcRegion> {
@@ -56,8 +55,7 @@ impl VpcBuilder {
     }
     /// <p>(Private hosted zones only) The ID of an Amazon VPC.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>(Private hosted zones only) The ID of an Amazon VPC.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,11 @@ impl VpcBuilder {
     /// Consumes the builder and constructs a [`Vpc`](crate::types::Vpc).
     pub fn build(self) -> crate::types::Vpc {
         crate::types::Vpc {
-            vpc_region: self.vpc_region,
-            vpc_id: self.vpc_id,
+            vpc_region: self.vpc_region
+            ,
+            vpc_id: self.vpc_id
+            ,
         }
     }
 }
+

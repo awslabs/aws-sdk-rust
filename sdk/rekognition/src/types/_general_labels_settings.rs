@@ -3,40 +3,44 @@
 /// <p>Contains filters for the object labels returned by DetectLabels. Filters can be inclusive, exclusive, or a combination of both and can be applied to individual labels or entire label categories. To see a list of label categories, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting Labels</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GeneralLabelsSettings {
+pub struct GeneralLabelsSettings  {
     /// <p>The labels that should be included in the return from DetectLabels.</p>
-    pub label_inclusion_filters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub label_inclusion_filters: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The labels that should be excluded from the return from DetectLabels.</p>
-    pub label_exclusion_filters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub label_exclusion_filters: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The label categories that should be included in the return from DetectLabels.</p>
-    pub label_category_inclusion_filters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub label_category_inclusion_filters: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The label categories that should be excluded from the return from DetectLabels.</p>
-    pub label_category_exclusion_filters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub label_category_exclusion_filters: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl GeneralLabelsSettings {
+impl  GeneralLabelsSettings  {
     /// <p>The labels that should be included in the return from DetectLabels.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.label_inclusion_filters.is_none()`.
-    pub fn label_inclusion_filters(&self) -> &[::std::string::String] {
-        self.label_inclusion_filters.as_deref().unwrap_or_default()
+    pub fn label_inclusion_filters(&self) -> & [::std::string::String] {
+        self.label_inclusion_filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The labels that should be excluded from the return from DetectLabels.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.label_exclusion_filters.is_none()`.
-    pub fn label_exclusion_filters(&self) -> &[::std::string::String] {
-        self.label_exclusion_filters.as_deref().unwrap_or_default()
+    pub fn label_exclusion_filters(&self) -> & [::std::string::String] {
+        self.label_exclusion_filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The label categories that should be included in the return from DetectLabels.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.label_category_inclusion_filters.is_none()`.
-    pub fn label_category_inclusion_filters(&self) -> &[::std::string::String] {
-        self.label_category_inclusion_filters.as_deref().unwrap_or_default()
+    pub fn label_category_inclusion_filters(&self) -> & [::std::string::String] {
+        self.label_category_inclusion_filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The label categories that should be excluded from the return from DetectLabels.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.label_category_exclusion_filters.is_none()`.
-    pub fn label_category_exclusion_filters(&self) -> &[::std::string::String] {
-        self.label_category_exclusion_filters.as_deref().unwrap_or_default()
+    pub fn label_category_exclusion_filters(&self) -> & [::std::string::String] {
+        self.label_category_exclusion_filters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl GeneralLabelsSettings {
@@ -50,10 +54,10 @@ impl GeneralLabelsSettings {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GeneralLabelsSettingsBuilder {
-    pub(crate) label_inclusion_filters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) label_exclusion_filters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) label_category_inclusion_filters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) label_category_exclusion_filters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) label_inclusion_filters: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) label_exclusion_filters: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) label_category_inclusion_filters: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) label_category_exclusion_filters: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl GeneralLabelsSettingsBuilder {
     /// Appends an item to `label_inclusion_filters`.
@@ -63,17 +67,16 @@ impl GeneralLabelsSettingsBuilder {
     /// <p>The labels that should be included in the return from DetectLabels.</p>
     pub fn label_inclusion_filters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.label_inclusion_filters.unwrap_or_default();
-        v.push(input.into());
-        self.label_inclusion_filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.label_inclusion_filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The labels that should be included in the return from DetectLabels.</p>
-    pub fn set_label_inclusion_filters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.label_inclusion_filters = input;
-        self
+    pub fn set_label_inclusion_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.label_inclusion_filters = input; self
     }
     /// <p>The labels that should be included in the return from DetectLabels.</p>
-    pub fn get_label_inclusion_filters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_label_inclusion_filters(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.label_inclusion_filters
     }
     /// Appends an item to `label_exclusion_filters`.
@@ -83,17 +86,16 @@ impl GeneralLabelsSettingsBuilder {
     /// <p>The labels that should be excluded from the return from DetectLabels.</p>
     pub fn label_exclusion_filters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.label_exclusion_filters.unwrap_or_default();
-        v.push(input.into());
-        self.label_exclusion_filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.label_exclusion_filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The labels that should be excluded from the return from DetectLabels.</p>
-    pub fn set_label_exclusion_filters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.label_exclusion_filters = input;
-        self
+    pub fn set_label_exclusion_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.label_exclusion_filters = input; self
     }
     /// <p>The labels that should be excluded from the return from DetectLabels.</p>
-    pub fn get_label_exclusion_filters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_label_exclusion_filters(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.label_exclusion_filters
     }
     /// Appends an item to `label_category_inclusion_filters`.
@@ -103,17 +105,16 @@ impl GeneralLabelsSettingsBuilder {
     /// <p>The label categories that should be included in the return from DetectLabels.</p>
     pub fn label_category_inclusion_filters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.label_category_inclusion_filters.unwrap_or_default();
-        v.push(input.into());
-        self.label_category_inclusion_filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.label_category_inclusion_filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The label categories that should be included in the return from DetectLabels.</p>
-    pub fn set_label_category_inclusion_filters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.label_category_inclusion_filters = input;
-        self
+    pub fn set_label_category_inclusion_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.label_category_inclusion_filters = input; self
     }
     /// <p>The label categories that should be included in the return from DetectLabels.</p>
-    pub fn get_label_category_inclusion_filters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_label_category_inclusion_filters(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.label_category_inclusion_filters
     }
     /// Appends an item to `label_category_exclusion_filters`.
@@ -123,26 +124,30 @@ impl GeneralLabelsSettingsBuilder {
     /// <p>The label categories that should be excluded from the return from DetectLabels.</p>
     pub fn label_category_exclusion_filters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.label_category_exclusion_filters.unwrap_or_default();
-        v.push(input.into());
-        self.label_category_exclusion_filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.label_category_exclusion_filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The label categories that should be excluded from the return from DetectLabels.</p>
-    pub fn set_label_category_exclusion_filters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.label_category_exclusion_filters = input;
-        self
+    pub fn set_label_category_exclusion_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.label_category_exclusion_filters = input; self
     }
     /// <p>The label categories that should be excluded from the return from DetectLabels.</p>
-    pub fn get_label_category_exclusion_filters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_label_category_exclusion_filters(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.label_category_exclusion_filters
     }
     /// Consumes the builder and constructs a [`GeneralLabelsSettings`](crate::types::GeneralLabelsSettings).
     pub fn build(self) -> crate::types::GeneralLabelsSettings {
         crate::types::GeneralLabelsSettings {
-            label_inclusion_filters: self.label_inclusion_filters,
-            label_exclusion_filters: self.label_exclusion_filters,
-            label_category_inclusion_filters: self.label_category_inclusion_filters,
-            label_category_exclusion_filters: self.label_category_exclusion_filters,
+            label_inclusion_filters: self.label_inclusion_filters
+            ,
+            label_exclusion_filters: self.label_exclusion_filters
+            ,
+            label_category_inclusion_filters: self.label_category_inclusion_filters
+            ,
+            label_category_exclusion_filters: self.label_category_exclusion_filters
+            ,
         }
     }
 }
+

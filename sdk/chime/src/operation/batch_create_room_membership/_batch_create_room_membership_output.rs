@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchCreateRoomMembershipOutput {
+pub struct BatchCreateRoomMembershipOutput  {
     /// <p>If the action fails for one or more of the member IDs in the request, a list of the member IDs is returned, along with error codes and error messages.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::MemberError>>,
+    pub errors: ::std::option::Option<::std::vec::Vec::<crate::types::MemberError>>,
     _request_id: Option<String>,
 }
-impl BatchCreateRoomMembershipOutput {
+impl  BatchCreateRoomMembershipOutput  {
     /// <p>If the action fails for one or more of the member IDs in the request, a list of the member IDs is returned, along with error codes and error messages.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
-    pub fn errors(&self) -> &[crate::types::MemberError] {
-        self.errors.as_deref().unwrap_or_default()
+    pub fn errors(&self) -> & [crate::types::MemberError] {
+        self.errors.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchCreateRoomMembershipOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchCreateRoomMembershipOutput {
     /// Creates a new builder-style object to manufacture [`BatchCreateRoomMembershipOutput`](crate::operation::batch_create_room_membership::BatchCreateRoomMembershipOutput).
     pub fn builder() -> crate::operation::batch_create_room_membership::builders::BatchCreateRoomMembershipOutputBuilder {
@@ -31,7 +32,7 @@ impl BatchCreateRoomMembershipOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchCreateRoomMembershipOutputBuilder {
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::MemberError>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::MemberError>>,
     _request_id: Option<String>,
 }
 impl BatchCreateRoomMembershipOutputBuilder {
@@ -42,33 +43,34 @@ impl BatchCreateRoomMembershipOutputBuilder {
     /// <p>If the action fails for one or more of the member IDs in the request, a list of the member IDs is returned, along with error codes and error messages.</p>
     pub fn errors(mut self, input: crate::types::MemberError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>If the action fails for one or more of the member IDs in the request, a list of the member IDs is returned, along with error codes and error messages.</p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberError>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MemberError>>) -> Self {
+        self.errors = input; self
     }
     /// <p>If the action fails for one or more of the member IDs in the request, a list of the member IDs is returned, along with error codes and error messages.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MemberError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchCreateRoomMembershipOutput`](crate::operation::batch_create_room_membership::BatchCreateRoomMembershipOutput).
     pub fn build(self) -> crate::operation::batch_create_room_membership::BatchCreateRoomMembershipOutput {
         crate::operation::batch_create_room_membership::BatchCreateRoomMembershipOutput {
-            errors: self.errors,
+            errors: self.errors
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

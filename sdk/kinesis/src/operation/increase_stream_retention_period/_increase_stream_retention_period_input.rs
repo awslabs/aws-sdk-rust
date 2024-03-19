@@ -3,7 +3,7 @@
 /// <p>Represents the input for <code>IncreaseStreamRetentionPeriod</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IncreaseStreamRetentionPeriodInput {
+pub struct IncreaseStreamRetentionPeriodInput  {
     /// <p>The name of the stream to modify.</p>
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The new retention period of the stream, in hours. Must be more than the current retention period.</p>
@@ -11,9 +11,9 @@ pub struct IncreaseStreamRetentionPeriodInput {
     /// <p>The ARN of the stream.</p>
     pub stream_arn: ::std::option::Option<::std::string::String>,
 }
-impl IncreaseStreamRetentionPeriodInput {
+impl  IncreaseStreamRetentionPeriodInput  {
     /// <p>The name of the stream to modify.</p>
-    pub fn stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn stream_name(&self) -> ::std::option::Option<& str> {
         self.stream_name.as_deref()
     }
     /// <p>The new retention period of the stream, in hours. Must be more than the current retention period.</p>
@@ -21,7 +21,7 @@ impl IncreaseStreamRetentionPeriodInput {
         self.retention_period_hours
     }
     /// <p>The ARN of the stream.</p>
-    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl IncreaseStreamRetentionPeriodInputBuilder {
     }
     /// <p>The name of the stream to modify.</p>
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_name = input;
-        self
+        self.stream_name = input; self
     }
     /// <p>The name of the stream to modify.</p>
     pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl IncreaseStreamRetentionPeriodInputBuilder {
     }
     /// <p>The new retention period of the stream, in hours. Must be more than the current retention period.</p>
     pub fn set_retention_period_hours(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.retention_period_hours = input;
-        self
+        self.retention_period_hours = input; self
     }
     /// <p>The new retention period of the stream, in hours. Must be more than the current retention period.</p>
     pub fn get_retention_period_hours(&self) -> &::std::option::Option<i32> {
@@ -77,24 +75,24 @@ impl IncreaseStreamRetentionPeriodInputBuilder {
     }
     /// <p>The ARN of the stream.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// <p>The ARN of the stream.</p>
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_arn
     }
     /// Consumes the builder and constructs a [`IncreaseStreamRetentionPeriodInput`](crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodInput {
-            stream_name: self.stream_name,
-            retention_period_hours: self.retention_period_hours,
-            stream_arn: self.stream_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodInput {
+                stream_name: self.stream_name
+                ,
+                retention_period_hours: self.retention_period_hours
+                ,
+                stream_arn: self.stream_arn
+                ,
+            }
+        )
     }
 }
+

@@ -3,41 +3,43 @@
 /// If your output group type is CMAF, use these settings when doing DRM encryption with a SPEKE-compliant key provider. If your output group type is HLS, DASH, or Microsoft Smooth, use the SpekeKeyProvider settings instead.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SpekeKeyProviderCmaf {
+pub struct SpekeKeyProviderCmaf  {
     /// If you want your key provider to encrypt the content keys that it provides to MediaConvert, set up a certificate with a master key using AWS Certificate Manager. Specify the certificate's Amazon Resource Name (ARN) here.
     pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// Specify the DRM system IDs that you want signaled in the DASH manifest that MediaConvert creates as part of this CMAF package. The DASH manifest can currently signal up to three system IDs. For more information, see https://dashif.org/identifiers/content_protection/.
-    pub dash_signaled_system_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub dash_signaled_system_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// Specify the DRM system ID that you want signaled in the HLS manifest that MediaConvert creates as part of this CMAF package. The HLS manifest can currently signal only one system ID. For more information, see https://dashif.org/identifiers/content_protection/.
-    pub hls_signaled_system_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub hls_signaled_system_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// Specify the resource ID that your SPEKE-compliant key provider uses to identify this content.
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// Specify the URL to the key server that your SPEKE-compliant DRM key provider uses to provide keys for encrypting your content.
     pub url: ::std::option::Option<::std::string::String>,
 }
-impl SpekeKeyProviderCmaf {
+impl  SpekeKeyProviderCmaf  {
     /// If you want your key provider to encrypt the content keys that it provides to MediaConvert, set up a certificate with a master key using AWS Certificate Manager. Specify the certificate's Amazon Resource Name (ARN) here.
-    pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> ::std::option::Option<& str> {
         self.certificate_arn.as_deref()
     }
     /// Specify the DRM system IDs that you want signaled in the DASH manifest that MediaConvert creates as part of this CMAF package. The DASH manifest can currently signal up to three system IDs. For more information, see https://dashif.org/identifiers/content_protection/.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dash_signaled_system_ids.is_none()`.
-    pub fn dash_signaled_system_ids(&self) -> &[::std::string::String] {
-        self.dash_signaled_system_ids.as_deref().unwrap_or_default()
+    pub fn dash_signaled_system_ids(&self) -> & [::std::string::String] {
+        self.dash_signaled_system_ids.as_deref()
+        .unwrap_or_default()
     }
     /// Specify the DRM system ID that you want signaled in the HLS manifest that MediaConvert creates as part of this CMAF package. The HLS manifest can currently signal only one system ID. For more information, see https://dashif.org/identifiers/content_protection/.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hls_signaled_system_ids.is_none()`.
-    pub fn hls_signaled_system_ids(&self) -> &[::std::string::String] {
-        self.hls_signaled_system_ids.as_deref().unwrap_or_default()
+    pub fn hls_signaled_system_ids(&self) -> & [::std::string::String] {
+        self.hls_signaled_system_ids.as_deref()
+        .unwrap_or_default()
     }
     /// Specify the resource ID that your SPEKE-compliant key provider uses to identify this content.
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// Specify the URL to the key server that your SPEKE-compliant DRM key provider uses to provide keys for encrypting your content.
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
 }
@@ -53,8 +55,8 @@ impl SpekeKeyProviderCmaf {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SpekeKeyProviderCmafBuilder {
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) dash_signaled_system_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) hls_signaled_system_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) dash_signaled_system_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) hls_signaled_system_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) url: ::std::option::Option<::std::string::String>,
 }
@@ -66,8 +68,7 @@ impl SpekeKeyProviderCmafBuilder {
     }
     /// If you want your key provider to encrypt the content keys that it provides to MediaConvert, set up a certificate with a master key using AWS Certificate Manager. Specify the certificate's Amazon Resource Name (ARN) here.
     pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_arn = input;
-        self
+        self.certificate_arn = input; self
     }
     /// If you want your key provider to encrypt the content keys that it provides to MediaConvert, set up a certificate with a master key using AWS Certificate Manager. Specify the certificate's Amazon Resource Name (ARN) here.
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,17 +81,16 @@ impl SpekeKeyProviderCmafBuilder {
     /// Specify the DRM system IDs that you want signaled in the DASH manifest that MediaConvert creates as part of this CMAF package. The DASH manifest can currently signal up to three system IDs. For more information, see https://dashif.org/identifiers/content_protection/.
     pub fn dash_signaled_system_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dash_signaled_system_ids.unwrap_or_default();
-        v.push(input.into());
-        self.dash_signaled_system_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.dash_signaled_system_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// Specify the DRM system IDs that you want signaled in the DASH manifest that MediaConvert creates as part of this CMAF package. The DASH manifest can currently signal up to three system IDs. For more information, see https://dashif.org/identifiers/content_protection/.
-    pub fn set_dash_signaled_system_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.dash_signaled_system_ids = input;
-        self
+    pub fn set_dash_signaled_system_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.dash_signaled_system_ids = input; self
     }
     /// Specify the DRM system IDs that you want signaled in the DASH manifest that MediaConvert creates as part of this CMAF package. The DASH manifest can currently signal up to three system IDs. For more information, see https://dashif.org/identifiers/content_protection/.
-    pub fn get_dash_signaled_system_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dash_signaled_system_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.dash_signaled_system_ids
     }
     /// Appends an item to `hls_signaled_system_ids`.
@@ -100,17 +100,16 @@ impl SpekeKeyProviderCmafBuilder {
     /// Specify the DRM system ID that you want signaled in the HLS manifest that MediaConvert creates as part of this CMAF package. The HLS manifest can currently signal only one system ID. For more information, see https://dashif.org/identifiers/content_protection/.
     pub fn hls_signaled_system_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.hls_signaled_system_ids.unwrap_or_default();
-        v.push(input.into());
-        self.hls_signaled_system_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.hls_signaled_system_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// Specify the DRM system ID that you want signaled in the HLS manifest that MediaConvert creates as part of this CMAF package. The HLS manifest can currently signal only one system ID. For more information, see https://dashif.org/identifiers/content_protection/.
-    pub fn set_hls_signaled_system_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.hls_signaled_system_ids = input;
-        self
+    pub fn set_hls_signaled_system_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.hls_signaled_system_ids = input; self
     }
     /// Specify the DRM system ID that you want signaled in the HLS manifest that MediaConvert creates as part of this CMAF package. The HLS manifest can currently signal only one system ID. For more information, see https://dashif.org/identifiers/content_protection/.
-    pub fn get_hls_signaled_system_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_hls_signaled_system_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.hls_signaled_system_ids
     }
     /// Specify the resource ID that your SPEKE-compliant key provider uses to identify this content.
@@ -120,8 +119,7 @@ impl SpekeKeyProviderCmafBuilder {
     }
     /// Specify the resource ID that your SPEKE-compliant key provider uses to identify this content.
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// Specify the resource ID that your SPEKE-compliant key provider uses to identify this content.
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +132,7 @@ impl SpekeKeyProviderCmafBuilder {
     }
     /// Specify the URL to the key server that your SPEKE-compliant DRM key provider uses to provide keys for encrypting your content.
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// Specify the URL to the key server that your SPEKE-compliant DRM key provider uses to provide keys for encrypting your content.
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,11 +141,17 @@ impl SpekeKeyProviderCmafBuilder {
     /// Consumes the builder and constructs a [`SpekeKeyProviderCmaf`](crate::types::SpekeKeyProviderCmaf).
     pub fn build(self) -> crate::types::SpekeKeyProviderCmaf {
         crate::types::SpekeKeyProviderCmaf {
-            certificate_arn: self.certificate_arn,
-            dash_signaled_system_ids: self.dash_signaled_system_ids,
-            hls_signaled_system_ids: self.hls_signaled_system_ids,
-            resource_id: self.resource_id,
-            url: self.url,
+            certificate_arn: self.certificate_arn
+            ,
+            dash_signaled_system_ids: self.dash_signaled_system_ids
+            ,
+            hls_signaled_system_ids: self.hls_signaled_system_ids
+            ,
+            resource_id: self.resource_id
+            ,
+            url: self.url
+            ,
         }
     }
 }
+

@@ -2,20 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeInstanceTypeOfferings`](crate::operation::describe_instance_type_offerings::builders::DescribeInstanceTypeOfferingsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_instance_type_offerings::builders::DescribeInstanceTypeOfferingsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`dry_run(bool)`](crate::operation::describe_instance_type_offerings::builders::DescribeInstanceTypeOfferingsFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::describe_instance_type_offerings::builders::DescribeInstanceTypeOfferingsFluentBuilder::set_dry_run):<br>required: **false**<br><p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p><br>
     ///   - [`location_type(LocationType)`](crate::operation::describe_instance_type_offerings::builders::DescribeInstanceTypeOfferingsFluentBuilder::location_type) / [`set_location_type(Option<LocationType>)`](crate::operation::describe_instance_type_offerings::builders::DescribeInstanceTypeOfferingsFluentBuilder::set_location_type):<br>required: **false**<br><p>The location type.</p><br>
     ///   - [`filters(Filter)`](crate::operation::describe_instance_type_offerings::builders::DescribeInstanceTypeOfferingsFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::describe_instance_type_offerings::builders::DescribeInstanceTypeOfferingsFluentBuilder::set_filters):<br>required: **false**<br><p>One or more filters. Filter names and values are case-sensitive.</p> <ul>  <li>   <p><code>location</code> - This depends on the location type. For example, if the location type is <code>region</code> (default), the location is the Region code (for example, <code>us-east-2</code>.)</p></li>  <li>   <p><code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.</p></li> </ul><br>
     ///   - [`max_results(i32)`](crate::operation::describe_instance_type_offerings::builders::DescribeInstanceTypeOfferingsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_instance_type_offerings::builders::DescribeInstanceTypeOfferingsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_instance_type_offerings::builders::DescribeInstanceTypeOfferingsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_instance_type_offerings::builders::DescribeInstanceTypeOfferingsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p><br>
-    /// - On success, responds with [`DescribeInstanceTypeOfferingsOutput`](crate::operation::describe_instance_type_offerings::DescribeInstanceTypeOfferingsOutput) with field(s):
+                            /// - On success, responds with [`DescribeInstanceTypeOfferingsOutput`](crate::operation::describe_instance_type_offerings::DescribeInstanceTypeOfferingsOutput) with field(s):
     ///   - [`instance_type_offerings(Option<Vec::<InstanceTypeOffering>>)`](crate::operation::describe_instance_type_offerings::DescribeInstanceTypeOfferingsOutput::instance_type_offerings): <p>The instance types offered.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_instance_type_offerings::DescribeInstanceTypeOfferingsOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeInstanceTypeOfferingsError>`](crate::operation::describe_instance_type_offerings::DescribeInstanceTypeOfferingsError)
-    pub fn describe_instance_type_offerings(
-        &self,
-    ) -> crate::operation::describe_instance_type_offerings::builders::DescribeInstanceTypeOfferingsFluentBuilder {
-        crate::operation::describe_instance_type_offerings::builders::DescribeInstanceTypeOfferingsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeInstanceTypeOfferingsError>`](crate::operation::describe_instance_type_offerings::DescribeInstanceTypeOfferingsError)
+    pub fn describe_instance_type_offerings(&self) -> crate::operation::describe_instance_type_offerings::builders::DescribeInstanceTypeOfferingsFluentBuilder {
+                                crate::operation::describe_instance_type_offerings::builders::DescribeInstanceTypeOfferingsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -5,54 +5,50 @@ pub use crate::operation::modify_snapshot_copy_retention_period::_modify_snapsho
 
 impl ModifySnapshotCopyRetentionPeriodInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.modify_snapshot_copy_retention_period();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.modify_snapshot_copy_retention_period();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ModifySnapshotCopyRetentionPeriod`.
-///
+/// 
 /// <p>Modifies the number of days to retain snapshots in the destination Amazon Web Services Region after they are copied from the source Amazon Web Services Region. By default, this operation only changes the retention period of copied automated snapshots. The retention periods for both new and existing copied automated snapshots are updated with the new retention period. You can set the manual option to change only the retention periods of copied manual snapshots. If you set this option, only newly copied manual snapshots have the new retention period.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifySnapshotCopyRetentionPeriodFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::modify_snapshot_copy_retention_period::builders::ModifySnapshotCopyRetentionPeriodInputBuilder,
+                    inner: crate::operation::modify_snapshot_copy_retention_period::builders::ModifySnapshotCopyRetentionPeriodInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodOutput,
-        crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodError,
-    > for ModifySnapshotCopyRetentionPeriodFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodOutput,
-            crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodOutput,
+                    crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodError,
+                > for ModifySnapshotCopyRetentionPeriodFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodOutput,
+                        crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ModifySnapshotCopyRetentionPeriodFluentBuilder {
     /// Creates a new `ModifySnapshotCopyRetentionPeriod`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl ModifySnapshotCopyRetentionPeriodFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriod::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriod::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodOutput,
-        crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriod::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriod::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodOutput, crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The unique identifier of the cluster for which you want to change the retention period for either automated or manual snapshots that are copied to a destination Amazon Web Services Region.</p>
     /// <p>Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.</p>
     pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -172,3 +159,4 @@ impl ModifySnapshotCopyRetentionPeriodFluentBuilder {
         self.inner.get_manual()
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KafkaVersion {
+pub struct KafkaVersion  {
     #[allow(missing_docs)] // documentation missing in model
     pub version: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub status: ::std::option::Option<crate::types::KafkaVersionStatus>,
 }
-impl KafkaVersion {
+impl  KafkaVersion  {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn status(&self) -> ::std::option::Option<&crate::types::KafkaVersionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::KafkaVersionStatus> {
         self.status.as_ref()
     }
 }
@@ -40,8 +40,7 @@ impl KafkaVersionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,8 +53,7 @@ impl KafkaVersionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::KafkaVersionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_status(&self) -> &::std::option::Option<crate::types::KafkaVersionStatus> {
@@ -64,8 +62,11 @@ impl KafkaVersionBuilder {
     /// Consumes the builder and constructs a [`KafkaVersion`](crate::types::KafkaVersion).
     pub fn build(self) -> crate::types::KafkaVersion {
         crate::types::KafkaVersion {
-            version: self.version,
-            status: self.status,
+            version: self.version
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

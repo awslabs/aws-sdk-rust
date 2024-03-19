@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSourceLocationInput {
+pub struct DescribeSourceLocationInput  {
     /// <p>The name of the source location.</p>
     pub source_location_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeSourceLocationInput {
+impl  DescribeSourceLocationInput  {
     /// <p>The name of the source location.</p>
-    pub fn source_location_name(&self) -> ::std::option::Option<&str> {
+    pub fn source_location_name(&self) -> ::std::option::Option<& str> {
         self.source_location_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeSourceLocationInputBuilder {
     }
     /// <p>The name of the source location.</p>
     pub fn set_source_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_location_name = input;
-        self
+        self.source_location_name = input; self
     }
     /// <p>The name of the source location.</p>
     pub fn get_source_location_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_location_name
     }
     /// Consumes the builder and constructs a [`DescribeSourceLocationInput`](crate::operation::describe_source_location::DescribeSourceLocationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_source_location::DescribeSourceLocationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_source_location::DescribeSourceLocationInput {
-            source_location_name: self.source_location_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_source_location::DescribeSourceLocationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_source_location::DescribeSourceLocationInput {
+                source_location_name: self.source_location_name
+                ,
+            }
+        )
     }
 }
+

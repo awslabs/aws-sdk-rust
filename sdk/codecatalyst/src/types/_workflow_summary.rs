@@ -3,7 +3,7 @@
 /// <p>Information about a workflow.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkflowSummary {
+pub struct WorkflowSummary  {
     /// <p>The system-generated unique ID of a workflow.</p>
     pub id: ::std::string::String,
     /// <p>The name of the workflow.</p>
@@ -23,45 +23,41 @@ pub struct WorkflowSummary {
     /// <p>The status of the workflow.</p>
     pub status: crate::types::WorkflowStatus,
 }
-impl WorkflowSummary {
+impl  WorkflowSummary  {
     /// <p>The system-generated unique ID of a workflow.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The name of the workflow.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The name of the source repository where the workflow definition file is stored.</p>
-    pub fn source_repository_name(&self) -> &str {
-        use std::ops::Deref;
-        self.source_repository_name.deref()
+    pub fn source_repository_name(&self) -> & str {
+        use std::ops::Deref; self.source_repository_name.deref()
     }
     /// <p>The name of the branch of the source repository where the workflow definition file is stored.</p>
-    pub fn source_branch_name(&self) -> &str {
-        use std::ops::Deref;
-        self.source_branch_name.deref()
+    pub fn source_branch_name(&self) -> & str {
+        use std::ops::Deref; self.source_branch_name.deref()
     }
     /// <p>Information about the workflow definition file.</p>
-    pub fn definition(&self) -> ::std::option::Option<&crate::types::WorkflowDefinitionSummary> {
+    pub fn definition(&self) -> ::std::option::Option<& crate::types::WorkflowDefinitionSummary> {
         self.definition.as_ref()
     }
     /// <p>The date and time the workflow was created, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a></p>
-    pub fn created_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_time
     }
     /// <p>The date and time the workflow was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a></p>
-    pub fn last_updated_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_updated_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_updated_time
     }
     /// <p>The run mode of the workflow.</p>
-    pub fn run_mode(&self) -> &crate::types::WorkflowRunMode {
+    pub fn run_mode(&self) -> & crate::types::WorkflowRunMode {
         &self.run_mode
     }
     /// <p>The status of the workflow.</p>
-    pub fn status(&self) -> &crate::types::WorkflowStatus {
+    pub fn status(&self) -> & crate::types::WorkflowStatus {
         &self.status
     }
 }
@@ -95,8 +91,7 @@ impl WorkflowSummaryBuilder {
     }
     /// <p>The system-generated unique ID of a workflow.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The system-generated unique ID of a workflow.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +105,7 @@ impl WorkflowSummaryBuilder {
     }
     /// <p>The name of the workflow.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the workflow.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +119,7 @@ impl WorkflowSummaryBuilder {
     }
     /// <p>The name of the source repository where the workflow definition file is stored.</p>
     pub fn set_source_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_repository_name = input;
-        self
+        self.source_repository_name = input; self
     }
     /// <p>The name of the source repository where the workflow definition file is stored.</p>
     pub fn get_source_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +133,7 @@ impl WorkflowSummaryBuilder {
     }
     /// <p>The name of the branch of the source repository where the workflow definition file is stored.</p>
     pub fn set_source_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_branch_name = input;
-        self
+        self.source_branch_name = input; self
     }
     /// <p>The name of the branch of the source repository where the workflow definition file is stored.</p>
     pub fn get_source_branch_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +147,7 @@ impl WorkflowSummaryBuilder {
     }
     /// <p>Information about the workflow definition file.</p>
     pub fn set_definition(mut self, input: ::std::option::Option<crate::types::WorkflowDefinitionSummary>) -> Self {
-        self.definition = input;
-        self
+        self.definition = input; self
     }
     /// <p>Information about the workflow definition file.</p>
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::WorkflowDefinitionSummary> {
@@ -170,8 +161,7 @@ impl WorkflowSummaryBuilder {
     }
     /// <p>The date and time the workflow was created, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a></p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The date and time the workflow was created, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a></p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -185,8 +175,7 @@ impl WorkflowSummaryBuilder {
     }
     /// <p>The date and time the workflow was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a></p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The date and time the workflow was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a></p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -200,8 +189,7 @@ impl WorkflowSummaryBuilder {
     }
     /// <p>The run mode of the workflow.</p>
     pub fn set_run_mode(mut self, input: ::std::option::Option<crate::types::WorkflowRunMode>) -> Self {
-        self.run_mode = input;
-        self
+        self.run_mode = input; self
     }
     /// <p>The run mode of the workflow.</p>
     pub fn get_run_mode(&self) -> &::std::option::Option<crate::types::WorkflowRunMode> {
@@ -215,8 +203,7 @@ impl WorkflowSummaryBuilder {
     }
     /// <p>The status of the workflow.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::WorkflowStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the workflow.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::WorkflowStatus> {
@@ -233,56 +220,52 @@ impl WorkflowSummaryBuilder {
     /// - [`run_mode`](crate::types::builders::WorkflowSummaryBuilder::run_mode)
     /// - [`status`](crate::types::builders::WorkflowSummaryBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::WorkflowSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::WorkflowSummary {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building WorkflowSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building WorkflowSummary",
-                )
-            })?,
-            source_repository_name: self.source_repository_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_repository_name",
-                    "source_repository_name was not specified but it is required when building WorkflowSummary",
-                )
-            })?,
-            source_branch_name: self.source_branch_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_branch_name",
-                    "source_branch_name was not specified but it is required when building WorkflowSummary",
-                )
-            })?,
-            definition: self.definition,
-            created_time: self.created_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_time",
-                    "created_time was not specified but it is required when building WorkflowSummary",
-                )
-            })?,
-            last_updated_time: self.last_updated_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_updated_time",
-                    "last_updated_time was not specified but it is required when building WorkflowSummary",
-                )
-            })?,
-            run_mode: self.run_mode.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "run_mode",
-                    "run_mode was not specified but it is required when building WorkflowSummary",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building WorkflowSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::WorkflowSummary {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building WorkflowSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building WorkflowSummary")
+                    )?
+                ,
+                source_repository_name: self.source_repository_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source_repository_name", "source_repository_name was not specified but it is required when building WorkflowSummary")
+                    )?
+                ,
+                source_branch_name: self.source_branch_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source_branch_name", "source_branch_name was not specified but it is required when building WorkflowSummary")
+                    )?
+                ,
+                definition: self.definition
+                ,
+                created_time: self.created_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_time", "created_time was not specified but it is required when building WorkflowSummary")
+                    )?
+                ,
+                last_updated_time: self.last_updated_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_updated_time", "last_updated_time was not specified but it is required when building WorkflowSummary")
+                    )?
+                ,
+                run_mode: self.run_mode
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("run_mode", "run_mode was not specified but it is required when building WorkflowSummary")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building WorkflowSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

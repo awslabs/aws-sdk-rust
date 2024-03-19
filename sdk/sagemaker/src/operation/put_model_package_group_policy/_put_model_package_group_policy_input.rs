@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutModelPackageGroupPolicyInput {
+pub struct PutModelPackageGroupPolicyInput  {
     /// <p>The name of the model group to add a resource policy to.</p>
     pub model_package_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The resource policy for the model group.</p>
     pub resource_policy: ::std::option::Option<::std::string::String>,
 }
-impl PutModelPackageGroupPolicyInput {
+impl  PutModelPackageGroupPolicyInput  {
     /// <p>The name of the model group to add a resource policy to.</p>
-    pub fn model_package_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_package_group_name(&self) -> ::std::option::Option<& str> {
         self.model_package_group_name.as_deref()
     }
     /// <p>The resource policy for the model group.</p>
-    pub fn resource_policy(&self) -> ::std::option::Option<&str> {
+    pub fn resource_policy(&self) -> ::std::option::Option<& str> {
         self.resource_policy.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl PutModelPackageGroupPolicyInputBuilder {
     }
     /// <p>The name of the model group to add a resource policy to.</p>
     pub fn set_model_package_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_package_group_name = input;
-        self
+        self.model_package_group_name = input; self
     }
     /// <p>The name of the model group to add a resource policy to.</p>
     pub fn get_model_package_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl PutModelPackageGroupPolicyInputBuilder {
     }
     /// <p>The resource policy for the model group.</p>
     pub fn set_resource_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_policy = input;
-        self
+        self.resource_policy = input; self
     }
     /// <p>The resource policy for the model group.</p>
     pub fn get_resource_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_policy
     }
     /// Consumes the builder and constructs a [`PutModelPackageGroupPolicyInput`](crate::operation::put_model_package_group_policy::PutModelPackageGroupPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_model_package_group_policy::PutModelPackageGroupPolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_model_package_group_policy::PutModelPackageGroupPolicyInput {
-            model_package_group_name: self.model_package_group_name,
-            resource_policy: self.resource_policy,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_model_package_group_policy::PutModelPackageGroupPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_model_package_group_policy::PutModelPackageGroupPolicyInput {
+                model_package_group_name: self.model_package_group_name
+                ,
+                resource_policy: self.resource_policy
+                ,
+            }
+        )
     }
 }
+

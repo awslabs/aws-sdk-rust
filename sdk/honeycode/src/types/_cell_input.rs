@@ -5,25 +5,26 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CellInput {
+pub struct CellInput  {
     /// <p>Fact represents the data that is entered into a cell. This data can be free text or a formula. Formulas need to start with the equals (=) sign.</p>
     pub fact: ::std::option::Option<::std::string::String>,
     /// <p>A list representing the values that are entered into a ROWSET cell. Facts list can have either only values or rowIDs, and rowIDs should from the same table.</p>
-    pub facts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub facts: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl CellInput {
+impl  CellInput  {
     /// <p>Fact represents the data that is entered into a cell. This data can be free text or a formula. Formulas need to start with the equals (=) sign.</p>
-    pub fn fact(&self) -> ::std::option::Option<&str> {
+    pub fn fact(&self) -> ::std::option::Option<& str> {
         self.fact.as_deref()
     }
     /// <p>A list representing the values that are entered into a ROWSET cell. Facts list can have either only values or rowIDs, and rowIDs should from the same table.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.facts.is_none()`.
-    pub fn facts(&self) -> &[::std::string::String] {
-        self.facts.as_deref().unwrap_or_default()
+    pub fn facts(&self) -> & [::std::string::String] {
+        self.facts.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for CellInput {
+impl  ::std::fmt::Debug for CellInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CellInput");
         formatter.field("fact", &"*** Sensitive Data Redacted ***");
@@ -43,7 +44,7 @@ impl CellInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct CellInputBuilder {
     pub(crate) fact: ::std::option::Option<::std::string::String>,
-    pub(crate) facts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) facts: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl CellInputBuilder {
     /// <p>Fact represents the data that is entered into a cell. This data can be free text or a formula. Formulas need to start with the equals (=) sign.</p>
@@ -53,8 +54,7 @@ impl CellInputBuilder {
     }
     /// <p>Fact represents the data that is entered into a cell. This data can be free text or a formula. Formulas need to start with the equals (=) sign.</p>
     pub fn set_fact(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fact = input;
-        self
+        self.fact = input; self
     }
     /// <p>Fact represents the data that is entered into a cell. This data can be free text or a formula. Formulas need to start with the equals (=) sign.</p>
     pub fn get_fact(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,24 +67,25 @@ impl CellInputBuilder {
     /// <p>A list representing the values that are entered into a ROWSET cell. Facts list can have either only values or rowIDs, and rowIDs should from the same table.</p>
     pub fn facts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.facts.unwrap_or_default();
-        v.push(input.into());
-        self.facts = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.facts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list representing the values that are entered into a ROWSET cell. Facts list can have either only values or rowIDs, and rowIDs should from the same table.</p>
-    pub fn set_facts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.facts = input;
-        self
+    pub fn set_facts(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.facts = input; self
     }
     /// <p>A list representing the values that are entered into a ROWSET cell. Facts list can have either only values or rowIDs, and rowIDs should from the same table.</p>
-    pub fn get_facts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_facts(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.facts
     }
     /// Consumes the builder and constructs a [`CellInput`](crate::types::CellInput).
     pub fn build(self) -> crate::types::CellInput {
         crate::types::CellInput {
-            fact: self.fact,
-            facts: self.facts,
+            fact: self.fact
+            ,
+            facts: self.facts
+            ,
         }
     }
 }
@@ -96,3 +97,4 @@ impl ::std::fmt::Debug for CellInputBuilder {
         formatter.finish()
     }
 }
+

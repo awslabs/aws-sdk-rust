@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeJobInput {
+pub struct DescribeJobInput  {
     /// <p>The name of the job to be described.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeJobInput {
+impl  DescribeJobInput  {
     /// <p>The name of the job to be described.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl DescribeJobInputBuilder {
     }
     /// <p>The name of the job to be described.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the job to be described.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl DescribeJobInputBuilder {
     }
     /// Consumes the builder and constructs a [`DescribeJobInput`](crate::operation::describe_job::DescribeJobInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_job::DescribeJobInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_job::DescribeJobInput { name: self.name })
+        ::std::result::Result::Ok(
+            crate::operation::describe_job::DescribeJobInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

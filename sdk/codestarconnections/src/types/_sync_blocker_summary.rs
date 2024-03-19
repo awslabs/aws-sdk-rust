@@ -3,29 +3,29 @@
 /// <p>A summary for sync blockers.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SyncBlockerSummary {
+pub struct SyncBlockerSummary  {
     /// <p>The resource name for sync blocker summary.</p>
     pub resource_name: ::std::string::String,
     /// <p>The parent resource name for a sync blocker summary.</p>
     pub parent_resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The latest events for a sync blocker summary.</p>
-    pub latest_blockers: ::std::option::Option<::std::vec::Vec<crate::types::SyncBlocker>>,
+    pub latest_blockers: ::std::option::Option<::std::vec::Vec::<crate::types::SyncBlocker>>,
 }
-impl SyncBlockerSummary {
+impl  SyncBlockerSummary  {
     /// <p>The resource name for sync blocker summary.</p>
-    pub fn resource_name(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_name.deref()
+    pub fn resource_name(&self) -> & str {
+        use std::ops::Deref; self.resource_name.deref()
     }
     /// <p>The parent resource name for a sync blocker summary.</p>
-    pub fn parent_resource_name(&self) -> ::std::option::Option<&str> {
+    pub fn parent_resource_name(&self) -> ::std::option::Option<& str> {
         self.parent_resource_name.as_deref()
     }
     /// <p>The latest events for a sync blocker summary.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.latest_blockers.is_none()`.
-    pub fn latest_blockers(&self) -> &[crate::types::SyncBlocker] {
-        self.latest_blockers.as_deref().unwrap_or_default()
+    pub fn latest_blockers(&self) -> & [crate::types::SyncBlocker] {
+        self.latest_blockers.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SyncBlockerSummary {
@@ -41,7 +41,7 @@ impl SyncBlockerSummary {
 pub struct SyncBlockerSummaryBuilder {
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
     pub(crate) parent_resource_name: ::std::option::Option<::std::string::String>,
-    pub(crate) latest_blockers: ::std::option::Option<::std::vec::Vec<crate::types::SyncBlocker>>,
+    pub(crate) latest_blockers: ::std::option::Option<::std::vec::Vec::<crate::types::SyncBlocker>>,
 }
 impl SyncBlockerSummaryBuilder {
     /// <p>The resource name for sync blocker summary.</p>
@@ -52,8 +52,7 @@ impl SyncBlockerSummaryBuilder {
     }
     /// <p>The resource name for sync blocker summary.</p>
     pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_name = input;
-        self
+        self.resource_name = input; self
     }
     /// <p>The resource name for sync blocker summary.</p>
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +65,7 @@ impl SyncBlockerSummaryBuilder {
     }
     /// <p>The parent resource name for a sync blocker summary.</p>
     pub fn set_parent_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parent_resource_name = input;
-        self
+        self.parent_resource_name = input; self
     }
     /// <p>The parent resource name for a sync blocker summary.</p>
     pub fn get_parent_resource_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,32 +78,35 @@ impl SyncBlockerSummaryBuilder {
     /// <p>The latest events for a sync blocker summary.</p>
     pub fn latest_blockers(mut self, input: crate::types::SyncBlocker) -> Self {
         let mut v = self.latest_blockers.unwrap_or_default();
-        v.push(input);
-        self.latest_blockers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.latest_blockers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The latest events for a sync blocker summary.</p>
-    pub fn set_latest_blockers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SyncBlocker>>) -> Self {
-        self.latest_blockers = input;
-        self
+    pub fn set_latest_blockers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SyncBlocker>>) -> Self {
+        self.latest_blockers = input; self
     }
     /// <p>The latest events for a sync blocker summary.</p>
-    pub fn get_latest_blockers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SyncBlocker>> {
+    pub fn get_latest_blockers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SyncBlocker>> {
         &self.latest_blockers
     }
     /// Consumes the builder and constructs a [`SyncBlockerSummary`](crate::types::SyncBlockerSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_name`](crate::types::builders::SyncBlockerSummaryBuilder::resource_name)
     pub fn build(self) -> ::std::result::Result<crate::types::SyncBlockerSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SyncBlockerSummary {
-            resource_name: self.resource_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_name",
-                    "resource_name was not specified but it is required when building SyncBlockerSummary",
-                )
-            })?,
-            parent_resource_name: self.parent_resource_name,
-            latest_blockers: self.latest_blockers,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SyncBlockerSummary {
+                resource_name: self.resource_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_name", "resource_name was not specified but it is required when building SyncBlockerSummary")
+                    )?
+                ,
+                parent_resource_name: self.parent_resource_name
+                ,
+                latest_blockers: self.latest_blockers
+                ,
+            }
+        )
     }
 }
+

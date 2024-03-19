@@ -3,13 +3,13 @@
 /// <p>Summary information about a traffic distribution group user.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrafficDistributionGroupUserSummary {
+pub struct TrafficDistributionGroupUserSummary  {
     /// <p>The identifier for the user. This can be the ID or the ARN of the user.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
 }
-impl TrafficDistributionGroupUserSummary {
+impl  TrafficDistributionGroupUserSummary  {
     /// <p>The identifier for the user. This can be the ID or the ARN of the user.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl TrafficDistributionGroupUserSummaryBuilder {
     }
     /// <p>The identifier for the user. This can be the ID or the ARN of the user.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The identifier for the user. This can be the ID or the ARN of the user.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl TrafficDistributionGroupUserSummaryBuilder {
     }
     /// Consumes the builder and constructs a [`TrafficDistributionGroupUserSummary`](crate::types::TrafficDistributionGroupUserSummary).
     pub fn build(self) -> crate::types::TrafficDistributionGroupUserSummary {
-        crate::types::TrafficDistributionGroupUserSummary { user_id: self.user_id }
+        crate::types::TrafficDistributionGroupUserSummary {
+            user_id: self.user_id
+            ,
+        }
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePreferencesInput {
+pub struct UpdatePreferencesInput  {
     /// <p>Sets the "savings estimation mode" preference.</p>
     pub savings_estimation_mode: ::std::option::Option<crate::types::SavingsEstimationMode>,
     /// <p>Sets the "member account discount visibility" preference.</p>
     pub member_account_discount_visibility: ::std::option::Option<crate::types::MemberAccountDiscountVisibility>,
 }
-impl UpdatePreferencesInput {
+impl  UpdatePreferencesInput  {
     /// <p>Sets the "savings estimation mode" preference.</p>
-    pub fn savings_estimation_mode(&self) -> ::std::option::Option<&crate::types::SavingsEstimationMode> {
+    pub fn savings_estimation_mode(&self) -> ::std::option::Option<& crate::types::SavingsEstimationMode> {
         self.savings_estimation_mode.as_ref()
     }
     /// <p>Sets the "member account discount visibility" preference.</p>
-    pub fn member_account_discount_visibility(&self) -> ::std::option::Option<&crate::types::MemberAccountDiscountVisibility> {
+    pub fn member_account_discount_visibility(&self) -> ::std::option::Option<& crate::types::MemberAccountDiscountVisibility> {
         self.member_account_discount_visibility.as_ref()
     }
 }
@@ -40,8 +40,7 @@ impl UpdatePreferencesInputBuilder {
     }
     /// <p>Sets the "savings estimation mode" preference.</p>
     pub fn set_savings_estimation_mode(mut self, input: ::std::option::Option<crate::types::SavingsEstimationMode>) -> Self {
-        self.savings_estimation_mode = input;
-        self
+        self.savings_estimation_mode = input; self
     }
     /// <p>Sets the "savings estimation mode" preference.</p>
     pub fn get_savings_estimation_mode(&self) -> &::std::option::Option<crate::types::SavingsEstimationMode> {
@@ -54,20 +53,22 @@ impl UpdatePreferencesInputBuilder {
     }
     /// <p>Sets the "member account discount visibility" preference.</p>
     pub fn set_member_account_discount_visibility(mut self, input: ::std::option::Option<crate::types::MemberAccountDiscountVisibility>) -> Self {
-        self.member_account_discount_visibility = input;
-        self
+        self.member_account_discount_visibility = input; self
     }
     /// <p>Sets the "member account discount visibility" preference.</p>
     pub fn get_member_account_discount_visibility(&self) -> &::std::option::Option<crate::types::MemberAccountDiscountVisibility> {
         &self.member_account_discount_visibility
     }
     /// Consumes the builder and constructs a [`UpdatePreferencesInput`](crate::operation::update_preferences::UpdatePreferencesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_preferences::UpdatePreferencesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_preferences::UpdatePreferencesInput {
-            savings_estimation_mode: self.savings_estimation_mode,
-            member_account_discount_visibility: self.member_account_discount_visibility,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_preferences::UpdatePreferencesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_preferences::UpdatePreferencesInput {
+                savings_estimation_mode: self.savings_estimation_mode
+                ,
+                member_account_discount_visibility: self.member_account_discount_visibility
+                ,
+            }
+        )
     }
 }
+

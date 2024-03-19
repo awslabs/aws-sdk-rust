@@ -3,7 +3,7 @@
 /// <p>Contains information about the error that caused a finding to fail to be retrieved.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetFindingsError {
+pub struct BatchGetFindingsError  {
     /// <p>The name of the scan that generated the finding.</p>
     pub scan_name: ::std::string::String,
     /// <p>The finding ID of the finding that was not fetched.</p>
@@ -13,25 +13,22 @@ pub struct BatchGetFindingsError {
     /// <p>Describes the error.</p>
     pub message: ::std::string::String,
 }
-impl BatchGetFindingsError {
+impl  BatchGetFindingsError  {
     /// <p>The name of the scan that generated the finding.</p>
-    pub fn scan_name(&self) -> &str {
-        use std::ops::Deref;
-        self.scan_name.deref()
+    pub fn scan_name(&self) -> & str {
+        use std::ops::Deref; self.scan_name.deref()
     }
     /// <p>The finding ID of the finding that was not fetched.</p>
-    pub fn finding_id(&self) -> &str {
-        use std::ops::Deref;
-        self.finding_id.deref()
+    pub fn finding_id(&self) -> & str {
+        use std::ops::Deref; self.finding_id.deref()
     }
     /// <p>A code associated with the type of error.</p>
-    pub fn error_code(&self) -> &crate::types::ErrorCode {
+    pub fn error_code(&self) -> & crate::types::ErrorCode {
         &self.error_code
     }
     /// <p>Describes the error.</p>
-    pub fn message(&self) -> &str {
-        use std::ops::Deref;
-        self.message.deref()
+    pub fn message(&self) -> & str {
+        use std::ops::Deref; self.message.deref()
     }
 }
 impl BatchGetFindingsError {
@@ -59,8 +56,7 @@ impl BatchGetFindingsErrorBuilder {
     }
     /// <p>The name of the scan that generated the finding.</p>
     pub fn set_scan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scan_name = input;
-        self
+        self.scan_name = input; self
     }
     /// <p>The name of the scan that generated the finding.</p>
     pub fn get_scan_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +70,7 @@ impl BatchGetFindingsErrorBuilder {
     }
     /// <p>The finding ID of the finding that was not fetched.</p>
     pub fn set_finding_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.finding_id = input;
-        self
+        self.finding_id = input; self
     }
     /// <p>The finding ID of the finding that was not fetched.</p>
     pub fn get_finding_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +84,7 @@ impl BatchGetFindingsErrorBuilder {
     }
     /// <p>A code associated with the type of error.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>A code associated with the type of error.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
@@ -104,8 +98,7 @@ impl BatchGetFindingsErrorBuilder {
     }
     /// <p>Describes the error.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Describes the error.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,31 +111,30 @@ impl BatchGetFindingsErrorBuilder {
     /// - [`error_code`](crate::types::builders::BatchGetFindingsErrorBuilder::error_code)
     /// - [`message`](crate::types::builders::BatchGetFindingsErrorBuilder::message)
     pub fn build(self) -> ::std::result::Result<crate::types::BatchGetFindingsError, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BatchGetFindingsError {
-            scan_name: self.scan_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "scan_name",
-                    "scan_name was not specified but it is required when building BatchGetFindingsError",
-                )
-            })?,
-            finding_id: self.finding_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "finding_id",
-                    "finding_id was not specified but it is required when building BatchGetFindingsError",
-                )
-            })?,
-            error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_code",
-                    "error_code was not specified but it is required when building BatchGetFindingsError",
-                )
-            })?,
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building BatchGetFindingsError",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BatchGetFindingsError {
+                scan_name: self.scan_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("scan_name", "scan_name was not specified but it is required when building BatchGetFindingsError")
+                    )?
+                ,
+                finding_id: self.finding_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("finding_id", "finding_id was not specified but it is required when building BatchGetFindingsError")
+                    )?
+                ,
+                error_code: self.error_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_code", "error_code was not specified but it is required when building BatchGetFindingsError")
+                    )?
+                ,
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building BatchGetFindingsError")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartMediaAnalysisJobInput {
+pub struct StartMediaAnalysisJobInput  {
     /// <p>Idempotency token used to prevent the accidental creation of duplicate versions. If you use the same token with multiple <code>StartMediaAnalysisJobRequest</code> requests, the same response is returned. Use <code>ClientRequestToken</code> to prevent the same request from being processed more than once.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the job. Does not have to be unique.</p>
@@ -16,29 +16,29 @@ pub struct StartMediaAnalysisJobInput {
     /// <p>The identifier of customer managed AWS KMS key (name or ARN). The key is used to encrypt images copied into the service. The key is also used to encrypt results and manifest files written to the output Amazon S3 bucket.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
-impl StartMediaAnalysisJobInput {
+impl  StartMediaAnalysisJobInput  {
     /// <p>Idempotency token used to prevent the accidental creation of duplicate versions. If you use the same token with multiple <code>StartMediaAnalysisJobRequest</code> requests, the same response is returned. Use <code>ClientRequestToken</code> to prevent the same request from being processed more than once.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The name of the job. Does not have to be unique.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>Configuration options for the media analysis job to be created.</p>
-    pub fn operations_config(&self) -> ::std::option::Option<&crate::types::MediaAnalysisOperationsConfig> {
+    pub fn operations_config(&self) -> ::std::option::Option<& crate::types::MediaAnalysisOperationsConfig> {
         self.operations_config.as_ref()
     }
     /// <p>Input data to be analyzed by the job.</p>
-    pub fn input(&self) -> ::std::option::Option<&crate::types::MediaAnalysisInput> {
+    pub fn input(&self) -> ::std::option::Option<& crate::types::MediaAnalysisInput> {
         self.input.as_ref()
     }
     /// <p>The Amazon S3 bucket location to store the results.</p>
-    pub fn output_config(&self) -> ::std::option::Option<&crate::types::MediaAnalysisOutputConfig> {
+    pub fn output_config(&self) -> ::std::option::Option<& crate::types::MediaAnalysisOutputConfig> {
         self.output_config.as_ref()
     }
     /// <p>The identifier of customer managed AWS KMS key (name or ARN). The key is used to encrypt images copied into the service. The key is also used to encrypt results and manifest files written to the output Amazon S3 bucket.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
@@ -68,8 +68,7 @@ impl StartMediaAnalysisJobInputBuilder {
     }
     /// <p>Idempotency token used to prevent the accidental creation of duplicate versions. If you use the same token with multiple <code>StartMediaAnalysisJobRequest</code> requests, the same response is returned. Use <code>ClientRequestToken</code> to prevent the same request from being processed more than once.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>Idempotency token used to prevent the accidental creation of duplicate versions. If you use the same token with multiple <code>StartMediaAnalysisJobRequest</code> requests, the same response is returned. Use <code>ClientRequestToken</code> to prevent the same request from being processed more than once.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +81,7 @@ impl StartMediaAnalysisJobInputBuilder {
     }
     /// <p>The name of the job. Does not have to be unique.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// <p>The name of the job. Does not have to be unique.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl StartMediaAnalysisJobInputBuilder {
     }
     /// <p>Configuration options for the media analysis job to be created.</p>
     pub fn set_operations_config(mut self, input: ::std::option::Option<crate::types::MediaAnalysisOperationsConfig>) -> Self {
-        self.operations_config = input;
-        self
+        self.operations_config = input; self
     }
     /// <p>Configuration options for the media analysis job to be created.</p>
     pub fn get_operations_config(&self) -> &::std::option::Option<crate::types::MediaAnalysisOperationsConfig> {
@@ -112,8 +109,7 @@ impl StartMediaAnalysisJobInputBuilder {
     }
     /// <p>Input data to be analyzed by the job.</p>
     pub fn set_input(mut self, input: ::std::option::Option<crate::types::MediaAnalysisInput>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
     }
     /// <p>Input data to be analyzed by the job.</p>
     pub fn get_input(&self) -> &::std::option::Option<crate::types::MediaAnalysisInput> {
@@ -127,8 +123,7 @@ impl StartMediaAnalysisJobInputBuilder {
     }
     /// <p>The Amazon S3 bucket location to store the results.</p>
     pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::MediaAnalysisOutputConfig>) -> Self {
-        self.output_config = input;
-        self
+        self.output_config = input; self
     }
     /// <p>The Amazon S3 bucket location to store the results.</p>
     pub fn get_output_config(&self) -> &::std::option::Option<crate::types::MediaAnalysisOutputConfig> {
@@ -141,25 +136,30 @@ impl StartMediaAnalysisJobInputBuilder {
     }
     /// <p>The identifier of customer managed AWS KMS key (name or ARN). The key is used to encrypt images copied into the service. The key is also used to encrypt results and manifest files written to the output Amazon S3 bucket.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The identifier of customer managed AWS KMS key (name or ARN). The key is used to encrypt images copied into the service. The key is also used to encrypt results and manifest files written to the output Amazon S3 bucket.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }
     /// Consumes the builder and constructs a [`StartMediaAnalysisJobInput`](crate::operation::start_media_analysis_job::StartMediaAnalysisJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_media_analysis_job::StartMediaAnalysisJobInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_media_analysis_job::StartMediaAnalysisJobInput {
-            client_request_token: self.client_request_token,
-            job_name: self.job_name,
-            operations_config: self.operations_config,
-            input: self.input,
-            output_config: self.output_config,
-            kms_key_id: self.kms_key_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_media_analysis_job::StartMediaAnalysisJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_media_analysis_job::StartMediaAnalysisJobInput {
+                client_request_token: self.client_request_token
+                ,
+                job_name: self.job_name
+                ,
+                operations_config: self.operations_config
+                ,
+                input: self.input
+                ,
+                output_config: self.output_config
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+            }
+        )
     }
 }
+

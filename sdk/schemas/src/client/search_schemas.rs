@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`SearchSchemas`](crate::operation::search_schemas::builders::SearchSchemasFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::search_schemas::builders::SearchSchemasFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`keywords(impl Into<String>)`](crate::operation::search_schemas::builders::SearchSchemasFluentBuilder::keywords) / [`set_keywords(Option<String>)`](crate::operation::search_schemas::builders::SearchSchemasFluentBuilder::set_keywords):<br>required: **true**<br><p>Specifying this limits the results to only schemas that include the provided keywords.</p><br>
     ///   - [`limit(i32)`](crate::operation::search_schemas::builders::SearchSchemasFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::search_schemas::builders::SearchSchemasFluentBuilder::set_limit):<br>required: **false**<br>(undocumented)<br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::search_schemas::builders::SearchSchemasFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::search_schemas::builders::SearchSchemasFluentBuilder::set_next_token):<br>required: **false**<br><p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p><br>
     ///   - [`registry_name(impl Into<String>)`](crate::operation::search_schemas::builders::SearchSchemasFluentBuilder::registry_name) / [`set_registry_name(Option<String>)`](crate::operation::search_schemas::builders::SearchSchemasFluentBuilder::set_registry_name):<br>required: **true**<br><p>The name of the registry.</p><br>
-    /// - On success, responds with [`SearchSchemasOutput`](crate::operation::search_schemas::SearchSchemasOutput) with field(s):
+                            /// - On success, responds with [`SearchSchemasOutput`](crate::operation::search_schemas::SearchSchemasOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::search_schemas::SearchSchemasOutput::next_token): <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     ///   - [`schemas(Option<Vec::<SearchSchemaSummary>>)`](crate::operation::search_schemas::SearchSchemasOutput::schemas): <p>An array of SearchSchemaSummary information.</p>
-    /// - On failure, responds with [`SdkError<SearchSchemasError>`](crate::operation::search_schemas::SearchSchemasError)
+                            /// - On failure, responds with [`SdkError<SearchSchemasError>`](crate::operation::search_schemas::SearchSchemasError)
     pub fn search_schemas(&self) -> crate::operation::search_schemas::builders::SearchSchemasFluentBuilder {
-        crate::operation::search_schemas::builders::SearchSchemasFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::search_schemas::builders::SearchSchemasFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListQueriesInput {
+pub struct ListQueriesInput  {
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub graph_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to be fetched by the API.</p>
@@ -10,9 +10,9 @@ pub struct ListQueriesInput {
     /// <p>Filtered list of queries based on state.</p>
     pub state: ::std::option::Option<crate::types::QueryStateInput>,
 }
-impl ListQueriesInput {
+impl  ListQueriesInput  {
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
-    pub fn graph_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn graph_identifier(&self) -> ::std::option::Option<& str> {
         self.graph_identifier.as_deref()
     }
     /// <p>The maximum number of results to be fetched by the API.</p>
@@ -20,7 +20,7 @@ impl ListQueriesInput {
         self.max_results
     }
     /// <p>Filtered list of queries based on state.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::QueryStateInput> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::QueryStateInput> {
         self.state.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl ListQueriesInputBuilder {
     }
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub fn set_graph_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.graph_identifier = input;
-        self
+        self.graph_identifier = input; self
     }
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub fn get_graph_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl ListQueriesInputBuilder {
     }
     /// <p>The maximum number of results to be fetched by the API.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to be fetched by the API.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -77,8 +75,7 @@ impl ListQueriesInputBuilder {
     }
     /// <p>Filtered list of queries based on state.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::QueryStateInput>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Filtered list of queries based on state.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::QueryStateInput> {
@@ -86,10 +83,16 @@ impl ListQueriesInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListQueriesInput`](crate::operation::list_queries::ListQueriesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_queries::ListQueriesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_queries::ListQueriesInput {
-            graph_identifier: self.graph_identifier,
-            max_results: self.max_results,
-            state: self.state,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_queries::ListQueriesInput {
+                graph_identifier: self.graph_identifier
+                ,
+                max_results: self.max_results
+                ,
+                state: self.state
+                ,
+            }
+        )
     }
 }
+

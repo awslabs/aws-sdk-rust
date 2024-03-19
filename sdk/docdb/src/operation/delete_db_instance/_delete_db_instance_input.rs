@@ -3,7 +3,7 @@
 /// <p>Represents the input to <code>DeleteDBInstance</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDbInstanceInput {
+pub struct DeleteDbInstanceInput  {
     /// <p>The instance identifier for the instance to be deleted. This parameter isn't case sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -12,14 +12,14 @@ pub struct DeleteDbInstanceInput {
     /// </ul>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
 }
-impl DeleteDbInstanceInput {
+impl  DeleteDbInstanceInput  {
     /// <p>The instance identifier for the instance to be deleted. This parameter isn't case sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
     /// <p>Must match the name of an existing instance.</p></li>
     /// </ul>
-    pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_instance_identifier(&self) -> ::std::option::Option<& str> {
         self.db_instance_identifier.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl DeleteDbInstanceInputBuilder {
     /// <p>Must match the name of an existing instance.</p></li>
     /// </ul>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_instance_identifier = input;
-        self
+        self.db_instance_identifier = input; self
     }
     /// <p>The instance identifier for the instance to be deleted. This parameter isn't case sensitive.</p>
     /// <p>Constraints:</p>
@@ -68,11 +67,13 @@ impl DeleteDbInstanceInputBuilder {
         &self.db_instance_identifier
     }
     /// Consumes the builder and constructs a [`DeleteDbInstanceInput`](crate::operation::delete_db_instance::DeleteDbInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_db_instance::DeleteDbInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_db_instance::DeleteDbInstanceInput {
-            db_instance_identifier: self.db_instance_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_db_instance::DeleteDbInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_db_instance::DeleteDbInstanceInput {
+                db_instance_identifier: self.db_instance_identifier
+                ,
+            }
+        )
     }
 }
+

@@ -4,15 +4,15 @@
 /// <p>Only use <code>ModelSettings</code> with the <code>LanguageModelName</code> sub-parameter if you're <b>not</b> using automatic language identification (<code></code>). If using <code>LanguageIdSettings</code> in your request, this parameter contains a <code>LanguageModelName</code> sub-parameter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModelSettings {
+pub struct ModelSettings  {
     /// <p>The name of the custom language model you want to use when processing your transcription job. Note that custom language model names are case sensitive.</p>
     /// <p>The language of the specified custom language model must match the language code that you specify in your transcription request. If the languages do not match, the custom language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
     pub language_model_name: ::std::option::Option<::std::string::String>,
 }
-impl ModelSettings {
+impl  ModelSettings  {
     /// <p>The name of the custom language model you want to use when processing your transcription job. Note that custom language model names are case sensitive.</p>
     /// <p>The language of the specified custom language model must match the language code that you specify in your transcription request. If the languages do not match, the custom language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
-    pub fn language_model_name(&self) -> ::std::option::Option<&str> {
+    pub fn language_model_name(&self) -> ::std::option::Option<& str> {
         self.language_model_name.as_deref()
     }
 }
@@ -39,8 +39,7 @@ impl ModelSettingsBuilder {
     /// <p>The name of the custom language model you want to use when processing your transcription job. Note that custom language model names are case sensitive.</p>
     /// <p>The language of the specified custom language model must match the language code that you specify in your transcription request. If the languages do not match, the custom language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
     pub fn set_language_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.language_model_name = input;
-        self
+        self.language_model_name = input; self
     }
     /// <p>The name of the custom language model you want to use when processing your transcription job. Note that custom language model names are case sensitive.</p>
     /// <p>The language of the specified custom language model must match the language code that you specify in your transcription request. If the languages do not match, the custom language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
@@ -50,7 +49,9 @@ impl ModelSettingsBuilder {
     /// Consumes the builder and constructs a [`ModelSettings`](crate::types::ModelSettings).
     pub fn build(self) -> crate::types::ModelSettings {
         crate::types::ModelSettings {
-            language_model_name: self.language_model_name,
+            language_model_name: self.language_model_name
+            ,
         }
     }
 }
+

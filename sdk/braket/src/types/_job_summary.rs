@@ -3,7 +3,7 @@
 /// <p>Provides summary information about an Amazon Braket job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobSummary {
+pub struct JobSummary  {
     /// <p>The status of the Amazon Braket job.</p>
     pub status: crate::types::JobPrimaryStatus,
     /// <p>The ARN of the Amazon Braket job.</p>
@@ -19,42 +19,39 @@ pub struct JobSummary {
     /// <p>The date and time that the Amazon Braket job ended.</p>
     pub ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl JobSummary {
+impl  JobSummary  {
     /// <p>The status of the Amazon Braket job.</p>
-    pub fn status(&self) -> &crate::types::JobPrimaryStatus {
+    pub fn status(&self) -> & crate::types::JobPrimaryStatus {
         &self.status
     }
     /// <p>The ARN of the Amazon Braket job.</p>
-    pub fn job_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.job_arn.deref()
+    pub fn job_arn(&self) -> & str {
+        use std::ops::Deref; self.job_arn.deref()
     }
     /// <p>The name of the Amazon Braket job.</p>
-    pub fn job_name(&self) -> &str {
-        use std::ops::Deref;
-        self.job_name.deref()
+    pub fn job_name(&self) -> & str {
+        use std::ops::Deref; self.job_name.deref()
     }
     /// <p>Provides summary information about the primary device used by an Amazon Braket job.</p>
-    pub fn device(&self) -> &str {
-        use std::ops::Deref;
-        self.device.deref()
+    pub fn device(&self) -> & str {
+        use std::ops::Deref; self.device.deref()
     }
     /// <p>The date and time that the Amazon Braket job was created.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The date and time that the Amazon Braket job was started.</p>
-    pub fn started_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn started_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>The date and time that the Amazon Braket job ended.</p>
-    pub fn ended_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn ended_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.ended_at.as_ref()
     }
     /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -76,7 +73,7 @@ pub struct JobSummaryBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl JobSummaryBuilder {
     /// <p>The status of the Amazon Braket job.</p>
@@ -87,8 +84,7 @@ impl JobSummaryBuilder {
     }
     /// <p>The status of the Amazon Braket job.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobPrimaryStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the Amazon Braket job.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::JobPrimaryStatus> {
@@ -102,8 +98,7 @@ impl JobSummaryBuilder {
     }
     /// <p>The ARN of the Amazon Braket job.</p>
     pub fn set_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_arn = input;
-        self
+        self.job_arn = input; self
     }
     /// <p>The ARN of the Amazon Braket job.</p>
     pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +112,7 @@ impl JobSummaryBuilder {
     }
     /// <p>The name of the Amazon Braket job.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// <p>The name of the Amazon Braket job.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +126,7 @@ impl JobSummaryBuilder {
     }
     /// <p>Provides summary information about the primary device used by an Amazon Braket job.</p>
     pub fn set_device(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device = input;
-        self
+        self.device = input; self
     }
     /// <p>Provides summary information about the primary device used by an Amazon Braket job.</p>
     pub fn get_device(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +140,7 @@ impl JobSummaryBuilder {
     }
     /// <p>The date and time that the Amazon Braket job was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time that the Amazon Braket job was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -161,8 +153,7 @@ impl JobSummaryBuilder {
     }
     /// <p>The date and time that the Amazon Braket job was started.</p>
     pub fn set_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.started_at = input;
-        self
+        self.started_at = input; self
     }
     /// <p>The date and time that the Amazon Braket job was started.</p>
     pub fn get_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -175,8 +166,7 @@ impl JobSummaryBuilder {
     }
     /// <p>The date and time that the Amazon Braket job ended.</p>
     pub fn set_ended_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.ended_at = input;
-        self
+        self.ended_at = input; self
     }
     /// <p>The date and time that the Amazon Braket job ended.</p>
     pub fn get_ended_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -189,17 +179,16 @@ impl JobSummaryBuilder {
     /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`JobSummary`](crate::types::JobSummary).
@@ -210,40 +199,41 @@ impl JobSummaryBuilder {
     /// - [`device`](crate::types::builders::JobSummaryBuilder::device)
     /// - [`created_at`](crate::types::builders::JobSummaryBuilder::created_at)
     pub fn build(self) -> ::std::result::Result<crate::types::JobSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::JobSummary {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building JobSummary",
-                )
-            })?,
-            job_arn: self.job_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "job_arn",
-                    "job_arn was not specified but it is required when building JobSummary",
-                )
-            })?,
-            job_name: self.job_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "job_name",
-                    "job_name was not specified but it is required when building JobSummary",
-                )
-            })?,
-            device: self.device.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "device",
-                    "device was not specified but it is required when building JobSummary",
-                )
-            })?,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building JobSummary",
-                )
-            })?,
-            started_at: self.started_at,
-            ended_at: self.ended_at,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::types::JobSummary {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building JobSummary")
+                    )?
+                ,
+                job_arn: self.job_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("job_arn", "job_arn was not specified but it is required when building JobSummary")
+                    )?
+                ,
+                job_name: self.job_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("job_name", "job_name was not specified but it is required when building JobSummary")
+                    )?
+                ,
+                device: self.device
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("device", "device was not specified but it is required when building JobSummary")
+                    )?
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building JobSummary")
+                    )?
+                ,
+                started_at: self.started_at
+                ,
+                ended_at: self.ended_at
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

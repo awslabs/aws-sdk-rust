@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListFhirExportJobsOutput {
+pub struct ListFhirExportJobsOutput  {
     /// <p>The properties of listed FHIR export jobs, including the ID, ARN, name, and the status of the job.</p>
-    pub export_job_properties_list: ::std::vec::Vec<crate::types::ExportJobProperties>,
+    pub export_job_properties_list: ::std::vec::Vec::<crate::types::ExportJobProperties>,
     /// <p>A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListFhirExportJobsOutput {
+impl  ListFhirExportJobsOutput  {
     /// <p>The properties of listed FHIR export jobs, including the ID, ARN, name, and the status of the job.</p>
-    pub fn export_job_properties_list(&self) -> &[crate::types::ExportJobProperties] {
-        use std::ops::Deref;
-        self.export_job_properties_list.deref()
+    pub fn export_job_properties_list(&self) -> & [crate::types::ExportJobProperties] {
+        use std::ops::Deref; self.export_job_properties_list.deref()
     }
     /// <p>A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListFhirExportJobsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListFhirExportJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListFhirExportJobsOutput`](crate::operation::list_fhir_export_jobs::ListFhirExportJobsOutput).
     pub fn builder() -> crate::operation::list_fhir_export_jobs::builders::ListFhirExportJobsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListFhirExportJobsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFhirExportJobsOutputBuilder {
-    pub(crate) export_job_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::ExportJobProperties>>,
+    pub(crate) export_job_properties_list: ::std::option::Option<::std::vec::Vec::<crate::types::ExportJobProperties>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListFhirExportJobsOutputBuilder {
     /// <p>The properties of listed FHIR export jobs, including the ID, ARN, name, and the status of the job.</p>
     pub fn export_job_properties_list(mut self, input: crate::types::ExportJobProperties) -> Self {
         let mut v = self.export_job_properties_list.unwrap_or_default();
-        v.push(input);
-        self.export_job_properties_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.export_job_properties_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The properties of listed FHIR export jobs, including the ID, ARN, name, and the status of the job.</p>
-    pub fn set_export_job_properties_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExportJobProperties>>) -> Self {
-        self.export_job_properties_list = input;
-        self
+    pub fn set_export_job_properties_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ExportJobProperties>>) -> Self {
+        self.export_job_properties_list = input; self
     }
     /// <p>The properties of listed FHIR export jobs, including the ID, ARN, name, and the status of the job.</p>
-    pub fn get_export_job_properties_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportJobProperties>> {
+    pub fn get_export_job_properties_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ExportJobProperties>> {
         &self.export_job_properties_list
     }
     /// <p>A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query.</p>
@@ -68,38 +66,37 @@ impl ListFhirExportJobsOutputBuilder {
     }
     /// <p>A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListFhirExportJobsOutput`](crate::operation::list_fhir_export_jobs::ListFhirExportJobsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`export_job_properties_list`](crate::operation::list_fhir_export_jobs::builders::ListFhirExportJobsOutputBuilder::export_job_properties_list)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_fhir_export_jobs::ListFhirExportJobsOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_fhir_export_jobs::ListFhirExportJobsOutput {
-            export_job_properties_list: self.export_job_properties_list.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "export_job_properties_list",
-                    "export_job_properties_list was not specified but it is required when building ListFhirExportJobsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_fhir_export_jobs::ListFhirExportJobsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_fhir_export_jobs::ListFhirExportJobsOutput {
+                export_job_properties_list: self.export_job_properties_list
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("export_job_properties_list", "export_job_properties_list was not specified but it is required when building ListFhirExportJobsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

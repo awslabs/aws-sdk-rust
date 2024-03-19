@@ -3,19 +3,19 @@
 /// <p>An aggregation of findings by Amazon Web Services account ID.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccountAggregationResponse {
+pub struct AccountAggregationResponse  {
     /// <p>The Amazon Web Services account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of findings by severity.</p>
     pub severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
 }
-impl AccountAggregationResponse {
+impl  AccountAggregationResponse  {
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The number of findings by severity.</p>
-    pub fn severity_counts(&self) -> ::std::option::Option<&crate::types::SeverityCounts> {
+    pub fn severity_counts(&self) -> ::std::option::Option<& crate::types::SeverityCounts> {
         self.severity_counts.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl AccountAggregationResponseBuilder {
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AccountAggregationResponseBuilder {
     }
     /// <p>The number of findings by severity.</p>
     pub fn set_severity_counts(mut self, input: ::std::option::Option<crate::types::SeverityCounts>) -> Self {
-        self.severity_counts = input;
-        self
+        self.severity_counts = input; self
     }
     /// <p>The number of findings by severity.</p>
     pub fn get_severity_counts(&self) -> &::std::option::Option<crate::types::SeverityCounts> {
@@ -65,8 +63,11 @@ impl AccountAggregationResponseBuilder {
     /// Consumes the builder and constructs a [`AccountAggregationResponse`](crate::types::AccountAggregationResponse).
     pub fn build(self) -> crate::types::AccountAggregationResponse {
         crate::types::AccountAggregationResponse {
-            account_id: self.account_id,
-            severity_counts: self.severity_counts,
+            account_id: self.account_id
+            ,
+            severity_counts: self.severity_counts
+            ,
         }
     }
 }
+

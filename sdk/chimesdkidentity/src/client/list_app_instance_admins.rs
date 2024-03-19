@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAppInstanceAdmins`](crate::operation::list_app_instance_admins::builders::ListAppInstanceAdminsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_app_instance_admins::builders::ListAppInstanceAdminsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`app_instance_arn(impl Into<String>)`](crate::operation::list_app_instance_admins::builders::ListAppInstanceAdminsFluentBuilder::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::operation::list_app_instance_admins::builders::ListAppInstanceAdminsFluentBuilder::set_app_instance_arn):<br>required: **true**<br><p>The ARN of the <code>AppInstance</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_app_instance_admins::builders::ListAppInstanceAdminsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_app_instance_admins::builders::ListAppInstanceAdminsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of administrators that you want to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_app_instance_admins::builders::ListAppInstanceAdminsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_app_instance_admins::builders::ListAppInstanceAdminsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token returned from previous API requests until the number of administrators is reached.</p><br>
-    /// - On success, responds with [`ListAppInstanceAdminsOutput`](crate::operation::list_app_instance_admins::ListAppInstanceAdminsOutput) with field(s):
+                            /// - On success, responds with [`ListAppInstanceAdminsOutput`](crate::operation::list_app_instance_admins::ListAppInstanceAdminsOutput) with field(s):
     ///   - [`app_instance_arn(Option<String>)`](crate::operation::list_app_instance_admins::ListAppInstanceAdminsOutput::app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
     ///   - [`app_instance_admins(Option<Vec::<AppInstanceAdminSummary>>)`](crate::operation::list_app_instance_admins::ListAppInstanceAdminsOutput::app_instance_admins): <p>The information for each administrator.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_app_instance_admins::ListAppInstanceAdminsOutput::next_token): <p>The token returned from previous API requests until the number of administrators is reached.</p>
-    /// - On failure, responds with [`SdkError<ListAppInstanceAdminsError>`](crate::operation::list_app_instance_admins::ListAppInstanceAdminsError)
+                            /// - On failure, responds with [`SdkError<ListAppInstanceAdminsError>`](crate::operation::list_app_instance_admins::ListAppInstanceAdminsError)
     pub fn list_app_instance_admins(&self) -> crate::operation::list_app_instance_admins::builders::ListAppInstanceAdminsFluentBuilder {
-        crate::operation::list_app_instance_admins::builders::ListAppInstanceAdminsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_app_instance_admins::builders::ListAppInstanceAdminsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

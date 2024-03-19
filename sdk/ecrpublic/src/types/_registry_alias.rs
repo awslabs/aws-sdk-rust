@@ -3,7 +3,7 @@
 /// <p>An object representing the aliases for a public registry. A public registry is given an alias when it's created. However, a custom alias can be set using the Amazon ECR console. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Registries.html">Registries</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegistryAlias {
+pub struct RegistryAlias  {
     /// <p>The name of the registry alias.</p>
     pub name: ::std::string::String,
     /// <p>The status of the registry alias.</p>
@@ -15,14 +15,13 @@ pub struct RegistryAlias {
     /// <p>Indicates whether the registry alias is the default alias for the registry. When the first public repository is created, your public registry is assigned a default registry alias.</p>
     pub default_registry_alias: bool,
 }
-impl RegistryAlias {
+impl  RegistryAlias  {
     /// <p>The name of the registry alias.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The status of the registry alias.</p>
-    pub fn status(&self) -> &crate::types::RegistryAliasStatus {
+    pub fn status(&self) -> & crate::types::RegistryAliasStatus {
         &self.status
     }
     /// <p>Indicates whether the registry alias is the primary alias for the registry. If true, the alias is the primary registry alias and is displayed in both the repository URL and the image URI used in the <code>docker pull</code> commands on the Amazon ECR Public Gallery.</p><note>
@@ -61,8 +60,7 @@ impl RegistryAliasBuilder {
     }
     /// <p>The name of the registry alias.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the registry alias.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl RegistryAliasBuilder {
     }
     /// <p>The status of the registry alias.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RegistryAliasStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the registry alias.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RegistryAliasStatus> {
@@ -95,8 +92,7 @@ impl RegistryAliasBuilder {
     /// <p>A registry alias that isn't the primary registry alias can be used in the repository URI in a <code>docker pull</code> command.</p>
     /// </note>
     pub fn set_primary_registry_alias(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.primary_registry_alias = input;
-        self
+        self.primary_registry_alias = input; self
     }
     /// <p>Indicates whether the registry alias is the primary alias for the registry. If true, the alias is the primary registry alias and is displayed in both the repository URL and the image URI used in the <code>docker pull</code> commands on the Amazon ECR Public Gallery.</p><note>
     /// <p>A registry alias that isn't the primary registry alias can be used in the repository URI in a <code>docker pull</code> command.</p>
@@ -112,8 +108,7 @@ impl RegistryAliasBuilder {
     }
     /// <p>Indicates whether the registry alias is the default alias for the registry. When the first public repository is created, your public registry is assigned a default registry alias.</p>
     pub fn set_default_registry_alias(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.default_registry_alias = input;
-        self
+        self.default_registry_alias = input; self
     }
     /// <p>Indicates whether the registry alias is the default alias for the registry. When the first public repository is created, your public registry is assigned a default registry alias.</p>
     pub fn get_default_registry_alias(&self) -> &::std::option::Option<bool> {
@@ -124,21 +119,26 @@ impl RegistryAliasBuilder {
     /// - [`name`](crate::types::builders::RegistryAliasBuilder::name)
     /// - [`status`](crate::types::builders::RegistryAliasBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::RegistryAlias, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RegistryAlias {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building RegistryAlias",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building RegistryAlias",
-                )
-            })?,
-            primary_registry_alias: self.primary_registry_alias.unwrap_or_default(),
-            default_registry_alias: self.default_registry_alias.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::RegistryAlias {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building RegistryAlias")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building RegistryAlias")
+                    )?
+                ,
+                primary_registry_alias: self.primary_registry_alias
+                    .unwrap_or_default()
+                ,
+                default_registry_alias: self.default_registry_alias
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

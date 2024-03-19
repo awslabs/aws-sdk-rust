@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let extendedkeyusagetype = unimplemented!();
 /// match extendedkeyusagetype {
@@ -37,16 +37,14 @@
 /// Specifically, when `extendedkeyusagetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ExtendedKeyUsageType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ExtendedKeyUsageType {
     #[allow(missing_docs)] // documentation missing in model
     CertificateTransparency,
@@ -68,92 +66,83 @@ pub enum ExtendedKeyUsageType {
     TimeStamping,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ExtendedKeyUsageType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CERTIFICATE_TRANSPARENCY" => ExtendedKeyUsageType::CertificateTransparency,
-            "CLIENT_AUTH" => ExtendedKeyUsageType::ClientAuth,
-            "CODE_SIGNING" => ExtendedKeyUsageType::CodeSigning,
-            "DOCUMENT_SIGNING" => ExtendedKeyUsageType::DocumentSigning,
-            "EMAIL_PROTECTION" => ExtendedKeyUsageType::EmailProtection,
-            "OCSP_SIGNING" => ExtendedKeyUsageType::OcspSigning,
-            "SERVER_AUTH" => ExtendedKeyUsageType::ServerAuth,
-            "SMART_CARD_LOGIN" => ExtendedKeyUsageType::SmartCardLogin,
-            "TIME_STAMPING" => ExtendedKeyUsageType::TimeStamping,
-            other => ExtendedKeyUsageType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "CERTIFICATE_TRANSPARENCY" => ExtendedKeyUsageType::CertificateTransparency,
+"CLIENT_AUTH" => ExtendedKeyUsageType::ClientAuth,
+"CODE_SIGNING" => ExtendedKeyUsageType::CodeSigning,
+"DOCUMENT_SIGNING" => ExtendedKeyUsageType::DocumentSigning,
+"EMAIL_PROTECTION" => ExtendedKeyUsageType::EmailProtection,
+"OCSP_SIGNING" => ExtendedKeyUsageType::OcspSigning,
+"SERVER_AUTH" => ExtendedKeyUsageType::ServerAuth,
+"SMART_CARD_LOGIN" => ExtendedKeyUsageType::SmartCardLogin,
+"TIME_STAMPING" => ExtendedKeyUsageType::TimeStamping,
+other => ExtendedKeyUsageType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ExtendedKeyUsageType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ExtendedKeyUsageType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ExtendedKeyUsageType::from(s))
+                    }
+                }
 impl ExtendedKeyUsageType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ExtendedKeyUsageType::CertificateTransparency => "CERTIFICATE_TRANSPARENCY",
-            ExtendedKeyUsageType::ClientAuth => "CLIENT_AUTH",
-            ExtendedKeyUsageType::CodeSigning => "CODE_SIGNING",
-            ExtendedKeyUsageType::DocumentSigning => "DOCUMENT_SIGNING",
-            ExtendedKeyUsageType::EmailProtection => "EMAIL_PROTECTION",
-            ExtendedKeyUsageType::OcspSigning => "OCSP_SIGNING",
-            ExtendedKeyUsageType::ServerAuth => "SERVER_AUTH",
-            ExtendedKeyUsageType::SmartCardLogin => "SMART_CARD_LOGIN",
-            ExtendedKeyUsageType::TimeStamping => "TIME_STAMPING",
-            ExtendedKeyUsageType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CERTIFICATE_TRANSPARENCY",
-            "CLIENT_AUTH",
-            "CODE_SIGNING",
-            "DOCUMENT_SIGNING",
-            "EMAIL_PROTECTION",
-            "OCSP_SIGNING",
-            "SERVER_AUTH",
-            "SMART_CARD_LOGIN",
-            "TIME_STAMPING",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ExtendedKeyUsageType::CertificateTransparency => "CERTIFICATE_TRANSPARENCY",
+    ExtendedKeyUsageType::ClientAuth => "CLIENT_AUTH",
+    ExtendedKeyUsageType::CodeSigning => "CODE_SIGNING",
+    ExtendedKeyUsageType::DocumentSigning => "DOCUMENT_SIGNING",
+    ExtendedKeyUsageType::EmailProtection => "EMAIL_PROTECTION",
+    ExtendedKeyUsageType::OcspSigning => "OCSP_SIGNING",
+    ExtendedKeyUsageType::ServerAuth => "SERVER_AUTH",
+    ExtendedKeyUsageType::SmartCardLogin => "SMART_CARD_LOGIN",
+    ExtendedKeyUsageType::TimeStamping => "TIME_STAMPING",
+    ExtendedKeyUsageType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CERTIFICATE_TRANSPARENCY", "CLIENT_AUTH", "CODE_SIGNING", "DOCUMENT_SIGNING", "EMAIL_PROTECTION", "OCSP_SIGNING", "SERVER_AUTH", "SMART_CARD_LOGIN", "TIME_STAMPING"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ExtendedKeyUsageType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ExtendedKeyUsageType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ExtendedKeyUsageType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ExtendedKeyUsageType::CertificateTransparency => write!(f, "CERTIFICATE_TRANSPARENCY"),
-            ExtendedKeyUsageType::ClientAuth => write!(f, "CLIENT_AUTH"),
-            ExtendedKeyUsageType::CodeSigning => write!(f, "CODE_SIGNING"),
-            ExtendedKeyUsageType::DocumentSigning => write!(f, "DOCUMENT_SIGNING"),
-            ExtendedKeyUsageType::EmailProtection => write!(f, "EMAIL_PROTECTION"),
-            ExtendedKeyUsageType::OcspSigning => write!(f, "OCSP_SIGNING"),
-            ExtendedKeyUsageType::ServerAuth => write!(f, "SERVER_AUTH"),
-            ExtendedKeyUsageType::SmartCardLogin => write!(f, "SMART_CARD_LOGIN"),
-            ExtendedKeyUsageType::TimeStamping => write!(f, "TIME_STAMPING"),
-            ExtendedKeyUsageType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ExtendedKeyUsageType::CertificateTransparency => write!(f, "CERTIFICATE_TRANSPARENCY"),
+ExtendedKeyUsageType::ClientAuth => write!(f, "CLIENT_AUTH"),
+ExtendedKeyUsageType::CodeSigning => write!(f, "CODE_SIGNING"),
+ExtendedKeyUsageType::DocumentSigning => write!(f, "DOCUMENT_SIGNING"),
+ExtendedKeyUsageType::EmailProtection => write!(f, "EMAIL_PROTECTION"),
+ExtendedKeyUsageType::OcspSigning => write!(f, "OCSP_SIGNING"),
+ExtendedKeyUsageType::ServerAuth => write!(f, "SERVER_AUTH"),
+ExtendedKeyUsageType::SmartCardLogin => write!(f, "SMART_CARD_LOGIN"),
+ExtendedKeyUsageType::TimeStamping => write!(f, "TIME_STAMPING"),
+ExtendedKeyUsageType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

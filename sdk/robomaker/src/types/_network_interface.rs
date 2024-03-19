@@ -3,7 +3,7 @@
 /// <p>Describes a network interface.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkInterface {
+pub struct NetworkInterface  {
     /// <p>The ID of the network interface.</p>
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 address of the network interface within the subnet.</p>
@@ -11,17 +11,17 @@ pub struct NetworkInterface {
     /// <p>The IPv4 public address of the network interface.</p>
     pub public_ip_address: ::std::option::Option<::std::string::String>,
 }
-impl NetworkInterface {
+impl  NetworkInterface  {
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> ::std::option::Option<& str> {
         self.network_interface_id.as_deref()
     }
     /// <p>The IPv4 address of the network interface within the subnet.</p>
-    pub fn private_ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn private_ip_address(&self) -> ::std::option::Option<& str> {
         self.private_ip_address.as_deref()
     }
     /// <p>The IPv4 public address of the network interface.</p>
-    pub fn public_ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn public_ip_address(&self) -> ::std::option::Option<& str> {
         self.public_ip_address.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl NetworkInterfaceBuilder {
     }
     /// <p>The ID of the network interface.</p>
     pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_interface_id = input;
-        self
+        self.network_interface_id = input; self
     }
     /// <p>The ID of the network interface.</p>
     pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl NetworkInterfaceBuilder {
     }
     /// <p>The IPv4 address of the network interface within the subnet.</p>
     pub fn set_private_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.private_ip_address = input;
-        self
+        self.private_ip_address = input; self
     }
     /// <p>The IPv4 address of the network interface within the subnet.</p>
     pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl NetworkInterfaceBuilder {
     }
     /// <p>The IPv4 public address of the network interface.</p>
     pub fn set_public_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.public_ip_address = input;
-        self
+        self.public_ip_address = input; self
     }
     /// <p>The IPv4 public address of the network interface.</p>
     pub fn get_public_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl NetworkInterfaceBuilder {
     /// Consumes the builder and constructs a [`NetworkInterface`](crate::types::NetworkInterface).
     pub fn build(self) -> crate::types::NetworkInterface {
         crate::types::NetworkInterface {
-            network_interface_id: self.network_interface_id,
-            private_ip_address: self.private_ip_address,
-            public_ip_address: self.public_ip_address,
+            network_interface_id: self.network_interface_id
+            ,
+            private_ip_address: self.private_ip_address
+            ,
+            public_ip_address: self.public_ip_address
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Represents a usage plan key to identify a plan customer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UsagePlanKey {
+pub struct UsagePlanKey  {
     /// <p>The Id of a usage plan key.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The type of a usage plan key. Currently, the valid key type is <code>API_KEY</code>.</p>
@@ -13,21 +13,21 @@ pub struct UsagePlanKey {
     /// <p>The name of a usage plan key.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl UsagePlanKey {
+impl  UsagePlanKey  {
     /// <p>The Id of a usage plan key.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The type of a usage plan key. Currently, the valid key type is <code>API_KEY</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The value of a usage plan key.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>The name of a usage plan key.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl UsagePlanKeyBuilder {
     }
     /// <p>The Id of a usage plan key.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The Id of a usage plan key.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl UsagePlanKeyBuilder {
     }
     /// <p>The type of a usage plan key. Currently, the valid key type is <code>API_KEY</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of a usage plan key. Currently, the valid key type is <code>API_KEY</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl UsagePlanKeyBuilder {
     }
     /// <p>The value of a usage plan key.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of a usage plan key.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl UsagePlanKeyBuilder {
     }
     /// <p>The name of a usage plan key.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of a usage plan key.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl UsagePlanKeyBuilder {
     /// Consumes the builder and constructs a [`UsagePlanKey`](crate::types::UsagePlanKey).
     pub fn build(self) -> crate::types::UsagePlanKey {
         crate::types::UsagePlanKey {
-            id: self.id,
-            r#type: self.r#type,
-            value: self.value,
-            name: self.name,
+            id: self.id
+            ,
+            r#type: self.r#type
+            ,
+            value: self.value
+            ,
+            name: self.name
+            ,
         }
     }
 }
+

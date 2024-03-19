@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartMigrationInput {
+pub struct StartMigrationInput  {
     /// <p>The name of the Amazon Lex V1 bot that you are migrating to Amazon Lex V2.</p>
     pub v1_bot_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot to migrate to Amazon Lex V2. You can migrate the <code>$LATEST</code> version as well as any numbered version.</p>
@@ -26,13 +26,13 @@ pub struct StartMigrationInput {
     /// </ul>
     pub migration_strategy: ::std::option::Option<crate::types::MigrationStrategy>,
 }
-impl StartMigrationInput {
+impl  StartMigrationInput  {
     /// <p>The name of the Amazon Lex V1 bot that you are migrating to Amazon Lex V2.</p>
-    pub fn v1_bot_name(&self) -> ::std::option::Option<&str> {
+    pub fn v1_bot_name(&self) -> ::std::option::Option<& str> {
         self.v1_bot_name.as_deref()
     }
     /// <p>The version of the bot to migrate to Amazon Lex V2. You can migrate the <code>$LATEST</code> version as well as any numbered version.</p>
-    pub fn v1_bot_version(&self) -> ::std::option::Option<&str> {
+    pub fn v1_bot_version(&self) -> ::std::option::Option<& str> {
         self.v1_bot_version.as_deref()
     }
     /// <p>The name of the Amazon Lex V2 bot that you are migrating the Amazon Lex V1 bot to.</p>
@@ -42,11 +42,11 @@ impl StartMigrationInput {
     /// <li>
     /// <p>If the Amazon Lex V2 bot exists, you must use the <code>UPDATE_EXISTING</code> migration strategy to change the contents of the Amazon Lex V2 bot.</p></li>
     /// </ul>
-    pub fn v2_bot_name(&self) -> ::std::option::Option<&str> {
+    pub fn v2_bot_name(&self) -> ::std::option::Option<& str> {
         self.v2_bot_name.as_deref()
     }
     /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
-    pub fn v2_bot_role(&self) -> ::std::option::Option<&str> {
+    pub fn v2_bot_role(&self) -> ::std::option::Option<& str> {
         self.v2_bot_role.as_deref()
     }
     /// <p>The strategy used to conduct the migration.</p>
@@ -56,7 +56,7 @@ impl StartMigrationInput {
     /// <li>
     /// <p><code>UPDATE_EXISTING</code> - Overwrites the existing Amazon Lex V2 bot metadata and the locale being migrated. It doesn't change any other locales in the Amazon Lex V2 bot. If the locale doesn't exist, a new locale is created in the Amazon Lex V2 bot.</p></li>
     /// </ul>
-    pub fn migration_strategy(&self) -> ::std::option::Option<&crate::types::MigrationStrategy> {
+    pub fn migration_strategy(&self) -> ::std::option::Option<& crate::types::MigrationStrategy> {
         self.migration_strategy.as_ref()
     }
 }
@@ -86,8 +86,7 @@ impl StartMigrationInputBuilder {
     }
     /// <p>The name of the Amazon Lex V1 bot that you are migrating to Amazon Lex V2.</p>
     pub fn set_v1_bot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.v1_bot_name = input;
-        self
+        self.v1_bot_name = input; self
     }
     /// <p>The name of the Amazon Lex V1 bot that you are migrating to Amazon Lex V2.</p>
     pub fn get_v1_bot_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +100,7 @@ impl StartMigrationInputBuilder {
     }
     /// <p>The version of the bot to migrate to Amazon Lex V2. You can migrate the <code>$LATEST</code> version as well as any numbered version.</p>
     pub fn set_v1_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.v1_bot_version = input;
-        self
+        self.v1_bot_version = input; self
     }
     /// <p>The version of the bot to migrate to Amazon Lex V2. You can migrate the <code>$LATEST</code> version as well as any numbered version.</p>
     pub fn get_v1_bot_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +126,7 @@ impl StartMigrationInputBuilder {
     /// <p>If the Amazon Lex V2 bot exists, you must use the <code>UPDATE_EXISTING</code> migration strategy to change the contents of the Amazon Lex V2 bot.</p></li>
     /// </ul>
     pub fn set_v2_bot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.v2_bot_name = input;
-        self
+        self.v2_bot_name = input; self
     }
     /// <p>The name of the Amazon Lex V2 bot that you are migrating the Amazon Lex V1 bot to.</p>
     /// <ul>
@@ -149,8 +146,7 @@ impl StartMigrationInputBuilder {
     }
     /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
     pub fn set_v2_bot_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.v2_bot_role = input;
-        self
+        self.v2_bot_role = input; self
     }
     /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
     pub fn get_v2_bot_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -176,8 +172,7 @@ impl StartMigrationInputBuilder {
     /// <p><code>UPDATE_EXISTING</code> - Overwrites the existing Amazon Lex V2 bot metadata and the locale being migrated. It doesn't change any other locales in the Amazon Lex V2 bot. If the locale doesn't exist, a new locale is created in the Amazon Lex V2 bot.</p></li>
     /// </ul>
     pub fn set_migration_strategy(mut self, input: ::std::option::Option<crate::types::MigrationStrategy>) -> Self {
-        self.migration_strategy = input;
-        self
+        self.migration_strategy = input; self
     }
     /// <p>The strategy used to conduct the migration.</p>
     /// <ul>
@@ -190,15 +185,21 @@ impl StartMigrationInputBuilder {
         &self.migration_strategy
     }
     /// Consumes the builder and constructs a [`StartMigrationInput`](crate::operation::start_migration::StartMigrationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_migration::StartMigrationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_migration::StartMigrationInput {
-            v1_bot_name: self.v1_bot_name,
-            v1_bot_version: self.v1_bot_version,
-            v2_bot_name: self.v2_bot_name,
-            v2_bot_role: self.v2_bot_role,
-            migration_strategy: self.migration_strategy,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_migration::StartMigrationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_migration::StartMigrationInput {
+                v1_bot_name: self.v1_bot_name
+                ,
+                v1_bot_version: self.v1_bot_version
+                ,
+                v2_bot_name: self.v2_bot_name
+                ,
+                v2_bot_role: self.v2_bot_role
+                ,
+                migration_strategy: self.migration_strategy
+                ,
+            }
+        )
     }
 }
+

@@ -23,11 +23,7 @@ impl TrialComponentParameterValue {
     /// Tries to convert the enum instance into [`NumberValue`](crate::types::TrialComponentParameterValue::NumberValue), extracting the inner [`f64`](f64).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_number_value(&self) -> ::std::result::Result<&f64, &Self> {
-        if let TrialComponentParameterValue::NumberValue(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let TrialComponentParameterValue::NumberValue(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`NumberValue`](crate::types::TrialComponentParameterValue::NumberValue).
     pub fn is_number_value(&self) -> bool {
@@ -36,11 +32,7 @@ impl TrialComponentParameterValue {
     /// Tries to convert the enum instance into [`StringValue`](crate::types::TrialComponentParameterValue::StringValue), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_value(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let TrialComponentParameterValue::StringValue(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let TrialComponentParameterValue::StringValue(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`StringValue`](crate::types::TrialComponentParameterValue::StringValue).
     pub fn is_string_value(&self) -> bool {
@@ -51,3 +43,4 @@ impl TrialComponentParameterValue {
         matches!(self, Self::Unknown)
     }
 }
+

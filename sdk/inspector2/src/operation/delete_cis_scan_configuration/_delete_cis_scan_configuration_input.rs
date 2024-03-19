@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCisScanConfigurationInput {
+pub struct DeleteCisScanConfigurationInput  {
     /// <p>The ARN of the CIS scan configuration.</p>
     pub scan_configuration_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteCisScanConfigurationInput {
+impl  DeleteCisScanConfigurationInput  {
     /// <p>The ARN of the CIS scan configuration.</p>
-    pub fn scan_configuration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn scan_configuration_arn(&self) -> ::std::option::Option<& str> {
         self.scan_configuration_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteCisScanConfigurationInputBuilder {
     }
     /// <p>The ARN of the CIS scan configuration.</p>
     pub fn set_scan_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scan_configuration_arn = input;
-        self
+        self.scan_configuration_arn = input; self
     }
     /// <p>The ARN of the CIS scan configuration.</p>
     pub fn get_scan_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.scan_configuration_arn
     }
     /// Consumes the builder and constructs a [`DeleteCisScanConfigurationInput`](crate::operation::delete_cis_scan_configuration::DeleteCisScanConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_cis_scan_configuration::DeleteCisScanConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_cis_scan_configuration::DeleteCisScanConfigurationInput {
-            scan_configuration_arn: self.scan_configuration_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_cis_scan_configuration::DeleteCisScanConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_cis_scan_configuration::DeleteCisScanConfigurationInput {
+                scan_configuration_arn: self.scan_configuration_arn
+                ,
+            }
+        )
     }
 }
+

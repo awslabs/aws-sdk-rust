@@ -3,7 +3,8 @@
 /// <p>The configurations for SQS subscriber notification.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SqsNotificationConfiguration {}
+pub struct SqsNotificationConfiguration  {
+}
 impl SqsNotificationConfiguration {
     /// Creates a new builder-style object to manufacture [`SqsNotificationConfiguration`](crate::types::SqsNotificationConfiguration).
     pub fn builder() -> crate::types::builders::SqsNotificationConfigurationBuilder {
@@ -14,10 +15,13 @@ impl SqsNotificationConfiguration {
 /// A builder for [`SqsNotificationConfiguration`](crate::types::SqsNotificationConfiguration).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct SqsNotificationConfigurationBuilder {}
+pub struct SqsNotificationConfigurationBuilder {
+}
 impl SqsNotificationConfigurationBuilder {
     /// Consumes the builder and constructs a [`SqsNotificationConfiguration`](crate::types::SqsNotificationConfiguration).
     pub fn build(self) -> crate::types::SqsNotificationConfiguration {
-        crate::types::SqsNotificationConfiguration {}
+        crate::types::SqsNotificationConfiguration {
+        }
     }
 }
+

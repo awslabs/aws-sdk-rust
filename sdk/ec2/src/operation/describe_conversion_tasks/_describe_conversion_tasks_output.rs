@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeConversionTasksOutput {
+pub struct DescribeConversionTasksOutput  {
     /// <p>Information about the conversion tasks.</p>
-    pub conversion_tasks: ::std::option::Option<::std::vec::Vec<crate::types::ConversionTask>>,
+    pub conversion_tasks: ::std::option::Option<::std::vec::Vec::<crate::types::ConversionTask>>,
     _request_id: Option<String>,
 }
-impl DescribeConversionTasksOutput {
+impl  DescribeConversionTasksOutput  {
     /// <p>Information about the conversion tasks.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.conversion_tasks.is_none()`.
-    pub fn conversion_tasks(&self) -> &[crate::types::ConversionTask] {
-        self.conversion_tasks.as_deref().unwrap_or_default()
+    pub fn conversion_tasks(&self) -> & [crate::types::ConversionTask] {
+        self.conversion_tasks.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeConversionTasksOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeConversionTasksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConversionTasksOutput`](crate::operation::describe_conversion_tasks::DescribeConversionTasksOutput).
     pub fn builder() -> crate::operation::describe_conversion_tasks::builders::DescribeConversionTasksOutputBuilder {
@@ -31,7 +32,7 @@ impl DescribeConversionTasksOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConversionTasksOutputBuilder {
-    pub(crate) conversion_tasks: ::std::option::Option<::std::vec::Vec<crate::types::ConversionTask>>,
+    pub(crate) conversion_tasks: ::std::option::Option<::std::vec::Vec::<crate::types::ConversionTask>>,
     _request_id: Option<String>,
 }
 impl DescribeConversionTasksOutputBuilder {
@@ -42,33 +43,34 @@ impl DescribeConversionTasksOutputBuilder {
     /// <p>Information about the conversion tasks.</p>
     pub fn conversion_tasks(mut self, input: crate::types::ConversionTask) -> Self {
         let mut v = self.conversion_tasks.unwrap_or_default();
-        v.push(input);
-        self.conversion_tasks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.conversion_tasks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the conversion tasks.</p>
-    pub fn set_conversion_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConversionTask>>) -> Self {
-        self.conversion_tasks = input;
-        self
+    pub fn set_conversion_tasks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ConversionTask>>) -> Self {
+        self.conversion_tasks = input; self
     }
     /// <p>Information about the conversion tasks.</p>
-    pub fn get_conversion_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConversionTask>> {
+    pub fn get_conversion_tasks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ConversionTask>> {
         &self.conversion_tasks
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeConversionTasksOutput`](crate::operation::describe_conversion_tasks::DescribeConversionTasksOutput).
     pub fn build(self) -> crate::operation::describe_conversion_tasks::DescribeConversionTasksOutput {
         crate::operation::describe_conversion_tasks::DescribeConversionTasksOutput {
-            conversion_tasks: self.conversion_tasks,
+            conversion_tasks: self.conversion_tasks
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AdminDisableProviderForUserInput {
+pub struct AdminDisableProviderForUserInput  {
     /// <p>The user pool ID for the user pool.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The user to be disabled.</p>
     pub user: ::std::option::Option<crate::types::ProviderUserIdentifierType>,
 }
-impl AdminDisableProviderForUserInput {
+impl  AdminDisableProviderForUserInput  {
     /// <p>The user pool ID for the user pool.</p>
-    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The user to be disabled.</p>
-    pub fn user(&self) -> ::std::option::Option<&crate::types::ProviderUserIdentifierType> {
+    pub fn user(&self) -> ::std::option::Option<& crate::types::ProviderUserIdentifierType> {
         self.user.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl AdminDisableProviderForUserInputBuilder {
     }
     /// <p>The user pool ID for the user pool.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The user pool ID for the user pool.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl AdminDisableProviderForUserInputBuilder {
     }
     /// <p>The user to be disabled.</p>
     pub fn set_user(mut self, input: ::std::option::Option<crate::types::ProviderUserIdentifierType>) -> Self {
-        self.user = input;
-        self
+        self.user = input; self
     }
     /// <p>The user to be disabled.</p>
     pub fn get_user(&self) -> &::std::option::Option<crate::types::ProviderUserIdentifierType> {
         &self.user
     }
     /// Consumes the builder and constructs a [`AdminDisableProviderForUserInput`](crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserInput {
-            user_pool_id: self.user_pool_id,
-            user: self.user,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserInput {
+                user_pool_id: self.user_pool_id
+                ,
+                user: self.user
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListInferenceComponentsInput {
+pub struct ListInferenceComponentsInput  {
     /// <p>The field by which to sort the inference components in the response. The default is <code>CreationTime</code>.</p>
     pub sort_by: ::std::option::Option<crate::types::InferenceComponentSortKey>,
     /// <p>The sort order for results. The default is <code>Descending</code>.</p>
@@ -28,17 +28,17 @@ pub struct ListInferenceComponentsInput {
     /// <p>A production variant name to filter the listed inference components. The response includes only those inference components that are hosted at the specified variant.</p>
     pub variant_name_equals: ::std::option::Option<::std::string::String>,
 }
-impl ListInferenceComponentsInput {
+impl  ListInferenceComponentsInput  {
     /// <p>The field by which to sort the inference components in the response. The default is <code>CreationTime</code>.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::InferenceComponentSortKey> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::InferenceComponentSortKey> {
         self.sort_by.as_ref()
     }
     /// <p>The sort order for results. The default is <code>Descending</code>.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::OrderKey> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::OrderKey> {
         self.sort_order.as_ref()
     }
     /// <p>A token that you use to get the next set of results following a truncated response. If the response to the previous request was truncated, that response provides the value for this token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of inference components to return in the response. This value defaults to 10.</p>
@@ -46,35 +46,35 @@ impl ListInferenceComponentsInput {
         self.max_results
     }
     /// <p>Filters the results to only those inference components with a name that contains the specified string.</p>
-    pub fn name_contains(&self) -> ::std::option::Option<&str> {
+    pub fn name_contains(&self) -> ::std::option::Option<& str> {
         self.name_contains.as_deref()
     }
     /// <p>Filters the results to only those inference components that were created before the specified time.</p>
-    pub fn creation_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time_before.as_ref()
     }
     /// <p>Filters the results to only those inference components that were created after the specified time.</p>
-    pub fn creation_time_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
     }
     /// <p>Filters the results to only those inference components that were updated before the specified time.</p>
-    pub fn last_modified_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time_before.as_ref()
     }
     /// <p>Filters the results to only those inference components that were updated after the specified time.</p>
-    pub fn last_modified_time_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time_after.as_ref()
     }
     /// <p>Filters the results to only those inference components with the specified status.</p>
-    pub fn status_equals(&self) -> ::std::option::Option<&crate::types::InferenceComponentStatus> {
+    pub fn status_equals(&self) -> ::std::option::Option<& crate::types::InferenceComponentStatus> {
         self.status_equals.as_ref()
     }
     /// <p>An endpoint name to filter the listed inference components. The response includes only those inference components that are hosted at the specified endpoint.</p>
-    pub fn endpoint_name_equals(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_name_equals(&self) -> ::std::option::Option<& str> {
         self.endpoint_name_equals.as_deref()
     }
     /// <p>A production variant name to filter the listed inference components. The response includes only those inference components that are hosted at the specified variant.</p>
-    pub fn variant_name_equals(&self) -> ::std::option::Option<&str> {
+    pub fn variant_name_equals(&self) -> ::std::option::Option<& str> {
         self.variant_name_equals.as_deref()
     }
 }
@@ -110,8 +110,7 @@ impl ListInferenceComponentsInputBuilder {
     }
     /// <p>The field by which to sort the inference components in the response. The default is <code>CreationTime</code>.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::InferenceComponentSortKey>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The field by which to sort the inference components in the response. The default is <code>CreationTime</code>.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::InferenceComponentSortKey> {
@@ -124,8 +123,7 @@ impl ListInferenceComponentsInputBuilder {
     }
     /// <p>The sort order for results. The default is <code>Descending</code>.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::OrderKey>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The sort order for results. The default is <code>Descending</code>.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::OrderKey> {
@@ -138,8 +136,7 @@ impl ListInferenceComponentsInputBuilder {
     }
     /// <p>A token that you use to get the next set of results following a truncated response. If the response to the previous request was truncated, that response provides the value for this token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that you use to get the next set of results following a truncated response. If the response to the previous request was truncated, that response provides the value for this token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +149,7 @@ impl ListInferenceComponentsInputBuilder {
     }
     /// <p>The maximum number of inference components to return in the response. This value defaults to 10.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of inference components to return in the response. This value defaults to 10.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -166,8 +162,7 @@ impl ListInferenceComponentsInputBuilder {
     }
     /// <p>Filters the results to only those inference components with a name that contains the specified string.</p>
     pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name_contains = input;
-        self
+        self.name_contains = input; self
     }
     /// <p>Filters the results to only those inference components with a name that contains the specified string.</p>
     pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
@@ -180,8 +175,7 @@ impl ListInferenceComponentsInputBuilder {
     }
     /// <p>Filters the results to only those inference components that were created before the specified time.</p>
     pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time_before = input;
-        self
+        self.creation_time_before = input; self
     }
     /// <p>Filters the results to only those inference components that were created before the specified time.</p>
     pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -194,8 +188,7 @@ impl ListInferenceComponentsInputBuilder {
     }
     /// <p>Filters the results to only those inference components that were created after the specified time.</p>
     pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time_after = input;
-        self
+        self.creation_time_after = input; self
     }
     /// <p>Filters the results to only those inference components that were created after the specified time.</p>
     pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -208,8 +201,7 @@ impl ListInferenceComponentsInputBuilder {
     }
     /// <p>Filters the results to only those inference components that were updated before the specified time.</p>
     pub fn set_last_modified_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time_before = input;
-        self
+        self.last_modified_time_before = input; self
     }
     /// <p>Filters the results to only those inference components that were updated before the specified time.</p>
     pub fn get_last_modified_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -222,8 +214,7 @@ impl ListInferenceComponentsInputBuilder {
     }
     /// <p>Filters the results to only those inference components that were updated after the specified time.</p>
     pub fn set_last_modified_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time_after = input;
-        self
+        self.last_modified_time_after = input; self
     }
     /// <p>Filters the results to only those inference components that were updated after the specified time.</p>
     pub fn get_last_modified_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -236,8 +227,7 @@ impl ListInferenceComponentsInputBuilder {
     }
     /// <p>Filters the results to only those inference components with the specified status.</p>
     pub fn set_status_equals(mut self, input: ::std::option::Option<crate::types::InferenceComponentStatus>) -> Self {
-        self.status_equals = input;
-        self
+        self.status_equals = input; self
     }
     /// <p>Filters the results to only those inference components with the specified status.</p>
     pub fn get_status_equals(&self) -> &::std::option::Option<crate::types::InferenceComponentStatus> {
@@ -250,8 +240,7 @@ impl ListInferenceComponentsInputBuilder {
     }
     /// <p>An endpoint name to filter the listed inference components. The response includes only those inference components that are hosted at the specified endpoint.</p>
     pub fn set_endpoint_name_equals(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_name_equals = input;
-        self
+        self.endpoint_name_equals = input; self
     }
     /// <p>An endpoint name to filter the listed inference components. The response includes only those inference components that are hosted at the specified endpoint.</p>
     pub fn get_endpoint_name_equals(&self) -> &::std::option::Option<::std::string::String> {
@@ -264,33 +253,42 @@ impl ListInferenceComponentsInputBuilder {
     }
     /// <p>A production variant name to filter the listed inference components. The response includes only those inference components that are hosted at the specified variant.</p>
     pub fn set_variant_name_equals(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.variant_name_equals = input;
-        self
+        self.variant_name_equals = input; self
     }
     /// <p>A production variant name to filter the listed inference components. The response includes only those inference components that are hosted at the specified variant.</p>
     pub fn get_variant_name_equals(&self) -> &::std::option::Option<::std::string::String> {
         &self.variant_name_equals
     }
     /// Consumes the builder and constructs a [`ListInferenceComponentsInput`](crate::operation::list_inference_components::ListInferenceComponentsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_inference_components::ListInferenceComponentsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_inference_components::ListInferenceComponentsInput {
-            sort_by: self.sort_by,
-            sort_order: self.sort_order,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            name_contains: self.name_contains,
-            creation_time_before: self.creation_time_before,
-            creation_time_after: self.creation_time_after,
-            last_modified_time_before: self.last_modified_time_before,
-            last_modified_time_after: self.last_modified_time_after,
-            status_equals: self.status_equals,
-            endpoint_name_equals: self.endpoint_name_equals,
-            variant_name_equals: self.variant_name_equals,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_inference_components::ListInferenceComponentsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_inference_components::ListInferenceComponentsInput {
+                sort_by: self.sort_by
+                ,
+                sort_order: self.sort_order
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                name_contains: self.name_contains
+                ,
+                creation_time_before: self.creation_time_before
+                ,
+                creation_time_after: self.creation_time_after
+                ,
+                last_modified_time_before: self.last_modified_time_before
+                ,
+                last_modified_time_after: self.last_modified_time_after
+                ,
+                status_equals: self.status_equals
+                ,
+                endpoint_name_equals: self.endpoint_name_equals
+                ,
+                variant_name_equals: self.variant_name_equals
+                ,
+            }
+        )
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetectStackResourceDriftInput {
+pub struct DetectStackResourceDriftInput  {
     /// <p>The name of the stack to which the resource belongs.</p>
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The logical name of the resource for which to return drift information.</p>
     pub logical_resource_id: ::std::option::Option<::std::string::String>,
 }
-impl DetectStackResourceDriftInput {
+impl  DetectStackResourceDriftInput  {
     /// <p>The name of the stack to which the resource belongs.</p>
-    pub fn stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn stack_name(&self) -> ::std::option::Option<& str> {
         self.stack_name.as_deref()
     }
     /// <p>The logical name of the resource for which to return drift information.</p>
-    pub fn logical_resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn logical_resource_id(&self) -> ::std::option::Option<& str> {
         self.logical_resource_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DetectStackResourceDriftInputBuilder {
     }
     /// <p>The name of the stack to which the resource belongs.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_name = input;
-        self
+        self.stack_name = input; self
     }
     /// <p>The name of the stack to which the resource belongs.</p>
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DetectStackResourceDriftInputBuilder {
     }
     /// <p>The logical name of the resource for which to return drift information.</p>
     pub fn set_logical_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.logical_resource_id = input;
-        self
+        self.logical_resource_id = input; self
     }
     /// <p>The logical name of the resource for which to return drift information.</p>
     pub fn get_logical_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.logical_resource_id
     }
     /// Consumes the builder and constructs a [`DetectStackResourceDriftInput`](crate::operation::detect_stack_resource_drift::DetectStackResourceDriftInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::detect_stack_resource_drift::DetectStackResourceDriftInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::detect_stack_resource_drift::DetectStackResourceDriftInput {
-            stack_name: self.stack_name,
-            logical_resource_id: self.logical_resource_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::detect_stack_resource_drift::DetectStackResourceDriftInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::detect_stack_resource_drift::DetectStackResourceDriftInput {
+                stack_name: self.stack_name
+                ,
+                logical_resource_id: self.logical_resource_id
+                ,
+            }
+        )
     }
 }
+

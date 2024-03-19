@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateAnalyticsDataSetOutput {
+pub struct AssociateAnalyticsDataSetOutput  {
     /// <p>The identifier of the dataset that was associated.</p>
     pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the target account.</p>
@@ -13,29 +13,29 @@ pub struct AssociateAnalyticsDataSetOutput {
     pub resource_share_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl AssociateAnalyticsDataSetOutput {
+impl  AssociateAnalyticsDataSetOutput  {
     /// <p>The identifier of the dataset that was associated.</p>
-    pub fn data_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_set_id(&self) -> ::std::option::Option<& str> {
         self.data_set_id.as_deref()
     }
     /// <p>The identifier of the target account.</p>
-    pub fn target_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn target_account_id(&self) -> ::std::option::Option<& str> {
         self.target_account_id.as_deref()
     }
     /// <p>The Resource Access Manager share ID that is generated.</p>
-    pub fn resource_share_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_share_id(&self) -> ::std::option::Option<& str> {
         self.resource_share_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Resource Access Manager share.</p>
-    pub fn resource_share_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_share_arn(&self) -> ::std::option::Option<& str> {
         self.resource_share_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for AssociateAnalyticsDataSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AssociateAnalyticsDataSetOutput {
     /// Creates a new builder-style object to manufacture [`AssociateAnalyticsDataSetOutput`](crate::operation::associate_analytics_data_set::AssociateAnalyticsDataSetOutput).
     pub fn builder() -> crate::operation::associate_analytics_data_set::builders::AssociateAnalyticsDataSetOutputBuilder {
@@ -61,8 +61,7 @@ impl AssociateAnalyticsDataSetOutputBuilder {
     }
     /// <p>The identifier of the dataset that was associated.</p>
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_id = input;
-        self
+        self.data_set_id = input; self
     }
     /// <p>The identifier of the dataset that was associated.</p>
     pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl AssociateAnalyticsDataSetOutputBuilder {
     }
     /// <p>The identifier of the target account.</p>
     pub fn set_target_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_account_id = input;
-        self
+        self.target_account_id = input; self
     }
     /// <p>The identifier of the target account.</p>
     pub fn get_target_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl AssociateAnalyticsDataSetOutputBuilder {
     }
     /// <p>The Resource Access Manager share ID that is generated.</p>
     pub fn set_resource_share_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_share_id = input;
-        self
+        self.resource_share_id = input; self
     }
     /// <p>The Resource Access Manager share ID that is generated.</p>
     pub fn get_resource_share_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,30 +100,34 @@ impl AssociateAnalyticsDataSetOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Resource Access Manager share.</p>
     pub fn set_resource_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_share_arn = input;
-        self
+        self.resource_share_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Resource Access Manager share.</p>
     pub fn get_resource_share_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_share_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AssociateAnalyticsDataSetOutput`](crate::operation::associate_analytics_data_set::AssociateAnalyticsDataSetOutput).
     pub fn build(self) -> crate::operation::associate_analytics_data_set::AssociateAnalyticsDataSetOutput {
         crate::operation::associate_analytics_data_set::AssociateAnalyticsDataSetOutput {
-            data_set_id: self.data_set_id,
-            target_account_id: self.target_account_id,
-            resource_share_id: self.resource_share_id,
-            resource_share_arn: self.resource_share_arn,
+            data_set_id: self.data_set_id
+            ,
+            target_account_id: self.target_account_id
+            ,
+            resource_share_id: self.resource_share_id
+            ,
+            resource_share_arn: self.resource_share_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

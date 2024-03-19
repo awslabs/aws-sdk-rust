@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateConnectionInput {
+pub struct CreateConnectionInput  {
     /// <p>The name for the connection to create.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description for the connection to create.</p>
@@ -12,21 +12,21 @@ pub struct CreateConnectionInput {
     /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the authorization parameters to use to authorize with the endpoint.</p>
     pub auth_parameters: ::std::option::Option<crate::types::CreateConnectionAuthRequestParameters>,
 }
-impl CreateConnectionInput {
+impl  CreateConnectionInput  {
     /// <p>The name for the connection to create.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description for the connection to create.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The type of authorization to use for the connection.</p>
-    pub fn authorization_type(&self) -> ::std::option::Option<&crate::types::ConnectionAuthorizationType> {
+    pub fn authorization_type(&self) -> ::std::option::Option<& crate::types::ConnectionAuthorizationType> {
         self.authorization_type.as_ref()
     }
     /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the authorization parameters to use to authorize with the endpoint.</p>
-    pub fn auth_parameters(&self) -> ::std::option::Option<&crate::types::CreateConnectionAuthRequestParameters> {
+    pub fn auth_parameters(&self) -> ::std::option::Option<& crate::types::CreateConnectionAuthRequestParameters> {
         self.auth_parameters.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl CreateConnectionInputBuilder {
     }
     /// <p>The name for the connection to create.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name for the connection to create.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl CreateConnectionInputBuilder {
     }
     /// <p>A description for the connection to create.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description for the connection to create.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl CreateConnectionInputBuilder {
     }
     /// <p>The type of authorization to use for the connection.</p>
     pub fn set_authorization_type(mut self, input: ::std::option::Option<crate::types::ConnectionAuthorizationType>) -> Self {
-        self.authorization_type = input;
-        self
+        self.authorization_type = input; self
     }
     /// <p>The type of authorization to use for the connection.</p>
     pub fn get_authorization_type(&self) -> &::std::option::Option<crate::types::ConnectionAuthorizationType> {
@@ -99,22 +96,26 @@ impl CreateConnectionInputBuilder {
     }
     /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the authorization parameters to use to authorize with the endpoint.</p>
     pub fn set_auth_parameters(mut self, input: ::std::option::Option<crate::types::CreateConnectionAuthRequestParameters>) -> Self {
-        self.auth_parameters = input;
-        self
+        self.auth_parameters = input; self
     }
     /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the authorization parameters to use to authorize with the endpoint.</p>
     pub fn get_auth_parameters(&self) -> &::std::option::Option<crate::types::CreateConnectionAuthRequestParameters> {
         &self.auth_parameters
     }
     /// Consumes the builder and constructs a [`CreateConnectionInput`](crate::operation::create_connection::CreateConnectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_connection::CreateConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_connection::CreateConnectionInput {
-            name: self.name,
-            description: self.description,
-            authorization_type: self.authorization_type,
-            auth_parameters: self.auth_parameters,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_connection::CreateConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_connection::CreateConnectionInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                authorization_type: self.authorization_type
+                ,
+                auth_parameters: self.auth_parameters
+                ,
+            }
+        )
     }
 }
+

@@ -3,21 +3,22 @@
 /// <p>A list of conditions which would be applied together with an <code>AND</code> condition.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttributeAndCondition {
+pub struct AttributeAndCondition  {
     /// <p>A leaf node condition which can be used to specify a tag condition.</p>
-    pub tag_conditions: ::std::option::Option<::std::vec::Vec<crate::types::TagCondition>>,
+    pub tag_conditions: ::std::option::Option<::std::vec::Vec::<crate::types::TagCondition>>,
     /// <p>A leaf node condition which can be used to specify a hierarchy group condition.</p>
     pub hierarchy_group_condition: ::std::option::Option<crate::types::HierarchyGroupCondition>,
 }
-impl AttributeAndCondition {
+impl  AttributeAndCondition  {
     /// <p>A leaf node condition which can be used to specify a tag condition.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_conditions.is_none()`.
-    pub fn tag_conditions(&self) -> &[crate::types::TagCondition] {
-        self.tag_conditions.as_deref().unwrap_or_default()
+    pub fn tag_conditions(&self) -> & [crate::types::TagCondition] {
+        self.tag_conditions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A leaf node condition which can be used to specify a hierarchy group condition.</p>
-    pub fn hierarchy_group_condition(&self) -> ::std::option::Option<&crate::types::HierarchyGroupCondition> {
+    pub fn hierarchy_group_condition(&self) -> ::std::option::Option<& crate::types::HierarchyGroupCondition> {
         self.hierarchy_group_condition.as_ref()
     }
 }
@@ -32,7 +33,7 @@ impl AttributeAndCondition {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttributeAndConditionBuilder {
-    pub(crate) tag_conditions: ::std::option::Option<::std::vec::Vec<crate::types::TagCondition>>,
+    pub(crate) tag_conditions: ::std::option::Option<::std::vec::Vec::<crate::types::TagCondition>>,
     pub(crate) hierarchy_group_condition: ::std::option::Option<crate::types::HierarchyGroupCondition>,
 }
 impl AttributeAndConditionBuilder {
@@ -43,17 +44,16 @@ impl AttributeAndConditionBuilder {
     /// <p>A leaf node condition which can be used to specify a tag condition.</p>
     pub fn tag_conditions(mut self, input: crate::types::TagCondition) -> Self {
         let mut v = self.tag_conditions.unwrap_or_default();
-        v.push(input);
-        self.tag_conditions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_conditions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A leaf node condition which can be used to specify a tag condition.</p>
-    pub fn set_tag_conditions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagCondition>>) -> Self {
-        self.tag_conditions = input;
-        self
+    pub fn set_tag_conditions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagCondition>>) -> Self {
+        self.tag_conditions = input; self
     }
     /// <p>A leaf node condition which can be used to specify a tag condition.</p>
-    pub fn get_tag_conditions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagCondition>> {
+    pub fn get_tag_conditions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagCondition>> {
         &self.tag_conditions
     }
     /// <p>A leaf node condition which can be used to specify a hierarchy group condition.</p>
@@ -63,8 +63,7 @@ impl AttributeAndConditionBuilder {
     }
     /// <p>A leaf node condition which can be used to specify a hierarchy group condition.</p>
     pub fn set_hierarchy_group_condition(mut self, input: ::std::option::Option<crate::types::HierarchyGroupCondition>) -> Self {
-        self.hierarchy_group_condition = input;
-        self
+        self.hierarchy_group_condition = input; self
     }
     /// <p>A leaf node condition which can be used to specify a hierarchy group condition.</p>
     pub fn get_hierarchy_group_condition(&self) -> &::std::option::Option<crate::types::HierarchyGroupCondition> {
@@ -73,8 +72,11 @@ impl AttributeAndConditionBuilder {
     /// Consumes the builder and constructs a [`AttributeAndCondition`](crate::types::AttributeAndCondition).
     pub fn build(self) -> crate::types::AttributeAndCondition {
         crate::types::AttributeAndCondition {
-            tag_conditions: self.tag_conditions,
-            hierarchy_group_condition: self.hierarchy_group_condition,
+            tag_conditions: self.tag_conditions
+            ,
+            hierarchy_group_condition: self.hierarchy_group_condition
+            ,
         }
     }
 }
+

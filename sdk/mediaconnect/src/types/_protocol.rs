@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let protocol = unimplemented!();
 /// match protocol {
@@ -39,16 +39,14 @@
 /// Specifically, when `protocol` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Protocol::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum Protocol {
     #[allow(missing_docs)] // documentation missing in model
     Cdi,
@@ -74,100 +72,89 @@ pub enum Protocol {
     ZixiPush,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for Protocol {
-    fn from(s: &str) -> Self {
-        match s {
-            "cdi" => Protocol::Cdi,
-            "fujitsu-qos" => Protocol::FujitsuQos,
-            "rist" => Protocol::Rist,
-            "rtp" => Protocol::Rtp,
-            "rtp-fec" => Protocol::RtpFec,
-            "srt-caller" => Protocol::SrtCaller,
-            "srt-listener" => Protocol::SrtListener,
-            "st2110-jpegxs" => Protocol::St2110Jpegxs,
-            "udp" => Protocol::Udp,
-            "zixi-pull" => Protocol::ZixiPull,
-            "zixi-push" => Protocol::ZixiPush,
-            other => Protocol::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "cdi" => Protocol::Cdi,
+"fujitsu-qos" => Protocol::FujitsuQos,
+"rist" => Protocol::Rist,
+"rtp" => Protocol::Rtp,
+"rtp-fec" => Protocol::RtpFec,
+"srt-caller" => Protocol::SrtCaller,
+"srt-listener" => Protocol::SrtListener,
+"st2110-jpegxs" => Protocol::St2110Jpegxs,
+"udp" => Protocol::Udp,
+"zixi-pull" => Protocol::ZixiPull,
+"zixi-push" => Protocol::ZixiPush,
+other => Protocol::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for Protocol {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(Protocol::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(Protocol::from(s))
+                    }
+                }
 impl Protocol {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Protocol::Cdi => "cdi",
-            Protocol::FujitsuQos => "fujitsu-qos",
-            Protocol::Rist => "rist",
-            Protocol::Rtp => "rtp",
-            Protocol::RtpFec => "rtp-fec",
-            Protocol::SrtCaller => "srt-caller",
-            Protocol::SrtListener => "srt-listener",
-            Protocol::St2110Jpegxs => "st2110-jpegxs",
-            Protocol::Udp => "udp",
-            Protocol::ZixiPull => "zixi-pull",
-            Protocol::ZixiPush => "zixi-push",
-            Protocol::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "cdi",
-            "fujitsu-qos",
-            "rist",
-            "rtp",
-            "rtp-fec",
-            "srt-caller",
-            "srt-listener",
-            "st2110-jpegxs",
-            "udp",
-            "zixi-pull",
-            "zixi-push",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Protocol::Cdi => "cdi",
+    Protocol::FujitsuQos => "fujitsu-qos",
+    Protocol::Rist => "rist",
+    Protocol::Rtp => "rtp",
+    Protocol::RtpFec => "rtp-fec",
+    Protocol::SrtCaller => "srt-caller",
+    Protocol::SrtListener => "srt-listener",
+    Protocol::St2110Jpegxs => "st2110-jpegxs",
+    Protocol::Udp => "udp",
+    Protocol::ZixiPull => "zixi-pull",
+    Protocol::ZixiPush => "zixi-push",
+    Protocol::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["cdi", "fujitsu-qos", "rist", "rtp", "rtp-fec", "srt-caller", "srt-listener", "st2110-jpegxs", "udp", "zixi-pull", "zixi-push"]
+                }
+            }
 impl ::std::convert::AsRef<str> for Protocol {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl Protocol {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for Protocol {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            Protocol::Cdi => write!(f, "cdi"),
-            Protocol::FujitsuQos => write!(f, "fujitsu-qos"),
-            Protocol::Rist => write!(f, "rist"),
-            Protocol::Rtp => write!(f, "rtp"),
-            Protocol::RtpFec => write!(f, "rtp-fec"),
-            Protocol::SrtCaller => write!(f, "srt-caller"),
-            Protocol::SrtListener => write!(f, "srt-listener"),
-            Protocol::St2110Jpegxs => write!(f, "st2110-jpegxs"),
-            Protocol::Udp => write!(f, "udp"),
-            Protocol::ZixiPull => write!(f, "zixi-pull"),
-            Protocol::ZixiPush => write!(f, "zixi-push"),
-            Protocol::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                Protocol::Cdi => write!(f, "cdi"),
+Protocol::FujitsuQos => write!(f, "fujitsu-qos"),
+Protocol::Rist => write!(f, "rist"),
+Protocol::Rtp => write!(f, "rtp"),
+Protocol::RtpFec => write!(f, "rtp-fec"),
+Protocol::SrtCaller => write!(f, "srt-caller"),
+Protocol::SrtListener => write!(f, "srt-listener"),
+Protocol::St2110Jpegxs => write!(f, "st2110-jpegxs"),
+Protocol::Udp => write!(f, "udp"),
+Protocol::ZixiPull => write!(f, "zixi-pull"),
+Protocol::ZixiPush => write!(f, "zixi-push"),
+Protocol::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

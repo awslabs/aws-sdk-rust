@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let targetdevice = unimplemented!();
 /// match targetdevice {
@@ -65,16 +65,14 @@
 /// Specifically, when `targetdevice` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TargetDevice::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum TargetDevice {
     #[allow(missing_docs)] // documentation missing in model
     Aisage,
@@ -152,204 +150,167 @@ pub enum TargetDevice {
     X86Win64,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for TargetDevice {
-    fn from(s: &str) -> Self {
-        match s {
-            "aisage" => TargetDevice::Aisage,
-            "amba_cv2" => TargetDevice::AmbaCv2,
-            "amba_cv22" => TargetDevice::AmbaCv22,
-            "amba_cv25" => TargetDevice::AmbaCv25,
-            "coreml" => TargetDevice::Coreml,
-            "deeplens" => TargetDevice::Deeplens,
-            "imx8mplus" => TargetDevice::Imx8Mplus,
-            "imx8qm" => TargetDevice::Imx8Qm,
-            "jacinto_tda4vm" => TargetDevice::JacintoTda4Vm,
-            "jetson_nano" => TargetDevice::JetsonNano,
-            "jetson_tx1" => TargetDevice::JetsonTx1,
-            "jetson_tx2" => TargetDevice::JetsonTx2,
-            "jetson_xavier" => TargetDevice::JetsonXavier,
-            "lambda" => TargetDevice::Lambda,
-            "ml_c4" => TargetDevice::MlC4,
-            "ml_c5" => TargetDevice::MlC5,
-            "ml_c6g" => TargetDevice::MlC6G,
-            "ml_eia2" => TargetDevice::MlEia2,
-            "ml_g4dn" => TargetDevice::MlG4Dn,
-            "ml_inf1" => TargetDevice::MlInf1,
-            "ml_inf2" => TargetDevice::MlInf2,
-            "ml_m4" => TargetDevice::MlM4,
-            "ml_m5" => TargetDevice::MlM5,
-            "ml_m6g" => TargetDevice::MlM6G,
-            "ml_p2" => TargetDevice::MlP2,
-            "ml_p3" => TargetDevice::MlP3,
-            "ml_trn1" => TargetDevice::MlTrn1,
-            "qcs603" => TargetDevice::Qcs603,
-            "qcs605" => TargetDevice::Qcs605,
-            "rasp3b" => TargetDevice::Rasp3B,
-            "rasp4b" => TargetDevice::Rasp4B,
-            "rk3288" => TargetDevice::Rk3288,
-            "rk3399" => TargetDevice::Rk3399,
-            "sbe_c" => TargetDevice::SbeC,
-            "sitara_am57x" => TargetDevice::SitaraAm57X,
-            "x86_win32" => TargetDevice::X86Win32,
-            "x86_win64" => TargetDevice::X86Win64,
-            other => TargetDevice::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "aisage" => TargetDevice::Aisage,
+"amba_cv2" => TargetDevice::AmbaCv2,
+"amba_cv22" => TargetDevice::AmbaCv22,
+"amba_cv25" => TargetDevice::AmbaCv25,
+"coreml" => TargetDevice::Coreml,
+"deeplens" => TargetDevice::Deeplens,
+"imx8mplus" => TargetDevice::Imx8Mplus,
+"imx8qm" => TargetDevice::Imx8Qm,
+"jacinto_tda4vm" => TargetDevice::JacintoTda4Vm,
+"jetson_nano" => TargetDevice::JetsonNano,
+"jetson_tx1" => TargetDevice::JetsonTx1,
+"jetson_tx2" => TargetDevice::JetsonTx2,
+"jetson_xavier" => TargetDevice::JetsonXavier,
+"lambda" => TargetDevice::Lambda,
+"ml_c4" => TargetDevice::MlC4,
+"ml_c5" => TargetDevice::MlC5,
+"ml_c6g" => TargetDevice::MlC6G,
+"ml_eia2" => TargetDevice::MlEia2,
+"ml_g4dn" => TargetDevice::MlG4Dn,
+"ml_inf1" => TargetDevice::MlInf1,
+"ml_inf2" => TargetDevice::MlInf2,
+"ml_m4" => TargetDevice::MlM4,
+"ml_m5" => TargetDevice::MlM5,
+"ml_m6g" => TargetDevice::MlM6G,
+"ml_p2" => TargetDevice::MlP2,
+"ml_p3" => TargetDevice::MlP3,
+"ml_trn1" => TargetDevice::MlTrn1,
+"qcs603" => TargetDevice::Qcs603,
+"qcs605" => TargetDevice::Qcs605,
+"rasp3b" => TargetDevice::Rasp3B,
+"rasp4b" => TargetDevice::Rasp4B,
+"rk3288" => TargetDevice::Rk3288,
+"rk3399" => TargetDevice::Rk3399,
+"sbe_c" => TargetDevice::SbeC,
+"sitara_am57x" => TargetDevice::SitaraAm57X,
+"x86_win32" => TargetDevice::X86Win32,
+"x86_win64" => TargetDevice::X86Win64,
+other => TargetDevice::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for TargetDevice {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(TargetDevice::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(TargetDevice::from(s))
+                    }
+                }
 impl TargetDevice {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TargetDevice::Aisage => "aisage",
-            TargetDevice::AmbaCv2 => "amba_cv2",
-            TargetDevice::AmbaCv22 => "amba_cv22",
-            TargetDevice::AmbaCv25 => "amba_cv25",
-            TargetDevice::Coreml => "coreml",
-            TargetDevice::Deeplens => "deeplens",
-            TargetDevice::Imx8Mplus => "imx8mplus",
-            TargetDevice::Imx8Qm => "imx8qm",
-            TargetDevice::JacintoTda4Vm => "jacinto_tda4vm",
-            TargetDevice::JetsonNano => "jetson_nano",
-            TargetDevice::JetsonTx1 => "jetson_tx1",
-            TargetDevice::JetsonTx2 => "jetson_tx2",
-            TargetDevice::JetsonXavier => "jetson_xavier",
-            TargetDevice::Lambda => "lambda",
-            TargetDevice::MlC4 => "ml_c4",
-            TargetDevice::MlC5 => "ml_c5",
-            TargetDevice::MlC6G => "ml_c6g",
-            TargetDevice::MlEia2 => "ml_eia2",
-            TargetDevice::MlG4Dn => "ml_g4dn",
-            TargetDevice::MlInf1 => "ml_inf1",
-            TargetDevice::MlInf2 => "ml_inf2",
-            TargetDevice::MlM4 => "ml_m4",
-            TargetDevice::MlM5 => "ml_m5",
-            TargetDevice::MlM6G => "ml_m6g",
-            TargetDevice::MlP2 => "ml_p2",
-            TargetDevice::MlP3 => "ml_p3",
-            TargetDevice::MlTrn1 => "ml_trn1",
-            TargetDevice::Qcs603 => "qcs603",
-            TargetDevice::Qcs605 => "qcs605",
-            TargetDevice::Rasp3B => "rasp3b",
-            TargetDevice::Rasp4B => "rasp4b",
-            TargetDevice::Rk3288 => "rk3288",
-            TargetDevice::Rk3399 => "rk3399",
-            TargetDevice::SbeC => "sbe_c",
-            TargetDevice::SitaraAm57X => "sitara_am57x",
-            TargetDevice::X86Win32 => "x86_win32",
-            TargetDevice::X86Win64 => "x86_win64",
-            TargetDevice::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "aisage",
-            "amba_cv2",
-            "amba_cv22",
-            "amba_cv25",
-            "coreml",
-            "deeplens",
-            "imx8mplus",
-            "imx8qm",
-            "jacinto_tda4vm",
-            "jetson_nano",
-            "jetson_tx1",
-            "jetson_tx2",
-            "jetson_xavier",
-            "lambda",
-            "ml_c4",
-            "ml_c5",
-            "ml_c6g",
-            "ml_eia2",
-            "ml_g4dn",
-            "ml_inf1",
-            "ml_inf2",
-            "ml_m4",
-            "ml_m5",
-            "ml_m6g",
-            "ml_p2",
-            "ml_p3",
-            "ml_trn1",
-            "qcs603",
-            "qcs605",
-            "rasp3b",
-            "rasp4b",
-            "rk3288",
-            "rk3399",
-            "sbe_c",
-            "sitara_am57x",
-            "x86_win32",
-            "x86_win64",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TargetDevice::Aisage => "aisage",
+    TargetDevice::AmbaCv2 => "amba_cv2",
+    TargetDevice::AmbaCv22 => "amba_cv22",
+    TargetDevice::AmbaCv25 => "amba_cv25",
+    TargetDevice::Coreml => "coreml",
+    TargetDevice::Deeplens => "deeplens",
+    TargetDevice::Imx8Mplus => "imx8mplus",
+    TargetDevice::Imx8Qm => "imx8qm",
+    TargetDevice::JacintoTda4Vm => "jacinto_tda4vm",
+    TargetDevice::JetsonNano => "jetson_nano",
+    TargetDevice::JetsonTx1 => "jetson_tx1",
+    TargetDevice::JetsonTx2 => "jetson_tx2",
+    TargetDevice::JetsonXavier => "jetson_xavier",
+    TargetDevice::Lambda => "lambda",
+    TargetDevice::MlC4 => "ml_c4",
+    TargetDevice::MlC5 => "ml_c5",
+    TargetDevice::MlC6G => "ml_c6g",
+    TargetDevice::MlEia2 => "ml_eia2",
+    TargetDevice::MlG4Dn => "ml_g4dn",
+    TargetDevice::MlInf1 => "ml_inf1",
+    TargetDevice::MlInf2 => "ml_inf2",
+    TargetDevice::MlM4 => "ml_m4",
+    TargetDevice::MlM5 => "ml_m5",
+    TargetDevice::MlM6G => "ml_m6g",
+    TargetDevice::MlP2 => "ml_p2",
+    TargetDevice::MlP3 => "ml_p3",
+    TargetDevice::MlTrn1 => "ml_trn1",
+    TargetDevice::Qcs603 => "qcs603",
+    TargetDevice::Qcs605 => "qcs605",
+    TargetDevice::Rasp3B => "rasp3b",
+    TargetDevice::Rasp4B => "rasp4b",
+    TargetDevice::Rk3288 => "rk3288",
+    TargetDevice::Rk3399 => "rk3399",
+    TargetDevice::SbeC => "sbe_c",
+    TargetDevice::SitaraAm57X => "sitara_am57x",
+    TargetDevice::X86Win32 => "x86_win32",
+    TargetDevice::X86Win64 => "x86_win64",
+    TargetDevice::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["aisage", "amba_cv2", "amba_cv22", "amba_cv25", "coreml", "deeplens", "imx8mplus", "imx8qm", "jacinto_tda4vm", "jetson_nano", "jetson_tx1", "jetson_tx2", "jetson_xavier", "lambda", "ml_c4", "ml_c5", "ml_c6g", "ml_eia2", "ml_g4dn", "ml_inf1", "ml_inf2", "ml_m4", "ml_m5", "ml_m6g", "ml_p2", "ml_p3", "ml_trn1", "qcs603", "qcs605", "rasp3b", "rasp4b", "rk3288", "rk3399", "sbe_c", "sitara_am57x", "x86_win32", "x86_win64"]
+                }
+            }
 impl ::std::convert::AsRef<str> for TargetDevice {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl TargetDevice {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for TargetDevice {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            TargetDevice::Aisage => write!(f, "aisage"),
-            TargetDevice::AmbaCv2 => write!(f, "amba_cv2"),
-            TargetDevice::AmbaCv22 => write!(f, "amba_cv22"),
-            TargetDevice::AmbaCv25 => write!(f, "amba_cv25"),
-            TargetDevice::Coreml => write!(f, "coreml"),
-            TargetDevice::Deeplens => write!(f, "deeplens"),
-            TargetDevice::Imx8Mplus => write!(f, "imx8mplus"),
-            TargetDevice::Imx8Qm => write!(f, "imx8qm"),
-            TargetDevice::JacintoTda4Vm => write!(f, "jacinto_tda4vm"),
-            TargetDevice::JetsonNano => write!(f, "jetson_nano"),
-            TargetDevice::JetsonTx1 => write!(f, "jetson_tx1"),
-            TargetDevice::JetsonTx2 => write!(f, "jetson_tx2"),
-            TargetDevice::JetsonXavier => write!(f, "jetson_xavier"),
-            TargetDevice::Lambda => write!(f, "lambda"),
-            TargetDevice::MlC4 => write!(f, "ml_c4"),
-            TargetDevice::MlC5 => write!(f, "ml_c5"),
-            TargetDevice::MlC6G => write!(f, "ml_c6g"),
-            TargetDevice::MlEia2 => write!(f, "ml_eia2"),
-            TargetDevice::MlG4Dn => write!(f, "ml_g4dn"),
-            TargetDevice::MlInf1 => write!(f, "ml_inf1"),
-            TargetDevice::MlInf2 => write!(f, "ml_inf2"),
-            TargetDevice::MlM4 => write!(f, "ml_m4"),
-            TargetDevice::MlM5 => write!(f, "ml_m5"),
-            TargetDevice::MlM6G => write!(f, "ml_m6g"),
-            TargetDevice::MlP2 => write!(f, "ml_p2"),
-            TargetDevice::MlP3 => write!(f, "ml_p3"),
-            TargetDevice::MlTrn1 => write!(f, "ml_trn1"),
-            TargetDevice::Qcs603 => write!(f, "qcs603"),
-            TargetDevice::Qcs605 => write!(f, "qcs605"),
-            TargetDevice::Rasp3B => write!(f, "rasp3b"),
-            TargetDevice::Rasp4B => write!(f, "rasp4b"),
-            TargetDevice::Rk3288 => write!(f, "rk3288"),
-            TargetDevice::Rk3399 => write!(f, "rk3399"),
-            TargetDevice::SbeC => write!(f, "sbe_c"),
-            TargetDevice::SitaraAm57X => write!(f, "sitara_am57x"),
-            TargetDevice::X86Win32 => write!(f, "x86_win32"),
-            TargetDevice::X86Win64 => write!(f, "x86_win64"),
-            TargetDevice::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                TargetDevice::Aisage => write!(f, "aisage"),
+TargetDevice::AmbaCv2 => write!(f, "amba_cv2"),
+TargetDevice::AmbaCv22 => write!(f, "amba_cv22"),
+TargetDevice::AmbaCv25 => write!(f, "amba_cv25"),
+TargetDevice::Coreml => write!(f, "coreml"),
+TargetDevice::Deeplens => write!(f, "deeplens"),
+TargetDevice::Imx8Mplus => write!(f, "imx8mplus"),
+TargetDevice::Imx8Qm => write!(f, "imx8qm"),
+TargetDevice::JacintoTda4Vm => write!(f, "jacinto_tda4vm"),
+TargetDevice::JetsonNano => write!(f, "jetson_nano"),
+TargetDevice::JetsonTx1 => write!(f, "jetson_tx1"),
+TargetDevice::JetsonTx2 => write!(f, "jetson_tx2"),
+TargetDevice::JetsonXavier => write!(f, "jetson_xavier"),
+TargetDevice::Lambda => write!(f, "lambda"),
+TargetDevice::MlC4 => write!(f, "ml_c4"),
+TargetDevice::MlC5 => write!(f, "ml_c5"),
+TargetDevice::MlC6G => write!(f, "ml_c6g"),
+TargetDevice::MlEia2 => write!(f, "ml_eia2"),
+TargetDevice::MlG4Dn => write!(f, "ml_g4dn"),
+TargetDevice::MlInf1 => write!(f, "ml_inf1"),
+TargetDevice::MlInf2 => write!(f, "ml_inf2"),
+TargetDevice::MlM4 => write!(f, "ml_m4"),
+TargetDevice::MlM5 => write!(f, "ml_m5"),
+TargetDevice::MlM6G => write!(f, "ml_m6g"),
+TargetDevice::MlP2 => write!(f, "ml_p2"),
+TargetDevice::MlP3 => write!(f, "ml_p3"),
+TargetDevice::MlTrn1 => write!(f, "ml_trn1"),
+TargetDevice::Qcs603 => write!(f, "qcs603"),
+TargetDevice::Qcs605 => write!(f, "qcs605"),
+TargetDevice::Rasp3B => write!(f, "rasp3b"),
+TargetDevice::Rasp4B => write!(f, "rasp4b"),
+TargetDevice::Rk3288 => write!(f, "rk3288"),
+TargetDevice::Rk3399 => write!(f, "rk3399"),
+TargetDevice::SbeC => write!(f, "sbe_c"),
+TargetDevice::SitaraAm57X => write!(f, "sitara_am57x"),
+TargetDevice::X86Win32 => write!(f, "x86_win32"),
+TargetDevice::X86Win64 => write!(f, "x86_win64"),
+TargetDevice::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

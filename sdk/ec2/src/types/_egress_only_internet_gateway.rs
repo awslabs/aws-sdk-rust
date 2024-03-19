@@ -3,30 +3,32 @@
 /// <p>Describes an egress-only internet gateway.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EgressOnlyInternetGateway {
+pub struct EgressOnlyInternetGateway  {
     /// <p>Information about the attachment of the egress-only internet gateway.</p>
-    pub attachments: ::std::option::Option<::std::vec::Vec<crate::types::InternetGatewayAttachment>>,
+    pub attachments: ::std::option::Option<::std::vec::Vec::<crate::types::InternetGatewayAttachment>>,
     /// <p>The ID of the egress-only internet gateway.</p>
     pub egress_only_internet_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the egress-only internet gateway.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl EgressOnlyInternetGateway {
+impl  EgressOnlyInternetGateway  {
     /// <p>Information about the attachment of the egress-only internet gateway.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachments.is_none()`.
-    pub fn attachments(&self) -> &[crate::types::InternetGatewayAttachment] {
-        self.attachments.as_deref().unwrap_or_default()
+    pub fn attachments(&self) -> & [crate::types::InternetGatewayAttachment] {
+        self.attachments.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the egress-only internet gateway.</p>
-    pub fn egress_only_internet_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn egress_only_internet_gateway_id(&self) -> ::std::option::Option<& str> {
         self.egress_only_internet_gateway_id.as_deref()
     }
     /// <p>The tags assigned to the egress-only internet gateway.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl EgressOnlyInternetGateway {
@@ -40,9 +42,9 @@ impl EgressOnlyInternetGateway {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EgressOnlyInternetGatewayBuilder {
-    pub(crate) attachments: ::std::option::Option<::std::vec::Vec<crate::types::InternetGatewayAttachment>>,
+    pub(crate) attachments: ::std::option::Option<::std::vec::Vec::<crate::types::InternetGatewayAttachment>>,
     pub(crate) egress_only_internet_gateway_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl EgressOnlyInternetGatewayBuilder {
     /// Appends an item to `attachments`.
@@ -52,17 +54,16 @@ impl EgressOnlyInternetGatewayBuilder {
     /// <p>Information about the attachment of the egress-only internet gateway.</p>
     pub fn attachments(mut self, input: crate::types::InternetGatewayAttachment) -> Self {
         let mut v = self.attachments.unwrap_or_default();
-        v.push(input);
-        self.attachments = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attachments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the attachment of the egress-only internet gateway.</p>
-    pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InternetGatewayAttachment>>) -> Self {
-        self.attachments = input;
-        self
+    pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InternetGatewayAttachment>>) -> Self {
+        self.attachments = input; self
     }
     /// <p>Information about the attachment of the egress-only internet gateway.</p>
-    pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InternetGatewayAttachment>> {
+    pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InternetGatewayAttachment>> {
         &self.attachments
     }
     /// <p>The ID of the egress-only internet gateway.</p>
@@ -72,8 +73,7 @@ impl EgressOnlyInternetGatewayBuilder {
     }
     /// <p>The ID of the egress-only internet gateway.</p>
     pub fn set_egress_only_internet_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.egress_only_internet_gateway_id = input;
-        self
+        self.egress_only_internet_gateway_id = input; self
     }
     /// <p>The ID of the egress-only internet gateway.</p>
     pub fn get_egress_only_internet_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,25 +86,28 @@ impl EgressOnlyInternetGatewayBuilder {
     /// <p>The tags assigned to the egress-only internet gateway.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags assigned to the egress-only internet gateway.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags assigned to the egress-only internet gateway.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`EgressOnlyInternetGateway`](crate::types::EgressOnlyInternetGateway).
     pub fn build(self) -> crate::types::EgressOnlyInternetGateway {
         crate::types::EgressOnlyInternetGateway {
-            attachments: self.attachments,
-            egress_only_internet_gateway_id: self.egress_only_internet_gateway_id,
-            tags: self.tags,
+            attachments: self.attachments
+            ,
+            egress_only_internet_gateway_id: self.egress_only_internet_gateway_id
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

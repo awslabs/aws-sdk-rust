@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetSites`](crate::operation::get_sites::builders::GetSitesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_sites::builders::GetSitesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`global_network_id(impl Into<String>)`](crate::operation::get_sites::builders::GetSitesFluentBuilder::global_network_id) / [`set_global_network_id(Option<String>)`](crate::operation::get_sites::builders::GetSitesFluentBuilder::set_global_network_id):<br>required: **true**<br><p>The ID of the global network.</p><br>
     ///   - [`site_ids(impl Into<String>)`](crate::operation::get_sites::builders::GetSitesFluentBuilder::site_ids) / [`set_site_ids(Option<Vec::<String>>)`](crate::operation::get_sites::builders::GetSitesFluentBuilder::set_site_ids):<br>required: **false**<br><p>One or more site IDs. The maximum is 10.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_sites::builders::GetSitesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_sites::builders::GetSitesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_sites::builders::GetSitesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_sites::builders::GetSitesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
-    /// - On success, responds with [`GetSitesOutput`](crate::operation::get_sites::GetSitesOutput) with field(s):
+                            /// - On success, responds with [`GetSitesOutput`](crate::operation::get_sites::GetSitesOutput) with field(s):
     ///   - [`sites(Option<Vec::<Site>>)`](crate::operation::get_sites::GetSitesOutput::sites): <p>The sites.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_sites::GetSitesOutput::next_token): <p>The token for the next page of results.</p>
-    /// - On failure, responds with [`SdkError<GetSitesError>`](crate::operation::get_sites::GetSitesError)
+                            /// - On failure, responds with [`SdkError<GetSitesError>`](crate::operation::get_sites::GetSitesError)
     pub fn get_sites(&self) -> crate::operation::get_sites::builders::GetSitesFluentBuilder {
-        crate::operation::get_sites::builders::GetSitesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_sites::builders::GetSitesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

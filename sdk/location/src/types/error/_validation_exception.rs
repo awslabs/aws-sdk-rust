@@ -3,36 +3,33 @@
 /// <p>The input failed to meet the constraints specified by the AWS service.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ValidationException {
+pub struct ValidationException  {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::string::String,
     /// <p>A message with the reason for the validation exception error.</p>
     pub reason: crate::types::ValidationExceptionReason,
     /// <p>The field where the invalid entry was detected.</p>
-    pub field_list: ::std::vec::Vec<crate::types::ValidationExceptionField>,
+    pub field_list: ::std::vec::Vec::<crate::types::ValidationExceptionField>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl ValidationException {
+impl  ValidationException  {
     /// <p>A message with the reason for the validation exception error.</p>
-    pub fn reason(&self) -> &crate::types::ValidationExceptionReason {
+    pub fn reason(&self) -> & crate::types::ValidationExceptionReason {
         &self.reason
     }
     /// <p>The field where the invalid entry was detected.</p>
-    pub fn field_list(&self) -> &[crate::types::ValidationExceptionField] {
-        use std::ops::Deref;
-        self.field_list.deref()
+    pub fn field_list(&self) -> & [crate::types::ValidationExceptionField] {
+        use std::ops::Deref; self.field_list.deref()
     }
 }
 impl ValidationException {
     /// Returns the error message.
-    pub fn message(&self) -> &str {
-        &self.message
-    }
+                        pub fn message(&self) -> &str { &self.message }
 }
 impl ::std::fmt::Display for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ValidationException")?;
-        {
+         {
             ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
@@ -46,9 +43,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::ValidationExcep
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ValidationException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl ValidationException {
     /// Creates a new builder-style object to manufacture [`ValidationException`](crate::types::error::ValidationException).
@@ -63,7 +58,7 @@ impl ValidationException {
 pub struct ValidationExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) reason: ::std::option::Option<crate::types::ValidationExceptionReason>,
-    pub(crate) field_list: ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>>,
+    pub(crate) field_list: ::std::option::Option<::std::vec::Vec::<crate::types::ValidationExceptionField>>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ValidationExceptionBuilder {
@@ -75,8 +70,7 @@ impl ValidationExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +84,7 @@ impl ValidationExceptionBuilder {
     }
     /// <p>A message with the reason for the validation exception error.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<crate::types::ValidationExceptionReason>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>A message with the reason for the validation exception error.</p>
     pub fn get_reason(&self) -> &::std::option::Option<crate::types::ValidationExceptionReason> {
@@ -104,56 +97,55 @@ impl ValidationExceptionBuilder {
     /// <p>The field where the invalid entry was detected.</p>
     pub fn field_list(mut self, input: crate::types::ValidationExceptionField) -> Self {
         let mut v = self.field_list.unwrap_or_default();
-        v.push(input);
-        self.field_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.field_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The field where the invalid entry was detected.</p>
-    pub fn set_field_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>>) -> Self {
-        self.field_list = input;
-        self
+    pub fn set_field_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ValidationExceptionField>>) -> Self {
+        self.field_list = input; self
     }
     /// <p>The field where the invalid entry was detected.</p>
-    pub fn get_field_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>> {
+    pub fn get_field_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ValidationExceptionField>> {
         &self.field_list
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`ValidationException`](crate::types::error::ValidationException).
     /// This method will fail if any of the following fields are not set:
     /// - [`message`](crate::types::error::builders::ValidationExceptionBuilder::message)
     /// - [`reason`](crate::types::error::builders::ValidationExceptionBuilder::reason)
     /// - [`field_list`](crate::types::error::builders::ValidationExceptionBuilder::field_list)
     pub fn build(self) -> ::std::result::Result<crate::types::error::ValidationException, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::error::ValidationException {
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building ValidationException",
-                )
-            })?,
-            reason: self.reason.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "reason",
-                    "reason was not specified but it is required when building ValidationException",
-                )
-            })?,
-            field_list: self.field_list.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "field_list",
-                    "field_list was not specified but it is required when building ValidationException",
-                )
-            })?,
-            meta: self.meta.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::error::ValidationException {
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building ValidationException")
+                    )?
+                ,
+                reason: self.reason
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("reason", "reason was not specified but it is required when building ValidationException")
+                    )?
+                ,
+                field_list: self.field_list
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("field_list", "field_list was not specified but it is required when building ValidationException")
+                    )?
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        )
     }
 }
+

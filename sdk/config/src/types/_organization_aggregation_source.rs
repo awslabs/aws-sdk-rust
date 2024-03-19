@@ -3,25 +3,25 @@
 /// <p>This object contains regions to set up the aggregator and an IAM role to retrieve organization details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OrganizationAggregationSource {
+pub struct OrganizationAggregationSource  {
     /// <p>ARN of the IAM role used to retrieve Amazon Web Services Organization details associated with the aggregator account.</p>
     pub role_arn: ::std::string::String,
     /// <p>The source regions being aggregated.</p>
-    pub aws_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub aws_regions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>If true, aggregate existing Config regions and future regions.</p>
     pub all_aws_regions: bool,
 }
-impl OrganizationAggregationSource {
+impl  OrganizationAggregationSource  {
     /// <p>ARN of the IAM role used to retrieve Amazon Web Services Organization details associated with the aggregator account.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
     /// <p>The source regions being aggregated.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aws_regions.is_none()`.
-    pub fn aws_regions(&self) -> &[::std::string::String] {
-        self.aws_regions.as_deref().unwrap_or_default()
+    pub fn aws_regions(&self) -> & [::std::string::String] {
+        self.aws_regions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If true, aggregate existing Config regions and future regions.</p>
     pub fn all_aws_regions(&self) -> bool {
@@ -40,7 +40,7 @@ impl OrganizationAggregationSource {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OrganizationAggregationSourceBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) aws_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) aws_regions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) all_aws_regions: ::std::option::Option<bool>,
 }
 impl OrganizationAggregationSourceBuilder {
@@ -52,8 +52,7 @@ impl OrganizationAggregationSourceBuilder {
     }
     /// <p>ARN of the IAM role used to retrieve Amazon Web Services Organization details associated with the aggregator account.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>ARN of the IAM role used to retrieve Amazon Web Services Organization details associated with the aggregator account.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,17 +65,16 @@ impl OrganizationAggregationSourceBuilder {
     /// <p>The source regions being aggregated.</p>
     pub fn aws_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.aws_regions.unwrap_or_default();
-        v.push(input.into());
-        self.aws_regions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.aws_regions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The source regions being aggregated.</p>
-    pub fn set_aws_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.aws_regions = input;
-        self
+    pub fn set_aws_regions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.aws_regions = input; self
     }
     /// <p>The source regions being aggregated.</p>
-    pub fn get_aws_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_aws_regions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.aws_regions
     }
     /// <p>If true, aggregate existing Config regions and future regions.</p>
@@ -86,8 +84,7 @@ impl OrganizationAggregationSourceBuilder {
     }
     /// <p>If true, aggregate existing Config regions and future regions.</p>
     pub fn set_all_aws_regions(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.all_aws_regions = input;
-        self
+        self.all_aws_regions = input; self
     }
     /// <p>If true, aggregate existing Config regions and future regions.</p>
     pub fn get_all_aws_regions(&self) -> &::std::option::Option<bool> {
@@ -97,15 +94,20 @@ impl OrganizationAggregationSourceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`role_arn`](crate::types::builders::OrganizationAggregationSourceBuilder::role_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::OrganizationAggregationSource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OrganizationAggregationSource {
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building OrganizationAggregationSource",
-                )
-            })?,
-            aws_regions: self.aws_regions,
-            all_aws_regions: self.all_aws_regions.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::OrganizationAggregationSource {
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building OrganizationAggregationSource")
+                    )?
+                ,
+                aws_regions: self.aws_regions
+                ,
+                all_aws_regions: self.all_aws_regions
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

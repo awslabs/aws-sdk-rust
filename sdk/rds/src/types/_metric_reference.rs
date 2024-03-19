@@ -3,19 +3,19 @@
 /// <p>The reference (threshold) for a metric.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetricReference {
+pub struct MetricReference  {
     /// <p>The name of the metric reference.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The details of a performance issue.</p>
     pub reference_details: ::std::option::Option<crate::types::ReferenceDetails>,
 }
-impl MetricReference {
+impl  MetricReference  {
     /// <p>The name of the metric reference.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The details of a performance issue.</p>
-    pub fn reference_details(&self) -> ::std::option::Option<&crate::types::ReferenceDetails> {
+    pub fn reference_details(&self) -> ::std::option::Option<& crate::types::ReferenceDetails> {
         self.reference_details.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl MetricReferenceBuilder {
     }
     /// <p>The name of the metric reference.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the metric reference.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl MetricReferenceBuilder {
     }
     /// <p>The details of a performance issue.</p>
     pub fn set_reference_details(mut self, input: ::std::option::Option<crate::types::ReferenceDetails>) -> Self {
-        self.reference_details = input;
-        self
+        self.reference_details = input; self
     }
     /// <p>The details of a performance issue.</p>
     pub fn get_reference_details(&self) -> &::std::option::Option<crate::types::ReferenceDetails> {
@@ -65,8 +63,11 @@ impl MetricReferenceBuilder {
     /// Consumes the builder and constructs a [`MetricReference`](crate::types::MetricReference).
     pub fn build(self) -> crate::types::MetricReference {
         crate::types::MetricReference {
-            name: self.name,
-            reference_details: self.reference_details,
+            name: self.name
+            ,
+            reference_details: self.reference_details
+            ,
         }
     }
 }
+

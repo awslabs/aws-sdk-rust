@@ -3,13 +3,13 @@
 /// Placeholder documentation for DescribeInputDeviceRequest
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeInputDeviceInput {
+pub struct DescribeInputDeviceInput  {
     /// The unique ID of this input device. For example, hd-123456789abcdef.
     pub input_device_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeInputDeviceInput {
+impl  DescribeInputDeviceInput  {
     /// The unique ID of this input device. For example, hd-123456789abcdef.
-    pub fn input_device_id(&self) -> ::std::option::Option<&str> {
+    pub fn input_device_id(&self) -> ::std::option::Option<& str> {
         self.input_device_id.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl DescribeInputDeviceInputBuilder {
     }
     /// The unique ID of this input device. For example, hd-123456789abcdef.
     pub fn set_input_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_device_id = input;
-        self
+        self.input_device_id = input; self
     }
     /// The unique ID of this input device. For example, hd-123456789abcdef.
     pub fn get_input_device_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.input_device_id
     }
     /// Consumes the builder and constructs a [`DescribeInputDeviceInput`](crate::operation::describe_input_device::DescribeInputDeviceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_input_device::DescribeInputDeviceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_input_device::DescribeInputDeviceInput {
-            input_device_id: self.input_device_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_input_device::DescribeInputDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_input_device::DescribeInputDeviceInput {
+                input_device_id: self.input_device_id
+                ,
+            }
+        )
     }
 }
+

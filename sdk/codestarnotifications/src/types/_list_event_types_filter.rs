@@ -3,21 +3,20 @@
 /// <p>Information about a filter to apply to the list of returned event types. You can filter by resource type or service name.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListEventTypesFilter {
+pub struct ListEventTypesFilter  {
     /// <p>The system-generated name of the filter type you want to filter by.</p>
     pub name: crate::types::ListEventTypesFilterName,
     /// <p>The name of the resource type (for example, pipeline) or service name (for example, CodePipeline) that you want to filter by.</p>
     pub value: ::std::string::String,
 }
-impl ListEventTypesFilter {
+impl  ListEventTypesFilter  {
     /// <p>The system-generated name of the filter type you want to filter by.</p>
-    pub fn name(&self) -> &crate::types::ListEventTypesFilterName {
+    pub fn name(&self) -> & crate::types::ListEventTypesFilterName {
         &self.name
     }
     /// <p>The name of the resource type (for example, pipeline) or service name (for example, CodePipeline) that you want to filter by.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl ListEventTypesFilter {
@@ -43,8 +42,7 @@ impl ListEventTypesFilterBuilder {
     }
     /// <p>The system-generated name of the filter type you want to filter by.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::ListEventTypesFilterName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The system-generated name of the filter type you want to filter by.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::ListEventTypesFilterName> {
@@ -58,8 +56,7 @@ impl ListEventTypesFilterBuilder {
     }
     /// <p>The name of the resource type (for example, pipeline) or service name (for example, CodePipeline) that you want to filter by.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The name of the resource type (for example, pipeline) or service name (for example, CodePipeline) that you want to filter by.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,19 +67,20 @@ impl ListEventTypesFilterBuilder {
     /// - [`name`](crate::types::builders::ListEventTypesFilterBuilder::name)
     /// - [`value`](crate::types::builders::ListEventTypesFilterBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::ListEventTypesFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ListEventTypesFilter {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ListEventTypesFilter",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building ListEventTypesFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ListEventTypesFilter {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ListEventTypesFilter")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building ListEventTypesFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

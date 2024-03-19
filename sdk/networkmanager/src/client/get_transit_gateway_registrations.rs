@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetTransitGatewayRegistrations`](crate::operation::get_transit_gateway_registrations::builders::GetTransitGatewayRegistrationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_transit_gateway_registrations::builders::GetTransitGatewayRegistrationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`global_network_id(impl Into<String>)`](crate::operation::get_transit_gateway_registrations::builders::GetTransitGatewayRegistrationsFluentBuilder::global_network_id) / [`set_global_network_id(Option<String>)`](crate::operation::get_transit_gateway_registrations::builders::GetTransitGatewayRegistrationsFluentBuilder::set_global_network_id):<br>required: **true**<br><p>The ID of the global network.</p><br>
     ///   - [`transit_gateway_arns(impl Into<String>)`](crate::operation::get_transit_gateway_registrations::builders::GetTransitGatewayRegistrationsFluentBuilder::transit_gateway_arns) / [`set_transit_gateway_arns(Option<Vec::<String>>)`](crate::operation::get_transit_gateway_registrations::builders::GetTransitGatewayRegistrationsFluentBuilder::set_transit_gateway_arns):<br>required: **false**<br><p>The Amazon Resource Names (ARNs) of one or more transit gateways. The maximum is 10.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_transit_gateway_registrations::builders::GetTransitGatewayRegistrationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_transit_gateway_registrations::builders::GetTransitGatewayRegistrationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_transit_gateway_registrations::builders::GetTransitGatewayRegistrationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_transit_gateway_registrations::builders::GetTransitGatewayRegistrationsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
-    /// - On success, responds with [`GetTransitGatewayRegistrationsOutput`](crate::operation::get_transit_gateway_registrations::GetTransitGatewayRegistrationsOutput) with field(s):
+                            /// - On success, responds with [`GetTransitGatewayRegistrationsOutput`](crate::operation::get_transit_gateway_registrations::GetTransitGatewayRegistrationsOutput) with field(s):
     ///   - [`transit_gateway_registrations(Option<Vec::<TransitGatewayRegistration>>)`](crate::operation::get_transit_gateway_registrations::GetTransitGatewayRegistrationsOutput::transit_gateway_registrations): <p>The transit gateway registrations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_transit_gateway_registrations::GetTransitGatewayRegistrationsOutput::next_token): <p>The token for the next page of results.</p>
-    /// - On failure, responds with [`SdkError<GetTransitGatewayRegistrationsError>`](crate::operation::get_transit_gateway_registrations::GetTransitGatewayRegistrationsError)
-    pub fn get_transit_gateway_registrations(
-        &self,
-    ) -> crate::operation::get_transit_gateway_registrations::builders::GetTransitGatewayRegistrationsFluentBuilder {
-        crate::operation::get_transit_gateway_registrations::builders::GetTransitGatewayRegistrationsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<GetTransitGatewayRegistrationsError>`](crate::operation::get_transit_gateway_registrations::GetTransitGatewayRegistrationsError)
+    pub fn get_transit_gateway_registrations(&self) -> crate::operation::get_transit_gateway_registrations::builders::GetTransitGatewayRegistrationsFluentBuilder {
+                                crate::operation::get_transit_gateway_registrations::builders::GetTransitGatewayRegistrationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

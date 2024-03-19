@@ -3,22 +3,21 @@
 /// <p>Creates settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateEndOfMeetingReminder {
+pub struct CreateEndOfMeetingReminder  {
     /// <p>A range of 3 to 15 minutes that determines when the reminder begins.</p>
-    pub reminder_at_minutes: ::std::vec::Vec<i32>,
+    pub reminder_at_minutes: ::std::vec::Vec::<i32>,
     /// <p>The type of sound that users hear during the end of meeting reminder.</p>
     pub reminder_type: crate::types::EndOfMeetingReminderType,
     /// <p>Whether an end of meeting reminder is enabled or not.</p>
     pub enabled: bool,
 }
-impl CreateEndOfMeetingReminder {
+impl  CreateEndOfMeetingReminder  {
     /// <p>A range of 3 to 15 minutes that determines when the reminder begins.</p>
-    pub fn reminder_at_minutes(&self) -> &[i32] {
-        use std::ops::Deref;
-        self.reminder_at_minutes.deref()
+    pub fn reminder_at_minutes(&self) -> & [i32] {
+        use std::ops::Deref; self.reminder_at_minutes.deref()
     }
     /// <p>The type of sound that users hear during the end of meeting reminder.</p>
-    pub fn reminder_type(&self) -> &crate::types::EndOfMeetingReminderType {
+    pub fn reminder_type(&self) -> & crate::types::EndOfMeetingReminderType {
         &self.reminder_type
     }
     /// <p>Whether an end of meeting reminder is enabled or not.</p>
@@ -37,7 +36,7 @@ impl CreateEndOfMeetingReminder {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEndOfMeetingReminderBuilder {
-    pub(crate) reminder_at_minutes: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub(crate) reminder_at_minutes: ::std::option::Option<::std::vec::Vec::<i32>>,
     pub(crate) reminder_type: ::std::option::Option<crate::types::EndOfMeetingReminderType>,
     pub(crate) enabled: ::std::option::Option<bool>,
 }
@@ -49,17 +48,16 @@ impl CreateEndOfMeetingReminderBuilder {
     /// <p>A range of 3 to 15 minutes that determines when the reminder begins.</p>
     pub fn reminder_at_minutes(mut self, input: i32) -> Self {
         let mut v = self.reminder_at_minutes.unwrap_or_default();
-        v.push(input);
-        self.reminder_at_minutes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.reminder_at_minutes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A range of 3 to 15 minutes that determines when the reminder begins.</p>
-    pub fn set_reminder_at_minutes(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
-        self.reminder_at_minutes = input;
-        self
+    pub fn set_reminder_at_minutes(mut self, input: ::std::option::Option<::std::vec::Vec::<i32>>) -> Self {
+        self.reminder_at_minutes = input; self
     }
     /// <p>A range of 3 to 15 minutes that determines when the reminder begins.</p>
-    pub fn get_reminder_at_minutes(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+    pub fn get_reminder_at_minutes(&self) -> &::std::option::Option<::std::vec::Vec::<i32>> {
         &self.reminder_at_minutes
     }
     /// <p>The type of sound that users hear during the end of meeting reminder.</p>
@@ -70,8 +68,7 @@ impl CreateEndOfMeetingReminderBuilder {
     }
     /// <p>The type of sound that users hear during the end of meeting reminder.</p>
     pub fn set_reminder_type(mut self, input: ::std::option::Option<crate::types::EndOfMeetingReminderType>) -> Self {
-        self.reminder_type = input;
-        self
+        self.reminder_type = input; self
     }
     /// <p>The type of sound that users hear during the end of meeting reminder.</p>
     pub fn get_reminder_type(&self) -> &::std::option::Option<crate::types::EndOfMeetingReminderType> {
@@ -85,8 +82,7 @@ impl CreateEndOfMeetingReminderBuilder {
     }
     /// <p>Whether an end of meeting reminder is enabled or not.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Whether an end of meeting reminder is enabled or not.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -98,25 +94,25 @@ impl CreateEndOfMeetingReminderBuilder {
     /// - [`reminder_type`](crate::types::builders::CreateEndOfMeetingReminderBuilder::reminder_type)
     /// - [`enabled`](crate::types::builders::CreateEndOfMeetingReminderBuilder::enabled)
     pub fn build(self) -> ::std::result::Result<crate::types::CreateEndOfMeetingReminder, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CreateEndOfMeetingReminder {
-            reminder_at_minutes: self.reminder_at_minutes.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "reminder_at_minutes",
-                    "reminder_at_minutes was not specified but it is required when building CreateEndOfMeetingReminder",
-                )
-            })?,
-            reminder_type: self.reminder_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "reminder_type",
-                    "reminder_type was not specified but it is required when building CreateEndOfMeetingReminder",
-                )
-            })?,
-            enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "enabled",
-                    "enabled was not specified but it is required when building CreateEndOfMeetingReminder",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CreateEndOfMeetingReminder {
+                reminder_at_minutes: self.reminder_at_minutes
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("reminder_at_minutes", "reminder_at_minutes was not specified but it is required when building CreateEndOfMeetingReminder")
+                    )?
+                ,
+                reminder_type: self.reminder_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("reminder_type", "reminder_type was not specified but it is required when building CreateEndOfMeetingReminder")
+                    )?
+                ,
+                enabled: self.enabled
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("enabled", "enabled was not specified but it is required when building CreateEndOfMeetingReminder")
+                    )?
+                ,
+            }
+        )
     }
 }
+

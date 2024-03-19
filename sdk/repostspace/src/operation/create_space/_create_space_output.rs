@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSpaceOutput {
+pub struct CreateSpaceOutput  {
     /// <p>The unique ID of the private re:Post.</p>
     pub space_id: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CreateSpaceOutput {
+impl  CreateSpaceOutput  {
     /// <p>The unique ID of the private re:Post.</p>
-    pub fn space_id(&self) -> &str {
-        use std::ops::Deref;
-        self.space_id.deref()
+    pub fn space_id(&self) -> & str {
+        use std::ops::Deref; self.space_id.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateSpaceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateSpaceOutput {
     /// Creates a new builder-style object to manufacture [`CreateSpaceOutput`](crate::operation::create_space::CreateSpaceOutput).
     pub fn builder() -> crate::operation::create_space::builders::CreateSpaceOutputBuilder {
@@ -42,34 +41,35 @@ impl CreateSpaceOutputBuilder {
     }
     /// <p>The unique ID of the private re:Post.</p>
     pub fn set_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.space_id = input;
-        self
+        self.space_id = input; self
     }
     /// <p>The unique ID of the private re:Post.</p>
     pub fn get_space_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.space_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateSpaceOutput`](crate::operation::create_space::CreateSpaceOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`space_id`](crate::operation::create_space::builders::CreateSpaceOutputBuilder::space_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::create_space::CreateSpaceOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_space::CreateSpaceOutput {
-            space_id: self.space_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "space_id",
-                    "space_id was not specified but it is required when building CreateSpaceOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_space::CreateSpaceOutput {
+                space_id: self.space_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("space_id", "space_id was not specified but it is required when building CreateSpaceOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

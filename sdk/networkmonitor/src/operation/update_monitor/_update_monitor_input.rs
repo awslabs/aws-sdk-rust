@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateMonitorInput {
+pub struct UpdateMonitorInput  {
     /// <p>The name of the monitor to update. Run <code>ListMonitors</code> to get a list of monitor names.</p>
     pub monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>The aggregation time, in seconds, to change to. This must be either <code>30</code> or <code>60</code>.</p>
     pub aggregation_period: ::std::option::Option<i64>,
 }
-impl UpdateMonitorInput {
+impl  UpdateMonitorInput  {
     /// <p>The name of the monitor to update. Run <code>ListMonitors</code> to get a list of monitor names.</p>
-    pub fn monitor_name(&self) -> ::std::option::Option<&str> {
+    pub fn monitor_name(&self) -> ::std::option::Option<& str> {
         self.monitor_name.as_deref()
     }
     /// <p>The aggregation time, in seconds, to change to. This must be either <code>30</code> or <code>60</code>.</p>
@@ -41,8 +41,7 @@ impl UpdateMonitorInputBuilder {
     }
     /// <p>The name of the monitor to update. Run <code>ListMonitors</code> to get a list of monitor names.</p>
     pub fn set_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitor_name = input;
-        self
+        self.monitor_name = input; self
     }
     /// <p>The name of the monitor to update. Run <code>ListMonitors</code> to get a list of monitor names.</p>
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl UpdateMonitorInputBuilder {
     }
     /// <p>The aggregation time, in seconds, to change to. This must be either <code>30</code> or <code>60</code>.</p>
     pub fn set_aggregation_period(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.aggregation_period = input;
-        self
+        self.aggregation_period = input; self
     }
     /// <p>The aggregation time, in seconds, to change to. This must be either <code>30</code> or <code>60</code>.</p>
     pub fn get_aggregation_period(&self) -> &::std::option::Option<i64> {
         &self.aggregation_period
     }
     /// Consumes the builder and constructs a [`UpdateMonitorInput`](crate::operation::update_monitor::UpdateMonitorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_monitor::UpdateMonitorInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_monitor::UpdateMonitorInput {
-            monitor_name: self.monitor_name,
-            aggregation_period: self.aggregation_period,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_monitor::UpdateMonitorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_monitor::UpdateMonitorInput {
+                monitor_name: self.monitor_name
+                ,
+                aggregation_period: self.aggregation_period
+                ,
+            }
+        )
     }
 }
+

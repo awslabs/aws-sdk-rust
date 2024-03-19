@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSchedules`](crate::operation::list_schedules::builders::ListSchedulesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`group_name(impl Into<String>)`](crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::group_name) / [`set_group_name(Option<String>)`](crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::set_group_name):<br>required: **false**<br><p>If specified, only lists the schedules whose associated schedule group matches the given filter.</p><br>
     ///   - [`name_prefix(impl Into<String>)`](crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::name_prefix) / [`set_name_prefix(Option<String>)`](crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::set_name_prefix):<br>required: **false**<br><p>Schedule name prefix to return the filtered list of resources.</p><br>
     ///   - [`state(ScheduleState)`](crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::state) / [`set_state(Option<ScheduleState>)`](crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::set_state):<br>required: **false**<br><p>If specified, only lists the schedules whose current state matches the given filter.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token returned by a previous call to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::set_max_results):<br>required: **false**<br><p>If specified, limits the number of results returned by this operation. The operation also returns a <code>NextToken</code> which you can use in a subsequent operation to retrieve the next set of results.</p><br>
-    /// - On success, responds with [`ListSchedulesOutput`](crate::operation::list_schedules::ListSchedulesOutput) with field(s):
+                            /// - On success, responds with [`ListSchedulesOutput`](crate::operation::list_schedules::ListSchedulesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_schedules::ListSchedulesOutput::next_token): <p>Indicates whether there are additional results to retrieve. If the value is null, there are no more results.</p>
     ///   - [`schedules(Vec::<ScheduleSummary>)`](crate::operation::list_schedules::ListSchedulesOutput::schedules): <p>The schedules that match the specified criteria.</p>
-    /// - On failure, responds with [`SdkError<ListSchedulesError>`](crate::operation::list_schedules::ListSchedulesError)
+                            /// - On failure, responds with [`SdkError<ListSchedulesError>`](crate::operation::list_schedules::ListSchedulesError)
     pub fn list_schedules(&self) -> crate::operation::list_schedules::builders::ListSchedulesFluentBuilder {
-        crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

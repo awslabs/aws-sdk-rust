@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>UpdateApiCache</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateApiCacheInput {
+pub struct UpdateApiCacheInput  {
     /// <p>The GraphQL API ID.</p>
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>TTL in seconds for cache entries.</p>
@@ -65,9 +65,9 @@ pub struct UpdateApiCacheInput {
     /// <p>Metrics will be recorded by API ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
     pub health_metrics_config: ::std::option::Option<crate::types::CacheHealthMetricsConfig>,
 }
-impl UpdateApiCacheInput {
+impl  UpdateApiCacheInput  {
     /// <p>The GraphQL API ID.</p>
-    pub fn api_id(&self) -> ::std::option::Option<&str> {
+    pub fn api_id(&self) -> ::std::option::Option<& str> {
         self.api_id.as_deref()
     }
     /// <p>TTL in seconds for cache entries.</p>
@@ -82,7 +82,7 @@ impl UpdateApiCacheInput {
     /// <li>
     /// <p><b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p></li>
     /// </ul>
-    pub fn api_caching_behavior(&self) -> ::std::option::Option<&crate::types::ApiCachingBehavior> {
+    pub fn api_caching_behavior(&self) -> ::std::option::Option<& crate::types::ApiCachingBehavior> {
         self.api_caching_behavior.as_ref()
     }
     /// <p>The cache instance type. Valid values are</p>
@@ -122,7 +122,7 @@ impl UpdateApiCacheInput {
     /// <li>
     /// <p><b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p></li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ApiCacheType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ApiCacheType> {
         self.r#type.as_ref()
     }
     /// <p>Controls how cache health metrics will be emitted to CloudWatch. Cache health metrics include:</p>
@@ -133,7 +133,7 @@ impl UpdateApiCacheInput {
     /// <p>EngineCPUUtilization: The CPU utilization (percentage) allocated to the Redis process. This is useful for diagnosing bottlenecks in a cache configuration.</p></li>
     /// </ul>
     /// <p>Metrics will be recorded by API ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
-    pub fn health_metrics_config(&self) -> ::std::option::Option<&crate::types::CacheHealthMetricsConfig> {
+    pub fn health_metrics_config(&self) -> ::std::option::Option<& crate::types::CacheHealthMetricsConfig> {
         self.health_metrics_config.as_ref()
     }
 }
@@ -163,8 +163,7 @@ impl UpdateApiCacheInputBuilder {
     }
     /// <p>The GraphQL API ID.</p>
     pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_id = input;
-        self
+        self.api_id = input; self
     }
     /// <p>The GraphQL API ID.</p>
     pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -180,8 +179,7 @@ impl UpdateApiCacheInputBuilder {
     /// <p>TTL in seconds for cache entries.</p>
     /// <p>Valid values are 1–3,600 seconds.</p>
     pub fn set_ttl(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.ttl = input;
-        self
+        self.ttl = input; self
     }
     /// <p>TTL in seconds for cache entries.</p>
     /// <p>Valid values are 1–3,600 seconds.</p>
@@ -208,8 +206,7 @@ impl UpdateApiCacheInputBuilder {
     /// <p><b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p></li>
     /// </ul>
     pub fn set_api_caching_behavior(mut self, input: ::std::option::Option<crate::types::ApiCachingBehavior>) -> Self {
-        self.api_caching_behavior = input;
-        self
+        self.api_caching_behavior = input; self
     }
     /// <p>Caching behavior.</p>
     /// <ul>
@@ -301,8 +298,7 @@ impl UpdateApiCacheInputBuilder {
     /// <p><b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ApiCacheType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The cache instance type. Valid values are</p>
     /// <ul>
@@ -365,8 +361,7 @@ impl UpdateApiCacheInputBuilder {
     /// </ul>
     /// <p>Metrics will be recorded by API ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
     pub fn set_health_metrics_config(mut self, input: ::std::option::Option<crate::types::CacheHealthMetricsConfig>) -> Self {
-        self.health_metrics_config = input;
-        self
+        self.health_metrics_config = input; self
     }
     /// <p>Controls how cache health metrics will be emitted to CloudWatch. Cache health metrics include:</p>
     /// <ul>
@@ -380,15 +375,21 @@ impl UpdateApiCacheInputBuilder {
         &self.health_metrics_config
     }
     /// Consumes the builder and constructs a [`UpdateApiCacheInput`](crate::operation::update_api_cache::UpdateApiCacheInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_api_cache::UpdateApiCacheInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_api_cache::UpdateApiCacheInput {
-            api_id: self.api_id,
-            ttl: self.ttl,
-            api_caching_behavior: self.api_caching_behavior,
-            r#type: self.r#type,
-            health_metrics_config: self.health_metrics_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_api_cache::UpdateApiCacheInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_api_cache::UpdateApiCacheInput {
+                api_id: self.api_id
+                ,
+                ttl: self.ttl
+                ,
+                api_caching_behavior: self.api_caching_behavior
+                ,
+                r#type: self.r#type
+                ,
+                health_metrics_config: self.health_metrics_config
+                ,
+            }
+        )
     }
 }
+

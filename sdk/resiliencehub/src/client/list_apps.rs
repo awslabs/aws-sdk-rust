@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListApps`](crate::operation::list_apps::builders::ListAppsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_apps::builders::ListAppsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::set_next_token):<br>required: **false**<br><p>Null, or the token from a previous call to get the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p><br>
     ///   - [`name(impl Into<String>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::set_name):<br>required: **false**<br><p>The name for the one of the listed applications.</p><br>
@@ -11,11 +11,12 @@ impl super::Client {
     ///   - [`from_last_assessment_time(DateTime)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::from_last_assessment_time) / [`set_from_last_assessment_time(Option<DateTime>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::set_from_last_assessment_time):<br>required: **false**<br><p>Indicates the lower limit of the range that is used to filter applications based on their last assessment times.</p><br>
     ///   - [`to_last_assessment_time(DateTime)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::to_last_assessment_time) / [`set_to_last_assessment_time(Option<DateTime>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::set_to_last_assessment_time):<br>required: **false**<br><p>Indicates the upper limit of the range that is used to filter the applications based on their last assessment times.</p><br>
     ///   - [`reverse_order(bool)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::reverse_order) / [`set_reverse_order(Option<bool>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::set_reverse_order):<br>required: **false**<br><p>The application list is sorted based on the values of <code>lastAppComplianceEvaluationTime</code> field. By default, application list is sorted in ascending order. To sort the appliation list in descending order, set this field to <code>True</code>.</p><br>
-    /// - On success, responds with [`ListAppsOutput`](crate::operation::list_apps::ListAppsOutput) with field(s):
+                            /// - On success, responds with [`ListAppsOutput`](crate::operation::list_apps::ListAppsOutput) with field(s):
     ///   - [`app_summaries(Vec::<AppSummary>)`](crate::operation::list_apps::ListAppsOutput::app_summaries): <p>Summaries for the Resilience Hub application.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_apps::ListAppsOutput::next_token): <p>Token for the next set of results, or null if there are no more results.</p>
-    /// - On failure, responds with [`SdkError<ListAppsError>`](crate::operation::list_apps::ListAppsError)
+                            /// - On failure, responds with [`SdkError<ListAppsError>`](crate::operation::list_apps::ListAppsError)
     pub fn list_apps(&self) -> crate::operation::list_apps::builders::ListAppsFluentBuilder {
-        crate::operation::list_apps::builders::ListAppsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_apps::builders::ListAppsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

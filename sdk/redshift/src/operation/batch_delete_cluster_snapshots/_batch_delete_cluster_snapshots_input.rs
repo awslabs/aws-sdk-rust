@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDeleteClusterSnapshotsInput {
+pub struct BatchDeleteClusterSnapshotsInput  {
     /// <p>A list of identifiers for the snapshots that you want to delete.</p>
-    pub identifiers: ::std::option::Option<::std::vec::Vec<crate::types::DeleteClusterSnapshotMessage>>,
+    pub identifiers: ::std::option::Option<::std::vec::Vec::<crate::types::DeleteClusterSnapshotMessage>>,
 }
-impl BatchDeleteClusterSnapshotsInput {
+impl  BatchDeleteClusterSnapshotsInput  {
     /// <p>A list of identifiers for the snapshots that you want to delete.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.identifiers.is_none()`.
-    pub fn identifiers(&self) -> &[crate::types::DeleteClusterSnapshotMessage] {
-        self.identifiers.as_deref().unwrap_or_default()
+    pub fn identifiers(&self) -> & [crate::types::DeleteClusterSnapshotMessage] {
+        self.identifiers.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchDeleteClusterSnapshotsInput {
@@ -25,7 +26,7 @@ impl BatchDeleteClusterSnapshotsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteClusterSnapshotsInputBuilder {
-    pub(crate) identifiers: ::std::option::Option<::std::vec::Vec<crate::types::DeleteClusterSnapshotMessage>>,
+    pub(crate) identifiers: ::std::option::Option<::std::vec::Vec::<crate::types::DeleteClusterSnapshotMessage>>,
 }
 impl BatchDeleteClusterSnapshotsInputBuilder {
     /// Appends an item to `identifiers`.
@@ -35,28 +36,26 @@ impl BatchDeleteClusterSnapshotsInputBuilder {
     /// <p>A list of identifiers for the snapshots that you want to delete.</p>
     pub fn identifiers(mut self, input: crate::types::DeleteClusterSnapshotMessage) -> Self {
         let mut v = self.identifiers.unwrap_or_default();
-        v.push(input);
-        self.identifiers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.identifiers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of identifiers for the snapshots that you want to delete.</p>
-    pub fn set_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteClusterSnapshotMessage>>) -> Self {
-        self.identifiers = input;
-        self
+    pub fn set_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DeleteClusterSnapshotMessage>>) -> Self {
+        self.identifiers = input; self
     }
     /// <p>A list of identifiers for the snapshots that you want to delete.</p>
-    pub fn get_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteClusterSnapshotMessage>> {
+    pub fn get_identifiers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DeleteClusterSnapshotMessage>> {
         &self.identifiers
     }
     /// Consumes the builder and constructs a [`BatchDeleteClusterSnapshotsInput`](crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsInput {
-            identifiers: self.identifiers,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsInput {
+                identifiers: self.identifiers
+                ,
+            }
+        )
     }
 }
+

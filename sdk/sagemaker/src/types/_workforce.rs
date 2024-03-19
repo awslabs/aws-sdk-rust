@@ -3,7 +3,7 @@
 /// <p>A single private workforce, which is automatically created when you create your first private work team. You can create one private work force in each Amazon Web Services Region. By default, any workforce-related API operation used in a specific region will apply to the workforce created in that region. To learn how to create a private workforce, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">Create a Private Workforce</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Workforce {
+pub struct Workforce  {
     /// <p>The name of the private workforce.</p>
     pub workforce_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the private workforce.</p>
@@ -27,49 +27,49 @@ pub struct Workforce {
     /// <p>The reason your workforce failed.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
 }
-impl Workforce {
+impl  Workforce  {
     /// <p>The name of the private workforce.</p>
-    pub fn workforce_name(&self) -> ::std::option::Option<&str> {
+    pub fn workforce_name(&self) -> ::std::option::Option<& str> {
         self.workforce_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the private workforce.</p>
-    pub fn workforce_arn(&self) -> ::std::option::Option<&str> {
+    pub fn workforce_arn(&self) -> ::std::option::Option<& str> {
         self.workforce_arn.as_deref()
     }
     /// <p>The most recent date that <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateWorkforce.html">UpdateWorkforce</a> was used to successfully add one or more IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) to a private workforce's allow list.</p>
-    pub fn last_updated_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
     /// <p>A list of one to ten IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) to be added to the workforce allow list. By default, a workforce isn't restricted to specific IP addresses.</p>
-    pub fn source_ip_config(&self) -> ::std::option::Option<&crate::types::SourceIpConfig> {
+    pub fn source_ip_config(&self) -> ::std::option::Option<& crate::types::SourceIpConfig> {
         self.source_ip_config.as_ref()
     }
     /// <p>The subdomain for your OIDC Identity Provider.</p>
-    pub fn sub_domain(&self) -> ::std::option::Option<&str> {
+    pub fn sub_domain(&self) -> ::std::option::Option<& str> {
         self.sub_domain.as_deref()
     }
     /// <p>The configuration of an Amazon Cognito workforce. A single Cognito workforce is created using and corresponds to a single <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html"> Amazon Cognito user pool</a>.</p>
-    pub fn cognito_config(&self) -> ::std::option::Option<&crate::types::CognitoConfig> {
+    pub fn cognito_config(&self) -> ::std::option::Option<& crate::types::CognitoConfig> {
         self.cognito_config.as_ref()
     }
     /// <p>The configuration of an OIDC Identity Provider (IdP) private workforce.</p>
-    pub fn oidc_config(&self) -> ::std::option::Option<&crate::types::OidcConfigForResponse> {
+    pub fn oidc_config(&self) -> ::std::option::Option<& crate::types::OidcConfigForResponse> {
         self.oidc_config.as_ref()
     }
     /// <p>The date that the workforce is created.</p>
-    pub fn create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn create_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The configuration of a VPC workforce.</p>
-    pub fn workforce_vpc_config(&self) -> ::std::option::Option<&crate::types::WorkforceVpcConfigResponse> {
+    pub fn workforce_vpc_config(&self) -> ::std::option::Option<& crate::types::WorkforceVpcConfigResponse> {
         self.workforce_vpc_config.as_ref()
     }
     /// <p>The status of your workforce.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::WorkforceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::WorkforceStatus> {
         self.status.as_ref()
     }
     /// <p>The reason your workforce failed.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
 }
@@ -105,8 +105,7 @@ impl WorkforceBuilder {
     }
     /// <p>The name of the private workforce.</p>
     pub fn set_workforce_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workforce_name = input;
-        self
+        self.workforce_name = input; self
     }
     /// <p>The name of the private workforce.</p>
     pub fn get_workforce_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +119,7 @@ impl WorkforceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the private workforce.</p>
     pub fn set_workforce_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workforce_arn = input;
-        self
+        self.workforce_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the private workforce.</p>
     pub fn get_workforce_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +132,7 @@ impl WorkforceBuilder {
     }
     /// <p>The most recent date that <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateWorkforce.html">UpdateWorkforce</a> was used to successfully add one or more IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) to a private workforce's allow list.</p>
     pub fn set_last_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date = input;
-        self
+        self.last_updated_date = input; self
     }
     /// <p>The most recent date that <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateWorkforce.html">UpdateWorkforce</a> was used to successfully add one or more IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) to a private workforce's allow list.</p>
     pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -148,8 +145,7 @@ impl WorkforceBuilder {
     }
     /// <p>A list of one to ten IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) to be added to the workforce allow list. By default, a workforce isn't restricted to specific IP addresses.</p>
     pub fn set_source_ip_config(mut self, input: ::std::option::Option<crate::types::SourceIpConfig>) -> Self {
-        self.source_ip_config = input;
-        self
+        self.source_ip_config = input; self
     }
     /// <p>A list of one to ten IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) to be added to the workforce allow list. By default, a workforce isn't restricted to specific IP addresses.</p>
     pub fn get_source_ip_config(&self) -> &::std::option::Option<crate::types::SourceIpConfig> {
@@ -162,8 +158,7 @@ impl WorkforceBuilder {
     }
     /// <p>The subdomain for your OIDC Identity Provider.</p>
     pub fn set_sub_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sub_domain = input;
-        self
+        self.sub_domain = input; self
     }
     /// <p>The subdomain for your OIDC Identity Provider.</p>
     pub fn get_sub_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -176,8 +171,7 @@ impl WorkforceBuilder {
     }
     /// <p>The configuration of an Amazon Cognito workforce. A single Cognito workforce is created using and corresponds to a single <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html"> Amazon Cognito user pool</a>.</p>
     pub fn set_cognito_config(mut self, input: ::std::option::Option<crate::types::CognitoConfig>) -> Self {
-        self.cognito_config = input;
-        self
+        self.cognito_config = input; self
     }
     /// <p>The configuration of an Amazon Cognito workforce. A single Cognito workforce is created using and corresponds to a single <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html"> Amazon Cognito user pool</a>.</p>
     pub fn get_cognito_config(&self) -> &::std::option::Option<crate::types::CognitoConfig> {
@@ -190,8 +184,7 @@ impl WorkforceBuilder {
     }
     /// <p>The configuration of an OIDC Identity Provider (IdP) private workforce.</p>
     pub fn set_oidc_config(mut self, input: ::std::option::Option<crate::types::OidcConfigForResponse>) -> Self {
-        self.oidc_config = input;
-        self
+        self.oidc_config = input; self
     }
     /// <p>The configuration of an OIDC Identity Provider (IdP) private workforce.</p>
     pub fn get_oidc_config(&self) -> &::std::option::Option<crate::types::OidcConfigForResponse> {
@@ -204,8 +197,7 @@ impl WorkforceBuilder {
     }
     /// <p>The date that the workforce is created.</p>
     pub fn set_create_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_date = input;
-        self
+        self.create_date = input; self
     }
     /// <p>The date that the workforce is created.</p>
     pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -218,8 +210,7 @@ impl WorkforceBuilder {
     }
     /// <p>The configuration of a VPC workforce.</p>
     pub fn set_workforce_vpc_config(mut self, input: ::std::option::Option<crate::types::WorkforceVpcConfigResponse>) -> Self {
-        self.workforce_vpc_config = input;
-        self
+        self.workforce_vpc_config = input; self
     }
     /// <p>The configuration of a VPC workforce.</p>
     pub fn get_workforce_vpc_config(&self) -> &::std::option::Option<crate::types::WorkforceVpcConfigResponse> {
@@ -232,8 +223,7 @@ impl WorkforceBuilder {
     }
     /// <p>The status of your workforce.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::WorkforceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of your workforce.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::WorkforceStatus> {
@@ -246,8 +236,7 @@ impl WorkforceBuilder {
     }
     /// <p>The reason your workforce failed.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>The reason your workforce failed.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -256,17 +245,29 @@ impl WorkforceBuilder {
     /// Consumes the builder and constructs a [`Workforce`](crate::types::Workforce).
     pub fn build(self) -> crate::types::Workforce {
         crate::types::Workforce {
-            workforce_name: self.workforce_name,
-            workforce_arn: self.workforce_arn,
-            last_updated_date: self.last_updated_date,
-            source_ip_config: self.source_ip_config,
-            sub_domain: self.sub_domain,
-            cognito_config: self.cognito_config,
-            oidc_config: self.oidc_config,
-            create_date: self.create_date,
-            workforce_vpc_config: self.workforce_vpc_config,
-            status: self.status,
-            failure_reason: self.failure_reason,
+            workforce_name: self.workforce_name
+            ,
+            workforce_arn: self.workforce_arn
+            ,
+            last_updated_date: self.last_updated_date
+            ,
+            source_ip_config: self.source_ip_config
+            ,
+            sub_domain: self.sub_domain
+            ,
+            cognito_config: self.cognito_config
+            ,
+            oidc_config: self.oidc_config
+            ,
+            create_date: self.create_date
+            ,
+            workforce_vpc_config: self.workforce_vpc_config
+            ,
+            status: self.status
+            ,
+            failure_reason: self.failure_reason
+            ,
         }
     }
 }
+

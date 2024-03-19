@@ -3,30 +3,31 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeReplicationTasksOutput {
+pub struct DescribeReplicationTasksOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A description of the replication tasks.</p>
-    pub replication_tasks: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationTask>>,
+    pub replication_tasks: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicationTask>>,
     _request_id: Option<String>,
 }
-impl DescribeReplicationTasksOutput {
+impl  DescribeReplicationTasksOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A description of the replication tasks.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_tasks.is_none()`.
-    pub fn replication_tasks(&self) -> &[crate::types::ReplicationTask] {
-        self.replication_tasks.as_deref().unwrap_or_default()
+    pub fn replication_tasks(&self) -> & [crate::types::ReplicationTask] {
+        self.replication_tasks.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeReplicationTasksOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeReplicationTasksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationTasksOutput`](crate::operation::describe_replication_tasks::DescribeReplicationTasksOutput).
     pub fn builder() -> crate::operation::describe_replication_tasks::builders::DescribeReplicationTasksOutputBuilder {
@@ -39,7 +40,7 @@ impl DescribeReplicationTasksOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReplicationTasksOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) replication_tasks: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationTask>>,
+    pub(crate) replication_tasks: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicationTask>>,
     _request_id: Option<String>,
 }
 impl DescribeReplicationTasksOutputBuilder {
@@ -50,8 +51,7 @@ impl DescribeReplicationTasksOutputBuilder {
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,34 +64,36 @@ impl DescribeReplicationTasksOutputBuilder {
     /// <p>A description of the replication tasks.</p>
     pub fn replication_tasks(mut self, input: crate::types::ReplicationTask) -> Self {
         let mut v = self.replication_tasks.unwrap_or_default();
-        v.push(input);
-        self.replication_tasks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.replication_tasks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A description of the replication tasks.</p>
-    pub fn set_replication_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationTask>>) -> Self {
-        self.replication_tasks = input;
-        self
+    pub fn set_replication_tasks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicationTask>>) -> Self {
+        self.replication_tasks = input; self
     }
     /// <p>A description of the replication tasks.</p>
-    pub fn get_replication_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationTask>> {
+    pub fn get_replication_tasks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReplicationTask>> {
         &self.replication_tasks
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeReplicationTasksOutput`](crate::operation::describe_replication_tasks::DescribeReplicationTasksOutput).
     pub fn build(self) -> crate::operation::describe_replication_tasks::DescribeReplicationTasksOutput {
         crate::operation::describe_replication_tasks::DescribeReplicationTasksOutput {
-            marker: self.marker,
-            replication_tasks: self.replication_tasks,
+            marker: self.marker
+            ,
+            replication_tasks: self.replication_tasks
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

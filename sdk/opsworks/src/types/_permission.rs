@@ -3,7 +3,7 @@
 /// <p>Describes stack or user permissions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Permission {
+pub struct Permission  {
     /// <p>A stack ID.</p>
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
@@ -28,13 +28,13 @@ pub struct Permission {
     /// <p>For more information on the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a></p>
     pub level: ::std::option::Option<::std::string::String>,
 }
-impl Permission {
+impl  Permission  {
     /// <p>A stack ID.</p>
-    pub fn stack_id(&self) -> ::std::option::Option<&str> {
+    pub fn stack_id(&self) -> ::std::option::Option<& str> {
         self.stack_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    pub fn iam_user_arn(&self) -> ::std::option::Option<&str> {
+    pub fn iam_user_arn(&self) -> ::std::option::Option<& str> {
         self.iam_user_arn.as_deref()
     }
     /// <p>Whether the user can use SSH.</p>
@@ -59,7 +59,7 @@ impl Permission {
     /// <p><code>iam_only</code></p></li>
     /// </ul>
     /// <p>For more information on the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a></p>
-    pub fn level(&self) -> ::std::option::Option<&str> {
+    pub fn level(&self) -> ::std::option::Option<& str> {
         self.level.as_deref()
     }
 }
@@ -88,8 +88,7 @@ impl PermissionBuilder {
     }
     /// <p>A stack ID.</p>
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_id = input;
-        self
+        self.stack_id = input; self
     }
     /// <p>A stack ID.</p>
     pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +101,7 @@ impl PermissionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub fn set_iam_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_user_arn = input;
-        self
+        self.iam_user_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub fn get_iam_user_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +114,7 @@ impl PermissionBuilder {
     }
     /// <p>Whether the user can use SSH.</p>
     pub fn set_allow_ssh(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_ssh = input;
-        self
+        self.allow_ssh = input; self
     }
     /// <p>Whether the user can use SSH.</p>
     pub fn get_allow_ssh(&self) -> &::std::option::Option<bool> {
@@ -130,8 +127,7 @@ impl PermissionBuilder {
     }
     /// <p>Whether the user can use <b>sudo</b>.</p>
     pub fn set_allow_sudo(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_sudo = input;
-        self
+        self.allow_sudo = input; self
     }
     /// <p>Whether the user can use <b>sudo</b>.</p>
     pub fn get_allow_sudo(&self) -> &::std::option::Option<bool> {
@@ -170,8 +166,7 @@ impl PermissionBuilder {
     /// </ul>
     /// <p>For more information on the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a></p>
     pub fn set_level(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.level = input;
-        self
+        self.level = input; self
     }
     /// <p>The user's permission level, which must be the following:</p>
     /// <ul>
@@ -193,11 +188,17 @@ impl PermissionBuilder {
     /// Consumes the builder and constructs a [`Permission`](crate::types::Permission).
     pub fn build(self) -> crate::types::Permission {
         crate::types::Permission {
-            stack_id: self.stack_id,
-            iam_user_arn: self.iam_user_arn,
-            allow_ssh: self.allow_ssh,
-            allow_sudo: self.allow_sudo,
-            level: self.level,
+            stack_id: self.stack_id
+            ,
+            iam_user_arn: self.iam_user_arn
+            ,
+            allow_ssh: self.allow_ssh
+            ,
+            allow_sudo: self.allow_sudo
+            ,
+            level: self.level
+            ,
         }
     }
 }
+

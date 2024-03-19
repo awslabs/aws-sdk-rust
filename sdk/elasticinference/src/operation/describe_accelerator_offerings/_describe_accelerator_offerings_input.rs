@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAcceleratorOfferingsInput {
+pub struct DescribeAcceleratorOfferingsInput  {
     /// <p>The location type that you want to describe accelerator type offerings for. It can assume the following values: region: will return the accelerator type offering at the regional level. availability-zone: will return the accelerator type offering at the availability zone level. availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id.</p>
     pub location_type: ::std::option::Option<crate::types::LocationType>,
     /// <p>The list of accelerator types to describe.</p>
-    pub accelerator_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub accelerator_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DescribeAcceleratorOfferingsInput {
+impl  DescribeAcceleratorOfferingsInput  {
     /// <p>The location type that you want to describe accelerator type offerings for. It can assume the following values: region: will return the accelerator type offering at the regional level. availability-zone: will return the accelerator type offering at the availability zone level. availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id.</p>
-    pub fn location_type(&self) -> ::std::option::Option<&crate::types::LocationType> {
+    pub fn location_type(&self) -> ::std::option::Option<& crate::types::LocationType> {
         self.location_type.as_ref()
     }
     /// <p>The list of accelerator types to describe.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accelerator_types.is_none()`.
-    pub fn accelerator_types(&self) -> &[::std::string::String] {
-        self.accelerator_types.as_deref().unwrap_or_default()
+    pub fn accelerator_types(&self) -> & [::std::string::String] {
+        self.accelerator_types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeAcceleratorOfferingsInput {
@@ -32,7 +33,7 @@ impl DescribeAcceleratorOfferingsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAcceleratorOfferingsInputBuilder {
     pub(crate) location_type: ::std::option::Option<crate::types::LocationType>,
-    pub(crate) accelerator_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) accelerator_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DescribeAcceleratorOfferingsInputBuilder {
     /// <p>The location type that you want to describe accelerator type offerings for. It can assume the following values: region: will return the accelerator type offering at the regional level. availability-zone: will return the accelerator type offering at the availability zone level. availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id.</p>
@@ -43,8 +44,7 @@ impl DescribeAcceleratorOfferingsInputBuilder {
     }
     /// <p>The location type that you want to describe accelerator type offerings for. It can assume the following values: region: will return the accelerator type offering at the regional level. availability-zone: will return the accelerator type offering at the availability zone level. availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id.</p>
     pub fn set_location_type(mut self, input: ::std::option::Option<crate::types::LocationType>) -> Self {
-        self.location_type = input;
-        self
+        self.location_type = input; self
     }
     /// <p>The location type that you want to describe accelerator type offerings for. It can assume the following values: region: will return the accelerator type offering at the regional level. availability-zone: will return the accelerator type offering at the availability zone level. availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id.</p>
     pub fn get_location_type(&self) -> &::std::option::Option<crate::types::LocationType> {
@@ -57,29 +57,28 @@ impl DescribeAcceleratorOfferingsInputBuilder {
     /// <p>The list of accelerator types to describe.</p>
     pub fn accelerator_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.accelerator_types.unwrap_or_default();
-        v.push(input.into());
-        self.accelerator_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.accelerator_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of accelerator types to describe.</p>
-    pub fn set_accelerator_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.accelerator_types = input;
-        self
+    pub fn set_accelerator_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.accelerator_types = input; self
     }
     /// <p>The list of accelerator types to describe.</p>
-    pub fn get_accelerator_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_accelerator_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.accelerator_types
     }
     /// Consumes the builder and constructs a [`DescribeAcceleratorOfferingsInput`](crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsInput {
-            location_type: self.location_type,
-            accelerator_types: self.accelerator_types,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsInput {
+                location_type: self.location_type
+                ,
+                accelerator_types: self.accelerator_types
+                ,
+            }
+        )
     }
 }
+

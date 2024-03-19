@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPullRequests`](crate::operation::list_pull_requests::builders::ListPullRequestsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_pull_requests::builders::ListPullRequestsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`repository_name(impl Into<String>)`](crate::operation::list_pull_requests::builders::ListPullRequestsFluentBuilder::repository_name) / [`set_repository_name(Option<String>)`](crate::operation::list_pull_requests::builders::ListPullRequestsFluentBuilder::set_repository_name):<br>required: **true**<br><p>The name of the repository for which you want to list pull requests.</p><br>
     ///   - [`author_arn(impl Into<String>)`](crate::operation::list_pull_requests::builders::ListPullRequestsFluentBuilder::author_arn) / [`set_author_arn(Option<String>)`](crate::operation::list_pull_requests::builders::ListPullRequestsFluentBuilder::set_author_arn):<br>required: **false**<br><p>Optional. The Amazon Resource Name (ARN) of the user who created the pull request. If used, this filters the results to pull requests created by that user.</p><br>
     ///   - [`pull_request_status(PullRequestStatusEnum)`](crate::operation::list_pull_requests::builders::ListPullRequestsFluentBuilder::pull_request_status) / [`set_pull_request_status(Option<PullRequestStatusEnum>)`](crate::operation::list_pull_requests::builders::ListPullRequestsFluentBuilder::set_pull_request_status):<br>required: **false**<br><p>Optional. The status of the pull request. If used, this refines the results to the pull requests that match the specified status.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_pull_requests::builders::ListPullRequestsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_pull_requests::builders::ListPullRequestsFluentBuilder::set_next_token):<br>required: **false**<br><p>An enumeration token that, when provided in a request, returns the next batch of the results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_pull_requests::builders::ListPullRequestsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_pull_requests::builders::ListPullRequestsFluentBuilder::set_max_results):<br>required: **false**<br><p>A non-zero, non-negative integer used to limit the number of returned results.</p><br>
-    /// - On success, responds with [`ListPullRequestsOutput`](crate::operation::list_pull_requests::ListPullRequestsOutput) with field(s):
+                            /// - On success, responds with [`ListPullRequestsOutput`](crate::operation::list_pull_requests::ListPullRequestsOutput) with field(s):
     ///   - [`pull_request_ids(Vec::<String>)`](crate::operation::list_pull_requests::ListPullRequestsOutput::pull_request_ids): <p>The system-generated IDs of the pull requests.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_pull_requests::ListPullRequestsOutput::next_token): <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
-    /// - On failure, responds with [`SdkError<ListPullRequestsError>`](crate::operation::list_pull_requests::ListPullRequestsError)
+                            /// - On failure, responds with [`SdkError<ListPullRequestsError>`](crate::operation::list_pull_requests::ListPullRequestsError)
     pub fn list_pull_requests(&self) -> crate::operation::list_pull_requests::builders::ListPullRequestsFluentBuilder {
-        crate::operation::list_pull_requests::builders::ListPullRequestsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_pull_requests::builders::ListPullRequestsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

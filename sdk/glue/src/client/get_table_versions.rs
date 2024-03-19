@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetTableVersions`](crate::operation::get_table_versions::builders::GetTableVersionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_table_versions::builders::GetTableVersionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`catalog_id(impl Into<String>)`](crate::operation::get_table_versions::builders::GetTableVersionsFluentBuilder::catalog_id) / [`set_catalog_id(Option<String>)`](crate::operation::get_table_versions::builders::GetTableVersionsFluentBuilder::set_catalog_id):<br>required: **false**<br><p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p><br>
     ///   - [`database_name(impl Into<String>)`](crate::operation::get_table_versions::builders::GetTableVersionsFluentBuilder::database_name) / [`set_database_name(Option<String>)`](crate::operation::get_table_versions::builders::GetTableVersionsFluentBuilder::set_database_name):<br>required: **true**<br><p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p><br>
     ///   - [`table_name(impl Into<String>)`](crate::operation::get_table_versions::builders::GetTableVersionsFluentBuilder::table_name) / [`set_table_name(Option<String>)`](crate::operation::get_table_versions::builders::GetTableVersionsFluentBuilder::set_table_name):<br>required: **true**<br><p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_table_versions::builders::GetTableVersionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_table_versions::builders::GetTableVersionsFluentBuilder::set_next_token):<br>required: **false**<br><p>A continuation token, if this is not the first call.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_table_versions::builders::GetTableVersionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_table_versions::builders::GetTableVersionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of table versions to return in one response.</p><br>
-    /// - On success, responds with [`GetTableVersionsOutput`](crate::operation::get_table_versions::GetTableVersionsOutput) with field(s):
+                            /// - On success, responds with [`GetTableVersionsOutput`](crate::operation::get_table_versions::GetTableVersionsOutput) with field(s):
     ///   - [`table_versions(Option<Vec::<TableVersion>>)`](crate::operation::get_table_versions::GetTableVersionsOutput::table_versions): <p>A list of strings identifying available versions of the specified table.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_table_versions::GetTableVersionsOutput::next_token): <p>A continuation token, if the list of available versions does not include the last one.</p>
-    /// - On failure, responds with [`SdkError<GetTableVersionsError>`](crate::operation::get_table_versions::GetTableVersionsError)
+                            /// - On failure, responds with [`SdkError<GetTableVersionsError>`](crate::operation::get_table_versions::GetTableVersionsError)
     pub fn get_table_versions(&self) -> crate::operation::get_table_versions::builders::GetTableVersionsFluentBuilder {
-        crate::operation::get_table_versions::builders::GetTableVersionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_table_versions::builders::GetTableVersionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,13 +3,13 @@
 /// <p>The access configuration information for the cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAccessConfigRequest {
+pub struct UpdateAccessConfigRequest  {
     /// <p>The desired authentication mode for the cluster.</p>
     pub authentication_mode: ::std::option::Option<crate::types::AuthenticationMode>,
 }
-impl UpdateAccessConfigRequest {
+impl  UpdateAccessConfigRequest  {
     /// <p>The desired authentication mode for the cluster.</p>
-    pub fn authentication_mode(&self) -> ::std::option::Option<&crate::types::AuthenticationMode> {
+    pub fn authentication_mode(&self) -> ::std::option::Option<& crate::types::AuthenticationMode> {
         self.authentication_mode.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl UpdateAccessConfigRequestBuilder {
     }
     /// <p>The desired authentication mode for the cluster.</p>
     pub fn set_authentication_mode(mut self, input: ::std::option::Option<crate::types::AuthenticationMode>) -> Self {
-        self.authentication_mode = input;
-        self
+        self.authentication_mode = input; self
     }
     /// <p>The desired authentication mode for the cluster.</p>
     pub fn get_authentication_mode(&self) -> &::std::option::Option<crate::types::AuthenticationMode> {
@@ -44,7 +43,9 @@ impl UpdateAccessConfigRequestBuilder {
     /// Consumes the builder and constructs a [`UpdateAccessConfigRequest`](crate::types::UpdateAccessConfigRequest).
     pub fn build(self) -> crate::types::UpdateAccessConfigRequest {
         crate::types::UpdateAccessConfigRequest {
-            authentication_mode: self.authentication_mode,
+            authentication_mode: self.authentication_mode
+            ,
         }
     }
 }
+

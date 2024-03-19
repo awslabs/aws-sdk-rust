@@ -2,33 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutRemediationExceptionsInput {
+pub struct PutRemediationExceptionsInput  {
     /// <p>The name of the Config rule for which you want to create remediation exception.</p>
     pub config_rule_name: ::std::option::Option<::std::string::String>,
     /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys.</p>
-    pub resource_keys: ::std::option::Option<::std::vec::Vec<crate::types::RemediationExceptionResourceKey>>,
+    pub resource_keys: ::std::option::Option<::std::vec::Vec::<crate::types::RemediationExceptionResourceKey>>,
     /// <p>The message contains an explanation of the exception.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The exception is automatically deleted after the expiration date.</p>
     pub expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl PutRemediationExceptionsInput {
+impl  PutRemediationExceptionsInput  {
     /// <p>The name of the Config rule for which you want to create remediation exception.</p>
-    pub fn config_rule_name(&self) -> ::std::option::Option<&str> {
+    pub fn config_rule_name(&self) -> ::std::option::Option<& str> {
         self.config_rule_name.as_deref()
     }
     /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_keys.is_none()`.
-    pub fn resource_keys(&self) -> &[crate::types::RemediationExceptionResourceKey] {
-        self.resource_keys.as_deref().unwrap_or_default()
+    pub fn resource_keys(&self) -> & [crate::types::RemediationExceptionResourceKey] {
+        self.resource_keys.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The message contains an explanation of the exception.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The exception is automatically deleted after the expiration date.</p>
-    pub fn expiration_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn expiration_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.expiration_time.as_ref()
     }
 }
@@ -44,7 +45,7 @@ impl PutRemediationExceptionsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutRemediationExceptionsInputBuilder {
     pub(crate) config_rule_name: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_keys: ::std::option::Option<::std::vec::Vec<crate::types::RemediationExceptionResourceKey>>,
+    pub(crate) resource_keys: ::std::option::Option<::std::vec::Vec::<crate::types::RemediationExceptionResourceKey>>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -57,8 +58,7 @@ impl PutRemediationExceptionsInputBuilder {
     }
     /// <p>The name of the Config rule for which you want to create remediation exception.</p>
     pub fn set_config_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.config_rule_name = input;
-        self
+        self.config_rule_name = input; self
     }
     /// <p>The name of the Config rule for which you want to create remediation exception.</p>
     pub fn get_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,17 +71,16 @@ impl PutRemediationExceptionsInputBuilder {
     /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys.</p>
     pub fn resource_keys(mut self, input: crate::types::RemediationExceptionResourceKey) -> Self {
         let mut v = self.resource_keys.unwrap_or_default();
-        v.push(input);
-        self.resource_keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys.</p>
-    pub fn set_resource_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RemediationExceptionResourceKey>>) -> Self {
-        self.resource_keys = input;
-        self
+    pub fn set_resource_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RemediationExceptionResourceKey>>) -> Self {
+        self.resource_keys = input; self
     }
     /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys.</p>
-    pub fn get_resource_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RemediationExceptionResourceKey>> {
+    pub fn get_resource_keys(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RemediationExceptionResourceKey>> {
         &self.resource_keys
     }
     /// <p>The message contains an explanation of the exception.</p>
@@ -91,8 +90,7 @@ impl PutRemediationExceptionsInputBuilder {
     }
     /// <p>The message contains an explanation of the exception.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The message contains an explanation of the exception.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,25 +103,26 @@ impl PutRemediationExceptionsInputBuilder {
     }
     /// <p>The exception is automatically deleted after the expiration date.</p>
     pub fn set_expiration_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.expiration_time = input;
-        self
+        self.expiration_time = input; self
     }
     /// <p>The exception is automatically deleted after the expiration date.</p>
     pub fn get_expiration_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.expiration_time
     }
     /// Consumes the builder and constructs a [`PutRemediationExceptionsInput`](crate::operation::put_remediation_exceptions::PutRemediationExceptionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_remediation_exceptions::PutRemediationExceptionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_remediation_exceptions::PutRemediationExceptionsInput {
-            config_rule_name: self.config_rule_name,
-            resource_keys: self.resource_keys,
-            message: self.message,
-            expiration_time: self.expiration_time,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_remediation_exceptions::PutRemediationExceptionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_remediation_exceptions::PutRemediationExceptionsInput {
+                config_rule_name: self.config_rule_name
+                ,
+                resource_keys: self.resource_keys
+                ,
+                message: self.message
+                ,
+                expiration_time: self.expiration_time
+                ,
+            }
+        )
     }
 }
+

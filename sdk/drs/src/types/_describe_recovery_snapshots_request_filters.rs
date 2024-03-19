@@ -3,19 +3,19 @@
 /// <p>A set of filters by which to return Recovery Snapshots.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRecoverySnapshotsRequestFilters {
+pub struct DescribeRecoverySnapshotsRequestFilters  {
     /// <p>The start date in a date range query.</p>
     pub from_date_time: ::std::option::Option<::std::string::String>,
     /// <p>The end date in a date range query.</p>
     pub to_date_time: ::std::option::Option<::std::string::String>,
 }
-impl DescribeRecoverySnapshotsRequestFilters {
+impl  DescribeRecoverySnapshotsRequestFilters  {
     /// <p>The start date in a date range query.</p>
-    pub fn from_date_time(&self) -> ::std::option::Option<&str> {
+    pub fn from_date_time(&self) -> ::std::option::Option<& str> {
         self.from_date_time.as_deref()
     }
     /// <p>The end date in a date range query.</p>
-    pub fn to_date_time(&self) -> ::std::option::Option<&str> {
+    pub fn to_date_time(&self) -> ::std::option::Option<& str> {
         self.to_date_time.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeRecoverySnapshotsRequestFiltersBuilder {
     }
     /// <p>The start date in a date range query.</p>
     pub fn set_from_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.from_date_time = input;
-        self
+        self.from_date_time = input; self
     }
     /// <p>The start date in a date range query.</p>
     pub fn get_from_date_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl DescribeRecoverySnapshotsRequestFiltersBuilder {
     }
     /// <p>The end date in a date range query.</p>
     pub fn set_to_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.to_date_time = input;
-        self
+        self.to_date_time = input; self
     }
     /// <p>The end date in a date range query.</p>
     pub fn get_to_date_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl DescribeRecoverySnapshotsRequestFiltersBuilder {
     /// Consumes the builder and constructs a [`DescribeRecoverySnapshotsRequestFilters`](crate::types::DescribeRecoverySnapshotsRequestFilters).
     pub fn build(self) -> crate::types::DescribeRecoverySnapshotsRequestFilters {
         crate::types::DescribeRecoverySnapshotsRequestFilters {
-            from_date_time: self.from_date_time,
-            to_date_time: self.to_date_time,
+            from_date_time: self.from_date_time
+            ,
+            to_date_time: self.to_date_time
+            ,
         }
     }
 }
+

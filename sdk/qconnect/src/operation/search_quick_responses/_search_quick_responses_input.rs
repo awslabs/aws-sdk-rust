@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SearchQuickResponsesInput {
+pub struct SearchQuickResponsesInput  {
     /// <p>The identifier of the knowledge base. This should be a QUICK_RESPONSES type knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
     /// <p>The search expression for querying the quick response.</p>
@@ -12,19 +12,19 @@ pub struct SearchQuickResponsesInput {
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-attrib-list.html#user-defined-attributes">user-defined Amazon Connect contact attributes</a> to be resolved when search results are returned.</p>
-    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl SearchQuickResponsesInput {
+impl  SearchQuickResponsesInput  {
     /// <p>The identifier of the knowledge base. This should be a QUICK_RESPONSES type knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
+    pub fn knowledge_base_id(&self) -> ::std::option::Option<& str> {
         self.knowledge_base_id.as_deref()
     }
     /// <p>The search expression for querying the quick response.</p>
-    pub fn search_expression(&self) -> ::std::option::Option<&crate::types::QuickResponseSearchExpression> {
+    pub fn search_expression(&self) -> ::std::option::Option<& crate::types::QuickResponseSearchExpression> {
         self.search_expression.as_ref()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per page.</p>
@@ -32,11 +32,11 @@ impl SearchQuickResponsesInput {
         self.max_results
     }
     /// <p>The <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-attrib-list.html#user-defined-attributes">user-defined Amazon Connect contact attributes</a> to be resolved when search results are returned.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
 }
-impl ::std::fmt::Debug for SearchQuickResponsesInput {
+impl  ::std::fmt::Debug for SearchQuickResponsesInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SearchQuickResponsesInput");
         formatter.field("knowledge_base_id", &self.knowledge_base_id);
@@ -62,7 +62,7 @@ pub struct SearchQuickResponsesInputBuilder {
     pub(crate) search_expression: ::std::option::Option<crate::types::QuickResponseSearchExpression>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl SearchQuickResponsesInputBuilder {
     /// <p>The identifier of the knowledge base. This should be a QUICK_RESPONSES type knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -73,8 +73,7 @@ impl SearchQuickResponsesInputBuilder {
     }
     /// <p>The identifier of the knowledge base. This should be a QUICK_RESPONSES type knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.knowledge_base_id = input;
-        self
+        self.knowledge_base_id = input; self
     }
     /// <p>The identifier of the knowledge base. This should be a QUICK_RESPONSES type knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +87,7 @@ impl SearchQuickResponsesInputBuilder {
     }
     /// <p>The search expression for querying the quick response.</p>
     pub fn set_search_expression(mut self, input: ::std::option::Option<crate::types::QuickResponseSearchExpression>) -> Self {
-        self.search_expression = input;
-        self
+        self.search_expression = input; self
     }
     /// <p>The search expression for querying the quick response.</p>
     pub fn get_search_expression(&self) -> &::std::option::Option<crate::types::QuickResponseSearchExpression> {
@@ -102,8 +100,7 @@ impl SearchQuickResponsesInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +113,7 @@ impl SearchQuickResponsesInputBuilder {
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -130,31 +126,34 @@ impl SearchQuickResponsesInputBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-attrib-list.html#user-defined-attributes">user-defined Amazon Connect contact attributes</a> to be resolved when search results are returned.</p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-attrib-list.html#user-defined-attributes">user-defined Amazon Connect contact attributes</a> to be resolved when search results are returned.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-attrib-list.html#user-defined-attributes">user-defined Amazon Connect contact attributes</a> to be resolved when search results are returned.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`SearchQuickResponsesInput`](crate::operation::search_quick_responses::SearchQuickResponsesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::search_quick_responses::SearchQuickResponsesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::search_quick_responses::SearchQuickResponsesInput {
-            knowledge_base_id: self.knowledge_base_id,
-            search_expression: self.search_expression,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            attributes: self.attributes,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_quick_responses::SearchQuickResponsesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::search_quick_responses::SearchQuickResponsesInput {
+                knowledge_base_id: self.knowledge_base_id
+                ,
+                search_expression: self.search_expression
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                attributes: self.attributes
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for SearchQuickResponsesInputBuilder {
@@ -168,3 +167,4 @@ impl ::std::fmt::Debug for SearchQuickResponsesInputBuilder {
         formatter.finish()
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Information about a bind mount host volume.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEcsTaskDefinitionVolumesHostDetails {
+pub struct AwsEcsTaskDefinitionVolumesHostDetails  {
     /// <p>The path on the host container instance that is presented to the container.</p>
     pub source_path: ::std::option::Option<::std::string::String>,
 }
-impl AwsEcsTaskDefinitionVolumesHostDetails {
+impl  AwsEcsTaskDefinitionVolumesHostDetails  {
     /// <p>The path on the host container instance that is presented to the container.</p>
-    pub fn source_path(&self) -> ::std::option::Option<&str> {
+    pub fn source_path(&self) -> ::std::option::Option<& str> {
         self.source_path.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AwsEcsTaskDefinitionVolumesHostDetailsBuilder {
     }
     /// <p>The path on the host container instance that is presented to the container.</p>
     pub fn set_source_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_path = input;
-        self
+        self.source_path = input; self
     }
     /// <p>The path on the host container instance that is presented to the container.</p>
     pub fn get_source_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl AwsEcsTaskDefinitionVolumesHostDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionVolumesHostDetails`](crate::types::AwsEcsTaskDefinitionVolumesHostDetails).
     pub fn build(self) -> crate::types::AwsEcsTaskDefinitionVolumesHostDetails {
         crate::types::AwsEcsTaskDefinitionVolumesHostDetails {
-            source_path: self.source_path,
+            source_path: self.source_path
+            ,
         }
     }
 }
+

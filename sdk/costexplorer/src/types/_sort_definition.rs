@@ -3,20 +3,19 @@
 /// <p>The details for how to sort the data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SortDefinition {
+pub struct SortDefinition  {
     /// <p>The key that's used to sort the data.</p>
     pub key: ::std::string::String,
     /// <p>The order that's used to sort the data.</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
-impl SortDefinition {
+impl  SortDefinition  {
     /// <p>The key that's used to sort the data.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>The order that's used to sort the data.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl SortDefinitionBuilder {
     }
     /// <p>The key that's used to sort the data.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The key that's used to sort the data.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl SortDefinitionBuilder {
     }
     /// <p>The order that's used to sort the data.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The order that's used to sort the data.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -68,14 +65,17 @@ impl SortDefinitionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`key`](crate::types::builders::SortDefinitionBuilder::key)
     pub fn build(self) -> ::std::result::Result<crate::types::SortDefinition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SortDefinition {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building SortDefinition",
-                )
-            })?,
-            sort_order: self.sort_order,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SortDefinition {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building SortDefinition")
+                    )?
+                ,
+                sort_order: self.sort_order
+                ,
+            }
+        )
     }
 }
+

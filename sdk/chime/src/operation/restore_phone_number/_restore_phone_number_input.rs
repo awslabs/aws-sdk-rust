@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RestorePhoneNumberInput {
+pub struct RestorePhoneNumberInput  {
     /// <p>The phone number.</p>
     pub phone_number_id: ::std::option::Option<::std::string::String>,
 }
-impl RestorePhoneNumberInput {
+impl  RestorePhoneNumberInput  {
     /// <p>The phone number.</p>
-    pub fn phone_number_id(&self) -> ::std::option::Option<&str> {
+    pub fn phone_number_id(&self) -> ::std::option::Option<& str> {
         self.phone_number_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl RestorePhoneNumberInputBuilder {
     }
     /// <p>The phone number.</p>
     pub fn set_phone_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone_number_id = input;
-        self
+        self.phone_number_id = input; self
     }
     /// <p>The phone number.</p>
     pub fn get_phone_number_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.phone_number_id
     }
     /// Consumes the builder and constructs a [`RestorePhoneNumberInput`](crate::operation::restore_phone_number::RestorePhoneNumberInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::restore_phone_number::RestorePhoneNumberInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::restore_phone_number::RestorePhoneNumberInput {
-            phone_number_id: self.phone_number_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::restore_phone_number::RestorePhoneNumberInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::restore_phone_number::RestorePhoneNumberInput {
+                phone_number_id: self.phone_number_id
+                ,
+            }
+        )
     }
 }
+

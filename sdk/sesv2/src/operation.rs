@@ -276,3 +276,4 @@ pub mod update_email_identity_policy;
 
 /// Types for the `UpdateEmailTemplate` operation.
 pub mod update_email_template;
+

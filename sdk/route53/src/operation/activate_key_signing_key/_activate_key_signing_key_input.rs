@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActivateKeySigningKeyInput {
+pub struct ActivateKeySigningKeyInput  {
     /// <p>A unique string used to identify a hosted zone.</p>
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl ActivateKeySigningKeyInput {
+impl  ActivateKeySigningKeyInput  {
     /// <p>A unique string used to identify a hosted zone.</p>
-    pub fn hosted_zone_id(&self) -> ::std::option::Option<&str> {
+    pub fn hosted_zone_id(&self) -> ::std::option::Option<& str> {
         self.hosted_zone_id.as_deref()
     }
     /// <p>A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ActivateKeySigningKeyInputBuilder {
     }
     /// <p>A unique string used to identify a hosted zone.</p>
     pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hosted_zone_id = input;
-        self
+        self.hosted_zone_id = input; self
     }
     /// <p>A unique string used to identify a hosted zone.</p>
     pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl ActivateKeySigningKeyInputBuilder {
     }
     /// <p>A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     /// Consumes the builder and constructs a [`ActivateKeySigningKeyInput`](crate::operation::activate_key_signing_key::ActivateKeySigningKeyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::activate_key_signing_key::ActivateKeySigningKeyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::activate_key_signing_key::ActivateKeySigningKeyInput {
-            hosted_zone_id: self.hosted_zone_id,
-            name: self.name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::activate_key_signing_key::ActivateKeySigningKeyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::activate_key_signing_key::ActivateKeySigningKeyInput {
+                hosted_zone_id: self.hosted_zone_id
+                ,
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

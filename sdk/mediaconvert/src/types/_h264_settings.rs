@@ -3,7 +3,7 @@
 /// Required when you set Codec to the value H_264.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct H264Settings {
+pub struct H264Settings  {
     /// Keep the default value, Auto, for this setting to have MediaConvert automatically apply the best types of quantization for your video content. When you want to apply your quantization settings manually, you must set H264AdaptiveQuantization to a value other than Auto. Use this setting to specify the strength of any adaptive quantization filters that you enable. If you don't want MediaConvert to do any adaptive quantization in this transcode, set Adaptive quantization to Off. Related settings: The value that you choose here applies to the following settings: H264FlickerAdaptiveQuantization, H264SpatialAdaptiveQuantization, and H264TemporalAdaptiveQuantization.
     pub adaptive_quantization: ::std::option::Option<crate::types::H264AdaptiveQuantization>,
     /// The Bandwidth reduction filter increases the video quality of your output relative to its bitrate. Use to lower the bitrate of your constant quality QVBR output, with little or no perceptual decrease in quality. Or, use to increase the video quality of outputs with other rate control modes relative to the bitrate that you specify. Bandwidth reduction increases further when your input is low quality or noisy. Outputs that use this feature incur pro-tier pricing. When you include Bandwidth reduction filter, you cannot include the Noise reducer preprocessor.
@@ -91,13 +91,13 @@ pub struct H264Settings {
     /// Inserts timecode for each frame as 4 bytes of an unregistered SEI message.
     pub unregistered_sei_timecode: ::std::option::Option<crate::types::H264UnregisteredSeiTimecode>,
 }
-impl H264Settings {
+impl  H264Settings  {
     /// Keep the default value, Auto, for this setting to have MediaConvert automatically apply the best types of quantization for your video content. When you want to apply your quantization settings manually, you must set H264AdaptiveQuantization to a value other than Auto. Use this setting to specify the strength of any adaptive quantization filters that you enable. If you don't want MediaConvert to do any adaptive quantization in this transcode, set Adaptive quantization to Off. Related settings: The value that you choose here applies to the following settings: H264FlickerAdaptiveQuantization, H264SpatialAdaptiveQuantization, and H264TemporalAdaptiveQuantization.
-    pub fn adaptive_quantization(&self) -> ::std::option::Option<&crate::types::H264AdaptiveQuantization> {
+    pub fn adaptive_quantization(&self) -> ::std::option::Option<& crate::types::H264AdaptiveQuantization> {
         self.adaptive_quantization.as_ref()
     }
     /// The Bandwidth reduction filter increases the video quality of your output relative to its bitrate. Use to lower the bitrate of your constant quality QVBR output, with little or no perceptual decrease in quality. Or, use to increase the video quality of outputs with other rate control modes relative to the bitrate that you specify. Bandwidth reduction increases further when your input is low quality or noisy. Outputs that use this feature incur pro-tier pricing. When you include Bandwidth reduction filter, you cannot include the Noise reducer preprocessor.
-    pub fn bandwidth_reduction_filter(&self) -> ::std::option::Option<&crate::types::BandwidthReductionFilter> {
+    pub fn bandwidth_reduction_filter(&self) -> ::std::option::Option<& crate::types::BandwidthReductionFilter> {
         self.bandwidth_reduction_filter.as_ref()
     }
     /// Specify the average bitrate in bits per second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique when rounded down to the nearest multiple of 1000.
@@ -105,39 +105,39 @@ impl H264Settings {
         self.bitrate
     }
     /// Specify an H.264 level that is consistent with your output video settings. If you aren't sure what level to specify, choose Auto.
-    pub fn codec_level(&self) -> ::std::option::Option<&crate::types::H264CodecLevel> {
+    pub fn codec_level(&self) -> ::std::option::Option<& crate::types::H264CodecLevel> {
         self.codec_level.as_ref()
     }
     /// H.264 Profile. High 4:2:2 and 10-bit profiles are only available with the AVC-I License.
-    pub fn codec_profile(&self) -> ::std::option::Option<&crate::types::H264CodecProfile> {
+    pub fn codec_profile(&self) -> ::std::option::Option<& crate::types::H264CodecProfile> {
         self.codec_profile.as_ref()
     }
     /// Specify whether to allow the number of B-frames in your output GOP structure to vary or not depending on your input video content. To improve the subjective video quality of your output that has high-motion content: Leave blank or keep the default value Adaptive. MediaConvert will use fewer B-frames for high-motion video content than low-motion content. The maximum number of B- frames is limited by the value that you choose for B-frames between reference frames. To use the same number B-frames for all types of content: Choose Static.
-    pub fn dynamic_sub_gop(&self) -> ::std::option::Option<&crate::types::H264DynamicSubGop> {
+    pub fn dynamic_sub_gop(&self) -> ::std::option::Option<& crate::types::H264DynamicSubGop> {
         self.dynamic_sub_gop.as_ref()
     }
     /// Optionally include or suppress markers at the end of your output that signal the end of the video stream. To include end of stream markers: Leave blank or keep the default value, Include. To not include end of stream markers: Choose Suppress. This is useful when your output will be inserted into another stream.
-    pub fn end_of_stream_markers(&self) -> ::std::option::Option<&crate::types::H264EndOfStreamMarkers> {
+    pub fn end_of_stream_markers(&self) -> ::std::option::Option<& crate::types::H264EndOfStreamMarkers> {
         self.end_of_stream_markers.as_ref()
     }
     /// Entropy encoding mode. Use CABAC (must be in Main or High profile) or CAVLC.
-    pub fn entropy_encoding(&self) -> ::std::option::Option<&crate::types::H264EntropyEncoding> {
+    pub fn entropy_encoding(&self) -> ::std::option::Option<& crate::types::H264EntropyEncoding> {
         self.entropy_encoding.as_ref()
     }
     /// The video encoding method for your MPEG-4 AVC output. Keep the default value, PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose Force field to disable PAFF encoding and create separate interlaced fields. Choose MBAFF to disable PAFF and have MediaConvert use MBAFF encoding for interlaced outputs.
-    pub fn field_encoding(&self) -> ::std::option::Option<&crate::types::H264FieldEncoding> {
+    pub fn field_encoding(&self) -> ::std::option::Option<& crate::types::H264FieldEncoding> {
         self.field_encoding.as_ref()
     }
     /// Only use this setting when you change the default value, AUTO, for the setting H264AdaptiveQuantization. When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON job specification, MediaConvert automatically applies the best types of quantization for your video content. When you set H264AdaptiveQuantization to a value other than AUTO, the default value for H264FlickerAdaptiveQuantization is Disabled. Change this value to Enabled to reduce I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. To manually enable or disable H264FlickerAdaptiveQuantization, you must set Adaptive quantization to a value other than AUTO.
-    pub fn flicker_adaptive_quantization(&self) -> ::std::option::Option<&crate::types::H264FlickerAdaptiveQuantization> {
+    pub fn flicker_adaptive_quantization(&self) -> ::std::option::Option<& crate::types::H264FlickerAdaptiveQuantization> {
         self.flicker_adaptive_quantization.as_ref()
     }
     /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
-    pub fn framerate_control(&self) -> ::std::option::Option<&crate::types::H264FramerateControl> {
+    pub fn framerate_control(&self) -> ::std::option::Option<& crate::types::H264FramerateControl> {
         self.framerate_control.as_ref()
     }
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
-    pub fn framerate_conversion_algorithm(&self) -> ::std::option::Option<&crate::types::H264FramerateConversionAlgorithm> {
+    pub fn framerate_conversion_algorithm(&self) -> ::std::option::Option<& crate::types::H264FramerateConversionAlgorithm> {
         self.framerate_conversion_algorithm.as_ref()
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
@@ -149,7 +149,7 @@ impl H264Settings {
         self.framerate_numerator
     }
     /// Specify whether to allow B-frames to be referenced by other frame types. To use reference B-frames when your GOP structure has 1 or more B-frames: Leave blank or keep the default value Enabled. We recommend that you choose Enabled to help improve the video quality of your output relative to its bitrate. To not use reference B-frames: Choose Disabled.
-    pub fn gop_b_reference(&self) -> ::std::option::Option<&crate::types::H264GopBReference> {
+    pub fn gop_b_reference(&self) -> ::std::option::Option<& crate::types::H264GopBReference> {
         self.gop_b_reference.as_ref()
     }
     /// Specify the relative frequency of open to closed GOPs in this output. For example, if you want to allow four open GOPs and then require a closed GOP, set this value to 5. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. In the console, do this by keeping the default empty value. If you do explicitly specify a value, for segmented outputs, don't set this value to 0.
@@ -161,7 +161,7 @@ impl H264Settings {
         self.gop_size
     }
     /// Specify how the transcoder determines GOP size for this output. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, choose Auto and and leave GOP size blank. By default, if you don't specify GOP mode control, MediaConvert will use automatic behavior. If your output group specifies HLS, DASH, or CMAF, set GOP mode control to Auto and leave GOP size blank in each output in your output group. To explicitly specify the GOP length, choose Specified, frames or Specified, seconds and then provide the GOP length in the related setting GOP size.
-    pub fn gop_size_units(&self) -> ::std::option::Option<&crate::types::H264GopSizeUnits> {
+    pub fn gop_size_units(&self) -> ::std::option::Option<& crate::types::H264GopSizeUnits> {
         self.gop_size_units.as_ref()
     }
     /// If your downstream systems have strict buffer requirements: Specify the minimum percentage of the HRD buffer that's available at the end of each encoded video segment. For the best video quality: Set to 0 or leave blank to automatically determine the final buffer fill percentage.
@@ -177,7 +177,7 @@ impl H264Settings {
         self.hrd_buffer_size
     }
     /// Choose the scan line type for the output. Keep the default value, Progressive to create a progressive output, regardless of the scan type of your input. Use Top field first or Bottom field first to create an output that's interlaced with the same field polarity throughout. Use Follow, default top or Follow, default bottom to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
-    pub fn interlace_mode(&self) -> ::std::option::Option<&crate::types::H264InterlaceMode> {
+    pub fn interlace_mode(&self) -> ::std::option::Option<& crate::types::H264InterlaceMode> {
         self.interlace_mode.as_ref()
     }
     /// Maximum bitrate in bits/second. For example, enter five megabits per second as 5000000. Required when Rate control mode is QVBR.
@@ -197,7 +197,7 @@ impl H264Settings {
         self.number_reference_frames
     }
     /// Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source, uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
-    pub fn par_control(&self) -> ::std::option::Option<&crate::types::H264ParControl> {
+    pub fn par_control(&self) -> ::std::option::Option<& crate::types::H264ParControl> {
         self.par_control.as_ref()
     }
     /// Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parDenominator is 33.
@@ -209,27 +209,27 @@ impl H264Settings {
         self.par_numerator
     }
     /// The Quality tuning level you choose represents a trade-off between the encoding speed of your job and the output video quality. For the fastest encoding speed at the cost of video quality: Choose Single pass. For a good balance between encoding speed and video quality: Leave blank or keep the default value Single pass HQ. For the best video quality, at the cost of encoding speed: Choose Multi pass HQ. MediaConvert performs an analysis pass on your input followed by an encoding pass. Outputs that use this feature incur pro-tier pricing.
-    pub fn quality_tuning_level(&self) -> ::std::option::Option<&crate::types::H264QualityTuningLevel> {
+    pub fn quality_tuning_level(&self) -> ::std::option::Option<& crate::types::H264QualityTuningLevel> {
         self.quality_tuning_level.as_ref()
     }
     /// Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set QVBR for Rate control mode.
-    pub fn qvbr_settings(&self) -> ::std::option::Option<&crate::types::H264QvbrSettings> {
+    pub fn qvbr_settings(&self) -> ::std::option::Option<& crate::types::H264QvbrSettings> {
         self.qvbr_settings.as_ref()
     }
     /// Use this setting to specify whether this output has a variable bitrate (VBR), constant bitrate (CBR) or quality-defined variable bitrate (QVBR).
-    pub fn rate_control_mode(&self) -> ::std::option::Option<&crate::types::H264RateControlMode> {
+    pub fn rate_control_mode(&self) -> ::std::option::Option<& crate::types::H264RateControlMode> {
         self.rate_control_mode.as_ref()
     }
     /// Places a PPS header on each encoded picture, even if repeated.
-    pub fn repeat_pps(&self) -> ::std::option::Option<&crate::types::H264RepeatPps> {
+    pub fn repeat_pps(&self) -> ::std::option::Option<& crate::types::H264RepeatPps> {
         self.repeat_pps.as_ref()
     }
     /// Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing, for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine to None or Soft. You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode to a value other than Progressive.
-    pub fn scan_type_conversion_mode(&self) -> ::std::option::Option<&crate::types::H264ScanTypeConversionMode> {
+    pub fn scan_type_conversion_mode(&self) -> ::std::option::Option<& crate::types::H264ScanTypeConversionMode> {
         self.scan_type_conversion_mode.as_ref()
     }
     /// Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves video quality and is enabled by default. If this output uses QVBR, choose Transition detection for further video quality improvement. For more information about QVBR, see https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
-    pub fn scene_change_detect(&self) -> ::std::option::Option<&crate::types::H264SceneChangeDetect> {
+    pub fn scene_change_detect(&self) -> ::std::option::Option<& crate::types::H264SceneChangeDetect> {
         self.scene_change_detect.as_ref()
     }
     /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures.
@@ -237,7 +237,7 @@ impl H264Settings {
         self.slices
     }
     /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25.
-    pub fn slow_pal(&self) -> ::std::option::Option<&crate::types::H264SlowPal> {
+    pub fn slow_pal(&self) -> ::std::option::Option<& crate::types::H264SlowPal> {
         self.slow_pal.as_ref()
     }
     /// Ignore this setting unless you need to comply with a specification that requires a specific value. If you don't have a specification requirement, we recommend that you adjust the softness of your output by using a lower value for the setting Sharpness or by enabling a noise reducer filter. The Softness setting specifies the quantization matrices that the encoder uses. Keep the default value, 0, for flat quantization. Choose the value 1 or 16 to use the default JVT softening quantization matricies from the H.264 specification. Choose a value from 17 to 128 to use planar interpolation. Increasing values from 17 to 128 result in increasing reduction of high-frequency data. The value 128 results in the softest video.
@@ -245,23 +245,23 @@ impl H264Settings {
         self.softness
     }
     /// Only use this setting when you change the default value, Auto, for the setting H264AdaptiveQuantization. When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON job specification, MediaConvert automatically applies the best types of quantization for your video content. When you set H264AdaptiveQuantization to a value other than AUTO, the default value for H264SpatialAdaptiveQuantization is Enabled. Keep this default value to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to set H264SpatialAdaptiveQuantization to Disabled. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher. To manually enable or disable H264SpatialAdaptiveQuantization, you must set Adaptive quantization to a value other than AUTO.
-    pub fn spatial_adaptive_quantization(&self) -> ::std::option::Option<&crate::types::H264SpatialAdaptiveQuantization> {
+    pub fn spatial_adaptive_quantization(&self) -> ::std::option::Option<& crate::types::H264SpatialAdaptiveQuantization> {
         self.spatial_adaptive_quantization.as_ref()
     }
     /// Produces a bitstream compliant with SMPTE RP-2027.
-    pub fn syntax(&self) -> ::std::option::Option<&crate::types::H264Syntax> {
+    pub fn syntax(&self) -> ::std::option::Option<& crate::types::H264Syntax> {
         self.syntax.as_ref()
     }
     /// When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is interlaced, you can optionally enable hard or soft telecine to create a smoother picture. Hard telecine produces a 29.97i output. Soft telecine produces an output with a 23.976 output that signals to the video player device to do the conversion during play back. When you keep the default value, None, MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother picture.
-    pub fn telecine(&self) -> ::std::option::Option<&crate::types::H264Telecine> {
+    pub fn telecine(&self) -> ::std::option::Option<& crate::types::H264Telecine> {
         self.telecine.as_ref()
     }
     /// Only use this setting when you change the default value, AUTO, for the setting H264AdaptiveQuantization. When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON job specification, MediaConvert automatically applies the best types of quantization for your video content. When you set H264AdaptiveQuantization to a value other than AUTO, the default value for H264TemporalAdaptiveQuantization is Enabled. Keep this default value to adjust quantization within each frame based on temporal variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas of the frame that aren't moving and uses more bits on complex objects with sharp edges that move a lot. For example, this feature improves the readability of text tickers on newscasts and scoreboards on sports matches. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen that doesn't have moving objects with sharp edges, such as sports athletes' faces, you might choose to set H264TemporalAdaptiveQuantization to Disabled. Related setting: When you enable temporal quantization, adjust the strength of the filter with the setting Adaptive quantization. To manually enable or disable H264TemporalAdaptiveQuantization, you must set Adaptive quantization to a value other than AUTO.
-    pub fn temporal_adaptive_quantization(&self) -> ::std::option::Option<&crate::types::H264TemporalAdaptiveQuantization> {
+    pub fn temporal_adaptive_quantization(&self) -> ::std::option::Option<& crate::types::H264TemporalAdaptiveQuantization> {
         self.temporal_adaptive_quantization.as_ref()
     }
     /// Inserts timecode for each frame as 4 bytes of an unregistered SEI message.
-    pub fn unregistered_sei_timecode(&self) -> ::std::option::Option<&crate::types::H264UnregisteredSeiTimecode> {
+    pub fn unregistered_sei_timecode(&self) -> ::std::option::Option<& crate::types::H264UnregisteredSeiTimecode> {
         self.unregistered_sei_timecode.as_ref()
     }
 }
@@ -328,8 +328,7 @@ impl H264SettingsBuilder {
     }
     /// Keep the default value, Auto, for this setting to have MediaConvert automatically apply the best types of quantization for your video content. When you want to apply your quantization settings manually, you must set H264AdaptiveQuantization to a value other than Auto. Use this setting to specify the strength of any adaptive quantization filters that you enable. If you don't want MediaConvert to do any adaptive quantization in this transcode, set Adaptive quantization to Off. Related settings: The value that you choose here applies to the following settings: H264FlickerAdaptiveQuantization, H264SpatialAdaptiveQuantization, and H264TemporalAdaptiveQuantization.
     pub fn set_adaptive_quantization(mut self, input: ::std::option::Option<crate::types::H264AdaptiveQuantization>) -> Self {
-        self.adaptive_quantization = input;
-        self
+        self.adaptive_quantization = input; self
     }
     /// Keep the default value, Auto, for this setting to have MediaConvert automatically apply the best types of quantization for your video content. When you want to apply your quantization settings manually, you must set H264AdaptiveQuantization to a value other than Auto. Use this setting to specify the strength of any adaptive quantization filters that you enable. If you don't want MediaConvert to do any adaptive quantization in this transcode, set Adaptive quantization to Off. Related settings: The value that you choose here applies to the following settings: H264FlickerAdaptiveQuantization, H264SpatialAdaptiveQuantization, and H264TemporalAdaptiveQuantization.
     pub fn get_adaptive_quantization(&self) -> &::std::option::Option<crate::types::H264AdaptiveQuantization> {
@@ -342,8 +341,7 @@ impl H264SettingsBuilder {
     }
     /// The Bandwidth reduction filter increases the video quality of your output relative to its bitrate. Use to lower the bitrate of your constant quality QVBR output, with little or no perceptual decrease in quality. Or, use to increase the video quality of outputs with other rate control modes relative to the bitrate that you specify. Bandwidth reduction increases further when your input is low quality or noisy. Outputs that use this feature incur pro-tier pricing. When you include Bandwidth reduction filter, you cannot include the Noise reducer preprocessor.
     pub fn set_bandwidth_reduction_filter(mut self, input: ::std::option::Option<crate::types::BandwidthReductionFilter>) -> Self {
-        self.bandwidth_reduction_filter = input;
-        self
+        self.bandwidth_reduction_filter = input; self
     }
     /// The Bandwidth reduction filter increases the video quality of your output relative to its bitrate. Use to lower the bitrate of your constant quality QVBR output, with little or no perceptual decrease in quality. Or, use to increase the video quality of outputs with other rate control modes relative to the bitrate that you specify. Bandwidth reduction increases further when your input is low quality or noisy. Outputs that use this feature incur pro-tier pricing. When you include Bandwidth reduction filter, you cannot include the Noise reducer preprocessor.
     pub fn get_bandwidth_reduction_filter(&self) -> &::std::option::Option<crate::types::BandwidthReductionFilter> {
@@ -356,8 +354,7 @@ impl H264SettingsBuilder {
     }
     /// Specify the average bitrate in bits per second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique when rounded down to the nearest multiple of 1000.
     pub fn set_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.bitrate = input;
-        self
+        self.bitrate = input; self
     }
     /// Specify the average bitrate in bits per second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique when rounded down to the nearest multiple of 1000.
     pub fn get_bitrate(&self) -> &::std::option::Option<i32> {
@@ -370,8 +367,7 @@ impl H264SettingsBuilder {
     }
     /// Specify an H.264 level that is consistent with your output video settings. If you aren't sure what level to specify, choose Auto.
     pub fn set_codec_level(mut self, input: ::std::option::Option<crate::types::H264CodecLevel>) -> Self {
-        self.codec_level = input;
-        self
+        self.codec_level = input; self
     }
     /// Specify an H.264 level that is consistent with your output video settings. If you aren't sure what level to specify, choose Auto.
     pub fn get_codec_level(&self) -> &::std::option::Option<crate::types::H264CodecLevel> {
@@ -384,8 +380,7 @@ impl H264SettingsBuilder {
     }
     /// H.264 Profile. High 4:2:2 and 10-bit profiles are only available with the AVC-I License.
     pub fn set_codec_profile(mut self, input: ::std::option::Option<crate::types::H264CodecProfile>) -> Self {
-        self.codec_profile = input;
-        self
+        self.codec_profile = input; self
     }
     /// H.264 Profile. High 4:2:2 and 10-bit profiles are only available with the AVC-I License.
     pub fn get_codec_profile(&self) -> &::std::option::Option<crate::types::H264CodecProfile> {
@@ -398,8 +393,7 @@ impl H264SettingsBuilder {
     }
     /// Specify whether to allow the number of B-frames in your output GOP structure to vary or not depending on your input video content. To improve the subjective video quality of your output that has high-motion content: Leave blank or keep the default value Adaptive. MediaConvert will use fewer B-frames for high-motion video content than low-motion content. The maximum number of B- frames is limited by the value that you choose for B-frames between reference frames. To use the same number B-frames for all types of content: Choose Static.
     pub fn set_dynamic_sub_gop(mut self, input: ::std::option::Option<crate::types::H264DynamicSubGop>) -> Self {
-        self.dynamic_sub_gop = input;
-        self
+        self.dynamic_sub_gop = input; self
     }
     /// Specify whether to allow the number of B-frames in your output GOP structure to vary or not depending on your input video content. To improve the subjective video quality of your output that has high-motion content: Leave blank or keep the default value Adaptive. MediaConvert will use fewer B-frames for high-motion video content than low-motion content. The maximum number of B- frames is limited by the value that you choose for B-frames between reference frames. To use the same number B-frames for all types of content: Choose Static.
     pub fn get_dynamic_sub_gop(&self) -> &::std::option::Option<crate::types::H264DynamicSubGop> {
@@ -412,8 +406,7 @@ impl H264SettingsBuilder {
     }
     /// Optionally include or suppress markers at the end of your output that signal the end of the video stream. To include end of stream markers: Leave blank or keep the default value, Include. To not include end of stream markers: Choose Suppress. This is useful when your output will be inserted into another stream.
     pub fn set_end_of_stream_markers(mut self, input: ::std::option::Option<crate::types::H264EndOfStreamMarkers>) -> Self {
-        self.end_of_stream_markers = input;
-        self
+        self.end_of_stream_markers = input; self
     }
     /// Optionally include or suppress markers at the end of your output that signal the end of the video stream. To include end of stream markers: Leave blank or keep the default value, Include. To not include end of stream markers: Choose Suppress. This is useful when your output will be inserted into another stream.
     pub fn get_end_of_stream_markers(&self) -> &::std::option::Option<crate::types::H264EndOfStreamMarkers> {
@@ -426,8 +419,7 @@ impl H264SettingsBuilder {
     }
     /// Entropy encoding mode. Use CABAC (must be in Main or High profile) or CAVLC.
     pub fn set_entropy_encoding(mut self, input: ::std::option::Option<crate::types::H264EntropyEncoding>) -> Self {
-        self.entropy_encoding = input;
-        self
+        self.entropy_encoding = input; self
     }
     /// Entropy encoding mode. Use CABAC (must be in Main or High profile) or CAVLC.
     pub fn get_entropy_encoding(&self) -> &::std::option::Option<crate::types::H264EntropyEncoding> {
@@ -440,8 +432,7 @@ impl H264SettingsBuilder {
     }
     /// The video encoding method for your MPEG-4 AVC output. Keep the default value, PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose Force field to disable PAFF encoding and create separate interlaced fields. Choose MBAFF to disable PAFF and have MediaConvert use MBAFF encoding for interlaced outputs.
     pub fn set_field_encoding(mut self, input: ::std::option::Option<crate::types::H264FieldEncoding>) -> Self {
-        self.field_encoding = input;
-        self
+        self.field_encoding = input; self
     }
     /// The video encoding method for your MPEG-4 AVC output. Keep the default value, PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose Force field to disable PAFF encoding and create separate interlaced fields. Choose MBAFF to disable PAFF and have MediaConvert use MBAFF encoding for interlaced outputs.
     pub fn get_field_encoding(&self) -> &::std::option::Option<crate::types::H264FieldEncoding> {
@@ -454,8 +445,7 @@ impl H264SettingsBuilder {
     }
     /// Only use this setting when you change the default value, AUTO, for the setting H264AdaptiveQuantization. When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON job specification, MediaConvert automatically applies the best types of quantization for your video content. When you set H264AdaptiveQuantization to a value other than AUTO, the default value for H264FlickerAdaptiveQuantization is Disabled. Change this value to Enabled to reduce I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. To manually enable or disable H264FlickerAdaptiveQuantization, you must set Adaptive quantization to a value other than AUTO.
     pub fn set_flicker_adaptive_quantization(mut self, input: ::std::option::Option<crate::types::H264FlickerAdaptiveQuantization>) -> Self {
-        self.flicker_adaptive_quantization = input;
-        self
+        self.flicker_adaptive_quantization = input; self
     }
     /// Only use this setting when you change the default value, AUTO, for the setting H264AdaptiveQuantization. When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON job specification, MediaConvert automatically applies the best types of quantization for your video content. When you set H264AdaptiveQuantization to a value other than AUTO, the default value for H264FlickerAdaptiveQuantization is Disabled. Change this value to Enabled to reduce I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. To manually enable or disable H264FlickerAdaptiveQuantization, you must set Adaptive quantization to a value other than AUTO.
     pub fn get_flicker_adaptive_quantization(&self) -> &::std::option::Option<crate::types::H264FlickerAdaptiveQuantization> {
@@ -468,8 +458,7 @@ impl H264SettingsBuilder {
     }
     /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
     pub fn set_framerate_control(mut self, input: ::std::option::Option<crate::types::H264FramerateControl>) -> Self {
-        self.framerate_control = input;
-        self
+        self.framerate_control = input; self
     }
     /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
     pub fn get_framerate_control(&self) -> &::std::option::Option<crate::types::H264FramerateControl> {
@@ -482,8 +471,7 @@ impl H264SettingsBuilder {
     }
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
     pub fn set_framerate_conversion_algorithm(mut self, input: ::std::option::Option<crate::types::H264FramerateConversionAlgorithm>) -> Self {
-        self.framerate_conversion_algorithm = input;
-        self
+        self.framerate_conversion_algorithm = input; self
     }
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
     pub fn get_framerate_conversion_algorithm(&self) -> &::std::option::Option<crate::types::H264FramerateConversionAlgorithm> {
@@ -496,8 +484,7 @@ impl H264SettingsBuilder {
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn set_framerate_denominator(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.framerate_denominator = input;
-        self
+        self.framerate_denominator = input; self
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn get_framerate_denominator(&self) -> &::std::option::Option<i32> {
@@ -510,8 +497,7 @@ impl H264SettingsBuilder {
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn set_framerate_numerator(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.framerate_numerator = input;
-        self
+        self.framerate_numerator = input; self
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn get_framerate_numerator(&self) -> &::std::option::Option<i32> {
@@ -524,8 +510,7 @@ impl H264SettingsBuilder {
     }
     /// Specify whether to allow B-frames to be referenced by other frame types. To use reference B-frames when your GOP structure has 1 or more B-frames: Leave blank or keep the default value Enabled. We recommend that you choose Enabled to help improve the video quality of your output relative to its bitrate. To not use reference B-frames: Choose Disabled.
     pub fn set_gop_b_reference(mut self, input: ::std::option::Option<crate::types::H264GopBReference>) -> Self {
-        self.gop_b_reference = input;
-        self
+        self.gop_b_reference = input; self
     }
     /// Specify whether to allow B-frames to be referenced by other frame types. To use reference B-frames when your GOP structure has 1 or more B-frames: Leave blank or keep the default value Enabled. We recommend that you choose Enabled to help improve the video quality of your output relative to its bitrate. To not use reference B-frames: Choose Disabled.
     pub fn get_gop_b_reference(&self) -> &::std::option::Option<crate::types::H264GopBReference> {
@@ -538,8 +523,7 @@ impl H264SettingsBuilder {
     }
     /// Specify the relative frequency of open to closed GOPs in this output. For example, if you want to allow four open GOPs and then require a closed GOP, set this value to 5. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. In the console, do this by keeping the default empty value. If you do explicitly specify a value, for segmented outputs, don't set this value to 0.
     pub fn set_gop_closed_cadence(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.gop_closed_cadence = input;
-        self
+        self.gop_closed_cadence = input; self
     }
     /// Specify the relative frequency of open to closed GOPs in this output. For example, if you want to allow four open GOPs and then require a closed GOP, set this value to 5. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. In the console, do this by keeping the default empty value. If you do explicitly specify a value, for segmented outputs, don't set this value to 0.
     pub fn get_gop_closed_cadence(&self) -> &::std::option::Option<i32> {
@@ -552,8 +536,7 @@ impl H264SettingsBuilder {
     }
     /// Use this setting only when you set GOP mode control to Specified, frames or Specified, seconds. Specify the GOP length using a whole number of frames or a decimal value of seconds. MediaConvert will interpret this value as frames or seconds depending on the value you choose for GOP mode control. If you want to allow MediaConvert to automatically determine GOP size, leave GOP size blank and set GOP mode control to Auto. If your output group specifies HLS, DASH, or CMAF, leave GOP size blank and set GOP mode control to Auto in each output in your output group.
     pub fn set_gop_size(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.gop_size = input;
-        self
+        self.gop_size = input; self
     }
     /// Use this setting only when you set GOP mode control to Specified, frames or Specified, seconds. Specify the GOP length using a whole number of frames or a decimal value of seconds. MediaConvert will interpret this value as frames or seconds depending on the value you choose for GOP mode control. If you want to allow MediaConvert to automatically determine GOP size, leave GOP size blank and set GOP mode control to Auto. If your output group specifies HLS, DASH, or CMAF, leave GOP size blank and set GOP mode control to Auto in each output in your output group.
     pub fn get_gop_size(&self) -> &::std::option::Option<f64> {
@@ -566,8 +549,7 @@ impl H264SettingsBuilder {
     }
     /// Specify how the transcoder determines GOP size for this output. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, choose Auto and and leave GOP size blank. By default, if you don't specify GOP mode control, MediaConvert will use automatic behavior. If your output group specifies HLS, DASH, or CMAF, set GOP mode control to Auto and leave GOP size blank in each output in your output group. To explicitly specify the GOP length, choose Specified, frames or Specified, seconds and then provide the GOP length in the related setting GOP size.
     pub fn set_gop_size_units(mut self, input: ::std::option::Option<crate::types::H264GopSizeUnits>) -> Self {
-        self.gop_size_units = input;
-        self
+        self.gop_size_units = input; self
     }
     /// Specify how the transcoder determines GOP size for this output. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, choose Auto and and leave GOP size blank. By default, if you don't specify GOP mode control, MediaConvert will use automatic behavior. If your output group specifies HLS, DASH, or CMAF, set GOP mode control to Auto and leave GOP size blank in each output in your output group. To explicitly specify the GOP length, choose Specified, frames or Specified, seconds and then provide the GOP length in the related setting GOP size.
     pub fn get_gop_size_units(&self) -> &::std::option::Option<crate::types::H264GopSizeUnits> {
@@ -580,8 +562,7 @@ impl H264SettingsBuilder {
     }
     /// If your downstream systems have strict buffer requirements: Specify the minimum percentage of the HRD buffer that's available at the end of each encoded video segment. For the best video quality: Set to 0 or leave blank to automatically determine the final buffer fill percentage.
     pub fn set_hrd_buffer_final_fill_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.hrd_buffer_final_fill_percentage = input;
-        self
+        self.hrd_buffer_final_fill_percentage = input; self
     }
     /// If your downstream systems have strict buffer requirements: Specify the minimum percentage of the HRD buffer that's available at the end of each encoded video segment. For the best video quality: Set to 0 or leave blank to automatically determine the final buffer fill percentage.
     pub fn get_hrd_buffer_final_fill_percentage(&self) -> &::std::option::Option<i32> {
@@ -594,8 +575,7 @@ impl H264SettingsBuilder {
     }
     /// Percentage of the buffer that should initially be filled (HRD buffer model).
     pub fn set_hrd_buffer_initial_fill_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.hrd_buffer_initial_fill_percentage = input;
-        self
+        self.hrd_buffer_initial_fill_percentage = input; self
     }
     /// Percentage of the buffer that should initially be filled (HRD buffer model).
     pub fn get_hrd_buffer_initial_fill_percentage(&self) -> &::std::option::Option<i32> {
@@ -608,8 +588,7 @@ impl H264SettingsBuilder {
     }
     /// Size of buffer (HRD buffer model) in bits. For example, enter five megabits as 5000000.
     pub fn set_hrd_buffer_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.hrd_buffer_size = input;
-        self
+        self.hrd_buffer_size = input; self
     }
     /// Size of buffer (HRD buffer model) in bits. For example, enter five megabits as 5000000.
     pub fn get_hrd_buffer_size(&self) -> &::std::option::Option<i32> {
@@ -622,8 +601,7 @@ impl H264SettingsBuilder {
     }
     /// Choose the scan line type for the output. Keep the default value, Progressive to create a progressive output, regardless of the scan type of your input. Use Top field first or Bottom field first to create an output that's interlaced with the same field polarity throughout. Use Follow, default top or Follow, default bottom to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
     pub fn set_interlace_mode(mut self, input: ::std::option::Option<crate::types::H264InterlaceMode>) -> Self {
-        self.interlace_mode = input;
-        self
+        self.interlace_mode = input; self
     }
     /// Choose the scan line type for the output. Keep the default value, Progressive to create a progressive output, regardless of the scan type of your input. Use Top field first or Bottom field first to create an output that's interlaced with the same field polarity throughout. Use Follow, default top or Follow, default bottom to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
     pub fn get_interlace_mode(&self) -> &::std::option::Option<crate::types::H264InterlaceMode> {
@@ -636,8 +614,7 @@ impl H264SettingsBuilder {
     }
     /// Maximum bitrate in bits/second. For example, enter five megabits per second as 5000000. Required when Rate control mode is QVBR.
     pub fn set_max_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_bitrate = input;
-        self
+        self.max_bitrate = input; self
     }
     /// Maximum bitrate in bits/second. For example, enter five megabits per second as 5000000. Required when Rate control mode is QVBR.
     pub fn get_max_bitrate(&self) -> &::std::option::Option<i32> {
@@ -650,8 +627,7 @@ impl H264SettingsBuilder {
     }
     /// Use this setting only when you also enable Scene change detection. This setting determines how the encoder manages the spacing between I-frames that it inserts as part of the I-frame cadence and the I-frames that it inserts for Scene change detection. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, do this by keeping the default empty value. When you explicitly specify a value for this setting, the encoder determines whether to skip a cadence-driven I-frame by the value you set. For example, if you set Min I interval to 5 and a cadence-driven I-frame would fall within 5 frames of a scene-change I-frame, then the encoder skips the cadence-driven I-frame. In this way, one GOP is shrunk slightly and one GOP is stretched slightly. When the cadence-driven I-frames are farther from the scene-change I-frame than the value you set, then the encoder leaves all I-frames in place and the GOPs surrounding the scene change are smaller than the usual cadence GOPs.
     pub fn set_min_i_interval(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_i_interval = input;
-        self
+        self.min_i_interval = input; self
     }
     /// Use this setting only when you also enable Scene change detection. This setting determines how the encoder manages the spacing between I-frames that it inserts as part of the I-frame cadence and the I-frames that it inserts for Scene change detection. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, do this by keeping the default empty value. When you explicitly specify a value for this setting, the encoder determines whether to skip a cadence-driven I-frame by the value you set. For example, if you set Min I interval to 5 and a cadence-driven I-frame would fall within 5 frames of a scene-change I-frame, then the encoder skips the cadence-driven I-frame. In this way, one GOP is shrunk slightly and one GOP is stretched slightly. When the cadence-driven I-frames are farther from the scene-change I-frame than the value you set, then the encoder leaves all I-frames in place and the GOPs surrounding the scene change are smaller than the usual cadence GOPs.
     pub fn get_min_i_interval(&self) -> &::std::option::Option<i32> {
@@ -664,8 +640,7 @@ impl H264SettingsBuilder {
     }
     /// Specify the number of B-frames between reference frames in this output. For the best video quality: Leave blank. MediaConvert automatically determines the number of B-frames to use based on the characteristics of your input video. To manually specify the number of B-frames between reference frames: Enter an integer from 0 to 7.
     pub fn set_number_b_frames_between_reference_frames(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_b_frames_between_reference_frames = input;
-        self
+        self.number_b_frames_between_reference_frames = input; self
     }
     /// Specify the number of B-frames between reference frames in this output. For the best video quality: Leave blank. MediaConvert automatically determines the number of B-frames to use based on the characteristics of your input video. To manually specify the number of B-frames between reference frames: Enter an integer from 0 to 7.
     pub fn get_number_b_frames_between_reference_frames(&self) -> &::std::option::Option<i32> {
@@ -678,8 +653,7 @@ impl H264SettingsBuilder {
     }
     /// Number of reference frames to use. The encoder may use more than requested if using B-frames and/or interlaced encoding.
     pub fn set_number_reference_frames(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_reference_frames = input;
-        self
+        self.number_reference_frames = input; self
     }
     /// Number of reference frames to use. The encoder may use more than requested if using B-frames and/or interlaced encoding.
     pub fn get_number_reference_frames(&self) -> &::std::option::Option<i32> {
@@ -692,8 +666,7 @@ impl H264SettingsBuilder {
     }
     /// Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source, uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
     pub fn set_par_control(mut self, input: ::std::option::Option<crate::types::H264ParControl>) -> Self {
-        self.par_control = input;
-        self
+        self.par_control = input; self
     }
     /// Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source, uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
     pub fn get_par_control(&self) -> &::std::option::Option<crate::types::H264ParControl> {
@@ -706,8 +679,7 @@ impl H264SettingsBuilder {
     }
     /// Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parDenominator is 33.
     pub fn set_par_denominator(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.par_denominator = input;
-        self
+        self.par_denominator = input; self
     }
     /// Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parDenominator is 33.
     pub fn get_par_denominator(&self) -> &::std::option::Option<i32> {
@@ -720,8 +692,7 @@ impl H264SettingsBuilder {
     }
     /// Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parNumerator is 40.
     pub fn set_par_numerator(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.par_numerator = input;
-        self
+        self.par_numerator = input; self
     }
     /// Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parNumerator is 40.
     pub fn get_par_numerator(&self) -> &::std::option::Option<i32> {
@@ -734,8 +705,7 @@ impl H264SettingsBuilder {
     }
     /// The Quality tuning level you choose represents a trade-off between the encoding speed of your job and the output video quality. For the fastest encoding speed at the cost of video quality: Choose Single pass. For a good balance between encoding speed and video quality: Leave blank or keep the default value Single pass HQ. For the best video quality, at the cost of encoding speed: Choose Multi pass HQ. MediaConvert performs an analysis pass on your input followed by an encoding pass. Outputs that use this feature incur pro-tier pricing.
     pub fn set_quality_tuning_level(mut self, input: ::std::option::Option<crate::types::H264QualityTuningLevel>) -> Self {
-        self.quality_tuning_level = input;
-        self
+        self.quality_tuning_level = input; self
     }
     /// The Quality tuning level you choose represents a trade-off between the encoding speed of your job and the output video quality. For the fastest encoding speed at the cost of video quality: Choose Single pass. For a good balance between encoding speed and video quality: Leave blank or keep the default value Single pass HQ. For the best video quality, at the cost of encoding speed: Choose Multi pass HQ. MediaConvert performs an analysis pass on your input followed by an encoding pass. Outputs that use this feature incur pro-tier pricing.
     pub fn get_quality_tuning_level(&self) -> &::std::option::Option<crate::types::H264QualityTuningLevel> {
@@ -748,8 +718,7 @@ impl H264SettingsBuilder {
     }
     /// Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set QVBR for Rate control mode.
     pub fn set_qvbr_settings(mut self, input: ::std::option::Option<crate::types::H264QvbrSettings>) -> Self {
-        self.qvbr_settings = input;
-        self
+        self.qvbr_settings = input; self
     }
     /// Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set QVBR for Rate control mode.
     pub fn get_qvbr_settings(&self) -> &::std::option::Option<crate::types::H264QvbrSettings> {
@@ -762,8 +731,7 @@ impl H264SettingsBuilder {
     }
     /// Use this setting to specify whether this output has a variable bitrate (VBR), constant bitrate (CBR) or quality-defined variable bitrate (QVBR).
     pub fn set_rate_control_mode(mut self, input: ::std::option::Option<crate::types::H264RateControlMode>) -> Self {
-        self.rate_control_mode = input;
-        self
+        self.rate_control_mode = input; self
     }
     /// Use this setting to specify whether this output has a variable bitrate (VBR), constant bitrate (CBR) or quality-defined variable bitrate (QVBR).
     pub fn get_rate_control_mode(&self) -> &::std::option::Option<crate::types::H264RateControlMode> {
@@ -776,8 +744,7 @@ impl H264SettingsBuilder {
     }
     /// Places a PPS header on each encoded picture, even if repeated.
     pub fn set_repeat_pps(mut self, input: ::std::option::Option<crate::types::H264RepeatPps>) -> Self {
-        self.repeat_pps = input;
-        self
+        self.repeat_pps = input; self
     }
     /// Places a PPS header on each encoded picture, even if repeated.
     pub fn get_repeat_pps(&self) -> &::std::option::Option<crate::types::H264RepeatPps> {
@@ -790,8 +757,7 @@ impl H264SettingsBuilder {
     }
     /// Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing, for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine to None or Soft. You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode to a value other than Progressive.
     pub fn set_scan_type_conversion_mode(mut self, input: ::std::option::Option<crate::types::H264ScanTypeConversionMode>) -> Self {
-        self.scan_type_conversion_mode = input;
-        self
+        self.scan_type_conversion_mode = input; self
     }
     /// Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing, for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine to None or Soft. You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode to a value other than Progressive.
     pub fn get_scan_type_conversion_mode(&self) -> &::std::option::Option<crate::types::H264ScanTypeConversionMode> {
@@ -804,8 +770,7 @@ impl H264SettingsBuilder {
     }
     /// Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves video quality and is enabled by default. If this output uses QVBR, choose Transition detection for further video quality improvement. For more information about QVBR, see https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
     pub fn set_scene_change_detect(mut self, input: ::std::option::Option<crate::types::H264SceneChangeDetect>) -> Self {
-        self.scene_change_detect = input;
-        self
+        self.scene_change_detect = input; self
     }
     /// Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves video quality and is enabled by default. If this output uses QVBR, choose Transition detection for further video quality improvement. For more information about QVBR, see https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
     pub fn get_scene_change_detect(&self) -> &::std::option::Option<crate::types::H264SceneChangeDetect> {
@@ -818,8 +783,7 @@ impl H264SettingsBuilder {
     }
     /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures.
     pub fn set_slices(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.slices = input;
-        self
+        self.slices = input; self
     }
     /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures.
     pub fn get_slices(&self) -> &::std::option::Option<i32> {
@@ -832,8 +796,7 @@ impl H264SettingsBuilder {
     }
     /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25.
     pub fn set_slow_pal(mut self, input: ::std::option::Option<crate::types::H264SlowPal>) -> Self {
-        self.slow_pal = input;
-        self
+        self.slow_pal = input; self
     }
     /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25.
     pub fn get_slow_pal(&self) -> &::std::option::Option<crate::types::H264SlowPal> {
@@ -846,8 +809,7 @@ impl H264SettingsBuilder {
     }
     /// Ignore this setting unless you need to comply with a specification that requires a specific value. If you don't have a specification requirement, we recommend that you adjust the softness of your output by using a lower value for the setting Sharpness or by enabling a noise reducer filter. The Softness setting specifies the quantization matrices that the encoder uses. Keep the default value, 0, for flat quantization. Choose the value 1 or 16 to use the default JVT softening quantization matricies from the H.264 specification. Choose a value from 17 to 128 to use planar interpolation. Increasing values from 17 to 128 result in increasing reduction of high-frequency data. The value 128 results in the softest video.
     pub fn set_softness(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.softness = input;
-        self
+        self.softness = input; self
     }
     /// Ignore this setting unless you need to comply with a specification that requires a specific value. If you don't have a specification requirement, we recommend that you adjust the softness of your output by using a lower value for the setting Sharpness or by enabling a noise reducer filter. The Softness setting specifies the quantization matrices that the encoder uses. Keep the default value, 0, for flat quantization. Choose the value 1 or 16 to use the default JVT softening quantization matricies from the H.264 specification. Choose a value from 17 to 128 to use planar interpolation. Increasing values from 17 to 128 result in increasing reduction of high-frequency data. The value 128 results in the softest video.
     pub fn get_softness(&self) -> &::std::option::Option<i32> {
@@ -860,8 +822,7 @@ impl H264SettingsBuilder {
     }
     /// Only use this setting when you change the default value, Auto, for the setting H264AdaptiveQuantization. When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON job specification, MediaConvert automatically applies the best types of quantization for your video content. When you set H264AdaptiveQuantization to a value other than AUTO, the default value for H264SpatialAdaptiveQuantization is Enabled. Keep this default value to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to set H264SpatialAdaptiveQuantization to Disabled. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher. To manually enable or disable H264SpatialAdaptiveQuantization, you must set Adaptive quantization to a value other than AUTO.
     pub fn set_spatial_adaptive_quantization(mut self, input: ::std::option::Option<crate::types::H264SpatialAdaptiveQuantization>) -> Self {
-        self.spatial_adaptive_quantization = input;
-        self
+        self.spatial_adaptive_quantization = input; self
     }
     /// Only use this setting when you change the default value, Auto, for the setting H264AdaptiveQuantization. When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON job specification, MediaConvert automatically applies the best types of quantization for your video content. When you set H264AdaptiveQuantization to a value other than AUTO, the default value for H264SpatialAdaptiveQuantization is Enabled. Keep this default value to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to set H264SpatialAdaptiveQuantization to Disabled. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher. To manually enable or disable H264SpatialAdaptiveQuantization, you must set Adaptive quantization to a value other than AUTO.
     pub fn get_spatial_adaptive_quantization(&self) -> &::std::option::Option<crate::types::H264SpatialAdaptiveQuantization> {
@@ -874,8 +835,7 @@ impl H264SettingsBuilder {
     }
     /// Produces a bitstream compliant with SMPTE RP-2027.
     pub fn set_syntax(mut self, input: ::std::option::Option<crate::types::H264Syntax>) -> Self {
-        self.syntax = input;
-        self
+        self.syntax = input; self
     }
     /// Produces a bitstream compliant with SMPTE RP-2027.
     pub fn get_syntax(&self) -> &::std::option::Option<crate::types::H264Syntax> {
@@ -888,8 +848,7 @@ impl H264SettingsBuilder {
     }
     /// When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is interlaced, you can optionally enable hard or soft telecine to create a smoother picture. Hard telecine produces a 29.97i output. Soft telecine produces an output with a 23.976 output that signals to the video player device to do the conversion during play back. When you keep the default value, None, MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother picture.
     pub fn set_telecine(mut self, input: ::std::option::Option<crate::types::H264Telecine>) -> Self {
-        self.telecine = input;
-        self
+        self.telecine = input; self
     }
     /// When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is interlaced, you can optionally enable hard or soft telecine to create a smoother picture. Hard telecine produces a 29.97i output. Soft telecine produces an output with a 23.976 output that signals to the video player device to do the conversion during play back. When you keep the default value, None, MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother picture.
     pub fn get_telecine(&self) -> &::std::option::Option<crate::types::H264Telecine> {
@@ -902,8 +861,7 @@ impl H264SettingsBuilder {
     }
     /// Only use this setting when you change the default value, AUTO, for the setting H264AdaptiveQuantization. When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON job specification, MediaConvert automatically applies the best types of quantization for your video content. When you set H264AdaptiveQuantization to a value other than AUTO, the default value for H264TemporalAdaptiveQuantization is Enabled. Keep this default value to adjust quantization within each frame based on temporal variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas of the frame that aren't moving and uses more bits on complex objects with sharp edges that move a lot. For example, this feature improves the readability of text tickers on newscasts and scoreboards on sports matches. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen that doesn't have moving objects with sharp edges, such as sports athletes' faces, you might choose to set H264TemporalAdaptiveQuantization to Disabled. Related setting: When you enable temporal quantization, adjust the strength of the filter with the setting Adaptive quantization. To manually enable or disable H264TemporalAdaptiveQuantization, you must set Adaptive quantization to a value other than AUTO.
     pub fn set_temporal_adaptive_quantization(mut self, input: ::std::option::Option<crate::types::H264TemporalAdaptiveQuantization>) -> Self {
-        self.temporal_adaptive_quantization = input;
-        self
+        self.temporal_adaptive_quantization = input; self
     }
     /// Only use this setting when you change the default value, AUTO, for the setting H264AdaptiveQuantization. When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON job specification, MediaConvert automatically applies the best types of quantization for your video content. When you set H264AdaptiveQuantization to a value other than AUTO, the default value for H264TemporalAdaptiveQuantization is Enabled. Keep this default value to adjust quantization within each frame based on temporal variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas of the frame that aren't moving and uses more bits on complex objects with sharp edges that move a lot. For example, this feature improves the readability of text tickers on newscasts and scoreboards on sports matches. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen that doesn't have moving objects with sharp edges, such as sports athletes' faces, you might choose to set H264TemporalAdaptiveQuantization to Disabled. Related setting: When you enable temporal quantization, adjust the strength of the filter with the setting Adaptive quantization. To manually enable or disable H264TemporalAdaptiveQuantization, you must set Adaptive quantization to a value other than AUTO.
     pub fn get_temporal_adaptive_quantization(&self) -> &::std::option::Option<crate::types::H264TemporalAdaptiveQuantization> {
@@ -916,8 +874,7 @@ impl H264SettingsBuilder {
     }
     /// Inserts timecode for each frame as 4 bytes of an unregistered SEI message.
     pub fn set_unregistered_sei_timecode(mut self, input: ::std::option::Option<crate::types::H264UnregisteredSeiTimecode>) -> Self {
-        self.unregistered_sei_timecode = input;
-        self
+        self.unregistered_sei_timecode = input; self
     }
     /// Inserts timecode for each frame as 4 bytes of an unregistered SEI message.
     pub fn get_unregistered_sei_timecode(&self) -> &::std::option::Option<crate::types::H264UnregisteredSeiTimecode> {
@@ -926,49 +883,93 @@ impl H264SettingsBuilder {
     /// Consumes the builder and constructs a [`H264Settings`](crate::types::H264Settings).
     pub fn build(self) -> crate::types::H264Settings {
         crate::types::H264Settings {
-            adaptive_quantization: self.adaptive_quantization,
-            bandwidth_reduction_filter: self.bandwidth_reduction_filter,
-            bitrate: self.bitrate,
-            codec_level: self.codec_level,
-            codec_profile: self.codec_profile,
-            dynamic_sub_gop: self.dynamic_sub_gop,
-            end_of_stream_markers: self.end_of_stream_markers,
-            entropy_encoding: self.entropy_encoding,
-            field_encoding: self.field_encoding,
-            flicker_adaptive_quantization: self.flicker_adaptive_quantization,
-            framerate_control: self.framerate_control,
-            framerate_conversion_algorithm: self.framerate_conversion_algorithm,
-            framerate_denominator: self.framerate_denominator,
-            framerate_numerator: self.framerate_numerator,
-            gop_b_reference: self.gop_b_reference,
-            gop_closed_cadence: self.gop_closed_cadence,
-            gop_size: self.gop_size,
-            gop_size_units: self.gop_size_units,
-            hrd_buffer_final_fill_percentage: self.hrd_buffer_final_fill_percentage,
-            hrd_buffer_initial_fill_percentage: self.hrd_buffer_initial_fill_percentage,
-            hrd_buffer_size: self.hrd_buffer_size,
-            interlace_mode: self.interlace_mode,
-            max_bitrate: self.max_bitrate,
-            min_i_interval: self.min_i_interval,
-            number_b_frames_between_reference_frames: self.number_b_frames_between_reference_frames,
-            number_reference_frames: self.number_reference_frames,
-            par_control: self.par_control,
-            par_denominator: self.par_denominator,
-            par_numerator: self.par_numerator,
-            quality_tuning_level: self.quality_tuning_level,
-            qvbr_settings: self.qvbr_settings,
-            rate_control_mode: self.rate_control_mode,
-            repeat_pps: self.repeat_pps,
-            scan_type_conversion_mode: self.scan_type_conversion_mode,
-            scene_change_detect: self.scene_change_detect,
-            slices: self.slices,
-            slow_pal: self.slow_pal,
-            softness: self.softness,
-            spatial_adaptive_quantization: self.spatial_adaptive_quantization,
-            syntax: self.syntax,
-            telecine: self.telecine,
-            temporal_adaptive_quantization: self.temporal_adaptive_quantization,
-            unregistered_sei_timecode: self.unregistered_sei_timecode,
+            adaptive_quantization: self.adaptive_quantization
+            ,
+            bandwidth_reduction_filter: self.bandwidth_reduction_filter
+            ,
+            bitrate: self.bitrate
+            ,
+            codec_level: self.codec_level
+            ,
+            codec_profile: self.codec_profile
+            ,
+            dynamic_sub_gop: self.dynamic_sub_gop
+            ,
+            end_of_stream_markers: self.end_of_stream_markers
+            ,
+            entropy_encoding: self.entropy_encoding
+            ,
+            field_encoding: self.field_encoding
+            ,
+            flicker_adaptive_quantization: self.flicker_adaptive_quantization
+            ,
+            framerate_control: self.framerate_control
+            ,
+            framerate_conversion_algorithm: self.framerate_conversion_algorithm
+            ,
+            framerate_denominator: self.framerate_denominator
+            ,
+            framerate_numerator: self.framerate_numerator
+            ,
+            gop_b_reference: self.gop_b_reference
+            ,
+            gop_closed_cadence: self.gop_closed_cadence
+            ,
+            gop_size: self.gop_size
+            ,
+            gop_size_units: self.gop_size_units
+            ,
+            hrd_buffer_final_fill_percentage: self.hrd_buffer_final_fill_percentage
+            ,
+            hrd_buffer_initial_fill_percentage: self.hrd_buffer_initial_fill_percentage
+            ,
+            hrd_buffer_size: self.hrd_buffer_size
+            ,
+            interlace_mode: self.interlace_mode
+            ,
+            max_bitrate: self.max_bitrate
+            ,
+            min_i_interval: self.min_i_interval
+            ,
+            number_b_frames_between_reference_frames: self.number_b_frames_between_reference_frames
+            ,
+            number_reference_frames: self.number_reference_frames
+            ,
+            par_control: self.par_control
+            ,
+            par_denominator: self.par_denominator
+            ,
+            par_numerator: self.par_numerator
+            ,
+            quality_tuning_level: self.quality_tuning_level
+            ,
+            qvbr_settings: self.qvbr_settings
+            ,
+            rate_control_mode: self.rate_control_mode
+            ,
+            repeat_pps: self.repeat_pps
+            ,
+            scan_type_conversion_mode: self.scan_type_conversion_mode
+            ,
+            scene_change_detect: self.scene_change_detect
+            ,
+            slices: self.slices
+            ,
+            slow_pal: self.slow_pal
+            ,
+            softness: self.softness
+            ,
+            spatial_adaptive_quantization: self.spatial_adaptive_quantization
+            ,
+            syntax: self.syntax
+            ,
+            telecine: self.telecine
+            ,
+            temporal_adaptive_quantization: self.temporal_adaptive_quantization
+            ,
+            unregistered_sei_timecode: self.unregistered_sei_timecode
+            ,
         }
     }
 }
+

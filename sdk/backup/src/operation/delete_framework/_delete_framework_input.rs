@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteFrameworkInput {
+pub struct DeleteFrameworkInput  {
     /// <p>The unique name of a framework.</p>
     pub framework_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteFrameworkInput {
+impl  DeleteFrameworkInput  {
     /// <p>The unique name of a framework.</p>
-    pub fn framework_name(&self) -> ::std::option::Option<&str> {
+    pub fn framework_name(&self) -> ::std::option::Option<& str> {
         self.framework_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteFrameworkInputBuilder {
     }
     /// <p>The unique name of a framework.</p>
     pub fn set_framework_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.framework_name = input;
-        self
+        self.framework_name = input; self
     }
     /// <p>The unique name of a framework.</p>
     pub fn get_framework_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.framework_name
     }
     /// Consumes the builder and constructs a [`DeleteFrameworkInput`](crate::operation::delete_framework::DeleteFrameworkInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_framework::DeleteFrameworkInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_framework::DeleteFrameworkInput {
-            framework_name: self.framework_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_framework::DeleteFrameworkInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_framework::DeleteFrameworkInput {
+                framework_name: self.framework_name
+                ,
+            }
+        )
     }
 }
+

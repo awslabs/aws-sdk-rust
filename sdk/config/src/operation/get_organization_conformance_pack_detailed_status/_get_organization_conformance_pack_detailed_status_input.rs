@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetOrganizationConformancePackDetailedStatusInput {
+pub struct GetOrganizationConformancePackDetailedStatusInput  {
     /// <p>The name of organization conformance pack for which you want status details for member accounts.</p>
     pub organization_conformance_pack_name: ::std::option::Option<::std::string::String>,
     /// <p>An <code>OrganizationResourceDetailedStatusFilters</code> object.</p>
@@ -12,13 +12,13 @@ pub struct GetOrganizationConformancePackDetailedStatusInput {
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl GetOrganizationConformancePackDetailedStatusInput {
+impl  GetOrganizationConformancePackDetailedStatusInput  {
     /// <p>The name of organization conformance pack for which you want status details for member accounts.</p>
-    pub fn organization_conformance_pack_name(&self) -> ::std::option::Option<&str> {
+    pub fn organization_conformance_pack_name(&self) -> ::std::option::Option<& str> {
         self.organization_conformance_pack_name.as_deref()
     }
     /// <p>An <code>OrganizationResourceDetailedStatusFilters</code> object.</p>
-    pub fn filters(&self) -> ::std::option::Option<&crate::types::OrganizationResourceDetailedStatusFilters> {
+    pub fn filters(&self) -> ::std::option::Option<& crate::types::OrganizationResourceDetailedStatusFilters> {
         self.filters.as_ref()
     }
     /// <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100.</p>
@@ -26,14 +26,13 @@ impl GetOrganizationConformancePackDetailedStatusInput {
         self.limit
     }
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl GetOrganizationConformancePackDetailedStatusInput {
     /// Creates a new builder-style object to manufacture [`GetOrganizationConformancePackDetailedStatusInput`](crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusInput).
-    pub fn builder(
-    ) -> crate::operation::get_organization_conformance_pack_detailed_status::builders::GetOrganizationConformancePackDetailedStatusInputBuilder {
+    pub fn builder() -> crate::operation::get_organization_conformance_pack_detailed_status::builders::GetOrganizationConformancePackDetailedStatusInputBuilder {
         crate::operation::get_organization_conformance_pack_detailed_status::builders::GetOrganizationConformancePackDetailedStatusInputBuilder::default()
     }
 }
@@ -56,8 +55,7 @@ impl GetOrganizationConformancePackDetailedStatusInputBuilder {
     }
     /// <p>The name of organization conformance pack for which you want status details for member accounts.</p>
     pub fn set_organization_conformance_pack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_conformance_pack_name = input;
-        self
+        self.organization_conformance_pack_name = input; self
     }
     /// <p>The name of organization conformance pack for which you want status details for member accounts.</p>
     pub fn get_organization_conformance_pack_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +68,7 @@ impl GetOrganizationConformancePackDetailedStatusInputBuilder {
     }
     /// <p>An <code>OrganizationResourceDetailedStatusFilters</code> object.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::OrganizationResourceDetailedStatusFilters>) -> Self {
-        self.filters = input;
-        self
+        self.filters = input; self
     }
     /// <p>An <code>OrganizationResourceDetailedStatusFilters</code> object.</p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::OrganizationResourceDetailedStatusFilters> {
@@ -84,8 +81,7 @@ impl GetOrganizationConformancePackDetailedStatusInputBuilder {
     }
     /// <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
@@ -98,27 +94,26 @@ impl GetOrganizationConformancePackDetailedStatusInputBuilder {
     }
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetOrganizationConformancePackDetailedStatusInput`](crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusInput {
-                organization_conformance_pack_name: self.organization_conformance_pack_name,
-                filters: self.filters,
-                limit: self.limit,
-                next_token: self.next_token,
-            },
+                organization_conformance_pack_name: self.organization_conformance_pack_name
+                ,
+                filters: self.filters
+                ,
+                limit: self.limit
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

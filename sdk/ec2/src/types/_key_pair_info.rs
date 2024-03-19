@@ -3,7 +3,7 @@
 /// <p>Describes a key pair.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KeyPairInfo {
+pub struct KeyPairInfo  {
     /// <p>The ID of the key pair.</p>
     pub key_pair_id: ::std::option::Option<::std::string::String>,
     /// <p>If you used <code>CreateKeyPair</code> to create the key pair:</p>
@@ -26,16 +26,16 @@ pub struct KeyPairInfo {
     /// <p>The type of key pair.</p>
     pub key_type: ::std::option::Option<crate::types::KeyType>,
     /// <p>Any tags applied to the key pair.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The public key material.</p>
     pub public_key: ::std::option::Option<::std::string::String>,
     /// <p>If you used Amazon EC2 to create the key pair, this is the date and time when the key was created, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time format</a>, in the UTC time zone.</p>
     /// <p>If you imported an existing key pair to Amazon EC2, this is the date and time the key was imported, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time format</a>, in the UTC time zone.</p>
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl KeyPairInfo {
+impl  KeyPairInfo  {
     /// <p>The ID of the key pair.</p>
-    pub fn key_pair_id(&self) -> ::std::option::Option<&str> {
+    pub fn key_pair_id(&self) -> ::std::option::Option<& str> {
         self.key_pair_id.as_deref()
     }
     /// <p>If you used <code>CreateKeyPair</code> to create the key pair:</p>
@@ -52,30 +52,31 @@ impl KeyPairInfo {
     /// <li>
     /// <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p></li>
     /// </ul>
-    pub fn key_fingerprint(&self) -> ::std::option::Option<&str> {
+    pub fn key_fingerprint(&self) -> ::std::option::Option<& str> {
         self.key_fingerprint.as_deref()
     }
     /// <p>The name of the key pair.</p>
-    pub fn key_name(&self) -> ::std::option::Option<&str> {
+    pub fn key_name(&self) -> ::std::option::Option<& str> {
         self.key_name.as_deref()
     }
     /// <p>The type of key pair.</p>
-    pub fn key_type(&self) -> ::std::option::Option<&crate::types::KeyType> {
+    pub fn key_type(&self) -> ::std::option::Option<& crate::types::KeyType> {
         self.key_type.as_ref()
     }
     /// <p>Any tags applied to the key pair.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The public key material.</p>
-    pub fn public_key(&self) -> ::std::option::Option<&str> {
+    pub fn public_key(&self) -> ::std::option::Option<& str> {
         self.public_key.as_deref()
     }
     /// <p>If you used Amazon EC2 to create the key pair, this is the date and time when the key was created, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time format</a>, in the UTC time zone.</p>
     /// <p>If you imported an existing key pair to Amazon EC2, this is the date and time the key was imported, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time format</a>, in the UTC time zone.</p>
-    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
 }
@@ -94,7 +95,7 @@ pub struct KeyPairInfoBuilder {
     pub(crate) key_fingerprint: ::std::option::Option<::std::string::String>,
     pub(crate) key_name: ::std::option::Option<::std::string::String>,
     pub(crate) key_type: ::std::option::Option<crate::types::KeyType>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) public_key: ::std::option::Option<::std::string::String>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -106,8 +107,7 @@ impl KeyPairInfoBuilder {
     }
     /// <p>The ID of the key pair.</p>
     pub fn set_key_pair_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_pair_id = input;
-        self
+        self.key_pair_id = input; self
     }
     /// <p>The ID of the key pair.</p>
     pub fn get_key_pair_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +146,7 @@ impl KeyPairInfoBuilder {
     /// <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p></li>
     /// </ul>
     pub fn set_key_fingerprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_fingerprint = input;
-        self
+        self.key_fingerprint = input; self
     }
     /// <p>If you used <code>CreateKeyPair</code> to create the key pair:</p>
     /// <ul>
@@ -173,8 +172,7 @@ impl KeyPairInfoBuilder {
     }
     /// <p>The name of the key pair.</p>
     pub fn set_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_name = input;
-        self
+        self.key_name = input; self
     }
     /// <p>The name of the key pair.</p>
     pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -187,8 +185,7 @@ impl KeyPairInfoBuilder {
     }
     /// <p>The type of key pair.</p>
     pub fn set_key_type(mut self, input: ::std::option::Option<crate::types::KeyType>) -> Self {
-        self.key_type = input;
-        self
+        self.key_type = input; self
     }
     /// <p>The type of key pair.</p>
     pub fn get_key_type(&self) -> &::std::option::Option<crate::types::KeyType> {
@@ -201,17 +198,16 @@ impl KeyPairInfoBuilder {
     /// <p>Any tags applied to the key pair.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Any tags applied to the key pair.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Any tags applied to the key pair.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The public key material.</p>
@@ -221,8 +217,7 @@ impl KeyPairInfoBuilder {
     }
     /// <p>The public key material.</p>
     pub fn set_public_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.public_key = input;
-        self
+        self.public_key = input; self
     }
     /// <p>The public key material.</p>
     pub fn get_public_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -237,8 +232,7 @@ impl KeyPairInfoBuilder {
     /// <p>If you used Amazon EC2 to create the key pair, this is the date and time when the key was created, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time format</a>, in the UTC time zone.</p>
     /// <p>If you imported an existing key pair to Amazon EC2, this is the date and time the key was imported, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time format</a>, in the UTC time zone.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>If you used Amazon EC2 to create the key pair, this is the date and time when the key was created, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time format</a>, in the UTC time zone.</p>
     /// <p>If you imported an existing key pair to Amazon EC2, this is the date and time the key was imported, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time format</a>, in the UTC time zone.</p>
@@ -248,13 +242,21 @@ impl KeyPairInfoBuilder {
     /// Consumes the builder and constructs a [`KeyPairInfo`](crate::types::KeyPairInfo).
     pub fn build(self) -> crate::types::KeyPairInfo {
         crate::types::KeyPairInfo {
-            key_pair_id: self.key_pair_id,
-            key_fingerprint: self.key_fingerprint,
-            key_name: self.key_name,
-            key_type: self.key_type,
-            tags: self.tags,
-            public_key: self.public_key,
-            create_time: self.create_time,
+            key_pair_id: self.key_pair_id
+            ,
+            key_fingerprint: self.key_fingerprint
+            ,
+            key_name: self.key_name
+            ,
+            key_type: self.key_type
+            ,
+            tags: self.tags
+            ,
+            public_key: self.public_key
+            ,
+            create_time: self.create_time
+            ,
         }
     }
 }
+

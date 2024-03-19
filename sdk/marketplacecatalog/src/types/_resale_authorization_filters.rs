@@ -3,7 +3,7 @@
 /// <p>Object containing all the filter fields for resale authorization entity. Client can add only one wildcard filter and a maximum of 8 filters in a single <code>ListEntities</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResaleAuthorizationFilters {
+pub struct ResaleAuthorizationFilters  {
     /// <p>Allows filtering on the <code>EntityId</code> of a ResaleAuthorization.</p>
     pub entity_id: ::std::option::Option<crate::types::ResaleAuthorizationEntityIdFilter>,
     /// <p>Allows filtering on the <code>Name</code> of a ResaleAuthorization.</p>
@@ -31,57 +31,57 @@ pub struct ResaleAuthorizationFilters {
     /// <p>Allows filtering on the <code>LastModifiedDate</code> of a ResaleAuthorization.</p>
     pub last_modified_date: ::std::option::Option<crate::types::ResaleAuthorizationLastModifiedDateFilter>,
 }
-impl ResaleAuthorizationFilters {
+impl  ResaleAuthorizationFilters  {
     /// <p>Allows filtering on the <code>EntityId</code> of a ResaleAuthorization.</p>
-    pub fn entity_id(&self) -> ::std::option::Option<&crate::types::ResaleAuthorizationEntityIdFilter> {
+    pub fn entity_id(&self) -> ::std::option::Option<& crate::types::ResaleAuthorizationEntityIdFilter> {
         self.entity_id.as_ref()
     }
     /// <p>Allows filtering on the <code>Name</code> of a ResaleAuthorization.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::ResaleAuthorizationNameFilter> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::ResaleAuthorizationNameFilter> {
         self.name.as_ref()
     }
     /// <p>Allows filtering on the <code>ProductId</code> of a ResaleAuthorization.</p>
-    pub fn product_id(&self) -> ::std::option::Option<&crate::types::ResaleAuthorizationProductIdFilter> {
+    pub fn product_id(&self) -> ::std::option::Option<& crate::types::ResaleAuthorizationProductIdFilter> {
         self.product_id.as_ref()
     }
     /// <p>Allows filtering on the <code>CreatedDate</code> of a ResaleAuthorization.</p>
-    pub fn created_date(&self) -> ::std::option::Option<&crate::types::ResaleAuthorizationCreatedDateFilter> {
+    pub fn created_date(&self) -> ::std::option::Option<& crate::types::ResaleAuthorizationCreatedDateFilter> {
         self.created_date.as_ref()
     }
     /// <p>Allows filtering on the <code>AvailabilityEndDate</code> of a ResaleAuthorization.</p>
-    pub fn availability_end_date(&self) -> ::std::option::Option<&crate::types::ResaleAuthorizationAvailabilityEndDateFilter> {
+    pub fn availability_end_date(&self) -> ::std::option::Option<& crate::types::ResaleAuthorizationAvailabilityEndDateFilter> {
         self.availability_end_date.as_ref()
     }
     /// <p>Allows filtering on the <code>ManufacturerAccountId</code> of a ResaleAuthorization.</p>
-    pub fn manufacturer_account_id(&self) -> ::std::option::Option<&crate::types::ResaleAuthorizationManufacturerAccountIdFilter> {
+    pub fn manufacturer_account_id(&self) -> ::std::option::Option<& crate::types::ResaleAuthorizationManufacturerAccountIdFilter> {
         self.manufacturer_account_id.as_ref()
     }
     /// <p>Allows filtering on the <code>ProductName</code> of a ResaleAuthorization.</p>
-    pub fn product_name(&self) -> ::std::option::Option<&crate::types::ResaleAuthorizationProductNameFilter> {
+    pub fn product_name(&self) -> ::std::option::Option<& crate::types::ResaleAuthorizationProductNameFilter> {
         self.product_name.as_ref()
     }
     /// <p>Allows filtering on the <code>ManufacturerLegalName</code> of a ResaleAuthorization.</p>
-    pub fn manufacturer_legal_name(&self) -> ::std::option::Option<&crate::types::ResaleAuthorizationManufacturerLegalNameFilter> {
+    pub fn manufacturer_legal_name(&self) -> ::std::option::Option<& crate::types::ResaleAuthorizationManufacturerLegalNameFilter> {
         self.manufacturer_legal_name.as_ref()
     }
     /// <p>Allows filtering on the <code>ResellerAccountID</code> of a ResaleAuthorization.</p>
-    pub fn reseller_account_id(&self) -> ::std::option::Option<&crate::types::ResaleAuthorizationResellerAccountIdFilter> {
+    pub fn reseller_account_id(&self) -> ::std::option::Option<& crate::types::ResaleAuthorizationResellerAccountIdFilter> {
         self.reseller_account_id.as_ref()
     }
     /// <p>Allows filtering on the <code>ResellerLegalName</code> of a ResaleAuthorization.</p>
-    pub fn reseller_legal_name(&self) -> ::std::option::Option<&crate::types::ResaleAuthorizationResellerLegalNameFilter> {
+    pub fn reseller_legal_name(&self) -> ::std::option::Option<& crate::types::ResaleAuthorizationResellerLegalNameFilter> {
         self.reseller_legal_name.as_ref()
     }
     /// <p>Allows filtering on the <code>Status</code> of a ResaleAuthorization.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ResaleAuthorizationStatusFilter> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ResaleAuthorizationStatusFilter> {
         self.status.as_ref()
     }
     /// <p>Allows filtering on the <code>OfferExtendedStatus</code> of a ResaleAuthorization.</p>
-    pub fn offer_extended_status(&self) -> ::std::option::Option<&crate::types::ResaleAuthorizationOfferExtendedStatusFilter> {
+    pub fn offer_extended_status(&self) -> ::std::option::Option<& crate::types::ResaleAuthorizationOfferExtendedStatusFilter> {
         self.offer_extended_status.as_ref()
     }
     /// <p>Allows filtering on the <code>LastModifiedDate</code> of a ResaleAuthorization.</p>
-    pub fn last_modified_date(&self) -> ::std::option::Option<&crate::types::ResaleAuthorizationLastModifiedDateFilter> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<& crate::types::ResaleAuthorizationLastModifiedDateFilter> {
         self.last_modified_date.as_ref()
     }
 }
@@ -118,8 +118,7 @@ impl ResaleAuthorizationFiltersBuilder {
     }
     /// <p>Allows filtering on the <code>EntityId</code> of a ResaleAuthorization.</p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<crate::types::ResaleAuthorizationEntityIdFilter>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>Allows filtering on the <code>EntityId</code> of a ResaleAuthorization.</p>
     pub fn get_entity_id(&self) -> &::std::option::Option<crate::types::ResaleAuthorizationEntityIdFilter> {
@@ -132,8 +131,7 @@ impl ResaleAuthorizationFiltersBuilder {
     }
     /// <p>Allows filtering on the <code>Name</code> of a ResaleAuthorization.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::ResaleAuthorizationNameFilter>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Allows filtering on the <code>Name</code> of a ResaleAuthorization.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::ResaleAuthorizationNameFilter> {
@@ -146,8 +144,7 @@ impl ResaleAuthorizationFiltersBuilder {
     }
     /// <p>Allows filtering on the <code>ProductId</code> of a ResaleAuthorization.</p>
     pub fn set_product_id(mut self, input: ::std::option::Option<crate::types::ResaleAuthorizationProductIdFilter>) -> Self {
-        self.product_id = input;
-        self
+        self.product_id = input; self
     }
     /// <p>Allows filtering on the <code>ProductId</code> of a ResaleAuthorization.</p>
     pub fn get_product_id(&self) -> &::std::option::Option<crate::types::ResaleAuthorizationProductIdFilter> {
@@ -160,8 +157,7 @@ impl ResaleAuthorizationFiltersBuilder {
     }
     /// <p>Allows filtering on the <code>CreatedDate</code> of a ResaleAuthorization.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<crate::types::ResaleAuthorizationCreatedDateFilter>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>Allows filtering on the <code>CreatedDate</code> of a ResaleAuthorization.</p>
     pub fn get_created_date(&self) -> &::std::option::Option<crate::types::ResaleAuthorizationCreatedDateFilter> {
@@ -174,8 +170,7 @@ impl ResaleAuthorizationFiltersBuilder {
     }
     /// <p>Allows filtering on the <code>AvailabilityEndDate</code> of a ResaleAuthorization.</p>
     pub fn set_availability_end_date(mut self, input: ::std::option::Option<crate::types::ResaleAuthorizationAvailabilityEndDateFilter>) -> Self {
-        self.availability_end_date = input;
-        self
+        self.availability_end_date = input; self
     }
     /// <p>Allows filtering on the <code>AvailabilityEndDate</code> of a ResaleAuthorization.</p>
     pub fn get_availability_end_date(&self) -> &::std::option::Option<crate::types::ResaleAuthorizationAvailabilityEndDateFilter> {
@@ -188,8 +183,7 @@ impl ResaleAuthorizationFiltersBuilder {
     }
     /// <p>Allows filtering on the <code>ManufacturerAccountId</code> of a ResaleAuthorization.</p>
     pub fn set_manufacturer_account_id(mut self, input: ::std::option::Option<crate::types::ResaleAuthorizationManufacturerAccountIdFilter>) -> Self {
-        self.manufacturer_account_id = input;
-        self
+        self.manufacturer_account_id = input; self
     }
     /// <p>Allows filtering on the <code>ManufacturerAccountId</code> of a ResaleAuthorization.</p>
     pub fn get_manufacturer_account_id(&self) -> &::std::option::Option<crate::types::ResaleAuthorizationManufacturerAccountIdFilter> {
@@ -202,8 +196,7 @@ impl ResaleAuthorizationFiltersBuilder {
     }
     /// <p>Allows filtering on the <code>ProductName</code> of a ResaleAuthorization.</p>
     pub fn set_product_name(mut self, input: ::std::option::Option<crate::types::ResaleAuthorizationProductNameFilter>) -> Self {
-        self.product_name = input;
-        self
+        self.product_name = input; self
     }
     /// <p>Allows filtering on the <code>ProductName</code> of a ResaleAuthorization.</p>
     pub fn get_product_name(&self) -> &::std::option::Option<crate::types::ResaleAuthorizationProductNameFilter> {
@@ -216,8 +209,7 @@ impl ResaleAuthorizationFiltersBuilder {
     }
     /// <p>Allows filtering on the <code>ManufacturerLegalName</code> of a ResaleAuthorization.</p>
     pub fn set_manufacturer_legal_name(mut self, input: ::std::option::Option<crate::types::ResaleAuthorizationManufacturerLegalNameFilter>) -> Self {
-        self.manufacturer_legal_name = input;
-        self
+        self.manufacturer_legal_name = input; self
     }
     /// <p>Allows filtering on the <code>ManufacturerLegalName</code> of a ResaleAuthorization.</p>
     pub fn get_manufacturer_legal_name(&self) -> &::std::option::Option<crate::types::ResaleAuthorizationManufacturerLegalNameFilter> {
@@ -230,8 +222,7 @@ impl ResaleAuthorizationFiltersBuilder {
     }
     /// <p>Allows filtering on the <code>ResellerAccountID</code> of a ResaleAuthorization.</p>
     pub fn set_reseller_account_id(mut self, input: ::std::option::Option<crate::types::ResaleAuthorizationResellerAccountIdFilter>) -> Self {
-        self.reseller_account_id = input;
-        self
+        self.reseller_account_id = input; self
     }
     /// <p>Allows filtering on the <code>ResellerAccountID</code> of a ResaleAuthorization.</p>
     pub fn get_reseller_account_id(&self) -> &::std::option::Option<crate::types::ResaleAuthorizationResellerAccountIdFilter> {
@@ -244,8 +235,7 @@ impl ResaleAuthorizationFiltersBuilder {
     }
     /// <p>Allows filtering on the <code>ResellerLegalName</code> of a ResaleAuthorization.</p>
     pub fn set_reseller_legal_name(mut self, input: ::std::option::Option<crate::types::ResaleAuthorizationResellerLegalNameFilter>) -> Self {
-        self.reseller_legal_name = input;
-        self
+        self.reseller_legal_name = input; self
     }
     /// <p>Allows filtering on the <code>ResellerLegalName</code> of a ResaleAuthorization.</p>
     pub fn get_reseller_legal_name(&self) -> &::std::option::Option<crate::types::ResaleAuthorizationResellerLegalNameFilter> {
@@ -258,8 +248,7 @@ impl ResaleAuthorizationFiltersBuilder {
     }
     /// <p>Allows filtering on the <code>Status</code> of a ResaleAuthorization.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResaleAuthorizationStatusFilter>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Allows filtering on the <code>Status</code> of a ResaleAuthorization.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ResaleAuthorizationStatusFilter> {
@@ -272,8 +261,7 @@ impl ResaleAuthorizationFiltersBuilder {
     }
     /// <p>Allows filtering on the <code>OfferExtendedStatus</code> of a ResaleAuthorization.</p>
     pub fn set_offer_extended_status(mut self, input: ::std::option::Option<crate::types::ResaleAuthorizationOfferExtendedStatusFilter>) -> Self {
-        self.offer_extended_status = input;
-        self
+        self.offer_extended_status = input; self
     }
     /// <p>Allows filtering on the <code>OfferExtendedStatus</code> of a ResaleAuthorization.</p>
     pub fn get_offer_extended_status(&self) -> &::std::option::Option<crate::types::ResaleAuthorizationOfferExtendedStatusFilter> {
@@ -286,8 +274,7 @@ impl ResaleAuthorizationFiltersBuilder {
     }
     /// <p>Allows filtering on the <code>LastModifiedDate</code> of a ResaleAuthorization.</p>
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<crate::types::ResaleAuthorizationLastModifiedDateFilter>) -> Self {
-        self.last_modified_date = input;
-        self
+        self.last_modified_date = input; self
     }
     /// <p>Allows filtering on the <code>LastModifiedDate</code> of a ResaleAuthorization.</p>
     pub fn get_last_modified_date(&self) -> &::std::option::Option<crate::types::ResaleAuthorizationLastModifiedDateFilter> {
@@ -296,19 +283,33 @@ impl ResaleAuthorizationFiltersBuilder {
     /// Consumes the builder and constructs a [`ResaleAuthorizationFilters`](crate::types::ResaleAuthorizationFilters).
     pub fn build(self) -> crate::types::ResaleAuthorizationFilters {
         crate::types::ResaleAuthorizationFilters {
-            entity_id: self.entity_id,
-            name: self.name,
-            product_id: self.product_id,
-            created_date: self.created_date,
-            availability_end_date: self.availability_end_date,
-            manufacturer_account_id: self.manufacturer_account_id,
-            product_name: self.product_name,
-            manufacturer_legal_name: self.manufacturer_legal_name,
-            reseller_account_id: self.reseller_account_id,
-            reseller_legal_name: self.reseller_legal_name,
-            status: self.status,
-            offer_extended_status: self.offer_extended_status,
-            last_modified_date: self.last_modified_date,
+            entity_id: self.entity_id
+            ,
+            name: self.name
+            ,
+            product_id: self.product_id
+            ,
+            created_date: self.created_date
+            ,
+            availability_end_date: self.availability_end_date
+            ,
+            manufacturer_account_id: self.manufacturer_account_id
+            ,
+            product_name: self.product_name
+            ,
+            manufacturer_legal_name: self.manufacturer_legal_name
+            ,
+            reseller_account_id: self.reseller_account_id
+            ,
+            reseller_legal_name: self.reseller_legal_name
+            ,
+            status: self.status
+            ,
+            offer_extended_status: self.offer_extended_status
+            ,
+            last_modified_date: self.last_modified_date
+            ,
         }
     }
 }
+

@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchUpdatePhoneNumberInput {
+pub struct BatchUpdatePhoneNumberInput  {
     /// <p>The request containing the phone number IDs and product types or calling names to update.</p>
-    pub update_phone_number_request_items: ::std::option::Option<::std::vec::Vec<crate::types::UpdatePhoneNumberRequestItem>>,
+    pub update_phone_number_request_items: ::std::option::Option<::std::vec::Vec::<crate::types::UpdatePhoneNumberRequestItem>>,
 }
-impl BatchUpdatePhoneNumberInput {
+impl  BatchUpdatePhoneNumberInput  {
     /// <p>The request containing the phone number IDs and product types or calling names to update.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.update_phone_number_request_items.is_none()`.
-    pub fn update_phone_number_request_items(&self) -> &[crate::types::UpdatePhoneNumberRequestItem] {
-        self.update_phone_number_request_items.as_deref().unwrap_or_default()
+    pub fn update_phone_number_request_items(&self) -> & [crate::types::UpdatePhoneNumberRequestItem] {
+        self.update_phone_number_request_items.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchUpdatePhoneNumberInput {
@@ -25,7 +26,7 @@ impl BatchUpdatePhoneNumberInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUpdatePhoneNumberInputBuilder {
-    pub(crate) update_phone_number_request_items: ::std::option::Option<::std::vec::Vec<crate::types::UpdatePhoneNumberRequestItem>>,
+    pub(crate) update_phone_number_request_items: ::std::option::Option<::std::vec::Vec::<crate::types::UpdatePhoneNumberRequestItem>>,
 }
 impl BatchUpdatePhoneNumberInputBuilder {
     /// Appends an item to `update_phone_number_request_items`.
@@ -35,31 +36,26 @@ impl BatchUpdatePhoneNumberInputBuilder {
     /// <p>The request containing the phone number IDs and product types or calling names to update.</p>
     pub fn update_phone_number_request_items(mut self, input: crate::types::UpdatePhoneNumberRequestItem) -> Self {
         let mut v = self.update_phone_number_request_items.unwrap_or_default();
-        v.push(input);
-        self.update_phone_number_request_items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.update_phone_number_request_items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The request containing the phone number IDs and product types or calling names to update.</p>
-    pub fn set_update_phone_number_request_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UpdatePhoneNumberRequestItem>>,
-    ) -> Self {
-        self.update_phone_number_request_items = input;
-        self
+    pub fn set_update_phone_number_request_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UpdatePhoneNumberRequestItem>>) -> Self {
+        self.update_phone_number_request_items = input; self
     }
     /// <p>The request containing the phone number IDs and product types or calling names to update.</p>
-    pub fn get_update_phone_number_request_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdatePhoneNumberRequestItem>> {
+    pub fn get_update_phone_number_request_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UpdatePhoneNumberRequestItem>> {
         &self.update_phone_number_request_items
     }
     /// Consumes the builder and constructs a [`BatchUpdatePhoneNumberInput`](crate::operation::batch_update_phone_number::BatchUpdatePhoneNumberInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_update_phone_number::BatchUpdatePhoneNumberInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_update_phone_number::BatchUpdatePhoneNumberInput {
-            update_phone_number_request_items: self.update_phone_number_request_items,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_update_phone_number::BatchUpdatePhoneNumberInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_update_phone_number::BatchUpdatePhoneNumberInput {
+                update_phone_number_request_items: self.update_phone_number_request_items
+                ,
+            }
+        )
     }
 }
+

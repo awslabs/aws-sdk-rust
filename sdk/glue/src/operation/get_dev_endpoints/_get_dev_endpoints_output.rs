@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDevEndpointsOutput {
+pub struct GetDevEndpointsOutput  {
     /// <p>A list of <code>DevEndpoint</code> definitions.</p>
-    pub dev_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::DevEndpoint>>,
+    pub dev_endpoints: ::std::option::Option<::std::vec::Vec::<crate::types::DevEndpoint>>,
     /// <p>A continuation token, if not all <code>DevEndpoint</code> definitions have yet been returned.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetDevEndpointsOutput {
+impl  GetDevEndpointsOutput  {
     /// <p>A list of <code>DevEndpoint</code> definitions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dev_endpoints.is_none()`.
-    pub fn dev_endpoints(&self) -> &[crate::types::DevEndpoint] {
-        self.dev_endpoints.as_deref().unwrap_or_default()
+    pub fn dev_endpoints(&self) -> & [crate::types::DevEndpoint] {
+        self.dev_endpoints.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A continuation token, if not all <code>DevEndpoint</code> definitions have yet been returned.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDevEndpointsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDevEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`GetDevEndpointsOutput`](crate::operation::get_dev_endpoints::GetDevEndpointsOutput).
     pub fn builder() -> crate::operation::get_dev_endpoints::builders::GetDevEndpointsOutputBuilder {
@@ -37,7 +38,7 @@ impl GetDevEndpointsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDevEndpointsOutputBuilder {
-    pub(crate) dev_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::DevEndpoint>>,
+    pub(crate) dev_endpoints: ::std::option::Option<::std::vec::Vec::<crate::types::DevEndpoint>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl GetDevEndpointsOutputBuilder {
     /// <p>A list of <code>DevEndpoint</code> definitions.</p>
     pub fn dev_endpoints(mut self, input: crate::types::DevEndpoint) -> Self {
         let mut v = self.dev_endpoints.unwrap_or_default();
-        v.push(input);
-        self.dev_endpoints = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.dev_endpoints = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>DevEndpoint</code> definitions.</p>
-    pub fn set_dev_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DevEndpoint>>) -> Self {
-        self.dev_endpoints = input;
-        self
+    pub fn set_dev_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DevEndpoint>>) -> Self {
+        self.dev_endpoints = input; self
     }
     /// <p>A list of <code>DevEndpoint</code> definitions.</p>
-    pub fn get_dev_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DevEndpoint>> {
+    pub fn get_dev_endpoints(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DevEndpoint>> {
         &self.dev_endpoints
     }
     /// <p>A continuation token, if not all <code>DevEndpoint</code> definitions have yet been returned.</p>
@@ -69,28 +69,30 @@ impl GetDevEndpointsOutputBuilder {
     }
     /// <p>A continuation token, if not all <code>DevEndpoint</code> definitions have yet been returned.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A continuation token, if not all <code>DevEndpoint</code> definitions have yet been returned.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDevEndpointsOutput`](crate::operation::get_dev_endpoints::GetDevEndpointsOutput).
     pub fn build(self) -> crate::operation::get_dev_endpoints::GetDevEndpointsOutput {
         crate::operation::get_dev_endpoints::GetDevEndpointsOutput {
-            dev_endpoints: self.dev_endpoints,
-            next_token: self.next_token,
+            dev_endpoints: self.dev_endpoints
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

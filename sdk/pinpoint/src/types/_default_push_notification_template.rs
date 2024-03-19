@@ -3,7 +3,7 @@
 /// <p>Specifies the default settings and content for a message template that can be used in messages that are sent through a push notification channel.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DefaultPushNotificationTemplate {
+pub struct DefaultPushNotificationTemplate  {
     /// <p>The action to occur if a recipient taps a push notification that's based on the message template. Valid values are:</p>
     /// <ul>
     /// <li>
@@ -24,7 +24,7 @@ pub struct DefaultPushNotificationTemplate {
     /// <p>The URL to open in a recipient's default mobile browser, if a recipient taps a push notification that's based on the message template and the value of the Action property is URL.</p>
     pub url: ::std::option::Option<::std::string::String>,
 }
-impl DefaultPushNotificationTemplate {
+impl  DefaultPushNotificationTemplate  {
     /// <p>The action to occur if a recipient taps a push notification that's based on the message template. Valid values are:</p>
     /// <ul>
     /// <li>
@@ -34,24 +34,24 @@ impl DefaultPushNotificationTemplate {
     /// <li>
     /// <p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li>
     /// </ul>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::Action> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::Action> {
         self.action.as_ref()
     }
     /// <p>The message body to use in push notifications that are based on the message template.</p>
-    pub fn body(&self) -> ::std::option::Option<&str> {
+    pub fn body(&self) -> ::std::option::Option<& str> {
         self.body.as_deref()
     }
     /// <p>The sound to play when a recipient receives a push notification that's based on the message template. You can use the default stream or specify the file name of a sound resource that's bundled in your app. On an Android platform, the sound file must reside in /res/raw/.</p>
     /// <p>For an iOS platform, this value is the key for the name of a sound file in your app's main bundle or the Library/Sounds folder in your app's data container. If the sound file can't be found or you specify default for the value, the system plays the default alert sound.</p>
-    pub fn sound(&self) -> ::std::option::Option<&str> {
+    pub fn sound(&self) -> ::std::option::Option<& str> {
         self.sound.as_deref()
     }
     /// <p>The title to use in push notifications that are based on the message template. This title appears above the notification message on a recipient's device.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The URL to open in a recipient's default mobile browser, if a recipient taps a push notification that's based on the message template and the value of the Action property is URL.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
 }
@@ -96,8 +96,7 @@ impl DefaultPushNotificationTemplateBuilder {
     /// <p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li>
     /// </ul>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::Action>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>The action to occur if a recipient taps a push notification that's based on the message template. Valid values are:</p>
     /// <ul>
@@ -118,8 +117,7 @@ impl DefaultPushNotificationTemplateBuilder {
     }
     /// <p>The message body to use in push notifications that are based on the message template.</p>
     pub fn set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.body = input;
-        self
+        self.body = input; self
     }
     /// <p>The message body to use in push notifications that are based on the message template.</p>
     pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +132,7 @@ impl DefaultPushNotificationTemplateBuilder {
     /// <p>The sound to play when a recipient receives a push notification that's based on the message template. You can use the default stream or specify the file name of a sound resource that's bundled in your app. On an Android platform, the sound file must reside in /res/raw/.</p>
     /// <p>For an iOS platform, this value is the key for the name of a sound file in your app's main bundle or the Library/Sounds folder in your app's data container. If the sound file can't be found or you specify default for the value, the system plays the default alert sound.</p>
     pub fn set_sound(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sound = input;
-        self
+        self.sound = input; self
     }
     /// <p>The sound to play when a recipient receives a push notification that's based on the message template. You can use the default stream or specify the file name of a sound resource that's bundled in your app. On an Android platform, the sound file must reside in /res/raw/.</p>
     /// <p>For an iOS platform, this value is the key for the name of a sound file in your app's main bundle or the Library/Sounds folder in your app's data container. If the sound file can't be found or you specify default for the value, the system plays the default alert sound.</p>
@@ -149,8 +146,7 @@ impl DefaultPushNotificationTemplateBuilder {
     }
     /// <p>The title to use in push notifications that are based on the message template. This title appears above the notification message on a recipient's device.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The title to use in push notifications that are based on the message template. This title appears above the notification message on a recipient's device.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,8 +159,7 @@ impl DefaultPushNotificationTemplateBuilder {
     }
     /// <p>The URL to open in a recipient's default mobile browser, if a recipient taps a push notification that's based on the message template and the value of the Action property is URL.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// <p>The URL to open in a recipient's default mobile browser, if a recipient taps a push notification that's based on the message template and the value of the Action property is URL.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,11 +168,17 @@ impl DefaultPushNotificationTemplateBuilder {
     /// Consumes the builder and constructs a [`DefaultPushNotificationTemplate`](crate::types::DefaultPushNotificationTemplate).
     pub fn build(self) -> crate::types::DefaultPushNotificationTemplate {
         crate::types::DefaultPushNotificationTemplate {
-            action: self.action,
-            body: self.body,
-            sound: self.sound,
-            title: self.title,
-            url: self.url,
+            action: self.action
+            ,
+            body: self.body
+            ,
+            sound: self.sound
+            ,
+            title: self.title
+            ,
+            url: self.url
+            ,
         }
     }
 }
+

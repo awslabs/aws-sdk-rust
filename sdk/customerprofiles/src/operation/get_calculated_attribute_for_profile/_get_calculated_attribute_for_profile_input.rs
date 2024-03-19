@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCalculatedAttributeForProfileInput {
+pub struct GetCalculatedAttributeForProfileInput  {
     /// <p>The unique name of the domain.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of a customer profile.</p>
@@ -10,17 +10,17 @@ pub struct GetCalculatedAttributeForProfileInput {
     /// <p>The unique name of the calculated attribute.</p>
     pub calculated_attribute_name: ::std::option::Option<::std::string::String>,
 }
-impl GetCalculatedAttributeForProfileInput {
+impl  GetCalculatedAttributeForProfileInput  {
     /// <p>The unique name of the domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The unique identifier of a customer profile.</p>
-    pub fn profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn profile_id(&self) -> ::std::option::Option<& str> {
         self.profile_id.as_deref()
     }
     /// <p>The unique name of the calculated attribute.</p>
-    pub fn calculated_attribute_name(&self) -> ::std::option::Option<&str> {
+    pub fn calculated_attribute_name(&self) -> ::std::option::Option<& str> {
         self.calculated_attribute_name.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl GetCalculatedAttributeForProfileInputBuilder {
     }
     /// <p>The unique name of the domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The unique name of the domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl GetCalculatedAttributeForProfileInputBuilder {
     }
     /// <p>The unique identifier of a customer profile.</p>
     pub fn set_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_id = input;
-        self
+        self.profile_id = input; self
     }
     /// <p>The unique identifier of a customer profile.</p>
     pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,26 +76,24 @@ impl GetCalculatedAttributeForProfileInputBuilder {
     }
     /// <p>The unique name of the calculated attribute.</p>
     pub fn set_calculated_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.calculated_attribute_name = input;
-        self
+        self.calculated_attribute_name = input; self
     }
     /// <p>The unique name of the calculated attribute.</p>
     pub fn get_calculated_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.calculated_attribute_name
     }
     /// Consumes the builder and constructs a [`GetCalculatedAttributeForProfileInput`](crate::operation::get_calculated_attribute_for_profile::GetCalculatedAttributeForProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_calculated_attribute_for_profile::GetCalculatedAttributeForProfileInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_calculated_attribute_for_profile::GetCalculatedAttributeForProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_calculated_attribute_for_profile::GetCalculatedAttributeForProfileInput {
-                domain_name: self.domain_name,
-                profile_id: self.profile_id,
-                calculated_attribute_name: self.calculated_attribute_name,
-            },
+                domain_name: self.domain_name
+                ,
+                profile_id: self.profile_id
+                ,
+                calculated_attribute_name: self.calculated_attribute_name
+                ,
+            }
         )
     }
 }
+

@@ -3,29 +3,29 @@
 /// <p>A collection of accounts and regions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccountAggregationSource {
+pub struct AccountAggregationSource  {
     /// <p>The 12-digit account ID of the account being aggregated.</p>
-    pub account_ids: ::std::vec::Vec<::std::string::String>,
+    pub account_ids: ::std::vec::Vec::<::std::string::String>,
     /// <p>If true, aggregate existing Config regions and future regions.</p>
     pub all_aws_regions: bool,
     /// <p>The source regions being aggregated.</p>
-    pub aws_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub aws_regions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl AccountAggregationSource {
+impl  AccountAggregationSource  {
     /// <p>The 12-digit account ID of the account being aggregated.</p>
-    pub fn account_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.account_ids.deref()
+    pub fn account_ids(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.account_ids.deref()
     }
     /// <p>If true, aggregate existing Config regions and future regions.</p>
     pub fn all_aws_regions(&self) -> bool {
         self.all_aws_regions
     }
     /// <p>The source regions being aggregated.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aws_regions.is_none()`.
-    pub fn aws_regions(&self) -> &[::std::string::String] {
-        self.aws_regions.as_deref().unwrap_or_default()
+    pub fn aws_regions(&self) -> & [::std::string::String] {
+        self.aws_regions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AccountAggregationSource {
@@ -39,9 +39,9 @@ impl AccountAggregationSource {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountAggregationSourceBuilder {
-    pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) account_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) all_aws_regions: ::std::option::Option<bool>,
-    pub(crate) aws_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) aws_regions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AccountAggregationSourceBuilder {
     /// Appends an item to `account_ids`.
@@ -51,17 +51,16 @@ impl AccountAggregationSourceBuilder {
     /// <p>The 12-digit account ID of the account being aggregated.</p>
     pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
-        v.push(input.into());
-        self.account_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.account_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The 12-digit account ID of the account being aggregated.</p>
-    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.account_ids = input;
-        self
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.account_ids = input; self
     }
     /// <p>The 12-digit account ID of the account being aggregated.</p>
-    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.account_ids
     }
     /// <p>If true, aggregate existing Config regions and future regions.</p>
@@ -71,8 +70,7 @@ impl AccountAggregationSourceBuilder {
     }
     /// <p>If true, aggregate existing Config regions and future regions.</p>
     pub fn set_all_aws_regions(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.all_aws_regions = input;
-        self
+        self.all_aws_regions = input; self
     }
     /// <p>If true, aggregate existing Config regions and future regions.</p>
     pub fn get_all_aws_regions(&self) -> &::std::option::Option<bool> {
@@ -85,32 +83,36 @@ impl AccountAggregationSourceBuilder {
     /// <p>The source regions being aggregated.</p>
     pub fn aws_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.aws_regions.unwrap_or_default();
-        v.push(input.into());
-        self.aws_regions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.aws_regions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The source regions being aggregated.</p>
-    pub fn set_aws_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.aws_regions = input;
-        self
+    pub fn set_aws_regions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.aws_regions = input; self
     }
     /// <p>The source regions being aggregated.</p>
-    pub fn get_aws_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_aws_regions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.aws_regions
     }
     /// Consumes the builder and constructs a [`AccountAggregationSource`](crate::types::AccountAggregationSource).
     /// This method will fail if any of the following fields are not set:
     /// - [`account_ids`](crate::types::builders::AccountAggregationSourceBuilder::account_ids)
     pub fn build(self) -> ::std::result::Result<crate::types::AccountAggregationSource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AccountAggregationSource {
-            account_ids: self.account_ids.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "account_ids",
-                    "account_ids was not specified but it is required when building AccountAggregationSource",
-                )
-            })?,
-            all_aws_regions: self.all_aws_regions.unwrap_or_default(),
-            aws_regions: self.aws_regions,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AccountAggregationSource {
+                account_ids: self.account_ids
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("account_ids", "account_ids was not specified but it is required when building AccountAggregationSource")
+                    )?
+                ,
+                all_aws_regions: self.all_aws_regions
+                    .unwrap_or_default()
+                ,
+                aws_regions: self.aws_regions
+                ,
+            }
+        )
     }
 }
+

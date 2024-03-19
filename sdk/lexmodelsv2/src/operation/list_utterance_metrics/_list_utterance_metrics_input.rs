@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListUtteranceMetricsInput {
+pub struct ListUtteranceMetricsInput  {
     /// <p>The identifier for the bot for which you want to retrieve utterance metrics.</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that marks the beginning of the range of time for which you want to see utterance metrics.</p>
@@ -10,9 +10,9 @@ pub struct ListUtteranceMetricsInput {
     /// <p>The date and time that marks the end of the range of time for which you want to see utterance metrics.</p>
     pub end_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of objects, each of which contains a metric you want to list, the statistic for the metric you want to return, and the method by which to organize the results.</p>
-    pub metrics: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceMetric>>,
+    pub metrics: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsUtteranceMetric>>,
     /// <p>A list of objects, each of which contains specifications for organizing the results by time.</p>
-    pub bin_by: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinBySpecification>>,
+    pub bin_by: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsBinBySpecification>>,
     /// <p>A list of objects, each of which specifies how to group the results. You can group by the following criteria:</p>
     /// <ul>
     /// <li>
@@ -20,45 +20,47 @@ pub struct ListUtteranceMetricsInput {
     /// <li>
     /// <p><code>UtteranceState</code> – The state of the utterance. The possible states are detailed in <a href="https://docs.aws.amazon.com/analytics-key-definitions-utterances">Key definitions</a> in the user guide.</p></li>
     /// </ul>
-    pub group_by: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceGroupBySpecification>>,
+    pub group_by: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsUtteranceGroupBySpecification>>,
     /// <p>A list containing attributes related to the utterance that you want the response to return. The following attributes are possible:</p>
     /// <ul>
     /// <li>
     /// <p><code>LastUsedIntent</code> – The last used intent at the time of the utterance.</p></li>
     /// </ul>
-    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceAttribute>>,
+    pub attributes: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsUtteranceAttribute>>,
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsUtteranceFilter>>,
     /// <p>The maximum number of results to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>If the response from the ListUtteranceMetrics operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>
     /// <p>Use the returned token in the nextToken parameter of a ListUtteranceMetrics request to return the next page of results. For a complete set of results, call the ListUtteranceMetrics operation until the nextToken returned in the response is null.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListUtteranceMetricsInput {
+impl  ListUtteranceMetricsInput  {
     /// <p>The identifier for the bot for which you want to retrieve utterance metrics.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The date and time that marks the beginning of the range of time for which you want to see utterance metrics.</p>
-    pub fn start_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_date_time.as_ref()
     }
     /// <p>The date and time that marks the end of the range of time for which you want to see utterance metrics.</p>
-    pub fn end_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
     }
     /// <p>A list of objects, each of which contains a metric you want to list, the statistic for the metric you want to return, and the method by which to organize the results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
-    pub fn metrics(&self) -> &[crate::types::AnalyticsUtteranceMetric] {
-        self.metrics.as_deref().unwrap_or_default()
+    pub fn metrics(&self) -> & [crate::types::AnalyticsUtteranceMetric] {
+        self.metrics.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of objects, each of which contains specifications for organizing the results by time.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bin_by.is_none()`.
-    pub fn bin_by(&self) -> &[crate::types::AnalyticsBinBySpecification] {
-        self.bin_by.as_deref().unwrap_or_default()
+    pub fn bin_by(&self) -> & [crate::types::AnalyticsBinBySpecification] {
+        self.bin_by.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of objects, each of which specifies how to group the results. You can group by the following criteria:</p>
     /// <ul>
@@ -67,26 +69,29 @@ impl ListUtteranceMetricsInput {
     /// <li>
     /// <p><code>UtteranceState</code> – The state of the utterance. The possible states are detailed in <a href="https://docs.aws.amazon.com/analytics-key-definitions-utterances">Key definitions</a> in the user guide.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_by.is_none()`.
-    pub fn group_by(&self) -> &[crate::types::AnalyticsUtteranceGroupBySpecification] {
-        self.group_by.as_deref().unwrap_or_default()
+    pub fn group_by(&self) -> & [crate::types::AnalyticsUtteranceGroupBySpecification] {
+        self.group_by.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list containing attributes related to the utterance that you want the response to return. The following attributes are possible:</p>
     /// <ul>
     /// <li>
     /// <p><code>LastUsedIntent</code> – The last used intent at the time of the utterance.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
-    pub fn attributes(&self) -> &[crate::types::AnalyticsUtteranceAttribute] {
-        self.attributes.as_deref().unwrap_or_default()
+    pub fn attributes(&self) -> & [crate::types::AnalyticsUtteranceAttribute] {
+        self.attributes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::AnalyticsUtteranceFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::AnalyticsUtteranceFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of results to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -94,7 +99,7 @@ impl ListUtteranceMetricsInput {
     }
     /// <p>If the response from the ListUtteranceMetrics operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>
     /// <p>Use the returned token in the nextToken parameter of a ListUtteranceMetrics request to return the next page of results. For a complete set of results, call the ListUtteranceMetrics operation until the nextToken returned in the response is null.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -112,11 +117,11 @@ pub struct ListUtteranceMetricsInputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) start_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) metrics: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceMetric>>,
-    pub(crate) bin_by: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinBySpecification>>,
-    pub(crate) group_by: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceGroupBySpecification>>,
-    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceAttribute>>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceFilter>>,
+    pub(crate) metrics: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsUtteranceMetric>>,
+    pub(crate) bin_by: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsBinBySpecification>>,
+    pub(crate) group_by: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsUtteranceGroupBySpecification>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsUtteranceAttribute>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsUtteranceFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -129,8 +134,7 @@ impl ListUtteranceMetricsInputBuilder {
     }
     /// <p>The identifier for the bot for which you want to retrieve utterance metrics.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The identifier for the bot for which you want to retrieve utterance metrics.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,8 +148,7 @@ impl ListUtteranceMetricsInputBuilder {
     }
     /// <p>The date and time that marks the beginning of the range of time for which you want to see utterance metrics.</p>
     pub fn set_start_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_date_time = input;
-        self
+        self.start_date_time = input; self
     }
     /// <p>The date and time that marks the beginning of the range of time for which you want to see utterance metrics.</p>
     pub fn get_start_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -159,8 +162,7 @@ impl ListUtteranceMetricsInputBuilder {
     }
     /// <p>The date and time that marks the end of the range of time for which you want to see utterance metrics.</p>
     pub fn set_end_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_date_time = input;
-        self
+        self.end_date_time = input; self
     }
     /// <p>The date and time that marks the end of the range of time for which you want to see utterance metrics.</p>
     pub fn get_end_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -173,17 +175,16 @@ impl ListUtteranceMetricsInputBuilder {
     /// <p>A list of objects, each of which contains a metric you want to list, the statistic for the metric you want to return, and the method by which to organize the results.</p>
     pub fn metrics(mut self, input: crate::types::AnalyticsUtteranceMetric) -> Self {
         let mut v = self.metrics.unwrap_or_default();
-        v.push(input);
-        self.metrics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.metrics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of objects, each of which contains a metric you want to list, the statistic for the metric you want to return, and the method by which to organize the results.</p>
-    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceMetric>>) -> Self {
-        self.metrics = input;
-        self
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsUtteranceMetric>>) -> Self {
+        self.metrics = input; self
     }
     /// <p>A list of objects, each of which contains a metric you want to list, the statistic for the metric you want to return, and the method by which to organize the results.</p>
-    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceMetric>> {
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsUtteranceMetric>> {
         &self.metrics
     }
     /// Appends an item to `bin_by`.
@@ -193,17 +194,16 @@ impl ListUtteranceMetricsInputBuilder {
     /// <p>A list of objects, each of which contains specifications for organizing the results by time.</p>
     pub fn bin_by(mut self, input: crate::types::AnalyticsBinBySpecification) -> Self {
         let mut v = self.bin_by.unwrap_or_default();
-        v.push(input);
-        self.bin_by = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.bin_by = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of objects, each of which contains specifications for organizing the results by time.</p>
-    pub fn set_bin_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinBySpecification>>) -> Self {
-        self.bin_by = input;
-        self
+    pub fn set_bin_by(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsBinBySpecification>>) -> Self {
+        self.bin_by = input; self
     }
     /// <p>A list of objects, each of which contains specifications for organizing the results by time.</p>
-    pub fn get_bin_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinBySpecification>> {
+    pub fn get_bin_by(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsBinBySpecification>> {
         &self.bin_by
     }
     /// Appends an item to `group_by`.
@@ -219,9 +219,9 @@ impl ListUtteranceMetricsInputBuilder {
     /// </ul>
     pub fn group_by(mut self, input: crate::types::AnalyticsUtteranceGroupBySpecification) -> Self {
         let mut v = self.group_by.unwrap_or_default();
-        v.push(input);
-        self.group_by = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.group_by = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of objects, each of which specifies how to group the results. You can group by the following criteria:</p>
     /// <ul>
@@ -230,9 +230,8 @@ impl ListUtteranceMetricsInputBuilder {
     /// <li>
     /// <p><code>UtteranceState</code> – The state of the utterance. The possible states are detailed in <a href="https://docs.aws.amazon.com/analytics-key-definitions-utterances">Key definitions</a> in the user guide.</p></li>
     /// </ul>
-    pub fn set_group_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceGroupBySpecification>>) -> Self {
-        self.group_by = input;
-        self
+    pub fn set_group_by(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsUtteranceGroupBySpecification>>) -> Self {
+        self.group_by = input; self
     }
     /// <p>A list of objects, each of which specifies how to group the results. You can group by the following criteria:</p>
     /// <ul>
@@ -241,7 +240,7 @@ impl ListUtteranceMetricsInputBuilder {
     /// <li>
     /// <p><code>UtteranceState</code> – The state of the utterance. The possible states are detailed in <a href="https://docs.aws.amazon.com/analytics-key-definitions-utterances">Key definitions</a> in the user guide.</p></li>
     /// </ul>
-    pub fn get_group_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceGroupBySpecification>> {
+    pub fn get_group_by(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsUtteranceGroupBySpecification>> {
         &self.group_by
     }
     /// Appends an item to `attributes`.
@@ -255,25 +254,24 @@ impl ListUtteranceMetricsInputBuilder {
     /// </ul>
     pub fn attributes(mut self, input: crate::types::AnalyticsUtteranceAttribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list containing attributes related to the utterance that you want the response to return. The following attributes are possible:</p>
     /// <ul>
     /// <li>
     /// <p><code>LastUsedIntent</code> – The last used intent at the time of the utterance.</p></li>
     /// </ul>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceAttribute>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsUtteranceAttribute>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>A list containing attributes related to the utterance that you want the response to return. The following attributes are possible:</p>
     /// <ul>
     /// <li>
     /// <p><code>LastUsedIntent</code> – The last used intent at the time of the utterance.</p></li>
     /// </ul>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceAttribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsUtteranceAttribute>> {
         &self.attributes
     }
     /// Appends an item to `filters`.
@@ -283,17 +281,16 @@ impl ListUtteranceMetricsInputBuilder {
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
     pub fn filters(mut self, input: crate::types::AnalyticsUtteranceFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsUtteranceFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsUtteranceFilter>> {
         &self.filters
     }
     /// <p>The maximum number of results to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.</p>
@@ -303,8 +300,7 @@ impl ListUtteranceMetricsInputBuilder {
     }
     /// <p>The maximum number of results to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -319,8 +315,7 @@ impl ListUtteranceMetricsInputBuilder {
     /// <p>If the response from the ListUtteranceMetrics operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>
     /// <p>Use the returned token in the nextToken parameter of a ListUtteranceMetrics request to return the next page of results. For a complete set of results, call the ListUtteranceMetrics operation until the nextToken returned in the response is null.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the response from the ListUtteranceMetrics operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>
     /// <p>Use the returned token in the nextToken parameter of a ListUtteranceMetrics request to return the next page of results. For a complete set of results, call the ListUtteranceMetrics operation until the nextToken returned in the response is null.</p>
@@ -328,21 +323,31 @@ impl ListUtteranceMetricsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListUtteranceMetricsInput`](crate::operation::list_utterance_metrics::ListUtteranceMetricsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_utterance_metrics::ListUtteranceMetricsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_utterance_metrics::ListUtteranceMetricsInput {
-            bot_id: self.bot_id,
-            start_date_time: self.start_date_time,
-            end_date_time: self.end_date_time,
-            metrics: self.metrics,
-            bin_by: self.bin_by,
-            group_by: self.group_by,
-            attributes: self.attributes,
-            filters: self.filters,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_utterance_metrics::ListUtteranceMetricsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_utterance_metrics::ListUtteranceMetricsInput {
+                bot_id: self.bot_id
+                ,
+                start_date_time: self.start_date_time
+                ,
+                end_date_time: self.end_date_time
+                ,
+                metrics: self.metrics
+                ,
+                bin_by: self.bin_by
+                ,
+                group_by: self.group_by
+                ,
+                attributes: self.attributes
+                ,
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

@@ -10,7 +10,9 @@ use aws_smithy_async::future::BoxFuture;
 use aws_smithy_async::rt::sleep::{AsyncSleep, SharedAsyncSleep};
 use aws_smithy_async::time::SharedTimeSource;
 use aws_smithy_runtime_api::box_error::BoxError;
-use aws_smithy_runtime_api::client::endpoint::{EndpointFuture, EndpointResolverParams, ResolveEndpoint};
+use aws_smithy_runtime_api::client::endpoint::{
+    EndpointFuture, EndpointResolverParams, ResolveEndpoint,
+};
 use aws_smithy_types::endpoint::Endpoint;
 use std::fmt::{Debug, Formatter};
 use std::future::Future;
@@ -63,7 +65,13 @@ impl ReloadEndpoint {
     }
 
     async fn reload_increment(&self, now: SystemTime) {
-        let should_reload = self.endpoint.lock().unwrap().as_ref().map(|e| e.is_expired(now)).unwrap_or(true);
+        let should_reload = self
+            .endpoint
+            .lock()
+            .unwrap()
+            .as_ref()
+            .map(|e| e.is_expired(now))
+            .unwrap_or(true);
         if should_reload {
             tracing::debug!("reloading endpoint, previous endpoint was expired");
             self.reload_once().await;
@@ -136,10 +144,16 @@ where
 impl EndpointCache {
     fn resolve_endpoint(&self) -> EndpointFuture<'_> {
         tracing::trace!("resolving endpoint from endpoint discovery cache");
-        let ep = self.endpoint.lock().unwrap().as_ref().map(|e| e.endpoint.clone()).ok_or_else(|| {
-            let error: Option<BoxError> = self.error.lock().unwrap().take();
-            error.unwrap_or_else(|| "Failed to resolve endpoint".into())
-        });
+        let ep = self
+            .endpoint
+            .lock()
+            .unwrap()
+            .as_ref()
+            .map(|e| e.endpoint.clone())
+            .ok_or_else(|| {
+                let error: Option<BoxError> = self.error.lock().unwrap().take();
+                error.unwrap_or_else(|| "Failed to resolve endpoint".into())
+            });
         EndpointFuture::ready(ep)
     }
 }
@@ -164,7 +178,12 @@ mod test {
     #[allow(unused_must_use)]
     async fn check_traits() {
         let (cache, reloader) = create_cache(
-            || async { Ok((Endpoint::builder().url("http://foo.com").build(), SystemTimeSource::new().now())) },
+            || async {
+                Ok((
+                    Endpoint::builder().url("http://foo.com").build(),
+                    SystemTimeSource::new().now(),
+                ))
+            },
             SharedAsyncSleep::new(TokioSleep::new()),
             SharedTimeSource::new(SystemTimeSource::new()),
         )
@@ -182,20 +201,38 @@ mod test {
             move || {
                 let shared_ct = ct.clone();
                 shared_ct.fetch_add(1, Ordering::AcqRel);
-                async move { Ok((Endpoint::builder().url(format!("http://foo.com/{shared_ct:?}")).build(), expiry)) }
+                async move {
+                    Ok((
+                        Endpoint::builder()
+                            .url(format!("http://foo.com/{shared_ct:?}"))
+                            .build(),
+                        expiry,
+                    ))
+                }
             },
             SharedAsyncSleep::new(TokioSleep::new()),
             SharedTimeSource::new(SystemTimeSource::new()),
         )
         .await
         .expect("returns an endpoint");
-        assert_eq!(cache.resolve_endpoint().await.expect("ok").url(), "http://foo.com/1");
+        assert_eq!(
+            cache.resolve_endpoint().await.expect("ok").url(),
+            "http://foo.com/1"
+        );
         // 120 second buffer
-        reloader.reload_increment(expiry - Duration::from_secs(240)).await;
-        assert_eq!(cache.resolve_endpoint().await.expect("ok").url(), "http://foo.com/1");
+        reloader
+            .reload_increment(expiry - Duration::from_secs(240))
+            .await;
+        assert_eq!(
+            cache.resolve_endpoint().await.expect("ok").url(),
+            "http://foo.com/1"
+        );
 
         reloader.reload_increment(expiry).await;
-        assert_eq!(cache.resolve_endpoint().await.expect("ok").url(), "http://foo.com/2");
+        assert_eq!(
+            cache.resolve_endpoint().await.expect("ok").url(),
+            "http://foo.com/2"
+        );
     }
 
     #[tokio::test]
@@ -208,7 +245,14 @@ mod test {
             move || {
                 let shared_ct = ct.clone();
                 shared_ct.fetch_add(1, Ordering::AcqRel);
-                async move { Ok((Endpoint::builder().url(format!("http://foo.com/{shared_ct:?}")).build(), expiry)) }
+                async move {
+                    Ok((
+                        Endpoint::builder()
+                            .url(format!("http://foo.com/{shared_ct:?}"))
+                            .build(),
+                        expiry,
+                    ))
+                }
             },
             SharedAsyncSleep::new(sleep.clone()),
             SharedTimeSource::new(time.clone()),
@@ -219,19 +263,31 @@ mod test {
         assert!(!reload_task.is_finished());
         // expiry occurs after 2 sleeps
         // t = 0
-        assert_eq!(gate.expect_sleep().await.duration(), Duration::from_secs(60));
-        assert_eq!(cache.resolve_endpoint().await.unwrap().url(), "http://foo.com/1");
+        assert_eq!(
+            gate.expect_sleep().await.duration(),
+            Duration::from_secs(60)
+        );
+        assert_eq!(
+            cache.resolve_endpoint().await.unwrap().url(),
+            "http://foo.com/1"
+        );
         // t = 60
 
         let sleep = gate.expect_sleep().await;
         // we're still holding the drop guard, so we haven't expired yet.
-        assert_eq!(cache.resolve_endpoint().await.unwrap().url(), "http://foo.com/1");
+        assert_eq!(
+            cache.resolve_endpoint().await.unwrap().url(),
+            "http://foo.com/1"
+        );
         assert_eq!(sleep.duration(), Duration::from_secs(60));
         sleep.allow_progress();
         // t = 120
 
         let sleep = gate.expect_sleep().await;
-        assert_eq!(cache.resolve_endpoint().await.unwrap().url(), "http://foo.com/2");
+        assert_eq!(
+            cache.resolve_endpoint().await.unwrap().url(),
+            "http://foo.com/2"
+        );
         sleep.allow_progress();
 
         let sleep = gate.expect_sleep().await;
@@ -244,3 +300,4 @@ mod test {
             .expect("finishes");
     }
 }
+

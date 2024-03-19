@@ -13,7 +13,7 @@
 /// <p>CloudFront sends a request when it can't find an object in its cache that matches the request. If you want to send values to the origin and also include them in the cache key, use <code>CachePolicy</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OriginRequestPolicy {
+pub struct OriginRequestPolicy  {
     /// <p>The unique identifier for the origin request policy.</p>
     pub id: ::std::string::String,
     /// <p>The date and time when the origin request policy was last modified.</p>
@@ -21,18 +21,17 @@ pub struct OriginRequestPolicy {
     /// <p>The origin request policy configuration.</p>
     pub origin_request_policy_config: ::std::option::Option<crate::types::OriginRequestPolicyConfig>,
 }
-impl OriginRequestPolicy {
+impl  OriginRequestPolicy  {
     /// <p>The unique identifier for the origin request policy.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The date and time when the origin request policy was last modified.</p>
-    pub fn last_modified_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_modified_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_modified_time
     }
     /// <p>The origin request policy configuration.</p>
-    pub fn origin_request_policy_config(&self) -> ::std::option::Option<&crate::types::OriginRequestPolicyConfig> {
+    pub fn origin_request_policy_config(&self) -> ::std::option::Option<& crate::types::OriginRequestPolicyConfig> {
         self.origin_request_policy_config.as_ref()
     }
 }
@@ -60,8 +59,7 @@ impl OriginRequestPolicyBuilder {
     }
     /// <p>The unique identifier for the origin request policy.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier for the origin request policy.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +73,7 @@ impl OriginRequestPolicyBuilder {
     }
     /// <p>The date and time when the origin request policy was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The date and time when the origin request policy was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -90,8 +87,7 @@ impl OriginRequestPolicyBuilder {
     }
     /// <p>The origin request policy configuration.</p>
     pub fn set_origin_request_policy_config(mut self, input: ::std::option::Option<crate::types::OriginRequestPolicyConfig>) -> Self {
-        self.origin_request_policy_config = input;
-        self
+        self.origin_request_policy_config = input; self
     }
     /// <p>The origin request policy configuration.</p>
     pub fn get_origin_request_policy_config(&self) -> &::std::option::Option<crate::types::OriginRequestPolicyConfig> {
@@ -102,20 +98,22 @@ impl OriginRequestPolicyBuilder {
     /// - [`id`](crate::types::builders::OriginRequestPolicyBuilder::id)
     /// - [`last_modified_time`](crate::types::builders::OriginRequestPolicyBuilder::last_modified_time)
     pub fn build(self) -> ::std::result::Result<crate::types::OriginRequestPolicy, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OriginRequestPolicy {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building OriginRequestPolicy",
-                )
-            })?,
-            last_modified_time: self.last_modified_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_modified_time",
-                    "last_modified_time was not specified but it is required when building OriginRequestPolicy",
-                )
-            })?,
-            origin_request_policy_config: self.origin_request_policy_config,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OriginRequestPolicy {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building OriginRequestPolicy")
+                    )?
+                ,
+                last_modified_time: self.last_modified_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_modified_time", "last_modified_time was not specified but it is required when building OriginRequestPolicy")
+                    )?
+                ,
+                origin_request_policy_config: self.origin_request_policy_config
+                ,
+            }
+        )
     }
 }
+

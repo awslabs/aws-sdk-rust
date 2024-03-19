@@ -3,19 +3,19 @@
 /// <p>Describes an IAM instance profile for a Scheduled Instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScheduledInstancesIamInstanceProfile {
+pub struct ScheduledInstancesIamInstanceProfile  {
     /// <p>The Amazon Resource Name (ARN).</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl ScheduledInstancesIamInstanceProfile {
+impl  ScheduledInstancesIamInstanceProfile  {
     /// <p>The Amazon Resource Name (ARN).</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ScheduledInstancesIamInstanceProfileBuilder {
     }
     /// <p>The Amazon Resource Name (ARN).</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN).</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ScheduledInstancesIamInstanceProfileBuilder {
     }
     /// <p>The name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ScheduledInstancesIamInstanceProfileBuilder {
     /// Consumes the builder and constructs a [`ScheduledInstancesIamInstanceProfile`](crate::types::ScheduledInstancesIamInstanceProfile).
     pub fn build(self) -> crate::types::ScheduledInstancesIamInstanceProfile {
         crate::types::ScheduledInstancesIamInstanceProfile {
-            arn: self.arn,
-            name: self.name,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
         }
     }
 }
+

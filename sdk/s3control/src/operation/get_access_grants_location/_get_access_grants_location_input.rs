@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAccessGrantsLocationInput {
+pub struct GetAccessGrantsLocationInput  {
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the registered location that you are retrieving. S3 Access Grants assigns this ID when you register the location. S3 Access Grants assigns the ID <code>default</code> to the default location <code>s3://</code> and assigns an auto-generated ID to other locations that you register.</p>
     pub access_grants_location_id: ::std::option::Option<::std::string::String>,
 }
-impl GetAccessGrantsLocationInput {
+impl  GetAccessGrantsLocationInput  {
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The ID of the registered location that you are retrieving. S3 Access Grants assigns this ID when you register the location. S3 Access Grants assigns the ID <code>default</code> to the default location <code>s3://</code> and assigns an auto-generated ID to other locations that you register.</p>
-    pub fn access_grants_location_id(&self) -> ::std::option::Option<&str> {
+    pub fn access_grants_location_id(&self) -> ::std::option::Option<& str> {
         self.access_grants_location_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetAccessGrantsLocationInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl GetAccessGrantsLocationInputBuilder {
     }
     /// <p>The ID of the registered location that you are retrieving. S3 Access Grants assigns this ID when you register the location. S3 Access Grants assigns the ID <code>default</code> to the default location <code>s3://</code> and assigns an auto-generated ID to other locations that you register.</p>
     pub fn set_access_grants_location_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_grants_location_id = input;
-        self
+        self.access_grants_location_id = input; self
     }
     /// <p>The ID of the registered location that you are retrieving. S3 Access Grants assigns this ID when you register the location. S3 Access Grants assigns the ID <code>default</code> to the default location <code>s3://</code> and assigns an auto-generated ID to other locations that you register.</p>
     pub fn get_access_grants_location_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_grants_location_id
     }
     /// Consumes the builder and constructs a [`GetAccessGrantsLocationInput`](crate::operation::get_access_grants_location::GetAccessGrantsLocationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_access_grants_location::GetAccessGrantsLocationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_access_grants_location::GetAccessGrantsLocationInput {
-            account_id: self.account_id,
-            access_grants_location_id: self.access_grants_location_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_access_grants_location::GetAccessGrantsLocationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_access_grants_location::GetAccessGrantsLocationInput {
+                account_id: self.account_id
+                ,
+                access_grants_location_id: self.access_grants_location_id
+                ,
+            }
+        )
     }
 }
+

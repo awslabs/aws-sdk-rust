@@ -3,19 +3,19 @@
 /// <p>Container for the parameters to the <code><code>UpdateDomainEndpointOptions</code></code> operation. Specifies the name of the domain you want to update and the domain endpoint options.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDomainEndpointOptionsInput {
+pub struct UpdateDomainEndpointOptionsInput  {
     /// <p>A string that represents the name of a domain.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>Whether to require that all requests to the domain arrive over HTTPS. We recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility with older clients, the default is Policy-Min-TLS-1-0-2019-07.</p>
     pub domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptions>,
 }
-impl UpdateDomainEndpointOptionsInput {
+impl  UpdateDomainEndpointOptionsInput  {
     /// <p>A string that represents the name of a domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>Whether to require that all requests to the domain arrive over HTTPS. We recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility with older clients, the default is Policy-Min-TLS-1-0-2019-07.</p>
-    pub fn domain_endpoint_options(&self) -> ::std::option::Option<&crate::types::DomainEndpointOptions> {
+    pub fn domain_endpoint_options(&self) -> ::std::option::Option<& crate::types::DomainEndpointOptions> {
         self.domain_endpoint_options.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl UpdateDomainEndpointOptionsInputBuilder {
     }
     /// <p>A string that represents the name of a domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>A string that represents the name of a domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,23 +56,22 @@ impl UpdateDomainEndpointOptionsInputBuilder {
     }
     /// <p>Whether to require that all requests to the domain arrive over HTTPS. We recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility with older clients, the default is Policy-Min-TLS-1-0-2019-07.</p>
     pub fn set_domain_endpoint_options(mut self, input: ::std::option::Option<crate::types::DomainEndpointOptions>) -> Self {
-        self.domain_endpoint_options = input;
-        self
+        self.domain_endpoint_options = input; self
     }
     /// <p>Whether to require that all requests to the domain arrive over HTTPS. We recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility with older clients, the default is Policy-Min-TLS-1-0-2019-07.</p>
     pub fn get_domain_endpoint_options(&self) -> &::std::option::Option<crate::types::DomainEndpointOptions> {
         &self.domain_endpoint_options
     }
     /// Consumes the builder and constructs a [`UpdateDomainEndpointOptionsInput`](crate::operation::update_domain_endpoint_options::UpdateDomainEndpointOptionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_domain_endpoint_options::UpdateDomainEndpointOptionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_domain_endpoint_options::UpdateDomainEndpointOptionsInput {
-            domain_name: self.domain_name,
-            domain_endpoint_options: self.domain_endpoint_options,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_domain_endpoint_options::UpdateDomainEndpointOptionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_domain_endpoint_options::UpdateDomainEndpointOptionsInput {
+                domain_name: self.domain_name
+                ,
+                domain_endpoint_options: self.domain_endpoint_options
+                ,
+            }
+        )
     }
 }
+

@@ -5,23 +5,20 @@ pub use crate::operation::schedule_key_deletion::_schedule_key_deletion_input::S
 
 impl ScheduleKeyDeletionInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::schedule_key_deletion::ScheduleKeyDeletionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::schedule_key_deletion::ScheduleKeyDeletionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.schedule_key_deletion();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::schedule_key_deletion::ScheduleKeyDeletionOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::schedule_key_deletion::ScheduleKeyDeletionError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.schedule_key_deletion();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ScheduleKeyDeletion`.
-///
+/// 
 /// <p>Schedules the deletion of a KMS key. By default, KMS applies a waiting period of 30 days, but you can specify a waiting period of 7-30 days. When this operation is successful, the key state of the KMS key changes to <code>PendingDeletion</code> and the key can't be used in any cryptographic operations. It remains in this state for the duration of the waiting period. Before the waiting period ends, you can use <code>CancelKeyDeletion</code> to cancel the deletion of the KMS key. After the waiting period ends, KMS deletes the KMS key, its key material, and all KMS data associated with it, including all aliases that refer to it.</p><important>
 /// <p>Deleting a KMS key is a destructive and potentially dangerous operation. When a KMS key is deleted, all data that was encrypted under the KMS key is unrecoverable. (The only exception is a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-delete.html">multi-Region replica key</a>, or an <a href="kms/latest/developerguide/importing-keys-managing.html#import-delete-key">asymmetric or HMAC KMS key with imported key material</a>.) To prevent the use of a KMS key without deleting it, use <code>DisableKey</code>.</p>
 /// </important>
@@ -42,33 +39,32 @@ impl ScheduleKeyDeletionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ScheduleKeyDeletionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::schedule_key_deletion::builders::ScheduleKeyDeletionInputBuilder,
+                    inner: crate::operation::schedule_key_deletion::builders::ScheduleKeyDeletionInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::schedule_key_deletion::ScheduleKeyDeletionOutput,
-        crate::operation::schedule_key_deletion::ScheduleKeyDeletionError,
-    > for ScheduleKeyDeletionFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::schedule_key_deletion::ScheduleKeyDeletionOutput,
-            crate::operation::schedule_key_deletion::ScheduleKeyDeletionError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::schedule_key_deletion::ScheduleKeyDeletionOutput,
+                    crate::operation::schedule_key_deletion::ScheduleKeyDeletionError,
+                > for ScheduleKeyDeletionFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::schedule_key_deletion::ScheduleKeyDeletionOutput,
+                        crate::operation::schedule_key_deletion::ScheduleKeyDeletionError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ScheduleKeyDeletionFluentBuilder {
     /// Creates a new `ScheduleKeyDeletion`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -77,53 +73,44 @@ impl ScheduleKeyDeletionFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::schedule_key_deletion::ScheduleKeyDeletionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::schedule_key_deletion::ScheduleKeyDeletionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::schedule_key_deletion::ScheduleKeyDeletion::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::schedule_key_deletion::ScheduleKeyDeletion::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::schedule_key_deletion::ScheduleKeyDeletionOutput,
-        crate::operation::schedule_key_deletion::ScheduleKeyDeletionError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::schedule_key_deletion::ScheduleKeyDeletionOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::schedule_key_deletion::ScheduleKeyDeletionError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::schedule_key_deletion::ScheduleKeyDeletion::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::schedule_key_deletion::ScheduleKeyDeletion::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::schedule_key_deletion::ScheduleKeyDeletionOutput, crate::operation::schedule_key_deletion::ScheduleKeyDeletionError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The unique identifier of the KMS key to delete.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
@@ -186,3 +173,4 @@ impl ScheduleKeyDeletionFluentBuilder {
         self.inner.get_pending_window_in_days()
     }
 }
+

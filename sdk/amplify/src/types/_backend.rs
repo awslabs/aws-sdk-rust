@@ -3,13 +3,13 @@
 /// <p>Describes the backend properties associated with an Amplify <code>Branch</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Backend {
+pub struct Backend  {
     /// <p>The Amazon Resource Name (ARN) for the CloudFormation stack.</p>
     pub stack_arn: ::std::option::Option<::std::string::String>,
 }
-impl Backend {
+impl  Backend  {
     /// <p>The Amazon Resource Name (ARN) for the CloudFormation stack.</p>
-    pub fn stack_arn(&self) -> ::std::option::Option<&str> {
+    pub fn stack_arn(&self) -> ::std::option::Option<& str> {
         self.stack_arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl BackendBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the CloudFormation stack.</p>
     pub fn set_stack_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_arn = input;
-        self
+        self.stack_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the CloudFormation stack.</p>
     pub fn get_stack_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl BackendBuilder {
     }
     /// Consumes the builder and constructs a [`Backend`](crate::types::Backend).
     pub fn build(self) -> crate::types::Backend {
-        crate::types::Backend { stack_arn: self.stack_arn }
+        crate::types::Backend {
+            stack_arn: self.stack_arn
+            ,
+        }
     }
 }
+

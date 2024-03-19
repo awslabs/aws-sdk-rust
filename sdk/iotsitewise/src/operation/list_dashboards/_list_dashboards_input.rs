@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDashboardsInput {
+pub struct ListDashboardsInput  {
     /// <p>The ID of the project.</p>
     pub project_id: ::std::option::Option<::std::string::String>,
     /// <p>The token to be used for the next set of paginated results.</p>
@@ -11,13 +11,13 @@ pub struct ListDashboardsInput {
     /// <p>Default: 50</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListDashboardsInput {
+impl  ListDashboardsInput  {
     /// <p>The ID of the project.</p>
-    pub fn project_id(&self) -> ::std::option::Option<&str> {
+    pub fn project_id(&self) -> ::std::option::Option<& str> {
         self.project_id.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return for each paginated request.</p>
@@ -50,8 +50,7 @@ impl ListDashboardsInputBuilder {
     }
     /// <p>The ID of the project.</p>
     pub fn set_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_id = input;
-        self
+        self.project_id = input; self
     }
     /// <p>The ID of the project.</p>
     pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl ListDashboardsInputBuilder {
     }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +78,7 @@ impl ListDashboardsInputBuilder {
     /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
@@ -89,13 +86,17 @@ impl ListDashboardsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListDashboardsInput`](crate::operation::list_dashboards::ListDashboardsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_dashboards::ListDashboardsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_dashboards::ListDashboardsInput {
-            project_id: self.project_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_dashboards::ListDashboardsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_dashboards::ListDashboardsInput {
+                project_id: self.project_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

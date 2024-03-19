@@ -3,13 +3,13 @@
 /// <p>The default conference provider that is used if no other scheduled meetings are detected.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConferencePreference {
+pub struct ConferencePreference  {
     /// <p>The ARN of the default conference provider.</p>
     pub default_conference_provider_arn: ::std::option::Option<::std::string::String>,
 }
-impl ConferencePreference {
+impl  ConferencePreference  {
     /// <p>The ARN of the default conference provider.</p>
-    pub fn default_conference_provider_arn(&self) -> ::std::option::Option<&str> {
+    pub fn default_conference_provider_arn(&self) -> ::std::option::Option<& str> {
         self.default_conference_provider_arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl ConferencePreferenceBuilder {
     }
     /// <p>The ARN of the default conference provider.</p>
     pub fn set_default_conference_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_conference_provider_arn = input;
-        self
+        self.default_conference_provider_arn = input; self
     }
     /// <p>The ARN of the default conference provider.</p>
     pub fn get_default_conference_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl ConferencePreferenceBuilder {
     /// Consumes the builder and constructs a [`ConferencePreference`](crate::types::ConferencePreference).
     pub fn build(self) -> crate::types::ConferencePreference {
         crate::types::ConferencePreference {
-            default_conference_provider_arn: self.default_conference_provider_arn,
+            default_conference_provider_arn: self.default_conference_provider_arn
+            ,
         }
     }
 }
+

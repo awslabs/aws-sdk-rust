@@ -3,19 +3,19 @@
 /// Static Key Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StaticKeySettings {
+pub struct StaticKeySettings  {
     /// The URL of the license server used for protecting content.
     pub key_provider_server: ::std::option::Option<crate::types::InputLocation>,
     /// Static key value as a 32 character hexadecimal string.
     pub static_key_value: ::std::option::Option<::std::string::String>,
 }
-impl StaticKeySettings {
+impl  StaticKeySettings  {
     /// The URL of the license server used for protecting content.
-    pub fn key_provider_server(&self) -> ::std::option::Option<&crate::types::InputLocation> {
+    pub fn key_provider_server(&self) -> ::std::option::Option<& crate::types::InputLocation> {
         self.key_provider_server.as_ref()
     }
     /// Static key value as a 32 character hexadecimal string.
-    pub fn static_key_value(&self) -> ::std::option::Option<&str> {
+    pub fn static_key_value(&self) -> ::std::option::Option<& str> {
         self.static_key_value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl StaticKeySettingsBuilder {
     }
     /// The URL of the license server used for protecting content.
     pub fn set_key_provider_server(mut self, input: ::std::option::Option<crate::types::InputLocation>) -> Self {
-        self.key_provider_server = input;
-        self
+        self.key_provider_server = input; self
     }
     /// The URL of the license server used for protecting content.
     pub fn get_key_provider_server(&self) -> &::std::option::Option<crate::types::InputLocation> {
@@ -56,8 +55,7 @@ impl StaticKeySettingsBuilder {
     }
     /// Static key value as a 32 character hexadecimal string.
     pub fn set_static_key_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.static_key_value = input;
-        self
+        self.static_key_value = input; self
     }
     /// Static key value as a 32 character hexadecimal string.
     pub fn get_static_key_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,11 @@ impl StaticKeySettingsBuilder {
     /// Consumes the builder and constructs a [`StaticKeySettings`](crate::types::StaticKeySettings).
     pub fn build(self) -> crate::types::StaticKeySettings {
         crate::types::StaticKeySettings {
-            key_provider_server: self.key_provider_server,
-            static_key_value: self.static_key_value,
+            key_provider_server: self.key_provider_server
+            ,
+            static_key_value: self.static_key_value
+            ,
         }
     }
 }
+

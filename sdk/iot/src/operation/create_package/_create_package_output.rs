@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreatePackageOutput {
+pub struct CreatePackageOutput  {
     /// <p>The name of the software package.</p>
     pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the package.</p>
@@ -11,21 +11,21 @@ pub struct CreatePackageOutput {
     pub description: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreatePackageOutput {
+impl  CreatePackageOutput  {
     /// <p>The name of the software package.</p>
-    pub fn package_name(&self) -> ::std::option::Option<&str> {
+    pub fn package_name(&self) -> ::std::option::Option<& str> {
         self.package_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the package.</p>
-    pub fn package_arn(&self) -> ::std::option::Option<&str> {
+    pub fn package_arn(&self) -> ::std::option::Option<& str> {
         self.package_arn.as_deref()
     }
     /// <p>The package description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreatePackageOutput {
+impl  ::std::fmt::Debug for CreatePackageOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePackageOutput");
         formatter.field("package_name", &self.package_name);
@@ -36,10 +36,10 @@ impl ::std::fmt::Debug for CreatePackageOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for CreatePackageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreatePackageOutput {
     /// Creates a new builder-style object to manufacture [`CreatePackageOutput`](crate::operation::create_package::CreatePackageOutput).
     pub fn builder() -> crate::operation::create_package::builders::CreatePackageOutputBuilder {
@@ -64,8 +64,7 @@ impl CreatePackageOutputBuilder {
     }
     /// <p>The name of the software package.</p>
     pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_name = input;
-        self
+        self.package_name = input; self
     }
     /// <p>The name of the software package.</p>
     pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +77,7 @@ impl CreatePackageOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the package.</p>
     pub fn set_package_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_arn = input;
-        self
+        self.package_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the package.</p>
     pub fn get_package_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,28 +90,30 @@ impl CreatePackageOutputBuilder {
     }
     /// <p>The package description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The package description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreatePackageOutput`](crate::operation::create_package::CreatePackageOutput).
     pub fn build(self) -> crate::operation::create_package::CreatePackageOutput {
         crate::operation::create_package::CreatePackageOutput {
-            package_name: self.package_name,
-            package_arn: self.package_arn,
-            description: self.description,
+            package_name: self.package_name
+            ,
+            package_arn: self.package_arn
+            ,
+            description: self.description
+            ,
             _request_id: self._request_id,
         }
     }
@@ -128,3 +128,4 @@ impl ::std::fmt::Debug for CreatePackageOutputBuilder {
         formatter.finish()
     }
 }
+

@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeProvisioningTemplateVersionInput {
+pub struct DescribeProvisioningTemplateVersionInput  {
     /// <p>The template name.</p>
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The provisioning template version ID.</p>
     pub version_id: ::std::option::Option<i32>,
 }
-impl DescribeProvisioningTemplateVersionInput {
+impl  DescribeProvisioningTemplateVersionInput  {
     /// <p>The template name.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The provisioning template version ID.</p>
@@ -41,8 +41,7 @@ impl DescribeProvisioningTemplateVersionInputBuilder {
     }
     /// <p>The template name.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The template name.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl DescribeProvisioningTemplateVersionInputBuilder {
     }
     /// <p>The provisioning template version ID.</p>
     pub fn set_version_id(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.version_id = input;
-        self
+        self.version_id = input; self
     }
     /// <p>The provisioning template version ID.</p>
     pub fn get_version_id(&self) -> &::std::option::Option<i32> {
         &self.version_id
     }
     /// Consumes the builder and constructs a [`DescribeProvisioningTemplateVersionInput`](crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersionInput {
-                template_name: self.template_name,
-                version_id: self.version_id,
-            },
+                template_name: self.template_name
+                ,
+                version_id: self.version_id
+                ,
+            }
         )
     }
 }
+

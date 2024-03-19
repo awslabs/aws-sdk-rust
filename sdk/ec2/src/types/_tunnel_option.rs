@@ -3,7 +3,7 @@
 /// <p>The VPN tunnel options.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct TunnelOption {
+pub struct TunnelOption  {
     /// <p>The external IP address of the VPN tunnel.</p>
     pub outside_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The range of inside IPv4 addresses for the tunnel.</p>
@@ -27,19 +27,19 @@ pub struct TunnelOption {
     /// <p>The action to take after a DPD timeout occurs.</p>
     pub dpd_timeout_action: ::std::option::Option<::std::string::String>,
     /// <p>The permitted encryption algorithms for the VPN tunnel for phase 1 IKE negotiations.</p>
-    pub phase1_encryption_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::Phase1EncryptionAlgorithmsListValue>>,
+    pub phase1_encryption_algorithms: ::std::option::Option<::std::vec::Vec::<crate::types::Phase1EncryptionAlgorithmsListValue>>,
     /// <p>The permitted encryption algorithms for the VPN tunnel for phase 2 IKE negotiations.</p>
-    pub phase2_encryption_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::Phase2EncryptionAlgorithmsListValue>>,
+    pub phase2_encryption_algorithms: ::std::option::Option<::std::vec::Vec::<crate::types::Phase2EncryptionAlgorithmsListValue>>,
     /// <p>The permitted integrity algorithms for the VPN tunnel for phase 1 IKE negotiations.</p>
-    pub phase1_integrity_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::Phase1IntegrityAlgorithmsListValue>>,
+    pub phase1_integrity_algorithms: ::std::option::Option<::std::vec::Vec::<crate::types::Phase1IntegrityAlgorithmsListValue>>,
     /// <p>The permitted integrity algorithms for the VPN tunnel for phase 2 IKE negotiations.</p>
-    pub phase2_integrity_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::Phase2IntegrityAlgorithmsListValue>>,
+    pub phase2_integrity_algorithms: ::std::option::Option<::std::vec::Vec::<crate::types::Phase2IntegrityAlgorithmsListValue>>,
     /// <p>The permitted Diffie-Hellman group numbers for the VPN tunnel for phase 1 IKE negotiations.</p>
-    pub phase1_dh_group_numbers: ::std::option::Option<::std::vec::Vec<crate::types::Phase1DhGroupNumbersListValue>>,
+    pub phase1_dh_group_numbers: ::std::option::Option<::std::vec::Vec::<crate::types::Phase1DhGroupNumbersListValue>>,
     /// <p>The permitted Diffie-Hellman group numbers for the VPN tunnel for phase 2 IKE negotiations.</p>
-    pub phase2_dh_group_numbers: ::std::option::Option<::std::vec::Vec<crate::types::Phase2DhGroupNumbersListValue>>,
+    pub phase2_dh_group_numbers: ::std::option::Option<::std::vec::Vec::<crate::types::Phase2DhGroupNumbersListValue>>,
     /// <p>The IKE versions that are permitted for the VPN tunnel.</p>
-    pub ike_versions: ::std::option::Option<::std::vec::Vec<crate::types::IkeVersionsListValue>>,
+    pub ike_versions: ::std::option::Option<::std::vec::Vec::<crate::types::IkeVersionsListValue>>,
     /// <p>The action to take when the establishing the VPN tunnels for a VPN connection.</p>
     pub startup_action: ::std::option::Option<::std::string::String>,
     /// <p>Options for logging VPN tunnel activity.</p>
@@ -47,21 +47,21 @@ pub struct TunnelOption {
     /// <p>Status of tunnel endpoint lifecycle control feature.</p>
     pub enable_tunnel_lifecycle_control: ::std::option::Option<bool>,
 }
-impl TunnelOption {
+impl  TunnelOption  {
     /// <p>The external IP address of the VPN tunnel.</p>
-    pub fn outside_ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn outside_ip_address(&self) -> ::std::option::Option<& str> {
         self.outside_ip_address.as_deref()
     }
     /// <p>The range of inside IPv4 addresses for the tunnel.</p>
-    pub fn tunnel_inside_cidr(&self) -> ::std::option::Option<&str> {
+    pub fn tunnel_inside_cidr(&self) -> ::std::option::Option<& str> {
         self.tunnel_inside_cidr.as_deref()
     }
     /// <p>The range of inside IPv6 addresses for the tunnel.</p>
-    pub fn tunnel_inside_ipv6_cidr(&self) -> ::std::option::Option<&str> {
+    pub fn tunnel_inside_ipv6_cidr(&self) -> ::std::option::Option<& str> {
         self.tunnel_inside_ipv6_cidr.as_deref()
     }
     /// <p>The pre-shared key (PSK) to establish initial authentication between the virtual private gateway and the customer gateway.</p>
-    pub fn pre_shared_key(&self) -> ::std::option::Option<&str> {
+    pub fn pre_shared_key(&self) -> ::std::option::Option<& str> {
         self.pre_shared_key.as_deref()
     }
     /// <p>The lifetime for phase 1 of the IKE negotiation, in seconds.</p>
@@ -89,57 +89,64 @@ impl TunnelOption {
         self.dpd_timeout_seconds
     }
     /// <p>The action to take after a DPD timeout occurs.</p>
-    pub fn dpd_timeout_action(&self) -> ::std::option::Option<&str> {
+    pub fn dpd_timeout_action(&self) -> ::std::option::Option<& str> {
         self.dpd_timeout_action.as_deref()
     }
     /// <p>The permitted encryption algorithms for the VPN tunnel for phase 1 IKE negotiations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phase1_encryption_algorithms.is_none()`.
-    pub fn phase1_encryption_algorithms(&self) -> &[crate::types::Phase1EncryptionAlgorithmsListValue] {
-        self.phase1_encryption_algorithms.as_deref().unwrap_or_default()
+    pub fn phase1_encryption_algorithms(&self) -> & [crate::types::Phase1EncryptionAlgorithmsListValue] {
+        self.phase1_encryption_algorithms.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The permitted encryption algorithms for the VPN tunnel for phase 2 IKE negotiations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phase2_encryption_algorithms.is_none()`.
-    pub fn phase2_encryption_algorithms(&self) -> &[crate::types::Phase2EncryptionAlgorithmsListValue] {
-        self.phase2_encryption_algorithms.as_deref().unwrap_or_default()
+    pub fn phase2_encryption_algorithms(&self) -> & [crate::types::Phase2EncryptionAlgorithmsListValue] {
+        self.phase2_encryption_algorithms.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The permitted integrity algorithms for the VPN tunnel for phase 1 IKE negotiations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phase1_integrity_algorithms.is_none()`.
-    pub fn phase1_integrity_algorithms(&self) -> &[crate::types::Phase1IntegrityAlgorithmsListValue] {
-        self.phase1_integrity_algorithms.as_deref().unwrap_or_default()
+    pub fn phase1_integrity_algorithms(&self) -> & [crate::types::Phase1IntegrityAlgorithmsListValue] {
+        self.phase1_integrity_algorithms.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The permitted integrity algorithms for the VPN tunnel for phase 2 IKE negotiations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phase2_integrity_algorithms.is_none()`.
-    pub fn phase2_integrity_algorithms(&self) -> &[crate::types::Phase2IntegrityAlgorithmsListValue] {
-        self.phase2_integrity_algorithms.as_deref().unwrap_or_default()
+    pub fn phase2_integrity_algorithms(&self) -> & [crate::types::Phase2IntegrityAlgorithmsListValue] {
+        self.phase2_integrity_algorithms.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The permitted Diffie-Hellman group numbers for the VPN tunnel for phase 1 IKE negotiations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phase1_dh_group_numbers.is_none()`.
-    pub fn phase1_dh_group_numbers(&self) -> &[crate::types::Phase1DhGroupNumbersListValue] {
-        self.phase1_dh_group_numbers.as_deref().unwrap_or_default()
+    pub fn phase1_dh_group_numbers(&self) -> & [crate::types::Phase1DhGroupNumbersListValue] {
+        self.phase1_dh_group_numbers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The permitted Diffie-Hellman group numbers for the VPN tunnel for phase 2 IKE negotiations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phase2_dh_group_numbers.is_none()`.
-    pub fn phase2_dh_group_numbers(&self) -> &[crate::types::Phase2DhGroupNumbersListValue] {
-        self.phase2_dh_group_numbers.as_deref().unwrap_or_default()
+    pub fn phase2_dh_group_numbers(&self) -> & [crate::types::Phase2DhGroupNumbersListValue] {
+        self.phase2_dh_group_numbers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The IKE versions that are permitted for the VPN tunnel.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ike_versions.is_none()`.
-    pub fn ike_versions(&self) -> &[crate::types::IkeVersionsListValue] {
-        self.ike_versions.as_deref().unwrap_or_default()
+    pub fn ike_versions(&self) -> & [crate::types::IkeVersionsListValue] {
+        self.ike_versions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The action to take when the establishing the VPN tunnels for a VPN connection.</p>
-    pub fn startup_action(&self) -> ::std::option::Option<&str> {
+    pub fn startup_action(&self) -> ::std::option::Option<& str> {
         self.startup_action.as_deref()
     }
     /// <p>Options for logging VPN tunnel activity.</p>
-    pub fn log_options(&self) -> ::std::option::Option<&crate::types::VpnTunnelLogOptions> {
+    pub fn log_options(&self) -> ::std::option::Option<& crate::types::VpnTunnelLogOptions> {
         self.log_options.as_ref()
     }
     /// <p>Status of tunnel endpoint lifecycle control feature.</p>
@@ -147,7 +154,7 @@ impl TunnelOption {
         self.enable_tunnel_lifecycle_control
     }
 }
-impl ::std::fmt::Debug for TunnelOption {
+impl  ::std::fmt::Debug for TunnelOption  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TunnelOption");
         formatter.field("outside_ip_address", &self.outside_ip_address);
@@ -196,13 +203,13 @@ pub struct TunnelOptionBuilder {
     pub(crate) replay_window_size: ::std::option::Option<i32>,
     pub(crate) dpd_timeout_seconds: ::std::option::Option<i32>,
     pub(crate) dpd_timeout_action: ::std::option::Option<::std::string::String>,
-    pub(crate) phase1_encryption_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::Phase1EncryptionAlgorithmsListValue>>,
-    pub(crate) phase2_encryption_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::Phase2EncryptionAlgorithmsListValue>>,
-    pub(crate) phase1_integrity_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::Phase1IntegrityAlgorithmsListValue>>,
-    pub(crate) phase2_integrity_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::Phase2IntegrityAlgorithmsListValue>>,
-    pub(crate) phase1_dh_group_numbers: ::std::option::Option<::std::vec::Vec<crate::types::Phase1DhGroupNumbersListValue>>,
-    pub(crate) phase2_dh_group_numbers: ::std::option::Option<::std::vec::Vec<crate::types::Phase2DhGroupNumbersListValue>>,
-    pub(crate) ike_versions: ::std::option::Option<::std::vec::Vec<crate::types::IkeVersionsListValue>>,
+    pub(crate) phase1_encryption_algorithms: ::std::option::Option<::std::vec::Vec::<crate::types::Phase1EncryptionAlgorithmsListValue>>,
+    pub(crate) phase2_encryption_algorithms: ::std::option::Option<::std::vec::Vec::<crate::types::Phase2EncryptionAlgorithmsListValue>>,
+    pub(crate) phase1_integrity_algorithms: ::std::option::Option<::std::vec::Vec::<crate::types::Phase1IntegrityAlgorithmsListValue>>,
+    pub(crate) phase2_integrity_algorithms: ::std::option::Option<::std::vec::Vec::<crate::types::Phase2IntegrityAlgorithmsListValue>>,
+    pub(crate) phase1_dh_group_numbers: ::std::option::Option<::std::vec::Vec::<crate::types::Phase1DhGroupNumbersListValue>>,
+    pub(crate) phase2_dh_group_numbers: ::std::option::Option<::std::vec::Vec::<crate::types::Phase2DhGroupNumbersListValue>>,
+    pub(crate) ike_versions: ::std::option::Option<::std::vec::Vec::<crate::types::IkeVersionsListValue>>,
     pub(crate) startup_action: ::std::option::Option<::std::string::String>,
     pub(crate) log_options: ::std::option::Option<crate::types::VpnTunnelLogOptions>,
     pub(crate) enable_tunnel_lifecycle_control: ::std::option::Option<bool>,
@@ -215,8 +222,7 @@ impl TunnelOptionBuilder {
     }
     /// <p>The external IP address of the VPN tunnel.</p>
     pub fn set_outside_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.outside_ip_address = input;
-        self
+        self.outside_ip_address = input; self
     }
     /// <p>The external IP address of the VPN tunnel.</p>
     pub fn get_outside_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -229,8 +235,7 @@ impl TunnelOptionBuilder {
     }
     /// <p>The range of inside IPv4 addresses for the tunnel.</p>
     pub fn set_tunnel_inside_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tunnel_inside_cidr = input;
-        self
+        self.tunnel_inside_cidr = input; self
     }
     /// <p>The range of inside IPv4 addresses for the tunnel.</p>
     pub fn get_tunnel_inside_cidr(&self) -> &::std::option::Option<::std::string::String> {
@@ -243,8 +248,7 @@ impl TunnelOptionBuilder {
     }
     /// <p>The range of inside IPv6 addresses for the tunnel.</p>
     pub fn set_tunnel_inside_ipv6_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tunnel_inside_ipv6_cidr = input;
-        self
+        self.tunnel_inside_ipv6_cidr = input; self
     }
     /// <p>The range of inside IPv6 addresses for the tunnel.</p>
     pub fn get_tunnel_inside_ipv6_cidr(&self) -> &::std::option::Option<::std::string::String> {
@@ -257,8 +261,7 @@ impl TunnelOptionBuilder {
     }
     /// <p>The pre-shared key (PSK) to establish initial authentication between the virtual private gateway and the customer gateway.</p>
     pub fn set_pre_shared_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pre_shared_key = input;
-        self
+        self.pre_shared_key = input; self
     }
     /// <p>The pre-shared key (PSK) to establish initial authentication between the virtual private gateway and the customer gateway.</p>
     pub fn get_pre_shared_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -271,8 +274,7 @@ impl TunnelOptionBuilder {
     }
     /// <p>The lifetime for phase 1 of the IKE negotiation, in seconds.</p>
     pub fn set_phase1_lifetime_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.phase1_lifetime_seconds = input;
-        self
+        self.phase1_lifetime_seconds = input; self
     }
     /// <p>The lifetime for phase 1 of the IKE negotiation, in seconds.</p>
     pub fn get_phase1_lifetime_seconds(&self) -> &::std::option::Option<i32> {
@@ -285,8 +287,7 @@ impl TunnelOptionBuilder {
     }
     /// <p>The lifetime for phase 2 of the IKE negotiation, in seconds.</p>
     pub fn set_phase2_lifetime_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.phase2_lifetime_seconds = input;
-        self
+        self.phase2_lifetime_seconds = input; self
     }
     /// <p>The lifetime for phase 2 of the IKE negotiation, in seconds.</p>
     pub fn get_phase2_lifetime_seconds(&self) -> &::std::option::Option<i32> {
@@ -299,8 +300,7 @@ impl TunnelOptionBuilder {
     }
     /// <p>The margin time, in seconds, before the phase 2 lifetime expires, during which the Amazon Web Services side of the VPN connection performs an IKE rekey.</p>
     pub fn set_rekey_margin_time_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.rekey_margin_time_seconds = input;
-        self
+        self.rekey_margin_time_seconds = input; self
     }
     /// <p>The margin time, in seconds, before the phase 2 lifetime expires, during which the Amazon Web Services side of the VPN connection performs an IKE rekey.</p>
     pub fn get_rekey_margin_time_seconds(&self) -> &::std::option::Option<i32> {
@@ -313,8 +313,7 @@ impl TunnelOptionBuilder {
     }
     /// <p>The percentage of the rekey window determined by <code>RekeyMarginTimeSeconds</code> during which the rekey time is randomly selected.</p>
     pub fn set_rekey_fuzz_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.rekey_fuzz_percentage = input;
-        self
+        self.rekey_fuzz_percentage = input; self
     }
     /// <p>The percentage of the rekey window determined by <code>RekeyMarginTimeSeconds</code> during which the rekey time is randomly selected.</p>
     pub fn get_rekey_fuzz_percentage(&self) -> &::std::option::Option<i32> {
@@ -327,8 +326,7 @@ impl TunnelOptionBuilder {
     }
     /// <p>The number of packets in an IKE replay window.</p>
     pub fn set_replay_window_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.replay_window_size = input;
-        self
+        self.replay_window_size = input; self
     }
     /// <p>The number of packets in an IKE replay window.</p>
     pub fn get_replay_window_size(&self) -> &::std::option::Option<i32> {
@@ -341,8 +339,7 @@ impl TunnelOptionBuilder {
     }
     /// <p>The number of seconds after which a DPD timeout occurs.</p>
     pub fn set_dpd_timeout_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.dpd_timeout_seconds = input;
-        self
+        self.dpd_timeout_seconds = input; self
     }
     /// <p>The number of seconds after which a DPD timeout occurs.</p>
     pub fn get_dpd_timeout_seconds(&self) -> &::std::option::Option<i32> {
@@ -355,8 +352,7 @@ impl TunnelOptionBuilder {
     }
     /// <p>The action to take after a DPD timeout occurs.</p>
     pub fn set_dpd_timeout_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dpd_timeout_action = input;
-        self
+        self.dpd_timeout_action = input; self
     }
     /// <p>The action to take after a DPD timeout occurs.</p>
     pub fn get_dpd_timeout_action(&self) -> &::std::option::Option<::std::string::String> {
@@ -369,20 +365,16 @@ impl TunnelOptionBuilder {
     /// <p>The permitted encryption algorithms for the VPN tunnel for phase 1 IKE negotiations.</p>
     pub fn phase1_encryption_algorithms(mut self, input: crate::types::Phase1EncryptionAlgorithmsListValue) -> Self {
         let mut v = self.phase1_encryption_algorithms.unwrap_or_default();
-        v.push(input);
-        self.phase1_encryption_algorithms = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.phase1_encryption_algorithms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The permitted encryption algorithms for the VPN tunnel for phase 1 IKE negotiations.</p>
-    pub fn set_phase1_encryption_algorithms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Phase1EncryptionAlgorithmsListValue>>,
-    ) -> Self {
-        self.phase1_encryption_algorithms = input;
-        self
+    pub fn set_phase1_encryption_algorithms(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Phase1EncryptionAlgorithmsListValue>>) -> Self {
+        self.phase1_encryption_algorithms = input; self
     }
     /// <p>The permitted encryption algorithms for the VPN tunnel for phase 1 IKE negotiations.</p>
-    pub fn get_phase1_encryption_algorithms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Phase1EncryptionAlgorithmsListValue>> {
+    pub fn get_phase1_encryption_algorithms(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Phase1EncryptionAlgorithmsListValue>> {
         &self.phase1_encryption_algorithms
     }
     /// Appends an item to `phase2_encryption_algorithms`.
@@ -392,20 +384,16 @@ impl TunnelOptionBuilder {
     /// <p>The permitted encryption algorithms for the VPN tunnel for phase 2 IKE negotiations.</p>
     pub fn phase2_encryption_algorithms(mut self, input: crate::types::Phase2EncryptionAlgorithmsListValue) -> Self {
         let mut v = self.phase2_encryption_algorithms.unwrap_or_default();
-        v.push(input);
-        self.phase2_encryption_algorithms = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.phase2_encryption_algorithms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The permitted encryption algorithms for the VPN tunnel for phase 2 IKE negotiations.</p>
-    pub fn set_phase2_encryption_algorithms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Phase2EncryptionAlgorithmsListValue>>,
-    ) -> Self {
-        self.phase2_encryption_algorithms = input;
-        self
+    pub fn set_phase2_encryption_algorithms(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Phase2EncryptionAlgorithmsListValue>>) -> Self {
+        self.phase2_encryption_algorithms = input; self
     }
     /// <p>The permitted encryption algorithms for the VPN tunnel for phase 2 IKE negotiations.</p>
-    pub fn get_phase2_encryption_algorithms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Phase2EncryptionAlgorithmsListValue>> {
+    pub fn get_phase2_encryption_algorithms(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Phase2EncryptionAlgorithmsListValue>> {
         &self.phase2_encryption_algorithms
     }
     /// Appends an item to `phase1_integrity_algorithms`.
@@ -415,20 +403,16 @@ impl TunnelOptionBuilder {
     /// <p>The permitted integrity algorithms for the VPN tunnel for phase 1 IKE negotiations.</p>
     pub fn phase1_integrity_algorithms(mut self, input: crate::types::Phase1IntegrityAlgorithmsListValue) -> Self {
         let mut v = self.phase1_integrity_algorithms.unwrap_or_default();
-        v.push(input);
-        self.phase1_integrity_algorithms = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.phase1_integrity_algorithms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The permitted integrity algorithms for the VPN tunnel for phase 1 IKE negotiations.</p>
-    pub fn set_phase1_integrity_algorithms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Phase1IntegrityAlgorithmsListValue>>,
-    ) -> Self {
-        self.phase1_integrity_algorithms = input;
-        self
+    pub fn set_phase1_integrity_algorithms(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Phase1IntegrityAlgorithmsListValue>>) -> Self {
+        self.phase1_integrity_algorithms = input; self
     }
     /// <p>The permitted integrity algorithms for the VPN tunnel for phase 1 IKE negotiations.</p>
-    pub fn get_phase1_integrity_algorithms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Phase1IntegrityAlgorithmsListValue>> {
+    pub fn get_phase1_integrity_algorithms(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Phase1IntegrityAlgorithmsListValue>> {
         &self.phase1_integrity_algorithms
     }
     /// Appends an item to `phase2_integrity_algorithms`.
@@ -438,20 +422,16 @@ impl TunnelOptionBuilder {
     /// <p>The permitted integrity algorithms for the VPN tunnel for phase 2 IKE negotiations.</p>
     pub fn phase2_integrity_algorithms(mut self, input: crate::types::Phase2IntegrityAlgorithmsListValue) -> Self {
         let mut v = self.phase2_integrity_algorithms.unwrap_or_default();
-        v.push(input);
-        self.phase2_integrity_algorithms = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.phase2_integrity_algorithms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The permitted integrity algorithms for the VPN tunnel for phase 2 IKE negotiations.</p>
-    pub fn set_phase2_integrity_algorithms(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Phase2IntegrityAlgorithmsListValue>>,
-    ) -> Self {
-        self.phase2_integrity_algorithms = input;
-        self
+    pub fn set_phase2_integrity_algorithms(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Phase2IntegrityAlgorithmsListValue>>) -> Self {
+        self.phase2_integrity_algorithms = input; self
     }
     /// <p>The permitted integrity algorithms for the VPN tunnel for phase 2 IKE negotiations.</p>
-    pub fn get_phase2_integrity_algorithms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Phase2IntegrityAlgorithmsListValue>> {
+    pub fn get_phase2_integrity_algorithms(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Phase2IntegrityAlgorithmsListValue>> {
         &self.phase2_integrity_algorithms
     }
     /// Appends an item to `phase1_dh_group_numbers`.
@@ -461,17 +441,16 @@ impl TunnelOptionBuilder {
     /// <p>The permitted Diffie-Hellman group numbers for the VPN tunnel for phase 1 IKE negotiations.</p>
     pub fn phase1_dh_group_numbers(mut self, input: crate::types::Phase1DhGroupNumbersListValue) -> Self {
         let mut v = self.phase1_dh_group_numbers.unwrap_or_default();
-        v.push(input);
-        self.phase1_dh_group_numbers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.phase1_dh_group_numbers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The permitted Diffie-Hellman group numbers for the VPN tunnel for phase 1 IKE negotiations.</p>
-    pub fn set_phase1_dh_group_numbers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Phase1DhGroupNumbersListValue>>) -> Self {
-        self.phase1_dh_group_numbers = input;
-        self
+    pub fn set_phase1_dh_group_numbers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Phase1DhGroupNumbersListValue>>) -> Self {
+        self.phase1_dh_group_numbers = input; self
     }
     /// <p>The permitted Diffie-Hellman group numbers for the VPN tunnel for phase 1 IKE negotiations.</p>
-    pub fn get_phase1_dh_group_numbers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Phase1DhGroupNumbersListValue>> {
+    pub fn get_phase1_dh_group_numbers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Phase1DhGroupNumbersListValue>> {
         &self.phase1_dh_group_numbers
     }
     /// Appends an item to `phase2_dh_group_numbers`.
@@ -481,17 +460,16 @@ impl TunnelOptionBuilder {
     /// <p>The permitted Diffie-Hellman group numbers for the VPN tunnel for phase 2 IKE negotiations.</p>
     pub fn phase2_dh_group_numbers(mut self, input: crate::types::Phase2DhGroupNumbersListValue) -> Self {
         let mut v = self.phase2_dh_group_numbers.unwrap_or_default();
-        v.push(input);
-        self.phase2_dh_group_numbers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.phase2_dh_group_numbers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The permitted Diffie-Hellman group numbers for the VPN tunnel for phase 2 IKE negotiations.</p>
-    pub fn set_phase2_dh_group_numbers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Phase2DhGroupNumbersListValue>>) -> Self {
-        self.phase2_dh_group_numbers = input;
-        self
+    pub fn set_phase2_dh_group_numbers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Phase2DhGroupNumbersListValue>>) -> Self {
+        self.phase2_dh_group_numbers = input; self
     }
     /// <p>The permitted Diffie-Hellman group numbers for the VPN tunnel for phase 2 IKE negotiations.</p>
-    pub fn get_phase2_dh_group_numbers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Phase2DhGroupNumbersListValue>> {
+    pub fn get_phase2_dh_group_numbers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Phase2DhGroupNumbersListValue>> {
         &self.phase2_dh_group_numbers
     }
     /// Appends an item to `ike_versions`.
@@ -501,17 +479,16 @@ impl TunnelOptionBuilder {
     /// <p>The IKE versions that are permitted for the VPN tunnel.</p>
     pub fn ike_versions(mut self, input: crate::types::IkeVersionsListValue) -> Self {
         let mut v = self.ike_versions.unwrap_or_default();
-        v.push(input);
-        self.ike_versions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ike_versions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IKE versions that are permitted for the VPN tunnel.</p>
-    pub fn set_ike_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IkeVersionsListValue>>) -> Self {
-        self.ike_versions = input;
-        self
+    pub fn set_ike_versions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IkeVersionsListValue>>) -> Self {
+        self.ike_versions = input; self
     }
     /// <p>The IKE versions that are permitted for the VPN tunnel.</p>
-    pub fn get_ike_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IkeVersionsListValue>> {
+    pub fn get_ike_versions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IkeVersionsListValue>> {
         &self.ike_versions
     }
     /// <p>The action to take when the establishing the VPN tunnels for a VPN connection.</p>
@@ -521,8 +498,7 @@ impl TunnelOptionBuilder {
     }
     /// <p>The action to take when the establishing the VPN tunnels for a VPN connection.</p>
     pub fn set_startup_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.startup_action = input;
-        self
+        self.startup_action = input; self
     }
     /// <p>The action to take when the establishing the VPN tunnels for a VPN connection.</p>
     pub fn get_startup_action(&self) -> &::std::option::Option<::std::string::String> {
@@ -535,8 +511,7 @@ impl TunnelOptionBuilder {
     }
     /// <p>Options for logging VPN tunnel activity.</p>
     pub fn set_log_options(mut self, input: ::std::option::Option<crate::types::VpnTunnelLogOptions>) -> Self {
-        self.log_options = input;
-        self
+        self.log_options = input; self
     }
     /// <p>Options for logging VPN tunnel activity.</p>
     pub fn get_log_options(&self) -> &::std::option::Option<crate::types::VpnTunnelLogOptions> {
@@ -549,8 +524,7 @@ impl TunnelOptionBuilder {
     }
     /// <p>Status of tunnel endpoint lifecycle control feature.</p>
     pub fn set_enable_tunnel_lifecycle_control(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_tunnel_lifecycle_control = input;
-        self
+        self.enable_tunnel_lifecycle_control = input; self
     }
     /// <p>Status of tunnel endpoint lifecycle control feature.</p>
     pub fn get_enable_tunnel_lifecycle_control(&self) -> &::std::option::Option<bool> {
@@ -559,27 +533,48 @@ impl TunnelOptionBuilder {
     /// Consumes the builder and constructs a [`TunnelOption`](crate::types::TunnelOption).
     pub fn build(self) -> crate::types::TunnelOption {
         crate::types::TunnelOption {
-            outside_ip_address: self.outside_ip_address,
-            tunnel_inside_cidr: self.tunnel_inside_cidr,
-            tunnel_inside_ipv6_cidr: self.tunnel_inside_ipv6_cidr,
-            pre_shared_key: self.pre_shared_key,
-            phase1_lifetime_seconds: self.phase1_lifetime_seconds,
-            phase2_lifetime_seconds: self.phase2_lifetime_seconds,
-            rekey_margin_time_seconds: self.rekey_margin_time_seconds,
-            rekey_fuzz_percentage: self.rekey_fuzz_percentage,
-            replay_window_size: self.replay_window_size,
-            dpd_timeout_seconds: self.dpd_timeout_seconds,
-            dpd_timeout_action: self.dpd_timeout_action,
-            phase1_encryption_algorithms: self.phase1_encryption_algorithms,
-            phase2_encryption_algorithms: self.phase2_encryption_algorithms,
-            phase1_integrity_algorithms: self.phase1_integrity_algorithms,
-            phase2_integrity_algorithms: self.phase2_integrity_algorithms,
-            phase1_dh_group_numbers: self.phase1_dh_group_numbers,
-            phase2_dh_group_numbers: self.phase2_dh_group_numbers,
-            ike_versions: self.ike_versions,
-            startup_action: self.startup_action,
-            log_options: self.log_options,
-            enable_tunnel_lifecycle_control: self.enable_tunnel_lifecycle_control,
+            outside_ip_address: self.outside_ip_address
+            ,
+            tunnel_inside_cidr: self.tunnel_inside_cidr
+            ,
+            tunnel_inside_ipv6_cidr: self.tunnel_inside_ipv6_cidr
+            ,
+            pre_shared_key: self.pre_shared_key
+            ,
+            phase1_lifetime_seconds: self.phase1_lifetime_seconds
+            ,
+            phase2_lifetime_seconds: self.phase2_lifetime_seconds
+            ,
+            rekey_margin_time_seconds: self.rekey_margin_time_seconds
+            ,
+            rekey_fuzz_percentage: self.rekey_fuzz_percentage
+            ,
+            replay_window_size: self.replay_window_size
+            ,
+            dpd_timeout_seconds: self.dpd_timeout_seconds
+            ,
+            dpd_timeout_action: self.dpd_timeout_action
+            ,
+            phase1_encryption_algorithms: self.phase1_encryption_algorithms
+            ,
+            phase2_encryption_algorithms: self.phase2_encryption_algorithms
+            ,
+            phase1_integrity_algorithms: self.phase1_integrity_algorithms
+            ,
+            phase2_integrity_algorithms: self.phase2_integrity_algorithms
+            ,
+            phase1_dh_group_numbers: self.phase1_dh_group_numbers
+            ,
+            phase2_dh_group_numbers: self.phase2_dh_group_numbers
+            ,
+            ike_versions: self.ike_versions
+            ,
+            startup_action: self.startup_action
+            ,
+            log_options: self.log_options
+            ,
+            enable_tunnel_lifecycle_control: self.enable_tunnel_lifecycle_control
+            ,
         }
     }
 }
@@ -610,3 +605,4 @@ impl ::std::fmt::Debug for TunnelOptionBuilder {
         formatter.finish()
     }
 }
+

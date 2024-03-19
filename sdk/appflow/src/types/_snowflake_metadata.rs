@@ -3,16 +3,17 @@
 /// <p>The connector metadata specific to Snowflake.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SnowflakeMetadata {
+pub struct SnowflakeMetadata  {
     /// <p>Specifies the supported Amazon Web Services Regions when using Snowflake.</p>
-    pub supported_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub supported_regions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl SnowflakeMetadata {
+impl  SnowflakeMetadata  {
     /// <p>Specifies the supported Amazon Web Services Regions when using Snowflake.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_regions.is_none()`.
-    pub fn supported_regions(&self) -> &[::std::string::String] {
-        self.supported_regions.as_deref().unwrap_or_default()
+    pub fn supported_regions(&self) -> & [::std::string::String] {
+        self.supported_regions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SnowflakeMetadata {
@@ -26,7 +27,7 @@ impl SnowflakeMetadata {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnowflakeMetadataBuilder {
-    pub(crate) supported_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) supported_regions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl SnowflakeMetadataBuilder {
     /// Appends an item to `supported_regions`.
@@ -36,23 +37,24 @@ impl SnowflakeMetadataBuilder {
     /// <p>Specifies the supported Amazon Web Services Regions when using Snowflake.</p>
     pub fn supported_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_regions.unwrap_or_default();
-        v.push(input.into());
-        self.supported_regions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.supported_regions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the supported Amazon Web Services Regions when using Snowflake.</p>
-    pub fn set_supported_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.supported_regions = input;
-        self
+    pub fn set_supported_regions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.supported_regions = input; self
     }
     /// <p>Specifies the supported Amazon Web Services Regions when using Snowflake.</p>
-    pub fn get_supported_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supported_regions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.supported_regions
     }
     /// Consumes the builder and constructs a [`SnowflakeMetadata`](crate::types::SnowflakeMetadata).
     pub fn build(self) -> crate::types::SnowflakeMetadata {
         crate::types::SnowflakeMetadata {
-            supported_regions: self.supported_regions,
+            supported_regions: self.supported_regions
+            ,
         }
     }
 }
+

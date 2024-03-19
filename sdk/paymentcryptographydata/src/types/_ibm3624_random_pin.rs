@@ -3,7 +3,7 @@
 /// <p>Parameters that are required to generate or verify Ibm3624 random PIN.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Ibm3624RandomPin {
+pub struct Ibm3624RandomPin  {
     /// <p>The decimalization table to use for IBM 3624 PIN algorithm. The table is used to convert the algorithm intermediate result from hexadecimal characters to decimal.</p>
     pub decimalization_table: ::std::string::String,
     /// <p>The padding character for validation data.</p>
@@ -11,21 +11,18 @@ pub struct Ibm3624RandomPin {
     /// <p>The unique data for cardholder identification.</p>
     pub pin_validation_data: ::std::string::String,
 }
-impl Ibm3624RandomPin {
+impl  Ibm3624RandomPin  {
     /// <p>The decimalization table to use for IBM 3624 PIN algorithm. The table is used to convert the algorithm intermediate result from hexadecimal characters to decimal.</p>
-    pub fn decimalization_table(&self) -> &str {
-        use std::ops::Deref;
-        self.decimalization_table.deref()
+    pub fn decimalization_table(&self) -> & str {
+        use std::ops::Deref; self.decimalization_table.deref()
     }
     /// <p>The padding character for validation data.</p>
-    pub fn pin_validation_data_pad_character(&self) -> &str {
-        use std::ops::Deref;
-        self.pin_validation_data_pad_character.deref()
+    pub fn pin_validation_data_pad_character(&self) -> & str {
+        use std::ops::Deref; self.pin_validation_data_pad_character.deref()
     }
     /// <p>The unique data for cardholder identification.</p>
-    pub fn pin_validation_data(&self) -> &str {
-        use std::ops::Deref;
-        self.pin_validation_data.deref()
+    pub fn pin_validation_data(&self) -> & str {
+        use std::ops::Deref; self.pin_validation_data.deref()
     }
 }
 impl Ibm3624RandomPin {
@@ -52,8 +49,7 @@ impl Ibm3624RandomPinBuilder {
     }
     /// <p>The decimalization table to use for IBM 3624 PIN algorithm. The table is used to convert the algorithm intermediate result from hexadecimal characters to decimal.</p>
     pub fn set_decimalization_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.decimalization_table = input;
-        self
+        self.decimalization_table = input; self
     }
     /// <p>The decimalization table to use for IBM 3624 PIN algorithm. The table is used to convert the algorithm intermediate result from hexadecimal characters to decimal.</p>
     pub fn get_decimalization_table(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +63,7 @@ impl Ibm3624RandomPinBuilder {
     }
     /// <p>The padding character for validation data.</p>
     pub fn set_pin_validation_data_pad_character(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pin_validation_data_pad_character = input;
-        self
+        self.pin_validation_data_pad_character = input; self
     }
     /// <p>The padding character for validation data.</p>
     pub fn get_pin_validation_data_pad_character(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +77,7 @@ impl Ibm3624RandomPinBuilder {
     }
     /// <p>The unique data for cardholder identification.</p>
     pub fn set_pin_validation_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pin_validation_data = input;
-        self
+        self.pin_validation_data = input; self
     }
     /// <p>The unique data for cardholder identification.</p>
     pub fn get_pin_validation_data(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,25 +89,25 @@ impl Ibm3624RandomPinBuilder {
     /// - [`pin_validation_data_pad_character`](crate::types::builders::Ibm3624RandomPinBuilder::pin_validation_data_pad_character)
     /// - [`pin_validation_data`](crate::types::builders::Ibm3624RandomPinBuilder::pin_validation_data)
     pub fn build(self) -> ::std::result::Result<crate::types::Ibm3624RandomPin, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Ibm3624RandomPin {
-            decimalization_table: self.decimalization_table.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "decimalization_table",
-                    "decimalization_table was not specified but it is required when building Ibm3624RandomPin",
-                )
-            })?,
-            pin_validation_data_pad_character: self.pin_validation_data_pad_character.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "pin_validation_data_pad_character",
-                    "pin_validation_data_pad_character was not specified but it is required when building Ibm3624RandomPin",
-                )
-            })?,
-            pin_validation_data: self.pin_validation_data.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "pin_validation_data",
-                    "pin_validation_data was not specified but it is required when building Ibm3624RandomPin",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Ibm3624RandomPin {
+                decimalization_table: self.decimalization_table
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("decimalization_table", "decimalization_table was not specified but it is required when building Ibm3624RandomPin")
+                    )?
+                ,
+                pin_validation_data_pad_character: self.pin_validation_data_pad_character
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("pin_validation_data_pad_character", "pin_validation_data_pad_character was not specified but it is required when building Ibm3624RandomPin")
+                    )?
+                ,
+                pin_validation_data: self.pin_validation_data
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("pin_validation_data", "pin_validation_data was not specified but it is required when building Ibm3624RandomPin")
+                    )?
+                ,
+            }
+        )
     }
 }
+

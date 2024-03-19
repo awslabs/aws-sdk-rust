@@ -3,7 +3,7 @@
 /// <p>Options for enabling and configuring fine-grained access control. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html">Fine-grained access control in Amazon OpenSearch Service</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AdvancedSecurityOptionsInput {
+pub struct AdvancedSecurityOptionsInput  {
     /// <p>True to enable fine-grained access control.</p>
     pub enabled: ::std::option::Option<bool>,
     /// <p>True to enable the internal user database.</p>
@@ -15,7 +15,7 @@ pub struct AdvancedSecurityOptionsInput {
     /// <p>True to enable a 30-day migration period during which administrators can create role mappings. Only necessary when <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing">enabling fine-grained access control on an existing domain</a>.</p>
     pub anonymous_auth_enabled: ::std::option::Option<bool>,
 }
-impl AdvancedSecurityOptionsInput {
+impl  AdvancedSecurityOptionsInput  {
     /// <p>True to enable fine-grained access control.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
@@ -25,11 +25,11 @@ impl AdvancedSecurityOptionsInput {
         self.internal_user_database_enabled
     }
     /// <p>Container for information about the master user.</p>
-    pub fn master_user_options(&self) -> ::std::option::Option<&crate::types::MasterUserOptions> {
+    pub fn master_user_options(&self) -> ::std::option::Option<& crate::types::MasterUserOptions> {
         self.master_user_options.as_ref()
     }
     /// <p>Container for information about the SAML configuration for OpenSearch Dashboards.</p>
-    pub fn saml_options(&self) -> ::std::option::Option<&crate::types::SamlOptionsInput> {
+    pub fn saml_options(&self) -> ::std::option::Option<& crate::types::SamlOptionsInput> {
         self.saml_options.as_ref()
     }
     /// <p>True to enable a 30-day migration period during which administrators can create role mappings. Only necessary when <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing">enabling fine-grained access control on an existing domain</a>.</p>
@@ -62,8 +62,7 @@ impl AdvancedSecurityOptionsInputBuilder {
     }
     /// <p>True to enable fine-grained access control.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>True to enable fine-grained access control.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -76,8 +75,7 @@ impl AdvancedSecurityOptionsInputBuilder {
     }
     /// <p>True to enable the internal user database.</p>
     pub fn set_internal_user_database_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.internal_user_database_enabled = input;
-        self
+        self.internal_user_database_enabled = input; self
     }
     /// <p>True to enable the internal user database.</p>
     pub fn get_internal_user_database_enabled(&self) -> &::std::option::Option<bool> {
@@ -90,8 +88,7 @@ impl AdvancedSecurityOptionsInputBuilder {
     }
     /// <p>Container for information about the master user.</p>
     pub fn set_master_user_options(mut self, input: ::std::option::Option<crate::types::MasterUserOptions>) -> Self {
-        self.master_user_options = input;
-        self
+        self.master_user_options = input; self
     }
     /// <p>Container for information about the master user.</p>
     pub fn get_master_user_options(&self) -> &::std::option::Option<crate::types::MasterUserOptions> {
@@ -104,8 +101,7 @@ impl AdvancedSecurityOptionsInputBuilder {
     }
     /// <p>Container for information about the SAML configuration for OpenSearch Dashboards.</p>
     pub fn set_saml_options(mut self, input: ::std::option::Option<crate::types::SamlOptionsInput>) -> Self {
-        self.saml_options = input;
-        self
+        self.saml_options = input; self
     }
     /// <p>Container for information about the SAML configuration for OpenSearch Dashboards.</p>
     pub fn get_saml_options(&self) -> &::std::option::Option<crate::types::SamlOptionsInput> {
@@ -118,8 +114,7 @@ impl AdvancedSecurityOptionsInputBuilder {
     }
     /// <p>True to enable a 30-day migration period during which administrators can create role mappings. Only necessary when <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing">enabling fine-grained access control on an existing domain</a>.</p>
     pub fn set_anonymous_auth_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.anonymous_auth_enabled = input;
-        self
+        self.anonymous_auth_enabled = input; self
     }
     /// <p>True to enable a 30-day migration period during which administrators can create role mappings. Only necessary when <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing">enabling fine-grained access control on an existing domain</a>.</p>
     pub fn get_anonymous_auth_enabled(&self) -> &::std::option::Option<bool> {
@@ -128,11 +123,17 @@ impl AdvancedSecurityOptionsInputBuilder {
     /// Consumes the builder and constructs a [`AdvancedSecurityOptionsInput`](crate::types::AdvancedSecurityOptionsInput).
     pub fn build(self) -> crate::types::AdvancedSecurityOptionsInput {
         crate::types::AdvancedSecurityOptionsInput {
-            enabled: self.enabled,
-            internal_user_database_enabled: self.internal_user_database_enabled,
-            master_user_options: self.master_user_options,
-            saml_options: self.saml_options,
-            anonymous_auth_enabled: self.anonymous_auth_enabled,
+            enabled: self.enabled
+            ,
+            internal_user_database_enabled: self.internal_user_database_enabled
+            ,
+            master_user_options: self.master_user_options
+            ,
+            saml_options: self.saml_options
+            ,
+            anonymous_auth_enabled: self.anonymous_auth_enabled
+            ,
         }
     }
 }
+

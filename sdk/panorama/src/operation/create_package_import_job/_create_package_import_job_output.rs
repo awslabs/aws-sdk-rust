@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePackageImportJobOutput {
+pub struct CreatePackageImportJobOutput  {
     /// <p>The job's ID.</p>
     pub job_id: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CreatePackageImportJobOutput {
+impl  CreatePackageImportJobOutput  {
     /// <p>The job's ID.</p>
-    pub fn job_id(&self) -> &str {
-        use std::ops::Deref;
-        self.job_id.deref()
+    pub fn job_id(&self) -> & str {
+        use std::ops::Deref; self.job_id.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreatePackageImportJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreatePackageImportJobOutput {
     /// Creates a new builder-style object to manufacture [`CreatePackageImportJobOutput`](crate::operation::create_package_import_job::CreatePackageImportJobOutput).
     pub fn builder() -> crate::operation::create_package_import_job::builders::CreatePackageImportJobOutputBuilder {
@@ -42,39 +41,35 @@ impl CreatePackageImportJobOutputBuilder {
     }
     /// <p>The job's ID.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The job's ID.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreatePackageImportJobOutput`](crate::operation::create_package_import_job::CreatePackageImportJobOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`job_id`](crate::operation::create_package_import_job::builders::CreatePackageImportJobOutputBuilder::job_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_package_import_job::CreatePackageImportJobOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_package_import_job::CreatePackageImportJobOutput {
-            job_id: self.job_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "job_id",
-                    "job_id was not specified but it is required when building CreatePackageImportJobOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_package_import_job::CreatePackageImportJobOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_package_import_job::CreatePackageImportJobOutput {
+                job_id: self.job_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("job_id", "job_id was not specified but it is required when building CreatePackageImportJobOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

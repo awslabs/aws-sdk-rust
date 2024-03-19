@@ -3,22 +3,22 @@
 /// <p>Returned in response to a GetId request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetIdOutput {
+pub struct GetIdOutput  {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     pub identity_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetIdOutput {
+impl  GetIdOutput  {
     /// <p>A unique identifier in the format REGION:GUID.</p>
-    pub fn identity_id(&self) -> ::std::option::Option<&str> {
+    pub fn identity_id(&self) -> ::std::option::Option<& str> {
         self.identity_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetIdOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetIdOutput {
     /// Creates a new builder-style object to manufacture [`GetIdOutput`](crate::operation::get_id::GetIdOutput).
     pub fn builder() -> crate::operation::get_id::builders::GetIdOutputBuilder {
@@ -41,27 +41,28 @@ impl GetIdOutputBuilder {
     }
     /// <p>A unique identifier in the format REGION:GUID.</p>
     pub fn set_identity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_id = input;
-        self
+        self.identity_id = input; self
     }
     /// <p>A unique identifier in the format REGION:GUID.</p>
     pub fn get_identity_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetIdOutput`](crate::operation::get_id::GetIdOutput).
     pub fn build(self) -> crate::operation::get_id::GetIdOutput {
         crate::operation::get_id::GetIdOutput {
-            identity_id: self.identity_id,
+            identity_id: self.identity_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

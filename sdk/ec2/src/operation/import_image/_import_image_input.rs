@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportImageInput {
+pub struct ImportImageInput  {
     /// <p>The architecture of the virtual machine.</p>
     /// <p>Valid values: <code>i386</code> | <code>x86_64</code></p>
     pub architecture: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct ImportImageInput {
     /// <p>A description string for the import image task.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information about the disk containers.</p>
-    pub disk_containers: ::std::option::Option<::std::vec::Vec<crate::types::ImageDiskContainer>>,
+    pub disk_containers: ::std::option::Option<::std::vec::Vec::<crate::types::ImageDiskContainer>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>Specifies whether the destination AMI of the imported image should be encrypted. The default KMS key for EBS is used unless you specify a non-default KMS key using <code>KmsKeyId</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
@@ -47,9 +47,9 @@ pub struct ImportImageInput {
     /// <p>The name of the role to use when not using the default role, 'vmimport'.</p>
     pub role_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARNs of the license configurations.</p>
-    pub license_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ImportImageLicenseConfigurationRequest>>,
+    pub license_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::ImportImageLicenseConfigurationRequest>>,
     /// <p>The tags to apply to the import image task during creation.</p>
-    pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
     /// <p>The usage operation value. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#prerequisites">Licensing options</a> in the <i>VM Import/Export User Guide</i>.</p>
     pub usage_operation: ::std::option::Option<::std::string::String>,
     /// <p>The boot mode of the virtual machine.</p><note>
@@ -57,29 +57,30 @@ pub struct ImportImageInput {
     /// </note>
     pub boot_mode: ::std::option::Option<crate::types::BootModeValues>,
 }
-impl ImportImageInput {
+impl  ImportImageInput  {
     /// <p>The architecture of the virtual machine.</p>
     /// <p>Valid values: <code>i386</code> | <code>x86_64</code></p>
-    pub fn architecture(&self) -> ::std::option::Option<&str> {
+    pub fn architecture(&self) -> ::std::option::Option<& str> {
         self.architecture.as_deref()
     }
     /// <p>The client-specific data.</p>
-    pub fn client_data(&self) -> ::std::option::Option<&crate::types::ClientData> {
+    pub fn client_data(&self) -> ::std::option::Option<& crate::types::ClientData> {
         self.client_data.as_ref()
     }
     /// <p>The token to enable idempotency for VM import requests.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>A description string for the import image task.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Information about the disk containers.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.disk_containers.is_none()`.
-    pub fn disk_containers(&self) -> &[crate::types::ImageDiskContainer] {
-        self.disk_containers.as_deref().unwrap_or_default()
+    pub fn disk_containers(&self) -> & [crate::types::ImageDiskContainer] {
+        self.disk_containers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -91,7 +92,7 @@ impl ImportImageInput {
     }
     /// <p>The target hypervisor platform.</p>
     /// <p>Valid values: <code>xen</code></p>
-    pub fn hypervisor(&self) -> ::std::option::Option<&str> {
+    pub fn hypervisor(&self) -> ::std::option::Option<& str> {
         self.hypervisor.as_deref()
     }
     /// <p>An identifier for the symmetric KMS key to use when creating the encrypted AMI. This parameter is only required if you want to use a non-default KMS key; if this parameter is not specified, the default KMS key for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must also be set.</p>
@@ -109,44 +110,46 @@ impl ImportImageInput {
     /// <p>Amazon Web Services parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete even though you provided an invalid identifier. This action will eventually report failure.</p>
     /// <p>The specified KMS key must exist in the Region that the AMI is being copied to.</p>
     /// <p>Amazon EBS does not support asymmetric KMS keys.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The license type to be used for the Amazon Machine Image (AMI) after importing.</p>
     /// <p>Specify <code>AWS</code> to replace the source-system license with an Amazon Web Services license or <code>BYOL</code> to retain the source-system license. Leaving this parameter undefined is the same as choosing <code>AWS</code> when importing a Windows Server operating system, and the same as choosing <code>BYOL</code> when importing a Windows client operating system (such as Windows 10) or a Linux operating system.</p>
     /// <p>To use <code>BYOL</code>, you must have existing licenses with rights to use these licenses in a third party cloud, such as Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image">Prerequisites</a> in the VM Import/Export User Guide.</p>
-    pub fn license_type(&self) -> ::std::option::Option<&str> {
+    pub fn license_type(&self) -> ::std::option::Option<& str> {
         self.license_type.as_deref()
     }
     /// <p>The operating system of the virtual machine. If you import a VM that is compatible with Unified Extensible Firmware Interface (UEFI) using an EBS snapshot, you must specify a value for the platform.</p>
     /// <p>Valid values: <code>Windows</code> | <code>Linux</code></p>
-    pub fn platform(&self) -> ::std::option::Option<&str> {
+    pub fn platform(&self) -> ::std::option::Option<& str> {
         self.platform.as_deref()
     }
     /// <p>The name of the role to use when not using the default role, 'vmimport'.</p>
-    pub fn role_name(&self) -> ::std::option::Option<&str> {
+    pub fn role_name(&self) -> ::std::option::Option<& str> {
         self.role_name.as_deref()
     }
     /// <p>The ARNs of the license configurations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.license_specifications.is_none()`.
-    pub fn license_specifications(&self) -> &[crate::types::ImportImageLicenseConfigurationRequest] {
-        self.license_specifications.as_deref().unwrap_or_default()
+    pub fn license_specifications(&self) -> & [crate::types::ImportImageLicenseConfigurationRequest] {
+        self.license_specifications.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The tags to apply to the import image task during creation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
-    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
-        self.tag_specifications.as_deref().unwrap_or_default()
+    pub fn tag_specifications(&self) -> & [crate::types::TagSpecification] {
+        self.tag_specifications.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The usage operation value. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#prerequisites">Licensing options</a> in the <i>VM Import/Export User Guide</i>.</p>
-    pub fn usage_operation(&self) -> ::std::option::Option<&str> {
+    pub fn usage_operation(&self) -> ::std::option::Option<& str> {
         self.usage_operation.as_deref()
     }
     /// <p>The boot mode of the virtual machine.</p><note>
     /// <p>The <code>uefi-preferred</code> boot mode isn't supported for importing images. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/prerequisites.html#vmimport-boot-modes">Boot modes</a> in the <i>VM Import/Export User Guide</i>.</p>
     /// </note>
-    pub fn boot_mode(&self) -> ::std::option::Option<&crate::types::BootModeValues> {
+    pub fn boot_mode(&self) -> ::std::option::Option<& crate::types::BootModeValues> {
         self.boot_mode.as_ref()
     }
 }
@@ -165,7 +168,7 @@ pub struct ImportImageInputBuilder {
     pub(crate) client_data: ::std::option::Option<crate::types::ClientData>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) disk_containers: ::std::option::Option<::std::vec::Vec<crate::types::ImageDiskContainer>>,
+    pub(crate) disk_containers: ::std::option::Option<::std::vec::Vec::<crate::types::ImageDiskContainer>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) encrypted: ::std::option::Option<bool>,
     pub(crate) hypervisor: ::std::option::Option<::std::string::String>,
@@ -173,8 +176,8 @@ pub struct ImportImageInputBuilder {
     pub(crate) license_type: ::std::option::Option<::std::string::String>,
     pub(crate) platform: ::std::option::Option<::std::string::String>,
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
-    pub(crate) license_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ImportImageLicenseConfigurationRequest>>,
-    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) license_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::ImportImageLicenseConfigurationRequest>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
     pub(crate) usage_operation: ::std::option::Option<::std::string::String>,
     pub(crate) boot_mode: ::std::option::Option<crate::types::BootModeValues>,
 }
@@ -188,8 +191,7 @@ impl ImportImageInputBuilder {
     /// <p>The architecture of the virtual machine.</p>
     /// <p>Valid values: <code>i386</code> | <code>x86_64</code></p>
     pub fn set_architecture(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.architecture = input;
-        self
+        self.architecture = input; self
     }
     /// <p>The architecture of the virtual machine.</p>
     /// <p>Valid values: <code>i386</code> | <code>x86_64</code></p>
@@ -203,8 +205,7 @@ impl ImportImageInputBuilder {
     }
     /// <p>The client-specific data.</p>
     pub fn set_client_data(mut self, input: ::std::option::Option<crate::types::ClientData>) -> Self {
-        self.client_data = input;
-        self
+        self.client_data = input; self
     }
     /// <p>The client-specific data.</p>
     pub fn get_client_data(&self) -> &::std::option::Option<crate::types::ClientData> {
@@ -217,8 +218,7 @@ impl ImportImageInputBuilder {
     }
     /// <p>The token to enable idempotency for VM import requests.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The token to enable idempotency for VM import requests.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -231,8 +231,7 @@ impl ImportImageInputBuilder {
     }
     /// <p>A description string for the import image task.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description string for the import image task.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -245,17 +244,16 @@ impl ImportImageInputBuilder {
     /// <p>Information about the disk containers.</p>
     pub fn disk_containers(mut self, input: crate::types::ImageDiskContainer) -> Self {
         let mut v = self.disk_containers.unwrap_or_default();
-        v.push(input);
-        self.disk_containers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.disk_containers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the disk containers.</p>
-    pub fn set_disk_containers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageDiskContainer>>) -> Self {
-        self.disk_containers = input;
-        self
+    pub fn set_disk_containers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ImageDiskContainer>>) -> Self {
+        self.disk_containers = input; self
     }
     /// <p>Information about the disk containers.</p>
-    pub fn get_disk_containers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageDiskContainer>> {
+    pub fn get_disk_containers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ImageDiskContainer>> {
         &self.disk_containers
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -265,8 +263,7 @@ impl ImportImageInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -279,8 +276,7 @@ impl ImportImageInputBuilder {
     }
     /// <p>Specifies whether the destination AMI of the imported image should be encrypted. The default KMS key for EBS is used unless you specify a non-default KMS key using <code>KmsKeyId</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.encrypted = input;
-        self
+        self.encrypted = input; self
     }
     /// <p>Specifies whether the destination AMI of the imported image should be encrypted. The default KMS key for EBS is used unless you specify a non-default KMS key using <code>KmsKeyId</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
@@ -295,8 +291,7 @@ impl ImportImageInputBuilder {
     /// <p>The target hypervisor platform.</p>
     /// <p>Valid values: <code>xen</code></p>
     pub fn set_hypervisor(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hypervisor = input;
-        self
+        self.hypervisor = input; self
     }
     /// <p>The target hypervisor platform.</p>
     /// <p>Valid values: <code>xen</code></p>
@@ -338,8 +333,7 @@ impl ImportImageInputBuilder {
     /// <p>The specified KMS key must exist in the Region that the AMI is being copied to.</p>
     /// <p>Amazon EBS does not support asymmetric KMS keys.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>An identifier for the symmetric KMS key to use when creating the encrypted AMI. This parameter is only required if you want to use a non-default KMS key; if this parameter is not specified, the default KMS key for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must also be set.</p>
     /// <p>The KMS key identifier may be provided in any of the following formats:</p>
@@ -370,8 +364,7 @@ impl ImportImageInputBuilder {
     /// <p>Specify <code>AWS</code> to replace the source-system license with an Amazon Web Services license or <code>BYOL</code> to retain the source-system license. Leaving this parameter undefined is the same as choosing <code>AWS</code> when importing a Windows Server operating system, and the same as choosing <code>BYOL</code> when importing a Windows client operating system (such as Windows 10) or a Linux operating system.</p>
     /// <p>To use <code>BYOL</code>, you must have existing licenses with rights to use these licenses in a third party cloud, such as Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image">Prerequisites</a> in the VM Import/Export User Guide.</p>
     pub fn set_license_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.license_type = input;
-        self
+        self.license_type = input; self
     }
     /// <p>The license type to be used for the Amazon Machine Image (AMI) after importing.</p>
     /// <p>Specify <code>AWS</code> to replace the source-system license with an Amazon Web Services license or <code>BYOL</code> to retain the source-system license. Leaving this parameter undefined is the same as choosing <code>AWS</code> when importing a Windows Server operating system, and the same as choosing <code>BYOL</code> when importing a Windows client operating system (such as Windows 10) or a Linux operating system.</p>
@@ -388,8 +381,7 @@ impl ImportImageInputBuilder {
     /// <p>The operating system of the virtual machine. If you import a VM that is compatible with Unified Extensible Firmware Interface (UEFI) using an EBS snapshot, you must specify a value for the platform.</p>
     /// <p>Valid values: <code>Windows</code> | <code>Linux</code></p>
     pub fn set_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// <p>The operating system of the virtual machine. If you import a VM that is compatible with Unified Extensible Firmware Interface (UEFI) using an EBS snapshot, you must specify a value for the platform.</p>
     /// <p>Valid values: <code>Windows</code> | <code>Linux</code></p>
@@ -403,8 +395,7 @@ impl ImportImageInputBuilder {
     }
     /// <p>The name of the role to use when not using the default role, 'vmimport'.</p>
     pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_name = input;
-        self
+        self.role_name = input; self
     }
     /// <p>The name of the role to use when not using the default role, 'vmimport'.</p>
     pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -417,20 +408,16 @@ impl ImportImageInputBuilder {
     /// <p>The ARNs of the license configurations.</p>
     pub fn license_specifications(mut self, input: crate::types::ImportImageLicenseConfigurationRequest) -> Self {
         let mut v = self.license_specifications.unwrap_or_default();
-        v.push(input);
-        self.license_specifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.license_specifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ARNs of the license configurations.</p>
-    pub fn set_license_specifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ImportImageLicenseConfigurationRequest>>,
-    ) -> Self {
-        self.license_specifications = input;
-        self
+    pub fn set_license_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ImportImageLicenseConfigurationRequest>>) -> Self {
+        self.license_specifications = input; self
     }
     /// <p>The ARNs of the license configurations.</p>
-    pub fn get_license_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportImageLicenseConfigurationRequest>> {
+    pub fn get_license_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ImportImageLicenseConfigurationRequest>> {
         &self.license_specifications
     }
     /// Appends an item to `tag_specifications`.
@@ -440,17 +427,16 @@ impl ImportImageInputBuilder {
     /// <p>The tags to apply to the import image task during creation.</p>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         let mut v = self.tag_specifications.unwrap_or_default();
-        v.push(input);
-        self.tag_specifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_specifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to apply to the import image task during creation.</p>
-    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
-        self.tag_specifications = input;
-        self
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input; self
     }
     /// <p>The tags to apply to the import image task during creation.</p>
-    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>The usage operation value. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#prerequisites">Licensing options</a> in the <i>VM Import/Export User Guide</i>.</p>
@@ -460,8 +446,7 @@ impl ImportImageInputBuilder {
     }
     /// <p>The usage operation value. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#prerequisites">Licensing options</a> in the <i>VM Import/Export User Guide</i>.</p>
     pub fn set_usage_operation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.usage_operation = input;
-        self
+        self.usage_operation = input; self
     }
     /// <p>The usage operation value. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#prerequisites">Licensing options</a> in the <i>VM Import/Export User Guide</i>.</p>
     pub fn get_usage_operation(&self) -> &::std::option::Option<::std::string::String> {
@@ -478,8 +463,7 @@ impl ImportImageInputBuilder {
     /// <p>The <code>uefi-preferred</code> boot mode isn't supported for importing images. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/prerequisites.html#vmimport-boot-modes">Boot modes</a> in the <i>VM Import/Export User Guide</i>.</p>
     /// </note>
     pub fn set_boot_mode(mut self, input: ::std::option::Option<crate::types::BootModeValues>) -> Self {
-        self.boot_mode = input;
-        self
+        self.boot_mode = input; self
     }
     /// <p>The boot mode of the virtual machine.</p><note>
     /// <p>The <code>uefi-preferred</code> boot mode isn't supported for importing images. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/prerequisites.html#vmimport-boot-modes">Boot modes</a> in the <i>VM Import/Export User Guide</i>.</p>
@@ -489,23 +473,42 @@ impl ImportImageInputBuilder {
     }
     /// Consumes the builder and constructs a [`ImportImageInput`](crate::operation::import_image::ImportImageInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::import_image::ImportImageInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::import_image::ImportImageInput {
-            architecture: self.architecture,
-            client_data: self.client_data,
-            client_token: self.client_token,
-            description: self.description,
-            disk_containers: self.disk_containers,
-            dry_run: self.dry_run,
-            encrypted: self.encrypted,
-            hypervisor: self.hypervisor,
-            kms_key_id: self.kms_key_id,
-            license_type: self.license_type,
-            platform: self.platform,
-            role_name: self.role_name,
-            license_specifications: self.license_specifications,
-            tag_specifications: self.tag_specifications,
-            usage_operation: self.usage_operation,
-            boot_mode: self.boot_mode,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::import_image::ImportImageInput {
+                architecture: self.architecture
+                ,
+                client_data: self.client_data
+                ,
+                client_token: self.client_token
+                ,
+                description: self.description
+                ,
+                disk_containers: self.disk_containers
+                ,
+                dry_run: self.dry_run
+                ,
+                encrypted: self.encrypted
+                ,
+                hypervisor: self.hypervisor
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                license_type: self.license_type
+                ,
+                platform: self.platform
+                ,
+                role_name: self.role_name
+                ,
+                license_specifications: self.license_specifications
+                ,
+                tag_specifications: self.tag_specifications
+                ,
+                usage_operation: self.usage_operation
+                ,
+                boot_mode: self.boot_mode
+                ,
+            }
+        )
     }
 }
+

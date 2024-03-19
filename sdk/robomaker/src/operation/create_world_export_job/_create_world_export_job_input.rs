@@ -2,39 +2,40 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateWorldExportJobInput {
+pub struct CreateWorldExportJobInput  {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to export.</p>
-    pub worlds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub worlds: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The output location.</p>
     pub output_location: ::std::option::Option<crate::types::OutputLocation>,
     /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
     pub iam_role: ::std::option::Option<::std::string::String>,
     /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateWorldExportJobInput {
+impl  CreateWorldExportJobInput  {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to export.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.worlds.is_none()`.
-    pub fn worlds(&self) -> &[::std::string::String] {
-        self.worlds.as_deref().unwrap_or_default()
+    pub fn worlds(&self) -> & [::std::string::String] {
+        self.worlds.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The output location.</p>
-    pub fn output_location(&self) -> ::std::option::Option<&crate::types::OutputLocation> {
+    pub fn output_location(&self) -> ::std::option::Option<& crate::types::OutputLocation> {
         self.output_location.as_ref()
     }
     /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
-    pub fn iam_role(&self) -> ::std::option::Option<&str> {
+    pub fn iam_role(&self) -> ::std::option::Option<& str> {
         self.iam_role.as_deref()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -50,10 +51,10 @@ impl CreateWorldExportJobInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateWorldExportJobInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
-    pub(crate) worlds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) worlds: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) output_location: ::std::option::Option<crate::types::OutputLocation>,
     pub(crate) iam_role: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateWorldExportJobInputBuilder {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -63,8 +64,7 @@ impl CreateWorldExportJobInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,17 +77,16 @@ impl CreateWorldExportJobInputBuilder {
     /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to export.</p>
     pub fn worlds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.worlds.unwrap_or_default();
-        v.push(input.into());
-        self.worlds = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.worlds = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to export.</p>
-    pub fn set_worlds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.worlds = input;
-        self
+    pub fn set_worlds(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.worlds = input; self
     }
     /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to export.</p>
-    pub fn get_worlds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_worlds(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.worlds
     }
     /// <p>The output location.</p>
@@ -98,8 +97,7 @@ impl CreateWorldExportJobInputBuilder {
     }
     /// <p>The output location.</p>
     pub fn set_output_location(mut self, input: ::std::option::Option<crate::types::OutputLocation>) -> Self {
-        self.output_location = input;
-        self
+        self.output_location = input; self
     }
     /// <p>The output location.</p>
     pub fn get_output_location(&self) -> &::std::option::Option<crate::types::OutputLocation> {
@@ -113,8 +111,7 @@ impl CreateWorldExportJobInputBuilder {
     }
     /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
     pub fn set_iam_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_role = input;
-        self
+        self.iam_role = input; self
     }
     /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
     pub fn get_iam_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,30 +124,34 @@ impl CreateWorldExportJobInputBuilder {
     /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateWorldExportJobInput`](crate::operation::create_world_export_job::CreateWorldExportJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_world_export_job::CreateWorldExportJobInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_world_export_job::CreateWorldExportJobInput {
-            client_request_token: self.client_request_token,
-            worlds: self.worlds,
-            output_location: self.output_location,
-            iam_role: self.iam_role,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_world_export_job::CreateWorldExportJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_world_export_job::CreateWorldExportJobInput {
+                client_request_token: self.client_request_token
+                ,
+                worlds: self.worlds
+                ,
+                output_location: self.output_location
+                ,
+                iam_role: self.iam_role
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

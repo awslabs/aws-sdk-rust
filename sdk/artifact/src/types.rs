@@ -40,3 +40,4 @@ pub mod builders;
 
 /// Error types that AWS Artifact can respond with.
 pub mod error;
+

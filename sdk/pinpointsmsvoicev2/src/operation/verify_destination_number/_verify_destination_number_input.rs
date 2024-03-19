@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VerifyDestinationNumberInput {
+pub struct VerifyDestinationNumberInput  {
     /// <p>The unique identifier for the verififed destination phone number.</p>
     pub verified_destination_number_id: ::std::option::Option<::std::string::String>,
     /// <p>The verification code that was received by the verified destination phone number.</p>
     pub verification_code: ::std::option::Option<::std::string::String>,
 }
-impl VerifyDestinationNumberInput {
+impl  VerifyDestinationNumberInput  {
     /// <p>The unique identifier for the verififed destination phone number.</p>
-    pub fn verified_destination_number_id(&self) -> ::std::option::Option<&str> {
+    pub fn verified_destination_number_id(&self) -> ::std::option::Option<& str> {
         self.verified_destination_number_id.as_deref()
     }
     /// <p>The verification code that was received by the verified destination phone number.</p>
-    pub fn verification_code(&self) -> ::std::option::Option<&str> {
+    pub fn verification_code(&self) -> ::std::option::Option<& str> {
         self.verification_code.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl VerifyDestinationNumberInputBuilder {
     }
     /// <p>The unique identifier for the verififed destination phone number.</p>
     pub fn set_verified_destination_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.verified_destination_number_id = input;
-        self
+        self.verified_destination_number_id = input; self
     }
     /// <p>The unique identifier for the verififed destination phone number.</p>
     pub fn get_verified_destination_number_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl VerifyDestinationNumberInputBuilder {
     }
     /// <p>The verification code that was received by the verified destination phone number.</p>
     pub fn set_verification_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.verification_code = input;
-        self
+        self.verification_code = input; self
     }
     /// <p>The verification code that was received by the verified destination phone number.</p>
     pub fn get_verification_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.verification_code
     }
     /// Consumes the builder and constructs a [`VerifyDestinationNumberInput`](crate::operation::verify_destination_number::VerifyDestinationNumberInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::verify_destination_number::VerifyDestinationNumberInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::verify_destination_number::VerifyDestinationNumberInput {
-            verified_destination_number_id: self.verified_destination_number_id,
-            verification_code: self.verification_code,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::verify_destination_number::VerifyDestinationNumberInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::verify_destination_number::VerifyDestinationNumberInput {
+                verified_destination_number_id: self.verified_destination_number_id
+                ,
+                verification_code: self.verification_code
+                ,
+            }
+        )
     }
 }
+

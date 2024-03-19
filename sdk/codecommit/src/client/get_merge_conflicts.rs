@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetMergeConflicts`](crate::operation::get_merge_conflicts::builders::GetMergeConflictsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_merge_conflicts::builders::GetMergeConflictsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`repository_name(impl Into<String>)`](crate::operation::get_merge_conflicts::builders::GetMergeConflictsFluentBuilder::repository_name) / [`set_repository_name(Option<String>)`](crate::operation::get_merge_conflicts::builders::GetMergeConflictsFluentBuilder::set_repository_name):<br>required: **true**<br><p>The name of the repository where the pull request was created.</p><br>
     ///   - [`destination_commit_specifier(impl Into<String>)`](crate::operation::get_merge_conflicts::builders::GetMergeConflictsFluentBuilder::destination_commit_specifier) / [`set_destination_commit_specifier(Option<String>)`](crate::operation::get_merge_conflicts::builders::GetMergeConflictsFluentBuilder::set_destination_commit_specifier):<br>required: **true**<br><p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p><br>
     ///   - [`source_commit_specifier(impl Into<String>)`](crate::operation::get_merge_conflicts::builders::GetMergeConflictsFluentBuilder::source_commit_specifier) / [`set_source_commit_specifier(Option<String>)`](crate::operation::get_merge_conflicts::builders::GetMergeConflictsFluentBuilder::set_source_commit_specifier):<br>required: **true**<br><p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p><br>
@@ -12,15 +12,16 @@ impl super::Client {
     ///   - [`max_conflict_files(i32)`](crate::operation::get_merge_conflicts::builders::GetMergeConflictsFluentBuilder::max_conflict_files) / [`set_max_conflict_files(Option<i32>)`](crate::operation::get_merge_conflicts::builders::GetMergeConflictsFluentBuilder::set_max_conflict_files):<br>required: **false**<br><p>The maximum number of files to include in the output.</p><br>
     ///   - [`conflict_resolution_strategy(ConflictResolutionStrategyTypeEnum)`](crate::operation::get_merge_conflicts::builders::GetMergeConflictsFluentBuilder::conflict_resolution_strategy) / [`set_conflict_resolution_strategy(Option<ConflictResolutionStrategyTypeEnum>)`](crate::operation::get_merge_conflicts::builders::GetMergeConflictsFluentBuilder::set_conflict_resolution_strategy):<br>required: **false**<br><p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_merge_conflicts::builders::GetMergeConflictsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_merge_conflicts::builders::GetMergeConflictsFluentBuilder::set_next_token):<br>required: **false**<br><p>An enumeration token that, when provided in a request, returns the next batch of the results.</p><br>
-    /// - On success, responds with [`GetMergeConflictsOutput`](crate::operation::get_merge_conflicts::GetMergeConflictsOutput) with field(s):
+                            /// - On success, responds with [`GetMergeConflictsOutput`](crate::operation::get_merge_conflicts::GetMergeConflictsOutput) with field(s):
     ///   - [`mergeable(bool)`](crate::operation::get_merge_conflicts::GetMergeConflictsOutput::mergeable): <p>A Boolean value that indicates whether the code is mergeable by the specified merge option.</p>
     ///   - [`destination_commit_id(String)`](crate::operation::get_merge_conflicts::GetMergeConflictsOutput::destination_commit_id): <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
     ///   - [`source_commit_id(String)`](crate::operation::get_merge_conflicts::GetMergeConflictsOutput::source_commit_id): <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
     ///   - [`base_commit_id(Option<String>)`](crate::operation::get_merge_conflicts::GetMergeConflictsOutput::base_commit_id): <p>The commit ID of the merge base.</p>
     ///   - [`conflict_metadata_list(Vec::<ConflictMetadata>)`](crate::operation::get_merge_conflicts::GetMergeConflictsOutput::conflict_metadata_list): <p>A list of metadata for any conflicting files. If the specified merge strategy is FAST_FORWARD_MERGE, this list is always empty.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_merge_conflicts::GetMergeConflictsOutput::next_token): <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
-    /// - On failure, responds with [`SdkError<GetMergeConflictsError>`](crate::operation::get_merge_conflicts::GetMergeConflictsError)
+                            /// - On failure, responds with [`SdkError<GetMergeConflictsError>`](crate::operation::get_merge_conflicts::GetMergeConflictsError)
     pub fn get_merge_conflicts(&self) -> crate::operation::get_merge_conflicts::builders::GetMergeConflictsFluentBuilder {
-        crate::operation::get_merge_conflicts::builders::GetMergeConflictsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_merge_conflicts::builders::GetMergeConflictsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

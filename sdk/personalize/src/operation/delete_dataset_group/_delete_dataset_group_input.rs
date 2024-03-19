@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDatasetGroupInput {
+pub struct DeleteDatasetGroupInput  {
     /// <p>The ARN of the dataset group to delete.</p>
     pub dataset_group_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteDatasetGroupInput {
+impl  DeleteDatasetGroupInput  {
     /// <p>The ARN of the dataset group to delete.</p>
-    pub fn dataset_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_group_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_group_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteDatasetGroupInputBuilder {
     }
     /// <p>The ARN of the dataset group to delete.</p>
     pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_group_arn = input;
-        self
+        self.dataset_group_arn = input; self
     }
     /// <p>The ARN of the dataset group to delete.</p>
     pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataset_group_arn
     }
     /// Consumes the builder and constructs a [`DeleteDatasetGroupInput`](crate::operation::delete_dataset_group::DeleteDatasetGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_dataset_group::DeleteDatasetGroupInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_dataset_group::DeleteDatasetGroupInput {
-            dataset_group_arn: self.dataset_group_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_dataset_group::DeleteDatasetGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_dataset_group::DeleteDatasetGroupInput {
+                dataset_group_arn: self.dataset_group_arn
+                ,
+            }
+        )
     }
 }
+

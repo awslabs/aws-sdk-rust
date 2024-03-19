@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAccessLogSubscriptions`](crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`resource_identifier(impl Into<String>)`](crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsFluentBuilder::resource_identifier) / [`set_resource_identifier(Option<String>)`](crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsFluentBuilder::set_resource_identifier):<br>required: **true**<br><p>The ID or Amazon Resource Name (ARN) of the service network or service.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token for the next page of results.</p><br>
-    /// - On success, responds with [`ListAccessLogSubscriptionsOutput`](crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsOutput) with field(s):
+                            /// - On success, responds with [`ListAccessLogSubscriptionsOutput`](crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsOutput) with field(s):
     ///   - [`items(Vec::<AccessLogSubscriptionSummary>)`](crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsOutput::items): <p>The access log subscriptions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsOutput::next_token): <p>A pagination token for the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListAccessLogSubscriptionsError>`](crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsError)
-    pub fn list_access_log_subscriptions(
-        &self,
-    ) -> crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsFluentBuilder {
-        crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListAccessLogSubscriptionsError>`](crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsError)
+    pub fn list_access_log_subscriptions(&self) -> crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsFluentBuilder {
+                                crate::operation::list_access_log_subscriptions::builders::ListAccessLogSubscriptionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

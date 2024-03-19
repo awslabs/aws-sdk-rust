@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAuditTasksOutput {
+pub struct ListAuditTasksOutput  {
     /// <p>The audits that were performed during the specified time period.</p>
-    pub tasks: ::std::option::Option<::std::vec::Vec<crate::types::AuditTaskMetadata>>,
+    pub tasks: ::std::option::Option<::std::vec::Vec::<crate::types::AuditTaskMetadata>>,
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListAuditTasksOutput {
+impl  ListAuditTasksOutput  {
     /// <p>The audits that were performed during the specified time period.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tasks.is_none()`.
-    pub fn tasks(&self) -> &[crate::types::AuditTaskMetadata] {
-        self.tasks.as_deref().unwrap_or_default()
+    pub fn tasks(&self) -> & [crate::types::AuditTaskMetadata] {
+        self.tasks.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAuditTasksOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAuditTasksOutput {
     /// Creates a new builder-style object to manufacture [`ListAuditTasksOutput`](crate::operation::list_audit_tasks::ListAuditTasksOutput).
     pub fn builder() -> crate::operation::list_audit_tasks::builders::ListAuditTasksOutputBuilder {
@@ -37,7 +38,7 @@ impl ListAuditTasksOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAuditTasksOutputBuilder {
-    pub(crate) tasks: ::std::option::Option<::std::vec::Vec<crate::types::AuditTaskMetadata>>,
+    pub(crate) tasks: ::std::option::Option<::std::vec::Vec::<crate::types::AuditTaskMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListAuditTasksOutputBuilder {
     /// <p>The audits that were performed during the specified time period.</p>
     pub fn tasks(mut self, input: crate::types::AuditTaskMetadata) -> Self {
         let mut v = self.tasks.unwrap_or_default();
-        v.push(input);
-        self.tasks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tasks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The audits that were performed during the specified time period.</p>
-    pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuditTaskMetadata>>) -> Self {
-        self.tasks = input;
-        self
+    pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AuditTaskMetadata>>) -> Self {
+        self.tasks = input; self
     }
     /// <p>The audits that were performed during the specified time period.</p>
-    pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuditTaskMetadata>> {
+    pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AuditTaskMetadata>> {
         &self.tasks
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
@@ -69,28 +69,30 @@ impl ListAuditTasksOutputBuilder {
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAuditTasksOutput`](crate::operation::list_audit_tasks::ListAuditTasksOutput).
     pub fn build(self) -> crate::operation::list_audit_tasks::ListAuditTasksOutput {
         crate::operation::list_audit_tasks::ListAuditTasksOutput {
-            tasks: self.tasks,
-            next_token: self.next_token,
+            tasks: self.tasks
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,30 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTaskTemplateOutput {
+pub struct CreateTaskTemplateOutput  {
     /// <p>The identifier of the task template resource.</p>
     pub id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) for the task template resource.</p>
     pub arn: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CreateTaskTemplateOutput {
+impl  CreateTaskTemplateOutput  {
     /// <p>The identifier of the task template resource.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the task template resource.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateTaskTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateTaskTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateTaskTemplateOutput`](crate::operation::create_task_template::CreateTaskTemplateOutput).
     pub fn builder() -> crate::operation::create_task_template::builders::CreateTaskTemplateOutputBuilder {
@@ -50,8 +48,7 @@ impl CreateTaskTemplateOutputBuilder {
     }
     /// <p>The identifier of the task template resource.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the task template resource.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,44 +62,41 @@ impl CreateTaskTemplateOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the task template resource.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the task template resource.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateTaskTemplateOutput`](crate::operation::create_task_template::CreateTaskTemplateOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::operation::create_task_template::builders::CreateTaskTemplateOutputBuilder::id)
     /// - [`arn`](crate::operation::create_task_template::builders::CreateTaskTemplateOutputBuilder::arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_task_template::CreateTaskTemplateOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_task_template::CreateTaskTemplateOutput {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building CreateTaskTemplateOutput",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building CreateTaskTemplateOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_task_template::CreateTaskTemplateOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_task_template::CreateTaskTemplateOutput {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building CreateTaskTemplateOutput")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building CreateTaskTemplateOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

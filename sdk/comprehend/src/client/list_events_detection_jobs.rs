@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListEventsDetectionJobs`](crate::operation::list_events_detection_jobs::builders::ListEventsDetectionJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_events_detection_jobs::builders::ListEventsDetectionJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filter(EventsDetectionJobFilter)`](crate::operation::list_events_detection_jobs::builders::ListEventsDetectionJobsFluentBuilder::filter) / [`set_filter(Option<EventsDetectionJobFilter>)`](crate::operation::list_events_detection_jobs::builders::ListEventsDetectionJobsFluentBuilder::set_filter):<br>required: **false**<br><p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_events_detection_jobs::builders::ListEventsDetectionJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_events_detection_jobs::builders::ListEventsDetectionJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>Identifies the next page of results to return.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_events_detection_jobs::builders::ListEventsDetectionJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_events_detection_jobs::builders::ListEventsDetectionJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in each page.</p><br>
-    /// - On success, responds with [`ListEventsDetectionJobsOutput`](crate::operation::list_events_detection_jobs::ListEventsDetectionJobsOutput) with field(s):
+                            /// - On success, responds with [`ListEventsDetectionJobsOutput`](crate::operation::list_events_detection_jobs::ListEventsDetectionJobsOutput) with field(s):
     ///   - [`events_detection_job_properties_list(Option<Vec::<EventsDetectionJobProperties>>)`](crate::operation::list_events_detection_jobs::ListEventsDetectionJobsOutput::events_detection_job_properties_list): <p>A list containing the properties of each job that is returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_events_detection_jobs::ListEventsDetectionJobsOutput::next_token): <p>Identifies the next page of results to return.</p>
-    /// - On failure, responds with [`SdkError<ListEventsDetectionJobsError>`](crate::operation::list_events_detection_jobs::ListEventsDetectionJobsError)
+                            /// - On failure, responds with [`SdkError<ListEventsDetectionJobsError>`](crate::operation::list_events_detection_jobs::ListEventsDetectionJobsError)
     pub fn list_events_detection_jobs(&self) -> crate::operation::list_events_detection_jobs::builders::ListEventsDetectionJobsFluentBuilder {
-        crate::operation::list_events_detection_jobs::builders::ListEventsDetectionJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_events_detection_jobs::builders::ListEventsDetectionJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,15 +3,15 @@
 /// The Renewal settings for Reservations
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RenewalSettings {
+pub struct RenewalSettings  {
     /// Automatic renewal status for the reservation
     pub automatic_renewal: ::std::option::Option<crate::types::ReservationAutomaticRenewal>,
     /// Count for the reservation renewal
     pub renewal_count: ::std::option::Option<i32>,
 }
-impl RenewalSettings {
+impl  RenewalSettings  {
     /// Automatic renewal status for the reservation
-    pub fn automatic_renewal(&self) -> ::std::option::Option<&crate::types::ReservationAutomaticRenewal> {
+    pub fn automatic_renewal(&self) -> ::std::option::Option<& crate::types::ReservationAutomaticRenewal> {
         self.automatic_renewal.as_ref()
     }
     /// Count for the reservation renewal
@@ -41,8 +41,7 @@ impl RenewalSettingsBuilder {
     }
     /// Automatic renewal status for the reservation
     pub fn set_automatic_renewal(mut self, input: ::std::option::Option<crate::types::ReservationAutomaticRenewal>) -> Self {
-        self.automatic_renewal = input;
-        self
+        self.automatic_renewal = input; self
     }
     /// Automatic renewal status for the reservation
     pub fn get_automatic_renewal(&self) -> &::std::option::Option<crate::types::ReservationAutomaticRenewal> {
@@ -55,8 +54,7 @@ impl RenewalSettingsBuilder {
     }
     /// Count for the reservation renewal
     pub fn set_renewal_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.renewal_count = input;
-        self
+        self.renewal_count = input; self
     }
     /// Count for the reservation renewal
     pub fn get_renewal_count(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl RenewalSettingsBuilder {
     /// Consumes the builder and constructs a [`RenewalSettings`](crate::types::RenewalSettings).
     pub fn build(self) -> crate::types::RenewalSettings {
         crate::types::RenewalSettings {
-            automatic_renewal: self.automatic_renewal,
-            renewal_count: self.renewal_count,
+            automatic_renewal: self.automatic_renewal
+            ,
+            renewal_count: self.renewal_count
+            ,
         }
     }
 }
+

@@ -24,11 +24,7 @@ impl Target {
     /// Tries to convert the enum instance into [`AccountId`](crate::types::Target::AccountId), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_account_id(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let Target::AccountId(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Target::AccountId(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`AccountId`](crate::types::Target::AccountId).
     pub fn is_account_id(&self) -> bool {
@@ -37,11 +33,7 @@ impl Target {
     /// Tries to convert the enum instance into [`OrganizationalUnitId`](crate::types::Target::OrganizationalUnitId), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_organizational_unit_id(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let Target::OrganizationalUnitId(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Target::OrganizationalUnitId(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`OrganizationalUnitId`](crate::types::Target::OrganizationalUnitId).
     pub fn is_organizational_unit_id(&self) -> bool {
@@ -50,11 +42,7 @@ impl Target {
     /// Tries to convert the enum instance into [`RootId`](crate::types::Target::RootId), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_root_id(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let Target::RootId(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Target::RootId(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`RootId`](crate::types::Target::RootId).
     pub fn is_root_id(&self) -> bool {
@@ -65,3 +53,4 @@ impl Target {
         matches!(self, Self::Unknown)
     }
 }
+

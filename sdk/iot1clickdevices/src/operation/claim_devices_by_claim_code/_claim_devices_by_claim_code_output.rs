@@ -2,16 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClaimDevicesByClaimCodeOutput {
+pub struct ClaimDevicesByClaimCodeOutput  {
     /// <p>The claim code provided by the device manufacturer.</p>
     pub claim_code: ::std::option::Option<::std::string::String>,
     /// <p>The total number of devices associated with the claim code that has been processed in the claim request.</p>
     pub total: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
-impl ClaimDevicesByClaimCodeOutput {
+impl  ClaimDevicesByClaimCodeOutput  {
     /// <p>The claim code provided by the device manufacturer.</p>
-    pub fn claim_code(&self) -> ::std::option::Option<&str> {
+    pub fn claim_code(&self) -> ::std::option::Option<& str> {
         self.claim_code.as_deref()
     }
     /// <p>The total number of devices associated with the claim code that has been processed in the claim request.</p>
@@ -20,10 +20,10 @@ impl ClaimDevicesByClaimCodeOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for ClaimDevicesByClaimCodeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ClaimDevicesByClaimCodeOutput {
     /// Creates a new builder-style object to manufacture [`ClaimDevicesByClaimCodeOutput`](crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeOutput).
     pub fn builder() -> crate::operation::claim_devices_by_claim_code::builders::ClaimDevicesByClaimCodeOutputBuilder {
@@ -47,8 +47,7 @@ impl ClaimDevicesByClaimCodeOutputBuilder {
     }
     /// <p>The claim code provided by the device manufacturer.</p>
     pub fn set_claim_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.claim_code = input;
-        self
+        self.claim_code = input; self
     }
     /// <p>The claim code provided by the device manufacturer.</p>
     pub fn get_claim_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl ClaimDevicesByClaimCodeOutputBuilder {
     }
     /// <p>The total number of devices associated with the claim code that has been processed in the claim request.</p>
     pub fn set_total(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total = input;
-        self
+        self.total = input; self
     }
     /// <p>The total number of devices associated with the claim code that has been processed in the claim request.</p>
     pub fn get_total(&self) -> &::std::option::Option<i32> {
         &self.total
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ClaimDevicesByClaimCodeOutput`](crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeOutput).
     pub fn build(self) -> crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeOutput {
         crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeOutput {
-            claim_code: self.claim_code,
-            total: self.total,
+            claim_code: self.claim_code
+            ,
+            total: self.total
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct VerifySoftwareTokenInput {
+pub struct VerifySoftwareTokenInput  {
     /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to verify.</p>
     pub access_token: ::std::option::Option<::std::string::String>,
     /// <p>The session that should be passed both ways in challenge-response calls to the service.</p>
@@ -12,25 +12,25 @@ pub struct VerifySoftwareTokenInput {
     /// <p>The friendly device name.</p>
     pub friendly_device_name: ::std::option::Option<::std::string::String>,
 }
-impl VerifySoftwareTokenInput {
+impl  VerifySoftwareTokenInput  {
     /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to verify.</p>
-    pub fn access_token(&self) -> ::std::option::Option<&str> {
+    pub fn access_token(&self) -> ::std::option::Option<& str> {
         self.access_token.as_deref()
     }
     /// <p>The session that should be passed both ways in challenge-response calls to the service.</p>
-    pub fn session(&self) -> ::std::option::Option<&str> {
+    pub fn session(&self) -> ::std::option::Option<& str> {
         self.session.as_deref()
     }
     /// <p>The one- time password computed using the secret code returned by <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken</a>.</p>
-    pub fn user_code(&self) -> ::std::option::Option<&str> {
+    pub fn user_code(&self) -> ::std::option::Option<& str> {
         self.user_code.as_deref()
     }
     /// <p>The friendly device name.</p>
-    pub fn friendly_device_name(&self) -> ::std::option::Option<&str> {
+    pub fn friendly_device_name(&self) -> ::std::option::Option<& str> {
         self.friendly_device_name.as_deref()
     }
 }
-impl ::std::fmt::Debug for VerifySoftwareTokenInput {
+impl  ::std::fmt::Debug for VerifySoftwareTokenInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("VerifySoftwareTokenInput");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
@@ -64,8 +64,7 @@ impl VerifySoftwareTokenInputBuilder {
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to verify.</p>
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_token = input;
-        self
+        self.access_token = input; self
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to verify.</p>
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +77,7 @@ impl VerifySoftwareTokenInputBuilder {
     }
     /// <p>The session that should be passed both ways in challenge-response calls to the service.</p>
     pub fn set_session(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session = input;
-        self
+        self.session = input; self
     }
     /// <p>The session that should be passed both ways in challenge-response calls to the service.</p>
     pub fn get_session(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +91,7 @@ impl VerifySoftwareTokenInputBuilder {
     }
     /// <p>The one- time password computed using the secret code returned by <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken</a>.</p>
     pub fn set_user_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_code = input;
-        self
+        self.user_code = input; self
     }
     /// <p>The one- time password computed using the secret code returned by <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken</a>.</p>
     pub fn get_user_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,24 +104,26 @@ impl VerifySoftwareTokenInputBuilder {
     }
     /// <p>The friendly device name.</p>
     pub fn set_friendly_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.friendly_device_name = input;
-        self
+        self.friendly_device_name = input; self
     }
     /// <p>The friendly device name.</p>
     pub fn get_friendly_device_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.friendly_device_name
     }
     /// Consumes the builder and constructs a [`VerifySoftwareTokenInput`](crate::operation::verify_software_token::VerifySoftwareTokenInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::verify_software_token::VerifySoftwareTokenInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::verify_software_token::VerifySoftwareTokenInput {
-            access_token: self.access_token,
-            session: self.session,
-            user_code: self.user_code,
-            friendly_device_name: self.friendly_device_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::verify_software_token::VerifySoftwareTokenInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::verify_software_token::VerifySoftwareTokenInput {
+                access_token: self.access_token
+                ,
+                session: self.session
+                ,
+                user_code: self.user_code
+                ,
+                friendly_device_name: self.friendly_device_name
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for VerifySoftwareTokenInputBuilder {
@@ -137,3 +136,4 @@ impl ::std::fmt::Debug for VerifySoftwareTokenInputBuilder {
         formatter.finish()
     }
 }
+

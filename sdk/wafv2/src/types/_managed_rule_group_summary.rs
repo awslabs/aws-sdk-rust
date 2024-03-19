@@ -3,7 +3,7 @@
 /// <p>High-level information about a managed rule group, returned by <code>ListAvailableManagedRuleGroups</code>. This provides information like the name and vendor name, that you provide when you add a <code>ManagedRuleGroupStatement</code> to a web ACL. Managed rule groups include Amazon Web Services Managed Rules rule groups and Amazon Web Services Marketplace managed rule groups. To use any Amazon Web Services Marketplace managed rule group, first subscribe to the rule group through Amazon Web Services Marketplace.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ManagedRuleGroupSummary {
+pub struct ManagedRuleGroupSummary  {
     /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule group.</p>
     pub vendor_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
@@ -13,13 +13,13 @@ pub struct ManagedRuleGroupSummary {
     /// <p>The description of the managed rule group, provided by Amazon Web Services Managed Rules or the Amazon Web Services Marketplace seller who manages it.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl ManagedRuleGroupSummary {
+impl  ManagedRuleGroupSummary  {
     /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule group.</p>
-    pub fn vendor_name(&self) -> ::std::option::Option<&str> {
+    pub fn vendor_name(&self) -> ::std::option::Option<& str> {
         self.vendor_name.as_deref()
     }
     /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Indicates whether the managed rule group is versioned. If it is, you can retrieve the versions list by calling <code>ListAvailableManagedRuleGroupVersions</code>.</p>
@@ -27,7 +27,7 @@ impl ManagedRuleGroupSummary {
         self.versioning_supported
     }
     /// <p>The description of the managed rule group, provided by Amazon Web Services Managed Rules or the Amazon Web Services Marketplace seller who manages it.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl ManagedRuleGroupSummaryBuilder {
     }
     /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule group.</p>
     pub fn set_vendor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vendor_name = input;
-        self
+        self.vendor_name = input; self
     }
     /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule group.</p>
     pub fn get_vendor_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ManagedRuleGroupSummaryBuilder {
     }
     /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ManagedRuleGroupSummaryBuilder {
     }
     /// <p>Indicates whether the managed rule group is versioned. If it is, you can retrieve the versions list by calling <code>ListAvailableManagedRuleGroupVersions</code>.</p>
     pub fn set_versioning_supported(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.versioning_supported = input;
-        self
+        self.versioning_supported = input; self
     }
     /// <p>Indicates whether the managed rule group is versioned. If it is, you can retrieve the versions list by calling <code>ListAvailableManagedRuleGroupVersions</code>.</p>
     pub fn get_versioning_supported(&self) -> &::std::option::Option<bool> {
@@ -97,8 +94,7 @@ impl ManagedRuleGroupSummaryBuilder {
     }
     /// <p>The description of the managed rule group, provided by Amazon Web Services Managed Rules or the Amazon Web Services Marketplace seller who manages it.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the managed rule group, provided by Amazon Web Services Managed Rules or the Amazon Web Services Marketplace seller who manages it.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,16 @@ impl ManagedRuleGroupSummaryBuilder {
     /// Consumes the builder and constructs a [`ManagedRuleGroupSummary`](crate::types::ManagedRuleGroupSummary).
     pub fn build(self) -> crate::types::ManagedRuleGroupSummary {
         crate::types::ManagedRuleGroupSummary {
-            vendor_name: self.vendor_name,
-            name: self.name,
-            versioning_supported: self.versioning_supported.unwrap_or_default(),
-            description: self.description,
+            vendor_name: self.vendor_name
+            ,
+            name: self.name
+            ,
+            versioning_supported: self.versioning_supported
+                .unwrap_or_default()
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

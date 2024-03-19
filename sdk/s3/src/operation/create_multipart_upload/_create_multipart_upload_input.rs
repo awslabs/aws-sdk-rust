@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateMultipartUploadInput {
+pub struct CreateMultipartUploadInput  {
     /// <p>The canned ACL to apply to the object. Amazon S3 supports a set of predefined ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined set of grantees and permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned ACL</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can grant access permissions to individual Amazon Web Services accounts or to predefined groups defined by Amazon S3. These permissions are then added to the access control list (ACL) on the new object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using ACLs</a>. One way to grant the permissions using the request headers is to specify a canned ACL with the <code>x-amz-acl</code> request header.</p><note>
     /// <ul>
@@ -205,7 +205,7 @@ pub struct CreateMultipartUploadInput {
     /// <p>Object key for which the multipart upload is to be initiated.</p>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>A map of metadata to store with the object in S3.</p>
-    pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The server-side encryption algorithm used when you store this object in Amazon S3 (for example, <code>AES256</code>, <code>aws:kms</code>).</p><note>
     /// <p>For directory buckets, only server-side encryption with Amazon S3 managed keys (SSE-S3) (<code>AES256</code>) is supported.</p>
     /// </note>
@@ -273,7 +273,7 @@ pub struct CreateMultipartUploadInput {
     /// <p>Indicates the algorithm that you want Amazon S3 to use to create the checksum for the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub checksum_algorithm: ::std::option::Option<crate::types::ChecksumAlgorithm>,
 }
-impl CreateMultipartUploadInput {
+impl  CreateMultipartUploadInput  {
     /// <p>The canned ACL to apply to the object. Amazon S3 supports a set of predefined ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined set of grantees and permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned ACL</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can grant access permissions to individual Amazon Web Services accounts or to predefined groups defined by Amazon S3. These permissions are then added to the access control list (ACL) on the new object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using ACLs</a>. One way to grant the permissions using the request headers is to specify a canned ACL with the <code>x-amz-acl</code> request header.</p><note>
     /// <ul>
@@ -283,7 +283,7 @@ impl CreateMultipartUploadInput {
     /// <p>This functionality is not supported for Amazon S3 on Outposts.</p></li>
     /// </ul>
     /// </note>
-    pub fn acl(&self) -> ::std::option::Option<&crate::types::ObjectCannedAcl> {
+    pub fn acl(&self) -> ::std::option::Option<& crate::types::ObjectCannedAcl> {
         self.acl.as_ref()
     }
     /// <p>The name of the bucket where the multipart upload is initiated and where the object is uploaded.</p>
@@ -292,33 +292,33 @@ impl CreateMultipartUploadInput {
     /// <p>Access points and Object Lambda access points are not supported by directory buckets.</p>
     /// </note>
     /// <p><b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>Specifies caching behavior along the request/reply chain.</p>
-    pub fn cache_control(&self) -> ::std::option::Option<&str> {
+    pub fn cache_control(&self) -> ::std::option::Option<& str> {
         self.cache_control.as_deref()
     }
     /// <p>Specifies presentational information for the object.</p>
-    pub fn content_disposition(&self) -> ::std::option::Option<&str> {
+    pub fn content_disposition(&self) -> ::std::option::Option<& str> {
         self.content_disposition.as_deref()
     }
     /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p><note>
     /// <p>For directory buckets, only the <code>aws-chunked</code> value is supported in this header field.</p>
     /// </note>
-    pub fn content_encoding(&self) -> ::std::option::Option<&str> {
+    pub fn content_encoding(&self) -> ::std::option::Option<& str> {
         self.content_encoding.as_deref()
     }
     /// <p>The language that the content is in.</p>
-    pub fn content_language(&self) -> ::std::option::Option<&str> {
+    pub fn content_language(&self) -> ::std::option::Option<& str> {
         self.content_language.as_deref()
     }
     /// <p>A standard MIME type describing the format of the object data.</p>
-    pub fn content_type(&self) -> ::std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>The date and time at which the object is no longer cacheable.</p>
-    pub fn expires(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn expires(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.expires.as_ref()
     }
     /// <p>Specify access permissions explicitly to give the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.</p>
@@ -362,7 +362,7 @@ impl CreateMultipartUploadInput {
     /// <p>This functionality is not supported for Amazon S3 on Outposts.</p></li>
     /// </ul>
     /// </note>
-    pub fn grant_full_control(&self) -> ::std::option::Option<&str> {
+    pub fn grant_full_control(&self) -> ::std::option::Option<& str> {
         self.grant_full_control.as_deref()
     }
     /// <p>Specify access permissions explicitly to allow grantee to read the object data and its metadata.</p>
@@ -406,7 +406,7 @@ impl CreateMultipartUploadInput {
     /// <p>This functionality is not supported for Amazon S3 on Outposts.</p></li>
     /// </ul>
     /// </note>
-    pub fn grant_read(&self) -> ::std::option::Option<&str> {
+    pub fn grant_read(&self) -> ::std::option::Option<& str> {
         self.grant_read.as_deref()
     }
     /// <p>Specify access permissions explicitly to allows grantee to read the object ACL.</p>
@@ -450,7 +450,7 @@ impl CreateMultipartUploadInput {
     /// <p>This functionality is not supported for Amazon S3 on Outposts.</p></li>
     /// </ul>
     /// </note>
-    pub fn grant_read_acp(&self) -> ::std::option::Option<&str> {
+    pub fn grant_read_acp(&self) -> ::std::option::Option<& str> {
         self.grant_read_acp.as_deref()
     }
     /// <p>Specify access permissions explicitly to allows grantee to allow grantee to write the ACL for the applicable object.</p>
@@ -494,21 +494,21 @@ impl CreateMultipartUploadInput {
     /// <p>This functionality is not supported for Amazon S3 on Outposts.</p></li>
     /// </ul>
     /// </note>
-    pub fn grant_write_acp(&self) -> ::std::option::Option<&str> {
+    pub fn grant_write_acp(&self) -> ::std::option::Option<& str> {
         self.grant_write_acp.as_deref()
     }
     /// <p>Object key for which the multipart upload is to be initiated.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>A map of metadata to store with the object in S3.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn metadata(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.metadata.as_ref()
     }
     /// <p>The server-side encryption algorithm used when you store this object in Amazon S3 (for example, <code>AES256</code>, <code>aws:kms</code>).</p><note>
     /// <p>For directory buckets, only server-side encryption with Amazon S3 managed keys (SSE-S3) (<code>AES256</code>) is supported.</p>
     /// </note>
-    pub fn server_side_encryption(&self) -> ::std::option::Option<&crate::types::ServerSideEncryption> {
+    pub fn server_side_encryption(&self) -> ::std::option::Option<& crate::types::ServerSideEncryption> {
         self.server_side_encryption.as_ref()
     }
     /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The STANDARD storage class provides high durability and high availability. Depending on performance needs, you can specify a different Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the <i>Amazon S3 User Guide</i>.</p><note>
@@ -519,43 +519,43 @@ impl CreateMultipartUploadInput {
     /// <p>Amazon S3 on Outposts only uses the OUTPOSTS Storage Class.</p></li>
     /// </ul>
     /// </note>
-    pub fn storage_class(&self) -> ::std::option::Option<&crate::types::StorageClass> {
+    pub fn storage_class(&self) -> ::std::option::Option<& crate::types::StorageClass> {
         self.storage_class.as_ref()
     }
     /// <p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn website_redirect_location(&self) -> ::std::option::Option<&str> {
+    pub fn website_redirect_location(&self) -> ::std::option::Option<& str> {
         self.website_redirect_location.as_deref()
     }
     /// <p>Specifies the algorithm to use when encrypting the object (for example, AES256).</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn sse_customer_algorithm(&self) -> ::std::option::Option<&str> {
+    pub fn sse_customer_algorithm(&self) -> ::std::option::Option<& str> {
         self.sse_customer_algorithm.as_deref()
     }
     /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn sse_customer_key(&self) -> ::std::option::Option<&str> {
+    pub fn sse_customer_key(&self) -> ::std::option::Option<& str> {
         self.sse_customer_key.as_deref()
     }
     /// <p>Specifies the 128-bit MD5 digest of the customer-provided encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn sse_customer_key_md5(&self) -> ::std::option::Option<&str> {
+    pub fn sse_customer_key_md5(&self) -> ::std::option::Option<& str> {
         self.sse_customer_key_md5.as_deref()
     }
     /// <p>Specifies the ID (Key ID, Key ARN, or Key Alias) of the symmetric encryption customer managed key to use for object encryption.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn ssekms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn ssekms_key_id(&self) -> ::std::option::Option<& str> {
         self.ssekms_key_id.as_deref()
     }
     /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn ssekms_encryption_context(&self) -> ::std::option::Option<&str> {
+    pub fn ssekms_encryption_context(&self) -> ::std::option::Option<& str> {
         self.ssekms_encryption_context.as_deref()
     }
     /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using Key Management Service (KMS) keys (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS.</p>
@@ -568,43 +568,43 @@ impl CreateMultipartUploadInput {
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. If either the source or destination S3 bucket has Requester Pays enabled, the requester will pay for corresponding charges to copy the object. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn request_payer(&self) -> ::std::option::Option<&crate::types::RequestPayer> {
+    pub fn request_payer(&self) -> ::std::option::Option<& crate::types::RequestPayer> {
         self.request_payer.as_ref()
     }
     /// <p>The tag-set for the object. The tag-set must be encoded as URL Query parameters.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn tagging(&self) -> ::std::option::Option<&str> {
+    pub fn tagging(&self) -> ::std::option::Option<& str> {
         self.tagging.as_deref()
     }
     /// <p>Specifies the Object Lock mode that you want to apply to the uploaded object.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn object_lock_mode(&self) -> ::std::option::Option<&crate::types::ObjectLockMode> {
+    pub fn object_lock_mode(&self) -> ::std::option::Option<& crate::types::ObjectLockMode> {
         self.object_lock_mode.as_ref()
     }
     /// <p>Specifies the date and time when you want the Object Lock to expire.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn object_lock_retain_until_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn object_lock_retain_until_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.object_lock_retain_until_date.as_ref()
     }
     /// <p>Specifies whether you want to apply a legal hold to the uploaded object.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn object_lock_legal_hold_status(&self) -> ::std::option::Option<&crate::types::ObjectLockLegalHoldStatus> {
+    pub fn object_lock_legal_hold_status(&self) -> ::std::option::Option<& crate::types::ObjectLockLegalHoldStatus> {
         self.object_lock_legal_hold_status.as_ref()
     }
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(&self) -> ::std::option::Option<&str> {
+    pub fn expected_bucket_owner(&self) -> ::std::option::Option<& str> {
         self.expected_bucket_owner.as_deref()
     }
     /// <p>Indicates the algorithm that you want Amazon S3 to use to create the checksum for the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn checksum_algorithm(&self) -> ::std::option::Option<&crate::types::ChecksumAlgorithm> {
+    pub fn checksum_algorithm(&self) -> ::std::option::Option<& crate::types::ChecksumAlgorithm> {
         self.checksum_algorithm.as_ref()
     }
 }
-impl ::std::fmt::Debug for CreateMultipartUploadInput {
+impl  ::std::fmt::Debug for CreateMultipartUploadInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMultipartUploadInput");
         formatter.field("acl", &self.acl);
@@ -664,7 +664,7 @@ pub struct CreateMultipartUploadInputBuilder {
     pub(crate) grant_read_acp: ::std::option::Option<::std::string::String>,
     pub(crate) grant_write_acp: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
-    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) server_side_encryption: ::std::option::Option<crate::types::ServerSideEncryption>,
     pub(crate) storage_class: ::std::option::Option<crate::types::StorageClass>,
     pub(crate) website_redirect_location: ::std::option::Option<::std::string::String>,
@@ -706,8 +706,7 @@ impl CreateMultipartUploadInputBuilder {
     /// </ul>
     /// </note>
     pub fn set_acl(mut self, input: ::std::option::Option<crate::types::ObjectCannedAcl>) -> Self {
-        self.acl = input;
-        self
+        self.acl = input; self
     }
     /// <p>The canned ACL to apply to the object. Amazon S3 supports a set of predefined ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined set of grantees and permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned ACL</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can grant access permissions to individual Amazon Web Services accounts or to predefined groups defined by Amazon S3. These permissions are then added to the access control list (ACL) on the new object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using ACLs</a>. One way to grant the permissions using the request headers is to specify a canned ACL with the <code>x-amz-acl</code> request header.</p><note>
@@ -739,8 +738,7 @@ impl CreateMultipartUploadInputBuilder {
     /// </note>
     /// <p><b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The name of the bucket where the multipart upload is initiated and where the object is uploaded.</p>
     /// <p><b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -758,8 +756,7 @@ impl CreateMultipartUploadInputBuilder {
     }
     /// <p>Specifies caching behavior along the request/reply chain.</p>
     pub fn set_cache_control(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cache_control = input;
-        self
+        self.cache_control = input; self
     }
     /// <p>Specifies caching behavior along the request/reply chain.</p>
     pub fn get_cache_control(&self) -> &::std::option::Option<::std::string::String> {
@@ -772,8 +769,7 @@ impl CreateMultipartUploadInputBuilder {
     }
     /// <p>Specifies presentational information for the object.</p>
     pub fn set_content_disposition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_disposition = input;
-        self
+        self.content_disposition = input; self
     }
     /// <p>Specifies presentational information for the object.</p>
     pub fn get_content_disposition(&self) -> &::std::option::Option<::std::string::String> {
@@ -790,8 +786,7 @@ impl CreateMultipartUploadInputBuilder {
     /// <p>For directory buckets, only the <code>aws-chunked</code> value is supported in this header field.</p>
     /// </note>
     pub fn set_content_encoding(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_encoding = input;
-        self
+        self.content_encoding = input; self
     }
     /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p><note>
     /// <p>For directory buckets, only the <code>aws-chunked</code> value is supported in this header field.</p>
@@ -806,8 +801,7 @@ impl CreateMultipartUploadInputBuilder {
     }
     /// <p>The language that the content is in.</p>
     pub fn set_content_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_language = input;
-        self
+        self.content_language = input; self
     }
     /// <p>The language that the content is in.</p>
     pub fn get_content_language(&self) -> &::std::option::Option<::std::string::String> {
@@ -820,8 +814,7 @@ impl CreateMultipartUploadInputBuilder {
     }
     /// <p>A standard MIME type describing the format of the object data.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>A standard MIME type describing the format of the object data.</p>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -834,8 +827,7 @@ impl CreateMultipartUploadInputBuilder {
     }
     /// <p>The date and time at which the object is no longer cacheable.</p>
     pub fn set_expires(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.expires = input;
-        self
+        self.expires = input; self
     }
     /// <p>The date and time at which the object is no longer cacheable.</p>
     pub fn get_expires(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -928,8 +920,7 @@ impl CreateMultipartUploadInputBuilder {
     /// </ul>
     /// </note>
     pub fn set_grant_full_control(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.grant_full_control = input;
-        self
+        self.grant_full_control = input; self
     }
     /// <p>Specify access permissions explicitly to give the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.</p>
     /// <p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can use this header to explicitly grant access permissions to specific Amazon Web Services accounts or groups. This header maps to specific permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access Control List (ACL) Overview</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -1062,8 +1053,7 @@ impl CreateMultipartUploadInputBuilder {
     /// </ul>
     /// </note>
     pub fn set_grant_read(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.grant_read = input;
-        self
+        self.grant_read = input; self
     }
     /// <p>Specify access permissions explicitly to allow grantee to read the object data and its metadata.</p>
     /// <p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can use this header to explicitly grant access permissions to specific Amazon Web Services accounts or groups. This header maps to specific permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access Control List (ACL) Overview</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -1196,8 +1186,7 @@ impl CreateMultipartUploadInputBuilder {
     /// </ul>
     /// </note>
     pub fn set_grant_read_acp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.grant_read_acp = input;
-        self
+        self.grant_read_acp = input; self
     }
     /// <p>Specify access permissions explicitly to allows grantee to read the object ACL.</p>
     /// <p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can use this header to explicitly grant access permissions to specific Amazon Web Services accounts or groups. This header maps to specific permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access Control List (ACL) Overview</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -1330,8 +1319,7 @@ impl CreateMultipartUploadInputBuilder {
     /// </ul>
     /// </note>
     pub fn set_grant_write_acp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.grant_write_acp = input;
-        self
+        self.grant_write_acp = input; self
     }
     /// <p>Specify access permissions explicitly to allows grantee to allow grantee to write the ACL for the applicable object.</p>
     /// <p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can use this header to explicitly grant access permissions to specific Amazon Web Services accounts or groups. This header maps to specific permissions that Amazon S3 supports in an ACL. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access Control List (ACL) Overview</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -1385,8 +1373,7 @@ impl CreateMultipartUploadInputBuilder {
     }
     /// <p>Object key for which the multipart upload is to be initiated.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>Object key for which the multipart upload is to be initiated.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -1399,17 +1386,16 @@ impl CreateMultipartUploadInputBuilder {
     /// <p>A map of metadata to store with the object in S3.</p>
     pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.metadata.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.metadata = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.metadata = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of metadata to store with the object in S3.</p>
-    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.metadata = input;
-        self
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.metadata = input; self
     }
     /// <p>A map of metadata to store with the object in S3.</p>
-    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.metadata
     }
     /// <p>The server-side encryption algorithm used when you store this object in Amazon S3 (for example, <code>AES256</code>, <code>aws:kms</code>).</p><note>
@@ -1423,8 +1409,7 @@ impl CreateMultipartUploadInputBuilder {
     /// <p>For directory buckets, only server-side encryption with Amazon S3 managed keys (SSE-S3) (<code>AES256</code>) is supported.</p>
     /// </note>
     pub fn set_server_side_encryption(mut self, input: ::std::option::Option<crate::types::ServerSideEncryption>) -> Self {
-        self.server_side_encryption = input;
-        self
+        self.server_side_encryption = input; self
     }
     /// <p>The server-side encryption algorithm used when you store this object in Amazon S3 (for example, <code>AES256</code>, <code>aws:kms</code>).</p><note>
     /// <p>For directory buckets, only server-side encryption with Amazon S3 managed keys (SSE-S3) (<code>AES256</code>) is supported.</p>
@@ -1453,8 +1438,7 @@ impl CreateMultipartUploadInputBuilder {
     /// </ul>
     /// </note>
     pub fn set_storage_class(mut self, input: ::std::option::Option<crate::types::StorageClass>) -> Self {
-        self.storage_class = input;
-        self
+        self.storage_class = input; self
     }
     /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The STANDARD storage class provides high durability and high availability. Depending on performance needs, you can specify a different Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the <i>Amazon S3 User Guide</i>.</p><note>
     /// <ul>
@@ -1478,8 +1462,7 @@ impl CreateMultipartUploadInputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_website_redirect_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.website_redirect_location = input;
-        self
+        self.website_redirect_location = input; self
     }
     /// <p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -1498,8 +1481,7 @@ impl CreateMultipartUploadInputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_sse_customer_algorithm(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sse_customer_algorithm = input;
-        self
+        self.sse_customer_algorithm = input; self
     }
     /// <p>Specifies the algorithm to use when encrypting the object (for example, AES256).</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -1518,8 +1500,7 @@ impl CreateMultipartUploadInputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_sse_customer_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sse_customer_key = input;
-        self
+        self.sse_customer_key = input; self
     }
     /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -1538,8 +1519,7 @@ impl CreateMultipartUploadInputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_sse_customer_key_md5(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sse_customer_key_md5 = input;
-        self
+        self.sse_customer_key_md5 = input; self
     }
     /// <p>Specifies the 128-bit MD5 digest of the customer-provided encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -1558,8 +1538,7 @@ impl CreateMultipartUploadInputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_ssekms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ssekms_key_id = input;
-        self
+        self.ssekms_key_id = input; self
     }
     /// <p>Specifies the ID (Key ID, Key ARN, or Key Alias) of the symmetric encryption customer managed key to use for object encryption.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -1578,8 +1557,7 @@ impl CreateMultipartUploadInputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_ssekms_encryption_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ssekms_encryption_context = input;
-        self
+        self.ssekms_encryption_context = input; self
     }
     /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -1600,8 +1578,7 @@ impl CreateMultipartUploadInputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_bucket_key_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.bucket_key_enabled = input;
-        self
+        self.bucket_key_enabled = input; self
     }
     /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using Key Management Service (KMS) keys (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS.</p>
     /// <p>Specifying this header with an object action doesn’t affect bucket-level settings for S3 Bucket Key.</p><note>
@@ -1621,8 +1598,7 @@ impl CreateMultipartUploadInputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_request_payer(mut self, input: ::std::option::Option<crate::types::RequestPayer>) -> Self {
-        self.request_payer = input;
-        self
+        self.request_payer = input; self
     }
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. If either the source or destination S3 bucket has Requester Pays enabled, the requester will pay for corresponding charges to copy the object. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -1641,8 +1617,7 @@ impl CreateMultipartUploadInputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_tagging(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tagging = input;
-        self
+        self.tagging = input; self
     }
     /// <p>The tag-set for the object. The tag-set must be encoded as URL Query parameters.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -1661,8 +1636,7 @@ impl CreateMultipartUploadInputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_object_lock_mode(mut self, input: ::std::option::Option<crate::types::ObjectLockMode>) -> Self {
-        self.object_lock_mode = input;
-        self
+        self.object_lock_mode = input; self
     }
     /// <p>Specifies the Object Lock mode that you want to apply to the uploaded object.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -1681,8 +1655,7 @@ impl CreateMultipartUploadInputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_object_lock_retain_until_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.object_lock_retain_until_date = input;
-        self
+        self.object_lock_retain_until_date = input; self
     }
     /// <p>Specifies the date and time when you want the Object Lock to expire.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -1701,8 +1674,7 @@ impl CreateMultipartUploadInputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_object_lock_legal_hold_status(mut self, input: ::std::option::Option<crate::types::ObjectLockLegalHoldStatus>) -> Self {
-        self.object_lock_legal_hold_status = input;
-        self
+        self.object_lock_legal_hold_status = input; self
     }
     /// <p>Specifies whether you want to apply a legal hold to the uploaded object.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -1717,8 +1689,7 @@ impl CreateMultipartUploadInputBuilder {
     }
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expected_bucket_owner = input;
-        self
+        self.expected_bucket_owner = input; self
     }
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -1731,50 +1702,78 @@ impl CreateMultipartUploadInputBuilder {
     }
     /// <p>Indicates the algorithm that you want Amazon S3 to use to create the checksum for the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_checksum_algorithm(mut self, input: ::std::option::Option<crate::types::ChecksumAlgorithm>) -> Self {
-        self.checksum_algorithm = input;
-        self
+        self.checksum_algorithm = input; self
     }
     /// <p>Indicates the algorithm that you want Amazon S3 to use to create the checksum for the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn get_checksum_algorithm(&self) -> &::std::option::Option<crate::types::ChecksumAlgorithm> {
         &self.checksum_algorithm
     }
     /// Consumes the builder and constructs a [`CreateMultipartUploadInput`](crate::operation::create_multipart_upload::CreateMultipartUploadInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_multipart_upload::CreateMultipartUploadInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_multipart_upload::CreateMultipartUploadInput {
-            acl: self.acl,
-            bucket: self.bucket,
-            cache_control: self.cache_control,
-            content_disposition: self.content_disposition,
-            content_encoding: self.content_encoding,
-            content_language: self.content_language,
-            content_type: self.content_type,
-            expires: self.expires,
-            grant_full_control: self.grant_full_control,
-            grant_read: self.grant_read,
-            grant_read_acp: self.grant_read_acp,
-            grant_write_acp: self.grant_write_acp,
-            key: self.key,
-            metadata: self.metadata,
-            server_side_encryption: self.server_side_encryption,
-            storage_class: self.storage_class,
-            website_redirect_location: self.website_redirect_location,
-            sse_customer_algorithm: self.sse_customer_algorithm,
-            sse_customer_key: self.sse_customer_key,
-            sse_customer_key_md5: self.sse_customer_key_md5,
-            ssekms_key_id: self.ssekms_key_id,
-            ssekms_encryption_context: self.ssekms_encryption_context,
-            bucket_key_enabled: self.bucket_key_enabled,
-            request_payer: self.request_payer,
-            tagging: self.tagging,
-            object_lock_mode: self.object_lock_mode,
-            object_lock_retain_until_date: self.object_lock_retain_until_date,
-            object_lock_legal_hold_status: self.object_lock_legal_hold_status,
-            expected_bucket_owner: self.expected_bucket_owner,
-            checksum_algorithm: self.checksum_algorithm,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_multipart_upload::CreateMultipartUploadInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_multipart_upload::CreateMultipartUploadInput {
+                acl: self.acl
+                ,
+                bucket: self.bucket
+                ,
+                cache_control: self.cache_control
+                ,
+                content_disposition: self.content_disposition
+                ,
+                content_encoding: self.content_encoding
+                ,
+                content_language: self.content_language
+                ,
+                content_type: self.content_type
+                ,
+                expires: self.expires
+                ,
+                grant_full_control: self.grant_full_control
+                ,
+                grant_read: self.grant_read
+                ,
+                grant_read_acp: self.grant_read_acp
+                ,
+                grant_write_acp: self.grant_write_acp
+                ,
+                key: self.key
+                ,
+                metadata: self.metadata
+                ,
+                server_side_encryption: self.server_side_encryption
+                ,
+                storage_class: self.storage_class
+                ,
+                website_redirect_location: self.website_redirect_location
+                ,
+                sse_customer_algorithm: self.sse_customer_algorithm
+                ,
+                sse_customer_key: self.sse_customer_key
+                ,
+                sse_customer_key_md5: self.sse_customer_key_md5
+                ,
+                ssekms_key_id: self.ssekms_key_id
+                ,
+                ssekms_encryption_context: self.ssekms_encryption_context
+                ,
+                bucket_key_enabled: self.bucket_key_enabled
+                ,
+                request_payer: self.request_payer
+                ,
+                tagging: self.tagging
+                ,
+                object_lock_mode: self.object_lock_mode
+                ,
+                object_lock_retain_until_date: self.object_lock_retain_until_date
+                ,
+                object_lock_legal_hold_status: self.object_lock_legal_hold_status
+                ,
+                expected_bucket_owner: self.expected_bucket_owner
+                ,
+                checksum_algorithm: self.checksum_algorithm
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateMultipartUploadInputBuilder {
@@ -1813,3 +1812,4 @@ impl ::std::fmt::Debug for CreateMultipartUploadInputBuilder {
         formatter.finish()
     }
 }
+

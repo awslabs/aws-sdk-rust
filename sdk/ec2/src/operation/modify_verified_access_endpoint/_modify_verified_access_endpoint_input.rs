@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyVerifiedAccessEndpointInput {
+pub struct ModifyVerifiedAccessEndpointInput  {
     /// <p>The ID of the Verified Access endpoint.</p>
     pub verified_access_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Verified Access group.</p>
@@ -18,29 +18,29 @@ pub struct ModifyVerifiedAccessEndpointInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl ModifyVerifiedAccessEndpointInput {
+impl  ModifyVerifiedAccessEndpointInput  {
     /// <p>The ID of the Verified Access endpoint.</p>
-    pub fn verified_access_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn verified_access_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.verified_access_endpoint_id.as_deref()
     }
     /// <p>The ID of the Verified Access group.</p>
-    pub fn verified_access_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn verified_access_group_id(&self) -> ::std::option::Option<& str> {
         self.verified_access_group_id.as_deref()
     }
     /// <p>The load balancer details if creating the Verified Access endpoint as <code>load-balancer</code>type.</p>
-    pub fn load_balancer_options(&self) -> ::std::option::Option<&crate::types::ModifyVerifiedAccessEndpointLoadBalancerOptions> {
+    pub fn load_balancer_options(&self) -> ::std::option::Option<& crate::types::ModifyVerifiedAccessEndpointLoadBalancerOptions> {
         self.load_balancer_options.as_ref()
     }
     /// <p>The network interface options.</p>
-    pub fn network_interface_options(&self) -> ::std::option::Option<&crate::types::ModifyVerifiedAccessEndpointEniOptions> {
+    pub fn network_interface_options(&self) -> ::std::option::Option<& crate::types::ModifyVerifiedAccessEndpointEniOptions> {
         self.network_interface_options.as_ref()
     }
     /// <p>A description for the Verified Access endpoint.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -76,8 +76,7 @@ impl ModifyVerifiedAccessEndpointInputBuilder {
     }
     /// <p>The ID of the Verified Access endpoint.</p>
     pub fn set_verified_access_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.verified_access_endpoint_id = input;
-        self
+        self.verified_access_endpoint_id = input; self
     }
     /// <p>The ID of the Verified Access endpoint.</p>
     pub fn get_verified_access_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl ModifyVerifiedAccessEndpointInputBuilder {
     }
     /// <p>The ID of the Verified Access group.</p>
     pub fn set_verified_access_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.verified_access_group_id = input;
-        self
+        self.verified_access_group_id = input; self
     }
     /// <p>The ID of the Verified Access group.</p>
     pub fn get_verified_access_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl ModifyVerifiedAccessEndpointInputBuilder {
     }
     /// <p>The load balancer details if creating the Verified Access endpoint as <code>load-balancer</code>type.</p>
     pub fn set_load_balancer_options(mut self, input: ::std::option::Option<crate::types::ModifyVerifiedAccessEndpointLoadBalancerOptions>) -> Self {
-        self.load_balancer_options = input;
-        self
+        self.load_balancer_options = input; self
     }
     /// <p>The load balancer details if creating the Verified Access endpoint as <code>load-balancer</code>type.</p>
     pub fn get_load_balancer_options(&self) -> &::std::option::Option<crate::types::ModifyVerifiedAccessEndpointLoadBalancerOptions> {
@@ -118,8 +115,7 @@ impl ModifyVerifiedAccessEndpointInputBuilder {
     }
     /// <p>The network interface options.</p>
     pub fn set_network_interface_options(mut self, input: ::std::option::Option<crate::types::ModifyVerifiedAccessEndpointEniOptions>) -> Self {
-        self.network_interface_options = input;
-        self
+        self.network_interface_options = input; self
     }
     /// <p>The network interface options.</p>
     pub fn get_network_interface_options(&self) -> &::std::option::Option<crate::types::ModifyVerifiedAccessEndpointEniOptions> {
@@ -132,8 +128,7 @@ impl ModifyVerifiedAccessEndpointInputBuilder {
     }
     /// <p>A description for the Verified Access endpoint.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description for the Verified Access endpoint.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +141,7 @@ impl ModifyVerifiedAccessEndpointInputBuilder {
     }
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,28 +154,32 @@ impl ModifyVerifiedAccessEndpointInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`ModifyVerifiedAccessEndpointInput`](crate::operation::modify_verified_access_endpoint::ModifyVerifiedAccessEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_verified_access_endpoint::ModifyVerifiedAccessEndpointInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::modify_verified_access_endpoint::ModifyVerifiedAccessEndpointInput {
-            verified_access_endpoint_id: self.verified_access_endpoint_id,
-            verified_access_group_id: self.verified_access_group_id,
-            load_balancer_options: self.load_balancer_options,
-            network_interface_options: self.network_interface_options,
-            description: self.description,
-            client_token: self.client_token,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_verified_access_endpoint::ModifyVerifiedAccessEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_verified_access_endpoint::ModifyVerifiedAccessEndpointInput {
+                verified_access_endpoint_id: self.verified_access_endpoint_id
+                ,
+                verified_access_group_id: self.verified_access_group_id
+                ,
+                load_balancer_options: self.load_balancer_options
+                ,
+                network_interface_options: self.network_interface_options
+                ,
+                description: self.description
+                ,
+                client_token: self.client_token
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

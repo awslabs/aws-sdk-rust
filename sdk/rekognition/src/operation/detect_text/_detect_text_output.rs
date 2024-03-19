@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetectTextOutput {
+pub struct DetectTextOutput  {
     /// <p>An array of text that was detected in the input image.</p>
-    pub text_detections: ::std::option::Option<::std::vec::Vec<crate::types::TextDetection>>,
+    pub text_detections: ::std::option::Option<::std::vec::Vec::<crate::types::TextDetection>>,
     /// <p>The model version used to detect text.</p>
     pub text_model_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DetectTextOutput {
+impl  DetectTextOutput  {
     /// <p>An array of text that was detected in the input image.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.text_detections.is_none()`.
-    pub fn text_detections(&self) -> &[crate::types::TextDetection] {
-        self.text_detections.as_deref().unwrap_or_default()
+    pub fn text_detections(&self) -> & [crate::types::TextDetection] {
+        self.text_detections.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The model version used to detect text.</p>
-    pub fn text_model_version(&self) -> ::std::option::Option<&str> {
+    pub fn text_model_version(&self) -> ::std::option::Option<& str> {
         self.text_model_version.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DetectTextOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DetectTextOutput {
     /// Creates a new builder-style object to manufacture [`DetectTextOutput`](crate::operation::detect_text::DetectTextOutput).
     pub fn builder() -> crate::operation::detect_text::builders::DetectTextOutputBuilder {
@@ -37,7 +38,7 @@ impl DetectTextOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectTextOutputBuilder {
-    pub(crate) text_detections: ::std::option::Option<::std::vec::Vec<crate::types::TextDetection>>,
+    pub(crate) text_detections: ::std::option::Option<::std::vec::Vec::<crate::types::TextDetection>>,
     pub(crate) text_model_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DetectTextOutputBuilder {
     /// <p>An array of text that was detected in the input image.</p>
     pub fn text_detections(mut self, input: crate::types::TextDetection) -> Self {
         let mut v = self.text_detections.unwrap_or_default();
-        v.push(input);
-        self.text_detections = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.text_detections = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of text that was detected in the input image.</p>
-    pub fn set_text_detections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TextDetection>>) -> Self {
-        self.text_detections = input;
-        self
+    pub fn set_text_detections(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TextDetection>>) -> Self {
+        self.text_detections = input; self
     }
     /// <p>An array of text that was detected in the input image.</p>
-    pub fn get_text_detections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TextDetection>> {
+    pub fn get_text_detections(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TextDetection>> {
         &self.text_detections
     }
     /// <p>The model version used to detect text.</p>
@@ -69,28 +69,30 @@ impl DetectTextOutputBuilder {
     }
     /// <p>The model version used to detect text.</p>
     pub fn set_text_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text_model_version = input;
-        self
+        self.text_model_version = input; self
     }
     /// <p>The model version used to detect text.</p>
     pub fn get_text_model_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.text_model_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DetectTextOutput`](crate::operation::detect_text::DetectTextOutput).
     pub fn build(self) -> crate::operation::detect_text::DetectTextOutput {
         crate::operation::detect_text::DetectTextOutput {
-            text_detections: self.text_detections,
-            text_model_version: self.text_model_version,
+            text_detections: self.text_detections
+            ,
+            text_model_version: self.text_model_version
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

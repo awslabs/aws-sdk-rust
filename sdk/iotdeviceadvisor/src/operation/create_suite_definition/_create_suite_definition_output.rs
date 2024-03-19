@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSuiteDefinitionOutput {
+pub struct CreateSuiteDefinitionOutput  {
     /// <p>The UUID of the test suite created.</p>
     pub suite_definition_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the test suite.</p>
@@ -13,29 +13,29 @@ pub struct CreateSuiteDefinitionOutput {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl CreateSuiteDefinitionOutput {
+impl  CreateSuiteDefinitionOutput  {
     /// <p>The UUID of the test suite created.</p>
-    pub fn suite_definition_id(&self) -> ::std::option::Option<&str> {
+    pub fn suite_definition_id(&self) -> ::std::option::Option<& str> {
         self.suite_definition_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the test suite.</p>
-    pub fn suite_definition_arn(&self) -> ::std::option::Option<&str> {
+    pub fn suite_definition_arn(&self) -> ::std::option::Option<& str> {
         self.suite_definition_arn.as_deref()
     }
     /// <p>The suite definition name of the test suite. This is a required parameter.</p>
-    pub fn suite_definition_name(&self) -> ::std::option::Option<&str> {
+    pub fn suite_definition_name(&self) -> ::std::option::Option<& str> {
         self.suite_definition_name.as_deref()
     }
     /// <p>The timestamp of when the test suite was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateSuiteDefinitionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateSuiteDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`CreateSuiteDefinitionOutput`](crate::operation::create_suite_definition::CreateSuiteDefinitionOutput).
     pub fn builder() -> crate::operation::create_suite_definition::builders::CreateSuiteDefinitionOutputBuilder {
@@ -61,8 +61,7 @@ impl CreateSuiteDefinitionOutputBuilder {
     }
     /// <p>The UUID of the test suite created.</p>
     pub fn set_suite_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.suite_definition_id = input;
-        self
+        self.suite_definition_id = input; self
     }
     /// <p>The UUID of the test suite created.</p>
     pub fn get_suite_definition_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl CreateSuiteDefinitionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the test suite.</p>
     pub fn set_suite_definition_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.suite_definition_arn = input;
-        self
+        self.suite_definition_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the test suite.</p>
     pub fn get_suite_definition_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl CreateSuiteDefinitionOutputBuilder {
     }
     /// <p>The suite definition name of the test suite. This is a required parameter.</p>
     pub fn set_suite_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.suite_definition_name = input;
-        self
+        self.suite_definition_name = input; self
     }
     /// <p>The suite definition name of the test suite. This is a required parameter.</p>
     pub fn get_suite_definition_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,30 +100,34 @@ impl CreateSuiteDefinitionOutputBuilder {
     }
     /// <p>The timestamp of when the test suite was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp of when the test suite was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateSuiteDefinitionOutput`](crate::operation::create_suite_definition::CreateSuiteDefinitionOutput).
     pub fn build(self) -> crate::operation::create_suite_definition::CreateSuiteDefinitionOutput {
         crate::operation::create_suite_definition::CreateSuiteDefinitionOutput {
-            suite_definition_id: self.suite_definition_id,
-            suite_definition_arn: self.suite_definition_arn,
-            suite_definition_name: self.suite_definition_name,
-            created_at: self.created_at,
+            suite_definition_id: self.suite_definition_id
+            ,
+            suite_definition_arn: self.suite_definition_arn
+            ,
+            suite_definition_name: self.suite_definition_name
+            ,
+            created_at: self.created_at
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

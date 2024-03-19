@@ -2,23 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ListAppInstancesInput {
+pub struct ListAppInstancesInput  {
     /// <p>The maximum number of <code>AppInstance</code>s that you want to return.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token passed by previous API requests until you reach the maximum number of <code>AppInstances</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListAppInstancesInput {
+impl  ListAppInstancesInput  {
     /// <p>The maximum number of <code>AppInstance</code>s that you want to return.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token passed by previous API requests until you reach the maximum number of <code>AppInstances</code>.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for ListAppInstancesInput {
+impl  ::std::fmt::Debug for ListAppInstancesInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ListAppInstancesInput");
         formatter.field("max_results", &self.max_results);
@@ -48,8 +48,7 @@ impl ListAppInstancesInputBuilder {
     }
     /// <p>The maximum number of <code>AppInstance</code>s that you want to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of <code>AppInstance</code>s that you want to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -62,21 +61,22 @@ impl ListAppInstancesInputBuilder {
     }
     /// <p>The token passed by previous API requests until you reach the maximum number of <code>AppInstances</code>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token passed by previous API requests until you reach the maximum number of <code>AppInstances</code>.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAppInstancesInput`](crate::operation::list_app_instances::ListAppInstancesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_app_instances::ListAppInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_app_instances::ListAppInstancesInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_app_instances::ListAppInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_app_instances::ListAppInstancesInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ListAppInstancesInputBuilder {
@@ -87,3 +87,4 @@ impl ::std::fmt::Debug for ListAppInstancesInputBuilder {
         formatter.finish()
     }
 }
+

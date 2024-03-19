@@ -3,19 +3,19 @@
 /// Information about a certificate authority for a group.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GroupCertificateAuthorityProperties {
+pub struct GroupCertificateAuthorityProperties  {
     /// The ARN of the certificate authority for the group.
     pub group_certificate_authority_arn: ::std::option::Option<::std::string::String>,
     /// The ID of the certificate authority for the group.
     pub group_certificate_authority_id: ::std::option::Option<::std::string::String>,
 }
-impl GroupCertificateAuthorityProperties {
+impl  GroupCertificateAuthorityProperties  {
     /// The ARN of the certificate authority for the group.
-    pub fn group_certificate_authority_arn(&self) -> ::std::option::Option<&str> {
+    pub fn group_certificate_authority_arn(&self) -> ::std::option::Option<& str> {
         self.group_certificate_authority_arn.as_deref()
     }
     /// The ID of the certificate authority for the group.
-    pub fn group_certificate_authority_id(&self) -> ::std::option::Option<&str> {
+    pub fn group_certificate_authority_id(&self) -> ::std::option::Option<& str> {
         self.group_certificate_authority_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GroupCertificateAuthorityPropertiesBuilder {
     }
     /// The ARN of the certificate authority for the group.
     pub fn set_group_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_certificate_authority_arn = input;
-        self
+        self.group_certificate_authority_arn = input; self
     }
     /// The ARN of the certificate authority for the group.
     pub fn get_group_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl GroupCertificateAuthorityPropertiesBuilder {
     }
     /// The ID of the certificate authority for the group.
     pub fn set_group_certificate_authority_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_certificate_authority_id = input;
-        self
+        self.group_certificate_authority_id = input; self
     }
     /// The ID of the certificate authority for the group.
     pub fn get_group_certificate_authority_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl GroupCertificateAuthorityPropertiesBuilder {
     /// Consumes the builder and constructs a [`GroupCertificateAuthorityProperties`](crate::types::GroupCertificateAuthorityProperties).
     pub fn build(self) -> crate::types::GroupCertificateAuthorityProperties {
         crate::types::GroupCertificateAuthorityProperties {
-            group_certificate_authority_arn: self.group_certificate_authority_arn,
-            group_certificate_authority_id: self.group_certificate_authority_id,
+            group_certificate_authority_arn: self.group_certificate_authority_arn
+            ,
+            group_certificate_authority_id: self.group_certificate_authority_id
+            ,
         }
     }
 }
+

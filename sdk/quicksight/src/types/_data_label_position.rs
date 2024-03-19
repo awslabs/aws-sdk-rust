@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let datalabelposition = unimplemented!();
 /// match datalabelposition {
@@ -34,16 +34,14 @@
 /// Specifically, when `datalabelposition` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DataLabelPosition::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum DataLabelPosition {
     #[allow(missing_docs)] // documentation missing in model
     Bottom,
@@ -59,73 +57,74 @@ pub enum DataLabelPosition {
     Top,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for DataLabelPosition {
-    fn from(s: &str) -> Self {
-        match s {
-            "BOTTOM" => DataLabelPosition::Bottom,
-            "INSIDE" => DataLabelPosition::Inside,
-            "LEFT" => DataLabelPosition::Left,
-            "OUTSIDE" => DataLabelPosition::Outside,
-            "RIGHT" => DataLabelPosition::Right,
-            "TOP" => DataLabelPosition::Top,
-            other => DataLabelPosition::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "BOTTOM" => DataLabelPosition::Bottom,
+"INSIDE" => DataLabelPosition::Inside,
+"LEFT" => DataLabelPosition::Left,
+"OUTSIDE" => DataLabelPosition::Outside,
+"RIGHT" => DataLabelPosition::Right,
+"TOP" => DataLabelPosition::Top,
+other => DataLabelPosition::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for DataLabelPosition {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(DataLabelPosition::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(DataLabelPosition::from(s))
+                    }
+                }
 impl DataLabelPosition {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DataLabelPosition::Bottom => "BOTTOM",
-            DataLabelPosition::Inside => "INSIDE",
-            DataLabelPosition::Left => "LEFT",
-            DataLabelPosition::Outside => "OUTSIDE",
-            DataLabelPosition::Right => "RIGHT",
-            DataLabelPosition::Top => "TOP",
-            DataLabelPosition::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["BOTTOM", "INSIDE", "LEFT", "OUTSIDE", "RIGHT", "TOP"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DataLabelPosition::Bottom => "BOTTOM",
+    DataLabelPosition::Inside => "INSIDE",
+    DataLabelPosition::Left => "LEFT",
+    DataLabelPosition::Outside => "OUTSIDE",
+    DataLabelPosition::Right => "RIGHT",
+    DataLabelPosition::Top => "TOP",
+    DataLabelPosition::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BOTTOM", "INSIDE", "LEFT", "OUTSIDE", "RIGHT", "TOP"]
+                }
+            }
 impl ::std::convert::AsRef<str> for DataLabelPosition {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl DataLabelPosition {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for DataLabelPosition {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            DataLabelPosition::Bottom => write!(f, "BOTTOM"),
-            DataLabelPosition::Inside => write!(f, "INSIDE"),
-            DataLabelPosition::Left => write!(f, "LEFT"),
-            DataLabelPosition::Outside => write!(f, "OUTSIDE"),
-            DataLabelPosition::Right => write!(f, "RIGHT"),
-            DataLabelPosition::Top => write!(f, "TOP"),
-            DataLabelPosition::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                DataLabelPosition::Bottom => write!(f, "BOTTOM"),
+DataLabelPosition::Inside => write!(f, "INSIDE"),
+DataLabelPosition::Left => write!(f, "LEFT"),
+DataLabelPosition::Outside => write!(f, "OUTSIDE"),
+DataLabelPosition::Right => write!(f, "RIGHT"),
+DataLabelPosition::Top => write!(f, "TOP"),
+DataLabelPosition::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

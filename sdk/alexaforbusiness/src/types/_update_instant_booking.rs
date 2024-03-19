@@ -3,13 +3,13 @@
 /// <p>Updates settings for the instant booking feature that are applied to a room profile. If instant booking is enabled, Alexa automatically reserves a room if it is free when a user joins a meeting with Alexa.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateInstantBooking {
+pub struct UpdateInstantBooking  {
     /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa.</p>
     pub duration_in_minutes: ::std::option::Option<i32>,
     /// <p>Whether instant booking is enabled or not.</p>
     pub enabled: ::std::option::Option<bool>,
 }
-impl UpdateInstantBooking {
+impl  UpdateInstantBooking  {
     /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa.</p>
     pub fn duration_in_minutes(&self) -> ::std::option::Option<i32> {
         self.duration_in_minutes
@@ -41,8 +41,7 @@ impl UpdateInstantBookingBuilder {
     }
     /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa.</p>
     pub fn set_duration_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration_in_minutes = input;
-        self
+        self.duration_in_minutes = input; self
     }
     /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa.</p>
     pub fn get_duration_in_minutes(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl UpdateInstantBookingBuilder {
     }
     /// <p>Whether instant booking is enabled or not.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Whether instant booking is enabled or not.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -65,8 +63,11 @@ impl UpdateInstantBookingBuilder {
     /// Consumes the builder and constructs a [`UpdateInstantBooking`](crate::types::UpdateInstantBooking).
     pub fn build(self) -> crate::types::UpdateInstantBooking {
         crate::types::UpdateInstantBooking {
-            duration_in_minutes: self.duration_in_minutes,
-            enabled: self.enabled,
+            duration_in_minutes: self.duration_in_minutes
+            ,
+            enabled: self.enabled
+            ,
         }
     }
 }
+

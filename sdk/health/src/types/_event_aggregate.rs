@@ -3,15 +3,15 @@
 /// <p>The number of events of each issue type. Returned by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventAggregates.html">DescribeEventAggregates</a> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EventAggregate {
+pub struct EventAggregate  {
     /// <p>The issue type for the associated count.</p>
     pub aggregate_value: ::std::option::Option<::std::string::String>,
     /// <p>The number of events of the associated issue type.</p>
     pub count: i32,
 }
-impl EventAggregate {
+impl  EventAggregate  {
     /// <p>The issue type for the associated count.</p>
-    pub fn aggregate_value(&self) -> ::std::option::Option<&str> {
+    pub fn aggregate_value(&self) -> ::std::option::Option<& str> {
         self.aggregate_value.as_deref()
     }
     /// <p>The number of events of the associated issue type.</p>
@@ -41,8 +41,7 @@ impl EventAggregateBuilder {
     }
     /// <p>The issue type for the associated count.</p>
     pub fn set_aggregate_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aggregate_value = input;
-        self
+        self.aggregate_value = input; self
     }
     /// <p>The issue type for the associated count.</p>
     pub fn get_aggregate_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl EventAggregateBuilder {
     }
     /// <p>The number of events of the associated issue type.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>The number of events of the associated issue type.</p>
     pub fn get_count(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,12 @@ impl EventAggregateBuilder {
     /// Consumes the builder and constructs a [`EventAggregate`](crate::types::EventAggregate).
     pub fn build(self) -> crate::types::EventAggregate {
         crate::types::EventAggregate {
-            aggregate_value: self.aggregate_value,
-            count: self.count.unwrap_or_default(),
+            aggregate_value: self.aggregate_value
+            ,
+            count: self.count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

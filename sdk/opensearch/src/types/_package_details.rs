@@ -3,7 +3,7 @@
 /// <p>Basic information about a package.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PackageDetails {
+pub struct PackageDetails  {
     /// <p>The unique identifier of the package.</p>
     pub package_id: ::std::option::Option<::std::string::String>,
     /// <p>The user-specified name of the package.</p>
@@ -27,49 +27,49 @@ pub struct PackageDetails {
     /// <p>If the package is a <code>ZIP-PLUGIN</code> package, additional information about plugin properties.</p>
     pub available_plugin_properties: ::std::option::Option<crate::types::PluginProperties>,
 }
-impl PackageDetails {
+impl  PackageDetails  {
     /// <p>The unique identifier of the package.</p>
-    pub fn package_id(&self) -> ::std::option::Option<&str> {
+    pub fn package_id(&self) -> ::std::option::Option<& str> {
         self.package_id.as_deref()
     }
     /// <p>The user-specified name of the package.</p>
-    pub fn package_name(&self) -> ::std::option::Option<&str> {
+    pub fn package_name(&self) -> ::std::option::Option<& str> {
         self.package_name.as_deref()
     }
     /// <p>The type of package.</p>
-    pub fn package_type(&self) -> ::std::option::Option<&crate::types::PackageType> {
+    pub fn package_type(&self) -> ::std::option::Option<& crate::types::PackageType> {
         self.package_type.as_ref()
     }
     /// <p>User-specified description of the package.</p>
-    pub fn package_description(&self) -> ::std::option::Option<&str> {
+    pub fn package_description(&self) -> ::std::option::Option<& str> {
         self.package_description.as_deref()
     }
     /// <p>The current status of the package. The available options are <code>AVAILABLE</code>, <code>COPYING</code>, <code>COPY_FAILED</code>, <code>VALIDATNG</code>, <code>VALIDATION_FAILED</code>, <code>DELETING</code>, and <code>DELETE_FAILED</code>.</p>
-    pub fn package_status(&self) -> ::std::option::Option<&crate::types::PackageStatus> {
+    pub fn package_status(&self) -> ::std::option::Option<& crate::types::PackageStatus> {
         self.package_status.as_ref()
     }
     /// <p>The timestamp when the package was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Date and time when the package was last updated.</p>
-    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The package version.</p>
-    pub fn available_package_version(&self) -> ::std::option::Option<&str> {
+    pub fn available_package_version(&self) -> ::std::option::Option<& str> {
         self.available_package_version.as_deref()
     }
     /// <p>Additional information if the package is in an error state. Null otherwise.</p>
-    pub fn error_details(&self) -> ::std::option::Option<&crate::types::ErrorDetails> {
+    pub fn error_details(&self) -> ::std::option::Option<& crate::types::ErrorDetails> {
         self.error_details.as_ref()
     }
     /// <p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>If the package is a <code>ZIP-PLUGIN</code> package, additional information about plugin properties.</p>
-    pub fn available_plugin_properties(&self) -> ::std::option::Option<&crate::types::PluginProperties> {
+    pub fn available_plugin_properties(&self) -> ::std::option::Option<& crate::types::PluginProperties> {
         self.available_plugin_properties.as_ref()
     }
 }
@@ -104,8 +104,7 @@ impl PackageDetailsBuilder {
     }
     /// <p>The unique identifier of the package.</p>
     pub fn set_package_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_id = input;
-        self
+        self.package_id = input; self
     }
     /// <p>The unique identifier of the package.</p>
     pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +117,7 @@ impl PackageDetailsBuilder {
     }
     /// <p>The user-specified name of the package.</p>
     pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_name = input;
-        self
+        self.package_name = input; self
     }
     /// <p>The user-specified name of the package.</p>
     pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +130,7 @@ impl PackageDetailsBuilder {
     }
     /// <p>The type of package.</p>
     pub fn set_package_type(mut self, input: ::std::option::Option<crate::types::PackageType>) -> Self {
-        self.package_type = input;
-        self
+        self.package_type = input; self
     }
     /// <p>The type of package.</p>
     pub fn get_package_type(&self) -> &::std::option::Option<crate::types::PackageType> {
@@ -146,8 +143,7 @@ impl PackageDetailsBuilder {
     }
     /// <p>User-specified description of the package.</p>
     pub fn set_package_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_description = input;
-        self
+        self.package_description = input; self
     }
     /// <p>User-specified description of the package.</p>
     pub fn get_package_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +156,7 @@ impl PackageDetailsBuilder {
     }
     /// <p>The current status of the package. The available options are <code>AVAILABLE</code>, <code>COPYING</code>, <code>COPY_FAILED</code>, <code>VALIDATNG</code>, <code>VALIDATION_FAILED</code>, <code>DELETING</code>, and <code>DELETE_FAILED</code>.</p>
     pub fn set_package_status(mut self, input: ::std::option::Option<crate::types::PackageStatus>) -> Self {
-        self.package_status = input;
-        self
+        self.package_status = input; self
     }
     /// <p>The current status of the package. The available options are <code>AVAILABLE</code>, <code>COPYING</code>, <code>COPY_FAILED</code>, <code>VALIDATNG</code>, <code>VALIDATION_FAILED</code>, <code>DELETING</code>, and <code>DELETE_FAILED</code>.</p>
     pub fn get_package_status(&self) -> &::std::option::Option<crate::types::PackageStatus> {
@@ -174,8 +169,7 @@ impl PackageDetailsBuilder {
     }
     /// <p>The timestamp when the package was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp when the package was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -188,8 +182,7 @@ impl PackageDetailsBuilder {
     }
     /// <p>Date and time when the package was last updated.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input;
-        self
+        self.last_updated_at = input; self
     }
     /// <p>Date and time when the package was last updated.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -202,8 +195,7 @@ impl PackageDetailsBuilder {
     }
     /// <p>The package version.</p>
     pub fn set_available_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.available_package_version = input;
-        self
+        self.available_package_version = input; self
     }
     /// <p>The package version.</p>
     pub fn get_available_package_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -216,8 +208,7 @@ impl PackageDetailsBuilder {
     }
     /// <p>Additional information if the package is in an error state. Null otherwise.</p>
     pub fn set_error_details(mut self, input: ::std::option::Option<crate::types::ErrorDetails>) -> Self {
-        self.error_details = input;
-        self
+        self.error_details = input; self
     }
     /// <p>Additional information if the package is in an error state. Null otherwise.</p>
     pub fn get_error_details(&self) -> &::std::option::Option<crate::types::ErrorDetails> {
@@ -230,8 +221,7 @@ impl PackageDetailsBuilder {
     }
     /// <p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -244,8 +234,7 @@ impl PackageDetailsBuilder {
     }
     /// <p>If the package is a <code>ZIP-PLUGIN</code> package, additional information about plugin properties.</p>
     pub fn set_available_plugin_properties(mut self, input: ::std::option::Option<crate::types::PluginProperties>) -> Self {
-        self.available_plugin_properties = input;
-        self
+        self.available_plugin_properties = input; self
     }
     /// <p>If the package is a <code>ZIP-PLUGIN</code> package, additional information about plugin properties.</p>
     pub fn get_available_plugin_properties(&self) -> &::std::option::Option<crate::types::PluginProperties> {
@@ -254,17 +243,29 @@ impl PackageDetailsBuilder {
     /// Consumes the builder and constructs a [`PackageDetails`](crate::types::PackageDetails).
     pub fn build(self) -> crate::types::PackageDetails {
         crate::types::PackageDetails {
-            package_id: self.package_id,
-            package_name: self.package_name,
-            package_type: self.package_type,
-            package_description: self.package_description,
-            package_status: self.package_status,
-            created_at: self.created_at,
-            last_updated_at: self.last_updated_at,
-            available_package_version: self.available_package_version,
-            error_details: self.error_details,
-            engine_version: self.engine_version,
-            available_plugin_properties: self.available_plugin_properties,
+            package_id: self.package_id
+            ,
+            package_name: self.package_name
+            ,
+            package_type: self.package_type
+            ,
+            package_description: self.package_description
+            ,
+            package_status: self.package_status
+            ,
+            created_at: self.created_at
+            ,
+            last_updated_at: self.last_updated_at
+            ,
+            available_package_version: self.available_package_version
+            ,
+            error_details: self.error_details
+            ,
+            engine_version: self.engine_version
+            ,
+            available_plugin_properties: self.available_plugin_properties
+            ,
         }
     }
 }
+

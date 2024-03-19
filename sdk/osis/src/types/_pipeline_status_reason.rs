@@ -3,13 +3,13 @@
 /// <p>Information about a pipeline's current status.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PipelineStatusReason {
+pub struct PipelineStatusReason  {
     /// <p>A description of why a pipeline has a certain status.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl PipelineStatusReason {
+impl  PipelineStatusReason  {
     /// <p>A description of why a pipeline has a certain status.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl PipelineStatusReasonBuilder {
     }
     /// <p>A description of why a pipeline has a certain status.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of why a pipeline has a certain status.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl PipelineStatusReasonBuilder {
     /// Consumes the builder and constructs a [`PipelineStatusReason`](crate::types::PipelineStatusReason).
     pub fn build(self) -> crate::types::PipelineStatusReason {
         crate::types::PipelineStatusReason {
-            description: self.description,
+            description: self.description
+            ,
         }
     }
 }
+

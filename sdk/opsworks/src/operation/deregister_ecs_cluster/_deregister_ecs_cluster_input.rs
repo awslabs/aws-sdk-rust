@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterEcsClusterInput {
+pub struct DeregisterEcsClusterInput  {
     /// <p>The cluster's Amazon Resource Number (ARN).</p>
     pub ecs_cluster_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeregisterEcsClusterInput {
+impl  DeregisterEcsClusterInput  {
     /// <p>The cluster's Amazon Resource Number (ARN).</p>
-    pub fn ecs_cluster_arn(&self) -> ::std::option::Option<&str> {
+    pub fn ecs_cluster_arn(&self) -> ::std::option::Option<& str> {
         self.ecs_cluster_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeregisterEcsClusterInputBuilder {
     }
     /// <p>The cluster's Amazon Resource Number (ARN).</p>
     pub fn set_ecs_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ecs_cluster_arn = input;
-        self
+        self.ecs_cluster_arn = input; self
     }
     /// <p>The cluster's Amazon Resource Number (ARN).</p>
     pub fn get_ecs_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.ecs_cluster_arn
     }
     /// Consumes the builder and constructs a [`DeregisterEcsClusterInput`](crate::operation::deregister_ecs_cluster::DeregisterEcsClusterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::deregister_ecs_cluster::DeregisterEcsClusterInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::deregister_ecs_cluster::DeregisterEcsClusterInput {
-            ecs_cluster_arn: self.ecs_cluster_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_ecs_cluster::DeregisterEcsClusterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::deregister_ecs_cluster::DeregisterEcsClusterInput {
+                ecs_cluster_arn: self.ecs_cluster_arn
+                ,
+            }
+        )
     }
 }
+

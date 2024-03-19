@@ -3,7 +3,7 @@
 /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserContext {
+pub struct UserContext  {
     /// <p>The Amazon Resource Name (ARN) of the user's profile.</p>
     pub user_profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the user's profile.</p>
@@ -13,21 +13,21 @@ pub struct UserContext {
     /// <p>The IAM Identity details associated with the user. These details are associated with model package groups, model packages, and project entities only.</p>
     pub iam_identity: ::std::option::Option<crate::types::IamIdentity>,
 }
-impl UserContext {
+impl  UserContext  {
     /// <p>The Amazon Resource Name (ARN) of the user's profile.</p>
-    pub fn user_profile_arn(&self) -> ::std::option::Option<&str> {
+    pub fn user_profile_arn(&self) -> ::std::option::Option<& str> {
         self.user_profile_arn.as_deref()
     }
     /// <p>The name of the user's profile.</p>
-    pub fn user_profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_profile_name(&self) -> ::std::option::Option<& str> {
         self.user_profile_name.as_deref()
     }
     /// <p>The domain associated with the user.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn domain_id(&self) -> ::std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The IAM Identity details associated with the user. These details are associated with model package groups, model packages, and project entities only.</p>
-    pub fn iam_identity(&self) -> ::std::option::Option<&crate::types::IamIdentity> {
+    pub fn iam_identity(&self) -> ::std::option::Option<& crate::types::IamIdentity> {
         self.iam_identity.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl UserContextBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the user's profile.</p>
     pub fn set_user_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_profile_arn = input;
-        self
+        self.user_profile_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the user's profile.</p>
     pub fn get_user_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl UserContextBuilder {
     }
     /// <p>The name of the user's profile.</p>
     pub fn set_user_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_profile_name = input;
-        self
+        self.user_profile_name = input; self
     }
     /// <p>The name of the user's profile.</p>
     pub fn get_user_profile_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl UserContextBuilder {
     }
     /// <p>The domain associated with the user.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The domain associated with the user.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl UserContextBuilder {
     }
     /// <p>The IAM Identity details associated with the user. These details are associated with model package groups, model packages, and project entities only.</p>
     pub fn set_iam_identity(mut self, input: ::std::option::Option<crate::types::IamIdentity>) -> Self {
-        self.iam_identity = input;
-        self
+        self.iam_identity = input; self
     }
     /// <p>The IAM Identity details associated with the user. These details are associated with model package groups, model packages, and project entities only.</p>
     pub fn get_iam_identity(&self) -> &::std::option::Option<crate::types::IamIdentity> {
@@ -107,10 +103,15 @@ impl UserContextBuilder {
     /// Consumes the builder and constructs a [`UserContext`](crate::types::UserContext).
     pub fn build(self) -> crate::types::UserContext {
         crate::types::UserContext {
-            user_profile_arn: self.user_profile_arn,
-            user_profile_name: self.user_profile_name,
-            domain_id: self.domain_id,
-            iam_identity: self.iam_identity,
+            user_profile_arn: self.user_profile_arn
+            ,
+            user_profile_name: self.user_profile_name
+            ,
+            domain_id: self.domain_id
+            ,
+            iam_identity: self.iam_identity
+            ,
         }
     }
 }
+

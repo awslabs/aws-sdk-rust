@@ -3,15 +3,15 @@
 /// <p>Provide transition lifecycle details of Amazon Security Lake object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataLakeLifecycleTransition {
+pub struct DataLakeLifecycleTransition  {
     /// <p>The range of storage classes that you can choose from based on the data access, resiliency, and cost requirements of your workloads.</p>
     pub storage_class: ::std::option::Option<::std::string::String>,
     /// <p>Number of days before data transitions to a different S3 Storage Class in the Amazon Security Lake object.</p>
     pub days: ::std::option::Option<i32>,
 }
-impl DataLakeLifecycleTransition {
+impl  DataLakeLifecycleTransition  {
     /// <p>The range of storage classes that you can choose from based on the data access, resiliency, and cost requirements of your workloads.</p>
-    pub fn storage_class(&self) -> ::std::option::Option<&str> {
+    pub fn storage_class(&self) -> ::std::option::Option<& str> {
         self.storage_class.as_deref()
     }
     /// <p>Number of days before data transitions to a different S3 Storage Class in the Amazon Security Lake object.</p>
@@ -41,8 +41,7 @@ impl DataLakeLifecycleTransitionBuilder {
     }
     /// <p>The range of storage classes that you can choose from based on the data access, resiliency, and cost requirements of your workloads.</p>
     pub fn set_storage_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.storage_class = input;
-        self
+        self.storage_class = input; self
     }
     /// <p>The range of storage classes that you can choose from based on the data access, resiliency, and cost requirements of your workloads.</p>
     pub fn get_storage_class(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl DataLakeLifecycleTransitionBuilder {
     }
     /// <p>Number of days before data transitions to a different S3 Storage Class in the Amazon Security Lake object.</p>
     pub fn set_days(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.days = input;
-        self
+        self.days = input; self
     }
     /// <p>Number of days before data transitions to a different S3 Storage Class in the Amazon Security Lake object.</p>
     pub fn get_days(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl DataLakeLifecycleTransitionBuilder {
     /// Consumes the builder and constructs a [`DataLakeLifecycleTransition`](crate::types::DataLakeLifecycleTransition).
     pub fn build(self) -> crate::types::DataLakeLifecycleTransition {
         crate::types::DataLakeLifecycleTransition {
-            storage_class: self.storage_class,
-            days: self.days,
+            storage_class: self.storage_class
+            ,
+            days: self.days
+            ,
         }
     }
 }
+

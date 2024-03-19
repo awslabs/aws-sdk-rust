@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePartitionIndexInput {
+pub struct DeletePartitionIndexInput  {
     /// <p>The catalog ID where the table resides.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of a database from which you want to delete a partition index.</p>
@@ -12,21 +12,21 @@ pub struct DeletePartitionIndexInput {
     /// <p>The name of the partition index to be deleted.</p>
     pub index_name: ::std::option::Option<::std::string::String>,
 }
-impl DeletePartitionIndexInput {
+impl  DeletePartitionIndexInput  {
     /// <p>The catalog ID where the table resides.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>Specifies the name of a database from which you want to delete a partition index.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>Specifies the name of a table from which you want to delete a partition index.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The name of the partition index to be deleted.</p>
-    pub fn index_name(&self) -> ::std::option::Option<&str> {
+    pub fn index_name(&self) -> ::std::option::Option<& str> {
         self.index_name.as_deref()
     }
 }
@@ -54,8 +54,7 @@ impl DeletePartitionIndexInputBuilder {
     }
     /// <p>The catalog ID where the table resides.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The catalog ID where the table resides.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl DeletePartitionIndexInputBuilder {
     }
     /// <p>Specifies the name of a database from which you want to delete a partition index.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>Specifies the name of a database from which you want to delete a partition index.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl DeletePartitionIndexInputBuilder {
     }
     /// <p>Specifies the name of a table from which you want to delete a partition index.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>Specifies the name of a table from which you want to delete a partition index.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,23 +96,26 @@ impl DeletePartitionIndexInputBuilder {
     }
     /// <p>The name of the partition index to be deleted.</p>
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_name = input;
-        self
+        self.index_name = input; self
     }
     /// <p>The name of the partition index to be deleted.</p>
     pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.index_name
     }
     /// Consumes the builder and constructs a [`DeletePartitionIndexInput`](crate::operation::delete_partition_index::DeletePartitionIndexInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_partition_index::DeletePartitionIndexInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_partition_index::DeletePartitionIndexInput {
-            catalog_id: self.catalog_id,
-            database_name: self.database_name,
-            table_name: self.table_name,
-            index_name: self.index_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_partition_index::DeletePartitionIndexInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_partition_index::DeletePartitionIndexInput {
+                catalog_id: self.catalog_id
+                ,
+                database_name: self.database_name
+                ,
+                table_name: self.table_name
+                ,
+                index_name: self.index_name
+                ,
+            }
+        )
     }
 }
+

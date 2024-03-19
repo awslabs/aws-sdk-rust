@@ -3,7 +3,7 @@
 /// <p>Launch action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LaunchAction {
+pub struct LaunchAction  {
     /// <p>Launch action Id.</p>
     pub action_id: ::std::option::Option<::std::string::String>,
     /// <p>Launch action code.</p>
@@ -21,27 +21,27 @@ pub struct LaunchAction {
     /// <p>Whether the launch will not be marked as failed if this action fails.</p>
     pub optional: ::std::option::Option<bool>,
     /// <p>Launch action parameters.</p>
-    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::LaunchActionParameter>>,
+    pub parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::LaunchActionParameter>>,
     /// <p>Launch action description.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Launch action category.</p>
     pub category: ::std::option::Option<crate::types::LaunchActionCategory>,
 }
-impl LaunchAction {
+impl  LaunchAction  {
     /// <p>Launch action Id.</p>
-    pub fn action_id(&self) -> ::std::option::Option<&str> {
+    pub fn action_id(&self) -> ::std::option::Option<& str> {
         self.action_id.as_deref()
     }
     /// <p>Launch action code.</p>
-    pub fn action_code(&self) -> ::std::option::Option<&str> {
+    pub fn action_code(&self) -> ::std::option::Option<& str> {
         self.action_code.as_deref()
     }
     /// <p>Launch action type.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::LaunchActionType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::LaunchActionType> {
         self.r#type.as_ref()
     }
     /// <p>Launch action name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Whether the launch action is active.</p>
@@ -53,7 +53,7 @@ impl LaunchAction {
         self.order
     }
     /// <p>Launch action version.</p>
-    pub fn action_version(&self) -> ::std::option::Option<&str> {
+    pub fn action_version(&self) -> ::std::option::Option<& str> {
         self.action_version.as_deref()
     }
     /// <p>Whether the launch will not be marked as failed if this action fails.</p>
@@ -61,15 +61,15 @@ impl LaunchAction {
         self.optional
     }
     /// <p>Launch action parameters.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::LaunchActionParameter>> {
+    pub fn parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::LaunchActionParameter>> {
         self.parameters.as_ref()
     }
     /// <p>Launch action description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Launch action category.</p>
-    pub fn category(&self) -> ::std::option::Option<&crate::types::LaunchActionCategory> {
+    pub fn category(&self) -> ::std::option::Option<& crate::types::LaunchActionCategory> {
         self.category.as_ref()
     }
 }
@@ -92,7 +92,7 @@ pub struct LaunchActionBuilder {
     pub(crate) order: ::std::option::Option<i32>,
     pub(crate) action_version: ::std::option::Option<::std::string::String>,
     pub(crate) optional: ::std::option::Option<bool>,
-    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::LaunchActionParameter>>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::LaunchActionParameter>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) category: ::std::option::Option<crate::types::LaunchActionCategory>,
 }
@@ -104,8 +104,7 @@ impl LaunchActionBuilder {
     }
     /// <p>Launch action Id.</p>
     pub fn set_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_id = input;
-        self
+        self.action_id = input; self
     }
     /// <p>Launch action Id.</p>
     pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +117,7 @@ impl LaunchActionBuilder {
     }
     /// <p>Launch action code.</p>
     pub fn set_action_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_code = input;
-        self
+        self.action_code = input; self
     }
     /// <p>Launch action code.</p>
     pub fn get_action_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +130,7 @@ impl LaunchActionBuilder {
     }
     /// <p>Launch action type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::LaunchActionType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Launch action type.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::LaunchActionType> {
@@ -146,8 +143,7 @@ impl LaunchActionBuilder {
     }
     /// <p>Launch action name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Launch action name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +156,7 @@ impl LaunchActionBuilder {
     }
     /// <p>Whether the launch action is active.</p>
     pub fn set_active(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.active = input;
-        self
+        self.active = input; self
     }
     /// <p>Whether the launch action is active.</p>
     pub fn get_active(&self) -> &::std::option::Option<bool> {
@@ -174,8 +169,7 @@ impl LaunchActionBuilder {
     }
     /// <p>Launch action order.</p>
     pub fn set_order(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.order = input;
-        self
+        self.order = input; self
     }
     /// <p>Launch action order.</p>
     pub fn get_order(&self) -> &::std::option::Option<i32> {
@@ -188,8 +182,7 @@ impl LaunchActionBuilder {
     }
     /// <p>Launch action version.</p>
     pub fn set_action_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_version = input;
-        self
+        self.action_version = input; self
     }
     /// <p>Launch action version.</p>
     pub fn get_action_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +195,7 @@ impl LaunchActionBuilder {
     }
     /// <p>Whether the launch will not be marked as failed if this action fails.</p>
     pub fn set_optional(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.optional = input;
-        self
+        self.optional = input; self
     }
     /// <p>Whether the launch will not be marked as failed if this action fails.</p>
     pub fn get_optional(&self) -> &::std::option::Option<bool> {
@@ -216,20 +208,16 @@ impl LaunchActionBuilder {
     /// <p>Launch action parameters.</p>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::LaunchActionParameter) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Launch action parameters.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::LaunchActionParameter>>,
-    ) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::LaunchActionParameter>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>Launch action parameters.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::LaunchActionParameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::LaunchActionParameter>> {
         &self.parameters
     }
     /// <p>Launch action description.</p>
@@ -239,8 +227,7 @@ impl LaunchActionBuilder {
     }
     /// <p>Launch action description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Launch action description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -253,8 +240,7 @@ impl LaunchActionBuilder {
     }
     /// <p>Launch action category.</p>
     pub fn set_category(mut self, input: ::std::option::Option<crate::types::LaunchActionCategory>) -> Self {
-        self.category = input;
-        self
+        self.category = input; self
     }
     /// <p>Launch action category.</p>
     pub fn get_category(&self) -> &::std::option::Option<crate::types::LaunchActionCategory> {
@@ -263,17 +249,29 @@ impl LaunchActionBuilder {
     /// Consumes the builder and constructs a [`LaunchAction`](crate::types::LaunchAction).
     pub fn build(self) -> crate::types::LaunchAction {
         crate::types::LaunchAction {
-            action_id: self.action_id,
-            action_code: self.action_code,
-            r#type: self.r#type,
-            name: self.name,
-            active: self.active,
-            order: self.order,
-            action_version: self.action_version,
-            optional: self.optional,
-            parameters: self.parameters,
-            description: self.description,
-            category: self.category,
+            action_id: self.action_id
+            ,
+            action_code: self.action_code
+            ,
+            r#type: self.r#type
+            ,
+            name: self.name
+            ,
+            active: self.active
+            ,
+            order: self.order
+            ,
+            action_version: self.action_version
+            ,
+            optional: self.optional
+            ,
+            parameters: self.parameters
+            ,
+            description: self.description
+            ,
+            category: self.category
+            ,
         }
     }
 }
+

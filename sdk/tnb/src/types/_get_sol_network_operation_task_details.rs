@@ -4,11 +4,11 @@
 /// <p>A network operation is any operation that is done to your network, such as network instance instantiation or termination.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSolNetworkOperationTaskDetails {
+pub struct GetSolNetworkOperationTaskDetails  {
     /// <p>Task name.</p>
     pub task_name: ::std::option::Option<::std::string::String>,
     /// <p>Context for the network operation task.</p>
-    pub task_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub task_context: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Task error details.</p>
     pub task_error_details: ::std::option::Option<crate::types::ErrorInfo>,
     /// <p>Task status.</p>
@@ -18,29 +18,29 @@ pub struct GetSolNetworkOperationTaskDetails {
     /// <p>Task end time.</p>
     pub task_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl GetSolNetworkOperationTaskDetails {
+impl  GetSolNetworkOperationTaskDetails  {
     /// <p>Task name.</p>
-    pub fn task_name(&self) -> ::std::option::Option<&str> {
+    pub fn task_name(&self) -> ::std::option::Option<& str> {
         self.task_name.as_deref()
     }
     /// <p>Context for the network operation task.</p>
-    pub fn task_context(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn task_context(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.task_context.as_ref()
     }
     /// <p>Task error details.</p>
-    pub fn task_error_details(&self) -> ::std::option::Option<&crate::types::ErrorInfo> {
+    pub fn task_error_details(&self) -> ::std::option::Option<& crate::types::ErrorInfo> {
         self.task_error_details.as_ref()
     }
     /// <p>Task status.</p>
-    pub fn task_status(&self) -> ::std::option::Option<&crate::types::TaskStatus> {
+    pub fn task_status(&self) -> ::std::option::Option<& crate::types::TaskStatus> {
         self.task_status.as_ref()
     }
     /// <p>Task start time.</p>
-    pub fn task_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn task_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.task_start_time.as_ref()
     }
     /// <p>Task end time.</p>
-    pub fn task_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn task_end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.task_end_time.as_ref()
     }
 }
@@ -56,7 +56,7 @@ impl GetSolNetworkOperationTaskDetails {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSolNetworkOperationTaskDetailsBuilder {
     pub(crate) task_name: ::std::option::Option<::std::string::String>,
-    pub(crate) task_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) task_context: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) task_error_details: ::std::option::Option<crate::types::ErrorInfo>,
     pub(crate) task_status: ::std::option::Option<crate::types::TaskStatus>,
     pub(crate) task_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -70,8 +70,7 @@ impl GetSolNetworkOperationTaskDetailsBuilder {
     }
     /// <p>Task name.</p>
     pub fn set_task_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_name = input;
-        self
+        self.task_name = input; self
     }
     /// <p>Task name.</p>
     pub fn get_task_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,20 +83,16 @@ impl GetSolNetworkOperationTaskDetailsBuilder {
     /// <p>Context for the network operation task.</p>
     pub fn task_context(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.task_context.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.task_context = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.task_context = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Context for the network operation task.</p>
-    pub fn set_task_context(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.task_context = input;
-        self
+    pub fn set_task_context(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.task_context = input; self
     }
     /// <p>Context for the network operation task.</p>
-    pub fn get_task_context(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_task_context(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.task_context
     }
     /// <p>Task error details.</p>
@@ -107,8 +102,7 @@ impl GetSolNetworkOperationTaskDetailsBuilder {
     }
     /// <p>Task error details.</p>
     pub fn set_task_error_details(mut self, input: ::std::option::Option<crate::types::ErrorInfo>) -> Self {
-        self.task_error_details = input;
-        self
+        self.task_error_details = input; self
     }
     /// <p>Task error details.</p>
     pub fn get_task_error_details(&self) -> &::std::option::Option<crate::types::ErrorInfo> {
@@ -121,8 +115,7 @@ impl GetSolNetworkOperationTaskDetailsBuilder {
     }
     /// <p>Task status.</p>
     pub fn set_task_status(mut self, input: ::std::option::Option<crate::types::TaskStatus>) -> Self {
-        self.task_status = input;
-        self
+        self.task_status = input; self
     }
     /// <p>Task status.</p>
     pub fn get_task_status(&self) -> &::std::option::Option<crate::types::TaskStatus> {
@@ -135,8 +128,7 @@ impl GetSolNetworkOperationTaskDetailsBuilder {
     }
     /// <p>Task start time.</p>
     pub fn set_task_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.task_start_time = input;
-        self
+        self.task_start_time = input; self
     }
     /// <p>Task start time.</p>
     pub fn get_task_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -149,8 +141,7 @@ impl GetSolNetworkOperationTaskDetailsBuilder {
     }
     /// <p>Task end time.</p>
     pub fn set_task_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.task_end_time = input;
-        self
+        self.task_end_time = input; self
     }
     /// <p>Task end time.</p>
     pub fn get_task_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -159,12 +150,19 @@ impl GetSolNetworkOperationTaskDetailsBuilder {
     /// Consumes the builder and constructs a [`GetSolNetworkOperationTaskDetails`](crate::types::GetSolNetworkOperationTaskDetails).
     pub fn build(self) -> crate::types::GetSolNetworkOperationTaskDetails {
         crate::types::GetSolNetworkOperationTaskDetails {
-            task_name: self.task_name,
-            task_context: self.task_context,
-            task_error_details: self.task_error_details,
-            task_status: self.task_status,
-            task_start_time: self.task_start_time,
-            task_end_time: self.task_end_time,
+            task_name: self.task_name
+            ,
+            task_context: self.task_context
+            ,
+            task_error_details: self.task_error_details
+            ,
+            task_status: self.task_status
+            ,
+            task_start_time: self.task_start_time
+            ,
+            task_end_time: self.task_end_time
+            ,
         }
     }
 }
+

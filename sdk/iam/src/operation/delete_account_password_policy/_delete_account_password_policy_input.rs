@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAccountPasswordPolicyInput {}
+pub struct DeleteAccountPasswordPolicyInput  {
+}
 impl DeleteAccountPasswordPolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteAccountPasswordPolicyInput`](crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyInput).
     pub fn builder() -> crate::operation::delete_account_password_policy::builders::DeleteAccountPasswordPolicyInputBuilder {
@@ -13,15 +14,15 @@ impl DeleteAccountPasswordPolicyInput {
 /// A builder for [`DeleteAccountPasswordPolicyInput`](crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct DeleteAccountPasswordPolicyInputBuilder {}
+pub struct DeleteAccountPasswordPolicyInputBuilder {
+}
 impl DeleteAccountPasswordPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAccountPasswordPolicyInput`](crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyInput {
+            }
+        )
     }
 }
+

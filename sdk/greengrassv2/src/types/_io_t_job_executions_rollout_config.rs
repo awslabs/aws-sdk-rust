@@ -3,15 +3,15 @@
 /// <p>Contains information about the rollout configuration for a job. This configuration defines the rate at which the job deploys a configuration to a fleet of target devices.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IoTJobExecutionsRolloutConfig {
+pub struct IoTJobExecutionsRolloutConfig  {
     /// <p>The exponential rate to increase the job rollout rate.</p>
     pub exponential_rate: ::std::option::Option<crate::types::IoTJobExponentialRolloutRate>,
     /// <p>The maximum number of devices that receive a pending job notification, per minute.</p>
     pub maximum_per_minute: ::std::option::Option<i32>,
 }
-impl IoTJobExecutionsRolloutConfig {
+impl  IoTJobExecutionsRolloutConfig  {
     /// <p>The exponential rate to increase the job rollout rate.</p>
-    pub fn exponential_rate(&self) -> ::std::option::Option<&crate::types::IoTJobExponentialRolloutRate> {
+    pub fn exponential_rate(&self) -> ::std::option::Option<& crate::types::IoTJobExponentialRolloutRate> {
         self.exponential_rate.as_ref()
     }
     /// <p>The maximum number of devices that receive a pending job notification, per minute.</p>
@@ -41,8 +41,7 @@ impl IoTJobExecutionsRolloutConfigBuilder {
     }
     /// <p>The exponential rate to increase the job rollout rate.</p>
     pub fn set_exponential_rate(mut self, input: ::std::option::Option<crate::types::IoTJobExponentialRolloutRate>) -> Self {
-        self.exponential_rate = input;
-        self
+        self.exponential_rate = input; self
     }
     /// <p>The exponential rate to increase the job rollout rate.</p>
     pub fn get_exponential_rate(&self) -> &::std::option::Option<crate::types::IoTJobExponentialRolloutRate> {
@@ -55,8 +54,7 @@ impl IoTJobExecutionsRolloutConfigBuilder {
     }
     /// <p>The maximum number of devices that receive a pending job notification, per minute.</p>
     pub fn set_maximum_per_minute(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum_per_minute = input;
-        self
+        self.maximum_per_minute = input; self
     }
     /// <p>The maximum number of devices that receive a pending job notification, per minute.</p>
     pub fn get_maximum_per_minute(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl IoTJobExecutionsRolloutConfigBuilder {
     /// Consumes the builder and constructs a [`IoTJobExecutionsRolloutConfig`](crate::types::IoTJobExecutionsRolloutConfig).
     pub fn build(self) -> crate::types::IoTJobExecutionsRolloutConfig {
         crate::types::IoTJobExecutionsRolloutConfig {
-            exponential_rate: self.exponential_rate,
-            maximum_per_minute: self.maximum_per_minute,
+            exponential_rate: self.exponential_rate
+            ,
+            maximum_per_minute: self.maximum_per_minute
+            ,
         }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>The channel membership preferences for an <code>AppInstanceUser</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChannelMembershipPreferences {
+pub struct ChannelMembershipPreferences  {
     /// <p>The push notification configuration of a message.</p>
     pub push_notifications: ::std::option::Option<crate::types::PushNotificationPreferences>,
 }
-impl ChannelMembershipPreferences {
+impl  ChannelMembershipPreferences  {
     /// <p>The push notification configuration of a message.</p>
-    pub fn push_notifications(&self) -> ::std::option::Option<&crate::types::PushNotificationPreferences> {
+    pub fn push_notifications(&self) -> ::std::option::Option<& crate::types::PushNotificationPreferences> {
         self.push_notifications.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ChannelMembershipPreferencesBuilder {
     }
     /// <p>The push notification configuration of a message.</p>
     pub fn set_push_notifications(mut self, input: ::std::option::Option<crate::types::PushNotificationPreferences>) -> Self {
-        self.push_notifications = input;
-        self
+        self.push_notifications = input; self
     }
     /// <p>The push notification configuration of a message.</p>
     pub fn get_push_notifications(&self) -> &::std::option::Option<crate::types::PushNotificationPreferences> {
@@ -44,7 +43,9 @@ impl ChannelMembershipPreferencesBuilder {
     /// Consumes the builder and constructs a [`ChannelMembershipPreferences`](crate::types::ChannelMembershipPreferences).
     pub fn build(self) -> crate::types::ChannelMembershipPreferences {
         crate::types::ChannelMembershipPreferences {
-            push_notifications: self.push_notifications,
+            push_notifications: self.push_notifications
+            ,
         }
     }
 }
+

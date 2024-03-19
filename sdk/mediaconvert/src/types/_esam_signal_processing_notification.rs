@@ -3,13 +3,13 @@
 /// ESAM SignalProcessingNotification data defined by OC-SP-ESAM-API-I03-131025.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EsamSignalProcessingNotification {
+pub struct EsamSignalProcessingNotification  {
     /// Provide your ESAM SignalProcessingNotification XML document inside your JSON job settings. Form the XML document as per OC-SP-ESAM-API-I03-131025. The transcoder will use the signal processing instructions in the message that you supply. For your MPEG2-TS file outputs, if you want the service to place SCTE-35 markers at the insertion points you specify in the XML document, you must also enable SCTE-35 ESAM. Note that you can either specify an ESAM XML document or enable SCTE-35 passthrough. You can't do both.
     pub scc_xml: ::std::option::Option<::std::string::String>,
 }
-impl EsamSignalProcessingNotification {
+impl  EsamSignalProcessingNotification  {
     /// Provide your ESAM SignalProcessingNotification XML document inside your JSON job settings. Form the XML document as per OC-SP-ESAM-API-I03-131025. The transcoder will use the signal processing instructions in the message that you supply. For your MPEG2-TS file outputs, if you want the service to place SCTE-35 markers at the insertion points you specify in the XML document, you must also enable SCTE-35 ESAM. Note that you can either specify an ESAM XML document or enable SCTE-35 passthrough. You can't do both.
-    pub fn scc_xml(&self) -> ::std::option::Option<&str> {
+    pub fn scc_xml(&self) -> ::std::option::Option<& str> {
         self.scc_xml.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl EsamSignalProcessingNotificationBuilder {
     }
     /// Provide your ESAM SignalProcessingNotification XML document inside your JSON job settings. Form the XML document as per OC-SP-ESAM-API-I03-131025. The transcoder will use the signal processing instructions in the message that you supply. For your MPEG2-TS file outputs, if you want the service to place SCTE-35 markers at the insertion points you specify in the XML document, you must also enable SCTE-35 ESAM. Note that you can either specify an ESAM XML document or enable SCTE-35 passthrough. You can't do both.
     pub fn set_scc_xml(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scc_xml = input;
-        self
+        self.scc_xml = input; self
     }
     /// Provide your ESAM SignalProcessingNotification XML document inside your JSON job settings. Form the XML document as per OC-SP-ESAM-API-I03-131025. The transcoder will use the signal processing instructions in the message that you supply. For your MPEG2-TS file outputs, if you want the service to place SCTE-35 markers at the insertion points you specify in the XML document, you must also enable SCTE-35 ESAM. Note that you can either specify an ESAM XML document or enable SCTE-35 passthrough. You can't do both.
     pub fn get_scc_xml(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl EsamSignalProcessingNotificationBuilder {
     }
     /// Consumes the builder and constructs a [`EsamSignalProcessingNotification`](crate::types::EsamSignalProcessingNotification).
     pub fn build(self) -> crate::types::EsamSignalProcessingNotification {
-        crate::types::EsamSignalProcessingNotification { scc_xml: self.scc_xml }
+        crate::types::EsamSignalProcessingNotification {
+            scc_xml: self.scc_xml
+            ,
+        }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An object that represents the details about the remediation exception. The details include the rule name, an explanation of an exception, the time when the exception will be deleted, the resource ID, and resource type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemediationException {
+pub struct RemediationException  {
     /// <p>The name of the Config rule.</p>
     pub config_rule_name: ::std::string::String,
     /// <p>The type of a resource.</p>
@@ -15,28 +15,25 @@ pub struct RemediationException {
     /// <p>The time when the remediation exception will be deleted.</p>
     pub expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl RemediationException {
+impl  RemediationException  {
     /// <p>The name of the Config rule.</p>
-    pub fn config_rule_name(&self) -> &str {
-        use std::ops::Deref;
-        self.config_rule_name.deref()
+    pub fn config_rule_name(&self) -> & str {
+        use std::ops::Deref; self.config_rule_name.deref()
     }
     /// <p>The type of a resource.</p>
-    pub fn resource_type(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_type.deref()
+    pub fn resource_type(&self) -> & str {
+        use std::ops::Deref; self.resource_type.deref()
     }
     /// <p>The ID of the resource (for example., sg-xxxxxx).</p>
-    pub fn resource_id(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_id.deref()
+    pub fn resource_id(&self) -> & str {
+        use std::ops::Deref; self.resource_id.deref()
     }
     /// <p>An explanation of an remediation exception.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The time when the remediation exception will be deleted.</p>
-    pub fn expiration_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn expiration_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.expiration_time.as_ref()
     }
 }
@@ -66,8 +63,7 @@ impl RemediationExceptionBuilder {
     }
     /// <p>The name of the Config rule.</p>
     pub fn set_config_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.config_rule_name = input;
-        self
+        self.config_rule_name = input; self
     }
     /// <p>The name of the Config rule.</p>
     pub fn get_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl RemediationExceptionBuilder {
     }
     /// <p>The type of a resource.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of a resource.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +91,7 @@ impl RemediationExceptionBuilder {
     }
     /// <p>The ID of the resource (for example., sg-xxxxxx).</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The ID of the resource (for example., sg-xxxxxx).</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +104,7 @@ impl RemediationExceptionBuilder {
     }
     /// <p>An explanation of an remediation exception.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>An explanation of an remediation exception.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +117,7 @@ impl RemediationExceptionBuilder {
     }
     /// <p>The time when the remediation exception will be deleted.</p>
     pub fn set_expiration_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.expiration_time = input;
-        self
+        self.expiration_time = input; self
     }
     /// <p>The time when the remediation exception will be deleted.</p>
     pub fn get_expiration_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -137,27 +129,29 @@ impl RemediationExceptionBuilder {
     /// - [`resource_type`](crate::types::builders::RemediationExceptionBuilder::resource_type)
     /// - [`resource_id`](crate::types::builders::RemediationExceptionBuilder::resource_id)
     pub fn build(self) -> ::std::result::Result<crate::types::RemediationException, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RemediationException {
-            config_rule_name: self.config_rule_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "config_rule_name",
-                    "config_rule_name was not specified but it is required when building RemediationException",
-                )
-            })?,
-            resource_type: self.resource_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_type",
-                    "resource_type was not specified but it is required when building RemediationException",
-                )
-            })?,
-            resource_id: self.resource_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_id",
-                    "resource_id was not specified but it is required when building RemediationException",
-                )
-            })?,
-            message: self.message,
-            expiration_time: self.expiration_time,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RemediationException {
+                config_rule_name: self.config_rule_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("config_rule_name", "config_rule_name was not specified but it is required when building RemediationException")
+                    )?
+                ,
+                resource_type: self.resource_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_type", "resource_type was not specified but it is required when building RemediationException")
+                    )?
+                ,
+                resource_id: self.resource_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_id", "resource_id was not specified but it is required when building RemediationException")
+                    )?
+                ,
+                message: self.message
+                ,
+                expiration_time: self.expiration_time
+                ,
+            }
+        )
     }
 }
+

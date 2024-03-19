@@ -3,19 +3,19 @@
 /// <p>Describes the Amazon S3 bucket for the disk image.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserBucketDetails {
+pub struct UserBucketDetails  {
     /// <p>The Amazon S3 bucket from which the disk image was created.</p>
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The file name of the disk image.</p>
     pub s3_key: ::std::option::Option<::std::string::String>,
 }
-impl UserBucketDetails {
+impl  UserBucketDetails  {
     /// <p>The Amazon S3 bucket from which the disk image was created.</p>
-    pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> ::std::option::Option<& str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The file name of the disk image.</p>
-    pub fn s3_key(&self) -> ::std::option::Option<&str> {
+    pub fn s3_key(&self) -> ::std::option::Option<& str> {
         self.s3_key.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl UserBucketDetailsBuilder {
     }
     /// <p>The Amazon S3 bucket from which the disk image was created.</p>
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket = input;
-        self
+        self.s3_bucket = input; self
     }
     /// <p>The Amazon S3 bucket from which the disk image was created.</p>
     pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl UserBucketDetailsBuilder {
     }
     /// <p>The file name of the disk image.</p>
     pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_key = input;
-        self
+        self.s3_key = input; self
     }
     /// <p>The file name of the disk image.</p>
     pub fn get_s3_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl UserBucketDetailsBuilder {
     /// Consumes the builder and constructs a [`UserBucketDetails`](crate::types::UserBucketDetails).
     pub fn build(self) -> crate::types::UserBucketDetails {
         crate::types::UserBucketDetails {
-            s3_bucket: self.s3_bucket,
-            s3_key: self.s3_key,
+            s3_bucket: self.s3_bucket
+            ,
+            s3_key: self.s3_key
+            ,
         }
     }
 }
+

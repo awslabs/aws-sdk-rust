@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFlywheelIterationOutput {
+pub struct DescribeFlywheelIterationOutput  {
     /// <p>The configuration properties of a flywheel iteration.</p>
     pub flywheel_iteration_properties: ::std::option::Option<crate::types::FlywheelIterationProperties>,
     _request_id: Option<String>,
 }
-impl DescribeFlywheelIterationOutput {
+impl  DescribeFlywheelIterationOutput  {
     /// <p>The configuration properties of a flywheel iteration.</p>
-    pub fn flywheel_iteration_properties(&self) -> ::std::option::Option<&crate::types::FlywheelIterationProperties> {
+    pub fn flywheel_iteration_properties(&self) -> ::std::option::Option<& crate::types::FlywheelIterationProperties> {
         self.flywheel_iteration_properties.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeFlywheelIterationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeFlywheelIterationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFlywheelIterationOutput`](crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationOutput).
     pub fn builder() -> crate::operation::describe_flywheel_iteration::builders::DescribeFlywheelIterationOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeFlywheelIterationOutputBuilder {
     }
     /// <p>The configuration properties of a flywheel iteration.</p>
     pub fn set_flywheel_iteration_properties(mut self, input: ::std::option::Option<crate::types::FlywheelIterationProperties>) -> Self {
-        self.flywheel_iteration_properties = input;
-        self
+        self.flywheel_iteration_properties = input; self
     }
     /// <p>The configuration properties of a flywheel iteration.</p>
     pub fn get_flywheel_iteration_properties(&self) -> &::std::option::Option<crate::types::FlywheelIterationProperties> {
         &self.flywheel_iteration_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeFlywheelIterationOutput`](crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationOutput).
     pub fn build(self) -> crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationOutput {
         crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationOutput {
-            flywheel_iteration_properties: self.flywheel_iteration_properties,
+            flywheel_iteration_properties: self.flywheel_iteration_properties
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

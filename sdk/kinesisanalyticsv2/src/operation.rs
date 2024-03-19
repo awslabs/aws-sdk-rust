@@ -93,3 +93,4 @@ pub mod update_application;
 
 /// Types for the `UpdateApplicationMaintenanceConfiguration` operation.
 pub mod update_application_maintenance_configuration;
+

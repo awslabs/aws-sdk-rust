@@ -3,7 +3,7 @@
 /// <p>Information about a RAM managed permission.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceSharePermissionDetail {
+pub struct ResourceSharePermissionDetail  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of this RAM managed permission.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the permission described in this response.</p>
@@ -53,15 +53,15 @@ pub struct ResourceSharePermissionDetail {
     /// </ul>
     pub status: ::std::option::Option<crate::types::PermissionStatus>,
     /// <p>The tag key and value pairs attached to the resource share.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl ResourceSharePermissionDetail {
+impl  ResourceSharePermissionDetail  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of this RAM managed permission.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The version of the permission described in this response.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>Specifies whether the version of the permission represented in this response is the default version for this permission.</p>
@@ -69,23 +69,23 @@ impl ResourceSharePermissionDetail {
         self.default_version
     }
     /// <p>The name of this permission.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The resource type to which this permission applies.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The permission's effect and actions in JSON format. The <code>effect</code> indicates whether the specified actions are allowed or denied. The <code>actions</code> list the operations to which the principal is granted or denied access.</p>
-    pub fn permission(&self) -> ::std::option::Option<&str> {
+    pub fn permission(&self) -> ::std::option::Option<& str> {
         self.permission.as_deref()
     }
     /// <p>The date and time when the permission was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The date and time when the permission was last updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>Specifies whether the version of the permission represented in this response is the default version for all resources of this resource type.</p>
@@ -99,7 +99,7 @@ impl ResourceSharePermissionDetail {
     /// <li>
     /// <p><code>CUSTOMER_MANAGED</code> – You, or another principal in your account created this managed permission. You can associate it with your resource shares and create new versions that have different permissions.</p></li>
     /// </ul>
-    pub fn permission_type(&self) -> ::std::option::Option<&crate::types::PermissionType> {
+    pub fn permission_type(&self) -> ::std::option::Option<& crate::types::PermissionType> {
         self.permission_type.as_ref()
     }
     /// <p>Indicates what features are available for this resource share. This parameter can have one of the following values:</p>
@@ -111,7 +111,7 @@ impl ResourceSharePermissionDetail {
     /// <li>
     /// <p><b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the customer ran the <code>PromoteResourceShareCreatedFromPolicy</code> and that operation is still in progress. This value changes to <code>STANDARD</code> when complete.</p></li>
     /// </ul>
-    pub fn feature_set(&self) -> ::std::option::Option<&crate::types::PermissionFeatureSet> {
+    pub fn feature_set(&self) -> ::std::option::Option<& crate::types::PermissionFeatureSet> {
         self.feature_set.as_ref()
     }
     /// <p>The current status of the association between the permission and the resource share. The following are the possible values:</p>
@@ -125,14 +125,15 @@ impl ResourceSharePermissionDetail {
     /// <li>
     /// <p><code>DELETED</code> – This permission or version is deleted.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::PermissionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::PermissionStatus> {
         self.status.as_ref()
     }
     /// <p>The tag key and value pairs attached to the resource share.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ResourceSharePermissionDetail {
@@ -158,7 +159,7 @@ pub struct ResourceSharePermissionDetailBuilder {
     pub(crate) permission_type: ::std::option::Option<crate::types::PermissionType>,
     pub(crate) feature_set: ::std::option::Option<crate::types::PermissionFeatureSet>,
     pub(crate) status: ::std::option::Option<crate::types::PermissionStatus>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl ResourceSharePermissionDetailBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of this RAM managed permission.</p>
@@ -168,8 +169,7 @@ impl ResourceSharePermissionDetailBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of this RAM managed permission.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of this RAM managed permission.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -182,8 +182,7 @@ impl ResourceSharePermissionDetailBuilder {
     }
     /// <p>The version of the permission described in this response.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of the permission described in this response.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -196,8 +195,7 @@ impl ResourceSharePermissionDetailBuilder {
     }
     /// <p>Specifies whether the version of the permission represented in this response is the default version for this permission.</p>
     pub fn set_default_version(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.default_version = input;
-        self
+        self.default_version = input; self
     }
     /// <p>Specifies whether the version of the permission represented in this response is the default version for this permission.</p>
     pub fn get_default_version(&self) -> &::std::option::Option<bool> {
@@ -210,8 +208,7 @@ impl ResourceSharePermissionDetailBuilder {
     }
     /// <p>The name of this permission.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of this permission.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -224,8 +221,7 @@ impl ResourceSharePermissionDetailBuilder {
     }
     /// <p>The resource type to which this permission applies.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type to which this permission applies.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -238,8 +234,7 @@ impl ResourceSharePermissionDetailBuilder {
     }
     /// <p>The permission's effect and actions in JSON format. The <code>effect</code> indicates whether the specified actions are allowed or denied. The <code>actions</code> list the operations to which the principal is granted or denied access.</p>
     pub fn set_permission(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.permission = input;
-        self
+        self.permission = input; self
     }
     /// <p>The permission's effect and actions in JSON format. The <code>effect</code> indicates whether the specified actions are allowed or denied. The <code>actions</code> list the operations to which the principal is granted or denied access.</p>
     pub fn get_permission(&self) -> &::std::option::Option<::std::string::String> {
@@ -252,8 +247,7 @@ impl ResourceSharePermissionDetailBuilder {
     }
     /// <p>The date and time when the permission was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The date and time when the permission was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -266,8 +260,7 @@ impl ResourceSharePermissionDetailBuilder {
     }
     /// <p>The date and time when the permission was last updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The date and time when the permission was last updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -280,8 +273,7 @@ impl ResourceSharePermissionDetailBuilder {
     }
     /// <p>Specifies whether the version of the permission represented in this response is the default version for all resources of this resource type.</p>
     pub fn set_is_resource_type_default(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_resource_type_default = input;
-        self
+        self.is_resource_type_default = input; self
     }
     /// <p>Specifies whether the version of the permission represented in this response is the default version for all resources of this resource type.</p>
     pub fn get_is_resource_type_default(&self) -> &::std::option::Option<bool> {
@@ -306,8 +298,7 @@ impl ResourceSharePermissionDetailBuilder {
     /// <p><code>CUSTOMER_MANAGED</code> – You, or another principal in your account created this managed permission. You can associate it with your resource shares and create new versions that have different permissions.</p></li>
     /// </ul>
     pub fn set_permission_type(mut self, input: ::std::option::Option<crate::types::PermissionType>) -> Self {
-        self.permission_type = input;
-        self
+        self.permission_type = input; self
     }
     /// <p>The type of managed permission. This can be one of the following values:</p>
     /// <ul>
@@ -342,8 +333,7 @@ impl ResourceSharePermissionDetailBuilder {
     /// <p><b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the customer ran the <code>PromoteResourceShareCreatedFromPolicy</code> and that operation is still in progress. This value changes to <code>STANDARD</code> when complete.</p></li>
     /// </ul>
     pub fn set_feature_set(mut self, input: ::std::option::Option<crate::types::PermissionFeatureSet>) -> Self {
-        self.feature_set = input;
-        self
+        self.feature_set = input; self
     }
     /// <p>Indicates what features are available for this resource share. This parameter can have one of the following values:</p>
     /// <ul>
@@ -384,8 +374,7 @@ impl ResourceSharePermissionDetailBuilder {
     /// <p><code>DELETED</code> – This permission or version is deleted.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::PermissionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the association between the permission and the resource share. The following are the possible values:</p>
     /// <ul>
@@ -408,35 +397,48 @@ impl ResourceSharePermissionDetailBuilder {
     /// <p>The tag key and value pairs attached to the resource share.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tag key and value pairs attached to the resource share.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tag key and value pairs attached to the resource share.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ResourceSharePermissionDetail`](crate::types::ResourceSharePermissionDetail).
     pub fn build(self) -> crate::types::ResourceSharePermissionDetail {
         crate::types::ResourceSharePermissionDetail {
-            arn: self.arn,
-            version: self.version,
-            default_version: self.default_version,
-            name: self.name,
-            resource_type: self.resource_type,
-            permission: self.permission,
-            creation_time: self.creation_time,
-            last_updated_time: self.last_updated_time,
-            is_resource_type_default: self.is_resource_type_default,
-            permission_type: self.permission_type,
-            feature_set: self.feature_set,
-            status: self.status,
-            tags: self.tags,
+            arn: self.arn
+            ,
+            version: self.version
+            ,
+            default_version: self.default_version
+            ,
+            name: self.name
+            ,
+            resource_type: self.resource_type
+            ,
+            permission: self.permission
+            ,
+            creation_time: self.creation_time
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            is_resource_type_default: self.is_resource_type_default
+            ,
+            permission_type: self.permission_type
+            ,
+            feature_set: self.feature_set
+            ,
+            status: self.status
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

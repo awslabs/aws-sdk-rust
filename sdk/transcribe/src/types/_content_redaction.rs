@@ -3,7 +3,7 @@
 /// <p>Makes it possible to redact or flag specified personally identifiable information (PII) in your transcript. If you use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>RedactionOutput</code> and <code>RedactionType</code>. You can optionally include <code>PiiEntityTypes</code> to choose which types of PII you want to redact.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContentRedaction {
+pub struct ContentRedaction  {
     /// <p>Specify the category of information you want to redact; <code>PII</code> (personally identifiable information) is the only valid value. You can use <code>PiiEntityTypes</code> to choose which types of PII you want to redact. If you do not include <code>PiiEntityTypes</code> in your request, all PII is redacted.</p>
     pub redaction_type: crate::types::RedactionType,
     /// <p>Specify if you want only a redacted transcript, or if you want a redacted and an unredacted transcript.</p>
@@ -11,24 +11,25 @@ pub struct ContentRedaction {
     /// <p>When you choose <code>redacted_and_unredacted</code> Amazon Transcribe creates a redacted and an unredacted transcript (as two separate files).</p>
     pub redaction_output: crate::types::RedactionOutput,
     /// <p>Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can include as many types as you'd like, or you can select <code>ALL</code>. If you do not include <code>PiiEntityTypes</code> in your request, all PII is redacted.</p>
-    pub pii_entity_types: ::std::option::Option<::std::vec::Vec<crate::types::PiiEntityType>>,
+    pub pii_entity_types: ::std::option::Option<::std::vec::Vec::<crate::types::PiiEntityType>>,
 }
-impl ContentRedaction {
+impl  ContentRedaction  {
     /// <p>Specify the category of information you want to redact; <code>PII</code> (personally identifiable information) is the only valid value. You can use <code>PiiEntityTypes</code> to choose which types of PII you want to redact. If you do not include <code>PiiEntityTypes</code> in your request, all PII is redacted.</p>
-    pub fn redaction_type(&self) -> &crate::types::RedactionType {
+    pub fn redaction_type(&self) -> & crate::types::RedactionType {
         &self.redaction_type
     }
     /// <p>Specify if you want only a redacted transcript, or if you want a redacted and an unredacted transcript.</p>
     /// <p>When you choose <code>redacted</code> Amazon Transcribe creates only a redacted transcript.</p>
     /// <p>When you choose <code>redacted_and_unredacted</code> Amazon Transcribe creates a redacted and an unredacted transcript (as two separate files).</p>
-    pub fn redaction_output(&self) -> &crate::types::RedactionOutput {
+    pub fn redaction_output(&self) -> & crate::types::RedactionOutput {
         &self.redaction_output
     }
     /// <p>Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can include as many types as you'd like, or you can select <code>ALL</code>. If you do not include <code>PiiEntityTypes</code> in your request, all PII is redacted.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pii_entity_types.is_none()`.
-    pub fn pii_entity_types(&self) -> &[crate::types::PiiEntityType] {
-        self.pii_entity_types.as_deref().unwrap_or_default()
+    pub fn pii_entity_types(&self) -> & [crate::types::PiiEntityType] {
+        self.pii_entity_types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ContentRedaction {
@@ -44,7 +45,7 @@ impl ContentRedaction {
 pub struct ContentRedactionBuilder {
     pub(crate) redaction_type: ::std::option::Option<crate::types::RedactionType>,
     pub(crate) redaction_output: ::std::option::Option<crate::types::RedactionOutput>,
-    pub(crate) pii_entity_types: ::std::option::Option<::std::vec::Vec<crate::types::PiiEntityType>>,
+    pub(crate) pii_entity_types: ::std::option::Option<::std::vec::Vec::<crate::types::PiiEntityType>>,
 }
 impl ContentRedactionBuilder {
     /// <p>Specify the category of information you want to redact; <code>PII</code> (personally identifiable information) is the only valid value. You can use <code>PiiEntityTypes</code> to choose which types of PII you want to redact. If you do not include <code>PiiEntityTypes</code> in your request, all PII is redacted.</p>
@@ -55,8 +56,7 @@ impl ContentRedactionBuilder {
     }
     /// <p>Specify the category of information you want to redact; <code>PII</code> (personally identifiable information) is the only valid value. You can use <code>PiiEntityTypes</code> to choose which types of PII you want to redact. If you do not include <code>PiiEntityTypes</code> in your request, all PII is redacted.</p>
     pub fn set_redaction_type(mut self, input: ::std::option::Option<crate::types::RedactionType>) -> Self {
-        self.redaction_type = input;
-        self
+        self.redaction_type = input; self
     }
     /// <p>Specify the category of information you want to redact; <code>PII</code> (personally identifiable information) is the only valid value. You can use <code>PiiEntityTypes</code> to choose which types of PII you want to redact. If you do not include <code>PiiEntityTypes</code> in your request, all PII is redacted.</p>
     pub fn get_redaction_type(&self) -> &::std::option::Option<crate::types::RedactionType> {
@@ -74,8 +74,7 @@ impl ContentRedactionBuilder {
     /// <p>When you choose <code>redacted</code> Amazon Transcribe creates only a redacted transcript.</p>
     /// <p>When you choose <code>redacted_and_unredacted</code> Amazon Transcribe creates a redacted and an unredacted transcript (as two separate files).</p>
     pub fn set_redaction_output(mut self, input: ::std::option::Option<crate::types::RedactionOutput>) -> Self {
-        self.redaction_output = input;
-        self
+        self.redaction_output = input; self
     }
     /// <p>Specify if you want only a redacted transcript, or if you want a redacted and an unredacted transcript.</p>
     /// <p>When you choose <code>redacted</code> Amazon Transcribe creates only a redacted transcript.</p>
@@ -90,17 +89,16 @@ impl ContentRedactionBuilder {
     /// <p>Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can include as many types as you'd like, or you can select <code>ALL</code>. If you do not include <code>PiiEntityTypes</code> in your request, all PII is redacted.</p>
     pub fn pii_entity_types(mut self, input: crate::types::PiiEntityType) -> Self {
         let mut v = self.pii_entity_types.unwrap_or_default();
-        v.push(input);
-        self.pii_entity_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.pii_entity_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can include as many types as you'd like, or you can select <code>ALL</code>. If you do not include <code>PiiEntityTypes</code> in your request, all PII is redacted.</p>
-    pub fn set_pii_entity_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PiiEntityType>>) -> Self {
-        self.pii_entity_types = input;
-        self
+    pub fn set_pii_entity_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PiiEntityType>>) -> Self {
+        self.pii_entity_types = input; self
     }
     /// <p>Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can include as many types as you'd like, or you can select <code>ALL</code>. If you do not include <code>PiiEntityTypes</code> in your request, all PII is redacted.</p>
-    pub fn get_pii_entity_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PiiEntityType>> {
+    pub fn get_pii_entity_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PiiEntityType>> {
         &self.pii_entity_types
     }
     /// Consumes the builder and constructs a [`ContentRedaction`](crate::types::ContentRedaction).
@@ -108,20 +106,22 @@ impl ContentRedactionBuilder {
     /// - [`redaction_type`](crate::types::builders::ContentRedactionBuilder::redaction_type)
     /// - [`redaction_output`](crate::types::builders::ContentRedactionBuilder::redaction_output)
     pub fn build(self) -> ::std::result::Result<crate::types::ContentRedaction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ContentRedaction {
-            redaction_type: self.redaction_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "redaction_type",
-                    "redaction_type was not specified but it is required when building ContentRedaction",
-                )
-            })?,
-            redaction_output: self.redaction_output.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "redaction_output",
-                    "redaction_output was not specified but it is required when building ContentRedaction",
-                )
-            })?,
-            pii_entity_types: self.pii_entity_types,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ContentRedaction {
+                redaction_type: self.redaction_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("redaction_type", "redaction_type was not specified but it is required when building ContentRedaction")
+                    )?
+                ,
+                redaction_output: self.redaction_output
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("redaction_output", "redaction_output was not specified but it is required when building ContentRedaction")
+                    )?
+                ,
+                pii_entity_types: self.pii_entity_types
+                ,
+            }
+        )
     }
 }
+

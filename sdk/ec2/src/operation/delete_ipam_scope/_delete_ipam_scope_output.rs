@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteIpamScopeOutput {
+pub struct DeleteIpamScopeOutput  {
     /// <p>Information about the results of the deletion.</p>
     pub ipam_scope: ::std::option::Option<crate::types::IpamScope>,
     _request_id: Option<String>,
 }
-impl DeleteIpamScopeOutput {
+impl  DeleteIpamScopeOutput  {
     /// <p>Information about the results of the deletion.</p>
-    pub fn ipam_scope(&self) -> ::std::option::Option<&crate::types::IpamScope> {
+    pub fn ipam_scope(&self) -> ::std::option::Option<& crate::types::IpamScope> {
         self.ipam_scope.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteIpamScopeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteIpamScopeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteIpamScopeOutput`](crate::operation::delete_ipam_scope::DeleteIpamScopeOutput).
     pub fn builder() -> crate::operation::delete_ipam_scope::builders::DeleteIpamScopeOutputBuilder {
@@ -40,27 +40,28 @@ impl DeleteIpamScopeOutputBuilder {
     }
     /// <p>Information about the results of the deletion.</p>
     pub fn set_ipam_scope(mut self, input: ::std::option::Option<crate::types::IpamScope>) -> Self {
-        self.ipam_scope = input;
-        self
+        self.ipam_scope = input; self
     }
     /// <p>Information about the results of the deletion.</p>
     pub fn get_ipam_scope(&self) -> &::std::option::Option<crate::types::IpamScope> {
         &self.ipam_scope
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteIpamScopeOutput`](crate::operation::delete_ipam_scope::DeleteIpamScopeOutput).
     pub fn build(self) -> crate::operation::delete_ipam_scope::DeleteIpamScopeOutput {
         crate::operation::delete_ipam_scope::DeleteIpamScopeOutput {
-            ipam_scope: self.ipam_scope,
+            ipam_scope: self.ipam_scope
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

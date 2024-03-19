@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutBotInput {
+pub struct PutBotInput  {
     /// <p>The name of the bot. The name is <i>not</i> case sensitive.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the bot.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>Intent</code> objects. Each intent represents a command that a user can express. For example, a pizza ordering bot might support an OrderPizza intent. For more information, see <code>how-it-works</code>.</p>
-    pub intents: ::std::option::Option<::std::vec::Vec<crate::types::Intent>>,
+    pub intents: ::std::option::Option<::std::vec::Vec::<crate::types::Intent>>,
     /// <p>Set to <code>true</code> to enable access to natural language understanding improvements.</p>
     /// <p>When you set the <code>enableModelImprovements</code> parameter to <code>true</code> you can use the <code>nluIntentConfidenceThreshold</code> parameter to configure confidence scores. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence Scores</a>.</p>
     /// <p>You can only set the <code>enableModelImprovements</code> parameter in certain Regions. If you set the parameter to <code>true</code>, your bot has access to accuracy improvements.</p>
@@ -94,22 +94,23 @@ pub struct PutBotInput {
     /// <p>When set to <code>true</code> a new numbered version of the bot is created. This is the same as calling the <code>CreateBotVersion</code> operation. If you don't specify <code>createVersion</code>, the default is <code>false</code>.</p>
     pub create_version: ::std::option::Option<bool>,
     /// <p>A list of tags to add to the bot. You can only add tags when you create a bot, you can't use the <code>PutBot</code> operation to update the tags on a bot. To update tags, use the <code>TagResource</code> operation.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl PutBotInput {
+impl  PutBotInput  {
     /// <p>The name of the bot. The name is <i>not</i> case sensitive.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the bot.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An array of <code>Intent</code> objects. Each intent represents a command that a user can express. For example, a pizza ordering bot might support an OrderPizza intent. For more information, see <code>how-it-works</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.intents.is_none()`.
-    pub fn intents(&self) -> &[crate::types::Intent] {
-        self.intents.as_deref().unwrap_or_default()
+    pub fn intents(&self) -> & [crate::types::Intent] {
+        self.intents.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Set to <code>true</code> to enable access to natural language understanding improvements.</p>
     /// <p>When you set the <code>enableModelImprovements</code> parameter to <code>true</code> you can use the <code>nluIntentConfidenceThreshold</code> parameter to configure confidence scores. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence Scores</a>.</p>
@@ -168,14 +169,14 @@ impl PutBotInput {
     /// <li>
     /// <p>PutSession operation - When using the <code>PutSession</code> operation, you send an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p></li>
     /// </ul>
-    pub fn clarification_prompt(&self) -> ::std::option::Option<&crate::types::Prompt> {
+    pub fn clarification_prompt(&self) -> ::std::option::Option<& crate::types::Prompt> {
         self.clarification_prompt.as_ref()
     }
     /// <p>When Amazon Lex can't understand the user's input in context, it tries to elicit the information a few times. After that, Amazon Lex sends the message defined in <code>abortStatement</code> to the user, and then cancels the conversation. To set the number of retries, use the <code>valueElicitationPrompt</code> field for the slot type.</p>
     /// <p>For example, in a pizza ordering bot, Amazon Lex might ask a user "What type of crust would you like?" If the user's response is not one of the expected responses (for example, "thin crust, "deep dish," etc.), Amazon Lex tries to elicit a correct response a few more times.</p>
     /// <p>For example, in a pizza ordering application, <code>OrderPizza</code> might be one of the intents. This intent might require the <code>CrustType</code> slot. You specify the <code>valueElicitationPrompt</code> field when you create the <code>CrustType</code> slot.</p>
     /// <p>If you have defined a fallback intent the cancel statement will not be sent to the user, the fallback intent is used instead. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.</p>
-    pub fn abort_statement(&self) -> ::std::option::Option<&crate::types::Statement> {
+    pub fn abort_statement(&self) -> ::std::option::Option<& crate::types::Statement> {
         self.abort_statement.as_ref()
     }
     /// <p>The maximum time in seconds that Amazon Lex retains the data gathered in a conversation.</p>
@@ -187,23 +188,23 @@ impl PutBotInput {
         self.idle_session_ttl_in_seconds
     }
     /// <p>The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Voices in Amazon Polly</a> in the <i>Amazon Polly Developer Guide</i>.</p>
-    pub fn voice_id(&self) -> ::std::option::Option<&str> {
+    pub fn voice_id(&self) -> ::std::option::Option<& str> {
         self.voice_id.as_deref()
     }
     /// <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
     /// <p>When you create a new bot, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p>
     /// <p>When you want to update a bot, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p>
-    pub fn checksum(&self) -> ::std::option::Option<&str> {
+    pub fn checksum(&self) -> ::std::option::Option<& str> {
         self.checksum.as_deref()
     }
     /// <p>If you set the <code>processBehavior</code> element to <code>BUILD</code>, Amazon Lex builds the bot so that it can be run. If you set the element to <code>SAVE</code> Amazon Lex saves the bot, but doesn't build it.</p>
     /// <p>If you don't specify this value, the default value is <code>BUILD</code>.</p>
-    pub fn process_behavior(&self) -> ::std::option::Option<&crate::types::ProcessBehavior> {
+    pub fn process_behavior(&self) -> ::std::option::Option<& crate::types::ProcessBehavior> {
         self.process_behavior.as_ref()
     }
     /// <p>Specifies the target locale for the bot. Any intent used in the bot must be compatible with the locale of the bot.</p>
     /// <p>The default is <code>en-US</code>.</p>
-    pub fn locale(&self) -> ::std::option::Option<&crate::types::Locale> {
+    pub fn locale(&self) -> ::std::option::Option<& crate::types::Locale> {
         self.locale.as_ref()
     }
     /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>
@@ -220,10 +221,11 @@ impl PutBotInput {
         self.create_version
     }
     /// <p>A list of tags to add to the bot. You can only add tags when you create a bot, you can't use the <code>PutBot</code> operation to update the tags on a bot. To update tags, use the <code>TagResource</code> operation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PutBotInput {
@@ -239,7 +241,7 @@ impl PutBotInput {
 pub struct PutBotInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) intents: ::std::option::Option<::std::vec::Vec<crate::types::Intent>>,
+    pub(crate) intents: ::std::option::Option<::std::vec::Vec::<crate::types::Intent>>,
     pub(crate) enable_model_improvements: ::std::option::Option<bool>,
     pub(crate) nlu_intent_confidence_threshold: ::std::option::Option<f64>,
     pub(crate) clarification_prompt: ::std::option::Option<crate::types::Prompt>,
@@ -252,7 +254,7 @@ pub struct PutBotInputBuilder {
     pub(crate) child_directed: ::std::option::Option<bool>,
     pub(crate) detect_sentiment: ::std::option::Option<bool>,
     pub(crate) create_version: ::std::option::Option<bool>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl PutBotInputBuilder {
     /// <p>The name of the bot. The name is <i>not</i> case sensitive.</p>
@@ -263,8 +265,7 @@ impl PutBotInputBuilder {
     }
     /// <p>The name of the bot. The name is <i>not</i> case sensitive.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the bot. The name is <i>not</i> case sensitive.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -277,8 +278,7 @@ impl PutBotInputBuilder {
     }
     /// <p>A description of the bot.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the bot.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -291,17 +291,16 @@ impl PutBotInputBuilder {
     /// <p>An array of <code>Intent</code> objects. Each intent represents a command that a user can express. For example, a pizza ordering bot might support an OrderPizza intent. For more information, see <code>how-it-works</code>.</p>
     pub fn intents(mut self, input: crate::types::Intent) -> Self {
         let mut v = self.intents.unwrap_or_default();
-        v.push(input);
-        self.intents = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.intents = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>Intent</code> objects. Each intent represents a command that a user can express. For example, a pizza ordering bot might support an OrderPizza intent. For more information, see <code>how-it-works</code>.</p>
-    pub fn set_intents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Intent>>) -> Self {
-        self.intents = input;
-        self
+    pub fn set_intents(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Intent>>) -> Self {
+        self.intents = input; self
     }
     /// <p>An array of <code>Intent</code> objects. Each intent represents a command that a user can express. For example, a pizza ordering bot might support an OrderPizza intent. For more information, see <code>how-it-works</code>.</p>
-    pub fn get_intents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Intent>> {
+    pub fn get_intents(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Intent>> {
         &self.intents
     }
     /// <p>Set to <code>true</code> to enable access to natural language understanding improvements.</p>
@@ -339,8 +338,7 @@ impl PutBotInputBuilder {
     /// </ul>
     /// <p>In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by default. In these Regions setting the parameter to <code>false</code> throws a <code>ValidationException</code> exception.</p>
     pub fn set_enable_model_improvements(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_model_improvements = input;
-        self
+        self.enable_model_improvements = input; self
     }
     /// <p>Set to <code>true</code> to enable access to natural language understanding improvements.</p>
     /// <p>When you set the <code>enableModelImprovements</code> parameter to <code>true</code> you can use the <code>nluIntentConfidenceThreshold</code> parameter to configure confidence scores. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence Scores</a>.</p>
@@ -413,8 +411,7 @@ impl PutBotInputBuilder {
     /// <p>IntentC</p></li>
     /// </ul>
     pub fn set_nlu_intent_confidence_threshold(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.nlu_intent_confidence_threshold = input;
-        self
+        self.nlu_intent_confidence_threshold = input; self
     }
     /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p>
     /// <p>You must set the <code>enableModelImprovements</code> parameter to <code>true</code> to use confidence scores in the following regions.</p>
@@ -472,8 +469,7 @@ impl PutBotInputBuilder {
     /// <p>PutSession operation - When using the <code>PutSession</code> operation, you send an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p></li>
     /// </ul>
     pub fn set_clarification_prompt(mut self, input: ::std::option::Option<crate::types::Prompt>) -> Self {
-        self.clarification_prompt = input;
-        self
+        self.clarification_prompt = input; self
     }
     /// <p>When Amazon Lex doesn't understand the user's intent, it uses this message to get clarification. To specify how many times Amazon Lex should repeat the clarification prompt, use the <code>maxAttempts</code> field. If Amazon Lex still doesn't understand, it sends the message in the <code>abortStatement</code> field.</p>
     /// <p>When you create a clarification prompt, make sure that it suggests the correct response from the user. for example, for a bot that orders pizza and drinks, you might create this clarification prompt: "What would you like to do? You can say 'Order a pizza' or 'Order a drink.'"</p>
@@ -503,8 +499,7 @@ impl PutBotInputBuilder {
     /// <p>For example, in a pizza ordering application, <code>OrderPizza</code> might be one of the intents. This intent might require the <code>CrustType</code> slot. You specify the <code>valueElicitationPrompt</code> field when you create the <code>CrustType</code> slot.</p>
     /// <p>If you have defined a fallback intent the cancel statement will not be sent to the user, the fallback intent is used instead. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.</p>
     pub fn set_abort_statement(mut self, input: ::std::option::Option<crate::types::Statement>) -> Self {
-        self.abort_statement = input;
-        self
+        self.abort_statement = input; self
     }
     /// <p>When Amazon Lex can't understand the user's input in context, it tries to elicit the information a few times. After that, Amazon Lex sends the message defined in <code>abortStatement</code> to the user, and then cancels the conversation. To set the number of retries, use the <code>valueElicitationPrompt</code> field for the slot type.</p>
     /// <p>For example, in a pizza ordering bot, Amazon Lex might ask a user "What type of crust would you like?" If the user's response is not one of the expected responses (for example, "thin crust, "deep dish," etc.), Amazon Lex tries to elicit a correct response a few more times.</p>
@@ -528,8 +523,7 @@ impl PutBotInputBuilder {
     /// <p>If you don't include the <code>idleSessionTTLInSeconds</code> element in a <code>PutBot</code> operation request, Amazon Lex uses the default value. This is also true if the request replaces an existing bot.</p>
     /// <p>The default is 300 seconds (5 minutes).</p>
     pub fn set_idle_session_ttl_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.idle_session_ttl_in_seconds = input;
-        self
+        self.idle_session_ttl_in_seconds = input; self
     }
     /// <p>The maximum time in seconds that Amazon Lex retains the data gathered in a conversation.</p>
     /// <p>A user interaction session remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
@@ -546,8 +540,7 @@ impl PutBotInputBuilder {
     }
     /// <p>The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Voices in Amazon Polly</a> in the <i>Amazon Polly Developer Guide</i>.</p>
     pub fn set_voice_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.voice_id = input;
-        self
+        self.voice_id = input; self
     }
     /// <p>The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Voices in Amazon Polly</a> in the <i>Amazon Polly Developer Guide</i>.</p>
     pub fn get_voice_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -564,8 +557,7 @@ impl PutBotInputBuilder {
     /// <p>When you create a new bot, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p>
     /// <p>When you want to update a bot, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p>
     pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.checksum = input;
-        self
+        self.checksum = input; self
     }
     /// <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
     /// <p>When you create a new bot, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p>
@@ -582,8 +574,7 @@ impl PutBotInputBuilder {
     /// <p>If you set the <code>processBehavior</code> element to <code>BUILD</code>, Amazon Lex builds the bot so that it can be run. If you set the element to <code>SAVE</code> Amazon Lex saves the bot, but doesn't build it.</p>
     /// <p>If you don't specify this value, the default value is <code>BUILD</code>.</p>
     pub fn set_process_behavior(mut self, input: ::std::option::Option<crate::types::ProcessBehavior>) -> Self {
-        self.process_behavior = input;
-        self
+        self.process_behavior = input; self
     }
     /// <p>If you set the <code>processBehavior</code> element to <code>BUILD</code>, Amazon Lex builds the bot so that it can be run. If you set the element to <code>SAVE</code> Amazon Lex saves the bot, but doesn't build it.</p>
     /// <p>If you don't specify this value, the default value is <code>BUILD</code>.</p>
@@ -600,8 +591,7 @@ impl PutBotInputBuilder {
     /// <p>Specifies the target locale for the bot. Any intent used in the bot must be compatible with the locale of the bot.</p>
     /// <p>The default is <code>en-US</code>.</p>
     pub fn set_locale(mut self, input: ::std::option::Option<crate::types::Locale>) -> Self {
-        self.locale = input;
-        self
+        self.locale = input; self
     }
     /// <p>Specifies the target locale for the bot. Any intent used in the bot must be compatible with the locale of the bot.</p>
     /// <p>The default is <code>en-US</code>.</p>
@@ -618,8 +608,7 @@ impl PutBotInputBuilder {
     /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>
     /// <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a></p>
     pub fn set_child_directed(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.child_directed = input;
-        self
+        self.child_directed = input; self
     }
     /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>
     /// <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a></p>
@@ -633,8 +622,7 @@ impl PutBotInputBuilder {
     }
     /// <p>When set to <code>true</code> user utterances are sent to Amazon Comprehend for sentiment analysis. If you don't specify <code>detectSentiment</code>, the default is <code>false</code>.</p>
     pub fn set_detect_sentiment(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.detect_sentiment = input;
-        self
+        self.detect_sentiment = input; self
     }
     /// <p>When set to <code>true</code> user utterances are sent to Amazon Comprehend for sentiment analysis. If you don't specify <code>detectSentiment</code>, the default is <code>false</code>.</p>
     pub fn get_detect_sentiment(&self) -> &::std::option::Option<bool> {
@@ -647,8 +635,7 @@ impl PutBotInputBuilder {
     }
     /// <p>When set to <code>true</code> a new numbered version of the bot is created. This is the same as calling the <code>CreateBotVersion</code> operation. If you don't specify <code>createVersion</code>, the default is <code>false</code>.</p>
     pub fn set_create_version(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.create_version = input;
-        self
+        self.create_version = input; self
     }
     /// <p>When set to <code>true</code> a new numbered version of the bot is created. This is the same as calling the <code>CreateBotVersion</code> operation. If you don't specify <code>createVersion</code>, the default is <code>false</code>.</p>
     pub fn get_create_version(&self) -> &::std::option::Option<bool> {
@@ -661,38 +648,56 @@ impl PutBotInputBuilder {
     /// <p>A list of tags to add to the bot. You can only add tags when you create a bot, you can't use the <code>PutBot</code> operation to update the tags on a bot. To update tags, use the <code>TagResource</code> operation.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags to add to the bot. You can only add tags when you create a bot, you can't use the <code>PutBot</code> operation to update the tags on a bot. To update tags, use the <code>TagResource</code> operation.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags to add to the bot. You can only add tags when you create a bot, you can't use the <code>PutBot</code> operation to update the tags on a bot. To update tags, use the <code>TagResource</code> operation.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`PutBotInput`](crate::operation::put_bot::PutBotInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_bot::PutBotInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_bot::PutBotInput {
-            name: self.name,
-            description: self.description,
-            intents: self.intents,
-            enable_model_improvements: self.enable_model_improvements,
-            nlu_intent_confidence_threshold: self.nlu_intent_confidence_threshold,
-            clarification_prompt: self.clarification_prompt,
-            abort_statement: self.abort_statement,
-            idle_session_ttl_in_seconds: self.idle_session_ttl_in_seconds,
-            voice_id: self.voice_id,
-            checksum: self.checksum,
-            process_behavior: self.process_behavior,
-            locale: self.locale,
-            child_directed: self.child_directed,
-            detect_sentiment: self.detect_sentiment,
-            create_version: self.create_version,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::put_bot::PutBotInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                intents: self.intents
+                ,
+                enable_model_improvements: self.enable_model_improvements
+                ,
+                nlu_intent_confidence_threshold: self.nlu_intent_confidence_threshold
+                ,
+                clarification_prompt: self.clarification_prompt
+                ,
+                abort_statement: self.abort_statement
+                ,
+                idle_session_ttl_in_seconds: self.idle_session_ttl_in_seconds
+                ,
+                voice_id: self.voice_id
+                ,
+                checksum: self.checksum
+                ,
+                process_behavior: self.process_behavior
+                ,
+                locale: self.locale
+                ,
+                child_directed: self.child_directed
+                ,
+                detect_sentiment: self.detect_sentiment
+                ,
+                create_version: self.create_version
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListUserGroupsOutput {
+pub struct ListUserGroupsOutput  {
     /// <p>The list of groups the user is a member of.</p>
-    pub group_list: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,
+    pub group_list: ::std::option::Option<::std::vec::Vec::<crate::types::Group>>,
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
@@ -13,19 +13,20 @@ pub struct ListUserGroupsOutput {
     pub status: i32,
     _request_id: Option<String>,
 }
-impl ListUserGroupsOutput {
+impl  ListUserGroupsOutput  {
     /// <p>The list of groups the user is a member of.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_list.is_none()`.
-    pub fn group_list(&self) -> &[crate::types::Group] {
-        self.group_list.as_deref().unwrap_or_default()
+    pub fn group_list(&self) -> & [crate::types::Group] {
+        self.group_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -34,10 +35,10 @@ impl ListUserGroupsOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for ListUserGroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListUserGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListUserGroupsOutput`](crate::operation::list_user_groups::ListUserGroupsOutput).
     pub fn builder() -> crate::operation::list_user_groups::builders::ListUserGroupsOutputBuilder {
@@ -49,7 +50,7 @@ impl ListUserGroupsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUserGroupsOutputBuilder {
-    pub(crate) group_list: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,
+    pub(crate) group_list: ::std::option::Option<::std::vec::Vec::<crate::types::Group>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
@@ -63,17 +64,16 @@ impl ListUserGroupsOutputBuilder {
     /// <p>The list of groups the user is a member of.</p>
     pub fn group_list(mut self, input: crate::types::Group) -> Self {
         let mut v = self.group_list.unwrap_or_default();
-        v.push(input);
-        self.group_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.group_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of groups the user is a member of.</p>
-    pub fn set_group_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Group>>) -> Self {
-        self.group_list = input;
-        self
+    pub fn set_group_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Group>>) -> Self {
+        self.group_list = input; self
     }
     /// <p>The list of groups the user is a member of.</p>
-    pub fn get_group_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Group>> {
+    pub fn get_group_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Group>> {
         &self.group_list
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
@@ -83,8 +83,7 @@ impl ListUserGroupsOutputBuilder {
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl ListUserGroupsOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,30 +109,35 @@ impl ListUserGroupsOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn get_status(&self) -> &::std::option::Option<i32> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListUserGroupsOutput`](crate::operation::list_user_groups::ListUserGroupsOutput).
     pub fn build(self) -> crate::operation::list_user_groups::ListUserGroupsOutput {
         crate::operation::list_user_groups::ListUserGroupsOutput {
-            group_list: self.group_list,
-            next_token: self.next_token,
-            request_id: self.request_id,
-            status: self.status.unwrap_or_default(),
+            group_list: self.group_list
+            ,
+            next_token: self.next_token
+            ,
+            request_id: self.request_id
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A notebook execution. An execution is a specific instance that an Amazon EMR Notebook is run using the <code>StartNotebookExecution</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NotebookExecution {
+pub struct NotebookExecution  {
     /// <p>The unique identifier of a notebook execution.</p>
     pub notebook_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the Amazon EMR Notebook that is used for the notebook execution.</p>
@@ -51,7 +51,7 @@ pub struct NotebookExecution {
     /// <p>The unique identifier of the Amazon EC2 security group associated with the Amazon EMR Notebook instance. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html">Specifying Amazon EC2 Security Groups for Amazon EMR Notebooks</a> in the <i>Amazon EMR Management Guide</i>.</p>
     pub notebook_instance_security_group_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters and an optional value string with a maximum of 256 characters.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The Amazon S3 location that stores the notebook execution input.</p>
     pub notebook_s3_location: ::std::option::Option<crate::types::NotebookS3LocationForOutput>,
     /// <p>The Amazon S3 location for the notebook execution output.</p>
@@ -59,27 +59,27 @@ pub struct NotebookExecution {
     /// <p>The output format for the notebook execution.</p>
     pub output_notebook_format: ::std::option::Option<crate::types::OutputNotebookFormat>,
     /// <p>The environment variables associated with the notebook execution.</p>
-    pub environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub environment_variables: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl NotebookExecution {
+impl  NotebookExecution  {
     /// <p>The unique identifier of a notebook execution.</p>
-    pub fn notebook_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn notebook_execution_id(&self) -> ::std::option::Option<& str> {
         self.notebook_execution_id.as_deref()
     }
     /// <p>The unique identifier of the Amazon EMR Notebook that is used for the notebook execution.</p>
-    pub fn editor_id(&self) -> ::std::option::Option<&str> {
+    pub fn editor_id(&self) -> ::std::option::Option<& str> {
         self.editor_id.as_deref()
     }
     /// <p>The execution engine, such as an Amazon EMR cluster, used to run the Amazon EMR notebook and perform the notebook execution.</p>
-    pub fn execution_engine(&self) -> ::std::option::Option<&crate::types::ExecutionEngineConfig> {
+    pub fn execution_engine(&self) -> ::std::option::Option<& crate::types::ExecutionEngineConfig> {
         self.execution_engine.as_ref()
     }
     /// <p>A name for the notebook execution.</p>
-    pub fn notebook_execution_name(&self) -> ::std::option::Option<&str> {
+    pub fn notebook_execution_name(&self) -> ::std::option::Option<& str> {
         self.notebook_execution_name.as_deref()
     }
     /// <p>Input parameters in JSON format passed to the Amazon EMR Notebook at runtime for execution.</p>
-    pub fn notebook_params(&self) -> ::std::option::Option<&str> {
+    pub fn notebook_params(&self) -> ::std::option::Option<& str> {
         self.notebook_params.as_deref()
     }
     /// <p>The status of the notebook execution.</p>
@@ -105,53 +105,54 @@ impl NotebookExecution {
     /// <li>
     /// <p><code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::NotebookExecutionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::NotebookExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>The timestamp when notebook execution started.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The timestamp when notebook execution ended.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the notebook execution.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The location of the notebook execution's output file in Amazon S3.</p>
-    pub fn output_notebook_uri(&self) -> ::std::option::Option<&str> {
+    pub fn output_notebook_uri(&self) -> ::std::option::Option<& str> {
         self.output_notebook_uri.as_deref()
     }
     /// <p>The reason for the latest status change of the notebook execution.</p>
-    pub fn last_state_change_reason(&self) -> ::std::option::Option<&str> {
+    pub fn last_state_change_reason(&self) -> ::std::option::Option<& str> {
         self.last_state_change_reason.as_deref()
     }
     /// <p>The unique identifier of the Amazon EC2 security group associated with the Amazon EMR Notebook instance. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html">Specifying Amazon EC2 Security Groups for Amazon EMR Notebooks</a> in the <i>Amazon EMR Management Guide</i>.</p>
-    pub fn notebook_instance_security_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn notebook_instance_security_group_id(&self) -> ::std::option::Option<& str> {
         self.notebook_instance_security_group_id.as_deref()
     }
     /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters and an optional value string with a maximum of 256 characters.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon S3 location that stores the notebook execution input.</p>
-    pub fn notebook_s3_location(&self) -> ::std::option::Option<&crate::types::NotebookS3LocationForOutput> {
+    pub fn notebook_s3_location(&self) -> ::std::option::Option<& crate::types::NotebookS3LocationForOutput> {
         self.notebook_s3_location.as_ref()
     }
     /// <p>The Amazon S3 location for the notebook execution output.</p>
-    pub fn output_notebook_s3_location(&self) -> ::std::option::Option<&crate::types::OutputNotebookS3LocationForOutput> {
+    pub fn output_notebook_s3_location(&self) -> ::std::option::Option<& crate::types::OutputNotebookS3LocationForOutput> {
         self.output_notebook_s3_location.as_ref()
     }
     /// <p>The output format for the notebook execution.</p>
-    pub fn output_notebook_format(&self) -> ::std::option::Option<&crate::types::OutputNotebookFormat> {
+    pub fn output_notebook_format(&self) -> ::std::option::Option<& crate::types::OutputNotebookFormat> {
         self.output_notebook_format.as_ref()
     }
     /// <p>The environment variables associated with the notebook execution.</p>
-    pub fn environment_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn environment_variables(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.environment_variables.as_ref()
     }
 }
@@ -178,11 +179,11 @@ pub struct NotebookExecutionBuilder {
     pub(crate) output_notebook_uri: ::std::option::Option<::std::string::String>,
     pub(crate) last_state_change_reason: ::std::option::Option<::std::string::String>,
     pub(crate) notebook_instance_security_group_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) notebook_s3_location: ::std::option::Option<crate::types::NotebookS3LocationForOutput>,
     pub(crate) output_notebook_s3_location: ::std::option::Option<crate::types::OutputNotebookS3LocationForOutput>,
     pub(crate) output_notebook_format: ::std::option::Option<crate::types::OutputNotebookFormat>,
-    pub(crate) environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) environment_variables: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl NotebookExecutionBuilder {
     /// <p>The unique identifier of a notebook execution.</p>
@@ -192,8 +193,7 @@ impl NotebookExecutionBuilder {
     }
     /// <p>The unique identifier of a notebook execution.</p>
     pub fn set_notebook_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.notebook_execution_id = input;
-        self
+        self.notebook_execution_id = input; self
     }
     /// <p>The unique identifier of a notebook execution.</p>
     pub fn get_notebook_execution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -206,8 +206,7 @@ impl NotebookExecutionBuilder {
     }
     /// <p>The unique identifier of the Amazon EMR Notebook that is used for the notebook execution.</p>
     pub fn set_editor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.editor_id = input;
-        self
+        self.editor_id = input; self
     }
     /// <p>The unique identifier of the Amazon EMR Notebook that is used for the notebook execution.</p>
     pub fn get_editor_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -220,8 +219,7 @@ impl NotebookExecutionBuilder {
     }
     /// <p>The execution engine, such as an Amazon EMR cluster, used to run the Amazon EMR notebook and perform the notebook execution.</p>
     pub fn set_execution_engine(mut self, input: ::std::option::Option<crate::types::ExecutionEngineConfig>) -> Self {
-        self.execution_engine = input;
-        self
+        self.execution_engine = input; self
     }
     /// <p>The execution engine, such as an Amazon EMR cluster, used to run the Amazon EMR notebook and perform the notebook execution.</p>
     pub fn get_execution_engine(&self) -> &::std::option::Option<crate::types::ExecutionEngineConfig> {
@@ -234,8 +232,7 @@ impl NotebookExecutionBuilder {
     }
     /// <p>A name for the notebook execution.</p>
     pub fn set_notebook_execution_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.notebook_execution_name = input;
-        self
+        self.notebook_execution_name = input; self
     }
     /// <p>A name for the notebook execution.</p>
     pub fn get_notebook_execution_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -248,8 +245,7 @@ impl NotebookExecutionBuilder {
     }
     /// <p>Input parameters in JSON format passed to the Amazon EMR Notebook at runtime for execution.</p>
     pub fn set_notebook_params(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.notebook_params = input;
-        self
+        self.notebook_params = input; self
     }
     /// <p>Input parameters in JSON format passed to the Amazon EMR Notebook at runtime for execution.</p>
     pub fn get_notebook_params(&self) -> &::std::option::Option<::std::string::String> {
@@ -306,8 +302,7 @@ impl NotebookExecutionBuilder {
     /// <p><code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::NotebookExecutionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the notebook execution.</p>
     /// <ul>
@@ -342,8 +337,7 @@ impl NotebookExecutionBuilder {
     }
     /// <p>The timestamp when notebook execution started.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The timestamp when notebook execution started.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -356,8 +350,7 @@ impl NotebookExecutionBuilder {
     }
     /// <p>The timestamp when notebook execution ended.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The timestamp when notebook execution ended.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -370,8 +363,7 @@ impl NotebookExecutionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the notebook execution.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the notebook execution.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -384,8 +376,7 @@ impl NotebookExecutionBuilder {
     }
     /// <p>The location of the notebook execution's output file in Amazon S3.</p>
     pub fn set_output_notebook_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output_notebook_uri = input;
-        self
+        self.output_notebook_uri = input; self
     }
     /// <p>The location of the notebook execution's output file in Amazon S3.</p>
     pub fn get_output_notebook_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -398,8 +389,7 @@ impl NotebookExecutionBuilder {
     }
     /// <p>The reason for the latest status change of the notebook execution.</p>
     pub fn set_last_state_change_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_state_change_reason = input;
-        self
+        self.last_state_change_reason = input; self
     }
     /// <p>The reason for the latest status change of the notebook execution.</p>
     pub fn get_last_state_change_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -412,8 +402,7 @@ impl NotebookExecutionBuilder {
     }
     /// <p>The unique identifier of the Amazon EC2 security group associated with the Amazon EMR Notebook instance. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html">Specifying Amazon EC2 Security Groups for Amazon EMR Notebooks</a> in the <i>Amazon EMR Management Guide</i>.</p>
     pub fn set_notebook_instance_security_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.notebook_instance_security_group_id = input;
-        self
+        self.notebook_instance_security_group_id = input; self
     }
     /// <p>The unique identifier of the Amazon EC2 security group associated with the Amazon EMR Notebook instance. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html">Specifying Amazon EC2 Security Groups for Amazon EMR Notebooks</a> in the <i>Amazon EMR Management Guide</i>.</p>
     pub fn get_notebook_instance_security_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -426,17 +415,16 @@ impl NotebookExecutionBuilder {
     /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters and an optional value string with a maximum of 256 characters.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters and an optional value string with a maximum of 256 characters.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters and an optional value string with a maximum of 256 characters.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The Amazon S3 location that stores the notebook execution input.</p>
@@ -446,8 +434,7 @@ impl NotebookExecutionBuilder {
     }
     /// <p>The Amazon S3 location that stores the notebook execution input.</p>
     pub fn set_notebook_s3_location(mut self, input: ::std::option::Option<crate::types::NotebookS3LocationForOutput>) -> Self {
-        self.notebook_s3_location = input;
-        self
+        self.notebook_s3_location = input; self
     }
     /// <p>The Amazon S3 location that stores the notebook execution input.</p>
     pub fn get_notebook_s3_location(&self) -> &::std::option::Option<crate::types::NotebookS3LocationForOutput> {
@@ -460,8 +447,7 @@ impl NotebookExecutionBuilder {
     }
     /// <p>The Amazon S3 location for the notebook execution output.</p>
     pub fn set_output_notebook_s3_location(mut self, input: ::std::option::Option<crate::types::OutputNotebookS3LocationForOutput>) -> Self {
-        self.output_notebook_s3_location = input;
-        self
+        self.output_notebook_s3_location = input; self
     }
     /// <p>The Amazon S3 location for the notebook execution output.</p>
     pub fn get_output_notebook_s3_location(&self) -> &::std::option::Option<crate::types::OutputNotebookS3LocationForOutput> {
@@ -474,8 +460,7 @@ impl NotebookExecutionBuilder {
     }
     /// <p>The output format for the notebook execution.</p>
     pub fn set_output_notebook_format(mut self, input: ::std::option::Option<crate::types::OutputNotebookFormat>) -> Self {
-        self.output_notebook_format = input;
-        self
+        self.output_notebook_format = input; self
     }
     /// <p>The output format for the notebook execution.</p>
     pub fn get_output_notebook_format(&self) -> &::std::option::Option<crate::types::OutputNotebookFormat> {
@@ -486,48 +471,58 @@ impl NotebookExecutionBuilder {
     /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
     ///
     /// <p>The environment variables associated with the notebook execution.</p>
-    pub fn environment_variables(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_variables(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.environment_variables.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.environment_variables = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.environment_variables = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The environment variables associated with the notebook execution.</p>
-    pub fn set_environment_variables(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.environment_variables = input;
-        self
+    pub fn set_environment_variables(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.environment_variables = input; self
     }
     /// <p>The environment variables associated with the notebook execution.</p>
-    pub fn get_environment_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_environment_variables(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.environment_variables
     }
     /// Consumes the builder and constructs a [`NotebookExecution`](crate::types::NotebookExecution).
     pub fn build(self) -> crate::types::NotebookExecution {
         crate::types::NotebookExecution {
-            notebook_execution_id: self.notebook_execution_id,
-            editor_id: self.editor_id,
-            execution_engine: self.execution_engine,
-            notebook_execution_name: self.notebook_execution_name,
-            notebook_params: self.notebook_params,
-            status: self.status,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            arn: self.arn,
-            output_notebook_uri: self.output_notebook_uri,
-            last_state_change_reason: self.last_state_change_reason,
-            notebook_instance_security_group_id: self.notebook_instance_security_group_id,
-            tags: self.tags,
-            notebook_s3_location: self.notebook_s3_location,
-            output_notebook_s3_location: self.output_notebook_s3_location,
-            output_notebook_format: self.output_notebook_format,
-            environment_variables: self.environment_variables,
+            notebook_execution_id: self.notebook_execution_id
+            ,
+            editor_id: self.editor_id
+            ,
+            execution_engine: self.execution_engine
+            ,
+            notebook_execution_name: self.notebook_execution_name
+            ,
+            notebook_params: self.notebook_params
+            ,
+            status: self.status
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
+            arn: self.arn
+            ,
+            output_notebook_uri: self.output_notebook_uri
+            ,
+            last_state_change_reason: self.last_state_change_reason
+            ,
+            notebook_instance_security_group_id: self.notebook_instance_security_group_id
+            ,
+            tags: self.tags
+            ,
+            notebook_s3_location: self.notebook_s3_location
+            ,
+            output_notebook_s3_location: self.output_notebook_s3_location
+            ,
+            output_notebook_format: self.output_notebook_format
+            ,
+            environment_variables: self.environment_variables
+            ,
         }
     }
 }
+

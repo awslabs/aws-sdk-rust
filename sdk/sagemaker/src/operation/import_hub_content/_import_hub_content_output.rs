@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportHubContentOutput {
+pub struct ImportHubContentOutput  {
     /// <p>The ARN of the hub that the content was imported into.</p>
     pub hub_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the hub content that was imported.</p>
     pub hub_content_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ImportHubContentOutput {
+impl  ImportHubContentOutput  {
     /// <p>The ARN of the hub that the content was imported into.</p>
-    pub fn hub_arn(&self) -> ::std::option::Option<&str> {
+    pub fn hub_arn(&self) -> ::std::option::Option<& str> {
         self.hub_arn.as_deref()
     }
     /// <p>The ARN of the hub content that was imported.</p>
-    pub fn hub_content_arn(&self) -> ::std::option::Option<&str> {
+    pub fn hub_content_arn(&self) -> ::std::option::Option<& str> {
         self.hub_content_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ImportHubContentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ImportHubContentOutput {
     /// Creates a new builder-style object to manufacture [`ImportHubContentOutput`](crate::operation::import_hub_content::ImportHubContentOutput).
     pub fn builder() -> crate::operation::import_hub_content::builders::ImportHubContentOutputBuilder {
@@ -48,8 +48,7 @@ impl ImportHubContentOutputBuilder {
     }
     /// <p>The ARN of the hub that the content was imported into.</p>
     pub fn set_hub_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hub_arn = input;
-        self
+        self.hub_arn = input; self
     }
     /// <p>The ARN of the hub that the content was imported into.</p>
     pub fn get_hub_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,28 +62,30 @@ impl ImportHubContentOutputBuilder {
     }
     /// <p>The ARN of the hub content that was imported.</p>
     pub fn set_hub_content_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hub_content_arn = input;
-        self
+        self.hub_content_arn = input; self
     }
     /// <p>The ARN of the hub content that was imported.</p>
     pub fn get_hub_content_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.hub_content_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ImportHubContentOutput`](crate::operation::import_hub_content::ImportHubContentOutput).
     pub fn build(self) -> crate::operation::import_hub_content::ImportHubContentOutput {
         crate::operation::import_hub_content::ImportHubContentOutput {
-            hub_arn: self.hub_arn,
-            hub_content_arn: self.hub_content_arn,
+            hub_arn: self.hub_arn
+            ,
+            hub_content_arn: self.hub_content_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

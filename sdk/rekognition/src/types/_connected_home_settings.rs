@@ -3,17 +3,16 @@
 /// <p>Label detection settings to use on a streaming video. Defining the settings is required in the request parameter for <code>CreateStreamProcessor</code>. Including this setting in the <code>CreateStreamProcessor</code> request enables you to use the stream processor for label detection. You can then select what you want the stream processor to detect, such as people or pets. When the stream processor has started, one notification is sent for each object class specified. For example, if packages and pets are selected, one SNS notification is published the first time a package is detected and one SNS notification is published the first time a pet is detected, as well as an end-of-session summary.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConnectedHomeSettings {
+pub struct ConnectedHomeSettings  {
     /// <p>Specifies what you want to detect in the video, such as people, packages, or pets. The current valid labels you can include in this list are: "PERSON", "PET", "PACKAGE", and "ALL".</p>
-    pub labels: ::std::vec::Vec<::std::string::String>,
+    pub labels: ::std::vec::Vec::<::std::string::String>,
     /// <p>The minimum confidence required to label an object in the video.</p>
     pub min_confidence: ::std::option::Option<f32>,
 }
-impl ConnectedHomeSettings {
+impl  ConnectedHomeSettings  {
     /// <p>Specifies what you want to detect in the video, such as people, packages, or pets. The current valid labels you can include in this list are: "PERSON", "PET", "PACKAGE", and "ALL".</p>
-    pub fn labels(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.labels.deref()
+    pub fn labels(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.labels.deref()
     }
     /// <p>The minimum confidence required to label an object in the video.</p>
     pub fn min_confidence(&self) -> ::std::option::Option<f32> {
@@ -31,7 +30,7 @@ impl ConnectedHomeSettings {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectedHomeSettingsBuilder {
-    pub(crate) labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) labels: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) min_confidence: ::std::option::Option<f32>,
 }
 impl ConnectedHomeSettingsBuilder {
@@ -42,17 +41,16 @@ impl ConnectedHomeSettingsBuilder {
     /// <p>Specifies what you want to detect in the video, such as people, packages, or pets. The current valid labels you can include in this list are: "PERSON", "PET", "PACKAGE", and "ALL".</p>
     pub fn labels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.labels.unwrap_or_default();
-        v.push(input.into());
-        self.labels = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.labels = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies what you want to detect in the video, such as people, packages, or pets. The current valid labels you can include in this list are: "PERSON", "PET", "PACKAGE", and "ALL".</p>
-    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.labels = input;
-        self
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.labels = input; self
     }
     /// <p>Specifies what you want to detect in the video, such as people, packages, or pets. The current valid labels you can include in this list are: "PERSON", "PET", "PACKAGE", and "ALL".</p>
-    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.labels
     }
     /// <p>The minimum confidence required to label an object in the video.</p>
@@ -62,8 +60,7 @@ impl ConnectedHomeSettingsBuilder {
     }
     /// <p>The minimum confidence required to label an object in the video.</p>
     pub fn set_min_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.min_confidence = input;
-        self
+        self.min_confidence = input; self
     }
     /// <p>The minimum confidence required to label an object in the video.</p>
     pub fn get_min_confidence(&self) -> &::std::option::Option<f32> {
@@ -73,14 +70,17 @@ impl ConnectedHomeSettingsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`labels`](crate::types::builders::ConnectedHomeSettingsBuilder::labels)
     pub fn build(self) -> ::std::result::Result<crate::types::ConnectedHomeSettings, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ConnectedHomeSettings {
-            labels: self.labels.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "labels",
-                    "labels was not specified but it is required when building ConnectedHomeSettings",
-                )
-            })?,
-            min_confidence: self.min_confidence,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ConnectedHomeSettings {
+                labels: self.labels
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("labels", "labels was not specified but it is required when building ConnectedHomeSettings")
+                    )?
+                ,
+                min_confidence: self.min_confidence
+                ,
+            }
+        )
     }
 }
+

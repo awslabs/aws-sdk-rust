@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateServerOutput {
+pub struct CreateServerOutput  {
     /// <p>The service-assigned identifier of the server that is created.</p>
     pub server_id: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CreateServerOutput {
+impl  CreateServerOutput  {
     /// <p>The service-assigned identifier of the server that is created.</p>
-    pub fn server_id(&self) -> &str {
-        use std::ops::Deref;
-        self.server_id.deref()
+    pub fn server_id(&self) -> & str {
+        use std::ops::Deref; self.server_id.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateServerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateServerOutput {
     /// Creates a new builder-style object to manufacture [`CreateServerOutput`](crate::operation::create_server::CreateServerOutput).
     pub fn builder() -> crate::operation::create_server::builders::CreateServerOutputBuilder {
@@ -42,36 +41,35 @@ impl CreateServerOutputBuilder {
     }
     /// <p>The service-assigned identifier of the server that is created.</p>
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_id = input;
-        self
+        self.server_id = input; self
     }
     /// <p>The service-assigned identifier of the server that is created.</p>
     pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.server_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateServerOutput`](crate::operation::create_server::CreateServerOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`server_id`](crate::operation::create_server::builders::CreateServerOutputBuilder::server_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_server::CreateServerOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_server::CreateServerOutput {
-            server_id: self.server_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "server_id",
-                    "server_id was not specified but it is required when building CreateServerOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_server::CreateServerOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_server::CreateServerOutput {
+                server_id: self.server_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("server_id", "server_id was not specified but it is required when building CreateServerOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -5,7 +5,7 @@
 /// <p>For information about setting up receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-receipt-rules-console-walkthrough.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReceiptRule {
+pub struct ReceiptRule  {
     /// <p>The name of the receipt rule. The name must meet the following requirements:</p>
     /// <ul>
     /// <li>
@@ -21,13 +21,13 @@ pub struct ReceiptRule {
     /// <p>Specifies whether Amazon SES should require that incoming email is delivered over a connection encrypted with Transport Layer Security (TLS). If this parameter is set to <code>Require</code>, Amazon SES bounces emails that are not received over TLS. The default is <code>Optional</code>.</p>
     pub tls_policy: ::std::option::Option<crate::types::TlsPolicy>,
     /// <p>The recipient domains and email addresses that the receipt rule applies to. If this field is not specified, this rule matches all recipients on all verified domains.</p>
-    pub recipients: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub recipients: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>An ordered list of actions to perform on messages that match at least one of the recipient email addresses or domains specified in the receipt rule.</p>
-    pub actions: ::std::option::Option<::std::vec::Vec<crate::types::ReceiptAction>>,
+    pub actions: ::std::option::Option<::std::vec::Vec::<crate::types::ReceiptAction>>,
     /// <p>If <code>true</code>, then messages that this receipt rule applies to are scanned for spam and viruses. The default value is <code>false</code>.</p>
     pub scan_enabled: bool,
 }
-impl ReceiptRule {
+impl  ReceiptRule  {
     /// <p>The name of the receipt rule. The name must meet the following requirements:</p>
     /// <ul>
     /// <li>
@@ -37,29 +37,30 @@ impl ReceiptRule {
     /// <li>
     /// <p>Contain 64 characters or fewer.</p></li>
     /// </ul>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>If <code>true</code>, the receipt rule is active. The default value is <code>false</code>.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
     /// <p>Specifies whether Amazon SES should require that incoming email is delivered over a connection encrypted with Transport Layer Security (TLS). If this parameter is set to <code>Require</code>, Amazon SES bounces emails that are not received over TLS. The default is <code>Optional</code>.</p>
-    pub fn tls_policy(&self) -> ::std::option::Option<&crate::types::TlsPolicy> {
+    pub fn tls_policy(&self) -> ::std::option::Option<& crate::types::TlsPolicy> {
         self.tls_policy.as_ref()
     }
     /// <p>The recipient domains and email addresses that the receipt rule applies to. If this field is not specified, this rule matches all recipients on all verified domains.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recipients.is_none()`.
-    pub fn recipients(&self) -> &[::std::string::String] {
-        self.recipients.as_deref().unwrap_or_default()
+    pub fn recipients(&self) -> & [::std::string::String] {
+        self.recipients.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An ordered list of actions to perform on messages that match at least one of the recipient email addresses or domains specified in the receipt rule.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
-    pub fn actions(&self) -> &[crate::types::ReceiptAction] {
-        self.actions.as_deref().unwrap_or_default()
+    pub fn actions(&self) -> & [crate::types::ReceiptAction] {
+        self.actions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If <code>true</code>, then messages that this receipt rule applies to are scanned for spam and viruses. The default value is <code>false</code>.</p>
     pub fn scan_enabled(&self) -> bool {
@@ -80,8 +81,8 @@ pub struct ReceiptRuleBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) tls_policy: ::std::option::Option<crate::types::TlsPolicy>,
-    pub(crate) recipients: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::ReceiptAction>>,
+    pub(crate) recipients: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) actions: ::std::option::Option<::std::vec::Vec::<crate::types::ReceiptAction>>,
     pub(crate) scan_enabled: ::std::option::Option<bool>,
 }
 impl ReceiptRuleBuilder {
@@ -109,8 +110,7 @@ impl ReceiptRuleBuilder {
     /// <p>Contain 64 characters or fewer.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the receipt rule. The name must meet the following requirements:</p>
     /// <ul>
@@ -131,8 +131,7 @@ impl ReceiptRuleBuilder {
     }
     /// <p>If <code>true</code>, the receipt rule is active. The default value is <code>false</code>.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>If <code>true</code>, the receipt rule is active. The default value is <code>false</code>.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -145,8 +144,7 @@ impl ReceiptRuleBuilder {
     }
     /// <p>Specifies whether Amazon SES should require that incoming email is delivered over a connection encrypted with Transport Layer Security (TLS). If this parameter is set to <code>Require</code>, Amazon SES bounces emails that are not received over TLS. The default is <code>Optional</code>.</p>
     pub fn set_tls_policy(mut self, input: ::std::option::Option<crate::types::TlsPolicy>) -> Self {
-        self.tls_policy = input;
-        self
+        self.tls_policy = input; self
     }
     /// <p>Specifies whether Amazon SES should require that incoming email is delivered over a connection encrypted with Transport Layer Security (TLS). If this parameter is set to <code>Require</code>, Amazon SES bounces emails that are not received over TLS. The default is <code>Optional</code>.</p>
     pub fn get_tls_policy(&self) -> &::std::option::Option<crate::types::TlsPolicy> {
@@ -159,17 +157,16 @@ impl ReceiptRuleBuilder {
     /// <p>The recipient domains and email addresses that the receipt rule applies to. If this field is not specified, this rule matches all recipients on all verified domains.</p>
     pub fn recipients(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.recipients.unwrap_or_default();
-        v.push(input.into());
-        self.recipients = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.recipients = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The recipient domains and email addresses that the receipt rule applies to. If this field is not specified, this rule matches all recipients on all verified domains.</p>
-    pub fn set_recipients(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.recipients = input;
-        self
+    pub fn set_recipients(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.recipients = input; self
     }
     /// <p>The recipient domains and email addresses that the receipt rule applies to. If this field is not specified, this rule matches all recipients on all verified domains.</p>
-    pub fn get_recipients(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_recipients(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.recipients
     }
     /// Appends an item to `actions`.
@@ -179,17 +176,16 @@ impl ReceiptRuleBuilder {
     /// <p>An ordered list of actions to perform on messages that match at least one of the recipient email addresses or domains specified in the receipt rule.</p>
     pub fn actions(mut self, input: crate::types::ReceiptAction) -> Self {
         let mut v = self.actions.unwrap_or_default();
-        v.push(input);
-        self.actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An ordered list of actions to perform on messages that match at least one of the recipient email addresses or domains specified in the receipt rule.</p>
-    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReceiptAction>>) -> Self {
-        self.actions = input;
-        self
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReceiptAction>>) -> Self {
+        self.actions = input; self
     }
     /// <p>An ordered list of actions to perform on messages that match at least one of the recipient email addresses or domains specified in the receipt rule.</p>
-    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReceiptAction>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReceiptAction>> {
         &self.actions
     }
     /// <p>If <code>true</code>, then messages that this receipt rule applies to are scanned for spam and viruses. The default value is <code>false</code>.</p>
@@ -199,8 +195,7 @@ impl ReceiptRuleBuilder {
     }
     /// <p>If <code>true</code>, then messages that this receipt rule applies to are scanned for spam and viruses. The default value is <code>false</code>.</p>
     pub fn set_scan_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.scan_enabled = input;
-        self
+        self.scan_enabled = input; self
     }
     /// <p>If <code>true</code>, then messages that this receipt rule applies to are scanned for spam and viruses. The default value is <code>false</code>.</p>
     pub fn get_scan_enabled(&self) -> &::std::option::Option<bool> {
@@ -210,18 +205,27 @@ impl ReceiptRuleBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::ReceiptRuleBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::ReceiptRule, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ReceiptRule {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ReceiptRule",
-                )
-            })?,
-            enabled: self.enabled.unwrap_or_default(),
-            tls_policy: self.tls_policy,
-            recipients: self.recipients,
-            actions: self.actions,
-            scan_enabled: self.scan_enabled.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::ReceiptRule {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ReceiptRule")
+                    )?
+                ,
+                enabled: self.enabled
+                    .unwrap_or_default()
+                ,
+                tls_policy: self.tls_policy
+                ,
+                recipients: self.recipients
+                ,
+                actions: self.actions
+                ,
+                scan_enabled: self.scan_enabled
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

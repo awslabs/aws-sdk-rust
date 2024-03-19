@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTenantDatabaseOutput {
+pub struct DeleteTenantDatabaseOutput  {
     /// <p>A tenant database in the DB instance. This data type is an element in the response to the <code>DescribeTenantDatabases</code> action.</p>
     pub tenant_database: ::std::option::Option<crate::types::TenantDatabase>,
     _request_id: Option<String>,
 }
-impl DeleteTenantDatabaseOutput {
+impl  DeleteTenantDatabaseOutput  {
     /// <p>A tenant database in the DB instance. This data type is an element in the response to the <code>DescribeTenantDatabases</code> action.</p>
-    pub fn tenant_database(&self) -> ::std::option::Option<&crate::types::TenantDatabase> {
+    pub fn tenant_database(&self) -> ::std::option::Option<& crate::types::TenantDatabase> {
         self.tenant_database.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteTenantDatabaseOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteTenantDatabaseOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTenantDatabaseOutput`](crate::operation::delete_tenant_database::DeleteTenantDatabaseOutput).
     pub fn builder() -> crate::operation::delete_tenant_database::builders::DeleteTenantDatabaseOutputBuilder {
@@ -40,27 +40,28 @@ impl DeleteTenantDatabaseOutputBuilder {
     }
     /// <p>A tenant database in the DB instance. This data type is an element in the response to the <code>DescribeTenantDatabases</code> action.</p>
     pub fn set_tenant_database(mut self, input: ::std::option::Option<crate::types::TenantDatabase>) -> Self {
-        self.tenant_database = input;
-        self
+        self.tenant_database = input; self
     }
     /// <p>A tenant database in the DB instance. This data type is an element in the response to the <code>DescribeTenantDatabases</code> action.</p>
     pub fn get_tenant_database(&self) -> &::std::option::Option<crate::types::TenantDatabase> {
         &self.tenant_database
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteTenantDatabaseOutput`](crate::operation::delete_tenant_database::DeleteTenantDatabaseOutput).
     pub fn build(self) -> crate::operation::delete_tenant_database::DeleteTenantDatabaseOutput {
         crate::operation::delete_tenant_database::DeleteTenantDatabaseOutput {
-            tenant_database: self.tenant_database,
+            tenant_database: self.tenant_database
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

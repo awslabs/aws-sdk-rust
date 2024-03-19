@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateDomainInput {
+pub struct DisassociateDomainInput  {
     /// <p>The ARN of the fleet.</p>
     pub fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the domain.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
 }
-impl DisassociateDomainInput {
+impl  DisassociateDomainInput  {
     /// <p>The ARN of the fleet.</p>
-    pub fn fleet_arn(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> ::std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
     /// <p>The name of the domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DisassociateDomainInputBuilder {
     }
     /// <p>The ARN of the fleet.</p>
     pub fn set_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_arn = input;
-        self
+        self.fleet_arn = input; self
     }
     /// <p>The ARN of the fleet.</p>
     pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DisassociateDomainInputBuilder {
     }
     /// <p>The name of the domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The name of the domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
     /// Consumes the builder and constructs a [`DisassociateDomainInput`](crate::operation::disassociate_domain::DisassociateDomainInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::disassociate_domain::DisassociateDomainInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::disassociate_domain::DisassociateDomainInput {
-            fleet_arn: self.fleet_arn,
-            domain_name: self.domain_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_domain::DisassociateDomainInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disassociate_domain::DisassociateDomainInput {
+                fleet_arn: self.fleet_arn
+                ,
+                domain_name: self.domain_name
+                ,
+            }
+        )
     }
 }
+

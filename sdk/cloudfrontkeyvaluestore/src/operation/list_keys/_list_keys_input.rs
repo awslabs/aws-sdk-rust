@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListKeysInput {
+pub struct ListKeysInput  {
     /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
     pub kvs_arn: ::std::option::Option<::std::string::String>,
     /// <p>If nextToken is returned in the response, there are more results available. Make the next call using the returned token to retrieve the next page.</p>
@@ -10,13 +10,13 @@ pub struct ListKeysInput {
     /// <p>Maximum number of results that are returned per call. The default is 10 and maximum allowed page is 50.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListKeysInput {
+impl  ListKeysInput  {
     /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
-    pub fn kvs_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kvs_arn(&self) -> ::std::option::Option<& str> {
         self.kvs_arn.as_deref()
     }
     /// <p>If nextToken is returned in the response, there are more results available. Make the next call using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of results that are returned per call. The default is 10 and maximum allowed page is 50.</p>
@@ -48,8 +48,7 @@ impl ListKeysInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
     pub fn set_kvs_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kvs_arn = input;
-        self
+        self.kvs_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
     pub fn get_kvs_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListKeysInputBuilder {
     }
     /// <p>If nextToken is returned in the response, there are more results available. Make the next call using the returned token to retrieve the next page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If nextToken is returned in the response, there are more results available. Make the next call using the returned token to retrieve the next page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl ListKeysInputBuilder {
     }
     /// <p>Maximum number of results that are returned per call. The default is 10 and maximum allowed page is 50.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Maximum number of results that are returned per call. The default is 10 and maximum allowed page is 50.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -85,10 +82,16 @@ impl ListKeysInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListKeysInput`](crate::operation::list_keys::ListKeysInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_keys::ListKeysInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_keys::ListKeysInput {
-            kvs_arn: self.kvs_arn,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_keys::ListKeysInput {
+                kvs_arn: self.kvs_arn
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

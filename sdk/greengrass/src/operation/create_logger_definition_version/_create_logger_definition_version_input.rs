@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateLoggerDefinitionVersionInput {
+pub struct CreateLoggerDefinitionVersionInput  {
     /// A client token used to correlate requests and responses.
     pub amzn_client_token: ::std::option::Option<::std::string::String>,
     /// The ID of the logger definition.
     pub logger_definition_id: ::std::option::Option<::std::string::String>,
     /// A list of loggers.
-    pub loggers: ::std::option::Option<::std::vec::Vec<crate::types::Logger>>,
+    pub loggers: ::std::option::Option<::std::vec::Vec::<crate::types::Logger>>,
 }
-impl CreateLoggerDefinitionVersionInput {
+impl  CreateLoggerDefinitionVersionInput  {
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(&self) -> ::std::option::Option<&str> {
+    pub fn amzn_client_token(&self) -> ::std::option::Option<& str> {
         self.amzn_client_token.as_deref()
     }
     /// The ID of the logger definition.
-    pub fn logger_definition_id(&self) -> ::std::option::Option<&str> {
+    pub fn logger_definition_id(&self) -> ::std::option::Option<& str> {
         self.logger_definition_id.as_deref()
     }
     /// A list of loggers.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.loggers.is_none()`.
-    pub fn loggers(&self) -> &[crate::types::Logger] {
-        self.loggers.as_deref().unwrap_or_default()
+    pub fn loggers(&self) -> & [crate::types::Logger] {
+        self.loggers.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateLoggerDefinitionVersionInput {
@@ -39,7 +40,7 @@ impl CreateLoggerDefinitionVersionInput {
 pub struct CreateLoggerDefinitionVersionInputBuilder {
     pub(crate) amzn_client_token: ::std::option::Option<::std::string::String>,
     pub(crate) logger_definition_id: ::std::option::Option<::std::string::String>,
-    pub(crate) loggers: ::std::option::Option<::std::vec::Vec<crate::types::Logger>>,
+    pub(crate) loggers: ::std::option::Option<::std::vec::Vec::<crate::types::Logger>>,
 }
 impl CreateLoggerDefinitionVersionInputBuilder {
     /// A client token used to correlate requests and responses.
@@ -49,8 +50,7 @@ impl CreateLoggerDefinitionVersionInputBuilder {
     }
     /// A client token used to correlate requests and responses.
     pub fn set_amzn_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.amzn_client_token = input;
-        self
+        self.amzn_client_token = input; self
     }
     /// A client token used to correlate requests and responses.
     pub fn get_amzn_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl CreateLoggerDefinitionVersionInputBuilder {
     }
     /// The ID of the logger definition.
     pub fn set_logger_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.logger_definition_id = input;
-        self
+        self.logger_definition_id = input; self
     }
     /// The ID of the logger definition.
     pub fn get_logger_definition_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,30 +77,30 @@ impl CreateLoggerDefinitionVersionInputBuilder {
     /// A list of loggers.
     pub fn loggers(mut self, input: crate::types::Logger) -> Self {
         let mut v = self.loggers.unwrap_or_default();
-        v.push(input);
-        self.loggers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.loggers = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of loggers.
-    pub fn set_loggers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Logger>>) -> Self {
-        self.loggers = input;
-        self
+    pub fn set_loggers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Logger>>) -> Self {
+        self.loggers = input; self
     }
     /// A list of loggers.
-    pub fn get_loggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Logger>> {
+    pub fn get_loggers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Logger>> {
         &self.loggers
     }
     /// Consumes the builder and constructs a [`CreateLoggerDefinitionVersionInput`](crate::operation::create_logger_definition_version::CreateLoggerDefinitionVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_logger_definition_version::CreateLoggerDefinitionVersionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_logger_definition_version::CreateLoggerDefinitionVersionInput {
-            amzn_client_token: self.amzn_client_token,
-            logger_definition_id: self.logger_definition_id,
-            loggers: self.loggers,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_logger_definition_version::CreateLoggerDefinitionVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_logger_definition_version::CreateLoggerDefinitionVersionInput {
+                amzn_client_token: self.amzn_client_token
+                ,
+                logger_definition_id: self.logger_definition_id
+                ,
+                loggers: self.loggers
+                ,
+            }
+        )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopSourceNetworkReplicationInput {
+pub struct StopSourceNetworkReplicationInput  {
     /// <p>ID of the Source Network to stop replication.</p>
     pub source_network_id: ::std::option::Option<::std::string::String>,
 }
-impl StopSourceNetworkReplicationInput {
+impl  StopSourceNetworkReplicationInput  {
     /// <p>ID of the Source Network to stop replication.</p>
-    pub fn source_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_network_id(&self) -> ::std::option::Option<& str> {
         self.source_network_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl StopSourceNetworkReplicationInputBuilder {
     }
     /// <p>ID of the Source Network to stop replication.</p>
     pub fn set_source_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_network_id = input;
-        self
+        self.source_network_id = input; self
     }
     /// <p>ID of the Source Network to stop replication.</p>
     pub fn get_source_network_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_network_id
     }
     /// Consumes the builder and constructs a [`StopSourceNetworkReplicationInput`](crate::operation::stop_source_network_replication::StopSourceNetworkReplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_source_network_replication::StopSourceNetworkReplicationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_source_network_replication::StopSourceNetworkReplicationInput {
-            source_network_id: self.source_network_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_source_network_replication::StopSourceNetworkReplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_source_network_replication::StopSourceNetworkReplicationInput {
+                source_network_id: self.source_network_id
+                ,
+            }
+        )
     }
 }
+

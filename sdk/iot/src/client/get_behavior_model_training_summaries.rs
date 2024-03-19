@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetBehaviorModelTrainingSummaries`](crate::operation::get_behavior_model_training_summaries::builders::GetBehaviorModelTrainingSummariesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_behavior_model_training_summaries::builders::GetBehaviorModelTrainingSummariesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`security_profile_name(impl Into<String>)`](crate::operation::get_behavior_model_training_summaries::builders::GetBehaviorModelTrainingSummariesFluentBuilder::security_profile_name) / [`set_security_profile_name(Option<String>)`](crate::operation::get_behavior_model_training_summaries::builders::GetBehaviorModelTrainingSummariesFluentBuilder::set_security_profile_name):<br>required: **false**<br><p>The name of the security profile.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_behavior_model_training_summaries::builders::GetBehaviorModelTrainingSummariesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_behavior_model_training_summaries::builders::GetBehaviorModelTrainingSummariesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return at one time. The default is 10.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_behavior_model_training_summaries::builders::GetBehaviorModelTrainingSummariesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_behavior_model_training_summaries::builders::GetBehaviorModelTrainingSummariesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results.</p><br>
-    /// - On success, responds with [`GetBehaviorModelTrainingSummariesOutput`](crate::operation::get_behavior_model_training_summaries::GetBehaviorModelTrainingSummariesOutput) with field(s):
+                            /// - On success, responds with [`GetBehaviorModelTrainingSummariesOutput`](crate::operation::get_behavior_model_training_summaries::GetBehaviorModelTrainingSummariesOutput) with field(s):
     ///   - [`summaries(Option<Vec::<BehaviorModelTrainingSummary>>)`](crate::operation::get_behavior_model_training_summaries::GetBehaviorModelTrainingSummariesOutput::summaries): <p>A list of all ML Detect behaviors and their model status for a given Security Profile.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_behavior_model_training_summaries::GetBehaviorModelTrainingSummariesOutput::next_token): <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<GetBehaviorModelTrainingSummariesError>`](crate::operation::get_behavior_model_training_summaries::GetBehaviorModelTrainingSummariesError)
-    pub fn get_behavior_model_training_summaries(
-        &self,
-    ) -> crate::operation::get_behavior_model_training_summaries::builders::GetBehaviorModelTrainingSummariesFluentBuilder {
-        crate::operation::get_behavior_model_training_summaries::builders::GetBehaviorModelTrainingSummariesFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<GetBehaviorModelTrainingSummariesError>`](crate::operation::get_behavior_model_training_summaries::GetBehaviorModelTrainingSummariesError)
+    pub fn get_behavior_model_training_summaries(&self) -> crate::operation::get_behavior_model_training_summaries::builders::GetBehaviorModelTrainingSummariesFluentBuilder {
+                                crate::operation::get_behavior_model_training_summaries::builders::GetBehaviorModelTrainingSummariesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

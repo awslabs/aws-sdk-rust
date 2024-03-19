@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListExtensionAssociations`](crate::operation::list_extension_associations::builders::ListExtensionAssociationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_extension_associations::builders::ListExtensionAssociationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`resource_identifier(impl Into<String>)`](crate::operation::list_extension_associations::builders::ListExtensionAssociationsFluentBuilder::resource_identifier) / [`set_resource_identifier(Option<String>)`](crate::operation::list_extension_associations::builders::ListExtensionAssociationsFluentBuilder::set_resource_identifier):<br>required: **false**<br><p>The ARN of an application, configuration profile, or environment.</p><br>
     ///   - [`extension_identifier(impl Into<String>)`](crate::operation::list_extension_associations::builders::ListExtensionAssociationsFluentBuilder::extension_identifier) / [`set_extension_identifier(Option<String>)`](crate::operation::list_extension_associations::builders::ListExtensionAssociationsFluentBuilder::set_extension_identifier):<br>required: **false**<br><p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p><br>
     ///   - [`extension_version_number(i32)`](crate::operation::list_extension_associations::builders::ListExtensionAssociationsFluentBuilder::extension_version_number) / [`set_extension_version_number(Option<i32>)`](crate::operation::list_extension_associations::builders::ListExtensionAssociationsFluentBuilder::set_extension_version_number):<br>required: **false**<br><p>The version number for the extension defined in the association.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_extension_associations::builders::ListExtensionAssociationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_extension_associations::builders::ListExtensionAssociationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_extension_associations::builders::ListExtensionAssociationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_extension_associations::builders::ListExtensionAssociationsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to start the list. Use this token to get the next set of results or pass null to get the first set of results.</p><br>
-    /// - On success, responds with [`ListExtensionAssociationsOutput`](crate::operation::list_extension_associations::ListExtensionAssociationsOutput) with field(s):
+                            /// - On success, responds with [`ListExtensionAssociationsOutput`](crate::operation::list_extension_associations::ListExtensionAssociationsOutput) with field(s):
     ///   - [`items(Option<Vec::<ExtensionAssociationSummary>>)`](crate::operation::list_extension_associations::ListExtensionAssociationsOutput::items): <p>The list of extension associations. Each item represents an extension association to an application, environment, or configuration profile.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_extension_associations::ListExtensionAssociationsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListExtensionAssociationsError>`](crate::operation::list_extension_associations::ListExtensionAssociationsError)
+                            /// - On failure, responds with [`SdkError<ListExtensionAssociationsError>`](crate::operation::list_extension_associations::ListExtensionAssociationsError)
     pub fn list_extension_associations(&self) -> crate::operation::list_extension_associations::builders::ListExtensionAssociationsFluentBuilder {
-        crate::operation::list_extension_associations::builders::ListExtensionAssociationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_extension_associations::builders::ListExtensionAssociationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWorkflowOutput {
+pub struct GetWorkflowOutput  {
     /// <p>The name of the space.</p>
     pub space_name: ::std::string::String,
     /// <p>The name of the project in the space.</p>
@@ -27,61 +27,57 @@ pub struct GetWorkflowOutput {
     pub status: crate::types::WorkflowStatus,
     _request_id: Option<String>,
 }
-impl GetWorkflowOutput {
+impl  GetWorkflowOutput  {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> &str {
-        use std::ops::Deref;
-        self.space_name.deref()
+    pub fn space_name(&self) -> & str {
+        use std::ops::Deref; self.space_name.deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> &str {
-        use std::ops::Deref;
-        self.project_name.deref()
+    pub fn project_name(&self) -> & str {
+        use std::ops::Deref; self.project_name.deref()
     }
     /// <p>The ID of the workflow.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The name of the workflow.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The name of the source repository where the workflow YAML is stored.</p>
-    pub fn source_repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn source_repository_name(&self) -> ::std::option::Option<& str> {
         self.source_repository_name.as_deref()
     }
     /// <p>The name of the branch that contains the workflow YAML.</p>
-    pub fn source_branch_name(&self) -> ::std::option::Option<&str> {
+    pub fn source_branch_name(&self) -> ::std::option::Option<& str> {
         self.source_branch_name.as_deref()
     }
     /// <p>Information about the workflow definition file for the workflow.</p>
-    pub fn definition(&self) -> ::std::option::Option<&crate::types::WorkflowDefinition> {
+    pub fn definition(&self) -> ::std::option::Option<& crate::types::WorkflowDefinition> {
         self.definition.as_ref()
     }
     /// <p>The date and time the workflow was created, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a></p>
-    pub fn created_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_time
     }
     /// <p>The date and time the workflow was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a></p>
-    pub fn last_updated_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_updated_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_updated_time
     }
     /// <p>The behavior to use when multiple workflows occur at the same time. For more information, see <a href="https://docs.aws.amazon.com/codecatalyst/latest/userguide/workflows-configure-runs.html">https://docs.aws.amazon.com/codecatalyst/latest/userguide/workflows-configure-runs.html</a> in the Amazon CodeCatalyst User Guide.</p>
-    pub fn run_mode(&self) -> &crate::types::WorkflowRunMode {
+    pub fn run_mode(&self) -> & crate::types::WorkflowRunMode {
         &self.run_mode
     }
     /// <p>The status of the workflow.</p>
-    pub fn status(&self) -> &crate::types::WorkflowStatus {
+    pub fn status(&self) -> & crate::types::WorkflowStatus {
         &self.status
     }
 }
 impl ::aws_types::request_id::RequestId for GetWorkflowOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetWorkflowOutput {
     /// Creates a new builder-style object to manufacture [`GetWorkflowOutput`](crate::operation::get_workflow::GetWorkflowOutput).
     pub fn builder() -> crate::operation::get_workflow::builders::GetWorkflowOutputBuilder {
@@ -115,8 +111,7 @@ impl GetWorkflowOutputBuilder {
     }
     /// <p>The name of the space.</p>
     pub fn set_space_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.space_name = input;
-        self
+        self.space_name = input; self
     }
     /// <p>The name of the space.</p>
     pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,8 +125,7 @@ impl GetWorkflowOutputBuilder {
     }
     /// <p>The name of the project in the space.</p>
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
     }
     /// <p>The name of the project in the space.</p>
     pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +139,7 @@ impl GetWorkflowOutputBuilder {
     }
     /// <p>The ID of the workflow.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the workflow.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +153,7 @@ impl GetWorkflowOutputBuilder {
     }
     /// <p>The name of the workflow.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the workflow.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +166,7 @@ impl GetWorkflowOutputBuilder {
     }
     /// <p>The name of the source repository where the workflow YAML is stored.</p>
     pub fn set_source_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_repository_name = input;
-        self
+        self.source_repository_name = input; self
     }
     /// <p>The name of the source repository where the workflow YAML is stored.</p>
     pub fn get_source_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +179,7 @@ impl GetWorkflowOutputBuilder {
     }
     /// <p>The name of the branch that contains the workflow YAML.</p>
     pub fn set_source_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_branch_name = input;
-        self
+        self.source_branch_name = input; self
     }
     /// <p>The name of the branch that contains the workflow YAML.</p>
     pub fn get_source_branch_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -203,8 +193,7 @@ impl GetWorkflowOutputBuilder {
     }
     /// <p>Information about the workflow definition file for the workflow.</p>
     pub fn set_definition(mut self, input: ::std::option::Option<crate::types::WorkflowDefinition>) -> Self {
-        self.definition = input;
-        self
+        self.definition = input; self
     }
     /// <p>Information about the workflow definition file for the workflow.</p>
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::WorkflowDefinition> {
@@ -218,8 +207,7 @@ impl GetWorkflowOutputBuilder {
     }
     /// <p>The date and time the workflow was created, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a></p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The date and time the workflow was created, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a></p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -233,8 +221,7 @@ impl GetWorkflowOutputBuilder {
     }
     /// <p>The date and time the workflow was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a></p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The date and time the workflow was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a></p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -248,8 +235,7 @@ impl GetWorkflowOutputBuilder {
     }
     /// <p>The behavior to use when multiple workflows occur at the same time. For more information, see <a href="https://docs.aws.amazon.com/codecatalyst/latest/userguide/workflows-configure-runs.html">https://docs.aws.amazon.com/codecatalyst/latest/userguide/workflows-configure-runs.html</a> in the Amazon CodeCatalyst User Guide.</p>
     pub fn set_run_mode(mut self, input: ::std::option::Option<crate::types::WorkflowRunMode>) -> Self {
-        self.run_mode = input;
-        self
+        self.run_mode = input; self
     }
     /// <p>The behavior to use when multiple workflows occur at the same time. For more information, see <a href="https://docs.aws.amazon.com/codecatalyst/latest/userguide/workflows-configure-runs.html">https://docs.aws.amazon.com/codecatalyst/latest/userguide/workflows-configure-runs.html</a> in the Amazon CodeCatalyst User Guide.</p>
     pub fn get_run_mode(&self) -> &::std::option::Option<crate::types::WorkflowRunMode> {
@@ -263,22 +249,21 @@ impl GetWorkflowOutputBuilder {
     }
     /// <p>The status of the workflow.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::WorkflowStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the workflow.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::WorkflowStatus> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetWorkflowOutput`](crate::operation::get_workflow::GetWorkflowOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`space_name`](crate::operation::get_workflow::builders::GetWorkflowOutputBuilder::space_name)
@@ -290,59 +275,57 @@ impl GetWorkflowOutputBuilder {
     /// - [`run_mode`](crate::operation::get_workflow::builders::GetWorkflowOutputBuilder::run_mode)
     /// - [`status`](crate::operation::get_workflow::builders::GetWorkflowOutputBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_workflow::GetWorkflowOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_workflow::GetWorkflowOutput {
-            space_name: self.space_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "space_name",
-                    "space_name was not specified but it is required when building GetWorkflowOutput",
-                )
-            })?,
-            project_name: self.project_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "project_name",
-                    "project_name was not specified but it is required when building GetWorkflowOutput",
-                )
-            })?,
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building GetWorkflowOutput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building GetWorkflowOutput",
-                )
-            })?,
-            source_repository_name: self.source_repository_name,
-            source_branch_name: self.source_branch_name,
-            definition: self.definition,
-            created_time: self.created_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_time",
-                    "created_time was not specified but it is required when building GetWorkflowOutput",
-                )
-            })?,
-            last_updated_time: self.last_updated_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_updated_time",
-                    "last_updated_time was not specified but it is required when building GetWorkflowOutput",
-                )
-            })?,
-            run_mode: self.run_mode.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "run_mode",
-                    "run_mode was not specified but it is required when building GetWorkflowOutput",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building GetWorkflowOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_workflow::GetWorkflowOutput {
+                space_name: self.space_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("space_name", "space_name was not specified but it is required when building GetWorkflowOutput")
+                    )?
+                ,
+                project_name: self.project_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("project_name", "project_name was not specified but it is required when building GetWorkflowOutput")
+                    )?
+                ,
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building GetWorkflowOutput")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building GetWorkflowOutput")
+                    )?
+                ,
+                source_repository_name: self.source_repository_name
+                ,
+                source_branch_name: self.source_branch_name
+                ,
+                definition: self.definition
+                ,
+                created_time: self.created_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_time", "created_time was not specified but it is required when building GetWorkflowOutput")
+                    )?
+                ,
+                last_updated_time: self.last_updated_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_updated_time", "last_updated_time was not specified but it is required when building GetWorkflowOutput")
+                    )?
+                ,
+                run_mode: self.run_mode
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("run_mode", "run_mode was not specified but it is required when building GetWorkflowOutput")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building GetWorkflowOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

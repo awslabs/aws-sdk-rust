@@ -3,19 +3,19 @@
 /// <p>Options for enabling a customizable text banner that will be displayed on Amazon Web Services provided clients when a VPN session is established.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails {
+pub struct AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails  {
     /// <p>Current state of text banner feature.</p>
     pub enabled: ::std::option::Option<bool>,
     /// <p>Customizable text that will be displayed in a banner on Amazon Web Services provided clients when a VPN session is established.</p>
     pub banner_text: ::std::option::Option<::std::string::String>,
 }
-impl AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails {
+impl  AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails  {
     /// <p>Current state of text banner feature.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>Customizable text that will be displayed in a banner on Amazon Web Services provided clients when a VPN session is established.</p>
-    pub fn banner_text(&self) -> ::std::option::Option<&str> {
+    pub fn banner_text(&self) -> ::std::option::Option<& str> {
         self.banner_text.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetailsBuilder {
     }
     /// <p>Current state of text banner feature.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Current state of text banner feature.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -55,8 +54,7 @@ impl AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetailsBuilder {
     }
     /// <p>Customizable text that will be displayed in a banner on Amazon Web Services provided clients when a VPN session is established.</p>
     pub fn set_banner_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.banner_text = input;
-        self
+        self.banner_text = input; self
     }
     /// <p>Customizable text that will be displayed in a banner on Amazon Web Services provided clients when a VPN session is established.</p>
     pub fn get_banner_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails`](crate::types::AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails).
     pub fn build(self) -> crate::types::AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails {
         crate::types::AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails {
-            enabled: self.enabled,
-            banner_text: self.banner_text,
+            enabled: self.enabled
+            ,
+            banner_text: self.banner_text
+            ,
         }
     }
 }
+

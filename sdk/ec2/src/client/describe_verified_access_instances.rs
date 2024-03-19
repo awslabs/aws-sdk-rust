@@ -2,20 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeVerifiedAccessInstances`](crate::operation::describe_verified_access_instances::builders::DescribeVerifiedAccessInstancesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_verified_access_instances::builders::DescribeVerifiedAccessInstancesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`verified_access_instance_ids(impl Into<String>)`](crate::operation::describe_verified_access_instances::builders::DescribeVerifiedAccessInstancesFluentBuilder::verified_access_instance_ids) / [`set_verified_access_instance_ids(Option<Vec::<String>>)`](crate::operation::describe_verified_access_instances::builders::DescribeVerifiedAccessInstancesFluentBuilder::set_verified_access_instance_ids):<br>required: **false**<br><p>The IDs of the Verified Access instances.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_verified_access_instances::builders::DescribeVerifiedAccessInstancesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_verified_access_instances::builders::DescribeVerifiedAccessInstancesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_verified_access_instances::builders::DescribeVerifiedAccessInstancesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_verified_access_instances::builders::DescribeVerifiedAccessInstancesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
     ///   - [`filters(Filter)`](crate::operation::describe_verified_access_instances::builders::DescribeVerifiedAccessInstancesFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::describe_verified_access_instances::builders::DescribeVerifiedAccessInstancesFluentBuilder::set_filters):<br>required: **false**<br><p>One or more filters. Filter names and values are case-sensitive.</p><br>
     ///   - [`dry_run(bool)`](crate::operation::describe_verified_access_instances::builders::DescribeVerifiedAccessInstancesFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::describe_verified_access_instances::builders::DescribeVerifiedAccessInstancesFluentBuilder::set_dry_run):<br>required: **false**<br><p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p><br>
-    /// - On success, responds with [`DescribeVerifiedAccessInstancesOutput`](crate::operation::describe_verified_access_instances::DescribeVerifiedAccessInstancesOutput) with field(s):
+                            /// - On success, responds with [`DescribeVerifiedAccessInstancesOutput`](crate::operation::describe_verified_access_instances::DescribeVerifiedAccessInstancesOutput) with field(s):
     ///   - [`verified_access_instances(Option<Vec::<VerifiedAccessInstance>>)`](crate::operation::describe_verified_access_instances::DescribeVerifiedAccessInstancesOutput::verified_access_instances): <p>Details about the Verified Access instances.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_verified_access_instances::DescribeVerifiedAccessInstancesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeVerifiedAccessInstancesError>`](crate::operation::describe_verified_access_instances::DescribeVerifiedAccessInstancesError)
-    pub fn describe_verified_access_instances(
-        &self,
-    ) -> crate::operation::describe_verified_access_instances::builders::DescribeVerifiedAccessInstancesFluentBuilder {
-        crate::operation::describe_verified_access_instances::builders::DescribeVerifiedAccessInstancesFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeVerifiedAccessInstancesError>`](crate::operation::describe_verified_access_instances::DescribeVerifiedAccessInstancesError)
+    pub fn describe_verified_access_instances(&self) -> crate::operation::describe_verified_access_instances::builders::DescribeVerifiedAccessInstancesFluentBuilder {
+                                crate::operation::describe_verified_access_instances::builders::DescribeVerifiedAccessInstancesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

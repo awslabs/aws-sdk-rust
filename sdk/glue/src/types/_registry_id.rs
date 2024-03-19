@@ -3,19 +3,19 @@
 /// <p>A wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegistryId {
+pub struct RegistryId  {
     /// <p>Name of the registry. Used only for lookup. One of <code>RegistryArn</code> or <code>RegistryName</code> has to be provided.</p>
     pub registry_name: ::std::option::Option<::std::string::String>,
     /// <p>Arn of the registry to be updated. One of <code>RegistryArn</code> or <code>RegistryName</code> has to be provided.</p>
     pub registry_arn: ::std::option::Option<::std::string::String>,
 }
-impl RegistryId {
+impl  RegistryId  {
     /// <p>Name of the registry. Used only for lookup. One of <code>RegistryArn</code> or <code>RegistryName</code> has to be provided.</p>
-    pub fn registry_name(&self) -> ::std::option::Option<&str> {
+    pub fn registry_name(&self) -> ::std::option::Option<& str> {
         self.registry_name.as_deref()
     }
     /// <p>Arn of the registry to be updated. One of <code>RegistryArn</code> or <code>RegistryName</code> has to be provided.</p>
-    pub fn registry_arn(&self) -> ::std::option::Option<&str> {
+    pub fn registry_arn(&self) -> ::std::option::Option<& str> {
         self.registry_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl RegistryIdBuilder {
     }
     /// <p>Name of the registry. Used only for lookup. One of <code>RegistryArn</code> or <code>RegistryName</code> has to be provided.</p>
     pub fn set_registry_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_name = input;
-        self
+        self.registry_name = input; self
     }
     /// <p>Name of the registry. Used only for lookup. One of <code>RegistryArn</code> or <code>RegistryName</code> has to be provided.</p>
     pub fn get_registry_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl RegistryIdBuilder {
     }
     /// <p>Arn of the registry to be updated. One of <code>RegistryArn</code> or <code>RegistryName</code> has to be provided.</p>
     pub fn set_registry_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_arn = input;
-        self
+        self.registry_arn = input; self
     }
     /// <p>Arn of the registry to be updated. One of <code>RegistryArn</code> or <code>RegistryName</code> has to be provided.</p>
     pub fn get_registry_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl RegistryIdBuilder {
     /// Consumes the builder and constructs a [`RegistryId`](crate::types::RegistryId).
     pub fn build(self) -> crate::types::RegistryId {
         crate::types::RegistryId {
-            registry_name: self.registry_name,
-            registry_arn: self.registry_arn,
+            registry_name: self.registry_name
+            ,
+            registry_arn: self.registry_arn
+            ,
         }
     }
 }
+

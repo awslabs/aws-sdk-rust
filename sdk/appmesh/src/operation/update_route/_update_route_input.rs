@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRouteInput {
+pub struct UpdateRouteInput  {
     /// <p>The name of the route to update.</p>
     pub route_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service mesh that the route resides in.</p>
@@ -16,29 +16,29 @@ pub struct UpdateRouteInput {
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: ::std::option::Option<::std::string::String>,
 }
-impl UpdateRouteInput {
+impl  UpdateRouteInput  {
     /// <p>The name of the route to update.</p>
-    pub fn route_name(&self) -> ::std::option::Option<&str> {
+    pub fn route_name(&self) -> ::std::option::Option<& str> {
         self.route_name.as_deref()
     }
     /// <p>The name of the service mesh that the route resides in.</p>
-    pub fn mesh_name(&self) -> ::std::option::Option<&str> {
+    pub fn mesh_name(&self) -> ::std::option::Option<& str> {
         self.mesh_name.as_deref()
     }
     /// <p>The name of the virtual router that the route is associated with.</p>
-    pub fn virtual_router_name(&self) -> ::std::option::Option<&str> {
+    pub fn virtual_router_name(&self) -> ::std::option::Option<& str> {
         self.virtual_router_name.as_deref()
     }
     /// <p>The new route specification to apply. This overwrites the existing data.</p>
-    pub fn spec(&self) -> ::std::option::Option<&crate::types::RouteSpec> {
+    pub fn spec(&self) -> ::std::option::Option<& crate::types::RouteSpec> {
         self.spec.as_ref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn mesh_owner(&self) -> ::std::option::Option<&str> {
+    pub fn mesh_owner(&self) -> ::std::option::Option<& str> {
         self.mesh_owner.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl UpdateRouteInputBuilder {
     }
     /// <p>The name of the route to update.</p>
     pub fn set_route_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.route_name = input;
-        self
+        self.route_name = input; self
     }
     /// <p>The name of the route to update.</p>
     pub fn get_route_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl UpdateRouteInputBuilder {
     }
     /// <p>The name of the service mesh that the route resides in.</p>
     pub fn set_mesh_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mesh_name = input;
-        self
+        self.mesh_name = input; self
     }
     /// <p>The name of the service mesh that the route resides in.</p>
     pub fn get_mesh_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +97,7 @@ impl UpdateRouteInputBuilder {
     }
     /// <p>The name of the virtual router that the route is associated with.</p>
     pub fn set_virtual_router_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.virtual_router_name = input;
-        self
+        self.virtual_router_name = input; self
     }
     /// <p>The name of the virtual router that the route is associated with.</p>
     pub fn get_virtual_router_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +111,7 @@ impl UpdateRouteInputBuilder {
     }
     /// <p>The new route specification to apply. This overwrites the existing data.</p>
     pub fn set_spec(mut self, input: ::std::option::Option<crate::types::RouteSpec>) -> Self {
-        self.spec = input;
-        self
+        self.spec = input; self
     }
     /// <p>The new route specification to apply. This overwrites the existing data.</p>
     pub fn get_spec(&self) -> &::std::option::Option<crate::types::RouteSpec> {
@@ -128,8 +124,7 @@ impl UpdateRouteInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +137,7 @@ impl UpdateRouteInputBuilder {
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn set_mesh_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mesh_owner = input;
-        self
+        self.mesh_owner = input; self
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn get_mesh_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,13 +145,22 @@ impl UpdateRouteInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateRouteInput`](crate::operation::update_route::UpdateRouteInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_route::UpdateRouteInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_route::UpdateRouteInput {
-            route_name: self.route_name,
-            mesh_name: self.mesh_name,
-            virtual_router_name: self.virtual_router_name,
-            spec: self.spec,
-            client_token: self.client_token,
-            mesh_owner: self.mesh_owner,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_route::UpdateRouteInput {
+                route_name: self.route_name
+                ,
+                mesh_name: self.mesh_name
+                ,
+                virtual_router_name: self.virtual_router_name
+                ,
+                spec: self.spec
+                ,
+                client_token: self.client_token
+                ,
+                mesh_owner: self.mesh_owner
+                ,
+            }
+        )
     }
 }
+

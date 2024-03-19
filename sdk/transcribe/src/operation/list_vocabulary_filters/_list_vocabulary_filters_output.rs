@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListVocabularyFiltersOutput {
+pub struct ListVocabularyFiltersOutput  {
     /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Provides information about the custom vocabulary filters that match the criteria specified in your request.</p>
-    pub vocabulary_filters: ::std::option::Option<::std::vec::Vec<crate::types::VocabularyFilterInfo>>,
+    pub vocabulary_filters: ::std::option::Option<::std::vec::Vec::<crate::types::VocabularyFilterInfo>>,
     _request_id: Option<String>,
 }
-impl ListVocabularyFiltersOutput {
+impl  ListVocabularyFiltersOutput  {
     /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Provides information about the custom vocabulary filters that match the criteria specified in your request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vocabulary_filters.is_none()`.
-    pub fn vocabulary_filters(&self) -> &[crate::types::VocabularyFilterInfo] {
-        self.vocabulary_filters.as_deref().unwrap_or_default()
+    pub fn vocabulary_filters(&self) -> & [crate::types::VocabularyFilterInfo] {
+        self.vocabulary_filters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListVocabularyFiltersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListVocabularyFiltersOutput {
     /// Creates a new builder-style object to manufacture [`ListVocabularyFiltersOutput`](crate::operation::list_vocabulary_filters::ListVocabularyFiltersOutput).
     pub fn builder() -> crate::operation::list_vocabulary_filters::builders::ListVocabularyFiltersOutputBuilder {
@@ -38,7 +39,7 @@ impl ListVocabularyFiltersOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVocabularyFiltersOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) vocabulary_filters: ::std::option::Option<::std::vec::Vec<crate::types::VocabularyFilterInfo>>,
+    pub(crate) vocabulary_filters: ::std::option::Option<::std::vec::Vec::<crate::types::VocabularyFilterInfo>>,
     _request_id: Option<String>,
 }
 impl ListVocabularyFiltersOutputBuilder {
@@ -49,8 +50,7 @@ impl ListVocabularyFiltersOutputBuilder {
     }
     /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListVocabularyFiltersOutputBuilder {
     /// <p>Provides information about the custom vocabulary filters that match the criteria specified in your request.</p>
     pub fn vocabulary_filters(mut self, input: crate::types::VocabularyFilterInfo) -> Self {
         let mut v = self.vocabulary_filters.unwrap_or_default();
-        v.push(input);
-        self.vocabulary_filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.vocabulary_filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Provides information about the custom vocabulary filters that match the criteria specified in your request.</p>
-    pub fn set_vocabulary_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VocabularyFilterInfo>>) -> Self {
-        self.vocabulary_filters = input;
-        self
+    pub fn set_vocabulary_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VocabularyFilterInfo>>) -> Self {
+        self.vocabulary_filters = input; self
     }
     /// <p>Provides information about the custom vocabulary filters that match the criteria specified in your request.</p>
-    pub fn get_vocabulary_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VocabularyFilterInfo>> {
+    pub fn get_vocabulary_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VocabularyFilterInfo>> {
         &self.vocabulary_filters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListVocabularyFiltersOutput`](crate::operation::list_vocabulary_filters::ListVocabularyFiltersOutput).
     pub fn build(self) -> crate::operation::list_vocabulary_filters::ListVocabularyFiltersOutput {
         crate::operation::list_vocabulary_filters::ListVocabularyFiltersOutput {
-            next_token: self.next_token,
-            vocabulary_filters: self.vocabulary_filters,
+            next_token: self.next_token
+            ,
+            vocabulary_filters: self.vocabulary_filters
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

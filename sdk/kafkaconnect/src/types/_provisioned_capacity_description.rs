@@ -3,13 +3,13 @@
 /// <p>The description of a connector's provisioned capacity.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProvisionedCapacityDescription {
+pub struct ProvisionedCapacityDescription  {
     /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
     pub mcu_count: i32,
     /// <p>The number of workers that are allocated to the connector.</p>
     pub worker_count: i32,
 }
-impl ProvisionedCapacityDescription {
+impl  ProvisionedCapacityDescription  {
     /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
     pub fn mcu_count(&self) -> i32 {
         self.mcu_count
@@ -41,8 +41,7 @@ impl ProvisionedCapacityDescriptionBuilder {
     }
     /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
     pub fn set_mcu_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.mcu_count = input;
-        self
+        self.mcu_count = input; self
     }
     /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
     pub fn get_mcu_count(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl ProvisionedCapacityDescriptionBuilder {
     }
     /// <p>The number of workers that are allocated to the connector.</p>
     pub fn set_worker_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.worker_count = input;
-        self
+        self.worker_count = input; self
     }
     /// <p>The number of workers that are allocated to the connector.</p>
     pub fn get_worker_count(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,13 @@ impl ProvisionedCapacityDescriptionBuilder {
     /// Consumes the builder and constructs a [`ProvisionedCapacityDescription`](crate::types::ProvisionedCapacityDescription).
     pub fn build(self) -> crate::types::ProvisionedCapacityDescription {
         crate::types::ProvisionedCapacityDescription {
-            mcu_count: self.mcu_count.unwrap_or_default(),
-            worker_count: self.worker_count.unwrap_or_default(),
+            mcu_count: self.mcu_count
+                .unwrap_or_default()
+            ,
+            worker_count: self.worker_count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

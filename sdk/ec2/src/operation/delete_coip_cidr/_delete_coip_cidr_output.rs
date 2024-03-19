@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCoipCidrOutput {
+pub struct DeleteCoipCidrOutput  {
     /// <p>Information about a range of customer-owned IP addresses.</p>
     pub coip_cidr: ::std::option::Option<crate::types::CoipCidr>,
     _request_id: Option<String>,
 }
-impl DeleteCoipCidrOutput {
+impl  DeleteCoipCidrOutput  {
     /// <p>Information about a range of customer-owned IP addresses.</p>
-    pub fn coip_cidr(&self) -> ::std::option::Option<&crate::types::CoipCidr> {
+    pub fn coip_cidr(&self) -> ::std::option::Option<& crate::types::CoipCidr> {
         self.coip_cidr.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteCoipCidrOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteCoipCidrOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCoipCidrOutput`](crate::operation::delete_coip_cidr::DeleteCoipCidrOutput).
     pub fn builder() -> crate::operation::delete_coip_cidr::builders::DeleteCoipCidrOutputBuilder {
@@ -40,27 +40,28 @@ impl DeleteCoipCidrOutputBuilder {
     }
     /// <p>Information about a range of customer-owned IP addresses.</p>
     pub fn set_coip_cidr(mut self, input: ::std::option::Option<crate::types::CoipCidr>) -> Self {
-        self.coip_cidr = input;
-        self
+        self.coip_cidr = input; self
     }
     /// <p>Information about a range of customer-owned IP addresses.</p>
     pub fn get_coip_cidr(&self) -> &::std::option::Option<crate::types::CoipCidr> {
         &self.coip_cidr
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteCoipCidrOutput`](crate::operation::delete_coip_cidr::DeleteCoipCidrOutput).
     pub fn build(self) -> crate::operation::delete_coip_cidr::DeleteCoipCidrOutput {
         crate::operation::delete_coip_cidr::DeleteCoipCidrOutput {
-            coip_cidr: self.coip_cidr,
+            coip_cidr: self.coip_cidr
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

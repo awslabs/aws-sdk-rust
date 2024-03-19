@@ -3,7 +3,7 @@
 /// <p>An object containing details about a specific event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InsightsEvent {
+pub struct InsightsEvent  {
     /// <p>The timestamp of the event.</p>
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of event:</p>
@@ -25,9 +25,9 @@ pub struct InsightsEvent {
     /// <p>Details about bounce or complaint events.</p>
     pub details: ::std::option::Option<crate::types::EventDetails>,
 }
-impl InsightsEvent {
+impl  InsightsEvent  {
     /// <p>The timestamp of the event.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The type of event:</p>
@@ -45,11 +45,11 @@ impl InsightsEvent {
     /// <li>
     /// <p><code>CLICK</code> - Click event for emails including wrapped links. Excludes clicks for emails addressed to more than one recipient.</p></li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::EventType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::EventType> {
         self.r#type.as_ref()
     }
     /// <p>Details about bounce or complaint events.</p>
-    pub fn details(&self) -> ::std::option::Option<&crate::types::EventDetails> {
+    pub fn details(&self) -> ::std::option::Option<& crate::types::EventDetails> {
         self.details.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl InsightsEventBuilder {
     }
     /// <p>The timestamp of the event.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p>The timestamp of the event.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -118,8 +117,7 @@ impl InsightsEventBuilder {
     /// <p><code>CLICK</code> - Click event for emails including wrapped links. Excludes clicks for emails addressed to more than one recipient.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::EventType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of event:</p>
     /// <ul>
@@ -146,8 +144,7 @@ impl InsightsEventBuilder {
     }
     /// <p>Details about bounce or complaint events.</p>
     pub fn set_details(mut self, input: ::std::option::Option<crate::types::EventDetails>) -> Self {
-        self.details = input;
-        self
+        self.details = input; self
     }
     /// <p>Details about bounce or complaint events.</p>
     pub fn get_details(&self) -> &::std::option::Option<crate::types::EventDetails> {
@@ -156,9 +153,13 @@ impl InsightsEventBuilder {
     /// Consumes the builder and constructs a [`InsightsEvent`](crate::types::InsightsEvent).
     pub fn build(self) -> crate::types::InsightsEvent {
         crate::types::InsightsEvent {
-            timestamp: self.timestamp,
-            r#type: self.r#type,
-            details: self.details,
+            timestamp: self.timestamp
+            ,
+            r#type: self.r#type
+            ,
+            details: self.details
+            ,
         }
     }
 }
+

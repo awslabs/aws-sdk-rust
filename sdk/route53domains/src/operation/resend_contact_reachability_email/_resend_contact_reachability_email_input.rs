@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResendContactReachabilityEmailInput {
+pub struct ResendContactReachabilityEmailInput  {
     /// <p>The name of the domain for which you want Route 53 to resend a confirmation email to the registrant contact.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
 }
-impl ResendContactReachabilityEmailInput {
+impl  ResendContactReachabilityEmailInput  {
     /// <p>The name of the domain for which you want Route 53 to resend a confirmation email to the registrant contact.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
 }
@@ -33,22 +33,20 @@ impl ResendContactReachabilityEmailInputBuilder {
     }
     /// <p>The name of the domain for which you want Route 53 to resend a confirmation email to the registrant contact.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The name of the domain for which you want Route 53 to resend a confirmation email to the registrant contact.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
     /// Consumes the builder and constructs a [`ResendContactReachabilityEmailInput`](crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailInput {
-            domain_name: self.domain_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailInput {
+                domain_name: self.domain_name
+                ,
+            }
+        )
     }
 }
+

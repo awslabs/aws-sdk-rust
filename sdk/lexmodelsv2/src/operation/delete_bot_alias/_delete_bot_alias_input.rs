@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteBotAliasInput {
+pub struct DeleteBotAliasInput  {
     /// <p>The unique identifier of the bot alias to delete.</p>
     pub bot_alias_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the bot associated with the alias to delete.</p>
@@ -10,13 +10,13 @@ pub struct DeleteBotAliasInput {
     /// <p>By default, Amazon Lex checks if any other resource, such as a bot network, is using the bot alias before it is deleted and throws a <code>ResourceInUseException</code> exception if the alias is being used by another resource. Set this parameter to <code>true</code> to skip this check and remove the alias even if it is being used by another resource.</p>
     pub skip_resource_in_use_check: ::std::option::Option<bool>,
 }
-impl DeleteBotAliasInput {
+impl  DeleteBotAliasInput  {
     /// <p>The unique identifier of the bot alias to delete.</p>
-    pub fn bot_alias_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_alias_id(&self) -> ::std::option::Option<& str> {
         self.bot_alias_id.as_deref()
     }
     /// <p>The unique identifier of the bot associated with the alias to delete.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>By default, Amazon Lex checks if any other resource, such as a bot network, is using the bot alias before it is deleted and throws a <code>ResourceInUseException</code> exception if the alias is being used by another resource. Set this parameter to <code>true</code> to skip this check and remove the alias even if it is being used by another resource.</p>
@@ -48,8 +48,7 @@ impl DeleteBotAliasInputBuilder {
     }
     /// <p>The unique identifier of the bot alias to delete.</p>
     pub fn set_bot_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_alias_id = input;
-        self
+        self.bot_alias_id = input; self
     }
     /// <p>The unique identifier of the bot alias to delete.</p>
     pub fn get_bot_alias_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DeleteBotAliasInputBuilder {
     }
     /// <p>The unique identifier of the bot associated with the alias to delete.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The unique identifier of the bot associated with the alias to delete.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,21 +75,24 @@ impl DeleteBotAliasInputBuilder {
     }
     /// <p>By default, Amazon Lex checks if any other resource, such as a bot network, is using the bot alias before it is deleted and throws a <code>ResourceInUseException</code> exception if the alias is being used by another resource. Set this parameter to <code>true</code> to skip this check and remove the alias even if it is being used by another resource.</p>
     pub fn set_skip_resource_in_use_check(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.skip_resource_in_use_check = input;
-        self
+        self.skip_resource_in_use_check = input; self
     }
     /// <p>By default, Amazon Lex checks if any other resource, such as a bot network, is using the bot alias before it is deleted and throws a <code>ResourceInUseException</code> exception if the alias is being used by another resource. Set this parameter to <code>true</code> to skip this check and remove the alias even if it is being used by another resource.</p>
     pub fn get_skip_resource_in_use_check(&self) -> &::std::option::Option<bool> {
         &self.skip_resource_in_use_check
     }
     /// Consumes the builder and constructs a [`DeleteBotAliasInput`](crate::operation::delete_bot_alias::DeleteBotAliasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_bot_alias::DeleteBotAliasInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_bot_alias::DeleteBotAliasInput {
-            bot_alias_id: self.bot_alias_id,
-            bot_id: self.bot_id,
-            skip_resource_in_use_check: self.skip_resource_in_use_check,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_bot_alias::DeleteBotAliasInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_bot_alias::DeleteBotAliasInput {
+                bot_alias_id: self.bot_alias_id
+                ,
+                bot_id: self.bot_id
+                ,
+                skip_resource_in_use_check: self.skip_resource_in_use_check
+                ,
+            }
+        )
     }
 }
+

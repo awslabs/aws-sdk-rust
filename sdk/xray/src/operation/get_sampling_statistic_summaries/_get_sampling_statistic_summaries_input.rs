@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSamplingStatisticSummariesInput {
+pub struct GetSamplingStatisticSummariesInput  {
     /// <p>Pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl GetSamplingStatisticSummariesInput {
+impl  GetSamplingStatisticSummariesInput  {
     /// <p>Pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -33,22 +33,20 @@ impl GetSamplingStatisticSummariesInputBuilder {
     }
     /// <p>Pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Pagination token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetSamplingStatisticSummariesInput`](crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummariesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummariesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummariesInput {
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummariesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummariesInput {
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

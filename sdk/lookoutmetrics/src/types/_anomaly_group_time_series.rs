@@ -3,20 +3,19 @@
 /// <p>An anomalous metric in an anomaly group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnomalyGroupTimeSeries {
+pub struct AnomalyGroupTimeSeries  {
     /// <p>The ID of the anomaly group.</p>
     pub anomaly_group_id: ::std::string::String,
     /// <p>The ID of the metric.</p>
     pub time_series_id: ::std::option::Option<::std::string::String>,
 }
-impl AnomalyGroupTimeSeries {
+impl  AnomalyGroupTimeSeries  {
     /// <p>The ID of the anomaly group.</p>
-    pub fn anomaly_group_id(&self) -> &str {
-        use std::ops::Deref;
-        self.anomaly_group_id.deref()
+    pub fn anomaly_group_id(&self) -> & str {
+        use std::ops::Deref; self.anomaly_group_id.deref()
     }
     /// <p>The ID of the metric.</p>
-    pub fn time_series_id(&self) -> ::std::option::Option<&str> {
+    pub fn time_series_id(&self) -> ::std::option::Option<& str> {
         self.time_series_id.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl AnomalyGroupTimeSeriesBuilder {
     }
     /// <p>The ID of the anomaly group.</p>
     pub fn set_anomaly_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.anomaly_group_id = input;
-        self
+        self.anomaly_group_id = input; self
     }
     /// <p>The ID of the anomaly group.</p>
     pub fn get_anomaly_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl AnomalyGroupTimeSeriesBuilder {
     }
     /// <p>The ID of the metric.</p>
     pub fn set_time_series_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.time_series_id = input;
-        self
+        self.time_series_id = input; self
     }
     /// <p>The ID of the metric.</p>
     pub fn get_time_series_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl AnomalyGroupTimeSeriesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`anomaly_group_id`](crate::types::builders::AnomalyGroupTimeSeriesBuilder::anomaly_group_id)
     pub fn build(self) -> ::std::result::Result<crate::types::AnomalyGroupTimeSeries, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AnomalyGroupTimeSeries {
-            anomaly_group_id: self.anomaly_group_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "anomaly_group_id",
-                    "anomaly_group_id was not specified but it is required when building AnomalyGroupTimeSeries",
-                )
-            })?,
-            time_series_id: self.time_series_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AnomalyGroupTimeSeries {
+                anomaly_group_id: self.anomaly_group_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("anomaly_group_id", "anomaly_group_id was not specified but it is required when building AnomalyGroupTimeSeries")
+                    )?
+                ,
+                time_series_id: self.time_series_id
+                ,
+            }
+        )
     }
 }
+

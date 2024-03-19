@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetResourceProfileInput {
+pub struct GetResourceProfileInput  {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetResourceProfileInput {
+impl  GetResourceProfileInput  {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetResourceProfileInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
     /// Consumes the builder and constructs a [`GetResourceProfileInput`](crate::operation::get_resource_profile::GetResourceProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_resource_profile::GetResourceProfileInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_resource_profile::GetResourceProfileInput {
-            resource_arn: self.resource_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_resource_profile::GetResourceProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_resource_profile::GetResourceProfileInput {
+                resource_arn: self.resource_arn
+                ,
+            }
+        )
     }
 }
+

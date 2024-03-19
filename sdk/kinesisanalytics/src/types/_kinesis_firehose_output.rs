@@ -3,22 +3,20 @@
 /// <p>When configuring application output, identifies an Amazon Kinesis Firehose delivery stream as the destination. You provide the stream Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to write to the stream on your behalf.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KinesisFirehoseOutput {
+pub struct KinesisFirehoseOutput  {
     /// <p>ARN of the destination Amazon Kinesis Firehose delivery stream to write to.</p>
     pub resource_arn: ::std::string::String,
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination stream on your behalf. You need to grant the necessary permissions to this role.</p>
     pub role_arn: ::std::string::String,
 }
-impl KinesisFirehoseOutput {
+impl  KinesisFirehoseOutput  {
     /// <p>ARN of the destination Amazon Kinesis Firehose delivery stream to write to.</p>
-    pub fn resource_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_arn.deref()
+    pub fn resource_arn(&self) -> & str {
+        use std::ops::Deref; self.resource_arn.deref()
     }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination stream on your behalf. You need to grant the necessary permissions to this role.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
 }
 impl KinesisFirehoseOutput {
@@ -44,8 +42,7 @@ impl KinesisFirehoseOutputBuilder {
     }
     /// <p>ARN of the destination Amazon Kinesis Firehose delivery stream to write to.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>ARN of the destination Amazon Kinesis Firehose delivery stream to write to.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl KinesisFirehoseOutputBuilder {
     }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination stream on your behalf. You need to grant the necessary permissions to this role.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination stream on your behalf. You need to grant the necessary permissions to this role.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl KinesisFirehoseOutputBuilder {
     /// - [`resource_arn`](crate::types::builders::KinesisFirehoseOutputBuilder::resource_arn)
     /// - [`role_arn`](crate::types::builders::KinesisFirehoseOutputBuilder::role_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::KinesisFirehoseOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KinesisFirehoseOutput {
-            resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_arn",
-                    "resource_arn was not specified but it is required when building KinesisFirehoseOutput",
-                )
-            })?,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building KinesisFirehoseOutput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KinesisFirehoseOutput {
+                resource_arn: self.resource_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_arn", "resource_arn was not specified but it is required when building KinesisFirehoseOutput")
+                    )?
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building KinesisFirehoseOutput")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDevicePositionsInput {
+pub struct ListDevicePositionsInput  {
     /// <p>The tracker resource containing the requested devices.</p>
     pub tracker_name: ::std::option::Option<::std::string::String>,
     /// <p>An optional limit for the number of entries returned in a single call.</p>
@@ -14,9 +14,9 @@ pub struct ListDevicePositionsInput {
     /// <p>The geometry used to filter device positions.</p>
     pub filter_geometry: ::std::option::Option<crate::types::TrackingFilterGeometry>,
 }
-impl ListDevicePositionsInput {
+impl  ListDevicePositionsInput  {
     /// <p>The tracker resource containing the requested devices.</p>
-    pub fn tracker_name(&self) -> ::std::option::Option<&str> {
+    pub fn tracker_name(&self) -> ::std::option::Option<& str> {
         self.tracker_name.as_deref()
     }
     /// <p>An optional limit for the number of entries returned in a single call.</p>
@@ -26,11 +26,11 @@ impl ListDevicePositionsInput {
     }
     /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
     /// <p>Default value: <code>null</code></p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The geometry used to filter device positions.</p>
-    pub fn filter_geometry(&self) -> ::std::option::Option<&crate::types::TrackingFilterGeometry> {
+    pub fn filter_geometry(&self) -> ::std::option::Option<& crate::types::TrackingFilterGeometry> {
         self.filter_geometry.as_ref()
     }
 }
@@ -59,8 +59,7 @@ impl ListDevicePositionsInputBuilder {
     }
     /// <p>The tracker resource containing the requested devices.</p>
     pub fn set_tracker_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tracker_name = input;
-        self
+        self.tracker_name = input; self
     }
     /// <p>The tracker resource containing the requested devices.</p>
     pub fn get_tracker_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl ListDevicePositionsInputBuilder {
     /// <p>An optional limit for the number of entries returned in a single call.</p>
     /// <p>Default value: <code>100</code></p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>An optional limit for the number of entries returned in a single call.</p>
     /// <p>Default value: <code>100</code></p>
@@ -92,8 +90,7 @@ impl ListDevicePositionsInputBuilder {
     /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
     /// <p>Default value: <code>null</code></p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
     /// <p>Default value: <code>null</code></p>
@@ -107,23 +104,26 @@ impl ListDevicePositionsInputBuilder {
     }
     /// <p>The geometry used to filter device positions.</p>
     pub fn set_filter_geometry(mut self, input: ::std::option::Option<crate::types::TrackingFilterGeometry>) -> Self {
-        self.filter_geometry = input;
-        self
+        self.filter_geometry = input; self
     }
     /// <p>The geometry used to filter device positions.</p>
     pub fn get_filter_geometry(&self) -> &::std::option::Option<crate::types::TrackingFilterGeometry> {
         &self.filter_geometry
     }
     /// Consumes the builder and constructs a [`ListDevicePositionsInput`](crate::operation::list_device_positions::ListDevicePositionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_device_positions::ListDevicePositionsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_device_positions::ListDevicePositionsInput {
-            tracker_name: self.tracker_name,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            filter_geometry: self.filter_geometry,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_device_positions::ListDevicePositionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_device_positions::ListDevicePositionsInput {
+                tracker_name: self.tracker_name
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                filter_geometry: self.filter_geometry
+                ,
+            }
+        )
     }
 }
+

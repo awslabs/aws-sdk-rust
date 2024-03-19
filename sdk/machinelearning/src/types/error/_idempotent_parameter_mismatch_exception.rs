@@ -3,14 +3,14 @@
 /// <p>A second request to use or change an object was not allowed. This can result from retrying a request using a parameter that was not present in the original request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IdempotentParameterMismatchException {
+pub struct IdempotentParameterMismatchException  {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub code: i32,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl IdempotentParameterMismatchException {
+impl  IdempotentParameterMismatchException  {
     #[allow(missing_docs)] // documentation missing in model
     pub fn code(&self) -> i32 {
         self.code
@@ -18,15 +18,13 @@ impl IdempotentParameterMismatchException {
 }
 impl IdempotentParameterMismatchException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for IdempotentParameterMismatchException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "IdempotentParameterMismatchException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -41,9 +39,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::IdempotentParam
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for IdempotentParameterMismatchException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl IdempotentParameterMismatchException {
     /// Creates a new builder-style object to manufacture [`IdempotentParameterMismatchException`](crate::types::error::IdempotentParameterMismatchException).
@@ -68,8 +64,7 @@ impl IdempotentParameterMismatchExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,30 +77,33 @@ impl IdempotentParameterMismatchExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_code(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_code(&self) -> &::std::option::Option<i32> {
         &self.code
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`IdempotentParameterMismatchException`](crate::types::error::IdempotentParameterMismatchException).
     pub fn build(self) -> crate::types::error::IdempotentParameterMismatchException {
         crate::types::error::IdempotentParameterMismatchException {
-            message: self.message,
-            code: self.code.unwrap_or_default(),
+            message: self.message
+            ,
+            code: self.code
+                .unwrap_or_default()
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

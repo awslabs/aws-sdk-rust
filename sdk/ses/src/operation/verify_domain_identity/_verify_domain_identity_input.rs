@@ -3,13 +3,13 @@
 /// <p>Represents a request to begin Amazon SES domain verification and to generate the TXT records that you must publish to the DNS server of your domain to complete the verification. For information about domain verification, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#verify-domain-procedure">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VerifyDomainIdentityInput {
+pub struct VerifyDomainIdentityInput  {
     /// <p>The domain to be verified.</p>
     pub domain: ::std::option::Option<::std::string::String>,
 }
-impl VerifyDomainIdentityInput {
+impl  VerifyDomainIdentityInput  {
     /// <p>The domain to be verified.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
 }
@@ -35,18 +35,20 @@ impl VerifyDomainIdentityInputBuilder {
     }
     /// <p>The domain to be verified.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The domain to be verified.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain
     }
     /// Consumes the builder and constructs a [`VerifyDomainIdentityInput`](crate::operation::verify_domain_identity::VerifyDomainIdentityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::verify_domain_identity::VerifyDomainIdentityInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::verify_domain_identity::VerifyDomainIdentityInput { domain: self.domain })
+    pub fn build(self) -> ::std::result::Result<crate::operation::verify_domain_identity::VerifyDomainIdentityInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::verify_domain_identity::VerifyDomainIdentityInput {
+                domain: self.domain
+                ,
+            }
+        )
     }
 }
+

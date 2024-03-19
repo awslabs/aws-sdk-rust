@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeResourceScanInput {
+pub struct DescribeResourceScanInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource scan.</p>
     pub resource_scan_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeResourceScanInput {
+impl  DescribeResourceScanInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource scan.</p>
-    pub fn resource_scan_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_scan_id(&self) -> ::std::option::Option<& str> {
         self.resource_scan_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DescribeResourceScanInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource scan.</p>
     pub fn set_resource_scan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_scan_id = input;
-        self
+        self.resource_scan_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource scan.</p>
     pub fn get_resource_scan_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_scan_id
     }
     /// Consumes the builder and constructs a [`DescribeResourceScanInput`](crate::operation::describe_resource_scan::DescribeResourceScanInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_resource_scan::DescribeResourceScanInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_resource_scan::DescribeResourceScanInput {
-            resource_scan_id: self.resource_scan_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_resource_scan::DescribeResourceScanInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_resource_scan::DescribeResourceScanInput {
+                resource_scan_id: self.resource_scan_id
+                ,
+            }
+        )
     }
 }
+

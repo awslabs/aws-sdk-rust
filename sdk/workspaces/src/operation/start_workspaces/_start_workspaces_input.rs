@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartWorkspacesInput {
+pub struct StartWorkspacesInput  {
     /// <p>The WorkSpaces to start. You can specify up to 25 WorkSpaces.</p>
-    pub start_workspace_requests: ::std::option::Option<::std::vec::Vec<crate::types::StartRequest>>,
+    pub start_workspace_requests: ::std::option::Option<::std::vec::Vec::<crate::types::StartRequest>>,
 }
-impl StartWorkspacesInput {
+impl  StartWorkspacesInput  {
     /// <p>The WorkSpaces to start. You can specify up to 25 WorkSpaces.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.start_workspace_requests.is_none()`.
-    pub fn start_workspace_requests(&self) -> &[crate::types::StartRequest] {
-        self.start_workspace_requests.as_deref().unwrap_or_default()
+    pub fn start_workspace_requests(&self) -> & [crate::types::StartRequest] {
+        self.start_workspace_requests.as_deref()
+        .unwrap_or_default()
     }
 }
 impl StartWorkspacesInput {
@@ -25,7 +26,7 @@ impl StartWorkspacesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartWorkspacesInputBuilder {
-    pub(crate) start_workspace_requests: ::std::option::Option<::std::vec::Vec<crate::types::StartRequest>>,
+    pub(crate) start_workspace_requests: ::std::option::Option<::std::vec::Vec::<crate::types::StartRequest>>,
 }
 impl StartWorkspacesInputBuilder {
     /// Appends an item to `start_workspace_requests`.
@@ -35,25 +36,26 @@ impl StartWorkspacesInputBuilder {
     /// <p>The WorkSpaces to start. You can specify up to 25 WorkSpaces.</p>
     pub fn start_workspace_requests(mut self, input: crate::types::StartRequest) -> Self {
         let mut v = self.start_workspace_requests.unwrap_or_default();
-        v.push(input);
-        self.start_workspace_requests = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.start_workspace_requests = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The WorkSpaces to start. You can specify up to 25 WorkSpaces.</p>
-    pub fn set_start_workspace_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StartRequest>>) -> Self {
-        self.start_workspace_requests = input;
-        self
+    pub fn set_start_workspace_requests(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StartRequest>>) -> Self {
+        self.start_workspace_requests = input; self
     }
     /// <p>The WorkSpaces to start. You can specify up to 25 WorkSpaces.</p>
-    pub fn get_start_workspace_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StartRequest>> {
+    pub fn get_start_workspace_requests(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StartRequest>> {
         &self.start_workspace_requests
     }
     /// Consumes the builder and constructs a [`StartWorkspacesInput`](crate::operation::start_workspaces::StartWorkspacesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_workspaces::StartWorkspacesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_workspaces::StartWorkspacesInput {
-            start_workspace_requests: self.start_workspace_requests,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_workspaces::StartWorkspacesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_workspaces::StartWorkspacesInput {
+                start_workspace_requests: self.start_workspace_requests
+                ,
+            }
+        )
     }
 }
+

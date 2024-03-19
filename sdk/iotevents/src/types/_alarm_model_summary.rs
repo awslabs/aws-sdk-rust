@@ -3,7 +3,7 @@
 /// <p>Contains a summary of an alarm model.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AlarmModelSummary {
+pub struct AlarmModelSummary  {
     /// <p>The time the alarm model was created, in the Unix epoch format.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The description of the alarm model.</p>
@@ -11,17 +11,17 @@ pub struct AlarmModelSummary {
     /// <p>The name of the alarm model.</p>
     pub alarm_model_name: ::std::option::Option<::std::string::String>,
 }
-impl AlarmModelSummary {
+impl  AlarmModelSummary  {
     /// <p>The time the alarm model was created, in the Unix epoch format.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The description of the alarm model.</p>
-    pub fn alarm_model_description(&self) -> ::std::option::Option<&str> {
+    pub fn alarm_model_description(&self) -> ::std::option::Option<& str> {
         self.alarm_model_description.as_deref()
     }
     /// <p>The name of the alarm model.</p>
-    pub fn alarm_model_name(&self) -> ::std::option::Option<&str> {
+    pub fn alarm_model_name(&self) -> ::std::option::Option<& str> {
         self.alarm_model_name.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl AlarmModelSummaryBuilder {
     }
     /// <p>The time the alarm model was created, in the Unix epoch format.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time the alarm model was created, in the Unix epoch format.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -62,8 +61,7 @@ impl AlarmModelSummaryBuilder {
     }
     /// <p>The description of the alarm model.</p>
     pub fn set_alarm_model_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alarm_model_description = input;
-        self
+        self.alarm_model_description = input; self
     }
     /// <p>The description of the alarm model.</p>
     pub fn get_alarm_model_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl AlarmModelSummaryBuilder {
     }
     /// <p>The name of the alarm model.</p>
     pub fn set_alarm_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alarm_model_name = input;
-        self
+        self.alarm_model_name = input; self
     }
     /// <p>The name of the alarm model.</p>
     pub fn get_alarm_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl AlarmModelSummaryBuilder {
     /// Consumes the builder and constructs a [`AlarmModelSummary`](crate::types::AlarmModelSummary).
     pub fn build(self) -> crate::types::AlarmModelSummary {
         crate::types::AlarmModelSummary {
-            creation_time: self.creation_time,
-            alarm_model_description: self.alarm_model_description,
-            alarm_model_name: self.alarm_model_name,
+            creation_time: self.creation_time
+            ,
+            alarm_model_description: self.alarm_model_description
+            ,
+            alarm_model_name: self.alarm_model_name
+            ,
         }
     }
 }
+

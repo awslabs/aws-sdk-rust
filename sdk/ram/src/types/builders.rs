@@ -22,3 +22,4 @@ pub use crate::types::_associated_permission::AssociatedPermissionBuilder;
 pub use crate::types::_tag_filter::TagFilterBuilder;
 
 pub use crate::types::_resource_share_permission_detail::ResourceSharePermissionDetailBuilder;
+

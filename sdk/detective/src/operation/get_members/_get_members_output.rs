@@ -2,34 +2,36 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMembersOutput {
+pub struct GetMembersOutput  {
     /// <p>The member account details that Detective is returning in response to the request.</p>
-    pub member_details: ::std::option::Option<::std::vec::Vec<crate::types::MemberDetail>>,
+    pub member_details: ::std::option::Option<::std::vec::Vec::<crate::types::MemberDetail>>,
     /// <p>The requested member accounts for which Detective was unable to return member details.</p>
     /// <p>For each account, provides the reason why the request could not be processed.</p>
-    pub unprocessed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
+    pub unprocessed_accounts: ::std::option::Option<::std::vec::Vec::<crate::types::UnprocessedAccount>>,
     _request_id: Option<String>,
 }
-impl GetMembersOutput {
+impl  GetMembersOutput  {
     /// <p>The member account details that Detective is returning in response to the request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.member_details.is_none()`.
-    pub fn member_details(&self) -> &[crate::types::MemberDetail] {
-        self.member_details.as_deref().unwrap_or_default()
+    pub fn member_details(&self) -> & [crate::types::MemberDetail] {
+        self.member_details.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The requested member accounts for which Detective was unable to return member details.</p>
     /// <p>For each account, provides the reason why the request could not be processed.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_accounts.is_none()`.
-    pub fn unprocessed_accounts(&self) -> &[crate::types::UnprocessedAccount] {
-        self.unprocessed_accounts.as_deref().unwrap_or_default()
+    pub fn unprocessed_accounts(&self) -> & [crate::types::UnprocessedAccount] {
+        self.unprocessed_accounts.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetMembersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetMembersOutput {
     /// Creates a new builder-style object to manufacture [`GetMembersOutput`](crate::operation::get_members::GetMembersOutput).
     pub fn builder() -> crate::operation::get_members::builders::GetMembersOutputBuilder {
@@ -41,8 +43,8 @@ impl GetMembersOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMembersOutputBuilder {
-    pub(crate) member_details: ::std::option::Option<::std::vec::Vec<crate::types::MemberDetail>>,
-    pub(crate) unprocessed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>,
+    pub(crate) member_details: ::std::option::Option<::std::vec::Vec::<crate::types::MemberDetail>>,
+    pub(crate) unprocessed_accounts: ::std::option::Option<::std::vec::Vec::<crate::types::UnprocessedAccount>>,
     _request_id: Option<String>,
 }
 impl GetMembersOutputBuilder {
@@ -53,17 +55,16 @@ impl GetMembersOutputBuilder {
     /// <p>The member account details that Detective is returning in response to the request.</p>
     pub fn member_details(mut self, input: crate::types::MemberDetail) -> Self {
         let mut v = self.member_details.unwrap_or_default();
-        v.push(input);
-        self.member_details = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.member_details = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The member account details that Detective is returning in response to the request.</p>
-    pub fn set_member_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberDetail>>) -> Self {
-        self.member_details = input;
-        self
+    pub fn set_member_details(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MemberDetail>>) -> Self {
+        self.member_details = input; self
     }
     /// <p>The member account details that Detective is returning in response to the request.</p>
-    pub fn get_member_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberDetail>> {
+    pub fn get_member_details(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MemberDetail>> {
         &self.member_details
     }
     /// Appends an item to `unprocessed_accounts`.
@@ -74,36 +75,38 @@ impl GetMembersOutputBuilder {
     /// <p>For each account, provides the reason why the request could not be processed.</p>
     pub fn unprocessed_accounts(mut self, input: crate::types::UnprocessedAccount) -> Self {
         let mut v = self.unprocessed_accounts.unwrap_or_default();
-        v.push(input);
-        self.unprocessed_accounts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.unprocessed_accounts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The requested member accounts for which Detective was unable to return member details.</p>
     /// <p>For each account, provides the reason why the request could not be processed.</p>
-    pub fn set_unprocessed_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>>) -> Self {
-        self.unprocessed_accounts = input;
-        self
+    pub fn set_unprocessed_accounts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UnprocessedAccount>>) -> Self {
+        self.unprocessed_accounts = input; self
     }
     /// <p>The requested member accounts for which Detective was unable to return member details.</p>
     /// <p>For each account, provides the reason why the request could not be processed.</p>
-    pub fn get_unprocessed_accounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>> {
+    pub fn get_unprocessed_accounts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UnprocessedAccount>> {
         &self.unprocessed_accounts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetMembersOutput`](crate::operation::get_members::GetMembersOutput).
     pub fn build(self) -> crate::operation::get_members::GetMembersOutput {
         crate::operation::get_members::GetMembersOutput {
-            member_details: self.member_details,
-            unprocessed_accounts: self.unprocessed_accounts,
+            member_details: self.member_details
+            ,
+            unprocessed_accounts: self.unprocessed_accounts
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

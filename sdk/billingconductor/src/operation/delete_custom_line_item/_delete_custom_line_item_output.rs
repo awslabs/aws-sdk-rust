@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCustomLineItemOutput {
+pub struct DeleteCustomLineItemOutput  {
     /// <p>The ARN of the deleted custom line item.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DeleteCustomLineItemOutput {
+impl  DeleteCustomLineItemOutput  {
     /// <p>The ARN of the deleted custom line item.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteCustomLineItemOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteCustomLineItemOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomLineItemOutput`](crate::operation::delete_custom_line_item::DeleteCustomLineItemOutput).
     pub fn builder() -> crate::operation::delete_custom_line_item::builders::DeleteCustomLineItemOutputBuilder {
@@ -40,27 +40,28 @@ impl DeleteCustomLineItemOutputBuilder {
     }
     /// <p>The ARN of the deleted custom line item.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the deleted custom line item.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteCustomLineItemOutput`](crate::operation::delete_custom_line_item::DeleteCustomLineItemOutput).
     pub fn build(self) -> crate::operation::delete_custom_line_item::DeleteCustomLineItemOutput {
         crate::operation::delete_custom_line_item::DeleteCustomLineItemOutput {
-            arn: self.arn,
+            arn: self.arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

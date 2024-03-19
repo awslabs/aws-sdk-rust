@@ -3,19 +3,19 @@
 /// <p>The access configuration for the cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccessConfigResponse {
+pub struct AccessConfigResponse  {
     /// <p>Specifies whether or not the cluster creator IAM principal was set as a cluster admin access entry during cluster creation time.</p>
     pub bootstrap_cluster_creator_admin_permissions: ::std::option::Option<bool>,
     /// <p>The current authentication mode of the cluster.</p>
     pub authentication_mode: ::std::option::Option<crate::types::AuthenticationMode>,
 }
-impl AccessConfigResponse {
+impl  AccessConfigResponse  {
     /// <p>Specifies whether or not the cluster creator IAM principal was set as a cluster admin access entry during cluster creation time.</p>
     pub fn bootstrap_cluster_creator_admin_permissions(&self) -> ::std::option::Option<bool> {
         self.bootstrap_cluster_creator_admin_permissions
     }
     /// <p>The current authentication mode of the cluster.</p>
-    pub fn authentication_mode(&self) -> ::std::option::Option<&crate::types::AuthenticationMode> {
+    pub fn authentication_mode(&self) -> ::std::option::Option<& crate::types::AuthenticationMode> {
         self.authentication_mode.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl AccessConfigResponseBuilder {
     }
     /// <p>Specifies whether or not the cluster creator IAM principal was set as a cluster admin access entry during cluster creation time.</p>
     pub fn set_bootstrap_cluster_creator_admin_permissions(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.bootstrap_cluster_creator_admin_permissions = input;
-        self
+        self.bootstrap_cluster_creator_admin_permissions = input; self
     }
     /// <p>Specifies whether or not the cluster creator IAM principal was set as a cluster admin access entry during cluster creation time.</p>
     pub fn get_bootstrap_cluster_creator_admin_permissions(&self) -> &::std::option::Option<bool> {
@@ -55,8 +54,7 @@ impl AccessConfigResponseBuilder {
     }
     /// <p>The current authentication mode of the cluster.</p>
     pub fn set_authentication_mode(mut self, input: ::std::option::Option<crate::types::AuthenticationMode>) -> Self {
-        self.authentication_mode = input;
-        self
+        self.authentication_mode = input; self
     }
     /// <p>The current authentication mode of the cluster.</p>
     pub fn get_authentication_mode(&self) -> &::std::option::Option<crate::types::AuthenticationMode> {
@@ -65,8 +63,11 @@ impl AccessConfigResponseBuilder {
     /// Consumes the builder and constructs a [`AccessConfigResponse`](crate::types::AccessConfigResponse).
     pub fn build(self) -> crate::types::AccessConfigResponse {
         crate::types::AccessConfigResponse {
-            bootstrap_cluster_creator_admin_permissions: self.bootstrap_cluster_creator_admin_permissions,
-            authentication_mode: self.authentication_mode,
+            bootstrap_cluster_creator_admin_permissions: self.bootstrap_cluster_creator_admin_permissions
+            ,
+            authentication_mode: self.authentication_mode
+            ,
         }
     }
 }
+

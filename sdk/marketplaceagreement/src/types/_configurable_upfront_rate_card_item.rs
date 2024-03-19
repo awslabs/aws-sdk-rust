@@ -3,28 +3,29 @@
 /// <p>Within the prepaid payment model defined under <code>ConfigurableUpfrontPricingTerm</code>, the <code>RateCardItem</code> defines all the various rate cards (including pricing and dimensions) that have been proposed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfigurableUpfrontRateCardItem {
+pub struct ConfigurableUpfrontRateCardItem  {
     /// <p>Differentiates between the mutually exclusive rate cards in the same pricing term to be selected by the buyer.</p>
     pub selector: ::std::option::Option<crate::types::Selector>,
     /// <p>Defines limits on how the term can be configured by acceptors.</p>
     pub constraints: ::std::option::Option<crate::types::Constraints>,
     /// <p>Defines the per unit rates for product dimensions.</p>
-    pub rate_card: ::std::option::Option<::std::vec::Vec<crate::types::RateCardItem>>,
+    pub rate_card: ::std::option::Option<::std::vec::Vec::<crate::types::RateCardItem>>,
 }
-impl ConfigurableUpfrontRateCardItem {
+impl  ConfigurableUpfrontRateCardItem  {
     /// <p>Differentiates between the mutually exclusive rate cards in the same pricing term to be selected by the buyer.</p>
-    pub fn selector(&self) -> ::std::option::Option<&crate::types::Selector> {
+    pub fn selector(&self) -> ::std::option::Option<& crate::types::Selector> {
         self.selector.as_ref()
     }
     /// <p>Defines limits on how the term can be configured by acceptors.</p>
-    pub fn constraints(&self) -> ::std::option::Option<&crate::types::Constraints> {
+    pub fn constraints(&self) -> ::std::option::Option<& crate::types::Constraints> {
         self.constraints.as_ref()
     }
     /// <p>Defines the per unit rates for product dimensions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rate_card.is_none()`.
-    pub fn rate_card(&self) -> &[crate::types::RateCardItem] {
-        self.rate_card.as_deref().unwrap_or_default()
+    pub fn rate_card(&self) -> & [crate::types::RateCardItem] {
+        self.rate_card.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ConfigurableUpfrontRateCardItem {
@@ -40,7 +41,7 @@ impl ConfigurableUpfrontRateCardItem {
 pub struct ConfigurableUpfrontRateCardItemBuilder {
     pub(crate) selector: ::std::option::Option<crate::types::Selector>,
     pub(crate) constraints: ::std::option::Option<crate::types::Constraints>,
-    pub(crate) rate_card: ::std::option::Option<::std::vec::Vec<crate::types::RateCardItem>>,
+    pub(crate) rate_card: ::std::option::Option<::std::vec::Vec::<crate::types::RateCardItem>>,
 }
 impl ConfigurableUpfrontRateCardItemBuilder {
     /// <p>Differentiates between the mutually exclusive rate cards in the same pricing term to be selected by the buyer.</p>
@@ -50,8 +51,7 @@ impl ConfigurableUpfrontRateCardItemBuilder {
     }
     /// <p>Differentiates between the mutually exclusive rate cards in the same pricing term to be selected by the buyer.</p>
     pub fn set_selector(mut self, input: ::std::option::Option<crate::types::Selector>) -> Self {
-        self.selector = input;
-        self
+        self.selector = input; self
     }
     /// <p>Differentiates between the mutually exclusive rate cards in the same pricing term to be selected by the buyer.</p>
     pub fn get_selector(&self) -> &::std::option::Option<crate::types::Selector> {
@@ -64,8 +64,7 @@ impl ConfigurableUpfrontRateCardItemBuilder {
     }
     /// <p>Defines limits on how the term can be configured by acceptors.</p>
     pub fn set_constraints(mut self, input: ::std::option::Option<crate::types::Constraints>) -> Self {
-        self.constraints = input;
-        self
+        self.constraints = input; self
     }
     /// <p>Defines limits on how the term can be configured by acceptors.</p>
     pub fn get_constraints(&self) -> &::std::option::Option<crate::types::Constraints> {
@@ -78,25 +77,28 @@ impl ConfigurableUpfrontRateCardItemBuilder {
     /// <p>Defines the per unit rates for product dimensions.</p>
     pub fn rate_card(mut self, input: crate::types::RateCardItem) -> Self {
         let mut v = self.rate_card.unwrap_or_default();
-        v.push(input);
-        self.rate_card = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rate_card = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Defines the per unit rates for product dimensions.</p>
-    pub fn set_rate_card(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RateCardItem>>) -> Self {
-        self.rate_card = input;
-        self
+    pub fn set_rate_card(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RateCardItem>>) -> Self {
+        self.rate_card = input; self
     }
     /// <p>Defines the per unit rates for product dimensions.</p>
-    pub fn get_rate_card(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RateCardItem>> {
+    pub fn get_rate_card(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RateCardItem>> {
         &self.rate_card
     }
     /// Consumes the builder and constructs a [`ConfigurableUpfrontRateCardItem`](crate::types::ConfigurableUpfrontRateCardItem).
     pub fn build(self) -> crate::types::ConfigurableUpfrontRateCardItem {
         crate::types::ConfigurableUpfrontRateCardItem {
-            selector: self.selector,
-            constraints: self.constraints,
-            rate_card: self.rate_card,
+            selector: self.selector
+            ,
+            constraints: self.constraints
+            ,
+            rate_card: self.rate_card
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCampaignVersionInput {
+pub struct GetCampaignVersionInput  {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the campaign.</p>
@@ -10,17 +10,17 @@ pub struct GetCampaignVersionInput {
     /// <p>The unique version number (Version property) for the campaign version.</p>
     pub version: ::std::option::Option<::std::string::String>,
 }
-impl GetCampaignVersionInput {
+impl  GetCampaignVersionInput  {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The unique identifier for the campaign.</p>
-    pub fn campaign_id(&self) -> ::std::option::Option<&str> {
+    pub fn campaign_id(&self) -> ::std::option::Option<& str> {
         self.campaign_id.as_deref()
     }
     /// <p>The unique version number (Version property) for the campaign version.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl GetCampaignVersionInputBuilder {
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl GetCampaignVersionInputBuilder {
     }
     /// <p>The unique identifier for the campaign.</p>
     pub fn set_campaign_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.campaign_id = input;
-        self
+        self.campaign_id = input; self
     }
     /// <p>The unique identifier for the campaign.</p>
     pub fn get_campaign_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,22 +76,24 @@ impl GetCampaignVersionInputBuilder {
     }
     /// <p>The unique version number (Version property) for the campaign version.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The unique version number (Version property) for the campaign version.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.version
     }
     /// Consumes the builder and constructs a [`GetCampaignVersionInput`](crate::operation::get_campaign_version::GetCampaignVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_campaign_version::GetCampaignVersionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_campaign_version::GetCampaignVersionInput {
-            application_id: self.application_id,
-            campaign_id: self.campaign_id,
-            version: self.version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_campaign_version::GetCampaignVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_campaign_version::GetCampaignVersionInput {
+                application_id: self.application_id
+                ,
+                campaign_id: self.campaign_id
+                ,
+                version: self.version
+                ,
+            }
+        )
     }
 }
+

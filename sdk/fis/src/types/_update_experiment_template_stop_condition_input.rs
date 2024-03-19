@@ -3,20 +3,19 @@
 /// <p>Specifies a stop condition for an experiment. You can define a stop condition as a CloudWatch alarm.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateExperimentTemplateStopConditionInput {
+pub struct UpdateExperimentTemplateStopConditionInput  {
     /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop condition.</p>
     pub source: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl UpdateExperimentTemplateStopConditionInput {
+impl  UpdateExperimentTemplateStopConditionInput  {
     /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop condition.</p>
-    pub fn source(&self) -> &str {
-        use std::ops::Deref;
-        self.source.deref()
+    pub fn source(&self) -> & str {
+        use std::ops::Deref; self.source.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl UpdateExperimentTemplateStopConditionInputBuilder {
     }
     /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop condition.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop condition.</p>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl UpdateExperimentTemplateStopConditionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,17 +64,18 @@ impl UpdateExperimentTemplateStopConditionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateExperimentTemplateStopConditionInput`](crate::types::UpdateExperimentTemplateStopConditionInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`source`](crate::types::builders::UpdateExperimentTemplateStopConditionInputBuilder::source)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::UpdateExperimentTemplateStopConditionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UpdateExperimentTemplateStopConditionInput {
-            source: self.source.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source",
-                    "source was not specified but it is required when building UpdateExperimentTemplateStopConditionInput",
-                )
-            })?,
-            value: self.value,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::UpdateExperimentTemplateStopConditionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::UpdateExperimentTemplateStopConditionInput {
+                source: self.source
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source", "source was not specified but it is required when building UpdateExperimentTemplateStopConditionInput")
+                    )?
+                ,
+                value: self.value
+                ,
+            }
+        )
     }
 }
+

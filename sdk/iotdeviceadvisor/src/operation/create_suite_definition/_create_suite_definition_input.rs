@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSuiteDefinitionInput {
+pub struct CreateSuiteDefinitionInput  {
     /// <p>Creates a Device Advisor test suite with suite definition configuration.</p>
     pub suite_definition_configuration: ::std::option::Option<crate::types::SuiteDefinitionConfiguration>,
     /// <p>The tags to be attached to the suite definition.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateSuiteDefinitionInput {
+impl  CreateSuiteDefinitionInput  {
     /// <p>Creates a Device Advisor test suite with suite definition configuration.</p>
-    pub fn suite_definition_configuration(&self) -> ::std::option::Option<&crate::types::SuiteDefinitionConfiguration> {
+    pub fn suite_definition_configuration(&self) -> ::std::option::Option<& crate::types::SuiteDefinitionConfiguration> {
         self.suite_definition_configuration.as_ref()
     }
     /// <p>The tags to be attached to the suite definition.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -30,7 +30,7 @@ impl CreateSuiteDefinitionInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSuiteDefinitionInputBuilder {
     pub(crate) suite_definition_configuration: ::std::option::Option<crate::types::SuiteDefinitionConfiguration>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateSuiteDefinitionInputBuilder {
     /// <p>Creates a Device Advisor test suite with suite definition configuration.</p>
@@ -41,8 +41,7 @@ impl CreateSuiteDefinitionInputBuilder {
     }
     /// <p>Creates a Device Advisor test suite with suite definition configuration.</p>
     pub fn set_suite_definition_configuration(mut self, input: ::std::option::Option<crate::types::SuiteDefinitionConfiguration>) -> Self {
-        self.suite_definition_configuration = input;
-        self
+        self.suite_definition_configuration = input; self
     }
     /// <p>Creates a Device Advisor test suite with suite definition configuration.</p>
     pub fn get_suite_definition_configuration(&self) -> &::std::option::Option<crate::types::SuiteDefinitionConfiguration> {
@@ -55,27 +54,28 @@ impl CreateSuiteDefinitionInputBuilder {
     /// <p>The tags to be attached to the suite definition.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags to be attached to the suite definition.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to be attached to the suite definition.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSuiteDefinitionInput`](crate::operation::create_suite_definition::CreateSuiteDefinitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_suite_definition::CreateSuiteDefinitionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_suite_definition::CreateSuiteDefinitionInput {
-            suite_definition_configuration: self.suite_definition_configuration,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_suite_definition::CreateSuiteDefinitionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_suite_definition::CreateSuiteDefinitionInput {
+                suite_definition_configuration: self.suite_definition_configuration
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

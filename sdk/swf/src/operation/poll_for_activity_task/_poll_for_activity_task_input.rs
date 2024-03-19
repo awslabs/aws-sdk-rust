@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PollForActivityTaskInput {
+pub struct PollForActivityTaskInput  {
     /// <p>The name of the domain that contains the task lists being polled.</p>
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the task list to poll for activity tasks.</p>
@@ -11,18 +11,18 @@ pub struct PollForActivityTaskInput {
     /// <p>Identity of the worker making the request, recorded in the <code>ActivityTaskStarted</code> event in the workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</p>
     pub identity: ::std::option::Option<::std::string::String>,
 }
-impl PollForActivityTaskInput {
+impl  PollForActivityTaskInput  {
     /// <p>The name of the domain that contains the task lists being polled.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>Specifies the task list to poll for activity tasks.</p>
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
-    pub fn task_list(&self) -> ::std::option::Option<&crate::types::TaskList> {
+    pub fn task_list(&self) -> ::std::option::Option<& crate::types::TaskList> {
         self.task_list.as_ref()
     }
     /// <p>Identity of the worker making the request, recorded in the <code>ActivityTaskStarted</code> event in the workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</p>
-    pub fn identity(&self) -> ::std::option::Option<&str> {
+    pub fn identity(&self) -> ::std::option::Option<& str> {
         self.identity.as_deref()
     }
 }
@@ -50,8 +50,7 @@ impl PollForActivityTaskInputBuilder {
     }
     /// <p>The name of the domain that contains the task lists being polled.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The name of the domain that contains the task lists being polled.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +66,7 @@ impl PollForActivityTaskInputBuilder {
     /// <p>Specifies the task list to poll for activity tasks.</p>
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
     pub fn set_task_list(mut self, input: ::std::option::Option<crate::types::TaskList>) -> Self {
-        self.task_list = input;
-        self
+        self.task_list = input; self
     }
     /// <p>Specifies the task list to poll for activity tasks.</p>
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
@@ -82,22 +80,24 @@ impl PollForActivityTaskInputBuilder {
     }
     /// <p>Identity of the worker making the request, recorded in the <code>ActivityTaskStarted</code> event in the workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</p>
     pub fn set_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity = input;
-        self
+        self.identity = input; self
     }
     /// <p>Identity of the worker making the request, recorded in the <code>ActivityTaskStarted</code> event in the workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</p>
     pub fn get_identity(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity
     }
     /// Consumes the builder and constructs a [`PollForActivityTaskInput`](crate::operation::poll_for_activity_task::PollForActivityTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::poll_for_activity_task::PollForActivityTaskInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::poll_for_activity_task::PollForActivityTaskInput {
-            domain: self.domain,
-            task_list: self.task_list,
-            identity: self.identity,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::poll_for_activity_task::PollForActivityTaskInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::poll_for_activity_task::PollForActivityTaskInput {
+                domain: self.domain
+                ,
+                task_list: self.task_list
+                ,
+                identity: self.identity
+                ,
+            }
+        )
     }
 }
+

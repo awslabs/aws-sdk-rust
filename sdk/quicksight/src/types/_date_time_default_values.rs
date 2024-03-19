@@ -3,27 +3,28 @@
 /// <p>The default values of the <code>DateTimeParameterDeclaration</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DateTimeDefaultValues {
+pub struct DateTimeDefaultValues  {
     /// <p>The dynamic value of the <code>DataTimeDefaultValues</code>. Different defaults are displayed according to users, groups, and values mapping.</p>
     pub dynamic_value: ::std::option::Option<crate::types::DynamicDefaultValue>,
     /// <p>The static values of the <code>DataTimeDefaultValues</code>.</p>
-    pub static_values: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
+    pub static_values: ::std::option::Option<::std::vec::Vec::<::aws_smithy_types::DateTime>>,
     /// <p>The rolling date of the <code>DataTimeDefaultValues</code>. The date is determined from the dataset based on input expression.</p>
     pub rolling_date: ::std::option::Option<crate::types::RollingDateConfiguration>,
 }
-impl DateTimeDefaultValues {
+impl  DateTimeDefaultValues  {
     /// <p>The dynamic value of the <code>DataTimeDefaultValues</code>. Different defaults are displayed according to users, groups, and values mapping.</p>
-    pub fn dynamic_value(&self) -> ::std::option::Option<&crate::types::DynamicDefaultValue> {
+    pub fn dynamic_value(&self) -> ::std::option::Option<& crate::types::DynamicDefaultValue> {
         self.dynamic_value.as_ref()
     }
     /// <p>The static values of the <code>DataTimeDefaultValues</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.static_values.is_none()`.
-    pub fn static_values(&self) -> &[::aws_smithy_types::DateTime] {
-        self.static_values.as_deref().unwrap_or_default()
+    pub fn static_values(&self) -> & [::aws_smithy_types::DateTime] {
+        self.static_values.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The rolling date of the <code>DataTimeDefaultValues</code>. The date is determined from the dataset based on input expression.</p>
-    pub fn rolling_date(&self) -> ::std::option::Option<&crate::types::RollingDateConfiguration> {
+    pub fn rolling_date(&self) -> ::std::option::Option<& crate::types::RollingDateConfiguration> {
         self.rolling_date.as_ref()
     }
 }
@@ -39,7 +40,7 @@ impl DateTimeDefaultValues {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DateTimeDefaultValuesBuilder {
     pub(crate) dynamic_value: ::std::option::Option<crate::types::DynamicDefaultValue>,
-    pub(crate) static_values: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
+    pub(crate) static_values: ::std::option::Option<::std::vec::Vec::<::aws_smithy_types::DateTime>>,
     pub(crate) rolling_date: ::std::option::Option<crate::types::RollingDateConfiguration>,
 }
 impl DateTimeDefaultValuesBuilder {
@@ -50,8 +51,7 @@ impl DateTimeDefaultValuesBuilder {
     }
     /// <p>The dynamic value of the <code>DataTimeDefaultValues</code>. Different defaults are displayed according to users, groups, and values mapping.</p>
     pub fn set_dynamic_value(mut self, input: ::std::option::Option<crate::types::DynamicDefaultValue>) -> Self {
-        self.dynamic_value = input;
-        self
+        self.dynamic_value = input; self
     }
     /// <p>The dynamic value of the <code>DataTimeDefaultValues</code>. Different defaults are displayed according to users, groups, and values mapping.</p>
     pub fn get_dynamic_value(&self) -> &::std::option::Option<crate::types::DynamicDefaultValue> {
@@ -64,17 +64,16 @@ impl DateTimeDefaultValuesBuilder {
     /// <p>The static values of the <code>DataTimeDefaultValues</code>.</p>
     pub fn static_values(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         let mut v = self.static_values.unwrap_or_default();
-        v.push(input);
-        self.static_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.static_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The static values of the <code>DataTimeDefaultValues</code>.</p>
-    pub fn set_static_values(mut self, input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>) -> Self {
-        self.static_values = input;
-        self
+    pub fn set_static_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::aws_smithy_types::DateTime>>) -> Self {
+        self.static_values = input; self
     }
     /// <p>The static values of the <code>DataTimeDefaultValues</code>.</p>
-    pub fn get_static_values(&self) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
+    pub fn get_static_values(&self) -> &::std::option::Option<::std::vec::Vec::<::aws_smithy_types::DateTime>> {
         &self.static_values
     }
     /// <p>The rolling date of the <code>DataTimeDefaultValues</code>. The date is determined from the dataset based on input expression.</p>
@@ -84,8 +83,7 @@ impl DateTimeDefaultValuesBuilder {
     }
     /// <p>The rolling date of the <code>DataTimeDefaultValues</code>. The date is determined from the dataset based on input expression.</p>
     pub fn set_rolling_date(mut self, input: ::std::option::Option<crate::types::RollingDateConfiguration>) -> Self {
-        self.rolling_date = input;
-        self
+        self.rolling_date = input; self
     }
     /// <p>The rolling date of the <code>DataTimeDefaultValues</code>. The date is determined from the dataset based on input expression.</p>
     pub fn get_rolling_date(&self) -> &::std::option::Option<crate::types::RollingDateConfiguration> {
@@ -94,9 +92,13 @@ impl DateTimeDefaultValuesBuilder {
     /// Consumes the builder and constructs a [`DateTimeDefaultValues`](crate::types::DateTimeDefaultValues).
     pub fn build(self) -> crate::types::DateTimeDefaultValues {
         crate::types::DateTimeDefaultValues {
-            dynamic_value: self.dynamic_value,
-            static_values: self.static_values,
-            rolling_date: self.rolling_date,
+            dynamic_value: self.dynamic_value
+            ,
+            static_values: self.static_values
+            ,
+            rolling_date: self.rolling_date
+            ,
         }
     }
 }
+

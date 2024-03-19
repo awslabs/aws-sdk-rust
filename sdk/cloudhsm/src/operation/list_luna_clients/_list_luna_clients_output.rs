@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLunaClientsOutput {
+pub struct ListLunaClientsOutput  {
     /// <p>The list of clients.</p>
-    pub client_list: ::std::vec::Vec<::std::string::String>,
+    pub client_list: ::std::vec::Vec::<::std::string::String>,
     /// <p>If not null, more results are available. Pass this to <code>ListLunaClients</code> to retrieve the next set of items.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListLunaClientsOutput {
+impl  ListLunaClientsOutput  {
     /// <p>The list of clients.</p>
-    pub fn client_list(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.client_list.deref()
+    pub fn client_list(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.client_list.deref()
     }
     /// <p>If not null, more results are available. Pass this to <code>ListLunaClients</code> to retrieve the next set of items.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListLunaClientsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListLunaClientsOutput {
     /// Creates a new builder-style object to manufacture [`ListLunaClientsOutput`](crate::operation::list_luna_clients::ListLunaClientsOutput).
     pub fn builder() -> crate::operation::list_luna_clients::builders::ListLunaClientsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListLunaClientsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLunaClientsOutputBuilder {
-    pub(crate) client_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) client_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListLunaClientsOutputBuilder {
     /// <p>The list of clients.</p>
     pub fn client_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.client_list.unwrap_or_default();
-        v.push(input.into());
-        self.client_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.client_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of clients.</p>
-    pub fn set_client_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.client_list = input;
-        self
+    pub fn set_client_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.client_list = input; self
     }
     /// <p>The list of clients.</p>
-    pub fn get_client_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_client_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.client_list
     }
     /// <p>If not null, more results are available. Pass this to <code>ListLunaClients</code> to retrieve the next set of items.</p>
@@ -68,37 +66,37 @@ impl ListLunaClientsOutputBuilder {
     }
     /// <p>If not null, more results are available. Pass this to <code>ListLunaClients</code> to retrieve the next set of items.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If not null, more results are available. Pass this to <code>ListLunaClients</code> to retrieve the next set of items.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListLunaClientsOutput`](crate::operation::list_luna_clients::ListLunaClientsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`client_list`](crate::operation::list_luna_clients::builders::ListLunaClientsOutputBuilder::client_list)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_luna_clients::ListLunaClientsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_luna_clients::ListLunaClientsOutput {
-            client_list: self.client_list.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "client_list",
-                    "client_list was not specified but it is required when building ListLunaClientsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_luna_clients::ListLunaClientsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_luna_clients::ListLunaClientsOutput {
+                client_list: self.client_list
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("client_list", "client_list was not specified but it is required when building ListLunaClientsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

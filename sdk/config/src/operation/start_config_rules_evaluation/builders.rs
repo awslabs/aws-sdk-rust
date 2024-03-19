@@ -5,23 +5,20 @@ pub use crate::operation::start_config_rules_evaluation::_start_config_rules_eva
 
 impl StartConfigRulesEvaluationInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.start_config_rules_evaluation();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.start_config_rules_evaluation();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `StartConfigRulesEvaluation`.
-///
+/// 
 /// <p>Runs an on-demand evaluation for the specified Config rules against the last known configuration state of the resources. Use <code>StartConfigRulesEvaluation</code> when you want to test that a rule you updated is working as expected. <code>StartConfigRulesEvaluation</code> does not re-record the latest configuration state for your resources. It re-runs an evaluation against the last known state of your resources.</p>
 /// <p>You can specify up to 25 Config rules per request.</p>
 /// <p>An existing <code>StartConfigRulesEvaluation</code> call for the specified rules must complete before you can call the API again. If you chose to have Config stream to an Amazon SNS topic, you will receive a <code>ConfigRuleEvaluationStarted</code> notification when the evaluation starts.</p><note>
@@ -43,33 +40,32 @@ impl StartConfigRulesEvaluationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartConfigRulesEvaluationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::start_config_rules_evaluation::builders::StartConfigRulesEvaluationInputBuilder,
+                    inner: crate::operation::start_config_rules_evaluation::builders::StartConfigRulesEvaluationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationOutput,
-        crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationError,
-    > for StartConfigRulesEvaluationFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationOutput,
-            crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationOutput,
+                    crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationError,
+                > for StartConfigRulesEvaluationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationOutput,
+                        crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl StartConfigRulesEvaluationFluentBuilder {
     /// Creates a new `StartConfigRulesEvaluation`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -78,53 +74,44 @@ impl StartConfigRulesEvaluationFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluation::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluation::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationOutput,
-        crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluation::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluation::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationOutput, crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `ConfigRuleNames`.
     ///
     /// To override the contents of this collection use [`set_config_rule_names`](Self::set_config_rule_names).
@@ -135,12 +122,13 @@ impl StartConfigRulesEvaluationFluentBuilder {
         self
     }
     /// <p>The list of names of Config rules that you want to run evaluations for.</p>
-    pub fn set_config_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_config_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_config_rule_names(input);
         self
     }
     /// <p>The list of names of Config rules that you want to run evaluations for.</p>
-    pub fn get_config_rule_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_config_rule_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_config_rule_names()
     }
 }
+

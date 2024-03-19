@@ -4,19 +4,19 @@
 #[deprecated(note = "RawString and String revision type are deprecated, use AppSpecContent type instead.")]
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RawString {
+pub struct RawString  {
     /// <p>The YAML-formatted or JSON-formatted revision string. It includes information about which Lambda function to update and optional Lambda functions that validate deployment lifecycle events.</p>
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>The SHA256 hash value of the revision content.</p>
     pub sha256: ::std::option::Option<::std::string::String>,
 }
-impl RawString {
+impl  RawString  {
     /// <p>The YAML-formatted or JSON-formatted revision string. It includes information about which Lambda function to update and optional Lambda functions that validate deployment lifecycle events.</p>
-    pub fn content(&self) -> ::std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<& str> {
         self.content.as_deref()
     }
     /// <p>The SHA256 hash value of the revision content.</p>
-    pub fn sha256(&self) -> ::std::option::Option<&str> {
+    pub fn sha256(&self) -> ::std::option::Option<& str> {
         self.sha256.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl RawStringBuilder {
     }
     /// <p>The YAML-formatted or JSON-formatted revision string. It includes information about which Lambda function to update and optional Lambda functions that validate deployment lifecycle events.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>The YAML-formatted or JSON-formatted revision string. It includes information about which Lambda function to update and optional Lambda functions that validate deployment lifecycle events.</p>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl RawStringBuilder {
     }
     /// <p>The SHA256 hash value of the revision content.</p>
     pub fn set_sha256(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sha256 = input;
-        self
+        self.sha256 = input; self
     }
     /// <p>The SHA256 hash value of the revision content.</p>
     pub fn get_sha256(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,11 @@ impl RawStringBuilder {
     /// Consumes the builder and constructs a [`RawString`](crate::types::RawString).
     pub fn build(self) -> crate::types::RawString {
         crate::types::RawString {
-            content: self.content,
-            sha256: self.sha256,
+            content: self.content
+            ,
+            sha256: self.sha256
+            ,
         }
     }
 }
+

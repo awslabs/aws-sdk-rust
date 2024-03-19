@@ -21,11 +21,7 @@ impl AnalysisSource {
     /// Tries to convert the enum instance into [`Text`](crate::types::AnalysisSource::Text), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_text(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let AnalysisSource::Text(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AnalysisSource::Text(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Text`](crate::types::AnalysisSource::Text).
     pub fn is_text(&self) -> bool {
@@ -37,7 +33,8 @@ impl AnalysisSource {
     }
 }
 impl ::std::fmt::Debug for AnalysisSource {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        ::std::write!(f, "*** Sensitive Data Redacted ***")
-    }
-}
+                fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+                    ::std::write!(f, "*** Sensitive Data Redacted ***")
+                }
+            }
+

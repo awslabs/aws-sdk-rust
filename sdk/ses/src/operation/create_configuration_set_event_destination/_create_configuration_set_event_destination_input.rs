@@ -3,19 +3,19 @@
 /// <p>Represents a request to create a configuration set event destination. A configuration set event destination, which can be either Amazon CloudWatch or Amazon Kinesis Firehose, describes an Amazon Web Services service in which Amazon SES publishes the email sending events associated with a configuration set. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateConfigurationSetEventDestinationInput {
+pub struct CreateConfigurationSetEventDestinationInput  {
     /// <p>The name of the configuration set that the event destination should be associated with.</p>
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>An object that describes the Amazon Web Services service that email sending event where information is published.</p>
     pub event_destination: ::std::option::Option<crate::types::EventDestination>,
 }
-impl CreateConfigurationSetEventDestinationInput {
+impl  CreateConfigurationSetEventDestinationInput  {
     /// <p>The name of the configuration set that the event destination should be associated with.</p>
-    pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> ::std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>An object that describes the Amazon Web Services service that email sending event where information is published.</p>
-    pub fn event_destination(&self) -> ::std::option::Option<&crate::types::EventDestination> {
+    pub fn event_destination(&self) -> ::std::option::Option<& crate::types::EventDestination> {
         self.event_destination.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl CreateConfigurationSetEventDestinationInputBuilder {
     }
     /// <p>The name of the configuration set that the event destination should be associated with.</p>
     pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_set_name = input;
-        self
+        self.configuration_set_name = input; self
     }
     /// <p>The name of the configuration set that the event destination should be associated with.</p>
     pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,25 +56,22 @@ impl CreateConfigurationSetEventDestinationInputBuilder {
     }
     /// <p>An object that describes the Amazon Web Services service that email sending event where information is published.</p>
     pub fn set_event_destination(mut self, input: ::std::option::Option<crate::types::EventDestination>) -> Self {
-        self.event_destination = input;
-        self
+        self.event_destination = input; self
     }
     /// <p>An object that describes the Amazon Web Services service that email sending event where information is published.</p>
     pub fn get_event_destination(&self) -> &::std::option::Option<crate::types::EventDestination> {
         &self.event_destination
     }
     /// Consumes the builder and constructs a [`CreateConfigurationSetEventDestinationInput`](crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationInput {
-                configuration_set_name: self.configuration_set_name,
-                event_destination: self.event_destination,
-            },
+                configuration_set_name: self.configuration_set_name
+                ,
+                event_destination: self.event_destination
+                ,
+            }
         )
     }
 }
+

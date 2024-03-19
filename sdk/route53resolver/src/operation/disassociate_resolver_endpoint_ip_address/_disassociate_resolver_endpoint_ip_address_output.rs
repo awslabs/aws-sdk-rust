@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateResolverEndpointIpAddressOutput {
+pub struct DisassociateResolverEndpointIpAddressOutput  {
     /// <p>The response to an <code>DisassociateResolverEndpointIpAddress</code> request.</p>
     pub resolver_endpoint: ::std::option::Option<crate::types::ResolverEndpoint>,
     _request_id: Option<String>,
 }
-impl DisassociateResolverEndpointIpAddressOutput {
+impl  DisassociateResolverEndpointIpAddressOutput  {
     /// <p>The response to an <code>DisassociateResolverEndpointIpAddress</code> request.</p>
-    pub fn resolver_endpoint(&self) -> ::std::option::Option<&crate::types::ResolverEndpoint> {
+    pub fn resolver_endpoint(&self) -> ::std::option::Option<& crate::types::ResolverEndpoint> {
         self.resolver_endpoint.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DisassociateResolverEndpointIpAddressOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DisassociateResolverEndpointIpAddressOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateResolverEndpointIpAddressOutput`](crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressOutput).
     pub fn builder() -> crate::operation::disassociate_resolver_endpoint_ip_address::builders::DisassociateResolverEndpointIpAddressOutputBuilder {
@@ -40,27 +40,28 @@ impl DisassociateResolverEndpointIpAddressOutputBuilder {
     }
     /// <p>The response to an <code>DisassociateResolverEndpointIpAddress</code> request.</p>
     pub fn set_resolver_endpoint(mut self, input: ::std::option::Option<crate::types::ResolverEndpoint>) -> Self {
-        self.resolver_endpoint = input;
-        self
+        self.resolver_endpoint = input; self
     }
     /// <p>The response to an <code>DisassociateResolverEndpointIpAddress</code> request.</p>
     pub fn get_resolver_endpoint(&self) -> &::std::option::Option<crate::types::ResolverEndpoint> {
         &self.resolver_endpoint
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DisassociateResolverEndpointIpAddressOutput`](crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressOutput).
     pub fn build(self) -> crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressOutput {
         crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressOutput {
-            resolver_endpoint: self.resolver_endpoint,
+            resolver_endpoint: self.resolver_endpoint
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

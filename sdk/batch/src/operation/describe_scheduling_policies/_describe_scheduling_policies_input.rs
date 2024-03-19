@@ -3,16 +3,17 @@
 /// <p>Contains the parameters for <code>DescribeSchedulingPolicies</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSchedulingPoliciesInput {
+pub struct DescribeSchedulingPoliciesInput  {
     /// <p>A list of up to 100 scheduling policy Amazon Resource Name (ARN) entries.</p>
-    pub arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DescribeSchedulingPoliciesInput {
+impl  DescribeSchedulingPoliciesInput  {
     /// <p>A list of up to 100 scheduling policy Amazon Resource Name (ARN) entries.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.arns.is_none()`.
-    pub fn arns(&self) -> &[::std::string::String] {
-        self.arns.as_deref().unwrap_or_default()
+    pub fn arns(&self) -> & [::std::string::String] {
+        self.arns.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeSchedulingPoliciesInput {
@@ -26,7 +27,7 @@ impl DescribeSchedulingPoliciesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSchedulingPoliciesInputBuilder {
-    pub(crate) arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DescribeSchedulingPoliciesInputBuilder {
     /// Appends an item to `arns`.
@@ -36,26 +37,26 @@ impl DescribeSchedulingPoliciesInputBuilder {
     /// <p>A list of up to 100 scheduling policy Amazon Resource Name (ARN) entries.</p>
     pub fn arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.arns.unwrap_or_default();
-        v.push(input.into());
-        self.arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of up to 100 scheduling policy Amazon Resource Name (ARN) entries.</p>
-    pub fn set_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.arns = input;
-        self
+    pub fn set_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.arns = input; self
     }
     /// <p>A list of up to 100 scheduling policy Amazon Resource Name (ARN) entries.</p>
-    pub fn get_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.arns
     }
     /// Consumes the builder and constructs a [`DescribeSchedulingPoliciesInput`](crate::operation::describe_scheduling_policies::DescribeSchedulingPoliciesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_scheduling_policies::DescribeSchedulingPoliciesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_scheduling_policies::DescribeSchedulingPoliciesInput { arns: self.arns })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_scheduling_policies::DescribeSchedulingPoliciesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_scheduling_policies::DescribeSchedulingPoliciesInput {
+                arns: self.arns
+                ,
+            }
+        )
     }
 }
+

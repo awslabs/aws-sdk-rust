@@ -21,11 +21,7 @@ impl ScalingPolicy {
     /// Tries to convert the enum instance into [`TargetTracking`](crate::types::ScalingPolicy::TargetTracking), extracting the inner [`TargetTrackingScalingPolicyConfiguration`](crate::types::TargetTrackingScalingPolicyConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_target_tracking(&self) -> ::std::result::Result<&crate::types::TargetTrackingScalingPolicyConfiguration, &Self> {
-        if let ScalingPolicy::TargetTracking(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ScalingPolicy::TargetTracking(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`TargetTracking`](crate::types::ScalingPolicy::TargetTracking).
     pub fn is_target_tracking(&self) -> bool {
@@ -36,3 +32,4 @@ impl ScalingPolicy {
         matches!(self, Self::Unknown)
     }
 }
+

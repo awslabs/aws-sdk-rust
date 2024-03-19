@@ -3,25 +3,23 @@
 /// <p>Mathematical expression and a list of attribute items specified in that expression.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AttributeDetails {
+pub struct AttributeDetails  {
     /// <p>A list of attribute items specified in the mathematical expression.</p>
-    pub attributes: ::std::vec::Vec<crate::types::AttributeItem>,
+    pub attributes: ::std::vec::Vec::<crate::types::AttributeItem>,
     /// <p>Mathematical expression that is performed on attribute items provided in the attribute list. Each element in the expression should follow the structure of \"{ObjectTypeName.AttributeName}\".</p>
     pub expression: ::std::string::String,
 }
-impl AttributeDetails {
+impl  AttributeDetails  {
     /// <p>A list of attribute items specified in the mathematical expression.</p>
-    pub fn attributes(&self) -> &[crate::types::AttributeItem] {
-        use std::ops::Deref;
-        self.attributes.deref()
+    pub fn attributes(&self) -> & [crate::types::AttributeItem] {
+        use std::ops::Deref; self.attributes.deref()
     }
     /// <p>Mathematical expression that is performed on attribute items provided in the attribute list. Each element in the expression should follow the structure of \"{ObjectTypeName.AttributeName}\".</p>
-    pub fn expression(&self) -> &str {
-        use std::ops::Deref;
-        self.expression.deref()
+    pub fn expression(&self) -> & str {
+        use std::ops::Deref; self.expression.deref()
     }
 }
-impl ::std::fmt::Debug for AttributeDetails {
+impl  ::std::fmt::Debug for AttributeDetails  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AttributeDetails");
         formatter.field("attributes", &"*** Sensitive Data Redacted ***");
@@ -40,7 +38,7 @@ impl AttributeDetails {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AttributeDetailsBuilder {
-    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeItem>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeItem>>,
     pub(crate) expression: ::std::option::Option<::std::string::String>,
 }
 impl AttributeDetailsBuilder {
@@ -51,17 +49,16 @@ impl AttributeDetailsBuilder {
     /// <p>A list of attribute items specified in the mathematical expression.</p>
     pub fn attributes(mut self, input: crate::types::AttributeItem) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of attribute items specified in the mathematical expression.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeItem>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeItem>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>A list of attribute items specified in the mathematical expression.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeItem>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AttributeItem>> {
         &self.attributes
     }
     /// <p>Mathematical expression that is performed on attribute items provided in the attribute list. Each element in the expression should follow the structure of \"{ObjectTypeName.AttributeName}\".</p>
@@ -72,8 +69,7 @@ impl AttributeDetailsBuilder {
     }
     /// <p>Mathematical expression that is performed on attribute items provided in the attribute list. Each element in the expression should follow the structure of \"{ObjectTypeName.AttributeName}\".</p>
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expression = input;
-        self
+        self.expression = input; self
     }
     /// <p>Mathematical expression that is performed on attribute items provided in the attribute list. Each element in the expression should follow the structure of \"{ObjectTypeName.AttributeName}\".</p>
     pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,20 +80,20 @@ impl AttributeDetailsBuilder {
     /// - [`attributes`](crate::types::builders::AttributeDetailsBuilder::attributes)
     /// - [`expression`](crate::types::builders::AttributeDetailsBuilder::expression)
     pub fn build(self) -> ::std::result::Result<crate::types::AttributeDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AttributeDetails {
-            attributes: self.attributes.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attributes",
-                    "attributes was not specified but it is required when building AttributeDetails",
-                )
-            })?,
-            expression: self.expression.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "expression",
-                    "expression was not specified but it is required when building AttributeDetails",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AttributeDetails {
+                attributes: self.attributes
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attributes", "attributes was not specified but it is required when building AttributeDetails")
+                    )?
+                ,
+                expression: self.expression
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("expression", "expression was not specified but it is required when building AttributeDetails")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for AttributeDetailsBuilder {
@@ -108,3 +104,4 @@ impl ::std::fmt::Debug for AttributeDetailsBuilder {
         formatter.finish()
     }
 }
+

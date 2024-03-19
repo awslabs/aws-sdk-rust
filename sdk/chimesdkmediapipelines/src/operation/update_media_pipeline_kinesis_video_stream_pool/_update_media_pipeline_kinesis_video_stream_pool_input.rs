@@ -2,26 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateMediaPipelineKinesisVideoStreamPoolInput {
+pub struct UpdateMediaPipelineKinesisVideoStreamPoolInput  {
     /// <p>The ID of the video stream pool.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The configuration settings for the video stream.</p>
     pub stream_configuration: ::std::option::Option<crate::types::KinesisVideoStreamConfigurationUpdate>,
 }
-impl UpdateMediaPipelineKinesisVideoStreamPoolInput {
+impl  UpdateMediaPipelineKinesisVideoStreamPoolInput  {
     /// <p>The ID of the video stream pool.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>The configuration settings for the video stream.</p>
-    pub fn stream_configuration(&self) -> ::std::option::Option<&crate::types::KinesisVideoStreamConfigurationUpdate> {
+    pub fn stream_configuration(&self) -> ::std::option::Option<& crate::types::KinesisVideoStreamConfigurationUpdate> {
         self.stream_configuration.as_ref()
     }
 }
 impl UpdateMediaPipelineKinesisVideoStreamPoolInput {
     /// Creates a new builder-style object to manufacture [`UpdateMediaPipelineKinesisVideoStreamPoolInput`](crate::operation::update_media_pipeline_kinesis_video_stream_pool::UpdateMediaPipelineKinesisVideoStreamPoolInput).
-    pub fn builder(
-    ) -> crate::operation::update_media_pipeline_kinesis_video_stream_pool::builders::UpdateMediaPipelineKinesisVideoStreamPoolInputBuilder {
+    pub fn builder() -> crate::operation::update_media_pipeline_kinesis_video_stream_pool::builders::UpdateMediaPipelineKinesisVideoStreamPoolInputBuilder {
         crate::operation::update_media_pipeline_kinesis_video_stream_pool::builders::UpdateMediaPipelineKinesisVideoStreamPoolInputBuilder::default()
     }
 }
@@ -42,8 +41,7 @@ impl UpdateMediaPipelineKinesisVideoStreamPoolInputBuilder {
     }
     /// <p>The ID of the video stream pool.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The ID of the video stream pool.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +54,22 @@ impl UpdateMediaPipelineKinesisVideoStreamPoolInputBuilder {
     }
     /// <p>The configuration settings for the video stream.</p>
     pub fn set_stream_configuration(mut self, input: ::std::option::Option<crate::types::KinesisVideoStreamConfigurationUpdate>) -> Self {
-        self.stream_configuration = input;
-        self
+        self.stream_configuration = input; self
     }
     /// <p>The configuration settings for the video stream.</p>
     pub fn get_stream_configuration(&self) -> &::std::option::Option<crate::types::KinesisVideoStreamConfigurationUpdate> {
         &self.stream_configuration
     }
     /// Consumes the builder and constructs a [`UpdateMediaPipelineKinesisVideoStreamPoolInput`](crate::operation::update_media_pipeline_kinesis_video_stream_pool::UpdateMediaPipelineKinesisVideoStreamPoolInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_media_pipeline_kinesis_video_stream_pool::UpdateMediaPipelineKinesisVideoStreamPoolInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_media_pipeline_kinesis_video_stream_pool::UpdateMediaPipelineKinesisVideoStreamPoolInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_media_pipeline_kinesis_video_stream_pool::UpdateMediaPipelineKinesisVideoStreamPoolInput {
-                identifier: self.identifier,
-                stream_configuration: self.stream_configuration,
-            },
+                identifier: self.identifier
+                ,
+                stream_configuration: self.stream_configuration
+                ,
+            }
         )
     }
 }
+

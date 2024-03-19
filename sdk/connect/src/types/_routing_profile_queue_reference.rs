@@ -3,20 +3,19 @@
 /// <p>Contains the channel and queue identifier for a routing profile.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RoutingProfileQueueReference {
+pub struct RoutingProfileQueueReference  {
     /// <p>The identifier for the queue.</p>
     pub queue_id: ::std::string::String,
     /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
     pub channel: crate::types::Channel,
 }
-impl RoutingProfileQueueReference {
+impl  RoutingProfileQueueReference  {
     /// <p>The identifier for the queue.</p>
-    pub fn queue_id(&self) -> &str {
-        use std::ops::Deref;
-        self.queue_id.deref()
+    pub fn queue_id(&self) -> & str {
+        use std::ops::Deref; self.queue_id.deref()
     }
     /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
-    pub fn channel(&self) -> &crate::types::Channel {
+    pub fn channel(&self) -> & crate::types::Channel {
         &self.channel
     }
 }
@@ -43,8 +42,7 @@ impl RoutingProfileQueueReferenceBuilder {
     }
     /// <p>The identifier for the queue.</p>
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.queue_id = input;
-        self
+        self.queue_id = input; self
     }
     /// <p>The identifier for the queue.</p>
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl RoutingProfileQueueReferenceBuilder {
     }
     /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
     pub fn set_channel(mut self, input: ::std::option::Option<crate::types::Channel>) -> Self {
-        self.channel = input;
-        self
+        self.channel = input; self
     }
     /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
     pub fn get_channel(&self) -> &::std::option::Option<crate::types::Channel> {
@@ -70,19 +67,20 @@ impl RoutingProfileQueueReferenceBuilder {
     /// - [`queue_id`](crate::types::builders::RoutingProfileQueueReferenceBuilder::queue_id)
     /// - [`channel`](crate::types::builders::RoutingProfileQueueReferenceBuilder::channel)
     pub fn build(self) -> ::std::result::Result<crate::types::RoutingProfileQueueReference, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RoutingProfileQueueReference {
-            queue_id: self.queue_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "queue_id",
-                    "queue_id was not specified but it is required when building RoutingProfileQueueReference",
-                )
-            })?,
-            channel: self.channel.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "channel",
-                    "channel was not specified but it is required when building RoutingProfileQueueReference",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RoutingProfileQueueReference {
+                queue_id: self.queue_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("queue_id", "queue_id was not specified but it is required when building RoutingProfileQueueReference")
+                    )?
+                ,
+                channel: self.channel
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("channel", "channel was not specified but it is required when building RoutingProfileQueueReference")
+                    )?
+                ,
+            }
+        )
     }
 }
+

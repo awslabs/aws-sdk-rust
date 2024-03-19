@@ -3,7 +3,7 @@
 /// <p>The user has reached their resource quota.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServiceQuotaExceededException {
+pub struct ServiceQuotaExceededException  {
     /// <p>Description of the error.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Identifier of the resource affected.</p>
@@ -16,35 +16,33 @@ pub struct ServiceQuotaExceededException {
     pub service_code: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl ServiceQuotaExceededException {
+impl  ServiceQuotaExceededException  {
     /// <p>Identifier of the resource affected.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>Type of the resource affected.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>Service Quotas requirement to identify originating quota.</p>
-    pub fn quota_code(&self) -> ::std::option::Option<&str> {
+    pub fn quota_code(&self) -> ::std::option::Option<& str> {
         self.quota_code.as_deref()
     }
     /// <p>Service Quotas requirement to identify originating service.</p>
-    pub fn service_code(&self) -> ::std::option::Option<&str> {
+    pub fn service_code(&self) -> ::std::option::Option<& str> {
         self.service_code.as_deref()
     }
 }
 impl ServiceQuotaExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for ServiceQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ServiceQuotaExceededException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -59,9 +57,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::ServiceQuotaExc
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ServiceQuotaExceededException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl ServiceQuotaExceededException {
     /// Creates a new builder-style object to manufacture [`ServiceQuotaExceededException`](crate::types::error::ServiceQuotaExceededException).
@@ -90,8 +86,7 @@ impl ServiceQuotaExceededExceptionBuilder {
     }
     /// <p>Description of the error.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Description of the error.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +99,7 @@ impl ServiceQuotaExceededExceptionBuilder {
     }
     /// <p>Identifier of the resource affected.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>Identifier of the resource affected.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +112,7 @@ impl ServiceQuotaExceededExceptionBuilder {
     }
     /// <p>Type of the resource affected.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>Type of the resource affected.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +126,7 @@ impl ServiceQuotaExceededExceptionBuilder {
     }
     /// <p>Service Quotas requirement to identify originating quota.</p>
     pub fn set_quota_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.quota_code = input;
-        self
+        self.quota_code = input; self
     }
     /// <p>Service Quotas requirement to identify originating quota.</p>
     pub fn get_quota_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,33 +140,38 @@ impl ServiceQuotaExceededExceptionBuilder {
     }
     /// <p>Service Quotas requirement to identify originating service.</p>
     pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_code = input;
-        self
+        self.service_code = input; self
     }
     /// <p>Service Quotas requirement to identify originating service.</p>
     pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_code
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`ServiceQuotaExceededException`](crate::types::error::ServiceQuotaExceededException).
     pub fn build(self) -> crate::types::error::ServiceQuotaExceededException {
         crate::types::error::ServiceQuotaExceededException {
-            message: self.message,
-            resource_id: self.resource_id,
-            resource_type: self.resource_type,
-            quota_code: self.quota_code,
-            service_code: self.service_code,
+            message: self.message
+            ,
+            resource_id: self.resource_id
+            ,
+            resource_type: self.resource_type
+            ,
+            quota_code: self.quota_code
+            ,
+            service_code: self.service_code
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

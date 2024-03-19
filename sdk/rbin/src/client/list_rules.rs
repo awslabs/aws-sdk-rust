@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListRules`](crate::operation::list_rules::builders::ListRulesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_rules::builders::ListRulesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
     ///   - [`resource_type(ResourceType)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::set_resource_type):<br>required: **true**<br><p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To list retention rules that retain snapshots, specify <code>EBS_SNAPSHOT</code>. To list retention rules that retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p><br>
     ///   - [`resource_tags(ResourceTag)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::resource_tags) / [`set_resource_tags(Option<Vec::<ResourceTag>>)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::set_resource_tags):<br>required: **false**<br><p>Information about the resource tags used to identify resources that are retained by the retention rule.</p><br>
     ///   - [`lock_state(LockState)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::lock_state) / [`set_lock_state(Option<LockState>)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::set_lock_state):<br>required: **false**<br><p>The lock state of the retention rules to list. Only retention rules with the specified lock state are returned.</p><br>
-    /// - On success, responds with [`ListRulesOutput`](crate::operation::list_rules::ListRulesOutput) with field(s):
+                            /// - On success, responds with [`ListRulesOutput`](crate::operation::list_rules::ListRulesOutput) with field(s):
     ///   - [`rules(Option<Vec::<RuleSummary>>)`](crate::operation::list_rules::ListRulesOutput::rules): <p>Information about the retention rules.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_rules::ListRulesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<ListRulesError>`](crate::operation::list_rules::ListRulesError)
+                            /// - On failure, responds with [`SdkError<ListRulesError>`](crate::operation::list_rules::ListRulesError)
     pub fn list_rules(&self) -> crate::operation::list_rules::builders::ListRulesFluentBuilder {
-        crate::operation::list_rules::builders::ListRulesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_rules::builders::ListRulesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

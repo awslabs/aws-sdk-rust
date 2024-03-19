@@ -3,21 +3,21 @@
 /// <p>The input for the DetachPrincipalPolicy operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetachPrincipalPolicyInput {
+pub struct DetachPrincipalPolicyInput  {
     /// <p>The name of the policy to detach.</p>
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The principal.</p>
     /// <p>Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
     pub principal: ::std::option::Option<::std::string::String>,
 }
-impl DetachPrincipalPolicyInput {
+impl  DetachPrincipalPolicyInput  {
     /// <p>The name of the policy to detach.</p>
-    pub fn policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<& str> {
         self.policy_name.as_deref()
     }
     /// <p>The principal.</p>
     /// <p>Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
-    pub fn principal(&self) -> ::std::option::Option<&str> {
+    pub fn principal(&self) -> ::std::option::Option<& str> {
         self.principal.as_deref()
     }
 }
@@ -44,8 +44,7 @@ impl DetachPrincipalPolicyInputBuilder {
     }
     /// <p>The name of the policy to detach.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// <p>The name of the policy to detach.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl DetachPrincipalPolicyInputBuilder {
     /// <p>The principal.</p>
     /// <p>Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
     pub fn set_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal = input;
-        self
+        self.principal = input; self
     }
     /// <p>The principal.</p>
     /// <p>Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
@@ -70,13 +68,15 @@ impl DetachPrincipalPolicyInputBuilder {
         &self.principal
     }
     /// Consumes the builder and constructs a [`DetachPrincipalPolicyInput`](crate::operation::detach_principal_policy::DetachPrincipalPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::detach_principal_policy::DetachPrincipalPolicyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::detach_principal_policy::DetachPrincipalPolicyInput {
-            policy_name: self.policy_name,
-            principal: self.principal,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::detach_principal_policy::DetachPrincipalPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::detach_principal_policy::DetachPrincipalPolicyInput {
+                policy_name: self.policy_name
+                ,
+                principal: self.principal
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>This contains metadata about a restore testing selection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct RestoreTestingSelectionForGet {
+pub struct RestoreTestingSelectionForGet  {
     /// <p>The date and time that a restore testing selection was created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 201812:11:30.087 AM.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>This identifies the request and allows failed requests to be retried without the risk of running the operation twice. If the request includes a <code>CreatorRequestId</code> that matches an existing backup plan, that plan is returned. This parameter is optional.</p>
@@ -12,14 +12,14 @@ pub struct RestoreTestingSelectionForGet {
     /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for example:<code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub iam_role_arn: ::std::string::String,
     /// <p>You can include specific ARNs, such as <code>ProtectedResourceArns: ["arn:aws:...", "arn:aws:..."]</code> or you can include a wildcard: <code>ProtectedResourceArns: ["*"]</code>, but not both.</p>
-    pub protected_resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub protected_resource_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>In a resource testing selection, this parameter filters by specific conditions such as <code>StringEquals</code> or <code>StringNotEquals</code>.</p>
     pub protected_resource_conditions: ::std::option::Option<crate::types::ProtectedResourceConditions>,
     /// <p>The type of Amazon Web Services resource included in a resource testing selection; for example, an Amazon EBS volume or an Amazon RDS database.</p>
     pub protected_resource_type: ::std::string::String,
     /// <p>You can override certain restore metadata keys by including the parameter <code>RestoreMetadataOverrides</code> in the body of <code>RestoreTestingSelection</code>. Key values are not case sensitive.</p>
     /// <p>See the complete list of <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restore-testing-inferred-metadata.html">restore testing inferred metadata</a>.</p>
-    pub restore_metadata_overrides: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub restore_metadata_overrides: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The RestoreTestingPlanName is a unique string that is the name of the restore testing plan.</p>
     pub restore_testing_plan_name: ::std::string::String,
     /// <p>This is the unique name of the restore testing selection that belongs to the related restore testing plan.</p>
@@ -27,57 +27,54 @@ pub struct RestoreTestingSelectionForGet {
     /// <p>This is amount of hours (1 to 168) available to run a validation script on the data. The data will be deleted upon the completion of the validation script or the end of the specified retention period, whichever comes first.</p>
     pub validation_window_hours: i32,
 }
-impl RestoreTestingSelectionForGet {
+impl  RestoreTestingSelectionForGet  {
     /// <p>The date and time that a restore testing selection was created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 201812:11:30.087 AM.</p>
-    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_time
     }
     /// <p>This identifies the request and allows failed requests to be retried without the risk of running the operation twice. If the request includes a <code>CreatorRequestId</code> that matches an existing backup plan, that plan is returned. This parameter is optional.</p>
     /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
-    pub fn creator_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn creator_request_id(&self) -> ::std::option::Option<& str> {
         self.creator_request_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for example:<code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
-    pub fn iam_role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.iam_role_arn.deref()
+    pub fn iam_role_arn(&self) -> & str {
+        use std::ops::Deref; self.iam_role_arn.deref()
     }
     /// <p>You can include specific ARNs, such as <code>ProtectedResourceArns: ["arn:aws:...", "arn:aws:..."]</code> or you can include a wildcard: <code>ProtectedResourceArns: ["*"]</code>, but not both.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protected_resource_arns.is_none()`.
-    pub fn protected_resource_arns(&self) -> &[::std::string::String] {
-        self.protected_resource_arns.as_deref().unwrap_or_default()
+    pub fn protected_resource_arns(&self) -> & [::std::string::String] {
+        self.protected_resource_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>In a resource testing selection, this parameter filters by specific conditions such as <code>StringEquals</code> or <code>StringNotEquals</code>.</p>
-    pub fn protected_resource_conditions(&self) -> ::std::option::Option<&crate::types::ProtectedResourceConditions> {
+    pub fn protected_resource_conditions(&self) -> ::std::option::Option<& crate::types::ProtectedResourceConditions> {
         self.protected_resource_conditions.as_ref()
     }
     /// <p>The type of Amazon Web Services resource included in a resource testing selection; for example, an Amazon EBS volume or an Amazon RDS database.</p>
-    pub fn protected_resource_type(&self) -> &str {
-        use std::ops::Deref;
-        self.protected_resource_type.deref()
+    pub fn protected_resource_type(&self) -> & str {
+        use std::ops::Deref; self.protected_resource_type.deref()
     }
     /// <p>You can override certain restore metadata keys by including the parameter <code>RestoreMetadataOverrides</code> in the body of <code>RestoreTestingSelection</code>. Key values are not case sensitive.</p>
     /// <p>See the complete list of <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restore-testing-inferred-metadata.html">restore testing inferred metadata</a>.</p>
-    pub fn restore_metadata_overrides(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn restore_metadata_overrides(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.restore_metadata_overrides.as_ref()
     }
     /// <p>The RestoreTestingPlanName is a unique string that is the name of the restore testing plan.</p>
-    pub fn restore_testing_plan_name(&self) -> &str {
-        use std::ops::Deref;
-        self.restore_testing_plan_name.deref()
+    pub fn restore_testing_plan_name(&self) -> & str {
+        use std::ops::Deref; self.restore_testing_plan_name.deref()
     }
     /// <p>This is the unique name of the restore testing selection that belongs to the related restore testing plan.</p>
-    pub fn restore_testing_selection_name(&self) -> &str {
-        use std::ops::Deref;
-        self.restore_testing_selection_name.deref()
+    pub fn restore_testing_selection_name(&self) -> & str {
+        use std::ops::Deref; self.restore_testing_selection_name.deref()
     }
     /// <p>This is amount of hours (1 to 168) available to run a validation script on the data. The data will be deleted upon the completion of the validation script or the end of the specified retention period, whichever comes first.</p>
     pub fn validation_window_hours(&self) -> i32 {
         self.validation_window_hours
     }
 }
-impl ::std::fmt::Debug for RestoreTestingSelectionForGet {
+impl  ::std::fmt::Debug for RestoreTestingSelectionForGet  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RestoreTestingSelectionForGet");
         formatter.field("creation_time", &self.creation_time);
@@ -107,10 +104,10 @@ pub struct RestoreTestingSelectionForGetBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) creator_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) iam_role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) protected_resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) protected_resource_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) protected_resource_conditions: ::std::option::Option<crate::types::ProtectedResourceConditions>,
     pub(crate) protected_resource_type: ::std::option::Option<::std::string::String>,
-    pub(crate) restore_metadata_overrides: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) restore_metadata_overrides: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) restore_testing_plan_name: ::std::option::Option<::std::string::String>,
     pub(crate) restore_testing_selection_name: ::std::option::Option<::std::string::String>,
     pub(crate) validation_window_hours: ::std::option::Option<i32>,
@@ -124,8 +121,7 @@ impl RestoreTestingSelectionForGetBuilder {
     }
     /// <p>The date and time that a restore testing selection was created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 201812:11:30.087 AM.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The date and time that a restore testing selection was created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 201812:11:30.087 AM.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -140,8 +136,7 @@ impl RestoreTestingSelectionForGetBuilder {
     /// <p>This identifies the request and allows failed requests to be retried without the risk of running the operation twice. If the request includes a <code>CreatorRequestId</code> that matches an existing backup plan, that plan is returned. This parameter is optional.</p>
     /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creator_request_id = input;
-        self
+        self.creator_request_id = input; self
     }
     /// <p>This identifies the request and allows failed requests to be retried without the risk of running the operation twice. If the request includes a <code>CreatorRequestId</code> that matches an existing backup plan, that plan is returned. This parameter is optional.</p>
     /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
@@ -156,8 +151,7 @@ impl RestoreTestingSelectionForGetBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for example:<code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_role_arn = input;
-        self
+        self.iam_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for example:<code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,17 +164,16 @@ impl RestoreTestingSelectionForGetBuilder {
     /// <p>You can include specific ARNs, such as <code>ProtectedResourceArns: ["arn:aws:...", "arn:aws:..."]</code> or you can include a wildcard: <code>ProtectedResourceArns: ["*"]</code>, but not both.</p>
     pub fn protected_resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.protected_resource_arns.unwrap_or_default();
-        v.push(input.into());
-        self.protected_resource_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.protected_resource_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>You can include specific ARNs, such as <code>ProtectedResourceArns: ["arn:aws:...", "arn:aws:..."]</code> or you can include a wildcard: <code>ProtectedResourceArns: ["*"]</code>, but not both.</p>
-    pub fn set_protected_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.protected_resource_arns = input;
-        self
+    pub fn set_protected_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.protected_resource_arns = input; self
     }
     /// <p>You can include specific ARNs, such as <code>ProtectedResourceArns: ["arn:aws:...", "arn:aws:..."]</code> or you can include a wildcard: <code>ProtectedResourceArns: ["*"]</code>, but not both.</p>
-    pub fn get_protected_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_protected_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.protected_resource_arns
     }
     /// <p>In a resource testing selection, this parameter filters by specific conditions such as <code>StringEquals</code> or <code>StringNotEquals</code>.</p>
@@ -190,8 +183,7 @@ impl RestoreTestingSelectionForGetBuilder {
     }
     /// <p>In a resource testing selection, this parameter filters by specific conditions such as <code>StringEquals</code> or <code>StringNotEquals</code>.</p>
     pub fn set_protected_resource_conditions(mut self, input: ::std::option::Option<crate::types::ProtectedResourceConditions>) -> Self {
-        self.protected_resource_conditions = input;
-        self
+        self.protected_resource_conditions = input; self
     }
     /// <p>In a resource testing selection, this parameter filters by specific conditions such as <code>StringEquals</code> or <code>StringNotEquals</code>.</p>
     pub fn get_protected_resource_conditions(&self) -> &::std::option::Option<crate::types::ProtectedResourceConditions> {
@@ -205,8 +197,7 @@ impl RestoreTestingSelectionForGetBuilder {
     }
     /// <p>The type of Amazon Web Services resource included in a resource testing selection; for example, an Amazon EBS volume or an Amazon RDS database.</p>
     pub fn set_protected_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.protected_resource_type = input;
-        self
+        self.protected_resource_type = input; self
     }
     /// <p>The type of Amazon Web Services resource included in a resource testing selection; for example, an Amazon EBS volume or an Amazon RDS database.</p>
     pub fn get_protected_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -218,30 +209,20 @@ impl RestoreTestingSelectionForGetBuilder {
     ///
     /// <p>You can override certain restore metadata keys by including the parameter <code>RestoreMetadataOverrides</code> in the body of <code>RestoreTestingSelection</code>. Key values are not case sensitive.</p>
     /// <p>See the complete list of <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restore-testing-inferred-metadata.html">restore testing inferred metadata</a>.</p>
-    pub fn restore_metadata_overrides(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn restore_metadata_overrides(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.restore_metadata_overrides.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.restore_metadata_overrides = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.restore_metadata_overrides = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>You can override certain restore metadata keys by including the parameter <code>RestoreMetadataOverrides</code> in the body of <code>RestoreTestingSelection</code>. Key values are not case sensitive.</p>
     /// <p>See the complete list of <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restore-testing-inferred-metadata.html">restore testing inferred metadata</a>.</p>
-    pub fn set_restore_metadata_overrides(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.restore_metadata_overrides = input;
-        self
+    pub fn set_restore_metadata_overrides(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.restore_metadata_overrides = input; self
     }
     /// <p>You can override certain restore metadata keys by including the parameter <code>RestoreMetadataOverrides</code> in the body of <code>RestoreTestingSelection</code>. Key values are not case sensitive.</p>
     /// <p>See the complete list of <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restore-testing-inferred-metadata.html">restore testing inferred metadata</a>.</p>
-    pub fn get_restore_metadata_overrides(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_restore_metadata_overrides(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.restore_metadata_overrides
     }
     /// <p>The RestoreTestingPlanName is a unique string that is the name of the restore testing plan.</p>
@@ -252,8 +233,7 @@ impl RestoreTestingSelectionForGetBuilder {
     }
     /// <p>The RestoreTestingPlanName is a unique string that is the name of the restore testing plan.</p>
     pub fn set_restore_testing_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.restore_testing_plan_name = input;
-        self
+        self.restore_testing_plan_name = input; self
     }
     /// <p>The RestoreTestingPlanName is a unique string that is the name of the restore testing plan.</p>
     pub fn get_restore_testing_plan_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -267,8 +247,7 @@ impl RestoreTestingSelectionForGetBuilder {
     }
     /// <p>This is the unique name of the restore testing selection that belongs to the related restore testing plan.</p>
     pub fn set_restore_testing_selection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.restore_testing_selection_name = input;
-        self
+        self.restore_testing_selection_name = input; self
     }
     /// <p>This is the unique name of the restore testing selection that belongs to the related restore testing plan.</p>
     pub fn get_restore_testing_selection_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -281,8 +260,7 @@ impl RestoreTestingSelectionForGetBuilder {
     }
     /// <p>This is amount of hours (1 to 168) available to run a validation script on the data. The data will be deleted upon the completion of the validation script or the end of the specified retention period, whichever comes first.</p>
     pub fn set_validation_window_hours(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.validation_window_hours = input;
-        self
+        self.validation_window_hours = input; self
     }
     /// <p>This is amount of hours (1 to 168) available to run a validation script on the data. The data will be deleted upon the completion of the validation script or the end of the specified retention period, whichever comes first.</p>
     pub fn get_validation_window_hours(&self) -> &::std::option::Option<i32> {
@@ -296,43 +274,46 @@ impl RestoreTestingSelectionForGetBuilder {
     /// - [`restore_testing_plan_name`](crate::types::builders::RestoreTestingSelectionForGetBuilder::restore_testing_plan_name)
     /// - [`restore_testing_selection_name`](crate::types::builders::RestoreTestingSelectionForGetBuilder::restore_testing_selection_name)
     pub fn build(self) -> ::std::result::Result<crate::types::RestoreTestingSelectionForGet, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RestoreTestingSelectionForGet {
-            creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_time",
-                    "creation_time was not specified but it is required when building RestoreTestingSelectionForGet",
-                )
-            })?,
-            creator_request_id: self.creator_request_id,
-            iam_role_arn: self.iam_role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "iam_role_arn",
-                    "iam_role_arn was not specified but it is required when building RestoreTestingSelectionForGet",
-                )
-            })?,
-            protected_resource_arns: self.protected_resource_arns,
-            protected_resource_conditions: self.protected_resource_conditions,
-            protected_resource_type: self.protected_resource_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "protected_resource_type",
-                    "protected_resource_type was not specified but it is required when building RestoreTestingSelectionForGet",
-                )
-            })?,
-            restore_metadata_overrides: self.restore_metadata_overrides,
-            restore_testing_plan_name: self.restore_testing_plan_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "restore_testing_plan_name",
-                    "restore_testing_plan_name was not specified but it is required when building RestoreTestingSelectionForGet",
-                )
-            })?,
-            restore_testing_selection_name: self.restore_testing_selection_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "restore_testing_selection_name",
-                    "restore_testing_selection_name was not specified but it is required when building RestoreTestingSelectionForGet",
-                )
-            })?,
-            validation_window_hours: self.validation_window_hours.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::RestoreTestingSelectionForGet {
+                creation_time: self.creation_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_time", "creation_time was not specified but it is required when building RestoreTestingSelectionForGet")
+                    )?
+                ,
+                creator_request_id: self.creator_request_id
+                ,
+                iam_role_arn: self.iam_role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("iam_role_arn", "iam_role_arn was not specified but it is required when building RestoreTestingSelectionForGet")
+                    )?
+                ,
+                protected_resource_arns: self.protected_resource_arns
+                ,
+                protected_resource_conditions: self.protected_resource_conditions
+                ,
+                protected_resource_type: self.protected_resource_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("protected_resource_type", "protected_resource_type was not specified but it is required when building RestoreTestingSelectionForGet")
+                    )?
+                ,
+                restore_metadata_overrides: self.restore_metadata_overrides
+                ,
+                restore_testing_plan_name: self.restore_testing_plan_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("restore_testing_plan_name", "restore_testing_plan_name was not specified but it is required when building RestoreTestingSelectionForGet")
+                    )?
+                ,
+                restore_testing_selection_name: self.restore_testing_selection_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("restore_testing_selection_name", "restore_testing_selection_name was not specified but it is required when building RestoreTestingSelectionForGet")
+                    )?
+                ,
+                validation_window_hours: self.validation_window_hours
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for RestoreTestingSelectionForGetBuilder {
@@ -351,3 +332,4 @@ impl ::std::fmt::Debug for RestoreTestingSelectionForGetBuilder {
         formatter.finish()
     }
 }
+

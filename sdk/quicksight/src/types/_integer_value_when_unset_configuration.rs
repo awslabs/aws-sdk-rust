@@ -4,7 +4,7 @@
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct IntegerValueWhenUnsetConfiguration {
+pub struct IntegerValueWhenUnsetConfiguration  {
     /// <p>The built-in options for default values. The value can be one of the following:</p>
     /// <ul>
     /// <li>
@@ -16,7 +16,7 @@ pub struct IntegerValueWhenUnsetConfiguration {
     /// <p>A custom value that's used when the value of a parameter isn't set.</p>
     pub custom_value: ::std::option::Option<i64>,
 }
-impl IntegerValueWhenUnsetConfiguration {
+impl  IntegerValueWhenUnsetConfiguration  {
     /// <p>The built-in options for default values. The value can be one of the following:</p>
     /// <ul>
     /// <li>
@@ -24,7 +24,7 @@ impl IntegerValueWhenUnsetConfiguration {
     /// <li>
     /// <p><code>NULL</code>: The <code>NULL</code> value.</p></li>
     /// </ul>
-    pub fn value_when_unset_option(&self) -> ::std::option::Option<&crate::types::ValueWhenUnsetOption> {
+    pub fn value_when_unset_option(&self) -> ::std::option::Option<& crate::types::ValueWhenUnsetOption> {
         self.value_when_unset_option.as_ref()
     }
     /// <p>A custom value that's used when the value of a parameter isn't set.</p>
@@ -32,7 +32,7 @@ impl IntegerValueWhenUnsetConfiguration {
         self.custom_value
     }
 }
-impl ::std::fmt::Debug for IntegerValueWhenUnsetConfiguration {
+impl  ::std::fmt::Debug for IntegerValueWhenUnsetConfiguration  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("IntegerValueWhenUnsetConfiguration");
         formatter.field("value_when_unset_option", &self.value_when_unset_option);
@@ -74,8 +74,7 @@ impl IntegerValueWhenUnsetConfigurationBuilder {
     /// <p><code>NULL</code>: The <code>NULL</code> value.</p></li>
     /// </ul>
     pub fn set_value_when_unset_option(mut self, input: ::std::option::Option<crate::types::ValueWhenUnsetOption>) -> Self {
-        self.value_when_unset_option = input;
-        self
+        self.value_when_unset_option = input; self
     }
     /// <p>The built-in options for default values. The value can be one of the following:</p>
     /// <ul>
@@ -94,8 +93,7 @@ impl IntegerValueWhenUnsetConfigurationBuilder {
     }
     /// <p>A custom value that's used when the value of a parameter isn't set.</p>
     pub fn set_custom_value(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.custom_value = input;
-        self
+        self.custom_value = input; self
     }
     /// <p>A custom value that's used when the value of a parameter isn't set.</p>
     pub fn get_custom_value(&self) -> &::std::option::Option<i64> {
@@ -104,8 +102,10 @@ impl IntegerValueWhenUnsetConfigurationBuilder {
     /// Consumes the builder and constructs a [`IntegerValueWhenUnsetConfiguration`](crate::types::IntegerValueWhenUnsetConfiguration).
     pub fn build(self) -> crate::types::IntegerValueWhenUnsetConfiguration {
         crate::types::IntegerValueWhenUnsetConfiguration {
-            value_when_unset_option: self.value_when_unset_option,
-            custom_value: self.custom_value,
+            value_when_unset_option: self.value_when_unset_option
+            ,
+            custom_value: self.custom_value
+            ,
         }
     }
 }
@@ -117,3 +117,4 @@ impl ::std::fmt::Debug for IntegerValueWhenUnsetConfigurationBuilder {
         formatter.finish()
     }
 }
+

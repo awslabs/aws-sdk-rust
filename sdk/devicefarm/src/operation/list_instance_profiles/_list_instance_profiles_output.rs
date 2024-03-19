@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListInstanceProfilesOutput {
+pub struct ListInstanceProfilesOutput  {
     /// <p>An object that contains information about your instance profiles.</p>
-    pub instance_profiles: ::std::option::Option<::std::vec::Vec<crate::types::InstanceProfile>>,
+    pub instance_profiles: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceProfile>>,
     /// <p>An identifier that can be used in the next call to this operation to return the next set of items in the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListInstanceProfilesOutput {
+impl  ListInstanceProfilesOutput  {
     /// <p>An object that contains information about your instance profiles.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_profiles.is_none()`.
-    pub fn instance_profiles(&self) -> &[crate::types::InstanceProfile] {
-        self.instance_profiles.as_deref().unwrap_or_default()
+    pub fn instance_profiles(&self) -> & [crate::types::InstanceProfile] {
+        self.instance_profiles.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An identifier that can be used in the next call to this operation to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListInstanceProfilesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListInstanceProfilesOutput {
     /// Creates a new builder-style object to manufacture [`ListInstanceProfilesOutput`](crate::operation::list_instance_profiles::ListInstanceProfilesOutput).
     pub fn builder() -> crate::operation::list_instance_profiles::builders::ListInstanceProfilesOutputBuilder {
@@ -37,7 +38,7 @@ impl ListInstanceProfilesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInstanceProfilesOutputBuilder {
-    pub(crate) instance_profiles: ::std::option::Option<::std::vec::Vec<crate::types::InstanceProfile>>,
+    pub(crate) instance_profiles: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceProfile>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListInstanceProfilesOutputBuilder {
     /// <p>An object that contains information about your instance profiles.</p>
     pub fn instance_profiles(mut self, input: crate::types::InstanceProfile) -> Self {
         let mut v = self.instance_profiles.unwrap_or_default();
-        v.push(input);
-        self.instance_profiles = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.instance_profiles = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An object that contains information about your instance profiles.</p>
-    pub fn set_instance_profiles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceProfile>>) -> Self {
-        self.instance_profiles = input;
-        self
+    pub fn set_instance_profiles(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceProfile>>) -> Self {
+        self.instance_profiles = input; self
     }
     /// <p>An object that contains information about your instance profiles.</p>
-    pub fn get_instance_profiles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceProfile>> {
+    pub fn get_instance_profiles(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InstanceProfile>> {
         &self.instance_profiles
     }
     /// <p>An identifier that can be used in the next call to this operation to return the next set of items in the list.</p>
@@ -69,28 +69,30 @@ impl ListInstanceProfilesOutputBuilder {
     }
     /// <p>An identifier that can be used in the next call to this operation to return the next set of items in the list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An identifier that can be used in the next call to this operation to return the next set of items in the list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListInstanceProfilesOutput`](crate::operation::list_instance_profiles::ListInstanceProfilesOutput).
     pub fn build(self) -> crate::operation::list_instance_profiles::ListInstanceProfilesOutput {
         crate::operation::list_instance_profiles::ListInstanceProfilesOutput {
-            instance_profiles: self.instance_profiles,
-            next_token: self.next_token,
+            instance_profiles: self.instance_profiles
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

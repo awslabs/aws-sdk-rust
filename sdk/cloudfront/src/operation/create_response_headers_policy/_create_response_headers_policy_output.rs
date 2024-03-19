@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateResponseHeadersPolicyOutput {
+pub struct CreateResponseHeadersPolicyOutput  {
     /// <p>Contains a response headers policy.</p>
     pub response_headers_policy: ::std::option::Option<crate::types::ResponseHeadersPolicy>,
     /// <p>The URL of the response headers policy.</p>
@@ -11,25 +11,25 @@ pub struct CreateResponseHeadersPolicyOutput {
     pub e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateResponseHeadersPolicyOutput {
+impl  CreateResponseHeadersPolicyOutput  {
     /// <p>Contains a response headers policy.</p>
-    pub fn response_headers_policy(&self) -> ::std::option::Option<&crate::types::ResponseHeadersPolicy> {
+    pub fn response_headers_policy(&self) -> ::std::option::Option<& crate::types::ResponseHeadersPolicy> {
         self.response_headers_policy.as_ref()
     }
     /// <p>The URL of the response headers policy.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The version identifier for the current version of the response headers policy.</p>
-    pub fn e_tag(&self) -> ::std::option::Option<&str> {
+    pub fn e_tag(&self) -> ::std::option::Option<& str> {
         self.e_tag.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateResponseHeadersPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateResponseHeadersPolicyOutput {
     /// Creates a new builder-style object to manufacture [`CreateResponseHeadersPolicyOutput`](crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyOutput).
     pub fn builder() -> crate::operation::create_response_headers_policy::builders::CreateResponseHeadersPolicyOutputBuilder {
@@ -54,8 +54,7 @@ impl CreateResponseHeadersPolicyOutputBuilder {
     }
     /// <p>Contains a response headers policy.</p>
     pub fn set_response_headers_policy(mut self, input: ::std::option::Option<crate::types::ResponseHeadersPolicy>) -> Self {
-        self.response_headers_policy = input;
-        self
+        self.response_headers_policy = input; self
     }
     /// <p>Contains a response headers policy.</p>
     pub fn get_response_headers_policy(&self) -> &::std::option::Option<crate::types::ResponseHeadersPolicy> {
@@ -68,8 +67,7 @@ impl CreateResponseHeadersPolicyOutputBuilder {
     }
     /// <p>The URL of the response headers policy.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The URL of the response headers policy.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl CreateResponseHeadersPolicyOutputBuilder {
     }
     /// <p>The version identifier for the current version of the response headers policy.</p>
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.e_tag = input;
-        self
+        self.e_tag = input; self
     }
     /// <p>The version identifier for the current version of the response headers policy.</p>
     pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
         &self.e_tag
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateResponseHeadersPolicyOutput`](crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyOutput).
     pub fn build(self) -> crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyOutput {
         crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyOutput {
-            response_headers_policy: self.response_headers_policy,
-            location: self.location,
-            e_tag: self.e_tag,
+            response_headers_policy: self.response_headers_policy
+            ,
+            location: self.location
+            ,
+            e_tag: self.e_tag
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

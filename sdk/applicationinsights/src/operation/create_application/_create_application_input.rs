@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateApplicationInput {
+pub struct CreateApplicationInput  {
     /// <p>The name of the resource group.</p>
     pub resource_group_name: ::std::option::Option<::std::string::String>,
     /// <p>When set to <code>true</code>, creates opsItems for any problems detected on an application.</p>
@@ -12,7 +12,7 @@ pub struct CreateApplicationInput {
     /// <p>The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
     pub ops_item_sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>List of tags to add to the application. tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Indicates whether Application Insights automatically configures unmonitored resources in the resource group.</p>
     pub auto_config_enabled: ::std::option::Option<bool>,
     /// <p>Configures all of the resources in the resource group by applying the recommended configurations.</p>
@@ -22,9 +22,9 @@ pub struct CreateApplicationInput {
     /// <p>If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.</p>
     pub attach_missing_permission: ::std::option::Option<bool>,
 }
-impl CreateApplicationInput {
+impl  CreateApplicationInput  {
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_group_name(&self) -> ::std::option::Option<& str> {
         self.resource_group_name.as_deref()
     }
     /// <p>When set to <code>true</code>, creates opsItems for any problems detected on an application.</p>
@@ -36,14 +36,15 @@ impl CreateApplicationInput {
         self.cwe_monitor_enabled
     }
     /// <p>The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
-    pub fn ops_item_sns_topic_arn(&self) -> ::std::option::Option<&str> {
+    pub fn ops_item_sns_topic_arn(&self) -> ::std::option::Option<& str> {
         self.ops_item_sns_topic_arn.as_deref()
     }
     /// <p>List of tags to add to the application. tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether Application Insights automatically configures unmonitored resources in the resource group.</p>
     pub fn auto_config_enabled(&self) -> ::std::option::Option<bool> {
@@ -54,7 +55,7 @@ impl CreateApplicationInput {
         self.auto_create
     }
     /// <p>Application Insights can create applications based on a resource group or on an account. To create an account-based application using all of the resources in the account, set this parameter to <code>ACCOUNT_BASED</code>.</p>
-    pub fn grouping_type(&self) -> ::std::option::Option<&crate::types::GroupingType> {
+    pub fn grouping_type(&self) -> ::std::option::Option<& crate::types::GroupingType> {
         self.grouping_type.as_ref()
     }
     /// <p>If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.</p>
@@ -77,7 +78,7 @@ pub struct CreateApplicationInputBuilder {
     pub(crate) ops_center_enabled: ::std::option::Option<bool>,
     pub(crate) cwe_monitor_enabled: ::std::option::Option<bool>,
     pub(crate) ops_item_sns_topic_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) auto_config_enabled: ::std::option::Option<bool>,
     pub(crate) auto_create: ::std::option::Option<bool>,
     pub(crate) grouping_type: ::std::option::Option<crate::types::GroupingType>,
@@ -91,8 +92,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>The name of the resource group.</p>
     pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_group_name = input;
-        self
+        self.resource_group_name = input; self
     }
     /// <p>The name of the resource group.</p>
     pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +105,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>When set to <code>true</code>, creates opsItems for any problems detected on an application.</p>
     pub fn set_ops_center_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ops_center_enabled = input;
-        self
+        self.ops_center_enabled = input; self
     }
     /// <p>When set to <code>true</code>, creates opsItems for any problems detected on an application.</p>
     pub fn get_ops_center_enabled(&self) -> &::std::option::Option<bool> {
@@ -119,8 +118,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.</p>
     pub fn set_cwe_monitor_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.cwe_monitor_enabled = input;
-        self
+        self.cwe_monitor_enabled = input; self
     }
     /// <p>Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.</p>
     pub fn get_cwe_monitor_enabled(&self) -> &::std::option::Option<bool> {
@@ -133,8 +131,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
     pub fn set_ops_item_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ops_item_sns_topic_arn = input;
-        self
+        self.ops_item_sns_topic_arn = input; self
     }
     /// <p>The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
     pub fn get_ops_item_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,17 +144,16 @@ impl CreateApplicationInputBuilder {
     /// <p>List of tags to add to the application. tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of tags to add to the application. tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>List of tags to add to the application. tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>Indicates whether Application Insights automatically configures unmonitored resources in the resource group.</p>
@@ -167,8 +163,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>Indicates whether Application Insights automatically configures unmonitored resources in the resource group.</p>
     pub fn set_auto_config_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_config_enabled = input;
-        self
+        self.auto_config_enabled = input; self
     }
     /// <p>Indicates whether Application Insights automatically configures unmonitored resources in the resource group.</p>
     pub fn get_auto_config_enabled(&self) -> &::std::option::Option<bool> {
@@ -181,8 +176,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>Configures all of the resources in the resource group by applying the recommended configurations.</p>
     pub fn set_auto_create(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_create = input;
-        self
+        self.auto_create = input; self
     }
     /// <p>Configures all of the resources in the resource group by applying the recommended configurations.</p>
     pub fn get_auto_create(&self) -> &::std::option::Option<bool> {
@@ -195,8 +189,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>Application Insights can create applications based on a resource group or on an account. To create an account-based application using all of the resources in the account, set this parameter to <code>ACCOUNT_BASED</code>.</p>
     pub fn set_grouping_type(mut self, input: ::std::option::Option<crate::types::GroupingType>) -> Self {
-        self.grouping_type = input;
-        self
+        self.grouping_type = input; self
     }
     /// <p>Application Insights can create applications based on a resource group or on an account. To create an account-based application using all of the resources in the account, set this parameter to <code>ACCOUNT_BASED</code>.</p>
     pub fn get_grouping_type(&self) -> &::std::option::Option<crate::types::GroupingType> {
@@ -209,27 +202,36 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.</p>
     pub fn set_attach_missing_permission(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.attach_missing_permission = input;
-        self
+        self.attach_missing_permission = input; self
     }
     /// <p>If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.</p>
     pub fn get_attach_missing_permission(&self) -> &::std::option::Option<bool> {
         &self.attach_missing_permission
     }
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_application::CreateApplicationInput {
-            resource_group_name: self.resource_group_name,
-            ops_center_enabled: self.ops_center_enabled,
-            cwe_monitor_enabled: self.cwe_monitor_enabled,
-            ops_item_sns_topic_arn: self.ops_item_sns_topic_arn,
-            tags: self.tags,
-            auto_config_enabled: self.auto_config_enabled,
-            auto_create: self.auto_create,
-            grouping_type: self.grouping_type,
-            attach_missing_permission: self.attach_missing_permission,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_application::CreateApplicationInput {
+                resource_group_name: self.resource_group_name
+                ,
+                ops_center_enabled: self.ops_center_enabled
+                ,
+                cwe_monitor_enabled: self.cwe_monitor_enabled
+                ,
+                ops_item_sns_topic_arn: self.ops_item_sns_topic_arn
+                ,
+                tags: self.tags
+                ,
+                auto_config_enabled: self.auto_config_enabled
+                ,
+                auto_create: self.auto_create
+                ,
+                grouping_type: self.grouping_type
+                ,
+                attach_missing_permission: self.attach_missing_permission
+                ,
+            }
+        )
     }
 }
+

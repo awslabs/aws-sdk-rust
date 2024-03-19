@@ -3,13 +3,13 @@
 /// <p>Represents the data binding configuration for a specific property using data stored in Amazon Web Services. For Amazon Web Services connected properties, you can bind a property to data stored in an Amplify DataStore model.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FormInputBindingPropertiesValueProperties {
+pub struct FormInputBindingPropertiesValueProperties  {
     /// <p>An Amplify DataStore model.</p>
     pub model: ::std::option::Option<::std::string::String>,
 }
-impl FormInputBindingPropertiesValueProperties {
+impl  FormInputBindingPropertiesValueProperties  {
     /// <p>An Amplify DataStore model.</p>
-    pub fn model(&self) -> ::std::option::Option<&str> {
+    pub fn model(&self) -> ::std::option::Option<& str> {
         self.model.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl FormInputBindingPropertiesValuePropertiesBuilder {
     }
     /// <p>An Amplify DataStore model.</p>
     pub fn set_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model = input;
-        self
+        self.model = input; self
     }
     /// <p>An Amplify DataStore model.</p>
     pub fn get_model(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl FormInputBindingPropertiesValuePropertiesBuilder {
     }
     /// Consumes the builder and constructs a [`FormInputBindingPropertiesValueProperties`](crate::types::FormInputBindingPropertiesValueProperties).
     pub fn build(self) -> crate::types::FormInputBindingPropertiesValueProperties {
-        crate::types::FormInputBindingPropertiesValueProperties { model: self.model }
+        crate::types::FormInputBindingPropertiesValueProperties {
+            model: self.model
+            ,
+        }
     }
 }
+

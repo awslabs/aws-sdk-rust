@@ -3,13 +3,13 @@
 /// <p>An object representing the inputs for the <code>RestoreFromSnapshot</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RestoreFromSnapshotInput {
+pub struct RestoreFromSnapshotInput  {
     /// <p>The identifier of the snapshot to restore from.</p>
     pub snapshot_id: ::std::option::Option<::std::string::String>,
 }
-impl RestoreFromSnapshotInput {
+impl  RestoreFromSnapshotInput  {
     /// <p>The identifier of the snapshot to restore from.</p>
-    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> ::std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl RestoreFromSnapshotInputBuilder {
     }
     /// <p>The identifier of the snapshot to restore from.</p>
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_id = input;
-        self
+        self.snapshot_id = input; self
     }
     /// <p>The identifier of the snapshot to restore from.</p>
     pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_id
     }
     /// Consumes the builder and constructs a [`RestoreFromSnapshotInput`](crate::operation::restore_from_snapshot::RestoreFromSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::restore_from_snapshot::RestoreFromSnapshotInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::restore_from_snapshot::RestoreFromSnapshotInput {
-            snapshot_id: self.snapshot_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::restore_from_snapshot::RestoreFromSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::restore_from_snapshot::RestoreFromSnapshotInput {
+                snapshot_id: self.snapshot_id
+                ,
+            }
+        )
     }
 }
+

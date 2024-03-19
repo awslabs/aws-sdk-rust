@@ -3,7 +3,7 @@
 /// <p>The metric you want to retain. Dimensions are optional.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetricToRetain {
+pub struct MetricToRetain  {
     /// <p>What is measured by the behavior.</p>
     pub metric: ::std::string::String,
     /// <p>The dimension of a metric. This can't be used with custom metrics.</p>
@@ -11,14 +11,13 @@ pub struct MetricToRetain {
     /// <p>The value indicates exporting metrics related to the <code>MetricToRetain </code> when it's true.</p>
     pub export_metric: ::std::option::Option<bool>,
 }
-impl MetricToRetain {
+impl  MetricToRetain  {
     /// <p>What is measured by the behavior.</p>
-    pub fn metric(&self) -> &str {
-        use std::ops::Deref;
-        self.metric.deref()
+    pub fn metric(&self) -> & str {
+        use std::ops::Deref; self.metric.deref()
     }
     /// <p>The dimension of a metric. This can't be used with custom metrics.</p>
-    pub fn metric_dimension(&self) -> ::std::option::Option<&crate::types::MetricDimension> {
+    pub fn metric_dimension(&self) -> ::std::option::Option<& crate::types::MetricDimension> {
         self.metric_dimension.as_ref()
     }
     /// <p>The value indicates exporting metrics related to the <code>MetricToRetain </code> when it's true.</p>
@@ -50,8 +49,7 @@ impl MetricToRetainBuilder {
     }
     /// <p>What is measured by the behavior.</p>
     pub fn set_metric(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric = input;
-        self
+        self.metric = input; self
     }
     /// <p>What is measured by the behavior.</p>
     pub fn get_metric(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl MetricToRetainBuilder {
     }
     /// <p>The dimension of a metric. This can't be used with custom metrics.</p>
     pub fn set_metric_dimension(mut self, input: ::std::option::Option<crate::types::MetricDimension>) -> Self {
-        self.metric_dimension = input;
-        self
+        self.metric_dimension = input; self
     }
     /// <p>The dimension of a metric. This can't be used with custom metrics.</p>
     pub fn get_metric_dimension(&self) -> &::std::option::Option<crate::types::MetricDimension> {
@@ -78,8 +75,7 @@ impl MetricToRetainBuilder {
     }
     /// <p>The value indicates exporting metrics related to the <code>MetricToRetain </code> when it's true.</p>
     pub fn set_export_metric(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.export_metric = input;
-        self
+        self.export_metric = input; self
     }
     /// <p>The value indicates exporting metrics related to the <code>MetricToRetain </code> when it's true.</p>
     pub fn get_export_metric(&self) -> &::std::option::Option<bool> {
@@ -89,15 +85,19 @@ impl MetricToRetainBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`metric`](crate::types::builders::MetricToRetainBuilder::metric)
     pub fn build(self) -> ::std::result::Result<crate::types::MetricToRetain, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MetricToRetain {
-            metric: self.metric.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "metric",
-                    "metric was not specified but it is required when building MetricToRetain",
-                )
-            })?,
-            metric_dimension: self.metric_dimension,
-            export_metric: self.export_metric,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MetricToRetain {
+                metric: self.metric
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("metric", "metric was not specified but it is required when building MetricToRetain")
+                    )?
+                ,
+                metric_dimension: self.metric_dimension
+                ,
+                export_metric: self.export_metric
+                ,
+            }
+        )
     }
 }
+

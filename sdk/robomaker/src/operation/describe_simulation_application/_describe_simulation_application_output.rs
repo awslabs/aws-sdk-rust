@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSimulationApplicationOutput {
+pub struct DescribeSimulationApplicationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the robot simulation application.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the simulation application.</p>
@@ -10,7 +10,7 @@ pub struct DescribeSimulationApplicationOutput {
     /// <p>The version of the simulation application.</p>
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The sources of the simulation application.</p>
-    pub sources: ::std::option::Option<::std::vec::Vec<crate::types::Source>>,
+    pub sources: ::std::option::Option<::std::vec::Vec::<crate::types::Source>>,
     /// <p>The simulation software suite used by the simulation application.</p>
     pub simulation_software_suite: ::std::option::Option<crate::types::SimulationSoftwareSuite>,
     /// <p>Information about the robot software suite (ROS distribution).</p>
@@ -22,70 +22,71 @@ pub struct DescribeSimulationApplicationOutput {
     /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The list of all tags added to the specified simulation application.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The object that contains the Docker image URI used to create the simulation application.</p>
     pub environment: ::std::option::Option<crate::types::Environment>,
     /// <p>A SHA256 identifier for the Docker image that you use for your simulation application.</p>
     pub image_digest: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeSimulationApplicationOutput {
+impl  DescribeSimulationApplicationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the robot simulation application.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the simulation application.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the simulation application.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The sources of the simulation application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
-    pub fn sources(&self) -> &[crate::types::Source] {
-        self.sources.as_deref().unwrap_or_default()
+    pub fn sources(&self) -> & [crate::types::Source] {
+        self.sources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The simulation software suite used by the simulation application.</p>
-    pub fn simulation_software_suite(&self) -> ::std::option::Option<&crate::types::SimulationSoftwareSuite> {
+    pub fn simulation_software_suite(&self) -> ::std::option::Option<& crate::types::SimulationSoftwareSuite> {
         self.simulation_software_suite.as_ref()
     }
     /// <p>Information about the robot software suite (ROS distribution).</p>
-    pub fn robot_software_suite(&self) -> ::std::option::Option<&crate::types::RobotSoftwareSuite> {
+    pub fn robot_software_suite(&self) -> ::std::option::Option<& crate::types::RobotSoftwareSuite> {
         self.robot_software_suite.as_ref()
     }
     /// <p>The rendering engine for the simulation application.</p>
-    pub fn rendering_engine(&self) -> ::std::option::Option<&crate::types::RenderingEngine> {
+    pub fn rendering_engine(&self) -> ::std::option::Option<& crate::types::RenderingEngine> {
         self.rendering_engine.as_ref()
     }
     /// <p>The revision id of the simulation application.</p>
-    pub fn revision_id(&self) -> ::std::option::Option<&str> {
+    pub fn revision_id(&self) -> ::std::option::Option<& str> {
         self.revision_id.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
-    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The list of all tags added to the specified simulation application.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The object that contains the Docker image URI used to create the simulation application.</p>
-    pub fn environment(&self) -> ::std::option::Option<&crate::types::Environment> {
+    pub fn environment(&self) -> ::std::option::Option<& crate::types::Environment> {
         self.environment.as_ref()
     }
     /// <p>A SHA256 identifier for the Docker image that you use for your simulation application.</p>
-    pub fn image_digest(&self) -> ::std::option::Option<&str> {
+    pub fn image_digest(&self) -> ::std::option::Option<& str> {
         self.image_digest.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeSimulationApplicationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeSimulationApplicationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSimulationApplicationOutput`](crate::operation::describe_simulation_application::DescribeSimulationApplicationOutput).
     pub fn builder() -> crate::operation::describe_simulation_application::builders::DescribeSimulationApplicationOutputBuilder {
@@ -100,13 +101,13 @@ pub struct DescribeSimulationApplicationOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
-    pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::Source>>,
+    pub(crate) sources: ::std::option::Option<::std::vec::Vec::<crate::types::Source>>,
     pub(crate) simulation_software_suite: ::std::option::Option<crate::types::SimulationSoftwareSuite>,
     pub(crate) robot_software_suite: ::std::option::Option<crate::types::RobotSoftwareSuite>,
     pub(crate) rendering_engine: ::std::option::Option<crate::types::RenderingEngine>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) environment: ::std::option::Option<crate::types::Environment>,
     pub(crate) image_digest: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -119,8 +120,7 @@ impl DescribeSimulationApplicationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the robot simulation application.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the robot simulation application.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +133,7 @@ impl DescribeSimulationApplicationOutputBuilder {
     }
     /// <p>The name of the simulation application.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the simulation application.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +146,7 @@ impl DescribeSimulationApplicationOutputBuilder {
     }
     /// <p>The version of the simulation application.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of the simulation application.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,17 +159,16 @@ impl DescribeSimulationApplicationOutputBuilder {
     /// <p>The sources of the simulation application.</p>
     pub fn sources(mut self, input: crate::types::Source) -> Self {
         let mut v = self.sources.unwrap_or_default();
-        v.push(input);
-        self.sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The sources of the simulation application.</p>
-    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Source>>) -> Self {
-        self.sources = input;
-        self
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Source>>) -> Self {
+        self.sources = input; self
     }
     /// <p>The sources of the simulation application.</p>
-    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Source>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Source>> {
         &self.sources
     }
     /// <p>The simulation software suite used by the simulation application.</p>
@@ -181,8 +178,7 @@ impl DescribeSimulationApplicationOutputBuilder {
     }
     /// <p>The simulation software suite used by the simulation application.</p>
     pub fn set_simulation_software_suite(mut self, input: ::std::option::Option<crate::types::SimulationSoftwareSuite>) -> Self {
-        self.simulation_software_suite = input;
-        self
+        self.simulation_software_suite = input; self
     }
     /// <p>The simulation software suite used by the simulation application.</p>
     pub fn get_simulation_software_suite(&self) -> &::std::option::Option<crate::types::SimulationSoftwareSuite> {
@@ -195,8 +191,7 @@ impl DescribeSimulationApplicationOutputBuilder {
     }
     /// <p>Information about the robot software suite (ROS distribution).</p>
     pub fn set_robot_software_suite(mut self, input: ::std::option::Option<crate::types::RobotSoftwareSuite>) -> Self {
-        self.robot_software_suite = input;
-        self
+        self.robot_software_suite = input; self
     }
     /// <p>Information about the robot software suite (ROS distribution).</p>
     pub fn get_robot_software_suite(&self) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
@@ -209,8 +204,7 @@ impl DescribeSimulationApplicationOutputBuilder {
     }
     /// <p>The rendering engine for the simulation application.</p>
     pub fn set_rendering_engine(mut self, input: ::std::option::Option<crate::types::RenderingEngine>) -> Self {
-        self.rendering_engine = input;
-        self
+        self.rendering_engine = input; self
     }
     /// <p>The rendering engine for the simulation application.</p>
     pub fn get_rendering_engine(&self) -> &::std::option::Option<crate::types::RenderingEngine> {
@@ -223,8 +217,7 @@ impl DescribeSimulationApplicationOutputBuilder {
     }
     /// <p>The revision id of the simulation application.</p>
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
     }
     /// <p>The revision id of the simulation application.</p>
     pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -237,8 +230,7 @@ impl DescribeSimulationApplicationOutputBuilder {
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input;
-        self
+        self.last_updated_at = input; self
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -251,17 +243,16 @@ impl DescribeSimulationApplicationOutputBuilder {
     /// <p>The list of all tags added to the specified simulation application.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The list of all tags added to the specified simulation application.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The list of all tags added to the specified simulation application.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The object that contains the Docker image URI used to create the simulation application.</p>
@@ -271,8 +262,7 @@ impl DescribeSimulationApplicationOutputBuilder {
     }
     /// <p>The object that contains the Docker image URI used to create the simulation application.</p>
     pub fn set_environment(mut self, input: ::std::option::Option<crate::types::Environment>) -> Self {
-        self.environment = input;
-        self
+        self.environment = input; self
     }
     /// <p>The object that contains the Docker image URI used to create the simulation application.</p>
     pub fn get_environment(&self) -> &::std::option::Option<crate::types::Environment> {
@@ -285,38 +275,50 @@ impl DescribeSimulationApplicationOutputBuilder {
     }
     /// <p>A SHA256 identifier for the Docker image that you use for your simulation application.</p>
     pub fn set_image_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_digest = input;
-        self
+        self.image_digest = input; self
     }
     /// <p>A SHA256 identifier for the Docker image that you use for your simulation application.</p>
     pub fn get_image_digest(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_digest
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeSimulationApplicationOutput`](crate::operation::describe_simulation_application::DescribeSimulationApplicationOutput).
     pub fn build(self) -> crate::operation::describe_simulation_application::DescribeSimulationApplicationOutput {
         crate::operation::describe_simulation_application::DescribeSimulationApplicationOutput {
-            arn: self.arn,
-            name: self.name,
-            version: self.version,
-            sources: self.sources,
-            simulation_software_suite: self.simulation_software_suite,
-            robot_software_suite: self.robot_software_suite,
-            rendering_engine: self.rendering_engine,
-            revision_id: self.revision_id,
-            last_updated_at: self.last_updated_at,
-            tags: self.tags,
-            environment: self.environment,
-            image_digest: self.image_digest,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            version: self.version
+            ,
+            sources: self.sources
+            ,
+            simulation_software_suite: self.simulation_software_suite
+            ,
+            robot_software_suite: self.robot_software_suite
+            ,
+            rendering_engine: self.rendering_engine
+            ,
+            revision_id: self.revision_id
+            ,
+            last_updated_at: self.last_updated_at
+            ,
+            tags: self.tags
+            ,
+            environment: self.environment
+            ,
+            image_digest: self.image_digest
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

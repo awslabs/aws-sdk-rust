@@ -3,13 +3,13 @@
 #[deprecated(note = "WARNING: RetryDataReplication is deprecated")]
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RetryDataReplicationInput {
+pub struct RetryDataReplicationInput  {
     /// <p>The ID of the Source Server whose data replication should be retried.</p>
     pub source_server_id: ::std::option::Option<::std::string::String>,
 }
-impl RetryDataReplicationInput {
+impl  RetryDataReplicationInput  {
     /// <p>The ID of the Source Server whose data replication should be retried.</p>
-    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_server_id(&self) -> ::std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl RetryDataReplicationInputBuilder {
     }
     /// <p>The ID of the Source Server whose data replication should be retried.</p>
     pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_server_id = input;
-        self
+        self.source_server_id = input; self
     }
     /// <p>The ID of the Source Server whose data replication should be retried.</p>
     pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_server_id
     }
     /// Consumes the builder and constructs a [`RetryDataReplicationInput`](crate::operation::retry_data_replication::RetryDataReplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::retry_data_replication::RetryDataReplicationInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::retry_data_replication::RetryDataReplicationInput {
-            source_server_id: self.source_server_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::retry_data_replication::RetryDataReplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::retry_data_replication::RetryDataReplicationInput {
+                source_server_id: self.source_server_id
+                ,
+            }
+        )
     }
 }
+

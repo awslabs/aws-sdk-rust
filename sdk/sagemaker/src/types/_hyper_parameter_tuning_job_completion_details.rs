@@ -3,19 +3,19 @@
 /// <p>A structure that contains runtime information about both current and completed hyperparameter tuning jobs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HyperParameterTuningJobCompletionDetails {
+pub struct HyperParameterTuningJobCompletionDetails  {
     /// <p>The number of training jobs launched by a tuning job that are not improving (1% or less) as measured by model performance evaluated against an objective function.</p>
     pub number_of_training_jobs_objective_not_improving: ::std::option::Option<i32>,
     /// <p>The time in timestamp format that AMT detected model convergence, as defined by a lack of significant improvement over time based on criteria developed over a wide range of diverse benchmarking tests.</p>
     pub convergence_detected_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl HyperParameterTuningJobCompletionDetails {
+impl  HyperParameterTuningJobCompletionDetails  {
     /// <p>The number of training jobs launched by a tuning job that are not improving (1% or less) as measured by model performance evaluated against an objective function.</p>
     pub fn number_of_training_jobs_objective_not_improving(&self) -> ::std::option::Option<i32> {
         self.number_of_training_jobs_objective_not_improving
     }
     /// <p>The time in timestamp format that AMT detected model convergence, as defined by a lack of significant improvement over time based on criteria developed over a wide range of diverse benchmarking tests.</p>
-    pub fn convergence_detected_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn convergence_detected_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.convergence_detected_time.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl HyperParameterTuningJobCompletionDetailsBuilder {
     }
     /// <p>The number of training jobs launched by a tuning job that are not improving (1% or less) as measured by model performance evaluated against an objective function.</p>
     pub fn set_number_of_training_jobs_objective_not_improving(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_training_jobs_objective_not_improving = input;
-        self
+        self.number_of_training_jobs_objective_not_improving = input; self
     }
     /// <p>The number of training jobs launched by a tuning job that are not improving (1% or less) as measured by model performance evaluated against an objective function.</p>
     pub fn get_number_of_training_jobs_objective_not_improving(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl HyperParameterTuningJobCompletionDetailsBuilder {
     }
     /// <p>The time in timestamp format that AMT detected model convergence, as defined by a lack of significant improvement over time based on criteria developed over a wide range of diverse benchmarking tests.</p>
     pub fn set_convergence_detected_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.convergence_detected_time = input;
-        self
+        self.convergence_detected_time = input; self
     }
     /// <p>The time in timestamp format that AMT detected model convergence, as defined by a lack of significant improvement over time based on criteria developed over a wide range of diverse benchmarking tests.</p>
     pub fn get_convergence_detected_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -65,8 +63,11 @@ impl HyperParameterTuningJobCompletionDetailsBuilder {
     /// Consumes the builder and constructs a [`HyperParameterTuningJobCompletionDetails`](crate::types::HyperParameterTuningJobCompletionDetails).
     pub fn build(self) -> crate::types::HyperParameterTuningJobCompletionDetails {
         crate::types::HyperParameterTuningJobCompletionDetails {
-            number_of_training_jobs_objective_not_improving: self.number_of_training_jobs_objective_not_improving,
-            convergence_detected_time: self.convergence_detected_time,
+            number_of_training_jobs_objective_not_improving: self.number_of_training_jobs_objective_not_improving
+            ,
+            convergence_detected_time: self.convergence_detected_time
+            ,
         }
     }
 }
+

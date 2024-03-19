@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteInstanceConnectEndpointInput {
+pub struct DeleteInstanceConnectEndpointInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the EC2 Instance Connect Endpoint to delete.</p>
     pub instance_connect_endpoint_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteInstanceConnectEndpointInput {
+impl  DeleteInstanceConnectEndpointInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The ID of the EC2 Instance Connect Endpoint to delete.</p>
-    pub fn instance_connect_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_connect_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.instance_connect_endpoint_id.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl DeleteInstanceConnectEndpointInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -55,23 +54,22 @@ impl DeleteInstanceConnectEndpointInputBuilder {
     }
     /// <p>The ID of the EC2 Instance Connect Endpoint to delete.</p>
     pub fn set_instance_connect_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_connect_endpoint_id = input;
-        self
+        self.instance_connect_endpoint_id = input; self
     }
     /// <p>The ID of the EC2 Instance Connect Endpoint to delete.</p>
     pub fn get_instance_connect_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_connect_endpoint_id
     }
     /// Consumes the builder and constructs a [`DeleteInstanceConnectEndpointInput`](crate::operation::delete_instance_connect_endpoint::DeleteInstanceConnectEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_instance_connect_endpoint::DeleteInstanceConnectEndpointInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_instance_connect_endpoint::DeleteInstanceConnectEndpointInput {
-            dry_run: self.dry_run,
-            instance_connect_endpoint_id: self.instance_connect_endpoint_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_instance_connect_endpoint::DeleteInstanceConnectEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_instance_connect_endpoint::DeleteInstanceConnectEndpointInput {
+                dry_run: self.dry_run
+                ,
+                instance_connect_endpoint_id: self.instance_connect_endpoint_id
+                ,
+            }
+        )
     }
 }
+

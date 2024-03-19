@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteFirewallPolicyOutput {
+pub struct DeleteFirewallPolicyOutput  {
     /// <p>The object containing the definition of the <code>FirewallPolicyResponse</code> that you asked to delete.</p>
     pub firewall_policy_response: ::std::option::Option<crate::types::FirewallPolicyResponse>,
     _request_id: Option<String>,
 }
-impl DeleteFirewallPolicyOutput {
+impl  DeleteFirewallPolicyOutput  {
     /// <p>The object containing the definition of the <code>FirewallPolicyResponse</code> that you asked to delete.</p>
-    pub fn firewall_policy_response(&self) -> ::std::option::Option<&crate::types::FirewallPolicyResponse> {
+    pub fn firewall_policy_response(&self) -> ::std::option::Option<& crate::types::FirewallPolicyResponse> {
         self.firewall_policy_response.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteFirewallPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteFirewallPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFirewallPolicyOutput`](crate::operation::delete_firewall_policy::DeleteFirewallPolicyOutput).
     pub fn builder() -> crate::operation::delete_firewall_policy::builders::DeleteFirewallPolicyOutputBuilder {
@@ -41,27 +41,28 @@ impl DeleteFirewallPolicyOutputBuilder {
     }
     /// <p>The object containing the definition of the <code>FirewallPolicyResponse</code> that you asked to delete.</p>
     pub fn set_firewall_policy_response(mut self, input: ::std::option::Option<crate::types::FirewallPolicyResponse>) -> Self {
-        self.firewall_policy_response = input;
-        self
+        self.firewall_policy_response = input; self
     }
     /// <p>The object containing the definition of the <code>FirewallPolicyResponse</code> that you asked to delete.</p>
     pub fn get_firewall_policy_response(&self) -> &::std::option::Option<crate::types::FirewallPolicyResponse> {
         &self.firewall_policy_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteFirewallPolicyOutput`](crate::operation::delete_firewall_policy::DeleteFirewallPolicyOutput).
     pub fn build(self) -> crate::operation::delete_firewall_policy::DeleteFirewallPolicyOutput {
         crate::operation::delete_firewall_policy::DeleteFirewallPolicyOutput {
-            firewall_policy_response: self.firewall_policy_response,
+            firewall_policy_response: self.firewall_policy_response
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A structure that describes configuration settings for a trusted token issuer that supports OpenID Connect (OIDC) and JSON Web Tokens (JWTs).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OidcJwtConfiguration {
+pub struct OidcJwtConfiguration  {
     /// <p>The URL that IAM Identity Center uses for OpenID Discovery. OpenID Discovery is used to obtain the information required to verify the tokens that the trusted token issuer generates.</p>
     pub issuer_url: ::std::string::String,
     /// <p>The path of the source attribute in the JWT from the trusted token issuer. The attribute mapped by this JMESPath expression is compared against the attribute mapped by <code>IdentityStoreAttributePath</code> when a trusted token issuer token is exchanged for an IAM Identity Center token.</p>
@@ -13,24 +13,21 @@ pub struct OidcJwtConfiguration {
     /// <p>The method that the trusted token issuer can use to retrieve the JSON Web Key Set used to verify a JWT.</p>
     pub jwks_retrieval_option: crate::types::JwksRetrievalOption,
 }
-impl OidcJwtConfiguration {
+impl  OidcJwtConfiguration  {
     /// <p>The URL that IAM Identity Center uses for OpenID Discovery. OpenID Discovery is used to obtain the information required to verify the tokens that the trusted token issuer generates.</p>
-    pub fn issuer_url(&self) -> &str {
-        use std::ops::Deref;
-        self.issuer_url.deref()
+    pub fn issuer_url(&self) -> & str {
+        use std::ops::Deref; self.issuer_url.deref()
     }
     /// <p>The path of the source attribute in the JWT from the trusted token issuer. The attribute mapped by this JMESPath expression is compared against the attribute mapped by <code>IdentityStoreAttributePath</code> when a trusted token issuer token is exchanged for an IAM Identity Center token.</p>
-    pub fn claim_attribute_path(&self) -> &str {
-        use std::ops::Deref;
-        self.claim_attribute_path.deref()
+    pub fn claim_attribute_path(&self) -> & str {
+        use std::ops::Deref; self.claim_attribute_path.deref()
     }
     /// <p>The path of the destination attribute in a JWT from IAM Identity Center. The attribute mapped by this JMESPath expression is compared against the attribute mapped by <code>ClaimAttributePath</code> when a trusted token issuer token is exchanged for an IAM Identity Center token.</p>
-    pub fn identity_store_attribute_path(&self) -> &str {
-        use std::ops::Deref;
-        self.identity_store_attribute_path.deref()
+    pub fn identity_store_attribute_path(&self) -> & str {
+        use std::ops::Deref; self.identity_store_attribute_path.deref()
     }
     /// <p>The method that the trusted token issuer can use to retrieve the JSON Web Key Set used to verify a JWT.</p>
-    pub fn jwks_retrieval_option(&self) -> &crate::types::JwksRetrievalOption {
+    pub fn jwks_retrieval_option(&self) -> & crate::types::JwksRetrievalOption {
         &self.jwks_retrieval_option
     }
 }
@@ -59,8 +56,7 @@ impl OidcJwtConfigurationBuilder {
     }
     /// <p>The URL that IAM Identity Center uses for OpenID Discovery. OpenID Discovery is used to obtain the information required to verify the tokens that the trusted token issuer generates.</p>
     pub fn set_issuer_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.issuer_url = input;
-        self
+        self.issuer_url = input; self
     }
     /// <p>The URL that IAM Identity Center uses for OpenID Discovery. OpenID Discovery is used to obtain the information required to verify the tokens that the trusted token issuer generates.</p>
     pub fn get_issuer_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +70,7 @@ impl OidcJwtConfigurationBuilder {
     }
     /// <p>The path of the source attribute in the JWT from the trusted token issuer. The attribute mapped by this JMESPath expression is compared against the attribute mapped by <code>IdentityStoreAttributePath</code> when a trusted token issuer token is exchanged for an IAM Identity Center token.</p>
     pub fn set_claim_attribute_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.claim_attribute_path = input;
-        self
+        self.claim_attribute_path = input; self
     }
     /// <p>The path of the source attribute in the JWT from the trusted token issuer. The attribute mapped by this JMESPath expression is compared against the attribute mapped by <code>IdentityStoreAttributePath</code> when a trusted token issuer token is exchanged for an IAM Identity Center token.</p>
     pub fn get_claim_attribute_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +84,7 @@ impl OidcJwtConfigurationBuilder {
     }
     /// <p>The path of the destination attribute in a JWT from IAM Identity Center. The attribute mapped by this JMESPath expression is compared against the attribute mapped by <code>ClaimAttributePath</code> when a trusted token issuer token is exchanged for an IAM Identity Center token.</p>
     pub fn set_identity_store_attribute_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_store_attribute_path = input;
-        self
+        self.identity_store_attribute_path = input; self
     }
     /// <p>The path of the destination attribute in a JWT from IAM Identity Center. The attribute mapped by this JMESPath expression is compared against the attribute mapped by <code>ClaimAttributePath</code> when a trusted token issuer token is exchanged for an IAM Identity Center token.</p>
     pub fn get_identity_store_attribute_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +98,7 @@ impl OidcJwtConfigurationBuilder {
     }
     /// <p>The method that the trusted token issuer can use to retrieve the JSON Web Key Set used to verify a JWT.</p>
     pub fn set_jwks_retrieval_option(mut self, input: ::std::option::Option<crate::types::JwksRetrievalOption>) -> Self {
-        self.jwks_retrieval_option = input;
-        self
+        self.jwks_retrieval_option = input; self
     }
     /// <p>The method that the trusted token issuer can use to retrieve the JSON Web Key Set used to verify a JWT.</p>
     pub fn get_jwks_retrieval_option(&self) -> &::std::option::Option<crate::types::JwksRetrievalOption> {
@@ -118,31 +111,30 @@ impl OidcJwtConfigurationBuilder {
     /// - [`identity_store_attribute_path`](crate::types::builders::OidcJwtConfigurationBuilder::identity_store_attribute_path)
     /// - [`jwks_retrieval_option`](crate::types::builders::OidcJwtConfigurationBuilder::jwks_retrieval_option)
     pub fn build(self) -> ::std::result::Result<crate::types::OidcJwtConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OidcJwtConfiguration {
-            issuer_url: self.issuer_url.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "issuer_url",
-                    "issuer_url was not specified but it is required when building OidcJwtConfiguration",
-                )
-            })?,
-            claim_attribute_path: self.claim_attribute_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "claim_attribute_path",
-                    "claim_attribute_path was not specified but it is required when building OidcJwtConfiguration",
-                )
-            })?,
-            identity_store_attribute_path: self.identity_store_attribute_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "identity_store_attribute_path",
-                    "identity_store_attribute_path was not specified but it is required when building OidcJwtConfiguration",
-                )
-            })?,
-            jwks_retrieval_option: self.jwks_retrieval_option.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "jwks_retrieval_option",
-                    "jwks_retrieval_option was not specified but it is required when building OidcJwtConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OidcJwtConfiguration {
+                issuer_url: self.issuer_url
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("issuer_url", "issuer_url was not specified but it is required when building OidcJwtConfiguration")
+                    )?
+                ,
+                claim_attribute_path: self.claim_attribute_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("claim_attribute_path", "claim_attribute_path was not specified but it is required when building OidcJwtConfiguration")
+                    )?
+                ,
+                identity_store_attribute_path: self.identity_store_attribute_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("identity_store_attribute_path", "identity_store_attribute_path was not specified but it is required when building OidcJwtConfiguration")
+                    )?
+                ,
+                jwks_retrieval_option: self.jwks_retrieval_option
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("jwks_retrieval_option", "jwks_retrieval_option was not specified but it is required when building OidcJwtConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

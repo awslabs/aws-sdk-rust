@@ -3,9 +3,9 @@
 /// <p>Contains the parameters for <code>DescribeComputeEnvironments</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeComputeEnvironmentsInput {
+pub struct DescribeComputeEnvironmentsInput  {
     /// <p>A list of up to 100 compute environment names or full Amazon Resource Name (ARN) entries.</p>
-    pub compute_environments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub compute_environments: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The maximum number of cluster results returned by <code>DescribeComputeEnvironments</code> in paginated output. When this parameter is used, <code>DescribeComputeEnvironments</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeComputeEnvironments</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>DescribeComputeEnvironments</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeComputeEnvironments</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p><note>
@@ -13,12 +13,13 @@ pub struct DescribeComputeEnvironmentsInput {
     /// </note>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeComputeEnvironmentsInput {
+impl  DescribeComputeEnvironmentsInput  {
     /// <p>A list of up to 100 compute environment names or full Amazon Resource Name (ARN) entries.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compute_environments.is_none()`.
-    pub fn compute_environments(&self) -> &[::std::string::String] {
-        self.compute_environments.as_deref().unwrap_or_default()
+    pub fn compute_environments(&self) -> & [::std::string::String] {
+        self.compute_environments.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of cluster results returned by <code>DescribeComputeEnvironments</code> in paginated output. When this parameter is used, <code>DescribeComputeEnvironments</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeComputeEnvironments</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>DescribeComputeEnvironments</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -27,7 +28,7 @@ impl DescribeComputeEnvironmentsInput {
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeComputeEnvironments</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p><note>
     /// <p>Treat this token as an opaque identifier that's only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -42,7 +43,7 @@ impl DescribeComputeEnvironmentsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeComputeEnvironmentsInputBuilder {
-    pub(crate) compute_environments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) compute_environments: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -54,17 +55,16 @@ impl DescribeComputeEnvironmentsInputBuilder {
     /// <p>A list of up to 100 compute environment names or full Amazon Resource Name (ARN) entries.</p>
     pub fn compute_environments(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.compute_environments.unwrap_or_default();
-        v.push(input.into());
-        self.compute_environments = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.compute_environments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of up to 100 compute environment names or full Amazon Resource Name (ARN) entries.</p>
-    pub fn set_compute_environments(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.compute_environments = input;
-        self
+    pub fn set_compute_environments(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.compute_environments = input; self
     }
     /// <p>A list of up to 100 compute environment names or full Amazon Resource Name (ARN) entries.</p>
-    pub fn get_compute_environments(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_compute_environments(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.compute_environments
     }
     /// <p>The maximum number of cluster results returned by <code>DescribeComputeEnvironments</code> in paginated output. When this parameter is used, <code>DescribeComputeEnvironments</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeComputeEnvironments</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>DescribeComputeEnvironments</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
@@ -74,8 +74,7 @@ impl DescribeComputeEnvironmentsInputBuilder {
     }
     /// <p>The maximum number of cluster results returned by <code>DescribeComputeEnvironments</code> in paginated output. When this parameter is used, <code>DescribeComputeEnvironments</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeComputeEnvironments</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>DescribeComputeEnvironments</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of cluster results returned by <code>DescribeComputeEnvironments</code> in paginated output. When this parameter is used, <code>DescribeComputeEnvironments</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeComputeEnvironments</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>DescribeComputeEnvironments</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -92,8 +91,7 @@ impl DescribeComputeEnvironmentsInputBuilder {
     /// <p>Treat this token as an opaque identifier that's only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeComputeEnvironments</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p><note>
     /// <p>Treat this token as an opaque identifier that's only used to retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -102,16 +100,17 @@ impl DescribeComputeEnvironmentsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeComputeEnvironmentsInput`](crate::operation::describe_compute_environments::DescribeComputeEnvironmentsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_compute_environments::DescribeComputeEnvironmentsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_compute_environments::DescribeComputeEnvironmentsInput {
-            compute_environments: self.compute_environments,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_compute_environments::DescribeComputeEnvironmentsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_compute_environments::DescribeComputeEnvironmentsInput {
+                compute_environments: self.compute_environments
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

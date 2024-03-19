@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeIcd10CmInferenceJobInput {
+pub struct DescribeIcd10CmInferenceJobInput  {
     /// <p>The identifier that Amazon Comprehend Medical generated for the job. <code>The StartICD10CMInferenceJob</code> operation returns this identifier in its response.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeIcd10CmInferenceJobInput {
+impl  DescribeIcd10CmInferenceJobInput  {
     /// <p>The identifier that Amazon Comprehend Medical generated for the job. <code>The StartICD10CMInferenceJob</code> operation returns this identifier in its response.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DescribeIcd10CmInferenceJobInputBuilder {
     }
     /// <p>The identifier that Amazon Comprehend Medical generated for the job. <code>The StartICD10CMInferenceJob</code> operation returns this identifier in its response.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The identifier that Amazon Comprehend Medical generated for the job. <code>The StartICD10CMInferenceJob</code> operation returns this identifier in its response.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
     /// Consumes the builder and constructs a [`DescribeIcd10CmInferenceJobInput`](crate::operation::describe_icd10_cm_inference_job::DescribeIcd10CmInferenceJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_icd10_cm_inference_job::DescribeIcd10CmInferenceJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_icd10_cm_inference_job::DescribeIcd10CmInferenceJobInput { job_id: self.job_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_icd10_cm_inference_job::DescribeIcd10CmInferenceJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_icd10_cm_inference_job::DescribeIcd10CmInferenceJobInput {
+                job_id: self.job_id
+                ,
+            }
+        )
     }
 }
+

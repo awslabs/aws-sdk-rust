@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEndpointConfigInput {
+pub struct DescribeEndpointConfigInput  {
     /// <p>The name of the endpoint configuration.</p>
     pub endpoint_config_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeEndpointConfigInput {
+impl  DescribeEndpointConfigInput  {
     /// <p>The name of the endpoint configuration.</p>
-    pub fn endpoint_config_name(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_config_name(&self) -> ::std::option::Option<& str> {
         self.endpoint_config_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeEndpointConfigInputBuilder {
     }
     /// <p>The name of the endpoint configuration.</p>
     pub fn set_endpoint_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_config_name = input;
-        self
+        self.endpoint_config_name = input; self
     }
     /// <p>The name of the endpoint configuration.</p>
     pub fn get_endpoint_config_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint_config_name
     }
     /// Consumes the builder and constructs a [`DescribeEndpointConfigInput`](crate::operation::describe_endpoint_config::DescribeEndpointConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_endpoint_config::DescribeEndpointConfigInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_endpoint_config::DescribeEndpointConfigInput {
-            endpoint_config_name: self.endpoint_config_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_endpoint_config::DescribeEndpointConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_endpoint_config::DescribeEndpointConfigInput {
+                endpoint_config_name: self.endpoint_config_name
+                ,
+            }
+        )
     }
 }
+

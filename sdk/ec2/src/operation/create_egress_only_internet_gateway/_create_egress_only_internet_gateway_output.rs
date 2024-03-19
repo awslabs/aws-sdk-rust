@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateEgressOnlyInternetGatewayOutput {
+pub struct CreateEgressOnlyInternetGatewayOutput  {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the egress-only internet gateway.</p>
     pub egress_only_internet_gateway: ::std::option::Option<crate::types::EgressOnlyInternetGateway>,
     _request_id: Option<String>,
 }
-impl CreateEgressOnlyInternetGatewayOutput {
+impl  CreateEgressOnlyInternetGatewayOutput  {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Information about the egress-only internet gateway.</p>
-    pub fn egress_only_internet_gateway(&self) -> ::std::option::Option<&crate::types::EgressOnlyInternetGateway> {
+    pub fn egress_only_internet_gateway(&self) -> ::std::option::Option<& crate::types::EgressOnlyInternetGateway> {
         self.egress_only_internet_gateway.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateEgressOnlyInternetGatewayOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateEgressOnlyInternetGatewayOutput {
     /// Creates a new builder-style object to manufacture [`CreateEgressOnlyInternetGatewayOutput`](crate::operation::create_egress_only_internet_gateway::CreateEgressOnlyInternetGatewayOutput).
     pub fn builder() -> crate::operation::create_egress_only_internet_gateway::builders::CreateEgressOnlyInternetGatewayOutputBuilder {
@@ -47,8 +47,7 @@ impl CreateEgressOnlyInternetGatewayOutputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl CreateEgressOnlyInternetGatewayOutputBuilder {
     }
     /// <p>Information about the egress-only internet gateway.</p>
     pub fn set_egress_only_internet_gateway(mut self, input: ::std::option::Option<crate::types::EgressOnlyInternetGateway>) -> Self {
-        self.egress_only_internet_gateway = input;
-        self
+        self.egress_only_internet_gateway = input; self
     }
     /// <p>Information about the egress-only internet gateway.</p>
     pub fn get_egress_only_internet_gateway(&self) -> &::std::option::Option<crate::types::EgressOnlyInternetGateway> {
         &self.egress_only_internet_gateway
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateEgressOnlyInternetGatewayOutput`](crate::operation::create_egress_only_internet_gateway::CreateEgressOnlyInternetGatewayOutput).
     pub fn build(self) -> crate::operation::create_egress_only_internet_gateway::CreateEgressOnlyInternetGatewayOutput {
         crate::operation::create_egress_only_internet_gateway::CreateEgressOnlyInternetGatewayOutput {
-            client_token: self.client_token,
-            egress_only_internet_gateway: self.egress_only_internet_gateway,
+            client_token: self.client_token
+            ,
+            egress_only_internet_gateway: self.egress_only_internet_gateway
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

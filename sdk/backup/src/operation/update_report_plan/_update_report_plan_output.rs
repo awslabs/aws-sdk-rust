@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateReportPlanOutput {
+pub struct UpdateReportPlanOutput  {
     /// <p>The unique name of the report plan.</p>
     pub report_plan_name: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
@@ -11,25 +11,25 @@ pub struct UpdateReportPlanOutput {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl UpdateReportPlanOutput {
+impl  UpdateReportPlanOutput  {
     /// <p>The unique name of the report plan.</p>
-    pub fn report_plan_name(&self) -> ::std::option::Option<&str> {
+    pub fn report_plan_name(&self) -> ::std::option::Option<& str> {
         self.report_plan_name.as_deref()
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
-    pub fn report_plan_arn(&self) -> ::std::option::Option<&str> {
+    pub fn report_plan_arn(&self) -> ::std::option::Option<& str> {
         self.report_plan_arn.as_deref()
     }
     /// <p>The date and time that a report plan is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateReportPlanOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateReportPlanOutput {
     /// Creates a new builder-style object to manufacture [`UpdateReportPlanOutput`](crate::operation::update_report_plan::UpdateReportPlanOutput).
     pub fn builder() -> crate::operation::update_report_plan::builders::UpdateReportPlanOutputBuilder {
@@ -54,8 +54,7 @@ impl UpdateReportPlanOutputBuilder {
     }
     /// <p>The unique name of the report plan.</p>
     pub fn set_report_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.report_plan_name = input;
-        self
+        self.report_plan_name = input; self
     }
     /// <p>The unique name of the report plan.</p>
     pub fn get_report_plan_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl UpdateReportPlanOutputBuilder {
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     pub fn set_report_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.report_plan_arn = input;
-        self
+        self.report_plan_arn = input; self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     pub fn get_report_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl UpdateReportPlanOutputBuilder {
     }
     /// <p>The date and time that a report plan is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The date and time that a report plan is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateReportPlanOutput`](crate::operation::update_report_plan::UpdateReportPlanOutput).
     pub fn build(self) -> crate::operation::update_report_plan::UpdateReportPlanOutput {
         crate::operation::update_report_plan::UpdateReportPlanOutput {
-            report_plan_name: self.report_plan_name,
-            report_plan_arn: self.report_plan_arn,
-            creation_time: self.creation_time,
+            report_plan_name: self.report_plan_name
+            ,
+            report_plan_arn: self.report_plan_arn
+            ,
+            creation_time: self.creation_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

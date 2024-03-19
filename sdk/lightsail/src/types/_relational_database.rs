@@ -3,7 +3,7 @@
 /// <p>Describes a database.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RelationalDatabase {
+pub struct RelationalDatabase  {
     /// <p>The unique name of the database resource in Lightsail.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
@@ -17,7 +17,7 @@ pub struct RelationalDatabase {
     /// <p>The Lightsail resource type for the database (for example, <code>RelationalDatabase</code>).</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The blueprint ID for the database. A blueprint describes the major engine version of a database.</p>
     pub relational_database_blueprint_id: ::std::option::Option<::std::string::String>,
     /// <p>The bundle ID for the database. A bundle describes the performance specifications for your database.</p>
@@ -55,64 +55,65 @@ pub struct RelationalDatabase {
     /// <p>The master endpoint for the database.</p>
     pub master_endpoint: ::std::option::Option<crate::types::RelationalDatabaseEndpoint>,
     /// <p>Describes the pending maintenance actions for the database.</p>
-    pub pending_maintenance_actions: ::std::option::Option<::std::vec::Vec<crate::types::PendingMaintenanceAction>>,
+    pub pending_maintenance_actions: ::std::option::Option<::std::vec::Vec::<crate::types::PendingMaintenanceAction>>,
     /// <p>The certificate associated with the database.</p>
     pub ca_certificate_identifier: ::std::option::Option<::std::string::String>,
 }
-impl RelationalDatabase {
+impl  RelationalDatabase  {
     /// <p>The unique name of the database resource in Lightsail.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The support code for the database. Include this code in your email to support when you have questions about a database in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
-    pub fn support_code(&self) -> ::std::option::Option<&str> {
+    pub fn support_code(&self) -> ::std::option::Option<& str> {
         self.support_code.as_deref()
     }
     /// <p>The timestamp when the database was created. Formatted in Unix time.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Region name and Availability Zone where the database is located.</p>
-    pub fn location(&self) -> ::std::option::Option<&crate::types::ResourceLocation> {
+    pub fn location(&self) -> ::std::option::Option<& crate::types::ResourceLocation> {
         self.location.as_ref()
     }
     /// <p>The Lightsail resource type for the database (for example, <code>RelationalDatabase</code>).</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The blueprint ID for the database. A blueprint describes the major engine version of a database.</p>
-    pub fn relational_database_blueprint_id(&self) -> ::std::option::Option<&str> {
+    pub fn relational_database_blueprint_id(&self) -> ::std::option::Option<& str> {
         self.relational_database_blueprint_id.as_deref()
     }
     /// <p>The bundle ID for the database. A bundle describes the performance specifications for your database.</p>
-    pub fn relational_database_bundle_id(&self) -> ::std::option::Option<&str> {
+    pub fn relational_database_bundle_id(&self) -> ::std::option::Option<& str> {
         self.relational_database_bundle_id.as_deref()
     }
     /// <p>The name of the master database created when the Lightsail database resource is created.</p>
-    pub fn master_database_name(&self) -> ::std::option::Option<&str> {
+    pub fn master_database_name(&self) -> ::std::option::Option<& str> {
         self.master_database_name.as_deref()
     }
     /// <p>Describes the hardware of the database.</p>
-    pub fn hardware(&self) -> ::std::option::Option<&crate::types::RelationalDatabaseHardware> {
+    pub fn hardware(&self) -> ::std::option::Option<& crate::types::RelationalDatabaseHardware> {
         self.hardware.as_ref()
     }
     /// <p>Describes the current state of the database.</p>
-    pub fn state(&self) -> ::std::option::Option<&str> {
+    pub fn state(&self) -> ::std::option::Option<& str> {
         self.state.as_deref()
     }
     /// <p>Describes the secondary Availability Zone of a high availability database.</p>
     /// <p>The secondary database is used for failover support of a high availability database.</p>
-    pub fn secondary_availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn secondary_availability_zone(&self) -> ::std::option::Option<& str> {
         self.secondary_availability_zone.as_deref()
     }
     /// <p>A Boolean value indicating whether automated backup retention is enabled for the database.</p>
@@ -120,36 +121,36 @@ impl RelationalDatabase {
         self.backup_retention_enabled
     }
     /// <p>Describes pending database value modifications.</p>
-    pub fn pending_modified_values(&self) -> ::std::option::Option<&crate::types::PendingModifiedRelationalDatabaseValues> {
+    pub fn pending_modified_values(&self) -> ::std::option::Option<& crate::types::PendingModifiedRelationalDatabaseValues> {
         self.pending_modified_values.as_ref()
     }
     /// <p>The database software (for example, <code>MySQL</code>).</p>
-    pub fn engine(&self) -> ::std::option::Option<&str> {
+    pub fn engine(&self) -> ::std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The database engine version (for example, <code>5.7.23</code>).</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>The latest point in time to which the database can be restored. Formatted in Unix time.</p>
-    pub fn latest_restorable_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn latest_restorable_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.latest_restorable_time.as_ref()
     }
     /// <p>The master user name of the database.</p>
-    pub fn master_username(&self) -> ::std::option::Option<&str> {
+    pub fn master_username(&self) -> ::std::option::Option<& str> {
         self.master_username.as_deref()
     }
     /// <p>The status of parameter updates for the database.</p>
-    pub fn parameter_apply_status(&self) -> ::std::option::Option<&str> {
+    pub fn parameter_apply_status(&self) -> ::std::option::Option<& str> {
         self.parameter_apply_status.as_deref()
     }
     /// <p>The daily time range during which automated backups are created for the database (for example, <code>16:00-16:30</code>).</p>
-    pub fn preferred_backup_window(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_backup_window(&self) -> ::std::option::Option<& str> {
         self.preferred_backup_window.as_deref()
     }
     /// <p>The weekly time range during which system maintenance can occur on the database.</p>
     /// <p>In the format <code>ddd:hh24:mi-ddd:hh24:mi</code>. For example, <code>Tue:17:00-Tue:17:30</code>.</p>
-    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<& str> {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>A Boolean value indicating whether the database is publicly accessible.</p>
@@ -157,17 +158,18 @@ impl RelationalDatabase {
         self.publicly_accessible
     }
     /// <p>The master endpoint for the database.</p>
-    pub fn master_endpoint(&self) -> ::std::option::Option<&crate::types::RelationalDatabaseEndpoint> {
+    pub fn master_endpoint(&self) -> ::std::option::Option<& crate::types::RelationalDatabaseEndpoint> {
         self.master_endpoint.as_ref()
     }
     /// <p>Describes the pending maintenance actions for the database.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pending_maintenance_actions.is_none()`.
-    pub fn pending_maintenance_actions(&self) -> &[crate::types::PendingMaintenanceAction] {
-        self.pending_maintenance_actions.as_deref().unwrap_or_default()
+    pub fn pending_maintenance_actions(&self) -> & [crate::types::PendingMaintenanceAction] {
+        self.pending_maintenance_actions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The certificate associated with the database.</p>
-    pub fn ca_certificate_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn ca_certificate_identifier(&self) -> ::std::option::Option<& str> {
         self.ca_certificate_identifier.as_deref()
     }
 }
@@ -188,7 +190,7 @@ pub struct RelationalDatabaseBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) location: ::std::option::Option<crate::types::ResourceLocation>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) relational_database_blueprint_id: ::std::option::Option<::std::string::String>,
     pub(crate) relational_database_bundle_id: ::std::option::Option<::std::string::String>,
     pub(crate) master_database_name: ::std::option::Option<::std::string::String>,
@@ -206,7 +208,7 @@ pub struct RelationalDatabaseBuilder {
     pub(crate) preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     pub(crate) publicly_accessible: ::std::option::Option<bool>,
     pub(crate) master_endpoint: ::std::option::Option<crate::types::RelationalDatabaseEndpoint>,
-    pub(crate) pending_maintenance_actions: ::std::option::Option<::std::vec::Vec<crate::types::PendingMaintenanceAction>>,
+    pub(crate) pending_maintenance_actions: ::std::option::Option<::std::vec::Vec::<crate::types::PendingMaintenanceAction>>,
     pub(crate) ca_certificate_identifier: ::std::option::Option<::std::string::String>,
 }
 impl RelationalDatabaseBuilder {
@@ -217,8 +219,7 @@ impl RelationalDatabaseBuilder {
     }
     /// <p>The unique name of the database resource in Lightsail.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The unique name of the database resource in Lightsail.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -231,8 +232,7 @@ impl RelationalDatabaseBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -245,8 +245,7 @@ impl RelationalDatabaseBuilder {
     }
     /// <p>The support code for the database. Include this code in your email to support when you have questions about a database in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
     pub fn set_support_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.support_code = input;
-        self
+        self.support_code = input; self
     }
     /// <p>The support code for the database. Include this code in your email to support when you have questions about a database in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
     pub fn get_support_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -259,8 +258,7 @@ impl RelationalDatabaseBuilder {
     }
     /// <p>The timestamp when the database was created. Formatted in Unix time.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp when the database was created. Formatted in Unix time.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -273,8 +271,7 @@ impl RelationalDatabaseBuilder {
     }
     /// <p>The Region name and Availability Zone where the database is located.</p>
     pub fn set_location(mut self, input: ::std::option::Option<crate::types::ResourceLocation>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The Region name and Availability Zone where the database is located.</p>
     pub fn get_location(&self) -> &::std::option::Option<crate::types::ResourceLocation> {
@@ -287,8 +284,7 @@ impl RelationalDatabaseBuilder {
     }
     /// <p>The Lightsail resource type for the database (for example, <code>RelationalDatabase</code>).</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The Lightsail resource type for the database (for example, <code>RelationalDatabase</code>).</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -301,17 +297,16 @@ impl RelationalDatabaseBuilder {
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The blueprint ID for the database. A blueprint describes the major engine version of a database.</p>
@@ -321,8 +316,7 @@ impl RelationalDatabaseBuilder {
     }
     /// <p>The blueprint ID for the database. A blueprint describes the major engine version of a database.</p>
     pub fn set_relational_database_blueprint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.relational_database_blueprint_id = input;
-        self
+        self.relational_database_blueprint_id = input; self
     }
     /// <p>The blueprint ID for the database. A blueprint describes the major engine version of a database.</p>
     pub fn get_relational_database_blueprint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -335,8 +329,7 @@ impl RelationalDatabaseBuilder {
     }
     /// <p>The bundle ID for the database. A bundle describes the performance specifications for your database.</p>
     pub fn set_relational_database_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.relational_database_bundle_id = input;
-        self
+        self.relational_database_bundle_id = input; self
     }
     /// <p>The bundle ID for the database. A bundle describes the performance specifications for your database.</p>
     pub fn get_relational_database_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -349,8 +342,7 @@ impl RelationalDatabaseBuilder {
     }
     /// <p>The name of the master database created when the Lightsail database resource is created.</p>
     pub fn set_master_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.master_database_name = input;
-        self
+        self.master_database_name = input; self
     }
     /// <p>The name of the master database created when the Lightsail database resource is created.</p>
     pub fn get_master_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -363,8 +355,7 @@ impl RelationalDatabaseBuilder {
     }
     /// <p>Describes the hardware of the database.</p>
     pub fn set_hardware(mut self, input: ::std::option::Option<crate::types::RelationalDatabaseHardware>) -> Self {
-        self.hardware = input;
-        self
+        self.hardware = input; self
     }
     /// <p>Describes the hardware of the database.</p>
     pub fn get_hardware(&self) -> &::std::option::Option<crate::types::RelationalDatabaseHardware> {
@@ -377,8 +368,7 @@ impl RelationalDatabaseBuilder {
     }
     /// <p>Describes the current state of the database.</p>
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Describes the current state of the database.</p>
     pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
@@ -393,8 +383,7 @@ impl RelationalDatabaseBuilder {
     /// <p>Describes the secondary Availability Zone of a high availability database.</p>
     /// <p>The secondary database is used for failover support of a high availability database.</p>
     pub fn set_secondary_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secondary_availability_zone = input;
-        self
+        self.secondary_availability_zone = input; self
     }
     /// <p>Describes the secondary Availability Zone of a high availability database.</p>
     /// <p>The secondary database is used for failover support of a high availability database.</p>
@@ -408,8 +397,7 @@ impl RelationalDatabaseBuilder {
     }
     /// <p>A Boolean value indicating whether automated backup retention is enabled for the database.</p>
     pub fn set_backup_retention_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.backup_retention_enabled = input;
-        self
+        self.backup_retention_enabled = input; self
     }
     /// <p>A Boolean value indicating whether automated backup retention is enabled for the database.</p>
     pub fn get_backup_retention_enabled(&self) -> &::std::option::Option<bool> {
@@ -422,8 +410,7 @@ impl RelationalDatabaseBuilder {
     }
     /// <p>Describes pending database value modifications.</p>
     pub fn set_pending_modified_values(mut self, input: ::std::option::Option<crate::types::PendingModifiedRelationalDatabaseValues>) -> Self {
-        self.pending_modified_values = input;
-        self
+        self.pending_modified_values = input; self
     }
     /// <p>Describes pending database value modifications.</p>
     pub fn get_pending_modified_values(&self) -> &::std::option::Option<crate::types::PendingModifiedRelationalDatabaseValues> {
@@ -436,8 +423,7 @@ impl RelationalDatabaseBuilder {
     }
     /// <p>The database software (for example, <code>MySQL</code>).</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine = input;
-        self
+        self.engine = input; self
     }
     /// <p>The database software (for example, <code>MySQL</code>).</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
@@ -450,8 +436,7 @@ impl RelationalDatabaseBuilder {
     }
     /// <p>The database engine version (for example, <code>5.7.23</code>).</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The database engine version (for example, <code>5.7.23</code>).</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -464,8 +449,7 @@ impl RelationalDatabaseBuilder {
     }
     /// <p>The latest point in time to which the database can be restored. Formatted in Unix time.</p>
     pub fn set_latest_restorable_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.latest_restorable_time = input;
-        self
+        self.latest_restorable_time = input; self
     }
     /// <p>The latest point in time to which the database can be restored. Formatted in Unix time.</p>
     pub fn get_latest_restorable_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -478,8 +462,7 @@ impl RelationalDatabaseBuilder {
     }
     /// <p>The master user name of the database.</p>
     pub fn set_master_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.master_username = input;
-        self
+        self.master_username = input; self
     }
     /// <p>The master user name of the database.</p>
     pub fn get_master_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -492,8 +475,7 @@ impl RelationalDatabaseBuilder {
     }
     /// <p>The status of parameter updates for the database.</p>
     pub fn set_parameter_apply_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_apply_status = input;
-        self
+        self.parameter_apply_status = input; self
     }
     /// <p>The status of parameter updates for the database.</p>
     pub fn get_parameter_apply_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -506,8 +488,7 @@ impl RelationalDatabaseBuilder {
     }
     /// <p>The daily time range during which automated backups are created for the database (for example, <code>16:00-16:30</code>).</p>
     pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_backup_window = input;
-        self
+        self.preferred_backup_window = input; self
     }
     /// <p>The daily time range during which automated backups are created for the database (for example, <code>16:00-16:30</code>).</p>
     pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
@@ -522,8 +503,7 @@ impl RelationalDatabaseBuilder {
     /// <p>The weekly time range during which system maintenance can occur on the database.</p>
     /// <p>In the format <code>ddd:hh24:mi-ddd:hh24:mi</code>. For example, <code>Tue:17:00-Tue:17:30</code>.</p>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_maintenance_window = input;
-        self
+        self.preferred_maintenance_window = input; self
     }
     /// <p>The weekly time range during which system maintenance can occur on the database.</p>
     /// <p>In the format <code>ddd:hh24:mi-ddd:hh24:mi</code>. For example, <code>Tue:17:00-Tue:17:30</code>.</p>
@@ -537,8 +517,7 @@ impl RelationalDatabaseBuilder {
     }
     /// <p>A Boolean value indicating whether the database is publicly accessible.</p>
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.publicly_accessible = input;
-        self
+        self.publicly_accessible = input; self
     }
     /// <p>A Boolean value indicating whether the database is publicly accessible.</p>
     pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
@@ -551,8 +530,7 @@ impl RelationalDatabaseBuilder {
     }
     /// <p>The master endpoint for the database.</p>
     pub fn set_master_endpoint(mut self, input: ::std::option::Option<crate::types::RelationalDatabaseEndpoint>) -> Self {
-        self.master_endpoint = input;
-        self
+        self.master_endpoint = input; self
     }
     /// <p>The master endpoint for the database.</p>
     pub fn get_master_endpoint(&self) -> &::std::option::Option<crate::types::RelationalDatabaseEndpoint> {
@@ -565,17 +543,16 @@ impl RelationalDatabaseBuilder {
     /// <p>Describes the pending maintenance actions for the database.</p>
     pub fn pending_maintenance_actions(mut self, input: crate::types::PendingMaintenanceAction) -> Self {
         let mut v = self.pending_maintenance_actions.unwrap_or_default();
-        v.push(input);
-        self.pending_maintenance_actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.pending_maintenance_actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Describes the pending maintenance actions for the database.</p>
-    pub fn set_pending_maintenance_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PendingMaintenanceAction>>) -> Self {
-        self.pending_maintenance_actions = input;
-        self
+    pub fn set_pending_maintenance_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PendingMaintenanceAction>>) -> Self {
+        self.pending_maintenance_actions = input; self
     }
     /// <p>Describes the pending maintenance actions for the database.</p>
-    pub fn get_pending_maintenance_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PendingMaintenanceAction>> {
+    pub fn get_pending_maintenance_actions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PendingMaintenanceAction>> {
         &self.pending_maintenance_actions
     }
     /// <p>The certificate associated with the database.</p>
@@ -585,8 +562,7 @@ impl RelationalDatabaseBuilder {
     }
     /// <p>The certificate associated with the database.</p>
     pub fn set_ca_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ca_certificate_identifier = input;
-        self
+        self.ca_certificate_identifier = input; self
     }
     /// <p>The certificate associated with the database.</p>
     pub fn get_ca_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -595,32 +571,59 @@ impl RelationalDatabaseBuilder {
     /// Consumes the builder and constructs a [`RelationalDatabase`](crate::types::RelationalDatabase).
     pub fn build(self) -> crate::types::RelationalDatabase {
         crate::types::RelationalDatabase {
-            name: self.name,
-            arn: self.arn,
-            support_code: self.support_code,
-            created_at: self.created_at,
-            location: self.location,
-            resource_type: self.resource_type,
-            tags: self.tags,
-            relational_database_blueprint_id: self.relational_database_blueprint_id,
-            relational_database_bundle_id: self.relational_database_bundle_id,
-            master_database_name: self.master_database_name,
-            hardware: self.hardware,
-            state: self.state,
-            secondary_availability_zone: self.secondary_availability_zone,
-            backup_retention_enabled: self.backup_retention_enabled,
-            pending_modified_values: self.pending_modified_values,
-            engine: self.engine,
-            engine_version: self.engine_version,
-            latest_restorable_time: self.latest_restorable_time,
-            master_username: self.master_username,
-            parameter_apply_status: self.parameter_apply_status,
-            preferred_backup_window: self.preferred_backup_window,
-            preferred_maintenance_window: self.preferred_maintenance_window,
-            publicly_accessible: self.publicly_accessible,
-            master_endpoint: self.master_endpoint,
-            pending_maintenance_actions: self.pending_maintenance_actions,
-            ca_certificate_identifier: self.ca_certificate_identifier,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            support_code: self.support_code
+            ,
+            created_at: self.created_at
+            ,
+            location: self.location
+            ,
+            resource_type: self.resource_type
+            ,
+            tags: self.tags
+            ,
+            relational_database_blueprint_id: self.relational_database_blueprint_id
+            ,
+            relational_database_bundle_id: self.relational_database_bundle_id
+            ,
+            master_database_name: self.master_database_name
+            ,
+            hardware: self.hardware
+            ,
+            state: self.state
+            ,
+            secondary_availability_zone: self.secondary_availability_zone
+            ,
+            backup_retention_enabled: self.backup_retention_enabled
+            ,
+            pending_modified_values: self.pending_modified_values
+            ,
+            engine: self.engine
+            ,
+            engine_version: self.engine_version
+            ,
+            latest_restorable_time: self.latest_restorable_time
+            ,
+            master_username: self.master_username
+            ,
+            parameter_apply_status: self.parameter_apply_status
+            ,
+            preferred_backup_window: self.preferred_backup_window
+            ,
+            preferred_maintenance_window: self.preferred_maintenance_window
+            ,
+            publicly_accessible: self.publicly_accessible
+            ,
+            master_endpoint: self.master_endpoint
+            ,
+            pending_maintenance_actions: self.pending_maintenance_actions
+            ,
+            ca_certificate_identifier: self.ca_certificate_identifier
+            ,
         }
     }
 }
+

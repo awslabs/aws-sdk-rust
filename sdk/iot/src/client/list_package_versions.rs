@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPackageVersions`](crate::operation::list_package_versions::builders::ListPackageVersionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_package_versions::builders::ListPackageVersionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`package_name(impl Into<String>)`](crate::operation::list_package_versions::builders::ListPackageVersionsFluentBuilder::package_name) / [`set_package_name(Option<String>)`](crate::operation::list_package_versions::builders::ListPackageVersionsFluentBuilder::set_package_name):<br>required: **true**<br><p>The name of the target software package.</p><br>
     ///   - [`status(PackageVersionStatus)`](crate::operation::list_package_versions::builders::ListPackageVersionsFluentBuilder::status) / [`set_status(Option<PackageVersionStatus>)`](crate::operation::list_package_versions::builders::ListPackageVersionsFluentBuilder::set_status):<br>required: **false**<br><p>The status of the package version. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_package_versions::builders::ListPackageVersionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_package_versions::builders::ListPackageVersionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return at one time.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_package_versions::builders::ListPackageVersionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_package_versions::builders::ListPackageVersionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results.</p><br>
-    /// - On success, responds with [`ListPackageVersionsOutput`](crate::operation::list_package_versions::ListPackageVersionsOutput) with field(s):
+                            /// - On success, responds with [`ListPackageVersionsOutput`](crate::operation::list_package_versions::ListPackageVersionsOutput) with field(s):
     ///   - [`package_version_summaries(Option<Vec::<PackageVersionSummary>>)`](crate::operation::list_package_versions::ListPackageVersionsOutput::package_version_summaries): <p>Lists the package versions associated to the package.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_package_versions::ListPackageVersionsOutput::next_token): <p>The token for the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListPackageVersionsError>`](crate::operation::list_package_versions::ListPackageVersionsError)
+                            /// - On failure, responds with [`SdkError<ListPackageVersionsError>`](crate::operation::list_package_versions::ListPackageVersionsError)
     pub fn list_package_versions(&self) -> crate::operation::list_package_versions::builders::ListPackageVersionsFluentBuilder {
-        crate::operation::list_package_versions::builders::ListPackageVersionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_package_versions::builders::ListPackageVersionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

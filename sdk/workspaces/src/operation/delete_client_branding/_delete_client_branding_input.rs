@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteClientBrandingInput {
+pub struct DeleteClientBrandingInput  {
     /// <p>The directory identifier of the WorkSpace for which you want to delete client branding.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The device type for which you want to delete client branding.</p>
-    pub platforms: ::std::option::Option<::std::vec::Vec<crate::types::ClientDeviceType>>,
+    pub platforms: ::std::option::Option<::std::vec::Vec::<crate::types::ClientDeviceType>>,
 }
-impl DeleteClientBrandingInput {
+impl  DeleteClientBrandingInput  {
     /// <p>The directory identifier of the WorkSpace for which you want to delete client branding.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The device type for which you want to delete client branding.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.platforms.is_none()`.
-    pub fn platforms(&self) -> &[crate::types::ClientDeviceType] {
-        self.platforms.as_deref().unwrap_or_default()
+    pub fn platforms(&self) -> & [crate::types::ClientDeviceType] {
+        self.platforms.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DeleteClientBrandingInput {
@@ -32,7 +33,7 @@ impl DeleteClientBrandingInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteClientBrandingInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
-    pub(crate) platforms: ::std::option::Option<::std::vec::Vec<crate::types::ClientDeviceType>>,
+    pub(crate) platforms: ::std::option::Option<::std::vec::Vec::<crate::types::ClientDeviceType>>,
 }
 impl DeleteClientBrandingInputBuilder {
     /// <p>The directory identifier of the WorkSpace for which you want to delete client branding.</p>
@@ -43,8 +44,7 @@ impl DeleteClientBrandingInputBuilder {
     }
     /// <p>The directory identifier of the WorkSpace for which you want to delete client branding.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The directory identifier of the WorkSpace for which you want to delete client branding.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,27 +57,28 @@ impl DeleteClientBrandingInputBuilder {
     /// <p>The device type for which you want to delete client branding.</p>
     pub fn platforms(mut self, input: crate::types::ClientDeviceType) -> Self {
         let mut v = self.platforms.unwrap_or_default();
-        v.push(input);
-        self.platforms = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.platforms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The device type for which you want to delete client branding.</p>
-    pub fn set_platforms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClientDeviceType>>) -> Self {
-        self.platforms = input;
-        self
+    pub fn set_platforms(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ClientDeviceType>>) -> Self {
+        self.platforms = input; self
     }
     /// <p>The device type for which you want to delete client branding.</p>
-    pub fn get_platforms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClientDeviceType>> {
+    pub fn get_platforms(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ClientDeviceType>> {
         &self.platforms
     }
     /// Consumes the builder and constructs a [`DeleteClientBrandingInput`](crate::operation::delete_client_branding::DeleteClientBrandingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_client_branding::DeleteClientBrandingInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_client_branding::DeleteClientBrandingInput {
-            resource_id: self.resource_id,
-            platforms: self.platforms,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_client_branding::DeleteClientBrandingInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_client_branding::DeleteClientBrandingInput {
+                resource_id: self.resource_id
+                ,
+                platforms: self.platforms
+                ,
+            }
+        )
     }
 }
+

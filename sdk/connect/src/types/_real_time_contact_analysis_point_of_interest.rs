@@ -3,16 +3,17 @@
 /// <p>The section of the contact transcript segment that category rule was detected.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RealTimeContactAnalysisPointOfInterest {
+pub struct RealTimeContactAnalysisPointOfInterest  {
     /// <p>List of the transcript items (segments) that are associated with a given point of interest.</p>
-    pub transcript_items: ::std::option::Option<::std::vec::Vec<crate::types::RealTimeContactAnalysisTranscriptItemWithCharacterOffsets>>,
+    pub transcript_items: ::std::option::Option<::std::vec::Vec::<crate::types::RealTimeContactAnalysisTranscriptItemWithCharacterOffsets>>,
 }
-impl RealTimeContactAnalysisPointOfInterest {
+impl  RealTimeContactAnalysisPointOfInterest  {
     /// <p>List of the transcript items (segments) that are associated with a given point of interest.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transcript_items.is_none()`.
-    pub fn transcript_items(&self) -> &[crate::types::RealTimeContactAnalysisTranscriptItemWithCharacterOffsets] {
-        self.transcript_items.as_deref().unwrap_or_default()
+    pub fn transcript_items(&self) -> & [crate::types::RealTimeContactAnalysisTranscriptItemWithCharacterOffsets] {
+        self.transcript_items.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RealTimeContactAnalysisPointOfInterest {
@@ -26,7 +27,7 @@ impl RealTimeContactAnalysisPointOfInterest {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RealTimeContactAnalysisPointOfInterestBuilder {
-    pub(crate) transcript_items: ::std::option::Option<::std::vec::Vec<crate::types::RealTimeContactAnalysisTranscriptItemWithCharacterOffsets>>,
+    pub(crate) transcript_items: ::std::option::Option<::std::vec::Vec::<crate::types::RealTimeContactAnalysisTranscriptItemWithCharacterOffsets>>,
 }
 impl RealTimeContactAnalysisPointOfInterestBuilder {
     /// Appends an item to `transcript_items`.
@@ -36,28 +37,24 @@ impl RealTimeContactAnalysisPointOfInterestBuilder {
     /// <p>List of the transcript items (segments) that are associated with a given point of interest.</p>
     pub fn transcript_items(mut self, input: crate::types::RealTimeContactAnalysisTranscriptItemWithCharacterOffsets) -> Self {
         let mut v = self.transcript_items.unwrap_or_default();
-        v.push(input);
-        self.transcript_items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.transcript_items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of the transcript items (segments) that are associated with a given point of interest.</p>
-    pub fn set_transcript_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RealTimeContactAnalysisTranscriptItemWithCharacterOffsets>>,
-    ) -> Self {
-        self.transcript_items = input;
-        self
+    pub fn set_transcript_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RealTimeContactAnalysisTranscriptItemWithCharacterOffsets>>) -> Self {
+        self.transcript_items = input; self
     }
     /// <p>List of the transcript items (segments) that are associated with a given point of interest.</p>
-    pub fn get_transcript_items(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RealTimeContactAnalysisTranscriptItemWithCharacterOffsets>> {
+    pub fn get_transcript_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RealTimeContactAnalysisTranscriptItemWithCharacterOffsets>> {
         &self.transcript_items
     }
     /// Consumes the builder and constructs a [`RealTimeContactAnalysisPointOfInterest`](crate::types::RealTimeContactAnalysisPointOfInterest).
     pub fn build(self) -> crate::types::RealTimeContactAnalysisPointOfInterest {
         crate::types::RealTimeContactAnalysisPointOfInterest {
-            transcript_items: self.transcript_items,
+            transcript_items: self.transcript_items
+            ,
         }
     }
 }
+

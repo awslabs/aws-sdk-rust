@@ -3,13 +3,13 @@
 /// <p>An object that represents a job timeout configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobTimeout {
+pub struct JobTimeout  {
     /// <p>The job timeout time (in seconds) that's measured from the job attempt's <code>startedAt</code> timestamp. After this time passes, Batch terminates your jobs if they aren't finished. The minimum value for the timeout is 60 seconds.</p>
     /// <p>For array jobs, the timeout applies to the child jobs, not to the parent array job.</p>
     /// <p>For multi-node parallel (MNP) jobs, the timeout applies to the whole job, not to the individual nodes.</p>
     pub attempt_duration_seconds: ::std::option::Option<i32>,
 }
-impl JobTimeout {
+impl  JobTimeout  {
     /// <p>The job timeout time (in seconds) that's measured from the job attempt's <code>startedAt</code> timestamp. After this time passes, Batch terminates your jobs if they aren't finished. The minimum value for the timeout is 60 seconds.</p>
     /// <p>For array jobs, the timeout applies to the child jobs, not to the parent array job.</p>
     /// <p>For multi-node parallel (MNP) jobs, the timeout applies to the whole job, not to the individual nodes.</p>
@@ -42,8 +42,7 @@ impl JobTimeoutBuilder {
     /// <p>For array jobs, the timeout applies to the child jobs, not to the parent array job.</p>
     /// <p>For multi-node parallel (MNP) jobs, the timeout applies to the whole job, not to the individual nodes.</p>
     pub fn set_attempt_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.attempt_duration_seconds = input;
-        self
+        self.attempt_duration_seconds = input; self
     }
     /// <p>The job timeout time (in seconds) that's measured from the job attempt's <code>startedAt</code> timestamp. After this time passes, Batch terminates your jobs if they aren't finished. The minimum value for the timeout is 60 seconds.</p>
     /// <p>For array jobs, the timeout applies to the child jobs, not to the parent array job.</p>
@@ -54,7 +53,9 @@ impl JobTimeoutBuilder {
     /// Consumes the builder and constructs a [`JobTimeout`](crate::types::JobTimeout).
     pub fn build(self) -> crate::types::JobTimeout {
         crate::types::JobTimeout {
-            attempt_duration_seconds: self.attempt_duration_seconds,
+            attempt_duration_seconds: self.attempt_duration_seconds
+            ,
         }
     }
 }
+

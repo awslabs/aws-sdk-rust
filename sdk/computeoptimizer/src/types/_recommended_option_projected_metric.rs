@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecommendedOptionProjectedMetric {
+pub struct RecommendedOptionProjectedMetric  {
     /// <p>The recommended instance type.</p>
     pub recommended_instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The rank of the recommendation option projected metric.</p>
@@ -13,11 +13,11 @@ pub struct RecommendedOptionProjectedMetric {
     /// <p>The projected metric rank correlates to the recommendation option rank. For example, the projected metric ranked as <code>1</code> is related to the recommendation option that is also ranked as <code>1</code> in the same response.</p>
     pub rank: i32,
     /// <p>An array of objects that describe a projected utilization metric.</p>
-    pub projected_metrics: ::std::option::Option<::std::vec::Vec<crate::types::ProjectedMetric>>,
+    pub projected_metrics: ::std::option::Option<::std::vec::Vec::<crate::types::ProjectedMetric>>,
 }
-impl RecommendedOptionProjectedMetric {
+impl  RecommendedOptionProjectedMetric  {
     /// <p>The recommended instance type.</p>
-    pub fn recommended_instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn recommended_instance_type(&self) -> ::std::option::Option<& str> {
         self.recommended_instance_type.as_deref()
     }
     /// <p>The rank of the recommendation option projected metric.</p>
@@ -27,10 +27,11 @@ impl RecommendedOptionProjectedMetric {
         self.rank
     }
     /// <p>An array of objects that describe a projected utilization metric.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.projected_metrics.is_none()`.
-    pub fn projected_metrics(&self) -> &[crate::types::ProjectedMetric] {
-        self.projected_metrics.as_deref().unwrap_or_default()
+    pub fn projected_metrics(&self) -> & [crate::types::ProjectedMetric] {
+        self.projected_metrics.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RecommendedOptionProjectedMetric {
@@ -46,7 +47,7 @@ impl RecommendedOptionProjectedMetric {
 pub struct RecommendedOptionProjectedMetricBuilder {
     pub(crate) recommended_instance_type: ::std::option::Option<::std::string::String>,
     pub(crate) rank: ::std::option::Option<i32>,
-    pub(crate) projected_metrics: ::std::option::Option<::std::vec::Vec<crate::types::ProjectedMetric>>,
+    pub(crate) projected_metrics: ::std::option::Option<::std::vec::Vec::<crate::types::ProjectedMetric>>,
 }
 impl RecommendedOptionProjectedMetricBuilder {
     /// <p>The recommended instance type.</p>
@@ -56,8 +57,7 @@ impl RecommendedOptionProjectedMetricBuilder {
     }
     /// <p>The recommended instance type.</p>
     pub fn set_recommended_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommended_instance_type = input;
-        self
+        self.recommended_instance_type = input; self
     }
     /// <p>The recommended instance type.</p>
     pub fn get_recommended_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +74,7 @@ impl RecommendedOptionProjectedMetricBuilder {
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
     /// <p>The projected metric rank correlates to the recommendation option rank. For example, the projected metric ranked as <code>1</code> is related to the recommendation option that is also ranked as <code>1</code> in the same response.</p>
     pub fn set_rank(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.rank = input;
-        self
+        self.rank = input; self
     }
     /// <p>The rank of the recommendation option projected metric.</p>
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
@@ -90,25 +89,29 @@ impl RecommendedOptionProjectedMetricBuilder {
     /// <p>An array of objects that describe a projected utilization metric.</p>
     pub fn projected_metrics(mut self, input: crate::types::ProjectedMetric) -> Self {
         let mut v = self.projected_metrics.unwrap_or_default();
-        v.push(input);
-        self.projected_metrics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.projected_metrics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that describe a projected utilization metric.</p>
-    pub fn set_projected_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectedMetric>>) -> Self {
-        self.projected_metrics = input;
-        self
+    pub fn set_projected_metrics(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProjectedMetric>>) -> Self {
+        self.projected_metrics = input; self
     }
     /// <p>An array of objects that describe a projected utilization metric.</p>
-    pub fn get_projected_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectedMetric>> {
+    pub fn get_projected_metrics(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProjectedMetric>> {
         &self.projected_metrics
     }
     /// Consumes the builder and constructs a [`RecommendedOptionProjectedMetric`](crate::types::RecommendedOptionProjectedMetric).
     pub fn build(self) -> crate::types::RecommendedOptionProjectedMetric {
         crate::types::RecommendedOptionProjectedMetric {
-            recommended_instance_type: self.recommended_instance_type,
-            rank: self.rank.unwrap_or_default(),
-            projected_metrics: self.projected_metrics,
+            recommended_instance_type: self.recommended_instance_type
+            ,
+            rank: self.rank
+                .unwrap_or_default()
+            ,
+            projected_metrics: self.projected_metrics
+            ,
         }
     }
 }
+

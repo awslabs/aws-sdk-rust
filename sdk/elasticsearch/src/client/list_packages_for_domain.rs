@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPackagesForDomain`](crate::operation::list_packages_for_domain::builders::ListPackagesForDomainFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_packages_for_domain::builders::ListPackagesForDomainFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`domain_name(impl Into<String>)`](crate::operation::list_packages_for_domain::builders::ListPackagesForDomainFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::list_packages_for_domain::builders::ListPackagesForDomainFluentBuilder::set_domain_name):<br>required: **true**<br><p>The name of the domain for which you want to list associated packages.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_packages_for_domain::builders::ListPackagesForDomainFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_packages_for_domain::builders::ListPackagesForDomainFluentBuilder::set_max_results):<br>required: **false**<br><p>Limits results to a maximum number of packages.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_packages_for_domain::builders::ListPackagesForDomainFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_packages_for_domain::builders::ListPackagesForDomainFluentBuilder::set_next_token):<br>required: **false**<br><p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</p><br>
-    /// - On success, responds with [`ListPackagesForDomainOutput`](crate::operation::list_packages_for_domain::ListPackagesForDomainOutput) with field(s):
+                            /// - On success, responds with [`ListPackagesForDomainOutput`](crate::operation::list_packages_for_domain::ListPackagesForDomainOutput) with field(s):
     ///   - [`domain_package_details_list(Option<Vec::<DomainPackageDetails>>)`](crate::operation::list_packages_for_domain::ListPackagesForDomainOutput::domain_package_details_list): <p>List of <code>DomainPackageDetails</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_packages_for_domain::ListPackagesForDomainOutput::next_token): <p>Pagination token that needs to be supplied to the next call to get the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListPackagesForDomainError>`](crate::operation::list_packages_for_domain::ListPackagesForDomainError)
+                            /// - On failure, responds with [`SdkError<ListPackagesForDomainError>`](crate::operation::list_packages_for_domain::ListPackagesForDomainError)
     pub fn list_packages_for_domain(&self) -> crate::operation::list_packages_for_domain::builders::ListPackagesForDomainFluentBuilder {
-        crate::operation::list_packages_for_domain::builders::ListPackagesForDomainFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_packages_for_domain::builders::ListPackagesForDomainFluentBuilder::new(self.handle.clone())
+                            }
 }
+

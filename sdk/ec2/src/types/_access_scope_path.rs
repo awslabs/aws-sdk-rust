@@ -3,28 +3,29 @@
 /// <p>Describes a path.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccessScopePath {
+pub struct AccessScopePath  {
     /// <p>The source.</p>
     pub source: ::std::option::Option<crate::types::PathStatement>,
     /// <p>The destination.</p>
     pub destination: ::std::option::Option<crate::types::PathStatement>,
     /// <p>The through resources.</p>
-    pub through_resources: ::std::option::Option<::std::vec::Vec<crate::types::ThroughResourcesStatement>>,
+    pub through_resources: ::std::option::Option<::std::vec::Vec::<crate::types::ThroughResourcesStatement>>,
 }
-impl AccessScopePath {
+impl  AccessScopePath  {
     /// <p>The source.</p>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::PathStatement> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::PathStatement> {
         self.source.as_ref()
     }
     /// <p>The destination.</p>
-    pub fn destination(&self) -> ::std::option::Option<&crate::types::PathStatement> {
+    pub fn destination(&self) -> ::std::option::Option<& crate::types::PathStatement> {
         self.destination.as_ref()
     }
     /// <p>The through resources.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.through_resources.is_none()`.
-    pub fn through_resources(&self) -> &[crate::types::ThroughResourcesStatement] {
-        self.through_resources.as_deref().unwrap_or_default()
+    pub fn through_resources(&self) -> & [crate::types::ThroughResourcesStatement] {
+        self.through_resources.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AccessScopePath {
@@ -40,7 +41,7 @@ impl AccessScopePath {
 pub struct AccessScopePathBuilder {
     pub(crate) source: ::std::option::Option<crate::types::PathStatement>,
     pub(crate) destination: ::std::option::Option<crate::types::PathStatement>,
-    pub(crate) through_resources: ::std::option::Option<::std::vec::Vec<crate::types::ThroughResourcesStatement>>,
+    pub(crate) through_resources: ::std::option::Option<::std::vec::Vec::<crate::types::ThroughResourcesStatement>>,
 }
 impl AccessScopePathBuilder {
     /// <p>The source.</p>
@@ -50,8 +51,7 @@ impl AccessScopePathBuilder {
     }
     /// <p>The source.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::PathStatement>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The source.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::PathStatement> {
@@ -64,8 +64,7 @@ impl AccessScopePathBuilder {
     }
     /// <p>The destination.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<crate::types::PathStatement>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>The destination.</p>
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::PathStatement> {
@@ -78,25 +77,28 @@ impl AccessScopePathBuilder {
     /// <p>The through resources.</p>
     pub fn through_resources(mut self, input: crate::types::ThroughResourcesStatement) -> Self {
         let mut v = self.through_resources.unwrap_or_default();
-        v.push(input);
-        self.through_resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.through_resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The through resources.</p>
-    pub fn set_through_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ThroughResourcesStatement>>) -> Self {
-        self.through_resources = input;
-        self
+    pub fn set_through_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ThroughResourcesStatement>>) -> Self {
+        self.through_resources = input; self
     }
     /// <p>The through resources.</p>
-    pub fn get_through_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ThroughResourcesStatement>> {
+    pub fn get_through_resources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ThroughResourcesStatement>> {
         &self.through_resources
     }
     /// Consumes the builder and constructs a [`AccessScopePath`](crate::types::AccessScopePath).
     pub fn build(self) -> crate::types::AccessScopePath {
         crate::types::AccessScopePath {
-            source: self.source,
-            destination: self.destination,
-            through_resources: self.through_resources,
+            source: self.source
+            ,
+            destination: self.destination
+            ,
+            through_resources: self.through_resources
+            ,
         }
     }
 }
+

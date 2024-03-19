@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListKxScalingGroupsOutput {
+pub struct ListKxScalingGroupsOutput  {
     /// <p>A list of scaling groups available in a kdb environment.</p>
-    pub scaling_groups: ::std::option::Option<::std::vec::Vec<crate::types::KxScalingGroup>>,
+    pub scaling_groups: ::std::option::Option<::std::vec::Vec::<crate::types::KxScalingGroup>>,
     /// <p>A token that indicates where a results page should begin.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListKxScalingGroupsOutput {
+impl  ListKxScalingGroupsOutput  {
     /// <p>A list of scaling groups available in a kdb environment.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scaling_groups.is_none()`.
-    pub fn scaling_groups(&self) -> &[crate::types::KxScalingGroup] {
-        self.scaling_groups.as_deref().unwrap_or_default()
+    pub fn scaling_groups(&self) -> & [crate::types::KxScalingGroup] {
+        self.scaling_groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token that indicates where a results page should begin.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListKxScalingGroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListKxScalingGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListKxScalingGroupsOutput`](crate::operation::list_kx_scaling_groups::ListKxScalingGroupsOutput).
     pub fn builder() -> crate::operation::list_kx_scaling_groups::builders::ListKxScalingGroupsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListKxScalingGroupsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListKxScalingGroupsOutputBuilder {
-    pub(crate) scaling_groups: ::std::option::Option<::std::vec::Vec<crate::types::KxScalingGroup>>,
+    pub(crate) scaling_groups: ::std::option::Option<::std::vec::Vec::<crate::types::KxScalingGroup>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListKxScalingGroupsOutputBuilder {
     /// <p>A list of scaling groups available in a kdb environment.</p>
     pub fn scaling_groups(mut self, input: crate::types::KxScalingGroup) -> Self {
         let mut v = self.scaling_groups.unwrap_or_default();
-        v.push(input);
-        self.scaling_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.scaling_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of scaling groups available in a kdb environment.</p>
-    pub fn set_scaling_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxScalingGroup>>) -> Self {
-        self.scaling_groups = input;
-        self
+    pub fn set_scaling_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KxScalingGroup>>) -> Self {
+        self.scaling_groups = input; self
     }
     /// <p>A list of scaling groups available in a kdb environment.</p>
-    pub fn get_scaling_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxScalingGroup>> {
+    pub fn get_scaling_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KxScalingGroup>> {
         &self.scaling_groups
     }
     /// <p>A token that indicates where a results page should begin.</p>
@@ -69,28 +69,30 @@ impl ListKxScalingGroupsOutputBuilder {
     }
     /// <p>A token that indicates where a results page should begin.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates where a results page should begin.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListKxScalingGroupsOutput`](crate::operation::list_kx_scaling_groups::ListKxScalingGroupsOutput).
     pub fn build(self) -> crate::operation::list_kx_scaling_groups::ListKxScalingGroupsOutput {
         crate::operation::list_kx_scaling_groups::ListKxScalingGroupsOutput {
-            scaling_groups: self.scaling_groups,
-            next_token: self.next_token,
+            scaling_groups: self.scaling_groups
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Contains the state of an impacted resource that the runtime instance of the lifecycle policy identified for action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LifecycleExecutionResourceState {
+pub struct LifecycleExecutionResourceState  {
     /// <p>The runtime status of the lifecycle action taken for the impacted resource.</p>
     pub status: ::std::option::Option<crate::types::LifecycleExecutionResourceStatus>,
     /// <p>Messaging that clarifies the reason for the assigned status.</p>
     pub reason: ::std::option::Option<::std::string::String>,
 }
-impl LifecycleExecutionResourceState {
+impl  LifecycleExecutionResourceState  {
     /// <p>The runtime status of the lifecycle action taken for the impacted resource.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::LifecycleExecutionResourceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::LifecycleExecutionResourceStatus> {
         self.status.as_ref()
     }
     /// <p>Messaging that clarifies the reason for the assigned status.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl LifecycleExecutionResourceStateBuilder {
     }
     /// <p>The runtime status of the lifecycle action taken for the impacted resource.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::LifecycleExecutionResourceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The runtime status of the lifecycle action taken for the impacted resource.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::LifecycleExecutionResourceStatus> {
@@ -55,8 +54,7 @@ impl LifecycleExecutionResourceStateBuilder {
     }
     /// <p>Messaging that clarifies the reason for the assigned status.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>Messaging that clarifies the reason for the assigned status.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl LifecycleExecutionResourceStateBuilder {
     /// Consumes the builder and constructs a [`LifecycleExecutionResourceState`](crate::types::LifecycleExecutionResourceState).
     pub fn build(self) -> crate::types::LifecycleExecutionResourceState {
         crate::types::LifecycleExecutionResourceState {
-            status: self.status,
-            reason: self.reason,
+            status: self.status
+            ,
+            reason: self.reason
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A viewer session to revoke in the call to <code>BatchStartViewerSessionRevocation</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchStartViewerSessionRevocationViewerSession {
+pub struct BatchStartViewerSessionRevocationViewerSession  {
     /// <p>The ARN of the channel associated with the viewer session to revoke.</p>
     pub channel_arn: ::std::string::String,
     /// <p>The ID of the viewer associated with the viewer session to revoke. Do not use this field for personally identifying, confidential, or sensitive information.</p>
@@ -11,16 +11,14 @@ pub struct BatchStartViewerSessionRevocationViewerSession {
     /// <p>An optional filter on which versions of the viewer session to revoke. All versions less than or equal to the specified version will be revoked. Default: 0.</p>
     pub viewer_session_versions_less_than_or_equal_to: i32,
 }
-impl BatchStartViewerSessionRevocationViewerSession {
+impl  BatchStartViewerSessionRevocationViewerSession  {
     /// <p>The ARN of the channel associated with the viewer session to revoke.</p>
-    pub fn channel_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.channel_arn.deref()
+    pub fn channel_arn(&self) -> & str {
+        use std::ops::Deref; self.channel_arn.deref()
     }
     /// <p>The ID of the viewer associated with the viewer session to revoke. Do not use this field for personally identifying, confidential, or sensitive information.</p>
-    pub fn viewer_id(&self) -> &str {
-        use std::ops::Deref;
-        self.viewer_id.deref()
+    pub fn viewer_id(&self) -> & str {
+        use std::ops::Deref; self.viewer_id.deref()
     }
     /// <p>An optional filter on which versions of the viewer session to revoke. All versions less than or equal to the specified version will be revoked. Default: 0.</p>
     pub fn viewer_session_versions_less_than_or_equal_to(&self) -> i32 {
@@ -51,8 +49,7 @@ impl BatchStartViewerSessionRevocationViewerSessionBuilder {
     }
     /// <p>The ARN of the channel associated with the viewer session to revoke.</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// <p>The ARN of the channel associated with the viewer session to revoke.</p>
     pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl BatchStartViewerSessionRevocationViewerSessionBuilder {
     }
     /// <p>The ID of the viewer associated with the viewer session to revoke. Do not use this field for personally identifying, confidential, or sensitive information.</p>
     pub fn set_viewer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.viewer_id = input;
-        self
+        self.viewer_id = input; self
     }
     /// <p>The ID of the viewer associated with the viewer session to revoke. Do not use this field for personally identifying, confidential, or sensitive information.</p>
     pub fn get_viewer_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl BatchStartViewerSessionRevocationViewerSessionBuilder {
     }
     /// <p>An optional filter on which versions of the viewer session to revoke. All versions less than or equal to the specified version will be revoked. Default: 0.</p>
     pub fn set_viewer_session_versions_less_than_or_equal_to(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.viewer_session_versions_less_than_or_equal_to = input;
-        self
+        self.viewer_session_versions_less_than_or_equal_to = input; self
     }
     /// <p>An optional filter on which versions of the viewer session to revoke. All versions less than or equal to the specified version will be revoked. Default: 0.</p>
     pub fn get_viewer_session_versions_less_than_or_equal_to(&self) -> &::std::option::Option<i32> {
@@ -91,23 +86,24 @@ impl BatchStartViewerSessionRevocationViewerSessionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`channel_arn`](crate::types::builders::BatchStartViewerSessionRevocationViewerSessionBuilder::channel_arn)
     /// - [`viewer_id`](crate::types::builders::BatchStartViewerSessionRevocationViewerSessionBuilder::viewer_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::BatchStartViewerSessionRevocationViewerSession, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BatchStartViewerSessionRevocationViewerSession {
-            channel_arn: self.channel_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "channel_arn",
-                    "channel_arn was not specified but it is required when building BatchStartViewerSessionRevocationViewerSession",
-                )
-            })?,
-            viewer_id: self.viewer_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "viewer_id",
-                    "viewer_id was not specified but it is required when building BatchStartViewerSessionRevocationViewerSession",
-                )
-            })?,
-            viewer_session_versions_less_than_or_equal_to: self.viewer_session_versions_less_than_or_equal_to.unwrap_or_default(),
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchStartViewerSessionRevocationViewerSession, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::BatchStartViewerSessionRevocationViewerSession {
+                channel_arn: self.channel_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("channel_arn", "channel_arn was not specified but it is required when building BatchStartViewerSessionRevocationViewerSession")
+                    )?
+                ,
+                viewer_id: self.viewer_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("viewer_id", "viewer_id was not specified but it is required when building BatchStartViewerSessionRevocationViewerSession")
+                    )?
+                ,
+                viewer_session_versions_less_than_or_equal_to: self.viewer_session_versions_less_than_or_equal_to
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

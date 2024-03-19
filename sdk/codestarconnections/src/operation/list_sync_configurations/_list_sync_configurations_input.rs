@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSyncConfigurationsInput {
+pub struct ListSyncConfigurationsInput  {
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>An enumeration token that allows the operation to batch the results of the operation.</p>
@@ -12,21 +12,21 @@ pub struct ListSyncConfigurationsInput {
     /// <p>The sync type for the requested list of sync configurations.</p>
     pub sync_type: ::std::option::Option<crate::types::SyncConfigurationType>,
 }
-impl ListSyncConfigurationsInput {
+impl  ListSyncConfigurationsInput  {
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>An enumeration token that allows the operation to batch the results of the operation.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The ID of the repository link for the requested list of sync configurations.</p>
-    pub fn repository_link_id(&self) -> ::std::option::Option<&str> {
+    pub fn repository_link_id(&self) -> ::std::option::Option<& str> {
         self.repository_link_id.as_deref()
     }
     /// <p>The sync type for the requested list of sync configurations.</p>
-    pub fn sync_type(&self) -> ::std::option::Option<&crate::types::SyncConfigurationType> {
+    pub fn sync_type(&self) -> ::std::option::Option<& crate::types::SyncConfigurationType> {
         self.sync_type.as_ref()
     }
 }
@@ -54,8 +54,7 @@ impl ListSyncConfigurationsInputBuilder {
     }
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -68,8 +67,7 @@ impl ListSyncConfigurationsInputBuilder {
     }
     /// <p>An enumeration token that allows the operation to batch the results of the operation.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An enumeration token that allows the operation to batch the results of the operation.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ListSyncConfigurationsInputBuilder {
     }
     /// <p>The ID of the repository link for the requested list of sync configurations.</p>
     pub fn set_repository_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_link_id = input;
-        self
+        self.repository_link_id = input; self
     }
     /// <p>The ID of the repository link for the requested list of sync configurations.</p>
     pub fn get_repository_link_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,25 +95,26 @@ impl ListSyncConfigurationsInputBuilder {
     }
     /// <p>The sync type for the requested list of sync configurations.</p>
     pub fn set_sync_type(mut self, input: ::std::option::Option<crate::types::SyncConfigurationType>) -> Self {
-        self.sync_type = input;
-        self
+        self.sync_type = input; self
     }
     /// <p>The sync type for the requested list of sync configurations.</p>
     pub fn get_sync_type(&self) -> &::std::option::Option<crate::types::SyncConfigurationType> {
         &self.sync_type
     }
     /// Consumes the builder and constructs a [`ListSyncConfigurationsInput`](crate::operation::list_sync_configurations::ListSyncConfigurationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_sync_configurations::ListSyncConfigurationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_sync_configurations::ListSyncConfigurationsInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-            repository_link_id: self.repository_link_id,
-            sync_type: self.sync_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_sync_configurations::ListSyncConfigurationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_sync_configurations::ListSyncConfigurationsInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                repository_link_id: self.repository_link_id
+                ,
+                sync_type: self.sync_type
+                ,
+            }
+        )
     }
 }
+

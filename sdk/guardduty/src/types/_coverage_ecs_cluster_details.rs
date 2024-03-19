@@ -3,7 +3,7 @@
 /// <p>Contains information about Amazon ECS cluster runtime coverage details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CoverageEcsClusterDetails {
+pub struct CoverageEcsClusterDetails  {
     /// <p>The name of the Amazon ECS cluster.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>Information about the Fargate details associated with the Amazon ECS cluster.</p>
@@ -11,17 +11,17 @@ pub struct CoverageEcsClusterDetails {
     /// <p>Information about the Amazon ECS container running on Amazon EC2 instance.</p>
     pub container_instance_details: ::std::option::Option<crate::types::ContainerInstanceDetails>,
 }
-impl CoverageEcsClusterDetails {
+impl  CoverageEcsClusterDetails  {
     /// <p>The name of the Amazon ECS cluster.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>Information about the Fargate details associated with the Amazon ECS cluster.</p>
-    pub fn fargate_details(&self) -> ::std::option::Option<&crate::types::FargateDetails> {
+    pub fn fargate_details(&self) -> ::std::option::Option<& crate::types::FargateDetails> {
         self.fargate_details.as_ref()
     }
     /// <p>Information about the Amazon ECS container running on Amazon EC2 instance.</p>
-    pub fn container_instance_details(&self) -> ::std::option::Option<&crate::types::ContainerInstanceDetails> {
+    pub fn container_instance_details(&self) -> ::std::option::Option<& crate::types::ContainerInstanceDetails> {
         self.container_instance_details.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl CoverageEcsClusterDetailsBuilder {
     }
     /// <p>The name of the Amazon ECS cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The name of the Amazon ECS cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl CoverageEcsClusterDetailsBuilder {
     }
     /// <p>Information about the Fargate details associated with the Amazon ECS cluster.</p>
     pub fn set_fargate_details(mut self, input: ::std::option::Option<crate::types::FargateDetails>) -> Self {
-        self.fargate_details = input;
-        self
+        self.fargate_details = input; self
     }
     /// <p>Information about the Fargate details associated with the Amazon ECS cluster.</p>
     pub fn get_fargate_details(&self) -> &::std::option::Option<crate::types::FargateDetails> {
@@ -76,8 +74,7 @@ impl CoverageEcsClusterDetailsBuilder {
     }
     /// <p>Information about the Amazon ECS container running on Amazon EC2 instance.</p>
     pub fn set_container_instance_details(mut self, input: ::std::option::Option<crate::types::ContainerInstanceDetails>) -> Self {
-        self.container_instance_details = input;
-        self
+        self.container_instance_details = input; self
     }
     /// <p>Information about the Amazon ECS container running on Amazon EC2 instance.</p>
     pub fn get_container_instance_details(&self) -> &::std::option::Option<crate::types::ContainerInstanceDetails> {
@@ -86,9 +83,13 @@ impl CoverageEcsClusterDetailsBuilder {
     /// Consumes the builder and constructs a [`CoverageEcsClusterDetails`](crate::types::CoverageEcsClusterDetails).
     pub fn build(self) -> crate::types::CoverageEcsClusterDetails {
         crate::types::CoverageEcsClusterDetails {
-            cluster_name: self.cluster_name,
-            fargate_details: self.fargate_details,
-            container_instance_details: self.container_instance_details,
+            cluster_name: self.cluster_name
+            ,
+            fargate_details: self.fargate_details
+            ,
+            container_instance_details: self.container_instance_details
+            ,
         }
     }
 }
+

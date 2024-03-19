@@ -4,7 +4,7 @@
 /// <p>A per-path cache behavior is used to override, or add an exception to, the default cache behavior of a distribution. For example, if the <code>cacheBehavior</code> is set to <code>cache</code>, then a per-path cache behavior can be used to specify a directory, file, or file type that your distribution will cache. Alternately, if the distribution's <code>cacheBehavior</code> is <code>dont-cache</code>, then a per-path cache behavior can be used to specify a directory, file, or file type that your distribution will not cache.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CacheBehaviorPerPath {
+pub struct CacheBehaviorPerPath  {
     /// <p>The path to a directory or file to cached, or not cache. Use an asterisk symbol to specify wildcard directories (<code>path/to/assets/*</code>), and file types (<code>*.html, *jpg, *js</code>). Directories and file paths are case-sensitive.</p>
     /// <p>Examples:</p>
     /// <ul>
@@ -36,7 +36,7 @@ pub struct CacheBehaviorPerPath {
     /// </ul>
     pub behavior: ::std::option::Option<crate::types::BehaviorEnum>,
 }
-impl CacheBehaviorPerPath {
+impl  CacheBehaviorPerPath  {
     /// <p>The path to a directory or file to cached, or not cache. Use an asterisk symbol to specify wildcard directories (<code>path/to/assets/*</code>), and file types (<code>*.html, *jpg, *js</code>). Directories and file paths are case-sensitive.</p>
     /// <p>Examples:</p>
     /// <ul>
@@ -57,7 +57,7 @@ impl CacheBehaviorPerPath {
     /// <p>Specify the following to cache all files in the images sub-directory of the document root of an Apache web server.</p>
     /// <p><code>var/www/html/images/</code></p></li>
     /// </ul>
-    pub fn path(&self) -> ::std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>The cache behavior for the specified path.</p>
@@ -68,7 +68,7 @@ impl CacheBehaviorPerPath {
     /// <li>
     /// <p><b> <code>dont-cache</code> </b> - This behavior doesn't cache the specified path.</p></li>
     /// </ul>
-    pub fn behavior(&self) -> ::std::option::Option<&crate::types::BehaviorEnum> {
+    pub fn behavior(&self) -> ::std::option::Option<& crate::types::BehaviorEnum> {
         self.behavior.as_ref()
     }
 }
@@ -132,8 +132,7 @@ impl CacheBehaviorPerPathBuilder {
     /// <p><code>var/www/html/images/</code></p></li>
     /// </ul>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>The path to a directory or file to cached, or not cache. Use an asterisk symbol to specify wildcard directories (<code>path/to/assets/*</code>), and file types (<code>*.html, *jpg, *js</code>). Directories and file paths are case-sensitive.</p>
     /// <p>Examples:</p>
@@ -179,8 +178,7 @@ impl CacheBehaviorPerPathBuilder {
     /// <p><b> <code>dont-cache</code> </b> - This behavior doesn't cache the specified path.</p></li>
     /// </ul>
     pub fn set_behavior(mut self, input: ::std::option::Option<crate::types::BehaviorEnum>) -> Self {
-        self.behavior = input;
-        self
+        self.behavior = input; self
     }
     /// <p>The cache behavior for the specified path.</p>
     /// <p>You can specify one of the following per-path cache behaviors:</p>
@@ -196,8 +194,11 @@ impl CacheBehaviorPerPathBuilder {
     /// Consumes the builder and constructs a [`CacheBehaviorPerPath`](crate::types::CacheBehaviorPerPath).
     pub fn build(self) -> crate::types::CacheBehaviorPerPath {
         crate::types::CacheBehaviorPerPath {
-            path: self.path,
-            behavior: self.behavior,
+            path: self.path
+            ,
+            behavior: self.behavior
+            ,
         }
     }
 }
+

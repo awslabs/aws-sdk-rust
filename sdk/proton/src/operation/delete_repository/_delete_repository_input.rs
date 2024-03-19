@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRepositoryInput {
+pub struct DeleteRepositoryInput  {
     /// <p>The repository provider.</p>
     pub provider: ::std::option::Option<crate::types::RepositoryProvider>,
     /// <p>The repository name.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteRepositoryInput {
+impl  DeleteRepositoryInput  {
     /// <p>The repository provider.</p>
-    pub fn provider(&self) -> ::std::option::Option<&crate::types::RepositoryProvider> {
+    pub fn provider(&self) -> ::std::option::Option<& crate::types::RepositoryProvider> {
         self.provider.as_ref()
     }
     /// <p>The repository name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteRepositoryInputBuilder {
     }
     /// <p>The repository provider.</p>
     pub fn set_provider(mut self, input: ::std::option::Option<crate::types::RepositoryProvider>) -> Self {
-        self.provider = input;
-        self
+        self.provider = input; self
     }
     /// <p>The repository provider.</p>
     pub fn get_provider(&self) -> &::std::option::Option<crate::types::RepositoryProvider> {
@@ -56,20 +55,22 @@ impl DeleteRepositoryInputBuilder {
     }
     /// <p>The repository name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The repository name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     /// Consumes the builder and constructs a [`DeleteRepositoryInput`](crate::operation::delete_repository::DeleteRepositoryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_repository::DeleteRepositoryInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_repository::DeleteRepositoryInput {
-            provider: self.provider,
-            name: self.name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_repository::DeleteRepositoryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_repository::DeleteRepositoryInput {
+                provider: self.provider
+                ,
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>The single sign-on details in Amazon DataZone.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SingleSignOn {
+pub struct SingleSignOn  {
     /// <p>The type of single sign-on in Amazon DataZone.</p>
     pub r#type: ::std::option::Option<crate::types::AuthType>,
     /// <p>The single sign-on user assignment in Amazon DataZone.</p>
     pub user_assignment: ::std::option::Option<crate::types::UserAssignment>,
 }
-impl SingleSignOn {
+impl  SingleSignOn  {
     /// <p>The type of single sign-on in Amazon DataZone.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::AuthType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::AuthType> {
         self.r#type.as_ref()
     }
     /// <p>The single sign-on user assignment in Amazon DataZone.</p>
-    pub fn user_assignment(&self) -> ::std::option::Option<&crate::types::UserAssignment> {
+    pub fn user_assignment(&self) -> ::std::option::Option<& crate::types::UserAssignment> {
         self.user_assignment.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl SingleSignOnBuilder {
     }
     /// <p>The type of single sign-on in Amazon DataZone.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::AuthType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of single sign-on in Amazon DataZone.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::AuthType> {
@@ -55,8 +54,7 @@ impl SingleSignOnBuilder {
     }
     /// <p>The single sign-on user assignment in Amazon DataZone.</p>
     pub fn set_user_assignment(mut self, input: ::std::option::Option<crate::types::UserAssignment>) -> Self {
-        self.user_assignment = input;
-        self
+        self.user_assignment = input; self
     }
     /// <p>The single sign-on user assignment in Amazon DataZone.</p>
     pub fn get_user_assignment(&self) -> &::std::option::Option<crate::types::UserAssignment> {
@@ -65,8 +63,11 @@ impl SingleSignOnBuilder {
     /// Consumes the builder and constructs a [`SingleSignOn`](crate::types::SingleSignOn).
     pub fn build(self) -> crate::types::SingleSignOn {
         crate::types::SingleSignOn {
-            r#type: self.r#type,
-            user_assignment: self.user_assignment,
+            r#type: self.r#type
+            ,
+            user_assignment: self.user_assignment
+            ,
         }
     }
 }
+

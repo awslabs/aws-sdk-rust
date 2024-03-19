@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEbsEncryptionByDefaultOutput {
+pub struct GetEbsEncryptionByDefaultOutput  {
     /// <p>Indicates whether encryption by default is enabled.</p>
     pub ebs_encryption_by_default: ::std::option::Option<bool>,
     /// <p>Reserved for future use.</p>
     pub sse_type: ::std::option::Option<crate::types::SseType>,
     _request_id: Option<String>,
 }
-impl GetEbsEncryptionByDefaultOutput {
+impl  GetEbsEncryptionByDefaultOutput  {
     /// <p>Indicates whether encryption by default is enabled.</p>
     pub fn ebs_encryption_by_default(&self) -> ::std::option::Option<bool> {
         self.ebs_encryption_by_default
     }
     /// <p>Reserved for future use.</p>
-    pub fn sse_type(&self) -> ::std::option::Option<&crate::types::SseType> {
+    pub fn sse_type(&self) -> ::std::option::Option<& crate::types::SseType> {
         self.sse_type.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetEbsEncryptionByDefaultOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetEbsEncryptionByDefaultOutput {
     /// Creates a new builder-style object to manufacture [`GetEbsEncryptionByDefaultOutput`](crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultOutput).
     pub fn builder() -> crate::operation::get_ebs_encryption_by_default::builders::GetEbsEncryptionByDefaultOutputBuilder {
@@ -47,8 +47,7 @@ impl GetEbsEncryptionByDefaultOutputBuilder {
     }
     /// <p>Indicates whether encryption by default is enabled.</p>
     pub fn set_ebs_encryption_by_default(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ebs_encryption_by_default = input;
-        self
+        self.ebs_encryption_by_default = input; self
     }
     /// <p>Indicates whether encryption by default is enabled.</p>
     pub fn get_ebs_encryption_by_default(&self) -> &::std::option::Option<bool> {
@@ -61,28 +60,30 @@ impl GetEbsEncryptionByDefaultOutputBuilder {
     }
     /// <p>Reserved for future use.</p>
     pub fn set_sse_type(mut self, input: ::std::option::Option<crate::types::SseType>) -> Self {
-        self.sse_type = input;
-        self
+        self.sse_type = input; self
     }
     /// <p>Reserved for future use.</p>
     pub fn get_sse_type(&self) -> &::std::option::Option<crate::types::SseType> {
         &self.sse_type
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetEbsEncryptionByDefaultOutput`](crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultOutput).
     pub fn build(self) -> crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultOutput {
         crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultOutput {
-            ebs_encryption_by_default: self.ebs_encryption_by_default,
-            sse_type: self.sse_type,
+            ebs_encryption_by_default: self.ebs_encryption_by_default
+            ,
+            sse_type: self.sse_type
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

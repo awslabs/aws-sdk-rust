@@ -3,21 +3,20 @@
 /// <p>The CIS string filter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CisStringFilter {
+pub struct CisStringFilter  {
     /// <p>The comparison value of the CIS string filter.</p>
     pub comparison: crate::types::CisStringComparison,
     /// <p>The value of the CIS string filter.</p>
     pub value: ::std::string::String,
 }
-impl CisStringFilter {
+impl  CisStringFilter  {
     /// <p>The comparison value of the CIS string filter.</p>
-    pub fn comparison(&self) -> &crate::types::CisStringComparison {
+    pub fn comparison(&self) -> & crate::types::CisStringComparison {
         &self.comparison
     }
     /// <p>The value of the CIS string filter.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl CisStringFilter {
@@ -43,8 +42,7 @@ impl CisStringFilterBuilder {
     }
     /// <p>The comparison value of the CIS string filter.</p>
     pub fn set_comparison(mut self, input: ::std::option::Option<crate::types::CisStringComparison>) -> Self {
-        self.comparison = input;
-        self
+        self.comparison = input; self
     }
     /// <p>The comparison value of the CIS string filter.</p>
     pub fn get_comparison(&self) -> &::std::option::Option<crate::types::CisStringComparison> {
@@ -58,8 +56,7 @@ impl CisStringFilterBuilder {
     }
     /// <p>The value of the CIS string filter.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the CIS string filter.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,19 +67,20 @@ impl CisStringFilterBuilder {
     /// - [`comparison`](crate::types::builders::CisStringFilterBuilder::comparison)
     /// - [`value`](crate::types::builders::CisStringFilterBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::CisStringFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CisStringFilter {
-            comparison: self.comparison.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "comparison",
-                    "comparison was not specified but it is required when building CisStringFilter",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building CisStringFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CisStringFilter {
+                comparison: self.comparison
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("comparison", "comparison was not specified but it is required when building CisStringFilter")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building CisStringFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

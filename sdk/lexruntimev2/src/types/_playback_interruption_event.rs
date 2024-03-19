@@ -3,7 +3,7 @@
 /// <p>Event sent from Amazon Lex V2 to indicate to the client application should stop playback of audio. For example, if the client is playing a prompt that asks for the user's telephone number, the user might start to say the phone number before the prompt is complete. Amazon Lex V2 sends this event to the client application to indicate that the user is responding and that Amazon Lex V2 is processing their input.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PlaybackInterruptionEvent {
+pub struct PlaybackInterruptionEvent  {
     /// <p>Indicates the type of user input that Amazon Lex V2 detected.</p>
     pub event_reason: ::std::option::Option<crate::types::PlaybackInterruptionReason>,
     /// <p>The identifier of the event that contained the audio, DTMF, or text that caused the interruption.</p>
@@ -11,17 +11,17 @@ pub struct PlaybackInterruptionEvent {
     /// <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in the form <code>RESPONSE-N</code>, where N is a number starting with one and incremented for each event sent by Amazon Lex V2 in the current session.</p>
     pub event_id: ::std::option::Option<::std::string::String>,
 }
-impl PlaybackInterruptionEvent {
+impl  PlaybackInterruptionEvent  {
     /// <p>Indicates the type of user input that Amazon Lex V2 detected.</p>
-    pub fn event_reason(&self) -> ::std::option::Option<&crate::types::PlaybackInterruptionReason> {
+    pub fn event_reason(&self) -> ::std::option::Option<& crate::types::PlaybackInterruptionReason> {
         self.event_reason.as_ref()
     }
     /// <p>The identifier of the event that contained the audio, DTMF, or text that caused the interruption.</p>
-    pub fn caused_by_event_id(&self) -> ::std::option::Option<&str> {
+    pub fn caused_by_event_id(&self) -> ::std::option::Option<& str> {
         self.caused_by_event_id.as_deref()
     }
     /// <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in the form <code>RESPONSE-N</code>, where N is a number starting with one and incremented for each event sent by Amazon Lex V2 in the current session.</p>
-    pub fn event_id(&self) -> ::std::option::Option<&str> {
+    pub fn event_id(&self) -> ::std::option::Option<& str> {
         self.event_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl PlaybackInterruptionEventBuilder {
     }
     /// <p>Indicates the type of user input that Amazon Lex V2 detected.</p>
     pub fn set_event_reason(mut self, input: ::std::option::Option<crate::types::PlaybackInterruptionReason>) -> Self {
-        self.event_reason = input;
-        self
+        self.event_reason = input; self
     }
     /// <p>Indicates the type of user input that Amazon Lex V2 detected.</p>
     pub fn get_event_reason(&self) -> &::std::option::Option<crate::types::PlaybackInterruptionReason> {
@@ -62,8 +61,7 @@ impl PlaybackInterruptionEventBuilder {
     }
     /// <p>The identifier of the event that contained the audio, DTMF, or text that caused the interruption.</p>
     pub fn set_caused_by_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.caused_by_event_id = input;
-        self
+        self.caused_by_event_id = input; self
     }
     /// <p>The identifier of the event that contained the audio, DTMF, or text that caused the interruption.</p>
     pub fn get_caused_by_event_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl PlaybackInterruptionEventBuilder {
     }
     /// <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in the form <code>RESPONSE-N</code>, where N is a number starting with one and incremented for each event sent by Amazon Lex V2 in the current session.</p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_id = input;
-        self
+        self.event_id = input; self
     }
     /// <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in the form <code>RESPONSE-N</code>, where N is a number starting with one and incremented for each event sent by Amazon Lex V2 in the current session.</p>
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl PlaybackInterruptionEventBuilder {
     /// Consumes the builder and constructs a [`PlaybackInterruptionEvent`](crate::types::PlaybackInterruptionEvent).
     pub fn build(self) -> crate::types::PlaybackInterruptionEvent {
         crate::types::PlaybackInterruptionEvent {
-            event_reason: self.event_reason,
-            caused_by_event_id: self.caused_by_event_id,
-            event_id: self.event_id,
+            event_reason: self.event_reason
+            ,
+            caused_by_event_id: self.caused_by_event_id
+            ,
+            event_id: self.event_id
+            ,
         }
     }
 }
+

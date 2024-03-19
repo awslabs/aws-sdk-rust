@@ -2,14 +2,15 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDistributions`](crate::operation::list_distributions::builders::ListDistributionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_distributions::builders::ListDistributionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`marker(impl Into<String>)`](crate::operation::list_distributions::builders::ListDistributionsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::list_distributions::builders::ListDistributionsFluentBuilder::set_marker):<br>required: **false**<br><p>Use this when paginating results to indicate where to begin in your list of distributions. The results include distributions in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last distribution on that page).</p><br>
     ///   - [`max_items(i32)`](crate::operation::list_distributions::builders::ListDistributionsFluentBuilder::max_items) / [`set_max_items(Option<i32>)`](crate::operation::list_distributions::builders::ListDistributionsFluentBuilder::set_max_items):<br>required: **false**<br><p>The maximum number of distributions you want in the response body.</p><br>
-    /// - On success, responds with [`ListDistributionsOutput`](crate::operation::list_distributions::ListDistributionsOutput) with field(s):
+                            /// - On success, responds with [`ListDistributionsOutput`](crate::operation::list_distributions::ListDistributionsOutput) with field(s):
     ///   - [`distribution_list(Option<DistributionList>)`](crate::operation::list_distributions::ListDistributionsOutput::distribution_list): <p>The <code>DistributionList</code> type.</p>
-    /// - On failure, responds with [`SdkError<ListDistributionsError>`](crate::operation::list_distributions::ListDistributionsError)
+                            /// - On failure, responds with [`SdkError<ListDistributionsError>`](crate::operation::list_distributions::ListDistributionsError)
     pub fn list_distributions(&self) -> crate::operation::list_distributions::builders::ListDistributionsFluentBuilder {
-        crate::operation::list_distributions::builders::ListDistributionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_distributions::builders::ListDistributionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

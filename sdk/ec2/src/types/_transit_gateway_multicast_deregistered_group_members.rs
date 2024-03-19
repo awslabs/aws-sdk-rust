@@ -3,27 +3,28 @@
 /// <p>Describes the deregistered transit gateway multicast group members.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransitGatewayMulticastDeregisteredGroupMembers {
+pub struct TransitGatewayMulticastDeregisteredGroupMembers  {
     /// <p>The ID of the transit gateway multicast domain.</p>
     pub transit_gateway_multicast_domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The network interface IDs of the deregistered members.</p>
-    pub deregistered_network_interface_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub deregistered_network_interface_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The IP address assigned to the transit gateway multicast group.</p>
     pub group_ip_address: ::std::option::Option<::std::string::String>,
 }
-impl TransitGatewayMulticastDeregisteredGroupMembers {
+impl  TransitGatewayMulticastDeregisteredGroupMembers  {
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn transit_gateway_multicast_domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_multicast_domain_id(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_multicast_domain_id.as_deref()
     }
     /// <p>The network interface IDs of the deregistered members.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deregistered_network_interface_ids.is_none()`.
-    pub fn deregistered_network_interface_ids(&self) -> &[::std::string::String] {
-        self.deregistered_network_interface_ids.as_deref().unwrap_or_default()
+    pub fn deregistered_network_interface_ids(&self) -> & [::std::string::String] {
+        self.deregistered_network_interface_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The IP address assigned to the transit gateway multicast group.</p>
-    pub fn group_ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn group_ip_address(&self) -> ::std::option::Option<& str> {
         self.group_ip_address.as_deref()
     }
 }
@@ -39,7 +40,7 @@ impl TransitGatewayMulticastDeregisteredGroupMembers {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransitGatewayMulticastDeregisteredGroupMembersBuilder {
     pub(crate) transit_gateway_multicast_domain_id: ::std::option::Option<::std::string::String>,
-    pub(crate) deregistered_network_interface_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) deregistered_network_interface_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) group_ip_address: ::std::option::Option<::std::string::String>,
 }
 impl TransitGatewayMulticastDeregisteredGroupMembersBuilder {
@@ -50,8 +51,7 @@ impl TransitGatewayMulticastDeregisteredGroupMembersBuilder {
     }
     /// <p>The ID of the transit gateway multicast domain.</p>
     pub fn set_transit_gateway_multicast_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_multicast_domain_id = input;
-        self
+        self.transit_gateway_multicast_domain_id = input; self
     }
     /// <p>The ID of the transit gateway multicast domain.</p>
     pub fn get_transit_gateway_multicast_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,17 +64,16 @@ impl TransitGatewayMulticastDeregisteredGroupMembersBuilder {
     /// <p>The network interface IDs of the deregistered members.</p>
     pub fn deregistered_network_interface_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.deregistered_network_interface_ids.unwrap_or_default();
-        v.push(input.into());
-        self.deregistered_network_interface_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.deregistered_network_interface_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The network interface IDs of the deregistered members.</p>
-    pub fn set_deregistered_network_interface_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.deregistered_network_interface_ids = input;
-        self
+    pub fn set_deregistered_network_interface_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.deregistered_network_interface_ids = input; self
     }
     /// <p>The network interface IDs of the deregistered members.</p>
-    pub fn get_deregistered_network_interface_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_deregistered_network_interface_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.deregistered_network_interface_ids
     }
     /// <p>The IP address assigned to the transit gateway multicast group.</p>
@@ -84,8 +83,7 @@ impl TransitGatewayMulticastDeregisteredGroupMembersBuilder {
     }
     /// <p>The IP address assigned to the transit gateway multicast group.</p>
     pub fn set_group_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_ip_address = input;
-        self
+        self.group_ip_address = input; self
     }
     /// <p>The IP address assigned to the transit gateway multicast group.</p>
     pub fn get_group_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,9 +92,13 @@ impl TransitGatewayMulticastDeregisteredGroupMembersBuilder {
     /// Consumes the builder and constructs a [`TransitGatewayMulticastDeregisteredGroupMembers`](crate::types::TransitGatewayMulticastDeregisteredGroupMembers).
     pub fn build(self) -> crate::types::TransitGatewayMulticastDeregisteredGroupMembers {
         crate::types::TransitGatewayMulticastDeregisteredGroupMembers {
-            transit_gateway_multicast_domain_id: self.transit_gateway_multicast_domain_id,
-            deregistered_network_interface_ids: self.deregistered_network_interface_ids,
-            group_ip_address: self.group_ip_address,
+            transit_gateway_multicast_domain_id: self.transit_gateway_multicast_domain_id
+            ,
+            deregistered_network_interface_ids: self.deregistered_network_interface_ids
+            ,
+            group_ip_address: self.group_ip_address
+            ,
         }
     }
 }
+

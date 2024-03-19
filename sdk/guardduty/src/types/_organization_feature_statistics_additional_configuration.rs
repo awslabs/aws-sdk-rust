@@ -3,15 +3,15 @@
 /// <p>Information about the coverage statistic for the additional configuration of the feature.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OrganizationFeatureStatisticsAdditionalConfiguration {
+pub struct OrganizationFeatureStatisticsAdditionalConfiguration  {
     /// <p>Name of the additional configuration within a feature.</p>
     pub name: ::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration>,
     /// <p>Total number of accounts that have enabled the additional configuration.</p>
     pub enabled_accounts_count: ::std::option::Option<i32>,
 }
-impl OrganizationFeatureStatisticsAdditionalConfiguration {
+impl  OrganizationFeatureStatisticsAdditionalConfiguration  {
     /// <p>Name of the additional configuration within a feature.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::OrgFeatureAdditionalConfiguration> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::OrgFeatureAdditionalConfiguration> {
         self.name.as_ref()
     }
     /// <p>Total number of accounts that have enabled the additional configuration.</p>
@@ -41,8 +41,7 @@ impl OrganizationFeatureStatisticsAdditionalConfigurationBuilder {
     }
     /// <p>Name of the additional configuration within a feature.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of the additional configuration within a feature.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration> {
@@ -55,8 +54,7 @@ impl OrganizationFeatureStatisticsAdditionalConfigurationBuilder {
     }
     /// <p>Total number of accounts that have enabled the additional configuration.</p>
     pub fn set_enabled_accounts_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.enabled_accounts_count = input;
-        self
+        self.enabled_accounts_count = input; self
     }
     /// <p>Total number of accounts that have enabled the additional configuration.</p>
     pub fn get_enabled_accounts_count(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl OrganizationFeatureStatisticsAdditionalConfigurationBuilder {
     /// Consumes the builder and constructs a [`OrganizationFeatureStatisticsAdditionalConfiguration`](crate::types::OrganizationFeatureStatisticsAdditionalConfiguration).
     pub fn build(self) -> crate::types::OrganizationFeatureStatisticsAdditionalConfiguration {
         crate::types::OrganizationFeatureStatisticsAdditionalConfiguration {
-            name: self.name,
-            enabled_accounts_count: self.enabled_accounts_count,
+            name: self.name
+            ,
+            enabled_accounts_count: self.enabled_accounts_count
+            ,
         }
     }
 }
+

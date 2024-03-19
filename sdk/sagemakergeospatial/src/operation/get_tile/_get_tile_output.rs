@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
-pub struct GetTileOutput {
+pub struct GetTileOutput  {
     /// <p>The output binary file.</p>
     pub binary_file: ::aws_smithy_types::byte_stream::ByteStream,
     _request_id: Option<String>,
 }
-impl GetTileOutput {
+impl  GetTileOutput  {
     /// <p>The output binary file.</p>
-    pub fn binary_file(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
+    pub fn binary_file(&self) -> & ::aws_smithy_types::byte_stream::ByteStream {
         &self.binary_file
     }
 }
 impl ::aws_types::request_id::RequestId for GetTileOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetTileOutput {
     /// Creates a new builder-style object to manufacture [`GetTileOutput`](crate::operation::get_tile::GetTileOutput).
     pub fn builder() -> crate::operation::get_tile::builders::GetTileOutputBuilder {
@@ -40,27 +40,29 @@ impl GetTileOutputBuilder {
     }
     /// <p>The output binary file.</p>
     pub fn set_binary_file(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
-        self.binary_file = input;
-        self
+        self.binary_file = input; self
     }
     /// <p>The output binary file.</p>
     pub fn get_binary_file(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.binary_file
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetTileOutput`](crate::operation::get_tile::GetTileOutput).
     pub fn build(self) -> crate::operation::get_tile::GetTileOutput {
         crate::operation::get_tile::GetTileOutput {
-            binary_file: self.binary_file.unwrap_or_default(),
+            binary_file: self.binary_file
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,42 +2,43 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListQueueQuickConnectsOutput {
+pub struct ListQueueQuickConnectsOutput  {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the quick connects.</p>
-    pub quick_connect_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::QuickConnectSummary>>,
+    pub quick_connect_summary_list: ::std::option::Option<::std::vec::Vec::<crate::types::QuickConnectSummary>>,
     /// <p>The timestamp when this resource was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Web Services Region where this resource was last modified.</p>
     pub last_modified_region: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListQueueQuickConnectsOutput {
+impl  ListQueueQuickConnectsOutput  {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Information about the quick connects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.quick_connect_summary_list.is_none()`.
-    pub fn quick_connect_summary_list(&self) -> &[crate::types::QuickConnectSummary] {
-        self.quick_connect_summary_list.as_deref().unwrap_or_default()
+    pub fn quick_connect_summary_list(&self) -> & [crate::types::QuickConnectSummary] {
+        self.quick_connect_summary_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The timestamp when this resource was last modified.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The Amazon Web Services Region where this resource was last modified.</p>
-    pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
+    pub fn last_modified_region(&self) -> ::std::option::Option<& str> {
         self.last_modified_region.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListQueueQuickConnectsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListQueueQuickConnectsOutput {
     /// Creates a new builder-style object to manufacture [`ListQueueQuickConnectsOutput`](crate::operation::list_queue_quick_connects::ListQueueQuickConnectsOutput).
     pub fn builder() -> crate::operation::list_queue_quick_connects::builders::ListQueueQuickConnectsOutputBuilder {
@@ -50,7 +51,7 @@ impl ListQueueQuickConnectsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListQueueQuickConnectsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) quick_connect_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::QuickConnectSummary>>,
+    pub(crate) quick_connect_summary_list: ::std::option::Option<::std::vec::Vec::<crate::types::QuickConnectSummary>>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_region: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -63,8 +64,7 @@ impl ListQueueQuickConnectsOutputBuilder {
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,17 +77,16 @@ impl ListQueueQuickConnectsOutputBuilder {
     /// <p>Information about the quick connects.</p>
     pub fn quick_connect_summary_list(mut self, input: crate::types::QuickConnectSummary) -> Self {
         let mut v = self.quick_connect_summary_list.unwrap_or_default();
-        v.push(input);
-        self.quick_connect_summary_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.quick_connect_summary_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the quick connects.</p>
-    pub fn set_quick_connect_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QuickConnectSummary>>) -> Self {
-        self.quick_connect_summary_list = input;
-        self
+    pub fn set_quick_connect_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::QuickConnectSummary>>) -> Self {
+        self.quick_connect_summary_list = input; self
     }
     /// <p>Information about the quick connects.</p>
-    pub fn get_quick_connect_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QuickConnectSummary>> {
+    pub fn get_quick_connect_summary_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::QuickConnectSummary>> {
         &self.quick_connect_summary_list
     }
     /// <p>The timestamp when this resource was last modified.</p>
@@ -97,8 +96,7 @@ impl ListQueueQuickConnectsOutputBuilder {
     }
     /// <p>The timestamp when this resource was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The timestamp when this resource was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -111,30 +109,34 @@ impl ListQueueQuickConnectsOutputBuilder {
     }
     /// <p>The Amazon Web Services Region where this resource was last modified.</p>
     pub fn set_last_modified_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_modified_region = input;
-        self
+        self.last_modified_region = input; self
     }
     /// <p>The Amazon Web Services Region where this resource was last modified.</p>
     pub fn get_last_modified_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_modified_region
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListQueueQuickConnectsOutput`](crate::operation::list_queue_quick_connects::ListQueueQuickConnectsOutput).
     pub fn build(self) -> crate::operation::list_queue_quick_connects::ListQueueQuickConnectsOutput {
         crate::operation::list_queue_quick_connects::ListQueueQuickConnectsOutput {
-            next_token: self.next_token,
-            quick_connect_summary_list: self.quick_connect_summary_list,
-            last_modified_time: self.last_modified_time,
-            last_modified_region: self.last_modified_region,
+            next_token: self.next_token
+            ,
+            quick_connect_summary_list: self.quick_connect_summary_list
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            last_modified_region: self.last_modified_region
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

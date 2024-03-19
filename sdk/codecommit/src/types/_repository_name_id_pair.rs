@@ -3,19 +3,19 @@
 /// <p>Information about a repository name and ID.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RepositoryNameIdPair {
+pub struct RepositoryNameIdPair  {
     /// <p>The name associated with the repository.</p>
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID associated with the repository.</p>
     pub repository_id: ::std::option::Option<::std::string::String>,
 }
-impl RepositoryNameIdPair {
+impl  RepositoryNameIdPair  {
     /// <p>The name associated with the repository.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The ID associated with the repository.</p>
-    pub fn repository_id(&self) -> ::std::option::Option<&str> {
+    pub fn repository_id(&self) -> ::std::option::Option<& str> {
         self.repository_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl RepositoryNameIdPairBuilder {
     }
     /// <p>The name associated with the repository.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The name associated with the repository.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl RepositoryNameIdPairBuilder {
     }
     /// <p>The ID associated with the repository.</p>
     pub fn set_repository_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_id = input;
-        self
+        self.repository_id = input; self
     }
     /// <p>The ID associated with the repository.</p>
     pub fn get_repository_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl RepositoryNameIdPairBuilder {
     /// Consumes the builder and constructs a [`RepositoryNameIdPair`](crate::types::RepositoryNameIdPair).
     pub fn build(self) -> crate::types::RepositoryNameIdPair {
         crate::types::RepositoryNameIdPair {
-            repository_name: self.repository_name,
-            repository_id: self.repository_id,
+            repository_name: self.repository_name
+            ,
+            repository_id: self.repository_id
+            ,
         }
     }
 }
+

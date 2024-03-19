@@ -3,22 +3,23 @@
 /// <p>When the solution performs AutoML (<code>performAutoML</code> is true in <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>), Amazon Personalize determines which recipe, from the specified list, optimizes the given metric. Amazon Personalize then uses that recipe for the solution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutoMlConfig {
+pub struct AutoMlConfig  {
     /// <p>The metric to optimize.</p>
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of candidate recipes.</p>
-    pub recipe_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub recipe_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl AutoMlConfig {
+impl  AutoMlConfig  {
     /// <p>The metric to optimize.</p>
-    pub fn metric_name(&self) -> ::std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The list of candidate recipes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recipe_list.is_none()`.
-    pub fn recipe_list(&self) -> &[::std::string::String] {
-        self.recipe_list.as_deref().unwrap_or_default()
+    pub fn recipe_list(&self) -> & [::std::string::String] {
+        self.recipe_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AutoMlConfig {
@@ -33,7 +34,7 @@ impl AutoMlConfig {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoMlConfigBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
-    pub(crate) recipe_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) recipe_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AutoMlConfigBuilder {
     /// <p>The metric to optimize.</p>
@@ -43,8 +44,7 @@ impl AutoMlConfigBuilder {
     }
     /// <p>The metric to optimize.</p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// <p>The metric to optimize.</p>
     pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl AutoMlConfigBuilder {
     /// <p>The list of candidate recipes.</p>
     pub fn recipe_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.recipe_list.unwrap_or_default();
-        v.push(input.into());
-        self.recipe_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.recipe_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of candidate recipes.</p>
-    pub fn set_recipe_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.recipe_list = input;
-        self
+    pub fn set_recipe_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.recipe_list = input; self
     }
     /// <p>The list of candidate recipes.</p>
-    pub fn get_recipe_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_recipe_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.recipe_list
     }
     /// Consumes the builder and constructs a [`AutoMlConfig`](crate::types::AutoMlConfig).
     pub fn build(self) -> crate::types::AutoMlConfig {
         crate::types::AutoMlConfig {
-            metric_name: self.metric_name,
-            recipe_list: self.recipe_list,
+            metric_name: self.metric_name
+            ,
+            recipe_list: self.recipe_list
+            ,
         }
     }
 }
+

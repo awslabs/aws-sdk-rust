@@ -3,19 +3,19 @@
 /// <p>Represents the email message that you're sending. The <code>Message</code> object consists of a subject line and a message body.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Message {
+pub struct Message  {
     /// <p>The subject line of the email. The subject line can only contain 7-bit ASCII characters. However, you can specify non-ASCII characters in the subject line by using encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.</p>
     pub subject: ::std::option::Option<crate::types::Content>,
     /// <p>The body of the message. You can specify an HTML version of the message, a text-only version of the message, or both.</p>
     pub body: ::std::option::Option<crate::types::Body>,
 }
-impl Message {
+impl  Message  {
     /// <p>The subject line of the email. The subject line can only contain 7-bit ASCII characters. However, you can specify non-ASCII characters in the subject line by using encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.</p>
-    pub fn subject(&self) -> ::std::option::Option<&crate::types::Content> {
+    pub fn subject(&self) -> ::std::option::Option<& crate::types::Content> {
         self.subject.as_ref()
     }
     /// <p>The body of the message. You can specify an HTML version of the message, a text-only version of the message, or both.</p>
-    pub fn body(&self) -> ::std::option::Option<&crate::types::Body> {
+    pub fn body(&self) -> ::std::option::Option<& crate::types::Body> {
         self.body.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl MessageBuilder {
     }
     /// <p>The subject line of the email. The subject line can only contain 7-bit ASCII characters. However, you can specify non-ASCII characters in the subject line by using encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.</p>
     pub fn set_subject(mut self, input: ::std::option::Option<crate::types::Content>) -> Self {
-        self.subject = input;
-        self
+        self.subject = input; self
     }
     /// <p>The subject line of the email. The subject line can only contain 7-bit ASCII characters. However, you can specify non-ASCII characters in the subject line by using encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.</p>
     pub fn get_subject(&self) -> &::std::option::Option<crate::types::Content> {
@@ -57,8 +56,7 @@ impl MessageBuilder {
     }
     /// <p>The body of the message. You can specify an HTML version of the message, a text-only version of the message, or both.</p>
     pub fn set_body(mut self, input: ::std::option::Option<crate::types::Body>) -> Self {
-        self.body = input;
-        self
+        self.body = input; self
     }
     /// <p>The body of the message. You can specify an HTML version of the message, a text-only version of the message, or both.</p>
     pub fn get_body(&self) -> &::std::option::Option<crate::types::Body> {
@@ -67,8 +65,11 @@ impl MessageBuilder {
     /// Consumes the builder and constructs a [`Message`](crate::types::Message).
     pub fn build(self) -> crate::types::Message {
         crate::types::Message {
-            subject: self.subject,
-            body: self.body,
+            subject: self.subject
+            ,
+            body: self.body
+            ,
         }
     }
 }
+

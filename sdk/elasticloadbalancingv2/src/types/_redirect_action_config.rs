@@ -18,7 +18,7 @@
 /// <p>For example, you can change the path to "/new/#{path}", the hostname to "example.#{host}", or the query to "#{query}&amp;value=xyz".</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RedirectActionConfig {
+pub struct RedirectActionConfig  {
     /// <p>The protocol. You can specify HTTP, HTTPS, or #{protocol}. You can redirect HTTP to HTTP, HTTP to HTTPS, and HTTPS to HTTPS. You cannot redirect HTTPS to HTTP.</p>
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>The port. You can specify a value from 1 to 65535 or #{port}.</p>
@@ -32,29 +32,29 @@ pub struct RedirectActionConfig {
     /// <p>The HTTP redirect code. The redirect is either permanent (HTTP 301) or temporary (HTTP 302).</p>
     pub status_code: ::std::option::Option<crate::types::RedirectActionStatusCodeEnum>,
 }
-impl RedirectActionConfig {
+impl  RedirectActionConfig  {
     /// <p>The protocol. You can specify HTTP, HTTPS, or #{protocol}. You can redirect HTTP to HTTP, HTTP to HTTPS, and HTTPS to HTTPS. You cannot redirect HTTPS to HTTP.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&str> {
+    pub fn protocol(&self) -> ::std::option::Option<& str> {
         self.protocol.as_deref()
     }
     /// <p>The port. You can specify a value from 1 to 65535 or #{port}.</p>
-    pub fn port(&self) -> ::std::option::Option<&str> {
+    pub fn port(&self) -> ::std::option::Option<& str> {
         self.port.as_deref()
     }
     /// <p>The hostname. This component is not percent-encoded. The hostname can contain #{host}.</p>
-    pub fn host(&self) -> ::std::option::Option<&str> {
+    pub fn host(&self) -> ::std::option::Option<& str> {
         self.host.as_deref()
     }
     /// <p>The absolute path, starting with the leading "/". This component is not percent-encoded. The path can contain #{host}, #{path}, and #{port}.</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>The query parameters, URL-encoded when necessary, but not percent-encoded. Do not include the leading "?", as it is automatically added. You can specify any of the reserved keywords.</p>
-    pub fn query(&self) -> ::std::option::Option<&str> {
+    pub fn query(&self) -> ::std::option::Option<& str> {
         self.query.as_deref()
     }
     /// <p>The HTTP redirect code. The redirect is either permanent (HTTP 301) or temporary (HTTP 302).</p>
-    pub fn status_code(&self) -> ::std::option::Option<&crate::types::RedirectActionStatusCodeEnum> {
+    pub fn status_code(&self) -> ::std::option::Option<& crate::types::RedirectActionStatusCodeEnum> {
         self.status_code.as_ref()
     }
 }
@@ -84,8 +84,7 @@ impl RedirectActionConfigBuilder {
     }
     /// <p>The protocol. You can specify HTTP, HTTPS, or #{protocol}. You can redirect HTTP to HTTP, HTTP to HTTPS, and HTTPS to HTTPS. You cannot redirect HTTPS to HTTP.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// <p>The protocol. You can specify HTTP, HTTPS, or #{protocol}. You can redirect HTTP to HTTP, HTTP to HTTPS, and HTTPS to HTTPS. You cannot redirect HTTPS to HTTP.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +97,7 @@ impl RedirectActionConfigBuilder {
     }
     /// <p>The port. You can specify a value from 1 to 65535 or #{port}.</p>
     pub fn set_port(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port. You can specify a value from 1 to 65535 or #{port}.</p>
     pub fn get_port(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +110,7 @@ impl RedirectActionConfigBuilder {
     }
     /// <p>The hostname. This component is not percent-encoded. The hostname can contain #{host}.</p>
     pub fn set_host(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host = input;
-        self
+        self.host = input; self
     }
     /// <p>The hostname. This component is not percent-encoded. The hostname can contain #{host}.</p>
     pub fn get_host(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +123,7 @@ impl RedirectActionConfigBuilder {
     }
     /// <p>The absolute path, starting with the leading "/". This component is not percent-encoded. The path can contain #{host}, #{path}, and #{port}.</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>The absolute path, starting with the leading "/". This component is not percent-encoded. The path can contain #{host}, #{path}, and #{port}.</p>
     pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +136,7 @@ impl RedirectActionConfigBuilder {
     }
     /// <p>The query parameters, URL-encoded when necessary, but not percent-encoded. Do not include the leading "?", as it is automatically added. You can specify any of the reserved keywords.</p>
     pub fn set_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query = input;
-        self
+        self.query = input; self
     }
     /// <p>The query parameters, URL-encoded when necessary, but not percent-encoded. Do not include the leading "?", as it is automatically added. You can specify any of the reserved keywords.</p>
     pub fn get_query(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +150,7 @@ impl RedirectActionConfigBuilder {
     }
     /// <p>The HTTP redirect code. The redirect is either permanent (HTTP 301) or temporary (HTTP 302).</p>
     pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::RedirectActionStatusCodeEnum>) -> Self {
-        self.status_code = input;
-        self
+        self.status_code = input; self
     }
     /// <p>The HTTP redirect code. The redirect is either permanent (HTTP 301) or temporary (HTTP 302).</p>
     pub fn get_status_code(&self) -> &::std::option::Option<crate::types::RedirectActionStatusCodeEnum> {
@@ -165,12 +159,19 @@ impl RedirectActionConfigBuilder {
     /// Consumes the builder and constructs a [`RedirectActionConfig`](crate::types::RedirectActionConfig).
     pub fn build(self) -> crate::types::RedirectActionConfig {
         crate::types::RedirectActionConfig {
-            protocol: self.protocol,
-            port: self.port,
-            host: self.host,
-            path: self.path,
-            query: self.query,
-            status_code: self.status_code,
+            protocol: self.protocol
+            ,
+            port: self.port
+            ,
+            host: self.host
+            ,
+            path: self.path
+            ,
+            query: self.query
+            ,
+            status_code: self.status_code
+            ,
         }
     }
 }
+

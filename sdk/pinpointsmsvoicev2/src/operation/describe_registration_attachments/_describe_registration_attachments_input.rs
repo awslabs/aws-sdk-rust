@@ -2,31 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRegistrationAttachmentsInput {
+pub struct DescribeRegistrationAttachmentsInput  {
     /// <p>The unique identifier of registration attachments to find. This is an array of <b>RegistrationAttachmentId</b>.</p>
-    pub registration_attachment_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub registration_attachment_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>An array of RegistrationAttachmentFilter objects to filter the results.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationAttachmentFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::RegistrationAttachmentFilter>>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per each request.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl DescribeRegistrationAttachmentsInput {
+impl  DescribeRegistrationAttachmentsInput  {
     /// <p>The unique identifier of registration attachments to find. This is an array of <b>RegistrationAttachmentId</b>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.registration_attachment_ids.is_none()`.
-    pub fn registration_attachment_ids(&self) -> &[::std::string::String] {
-        self.registration_attachment_ids.as_deref().unwrap_or_default()
+    pub fn registration_attachment_ids(&self) -> & [::std::string::String] {
+        self.registration_attachment_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of RegistrationAttachmentFilter objects to filter the results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::RegistrationAttachmentFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::RegistrationAttachmentFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per each request.</p>
@@ -45,8 +47,8 @@ impl DescribeRegistrationAttachmentsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRegistrationAttachmentsInputBuilder {
-    pub(crate) registration_attachment_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationAttachmentFilter>>,
+    pub(crate) registration_attachment_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::RegistrationAttachmentFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -58,17 +60,16 @@ impl DescribeRegistrationAttachmentsInputBuilder {
     /// <p>The unique identifier of registration attachments to find. This is an array of <b>RegistrationAttachmentId</b>.</p>
     pub fn registration_attachment_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.registration_attachment_ids.unwrap_or_default();
-        v.push(input.into());
-        self.registration_attachment_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.registration_attachment_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The unique identifier of registration attachments to find. This is an array of <b>RegistrationAttachmentId</b>.</p>
-    pub fn set_registration_attachment_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.registration_attachment_ids = input;
-        self
+    pub fn set_registration_attachment_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.registration_attachment_ids = input; self
     }
     /// <p>The unique identifier of registration attachments to find. This is an array of <b>RegistrationAttachmentId</b>.</p>
-    pub fn get_registration_attachment_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_registration_attachment_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.registration_attachment_ids
     }
     /// Appends an item to `filters`.
@@ -78,17 +79,16 @@ impl DescribeRegistrationAttachmentsInputBuilder {
     /// <p>An array of RegistrationAttachmentFilter objects to filter the results.</p>
     pub fn filters(mut self, input: crate::types::RegistrationAttachmentFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of RegistrationAttachmentFilter objects to filter the results.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationAttachmentFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RegistrationAttachmentFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>An array of RegistrationAttachmentFilter objects to filter the results.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegistrationAttachmentFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RegistrationAttachmentFilter>> {
         &self.filters
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
@@ -98,8 +98,7 @@ impl DescribeRegistrationAttachmentsInputBuilder {
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,27 +111,26 @@ impl DescribeRegistrationAttachmentsInputBuilder {
     }
     /// <p>The maximum number of results to return per each request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return per each request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeRegistrationAttachmentsInput`](crate::operation::describe_registration_attachments::DescribeRegistrationAttachmentsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_registration_attachments::DescribeRegistrationAttachmentsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_registration_attachments::DescribeRegistrationAttachmentsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_registration_attachments::DescribeRegistrationAttachmentsInput {
-                registration_attachment_ids: self.registration_attachment_ids,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                registration_attachment_ids: self.registration_attachment_ids
+                ,
+                filters: self.filters
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

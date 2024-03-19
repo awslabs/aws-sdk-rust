@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRoomInput {
+pub struct UpdateRoomInput  {
     /// <p>The ARN of the room to update.</p>
     pub room_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated name for the room.</p>
@@ -14,25 +14,25 @@ pub struct UpdateRoomInput {
     /// <p>The updated profile ARN for the room.</p>
     pub profile_arn: ::std::option::Option<::std::string::String>,
 }
-impl UpdateRoomInput {
+impl  UpdateRoomInput  {
     /// <p>The ARN of the room to update.</p>
-    pub fn room_arn(&self) -> ::std::option::Option<&str> {
+    pub fn room_arn(&self) -> ::std::option::Option<& str> {
         self.room_arn.as_deref()
     }
     /// <p>The updated name for the room.</p>
-    pub fn room_name(&self) -> ::std::option::Option<&str> {
+    pub fn room_name(&self) -> ::std::option::Option<& str> {
         self.room_name.as_deref()
     }
     /// <p>The updated description for the room.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The updated provider calendar ARN for the room.</p>
-    pub fn provider_calendar_id(&self) -> ::std::option::Option<&str> {
+    pub fn provider_calendar_id(&self) -> ::std::option::Option<& str> {
         self.provider_calendar_id.as_deref()
     }
     /// <p>The updated profile ARN for the room.</p>
-    pub fn profile_arn(&self) -> ::std::option::Option<&str> {
+    pub fn profile_arn(&self) -> ::std::option::Option<& str> {
         self.profile_arn.as_deref()
     }
 }
@@ -61,8 +61,7 @@ impl UpdateRoomInputBuilder {
     }
     /// <p>The ARN of the room to update.</p>
     pub fn set_room_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.room_arn = input;
-        self
+        self.room_arn = input; self
     }
     /// <p>The ARN of the room to update.</p>
     pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl UpdateRoomInputBuilder {
     }
     /// <p>The updated name for the room.</p>
     pub fn set_room_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.room_name = input;
-        self
+        self.room_name = input; self
     }
     /// <p>The updated name for the room.</p>
     pub fn get_room_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl UpdateRoomInputBuilder {
     }
     /// <p>The updated description for the room.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The updated description for the room.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +100,7 @@ impl UpdateRoomInputBuilder {
     }
     /// <p>The updated provider calendar ARN for the room.</p>
     pub fn set_provider_calendar_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider_calendar_id = input;
-        self
+        self.provider_calendar_id = input; self
     }
     /// <p>The updated provider calendar ARN for the room.</p>
     pub fn get_provider_calendar_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +113,7 @@ impl UpdateRoomInputBuilder {
     }
     /// <p>The updated profile ARN for the room.</p>
     pub fn set_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_arn = input;
-        self
+        self.profile_arn = input; self
     }
     /// <p>The updated profile ARN for the room.</p>
     pub fn get_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,12 +121,20 @@ impl UpdateRoomInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateRoomInput`](crate::operation::update_room::UpdateRoomInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_room::UpdateRoomInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_room::UpdateRoomInput {
-            room_arn: self.room_arn,
-            room_name: self.room_name,
-            description: self.description,
-            provider_calendar_id: self.provider_calendar_id,
-            profile_arn: self.profile_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_room::UpdateRoomInput {
+                room_arn: self.room_arn
+                ,
+                room_name: self.room_name
+                ,
+                description: self.description
+                ,
+                provider_calendar_id: self.provider_calendar_id
+                ,
+                profile_arn: self.profile_arn
+                ,
+            }
+        )
     }
 }
+

@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSlotTypeVersionsOutput {
+pub struct GetSlotTypeVersionsOutput  {
     /// <p>An array of <code>SlotTypeMetadata</code> objects, one for each numbered version of the slot type plus one for the <code>$LATEST</code> version.</p>
-    pub slot_types: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeMetadata>>,
+    pub slot_types: ::std::option::Option<::std::vec::Vec::<crate::types::SlotTypeMetadata>>,
     /// <p>A pagination token for fetching the next page of slot type versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetSlotTypeVersionsOutput {
+impl  GetSlotTypeVersionsOutput  {
     /// <p>An array of <code>SlotTypeMetadata</code> objects, one for each numbered version of the slot type plus one for the <code>$LATEST</code> version.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.slot_types.is_none()`.
-    pub fn slot_types(&self) -> &[crate::types::SlotTypeMetadata] {
-        self.slot_types.as_deref().unwrap_or_default()
+    pub fn slot_types(&self) -> & [crate::types::SlotTypeMetadata] {
+        self.slot_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A pagination token for fetching the next page of slot type versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetSlotTypeVersionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSlotTypeVersionsOutput {
     /// Creates a new builder-style object to manufacture [`GetSlotTypeVersionsOutput`](crate::operation::get_slot_type_versions::GetSlotTypeVersionsOutput).
     pub fn builder() -> crate::operation::get_slot_type_versions::builders::GetSlotTypeVersionsOutputBuilder {
@@ -37,7 +38,7 @@ impl GetSlotTypeVersionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSlotTypeVersionsOutputBuilder {
-    pub(crate) slot_types: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeMetadata>>,
+    pub(crate) slot_types: ::std::option::Option<::std::vec::Vec::<crate::types::SlotTypeMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl GetSlotTypeVersionsOutputBuilder {
     /// <p>An array of <code>SlotTypeMetadata</code> objects, one for each numbered version of the slot type plus one for the <code>$LATEST</code> version.</p>
     pub fn slot_types(mut self, input: crate::types::SlotTypeMetadata) -> Self {
         let mut v = self.slot_types.unwrap_or_default();
-        v.push(input);
-        self.slot_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.slot_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>SlotTypeMetadata</code> objects, one for each numbered version of the slot type plus one for the <code>$LATEST</code> version.</p>
-    pub fn set_slot_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeMetadata>>) -> Self {
-        self.slot_types = input;
-        self
+    pub fn set_slot_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SlotTypeMetadata>>) -> Self {
+        self.slot_types = input; self
     }
     /// <p>An array of <code>SlotTypeMetadata</code> objects, one for each numbered version of the slot type plus one for the <code>$LATEST</code> version.</p>
-    pub fn get_slot_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotTypeMetadata>> {
+    pub fn get_slot_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SlotTypeMetadata>> {
         &self.slot_types
     }
     /// <p>A pagination token for fetching the next page of slot type versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request.</p>
@@ -69,28 +69,30 @@ impl GetSlotTypeVersionsOutputBuilder {
     }
     /// <p>A pagination token for fetching the next page of slot type versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token for fetching the next page of slot type versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSlotTypeVersionsOutput`](crate::operation::get_slot_type_versions::GetSlotTypeVersionsOutput).
     pub fn build(self) -> crate::operation::get_slot_type_versions::GetSlotTypeVersionsOutput {
         crate::operation::get_slot_type_versions::GetSlotTypeVersionsOutput {
-            slot_types: self.slot_types,
-            next_token: self.next_token,
+            slot_types: self.slot_types
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

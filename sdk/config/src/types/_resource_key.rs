@@ -3,21 +3,20 @@
 /// <p>The details that identify a resource within Config, including the resource type and resource ID.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceKey {
+pub struct ResourceKey  {
     /// <p>The resource type.</p>
     pub resource_type: crate::types::ResourceType,
     /// <p>The ID of the resource (for example., sg-xxxxxx).</p>
     pub resource_id: ::std::string::String,
 }
-impl ResourceKey {
+impl  ResourceKey  {
     /// <p>The resource type.</p>
-    pub fn resource_type(&self) -> &crate::types::ResourceType {
+    pub fn resource_type(&self) -> & crate::types::ResourceType {
         &self.resource_type
     }
     /// <p>The ID of the resource (for example., sg-xxxxxx).</p>
-    pub fn resource_id(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_id.deref()
+    pub fn resource_id(&self) -> & str {
+        use std::ops::Deref; self.resource_id.deref()
     }
 }
 impl ResourceKey {
@@ -43,8 +42,7 @@ impl ResourceKeyBuilder {
     }
     /// <p>The resource type.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -58,8 +56,7 @@ impl ResourceKeyBuilder {
     }
     /// <p>The ID of the resource (for example., sg-xxxxxx).</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The ID of the resource (for example., sg-xxxxxx).</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,19 +67,20 @@ impl ResourceKeyBuilder {
     /// - [`resource_type`](crate::types::builders::ResourceKeyBuilder::resource_type)
     /// - [`resource_id`](crate::types::builders::ResourceKeyBuilder::resource_id)
     pub fn build(self) -> ::std::result::Result<crate::types::ResourceKey, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResourceKey {
-            resource_type: self.resource_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_type",
-                    "resource_type was not specified but it is required when building ResourceKey",
-                )
-            })?,
-            resource_id: self.resource_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_id",
-                    "resource_id was not specified but it is required when building ResourceKey",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResourceKey {
+                resource_type: self.resource_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_type", "resource_type was not specified but it is required when building ResourceKey")
+                    )?
+                ,
+                resource_id: self.resource_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_id", "resource_id was not specified but it is required when building ResourceKey")
+                    )?
+                ,
+            }
+        )
     }
 }
+

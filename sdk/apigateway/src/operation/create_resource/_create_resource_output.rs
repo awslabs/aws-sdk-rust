@@ -3,7 +3,7 @@
 /// <p>Represents an API resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateResourceOutput {
+pub struct CreateResourceOutput  {
     /// <p>The resource's identifier.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The parent resource's identifier.</p>
@@ -13,36 +13,36 @@ pub struct CreateResourceOutput {
     /// <p>The full path for this resource.</p>
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>Gets an API resource's method of a given HTTP verb.</p>
-    pub resource_methods: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Method>>,
+    pub resource_methods: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Method>>,
     _request_id: Option<String>,
 }
-impl CreateResourceOutput {
+impl  CreateResourceOutput  {
     /// <p>The resource's identifier.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The parent resource's identifier.</p>
-    pub fn parent_id(&self) -> ::std::option::Option<&str> {
+    pub fn parent_id(&self) -> ::std::option::Option<& str> {
         self.parent_id.as_deref()
     }
     /// <p>The last path segment for this resource.</p>
-    pub fn path_part(&self) -> ::std::option::Option<&str> {
+    pub fn path_part(&self) -> ::std::option::Option<& str> {
         self.path_part.as_deref()
     }
     /// <p>The full path for this resource.</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>Gets an API resource's method of a given HTTP verb.</p>
-    pub fn resource_methods(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Method>> {
+    pub fn resource_methods(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::Method>> {
         self.resource_methods.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateResourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateResourceOutput {
     /// Creates a new builder-style object to manufacture [`CreateResourceOutput`](crate::operation::create_resource::CreateResourceOutput).
     pub fn builder() -> crate::operation::create_resource::builders::CreateResourceOutputBuilder {
@@ -58,7 +58,7 @@ pub struct CreateResourceOutputBuilder {
     pub(crate) parent_id: ::std::option::Option<::std::string::String>,
     pub(crate) path_part: ::std::option::Option<::std::string::String>,
     pub(crate) path: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_methods: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Method>>,
+    pub(crate) resource_methods: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Method>>,
     _request_id: Option<String>,
 }
 impl CreateResourceOutputBuilder {
@@ -69,8 +69,7 @@ impl CreateResourceOutputBuilder {
     }
     /// <p>The resource's identifier.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The resource's identifier.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl CreateResourceOutputBuilder {
     }
     /// <p>The parent resource's identifier.</p>
     pub fn set_parent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parent_id = input;
-        self
+        self.parent_id = input; self
     }
     /// <p>The parent resource's identifier.</p>
     pub fn get_parent_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl CreateResourceOutputBuilder {
     }
     /// <p>The last path segment for this resource.</p>
     pub fn set_path_part(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path_part = input;
-        self
+        self.path_part = input; self
     }
     /// <p>The last path segment for this resource.</p>
     pub fn get_path_part(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl CreateResourceOutputBuilder {
     }
     /// <p>The full path for this resource.</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>The full path for this resource.</p>
     pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,40 +121,42 @@ impl CreateResourceOutputBuilder {
     /// <p>Gets an API resource's method of a given HTTP verb.</p>
     pub fn resource_methods(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Method) -> Self {
         let mut hash_map = self.resource_methods.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.resource_methods = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.resource_methods = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Gets an API resource's method of a given HTTP verb.</p>
-    pub fn set_resource_methods(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Method>>,
-    ) -> Self {
-        self.resource_methods = input;
-        self
+    pub fn set_resource_methods(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Method>>) -> Self {
+        self.resource_methods = input; self
     }
     /// <p>Gets an API resource's method of a given HTTP verb.</p>
-    pub fn get_resource_methods(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Method>> {
+    pub fn get_resource_methods(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Method>> {
         &self.resource_methods
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateResourceOutput`](crate::operation::create_resource::CreateResourceOutput).
     pub fn build(self) -> crate::operation::create_resource::CreateResourceOutput {
         crate::operation::create_resource::CreateResourceOutput {
-            id: self.id,
-            parent_id: self.parent_id,
-            path_part: self.path_part,
-            path: self.path,
-            resource_methods: self.resource_methods,
+            id: self.id
+            ,
+            parent_id: self.parent_id
+            ,
+            path_part: self.path_part
+            ,
+            path: self.path
+            ,
+            resource_methods: self.resource_methods
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

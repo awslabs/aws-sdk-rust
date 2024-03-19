@@ -3,13 +3,13 @@
 /// <p>Recommendation pillar aggregates</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecommendationPillarSpecificAggregates {
+pub struct RecommendationPillarSpecificAggregates  {
     /// <p>Cost optimizing aggregates</p>
     pub cost_optimizing: ::std::option::Option<crate::types::RecommendationCostOptimizingAggregates>,
 }
-impl RecommendationPillarSpecificAggregates {
+impl  RecommendationPillarSpecificAggregates  {
     /// <p>Cost optimizing aggregates</p>
-    pub fn cost_optimizing(&self) -> ::std::option::Option<&crate::types::RecommendationCostOptimizingAggregates> {
+    pub fn cost_optimizing(&self) -> ::std::option::Option<& crate::types::RecommendationCostOptimizingAggregates> {
         self.cost_optimizing.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl RecommendationPillarSpecificAggregatesBuilder {
     }
     /// <p>Cost optimizing aggregates</p>
     pub fn set_cost_optimizing(mut self, input: ::std::option::Option<crate::types::RecommendationCostOptimizingAggregates>) -> Self {
-        self.cost_optimizing = input;
-        self
+        self.cost_optimizing = input; self
     }
     /// <p>Cost optimizing aggregates</p>
     pub fn get_cost_optimizing(&self) -> &::std::option::Option<crate::types::RecommendationCostOptimizingAggregates> {
@@ -44,7 +43,9 @@ impl RecommendationPillarSpecificAggregatesBuilder {
     /// Consumes the builder and constructs a [`RecommendationPillarSpecificAggregates`](crate::types::RecommendationPillarSpecificAggregates).
     pub fn build(self) -> crate::types::RecommendationPillarSpecificAggregates {
         crate::types::RecommendationPillarSpecificAggregates {
-            cost_optimizing: self.cost_optimizing,
+            cost_optimizing: self.cost_optimizing
+            ,
         }
     }
 }
+

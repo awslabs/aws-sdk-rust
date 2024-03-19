@@ -3,16 +3,17 @@
 /// <p>Input object defining the custom BandMath indices to compute.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomIndicesInput {
+pub struct CustomIndicesInput  {
     /// <p>A list of BandMath indices to compute.</p>
-    pub operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
+    pub operations: ::std::option::Option<::std::vec::Vec::<crate::types::Operation>>,
 }
-impl CustomIndicesInput {
+impl  CustomIndicesInput  {
     /// <p>A list of BandMath indices to compute.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operations.is_none()`.
-    pub fn operations(&self) -> &[crate::types::Operation] {
-        self.operations.as_deref().unwrap_or_default()
+    pub fn operations(&self) -> & [crate::types::Operation] {
+        self.operations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CustomIndicesInput {
@@ -26,7 +27,7 @@ impl CustomIndicesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomIndicesInputBuilder {
-    pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
+    pub(crate) operations: ::std::option::Option<::std::vec::Vec::<crate::types::Operation>>,
 }
 impl CustomIndicesInputBuilder {
     /// Appends an item to `operations`.
@@ -36,21 +37,24 @@ impl CustomIndicesInputBuilder {
     /// <p>A list of BandMath indices to compute.</p>
     pub fn operations(mut self, input: crate::types::Operation) -> Self {
         let mut v = self.operations.unwrap_or_default();
-        v.push(input);
-        self.operations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.operations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of BandMath indices to compute.</p>
-    pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>) -> Self {
-        self.operations = input;
-        self
+    pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Operation>>) -> Self {
+        self.operations = input; self
     }
     /// <p>A list of BandMath indices to compute.</p>
-    pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Operation>> {
+    pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Operation>> {
         &self.operations
     }
     /// Consumes the builder and constructs a [`CustomIndicesInput`](crate::types::CustomIndicesInput).
     pub fn build(self) -> crate::types::CustomIndicesInput {
-        crate::types::CustomIndicesInput { operations: self.operations }
+        crate::types::CustomIndicesInput {
+            operations: self.operations
+            ,
+        }
     }
 }
+

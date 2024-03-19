@@ -2,47 +2,49 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateGeneratedTemplateInput {
+pub struct UpdateGeneratedTemplateInput  {
     /// <p>The name or Amazon Resource Name (ARN) of a generated template.</p>
     pub generated_template_name: ::std::option::Option<::std::string::String>,
     /// <p>An optional new name to assign to the generated template.</p>
     pub new_generated_template_name: ::std::option::Option<::std::string::String>,
     /// <p>An optional list of resources to be added to the generated template.</p>
-    pub add_resources: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDefinition>>,
+    pub add_resources: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceDefinition>>,
     /// <p>A list of logical ids for resources to remove from the generated template.</p>
-    pub remove_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub remove_resources: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>If <code>true</code>, update the resource properties in the generated template with their current live state. This feature is useful when the resource properties in your generated a template does not reflect the live state of the resource properties. This happens when a user update the resource properties after generating a template.</p>
     pub refresh_all_resources: ::std::option::Option<bool>,
     /// <p>The configuration details of the generated template, including the <code>DeletionPolicy</code> and <code>UpdateReplacePolicy</code>.</p>
     pub template_configuration: ::std::option::Option<crate::types::TemplateConfiguration>,
 }
-impl UpdateGeneratedTemplateInput {
+impl  UpdateGeneratedTemplateInput  {
     /// <p>The name or Amazon Resource Name (ARN) of a generated template.</p>
-    pub fn generated_template_name(&self) -> ::std::option::Option<&str> {
+    pub fn generated_template_name(&self) -> ::std::option::Option<& str> {
         self.generated_template_name.as_deref()
     }
     /// <p>An optional new name to assign to the generated template.</p>
-    pub fn new_generated_template_name(&self) -> ::std::option::Option<&str> {
+    pub fn new_generated_template_name(&self) -> ::std::option::Option<& str> {
         self.new_generated_template_name.as_deref()
     }
     /// <p>An optional list of resources to be added to the generated template.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_resources.is_none()`.
-    pub fn add_resources(&self) -> &[crate::types::ResourceDefinition] {
-        self.add_resources.as_deref().unwrap_or_default()
+    pub fn add_resources(&self) -> & [crate::types::ResourceDefinition] {
+        self.add_resources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of logical ids for resources to remove from the generated template.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_resources.is_none()`.
-    pub fn remove_resources(&self) -> &[::std::string::String] {
-        self.remove_resources.as_deref().unwrap_or_default()
+    pub fn remove_resources(&self) -> & [::std::string::String] {
+        self.remove_resources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If <code>true</code>, update the resource properties in the generated template with their current live state. This feature is useful when the resource properties in your generated a template does not reflect the live state of the resource properties. This happens when a user update the resource properties after generating a template.</p>
     pub fn refresh_all_resources(&self) -> ::std::option::Option<bool> {
         self.refresh_all_resources
     }
     /// <p>The configuration details of the generated template, including the <code>DeletionPolicy</code> and <code>UpdateReplacePolicy</code>.</p>
-    pub fn template_configuration(&self) -> ::std::option::Option<&crate::types::TemplateConfiguration> {
+    pub fn template_configuration(&self) -> ::std::option::Option<& crate::types::TemplateConfiguration> {
         self.template_configuration.as_ref()
     }
 }
@@ -59,8 +61,8 @@ impl UpdateGeneratedTemplateInput {
 pub struct UpdateGeneratedTemplateInputBuilder {
     pub(crate) generated_template_name: ::std::option::Option<::std::string::String>,
     pub(crate) new_generated_template_name: ::std::option::Option<::std::string::String>,
-    pub(crate) add_resources: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDefinition>>,
-    pub(crate) remove_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) add_resources: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceDefinition>>,
+    pub(crate) remove_resources: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) refresh_all_resources: ::std::option::Option<bool>,
     pub(crate) template_configuration: ::std::option::Option<crate::types::TemplateConfiguration>,
 }
@@ -73,8 +75,7 @@ impl UpdateGeneratedTemplateInputBuilder {
     }
     /// <p>The name or Amazon Resource Name (ARN) of a generated template.</p>
     pub fn set_generated_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.generated_template_name = input;
-        self
+        self.generated_template_name = input; self
     }
     /// <p>The name or Amazon Resource Name (ARN) of a generated template.</p>
     pub fn get_generated_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +88,7 @@ impl UpdateGeneratedTemplateInputBuilder {
     }
     /// <p>An optional new name to assign to the generated template.</p>
     pub fn set_new_generated_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.new_generated_template_name = input;
-        self
+        self.new_generated_template_name = input; self
     }
     /// <p>An optional new name to assign to the generated template.</p>
     pub fn get_new_generated_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,17 +101,16 @@ impl UpdateGeneratedTemplateInputBuilder {
     /// <p>An optional list of resources to be added to the generated template.</p>
     pub fn add_resources(mut self, input: crate::types::ResourceDefinition) -> Self {
         let mut v = self.add_resources.unwrap_or_default();
-        v.push(input);
-        self.add_resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.add_resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An optional list of resources to be added to the generated template.</p>
-    pub fn set_add_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDefinition>>) -> Self {
-        self.add_resources = input;
-        self
+    pub fn set_add_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceDefinition>>) -> Self {
+        self.add_resources = input; self
     }
     /// <p>An optional list of resources to be added to the generated template.</p>
-    pub fn get_add_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceDefinition>> {
+    pub fn get_add_resources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceDefinition>> {
         &self.add_resources
     }
     /// Appends an item to `remove_resources`.
@@ -121,17 +120,16 @@ impl UpdateGeneratedTemplateInputBuilder {
     /// <p>A list of logical ids for resources to remove from the generated template.</p>
     pub fn remove_resources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.remove_resources.unwrap_or_default();
-        v.push(input.into());
-        self.remove_resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.remove_resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of logical ids for resources to remove from the generated template.</p>
-    pub fn set_remove_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.remove_resources = input;
-        self
+    pub fn set_remove_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.remove_resources = input; self
     }
     /// <p>A list of logical ids for resources to remove from the generated template.</p>
-    pub fn get_remove_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_remove_resources(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.remove_resources
     }
     /// <p>If <code>true</code>, update the resource properties in the generated template with their current live state. This feature is useful when the resource properties in your generated a template does not reflect the live state of the resource properties. This happens when a user update the resource properties after generating a template.</p>
@@ -141,8 +139,7 @@ impl UpdateGeneratedTemplateInputBuilder {
     }
     /// <p>If <code>true</code>, update the resource properties in the generated template with their current live state. This feature is useful when the resource properties in your generated a template does not reflect the live state of the resource properties. This happens when a user update the resource properties after generating a template.</p>
     pub fn set_refresh_all_resources(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.refresh_all_resources = input;
-        self
+        self.refresh_all_resources = input; self
     }
     /// <p>If <code>true</code>, update the resource properties in the generated template with their current live state. This feature is useful when the resource properties in your generated a template does not reflect the live state of the resource properties. This happens when a user update the resource properties after generating a template.</p>
     pub fn get_refresh_all_resources(&self) -> &::std::option::Option<bool> {
@@ -155,27 +152,30 @@ impl UpdateGeneratedTemplateInputBuilder {
     }
     /// <p>The configuration details of the generated template, including the <code>DeletionPolicy</code> and <code>UpdateReplacePolicy</code>.</p>
     pub fn set_template_configuration(mut self, input: ::std::option::Option<crate::types::TemplateConfiguration>) -> Self {
-        self.template_configuration = input;
-        self
+        self.template_configuration = input; self
     }
     /// <p>The configuration details of the generated template, including the <code>DeletionPolicy</code> and <code>UpdateReplacePolicy</code>.</p>
     pub fn get_template_configuration(&self) -> &::std::option::Option<crate::types::TemplateConfiguration> {
         &self.template_configuration
     }
     /// Consumes the builder and constructs a [`UpdateGeneratedTemplateInput`](crate::operation::update_generated_template::UpdateGeneratedTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_generated_template::UpdateGeneratedTemplateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_generated_template::UpdateGeneratedTemplateInput {
-            generated_template_name: self.generated_template_name,
-            new_generated_template_name: self.new_generated_template_name,
-            add_resources: self.add_resources,
-            remove_resources: self.remove_resources,
-            refresh_all_resources: self.refresh_all_resources,
-            template_configuration: self.template_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_generated_template::UpdateGeneratedTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_generated_template::UpdateGeneratedTemplateInput {
+                generated_template_name: self.generated_template_name
+                ,
+                new_generated_template_name: self.new_generated_template_name
+                ,
+                add_resources: self.add_resources
+                ,
+                remove_resources: self.remove_resources
+                ,
+                refresh_all_resources: self.refresh_all_resources
+                ,
+                template_configuration: self.template_configuration
+                ,
+            }
+        )
     }
 }
+

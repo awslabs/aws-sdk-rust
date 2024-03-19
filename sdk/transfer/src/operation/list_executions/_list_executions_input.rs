@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListExecutionsInput {
+pub struct ListExecutionsInput  {
     /// <p>Specifies the maximum number of executions to return.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p><code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional executions.</p>
@@ -15,7 +15,7 @@ pub struct ListExecutionsInput {
     /// <p>A unique identifier for the workflow.</p>
     pub workflow_id: ::std::option::Option<::std::string::String>,
 }
-impl ListExecutionsInput {
+impl  ListExecutionsInput  {
     /// <p>Specifies the maximum number of executions to return.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
@@ -26,11 +26,11 @@ impl ListExecutionsInput {
     /// <p>This returns details for the first 10 executions, as well as the pointer (<code>NextToken</code>) to the eleventh execution. You can now call the API again, supplying the <code>NextToken</code> value you received:</p>
     /// <p><code>aws transfer list-executions --max-results 10 --next-token $somePointerReturnedFromPreviousListResult</code></p>
     /// <p>This call returns the next 10 executions, the 11th through the 20th. You can then repeat the call until the details for all 100 executions have been returned.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A unique identifier for the workflow.</p>
-    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
+    pub fn workflow_id(&self) -> ::std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
 }
@@ -57,8 +57,7 @@ impl ListExecutionsInputBuilder {
     }
     /// <p>Specifies the maximum number of executions to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Specifies the maximum number of executions to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -81,8 +80,7 @@ impl ListExecutionsInputBuilder {
     /// <p><code>aws transfer list-executions --max-results 10 --next-token $somePointerReturnedFromPreviousListResult</code></p>
     /// <p>This call returns the next 10 executions, the 11th through the 20th. You can then repeat the call until the details for all 100 executions have been returned.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p><code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional executions.</p>
     /// <p>This is useful for pagination, for instance. If you have 100 executions for a workflow, you might only want to list first 10. If so, call the API by specifying the <code>max-results</code>:</p>
@@ -101,21 +99,24 @@ impl ListExecutionsInputBuilder {
     }
     /// <p>A unique identifier for the workflow.</p>
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_id = input;
-        self
+        self.workflow_id = input; self
     }
     /// <p>A unique identifier for the workflow.</p>
     pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_id
     }
     /// Consumes the builder and constructs a [`ListExecutionsInput`](crate::operation::list_executions::ListExecutionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_executions::ListExecutionsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_executions::ListExecutionsInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-            workflow_id: self.workflow_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_executions::ListExecutionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_executions::ListExecutionsInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                workflow_id: self.workflow_id
+                ,
+            }
+        )
     }
 }
+

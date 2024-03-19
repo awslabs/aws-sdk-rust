@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let pivottabledatapathtype = unimplemented!();
 /// match pivottabledatapathtype {
@@ -32,16 +32,14 @@
 /// Specifically, when `pivottabledatapathtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PivotTableDataPathType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum PivotTableDataPathType {
     #[allow(missing_docs)] // documentation missing in model
     CountMetricColumn,
@@ -53,72 +51,68 @@ pub enum PivotTableDataPathType {
     MultipleRowMetricsColumn,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for PivotTableDataPathType {
-    fn from(s: &str) -> Self {
-        match s {
-            "COUNT_METRIC_COLUMN" => PivotTableDataPathType::CountMetricColumn,
-            "EMPTY_COLUMN_HEADER" => PivotTableDataPathType::EmptyColumnHeader,
-            "HIERARCHY_ROWS_LAYOUT_COLUMN" => PivotTableDataPathType::HierarchyRowsLayoutColumn,
-            "MULTIPLE_ROW_METRICS_COLUMN" => PivotTableDataPathType::MultipleRowMetricsColumn,
-            other => PivotTableDataPathType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "COUNT_METRIC_COLUMN" => PivotTableDataPathType::CountMetricColumn,
+"EMPTY_COLUMN_HEADER" => PivotTableDataPathType::EmptyColumnHeader,
+"HIERARCHY_ROWS_LAYOUT_COLUMN" => PivotTableDataPathType::HierarchyRowsLayoutColumn,
+"MULTIPLE_ROW_METRICS_COLUMN" => PivotTableDataPathType::MultipleRowMetricsColumn,
+other => PivotTableDataPathType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for PivotTableDataPathType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(PivotTableDataPathType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(PivotTableDataPathType::from(s))
+                    }
+                }
 impl PivotTableDataPathType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PivotTableDataPathType::CountMetricColumn => "COUNT_METRIC_COLUMN",
-            PivotTableDataPathType::EmptyColumnHeader => "EMPTY_COLUMN_HEADER",
-            PivotTableDataPathType::HierarchyRowsLayoutColumn => "HIERARCHY_ROWS_LAYOUT_COLUMN",
-            PivotTableDataPathType::MultipleRowMetricsColumn => "MULTIPLE_ROW_METRICS_COLUMN",
-            PivotTableDataPathType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "COUNT_METRIC_COLUMN",
-            "EMPTY_COLUMN_HEADER",
-            "HIERARCHY_ROWS_LAYOUT_COLUMN",
-            "MULTIPLE_ROW_METRICS_COLUMN",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PivotTableDataPathType::CountMetricColumn => "COUNT_METRIC_COLUMN",
+    PivotTableDataPathType::EmptyColumnHeader => "EMPTY_COLUMN_HEADER",
+    PivotTableDataPathType::HierarchyRowsLayoutColumn => "HIERARCHY_ROWS_LAYOUT_COLUMN",
+    PivotTableDataPathType::MultipleRowMetricsColumn => "MULTIPLE_ROW_METRICS_COLUMN",
+    PivotTableDataPathType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["COUNT_METRIC_COLUMN", "EMPTY_COLUMN_HEADER", "HIERARCHY_ROWS_LAYOUT_COLUMN", "MULTIPLE_ROW_METRICS_COLUMN"]
+                }
+            }
 impl ::std::convert::AsRef<str> for PivotTableDataPathType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl PivotTableDataPathType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for PivotTableDataPathType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            PivotTableDataPathType::CountMetricColumn => write!(f, "COUNT_METRIC_COLUMN"),
-            PivotTableDataPathType::EmptyColumnHeader => write!(f, "EMPTY_COLUMN_HEADER"),
-            PivotTableDataPathType::HierarchyRowsLayoutColumn => write!(f, "HIERARCHY_ROWS_LAYOUT_COLUMN"),
-            PivotTableDataPathType::MultipleRowMetricsColumn => write!(f, "MULTIPLE_ROW_METRICS_COLUMN"),
-            PivotTableDataPathType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                PivotTableDataPathType::CountMetricColumn => write!(f, "COUNT_METRIC_COLUMN"),
+PivotTableDataPathType::EmptyColumnHeader => write!(f, "EMPTY_COLUMN_HEADER"),
+PivotTableDataPathType::HierarchyRowsLayoutColumn => write!(f, "HIERARCHY_ROWS_LAYOUT_COLUMN"),
+PivotTableDataPathType::MultipleRowMetricsColumn => write!(f, "MULTIPLE_ROW_METRICS_COLUMN"),
+PivotTableDataPathType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

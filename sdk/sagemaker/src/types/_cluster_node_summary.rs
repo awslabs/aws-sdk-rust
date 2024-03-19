@@ -3,7 +3,7 @@
 /// <p>Lists a summary of the properties of an instance (also called a <i>node</i> interchangeably) of a SageMaker HyperPod cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClusterNodeSummary {
+pub struct ClusterNodeSummary  {
     /// <p>The name of the instance group in which the instance is.</p>
     pub instance_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the instance.</p>
@@ -15,25 +15,25 @@ pub struct ClusterNodeSummary {
     /// <p>The status of the instance.</p>
     pub instance_status: ::std::option::Option<crate::types::ClusterInstanceStatusDetails>,
 }
-impl ClusterNodeSummary {
+impl  ClusterNodeSummary  {
     /// <p>The name of the instance group in which the instance is.</p>
-    pub fn instance_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn instance_group_name(&self) -> ::std::option::Option<& str> {
         self.instance_group_name.as_deref()
     }
     /// <p>The ID of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The type of the instance.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::ClusterInstanceType> {
+    pub fn instance_type(&self) -> ::std::option::Option<& crate::types::ClusterInstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>The time when the instance is launched.</p>
-    pub fn launch_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn launch_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.launch_time.as_ref()
     }
     /// <p>The status of the instance.</p>
-    pub fn instance_status(&self) -> ::std::option::Option<&crate::types::ClusterInstanceStatusDetails> {
+    pub fn instance_status(&self) -> ::std::option::Option<& crate::types::ClusterInstanceStatusDetails> {
         self.instance_status.as_ref()
     }
 }
@@ -63,8 +63,7 @@ impl ClusterNodeSummaryBuilder {
     }
     /// <p>The name of the instance group in which the instance is.</p>
     pub fn set_instance_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_group_name = input;
-        self
+        self.instance_group_name = input; self
     }
     /// <p>The name of the instance group in which the instance is.</p>
     pub fn get_instance_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +77,7 @@ impl ClusterNodeSummaryBuilder {
     }
     /// <p>The ID of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +91,7 @@ impl ClusterNodeSummaryBuilder {
     }
     /// <p>The type of the instance.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::ClusterInstanceType>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The type of the instance.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::ClusterInstanceType> {
@@ -108,8 +105,7 @@ impl ClusterNodeSummaryBuilder {
     }
     /// <p>The time when the instance is launched.</p>
     pub fn set_launch_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.launch_time = input;
-        self
+        self.launch_time = input; self
     }
     /// <p>The time when the instance is launched.</p>
     pub fn get_launch_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -123,8 +119,7 @@ impl ClusterNodeSummaryBuilder {
     }
     /// <p>The status of the instance.</p>
     pub fn set_instance_status(mut self, input: ::std::option::Option<crate::types::ClusterInstanceStatusDetails>) -> Self {
-        self.instance_status = input;
-        self
+        self.instance_status = input; self
     }
     /// <p>The status of the instance.</p>
     pub fn get_instance_status(&self) -> &::std::option::Option<crate::types::ClusterInstanceStatusDetails> {
@@ -133,11 +128,17 @@ impl ClusterNodeSummaryBuilder {
     /// Consumes the builder and constructs a [`ClusterNodeSummary`](crate::types::ClusterNodeSummary).
     pub fn build(self) -> crate::types::ClusterNodeSummary {
         crate::types::ClusterNodeSummary {
-            instance_group_name: self.instance_group_name,
-            instance_id: self.instance_id,
-            instance_type: self.instance_type,
-            launch_time: self.launch_time,
-            instance_status: self.instance_status,
+            instance_group_name: self.instance_group_name
+            ,
+            instance_id: self.instance_id
+            ,
+            instance_type: self.instance_type
+            ,
+            launch_time: self.launch_time
+            ,
+            instance_status: self.instance_status
+            ,
         }
     }
 }
+

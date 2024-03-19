@@ -3,7 +3,7 @@
 /// <p>Represents a request to set whether Amazon SES includes the original email headers in the Amazon SNS notifications of a specified type. For information about notifications, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity-using-notifications-sns.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetIdentityHeadersInNotificationsEnabledInput {
+pub struct SetIdentityHeadersInNotificationsEnabledInput  {
     /// <p>The identity for which to enable or disable headers in notifications. Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
     pub identity: ::std::option::Option<::std::string::String>,
     /// <p>The notification type for which to enable or disable headers in notifications.</p>
@@ -12,13 +12,13 @@ pub struct SetIdentityHeadersInNotificationsEnabledInput {
     /// <p>This value can only be set when <code>NotificationType</code> is already set to use a particular Amazon SNS topic.</p>
     pub enabled: ::std::option::Option<bool>,
 }
-impl SetIdentityHeadersInNotificationsEnabledInput {
+impl  SetIdentityHeadersInNotificationsEnabledInput  {
     /// <p>The identity for which to enable or disable headers in notifications. Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
-    pub fn identity(&self) -> ::std::option::Option<&str> {
+    pub fn identity(&self) -> ::std::option::Option<& str> {
         self.identity.as_deref()
     }
     /// <p>The notification type for which to enable or disable headers in notifications.</p>
-    pub fn notification_type(&self) -> ::std::option::Option<&crate::types::NotificationType> {
+    pub fn notification_type(&self) -> ::std::option::Option<& crate::types::NotificationType> {
         self.notification_type.as_ref()
     }
     /// <p>Sets whether Amazon SES includes the original email headers in Amazon SNS notifications of the specified notification type. A value of <code>true</code> specifies that Amazon SES includes headers in notifications, and a value of <code>false</code> specifies that Amazon SES does not include headers in notifications.</p>
@@ -29,8 +29,7 @@ impl SetIdentityHeadersInNotificationsEnabledInput {
 }
 impl SetIdentityHeadersInNotificationsEnabledInput {
     /// Creates a new builder-style object to manufacture [`SetIdentityHeadersInNotificationsEnabledInput`](crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledInput).
-    pub fn builder() -> crate::operation::set_identity_headers_in_notifications_enabled::builders::SetIdentityHeadersInNotificationsEnabledInputBuilder
-    {
+    pub fn builder() -> crate::operation::set_identity_headers_in_notifications_enabled::builders::SetIdentityHeadersInNotificationsEnabledInputBuilder {
         crate::operation::set_identity_headers_in_notifications_enabled::builders::SetIdentityHeadersInNotificationsEnabledInputBuilder::default()
     }
 }
@@ -52,8 +51,7 @@ impl SetIdentityHeadersInNotificationsEnabledInputBuilder {
     }
     /// <p>The identity for which to enable or disable headers in notifications. Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
     pub fn set_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity = input;
-        self
+        self.identity = input; self
     }
     /// <p>The identity for which to enable or disable headers in notifications. Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
     pub fn get_identity(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +65,7 @@ impl SetIdentityHeadersInNotificationsEnabledInputBuilder {
     }
     /// <p>The notification type for which to enable or disable headers in notifications.</p>
     pub fn set_notification_type(mut self, input: ::std::option::Option<crate::types::NotificationType>) -> Self {
-        self.notification_type = input;
-        self
+        self.notification_type = input; self
     }
     /// <p>The notification type for which to enable or disable headers in notifications.</p>
     pub fn get_notification_type(&self) -> &::std::option::Option<crate::types::NotificationType> {
@@ -84,8 +81,7 @@ impl SetIdentityHeadersInNotificationsEnabledInputBuilder {
     /// <p>Sets whether Amazon SES includes the original email headers in Amazon SNS notifications of the specified notification type. A value of <code>true</code> specifies that Amazon SES includes headers in notifications, and a value of <code>false</code> specifies that Amazon SES does not include headers in notifications.</p>
     /// <p>This value can only be set when <code>NotificationType</code> is already set to use a particular Amazon SNS topic.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Sets whether Amazon SES includes the original email headers in Amazon SNS notifications of the specified notification type. A value of <code>true</code> specifies that Amazon SES includes headers in notifications, and a value of <code>false</code> specifies that Amazon SES does not include headers in notifications.</p>
     /// <p>This value can only be set when <code>NotificationType</code> is already set to use a particular Amazon SNS topic.</p>
@@ -93,18 +89,17 @@ impl SetIdentityHeadersInNotificationsEnabledInputBuilder {
         &self.enabled
     }
     /// Consumes the builder and constructs a [`SetIdentityHeadersInNotificationsEnabledInput`](crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledInput {
-                identity: self.identity,
-                notification_type: self.notification_type,
-                enabled: self.enabled,
-            },
+                identity: self.identity
+                ,
+                notification_type: self.notification_type
+                ,
+                enabled: self.enabled
+                ,
+            }
         )
     }
 }
+

@@ -5,23 +5,20 @@ pub use crate::operation::respond_activity_task_canceled::_respond_activity_task
 
 impl RespondActivityTaskCanceledInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.respond_activity_task_canceled();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.respond_activity_task_canceled();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `RespondActivityTaskCanceled`.
-///
+/// 
 /// <p>Used by workers to tell the service that the <code>ActivityTask</code> identified by the <code>taskToken</code> was successfully canceled. Additional <code>details</code> can be provided using the <code>details</code> argument.</p>
 /// <p>These <code>details</code> (if provided) appear in the <code>ActivityTaskCanceled</code> event added to the workflow history.</p><important>
 /// <p>Only use this operation if the <code>canceled</code> flag of a <code>RecordActivityTaskHeartbeat</code> request returns <code>true</code> and if the activity can be safely undone or abandoned.</p>
@@ -41,33 +38,32 @@ impl RespondActivityTaskCanceledInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RespondActivityTaskCanceledFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::respond_activity_task_canceled::builders::RespondActivityTaskCanceledInputBuilder,
+                    inner: crate::operation::respond_activity_task_canceled::builders::RespondActivityTaskCanceledInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledOutput,
-        crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledError,
-    > for RespondActivityTaskCanceledFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledOutput,
-            crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledOutput,
+                    crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledError,
+                > for RespondActivityTaskCanceledFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledOutput,
+                        crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl RespondActivityTaskCanceledFluentBuilder {
     /// Creates a new `RespondActivityTaskCanceled`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -76,53 +72,44 @@ impl RespondActivityTaskCanceledFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceled::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceled::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledOutput,
-        crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceled::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceled::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledOutput, crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p><important>
     /// <p><code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
     /// </important>
@@ -158,3 +145,4 @@ impl RespondActivityTaskCanceledFluentBuilder {
         self.inner.get_details()
     }
 }
+

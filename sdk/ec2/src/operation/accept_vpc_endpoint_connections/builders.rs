@@ -5,54 +5,50 @@ pub use crate::operation::accept_vpc_endpoint_connections::_accept_vpc_endpoint_
 
 impl AcceptVpcEndpointConnectionsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnectionsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnectionsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.accept_vpc_endpoint_connections();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnectionsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnectionsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.accept_vpc_endpoint_connections();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `AcceptVpcEndpointConnections`.
-///
+/// 
 /// <p>Accepts connection requests to your VPC endpoint service.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AcceptVpcEndpointConnectionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::accept_vpc_endpoint_connections::builders::AcceptVpcEndpointConnectionsInputBuilder,
+                    inner: crate::operation::accept_vpc_endpoint_connections::builders::AcceptVpcEndpointConnectionsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnectionsOutput,
-        crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnectionsError,
-    > for AcceptVpcEndpointConnectionsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnectionsOutput,
-            crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnectionsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnectionsOutput,
+                    crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnectionsError,
+                > for AcceptVpcEndpointConnectionsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnectionsOutput,
+                        crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnectionsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl AcceptVpcEndpointConnectionsFluentBuilder {
     /// Creates a new `AcceptVpcEndpointConnections`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl AcceptVpcEndpointConnectionsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnectionsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnectionsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnections::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnections::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnectionsOutput,
-        crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnectionsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnectionsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnectionsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnections::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnections::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnectionsOutput, crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnectionsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -146,12 +133,13 @@ impl AcceptVpcEndpointConnectionsFluentBuilder {
         self
     }
     /// <p>The IDs of the interface VPC endpoints.</p>
-    pub fn set_vpc_endpoint_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_vpc_endpoint_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_vpc_endpoint_ids(input);
         self
     }
     /// <p>The IDs of the interface VPC endpoints.</p>
-    pub fn get_vpc_endpoint_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_endpoint_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_vpc_endpoint_ids()
     }
 }
+

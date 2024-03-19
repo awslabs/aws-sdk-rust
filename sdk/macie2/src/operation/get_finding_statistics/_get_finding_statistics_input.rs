@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFindingStatisticsInput {
+pub struct GetFindingStatisticsInput  {
     /// <p>The criteria to use to filter the query results.</p>
     pub finding_criteria: ::std::option::Option<crate::types::FindingCriteria>,
     /// <p>The finding property to use to group the query results. Valid values are:</p>
@@ -22,9 +22,9 @@ pub struct GetFindingStatisticsInput {
     /// <p>The criteria to use to sort the query results.</p>
     pub sort_criteria: ::std::option::Option<crate::types::FindingStatisticsSortCriteria>,
 }
-impl GetFindingStatisticsInput {
+impl  GetFindingStatisticsInput  {
     /// <p>The criteria to use to filter the query results.</p>
-    pub fn finding_criteria(&self) -> ::std::option::Option<&crate::types::FindingCriteria> {
+    pub fn finding_criteria(&self) -> ::std::option::Option<& crate::types::FindingCriteria> {
         self.finding_criteria.as_ref()
     }
     /// <p>The finding property to use to group the query results. Valid values are:</p>
@@ -38,7 +38,7 @@ impl GetFindingStatisticsInput {
     /// <li>
     /// <p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li>
     /// </ul>
-    pub fn group_by(&self) -> ::std::option::Option<&crate::types::GroupBy> {
+    pub fn group_by(&self) -> ::std::option::Option<& crate::types::GroupBy> {
         self.group_by.as_ref()
     }
     /// <p>The maximum number of items to include in each page of the response.</p>
@@ -46,7 +46,7 @@ impl GetFindingStatisticsInput {
         self.size
     }
     /// <p>The criteria to use to sort the query results.</p>
-    pub fn sort_criteria(&self) -> ::std::option::Option<&crate::types::FindingStatisticsSortCriteria> {
+    pub fn sort_criteria(&self) -> ::std::option::Option<& crate::types::FindingStatisticsSortCriteria> {
         self.sort_criteria.as_ref()
     }
 }
@@ -74,8 +74,7 @@ impl GetFindingStatisticsInputBuilder {
     }
     /// <p>The criteria to use to filter the query results.</p>
     pub fn set_finding_criteria(mut self, input: ::std::option::Option<crate::types::FindingCriteria>) -> Self {
-        self.finding_criteria = input;
-        self
+        self.finding_criteria = input; self
     }
     /// <p>The criteria to use to filter the query results.</p>
     pub fn get_finding_criteria(&self) -> &::std::option::Option<crate::types::FindingCriteria> {
@@ -109,8 +108,7 @@ impl GetFindingStatisticsInputBuilder {
     /// <p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li>
     /// </ul>
     pub fn set_group_by(mut self, input: ::std::option::Option<crate::types::GroupBy>) -> Self {
-        self.group_by = input;
-        self
+        self.group_by = input; self
     }
     /// <p>The finding property to use to group the query results. Valid values are:</p>
     /// <ul>
@@ -133,8 +131,7 @@ impl GetFindingStatisticsInputBuilder {
     }
     /// <p>The maximum number of items to include in each page of the response.</p>
     pub fn set_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.size = input;
-        self
+        self.size = input; self
     }
     /// <p>The maximum number of items to include in each page of the response.</p>
     pub fn get_size(&self) -> &::std::option::Option<i32> {
@@ -147,23 +144,26 @@ impl GetFindingStatisticsInputBuilder {
     }
     /// <p>The criteria to use to sort the query results.</p>
     pub fn set_sort_criteria(mut self, input: ::std::option::Option<crate::types::FindingStatisticsSortCriteria>) -> Self {
-        self.sort_criteria = input;
-        self
+        self.sort_criteria = input; self
     }
     /// <p>The criteria to use to sort the query results.</p>
     pub fn get_sort_criteria(&self) -> &::std::option::Option<crate::types::FindingStatisticsSortCriteria> {
         &self.sort_criteria
     }
     /// Consumes the builder and constructs a [`GetFindingStatisticsInput`](crate::operation::get_finding_statistics::GetFindingStatisticsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_finding_statistics::GetFindingStatisticsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_finding_statistics::GetFindingStatisticsInput {
-            finding_criteria: self.finding_criteria,
-            group_by: self.group_by,
-            size: self.size,
-            sort_criteria: self.sort_criteria,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_finding_statistics::GetFindingStatisticsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_finding_statistics::GetFindingStatisticsInput {
+                finding_criteria: self.finding_criteria
+                ,
+                group_by: self.group_by
+                ,
+                size: self.size
+                ,
+                sort_criteria: self.sort_criteria
+                ,
+            }
+        )
     }
 }
+

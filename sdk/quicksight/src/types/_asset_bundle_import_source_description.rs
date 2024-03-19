@@ -3,23 +3,23 @@
 /// <p>A description of the import source that you provide at the start of an import job. This value is set to either <code>Body</code> or <code>S3Uri</code>, depending on how the <code>StartAssetBundleImportJobRequest</code> is configured.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AssetBundleImportSourceDescription {
+pub struct AssetBundleImportSourceDescription  {
     /// <p>An HTTPS download URL for the provided asset bundle that you optionally provided at the start of the import job. This URL is valid for five minutes after issuance. Call <code>DescribeAssetBundleExportJob</code> again for a fresh URL if needed. The downloaded asset bundle is a <code>.qs</code> zip file.</p>
     pub body: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 URI that you provided at the start of the import job.</p>
     pub s3_uri: ::std::option::Option<::std::string::String>,
 }
-impl AssetBundleImportSourceDescription {
+impl  AssetBundleImportSourceDescription  {
     /// <p>An HTTPS download URL for the provided asset bundle that you optionally provided at the start of the import job. This URL is valid for five minutes after issuance. Call <code>DescribeAssetBundleExportJob</code> again for a fresh URL if needed. The downloaded asset bundle is a <code>.qs</code> zip file.</p>
-    pub fn body(&self) -> ::std::option::Option<&str> {
+    pub fn body(&self) -> ::std::option::Option<& str> {
         self.body.as_deref()
     }
     /// <p>The Amazon S3 URI that you provided at the start of the import job.</p>
-    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn s3_uri(&self) -> ::std::option::Option<& str> {
         self.s3_uri.as_deref()
     }
 }
-impl ::std::fmt::Debug for AssetBundleImportSourceDescription {
+impl  ::std::fmt::Debug for AssetBundleImportSourceDescription  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AssetBundleImportSourceDescription");
         formatter.field("body", &"*** Sensitive Data Redacted ***");
@@ -49,8 +49,7 @@ impl AssetBundleImportSourceDescriptionBuilder {
     }
     /// <p>An HTTPS download URL for the provided asset bundle that you optionally provided at the start of the import job. This URL is valid for five minutes after issuance. Call <code>DescribeAssetBundleExportJob</code> again for a fresh URL if needed. The downloaded asset bundle is a <code>.qs</code> zip file.</p>
     pub fn set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.body = input;
-        self
+        self.body = input; self
     }
     /// <p>An HTTPS download URL for the provided asset bundle that you optionally provided at the start of the import job. This URL is valid for five minutes after issuance. Call <code>DescribeAssetBundleExportJob</code> again for a fresh URL if needed. The downloaded asset bundle is a <code>.qs</code> zip file.</p>
     pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl AssetBundleImportSourceDescriptionBuilder {
     }
     /// <p>The Amazon S3 URI that you provided at the start of the import job.</p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
     }
     /// <p>The Amazon S3 URI that you provided at the start of the import job.</p>
     pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +71,10 @@ impl AssetBundleImportSourceDescriptionBuilder {
     /// Consumes the builder and constructs a [`AssetBundleImportSourceDescription`](crate::types::AssetBundleImportSourceDescription).
     pub fn build(self) -> crate::types::AssetBundleImportSourceDescription {
         crate::types::AssetBundleImportSourceDescription {
-            body: self.body,
-            s3_uri: self.s3_uri,
+            body: self.body
+            ,
+            s3_uri: self.s3_uri
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for AssetBundleImportSourceDescriptionBuilder {
         formatter.finish()
     }
 }
+

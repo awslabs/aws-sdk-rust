@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListNamespaces`](crate::operation::list_namespaces::builders::ListNamespacesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_namespaces::builders::ListNamespacesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_namespaces::builders::ListNamespacesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_namespaces::builders::ListNamespacesFluentBuilder::set_next_token):<br>required: **false**<br><p>If your initial <code>ListNamespaces</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListNamespaces</code> operations, which returns results in the next page.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_namespaces::builders::ListNamespacesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_namespaces::builders::ListNamespacesFluentBuilder::set_max_results):<br>required: **false**<br><p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p><br>
-    /// - On success, responds with [`ListNamespacesOutput`](crate::operation::list_namespaces::ListNamespacesOutput) with field(s):
+                            /// - On success, responds with [`ListNamespacesOutput`](crate::operation::list_namespaces::ListNamespacesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_namespaces::ListNamespacesOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     ///   - [`namespaces(Vec::<Namespace>)`](crate::operation::list_namespaces::ListNamespacesOutput::namespaces): <p>The list of returned namespaces.</p>
-    /// - On failure, responds with [`SdkError<ListNamespacesError>`](crate::operation::list_namespaces::ListNamespacesError)
+                            /// - On failure, responds with [`SdkError<ListNamespacesError>`](crate::operation::list_namespaces::ListNamespacesError)
     pub fn list_namespaces(&self) -> crate::operation::list_namespaces::builders::ListNamespacesFluentBuilder {
-        crate::operation::list_namespaces::builders::ListNamespacesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_namespaces::builders::ListNamespacesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

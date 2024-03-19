@@ -3,30 +3,31 @@
 /// <p>Contains the result of a successful invocation of the <code>DescribeReservedDBInstancesOfferings</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeReservedDbInstancesOfferingsOutput {
+pub struct DescribeReservedDbInstancesOfferingsOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of reserved DB instance offerings.</p>
-    pub reserved_db_instances_offerings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedDbInstancesOffering>>,
+    pub reserved_db_instances_offerings: ::std::option::Option<::std::vec::Vec::<crate::types::ReservedDbInstancesOffering>>,
     _request_id: Option<String>,
 }
-impl DescribeReservedDbInstancesOfferingsOutput {
+impl  DescribeReservedDbInstancesOfferingsOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of reserved DB instance offerings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reserved_db_instances_offerings.is_none()`.
-    pub fn reserved_db_instances_offerings(&self) -> &[crate::types::ReservedDbInstancesOffering] {
-        self.reserved_db_instances_offerings.as_deref().unwrap_or_default()
+    pub fn reserved_db_instances_offerings(&self) -> & [crate::types::ReservedDbInstancesOffering] {
+        self.reserved_db_instances_offerings.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeReservedDbInstancesOfferingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeReservedDbInstancesOfferingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedDbInstancesOfferingsOutput`](crate::operation::describe_reserved_db_instances_offerings::DescribeReservedDbInstancesOfferingsOutput).
     pub fn builder() -> crate::operation::describe_reserved_db_instances_offerings::builders::DescribeReservedDbInstancesOfferingsOutputBuilder {
@@ -39,7 +40,7 @@ impl DescribeReservedDbInstancesOfferingsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReservedDbInstancesOfferingsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) reserved_db_instances_offerings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedDbInstancesOffering>>,
+    pub(crate) reserved_db_instances_offerings: ::std::option::Option<::std::vec::Vec::<crate::types::ReservedDbInstancesOffering>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedDbInstancesOfferingsOutputBuilder {
@@ -50,8 +51,7 @@ impl DescribeReservedDbInstancesOfferingsOutputBuilder {
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,37 +64,36 @@ impl DescribeReservedDbInstancesOfferingsOutputBuilder {
     /// <p>A list of reserved DB instance offerings.</p>
     pub fn reserved_db_instances_offerings(mut self, input: crate::types::ReservedDbInstancesOffering) -> Self {
         let mut v = self.reserved_db_instances_offerings.unwrap_or_default();
-        v.push(input);
-        self.reserved_db_instances_offerings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.reserved_db_instances_offerings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of reserved DB instance offerings.</p>
-    pub fn set_reserved_db_instances_offerings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReservedDbInstancesOffering>>,
-    ) -> Self {
-        self.reserved_db_instances_offerings = input;
-        self
+    pub fn set_reserved_db_instances_offerings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReservedDbInstancesOffering>>) -> Self {
+        self.reserved_db_instances_offerings = input; self
     }
     /// <p>A list of reserved DB instance offerings.</p>
-    pub fn get_reserved_db_instances_offerings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedDbInstancesOffering>> {
+    pub fn get_reserved_db_instances_offerings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReservedDbInstancesOffering>> {
         &self.reserved_db_instances_offerings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeReservedDbInstancesOfferingsOutput`](crate::operation::describe_reserved_db_instances_offerings::DescribeReservedDbInstancesOfferingsOutput).
     pub fn build(self) -> crate::operation::describe_reserved_db_instances_offerings::DescribeReservedDbInstancesOfferingsOutput {
         crate::operation::describe_reserved_db_instances_offerings::DescribeReservedDbInstancesOfferingsOutput {
-            marker: self.marker,
-            reserved_db_instances_offerings: self.reserved_db_instances_offerings,
+            marker: self.marker
+            ,
+            reserved_db_instances_offerings: self.reserved_db_instances_offerings
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

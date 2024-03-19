@@ -3,13 +3,13 @@
 /// <p>Extra details specific to a data update type notification.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataUpdateRequestDetails {
+pub struct DataUpdateRequestDetails  {
     /// <p>A datetime in the past when the data was updated. This typically means that the underlying resource supporting the data set was updated.</p>
     pub data_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl DataUpdateRequestDetails {
+impl  DataUpdateRequestDetails  {
     /// <p>A datetime in the past when the data was updated. This typically means that the underlying resource supporting the data set was updated.</p>
-    pub fn data_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn data_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.data_updated_at.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl DataUpdateRequestDetailsBuilder {
     }
     /// <p>A datetime in the past when the data was updated. This typically means that the underlying resource supporting the data set was updated.</p>
     pub fn set_data_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.data_updated_at = input;
-        self
+        self.data_updated_at = input; self
     }
     /// <p>A datetime in the past when the data was updated. This typically means that the underlying resource supporting the data set was updated.</p>
     pub fn get_data_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -44,7 +43,9 @@ impl DataUpdateRequestDetailsBuilder {
     /// Consumes the builder and constructs a [`DataUpdateRequestDetails`](crate::types::DataUpdateRequestDetails).
     pub fn build(self) -> crate::types::DataUpdateRequestDetails {
         crate::types::DataUpdateRequestDetails {
-            data_updated_at: self.data_updated_at,
+            data_updated_at: self.data_updated_at
+            ,
         }
     }
 }
+

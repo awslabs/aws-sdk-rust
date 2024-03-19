@@ -3,16 +3,17 @@
 /// <p>A collection of the names of Amazon Web Services services.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServiceCollection {
+pub struct ServiceCollection  {
     /// <p>An array of strings that each specifies the name of an Amazon Web Services service.</p>
-    pub service_names: ::std::option::Option<::std::vec::Vec<crate::types::ServiceName>>,
+    pub service_names: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceName>>,
 }
-impl ServiceCollection {
+impl  ServiceCollection  {
     /// <p>An array of strings that each specifies the name of an Amazon Web Services service.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_names.is_none()`.
-    pub fn service_names(&self) -> &[crate::types::ServiceName] {
-        self.service_names.as_deref().unwrap_or_default()
+    pub fn service_names(&self) -> & [crate::types::ServiceName] {
+        self.service_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ServiceCollection {
@@ -26,7 +27,7 @@ impl ServiceCollection {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceCollectionBuilder {
-    pub(crate) service_names: ::std::option::Option<::std::vec::Vec<crate::types::ServiceName>>,
+    pub(crate) service_names: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceName>>,
 }
 impl ServiceCollectionBuilder {
     /// Appends an item to `service_names`.
@@ -36,23 +37,24 @@ impl ServiceCollectionBuilder {
     /// <p>An array of strings that each specifies the name of an Amazon Web Services service.</p>
     pub fn service_names(mut self, input: crate::types::ServiceName) -> Self {
         let mut v = self.service_names.unwrap_or_default();
-        v.push(input);
-        self.service_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.service_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of strings that each specifies the name of an Amazon Web Services service.</p>
-    pub fn set_service_names(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceName>>) -> Self {
-        self.service_names = input;
-        self
+    pub fn set_service_names(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceName>>) -> Self {
+        self.service_names = input; self
     }
     /// <p>An array of strings that each specifies the name of an Amazon Web Services service.</p>
-    pub fn get_service_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceName>> {
+    pub fn get_service_names(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ServiceName>> {
         &self.service_names
     }
     /// Consumes the builder and constructs a [`ServiceCollection`](crate::types::ServiceCollection).
     pub fn build(self) -> crate::types::ServiceCollection {
         crate::types::ServiceCollection {
-            service_names: self.service_names,
+            service_names: self.service_names
+            ,
         }
     }
 }
+

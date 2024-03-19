@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateThemeInput {
+pub struct UpdateThemeInput  {
     /// <p>The unique ID for the Amplify app.</p>
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
@@ -14,25 +14,25 @@ pub struct UpdateThemeInput {
     /// <p>The configuration of the updated theme.</p>
     pub updated_theme: ::std::option::Option<crate::types::UpdateThemeData>,
 }
-impl UpdateThemeInput {
+impl  UpdateThemeInput  {
     /// <p>The unique ID for the Amplify app.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn environment_name(&self) -> ::std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>The unique ID for the theme.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The unique client token.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The configuration of the updated theme.</p>
-    pub fn updated_theme(&self) -> ::std::option::Option<&crate::types::UpdateThemeData> {
+    pub fn updated_theme(&self) -> ::std::option::Option<& crate::types::UpdateThemeData> {
         self.updated_theme.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl UpdateThemeInputBuilder {
     }
     /// <p>The unique ID for the Amplify app.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The unique ID for the Amplify app.</p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl UpdateThemeInputBuilder {
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
     pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_name = input;
-        self
+        self.environment_name = input; self
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
     pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +90,7 @@ impl UpdateThemeInputBuilder {
     }
     /// <p>The unique ID for the theme.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique ID for the theme.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +103,7 @@ impl UpdateThemeInputBuilder {
     }
     /// <p>The unique client token.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The unique client token.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +117,7 @@ impl UpdateThemeInputBuilder {
     }
     /// <p>The configuration of the updated theme.</p>
     pub fn set_updated_theme(mut self, input: ::std::option::Option<crate::types::UpdateThemeData>) -> Self {
-        self.updated_theme = input;
-        self
+        self.updated_theme = input; self
     }
     /// <p>The configuration of the updated theme.</p>
     pub fn get_updated_theme(&self) -> &::std::option::Option<crate::types::UpdateThemeData> {
@@ -130,12 +125,20 @@ impl UpdateThemeInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateThemeInput`](crate::operation::update_theme::UpdateThemeInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_theme::UpdateThemeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_theme::UpdateThemeInput {
-            app_id: self.app_id,
-            environment_name: self.environment_name,
-            id: self.id,
-            client_token: self.client_token,
-            updated_theme: self.updated_theme,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_theme::UpdateThemeInput {
+                app_id: self.app_id
+                ,
+                environment_name: self.environment_name
+                ,
+                id: self.id
+                ,
+                client_token: self.client_token
+                ,
+                updated_theme: self.updated_theme
+                ,
+            }
+        )
     }
 }
+

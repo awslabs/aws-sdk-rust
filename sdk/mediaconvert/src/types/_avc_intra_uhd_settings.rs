@@ -3,13 +3,13 @@
 /// Optional when you set AVC-Intra class to Class 4K/2K. When you set AVC-Intra class to a different value, this object isn't allowed.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AvcIntraUhdSettings {
+pub struct AvcIntraUhdSettings  {
     /// Optional. Use Quality tuning level to choose how many transcoding passes MediaConvert does with your video. When you choose Multi-pass, your video quality is better and your output bitrate is more accurate. That is, the actual bitrate of your output is closer to the target bitrate defined in the specification. When you choose Single-pass, your encoding time is faster. The default behavior is Single-pass.
     pub quality_tuning_level: ::std::option::Option<crate::types::AvcIntraUhdQualityTuningLevel>,
 }
-impl AvcIntraUhdSettings {
+impl  AvcIntraUhdSettings  {
     /// Optional. Use Quality tuning level to choose how many transcoding passes MediaConvert does with your video. When you choose Multi-pass, your video quality is better and your output bitrate is more accurate. That is, the actual bitrate of your output is closer to the target bitrate defined in the specification. When you choose Single-pass, your encoding time is faster. The default behavior is Single-pass.
-    pub fn quality_tuning_level(&self) -> ::std::option::Option<&crate::types::AvcIntraUhdQualityTuningLevel> {
+    pub fn quality_tuning_level(&self) -> ::std::option::Option<& crate::types::AvcIntraUhdQualityTuningLevel> {
         self.quality_tuning_level.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl AvcIntraUhdSettingsBuilder {
     }
     /// Optional. Use Quality tuning level to choose how many transcoding passes MediaConvert does with your video. When you choose Multi-pass, your video quality is better and your output bitrate is more accurate. That is, the actual bitrate of your output is closer to the target bitrate defined in the specification. When you choose Single-pass, your encoding time is faster. The default behavior is Single-pass.
     pub fn set_quality_tuning_level(mut self, input: ::std::option::Option<crate::types::AvcIntraUhdQualityTuningLevel>) -> Self {
-        self.quality_tuning_level = input;
-        self
+        self.quality_tuning_level = input; self
     }
     /// Optional. Use Quality tuning level to choose how many transcoding passes MediaConvert does with your video. When you choose Multi-pass, your video quality is better and your output bitrate is more accurate. That is, the actual bitrate of your output is closer to the target bitrate defined in the specification. When you choose Single-pass, your encoding time is faster. The default behavior is Single-pass.
     pub fn get_quality_tuning_level(&self) -> &::std::option::Option<crate::types::AvcIntraUhdQualityTuningLevel> {
@@ -44,7 +43,9 @@ impl AvcIntraUhdSettingsBuilder {
     /// Consumes the builder and constructs a [`AvcIntraUhdSettings`](crate::types::AvcIntraUhdSettings).
     pub fn build(self) -> crate::types::AvcIntraUhdSettings {
         crate::types::AvcIntraUhdSettings {
-            quality_tuning_level: self.quality_tuning_level,
+            quality_tuning_level: self.quality_tuning_level
+            ,
         }
     }
 }
+

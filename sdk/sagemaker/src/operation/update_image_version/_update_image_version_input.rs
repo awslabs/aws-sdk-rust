@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateImageVersionInput {
+pub struct UpdateImageVersionInput  {
     /// <p>The name of the image.</p>
     pub image_name: ::std::option::Option<::std::string::String>,
     /// <p>The alias of the image version.</p>
@@ -10,9 +10,9 @@ pub struct UpdateImageVersionInput {
     /// <p>The version of the image.</p>
     pub version: ::std::option::Option<i32>,
     /// <p>A list of aliases to add.</p>
-    pub aliases_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub aliases_to_add: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of aliases to delete.</p>
-    pub aliases_to_delete: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub aliases_to_delete: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The availability of the image version specified by the maintainer.</p>
     /// <ul>
     /// <li>
@@ -52,13 +52,13 @@ pub struct UpdateImageVersionInput {
     /// <p>The maintainer description of the image version.</p>
     pub release_notes: ::std::option::Option<::std::string::String>,
 }
-impl UpdateImageVersionInput {
+impl  UpdateImageVersionInput  {
     /// <p>The name of the image.</p>
-    pub fn image_name(&self) -> ::std::option::Option<&str> {
+    pub fn image_name(&self) -> ::std::option::Option<& str> {
         self.image_name.as_deref()
     }
     /// <p>The alias of the image version.</p>
-    pub fn alias(&self) -> ::std::option::Option<&str> {
+    pub fn alias(&self) -> ::std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// <p>The version of the image.</p>
@@ -66,16 +66,18 @@ impl UpdateImageVersionInput {
         self.version
     }
     /// <p>A list of aliases to add.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aliases_to_add.is_none()`.
-    pub fn aliases_to_add(&self) -> &[::std::string::String] {
-        self.aliases_to_add.as_deref().unwrap_or_default()
+    pub fn aliases_to_add(&self) -> & [::std::string::String] {
+        self.aliases_to_add.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of aliases to delete.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aliases_to_delete.is_none()`.
-    pub fn aliases_to_delete(&self) -> &[::std::string::String] {
-        self.aliases_to_delete.as_deref().unwrap_or_default()
+    pub fn aliases_to_delete(&self) -> & [::std::string::String] {
+        self.aliases_to_delete.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The availability of the image version specified by the maintainer.</p>
     /// <ul>
@@ -88,7 +90,7 @@ impl UpdateImageVersionInput {
     /// <li>
     /// <p><code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported.</p></li>
     /// </ul>
-    pub fn vendor_guidance(&self) -> ::std::option::Option<&crate::types::VendorGuidance> {
+    pub fn vendor_guidance(&self) -> ::std::option::Option<& crate::types::VendorGuidance> {
         self.vendor_guidance.as_ref()
     }
     /// <p>Indicates SageMaker job type compatibility.</p>
@@ -100,15 +102,15 @@ impl UpdateImageVersionInput {
     /// <li>
     /// <p><code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p></li>
     /// </ul>
-    pub fn job_type(&self) -> ::std::option::Option<&crate::types::JobType> {
+    pub fn job_type(&self) -> ::std::option::Option<& crate::types::JobType> {
         self.job_type.as_ref()
     }
     /// <p>The machine learning framework vended in the image version.</p>
-    pub fn ml_framework(&self) -> ::std::option::Option<&str> {
+    pub fn ml_framework(&self) -> ::std::option::Option<& str> {
         self.ml_framework.as_deref()
     }
     /// <p>The supported programming language and its version.</p>
-    pub fn programming_lang(&self) -> ::std::option::Option<&str> {
+    pub fn programming_lang(&self) -> ::std::option::Option<& str> {
         self.programming_lang.as_deref()
     }
     /// <p>Indicates CPU or GPU compatibility.</p>
@@ -118,7 +120,7 @@ impl UpdateImageVersionInput {
     /// <li>
     /// <p><code>GPU</code>: The image version is compatible with GPU.</p></li>
     /// </ul>
-    pub fn processor(&self) -> ::std::option::Option<&crate::types::Processor> {
+    pub fn processor(&self) -> ::std::option::Option<& crate::types::Processor> {
         self.processor.as_ref()
     }
     /// <p>Indicates Horovod compatibility.</p>
@@ -126,7 +128,7 @@ impl UpdateImageVersionInput {
         self.horovod
     }
     /// <p>The maintainer description of the image version.</p>
-    pub fn release_notes(&self) -> ::std::option::Option<&str> {
+    pub fn release_notes(&self) -> ::std::option::Option<& str> {
         self.release_notes.as_deref()
     }
 }
@@ -144,8 +146,8 @@ pub struct UpdateImageVersionInputBuilder {
     pub(crate) image_name: ::std::option::Option<::std::string::String>,
     pub(crate) alias: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<i32>,
-    pub(crate) aliases_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) aliases_to_delete: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) aliases_to_add: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) aliases_to_delete: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) vendor_guidance: ::std::option::Option<crate::types::VendorGuidance>,
     pub(crate) job_type: ::std::option::Option<crate::types::JobType>,
     pub(crate) ml_framework: ::std::option::Option<::std::string::String>,
@@ -163,8 +165,7 @@ impl UpdateImageVersionInputBuilder {
     }
     /// <p>The name of the image.</p>
     pub fn set_image_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_name = input;
-        self
+        self.image_name = input; self
     }
     /// <p>The name of the image.</p>
     pub fn get_image_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -177,8 +178,7 @@ impl UpdateImageVersionInputBuilder {
     }
     /// <p>The alias of the image version.</p>
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias = input;
-        self
+        self.alias = input; self
     }
     /// <p>The alias of the image version.</p>
     pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
@@ -191,8 +191,7 @@ impl UpdateImageVersionInputBuilder {
     }
     /// <p>The version of the image.</p>
     pub fn set_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of the image.</p>
     pub fn get_version(&self) -> &::std::option::Option<i32> {
@@ -205,17 +204,16 @@ impl UpdateImageVersionInputBuilder {
     /// <p>A list of aliases to add.</p>
     pub fn aliases_to_add(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.aliases_to_add.unwrap_or_default();
-        v.push(input.into());
-        self.aliases_to_add = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.aliases_to_add = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of aliases to add.</p>
-    pub fn set_aliases_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.aliases_to_add = input;
-        self
+    pub fn set_aliases_to_add(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.aliases_to_add = input; self
     }
     /// <p>A list of aliases to add.</p>
-    pub fn get_aliases_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_aliases_to_add(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.aliases_to_add
     }
     /// Appends an item to `aliases_to_delete`.
@@ -225,17 +223,16 @@ impl UpdateImageVersionInputBuilder {
     /// <p>A list of aliases to delete.</p>
     pub fn aliases_to_delete(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.aliases_to_delete.unwrap_or_default();
-        v.push(input.into());
-        self.aliases_to_delete = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.aliases_to_delete = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of aliases to delete.</p>
-    pub fn set_aliases_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.aliases_to_delete = input;
-        self
+    pub fn set_aliases_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.aliases_to_delete = input; self
     }
     /// <p>A list of aliases to delete.</p>
-    pub fn get_aliases_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_aliases_to_delete(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.aliases_to_delete
     }
     /// <p>The availability of the image version specified by the maintainer.</p>
@@ -265,8 +262,7 @@ impl UpdateImageVersionInputBuilder {
     /// <p><code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported.</p></li>
     /// </ul>
     pub fn set_vendor_guidance(mut self, input: ::std::option::Option<crate::types::VendorGuidance>) -> Self {
-        self.vendor_guidance = input;
-        self
+        self.vendor_guidance = input; self
     }
     /// <p>The availability of the image version specified by the maintainer.</p>
     /// <ul>
@@ -305,8 +301,7 @@ impl UpdateImageVersionInputBuilder {
     /// <p><code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p></li>
     /// </ul>
     pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::JobType>) -> Self {
-        self.job_type = input;
-        self
+        self.job_type = input; self
     }
     /// <p>Indicates SageMaker job type compatibility.</p>
     /// <ul>
@@ -327,8 +322,7 @@ impl UpdateImageVersionInputBuilder {
     }
     /// <p>The machine learning framework vended in the image version.</p>
     pub fn set_ml_framework(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ml_framework = input;
-        self
+        self.ml_framework = input; self
     }
     /// <p>The machine learning framework vended in the image version.</p>
     pub fn get_ml_framework(&self) -> &::std::option::Option<::std::string::String> {
@@ -341,8 +335,7 @@ impl UpdateImageVersionInputBuilder {
     }
     /// <p>The supported programming language and its version.</p>
     pub fn set_programming_lang(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.programming_lang = input;
-        self
+        self.programming_lang = input; self
     }
     /// <p>The supported programming language and its version.</p>
     pub fn get_programming_lang(&self) -> &::std::option::Option<::std::string::String> {
@@ -367,8 +360,7 @@ impl UpdateImageVersionInputBuilder {
     /// <p><code>GPU</code>: The image version is compatible with GPU.</p></li>
     /// </ul>
     pub fn set_processor(mut self, input: ::std::option::Option<crate::types::Processor>) -> Self {
-        self.processor = input;
-        self
+        self.processor = input; self
     }
     /// <p>Indicates CPU or GPU compatibility.</p>
     /// <ul>
@@ -387,8 +379,7 @@ impl UpdateImageVersionInputBuilder {
     }
     /// <p>Indicates Horovod compatibility.</p>
     pub fn set_horovod(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.horovod = input;
-        self
+        self.horovod = input; self
     }
     /// <p>Indicates Horovod compatibility.</p>
     pub fn get_horovod(&self) -> &::std::option::Option<bool> {
@@ -401,31 +392,42 @@ impl UpdateImageVersionInputBuilder {
     }
     /// <p>The maintainer description of the image version.</p>
     pub fn set_release_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.release_notes = input;
-        self
+        self.release_notes = input; self
     }
     /// <p>The maintainer description of the image version.</p>
     pub fn get_release_notes(&self) -> &::std::option::Option<::std::string::String> {
         &self.release_notes
     }
     /// Consumes the builder and constructs a [`UpdateImageVersionInput`](crate::operation::update_image_version::UpdateImageVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_image_version::UpdateImageVersionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_image_version::UpdateImageVersionInput {
-            image_name: self.image_name,
-            alias: self.alias,
-            version: self.version,
-            aliases_to_add: self.aliases_to_add,
-            aliases_to_delete: self.aliases_to_delete,
-            vendor_guidance: self.vendor_guidance,
-            job_type: self.job_type,
-            ml_framework: self.ml_framework,
-            programming_lang: self.programming_lang,
-            processor: self.processor,
-            horovod: self.horovod,
-            release_notes: self.release_notes,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_image_version::UpdateImageVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_image_version::UpdateImageVersionInput {
+                image_name: self.image_name
+                ,
+                alias: self.alias
+                ,
+                version: self.version
+                ,
+                aliases_to_add: self.aliases_to_add
+                ,
+                aliases_to_delete: self.aliases_to_delete
+                ,
+                vendor_guidance: self.vendor_guidance
+                ,
+                job_type: self.job_type
+                ,
+                ml_framework: self.ml_framework
+                ,
+                programming_lang: self.programming_lang
+                ,
+                processor: self.processor
+                ,
+                horovod: self.horovod
+                ,
+                release_notes: self.release_notes
+                ,
+            }
+        )
     }
 }
+

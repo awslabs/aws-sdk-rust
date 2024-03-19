@@ -3,7 +3,7 @@
 /// <p>Filtering options for <i>ListUsers</i> operation. This is only used as input to Operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ListUsersFilters {
+pub struct ListUsersFilters  {
     /// <p>Filters only users with the provided username prefix.</p>
     pub username_prefix: ::std::option::Option<::std::string::String>,
     /// <p>Filters only users with the provided display name prefix.</p>
@@ -13,25 +13,25 @@ pub struct ListUsersFilters {
     /// <p>Filters only users with the provided state.</p>
     pub state: ::std::option::Option<crate::types::EntityState>,
 }
-impl ListUsersFilters {
+impl  ListUsersFilters  {
     /// <p>Filters only users with the provided username prefix.</p>
-    pub fn username_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn username_prefix(&self) -> ::std::option::Option<& str> {
         self.username_prefix.as_deref()
     }
     /// <p>Filters only users with the provided display name prefix.</p>
-    pub fn display_name_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn display_name_prefix(&self) -> ::std::option::Option<& str> {
         self.display_name_prefix.as_deref()
     }
     /// <p>Filters only users with the provided email prefix.</p>
-    pub fn primary_email_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn primary_email_prefix(&self) -> ::std::option::Option<& str> {
         self.primary_email_prefix.as_deref()
     }
     /// <p>Filters only users with the provided state.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::EntityState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::EntityState> {
         self.state.as_ref()
     }
 }
-impl ::std::fmt::Debug for ListUsersFilters {
+impl  ::std::fmt::Debug for ListUsersFilters  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ListUsersFilters");
         formatter.field("username_prefix", &self.username_prefix);
@@ -65,8 +65,7 @@ impl ListUsersFiltersBuilder {
     }
     /// <p>Filters only users with the provided username prefix.</p>
     pub fn set_username_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username_prefix = input;
-        self
+        self.username_prefix = input; self
     }
     /// <p>Filters only users with the provided username prefix.</p>
     pub fn get_username_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl ListUsersFiltersBuilder {
     }
     /// <p>Filters only users with the provided display name prefix.</p>
     pub fn set_display_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name_prefix = input;
-        self
+        self.display_name_prefix = input; self
     }
     /// <p>Filters only users with the provided display name prefix.</p>
     pub fn get_display_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +91,7 @@ impl ListUsersFiltersBuilder {
     }
     /// <p>Filters only users with the provided email prefix.</p>
     pub fn set_primary_email_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.primary_email_prefix = input;
-        self
+        self.primary_email_prefix = input; self
     }
     /// <p>Filters only users with the provided email prefix.</p>
     pub fn get_primary_email_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +104,7 @@ impl ListUsersFiltersBuilder {
     }
     /// <p>Filters only users with the provided state.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::EntityState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Filters only users with the provided state.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::EntityState> {
@@ -117,10 +113,14 @@ impl ListUsersFiltersBuilder {
     /// Consumes the builder and constructs a [`ListUsersFilters`](crate::types::ListUsersFilters).
     pub fn build(self) -> crate::types::ListUsersFilters {
         crate::types::ListUsersFilters {
-            username_prefix: self.username_prefix,
-            display_name_prefix: self.display_name_prefix,
-            primary_email_prefix: self.primary_email_prefix,
-            state: self.state,
+            username_prefix: self.username_prefix
+            ,
+            display_name_prefix: self.display_name_prefix
+            ,
+            primary_email_prefix: self.primary_email_prefix
+            ,
+            state: self.state
+            ,
         }
     }
 }
@@ -134,3 +134,4 @@ impl ::std::fmt::Debug for ListUsersFiltersBuilder {
         formatter.finish()
     }
 }
+

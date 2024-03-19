@@ -3,7 +3,7 @@
 /// Identifes a user level permission for a channel configuration.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TeamsUserIdentity {
+pub struct TeamsUserIdentity  {
     /// The ARN of the IAM role that defines the permissions for AWS Chatbot. This is a user-defined role that AWS Chatbot will assume. This is not the service-linked role. For more information, see IAM Policies for AWS Chatbot.
     pub iam_role_arn: ::std::string::String,
     /// The ARN of the MicrosoftTeamsChannelConfiguration associated with the user identity.
@@ -19,36 +19,33 @@ pub struct TeamsUserIdentity {
     /// The ID of the Microsoft Teams tenant.
     pub teams_tenant_id: ::std::option::Option<::std::string::String>,
 }
-impl TeamsUserIdentity {
+impl  TeamsUserIdentity  {
     /// The ARN of the IAM role that defines the permissions for AWS Chatbot. This is a user-defined role that AWS Chatbot will assume. This is not the service-linked role. For more information, see IAM Policies for AWS Chatbot.
-    pub fn iam_role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.iam_role_arn.deref()
+    pub fn iam_role_arn(&self) -> & str {
+        use std::ops::Deref; self.iam_role_arn.deref()
     }
     /// The ARN of the MicrosoftTeamsChannelConfiguration associated with the user identity.
-    pub fn chat_configuration_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.chat_configuration_arn.deref()
+    pub fn chat_configuration_arn(&self) -> & str {
+        use std::ops::Deref; self.chat_configuration_arn.deref()
     }
     /// The ID of the Microsoft Team authorized with AWS Chatbot. To get the team ID, you must perform the initial authorization flow with Microsoft Teams in the AWS Chatbot console. Then you can copy and paste the team ID from the console. For more details, see steps 1-4 in Get started with Microsoft Teams in the AWS Chatbot Administrator Guide.
-    pub fn team_id(&self) -> &str {
-        use std::ops::Deref;
-        self.team_id.deref()
+    pub fn team_id(&self) -> & str {
+        use std::ops::Deref; self.team_id.deref()
     }
     /// Id from Microsoft Teams for user.
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// The AWS user identity ARN used to associate a Microsoft Teams User Identity with an IAM Role.
-    pub fn aws_user_identity(&self) -> ::std::option::Option<&str> {
+    pub fn aws_user_identity(&self) -> ::std::option::Option<& str> {
         self.aws_user_identity.as_deref()
     }
     /// The ID of the Microsoft Teams channel.
-    pub fn teams_channel_id(&self) -> ::std::option::Option<&str> {
+    pub fn teams_channel_id(&self) -> ::std::option::Option<& str> {
         self.teams_channel_id.as_deref()
     }
     /// The ID of the Microsoft Teams tenant.
-    pub fn teams_tenant_id(&self) -> ::std::option::Option<&str> {
+    pub fn teams_tenant_id(&self) -> ::std::option::Option<& str> {
         self.teams_tenant_id.as_deref()
     }
 }
@@ -80,8 +77,7 @@ impl TeamsUserIdentityBuilder {
     }
     /// The ARN of the IAM role that defines the permissions for AWS Chatbot. This is a user-defined role that AWS Chatbot will assume. This is not the service-linked role. For more information, see IAM Policies for AWS Chatbot.
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_role_arn = input;
-        self
+        self.iam_role_arn = input; self
     }
     /// The ARN of the IAM role that defines the permissions for AWS Chatbot. This is a user-defined role that AWS Chatbot will assume. This is not the service-linked role. For more information, see IAM Policies for AWS Chatbot.
     pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +91,7 @@ impl TeamsUserIdentityBuilder {
     }
     /// The ARN of the MicrosoftTeamsChannelConfiguration associated with the user identity.
     pub fn set_chat_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.chat_configuration_arn = input;
-        self
+        self.chat_configuration_arn = input; self
     }
     /// The ARN of the MicrosoftTeamsChannelConfiguration associated with the user identity.
     pub fn get_chat_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +105,7 @@ impl TeamsUserIdentityBuilder {
     }
     /// The ID of the Microsoft Team authorized with AWS Chatbot. To get the team ID, you must perform the initial authorization flow with Microsoft Teams in the AWS Chatbot console. Then you can copy and paste the team ID from the console. For more details, see steps 1-4 in Get started with Microsoft Teams in the AWS Chatbot Administrator Guide.
     pub fn set_team_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.team_id = input;
-        self
+        self.team_id = input; self
     }
     /// The ID of the Microsoft Team authorized with AWS Chatbot. To get the team ID, you must perform the initial authorization flow with Microsoft Teams in the AWS Chatbot console. Then you can copy and paste the team ID from the console. For more details, see steps 1-4 in Get started with Microsoft Teams in the AWS Chatbot Administrator Guide.
     pub fn get_team_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +118,7 @@ impl TeamsUserIdentityBuilder {
     }
     /// Id from Microsoft Teams for user.
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// Id from Microsoft Teams for user.
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +131,7 @@ impl TeamsUserIdentityBuilder {
     }
     /// The AWS user identity ARN used to associate a Microsoft Teams User Identity with an IAM Role.
     pub fn set_aws_user_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_user_identity = input;
-        self
+        self.aws_user_identity = input; self
     }
     /// The AWS user identity ARN used to associate a Microsoft Teams User Identity with an IAM Role.
     pub fn get_aws_user_identity(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +144,7 @@ impl TeamsUserIdentityBuilder {
     }
     /// The ID of the Microsoft Teams channel.
     pub fn set_teams_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.teams_channel_id = input;
-        self
+        self.teams_channel_id = input; self
     }
     /// The ID of the Microsoft Teams channel.
     pub fn get_teams_channel_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +157,7 @@ impl TeamsUserIdentityBuilder {
     }
     /// The ID of the Microsoft Teams tenant.
     pub fn set_teams_tenant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.teams_tenant_id = input;
-        self
+        self.teams_tenant_id = input; self
     }
     /// The ID of the Microsoft Teams tenant.
     pub fn get_teams_tenant_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -179,29 +169,33 @@ impl TeamsUserIdentityBuilder {
     /// - [`chat_configuration_arn`](crate::types::builders::TeamsUserIdentityBuilder::chat_configuration_arn)
     /// - [`team_id`](crate::types::builders::TeamsUserIdentityBuilder::team_id)
     pub fn build(self) -> ::std::result::Result<crate::types::TeamsUserIdentity, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TeamsUserIdentity {
-            iam_role_arn: self.iam_role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "iam_role_arn",
-                    "iam_role_arn was not specified but it is required when building TeamsUserIdentity",
-                )
-            })?,
-            chat_configuration_arn: self.chat_configuration_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "chat_configuration_arn",
-                    "chat_configuration_arn was not specified but it is required when building TeamsUserIdentity",
-                )
-            })?,
-            team_id: self.team_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "team_id",
-                    "team_id was not specified but it is required when building TeamsUserIdentity",
-                )
-            })?,
-            user_id: self.user_id,
-            aws_user_identity: self.aws_user_identity,
-            teams_channel_id: self.teams_channel_id,
-            teams_tenant_id: self.teams_tenant_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TeamsUserIdentity {
+                iam_role_arn: self.iam_role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("iam_role_arn", "iam_role_arn was not specified but it is required when building TeamsUserIdentity")
+                    )?
+                ,
+                chat_configuration_arn: self.chat_configuration_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("chat_configuration_arn", "chat_configuration_arn was not specified but it is required when building TeamsUserIdentity")
+                    )?
+                ,
+                team_id: self.team_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("team_id", "team_id was not specified but it is required when building TeamsUserIdentity")
+                    )?
+                ,
+                user_id: self.user_id
+                ,
+                aws_user_identity: self.aws_user_identity
+                ,
+                teams_channel_id: self.teams_channel_id
+                ,
+                teams_tenant_id: self.teams_tenant_id
+                ,
+            }
+        )
     }
 }
+

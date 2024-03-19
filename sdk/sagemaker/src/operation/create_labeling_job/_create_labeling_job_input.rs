@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateLabelingJobInput {
+pub struct CreateLabelingJobInput  {
     /// <p>The name of the labeling job. This name is used to identify the job in a list of labeling jobs. Labeling job names must be unique within an Amazon Web Services account and region. <code>LabelingJobName</code> is not case sensitive. For example, Example-job and example-job are considered the same labeling job name by Ground Truth.</p>
     pub labeling_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The attribute name to use for the label in the output manifest file. This is the key for the key/value pair formed with the label that a worker assigns to the object. The <code>LabelAttributeName</code> must meet the following requirements.</p>
@@ -71,11 +71,11 @@ pub struct CreateLabelingJobInput {
     /// <p>Configures the labeling task and how it is presented to workers; including, but not limited to price, keywords, and batch size (task count).</p>
     pub human_task_config: ::std::option::Option<crate::types::HumanTaskConfig>,
     /// <p>An array of key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateLabelingJobInput {
+impl  CreateLabelingJobInput  {
     /// <p>The name of the labeling job. This name is used to identify the job in a list of labeling jobs. Labeling job names must be unique within an Amazon Web Services account and region. <code>LabelingJobName</code> is not case sensitive. For example, Example-job and example-job are considered the same labeling job name by Ground Truth.</p>
-    pub fn labeling_job_name(&self) -> ::std::option::Option<&str> {
+    pub fn labeling_job_name(&self) -> ::std::option::Option<& str> {
         self.labeling_job_name.as_deref()
     }
     /// <p>The attribute name to use for the label in the output manifest file. This is the key for the key/value pair formed with the label that a worker assigns to the object. The <code>LabelAttributeName</code> must meet the following requirements.</p>
@@ -100,7 +100,7 @@ impl CreateLabelingJobInput {
     /// <p></p><important>
     /// <p>If you are creating an adjustment or verification labeling job, you must use a <i>different</i> <code>LabelAttributeName</code> than the one used in the original labeling job. The original labeling job is the Ground Truth labeling job that produced the labels that you want verified or adjusted. To learn more about adjustment and verification labeling jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-verification-data.html">Verify and Adjust Labels</a>.</p>
     /// </important>
-    pub fn label_attribute_name(&self) -> ::std::option::Option<&str> {
+    pub fn label_attribute_name(&self) -> ::std::option::Option<& str> {
         self.label_attribute_name.as_deref()
     }
     /// <p>Input data for the labeling job, such as the Amazon S3 location of the data objects and the location of the manifest file that describes the data objects.</p>
@@ -112,15 +112,15 @@ impl CreateLabelingJobInput {
     /// <p>Use <code>S3DataSource</code> to specify an input manifest file for both streaming and one-time labeling jobs. Adding an <code>S3DataSource</code> is optional if you use <code>SnsDataSource</code> to create a streaming labeling job.</p></li>
     /// </ul>
     /// <p>If you use the Amazon Mechanical Turk workforce, your input data should not include confidential information, personal information or protected health information. Use <code>ContentClassifiers</code> to specify that your data is free of personally identifiable information and adult content.</p>
-    pub fn input_config(&self) -> ::std::option::Option<&crate::types::LabelingJobInputConfig> {
+    pub fn input_config(&self) -> ::std::option::Option<& crate::types::LabelingJobInputConfig> {
         self.input_config.as_ref()
     }
     /// <p>The location of the output data and the Amazon Web Services Key Management Service key ID for the key used to encrypt the output data, if any.</p>
-    pub fn output_config(&self) -> ::std::option::Option<&crate::types::LabelingJobOutputConfig> {
+    pub fn output_config(&self) -> ::std::option::Option<& crate::types::LabelingJobOutputConfig> {
         self.output_config.as_ref()
     }
     /// <p>The Amazon Resource Number (ARN) that Amazon SageMaker assumes to perform tasks on your behalf during data labeling. You must grant this role the necessary permissions so that Amazon SageMaker can successfully complete data labeling.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The S3 URI of the file, referred to as a <i>label category configuration file</i>, that defines the categories used to label the data objects.</p>
@@ -144,26 +144,27 @@ impl CreateLabelingJobInput {
     /// <li>
     /// <p>If you create a 3D point cloud or video frame adjustment or verification labeling job, you must include <code>auditLabelAttributeName</code> in the label category configuration. Use this parameter to enter the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateLabelingJob.html#sagemaker-CreateLabelingJob-request-LabelAttributeName"> <code>LabelAttributeName</code> </a> of the labeling job you want to adjust or verify annotations of.</p></li>
     /// </ul>
-    pub fn label_category_config_s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn label_category_config_s3_uri(&self) -> ::std::option::Option<& str> {
         self.label_category_config_s3_uri.as_deref()
     }
     /// <p>A set of conditions for stopping the labeling job. If any of the conditions are met, the job is automatically stopped. You can use these conditions to control the cost of data labeling.</p>
-    pub fn stopping_conditions(&self) -> ::std::option::Option<&crate::types::LabelingJobStoppingConditions> {
+    pub fn stopping_conditions(&self) -> ::std::option::Option<& crate::types::LabelingJobStoppingConditions> {
         self.stopping_conditions.as_ref()
     }
     /// <p>Configures the information required to perform automated data labeling.</p>
-    pub fn labeling_job_algorithms_config(&self) -> ::std::option::Option<&crate::types::LabelingJobAlgorithmsConfig> {
+    pub fn labeling_job_algorithms_config(&self) -> ::std::option::Option<& crate::types::LabelingJobAlgorithmsConfig> {
         self.labeling_job_algorithms_config.as_ref()
     }
     /// <p>Configures the labeling task and how it is presented to workers; including, but not limited to price, keywords, and batch size (task count).</p>
-    pub fn human_task_config(&self) -> ::std::option::Option<&crate::types::HumanTaskConfig> {
+    pub fn human_task_config(&self) -> ::std::option::Option<& crate::types::HumanTaskConfig> {
         self.human_task_config.as_ref()
     }
     /// <p>An array of key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateLabelingJobInput {
@@ -186,7 +187,7 @@ pub struct CreateLabelingJobInputBuilder {
     pub(crate) stopping_conditions: ::std::option::Option<crate::types::LabelingJobStoppingConditions>,
     pub(crate) labeling_job_algorithms_config: ::std::option::Option<crate::types::LabelingJobAlgorithmsConfig>,
     pub(crate) human_task_config: ::std::option::Option<crate::types::HumanTaskConfig>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateLabelingJobInputBuilder {
     /// <p>The name of the labeling job. This name is used to identify the job in a list of labeling jobs. Labeling job names must be unique within an Amazon Web Services account and region. <code>LabelingJobName</code> is not case sensitive. For example, Example-job and example-job are considered the same labeling job name by Ground Truth.</p>
@@ -197,8 +198,7 @@ impl CreateLabelingJobInputBuilder {
     }
     /// <p>The name of the labeling job. This name is used to identify the job in a list of labeling jobs. Labeling job names must be unique within an Amazon Web Services account and region. <code>LabelingJobName</code> is not case sensitive. For example, Example-job and example-job are considered the same labeling job name by Ground Truth.</p>
     pub fn set_labeling_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.labeling_job_name = input;
-        self
+        self.labeling_job_name = input; self
     }
     /// <p>The name of the labeling job. This name is used to identify the job in a list of labeling jobs. Labeling job names must be unique within an Amazon Web Services account and region. <code>LabelingJobName</code> is not case sensitive. For example, Example-job and example-job are considered the same labeling job name by Ground Truth.</p>
     pub fn get_labeling_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -254,8 +254,7 @@ impl CreateLabelingJobInputBuilder {
     /// <p>If you are creating an adjustment or verification labeling job, you must use a <i>different</i> <code>LabelAttributeName</code> than the one used in the original labeling job. The original labeling job is the Ground Truth labeling job that produced the labels that you want verified or adjusted. To learn more about adjustment and verification labeling jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-verification-data.html">Verify and Adjust Labels</a>.</p>
     /// </important>
     pub fn set_label_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label_attribute_name = input;
-        self
+        self.label_attribute_name = input; self
     }
     /// <p>The attribute name to use for the label in the output manifest file. This is the key for the key/value pair formed with the label that a worker assigns to the object. The <code>LabelAttributeName</code> must meet the following requirements.</p>
     /// <ul>
@@ -306,8 +305,7 @@ impl CreateLabelingJobInputBuilder {
     /// </ul>
     /// <p>If you use the Amazon Mechanical Turk workforce, your input data should not include confidential information, personal information or protected health information. Use <code>ContentClassifiers</code> to specify that your data is free of personally identifiable information and adult content.</p>
     pub fn set_input_config(mut self, input: ::std::option::Option<crate::types::LabelingJobInputConfig>) -> Self {
-        self.input_config = input;
-        self
+        self.input_config = input; self
     }
     /// <p>Input data for the labeling job, such as the Amazon S3 location of the data objects and the location of the manifest file that describes the data objects.</p>
     /// <p>You must specify at least one of the following: <code>S3DataSource</code> or <code>SnsDataSource</code>.</p>
@@ -329,8 +327,7 @@ impl CreateLabelingJobInputBuilder {
     }
     /// <p>The location of the output data and the Amazon Web Services Key Management Service key ID for the key used to encrypt the output data, if any.</p>
     pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::LabelingJobOutputConfig>) -> Self {
-        self.output_config = input;
-        self
+        self.output_config = input; self
     }
     /// <p>The location of the output data and the Amazon Web Services Key Management Service key ID for the key used to encrypt the output data, if any.</p>
     pub fn get_output_config(&self) -> &::std::option::Option<crate::types::LabelingJobOutputConfig> {
@@ -344,8 +341,7 @@ impl CreateLabelingJobInputBuilder {
     }
     /// <p>The Amazon Resource Number (ARN) that Amazon SageMaker assumes to perform tasks on your behalf during data labeling. You must grant this role the necessary permissions so that Amazon SageMaker can successfully complete data labeling.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Number (ARN) that Amazon SageMaker assumes to perform tasks on your behalf during data labeling. You must grant this role the necessary permissions so that Amazon SageMaker can successfully complete data labeling.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -398,8 +394,7 @@ impl CreateLabelingJobInputBuilder {
     /// <p>If you create a 3D point cloud or video frame adjustment or verification labeling job, you must include <code>auditLabelAttributeName</code> in the label category configuration. Use this parameter to enter the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateLabelingJob.html#sagemaker-CreateLabelingJob-request-LabelAttributeName"> <code>LabelAttributeName</code> </a> of the labeling job you want to adjust or verify annotations of.</p></li>
     /// </ul>
     pub fn set_label_category_config_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label_category_config_s3_uri = input;
-        self
+        self.label_category_config_s3_uri = input; self
     }
     /// <p>The S3 URI of the file, referred to as a <i>label category configuration file</i>, that defines the categories used to label the data objects.</p>
     /// <p>For 3D point cloud and video frame task types, you can add label category attributes and frame attributes to your label category configuration file. To learn how, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create a Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>.</p>
@@ -432,8 +427,7 @@ impl CreateLabelingJobInputBuilder {
     }
     /// <p>A set of conditions for stopping the labeling job. If any of the conditions are met, the job is automatically stopped. You can use these conditions to control the cost of data labeling.</p>
     pub fn set_stopping_conditions(mut self, input: ::std::option::Option<crate::types::LabelingJobStoppingConditions>) -> Self {
-        self.stopping_conditions = input;
-        self
+        self.stopping_conditions = input; self
     }
     /// <p>A set of conditions for stopping the labeling job. If any of the conditions are met, the job is automatically stopped. You can use these conditions to control the cost of data labeling.</p>
     pub fn get_stopping_conditions(&self) -> &::std::option::Option<crate::types::LabelingJobStoppingConditions> {
@@ -446,8 +440,7 @@ impl CreateLabelingJobInputBuilder {
     }
     /// <p>Configures the information required to perform automated data labeling.</p>
     pub fn set_labeling_job_algorithms_config(mut self, input: ::std::option::Option<crate::types::LabelingJobAlgorithmsConfig>) -> Self {
-        self.labeling_job_algorithms_config = input;
-        self
+        self.labeling_job_algorithms_config = input; self
     }
     /// <p>Configures the information required to perform automated data labeling.</p>
     pub fn get_labeling_job_algorithms_config(&self) -> &::std::option::Option<crate::types::LabelingJobAlgorithmsConfig> {
@@ -461,8 +454,7 @@ impl CreateLabelingJobInputBuilder {
     }
     /// <p>Configures the labeling task and how it is presented to workers; including, but not limited to price, keywords, and batch size (task count).</p>
     pub fn set_human_task_config(mut self, input: ::std::option::Option<crate::types::HumanTaskConfig>) -> Self {
-        self.human_task_config = input;
-        self
+        self.human_task_config = input; self
     }
     /// <p>Configures the labeling task and how it is presented to workers; including, but not limited to price, keywords, and batch size (task count).</p>
     pub fn get_human_task_config(&self) -> &::std::option::Option<crate::types::HumanTaskConfig> {
@@ -475,34 +467,44 @@ impl CreateLabelingJobInputBuilder {
     /// <p>An array of key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An array of key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateLabelingJobInput`](crate::operation::create_labeling_job::CreateLabelingJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_labeling_job::CreateLabelingJobInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_labeling_job::CreateLabelingJobInput {
-            labeling_job_name: self.labeling_job_name,
-            label_attribute_name: self.label_attribute_name,
-            input_config: self.input_config,
-            output_config: self.output_config,
-            role_arn: self.role_arn,
-            label_category_config_s3_uri: self.label_category_config_s3_uri,
-            stopping_conditions: self.stopping_conditions,
-            labeling_job_algorithms_config: self.labeling_job_algorithms_config,
-            human_task_config: self.human_task_config,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_labeling_job::CreateLabelingJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_labeling_job::CreateLabelingJobInput {
+                labeling_job_name: self.labeling_job_name
+                ,
+                label_attribute_name: self.label_attribute_name
+                ,
+                input_config: self.input_config
+                ,
+                output_config: self.output_config
+                ,
+                role_arn: self.role_arn
+                ,
+                label_category_config_s3_uri: self.label_category_config_s3_uri
+                ,
+                stopping_conditions: self.stopping_conditions
+                ,
+                labeling_job_algorithms_config: self.labeling_job_algorithms_config
+                ,
+                human_task_config: self.human_task_config
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

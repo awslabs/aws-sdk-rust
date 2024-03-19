@@ -2,17 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCrossAccountAuthorizations`](crate::operation::list_cross_account_authorizations::builders::ListCrossAccountAuthorizationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_cross_account_authorizations::builders::ListCrossAccountAuthorizationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_cross_account_authorizations::builders::ListCrossAccountAuthorizationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_cross_account_authorizations::builders::ListCrossAccountAuthorizationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The number of objects that you want to return with this call.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_cross_account_authorizations::builders::ListCrossAccountAuthorizationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_cross_account_authorizations::builders::ListCrossAccountAuthorizationsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token that identifies which batch of results you want to see.</p><br>
-    /// - On success, responds with [`ListCrossAccountAuthorizationsOutput`](crate::operation::list_cross_account_authorizations::ListCrossAccountAuthorizationsOutput) with field(s):
+                            /// - On success, responds with [`ListCrossAccountAuthorizationsOutput`](crate::operation::list_cross_account_authorizations::ListCrossAccountAuthorizationsOutput) with field(s):
     ///   - [`cross_account_authorizations(Option<Vec::<String>>)`](crate::operation::list_cross_account_authorizations::ListCrossAccountAuthorizationsOutput::cross_account_authorizations): <p>A list of cross-account authorizations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_cross_account_authorizations::ListCrossAccountAuthorizationsOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
-    /// - On failure, responds with [`SdkError<ListCrossAccountAuthorizationsError>`](crate::operation::list_cross_account_authorizations::ListCrossAccountAuthorizationsError)
-    pub fn list_cross_account_authorizations(
-        &self,
-    ) -> crate::operation::list_cross_account_authorizations::builders::ListCrossAccountAuthorizationsFluentBuilder {
-        crate::operation::list_cross_account_authorizations::builders::ListCrossAccountAuthorizationsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListCrossAccountAuthorizationsError>`](crate::operation::list_cross_account_authorizations::ListCrossAccountAuthorizationsError)
+    pub fn list_cross_account_authorizations(&self) -> crate::operation::list_cross_account_authorizations::builders::ListCrossAccountAuthorizationsFluentBuilder {
+                                crate::operation::list_cross_account_authorizations::builders::ListCrossAccountAuthorizationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

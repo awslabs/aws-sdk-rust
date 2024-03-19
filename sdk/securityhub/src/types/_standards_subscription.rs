@@ -3,13 +3,13 @@
 /// <p>A resource that represents your subscription to a supported standard.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StandardsSubscription {
+pub struct StandardsSubscription  {
     /// <p>The ARN of a resource that represents your subscription to a supported standard.</p>
     pub standards_subscription_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of a standard.</p>
     pub standards_arn: ::std::option::Option<::std::string::String>,
     /// <p>A key-value pair of input for the standard.</p>
-    pub standards_input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub standards_input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The status of the standard subscription.</p>
     /// <p>The status values are as follows:</p>
     /// <ul>
@@ -28,17 +28,17 @@ pub struct StandardsSubscription {
     /// <p>The reason for the current status.</p>
     pub standards_status_reason: ::std::option::Option<crate::types::StandardsStatusReason>,
 }
-impl StandardsSubscription {
+impl  StandardsSubscription  {
     /// <p>The ARN of a resource that represents your subscription to a supported standard.</p>
-    pub fn standards_subscription_arn(&self) -> ::std::option::Option<&str> {
+    pub fn standards_subscription_arn(&self) -> ::std::option::Option<& str> {
         self.standards_subscription_arn.as_deref()
     }
     /// <p>The ARN of a standard.</p>
-    pub fn standards_arn(&self) -> ::std::option::Option<&str> {
+    pub fn standards_arn(&self) -> ::std::option::Option<& str> {
         self.standards_arn.as_deref()
     }
     /// <p>A key-value pair of input for the standard.</p>
-    pub fn standards_input(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn standards_input(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.standards_input.as_ref()
     }
     /// <p>The status of the standard subscription.</p>
@@ -55,11 +55,11 @@ impl StandardsSubscription {
     /// <li>
     /// <p><code>FAILED</code> - Standard could not be disabled.</p></li>
     /// </ul>
-    pub fn standards_status(&self) -> ::std::option::Option<&crate::types::StandardsStatus> {
+    pub fn standards_status(&self) -> ::std::option::Option<& crate::types::StandardsStatus> {
         self.standards_status.as_ref()
     }
     /// <p>The reason for the current status.</p>
-    pub fn standards_status_reason(&self) -> ::std::option::Option<&crate::types::StandardsStatusReason> {
+    pub fn standards_status_reason(&self) -> ::std::option::Option<& crate::types::StandardsStatusReason> {
         self.standards_status_reason.as_ref()
     }
 }
@@ -76,7 +76,7 @@ impl StandardsSubscription {
 pub struct StandardsSubscriptionBuilder {
     pub(crate) standards_subscription_arn: ::std::option::Option<::std::string::String>,
     pub(crate) standards_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) standards_input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) standards_input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) standards_status: ::std::option::Option<crate::types::StandardsStatus>,
     pub(crate) standards_status_reason: ::std::option::Option<crate::types::StandardsStatusReason>,
 }
@@ -89,8 +89,7 @@ impl StandardsSubscriptionBuilder {
     }
     /// <p>The ARN of a resource that represents your subscription to a supported standard.</p>
     pub fn set_standards_subscription_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.standards_subscription_arn = input;
-        self
+        self.standards_subscription_arn = input; self
     }
     /// <p>The ARN of a resource that represents your subscription to a supported standard.</p>
     pub fn get_standards_subscription_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl StandardsSubscriptionBuilder {
     }
     /// <p>The ARN of a standard.</p>
     pub fn set_standards_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.standards_arn = input;
-        self
+        self.standards_arn = input; self
     }
     /// <p>The ARN of a standard.</p>
     pub fn get_standards_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,26 +114,18 @@ impl StandardsSubscriptionBuilder {
     /// To override the contents of this collection use [`set_standards_input`](Self::set_standards_input).
     ///
     /// <p>A key-value pair of input for the standard.</p>
-    pub fn standards_input(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn standards_input(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.standards_input.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.standards_input = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.standards_input = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A key-value pair of input for the standard.</p>
-    pub fn set_standards_input(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.standards_input = input;
-        self
+    pub fn set_standards_input(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.standards_input = input; self
     }
     /// <p>A key-value pair of input for the standard.</p>
-    pub fn get_standards_input(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_standards_input(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.standards_input
     }
     /// <p>The status of the standard subscription.</p>
@@ -172,8 +162,7 @@ impl StandardsSubscriptionBuilder {
     /// <p><code>FAILED</code> - Standard could not be disabled.</p></li>
     /// </ul>
     pub fn set_standards_status(mut self, input: ::std::option::Option<crate::types::StandardsStatus>) -> Self {
-        self.standards_status = input;
-        self
+        self.standards_status = input; self
     }
     /// <p>The status of the standard subscription.</p>
     /// <p>The status values are as follows:</p>
@@ -199,8 +188,7 @@ impl StandardsSubscriptionBuilder {
     }
     /// <p>The reason for the current status.</p>
     pub fn set_standards_status_reason(mut self, input: ::std::option::Option<crate::types::StandardsStatusReason>) -> Self {
-        self.standards_status_reason = input;
-        self
+        self.standards_status_reason = input; self
     }
     /// <p>The reason for the current status.</p>
     pub fn get_standards_status_reason(&self) -> &::std::option::Option<crate::types::StandardsStatusReason> {
@@ -209,11 +197,17 @@ impl StandardsSubscriptionBuilder {
     /// Consumes the builder and constructs a [`StandardsSubscription`](crate::types::StandardsSubscription).
     pub fn build(self) -> crate::types::StandardsSubscription {
         crate::types::StandardsSubscription {
-            standards_subscription_arn: self.standards_subscription_arn,
-            standards_arn: self.standards_arn,
-            standards_input: self.standards_input,
-            standards_status: self.standards_status,
-            standards_status_reason: self.standards_status_reason,
+            standards_subscription_arn: self.standards_subscription_arn
+            ,
+            standards_arn: self.standards_arn
+            ,
+            standards_input: self.standards_input
+            ,
+            standards_status: self.standards_status
+            ,
+            standards_status_reason: self.standards_status_reason
+            ,
         }
     }
 }
+

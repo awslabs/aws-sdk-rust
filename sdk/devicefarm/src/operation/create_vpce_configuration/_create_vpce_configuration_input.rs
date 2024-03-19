@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateVpceConfigurationInput {
+pub struct CreateVpceConfigurationInput  {
     /// <p>The friendly name you give to your VPC endpoint configuration, to manage your configurations more easily.</p>
     pub vpce_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
@@ -12,21 +12,21 @@ pub struct CreateVpceConfigurationInput {
     /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
     pub vpce_configuration_description: ::std::option::Option<::std::string::String>,
 }
-impl CreateVpceConfigurationInput {
+impl  CreateVpceConfigurationInput  {
     /// <p>The friendly name you give to your VPC endpoint configuration, to manage your configurations more easily.</p>
-    pub fn vpce_configuration_name(&self) -> ::std::option::Option<&str> {
+    pub fn vpce_configuration_name(&self) -> ::std::option::Option<& str> {
         self.vpce_configuration_name.as_deref()
     }
     /// <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
-    pub fn vpce_service_name(&self) -> ::std::option::Option<&str> {
+    pub fn vpce_service_name(&self) -> ::std::option::Option<& str> {
         self.vpce_service_name.as_deref()
     }
     /// <p>The DNS name of the service running in your VPC that you want Device Farm to test.</p>
-    pub fn service_dns_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_dns_name(&self) -> ::std::option::Option<& str> {
         self.service_dns_name.as_deref()
     }
     /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
-    pub fn vpce_configuration_description(&self) -> ::std::option::Option<&str> {
+    pub fn vpce_configuration_description(&self) -> ::std::option::Option<& str> {
         self.vpce_configuration_description.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl CreateVpceConfigurationInputBuilder {
     }
     /// <p>The friendly name you give to your VPC endpoint configuration, to manage your configurations more easily.</p>
     pub fn set_vpce_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpce_configuration_name = input;
-        self
+        self.vpce_configuration_name = input; self
     }
     /// <p>The friendly name you give to your VPC endpoint configuration, to manage your configurations more easily.</p>
     pub fn get_vpce_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl CreateVpceConfigurationInputBuilder {
     }
     /// <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
     pub fn set_vpce_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpce_service_name = input;
-        self
+        self.vpce_service_name = input; self
     }
     /// <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
     pub fn get_vpce_service_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl CreateVpceConfigurationInputBuilder {
     }
     /// <p>The DNS name of the service running in your VPC that you want Device Farm to test.</p>
     pub fn set_service_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_dns_name = input;
-        self
+        self.service_dns_name = input; self
     }
     /// <p>The DNS name of the service running in your VPC that you want Device Farm to test.</p>
     pub fn get_service_dns_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,25 +96,26 @@ impl CreateVpceConfigurationInputBuilder {
     }
     /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
     pub fn set_vpce_configuration_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpce_configuration_description = input;
-        self
+        self.vpce_configuration_description = input; self
     }
     /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
     pub fn get_vpce_configuration_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpce_configuration_description
     }
     /// Consumes the builder and constructs a [`CreateVpceConfigurationInput`](crate::operation::create_vpce_configuration::CreateVpceConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_vpce_configuration::CreateVpceConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_vpce_configuration::CreateVpceConfigurationInput {
-            vpce_configuration_name: self.vpce_configuration_name,
-            vpce_service_name: self.vpce_service_name,
-            service_dns_name: self.service_dns_name,
-            vpce_configuration_description: self.vpce_configuration_description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_vpce_configuration::CreateVpceConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_vpce_configuration::CreateVpceConfigurationInput {
+                vpce_configuration_name: self.vpce_configuration_name
+                ,
+                vpce_service_name: self.vpce_service_name
+                ,
+                service_dns_name: self.service_dns_name
+                ,
+                vpce_configuration_description: self.vpce_configuration_description
+                ,
+            }
+        )
     }
 }
+

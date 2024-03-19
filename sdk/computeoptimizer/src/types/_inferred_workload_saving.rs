@@ -3,7 +3,7 @@
 /// <p>The estimated monthly savings after you adjust the configurations of your instances running on the inferred workload types to the recommended configurations. If the <code>inferredWorkloadTypes</code> list contains multiple entries, then the savings are the sum of the monthly savings from instances that run the exact combination of the inferred workload types.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InferredWorkloadSaving {
+pub struct InferredWorkloadSaving  {
     /// <p>The applications that might be running on the instance as inferred by Compute Optimizer.</p>
     /// <p>Compute Optimizer can infer if one of the following applications might be running on the instance:</p>
     /// <ul>
@@ -26,11 +26,11 @@ pub struct InferredWorkloadSaving {
     /// <li>
     /// <p><code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p></li>
     /// </ul>
-    pub inferred_workload_types: ::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadType>>,
+    pub inferred_workload_types: ::std::option::Option<::std::vec::Vec::<crate::types::InferredWorkloadType>>,
     /// <p>An object that describes the estimated monthly savings amount possible by adopting Compute Optimizer recommendations for a given resource. This is based on the On-Demand instance pricing.</p>
     pub estimated_monthly_savings: ::std::option::Option<crate::types::EstimatedMonthlySavings>,
 }
-impl InferredWorkloadSaving {
+impl  InferredWorkloadSaving  {
     /// <p>The applications that might be running on the instance as inferred by Compute Optimizer.</p>
     /// <p>Compute Optimizer can infer if one of the following applications might be running on the instance:</p>
     /// <ul>
@@ -53,13 +53,14 @@ impl InferredWorkloadSaving {
     /// <li>
     /// <p><code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inferred_workload_types.is_none()`.
-    pub fn inferred_workload_types(&self) -> &[crate::types::InferredWorkloadType] {
-        self.inferred_workload_types.as_deref().unwrap_or_default()
+    pub fn inferred_workload_types(&self) -> & [crate::types::InferredWorkloadType] {
+        self.inferred_workload_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An object that describes the estimated monthly savings amount possible by adopting Compute Optimizer recommendations for a given resource. This is based on the On-Demand instance pricing.</p>
-    pub fn estimated_monthly_savings(&self) -> ::std::option::Option<&crate::types::EstimatedMonthlySavings> {
+    pub fn estimated_monthly_savings(&self) -> ::std::option::Option<& crate::types::EstimatedMonthlySavings> {
         self.estimated_monthly_savings.as_ref()
     }
 }
@@ -74,7 +75,7 @@ impl InferredWorkloadSaving {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InferredWorkloadSavingBuilder {
-    pub(crate) inferred_workload_types: ::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadType>>,
+    pub(crate) inferred_workload_types: ::std::option::Option<::std::vec::Vec::<crate::types::InferredWorkloadType>>,
     pub(crate) estimated_monthly_savings: ::std::option::Option<crate::types::EstimatedMonthlySavings>,
 }
 impl InferredWorkloadSavingBuilder {
@@ -106,9 +107,9 @@ impl InferredWorkloadSavingBuilder {
     /// </ul>
     pub fn inferred_workload_types(mut self, input: crate::types::InferredWorkloadType) -> Self {
         let mut v = self.inferred_workload_types.unwrap_or_default();
-        v.push(input);
-        self.inferred_workload_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.inferred_workload_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The applications that might be running on the instance as inferred by Compute Optimizer.</p>
     /// <p>Compute Optimizer can infer if one of the following applications might be running on the instance:</p>
@@ -132,9 +133,8 @@ impl InferredWorkloadSavingBuilder {
     /// <li>
     /// <p><code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p></li>
     /// </ul>
-    pub fn set_inferred_workload_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadType>>) -> Self {
-        self.inferred_workload_types = input;
-        self
+    pub fn set_inferred_workload_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InferredWorkloadType>>) -> Self {
+        self.inferred_workload_types = input; self
     }
     /// <p>The applications that might be running on the instance as inferred by Compute Optimizer.</p>
     /// <p>Compute Optimizer can infer if one of the following applications might be running on the instance:</p>
@@ -158,7 +158,7 @@ impl InferredWorkloadSavingBuilder {
     /// <li>
     /// <p><code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p></li>
     /// </ul>
-    pub fn get_inferred_workload_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadType>> {
+    pub fn get_inferred_workload_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InferredWorkloadType>> {
         &self.inferred_workload_types
     }
     /// <p>An object that describes the estimated monthly savings amount possible by adopting Compute Optimizer recommendations for a given resource. This is based on the On-Demand instance pricing.</p>
@@ -168,8 +168,7 @@ impl InferredWorkloadSavingBuilder {
     }
     /// <p>An object that describes the estimated monthly savings amount possible by adopting Compute Optimizer recommendations for a given resource. This is based on the On-Demand instance pricing.</p>
     pub fn set_estimated_monthly_savings(mut self, input: ::std::option::Option<crate::types::EstimatedMonthlySavings>) -> Self {
-        self.estimated_monthly_savings = input;
-        self
+        self.estimated_monthly_savings = input; self
     }
     /// <p>An object that describes the estimated monthly savings amount possible by adopting Compute Optimizer recommendations for a given resource. This is based on the On-Demand instance pricing.</p>
     pub fn get_estimated_monthly_savings(&self) -> &::std::option::Option<crate::types::EstimatedMonthlySavings> {
@@ -178,8 +177,11 @@ impl InferredWorkloadSavingBuilder {
     /// Consumes the builder and constructs a [`InferredWorkloadSaving`](crate::types::InferredWorkloadSaving).
     pub fn build(self) -> crate::types::InferredWorkloadSaving {
         crate::types::InferredWorkloadSaving {
-            inferred_workload_types: self.inferred_workload_types,
-            estimated_monthly_savings: self.estimated_monthly_savings,
+            inferred_workload_types: self.inferred_workload_types
+            ,
+            estimated_monthly_savings: self.estimated_monthly_savings
+            ,
         }
     }
 }
+

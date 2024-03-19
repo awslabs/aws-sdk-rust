@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeApplicationVersionInput {
+pub struct DescribeApplicationVersionInput  {
     /// <p>The name of the application for which you want to get the version description.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the application version for which you want to get the description.</p>
     pub application_version_id: ::std::option::Option<i64>,
 }
-impl DescribeApplicationVersionInput {
+impl  DescribeApplicationVersionInput  {
     /// <p>The name of the application for which you want to get the version description.</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>The ID of the application version for which you want to get the description.</p>
@@ -41,8 +41,7 @@ impl DescribeApplicationVersionInputBuilder {
     }
     /// <p>The name of the application for which you want to get the version description.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The name of the application for which you want to get the version description.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DescribeApplicationVersionInputBuilder {
     }
     /// <p>The ID of the application version for which you want to get the description.</p>
     pub fn set_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.application_version_id = input;
-        self
+        self.application_version_id = input; self
     }
     /// <p>The ID of the application version for which you want to get the description.</p>
     pub fn get_application_version_id(&self) -> &::std::option::Option<i64> {
         &self.application_version_id
     }
     /// Consumes the builder and constructs a [`DescribeApplicationVersionInput`](crate::operation::describe_application_version::DescribeApplicationVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_application_version::DescribeApplicationVersionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_application_version::DescribeApplicationVersionInput {
-            application_name: self.application_name,
-            application_version_id: self.application_version_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_application_version::DescribeApplicationVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_application_version::DescribeApplicationVersionInput {
+                application_name: self.application_name
+                ,
+                application_version_id: self.application_version_id
+                ,
+            }
+        )
     }
 }
+

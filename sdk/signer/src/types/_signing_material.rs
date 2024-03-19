@@ -3,15 +3,14 @@
 /// <p>The ACM certificate that is used to sign your code.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SigningMaterial {
+pub struct SigningMaterial  {
     /// <p>The Amazon Resource Name (ARN) of the certificates that is used to sign your code.</p>
     pub certificate_arn: ::std::string::String,
 }
-impl SigningMaterial {
+impl  SigningMaterial  {
     /// <p>The Amazon Resource Name (ARN) of the certificates that is used to sign your code.</p>
-    pub fn certificate_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.certificate_arn.deref()
+    pub fn certificate_arn(&self) -> & str {
+        use std::ops::Deref; self.certificate_arn.deref()
     }
 }
 impl SigningMaterial {
@@ -36,8 +35,7 @@ impl SigningMaterialBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the certificates that is used to sign your code.</p>
     pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_arn = input;
-        self
+        self.certificate_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the certificates that is used to sign your code.</p>
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl SigningMaterialBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`certificate_arn`](crate::types::builders::SigningMaterialBuilder::certificate_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::SigningMaterial, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SigningMaterial {
-            certificate_arn: self.certificate_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "certificate_arn",
-                    "certificate_arn was not specified but it is required when building SigningMaterial",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SigningMaterial {
+                certificate_arn: self.certificate_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("certificate_arn", "certificate_arn was not specified but it is required when building SigningMaterial")
+                    )?
+                ,
+            }
+        )
     }
 }
+

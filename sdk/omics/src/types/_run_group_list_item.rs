@@ -3,7 +3,7 @@
 /// <p>A run group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RunGroupListItem {
+pub struct RunGroupListItem  {
     /// <p>The group's ARN.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The group's ID.</p>
@@ -21,17 +21,17 @@ pub struct RunGroupListItem {
     /// <p>The maximum GPUs that can be used by a run group.</p>
     pub max_gpus: ::std::option::Option<i32>,
 }
-impl RunGroupListItem {
+impl  RunGroupListItem  {
     /// <p>The group's ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The group's ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The group's name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The group's maximum CPU count setting.</p>
@@ -47,7 +47,7 @@ impl RunGroupListItem {
         self.max_duration
     }
     /// <p>When the group was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The maximum GPUs that can be used by a run group.</p>
@@ -83,8 +83,7 @@ impl RunGroupListItemBuilder {
     }
     /// <p>The group's ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The group's ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl RunGroupListItemBuilder {
     }
     /// <p>The group's ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The group's ID.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +109,7 @@ impl RunGroupListItemBuilder {
     }
     /// <p>The group's name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The group's name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +122,7 @@ impl RunGroupListItemBuilder {
     }
     /// <p>The group's maximum CPU count setting.</p>
     pub fn set_max_cpus(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_cpus = input;
-        self
+        self.max_cpus = input; self
     }
     /// <p>The group's maximum CPU count setting.</p>
     pub fn get_max_cpus(&self) -> &::std::option::Option<i32> {
@@ -139,8 +135,7 @@ impl RunGroupListItemBuilder {
     }
     /// <p>The group's maximum concurrent run setting.</p>
     pub fn set_max_runs(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_runs = input;
-        self
+        self.max_runs = input; self
     }
     /// <p>The group's maximum concurrent run setting.</p>
     pub fn get_max_runs(&self) -> &::std::option::Option<i32> {
@@ -153,8 +148,7 @@ impl RunGroupListItemBuilder {
     }
     /// <p>The group's maximum duration setting in minutes.</p>
     pub fn set_max_duration(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_duration = input;
-        self
+        self.max_duration = input; self
     }
     /// <p>The group's maximum duration setting in minutes.</p>
     pub fn get_max_duration(&self) -> &::std::option::Option<i32> {
@@ -167,8 +161,7 @@ impl RunGroupListItemBuilder {
     }
     /// <p>When the group was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>When the group was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -181,8 +174,7 @@ impl RunGroupListItemBuilder {
     }
     /// <p>The maximum GPUs that can be used by a run group.</p>
     pub fn set_max_gpus(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_gpus = input;
-        self
+        self.max_gpus = input; self
     }
     /// <p>The maximum GPUs that can be used by a run group.</p>
     pub fn get_max_gpus(&self) -> &::std::option::Option<i32> {
@@ -191,14 +183,23 @@ impl RunGroupListItemBuilder {
     /// Consumes the builder and constructs a [`RunGroupListItem`](crate::types::RunGroupListItem).
     pub fn build(self) -> crate::types::RunGroupListItem {
         crate::types::RunGroupListItem {
-            arn: self.arn,
-            id: self.id,
-            name: self.name,
-            max_cpus: self.max_cpus,
-            max_runs: self.max_runs,
-            max_duration: self.max_duration,
-            creation_time: self.creation_time,
-            max_gpus: self.max_gpus,
+            arn: self.arn
+            ,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            max_cpus: self.max_cpus
+            ,
+            max_runs: self.max_runs
+            ,
+            max_duration: self.max_duration
+            ,
+            creation_time: self.creation_time
+            ,
+            max_gpus: self.max_gpus
+            ,
         }
     }
 }
+

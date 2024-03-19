@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateRouteInput {
+pub struct CreateRouteInput  {
     /// <p>The ID of the environment in which the route is created.</p>
     pub environment_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the application within which the route is being created.</p>
@@ -16,45 +16,45 @@ pub struct CreateRouteInput {
     /// <p>The configuration for the URI path route type.</p>
     pub uri_path_route: ::std::option::Option<crate::types::UriPathRouteInput>,
     /// <p>The tags to assign to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair..</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateRouteInput {
+impl  CreateRouteInput  {
     /// <p>The ID of the environment in which the route is created.</p>
-    pub fn environment_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn environment_identifier(&self) -> ::std::option::Option<& str> {
         self.environment_identifier.as_deref()
     }
     /// <p>The ID of the application within which the route is being created.</p>
-    pub fn application_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn application_identifier(&self) -> ::std::option::Option<& str> {
         self.application_identifier.as_deref()
     }
     /// <p>The ID of the service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
-    pub fn service_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn service_identifier(&self) -> ::std::option::Option<& str> {
         self.service_identifier.as_deref()
     }
     /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created. <code>URI_PATH</code> indicates a route that is based on a URI path.</p>
-    pub fn route_type(&self) -> ::std::option::Option<&crate::types::RouteType> {
+    pub fn route_type(&self) -> ::std::option::Option<& crate::types::RouteType> {
         self.route_type.as_ref()
     }
     /// <p>Configuration for the default route type.</p>
-    pub fn default_route(&self) -> ::std::option::Option<&crate::types::DefaultRouteInput> {
+    pub fn default_route(&self) -> ::std::option::Option<& crate::types::DefaultRouteInput> {
         self.default_route.as_ref()
     }
     /// <p>The configuration for the URI path route type.</p>
-    pub fn uri_path_route(&self) -> ::std::option::Option<&crate::types::UriPathRouteInput> {
+    pub fn uri_path_route(&self) -> ::std::option::Option<& crate::types::UriPathRouteInput> {
         self.uri_path_route.as_ref()
     }
     /// <p>The tags to assign to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair..</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreateRouteInput {
+impl  ::std::fmt::Debug for CreateRouteInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRouteInput");
         formatter.field("environment_identifier", &self.environment_identifier);
@@ -85,7 +85,7 @@ pub struct CreateRouteInputBuilder {
     pub(crate) route_type: ::std::option::Option<crate::types::RouteType>,
     pub(crate) default_route: ::std::option::Option<crate::types::DefaultRouteInput>,
     pub(crate) uri_path_route: ::std::option::Option<crate::types::UriPathRouteInput>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateRouteInputBuilder {
@@ -97,8 +97,7 @@ impl CreateRouteInputBuilder {
     }
     /// <p>The ID of the environment in which the route is created.</p>
     pub fn set_environment_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_identifier = input;
-        self
+        self.environment_identifier = input; self
     }
     /// <p>The ID of the environment in which the route is created.</p>
     pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +111,7 @@ impl CreateRouteInputBuilder {
     }
     /// <p>The ID of the application within which the route is being created.</p>
     pub fn set_application_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_identifier = input;
-        self
+        self.application_identifier = input; self
     }
     /// <p>The ID of the application within which the route is being created.</p>
     pub fn get_application_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +125,7 @@ impl CreateRouteInputBuilder {
     }
     /// <p>The ID of the service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
     pub fn set_service_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_identifier = input;
-        self
+        self.service_identifier = input; self
     }
     /// <p>The ID of the service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
     pub fn get_service_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +139,7 @@ impl CreateRouteInputBuilder {
     }
     /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created. <code>URI_PATH</code> indicates a route that is based on a URI path.</p>
     pub fn set_route_type(mut self, input: ::std::option::Option<crate::types::RouteType>) -> Self {
-        self.route_type = input;
-        self
+        self.route_type = input; self
     }
     /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created. <code>URI_PATH</code> indicates a route that is based on a URI path.</p>
     pub fn get_route_type(&self) -> &::std::option::Option<crate::types::RouteType> {
@@ -156,8 +152,7 @@ impl CreateRouteInputBuilder {
     }
     /// <p>Configuration for the default route type.</p>
     pub fn set_default_route(mut self, input: ::std::option::Option<crate::types::DefaultRouteInput>) -> Self {
-        self.default_route = input;
-        self
+        self.default_route = input; self
     }
     /// <p>Configuration for the default route type.</p>
     pub fn get_default_route(&self) -> &::std::option::Option<crate::types::DefaultRouteInput> {
@@ -170,8 +165,7 @@ impl CreateRouteInputBuilder {
     }
     /// <p>The configuration for the URI path route type.</p>
     pub fn set_uri_path_route(mut self, input: ::std::option::Option<crate::types::UriPathRouteInput>) -> Self {
-        self.uri_path_route = input;
-        self
+        self.uri_path_route = input; self
     }
     /// <p>The configuration for the URI path route type.</p>
     pub fn get_uri_path_route(&self) -> &::std::option::Option<crate::types::UriPathRouteInput> {
@@ -184,17 +178,16 @@ impl CreateRouteInputBuilder {
     /// <p>The tags to assign to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair..</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags to assign to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair..</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to assign to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair..</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -204,8 +197,7 @@ impl CreateRouteInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -213,16 +205,26 @@ impl CreateRouteInputBuilder {
     }
     /// Consumes the builder and constructs a [`CreateRouteInput`](crate::operation::create_route::CreateRouteInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_route::CreateRouteInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_route::CreateRouteInput {
-            environment_identifier: self.environment_identifier,
-            application_identifier: self.application_identifier,
-            service_identifier: self.service_identifier,
-            route_type: self.route_type,
-            default_route: self.default_route,
-            uri_path_route: self.uri_path_route,
-            tags: self.tags,
-            client_token: self.client_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_route::CreateRouteInput {
+                environment_identifier: self.environment_identifier
+                ,
+                application_identifier: self.application_identifier
+                ,
+                service_identifier: self.service_identifier
+                ,
+                route_type: self.route_type
+                ,
+                default_route: self.default_route
+                ,
+                uri_path_route: self.uri_path_route
+                ,
+                tags: self.tags
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateRouteInputBuilder {
@@ -239,3 +241,4 @@ impl ::std::fmt::Debug for CreateRouteInputBuilder {
         formatter.finish()
     }
 }
+

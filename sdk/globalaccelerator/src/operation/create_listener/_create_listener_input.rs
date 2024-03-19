@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateListenerInput {
+pub struct CreateListenerInput  {
     /// <p>The Amazon Resource Name (ARN) of your accelerator.</p>
     pub accelerator_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of port ranges to support for connections from clients to your accelerator.</p>
-    pub port_ranges: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
+    pub port_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::PortRange>>,
     /// <p>The protocol for connections from clients to your accelerator.</p>
     pub protocol: ::std::option::Option<crate::types::Protocol>,
     /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the port and protocol of the client request. Client affinity gives you control over whether to always route each client to the same specific endpoint.</p>
@@ -17,30 +17,31 @@ pub struct CreateListenerInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
     pub idempotency_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateListenerInput {
+impl  CreateListenerInput  {
     /// <p>The Amazon Resource Name (ARN) of your accelerator.</p>
-    pub fn accelerator_arn(&self) -> ::std::option::Option<&str> {
+    pub fn accelerator_arn(&self) -> ::std::option::Option<& str> {
         self.accelerator_arn.as_deref()
     }
     /// <p>The list of port ranges to support for connections from clients to your accelerator.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.port_ranges.is_none()`.
-    pub fn port_ranges(&self) -> &[crate::types::PortRange] {
-        self.port_ranges.as_deref().unwrap_or_default()
+    pub fn port_ranges(&self) -> & [crate::types::PortRange] {
+        self.port_ranges.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The protocol for connections from clients to your accelerator.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&crate::types::Protocol> {
+    pub fn protocol(&self) -> ::std::option::Option<& crate::types::Protocol> {
         self.protocol.as_ref()
     }
     /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the port and protocol of the client request. Client affinity gives you control over whether to always route each client to the same specific endpoint.</p>
     /// <p>Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes.</p>
     /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP address and destination IP address—to select the hash value.</p>
     /// <p>The default value is <code>NONE</code>.</p>
-    pub fn client_affinity(&self) -> ::std::option::Option<&crate::types::ClientAffinity> {
+    pub fn client_affinity(&self) -> ::std::option::Option<& crate::types::ClientAffinity> {
         self.client_affinity.as_ref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
-    pub fn idempotency_token(&self) -> ::std::option::Option<&str> {
+    pub fn idempotency_token(&self) -> ::std::option::Option<& str> {
         self.idempotency_token.as_deref()
     }
 }
@@ -56,7 +57,7 @@ impl CreateListenerInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateListenerInputBuilder {
     pub(crate) accelerator_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) port_ranges: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
+    pub(crate) port_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::PortRange>>,
     pub(crate) protocol: ::std::option::Option<crate::types::Protocol>,
     pub(crate) client_affinity: ::std::option::Option<crate::types::ClientAffinity>,
     pub(crate) idempotency_token: ::std::option::Option<::std::string::String>,
@@ -70,8 +71,7 @@ impl CreateListenerInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of your accelerator.</p>
     pub fn set_accelerator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accelerator_arn = input;
-        self
+        self.accelerator_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of your accelerator.</p>
     pub fn get_accelerator_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,17 +84,16 @@ impl CreateListenerInputBuilder {
     /// <p>The list of port ranges to support for connections from clients to your accelerator.</p>
     pub fn port_ranges(mut self, input: crate::types::PortRange) -> Self {
         let mut v = self.port_ranges.unwrap_or_default();
-        v.push(input);
-        self.port_ranges = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.port_ranges = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of port ranges to support for connections from clients to your accelerator.</p>
-    pub fn set_port_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>) -> Self {
-        self.port_ranges = input;
-        self
+    pub fn set_port_ranges(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PortRange>>) -> Self {
+        self.port_ranges = input; self
     }
     /// <p>The list of port ranges to support for connections from clients to your accelerator.</p>
-    pub fn get_port_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
+    pub fn get_port_ranges(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PortRange>> {
         &self.port_ranges
     }
     /// <p>The protocol for connections from clients to your accelerator.</p>
@@ -105,8 +104,7 @@ impl CreateListenerInputBuilder {
     }
     /// <p>The protocol for connections from clients to your accelerator.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::Protocol>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// <p>The protocol for connections from clients to your accelerator.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::Protocol> {
@@ -125,8 +123,7 @@ impl CreateListenerInputBuilder {
     /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP address and destination IP address—to select the hash value.</p>
     /// <p>The default value is <code>NONE</code>.</p>
     pub fn set_client_affinity(mut self, input: ::std::option::Option<crate::types::ClientAffinity>) -> Self {
-        self.client_affinity = input;
-        self
+        self.client_affinity = input; self
     }
     /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the port and protocol of the client request. Client affinity gives you control over whether to always route each client to the same specific endpoint.</p>
     /// <p>Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes.</p>
@@ -143,23 +140,28 @@ impl CreateListenerInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
     pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.idempotency_token = input;
-        self
+        self.idempotency_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
     pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.idempotency_token
     }
     /// Consumes the builder and constructs a [`CreateListenerInput`](crate::operation::create_listener::CreateListenerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_listener::CreateListenerInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_listener::CreateListenerInput {
-            accelerator_arn: self.accelerator_arn,
-            port_ranges: self.port_ranges,
-            protocol: self.protocol,
-            client_affinity: self.client_affinity,
-            idempotency_token: self.idempotency_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_listener::CreateListenerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_listener::CreateListenerInput {
+                accelerator_arn: self.accelerator_arn
+                ,
+                port_ranges: self.port_ranges
+                ,
+                protocol: self.protocol
+                ,
+                client_affinity: self.client_affinity
+                ,
+                idempotency_token: self.idempotency_token
+                ,
+            }
+        )
     }
 }
+

@@ -3,23 +3,22 @@
 /// <p>The result of a <code>DescribeExpressions</code> request. Contains the expressions configured for the domain specified in the request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeExpressionsOutput {
+pub struct DescribeExpressionsOutput  {
     /// <p>The expressions configured for the domain.</p>
-    pub expressions: ::std::vec::Vec<crate::types::ExpressionStatus>,
+    pub expressions: ::std::vec::Vec::<crate::types::ExpressionStatus>,
     _request_id: Option<String>,
 }
-impl DescribeExpressionsOutput {
+impl  DescribeExpressionsOutput  {
     /// <p>The expressions configured for the domain.</p>
-    pub fn expressions(&self) -> &[crate::types::ExpressionStatus] {
-        use std::ops::Deref;
-        self.expressions.deref()
+    pub fn expressions(&self) -> & [crate::types::ExpressionStatus] {
+        use std::ops::Deref; self.expressions.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeExpressionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeExpressionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeExpressionsOutput`](crate::operation::describe_expressions::DescribeExpressionsOutput).
     pub fn builder() -> crate::operation::describe_expressions::builders::DescribeExpressionsOutputBuilder {
@@ -31,7 +30,7 @@ impl DescribeExpressionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeExpressionsOutputBuilder {
-    pub(crate) expressions: ::std::option::Option<::std::vec::Vec<crate::types::ExpressionStatus>>,
+    pub(crate) expressions: ::std::option::Option<::std::vec::Vec::<crate::types::ExpressionStatus>>,
     _request_id: Option<String>,
 }
 impl DescribeExpressionsOutputBuilder {
@@ -42,43 +41,41 @@ impl DescribeExpressionsOutputBuilder {
     /// <p>The expressions configured for the domain.</p>
     pub fn expressions(mut self, input: crate::types::ExpressionStatus) -> Self {
         let mut v = self.expressions.unwrap_or_default();
-        v.push(input);
-        self.expressions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.expressions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The expressions configured for the domain.</p>
-    pub fn set_expressions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExpressionStatus>>) -> Self {
-        self.expressions = input;
-        self
+    pub fn set_expressions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ExpressionStatus>>) -> Self {
+        self.expressions = input; self
     }
     /// <p>The expressions configured for the domain.</p>
-    pub fn get_expressions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExpressionStatus>> {
+    pub fn get_expressions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ExpressionStatus>> {
         &self.expressions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeExpressionsOutput`](crate::operation::describe_expressions::DescribeExpressionsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`expressions`](crate::operation::describe_expressions::builders::DescribeExpressionsOutputBuilder::expressions)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_expressions::DescribeExpressionsOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_expressions::DescribeExpressionsOutput {
-            expressions: self.expressions.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "expressions",
-                    "expressions was not specified but it is required when building DescribeExpressionsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_expressions::DescribeExpressionsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_expressions::DescribeExpressionsOutput {
+                expressions: self.expressions
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("expressions", "expressions was not specified but it is required when building DescribeExpressionsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

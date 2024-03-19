@@ -21,11 +21,7 @@ impl TableReference {
     /// Tries to convert the enum instance into [`Glue`](crate::types::TableReference::Glue), extracting the inner [`GlueTableReference`](crate::types::GlueTableReference).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_glue(&self) -> ::std::result::Result<&crate::types::GlueTableReference, &Self> {
-        if let TableReference::Glue(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let TableReference::Glue(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Glue`](crate::types::TableReference::Glue).
     pub fn is_glue(&self) -> bool {
@@ -36,3 +32,4 @@ impl TableReference {
         matches!(self, Self::Unknown)
     }
 }
+

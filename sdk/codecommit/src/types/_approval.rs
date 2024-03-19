@@ -3,19 +3,19 @@
 /// <p>Returns information about a specific approval on a pull request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Approval {
+pub struct Approval  {
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
     pub user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the approval, APPROVE or REVOKE. REVOKE states are not stored.</p>
     pub approval_state: ::std::option::Option<crate::types::ApprovalState>,
 }
-impl Approval {
+impl  Approval  {
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
-    pub fn user_arn(&self) -> ::std::option::Option<&str> {
+    pub fn user_arn(&self) -> ::std::option::Option<& str> {
         self.user_arn.as_deref()
     }
     /// <p>The state of the approval, APPROVE or REVOKE. REVOKE states are not stored.</p>
-    pub fn approval_state(&self) -> ::std::option::Option<&crate::types::ApprovalState> {
+    pub fn approval_state(&self) -> ::std::option::Option<& crate::types::ApprovalState> {
         self.approval_state.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ApprovalBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
     pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_arn = input;
-        self
+        self.user_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
     pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ApprovalBuilder {
     }
     /// <p>The state of the approval, APPROVE or REVOKE. REVOKE states are not stored.</p>
     pub fn set_approval_state(mut self, input: ::std::option::Option<crate::types::ApprovalState>) -> Self {
-        self.approval_state = input;
-        self
+        self.approval_state = input; self
     }
     /// <p>The state of the approval, APPROVE or REVOKE. REVOKE states are not stored.</p>
     pub fn get_approval_state(&self) -> &::std::option::Option<crate::types::ApprovalState> {
@@ -65,8 +63,11 @@ impl ApprovalBuilder {
     /// Consumes the builder and constructs a [`Approval`](crate::types::Approval).
     pub fn build(self) -> crate::types::Approval {
         crate::types::Approval {
-            user_arn: self.user_arn,
-            approval_state: self.approval_state,
+            user_arn: self.user_arn
+            ,
+            approval_state: self.approval_state
+            ,
         }
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InvokeDeviceMethodOutput {
+pub struct InvokeDeviceMethodOutput  {
     /// <p>A JSON encoded string containing the device method response.</p>
     pub device_method_response: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl InvokeDeviceMethodOutput {
+impl  InvokeDeviceMethodOutput  {
     /// <p>A JSON encoded string containing the device method response.</p>
-    pub fn device_method_response(&self) -> ::std::option::Option<&str> {
+    pub fn device_method_response(&self) -> ::std::option::Option<& str> {
         self.device_method_response.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for InvokeDeviceMethodOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl InvokeDeviceMethodOutput {
     /// Creates a new builder-style object to manufacture [`InvokeDeviceMethodOutput`](crate::operation::invoke_device_method::InvokeDeviceMethodOutput).
     pub fn builder() -> crate::operation::invoke_device_method::builders::InvokeDeviceMethodOutputBuilder {
@@ -40,27 +40,28 @@ impl InvokeDeviceMethodOutputBuilder {
     }
     /// <p>A JSON encoded string containing the device method response.</p>
     pub fn set_device_method_response(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_method_response = input;
-        self
+        self.device_method_response = input; self
     }
     /// <p>A JSON encoded string containing the device method response.</p>
     pub fn get_device_method_response(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_method_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`InvokeDeviceMethodOutput`](crate::operation::invoke_device_method::InvokeDeviceMethodOutput).
     pub fn build(self) -> crate::operation::invoke_device_method::InvokeDeviceMethodOutput {
         crate::operation::invoke_device_method::InvokeDeviceMethodOutput {
-            device_method_response: self.device_method_response,
+            device_method_response: self.device_method_response
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

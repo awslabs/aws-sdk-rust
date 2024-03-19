@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetContainerImagesInput {
+pub struct GetContainerImagesInput  {
     /// <p>The name of the container service for which to return registered container images.</p>
     pub service_name: ::std::option::Option<::std::string::String>,
 }
-impl GetContainerImagesInput {
+impl  GetContainerImagesInput  {
     /// <p>The name of the container service for which to return registered container images.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<& str> {
         self.service_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetContainerImagesInputBuilder {
     }
     /// <p>The name of the container service for which to return registered container images.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>The name of the container service for which to return registered container images.</p>
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_name
     }
     /// Consumes the builder and constructs a [`GetContainerImagesInput`](crate::operation::get_container_images::GetContainerImagesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_container_images::GetContainerImagesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_container_images::GetContainerImagesInput {
-            service_name: self.service_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_container_images::GetContainerImagesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_container_images::GetContainerImagesInput {
+                service_name: self.service_name
+                ,
+            }
+        )
     }
 }
+

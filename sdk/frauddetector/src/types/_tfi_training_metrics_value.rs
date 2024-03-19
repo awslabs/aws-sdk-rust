@@ -3,21 +3,22 @@
 /// <p>The Transaction Fraud Insights (TFI) model training metric details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TfiTrainingMetricsValue {
+pub struct TfiTrainingMetricsValue  {
     /// <p>The model's performance metrics data points.</p>
-    pub metric_data_points: ::std::option::Option<::std::vec::Vec<crate::types::TfiMetricDataPoint>>,
+    pub metric_data_points: ::std::option::Option<::std::vec::Vec::<crate::types::TfiMetricDataPoint>>,
     /// <p>The model performance score.</p>
     pub model_performance: ::std::option::Option<crate::types::TfiModelPerformance>,
 }
-impl TfiTrainingMetricsValue {
+impl  TfiTrainingMetricsValue  {
     /// <p>The model's performance metrics data points.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_data_points.is_none()`.
-    pub fn metric_data_points(&self) -> &[crate::types::TfiMetricDataPoint] {
-        self.metric_data_points.as_deref().unwrap_or_default()
+    pub fn metric_data_points(&self) -> & [crate::types::TfiMetricDataPoint] {
+        self.metric_data_points.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The model performance score.</p>
-    pub fn model_performance(&self) -> ::std::option::Option<&crate::types::TfiModelPerformance> {
+    pub fn model_performance(&self) -> ::std::option::Option<& crate::types::TfiModelPerformance> {
         self.model_performance.as_ref()
     }
 }
@@ -32,7 +33,7 @@ impl TfiTrainingMetricsValue {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TfiTrainingMetricsValueBuilder {
-    pub(crate) metric_data_points: ::std::option::Option<::std::vec::Vec<crate::types::TfiMetricDataPoint>>,
+    pub(crate) metric_data_points: ::std::option::Option<::std::vec::Vec::<crate::types::TfiMetricDataPoint>>,
     pub(crate) model_performance: ::std::option::Option<crate::types::TfiModelPerformance>,
 }
 impl TfiTrainingMetricsValueBuilder {
@@ -43,17 +44,16 @@ impl TfiTrainingMetricsValueBuilder {
     /// <p>The model's performance metrics data points.</p>
     pub fn metric_data_points(mut self, input: crate::types::TfiMetricDataPoint) -> Self {
         let mut v = self.metric_data_points.unwrap_or_default();
-        v.push(input);
-        self.metric_data_points = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.metric_data_points = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The model's performance metrics data points.</p>
-    pub fn set_metric_data_points(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TfiMetricDataPoint>>) -> Self {
-        self.metric_data_points = input;
-        self
+    pub fn set_metric_data_points(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TfiMetricDataPoint>>) -> Self {
+        self.metric_data_points = input; self
     }
     /// <p>The model's performance metrics data points.</p>
-    pub fn get_metric_data_points(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TfiMetricDataPoint>> {
+    pub fn get_metric_data_points(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TfiMetricDataPoint>> {
         &self.metric_data_points
     }
     /// <p>The model performance score.</p>
@@ -63,8 +63,7 @@ impl TfiTrainingMetricsValueBuilder {
     }
     /// <p>The model performance score.</p>
     pub fn set_model_performance(mut self, input: ::std::option::Option<crate::types::TfiModelPerformance>) -> Self {
-        self.model_performance = input;
-        self
+        self.model_performance = input; self
     }
     /// <p>The model performance score.</p>
     pub fn get_model_performance(&self) -> &::std::option::Option<crate::types::TfiModelPerformance> {
@@ -73,8 +72,11 @@ impl TfiTrainingMetricsValueBuilder {
     /// Consumes the builder and constructs a [`TfiTrainingMetricsValue`](crate::types::TfiTrainingMetricsValue).
     pub fn build(self) -> crate::types::TfiTrainingMetricsValue {
         crate::types::TfiTrainingMetricsValue {
-            metric_data_points: self.metric_data_points,
-            model_performance: self.model_performance,
+            metric_data_points: self.metric_data_points
+            ,
+            model_performance: self.model_performance
+            ,
         }
     }
 }
+

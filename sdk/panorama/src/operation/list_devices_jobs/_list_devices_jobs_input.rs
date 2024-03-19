@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDevicesJobsInput {
+pub struct ListDevicesJobsInput  {
     /// <p>Filter results by the job's target device ID.</p>
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
@@ -10,13 +10,13 @@ pub struct ListDevicesJobsInput {
     /// <p>The maximum number of device jobs to return in one page of results.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListDevicesJobsInput {
+impl  ListDevicesJobsInput  {
     /// <p>Filter results by the job's target device ID.</p>
-    pub fn device_id(&self) -> ::std::option::Option<&str> {
+    pub fn device_id(&self) -> ::std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of device jobs to return in one page of results.</p>
@@ -47,8 +47,7 @@ impl ListDevicesJobsInputBuilder {
     }
     /// <p>Filter results by the job's target device ID.</p>
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_id = input;
-        self
+        self.device_id = input; self
     }
     /// <p>Filter results by the job's target device ID.</p>
     pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl ListDevicesJobsInputBuilder {
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,21 +73,24 @@ impl ListDevicesJobsInputBuilder {
     }
     /// <p>The maximum number of device jobs to return in one page of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of device jobs to return in one page of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListDevicesJobsInput`](crate::operation::list_devices_jobs::ListDevicesJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_devices_jobs::ListDevicesJobsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_devices_jobs::ListDevicesJobsInput {
-            device_id: self.device_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_devices_jobs::ListDevicesJobsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_devices_jobs::ListDevicesJobsInput {
+                device_id: self.device_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

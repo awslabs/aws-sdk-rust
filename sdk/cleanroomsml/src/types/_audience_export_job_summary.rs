@@ -3,7 +3,7 @@
 /// <p>Provides information about the audience export job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AudienceExportJobSummary {
+pub struct AudienceExportJobSummary  {
     /// <p>The time at which the audience export job was created.</p>
     pub create_time: ::aws_smithy_types::DateTime,
     /// <p>The most recent time at which the audience export job was updated.</p>
@@ -23,43 +23,41 @@ pub struct AudienceExportJobSummary {
     /// <p>The Amazon S3 bucket where the audience export is stored.</p>
     pub output_location: ::std::option::Option<::std::string::String>,
 }
-impl AudienceExportJobSummary {
+impl  AudienceExportJobSummary  {
     /// <p>The time at which the audience export job was created.</p>
-    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn create_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.create_time
     }
     /// <p>The most recent time at which the audience export job was updated.</p>
-    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_time
     }
     /// <p>The name of the audience export job.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the audience generation job that was exported.</p>
-    pub fn audience_generation_job_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.audience_generation_job_arn.deref()
+    pub fn audience_generation_job_arn(&self) -> & str {
+        use std::ops::Deref; self.audience_generation_job_arn.deref()
     }
     /// <p>The size of the generated audience. Must match one of the sizes in the configured audience model.</p>
-    pub fn audience_size(&self) -> ::std::option::Option<&crate::types::AudienceSize> {
+    pub fn audience_size(&self) -> ::std::option::Option<& crate::types::AudienceSize> {
         self.audience_size.as_ref()
     }
     /// <p>The description of the audience export job.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The status of the audience export job.</p>
-    pub fn status(&self) -> &crate::types::AudienceExportJobStatus {
+    pub fn status(&self) -> & crate::types::AudienceExportJobStatus {
         &self.status
     }
     /// <p>Details about the status of a resource.</p>
-    pub fn status_details(&self) -> ::std::option::Option<&crate::types::StatusDetails> {
+    pub fn status_details(&self) -> ::std::option::Option<& crate::types::StatusDetails> {
         self.status_details.as_ref()
     }
     /// <p>The Amazon S3 bucket where the audience export is stored.</p>
-    pub fn output_location(&self) -> ::std::option::Option<&str> {
+    pub fn output_location(&self) -> ::std::option::Option<& str> {
         self.output_location.as_deref()
     }
 }
@@ -93,8 +91,7 @@ impl AudienceExportJobSummaryBuilder {
     }
     /// <p>The time at which the audience export job was created.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The time at which the audience export job was created.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -108,8 +105,7 @@ impl AudienceExportJobSummaryBuilder {
     }
     /// <p>The most recent time at which the audience export job was updated.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input;
-        self
+        self.update_time = input; self
     }
     /// <p>The most recent time at which the audience export job was updated.</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -123,8 +119,7 @@ impl AudienceExportJobSummaryBuilder {
     }
     /// <p>The name of the audience export job.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the audience export job.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +133,7 @@ impl AudienceExportJobSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the audience generation job that was exported.</p>
     pub fn set_audience_generation_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.audience_generation_job_arn = input;
-        self
+        self.audience_generation_job_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the audience generation job that was exported.</p>
     pub fn get_audience_generation_job_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +147,7 @@ impl AudienceExportJobSummaryBuilder {
     }
     /// <p>The size of the generated audience. Must match one of the sizes in the configured audience model.</p>
     pub fn set_audience_size(mut self, input: ::std::option::Option<crate::types::AudienceSize>) -> Self {
-        self.audience_size = input;
-        self
+        self.audience_size = input; self
     }
     /// <p>The size of the generated audience. Must match one of the sizes in the configured audience model.</p>
     pub fn get_audience_size(&self) -> &::std::option::Option<crate::types::AudienceSize> {
@@ -167,8 +160,7 @@ impl AudienceExportJobSummaryBuilder {
     }
     /// <p>The description of the audience export job.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the audience export job.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -182,8 +174,7 @@ impl AudienceExportJobSummaryBuilder {
     }
     /// <p>The status of the audience export job.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AudienceExportJobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the audience export job.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AudienceExportJobStatus> {
@@ -196,8 +187,7 @@ impl AudienceExportJobSummaryBuilder {
     }
     /// <p>Details about the status of a resource.</p>
     pub fn set_status_details(mut self, input: ::std::option::Option<crate::types::StatusDetails>) -> Self {
-        self.status_details = input;
-        self
+        self.status_details = input; self
     }
     /// <p>Details about the status of a resource.</p>
     pub fn get_status_details(&self) -> &::std::option::Option<crate::types::StatusDetails> {
@@ -210,8 +200,7 @@ impl AudienceExportJobSummaryBuilder {
     }
     /// <p>The Amazon S3 bucket where the audience export is stored.</p>
     pub fn set_output_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output_location = input;
-        self
+        self.output_location = input; self
     }
     /// <p>The Amazon S3 bucket where the audience export is stored.</p>
     pub fn get_output_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -225,41 +214,43 @@ impl AudienceExportJobSummaryBuilder {
     /// - [`audience_generation_job_arn`](crate::types::builders::AudienceExportJobSummaryBuilder::audience_generation_job_arn)
     /// - [`status`](crate::types::builders::AudienceExportJobSummaryBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::AudienceExportJobSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AudienceExportJobSummary {
-            create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "create_time",
-                    "create_time was not specified but it is required when building AudienceExportJobSummary",
-                )
-            })?,
-            update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_time",
-                    "update_time was not specified but it is required when building AudienceExportJobSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building AudienceExportJobSummary",
-                )
-            })?,
-            audience_generation_job_arn: self.audience_generation_job_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "audience_generation_job_arn",
-                    "audience_generation_job_arn was not specified but it is required when building AudienceExportJobSummary",
-                )
-            })?,
-            audience_size: self.audience_size,
-            description: self.description,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building AudienceExportJobSummary",
-                )
-            })?,
-            status_details: self.status_details,
-            output_location: self.output_location,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AudienceExportJobSummary {
+                create_time: self.create_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("create_time", "create_time was not specified but it is required when building AudienceExportJobSummary")
+                    )?
+                ,
+                update_time: self.update_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_time", "update_time was not specified but it is required when building AudienceExportJobSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building AudienceExportJobSummary")
+                    )?
+                ,
+                audience_generation_job_arn: self.audience_generation_job_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("audience_generation_job_arn", "audience_generation_job_arn was not specified but it is required when building AudienceExportJobSummary")
+                    )?
+                ,
+                audience_size: self.audience_size
+                ,
+                description: self.description
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building AudienceExportJobSummary")
+                    )?
+                ,
+                status_details: self.status_details
+                ,
+                output_location: self.output_location
+                ,
+            }
+        )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p><b>[Default policies only]</b> Specifies a destination Region for cross-Region copy actions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CrossRegionCopyTarget {
+pub struct CrossRegionCopyTarget  {
     /// <p>The target Region, for example <code>us-east-1</code>.</p>
     pub target_region: ::std::option::Option<::std::string::String>,
 }
-impl CrossRegionCopyTarget {
+impl  CrossRegionCopyTarget  {
     /// <p>The target Region, for example <code>us-east-1</code>.</p>
-    pub fn target_region(&self) -> ::std::option::Option<&str> {
+    pub fn target_region(&self) -> ::std::option::Option<& str> {
         self.target_region.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl CrossRegionCopyTargetBuilder {
     }
     /// <p>The target Region, for example <code>us-east-1</code>.</p>
     pub fn set_target_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_region = input;
-        self
+        self.target_region = input; self
     }
     /// <p>The target Region, for example <code>us-east-1</code>.</p>
     pub fn get_target_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl CrossRegionCopyTargetBuilder {
     /// Consumes the builder and constructs a [`CrossRegionCopyTarget`](crate::types::CrossRegionCopyTarget).
     pub fn build(self) -> crate::types::CrossRegionCopyTarget {
         crate::types::CrossRegionCopyTarget {
-            target_region: self.target_region,
+            target_region: self.target_region
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Summary information about a Destination.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DestinationSummary {
+pub struct DestinationSummary  {
     /// <p>Unique identifier for this destination, assigned by IVS.</p>
     pub id: ::std::string::String,
     /// <p>State of the Composition Destination.</p>
@@ -13,22 +13,21 @@ pub struct DestinationSummary {
     /// <p>UTC time of the destination end. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl DestinationSummary {
+impl  DestinationSummary  {
     /// <p>Unique identifier for this destination, assigned by IVS.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>State of the Composition Destination.</p>
-    pub fn state(&self) -> &crate::types::DestinationState {
+    pub fn state(&self) -> & crate::types::DestinationState {
         &self.state
     }
     /// <p>UTC time of the destination start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>UTC time of the destination end. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -57,8 +56,7 @@ impl DestinationSummaryBuilder {
     }
     /// <p>Unique identifier for this destination, assigned by IVS.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Unique identifier for this destination, assigned by IVS.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +70,7 @@ impl DestinationSummaryBuilder {
     }
     /// <p>State of the Composition Destination.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::DestinationState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>State of the Composition Destination.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::DestinationState> {
@@ -86,8 +83,7 @@ impl DestinationSummaryBuilder {
     }
     /// <p>UTC time of the destination start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>UTC time of the destination start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -100,8 +96,7 @@ impl DestinationSummaryBuilder {
     }
     /// <p>UTC time of the destination end. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>UTC time of the destination end. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -112,21 +107,24 @@ impl DestinationSummaryBuilder {
     /// - [`id`](crate::types::builders::DestinationSummaryBuilder::id)
     /// - [`state`](crate::types::builders::DestinationSummaryBuilder::state)
     pub fn build(self) -> ::std::result::Result<crate::types::DestinationSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DestinationSummary {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building DestinationSummary",
-                )
-            })?,
-            state: self.state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state",
-                    "state was not specified but it is required when building DestinationSummary",
-                )
-            })?,
-            start_time: self.start_time,
-            end_time: self.end_time,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DestinationSummary {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building DestinationSummary")
+                    )?
+                ,
+                state: self.state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state", "state was not specified but it is required when building DestinationSummary")
+                    )?
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+            }
+        )
     }
 }
+

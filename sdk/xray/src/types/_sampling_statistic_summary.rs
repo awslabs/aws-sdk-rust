@@ -3,7 +3,7 @@
 /// <p>Aggregated request sampling data for a sampling rule across all services for a 10-second window.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SamplingStatisticSummary {
+pub struct SamplingStatisticSummary  {
     /// <p>The name of the sampling rule.</p>
     pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The start time of the reporting window.</p>
@@ -15,13 +15,13 @@ pub struct SamplingStatisticSummary {
     /// <p>The number of requests recorded.</p>
     pub sampled_count: i32,
 }
-impl SamplingStatisticSummary {
+impl  SamplingStatisticSummary  {
     /// <p>The name of the sampling rule.</p>
-    pub fn rule_name(&self) -> ::std::option::Option<&str> {
+    pub fn rule_name(&self) -> ::std::option::Option<& str> {
         self.rule_name.as_deref()
     }
     /// <p>The start time of the reporting window.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The number of requests that matched the rule.</p>
@@ -62,8 +62,7 @@ impl SamplingStatisticSummaryBuilder {
     }
     /// <p>The name of the sampling rule.</p>
     pub fn set_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_name = input;
-        self
+        self.rule_name = input; self
     }
     /// <p>The name of the sampling rule.</p>
     pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl SamplingStatisticSummaryBuilder {
     }
     /// <p>The start time of the reporting window.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p>The start time of the reporting window.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -90,8 +88,7 @@ impl SamplingStatisticSummaryBuilder {
     }
     /// <p>The number of requests that matched the rule.</p>
     pub fn set_request_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.request_count = input;
-        self
+        self.request_count = input; self
     }
     /// <p>The number of requests that matched the rule.</p>
     pub fn get_request_count(&self) -> &::std::option::Option<i32> {
@@ -104,8 +101,7 @@ impl SamplingStatisticSummaryBuilder {
     }
     /// <p>The number of requests recorded with borrowed reservoir quota.</p>
     pub fn set_borrow_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.borrow_count = input;
-        self
+        self.borrow_count = input; self
     }
     /// <p>The number of requests recorded with borrowed reservoir quota.</p>
     pub fn get_borrow_count(&self) -> &::std::option::Option<i32> {
@@ -118,8 +114,7 @@ impl SamplingStatisticSummaryBuilder {
     }
     /// <p>The number of requests recorded.</p>
     pub fn set_sampled_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.sampled_count = input;
-        self
+        self.sampled_count = input; self
     }
     /// <p>The number of requests recorded.</p>
     pub fn get_sampled_count(&self) -> &::std::option::Option<i32> {
@@ -128,11 +123,20 @@ impl SamplingStatisticSummaryBuilder {
     /// Consumes the builder and constructs a [`SamplingStatisticSummary`](crate::types::SamplingStatisticSummary).
     pub fn build(self) -> crate::types::SamplingStatisticSummary {
         crate::types::SamplingStatisticSummary {
-            rule_name: self.rule_name,
-            timestamp: self.timestamp,
-            request_count: self.request_count.unwrap_or_default(),
-            borrow_count: self.borrow_count.unwrap_or_default(),
-            sampled_count: self.sampled_count.unwrap_or_default(),
+            rule_name: self.rule_name
+            ,
+            timestamp: self.timestamp
+            ,
+            request_count: self.request_count
+                .unwrap_or_default()
+            ,
+            borrow_count: self.borrow_count
+                .unwrap_or_default()
+            ,
+            sampled_count: self.sampled_count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

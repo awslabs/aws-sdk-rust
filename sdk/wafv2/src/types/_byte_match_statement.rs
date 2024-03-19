@@ -3,7 +3,7 @@
 /// <p>A rule statement that defines a string match search for WAF to apply to web requests. The byte match statement provides the bytes to search for, the location in requests that you want WAF to search, and other settings. The bytes to search for are typically a string that corresponds with ASCII characters. In the WAF console and the developer guide, this is called a string match statement.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ByteMatchStatement {
+pub struct ByteMatchStatement  {
     /// <p>A string value that you want WAF to search for. WAF searches only in the part of web requests that you designate for inspection in <code>FieldToMatch</code>. The maximum length of the value is 200 bytes.</p>
     /// <p>Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:</p>
     /// <ul>
@@ -27,7 +27,7 @@ pub struct ByteMatchStatement {
     /// <p>The part of the web request that you want WAF to inspect.</p>
     pub field_to_match: ::std::option::Option<crate::types::FieldToMatch>,
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents.</p>
-    pub text_transformations: ::std::vec::Vec<crate::types::TextTransformation>,
+    pub text_transformations: ::std::vec::Vec::<crate::types::TextTransformation>,
     /// <p>The area within the portion of the web request that you want WAF to search for <code>SearchString</code>. Valid values include the following:</p>
     /// <p><b>CONTAINS</b></p>
     /// <p>The specified part of the web request must include the value of <code>SearchString</code>, but the location doesn't matter.</p>
@@ -47,7 +47,7 @@ pub struct ByteMatchStatement {
     /// <p>The value of <code>SearchString</code> must appear at the end of the specified part of the web request.</p>
     pub positional_constraint: crate::types::PositionalConstraint,
 }
-impl ByteMatchStatement {
+impl  ByteMatchStatement  {
     /// <p>A string value that you want WAF to search for. WAF searches only in the part of web requests that you designate for inspection in <code>FieldToMatch</code>. The maximum length of the value is 200 bytes.</p>
     /// <p>Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:</p>
     /// <ul>
@@ -67,17 +67,16 @@ impl ByteMatchStatement {
     /// <p>For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value of <code>Data</code> is <code>User-Agent</code>. If you want to search the <code>User-Agent</code> header for the value <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64-encoding and include the resulting value, <code>QmFkQm90</code>, in the value of <code>SearchString</code>.</p>
     /// <p><b>If you're using the CLI or one of the Amazon Web Services SDKs</b></p>
     /// <p>The value that you want WAF to search for. The SDK automatically base64 encodes the value.</p>
-    pub fn search_string(&self) -> &::aws_smithy_types::Blob {
+    pub fn search_string(&self) -> & ::aws_smithy_types::Blob {
         &self.search_string
     }
     /// <p>The part of the web request that you want WAF to inspect.</p>
-    pub fn field_to_match(&self) -> ::std::option::Option<&crate::types::FieldToMatch> {
+    pub fn field_to_match(&self) -> ::std::option::Option<& crate::types::FieldToMatch> {
         self.field_to_match.as_ref()
     }
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents.</p>
-    pub fn text_transformations(&self) -> &[crate::types::TextTransformation] {
-        use std::ops::Deref;
-        self.text_transformations.deref()
+    pub fn text_transformations(&self) -> & [crate::types::TextTransformation] {
+        use std::ops::Deref; self.text_transformations.deref()
     }
     /// <p>The area within the portion of the web request that you want WAF to search for <code>SearchString</code>. Valid values include the following:</p>
     /// <p><b>CONTAINS</b></p>
@@ -96,7 +95,7 @@ impl ByteMatchStatement {
     /// <p>The value of <code>SearchString</code> must appear at the beginning of the specified part of the web request.</p>
     /// <p><b>ENDS_WITH</b></p>
     /// <p>The value of <code>SearchString</code> must appear at the end of the specified part of the web request.</p>
-    pub fn positional_constraint(&self) -> &crate::types::PositionalConstraint {
+    pub fn positional_constraint(&self) -> & crate::types::PositionalConstraint {
         &self.positional_constraint
     }
 }
@@ -113,7 +112,7 @@ impl ByteMatchStatement {
 pub struct ByteMatchStatementBuilder {
     pub(crate) search_string: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) field_to_match: ::std::option::Option<crate::types::FieldToMatch>,
-    pub(crate) text_transformations: ::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>>,
+    pub(crate) text_transformations: ::std::option::Option<::std::vec::Vec::<crate::types::TextTransformation>>,
     pub(crate) positional_constraint: ::std::option::Option<crate::types::PositionalConstraint>,
 }
 impl ByteMatchStatementBuilder {
@@ -161,8 +160,7 @@ impl ByteMatchStatementBuilder {
     /// <p><b>If you're using the CLI or one of the Amazon Web Services SDKs</b></p>
     /// <p>The value that you want WAF to search for. The SDK automatically base64 encodes the value.</p>
     pub fn set_search_string(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.search_string = input;
-        self
+        self.search_string = input; self
     }
     /// <p>A string value that you want WAF to search for. WAF searches only in the part of web requests that you designate for inspection in <code>FieldToMatch</code>. The maximum length of the value is 200 bytes.</p>
     /// <p>Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:</p>
@@ -194,8 +192,7 @@ impl ByteMatchStatementBuilder {
     }
     /// <p>The part of the web request that you want WAF to inspect.</p>
     pub fn set_field_to_match(mut self, input: ::std::option::Option<crate::types::FieldToMatch>) -> Self {
-        self.field_to_match = input;
-        self
+        self.field_to_match = input; self
     }
     /// <p>The part of the web request that you want WAF to inspect.</p>
     pub fn get_field_to_match(&self) -> &::std::option::Option<crate::types::FieldToMatch> {
@@ -208,17 +205,16 @@ impl ByteMatchStatementBuilder {
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents.</p>
     pub fn text_transformations(mut self, input: crate::types::TextTransformation) -> Self {
         let mut v = self.text_transformations.unwrap_or_default();
-        v.push(input);
-        self.text_transformations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.text_transformations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents.</p>
-    pub fn set_text_transformations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>>) -> Self {
-        self.text_transformations = input;
-        self
+    pub fn set_text_transformations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TextTransformation>>) -> Self {
+        self.text_transformations = input; self
     }
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents.</p>
-    pub fn get_text_transformations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>> {
+    pub fn get_text_transformations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TextTransformation>> {
         &self.text_transformations
     }
     /// <p>The area within the portion of the web request that you want WAF to search for <code>SearchString</code>. Valid values include the following:</p>
@@ -261,8 +257,7 @@ impl ByteMatchStatementBuilder {
     /// <p><b>ENDS_WITH</b></p>
     /// <p>The value of <code>SearchString</code> must appear at the end of the specified part of the web request.</p>
     pub fn set_positional_constraint(mut self, input: ::std::option::Option<crate::types::PositionalConstraint>) -> Self {
-        self.positional_constraint = input;
-        self
+        self.positional_constraint = input; self
     }
     /// <p>The area within the portion of the web request that you want WAF to search for <code>SearchString</code>. Valid values include the following:</p>
     /// <p><b>CONTAINS</b></p>
@@ -290,26 +285,27 @@ impl ByteMatchStatementBuilder {
     /// - [`text_transformations`](crate::types::builders::ByteMatchStatementBuilder::text_transformations)
     /// - [`positional_constraint`](crate::types::builders::ByteMatchStatementBuilder::positional_constraint)
     pub fn build(self) -> ::std::result::Result<crate::types::ByteMatchStatement, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ByteMatchStatement {
-            search_string: self.search_string.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "search_string",
-                    "search_string was not specified but it is required when building ByteMatchStatement",
-                )
-            })?,
-            field_to_match: self.field_to_match,
-            text_transformations: self.text_transformations.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "text_transformations",
-                    "text_transformations was not specified but it is required when building ByteMatchStatement",
-                )
-            })?,
-            positional_constraint: self.positional_constraint.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "positional_constraint",
-                    "positional_constraint was not specified but it is required when building ByteMatchStatement",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ByteMatchStatement {
+                search_string: self.search_string
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("search_string", "search_string was not specified but it is required when building ByteMatchStatement")
+                    )?
+                ,
+                field_to_match: self.field_to_match
+                ,
+                text_transformations: self.text_transformations
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("text_transformations", "text_transformations was not specified but it is required when building ByteMatchStatement")
+                    )?
+                ,
+                positional_constraint: self.positional_constraint
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("positional_constraint", "positional_constraint was not specified but it is required when building ByteMatchStatement")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,116 +3,129 @@
 /// <p>The values to use to filter results from the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEvents.html">DescribeEvents</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventAggregates.html">DescribeEventAggregates</a> operations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EventFilter {
+pub struct EventFilter  {
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code></p>
-    pub event_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub event_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of unique identifiers for event types. For example, <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code></p>
-    pub event_type_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub event_type_codes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
-    pub services: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub services: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of Amazon Web Services Regions.</p>
-    pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub regions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of Amazon Web Services Availability Zones.</p>
-    pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub availability_zones: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of dates and times that the event began.</p>
-    pub start_times: ::std::option::Option<::std::vec::Vec<crate::types::DateTimeRange>>,
+    pub start_times: ::std::option::Option<::std::vec::Vec::<crate::types::DateTimeRange>>,
     /// <p>A list of dates and times that the event ended.</p>
-    pub end_times: ::std::option::Option<::std::vec::Vec<crate::types::DateTimeRange>>,
+    pub end_times: ::std::option::Option<::std::vec::Vec::<crate::types::DateTimeRange>>,
     /// <p>A list of dates and times that the event was last updated.</p>
-    pub last_updated_times: ::std::option::Option<::std::vec::Vec<crate::types::DateTimeRange>>,
+    pub last_updated_times: ::std::option::Option<::std::vec::Vec::<crate::types::DateTimeRange>>,
     /// <p>A list of entity ARNs (unique identifiers).</p>
-    pub entity_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub entity_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of entity identifiers, such as EC2 instance IDs (<code>i-34ab692e</code>) or EBS volumes (<code>vol-426ab23e</code>).</p>
-    pub entity_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub entity_values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
-    pub event_type_categories: ::std::option::Option<::std::vec::Vec<crate::types::EventTypeCategory>>,
+    pub event_type_categories: ::std::option::Option<::std::vec::Vec::<crate::types::EventTypeCategory>>,
     /// <p>A map of entity tags attached to the affected entity.</p><note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
-    pub tags: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, ::std::string::String>>>,
     /// <p>A list of event status codes.</p>
-    pub event_status_codes: ::std::option::Option<::std::vec::Vec<crate::types::EventStatusCode>>,
+    pub event_status_codes: ::std::option::Option<::std::vec::Vec::<crate::types::EventStatusCode>>,
 }
-impl EventFilter {
+impl  EventFilter  {
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_arns.is_none()`.
-    pub fn event_arns(&self) -> &[::std::string::String] {
-        self.event_arns.as_deref().unwrap_or_default()
+    pub fn event_arns(&self) -> & [::std::string::String] {
+        self.event_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of unique identifiers for event types. For example, <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_type_codes.is_none()`.
-    pub fn event_type_codes(&self) -> &[::std::string::String] {
-        self.event_type_codes.as_deref().unwrap_or_default()
+    pub fn event_type_codes(&self) -> & [::std::string::String] {
+        self.event_type_codes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.services.is_none()`.
-    pub fn services(&self) -> &[::std::string::String] {
-        self.services.as_deref().unwrap_or_default()
+    pub fn services(&self) -> & [::std::string::String] {
+        self.services.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of Amazon Web Services Regions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions.is_none()`.
-    pub fn regions(&self) -> &[::std::string::String] {
-        self.regions.as_deref().unwrap_or_default()
+    pub fn regions(&self) -> & [::std::string::String] {
+        self.regions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of Amazon Web Services Availability Zones.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
-    pub fn availability_zones(&self) -> &[::std::string::String] {
-        self.availability_zones.as_deref().unwrap_or_default()
+    pub fn availability_zones(&self) -> & [::std::string::String] {
+        self.availability_zones.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of dates and times that the event began.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.start_times.is_none()`.
-    pub fn start_times(&self) -> &[crate::types::DateTimeRange] {
-        self.start_times.as_deref().unwrap_or_default()
+    pub fn start_times(&self) -> & [crate::types::DateTimeRange] {
+        self.start_times.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of dates and times that the event ended.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.end_times.is_none()`.
-    pub fn end_times(&self) -> &[crate::types::DateTimeRange] {
-        self.end_times.as_deref().unwrap_or_default()
+    pub fn end_times(&self) -> & [crate::types::DateTimeRange] {
+        self.end_times.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of dates and times that the event was last updated.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.last_updated_times.is_none()`.
-    pub fn last_updated_times(&self) -> &[crate::types::DateTimeRange] {
-        self.last_updated_times.as_deref().unwrap_or_default()
+    pub fn last_updated_times(&self) -> & [crate::types::DateTimeRange] {
+        self.last_updated_times.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of entity ARNs (unique identifiers).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entity_arns.is_none()`.
-    pub fn entity_arns(&self) -> &[::std::string::String] {
-        self.entity_arns.as_deref().unwrap_or_default()
+    pub fn entity_arns(&self) -> & [::std::string::String] {
+        self.entity_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of entity identifiers, such as EC2 instance IDs (<code>i-34ab692e</code>) or EBS volumes (<code>vol-426ab23e</code>).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entity_values.is_none()`.
-    pub fn entity_values(&self) -> &[::std::string::String] {
-        self.entity_values.as_deref().unwrap_or_default()
+    pub fn entity_values(&self) -> & [::std::string::String] {
+        self.entity_values.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_type_categories.is_none()`.
-    pub fn event_type_categories(&self) -> &[crate::types::EventTypeCategory] {
-        self.event_type_categories.as_deref().unwrap_or_default()
+    pub fn event_type_categories(&self) -> & [crate::types::EventTypeCategory] {
+        self.event_type_categories.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A map of entity tags attached to the affected entity.</p><note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[::std::collections::HashMap<::std::string::String, ::std::string::String>] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [::std::collections::HashMap::<::std::string::String, ::std::string::String>] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of event status codes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_status_codes.is_none()`.
-    pub fn event_status_codes(&self) -> &[crate::types::EventStatusCode] {
-        self.event_status_codes.as_deref().unwrap_or_default()
+    pub fn event_status_codes(&self) -> & [crate::types::EventStatusCode] {
+        self.event_status_codes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl EventFilter {
@@ -126,19 +139,19 @@ impl EventFilter {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EventFilterBuilder {
-    pub(crate) event_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) event_type_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) services: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) start_times: ::std::option::Option<::std::vec::Vec<crate::types::DateTimeRange>>,
-    pub(crate) end_times: ::std::option::Option<::std::vec::Vec<crate::types::DateTimeRange>>,
-    pub(crate) last_updated_times: ::std::option::Option<::std::vec::Vec<crate::types::DateTimeRange>>,
-    pub(crate) entity_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) entity_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) event_type_categories: ::std::option::Option<::std::vec::Vec<crate::types::EventTypeCategory>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
-    pub(crate) event_status_codes: ::std::option::Option<::std::vec::Vec<crate::types::EventStatusCode>>,
+    pub(crate) event_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) event_type_codes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) services: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) regions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) start_times: ::std::option::Option<::std::vec::Vec::<crate::types::DateTimeRange>>,
+    pub(crate) end_times: ::std::option::Option<::std::vec::Vec::<crate::types::DateTimeRange>>,
+    pub(crate) last_updated_times: ::std::option::Option<::std::vec::Vec::<crate::types::DateTimeRange>>,
+    pub(crate) entity_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) entity_values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) event_type_categories: ::std::option::Option<::std::vec::Vec::<crate::types::EventTypeCategory>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, ::std::string::String>>>,
+    pub(crate) event_status_codes: ::std::option::Option<::std::vec::Vec::<crate::types::EventStatusCode>>,
 }
 impl EventFilterBuilder {
     /// Appends an item to `event_arns`.
@@ -148,17 +161,16 @@ impl EventFilterBuilder {
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code></p>
     pub fn event_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.event_arns.unwrap_or_default();
-        v.push(input.into());
-        self.event_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.event_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code></p>
-    pub fn set_event_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.event_arns = input;
-        self
+    pub fn set_event_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.event_arns = input; self
     }
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code></p>
-    pub fn get_event_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_event_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.event_arns
     }
     /// Appends an item to `event_type_codes`.
@@ -168,17 +180,16 @@ impl EventFilterBuilder {
     /// <p>A list of unique identifiers for event types. For example, <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code></p>
     pub fn event_type_codes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.event_type_codes.unwrap_or_default();
-        v.push(input.into());
-        self.event_type_codes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.event_type_codes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of unique identifiers for event types. For example, <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code></p>
-    pub fn set_event_type_codes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.event_type_codes = input;
-        self
+    pub fn set_event_type_codes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.event_type_codes = input; self
     }
     /// <p>A list of unique identifiers for event types. For example, <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code></p>
-    pub fn get_event_type_codes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_event_type_codes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.event_type_codes
     }
     /// Appends an item to `services`.
@@ -188,17 +199,16 @@ impl EventFilterBuilder {
     /// <p>The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
     pub fn services(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.services.unwrap_or_default();
-        v.push(input.into());
-        self.services = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.services = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
-    pub fn set_services(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.services = input;
-        self
+    pub fn set_services(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.services = input; self
     }
     /// <p>The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
-    pub fn get_services(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_services(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.services
     }
     /// Appends an item to `regions`.
@@ -208,17 +218,16 @@ impl EventFilterBuilder {
     /// <p>A list of Amazon Web Services Regions.</p>
     pub fn regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.regions.unwrap_or_default();
-        v.push(input.into());
-        self.regions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.regions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of Amazon Web Services Regions.</p>
-    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.regions = input;
-        self
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.regions = input; self
     }
     /// <p>A list of Amazon Web Services Regions.</p>
-    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.regions
     }
     /// Appends an item to `availability_zones`.
@@ -228,17 +237,16 @@ impl EventFilterBuilder {
     /// <p>A list of Amazon Web Services Availability Zones.</p>
     pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
-        v.push(input.into());
-        self.availability_zones = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.availability_zones = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of Amazon Web Services Availability Zones.</p>
-    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.availability_zones = input;
-        self
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.availability_zones = input; self
     }
     /// <p>A list of Amazon Web Services Availability Zones.</p>
-    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.availability_zones
     }
     /// Appends an item to `start_times`.
@@ -248,17 +256,16 @@ impl EventFilterBuilder {
     /// <p>A list of dates and times that the event began.</p>
     pub fn start_times(mut self, input: crate::types::DateTimeRange) -> Self {
         let mut v = self.start_times.unwrap_or_default();
-        v.push(input);
-        self.start_times = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.start_times = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of dates and times that the event began.</p>
-    pub fn set_start_times(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateTimeRange>>) -> Self {
-        self.start_times = input;
-        self
+    pub fn set_start_times(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DateTimeRange>>) -> Self {
+        self.start_times = input; self
     }
     /// <p>A list of dates and times that the event began.</p>
-    pub fn get_start_times(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateTimeRange>> {
+    pub fn get_start_times(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DateTimeRange>> {
         &self.start_times
     }
     /// Appends an item to `end_times`.
@@ -268,17 +275,16 @@ impl EventFilterBuilder {
     /// <p>A list of dates and times that the event ended.</p>
     pub fn end_times(mut self, input: crate::types::DateTimeRange) -> Self {
         let mut v = self.end_times.unwrap_or_default();
-        v.push(input);
-        self.end_times = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.end_times = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of dates and times that the event ended.</p>
-    pub fn set_end_times(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateTimeRange>>) -> Self {
-        self.end_times = input;
-        self
+    pub fn set_end_times(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DateTimeRange>>) -> Self {
+        self.end_times = input; self
     }
     /// <p>A list of dates and times that the event ended.</p>
-    pub fn get_end_times(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateTimeRange>> {
+    pub fn get_end_times(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DateTimeRange>> {
         &self.end_times
     }
     /// Appends an item to `last_updated_times`.
@@ -288,17 +294,16 @@ impl EventFilterBuilder {
     /// <p>A list of dates and times that the event was last updated.</p>
     pub fn last_updated_times(mut self, input: crate::types::DateTimeRange) -> Self {
         let mut v = self.last_updated_times.unwrap_or_default();
-        v.push(input);
-        self.last_updated_times = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.last_updated_times = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of dates and times that the event was last updated.</p>
-    pub fn set_last_updated_times(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateTimeRange>>) -> Self {
-        self.last_updated_times = input;
-        self
+    pub fn set_last_updated_times(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DateTimeRange>>) -> Self {
+        self.last_updated_times = input; self
     }
     /// <p>A list of dates and times that the event was last updated.</p>
-    pub fn get_last_updated_times(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateTimeRange>> {
+    pub fn get_last_updated_times(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DateTimeRange>> {
         &self.last_updated_times
     }
     /// Appends an item to `entity_arns`.
@@ -308,17 +313,16 @@ impl EventFilterBuilder {
     /// <p>A list of entity ARNs (unique identifiers).</p>
     pub fn entity_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.entity_arns.unwrap_or_default();
-        v.push(input.into());
-        self.entity_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.entity_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of entity ARNs (unique identifiers).</p>
-    pub fn set_entity_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.entity_arns = input;
-        self
+    pub fn set_entity_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.entity_arns = input; self
     }
     /// <p>A list of entity ARNs (unique identifiers).</p>
-    pub fn get_entity_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_entity_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.entity_arns
     }
     /// Appends an item to `entity_values`.
@@ -328,17 +332,16 @@ impl EventFilterBuilder {
     /// <p>A list of entity identifiers, such as EC2 instance IDs (<code>i-34ab692e</code>) or EBS volumes (<code>vol-426ab23e</code>).</p>
     pub fn entity_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.entity_values.unwrap_or_default();
-        v.push(input.into());
-        self.entity_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.entity_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of entity identifiers, such as EC2 instance IDs (<code>i-34ab692e</code>) or EBS volumes (<code>vol-426ab23e</code>).</p>
-    pub fn set_entity_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.entity_values = input;
-        self
+    pub fn set_entity_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.entity_values = input; self
     }
     /// <p>A list of entity identifiers, such as EC2 instance IDs (<code>i-34ab692e</code>) or EBS volumes (<code>vol-426ab23e</code>).</p>
-    pub fn get_entity_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_entity_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.entity_values
     }
     /// Appends an item to `event_type_categories`.
@@ -348,17 +351,16 @@ impl EventFilterBuilder {
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
     pub fn event_type_categories(mut self, input: crate::types::EventTypeCategory) -> Self {
         let mut v = self.event_type_categories.unwrap_or_default();
-        v.push(input);
-        self.event_type_categories = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.event_type_categories = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
-    pub fn set_event_type_categories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventTypeCategory>>) -> Self {
-        self.event_type_categories = input;
-        self
+    pub fn set_event_type_categories(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EventTypeCategory>>) -> Self {
+        self.event_type_categories = input; self
     }
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
-    pub fn get_event_type_categories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventTypeCategory>> {
+    pub fn get_event_type_categories(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EventTypeCategory>> {
         &self.event_type_categories
     }
     /// Appends an item to `tags`.
@@ -368,26 +370,22 @@ impl EventFilterBuilder {
     /// <p>A map of entity tags attached to the affected entity.</p><note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
-    pub fn tags(mut self, input: ::std::collections::HashMap<::std::string::String, ::std::string::String>) -> Self {
+    pub fn tags(mut self, input: ::std::collections::HashMap::<::std::string::String, ::std::string::String>) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A map of entity tags attached to the affected entity.</p><note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, ::std::string::String>>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A map of entity tags attached to the affected entity.</p><note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, ::std::string::String>>> {
         &self.tags
     }
     /// Appends an item to `event_status_codes`.
@@ -397,35 +395,48 @@ impl EventFilterBuilder {
     /// <p>A list of event status codes.</p>
     pub fn event_status_codes(mut self, input: crate::types::EventStatusCode) -> Self {
         let mut v = self.event_status_codes.unwrap_or_default();
-        v.push(input);
-        self.event_status_codes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.event_status_codes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of event status codes.</p>
-    pub fn set_event_status_codes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventStatusCode>>) -> Self {
-        self.event_status_codes = input;
-        self
+    pub fn set_event_status_codes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EventStatusCode>>) -> Self {
+        self.event_status_codes = input; self
     }
     /// <p>A list of event status codes.</p>
-    pub fn get_event_status_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventStatusCode>> {
+    pub fn get_event_status_codes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EventStatusCode>> {
         &self.event_status_codes
     }
     /// Consumes the builder and constructs a [`EventFilter`](crate::types::EventFilter).
     pub fn build(self) -> crate::types::EventFilter {
         crate::types::EventFilter {
-            event_arns: self.event_arns,
-            event_type_codes: self.event_type_codes,
-            services: self.services,
-            regions: self.regions,
-            availability_zones: self.availability_zones,
-            start_times: self.start_times,
-            end_times: self.end_times,
-            last_updated_times: self.last_updated_times,
-            entity_arns: self.entity_arns,
-            entity_values: self.entity_values,
-            event_type_categories: self.event_type_categories,
-            tags: self.tags,
-            event_status_codes: self.event_status_codes,
+            event_arns: self.event_arns
+            ,
+            event_type_codes: self.event_type_codes
+            ,
+            services: self.services
+            ,
+            regions: self.regions
+            ,
+            availability_zones: self.availability_zones
+            ,
+            start_times: self.start_times
+            ,
+            end_times: self.end_times
+            ,
+            last_updated_times: self.last_updated_times
+            ,
+            entity_arns: self.entity_arns
+            ,
+            entity_values: self.entity_values
+            ,
+            event_type_categories: self.event_type_categories
+            ,
+            tags: self.tags
+            ,
+            event_status_codes: self.event_status_codes
+            ,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>The formatting configuration for the color.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConditionalFormattingColor {
+pub struct ConditionalFormattingColor  {
     /// <p>Formatting configuration for solid color.</p>
     pub solid: ::std::option::Option<crate::types::ConditionalFormattingSolidColor>,
     /// <p>Formatting configuration for gradient color.</p>
     pub gradient: ::std::option::Option<crate::types::ConditionalFormattingGradientColor>,
 }
-impl ConditionalFormattingColor {
+impl  ConditionalFormattingColor  {
     /// <p>Formatting configuration for solid color.</p>
-    pub fn solid(&self) -> ::std::option::Option<&crate::types::ConditionalFormattingSolidColor> {
+    pub fn solid(&self) -> ::std::option::Option<& crate::types::ConditionalFormattingSolidColor> {
         self.solid.as_ref()
     }
     /// <p>Formatting configuration for gradient color.</p>
-    pub fn gradient(&self) -> ::std::option::Option<&crate::types::ConditionalFormattingGradientColor> {
+    pub fn gradient(&self) -> ::std::option::Option<& crate::types::ConditionalFormattingGradientColor> {
         self.gradient.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ConditionalFormattingColorBuilder {
     }
     /// <p>Formatting configuration for solid color.</p>
     pub fn set_solid(mut self, input: ::std::option::Option<crate::types::ConditionalFormattingSolidColor>) -> Self {
-        self.solid = input;
-        self
+        self.solid = input; self
     }
     /// <p>Formatting configuration for solid color.</p>
     pub fn get_solid(&self) -> &::std::option::Option<crate::types::ConditionalFormattingSolidColor> {
@@ -55,8 +54,7 @@ impl ConditionalFormattingColorBuilder {
     }
     /// <p>Formatting configuration for gradient color.</p>
     pub fn set_gradient(mut self, input: ::std::option::Option<crate::types::ConditionalFormattingGradientColor>) -> Self {
-        self.gradient = input;
-        self
+        self.gradient = input; self
     }
     /// <p>Formatting configuration for gradient color.</p>
     pub fn get_gradient(&self) -> &::std::option::Option<crate::types::ConditionalFormattingGradientColor> {
@@ -65,8 +63,11 @@ impl ConditionalFormattingColorBuilder {
     /// Consumes the builder and constructs a [`ConditionalFormattingColor`](crate::types::ConditionalFormattingColor).
     pub fn build(self) -> crate::types::ConditionalFormattingColor {
         crate::types::ConditionalFormattingColor {
-            solid: self.solid,
-            gradient: self.gradient,
+            solid: self.solid
+            ,
+            gradient: self.gradient
+            ,
         }
     }
 }
+

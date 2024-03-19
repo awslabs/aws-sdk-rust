@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopTriggerInput {
+pub struct StopTriggerInput  {
     /// <p>The name of the trigger to stop.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl StopTriggerInput {
+impl  StopTriggerInput  {
     /// <p>The name of the trigger to stop.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl StopTriggerInputBuilder {
     }
     /// <p>The name of the trigger to stop.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the trigger to stop.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl StopTriggerInputBuilder {
     }
     /// Consumes the builder and constructs a [`StopTriggerInput`](crate::operation::stop_trigger::StopTriggerInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::stop_trigger::StopTriggerInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::stop_trigger::StopTriggerInput { name: self.name })
+        ::std::result::Result::Ok(
+            crate::operation::stop_trigger::StopTriggerInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

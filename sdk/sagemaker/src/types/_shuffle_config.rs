@@ -4,11 +4,11 @@
 /// <p>For Pipe input mode, when <code>ShuffleConfig</code> is specified shuffling is done at the start of every epoch. With large datasets, this ensures that the order of the training data is different for each epoch, and it helps reduce bias and possible overfitting. In a multi-node training job when <code>ShuffleConfig</code> is combined with <code>S3DataDistributionType</code> of <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the content sent to a particular node on the first epoch might be sent to a different node on the second epoch.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ShuffleConfig {
+pub struct ShuffleConfig  {
     /// <p>Determines the shuffling order in <code>ShuffleConfig</code> value.</p>
     pub seed: ::std::option::Option<i64>,
 }
-impl ShuffleConfig {
+impl  ShuffleConfig  {
     /// <p>Determines the shuffling order in <code>ShuffleConfig</code> value.</p>
     pub fn seed(&self) -> ::std::option::Option<i64> {
         self.seed
@@ -36,8 +36,7 @@ impl ShuffleConfigBuilder {
     }
     /// <p>Determines the shuffling order in <code>ShuffleConfig</code> value.</p>
     pub fn set_seed(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.seed = input;
-        self
+        self.seed = input; self
     }
     /// <p>Determines the shuffling order in <code>ShuffleConfig</code> value.</p>
     pub fn get_seed(&self) -> &::std::option::Option<i64> {
@@ -45,6 +44,10 @@ impl ShuffleConfigBuilder {
     }
     /// Consumes the builder and constructs a [`ShuffleConfig`](crate::types::ShuffleConfig).
     pub fn build(self) -> crate::types::ShuffleConfig {
-        crate::types::ShuffleConfig { seed: self.seed }
+        crate::types::ShuffleConfig {
+            seed: self.seed
+            ,
+        }
     }
 }
+

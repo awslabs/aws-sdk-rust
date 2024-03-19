@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListObjectParentPathsInput {
+pub struct ListObjectParentPathsInput  {
     /// <p>The ARN of the directory to which the parent path applies.</p>
     pub directory_arn: ::std::option::Option<::std::string::String>,
     /// <p>The reference that identifies the object whose parent paths are listed.</p>
@@ -12,17 +12,17 @@ pub struct ListObjectParentPathsInput {
     /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListObjectParentPathsInput {
+impl  ListObjectParentPathsInput  {
     /// <p>The ARN of the directory to which the parent path applies.</p>
-    pub fn directory_arn(&self) -> ::std::option::Option<&str> {
+    pub fn directory_arn(&self) -> ::std::option::Option<& str> {
         self.directory_arn.as_deref()
     }
     /// <p>The reference that identifies the object whose parent paths are listed.</p>
-    pub fn object_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
+    pub fn object_reference(&self) -> ::std::option::Option<& crate::types::ObjectReference> {
         self.object_reference.as_ref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
@@ -55,8 +55,7 @@ impl ListObjectParentPathsInputBuilder {
     }
     /// <p>The ARN of the directory to which the parent path applies.</p>
     pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_arn = input;
-        self
+        self.directory_arn = input; self
     }
     /// <p>The ARN of the directory to which the parent path applies.</p>
     pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl ListObjectParentPathsInputBuilder {
     }
     /// <p>The reference that identifies the object whose parent paths are listed.</p>
     pub fn set_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
-        self.object_reference = input;
-        self
+        self.object_reference = input; self
     }
     /// <p>The reference that identifies the object whose parent paths are listed.</p>
     pub fn get_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
@@ -84,8 +82,7 @@ impl ListObjectParentPathsInputBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,23 +95,26 @@ impl ListObjectParentPathsInputBuilder {
     }
     /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListObjectParentPathsInput`](crate::operation::list_object_parent_paths::ListObjectParentPathsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_object_parent_paths::ListObjectParentPathsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_object_parent_paths::ListObjectParentPathsInput {
-            directory_arn: self.directory_arn,
-            object_reference: self.object_reference,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_object_parent_paths::ListObjectParentPathsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_object_parent_paths::ListObjectParentPathsInput {
+                directory_arn: self.directory_arn
+                ,
+                object_reference: self.object_reference
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

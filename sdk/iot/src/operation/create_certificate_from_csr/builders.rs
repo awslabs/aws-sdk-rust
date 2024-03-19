@@ -5,23 +5,20 @@ pub use crate::operation::create_certificate_from_csr::_create_certificate_from_
 
 impl CreateCertificateFromCsrInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_certificate_from_csr::CreateCertificateFromCsrOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_certificate_from_csr::CreateCertificateFromCsrError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_certificate_from_csr();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_certificate_from_csr::CreateCertificateFromCsrOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_certificate_from_csr::CreateCertificateFromCsrError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_certificate_from_csr();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateCertificateFromCsr`.
-///
+/// 
 /// <p>Creates an X.509 certificate using the specified certificate signing request.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateCertificateFromCsr</a> action.</p><note>
 /// <p>The CSR must include a public key that is either an RSA key with a length of at least 2048 bits or an ECC key from NIST P-256, NIST P-384, or NIST P-521 curves. For supported certificates, consult <a href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms"> Certificate signing algorithms supported by IoT</a>.</p>
@@ -41,33 +38,32 @@ impl CreateCertificateFromCsrInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCertificateFromCsrFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_certificate_from_csr::builders::CreateCertificateFromCsrInputBuilder,
+                    inner: crate::operation::create_certificate_from_csr::builders::CreateCertificateFromCsrInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_certificate_from_csr::CreateCertificateFromCsrOutput,
-        crate::operation::create_certificate_from_csr::CreateCertificateFromCsrError,
-    > for CreateCertificateFromCsrFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_certificate_from_csr::CreateCertificateFromCsrOutput,
-            crate::operation::create_certificate_from_csr::CreateCertificateFromCsrError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_certificate_from_csr::CreateCertificateFromCsrOutput,
+                    crate::operation::create_certificate_from_csr::CreateCertificateFromCsrError,
+                > for CreateCertificateFromCsrFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_certificate_from_csr::CreateCertificateFromCsrOutput,
+                        crate::operation::create_certificate_from_csr::CreateCertificateFromCsrError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateCertificateFromCsrFluentBuilder {
     /// Creates a new `CreateCertificateFromCsr`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -76,53 +72,44 @@ impl CreateCertificateFromCsrFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_certificate_from_csr::CreateCertificateFromCsrOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_certificate_from_csr::CreateCertificateFromCsrError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_certificate_from_csr::CreateCertificateFromCsr::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_certificate_from_csr::CreateCertificateFromCsr::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_certificate_from_csr::CreateCertificateFromCsrOutput,
-        crate::operation::create_certificate_from_csr::CreateCertificateFromCsrError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_certificate_from_csr::CreateCertificateFromCsrOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_certificate_from_csr::CreateCertificateFromCsrError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_certificate_from_csr::CreateCertificateFromCsr::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_certificate_from_csr::CreateCertificateFromCsr::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_certificate_from_csr::CreateCertificateFromCsrOutput, crate::operation::create_certificate_from_csr::CreateCertificateFromCsrError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The certificate signing request (CSR).</p>
     pub fn certificate_signing_request(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_signing_request(input.into());
@@ -152,3 +139,4 @@ impl CreateCertificateFromCsrFluentBuilder {
         self.inner.get_set_as_active()
     }
 }
+

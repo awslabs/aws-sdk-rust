@@ -3,13 +3,13 @@
 /// <p>Details about the AWS Lake Formation data permission.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LakeFormationDataPermissionDetails {
+pub struct LakeFormationDataPermissionDetails  {
     /// <p>Details about the LF-tag policy.</p>
     pub lf_tag_policy: ::std::option::Option<crate::types::LfTagPolicyDetails>,
 }
-impl LakeFormationDataPermissionDetails {
+impl  LakeFormationDataPermissionDetails  {
     /// <p>Details about the LF-tag policy.</p>
-    pub fn lf_tag_policy(&self) -> ::std::option::Option<&crate::types::LfTagPolicyDetails> {
+    pub fn lf_tag_policy(&self) -> ::std::option::Option<& crate::types::LfTagPolicyDetails> {
         self.lf_tag_policy.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl LakeFormationDataPermissionDetailsBuilder {
     }
     /// <p>Details about the LF-tag policy.</p>
     pub fn set_lf_tag_policy(mut self, input: ::std::option::Option<crate::types::LfTagPolicyDetails>) -> Self {
-        self.lf_tag_policy = input;
-        self
+        self.lf_tag_policy = input; self
     }
     /// <p>Details about the LF-tag policy.</p>
     pub fn get_lf_tag_policy(&self) -> &::std::option::Option<crate::types::LfTagPolicyDetails> {
@@ -44,7 +43,9 @@ impl LakeFormationDataPermissionDetailsBuilder {
     /// Consumes the builder and constructs a [`LakeFormationDataPermissionDetails`](crate::types::LakeFormationDataPermissionDetails).
     pub fn build(self) -> crate::types::LakeFormationDataPermissionDetails {
         crate::types::LakeFormationDataPermissionDetails {
-            lf_tag_policy: self.lf_tag_policy,
+            lf_tag_policy: self.lf_tag_policy
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateLaunchProfileMemberInput {
+pub struct UpdateLaunchProfileMemberInput  {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
@@ -14,25 +14,25 @@ pub struct UpdateLaunchProfileMemberInput {
     /// <p>The studio ID.</p>
     pub studio_id: ::std::option::Option<::std::string::String>,
 }
-impl UpdateLaunchProfileMemberInput {
+impl  UpdateLaunchProfileMemberInput  {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    pub fn launch_profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn launch_profile_id(&self) -> ::std::option::Option<& str> {
         self.launch_profile_id.as_deref()
     }
     /// <p>The persona.</p>
-    pub fn persona(&self) -> ::std::option::Option<&crate::types::LaunchProfilePersona> {
+    pub fn persona(&self) -> ::std::option::Option<& crate::types::LaunchProfilePersona> {
         self.persona.as_ref()
     }
     /// <p>The principal ID. This currently supports a IAM Identity Center UserId.</p>
-    pub fn principal_id(&self) -> ::std::option::Option<&str> {
+    pub fn principal_id(&self) -> ::std::option::Option<& str> {
         self.principal_id.as_deref()
     }
     /// <p>The studio ID.</p>
-    pub fn studio_id(&self) -> ::std::option::Option<&str> {
+    pub fn studio_id(&self) -> ::std::option::Option<& str> {
         self.studio_id.as_deref()
     }
 }
@@ -61,8 +61,7 @@ impl UpdateLaunchProfileMemberInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl UpdateLaunchProfileMemberInputBuilder {
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub fn set_launch_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.launch_profile_id = input;
-        self
+        self.launch_profile_id = input; self
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub fn get_launch_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl UpdateLaunchProfileMemberInputBuilder {
     }
     /// <p>The persona.</p>
     pub fn set_persona(mut self, input: ::std::option::Option<crate::types::LaunchProfilePersona>) -> Self {
-        self.persona = input;
-        self
+        self.persona = input; self
     }
     /// <p>The persona.</p>
     pub fn get_persona(&self) -> &::std::option::Option<crate::types::LaunchProfilePersona> {
@@ -106,8 +103,7 @@ impl UpdateLaunchProfileMemberInputBuilder {
     }
     /// <p>The principal ID. This currently supports a IAM Identity Center UserId.</p>
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal_id = input;
-        self
+        self.principal_id = input; self
     }
     /// <p>The principal ID. This currently supports a IAM Identity Center UserId.</p>
     pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,26 +117,28 @@ impl UpdateLaunchProfileMemberInputBuilder {
     }
     /// <p>The studio ID.</p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.studio_id = input;
-        self
+        self.studio_id = input; self
     }
     /// <p>The studio ID.</p>
     pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.studio_id
     }
     /// Consumes the builder and constructs a [`UpdateLaunchProfileMemberInput`](crate::operation::update_launch_profile_member::UpdateLaunchProfileMemberInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_launch_profile_member::UpdateLaunchProfileMemberInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_launch_profile_member::UpdateLaunchProfileMemberInput {
-            client_token: self.client_token,
-            launch_profile_id: self.launch_profile_id,
-            persona: self.persona,
-            principal_id: self.principal_id,
-            studio_id: self.studio_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_launch_profile_member::UpdateLaunchProfileMemberInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_launch_profile_member::UpdateLaunchProfileMemberInput {
+                client_token: self.client_token
+                ,
+                launch_profile_id: self.launch_profile_id
+                ,
+                persona: self.persona
+                ,
+                principal_id: self.principal_id
+                ,
+                studio_id: self.studio_id
+                ,
+            }
+        )
     }
 }
+

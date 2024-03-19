@@ -3,13 +3,13 @@
 /// <p>Represents the request to retrieve the offering status for the specified customer or account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetOfferingStatusInput {
+pub struct GetOfferingStatusInput  {
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl GetOfferingStatusInput {
+impl  GetOfferingStatusInput  {
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl GetOfferingStatusInputBuilder {
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetOfferingStatusInput`](crate::operation::get_offering_status::GetOfferingStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_offering_status::GetOfferingStatusInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_offering_status::GetOfferingStatusInput { next_token: self.next_token })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_offering_status::GetOfferingStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_offering_status::GetOfferingStatusInput {
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

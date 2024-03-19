@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteQuickResponseOutput {
+pub struct DeleteQuickResponseOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for DeleteQuickResponseOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteQuickResponseOutput {
     /// Creates a new builder-style object to manufacture [`DeleteQuickResponseOutput`](crate::operation::delete_quick_response::DeleteQuickResponseOutput).
     pub fn builder() -> crate::operation::delete_quick_response::builders::DeleteQuickResponseOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DeleteQuickResponseOutputBuilder {
 }
 impl DeleteQuickResponseOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteQuickResponseOutput`](crate::operation::delete_quick_response::DeleteQuickResponseOutput).
     pub fn build(self) -> crate::operation::delete_quick_response::DeleteQuickResponseOutput {
         crate::operation::delete_quick_response::DeleteQuickResponseOutput {
@@ -40,3 +40,4 @@ impl DeleteQuickResponseOutputBuilder {
         }
     }
 }
+

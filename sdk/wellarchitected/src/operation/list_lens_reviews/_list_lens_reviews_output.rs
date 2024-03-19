@@ -3,21 +3,21 @@
 /// <p>Output of a list lens reviews call.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLensReviewsOutput {
+pub struct ListLensReviewsOutput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub milestone_number: ::std::option::Option<i32>,
     /// <p>List of lens summaries of lens reviews of a workload.</p>
-    pub lens_review_summaries: ::std::option::Option<::std::vec::Vec<crate::types::LensReviewSummary>>,
+    pub lens_review_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::LensReviewSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListLensReviewsOutput {
+impl  ListLensReviewsOutput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> ::std::option::Option<&str> {
+    pub fn workload_id(&self) -> ::std::option::Option<& str> {
         self.workload_id.as_deref()
     }
     /// <p>The milestone number.</p>
@@ -26,21 +26,22 @@ impl ListLensReviewsOutput {
         self.milestone_number
     }
     /// <p>List of lens summaries of lens reviews of a workload.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lens_review_summaries.is_none()`.
-    pub fn lens_review_summaries(&self) -> &[crate::types::LensReviewSummary] {
-        self.lens_review_summaries.as_deref().unwrap_or_default()
+    pub fn lens_review_summaries(&self) -> & [crate::types::LensReviewSummary] {
+        self.lens_review_summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListLensReviewsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListLensReviewsOutput {
     /// Creates a new builder-style object to manufacture [`ListLensReviewsOutput`](crate::operation::list_lens_reviews::ListLensReviewsOutput).
     pub fn builder() -> crate::operation::list_lens_reviews::builders::ListLensReviewsOutputBuilder {
@@ -54,7 +55,7 @@ impl ListLensReviewsOutput {
 pub struct ListLensReviewsOutputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) milestone_number: ::std::option::Option<i32>,
-    pub(crate) lens_review_summaries: ::std::option::Option<::std::vec::Vec<crate::types::LensReviewSummary>>,
+    pub(crate) lens_review_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::LensReviewSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -66,8 +67,7 @@ impl ListLensReviewsOutputBuilder {
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_id = input;
-        self
+        self.workload_id = input; self
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +82,7 @@ impl ListLensReviewsOutputBuilder {
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub fn set_milestone_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.milestone_number = input;
-        self
+        self.milestone_number = input; self
     }
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
@@ -97,17 +96,16 @@ impl ListLensReviewsOutputBuilder {
     /// <p>List of lens summaries of lens reviews of a workload.</p>
     pub fn lens_review_summaries(mut self, input: crate::types::LensReviewSummary) -> Self {
         let mut v = self.lens_review_summaries.unwrap_or_default();
-        v.push(input);
-        self.lens_review_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.lens_review_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of lens summaries of lens reviews of a workload.</p>
-    pub fn set_lens_review_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LensReviewSummary>>) -> Self {
-        self.lens_review_summaries = input;
-        self
+    pub fn set_lens_review_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LensReviewSummary>>) -> Self {
+        self.lens_review_summaries = input; self
     }
     /// <p>List of lens summaries of lens reviews of a workload.</p>
-    pub fn get_lens_review_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LensReviewSummary>> {
+    pub fn get_lens_review_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LensReviewSummary>> {
         &self.lens_review_summaries
     }
     /// <p>The token to use to retrieve the next set of results.</p>
@@ -117,30 +115,34 @@ impl ListLensReviewsOutputBuilder {
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListLensReviewsOutput`](crate::operation::list_lens_reviews::ListLensReviewsOutput).
     pub fn build(self) -> crate::operation::list_lens_reviews::ListLensReviewsOutput {
         crate::operation::list_lens_reviews::ListLensReviewsOutput {
-            workload_id: self.workload_id,
-            milestone_number: self.milestone_number,
-            lens_review_summaries: self.lens_review_summaries,
-            next_token: self.next_token,
+            workload_id: self.workload_id
+            ,
+            milestone_number: self.milestone_number
+            ,
+            lens_review_summaries: self.lens_review_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

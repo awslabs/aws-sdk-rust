@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartImageScanInput {
+pub struct StartImageScanInput  {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to start an image scan request. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository that contains the images to scan.</p>
@@ -10,17 +10,17 @@ pub struct StartImageScanInput {
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
     pub image_id: ::std::option::Option<crate::types::ImageIdentifier>,
 }
-impl StartImageScanInput {
+impl  StartImageScanInput  {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to start an image scan request. If you do not specify a registry, the default registry is assumed.</p>
-    pub fn registry_id(&self) -> ::std::option::Option<&str> {
+    pub fn registry_id(&self) -> ::std::option::Option<& str> {
         self.registry_id.as_deref()
     }
     /// <p>The name of the repository that contains the images to scan.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
-    pub fn image_id(&self) -> ::std::option::Option<&crate::types::ImageIdentifier> {
+    pub fn image_id(&self) -> ::std::option::Option<& crate::types::ImageIdentifier> {
         self.image_id.as_ref()
     }
 }
@@ -47,8 +47,7 @@ impl StartImageScanInputBuilder {
     }
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to start an image scan request. If you do not specify a registry, the default registry is assumed.</p>
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
     }
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to start an image scan request. If you do not specify a registry, the default registry is assumed.</p>
     pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl StartImageScanInputBuilder {
     }
     /// <p>The name of the repository that contains the images to scan.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The name of the repository that contains the images to scan.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,21 +75,24 @@ impl StartImageScanInputBuilder {
     }
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
     pub fn set_image_id(mut self, input: ::std::option::Option<crate::types::ImageIdentifier>) -> Self {
-        self.image_id = input;
-        self
+        self.image_id = input; self
     }
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
     pub fn get_image_id(&self) -> &::std::option::Option<crate::types::ImageIdentifier> {
         &self.image_id
     }
     /// Consumes the builder and constructs a [`StartImageScanInput`](crate::operation::start_image_scan::StartImageScanInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_image_scan::StartImageScanInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_image_scan::StartImageScanInput {
-            registry_id: self.registry_id,
-            repository_name: self.repository_name,
-            image_id: self.image_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_image_scan::StartImageScanInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_image_scan::StartImageScanInput {
+                registry_id: self.registry_id
+                ,
+                repository_name: self.repository_name
+                ,
+                image_id: self.image_id
+                ,
+            }
+        )
     }
 }
+

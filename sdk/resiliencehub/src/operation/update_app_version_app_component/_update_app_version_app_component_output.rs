@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAppVersionAppComponentOutput {
+pub struct UpdateAppVersionAppComponentOutput  {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub app_arn: ::std::string::String,
     /// <p>Resilience Hub application version.</p>
@@ -11,27 +11,25 @@ pub struct UpdateAppVersionAppComponentOutput {
     pub app_component: ::std::option::Option<crate::types::AppComponent>,
     _request_id: Option<String>,
 }
-impl UpdateAppVersionAppComponentOutput {
+impl  UpdateAppVersionAppComponentOutput  {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.app_arn.deref()
+    pub fn app_arn(&self) -> & str {
+        use std::ops::Deref; self.app_arn.deref()
     }
     /// <p>Resilience Hub application version.</p>
-    pub fn app_version(&self) -> &str {
-        use std::ops::Deref;
-        self.app_version.deref()
+    pub fn app_version(&self) -> & str {
+        use std::ops::Deref; self.app_version.deref()
     }
     /// <p>List of Application Components that belong to this resource.</p>
-    pub fn app_component(&self) -> ::std::option::Option<&crate::types::AppComponent> {
+    pub fn app_component(&self) -> ::std::option::Option<& crate::types::AppComponent> {
         self.app_component.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateAppVersionAppComponentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateAppVersionAppComponentOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAppVersionAppComponentOutput`](crate::operation::update_app_version_app_component::UpdateAppVersionAppComponentOutput).
     pub fn builder() -> crate::operation::update_app_version_app_component::builders::UpdateAppVersionAppComponentOutputBuilder {
@@ -57,8 +55,7 @@ impl UpdateAppVersionAppComponentOutputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_arn = input;
-        self
+        self.app_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +69,7 @@ impl UpdateAppVersionAppComponentOutputBuilder {
     }
     /// <p>Resilience Hub application version.</p>
     pub fn set_app_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_version = input;
-        self
+        self.app_version = input; self
     }
     /// <p>Resilience Hub application version.</p>
     pub fn get_app_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,47 +82,43 @@ impl UpdateAppVersionAppComponentOutputBuilder {
     }
     /// <p>List of Application Components that belong to this resource.</p>
     pub fn set_app_component(mut self, input: ::std::option::Option<crate::types::AppComponent>) -> Self {
-        self.app_component = input;
-        self
+        self.app_component = input; self
     }
     /// <p>List of Application Components that belong to this resource.</p>
     pub fn get_app_component(&self) -> &::std::option::Option<crate::types::AppComponent> {
         &self.app_component
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateAppVersionAppComponentOutput`](crate::operation::update_app_version_app_component::UpdateAppVersionAppComponentOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`app_arn`](crate::operation::update_app_version_app_component::builders::UpdateAppVersionAppComponentOutputBuilder::app_arn)
     /// - [`app_version`](crate::operation::update_app_version_app_component::builders::UpdateAppVersionAppComponentOutputBuilder::app_version)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_app_version_app_component::UpdateAppVersionAppComponentOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_app_version_app_component::UpdateAppVersionAppComponentOutput {
-            app_arn: self.app_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "app_arn",
-                    "app_arn was not specified but it is required when building UpdateAppVersionAppComponentOutput",
-                )
-            })?,
-            app_version: self.app_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "app_version",
-                    "app_version was not specified but it is required when building UpdateAppVersionAppComponentOutput",
-                )
-            })?,
-            app_component: self.app_component,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_app_version_app_component::UpdateAppVersionAppComponentOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_app_version_app_component::UpdateAppVersionAppComponentOutput {
+                app_arn: self.app_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("app_arn", "app_arn was not specified but it is required when building UpdateAppVersionAppComponentOutput")
+                    )?
+                ,
+                app_version: self.app_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("app_version", "app_version was not specified but it is required when building UpdateAppVersionAppComponentOutput")
+                    )?
+                ,
+                app_component: self.app_component
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

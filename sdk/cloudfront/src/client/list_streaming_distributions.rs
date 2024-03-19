@@ -2,14 +2,15 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListStreamingDistributions`](crate::operation::list_streaming_distributions::builders::ListStreamingDistributionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_streaming_distributions::builders::ListStreamingDistributionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`marker(impl Into<String>)`](crate::operation::list_streaming_distributions::builders::ListStreamingDistributionsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::list_streaming_distributions::builders::ListStreamingDistributionsFluentBuilder::set_marker):<br>required: **false**<br><p>The value that you provided for the <code>Marker</code> request parameter.</p><br>
     ///   - [`max_items(i32)`](crate::operation::list_streaming_distributions::builders::ListStreamingDistributionsFluentBuilder::max_items) / [`set_max_items(Option<i32>)`](crate::operation::list_streaming_distributions::builders::ListStreamingDistributionsFluentBuilder::set_max_items):<br>required: **false**<br><p>The value that you provided for the <code>MaxItems</code> request parameter.</p><br>
-    /// - On success, responds with [`ListStreamingDistributionsOutput`](crate::operation::list_streaming_distributions::ListStreamingDistributionsOutput) with field(s):
+                            /// - On success, responds with [`ListStreamingDistributionsOutput`](crate::operation::list_streaming_distributions::ListStreamingDistributionsOutput) with field(s):
     ///   - [`streaming_distribution_list(Option<StreamingDistributionList>)`](crate::operation::list_streaming_distributions::ListStreamingDistributionsOutput::streaming_distribution_list): <p>The <code>StreamingDistributionList</code> type.</p>
-    /// - On failure, responds with [`SdkError<ListStreamingDistributionsError>`](crate::operation::list_streaming_distributions::ListStreamingDistributionsError)
+                            /// - On failure, responds with [`SdkError<ListStreamingDistributionsError>`](crate::operation::list_streaming_distributions::ListStreamingDistributionsError)
     pub fn list_streaming_distributions(&self) -> crate::operation::list_streaming_distributions::builders::ListStreamingDistributionsFluentBuilder {
-        crate::operation::list_streaming_distributions::builders::ListStreamingDistributionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_streaming_distributions::builders::ListStreamingDistributionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListWorkflowsInput {
+pub struct ListWorkflowsInput  {
     /// <p>The name of the space.</p>
     pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project in the space.</p>
@@ -12,19 +12,19 @@ pub struct ListWorkflowsInput {
     /// <p>The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>Information used to sort the items in the returned list.</p>
-    pub sort_by: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowSortCriteria>>,
+    pub sort_by: ::std::option::Option<::std::vec::Vec::<crate::types::WorkflowSortCriteria>>,
 }
-impl ListWorkflowsInput {
+impl  ListWorkflowsInput  {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> ::std::option::Option<&str> {
+    pub fn space_name(&self) -> ::std::option::Option<& str> {
         self.space_name.as_deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> ::std::option::Option<&str> {
+    pub fn project_name(&self) -> ::std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a <code>NextToken</code> element, which you can use to obtain additional results.</p>
@@ -32,10 +32,11 @@ impl ListWorkflowsInput {
         self.max_results
     }
     /// <p>Information used to sort the items in the returned list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sort_by.is_none()`.
-    pub fn sort_by(&self) -> &[crate::types::WorkflowSortCriteria] {
-        self.sort_by.as_deref().unwrap_or_default()
+    pub fn sort_by(&self) -> & [crate::types::WorkflowSortCriteria] {
+        self.sort_by.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ListWorkflowsInput {
@@ -53,7 +54,7 @@ pub struct ListWorkflowsInputBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) sort_by: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowSortCriteria>>,
+    pub(crate) sort_by: ::std::option::Option<::std::vec::Vec::<crate::types::WorkflowSortCriteria>>,
 }
 impl ListWorkflowsInputBuilder {
     /// <p>The name of the space.</p>
@@ -64,8 +65,7 @@ impl ListWorkflowsInputBuilder {
     }
     /// <p>The name of the space.</p>
     pub fn set_space_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.space_name = input;
-        self
+        self.space_name = input; self
     }
     /// <p>The name of the space.</p>
     pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +79,7 @@ impl ListWorkflowsInputBuilder {
     }
     /// <p>The name of the project in the space.</p>
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
     }
     /// <p>The name of the project in the space.</p>
     pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +92,7 @@ impl ListWorkflowsInputBuilder {
     }
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +105,7 @@ impl ListWorkflowsInputBuilder {
     }
     /// <p>The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -121,29 +118,34 @@ impl ListWorkflowsInputBuilder {
     /// <p>Information used to sort the items in the returned list.</p>
     pub fn sort_by(mut self, input: crate::types::WorkflowSortCriteria) -> Self {
         let mut v = self.sort_by.unwrap_or_default();
-        v.push(input);
-        self.sort_by = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sort_by = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information used to sort the items in the returned list.</p>
-    pub fn set_sort_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowSortCriteria>>) -> Self {
-        self.sort_by = input;
-        self
+    pub fn set_sort_by(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::WorkflowSortCriteria>>) -> Self {
+        self.sort_by = input; self
     }
     /// <p>Information used to sort the items in the returned list.</p>
-    pub fn get_sort_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowSortCriteria>> {
+    pub fn get_sort_by(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::WorkflowSortCriteria>> {
         &self.sort_by
     }
     /// Consumes the builder and constructs a [`ListWorkflowsInput`](crate::operation::list_workflows::ListWorkflowsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_workflows::ListWorkflowsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_workflows::ListWorkflowsInput {
-            space_name: self.space_name,
-            project_name: self.project_name,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            sort_by: self.sort_by,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_workflows::ListWorkflowsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_workflows::ListWorkflowsInput {
+                space_name: self.space_name
+                ,
+                project_name: self.project_name
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                sort_by: self.sort_by
+                ,
+            }
+        )
     }
 }
+

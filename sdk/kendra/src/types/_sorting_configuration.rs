@@ -17,7 +17,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SortingConfiguration {
+pub struct SortingConfiguration  {
     /// <p>The name of the document attribute used to sort the response. You can use any field that has the <code>Sortable</code> flag set to true.</p>
     /// <p>You can also sort by any of the following built-in attributes:</p>
     /// <ul>
@@ -36,7 +36,7 @@ pub struct SortingConfiguration {
     /// <p>The order that the results should be returned in. In case of ties, the relevance assigned to the result by Amazon Kendra is used as the tie-breaker.</p>
     pub sort_order: crate::types::SortOrder,
 }
-impl SortingConfiguration {
+impl  SortingConfiguration  {
     /// <p>The name of the document attribute used to sort the response. You can use any field that has the <code>Sortable</code> flag set to true.</p>
     /// <p>You can also sort by any of the following built-in attributes:</p>
     /// <ul>
@@ -51,12 +51,11 @@ impl SortingConfiguration {
     /// <li>
     /// <p>_view_count</p></li>
     /// </ul>
-    pub fn document_attribute_key(&self) -> &str {
-        use std::ops::Deref;
-        self.document_attribute_key.deref()
+    pub fn document_attribute_key(&self) -> & str {
+        use std::ops::Deref; self.document_attribute_key.deref()
     }
     /// <p>The order that the results should be returned in. In case of ties, the relevance assigned to the result by Amazon Kendra is used as the tie-breaker.</p>
-    pub fn sort_order(&self) -> &crate::types::SortOrder {
+    pub fn sort_order(&self) -> & crate::types::SortOrder {
         &self.sort_order
     }
 }
@@ -109,8 +108,7 @@ impl SortingConfigurationBuilder {
     /// <p>_view_count</p></li>
     /// </ul>
     pub fn set_document_attribute_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_attribute_key = input;
-        self
+        self.document_attribute_key = input; self
     }
     /// <p>The name of the document attribute used to sort the response. You can use any field that has the <code>Sortable</code> flag set to true.</p>
     /// <p>You can also sort by any of the following built-in attributes:</p>
@@ -137,8 +135,7 @@ impl SortingConfigurationBuilder {
     }
     /// <p>The order that the results should be returned in. In case of ties, the relevance assigned to the result by Amazon Kendra is used as the tie-breaker.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The order that the results should be returned in. In case of ties, the relevance assigned to the result by Amazon Kendra is used as the tie-breaker.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -149,19 +146,20 @@ impl SortingConfigurationBuilder {
     /// - [`document_attribute_key`](crate::types::builders::SortingConfigurationBuilder::document_attribute_key)
     /// - [`sort_order`](crate::types::builders::SortingConfigurationBuilder::sort_order)
     pub fn build(self) -> ::std::result::Result<crate::types::SortingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SortingConfiguration {
-            document_attribute_key: self.document_attribute_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "document_attribute_key",
-                    "document_attribute_key was not specified but it is required when building SortingConfiguration",
-                )
-            })?,
-            sort_order: self.sort_order.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sort_order",
-                    "sort_order was not specified but it is required when building SortingConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SortingConfiguration {
+                document_attribute_key: self.document_attribute_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("document_attribute_key", "document_attribute_key was not specified but it is required when building SortingConfiguration")
+                    )?
+                ,
+                sort_order: self.sort_order
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sort_order", "sort_order was not specified but it is required when building SortingConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

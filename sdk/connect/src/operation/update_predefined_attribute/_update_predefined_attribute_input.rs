@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePredefinedAttributeInput {
+pub struct UpdatePredefinedAttributeInput  {
     /// <p>The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the predefined attribute.</p>
@@ -10,17 +10,17 @@ pub struct UpdatePredefinedAttributeInput {
     /// <p>The values of the predefined attribute.</p>
     pub values: ::std::option::Option<crate::types::PredefinedAttributeValues>,
 }
-impl UpdatePredefinedAttributeInput {
+impl  UpdatePredefinedAttributeInput  {
     /// <p>The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The name of the predefined attribute.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The values of the predefined attribute.</p>
-    pub fn values(&self) -> ::std::option::Option<&crate::types::PredefinedAttributeValues> {
+    pub fn values(&self) -> ::std::option::Option<& crate::types::PredefinedAttributeValues> {
         self.values.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdatePredefinedAttributeInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdatePredefinedAttributeInputBuilder {
     }
     /// <p>The name of the predefined attribute.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the predefined attribute.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,24 +75,24 @@ impl UpdatePredefinedAttributeInputBuilder {
     }
     /// <p>The values of the predefined attribute.</p>
     pub fn set_values(mut self, input: ::std::option::Option<crate::types::PredefinedAttributeValues>) -> Self {
-        self.values = input;
-        self
+        self.values = input; self
     }
     /// <p>The values of the predefined attribute.</p>
     pub fn get_values(&self) -> &::std::option::Option<crate::types::PredefinedAttributeValues> {
         &self.values
     }
     /// Consumes the builder and constructs a [`UpdatePredefinedAttributeInput`](crate::operation::update_predefined_attribute::UpdatePredefinedAttributeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_predefined_attribute::UpdatePredefinedAttributeInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_predefined_attribute::UpdatePredefinedAttributeInput {
-            instance_id: self.instance_id,
-            name: self.name,
-            values: self.values,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_predefined_attribute::UpdatePredefinedAttributeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_predefined_attribute::UpdatePredefinedAttributeInput {
+                instance_id: self.instance_id
+                ,
+                name: self.name
+                ,
+                values: self.values
+                ,
+            }
+        )
     }
 }
+

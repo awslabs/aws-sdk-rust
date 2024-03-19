@@ -3,19 +3,19 @@
 /// <p>A security group that is associated with the cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsRedshiftClusterClusterSecurityGroup {
+pub struct AwsRedshiftClusterClusterSecurityGroup  {
     /// <p>The name of the cluster security group.</p>
     pub cluster_security_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the cluster security group.</p>
     pub status: ::std::option::Option<::std::string::String>,
 }
-impl AwsRedshiftClusterClusterSecurityGroup {
+impl  AwsRedshiftClusterClusterSecurityGroup  {
     /// <p>The name of the cluster security group.</p>
-    pub fn cluster_security_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_security_group_name(&self) -> ::std::option::Option<& str> {
         self.cluster_security_group_name.as_deref()
     }
     /// <p>The status of the cluster security group.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AwsRedshiftClusterClusterSecurityGroupBuilder {
     }
     /// <p>The name of the cluster security group.</p>
     pub fn set_cluster_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_security_group_name = input;
-        self
+        self.cluster_security_group_name = input; self
     }
     /// <p>The name of the cluster security group.</p>
     pub fn get_cluster_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AwsRedshiftClusterClusterSecurityGroupBuilder {
     }
     /// <p>The status of the cluster security group.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the cluster security group.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AwsRedshiftClusterClusterSecurityGroupBuilder {
     /// Consumes the builder and constructs a [`AwsRedshiftClusterClusterSecurityGroup`](crate::types::AwsRedshiftClusterClusterSecurityGroup).
     pub fn build(self) -> crate::types::AwsRedshiftClusterClusterSecurityGroup {
         crate::types::AwsRedshiftClusterClusterSecurityGroup {
-            cluster_security_group_name: self.cluster_security_group_name,
-            status: self.status,
+            cluster_security_group_name: self.cluster_security_group_name
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

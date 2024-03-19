@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let languagecodestring = unimplemented!();
 /// match languagecodestring {
@@ -41,16 +41,14 @@
 /// Specifically, when `languagecodestring` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LanguageCodeString::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Supported language code for sending OTP message
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum LanguageCodeString {
     #[allow(missing_docs)] // documentation missing in model
     DeDe,
@@ -80,96 +78,95 @@ pub enum LanguageCodeString {
     ZhTw,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for LanguageCodeString {
-    fn from(s: &str) -> Self {
-        match s {
-            "de-DE" => LanguageCodeString::DeDe,
-            "en-GB" => LanguageCodeString::EnGb,
-            "en-US" => LanguageCodeString::EnUs,
-            "es-419" => LanguageCodeString::Es419,
-            "es-ES" => LanguageCodeString::EsEs,
-            "fr-CA" => LanguageCodeString::FrCa,
-            "fr-FR" => LanguageCodeString::FrFr,
-            "it-IT" => LanguageCodeString::ItIt,
-            "ja-JP" => LanguageCodeString::JpJp,
-            "kr-KR" => LanguageCodeString::KrKr,
-            "pt-BR" => LanguageCodeString::PtBr,
-            "zh-CN" => LanguageCodeString::ZhCn,
-            "zh-TW" => LanguageCodeString::ZhTw,
-            other => LanguageCodeString::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "de-DE" => LanguageCodeString::DeDe,
+"en-GB" => LanguageCodeString::EnGb,
+"en-US" => LanguageCodeString::EnUs,
+"es-419" => LanguageCodeString::Es419,
+"es-ES" => LanguageCodeString::EsEs,
+"fr-CA" => LanguageCodeString::FrCa,
+"fr-FR" => LanguageCodeString::FrFr,
+"it-IT" => LanguageCodeString::ItIt,
+"ja-JP" => LanguageCodeString::JpJp,
+"kr-KR" => LanguageCodeString::KrKr,
+"pt-BR" => LanguageCodeString::PtBr,
+"zh-CN" => LanguageCodeString::ZhCn,
+"zh-TW" => LanguageCodeString::ZhTw,
+other => LanguageCodeString::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for LanguageCodeString {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(LanguageCodeString::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(LanguageCodeString::from(s))
+                    }
+                }
 impl LanguageCodeString {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LanguageCodeString::DeDe => "de-DE",
-            LanguageCodeString::EnGb => "en-GB",
-            LanguageCodeString::EnUs => "en-US",
-            LanguageCodeString::Es419 => "es-419",
-            LanguageCodeString::EsEs => "es-ES",
-            LanguageCodeString::FrCa => "fr-CA",
-            LanguageCodeString::FrFr => "fr-FR",
-            LanguageCodeString::ItIt => "it-IT",
-            LanguageCodeString::JpJp => "ja-JP",
-            LanguageCodeString::KrKr => "kr-KR",
-            LanguageCodeString::PtBr => "pt-BR",
-            LanguageCodeString::ZhCn => "zh-CN",
-            LanguageCodeString::ZhTw => "zh-TW",
-            LanguageCodeString::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "de-DE", "en-GB", "en-US", "es-419", "es-ES", "fr-CA", "fr-FR", "it-IT", "ja-JP", "kr-KR", "pt-BR", "zh-CN", "zh-TW",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LanguageCodeString::DeDe => "de-DE",
+    LanguageCodeString::EnGb => "en-GB",
+    LanguageCodeString::EnUs => "en-US",
+    LanguageCodeString::Es419 => "es-419",
+    LanguageCodeString::EsEs => "es-ES",
+    LanguageCodeString::FrCa => "fr-CA",
+    LanguageCodeString::FrFr => "fr-FR",
+    LanguageCodeString::ItIt => "it-IT",
+    LanguageCodeString::JpJp => "ja-JP",
+    LanguageCodeString::KrKr => "kr-KR",
+    LanguageCodeString::PtBr => "pt-BR",
+    LanguageCodeString::ZhCn => "zh-CN",
+    LanguageCodeString::ZhTw => "zh-TW",
+    LanguageCodeString::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["de-DE", "en-GB", "en-US", "es-419", "es-ES", "fr-CA", "fr-FR", "it-IT", "ja-JP", "kr-KR", "pt-BR", "zh-CN", "zh-TW"]
+                }
+            }
 impl ::std::convert::AsRef<str> for LanguageCodeString {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl LanguageCodeString {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for LanguageCodeString {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            LanguageCodeString::DeDe => write!(f, "de-DE"),
-            LanguageCodeString::EnGb => write!(f, "en-GB"),
-            LanguageCodeString::EnUs => write!(f, "en-US"),
-            LanguageCodeString::Es419 => write!(f, "es-419"),
-            LanguageCodeString::EsEs => write!(f, "es-ES"),
-            LanguageCodeString::FrCa => write!(f, "fr-CA"),
-            LanguageCodeString::FrFr => write!(f, "fr-FR"),
-            LanguageCodeString::ItIt => write!(f, "it-IT"),
-            LanguageCodeString::JpJp => write!(f, "ja-JP"),
-            LanguageCodeString::KrKr => write!(f, "kr-KR"),
-            LanguageCodeString::PtBr => write!(f, "pt-BR"),
-            LanguageCodeString::ZhCn => write!(f, "zh-CN"),
-            LanguageCodeString::ZhTw => write!(f, "zh-TW"),
-            LanguageCodeString::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                LanguageCodeString::DeDe => write!(f, "de-DE"),
+LanguageCodeString::EnGb => write!(f, "en-GB"),
+LanguageCodeString::EnUs => write!(f, "en-US"),
+LanguageCodeString::Es419 => write!(f, "es-419"),
+LanguageCodeString::EsEs => write!(f, "es-ES"),
+LanguageCodeString::FrCa => write!(f, "fr-CA"),
+LanguageCodeString::FrFr => write!(f, "fr-FR"),
+LanguageCodeString::ItIt => write!(f, "it-IT"),
+LanguageCodeString::JpJp => write!(f, "ja-JP"),
+LanguageCodeString::KrKr => write!(f, "kr-KR"),
+LanguageCodeString::PtBr => write!(f, "pt-BR"),
+LanguageCodeString::ZhCn => write!(f, "zh-CN"),
+LanguageCodeString::ZhTw => write!(f, "zh-TW"),
+LanguageCodeString::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

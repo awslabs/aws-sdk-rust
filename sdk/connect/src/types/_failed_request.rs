@@ -3,7 +3,7 @@
 /// <p>Request for which contact failed to be generated.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FailedRequest {
+pub struct FailedRequest  {
     /// <p>Request identifier provided in the API call in the ContactDataRequest to create a contact.</p>
     pub request_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Reason code for the failure.</p>
@@ -11,17 +11,17 @@ pub struct FailedRequest {
     /// <p>Why the request to create a contact failed.</p>
     pub failure_reason_message: ::std::option::Option<::std::string::String>,
 }
-impl FailedRequest {
+impl  FailedRequest  {
     /// <p>Request identifier provided in the API call in the ContactDataRequest to create a contact.</p>
-    pub fn request_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn request_identifier(&self) -> ::std::option::Option<& str> {
         self.request_identifier.as_deref()
     }
     /// <p>Reason code for the failure.</p>
-    pub fn failure_reason_code(&self) -> ::std::option::Option<&crate::types::FailureReasonCode> {
+    pub fn failure_reason_code(&self) -> ::std::option::Option<& crate::types::FailureReasonCode> {
         self.failure_reason_code.as_ref()
     }
     /// <p>Why the request to create a contact failed.</p>
-    pub fn failure_reason_message(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason_message(&self) -> ::std::option::Option<& str> {
         self.failure_reason_message.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl FailedRequestBuilder {
     }
     /// <p>Request identifier provided in the API call in the ContactDataRequest to create a contact.</p>
     pub fn set_request_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_identifier = input;
-        self
+        self.request_identifier = input; self
     }
     /// <p>Request identifier provided in the API call in the ContactDataRequest to create a contact.</p>
     pub fn get_request_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl FailedRequestBuilder {
     }
     /// <p>Reason code for the failure.</p>
     pub fn set_failure_reason_code(mut self, input: ::std::option::Option<crate::types::FailureReasonCode>) -> Self {
-        self.failure_reason_code = input;
-        self
+        self.failure_reason_code = input; self
     }
     /// <p>Reason code for the failure.</p>
     pub fn get_failure_reason_code(&self) -> &::std::option::Option<crate::types::FailureReasonCode> {
@@ -76,8 +74,7 @@ impl FailedRequestBuilder {
     }
     /// <p>Why the request to create a contact failed.</p>
     pub fn set_failure_reason_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason_message = input;
-        self
+        self.failure_reason_message = input; self
     }
     /// <p>Why the request to create a contact failed.</p>
     pub fn get_failure_reason_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl FailedRequestBuilder {
     /// Consumes the builder and constructs a [`FailedRequest`](crate::types::FailedRequest).
     pub fn build(self) -> crate::types::FailedRequest {
         crate::types::FailedRequest {
-            request_identifier: self.request_identifier,
-            failure_reason_code: self.failure_reason_code,
-            failure_reason_message: self.failure_reason_message,
+            request_identifier: self.request_identifier
+            ,
+            failure_reason_code: self.failure_reason_code
+            ,
+            failure_reason_message: self.failure_reason_message
+            ,
         }
     }
 }
+

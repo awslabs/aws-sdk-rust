@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let filesystemtype = unimplemented!();
 /// match filesystemtype {
@@ -32,16 +32,14 @@
 /// Specifically, when `filesystemtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FileSystemType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The type of file system.</p>
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum FileSystemType {
     #[allow(missing_docs)] // documentation missing in model
     Lustre,
@@ -53,67 +51,68 @@ pub enum FileSystemType {
     Windows,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for FileSystemType {
-    fn from(s: &str) -> Self {
-        match s {
-            "LUSTRE" => FileSystemType::Lustre,
-            "ONTAP" => FileSystemType::Ontap,
-            "OPENZFS" => FileSystemType::Openzfs,
-            "WINDOWS" => FileSystemType::Windows,
-            other => FileSystemType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "LUSTRE" => FileSystemType::Lustre,
+"ONTAP" => FileSystemType::Ontap,
+"OPENZFS" => FileSystemType::Openzfs,
+"WINDOWS" => FileSystemType::Windows,
+other => FileSystemType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for FileSystemType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(FileSystemType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(FileSystemType::from(s))
+                    }
+                }
 impl FileSystemType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FileSystemType::Lustre => "LUSTRE",
-            FileSystemType::Ontap => "ONTAP",
-            FileSystemType::Openzfs => "OPENZFS",
-            FileSystemType::Windows => "WINDOWS",
-            FileSystemType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["LUSTRE", "ONTAP", "OPENZFS", "WINDOWS"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FileSystemType::Lustre => "LUSTRE",
+    FileSystemType::Ontap => "ONTAP",
+    FileSystemType::Openzfs => "OPENZFS",
+    FileSystemType::Windows => "WINDOWS",
+    FileSystemType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["LUSTRE", "ONTAP", "OPENZFS", "WINDOWS"]
+                }
+            }
 impl ::std::convert::AsRef<str> for FileSystemType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl FileSystemType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for FileSystemType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            FileSystemType::Lustre => write!(f, "LUSTRE"),
-            FileSystemType::Ontap => write!(f, "ONTAP"),
-            FileSystemType::Openzfs => write!(f, "OPENZFS"),
-            FileSystemType::Windows => write!(f, "WINDOWS"),
-            FileSystemType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                FileSystemType::Lustre => write!(f, "LUSTRE"),
+FileSystemType::Ontap => write!(f, "ONTAP"),
+FileSystemType::Openzfs => write!(f, "OPENZFS"),
+FileSystemType::Windows => write!(f, "WINDOWS"),
+FileSystemType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

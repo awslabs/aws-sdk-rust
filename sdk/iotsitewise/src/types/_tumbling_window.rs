@@ -5,7 +5,7 @@
 /// <p>The <code>interval</code> and <code>offset</code> parameters support the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a>. For example, <code>PT5S</code> represents 5 seconds, <code>PT5M</code> represents 5 minutes, and <code>PT5H</code> represents 5 hours.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TumblingWindow {
+pub struct TumblingWindow  {
     /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and 1 week.</p>
     /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight each week (UTC), the <code>1d</code> interval at the end of each day at midnight (UTC), the <code>1h</code> interval at the end of each hour, and so on.</p>
     /// <p>When IoT SiteWise aggregates data points for metric computations, the start of each interval is exclusive and the end of each interval is inclusive. IoT SiteWise places the computed data point at the end of the interval.</p>
@@ -45,13 +45,12 @@ pub struct TumblingWindow {
     /// </ul>
     pub offset: ::std::option::Option<::std::string::String>,
 }
-impl TumblingWindow {
+impl  TumblingWindow  {
     /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and 1 week.</p>
     /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight each week (UTC), the <code>1d</code> interval at the end of each day at midnight (UTC), the <code>1h</code> interval at the end of each hour, and so on.</p>
     /// <p>When IoT SiteWise aggregates data points for metric computations, the start of each interval is exclusive and the end of each interval is inclusive. IoT SiteWise places the computed data point at the end of the interval.</p>
-    pub fn interval(&self) -> &str {
-        use std::ops::Deref;
-        self.interval.deref()
+    pub fn interval(&self) -> & str {
+        use std::ops::Deref; self.interval.deref()
     }
     /// <p>The offset for the tumbling window. The <code>offset</code> parameter accepts the following:</p>
     /// <ul>
@@ -86,7 +85,7 @@ impl TumblingWindow {
     /// <p>If you create the metric after 6 PM (PST), you get the first aggregation result at 6 PM (PST) the next day.</p></li>
     /// </ul></li>
     /// </ul>
-    pub fn offset(&self) -> ::std::option::Option<&str> {
+    pub fn offset(&self) -> ::std::option::Option<& str> {
         self.offset.as_deref()
     }
 }
@@ -117,8 +116,7 @@ impl TumblingWindowBuilder {
     /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight each week (UTC), the <code>1d</code> interval at the end of each day at midnight (UTC), the <code>1h</code> interval at the end of each hour, and so on.</p>
     /// <p>When IoT SiteWise aggregates data points for metric computations, the start of each interval is exclusive and the end of each interval is inclusive. IoT SiteWise places the computed data point at the end of the interval.</p>
     pub fn set_interval(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.interval = input;
-        self
+        self.interval = input; self
     }
     /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and 1 week.</p>
     /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight each week (UTC), the <code>1d</code> interval at the end of each day at midnight (UTC), the <code>1h</code> interval at the end of each hour, and so on.</p>
@@ -197,8 +195,7 @@ impl TumblingWindowBuilder {
     /// </ul></li>
     /// </ul>
     pub fn set_offset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.offset = input;
-        self
+        self.offset = input; self
     }
     /// <p>The offset for the tumbling window. The <code>offset</code> parameter accepts the following:</p>
     /// <ul>
@@ -240,14 +237,17 @@ impl TumblingWindowBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`interval`](crate::types::builders::TumblingWindowBuilder::interval)
     pub fn build(self) -> ::std::result::Result<crate::types::TumblingWindow, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TumblingWindow {
-            interval: self.interval.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "interval",
-                    "interval was not specified but it is required when building TumblingWindow",
-                )
-            })?,
-            offset: self.offset,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TumblingWindow {
+                interval: self.interval
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("interval", "interval was not specified but it is required when building TumblingWindow")
+                    )?
+                ,
+                offset: self.offset
+                ,
+            }
+        )
     }
 }
+

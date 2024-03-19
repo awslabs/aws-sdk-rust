@@ -3,7 +3,8 @@
 /// Rec709 Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Rec709Settings {}
+pub struct Rec709Settings  {
+}
 impl Rec709Settings {
     /// Creates a new builder-style object to manufacture [`Rec709Settings`](crate::types::Rec709Settings).
     pub fn builder() -> crate::types::builders::Rec709SettingsBuilder {
@@ -14,10 +15,13 @@ impl Rec709Settings {
 /// A builder for [`Rec709Settings`](crate::types::Rec709Settings).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct Rec709SettingsBuilder {}
+pub struct Rec709SettingsBuilder {
+}
 impl Rec709SettingsBuilder {
     /// Consumes the builder and constructs a [`Rec709Settings`](crate::types::Rec709Settings).
     pub fn build(self) -> crate::types::Rec709Settings {
-        crate::types::Rec709Settings {}
+        crate::types::Rec709Settings {
+        }
     }
 }
+

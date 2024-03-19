@@ -5,23 +5,20 @@ pub use crate::operation::create_data_repository_task::_create_data_repository_t
 
 impl CreateDataRepositoryTaskInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_data_repository_task::CreateDataRepositoryTaskOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_data_repository_task::CreateDataRepositoryTaskError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_data_repository_task();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_data_repository_task::CreateDataRepositoryTaskOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_data_repository_task::CreateDataRepositoryTaskError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_data_repository_task();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateDataRepositoryTask`.
-///
+/// 
 /// <p>Creates an Amazon FSx for Lustre data repository task. A <code>CreateDataRepositoryTask</code> operation will fail if a data repository is not linked to the FSx file system.</p>
 /// <p>You use import and export data repository tasks to perform bulk operations between your FSx for Lustre file system and its linked data repositories. An example of a data repository task is exporting any data and metadata changes, including POSIX metadata, to files, directories, and symbolic links (symlinks) from your FSx file system to a linked data repository.</p>
 /// <p>You use release data repository tasks to release data from your file system for files that are exported to S3. The metadata of released files remains on the file system so users or applications can still access released files by reading the files again, which will restore data from Amazon S3 to the FSx for Lustre file system.</p>
@@ -29,33 +26,32 @@ impl CreateDataRepositoryTaskInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDataRepositoryTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_data_repository_task::builders::CreateDataRepositoryTaskInputBuilder,
+                    inner: crate::operation::create_data_repository_task::builders::CreateDataRepositoryTaskInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_data_repository_task::CreateDataRepositoryTaskOutput,
-        crate::operation::create_data_repository_task::CreateDataRepositoryTaskError,
-    > for CreateDataRepositoryTaskFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_data_repository_task::CreateDataRepositoryTaskOutput,
-            crate::operation::create_data_repository_task::CreateDataRepositoryTaskError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_data_repository_task::CreateDataRepositoryTaskOutput,
+                    crate::operation::create_data_repository_task::CreateDataRepositoryTaskError,
+                > for CreateDataRepositoryTaskFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_data_repository_task::CreateDataRepositoryTaskOutput,
+                        crate::operation::create_data_repository_task::CreateDataRepositoryTaskError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateDataRepositoryTaskFluentBuilder {
     /// Creates a new `CreateDataRepositoryTask`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,53 +60,44 @@ impl CreateDataRepositoryTaskFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_data_repository_task::CreateDataRepositoryTaskOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_data_repository_task::CreateDataRepositoryTaskError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_data_repository_task::CreateDataRepositoryTask::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_data_repository_task::CreateDataRepositoryTask::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_data_repository_task::CreateDataRepositoryTaskOutput,
-        crate::operation::create_data_repository_task::CreateDataRepositoryTaskError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_data_repository_task::CreateDataRepositoryTaskOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_data_repository_task::CreateDataRepositoryTaskError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_data_repository_task::CreateDataRepositoryTask::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_data_repository_task::CreateDataRepositoryTask::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_data_repository_task::CreateDataRepositoryTaskOutput, crate::operation::create_data_repository_task::CreateDataRepositoryTaskError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Specifies the type of data repository task to create.</p>
     /// <ul>
     /// <li>
@@ -185,7 +172,7 @@ impl CreateDataRepositoryTaskFluentBuilder {
     /// <p>A file must also meet the last accessed time criteria specified in for the file to be released.</p>
     /// </note></li>
     /// </ul>
-    pub fn set_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_paths(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_paths(input);
         self
     }
@@ -200,7 +187,7 @@ impl CreateDataRepositoryTaskFluentBuilder {
     /// <p>A file must also meet the last accessed time criteria specified in for the file to be released.</p>
     /// </note></li>
     /// </ul>
-    pub fn get_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_paths(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_paths()
     }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
@@ -255,12 +242,12 @@ impl CreateDataRepositoryTaskFluentBuilder {
         self
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
     /// <p>Specifies the amount of data to release, in GiB, by an Amazon File Cache <code>AUTO_RELEASE_DATA</code> task that automatically releases files from the cache.</p>
@@ -292,3 +279,4 @@ impl CreateDataRepositoryTaskFluentBuilder {
         self.inner.get_release_configuration()
     }
 }
+

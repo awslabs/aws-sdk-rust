@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutResourcePolicyInput {
+pub struct PutResourcePolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource for which the policy is being created.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The JSON-formatted resource policy to create.</p>
@@ -12,21 +12,21 @@ pub struct PutResourcePolicyInput {
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl PutResourcePolicyInput {
+impl  PutResourcePolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource for which the policy is being created.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The JSON-formatted resource policy to create.</p>
-    pub fn resource_policy(&self) -> ::std::option::Option<&str> {
+    pub fn resource_policy(&self) -> ::std::option::Option<& str> {
         self.resource_policy.as_deref()
     }
     /// <p>A unique identifier for a revision of the resource policy.</p>
-    pub fn policy_revision_id(&self) -> ::std::option::Option<&str> {
+    pub fn policy_revision_id(&self) -> ::std::option::Option<& str> {
         self.policy_revision_id.as_deref()
     }
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl PutResourcePolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource for which the policy is being created.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource for which the policy is being created.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl PutResourcePolicyInputBuilder {
     }
     /// <p>The JSON-formatted resource policy to create.</p>
     pub fn set_resource_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_policy = input;
-        self
+        self.resource_policy = input; self
     }
     /// <p>The JSON-formatted resource policy to create.</p>
     pub fn get_resource_policy(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl PutResourcePolicyInputBuilder {
     }
     /// <p>A unique identifier for a revision of the resource policy.</p>
     pub fn set_policy_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_revision_id = input;
-        self
+        self.policy_revision_id = input; self
     }
     /// <p>A unique identifier for a revision of the resource policy.</p>
     pub fn get_policy_revision_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,22 +96,26 @@ impl PutResourcePolicyInputBuilder {
     }
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`PutResourcePolicyInput`](crate::operation::put_resource_policy::PutResourcePolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_resource_policy::PutResourcePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_resource_policy::PutResourcePolicyInput {
-            resource_arn: self.resource_arn,
-            resource_policy: self.resource_policy,
-            policy_revision_id: self.policy_revision_id,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_resource_policy::PutResourcePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_resource_policy::PutResourcePolicyInput {
+                resource_arn: self.resource_arn
+                ,
+                resource_policy: self.resource_policy
+                ,
+                policy_revision_id: self.policy_revision_id
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

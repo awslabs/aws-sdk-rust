@@ -3,17 +3,16 @@
 /// <p>Parameters that are required to generate or verify Visa PVV (PIN Verification Value).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VisaPinVerificationValue {
+pub struct VisaPinVerificationValue  {
     /// <p>The encrypted PIN block data to verify.</p>
     pub encrypted_pin_block: ::std::string::String,
     /// <p>The value for PIN verification index. It is used in the Visa PIN algorithm to calculate the PVV (PIN Verification Value).</p>
     pub pin_verification_key_index: i32,
 }
-impl VisaPinVerificationValue {
+impl  VisaPinVerificationValue  {
     /// <p>The encrypted PIN block data to verify.</p>
-    pub fn encrypted_pin_block(&self) -> &str {
-        use std::ops::Deref;
-        self.encrypted_pin_block.deref()
+    pub fn encrypted_pin_block(&self) -> & str {
+        use std::ops::Deref; self.encrypted_pin_block.deref()
     }
     /// <p>The value for PIN verification index. It is used in the Visa PIN algorithm to calculate the PVV (PIN Verification Value).</p>
     pub fn pin_verification_key_index(&self) -> i32 {
@@ -43,8 +42,7 @@ impl VisaPinVerificationValueBuilder {
     }
     /// <p>The encrypted PIN block data to verify.</p>
     pub fn set_encrypted_pin_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.encrypted_pin_block = input;
-        self
+        self.encrypted_pin_block = input; self
     }
     /// <p>The encrypted PIN block data to verify.</p>
     pub fn get_encrypted_pin_block(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl VisaPinVerificationValueBuilder {
     }
     /// <p>The value for PIN verification index. It is used in the Visa PIN algorithm to calculate the PVV (PIN Verification Value).</p>
     pub fn set_pin_verification_key_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.pin_verification_key_index = input;
-        self
+        self.pin_verification_key_index = input; self
     }
     /// <p>The value for PIN verification index. It is used in the Visa PIN algorithm to calculate the PVV (PIN Verification Value).</p>
     pub fn get_pin_verification_key_index(&self) -> &::std::option::Option<i32> {
@@ -70,19 +67,20 @@ impl VisaPinVerificationValueBuilder {
     /// - [`encrypted_pin_block`](crate::types::builders::VisaPinVerificationValueBuilder::encrypted_pin_block)
     /// - [`pin_verification_key_index`](crate::types::builders::VisaPinVerificationValueBuilder::pin_verification_key_index)
     pub fn build(self) -> ::std::result::Result<crate::types::VisaPinVerificationValue, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VisaPinVerificationValue {
-            encrypted_pin_block: self.encrypted_pin_block.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "encrypted_pin_block",
-                    "encrypted_pin_block was not specified but it is required when building VisaPinVerificationValue",
-                )
-            })?,
-            pin_verification_key_index: self.pin_verification_key_index.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "pin_verification_key_index",
-                    "pin_verification_key_index was not specified but it is required when building VisaPinVerificationValue",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VisaPinVerificationValue {
+                encrypted_pin_block: self.encrypted_pin_block
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("encrypted_pin_block", "encrypted_pin_block was not specified but it is required when building VisaPinVerificationValue")
+                    )?
+                ,
+                pin_verification_key_index: self.pin_verification_key_index
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("pin_verification_key_index", "pin_verification_key_index was not specified but it is required when building VisaPinVerificationValue")
+                    )?
+                ,
+            }
+        )
     }
 }
+

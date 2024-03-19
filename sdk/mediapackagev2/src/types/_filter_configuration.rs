@@ -3,7 +3,7 @@
 /// <p>Filter configuration includes settings for manifest filtering, start and end times, and time delay that apply to all of your egress requests for this manifest.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FilterConfiguration {
+pub struct FilterConfiguration  {
     /// <p>Optionally specify one or more manifest filters for all of your manifest egress requests. When you include a manifest filter, note that you cannot use an identical manifest filter query parameter for this manifest's endpoint URL.</p>
     pub manifest_filter: ::std::option::Option<::std::string::String>,
     /// <p>Optionally specify the start time for all of your manifest egress requests. When you include start time, note that you cannot use start time query parameters for this manifest's endpoint URL.</p>
@@ -13,17 +13,17 @@ pub struct FilterConfiguration {
     /// <p>Optionally specify the time delay for all of your manifest egress requests. Enter a value that is smaller than your endpoint's startover window. When you include time delay, note that you cannot use time delay query parameters for this manifest's endpoint URL.</p>
     pub time_delay_seconds: ::std::option::Option<i32>,
 }
-impl FilterConfiguration {
+impl  FilterConfiguration  {
     /// <p>Optionally specify one or more manifest filters for all of your manifest egress requests. When you include a manifest filter, note that you cannot use an identical manifest filter query parameter for this manifest's endpoint URL.</p>
-    pub fn manifest_filter(&self) -> ::std::option::Option<&str> {
+    pub fn manifest_filter(&self) -> ::std::option::Option<& str> {
         self.manifest_filter.as_deref()
     }
     /// <p>Optionally specify the start time for all of your manifest egress requests. When you include start time, note that you cannot use start time query parameters for this manifest's endpoint URL.</p>
-    pub fn start(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start.as_ref()
     }
     /// <p>Optionally specify the end time for all of your manifest egress requests. When you include end time, note that you cannot use end time query parameters for this manifest's endpoint URL.</p>
-    pub fn end(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end.as_ref()
     }
     /// <p>Optionally specify the time delay for all of your manifest egress requests. Enter a value that is smaller than your endpoint's startover window. When you include time delay, note that you cannot use time delay query parameters for this manifest's endpoint URL.</p>
@@ -55,8 +55,7 @@ impl FilterConfigurationBuilder {
     }
     /// <p>Optionally specify one or more manifest filters for all of your manifest egress requests. When you include a manifest filter, note that you cannot use an identical manifest filter query parameter for this manifest's endpoint URL.</p>
     pub fn set_manifest_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.manifest_filter = input;
-        self
+        self.manifest_filter = input; self
     }
     /// <p>Optionally specify one or more manifest filters for all of your manifest egress requests. When you include a manifest filter, note that you cannot use an identical manifest filter query parameter for this manifest's endpoint URL.</p>
     pub fn get_manifest_filter(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl FilterConfigurationBuilder {
     }
     /// <p>Optionally specify the start time for all of your manifest egress requests. When you include start time, note that you cannot use start time query parameters for this manifest's endpoint URL.</p>
     pub fn set_start(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start = input;
-        self
+        self.start = input; self
     }
     /// <p>Optionally specify the start time for all of your manifest egress requests. When you include start time, note that you cannot use start time query parameters for this manifest's endpoint URL.</p>
     pub fn get_start(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -83,8 +81,7 @@ impl FilterConfigurationBuilder {
     }
     /// <p>Optionally specify the end time for all of your manifest egress requests. When you include end time, note that you cannot use end time query parameters for this manifest's endpoint URL.</p>
     pub fn set_end(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end = input;
-        self
+        self.end = input; self
     }
     /// <p>Optionally specify the end time for all of your manifest egress requests. When you include end time, note that you cannot use end time query parameters for this manifest's endpoint URL.</p>
     pub fn get_end(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -97,8 +94,7 @@ impl FilterConfigurationBuilder {
     }
     /// <p>Optionally specify the time delay for all of your manifest egress requests. Enter a value that is smaller than your endpoint's startover window. When you include time delay, note that you cannot use time delay query parameters for this manifest's endpoint URL.</p>
     pub fn set_time_delay_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.time_delay_seconds = input;
-        self
+        self.time_delay_seconds = input; self
     }
     /// <p>Optionally specify the time delay for all of your manifest egress requests. Enter a value that is smaller than your endpoint's startover window. When you include time delay, note that you cannot use time delay query parameters for this manifest's endpoint URL.</p>
     pub fn get_time_delay_seconds(&self) -> &::std::option::Option<i32> {
@@ -107,10 +103,15 @@ impl FilterConfigurationBuilder {
     /// Consumes the builder and constructs a [`FilterConfiguration`](crate::types::FilterConfiguration).
     pub fn build(self) -> crate::types::FilterConfiguration {
         crate::types::FilterConfiguration {
-            manifest_filter: self.manifest_filter,
-            start: self.start,
-            end: self.end,
-            time_delay_seconds: self.time_delay_seconds,
+            manifest_filter: self.manifest_filter
+            ,
+            start: self.start
+            ,
+            end: self.end
+            ,
+            time_delay_seconds: self.time_delay_seconds
+            ,
         }
     }
 }
+

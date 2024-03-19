@@ -3,22 +3,23 @@
 /// <p>A list of CloudFront functions that are associated with a cache behavior in a CloudFront distribution. CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FunctionAssociations {
+pub struct FunctionAssociations  {
     /// <p>The number of CloudFront functions in the list.</p>
     pub quantity: i32,
     /// <p>The CloudFront functions that are associated with a cache behavior in a CloudFront distribution. CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::FunctionAssociation>>,
+    pub items: ::std::option::Option<::std::vec::Vec::<crate::types::FunctionAssociation>>,
 }
-impl FunctionAssociations {
+impl  FunctionAssociations  {
     /// <p>The number of CloudFront functions in the list.</p>
     pub fn quantity(&self) -> i32 {
         self.quantity
     }
     /// <p>The CloudFront functions that are associated with a cache behavior in a CloudFront distribution. CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
-    pub fn items(&self) -> &[crate::types::FunctionAssociation] {
-        self.items.as_deref().unwrap_or_default()
+    pub fn items(&self) -> & [crate::types::FunctionAssociation] {
+        self.items.as_deref()
+        .unwrap_or_default()
     }
 }
 impl FunctionAssociations {
@@ -33,7 +34,7 @@ impl FunctionAssociations {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FunctionAssociationsBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::FunctionAssociation>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::FunctionAssociation>>,
 }
 impl FunctionAssociationsBuilder {
     /// <p>The number of CloudFront functions in the list.</p>
@@ -44,8 +45,7 @@ impl FunctionAssociationsBuilder {
     }
     /// <p>The number of CloudFront functions in the list.</p>
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.quantity = input;
-        self
+        self.quantity = input; self
     }
     /// <p>The number of CloudFront functions in the list.</p>
     pub fn get_quantity(&self) -> &::std::option::Option<i32> {
@@ -58,31 +58,33 @@ impl FunctionAssociationsBuilder {
     /// <p>The CloudFront functions that are associated with a cache behavior in a CloudFront distribution. CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
     pub fn items(mut self, input: crate::types::FunctionAssociation) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The CloudFront functions that are associated with a cache behavior in a CloudFront distribution. CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FunctionAssociation>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FunctionAssociation>>) -> Self {
+        self.items = input; self
     }
     /// <p>The CloudFront functions that are associated with a cache behavior in a CloudFront distribution. CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FunctionAssociation>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FunctionAssociation>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`FunctionAssociations`](crate::types::FunctionAssociations).
     /// This method will fail if any of the following fields are not set:
     /// - [`quantity`](crate::types::builders::FunctionAssociationsBuilder::quantity)
     pub fn build(self) -> ::std::result::Result<crate::types::FunctionAssociations, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FunctionAssociations {
-            quantity: self.quantity.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "quantity",
-                    "quantity was not specified but it is required when building FunctionAssociations",
-                )
-            })?,
-            items: self.items,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FunctionAssociations {
+                quantity: self.quantity
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("quantity", "quantity was not specified but it is required when building FunctionAssociations")
+                    )?
+                ,
+                items: self.items
+                ,
+            }
+        )
     }
 }
+

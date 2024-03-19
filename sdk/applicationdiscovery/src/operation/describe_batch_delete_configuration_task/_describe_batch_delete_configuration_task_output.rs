@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeBatchDeleteConfigurationTaskOutput {
+pub struct DescribeBatchDeleteConfigurationTaskOutput  {
     /// <p>The <code>BatchDeleteConfigurationTask</code> that represents the deletion task being executed.</p>
     pub task: ::std::option::Option<crate::types::BatchDeleteConfigurationTask>,
     _request_id: Option<String>,
 }
-impl DescribeBatchDeleteConfigurationTaskOutput {
+impl  DescribeBatchDeleteConfigurationTaskOutput  {
     /// <p>The <code>BatchDeleteConfigurationTask</code> that represents the deletion task being executed.</p>
-    pub fn task(&self) -> ::std::option::Option<&crate::types::BatchDeleteConfigurationTask> {
+    pub fn task(&self) -> ::std::option::Option<& crate::types::BatchDeleteConfigurationTask> {
         self.task.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeBatchDeleteConfigurationTaskOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeBatchDeleteConfigurationTaskOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBatchDeleteConfigurationTaskOutput`](crate::operation::describe_batch_delete_configuration_task::DescribeBatchDeleteConfigurationTaskOutput).
     pub fn builder() -> crate::operation::describe_batch_delete_configuration_task::builders::DescribeBatchDeleteConfigurationTaskOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeBatchDeleteConfigurationTaskOutputBuilder {
     }
     /// <p>The <code>BatchDeleteConfigurationTask</code> that represents the deletion task being executed.</p>
     pub fn set_task(mut self, input: ::std::option::Option<crate::types::BatchDeleteConfigurationTask>) -> Self {
-        self.task = input;
-        self
+        self.task = input; self
     }
     /// <p>The <code>BatchDeleteConfigurationTask</code> that represents the deletion task being executed.</p>
     pub fn get_task(&self) -> &::std::option::Option<crate::types::BatchDeleteConfigurationTask> {
         &self.task
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeBatchDeleteConfigurationTaskOutput`](crate::operation::describe_batch_delete_configuration_task::DescribeBatchDeleteConfigurationTaskOutput).
     pub fn build(self) -> crate::operation::describe_batch_delete_configuration_task::DescribeBatchDeleteConfigurationTaskOutput {
         crate::operation::describe_batch_delete_configuration_task::DescribeBatchDeleteConfigurationTaskOutput {
-            task: self.task,
+            task: self.task
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

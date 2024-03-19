@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetComputeAuthTokenOutput {
+pub struct GetComputeAuthTokenOutput  {
     /// <p>A unique identifier for the fleet that the compute is registered to.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
@@ -21,41 +21,41 @@ pub struct GetComputeAuthTokenOutput {
     pub expiration_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl GetComputeAuthTokenOutput {
+impl  GetComputeAuthTokenOutput  {
     /// <p>A unique identifier for the fleet that the compute is registered to.</p>
-    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_id(&self) -> ::std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
-    pub fn fleet_arn(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> ::std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
     /// <p>The name of the compute resource that the authentication token is issued to.</p>
-    pub fn compute_name(&self) -> ::std::option::Option<&str> {
+    pub fn compute_name(&self) -> ::std::option::Option<& str> {
         self.compute_name.as_deref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to an Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
-    pub fn compute_arn(&self) -> ::std::option::Option<&str> {
+    pub fn compute_arn(&self) -> ::std::option::Option<& str> {
         self.compute_arn.as_deref()
     }
     /// <p>A valid temporary authentication token.</p>
-    pub fn auth_token(&self) -> ::std::option::Option<&str> {
+    pub fn auth_token(&self) -> ::std::option::Option<& str> {
         self.auth_token.as_deref()
     }
     /// <p>The amount of time until the authentication token is no longer valid.</p>
-    pub fn expiration_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn expiration_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.expiration_timestamp.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetComputeAuthTokenOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetComputeAuthTokenOutput {
     /// Creates a new builder-style object to manufacture [`GetComputeAuthTokenOutput`](crate::operation::get_compute_auth_token::GetComputeAuthTokenOutput).
     pub fn builder() -> crate::operation::get_compute_auth_token::builders::GetComputeAuthTokenOutputBuilder {
@@ -83,8 +83,7 @@ impl GetComputeAuthTokenOutputBuilder {
     }
     /// <p>A unique identifier for the fleet that the compute is registered to.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_id = input;
-        self
+        self.fleet_id = input; self
     }
     /// <p>A unique identifier for the fleet that the compute is registered to.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +100,7 @@ impl GetComputeAuthTokenOutputBuilder {
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
     pub fn set_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_arn = input;
-        self
+        self.fleet_arn = input; self
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
@@ -117,8 +115,7 @@ impl GetComputeAuthTokenOutputBuilder {
     }
     /// <p>The name of the compute resource that the authentication token is issued to.</p>
     pub fn set_compute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.compute_name = input;
-        self
+        self.compute_name = input; self
     }
     /// <p>The name of the compute resource that the authentication token is issued to.</p>
     pub fn get_compute_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +132,7 @@ impl GetComputeAuthTokenOutputBuilder {
     /// ::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
     pub fn set_compute_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.compute_arn = input;
-        self
+        self.compute_arn = input; self
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to an Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
@@ -151,8 +147,7 @@ impl GetComputeAuthTokenOutputBuilder {
     }
     /// <p>A valid temporary authentication token.</p>
     pub fn set_auth_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auth_token = input;
-        self
+        self.auth_token = input; self
     }
     /// <p>A valid temporary authentication token.</p>
     pub fn get_auth_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,32 +160,38 @@ impl GetComputeAuthTokenOutputBuilder {
     }
     /// <p>The amount of time until the authentication token is no longer valid.</p>
     pub fn set_expiration_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.expiration_timestamp = input;
-        self
+        self.expiration_timestamp = input; self
     }
     /// <p>The amount of time until the authentication token is no longer valid.</p>
     pub fn get_expiration_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.expiration_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetComputeAuthTokenOutput`](crate::operation::get_compute_auth_token::GetComputeAuthTokenOutput).
     pub fn build(self) -> crate::operation::get_compute_auth_token::GetComputeAuthTokenOutput {
         crate::operation::get_compute_auth_token::GetComputeAuthTokenOutput {
-            fleet_id: self.fleet_id,
-            fleet_arn: self.fleet_arn,
-            compute_name: self.compute_name,
-            compute_arn: self.compute_arn,
-            auth_token: self.auth_token,
-            expiration_timestamp: self.expiration_timestamp,
+            fleet_id: self.fleet_id
+            ,
+            fleet_arn: self.fleet_arn
+            ,
+            compute_name: self.compute_name
+            ,
+            compute_arn: self.compute_arn
+            ,
+            auth_token: self.auth_token
+            ,
+            expiration_timestamp: self.expiration_timestamp
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

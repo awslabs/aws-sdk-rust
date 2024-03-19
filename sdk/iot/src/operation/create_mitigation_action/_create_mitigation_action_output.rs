@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateMitigationActionOutput {
+pub struct CreateMitigationActionOutput  {
     /// <p>The ARN for the new mitigation action.</p>
     pub action_arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the new mitigation action.</p>
     pub action_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateMitigationActionOutput {
+impl  CreateMitigationActionOutput  {
     /// <p>The ARN for the new mitigation action.</p>
-    pub fn action_arn(&self) -> ::std::option::Option<&str> {
+    pub fn action_arn(&self) -> ::std::option::Option<& str> {
         self.action_arn.as_deref()
     }
     /// <p>A unique identifier for the new mitigation action.</p>
-    pub fn action_id(&self) -> ::std::option::Option<&str> {
+    pub fn action_id(&self) -> ::std::option::Option<& str> {
         self.action_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateMitigationActionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateMitigationActionOutput {
     /// Creates a new builder-style object to manufacture [`CreateMitigationActionOutput`](crate::operation::create_mitigation_action::CreateMitigationActionOutput).
     pub fn builder() -> crate::operation::create_mitigation_action::builders::CreateMitigationActionOutputBuilder {
@@ -47,8 +47,7 @@ impl CreateMitigationActionOutputBuilder {
     }
     /// <p>The ARN for the new mitigation action.</p>
     pub fn set_action_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_arn = input;
-        self
+        self.action_arn = input; self
     }
     /// <p>The ARN for the new mitigation action.</p>
     pub fn get_action_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl CreateMitigationActionOutputBuilder {
     }
     /// <p>A unique identifier for the new mitigation action.</p>
     pub fn set_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_id = input;
-        self
+        self.action_id = input; self
     }
     /// <p>A unique identifier for the new mitigation action.</p>
     pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.action_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateMitigationActionOutput`](crate::operation::create_mitigation_action::CreateMitigationActionOutput).
     pub fn build(self) -> crate::operation::create_mitigation_action::CreateMitigationActionOutput {
         crate::operation::create_mitigation_action::CreateMitigationActionOutput {
-            action_arn: self.action_arn,
-            action_id: self.action_id,
+            action_arn: self.action_arn
+            ,
+            action_id: self.action_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,36 +2,38 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RunTaskOutput {
+pub struct RunTaskOutput  {
     /// <p>A full description of the tasks that were run. The tasks that were successfully placed on your cluster are described here.</p>
     /// <p></p>
-    pub tasks: ::std::option::Option<::std::vec::Vec<crate::types::Task>>,
+    pub tasks: ::std::option::Option<::std::vec::Vec::<crate::types::Task>>,
     /// <p>Any failures associated with the call.</p>
     /// <p>For information about how to address failures, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages.html#service-event-messages-list">Service event messages</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API failure reasons</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub failures: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
+    pub failures: ::std::option::Option<::std::vec::Vec::<crate::types::Failure>>,
     _request_id: Option<String>,
 }
-impl RunTaskOutput {
+impl  RunTaskOutput  {
     /// <p>A full description of the tasks that were run. The tasks that were successfully placed on your cluster are described here.</p>
     /// <p></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tasks.is_none()`.
-    pub fn tasks(&self) -> &[crate::types::Task] {
-        self.tasks.as_deref().unwrap_or_default()
+    pub fn tasks(&self) -> & [crate::types::Task] {
+        self.tasks.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Any failures associated with the call.</p>
     /// <p>For information about how to address failures, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages.html#service-event-messages-list">Service event messages</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API failure reasons</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failures.is_none()`.
-    pub fn failures(&self) -> &[crate::types::Failure] {
-        self.failures.as_deref().unwrap_or_default()
+    pub fn failures(&self) -> & [crate::types::Failure] {
+        self.failures.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for RunTaskOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RunTaskOutput {
     /// Creates a new builder-style object to manufacture [`RunTaskOutput`](crate::operation::run_task::RunTaskOutput).
     pub fn builder() -> crate::operation::run_task::builders::RunTaskOutputBuilder {
@@ -43,8 +45,8 @@ impl RunTaskOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RunTaskOutputBuilder {
-    pub(crate) tasks: ::std::option::Option<::std::vec::Vec<crate::types::Task>>,
-    pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
+    pub(crate) tasks: ::std::option::Option<::std::vec::Vec::<crate::types::Task>>,
+    pub(crate) failures: ::std::option::Option<::std::vec::Vec::<crate::types::Failure>>,
     _request_id: Option<String>,
 }
 impl RunTaskOutputBuilder {
@@ -56,19 +58,18 @@ impl RunTaskOutputBuilder {
     /// <p></p>
     pub fn tasks(mut self, input: crate::types::Task) -> Self {
         let mut v = self.tasks.unwrap_or_default();
-        v.push(input);
-        self.tasks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tasks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A full description of the tasks that were run. The tasks that were successfully placed on your cluster are described here.</p>
     /// <p></p>
-    pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Task>>) -> Self {
-        self.tasks = input;
-        self
+    pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Task>>) -> Self {
+        self.tasks = input; self
     }
     /// <p>A full description of the tasks that were run. The tasks that were successfully placed on your cluster are described here.</p>
     /// <p></p>
-    pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Task>> {
+    pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Task>> {
         &self.tasks
     }
     /// Appends an item to `failures`.
@@ -79,36 +80,38 @@ impl RunTaskOutputBuilder {
     /// <p>For information about how to address failures, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages.html#service-event-messages-list">Service event messages</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API failure reasons</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn failures(mut self, input: crate::types::Failure) -> Self {
         let mut v = self.failures.unwrap_or_default();
-        v.push(input);
-        self.failures = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failures = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Any failures associated with the call.</p>
     /// <p>For information about how to address failures, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages.html#service-event-messages-list">Service event messages</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API failure reasons</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>) -> Self {
-        self.failures = input;
-        self
+    pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Failure>>) -> Self {
+        self.failures = input; self
     }
     /// <p>Any failures associated with the call.</p>
     /// <p>For information about how to address failures, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages.html#service-event-messages-list">Service event messages</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API failure reasons</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Failure>> {
+    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Failure>> {
         &self.failures
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RunTaskOutput`](crate::operation::run_task::RunTaskOutput).
     pub fn build(self) -> crate::operation::run_task::RunTaskOutput {
         crate::operation::run_task::RunTaskOutput {
-            tasks: self.tasks,
-            failures: self.failures,
+            tasks: self.tasks
+            ,
+            failures: self.failures
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

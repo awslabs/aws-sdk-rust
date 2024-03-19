@@ -2,30 +2,32 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateLicenseSpecificationsForResourceInput {
+pub struct UpdateLicenseSpecificationsForResourceInput  {
     /// <p>Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>ARNs of the license configurations to add.</p>
-    pub add_license_specifications: ::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>>,
+    pub add_license_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::LicenseSpecification>>,
     /// <p>ARNs of the license configurations to remove.</p>
-    pub remove_license_specifications: ::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>>,
+    pub remove_license_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::LicenseSpecification>>,
 }
-impl UpdateLicenseSpecificationsForResourceInput {
+impl  UpdateLicenseSpecificationsForResourceInput  {
     /// <p>Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>ARNs of the license configurations to add.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_license_specifications.is_none()`.
-    pub fn add_license_specifications(&self) -> &[crate::types::LicenseSpecification] {
-        self.add_license_specifications.as_deref().unwrap_or_default()
+    pub fn add_license_specifications(&self) -> & [crate::types::LicenseSpecification] {
+        self.add_license_specifications.as_deref()
+        .unwrap_or_default()
     }
     /// <p>ARNs of the license configurations to remove.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_license_specifications.is_none()`.
-    pub fn remove_license_specifications(&self) -> &[crate::types::LicenseSpecification] {
-        self.remove_license_specifications.as_deref().unwrap_or_default()
+    pub fn remove_license_specifications(&self) -> & [crate::types::LicenseSpecification] {
+        self.remove_license_specifications.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateLicenseSpecificationsForResourceInput {
@@ -40,8 +42,8 @@ impl UpdateLicenseSpecificationsForResourceInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateLicenseSpecificationsForResourceInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) add_license_specifications: ::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>>,
-    pub(crate) remove_license_specifications: ::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>>,
+    pub(crate) add_license_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::LicenseSpecification>>,
+    pub(crate) remove_license_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::LicenseSpecification>>,
 }
 impl UpdateLicenseSpecificationsForResourceInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
@@ -52,8 +54,7 @@ impl UpdateLicenseSpecificationsForResourceInputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,17 +67,16 @@ impl UpdateLicenseSpecificationsForResourceInputBuilder {
     /// <p>ARNs of the license configurations to add.</p>
     pub fn add_license_specifications(mut self, input: crate::types::LicenseSpecification) -> Self {
         let mut v = self.add_license_specifications.unwrap_or_default();
-        v.push(input);
-        self.add_license_specifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.add_license_specifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>ARNs of the license configurations to add.</p>
-    pub fn set_add_license_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>>) -> Self {
-        self.add_license_specifications = input;
-        self
+    pub fn set_add_license_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LicenseSpecification>>) -> Self {
+        self.add_license_specifications = input; self
     }
     /// <p>ARNs of the license configurations to add.</p>
-    pub fn get_add_license_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>> {
+    pub fn get_add_license_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LicenseSpecification>> {
         &self.add_license_specifications
     }
     /// Appends an item to `remove_license_specifications`.
@@ -86,32 +86,30 @@ impl UpdateLicenseSpecificationsForResourceInputBuilder {
     /// <p>ARNs of the license configurations to remove.</p>
     pub fn remove_license_specifications(mut self, input: crate::types::LicenseSpecification) -> Self {
         let mut v = self.remove_license_specifications.unwrap_or_default();
-        v.push(input);
-        self.remove_license_specifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.remove_license_specifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>ARNs of the license configurations to remove.</p>
-    pub fn set_remove_license_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>>) -> Self {
-        self.remove_license_specifications = input;
-        self
+    pub fn set_remove_license_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LicenseSpecification>>) -> Self {
+        self.remove_license_specifications = input; self
     }
     /// <p>ARNs of the license configurations to remove.</p>
-    pub fn get_remove_license_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>> {
+    pub fn get_remove_license_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LicenseSpecification>> {
         &self.remove_license_specifications
     }
     /// Consumes the builder and constructs a [`UpdateLicenseSpecificationsForResourceInput`](crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceInput {
-                resource_arn: self.resource_arn,
-                add_license_specifications: self.add_license_specifications,
-                remove_license_specifications: self.remove_license_specifications,
-            },
+                resource_arn: self.resource_arn
+                ,
+                add_license_specifications: self.add_license_specifications
+                ,
+                remove_license_specifications: self.remove_license_specifications
+                ,
+            }
         )
     }
 }
+

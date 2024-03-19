@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBackupJobsOutput {
+pub struct ListBackupJobsOutput  {
     /// <p>An array of structures containing metadata about your backup jobs returned in JSON format.</p>
-    pub backup_jobs: ::std::option::Option<::std::vec::Vec<crate::types::BackupJob>>,
+    pub backup_jobs: ::std::option::Option<::std::vec::Vec::<crate::types::BackupJob>>,
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListBackupJobsOutput {
+impl  ListBackupJobsOutput  {
     /// <p>An array of structures containing metadata about your backup jobs returned in JSON format.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.backup_jobs.is_none()`.
-    pub fn backup_jobs(&self) -> &[crate::types::BackupJob] {
-        self.backup_jobs.as_deref().unwrap_or_default()
+    pub fn backup_jobs(&self) -> & [crate::types::BackupJob] {
+        self.backup_jobs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListBackupJobsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListBackupJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListBackupJobsOutput`](crate::operation::list_backup_jobs::ListBackupJobsOutput).
     pub fn builder() -> crate::operation::list_backup_jobs::builders::ListBackupJobsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListBackupJobsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBackupJobsOutputBuilder {
-    pub(crate) backup_jobs: ::std::option::Option<::std::vec::Vec<crate::types::BackupJob>>,
+    pub(crate) backup_jobs: ::std::option::Option<::std::vec::Vec::<crate::types::BackupJob>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListBackupJobsOutputBuilder {
     /// <p>An array of structures containing metadata about your backup jobs returned in JSON format.</p>
     pub fn backup_jobs(mut self, input: crate::types::BackupJob) -> Self {
         let mut v = self.backup_jobs.unwrap_or_default();
-        v.push(input);
-        self.backup_jobs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.backup_jobs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of structures containing metadata about your backup jobs returned in JSON format.</p>
-    pub fn set_backup_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BackupJob>>) -> Self {
-        self.backup_jobs = input;
-        self
+    pub fn set_backup_jobs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BackupJob>>) -> Self {
+        self.backup_jobs = input; self
     }
     /// <p>An array of structures containing metadata about your backup jobs returned in JSON format.</p>
-    pub fn get_backup_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BackupJob>> {
+    pub fn get_backup_jobs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BackupJob>> {
         &self.backup_jobs
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
@@ -69,28 +69,30 @@ impl ListBackupJobsOutputBuilder {
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListBackupJobsOutput`](crate::operation::list_backup_jobs::ListBackupJobsOutput).
     pub fn build(self) -> crate::operation::list_backup_jobs::ListBackupJobsOutput {
         crate::operation::list_backup_jobs::ListBackupJobsOutput {
-            backup_jobs: self.backup_jobs,
-            next_token: self.next_token,
+            backup_jobs: self.backup_jobs
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

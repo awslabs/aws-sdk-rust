@@ -3,7 +3,7 @@
 /// <p>An object that contains details about the destination of the export job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportDestination {
+pub struct ExportDestination  {
     /// <p>The data format of the final export job file, can be one of the following:</p>
     /// <ul>
     /// <li>
@@ -15,7 +15,7 @@ pub struct ExportDestination {
     /// <p>An Amazon S3 pre-signed URL that points to the generated export file.</p>
     pub s3_url: ::std::option::Option<::std::string::String>,
 }
-impl ExportDestination {
+impl  ExportDestination  {
     /// <p>The data format of the final export job file, can be one of the following:</p>
     /// <ul>
     /// <li>
@@ -23,11 +23,11 @@ impl ExportDestination {
     /// <li>
     /// <p><code>JSON</code> - A Json file.</p></li>
     /// </ul>
-    pub fn data_format(&self) -> &crate::types::DataFormat {
+    pub fn data_format(&self) -> & crate::types::DataFormat {
         &self.data_format
     }
     /// <p>An Amazon S3 pre-signed URL that points to the generated export file.</p>
-    pub fn s3_url(&self) -> ::std::option::Option<&str> {
+    pub fn s3_url(&self) -> ::std::option::Option<& str> {
         self.s3_url.as_deref()
     }
 }
@@ -66,8 +66,7 @@ impl ExportDestinationBuilder {
     /// <p><code>JSON</code> - A Json file.</p></li>
     /// </ul>
     pub fn set_data_format(mut self, input: ::std::option::Option<crate::types::DataFormat>) -> Self {
-        self.data_format = input;
-        self
+        self.data_format = input; self
     }
     /// <p>The data format of the final export job file, can be one of the following:</p>
     /// <ul>
@@ -86,8 +85,7 @@ impl ExportDestinationBuilder {
     }
     /// <p>An Amazon S3 pre-signed URL that points to the generated export file.</p>
     pub fn set_s3_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_url = input;
-        self
+        self.s3_url = input; self
     }
     /// <p>An Amazon S3 pre-signed URL that points to the generated export file.</p>
     pub fn get_s3_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,14 +95,17 @@ impl ExportDestinationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`data_format`](crate::types::builders::ExportDestinationBuilder::data_format)
     pub fn build(self) -> ::std::result::Result<crate::types::ExportDestination, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ExportDestination {
-            data_format: self.data_format.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_format",
-                    "data_format was not specified but it is required when building ExportDestination",
-                )
-            })?,
-            s3_url: self.s3_url,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ExportDestination {
+                data_format: self.data_format
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_format", "data_format was not specified but it is required when building ExportDestination")
+                    )?
+                ,
+                s3_url: self.s3_url
+                ,
+            }
+        )
     }
 }
+

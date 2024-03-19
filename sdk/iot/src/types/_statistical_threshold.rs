@@ -3,13 +3,13 @@
 /// <p>A statistical ranking (percentile) that indicates a threshold value by which a behavior is determined to be in compliance or in violation of the behavior.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StatisticalThreshold {
+pub struct StatisticalThreshold  {
     /// <p>The percentile that resolves to a threshold value by which compliance with a behavior is determined. Metrics are collected over the specified period (<code>durationSeconds</code>) from all reporting devices in your account and statistical ranks are calculated. Then, the measurements from a device are collected over the same period. If the accumulated measurements from the device fall above or below (<code>comparisonOperator</code>) the value associated with the percentile specified, then the device is considered to be in compliance with the behavior, otherwise a violation occurs.</p>
     pub statistic: ::std::option::Option<::std::string::String>,
 }
-impl StatisticalThreshold {
+impl  StatisticalThreshold  {
     /// <p>The percentile that resolves to a threshold value by which compliance with a behavior is determined. Metrics are collected over the specified period (<code>durationSeconds</code>) from all reporting devices in your account and statistical ranks are calculated. Then, the measurements from a device are collected over the same period. If the accumulated measurements from the device fall above or below (<code>comparisonOperator</code>) the value associated with the percentile specified, then the device is considered to be in compliance with the behavior, otherwise a violation occurs.</p>
-    pub fn statistic(&self) -> ::std::option::Option<&str> {
+    pub fn statistic(&self) -> ::std::option::Option<& str> {
         self.statistic.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl StatisticalThresholdBuilder {
     }
     /// <p>The percentile that resolves to a threshold value by which compliance with a behavior is determined. Metrics are collected over the specified period (<code>durationSeconds</code>) from all reporting devices in your account and statistical ranks are calculated. Then, the measurements from a device are collected over the same period. If the accumulated measurements from the device fall above or below (<code>comparisonOperator</code>) the value associated with the percentile specified, then the device is considered to be in compliance with the behavior, otherwise a violation occurs.</p>
     pub fn set_statistic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.statistic = input;
-        self
+        self.statistic = input; self
     }
     /// <p>The percentile that resolves to a threshold value by which compliance with a behavior is determined. Metrics are collected over the specified period (<code>durationSeconds</code>) from all reporting devices in your account and statistical ranks are calculated. Then, the measurements from a device are collected over the same period. If the accumulated measurements from the device fall above or below (<code>comparisonOperator</code>) the value associated with the percentile specified, then the device is considered to be in compliance with the behavior, otherwise a violation occurs.</p>
     pub fn get_statistic(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl StatisticalThresholdBuilder {
     }
     /// Consumes the builder and constructs a [`StatisticalThreshold`](crate::types::StatisticalThreshold).
     pub fn build(self) -> crate::types::StatisticalThreshold {
-        crate::types::StatisticalThreshold { statistic: self.statistic }
+        crate::types::StatisticalThreshold {
+            statistic: self.statistic
+            ,
+        }
     }
 }
+

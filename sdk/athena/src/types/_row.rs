@@ -3,16 +3,17 @@
 /// <p>The rows that make up a query result table.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Row {
+pub struct Row  {
     /// <p>The data that populates a row in a query result table.</p>
-    pub data: ::std::option::Option<::std::vec::Vec<crate::types::Datum>>,
+    pub data: ::std::option::Option<::std::vec::Vec::<crate::types::Datum>>,
 }
-impl Row {
+impl  Row  {
     /// <p>The data that populates a row in a query result table.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data.is_none()`.
-    pub fn data(&self) -> &[crate::types::Datum] {
-        self.data.as_deref().unwrap_or_default()
+    pub fn data(&self) -> & [crate::types::Datum] {
+        self.data.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Row {
@@ -26,7 +27,7 @@ impl Row {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RowBuilder {
-    pub(crate) data: ::std::option::Option<::std::vec::Vec<crate::types::Datum>>,
+    pub(crate) data: ::std::option::Option<::std::vec::Vec::<crate::types::Datum>>,
 }
 impl RowBuilder {
     /// Appends an item to `data`.
@@ -36,21 +37,24 @@ impl RowBuilder {
     /// <p>The data that populates a row in a query result table.</p>
     pub fn data(mut self, input: crate::types::Datum) -> Self {
         let mut v = self.data.unwrap_or_default();
-        v.push(input);
-        self.data = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.data = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The data that populates a row in a query result table.</p>
-    pub fn set_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Datum>>) -> Self {
-        self.data = input;
-        self
+    pub fn set_data(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Datum>>) -> Self {
+        self.data = input; self
     }
     /// <p>The data that populates a row in a query result table.</p>
-    pub fn get_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Datum>> {
+    pub fn get_data(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Datum>> {
         &self.data
     }
     /// Consumes the builder and constructs a [`Row`](crate::types::Row).
     pub fn build(self) -> crate::types::Row {
-        crate::types::Row { data: self.data }
+        crate::types::Row {
+            data: self.data
+            ,
+        }
     }
 }
+

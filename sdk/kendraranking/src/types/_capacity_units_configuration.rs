@@ -3,12 +3,12 @@
 /// <p>Sets additional capacity units configured for your rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code> API. You can add and remove capacity units to fit your usage requirements.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CapacityUnitsConfiguration {
+pub struct CapacityUnitsConfiguration  {
     /// <p>The amount of extra capacity for your rescore execution plan.</p>
     /// <p>A single extra capacity unit for a rescore execution plan provides 0.01 rescore requests per second. You can add up to 1000 extra capacity units.</p>
     pub rescore_capacity_units: i32,
 }
-impl CapacityUnitsConfiguration {
+impl  CapacityUnitsConfiguration  {
     /// <p>The amount of extra capacity for your rescore execution plan.</p>
     /// <p>A single extra capacity unit for a rescore execution plan provides 0.01 rescore requests per second. You can add up to 1000 extra capacity units.</p>
     pub fn rescore_capacity_units(&self) -> i32 {
@@ -39,8 +39,7 @@ impl CapacityUnitsConfigurationBuilder {
     /// <p>The amount of extra capacity for your rescore execution plan.</p>
     /// <p>A single extra capacity unit for a rescore execution plan provides 0.01 rescore requests per second. You can add up to 1000 extra capacity units.</p>
     pub fn set_rescore_capacity_units(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.rescore_capacity_units = input;
-        self
+        self.rescore_capacity_units = input; self
     }
     /// <p>The amount of extra capacity for your rescore execution plan.</p>
     /// <p>A single extra capacity unit for a rescore execution plan provides 0.01 rescore requests per second. You can add up to 1000 extra capacity units.</p>
@@ -51,13 +50,15 @@ impl CapacityUnitsConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`rescore_capacity_units`](crate::types::builders::CapacityUnitsConfigurationBuilder::rescore_capacity_units)
     pub fn build(self) -> ::std::result::Result<crate::types::CapacityUnitsConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CapacityUnitsConfiguration {
-            rescore_capacity_units: self.rescore_capacity_units.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rescore_capacity_units",
-                    "rescore_capacity_units was not specified but it is required when building CapacityUnitsConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CapacityUnitsConfiguration {
+                rescore_capacity_units: self.rescore_capacity_units
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rescore_capacity_units", "rescore_capacity_units was not specified but it is required when building CapacityUnitsConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

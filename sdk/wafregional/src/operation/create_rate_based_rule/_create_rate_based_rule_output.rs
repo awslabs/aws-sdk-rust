@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRateBasedRuleOutput {
+pub struct CreateRateBasedRuleOutput  {
     /// <p>The <code>RateBasedRule</code> that is returned in the <code>CreateRateBasedRule</code> response.</p>
     pub rule: ::std::option::Option<crate::types::RateBasedRule>,
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     pub change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateRateBasedRuleOutput {
+impl  CreateRateBasedRuleOutput  {
     /// <p>The <code>RateBasedRule</code> that is returned in the <code>CreateRateBasedRule</code> response.</p>
-    pub fn rule(&self) -> ::std::option::Option<&crate::types::RateBasedRule> {
+    pub fn rule(&self) -> ::std::option::Option<& crate::types::RateBasedRule> {
         self.rule.as_ref()
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> ::std::option::Option<&str> {
+    pub fn change_token(&self) -> ::std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateRateBasedRuleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateRateBasedRuleOutput {
     /// Creates a new builder-style object to manufacture [`CreateRateBasedRuleOutput`](crate::operation::create_rate_based_rule::CreateRateBasedRuleOutput).
     pub fn builder() -> crate::operation::create_rate_based_rule::builders::CreateRateBasedRuleOutputBuilder {
@@ -47,8 +47,7 @@ impl CreateRateBasedRuleOutputBuilder {
     }
     /// <p>The <code>RateBasedRule</code> that is returned in the <code>CreateRateBasedRule</code> response.</p>
     pub fn set_rule(mut self, input: ::std::option::Option<crate::types::RateBasedRule>) -> Self {
-        self.rule = input;
-        self
+        self.rule = input; self
     }
     /// <p>The <code>RateBasedRule</code> that is returned in the <code>CreateRateBasedRule</code> response.</p>
     pub fn get_rule(&self) -> &::std::option::Option<crate::types::RateBasedRule> {
@@ -61,28 +60,30 @@ impl CreateRateBasedRuleOutputBuilder {
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.change_token = input;
-        self
+        self.change_token = input; self
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.change_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateRateBasedRuleOutput`](crate::operation::create_rate_based_rule::CreateRateBasedRuleOutput).
     pub fn build(self) -> crate::operation::create_rate_based_rule::CreateRateBasedRuleOutput {
         crate::operation::create_rate_based_rule::CreateRateBasedRuleOutput {
-            rule: self.rule,
-            change_token: self.change_token,
+            rule: self.rule
+            ,
+            change_token: self.change_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyAuthenticationProfileInput {
+pub struct ModifyAuthenticationProfileInput  {
     /// <p>The name of the authentication profile to replace.</p>
     pub authentication_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The new content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.</p>
     pub authentication_profile_content: ::std::option::Option<::std::string::String>,
 }
-impl ModifyAuthenticationProfileInput {
+impl  ModifyAuthenticationProfileInput  {
     /// <p>The name of the authentication profile to replace.</p>
-    pub fn authentication_profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn authentication_profile_name(&self) -> ::std::option::Option<& str> {
         self.authentication_profile_name.as_deref()
     }
     /// <p>The new content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.</p>
-    pub fn authentication_profile_content(&self) -> ::std::option::Option<&str> {
+    pub fn authentication_profile_content(&self) -> ::std::option::Option<& str> {
         self.authentication_profile_content.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ModifyAuthenticationProfileInputBuilder {
     }
     /// <p>The name of the authentication profile to replace.</p>
     pub fn set_authentication_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.authentication_profile_name = input;
-        self
+        self.authentication_profile_name = input; self
     }
     /// <p>The name of the authentication profile to replace.</p>
     pub fn get_authentication_profile_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl ModifyAuthenticationProfileInputBuilder {
     }
     /// <p>The new content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.</p>
     pub fn set_authentication_profile_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.authentication_profile_content = input;
-        self
+        self.authentication_profile_content = input; self
     }
     /// <p>The new content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.</p>
     pub fn get_authentication_profile_content(&self) -> &::std::option::Option<::std::string::String> {
         &self.authentication_profile_content
     }
     /// Consumes the builder and constructs a [`ModifyAuthenticationProfileInput`](crate::operation::modify_authentication_profile::ModifyAuthenticationProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_authentication_profile::ModifyAuthenticationProfileInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::modify_authentication_profile::ModifyAuthenticationProfileInput {
-            authentication_profile_name: self.authentication_profile_name,
-            authentication_profile_content: self.authentication_profile_content,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_authentication_profile::ModifyAuthenticationProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_authentication_profile::ModifyAuthenticationProfileInput {
+                authentication_profile_name: self.authentication_profile_name
+                ,
+                authentication_profile_content: self.authentication_profile_content
+                ,
+            }
+        )
     }
 }
+

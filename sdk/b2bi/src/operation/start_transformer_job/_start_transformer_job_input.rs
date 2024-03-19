@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartTransformerJobInput {
+pub struct StartTransformerJobInput  {
     /// <p>Specifies the location of the input file for the transformation. The location consists of an Amazon S3 bucket and prefix.</p>
     pub input_file: ::std::option::Option<crate::types::S3Location>,
     /// <p>Specifies the location of the output file for the transformation. The location consists of an Amazon S3 bucket and prefix.</p>
@@ -12,21 +12,21 @@ pub struct StartTransformerJobInput {
     /// <p>Reserved for future use.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl StartTransformerJobInput {
+impl  StartTransformerJobInput  {
     /// <p>Specifies the location of the input file for the transformation. The location consists of an Amazon S3 bucket and prefix.</p>
-    pub fn input_file(&self) -> ::std::option::Option<&crate::types::S3Location> {
+    pub fn input_file(&self) -> ::std::option::Option<& crate::types::S3Location> {
         self.input_file.as_ref()
     }
     /// <p>Specifies the location of the output file for the transformation. The location consists of an Amazon S3 bucket and prefix.</p>
-    pub fn output_location(&self) -> ::std::option::Option<&crate::types::S3Location> {
+    pub fn output_location(&self) -> ::std::option::Option<& crate::types::S3Location> {
         self.output_location.as_ref()
     }
     /// <p>Specifies the system-assigned unique identifier for the transformer.</p>
-    pub fn transformer_id(&self) -> ::std::option::Option<&str> {
+    pub fn transformer_id(&self) -> ::std::option::Option<& str> {
         self.transformer_id.as_deref()
     }
     /// <p>Reserved for future use.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl StartTransformerJobInputBuilder {
     }
     /// <p>Specifies the location of the input file for the transformation. The location consists of an Amazon S3 bucket and prefix.</p>
     pub fn set_input_file(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
-        self.input_file = input;
-        self
+        self.input_file = input; self
     }
     /// <p>Specifies the location of the input file for the transformation. The location consists of an Amazon S3 bucket and prefix.</p>
     pub fn get_input_file(&self) -> &::std::option::Option<crate::types::S3Location> {
@@ -70,8 +69,7 @@ impl StartTransformerJobInputBuilder {
     }
     /// <p>Specifies the location of the output file for the transformation. The location consists of an Amazon S3 bucket and prefix.</p>
     pub fn set_output_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
-        self.output_location = input;
-        self
+        self.output_location = input; self
     }
     /// <p>Specifies the location of the output file for the transformation. The location consists of an Amazon S3 bucket and prefix.</p>
     pub fn get_output_location(&self) -> &::std::option::Option<crate::types::S3Location> {
@@ -85,8 +83,7 @@ impl StartTransformerJobInputBuilder {
     }
     /// <p>Specifies the system-assigned unique identifier for the transformer.</p>
     pub fn set_transformer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transformer_id = input;
-        self
+        self.transformer_id = input; self
     }
     /// <p>Specifies the system-assigned unique identifier for the transformer.</p>
     pub fn get_transformer_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,23 +96,26 @@ impl StartTransformerJobInputBuilder {
     }
     /// <p>Reserved for future use.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Reserved for future use.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`StartTransformerJobInput`](crate::operation::start_transformer_job::StartTransformerJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_transformer_job::StartTransformerJobInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_transformer_job::StartTransformerJobInput {
-            input_file: self.input_file,
-            output_location: self.output_location,
-            transformer_id: self.transformer_id,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_transformer_job::StartTransformerJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_transformer_job::StartTransformerJobInput {
+                input_file: self.input_file
+                ,
+                output_location: self.output_location
+                ,
+                transformer_id: self.transformer_id
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

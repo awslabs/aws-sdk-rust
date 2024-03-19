@@ -3,7 +3,7 @@
 /// <p>A FUOTA task.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FuotaTask {
+pub struct FuotaTask  {
     /// <p>The ID of a FUOTA task.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The arn of a FUOTA task.</p>
@@ -11,17 +11,17 @@ pub struct FuotaTask {
     /// <p>The name of a FUOTA task.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl FuotaTask {
+impl  FuotaTask  {
     /// <p>The ID of a FUOTA task.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The arn of a FUOTA task.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of a FUOTA task.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl FuotaTaskBuilder {
     }
     /// <p>The ID of a FUOTA task.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of a FUOTA task.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl FuotaTaskBuilder {
     }
     /// <p>The arn of a FUOTA task.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The arn of a FUOTA task.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl FuotaTaskBuilder {
     }
     /// <p>The name of a FUOTA task.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of a FUOTA task.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl FuotaTaskBuilder {
     /// Consumes the builder and constructs a [`FuotaTask`](crate::types::FuotaTask).
     pub fn build(self) -> crate::types::FuotaTask {
         crate::types::FuotaTask {
-            id: self.id,
-            arn: self.arn,
-            name: self.name,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
         }
     }
 }
+

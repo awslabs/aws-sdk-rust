@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateInputOutput {
+pub struct UpdateInputOutput  {
     /// <p>Information about the configuration of the input.</p>
     pub input_configuration: ::std::option::Option<crate::types::InputConfiguration>,
     _request_id: Option<String>,
 }
-impl UpdateInputOutput {
+impl  UpdateInputOutput  {
     /// <p>Information about the configuration of the input.</p>
-    pub fn input_configuration(&self) -> ::std::option::Option<&crate::types::InputConfiguration> {
+    pub fn input_configuration(&self) -> ::std::option::Option<& crate::types::InputConfiguration> {
         self.input_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateInputOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateInputOutput {
     /// Creates a new builder-style object to manufacture [`UpdateInputOutput`](crate::operation::update_input::UpdateInputOutput).
     pub fn builder() -> crate::operation::update_input::builders::UpdateInputOutputBuilder {
@@ -40,27 +40,28 @@ impl UpdateInputOutputBuilder {
     }
     /// <p>Information about the configuration of the input.</p>
     pub fn set_input_configuration(mut self, input: ::std::option::Option<crate::types::InputConfiguration>) -> Self {
-        self.input_configuration = input;
-        self
+        self.input_configuration = input; self
     }
     /// <p>Information about the configuration of the input.</p>
     pub fn get_input_configuration(&self) -> &::std::option::Option<crate::types::InputConfiguration> {
         &self.input_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateInputOutput`](crate::operation::update_input::UpdateInputOutput).
     pub fn build(self) -> crate::operation::update_input::UpdateInputOutput {
         crate::operation::update_input::UpdateInputOutput {
-            input_configuration: self.input_configuration,
+            input_configuration: self.input_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

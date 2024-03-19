@@ -12,3 +12,4 @@ pub use crate::types::error::_execute_statement_exception::ExecuteStatementExcep
 pub use crate::types::error::_active_statements_exceeded_exception::ActiveStatementsExceededExceptionBuilder;
 
 pub use crate::types::error::_batch_execute_statement_exception::BatchExecuteStatementExceptionBuilder;
+

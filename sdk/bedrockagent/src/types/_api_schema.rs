@@ -22,11 +22,7 @@ impl ApiSchema {
     /// Tries to convert the enum instance into [`Payload`](crate::types::ApiSchema::Payload), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_payload(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let ApiSchema::Payload(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ApiSchema::Payload(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Payload`](crate::types::ApiSchema::Payload).
     pub fn is_payload(&self) -> bool {
@@ -35,11 +31,7 @@ impl ApiSchema {
     /// Tries to convert the enum instance into [`S3`](crate::types::ApiSchema::S3), extracting the inner [`S3Identifier`](crate::types::S3Identifier).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3(&self) -> ::std::result::Result<&crate::types::S3Identifier, &Self> {
-        if let ApiSchema::S3(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ApiSchema::S3(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`S3`](crate::types::ApiSchema::S3).
     pub fn is_s3(&self) -> bool {
@@ -59,3 +51,4 @@ impl ::std::fmt::Debug for ApiSchema {
         }
     }
 }
+

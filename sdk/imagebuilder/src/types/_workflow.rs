@@ -3,7 +3,7 @@
 /// <p>Defines a process that Image Builder uses to build and test images during the image creation process.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Workflow {
+pub struct Workflow  {
     /// <p>The Amazon Resource Name (ARN) of the workflow resource.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the workflow resource.</p>
@@ -27,64 +27,65 @@ pub struct Workflow {
     /// <p>The timestamp when Image Builder created the workflow resource.</p>
     pub date_created: ::std::option::Option<::std::string::String>,
     /// <p>The tags that apply to the workflow resource</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>An array of input parameters that that the image workflow uses to control actions or configure settings.</p>
-    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowParameterDetail>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec::<crate::types::WorkflowParameterDetail>>,
 }
-impl Workflow {
+impl  Workflow  {
     /// <p>The Amazon Resource Name (ARN) of the workflow resource.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the workflow resource.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The workflow resource version. Workflow resources are immutable. To make a change, you can clone a workflow or create a new version.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The description of the workflow.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Describes what change has been made in this version of the workflow, or what makes this version different from other versions of the workflow.</p>
-    pub fn change_description(&self) -> ::std::option::Option<&str> {
+    pub fn change_description(&self) -> ::std::option::Option<& str> {
         self.change_description.as_deref()
     }
     /// <p>Specifies the image creation stage that the workflow applies to. Image Builder currently supports build and test workflows.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::WorkflowType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::WorkflowType> {
         self.r#type.as_ref()
     }
     /// <p>Describes the current status of the workflow and the reason for that status.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::WorkflowState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::WorkflowState> {
         self.state.as_ref()
     }
     /// <p>The owner of the workflow resource.</p>
-    pub fn owner(&self) -> ::std::option::Option<&str> {
+    pub fn owner(&self) -> ::std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>Contains the YAML document content for the workflow.</p>
-    pub fn data(&self) -> ::std::option::Option<&str> {
+    pub fn data(&self) -> ::std::option::Option<& str> {
         self.data.as_deref()
     }
     /// <p>The KMS key identifier used to encrypt the workflow resource.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The timestamp when Image Builder created the workflow resource.</p>
-    pub fn date_created(&self) -> ::std::option::Option<&str> {
+    pub fn date_created(&self) -> ::std::option::Option<& str> {
         self.date_created.as_deref()
     }
     /// <p>The tags that apply to the workflow resource</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>An array of input parameters that that the image workflow uses to control actions or configure settings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
-    pub fn parameters(&self) -> &[crate::types::WorkflowParameterDetail] {
-        self.parameters.as_deref().unwrap_or_default()
+    pub fn parameters(&self) -> & [crate::types::WorkflowParameterDetail] {
+        self.parameters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Workflow {
@@ -109,8 +110,8 @@ pub struct WorkflowBuilder {
     pub(crate) data: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) date_created: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowParameterDetail>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec::<crate::types::WorkflowParameterDetail>>,
 }
 impl WorkflowBuilder {
     /// <p>The Amazon Resource Name (ARN) of the workflow resource.</p>
@@ -120,8 +121,7 @@ impl WorkflowBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the workflow resource.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the workflow resource.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +134,7 @@ impl WorkflowBuilder {
     }
     /// <p>The name of the workflow resource.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the workflow resource.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +147,7 @@ impl WorkflowBuilder {
     }
     /// <p>The workflow resource version. Workflow resources are immutable. To make a change, you can clone a workflow or create a new version.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The workflow resource version. Workflow resources are immutable. To make a change, you can clone a workflow or create a new version.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,8 +160,7 @@ impl WorkflowBuilder {
     }
     /// <p>The description of the workflow.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the workflow.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -176,8 +173,7 @@ impl WorkflowBuilder {
     }
     /// <p>Describes what change has been made in this version of the workflow, or what makes this version different from other versions of the workflow.</p>
     pub fn set_change_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.change_description = input;
-        self
+        self.change_description = input; self
     }
     /// <p>Describes what change has been made in this version of the workflow, or what makes this version different from other versions of the workflow.</p>
     pub fn get_change_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -190,8 +186,7 @@ impl WorkflowBuilder {
     }
     /// <p>Specifies the image creation stage that the workflow applies to. Image Builder currently supports build and test workflows.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Specifies the image creation stage that the workflow applies to. Image Builder currently supports build and test workflows.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
@@ -204,8 +199,7 @@ impl WorkflowBuilder {
     }
     /// <p>Describes the current status of the workflow and the reason for that status.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::WorkflowState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Describes the current status of the workflow and the reason for that status.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::WorkflowState> {
@@ -218,8 +212,7 @@ impl WorkflowBuilder {
     }
     /// <p>The owner of the workflow resource.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// <p>The owner of the workflow resource.</p>
     pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -232,8 +225,7 @@ impl WorkflowBuilder {
     }
     /// <p>Contains the YAML document content for the workflow.</p>
     pub fn set_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
     }
     /// <p>Contains the YAML document content for the workflow.</p>
     pub fn get_data(&self) -> &::std::option::Option<::std::string::String> {
@@ -246,8 +238,7 @@ impl WorkflowBuilder {
     }
     /// <p>The KMS key identifier used to encrypt the workflow resource.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The KMS key identifier used to encrypt the workflow resource.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -260,8 +251,7 @@ impl WorkflowBuilder {
     }
     /// <p>The timestamp when Image Builder created the workflow resource.</p>
     pub fn set_date_created(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.date_created = input;
-        self
+        self.date_created = input; self
     }
     /// <p>The timestamp when Image Builder created the workflow resource.</p>
     pub fn get_date_created(&self) -> &::std::option::Option<::std::string::String> {
@@ -274,17 +264,16 @@ impl WorkflowBuilder {
     /// <p>The tags that apply to the workflow resource</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags that apply to the workflow resource</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags that apply to the workflow resource</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Appends an item to `parameters`.
@@ -294,35 +283,48 @@ impl WorkflowBuilder {
     /// <p>An array of input parameters that that the image workflow uses to control actions or configure settings.</p>
     pub fn parameters(mut self, input: crate::types::WorkflowParameterDetail) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of input parameters that that the image workflow uses to control actions or configure settings.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowParameterDetail>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::WorkflowParameterDetail>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>An array of input parameters that that the image workflow uses to control actions or configure settings.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowParameterDetail>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::WorkflowParameterDetail>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`Workflow`](crate::types::Workflow).
     pub fn build(self) -> crate::types::Workflow {
         crate::types::Workflow {
-            arn: self.arn,
-            name: self.name,
-            version: self.version,
-            description: self.description,
-            change_description: self.change_description,
-            r#type: self.r#type,
-            state: self.state,
-            owner: self.owner,
-            data: self.data,
-            kms_key_id: self.kms_key_id,
-            date_created: self.date_created,
-            tags: self.tags,
-            parameters: self.parameters,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            version: self.version
+            ,
+            description: self.description
+            ,
+            change_description: self.change_description
+            ,
+            r#type: self.r#type
+            ,
+            state: self.state
+            ,
+            owner: self.owner
+            ,
+            data: self.data
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            date_created: self.date_created
+            ,
+            tags: self.tags
+            ,
+            parameters: self.parameters
+            ,
         }
     }
 }
+

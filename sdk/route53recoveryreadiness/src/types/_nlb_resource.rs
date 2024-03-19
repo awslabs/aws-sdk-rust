@@ -3,13 +3,13 @@
 /// <p>The Network Load Balancer resource that a DNS target resource points to.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NlbResource {
+pub struct NlbResource  {
     /// <p>The Network Load Balancer resource Amazon Resource Name (ARN).</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl NlbResource {
+impl  NlbResource  {
     /// <p>The Network Load Balancer resource Amazon Resource Name (ARN).</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl NlbResourceBuilder {
     }
     /// <p>The Network Load Balancer resource Amazon Resource Name (ARN).</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Network Load Balancer resource Amazon Resource Name (ARN).</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl NlbResourceBuilder {
     }
     /// Consumes the builder and constructs a [`NlbResource`](crate::types::NlbResource).
     pub fn build(self) -> crate::types::NlbResource {
-        crate::types::NlbResource { arn: self.arn }
+        crate::types::NlbResource {
+            arn: self.arn
+            ,
+        }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A document specifying changes to a sampling rule's configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SamplingRuleUpdate {
+pub struct SamplingRuleUpdate  {
     /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
     pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
@@ -27,19 +27,19 @@ pub struct SamplingRuleUpdate {
     /// <p>Matches the path from a request URL.</p>
     pub url_path: ::std::option::Option<::std::string::String>,
     /// <p>Matches attributes derived from the request.</p>
-    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl SamplingRuleUpdate {
+impl  SamplingRuleUpdate  {
     /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
-    pub fn rule_name(&self) -> ::std::option::Option<&str> {
+    pub fn rule_name(&self) -> ::std::option::Option<& str> {
         self.rule_name.as_deref()
     }
     /// <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
-    pub fn rule_arn(&self) -> ::std::option::Option<&str> {
+    pub fn rule_arn(&self) -> ::std::option::Option<& str> {
         self.rule_arn.as_deref()
     }
     /// <p>Matches the ARN of the Amazon Web Services resource on which the service runs.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The priority of the sampling rule.</p>
@@ -55,27 +55,27 @@ impl SamplingRuleUpdate {
         self.reservoir_size
     }
     /// <p>Matches the hostname from a request URL.</p>
-    pub fn host(&self) -> ::std::option::Option<&str> {
+    pub fn host(&self) -> ::std::option::Option<& str> {
         self.host.as_deref()
     }
     /// <p>Matches the <code>name</code> that the service uses to identify itself in segments.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<& str> {
         self.service_name.as_deref()
     }
     /// <p>Matches the <code>origin</code> that the service uses to identify its type in segments.</p>
-    pub fn service_type(&self) -> ::std::option::Option<&str> {
+    pub fn service_type(&self) -> ::std::option::Option<& str> {
         self.service_type.as_deref()
     }
     /// <p>Matches the HTTP method of a request.</p>
-    pub fn http_method(&self) -> ::std::option::Option<&str> {
+    pub fn http_method(&self) -> ::std::option::Option<& str> {
         self.http_method.as_deref()
     }
     /// <p>Matches the path from a request URL.</p>
-    pub fn url_path(&self) -> ::std::option::Option<&str> {
+    pub fn url_path(&self) -> ::std::option::Option<& str> {
         self.url_path.as_deref()
     }
     /// <p>Matches attributes derived from the request.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
 }
@@ -101,7 +101,7 @@ pub struct SamplingRuleUpdateBuilder {
     pub(crate) service_type: ::std::option::Option<::std::string::String>,
     pub(crate) http_method: ::std::option::Option<::std::string::String>,
     pub(crate) url_path: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl SamplingRuleUpdateBuilder {
     /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
@@ -111,8 +111,7 @@ impl SamplingRuleUpdateBuilder {
     }
     /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
     pub fn set_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_name = input;
-        self
+        self.rule_name = input; self
     }
     /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
     pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +124,7 @@ impl SamplingRuleUpdateBuilder {
     }
     /// <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
     pub fn set_rule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_arn = input;
-        self
+        self.rule_arn = input; self
     }
     /// <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
     pub fn get_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +137,7 @@ impl SamplingRuleUpdateBuilder {
     }
     /// <p>Matches the ARN of the Amazon Web Services resource on which the service runs.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>Matches the ARN of the Amazon Web Services resource on which the service runs.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +150,7 @@ impl SamplingRuleUpdateBuilder {
     }
     /// <p>The priority of the sampling rule.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// <p>The priority of the sampling rule.</p>
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
@@ -167,8 +163,7 @@ impl SamplingRuleUpdateBuilder {
     }
     /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
     pub fn set_fixed_rate(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.fixed_rate = input;
-        self
+        self.fixed_rate = input; self
     }
     /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
     pub fn get_fixed_rate(&self) -> &::std::option::Option<f64> {
@@ -181,8 +176,7 @@ impl SamplingRuleUpdateBuilder {
     }
     /// <p>A fixed number of matching requests to instrument per second, prior to applying the fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.</p>
     pub fn set_reservoir_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.reservoir_size = input;
-        self
+        self.reservoir_size = input; self
     }
     /// <p>A fixed number of matching requests to instrument per second, prior to applying the fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.</p>
     pub fn get_reservoir_size(&self) -> &::std::option::Option<i32> {
@@ -195,8 +189,7 @@ impl SamplingRuleUpdateBuilder {
     }
     /// <p>Matches the hostname from a request URL.</p>
     pub fn set_host(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host = input;
-        self
+        self.host = input; self
     }
     /// <p>Matches the hostname from a request URL.</p>
     pub fn get_host(&self) -> &::std::option::Option<::std::string::String> {
@@ -209,8 +202,7 @@ impl SamplingRuleUpdateBuilder {
     }
     /// <p>Matches the <code>name</code> that the service uses to identify itself in segments.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>Matches the <code>name</code> that the service uses to identify itself in segments.</p>
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -223,8 +215,7 @@ impl SamplingRuleUpdateBuilder {
     }
     /// <p>Matches the <code>origin</code> that the service uses to identify its type in segments.</p>
     pub fn set_service_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_type = input;
-        self
+        self.service_type = input; self
     }
     /// <p>Matches the <code>origin</code> that the service uses to identify its type in segments.</p>
     pub fn get_service_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -237,8 +228,7 @@ impl SamplingRuleUpdateBuilder {
     }
     /// <p>Matches the HTTP method of a request.</p>
     pub fn set_http_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.http_method = input;
-        self
+        self.http_method = input; self
     }
     /// <p>Matches the HTTP method of a request.</p>
     pub fn get_http_method(&self) -> &::std::option::Option<::std::string::String> {
@@ -251,8 +241,7 @@ impl SamplingRuleUpdateBuilder {
     }
     /// <p>Matches the path from a request URL.</p>
     pub fn set_url_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url_path = input;
-        self
+        self.url_path = input; self
     }
     /// <p>Matches the path from a request URL.</p>
     pub fn get_url_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -265,34 +254,46 @@ impl SamplingRuleUpdateBuilder {
     /// <p>Matches attributes derived from the request.</p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Matches attributes derived from the request.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>Matches attributes derived from the request.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`SamplingRuleUpdate`](crate::types::SamplingRuleUpdate).
     pub fn build(self) -> crate::types::SamplingRuleUpdate {
         crate::types::SamplingRuleUpdate {
-            rule_name: self.rule_name,
-            rule_arn: self.rule_arn,
-            resource_arn: self.resource_arn,
-            priority: self.priority,
-            fixed_rate: self.fixed_rate,
-            reservoir_size: self.reservoir_size,
-            host: self.host,
-            service_name: self.service_name,
-            service_type: self.service_type,
-            http_method: self.http_method,
-            url_path: self.url_path,
-            attributes: self.attributes,
+            rule_name: self.rule_name
+            ,
+            rule_arn: self.rule_arn
+            ,
+            resource_arn: self.resource_arn
+            ,
+            priority: self.priority
+            ,
+            fixed_rate: self.fixed_rate
+            ,
+            reservoir_size: self.reservoir_size
+            ,
+            host: self.host
+            ,
+            service_name: self.service_name
+            ,
+            service_type: self.service_type
+            ,
+            http_method: self.http_method
+            ,
+            url_path: self.url_path
+            ,
+            attributes: self.attributes
+            ,
         }
     }
 }
+

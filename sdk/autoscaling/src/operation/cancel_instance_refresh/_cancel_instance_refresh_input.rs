@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelInstanceRefreshInput {
+pub struct CancelInstanceRefreshInput  {
     /// <p>The name of the Auto Scaling group.</p>
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
 }
-impl CancelInstanceRefreshInput {
+impl  CancelInstanceRefreshInput  {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<& str> {
         self.auto_scaling_group_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl CancelInstanceRefreshInputBuilder {
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auto_scaling_group_name = input;
-        self
+        self.auto_scaling_group_name = input; self
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.auto_scaling_group_name
     }
     /// Consumes the builder and constructs a [`CancelInstanceRefreshInput`](crate::operation::cancel_instance_refresh::CancelInstanceRefreshInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::cancel_instance_refresh::CancelInstanceRefreshInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::cancel_instance_refresh::CancelInstanceRefreshInput {
-            auto_scaling_group_name: self.auto_scaling_group_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_instance_refresh::CancelInstanceRefreshInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_instance_refresh::CancelInstanceRefreshInput {
+                auto_scaling_group_name: self.auto_scaling_group_name
+                ,
+            }
+        )
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFleetInput {
+pub struct UpdateFleetInput  {
     /// <p>The ID of the fleet to update.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>An updated description of the fleet.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl UpdateFleetInput {
+impl  UpdateFleetInput  {
     /// <p>The ID of the fleet to update.</p>
-    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_id(&self) -> ::std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>An updated description of the fleet.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateFleetInputBuilder {
     }
     /// <p>The ID of the fleet to update.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_id = input;
-        self
+        self.fleet_id = input; self
     }
     /// <p>The ID of the fleet to update.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl UpdateFleetInputBuilder {
     }
     /// <p>An updated description of the fleet.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>An updated description of the fleet.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,9 +62,14 @@ impl UpdateFleetInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateFleetInput`](crate::operation::update_fleet::UpdateFleetInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_fleet::UpdateFleetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_fleet::UpdateFleetInput {
-            fleet_id: self.fleet_id,
-            description: self.description,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_fleet::UpdateFleetInput {
+                fleet_id: self.fleet_id
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

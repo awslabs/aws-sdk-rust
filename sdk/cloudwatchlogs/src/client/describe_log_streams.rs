@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeLogStreams`](crate::operation::describe_log_streams::builders::DescribeLogStreamsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_log_streams::builders::DescribeLogStreamsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`log_group_name(impl Into<String>)`](crate::operation::describe_log_streams::builders::DescribeLogStreamsFluentBuilder::log_group_name) / [`set_log_group_name(Option<String>)`](crate::operation::describe_log_streams::builders::DescribeLogStreamsFluentBuilder::set_log_group_name):<br>required: **false**<br><p>The name of the log group.</p><note>  <p>You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.</p> </note><br>
     ///   - [`log_group_identifier(impl Into<String>)`](crate::operation::describe_log_streams::builders::DescribeLogStreamsFluentBuilder::log_group_identifier) / [`set_log_group_identifier(Option<String>)`](crate::operation::describe_log_streams::builders::DescribeLogStreamsFluentBuilder::set_log_group_identifier):<br>required: **false**<br><p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.</p><note>  <p>You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.</p> </note><br>
     ///   - [`log_stream_name_prefix(impl Into<String>)`](crate::operation::describe_log_streams::builders::DescribeLogStreamsFluentBuilder::log_stream_name_prefix) / [`set_log_stream_name_prefix(Option<String>)`](crate::operation::describe_log_streams::builders::DescribeLogStreamsFluentBuilder::set_log_stream_name_prefix):<br>required: **false**<br><p>The prefix to match.</p> <p>If <code>orderBy</code> is <code>LastEventTime</code>, you cannot specify this parameter.</p><br>
@@ -11,11 +11,12 @@ impl super::Client {
     ///   - [`descending(bool)`](crate::operation::describe_log_streams::builders::DescribeLogStreamsFluentBuilder::descending) / [`set_descending(Option<bool>)`](crate::operation::describe_log_streams::builders::DescribeLogStreamsFluentBuilder::set_descending):<br>required: **false**<br><p>If the value is true, results are returned in descending order. If the value is to false, results are returned in ascending order. The default value is false.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_log_streams::builders::DescribeLogStreamsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_log_streams::builders::DescribeLogStreamsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of items to return. (You received this token from a previous call.)</p><br>
     ///   - [`limit(i32)`](crate::operation::describe_log_streams::builders::DescribeLogStreamsFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::describe_log_streams::builders::DescribeLogStreamsFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p><br>
-    /// - On success, responds with [`DescribeLogStreamsOutput`](crate::operation::describe_log_streams::DescribeLogStreamsOutput) with field(s):
+                            /// - On success, responds with [`DescribeLogStreamsOutput`](crate::operation::describe_log_streams::DescribeLogStreamsOutput) with field(s):
     ///   - [`log_streams(Option<Vec::<LogStream>>)`](crate::operation::describe_log_streams::DescribeLogStreamsOutput::log_streams): <p>The log streams.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_log_streams::DescribeLogStreamsOutput::next_token): <p>The token for the next set of items to return. The token expires after 24 hours.</p>
-    /// - On failure, responds with [`SdkError<DescribeLogStreamsError>`](crate::operation::describe_log_streams::DescribeLogStreamsError)
+                            /// - On failure, responds with [`SdkError<DescribeLogStreamsError>`](crate::operation::describe_log_streams::DescribeLogStreamsError)
     pub fn describe_log_streams(&self) -> crate::operation::describe_log_streams::builders::DescribeLogStreamsFluentBuilder {
-        crate::operation::describe_log_streams::builders::DescribeLogStreamsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_log_streams::builders::DescribeLogStreamsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

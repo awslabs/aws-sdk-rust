@@ -3,25 +3,23 @@
 /// <p>An Amazon Web Services account that is the administrator account of or a member of a behavior graph.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Account {
+pub struct Account  {
     /// <p>The account identifier of the Amazon Web Services account.</p>
     pub account_id: ::std::string::String,
     /// <p>The Amazon Web Services account root user email address for the Amazon Web Services account.</p>
     pub email_address: ::std::string::String,
 }
-impl Account {
+impl  Account  {
     /// <p>The account identifier of the Amazon Web Services account.</p>
-    pub fn account_id(&self) -> &str {
-        use std::ops::Deref;
-        self.account_id.deref()
+    pub fn account_id(&self) -> & str {
+        use std::ops::Deref; self.account_id.deref()
     }
     /// <p>The Amazon Web Services account root user email address for the Amazon Web Services account.</p>
-    pub fn email_address(&self) -> &str {
-        use std::ops::Deref;
-        self.email_address.deref()
+    pub fn email_address(&self) -> & str {
+        use std::ops::Deref; self.email_address.deref()
     }
 }
-impl ::std::fmt::Debug for Account {
+impl  ::std::fmt::Debug for Account  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Account");
         formatter.field("account_id", &self.account_id);
@@ -52,8 +50,7 @@ impl AccountBuilder {
     }
     /// <p>The account identifier of the Amazon Web Services account.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The account identifier of the Amazon Web Services account.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +64,7 @@ impl AccountBuilder {
     }
     /// <p>The Amazon Web Services account root user email address for the Amazon Web Services account.</p>
     pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email_address = input;
-        self
+        self.email_address = input; self
     }
     /// <p>The Amazon Web Services account root user email address for the Amazon Web Services account.</p>
     pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,20 +75,20 @@ impl AccountBuilder {
     /// - [`account_id`](crate::types::builders::AccountBuilder::account_id)
     /// - [`email_address`](crate::types::builders::AccountBuilder::email_address)
     pub fn build(self) -> ::std::result::Result<crate::types::Account, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Account {
-            account_id: self.account_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "account_id",
-                    "account_id was not specified but it is required when building Account",
-                )
-            })?,
-            email_address: self.email_address.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "email_address",
-                    "email_address was not specified but it is required when building Account",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Account {
+                account_id: self.account_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("account_id", "account_id was not specified but it is required when building Account")
+                    )?
+                ,
+                email_address: self.email_address
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("email_address", "email_address was not specified but it is required when building Account")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for AccountBuilder {
@@ -103,3 +99,4 @@ impl ::std::fmt::Debug for AccountBuilder {
         formatter.finish()
     }
 }
+

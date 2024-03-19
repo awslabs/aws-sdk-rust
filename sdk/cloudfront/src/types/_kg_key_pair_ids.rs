@@ -3,19 +3,19 @@
 /// <p>A list of identifiers for the public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KgKeyPairIds {
+pub struct KgKeyPairIds  {
     /// <p>The identifier of the key group that contains the public keys.</p>
     pub key_group_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of CloudFront key pair identifiers.</p>
     pub key_pair_ids: ::std::option::Option<crate::types::KeyPairIds>,
 }
-impl KgKeyPairIds {
+impl  KgKeyPairIds  {
     /// <p>The identifier of the key group that contains the public keys.</p>
-    pub fn key_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn key_group_id(&self) -> ::std::option::Option<& str> {
         self.key_group_id.as_deref()
     }
     /// <p>A list of CloudFront key pair identifiers.</p>
-    pub fn key_pair_ids(&self) -> ::std::option::Option<&crate::types::KeyPairIds> {
+    pub fn key_pair_ids(&self) -> ::std::option::Option<& crate::types::KeyPairIds> {
         self.key_pair_ids.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl KgKeyPairIdsBuilder {
     }
     /// <p>The identifier of the key group that contains the public keys.</p>
     pub fn set_key_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_group_id = input;
-        self
+        self.key_group_id = input; self
     }
     /// <p>The identifier of the key group that contains the public keys.</p>
     pub fn get_key_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl KgKeyPairIdsBuilder {
     }
     /// <p>A list of CloudFront key pair identifiers.</p>
     pub fn set_key_pair_ids(mut self, input: ::std::option::Option<crate::types::KeyPairIds>) -> Self {
-        self.key_pair_ids = input;
-        self
+        self.key_pair_ids = input; self
     }
     /// <p>A list of CloudFront key pair identifiers.</p>
     pub fn get_key_pair_ids(&self) -> &::std::option::Option<crate::types::KeyPairIds> {
@@ -65,8 +63,11 @@ impl KgKeyPairIdsBuilder {
     /// Consumes the builder and constructs a [`KgKeyPairIds`](crate::types::KgKeyPairIds).
     pub fn build(self) -> crate::types::KgKeyPairIds {
         crate::types::KgKeyPairIds {
-            key_group_id: self.key_group_id,
-            key_pair_ids: self.key_pair_ids,
+            key_group_id: self.key_group_id
+            ,
+            key_pair_ids: self.key_pair_ids
+            ,
         }
     }
 }
+

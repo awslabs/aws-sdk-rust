@@ -3,7 +3,7 @@
 /// <p>The details of the bundle.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BundleDetails {
+pub struct BundleDetails  {
     /// <p>Unique bundle identifier.</p>
     pub bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>Title of the download bundle.</p>
@@ -15,34 +15,35 @@ pub struct BundleDetails {
     /// <p>Icon for the download bundle.</p>
     pub icon_url: ::std::option::Option<::std::string::String>,
     /// <p>Developer desktop or mobile app or website platforms.</p>
-    pub available_platforms: ::std::option::Option<::std::vec::Vec<crate::types::Platform>>,
+    pub available_platforms: ::std::option::Option<::std::vec::Vec::<crate::types::Platform>>,
 }
-impl BundleDetails {
+impl  BundleDetails  {
     /// <p>Unique bundle identifier.</p>
-    pub fn bundle_id(&self) -> ::std::option::Option<&str> {
+    pub fn bundle_id(&self) -> ::std::option::Option<& str> {
         self.bundle_id.as_deref()
     }
     /// <p>Title of the download bundle.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>Version of the download bundle.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>Description of the download bundle.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Icon for the download bundle.</p>
-    pub fn icon_url(&self) -> ::std::option::Option<&str> {
+    pub fn icon_url(&self) -> ::std::option::Option<& str> {
         self.icon_url.as_deref()
     }
     /// <p>Developer desktop or mobile app or website platforms.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.available_platforms.is_none()`.
-    pub fn available_platforms(&self) -> &[crate::types::Platform] {
-        self.available_platforms.as_deref().unwrap_or_default()
+    pub fn available_platforms(&self) -> & [crate::types::Platform] {
+        self.available_platforms.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BundleDetails {
@@ -61,7 +62,7 @@ pub struct BundleDetailsBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) icon_url: ::std::option::Option<::std::string::String>,
-    pub(crate) available_platforms: ::std::option::Option<::std::vec::Vec<crate::types::Platform>>,
+    pub(crate) available_platforms: ::std::option::Option<::std::vec::Vec::<crate::types::Platform>>,
 }
 impl BundleDetailsBuilder {
     /// <p>Unique bundle identifier.</p>
@@ -71,8 +72,7 @@ impl BundleDetailsBuilder {
     }
     /// <p>Unique bundle identifier.</p>
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bundle_id = input;
-        self
+        self.bundle_id = input; self
     }
     /// <p>Unique bundle identifier.</p>
     pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +85,7 @@ impl BundleDetailsBuilder {
     }
     /// <p>Title of the download bundle.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>Title of the download bundle.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +98,7 @@ impl BundleDetailsBuilder {
     }
     /// <p>Version of the download bundle.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>Version of the download bundle.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +111,7 @@ impl BundleDetailsBuilder {
     }
     /// <p>Description of the download bundle.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Description of the download bundle.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +124,7 @@ impl BundleDetailsBuilder {
     }
     /// <p>Icon for the download bundle.</p>
     pub fn set_icon_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.icon_url = input;
-        self
+        self.icon_url = input; self
     }
     /// <p>Icon for the download bundle.</p>
     pub fn get_icon_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,28 +137,34 @@ impl BundleDetailsBuilder {
     /// <p>Developer desktop or mobile app or website platforms.</p>
     pub fn available_platforms(mut self, input: crate::types::Platform) -> Self {
         let mut v = self.available_platforms.unwrap_or_default();
-        v.push(input);
-        self.available_platforms = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.available_platforms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Developer desktop or mobile app or website platforms.</p>
-    pub fn set_available_platforms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Platform>>) -> Self {
-        self.available_platforms = input;
-        self
+    pub fn set_available_platforms(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Platform>>) -> Self {
+        self.available_platforms = input; self
     }
     /// <p>Developer desktop or mobile app or website platforms.</p>
-    pub fn get_available_platforms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Platform>> {
+    pub fn get_available_platforms(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Platform>> {
         &self.available_platforms
     }
     /// Consumes the builder and constructs a [`BundleDetails`](crate::types::BundleDetails).
     pub fn build(self) -> crate::types::BundleDetails {
         crate::types::BundleDetails {
-            bundle_id: self.bundle_id,
-            title: self.title,
-            version: self.version,
-            description: self.description,
-            icon_url: self.icon_url,
-            available_platforms: self.available_platforms,
+            bundle_id: self.bundle_id
+            ,
+            title: self.title
+            ,
+            version: self.version
+            ,
+            description: self.description
+            ,
+            icon_url: self.icon_url
+            ,
+            available_platforms: self.available_platforms
+            ,
         }
     }
 }
+

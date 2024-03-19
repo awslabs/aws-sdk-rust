@@ -3,13 +3,13 @@
 /// <p>Represents the input of a <code>GetDeploymentConfig</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDeploymentConfigInput {
+pub struct GetDeploymentConfigInput  {
     /// <p>The name of a deployment configuration associated with the user or Amazon Web Services account.</p>
     pub deployment_config_name: ::std::option::Option<::std::string::String>,
 }
-impl GetDeploymentConfigInput {
+impl  GetDeploymentConfigInput  {
     /// <p>The name of a deployment configuration associated with the user or Amazon Web Services account.</p>
-    pub fn deployment_config_name(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_config_name(&self) -> ::std::option::Option<& str> {
         self.deployment_config_name.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl GetDeploymentConfigInputBuilder {
     }
     /// <p>The name of a deployment configuration associated with the user or Amazon Web Services account.</p>
     pub fn set_deployment_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_config_name = input;
-        self
+        self.deployment_config_name = input; self
     }
     /// <p>The name of a deployment configuration associated with the user or Amazon Web Services account.</p>
     pub fn get_deployment_config_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.deployment_config_name
     }
     /// Consumes the builder and constructs a [`GetDeploymentConfigInput`](crate::operation::get_deployment_config::GetDeploymentConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_deployment_config::GetDeploymentConfigInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_deployment_config::GetDeploymentConfigInput {
-            deployment_config_name: self.deployment_config_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_deployment_config::GetDeploymentConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_deployment_config::GetDeploymentConfigInput {
+                deployment_config_name: self.deployment_config_name
+                ,
+            }
+        )
     }
 }
+

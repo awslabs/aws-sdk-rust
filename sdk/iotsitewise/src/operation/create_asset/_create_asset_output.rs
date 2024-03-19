@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAssetOutput {
+pub struct CreateAssetOutput  {
     /// <p>The ID of the asset, in UUID format. This ID uniquely identifies the asset within IoT SiteWise and can be used with other IoT SiteWise API operations.</p>
     pub asset_id: ::std::string::String,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
@@ -12,28 +12,26 @@ pub struct CreateAssetOutput {
     pub asset_status: ::std::option::Option<crate::types::AssetStatus>,
     _request_id: Option<String>,
 }
-impl CreateAssetOutput {
+impl  CreateAssetOutput  {
     /// <p>The ID of the asset, in UUID format. This ID uniquely identifies the asset within IoT SiteWise and can be used with other IoT SiteWise API operations.</p>
-    pub fn asset_id(&self) -> &str {
-        use std::ops::Deref;
-        self.asset_id.deref()
+    pub fn asset_id(&self) -> & str {
+        use std::ops::Deref; self.asset_id.deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
     /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code></p>
-    pub fn asset_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.asset_arn.deref()
+    pub fn asset_arn(&self) -> & str {
+        use std::ops::Deref; self.asset_arn.deref()
     }
     /// <p>The status of the asset, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
-    pub fn asset_status(&self) -> ::std::option::Option<&crate::types::AssetStatus> {
+    pub fn asset_status(&self) -> ::std::option::Option<& crate::types::AssetStatus> {
         self.asset_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateAssetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateAssetOutput {
     /// Creates a new builder-style object to manufacture [`CreateAssetOutput`](crate::operation::create_asset::CreateAssetOutput).
     pub fn builder() -> crate::operation::create_asset::builders::CreateAssetOutputBuilder {
@@ -59,8 +57,7 @@ impl CreateAssetOutputBuilder {
     }
     /// <p>The ID of the asset, in UUID format. This ID uniquely identifies the asset within IoT SiteWise and can be used with other IoT SiteWise API operations.</p>
     pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_id = input;
-        self
+        self.asset_id = input; self
     }
     /// <p>The ID of the asset, in UUID format. This ID uniquely identifies the asset within IoT SiteWise and can be used with other IoT SiteWise API operations.</p>
     pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +73,7 @@ impl CreateAssetOutputBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
     /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code></p>
     pub fn set_asset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_arn = input;
-        self
+        self.asset_arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
     /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code></p>
@@ -92,42 +88,43 @@ impl CreateAssetOutputBuilder {
     }
     /// <p>The status of the asset, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
     pub fn set_asset_status(mut self, input: ::std::option::Option<crate::types::AssetStatus>) -> Self {
-        self.asset_status = input;
-        self
+        self.asset_status = input; self
     }
     /// <p>The status of the asset, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
     pub fn get_asset_status(&self) -> &::std::option::Option<crate::types::AssetStatus> {
         &self.asset_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateAssetOutput`](crate::operation::create_asset::CreateAssetOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`asset_id`](crate::operation::create_asset::builders::CreateAssetOutputBuilder::asset_id)
     /// - [`asset_arn`](crate::operation::create_asset::builders::CreateAssetOutputBuilder::asset_arn)
     pub fn build(self) -> ::std::result::Result<crate::operation::create_asset::CreateAssetOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_asset::CreateAssetOutput {
-            asset_id: self.asset_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "asset_id",
-                    "asset_id was not specified but it is required when building CreateAssetOutput",
-                )
-            })?,
-            asset_arn: self.asset_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "asset_arn",
-                    "asset_arn was not specified but it is required when building CreateAssetOutput",
-                )
-            })?,
-            asset_status: self.asset_status,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_asset::CreateAssetOutput {
+                asset_id: self.asset_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("asset_id", "asset_id was not specified but it is required when building CreateAssetOutput")
+                    )?
+                ,
+                asset_arn: self.asset_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("asset_arn", "asset_arn was not specified but it is required when building CreateAssetOutput")
+                    )?
+                ,
+                asset_status: self.asset_status
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

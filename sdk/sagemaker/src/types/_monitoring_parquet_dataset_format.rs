@@ -3,7 +3,8 @@
 /// <p>Represents the Parquet dataset format used when running a monitoring job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MonitoringParquetDatasetFormat {}
+pub struct MonitoringParquetDatasetFormat  {
+}
 impl MonitoringParquetDatasetFormat {
     /// Creates a new builder-style object to manufacture [`MonitoringParquetDatasetFormat`](crate::types::MonitoringParquetDatasetFormat).
     pub fn builder() -> crate::types::builders::MonitoringParquetDatasetFormatBuilder {
@@ -14,10 +15,13 @@ impl MonitoringParquetDatasetFormat {
 /// A builder for [`MonitoringParquetDatasetFormat`](crate::types::MonitoringParquetDatasetFormat).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct MonitoringParquetDatasetFormatBuilder {}
+pub struct MonitoringParquetDatasetFormatBuilder {
+}
 impl MonitoringParquetDatasetFormatBuilder {
     /// Consumes the builder and constructs a [`MonitoringParquetDatasetFormat`](crate::types::MonitoringParquetDatasetFormat).
     pub fn build(self) -> crate::types::MonitoringParquetDatasetFormat {
-        crate::types::MonitoringParquetDatasetFormat {}
+        crate::types::MonitoringParquetDatasetFormat {
+        }
     }
 }
+

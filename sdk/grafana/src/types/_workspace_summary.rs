@@ -3,7 +3,7 @@
 /// <p>A structure that contains some information about one workspace in the account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct WorkspaceSummary {
+pub struct WorkspaceSummary  {
     /// <p>The date that the workspace was created.</p>
     pub created: ::aws_smithy_types::DateTime,
     /// <p>The customer-entered description of the workspace.</p>
@@ -19,13 +19,13 @@ pub struct WorkspaceSummary {
     /// <p>The name of the workspace.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services notification channels that Amazon Managed Grafana can automatically create IAM roles and permissions for, which allows Amazon Managed Grafana to use these channels.</p>
-    pub notification_destinations: ::std::option::Option<::std::vec::Vec<crate::types::NotificationDestinationType>>,
+    pub notification_destinations: ::std::option::Option<::std::vec::Vec::<crate::types::NotificationDestinationType>>,
     /// <p>The current status of the workspace.</p>
     pub status: crate::types::WorkspaceStatus,
     /// <p>A structure containing information about the authentication methods used in the workspace.</p>
     pub authentication: ::std::option::Option<crate::types::AuthenticationSummary>,
     /// <p>The list of tags associated with the workspace.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Specifies whether this workspace has a full Grafana Enterprise license.</p><note>
     /// <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
     /// </note>
@@ -33,68 +33,66 @@ pub struct WorkspaceSummary {
     /// <p>The token that ties this workspace to a Grafana Labs account. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register with Grafana Labs</a>.</p>
     pub grafana_token: ::std::option::Option<::std::string::String>,
 }
-impl WorkspaceSummary {
+impl  WorkspaceSummary  {
     /// <p>The date that the workspace was created.</p>
-    pub fn created(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created(&self) -> & ::aws_smithy_types::DateTime {
         &self.created
     }
     /// <p>The customer-entered description of the workspace.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The URL endpoint to use to access the Grafana console in the workspace.</p>
-    pub fn endpoint(&self) -> &str {
-        use std::ops::Deref;
-        self.endpoint.deref()
+    pub fn endpoint(&self) -> & str {
+        use std::ops::Deref; self.endpoint.deref()
     }
     /// <p>The Grafana version that the workspace is running.</p>
-    pub fn grafana_version(&self) -> &str {
-        use std::ops::Deref;
-        self.grafana_version.deref()
+    pub fn grafana_version(&self) -> & str {
+        use std::ops::Deref; self.grafana_version.deref()
     }
     /// <p>The unique ID of the workspace.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The most recent date that the workspace was modified.</p>
-    pub fn modified(&self) -> &::aws_smithy_types::DateTime {
+    pub fn modified(&self) -> & ::aws_smithy_types::DateTime {
         &self.modified
     }
     /// <p>The name of the workspace.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Web Services notification channels that Amazon Managed Grafana can automatically create IAM roles and permissions for, which allows Amazon Managed Grafana to use these channels.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_destinations.is_none()`.
-    pub fn notification_destinations(&self) -> &[crate::types::NotificationDestinationType] {
-        self.notification_destinations.as_deref().unwrap_or_default()
+    pub fn notification_destinations(&self) -> & [crate::types::NotificationDestinationType] {
+        self.notification_destinations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The current status of the workspace.</p>
-    pub fn status(&self) -> &crate::types::WorkspaceStatus {
+    pub fn status(&self) -> & crate::types::WorkspaceStatus {
         &self.status
     }
     /// <p>A structure containing information about the authentication methods used in the workspace.</p>
-    pub fn authentication(&self) -> ::std::option::Option<&crate::types::AuthenticationSummary> {
+    pub fn authentication(&self) -> ::std::option::Option<& crate::types::AuthenticationSummary> {
         self.authentication.as_ref()
     }
     /// <p>The list of tags associated with the workspace.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Specifies whether this workspace has a full Grafana Enterprise license.</p><note>
     /// <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
     /// </note>
-    pub fn license_type(&self) -> ::std::option::Option<&crate::types::LicenseType> {
+    pub fn license_type(&self) -> ::std::option::Option<& crate::types::LicenseType> {
         self.license_type.as_ref()
     }
     /// <p>The token that ties this workspace to a Grafana Labs account. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register with Grafana Labs</a>.</p>
-    pub fn grafana_token(&self) -> ::std::option::Option<&str> {
+    pub fn grafana_token(&self) -> ::std::option::Option<& str> {
         self.grafana_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for WorkspaceSummary {
+impl  ::std::fmt::Debug for WorkspaceSummary  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("WorkspaceSummary");
         formatter.field("created", &self.created);
@@ -131,10 +129,10 @@ pub struct WorkspaceSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) notification_destinations: ::std::option::Option<::std::vec::Vec<crate::types::NotificationDestinationType>>,
+    pub(crate) notification_destinations: ::std::option::Option<::std::vec::Vec::<crate::types::NotificationDestinationType>>,
     pub(crate) status: ::std::option::Option<crate::types::WorkspaceStatus>,
     pub(crate) authentication: ::std::option::Option<crate::types::AuthenticationSummary>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) license_type: ::std::option::Option<crate::types::LicenseType>,
     pub(crate) grafana_token: ::std::option::Option<::std::string::String>,
 }
@@ -147,8 +145,7 @@ impl WorkspaceSummaryBuilder {
     }
     /// <p>The date that the workspace was created.</p>
     pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created = input;
-        self
+        self.created = input; self
     }
     /// <p>The date that the workspace was created.</p>
     pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -161,8 +158,7 @@ impl WorkspaceSummaryBuilder {
     }
     /// <p>The customer-entered description of the workspace.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The customer-entered description of the workspace.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -176,8 +172,7 @@ impl WorkspaceSummaryBuilder {
     }
     /// <p>The URL endpoint to use to access the Grafana console in the workspace.</p>
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint = input;
-        self
+        self.endpoint = input; self
     }
     /// <p>The URL endpoint to use to access the Grafana console in the workspace.</p>
     pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -191,8 +186,7 @@ impl WorkspaceSummaryBuilder {
     }
     /// <p>The Grafana version that the workspace is running.</p>
     pub fn set_grafana_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.grafana_version = input;
-        self
+        self.grafana_version = input; self
     }
     /// <p>The Grafana version that the workspace is running.</p>
     pub fn get_grafana_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -206,8 +200,7 @@ impl WorkspaceSummaryBuilder {
     }
     /// <p>The unique ID of the workspace.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique ID of the workspace.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -221,8 +214,7 @@ impl WorkspaceSummaryBuilder {
     }
     /// <p>The most recent date that the workspace was modified.</p>
     pub fn set_modified(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.modified = input;
-        self
+        self.modified = input; self
     }
     /// <p>The most recent date that the workspace was modified.</p>
     pub fn get_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -235,8 +227,7 @@ impl WorkspaceSummaryBuilder {
     }
     /// <p>The name of the workspace.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the workspace.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -249,17 +240,16 @@ impl WorkspaceSummaryBuilder {
     /// <p>The Amazon Web Services notification channels that Amazon Managed Grafana can automatically create IAM roles and permissions for, which allows Amazon Managed Grafana to use these channels.</p>
     pub fn notification_destinations(mut self, input: crate::types::NotificationDestinationType) -> Self {
         let mut v = self.notification_destinations.unwrap_or_default();
-        v.push(input);
-        self.notification_destinations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.notification_destinations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Web Services notification channels that Amazon Managed Grafana can automatically create IAM roles and permissions for, which allows Amazon Managed Grafana to use these channels.</p>
-    pub fn set_notification_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationDestinationType>>) -> Self {
-        self.notification_destinations = input;
-        self
+    pub fn set_notification_destinations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NotificationDestinationType>>) -> Self {
+        self.notification_destinations = input; self
     }
     /// <p>The Amazon Web Services notification channels that Amazon Managed Grafana can automatically create IAM roles and permissions for, which allows Amazon Managed Grafana to use these channels.</p>
-    pub fn get_notification_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationDestinationType>> {
+    pub fn get_notification_destinations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NotificationDestinationType>> {
         &self.notification_destinations
     }
     /// <p>The current status of the workspace.</p>
@@ -270,8 +260,7 @@ impl WorkspaceSummaryBuilder {
     }
     /// <p>The current status of the workspace.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::WorkspaceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the workspace.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::WorkspaceStatus> {
@@ -285,8 +274,7 @@ impl WorkspaceSummaryBuilder {
     }
     /// <p>A structure containing information about the authentication methods used in the workspace.</p>
     pub fn set_authentication(mut self, input: ::std::option::Option<crate::types::AuthenticationSummary>) -> Self {
-        self.authentication = input;
-        self
+        self.authentication = input; self
     }
     /// <p>A structure containing information about the authentication methods used in the workspace.</p>
     pub fn get_authentication(&self) -> &::std::option::Option<crate::types::AuthenticationSummary> {
@@ -299,17 +287,16 @@ impl WorkspaceSummaryBuilder {
     /// <p>The list of tags associated with the workspace.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The list of tags associated with the workspace.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The list of tags associated with the workspace.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Specifies whether this workspace has a full Grafana Enterprise license.</p><note>
@@ -323,8 +310,7 @@ impl WorkspaceSummaryBuilder {
     /// <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
     /// </note>
     pub fn set_license_type(mut self, input: ::std::option::Option<crate::types::LicenseType>) -> Self {
-        self.license_type = input;
-        self
+        self.license_type = input; self
     }
     /// <p>Specifies whether this workspace has a full Grafana Enterprise license.</p><note>
     /// <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
@@ -339,8 +325,7 @@ impl WorkspaceSummaryBuilder {
     }
     /// <p>The token that ties this workspace to a Grafana Labs account. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register with Grafana Labs</a>.</p>
     pub fn set_grafana_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.grafana_token = input;
-        self
+        self.grafana_token = input; self
     }
     /// <p>The token that ties this workspace to a Grafana Labs account. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register with Grafana Labs</a>.</p>
     pub fn get_grafana_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -355,51 +340,54 @@ impl WorkspaceSummaryBuilder {
     /// - [`modified`](crate::types::builders::WorkspaceSummaryBuilder::modified)
     /// - [`status`](crate::types::builders::WorkspaceSummaryBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::WorkspaceSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::WorkspaceSummary {
-            created: self.created.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created",
-                    "created was not specified but it is required when building WorkspaceSummary",
-                )
-            })?,
-            description: self.description,
-            endpoint: self.endpoint.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "endpoint",
-                    "endpoint was not specified but it is required when building WorkspaceSummary",
-                )
-            })?,
-            grafana_version: self.grafana_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "grafana_version",
-                    "grafana_version was not specified but it is required when building WorkspaceSummary",
-                )
-            })?,
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building WorkspaceSummary",
-                )
-            })?,
-            modified: self.modified.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "modified",
-                    "modified was not specified but it is required when building WorkspaceSummary",
-                )
-            })?,
-            name: self.name,
-            notification_destinations: self.notification_destinations,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building WorkspaceSummary",
-                )
-            })?,
-            authentication: self.authentication,
-            tags: self.tags,
-            license_type: self.license_type,
-            grafana_token: self.grafana_token,
-        })
+        ::std::result::Result::Ok(
+            crate::types::WorkspaceSummary {
+                created: self.created
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created", "created was not specified but it is required when building WorkspaceSummary")
+                    )?
+                ,
+                description: self.description
+                ,
+                endpoint: self.endpoint
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("endpoint", "endpoint was not specified but it is required when building WorkspaceSummary")
+                    )?
+                ,
+                grafana_version: self.grafana_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("grafana_version", "grafana_version was not specified but it is required when building WorkspaceSummary")
+                    )?
+                ,
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building WorkspaceSummary")
+                    )?
+                ,
+                modified: self.modified
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("modified", "modified was not specified but it is required when building WorkspaceSummary")
+                    )?
+                ,
+                name: self.name
+                ,
+                notification_destinations: self.notification_destinations
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building WorkspaceSummary")
+                    )?
+                ,
+                authentication: self.authentication
+                ,
+                tags: self.tags
+                ,
+                license_type: self.license_type
+                ,
+                grafana_token: self.grafana_token
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for WorkspaceSummaryBuilder {
@@ -421,3 +409,4 @@ impl ::std::fmt::Debug for WorkspaceSummaryBuilder {
         formatter.finish()
     }
 }
+

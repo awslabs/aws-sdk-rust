@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSessionsOutput {
+pub struct DescribeSessionsOutput  {
     /// <p>A list of sessions meeting the request parameters.</p>
-    pub sessions: ::std::option::Option<::std::vec::Vec<crate::types::Session>>,
+    pub sessions: ::std::option::Option<::std::vec::Vec::<crate::types::Session>>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeSessionsOutput {
+impl  DescribeSessionsOutput  {
     /// <p>A list of sessions meeting the request parameters.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sessions.is_none()`.
-    pub fn sessions(&self) -> &[crate::types::Session] {
-        self.sessions.as_deref().unwrap_or_default()
+    pub fn sessions(&self) -> & [crate::types::Session] {
+        self.sessions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeSessionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeSessionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSessionsOutput`](crate::operation::describe_sessions::DescribeSessionsOutput).
     pub fn builder() -> crate::operation::describe_sessions::builders::DescribeSessionsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeSessionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSessionsOutputBuilder {
-    pub(crate) sessions: ::std::option::Option<::std::vec::Vec<crate::types::Session>>,
+    pub(crate) sessions: ::std::option::Option<::std::vec::Vec::<crate::types::Session>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeSessionsOutputBuilder {
     /// <p>A list of sessions meeting the request parameters.</p>
     pub fn sessions(mut self, input: crate::types::Session) -> Self {
         let mut v = self.sessions.unwrap_or_default();
-        v.push(input);
-        self.sessions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sessions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of sessions meeting the request parameters.</p>
-    pub fn set_sessions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Session>>) -> Self {
-        self.sessions = input;
-        self
+    pub fn set_sessions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Session>>) -> Self {
+        self.sessions = input; self
     }
     /// <p>A list of sessions meeting the request parameters.</p>
-    pub fn get_sessions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Session>> {
+    pub fn get_sessions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Session>> {
         &self.sessions
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -69,28 +69,30 @@ impl DescribeSessionsOutputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeSessionsOutput`](crate::operation::describe_sessions::DescribeSessionsOutput).
     pub fn build(self) -> crate::operation::describe_sessions::DescribeSessionsOutput {
         crate::operation::describe_sessions::DescribeSessionsOutput {
-            sessions: self.sessions,
-            next_token: self.next_token,
+            sessions: self.sessions
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

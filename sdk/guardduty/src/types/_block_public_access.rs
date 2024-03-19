@@ -3,7 +3,7 @@
 /// <p>Contains information on how the bucker owner's S3 Block Public Access settings are being applied to the S3 bucket. See <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">S3 Block Public Access</a> for more information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BlockPublicAccess {
+pub struct BlockPublicAccess  {
     /// <p>Indicates if S3 Block Public Access is set to <code>IgnorePublicAcls</code>.</p>
     pub ignore_public_acls: ::std::option::Option<bool>,
     /// <p>Indicates if S3 Block Public Access is set to <code>RestrictPublicBuckets</code>.</p>
@@ -13,7 +13,7 @@ pub struct BlockPublicAccess {
     /// <p>Indicates if S3 Block Public Access is set to <code>BlockPublicPolicy</code>.</p>
     pub block_public_policy: ::std::option::Option<bool>,
 }
-impl BlockPublicAccess {
+impl  BlockPublicAccess  {
     /// <p>Indicates if S3 Block Public Access is set to <code>IgnorePublicAcls</code>.</p>
     pub fn ignore_public_acls(&self) -> ::std::option::Option<bool> {
         self.ignore_public_acls
@@ -55,8 +55,7 @@ impl BlockPublicAccessBuilder {
     }
     /// <p>Indicates if S3 Block Public Access is set to <code>IgnorePublicAcls</code>.</p>
     pub fn set_ignore_public_acls(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ignore_public_acls = input;
-        self
+        self.ignore_public_acls = input; self
     }
     /// <p>Indicates if S3 Block Public Access is set to <code>IgnorePublicAcls</code>.</p>
     pub fn get_ignore_public_acls(&self) -> &::std::option::Option<bool> {
@@ -69,8 +68,7 @@ impl BlockPublicAccessBuilder {
     }
     /// <p>Indicates if S3 Block Public Access is set to <code>RestrictPublicBuckets</code>.</p>
     pub fn set_restrict_public_buckets(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.restrict_public_buckets = input;
-        self
+        self.restrict_public_buckets = input; self
     }
     /// <p>Indicates if S3 Block Public Access is set to <code>RestrictPublicBuckets</code>.</p>
     pub fn get_restrict_public_buckets(&self) -> &::std::option::Option<bool> {
@@ -83,8 +81,7 @@ impl BlockPublicAccessBuilder {
     }
     /// <p>Indicates if S3 Block Public Access is set to <code>BlockPublicAcls</code>.</p>
     pub fn set_block_public_acls(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.block_public_acls = input;
-        self
+        self.block_public_acls = input; self
     }
     /// <p>Indicates if S3 Block Public Access is set to <code>BlockPublicAcls</code>.</p>
     pub fn get_block_public_acls(&self) -> &::std::option::Option<bool> {
@@ -97,8 +94,7 @@ impl BlockPublicAccessBuilder {
     }
     /// <p>Indicates if S3 Block Public Access is set to <code>BlockPublicPolicy</code>.</p>
     pub fn set_block_public_policy(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.block_public_policy = input;
-        self
+        self.block_public_policy = input; self
     }
     /// <p>Indicates if S3 Block Public Access is set to <code>BlockPublicPolicy</code>.</p>
     pub fn get_block_public_policy(&self) -> &::std::option::Option<bool> {
@@ -107,10 +103,15 @@ impl BlockPublicAccessBuilder {
     /// Consumes the builder and constructs a [`BlockPublicAccess`](crate::types::BlockPublicAccess).
     pub fn build(self) -> crate::types::BlockPublicAccess {
         crate::types::BlockPublicAccess {
-            ignore_public_acls: self.ignore_public_acls,
-            restrict_public_buckets: self.restrict_public_buckets,
-            block_public_acls: self.block_public_acls,
-            block_public_policy: self.block_public_policy,
+            ignore_public_acls: self.ignore_public_acls
+            ,
+            restrict_public_buckets: self.restrict_public_buckets
+            ,
+            block_public_acls: self.block_public_acls
+            ,
+            block_public_policy: self.block_public_policy
+            ,
         }
     }
 }
+

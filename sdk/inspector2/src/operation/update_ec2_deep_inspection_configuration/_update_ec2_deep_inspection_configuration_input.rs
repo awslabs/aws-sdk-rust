@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateEc2DeepInspectionConfigurationInput {
+pub struct UpdateEc2DeepInspectionConfigurationInput  {
     /// <p>Specify <code>TRUE</code> to activate Amazon Inspector deep inspection in your account, or <code>FALSE</code> to deactivate. Member accounts in an organization cannot deactivate deep inspection, instead the delegated administrator for the organization can deactivate a member account using <a href="https://docs.aws.amazon.com/inspector/v2/APIReference/API_BatchUpdateMemberEc2DeepInspectionStatus.html">BatchUpdateMemberEc2DeepInspectionStatus</a>.</p>
     pub activate_deep_inspection: ::std::option::Option<bool>,
     /// <p>The Amazon Inspector deep inspection custom paths you are adding for your account.</p>
-    pub package_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub package_paths: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl UpdateEc2DeepInspectionConfigurationInput {
+impl  UpdateEc2DeepInspectionConfigurationInput  {
     /// <p>Specify <code>TRUE</code> to activate Amazon Inspector deep inspection in your account, or <code>FALSE</code> to deactivate. Member accounts in an organization cannot deactivate deep inspection, instead the delegated administrator for the organization can deactivate a member account using <a href="https://docs.aws.amazon.com/inspector/v2/APIReference/API_BatchUpdateMemberEc2DeepInspectionStatus.html">BatchUpdateMemberEc2DeepInspectionStatus</a>.</p>
     pub fn activate_deep_inspection(&self) -> ::std::option::Option<bool> {
         self.activate_deep_inspection
     }
     /// <p>The Amazon Inspector deep inspection custom paths you are adding for your account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.package_paths.is_none()`.
-    pub fn package_paths(&self) -> &[::std::string::String] {
-        self.package_paths.as_deref().unwrap_or_default()
+    pub fn package_paths(&self) -> & [::std::string::String] {
+        self.package_paths.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateEc2DeepInspectionConfigurationInput {
@@ -32,7 +33,7 @@ impl UpdateEc2DeepInspectionConfigurationInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateEc2DeepInspectionConfigurationInputBuilder {
     pub(crate) activate_deep_inspection: ::std::option::Option<bool>,
-    pub(crate) package_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) package_paths: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl UpdateEc2DeepInspectionConfigurationInputBuilder {
     /// <p>Specify <code>TRUE</code> to activate Amazon Inspector deep inspection in your account, or <code>FALSE</code> to deactivate. Member accounts in an organization cannot deactivate deep inspection, instead the delegated administrator for the organization can deactivate a member account using <a href="https://docs.aws.amazon.com/inspector/v2/APIReference/API_BatchUpdateMemberEc2DeepInspectionStatus.html">BatchUpdateMemberEc2DeepInspectionStatus</a>.</p>
@@ -42,8 +43,7 @@ impl UpdateEc2DeepInspectionConfigurationInputBuilder {
     }
     /// <p>Specify <code>TRUE</code> to activate Amazon Inspector deep inspection in your account, or <code>FALSE</code> to deactivate. Member accounts in an organization cannot deactivate deep inspection, instead the delegated administrator for the organization can deactivate a member account using <a href="https://docs.aws.amazon.com/inspector/v2/APIReference/API_BatchUpdateMemberEc2DeepInspectionStatus.html">BatchUpdateMemberEc2DeepInspectionStatus</a>.</p>
     pub fn set_activate_deep_inspection(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.activate_deep_inspection = input;
-        self
+        self.activate_deep_inspection = input; self
     }
     /// <p>Specify <code>TRUE</code> to activate Amazon Inspector deep inspection in your account, or <code>FALSE</code> to deactivate. Member accounts in an organization cannot deactivate deep inspection, instead the delegated administrator for the organization can deactivate a member account using <a href="https://docs.aws.amazon.com/inspector/v2/APIReference/API_BatchUpdateMemberEc2DeepInspectionStatus.html">BatchUpdateMemberEc2DeepInspectionStatus</a>.</p>
     pub fn get_activate_deep_inspection(&self) -> &::std::option::Option<bool> {
@@ -56,31 +56,28 @@ impl UpdateEc2DeepInspectionConfigurationInputBuilder {
     /// <p>The Amazon Inspector deep inspection custom paths you are adding for your account.</p>
     pub fn package_paths(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.package_paths.unwrap_or_default();
-        v.push(input.into());
-        self.package_paths = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.package_paths = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Inspector deep inspection custom paths you are adding for your account.</p>
-    pub fn set_package_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.package_paths = input;
-        self
+    pub fn set_package_paths(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.package_paths = input; self
     }
     /// <p>The Amazon Inspector deep inspection custom paths you are adding for your account.</p>
-    pub fn get_package_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_package_paths(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.package_paths
     }
     /// Consumes the builder and constructs a [`UpdateEc2DeepInspectionConfigurationInput`](crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationInput {
-                activate_deep_inspection: self.activate_deep_inspection,
-                package_paths: self.package_paths,
-            },
+                activate_deep_inspection: self.activate_deep_inspection
+                ,
+                package_paths: self.package_paths
+                ,
+            }
         )
     }
 }
+

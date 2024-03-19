@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartHumanLoopOutput {
+pub struct StartHumanLoopOutput  {
     /// <p>The Amazon Resource Name (ARN) of the human loop.</p>
     pub human_loop_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl StartHumanLoopOutput {
+impl  StartHumanLoopOutput  {
     /// <p>The Amazon Resource Name (ARN) of the human loop.</p>
-    pub fn human_loop_arn(&self) -> ::std::option::Option<&str> {
+    pub fn human_loop_arn(&self) -> ::std::option::Option<& str> {
         self.human_loop_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartHumanLoopOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartHumanLoopOutput {
     /// Creates a new builder-style object to manufacture [`StartHumanLoopOutput`](crate::operation::start_human_loop::StartHumanLoopOutput).
     pub fn builder() -> crate::operation::start_human_loop::builders::StartHumanLoopOutputBuilder {
@@ -40,27 +40,28 @@ impl StartHumanLoopOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the human loop.</p>
     pub fn set_human_loop_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.human_loop_arn = input;
-        self
+        self.human_loop_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the human loop.</p>
     pub fn get_human_loop_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.human_loop_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartHumanLoopOutput`](crate::operation::start_human_loop::StartHumanLoopOutput).
     pub fn build(self) -> crate::operation::start_human_loop::StartHumanLoopOutput {
         crate::operation::start_human_loop::StartHumanLoopOutput {
-            human_loop_arn: self.human_loop_arn,
+            human_loop_arn: self.human_loop_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

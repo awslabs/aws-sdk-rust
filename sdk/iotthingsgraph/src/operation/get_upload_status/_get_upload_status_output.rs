@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetUploadStatusOutput {
+pub struct GetUploadStatusOutput  {
     /// <p>The ID of the upload.</p>
     pub upload_id: ::std::string::String,
     /// <p>The status of the upload. The initial status is <code>IN_PROGRESS</code>. The response show all validation failures if the upload fails.</p>
@@ -14,27 +14,26 @@ pub struct GetUploadStatusOutput {
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
     pub namespace_version: ::std::option::Option<i64>,
     /// <p>The reason for an upload failure.</p>
-    pub failure_reason: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub failure_reason: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The date at which the upload was created.</p>
     pub created_date: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
-impl GetUploadStatusOutput {
+impl  GetUploadStatusOutput  {
     /// <p>The ID of the upload.</p>
-    pub fn upload_id(&self) -> &str {
-        use std::ops::Deref;
-        self.upload_id.deref()
+    pub fn upload_id(&self) -> & str {
+        use std::ops::Deref; self.upload_id.deref()
     }
     /// <p>The status of the upload. The initial status is <code>IN_PROGRESS</code>. The response show all validation failures if the upload fails.</p>
-    pub fn upload_status(&self) -> &crate::types::UploadStatus {
+    pub fn upload_status(&self) -> & crate::types::UploadStatus {
         &self.upload_status
     }
     /// <p>The ARN of the upload.</p>
-    pub fn namespace_arn(&self) -> ::std::option::Option<&str> {
+    pub fn namespace_arn(&self) -> ::std::option::Option<& str> {
         self.namespace_arn.as_deref()
     }
     /// <p>The name of the upload's namespace.</p>
-    pub fn namespace_name(&self) -> ::std::option::Option<&str> {
+    pub fn namespace_name(&self) -> ::std::option::Option<& str> {
         self.namespace_name.as_deref()
     }
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
@@ -42,21 +41,22 @@ impl GetUploadStatusOutput {
         self.namespace_version
     }
     /// <p>The reason for an upload failure.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failure_reason.is_none()`.
-    pub fn failure_reason(&self) -> &[::std::string::String] {
-        self.failure_reason.as_deref().unwrap_or_default()
+    pub fn failure_reason(&self) -> & [::std::string::String] {
+        self.failure_reason.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The date at which the upload was created.</p>
-    pub fn created_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_date
     }
 }
 impl ::aws_types::request_id::RequestId for GetUploadStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetUploadStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetUploadStatusOutput`](crate::operation::get_upload_status::GetUploadStatusOutput).
     pub fn builder() -> crate::operation::get_upload_status::builders::GetUploadStatusOutputBuilder {
@@ -73,7 +73,7 @@ pub struct GetUploadStatusOutputBuilder {
     pub(crate) namespace_arn: ::std::option::Option<::std::string::String>,
     pub(crate) namespace_name: ::std::option::Option<::std::string::String>,
     pub(crate) namespace_version: ::std::option::Option<i64>,
-    pub(crate) failure_reason: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) failure_reason: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
@@ -86,8 +86,7 @@ impl GetUploadStatusOutputBuilder {
     }
     /// <p>The ID of the upload.</p>
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.upload_id = input;
-        self
+        self.upload_id = input; self
     }
     /// <p>The ID of the upload.</p>
     pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +100,7 @@ impl GetUploadStatusOutputBuilder {
     }
     /// <p>The status of the upload. The initial status is <code>IN_PROGRESS</code>. The response show all validation failures if the upload fails.</p>
     pub fn set_upload_status(mut self, input: ::std::option::Option<crate::types::UploadStatus>) -> Self {
-        self.upload_status = input;
-        self
+        self.upload_status = input; self
     }
     /// <p>The status of the upload. The initial status is <code>IN_PROGRESS</code>. The response show all validation failures if the upload fails.</p>
     pub fn get_upload_status(&self) -> &::std::option::Option<crate::types::UploadStatus> {
@@ -115,8 +113,7 @@ impl GetUploadStatusOutputBuilder {
     }
     /// <p>The ARN of the upload.</p>
     pub fn set_namespace_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace_arn = input;
-        self
+        self.namespace_arn = input; self
     }
     /// <p>The ARN of the upload.</p>
     pub fn get_namespace_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +126,7 @@ impl GetUploadStatusOutputBuilder {
     }
     /// <p>The name of the upload's namespace.</p>
     pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace_name = input;
-        self
+        self.namespace_name = input; self
     }
     /// <p>The name of the upload's namespace.</p>
     pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +139,7 @@ impl GetUploadStatusOutputBuilder {
     }
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
     pub fn set_namespace_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.namespace_version = input;
-        self
+        self.namespace_version = input; self
     }
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
     pub fn get_namespace_version(&self) -> &::std::option::Option<i64> {
@@ -157,17 +152,16 @@ impl GetUploadStatusOutputBuilder {
     /// <p>The reason for an upload failure.</p>
     pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.failure_reason.unwrap_or_default();
-        v.push(input.into());
-        self.failure_reason = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.failure_reason = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The reason for an upload failure.</p>
-    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.failure_reason = input;
-        self
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.failure_reason = input; self
     }
     /// <p>The reason for an upload failure.</p>
-    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.failure_reason
     }
     /// <p>The date at which the upload was created.</p>
@@ -178,54 +172,55 @@ impl GetUploadStatusOutputBuilder {
     }
     /// <p>The date at which the upload was created.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>The date at which the upload was created.</p>
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetUploadStatusOutput`](crate::operation::get_upload_status::GetUploadStatusOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`upload_id`](crate::operation::get_upload_status::builders::GetUploadStatusOutputBuilder::upload_id)
     /// - [`upload_status`](crate::operation::get_upload_status::builders::GetUploadStatusOutputBuilder::upload_status)
     /// - [`created_date`](crate::operation::get_upload_status::builders::GetUploadStatusOutputBuilder::created_date)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_upload_status::GetUploadStatusOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_upload_status::GetUploadStatusOutput {
-            upload_id: self.upload_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "upload_id",
-                    "upload_id was not specified but it is required when building GetUploadStatusOutput",
-                )
-            })?,
-            upload_status: self.upload_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "upload_status",
-                    "upload_status was not specified but it is required when building GetUploadStatusOutput",
-                )
-            })?,
-            namespace_arn: self.namespace_arn,
-            namespace_name: self.namespace_name,
-            namespace_version: self.namespace_version,
-            failure_reason: self.failure_reason,
-            created_date: self.created_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_date",
-                    "created_date was not specified but it is required when building GetUploadStatusOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_upload_status::GetUploadStatusOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_upload_status::GetUploadStatusOutput {
+                upload_id: self.upload_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("upload_id", "upload_id was not specified but it is required when building GetUploadStatusOutput")
+                    )?
+                ,
+                upload_status: self.upload_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("upload_status", "upload_status was not specified but it is required when building GetUploadStatusOutput")
+                    )?
+                ,
+                namespace_arn: self.namespace_arn
+                ,
+                namespace_name: self.namespace_name
+                ,
+                namespace_version: self.namespace_version
+                ,
+                failure_reason: self.failure_reason
+                ,
+                created_date: self.created_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_date", "created_date was not specified but it is required when building GetUploadStatusOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

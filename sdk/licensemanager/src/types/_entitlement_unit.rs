@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let entitlementunit = unimplemented!();
 /// match entitlementunit {
@@ -55,16 +55,14 @@
 /// Specifically, when `entitlementunit` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EntitlementUnit::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum EntitlementUnit {
     #[allow(missing_docs)] // documentation missing in model
     Bits,
@@ -122,164 +120,137 @@ pub enum EntitlementUnit {
     TerabytesPerSecond,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for EntitlementUnit {
-    fn from(s: &str) -> Self {
-        match s {
-            "Bits" => EntitlementUnit::Bits,
-            "Bits/Second" => EntitlementUnit::BitsPerSecond,
-            "Bytes" => EntitlementUnit::Bytes,
-            "Bytes/Second" => EntitlementUnit::BytesPerSecond,
-            "Count" => EntitlementUnit::Count,
-            "Count/Second" => EntitlementUnit::CountPerSecond,
-            "Gigabits" => EntitlementUnit::Gigabits,
-            "Gigabits/Second" => EntitlementUnit::GigabitsPerSecond,
-            "Gigabytes" => EntitlementUnit::Gigabytes,
-            "Gigabytes/Second" => EntitlementUnit::GigabytesPerSecond,
-            "Kilobits" => EntitlementUnit::Kilobits,
-            "Kilobits/Second" => EntitlementUnit::KilobitsPerSecond,
-            "Kilobytes" => EntitlementUnit::Kilobytes,
-            "Kilobytes/Second" => EntitlementUnit::KilobytesPerSecond,
-            "Megabits" => EntitlementUnit::Megabits,
-            "Megabits/Second" => EntitlementUnit::MegabitsPerSecond,
-            "Megabytes" => EntitlementUnit::Megabytes,
-            "Megabytes/Second" => EntitlementUnit::MegabytesPerSecond,
-            "Microseconds" => EntitlementUnit::Microseconds,
-            "Milliseconds" => EntitlementUnit::Milliseconds,
-            "None" => EntitlementUnit::None,
-            "Percent" => EntitlementUnit::Percent,
-            "Seconds" => EntitlementUnit::Seconds,
-            "Terabits" => EntitlementUnit::Terabits,
-            "Terabits/Second" => EntitlementUnit::TerabitsPerSecond,
-            "Terabytes" => EntitlementUnit::Terabytes,
-            "Terabytes/Second" => EntitlementUnit::TerabytesPerSecond,
-            other => EntitlementUnit::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "Bits" => EntitlementUnit::Bits,
+"Bits/Second" => EntitlementUnit::BitsPerSecond,
+"Bytes" => EntitlementUnit::Bytes,
+"Bytes/Second" => EntitlementUnit::BytesPerSecond,
+"Count" => EntitlementUnit::Count,
+"Count/Second" => EntitlementUnit::CountPerSecond,
+"Gigabits" => EntitlementUnit::Gigabits,
+"Gigabits/Second" => EntitlementUnit::GigabitsPerSecond,
+"Gigabytes" => EntitlementUnit::Gigabytes,
+"Gigabytes/Second" => EntitlementUnit::GigabytesPerSecond,
+"Kilobits" => EntitlementUnit::Kilobits,
+"Kilobits/Second" => EntitlementUnit::KilobitsPerSecond,
+"Kilobytes" => EntitlementUnit::Kilobytes,
+"Kilobytes/Second" => EntitlementUnit::KilobytesPerSecond,
+"Megabits" => EntitlementUnit::Megabits,
+"Megabits/Second" => EntitlementUnit::MegabitsPerSecond,
+"Megabytes" => EntitlementUnit::Megabytes,
+"Megabytes/Second" => EntitlementUnit::MegabytesPerSecond,
+"Microseconds" => EntitlementUnit::Microseconds,
+"Milliseconds" => EntitlementUnit::Milliseconds,
+"None" => EntitlementUnit::None,
+"Percent" => EntitlementUnit::Percent,
+"Seconds" => EntitlementUnit::Seconds,
+"Terabits" => EntitlementUnit::Terabits,
+"Terabits/Second" => EntitlementUnit::TerabitsPerSecond,
+"Terabytes" => EntitlementUnit::Terabytes,
+"Terabytes/Second" => EntitlementUnit::TerabytesPerSecond,
+other => EntitlementUnit::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for EntitlementUnit {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(EntitlementUnit::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(EntitlementUnit::from(s))
+                    }
+                }
 impl EntitlementUnit {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EntitlementUnit::Bits => "Bits",
-            EntitlementUnit::BitsPerSecond => "Bits/Second",
-            EntitlementUnit::Bytes => "Bytes",
-            EntitlementUnit::BytesPerSecond => "Bytes/Second",
-            EntitlementUnit::Count => "Count",
-            EntitlementUnit::CountPerSecond => "Count/Second",
-            EntitlementUnit::Gigabits => "Gigabits",
-            EntitlementUnit::GigabitsPerSecond => "Gigabits/Second",
-            EntitlementUnit::Gigabytes => "Gigabytes",
-            EntitlementUnit::GigabytesPerSecond => "Gigabytes/Second",
-            EntitlementUnit::Kilobits => "Kilobits",
-            EntitlementUnit::KilobitsPerSecond => "Kilobits/Second",
-            EntitlementUnit::Kilobytes => "Kilobytes",
-            EntitlementUnit::KilobytesPerSecond => "Kilobytes/Second",
-            EntitlementUnit::Megabits => "Megabits",
-            EntitlementUnit::MegabitsPerSecond => "Megabits/Second",
-            EntitlementUnit::Megabytes => "Megabytes",
-            EntitlementUnit::MegabytesPerSecond => "Megabytes/Second",
-            EntitlementUnit::Microseconds => "Microseconds",
-            EntitlementUnit::Milliseconds => "Milliseconds",
-            EntitlementUnit::None => "None",
-            EntitlementUnit::Percent => "Percent",
-            EntitlementUnit::Seconds => "Seconds",
-            EntitlementUnit::Terabits => "Terabits",
-            EntitlementUnit::TerabitsPerSecond => "Terabits/Second",
-            EntitlementUnit::Terabytes => "Terabytes",
-            EntitlementUnit::TerabytesPerSecond => "Terabytes/Second",
-            EntitlementUnit::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Bits",
-            "Bits/Second",
-            "Bytes",
-            "Bytes/Second",
-            "Count",
-            "Count/Second",
-            "Gigabits",
-            "Gigabits/Second",
-            "Gigabytes",
-            "Gigabytes/Second",
-            "Kilobits",
-            "Kilobits/Second",
-            "Kilobytes",
-            "Kilobytes/Second",
-            "Megabits",
-            "Megabits/Second",
-            "Megabytes",
-            "Megabytes/Second",
-            "Microseconds",
-            "Milliseconds",
-            "None",
-            "Percent",
-            "Seconds",
-            "Terabits",
-            "Terabits/Second",
-            "Terabytes",
-            "Terabytes/Second",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EntitlementUnit::Bits => "Bits",
+    EntitlementUnit::BitsPerSecond => "Bits/Second",
+    EntitlementUnit::Bytes => "Bytes",
+    EntitlementUnit::BytesPerSecond => "Bytes/Second",
+    EntitlementUnit::Count => "Count",
+    EntitlementUnit::CountPerSecond => "Count/Second",
+    EntitlementUnit::Gigabits => "Gigabits",
+    EntitlementUnit::GigabitsPerSecond => "Gigabits/Second",
+    EntitlementUnit::Gigabytes => "Gigabytes",
+    EntitlementUnit::GigabytesPerSecond => "Gigabytes/Second",
+    EntitlementUnit::Kilobits => "Kilobits",
+    EntitlementUnit::KilobitsPerSecond => "Kilobits/Second",
+    EntitlementUnit::Kilobytes => "Kilobytes",
+    EntitlementUnit::KilobytesPerSecond => "Kilobytes/Second",
+    EntitlementUnit::Megabits => "Megabits",
+    EntitlementUnit::MegabitsPerSecond => "Megabits/Second",
+    EntitlementUnit::Megabytes => "Megabytes",
+    EntitlementUnit::MegabytesPerSecond => "Megabytes/Second",
+    EntitlementUnit::Microseconds => "Microseconds",
+    EntitlementUnit::Milliseconds => "Milliseconds",
+    EntitlementUnit::None => "None",
+    EntitlementUnit::Percent => "Percent",
+    EntitlementUnit::Seconds => "Seconds",
+    EntitlementUnit::Terabits => "Terabits",
+    EntitlementUnit::TerabitsPerSecond => "Terabits/Second",
+    EntitlementUnit::Terabytes => "Terabytes",
+    EntitlementUnit::TerabytesPerSecond => "Terabytes/Second",
+    EntitlementUnit::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Bits", "Bits/Second", "Bytes", "Bytes/Second", "Count", "Count/Second", "Gigabits", "Gigabits/Second", "Gigabytes", "Gigabytes/Second", "Kilobits", "Kilobits/Second", "Kilobytes", "Kilobytes/Second", "Megabits", "Megabits/Second", "Megabytes", "Megabytes/Second", "Microseconds", "Milliseconds", "None", "Percent", "Seconds", "Terabits", "Terabits/Second", "Terabytes", "Terabytes/Second"]
+                }
+            }
 impl ::std::convert::AsRef<str> for EntitlementUnit {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl EntitlementUnit {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for EntitlementUnit {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            EntitlementUnit::Bits => write!(f, "Bits"),
-            EntitlementUnit::BitsPerSecond => write!(f, "Bits/Second"),
-            EntitlementUnit::Bytes => write!(f, "Bytes"),
-            EntitlementUnit::BytesPerSecond => write!(f, "Bytes/Second"),
-            EntitlementUnit::Count => write!(f, "Count"),
-            EntitlementUnit::CountPerSecond => write!(f, "Count/Second"),
-            EntitlementUnit::Gigabits => write!(f, "Gigabits"),
-            EntitlementUnit::GigabitsPerSecond => write!(f, "Gigabits/Second"),
-            EntitlementUnit::Gigabytes => write!(f, "Gigabytes"),
-            EntitlementUnit::GigabytesPerSecond => write!(f, "Gigabytes/Second"),
-            EntitlementUnit::Kilobits => write!(f, "Kilobits"),
-            EntitlementUnit::KilobitsPerSecond => write!(f, "Kilobits/Second"),
-            EntitlementUnit::Kilobytes => write!(f, "Kilobytes"),
-            EntitlementUnit::KilobytesPerSecond => write!(f, "Kilobytes/Second"),
-            EntitlementUnit::Megabits => write!(f, "Megabits"),
-            EntitlementUnit::MegabitsPerSecond => write!(f, "Megabits/Second"),
-            EntitlementUnit::Megabytes => write!(f, "Megabytes"),
-            EntitlementUnit::MegabytesPerSecond => write!(f, "Megabytes/Second"),
-            EntitlementUnit::Microseconds => write!(f, "Microseconds"),
-            EntitlementUnit::Milliseconds => write!(f, "Milliseconds"),
-            EntitlementUnit::None => write!(f, "None"),
-            EntitlementUnit::Percent => write!(f, "Percent"),
-            EntitlementUnit::Seconds => write!(f, "Seconds"),
-            EntitlementUnit::Terabits => write!(f, "Terabits"),
-            EntitlementUnit::TerabitsPerSecond => write!(f, "Terabits/Second"),
-            EntitlementUnit::Terabytes => write!(f, "Terabytes"),
-            EntitlementUnit::TerabytesPerSecond => write!(f, "Terabytes/Second"),
-            EntitlementUnit::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                EntitlementUnit::Bits => write!(f, "Bits"),
+EntitlementUnit::BitsPerSecond => write!(f, "Bits/Second"),
+EntitlementUnit::Bytes => write!(f, "Bytes"),
+EntitlementUnit::BytesPerSecond => write!(f, "Bytes/Second"),
+EntitlementUnit::Count => write!(f, "Count"),
+EntitlementUnit::CountPerSecond => write!(f, "Count/Second"),
+EntitlementUnit::Gigabits => write!(f, "Gigabits"),
+EntitlementUnit::GigabitsPerSecond => write!(f, "Gigabits/Second"),
+EntitlementUnit::Gigabytes => write!(f, "Gigabytes"),
+EntitlementUnit::GigabytesPerSecond => write!(f, "Gigabytes/Second"),
+EntitlementUnit::Kilobits => write!(f, "Kilobits"),
+EntitlementUnit::KilobitsPerSecond => write!(f, "Kilobits/Second"),
+EntitlementUnit::Kilobytes => write!(f, "Kilobytes"),
+EntitlementUnit::KilobytesPerSecond => write!(f, "Kilobytes/Second"),
+EntitlementUnit::Megabits => write!(f, "Megabits"),
+EntitlementUnit::MegabitsPerSecond => write!(f, "Megabits/Second"),
+EntitlementUnit::Megabytes => write!(f, "Megabytes"),
+EntitlementUnit::MegabytesPerSecond => write!(f, "Megabytes/Second"),
+EntitlementUnit::Microseconds => write!(f, "Microseconds"),
+EntitlementUnit::Milliseconds => write!(f, "Milliseconds"),
+EntitlementUnit::None => write!(f, "None"),
+EntitlementUnit::Percent => write!(f, "Percent"),
+EntitlementUnit::Seconds => write!(f, "Seconds"),
+EntitlementUnit::Terabits => write!(f, "Terabits"),
+EntitlementUnit::TerabitsPerSecond => write!(f, "Terabits/Second"),
+EntitlementUnit::Terabytes => write!(f, "Terabytes"),
+EntitlementUnit::TerabytesPerSecond => write!(f, "Terabytes/Second"),
+EntitlementUnit::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

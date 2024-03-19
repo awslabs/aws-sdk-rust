@@ -3,7 +3,7 @@
 /// Settings related to video encoding of your output. The specific video settings depend on the video codec that you choose.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VideoDescription {
+pub struct VideoDescription  {
     /// This setting only applies to H.264, H.265, and MPEG2 outputs. Use Insert AFD signaling to specify whether the service includes AFD values in the output video data and what those values are. * Choose None to remove all AFD values from this output. * Choose Fixed to ignore input AFD values and instead encode the value specified in the job. * Choose Auto to calculate output AFD values based on the input AFD scaler data.
     pub afd_signaling: ::std::option::Option<crate::types::AfdSignaling>,
     /// The anti-alias filter is automatically applied to all outputs. The service no longer accepts the value DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
@@ -35,29 +35,29 @@ pub struct VideoDescription {
     /// Use Width to define the video resolution width, in pixels, for this output. To use the same resolution as your input: Leave both Width and Height blank. To evenly scale from your input resolution: Leave Width blank and enter a value for Height. For example, if your input is 1920x1080 and you set Height to 720, your output will be 1280x720.
     pub width: ::std::option::Option<i32>,
 }
-impl VideoDescription {
+impl  VideoDescription  {
     /// This setting only applies to H.264, H.265, and MPEG2 outputs. Use Insert AFD signaling to specify whether the service includes AFD values in the output video data and what those values are. * Choose None to remove all AFD values from this output. * Choose Fixed to ignore input AFD values and instead encode the value specified in the job. * Choose Auto to calculate output AFD values based on the input AFD scaler data.
-    pub fn afd_signaling(&self) -> ::std::option::Option<&crate::types::AfdSignaling> {
+    pub fn afd_signaling(&self) -> ::std::option::Option<& crate::types::AfdSignaling> {
         self.afd_signaling.as_ref()
     }
     /// The anti-alias filter is automatically applied to all outputs. The service no longer accepts the value DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
-    pub fn anti_alias(&self) -> ::std::option::Option<&crate::types::AntiAlias> {
+    pub fn anti_alias(&self) -> ::std::option::Option<& crate::types::AntiAlias> {
         self.anti_alias.as_ref()
     }
     /// Video codec settings contains the group of settings related to video encoding. The settings in this group vary depending on the value that you choose for Video codec. For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * AV1, Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * UNCOMPRESSED, UncompressedSettings * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
-    pub fn codec_settings(&self) -> ::std::option::Option<&crate::types::VideoCodecSettings> {
+    pub fn codec_settings(&self) -> ::std::option::Option<& crate::types::VideoCodecSettings> {
         self.codec_settings.as_ref()
     }
     /// Choose Insert for this setting to include color metadata in this output. Choose Ignore to exclude color metadata from this output. If you don't specify a value, the service sets this to Insert by default.
-    pub fn color_metadata(&self) -> ::std::option::Option<&crate::types::ColorMetadata> {
+    pub fn color_metadata(&self) -> ::std::option::Option<& crate::types::ColorMetadata> {
         self.color_metadata.as_ref()
     }
     /// Use Cropping selection to specify the video area that the service will include in the output video frame.
-    pub fn crop(&self) -> ::std::option::Option<&crate::types::Rectangle> {
+    pub fn crop(&self) -> ::std::option::Option<& crate::types::Rectangle> {
         self.crop.as_ref()
     }
     /// Applies only to 29.97 fps outputs. When this feature is enabled, the service will use drop-frame timecode on outputs. If it is not possible to use drop-frame timecode, the system will fall back to non-drop-frame. This setting is enabled by default when Timecode insertion is enabled.
-    pub fn drop_frame_timecode(&self) -> ::std::option::Option<&crate::types::DropFrameTimecode> {
+    pub fn drop_frame_timecode(&self) -> ::std::option::Option<& crate::types::DropFrameTimecode> {
         self.drop_frame_timecode.as_ref()
     }
     /// Applies only if you set AFD Signaling to Fixed. Use Fixed to specify a four-bit AFD value which the service will write on all frames of this video output.
@@ -69,15 +69,15 @@ impl VideoDescription {
         self.height
     }
     /// Use Selection placement to define the video area in your output frame. The area outside of the rectangle that you specify here is black.
-    pub fn position(&self) -> ::std::option::Option<&crate::types::Rectangle> {
+    pub fn position(&self) -> ::std::option::Option<& crate::types::Rectangle> {
         self.position.as_ref()
     }
     /// Use Respond to AFD to specify how the service changes the video itself in response to AFD values in the input. * Choose Respond to clip the input video frame according to the AFD value, input display aspect ratio, and output display aspect ratio. * Choose Passthrough to include the input AFD values. Do not choose this when AfdSignaling is set to NONE. A preferred implementation of this workflow is to set RespondToAfd to and set AfdSignaling to AUTO. * Choose None to remove all input AFD values from this output.
-    pub fn respond_to_afd(&self) -> ::std::option::Option<&crate::types::RespondToAfd> {
+    pub fn respond_to_afd(&self) -> ::std::option::Option<& crate::types::RespondToAfd> {
         self.respond_to_afd.as_ref()
     }
     /// Specify the video Scaling behavior when your output has a different resolution than your input. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/video-scaling.html
-    pub fn scaling_behavior(&self) -> ::std::option::Option<&crate::types::ScalingBehavior> {
+    pub fn scaling_behavior(&self) -> ::std::option::Option<& crate::types::ScalingBehavior> {
         self.scaling_behavior.as_ref()
     }
     /// Use Sharpness setting to specify the strength of anti-aliasing. This setting changes the width of the anti-alias filter kernel used for scaling. Sharpness only applies if your output resolution is different from your input resolution. 0 is the softest setting, 100 the sharpest, and 50 recommended for most content.
@@ -85,11 +85,11 @@ impl VideoDescription {
         self.sharpness
     }
     /// Applies only to H.264, H.265, MPEG2, and ProRes outputs. Only enable Timecode insertion when the input frame rate is identical to the output frame rate. To include timecodes in this output, set Timecode insertion to PIC_TIMING_SEI. To leave them out, set it to DISABLED. Default is DISABLED. When the service inserts timecodes in an output, by default, it uses any embedded timecodes from the input. If none are present, the service will set the timecode for the first output frame to zero. To change this default behavior, adjust the settings under Timecode configuration. In the console, these settings are located under Job &gt; Job settings &gt; Timecode configuration. Note - Timecode source under input settings does not affect the timecodes that are inserted in the output. Source under Job settings &gt; Timecode configuration does.
-    pub fn timecode_insertion(&self) -> ::std::option::Option<&crate::types::VideoTimecodeInsertion> {
+    pub fn timecode_insertion(&self) -> ::std::option::Option<& crate::types::VideoTimecodeInsertion> {
         self.timecode_insertion.as_ref()
     }
     /// Find additional transcoding features under Preprocessors. Enable the features at each output individually. These features are disabled by default.
-    pub fn video_preprocessors(&self) -> ::std::option::Option<&crate::types::VideoPreprocessor> {
+    pub fn video_preprocessors(&self) -> ::std::option::Option<& crate::types::VideoPreprocessor> {
         self.video_preprocessors.as_ref()
     }
     /// Use Width to define the video resolution width, in pixels, for this output. To use the same resolution as your input: Leave both Width and Height blank. To evenly scale from your input resolution: Leave Width blank and enter a value for Height. For example, if your input is 1920x1080 and you set Height to 720, your output will be 1280x720.
@@ -132,8 +132,7 @@ impl VideoDescriptionBuilder {
     }
     /// This setting only applies to H.264, H.265, and MPEG2 outputs. Use Insert AFD signaling to specify whether the service includes AFD values in the output video data and what those values are. * Choose None to remove all AFD values from this output. * Choose Fixed to ignore input AFD values and instead encode the value specified in the job. * Choose Auto to calculate output AFD values based on the input AFD scaler data.
     pub fn set_afd_signaling(mut self, input: ::std::option::Option<crate::types::AfdSignaling>) -> Self {
-        self.afd_signaling = input;
-        self
+        self.afd_signaling = input; self
     }
     /// This setting only applies to H.264, H.265, and MPEG2 outputs. Use Insert AFD signaling to specify whether the service includes AFD values in the output video data and what those values are. * Choose None to remove all AFD values from this output. * Choose Fixed to ignore input AFD values and instead encode the value specified in the job. * Choose Auto to calculate output AFD values based on the input AFD scaler data.
     pub fn get_afd_signaling(&self) -> &::std::option::Option<crate::types::AfdSignaling> {
@@ -146,8 +145,7 @@ impl VideoDescriptionBuilder {
     }
     /// The anti-alias filter is automatically applied to all outputs. The service no longer accepts the value DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
     pub fn set_anti_alias(mut self, input: ::std::option::Option<crate::types::AntiAlias>) -> Self {
-        self.anti_alias = input;
-        self
+        self.anti_alias = input; self
     }
     /// The anti-alias filter is automatically applied to all outputs. The service no longer accepts the value DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
     pub fn get_anti_alias(&self) -> &::std::option::Option<crate::types::AntiAlias> {
@@ -160,8 +158,7 @@ impl VideoDescriptionBuilder {
     }
     /// Video codec settings contains the group of settings related to video encoding. The settings in this group vary depending on the value that you choose for Video codec. For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * AV1, Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * UNCOMPRESSED, UncompressedSettings * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
     pub fn set_codec_settings(mut self, input: ::std::option::Option<crate::types::VideoCodecSettings>) -> Self {
-        self.codec_settings = input;
-        self
+        self.codec_settings = input; self
     }
     /// Video codec settings contains the group of settings related to video encoding. The settings in this group vary depending on the value that you choose for Video codec. For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * AV1, Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * UNCOMPRESSED, UncompressedSettings * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
     pub fn get_codec_settings(&self) -> &::std::option::Option<crate::types::VideoCodecSettings> {
@@ -174,8 +171,7 @@ impl VideoDescriptionBuilder {
     }
     /// Choose Insert for this setting to include color metadata in this output. Choose Ignore to exclude color metadata from this output. If you don't specify a value, the service sets this to Insert by default.
     pub fn set_color_metadata(mut self, input: ::std::option::Option<crate::types::ColorMetadata>) -> Self {
-        self.color_metadata = input;
-        self
+        self.color_metadata = input; self
     }
     /// Choose Insert for this setting to include color metadata in this output. Choose Ignore to exclude color metadata from this output. If you don't specify a value, the service sets this to Insert by default.
     pub fn get_color_metadata(&self) -> &::std::option::Option<crate::types::ColorMetadata> {
@@ -188,8 +184,7 @@ impl VideoDescriptionBuilder {
     }
     /// Use Cropping selection to specify the video area that the service will include in the output video frame.
     pub fn set_crop(mut self, input: ::std::option::Option<crate::types::Rectangle>) -> Self {
-        self.crop = input;
-        self
+        self.crop = input; self
     }
     /// Use Cropping selection to specify the video area that the service will include in the output video frame.
     pub fn get_crop(&self) -> &::std::option::Option<crate::types::Rectangle> {
@@ -202,8 +197,7 @@ impl VideoDescriptionBuilder {
     }
     /// Applies only to 29.97 fps outputs. When this feature is enabled, the service will use drop-frame timecode on outputs. If it is not possible to use drop-frame timecode, the system will fall back to non-drop-frame. This setting is enabled by default when Timecode insertion is enabled.
     pub fn set_drop_frame_timecode(mut self, input: ::std::option::Option<crate::types::DropFrameTimecode>) -> Self {
-        self.drop_frame_timecode = input;
-        self
+        self.drop_frame_timecode = input; self
     }
     /// Applies only to 29.97 fps outputs. When this feature is enabled, the service will use drop-frame timecode on outputs. If it is not possible to use drop-frame timecode, the system will fall back to non-drop-frame. This setting is enabled by default when Timecode insertion is enabled.
     pub fn get_drop_frame_timecode(&self) -> &::std::option::Option<crate::types::DropFrameTimecode> {
@@ -216,8 +210,7 @@ impl VideoDescriptionBuilder {
     }
     /// Applies only if you set AFD Signaling to Fixed. Use Fixed to specify a four-bit AFD value which the service will write on all frames of this video output.
     pub fn set_fixed_afd(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.fixed_afd = input;
-        self
+        self.fixed_afd = input; self
     }
     /// Applies only if you set AFD Signaling to Fixed. Use Fixed to specify a four-bit AFD value which the service will write on all frames of this video output.
     pub fn get_fixed_afd(&self) -> &::std::option::Option<i32> {
@@ -230,8 +223,7 @@ impl VideoDescriptionBuilder {
     }
     /// Use Height to define the video resolution height, in pixels, for this output. To use the same resolution as your input: Leave both Width and Height blank. To evenly scale from your input resolution: Leave Height blank and enter a value for Width. For example, if your input is 1920x1080 and you set Width to 1280, your output will be 1280x720.
     pub fn set_height(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.height = input;
-        self
+        self.height = input; self
     }
     /// Use Height to define the video resolution height, in pixels, for this output. To use the same resolution as your input: Leave both Width and Height blank. To evenly scale from your input resolution: Leave Height blank and enter a value for Width. For example, if your input is 1920x1080 and you set Width to 1280, your output will be 1280x720.
     pub fn get_height(&self) -> &::std::option::Option<i32> {
@@ -244,8 +236,7 @@ impl VideoDescriptionBuilder {
     }
     /// Use Selection placement to define the video area in your output frame. The area outside of the rectangle that you specify here is black.
     pub fn set_position(mut self, input: ::std::option::Option<crate::types::Rectangle>) -> Self {
-        self.position = input;
-        self
+        self.position = input; self
     }
     /// Use Selection placement to define the video area in your output frame. The area outside of the rectangle that you specify here is black.
     pub fn get_position(&self) -> &::std::option::Option<crate::types::Rectangle> {
@@ -258,8 +249,7 @@ impl VideoDescriptionBuilder {
     }
     /// Use Respond to AFD to specify how the service changes the video itself in response to AFD values in the input. * Choose Respond to clip the input video frame according to the AFD value, input display aspect ratio, and output display aspect ratio. * Choose Passthrough to include the input AFD values. Do not choose this when AfdSignaling is set to NONE. A preferred implementation of this workflow is to set RespondToAfd to and set AfdSignaling to AUTO. * Choose None to remove all input AFD values from this output.
     pub fn set_respond_to_afd(mut self, input: ::std::option::Option<crate::types::RespondToAfd>) -> Self {
-        self.respond_to_afd = input;
-        self
+        self.respond_to_afd = input; self
     }
     /// Use Respond to AFD to specify how the service changes the video itself in response to AFD values in the input. * Choose Respond to clip the input video frame according to the AFD value, input display aspect ratio, and output display aspect ratio. * Choose Passthrough to include the input AFD values. Do not choose this when AfdSignaling is set to NONE. A preferred implementation of this workflow is to set RespondToAfd to and set AfdSignaling to AUTO. * Choose None to remove all input AFD values from this output.
     pub fn get_respond_to_afd(&self) -> &::std::option::Option<crate::types::RespondToAfd> {
@@ -272,8 +262,7 @@ impl VideoDescriptionBuilder {
     }
     /// Specify the video Scaling behavior when your output has a different resolution than your input. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/video-scaling.html
     pub fn set_scaling_behavior(mut self, input: ::std::option::Option<crate::types::ScalingBehavior>) -> Self {
-        self.scaling_behavior = input;
-        self
+        self.scaling_behavior = input; self
     }
     /// Specify the video Scaling behavior when your output has a different resolution than your input. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/video-scaling.html
     pub fn get_scaling_behavior(&self) -> &::std::option::Option<crate::types::ScalingBehavior> {
@@ -286,8 +275,7 @@ impl VideoDescriptionBuilder {
     }
     /// Use Sharpness setting to specify the strength of anti-aliasing. This setting changes the width of the anti-alias filter kernel used for scaling. Sharpness only applies if your output resolution is different from your input resolution. 0 is the softest setting, 100 the sharpest, and 50 recommended for most content.
     pub fn set_sharpness(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.sharpness = input;
-        self
+        self.sharpness = input; self
     }
     /// Use Sharpness setting to specify the strength of anti-aliasing. This setting changes the width of the anti-alias filter kernel used for scaling. Sharpness only applies if your output resolution is different from your input resolution. 0 is the softest setting, 100 the sharpest, and 50 recommended for most content.
     pub fn get_sharpness(&self) -> &::std::option::Option<i32> {
@@ -300,8 +288,7 @@ impl VideoDescriptionBuilder {
     }
     /// Applies only to H.264, H.265, MPEG2, and ProRes outputs. Only enable Timecode insertion when the input frame rate is identical to the output frame rate. To include timecodes in this output, set Timecode insertion to PIC_TIMING_SEI. To leave them out, set it to DISABLED. Default is DISABLED. When the service inserts timecodes in an output, by default, it uses any embedded timecodes from the input. If none are present, the service will set the timecode for the first output frame to zero. To change this default behavior, adjust the settings under Timecode configuration. In the console, these settings are located under Job &gt; Job settings &gt; Timecode configuration. Note - Timecode source under input settings does not affect the timecodes that are inserted in the output. Source under Job settings &gt; Timecode configuration does.
     pub fn set_timecode_insertion(mut self, input: ::std::option::Option<crate::types::VideoTimecodeInsertion>) -> Self {
-        self.timecode_insertion = input;
-        self
+        self.timecode_insertion = input; self
     }
     /// Applies only to H.264, H.265, MPEG2, and ProRes outputs. Only enable Timecode insertion when the input frame rate is identical to the output frame rate. To include timecodes in this output, set Timecode insertion to PIC_TIMING_SEI. To leave them out, set it to DISABLED. Default is DISABLED. When the service inserts timecodes in an output, by default, it uses any embedded timecodes from the input. If none are present, the service will set the timecode for the first output frame to zero. To change this default behavior, adjust the settings under Timecode configuration. In the console, these settings are located under Job &gt; Job settings &gt; Timecode configuration. Note - Timecode source under input settings does not affect the timecodes that are inserted in the output. Source under Job settings &gt; Timecode configuration does.
     pub fn get_timecode_insertion(&self) -> &::std::option::Option<crate::types::VideoTimecodeInsertion> {
@@ -314,8 +301,7 @@ impl VideoDescriptionBuilder {
     }
     /// Find additional transcoding features under Preprocessors. Enable the features at each output individually. These features are disabled by default.
     pub fn set_video_preprocessors(mut self, input: ::std::option::Option<crate::types::VideoPreprocessor>) -> Self {
-        self.video_preprocessors = input;
-        self
+        self.video_preprocessors = input; self
     }
     /// Find additional transcoding features under Preprocessors. Enable the features at each output individually. These features are disabled by default.
     pub fn get_video_preprocessors(&self) -> &::std::option::Option<crate::types::VideoPreprocessor> {
@@ -328,8 +314,7 @@ impl VideoDescriptionBuilder {
     }
     /// Use Width to define the video resolution width, in pixels, for this output. To use the same resolution as your input: Leave both Width and Height blank. To evenly scale from your input resolution: Leave Width blank and enter a value for Height. For example, if your input is 1920x1080 and you set Height to 720, your output will be 1280x720.
     pub fn set_width(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.width = input;
-        self
+        self.width = input; self
     }
     /// Use Width to define the video resolution width, in pixels, for this output. To use the same resolution as your input: Leave both Width and Height blank. To evenly scale from your input resolution: Leave Width blank and enter a value for Height. For example, if your input is 1920x1080 and you set Height to 720, your output will be 1280x720.
     pub fn get_width(&self) -> &::std::option::Option<i32> {
@@ -338,21 +323,37 @@ impl VideoDescriptionBuilder {
     /// Consumes the builder and constructs a [`VideoDescription`](crate::types::VideoDescription).
     pub fn build(self) -> crate::types::VideoDescription {
         crate::types::VideoDescription {
-            afd_signaling: self.afd_signaling,
-            anti_alias: self.anti_alias,
-            codec_settings: self.codec_settings,
-            color_metadata: self.color_metadata,
-            crop: self.crop,
-            drop_frame_timecode: self.drop_frame_timecode,
-            fixed_afd: self.fixed_afd,
-            height: self.height,
-            position: self.position,
-            respond_to_afd: self.respond_to_afd,
-            scaling_behavior: self.scaling_behavior,
-            sharpness: self.sharpness,
-            timecode_insertion: self.timecode_insertion,
-            video_preprocessors: self.video_preprocessors,
-            width: self.width,
+            afd_signaling: self.afd_signaling
+            ,
+            anti_alias: self.anti_alias
+            ,
+            codec_settings: self.codec_settings
+            ,
+            color_metadata: self.color_metadata
+            ,
+            crop: self.crop
+            ,
+            drop_frame_timecode: self.drop_frame_timecode
+            ,
+            fixed_afd: self.fixed_afd
+            ,
+            height: self.height
+            ,
+            position: self.position
+            ,
+            respond_to_afd: self.respond_to_afd
+            ,
+            scaling_behavior: self.scaling_behavior
+            ,
+            sharpness: self.sharpness
+            ,
+            timecode_insertion: self.timecode_insertion
+            ,
+            video_preprocessors: self.video_preprocessors
+            ,
+            width: self.width
+            ,
         }
     }
 }
+

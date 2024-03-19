@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DeleteCustomMetadataInput {
+pub struct DeleteCustomMetadataInput  {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub authentication_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resource, either a document or folder.</p>
@@ -10,35 +10,36 @@ pub struct DeleteCustomMetadataInput {
     /// <p>The ID of the version, if the custom metadata is being deleted from a document version.</p>
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>List of properties to remove.</p>
-    pub keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub keys: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Flag to indicate removal of all custom metadata properties from the specified resource.</p>
     pub delete_all: ::std::option::Option<bool>,
 }
-impl DeleteCustomMetadataInput {
+impl  DeleteCustomMetadataInput  {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(&self) -> ::std::option::Option<&str> {
+    pub fn authentication_token(&self) -> ::std::option::Option<& str> {
         self.authentication_token.as_deref()
     }
     /// <p>The ID of the resource, either a document or folder.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The ID of the version, if the custom metadata is being deleted from a document version.</p>
-    pub fn version_id(&self) -> ::std::option::Option<&str> {
+    pub fn version_id(&self) -> ::std::option::Option<& str> {
         self.version_id.as_deref()
     }
     /// <p>List of properties to remove.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.keys.is_none()`.
-    pub fn keys(&self) -> &[::std::string::String] {
-        self.keys.as_deref().unwrap_or_default()
+    pub fn keys(&self) -> & [::std::string::String] {
+        self.keys.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Flag to indicate removal of all custom metadata properties from the specified resource.</p>
     pub fn delete_all(&self) -> ::std::option::Option<bool> {
         self.delete_all
     }
 }
-impl ::std::fmt::Debug for DeleteCustomMetadataInput {
+impl  ::std::fmt::Debug for DeleteCustomMetadataInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteCustomMetadataInput");
         formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
@@ -63,7 +64,7 @@ pub struct DeleteCustomMetadataInputBuilder {
     pub(crate) authentication_token: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) version_id: ::std::option::Option<::std::string::String>,
-    pub(crate) keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) keys: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) delete_all: ::std::option::Option<bool>,
 }
 impl DeleteCustomMetadataInputBuilder {
@@ -74,8 +75,7 @@ impl DeleteCustomMetadataInputBuilder {
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.authentication_token = input;
-        self
+        self.authentication_token = input; self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +89,7 @@ impl DeleteCustomMetadataInputBuilder {
     }
     /// <p>The ID of the resource, either a document or folder.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The ID of the resource, either a document or folder.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl DeleteCustomMetadataInputBuilder {
     }
     /// <p>The ID of the version, if the custom metadata is being deleted from a document version.</p>
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_id = input;
-        self
+        self.version_id = input; self
     }
     /// <p>The ID of the version, if the custom metadata is being deleted from a document version.</p>
     pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,17 +115,16 @@ impl DeleteCustomMetadataInputBuilder {
     /// <p>List of properties to remove.</p>
     pub fn keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.keys.unwrap_or_default();
-        v.push(input.into());
-        self.keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of properties to remove.</p>
-    pub fn set_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.keys = input;
-        self
+    pub fn set_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.keys = input; self
     }
     /// <p>List of properties to remove.</p>
-    pub fn get_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_keys(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.keys
     }
     /// <p>Flag to indicate removal of all custom metadata properties from the specified resource.</p>
@@ -137,25 +134,28 @@ impl DeleteCustomMetadataInputBuilder {
     }
     /// <p>Flag to indicate removal of all custom metadata properties from the specified resource.</p>
     pub fn set_delete_all(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.delete_all = input;
-        self
+        self.delete_all = input; self
     }
     /// <p>Flag to indicate removal of all custom metadata properties from the specified resource.</p>
     pub fn get_delete_all(&self) -> &::std::option::Option<bool> {
         &self.delete_all
     }
     /// Consumes the builder and constructs a [`DeleteCustomMetadataInput`](crate::operation::delete_custom_metadata::DeleteCustomMetadataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_custom_metadata::DeleteCustomMetadataInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_custom_metadata::DeleteCustomMetadataInput {
-            authentication_token: self.authentication_token,
-            resource_id: self.resource_id,
-            version_id: self.version_id,
-            keys: self.keys,
-            delete_all: self.delete_all,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_custom_metadata::DeleteCustomMetadataInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_custom_metadata::DeleteCustomMetadataInput {
+                authentication_token: self.authentication_token
+                ,
+                resource_id: self.resource_id
+                ,
+                version_id: self.version_id
+                ,
+                keys: self.keys
+                ,
+                delete_all: self.delete_all
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for DeleteCustomMetadataInputBuilder {
@@ -169,3 +169,4 @@ impl ::std::fmt::Debug for DeleteCustomMetadataInputBuilder {
         formatter.finish()
     }
 }
+

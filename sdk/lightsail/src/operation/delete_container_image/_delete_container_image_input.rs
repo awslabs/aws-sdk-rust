@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteContainerImageInput {
+pub struct DeleteContainerImageInput  {
     /// <p>The name of the container service for which to delete a registered container image.</p>
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the container image to delete from the container service.</p>
@@ -11,16 +11,16 @@ pub struct DeleteContainerImageInput {
     /// </note>
     pub image: ::std::option::Option<::std::string::String>,
 }
-impl DeleteContainerImageInput {
+impl  DeleteContainerImageInput  {
     /// <p>The name of the container service for which to delete a registered container image.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<& str> {
         self.service_name.as_deref()
     }
     /// <p>The name of the container image to delete from the container service.</p>
     /// <p>Use the <code>GetContainerImages</code> action to get the name of the container images that are registered to a container service.</p><note>
     /// <p>Container images sourced from your Lightsail container service, that are registered and stored on your service, start with a colon (<code>:</code>). For example, <code>:container-service-1.mystaticwebsite.1</code>. Container images sourced from a public registry like Docker Hub don't start with a colon. For example, <code>nginx:latest</code> or <code>nginx</code>.</p>
     /// </note>
-    pub fn image(&self) -> ::std::option::Option<&str> {
+    pub fn image(&self) -> ::std::option::Option<& str> {
         self.image.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl DeleteContainerImageInputBuilder {
     }
     /// <p>The name of the container service for which to delete a registered container image.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>The name of the container service for which to delete a registered container image.</p>
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl DeleteContainerImageInputBuilder {
     /// <p>Container images sourced from your Lightsail container service, that are registered and stored on your service, start with a colon (<code>:</code>). For example, <code>:container-service-1.mystaticwebsite.1</code>. Container images sourced from a public registry like Docker Hub don't start with a colon. For example, <code>nginx:latest</code> or <code>nginx</code>.</p>
     /// </note>
     pub fn set_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image = input;
-        self
+        self.image = input; self
     }
     /// <p>The name of the container image to delete from the container service.</p>
     /// <p>Use the <code>GetContainerImages</code> action to get the name of the container images that are registered to a container service.</p><note>
@@ -79,13 +77,15 @@ impl DeleteContainerImageInputBuilder {
         &self.image
     }
     /// Consumes the builder and constructs a [`DeleteContainerImageInput`](crate::operation::delete_container_image::DeleteContainerImageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_container_image::DeleteContainerImageInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_container_image::DeleteContainerImageInput {
-            service_name: self.service_name,
-            image: self.image,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_container_image::DeleteContainerImageInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_container_image::DeleteContainerImageInput {
+                service_name: self.service_name
+                ,
+                image: self.image
+                ,
+            }
+        )
     }
 }
+

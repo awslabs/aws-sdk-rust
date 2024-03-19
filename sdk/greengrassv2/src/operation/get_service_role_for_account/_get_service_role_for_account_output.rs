@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetServiceRoleForAccountOutput {
+pub struct GetServiceRoleForAccountOutput  {
     /// <p>The time when the service role was associated with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
     pub associated_at: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the service role that is associated with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetServiceRoleForAccountOutput {
+impl  GetServiceRoleForAccountOutput  {
     /// <p>The time when the service role was associated with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
-    pub fn associated_at(&self) -> ::std::option::Option<&str> {
+    pub fn associated_at(&self) -> ::std::option::Option<& str> {
         self.associated_at.as_deref()
     }
     /// <p>The ARN of the service role that is associated with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetServiceRoleForAccountOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetServiceRoleForAccountOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceRoleForAccountOutput`](crate::operation::get_service_role_for_account::GetServiceRoleForAccountOutput).
     pub fn builder() -> crate::operation::get_service_role_for_account::builders::GetServiceRoleForAccountOutputBuilder {
@@ -47,8 +47,7 @@ impl GetServiceRoleForAccountOutputBuilder {
     }
     /// <p>The time when the service role was associated with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
     pub fn set_associated_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.associated_at = input;
-        self
+        self.associated_at = input; self
     }
     /// <p>The time when the service role was associated with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
     pub fn get_associated_at(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl GetServiceRoleForAccountOutputBuilder {
     }
     /// <p>The ARN of the service role that is associated with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the service role that is associated with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetServiceRoleForAccountOutput`](crate::operation::get_service_role_for_account::GetServiceRoleForAccountOutput).
     pub fn build(self) -> crate::operation::get_service_role_for_account::GetServiceRoleForAccountOutput {
         crate::operation::get_service_role_for_account::GetServiceRoleForAccountOutput {
-            associated_at: self.associated_at,
-            role_arn: self.role_arn,
+            associated_at: self.associated_at
+            ,
+            role_arn: self.role_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

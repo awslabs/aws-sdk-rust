@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteResolverQueryLogConfigInput {
+pub struct DeleteResolverQueryLogConfigInput  {
     /// <p>The ID of the query logging configuration that you want to delete.</p>
     pub resolver_query_log_config_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteResolverQueryLogConfigInput {
+impl  DeleteResolverQueryLogConfigInput  {
     /// <p>The ID of the query logging configuration that you want to delete.</p>
-    pub fn resolver_query_log_config_id(&self) -> ::std::option::Option<&str> {
+    pub fn resolver_query_log_config_id(&self) -> ::std::option::Option<& str> {
         self.resolver_query_log_config_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteResolverQueryLogConfigInputBuilder {
     }
     /// <p>The ID of the query logging configuration that you want to delete.</p>
     pub fn set_resolver_query_log_config_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resolver_query_log_config_id = input;
-        self
+        self.resolver_query_log_config_id = input; self
     }
     /// <p>The ID of the query logging configuration that you want to delete.</p>
     pub fn get_resolver_query_log_config_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resolver_query_log_config_id
     }
     /// Consumes the builder and constructs a [`DeleteResolverQueryLogConfigInput`](crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigInput {
-            resolver_query_log_config_id: self.resolver_query_log_config_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigInput {
+                resolver_query_log_config_id: self.resolver_query_log_config_id
+                ,
+            }
+        )
     }
 }
+

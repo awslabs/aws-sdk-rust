@@ -3,19 +3,19 @@
 /// <p>A structure that represents a range constant.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RangeConstant {
+pub struct RangeConstant  {
     /// <p>The minimum value for a range constant.</p>
     pub minimum: ::std::option::Option<::std::string::String>,
     /// <p>The maximum value for a range constant.</p>
     pub maximum: ::std::option::Option<::std::string::String>,
 }
-impl RangeConstant {
+impl  RangeConstant  {
     /// <p>The minimum value for a range constant.</p>
-    pub fn minimum(&self) -> ::std::option::Option<&str> {
+    pub fn minimum(&self) -> ::std::option::Option<& str> {
         self.minimum.as_deref()
     }
     /// <p>The maximum value for a range constant.</p>
-    pub fn maximum(&self) -> ::std::option::Option<&str> {
+    pub fn maximum(&self) -> ::std::option::Option<& str> {
         self.maximum.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl RangeConstantBuilder {
     }
     /// <p>The minimum value for a range constant.</p>
     pub fn set_minimum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.minimum = input;
-        self
+        self.minimum = input; self
     }
     /// <p>The minimum value for a range constant.</p>
     pub fn get_minimum(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl RangeConstantBuilder {
     }
     /// <p>The maximum value for a range constant.</p>
     pub fn set_maximum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.maximum = input;
-        self
+        self.maximum = input; self
     }
     /// <p>The maximum value for a range constant.</p>
     pub fn get_maximum(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl RangeConstantBuilder {
     /// Consumes the builder and constructs a [`RangeConstant`](crate::types::RangeConstant).
     pub fn build(self) -> crate::types::RangeConstant {
         crate::types::RangeConstant {
-            minimum: self.minimum,
-            maximum: self.maximum,
+            minimum: self.minimum
+            ,
+            maximum: self.maximum
+            ,
         }
     }
 }
+

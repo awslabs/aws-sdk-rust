@@ -4,7 +4,7 @@
 /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking-metric-math.html">Create a target tracking scaling policy for Application Auto Scaling using metric math</a> in the <i>Application Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TargetTrackingMetricDataQuery {
+pub struct TargetTrackingMetricDataQuery  {
     /// <p>The math expression to perform on the returned data, if this object is performing a math expression. This expression can use the <code>Id</code> of the other metrics to refer to those metrics, and can also use the <code>Id</code> of other expressions to use the result of those expressions.</p>
     /// <p>Conditional: Within each <code>TargetTrackingMetricDataQuery</code> object, you must specify either <code>Expression</code> or <code>MetricStat</code>, but not both.</p>
     pub expression: ::std::option::Option<::std::string::String>,
@@ -20,24 +20,23 @@ pub struct TargetTrackingMetricDataQuery {
     /// <p>If you are only retrieving metrics and not performing any math expressions, do not specify anything for <code>ReturnData</code>. This sets it to its default (<code>true</code>).</p>
     pub return_data: ::std::option::Option<bool>,
 }
-impl TargetTrackingMetricDataQuery {
+impl  TargetTrackingMetricDataQuery  {
     /// <p>The math expression to perform on the returned data, if this object is performing a math expression. This expression can use the <code>Id</code> of the other metrics to refer to those metrics, and can also use the <code>Id</code> of other expressions to use the result of those expressions.</p>
     /// <p>Conditional: Within each <code>TargetTrackingMetricDataQuery</code> object, you must specify either <code>Expression</code> or <code>MetricStat</code>, but not both.</p>
-    pub fn expression(&self) -> ::std::option::Option<&str> {
+    pub fn expression(&self) -> ::std::option::Option<& str> {
         self.expression.as_deref()
     }
     /// <p>A short name that identifies the object's results in the response. This name must be unique among all <code>MetricDataQuery</code> objects specified for a single scaling policy. If you are performing math expressions on this set of data, this name represents that data and can serve as a variable in the mathematical expression. The valid characters are letters, numbers, and underscores. The first character must be a lowercase letter.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>A human-readable label for this metric or expression. This is especially useful if this is a math expression, so that you know what the value represents.</p>
-    pub fn label(&self) -> ::std::option::Option<&str> {
+    pub fn label(&self) -> ::std::option::Option<& str> {
         self.label.as_deref()
     }
     /// <p>Information about the metric data to return.</p>
     /// <p>Conditional: Within each <code>MetricDataQuery</code> object, you must specify either <code>Expression</code> or <code>MetricStat</code>, but not both.</p>
-    pub fn metric_stat(&self) -> ::std::option::Option<&crate::types::TargetTrackingMetricStat> {
+    pub fn metric_stat(&self) -> ::std::option::Option<& crate::types::TargetTrackingMetricStat> {
         self.metric_stat.as_ref()
     }
     /// <p>Indicates whether to return the timestamps and raw data values of this metric.</p>
@@ -74,8 +73,7 @@ impl TargetTrackingMetricDataQueryBuilder {
     /// <p>The math expression to perform on the returned data, if this object is performing a math expression. This expression can use the <code>Id</code> of the other metrics to refer to those metrics, and can also use the <code>Id</code> of other expressions to use the result of those expressions.</p>
     /// <p>Conditional: Within each <code>TargetTrackingMetricDataQuery</code> object, you must specify either <code>Expression</code> or <code>MetricStat</code>, but not both.</p>
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expression = input;
-        self
+        self.expression = input; self
     }
     /// <p>The math expression to perform on the returned data, if this object is performing a math expression. This expression can use the <code>Id</code> of the other metrics to refer to those metrics, and can also use the <code>Id</code> of other expressions to use the result of those expressions.</p>
     /// <p>Conditional: Within each <code>TargetTrackingMetricDataQuery</code> object, you must specify either <code>Expression</code> or <code>MetricStat</code>, but not both.</p>
@@ -90,8 +88,7 @@ impl TargetTrackingMetricDataQueryBuilder {
     }
     /// <p>A short name that identifies the object's results in the response. This name must be unique among all <code>MetricDataQuery</code> objects specified for a single scaling policy. If you are performing math expressions on this set of data, this name represents that data and can serve as a variable in the mathematical expression. The valid characters are letters, numbers, and underscores. The first character must be a lowercase letter.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>A short name that identifies the object's results in the response. This name must be unique among all <code>MetricDataQuery</code> objects specified for a single scaling policy. If you are performing math expressions on this set of data, this name represents that data and can serve as a variable in the mathematical expression. The valid characters are letters, numbers, and underscores. The first character must be a lowercase letter.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl TargetTrackingMetricDataQueryBuilder {
     }
     /// <p>A human-readable label for this metric or expression. This is especially useful if this is a math expression, so that you know what the value represents.</p>
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label = input;
-        self
+        self.label = input; self
     }
     /// <p>A human-readable label for this metric or expression. This is especially useful if this is a math expression, so that you know what the value represents.</p>
     pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +116,7 @@ impl TargetTrackingMetricDataQueryBuilder {
     /// <p>Information about the metric data to return.</p>
     /// <p>Conditional: Within each <code>MetricDataQuery</code> object, you must specify either <code>Expression</code> or <code>MetricStat</code>, but not both.</p>
     pub fn set_metric_stat(mut self, input: ::std::option::Option<crate::types::TargetTrackingMetricStat>) -> Self {
-        self.metric_stat = input;
-        self
+        self.metric_stat = input; self
     }
     /// <p>Information about the metric data to return.</p>
     /// <p>Conditional: Within each <code>MetricDataQuery</code> object, you must specify either <code>Expression</code> or <code>MetricStat</code>, but not both.</p>
@@ -139,8 +134,7 @@ impl TargetTrackingMetricDataQueryBuilder {
     /// <p>If you use any math expressions, specify <code>true</code> for this value for only the final math expression that the metric specification is based on. You must specify <code>false</code> for <code>ReturnData</code> for all the other metrics and expressions used in the metric specification.</p>
     /// <p>If you are only retrieving metrics and not performing any math expressions, do not specify anything for <code>ReturnData</code>. This sets it to its default (<code>true</code>).</p>
     pub fn set_return_data(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.return_data = input;
-        self
+        self.return_data = input; self
     }
     /// <p>Indicates whether to return the timestamps and raw data values of this metric.</p>
     /// <p>If you use any math expressions, specify <code>true</code> for this value for only the final math expression that the metric specification is based on. You must specify <code>false</code> for <code>ReturnData</code> for all the other metrics and expressions used in the metric specification.</p>
@@ -152,17 +146,23 @@ impl TargetTrackingMetricDataQueryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::TargetTrackingMetricDataQueryBuilder::id)
     pub fn build(self) -> ::std::result::Result<crate::types::TargetTrackingMetricDataQuery, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TargetTrackingMetricDataQuery {
-            expression: self.expression,
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building TargetTrackingMetricDataQuery",
-                )
-            })?,
-            label: self.label,
-            metric_stat: self.metric_stat,
-            return_data: self.return_data,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TargetTrackingMetricDataQuery {
+                expression: self.expression
+                ,
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building TargetTrackingMetricDataQuery")
+                    )?
+                ,
+                label: self.label
+                ,
+                metric_stat: self.metric_stat
+                ,
+                return_data: self.return_data
+                ,
+            }
+        )
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAccountConfigurationOutput {
+pub struct UpdateAccountConfigurationOutput  {
     /// <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN to use for encryption.</p>
     pub encryption_config: ::std::option::Option<crate::types::EncryptionConfig>,
     _request_id: Option<String>,
 }
-impl UpdateAccountConfigurationOutput {
+impl  UpdateAccountConfigurationOutput  {
     /// <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN to use for encryption.</p>
-    pub fn encryption_config(&self) -> ::std::option::Option<&crate::types::EncryptionConfig> {
+    pub fn encryption_config(&self) -> ::std::option::Option<& crate::types::EncryptionConfig> {
         self.encryption_config.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateAccountConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateAccountConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAccountConfigurationOutput`](crate::operation::update_account_configuration::UpdateAccountConfigurationOutput).
     pub fn builder() -> crate::operation::update_account_configuration::builders::UpdateAccountConfigurationOutputBuilder {
@@ -41,27 +41,28 @@ impl UpdateAccountConfigurationOutputBuilder {
     }
     /// <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN to use for encryption.</p>
     pub fn set_encryption_config(mut self, input: ::std::option::Option<crate::types::EncryptionConfig>) -> Self {
-        self.encryption_config = input;
-        self
+        self.encryption_config = input; self
     }
     /// <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN to use for encryption.</p>
     pub fn get_encryption_config(&self) -> &::std::option::Option<crate::types::EncryptionConfig> {
         &self.encryption_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateAccountConfigurationOutput`](crate::operation::update_account_configuration::UpdateAccountConfigurationOutput).
     pub fn build(self) -> crate::operation::update_account_configuration::UpdateAccountConfigurationOutput {
         crate::operation::update_account_configuration::UpdateAccountConfigurationOutput {
-            encryption_config: self.encryption_config,
+            encryption_config: self.encryption_config
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateStorageVirtualMachineInput {
+pub struct UpdateStorageVirtualMachineInput  {
     /// <p>Specifies updates to an SVM's Microsoft Active Directory (AD) configuration.</p>
     pub active_directory_configuration: ::std::option::Option<crate::types::UpdateSvmActiveDirectoryConfiguration>,
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
@@ -12,25 +12,25 @@ pub struct UpdateStorageVirtualMachineInput {
     /// <p>Specifies a new SvmAdminPassword.</p>
     pub svm_admin_password: ::std::option::Option<::std::string::String>,
 }
-impl UpdateStorageVirtualMachineInput {
+impl  UpdateStorageVirtualMachineInput  {
     /// <p>Specifies updates to an SVM's Microsoft Active Directory (AD) configuration.</p>
-    pub fn active_directory_configuration(&self) -> ::std::option::Option<&crate::types::UpdateSvmActiveDirectoryConfiguration> {
+    pub fn active_directory_configuration(&self) -> ::std::option::Option<& crate::types::UpdateSvmActiveDirectoryConfiguration> {
         self.active_directory_configuration.as_ref()
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The ID of the SVM that you want to update, in the format <code>svm-0123456789abcdef0</code>.</p>
-    pub fn storage_virtual_machine_id(&self) -> ::std::option::Option<&str> {
+    pub fn storage_virtual_machine_id(&self) -> ::std::option::Option<& str> {
         self.storage_virtual_machine_id.as_deref()
     }
     /// <p>Specifies a new SvmAdminPassword.</p>
-    pub fn svm_admin_password(&self) -> ::std::option::Option<&str> {
+    pub fn svm_admin_password(&self) -> ::std::option::Option<& str> {
         self.svm_admin_password.as_deref()
     }
 }
-impl ::std::fmt::Debug for UpdateStorageVirtualMachineInput {
+impl  ::std::fmt::Debug for UpdateStorageVirtualMachineInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateStorageVirtualMachineInput");
         formatter.field("active_directory_configuration", &self.active_directory_configuration);
@@ -64,8 +64,7 @@ impl UpdateStorageVirtualMachineInputBuilder {
     }
     /// <p>Specifies updates to an SVM's Microsoft Active Directory (AD) configuration.</p>
     pub fn set_active_directory_configuration(mut self, input: ::std::option::Option<crate::types::UpdateSvmActiveDirectoryConfiguration>) -> Self {
-        self.active_directory_configuration = input;
-        self
+        self.active_directory_configuration = input; self
     }
     /// <p>Specifies updates to an SVM's Microsoft Active Directory (AD) configuration.</p>
     pub fn get_active_directory_configuration(&self) -> &::std::option::Option<crate::types::UpdateSvmActiveDirectoryConfiguration> {
@@ -78,8 +77,7 @@ impl UpdateStorageVirtualMachineInputBuilder {
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +91,7 @@ impl UpdateStorageVirtualMachineInputBuilder {
     }
     /// <p>The ID of the SVM that you want to update, in the format <code>svm-0123456789abcdef0</code>.</p>
     pub fn set_storage_virtual_machine_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.storage_virtual_machine_id = input;
-        self
+        self.storage_virtual_machine_id = input; self
     }
     /// <p>The ID of the SVM that you want to update, in the format <code>svm-0123456789abcdef0</code>.</p>
     pub fn get_storage_virtual_machine_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,26 +104,26 @@ impl UpdateStorageVirtualMachineInputBuilder {
     }
     /// <p>Specifies a new SvmAdminPassword.</p>
     pub fn set_svm_admin_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.svm_admin_password = input;
-        self
+        self.svm_admin_password = input; self
     }
     /// <p>Specifies a new SvmAdminPassword.</p>
     pub fn get_svm_admin_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.svm_admin_password
     }
     /// Consumes the builder and constructs a [`UpdateStorageVirtualMachineInput`](crate::operation::update_storage_virtual_machine::UpdateStorageVirtualMachineInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_storage_virtual_machine::UpdateStorageVirtualMachineInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_storage_virtual_machine::UpdateStorageVirtualMachineInput {
-            active_directory_configuration: self.active_directory_configuration,
-            client_request_token: self.client_request_token,
-            storage_virtual_machine_id: self.storage_virtual_machine_id,
-            svm_admin_password: self.svm_admin_password,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_storage_virtual_machine::UpdateStorageVirtualMachineInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_storage_virtual_machine::UpdateStorageVirtualMachineInput {
+                active_directory_configuration: self.active_directory_configuration
+                ,
+                client_request_token: self.client_request_token
+                ,
+                storage_virtual_machine_id: self.storage_virtual_machine_id
+                ,
+                svm_admin_password: self.svm_admin_password
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateStorageVirtualMachineInputBuilder {
@@ -139,3 +136,4 @@ impl ::std::fmt::Debug for UpdateStorageVirtualMachineInputBuilder {
         formatter.finish()
     }
 }
+

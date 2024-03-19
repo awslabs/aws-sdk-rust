@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeApplicationAssociationsInput {
+pub struct DescribeApplicationAssociationsInput  {
     /// <p>The maximum number of associations to return.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
@@ -10,26 +10,27 @@ pub struct DescribeApplicationAssociationsInput {
     /// <p>The identifier of the specified application.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource type of the associated resources.</p>
-    pub associated_resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationAssociatedResourceType>>,
+    pub associated_resource_types: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationAssociatedResourceType>>,
 }
-impl DescribeApplicationAssociationsInput {
+impl  DescribeApplicationAssociationsInput  {
     /// <p>The maximum number of associations to return.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The identifier of the specified application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The resource type of the associated resources.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_resource_types.is_none()`.
-    pub fn associated_resource_types(&self) -> &[crate::types::ApplicationAssociatedResourceType] {
-        self.associated_resource_types.as_deref().unwrap_or_default()
+    pub fn associated_resource_types(&self) -> & [crate::types::ApplicationAssociatedResourceType] {
+        self.associated_resource_types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeApplicationAssociationsInput {
@@ -46,7 +47,7 @@ pub struct DescribeApplicationAssociationsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
-    pub(crate) associated_resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationAssociatedResourceType>>,
+    pub(crate) associated_resource_types: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationAssociatedResourceType>>,
 }
 impl DescribeApplicationAssociationsInputBuilder {
     /// <p>The maximum number of associations to return.</p>
@@ -56,8 +57,7 @@ impl DescribeApplicationAssociationsInputBuilder {
     }
     /// <p>The maximum number of associations to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of associations to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -70,8 +70,7 @@ impl DescribeApplicationAssociationsInputBuilder {
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +84,7 @@ impl DescribeApplicationAssociationsInputBuilder {
     }
     /// <p>The identifier of the specified application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier of the specified application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,36 +97,32 @@ impl DescribeApplicationAssociationsInputBuilder {
     /// <p>The resource type of the associated resources.</p>
     pub fn associated_resource_types(mut self, input: crate::types::ApplicationAssociatedResourceType) -> Self {
         let mut v = self.associated_resource_types.unwrap_or_default();
-        v.push(input);
-        self.associated_resource_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.associated_resource_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The resource type of the associated resources.</p>
-    pub fn set_associated_resource_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationAssociatedResourceType>>,
-    ) -> Self {
-        self.associated_resource_types = input;
-        self
+    pub fn set_associated_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationAssociatedResourceType>>) -> Self {
+        self.associated_resource_types = input; self
     }
     /// <p>The resource type of the associated resources.</p>
-    pub fn get_associated_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationAssociatedResourceType>> {
+    pub fn get_associated_resource_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ApplicationAssociatedResourceType>> {
         &self.associated_resource_types
     }
     /// Consumes the builder and constructs a [`DescribeApplicationAssociationsInput`](crate::operation::describe_application_associations::DescribeApplicationAssociationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_application_associations::DescribeApplicationAssociationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_application_associations::DescribeApplicationAssociationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_application_associations::DescribeApplicationAssociationsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                application_id: self.application_id,
-                associated_resource_types: self.associated_resource_types,
-            },
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                application_id: self.application_id
+                ,
+                associated_resource_types: self.associated_resource_types
+                ,
+            }
         )
     }
 }
+

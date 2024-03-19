@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSnapshotScheduleOutput {
+pub struct DeleteSnapshotScheduleOutput  {
     /// <p>The volume which snapshot schedule was deleted.</p>
     pub volume_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DeleteSnapshotScheduleOutput {
+impl  DeleteSnapshotScheduleOutput  {
     /// <p>The volume which snapshot schedule was deleted.</p>
-    pub fn volume_arn(&self) -> ::std::option::Option<&str> {
+    pub fn volume_arn(&self) -> ::std::option::Option<& str> {
         self.volume_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteSnapshotScheduleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteSnapshotScheduleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSnapshotScheduleOutput`](crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleOutput).
     pub fn builder() -> crate::operation::delete_snapshot_schedule::builders::DeleteSnapshotScheduleOutputBuilder {
@@ -40,27 +40,28 @@ impl DeleteSnapshotScheduleOutputBuilder {
     }
     /// <p>The volume which snapshot schedule was deleted.</p>
     pub fn set_volume_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_arn = input;
-        self
+        self.volume_arn = input; self
     }
     /// <p>The volume which snapshot schedule was deleted.</p>
     pub fn get_volume_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteSnapshotScheduleOutput`](crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleOutput).
     pub fn build(self) -> crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleOutput {
         crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleOutput {
-            volume_arn: self.volume_arn,
+            volume_arn: self.volume_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

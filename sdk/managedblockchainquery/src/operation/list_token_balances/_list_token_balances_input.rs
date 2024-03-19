@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTokenBalancesInput {
+pub struct ListTokenBalancesInput  {
     /// <p>The contract or wallet address on the blockchain network by which to filter the request. You must specify the <code>address</code> property of the <code>ownerFilter</code> when listing balances of tokens owned by the address.</p>
     pub owner_filter: ::std::option::Option<crate::types::OwnerFilter>,
     /// <p>The contract address or a token identifier on the blockchain network by which to filter the request. You must specify the <code>contractAddress</code> property of this container when listing tokens minted by a contract.</p><note>
@@ -18,19 +18,19 @@ pub struct ListTokenBalancesInput {
     /// </note>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListTokenBalancesInput {
+impl  ListTokenBalancesInput  {
     /// <p>The contract or wallet address on the blockchain network by which to filter the request. You must specify the <code>address</code> property of the <code>ownerFilter</code> when listing balances of tokens owned by the address.</p>
-    pub fn owner_filter(&self) -> ::std::option::Option<&crate::types::OwnerFilter> {
+    pub fn owner_filter(&self) -> ::std::option::Option<& crate::types::OwnerFilter> {
         self.owner_filter.as_ref()
     }
     /// <p>The contract address or a token identifier on the blockchain network by which to filter the request. You must specify the <code>contractAddress</code> property of this container when listing tokens minted by a contract.</p><note>
     /// <p>You must always specify the network property of this container when using this operation.</p>
     /// </note>
-    pub fn token_filter(&self) -> ::std::option::Option<&crate::types::TokenFilter> {
+    pub fn token_filter(&self) -> ::std::option::Option<& crate::types::TokenFilter> {
         self.token_filter.as_ref()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of token balances to return.</p>
@@ -66,8 +66,7 @@ impl ListTokenBalancesInputBuilder {
     }
     /// <p>The contract or wallet address on the blockchain network by which to filter the request. You must specify the <code>address</code> property of the <code>ownerFilter</code> when listing balances of tokens owned by the address.</p>
     pub fn set_owner_filter(mut self, input: ::std::option::Option<crate::types::OwnerFilter>) -> Self {
-        self.owner_filter = input;
-        self
+        self.owner_filter = input; self
     }
     /// <p>The contract or wallet address on the blockchain network by which to filter the request. You must specify the <code>address</code> property of the <code>ownerFilter</code> when listing balances of tokens owned by the address.</p>
     pub fn get_owner_filter(&self) -> &::std::option::Option<crate::types::OwnerFilter> {
@@ -85,8 +84,7 @@ impl ListTokenBalancesInputBuilder {
     /// <p>You must always specify the network property of this container when using this operation.</p>
     /// </note>
     pub fn set_token_filter(mut self, input: ::std::option::Option<crate::types::TokenFilter>) -> Self {
-        self.token_filter = input;
-        self
+        self.token_filter = input; self
     }
     /// <p>The contract address or a token identifier on the blockchain network by which to filter the request. You must specify the <code>contractAddress</code> property of this container when listing tokens minted by a contract.</p><note>
     /// <p>You must always specify the network property of this container when using this operation.</p>
@@ -101,8 +99,7 @@ impl ListTokenBalancesInputBuilder {
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +120,7 @@ impl ListTokenBalancesInputBuilder {
     /// <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p>
     /// </note>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of token balances to return.</p>
     /// <p>Default: <code>100</code></p><note>
@@ -135,14 +131,19 @@ impl ListTokenBalancesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListTokenBalancesInput`](crate::operation::list_token_balances::ListTokenBalancesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_token_balances::ListTokenBalancesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_token_balances::ListTokenBalancesInput {
-            owner_filter: self.owner_filter,
-            token_filter: self.token_filter,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_token_balances::ListTokenBalancesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_token_balances::ListTokenBalancesInput {
+                owner_filter: self.owner_filter
+                ,
+                token_filter: self.token_filter
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

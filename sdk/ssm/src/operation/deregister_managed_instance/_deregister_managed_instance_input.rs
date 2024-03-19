@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterManagedInstanceInput {
+pub struct DeregisterManagedInstanceInput  {
     /// <p>The ID assigned to the managed node when you registered it using the activation process.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
 }
-impl DeregisterManagedInstanceInput {
+impl  DeregisterManagedInstanceInput  {
     /// <p>The ID assigned to the managed node when you registered it using the activation process.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeregisterManagedInstanceInputBuilder {
     }
     /// <p>The ID assigned to the managed node when you registered it using the activation process.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID assigned to the managed node when you registered it using the activation process.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
     /// Consumes the builder and constructs a [`DeregisterManagedInstanceInput`](crate::operation::deregister_managed_instance::DeregisterManagedInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_managed_instance::DeregisterManagedInstanceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::deregister_managed_instance::DeregisterManagedInstanceInput {
-            instance_id: self.instance_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_managed_instance::DeregisterManagedInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::deregister_managed_instance::DeregisterManagedInstanceInput {
+                instance_id: self.instance_id
+                ,
+            }
+        )
     }
 }
+

@@ -4,7 +4,8 @@
 /// <p><code>RuleName</code> is used as <code>ContactCategory</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssignContactCategoryActionDefinition {}
+pub struct AssignContactCategoryActionDefinition  {
+}
 impl AssignContactCategoryActionDefinition {
     /// Creates a new builder-style object to manufacture [`AssignContactCategoryActionDefinition`](crate::types::AssignContactCategoryActionDefinition).
     pub fn builder() -> crate::types::builders::AssignContactCategoryActionDefinitionBuilder {
@@ -15,10 +16,13 @@ impl AssignContactCategoryActionDefinition {
 /// A builder for [`AssignContactCategoryActionDefinition`](crate::types::AssignContactCategoryActionDefinition).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct AssignContactCategoryActionDefinitionBuilder {}
+pub struct AssignContactCategoryActionDefinitionBuilder {
+}
 impl AssignContactCategoryActionDefinitionBuilder {
     /// Consumes the builder and constructs a [`AssignContactCategoryActionDefinition`](crate::types::AssignContactCategoryActionDefinition).
     pub fn build(self) -> crate::types::AssignContactCategoryActionDefinition {
-        crate::types::AssignContactCategoryActionDefinition {}
+        crate::types::AssignContactCategoryActionDefinition {
+        }
     }
 }
+

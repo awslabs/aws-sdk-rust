@@ -3,19 +3,19 @@
 /// <p>The <code>SessionCommand</code> that runs the job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SessionCommand {
+pub struct SessionCommand  {
     /// <p>Specifies the name of the SessionCommand. Can be 'glueetl' or 'gluestreaming'.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Python version. The Python version indicates the version supported for jobs of type Spark.</p>
     pub python_version: ::std::option::Option<::std::string::String>,
 }
-impl SessionCommand {
+impl  SessionCommand  {
     /// <p>Specifies the name of the SessionCommand. Can be 'glueetl' or 'gluestreaming'.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies the Python version. The Python version indicates the version supported for jobs of type Spark.</p>
-    pub fn python_version(&self) -> ::std::option::Option<&str> {
+    pub fn python_version(&self) -> ::std::option::Option<& str> {
         self.python_version.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl SessionCommandBuilder {
     }
     /// <p>Specifies the name of the SessionCommand. Can be 'glueetl' or 'gluestreaming'.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Specifies the name of the SessionCommand. Can be 'glueetl' or 'gluestreaming'.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl SessionCommandBuilder {
     }
     /// <p>Specifies the Python version. The Python version indicates the version supported for jobs of type Spark.</p>
     pub fn set_python_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.python_version = input;
-        self
+        self.python_version = input; self
     }
     /// <p>Specifies the Python version. The Python version indicates the version supported for jobs of type Spark.</p>
     pub fn get_python_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl SessionCommandBuilder {
     /// Consumes the builder and constructs a [`SessionCommand`](crate::types::SessionCommand).
     pub fn build(self) -> crate::types::SessionCommand {
         crate::types::SessionCommand {
-            name: self.name,
-            python_version: self.python_version,
+            name: self.name
+            ,
+            python_version: self.python_version
+            ,
         }
     }
 }
+

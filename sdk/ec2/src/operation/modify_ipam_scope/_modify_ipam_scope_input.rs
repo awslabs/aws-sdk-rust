@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyIpamScopeInput {
+pub struct ModifyIpamScopeInput  {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the scope you want to modify.</p>
@@ -10,17 +10,17 @@ pub struct ModifyIpamScopeInput {
     /// <p>The description of the scope you want to modify.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl ModifyIpamScopeInput {
+impl  ModifyIpamScopeInput  {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The ID of the scope you want to modify.</p>
-    pub fn ipam_scope_id(&self) -> ::std::option::Option<&str> {
+    pub fn ipam_scope_id(&self) -> ::std::option::Option<& str> {
         self.ipam_scope_id.as_deref()
     }
     /// <p>The description of the scope you want to modify.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl ModifyIpamScopeInputBuilder {
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -62,8 +61,7 @@ impl ModifyIpamScopeInputBuilder {
     }
     /// <p>The ID of the scope you want to modify.</p>
     pub fn set_ipam_scope_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipam_scope_id = input;
-        self
+        self.ipam_scope_id = input; self
     }
     /// <p>The ID of the scope you want to modify.</p>
     pub fn get_ipam_scope_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,21 +74,24 @@ impl ModifyIpamScopeInputBuilder {
     }
     /// <p>The description of the scope you want to modify.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the scope you want to modify.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`ModifyIpamScopeInput`](crate::operation::modify_ipam_scope::ModifyIpamScopeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::modify_ipam_scope::ModifyIpamScopeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::modify_ipam_scope::ModifyIpamScopeInput {
-            dry_run: self.dry_run,
-            ipam_scope_id: self.ipam_scope_id,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_ipam_scope::ModifyIpamScopeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_ipam_scope::ModifyIpamScopeInput {
+                dry_run: self.dry_run
+                ,
+                ipam_scope_id: self.ipam_scope_id
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

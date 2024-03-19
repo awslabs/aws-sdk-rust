@@ -3,13 +3,13 @@
 /// <p>Returns information about the details of an artifact.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ArtifactDetails {
+pub struct ArtifactDetails  {
     /// <p>The minimum number of artifacts allowed for the action type.</p>
     pub minimum_count: i32,
     /// <p>The maximum number of artifacts allowed for the action type.</p>
     pub maximum_count: i32,
 }
-impl ArtifactDetails {
+impl  ArtifactDetails  {
     /// <p>The minimum number of artifacts allowed for the action type.</p>
     pub fn minimum_count(&self) -> i32 {
         self.minimum_count
@@ -42,8 +42,7 @@ impl ArtifactDetailsBuilder {
     }
     /// <p>The minimum number of artifacts allowed for the action type.</p>
     pub fn set_minimum_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.minimum_count = input;
-        self
+        self.minimum_count = input; self
     }
     /// <p>The minimum number of artifacts allowed for the action type.</p>
     pub fn get_minimum_count(&self) -> &::std::option::Option<i32> {
@@ -57,8 +56,7 @@ impl ArtifactDetailsBuilder {
     }
     /// <p>The maximum number of artifacts allowed for the action type.</p>
     pub fn set_maximum_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum_count = input;
-        self
+        self.maximum_count = input; self
     }
     /// <p>The maximum number of artifacts allowed for the action type.</p>
     pub fn get_maximum_count(&self) -> &::std::option::Option<i32> {
@@ -67,8 +65,13 @@ impl ArtifactDetailsBuilder {
     /// Consumes the builder and constructs a [`ArtifactDetails`](crate::types::ArtifactDetails).
     pub fn build(self) -> crate::types::ArtifactDetails {
         crate::types::ArtifactDetails {
-            minimum_count: self.minimum_count.unwrap_or_default(),
-            maximum_count: self.maximum_count.unwrap_or_default(),
+            minimum_count: self.minimum_count
+                .unwrap_or_default()
+            ,
+            maximum_count: self.maximum_count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

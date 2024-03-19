@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
-pub struct GetImageFrameOutput {
+pub struct GetImageFrameOutput  {
     /// <p>The blob containing the aggregated image frame information.</p>
     pub image_frame_blob: ::aws_smithy_types::byte_stream::ByteStream,
     /// <p>The format in which the image frame information is returned to the customer. Default is <code>application/octet-stream</code>.</p>
     pub content_type: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetImageFrameOutput {
+impl  GetImageFrameOutput  {
     /// <p>The blob containing the aggregated image frame information.</p>
-    pub fn image_frame_blob(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
+    pub fn image_frame_blob(&self) -> & ::aws_smithy_types::byte_stream::ByteStream {
         &self.image_frame_blob
     }
     /// <p>The format in which the image frame information is returned to the customer. Default is <code>application/octet-stream</code>.</p>
-    pub fn content_type(&self) -> ::std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<& str> {
         self.content_type.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetImageFrameOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetImageFrameOutput {
     /// Creates a new builder-style object to manufacture [`GetImageFrameOutput`](crate::operation::get_image_frame::GetImageFrameOutput).
     pub fn builder() -> crate::operation::get_image_frame::builders::GetImageFrameOutputBuilder {
@@ -48,8 +48,7 @@ impl GetImageFrameOutputBuilder {
     }
     /// <p>The blob containing the aggregated image frame information.</p>
     pub fn set_image_frame_blob(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
-        self.image_frame_blob = input;
-        self
+        self.image_frame_blob = input; self
     }
     /// <p>The blob containing the aggregated image frame information.</p>
     pub fn get_image_frame_blob(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
@@ -62,28 +61,31 @@ impl GetImageFrameOutputBuilder {
     }
     /// <p>The format in which the image frame information is returned to the customer. Default is <code>application/octet-stream</code>.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>The format in which the image frame information is returned to the customer. Default is <code>application/octet-stream</code>.</p>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.content_type
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetImageFrameOutput`](crate::operation::get_image_frame::GetImageFrameOutput).
     pub fn build(self) -> crate::operation::get_image_frame::GetImageFrameOutput {
         crate::operation::get_image_frame::GetImageFrameOutput {
-            image_frame_blob: self.image_frame_blob.unwrap_or_default(),
-            content_type: self.content_type,
+            image_frame_blob: self.image_frame_blob
+                .unwrap_or_default()
+            ,
+            content_type: self.content_type
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -5,7 +5,7 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works.html">How Amazon Textract Works</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Block {
+pub struct Block  {
     /// <p>The type of text item that's recognized. In operations for text detection, the following types are returned:</p>
     /// <ul>
     /// <li>
@@ -87,7 +87,7 @@ pub struct Block {
     /// <p>The identifier for the recognized text. The identifier is only unique for a single operation.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A list of relationship objects that describe how blocks are related to each other. For example, a LINE block object contains a CHILD relationship type with the WORD blocks that make up the line of text. There aren't Relationship objects in the list for relationships that don't exist, such as when the current block has no child blocks.</p>
-    pub relationships: ::std::option::Option<::std::vec::Vec<crate::types::Relationship>>,
+    pub relationships: ::std::option::Option<::std::vec::Vec::<crate::types::Relationship>>,
     /// <p>The type of entity.</p>
     /// <p>The following entity types can be returned by FORMS analysis:</p>
     /// <ul>
@@ -114,7 +114,7 @@ pub struct Block {
     /// <p><i>SEMI_STRUCTURED_TABLE</i> - Identifies a non-structured table.</p></li>
     /// </ul>
     /// <p><code>EntityTypes</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
-    pub entity_types: ::std::option::Option<::std::vec::Vec<crate::types::EntityType>>,
+    pub entity_types: ::std::option::Option<::std::vec::Vec::<crate::types::EntityType>>,
     /// <p>The selection status of a selection element, such as an option button or check box.</p>
     pub selection_status: ::std::option::Option<crate::types::SelectionStatus>,
     /// <p>The page on which a block was detected. <code>Page</code> is returned by synchronous and asynchronous operations. Page values greater than 1 are only returned for multipage documents that are in PDF or TIFF format. A scanned image (JPEG/PNG) provided to an asynchronous operation, even if it contains multiple document pages, is considered a single-page document. This means that for scanned images the value of <code>Page</code> is always 1.</p>
@@ -122,7 +122,7 @@ pub struct Block {
     /// <p></p>
     pub query: ::std::option::Option<crate::types::Query>,
 }
-impl Block {
+impl  Block  {
     /// <p>The type of text item that's recognized. In operations for text detection, the following types are returned:</p>
     /// <ul>
     /// <li>
@@ -184,7 +184,7 @@ impl Block {
     /// <li>
     /// <p><code>LAYOUT_TEXT</code> - Text that is present typically as a part of paragraphs in documents.</p></li>
     /// </ul>
-    pub fn block_type(&self) -> ::std::option::Option<&crate::types::BlockType> {
+    pub fn block_type(&self) -> ::std::option::Option<& crate::types::BlockType> {
         self.block_type.as_ref()
     }
     /// <p>The confidence score that Amazon Textract has in the accuracy of the recognized text and the accuracy of the geometry points around the recognized text.</p>
@@ -192,11 +192,11 @@ impl Block {
         self.confidence
     }
     /// <p>The word or line of text that's recognized by Amazon Textract.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
     /// <p>The kind of text that Amazon Textract has detected. Can check for handwritten text and printed text.</p>
-    pub fn text_type(&self) -> ::std::option::Option<&crate::types::TextType> {
+    pub fn text_type(&self) -> ::std::option::Option<& crate::types::TextType> {
         self.text_type.as_ref()
     }
     /// <p>The row in which a table cell is located. The first row position is 1. <code>RowIndex</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
@@ -216,18 +216,19 @@ impl Block {
         self.column_span
     }
     /// <p>The location of the recognized text on the image. It includes an axis-aligned, coarse bounding box that surrounds the text, and a finer-grain polygon for more accurate spatial information.</p>
-    pub fn geometry(&self) -> ::std::option::Option<&crate::types::Geometry> {
+    pub fn geometry(&self) -> ::std::option::Option<& crate::types::Geometry> {
         self.geometry.as_ref()
     }
     /// <p>The identifier for the recognized text. The identifier is only unique for a single operation.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A list of relationship objects that describe how blocks are related to each other. For example, a LINE block object contains a CHILD relationship type with the WORD blocks that make up the line of text. There aren't Relationship objects in the list for relationships that don't exist, such as when the current block has no child blocks.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.relationships.is_none()`.
-    pub fn relationships(&self) -> &[crate::types::Relationship] {
-        self.relationships.as_deref().unwrap_or_default()
+    pub fn relationships(&self) -> & [crate::types::Relationship] {
+        self.relationships.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The type of entity.</p>
     /// <p>The following entity types can be returned by FORMS analysis:</p>
@@ -255,13 +256,14 @@ impl Block {
     /// <p><i>SEMI_STRUCTURED_TABLE</i> - Identifies a non-structured table.</p></li>
     /// </ul>
     /// <p><code>EntityTypes</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entity_types.is_none()`.
-    pub fn entity_types(&self) -> &[crate::types::EntityType] {
-        self.entity_types.as_deref().unwrap_or_default()
+    pub fn entity_types(&self) -> & [crate::types::EntityType] {
+        self.entity_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The selection status of a selection element, such as an option button or check box.</p>
-    pub fn selection_status(&self) -> ::std::option::Option<&crate::types::SelectionStatus> {
+    pub fn selection_status(&self) -> ::std::option::Option<& crate::types::SelectionStatus> {
         self.selection_status.as_ref()
     }
     /// <p>The page on which a block was detected. <code>Page</code> is returned by synchronous and asynchronous operations. Page values greater than 1 are only returned for multipage documents that are in PDF or TIFF format. A scanned image (JPEG/PNG) provided to an asynchronous operation, even if it contains multiple document pages, is considered a single-page document. This means that for scanned images the value of <code>Page</code> is always 1.</p>
@@ -269,7 +271,7 @@ impl Block {
         self.page
     }
     /// <p></p>
-    pub fn query(&self) -> ::std::option::Option<&crate::types::Query> {
+    pub fn query(&self) -> ::std::option::Option<& crate::types::Query> {
         self.query.as_ref()
     }
 }
@@ -294,8 +296,8 @@ pub struct BlockBuilder {
     pub(crate) column_span: ::std::option::Option<i32>,
     pub(crate) geometry: ::std::option::Option<crate::types::Geometry>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
-    pub(crate) relationships: ::std::option::Option<::std::vec::Vec<crate::types::Relationship>>,
-    pub(crate) entity_types: ::std::option::Option<::std::vec::Vec<crate::types::EntityType>>,
+    pub(crate) relationships: ::std::option::Option<::std::vec::Vec::<crate::types::Relationship>>,
+    pub(crate) entity_types: ::std::option::Option<::std::vec::Vec::<crate::types::EntityType>>,
     pub(crate) selection_status: ::std::option::Option<crate::types::SelectionStatus>,
     pub(crate) page: ::std::option::Option<i32>,
     pub(crate) query: ::std::option::Option<crate::types::Query>,
@@ -428,8 +430,7 @@ impl BlockBuilder {
     /// <p><code>LAYOUT_TEXT</code> - Text that is present typically as a part of paragraphs in documents.</p></li>
     /// </ul>
     pub fn set_block_type(mut self, input: ::std::option::Option<crate::types::BlockType>) -> Self {
-        self.block_type = input;
-        self
+        self.block_type = input; self
     }
     /// <p>The type of text item that's recognized. In operations for text detection, the following types are returned:</p>
     /// <ul>
@@ -502,8 +503,7 @@ impl BlockBuilder {
     }
     /// <p>The confidence score that Amazon Textract has in the accuracy of the recognized text and the accuracy of the geometry points around the recognized text.</p>
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.confidence = input;
-        self
+        self.confidence = input; self
     }
     /// <p>The confidence score that Amazon Textract has in the accuracy of the recognized text and the accuracy of the geometry points around the recognized text.</p>
     pub fn get_confidence(&self) -> &::std::option::Option<f32> {
@@ -516,8 +516,7 @@ impl BlockBuilder {
     }
     /// <p>The word or line of text that's recognized by Amazon Textract.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>The word or line of text that's recognized by Amazon Textract.</p>
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -530,8 +529,7 @@ impl BlockBuilder {
     }
     /// <p>The kind of text that Amazon Textract has detected. Can check for handwritten text and printed text.</p>
     pub fn set_text_type(mut self, input: ::std::option::Option<crate::types::TextType>) -> Self {
-        self.text_type = input;
-        self
+        self.text_type = input; self
     }
     /// <p>The kind of text that Amazon Textract has detected. Can check for handwritten text and printed text.</p>
     pub fn get_text_type(&self) -> &::std::option::Option<crate::types::TextType> {
@@ -544,8 +542,7 @@ impl BlockBuilder {
     }
     /// <p>The row in which a table cell is located. The first row position is 1. <code>RowIndex</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
     pub fn set_row_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.row_index = input;
-        self
+        self.row_index = input; self
     }
     /// <p>The row in which a table cell is located. The first row position is 1. <code>RowIndex</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
     pub fn get_row_index(&self) -> &::std::option::Option<i32> {
@@ -558,8 +555,7 @@ impl BlockBuilder {
     }
     /// <p>The column in which a table cell appears. The first column position is 1. <code>ColumnIndex</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
     pub fn set_column_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.column_index = input;
-        self
+        self.column_index = input; self
     }
     /// <p>The column in which a table cell appears. The first column position is 1. <code>ColumnIndex</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
     pub fn get_column_index(&self) -> &::std::option::Option<i32> {
@@ -572,8 +568,7 @@ impl BlockBuilder {
     }
     /// <p>The number of rows that a table cell spans. <code>RowSpan</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
     pub fn set_row_span(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.row_span = input;
-        self
+        self.row_span = input; self
     }
     /// <p>The number of rows that a table cell spans. <code>RowSpan</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
     pub fn get_row_span(&self) -> &::std::option::Option<i32> {
@@ -586,8 +581,7 @@ impl BlockBuilder {
     }
     /// <p>The number of columns that a table cell spans. <code>ColumnSpan</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
     pub fn set_column_span(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.column_span = input;
-        self
+        self.column_span = input; self
     }
     /// <p>The number of columns that a table cell spans. <code>ColumnSpan</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
     pub fn get_column_span(&self) -> &::std::option::Option<i32> {
@@ -600,8 +594,7 @@ impl BlockBuilder {
     }
     /// <p>The location of the recognized text on the image. It includes an axis-aligned, coarse bounding box that surrounds the text, and a finer-grain polygon for more accurate spatial information.</p>
     pub fn set_geometry(mut self, input: ::std::option::Option<crate::types::Geometry>) -> Self {
-        self.geometry = input;
-        self
+        self.geometry = input; self
     }
     /// <p>The location of the recognized text on the image. It includes an axis-aligned, coarse bounding box that surrounds the text, and a finer-grain polygon for more accurate spatial information.</p>
     pub fn get_geometry(&self) -> &::std::option::Option<crate::types::Geometry> {
@@ -614,8 +607,7 @@ impl BlockBuilder {
     }
     /// <p>The identifier for the recognized text. The identifier is only unique for a single operation.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier for the recognized text. The identifier is only unique for a single operation.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -628,17 +620,16 @@ impl BlockBuilder {
     /// <p>A list of relationship objects that describe how blocks are related to each other. For example, a LINE block object contains a CHILD relationship type with the WORD blocks that make up the line of text. There aren't Relationship objects in the list for relationships that don't exist, such as when the current block has no child blocks.</p>
     pub fn relationships(mut self, input: crate::types::Relationship) -> Self {
         let mut v = self.relationships.unwrap_or_default();
-        v.push(input);
-        self.relationships = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.relationships = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of relationship objects that describe how blocks are related to each other. For example, a LINE block object contains a CHILD relationship type with the WORD blocks that make up the line of text. There aren't Relationship objects in the list for relationships that don't exist, such as when the current block has no child blocks.</p>
-    pub fn set_relationships(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Relationship>>) -> Self {
-        self.relationships = input;
-        self
+    pub fn set_relationships(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Relationship>>) -> Self {
+        self.relationships = input; self
     }
     /// <p>A list of relationship objects that describe how blocks are related to each other. For example, a LINE block object contains a CHILD relationship type with the WORD blocks that make up the line of text. There aren't Relationship objects in the list for relationships that don't exist, such as when the current block has no child blocks.</p>
-    pub fn get_relationships(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Relationship>> {
+    pub fn get_relationships(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Relationship>> {
         &self.relationships
     }
     /// Appends an item to `entity_types`.
@@ -673,9 +664,9 @@ impl BlockBuilder {
     /// <p><code>EntityTypes</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
     pub fn entity_types(mut self, input: crate::types::EntityType) -> Self {
         let mut v = self.entity_types.unwrap_or_default();
-        v.push(input);
-        self.entity_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entity_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The type of entity.</p>
     /// <p>The following entity types can be returned by FORMS analysis:</p>
@@ -703,9 +694,8 @@ impl BlockBuilder {
     /// <p><i>SEMI_STRUCTURED_TABLE</i> - Identifies a non-structured table.</p></li>
     /// </ul>
     /// <p><code>EntityTypes</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
-    pub fn set_entity_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntityType>>) -> Self {
-        self.entity_types = input;
-        self
+    pub fn set_entity_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EntityType>>) -> Self {
+        self.entity_types = input; self
     }
     /// <p>The type of entity.</p>
     /// <p>The following entity types can be returned by FORMS analysis:</p>
@@ -733,7 +723,7 @@ impl BlockBuilder {
     /// <p><i>SEMI_STRUCTURED_TABLE</i> - Identifies a non-structured table.</p></li>
     /// </ul>
     /// <p><code>EntityTypes</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
-    pub fn get_entity_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityType>> {
+    pub fn get_entity_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EntityType>> {
         &self.entity_types
     }
     /// <p>The selection status of a selection element, such as an option button or check box.</p>
@@ -743,8 +733,7 @@ impl BlockBuilder {
     }
     /// <p>The selection status of a selection element, such as an option button or check box.</p>
     pub fn set_selection_status(mut self, input: ::std::option::Option<crate::types::SelectionStatus>) -> Self {
-        self.selection_status = input;
-        self
+        self.selection_status = input; self
     }
     /// <p>The selection status of a selection element, such as an option button or check box.</p>
     pub fn get_selection_status(&self) -> &::std::option::Option<crate::types::SelectionStatus> {
@@ -757,8 +746,7 @@ impl BlockBuilder {
     }
     /// <p>The page on which a block was detected. <code>Page</code> is returned by synchronous and asynchronous operations. Page values greater than 1 are only returned for multipage documents that are in PDF or TIFF format. A scanned image (JPEG/PNG) provided to an asynchronous operation, even if it contains multiple document pages, is considered a single-page document. This means that for scanned images the value of <code>Page</code> is always 1.</p>
     pub fn set_page(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page = input;
-        self
+        self.page = input; self
     }
     /// <p>The page on which a block was detected. <code>Page</code> is returned by synchronous and asynchronous operations. Page values greater than 1 are only returned for multipage documents that are in PDF or TIFF format. A scanned image (JPEG/PNG) provided to an asynchronous operation, even if it contains multiple document pages, is considered a single-page document. This means that for scanned images the value of <code>Page</code> is always 1.</p>
     pub fn get_page(&self) -> &::std::option::Option<i32> {
@@ -771,8 +759,7 @@ impl BlockBuilder {
     }
     /// <p></p>
     pub fn set_query(mut self, input: ::std::option::Option<crate::types::Query>) -> Self {
-        self.query = input;
-        self
+        self.query = input; self
     }
     /// <p></p>
     pub fn get_query(&self) -> &::std::option::Option<crate::types::Query> {
@@ -781,21 +768,37 @@ impl BlockBuilder {
     /// Consumes the builder and constructs a [`Block`](crate::types::Block).
     pub fn build(self) -> crate::types::Block {
         crate::types::Block {
-            block_type: self.block_type,
-            confidence: self.confidence,
-            text: self.text,
-            text_type: self.text_type,
-            row_index: self.row_index,
-            column_index: self.column_index,
-            row_span: self.row_span,
-            column_span: self.column_span,
-            geometry: self.geometry,
-            id: self.id,
-            relationships: self.relationships,
-            entity_types: self.entity_types,
-            selection_status: self.selection_status,
-            page: self.page,
-            query: self.query,
+            block_type: self.block_type
+            ,
+            confidence: self.confidence
+            ,
+            text: self.text
+            ,
+            text_type: self.text_type
+            ,
+            row_index: self.row_index
+            ,
+            column_index: self.column_index
+            ,
+            row_span: self.row_span
+            ,
+            column_span: self.column_span
+            ,
+            geometry: self.geometry
+            ,
+            id: self.id
+            ,
+            relationships: self.relationships
+            ,
+            entity_types: self.entity_types
+            ,
+            selection_status: self.selection_status
+            ,
+            page: self.page
+            ,
+            query: self.query
+            ,
         }
     }
 }
+

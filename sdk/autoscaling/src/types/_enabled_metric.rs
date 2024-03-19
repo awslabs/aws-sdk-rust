@@ -3,7 +3,7 @@
 /// <p>Describes an enabled Auto Scaling group metric.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnabledMetric {
+pub struct EnabledMetric  {
     /// <p>One of the following metrics:</p>
     /// <ul>
     /// <li>
@@ -52,7 +52,7 @@ pub struct EnabledMetric {
     /// <p>The granularity of the metric. The only valid value is <code>1Minute</code>.</p>
     pub granularity: ::std::option::Option<::std::string::String>,
 }
-impl EnabledMetric {
+impl  EnabledMetric  {
     /// <p>One of the following metrics:</p>
     /// <ul>
     /// <li>
@@ -97,11 +97,11 @@ impl EnabledMetric {
     /// <p><code>GroupAndWarmPoolTotalCapacity</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    pub fn metric(&self) -> ::std::option::Option<&str> {
+    pub fn metric(&self) -> ::std::option::Option<& str> {
         self.metric.as_deref()
     }
     /// <p>The granularity of the metric. The only valid value is <code>1Minute</code>.</p>
-    pub fn granularity(&self) -> ::std::option::Option<&str> {
+    pub fn granularity(&self) -> ::std::option::Option<& str> {
         self.granularity.as_deref()
     }
 }
@@ -213,8 +213,7 @@ impl EnabledMetricBuilder {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn set_metric(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric = input;
-        self
+        self.metric = input; self
     }
     /// <p>One of the following metrics:</p>
     /// <ul>
@@ -270,8 +269,7 @@ impl EnabledMetricBuilder {
     }
     /// <p>The granularity of the metric. The only valid value is <code>1Minute</code>.</p>
     pub fn set_granularity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.granularity = input;
-        self
+        self.granularity = input; self
     }
     /// <p>The granularity of the metric. The only valid value is <code>1Minute</code>.</p>
     pub fn get_granularity(&self) -> &::std::option::Option<::std::string::String> {
@@ -280,8 +278,11 @@ impl EnabledMetricBuilder {
     /// Consumes the builder and constructs a [`EnabledMetric`](crate::types::EnabledMetric).
     pub fn build(self) -> crate::types::EnabledMetric {
         crate::types::EnabledMetric {
-            metric: self.metric,
-            granularity: self.granularity,
+            metric: self.metric
+            ,
+            granularity: self.granularity
+            ,
         }
     }
 }
+

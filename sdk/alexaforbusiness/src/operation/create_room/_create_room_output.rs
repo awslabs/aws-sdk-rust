@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRoomOutput {
+pub struct CreateRoomOutput  {
     /// <p>The ARN of the newly created room in the response.</p>
     pub room_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateRoomOutput {
+impl  CreateRoomOutput  {
     /// <p>The ARN of the newly created room in the response.</p>
-    pub fn room_arn(&self) -> ::std::option::Option<&str> {
+    pub fn room_arn(&self) -> ::std::option::Option<& str> {
         self.room_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateRoomOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateRoomOutput {
     /// Creates a new builder-style object to manufacture [`CreateRoomOutput`](crate::operation::create_room::CreateRoomOutput).
     pub fn builder() -> crate::operation::create_room::builders::CreateRoomOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateRoomOutputBuilder {
     }
     /// <p>The ARN of the newly created room in the response.</p>
     pub fn set_room_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.room_arn = input;
-        self
+        self.room_arn = input; self
     }
     /// <p>The ARN of the newly created room in the response.</p>
     pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.room_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateRoomOutput`](crate::operation::create_room::CreateRoomOutput).
     pub fn build(self) -> crate::operation::create_room::CreateRoomOutput {
         crate::operation::create_room::CreateRoomOutput {
-            room_arn: self.room_arn,
+            room_arn: self.room_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

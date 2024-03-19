@@ -22,11 +22,7 @@ impl Credential {
     /// Tries to convert the enum instance into [`ApiKeyCredential`](crate::types::Credential::ApiKeyCredential), extracting the inner [`ApiKeyCredential`](crate::types::ApiKeyCredential).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_api_key_credential(&self) -> ::std::result::Result<&crate::types::ApiKeyCredential, &Self> {
-        if let Credential::ApiKeyCredential(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Credential::ApiKeyCredential(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ApiKeyCredential`](crate::types::Credential::ApiKeyCredential).
     pub fn is_api_key_credential(&self) -> bool {
@@ -35,11 +31,7 @@ impl Credential {
     /// Tries to convert the enum instance into [`Oauth2Credential`](crate::types::Credential::Oauth2Credential), extracting the inner [`Oauth2Credential`](crate::types::Oauth2Credential).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_oauth2_credential(&self) -> ::std::result::Result<&crate::types::Oauth2Credential, &Self> {
-        if let Credential::Oauth2Credential(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Credential::Oauth2Credential(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Oauth2Credential`](crate::types::Credential::Oauth2Credential).
     pub fn is_oauth2_credential(&self) -> bool {
@@ -50,3 +42,4 @@ impl Credential {
         matches!(self, Self::Unknown)
     }
 }
+

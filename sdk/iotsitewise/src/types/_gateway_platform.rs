@@ -3,19 +3,19 @@
 /// <p>Contains a gateway's platform information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GatewayPlatform {
+pub struct GatewayPlatform  {
     /// <p>A gateway that runs on IoT Greengrass.</p>
     pub greengrass: ::std::option::Option<crate::types::Greengrass>,
     /// <p>A gateway that runs on IoT Greengrass V2.</p>
     pub greengrass_v2: ::std::option::Option<crate::types::GreengrassV2>,
 }
-impl GatewayPlatform {
+impl  GatewayPlatform  {
     /// <p>A gateway that runs on IoT Greengrass.</p>
-    pub fn greengrass(&self) -> ::std::option::Option<&crate::types::Greengrass> {
+    pub fn greengrass(&self) -> ::std::option::Option<& crate::types::Greengrass> {
         self.greengrass.as_ref()
     }
     /// <p>A gateway that runs on IoT Greengrass V2.</p>
-    pub fn greengrass_v2(&self) -> ::std::option::Option<&crate::types::GreengrassV2> {
+    pub fn greengrass_v2(&self) -> ::std::option::Option<& crate::types::GreengrassV2> {
         self.greengrass_v2.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl GatewayPlatformBuilder {
     }
     /// <p>A gateway that runs on IoT Greengrass.</p>
     pub fn set_greengrass(mut self, input: ::std::option::Option<crate::types::Greengrass>) -> Self {
-        self.greengrass = input;
-        self
+        self.greengrass = input; self
     }
     /// <p>A gateway that runs on IoT Greengrass.</p>
     pub fn get_greengrass(&self) -> &::std::option::Option<crate::types::Greengrass> {
@@ -55,8 +54,7 @@ impl GatewayPlatformBuilder {
     }
     /// <p>A gateway that runs on IoT Greengrass V2.</p>
     pub fn set_greengrass_v2(mut self, input: ::std::option::Option<crate::types::GreengrassV2>) -> Self {
-        self.greengrass_v2 = input;
-        self
+        self.greengrass_v2 = input; self
     }
     /// <p>A gateway that runs on IoT Greengrass V2.</p>
     pub fn get_greengrass_v2(&self) -> &::std::option::Option<crate::types::GreengrassV2> {
@@ -65,8 +63,11 @@ impl GatewayPlatformBuilder {
     /// Consumes the builder and constructs a [`GatewayPlatform`](crate::types::GatewayPlatform).
     pub fn build(self) -> crate::types::GatewayPlatform {
         crate::types::GatewayPlatform {
-            greengrass: self.greengrass,
-            greengrass_v2: self.greengrass_v2,
+            greengrass: self.greengrass
+            ,
+            greengrass_v2: self.greengrass_v2
+            ,
         }
     }
 }
+

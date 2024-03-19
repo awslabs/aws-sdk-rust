@@ -3,13 +3,13 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeMountTargetSecurityGroupsInput {
+pub struct DescribeMountTargetSecurityGroupsInput  {
     /// <p>The ID of the mount target whose security groups you want to retrieve.</p>
     pub mount_target_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeMountTargetSecurityGroupsInput {
+impl  DescribeMountTargetSecurityGroupsInput  {
     /// <p>The ID of the mount target whose security groups you want to retrieve.</p>
-    pub fn mount_target_id(&self) -> ::std::option::Option<&str> {
+    pub fn mount_target_id(&self) -> ::std::option::Option<& str> {
         self.mount_target_id.as_deref()
     }
 }
@@ -35,24 +35,20 @@ impl DescribeMountTargetSecurityGroupsInputBuilder {
     }
     /// <p>The ID of the mount target whose security groups you want to retrieve.</p>
     pub fn set_mount_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mount_target_id = input;
-        self
+        self.mount_target_id = input; self
     }
     /// <p>The ID of the mount target whose security groups you want to retrieve.</p>
     pub fn get_mount_target_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.mount_target_id
     }
     /// Consumes the builder and constructs a [`DescribeMountTargetSecurityGroupsInput`](crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsInput {
-                mount_target_id: self.mount_target_id,
-            },
+                mount_target_id: self.mount_target_id
+                ,
+            }
         )
     }
 }
+

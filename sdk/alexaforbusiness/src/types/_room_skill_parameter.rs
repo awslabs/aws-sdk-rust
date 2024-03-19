@@ -3,22 +3,20 @@
 /// <p>A skill parameter associated with a room.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RoomSkillParameter {
+pub struct RoomSkillParameter  {
     /// <p>The parameter key of a room skill parameter. ParameterKey is an enumerated type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
     pub parameter_key: ::std::string::String,
     /// <p>The parameter value of a room skill parameter.</p>
     pub parameter_value: ::std::string::String,
 }
-impl RoomSkillParameter {
+impl  RoomSkillParameter  {
     /// <p>The parameter key of a room skill parameter. ParameterKey is an enumerated type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
-    pub fn parameter_key(&self) -> &str {
-        use std::ops::Deref;
-        self.parameter_key.deref()
+    pub fn parameter_key(&self) -> & str {
+        use std::ops::Deref; self.parameter_key.deref()
     }
     /// <p>The parameter value of a room skill parameter.</p>
-    pub fn parameter_value(&self) -> &str {
-        use std::ops::Deref;
-        self.parameter_value.deref()
+    pub fn parameter_value(&self) -> & str {
+        use std::ops::Deref; self.parameter_value.deref()
     }
 }
 impl RoomSkillParameter {
@@ -44,8 +42,7 @@ impl RoomSkillParameterBuilder {
     }
     /// <p>The parameter key of a room skill parameter. ParameterKey is an enumerated type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
     pub fn set_parameter_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_key = input;
-        self
+        self.parameter_key = input; self
     }
     /// <p>The parameter key of a room skill parameter. ParameterKey is an enumerated type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
     pub fn get_parameter_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl RoomSkillParameterBuilder {
     }
     /// <p>The parameter value of a room skill parameter.</p>
     pub fn set_parameter_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_value = input;
-        self
+        self.parameter_value = input; self
     }
     /// <p>The parameter value of a room skill parameter.</p>
     pub fn get_parameter_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl RoomSkillParameterBuilder {
     /// - [`parameter_key`](crate::types::builders::RoomSkillParameterBuilder::parameter_key)
     /// - [`parameter_value`](crate::types::builders::RoomSkillParameterBuilder::parameter_value)
     pub fn build(self) -> ::std::result::Result<crate::types::RoomSkillParameter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RoomSkillParameter {
-            parameter_key: self.parameter_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "parameter_key",
-                    "parameter_key was not specified but it is required when building RoomSkillParameter",
-                )
-            })?,
-            parameter_value: self.parameter_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "parameter_value",
-                    "parameter_value was not specified but it is required when building RoomSkillParameter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RoomSkillParameter {
+                parameter_key: self.parameter_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("parameter_key", "parameter_key was not specified but it is required when building RoomSkillParameter")
+                    )?
+                ,
+                parameter_value: self.parameter_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("parameter_value", "parameter_value was not specified but it is required when building RoomSkillParameter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

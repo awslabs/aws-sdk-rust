@@ -230,3 +230,4 @@ pub use crate::types::_batch_get_asset_property_aggregates_error_entry::BatchGet
 pub use crate::types::_batch_get_asset_property_aggregates_entry::BatchGetAssetPropertyAggregatesEntryBuilder;
 
 pub use crate::types::_asset_error_details::AssetErrorDetailsBuilder;
+

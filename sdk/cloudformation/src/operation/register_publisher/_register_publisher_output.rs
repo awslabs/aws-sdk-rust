@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterPublisherOutput {
+pub struct RegisterPublisherOutput  {
     /// <p>The ID assigned this account by CloudFormation for publishing extensions.</p>
     pub publisher_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl RegisterPublisherOutput {
+impl  RegisterPublisherOutput  {
     /// <p>The ID assigned this account by CloudFormation for publishing extensions.</p>
-    pub fn publisher_id(&self) -> ::std::option::Option<&str> {
+    pub fn publisher_id(&self) -> ::std::option::Option<& str> {
         self.publisher_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for RegisterPublisherOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RegisterPublisherOutput {
     /// Creates a new builder-style object to manufacture [`RegisterPublisherOutput`](crate::operation::register_publisher::RegisterPublisherOutput).
     pub fn builder() -> crate::operation::register_publisher::builders::RegisterPublisherOutputBuilder {
@@ -40,27 +40,28 @@ impl RegisterPublisherOutputBuilder {
     }
     /// <p>The ID assigned this account by CloudFormation for publishing extensions.</p>
     pub fn set_publisher_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.publisher_id = input;
-        self
+        self.publisher_id = input; self
     }
     /// <p>The ID assigned this account by CloudFormation for publishing extensions.</p>
     pub fn get_publisher_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.publisher_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RegisterPublisherOutput`](crate::operation::register_publisher::RegisterPublisherOutput).
     pub fn build(self) -> crate::operation::register_publisher::RegisterPublisherOutput {
         crate::operation::register_publisher::RegisterPublisherOutput {
-            publisher_id: self.publisher_id,
+            publisher_id: self.publisher_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

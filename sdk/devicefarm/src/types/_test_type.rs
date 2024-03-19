@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let testtype = unimplemented!();
 /// match testtype {
@@ -49,16 +49,14 @@
 /// Specifically, when `testtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TestType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum TestType {
     #[allow(missing_docs)] // documentation missing in model
     AppiumJavaJunit,
@@ -104,140 +102,119 @@ pub enum TestType {
     XctestUi,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for TestType {
-    fn from(s: &str) -> Self {
-        match s {
-            "APPIUM_JAVA_JUNIT" => TestType::AppiumJavaJunit,
-            "APPIUM_JAVA_TESTNG" => TestType::AppiumJavaTestng,
-            "APPIUM_NODE" => TestType::AppiumNode,
-            "APPIUM_PYTHON" => TestType::AppiumPython,
-            "APPIUM_RUBY" => TestType::AppiumRuby,
-            "APPIUM_WEB_JAVA_JUNIT" => TestType::AppiumWebJavaJunit,
-            "APPIUM_WEB_JAVA_TESTNG" => TestType::AppiumWebJavaTestng,
-            "APPIUM_WEB_NODE" => TestType::AppiumWebNode,
-            "APPIUM_WEB_PYTHON" => TestType::AppiumWebPython,
-            "APPIUM_WEB_RUBY" => TestType::AppiumWebRuby,
-            "BUILTIN_EXPLORER" => TestType::BuiltinExplorer,
-            "BUILTIN_FUZZ" => TestType::BuiltinFuzz,
-            "CALABASH" => TestType::Calabash,
-            "INSTRUMENTATION" => TestType::Instrumentation,
-            "REMOTE_ACCESS_RECORD" => TestType::RemoteAccessRecord,
-            "REMOTE_ACCESS_REPLAY" => TestType::RemoteAccessReplay,
-            "UIAUTOMATION" => TestType::Uiautomation,
-            "UIAUTOMATOR" => TestType::Uiautomator,
-            "WEB_PERFORMANCE_PROFILE" => TestType::WebPerformanceProfile,
-            "XCTEST" => TestType::Xctest,
-            "XCTEST_UI" => TestType::XctestUi,
-            other => TestType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "APPIUM_JAVA_JUNIT" => TestType::AppiumJavaJunit,
+"APPIUM_JAVA_TESTNG" => TestType::AppiumJavaTestng,
+"APPIUM_NODE" => TestType::AppiumNode,
+"APPIUM_PYTHON" => TestType::AppiumPython,
+"APPIUM_RUBY" => TestType::AppiumRuby,
+"APPIUM_WEB_JAVA_JUNIT" => TestType::AppiumWebJavaJunit,
+"APPIUM_WEB_JAVA_TESTNG" => TestType::AppiumWebJavaTestng,
+"APPIUM_WEB_NODE" => TestType::AppiumWebNode,
+"APPIUM_WEB_PYTHON" => TestType::AppiumWebPython,
+"APPIUM_WEB_RUBY" => TestType::AppiumWebRuby,
+"BUILTIN_EXPLORER" => TestType::BuiltinExplorer,
+"BUILTIN_FUZZ" => TestType::BuiltinFuzz,
+"CALABASH" => TestType::Calabash,
+"INSTRUMENTATION" => TestType::Instrumentation,
+"REMOTE_ACCESS_RECORD" => TestType::RemoteAccessRecord,
+"REMOTE_ACCESS_REPLAY" => TestType::RemoteAccessReplay,
+"UIAUTOMATION" => TestType::Uiautomation,
+"UIAUTOMATOR" => TestType::Uiautomator,
+"WEB_PERFORMANCE_PROFILE" => TestType::WebPerformanceProfile,
+"XCTEST" => TestType::Xctest,
+"XCTEST_UI" => TestType::XctestUi,
+other => TestType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for TestType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(TestType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(TestType::from(s))
+                    }
+                }
 impl TestType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TestType::AppiumJavaJunit => "APPIUM_JAVA_JUNIT",
-            TestType::AppiumJavaTestng => "APPIUM_JAVA_TESTNG",
-            TestType::AppiumNode => "APPIUM_NODE",
-            TestType::AppiumPython => "APPIUM_PYTHON",
-            TestType::AppiumRuby => "APPIUM_RUBY",
-            TestType::AppiumWebJavaJunit => "APPIUM_WEB_JAVA_JUNIT",
-            TestType::AppiumWebJavaTestng => "APPIUM_WEB_JAVA_TESTNG",
-            TestType::AppiumWebNode => "APPIUM_WEB_NODE",
-            TestType::AppiumWebPython => "APPIUM_WEB_PYTHON",
-            TestType::AppiumWebRuby => "APPIUM_WEB_RUBY",
-            TestType::BuiltinExplorer => "BUILTIN_EXPLORER",
-            TestType::BuiltinFuzz => "BUILTIN_FUZZ",
-            TestType::Calabash => "CALABASH",
-            TestType::Instrumentation => "INSTRUMENTATION",
-            TestType::RemoteAccessRecord => "REMOTE_ACCESS_RECORD",
-            TestType::RemoteAccessReplay => "REMOTE_ACCESS_REPLAY",
-            TestType::Uiautomation => "UIAUTOMATION",
-            TestType::Uiautomator => "UIAUTOMATOR",
-            TestType::WebPerformanceProfile => "WEB_PERFORMANCE_PROFILE",
-            TestType::Xctest => "XCTEST",
-            TestType::XctestUi => "XCTEST_UI",
-            TestType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "APPIUM_JAVA_JUNIT",
-            "APPIUM_JAVA_TESTNG",
-            "APPIUM_NODE",
-            "APPIUM_PYTHON",
-            "APPIUM_RUBY",
-            "APPIUM_WEB_JAVA_JUNIT",
-            "APPIUM_WEB_JAVA_TESTNG",
-            "APPIUM_WEB_NODE",
-            "APPIUM_WEB_PYTHON",
-            "APPIUM_WEB_RUBY",
-            "BUILTIN_EXPLORER",
-            "BUILTIN_FUZZ",
-            "CALABASH",
-            "INSTRUMENTATION",
-            "REMOTE_ACCESS_RECORD",
-            "REMOTE_ACCESS_REPLAY",
-            "UIAUTOMATION",
-            "UIAUTOMATOR",
-            "WEB_PERFORMANCE_PROFILE",
-            "XCTEST",
-            "XCTEST_UI",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TestType::AppiumJavaJunit => "APPIUM_JAVA_JUNIT",
+    TestType::AppiumJavaTestng => "APPIUM_JAVA_TESTNG",
+    TestType::AppiumNode => "APPIUM_NODE",
+    TestType::AppiumPython => "APPIUM_PYTHON",
+    TestType::AppiumRuby => "APPIUM_RUBY",
+    TestType::AppiumWebJavaJunit => "APPIUM_WEB_JAVA_JUNIT",
+    TestType::AppiumWebJavaTestng => "APPIUM_WEB_JAVA_TESTNG",
+    TestType::AppiumWebNode => "APPIUM_WEB_NODE",
+    TestType::AppiumWebPython => "APPIUM_WEB_PYTHON",
+    TestType::AppiumWebRuby => "APPIUM_WEB_RUBY",
+    TestType::BuiltinExplorer => "BUILTIN_EXPLORER",
+    TestType::BuiltinFuzz => "BUILTIN_FUZZ",
+    TestType::Calabash => "CALABASH",
+    TestType::Instrumentation => "INSTRUMENTATION",
+    TestType::RemoteAccessRecord => "REMOTE_ACCESS_RECORD",
+    TestType::RemoteAccessReplay => "REMOTE_ACCESS_REPLAY",
+    TestType::Uiautomation => "UIAUTOMATION",
+    TestType::Uiautomator => "UIAUTOMATOR",
+    TestType::WebPerformanceProfile => "WEB_PERFORMANCE_PROFILE",
+    TestType::Xctest => "XCTEST",
+    TestType::XctestUi => "XCTEST_UI",
+    TestType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["APPIUM_JAVA_JUNIT", "APPIUM_JAVA_TESTNG", "APPIUM_NODE", "APPIUM_PYTHON", "APPIUM_RUBY", "APPIUM_WEB_JAVA_JUNIT", "APPIUM_WEB_JAVA_TESTNG", "APPIUM_WEB_NODE", "APPIUM_WEB_PYTHON", "APPIUM_WEB_RUBY", "BUILTIN_EXPLORER", "BUILTIN_FUZZ", "CALABASH", "INSTRUMENTATION", "REMOTE_ACCESS_RECORD", "REMOTE_ACCESS_REPLAY", "UIAUTOMATION", "UIAUTOMATOR", "WEB_PERFORMANCE_PROFILE", "XCTEST", "XCTEST_UI"]
+                }
+            }
 impl ::std::convert::AsRef<str> for TestType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl TestType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for TestType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            TestType::AppiumJavaJunit => write!(f, "APPIUM_JAVA_JUNIT"),
-            TestType::AppiumJavaTestng => write!(f, "APPIUM_JAVA_TESTNG"),
-            TestType::AppiumNode => write!(f, "APPIUM_NODE"),
-            TestType::AppiumPython => write!(f, "APPIUM_PYTHON"),
-            TestType::AppiumRuby => write!(f, "APPIUM_RUBY"),
-            TestType::AppiumWebJavaJunit => write!(f, "APPIUM_WEB_JAVA_JUNIT"),
-            TestType::AppiumWebJavaTestng => write!(f, "APPIUM_WEB_JAVA_TESTNG"),
-            TestType::AppiumWebNode => write!(f, "APPIUM_WEB_NODE"),
-            TestType::AppiumWebPython => write!(f, "APPIUM_WEB_PYTHON"),
-            TestType::AppiumWebRuby => write!(f, "APPIUM_WEB_RUBY"),
-            TestType::BuiltinExplorer => write!(f, "BUILTIN_EXPLORER"),
-            TestType::BuiltinFuzz => write!(f, "BUILTIN_FUZZ"),
-            TestType::Calabash => write!(f, "CALABASH"),
-            TestType::Instrumentation => write!(f, "INSTRUMENTATION"),
-            TestType::RemoteAccessRecord => write!(f, "REMOTE_ACCESS_RECORD"),
-            TestType::RemoteAccessReplay => write!(f, "REMOTE_ACCESS_REPLAY"),
-            TestType::Uiautomation => write!(f, "UIAUTOMATION"),
-            TestType::Uiautomator => write!(f, "UIAUTOMATOR"),
-            TestType::WebPerformanceProfile => write!(f, "WEB_PERFORMANCE_PROFILE"),
-            TestType::Xctest => write!(f, "XCTEST"),
-            TestType::XctestUi => write!(f, "XCTEST_UI"),
-            TestType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                TestType::AppiumJavaJunit => write!(f, "APPIUM_JAVA_JUNIT"),
+TestType::AppiumJavaTestng => write!(f, "APPIUM_JAVA_TESTNG"),
+TestType::AppiumNode => write!(f, "APPIUM_NODE"),
+TestType::AppiumPython => write!(f, "APPIUM_PYTHON"),
+TestType::AppiumRuby => write!(f, "APPIUM_RUBY"),
+TestType::AppiumWebJavaJunit => write!(f, "APPIUM_WEB_JAVA_JUNIT"),
+TestType::AppiumWebJavaTestng => write!(f, "APPIUM_WEB_JAVA_TESTNG"),
+TestType::AppiumWebNode => write!(f, "APPIUM_WEB_NODE"),
+TestType::AppiumWebPython => write!(f, "APPIUM_WEB_PYTHON"),
+TestType::AppiumWebRuby => write!(f, "APPIUM_WEB_RUBY"),
+TestType::BuiltinExplorer => write!(f, "BUILTIN_EXPLORER"),
+TestType::BuiltinFuzz => write!(f, "BUILTIN_FUZZ"),
+TestType::Calabash => write!(f, "CALABASH"),
+TestType::Instrumentation => write!(f, "INSTRUMENTATION"),
+TestType::RemoteAccessRecord => write!(f, "REMOTE_ACCESS_RECORD"),
+TestType::RemoteAccessReplay => write!(f, "REMOTE_ACCESS_REPLAY"),
+TestType::Uiautomation => write!(f, "UIAUTOMATION"),
+TestType::Uiautomator => write!(f, "UIAUTOMATOR"),
+TestType::WebPerformanceProfile => write!(f, "WEB_PERFORMANCE_PROFILE"),
+TestType::Xctest => write!(f, "XCTEST"),
+TestType::XctestUi => write!(f, "XCTEST_UI"),
+TestType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

@@ -3,13 +3,13 @@
 /// <p>Information about account-level configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EncryptionConfig {
+pub struct EncryptionConfig  {
     /// <p>The KMS key ARN to use for encryption. This must be provided as a header when uploading your code resource.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
-impl EncryptionConfig {
+impl  EncryptionConfig  {
     /// <p>The KMS key ARN to use for encryption. This must be provided as a header when uploading your code resource.</p>
-    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl EncryptionConfigBuilder {
     }
     /// <p>The KMS key ARN to use for encryption. This must be provided as a header when uploading your code resource.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
     }
     /// <p>The KMS key ARN to use for encryption. This must be provided as a header when uploading your code resource.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl EncryptionConfigBuilder {
     /// Consumes the builder and constructs a [`EncryptionConfig`](crate::types::EncryptionConfig).
     pub fn build(self) -> crate::types::EncryptionConfig {
         crate::types::EncryptionConfig {
-            kms_key_arn: self.kms_key_arn,
+            kms_key_arn: self.kms_key_arn
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateIdentityProviderConfigurationInput {
+pub struct UpdateIdentityProviderConfigurationInput  {
     /// <p>The ARN of the fleet.</p>
     pub fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of identity provider.</p>
@@ -10,17 +10,17 @@ pub struct UpdateIdentityProviderConfigurationInput {
     /// <p>The SAML metadata document provided by the customer’s identity provider. The existing IdentityProviderSamlMetadata is unset if null is passed.</p>
     pub identity_provider_saml_metadata: ::std::option::Option<::std::string::String>,
 }
-impl UpdateIdentityProviderConfigurationInput {
+impl  UpdateIdentityProviderConfigurationInput  {
     /// <p>The ARN of the fleet.</p>
-    pub fn fleet_arn(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> ::std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
     /// <p>The type of identity provider.</p>
-    pub fn identity_provider_type(&self) -> ::std::option::Option<&crate::types::IdentityProviderType> {
+    pub fn identity_provider_type(&self) -> ::std::option::Option<& crate::types::IdentityProviderType> {
         self.identity_provider_type.as_ref()
     }
     /// <p>The SAML metadata document provided by the customer’s identity provider. The existing IdentityProviderSamlMetadata is unset if null is passed.</p>
-    pub fn identity_provider_saml_metadata(&self) -> ::std::option::Option<&str> {
+    pub fn identity_provider_saml_metadata(&self) -> ::std::option::Option<& str> {
         self.identity_provider_saml_metadata.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateIdentityProviderConfigurationInputBuilder {
     }
     /// <p>The ARN of the fleet.</p>
     pub fn set_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_arn = input;
-        self
+        self.fleet_arn = input; self
     }
     /// <p>The ARN of the fleet.</p>
     pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateIdentityProviderConfigurationInputBuilder {
     }
     /// <p>The type of identity provider.</p>
     pub fn set_identity_provider_type(mut self, input: ::std::option::Option<crate::types::IdentityProviderType>) -> Self {
-        self.identity_provider_type = input;
-        self
+        self.identity_provider_type = input; self
     }
     /// <p>The type of identity provider.</p>
     pub fn get_identity_provider_type(&self) -> &::std::option::Option<crate::types::IdentityProviderType> {
@@ -77,26 +75,24 @@ impl UpdateIdentityProviderConfigurationInputBuilder {
     }
     /// <p>The SAML metadata document provided by the customer’s identity provider. The existing IdentityProviderSamlMetadata is unset if null is passed.</p>
     pub fn set_identity_provider_saml_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_provider_saml_metadata = input;
-        self
+        self.identity_provider_saml_metadata = input; self
     }
     /// <p>The SAML metadata document provided by the customer’s identity provider. The existing IdentityProviderSamlMetadata is unset if null is passed.</p>
     pub fn get_identity_provider_saml_metadata(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_provider_saml_metadata
     }
     /// Consumes the builder and constructs a [`UpdateIdentityProviderConfigurationInput`](crate::operation::update_identity_provider_configuration::UpdateIdentityProviderConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_identity_provider_configuration::UpdateIdentityProviderConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_identity_provider_configuration::UpdateIdentityProviderConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_identity_provider_configuration::UpdateIdentityProviderConfigurationInput {
-                fleet_arn: self.fleet_arn,
-                identity_provider_type: self.identity_provider_type,
-                identity_provider_saml_metadata: self.identity_provider_saml_metadata,
-            },
+                fleet_arn: self.fleet_arn
+                ,
+                identity_provider_type: self.identity_provider_type
+                ,
+                identity_provider_saml_metadata: self.identity_provider_saml_metadata
+                ,
+            }
         )
     }
 }
+

@@ -21,11 +21,7 @@ impl AnalysisRulePolicy {
     /// Tries to convert the enum instance into [`V1`](crate::types::AnalysisRulePolicy::V1), extracting the inner [`AnalysisRulePolicyV1`](crate::types::AnalysisRulePolicyV1).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_v1(&self) -> ::std::result::Result<&crate::types::AnalysisRulePolicyV1, &Self> {
-        if let AnalysisRulePolicy::V1(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AnalysisRulePolicy::V1(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`V1`](crate::types::AnalysisRulePolicy::V1).
     pub fn is_v1(&self) -> bool {
@@ -36,3 +32,4 @@ impl AnalysisRulePolicy {
         matches!(self, Self::Unknown)
     }
 }
+

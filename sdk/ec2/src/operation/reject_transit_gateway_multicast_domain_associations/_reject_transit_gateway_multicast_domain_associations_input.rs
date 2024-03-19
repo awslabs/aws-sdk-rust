@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RejectTransitGatewayMulticastDomainAssociationsInput {
+pub struct RejectTransitGatewayMulticastDomainAssociationsInput  {
     /// <p>The ID of the transit gateway multicast domain.</p>
     pub transit_gateway_multicast_domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the transit gateway attachment.</p>
     pub transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the subnets to associate with the transit gateway multicast domain.</p>
-    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl RejectTransitGatewayMulticastDomainAssociationsInput {
+impl  RejectTransitGatewayMulticastDomainAssociationsInput  {
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn transit_gateway_multicast_domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_multicast_domain_id(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_multicast_domain_id.as_deref()
     }
     /// <p>The ID of the transit gateway attachment.</p>
-    pub fn transit_gateway_attachment_id(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_attachment_id(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_attachment_id.as_deref()
     }
     /// <p>The IDs of the subnets to associate with the transit gateway multicast domain.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
-    pub fn subnet_ids(&self) -> &[::std::string::String] {
-        self.subnet_ids.as_deref().unwrap_or_default()
+    pub fn subnet_ids(&self) -> & [::std::string::String] {
+        self.subnet_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -34,9 +35,7 @@ impl RejectTransitGatewayMulticastDomainAssociationsInput {
 }
 impl RejectTransitGatewayMulticastDomainAssociationsInput {
     /// Creates a new builder-style object to manufacture [`RejectTransitGatewayMulticastDomainAssociationsInput`](crate::operation::reject_transit_gateway_multicast_domain_associations::RejectTransitGatewayMulticastDomainAssociationsInput).
-    pub fn builder(
-    ) -> crate::operation::reject_transit_gateway_multicast_domain_associations::builders::RejectTransitGatewayMulticastDomainAssociationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::reject_transit_gateway_multicast_domain_associations::builders::RejectTransitGatewayMulticastDomainAssociationsInputBuilder {
         crate::operation::reject_transit_gateway_multicast_domain_associations::builders::RejectTransitGatewayMulticastDomainAssociationsInputBuilder::default()
     }
 }
@@ -47,7 +46,7 @@ impl RejectTransitGatewayMulticastDomainAssociationsInput {
 pub struct RejectTransitGatewayMulticastDomainAssociationsInputBuilder {
     pub(crate) transit_gateway_multicast_domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
-    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl RejectTransitGatewayMulticastDomainAssociationsInputBuilder {
@@ -58,8 +57,7 @@ impl RejectTransitGatewayMulticastDomainAssociationsInputBuilder {
     }
     /// <p>The ID of the transit gateway multicast domain.</p>
     pub fn set_transit_gateway_multicast_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_multicast_domain_id = input;
-        self
+        self.transit_gateway_multicast_domain_id = input; self
     }
     /// <p>The ID of the transit gateway multicast domain.</p>
     pub fn get_transit_gateway_multicast_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +70,7 @@ impl RejectTransitGatewayMulticastDomainAssociationsInputBuilder {
     }
     /// <p>The ID of the transit gateway attachment.</p>
     pub fn set_transit_gateway_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_attachment_id = input;
-        self
+        self.transit_gateway_attachment_id = input; self
     }
     /// <p>The ID of the transit gateway attachment.</p>
     pub fn get_transit_gateway_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,17 +83,16 @@ impl RejectTransitGatewayMulticastDomainAssociationsInputBuilder {
     /// <p>The IDs of the subnets to associate with the transit gateway multicast domain.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the subnets to associate with the transit gateway multicast domain.</p>
-    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
     /// <p>The IDs of the subnets to associate with the transit gateway multicast domain.</p>
-    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnet_ids
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -106,27 +102,26 @@ impl RejectTransitGatewayMulticastDomainAssociationsInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`RejectTransitGatewayMulticastDomainAssociationsInput`](crate::operation::reject_transit_gateway_multicast_domain_associations::RejectTransitGatewayMulticastDomainAssociationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::reject_transit_gateway_multicast_domain_associations::RejectTransitGatewayMulticastDomainAssociationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::reject_transit_gateway_multicast_domain_associations::RejectTransitGatewayMulticastDomainAssociationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::reject_transit_gateway_multicast_domain_associations::RejectTransitGatewayMulticastDomainAssociationsInput {
-                transit_gateway_multicast_domain_id: self.transit_gateway_multicast_domain_id,
-                transit_gateway_attachment_id: self.transit_gateway_attachment_id,
-                subnet_ids: self.subnet_ids,
-                dry_run: self.dry_run,
-            },
+                transit_gateway_multicast_domain_id: self.transit_gateway_multicast_domain_id
+                ,
+                transit_gateway_attachment_id: self.transit_gateway_attachment_id
+                ,
+                subnet_ids: self.subnet_ids
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

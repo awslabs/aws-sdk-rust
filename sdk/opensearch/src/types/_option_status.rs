@@ -3,7 +3,7 @@
 /// <p>Provides the current status of an entity.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OptionStatus {
+pub struct OptionStatus  {
     /// <p>The timestamp when the entity was created.</p>
     pub creation_date: ::aws_smithy_types::DateTime,
     /// <p>The timestamp of the last time the entity was updated.</p>
@@ -15,13 +15,13 @@ pub struct OptionStatus {
     /// <p>Indicates whether the entity is being deleted.</p>
     pub pending_deletion: ::std::option::Option<bool>,
 }
-impl OptionStatus {
+impl  OptionStatus  {
     /// <p>The timestamp when the entity was created.</p>
-    pub fn creation_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_date
     }
     /// <p>The timestamp of the last time the entity was updated.</p>
-    pub fn update_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_date
     }
     /// <p>The latest version of the entity.</p>
@@ -29,7 +29,7 @@ impl OptionStatus {
         self.update_version
     }
     /// <p>The state of the entity.</p>
-    pub fn state(&self) -> &crate::types::OptionState {
+    pub fn state(&self) -> & crate::types::OptionState {
         &self.state
     }
     /// <p>Indicates whether the entity is being deleted.</p>
@@ -63,8 +63,7 @@ impl OptionStatusBuilder {
     }
     /// <p>The timestamp when the entity was created.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The timestamp when the entity was created.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -78,8 +77,7 @@ impl OptionStatusBuilder {
     }
     /// <p>The timestamp of the last time the entity was updated.</p>
     pub fn set_update_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_date = input;
-        self
+        self.update_date = input; self
     }
     /// <p>The timestamp of the last time the entity was updated.</p>
     pub fn get_update_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -92,8 +90,7 @@ impl OptionStatusBuilder {
     }
     /// <p>The latest version of the entity.</p>
     pub fn set_update_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.update_version = input;
-        self
+        self.update_version = input; self
     }
     /// <p>The latest version of the entity.</p>
     pub fn get_update_version(&self) -> &::std::option::Option<i32> {
@@ -107,8 +104,7 @@ impl OptionStatusBuilder {
     }
     /// <p>The state of the entity.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::OptionState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the entity.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::OptionState> {
@@ -121,8 +117,7 @@ impl OptionStatusBuilder {
     }
     /// <p>Indicates whether the entity is being deleted.</p>
     pub fn set_pending_deletion(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.pending_deletion = input;
-        self
+        self.pending_deletion = input; self
     }
     /// <p>Indicates whether the entity is being deleted.</p>
     pub fn get_pending_deletion(&self) -> &::std::option::Option<bool> {
@@ -134,27 +129,30 @@ impl OptionStatusBuilder {
     /// - [`update_date`](crate::types::builders::OptionStatusBuilder::update_date)
     /// - [`state`](crate::types::builders::OptionStatusBuilder::state)
     pub fn build(self) -> ::std::result::Result<crate::types::OptionStatus, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OptionStatus {
-            creation_date: self.creation_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_date",
-                    "creation_date was not specified but it is required when building OptionStatus",
-                )
-            })?,
-            update_date: self.update_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_date",
-                    "update_date was not specified but it is required when building OptionStatus",
-                )
-            })?,
-            update_version: self.update_version.unwrap_or_default(),
-            state: self.state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state",
-                    "state was not specified but it is required when building OptionStatus",
-                )
-            })?,
-            pending_deletion: self.pending_deletion,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OptionStatus {
+                creation_date: self.creation_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_date", "creation_date was not specified but it is required when building OptionStatus")
+                    )?
+                ,
+                update_date: self.update_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_date", "update_date was not specified but it is required when building OptionStatus")
+                    )?
+                ,
+                update_version: self.update_version
+                    .unwrap_or_default()
+                ,
+                state: self.state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state", "state was not specified but it is required when building OptionStatus")
+                    )?
+                ,
+                pending_deletion: self.pending_deletion
+                ,
+            }
+        )
     }
 }
+

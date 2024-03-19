@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRoomMembershipsOutput {
+pub struct ListRoomMembershipsOutput  {
     /// <p>The room membership details.</p>
-    pub room_memberships: ::std::option::Option<::std::vec::Vec<crate::types::RoomMembership>>,
+    pub room_memberships: ::std::option::Option<::std::vec::Vec::<crate::types::RoomMembership>>,
     /// <p>The token to use to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListRoomMembershipsOutput {
+impl  ListRoomMembershipsOutput  {
     /// <p>The room membership details.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.room_memberships.is_none()`.
-    pub fn room_memberships(&self) -> &[crate::types::RoomMembership] {
-        self.room_memberships.as_deref().unwrap_or_default()
+    pub fn room_memberships(&self) -> & [crate::types::RoomMembership] {
+        self.room_memberships.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListRoomMembershipsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListRoomMembershipsOutput {
     /// Creates a new builder-style object to manufacture [`ListRoomMembershipsOutput`](crate::operation::list_room_memberships::ListRoomMembershipsOutput).
     pub fn builder() -> crate::operation::list_room_memberships::builders::ListRoomMembershipsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListRoomMembershipsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRoomMembershipsOutputBuilder {
-    pub(crate) room_memberships: ::std::option::Option<::std::vec::Vec<crate::types::RoomMembership>>,
+    pub(crate) room_memberships: ::std::option::Option<::std::vec::Vec::<crate::types::RoomMembership>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListRoomMembershipsOutputBuilder {
     /// <p>The room membership details.</p>
     pub fn room_memberships(mut self, input: crate::types::RoomMembership) -> Self {
         let mut v = self.room_memberships.unwrap_or_default();
-        v.push(input);
-        self.room_memberships = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.room_memberships = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The room membership details.</p>
-    pub fn set_room_memberships(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RoomMembership>>) -> Self {
-        self.room_memberships = input;
-        self
+    pub fn set_room_memberships(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RoomMembership>>) -> Self {
+        self.room_memberships = input; self
     }
     /// <p>The room membership details.</p>
-    pub fn get_room_memberships(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoomMembership>> {
+    pub fn get_room_memberships(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RoomMembership>> {
         &self.room_memberships
     }
     /// <p>The token to use to retrieve the next page of results.</p>
@@ -69,28 +69,30 @@ impl ListRoomMembershipsOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListRoomMembershipsOutput`](crate::operation::list_room_memberships::ListRoomMembershipsOutput).
     pub fn build(self) -> crate::operation::list_room_memberships::ListRoomMembershipsOutput {
         crate::operation::list_room_memberships::ListRoomMembershipsOutput {
-            room_memberships: self.room_memberships,
-            next_token: self.next_token,
+            room_memberships: self.room_memberships
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

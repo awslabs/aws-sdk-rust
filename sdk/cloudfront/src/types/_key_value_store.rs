@@ -3,7 +3,7 @@
 /// <p>The Key Value Store. Use this to separate data from function code, allowing you to update data without having to publish a new version of a function. The Key Value Store holds keys and their corresponding values.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KeyValueStore {
+pub struct KeyValueStore  {
     /// <p>The name of the Key Value Store.</p>
     pub name: ::std::string::String,
     /// <p>The unique Id for the Key Value Store.</p>
@@ -17,33 +17,29 @@ pub struct KeyValueStore {
     /// <p>The last-modified time of the Key Value Store.</p>
     pub last_modified_time: ::aws_smithy_types::DateTime,
 }
-impl KeyValueStore {
+impl  KeyValueStore  {
     /// <p>The name of the Key Value Store.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The unique Id for the Key Value Store.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>A comment for the Key Value Store.</p>
-    pub fn comment(&self) -> &str {
-        use std::ops::Deref;
-        self.comment.deref()
+    pub fn comment(&self) -> & str {
+        use std::ops::Deref; self.comment.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The status of the Key Value Store.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The last-modified time of the Key Value Store.</p>
-    pub fn last_modified_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_modified_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_modified_time
     }
 }
@@ -74,8 +70,7 @@ impl KeyValueStoreBuilder {
     }
     /// <p>The name of the Key Value Store.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Key Value Store.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +84,7 @@ impl KeyValueStoreBuilder {
     }
     /// <p>The unique Id for the Key Value Store.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique Id for the Key Value Store.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +98,7 @@ impl KeyValueStoreBuilder {
     }
     /// <p>A comment for the Key Value Store.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// <p>A comment for the Key Value Store.</p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +112,7 @@ impl KeyValueStoreBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +125,7 @@ impl KeyValueStoreBuilder {
     }
     /// <p>The status of the Key Value Store.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the Key Value Store.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +139,7 @@ impl KeyValueStoreBuilder {
     }
     /// <p>The last-modified time of the Key Value Store.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The last-modified time of the Key Value Store.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -163,38 +153,37 @@ impl KeyValueStoreBuilder {
     /// - [`arn`](crate::types::builders::KeyValueStoreBuilder::arn)
     /// - [`last_modified_time`](crate::types::builders::KeyValueStoreBuilder::last_modified_time)
     pub fn build(self) -> ::std::result::Result<crate::types::KeyValueStore, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KeyValueStore {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building KeyValueStore",
-                )
-            })?,
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building KeyValueStore",
-                )
-            })?,
-            comment: self.comment.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "comment",
-                    "comment was not specified but it is required when building KeyValueStore",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building KeyValueStore",
-                )
-            })?,
-            status: self.status,
-            last_modified_time: self.last_modified_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_modified_time",
-                    "last_modified_time was not specified but it is required when building KeyValueStore",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KeyValueStore {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building KeyValueStore")
+                    )?
+                ,
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building KeyValueStore")
+                    )?
+                ,
+                comment: self.comment
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("comment", "comment was not specified but it is required when building KeyValueStore")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building KeyValueStore")
+                    )?
+                ,
+                status: self.status
+                ,
+                last_modified_time: self.last_modified_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_modified_time", "last_modified_time was not specified but it is required when building KeyValueStore")
+                    )?
+                ,
+            }
+        )
     }
 }
+

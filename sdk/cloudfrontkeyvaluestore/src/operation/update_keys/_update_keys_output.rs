@@ -3,7 +3,7 @@
 /// <p>Metadata information about a Key Value Store.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateKeysOutput {
+pub struct UpdateKeysOutput  {
     /// <p>Number of key value pairs in the Key Value Store after the successful update.</p>
     pub item_count: i32,
     /// <p>Total size of the Key Value Store after the successful update, in bytes.</p>
@@ -12,7 +12,7 @@ pub struct UpdateKeysOutput {
     pub e_tag: ::std::string::String,
     _request_id: Option<String>,
 }
-impl UpdateKeysOutput {
+impl  UpdateKeysOutput  {
     /// <p>Number of key value pairs in the Key Value Store after the successful update.</p>
     pub fn item_count(&self) -> i32 {
         self.item_count
@@ -22,16 +22,15 @@ impl UpdateKeysOutput {
         self.total_size_in_bytes
     }
     /// <p>The current version identifier of the Key Value Store after the successful update.</p>
-    pub fn e_tag(&self) -> &str {
-        use std::ops::Deref;
-        self.e_tag.deref()
+    pub fn e_tag(&self) -> & str {
+        use std::ops::Deref; self.e_tag.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateKeysOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateKeysOutput {
     /// Creates a new builder-style object to manufacture [`UpdateKeysOutput`](crate::operation::update_keys::UpdateKeysOutput).
     pub fn builder() -> crate::operation::update_keys::builders::UpdateKeysOutputBuilder {
@@ -57,8 +56,7 @@ impl UpdateKeysOutputBuilder {
     }
     /// <p>Number of key value pairs in the Key Value Store after the successful update.</p>
     pub fn set_item_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.item_count = input;
-        self
+        self.item_count = input; self
     }
     /// <p>Number of key value pairs in the Key Value Store after the successful update.</p>
     pub fn get_item_count(&self) -> &::std::option::Option<i32> {
@@ -72,8 +70,7 @@ impl UpdateKeysOutputBuilder {
     }
     /// <p>Total size of the Key Value Store after the successful update, in bytes.</p>
     pub fn set_total_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total_size_in_bytes = input;
-        self
+        self.total_size_in_bytes = input; self
     }
     /// <p>Total size of the Key Value Store after the successful update, in bytes.</p>
     pub fn get_total_size_in_bytes(&self) -> &::std::option::Option<i64> {
@@ -87,48 +84,47 @@ impl UpdateKeysOutputBuilder {
     }
     /// <p>The current version identifier of the Key Value Store after the successful update.</p>
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.e_tag = input;
-        self
+        self.e_tag = input; self
     }
     /// <p>The current version identifier of the Key Value Store after the successful update.</p>
     pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
         &self.e_tag
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateKeysOutput`](crate::operation::update_keys::UpdateKeysOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`item_count`](crate::operation::update_keys::builders::UpdateKeysOutputBuilder::item_count)
     /// - [`total_size_in_bytes`](crate::operation::update_keys::builders::UpdateKeysOutputBuilder::total_size_in_bytes)
     /// - [`e_tag`](crate::operation::update_keys::builders::UpdateKeysOutputBuilder::e_tag)
     pub fn build(self) -> ::std::result::Result<crate::operation::update_keys::UpdateKeysOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_keys::UpdateKeysOutput {
-            item_count: self.item_count.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "item_count",
-                    "item_count was not specified but it is required when building UpdateKeysOutput",
-                )
-            })?,
-            total_size_in_bytes: self.total_size_in_bytes.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "total_size_in_bytes",
-                    "total_size_in_bytes was not specified but it is required when building UpdateKeysOutput",
-                )
-            })?,
-            e_tag: self.e_tag.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "e_tag",
-                    "e_tag was not specified but it is required when building UpdateKeysOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_keys::UpdateKeysOutput {
+                item_count: self.item_count
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("item_count", "item_count was not specified but it is required when building UpdateKeysOutput")
+                    )?
+                ,
+                total_size_in_bytes: self.total_size_in_bytes
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("total_size_in_bytes", "total_size_in_bytes was not specified but it is required when building UpdateKeysOutput")
+                    )?
+                ,
+                e_tag: self.e_tag
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("e_tag", "e_tag was not specified but it is required when building UpdateKeysOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

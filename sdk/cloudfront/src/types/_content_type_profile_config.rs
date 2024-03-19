@@ -3,19 +3,19 @@
 /// <p>The configuration for a field-level encryption content type-profile mapping.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContentTypeProfileConfig {
+pub struct ContentTypeProfileConfig  {
     /// <p>The setting in a field-level encryption content type-profile mapping that specifies what to do when an unknown content type is provided for the profile. If true, content is forwarded without being encrypted when the content type is unknown. If false (the default), an error is returned when the content type is unknown.</p>
     pub forward_when_content_type_is_unknown: bool,
     /// <p>The configuration for a field-level encryption content type-profile.</p>
     pub content_type_profiles: ::std::option::Option<crate::types::ContentTypeProfiles>,
 }
-impl ContentTypeProfileConfig {
+impl  ContentTypeProfileConfig  {
     /// <p>The setting in a field-level encryption content type-profile mapping that specifies what to do when an unknown content type is provided for the profile. If true, content is forwarded without being encrypted when the content type is unknown. If false (the default), an error is returned when the content type is unknown.</p>
     pub fn forward_when_content_type_is_unknown(&self) -> bool {
         self.forward_when_content_type_is_unknown
     }
     /// <p>The configuration for a field-level encryption content type-profile.</p>
-    pub fn content_type_profiles(&self) -> ::std::option::Option<&crate::types::ContentTypeProfiles> {
+    pub fn content_type_profiles(&self) -> ::std::option::Option<& crate::types::ContentTypeProfiles> {
         self.content_type_profiles.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl ContentTypeProfileConfigBuilder {
     }
     /// <p>The setting in a field-level encryption content type-profile mapping that specifies what to do when an unknown content type is provided for the profile. If true, content is forwarded without being encrypted when the content type is unknown. If false (the default), an error is returned when the content type is unknown.</p>
     pub fn set_forward_when_content_type_is_unknown(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.forward_when_content_type_is_unknown = input;
-        self
+        self.forward_when_content_type_is_unknown = input; self
     }
     /// <p>The setting in a field-level encryption content type-profile mapping that specifies what to do when an unknown content type is provided for the profile. If true, content is forwarded without being encrypted when the content type is unknown. If false (the default), an error is returned when the content type is unknown.</p>
     pub fn get_forward_when_content_type_is_unknown(&self) -> &::std::option::Option<bool> {
@@ -56,8 +55,7 @@ impl ContentTypeProfileConfigBuilder {
     }
     /// <p>The configuration for a field-level encryption content type-profile.</p>
     pub fn set_content_type_profiles(mut self, input: ::std::option::Option<crate::types::ContentTypeProfiles>) -> Self {
-        self.content_type_profiles = input;
-        self
+        self.content_type_profiles = input; self
     }
     /// <p>The configuration for a field-level encryption content type-profile.</p>
     pub fn get_content_type_profiles(&self) -> &::std::option::Option<crate::types::ContentTypeProfiles> {
@@ -67,14 +65,17 @@ impl ContentTypeProfileConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`forward_when_content_type_is_unknown`](crate::types::builders::ContentTypeProfileConfigBuilder::forward_when_content_type_is_unknown)
     pub fn build(self) -> ::std::result::Result<crate::types::ContentTypeProfileConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ContentTypeProfileConfig {
-            forward_when_content_type_is_unknown: self.forward_when_content_type_is_unknown.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "forward_when_content_type_is_unknown",
-                    "forward_when_content_type_is_unknown was not specified but it is required when building ContentTypeProfileConfig",
-                )
-            })?,
-            content_type_profiles: self.content_type_profiles,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ContentTypeProfileConfig {
+                forward_when_content_type_is_unknown: self.forward_when_content_type_is_unknown
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("forward_when_content_type_is_unknown", "forward_when_content_type_is_unknown was not specified but it is required when building ContentTypeProfileConfig")
+                    )?
+                ,
+                content_type_profiles: self.content_type_profiles
+                ,
+            }
+        )
     }
 }
+

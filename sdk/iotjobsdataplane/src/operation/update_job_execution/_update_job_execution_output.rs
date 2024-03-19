@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateJobExecutionOutput {
+pub struct UpdateJobExecutionOutput  {
     /// <p>A JobExecutionState object.</p>
     pub execution_state: ::std::option::Option<crate::types::JobExecutionState>,
     /// <p>The contents of the Job Documents.</p>
     pub job_document: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl UpdateJobExecutionOutput {
+impl  UpdateJobExecutionOutput  {
     /// <p>A JobExecutionState object.</p>
-    pub fn execution_state(&self) -> ::std::option::Option<&crate::types::JobExecutionState> {
+    pub fn execution_state(&self) -> ::std::option::Option<& crate::types::JobExecutionState> {
         self.execution_state.as_ref()
     }
     /// <p>The contents of the Job Documents.</p>
-    pub fn job_document(&self) -> ::std::option::Option<&str> {
+    pub fn job_document(&self) -> ::std::option::Option<& str> {
         self.job_document.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateJobExecutionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateJobExecutionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateJobExecutionOutput`](crate::operation::update_job_execution::UpdateJobExecutionOutput).
     pub fn builder() -> crate::operation::update_job_execution::builders::UpdateJobExecutionOutputBuilder {
@@ -47,8 +47,7 @@ impl UpdateJobExecutionOutputBuilder {
     }
     /// <p>A JobExecutionState object.</p>
     pub fn set_execution_state(mut self, input: ::std::option::Option<crate::types::JobExecutionState>) -> Self {
-        self.execution_state = input;
-        self
+        self.execution_state = input; self
     }
     /// <p>A JobExecutionState object.</p>
     pub fn get_execution_state(&self) -> &::std::option::Option<crate::types::JobExecutionState> {
@@ -61,28 +60,30 @@ impl UpdateJobExecutionOutputBuilder {
     }
     /// <p>The contents of the Job Documents.</p>
     pub fn set_job_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_document = input;
-        self
+        self.job_document = input; self
     }
     /// <p>The contents of the Job Documents.</p>
     pub fn get_job_document(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_document
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateJobExecutionOutput`](crate::operation::update_job_execution::UpdateJobExecutionOutput).
     pub fn build(self) -> crate::operation::update_job_execution::UpdateJobExecutionOutput {
         crate::operation::update_job_execution::UpdateJobExecutionOutput {
-            execution_state: self.execution_state,
-            job_document: self.job_document,
+            execution_state: self.execution_state
+            ,
+            job_document: self.job_document
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

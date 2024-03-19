@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchUpdateUserInput {
+pub struct BatchUpdateUserInput  {
     /// <p>The Amazon Chime account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The request containing the user IDs and details to update.</p>
-    pub update_user_request_items: ::std::option::Option<::std::vec::Vec<crate::types::UpdateUserRequestItem>>,
+    pub update_user_request_items: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateUserRequestItem>>,
 }
-impl BatchUpdateUserInput {
+impl  BatchUpdateUserInput  {
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The request containing the user IDs and details to update.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.update_user_request_items.is_none()`.
-    pub fn update_user_request_items(&self) -> &[crate::types::UpdateUserRequestItem] {
-        self.update_user_request_items.as_deref().unwrap_or_default()
+    pub fn update_user_request_items(&self) -> & [crate::types::UpdateUserRequestItem] {
+        self.update_user_request_items.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchUpdateUserInput {
@@ -32,7 +33,7 @@ impl BatchUpdateUserInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUpdateUserInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
-    pub(crate) update_user_request_items: ::std::option::Option<::std::vec::Vec<crate::types::UpdateUserRequestItem>>,
+    pub(crate) update_user_request_items: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateUserRequestItem>>,
 }
 impl BatchUpdateUserInputBuilder {
     /// <p>The Amazon Chime account ID.</p>
@@ -43,8 +44,7 @@ impl BatchUpdateUserInputBuilder {
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,26 +57,28 @@ impl BatchUpdateUserInputBuilder {
     /// <p>The request containing the user IDs and details to update.</p>
     pub fn update_user_request_items(mut self, input: crate::types::UpdateUserRequestItem) -> Self {
         let mut v = self.update_user_request_items.unwrap_or_default();
-        v.push(input);
-        self.update_user_request_items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.update_user_request_items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The request containing the user IDs and details to update.</p>
-    pub fn set_update_user_request_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateUserRequestItem>>) -> Self {
-        self.update_user_request_items = input;
-        self
+    pub fn set_update_user_request_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateUserRequestItem>>) -> Self {
+        self.update_user_request_items = input; self
     }
     /// <p>The request containing the user IDs and details to update.</p>
-    pub fn get_update_user_request_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateUserRequestItem>> {
+    pub fn get_update_user_request_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UpdateUserRequestItem>> {
         &self.update_user_request_items
     }
     /// Consumes the builder and constructs a [`BatchUpdateUserInput`](crate::operation::batch_update_user::BatchUpdateUserInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_update_user::BatchUpdateUserInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::batch_update_user::BatchUpdateUserInput {
-            account_id: self.account_id,
-            update_user_request_items: self.update_user_request_items,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_update_user::BatchUpdateUserInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_update_user::BatchUpdateUserInput {
+                account_id: self.account_id
+                ,
+                update_user_request_items: self.update_user_request_items
+                ,
+            }
+        )
     }
 }
+

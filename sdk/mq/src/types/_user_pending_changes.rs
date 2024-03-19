@@ -3,27 +3,28 @@
 /// <p>Returns information about the status of the changes pending for the ActiveMQ user.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserPendingChanges {
+pub struct UserPendingChanges  {
     /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
     pub console_access: ::std::option::Option<bool>,
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-    pub groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Required. The type of change pending for the ActiveMQ user.</p>
     pub pending_change: ::std::option::Option<crate::types::ChangeType>,
 }
-impl UserPendingChanges {
+impl  UserPendingChanges  {
     /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
     pub fn console_access(&self) -> ::std::option::Option<bool> {
         self.console_access
     }
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
-    pub fn groups(&self) -> &[::std::string::String] {
-        self.groups.as_deref().unwrap_or_default()
+    pub fn groups(&self) -> & [::std::string::String] {
+        self.groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Required. The type of change pending for the ActiveMQ user.</p>
-    pub fn pending_change(&self) -> ::std::option::Option<&crate::types::ChangeType> {
+    pub fn pending_change(&self) -> ::std::option::Option<& crate::types::ChangeType> {
         self.pending_change.as_ref()
     }
 }
@@ -39,7 +40,7 @@ impl UserPendingChanges {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserPendingChangesBuilder {
     pub(crate) console_access: ::std::option::Option<bool>,
-    pub(crate) groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) pending_change: ::std::option::Option<crate::types::ChangeType>,
 }
 impl UserPendingChangesBuilder {
@@ -50,8 +51,7 @@ impl UserPendingChangesBuilder {
     }
     /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
     pub fn set_console_access(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.console_access = input;
-        self
+        self.console_access = input; self
     }
     /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
     pub fn get_console_access(&self) -> &::std::option::Option<bool> {
@@ -64,17 +64,16 @@ impl UserPendingChangesBuilder {
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub fn groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.groups.unwrap_or_default();
-        v.push(input.into());
-        self.groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.groups = input;
-        self
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.groups = input; self
     }
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.groups
     }
     /// <p>Required. The type of change pending for the ActiveMQ user.</p>
@@ -85,8 +84,7 @@ impl UserPendingChangesBuilder {
     }
     /// <p>Required. The type of change pending for the ActiveMQ user.</p>
     pub fn set_pending_change(mut self, input: ::std::option::Option<crate::types::ChangeType>) -> Self {
-        self.pending_change = input;
-        self
+        self.pending_change = input; self
     }
     /// <p>Required. The type of change pending for the ActiveMQ user.</p>
     pub fn get_pending_change(&self) -> &::std::option::Option<crate::types::ChangeType> {
@@ -95,9 +93,13 @@ impl UserPendingChangesBuilder {
     /// Consumes the builder and constructs a [`UserPendingChanges`](crate::types::UserPendingChanges).
     pub fn build(self) -> crate::types::UserPendingChanges {
         crate::types::UserPendingChanges {
-            console_access: self.console_access,
-            groups: self.groups,
-            pending_change: self.pending_change,
+            console_access: self.console_access
+            ,
+            groups: self.groups
+            ,
+            pending_change: self.pending_change
+            ,
         }
     }
 }
+

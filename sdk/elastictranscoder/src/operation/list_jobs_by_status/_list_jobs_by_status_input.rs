@@ -3,7 +3,7 @@
 /// <p>The <code>ListJobsByStatusRequest</code> structure.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListJobsByStatusInput {
+pub struct ListJobsByStatusInput  {
     /// <p>To get information about all of the jobs associated with the current AWS account that have a given status, specify the following status: <code>Submitted</code>, <code>Progressing</code>, <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.</p>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>.</p>
@@ -11,17 +11,17 @@ pub struct ListJobsByStatusInput {
     /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results.</p>
     pub page_token: ::std::option::Option<::std::string::String>,
 }
-impl ListJobsByStatusInput {
+impl  ListJobsByStatusInput  {
     /// <p>To get information about all of the jobs associated with the current AWS account that have a given status, specify the following status: <code>Submitted</code>, <code>Progressing</code>, <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>.</p>
-    pub fn ascending(&self) -> ::std::option::Option<&str> {
+    pub fn ascending(&self) -> ::std::option::Option<& str> {
         self.ascending.as_deref()
     }
     /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results.</p>
-    pub fn page_token(&self) -> ::std::option::Option<&str> {
+    pub fn page_token(&self) -> ::std::option::Option<& str> {
         self.page_token.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl ListJobsByStatusInputBuilder {
     }
     /// <p>To get information about all of the jobs associated with the current AWS account that have a given status, specify the following status: <code>Submitted</code>, <code>Progressing</code>, <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>To get information about all of the jobs associated with the current AWS account that have a given status, specify the following status: <code>Submitted</code>, <code>Progressing</code>, <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl ListJobsByStatusInputBuilder {
     }
     /// <p>To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>.</p>
     pub fn set_ascending(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ascending = input;
-        self
+        self.ascending = input; self
     }
     /// <p>To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>.</p>
     pub fn get_ascending(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,21 +75,24 @@ impl ListJobsByStatusInputBuilder {
     }
     /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results.</p>
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.page_token = input;
-        self
+        self.page_token = input; self
     }
     /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results.</p>
     pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.page_token
     }
     /// Consumes the builder and constructs a [`ListJobsByStatusInput`](crate::operation::list_jobs_by_status::ListJobsByStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_jobs_by_status::ListJobsByStatusInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_jobs_by_status::ListJobsByStatusInput {
-            status: self.status,
-            ascending: self.ascending,
-            page_token: self.page_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_jobs_by_status::ListJobsByStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_jobs_by_status::ListJobsByStatusInput {
+                status: self.status
+                ,
+                ascending: self.ascending
+                ,
+                page_token: self.page_token
+                ,
+            }
+        )
     }
 }
+

@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLifecycleHooksInput {
+pub struct DescribeLifecycleHooksInput  {
     /// <p>The name of the Auto Scaling group.</p>
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The names of one or more lifecycle hooks. If you omit this property, all lifecycle hooks are described.</p>
-    pub lifecycle_hook_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub lifecycle_hook_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DescribeLifecycleHooksInput {
+impl  DescribeLifecycleHooksInput  {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<& str> {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>The names of one or more lifecycle hooks. If you omit this property, all lifecycle hooks are described.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lifecycle_hook_names.is_none()`.
-    pub fn lifecycle_hook_names(&self) -> &[::std::string::String] {
-        self.lifecycle_hook_names.as_deref().unwrap_or_default()
+    pub fn lifecycle_hook_names(&self) -> & [::std::string::String] {
+        self.lifecycle_hook_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeLifecycleHooksInput {
@@ -32,7 +33,7 @@ impl DescribeLifecycleHooksInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLifecycleHooksInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) lifecycle_hook_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) lifecycle_hook_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DescribeLifecycleHooksInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
@@ -43,8 +44,7 @@ impl DescribeLifecycleHooksInputBuilder {
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auto_scaling_group_name = input;
-        self
+        self.auto_scaling_group_name = input; self
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,29 +57,28 @@ impl DescribeLifecycleHooksInputBuilder {
     /// <p>The names of one or more lifecycle hooks. If you omit this property, all lifecycle hooks are described.</p>
     pub fn lifecycle_hook_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.lifecycle_hook_names.unwrap_or_default();
-        v.push(input.into());
-        self.lifecycle_hook_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.lifecycle_hook_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of one or more lifecycle hooks. If you omit this property, all lifecycle hooks are described.</p>
-    pub fn set_lifecycle_hook_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.lifecycle_hook_names = input;
-        self
+    pub fn set_lifecycle_hook_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.lifecycle_hook_names = input; self
     }
     /// <p>The names of one or more lifecycle hooks. If you omit this property, all lifecycle hooks are described.</p>
-    pub fn get_lifecycle_hook_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_lifecycle_hook_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.lifecycle_hook_names
     }
     /// Consumes the builder and constructs a [`DescribeLifecycleHooksInput`](crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksInput {
-            auto_scaling_group_name: self.auto_scaling_group_name,
-            lifecycle_hook_names: self.lifecycle_hook_names,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksInput {
+                auto_scaling_group_name: self.auto_scaling_group_name
+                ,
+                lifecycle_hook_names: self.lifecycle_hook_names
+                ,
+            }
+        )
     }
 }
+

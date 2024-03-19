@@ -3,15 +3,14 @@
 /// <p>Information about the published revision.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RevisionPublished {
+pub struct RevisionPublished  {
     /// <p>The data set ID of the published revision.</p>
     pub data_set_id: ::std::string::String,
 }
-impl RevisionPublished {
+impl  RevisionPublished  {
     /// <p>The data set ID of the published revision.</p>
-    pub fn data_set_id(&self) -> &str {
-        use std::ops::Deref;
-        self.data_set_id.deref()
+    pub fn data_set_id(&self) -> & str {
+        use std::ops::Deref; self.data_set_id.deref()
     }
 }
 impl RevisionPublished {
@@ -36,8 +35,7 @@ impl RevisionPublishedBuilder {
     }
     /// <p>The data set ID of the published revision.</p>
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_id = input;
-        self
+        self.data_set_id = input; self
     }
     /// <p>The data set ID of the published revision.</p>
     pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl RevisionPublishedBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`data_set_id`](crate::types::builders::RevisionPublishedBuilder::data_set_id)
     pub fn build(self) -> ::std::result::Result<crate::types::RevisionPublished, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RevisionPublished {
-            data_set_id: self.data_set_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_set_id",
-                    "data_set_id was not specified but it is required when building RevisionPublished",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RevisionPublished {
+                data_set_id: self.data_set_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_set_id", "data_set_id was not specified but it is required when building RevisionPublished")
+                    )?
+                ,
+            }
+        )
     }
 }
+

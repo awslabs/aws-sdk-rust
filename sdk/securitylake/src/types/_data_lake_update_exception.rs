@@ -3,19 +3,19 @@
 /// <p>The details of the last <code>UpdateDataLake</code> or <code>DeleteDataLake</code> API request which failed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataLakeUpdateException {
+pub struct DataLakeUpdateException  {
     /// <p>The reason for the exception of the last <code>UpdateDataLake</code>or <code>DeleteDataLake</code> API request.</p>
     pub reason: ::std::option::Option<::std::string::String>,
     /// <p>The reason code for the exception of the last <code>UpdateDataLake</code> or <code>DeleteDataLake</code> API request.</p>
     pub code: ::std::option::Option<::std::string::String>,
 }
-impl DataLakeUpdateException {
+impl  DataLakeUpdateException  {
     /// <p>The reason for the exception of the last <code>UpdateDataLake</code>or <code>DeleteDataLake</code> API request.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
     /// <p>The reason code for the exception of the last <code>UpdateDataLake</code> or <code>DeleteDataLake</code> API request.</p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DataLakeUpdateExceptionBuilder {
     }
     /// <p>The reason for the exception of the last <code>UpdateDataLake</code>or <code>DeleteDataLake</code> API request.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>The reason for the exception of the last <code>UpdateDataLake</code>or <code>DeleteDataLake</code> API request.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl DataLakeUpdateExceptionBuilder {
     }
     /// <p>The reason code for the exception of the last <code>UpdateDataLake</code> or <code>DeleteDataLake</code> API request.</p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The reason code for the exception of the last <code>UpdateDataLake</code> or <code>DeleteDataLake</code> API request.</p>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl DataLakeUpdateExceptionBuilder {
     /// Consumes the builder and constructs a [`DataLakeUpdateException`](crate::types::DataLakeUpdateException).
     pub fn build(self) -> crate::types::DataLakeUpdateException {
         crate::types::DataLakeUpdateException {
-            reason: self.reason,
-            code: self.code,
+            reason: self.reason
+            ,
+            code: self.code
+            ,
         }
     }
 }
+

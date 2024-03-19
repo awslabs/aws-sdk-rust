@@ -5,55 +5,51 @@ pub use crate::operation::put_anomaly_detector::_put_anomaly_detector_input::Put
 
 impl PutAnomalyDetectorInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::put_anomaly_detector::PutAnomalyDetectorOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_anomaly_detector::PutAnomalyDetectorError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.put_anomaly_detector();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::put_anomaly_detector::PutAnomalyDetectorOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::put_anomaly_detector::PutAnomalyDetectorError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.put_anomaly_detector();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `PutAnomalyDetector`.
-///
+/// 
 /// <p>Creates an anomaly detection model for a CloudWatch metric. You can use the model to display a band of expected normal values when the metric is graphed.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Anomaly_Detection.html">CloudWatch Anomaly Detection</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutAnomalyDetectorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_anomaly_detector::builders::PutAnomalyDetectorInputBuilder,
+                    inner: crate::operation::put_anomaly_detector::builders::PutAnomalyDetectorInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::put_anomaly_detector::PutAnomalyDetectorOutput,
-        crate::operation::put_anomaly_detector::PutAnomalyDetectorError,
-    > for PutAnomalyDetectorFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::put_anomaly_detector::PutAnomalyDetectorOutput,
-            crate::operation::put_anomaly_detector::PutAnomalyDetectorError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::put_anomaly_detector::PutAnomalyDetectorOutput,
+                    crate::operation::put_anomaly_detector::PutAnomalyDetectorError,
+                > for PutAnomalyDetectorFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::put_anomaly_detector::PutAnomalyDetectorOutput,
+                        crate::operation::put_anomaly_detector::PutAnomalyDetectorError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl PutAnomalyDetectorFluentBuilder {
     /// Creates a new `PutAnomalyDetector`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl PutAnomalyDetectorFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_anomaly_detector::PutAnomalyDetectorOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_anomaly_detector::PutAnomalyDetectorError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::put_anomaly_detector::PutAnomalyDetector::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::put_anomaly_detector::PutAnomalyDetector::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::put_anomaly_detector::PutAnomalyDetectorOutput,
-        crate::operation::put_anomaly_detector::PutAnomalyDetectorError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::put_anomaly_detector::PutAnomalyDetectorOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_anomaly_detector::PutAnomalyDetectorError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::put_anomaly_detector::PutAnomalyDetector::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::put_anomaly_detector::PutAnomalyDetector::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::put_anomaly_detector::PutAnomalyDetectorOutput, crate::operation::put_anomaly_detector::PutAnomalyDetectorError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The namespace of the metric to create the anomaly detection model for.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -155,13 +142,13 @@ impl PutAnomalyDetectorFluentBuilder {
     }
     /// <p>The metric dimensions to create the anomaly detection model for.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
-    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>) -> Self {
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Dimension>>) -> Self {
         self.inner = self.inner.set_dimensions(input);
         self
     }
     /// <p>The metric dimensions to create the anomaly detection model for.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
-    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Dimension>> {
         self.inner.get_dimensions()
     }
     /// <p>The statistic to use for the metric and the anomaly detection model.</p>
@@ -311,3 +298,4 @@ impl PutAnomalyDetectorFluentBuilder {
         self.inner.get_metric_math_anomaly_detector()
     }
 }
+

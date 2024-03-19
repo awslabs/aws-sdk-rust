@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetDevEndpoints`](crate::operation::get_dev_endpoints::builders::GetDevEndpointsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_dev_endpoints::builders::GetDevEndpointsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::get_dev_endpoints::builders::GetDevEndpointsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_dev_endpoints::builders::GetDevEndpointsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum size of information to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_dev_endpoints::builders::GetDevEndpointsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_dev_endpoints::builders::GetDevEndpointsFluentBuilder::set_next_token):<br>required: **false**<br><p>A continuation token, if this is a continuation call.</p><br>
-    /// - On success, responds with [`GetDevEndpointsOutput`](crate::operation::get_dev_endpoints::GetDevEndpointsOutput) with field(s):
+                            /// - On success, responds with [`GetDevEndpointsOutput`](crate::operation::get_dev_endpoints::GetDevEndpointsOutput) with field(s):
     ///   - [`dev_endpoints(Option<Vec::<DevEndpoint>>)`](crate::operation::get_dev_endpoints::GetDevEndpointsOutput::dev_endpoints): <p>A list of <code>DevEndpoint</code> definitions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_dev_endpoints::GetDevEndpointsOutput::next_token): <p>A continuation token, if not all <code>DevEndpoint</code> definitions have yet been returned.</p>
-    /// - On failure, responds with [`SdkError<GetDevEndpointsError>`](crate::operation::get_dev_endpoints::GetDevEndpointsError)
+                            /// - On failure, responds with [`SdkError<GetDevEndpointsError>`](crate::operation::get_dev_endpoints::GetDevEndpointsError)
     pub fn get_dev_endpoints(&self) -> crate::operation::get_dev_endpoints::builders::GetDevEndpointsFluentBuilder {
-        crate::operation::get_dev_endpoints::builders::GetDevEndpointsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_dev_endpoints::builders::GetDevEndpointsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

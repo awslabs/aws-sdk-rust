@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let signaldecoderfailurereason = unimplemented!();
 /// match signaldecoderfailurereason {
@@ -43,16 +43,14 @@
 /// Specifically, when `signaldecoderfailurereason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SignalDecoderFailureReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum SignalDecoderFailureReason {
     #[allow(missing_docs)] // documentation missing in model
     CanSignalInfoIsNull,
@@ -86,128 +84,101 @@ pub enum SignalDecoderFailureReason {
     StructSizeMismatch,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for SignalDecoderFailureReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "CAN_SIGNAL_INFO_IS_NULL" => SignalDecoderFailureReason::CanSignalInfoIsNull,
-            "CONFLICTING_SIGNAL" => SignalDecoderFailureReason::ConflictingSignal,
-            "DUPLICATE_SIGNAL" => SignalDecoderFailureReason::DuplicateSignal,
-            "EMPTY_MESSAGE_SIGNAL" => SignalDecoderFailureReason::EmptyMessageSignal,
-            "MESSAGE_SIGNAL_INFO_IS_NULL" => SignalDecoderFailureReason::MessageSignalInfoIsNull,
-            "NETWORK_INTERFACE_TYPE_INCOMPATIBLE_WITH_SIGNAL_DECODER_TYPE" => {
-                SignalDecoderFailureReason::NetworkInterfaceTypeIncompatibleWithSignalDecoderType
-            }
-            "NO_DECODER_INFO_FOR_SIGNAL_IN_MODEL" => SignalDecoderFailureReason::NoDecoderInfoForSignalInModel,
-            "NO_SIGNAL_IN_CATALOG_FOR_DECODER_SIGNAL" => SignalDecoderFailureReason::NoSignalInCatalogForDecoderSignal,
-            "OBD_SIGNAL_INFO_IS_NULL" => SignalDecoderFailureReason::ObdSignalInfoIsNull,
-            "SIGNAL_DECODER_INCOMPATIBLE_WITH_SIGNAL_CATALOG" => SignalDecoderFailureReason::SignalDecoderIncompatibleWithSignalCatalog,
-            "SIGNAL_DECODER_TYPE_INCOMPATIBLE_WITH_MESSAGE_SIGNAL_TYPE" => {
-                SignalDecoderFailureReason::SignalDecoderTypeIncompatibleWithMessageSignalType
-            }
-            "SIGNAL_NOT_ASSOCIATED_WITH_NETWORK_INTERFACE" => SignalDecoderFailureReason::SignalNotAssociatedWithNetworkInterface,
-            "SIGNAL_NOT_IN_MODEL" => SignalDecoderFailureReason::SignalNotInModel,
-            "SIGNAL_TO_ADD_ALREADY_EXISTS" => SignalDecoderFailureReason::SignalToAddAlreadyExists,
-            "STRUCT_SIZE_MISMATCH" => SignalDecoderFailureReason::StructSizeMismatch,
-            other => SignalDecoderFailureReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "CAN_SIGNAL_INFO_IS_NULL" => SignalDecoderFailureReason::CanSignalInfoIsNull,
+"CONFLICTING_SIGNAL" => SignalDecoderFailureReason::ConflictingSignal,
+"DUPLICATE_SIGNAL" => SignalDecoderFailureReason::DuplicateSignal,
+"EMPTY_MESSAGE_SIGNAL" => SignalDecoderFailureReason::EmptyMessageSignal,
+"MESSAGE_SIGNAL_INFO_IS_NULL" => SignalDecoderFailureReason::MessageSignalInfoIsNull,
+"NETWORK_INTERFACE_TYPE_INCOMPATIBLE_WITH_SIGNAL_DECODER_TYPE" => SignalDecoderFailureReason::NetworkInterfaceTypeIncompatibleWithSignalDecoderType,
+"NO_DECODER_INFO_FOR_SIGNAL_IN_MODEL" => SignalDecoderFailureReason::NoDecoderInfoForSignalInModel,
+"NO_SIGNAL_IN_CATALOG_FOR_DECODER_SIGNAL" => SignalDecoderFailureReason::NoSignalInCatalogForDecoderSignal,
+"OBD_SIGNAL_INFO_IS_NULL" => SignalDecoderFailureReason::ObdSignalInfoIsNull,
+"SIGNAL_DECODER_INCOMPATIBLE_WITH_SIGNAL_CATALOG" => SignalDecoderFailureReason::SignalDecoderIncompatibleWithSignalCatalog,
+"SIGNAL_DECODER_TYPE_INCOMPATIBLE_WITH_MESSAGE_SIGNAL_TYPE" => SignalDecoderFailureReason::SignalDecoderTypeIncompatibleWithMessageSignalType,
+"SIGNAL_NOT_ASSOCIATED_WITH_NETWORK_INTERFACE" => SignalDecoderFailureReason::SignalNotAssociatedWithNetworkInterface,
+"SIGNAL_NOT_IN_MODEL" => SignalDecoderFailureReason::SignalNotInModel,
+"SIGNAL_TO_ADD_ALREADY_EXISTS" => SignalDecoderFailureReason::SignalToAddAlreadyExists,
+"STRUCT_SIZE_MISMATCH" => SignalDecoderFailureReason::StructSizeMismatch,
+other => SignalDecoderFailureReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for SignalDecoderFailureReason {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(SignalDecoderFailureReason::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(SignalDecoderFailureReason::from(s))
+                    }
+                }
 impl SignalDecoderFailureReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SignalDecoderFailureReason::CanSignalInfoIsNull => "CAN_SIGNAL_INFO_IS_NULL",
-            SignalDecoderFailureReason::ConflictingSignal => "CONFLICTING_SIGNAL",
-            SignalDecoderFailureReason::DuplicateSignal => "DUPLICATE_SIGNAL",
-            SignalDecoderFailureReason::EmptyMessageSignal => "EMPTY_MESSAGE_SIGNAL",
-            SignalDecoderFailureReason::MessageSignalInfoIsNull => "MESSAGE_SIGNAL_INFO_IS_NULL",
-            SignalDecoderFailureReason::NetworkInterfaceTypeIncompatibleWithSignalDecoderType => {
-                "NETWORK_INTERFACE_TYPE_INCOMPATIBLE_WITH_SIGNAL_DECODER_TYPE"
-            }
-            SignalDecoderFailureReason::NoDecoderInfoForSignalInModel => "NO_DECODER_INFO_FOR_SIGNAL_IN_MODEL",
-            SignalDecoderFailureReason::NoSignalInCatalogForDecoderSignal => "NO_SIGNAL_IN_CATALOG_FOR_DECODER_SIGNAL",
-            SignalDecoderFailureReason::ObdSignalInfoIsNull => "OBD_SIGNAL_INFO_IS_NULL",
-            SignalDecoderFailureReason::SignalDecoderIncompatibleWithSignalCatalog => "SIGNAL_DECODER_INCOMPATIBLE_WITH_SIGNAL_CATALOG",
-            SignalDecoderFailureReason::SignalDecoderTypeIncompatibleWithMessageSignalType => {
-                "SIGNAL_DECODER_TYPE_INCOMPATIBLE_WITH_MESSAGE_SIGNAL_TYPE"
-            }
-            SignalDecoderFailureReason::SignalNotAssociatedWithNetworkInterface => "SIGNAL_NOT_ASSOCIATED_WITH_NETWORK_INTERFACE",
-            SignalDecoderFailureReason::SignalNotInModel => "SIGNAL_NOT_IN_MODEL",
-            SignalDecoderFailureReason::SignalToAddAlreadyExists => "SIGNAL_TO_ADD_ALREADY_EXISTS",
-            SignalDecoderFailureReason::StructSizeMismatch => "STRUCT_SIZE_MISMATCH",
-            SignalDecoderFailureReason::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CAN_SIGNAL_INFO_IS_NULL",
-            "CONFLICTING_SIGNAL",
-            "DUPLICATE_SIGNAL",
-            "EMPTY_MESSAGE_SIGNAL",
-            "MESSAGE_SIGNAL_INFO_IS_NULL",
-            "NETWORK_INTERFACE_TYPE_INCOMPATIBLE_WITH_SIGNAL_DECODER_TYPE",
-            "NO_DECODER_INFO_FOR_SIGNAL_IN_MODEL",
-            "NO_SIGNAL_IN_CATALOG_FOR_DECODER_SIGNAL",
-            "OBD_SIGNAL_INFO_IS_NULL",
-            "SIGNAL_DECODER_INCOMPATIBLE_WITH_SIGNAL_CATALOG",
-            "SIGNAL_DECODER_TYPE_INCOMPATIBLE_WITH_MESSAGE_SIGNAL_TYPE",
-            "SIGNAL_NOT_ASSOCIATED_WITH_NETWORK_INTERFACE",
-            "SIGNAL_NOT_IN_MODEL",
-            "SIGNAL_TO_ADD_ALREADY_EXISTS",
-            "STRUCT_SIZE_MISMATCH",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SignalDecoderFailureReason::CanSignalInfoIsNull => "CAN_SIGNAL_INFO_IS_NULL",
+    SignalDecoderFailureReason::ConflictingSignal => "CONFLICTING_SIGNAL",
+    SignalDecoderFailureReason::DuplicateSignal => "DUPLICATE_SIGNAL",
+    SignalDecoderFailureReason::EmptyMessageSignal => "EMPTY_MESSAGE_SIGNAL",
+    SignalDecoderFailureReason::MessageSignalInfoIsNull => "MESSAGE_SIGNAL_INFO_IS_NULL",
+    SignalDecoderFailureReason::NetworkInterfaceTypeIncompatibleWithSignalDecoderType => "NETWORK_INTERFACE_TYPE_INCOMPATIBLE_WITH_SIGNAL_DECODER_TYPE",
+    SignalDecoderFailureReason::NoDecoderInfoForSignalInModel => "NO_DECODER_INFO_FOR_SIGNAL_IN_MODEL",
+    SignalDecoderFailureReason::NoSignalInCatalogForDecoderSignal => "NO_SIGNAL_IN_CATALOG_FOR_DECODER_SIGNAL",
+    SignalDecoderFailureReason::ObdSignalInfoIsNull => "OBD_SIGNAL_INFO_IS_NULL",
+    SignalDecoderFailureReason::SignalDecoderIncompatibleWithSignalCatalog => "SIGNAL_DECODER_INCOMPATIBLE_WITH_SIGNAL_CATALOG",
+    SignalDecoderFailureReason::SignalDecoderTypeIncompatibleWithMessageSignalType => "SIGNAL_DECODER_TYPE_INCOMPATIBLE_WITH_MESSAGE_SIGNAL_TYPE",
+    SignalDecoderFailureReason::SignalNotAssociatedWithNetworkInterface => "SIGNAL_NOT_ASSOCIATED_WITH_NETWORK_INTERFACE",
+    SignalDecoderFailureReason::SignalNotInModel => "SIGNAL_NOT_IN_MODEL",
+    SignalDecoderFailureReason::SignalToAddAlreadyExists => "SIGNAL_TO_ADD_ALREADY_EXISTS",
+    SignalDecoderFailureReason::StructSizeMismatch => "STRUCT_SIZE_MISMATCH",
+    SignalDecoderFailureReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CAN_SIGNAL_INFO_IS_NULL", "CONFLICTING_SIGNAL", "DUPLICATE_SIGNAL", "EMPTY_MESSAGE_SIGNAL", "MESSAGE_SIGNAL_INFO_IS_NULL", "NETWORK_INTERFACE_TYPE_INCOMPATIBLE_WITH_SIGNAL_DECODER_TYPE", "NO_DECODER_INFO_FOR_SIGNAL_IN_MODEL", "NO_SIGNAL_IN_CATALOG_FOR_DECODER_SIGNAL", "OBD_SIGNAL_INFO_IS_NULL", "SIGNAL_DECODER_INCOMPATIBLE_WITH_SIGNAL_CATALOG", "SIGNAL_DECODER_TYPE_INCOMPATIBLE_WITH_MESSAGE_SIGNAL_TYPE", "SIGNAL_NOT_ASSOCIATED_WITH_NETWORK_INTERFACE", "SIGNAL_NOT_IN_MODEL", "SIGNAL_TO_ADD_ALREADY_EXISTS", "STRUCT_SIZE_MISMATCH"]
+                }
+            }
 impl ::std::convert::AsRef<str> for SignalDecoderFailureReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl SignalDecoderFailureReason {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for SignalDecoderFailureReason {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            SignalDecoderFailureReason::CanSignalInfoIsNull => write!(f, "CAN_SIGNAL_INFO_IS_NULL"),
-            SignalDecoderFailureReason::ConflictingSignal => write!(f, "CONFLICTING_SIGNAL"),
-            SignalDecoderFailureReason::DuplicateSignal => write!(f, "DUPLICATE_SIGNAL"),
-            SignalDecoderFailureReason::EmptyMessageSignal => write!(f, "EMPTY_MESSAGE_SIGNAL"),
-            SignalDecoderFailureReason::MessageSignalInfoIsNull => write!(f, "MESSAGE_SIGNAL_INFO_IS_NULL"),
-            SignalDecoderFailureReason::NetworkInterfaceTypeIncompatibleWithSignalDecoderType => {
-                write!(f, "NETWORK_INTERFACE_TYPE_INCOMPATIBLE_WITH_SIGNAL_DECODER_TYPE")
-            }
-            SignalDecoderFailureReason::NoDecoderInfoForSignalInModel => write!(f, "NO_DECODER_INFO_FOR_SIGNAL_IN_MODEL"),
-            SignalDecoderFailureReason::NoSignalInCatalogForDecoderSignal => write!(f, "NO_SIGNAL_IN_CATALOG_FOR_DECODER_SIGNAL"),
-            SignalDecoderFailureReason::ObdSignalInfoIsNull => write!(f, "OBD_SIGNAL_INFO_IS_NULL"),
-            SignalDecoderFailureReason::SignalDecoderIncompatibleWithSignalCatalog => write!(f, "SIGNAL_DECODER_INCOMPATIBLE_WITH_SIGNAL_CATALOG"),
-            SignalDecoderFailureReason::SignalDecoderTypeIncompatibleWithMessageSignalType => {
-                write!(f, "SIGNAL_DECODER_TYPE_INCOMPATIBLE_WITH_MESSAGE_SIGNAL_TYPE")
-            }
-            SignalDecoderFailureReason::SignalNotAssociatedWithNetworkInterface => write!(f, "SIGNAL_NOT_ASSOCIATED_WITH_NETWORK_INTERFACE"),
-            SignalDecoderFailureReason::SignalNotInModel => write!(f, "SIGNAL_NOT_IN_MODEL"),
-            SignalDecoderFailureReason::SignalToAddAlreadyExists => write!(f, "SIGNAL_TO_ADD_ALREADY_EXISTS"),
-            SignalDecoderFailureReason::StructSizeMismatch => write!(f, "STRUCT_SIZE_MISMATCH"),
-            SignalDecoderFailureReason::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                SignalDecoderFailureReason::CanSignalInfoIsNull => write!(f, "CAN_SIGNAL_INFO_IS_NULL"),
+SignalDecoderFailureReason::ConflictingSignal => write!(f, "CONFLICTING_SIGNAL"),
+SignalDecoderFailureReason::DuplicateSignal => write!(f, "DUPLICATE_SIGNAL"),
+SignalDecoderFailureReason::EmptyMessageSignal => write!(f, "EMPTY_MESSAGE_SIGNAL"),
+SignalDecoderFailureReason::MessageSignalInfoIsNull => write!(f, "MESSAGE_SIGNAL_INFO_IS_NULL"),
+SignalDecoderFailureReason::NetworkInterfaceTypeIncompatibleWithSignalDecoderType => write!(f, "NETWORK_INTERFACE_TYPE_INCOMPATIBLE_WITH_SIGNAL_DECODER_TYPE"),
+SignalDecoderFailureReason::NoDecoderInfoForSignalInModel => write!(f, "NO_DECODER_INFO_FOR_SIGNAL_IN_MODEL"),
+SignalDecoderFailureReason::NoSignalInCatalogForDecoderSignal => write!(f, "NO_SIGNAL_IN_CATALOG_FOR_DECODER_SIGNAL"),
+SignalDecoderFailureReason::ObdSignalInfoIsNull => write!(f, "OBD_SIGNAL_INFO_IS_NULL"),
+SignalDecoderFailureReason::SignalDecoderIncompatibleWithSignalCatalog => write!(f, "SIGNAL_DECODER_INCOMPATIBLE_WITH_SIGNAL_CATALOG"),
+SignalDecoderFailureReason::SignalDecoderTypeIncompatibleWithMessageSignalType => write!(f, "SIGNAL_DECODER_TYPE_INCOMPATIBLE_WITH_MESSAGE_SIGNAL_TYPE"),
+SignalDecoderFailureReason::SignalNotAssociatedWithNetworkInterface => write!(f, "SIGNAL_NOT_ASSOCIATED_WITH_NETWORK_INTERFACE"),
+SignalDecoderFailureReason::SignalNotInModel => write!(f, "SIGNAL_NOT_IN_MODEL"),
+SignalDecoderFailureReason::SignalToAddAlreadyExists => write!(f, "SIGNAL_TO_ADD_ALREADY_EXISTS"),
+SignalDecoderFailureReason::StructSizeMismatch => write!(f, "STRUCT_SIZE_MISMATCH"),
+SignalDecoderFailureReason::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

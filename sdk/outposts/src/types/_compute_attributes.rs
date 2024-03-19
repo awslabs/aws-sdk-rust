@@ -3,7 +3,7 @@
 /// <p>Information about compute hardware assets.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ComputeAttributes {
+pub struct ComputeAttributes  {
     /// <p>The host ID of the Dedicated Host on the asset.</p>
     pub host_id: ::std::option::Option<::std::string::String>,
     /// <p>The state.</p>
@@ -17,11 +17,11 @@ pub struct ComputeAttributes {
     /// </ul>
     pub state: ::std::option::Option<crate::types::ComputeAssetState>,
     /// <p>A list of the names of instance families that are currently associated with a given asset.</p>
-    pub instance_families: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub instance_families: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ComputeAttributes {
+impl  ComputeAttributes  {
     /// <p>The host ID of the Dedicated Host on the asset.</p>
-    pub fn host_id(&self) -> ::std::option::Option<&str> {
+    pub fn host_id(&self) -> ::std::option::Option<& str> {
         self.host_id.as_deref()
     }
     /// <p>The state.</p>
@@ -33,14 +33,15 @@ impl ComputeAttributes {
     /// <li>
     /// <p>RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is reduced. Amazon Web Services sends notifications for resources that must be stopped before the asset can be replaced.</p></li>
     /// </ul>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ComputeAssetState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ComputeAssetState> {
         self.state.as_ref()
     }
     /// <p>A list of the names of instance families that are currently associated with a given asset.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_families.is_none()`.
-    pub fn instance_families(&self) -> &[::std::string::String] {
-        self.instance_families.as_deref().unwrap_or_default()
+    pub fn instance_families(&self) -> & [::std::string::String] {
+        self.instance_families.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ComputeAttributes {
@@ -56,7 +57,7 @@ impl ComputeAttributes {
 pub struct ComputeAttributesBuilder {
     pub(crate) host_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ComputeAssetState>,
-    pub(crate) instance_families: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) instance_families: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ComputeAttributesBuilder {
     /// <p>The host ID of the Dedicated Host on the asset.</p>
@@ -66,8 +67,7 @@ impl ComputeAttributesBuilder {
     }
     /// <p>The host ID of the Dedicated Host on the asset.</p>
     pub fn set_host_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_id = input;
-        self
+        self.host_id = input; self
     }
     /// <p>The host ID of the Dedicated Host on the asset.</p>
     pub fn get_host_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +96,7 @@ impl ComputeAttributesBuilder {
     /// <p>RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is reduced. Amazon Web Services sends notifications for resources that must be stopped before the asset can be replaced.</p></li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ComputeAssetState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state.</p>
     /// <ul>
@@ -118,25 +117,28 @@ impl ComputeAttributesBuilder {
     /// <p>A list of the names of instance families that are currently associated with a given asset.</p>
     pub fn instance_families(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_families.unwrap_or_default();
-        v.push(input.into());
-        self.instance_families = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.instance_families = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the names of instance families that are currently associated with a given asset.</p>
-    pub fn set_instance_families(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.instance_families = input;
-        self
+    pub fn set_instance_families(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.instance_families = input; self
     }
     /// <p>A list of the names of instance families that are currently associated with a given asset.</p>
-    pub fn get_instance_families(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_families(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.instance_families
     }
     /// Consumes the builder and constructs a [`ComputeAttributes`](crate::types::ComputeAttributes).
     pub fn build(self) -> crate::types::ComputeAttributes {
         crate::types::ComputeAttributes {
-            host_id: self.host_id,
-            state: self.state,
-            instance_families: self.instance_families,
+            host_id: self.host_id
+            ,
+            state: self.state
+            ,
+            instance_families: self.instance_families
+            ,
         }
     }
 }
+

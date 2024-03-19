@@ -3,19 +3,19 @@
 /// <p>Includes encryption-related information, such as the KMS key used for encrypting data at rest and whether you want MSK to encrypt your data in transit.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsMskClusterClusterInfoEncryptionInfoDetails {
+pub struct AwsMskClusterClusterInfoEncryptionInfoDetails  {
     /// <p>The settings for encrypting data in transit.</p>
     pub encryption_in_transit: ::std::option::Option<crate::types::AwsMskClusterClusterInfoEncryptionInfoEncryptionInTransitDetails>,
     /// <p>The data-volume encryption details. You can't update encryption at rest settings for existing clusters.</p>
     pub encryption_at_rest: ::std::option::Option<crate::types::AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails>,
 }
-impl AwsMskClusterClusterInfoEncryptionInfoDetails {
+impl  AwsMskClusterClusterInfoEncryptionInfoDetails  {
     /// <p>The settings for encrypting data in transit.</p>
-    pub fn encryption_in_transit(&self) -> ::std::option::Option<&crate::types::AwsMskClusterClusterInfoEncryptionInfoEncryptionInTransitDetails> {
+    pub fn encryption_in_transit(&self) -> ::std::option::Option<& crate::types::AwsMskClusterClusterInfoEncryptionInfoEncryptionInTransitDetails> {
         self.encryption_in_transit.as_ref()
     }
     /// <p>The data-volume encryption details. You can't update encryption at rest settings for existing clusters.</p>
-    pub fn encryption_at_rest(&self) -> ::std::option::Option<&crate::types::AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails> {
+    pub fn encryption_at_rest(&self) -> ::std::option::Option<& crate::types::AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails> {
         self.encryption_at_rest.as_ref()
     }
 }
@@ -40,17 +40,11 @@ impl AwsMskClusterClusterInfoEncryptionInfoDetailsBuilder {
         self
     }
     /// <p>The settings for encrypting data in transit.</p>
-    pub fn set_encryption_in_transit(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsMskClusterClusterInfoEncryptionInfoEncryptionInTransitDetails>,
-    ) -> Self {
-        self.encryption_in_transit = input;
-        self
+    pub fn set_encryption_in_transit(mut self, input: ::std::option::Option<crate::types::AwsMskClusterClusterInfoEncryptionInfoEncryptionInTransitDetails>) -> Self {
+        self.encryption_in_transit = input; self
     }
     /// <p>The settings for encrypting data in transit.</p>
-    pub fn get_encryption_in_transit(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsMskClusterClusterInfoEncryptionInfoEncryptionInTransitDetails> {
+    pub fn get_encryption_in_transit(&self) -> &::std::option::Option<crate::types::AwsMskClusterClusterInfoEncryptionInfoEncryptionInTransitDetails> {
         &self.encryption_in_transit
     }
     /// <p>The data-volume encryption details. You can't update encryption at rest settings for existing clusters.</p>
@@ -59,12 +53,8 @@ impl AwsMskClusterClusterInfoEncryptionInfoDetailsBuilder {
         self
     }
     /// <p>The data-volume encryption details. You can't update encryption at rest settings for existing clusters.</p>
-    pub fn set_encryption_at_rest(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails>,
-    ) -> Self {
-        self.encryption_at_rest = input;
-        self
+    pub fn set_encryption_at_rest(mut self, input: ::std::option::Option<crate::types::AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails>) -> Self {
+        self.encryption_at_rest = input; self
     }
     /// <p>The data-volume encryption details. You can't update encryption at rest settings for existing clusters.</p>
     pub fn get_encryption_at_rest(&self) -> &::std::option::Option<crate::types::AwsMskClusterClusterInfoEncryptionInfoEncryptionAtRestDetails> {
@@ -73,8 +63,11 @@ impl AwsMskClusterClusterInfoEncryptionInfoDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsMskClusterClusterInfoEncryptionInfoDetails`](crate::types::AwsMskClusterClusterInfoEncryptionInfoDetails).
     pub fn build(self) -> crate::types::AwsMskClusterClusterInfoEncryptionInfoDetails {
         crate::types::AwsMskClusterClusterInfoEncryptionInfoDetails {
-            encryption_in_transit: self.encryption_in_transit,
-            encryption_at_rest: self.encryption_at_rest,
+            encryption_in_transit: self.encryption_in_transit
+            ,
+            encryption_at_rest: self.encryption_at_rest
+            ,
         }
     }
 }
+

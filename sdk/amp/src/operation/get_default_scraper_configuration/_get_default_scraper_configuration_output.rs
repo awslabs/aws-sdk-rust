@@ -3,22 +3,22 @@
 /// <p>Represents the output of a <code>GetDefaultScraperConfiguration</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDefaultScraperConfigurationOutput {
+pub struct GetDefaultScraperConfigurationOutput  {
     /// <p>The configuration file. Base 64 encoded. For more information, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper configuration</a>in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
     pub configuration: ::aws_smithy_types::Blob,
     _request_id: Option<String>,
 }
-impl GetDefaultScraperConfigurationOutput {
+impl  GetDefaultScraperConfigurationOutput  {
     /// <p>The configuration file. Base 64 encoded. For more information, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper configuration</a>in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
-    pub fn configuration(&self) -> &::aws_smithy_types::Blob {
+    pub fn configuration(&self) -> & ::aws_smithy_types::Blob {
         &self.configuration
     }
 }
 impl ::aws_types::request_id::RequestId for GetDefaultScraperConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDefaultScraperConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetDefaultScraperConfigurationOutput`](crate::operation::get_default_scraper_configuration::GetDefaultScraperConfigurationOutput).
     pub fn builder() -> crate::operation::get_default_scraper_configuration::builders::GetDefaultScraperConfigurationOutputBuilder {
@@ -42,41 +42,35 @@ impl GetDefaultScraperConfigurationOutputBuilder {
     }
     /// <p>The configuration file. Base 64 encoded. For more information, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper configuration</a>in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>The configuration file. Base 64 encoded. For more information, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper configuration</a>in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDefaultScraperConfigurationOutput`](crate::operation::get_default_scraper_configuration::GetDefaultScraperConfigurationOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`configuration`](crate::operation::get_default_scraper_configuration::builders::GetDefaultScraperConfigurationOutputBuilder::configuration)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_default_scraper_configuration::GetDefaultScraperConfigurationOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_default_scraper_configuration::GetDefaultScraperConfigurationOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_default_scraper_configuration::GetDefaultScraperConfigurationOutput {
-                configuration: self.configuration.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "configuration",
-                        "configuration was not specified but it is required when building GetDefaultScraperConfigurationOutput",
-                    )
-                })?,
+                configuration: self.configuration
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("configuration", "configuration was not specified but it is required when building GetDefaultScraperConfigurationOutput")
+                    )?
+                ,
                 _request_id: self._request_id,
-            },
+            }
         )
     }
 }
+

@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTextTranslationJobs`](crate::operation::list_text_translation_jobs::builders::ListTextTranslationJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_text_translation_jobs::builders::ListTextTranslationJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filter(TextTranslationJobFilter)`](crate::operation::list_text_translation_jobs::builders::ListTextTranslationJobsFluentBuilder::filter) / [`set_filter(Option<TextTranslationJobFilter>)`](crate::operation::list_text_translation_jobs::builders::ListTextTranslationJobsFluentBuilder::set_filter):<br>required: **false**<br><p>The parameters that specify which batch translation jobs to retrieve. Filters include job name, job status, and submission time. You can only set one filter at a time.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_text_translation_jobs::builders::ListTextTranslationJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_text_translation_jobs::builders::ListTextTranslationJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to request the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_text_translation_jobs::builders::ListTextTranslationJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_text_translation_jobs::builders::ListTextTranslationJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in each page. The default value is 100.</p><br>
-    /// - On success, responds with [`ListTextTranslationJobsOutput`](crate::operation::list_text_translation_jobs::ListTextTranslationJobsOutput) with field(s):
+                            /// - On success, responds with [`ListTextTranslationJobsOutput`](crate::operation::list_text_translation_jobs::ListTextTranslationJobsOutput) with field(s):
     ///   - [`text_translation_job_properties_list(Option<Vec::<TextTranslationJobProperties>>)`](crate::operation::list_text_translation_jobs::ListTextTranslationJobsOutput::text_translation_job_properties_list): <p>A list containing the properties of each job that is returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_text_translation_jobs::ListTextTranslationJobsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<ListTextTranslationJobsError>`](crate::operation::list_text_translation_jobs::ListTextTranslationJobsError)
+                            /// - On failure, responds with [`SdkError<ListTextTranslationJobsError>`](crate::operation::list_text_translation_jobs::ListTextTranslationJobsError)
     pub fn list_text_translation_jobs(&self) -> crate::operation::list_text_translation_jobs::builders::ListTextTranslationJobsFluentBuilder {
-        crate::operation::list_text_translation_jobs::builders::ListTextTranslationJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_text_translation_jobs::builders::ListTextTranslationJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

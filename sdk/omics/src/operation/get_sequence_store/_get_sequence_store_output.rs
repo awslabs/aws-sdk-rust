@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSequenceStoreOutput {
+pub struct GetSequenceStoreOutput  {
     /// <p>The store's ID.</p>
     pub id: ::std::string::String,
     /// <p>The store's ARN.</p>
@@ -19,43 +19,41 @@ pub struct GetSequenceStoreOutput {
     pub fallback_location: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetSequenceStoreOutput {
+impl  GetSequenceStoreOutput  {
     /// <p>The store's ID.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The store's ARN.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The store's name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The store's description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The store's server-side encryption (SSE) settings.</p>
-    pub fn sse_config(&self) -> ::std::option::Option<&crate::types::SseConfig> {
+    pub fn sse_config(&self) -> ::std::option::Option<& crate::types::SseConfig> {
         self.sse_config.as_ref()
     }
     /// <p>When the store was created.</p>
-    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_time
     }
     /// <p>An S3 location that is used to store files that have failed a direct upload.</p>
-    pub fn fallback_location(&self) -> ::std::option::Option<&str> {
+    pub fn fallback_location(&self) -> ::std::option::Option<& str> {
         self.fallback_location.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetSequenceStoreOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSequenceStoreOutput {
     /// Creates a new builder-style object to manufacture [`GetSequenceStoreOutput`](crate::operation::get_sequence_store::GetSequenceStoreOutput).
     pub fn builder() -> crate::operation::get_sequence_store::builders::GetSequenceStoreOutputBuilder {
@@ -85,8 +83,7 @@ impl GetSequenceStoreOutputBuilder {
     }
     /// <p>The store's ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The store's ID.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +97,7 @@ impl GetSequenceStoreOutputBuilder {
     }
     /// <p>The store's ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The store's ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +110,7 @@ impl GetSequenceStoreOutputBuilder {
     }
     /// <p>The store's name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The store's name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +123,7 @@ impl GetSequenceStoreOutputBuilder {
     }
     /// <p>The store's description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The store's description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +136,7 @@ impl GetSequenceStoreOutputBuilder {
     }
     /// <p>The store's server-side encryption (SSE) settings.</p>
     pub fn set_sse_config(mut self, input: ::std::option::Option<crate::types::SseConfig>) -> Self {
-        self.sse_config = input;
-        self
+        self.sse_config = input; self
     }
     /// <p>The store's server-side encryption (SSE) settings.</p>
     pub fn get_sse_config(&self) -> &::std::option::Option<crate::types::SseConfig> {
@@ -157,8 +150,7 @@ impl GetSequenceStoreOutputBuilder {
     }
     /// <p>When the store was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>When the store was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -171,54 +163,55 @@ impl GetSequenceStoreOutputBuilder {
     }
     /// <p>An S3 location that is used to store files that have failed a direct upload.</p>
     pub fn set_fallback_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fallback_location = input;
-        self
+        self.fallback_location = input; self
     }
     /// <p>An S3 location that is used to store files that have failed a direct upload.</p>
     pub fn get_fallback_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.fallback_location
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSequenceStoreOutput`](crate::operation::get_sequence_store::GetSequenceStoreOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::operation::get_sequence_store::builders::GetSequenceStoreOutputBuilder::id)
     /// - [`arn`](crate::operation::get_sequence_store::builders::GetSequenceStoreOutputBuilder::arn)
     /// - [`creation_time`](crate::operation::get_sequence_store::builders::GetSequenceStoreOutputBuilder::creation_time)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_sequence_store::GetSequenceStoreOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_sequence_store::GetSequenceStoreOutput {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building GetSequenceStoreOutput",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building GetSequenceStoreOutput",
-                )
-            })?,
-            name: self.name,
-            description: self.description,
-            sse_config: self.sse_config,
-            creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_time",
-                    "creation_time was not specified but it is required when building GetSequenceStoreOutput",
-                )
-            })?,
-            fallback_location: self.fallback_location,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_sequence_store::GetSequenceStoreOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_sequence_store::GetSequenceStoreOutput {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building GetSequenceStoreOutput")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building GetSequenceStoreOutput")
+                    )?
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                sse_config: self.sse_config
+                ,
+                creation_time: self.creation_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_time", "creation_time was not specified but it is required when building GetSequenceStoreOutput")
+                    )?
+                ,
+                fallback_location: self.fallback_location
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

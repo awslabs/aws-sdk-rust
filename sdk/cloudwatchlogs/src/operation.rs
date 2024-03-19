@@ -219,3 +219,4 @@ pub mod update_anomaly;
 
 /// Types for the `UpdateLogAnomalyDetector` operation.
 pub mod update_log_anomaly_detector;
+

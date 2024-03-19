@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetTableObjects`](crate::operation::get_table_objects::builders::GetTableObjectsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_table_objects::builders::GetTableObjectsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`catalog_id(impl Into<String>)`](crate::operation::get_table_objects::builders::GetTableObjectsFluentBuilder::catalog_id) / [`set_catalog_id(Option<String>)`](crate::operation::get_table_objects::builders::GetTableObjectsFluentBuilder::set_catalog_id):<br>required: **false**<br><p>The catalog containing the governed table. Defaults to the caller’s account.</p><br>
     ///   - [`database_name(impl Into<String>)`](crate::operation::get_table_objects::builders::GetTableObjectsFluentBuilder::database_name) / [`set_database_name(Option<String>)`](crate::operation::get_table_objects::builders::GetTableObjectsFluentBuilder::set_database_name):<br>required: **true**<br><p>The database containing the governed table.</p><br>
     ///   - [`table_name(impl Into<String>)`](crate::operation::get_table_objects::builders::GetTableObjectsFluentBuilder::table_name) / [`set_table_name(Option<String>)`](crate::operation::get_table_objects::builders::GetTableObjectsFluentBuilder::set_table_name):<br>required: **true**<br><p>The governed table for which to retrieve objects.</p><br>
@@ -12,11 +12,12 @@ impl super::Client {
     ///   - [`partition_predicate(impl Into<String>)`](crate::operation::get_table_objects::builders::GetTableObjectsFluentBuilder::partition_predicate) / [`set_partition_predicate(Option<String>)`](crate::operation::get_table_objects::builders::GetTableObjectsFluentBuilder::set_partition_predicate):<br>required: **false**<br><p>A predicate to filter the objects returned based on the partition keys defined in the governed table.</p> <ul>  <li>   <p>The comparison operators supported are: =, &gt;, &lt;, &gt;=, &lt;=</p></li>  <li>   <p>The logical operators supported are: AND</p></li>  <li>   <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p></li> </ul><br>
     ///   - [`max_results(i32)`](crate::operation::get_table_objects::builders::GetTableObjectsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_table_objects::builders::GetTableObjectsFluentBuilder::set_max_results):<br>required: **false**<br><p>Specifies how many values to return in a page.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_table_objects::builders::GetTableObjectsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_table_objects::builders::GetTableObjectsFluentBuilder::set_next_token):<br>required: **false**<br><p>A continuation token if this is not the first call to retrieve these objects.</p><br>
-    /// - On success, responds with [`GetTableObjectsOutput`](crate::operation::get_table_objects::GetTableObjectsOutput) with field(s):
+                            /// - On success, responds with [`GetTableObjectsOutput`](crate::operation::get_table_objects::GetTableObjectsOutput) with field(s):
     ///   - [`objects(Option<Vec::<PartitionObjects>>)`](crate::operation::get_table_objects::GetTableObjectsOutput::objects): <p>A list of objects organized by partition keys.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_table_objects::GetTableObjectsOutput::next_token): <p>A continuation token indicating whether additional data is available.</p>
-    /// - On failure, responds with [`SdkError<GetTableObjectsError>`](crate::operation::get_table_objects::GetTableObjectsError)
+                            /// - On failure, responds with [`SdkError<GetTableObjectsError>`](crate::operation::get_table_objects::GetTableObjectsError)
     pub fn get_table_objects(&self) -> crate::operation::get_table_objects::builders::GetTableObjectsFluentBuilder {
-        crate::operation::get_table_objects::builders::GetTableObjectsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_table_objects::builders::GetTableObjectsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

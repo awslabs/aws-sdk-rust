@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListEnvironmentTemplateVersionsOutput {
+pub struct ListEnvironmentTemplateVersionsOutput  {
     /// <p>A token that indicates the location of the next major or minor version in the array of major or minor versions of an environment template, after the list of major or minor versions that was previously requested.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of major or minor versions of an environment template detail data.</p>
-    pub template_versions: ::std::vec::Vec<crate::types::EnvironmentTemplateVersionSummary>,
+    pub template_versions: ::std::vec::Vec::<crate::types::EnvironmentTemplateVersionSummary>,
     _request_id: Option<String>,
 }
-impl ListEnvironmentTemplateVersionsOutput {
+impl  ListEnvironmentTemplateVersionsOutput  {
     /// <p>A token that indicates the location of the next major or minor version in the array of major or minor versions of an environment template, after the list of major or minor versions that was previously requested.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of major or minor versions of an environment template detail data.</p>
-    pub fn template_versions(&self) -> &[crate::types::EnvironmentTemplateVersionSummary] {
-        use std::ops::Deref;
-        self.template_versions.deref()
+    pub fn template_versions(&self) -> & [crate::types::EnvironmentTemplateVersionSummary] {
+        use std::ops::Deref; self.template_versions.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListEnvironmentTemplateVersionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListEnvironmentTemplateVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListEnvironmentTemplateVersionsOutput`](crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsOutput).
     pub fn builder() -> crate::operation::list_environment_template_versions::builders::ListEnvironmentTemplateVersionsOutputBuilder {
@@ -37,7 +36,7 @@ impl ListEnvironmentTemplateVersionsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEnvironmentTemplateVersionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) template_versions: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentTemplateVersionSummary>>,
+    pub(crate) template_versions: ::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentTemplateVersionSummary>>,
     _request_id: Option<String>,
 }
 impl ListEnvironmentTemplateVersionsOutputBuilder {
@@ -48,8 +47,7 @@ impl ListEnvironmentTemplateVersionsOutputBuilder {
     }
     /// <p>A token that indicates the location of the next major or minor version in the array of major or minor versions of an environment template, after the list of major or minor versions that was previously requested.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates the location of the next major or minor version in the array of major or minor versions of an environment template, after the list of major or minor versions that was previously requested.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,48 +60,43 @@ impl ListEnvironmentTemplateVersionsOutputBuilder {
     /// <p>An array of major or minor versions of an environment template detail data.</p>
     pub fn template_versions(mut self, input: crate::types::EnvironmentTemplateVersionSummary) -> Self {
         let mut v = self.template_versions.unwrap_or_default();
-        v.push(input);
-        self.template_versions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.template_versions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of major or minor versions of an environment template detail data.</p>
-    pub fn set_template_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentTemplateVersionSummary>>) -> Self {
-        self.template_versions = input;
-        self
+    pub fn set_template_versions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentTemplateVersionSummary>>) -> Self {
+        self.template_versions = input; self
     }
     /// <p>An array of major or minor versions of an environment template detail data.</p>
-    pub fn get_template_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentTemplateVersionSummary>> {
+    pub fn get_template_versions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentTemplateVersionSummary>> {
         &self.template_versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListEnvironmentTemplateVersionsOutput`](crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`template_versions`](crate::operation::list_environment_template_versions::builders::ListEnvironmentTemplateVersionsOutputBuilder::template_versions)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsOutput {
-                next_token: self.next_token,
-                template_versions: self.template_versions.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "template_versions",
-                        "template_versions was not specified but it is required when building ListEnvironmentTemplateVersionsOutput",
-                    )
-                })?,
+                next_token: self.next_token
+                ,
+                template_versions: self.template_versions
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("template_versions", "template_versions was not specified but it is required when building ListEnvironmentTemplateVersionsOutput")
+                    )?
+                ,
                 _request_id: self._request_id,
-            },
+            }
         )
     }
 }
+

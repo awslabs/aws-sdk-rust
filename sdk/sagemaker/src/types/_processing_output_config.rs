@@ -3,21 +3,22 @@
 /// <p>Configuration for uploading output from the processing container.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProcessingOutputConfig {
+pub struct ProcessingOutputConfig  {
     /// <p>An array of outputs configuring the data to upload from the processing container.</p>
-    pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::ProcessingOutput>>,
+    pub outputs: ::std::option::Option<::std::vec::Vec::<crate::types::ProcessingOutput>>,
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt the processing job output. <code>KmsKeyId</code> can be an ID of a KMS key, ARN of a KMS key, alias of a KMS key, or alias of a KMS key. The <code>KmsKeyId</code> is applied to all outputs.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
-impl ProcessingOutputConfig {
+impl  ProcessingOutputConfig  {
     /// <p>An array of outputs configuring the data to upload from the processing container.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
-    pub fn outputs(&self) -> &[crate::types::ProcessingOutput] {
-        self.outputs.as_deref().unwrap_or_default()
+    pub fn outputs(&self) -> & [crate::types::ProcessingOutput] {
+        self.outputs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt the processing job output. <code>KmsKeyId</code> can be an ID of a KMS key, ARN of a KMS key, alias of a KMS key, or alias of a KMS key. The <code>KmsKeyId</code> is applied to all outputs.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
@@ -32,7 +33,7 @@ impl ProcessingOutputConfig {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProcessingOutputConfigBuilder {
-    pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::ProcessingOutput>>,
+    pub(crate) outputs: ::std::option::Option<::std::vec::Vec::<crate::types::ProcessingOutput>>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl ProcessingOutputConfigBuilder {
@@ -43,17 +44,16 @@ impl ProcessingOutputConfigBuilder {
     /// <p>An array of outputs configuring the data to upload from the processing container.</p>
     pub fn outputs(mut self, input: crate::types::ProcessingOutput) -> Self {
         let mut v = self.outputs.unwrap_or_default();
-        v.push(input);
-        self.outputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.outputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of outputs configuring the data to upload from the processing container.</p>
-    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProcessingOutput>>) -> Self {
-        self.outputs = input;
-        self
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProcessingOutput>>) -> Self {
+        self.outputs = input; self
     }
     /// <p>An array of outputs configuring the data to upload from the processing container.</p>
-    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProcessingOutput>> {
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProcessingOutput>> {
         &self.outputs
     }
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt the processing job output. <code>KmsKeyId</code> can be an ID of a KMS key, ARN of a KMS key, alias of a KMS key, or alias of a KMS key. The <code>KmsKeyId</code> is applied to all outputs.</p>
@@ -63,8 +63,7 @@ impl ProcessingOutputConfigBuilder {
     }
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt the processing job output. <code>KmsKeyId</code> can be an ID of a KMS key, ARN of a KMS key, alias of a KMS key, or alias of a KMS key. The <code>KmsKeyId</code> is applied to all outputs.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt the processing job output. <code>KmsKeyId</code> can be an ID of a KMS key, ARN of a KMS key, alias of a KMS key, or alias of a KMS key. The <code>KmsKeyId</code> is applied to all outputs.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +72,11 @@ impl ProcessingOutputConfigBuilder {
     /// Consumes the builder and constructs a [`ProcessingOutputConfig`](crate::types::ProcessingOutputConfig).
     pub fn build(self) -> crate::types::ProcessingOutputConfig {
         crate::types::ProcessingOutputConfig {
-            outputs: self.outputs,
-            kms_key_id: self.kms_key_id,
+            outputs: self.outputs
+            ,
+            kms_key_id: self.kms_key_id
+            ,
         }
     }
 }
+

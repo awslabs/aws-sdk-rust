@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListComponentTypesInput {
+pub struct ListComponentTypesInput  {
     /// <p>The ID of the workspace.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of objects that filter the request.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::ListComponentTypesFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::ListComponentTypesFilter>>,
     /// <p>The string that specifies the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListComponentTypesInput {
+impl  ListComponentTypesInput  {
     /// <p>The ID of the workspace.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// <p>A list of objects that filter the request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::ListComponentTypesFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::ListComponentTypesFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The string that specifies the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
@@ -46,7 +47,7 @@ impl ListComponentTypesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListComponentTypesInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::ListComponentTypesFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::ListComponentTypesFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -59,8 +60,7 @@ impl ListComponentTypesInputBuilder {
     }
     /// <p>The ID of the workspace.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The ID of the workspace.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,17 +73,16 @@ impl ListComponentTypesInputBuilder {
     /// <p>A list of objects that filter the request.</p>
     pub fn filters(mut self, input: crate::types::ListComponentTypesFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of objects that filter the request.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListComponentTypesFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ListComponentTypesFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>A list of objects that filter the request.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListComponentTypesFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ListComponentTypesFilter>> {
         &self.filters
     }
     /// <p>The string that specifies the next page of results.</p>
@@ -93,8 +92,7 @@ impl ListComponentTypesInputBuilder {
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +107,7 @@ impl ListComponentTypesInputBuilder {
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
@@ -118,15 +115,19 @@ impl ListComponentTypesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListComponentTypesInput`](crate::operation::list_component_types::ListComponentTypesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_component_types::ListComponentTypesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_component_types::ListComponentTypesInput {
-            workspace_id: self.workspace_id,
-            filters: self.filters,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_component_types::ListComponentTypesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_component_types::ListComponentTypesInput {
+                workspace_id: self.workspace_id
+                ,
+                filters: self.filters
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

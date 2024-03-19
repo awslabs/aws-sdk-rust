@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRepositoryLinkInput {
+pub struct GetRepositoryLinkInput  {
     /// <p>The ID of the repository link to get.</p>
     pub repository_link_id: ::std::option::Option<::std::string::String>,
 }
-impl GetRepositoryLinkInput {
+impl  GetRepositoryLinkInput  {
     /// <p>The ID of the repository link to get.</p>
-    pub fn repository_link_id(&self) -> ::std::option::Option<&str> {
+    pub fn repository_link_id(&self) -> ::std::option::Option<& str> {
         self.repository_link_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetRepositoryLinkInputBuilder {
     }
     /// <p>The ID of the repository link to get.</p>
     pub fn set_repository_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_link_id = input;
-        self
+        self.repository_link_id = input; self
     }
     /// <p>The ID of the repository link to get.</p>
     pub fn get_repository_link_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.repository_link_id
     }
     /// Consumes the builder and constructs a [`GetRepositoryLinkInput`](crate::operation::get_repository_link::GetRepositoryLinkInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_repository_link::GetRepositoryLinkInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_repository_link::GetRepositoryLinkInput {
-            repository_link_id: self.repository_link_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_repository_link::GetRepositoryLinkInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_repository_link::GetRepositoryLinkInput {
+                repository_link_id: self.repository_link_id
+                ,
+            }
+        )
     }
 }
+

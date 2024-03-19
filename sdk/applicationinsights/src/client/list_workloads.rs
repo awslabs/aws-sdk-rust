@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListWorkloads`](crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`resource_group_name(impl Into<String>)`](crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::resource_group_name) / [`set_resource_group_name(Option<String>)`](crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::set_resource_group_name):<br>required: **true**<br><p>The name of the resource group.</p><br>
     ///   - [`component_name(impl Into<String>)`](crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::component_name) / [`set_component_name(Option<String>)`](crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::set_component_name):<br>required: **true**<br><p>The name of the component.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to request the next page of results.</p><br>
     ///   - [`account_id(impl Into<String>)`](crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::set_account_id):<br>required: **false**<br><p>The AWS account ID of the owner of the workload.</p><br>
-    /// - On success, responds with [`ListWorkloadsOutput`](crate::operation::list_workloads::ListWorkloadsOutput) with field(s):
+                            /// - On success, responds with [`ListWorkloadsOutput`](crate::operation::list_workloads::ListWorkloadsOutput) with field(s):
     ///   - [`workload_list(Option<Vec::<Workload>>)`](crate::operation::list_workloads::ListWorkloadsOutput::workload_list): <p>The list of workloads.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_workloads::ListWorkloadsOutput::next_token): <p>The token to request the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListWorkloadsError>`](crate::operation::list_workloads::ListWorkloadsError)
+                            /// - On failure, responds with [`SdkError<ListWorkloadsError>`](crate::operation::list_workloads::ListWorkloadsError)
     pub fn list_workloads(&self) -> crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder {
-        crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_workloads::builders::ListWorkloadsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

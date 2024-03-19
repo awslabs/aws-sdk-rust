@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListMemberships`](crate::operation::list_memberships::builders::ListMembershipsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_memberships::builders::ListMembershipsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_memberships::builders::ListMembershipsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_memberships::builders::ListMembershipsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token value retrieved from a previous call to access the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_memberships::builders::ListMembershipsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_memberships::builders::ListMembershipsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum size of the results that is returned per call.</p><br>
     ///   - [`status(MembershipStatus)`](crate::operation::list_memberships::builders::ListMembershipsFluentBuilder::status) / [`set_status(Option<MembershipStatus>)`](crate::operation::list_memberships::builders::ListMembershipsFluentBuilder::set_status):<br>required: **false**<br><p>A filter which will return only memberships in the specified status.</p><br>
-    /// - On success, responds with [`ListMembershipsOutput`](crate::operation::list_memberships::ListMembershipsOutput) with field(s):
+                            /// - On success, responds with [`ListMembershipsOutput`](crate::operation::list_memberships::ListMembershipsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_memberships::ListMembershipsOutput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
     ///   - [`membership_summaries(Vec::<MembershipSummary>)`](crate::operation::list_memberships::ListMembershipsOutput::membership_summaries): <p>The list of memberships returned from the ListMemberships operation.</p>
-    /// - On failure, responds with [`SdkError<ListMembershipsError>`](crate::operation::list_memberships::ListMembershipsError)
+                            /// - On failure, responds with [`SdkError<ListMembershipsError>`](crate::operation::list_memberships::ListMembershipsError)
     pub fn list_memberships(&self) -> crate::operation::list_memberships::builders::ListMembershipsFluentBuilder {
-        crate::operation::list_memberships::builders::ListMembershipsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_memberships::builders::ListMembershipsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

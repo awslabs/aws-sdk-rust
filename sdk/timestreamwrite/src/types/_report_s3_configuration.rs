@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReportS3Configuration {
+pub struct ReportS3Configuration  {
     /// <p></p>
     pub bucket_name: ::std::string::String,
     /// <p></p>
@@ -13,22 +13,21 @@ pub struct ReportS3Configuration {
     /// <p></p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
-impl ReportS3Configuration {
+impl  ReportS3Configuration  {
     /// <p></p>
-    pub fn bucket_name(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket_name.deref()
+    pub fn bucket_name(&self) -> & str {
+        use std::ops::Deref; self.bucket_name.deref()
     }
     /// <p></p>
-    pub fn object_key_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn object_key_prefix(&self) -> ::std::option::Option<& str> {
         self.object_key_prefix.as_deref()
     }
     /// <p></p>
-    pub fn encryption_option(&self) -> ::std::option::Option<&crate::types::S3EncryptionOption> {
+    pub fn encryption_option(&self) -> ::std::option::Option<& crate::types::S3EncryptionOption> {
         self.encryption_option.as_ref()
     }
     /// <p></p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
@@ -57,8 +56,7 @@ impl ReportS3ConfigurationBuilder {
     }
     /// <p></p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p></p>
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +69,7 @@ impl ReportS3ConfigurationBuilder {
     }
     /// <p></p>
     pub fn set_object_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object_key_prefix = input;
-        self
+        self.object_key_prefix = input; self
     }
     /// <p></p>
     pub fn get_object_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +82,7 @@ impl ReportS3ConfigurationBuilder {
     }
     /// <p></p>
     pub fn set_encryption_option(mut self, input: ::std::option::Option<crate::types::S3EncryptionOption>) -> Self {
-        self.encryption_option = input;
-        self
+        self.encryption_option = input; self
     }
     /// <p></p>
     pub fn get_encryption_option(&self) -> &::std::option::Option<crate::types::S3EncryptionOption> {
@@ -99,8 +95,7 @@ impl ReportS3ConfigurationBuilder {
     }
     /// <p></p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p></p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,16 +105,21 @@ impl ReportS3ConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`bucket_name`](crate::types::builders::ReportS3ConfigurationBuilder::bucket_name)
     pub fn build(self) -> ::std::result::Result<crate::types::ReportS3Configuration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ReportS3Configuration {
-            bucket_name: self.bucket_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket_name",
-                    "bucket_name was not specified but it is required when building ReportS3Configuration",
-                )
-            })?,
-            object_key_prefix: self.object_key_prefix,
-            encryption_option: self.encryption_option,
-            kms_key_id: self.kms_key_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ReportS3Configuration {
+                bucket_name: self.bucket_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket_name", "bucket_name was not specified but it is required when building ReportS3Configuration")
+                    )?
+                ,
+                object_key_prefix: self.object_key_prefix
+                ,
+                encryption_option: self.encryption_option
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+            }
+        )
     }
 }
+

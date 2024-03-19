@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPublishingDestinations`](crate::operation::list_publishing_destinations::builders::ListPublishingDestinationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_publishing_destinations::builders::ListPublishingDestinationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`detector_id(impl Into<String>)`](crate::operation::list_publishing_destinations::builders::ListPublishingDestinationsFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::list_publishing_destinations::builders::ListPublishingDestinationsFluentBuilder::set_detector_id):<br>required: **true**<br><p>The ID of the detector to retrieve publishing destinations for.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_publishing_destinations::builders::ListPublishingDestinationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_publishing_destinations::builders::ListPublishingDestinationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the response.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_publishing_destinations::builders::ListPublishingDestinationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_publishing_destinations::builders::ListPublishingDestinationsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p><br>
-    /// - On success, responds with [`ListPublishingDestinationsOutput`](crate::operation::list_publishing_destinations::ListPublishingDestinationsOutput) with field(s):
+                            /// - On success, responds with [`ListPublishingDestinationsOutput`](crate::operation::list_publishing_destinations::ListPublishingDestinationsOutput) with field(s):
     ///   - [`destinations(Option<Vec::<Destination>>)`](crate::operation::list_publishing_destinations::ListPublishingDestinationsOutput::destinations): <p>A <code>Destinations</code> object that includes information about each publishing destination returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_publishing_destinations::ListPublishingDestinationsOutput::next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
-    /// - On failure, responds with [`SdkError<ListPublishingDestinationsError>`](crate::operation::list_publishing_destinations::ListPublishingDestinationsError)
+                            /// - On failure, responds with [`SdkError<ListPublishingDestinationsError>`](crate::operation::list_publishing_destinations::ListPublishingDestinationsError)
     pub fn list_publishing_destinations(&self) -> crate::operation::list_publishing_destinations::builders::ListPublishingDestinationsFluentBuilder {
-        crate::operation::list_publishing_destinations::builders::ListPublishingDestinationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_publishing_destinations::builders::ListPublishingDestinationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

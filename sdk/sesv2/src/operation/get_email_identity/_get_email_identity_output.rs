@@ -3,7 +3,7 @@
 /// <p>Details about an email identity.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEmailIdentityOutput {
+pub struct GetEmailIdentityOutput  {
     /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.</p>
     pub identity_type: ::std::option::Option<crate::types::IdentityType>,
     /// <p>The feedback forwarding configuration for the identity.</p>
@@ -17,9 +17,9 @@ pub struct GetEmailIdentityOutput {
     /// <p>An object that contains information about the Mail-From attributes for the email identity.</p>
     pub mail_from_attributes: ::std::option::Option<crate::types::MailFromAttributes>,
     /// <p>A map of policy names to policies.</p>
-    pub policies: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub policies: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>An array of objects that define the tags (keys and values) that are associated with the email identity.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The configuration set used by default when sending from this identity.</p>
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The verification status of the identity. The status can be one of the following:</p>
@@ -40,9 +40,9 @@ pub struct GetEmailIdentityOutput {
     pub verification_info: ::std::option::Option<crate::types::VerificationInfo>,
     _request_id: Option<String>,
 }
-impl GetEmailIdentityOutput {
+impl  GetEmailIdentityOutput  {
     /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.</p>
-    pub fn identity_type(&self) -> ::std::option::Option<&crate::types::IdentityType> {
+    pub fn identity_type(&self) -> ::std::option::Option<& crate::types::IdentityType> {
         self.identity_type.as_ref()
     }
     /// <p>The feedback forwarding configuration for the identity.</p>
@@ -56,25 +56,26 @@ impl GetEmailIdentityOutput {
         self.verified_for_sending_status
     }
     /// <p>An object that contains information about the DKIM attributes for the identity.</p>
-    pub fn dkim_attributes(&self) -> ::std::option::Option<&crate::types::DkimAttributes> {
+    pub fn dkim_attributes(&self) -> ::std::option::Option<& crate::types::DkimAttributes> {
         self.dkim_attributes.as_ref()
     }
     /// <p>An object that contains information about the Mail-From attributes for the email identity.</p>
-    pub fn mail_from_attributes(&self) -> ::std::option::Option<&crate::types::MailFromAttributes> {
+    pub fn mail_from_attributes(&self) -> ::std::option::Option<& crate::types::MailFromAttributes> {
         self.mail_from_attributes.as_ref()
     }
     /// <p>A map of policy names to policies.</p>
-    pub fn policies(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn policies(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.policies.as_ref()
     }
     /// <p>An array of objects that define the tags (keys and values) that are associated with the email identity.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The configuration set used by default when sending from this identity.</p>
-    pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> ::std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>The verification status of the identity. The status can be one of the following:</p>
@@ -90,19 +91,19 @@ impl GetEmailIdentityOutput {
     /// <li>
     /// <p><code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p></li>
     /// </ul>
-    pub fn verification_status(&self) -> ::std::option::Option<&crate::types::VerificationStatus> {
+    pub fn verification_status(&self) -> ::std::option::Option<& crate::types::VerificationStatus> {
         self.verification_status.as_ref()
     }
     /// <p>An object that contains additional information about the verification status for the identity.</p>
-    pub fn verification_info(&self) -> ::std::option::Option<&crate::types::VerificationInfo> {
+    pub fn verification_info(&self) -> ::std::option::Option<& crate::types::VerificationInfo> {
         self.verification_info.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetEmailIdentityOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetEmailIdentityOutput {
     /// Creates a new builder-style object to manufacture [`GetEmailIdentityOutput`](crate::operation::get_email_identity::GetEmailIdentityOutput).
     pub fn builder() -> crate::operation::get_email_identity::builders::GetEmailIdentityOutputBuilder {
@@ -119,8 +120,8 @@ pub struct GetEmailIdentityOutputBuilder {
     pub(crate) verified_for_sending_status: ::std::option::Option<bool>,
     pub(crate) dkim_attributes: ::std::option::Option<crate::types::DkimAttributes>,
     pub(crate) mail_from_attributes: ::std::option::Option<crate::types::MailFromAttributes>,
-    pub(crate) policies: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) policies: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) verification_status: ::std::option::Option<crate::types::VerificationStatus>,
     pub(crate) verification_info: ::std::option::Option<crate::types::VerificationInfo>,
@@ -134,8 +135,7 @@ impl GetEmailIdentityOutputBuilder {
     }
     /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.</p>
     pub fn set_identity_type(mut self, input: ::std::option::Option<crate::types::IdentityType>) -> Self {
-        self.identity_type = input;
-        self
+        self.identity_type = input; self
     }
     /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.</p>
     pub fn get_identity_type(&self) -> &::std::option::Option<crate::types::IdentityType> {
@@ -152,8 +152,7 @@ impl GetEmailIdentityOutputBuilder {
     /// <p>If the value is <code>true</code>, you receive email notifications when bounce or complaint events occur. These notifications are sent to the address that you specified in the <code>Return-Path</code> header of the original email.</p>
     /// <p>You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications (for example, by setting up an event destination), you receive an email notification when these events occur (even if this setting is disabled).</p>
     pub fn set_feedback_forwarding_status(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.feedback_forwarding_status = input;
-        self
+        self.feedback_forwarding_status = input; self
     }
     /// <p>The feedback forwarding configuration for the identity.</p>
     /// <p>If the value is <code>true</code>, you receive email notifications when bounce or complaint events occur. These notifications are sent to the address that you specified in the <code>Return-Path</code> header of the original email.</p>
@@ -168,8 +167,7 @@ impl GetEmailIdentityOutputBuilder {
     }
     /// <p>Specifies whether or not the identity is verified. You can only send email from verified email addresses or domains. For more information about verifying identities, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
     pub fn set_verified_for_sending_status(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.verified_for_sending_status = input;
-        self
+        self.verified_for_sending_status = input; self
     }
     /// <p>Specifies whether or not the identity is verified. You can only send email from verified email addresses or domains. For more information about verifying identities, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
     pub fn get_verified_for_sending_status(&self) -> &::std::option::Option<bool> {
@@ -182,8 +180,7 @@ impl GetEmailIdentityOutputBuilder {
     }
     /// <p>An object that contains information about the DKIM attributes for the identity.</p>
     pub fn set_dkim_attributes(mut self, input: ::std::option::Option<crate::types::DkimAttributes>) -> Self {
-        self.dkim_attributes = input;
-        self
+        self.dkim_attributes = input; self
     }
     /// <p>An object that contains information about the DKIM attributes for the identity.</p>
     pub fn get_dkim_attributes(&self) -> &::std::option::Option<crate::types::DkimAttributes> {
@@ -196,8 +193,7 @@ impl GetEmailIdentityOutputBuilder {
     }
     /// <p>An object that contains information about the Mail-From attributes for the email identity.</p>
     pub fn set_mail_from_attributes(mut self, input: ::std::option::Option<crate::types::MailFromAttributes>) -> Self {
-        self.mail_from_attributes = input;
-        self
+        self.mail_from_attributes = input; self
     }
     /// <p>An object that contains information about the Mail-From attributes for the email identity.</p>
     pub fn get_mail_from_attributes(&self) -> &::std::option::Option<crate::types::MailFromAttributes> {
@@ -210,17 +206,16 @@ impl GetEmailIdentityOutputBuilder {
     /// <p>A map of policy names to policies.</p>
     pub fn policies(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.policies.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.policies = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.policies = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of policy names to policies.</p>
-    pub fn set_policies(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.policies = input;
-        self
+    pub fn set_policies(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.policies = input; self
     }
     /// <p>A map of policy names to policies.</p>
-    pub fn get_policies(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_policies(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.policies
     }
     /// Appends an item to `tags`.
@@ -230,17 +225,16 @@ impl GetEmailIdentityOutputBuilder {
     /// <p>An array of objects that define the tags (keys and values) that are associated with the email identity.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that define the tags (keys and values) that are associated with the email identity.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An array of objects that define the tags (keys and values) that are associated with the email identity.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The configuration set used by default when sending from this identity.</p>
@@ -250,8 +244,7 @@ impl GetEmailIdentityOutputBuilder {
     }
     /// <p>The configuration set used by default when sending from this identity.</p>
     pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_set_name = input;
-        self
+        self.configuration_set_name = input; self
     }
     /// <p>The configuration set used by default when sending from this identity.</p>
     pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -288,8 +281,7 @@ impl GetEmailIdentityOutputBuilder {
     /// <p><code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p></li>
     /// </ul>
     pub fn set_verification_status(mut self, input: ::std::option::Option<crate::types::VerificationStatus>) -> Self {
-        self.verification_status = input;
-        self
+        self.verification_status = input; self
     }
     /// <p>The verification status of the identity. The status can be one of the following:</p>
     /// <ul>
@@ -314,36 +306,48 @@ impl GetEmailIdentityOutputBuilder {
     }
     /// <p>An object that contains additional information about the verification status for the identity.</p>
     pub fn set_verification_info(mut self, input: ::std::option::Option<crate::types::VerificationInfo>) -> Self {
-        self.verification_info = input;
-        self
+        self.verification_info = input; self
     }
     /// <p>An object that contains additional information about the verification status for the identity.</p>
     pub fn get_verification_info(&self) -> &::std::option::Option<crate::types::VerificationInfo> {
         &self.verification_info
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetEmailIdentityOutput`](crate::operation::get_email_identity::GetEmailIdentityOutput).
     pub fn build(self) -> crate::operation::get_email_identity::GetEmailIdentityOutput {
         crate::operation::get_email_identity::GetEmailIdentityOutput {
-            identity_type: self.identity_type,
-            feedback_forwarding_status: self.feedback_forwarding_status.unwrap_or_default(),
-            verified_for_sending_status: self.verified_for_sending_status.unwrap_or_default(),
-            dkim_attributes: self.dkim_attributes,
-            mail_from_attributes: self.mail_from_attributes,
-            policies: self.policies,
-            tags: self.tags,
-            configuration_set_name: self.configuration_set_name,
-            verification_status: self.verification_status,
-            verification_info: self.verification_info,
+            identity_type: self.identity_type
+            ,
+            feedback_forwarding_status: self.feedback_forwarding_status
+                .unwrap_or_default()
+            ,
+            verified_for_sending_status: self.verified_for_sending_status
+                .unwrap_or_default()
+            ,
+            dkim_attributes: self.dkim_attributes
+            ,
+            mail_from_attributes: self.mail_from_attributes
+            ,
+            policies: self.policies
+            ,
+            tags: self.tags
+            ,
+            configuration_set_name: self.configuration_set_name
+            ,
+            verification_status: self.verification_status
+            ,
+            verification_info: self.verification_info
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

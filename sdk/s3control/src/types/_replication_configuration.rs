@@ -3,22 +3,20 @@
 /// <p>A container for one or more replication rules. A replication configuration must have at least one rule and you can add up to 100 rules. The maximum size of a replication configuration is 128 KB.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReplicationConfiguration {
+pub struct ReplicationConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that S3 on Outposts assumes when replicating objects. For information about S3 replication on Outposts configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/outposts-replication-how-setup.html">Setting up replication</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub role: ::std::string::String,
     /// <p>A container for one or more replication rules. A replication configuration must have at least one rule and can contain an array of 100 rules at the most.</p>
-    pub rules: ::std::vec::Vec<crate::types::ReplicationRule>,
+    pub rules: ::std::vec::Vec::<crate::types::ReplicationRule>,
 }
-impl ReplicationConfiguration {
+impl  ReplicationConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that S3 on Outposts assumes when replicating objects. For information about S3 replication on Outposts configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/outposts-replication-how-setup.html">Setting up replication</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn role(&self) -> &str {
-        use std::ops::Deref;
-        self.role.deref()
+    pub fn role(&self) -> & str {
+        use std::ops::Deref; self.role.deref()
     }
     /// <p>A container for one or more replication rules. A replication configuration must have at least one rule and can contain an array of 100 rules at the most.</p>
-    pub fn rules(&self) -> &[crate::types::ReplicationRule] {
-        use std::ops::Deref;
-        self.rules.deref()
+    pub fn rules(&self) -> & [crate::types::ReplicationRule] {
+        use std::ops::Deref; self.rules.deref()
     }
 }
 impl ReplicationConfiguration {
@@ -33,7 +31,7 @@ impl ReplicationConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplicationConfigurationBuilder {
     pub(crate) role: ::std::option::Option<::std::string::String>,
-    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationRule>>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicationRule>>,
 }
 impl ReplicationConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that S3 on Outposts assumes when replicating objects. For information about S3 replication on Outposts configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/outposts-replication-how-setup.html">Setting up replication</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -44,8 +42,7 @@ impl ReplicationConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that S3 on Outposts assumes when replicating objects. For information about S3 replication on Outposts configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/outposts-replication-how-setup.html">Setting up replication</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role = input;
-        self
+        self.role = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that S3 on Outposts assumes when replicating objects. For information about S3 replication on Outposts configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/outposts-replication-how-setup.html">Setting up replication</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,17 +55,16 @@ impl ReplicationConfigurationBuilder {
     /// <p>A container for one or more replication rules. A replication configuration must have at least one rule and can contain an array of 100 rules at the most.</p>
     pub fn rules(mut self, input: crate::types::ReplicationRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
-        v.push(input);
-        self.rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A container for one or more replication rules. A replication configuration must have at least one rule and can contain an array of 100 rules at the most.</p>
-    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationRule>>) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicationRule>>) -> Self {
+        self.rules = input; self
     }
     /// <p>A container for one or more replication rules. A replication configuration must have at least one rule and can contain an array of 100 rules at the most.</p>
-    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationRule>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReplicationRule>> {
         &self.rules
     }
     /// Consumes the builder and constructs a [`ReplicationConfiguration`](crate::types::ReplicationConfiguration).
@@ -76,19 +72,20 @@ impl ReplicationConfigurationBuilder {
     /// - [`role`](crate::types::builders::ReplicationConfigurationBuilder::role)
     /// - [`rules`](crate::types::builders::ReplicationConfigurationBuilder::rules)
     pub fn build(self) -> ::std::result::Result<crate::types::ReplicationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ReplicationConfiguration {
-            role: self.role.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role",
-                    "role was not specified but it is required when building ReplicationConfiguration",
-                )
-            })?,
-            rules: self.rules.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rules",
-                    "rules was not specified but it is required when building ReplicationConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ReplicationConfiguration {
+                role: self.role
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role", "role was not specified but it is required when building ReplicationConfiguration")
+                    )?
+                ,
+                rules: self.rules
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rules", "rules was not specified but it is required when building ReplicationConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,30 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateLandingZoneOutput {
+pub struct CreateLandingZoneOutput  {
     /// <p>The ARN of the landing zone resource.</p>
     pub arn: ::std::string::String,
     /// <p>A unique identifier assigned to a <code>CreateLandingZone</code> operation. You can use this identifier as an input of <code>GetLandingZoneOperation</code> to check the operation's status.</p>
     pub operation_identifier: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CreateLandingZoneOutput {
+impl  CreateLandingZoneOutput  {
     /// <p>The ARN of the landing zone resource.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>A unique identifier assigned to a <code>CreateLandingZone</code> operation. You can use this identifier as an input of <code>GetLandingZoneOperation</code> to check the operation's status.</p>
-    pub fn operation_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.operation_identifier.deref()
+    pub fn operation_identifier(&self) -> & str {
+        use std::ops::Deref; self.operation_identifier.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateLandingZoneOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateLandingZoneOutput {
     /// Creates a new builder-style object to manufacture [`CreateLandingZoneOutput`](crate::operation::create_landing_zone::CreateLandingZoneOutput).
     pub fn builder() -> crate::operation::create_landing_zone::builders::CreateLandingZoneOutputBuilder {
@@ -50,8 +48,7 @@ impl CreateLandingZoneOutputBuilder {
     }
     /// <p>The ARN of the landing zone resource.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the landing zone resource.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,43 +62,41 @@ impl CreateLandingZoneOutputBuilder {
     }
     /// <p>A unique identifier assigned to a <code>CreateLandingZone</code> operation. You can use this identifier as an input of <code>GetLandingZoneOperation</code> to check the operation's status.</p>
     pub fn set_operation_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operation_identifier = input;
-        self
+        self.operation_identifier = input; self
     }
     /// <p>A unique identifier assigned to a <code>CreateLandingZone</code> operation. You can use this identifier as an input of <code>GetLandingZoneOperation</code> to check the operation's status.</p>
     pub fn get_operation_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.operation_identifier
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateLandingZoneOutput`](crate::operation::create_landing_zone::CreateLandingZoneOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::operation::create_landing_zone::builders::CreateLandingZoneOutputBuilder::arn)
     /// - [`operation_identifier`](crate::operation::create_landing_zone::builders::CreateLandingZoneOutputBuilder::operation_identifier)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_landing_zone::CreateLandingZoneOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_landing_zone::CreateLandingZoneOutput {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building CreateLandingZoneOutput",
-                )
-            })?,
-            operation_identifier: self.operation_identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "operation_identifier",
-                    "operation_identifier was not specified but it is required when building CreateLandingZoneOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_landing_zone::CreateLandingZoneOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_landing_zone::CreateLandingZoneOutput {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building CreateLandingZoneOutput")
+                    )?
+                ,
+                operation_identifier: self.operation_identifier
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("operation_identifier", "operation_identifier was not specified but it is required when building CreateLandingZoneOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

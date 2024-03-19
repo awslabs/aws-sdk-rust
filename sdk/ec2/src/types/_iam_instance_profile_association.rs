@@ -3,7 +3,7 @@
 /// <p>Describes an association between an IAM instance profile and an instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IamInstanceProfileAssociation {
+pub struct IamInstanceProfileAssociation  {
     /// <p>The ID of the association.</p>
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the instance.</p>
@@ -15,25 +15,25 @@ pub struct IamInstanceProfileAssociation {
     /// <p>The time the IAM instance profile was associated with the instance.</p>
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl IamInstanceProfileAssociation {
+impl  IamInstanceProfileAssociation  {
     /// <p>The ID of the association.</p>
-    pub fn association_id(&self) -> ::std::option::Option<&str> {
+    pub fn association_id(&self) -> ::std::option::Option<& str> {
         self.association_id.as_deref()
     }
     /// <p>The ID of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The IAM instance profile.</p>
-    pub fn iam_instance_profile(&self) -> ::std::option::Option<&crate::types::IamInstanceProfile> {
+    pub fn iam_instance_profile(&self) -> ::std::option::Option<& crate::types::IamInstanceProfile> {
         self.iam_instance_profile.as_ref()
     }
     /// <p>The state of the association.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::IamInstanceProfileAssociationState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::IamInstanceProfileAssociationState> {
         self.state.as_ref()
     }
     /// <p>The time the IAM instance profile was associated with the instance.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl IamInstanceProfileAssociationBuilder {
     }
     /// <p>The ID of the association.</p>
     pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.association_id = input;
-        self
+        self.association_id = input; self
     }
     /// <p>The ID of the association.</p>
     pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl IamInstanceProfileAssociationBuilder {
     }
     /// <p>The ID of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl IamInstanceProfileAssociationBuilder {
     }
     /// <p>The IAM instance profile.</p>
     pub fn set_iam_instance_profile(mut self, input: ::std::option::Option<crate::types::IamInstanceProfile>) -> Self {
-        self.iam_instance_profile = input;
-        self
+        self.iam_instance_profile = input; self
     }
     /// <p>The IAM instance profile.</p>
     pub fn get_iam_instance_profile(&self) -> &::std::option::Option<crate::types::IamInstanceProfile> {
@@ -104,8 +101,7 @@ impl IamInstanceProfileAssociationBuilder {
     }
     /// <p>The state of the association.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::IamInstanceProfileAssociationState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the association.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::IamInstanceProfileAssociationState> {
@@ -118,8 +114,7 @@ impl IamInstanceProfileAssociationBuilder {
     }
     /// <p>The time the IAM instance profile was associated with the instance.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p>The time the IAM instance profile was associated with the instance.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -128,11 +123,17 @@ impl IamInstanceProfileAssociationBuilder {
     /// Consumes the builder and constructs a [`IamInstanceProfileAssociation`](crate::types::IamInstanceProfileAssociation).
     pub fn build(self) -> crate::types::IamInstanceProfileAssociation {
         crate::types::IamInstanceProfileAssociation {
-            association_id: self.association_id,
-            instance_id: self.instance_id,
-            iam_instance_profile: self.iam_instance_profile,
-            state: self.state,
-            timestamp: self.timestamp,
+            association_id: self.association_id
+            ,
+            instance_id: self.instance_id
+            ,
+            iam_instance_profile: self.iam_instance_profile
+            ,
+            state: self.state
+            ,
+            timestamp: self.timestamp
+            ,
         }
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSystemTemplateOutput {
+pub struct CreateSystemTemplateOutput  {
     /// <p>The summary object that describes the created system.</p>
     pub summary: ::std::option::Option<crate::types::SystemTemplateSummary>,
     _request_id: Option<String>,
 }
-impl CreateSystemTemplateOutput {
+impl  CreateSystemTemplateOutput  {
     /// <p>The summary object that describes the created system.</p>
-    pub fn summary(&self) -> ::std::option::Option<&crate::types::SystemTemplateSummary> {
+    pub fn summary(&self) -> ::std::option::Option<& crate::types::SystemTemplateSummary> {
         self.summary.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateSystemTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateSystemTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateSystemTemplateOutput`](crate::operation::create_system_template::CreateSystemTemplateOutput).
     pub fn builder() -> crate::operation::create_system_template::builders::CreateSystemTemplateOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateSystemTemplateOutputBuilder {
     }
     /// <p>The summary object that describes the created system.</p>
     pub fn set_summary(mut self, input: ::std::option::Option<crate::types::SystemTemplateSummary>) -> Self {
-        self.summary = input;
-        self
+        self.summary = input; self
     }
     /// <p>The summary object that describes the created system.</p>
     pub fn get_summary(&self) -> &::std::option::Option<crate::types::SystemTemplateSummary> {
         &self.summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateSystemTemplateOutput`](crate::operation::create_system_template::CreateSystemTemplateOutput).
     pub fn build(self) -> crate::operation::create_system_template::CreateSystemTemplateOutput {
         crate::operation::create_system_template::CreateSystemTemplateOutput {
-            summary: self.summary,
+            summary: self.summary
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

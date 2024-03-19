@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTransactionEventsInput {
+pub struct ListTransactionEventsInput  {
     /// <p>The hash of a transaction. It is generated when a transaction is created.</p>
     pub transaction_hash: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of a Bitcoin transaction. It is generated when a transaction is created.</p><note>
@@ -20,23 +20,23 @@ pub struct ListTransactionEventsInput {
     /// </note>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListTransactionEventsInput {
+impl  ListTransactionEventsInput  {
     /// <p>The hash of a transaction. It is generated when a transaction is created.</p>
-    pub fn transaction_hash(&self) -> ::std::option::Option<&str> {
+    pub fn transaction_hash(&self) -> ::std::option::Option<& str> {
         self.transaction_hash.as_deref()
     }
     /// <p>The identifier of a Bitcoin transaction. It is generated when a transaction is created.</p><note>
     /// <p><code>transactionId</code> is only supported on the Bitcoin networks.</p>
     /// </note>
-    pub fn transaction_id(&self) -> ::std::option::Option<&str> {
+    pub fn transaction_id(&self) -> ::std::option::Option<& str> {
         self.transaction_id.as_deref()
     }
     /// <p>The blockchain network where the transaction events occurred.</p>
-    pub fn network(&self) -> ::std::option::Option<&crate::types::QueryNetwork> {
+    pub fn network(&self) -> ::std::option::Option<& crate::types::QueryNetwork> {
         self.network.as_ref()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of transaction events to list.</p>
@@ -73,8 +73,7 @@ impl ListTransactionEventsInputBuilder {
     }
     /// <p>The hash of a transaction. It is generated when a transaction is created.</p>
     pub fn set_transaction_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transaction_hash = input;
-        self
+        self.transaction_hash = input; self
     }
     /// <p>The hash of a transaction. It is generated when a transaction is created.</p>
     pub fn get_transaction_hash(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl ListTransactionEventsInputBuilder {
     /// <p><code>transactionId</code> is only supported on the Bitcoin networks.</p>
     /// </note>
     pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transaction_id = input;
-        self
+        self.transaction_id = input; self
     }
     /// <p>The identifier of a Bitcoin transaction. It is generated when a transaction is created.</p><note>
     /// <p><code>transactionId</code> is only supported on the Bitcoin networks.</p>
@@ -108,8 +106,7 @@ impl ListTransactionEventsInputBuilder {
     }
     /// <p>The blockchain network where the transaction events occurred.</p>
     pub fn set_network(mut self, input: ::std::option::Option<crate::types::QueryNetwork>) -> Self {
-        self.network = input;
-        self
+        self.network = input; self
     }
     /// <p>The blockchain network where the transaction events occurred.</p>
     pub fn get_network(&self) -> &::std::option::Option<crate::types::QueryNetwork> {
@@ -122,8 +119,7 @@ impl ListTransactionEventsInputBuilder {
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,8 +140,7 @@ impl ListTransactionEventsInputBuilder {
     /// <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p>
     /// </note>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of transaction events to list.</p>
     /// <p>Default: <code>100</code></p><note>
@@ -156,16 +151,21 @@ impl ListTransactionEventsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListTransactionEventsInput`](crate::operation::list_transaction_events::ListTransactionEventsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_transaction_events::ListTransactionEventsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_transaction_events::ListTransactionEventsInput {
-            transaction_hash: self.transaction_hash,
-            transaction_id: self.transaction_id,
-            network: self.network,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_transaction_events::ListTransactionEventsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_transaction_events::ListTransactionEventsInput {
+                transaction_hash: self.transaction_hash
+                ,
+                transaction_id: self.transaction_id
+                ,
+                network: self.network
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

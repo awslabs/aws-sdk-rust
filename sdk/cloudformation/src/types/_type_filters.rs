@@ -3,7 +3,7 @@
 /// <p>Filter criteria to use in determining which extensions to return.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TypeFilters {
+pub struct TypeFilters  {
     /// <p>The category of extensions to return.</p>
     /// <ul>
     /// <li>
@@ -28,7 +28,7 @@ pub struct TypeFilters {
     /// <p>A prefix to use as a filter for results.</p>
     pub type_name_prefix: ::std::option::Option<::std::string::String>,
 }
-impl TypeFilters {
+impl  TypeFilters  {
     /// <p>The category of extensions to return.</p>
     /// <ul>
     /// <li>
@@ -46,16 +46,16 @@ impl TypeFilters {
     /// <li>
     /// <p><code>AWS_TYPES</code>: Extensions available for use from Amazon.</p></li>
     /// </ul>
-    pub fn category(&self) -> ::std::option::Option<&crate::types::Category> {
+    pub fn category(&self) -> ::std::option::Option<& crate::types::Category> {
         self.category.as_ref()
     }
     /// <p>The id of the publisher of the extension.</p>
     /// <p>Extensions published by Amazon aren't assigned a publisher ID. Use the <code>AWS_TYPES</code> category to specify a list of types published by Amazon.</p>
-    pub fn publisher_id(&self) -> ::std::option::Option<&str> {
+    pub fn publisher_id(&self) -> ::std::option::Option<& str> {
         self.publisher_id.as_deref()
     }
     /// <p>A prefix to use as a filter for results.</p>
-    pub fn type_name_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn type_name_prefix(&self) -> ::std::option::Option<& str> {
         self.type_name_prefix.as_deref()
     }
 }
@@ -114,8 +114,7 @@ impl TypeFiltersBuilder {
     /// <p><code>AWS_TYPES</code>: Extensions available for use from Amazon.</p></li>
     /// </ul>
     pub fn set_category(mut self, input: ::std::option::Option<crate::types::Category>) -> Self {
-        self.category = input;
-        self
+        self.category = input; self
     }
     /// <p>The category of extensions to return.</p>
     /// <ul>
@@ -146,8 +145,7 @@ impl TypeFiltersBuilder {
     /// <p>The id of the publisher of the extension.</p>
     /// <p>Extensions published by Amazon aren't assigned a publisher ID. Use the <code>AWS_TYPES</code> category to specify a list of types published by Amazon.</p>
     pub fn set_publisher_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.publisher_id = input;
-        self
+        self.publisher_id = input; self
     }
     /// <p>The id of the publisher of the extension.</p>
     /// <p>Extensions published by Amazon aren't assigned a publisher ID. Use the <code>AWS_TYPES</code> category to specify a list of types published by Amazon.</p>
@@ -161,8 +159,7 @@ impl TypeFiltersBuilder {
     }
     /// <p>A prefix to use as a filter for results.</p>
     pub fn set_type_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_name_prefix = input;
-        self
+        self.type_name_prefix = input; self
     }
     /// <p>A prefix to use as a filter for results.</p>
     pub fn get_type_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,9 +168,13 @@ impl TypeFiltersBuilder {
     /// Consumes the builder and constructs a [`TypeFilters`](crate::types::TypeFilters).
     pub fn build(self) -> crate::types::TypeFilters {
         crate::types::TypeFilters {
-            category: self.category,
-            publisher_id: self.publisher_id,
-            type_name_prefix: self.type_name_prefix,
+            category: self.category
+            ,
+            publisher_id: self.publisher_id
+            ,
+            type_name_prefix: self.type_name_prefix
+            ,
         }
     }
 }
+

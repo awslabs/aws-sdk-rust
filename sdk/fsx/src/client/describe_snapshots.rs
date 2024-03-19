@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeSnapshots`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`snapshot_ids(impl Into<String>)`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::snapshot_ids) / [`set_snapshot_ids(Option<Vec::<String>>)`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::set_snapshot_ids):<br>required: **false**<br><p>The IDs of the snapshots that you want to retrieve. This parameter value overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code> error occurs.</p><br>
     ///   - [`filters(SnapshotFilter)`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::filters) / [`set_filters(Option<Vec::<SnapshotFilter>>)`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::set_filters):<br>required: **false**<br><p>The filters structure. The supported names are <code>file-system-id</code> or <code>volume-id</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::set_next_token):<br>required: **false**<br><p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p><br>
     ///   - [`include_shared(bool)`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::include_shared) / [`set_include_shared(Option<bool>)`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::set_include_shared):<br>required: **false**<br><p>Set to <code>false</code> (default) if you want to only see the snapshots owned by your Amazon Web Services account. Set to <code>true</code> if you want to see the snapshots in your account and the ones shared with you from another account.</p><br>
-    /// - On success, responds with [`DescribeSnapshotsOutput`](crate::operation::describe_snapshots::DescribeSnapshotsOutput) with field(s):
+                            /// - On success, responds with [`DescribeSnapshotsOutput`](crate::operation::describe_snapshots::DescribeSnapshotsOutput) with field(s):
     ///   - [`snapshots(Option<Vec::<Snapshot>>)`](crate::operation::describe_snapshots::DescribeSnapshotsOutput::snapshots): <p>An array of snapshots.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_snapshots::DescribeSnapshotsOutput::next_token): <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
-    /// - On failure, responds with [`SdkError<DescribeSnapshotsError>`](crate::operation::describe_snapshots::DescribeSnapshotsError)
+                            /// - On failure, responds with [`SdkError<DescribeSnapshotsError>`](crate::operation::describe_snapshots::DescribeSnapshotsError)
     pub fn describe_snapshots(&self) -> crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder {
-        crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

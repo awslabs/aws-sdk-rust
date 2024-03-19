@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetExecutionOutput {
+pub struct GetExecutionOutput  {
     /// <p>The ID for this specific execution.</p>
     pub execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The export data for this specific execution. This export data is a snapshot from when the execution was generated. The data could be different from the current export data if the export was updated since the execution was generated.</p>
@@ -11,25 +11,25 @@ pub struct GetExecutionOutput {
     pub execution_status: ::std::option::Option<crate::types::ExecutionStatus>,
     _request_id: Option<String>,
 }
-impl GetExecutionOutput {
+impl  GetExecutionOutput  {
     /// <p>The ID for this specific execution.</p>
-    pub fn execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn execution_id(&self) -> ::std::option::Option<& str> {
         self.execution_id.as_deref()
     }
     /// <p>The export data for this specific execution. This export data is a snapshot from when the execution was generated. The data could be different from the current export data if the export was updated since the execution was generated.</p>
-    pub fn export(&self) -> ::std::option::Option<&crate::types::Export> {
+    pub fn export(&self) -> ::std::option::Option<& crate::types::Export> {
         self.export.as_ref()
     }
     /// <p>The status of this specific execution.</p>
-    pub fn execution_status(&self) -> ::std::option::Option<&crate::types::ExecutionStatus> {
+    pub fn execution_status(&self) -> ::std::option::Option<& crate::types::ExecutionStatus> {
         self.execution_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetExecutionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetExecutionOutput {
     /// Creates a new builder-style object to manufacture [`GetExecutionOutput`](crate::operation::get_execution::GetExecutionOutput).
     pub fn builder() -> crate::operation::get_execution::builders::GetExecutionOutputBuilder {
@@ -54,8 +54,7 @@ impl GetExecutionOutputBuilder {
     }
     /// <p>The ID for this specific execution.</p>
     pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_id = input;
-        self
+        self.execution_id = input; self
     }
     /// <p>The ID for this specific execution.</p>
     pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl GetExecutionOutputBuilder {
     }
     /// <p>The export data for this specific execution. This export data is a snapshot from when the execution was generated. The data could be different from the current export data if the export was updated since the execution was generated.</p>
     pub fn set_export(mut self, input: ::std::option::Option<crate::types::Export>) -> Self {
-        self.export = input;
-        self
+        self.export = input; self
     }
     /// <p>The export data for this specific execution. This export data is a snapshot from when the execution was generated. The data could be different from the current export data if the export was updated since the execution was generated.</p>
     pub fn get_export(&self) -> &::std::option::Option<crate::types::Export> {
@@ -82,29 +80,32 @@ impl GetExecutionOutputBuilder {
     }
     /// <p>The status of this specific execution.</p>
     pub fn set_execution_status(mut self, input: ::std::option::Option<crate::types::ExecutionStatus>) -> Self {
-        self.execution_status = input;
-        self
+        self.execution_status = input; self
     }
     /// <p>The status of this specific execution.</p>
     pub fn get_execution_status(&self) -> &::std::option::Option<crate::types::ExecutionStatus> {
         &self.execution_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetExecutionOutput`](crate::operation::get_execution::GetExecutionOutput).
     pub fn build(self) -> crate::operation::get_execution::GetExecutionOutput {
         crate::operation::get_execution::GetExecutionOutput {
-            execution_id: self.execution_id,
-            export: self.export,
-            execution_status: self.execution_status,
+            execution_id: self.execution_id
+            ,
+            export: self.export
+            ,
+            execution_status: self.execution_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

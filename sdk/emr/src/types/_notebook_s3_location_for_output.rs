@@ -3,19 +3,19 @@
 /// <p>The Amazon S3 location that stores the notebook execution input.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NotebookS3LocationForOutput {
+pub struct NotebookS3LocationForOutput  {
     /// <p>The Amazon S3 bucket that stores the notebook execution input.</p>
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The key to the Amazon S3 location that stores the notebook execution input.</p>
     pub key: ::std::option::Option<::std::string::String>,
 }
-impl NotebookS3LocationForOutput {
+impl  NotebookS3LocationForOutput  {
     /// <p>The Amazon S3 bucket that stores the notebook execution input.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The key to the Amazon S3 location that stores the notebook execution input.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl NotebookS3LocationForOutputBuilder {
     }
     /// <p>The Amazon S3 bucket that stores the notebook execution input.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The Amazon S3 bucket that stores the notebook execution input.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl NotebookS3LocationForOutputBuilder {
     }
     /// <p>The key to the Amazon S3 location that stores the notebook execution input.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The key to the Amazon S3 location that stores the notebook execution input.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl NotebookS3LocationForOutputBuilder {
     /// Consumes the builder and constructs a [`NotebookS3LocationForOutput`](crate::types::NotebookS3LocationForOutput).
     pub fn build(self) -> crate::types::NotebookS3LocationForOutput {
         crate::types::NotebookS3LocationForOutput {
-            bucket: self.bucket,
-            key: self.key,
+            bucket: self.bucket
+            ,
+            key: self.key
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateConstraintInput {
+pub struct CreateConstraintInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -84,7 +84,7 @@ pub struct CreateConstraintInput {
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub idempotency_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateConstraintInput {
+impl  CreateConstraintInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -92,15 +92,15 @@ impl CreateConstraintInput {
     /// <li>
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
-    pub fn accept_language(&self) -> ::std::option::Option<&str> {
+    pub fn accept_language(&self) -> ::std::option::Option<& str> {
         self.accept_language.as_deref()
     }
     /// <p>The portfolio identifier.</p>
-    pub fn portfolio_id(&self) -> ::std::option::Option<&str> {
+    pub fn portfolio_id(&self) -> ::std::option::Option<& str> {
         self.portfolio_id.as_deref()
     }
     /// <p>The product identifier.</p>
-    pub fn product_id(&self) -> ::std::option::Option<&str> {
+    pub fn product_id(&self) -> ::std::option::Option<& str> {
         self.product_id.as_deref()
     }
     /// <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>
@@ -152,7 +152,7 @@ impl CreateConstraintInput {
     /// <p>Specify the <code>Rules</code> property. For more information, see <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
     /// </dd>
     /// </dl>
-    pub fn parameters(&self) -> ::std::option::Option<&str> {
+    pub fn parameters(&self) -> ::std::option::Option<& str> {
         self.parameters.as_deref()
     }
     /// <p>The type of constraint.</p>
@@ -168,15 +168,15 @@ impl CreateConstraintInput {
     /// <li>
     /// <p><code>TEMPLATE</code></p></li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The description of the constraint.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    pub fn idempotency_token(&self) -> ::std::option::Option<&str> {
+    pub fn idempotency_token(&self) -> ::std::option::Option<& str> {
         self.idempotency_token.as_deref()
     }
 }
@@ -219,8 +219,7 @@ impl CreateConstraintInputBuilder {
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accept_language = input;
-        self
+        self.accept_language = input; self
     }
     /// <p>The language code.</p>
     /// <ul>
@@ -240,8 +239,7 @@ impl CreateConstraintInputBuilder {
     }
     /// <p>The portfolio identifier.</p>
     pub fn set_portfolio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.portfolio_id = input;
-        self
+        self.portfolio_id = input; self
     }
     /// <p>The portfolio identifier.</p>
     pub fn get_portfolio_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -255,8 +253,7 @@ impl CreateConstraintInputBuilder {
     }
     /// <p>The product identifier.</p>
     pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_id = input;
-        self
+        self.product_id = input; self
     }
     /// <p>The product identifier.</p>
     pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -366,8 +363,7 @@ impl CreateConstraintInputBuilder {
     /// </dd>
     /// </dl>
     pub fn set_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameters = input;
-        self
+        self.parameters = input; self
     }
     /// <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>
     /// <dl>
@@ -453,8 +449,7 @@ impl CreateConstraintInputBuilder {
     /// <p><code>TEMPLATE</code></p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of constraint.</p>
     /// <ul>
@@ -479,8 +474,7 @@ impl CreateConstraintInputBuilder {
     }
     /// <p>The description of the constraint.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the constraint.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -494,25 +488,32 @@ impl CreateConstraintInputBuilder {
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.idempotency_token = input;
-        self
+        self.idempotency_token = input; self
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.idempotency_token
     }
     /// Consumes the builder and constructs a [`CreateConstraintInput`](crate::operation::create_constraint::CreateConstraintInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_constraint::CreateConstraintInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_constraint::CreateConstraintInput {
-            accept_language: self.accept_language,
-            portfolio_id: self.portfolio_id,
-            product_id: self.product_id,
-            parameters: self.parameters,
-            r#type: self.r#type,
-            description: self.description,
-            idempotency_token: self.idempotency_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_constraint::CreateConstraintInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_constraint::CreateConstraintInput {
+                accept_language: self.accept_language
+                ,
+                portfolio_id: self.portfolio_id
+                ,
+                product_id: self.product_id
+                ,
+                parameters: self.parameters
+                ,
+                r#type: self.r#type
+                ,
+                description: self.description
+                ,
+                idempotency_token: self.idempotency_token
+                ,
+            }
+        )
     }
 }
+

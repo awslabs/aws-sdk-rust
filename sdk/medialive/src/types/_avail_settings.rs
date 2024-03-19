@@ -3,7 +3,7 @@
 /// Avail Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AvailSettings {
+pub struct AvailSettings  {
     /// Esam
     pub esam: ::std::option::Option<crate::types::Esam>,
     /// Typical configuration that applies breaks on splice inserts in addition to time signal placement opportunities, breaks, and advertisements.
@@ -11,17 +11,17 @@ pub struct AvailSettings {
     /// Atypical configuration that applies segment breaks only on SCTE-35 time signal placement opportunities and breaks.
     pub scte35_time_signal_apos: ::std::option::Option<crate::types::Scte35TimeSignalApos>,
 }
-impl AvailSettings {
+impl  AvailSettings  {
     /// Esam
-    pub fn esam(&self) -> ::std::option::Option<&crate::types::Esam> {
+    pub fn esam(&self) -> ::std::option::Option<& crate::types::Esam> {
         self.esam.as_ref()
     }
     /// Typical configuration that applies breaks on splice inserts in addition to time signal placement opportunities, breaks, and advertisements.
-    pub fn scte35_splice_insert(&self) -> ::std::option::Option<&crate::types::Scte35SpliceInsert> {
+    pub fn scte35_splice_insert(&self) -> ::std::option::Option<& crate::types::Scte35SpliceInsert> {
         self.scte35_splice_insert.as_ref()
     }
     /// Atypical configuration that applies segment breaks only on SCTE-35 time signal placement opportunities and breaks.
-    pub fn scte35_time_signal_apos(&self) -> ::std::option::Option<&crate::types::Scte35TimeSignalApos> {
+    pub fn scte35_time_signal_apos(&self) -> ::std::option::Option<& crate::types::Scte35TimeSignalApos> {
         self.scte35_time_signal_apos.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl AvailSettingsBuilder {
     }
     /// Esam
     pub fn set_esam(mut self, input: ::std::option::Option<crate::types::Esam>) -> Self {
-        self.esam = input;
-        self
+        self.esam = input; self
     }
     /// Esam
     pub fn get_esam(&self) -> &::std::option::Option<crate::types::Esam> {
@@ -62,8 +61,7 @@ impl AvailSettingsBuilder {
     }
     /// Typical configuration that applies breaks on splice inserts in addition to time signal placement opportunities, breaks, and advertisements.
     pub fn set_scte35_splice_insert(mut self, input: ::std::option::Option<crate::types::Scte35SpliceInsert>) -> Self {
-        self.scte35_splice_insert = input;
-        self
+        self.scte35_splice_insert = input; self
     }
     /// Typical configuration that applies breaks on splice inserts in addition to time signal placement opportunities, breaks, and advertisements.
     pub fn get_scte35_splice_insert(&self) -> &::std::option::Option<crate::types::Scte35SpliceInsert> {
@@ -76,8 +74,7 @@ impl AvailSettingsBuilder {
     }
     /// Atypical configuration that applies segment breaks only on SCTE-35 time signal placement opportunities and breaks.
     pub fn set_scte35_time_signal_apos(mut self, input: ::std::option::Option<crate::types::Scte35TimeSignalApos>) -> Self {
-        self.scte35_time_signal_apos = input;
-        self
+        self.scte35_time_signal_apos = input; self
     }
     /// Atypical configuration that applies segment breaks only on SCTE-35 time signal placement opportunities and breaks.
     pub fn get_scte35_time_signal_apos(&self) -> &::std::option::Option<crate::types::Scte35TimeSignalApos> {
@@ -86,9 +83,13 @@ impl AvailSettingsBuilder {
     /// Consumes the builder and constructs a [`AvailSettings`](crate::types::AvailSettings).
     pub fn build(self) -> crate::types::AvailSettings {
         crate::types::AvailSettings {
-            esam: self.esam,
-            scte35_splice_insert: self.scte35_splice_insert,
-            scte35_time_signal_apos: self.scte35_time_signal_apos,
+            esam: self.esam
+            ,
+            scte35_splice_insert: self.scte35_splice_insert
+            ,
+            scte35_time_signal_apos: self.scte35_time_signal_apos
+            ,
         }
     }
 }
+

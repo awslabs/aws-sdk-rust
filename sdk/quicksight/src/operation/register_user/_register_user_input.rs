@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterUserInput {
+pub struct RegisterUserInput  {
     /// <p>Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:</p>
     /// <ul>
     /// <li>
@@ -66,9 +66,9 @@ pub struct RegisterUserInput {
     /// <p>The identity ID for a user in the external login provider.</p>
     pub external_login_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags to associate with the user.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl RegisterUserInput {
+impl  RegisterUserInput  {
     /// <p>Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:</p>
     /// <ul>
     /// <li>
@@ -76,11 +76,11 @@ impl RegisterUserInput {
     /// <li>
     /// <p><code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.</p></li>
     /// </ul>
-    pub fn identity_type(&self) -> ::std::option::Option<&crate::types::IdentityType> {
+    pub fn identity_type(&self) -> ::std::option::Option<& crate::types::IdentityType> {
         self.identity_type.as_ref()
     }
     /// <p>The email address of the user that you want to register.</p>
-    pub fn email(&self) -> ::std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>The Amazon QuickSight role for the user. The user role can be one of the following:</p>
@@ -96,27 +96,27 @@ impl RegisterUserInput {
     /// <li>
     /// <p><code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p></li>
     /// </ul>
-    pub fn user_role(&self) -> ::std::option::Option<&crate::types::UserRole> {
+    pub fn user_role(&self) -> ::std::option::Option<& crate::types::UserRole> {
         self.user_role.as_ref()
     }
     /// <p>The ARN of the IAM user or role that you are registering with Amazon QuickSight.</p>
-    pub fn iam_arn(&self) -> ::std::option::Option<&str> {
+    pub fn iam_arn(&self) -> ::std::option::Option<& str> {
         self.iam_arn.as_deref()
     }
     /// <p>You need to use this parameter only when you register one or more users using an assumed IAM role. You don't need to provide the session name for other scenarios, for example when you are registering an IAM user or an Amazon QuickSight user. You can register multiple users using the same IAM role if each user has a different session name. For more information on assuming IAM roles, see <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code> </a> in the <i>CLI Reference.</i></p>
-    pub fn session_name(&self) -> ::std::option::Option<&str> {
+    pub fn session_name(&self) -> ::std::option::Option<& str> {
         self.session_name.as_deref()
     }
     /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The Amazon QuickSight user name that you want to create for the user you are registering.</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p>
@@ -134,7 +134,7 @@ impl RegisterUserInput {
     /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user.</p>
     /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p>
     /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
-    pub fn custom_permissions_name(&self) -> ::std::option::Option<&str> {
+    pub fn custom_permissions_name(&self) -> ::std::option::Option<& str> {
         self.custom_permissions_name.as_deref()
     }
     /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>
@@ -144,22 +144,23 @@ impl RegisterUserInput {
     /// <li>
     /// <p><code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p></li>
     /// </ul>
-    pub fn external_login_federation_provider_type(&self) -> ::std::option::Option<&str> {
+    pub fn external_login_federation_provider_type(&self) -> ::std::option::Option<& str> {
         self.external_login_federation_provider_type.as_deref()
     }
     /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
-    pub fn custom_federation_provider_url(&self) -> ::std::option::Option<&str> {
+    pub fn custom_federation_provider_url(&self) -> ::std::option::Option<& str> {
         self.custom_federation_provider_url.as_deref()
     }
     /// <p>The identity ID for a user in the external login provider.</p>
-    pub fn external_login_id(&self) -> ::std::option::Option<&str> {
+    pub fn external_login_id(&self) -> ::std::option::Option<& str> {
         self.external_login_id.as_deref()
     }
     /// <p>The tags to associate with the user.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RegisterUserInput {
@@ -185,7 +186,7 @@ pub struct RegisterUserInputBuilder {
     pub(crate) external_login_federation_provider_type: ::std::option::Option<::std::string::String>,
     pub(crate) custom_federation_provider_url: ::std::option::Option<::std::string::String>,
     pub(crate) external_login_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl RegisterUserInputBuilder {
     /// <p>Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:</p>
@@ -208,8 +209,7 @@ impl RegisterUserInputBuilder {
     /// <p><code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.</p></li>
     /// </ul>
     pub fn set_identity_type(mut self, input: ::std::option::Option<crate::types::IdentityType>) -> Self {
-        self.identity_type = input;
-        self
+        self.identity_type = input; self
     }
     /// <p>Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:</p>
     /// <ul>
@@ -229,8 +229,7 @@ impl RegisterUserInputBuilder {
     }
     /// <p>The email address of the user that you want to register.</p>
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
     }
     /// <p>The email address of the user that you want to register.</p>
     pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -268,8 +267,7 @@ impl RegisterUserInputBuilder {
     /// <p><code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p></li>
     /// </ul>
     pub fn set_user_role(mut self, input: ::std::option::Option<crate::types::UserRole>) -> Self {
-        self.user_role = input;
-        self
+        self.user_role = input; self
     }
     /// <p>The Amazon QuickSight role for the user. The user role can be one of the following:</p>
     /// <ul>
@@ -294,8 +292,7 @@ impl RegisterUserInputBuilder {
     }
     /// <p>The ARN of the IAM user or role that you are registering with Amazon QuickSight.</p>
     pub fn set_iam_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_arn = input;
-        self
+        self.iam_arn = input; self
     }
     /// <p>The ARN of the IAM user or role that you are registering with Amazon QuickSight.</p>
     pub fn get_iam_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -308,8 +305,7 @@ impl RegisterUserInputBuilder {
     }
     /// <p>You need to use this parameter only when you register one or more users using an assumed IAM role. You don't need to provide the session name for other scenarios, for example when you are registering an IAM user or an Amazon QuickSight user. You can register multiple users using the same IAM role if each user has a different session name. For more information on assuming IAM roles, see <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code> </a> in the <i>CLI Reference.</i></p>
     pub fn set_session_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_name = input;
-        self
+        self.session_name = input; self
     }
     /// <p>You need to use this parameter only when you register one or more users using an assumed IAM role. You don't need to provide the session name for other scenarios, for example when you are registering an IAM user or an Amazon QuickSight user. You can register multiple users using the same IAM role if each user has a different session name. For more information on assuming IAM roles, see <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code> </a> in the <i>CLI Reference.</i></p>
     pub fn get_session_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -323,8 +319,7 @@ impl RegisterUserInputBuilder {
     }
     /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -338,8 +333,7 @@ impl RegisterUserInputBuilder {
     }
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
@@ -352,8 +346,7 @@ impl RegisterUserInputBuilder {
     }
     /// <p>The Amazon QuickSight user name that you want to create for the user you are registering.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>The Amazon QuickSight user name that you want to create for the user you are registering.</p>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -394,8 +387,7 @@ impl RegisterUserInputBuilder {
     /// <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p>
     /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
     pub fn set_custom_permissions_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_permissions_name = input;
-        self
+        self.custom_permissions_name = input; self
     }
     /// <p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p>
     /// <ul>
@@ -434,8 +426,7 @@ impl RegisterUserInputBuilder {
     /// <p><code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p></li>
     /// </ul>
     pub fn set_external_login_federation_provider_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.external_login_federation_provider_type = input;
-        self
+        self.external_login_federation_provider_type = input; self
     }
     /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>
     /// <ul>
@@ -454,8 +445,7 @@ impl RegisterUserInputBuilder {
     }
     /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
     pub fn set_custom_federation_provider_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_federation_provider_url = input;
-        self
+        self.custom_federation_provider_url = input; self
     }
     /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
     pub fn get_custom_federation_provider_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -468,8 +458,7 @@ impl RegisterUserInputBuilder {
     }
     /// <p>The identity ID for a user in the external login provider.</p>
     pub fn set_external_login_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.external_login_id = input;
-        self
+        self.external_login_id = input; self
     }
     /// <p>The identity ID for a user in the external login provider.</p>
     pub fn get_external_login_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -482,37 +471,50 @@ impl RegisterUserInputBuilder {
     /// <p>The tags to associate with the user.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to associate with the user.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to associate with the user.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`RegisterUserInput`](crate::operation::register_user::RegisterUserInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::register_user::RegisterUserInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::register_user::RegisterUserInput {
-            identity_type: self.identity_type,
-            email: self.email,
-            user_role: self.user_role,
-            iam_arn: self.iam_arn,
-            session_name: self.session_name,
-            aws_account_id: self.aws_account_id,
-            namespace: self.namespace,
-            user_name: self.user_name,
-            custom_permissions_name: self.custom_permissions_name,
-            external_login_federation_provider_type: self.external_login_federation_provider_type,
-            custom_federation_provider_url: self.custom_federation_provider_url,
-            external_login_id: self.external_login_id,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::register_user::RegisterUserInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::register_user::RegisterUserInput {
+                identity_type: self.identity_type
+                ,
+                email: self.email
+                ,
+                user_role: self.user_role
+                ,
+                iam_arn: self.iam_arn
+                ,
+                session_name: self.session_name
+                ,
+                aws_account_id: self.aws_account_id
+                ,
+                namespace: self.namespace
+                ,
+                user_name: self.user_name
+                ,
+                custom_permissions_name: self.custom_permissions_name
+                ,
+                external_login_federation_provider_type: self.external_login_federation_provider_type
+                ,
+                custom_federation_provider_url: self.custom_federation_provider_url
+                ,
+                external_login_id: self.external_login_id
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

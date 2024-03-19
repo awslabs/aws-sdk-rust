@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRegistrationTypeDefinitionsOutput {
+pub struct DescribeRegistrationTypeDefinitionsOutput  {
     /// <p>The type of registration form. The list of <b>RegistrationTypes</b> can be found using the <code>DescribeRegistrationTypeDefinitions</code> action.</p>
-    pub registration_type_definitions: ::std::vec::Vec<crate::types::RegistrationTypeDefinition>,
+    pub registration_type_definitions: ::std::vec::Vec::<crate::types::RegistrationTypeDefinition>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeRegistrationTypeDefinitionsOutput {
+impl  DescribeRegistrationTypeDefinitionsOutput  {
     /// <p>The type of registration form. The list of <b>RegistrationTypes</b> can be found using the <code>DescribeRegistrationTypeDefinitions</code> action.</p>
-    pub fn registration_type_definitions(&self) -> &[crate::types::RegistrationTypeDefinition] {
-        use std::ops::Deref;
-        self.registration_type_definitions.deref()
+    pub fn registration_type_definitions(&self) -> & [crate::types::RegistrationTypeDefinition] {
+        use std::ops::Deref; self.registration_type_definitions.deref()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeRegistrationTypeDefinitionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeRegistrationTypeDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRegistrationTypeDefinitionsOutput`](crate::operation::describe_registration_type_definitions::DescribeRegistrationTypeDefinitionsOutput).
     pub fn builder() -> crate::operation::describe_registration_type_definitions::builders::DescribeRegistrationTypeDefinitionsOutputBuilder {
@@ -36,7 +35,7 @@ impl DescribeRegistrationTypeDefinitionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRegistrationTypeDefinitionsOutputBuilder {
-    pub(crate) registration_type_definitions: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationTypeDefinition>>,
+    pub(crate) registration_type_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::RegistrationTypeDefinition>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,20 +47,16 @@ impl DescribeRegistrationTypeDefinitionsOutputBuilder {
     /// <p>The type of registration form. The list of <b>RegistrationTypes</b> can be found using the <code>DescribeRegistrationTypeDefinitions</code> action.</p>
     pub fn registration_type_definitions(mut self, input: crate::types::RegistrationTypeDefinition) -> Self {
         let mut v = self.registration_type_definitions.unwrap_or_default();
-        v.push(input);
-        self.registration_type_definitions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.registration_type_definitions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The type of registration form. The list of <b>RegistrationTypes</b> can be found using the <code>DescribeRegistrationTypeDefinitions</code> action.</p>
-    pub fn set_registration_type_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationTypeDefinition>>,
-    ) -> Self {
-        self.registration_type_definitions = input;
-        self
+    pub fn set_registration_type_definitions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RegistrationTypeDefinition>>) -> Self {
+        self.registration_type_definitions = input; self
     }
     /// <p>The type of registration form. The list of <b>RegistrationTypes</b> can be found using the <code>DescribeRegistrationTypeDefinitions</code> action.</p>
-    pub fn get_registration_type_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegistrationTypeDefinition>> {
+    pub fn get_registration_type_definitions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RegistrationTypeDefinition>> {
         &self.registration_type_definitions
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
@@ -71,42 +66,37 @@ impl DescribeRegistrationTypeDefinitionsOutputBuilder {
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeRegistrationTypeDefinitionsOutput`](crate::operation::describe_registration_type_definitions::DescribeRegistrationTypeDefinitionsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`registration_type_definitions`](crate::operation::describe_registration_type_definitions::builders::DescribeRegistrationTypeDefinitionsOutputBuilder::registration_type_definitions)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_registration_type_definitions::DescribeRegistrationTypeDefinitionsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_registration_type_definitions::DescribeRegistrationTypeDefinitionsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_registration_type_definitions::DescribeRegistrationTypeDefinitionsOutput {
-                registration_type_definitions: self.registration_type_definitions.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "registration_type_definitions",
-                        "registration_type_definitions was not specified but it is required when building DescribeRegistrationTypeDefinitionsOutput",
-                    )
-                })?,
-                next_token: self.next_token,
+                registration_type_definitions: self.registration_type_definitions
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("registration_type_definitions", "registration_type_definitions was not specified but it is required when building DescribeRegistrationTypeDefinitionsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
                 _request_id: self._request_id,
-            },
+            }
         )
     }
 }
+

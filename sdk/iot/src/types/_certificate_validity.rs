@@ -3,19 +3,19 @@
 /// <p>When the certificate is valid.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CertificateValidity {
+pub struct CertificateValidity  {
     /// <p>The certificate is not valid before this date.</p>
     pub not_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The certificate is not valid after this date.</p>
     pub not_after: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl CertificateValidity {
+impl  CertificateValidity  {
     /// <p>The certificate is not valid before this date.</p>
-    pub fn not_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn not_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.not_before.as_ref()
     }
     /// <p>The certificate is not valid after this date.</p>
-    pub fn not_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn not_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.not_after.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl CertificateValidityBuilder {
     }
     /// <p>The certificate is not valid before this date.</p>
     pub fn set_not_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.not_before = input;
-        self
+        self.not_before = input; self
     }
     /// <p>The certificate is not valid before this date.</p>
     pub fn get_not_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -55,8 +54,7 @@ impl CertificateValidityBuilder {
     }
     /// <p>The certificate is not valid after this date.</p>
     pub fn set_not_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.not_after = input;
-        self
+        self.not_after = input; self
     }
     /// <p>The certificate is not valid after this date.</p>
     pub fn get_not_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -65,8 +63,11 @@ impl CertificateValidityBuilder {
     /// Consumes the builder and constructs a [`CertificateValidity`](crate::types::CertificateValidity).
     pub fn build(self) -> crate::types::CertificateValidity {
         crate::types::CertificateValidity {
-            not_before: self.not_before,
-            not_after: self.not_after,
+            not_before: self.not_before
+            ,
+            not_after: self.not_after
+            ,
         }
     }
 }
+

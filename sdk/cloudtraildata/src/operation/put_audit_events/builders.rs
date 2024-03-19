@@ -5,54 +5,50 @@ pub use crate::operation::put_audit_events::_put_audit_events_input::PutAuditEve
 
 impl PutAuditEventsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::put_audit_events::PutAuditEventsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_audit_events::PutAuditEventsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.put_audit_events();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::put_audit_events::PutAuditEventsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::put_audit_events::PutAuditEventsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.put_audit_events();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `PutAuditEvents`.
-///
+/// 
 /// <p>Ingests your application events into CloudTrail Lake. A required parameter, <code>auditEvents</code>, accepts the JSON records (also called <i>payload</i>) of events that you want CloudTrail to ingest. You can add up to 100 of these events (or up to 1 MB) per <code>PutAuditEvents</code> request.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutAuditEventsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_audit_events::builders::PutAuditEventsInputBuilder,
+                    inner: crate::operation::put_audit_events::builders::PutAuditEventsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::put_audit_events::PutAuditEventsOutput,
-        crate::operation::put_audit_events::PutAuditEventsError,
-    > for PutAuditEventsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::put_audit_events::PutAuditEventsOutput,
-            crate::operation::put_audit_events::PutAuditEventsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::put_audit_events::PutAuditEventsOutput,
+                    crate::operation::put_audit_events::PutAuditEventsError,
+                > for PutAuditEventsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::put_audit_events::PutAuditEventsOutput,
+                        crate::operation::put_audit_events::PutAuditEventsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl PutAuditEventsFluentBuilder {
     /// Creates a new `PutAuditEvents`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl PutAuditEventsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_audit_events::PutAuditEventsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_audit_events::PutAuditEventsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::put_audit_events::PutAuditEvents::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::put_audit_events::PutAuditEvents::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::put_audit_events::PutAuditEventsOutput,
-        crate::operation::put_audit_events::PutAuditEventsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::put_audit_events::PutAuditEventsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_audit_events::PutAuditEventsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::put_audit_events::PutAuditEvents::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::put_audit_events::PutAuditEvents::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::put_audit_events::PutAuditEventsOutput, crate::operation::put_audit_events::PutAuditEventsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `auditEvents`.
     ///
     /// To override the contents of this collection use [`set_audit_events`](Self::set_audit_events).
@@ -118,12 +105,12 @@ impl PutAuditEventsFluentBuilder {
         self
     }
     /// <p>The JSON payload of events that you want to ingest. You can also point to the JSON event payload in a file.</p>
-    pub fn set_audit_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuditEvent>>) -> Self {
+    pub fn set_audit_events(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AuditEvent>>) -> Self {
         self.inner = self.inner.set_audit_events(input);
         self
     }
     /// <p>The JSON payload of events that you want to ingest. You can also point to the JSON event payload in a file.</p>
-    pub fn get_audit_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuditEvent>> {
+    pub fn get_audit_events(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AuditEvent>> {
         self.inner.get_audit_events()
     }
     /// <p>The ARN or ID (the ARN suffix) of a channel.</p>
@@ -155,3 +142,4 @@ impl PutAuditEventsFluentBuilder {
         self.inner.get_external_id()
     }
 }
+

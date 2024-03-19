@@ -3,17 +3,16 @@
 /// <p>A plugin is an Amazon Web Services resource that contains the code that defines a connector's logic.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomPlugin {
+pub struct CustomPlugin  {
     /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
     pub custom_plugin_arn: ::std::string::String,
     /// <p>The revision of the custom plugin.</p>
     pub revision: i64,
 }
-impl CustomPlugin {
+impl  CustomPlugin  {
     /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
-    pub fn custom_plugin_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.custom_plugin_arn.deref()
+    pub fn custom_plugin_arn(&self) -> & str {
+        use std::ops::Deref; self.custom_plugin_arn.deref()
     }
     /// <p>The revision of the custom plugin.</p>
     pub fn revision(&self) -> i64 {
@@ -43,8 +42,7 @@ impl CustomPluginBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
     pub fn set_custom_plugin_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_plugin_arn = input;
-        self
+        self.custom_plugin_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
     pub fn get_custom_plugin_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl CustomPluginBuilder {
     }
     /// <p>The revision of the custom plugin.</p>
     pub fn set_revision(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.revision = input;
-        self
+        self.revision = input; self
     }
     /// <p>The revision of the custom plugin.</p>
     pub fn get_revision(&self) -> &::std::option::Option<i64> {
@@ -69,14 +66,18 @@ impl CustomPluginBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`custom_plugin_arn`](crate::types::builders::CustomPluginBuilder::custom_plugin_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::CustomPlugin, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CustomPlugin {
-            custom_plugin_arn: self.custom_plugin_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "custom_plugin_arn",
-                    "custom_plugin_arn was not specified but it is required when building CustomPlugin",
-                )
-            })?,
-            revision: self.revision.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::CustomPlugin {
+                custom_plugin_arn: self.custom_plugin_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("custom_plugin_arn", "custom_plugin_arn was not specified but it is required when building CustomPlugin")
+                    )?
+                ,
+                revision: self.revision
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

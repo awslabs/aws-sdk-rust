@@ -3,7 +3,7 @@
 /// <p>Represents a scheduled action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScheduledAction {
+pub struct ScheduledAction  {
     /// <p>The name of the scheduled action.</p>
     pub scheduled_action_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the scheduled action.</p>
@@ -124,19 +124,17 @@ pub struct ScheduledAction {
     /// <p>The date and time that the scheduled action was created.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
 }
-impl ScheduledAction {
+impl  ScheduledAction  {
     /// <p>The name of the scheduled action.</p>
-    pub fn scheduled_action_name(&self) -> &str {
-        use std::ops::Deref;
-        self.scheduled_action_name.deref()
+    pub fn scheduled_action_name(&self) -> & str {
+        use std::ops::Deref; self.scheduled_action_name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the scheduled action.</p>
-    pub fn scheduled_action_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.scheduled_action_arn.deref()
+    pub fn scheduled_action_arn(&self) -> & str {
+        use std::ops::Deref; self.scheduled_action_arn.deref()
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
-    pub fn service_namespace(&self) -> &crate::types::ServiceNamespace {
+    pub fn service_namespace(&self) -> & crate::types::ServiceNamespace {
         &self.service_namespace
     }
     /// <p>The schedule for this action. The following formats are supported:</p>
@@ -153,12 +151,11 @@ impl ScheduledAction {
     /// <p>The cron format consists of six fields separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].</p>
     /// <p>For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.</p>
     /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
-    pub fn schedule(&self) -> &str {
-        use std::ops::Deref;
-        self.schedule.deref()
+    pub fn schedule(&self) -> & str {
+        use std::ops::Deref; self.schedule.deref()
     }
     /// <p>The time zone used when referring to the date and time of a scheduled action, when the scheduled action uses an at or cron expression.</p>
-    pub fn timezone(&self) -> ::std::option::Option<&str> {
+    pub fn timezone(&self) -> ::std::option::Option<& str> {
         self.timezone.as_deref()
     }
     /// <p>The identifier of the resource associated with the scaling policy. This string consists of the resource type and unique identifier.</p>
@@ -200,9 +197,8 @@ impl ScheduledAction {
     /// <li>
     /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
     /// </ul>
-    pub fn resource_id(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_id.deref()
+    pub fn resource_id(&self) -> & str {
+        use std::ops::Deref; self.resource_id.deref()
     }
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
     /// <ul>
@@ -251,23 +247,23 @@ impl ScheduledAction {
     /// <li>
     /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
     /// </ul>
-    pub fn scalable_dimension(&self) -> ::std::option::Option<&crate::types::ScalableDimension> {
+    pub fn scalable_dimension(&self) -> ::std::option::Option<& crate::types::ScalableDimension> {
         self.scalable_dimension.as_ref()
     }
     /// <p>The date and time that the action is scheduled to begin, in UTC.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The date and time that the action is scheduled to end, in UTC.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The new minimum and maximum capacity. You can set both values or just one. At the scheduled time, if the current capacity is below the minimum capacity, Application Auto Scaling scales out to the minimum capacity. If the current capacity is above the maximum capacity, Application Auto Scaling scales in to the maximum capacity.</p>
-    pub fn scalable_target_action(&self) -> ::std::option::Option<&crate::types::ScalableTargetAction> {
+    pub fn scalable_target_action(&self) -> ::std::option::Option<& crate::types::ScalableTargetAction> {
         self.scalable_target_action.as_ref()
     }
     /// <p>The date and time that the scheduled action was created.</p>
-    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_time
     }
 }
@@ -303,8 +299,7 @@ impl ScheduledActionBuilder {
     }
     /// <p>The name of the scheduled action.</p>
     pub fn set_scheduled_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scheduled_action_name = input;
-        self
+        self.scheduled_action_name = input; self
     }
     /// <p>The name of the scheduled action.</p>
     pub fn get_scheduled_action_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -318,8 +313,7 @@ impl ScheduledActionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the scheduled action.</p>
     pub fn set_scheduled_action_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scheduled_action_arn = input;
-        self
+        self.scheduled_action_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the scheduled action.</p>
     pub fn get_scheduled_action_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -333,8 +327,7 @@ impl ScheduledActionBuilder {
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
     pub fn set_service_namespace(mut self, input: ::std::option::Option<crate::types::ServiceNamespace>) -> Self {
-        self.service_namespace = input;
-        self
+        self.service_namespace = input; self
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
     pub fn get_service_namespace(&self) -> &::std::option::Option<crate::types::ServiceNamespace> {
@@ -374,8 +367,7 @@ impl ScheduledActionBuilder {
     /// <p>For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.</p>
     /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
     pub fn set_schedule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schedule = input;
-        self
+        self.schedule = input; self
     }
     /// <p>The schedule for this action. The following formats are supported:</p>
     /// <ul>
@@ -401,8 +393,7 @@ impl ScheduledActionBuilder {
     }
     /// <p>The time zone used when referring to the date and time of a scheduled action, when the scheduled action uses an at or cron expression.</p>
     pub fn set_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.timezone = input;
-        self
+        self.timezone = input; self
     }
     /// <p>The time zone used when referring to the date and time of a scheduled action, when the scheduled action uses an at or cron expression.</p>
     pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
@@ -492,8 +483,7 @@ impl ScheduledActionBuilder {
     /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
     /// </ul>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The identifier of the resource associated with the scaling policy. This string consists of the resource type and unique identifier.</p>
     /// <ul>
@@ -636,8 +626,7 @@ impl ScheduledActionBuilder {
     /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
     /// </ul>
     pub fn set_scalable_dimension(mut self, input: ::std::option::Option<crate::types::ScalableDimension>) -> Self {
-        self.scalable_dimension = input;
-        self
+        self.scalable_dimension = input; self
     }
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
     /// <ul>
@@ -696,8 +685,7 @@ impl ScheduledActionBuilder {
     }
     /// <p>The date and time that the action is scheduled to begin, in UTC.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The date and time that the action is scheduled to begin, in UTC.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -710,8 +698,7 @@ impl ScheduledActionBuilder {
     }
     /// <p>The date and time that the action is scheduled to end, in UTC.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The date and time that the action is scheduled to end, in UTC.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -724,8 +711,7 @@ impl ScheduledActionBuilder {
     }
     /// <p>The new minimum and maximum capacity. You can set both values or just one. At the scheduled time, if the current capacity is below the minimum capacity, Application Auto Scaling scales out to the minimum capacity. If the current capacity is above the maximum capacity, Application Auto Scaling scales in to the maximum capacity.</p>
     pub fn set_scalable_target_action(mut self, input: ::std::option::Option<crate::types::ScalableTargetAction>) -> Self {
-        self.scalable_target_action = input;
-        self
+        self.scalable_target_action = input; self
     }
     /// <p>The new minimum and maximum capacity. You can set both values or just one. At the scheduled time, if the current capacity is below the minimum capacity, Application Auto Scaling scales out to the minimum capacity. If the current capacity is above the maximum capacity, Application Auto Scaling scales in to the maximum capacity.</p>
     pub fn get_scalable_target_action(&self) -> &::std::option::Option<crate::types::ScalableTargetAction> {
@@ -739,8 +725,7 @@ impl ScheduledActionBuilder {
     }
     /// <p>The date and time that the scheduled action was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The date and time that the scheduled action was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -755,48 +740,50 @@ impl ScheduledActionBuilder {
     /// - [`resource_id`](crate::types::builders::ScheduledActionBuilder::resource_id)
     /// - [`creation_time`](crate::types::builders::ScheduledActionBuilder::creation_time)
     pub fn build(self) -> ::std::result::Result<crate::types::ScheduledAction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ScheduledAction {
-            scheduled_action_name: self.scheduled_action_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "scheduled_action_name",
-                    "scheduled_action_name was not specified but it is required when building ScheduledAction",
-                )
-            })?,
-            scheduled_action_arn: self.scheduled_action_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "scheduled_action_arn",
-                    "scheduled_action_arn was not specified but it is required when building ScheduledAction",
-                )
-            })?,
-            service_namespace: self.service_namespace.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "service_namespace",
-                    "service_namespace was not specified but it is required when building ScheduledAction",
-                )
-            })?,
-            schedule: self.schedule.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "schedule",
-                    "schedule was not specified but it is required when building ScheduledAction",
-                )
-            })?,
-            timezone: self.timezone,
-            resource_id: self.resource_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_id",
-                    "resource_id was not specified but it is required when building ScheduledAction",
-                )
-            })?,
-            scalable_dimension: self.scalable_dimension,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            scalable_target_action: self.scalable_target_action,
-            creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_time",
-                    "creation_time was not specified but it is required when building ScheduledAction",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ScheduledAction {
+                scheduled_action_name: self.scheduled_action_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("scheduled_action_name", "scheduled_action_name was not specified but it is required when building ScheduledAction")
+                    )?
+                ,
+                scheduled_action_arn: self.scheduled_action_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("scheduled_action_arn", "scheduled_action_arn was not specified but it is required when building ScheduledAction")
+                    )?
+                ,
+                service_namespace: self.service_namespace
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("service_namespace", "service_namespace was not specified but it is required when building ScheduledAction")
+                    )?
+                ,
+                schedule: self.schedule
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("schedule", "schedule was not specified but it is required when building ScheduledAction")
+                    )?
+                ,
+                timezone: self.timezone
+                ,
+                resource_id: self.resource_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_id", "resource_id was not specified but it is required when building ScheduledAction")
+                    )?
+                ,
+                scalable_dimension: self.scalable_dimension
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                scalable_target_action: self.scalable_target_action
+                ,
+                creation_time: self.creation_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_time", "creation_time was not specified but it is required when building ScheduledAction")
+                    )?
+                ,
+            }
+        )
     }
 }
+

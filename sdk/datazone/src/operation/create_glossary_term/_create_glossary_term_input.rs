@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateGlossaryTermInput {
+pub struct CreateGlossaryTermInput  {
     /// <p>The ID of the Amazon DataZone domain in which this business glossary term is created.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the business glossary in which this term is created.</p>
@@ -20,41 +20,41 @@ pub struct CreateGlossaryTermInput {
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateGlossaryTermInput {
+impl  CreateGlossaryTermInput  {
     /// <p>The ID of the Amazon DataZone domain in which this business glossary term is created.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The ID of the business glossary in which this term is created.</p>
-    pub fn glossary_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn glossary_identifier(&self) -> ::std::option::Option<& str> {
         self.glossary_identifier.as_deref()
     }
     /// <p>The name of this business glossary term.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The status of this business glossary term.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::GlossaryTermStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::GlossaryTermStatus> {
         self.status.as_ref()
     }
     /// <p>The short description of this business glossary term.</p>
-    pub fn short_description(&self) -> ::std::option::Option<&str> {
+    pub fn short_description(&self) -> ::std::option::Option<& str> {
         self.short_description.as_deref()
     }
     /// <p>The long description of this business glossary term.</p>
-    pub fn long_description(&self) -> ::std::option::Option<&str> {
+    pub fn long_description(&self) -> ::std::option::Option<& str> {
         self.long_description.as_deref()
     }
     /// <p>The term relations of this business glossary term.</p>
-    pub fn term_relations(&self) -> ::std::option::Option<&crate::types::TermRelations> {
+    pub fn term_relations(&self) -> ::std::option::Option<& crate::types::TermRelations> {
         self.term_relations.as_ref()
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreateGlossaryTermInput {
+impl  ::std::fmt::Debug for CreateGlossaryTermInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateGlossaryTermInput");
         formatter.field("domain_identifier", &self.domain_identifier);
@@ -97,8 +97,7 @@ impl CreateGlossaryTermInputBuilder {
     }
     /// <p>The ID of the Amazon DataZone domain in which this business glossary term is created.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The ID of the Amazon DataZone domain in which this business glossary term is created.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +111,7 @@ impl CreateGlossaryTermInputBuilder {
     }
     /// <p>The ID of the business glossary in which this term is created.</p>
     pub fn set_glossary_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.glossary_identifier = input;
-        self
+        self.glossary_identifier = input; self
     }
     /// <p>The ID of the business glossary in which this term is created.</p>
     pub fn get_glossary_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +125,7 @@ impl CreateGlossaryTermInputBuilder {
     }
     /// <p>The name of this business glossary term.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of this business glossary term.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +138,7 @@ impl CreateGlossaryTermInputBuilder {
     }
     /// <p>The status of this business glossary term.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::GlossaryTermStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of this business glossary term.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::GlossaryTermStatus> {
@@ -155,8 +151,7 @@ impl CreateGlossaryTermInputBuilder {
     }
     /// <p>The short description of this business glossary term.</p>
     pub fn set_short_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.short_description = input;
-        self
+        self.short_description = input; self
     }
     /// <p>The short description of this business glossary term.</p>
     pub fn get_short_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,8 +164,7 @@ impl CreateGlossaryTermInputBuilder {
     }
     /// <p>The long description of this business glossary term.</p>
     pub fn set_long_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.long_description = input;
-        self
+        self.long_description = input; self
     }
     /// <p>The long description of this business glossary term.</p>
     pub fn get_long_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,8 +177,7 @@ impl CreateGlossaryTermInputBuilder {
     }
     /// <p>The term relations of this business glossary term.</p>
     pub fn set_term_relations(mut self, input: ::std::option::Option<crate::types::TermRelations>) -> Self {
-        self.term_relations = input;
-        self
+        self.term_relations = input; self
     }
     /// <p>The term relations of this business glossary term.</p>
     pub fn get_term_relations(&self) -> &::std::option::Option<crate::types::TermRelations> {
@@ -197,28 +190,34 @@ impl CreateGlossaryTermInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateGlossaryTermInput`](crate::operation::create_glossary_term::CreateGlossaryTermInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_glossary_term::CreateGlossaryTermInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_glossary_term::CreateGlossaryTermInput {
-            domain_identifier: self.domain_identifier,
-            glossary_identifier: self.glossary_identifier,
-            name: self.name,
-            status: self.status,
-            short_description: self.short_description,
-            long_description: self.long_description,
-            term_relations: self.term_relations,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_glossary_term::CreateGlossaryTermInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_glossary_term::CreateGlossaryTermInput {
+                domain_identifier: self.domain_identifier
+                ,
+                glossary_identifier: self.glossary_identifier
+                ,
+                name: self.name
+                ,
+                status: self.status
+                ,
+                short_description: self.short_description
+                ,
+                long_description: self.long_description
+                ,
+                term_relations: self.term_relations
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateGlossaryTermInputBuilder {
@@ -235,3 +234,4 @@ impl ::std::fmt::Debug for CreateGlossaryTermInputBuilder {
         formatter.finish()
     }
 }
+

@@ -3,7 +3,7 @@
 /// Associate Agent Knowledge Base Request
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateAgentKnowledgeBaseInput {
+pub struct AssociateAgentKnowledgeBaseInput  {
     /// Id generated at the server side when an Agent is created
     pub agent_id: ::std::option::Option<::std::string::String>,
     /// Draft Version of the Agent.
@@ -15,25 +15,25 @@ pub struct AssociateAgentKnowledgeBaseInput {
     /// State of the knowledge base; whether it is enabled or disabled
     pub knowledge_base_state: ::std::option::Option<crate::types::KnowledgeBaseState>,
 }
-impl AssociateAgentKnowledgeBaseInput {
+impl  AssociateAgentKnowledgeBaseInput  {
     /// Id generated at the server side when an Agent is created
-    pub fn agent_id(&self) -> ::std::option::Option<&str> {
+    pub fn agent_id(&self) -> ::std::option::Option<& str> {
         self.agent_id.as_deref()
     }
     /// Draft Version of the Agent.
-    pub fn agent_version(&self) -> ::std::option::Option<&str> {
+    pub fn agent_version(&self) -> ::std::option::Option<& str> {
         self.agent_version.as_deref()
     }
     /// Identifier for a resource.
-    pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
+    pub fn knowledge_base_id(&self) -> ::std::option::Option<& str> {
         self.knowledge_base_id.as_deref()
     }
     /// Description of the Resource.
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// State of the knowledge base; whether it is enabled or disabled
-    pub fn knowledge_base_state(&self) -> ::std::option::Option<&crate::types::KnowledgeBaseState> {
+    pub fn knowledge_base_state(&self) -> ::std::option::Option<& crate::types::KnowledgeBaseState> {
         self.knowledge_base_state.as_ref()
     }
 }
@@ -63,8 +63,7 @@ impl AssociateAgentKnowledgeBaseInputBuilder {
     }
     /// Id generated at the server side when an Agent is created
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_id = input;
-        self
+        self.agent_id = input; self
     }
     /// Id generated at the server side when an Agent is created
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +77,7 @@ impl AssociateAgentKnowledgeBaseInputBuilder {
     }
     /// Draft Version of the Agent.
     pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_version = input;
-        self
+        self.agent_version = input; self
     }
     /// Draft Version of the Agent.
     pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +91,7 @@ impl AssociateAgentKnowledgeBaseInputBuilder {
     }
     /// Identifier for a resource.
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.knowledge_base_id = input;
-        self
+        self.knowledge_base_id = input; self
     }
     /// Identifier for a resource.
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +105,7 @@ impl AssociateAgentKnowledgeBaseInputBuilder {
     }
     /// Description of the Resource.
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Description of the Resource.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,26 +118,28 @@ impl AssociateAgentKnowledgeBaseInputBuilder {
     }
     /// State of the knowledge base; whether it is enabled or disabled
     pub fn set_knowledge_base_state(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseState>) -> Self {
-        self.knowledge_base_state = input;
-        self
+        self.knowledge_base_state = input; self
     }
     /// State of the knowledge base; whether it is enabled or disabled
     pub fn get_knowledge_base_state(&self) -> &::std::option::Option<crate::types::KnowledgeBaseState> {
         &self.knowledge_base_state
     }
     /// Consumes the builder and constructs a [`AssociateAgentKnowledgeBaseInput`](crate::operation::associate_agent_knowledge_base::AssociateAgentKnowledgeBaseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_agent_knowledge_base::AssociateAgentKnowledgeBaseInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::associate_agent_knowledge_base::AssociateAgentKnowledgeBaseInput {
-            agent_id: self.agent_id,
-            agent_version: self.agent_version,
-            knowledge_base_id: self.knowledge_base_id,
-            description: self.description,
-            knowledge_base_state: self.knowledge_base_state,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_agent_knowledge_base::AssociateAgentKnowledgeBaseInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_agent_knowledge_base::AssociateAgentKnowledgeBaseInput {
+                agent_id: self.agent_id
+                ,
+                agent_version: self.agent_version
+                ,
+                knowledge_base_id: self.knowledge_base_id
+                ,
+                description: self.description
+                ,
+                knowledge_base_state: self.knowledge_base_state
+                ,
+            }
+        )
     }
 }
+

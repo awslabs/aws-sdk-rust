@@ -3,19 +3,19 @@
 /// Request for GetProgrammaticAccessCredentials operation
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetProgrammaticAccessCredentialsInput {
+pub struct GetProgrammaticAccessCredentialsInput  {
     /// <p>The time duration in which the credentials remain valid.</p>
     pub duration_in_minutes: ::std::option::Option<i64>,
     /// <p>The FinSpace environment identifier.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
 }
-impl GetProgrammaticAccessCredentialsInput {
+impl  GetProgrammaticAccessCredentialsInput  {
     /// <p>The time duration in which the credentials remain valid.</p>
     pub fn duration_in_minutes(&self) -> ::std::option::Option<i64> {
         self.duration_in_minutes
     }
     /// <p>The FinSpace environment identifier.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetProgrammaticAccessCredentialsInputBuilder {
     }
     /// <p>The time duration in which the credentials remain valid.</p>
     pub fn set_duration_in_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.duration_in_minutes = input;
-        self
+        self.duration_in_minutes = input; self
     }
     /// <p>The time duration in which the credentials remain valid.</p>
     pub fn get_duration_in_minutes(&self) -> &::std::option::Option<i64> {
@@ -56,25 +55,22 @@ impl GetProgrammaticAccessCredentialsInputBuilder {
     }
     /// <p>The FinSpace environment identifier.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>The FinSpace environment identifier.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_id
     }
     /// Consumes the builder and constructs a [`GetProgrammaticAccessCredentialsInput`](crate::operation::get_programmatic_access_credentials::GetProgrammaticAccessCredentialsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_programmatic_access_credentials::GetProgrammaticAccessCredentialsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_programmatic_access_credentials::GetProgrammaticAccessCredentialsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_programmatic_access_credentials::GetProgrammaticAccessCredentialsInput {
-                duration_in_minutes: self.duration_in_minutes,
-                environment_id: self.environment_id,
-            },
+                duration_in_minutes: self.duration_in_minutes
+                ,
+                environment_id: self.environment_id
+                ,
+            }
         )
     }
 }
+

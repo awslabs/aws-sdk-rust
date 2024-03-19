@@ -3,7 +3,7 @@
 /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RuleGroupResponse {
+pub struct RuleGroupResponse  {
     /// <p>The Amazon Resource Name (ARN) of the rule group.</p><note>
     /// <p>If this response is for a create request that had <code>DryRun</code> set to <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid resource.</p>
     /// </note>
@@ -22,7 +22,7 @@ pub struct RuleGroupResponse {
     /// <p>Detailed information about the current status of a rule group.</p>
     pub rule_group_status: ::std::option::Option<crate::types::ResourceStatus>,
     /// <p>The key:value pairs to associate with the resource.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The number of capacity units currently consumed by the rule group rules.</p>
     pub consumed_capacity: ::std::option::Option<i32>,
     /// <p>The number of firewall policies that use this rule group.</p>
@@ -36,32 +36,29 @@ pub struct RuleGroupResponse {
     /// <p>The last time that the rule group was changed.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The list of analysis results for <code>AnalyzeRuleGroup</code>. If you set <code>AnalyzeRuleGroup</code> to <code>TRUE</code> in <code>CreateRuleGroup</code>, <code>UpdateRuleGroup</code>, or <code>DescribeRuleGroup</code>, Network Firewall analyzes the rule group and identifies the rules that might adversely effect your firewall's functionality. For example, if Network Firewall detects a rule that's routing traffic asymmetrically, which impacts the service's ability to properly process traffic, the service includes the rule in the list of analysis results.</p>
-    pub analysis_results: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisResult>>,
+    pub analysis_results: ::std::option::Option<::std::vec::Vec::<crate::types::AnalysisResult>>,
 }
-impl RuleGroupResponse {
+impl  RuleGroupResponse  {
     /// <p>The Amazon Resource Name (ARN) of the rule group.</p><note>
     /// <p>If this response is for a create request that had <code>DryRun</code> set to <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid resource.</p>
     /// </note>
-    pub fn rule_group_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.rule_group_arn.deref()
+    pub fn rule_group_arn(&self) -> & str {
+        use std::ops::Deref; self.rule_group_arn.deref()
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
-    pub fn rule_group_name(&self) -> &str {
-        use std::ops::Deref;
-        self.rule_group_name.deref()
+    pub fn rule_group_name(&self) -> & str {
+        use std::ops::Deref; self.rule_group_name.deref()
     }
     /// <p>The unique identifier for the rule group.</p>
-    pub fn rule_group_id(&self) -> &str {
-        use std::ops::Deref;
-        self.rule_group_id.deref()
+    pub fn rule_group_id(&self) -> & str {
+        use std::ops::Deref; self.rule_group_id.deref()
     }
     /// <p>A description of the rule group.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::RuleGroupType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::RuleGroupType> {
         self.r#type.as_ref()
     }
     /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group.</p>
@@ -70,14 +67,15 @@ impl RuleGroupResponse {
         self.capacity
     }
     /// <p>Detailed information about the current status of a rule group.</p>
-    pub fn rule_group_status(&self) -> ::std::option::Option<&crate::types::ResourceStatus> {
+    pub fn rule_group_status(&self) -> ::std::option::Option<& crate::types::ResourceStatus> {
         self.rule_group_status.as_ref()
     }
     /// <p>The key:value pairs to associate with the resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The number of capacity units currently consumed by the rule group rules.</p>
     pub fn consumed_capacity(&self) -> ::std::option::Option<i32> {
@@ -88,26 +86,27 @@ impl RuleGroupResponse {
         self.number_of_associations
     }
     /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your rule group.</p>
-    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+    pub fn encryption_configuration(&self) -> ::std::option::Option<& crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
     /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to track the version updates made to the originating rule group.</p>
-    pub fn source_metadata(&self) -> ::std::option::Option<&crate::types::SourceMetadata> {
+    pub fn source_metadata(&self) -> ::std::option::Option<& crate::types::SourceMetadata> {
         self.source_metadata.as_ref()
     }
     /// <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to record changes to the managed rule group. You can subscribe to the SNS topic to receive notifications when the managed rule group is modified, such as for new versions and for version expiration. For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide.</a>.</p>
-    pub fn sns_topic(&self) -> ::std::option::Option<&str> {
+    pub fn sns_topic(&self) -> ::std::option::Option<& str> {
         self.sns_topic.as_deref()
     }
     /// <p>The last time that the rule group was changed.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The list of analysis results for <code>AnalyzeRuleGroup</code>. If you set <code>AnalyzeRuleGroup</code> to <code>TRUE</code> in <code>CreateRuleGroup</code>, <code>UpdateRuleGroup</code>, or <code>DescribeRuleGroup</code>, Network Firewall analyzes the rule group and identifies the rules that might adversely effect your firewall's functionality. For example, if Network Firewall detects a rule that's routing traffic asymmetrically, which impacts the service's ability to properly process traffic, the service includes the rule in the list of analysis results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.analysis_results.is_none()`.
-    pub fn analysis_results(&self) -> &[crate::types::AnalysisResult] {
-        self.analysis_results.as_deref().unwrap_or_default()
+    pub fn analysis_results(&self) -> & [crate::types::AnalysisResult] {
+        self.analysis_results.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RuleGroupResponse {
@@ -128,14 +127,14 @@ pub struct RuleGroupResponseBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::RuleGroupType>,
     pub(crate) capacity: ::std::option::Option<i32>,
     pub(crate) rule_group_status: ::std::option::Option<crate::types::ResourceStatus>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) consumed_capacity: ::std::option::Option<i32>,
     pub(crate) number_of_associations: ::std::option::Option<i32>,
     pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     pub(crate) source_metadata: ::std::option::Option<crate::types::SourceMetadata>,
     pub(crate) sns_topic: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) analysis_results: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisResult>>,
+    pub(crate) analysis_results: ::std::option::Option<::std::vec::Vec::<crate::types::AnalysisResult>>,
 }
 impl RuleGroupResponseBuilder {
     /// <p>The Amazon Resource Name (ARN) of the rule group.</p><note>
@@ -150,8 +149,7 @@ impl RuleGroupResponseBuilder {
     /// <p>If this response is for a create request that had <code>DryRun</code> set to <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid resource.</p>
     /// </note>
     pub fn set_rule_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_group_arn = input;
-        self
+        self.rule_group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the rule group.</p><note>
     /// <p>If this response is for a create request that had <code>DryRun</code> set to <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid resource.</p>
@@ -167,8 +165,7 @@ impl RuleGroupResponseBuilder {
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     pub fn set_rule_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_group_name = input;
-        self
+        self.rule_group_name = input; self
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     pub fn get_rule_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -182,8 +179,7 @@ impl RuleGroupResponseBuilder {
     }
     /// <p>The unique identifier for the rule group.</p>
     pub fn set_rule_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_group_id = input;
-        self
+        self.rule_group_id = input; self
     }
     /// <p>The unique identifier for the rule group.</p>
     pub fn get_rule_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -196,8 +192,7 @@ impl RuleGroupResponseBuilder {
     }
     /// <p>A description of the rule group.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the rule group.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -210,8 +205,7 @@ impl RuleGroupResponseBuilder {
     }
     /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RuleGroupType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::RuleGroupType> {
@@ -226,8 +220,7 @@ impl RuleGroupResponseBuilder {
     /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group.</p>
     /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>.</p>
     pub fn set_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.capacity = input;
-        self
+        self.capacity = input; self
     }
     /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group.</p>
     /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>.</p>
@@ -241,8 +234,7 @@ impl RuleGroupResponseBuilder {
     }
     /// <p>Detailed information about the current status of a rule group.</p>
     pub fn set_rule_group_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
-        self.rule_group_status = input;
-        self
+        self.rule_group_status = input; self
     }
     /// <p>Detailed information about the current status of a rule group.</p>
     pub fn get_rule_group_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {
@@ -255,17 +247,16 @@ impl RuleGroupResponseBuilder {
     /// <p>The key:value pairs to associate with the resource.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The key:value pairs to associate with the resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The key:value pairs to associate with the resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The number of capacity units currently consumed by the rule group rules.</p>
@@ -275,8 +266,7 @@ impl RuleGroupResponseBuilder {
     }
     /// <p>The number of capacity units currently consumed by the rule group rules.</p>
     pub fn set_consumed_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.consumed_capacity = input;
-        self
+        self.consumed_capacity = input; self
     }
     /// <p>The number of capacity units currently consumed by the rule group rules.</p>
     pub fn get_consumed_capacity(&self) -> &::std::option::Option<i32> {
@@ -289,8 +279,7 @@ impl RuleGroupResponseBuilder {
     }
     /// <p>The number of firewall policies that use this rule group.</p>
     pub fn set_number_of_associations(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_associations = input;
-        self
+        self.number_of_associations = input; self
     }
     /// <p>The number of firewall policies that use this rule group.</p>
     pub fn get_number_of_associations(&self) -> &::std::option::Option<i32> {
@@ -303,8 +292,7 @@ impl RuleGroupResponseBuilder {
     }
     /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your rule group.</p>
     pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
-        self.encryption_configuration = input;
-        self
+        self.encryption_configuration = input; self
     }
     /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your rule group.</p>
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
@@ -317,8 +305,7 @@ impl RuleGroupResponseBuilder {
     }
     /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to track the version updates made to the originating rule group.</p>
     pub fn set_source_metadata(mut self, input: ::std::option::Option<crate::types::SourceMetadata>) -> Self {
-        self.source_metadata = input;
-        self
+        self.source_metadata = input; self
     }
     /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to track the version updates made to the originating rule group.</p>
     pub fn get_source_metadata(&self) -> &::std::option::Option<crate::types::SourceMetadata> {
@@ -331,8 +318,7 @@ impl RuleGroupResponseBuilder {
     }
     /// <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to record changes to the managed rule group. You can subscribe to the SNS topic to receive notifications when the managed rule group is modified, such as for new versions and for version expiration. For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide.</a>.</p>
     pub fn set_sns_topic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sns_topic = input;
-        self
+        self.sns_topic = input; self
     }
     /// <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to record changes to the managed rule group. You can subscribe to the SNS topic to receive notifications when the managed rule group is modified, such as for new versions and for version expiration. For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide.</a>.</p>
     pub fn get_sns_topic(&self) -> &::std::option::Option<::std::string::String> {
@@ -345,8 +331,7 @@ impl RuleGroupResponseBuilder {
     }
     /// <p>The last time that the rule group was changed.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The last time that the rule group was changed.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -359,17 +344,16 @@ impl RuleGroupResponseBuilder {
     /// <p>The list of analysis results for <code>AnalyzeRuleGroup</code>. If you set <code>AnalyzeRuleGroup</code> to <code>TRUE</code> in <code>CreateRuleGroup</code>, <code>UpdateRuleGroup</code>, or <code>DescribeRuleGroup</code>, Network Firewall analyzes the rule group and identifies the rules that might adversely effect your firewall's functionality. For example, if Network Firewall detects a rule that's routing traffic asymmetrically, which impacts the service's ability to properly process traffic, the service includes the rule in the list of analysis results.</p>
     pub fn analysis_results(mut self, input: crate::types::AnalysisResult) -> Self {
         let mut v = self.analysis_results.unwrap_or_default();
-        v.push(input);
-        self.analysis_results = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.analysis_results = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of analysis results for <code>AnalyzeRuleGroup</code>. If you set <code>AnalyzeRuleGroup</code> to <code>TRUE</code> in <code>CreateRuleGroup</code>, <code>UpdateRuleGroup</code>, or <code>DescribeRuleGroup</code>, Network Firewall analyzes the rule group and identifies the rules that might adversely effect your firewall's functionality. For example, if Network Firewall detects a rule that's routing traffic asymmetrically, which impacts the service's ability to properly process traffic, the service includes the rule in the list of analysis results.</p>
-    pub fn set_analysis_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisResult>>) -> Self {
-        self.analysis_results = input;
-        self
+    pub fn set_analysis_results(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AnalysisResult>>) -> Self {
+        self.analysis_results = input; self
     }
     /// <p>The list of analysis results for <code>AnalyzeRuleGroup</code>. If you set <code>AnalyzeRuleGroup</code> to <code>TRUE</code> in <code>CreateRuleGroup</code>, <code>UpdateRuleGroup</code>, or <code>DescribeRuleGroup</code>, Network Firewall analyzes the rule group and identifies the rules that might adversely effect your firewall's functionality. For example, if Network Firewall detects a rule that's routing traffic asymmetrically, which impacts the service's ability to properly process traffic, the service includes the rule in the list of analysis results.</p>
-    pub fn get_analysis_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisResult>> {
+    pub fn get_analysis_results(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AnalysisResult>> {
         &self.analysis_results
     }
     /// Consumes the builder and constructs a [`RuleGroupResponse`](crate::types::RuleGroupResponse).
@@ -378,37 +362,49 @@ impl RuleGroupResponseBuilder {
     /// - [`rule_group_name`](crate::types::builders::RuleGroupResponseBuilder::rule_group_name)
     /// - [`rule_group_id`](crate::types::builders::RuleGroupResponseBuilder::rule_group_id)
     pub fn build(self) -> ::std::result::Result<crate::types::RuleGroupResponse, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RuleGroupResponse {
-            rule_group_arn: self.rule_group_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rule_group_arn",
-                    "rule_group_arn was not specified but it is required when building RuleGroupResponse",
-                )
-            })?,
-            rule_group_name: self.rule_group_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rule_group_name",
-                    "rule_group_name was not specified but it is required when building RuleGroupResponse",
-                )
-            })?,
-            rule_group_id: self.rule_group_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rule_group_id",
-                    "rule_group_id was not specified but it is required when building RuleGroupResponse",
-                )
-            })?,
-            description: self.description,
-            r#type: self.r#type,
-            capacity: self.capacity,
-            rule_group_status: self.rule_group_status,
-            tags: self.tags,
-            consumed_capacity: self.consumed_capacity,
-            number_of_associations: self.number_of_associations,
-            encryption_configuration: self.encryption_configuration,
-            source_metadata: self.source_metadata,
-            sns_topic: self.sns_topic,
-            last_modified_time: self.last_modified_time,
-            analysis_results: self.analysis_results,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RuleGroupResponse {
+                rule_group_arn: self.rule_group_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rule_group_arn", "rule_group_arn was not specified but it is required when building RuleGroupResponse")
+                    )?
+                ,
+                rule_group_name: self.rule_group_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rule_group_name", "rule_group_name was not specified but it is required when building RuleGroupResponse")
+                    )?
+                ,
+                rule_group_id: self.rule_group_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rule_group_id", "rule_group_id was not specified but it is required when building RuleGroupResponse")
+                    )?
+                ,
+                description: self.description
+                ,
+                r#type: self.r#type
+                ,
+                capacity: self.capacity
+                ,
+                rule_group_status: self.rule_group_status
+                ,
+                tags: self.tags
+                ,
+                consumed_capacity: self.consumed_capacity
+                ,
+                number_of_associations: self.number_of_associations
+                ,
+                encryption_configuration: self.encryption_configuration
+                ,
+                source_metadata: self.source_metadata
+                ,
+                sns_topic: self.sns_topic
+                ,
+                last_modified_time: self.last_modified_time
+                ,
+                analysis_results: self.analysis_results
+                ,
+            }
+        )
     }
 }
+

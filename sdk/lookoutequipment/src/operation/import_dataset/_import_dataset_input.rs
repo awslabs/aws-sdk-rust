@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportDatasetInput {
+pub struct ImportDatasetInput  {
     /// <p>The Amazon Resource Name (ARN) of the dataset to import.</p>
     pub source_dataset_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the machine learning dataset to be created. If the dataset already exists, Amazon Lookout for Equipment overwrites the existing dataset. If you don't specify this field, it is filled with the name of the source dataset.</p>
@@ -12,30 +12,31 @@ pub struct ImportDatasetInput {
     /// <p>Provides the identifier of the KMS key key used to encrypt model data by Amazon Lookout for Equipment.</p>
     pub server_side_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Any tags associated with the dataset to be created.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl ImportDatasetInput {
+impl  ImportDatasetInput  {
     /// <p>The Amazon Resource Name (ARN) of the dataset to import.</p>
-    pub fn source_dataset_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_dataset_arn(&self) -> ::std::option::Option<& str> {
         self.source_dataset_arn.as_deref()
     }
     /// <p>The name of the machine learning dataset to be created. If the dataset already exists, Amazon Lookout for Equipment overwrites the existing dataset. If you don't specify this field, it is filled with the name of the source dataset.</p>
-    pub fn dataset_name(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_name(&self) -> ::std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Provides the identifier of the KMS key key used to encrypt model data by Amazon Lookout for Equipment.</p>
-    pub fn server_side_kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn server_side_kms_key_id(&self) -> ::std::option::Option<& str> {
         self.server_side_kms_key_id.as_deref()
     }
     /// <p>Any tags associated with the dataset to be created.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ImportDatasetInput {
@@ -53,7 +54,7 @@ pub struct ImportDatasetInputBuilder {
     pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) server_side_kms_key_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl ImportDatasetInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the dataset to import.</p>
@@ -64,8 +65,7 @@ impl ImportDatasetInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset to import.</p>
     pub fn set_source_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_dataset_arn = input;
-        self
+        self.source_dataset_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset to import.</p>
     pub fn get_source_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl ImportDatasetInputBuilder {
     }
     /// <p>The name of the machine learning dataset to be created. If the dataset already exists, Amazon Lookout for Equipment overwrites the existing dataset. If you don't specify this field, it is filled with the name of the source dataset.</p>
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_name = input;
-        self
+        self.dataset_name = input; self
     }
     /// <p>The name of the machine learning dataset to be created. If the dataset already exists, Amazon Lookout for Equipment overwrites the existing dataset. If you don't specify this field, it is filled with the name of the source dataset.</p>
     pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +92,7 @@ impl ImportDatasetInputBuilder {
     }
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +105,7 @@ impl ImportDatasetInputBuilder {
     }
     /// <p>Provides the identifier of the KMS key key used to encrypt model data by Amazon Lookout for Equipment.</p>
     pub fn set_server_side_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_side_kms_key_id = input;
-        self
+        self.server_side_kms_key_id = input; self
     }
     /// <p>Provides the identifier of the KMS key key used to encrypt model data by Amazon Lookout for Equipment.</p>
     pub fn get_server_side_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,29 +118,34 @@ impl ImportDatasetInputBuilder {
     /// <p>Any tags associated with the dataset to be created.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Any tags associated with the dataset to be created.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Any tags associated with the dataset to be created.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ImportDatasetInput`](crate::operation::import_dataset::ImportDatasetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::import_dataset::ImportDatasetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::import_dataset::ImportDatasetInput {
-            source_dataset_arn: self.source_dataset_arn,
-            dataset_name: self.dataset_name,
-            client_token: self.client_token,
-            server_side_kms_key_id: self.server_side_kms_key_id,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::import_dataset::ImportDatasetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::import_dataset::ImportDatasetInput {
+                source_dataset_arn: self.source_dataset_arn
+                ,
+                dataset_name: self.dataset_name
+                ,
+                client_token: self.client_token
+                ,
+                server_side_kms_key_id: self.server_side_kms_key_id
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

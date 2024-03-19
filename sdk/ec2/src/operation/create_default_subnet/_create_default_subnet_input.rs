@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDefaultSubnetInput {
+pub struct CreateDefaultSubnetInput  {
     /// <p>The Availability Zone in which to create the default subnet.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -10,9 +10,9 @@ pub struct CreateDefaultSubnetInput {
     /// <p>Indicates whether to create an IPv6 only subnet. If you already have a default subnet for this Availability Zone, you must delete it before you can create an IPv6 only subnet.</p>
     pub ipv6_native: ::std::option::Option<bool>,
 }
-impl CreateDefaultSubnetInput {
+impl  CreateDefaultSubnetInput  {
     /// <p>The Availability Zone in which to create the default subnet.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -48,8 +48,7 @@ impl CreateDefaultSubnetInputBuilder {
     }
     /// <p>The Availability Zone in which to create the default subnet.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// <p>The Availability Zone in which to create the default subnet.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl CreateDefaultSubnetInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -76,22 +74,24 @@ impl CreateDefaultSubnetInputBuilder {
     }
     /// <p>Indicates whether to create an IPv6 only subnet. If you already have a default subnet for this Availability Zone, you must delete it before you can create an IPv6 only subnet.</p>
     pub fn set_ipv6_native(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ipv6_native = input;
-        self
+        self.ipv6_native = input; self
     }
     /// <p>Indicates whether to create an IPv6 only subnet. If you already have a default subnet for this Availability Zone, you must delete it before you can create an IPv6 only subnet.</p>
     pub fn get_ipv6_native(&self) -> &::std::option::Option<bool> {
         &self.ipv6_native
     }
     /// Consumes the builder and constructs a [`CreateDefaultSubnetInput`](crate::operation::create_default_subnet::CreateDefaultSubnetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_default_subnet::CreateDefaultSubnetInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_default_subnet::CreateDefaultSubnetInput {
-            availability_zone: self.availability_zone,
-            dry_run: self.dry_run,
-            ipv6_native: self.ipv6_native,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_default_subnet::CreateDefaultSubnetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_default_subnet::CreateDefaultSubnetInput {
+                availability_zone: self.availability_zone
+                ,
+                dry_run: self.dry_run
+                ,
+                ipv6_native: self.ipv6_native
+                ,
+            }
+        )
     }
 }
+

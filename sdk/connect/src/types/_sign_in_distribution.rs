@@ -3,17 +3,16 @@
 /// <p>The distribution of sign in traffic between the instance and its replica(s).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SignInDistribution {
+pub struct SignInDistribution  {
     /// <p>The Amazon Web Services Region of the sign in distribution.</p>
     pub region: ::std::string::String,
     /// <p>Whether sign in distribution is enabled.</p>
     pub enabled: bool,
 }
-impl SignInDistribution {
+impl  SignInDistribution  {
     /// <p>The Amazon Web Services Region of the sign in distribution.</p>
-    pub fn region(&self) -> &str {
-        use std::ops::Deref;
-        self.region.deref()
+    pub fn region(&self) -> & str {
+        use std::ops::Deref; self.region.deref()
     }
     /// <p>Whether sign in distribution is enabled.</p>
     pub fn enabled(&self) -> bool {
@@ -43,8 +42,7 @@ impl SignInDistributionBuilder {
     }
     /// <p>The Amazon Web Services Region of the sign in distribution.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Amazon Web Services Region of the sign in distribution.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl SignInDistributionBuilder {
     }
     /// <p>Whether sign in distribution is enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Whether sign in distribution is enabled.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -69,14 +66,18 @@ impl SignInDistributionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`region`](crate::types::builders::SignInDistributionBuilder::region)
     pub fn build(self) -> ::std::result::Result<crate::types::SignInDistribution, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SignInDistribution {
-            region: self.region.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "region",
-                    "region was not specified but it is required when building SignInDistribution",
-                )
-            })?,
-            enabled: self.enabled.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::SignInDistribution {
+                region: self.region
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("region", "region was not specified but it is required when building SignInDistribution")
+                    )?
+                ,
+                enabled: self.enabled
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

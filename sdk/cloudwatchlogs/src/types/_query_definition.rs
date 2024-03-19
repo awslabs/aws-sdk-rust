@@ -3,7 +3,7 @@
 /// <p>This structure contains details about a saved CloudWatch Logs Insights query definition.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QueryDefinition {
+pub struct QueryDefinition  {
     /// <p>The unique ID of the query definition.</p>
     pub query_definition_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the query definition.</p>
@@ -13,19 +13,19 @@ pub struct QueryDefinition {
     /// <p>The date that the query definition was most recently modified.</p>
     pub last_modified: ::std::option::Option<i64>,
     /// <p>If this query definition contains a list of log groups that it is limited to, that list appears here.</p>
-    pub log_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub log_group_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl QueryDefinition {
+impl  QueryDefinition  {
     /// <p>The unique ID of the query definition.</p>
-    pub fn query_definition_id(&self) -> ::std::option::Option<&str> {
+    pub fn query_definition_id(&self) -> ::std::option::Option<& str> {
         self.query_definition_id.as_deref()
     }
     /// <p>The name of the query definition.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The query string to use for this definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
-    pub fn query_string(&self) -> ::std::option::Option<&str> {
+    pub fn query_string(&self) -> ::std::option::Option<& str> {
         self.query_string.as_deref()
     }
     /// <p>The date that the query definition was most recently modified.</p>
@@ -33,10 +33,11 @@ impl QueryDefinition {
         self.last_modified
     }
     /// <p>If this query definition contains a list of log groups that it is limited to, that list appears here.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_group_names.is_none()`.
-    pub fn log_group_names(&self) -> &[::std::string::String] {
-        self.log_group_names.as_deref().unwrap_or_default()
+    pub fn log_group_names(&self) -> & [::std::string::String] {
+        self.log_group_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl QueryDefinition {
@@ -54,7 +55,7 @@ pub struct QueryDefinitionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) query_string: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified: ::std::option::Option<i64>,
-    pub(crate) log_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) log_group_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl QueryDefinitionBuilder {
     /// <p>The unique ID of the query definition.</p>
@@ -64,8 +65,7 @@ impl QueryDefinitionBuilder {
     }
     /// <p>The unique ID of the query definition.</p>
     pub fn set_query_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_definition_id = input;
-        self
+        self.query_definition_id = input; self
     }
     /// <p>The unique ID of the query definition.</p>
     pub fn get_query_definition_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl QueryDefinitionBuilder {
     }
     /// <p>The name of the query definition.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the query definition.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +91,7 @@ impl QueryDefinitionBuilder {
     }
     /// <p>The query string to use for this definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_string = input;
-        self
+        self.query_string = input; self
     }
     /// <p>The query string to use for this definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
     pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +104,7 @@ impl QueryDefinitionBuilder {
     }
     /// <p>The date that the query definition was most recently modified.</p>
     pub fn set_last_modified(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.last_modified = input;
-        self
+        self.last_modified = input; self
     }
     /// <p>The date that the query definition was most recently modified.</p>
     pub fn get_last_modified(&self) -> &::std::option::Option<i64> {
@@ -120,27 +117,32 @@ impl QueryDefinitionBuilder {
     /// <p>If this query definition contains a list of log groups that it is limited to, that list appears here.</p>
     pub fn log_group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.log_group_names.unwrap_or_default();
-        v.push(input.into());
-        self.log_group_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.log_group_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>If this query definition contains a list of log groups that it is limited to, that list appears here.</p>
-    pub fn set_log_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.log_group_names = input;
-        self
+    pub fn set_log_group_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.log_group_names = input; self
     }
     /// <p>If this query definition contains a list of log groups that it is limited to, that list appears here.</p>
-    pub fn get_log_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_log_group_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.log_group_names
     }
     /// Consumes the builder and constructs a [`QueryDefinition`](crate::types::QueryDefinition).
     pub fn build(self) -> crate::types::QueryDefinition {
         crate::types::QueryDefinition {
-            query_definition_id: self.query_definition_id,
-            name: self.name,
-            query_string: self.query_string,
-            last_modified: self.last_modified,
-            log_group_names: self.log_group_names,
+            query_definition_id: self.query_definition_id
+            ,
+            name: self.name
+            ,
+            query_string: self.query_string
+            ,
+            last_modified: self.last_modified
+            ,
+            log_group_names: self.log_group_names
+            ,
         }
     }
 }
+

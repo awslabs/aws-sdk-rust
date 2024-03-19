@@ -3,22 +3,20 @@
 /// <p>The specified platform version doesn't satisfy the required capabilities of the task definition.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PlatformTaskDefinitionIncompatibilityException {
+pub struct PlatformTaskDefinitionIncompatibilityException  {
     /// <p>Message that describes the cause of the exception.</p>
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl PlatformTaskDefinitionIncompatibilityException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for PlatformTaskDefinitionIncompatibilityException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "PlatformTaskDefinitionIncompatibilityException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -33,9 +31,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::PlatformTaskDef
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for PlatformTaskDefinitionIncompatibilityException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl PlatformTaskDefinitionIncompatibilityException {
     /// Creates a new builder-style object to manufacture [`PlatformTaskDefinitionIncompatibilityException`](crate::types::error::PlatformTaskDefinitionIncompatibilityException).
@@ -59,29 +55,30 @@ impl PlatformTaskDefinitionIncompatibilityExceptionBuilder {
     }
     /// <p>Message that describes the cause of the exception.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Message that describes the cause of the exception.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`PlatformTaskDefinitionIncompatibilityException`](crate::types::error::PlatformTaskDefinitionIncompatibilityException).
     pub fn build(self) -> crate::types::error::PlatformTaskDefinitionIncompatibilityException {
         crate::types::error::PlatformTaskDefinitionIncompatibilityException {
-            message: self.message,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

@@ -5,17 +5,17 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VideoFeatures {
+pub struct VideoFeatures  {
     /// <p>The maximum video resolution for the meeting. Applies to all attendees.</p><note>
     /// <p>Defaults to <code>HD</code>. To use <code>FHD</code>, you must also provide a <code>MeetingFeatures:Attendee:MaxCount</code> value and override the default size limit of 250 attendees.</p>
     /// </note>
     pub max_resolution: ::std::option::Option<crate::types::VideoResolution>,
 }
-impl VideoFeatures {
+impl  VideoFeatures  {
     /// <p>The maximum video resolution for the meeting. Applies to all attendees.</p><note>
     /// <p>Defaults to <code>HD</code>. To use <code>FHD</code>, you must also provide a <code>MeetingFeatures:Attendee:MaxCount</code> value and override the default size limit of 250 attendees.</p>
     /// </note>
-    pub fn max_resolution(&self) -> ::std::option::Option<&crate::types::VideoResolution> {
+    pub fn max_resolution(&self) -> ::std::option::Option<& crate::types::VideoResolution> {
         self.max_resolution.as_ref()
     }
 }
@@ -44,8 +44,7 @@ impl VideoFeaturesBuilder {
     /// <p>Defaults to <code>HD</code>. To use <code>FHD</code>, you must also provide a <code>MeetingFeatures:Attendee:MaxCount</code> value and override the default size limit of 250 attendees.</p>
     /// </note>
     pub fn set_max_resolution(mut self, input: ::std::option::Option<crate::types::VideoResolution>) -> Self {
-        self.max_resolution = input;
-        self
+        self.max_resolution = input; self
     }
     /// <p>The maximum video resolution for the meeting. Applies to all attendees.</p><note>
     /// <p>Defaults to <code>HD</code>. To use <code>FHD</code>, you must also provide a <code>MeetingFeatures:Attendee:MaxCount</code> value and override the default size limit of 250 attendees.</p>
@@ -56,7 +55,9 @@ impl VideoFeaturesBuilder {
     /// Consumes the builder and constructs a [`VideoFeatures`](crate::types::VideoFeatures).
     pub fn build(self) -> crate::types::VideoFeatures {
         crate::types::VideoFeatures {
-            max_resolution: self.max_resolution,
+            max_resolution: self.max_resolution
+            ,
         }
     }
 }
+

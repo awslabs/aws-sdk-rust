@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateModelPackageOutput {
+pub struct CreateModelPackageOutput  {
     /// <p>The Amazon Resource Name (ARN) of the new model package.</p>
     pub model_package_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateModelPackageOutput {
+impl  CreateModelPackageOutput  {
     /// <p>The Amazon Resource Name (ARN) of the new model package.</p>
-    pub fn model_package_arn(&self) -> ::std::option::Option<&str> {
+    pub fn model_package_arn(&self) -> ::std::option::Option<& str> {
         self.model_package_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateModelPackageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateModelPackageOutput {
     /// Creates a new builder-style object to manufacture [`CreateModelPackageOutput`](crate::operation::create_model_package::CreateModelPackageOutput).
     pub fn builder() -> crate::operation::create_model_package::builders::CreateModelPackageOutputBuilder {
@@ -41,27 +41,28 @@ impl CreateModelPackageOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the new model package.</p>
     pub fn set_model_package_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_package_arn = input;
-        self
+        self.model_package_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the new model package.</p>
     pub fn get_model_package_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_package_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateModelPackageOutput`](crate::operation::create_model_package::CreateModelPackageOutput).
     pub fn build(self) -> crate::operation::create_model_package::CreateModelPackageOutput {
         crate::operation::create_model_package::CreateModelPackageOutput {
-            model_package_arn: self.model_package_arn,
+            model_package_arn: self.model_package_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

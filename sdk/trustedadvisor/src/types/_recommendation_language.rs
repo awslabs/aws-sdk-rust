@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let recommendationlanguage = unimplemented!();
 /// match recommendationlanguage {
@@ -39,16 +39,14 @@
 /// Specifically, when `recommendationlanguage` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RecommendationLanguage::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum RecommendationLanguage {
     #[allow(missing_docs)] // documentation missing in model
     German,
@@ -74,88 +72,89 @@ pub enum RecommendationLanguage {
     TraditionalChinese,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for RecommendationLanguage {
-    fn from(s: &str) -> Self {
-        match s {
-            "de" => RecommendationLanguage::German,
-            "en" => RecommendationLanguage::English,
-            "es" => RecommendationLanguage::Spanish,
-            "fr" => RecommendationLanguage::French,
-            "id" => RecommendationLanguage::BahasaIndonesia,
-            "it" => RecommendationLanguage::Italian,
-            "ja" => RecommendationLanguage::Japanese,
-            "ko" => RecommendationLanguage::Korean,
-            "pt_BR" => RecommendationLanguage::BrazilianPortuguese,
-            "zh" => RecommendationLanguage::Chinese,
-            "zh_TW" => RecommendationLanguage::TraditionalChinese,
-            other => RecommendationLanguage::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "de" => RecommendationLanguage::German,
+"en" => RecommendationLanguage::English,
+"es" => RecommendationLanguage::Spanish,
+"fr" => RecommendationLanguage::French,
+"id" => RecommendationLanguage::BahasaIndonesia,
+"it" => RecommendationLanguage::Italian,
+"ja" => RecommendationLanguage::Japanese,
+"ko" => RecommendationLanguage::Korean,
+"pt_BR" => RecommendationLanguage::BrazilianPortuguese,
+"zh" => RecommendationLanguage::Chinese,
+"zh_TW" => RecommendationLanguage::TraditionalChinese,
+other => RecommendationLanguage::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for RecommendationLanguage {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(RecommendationLanguage::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(RecommendationLanguage::from(s))
+                    }
+                }
 impl RecommendationLanguage {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RecommendationLanguage::German => "de",
-            RecommendationLanguage::English => "en",
-            RecommendationLanguage::Spanish => "es",
-            RecommendationLanguage::French => "fr",
-            RecommendationLanguage::BahasaIndonesia => "id",
-            RecommendationLanguage::Italian => "it",
-            RecommendationLanguage::Japanese => "ja",
-            RecommendationLanguage::Korean => "ko",
-            RecommendationLanguage::BrazilianPortuguese => "pt_BR",
-            RecommendationLanguage::Chinese => "zh",
-            RecommendationLanguage::TraditionalChinese => "zh_TW",
-            RecommendationLanguage::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["de", "en", "es", "fr", "id", "it", "ja", "ko", "pt_BR", "zh", "zh_TW"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RecommendationLanguage::German => "de",
+    RecommendationLanguage::English => "en",
+    RecommendationLanguage::Spanish => "es",
+    RecommendationLanguage::French => "fr",
+    RecommendationLanguage::BahasaIndonesia => "id",
+    RecommendationLanguage::Italian => "it",
+    RecommendationLanguage::Japanese => "ja",
+    RecommendationLanguage::Korean => "ko",
+    RecommendationLanguage::BrazilianPortuguese => "pt_BR",
+    RecommendationLanguage::Chinese => "zh",
+    RecommendationLanguage::TraditionalChinese => "zh_TW",
+    RecommendationLanguage::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["de", "en", "es", "fr", "id", "it", "ja", "ko", "pt_BR", "zh", "zh_TW"]
+                }
+            }
 impl ::std::convert::AsRef<str> for RecommendationLanguage {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl RecommendationLanguage {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for RecommendationLanguage {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            RecommendationLanguage::German => write!(f, "de"),
-            RecommendationLanguage::English => write!(f, "en"),
-            RecommendationLanguage::Spanish => write!(f, "es"),
-            RecommendationLanguage::French => write!(f, "fr"),
-            RecommendationLanguage::BahasaIndonesia => write!(f, "id"),
-            RecommendationLanguage::Italian => write!(f, "it"),
-            RecommendationLanguage::Japanese => write!(f, "ja"),
-            RecommendationLanguage::Korean => write!(f, "ko"),
-            RecommendationLanguage::BrazilianPortuguese => write!(f, "pt_BR"),
-            RecommendationLanguage::Chinese => write!(f, "zh"),
-            RecommendationLanguage::TraditionalChinese => write!(f, "zh_TW"),
-            RecommendationLanguage::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                RecommendationLanguage::German => write!(f, "de"),
+RecommendationLanguage::English => write!(f, "en"),
+RecommendationLanguage::Spanish => write!(f, "es"),
+RecommendationLanguage::French => write!(f, "fr"),
+RecommendationLanguage::BahasaIndonesia => write!(f, "id"),
+RecommendationLanguage::Italian => write!(f, "it"),
+RecommendationLanguage::Japanese => write!(f, "ja"),
+RecommendationLanguage::Korean => write!(f, "ko"),
+RecommendationLanguage::BrazilianPortuguese => write!(f, "pt_BR"),
+RecommendationLanguage::Chinese => write!(f, "zh"),
+RecommendationLanguage::TraditionalChinese => write!(f, "zh_TW"),
+RecommendationLanguage::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

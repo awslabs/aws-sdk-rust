@@ -3,19 +3,19 @@
 /// <p>Describes an EC2 Fleet that was not successfully deleted.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteFleetErrorItem {
+pub struct DeleteFleetErrorItem  {
     /// <p>The error.</p>
     pub error: ::std::option::Option<crate::types::DeleteFleetError>,
     /// <p>The ID of the EC2 Fleet.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteFleetErrorItem {
+impl  DeleteFleetErrorItem  {
     /// <p>The error.</p>
-    pub fn error(&self) -> ::std::option::Option<&crate::types::DeleteFleetError> {
+    pub fn error(&self) -> ::std::option::Option<& crate::types::DeleteFleetError> {
         self.error.as_ref()
     }
     /// <p>The ID of the EC2 Fleet.</p>
-    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_id(&self) -> ::std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteFleetErrorItemBuilder {
     }
     /// <p>The error.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::DeleteFleetError>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>The error.</p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::DeleteFleetError> {
@@ -55,8 +54,7 @@ impl DeleteFleetErrorItemBuilder {
     }
     /// <p>The ID of the EC2 Fleet.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_id = input;
-        self
+        self.fleet_id = input; self
     }
     /// <p>The ID of the EC2 Fleet.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl DeleteFleetErrorItemBuilder {
     /// Consumes the builder and constructs a [`DeleteFleetErrorItem`](crate::types::DeleteFleetErrorItem).
     pub fn build(self) -> crate::types::DeleteFleetErrorItem {
         crate::types::DeleteFleetErrorItem {
-            error: self.error,
-            fleet_id: self.fleet_id,
+            error: self.error
+            ,
+            fleet_id: self.fleet_id
+            ,
         }
     }
 }
+

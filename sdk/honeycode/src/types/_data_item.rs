@@ -3,7 +3,7 @@
 /// <p>The data in a particular data cell defined on the screen.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DataItem {
+pub struct DataItem  {
     /// <p>The overrideFormat is optional and is specified only if a particular row of data has a different format for the data than the default format defined on the screen or the table.</p>
     pub override_format: ::std::option::Option<crate::types::Format>,
     /// <p>The raw value of the data. e.g. jsmith@example.com</p>
@@ -11,21 +11,21 @@ pub struct DataItem {
     /// <p>The formatted value of the data. e.g. John Smith.</p>
     pub formatted_value: ::std::option::Option<::std::string::String>,
 }
-impl DataItem {
+impl  DataItem  {
     /// <p>The overrideFormat is optional and is specified only if a particular row of data has a different format for the data than the default format defined on the screen or the table.</p>
-    pub fn override_format(&self) -> ::std::option::Option<&crate::types::Format> {
+    pub fn override_format(&self) -> ::std::option::Option<& crate::types::Format> {
         self.override_format.as_ref()
     }
     /// <p>The raw value of the data. e.g. jsmith@example.com</p>
-    pub fn raw_value(&self) -> ::std::option::Option<&str> {
+    pub fn raw_value(&self) -> ::std::option::Option<& str> {
         self.raw_value.as_deref()
     }
     /// <p>The formatted value of the data. e.g. John Smith.</p>
-    pub fn formatted_value(&self) -> ::std::option::Option<&str> {
+    pub fn formatted_value(&self) -> ::std::option::Option<& str> {
         self.formatted_value.as_deref()
     }
 }
-impl ::std::fmt::Debug for DataItem {
+impl  ::std::fmt::Debug for DataItem  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DataItem");
         formatter.field("override_format", &"*** Sensitive Data Redacted ***");
@@ -57,8 +57,7 @@ impl DataItemBuilder {
     }
     /// <p>The overrideFormat is optional and is specified only if a particular row of data has a different format for the data than the default format defined on the screen or the table.</p>
     pub fn set_override_format(mut self, input: ::std::option::Option<crate::types::Format>) -> Self {
-        self.override_format = input;
-        self
+        self.override_format = input; self
     }
     /// <p>The overrideFormat is optional and is specified only if a particular row of data has a different format for the data than the default format defined on the screen or the table.</p>
     pub fn get_override_format(&self) -> &::std::option::Option<crate::types::Format> {
@@ -71,8 +70,7 @@ impl DataItemBuilder {
     }
     /// <p>The raw value of the data. e.g. jsmith@example.com</p>
     pub fn set_raw_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.raw_value = input;
-        self
+        self.raw_value = input; self
     }
     /// <p>The raw value of the data. e.g. jsmith@example.com</p>
     pub fn get_raw_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl DataItemBuilder {
     }
     /// <p>The formatted value of the data. e.g. John Smith.</p>
     pub fn set_formatted_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.formatted_value = input;
-        self
+        self.formatted_value = input; self
     }
     /// <p>The formatted value of the data. e.g. John Smith.</p>
     pub fn get_formatted_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,9 +92,12 @@ impl DataItemBuilder {
     /// Consumes the builder and constructs a [`DataItem`](crate::types::DataItem).
     pub fn build(self) -> crate::types::DataItem {
         crate::types::DataItem {
-            override_format: self.override_format,
-            raw_value: self.raw_value,
-            formatted_value: self.formatted_value,
+            override_format: self.override_format
+            ,
+            raw_value: self.raw_value
+            ,
+            formatted_value: self.formatted_value
+            ,
         }
     }
 }
@@ -110,3 +110,4 @@ impl ::std::fmt::Debug for DataItemBuilder {
         formatter.finish()
     }
 }
+

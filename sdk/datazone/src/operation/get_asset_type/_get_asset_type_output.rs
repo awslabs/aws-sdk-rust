@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetAssetTypeOutput {
+pub struct GetAssetTypeOutput  {
     /// <p>The ID of the Amazon DataZone domain in which the asset type exists.</p>
     pub domain_id: ::std::string::String,
     /// <p>The name of the asset type.</p>
@@ -12,7 +12,7 @@ pub struct GetAssetTypeOutput {
     /// <p>The description of the asset type.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The metadata forms attached to the asset type.</p>
-    pub forms_output: ::std::collections::HashMap<::std::string::String, crate::types::FormEntryOutput>,
+    pub forms_output: ::std::collections::HashMap::<::std::string::String, crate::types::FormEntryOutput>,
     /// <p>The ID of the Amazon DataZone project that owns the asset type.</p>
     pub owning_project_id: ::std::string::String,
     /// <p>The ID of the Amazon DataZone domain in which the asset type was originally created.</p>
@@ -29,61 +29,57 @@ pub struct GetAssetTypeOutput {
     pub updated_by: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetAssetTypeOutput {
+impl  GetAssetTypeOutput  {
     /// <p>The ID of the Amazon DataZone domain in which the asset type exists.</p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> & str {
+        use std::ops::Deref; self.domain_id.deref()
     }
     /// <p>The name of the asset type.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The revision of the asset type.</p>
-    pub fn revision(&self) -> &str {
-        use std::ops::Deref;
-        self.revision.deref()
+    pub fn revision(&self) -> & str {
+        use std::ops::Deref; self.revision.deref()
     }
     /// <p>The description of the asset type.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The metadata forms attached to the asset type.</p>
-    pub fn forms_output(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::FormEntryOutput> {
+    pub fn forms_output(&self) -> & ::std::collections::HashMap::<::std::string::String, crate::types::FormEntryOutput> {
         &self.forms_output
     }
     /// <p>The ID of the Amazon DataZone project that owns the asset type.</p>
-    pub fn owning_project_id(&self) -> &str {
-        use std::ops::Deref;
-        self.owning_project_id.deref()
+    pub fn owning_project_id(&self) -> & str {
+        use std::ops::Deref; self.owning_project_id.deref()
     }
     /// <p>The ID of the Amazon DataZone domain in which the asset type was originally created.</p>
-    pub fn origin_domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn origin_domain_id(&self) -> ::std::option::Option<& str> {
         self.origin_domain_id.as_deref()
     }
     /// <p>The ID of the Amazon DataZone project in which the asset type was originally created.</p>
-    pub fn origin_project_id(&self) -> ::std::option::Option<&str> {
+    pub fn origin_project_id(&self) -> ::std::option::Option<& str> {
         self.origin_project_id.as_deref()
     }
     /// <p>The timestamp of when the asset type was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Amazon DataZone user who created the asset type.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&str> {
+    pub fn created_by(&self) -> ::std::option::Option<& str> {
         self.created_by.as_deref()
     }
     /// <p>The timestamp of when the asset type was updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The Amazon DataZone user that updated the asset type.</p>
-    pub fn updated_by(&self) -> ::std::option::Option<&str> {
+    pub fn updated_by(&self) -> ::std::option::Option<& str> {
         self.updated_by.as_deref()
     }
 }
-impl ::std::fmt::Debug for GetAssetTypeOutput {
+impl  ::std::fmt::Debug for GetAssetTypeOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetAssetTypeOutput");
         formatter.field("domain_id", &self.domain_id);
@@ -103,10 +99,10 @@ impl ::std::fmt::Debug for GetAssetTypeOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetAssetTypeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetAssetTypeOutput {
     /// Creates a new builder-style object to manufacture [`GetAssetTypeOutput`](crate::operation::get_asset_type::GetAssetTypeOutput).
     pub fn builder() -> crate::operation::get_asset_type::builders::GetAssetTypeOutputBuilder {
@@ -122,7 +118,7 @@ pub struct GetAssetTypeOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) revision: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) forms_output: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FormEntryOutput>>,
+    pub(crate) forms_output: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::FormEntryOutput>>,
     pub(crate) owning_project_id: ::std::option::Option<::std::string::String>,
     pub(crate) origin_domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) origin_project_id: ::std::option::Option<::std::string::String>,
@@ -141,8 +137,7 @@ impl GetAssetTypeOutputBuilder {
     }
     /// <p>The ID of the Amazon DataZone domain in which the asset type exists.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The ID of the Amazon DataZone domain in which the asset type exists.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,8 +151,7 @@ impl GetAssetTypeOutputBuilder {
     }
     /// <p>The name of the asset type.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the asset type.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,8 +165,7 @@ impl GetAssetTypeOutputBuilder {
     }
     /// <p>The revision of the asset type.</p>
     pub fn set_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision = input;
-        self
+        self.revision = input; self
     }
     /// <p>The revision of the asset type.</p>
     pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
@@ -185,8 +178,7 @@ impl GetAssetTypeOutputBuilder {
     }
     /// <p>The description of the asset type.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the asset type.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -199,20 +191,16 @@ impl GetAssetTypeOutputBuilder {
     /// <p>The metadata forms attached to the asset type.</p>
     pub fn forms_output(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::FormEntryOutput) -> Self {
         let mut hash_map = self.forms_output.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.forms_output = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.forms_output = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The metadata forms attached to the asset type.</p>
-    pub fn set_forms_output(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FormEntryOutput>>,
-    ) -> Self {
-        self.forms_output = input;
-        self
+    pub fn set_forms_output(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::FormEntryOutput>>) -> Self {
+        self.forms_output = input; self
     }
     /// <p>The metadata forms attached to the asset type.</p>
-    pub fn get_forms_output(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FormEntryOutput>> {
+    pub fn get_forms_output(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::FormEntryOutput>> {
         &self.forms_output
     }
     /// <p>The ID of the Amazon DataZone project that owns the asset type.</p>
@@ -223,8 +211,7 @@ impl GetAssetTypeOutputBuilder {
     }
     /// <p>The ID of the Amazon DataZone project that owns the asset type.</p>
     pub fn set_owning_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owning_project_id = input;
-        self
+        self.owning_project_id = input; self
     }
     /// <p>The ID of the Amazon DataZone project that owns the asset type.</p>
     pub fn get_owning_project_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -237,8 +224,7 @@ impl GetAssetTypeOutputBuilder {
     }
     /// <p>The ID of the Amazon DataZone domain in which the asset type was originally created.</p>
     pub fn set_origin_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.origin_domain_id = input;
-        self
+        self.origin_domain_id = input; self
     }
     /// <p>The ID of the Amazon DataZone domain in which the asset type was originally created.</p>
     pub fn get_origin_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -251,8 +237,7 @@ impl GetAssetTypeOutputBuilder {
     }
     /// <p>The ID of the Amazon DataZone project in which the asset type was originally created.</p>
     pub fn set_origin_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.origin_project_id = input;
-        self
+        self.origin_project_id = input; self
     }
     /// <p>The ID of the Amazon DataZone project in which the asset type was originally created.</p>
     pub fn get_origin_project_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -265,8 +250,7 @@ impl GetAssetTypeOutputBuilder {
     }
     /// <p>The timestamp of when the asset type was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp of when the asset type was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -279,8 +263,7 @@ impl GetAssetTypeOutputBuilder {
     }
     /// <p>The Amazon DataZone user who created the asset type.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>The Amazon DataZone user who created the asset type.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -293,8 +276,7 @@ impl GetAssetTypeOutputBuilder {
     }
     /// <p>The timestamp of when the asset type was updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The timestamp of when the asset type was updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -307,22 +289,21 @@ impl GetAssetTypeOutputBuilder {
     }
     /// <p>The Amazon DataZone user that updated the asset type.</p>
     pub fn set_updated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.updated_by = input;
-        self
+        self.updated_by = input; self
     }
     /// <p>The Amazon DataZone user that updated the asset type.</p>
     pub fn get_updated_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.updated_by
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetAssetTypeOutput`](crate::operation::get_asset_type::GetAssetTypeOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`domain_id`](crate::operation::get_asset_type::builders::GetAssetTypeOutputBuilder::domain_id)
@@ -330,49 +311,51 @@ impl GetAssetTypeOutputBuilder {
     /// - [`revision`](crate::operation::get_asset_type::builders::GetAssetTypeOutputBuilder::revision)
     /// - [`forms_output`](crate::operation::get_asset_type::builders::GetAssetTypeOutputBuilder::forms_output)
     /// - [`owning_project_id`](crate::operation::get_asset_type::builders::GetAssetTypeOutputBuilder::owning_project_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_asset_type::GetAssetTypeOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_asset_type::GetAssetTypeOutput {
-            domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain_id",
-                    "domain_id was not specified but it is required when building GetAssetTypeOutput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building GetAssetTypeOutput",
-                )
-            })?,
-            revision: self.revision.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "revision",
-                    "revision was not specified but it is required when building GetAssetTypeOutput",
-                )
-            })?,
-            description: self.description,
-            forms_output: self.forms_output.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "forms_output",
-                    "forms_output was not specified but it is required when building GetAssetTypeOutput",
-                )
-            })?,
-            owning_project_id: self.owning_project_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "owning_project_id",
-                    "owning_project_id was not specified but it is required when building GetAssetTypeOutput",
-                )
-            })?,
-            origin_domain_id: self.origin_domain_id,
-            origin_project_id: self.origin_project_id,
-            created_at: self.created_at,
-            created_by: self.created_by,
-            updated_at: self.updated_at,
-            updated_by: self.updated_by,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_asset_type::GetAssetTypeOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_asset_type::GetAssetTypeOutput {
+                domain_id: self.domain_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain_id", "domain_id was not specified but it is required when building GetAssetTypeOutput")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building GetAssetTypeOutput")
+                    )?
+                ,
+                revision: self.revision
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("revision", "revision was not specified but it is required when building GetAssetTypeOutput")
+                    )?
+                ,
+                description: self.description
+                ,
+                forms_output: self.forms_output
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("forms_output", "forms_output was not specified but it is required when building GetAssetTypeOutput")
+                    )?
+                ,
+                owning_project_id: self.owning_project_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("owning_project_id", "owning_project_id was not specified but it is required when building GetAssetTypeOutput")
+                    )?
+                ,
+                origin_domain_id: self.origin_domain_id
+                ,
+                origin_project_id: self.origin_project_id
+                ,
+                created_at: self.created_at
+                ,
+                created_by: self.created_by
+                ,
+                updated_at: self.updated_at
+                ,
+                updated_by: self.updated_by
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for GetAssetTypeOutputBuilder {
@@ -394,3 +377,4 @@ impl ::std::fmt::Debug for GetAssetTypeOutputBuilder {
         formatter.finish()
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Represents the output of a <code>DetachFromIndex</code> response operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDetachFromIndexResponse {
+pub struct BatchDetachFromIndexResponse  {
     /// <p>The <code>ObjectIdentifier</code> of the object that was detached from the index.</p>
     pub detached_object_identifier: ::std::option::Option<::std::string::String>,
 }
-impl BatchDetachFromIndexResponse {
+impl  BatchDetachFromIndexResponse  {
     /// <p>The <code>ObjectIdentifier</code> of the object that was detached from the index.</p>
-    pub fn detached_object_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn detached_object_identifier(&self) -> ::std::option::Option<& str> {
         self.detached_object_identifier.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl BatchDetachFromIndexResponseBuilder {
     }
     /// <p>The <code>ObjectIdentifier</code> of the object that was detached from the index.</p>
     pub fn set_detached_object_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detached_object_identifier = input;
-        self
+        self.detached_object_identifier = input; self
     }
     /// <p>The <code>ObjectIdentifier</code> of the object that was detached from the index.</p>
     pub fn get_detached_object_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl BatchDetachFromIndexResponseBuilder {
     /// Consumes the builder and constructs a [`BatchDetachFromIndexResponse`](crate::types::BatchDetachFromIndexResponse).
     pub fn build(self) -> crate::types::BatchDetachFromIndexResponse {
         crate::types::BatchDetachFromIndexResponse {
-            detached_object_identifier: self.detached_object_identifier,
+            detached_object_identifier: self.detached_object_identifier
+            ,
         }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>The type of monitoring that’s turned on for an Amazon EC2 instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2InstanceMonitoringDetails {
+pub struct AwsEc2InstanceMonitoringDetails  {
     /// <p>Indicates whether detailed monitoring is turned on. Otherwise, basic monitoring is turned on.</p>
     pub state: ::std::option::Option<::std::string::String>,
 }
-impl AwsEc2InstanceMonitoringDetails {
+impl  AwsEc2InstanceMonitoringDetails  {
     /// <p>Indicates whether detailed monitoring is turned on. Otherwise, basic monitoring is turned on.</p>
-    pub fn state(&self) -> ::std::option::Option<&str> {
+    pub fn state(&self) -> ::std::option::Option<& str> {
         self.state.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AwsEc2InstanceMonitoringDetailsBuilder {
     }
     /// <p>Indicates whether detailed monitoring is turned on. Otherwise, basic monitoring is turned on.</p>
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Indicates whether detailed monitoring is turned on. Otherwise, basic monitoring is turned on.</p>
     pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl AwsEc2InstanceMonitoringDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`AwsEc2InstanceMonitoringDetails`](crate::types::AwsEc2InstanceMonitoringDetails).
     pub fn build(self) -> crate::types::AwsEc2InstanceMonitoringDetails {
-        crate::types::AwsEc2InstanceMonitoringDetails { state: self.state }
+        crate::types::AwsEc2InstanceMonitoringDetails {
+            state: self.state
+            ,
+        }
     }
 }
+

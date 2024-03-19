@@ -3,7 +3,7 @@
 /// <p>An object representing a container instance or task attachment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Attachment {
+pub struct Attachment  {
     /// <p>The unique identifier for the attachment.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>, <code>Service Connect</code>, and <code>AmazonElasticBlockStorage</code>.</p>
@@ -14,29 +14,30 @@ pub struct Attachment {
     /// <p>For elastic network interfaces, this includes the network interface ID, the MAC address, the subnet ID, and the private IPv4 address.</p>
     /// <p>For Service Connect services, this includes <code>portName</code>, <code>clientAliases</code>, <code>discoveryName</code>, and <code>ingressPortOverride</code>.</p>
     /// <p>For elastic block storage, this includes <code>roleArn</code>, <code>encrypted</code>, <code>filesystemType</code>, <code>iops</code>, <code>kmsKeyId</code>, <code>sizeInGiB</code>, <code>snapshotId</code>, <code>tagSpecifications</code>, <code>throughput</code>, and <code>volumeType</code>.</p>
-    pub details: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>,
+    pub details: ::std::option::Option<::std::vec::Vec::<crate::types::KeyValuePair>>,
 }
-impl Attachment {
+impl  Attachment  {
     /// <p>The unique identifier for the attachment.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>, <code>Service Connect</code>, and <code>AmazonElasticBlockStorage</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The status of the attachment. Valid values are <code>PRECREATED</code>, <code>CREATED</code>, <code>ATTACHING</code>, <code>ATTACHED</code>, <code>DETACHING</code>, <code>DETACHED</code>, <code>DELETED</code>, and <code>FAILED</code>.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>Details of the attachment.</p>
     /// <p>For elastic network interfaces, this includes the network interface ID, the MAC address, the subnet ID, and the private IPv4 address.</p>
     /// <p>For Service Connect services, this includes <code>portName</code>, <code>clientAliases</code>, <code>discoveryName</code>, and <code>ingressPortOverride</code>.</p>
     /// <p>For elastic block storage, this includes <code>roleArn</code>, <code>encrypted</code>, <code>filesystemType</code>, <code>iops</code>, <code>kmsKeyId</code>, <code>sizeInGiB</code>, <code>snapshotId</code>, <code>tagSpecifications</code>, <code>throughput</code>, and <code>volumeType</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.details.is_none()`.
-    pub fn details(&self) -> &[crate::types::KeyValuePair] {
-        self.details.as_deref().unwrap_or_default()
+    pub fn details(&self) -> & [crate::types::KeyValuePair] {
+        self.details.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Attachment {
@@ -53,7 +54,7 @@ pub struct AttachmentBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
-    pub(crate) details: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>,
+    pub(crate) details: ::std::option::Option<::std::vec::Vec::<crate::types::KeyValuePair>>,
 }
 impl AttachmentBuilder {
     /// <p>The unique identifier for the attachment.</p>
@@ -63,8 +64,7 @@ impl AttachmentBuilder {
     }
     /// <p>The unique identifier for the attachment.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier for the attachment.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +77,7 @@ impl AttachmentBuilder {
     }
     /// <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>, <code>Service Connect</code>, and <code>AmazonElasticBlockStorage</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>, <code>Service Connect</code>, and <code>AmazonElasticBlockStorage</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl AttachmentBuilder {
     }
     /// <p>The status of the attachment. Valid values are <code>PRECREATED</code>, <code>CREATED</code>, <code>ATTACHING</code>, <code>ATTACHED</code>, <code>DETACHING</code>, <code>DETACHED</code>, <code>DELETED</code>, and <code>FAILED</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the attachment. Valid values are <code>PRECREATED</code>, <code>CREATED</code>, <code>ATTACHING</code>, <code>ATTACHED</code>, <code>DETACHING</code>, <code>DETACHED</code>, <code>DELETED</code>, and <code>FAILED</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,32 +106,36 @@ impl AttachmentBuilder {
     /// <p>For elastic block storage, this includes <code>roleArn</code>, <code>encrypted</code>, <code>filesystemType</code>, <code>iops</code>, <code>kmsKeyId</code>, <code>sizeInGiB</code>, <code>snapshotId</code>, <code>tagSpecifications</code>, <code>throughput</code>, and <code>volumeType</code>.</p>
     pub fn details(mut self, input: crate::types::KeyValuePair) -> Self {
         let mut v = self.details.unwrap_or_default();
-        v.push(input);
-        self.details = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.details = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details of the attachment.</p>
     /// <p>For elastic network interfaces, this includes the network interface ID, the MAC address, the subnet ID, and the private IPv4 address.</p>
     /// <p>For Service Connect services, this includes <code>portName</code>, <code>clientAliases</code>, <code>discoveryName</code>, and <code>ingressPortOverride</code>.</p>
     /// <p>For elastic block storage, this includes <code>roleArn</code>, <code>encrypted</code>, <code>filesystemType</code>, <code>iops</code>, <code>kmsKeyId</code>, <code>sizeInGiB</code>, <code>snapshotId</code>, <code>tagSpecifications</code>, <code>throughput</code>, and <code>volumeType</code>.</p>
-    pub fn set_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>) -> Self {
-        self.details = input;
-        self
+    pub fn set_details(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KeyValuePair>>) -> Self {
+        self.details = input; self
     }
     /// <p>Details of the attachment.</p>
     /// <p>For elastic network interfaces, this includes the network interface ID, the MAC address, the subnet ID, and the private IPv4 address.</p>
     /// <p>For Service Connect services, this includes <code>portName</code>, <code>clientAliases</code>, <code>discoveryName</code>, and <code>ingressPortOverride</code>.</p>
     /// <p>For elastic block storage, this includes <code>roleArn</code>, <code>encrypted</code>, <code>filesystemType</code>, <code>iops</code>, <code>kmsKeyId</code>, <code>sizeInGiB</code>, <code>snapshotId</code>, <code>tagSpecifications</code>, <code>throughput</code>, and <code>volumeType</code>.</p>
-    pub fn get_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>> {
+    pub fn get_details(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KeyValuePair>> {
         &self.details
     }
     /// Consumes the builder and constructs a [`Attachment`](crate::types::Attachment).
     pub fn build(self) -> crate::types::Attachment {
         crate::types::Attachment {
-            id: self.id,
-            r#type: self.r#type,
-            status: self.status,
-            details: self.details,
+            id: self.id
+            ,
+            r#type: self.r#type
+            ,
+            status: self.status
+            ,
+            details: self.details
+            ,
         }
     }
 }
+

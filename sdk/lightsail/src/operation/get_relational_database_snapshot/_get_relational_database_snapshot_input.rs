@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRelationalDatabaseSnapshotInput {
+pub struct GetRelationalDatabaseSnapshotInput  {
     /// <p>The name of the database snapshot for which to get information.</p>
     pub relational_database_snapshot_name: ::std::option::Option<::std::string::String>,
 }
-impl GetRelationalDatabaseSnapshotInput {
+impl  GetRelationalDatabaseSnapshotInput  {
     /// <p>The name of the database snapshot for which to get information.</p>
-    pub fn relational_database_snapshot_name(&self) -> ::std::option::Option<&str> {
+    pub fn relational_database_snapshot_name(&self) -> ::std::option::Option<& str> {
         self.relational_database_snapshot_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetRelationalDatabaseSnapshotInputBuilder {
     }
     /// <p>The name of the database snapshot for which to get information.</p>
     pub fn set_relational_database_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.relational_database_snapshot_name = input;
-        self
+        self.relational_database_snapshot_name = input; self
     }
     /// <p>The name of the database snapshot for which to get information.</p>
     pub fn get_relational_database_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.relational_database_snapshot_name
     }
     /// Consumes the builder and constructs a [`GetRelationalDatabaseSnapshotInput`](crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotInput {
-            relational_database_snapshot_name: self.relational_database_snapshot_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotInput {
+                relational_database_snapshot_name: self.relational_database_snapshot_name
+                ,
+            }
+        )
     }
 }
+

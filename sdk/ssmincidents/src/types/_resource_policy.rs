@@ -3,7 +3,7 @@
 /// <p>The resource policy that allows Incident Manager to perform actions on resources on your behalf.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourcePolicy {
+pub struct ResourcePolicy  {
     /// <p>The JSON blob that describes the policy.</p>
     pub policy_document: ::std::string::String,
     /// <p>The ID of the resource policy.</p>
@@ -11,21 +11,18 @@ pub struct ResourcePolicy {
     /// <p>The Amazon Web Services Region that policy allows resources to be used in.</p>
     pub ram_resource_share_region: ::std::string::String,
 }
-impl ResourcePolicy {
+impl  ResourcePolicy  {
     /// <p>The JSON blob that describes the policy.</p>
-    pub fn policy_document(&self) -> &str {
-        use std::ops::Deref;
-        self.policy_document.deref()
+    pub fn policy_document(&self) -> & str {
+        use std::ops::Deref; self.policy_document.deref()
     }
     /// <p>The ID of the resource policy.</p>
-    pub fn policy_id(&self) -> &str {
-        use std::ops::Deref;
-        self.policy_id.deref()
+    pub fn policy_id(&self) -> & str {
+        use std::ops::Deref; self.policy_id.deref()
     }
     /// <p>The Amazon Web Services Region that policy allows resources to be used in.</p>
-    pub fn ram_resource_share_region(&self) -> &str {
-        use std::ops::Deref;
-        self.ram_resource_share_region.deref()
+    pub fn ram_resource_share_region(&self) -> & str {
+        use std::ops::Deref; self.ram_resource_share_region.deref()
     }
 }
 impl ResourcePolicy {
@@ -52,8 +49,7 @@ impl ResourcePolicyBuilder {
     }
     /// <p>The JSON blob that describes the policy.</p>
     pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_document = input;
-        self
+        self.policy_document = input; self
     }
     /// <p>The JSON blob that describes the policy.</p>
     pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +63,7 @@ impl ResourcePolicyBuilder {
     }
     /// <p>The ID of the resource policy.</p>
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_id = input;
-        self
+        self.policy_id = input; self
     }
     /// <p>The ID of the resource policy.</p>
     pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +77,7 @@ impl ResourcePolicyBuilder {
     }
     /// <p>The Amazon Web Services Region that policy allows resources to be used in.</p>
     pub fn set_ram_resource_share_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ram_resource_share_region = input;
-        self
+        self.ram_resource_share_region = input; self
     }
     /// <p>The Amazon Web Services Region that policy allows resources to be used in.</p>
     pub fn get_ram_resource_share_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,25 +89,25 @@ impl ResourcePolicyBuilder {
     /// - [`policy_id`](crate::types::builders::ResourcePolicyBuilder::policy_id)
     /// - [`ram_resource_share_region`](crate::types::builders::ResourcePolicyBuilder::ram_resource_share_region)
     pub fn build(self) -> ::std::result::Result<crate::types::ResourcePolicy, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResourcePolicy {
-            policy_document: self.policy_document.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy_document",
-                    "policy_document was not specified but it is required when building ResourcePolicy",
-                )
-            })?,
-            policy_id: self.policy_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy_id",
-                    "policy_id was not specified but it is required when building ResourcePolicy",
-                )
-            })?,
-            ram_resource_share_region: self.ram_resource_share_region.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ram_resource_share_region",
-                    "ram_resource_share_region was not specified but it is required when building ResourcePolicy",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResourcePolicy {
+                policy_document: self.policy_document
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy_document", "policy_document was not specified but it is required when building ResourcePolicy")
+                    )?
+                ,
+                policy_id: self.policy_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy_id", "policy_id was not specified but it is required when building ResourcePolicy")
+                    )?
+                ,
+                ram_resource_share_region: self.ram_resource_share_region
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ram_resource_share_region", "ram_resource_share_region was not specified but it is required when building ResourcePolicy")
+                    )?
+                ,
+            }
+        )
     }
 }
+

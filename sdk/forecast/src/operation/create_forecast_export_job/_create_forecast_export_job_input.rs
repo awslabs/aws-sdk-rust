@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateForecastExportJobInput {
+pub struct CreateForecastExportJobInput  {
     /// <p>The name for the forecast export job.</p>
     pub forecast_export_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the forecast that you want to export.</p>
@@ -28,22 +28,22 @@ pub struct CreateForecastExportJobInput {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The format of the exported data, CSV or PARQUET. The default value is CSV.</p>
     pub format: ::std::option::Option<::std::string::String>,
 }
-impl CreateForecastExportJobInput {
+impl  CreateForecastExportJobInput  {
     /// <p>The name for the forecast export job.</p>
-    pub fn forecast_export_job_name(&self) -> ::std::option::Option<&str> {
+    pub fn forecast_export_job_name(&self) -> ::std::option::Option<& str> {
         self.forecast_export_job_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the forecast that you want to export.</p>
-    pub fn forecast_arn(&self) -> ::std::option::Option<&str> {
+    pub fn forecast_arn(&self) -> ::std::option::Option<& str> {
         self.forecast_arn.as_deref()
     }
     /// <p>The location where you want to save the forecast and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
     /// <p>If encryption is used, <code>Destination</code> must include an Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
-    pub fn destination(&self) -> ::std::option::Option<&crate::types::DataDestination> {
+    pub fn destination(&self) -> ::std::option::Option<& crate::types::DataDestination> {
         self.destination.as_ref()
     }
     /// <p>The optional metadata that you apply to the forecast export job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
@@ -64,13 +64,14 @@ impl CreateForecastExportJobInput {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The format of the exported data, CSV or PARQUET. The default value is CSV.</p>
-    pub fn format(&self) -> ::std::option::Option<&str> {
+    pub fn format(&self) -> ::std::option::Option<& str> {
         self.format.as_deref()
     }
 }
@@ -88,7 +89,7 @@ pub struct CreateForecastExportJobInputBuilder {
     pub(crate) forecast_export_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) forecast_arn: ::std::option::Option<::std::string::String>,
     pub(crate) destination: ::std::option::Option<crate::types::DataDestination>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) format: ::std::option::Option<::std::string::String>,
 }
 impl CreateForecastExportJobInputBuilder {
@@ -100,8 +101,7 @@ impl CreateForecastExportJobInputBuilder {
     }
     /// <p>The name for the forecast export job.</p>
     pub fn set_forecast_export_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.forecast_export_job_name = input;
-        self
+        self.forecast_export_job_name = input; self
     }
     /// <p>The name for the forecast export job.</p>
     pub fn get_forecast_export_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +115,7 @@ impl CreateForecastExportJobInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the forecast that you want to export.</p>
     pub fn set_forecast_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.forecast_arn = input;
-        self
+        self.forecast_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the forecast that you want to export.</p>
     pub fn get_forecast_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +131,7 @@ impl CreateForecastExportJobInputBuilder {
     /// <p>The location where you want to save the forecast and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
     /// <p>If encryption is used, <code>Destination</code> must include an Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<crate::types::DataDestination>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>The location where you want to save the forecast and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
     /// <p>If encryption is used, <code>Destination</code> must include an Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
@@ -164,9 +162,9 @@ impl CreateForecastExportJobInputBuilder {
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The optional metadata that you apply to the forecast export job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -186,9 +184,8 @@ impl CreateForecastExportJobInputBuilder {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The optional metadata that you apply to the forecast export job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -208,7 +205,7 @@ impl CreateForecastExportJobInputBuilder {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The format of the exported data, CSV or PARQUET. The default value is CSV.</p>
@@ -218,26 +215,28 @@ impl CreateForecastExportJobInputBuilder {
     }
     /// <p>The format of the exported data, CSV or PARQUET. The default value is CSV.</p>
     pub fn set_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>The format of the exported data, CSV or PARQUET. The default value is CSV.</p>
     pub fn get_format(&self) -> &::std::option::Option<::std::string::String> {
         &self.format
     }
     /// Consumes the builder and constructs a [`CreateForecastExportJobInput`](crate::operation::create_forecast_export_job::CreateForecastExportJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_forecast_export_job::CreateForecastExportJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_forecast_export_job::CreateForecastExportJobInput {
-            forecast_export_job_name: self.forecast_export_job_name,
-            forecast_arn: self.forecast_arn,
-            destination: self.destination,
-            tags: self.tags,
-            format: self.format,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_forecast_export_job::CreateForecastExportJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_forecast_export_job::CreateForecastExportJobInput {
+                forecast_export_job_name: self.forecast_export_job_name
+                ,
+                forecast_arn: self.forecast_arn
+                ,
+                destination: self.destination
+                ,
+                tags: self.tags
+                ,
+                format: self.format
+                ,
+            }
+        )
     }
 }
+

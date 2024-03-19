@@ -5,54 +5,50 @@ pub use crate::operation::describe_bot_resource_generation::_describe_bot_resour
 
 impl DescribeBotResourceGenerationInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_bot_resource_generation::DescribeBotResourceGenerationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_bot_resource_generation::DescribeBotResourceGenerationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_bot_resource_generation();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_bot_resource_generation::DescribeBotResourceGenerationOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_bot_resource_generation::DescribeBotResourceGenerationError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_bot_resource_generation();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeBotResourceGeneration`.
-///
+/// 
 /// <p>Returns information about a request to generate a bot through natural language description, made through the <code>StartBotResource</code> API. Use the <code>generatedBotLocaleUrl</code> to retrieve the Amazon S3 object containing the bot locale configuration. You can then modify and import this configuration.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeBotResourceGenerationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_bot_resource_generation::builders::DescribeBotResourceGenerationInputBuilder,
+                    inner: crate::operation::describe_bot_resource_generation::builders::DescribeBotResourceGenerationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_bot_resource_generation::DescribeBotResourceGenerationOutput,
-        crate::operation::describe_bot_resource_generation::DescribeBotResourceGenerationError,
-    > for DescribeBotResourceGenerationFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_bot_resource_generation::DescribeBotResourceGenerationOutput,
-            crate::operation::describe_bot_resource_generation::DescribeBotResourceGenerationError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_bot_resource_generation::DescribeBotResourceGenerationOutput,
+                    crate::operation::describe_bot_resource_generation::DescribeBotResourceGenerationError,
+                > for DescribeBotResourceGenerationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_bot_resource_generation::DescribeBotResourceGenerationOutput,
+                        crate::operation::describe_bot_resource_generation::DescribeBotResourceGenerationError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeBotResourceGenerationFluentBuilder {
     /// Creates a new `DescribeBotResourceGeneration`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl DescribeBotResourceGenerationFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_bot_resource_generation::DescribeBotResourceGenerationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_bot_resource_generation::DescribeBotResourceGenerationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_bot_resource_generation::DescribeBotResourceGeneration::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_bot_resource_generation::DescribeBotResourceGeneration::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_bot_resource_generation::DescribeBotResourceGenerationOutput,
-        crate::operation::describe_bot_resource_generation::DescribeBotResourceGenerationError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_bot_resource_generation::DescribeBotResourceGenerationOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_bot_resource_generation::DescribeBotResourceGenerationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_bot_resource_generation::DescribeBotResourceGeneration::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_bot_resource_generation::DescribeBotResourceGeneration::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_bot_resource_generation::DescribeBotResourceGenerationOutput, crate::operation::describe_bot_resource_generation::DescribeBotResourceGenerationError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The unique identifier of the bot for which to return the generation details.</p>
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_id(input.into());
@@ -165,3 +152,4 @@ impl DescribeBotResourceGenerationFluentBuilder {
         self.inner.get_generation_id()
     }
 }
+

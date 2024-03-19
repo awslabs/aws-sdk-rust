@@ -3,13 +3,13 @@
 /// <p>Results message indicating whether a CNAME is available.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CheckDnsAvailabilityInput {
+pub struct CheckDnsAvailabilityInput  {
     /// <p>The prefix used when this CNAME is reserved.</p>
     pub cname_prefix: ::std::option::Option<::std::string::String>,
 }
-impl CheckDnsAvailabilityInput {
+impl  CheckDnsAvailabilityInput  {
     /// <p>The prefix used when this CNAME is reserved.</p>
-    pub fn cname_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn cname_prefix(&self) -> ::std::option::Option<& str> {
         self.cname_prefix.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl CheckDnsAvailabilityInputBuilder {
     }
     /// <p>The prefix used when this CNAME is reserved.</p>
     pub fn set_cname_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cname_prefix = input;
-        self
+        self.cname_prefix = input; self
     }
     /// <p>The prefix used when this CNAME is reserved.</p>
     pub fn get_cname_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.cname_prefix
     }
     /// Consumes the builder and constructs a [`CheckDnsAvailabilityInput`](crate::operation::check_dns_availability::CheckDnsAvailabilityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::check_dns_availability::CheckDnsAvailabilityInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::check_dns_availability::CheckDnsAvailabilityInput {
-            cname_prefix: self.cname_prefix,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::check_dns_availability::CheckDnsAvailabilityInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::check_dns_availability::CheckDnsAvailabilityInput {
+                cname_prefix: self.cname_prefix
+                ,
+            }
+        )
     }
 }
+

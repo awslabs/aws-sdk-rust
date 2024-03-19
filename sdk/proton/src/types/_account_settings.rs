@@ -3,7 +3,7 @@
 /// <p>Proton settings that are used for multiple services in the Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccountSettings {
+pub struct AccountSettings  {
     /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>
     pub pipeline_service_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The linked repository for pipeline provisioning. Required if you have environments configured for self-managed provisioning with services that include pipelines. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
@@ -11,17 +11,17 @@ pub struct AccountSettings {
     /// <p>The Amazon Resource Name (ARN) of the service role that Proton uses for provisioning pipelines. Proton assumes this role for CodeBuild-based provisioning.</p>
     pub pipeline_codebuild_role_arn: ::std::option::Option<::std::string::String>,
 }
-impl AccountSettings {
+impl  AccountSettings  {
     /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>
-    pub fn pipeline_service_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_service_role_arn(&self) -> ::std::option::Option<& str> {
         self.pipeline_service_role_arn.as_deref()
     }
     /// <p>The linked repository for pipeline provisioning. Required if you have environments configured for self-managed provisioning with services that include pipelines. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
-    pub fn pipeline_provisioning_repository(&self) -> ::std::option::Option<&crate::types::RepositoryBranch> {
+    pub fn pipeline_provisioning_repository(&self) -> ::std::option::Option<& crate::types::RepositoryBranch> {
         self.pipeline_provisioning_repository.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service role that Proton uses for provisioning pipelines. Proton assumes this role for CodeBuild-based provisioning.</p>
-    pub fn pipeline_codebuild_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_codebuild_role_arn(&self) -> ::std::option::Option<& str> {
         self.pipeline_codebuild_role_arn.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl AccountSettingsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>
     pub fn set_pipeline_service_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_service_role_arn = input;
-        self
+        self.pipeline_service_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>
     pub fn get_pipeline_service_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl AccountSettingsBuilder {
     }
     /// <p>The linked repository for pipeline provisioning. Required if you have environments configured for self-managed provisioning with services that include pipelines. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
     pub fn set_pipeline_provisioning_repository(mut self, input: ::std::option::Option<crate::types::RepositoryBranch>) -> Self {
-        self.pipeline_provisioning_repository = input;
-        self
+        self.pipeline_provisioning_repository = input; self
     }
     /// <p>The linked repository for pipeline provisioning. Required if you have environments configured for self-managed provisioning with services that include pipelines. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
     pub fn get_pipeline_provisioning_repository(&self) -> &::std::option::Option<crate::types::RepositoryBranch> {
@@ -76,8 +74,7 @@ impl AccountSettingsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the service role that Proton uses for provisioning pipelines. Proton assumes this role for CodeBuild-based provisioning.</p>
     pub fn set_pipeline_codebuild_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_codebuild_role_arn = input;
-        self
+        self.pipeline_codebuild_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the service role that Proton uses for provisioning pipelines. Proton assumes this role for CodeBuild-based provisioning.</p>
     pub fn get_pipeline_codebuild_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl AccountSettingsBuilder {
     /// Consumes the builder and constructs a [`AccountSettings`](crate::types::AccountSettings).
     pub fn build(self) -> crate::types::AccountSettings {
         crate::types::AccountSettings {
-            pipeline_service_role_arn: self.pipeline_service_role_arn,
-            pipeline_provisioning_repository: self.pipeline_provisioning_repository,
-            pipeline_codebuild_role_arn: self.pipeline_codebuild_role_arn,
+            pipeline_service_role_arn: self.pipeline_service_role_arn
+            ,
+            pipeline_provisioning_repository: self.pipeline_provisioning_repository
+            ,
+            pipeline_codebuild_role_arn: self.pipeline_codebuild_role_arn
+            ,
         }
     }
 }
+

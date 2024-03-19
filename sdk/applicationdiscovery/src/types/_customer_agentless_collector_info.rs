@@ -3,7 +3,7 @@
 /// <p>The inventory data for installed Agentless Collector collectors.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomerAgentlessCollectorInfo {
+pub struct CustomerAgentlessCollectorInfo  {
     /// <p>The number of active Agentless Collector collectors.</p>
     pub active_agentless_collectors: i32,
     /// <p>The number of healthy Agentless Collector collectors.</p>
@@ -19,7 +19,7 @@ pub struct CustomerAgentlessCollectorInfo {
     /// <p>The number of unknown Agentless Collector collectors.</p>
     pub unknown_agentless_collectors: i32,
 }
-impl CustomerAgentlessCollectorInfo {
+impl  CustomerAgentlessCollectorInfo  {
     /// <p>The number of active Agentless Collector collectors.</p>
     pub fn active_agentless_collectors(&self) -> i32 {
         self.active_agentless_collectors
@@ -77,8 +77,7 @@ impl CustomerAgentlessCollectorInfoBuilder {
     }
     /// <p>The number of active Agentless Collector collectors.</p>
     pub fn set_active_agentless_collectors(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.active_agentless_collectors = input;
-        self
+        self.active_agentless_collectors = input; self
     }
     /// <p>The number of active Agentless Collector collectors.</p>
     pub fn get_active_agentless_collectors(&self) -> &::std::option::Option<i32> {
@@ -92,8 +91,7 @@ impl CustomerAgentlessCollectorInfoBuilder {
     }
     /// <p>The number of healthy Agentless Collector collectors.</p>
     pub fn set_healthy_agentless_collectors(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.healthy_agentless_collectors = input;
-        self
+        self.healthy_agentless_collectors = input; self
     }
     /// <p>The number of healthy Agentless Collector collectors.</p>
     pub fn get_healthy_agentless_collectors(&self) -> &::std::option::Option<i32> {
@@ -107,8 +105,7 @@ impl CustomerAgentlessCollectorInfoBuilder {
     }
     /// <p>The number of deny-listed Agentless Collector collectors.</p>
     pub fn set_deny_listed_agentless_collectors(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.deny_listed_agentless_collectors = input;
-        self
+        self.deny_listed_agentless_collectors = input; self
     }
     /// <p>The number of deny-listed Agentless Collector collectors.</p>
     pub fn get_deny_listed_agentless_collectors(&self) -> &::std::option::Option<i32> {
@@ -122,8 +119,7 @@ impl CustomerAgentlessCollectorInfoBuilder {
     }
     /// <p>The number of Agentless Collector collectors with <code>SHUTDOWN</code> status.</p>
     pub fn set_shutdown_agentless_collectors(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.shutdown_agentless_collectors = input;
-        self
+        self.shutdown_agentless_collectors = input; self
     }
     /// <p>The number of Agentless Collector collectors with <code>SHUTDOWN</code> status.</p>
     pub fn get_shutdown_agentless_collectors(&self) -> &::std::option::Option<i32> {
@@ -137,8 +133,7 @@ impl CustomerAgentlessCollectorInfoBuilder {
     }
     /// <p>The number of unhealthy Agentless Collector collectors.</p>
     pub fn set_unhealthy_agentless_collectors(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.unhealthy_agentless_collectors = input;
-        self
+        self.unhealthy_agentless_collectors = input; self
     }
     /// <p>The number of unhealthy Agentless Collector collectors.</p>
     pub fn get_unhealthy_agentless_collectors(&self) -> &::std::option::Option<i32> {
@@ -152,8 +147,7 @@ impl CustomerAgentlessCollectorInfoBuilder {
     }
     /// <p>The total number of Agentless Collector collectors.</p>
     pub fn set_total_agentless_collectors(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_agentless_collectors = input;
-        self
+        self.total_agentless_collectors = input; self
     }
     /// <p>The total number of Agentless Collector collectors.</p>
     pub fn get_total_agentless_collectors(&self) -> &::std::option::Option<i32> {
@@ -167,8 +161,7 @@ impl CustomerAgentlessCollectorInfoBuilder {
     }
     /// <p>The number of unknown Agentless Collector collectors.</p>
     pub fn set_unknown_agentless_collectors(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.unknown_agentless_collectors = input;
-        self
+        self.unknown_agentless_collectors = input; self
     }
     /// <p>The number of unknown Agentless Collector collectors.</p>
     pub fn get_unknown_agentless_collectors(&self) -> &::std::option::Option<i32> {
@@ -177,13 +170,28 @@ impl CustomerAgentlessCollectorInfoBuilder {
     /// Consumes the builder and constructs a [`CustomerAgentlessCollectorInfo`](crate::types::CustomerAgentlessCollectorInfo).
     pub fn build(self) -> crate::types::CustomerAgentlessCollectorInfo {
         crate::types::CustomerAgentlessCollectorInfo {
-            active_agentless_collectors: self.active_agentless_collectors.unwrap_or_default(),
-            healthy_agentless_collectors: self.healthy_agentless_collectors.unwrap_or_default(),
-            deny_listed_agentless_collectors: self.deny_listed_agentless_collectors.unwrap_or_default(),
-            shutdown_agentless_collectors: self.shutdown_agentless_collectors.unwrap_or_default(),
-            unhealthy_agentless_collectors: self.unhealthy_agentless_collectors.unwrap_or_default(),
-            total_agentless_collectors: self.total_agentless_collectors.unwrap_or_default(),
-            unknown_agentless_collectors: self.unknown_agentless_collectors.unwrap_or_default(),
+            active_agentless_collectors: self.active_agentless_collectors
+                .unwrap_or_default()
+            ,
+            healthy_agentless_collectors: self.healthy_agentless_collectors
+                .unwrap_or_default()
+            ,
+            deny_listed_agentless_collectors: self.deny_listed_agentless_collectors
+                .unwrap_or_default()
+            ,
+            shutdown_agentless_collectors: self.shutdown_agentless_collectors
+                .unwrap_or_default()
+            ,
+            unhealthy_agentless_collectors: self.unhealthy_agentless_collectors
+                .unwrap_or_default()
+            ,
+            total_agentless_collectors: self.total_agentless_collectors
+                .unwrap_or_default()
+            ,
+            unknown_agentless_collectors: self.unknown_agentless_collectors
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

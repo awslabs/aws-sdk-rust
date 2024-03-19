@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListFunctionsByCodeSigningConfigOutput {
+pub struct ListFunctionsByCodeSigningConfigOutput  {
     /// <p>The pagination token that's included if more results are available.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>The function ARNs.</p>
-    pub function_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub function_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl ListFunctionsByCodeSigningConfigOutput {
+impl  ListFunctionsByCodeSigningConfigOutput  {
     /// <p>The pagination token that's included if more results are available.</p>
-    pub fn next_marker(&self) -> ::std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>The function ARNs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.function_arns.is_none()`.
-    pub fn function_arns(&self) -> &[::std::string::String] {
-        self.function_arns.as_deref().unwrap_or_default()
+    pub fn function_arns(&self) -> & [::std::string::String] {
+        self.function_arns.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListFunctionsByCodeSigningConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListFunctionsByCodeSigningConfigOutput {
     /// Creates a new builder-style object to manufacture [`ListFunctionsByCodeSigningConfigOutput`](crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigOutput).
     pub fn builder() -> crate::operation::list_functions_by_code_signing_config::builders::ListFunctionsByCodeSigningConfigOutputBuilder {
@@ -38,7 +39,7 @@ impl ListFunctionsByCodeSigningConfigOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFunctionsByCodeSigningConfigOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
-    pub(crate) function_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) function_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl ListFunctionsByCodeSigningConfigOutputBuilder {
@@ -49,8 +50,7 @@ impl ListFunctionsByCodeSigningConfigOutputBuilder {
     }
     /// <p>The pagination token that's included if more results are available.</p>
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_marker = input;
-        self
+        self.next_marker = input; self
     }
     /// <p>The pagination token that's included if more results are available.</p>
     pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListFunctionsByCodeSigningConfigOutputBuilder {
     /// <p>The function ARNs.</p>
     pub fn function_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.function_arns.unwrap_or_default();
-        v.push(input.into());
-        self.function_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.function_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The function ARNs.</p>
-    pub fn set_function_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.function_arns = input;
-        self
+    pub fn set_function_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.function_arns = input; self
     }
     /// <p>The function ARNs.</p>
-    pub fn get_function_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_function_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.function_arns
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListFunctionsByCodeSigningConfigOutput`](crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigOutput).
     pub fn build(self) -> crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigOutput {
         crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigOutput {
-            next_marker: self.next_marker,
-            function_arns: self.function_arns,
+            next_marker: self.next_marker
+            ,
+            function_arns: self.function_arns
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

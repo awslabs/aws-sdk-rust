@@ -5,57 +5,51 @@ pub use crate::operation::query_assistant::_query_assistant_input::QueryAssistan
 
 impl QueryAssistantInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::query_assistant::QueryAssistantOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::query_assistant::QueryAssistantError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.query_assistant();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::query_assistant::QueryAssistantOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::query_assistant::QueryAssistantError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.query_assistant();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `QueryAssistant`.
-///
+/// 
 /// <p>Performs a manual search against the specified assistant. To retrieve recommendations for an assistant, use <a href="https://docs.aws.amazon.com/amazon-q-connect/latest/APIReference/API_GetRecommendations.html">GetRecommendations</a>.</p>
-#[deprecated(
-    note = "QueryAssistant API will be discontinued starting June 1, 2024. To receive generative responses after March 1, 2024 you will need to create a new Assistant in the Connect console and integrate the Amazon Q in Connect JavaScript library (amazon-q-connectjs) into your applications."
-)]
+#[deprecated(note = "QueryAssistant API will be discontinued starting June 1, 2024. To receive generative responses after March 1, 2024 you will need to create a new Assistant in the Connect console and integrate the Amazon Q in Connect JavaScript library (amazon-q-connectjs) into your applications.")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct QueryAssistantFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::query_assistant::builders::QueryAssistantInputBuilder,
+                    inner: crate::operation::query_assistant::builders::QueryAssistantInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::query_assistant::QueryAssistantOutput,
-        crate::operation::query_assistant::QueryAssistantError,
-    > for QueryAssistantFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::query_assistant::QueryAssistantOutput,
-            crate::operation::query_assistant::QueryAssistantError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::query_assistant::QueryAssistantOutput,
+                    crate::operation::query_assistant::QueryAssistantError,
+                > for QueryAssistantFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::query_assistant::QueryAssistantOutput,
+                        crate::operation::query_assistant::QueryAssistantError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl QueryAssistantFluentBuilder {
     /// Creates a new `QueryAssistant`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,59 +58,50 @@ impl QueryAssistantFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::query_assistant::QueryAssistantOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::query_assistant::QueryAssistantError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::query_assistant::QueryAssistant::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::query_assistant::QueryAssistant::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::query_assistant::QueryAssistantOutput,
-        crate::operation::query_assistant::QueryAssistantError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::query_assistant::QueryAssistantOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::query_assistant::QueryAssistantError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::query_assistant::QueryAssistant::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::query_assistant::QueryAssistant::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::query_assistant::QueryAssistantOutput, crate::operation::query_assistant::QueryAssistantError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::query_assistant::paginator::QueryAssistantPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::query_assistant::paginator::QueryAssistantPaginator {
-        crate::operation::query_assistant::paginator::QueryAssistantPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::query_assistant::paginator::QueryAssistantPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::query_assistant::paginator::QueryAssistantPaginator {
+                                crate::operation::query_assistant::paginator::QueryAssistantPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The identifier of the Amazon Q assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn assistant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assistant_id(input.into());
@@ -197,12 +182,13 @@ impl QueryAssistantFluentBuilder {
         self
     }
     /// <p>Information about how to query content.</p>
-    pub fn set_query_condition(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QueryCondition>>) -> Self {
+    pub fn set_query_condition(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::QueryCondition>>) -> Self {
         self.inner = self.inner.set_query_condition(input);
         self
     }
     /// <p>Information about how to query content.</p>
-    pub fn get_query_condition(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryCondition>> {
+    pub fn get_query_condition(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::QueryCondition>> {
         self.inner.get_query_condition()
     }
 }
+

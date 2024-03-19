@@ -3,23 +3,22 @@
 /// <p>The result of a <code>DescribeIndexFields</code> request. Contains the index fields configured for the domain specified in the request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeIndexFieldsOutput {
+pub struct DescribeIndexFieldsOutput  {
     /// <p>The index fields configured for the domain.</p>
-    pub index_fields: ::std::vec::Vec<crate::types::IndexFieldStatus>,
+    pub index_fields: ::std::vec::Vec::<crate::types::IndexFieldStatus>,
     _request_id: Option<String>,
 }
-impl DescribeIndexFieldsOutput {
+impl  DescribeIndexFieldsOutput  {
     /// <p>The index fields configured for the domain.</p>
-    pub fn index_fields(&self) -> &[crate::types::IndexFieldStatus] {
-        use std::ops::Deref;
-        self.index_fields.deref()
+    pub fn index_fields(&self) -> & [crate::types::IndexFieldStatus] {
+        use std::ops::Deref; self.index_fields.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeIndexFieldsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeIndexFieldsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIndexFieldsOutput`](crate::operation::describe_index_fields::DescribeIndexFieldsOutput).
     pub fn builder() -> crate::operation::describe_index_fields::builders::DescribeIndexFieldsOutputBuilder {
@@ -31,7 +30,7 @@ impl DescribeIndexFieldsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIndexFieldsOutputBuilder {
-    pub(crate) index_fields: ::std::option::Option<::std::vec::Vec<crate::types::IndexFieldStatus>>,
+    pub(crate) index_fields: ::std::option::Option<::std::vec::Vec::<crate::types::IndexFieldStatus>>,
     _request_id: Option<String>,
 }
 impl DescribeIndexFieldsOutputBuilder {
@@ -42,43 +41,41 @@ impl DescribeIndexFieldsOutputBuilder {
     /// <p>The index fields configured for the domain.</p>
     pub fn index_fields(mut self, input: crate::types::IndexFieldStatus) -> Self {
         let mut v = self.index_fields.unwrap_or_default();
-        v.push(input);
-        self.index_fields = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.index_fields = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The index fields configured for the domain.</p>
-    pub fn set_index_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IndexFieldStatus>>) -> Self {
-        self.index_fields = input;
-        self
+    pub fn set_index_fields(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IndexFieldStatus>>) -> Self {
+        self.index_fields = input; self
     }
     /// <p>The index fields configured for the domain.</p>
-    pub fn get_index_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IndexFieldStatus>> {
+    pub fn get_index_fields(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IndexFieldStatus>> {
         &self.index_fields
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeIndexFieldsOutput`](crate::operation::describe_index_fields::DescribeIndexFieldsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`index_fields`](crate::operation::describe_index_fields::builders::DescribeIndexFieldsOutputBuilder::index_fields)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_index_fields::DescribeIndexFieldsOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_index_fields::DescribeIndexFieldsOutput {
-            index_fields: self.index_fields.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "index_fields",
-                    "index_fields was not specified but it is required when building DescribeIndexFieldsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_index_fields::DescribeIndexFieldsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_index_fields::DescribeIndexFieldsOutput {
+                index_fields: self.index_fields
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("index_fields", "index_fields was not specified but it is required when building DescribeIndexFieldsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

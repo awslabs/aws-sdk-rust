@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutContainerPolicyInput {
+pub struct PutContainerPolicyInput  {
     /// <p>The name of the container.</p>
     pub container_name: ::std::option::Option<::std::string::String>,
     /// <p>The contents of the policy, which includes the following:</p>
@@ -14,9 +14,9 @@ pub struct PutContainerPolicyInput {
     /// </ul>
     pub policy: ::std::option::Option<::std::string::String>,
 }
-impl PutContainerPolicyInput {
+impl  PutContainerPolicyInput  {
     /// <p>The name of the container.</p>
-    pub fn container_name(&self) -> ::std::option::Option<&str> {
+    pub fn container_name(&self) -> ::std::option::Option<& str> {
         self.container_name.as_deref()
     }
     /// <p>The contents of the policy, which includes the following:</p>
@@ -26,7 +26,7 @@ impl PutContainerPolicyInput {
     /// <li>
     /// <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p></li>
     /// </ul>
-    pub fn policy(&self) -> ::std::option::Option<&str> {
+    pub fn policy(&self) -> ::std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
@@ -53,8 +53,7 @@ impl PutContainerPolicyInputBuilder {
     }
     /// <p>The name of the container.</p>
     pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.container_name = input;
-        self
+        self.container_name = input; self
     }
     /// <p>The name of the container.</p>
     pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +79,7 @@ impl PutContainerPolicyInputBuilder {
     /// <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p></li>
     /// </ul>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>The contents of the policy, which includes the following:</p>
     /// <ul>
@@ -94,13 +92,15 @@ impl PutContainerPolicyInputBuilder {
         &self.policy
     }
     /// Consumes the builder and constructs a [`PutContainerPolicyInput`](crate::operation::put_container_policy::PutContainerPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_container_policy::PutContainerPolicyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::put_container_policy::PutContainerPolicyInput {
-            container_name: self.container_name,
-            policy: self.policy,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_container_policy::PutContainerPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_container_policy::PutContainerPolicyInput {
+                container_name: self.container_name
+                ,
+                policy: self.policy
+                ,
+            }
+        )
     }
 }
+

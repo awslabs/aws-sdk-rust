@@ -3,7 +3,7 @@
 /// <p>Details about a direct-query data source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataSourceDetails {
+pub struct DataSourceDetails  {
     /// <p>The type of data source.</p>
     pub data_source_type: ::std::option::Option<crate::types::DataSourceType>,
     /// <p>The name of the data source.</p>
@@ -11,17 +11,17 @@ pub struct DataSourceDetails {
     /// <p>A description of the data source.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl DataSourceDetails {
+impl  DataSourceDetails  {
     /// <p>The type of data source.</p>
-    pub fn data_source_type(&self) -> ::std::option::Option<&crate::types::DataSourceType> {
+    pub fn data_source_type(&self) -> ::std::option::Option<& crate::types::DataSourceType> {
         self.data_source_type.as_ref()
     }
     /// <p>The name of the data source.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the data source.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DataSourceDetailsBuilder {
     }
     /// <p>The type of data source.</p>
     pub fn set_data_source_type(mut self, input: ::std::option::Option<crate::types::DataSourceType>) -> Self {
-        self.data_source_type = input;
-        self
+        self.data_source_type = input; self
     }
     /// <p>The type of data source.</p>
     pub fn get_data_source_type(&self) -> &::std::option::Option<crate::types::DataSourceType> {
@@ -62,8 +61,7 @@ impl DataSourceDetailsBuilder {
     }
     /// <p>The name of the data source.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the data source.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl DataSourceDetailsBuilder {
     }
     /// <p>A description of the data source.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the data source.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl DataSourceDetailsBuilder {
     /// Consumes the builder and constructs a [`DataSourceDetails`](crate::types::DataSourceDetails).
     pub fn build(self) -> crate::types::DataSourceDetails {
         crate::types::DataSourceDetails {
-            data_source_type: self.data_source_type,
-            name: self.name,
-            description: self.description,
+            data_source_type: self.data_source_type
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Information about an Amazon CloudWatch metric that is analyzed by DevOps Guru. It is one of many analyzed metrics that are used to generate insights.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecommendationRelatedCloudWatchMetricsSourceDetail {
+pub struct RecommendationRelatedCloudWatchMetricsSourceDetail  {
     /// <p>The name of the CloudWatch metric.</p>
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The namespace of the CloudWatch metric. A namespace is a container for CloudWatch metrics.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
 }
-impl RecommendationRelatedCloudWatchMetricsSourceDetail {
+impl  RecommendationRelatedCloudWatchMetricsSourceDetail  {
     /// <p>The name of the CloudWatch metric.</p>
-    pub fn metric_name(&self) -> ::std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The namespace of the CloudWatch metric. A namespace is a container for CloudWatch metrics.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl RecommendationRelatedCloudWatchMetricsSourceDetailBuilder {
     }
     /// <p>The name of the CloudWatch metric.</p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// <p>The name of the CloudWatch metric.</p>
     pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl RecommendationRelatedCloudWatchMetricsSourceDetailBuilder {
     }
     /// <p>The namespace of the CloudWatch metric. A namespace is a container for CloudWatch metrics.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The namespace of the CloudWatch metric. A namespace is a container for CloudWatch metrics.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl RecommendationRelatedCloudWatchMetricsSourceDetailBuilder {
     /// Consumes the builder and constructs a [`RecommendationRelatedCloudWatchMetricsSourceDetail`](crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail).
     pub fn build(self) -> crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail {
         crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail {
-            metric_name: self.metric_name,
-            namespace: self.namespace,
+            metric_name: self.metric_name
+            ,
+            namespace: self.namespace
+            ,
         }
     }
 }
+

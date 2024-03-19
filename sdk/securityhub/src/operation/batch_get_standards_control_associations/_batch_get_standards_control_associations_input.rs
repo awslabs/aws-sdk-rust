@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetStandardsControlAssociationsInput {
+pub struct BatchGetStandardsControlAssociationsInput  {
     /// <p>An array with one or more objects that includes a security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This field is used to query the enablement status of a control in a specified standard. The security control ID or ARN is the same across standards.</p>
-    pub standards_control_association_ids: ::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationId>>,
+    pub standards_control_association_ids: ::std::option::Option<::std::vec::Vec::<crate::types::StandardsControlAssociationId>>,
 }
-impl BatchGetStandardsControlAssociationsInput {
+impl  BatchGetStandardsControlAssociationsInput  {
     /// <p>An array with one or more objects that includes a security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This field is used to query the enablement status of a control in a specified standard. The security control ID or ARN is the same across standards.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.standards_control_association_ids.is_none()`.
-    pub fn standards_control_association_ids(&self) -> &[crate::types::StandardsControlAssociationId] {
-        self.standards_control_association_ids.as_deref().unwrap_or_default()
+    pub fn standards_control_association_ids(&self) -> & [crate::types::StandardsControlAssociationId] {
+        self.standards_control_association_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchGetStandardsControlAssociationsInput {
@@ -25,7 +26,7 @@ impl BatchGetStandardsControlAssociationsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetStandardsControlAssociationsInputBuilder {
-    pub(crate) standards_control_association_ids: ::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationId>>,
+    pub(crate) standards_control_association_ids: ::std::option::Option<::std::vec::Vec::<crate::types::StandardsControlAssociationId>>,
 }
 impl BatchGetStandardsControlAssociationsInputBuilder {
     /// Appends an item to `standards_control_association_ids`.
@@ -35,33 +36,26 @@ impl BatchGetStandardsControlAssociationsInputBuilder {
     /// <p>An array with one or more objects that includes a security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This field is used to query the enablement status of a control in a specified standard. The security control ID or ARN is the same across standards.</p>
     pub fn standards_control_association_ids(mut self, input: crate::types::StandardsControlAssociationId) -> Self {
         let mut v = self.standards_control_association_ids.unwrap_or_default();
-        v.push(input);
-        self.standards_control_association_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.standards_control_association_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array with one or more objects that includes a security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This field is used to query the enablement status of a control in a specified standard. The security control ID or ARN is the same across standards.</p>
-    pub fn set_standards_control_association_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationId>>,
-    ) -> Self {
-        self.standards_control_association_ids = input;
-        self
+    pub fn set_standards_control_association_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StandardsControlAssociationId>>) -> Self {
+        self.standards_control_association_ids = input; self
     }
     /// <p>An array with one or more objects that includes a security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This field is used to query the enablement status of a control in a specified standard. The security control ID or ARN is the same across standards.</p>
-    pub fn get_standards_control_association_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationId>> {
+    pub fn get_standards_control_association_ids(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StandardsControlAssociationId>> {
         &self.standards_control_association_ids
     }
     /// Consumes the builder and constructs a [`BatchGetStandardsControlAssociationsInput`](crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsInput {
-                standards_control_association_ids: self.standards_control_association_ids,
-            },
+                standards_control_association_ids: self.standards_control_association_ids
+                ,
+            }
         )
     }
 }
+

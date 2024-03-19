@@ -4,13 +4,13 @@
 /// <p>Elevation is currently not supported.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Location {
+pub struct Location  {
     /// <p>The latitude.</p>
     pub latitude: f64,
     /// <p>The longitude.</p>
     pub longitude: f64,
 }
-impl Location {
+impl  Location  {
     /// <p>The latitude.</p>
     pub fn latitude(&self) -> f64 {
         self.latitude
@@ -43,8 +43,7 @@ impl LocationBuilder {
     }
     /// <p>The latitude.</p>
     pub fn set_latitude(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.latitude = input;
-        self
+        self.latitude = input; self
     }
     /// <p>The latitude.</p>
     pub fn get_latitude(&self) -> &::std::option::Option<f64> {
@@ -58,8 +57,7 @@ impl LocationBuilder {
     }
     /// <p>The longitude.</p>
     pub fn set_longitude(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.longitude = input;
-        self
+        self.longitude = input; self
     }
     /// <p>The longitude.</p>
     pub fn get_longitude(&self) -> &::std::option::Option<f64> {
@@ -70,19 +68,20 @@ impl LocationBuilder {
     /// - [`latitude`](crate::types::builders::LocationBuilder::latitude)
     /// - [`longitude`](crate::types::builders::LocationBuilder::longitude)
     pub fn build(self) -> ::std::result::Result<crate::types::Location, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Location {
-            latitude: self.latitude.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "latitude",
-                    "latitude was not specified but it is required when building Location",
-                )
-            })?,
-            longitude: self.longitude.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "longitude",
-                    "longitude was not specified but it is required when building Location",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Location {
+                latitude: self.latitude
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("latitude", "latitude was not specified but it is required when building Location")
+                    )?
+                ,
+                longitude: self.longitude
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("longitude", "longitude was not specified but it is required when building Location")
+                    )?
+                ,
+            }
+        )
     }
 }
+

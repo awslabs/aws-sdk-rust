@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateDocumentVersionInput {
+pub struct UpdateDocumentVersionInput  {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub authentication_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the document.</p>
@@ -12,25 +12,25 @@ pub struct UpdateDocumentVersionInput {
     /// <p>The status of the version.</p>
     pub version_status: ::std::option::Option<crate::types::DocumentVersionStatus>,
 }
-impl UpdateDocumentVersionInput {
+impl  UpdateDocumentVersionInput  {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(&self) -> ::std::option::Option<&str> {
+    pub fn authentication_token(&self) -> ::std::option::Option<& str> {
         self.authentication_token.as_deref()
     }
     /// <p>The ID of the document.</p>
-    pub fn document_id(&self) -> ::std::option::Option<&str> {
+    pub fn document_id(&self) -> ::std::option::Option<& str> {
         self.document_id.as_deref()
     }
     /// <p>The version ID of the document.</p>
-    pub fn version_id(&self) -> ::std::option::Option<&str> {
+    pub fn version_id(&self) -> ::std::option::Option<& str> {
         self.version_id.as_deref()
     }
     /// <p>The status of the version.</p>
-    pub fn version_status(&self) -> ::std::option::Option<&crate::types::DocumentVersionStatus> {
+    pub fn version_status(&self) -> ::std::option::Option<& crate::types::DocumentVersionStatus> {
         self.version_status.as_ref()
     }
 }
-impl ::std::fmt::Debug for UpdateDocumentVersionInput {
+impl  ::std::fmt::Debug for UpdateDocumentVersionInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDocumentVersionInput");
         formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
@@ -64,8 +64,7 @@ impl UpdateDocumentVersionInputBuilder {
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.authentication_token = input;
-        self
+        self.authentication_token = input; self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl UpdateDocumentVersionInputBuilder {
     }
     /// <p>The ID of the document.</p>
     pub fn set_document_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_id = input;
-        self
+        self.document_id = input; self
     }
     /// <p>The ID of the document.</p>
     pub fn get_document_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +92,7 @@ impl UpdateDocumentVersionInputBuilder {
     }
     /// <p>The version ID of the document.</p>
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_id = input;
-        self
+        self.version_id = input; self
     }
     /// <p>The version ID of the document.</p>
     pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,24 +105,26 @@ impl UpdateDocumentVersionInputBuilder {
     }
     /// <p>The status of the version.</p>
     pub fn set_version_status(mut self, input: ::std::option::Option<crate::types::DocumentVersionStatus>) -> Self {
-        self.version_status = input;
-        self
+        self.version_status = input; self
     }
     /// <p>The status of the version.</p>
     pub fn get_version_status(&self) -> &::std::option::Option<crate::types::DocumentVersionStatus> {
         &self.version_status
     }
     /// Consumes the builder and constructs a [`UpdateDocumentVersionInput`](crate::operation::update_document_version::UpdateDocumentVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_document_version::UpdateDocumentVersionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_document_version::UpdateDocumentVersionInput {
-            authentication_token: self.authentication_token,
-            document_id: self.document_id,
-            version_id: self.version_id,
-            version_status: self.version_status,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_document_version::UpdateDocumentVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_document_version::UpdateDocumentVersionInput {
+                authentication_token: self.authentication_token
+                ,
+                document_id: self.document_id
+                ,
+                version_id: self.version_id
+                ,
+                version_status: self.version_status
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateDocumentVersionInputBuilder {
@@ -138,3 +137,4 @@ impl ::std::fmt::Debug for UpdateDocumentVersionInputBuilder {
         formatter.finish()
     }
 }
+

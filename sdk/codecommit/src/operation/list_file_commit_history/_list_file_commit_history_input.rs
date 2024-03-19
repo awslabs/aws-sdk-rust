@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListFileCommitHistoryInput {
+pub struct ListFileCommitHistoryInput  {
     /// <p>The name of the repository that contains the file.</p>
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as <code>refs/heads/main</code>. If none is provided, the head commit is used.</p>
@@ -14,17 +14,17 @@ pub struct ListFileCommitHistoryInput {
     /// <p>An enumeration token that allows the operation to batch the results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListFileCommitHistoryInput {
+impl  ListFileCommitHistoryInput  {
     /// <p>The name of the repository that contains the file.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as <code>refs/heads/main</code>. If none is provided, the head commit is used.</p>
-    pub fn commit_specifier(&self) -> ::std::option::Option<&str> {
+    pub fn commit_specifier(&self) -> ::std::option::Option<& str> {
         self.commit_specifier.as_deref()
     }
     /// <p>The full path of the file whose history you want to retrieve, including the name of the file.</p>
-    pub fn file_path(&self) -> ::std::option::Option<&str> {
+    pub fn file_path(&self) -> ::std::option::Option<& str> {
         self.file_path.as_deref()
     }
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
@@ -32,7 +32,7 @@ impl ListFileCommitHistoryInput {
         self.max_results
     }
     /// <p>An enumeration token that allows the operation to batch the results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl ListFileCommitHistoryInputBuilder {
     }
     /// <p>The name of the repository that contains the file.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The name of the repository that contains the file.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl ListFileCommitHistoryInputBuilder {
     }
     /// <p>The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as <code>refs/heads/main</code>. If none is provided, the head commit is used.</p>
     pub fn set_commit_specifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.commit_specifier = input;
-        self
+        self.commit_specifier = input; self
     }
     /// <p>The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as <code>refs/heads/main</code>. If none is provided, the head commit is used.</p>
     pub fn get_commit_specifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl ListFileCommitHistoryInputBuilder {
     }
     /// <p>The full path of the file whose history you want to retrieve, including the name of the file.</p>
     pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_path = input;
-        self
+        self.file_path = input; self
     }
     /// <p>The full path of the file whose history you want to retrieve, including the name of the file.</p>
     pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +102,7 @@ impl ListFileCommitHistoryInputBuilder {
     }
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -119,24 +115,28 @@ impl ListFileCommitHistoryInputBuilder {
     }
     /// <p>An enumeration token that allows the operation to batch the results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An enumeration token that allows the operation to batch the results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListFileCommitHistoryInput`](crate::operation::list_file_commit_history::ListFileCommitHistoryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_file_commit_history::ListFileCommitHistoryInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_file_commit_history::ListFileCommitHistoryInput {
-            repository_name: self.repository_name,
-            commit_specifier: self.commit_specifier,
-            file_path: self.file_path,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_file_commit_history::ListFileCommitHistoryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_file_commit_history::ListFileCommitHistoryInput {
+                repository_name: self.repository_name
+                ,
+                commit_specifier: self.commit_specifier
+                ,
+                file_path: self.file_path
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

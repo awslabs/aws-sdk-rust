@@ -6,7 +6,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EndpointDetails {
+pub struct EndpointDetails  {
     /// <p>A list of address allocation IDs that are required to attach an Elastic IP address to your server's endpoint.</p>
     /// <p>An address allocation ID corresponds to the allocation ID of an Elastic IP address. This value can be retrieved from the <code>allocationId</code> field from the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Address.html">Address</a> data type. One way to retrieve this value is by calling the EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAddresses.html">DescribeAddresses</a> API.</p>
     /// <p>This parameter is optional. Set this parameter if you want to make your VPC endpoint public-facing. For details, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#create-internet-facing-endpoint">Create an internet-facing endpoint for your server</a>.</p><note>
@@ -26,11 +26,11 @@ pub struct EndpointDetails {
     /// <p>Call the <code>UpdateServer</code> API to set or change this parameter.</p></li>
     /// </ul>
     /// </note>
-    pub address_allocation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub address_allocation_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of subnet IDs that are required to host your server endpoint in your VPC.</p><note>
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.</p>
     /// </note>
-    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The identifier of the VPC endpoint.</p><note>
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p>
     /// <p>For more information, see https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
@@ -44,9 +44,9 @@ pub struct EndpointDetails {
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.</p>
     /// <p>You can edit the <code>SecurityGroupIds</code> property in the <a href="https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateServer.html">UpdateServer</a> API only if you are changing the <code>EndpointType</code> from <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to <code>VPC</code>. To change security groups associated with your server's VPC endpoint after creation, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpoint.html">ModifyVpcEndpoint</a> API.</p>
     /// </note>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl EndpointDetails {
+impl  EndpointDetails  {
     /// <p>A list of address allocation IDs that are required to attach an Elastic IP address to your server's endpoint.</p>
     /// <p>An address allocation ID corresponds to the allocation ID of an Elastic IP address. This value can be retrieved from the <code>allocationId</code> field from the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Address.html">Address</a> data type. One way to retrieve this value is by calling the EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAddresses.html">DescribeAddresses</a> API.</p>
     /// <p>This parameter is optional. Set this parameter if you want to make your VPC endpoint public-facing. For details, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#create-internet-facing-endpoint">Create an internet-facing endpoint for your server</a>.</p><note>
@@ -66,40 +66,43 @@ impl EndpointDetails {
     /// <p>Call the <code>UpdateServer</code> API to set or change this parameter.</p></li>
     /// </ul>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.address_allocation_ids.is_none()`.
-    pub fn address_allocation_ids(&self) -> &[::std::string::String] {
-        self.address_allocation_ids.as_deref().unwrap_or_default()
+    pub fn address_allocation_ids(&self) -> & [::std::string::String] {
+        self.address_allocation_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of subnet IDs that are required to host your server endpoint in your VPC.</p><note>
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
-    pub fn subnet_ids(&self) -> &[::std::string::String] {
-        self.subnet_ids.as_deref().unwrap_or_default()
+    pub fn subnet_ids(&self) -> & [::std::string::String] {
+        self.subnet_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The identifier of the VPC endpoint.</p><note>
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p>
     /// <p>For more information, see https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
     /// </note>
-    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.vpc_endpoint_id.as_deref()
     }
     /// <p>The VPC identifier of the VPC in which a server's endpoint will be hosted.</p><note>
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.</p>
     /// </note>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>A list of security groups IDs that are available to attach to your server's endpoint.</p><note>
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.</p>
     /// <p>You can edit the <code>SecurityGroupIds</code> property in the <a href="https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateServer.html">UpdateServer</a> API only if you are changing the <code>EndpointType</code> from <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to <code>VPC</code>. To change security groups associated with your server's VPC endpoint after creation, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpoint.html">ModifyVpcEndpoint</a> API.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
-    pub fn security_group_ids(&self) -> &[::std::string::String] {
-        self.security_group_ids.as_deref().unwrap_or_default()
+    pub fn security_group_ids(&self) -> & [::std::string::String] {
+        self.security_group_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl EndpointDetails {
@@ -113,11 +116,11 @@ impl EndpointDetails {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EndpointDetailsBuilder {
-    pub(crate) address_allocation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) address_allocation_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
-    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl EndpointDetailsBuilder {
     /// Appends an item to `address_allocation_ids`.
@@ -145,9 +148,9 @@ impl EndpointDetailsBuilder {
     /// </note>
     pub fn address_allocation_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.address_allocation_ids.unwrap_or_default();
-        v.push(input.into());
-        self.address_allocation_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.address_allocation_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of address allocation IDs that are required to attach an Elastic IP address to your server's endpoint.</p>
     /// <p>An address allocation ID corresponds to the allocation ID of an Elastic IP address. This value can be retrieved from the <code>allocationId</code> field from the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Address.html">Address</a> data type. One way to retrieve this value is by calling the EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAddresses.html">DescribeAddresses</a> API.</p>
@@ -168,9 +171,8 @@ impl EndpointDetailsBuilder {
     /// <p>Call the <code>UpdateServer</code> API to set or change this parameter.</p></li>
     /// </ul>
     /// </note>
-    pub fn set_address_allocation_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.address_allocation_ids = input;
-        self
+    pub fn set_address_allocation_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.address_allocation_ids = input; self
     }
     /// <p>A list of address allocation IDs that are required to attach an Elastic IP address to your server's endpoint.</p>
     /// <p>An address allocation ID corresponds to the allocation ID of an Elastic IP address. This value can be retrieved from the <code>allocationId</code> field from the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Address.html">Address</a> data type. One way to retrieve this value is by calling the EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAddresses.html">DescribeAddresses</a> API.</p>
@@ -191,7 +193,7 @@ impl EndpointDetailsBuilder {
     /// <p>Call the <code>UpdateServer</code> API to set or change this parameter.</p></li>
     /// </ul>
     /// </note>
-    pub fn get_address_allocation_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_address_allocation_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.address_allocation_ids
     }
     /// Appends an item to `subnet_ids`.
@@ -203,21 +205,20 @@ impl EndpointDetailsBuilder {
     /// </note>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of subnet IDs that are required to host your server endpoint in your VPC.</p><note>
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.</p>
     /// </note>
-    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
     /// <p>A list of subnet IDs that are required to host your server endpoint in your VPC.</p><note>
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.</p>
     /// </note>
-    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnet_ids
     }
     /// <p>The identifier of the VPC endpoint.</p><note>
@@ -233,8 +234,7 @@ impl EndpointDetailsBuilder {
     /// <p>For more information, see https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
     /// </note>
     pub fn set_vpc_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_endpoint_id = input;
-        self
+        self.vpc_endpoint_id = input; self
     }
     /// <p>The identifier of the VPC endpoint.</p><note>
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p>
@@ -254,8 +254,7 @@ impl EndpointDetailsBuilder {
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.</p>
     /// </note>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The VPC identifier of the VPC in which a server's endpoint will be hosted.</p><note>
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.</p>
@@ -273,33 +272,38 @@ impl EndpointDetailsBuilder {
     /// </note>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of security groups IDs that are available to attach to your server's endpoint.</p><note>
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.</p>
     /// <p>You can edit the <code>SecurityGroupIds</code> property in the <a href="https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateServer.html">UpdateServer</a> API only if you are changing the <code>EndpointType</code> from <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to <code>VPC</code>. To change security groups associated with your server's VPC endpoint after creation, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpoint.html">ModifyVpcEndpoint</a> API.</p>
     /// </note>
-    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_group_ids = input; self
     }
     /// <p>A list of security groups IDs that are available to attach to your server's endpoint.</p><note>
     /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code>.</p>
     /// <p>You can edit the <code>SecurityGroupIds</code> property in the <a href="https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateServer.html">UpdateServer</a> API only if you are changing the <code>EndpointType</code> from <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to <code>VPC</code>. To change security groups associated with your server's VPC endpoint after creation, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpoint.html">ModifyVpcEndpoint</a> API.</p>
     /// </note>
-    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_group_ids
     }
     /// Consumes the builder and constructs a [`EndpointDetails`](crate::types::EndpointDetails).
     pub fn build(self) -> crate::types::EndpointDetails {
         crate::types::EndpointDetails {
-            address_allocation_ids: self.address_allocation_ids,
-            subnet_ids: self.subnet_ids,
-            vpc_endpoint_id: self.vpc_endpoint_id,
-            vpc_id: self.vpc_id,
-            security_group_ids: self.security_group_ids,
+            address_allocation_ids: self.address_allocation_ids
+            ,
+            subnet_ids: self.subnet_ids
+            ,
+            vpc_endpoint_id: self.vpc_endpoint_id
+            ,
+            vpc_id: self.vpc_id
+            ,
+            security_group_ids: self.security_group_ids
+            ,
         }
     }
 }
+

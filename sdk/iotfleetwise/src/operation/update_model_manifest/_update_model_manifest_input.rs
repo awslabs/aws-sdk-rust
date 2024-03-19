@@ -2,41 +2,43 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateModelManifestInput {
+pub struct UpdateModelManifestInput  {
     /// <p>The name of the vehicle model to update.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A brief description of the vehicle model.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to add to the vehicle model.</p>
-    pub nodes_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub nodes_to_add: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to remove from the vehicle model.</p>
-    pub nodes_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub nodes_to_remove: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. If the status is <code>DRAFT</code>, you can edit the vehicle model.</p>
     pub status: ::std::option::Option<crate::types::ManifestStatus>,
 }
-impl UpdateModelManifestInput {
+impl  UpdateModelManifestInput  {
     /// <p>The name of the vehicle model to update.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A brief description of the vehicle model.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to add to the vehicle model.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nodes_to_add.is_none()`.
-    pub fn nodes_to_add(&self) -> &[::std::string::String] {
-        self.nodes_to_add.as_deref().unwrap_or_default()
+    pub fn nodes_to_add(&self) -> & [::std::string::String] {
+        self.nodes_to_add.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to remove from the vehicle model.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nodes_to_remove.is_none()`.
-    pub fn nodes_to_remove(&self) -> &[::std::string::String] {
-        self.nodes_to_remove.as_deref().unwrap_or_default()
+    pub fn nodes_to_remove(&self) -> & [::std::string::String] {
+        self.nodes_to_remove.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. If the status is <code>DRAFT</code>, you can edit the vehicle model.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ManifestStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ManifestStatus> {
         self.status.as_ref()
     }
 }
@@ -53,8 +55,8 @@ impl UpdateModelManifestInput {
 pub struct UpdateModelManifestInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) nodes_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) nodes_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) nodes_to_add: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) nodes_to_remove: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) status: ::std::option::Option<crate::types::ManifestStatus>,
 }
 impl UpdateModelManifestInputBuilder {
@@ -66,8 +68,7 @@ impl UpdateModelManifestInputBuilder {
     }
     /// <p>The name of the vehicle model to update.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the vehicle model to update.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +81,7 @@ impl UpdateModelManifestInputBuilder {
     }
     /// <p>A brief description of the vehicle model.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A brief description of the vehicle model.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,17 +94,16 @@ impl UpdateModelManifestInputBuilder {
     /// <p>A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to add to the vehicle model.</p>
     pub fn nodes_to_add(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.nodes_to_add.unwrap_or_default();
-        v.push(input.into());
-        self.nodes_to_add = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.nodes_to_add = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to add to the vehicle model.</p>
-    pub fn set_nodes_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.nodes_to_add = input;
-        self
+    pub fn set_nodes_to_add(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.nodes_to_add = input; self
     }
     /// <p>A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to add to the vehicle model.</p>
-    pub fn get_nodes_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_nodes_to_add(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.nodes_to_add
     }
     /// Appends an item to `nodes_to_remove`.
@@ -114,17 +113,16 @@ impl UpdateModelManifestInputBuilder {
     /// <p>A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to remove from the vehicle model.</p>
     pub fn nodes_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.nodes_to_remove.unwrap_or_default();
-        v.push(input.into());
-        self.nodes_to_remove = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.nodes_to_remove = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to remove from the vehicle model.</p>
-    pub fn set_nodes_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.nodes_to_remove = input;
-        self
+    pub fn set_nodes_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.nodes_to_remove = input; self
     }
     /// <p>A list of <code>fullyQualifiedName</code> of nodes, which are a general abstraction of signals, to remove from the vehicle model.</p>
-    pub fn get_nodes_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_nodes_to_remove(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.nodes_to_remove
     }
     /// <p>The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. If the status is <code>DRAFT</code>, you can edit the vehicle model.</p>
@@ -134,24 +132,28 @@ impl UpdateModelManifestInputBuilder {
     }
     /// <p>The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. If the status is <code>DRAFT</code>, you can edit the vehicle model.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ManifestStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. If the status is <code>DRAFT</code>, you can edit the vehicle model.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ManifestStatus> {
         &self.status
     }
     /// Consumes the builder and constructs a [`UpdateModelManifestInput`](crate::operation::update_model_manifest::UpdateModelManifestInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_model_manifest::UpdateModelManifestInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_model_manifest::UpdateModelManifestInput {
-            name: self.name,
-            description: self.description,
-            nodes_to_add: self.nodes_to_add,
-            nodes_to_remove: self.nodes_to_remove,
-            status: self.status,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_model_manifest::UpdateModelManifestInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_model_manifest::UpdateModelManifestInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                nodes_to_add: self.nodes_to_add
+                ,
+                nodes_to_remove: self.nodes_to_remove
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

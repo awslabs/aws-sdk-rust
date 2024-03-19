@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetUtterancesViewOutput {
+pub struct GetUtterancesViewOutput  {
     /// <p>The name of the bot for which utterance information was returned.</p>
     pub bot_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>UtteranceList</code> objects, each containing a list of <code>UtteranceData</code> objects describing the utterances that were processed by your bot. The response contains a maximum of 100 <code>UtteranceData</code> objects for each version. Amazon Lex returns the most frequent utterances received by the bot in the last 15 days.</p>
-    pub utterances: ::std::option::Option<::std::vec::Vec<crate::types::UtteranceList>>,
+    pub utterances: ::std::option::Option<::std::vec::Vec::<crate::types::UtteranceList>>,
     _request_id: Option<String>,
 }
-impl GetUtterancesViewOutput {
+impl  GetUtterancesViewOutput  {
     /// <p>The name of the bot for which utterance information was returned.</p>
-    pub fn bot_name(&self) -> ::std::option::Option<&str> {
+    pub fn bot_name(&self) -> ::std::option::Option<& str> {
         self.bot_name.as_deref()
     }
     /// <p>An array of <code>UtteranceList</code> objects, each containing a list of <code>UtteranceData</code> objects describing the utterances that were processed by your bot. The response contains a maximum of 100 <code>UtteranceData</code> objects for each version. Amazon Lex returns the most frequent utterances received by the bot in the last 15 days.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.utterances.is_none()`.
-    pub fn utterances(&self) -> &[crate::types::UtteranceList] {
-        self.utterances.as_deref().unwrap_or_default()
+    pub fn utterances(&self) -> & [crate::types::UtteranceList] {
+        self.utterances.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetUtterancesViewOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetUtterancesViewOutput {
     /// Creates a new builder-style object to manufacture [`GetUtterancesViewOutput`](crate::operation::get_utterances_view::GetUtterancesViewOutput).
     pub fn builder() -> crate::operation::get_utterances_view::builders::GetUtterancesViewOutputBuilder {
@@ -38,7 +39,7 @@ impl GetUtterancesViewOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUtterancesViewOutputBuilder {
     pub(crate) bot_name: ::std::option::Option<::std::string::String>,
-    pub(crate) utterances: ::std::option::Option<::std::vec::Vec<crate::types::UtteranceList>>,
+    pub(crate) utterances: ::std::option::Option<::std::vec::Vec::<crate::types::UtteranceList>>,
     _request_id: Option<String>,
 }
 impl GetUtterancesViewOutputBuilder {
@@ -49,8 +50,7 @@ impl GetUtterancesViewOutputBuilder {
     }
     /// <p>The name of the bot for which utterance information was returned.</p>
     pub fn set_bot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_name = input;
-        self
+        self.bot_name = input; self
     }
     /// <p>The name of the bot for which utterance information was returned.</p>
     pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl GetUtterancesViewOutputBuilder {
     /// <p>An array of <code>UtteranceList</code> objects, each containing a list of <code>UtteranceData</code> objects describing the utterances that were processed by your bot. The response contains a maximum of 100 <code>UtteranceData</code> objects for each version. Amazon Lex returns the most frequent utterances received by the bot in the last 15 days.</p>
     pub fn utterances(mut self, input: crate::types::UtteranceList) -> Self {
         let mut v = self.utterances.unwrap_or_default();
-        v.push(input);
-        self.utterances = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.utterances = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>UtteranceList</code> objects, each containing a list of <code>UtteranceData</code> objects describing the utterances that were processed by your bot. The response contains a maximum of 100 <code>UtteranceData</code> objects for each version. Amazon Lex returns the most frequent utterances received by the bot in the last 15 days.</p>
-    pub fn set_utterances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UtteranceList>>) -> Self {
-        self.utterances = input;
-        self
+    pub fn set_utterances(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UtteranceList>>) -> Self {
+        self.utterances = input; self
     }
     /// <p>An array of <code>UtteranceList</code> objects, each containing a list of <code>UtteranceData</code> objects describing the utterances that were processed by your bot. The response contains a maximum of 100 <code>UtteranceData</code> objects for each version. Amazon Lex returns the most frequent utterances received by the bot in the last 15 days.</p>
-    pub fn get_utterances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UtteranceList>> {
+    pub fn get_utterances(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UtteranceList>> {
         &self.utterances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetUtterancesViewOutput`](crate::operation::get_utterances_view::GetUtterancesViewOutput).
     pub fn build(self) -> crate::operation::get_utterances_view::GetUtterancesViewOutput {
         crate::operation::get_utterances_view::GetUtterancesViewOutput {
-            bot_name: self.bot_name,
-            utterances: self.utterances,
+            bot_name: self.bot_name
+            ,
+            utterances: self.utterances
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

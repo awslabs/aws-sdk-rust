@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListScramSecretsOutput {
+pub struct ListScramSecretsOutput  {
     /// <p>Paginated results marker.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of scram secrets associated with the cluster.</p>
-    pub secret_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub secret_arn_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl ListScramSecretsOutput {
+impl  ListScramSecretsOutput  {
     /// <p>Paginated results marker.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The list of scram secrets associated with the cluster.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secret_arn_list.is_none()`.
-    pub fn secret_arn_list(&self) -> &[::std::string::String] {
-        self.secret_arn_list.as_deref().unwrap_or_default()
+    pub fn secret_arn_list(&self) -> & [::std::string::String] {
+        self.secret_arn_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListScramSecretsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListScramSecretsOutput {
     /// Creates a new builder-style object to manufacture [`ListScramSecretsOutput`](crate::operation::list_scram_secrets::ListScramSecretsOutput).
     pub fn builder() -> crate::operation::list_scram_secrets::builders::ListScramSecretsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListScramSecretsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListScramSecretsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) secret_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) secret_arn_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl ListScramSecretsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListScramSecretsOutputBuilder {
     }
     /// <p>Paginated results marker.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Paginated results marker.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListScramSecretsOutputBuilder {
     /// <p>The list of scram secrets associated with the cluster.</p>
     pub fn secret_arn_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.secret_arn_list.unwrap_or_default();
-        v.push(input.into());
-        self.secret_arn_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.secret_arn_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of scram secrets associated with the cluster.</p>
-    pub fn set_secret_arn_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.secret_arn_list = input;
-        self
+    pub fn set_secret_arn_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.secret_arn_list = input; self
     }
     /// <p>The list of scram secrets associated with the cluster.</p>
-    pub fn get_secret_arn_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_secret_arn_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.secret_arn_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListScramSecretsOutput`](crate::operation::list_scram_secrets::ListScramSecretsOutput).
     pub fn build(self) -> crate::operation::list_scram_secrets::ListScramSecretsOutput {
         crate::operation::list_scram_secrets::ListScramSecretsOutput {
-            next_token: self.next_token,
-            secret_arn_list: self.secret_arn_list,
+            next_token: self.next_token
+            ,
+            secret_arn_list: self.secret_arn_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

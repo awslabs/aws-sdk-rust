@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePipeInput {
+pub struct DeletePipeInput  {
     /// <p>The name of the pipe.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl DeletePipeInput {
+impl  DeletePipeInput  {
     /// <p>The name of the pipe.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl DeletePipeInputBuilder {
     }
     /// <p>The name of the pipe.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the pipe.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl DeletePipeInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeletePipeInput`](crate::operation::delete_pipe::DeletePipeInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_pipe::DeletePipeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_pipe::DeletePipeInput { name: self.name })
+        ::std::result::Result::Ok(
+            crate::operation::delete_pipe::DeletePipeInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

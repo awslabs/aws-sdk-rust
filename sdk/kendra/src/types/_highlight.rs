@@ -3,7 +3,7 @@
 /// <p>Provides information that you can use to highlight a search result so that your users can quickly identify terms in the response.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Highlight {
+pub struct Highlight  {
     /// <p>The zero-based location in the response string where the highlight starts.</p>
     pub begin_offset: i32,
     /// <p>The zero-based location in the response string where the highlight ends.</p>
@@ -13,7 +13,7 @@ pub struct Highlight {
     /// <p>The highlight type.</p>
     pub r#type: ::std::option::Option<crate::types::HighlightType>,
 }
-impl Highlight {
+impl  Highlight  {
     /// <p>The zero-based location in the response string where the highlight starts.</p>
     pub fn begin_offset(&self) -> i32 {
         self.begin_offset
@@ -27,7 +27,7 @@ impl Highlight {
         self.top_answer
     }
     /// <p>The highlight type.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::HighlightType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::HighlightType> {
         self.r#type.as_ref()
     }
 }
@@ -56,8 +56,7 @@ impl HighlightBuilder {
     }
     /// <p>The zero-based location in the response string where the highlight starts.</p>
     pub fn set_begin_offset(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.begin_offset = input;
-        self
+        self.begin_offset = input; self
     }
     /// <p>The zero-based location in the response string where the highlight starts.</p>
     pub fn get_begin_offset(&self) -> &::std::option::Option<i32> {
@@ -71,8 +70,7 @@ impl HighlightBuilder {
     }
     /// <p>The zero-based location in the response string where the highlight ends.</p>
     pub fn set_end_offset(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.end_offset = input;
-        self
+        self.end_offset = input; self
     }
     /// <p>The zero-based location in the response string where the highlight ends.</p>
     pub fn get_end_offset(&self) -> &::std::option::Option<i32> {
@@ -85,8 +83,7 @@ impl HighlightBuilder {
     }
     /// <p>Indicates whether the response is the best response. True if this is the best response; otherwise, false.</p>
     pub fn set_top_answer(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.top_answer = input;
-        self
+        self.top_answer = input; self
     }
     /// <p>Indicates whether the response is the best response. True if this is the best response; otherwise, false.</p>
     pub fn get_top_answer(&self) -> &::std::option::Option<bool> {
@@ -99,8 +96,7 @@ impl HighlightBuilder {
     }
     /// <p>The highlight type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::HighlightType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The highlight type.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::HighlightType> {
@@ -111,21 +107,25 @@ impl HighlightBuilder {
     /// - [`begin_offset`](crate::types::builders::HighlightBuilder::begin_offset)
     /// - [`end_offset`](crate::types::builders::HighlightBuilder::end_offset)
     pub fn build(self) -> ::std::result::Result<crate::types::Highlight, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Highlight {
-            begin_offset: self.begin_offset.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "begin_offset",
-                    "begin_offset was not specified but it is required when building Highlight",
-                )
-            })?,
-            end_offset: self.end_offset.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "end_offset",
-                    "end_offset was not specified but it is required when building Highlight",
-                )
-            })?,
-            top_answer: self.top_answer.unwrap_or_default(),
-            r#type: self.r#type,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Highlight {
+                begin_offset: self.begin_offset
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("begin_offset", "begin_offset was not specified but it is required when building Highlight")
+                    )?
+                ,
+                end_offset: self.end_offset
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("end_offset", "end_offset was not specified but it is required when building Highlight")
+                    )?
+                ,
+                top_answer: self.top_answer
+                    .unwrap_or_default()
+                ,
+                r#type: self.r#type
+                ,
+            }
+        )
     }
 }
+

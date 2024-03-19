@@ -3,21 +3,20 @@
 /// <p>Configuration for enabling external data filtering for third-party applications to access data managed by Lake Formation .</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExternalFilteringConfiguration {
+pub struct ExternalFilteringConfiguration  {
     /// <p>Allows to enable or disable the third-party applications that are allowed to access data managed by Lake Formation.</p>
     pub status: crate::types::EnableStatus,
     /// <p>List of third-party application <code>ARNs</code> integrated with Lake Formation.</p>
-    pub authorized_targets: ::std::vec::Vec<::std::string::String>,
+    pub authorized_targets: ::std::vec::Vec::<::std::string::String>,
 }
-impl ExternalFilteringConfiguration {
+impl  ExternalFilteringConfiguration  {
     /// <p>Allows to enable or disable the third-party applications that are allowed to access data managed by Lake Formation.</p>
-    pub fn status(&self) -> &crate::types::EnableStatus {
+    pub fn status(&self) -> & crate::types::EnableStatus {
         &self.status
     }
     /// <p>List of third-party application <code>ARNs</code> integrated with Lake Formation.</p>
-    pub fn authorized_targets(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.authorized_targets.deref()
+    pub fn authorized_targets(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.authorized_targets.deref()
     }
 }
 impl ExternalFilteringConfiguration {
@@ -32,7 +31,7 @@ impl ExternalFilteringConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExternalFilteringConfigurationBuilder {
     pub(crate) status: ::std::option::Option<crate::types::EnableStatus>,
-    pub(crate) authorized_targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) authorized_targets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ExternalFilteringConfigurationBuilder {
     /// <p>Allows to enable or disable the third-party applications that are allowed to access data managed by Lake Formation.</p>
@@ -43,8 +42,7 @@ impl ExternalFilteringConfigurationBuilder {
     }
     /// <p>Allows to enable or disable the third-party applications that are allowed to access data managed by Lake Formation.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EnableStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Allows to enable or disable the third-party applications that are allowed to access data managed by Lake Formation.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EnableStatus> {
@@ -57,17 +55,16 @@ impl ExternalFilteringConfigurationBuilder {
     /// <p>List of third-party application <code>ARNs</code> integrated with Lake Formation.</p>
     pub fn authorized_targets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.authorized_targets.unwrap_or_default();
-        v.push(input.into());
-        self.authorized_targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.authorized_targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of third-party application <code>ARNs</code> integrated with Lake Formation.</p>
-    pub fn set_authorized_targets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.authorized_targets = input;
-        self
+    pub fn set_authorized_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.authorized_targets = input; self
     }
     /// <p>List of third-party application <code>ARNs</code> integrated with Lake Formation.</p>
-    pub fn get_authorized_targets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_authorized_targets(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.authorized_targets
     }
     /// Consumes the builder and constructs a [`ExternalFilteringConfiguration`](crate::types::ExternalFilteringConfiguration).
@@ -75,19 +72,20 @@ impl ExternalFilteringConfigurationBuilder {
     /// - [`status`](crate::types::builders::ExternalFilteringConfigurationBuilder::status)
     /// - [`authorized_targets`](crate::types::builders::ExternalFilteringConfigurationBuilder::authorized_targets)
     pub fn build(self) -> ::std::result::Result<crate::types::ExternalFilteringConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ExternalFilteringConfiguration {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building ExternalFilteringConfiguration",
-                )
-            })?,
-            authorized_targets: self.authorized_targets.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "authorized_targets",
-                    "authorized_targets was not specified but it is required when building ExternalFilteringConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ExternalFilteringConfiguration {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building ExternalFilteringConfiguration")
+                    )?
+                ,
+                authorized_targets: self.authorized_targets
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("authorized_targets", "authorized_targets was not specified but it is required when building ExternalFilteringConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

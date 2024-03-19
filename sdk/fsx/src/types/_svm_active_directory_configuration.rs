@@ -3,19 +3,19 @@
 /// <p>Describes the Microsoft Active Directory (AD) directory configuration to which the FSx for ONTAP storage virtual machine (SVM) is joined. Note that account credentials are not returned in the response payload.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SvmActiveDirectoryConfiguration {
+pub struct SvmActiveDirectoryConfiguration  {
     /// <p>The NetBIOS name of the AD computer object to which the SVM is joined.</p>
     pub net_bios_name: ::std::option::Option<::std::string::String>,
     /// <p>The configuration of the self-managed Microsoft Active Directory (AD) directory to which the Windows File Server or ONTAP storage virtual machine (SVM) instance is joined.</p>
     pub self_managed_active_directory_configuration: ::std::option::Option<crate::types::SelfManagedActiveDirectoryAttributes>,
 }
-impl SvmActiveDirectoryConfiguration {
+impl  SvmActiveDirectoryConfiguration  {
     /// <p>The NetBIOS name of the AD computer object to which the SVM is joined.</p>
-    pub fn net_bios_name(&self) -> ::std::option::Option<&str> {
+    pub fn net_bios_name(&self) -> ::std::option::Option<& str> {
         self.net_bios_name.as_deref()
     }
     /// <p>The configuration of the self-managed Microsoft Active Directory (AD) directory to which the Windows File Server or ONTAP storage virtual machine (SVM) instance is joined.</p>
-    pub fn self_managed_active_directory_configuration(&self) -> ::std::option::Option<&crate::types::SelfManagedActiveDirectoryAttributes> {
+    pub fn self_managed_active_directory_configuration(&self) -> ::std::option::Option<& crate::types::SelfManagedActiveDirectoryAttributes> {
         self.self_managed_active_directory_configuration.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl SvmActiveDirectoryConfigurationBuilder {
     }
     /// <p>The NetBIOS name of the AD computer object to which the SVM is joined.</p>
     pub fn set_net_bios_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.net_bios_name = input;
-        self
+        self.net_bios_name = input; self
     }
     /// <p>The NetBIOS name of the AD computer object to which the SVM is joined.</p>
     pub fn get_net_bios_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,12 +53,8 @@ impl SvmActiveDirectoryConfigurationBuilder {
         self
     }
     /// <p>The configuration of the self-managed Microsoft Active Directory (AD) directory to which the Windows File Server or ONTAP storage virtual machine (SVM) instance is joined.</p>
-    pub fn set_self_managed_active_directory_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::SelfManagedActiveDirectoryAttributes>,
-    ) -> Self {
-        self.self_managed_active_directory_configuration = input;
-        self
+    pub fn set_self_managed_active_directory_configuration(mut self, input: ::std::option::Option<crate::types::SelfManagedActiveDirectoryAttributes>) -> Self {
+        self.self_managed_active_directory_configuration = input; self
     }
     /// <p>The configuration of the self-managed Microsoft Active Directory (AD) directory to which the Windows File Server or ONTAP storage virtual machine (SVM) instance is joined.</p>
     pub fn get_self_managed_active_directory_configuration(&self) -> &::std::option::Option<crate::types::SelfManagedActiveDirectoryAttributes> {
@@ -68,8 +63,11 @@ impl SvmActiveDirectoryConfigurationBuilder {
     /// Consumes the builder and constructs a [`SvmActiveDirectoryConfiguration`](crate::types::SvmActiveDirectoryConfiguration).
     pub fn build(self) -> crate::types::SvmActiveDirectoryConfiguration {
         crate::types::SvmActiveDirectoryConfiguration {
-            net_bios_name: self.net_bios_name,
-            self_managed_active_directory_configuration: self.self_managed_active_directory_configuration,
+            net_bios_name: self.net_bios_name
+            ,
+            self_managed_active_directory_configuration: self.self_managed_active_directory_configuration
+            ,
         }
     }
 }
+

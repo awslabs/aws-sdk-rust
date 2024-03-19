@@ -4,22 +4,23 @@
 /// <p>This data type is used as a response element in the <code>GetServiceLinkedRoleDeletionStatus</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletionTaskFailureReasonType {
+pub struct DeletionTaskFailureReasonType  {
     /// <p>A short description of the reason that the service-linked role deletion failed.</p>
     pub reason: ::std::option::Option<::std::string::String>,
     /// <p>A list of objects that contains details about the service-linked role deletion failure, if that information is returned by the service. If the service-linked role has active sessions or if any resources that were used by the role have not been deleted from the linked service, the role can't be deleted. This parameter includes a list of the resources that are associated with the role and the Region in which the resources are being used.</p>
-    pub role_usage_list: ::std::option::Option<::std::vec::Vec<crate::types::RoleUsageType>>,
+    pub role_usage_list: ::std::option::Option<::std::vec::Vec::<crate::types::RoleUsageType>>,
 }
-impl DeletionTaskFailureReasonType {
+impl  DeletionTaskFailureReasonType  {
     /// <p>A short description of the reason that the service-linked role deletion failed.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
     /// <p>A list of objects that contains details about the service-linked role deletion failure, if that information is returned by the service. If the service-linked role has active sessions or if any resources that were used by the role have not been deleted from the linked service, the role can't be deleted. This parameter includes a list of the resources that are associated with the role and the Region in which the resources are being used.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.role_usage_list.is_none()`.
-    pub fn role_usage_list(&self) -> &[crate::types::RoleUsageType] {
-        self.role_usage_list.as_deref().unwrap_or_default()
+    pub fn role_usage_list(&self) -> & [crate::types::RoleUsageType] {
+        self.role_usage_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DeletionTaskFailureReasonType {
@@ -34,7 +35,7 @@ impl DeletionTaskFailureReasonType {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeletionTaskFailureReasonTypeBuilder {
     pub(crate) reason: ::std::option::Option<::std::string::String>,
-    pub(crate) role_usage_list: ::std::option::Option<::std::vec::Vec<crate::types::RoleUsageType>>,
+    pub(crate) role_usage_list: ::std::option::Option<::std::vec::Vec::<crate::types::RoleUsageType>>,
 }
 impl DeletionTaskFailureReasonTypeBuilder {
     /// <p>A short description of the reason that the service-linked role deletion failed.</p>
@@ -44,8 +45,7 @@ impl DeletionTaskFailureReasonTypeBuilder {
     }
     /// <p>A short description of the reason that the service-linked role deletion failed.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>A short description of the reason that the service-linked role deletion failed.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,24 +58,26 @@ impl DeletionTaskFailureReasonTypeBuilder {
     /// <p>A list of objects that contains details about the service-linked role deletion failure, if that information is returned by the service. If the service-linked role has active sessions or if any resources that were used by the role have not been deleted from the linked service, the role can't be deleted. This parameter includes a list of the resources that are associated with the role and the Region in which the resources are being used.</p>
     pub fn role_usage_list(mut self, input: crate::types::RoleUsageType) -> Self {
         let mut v = self.role_usage_list.unwrap_or_default();
-        v.push(input);
-        self.role_usage_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.role_usage_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of objects that contains details about the service-linked role deletion failure, if that information is returned by the service. If the service-linked role has active sessions or if any resources that were used by the role have not been deleted from the linked service, the role can't be deleted. This parameter includes a list of the resources that are associated with the role and the Region in which the resources are being used.</p>
-    pub fn set_role_usage_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RoleUsageType>>) -> Self {
-        self.role_usage_list = input;
-        self
+    pub fn set_role_usage_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RoleUsageType>>) -> Self {
+        self.role_usage_list = input; self
     }
     /// <p>A list of objects that contains details about the service-linked role deletion failure, if that information is returned by the service. If the service-linked role has active sessions or if any resources that were used by the role have not been deleted from the linked service, the role can't be deleted. This parameter includes a list of the resources that are associated with the role and the Region in which the resources are being used.</p>
-    pub fn get_role_usage_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoleUsageType>> {
+    pub fn get_role_usage_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RoleUsageType>> {
         &self.role_usage_list
     }
     /// Consumes the builder and constructs a [`DeletionTaskFailureReasonType`](crate::types::DeletionTaskFailureReasonType).
     pub fn build(self) -> crate::types::DeletionTaskFailureReasonType {
         crate::types::DeletionTaskFailureReasonType {
-            reason: self.reason,
-            role_usage_list: self.role_usage_list,
+            reason: self.reason
+            ,
+            role_usage_list: self.role_usage_list
+            ,
         }
     }
 }
+

@@ -3,30 +3,31 @@
 /// <p>Represents the output of a <code>DescribeReservedCacheNodesOfferings</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeReservedCacheNodesOfferingsOutput {
+pub struct DescribeReservedCacheNodesOfferingsOutput  {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of reserved cache node offerings. Each element in the list contains detailed information about one offering.</p>
-    pub reserved_cache_nodes_offerings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedCacheNodesOffering>>,
+    pub reserved_cache_nodes_offerings: ::std::option::Option<::std::vec::Vec::<crate::types::ReservedCacheNodesOffering>>,
     _request_id: Option<String>,
 }
-impl DescribeReservedCacheNodesOfferingsOutput {
+impl  DescribeReservedCacheNodesOfferingsOutput  {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of reserved cache node offerings. Each element in the list contains detailed information about one offering.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reserved_cache_nodes_offerings.is_none()`.
-    pub fn reserved_cache_nodes_offerings(&self) -> &[crate::types::ReservedCacheNodesOffering] {
-        self.reserved_cache_nodes_offerings.as_deref().unwrap_or_default()
+    pub fn reserved_cache_nodes_offerings(&self) -> & [crate::types::ReservedCacheNodesOffering] {
+        self.reserved_cache_nodes_offerings.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeReservedCacheNodesOfferingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeReservedCacheNodesOfferingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedCacheNodesOfferingsOutput`](crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsOutput).
     pub fn builder() -> crate::operation::describe_reserved_cache_nodes_offerings::builders::DescribeReservedCacheNodesOfferingsOutputBuilder {
@@ -39,7 +40,7 @@ impl DescribeReservedCacheNodesOfferingsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReservedCacheNodesOfferingsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) reserved_cache_nodes_offerings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedCacheNodesOffering>>,
+    pub(crate) reserved_cache_nodes_offerings: ::std::option::Option<::std::vec::Vec::<crate::types::ReservedCacheNodesOffering>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedCacheNodesOfferingsOutputBuilder {
@@ -50,8 +51,7 @@ impl DescribeReservedCacheNodesOfferingsOutputBuilder {
     }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,37 +64,36 @@ impl DescribeReservedCacheNodesOfferingsOutputBuilder {
     /// <p>A list of reserved cache node offerings. Each element in the list contains detailed information about one offering.</p>
     pub fn reserved_cache_nodes_offerings(mut self, input: crate::types::ReservedCacheNodesOffering) -> Self {
         let mut v = self.reserved_cache_nodes_offerings.unwrap_or_default();
-        v.push(input);
-        self.reserved_cache_nodes_offerings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.reserved_cache_nodes_offerings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of reserved cache node offerings. Each element in the list contains detailed information about one offering.</p>
-    pub fn set_reserved_cache_nodes_offerings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReservedCacheNodesOffering>>,
-    ) -> Self {
-        self.reserved_cache_nodes_offerings = input;
-        self
+    pub fn set_reserved_cache_nodes_offerings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReservedCacheNodesOffering>>) -> Self {
+        self.reserved_cache_nodes_offerings = input; self
     }
     /// <p>A list of reserved cache node offerings. Each element in the list contains detailed information about one offering.</p>
-    pub fn get_reserved_cache_nodes_offerings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedCacheNodesOffering>> {
+    pub fn get_reserved_cache_nodes_offerings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReservedCacheNodesOffering>> {
         &self.reserved_cache_nodes_offerings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeReservedCacheNodesOfferingsOutput`](crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsOutput).
     pub fn build(self) -> crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsOutput {
         crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsOutput {
-            marker: self.marker,
-            reserved_cache_nodes_offerings: self.reserved_cache_nodes_offerings,
+            marker: self.marker
+            ,
+            reserved_cache_nodes_offerings: self.reserved_cache_nodes_offerings
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListEventsInput {
+pub struct ListEventsInput  {
     /// <p>A <code>ListEventsFilters</code> object used to specify which events to return.</p>
     pub filters: ::std::option::Option<crate::types::ListEventsFilters>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -12,9 +12,9 @@ pub struct ListEventsInput {
     /// <p>The ID of the Amazon Web Services account.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl ListEventsInput {
+impl  ListEventsInput  {
     /// <p>A <code>ListEventsFilters</code> object used to specify which events to return.</p>
-    pub fn filters(&self) -> ::std::option::Option<&crate::types::ListEventsFilters> {
+    pub fn filters(&self) -> ::std::option::Option<& crate::types::ListEventsFilters> {
         self.filters.as_ref()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -22,11 +22,11 @@ impl ListEventsInput {
         self.max_results
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl ListEventsInputBuilder {
     }
     /// <p>A <code>ListEventsFilters</code> object used to specify which events to return.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListEventsFilters>) -> Self {
-        self.filters = input;
-        self
+        self.filters = input; self
     }
     /// <p>A <code>ListEventsFilters</code> object used to specify which events to return.</p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::ListEventsFilters> {
@@ -69,8 +68,7 @@ impl ListEventsInputBuilder {
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -83,8 +81,7 @@ impl ListEventsInputBuilder {
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl ListEventsInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,11 +102,18 @@ impl ListEventsInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListEventsInput`](crate::operation::list_events::ListEventsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_events::ListEventsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_events::ListEventsInput {
-            filters: self.filters,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            account_id: self.account_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_events::ListEventsInput {
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                account_id: self.account_id
+                ,
+            }
+        )
     }
 }
+

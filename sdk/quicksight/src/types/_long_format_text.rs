@@ -4,19 +4,19 @@
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LongFormatText {
+pub struct LongFormatText  {
     /// <p>Plain text format.</p>
     pub plain_text: ::std::option::Option<::std::string::String>,
     /// <p>Rich text. Examples of rich text include bold, underline, and italics.</p>
     pub rich_text: ::std::option::Option<::std::string::String>,
 }
-impl LongFormatText {
+impl  LongFormatText  {
     /// <p>Plain text format.</p>
-    pub fn plain_text(&self) -> ::std::option::Option<&str> {
+    pub fn plain_text(&self) -> ::std::option::Option<& str> {
         self.plain_text.as_deref()
     }
     /// <p>Rich text. Examples of rich text include bold, underline, and italics.</p>
-    pub fn rich_text(&self) -> ::std::option::Option<&str> {
+    pub fn rich_text(&self) -> ::std::option::Option<& str> {
         self.rich_text.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl LongFormatTextBuilder {
     }
     /// <p>Plain text format.</p>
     pub fn set_plain_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.plain_text = input;
-        self
+        self.plain_text = input; self
     }
     /// <p>Plain text format.</p>
     pub fn get_plain_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl LongFormatTextBuilder {
     }
     /// <p>Rich text. Examples of rich text include bold, underline, and italics.</p>
     pub fn set_rich_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rich_text = input;
-        self
+        self.rich_text = input; self
     }
     /// <p>Rich text. Examples of rich text include bold, underline, and italics.</p>
     pub fn get_rich_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,11 @@ impl LongFormatTextBuilder {
     /// Consumes the builder and constructs a [`LongFormatText`](crate::types::LongFormatText).
     pub fn build(self) -> crate::types::LongFormatText {
         crate::types::LongFormatText {
-            plain_text: self.plain_text,
-            rich_text: self.rich_text,
+            plain_text: self.plain_text
+            ,
+            rich_text: self.rich_text
+            ,
         }
     }
 }
+

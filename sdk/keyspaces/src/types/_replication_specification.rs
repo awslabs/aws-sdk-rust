@@ -9,22 +9,23 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReplicationSpecification {
+pub struct ReplicationSpecification  {
     /// <p>The <code>replicationStrategy</code> of a keyspace, the required value is <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p>
     pub replication_strategy: crate::types::Rs,
     /// <p>The <code>regionList</code> can contain up to six Amazon Web Services Regions where the keyspace is replicated in.</p>
-    pub region_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub region_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ReplicationSpecification {
+impl  ReplicationSpecification  {
     /// <p>The <code>replicationStrategy</code> of a keyspace, the required value is <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p>
-    pub fn replication_strategy(&self) -> &crate::types::Rs {
+    pub fn replication_strategy(&self) -> & crate::types::Rs {
         &self.replication_strategy
     }
     /// <p>The <code>regionList</code> can contain up to six Amazon Web Services Regions where the keyspace is replicated in.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.region_list.is_none()`.
-    pub fn region_list(&self) -> &[::std::string::String] {
-        self.region_list.as_deref().unwrap_or_default()
+    pub fn region_list(&self) -> & [::std::string::String] {
+        self.region_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ReplicationSpecification {
@@ -39,7 +40,7 @@ impl ReplicationSpecification {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplicationSpecificationBuilder {
     pub(crate) replication_strategy: ::std::option::Option<crate::types::Rs>,
-    pub(crate) region_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) region_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ReplicationSpecificationBuilder {
     /// <p>The <code>replicationStrategy</code> of a keyspace, the required value is <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p>
@@ -50,8 +51,7 @@ impl ReplicationSpecificationBuilder {
     }
     /// <p>The <code>replicationStrategy</code> of a keyspace, the required value is <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p>
     pub fn set_replication_strategy(mut self, input: ::std::option::Option<crate::types::Rs>) -> Self {
-        self.replication_strategy = input;
-        self
+        self.replication_strategy = input; self
     }
     /// <p>The <code>replicationStrategy</code> of a keyspace, the required value is <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p>
     pub fn get_replication_strategy(&self) -> &::std::option::Option<crate::types::Rs> {
@@ -64,31 +64,33 @@ impl ReplicationSpecificationBuilder {
     /// <p>The <code>regionList</code> can contain up to six Amazon Web Services Regions where the keyspace is replicated in.</p>
     pub fn region_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.region_list.unwrap_or_default();
-        v.push(input.into());
-        self.region_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.region_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The <code>regionList</code> can contain up to six Amazon Web Services Regions where the keyspace is replicated in.</p>
-    pub fn set_region_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.region_list = input;
-        self
+    pub fn set_region_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.region_list = input; self
     }
     /// <p>The <code>regionList</code> can contain up to six Amazon Web Services Regions where the keyspace is replicated in.</p>
-    pub fn get_region_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_region_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.region_list
     }
     /// Consumes the builder and constructs a [`ReplicationSpecification`](crate::types::ReplicationSpecification).
     /// This method will fail if any of the following fields are not set:
     /// - [`replication_strategy`](crate::types::builders::ReplicationSpecificationBuilder::replication_strategy)
     pub fn build(self) -> ::std::result::Result<crate::types::ReplicationSpecification, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ReplicationSpecification {
-            replication_strategy: self.replication_strategy.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "replication_strategy",
-                    "replication_strategy was not specified but it is required when building ReplicationSpecification",
-                )
-            })?,
-            region_list: self.region_list,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ReplicationSpecification {
+                replication_strategy: self.replication_strategy
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("replication_strategy", "replication_strategy was not specified but it is required when building ReplicationSpecification")
+                    )?
+                ,
+                region_list: self.region_list
+                ,
+            }
+        )
     }
 }
+

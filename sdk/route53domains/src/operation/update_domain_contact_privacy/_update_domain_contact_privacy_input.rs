@@ -3,7 +3,7 @@
 /// <p>The UpdateDomainContactPrivacy request includes the following elements.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDomainContactPrivacyInput {
+pub struct UpdateDomainContactPrivacyInput  {
     /// <p>The name of the domain that you want to update the privacy setting for.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p><note>
@@ -23,9 +23,9 @@ pub struct UpdateDomainContactPrivacyInput {
     /// </note>
     pub billing_privacy: ::std::option::Option<bool>,
 }
-impl UpdateDomainContactPrivacyInput {
+impl  UpdateDomainContactPrivacyInput  {
     /// <p>The name of the domain that you want to update the privacy setting for.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p><note>
@@ -79,8 +79,7 @@ impl UpdateDomainContactPrivacyInputBuilder {
     }
     /// <p>The name of the domain that you want to update the privacy setting for.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The name of the domain that you want to update the privacy setting for.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl UpdateDomainContactPrivacyInputBuilder {
     /// <p>You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.</p>
     /// </note>
     pub fn set_admin_privacy(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.admin_privacy = input;
-        self
+        self.admin_privacy = input; self
     }
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p><note>
     /// <p>You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.</p>
@@ -117,8 +115,7 @@ impl UpdateDomainContactPrivacyInputBuilder {
     /// <p>You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.</p>
     /// </note>
     pub fn set_registrant_privacy(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.registrant_privacy = input;
-        self
+        self.registrant_privacy = input; self
     }
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p><note>
     /// <p>You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.</p>
@@ -137,8 +134,7 @@ impl UpdateDomainContactPrivacyInputBuilder {
     /// <p>You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.</p>
     /// </note>
     pub fn set_tech_privacy(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.tech_privacy = input;
-        self
+        self.tech_privacy = input; self
     }
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p><note>
     /// <p>You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.</p>
@@ -157,8 +153,7 @@ impl UpdateDomainContactPrivacyInputBuilder {
     /// <p>You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.</p>
     /// </note>
     pub fn set_billing_privacy(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.billing_privacy = input;
-        self
+        self.billing_privacy = input; self
     }
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify <code>false</code>, WHOIS queries return the information that you entered for the billing contact.</p><note>
     /// <p>You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.</p>
@@ -167,18 +162,21 @@ impl UpdateDomainContactPrivacyInputBuilder {
         &self.billing_privacy
     }
     /// Consumes the builder and constructs a [`UpdateDomainContactPrivacyInput`](crate::operation::update_domain_contact_privacy::UpdateDomainContactPrivacyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_domain_contact_privacy::UpdateDomainContactPrivacyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_domain_contact_privacy::UpdateDomainContactPrivacyInput {
-            domain_name: self.domain_name,
-            admin_privacy: self.admin_privacy,
-            registrant_privacy: self.registrant_privacy,
-            tech_privacy: self.tech_privacy,
-            billing_privacy: self.billing_privacy,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_domain_contact_privacy::UpdateDomainContactPrivacyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_domain_contact_privacy::UpdateDomainContactPrivacyInput {
+                domain_name: self.domain_name
+                ,
+                admin_privacy: self.admin_privacy
+                ,
+                registrant_privacy: self.registrant_privacy
+                ,
+                tech_privacy: self.tech_privacy
+                ,
+                billing_privacy: self.billing_privacy
+                ,
+            }
+        )
     }
 }
+

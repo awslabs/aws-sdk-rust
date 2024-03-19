@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteStageInput {
+pub struct DeleteStageInput  {
     /// <p>ARN of the stage to be deleted.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteStageInput {
+impl  DeleteStageInput  {
     /// <p>ARN of the stage to be deleted.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl DeleteStageInputBuilder {
     }
     /// <p>ARN of the stage to be deleted.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>ARN of the stage to be deleted.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl DeleteStageInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteStageInput`](crate::operation::delete_stage::DeleteStageInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_stage::DeleteStageInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_stage::DeleteStageInput { arn: self.arn })
+        ::std::result::Result::Ok(
+            crate::operation::delete_stage::DeleteStageInput {
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

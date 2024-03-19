@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateRelationalDatabaseInput {
+pub struct CreateRelationalDatabaseInput  {
     /// <p>The name to use for your new Lightsail database resource.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -116,9 +116,9 @@ pub struct CreateRelationalDatabaseInput {
     pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateRelationalDatabaseInput {
+impl  CreateRelationalDatabaseInput  {
     /// <p>The name to use for your new Lightsail database resource.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -127,22 +127,22 @@ impl CreateRelationalDatabaseInput {
     /// <li>
     /// <p>The first and last character must be a letter or number.</p></li>
     /// </ul>
-    pub fn relational_database_name(&self) -> ::std::option::Option<&str> {
+    pub fn relational_database_name(&self) -> ::std::option::Option<& str> {
         self.relational_database_name.as_deref()
     }
     /// <p>The Availability Zone in which to create your new database. Use the <code>us-east-2a</code> case-sensitive format.</p>
     /// <p>You can get a list of Availability Zones by using the <code>get regions</code> operation. Be sure to add the <code>include relational database Availability Zones</code> parameter to your request.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The blueprint ID for your new database. A blueprint describes the major engine version of a database.</p>
     /// <p>You can get a list of database blueprints IDs by using the <code>get relational database blueprints</code> operation.</p>
-    pub fn relational_database_blueprint_id(&self) -> ::std::option::Option<&str> {
+    pub fn relational_database_blueprint_id(&self) -> ::std::option::Option<& str> {
         self.relational_database_blueprint_id.as_deref()
     }
     /// <p>The bundle ID for your new database. A bundle describes the performance specifications for your database.</p>
     /// <p>You can get a list of database bundle IDs by using the <code>get relational database bundles</code> operation.</p>
-    pub fn relational_database_bundle_id(&self) -> ::std::option::Option<&str> {
+    pub fn relational_database_bundle_id(&self) -> ::std::option::Option<& str> {
         self.relational_database_bundle_id.as_deref()
     }
     /// <p>The meaning of this parameter differs according to the database engine you use.</p>
@@ -170,7 +170,7 @@ impl CreateRelationalDatabaseInput {
     /// <p>Can't be a word reserved by the specified database engine.</p>
     /// <p>For more information about reserved words in PostgreSQL, see the SQL Key Words articles for <a href="https://www.postgresql.org/docs/9.6/sql-keywords-appendix.html">PostgreSQL 9.6</a>, <a href="https://www.postgresql.org/docs/10/sql-keywords-appendix.html">PostgreSQL 10</a>, <a href="https://www.postgresql.org/docs/11/sql-keywords-appendix.html">PostgreSQL 11</a>, and <a href="https://www.postgresql.org/docs/12/sql-keywords-appendix.html">PostgreSQL 12</a>.</p></li>
     /// </ul>
-    pub fn master_database_name(&self) -> ::std::option::Option<&str> {
+    pub fn master_database_name(&self) -> ::std::option::Option<& str> {
         self.master_database_name.as_deref()
     }
     /// <p>The name for the master user.</p>
@@ -200,7 +200,7 @@ impl CreateRelationalDatabaseInput {
     /// <p>Can't be a reserved word for the chosen database engine.</p>
     /// <p>For more information about reserved words in MySQL 5.6 or 5.7, see the Keywords and Reserved Words articles for <a href="https://www.postgresql.org/docs/9.6/sql-keywords-appendix.html">PostgreSQL 9.6</a>, <a href="https://www.postgresql.org/docs/10/sql-keywords-appendix.html">PostgreSQL 10</a>, <a href="https://www.postgresql.org/docs/11/sql-keywords-appendix.html">PostgreSQL 11</a>, and <a href="https://www.postgresql.org/docs/12/sql-keywords-appendix.html">PostgreSQL 12</a>.</p></li>
     /// </ul>
-    pub fn master_username(&self) -> ::std::option::Option<&str> {
+    pub fn master_username(&self) -> ::std::option::Option<& str> {
         self.master_username.as_deref()
     }
     /// <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@". It cannot contain spaces.</p>
@@ -208,7 +208,7 @@ impl CreateRelationalDatabaseInput {
     /// <p>Constraints: Must contain from 8 to 41 characters.</p>
     /// <p><b>PostgreSQL</b></p>
     /// <p>Constraints: Must contain from 8 to 128 characters.</p>
-    pub fn master_user_password(&self) -> ::std::option::Option<&str> {
+    pub fn master_user_password(&self) -> ::std::option::Option<& str> {
         self.master_user_password.as_deref()
     }
     /// <p>The daily time range during which automated backups are created for your new database if automated backups are enabled.</p>
@@ -225,7 +225,7 @@ impl CreateRelationalDatabaseInput {
     /// <li>
     /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
-    pub fn preferred_backup_window(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_backup_window(&self) -> ::std::option::Option<& str> {
         self.preferred_backup_window.as_deref()
     }
     /// <p>The weekly time range during which system maintenance can occur on your new database.</p>
@@ -243,7 +243,7 @@ impl CreateRelationalDatabaseInput {
     /// <li>
     /// <p>Example: <code>Tue:17:00-Tue:17:30</code></p></li>
     /// </ul>
-    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<& str> {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>Specifies the accessibility options for your new database. A value of <code>true</code> specifies a database that is available to resources outside of your Lightsail account. A value of <code>false</code> specifies a database that is available only to your Lightsail resources in the same region as your database.</p>
@@ -252,13 +252,14 @@ impl CreateRelationalDatabaseInput {
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for CreateRelationalDatabaseInput {
+impl  ::std::fmt::Debug for CreateRelationalDatabaseInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRelationalDatabaseInput");
         formatter.field("relational_database_name", &self.relational_database_name);
@@ -296,7 +297,7 @@ pub struct CreateRelationalDatabaseInputBuilder {
     pub(crate) preferred_backup_window: ::std::option::Option<::std::string::String>,
     pub(crate) preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     pub(crate) publicly_accessible: ::std::option::Option<bool>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateRelationalDatabaseInputBuilder {
     /// <p>The name to use for your new Lightsail database resource.</p>
@@ -321,8 +322,7 @@ impl CreateRelationalDatabaseInputBuilder {
     /// <p>The first and last character must be a letter or number.</p></li>
     /// </ul>
     pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.relational_database_name = input;
-        self
+        self.relational_database_name = input; self
     }
     /// <p>The name to use for your new Lightsail database resource.</p>
     /// <p>Constraints:</p>
@@ -344,8 +344,7 @@ impl CreateRelationalDatabaseInputBuilder {
     /// <p>The Availability Zone in which to create your new database. Use the <code>us-east-2a</code> case-sensitive format.</p>
     /// <p>You can get a list of Availability Zones by using the <code>get regions</code> operation. Be sure to add the <code>include relational database Availability Zones</code> parameter to your request.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// <p>The Availability Zone in which to create your new database. Use the <code>us-east-2a</code> case-sensitive format.</p>
     /// <p>You can get a list of Availability Zones by using the <code>get regions</code> operation. Be sure to add the <code>include relational database Availability Zones</code> parameter to your request.</p>
@@ -362,8 +361,7 @@ impl CreateRelationalDatabaseInputBuilder {
     /// <p>The blueprint ID for your new database. A blueprint describes the major engine version of a database.</p>
     /// <p>You can get a list of database blueprints IDs by using the <code>get relational database blueprints</code> operation.</p>
     pub fn set_relational_database_blueprint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.relational_database_blueprint_id = input;
-        self
+        self.relational_database_blueprint_id = input; self
     }
     /// <p>The blueprint ID for your new database. A blueprint describes the major engine version of a database.</p>
     /// <p>You can get a list of database blueprints IDs by using the <code>get relational database blueprints</code> operation.</p>
@@ -380,8 +378,7 @@ impl CreateRelationalDatabaseInputBuilder {
     /// <p>The bundle ID for your new database. A bundle describes the performance specifications for your database.</p>
     /// <p>You can get a list of database bundle IDs by using the <code>get relational database bundles</code> operation.</p>
     pub fn set_relational_database_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.relational_database_bundle_id = input;
-        self
+        self.relational_database_bundle_id = input; self
     }
     /// <p>The bundle ID for your new database. A bundle describes the performance specifications for your database.</p>
     /// <p>You can get a list of database bundle IDs by using the <code>get relational database bundles</code> operation.</p>
@@ -444,8 +441,7 @@ impl CreateRelationalDatabaseInputBuilder {
     /// <p>For more information about reserved words in PostgreSQL, see the SQL Key Words articles for <a href="https://www.postgresql.org/docs/9.6/sql-keywords-appendix.html">PostgreSQL 9.6</a>, <a href="https://www.postgresql.org/docs/10/sql-keywords-appendix.html">PostgreSQL 10</a>, <a href="https://www.postgresql.org/docs/11/sql-keywords-appendix.html">PostgreSQL 11</a>, and <a href="https://www.postgresql.org/docs/12/sql-keywords-appendix.html">PostgreSQL 12</a>.</p></li>
     /// </ul>
     pub fn set_master_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.master_database_name = input;
-        self
+        self.master_database_name = input; self
     }
     /// <p>The meaning of this parameter differs according to the database engine you use.</p>
     /// <p><b>MySQL</b></p>
@@ -535,8 +531,7 @@ impl CreateRelationalDatabaseInputBuilder {
     /// <p>For more information about reserved words in MySQL 5.6 or 5.7, see the Keywords and Reserved Words articles for <a href="https://www.postgresql.org/docs/9.6/sql-keywords-appendix.html">PostgreSQL 9.6</a>, <a href="https://www.postgresql.org/docs/10/sql-keywords-appendix.html">PostgreSQL 10</a>, <a href="https://www.postgresql.org/docs/11/sql-keywords-appendix.html">PostgreSQL 11</a>, and <a href="https://www.postgresql.org/docs/12/sql-keywords-appendix.html">PostgreSQL 12</a>.</p></li>
     /// </ul>
     pub fn set_master_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.master_username = input;
-        self
+        self.master_username = input; self
     }
     /// <p>The name for the master user.</p>
     /// <p><b>MySQL</b></p>
@@ -583,8 +578,7 @@ impl CreateRelationalDatabaseInputBuilder {
     /// <p><b>PostgreSQL</b></p>
     /// <p>Constraints: Must contain from 8 to 128 characters.</p>
     pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.master_user_password = input;
-        self
+        self.master_user_password = input; self
     }
     /// <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@". It cannot contain spaces.</p>
     /// <p><b>MySQL</b></p>
@@ -627,8 +621,7 @@ impl CreateRelationalDatabaseInputBuilder {
     /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_backup_window = input;
-        self
+        self.preferred_backup_window = input; self
     }
     /// <p>The daily time range during which automated backups are created for your new database if automated backups are enabled.</p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. For more information about the preferred backup window time blocks for each region, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Working With Backups</a> guide in the Amazon Relational Database Service documentation.</p>
@@ -682,8 +675,7 @@ impl CreateRelationalDatabaseInputBuilder {
     /// <p>Example: <code>Tue:17:00-Tue:17:30</code></p></li>
     /// </ul>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_maintenance_window = input;
-        self
+        self.preferred_maintenance_window = input; self
     }
     /// <p>The weekly time range during which system maintenance can occur on your new database.</p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring on a random day of the week.</p>
@@ -710,8 +702,7 @@ impl CreateRelationalDatabaseInputBuilder {
     }
     /// <p>Specifies the accessibility options for your new database. A value of <code>true</code> specifies a database that is available to resources outside of your Lightsail account. A value of <code>false</code> specifies a database that is available only to your Lightsail resources in the same region as your database.</p>
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.publicly_accessible = input;
-        self
+        self.publicly_accessible = input; self
     }
     /// <p>Specifies the accessibility options for your new database. A value of <code>true</code> specifies a database that is available to resources outside of your Lightsail account. A value of <code>false</code> specifies a database that is available only to your Lightsail resources in the same region as your database.</p>
     pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
@@ -725,41 +716,48 @@ impl CreateRelationalDatabaseInputBuilder {
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRelationalDatabaseInput`](crate::operation::create_relational_database::CreateRelationalDatabaseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_relational_database::CreateRelationalDatabaseInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_relational_database::CreateRelationalDatabaseInput {
-            relational_database_name: self.relational_database_name,
-            availability_zone: self.availability_zone,
-            relational_database_blueprint_id: self.relational_database_blueprint_id,
-            relational_database_bundle_id: self.relational_database_bundle_id,
-            master_database_name: self.master_database_name,
-            master_username: self.master_username,
-            master_user_password: self.master_user_password,
-            preferred_backup_window: self.preferred_backup_window,
-            preferred_maintenance_window: self.preferred_maintenance_window,
-            publicly_accessible: self.publicly_accessible,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_relational_database::CreateRelationalDatabaseInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_relational_database::CreateRelationalDatabaseInput {
+                relational_database_name: self.relational_database_name
+                ,
+                availability_zone: self.availability_zone
+                ,
+                relational_database_blueprint_id: self.relational_database_blueprint_id
+                ,
+                relational_database_bundle_id: self.relational_database_bundle_id
+                ,
+                master_database_name: self.master_database_name
+                ,
+                master_username: self.master_username
+                ,
+                master_user_password: self.master_user_password
+                ,
+                preferred_backup_window: self.preferred_backup_window
+                ,
+                preferred_maintenance_window: self.preferred_maintenance_window
+                ,
+                publicly_accessible: self.publicly_accessible
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateRelationalDatabaseInputBuilder {
@@ -779,3 +777,4 @@ impl ::std::fmt::Debug for CreateRelationalDatabaseInputBuilder {
         formatter.finish()
     }
 }
+

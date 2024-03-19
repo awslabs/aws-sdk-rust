@@ -17,10 +17,10 @@ pub enum AttributeValue {
     Long(i64),
     /// <p>An attribute value of <a href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#record">Record</a> type.</p>
     /// <p>Example: <code>{"record": { "keyName": {} } }</code></p>
-    Record(::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>),
+    Record(::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>),
     /// <p>An attribute value of <a href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#set">Set</a> type.</p>
     /// <p>Example: <code>{"set": [ {} ] }</code></p>
-    Set(::std::vec::Vec<crate::types::AttributeValue>),
+    Set(::std::vec::Vec::<crate::types::AttributeValue>),
     /// <p>An attribute value of <a href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#string">String</a> type.</p>
     /// <p>Example: <code>{"string": "abc"}</code></p>
     String(::std::string::String),
@@ -38,11 +38,7 @@ impl AttributeValue {
     /// Tries to convert the enum instance into [`Boolean`](crate::types::AttributeValue::Boolean), extracting the inner [`bool`](bool).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_boolean(&self) -> ::std::result::Result<&bool, &Self> {
-        if let AttributeValue::Boolean(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AttributeValue::Boolean(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Boolean`](crate::types::AttributeValue::Boolean).
     pub fn is_boolean(&self) -> bool {
@@ -51,11 +47,7 @@ impl AttributeValue {
     /// Tries to convert the enum instance into [`EntityIdentifier`](crate::types::AttributeValue::EntityIdentifier), extracting the inner [`EntityIdentifier`](crate::types::EntityIdentifier).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_entity_identifier(&self) -> ::std::result::Result<&crate::types::EntityIdentifier, &Self> {
-        if let AttributeValue::EntityIdentifier(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AttributeValue::EntityIdentifier(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`EntityIdentifier`](crate::types::AttributeValue::EntityIdentifier).
     pub fn is_entity_identifier(&self) -> bool {
@@ -64,11 +56,7 @@ impl AttributeValue {
     /// Tries to convert the enum instance into [`Long`](crate::types::AttributeValue::Long), extracting the inner [`i64`](i64).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_long(&self) -> ::std::result::Result<&i64, &Self> {
-        if let AttributeValue::Long(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AttributeValue::Long(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Long`](crate::types::AttributeValue::Long).
     pub fn is_long(&self) -> bool {
@@ -76,12 +64,8 @@ impl AttributeValue {
     }
     /// Tries to convert the enum instance into [`Record`](crate::types::AttributeValue::Record), extracting the inner [`HashMap`](::std::collections::HashMap).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_record(&self) -> ::std::result::Result<&::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>, &Self> {
-        if let AttributeValue::Record(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+    pub fn as_record(&self) -> ::std::result::Result<&::std::collections::HashMap::<::std::string::String, crate::types::AttributeValue>, &Self> {
+        if let AttributeValue::Record(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Record`](crate::types::AttributeValue::Record).
     pub fn is_record(&self) -> bool {
@@ -89,12 +73,8 @@ impl AttributeValue {
     }
     /// Tries to convert the enum instance into [`Set`](crate::types::AttributeValue::Set), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_set(&self) -> ::std::result::Result<&::std::vec::Vec<crate::types::AttributeValue>, &Self> {
-        if let AttributeValue::Set(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+    pub fn as_set(&self) -> ::std::result::Result<&::std::vec::Vec::<crate::types::AttributeValue>, &Self> {
+        if let AttributeValue::Set(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Set`](crate::types::AttributeValue::Set).
     pub fn is_set(&self) -> bool {
@@ -103,11 +83,7 @@ impl AttributeValue {
     /// Tries to convert the enum instance into [`String`](crate::types::AttributeValue::String), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let AttributeValue::String(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AttributeValue::String(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`String`](crate::types::AttributeValue::String).
     pub fn is_string(&self) -> bool {
@@ -131,3 +107,4 @@ impl ::std::fmt::Debug for AttributeValue {
         }
     }
 }
+

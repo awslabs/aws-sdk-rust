@@ -3,19 +3,19 @@
 /// <p>Contains information about the security groups associated with the EC2 instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SecurityGroup {
+pub struct SecurityGroup  {
     /// <p>The security group ID of the EC2 instance.</p>
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>The security group name of the EC2 instance.</p>
     pub group_name: ::std::option::Option<::std::string::String>,
 }
-impl SecurityGroup {
+impl  SecurityGroup  {
     /// <p>The security group ID of the EC2 instance.</p>
-    pub fn group_id(&self) -> ::std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<& str> {
         self.group_id.as_deref()
     }
     /// <p>The security group name of the EC2 instance.</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<& str> {
         self.group_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl SecurityGroupBuilder {
     }
     /// <p>The security group ID of the EC2 instance.</p>
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// <p>The security group ID of the EC2 instance.</p>
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl SecurityGroupBuilder {
     }
     /// <p>The security group name of the EC2 instance.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>The security group name of the EC2 instance.</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl SecurityGroupBuilder {
     /// Consumes the builder and constructs a [`SecurityGroup`](crate::types::SecurityGroup).
     pub fn build(self) -> crate::types::SecurityGroup {
         crate::types::SecurityGroup {
-            group_id: self.group_id,
-            group_name: self.group_name,
+            group_id: self.group_id
+            ,
+            group_name: self.group_name
+            ,
         }
     }
 }
+

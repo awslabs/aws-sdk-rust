@@ -3,7 +3,7 @@
 /// <p>The type of the data path value.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataPathType {
+pub struct DataPathType  {
     /// <p>The type of data path value utilized in a pivot table. Choose one of the following options:</p>
     /// <ul>
     /// <li>
@@ -17,7 +17,7 @@ pub struct DataPathType {
     /// </ul>
     pub pivot_table_data_path_type: ::std::option::Option<crate::types::PivotTableDataPathType>,
 }
-impl DataPathType {
+impl  DataPathType  {
     /// <p>The type of data path value utilized in a pivot table. Choose one of the following options:</p>
     /// <ul>
     /// <li>
@@ -29,7 +29,7 @@ impl DataPathType {
     /// <li>
     /// <p><code>COUNT_METRIC_COLUMN</code> - The type of data path for the column with <code>COUNT</code> as the metric, when there is no field in the <code>ValuesFieldWell</code>.</p></li>
     /// </ul>
-    pub fn pivot_table_data_path_type(&self) -> ::std::option::Option<&crate::types::PivotTableDataPathType> {
+    pub fn pivot_table_data_path_type(&self) -> ::std::option::Option<& crate::types::PivotTableDataPathType> {
         self.pivot_table_data_path_type.as_ref()
     }
 }
@@ -74,8 +74,7 @@ impl DataPathTypeBuilder {
     /// <p><code>COUNT_METRIC_COLUMN</code> - The type of data path for the column with <code>COUNT</code> as the metric, when there is no field in the <code>ValuesFieldWell</code>.</p></li>
     /// </ul>
     pub fn set_pivot_table_data_path_type(mut self, input: ::std::option::Option<crate::types::PivotTableDataPathType>) -> Self {
-        self.pivot_table_data_path_type = input;
-        self
+        self.pivot_table_data_path_type = input; self
     }
     /// <p>The type of data path value utilized in a pivot table. Choose one of the following options:</p>
     /// <ul>
@@ -94,7 +93,9 @@ impl DataPathTypeBuilder {
     /// Consumes the builder and constructs a [`DataPathType`](crate::types::DataPathType).
     pub fn build(self) -> crate::types::DataPathType {
         crate::types::DataPathType {
-            pivot_table_data_path_type: self.pivot_table_data_path_type,
+            pivot_table_data_path_type: self.pivot_table_data_path_type
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct StartFraudsterRegistrationJobInput {
+pub struct StartFraudsterRegistrationJobInput  {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the new fraudster registration job.</p>
@@ -18,37 +18,37 @@ pub struct StartFraudsterRegistrationJobInput {
     /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS key ID to encrypt the file.</p>
     pub output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
 }
-impl StartFraudsterRegistrationJobInput {
+impl  StartFraudsterRegistrationJobInput  {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The name of the new fraudster registration job.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The identifier of the domain that contains the fraudster registration job and in which the fraudsters are registered.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn domain_id(&self) -> ::std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the Job output file. Refer to the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-fraudster-watchlist.html">Create and edit a fraudster watchlist</a> documentation for the permissions needed in this role.</p>
-    pub fn data_access_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn data_access_role_arn(&self) -> ::std::option::Option<& str> {
         self.data_access_role_arn.as_deref()
     }
     /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
-    pub fn registration_config(&self) -> ::std::option::Option<&crate::types::RegistrationConfig> {
+    pub fn registration_config(&self) -> ::std::option::Option<& crate::types::RegistrationConfig> {
         self.registration_config.as_ref()
     }
     /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of fraudster registration requests.</p>
-    pub fn input_data_config(&self) -> ::std::option::Option<&crate::types::InputDataConfig> {
+    pub fn input_data_config(&self) -> ::std::option::Option<& crate::types::InputDataConfig> {
         self.input_data_config.as_ref()
     }
     /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS key ID to encrypt the file.</p>
-    pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::OutputDataConfig> {
+    pub fn output_data_config(&self) -> ::std::option::Option<& crate::types::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
 }
-impl ::std::fmt::Debug for StartFraudsterRegistrationJobInput {
+impl  ::std::fmt::Debug for StartFraudsterRegistrationJobInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StartFraudsterRegistrationJobInput");
         formatter.field("client_token", &self.client_token);
@@ -88,8 +88,7 @@ impl StartFraudsterRegistrationJobInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +101,7 @@ impl StartFraudsterRegistrationJobInputBuilder {
     }
     /// <p>The name of the new fraudster registration job.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// <p>The name of the new fraudster registration job.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +115,7 @@ impl StartFraudsterRegistrationJobInputBuilder {
     }
     /// <p>The identifier of the domain that contains the fraudster registration job and in which the fraudsters are registered.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The identifier of the domain that contains the fraudster registration job and in which the fraudsters are registered.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +129,7 @@ impl StartFraudsterRegistrationJobInputBuilder {
     }
     /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the Job output file. Refer to the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-fraudster-watchlist.html">Create and edit a fraudster watchlist</a> documentation for the permissions needed in this role.</p>
     pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_access_role_arn = input;
-        self
+        self.data_access_role_arn = input; self
     }
     /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the Job output file. Refer to the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-fraudster-watchlist.html">Create and edit a fraudster watchlist</a> documentation for the permissions needed in this role.</p>
     pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +142,7 @@ impl StartFraudsterRegistrationJobInputBuilder {
     }
     /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
     pub fn set_registration_config(mut self, input: ::std::option::Option<crate::types::RegistrationConfig>) -> Self {
-        self.registration_config = input;
-        self
+        self.registration_config = input; self
     }
     /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
     pub fn get_registration_config(&self) -> &::std::option::Option<crate::types::RegistrationConfig> {
@@ -161,8 +156,7 @@ impl StartFraudsterRegistrationJobInputBuilder {
     }
     /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of fraudster registration requests.</p>
     pub fn set_input_data_config(mut self, input: ::std::option::Option<crate::types::InputDataConfig>) -> Self {
-        self.input_data_config = input;
-        self
+        self.input_data_config = input; self
     }
     /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of fraudster registration requests.</p>
     pub fn get_input_data_config(&self) -> &::std::option::Option<crate::types::InputDataConfig> {
@@ -176,29 +170,32 @@ impl StartFraudsterRegistrationJobInputBuilder {
     }
     /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS key ID to encrypt the file.</p>
     pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::OutputDataConfig>) -> Self {
-        self.output_data_config = input;
-        self
+        self.output_data_config = input; self
     }
     /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS key ID to encrypt the file.</p>
     pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::OutputDataConfig> {
         &self.output_data_config
     }
     /// Consumes the builder and constructs a [`StartFraudsterRegistrationJobInput`](crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobInput {
-            client_token: self.client_token,
-            job_name: self.job_name,
-            domain_id: self.domain_id,
-            data_access_role_arn: self.data_access_role_arn,
-            registration_config: self.registration_config,
-            input_data_config: self.input_data_config,
-            output_data_config: self.output_data_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobInput {
+                client_token: self.client_token
+                ,
+                job_name: self.job_name
+                ,
+                domain_id: self.domain_id
+                ,
+                data_access_role_arn: self.data_access_role_arn
+                ,
+                registration_config: self.registration_config
+                ,
+                input_data_config: self.input_data_config
+                ,
+                output_data_config: self.output_data_config
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for StartFraudsterRegistrationJobInputBuilder {
@@ -214,3 +211,4 @@ impl ::std::fmt::Debug for StartFraudsterRegistrationJobInputBuilder {
         formatter.finish()
     }
 }
+

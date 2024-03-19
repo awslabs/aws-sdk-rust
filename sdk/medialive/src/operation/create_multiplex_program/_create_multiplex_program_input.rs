@@ -3,7 +3,7 @@
 /// A request to create a program in a multiplex.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateMultiplexProgramInput {
+pub struct CreateMultiplexProgramInput  {
     /// ID of the multiplex where the program is to be created.
     pub multiplex_id: ::std::option::Option<::std::string::String>,
     /// The settings for this multiplex program.
@@ -13,21 +13,21 @@ pub struct CreateMultiplexProgramInput {
     /// Unique request ID. This prevents retries from creating multiple resources.
     pub request_id: ::std::option::Option<::std::string::String>,
 }
-impl CreateMultiplexProgramInput {
+impl  CreateMultiplexProgramInput  {
     /// ID of the multiplex where the program is to be created.
-    pub fn multiplex_id(&self) -> ::std::option::Option<&str> {
+    pub fn multiplex_id(&self) -> ::std::option::Option<& str> {
         self.multiplex_id.as_deref()
     }
     /// The settings for this multiplex program.
-    pub fn multiplex_program_settings(&self) -> ::std::option::Option<&crate::types::MultiplexProgramSettings> {
+    pub fn multiplex_program_settings(&self) -> ::std::option::Option<& crate::types::MultiplexProgramSettings> {
         self.multiplex_program_settings.as_ref()
     }
     /// Name of multiplex program.
-    pub fn program_name(&self) -> ::std::option::Option<&str> {
+    pub fn program_name(&self) -> ::std::option::Option<& str> {
         self.program_name.as_deref()
     }
     /// Unique request ID. This prevents retries from creating multiple resources.
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
@@ -56,8 +56,7 @@ impl CreateMultiplexProgramInputBuilder {
     }
     /// ID of the multiplex where the program is to be created.
     pub fn set_multiplex_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.multiplex_id = input;
-        self
+        self.multiplex_id = input; self
     }
     /// ID of the multiplex where the program is to be created.
     pub fn get_multiplex_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl CreateMultiplexProgramInputBuilder {
     }
     /// The settings for this multiplex program.
     pub fn set_multiplex_program_settings(mut self, input: ::std::option::Option<crate::types::MultiplexProgramSettings>) -> Self {
-        self.multiplex_program_settings = input;
-        self
+        self.multiplex_program_settings = input; self
     }
     /// The settings for this multiplex program.
     pub fn get_multiplex_program_settings(&self) -> &::std::option::Option<crate::types::MultiplexProgramSettings> {
@@ -86,8 +84,7 @@ impl CreateMultiplexProgramInputBuilder {
     }
     /// Name of multiplex program.
     pub fn set_program_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.program_name = input;
-        self
+        self.program_name = input; self
     }
     /// Name of multiplex program.
     pub fn get_program_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,25 +98,26 @@ impl CreateMultiplexProgramInputBuilder {
     }
     /// Unique request ID. This prevents retries from creating multiple resources.
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// Unique request ID. This prevents retries from creating multiple resources.
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_id
     }
     /// Consumes the builder and constructs a [`CreateMultiplexProgramInput`](crate::operation::create_multiplex_program::CreateMultiplexProgramInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_multiplex_program::CreateMultiplexProgramInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_multiplex_program::CreateMultiplexProgramInput {
-            multiplex_id: self.multiplex_id,
-            multiplex_program_settings: self.multiplex_program_settings,
-            program_name: self.program_name,
-            request_id: self.request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_multiplex_program::CreateMultiplexProgramInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_multiplex_program::CreateMultiplexProgramInput {
+                multiplex_id: self.multiplex_id
+                ,
+                multiplex_program_settings: self.multiplex_program_settings
+                ,
+                program_name: self.program_name
+                ,
+                request_id: self.request_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,36 +2,38 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchUpdateVehicleOutput {
+pub struct BatchUpdateVehicleOutput  {
     /// <p>A list of information about the batch of updated vehicles.</p><note>
     /// <p>This list contains only unique IDs for the vehicles that were updated.</p>
     /// </note>
-    pub vehicles: ::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleResponseItem>>,
+    pub vehicles: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateVehicleResponseItem>>,
     /// <p>A list of information about errors returned while updating a batch of vehicles, or, if there aren't any errors, an empty list.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleError>>,
+    pub errors: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateVehicleError>>,
     _request_id: Option<String>,
 }
-impl BatchUpdateVehicleOutput {
+impl  BatchUpdateVehicleOutput  {
     /// <p>A list of information about the batch of updated vehicles.</p><note>
     /// <p>This list contains only unique IDs for the vehicles that were updated.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vehicles.is_none()`.
-    pub fn vehicles(&self) -> &[crate::types::UpdateVehicleResponseItem] {
-        self.vehicles.as_deref().unwrap_or_default()
+    pub fn vehicles(&self) -> & [crate::types::UpdateVehicleResponseItem] {
+        self.vehicles.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of information about errors returned while updating a batch of vehicles, or, if there aren't any errors, an empty list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
-    pub fn errors(&self) -> &[crate::types::UpdateVehicleError] {
-        self.errors.as_deref().unwrap_or_default()
+    pub fn errors(&self) -> & [crate::types::UpdateVehicleError] {
+        self.errors.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchUpdateVehicleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchUpdateVehicleOutput {
     /// Creates a new builder-style object to manufacture [`BatchUpdateVehicleOutput`](crate::operation::batch_update_vehicle::BatchUpdateVehicleOutput).
     pub fn builder() -> crate::operation::batch_update_vehicle::builders::BatchUpdateVehicleOutputBuilder {
@@ -43,8 +45,8 @@ impl BatchUpdateVehicleOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUpdateVehicleOutputBuilder {
-    pub(crate) vehicles: ::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleResponseItem>>,
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleError>>,
+    pub(crate) vehicles: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateVehicleResponseItem>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateVehicleError>>,
     _request_id: Option<String>,
 }
 impl BatchUpdateVehicleOutputBuilder {
@@ -57,21 +59,20 @@ impl BatchUpdateVehicleOutputBuilder {
     /// </note>
     pub fn vehicles(mut self, input: crate::types::UpdateVehicleResponseItem) -> Self {
         let mut v = self.vehicles.unwrap_or_default();
-        v.push(input);
-        self.vehicles = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.vehicles = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of information about the batch of updated vehicles.</p><note>
     /// <p>This list contains only unique IDs for the vehicles that were updated.</p>
     /// </note>
-    pub fn set_vehicles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleResponseItem>>) -> Self {
-        self.vehicles = input;
-        self
+    pub fn set_vehicles(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateVehicleResponseItem>>) -> Self {
+        self.vehicles = input; self
     }
     /// <p>A list of information about the batch of updated vehicles.</p><note>
     /// <p>This list contains only unique IDs for the vehicles that were updated.</p>
     /// </note>
-    pub fn get_vehicles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleResponseItem>> {
+    pub fn get_vehicles(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UpdateVehicleResponseItem>> {
         &self.vehicles
     }
     /// Appends an item to `errors`.
@@ -81,34 +82,36 @@ impl BatchUpdateVehicleOutputBuilder {
     /// <p>A list of information about errors returned while updating a batch of vehicles, or, if there aren't any errors, an empty list.</p>
     pub fn errors(mut self, input: crate::types::UpdateVehicleError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of information about errors returned while updating a batch of vehicles, or, if there aren't any errors, an empty list.</p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleError>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateVehicleError>>) -> Self {
+        self.errors = input; self
     }
     /// <p>A list of information about errors returned while updating a batch of vehicles, or, if there aren't any errors, an empty list.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UpdateVehicleError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchUpdateVehicleOutput`](crate::operation::batch_update_vehicle::BatchUpdateVehicleOutput).
     pub fn build(self) -> crate::operation::batch_update_vehicle::BatchUpdateVehicleOutput {
         crate::operation::batch_update_vehicle::BatchUpdateVehicleOutput {
-            vehicles: self.vehicles,
-            errors: self.errors,
+            vehicles: self.vehicles
+            ,
+            errors: self.errors
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

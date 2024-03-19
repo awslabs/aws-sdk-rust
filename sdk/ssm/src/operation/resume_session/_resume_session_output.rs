@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResumeSessionOutput {
+pub struct ResumeSessionOutput  {
     /// <p>The ID of the session.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>An encrypted token value containing session and caller information. Used to authenticate the connection to the managed node.</p>
@@ -13,27 +13,27 @@ pub struct ResumeSessionOutput {
     pub stream_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ResumeSessionOutput {
+impl  ResumeSessionOutput  {
     /// <p>The ID of the session.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>An encrypted token value containing session and caller information. Used to authenticate the connection to the managed node.</p>
-    pub fn token_value(&self) -> ::std::option::Option<&str> {
+    pub fn token_value(&self) -> ::std::option::Option<& str> {
         self.token_value.as_deref()
     }
     /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the managed node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
     /// <p><b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// <p><b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
-    pub fn stream_url(&self) -> ::std::option::Option<&str> {
+    pub fn stream_url(&self) -> ::std::option::Option<& str> {
         self.stream_url.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ResumeSessionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ResumeSessionOutput {
     /// Creates a new builder-style object to manufacture [`ResumeSessionOutput`](crate::operation::resume_session::ResumeSessionOutput).
     pub fn builder() -> crate::operation::resume_session::builders::ResumeSessionOutputBuilder {
@@ -58,8 +58,7 @@ impl ResumeSessionOutputBuilder {
     }
     /// <p>The ID of the session.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>The ID of the session.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +71,7 @@ impl ResumeSessionOutputBuilder {
     }
     /// <p>An encrypted token value containing session and caller information. Used to authenticate the connection to the managed node.</p>
     pub fn set_token_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.token_value = input;
-        self
+        self.token_value = input; self
     }
     /// <p>An encrypted token value containing session and caller information. Used to authenticate the connection to the managed node.</p>
     pub fn get_token_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl ResumeSessionOutputBuilder {
     /// <p><b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// <p><b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
     pub fn set_stream_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_url = input;
-        self
+        self.stream_url = input; self
     }
     /// <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the managed node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
     /// <p><b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
@@ -100,21 +97,25 @@ impl ResumeSessionOutputBuilder {
         &self.stream_url
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ResumeSessionOutput`](crate::operation::resume_session::ResumeSessionOutput).
     pub fn build(self) -> crate::operation::resume_session::ResumeSessionOutput {
         crate::operation::resume_session::ResumeSessionOutput {
-            session_id: self.session_id,
-            token_value: self.token_value,
-            stream_url: self.stream_url,
+            session_id: self.session_id
+            ,
+            token_value: self.token_value
+            ,
+            stream_url: self.stream_url
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

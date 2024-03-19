@@ -3,13 +3,13 @@
 /// <p>The optional configuration for a server that serves segments. Use this if you want the segment delivery server to be different from the source location server. For example, you can configure your source location server to be an origination server, such as MediaPackage, and the segment delivery server to be a content delivery network (CDN), such as CloudFront. If you don't specify a segment delivery server, then the source location server is used.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DefaultSegmentDeliveryConfiguration {
+pub struct DefaultSegmentDeliveryConfiguration  {
     /// <p>The hostname of the server that will be used to serve segments. This string must include the protocol, such as <b>https://</b>.</p>
     pub base_url: ::std::option::Option<::std::string::String>,
 }
-impl DefaultSegmentDeliveryConfiguration {
+impl  DefaultSegmentDeliveryConfiguration  {
     /// <p>The hostname of the server that will be used to serve segments. This string must include the protocol, such as <b>https://</b>.</p>
-    pub fn base_url(&self) -> ::std::option::Option<&str> {
+    pub fn base_url(&self) -> ::std::option::Option<& str> {
         self.base_url.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl DefaultSegmentDeliveryConfigurationBuilder {
     }
     /// <p>The hostname of the server that will be used to serve segments. This string must include the protocol, such as <b>https://</b>.</p>
     pub fn set_base_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.base_url = input;
-        self
+        self.base_url = input; self
     }
     /// <p>The hostname of the server that will be used to serve segments. This string must include the protocol, such as <b>https://</b>.</p>
     pub fn get_base_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl DefaultSegmentDeliveryConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`DefaultSegmentDeliveryConfiguration`](crate::types::DefaultSegmentDeliveryConfiguration).
     pub fn build(self) -> crate::types::DefaultSegmentDeliveryConfiguration {
-        crate::types::DefaultSegmentDeliveryConfiguration { base_url: self.base_url }
+        crate::types::DefaultSegmentDeliveryConfiguration {
+            base_url: self.base_url
+            ,
+        }
     }
 }
+

@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetConfigurationPolicyAssociationsInput {
+pub struct BatchGetConfigurationPolicyAssociationsInput  {
     /// <p>Specifies one or more target account IDs, organizational unit (OU) IDs, or the root ID to retrieve associations for.</p>
-    pub configuration_policy_association_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationPolicyAssociation>>,
+    pub configuration_policy_association_identifiers: ::std::option::Option<::std::vec::Vec::<crate::types::ConfigurationPolicyAssociation>>,
 }
-impl BatchGetConfigurationPolicyAssociationsInput {
+impl  BatchGetConfigurationPolicyAssociationsInput  {
     /// <p>Specifies one or more target account IDs, organizational unit (OU) IDs, or the root ID to retrieve associations for.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configuration_policy_association_identifiers.is_none()`.
-    pub fn configuration_policy_association_identifiers(&self) -> &[crate::types::ConfigurationPolicyAssociation] {
-        self.configuration_policy_association_identifiers.as_deref().unwrap_or_default()
+    pub fn configuration_policy_association_identifiers(&self) -> & [crate::types::ConfigurationPolicyAssociation] {
+        self.configuration_policy_association_identifiers.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchGetConfigurationPolicyAssociationsInput {
@@ -25,7 +26,7 @@ impl BatchGetConfigurationPolicyAssociationsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetConfigurationPolicyAssociationsInputBuilder {
-    pub(crate) configuration_policy_association_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationPolicyAssociation>>,
+    pub(crate) configuration_policy_association_identifiers: ::std::option::Option<::std::vec::Vec::<crate::types::ConfigurationPolicyAssociation>>,
 }
 impl BatchGetConfigurationPolicyAssociationsInputBuilder {
     /// Appends an item to `configuration_policy_association_identifiers`.
@@ -35,35 +36,26 @@ impl BatchGetConfigurationPolicyAssociationsInputBuilder {
     /// <p>Specifies one or more target account IDs, organizational unit (OU) IDs, or the root ID to retrieve associations for.</p>
     pub fn configuration_policy_association_identifiers(mut self, input: crate::types::ConfigurationPolicyAssociation) -> Self {
         let mut v = self.configuration_policy_association_identifiers.unwrap_or_default();
-        v.push(input);
-        self.configuration_policy_association_identifiers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.configuration_policy_association_identifiers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies one or more target account IDs, organizational unit (OU) IDs, or the root ID to retrieve associations for.</p>
-    pub fn set_configuration_policy_association_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationPolicyAssociation>>,
-    ) -> Self {
-        self.configuration_policy_association_identifiers = input;
-        self
+    pub fn set_configuration_policy_association_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ConfigurationPolicyAssociation>>) -> Self {
+        self.configuration_policy_association_identifiers = input; self
     }
     /// <p>Specifies one or more target account IDs, organizational unit (OU) IDs, or the root ID to retrieve associations for.</p>
-    pub fn get_configuration_policy_association_identifiers(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationPolicyAssociation>> {
+    pub fn get_configuration_policy_association_identifiers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ConfigurationPolicyAssociation>> {
         &self.configuration_policy_association_identifiers
     }
     /// Consumes the builder and constructs a [`BatchGetConfigurationPolicyAssociationsInput`](crate::operation::batch_get_configuration_policy_associations::BatchGetConfigurationPolicyAssociationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_configuration_policy_associations::BatchGetConfigurationPolicyAssociationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_configuration_policy_associations::BatchGetConfigurationPolicyAssociationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::batch_get_configuration_policy_associations::BatchGetConfigurationPolicyAssociationsInput {
-                configuration_policy_association_identifiers: self.configuration_policy_association_identifiers,
-            },
+                configuration_policy_association_identifiers: self.configuration_policy_association_identifiers
+                ,
+            }
         )
     }
 }
+

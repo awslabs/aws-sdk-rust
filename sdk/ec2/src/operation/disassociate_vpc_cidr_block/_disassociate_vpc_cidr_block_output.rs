@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateVpcCidrBlockOutput {
+pub struct DisassociateVpcCidrBlockOutput  {
     /// <p>Information about the IPv6 CIDR block association.</p>
     pub ipv6_cidr_block_association: ::std::option::Option<crate::types::VpcIpv6CidrBlockAssociation>,
     /// <p>Information about the IPv4 CIDR block association.</p>
@@ -11,25 +11,25 @@ pub struct DisassociateVpcCidrBlockOutput {
     pub vpc_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DisassociateVpcCidrBlockOutput {
+impl  DisassociateVpcCidrBlockOutput  {
     /// <p>Information about the IPv6 CIDR block association.</p>
-    pub fn ipv6_cidr_block_association(&self) -> ::std::option::Option<&crate::types::VpcIpv6CidrBlockAssociation> {
+    pub fn ipv6_cidr_block_association(&self) -> ::std::option::Option<& crate::types::VpcIpv6CidrBlockAssociation> {
         self.ipv6_cidr_block_association.as_ref()
     }
     /// <p>Information about the IPv4 CIDR block association.</p>
-    pub fn cidr_block_association(&self) -> ::std::option::Option<&crate::types::VpcCidrBlockAssociation> {
+    pub fn cidr_block_association(&self) -> ::std::option::Option<& crate::types::VpcCidrBlockAssociation> {
         self.cidr_block_association.as_ref()
     }
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DisassociateVpcCidrBlockOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DisassociateVpcCidrBlockOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateVpcCidrBlockOutput`](crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockOutput).
     pub fn builder() -> crate::operation::disassociate_vpc_cidr_block::builders::DisassociateVpcCidrBlockOutputBuilder {
@@ -54,8 +54,7 @@ impl DisassociateVpcCidrBlockOutputBuilder {
     }
     /// <p>Information about the IPv6 CIDR block association.</p>
     pub fn set_ipv6_cidr_block_association(mut self, input: ::std::option::Option<crate::types::VpcIpv6CidrBlockAssociation>) -> Self {
-        self.ipv6_cidr_block_association = input;
-        self
+        self.ipv6_cidr_block_association = input; self
     }
     /// <p>Information about the IPv6 CIDR block association.</p>
     pub fn get_ipv6_cidr_block_association(&self) -> &::std::option::Option<crate::types::VpcIpv6CidrBlockAssociation> {
@@ -68,8 +67,7 @@ impl DisassociateVpcCidrBlockOutputBuilder {
     }
     /// <p>Information about the IPv4 CIDR block association.</p>
     pub fn set_cidr_block_association(mut self, input: ::std::option::Option<crate::types::VpcCidrBlockAssociation>) -> Self {
-        self.cidr_block_association = input;
-        self
+        self.cidr_block_association = input; self
     }
     /// <p>Information about the IPv4 CIDR block association.</p>
     pub fn get_cidr_block_association(&self) -> &::std::option::Option<crate::types::VpcCidrBlockAssociation> {
@@ -82,29 +80,32 @@ impl DisassociateVpcCidrBlockOutputBuilder {
     }
     /// <p>The ID of the VPC.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The ID of the VPC.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DisassociateVpcCidrBlockOutput`](crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockOutput).
     pub fn build(self) -> crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockOutput {
         crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockOutput {
-            ipv6_cidr_block_association: self.ipv6_cidr_block_association,
-            cidr_block_association: self.cidr_block_association,
-            vpc_id: self.vpc_id,
+            ipv6_cidr_block_association: self.ipv6_cidr_block_association
+            ,
+            cidr_block_association: self.cidr_block_association
+            ,
+            vpc_id: self.vpc_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

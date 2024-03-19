@@ -3,19 +3,19 @@
 /// <p>The result of a speaker search analysis.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SpeakerSearchResult {
+pub struct SpeakerSearchResult  {
     /// <p>The confidence score in the speaker search analysis.</p>
     pub confidence_score: f32,
     /// <p>The voice profile ID.</p>
     pub voice_profile_id: ::std::option::Option<::std::string::String>,
 }
-impl SpeakerSearchResult {
+impl  SpeakerSearchResult  {
     /// <p>The confidence score in the speaker search analysis.</p>
     pub fn confidence_score(&self) -> f32 {
         self.confidence_score
     }
     /// <p>The voice profile ID.</p>
-    pub fn voice_profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn voice_profile_id(&self) -> ::std::option::Option<& str> {
         self.voice_profile_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl SpeakerSearchResultBuilder {
     }
     /// <p>The confidence score in the speaker search analysis.</p>
     pub fn set_confidence_score(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.confidence_score = input;
-        self
+        self.confidence_score = input; self
     }
     /// <p>The confidence score in the speaker search analysis.</p>
     pub fn get_confidence_score(&self) -> &::std::option::Option<f32> {
@@ -55,8 +54,7 @@ impl SpeakerSearchResultBuilder {
     }
     /// <p>The voice profile ID.</p>
     pub fn set_voice_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.voice_profile_id = input;
-        self
+        self.voice_profile_id = input; self
     }
     /// <p>The voice profile ID.</p>
     pub fn get_voice_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,12 @@ impl SpeakerSearchResultBuilder {
     /// Consumes the builder and constructs a [`SpeakerSearchResult`](crate::types::SpeakerSearchResult).
     pub fn build(self) -> crate::types::SpeakerSearchResult {
         crate::types::SpeakerSearchResult {
-            confidence_score: self.confidence_score.unwrap_or_default(),
-            voice_profile_id: self.voice_profile_id,
+            confidence_score: self.confidence_score
+                .unwrap_or_default()
+            ,
+            voice_profile_id: self.voice_profile_id
+            ,
         }
     }
 }
+

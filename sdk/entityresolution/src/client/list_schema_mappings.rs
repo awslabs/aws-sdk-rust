@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSchemaMappings`](crate::operation::list_schema_mappings::builders::ListSchemaMappingsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_schema_mappings::builders::ListSchemaMappingsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_schema_mappings::builders::ListSchemaMappingsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_schema_mappings::builders::ListSchemaMappingsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token from the previous API call.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_schema_mappings::builders::ListSchemaMappingsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_schema_mappings::builders::ListSchemaMappingsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of objects returned per page.</p><br>
-    /// - On success, responds with [`ListSchemaMappingsOutput`](crate::operation::list_schema_mappings::ListSchemaMappingsOutput) with field(s):
+                            /// - On success, responds with [`ListSchemaMappingsOutput`](crate::operation::list_schema_mappings::ListSchemaMappingsOutput) with field(s):
     ///   - [`schema_list(Option<Vec::<SchemaMappingSummary>>)`](crate::operation::list_schema_mappings::ListSchemaMappingsOutput::schema_list): <p>A list of <code>SchemaMappingSummary</code> objects, each of which contain the fields <code>SchemaName</code>, <code>SchemaArn</code>, <code>CreatedAt</code>, <code>UpdatedAt</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_schema_mappings::ListSchemaMappingsOutput::next_token): <p>The pagination token from the previous API call.</p>
-    /// - On failure, responds with [`SdkError<ListSchemaMappingsError>`](crate::operation::list_schema_mappings::ListSchemaMappingsError)
+                            /// - On failure, responds with [`SdkError<ListSchemaMappingsError>`](crate::operation::list_schema_mappings::ListSchemaMappingsError)
     pub fn list_schema_mappings(&self) -> crate::operation::list_schema_mappings::builders::ListSchemaMappingsFluentBuilder {
-        crate::operation::list_schema_mappings::builders::ListSchemaMappingsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_schema_mappings::builders::ListSchemaMappingsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

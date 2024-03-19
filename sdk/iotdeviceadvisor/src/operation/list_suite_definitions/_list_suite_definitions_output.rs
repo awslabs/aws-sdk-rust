@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSuiteDefinitionsOutput {
+pub struct ListSuiteDefinitionsOutput  {
     /// <p>An array of objects that provide summaries of information about the suite definitions in the list.</p>
-    pub suite_definition_information_list: ::std::option::Option<::std::vec::Vec<crate::types::SuiteDefinitionInformation>>,
+    pub suite_definition_information_list: ::std::option::Option<::std::vec::Vec::<crate::types::SuiteDefinitionInformation>>,
     /// <p>A token used to get the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListSuiteDefinitionsOutput {
+impl  ListSuiteDefinitionsOutput  {
     /// <p>An array of objects that provide summaries of information about the suite definitions in the list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.suite_definition_information_list.is_none()`.
-    pub fn suite_definition_information_list(&self) -> &[crate::types::SuiteDefinitionInformation] {
-        self.suite_definition_information_list.as_deref().unwrap_or_default()
+    pub fn suite_definition_information_list(&self) -> & [crate::types::SuiteDefinitionInformation] {
+        self.suite_definition_information_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token used to get the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListSuiteDefinitionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListSuiteDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`ListSuiteDefinitionsOutput`](crate::operation::list_suite_definitions::ListSuiteDefinitionsOutput).
     pub fn builder() -> crate::operation::list_suite_definitions::builders::ListSuiteDefinitionsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListSuiteDefinitionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSuiteDefinitionsOutputBuilder {
-    pub(crate) suite_definition_information_list: ::std::option::Option<::std::vec::Vec<crate::types::SuiteDefinitionInformation>>,
+    pub(crate) suite_definition_information_list: ::std::option::Option<::std::vec::Vec::<crate::types::SuiteDefinitionInformation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,20 +50,16 @@ impl ListSuiteDefinitionsOutputBuilder {
     /// <p>An array of objects that provide summaries of information about the suite definitions in the list.</p>
     pub fn suite_definition_information_list(mut self, input: crate::types::SuiteDefinitionInformation) -> Self {
         let mut v = self.suite_definition_information_list.unwrap_or_default();
-        v.push(input);
-        self.suite_definition_information_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.suite_definition_information_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that provide summaries of information about the suite definitions in the list.</p>
-    pub fn set_suite_definition_information_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SuiteDefinitionInformation>>,
-    ) -> Self {
-        self.suite_definition_information_list = input;
-        self
+    pub fn set_suite_definition_information_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SuiteDefinitionInformation>>) -> Self {
+        self.suite_definition_information_list = input; self
     }
     /// <p>An array of objects that provide summaries of information about the suite definitions in the list.</p>
-    pub fn get_suite_definition_information_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SuiteDefinitionInformation>> {
+    pub fn get_suite_definition_information_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SuiteDefinitionInformation>> {
         &self.suite_definition_information_list
     }
     /// <p>A token used to get the next set of results.</p>
@@ -72,28 +69,30 @@ impl ListSuiteDefinitionsOutputBuilder {
     }
     /// <p>A token used to get the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token used to get the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListSuiteDefinitionsOutput`](crate::operation::list_suite_definitions::ListSuiteDefinitionsOutput).
     pub fn build(self) -> crate::operation::list_suite_definitions::ListSuiteDefinitionsOutput {
         crate::operation::list_suite_definitions::ListSuiteDefinitionsOutput {
-            suite_definition_information_list: self.suite_definition_information_list,
-            next_token: self.next_token,
+            suite_definition_information_list: self.suite_definition_information_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

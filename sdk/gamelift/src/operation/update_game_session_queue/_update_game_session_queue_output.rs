@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateGameSessionQueueOutput {
+pub struct UpdateGameSessionQueueOutput  {
     /// <p>An object that describes the newly updated game session queue.</p>
     pub game_session_queue: ::std::option::Option<crate::types::GameSessionQueue>,
     _request_id: Option<String>,
 }
-impl UpdateGameSessionQueueOutput {
+impl  UpdateGameSessionQueueOutput  {
     /// <p>An object that describes the newly updated game session queue.</p>
-    pub fn game_session_queue(&self) -> ::std::option::Option<&crate::types::GameSessionQueue> {
+    pub fn game_session_queue(&self) -> ::std::option::Option<& crate::types::GameSessionQueue> {
         self.game_session_queue.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateGameSessionQueueOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateGameSessionQueueOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGameSessionQueueOutput`](crate::operation::update_game_session_queue::UpdateGameSessionQueueOutput).
     pub fn builder() -> crate::operation::update_game_session_queue::builders::UpdateGameSessionQueueOutputBuilder {
@@ -40,27 +40,28 @@ impl UpdateGameSessionQueueOutputBuilder {
     }
     /// <p>An object that describes the newly updated game session queue.</p>
     pub fn set_game_session_queue(mut self, input: ::std::option::Option<crate::types::GameSessionQueue>) -> Self {
-        self.game_session_queue = input;
-        self
+        self.game_session_queue = input; self
     }
     /// <p>An object that describes the newly updated game session queue.</p>
     pub fn get_game_session_queue(&self) -> &::std::option::Option<crate::types::GameSessionQueue> {
         &self.game_session_queue
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateGameSessionQueueOutput`](crate::operation::update_game_session_queue::UpdateGameSessionQueueOutput).
     pub fn build(self) -> crate::operation::update_game_session_queue::UpdateGameSessionQueueOutput {
         crate::operation::update_game_session_queue::UpdateGameSessionQueueOutput {
-            game_session_queue: self.game_session_queue,
+            game_session_queue: self.game_session_queue
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

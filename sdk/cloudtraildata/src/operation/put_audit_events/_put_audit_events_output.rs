@@ -2,30 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutAuditEventsOutput {
+pub struct PutAuditEventsOutput  {
     /// <p>Lists events in the provided event payload that were successfully ingested into CloudTrail.</p>
-    pub successful: ::std::vec::Vec<crate::types::AuditEventResultEntry>,
+    pub successful: ::std::vec::Vec::<crate::types::AuditEventResultEntry>,
     /// <p>Lists events in the provided event payload that could not be ingested into CloudTrail, and includes the error code and error message returned for events that could not be ingested.</p>
-    pub failed: ::std::vec::Vec<crate::types::ResultErrorEntry>,
+    pub failed: ::std::vec::Vec::<crate::types::ResultErrorEntry>,
     _request_id: Option<String>,
 }
-impl PutAuditEventsOutput {
+impl  PutAuditEventsOutput  {
     /// <p>Lists events in the provided event payload that were successfully ingested into CloudTrail.</p>
-    pub fn successful(&self) -> &[crate::types::AuditEventResultEntry] {
-        use std::ops::Deref;
-        self.successful.deref()
+    pub fn successful(&self) -> & [crate::types::AuditEventResultEntry] {
+        use std::ops::Deref; self.successful.deref()
     }
     /// <p>Lists events in the provided event payload that could not be ingested into CloudTrail, and includes the error code and error message returned for events that could not be ingested.</p>
-    pub fn failed(&self) -> &[crate::types::ResultErrorEntry] {
-        use std::ops::Deref;
-        self.failed.deref()
+    pub fn failed(&self) -> & [crate::types::ResultErrorEntry] {
+        use std::ops::Deref; self.failed.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for PutAuditEventsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutAuditEventsOutput {
     /// Creates a new builder-style object to manufacture [`PutAuditEventsOutput`](crate::operation::put_audit_events::PutAuditEventsOutput).
     pub fn builder() -> crate::operation::put_audit_events::builders::PutAuditEventsOutputBuilder {
@@ -37,8 +35,8 @@ impl PutAuditEventsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutAuditEventsOutputBuilder {
-    pub(crate) successful: ::std::option::Option<::std::vec::Vec<crate::types::AuditEventResultEntry>>,
-    pub(crate) failed: ::std::option::Option<::std::vec::Vec<crate::types::ResultErrorEntry>>,
+    pub(crate) successful: ::std::option::Option<::std::vec::Vec::<crate::types::AuditEventResultEntry>>,
+    pub(crate) failed: ::std::option::Option<::std::vec::Vec::<crate::types::ResultErrorEntry>>,
     _request_id: Option<String>,
 }
 impl PutAuditEventsOutputBuilder {
@@ -49,17 +47,16 @@ impl PutAuditEventsOutputBuilder {
     /// <p>Lists events in the provided event payload that were successfully ingested into CloudTrail.</p>
     pub fn successful(mut self, input: crate::types::AuditEventResultEntry) -> Self {
         let mut v = self.successful.unwrap_or_default();
-        v.push(input);
-        self.successful = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.successful = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Lists events in the provided event payload that were successfully ingested into CloudTrail.</p>
-    pub fn set_successful(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuditEventResultEntry>>) -> Self {
-        self.successful = input;
-        self
+    pub fn set_successful(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AuditEventResultEntry>>) -> Self {
+        self.successful = input; self
     }
     /// <p>Lists events in the provided event payload that were successfully ingested into CloudTrail.</p>
-    pub fn get_successful(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuditEventResultEntry>> {
+    pub fn get_successful(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AuditEventResultEntry>> {
         &self.successful
     }
     /// Appends an item to `failed`.
@@ -69,49 +66,47 @@ impl PutAuditEventsOutputBuilder {
     /// <p>Lists events in the provided event payload that could not be ingested into CloudTrail, and includes the error code and error message returned for events that could not be ingested.</p>
     pub fn failed(mut self, input: crate::types::ResultErrorEntry) -> Self {
         let mut v = self.failed.unwrap_or_default();
-        v.push(input);
-        self.failed = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failed = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Lists events in the provided event payload that could not be ingested into CloudTrail, and includes the error code and error message returned for events that could not be ingested.</p>
-    pub fn set_failed(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResultErrorEntry>>) -> Self {
-        self.failed = input;
-        self
+    pub fn set_failed(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResultErrorEntry>>) -> Self {
+        self.failed = input; self
     }
     /// <p>Lists events in the provided event payload that could not be ingested into CloudTrail, and includes the error code and error message returned for events that could not be ingested.</p>
-    pub fn get_failed(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResultErrorEntry>> {
+    pub fn get_failed(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResultErrorEntry>> {
         &self.failed
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutAuditEventsOutput`](crate::operation::put_audit_events::PutAuditEventsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`successful`](crate::operation::put_audit_events::builders::PutAuditEventsOutputBuilder::successful)
     /// - [`failed`](crate::operation::put_audit_events::builders::PutAuditEventsOutputBuilder::failed)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_audit_events::PutAuditEventsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_audit_events::PutAuditEventsOutput {
-            successful: self.successful.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "successful",
-                    "successful was not specified but it is required when building PutAuditEventsOutput",
-                )
-            })?,
-            failed: self.failed.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "failed",
-                    "failed was not specified but it is required when building PutAuditEventsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_audit_events::PutAuditEventsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_audit_events::PutAuditEventsOutput {
+                successful: self.successful
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("successful", "successful was not specified but it is required when building PutAuditEventsOutput")
+                    )?
+                ,
+                failed: self.failed
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("failed", "failed was not specified but it is required when building PutAuditEventsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

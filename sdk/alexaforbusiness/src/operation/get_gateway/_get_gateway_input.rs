@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetGatewayInput {
+pub struct GetGatewayInput  {
     /// <p>The ARN of the gateway to get.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetGatewayInput {
+impl  GetGatewayInput  {
     /// <p>The ARN of the gateway to get.</p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetGatewayInputBuilder {
     }
     /// <p>The ARN of the gateway to get.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
     }
     /// <p>The ARN of the gateway to get.</p>
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,8 +42,12 @@ impl GetGatewayInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetGatewayInput`](crate::operation::get_gateway::GetGatewayInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_gateway::GetGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_gateway::GetGatewayInput {
-            gateway_arn: self.gateway_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_gateway::GetGatewayInput {
+                gateway_arn: self.gateway_arn
+                ,
+            }
+        )
     }
 }
+

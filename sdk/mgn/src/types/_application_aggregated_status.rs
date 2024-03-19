@@ -3,7 +3,7 @@
 /// <p>Application aggregated status.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationAggregatedStatus {
+pub struct ApplicationAggregatedStatus  {
     /// <p>Application aggregated status last update dateTime.</p>
     pub last_update_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Application aggregated status health status.</p>
@@ -13,17 +13,17 @@ pub struct ApplicationAggregatedStatus {
     /// <p>Application aggregated status total source servers amount.</p>
     pub total_source_servers: i64,
 }
-impl ApplicationAggregatedStatus {
+impl  ApplicationAggregatedStatus  {
     /// <p>Application aggregated status last update dateTime.</p>
-    pub fn last_update_date_time(&self) -> ::std::option::Option<&str> {
+    pub fn last_update_date_time(&self) -> ::std::option::Option<& str> {
         self.last_update_date_time.as_deref()
     }
     /// <p>Application aggregated status health status.</p>
-    pub fn health_status(&self) -> ::std::option::Option<&crate::types::ApplicationHealthStatus> {
+    pub fn health_status(&self) -> ::std::option::Option<& crate::types::ApplicationHealthStatus> {
         self.health_status.as_ref()
     }
     /// <p>Application aggregated status progress status.</p>
-    pub fn progress_status(&self) -> ::std::option::Option<&crate::types::ApplicationProgressStatus> {
+    pub fn progress_status(&self) -> ::std::option::Option<& crate::types::ApplicationProgressStatus> {
         self.progress_status.as_ref()
     }
     /// <p>Application aggregated status total source servers amount.</p>
@@ -55,8 +55,7 @@ impl ApplicationAggregatedStatusBuilder {
     }
     /// <p>Application aggregated status last update dateTime.</p>
     pub fn set_last_update_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_update_date_time = input;
-        self
+        self.last_update_date_time = input; self
     }
     /// <p>Application aggregated status last update dateTime.</p>
     pub fn get_last_update_date_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ApplicationAggregatedStatusBuilder {
     }
     /// <p>Application aggregated status health status.</p>
     pub fn set_health_status(mut self, input: ::std::option::Option<crate::types::ApplicationHealthStatus>) -> Self {
-        self.health_status = input;
-        self
+        self.health_status = input; self
     }
     /// <p>Application aggregated status health status.</p>
     pub fn get_health_status(&self) -> &::std::option::Option<crate::types::ApplicationHealthStatus> {
@@ -83,8 +81,7 @@ impl ApplicationAggregatedStatusBuilder {
     }
     /// <p>Application aggregated status progress status.</p>
     pub fn set_progress_status(mut self, input: ::std::option::Option<crate::types::ApplicationProgressStatus>) -> Self {
-        self.progress_status = input;
-        self
+        self.progress_status = input; self
     }
     /// <p>Application aggregated status progress status.</p>
     pub fn get_progress_status(&self) -> &::std::option::Option<crate::types::ApplicationProgressStatus> {
@@ -97,8 +94,7 @@ impl ApplicationAggregatedStatusBuilder {
     }
     /// <p>Application aggregated status total source servers amount.</p>
     pub fn set_total_source_servers(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total_source_servers = input;
-        self
+        self.total_source_servers = input; self
     }
     /// <p>Application aggregated status total source servers amount.</p>
     pub fn get_total_source_servers(&self) -> &::std::option::Option<i64> {
@@ -107,10 +103,16 @@ impl ApplicationAggregatedStatusBuilder {
     /// Consumes the builder and constructs a [`ApplicationAggregatedStatus`](crate::types::ApplicationAggregatedStatus).
     pub fn build(self) -> crate::types::ApplicationAggregatedStatus {
         crate::types::ApplicationAggregatedStatus {
-            last_update_date_time: self.last_update_date_time,
-            health_status: self.health_status,
-            progress_status: self.progress_status,
-            total_source_servers: self.total_source_servers.unwrap_or_default(),
+            last_update_date_time: self.last_update_date_time
+            ,
+            health_status: self.health_status
+            ,
+            progress_status: self.progress_status
+            ,
+            total_source_servers: self.total_source_servers
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

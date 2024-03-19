@@ -2,21 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetComponentVersionArtifactInput {
+pub struct GetComponentVersionArtifactInput  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version. Specify the ARN of a public or a Lambda component version.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the artifact.</p>
     /// <p>You can use the <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a> operation to download the component recipe, which includes the URI of the artifact. The artifact name is the section of the URI after the scheme. For example, in the artifact URI <code>greengrass:SomeArtifact.zip</code>, the artifact name is <code>SomeArtifact.zip</code>.</p>
     pub artifact_name: ::std::option::Option<::std::string::String>,
 }
-impl GetComponentVersionArtifactInput {
+impl  GetComponentVersionArtifactInput  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version. Specify the ARN of a public or a Lambda component version.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the artifact.</p>
     /// <p>You can use the <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a> operation to download the component recipe, which includes the URI of the artifact. The artifact name is the section of the URI after the scheme. For example, in the artifact URI <code>greengrass:SomeArtifact.zip</code>, the artifact name is <code>SomeArtifact.zip</code>.</p>
-    pub fn artifact_name(&self) -> ::std::option::Option<&str> {
+    pub fn artifact_name(&self) -> ::std::option::Option<& str> {
         self.artifact_name.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl GetComponentVersionArtifactInputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version. Specify the ARN of a public or a Lambda component version.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version. Specify the ARN of a public or a Lambda component version.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -60,8 +59,7 @@ impl GetComponentVersionArtifactInputBuilder {
     /// <p>The name of the artifact.</p>
     /// <p>You can use the <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a> operation to download the component recipe, which includes the URI of the artifact. The artifact name is the section of the URI after the scheme. For example, in the artifact URI <code>greengrass:SomeArtifact.zip</code>, the artifact name is <code>SomeArtifact.zip</code>.</p>
     pub fn set_artifact_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.artifact_name = input;
-        self
+        self.artifact_name = input; self
     }
     /// <p>The name of the artifact.</p>
     /// <p>You can use the <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a> operation to download the component recipe, which includes the URI of the artifact. The artifact name is the section of the URI after the scheme. For example, in the artifact URI <code>greengrass:SomeArtifact.zip</code>, the artifact name is <code>SomeArtifact.zip</code>.</p>
@@ -69,15 +67,15 @@ impl GetComponentVersionArtifactInputBuilder {
         &self.artifact_name
     }
     /// Consumes the builder and constructs a [`GetComponentVersionArtifactInput`](crate::operation::get_component_version_artifact::GetComponentVersionArtifactInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_component_version_artifact::GetComponentVersionArtifactInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_component_version_artifact::GetComponentVersionArtifactInput {
-            arn: self.arn,
-            artifact_name: self.artifact_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_component_version_artifact::GetComponentVersionArtifactInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_component_version_artifact::GetComponentVersionArtifactInput {
+                arn: self.arn
+                ,
+                artifact_name: self.artifact_name
+                ,
+            }
+        )
     }
 }
+

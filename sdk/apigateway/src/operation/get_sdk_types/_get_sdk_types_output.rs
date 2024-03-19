@@ -3,24 +3,25 @@
 /// <p>The collection of SdkType instances.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSdkTypesOutput {
+pub struct GetSdkTypesOutput  {
     /// <p>The current page of elements from this collection.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::SdkType>>,
+    pub items: ::std::option::Option<::std::vec::Vec::<crate::types::SdkType>>,
     _request_id: Option<String>,
 }
-impl GetSdkTypesOutput {
+impl  GetSdkTypesOutput  {
     /// <p>The current page of elements from this collection.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
-    pub fn items(&self) -> &[crate::types::SdkType] {
-        self.items.as_deref().unwrap_or_default()
+    pub fn items(&self) -> & [crate::types::SdkType] {
+        self.items.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetSdkTypesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSdkTypesOutput {
     /// Creates a new builder-style object to manufacture [`GetSdkTypesOutput`](crate::operation::get_sdk_types::GetSdkTypesOutput).
     pub fn builder() -> crate::operation::get_sdk_types::builders::GetSdkTypesOutputBuilder {
@@ -32,7 +33,7 @@ impl GetSdkTypesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSdkTypesOutputBuilder {
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::SdkType>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::SdkType>>,
     _request_id: Option<String>,
 }
 impl GetSdkTypesOutputBuilder {
@@ -43,33 +44,34 @@ impl GetSdkTypesOutputBuilder {
     /// <p>The current page of elements from this collection.</p>
     pub fn items(mut self, input: crate::types::SdkType) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The current page of elements from this collection.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SdkType>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SdkType>>) -> Self {
+        self.items = input; self
     }
     /// <p>The current page of elements from this collection.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SdkType>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SdkType>> {
         &self.items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSdkTypesOutput`](crate::operation::get_sdk_types::GetSdkTypesOutput).
     pub fn build(self) -> crate::operation::get_sdk_types::GetSdkTypesOutput {
         crate::operation::get_sdk_types::GetSdkTypesOutput {
-            items: self.items,
+            items: self.items
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

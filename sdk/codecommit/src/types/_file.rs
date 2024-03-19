@@ -3,7 +3,7 @@
 /// <p>Returns information about a file in a repository.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct File {
+pub struct File  {
     /// <p>The blob ID that contains the file information.</p>
     pub blob_id: ::std::option::Option<::std::string::String>,
     /// <p>The fully qualified path to the file in the repository.</p>
@@ -13,21 +13,21 @@ pub struct File {
     /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
     pub file_mode: ::std::option::Option<crate::types::FileModeTypeEnum>,
 }
-impl File {
+impl  File  {
     /// <p>The blob ID that contains the file information.</p>
-    pub fn blob_id(&self) -> ::std::option::Option<&str> {
+    pub fn blob_id(&self) -> ::std::option::Option<& str> {
         self.blob_id.as_deref()
     }
     /// <p>The fully qualified path to the file in the repository.</p>
-    pub fn absolute_path(&self) -> ::std::option::Option<&str> {
+    pub fn absolute_path(&self) -> ::std::option::Option<& str> {
         self.absolute_path.as_deref()
     }
     /// <p>The relative path of the file from the folder where the query originated.</p>
-    pub fn relative_path(&self) -> ::std::option::Option<&str> {
+    pub fn relative_path(&self) -> ::std::option::Option<& str> {
         self.relative_path.as_deref()
     }
     /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
-    pub fn file_mode(&self) -> ::std::option::Option<&crate::types::FileModeTypeEnum> {
+    pub fn file_mode(&self) -> ::std::option::Option<& crate::types::FileModeTypeEnum> {
         self.file_mode.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl FileBuilder {
     }
     /// <p>The blob ID that contains the file information.</p>
     pub fn set_blob_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.blob_id = input;
-        self
+        self.blob_id = input; self
     }
     /// <p>The blob ID that contains the file information.</p>
     pub fn get_blob_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl FileBuilder {
     }
     /// <p>The fully qualified path to the file in the repository.</p>
     pub fn set_absolute_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.absolute_path = input;
-        self
+        self.absolute_path = input; self
     }
     /// <p>The fully qualified path to the file in the repository.</p>
     pub fn get_absolute_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl FileBuilder {
     }
     /// <p>The relative path of the file from the folder where the query originated.</p>
     pub fn set_relative_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.relative_path = input;
-        self
+        self.relative_path = input; self
     }
     /// <p>The relative path of the file from the folder where the query originated.</p>
     pub fn get_relative_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl FileBuilder {
     }
     /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
     pub fn set_file_mode(mut self, input: ::std::option::Option<crate::types::FileModeTypeEnum>) -> Self {
-        self.file_mode = input;
-        self
+        self.file_mode = input; self
     }
     /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
     pub fn get_file_mode(&self) -> &::std::option::Option<crate::types::FileModeTypeEnum> {
@@ -107,10 +103,15 @@ impl FileBuilder {
     /// Consumes the builder and constructs a [`File`](crate::types::File).
     pub fn build(self) -> crate::types::File {
         crate::types::File {
-            blob_id: self.blob_id,
-            absolute_path: self.absolute_path,
-            relative_path: self.relative_path,
-            file_mode: self.file_mode,
+            blob_id: self.blob_id
+            ,
+            absolute_path: self.absolute_path
+            ,
+            relative_path: self.relative_path
+            ,
+            file_mode: self.file_mode
+            ,
         }
     }
 }
+

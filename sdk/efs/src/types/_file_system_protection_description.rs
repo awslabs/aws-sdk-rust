@@ -3,7 +3,7 @@
 /// <p>Describes the protection on a file system.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FileSystemProtectionDescription {
+pub struct FileSystemProtectionDescription  {
     /// <p>The status of the file system's replication overwrite protection.</p>
     /// <ul>
     /// <li>
@@ -16,7 +16,7 @@ pub struct FileSystemProtectionDescription {
     /// <p>If the replication configuration is deleted, the file system's replication overwrite protection is re-enabled, the file system becomes writeable.</p>
     pub replication_overwrite_protection: ::std::option::Option<crate::types::ReplicationOverwriteProtection>,
 }
-impl FileSystemProtectionDescription {
+impl  FileSystemProtectionDescription  {
     /// <p>The status of the file system's replication overwrite protection.</p>
     /// <ul>
     /// <li>
@@ -27,7 +27,7 @@ impl FileSystemProtectionDescription {
     /// <p><code>REPLICATING</code> – The file system is being used as the destination file system in a replication configuration. The file system is read-only and is only modified only by EFS replication.</p></li>
     /// </ul>
     /// <p>If the replication configuration is deleted, the file system's replication overwrite protection is re-enabled, the file system becomes writeable.</p>
-    pub fn replication_overwrite_protection(&self) -> ::std::option::Option<&crate::types::ReplicationOverwriteProtection> {
+    pub fn replication_overwrite_protection(&self) -> ::std::option::Option<& crate::types::ReplicationOverwriteProtection> {
         self.replication_overwrite_protection.as_ref()
     }
 }
@@ -70,8 +70,7 @@ impl FileSystemProtectionDescriptionBuilder {
     /// </ul>
     /// <p>If the replication configuration is deleted, the file system's replication overwrite protection is re-enabled, the file system becomes writeable.</p>
     pub fn set_replication_overwrite_protection(mut self, input: ::std::option::Option<crate::types::ReplicationOverwriteProtection>) -> Self {
-        self.replication_overwrite_protection = input;
-        self
+        self.replication_overwrite_protection = input; self
     }
     /// <p>The status of the file system's replication overwrite protection.</p>
     /// <ul>
@@ -89,7 +88,9 @@ impl FileSystemProtectionDescriptionBuilder {
     /// Consumes the builder and constructs a [`FileSystemProtectionDescription`](crate::types::FileSystemProtectionDescription).
     pub fn build(self) -> crate::types::FileSystemProtectionDescription {
         crate::types::FileSystemProtectionDescription {
-            replication_overwrite_protection: self.replication_overwrite_protection,
+            replication_overwrite_protection: self.replication_overwrite_protection
+            ,
         }
     }
 }
+

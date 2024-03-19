@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ValidateMatchmakingRuleSetOutput {
+pub struct ValidateMatchmakingRuleSetOutput  {
     /// <p>A response indicating whether the rule set is valid.</p>
     pub valid: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
-impl ValidateMatchmakingRuleSetOutput {
+impl  ValidateMatchmakingRuleSetOutput  {
     /// <p>A response indicating whether the rule set is valid.</p>
     pub fn valid(&self) -> ::std::option::Option<bool> {
         self.valid
     }
 }
 impl ::aws_types::request_id::RequestId for ValidateMatchmakingRuleSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ValidateMatchmakingRuleSetOutput {
     /// Creates a new builder-style object to manufacture [`ValidateMatchmakingRuleSetOutput`](crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetOutput).
     pub fn builder() -> crate::operation::validate_matchmaking_rule_set::builders::ValidateMatchmakingRuleSetOutputBuilder {
@@ -40,27 +40,28 @@ impl ValidateMatchmakingRuleSetOutputBuilder {
     }
     /// <p>A response indicating whether the rule set is valid.</p>
     pub fn set_valid(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.valid = input;
-        self
+        self.valid = input; self
     }
     /// <p>A response indicating whether the rule set is valid.</p>
     pub fn get_valid(&self) -> &::std::option::Option<bool> {
         &self.valid
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ValidateMatchmakingRuleSetOutput`](crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetOutput).
     pub fn build(self) -> crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetOutput {
         crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetOutput {
-            valid: self.valid,
+            valid: self.valid
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveStorageSystemInput {
+pub struct RemoveStorageSystemInput  {
     /// <p>Specifies the Amazon Resource Name (ARN) of the storage system that you want to permanently remove from DataSync Discovery.</p>
     pub storage_system_arn: ::std::option::Option<::std::string::String>,
 }
-impl RemoveStorageSystemInput {
+impl  RemoveStorageSystemInput  {
     /// <p>Specifies the Amazon Resource Name (ARN) of the storage system that you want to permanently remove from DataSync Discovery.</p>
-    pub fn storage_system_arn(&self) -> ::std::option::Option<&str> {
+    pub fn storage_system_arn(&self) -> ::std::option::Option<& str> {
         self.storage_system_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl RemoveStorageSystemInputBuilder {
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the storage system that you want to permanently remove from DataSync Discovery.</p>
     pub fn set_storage_system_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.storage_system_arn = input;
-        self
+        self.storage_system_arn = input; self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the storage system that you want to permanently remove from DataSync Discovery.</p>
     pub fn get_storage_system_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_system_arn
     }
     /// Consumes the builder and constructs a [`RemoveStorageSystemInput`](crate::operation::remove_storage_system::RemoveStorageSystemInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::remove_storage_system::RemoveStorageSystemInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::remove_storage_system::RemoveStorageSystemInput {
-            storage_system_arn: self.storage_system_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_storage_system::RemoveStorageSystemInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::remove_storage_system::RemoveStorageSystemInput {
+                storage_system_arn: self.storage_system_arn
+                ,
+            }
+        )
     }
 }
+

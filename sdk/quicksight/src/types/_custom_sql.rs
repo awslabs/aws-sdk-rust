@@ -3,7 +3,7 @@
 /// <p>A physical table type built from the results of the custom SQL query.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomSql {
+pub struct CustomSql  {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
     pub data_source_arn: ::std::string::String,
     /// <p>A display name for the SQL query result.</p>
@@ -11,29 +11,27 @@ pub struct CustomSql {
     /// <p>The SQL query.</p>
     pub sql_query: ::std::string::String,
     /// <p>The column schema from the SQL query result set.</p>
-    pub columns: ::std::option::Option<::std::vec::Vec<crate::types::InputColumn>>,
+    pub columns: ::std::option::Option<::std::vec::Vec::<crate::types::InputColumn>>,
 }
-impl CustomSql {
+impl  CustomSql  {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
-    pub fn data_source_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.data_source_arn.deref()
+    pub fn data_source_arn(&self) -> & str {
+        use std::ops::Deref; self.data_source_arn.deref()
     }
     /// <p>A display name for the SQL query result.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The SQL query.</p>
-    pub fn sql_query(&self) -> &str {
-        use std::ops::Deref;
-        self.sql_query.deref()
+    pub fn sql_query(&self) -> & str {
+        use std::ops::Deref; self.sql_query.deref()
     }
     /// <p>The column schema from the SQL query result set.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.columns.is_none()`.
-    pub fn columns(&self) -> &[crate::types::InputColumn] {
-        self.columns.as_deref().unwrap_or_default()
+    pub fn columns(&self) -> & [crate::types::InputColumn] {
+        self.columns.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CustomSql {
@@ -50,7 +48,7 @@ pub struct CustomSqlBuilder {
     pub(crate) data_source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) sql_query: ::std::option::Option<::std::string::String>,
-    pub(crate) columns: ::std::option::Option<::std::vec::Vec<crate::types::InputColumn>>,
+    pub(crate) columns: ::std::option::Option<::std::vec::Vec::<crate::types::InputColumn>>,
 }
 impl CustomSqlBuilder {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
@@ -61,8 +59,7 @@ impl CustomSqlBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
     pub fn set_data_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_arn = input;
-        self
+        self.data_source_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
     pub fn get_data_source_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +73,7 @@ impl CustomSqlBuilder {
     }
     /// <p>A display name for the SQL query result.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A display name for the SQL query result.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +87,7 @@ impl CustomSqlBuilder {
     }
     /// <p>The SQL query.</p>
     pub fn set_sql_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sql_query = input;
-        self
+        self.sql_query = input; self
     }
     /// <p>The SQL query.</p>
     pub fn get_sql_query(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,17 +100,16 @@ impl CustomSqlBuilder {
     /// <p>The column schema from the SQL query result set.</p>
     pub fn columns(mut self, input: crate::types::InputColumn) -> Self {
         let mut v = self.columns.unwrap_or_default();
-        v.push(input);
-        self.columns = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.columns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The column schema from the SQL query result set.</p>
-    pub fn set_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputColumn>>) -> Self {
-        self.columns = input;
-        self
+    pub fn set_columns(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InputColumn>>) -> Self {
+        self.columns = input; self
     }
     /// <p>The column schema from the SQL query result set.</p>
-    pub fn get_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputColumn>> {
+    pub fn get_columns(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InputColumn>> {
         &self.columns
     }
     /// Consumes the builder and constructs a [`CustomSql`](crate::types::CustomSql).
@@ -124,26 +118,27 @@ impl CustomSqlBuilder {
     /// - [`name`](crate::types::builders::CustomSqlBuilder::name)
     /// - [`sql_query`](crate::types::builders::CustomSqlBuilder::sql_query)
     pub fn build(self) -> ::std::result::Result<crate::types::CustomSql, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CustomSql {
-            data_source_arn: self.data_source_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_source_arn",
-                    "data_source_arn was not specified but it is required when building CustomSql",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CustomSql",
-                )
-            })?,
-            sql_query: self.sql_query.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sql_query",
-                    "sql_query was not specified but it is required when building CustomSql",
-                )
-            })?,
-            columns: self.columns,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CustomSql {
+                data_source_arn: self.data_source_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_source_arn", "data_source_arn was not specified but it is required when building CustomSql")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building CustomSql")
+                    )?
+                ,
+                sql_query: self.sql_query
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sql_query", "sql_query was not specified but it is required when building CustomSql")
+                    )?
+                ,
+                columns: self.columns
+                ,
+            }
+        )
     }
 }
+

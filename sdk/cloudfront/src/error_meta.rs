@@ -315,7 +315,7 @@ pub enum Error {
     &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
      \
     See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-Error) for what information is available for the error.")]
-    Unhandled(crate::error::sealed_unhandled::Unhandled),
+    Unhandled(crate::error::sealed_unhandled::Unhandled)
 }
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -469,191 +469,185 @@ impl ::std::fmt::Display for Error {
             Error::TrustedKeyGroupDoesNotExist(inner) => inner.fmt(f),
             Error::TrustedSignerDoesNotExist(inner) => inner.fmt(f),
             Error::UnsupportedOperation(inner) => inner.fmt(f),
-            Error::Unhandled(_) => {
-                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
-                    write!(f, "unhandled error ({code})")
-                } else {
-                    f.write_str("unhandled error")
-                }
-            }
+            Error::Unhandled(_) => if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                                        write!(f, "unhandled error ({code})")
+                                    } else {
+                                        f.write_str("unhandled error")
+                                    }
         }
     }
 }
 impl From<::aws_smithy_types::error::operation::BuildError> for Error {
-    fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
-        Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source: value.into(),
-            meta: ::std::default::Default::default(),
-        })
-    }
-}
+                fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
+                    Error::Unhandled(crate::error::sealed_unhandled::Unhandled { source: value.into(), meta: ::std::default::Default::default() })
+                }
+            }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
-    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
-        match self {
-            Self::AccessDenied(inner) => inner.meta(),
-            Self::BatchTooLarge(inner) => inner.meta(),
-            Self::CnameAlreadyExists(inner) => inner.meta(),
-            Self::CachePolicyAlreadyExists(inner) => inner.meta(),
-            Self::CachePolicyInUse(inner) => inner.meta(),
-            Self::CannotChangeImmutablePublicKeyFields(inner) => inner.meta(),
-            Self::CannotDeleteEntityWhileInUse(inner) => inner.meta(),
-            Self::CloudFrontOriginAccessIdentityAlreadyExists(inner) => inner.meta(),
-            Self::CloudFrontOriginAccessIdentityInUse(inner) => inner.meta(),
-            Self::ContinuousDeploymentPolicyAlreadyExists(inner) => inner.meta(),
-            Self::ContinuousDeploymentPolicyInUse(inner) => inner.meta(),
-            Self::DistributionAlreadyExists(inner) => inner.meta(),
-            Self::DistributionNotDisabled(inner) => inner.meta(),
-            Self::EntityAlreadyExists(inner) => inner.meta(),
-            Self::EntityLimitExceeded(inner) => inner.meta(),
-            Self::EntityNotFound(inner) => inner.meta(),
-            Self::EntitySizeLimitExceeded(inner) => inner.meta(),
-            Self::FieldLevelEncryptionConfigAlreadyExists(inner) => inner.meta(),
-            Self::FieldLevelEncryptionConfigInUse(inner) => inner.meta(),
-            Self::FieldLevelEncryptionProfileAlreadyExists(inner) => inner.meta(),
-            Self::FieldLevelEncryptionProfileInUse(inner) => inner.meta(),
-            Self::FieldLevelEncryptionProfileSizeExceeded(inner) => inner.meta(),
-            Self::FunctionAlreadyExists(inner) => inner.meta(),
-            Self::FunctionInUse(inner) => inner.meta(),
-            Self::FunctionSizeLimitExceeded(inner) => inner.meta(),
-            Self::IllegalDelete(inner) => inner.meta(),
-            Self::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner) => inner.meta(),
-            Self::IllegalOriginAccessConfiguration(inner) => inner.meta(),
-            Self::IllegalUpdate(inner) => inner.meta(),
-            Self::InconsistentQuantities(inner) => inner.meta(),
-            Self::InvalidArgument(inner) => inner.meta(),
-            Self::InvalidDefaultRootObject(inner) => inner.meta(),
-            Self::InvalidDomainNameForOriginAccessControl(inner) => inner.meta(),
-            Self::InvalidErrorCode(inner) => inner.meta(),
-            Self::InvalidForwardCookies(inner) => inner.meta(),
-            Self::InvalidFunctionAssociation(inner) => inner.meta(),
-            Self::InvalidGeoRestrictionParameter(inner) => inner.meta(),
-            Self::InvalidHeadersForS3Origin(inner) => inner.meta(),
-            Self::InvalidIfMatchVersion(inner) => inner.meta(),
-            Self::InvalidLambdaFunctionAssociation(inner) => inner.meta(),
-            Self::InvalidLocationCode(inner) => inner.meta(),
-            Self::InvalidMinimumProtocolVersion(inner) => inner.meta(),
-            Self::InvalidOrigin(inner) => inner.meta(),
-            Self::InvalidOriginAccessControl(inner) => inner.meta(),
-            Self::InvalidOriginAccessIdentity(inner) => inner.meta(),
-            Self::InvalidOriginKeepaliveTimeout(inner) => inner.meta(),
-            Self::InvalidOriginReadTimeout(inner) => inner.meta(),
-            Self::InvalidProtocolSettings(inner) => inner.meta(),
-            Self::InvalidQueryStringParameters(inner) => inner.meta(),
-            Self::InvalidRelativePath(inner) => inner.meta(),
-            Self::InvalidRequiredProtocol(inner) => inner.meta(),
-            Self::InvalidResponseCode(inner) => inner.meta(),
-            Self::InvalidTtlOrder(inner) => inner.meta(),
-            Self::InvalidTagging(inner) => inner.meta(),
-            Self::InvalidViewerCertificate(inner) => inner.meta(),
-            Self::InvalidWebAclId(inner) => inner.meta(),
-            Self::KeyGroupAlreadyExists(inner) => inner.meta(),
-            Self::MissingBody(inner) => inner.meta(),
-            Self::MonitoringSubscriptionAlreadyExists(inner) => inner.meta(),
-            Self::NoSuchCachePolicy(inner) => inner.meta(),
-            Self::NoSuchCloudFrontOriginAccessIdentity(inner) => inner.meta(),
-            Self::NoSuchContinuousDeploymentPolicy(inner) => inner.meta(),
-            Self::NoSuchDistribution(inner) => inner.meta(),
-            Self::NoSuchFieldLevelEncryptionConfig(inner) => inner.meta(),
-            Self::NoSuchFieldLevelEncryptionProfile(inner) => inner.meta(),
-            Self::NoSuchFunctionExists(inner) => inner.meta(),
-            Self::NoSuchInvalidation(inner) => inner.meta(),
-            Self::NoSuchMonitoringSubscription(inner) => inner.meta(),
-            Self::NoSuchOrigin(inner) => inner.meta(),
-            Self::NoSuchOriginAccessControl(inner) => inner.meta(),
-            Self::NoSuchOriginRequestPolicy(inner) => inner.meta(),
-            Self::NoSuchPublicKey(inner) => inner.meta(),
-            Self::NoSuchRealtimeLogConfig(inner) => inner.meta(),
-            Self::NoSuchResource(inner) => inner.meta(),
-            Self::NoSuchResponseHeadersPolicy(inner) => inner.meta(),
-            Self::NoSuchStreamingDistribution(inner) => inner.meta(),
-            Self::OriginAccessControlAlreadyExists(inner) => inner.meta(),
-            Self::OriginAccessControlInUse(inner) => inner.meta(),
-            Self::OriginRequestPolicyAlreadyExists(inner) => inner.meta(),
-            Self::OriginRequestPolicyInUse(inner) => inner.meta(),
-            Self::PreconditionFailed(inner) => inner.meta(),
-            Self::PublicKeyAlreadyExists(inner) => inner.meta(),
-            Self::PublicKeyInUse(inner) => inner.meta(),
-            Self::QueryArgProfileEmpty(inner) => inner.meta(),
-            Self::RealtimeLogConfigAlreadyExists(inner) => inner.meta(),
-            Self::RealtimeLogConfigInUse(inner) => inner.meta(),
-            Self::RealtimeLogConfigOwnerMismatch(inner) => inner.meta(),
-            Self::ResourceInUse(inner) => inner.meta(),
-            Self::ResponseHeadersPolicyAlreadyExists(inner) => inner.meta(),
-            Self::ResponseHeadersPolicyInUse(inner) => inner.meta(),
-            Self::StagingDistributionInUse(inner) => inner.meta(),
-            Self::StreamingDistributionAlreadyExists(inner) => inner.meta(),
-            Self::StreamingDistributionNotDisabled(inner) => inner.meta(),
-            Self::TestFunctionFailed(inner) => inner.meta(),
-            Self::TooLongCspInResponseHeadersPolicy(inner) => inner.meta(),
-            Self::TooManyCacheBehaviors(inner) => inner.meta(),
-            Self::TooManyCachePolicies(inner) => inner.meta(),
-            Self::TooManyCertificates(inner) => inner.meta(),
-            Self::TooManyCloudFrontOriginAccessIdentities(inner) => inner.meta(),
-            Self::TooManyContinuousDeploymentPolicies(inner) => inner.meta(),
-            Self::TooManyCookieNamesInWhiteList(inner) => inner.meta(),
-            Self::TooManyCookiesInCachePolicy(inner) => inner.meta(),
-            Self::TooManyCookiesInOriginRequestPolicy(inner) => inner.meta(),
-            Self::TooManyCustomHeadersInResponseHeadersPolicy(inner) => inner.meta(),
-            Self::TooManyDistributionCnamEs(inner) => inner.meta(),
-            Self::TooManyDistributions(inner) => inner.meta(),
-            Self::TooManyDistributionsAssociatedToCachePolicy(inner) => inner.meta(),
-            Self::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner) => inner.meta(),
-            Self::TooManyDistributionsAssociatedToKeyGroup(inner) => inner.meta(),
-            Self::TooManyDistributionsAssociatedToOriginAccessControl(inner) => inner.meta(),
-            Self::TooManyDistributionsAssociatedToOriginRequestPolicy(inner) => inner.meta(),
-            Self::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner) => inner.meta(),
-            Self::TooManyDistributionsWithFunctionAssociations(inner) => inner.meta(),
-            Self::TooManyDistributionsWithLambdaAssociations(inner) => inner.meta(),
-            Self::TooManyDistributionsWithSingleFunctionArn(inner) => inner.meta(),
-            Self::TooManyFieldLevelEncryptionConfigs(inner) => inner.meta(),
-            Self::TooManyFieldLevelEncryptionContentTypeProfiles(inner) => inner.meta(),
-            Self::TooManyFieldLevelEncryptionEncryptionEntities(inner) => inner.meta(),
-            Self::TooManyFieldLevelEncryptionFieldPatterns(inner) => inner.meta(),
-            Self::TooManyFieldLevelEncryptionProfiles(inner) => inner.meta(),
-            Self::TooManyFieldLevelEncryptionQueryArgProfiles(inner) => inner.meta(),
-            Self::TooManyFunctionAssociations(inner) => inner.meta(),
-            Self::TooManyFunctions(inner) => inner.meta(),
-            Self::TooManyHeadersInCachePolicy(inner) => inner.meta(),
-            Self::TooManyHeadersInForwardedValues(inner) => inner.meta(),
-            Self::TooManyHeadersInOriginRequestPolicy(inner) => inner.meta(),
-            Self::TooManyInvalidationsInProgress(inner) => inner.meta(),
-            Self::TooManyKeyGroups(inner) => inner.meta(),
-            Self::TooManyKeyGroupsAssociatedToDistribution(inner) => inner.meta(),
-            Self::TooManyLambdaFunctionAssociations(inner) => inner.meta(),
-            Self::TooManyOriginAccessControls(inner) => inner.meta(),
-            Self::TooManyOriginCustomHeaders(inner) => inner.meta(),
-            Self::TooManyOriginGroupsPerDistribution(inner) => inner.meta(),
-            Self::TooManyOriginRequestPolicies(inner) => inner.meta(),
-            Self::TooManyOrigins(inner) => inner.meta(),
-            Self::TooManyPublicKeys(inner) => inner.meta(),
-            Self::TooManyPublicKeysInKeyGroup(inner) => inner.meta(),
-            Self::TooManyQueryStringParameters(inner) => inner.meta(),
-            Self::TooManyQueryStringsInCachePolicy(inner) => inner.meta(),
-            Self::TooManyQueryStringsInOriginRequestPolicy(inner) => inner.meta(),
-            Self::TooManyRealtimeLogConfigs(inner) => inner.meta(),
-            Self::TooManyRemoveHeadersInResponseHeadersPolicy(inner) => inner.meta(),
-            Self::TooManyResponseHeadersPolicies(inner) => inner.meta(),
-            Self::TooManyStreamingDistributionCnamEs(inner) => inner.meta(),
-            Self::TooManyStreamingDistributions(inner) => inner.meta(),
-            Self::TooManyTrustedSigners(inner) => inner.meta(),
-            Self::TrustedKeyGroupDoesNotExist(inner) => inner.meta(),
-            Self::TrustedSignerDoesNotExist(inner) => inner.meta(),
-            Self::UnsupportedOperation(inner) => inner.meta(),
-            Self::Unhandled(inner) => &inner.meta,
-        }
-    }
-}
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_alias::AssociateAliasError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+                fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+                    match self {
+                        Self::AccessDenied(inner) => inner.meta(),
+Self::BatchTooLarge(inner) => inner.meta(),
+Self::CnameAlreadyExists(inner) => inner.meta(),
+Self::CachePolicyAlreadyExists(inner) => inner.meta(),
+Self::CachePolicyInUse(inner) => inner.meta(),
+Self::CannotChangeImmutablePublicKeyFields(inner) => inner.meta(),
+Self::CannotDeleteEntityWhileInUse(inner) => inner.meta(),
+Self::CloudFrontOriginAccessIdentityAlreadyExists(inner) => inner.meta(),
+Self::CloudFrontOriginAccessIdentityInUse(inner) => inner.meta(),
+Self::ContinuousDeploymentPolicyAlreadyExists(inner) => inner.meta(),
+Self::ContinuousDeploymentPolicyInUse(inner) => inner.meta(),
+Self::DistributionAlreadyExists(inner) => inner.meta(),
+Self::DistributionNotDisabled(inner) => inner.meta(),
+Self::EntityAlreadyExists(inner) => inner.meta(),
+Self::EntityLimitExceeded(inner) => inner.meta(),
+Self::EntityNotFound(inner) => inner.meta(),
+Self::EntitySizeLimitExceeded(inner) => inner.meta(),
+Self::FieldLevelEncryptionConfigAlreadyExists(inner) => inner.meta(),
+Self::FieldLevelEncryptionConfigInUse(inner) => inner.meta(),
+Self::FieldLevelEncryptionProfileAlreadyExists(inner) => inner.meta(),
+Self::FieldLevelEncryptionProfileInUse(inner) => inner.meta(),
+Self::FieldLevelEncryptionProfileSizeExceeded(inner) => inner.meta(),
+Self::FunctionAlreadyExists(inner) => inner.meta(),
+Self::FunctionInUse(inner) => inner.meta(),
+Self::FunctionSizeLimitExceeded(inner) => inner.meta(),
+Self::IllegalDelete(inner) => inner.meta(),
+Self::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner) => inner.meta(),
+Self::IllegalOriginAccessConfiguration(inner) => inner.meta(),
+Self::IllegalUpdate(inner) => inner.meta(),
+Self::InconsistentQuantities(inner) => inner.meta(),
+Self::InvalidArgument(inner) => inner.meta(),
+Self::InvalidDefaultRootObject(inner) => inner.meta(),
+Self::InvalidDomainNameForOriginAccessControl(inner) => inner.meta(),
+Self::InvalidErrorCode(inner) => inner.meta(),
+Self::InvalidForwardCookies(inner) => inner.meta(),
+Self::InvalidFunctionAssociation(inner) => inner.meta(),
+Self::InvalidGeoRestrictionParameter(inner) => inner.meta(),
+Self::InvalidHeadersForS3Origin(inner) => inner.meta(),
+Self::InvalidIfMatchVersion(inner) => inner.meta(),
+Self::InvalidLambdaFunctionAssociation(inner) => inner.meta(),
+Self::InvalidLocationCode(inner) => inner.meta(),
+Self::InvalidMinimumProtocolVersion(inner) => inner.meta(),
+Self::InvalidOrigin(inner) => inner.meta(),
+Self::InvalidOriginAccessControl(inner) => inner.meta(),
+Self::InvalidOriginAccessIdentity(inner) => inner.meta(),
+Self::InvalidOriginKeepaliveTimeout(inner) => inner.meta(),
+Self::InvalidOriginReadTimeout(inner) => inner.meta(),
+Self::InvalidProtocolSettings(inner) => inner.meta(),
+Self::InvalidQueryStringParameters(inner) => inner.meta(),
+Self::InvalidRelativePath(inner) => inner.meta(),
+Self::InvalidRequiredProtocol(inner) => inner.meta(),
+Self::InvalidResponseCode(inner) => inner.meta(),
+Self::InvalidTtlOrder(inner) => inner.meta(),
+Self::InvalidTagging(inner) => inner.meta(),
+Self::InvalidViewerCertificate(inner) => inner.meta(),
+Self::InvalidWebAclId(inner) => inner.meta(),
+Self::KeyGroupAlreadyExists(inner) => inner.meta(),
+Self::MissingBody(inner) => inner.meta(),
+Self::MonitoringSubscriptionAlreadyExists(inner) => inner.meta(),
+Self::NoSuchCachePolicy(inner) => inner.meta(),
+Self::NoSuchCloudFrontOriginAccessIdentity(inner) => inner.meta(),
+Self::NoSuchContinuousDeploymentPolicy(inner) => inner.meta(),
+Self::NoSuchDistribution(inner) => inner.meta(),
+Self::NoSuchFieldLevelEncryptionConfig(inner) => inner.meta(),
+Self::NoSuchFieldLevelEncryptionProfile(inner) => inner.meta(),
+Self::NoSuchFunctionExists(inner) => inner.meta(),
+Self::NoSuchInvalidation(inner) => inner.meta(),
+Self::NoSuchMonitoringSubscription(inner) => inner.meta(),
+Self::NoSuchOrigin(inner) => inner.meta(),
+Self::NoSuchOriginAccessControl(inner) => inner.meta(),
+Self::NoSuchOriginRequestPolicy(inner) => inner.meta(),
+Self::NoSuchPublicKey(inner) => inner.meta(),
+Self::NoSuchRealtimeLogConfig(inner) => inner.meta(),
+Self::NoSuchResource(inner) => inner.meta(),
+Self::NoSuchResponseHeadersPolicy(inner) => inner.meta(),
+Self::NoSuchStreamingDistribution(inner) => inner.meta(),
+Self::OriginAccessControlAlreadyExists(inner) => inner.meta(),
+Self::OriginAccessControlInUse(inner) => inner.meta(),
+Self::OriginRequestPolicyAlreadyExists(inner) => inner.meta(),
+Self::OriginRequestPolicyInUse(inner) => inner.meta(),
+Self::PreconditionFailed(inner) => inner.meta(),
+Self::PublicKeyAlreadyExists(inner) => inner.meta(),
+Self::PublicKeyInUse(inner) => inner.meta(),
+Self::QueryArgProfileEmpty(inner) => inner.meta(),
+Self::RealtimeLogConfigAlreadyExists(inner) => inner.meta(),
+Self::RealtimeLogConfigInUse(inner) => inner.meta(),
+Self::RealtimeLogConfigOwnerMismatch(inner) => inner.meta(),
+Self::ResourceInUse(inner) => inner.meta(),
+Self::ResponseHeadersPolicyAlreadyExists(inner) => inner.meta(),
+Self::ResponseHeadersPolicyInUse(inner) => inner.meta(),
+Self::StagingDistributionInUse(inner) => inner.meta(),
+Self::StreamingDistributionAlreadyExists(inner) => inner.meta(),
+Self::StreamingDistributionNotDisabled(inner) => inner.meta(),
+Self::TestFunctionFailed(inner) => inner.meta(),
+Self::TooLongCspInResponseHeadersPolicy(inner) => inner.meta(),
+Self::TooManyCacheBehaviors(inner) => inner.meta(),
+Self::TooManyCachePolicies(inner) => inner.meta(),
+Self::TooManyCertificates(inner) => inner.meta(),
+Self::TooManyCloudFrontOriginAccessIdentities(inner) => inner.meta(),
+Self::TooManyContinuousDeploymentPolicies(inner) => inner.meta(),
+Self::TooManyCookieNamesInWhiteList(inner) => inner.meta(),
+Self::TooManyCookiesInCachePolicy(inner) => inner.meta(),
+Self::TooManyCookiesInOriginRequestPolicy(inner) => inner.meta(),
+Self::TooManyCustomHeadersInResponseHeadersPolicy(inner) => inner.meta(),
+Self::TooManyDistributionCnamEs(inner) => inner.meta(),
+Self::TooManyDistributions(inner) => inner.meta(),
+Self::TooManyDistributionsAssociatedToCachePolicy(inner) => inner.meta(),
+Self::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner) => inner.meta(),
+Self::TooManyDistributionsAssociatedToKeyGroup(inner) => inner.meta(),
+Self::TooManyDistributionsAssociatedToOriginAccessControl(inner) => inner.meta(),
+Self::TooManyDistributionsAssociatedToOriginRequestPolicy(inner) => inner.meta(),
+Self::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner) => inner.meta(),
+Self::TooManyDistributionsWithFunctionAssociations(inner) => inner.meta(),
+Self::TooManyDistributionsWithLambdaAssociations(inner) => inner.meta(),
+Self::TooManyDistributionsWithSingleFunctionArn(inner) => inner.meta(),
+Self::TooManyFieldLevelEncryptionConfigs(inner) => inner.meta(),
+Self::TooManyFieldLevelEncryptionContentTypeProfiles(inner) => inner.meta(),
+Self::TooManyFieldLevelEncryptionEncryptionEntities(inner) => inner.meta(),
+Self::TooManyFieldLevelEncryptionFieldPatterns(inner) => inner.meta(),
+Self::TooManyFieldLevelEncryptionProfiles(inner) => inner.meta(),
+Self::TooManyFieldLevelEncryptionQueryArgProfiles(inner) => inner.meta(),
+Self::TooManyFunctionAssociations(inner) => inner.meta(),
+Self::TooManyFunctions(inner) => inner.meta(),
+Self::TooManyHeadersInCachePolicy(inner) => inner.meta(),
+Self::TooManyHeadersInForwardedValues(inner) => inner.meta(),
+Self::TooManyHeadersInOriginRequestPolicy(inner) => inner.meta(),
+Self::TooManyInvalidationsInProgress(inner) => inner.meta(),
+Self::TooManyKeyGroups(inner) => inner.meta(),
+Self::TooManyKeyGroupsAssociatedToDistribution(inner) => inner.meta(),
+Self::TooManyLambdaFunctionAssociations(inner) => inner.meta(),
+Self::TooManyOriginAccessControls(inner) => inner.meta(),
+Self::TooManyOriginCustomHeaders(inner) => inner.meta(),
+Self::TooManyOriginGroupsPerDistribution(inner) => inner.meta(),
+Self::TooManyOriginRequestPolicies(inner) => inner.meta(),
+Self::TooManyOrigins(inner) => inner.meta(),
+Self::TooManyPublicKeys(inner) => inner.meta(),
+Self::TooManyPublicKeysInKeyGroup(inner) => inner.meta(),
+Self::TooManyQueryStringParameters(inner) => inner.meta(),
+Self::TooManyQueryStringsInCachePolicy(inner) => inner.meta(),
+Self::TooManyQueryStringsInOriginRequestPolicy(inner) => inner.meta(),
+Self::TooManyRealtimeLogConfigs(inner) => inner.meta(),
+Self::TooManyRemoveHeadersInResponseHeadersPolicy(inner) => inner.meta(),
+Self::TooManyResponseHeadersPolicies(inner) => inner.meta(),
+Self::TooManyStreamingDistributionCnamEs(inner) => inner.meta(),
+Self::TooManyStreamingDistributions(inner) => inner.meta(),
+Self::TooManyTrustedSigners(inner) => inner.meta(),
+Self::TrustedKeyGroupDoesNotExist(inner) => inner.meta(),
+Self::TrustedSignerDoesNotExist(inner) => inner.meta(),
+Self::UnsupportedOperation(inner) => inner.meta(),
+                        Self::Unhandled(inner) => &inner.meta,
+                    }
+                }
+            }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_alias::AssociateAliasError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_alias::AssociateAliasError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -669,17 +663,16 @@ impl From<crate::operation::associate_alias::AssociateAliasError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::copy_distribution::CopyDistributionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::copy_distribution::CopyDistributionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::copy_distribution::CopyDistributionError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -689,40 +682,26 @@ impl From<crate::operation::copy_distribution::CopyDistributionError> for Error 
             crate::operation::copy_distribution::CopyDistributionError::AccessDenied(inner) => Error::AccessDenied(inner),
             crate::operation::copy_distribution::CopyDistributionError::CnameAlreadyExists(inner) => Error::CnameAlreadyExists(inner),
             crate::operation::copy_distribution::CopyDistributionError::DistributionAlreadyExists(inner) => Error::DistributionAlreadyExists(inner),
-            crate::operation::copy_distribution::CopyDistributionError::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner) => {
-                Error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner)
-            }
+            crate::operation::copy_distribution::CopyDistributionError::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner) => Error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner),
             crate::operation::copy_distribution::CopyDistributionError::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
             crate::operation::copy_distribution::CopyDistributionError::InvalidArgument(inner) => Error::InvalidArgument(inner),
             crate::operation::copy_distribution::CopyDistributionError::InvalidDefaultRootObject(inner) => Error::InvalidDefaultRootObject(inner),
             crate::operation::copy_distribution::CopyDistributionError::InvalidErrorCode(inner) => Error::InvalidErrorCode(inner),
             crate::operation::copy_distribution::CopyDistributionError::InvalidForwardCookies(inner) => Error::InvalidForwardCookies(inner),
             crate::operation::copy_distribution::CopyDistributionError::InvalidFunctionAssociation(inner) => Error::InvalidFunctionAssociation(inner),
-            crate::operation::copy_distribution::CopyDistributionError::InvalidGeoRestrictionParameter(inner) => {
-                Error::InvalidGeoRestrictionParameter(inner)
-            }
+            crate::operation::copy_distribution::CopyDistributionError::InvalidGeoRestrictionParameter(inner) => Error::InvalidGeoRestrictionParameter(inner),
             crate::operation::copy_distribution::CopyDistributionError::InvalidHeadersForS3Origin(inner) => Error::InvalidHeadersForS3Origin(inner),
             crate::operation::copy_distribution::CopyDistributionError::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
-            crate::operation::copy_distribution::CopyDistributionError::InvalidLambdaFunctionAssociation(inner) => {
-                Error::InvalidLambdaFunctionAssociation(inner)
-            }
+            crate::operation::copy_distribution::CopyDistributionError::InvalidLambdaFunctionAssociation(inner) => Error::InvalidLambdaFunctionAssociation(inner),
             crate::operation::copy_distribution::CopyDistributionError::InvalidLocationCode(inner) => Error::InvalidLocationCode(inner),
-            crate::operation::copy_distribution::CopyDistributionError::InvalidMinimumProtocolVersion(inner) => {
-                Error::InvalidMinimumProtocolVersion(inner)
-            }
+            crate::operation::copy_distribution::CopyDistributionError::InvalidMinimumProtocolVersion(inner) => Error::InvalidMinimumProtocolVersion(inner),
             crate::operation::copy_distribution::CopyDistributionError::InvalidOrigin(inner) => Error::InvalidOrigin(inner),
             crate::operation::copy_distribution::CopyDistributionError::InvalidOriginAccessControl(inner) => Error::InvalidOriginAccessControl(inner),
-            crate::operation::copy_distribution::CopyDistributionError::InvalidOriginAccessIdentity(inner) => {
-                Error::InvalidOriginAccessIdentity(inner)
-            }
-            crate::operation::copy_distribution::CopyDistributionError::InvalidOriginKeepaliveTimeout(inner) => {
-                Error::InvalidOriginKeepaliveTimeout(inner)
-            }
+            crate::operation::copy_distribution::CopyDistributionError::InvalidOriginAccessIdentity(inner) => Error::InvalidOriginAccessIdentity(inner),
+            crate::operation::copy_distribution::CopyDistributionError::InvalidOriginKeepaliveTimeout(inner) => Error::InvalidOriginKeepaliveTimeout(inner),
             crate::operation::copy_distribution::CopyDistributionError::InvalidOriginReadTimeout(inner) => Error::InvalidOriginReadTimeout(inner),
             crate::operation::copy_distribution::CopyDistributionError::InvalidProtocolSettings(inner) => Error::InvalidProtocolSettings(inner),
-            crate::operation::copy_distribution::CopyDistributionError::InvalidQueryStringParameters(inner) => {
-                Error::InvalidQueryStringParameters(inner)
-            }
+            crate::operation::copy_distribution::CopyDistributionError::InvalidQueryStringParameters(inner) => Error::InvalidQueryStringParameters(inner),
             crate::operation::copy_distribution::CopyDistributionError::InvalidRelativePath(inner) => Error::InvalidRelativePath(inner),
             crate::operation::copy_distribution::CopyDistributionError::InvalidRequiredProtocol(inner) => Error::InvalidRequiredProtocol(inner),
             crate::operation::copy_distribution::CopyDistributionError::InvalidResponseCode(inner) => Error::InvalidResponseCode(inner),
@@ -732,93 +711,52 @@ impl From<crate::operation::copy_distribution::CopyDistributionError> for Error 
             crate::operation::copy_distribution::CopyDistributionError::MissingBody(inner) => Error::MissingBody(inner),
             crate::operation::copy_distribution::CopyDistributionError::NoSuchCachePolicy(inner) => Error::NoSuchCachePolicy(inner),
             crate::operation::copy_distribution::CopyDistributionError::NoSuchDistribution(inner) => Error::NoSuchDistribution(inner),
-            crate::operation::copy_distribution::CopyDistributionError::NoSuchFieldLevelEncryptionConfig(inner) => {
-                Error::NoSuchFieldLevelEncryptionConfig(inner)
-            }
+            crate::operation::copy_distribution::CopyDistributionError::NoSuchFieldLevelEncryptionConfig(inner) => Error::NoSuchFieldLevelEncryptionConfig(inner),
             crate::operation::copy_distribution::CopyDistributionError::NoSuchOrigin(inner) => Error::NoSuchOrigin(inner),
             crate::operation::copy_distribution::CopyDistributionError::NoSuchOriginRequestPolicy(inner) => Error::NoSuchOriginRequestPolicy(inner),
             crate::operation::copy_distribution::CopyDistributionError::NoSuchRealtimeLogConfig(inner) => Error::NoSuchRealtimeLogConfig(inner),
-            crate::operation::copy_distribution::CopyDistributionError::NoSuchResponseHeadersPolicy(inner) => {
-                Error::NoSuchResponseHeadersPolicy(inner)
-            }
+            crate::operation::copy_distribution::CopyDistributionError::NoSuchResponseHeadersPolicy(inner) => Error::NoSuchResponseHeadersPolicy(inner),
             crate::operation::copy_distribution::CopyDistributionError::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
-            crate::operation::copy_distribution::CopyDistributionError::RealtimeLogConfigOwnerMismatch(inner) => {
-                Error::RealtimeLogConfigOwnerMismatch(inner)
-            }
+            crate::operation::copy_distribution::CopyDistributionError::RealtimeLogConfigOwnerMismatch(inner) => Error::RealtimeLogConfigOwnerMismatch(inner),
             crate::operation::copy_distribution::CopyDistributionError::TooManyCacheBehaviors(inner) => Error::TooManyCacheBehaviors(inner),
             crate::operation::copy_distribution::CopyDistributionError::TooManyCertificates(inner) => Error::TooManyCertificates(inner),
-            crate::operation::copy_distribution::CopyDistributionError::TooManyCookieNamesInWhiteList(inner) => {
-                Error::TooManyCookieNamesInWhiteList(inner)
-            }
+            crate::operation::copy_distribution::CopyDistributionError::TooManyCookieNamesInWhiteList(inner) => Error::TooManyCookieNamesInWhiteList(inner),
             crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionCnamEs(inner) => Error::TooManyDistributionCnamEs(inner),
             crate::operation::copy_distribution::CopyDistributionError::TooManyDistributions(inner) => Error::TooManyDistributions(inner),
-            crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsAssociatedToCachePolicy(inner) => {
-                Error::TooManyDistributionsAssociatedToCachePolicy(inner)
-            }
-            crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner) => {
-                Error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner)
-            }
-            crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsAssociatedToKeyGroup(inner) => {
-                Error::TooManyDistributionsAssociatedToKeyGroup(inner)
-            }
-            crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsAssociatedToOriginAccessControl(inner) => {
-                Error::TooManyDistributionsAssociatedToOriginAccessControl(inner)
-            }
-            crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsAssociatedToOriginRequestPolicy(inner) => {
-                Error::TooManyDistributionsAssociatedToOriginRequestPolicy(inner)
-            }
-            crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner) => {
-                Error::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner)
-            }
-            crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsWithFunctionAssociations(inner) => {
-                Error::TooManyDistributionsWithFunctionAssociations(inner)
-            }
-            crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsWithLambdaAssociations(inner) => {
-                Error::TooManyDistributionsWithLambdaAssociations(inner)
-            }
-            crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsWithSingleFunctionArn(inner) => {
-                Error::TooManyDistributionsWithSingleFunctionArn(inner)
-            }
-            crate::operation::copy_distribution::CopyDistributionError::TooManyFunctionAssociations(inner) => {
-                Error::TooManyFunctionAssociations(inner)
-            }
-            crate::operation::copy_distribution::CopyDistributionError::TooManyHeadersInForwardedValues(inner) => {
-                Error::TooManyHeadersInForwardedValues(inner)
-            }
-            crate::operation::copy_distribution::CopyDistributionError::TooManyKeyGroupsAssociatedToDistribution(inner) => {
-                Error::TooManyKeyGroupsAssociatedToDistribution(inner)
-            }
-            crate::operation::copy_distribution::CopyDistributionError::TooManyLambdaFunctionAssociations(inner) => {
-                Error::TooManyLambdaFunctionAssociations(inner)
-            }
+            crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsAssociatedToCachePolicy(inner) => Error::TooManyDistributionsAssociatedToCachePolicy(inner),
+            crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner) => Error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner),
+            crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsAssociatedToKeyGroup(inner) => Error::TooManyDistributionsAssociatedToKeyGroup(inner),
+            crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsAssociatedToOriginAccessControl(inner) => Error::TooManyDistributionsAssociatedToOriginAccessControl(inner),
+            crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsAssociatedToOriginRequestPolicy(inner) => Error::TooManyDistributionsAssociatedToOriginRequestPolicy(inner),
+            crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner) => Error::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner),
+            crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsWithFunctionAssociations(inner) => Error::TooManyDistributionsWithFunctionAssociations(inner),
+            crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsWithLambdaAssociations(inner) => Error::TooManyDistributionsWithLambdaAssociations(inner),
+            crate::operation::copy_distribution::CopyDistributionError::TooManyDistributionsWithSingleFunctionArn(inner) => Error::TooManyDistributionsWithSingleFunctionArn(inner),
+            crate::operation::copy_distribution::CopyDistributionError::TooManyFunctionAssociations(inner) => Error::TooManyFunctionAssociations(inner),
+            crate::operation::copy_distribution::CopyDistributionError::TooManyHeadersInForwardedValues(inner) => Error::TooManyHeadersInForwardedValues(inner),
+            crate::operation::copy_distribution::CopyDistributionError::TooManyKeyGroupsAssociatedToDistribution(inner) => Error::TooManyKeyGroupsAssociatedToDistribution(inner),
+            crate::operation::copy_distribution::CopyDistributionError::TooManyLambdaFunctionAssociations(inner) => Error::TooManyLambdaFunctionAssociations(inner),
             crate::operation::copy_distribution::CopyDistributionError::TooManyOriginCustomHeaders(inner) => Error::TooManyOriginCustomHeaders(inner),
-            crate::operation::copy_distribution::CopyDistributionError::TooManyOriginGroupsPerDistribution(inner) => {
-                Error::TooManyOriginGroupsPerDistribution(inner)
-            }
+            crate::operation::copy_distribution::CopyDistributionError::TooManyOriginGroupsPerDistribution(inner) => Error::TooManyOriginGroupsPerDistribution(inner),
             crate::operation::copy_distribution::CopyDistributionError::TooManyOrigins(inner) => Error::TooManyOrigins(inner),
-            crate::operation::copy_distribution::CopyDistributionError::TooManyQueryStringParameters(inner) => {
-                Error::TooManyQueryStringParameters(inner)
-            }
+            crate::operation::copy_distribution::CopyDistributionError::TooManyQueryStringParameters(inner) => Error::TooManyQueryStringParameters(inner),
             crate::operation::copy_distribution::CopyDistributionError::TooManyTrustedSigners(inner) => Error::TooManyTrustedSigners(inner),
-            crate::operation::copy_distribution::CopyDistributionError::TrustedKeyGroupDoesNotExist(inner) => {
-                Error::TrustedKeyGroupDoesNotExist(inner)
-            }
+            crate::operation::copy_distribution::CopyDistributionError::TrustedKeyGroupDoesNotExist(inner) => Error::TrustedKeyGroupDoesNotExist(inner),
             crate::operation::copy_distribution::CopyDistributionError::TrustedSignerDoesNotExist(inner) => Error::TrustedSignerDoesNotExist(inner),
             crate::operation::copy_distribution::CopyDistributionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_cache_policy::CreateCachePolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_cache_policy::CreateCachePolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_cache_policy::CreateCachePolicyError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -830,41 +768,23 @@ impl From<crate::operation::create_cache_policy::CreateCachePolicyError> for Err
             crate::operation::create_cache_policy::CreateCachePolicyError::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
             crate::operation::create_cache_policy::CreateCachePolicyError::InvalidArgument(inner) => Error::InvalidArgument(inner),
             crate::operation::create_cache_policy::CreateCachePolicyError::TooManyCachePolicies(inner) => Error::TooManyCachePolicies(inner),
-            crate::operation::create_cache_policy::CreateCachePolicyError::TooManyCookiesInCachePolicy(inner) => {
-                Error::TooManyCookiesInCachePolicy(inner)
-            }
-            crate::operation::create_cache_policy::CreateCachePolicyError::TooManyHeadersInCachePolicy(inner) => {
-                Error::TooManyHeadersInCachePolicy(inner)
-            }
-            crate::operation::create_cache_policy::CreateCachePolicyError::TooManyQueryStringsInCachePolicy(inner) => {
-                Error::TooManyQueryStringsInCachePolicy(inner)
-            }
+            crate::operation::create_cache_policy::CreateCachePolicyError::TooManyCookiesInCachePolicy(inner) => Error::TooManyCookiesInCachePolicy(inner),
+            crate::operation::create_cache_policy::CreateCachePolicyError::TooManyHeadersInCachePolicy(inner) => Error::TooManyHeadersInCachePolicy(inner),
+            crate::operation::create_cache_policy::CreateCachePolicyError::TooManyQueryStringsInCachePolicy(inner) => Error::TooManyQueryStringsInCachePolicy(inner),
             crate::operation::create_cache_policy::CreateCachePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -880,67 +800,42 @@ impl From<crate::operation::create_cloud_front_origin_access_identity::CreateClo
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError> for Error {
     fn from(err: crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError) -> Self {
         match err {
-            crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError::ContinuousDeploymentPolicyAlreadyExists(
-                inner,
-            ) => Error::ContinuousDeploymentPolicyAlreadyExists(inner),
-            crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError::InconsistentQuantities(inner) => {
-                Error::InconsistentQuantities(inner)
-            }
-            crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError::StagingDistributionInUse(inner) => {
-                Error::StagingDistributionInUse(inner)
-            }
-            crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError::TooManyContinuousDeploymentPolicies(
-                inner,
-            ) => Error::TooManyContinuousDeploymentPolicies(inner),
+            crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError::ContinuousDeploymentPolicyAlreadyExists(inner) => Error::ContinuousDeploymentPolicyAlreadyExists(inner),
+            crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
+            crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError::StagingDistributionInUse(inner) => Error::StagingDistributionInUse(inner),
+            crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError::TooManyContinuousDeploymentPolicies(inner) => Error::TooManyContinuousDeploymentPolicies(inner),
             crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_distribution::CreateDistributionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_distribution::CreateDistributionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_distribution::CreateDistributionError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -949,57 +844,29 @@ impl From<crate::operation::create_distribution::CreateDistributionError> for Er
         match err {
             crate::operation::create_distribution::CreateDistributionError::AccessDenied(inner) => Error::AccessDenied(inner),
             crate::operation::create_distribution::CreateDistributionError::CnameAlreadyExists(inner) => Error::CnameAlreadyExists(inner),
-            crate::operation::create_distribution::CreateDistributionError::ContinuousDeploymentPolicyInUse(inner) => {
-                Error::ContinuousDeploymentPolicyInUse(inner)
-            }
-            crate::operation::create_distribution::CreateDistributionError::DistributionAlreadyExists(inner) => {
-                Error::DistributionAlreadyExists(inner)
-            }
-            crate::operation::create_distribution::CreateDistributionError::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner) => {
-                Error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner)
-            }
-            crate::operation::create_distribution::CreateDistributionError::IllegalOriginAccessConfiguration(inner) => {
-                Error::IllegalOriginAccessConfiguration(inner)
-            }
+            crate::operation::create_distribution::CreateDistributionError::ContinuousDeploymentPolicyInUse(inner) => Error::ContinuousDeploymentPolicyInUse(inner),
+            crate::operation::create_distribution::CreateDistributionError::DistributionAlreadyExists(inner) => Error::DistributionAlreadyExists(inner),
+            crate::operation::create_distribution::CreateDistributionError::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner) => Error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner),
+            crate::operation::create_distribution::CreateDistributionError::IllegalOriginAccessConfiguration(inner) => Error::IllegalOriginAccessConfiguration(inner),
             crate::operation::create_distribution::CreateDistributionError::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
             crate::operation::create_distribution::CreateDistributionError::InvalidArgument(inner) => Error::InvalidArgument(inner),
             crate::operation::create_distribution::CreateDistributionError::InvalidDefaultRootObject(inner) => Error::InvalidDefaultRootObject(inner),
-            crate::operation::create_distribution::CreateDistributionError::InvalidDomainNameForOriginAccessControl(inner) => {
-                Error::InvalidDomainNameForOriginAccessControl(inner)
-            }
+            crate::operation::create_distribution::CreateDistributionError::InvalidDomainNameForOriginAccessControl(inner) => Error::InvalidDomainNameForOriginAccessControl(inner),
             crate::operation::create_distribution::CreateDistributionError::InvalidErrorCode(inner) => Error::InvalidErrorCode(inner),
             crate::operation::create_distribution::CreateDistributionError::InvalidForwardCookies(inner) => Error::InvalidForwardCookies(inner),
-            crate::operation::create_distribution::CreateDistributionError::InvalidFunctionAssociation(inner) => {
-                Error::InvalidFunctionAssociation(inner)
-            }
-            crate::operation::create_distribution::CreateDistributionError::InvalidGeoRestrictionParameter(inner) => {
-                Error::InvalidGeoRestrictionParameter(inner)
-            }
-            crate::operation::create_distribution::CreateDistributionError::InvalidHeadersForS3Origin(inner) => {
-                Error::InvalidHeadersForS3Origin(inner)
-            }
-            crate::operation::create_distribution::CreateDistributionError::InvalidLambdaFunctionAssociation(inner) => {
-                Error::InvalidLambdaFunctionAssociation(inner)
-            }
+            crate::operation::create_distribution::CreateDistributionError::InvalidFunctionAssociation(inner) => Error::InvalidFunctionAssociation(inner),
+            crate::operation::create_distribution::CreateDistributionError::InvalidGeoRestrictionParameter(inner) => Error::InvalidGeoRestrictionParameter(inner),
+            crate::operation::create_distribution::CreateDistributionError::InvalidHeadersForS3Origin(inner) => Error::InvalidHeadersForS3Origin(inner),
+            crate::operation::create_distribution::CreateDistributionError::InvalidLambdaFunctionAssociation(inner) => Error::InvalidLambdaFunctionAssociation(inner),
             crate::operation::create_distribution::CreateDistributionError::InvalidLocationCode(inner) => Error::InvalidLocationCode(inner),
-            crate::operation::create_distribution::CreateDistributionError::InvalidMinimumProtocolVersion(inner) => {
-                Error::InvalidMinimumProtocolVersion(inner)
-            }
+            crate::operation::create_distribution::CreateDistributionError::InvalidMinimumProtocolVersion(inner) => Error::InvalidMinimumProtocolVersion(inner),
             crate::operation::create_distribution::CreateDistributionError::InvalidOrigin(inner) => Error::InvalidOrigin(inner),
-            crate::operation::create_distribution::CreateDistributionError::InvalidOriginAccessControl(inner) => {
-                Error::InvalidOriginAccessControl(inner)
-            }
-            crate::operation::create_distribution::CreateDistributionError::InvalidOriginAccessIdentity(inner) => {
-                Error::InvalidOriginAccessIdentity(inner)
-            }
-            crate::operation::create_distribution::CreateDistributionError::InvalidOriginKeepaliveTimeout(inner) => {
-                Error::InvalidOriginKeepaliveTimeout(inner)
-            }
+            crate::operation::create_distribution::CreateDistributionError::InvalidOriginAccessControl(inner) => Error::InvalidOriginAccessControl(inner),
+            crate::operation::create_distribution::CreateDistributionError::InvalidOriginAccessIdentity(inner) => Error::InvalidOriginAccessIdentity(inner),
+            crate::operation::create_distribution::CreateDistributionError::InvalidOriginKeepaliveTimeout(inner) => Error::InvalidOriginKeepaliveTimeout(inner),
             crate::operation::create_distribution::CreateDistributionError::InvalidOriginReadTimeout(inner) => Error::InvalidOriginReadTimeout(inner),
             crate::operation::create_distribution::CreateDistributionError::InvalidProtocolSettings(inner) => Error::InvalidProtocolSettings(inner),
-            crate::operation::create_distribution::CreateDistributionError::InvalidQueryStringParameters(inner) => {
-                Error::InvalidQueryStringParameters(inner)
-            }
+            crate::operation::create_distribution::CreateDistributionError::InvalidQueryStringParameters(inner) => Error::InvalidQueryStringParameters(inner),
             crate::operation::create_distribution::CreateDistributionError::InvalidRelativePath(inner) => Error::InvalidRelativePath(inner),
             crate::operation::create_distribution::CreateDistributionError::InvalidRequiredProtocol(inner) => Error::InvalidRequiredProtocol(inner),
             crate::operation::create_distribution::CreateDistributionError::InvalidResponseCode(inner) => Error::InvalidResponseCode(inner),
@@ -1008,106 +875,52 @@ impl From<crate::operation::create_distribution::CreateDistributionError> for Er
             crate::operation::create_distribution::CreateDistributionError::InvalidWebAclId(inner) => Error::InvalidWebAclId(inner),
             crate::operation::create_distribution::CreateDistributionError::MissingBody(inner) => Error::MissingBody(inner),
             crate::operation::create_distribution::CreateDistributionError::NoSuchCachePolicy(inner) => Error::NoSuchCachePolicy(inner),
-            crate::operation::create_distribution::CreateDistributionError::NoSuchContinuousDeploymentPolicy(inner) => {
-                Error::NoSuchContinuousDeploymentPolicy(inner)
-            }
-            crate::operation::create_distribution::CreateDistributionError::NoSuchFieldLevelEncryptionConfig(inner) => {
-                Error::NoSuchFieldLevelEncryptionConfig(inner)
-            }
+            crate::operation::create_distribution::CreateDistributionError::NoSuchContinuousDeploymentPolicy(inner) => Error::NoSuchContinuousDeploymentPolicy(inner),
+            crate::operation::create_distribution::CreateDistributionError::NoSuchFieldLevelEncryptionConfig(inner) => Error::NoSuchFieldLevelEncryptionConfig(inner),
             crate::operation::create_distribution::CreateDistributionError::NoSuchOrigin(inner) => Error::NoSuchOrigin(inner),
-            crate::operation::create_distribution::CreateDistributionError::NoSuchOriginRequestPolicy(inner) => {
-                Error::NoSuchOriginRequestPolicy(inner)
-            }
+            crate::operation::create_distribution::CreateDistributionError::NoSuchOriginRequestPolicy(inner) => Error::NoSuchOriginRequestPolicy(inner),
             crate::operation::create_distribution::CreateDistributionError::NoSuchRealtimeLogConfig(inner) => Error::NoSuchRealtimeLogConfig(inner),
-            crate::operation::create_distribution::CreateDistributionError::NoSuchResponseHeadersPolicy(inner) => {
-                Error::NoSuchResponseHeadersPolicy(inner)
-            }
-            crate::operation::create_distribution::CreateDistributionError::RealtimeLogConfigOwnerMismatch(inner) => {
-                Error::RealtimeLogConfigOwnerMismatch(inner)
-            }
+            crate::operation::create_distribution::CreateDistributionError::NoSuchResponseHeadersPolicy(inner) => Error::NoSuchResponseHeadersPolicy(inner),
+            crate::operation::create_distribution::CreateDistributionError::RealtimeLogConfigOwnerMismatch(inner) => Error::RealtimeLogConfigOwnerMismatch(inner),
             crate::operation::create_distribution::CreateDistributionError::TooManyCacheBehaviors(inner) => Error::TooManyCacheBehaviors(inner),
             crate::operation::create_distribution::CreateDistributionError::TooManyCertificates(inner) => Error::TooManyCertificates(inner),
-            crate::operation::create_distribution::CreateDistributionError::TooManyCookieNamesInWhiteList(inner) => {
-                Error::TooManyCookieNamesInWhiteList(inner)
-            }
-            crate::operation::create_distribution::CreateDistributionError::TooManyDistributionCnamEs(inner) => {
-                Error::TooManyDistributionCnamEs(inner)
-            }
+            crate::operation::create_distribution::CreateDistributionError::TooManyCookieNamesInWhiteList(inner) => Error::TooManyCookieNamesInWhiteList(inner),
+            crate::operation::create_distribution::CreateDistributionError::TooManyDistributionCnamEs(inner) => Error::TooManyDistributionCnamEs(inner),
             crate::operation::create_distribution::CreateDistributionError::TooManyDistributions(inner) => Error::TooManyDistributions(inner),
-            crate::operation::create_distribution::CreateDistributionError::TooManyDistributionsAssociatedToCachePolicy(inner) => {
-                Error::TooManyDistributionsAssociatedToCachePolicy(inner)
-            }
-            crate::operation::create_distribution::CreateDistributionError::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner) => {
-                Error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner)
-            }
-            crate::operation::create_distribution::CreateDistributionError::TooManyDistributionsAssociatedToKeyGroup(inner) => {
-                Error::TooManyDistributionsAssociatedToKeyGroup(inner)
-            }
-            crate::operation::create_distribution::CreateDistributionError::TooManyDistributionsAssociatedToOriginAccessControl(inner) => {
-                Error::TooManyDistributionsAssociatedToOriginAccessControl(inner)
-            }
-            crate::operation::create_distribution::CreateDistributionError::TooManyDistributionsAssociatedToOriginRequestPolicy(inner) => {
-                Error::TooManyDistributionsAssociatedToOriginRequestPolicy(inner)
-            }
-            crate::operation::create_distribution::CreateDistributionError::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner) => {
-                Error::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner)
-            }
-            crate::operation::create_distribution::CreateDistributionError::TooManyDistributionsWithFunctionAssociations(inner) => {
-                Error::TooManyDistributionsWithFunctionAssociations(inner)
-            }
-            crate::operation::create_distribution::CreateDistributionError::TooManyDistributionsWithLambdaAssociations(inner) => {
-                Error::TooManyDistributionsWithLambdaAssociations(inner)
-            }
-            crate::operation::create_distribution::CreateDistributionError::TooManyDistributionsWithSingleFunctionArn(inner) => {
-                Error::TooManyDistributionsWithSingleFunctionArn(inner)
-            }
-            crate::operation::create_distribution::CreateDistributionError::TooManyFunctionAssociations(inner) => {
-                Error::TooManyFunctionAssociations(inner)
-            }
-            crate::operation::create_distribution::CreateDistributionError::TooManyHeadersInForwardedValues(inner) => {
-                Error::TooManyHeadersInForwardedValues(inner)
-            }
-            crate::operation::create_distribution::CreateDistributionError::TooManyKeyGroupsAssociatedToDistribution(inner) => {
-                Error::TooManyKeyGroupsAssociatedToDistribution(inner)
-            }
-            crate::operation::create_distribution::CreateDistributionError::TooManyLambdaFunctionAssociations(inner) => {
-                Error::TooManyLambdaFunctionAssociations(inner)
-            }
-            crate::operation::create_distribution::CreateDistributionError::TooManyOriginCustomHeaders(inner) => {
-                Error::TooManyOriginCustomHeaders(inner)
-            }
-            crate::operation::create_distribution::CreateDistributionError::TooManyOriginGroupsPerDistribution(inner) => {
-                Error::TooManyOriginGroupsPerDistribution(inner)
-            }
+            crate::operation::create_distribution::CreateDistributionError::TooManyDistributionsAssociatedToCachePolicy(inner) => Error::TooManyDistributionsAssociatedToCachePolicy(inner),
+            crate::operation::create_distribution::CreateDistributionError::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner) => Error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner),
+            crate::operation::create_distribution::CreateDistributionError::TooManyDistributionsAssociatedToKeyGroup(inner) => Error::TooManyDistributionsAssociatedToKeyGroup(inner),
+            crate::operation::create_distribution::CreateDistributionError::TooManyDistributionsAssociatedToOriginAccessControl(inner) => Error::TooManyDistributionsAssociatedToOriginAccessControl(inner),
+            crate::operation::create_distribution::CreateDistributionError::TooManyDistributionsAssociatedToOriginRequestPolicy(inner) => Error::TooManyDistributionsAssociatedToOriginRequestPolicy(inner),
+            crate::operation::create_distribution::CreateDistributionError::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner) => Error::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner),
+            crate::operation::create_distribution::CreateDistributionError::TooManyDistributionsWithFunctionAssociations(inner) => Error::TooManyDistributionsWithFunctionAssociations(inner),
+            crate::operation::create_distribution::CreateDistributionError::TooManyDistributionsWithLambdaAssociations(inner) => Error::TooManyDistributionsWithLambdaAssociations(inner),
+            crate::operation::create_distribution::CreateDistributionError::TooManyDistributionsWithSingleFunctionArn(inner) => Error::TooManyDistributionsWithSingleFunctionArn(inner),
+            crate::operation::create_distribution::CreateDistributionError::TooManyFunctionAssociations(inner) => Error::TooManyFunctionAssociations(inner),
+            crate::operation::create_distribution::CreateDistributionError::TooManyHeadersInForwardedValues(inner) => Error::TooManyHeadersInForwardedValues(inner),
+            crate::operation::create_distribution::CreateDistributionError::TooManyKeyGroupsAssociatedToDistribution(inner) => Error::TooManyKeyGroupsAssociatedToDistribution(inner),
+            crate::operation::create_distribution::CreateDistributionError::TooManyLambdaFunctionAssociations(inner) => Error::TooManyLambdaFunctionAssociations(inner),
+            crate::operation::create_distribution::CreateDistributionError::TooManyOriginCustomHeaders(inner) => Error::TooManyOriginCustomHeaders(inner),
+            crate::operation::create_distribution::CreateDistributionError::TooManyOriginGroupsPerDistribution(inner) => Error::TooManyOriginGroupsPerDistribution(inner),
             crate::operation::create_distribution::CreateDistributionError::TooManyOrigins(inner) => Error::TooManyOrigins(inner),
-            crate::operation::create_distribution::CreateDistributionError::TooManyQueryStringParameters(inner) => {
-                Error::TooManyQueryStringParameters(inner)
-            }
+            crate::operation::create_distribution::CreateDistributionError::TooManyQueryStringParameters(inner) => Error::TooManyQueryStringParameters(inner),
             crate::operation::create_distribution::CreateDistributionError::TooManyTrustedSigners(inner) => Error::TooManyTrustedSigners(inner),
-            crate::operation::create_distribution::CreateDistributionError::TrustedKeyGroupDoesNotExist(inner) => {
-                Error::TrustedKeyGroupDoesNotExist(inner)
-            }
-            crate::operation::create_distribution::CreateDistributionError::TrustedSignerDoesNotExist(inner) => {
-                Error::TrustedSignerDoesNotExist(inner)
-            }
+            crate::operation::create_distribution::CreateDistributionError::TrustedKeyGroupDoesNotExist(inner) => Error::TrustedKeyGroupDoesNotExist(inner),
+            crate::operation::create_distribution::CreateDistributionError::TrustedSignerDoesNotExist(inner) => Error::TrustedSignerDoesNotExist(inner),
             crate::operation::create_distribution::CreateDistributionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1184,28 +997,16 @@ impl From<crate::operation::create_distribution_with_tags::CreateDistributionWit
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1224,28 +1025,16 @@ impl From<crate::operation::create_field_level_encryption_config::CreateFieldLev
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_field_level_encryption_profile::CreateFieldLevelEncryptionProfileError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_field_level_encryption_profile::CreateFieldLevelEncryptionProfileError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_field_level_encryption_profile::CreateFieldLevelEncryptionProfileError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_field_level_encryption_profile::CreateFieldLevelEncryptionProfileError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1264,17 +1053,16 @@ impl From<crate::operation::create_field_level_encryption_profile::CreateFieldLe
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_function::CreateFunctionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_function::CreateFunctionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_function::CreateFunctionError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1290,17 +1078,16 @@ impl From<crate::operation::create_function::CreateFunctionError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_invalidation::CreateInvalidationError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_invalidation::CreateInvalidationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_invalidation::CreateInvalidationError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1313,24 +1100,21 @@ impl From<crate::operation::create_invalidation::CreateInvalidationError> for Er
             crate::operation::create_invalidation::CreateInvalidationError::InvalidArgument(inner) => Error::InvalidArgument(inner),
             crate::operation::create_invalidation::CreateInvalidationError::MissingBody(inner) => Error::MissingBody(inner),
             crate::operation::create_invalidation::CreateInvalidationError::NoSuchDistribution(inner) => Error::NoSuchDistribution(inner),
-            crate::operation::create_invalidation::CreateInvalidationError::TooManyInvalidationsInProgress(inner) => {
-                Error::TooManyInvalidationsInProgress(inner)
-            }
+            crate::operation::create_invalidation::CreateInvalidationError::TooManyInvalidationsInProgress(inner) => Error::TooManyInvalidationsInProgress(inner),
             crate::operation::create_invalidation::CreateInvalidationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_key_group::CreateKeyGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_key_group::CreateKeyGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_key_group::CreateKeyGroupError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1345,17 +1129,16 @@ impl From<crate::operation::create_key_group::CreateKeyGroupError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_key_value_store::CreateKeyValueStoreError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_key_value_store::CreateKeyValueStoreError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_key_value_store::CreateKeyValueStoreError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1365,32 +1148,22 @@ impl From<crate::operation::create_key_value_store::CreateKeyValueStoreError> fo
             crate::operation::create_key_value_store::CreateKeyValueStoreError::AccessDenied(inner) => Error::AccessDenied(inner),
             crate::operation::create_key_value_store::CreateKeyValueStoreError::EntityAlreadyExists(inner) => Error::EntityAlreadyExists(inner),
             crate::operation::create_key_value_store::CreateKeyValueStoreError::EntityLimitExceeded(inner) => Error::EntityLimitExceeded(inner),
-            crate::operation::create_key_value_store::CreateKeyValueStoreError::EntitySizeLimitExceeded(inner) => {
-                Error::EntitySizeLimitExceeded(inner)
-            }
+            crate::operation::create_key_value_store::CreateKeyValueStoreError::EntitySizeLimitExceeded(inner) => Error::EntitySizeLimitExceeded(inner),
             crate::operation::create_key_value_store::CreateKeyValueStoreError::InvalidArgument(inner) => Error::InvalidArgument(inner),
             crate::operation::create_key_value_store::CreateKeyValueStoreError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1398,33 +1171,23 @@ impl From<crate::operation::create_monitoring_subscription::CreateMonitoringSubs
     fn from(err: crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError) -> Self {
         match err {
             crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError::AccessDenied(inner) => Error::AccessDenied(inner),
-            crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError::MonitoringSubscriptionAlreadyExists(inner) => {
-                Error::MonitoringSubscriptionAlreadyExists(inner)
-            }
-            crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError::NoSuchDistribution(inner) => {
-                Error::NoSuchDistribution(inner)
-            }
-            crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError::UnsupportedOperation(inner) => {
-                Error::UnsupportedOperation(inner)
-            }
+            crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError::MonitoringSubscriptionAlreadyExists(inner) => Error::MonitoringSubscriptionAlreadyExists(inner),
+            crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError::NoSuchDistribution(inner) => Error::NoSuchDistribution(inner),
+            crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
             crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_origin_access_control::CreateOriginAccessControlError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_origin_access_control::CreateOriginAccessControlError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_origin_access_control::CreateOriginAccessControlError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_origin_access_control::CreateOriginAccessControlError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1432,30 +1195,22 @@ impl From<crate::operation::create_origin_access_control::CreateOriginAccessCont
     fn from(err: crate::operation::create_origin_access_control::CreateOriginAccessControlError) -> Self {
         match err {
             crate::operation::create_origin_access_control::CreateOriginAccessControlError::InvalidArgument(inner) => Error::InvalidArgument(inner),
-            crate::operation::create_origin_access_control::CreateOriginAccessControlError::OriginAccessControlAlreadyExists(inner) => {
-                Error::OriginAccessControlAlreadyExists(inner)
-            }
-            crate::operation::create_origin_access_control::CreateOriginAccessControlError::TooManyOriginAccessControls(inner) => {
-                Error::TooManyOriginAccessControls(inner)
-            }
+            crate::operation::create_origin_access_control::CreateOriginAccessControlError::OriginAccessControlAlreadyExists(inner) => Error::OriginAccessControlAlreadyExists(inner),
+            crate::operation::create_origin_access_control::CreateOriginAccessControlError::TooManyOriginAccessControls(inner) => Error::TooManyOriginAccessControls(inner),
             crate::operation::create_origin_access_control::CreateOriginAccessControlError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1463,40 +1218,27 @@ impl From<crate::operation::create_origin_request_policy::CreateOriginRequestPol
     fn from(err: crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError) -> Self {
         match err {
             crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError::AccessDenied(inner) => Error::AccessDenied(inner),
-            crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError::InconsistentQuantities(inner) => {
-                Error::InconsistentQuantities(inner)
-            }
+            crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
             crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError::InvalidArgument(inner) => Error::InvalidArgument(inner),
-            crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError::OriginRequestPolicyAlreadyExists(inner) => {
-                Error::OriginRequestPolicyAlreadyExists(inner)
-            }
-            crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError::TooManyCookiesInOriginRequestPolicy(inner) => {
-                Error::TooManyCookiesInOriginRequestPolicy(inner)
-            }
-            crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError::TooManyHeadersInOriginRequestPolicy(inner) => {
-                Error::TooManyHeadersInOriginRequestPolicy(inner)
-            }
-            crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError::TooManyOriginRequestPolicies(inner) => {
-                Error::TooManyOriginRequestPolicies(inner)
-            }
-            crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError::TooManyQueryStringsInOriginRequestPolicy(inner) => {
-                Error::TooManyQueryStringsInOriginRequestPolicy(inner)
-            }
+            crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError::OriginRequestPolicyAlreadyExists(inner) => Error::OriginRequestPolicyAlreadyExists(inner),
+            crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError::TooManyCookiesInOriginRequestPolicy(inner) => Error::TooManyCookiesInOriginRequestPolicy(inner),
+            crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError::TooManyHeadersInOriginRequestPolicy(inner) => Error::TooManyHeadersInOriginRequestPolicy(inner),
+            crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError::TooManyOriginRequestPolicies(inner) => Error::TooManyOriginRequestPolicies(inner),
+            crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError::TooManyQueryStringsInOriginRequestPolicy(inner) => Error::TooManyQueryStringsInOriginRequestPolicy(inner),
             crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_public_key::CreatePublicKeyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_public_key::CreatePublicKeyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_public_key::CreatePublicKeyError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1510,20 +1252,16 @@ impl From<crate::operation::create_public_key::CreatePublicKeyError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_realtime_log_config::CreateRealtimeLogConfigError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_realtime_log_config::CreateRealtimeLogConfigError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_realtime_log_config::CreateRealtimeLogConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_realtime_log_config::CreateRealtimeLogConfigError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1532,34 +1270,22 @@ impl From<crate::operation::create_realtime_log_config::CreateRealtimeLogConfigE
         match err {
             crate::operation::create_realtime_log_config::CreateRealtimeLogConfigError::AccessDenied(inner) => Error::AccessDenied(inner),
             crate::operation::create_realtime_log_config::CreateRealtimeLogConfigError::InvalidArgument(inner) => Error::InvalidArgument(inner),
-            crate::operation::create_realtime_log_config::CreateRealtimeLogConfigError::RealtimeLogConfigAlreadyExists(inner) => {
-                Error::RealtimeLogConfigAlreadyExists(inner)
-            }
-            crate::operation::create_realtime_log_config::CreateRealtimeLogConfigError::TooManyRealtimeLogConfigs(inner) => {
-                Error::TooManyRealtimeLogConfigs(inner)
-            }
+            crate::operation::create_realtime_log_config::CreateRealtimeLogConfigError::RealtimeLogConfigAlreadyExists(inner) => Error::RealtimeLogConfigAlreadyExists(inner),
+            crate::operation::create_realtime_log_config::CreateRealtimeLogConfigError::TooManyRealtimeLogConfigs(inner) => Error::TooManyRealtimeLogConfigs(inner),
             crate::operation::create_realtime_log_config::CreateRealtimeLogConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1567,45 +1293,27 @@ impl From<crate::operation::create_response_headers_policy::CreateResponseHeader
     fn from(err: crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyError) -> Self {
         match err {
             crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyError::AccessDenied(inner) => Error::AccessDenied(inner),
-            crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyError::InconsistentQuantities(inner) => {
-                Error::InconsistentQuantities(inner)
-            }
-            crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyError::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyError::ResponseHeadersPolicyAlreadyExists(inner) => {
-                Error::ResponseHeadersPolicyAlreadyExists(inner)
-            }
-            crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyError::TooLongCspInResponseHeadersPolicy(inner) => {
-                Error::TooLongCspInResponseHeadersPolicy(inner)
-            }
-            crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyError::TooManyCustomHeadersInResponseHeadersPolicy(
-                inner,
-            ) => Error::TooManyCustomHeadersInResponseHeadersPolicy(inner),
-            crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyError::TooManyRemoveHeadersInResponseHeadersPolicy(
-                inner,
-            ) => Error::TooManyRemoveHeadersInResponseHeadersPolicy(inner),
-            crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyError::TooManyResponseHeadersPolicies(inner) => {
-                Error::TooManyResponseHeadersPolicies(inner)
-            }
+            crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyError::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
+            crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyError::ResponseHeadersPolicyAlreadyExists(inner) => Error::ResponseHeadersPolicyAlreadyExists(inner),
+            crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyError::TooLongCspInResponseHeadersPolicy(inner) => Error::TooLongCspInResponseHeadersPolicy(inner),
+            crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyError::TooManyCustomHeadersInResponseHeadersPolicy(inner) => Error::TooManyCustomHeadersInResponseHeadersPolicy(inner),
+            crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyError::TooManyRemoveHeadersInResponseHeadersPolicy(inner) => Error::TooManyRemoveHeadersInResponseHeadersPolicy(inner),
+            crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyError::TooManyResponseHeadersPolicies(inner) => Error::TooManyResponseHeadersPolicies(inner),
             crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_streaming_distribution::CreateStreamingDistributionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_streaming_distribution::CreateStreamingDistributionError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_streaming_distribution::CreateStreamingDistributionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_streaming_distribution::CreateStreamingDistributionError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1613,64 +1321,32 @@ impl From<crate::operation::create_streaming_distribution::CreateStreamingDistri
     fn from(err: crate::operation::create_streaming_distribution::CreateStreamingDistributionError) -> Self {
         match err {
             crate::operation::create_streaming_distribution::CreateStreamingDistributionError::AccessDenied(inner) => Error::AccessDenied(inner),
-            crate::operation::create_streaming_distribution::CreateStreamingDistributionError::CnameAlreadyExists(inner) => {
-                Error::CnameAlreadyExists(inner)
-            }
-            crate::operation::create_streaming_distribution::CreateStreamingDistributionError::InconsistentQuantities(inner) => {
-                Error::InconsistentQuantities(inner)
-            }
-            crate::operation::create_streaming_distribution::CreateStreamingDistributionError::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
+            crate::operation::create_streaming_distribution::CreateStreamingDistributionError::CnameAlreadyExists(inner) => Error::CnameAlreadyExists(inner),
+            crate::operation::create_streaming_distribution::CreateStreamingDistributionError::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
+            crate::operation::create_streaming_distribution::CreateStreamingDistributionError::InvalidArgument(inner) => Error::InvalidArgument(inner),
             crate::operation::create_streaming_distribution::CreateStreamingDistributionError::InvalidOrigin(inner) => Error::InvalidOrigin(inner),
-            crate::operation::create_streaming_distribution::CreateStreamingDistributionError::InvalidOriginAccessControl(inner) => {
-                Error::InvalidOriginAccessControl(inner)
-            }
-            crate::operation::create_streaming_distribution::CreateStreamingDistributionError::InvalidOriginAccessIdentity(inner) => {
-                Error::InvalidOriginAccessIdentity(inner)
-            }
+            crate::operation::create_streaming_distribution::CreateStreamingDistributionError::InvalidOriginAccessControl(inner) => Error::InvalidOriginAccessControl(inner),
+            crate::operation::create_streaming_distribution::CreateStreamingDistributionError::InvalidOriginAccessIdentity(inner) => Error::InvalidOriginAccessIdentity(inner),
             crate::operation::create_streaming_distribution::CreateStreamingDistributionError::MissingBody(inner) => Error::MissingBody(inner),
-            crate::operation::create_streaming_distribution::CreateStreamingDistributionError::StreamingDistributionAlreadyExists(inner) => {
-                Error::StreamingDistributionAlreadyExists(inner)
-            }
-            crate::operation::create_streaming_distribution::CreateStreamingDistributionError::TooManyStreamingDistributionCnamEs(inner) => {
-                Error::TooManyStreamingDistributionCnamEs(inner)
-            }
-            crate::operation::create_streaming_distribution::CreateStreamingDistributionError::TooManyStreamingDistributions(inner) => {
-                Error::TooManyStreamingDistributions(inner)
-            }
-            crate::operation::create_streaming_distribution::CreateStreamingDistributionError::TooManyTrustedSigners(inner) => {
-                Error::TooManyTrustedSigners(inner)
-            }
-            crate::operation::create_streaming_distribution::CreateStreamingDistributionError::TrustedSignerDoesNotExist(inner) => {
-                Error::TrustedSignerDoesNotExist(inner)
-            }
+            crate::operation::create_streaming_distribution::CreateStreamingDistributionError::StreamingDistributionAlreadyExists(inner) => Error::StreamingDistributionAlreadyExists(inner),
+            crate::operation::create_streaming_distribution::CreateStreamingDistributionError::TooManyStreamingDistributionCnamEs(inner) => Error::TooManyStreamingDistributionCnamEs(inner),
+            crate::operation::create_streaming_distribution::CreateStreamingDistributionError::TooManyStreamingDistributions(inner) => Error::TooManyStreamingDistributions(inner),
+            crate::operation::create_streaming_distribution::CreateStreamingDistributionError::TooManyTrustedSigners(inner) => Error::TooManyTrustedSigners(inner),
+            crate::operation::create_streaming_distribution::CreateStreamingDistributionError::TrustedSignerDoesNotExist(inner) => Error::TrustedSignerDoesNotExist(inner),
             crate::operation::create_streaming_distribution::CreateStreamingDistributionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1695,17 +1371,16 @@ impl From<crate::operation::create_streaming_distribution_with_tags::CreateStrea
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_cache_policy::DeleteCachePolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_cache_policy::DeleteCachePolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_cache_policy::DeleteCachePolicyError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1722,28 +1397,16 @@ impl From<crate::operation::delete_cache_policy::DeleteCachePolicyError> for Err
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1759,67 +1422,42 @@ impl From<crate::operation::delete_cloud_front_origin_access_identity::DeleteClo
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyError> for Error {
     fn from(err: crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyError) -> Self {
         match err {
-            crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyError::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyError::ContinuousDeploymentPolicyInUse(inner) => {
-                Error::ContinuousDeploymentPolicyInUse(inner)
-            }
-            crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyError::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyError::InvalidIfMatchVersion(inner) => {
-                Error::InvalidIfMatchVersion(inner)
-            }
-            crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyError::NoSuchContinuousDeploymentPolicy(inner) => {
-                Error::NoSuchContinuousDeploymentPolicy(inner)
-            }
-            crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyError::PreconditionFailed(inner) => {
-                Error::PreconditionFailed(inner)
-            }
+            crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyError::ContinuousDeploymentPolicyInUse(inner) => Error::ContinuousDeploymentPolicyInUse(inner),
+            crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyError::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyError::NoSuchContinuousDeploymentPolicy(inner) => Error::NoSuchContinuousDeploymentPolicy(inner),
+            crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyError::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
             crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_distribution::DeleteDistributionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_distribution::DeleteDistributionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_distribution::DeleteDistributionError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1835,115 +1473,66 @@ impl From<crate::operation::delete_distribution::DeleteDistributionError> for Er
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_field_level_encryption_config::DeleteFieldLevelEncryptionConfigError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_field_level_encryption_config::DeleteFieldLevelEncryptionConfigError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_field_level_encryption_config::DeleteFieldLevelEncryptionConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_field_level_encryption_config::DeleteFieldLevelEncryptionConfigError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_field_level_encryption_config::DeleteFieldLevelEncryptionConfigError> for Error {
     fn from(err: crate::operation::delete_field_level_encryption_config::DeleteFieldLevelEncryptionConfigError) -> Self {
         match err {
-            crate::operation::delete_field_level_encryption_config::DeleteFieldLevelEncryptionConfigError::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::operation::delete_field_level_encryption_config::DeleteFieldLevelEncryptionConfigError::FieldLevelEncryptionConfigInUse(inner) => {
-                Error::FieldLevelEncryptionConfigInUse(inner)
-            }
-            crate::operation::delete_field_level_encryption_config::DeleteFieldLevelEncryptionConfigError::InvalidIfMatchVersion(inner) => {
-                Error::InvalidIfMatchVersion(inner)
-            }
-            crate::operation::delete_field_level_encryption_config::DeleteFieldLevelEncryptionConfigError::NoSuchFieldLevelEncryptionConfig(
-                inner,
-            ) => Error::NoSuchFieldLevelEncryptionConfig(inner),
-            crate::operation::delete_field_level_encryption_config::DeleteFieldLevelEncryptionConfigError::PreconditionFailed(inner) => {
-                Error::PreconditionFailed(inner)
-            }
-            crate::operation::delete_field_level_encryption_config::DeleteFieldLevelEncryptionConfigError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::delete_field_level_encryption_config::DeleteFieldLevelEncryptionConfigError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::delete_field_level_encryption_config::DeleteFieldLevelEncryptionConfigError::FieldLevelEncryptionConfigInUse(inner) => Error::FieldLevelEncryptionConfigInUse(inner),
+            crate::operation::delete_field_level_encryption_config::DeleteFieldLevelEncryptionConfigError::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::operation::delete_field_level_encryption_config::DeleteFieldLevelEncryptionConfigError::NoSuchFieldLevelEncryptionConfig(inner) => Error::NoSuchFieldLevelEncryptionConfig(inner),
+            crate::operation::delete_field_level_encryption_config::DeleteFieldLevelEncryptionConfigError::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::operation::delete_field_level_encryption_config::DeleteFieldLevelEncryptionConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError> for Error {
     fn from(err: crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError) -> Self {
         match err {
-            crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::FieldLevelEncryptionProfileInUse(
-                inner,
-            ) => Error::FieldLevelEncryptionProfileInUse(inner),
-            crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::InvalidIfMatchVersion(inner) => {
-                Error::InvalidIfMatchVersion(inner)
-            }
-            crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::NoSuchFieldLevelEncryptionProfile(
-                inner,
-            ) => Error::NoSuchFieldLevelEncryptionProfile(inner),
-            crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::PreconditionFailed(inner) => {
-                Error::PreconditionFailed(inner)
-            }
-            crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::FieldLevelEncryptionProfileInUse(inner) => Error::FieldLevelEncryptionProfileInUse(inner),
+            crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::NoSuchFieldLevelEncryptionProfile(inner) => Error::NoSuchFieldLevelEncryptionProfile(inner),
+            crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_function::DeleteFunctionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_function::DeleteFunctionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_function::DeleteFunctionError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1959,17 +1548,16 @@ impl From<crate::operation::delete_function::DeleteFunctionError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_key_group::DeleteKeyGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_key_group::DeleteKeyGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_key_group::DeleteKeyGroupError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1984,17 +1572,16 @@ impl From<crate::operation::delete_key_group::DeleteKeyGroupError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_key_value_store::DeleteKeyValueStoreError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_key_value_store::DeleteKeyValueStoreError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_key_value_store::DeleteKeyValueStoreError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2002,9 +1589,7 @@ impl From<crate::operation::delete_key_value_store::DeleteKeyValueStoreError> fo
     fn from(err: crate::operation::delete_key_value_store::DeleteKeyValueStoreError) -> Self {
         match err {
             crate::operation::delete_key_value_store::DeleteKeyValueStoreError::AccessDenied(inner) => Error::AccessDenied(inner),
-            crate::operation::delete_key_value_store::DeleteKeyValueStoreError::CannotDeleteEntityWhileInUse(inner) => {
-                Error::CannotDeleteEntityWhileInUse(inner)
-            }
+            crate::operation::delete_key_value_store::DeleteKeyValueStoreError::CannotDeleteEntityWhileInUse(inner) => Error::CannotDeleteEntityWhileInUse(inner),
             crate::operation::delete_key_value_store::DeleteKeyValueStoreError::EntityNotFound(inner) => Error::EntityNotFound(inner),
             crate::operation::delete_key_value_store::DeleteKeyValueStoreError::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
             crate::operation::delete_key_value_store::DeleteKeyValueStoreError::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
@@ -2012,24 +1597,16 @@ impl From<crate::operation::delete_key_value_store::DeleteKeyValueStoreError> fo
         }
     }
 }
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2037,33 +1614,23 @@ impl From<crate::operation::delete_monitoring_subscription::DeleteMonitoringSubs
     fn from(err: crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionError) -> Self {
         match err {
             crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionError::AccessDenied(inner) => Error::AccessDenied(inner),
-            crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionError::NoSuchDistribution(inner) => {
-                Error::NoSuchDistribution(inner)
-            }
-            crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionError::NoSuchMonitoringSubscription(inner) => {
-                Error::NoSuchMonitoringSubscription(inner)
-            }
-            crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionError::UnsupportedOperation(inner) => {
-                Error::UnsupportedOperation(inner)
-            }
+            crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionError::NoSuchDistribution(inner) => Error::NoSuchDistribution(inner),
+            crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionError::NoSuchMonitoringSubscription(inner) => Error::NoSuchMonitoringSubscription(inner),
+            crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
             crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_origin_access_control::DeleteOriginAccessControlError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_origin_access_control::DeleteOriginAccessControlError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_origin_access_control::DeleteOriginAccessControlError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_origin_access_control::DeleteOriginAccessControlError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2071,36 +1638,24 @@ impl From<crate::operation::delete_origin_access_control::DeleteOriginAccessCont
     fn from(err: crate::operation::delete_origin_access_control::DeleteOriginAccessControlError) -> Self {
         match err {
             crate::operation::delete_origin_access_control::DeleteOriginAccessControlError::AccessDenied(inner) => Error::AccessDenied(inner),
-            crate::operation::delete_origin_access_control::DeleteOriginAccessControlError::InvalidIfMatchVersion(inner) => {
-                Error::InvalidIfMatchVersion(inner)
-            }
-            crate::operation::delete_origin_access_control::DeleteOriginAccessControlError::NoSuchOriginAccessControl(inner) => {
-                Error::NoSuchOriginAccessControl(inner)
-            }
-            crate::operation::delete_origin_access_control::DeleteOriginAccessControlError::OriginAccessControlInUse(inner) => {
-                Error::OriginAccessControlInUse(inner)
-            }
-            crate::operation::delete_origin_access_control::DeleteOriginAccessControlError::PreconditionFailed(inner) => {
-                Error::PreconditionFailed(inner)
-            }
+            crate::operation::delete_origin_access_control::DeleteOriginAccessControlError::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::operation::delete_origin_access_control::DeleteOriginAccessControlError::NoSuchOriginAccessControl(inner) => Error::NoSuchOriginAccessControl(inner),
+            crate::operation::delete_origin_access_control::DeleteOriginAccessControlError::OriginAccessControlInUse(inner) => Error::OriginAccessControlInUse(inner),
+            crate::operation::delete_origin_access_control::DeleteOriginAccessControlError::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
             crate::operation::delete_origin_access_control::DeleteOriginAccessControlError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicyError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicyError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2109,33 +1664,24 @@ impl From<crate::operation::delete_origin_request_policy::DeleteOriginRequestPol
         match err {
             crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicyError::AccessDenied(inner) => Error::AccessDenied(inner),
             crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicyError::IllegalDelete(inner) => Error::IllegalDelete(inner),
-            crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicyError::InvalidIfMatchVersion(inner) => {
-                Error::InvalidIfMatchVersion(inner)
-            }
-            crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicyError::NoSuchOriginRequestPolicy(inner) => {
-                Error::NoSuchOriginRequestPolicy(inner)
-            }
-            crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicyError::OriginRequestPolicyInUse(inner) => {
-                Error::OriginRequestPolicyInUse(inner)
-            }
-            crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicyError::PreconditionFailed(inner) => {
-                Error::PreconditionFailed(inner)
-            }
+            crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicyError::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicyError::NoSuchOriginRequestPolicy(inner) => Error::NoSuchOriginRequestPolicy(inner),
+            crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicyError::OriginRequestPolicyInUse(inner) => Error::OriginRequestPolicyInUse(inner),
+            crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicyError::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
             crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_public_key::DeletePublicKeyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_public_key::DeletePublicKeyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_public_key::DeletePublicKeyError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2151,20 +1697,16 @@ impl From<crate::operation::delete_public_key::DeletePublicKeyError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2173,34 +1715,22 @@ impl From<crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigE
         match err {
             crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError::AccessDenied(inner) => Error::AccessDenied(inner),
             crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError::InvalidArgument(inner) => Error::InvalidArgument(inner),
-            crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError::NoSuchRealtimeLogConfig(inner) => {
-                Error::NoSuchRealtimeLogConfig(inner)
-            }
-            crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError::RealtimeLogConfigInUse(inner) => {
-                Error::RealtimeLogConfigInUse(inner)
-            }
+            crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError::NoSuchRealtimeLogConfig(inner) => Error::NoSuchRealtimeLogConfig(inner),
+            crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError::RealtimeLogConfigInUse(inner) => Error::RealtimeLogConfigInUse(inner),
             crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2209,36 +1739,24 @@ impl From<crate::operation::delete_response_headers_policy::DeleteResponseHeader
         match err {
             crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyError::AccessDenied(inner) => Error::AccessDenied(inner),
             crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyError::IllegalDelete(inner) => Error::IllegalDelete(inner),
-            crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyError::InvalidIfMatchVersion(inner) => {
-                Error::InvalidIfMatchVersion(inner)
-            }
-            crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyError::NoSuchResponseHeadersPolicy(inner) => {
-                Error::NoSuchResponseHeadersPolicy(inner)
-            }
-            crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyError::PreconditionFailed(inner) => {
-                Error::PreconditionFailed(inner)
-            }
-            crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyError::ResponseHeadersPolicyInUse(inner) => {
-                Error::ResponseHeadersPolicyInUse(inner)
-            }
+            crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyError::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyError::NoSuchResponseHeadersPolicy(inner) => Error::NoSuchResponseHeadersPolicy(inner),
+            crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyError::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyError::ResponseHeadersPolicyInUse(inner) => Error::ResponseHeadersPolicyInUse(inner),
             crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_streaming_distribution::DeleteStreamingDistributionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_streaming_distribution::DeleteStreamingDistributionError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_streaming_distribution::DeleteStreamingDistributionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_streaming_distribution::DeleteStreamingDistributionError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2246,33 +1764,24 @@ impl From<crate::operation::delete_streaming_distribution::DeleteStreamingDistri
     fn from(err: crate::operation::delete_streaming_distribution::DeleteStreamingDistributionError) -> Self {
         match err {
             crate::operation::delete_streaming_distribution::DeleteStreamingDistributionError::AccessDenied(inner) => Error::AccessDenied(inner),
-            crate::operation::delete_streaming_distribution::DeleteStreamingDistributionError::InvalidIfMatchVersion(inner) => {
-                Error::InvalidIfMatchVersion(inner)
-            }
-            crate::operation::delete_streaming_distribution::DeleteStreamingDistributionError::NoSuchStreamingDistribution(inner) => {
-                Error::NoSuchStreamingDistribution(inner)
-            }
-            crate::operation::delete_streaming_distribution::DeleteStreamingDistributionError::PreconditionFailed(inner) => {
-                Error::PreconditionFailed(inner)
-            }
-            crate::operation::delete_streaming_distribution::DeleteStreamingDistributionError::StreamingDistributionNotDisabled(inner) => {
-                Error::StreamingDistributionNotDisabled(inner)
-            }
+            crate::operation::delete_streaming_distribution::DeleteStreamingDistributionError::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::operation::delete_streaming_distribution::DeleteStreamingDistributionError::NoSuchStreamingDistribution(inner) => Error::NoSuchStreamingDistribution(inner),
+            crate::operation::delete_streaming_distribution::DeleteStreamingDistributionError::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::operation::delete_streaming_distribution::DeleteStreamingDistributionError::StreamingDistributionNotDisabled(inner) => Error::StreamingDistributionNotDisabled(inner),
             crate::operation::delete_streaming_distribution::DeleteStreamingDistributionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_function::DescribeFunctionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_function::DescribeFunctionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_function::DescribeFunctionError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2285,19 +1794,16 @@ impl From<crate::operation::describe_function::DescribeFunctionError> for Error 
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_key_value_store::DescribeKeyValueStoreError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_key_value_store::DescribeKeyValueStoreError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_key_value_store::DescribeKeyValueStoreError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_key_value_store::DescribeKeyValueStoreError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2311,17 +1817,16 @@ impl From<crate::operation::describe_key_value_store::DescribeKeyValueStoreError
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_cache_policy::GetCachePolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_cache_policy::GetCachePolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_cache_policy::GetCachePolicyError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2334,19 +1839,16 @@ impl From<crate::operation::get_cache_policy::GetCachePolicyError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_cache_policy_config::GetCachePolicyConfigError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_cache_policy_config::GetCachePolicyConfigError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_cache_policy_config::GetCachePolicyConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_cache_policy_config::GetCachePolicyConfigError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2359,28 +1861,16 @@ impl From<crate::operation::get_cache_policy_config::GetCachePolicyConfigError> 
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2393,28 +1883,16 @@ impl From<crate::operation::get_cloud_front_origin_access_identity::GetCloudFron
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_cloud_front_origin_access_identity_config::GetCloudFrontOriginAccessIdentityConfigError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_cloud_front_origin_access_identity_config::GetCloudFrontOriginAccessIdentityConfigError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_cloud_front_origin_access_identity_config::GetCloudFrontOriginAccessIdentityConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_cloud_front_origin_access_identity_config::GetCloudFrontOriginAccessIdentityConfigError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2427,25 +1905,16 @@ impl From<crate::operation::get_cloud_front_origin_access_identity_config::GetCl
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_continuous_deployment_policy::GetContinuousDeploymentPolicyError, R>,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_continuous_deployment_policy::GetContinuousDeploymentPolicyError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_continuous_deployment_policy::GetContinuousDeploymentPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_continuous_deployment_policy::GetContinuousDeploymentPolicyError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2453,64 +1922,43 @@ impl From<crate::operation::get_continuous_deployment_policy::GetContinuousDeplo
     fn from(err: crate::operation::get_continuous_deployment_policy::GetContinuousDeploymentPolicyError) -> Self {
         match err {
             crate::operation::get_continuous_deployment_policy::GetContinuousDeploymentPolicyError::AccessDenied(inner) => Error::AccessDenied(inner),
-            crate::operation::get_continuous_deployment_policy::GetContinuousDeploymentPolicyError::NoSuchContinuousDeploymentPolicy(inner) => {
-                Error::NoSuchContinuousDeploymentPolicy(inner)
-            }
+            crate::operation::get_continuous_deployment_policy::GetContinuousDeploymentPolicyError::NoSuchContinuousDeploymentPolicy(inner) => Error::NoSuchContinuousDeploymentPolicy(inner),
             crate::operation::get_continuous_deployment_policy::GetContinuousDeploymentPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigError> for Error {
     fn from(err: crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigError) -> Self {
         match err {
-            crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigError::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigError::NoSuchContinuousDeploymentPolicy(
-                inner,
-            ) => Error::NoSuchContinuousDeploymentPolicy(inner),
-            crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigError::NoSuchContinuousDeploymentPolicy(inner) => Error::NoSuchContinuousDeploymentPolicy(inner),
+            crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_distribution::GetDistributionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_distribution::GetDistributionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_distribution::GetDistributionError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2523,19 +1971,16 @@ impl From<crate::operation::get_distribution::GetDistributionError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_distribution_config::GetDistributionConfigError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_distribution_config::GetDistributionConfigError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_distribution_config::GetDistributionConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_distribution_config::GetDistributionConfigError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2548,20 +1993,16 @@ impl From<crate::operation::get_distribution_config::GetDistributionConfigError>
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_field_level_encryption::GetFieldLevelEncryptionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_field_level_encryption::GetFieldLevelEncryptionError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_field_level_encryption::GetFieldLevelEncryptionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_field_level_encryption::GetFieldLevelEncryptionError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2569,111 +2010,65 @@ impl From<crate::operation::get_field_level_encryption::GetFieldLevelEncryptionE
     fn from(err: crate::operation::get_field_level_encryption::GetFieldLevelEncryptionError) -> Self {
         match err {
             crate::operation::get_field_level_encryption::GetFieldLevelEncryptionError::AccessDenied(inner) => Error::AccessDenied(inner),
-            crate::operation::get_field_level_encryption::GetFieldLevelEncryptionError::NoSuchFieldLevelEncryptionConfig(inner) => {
-                Error::NoSuchFieldLevelEncryptionConfig(inner)
-            }
+            crate::operation::get_field_level_encryption::GetFieldLevelEncryptionError::NoSuchFieldLevelEncryptionConfig(inner) => Error::NoSuchFieldLevelEncryptionConfig(inner),
             crate::operation::get_field_level_encryption::GetFieldLevelEncryptionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigError> for Error {
     fn from(err: crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigError) -> Self {
         match err {
-            crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigError::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigError::NoSuchFieldLevelEncryptionConfig(inner) => {
-                Error::NoSuchFieldLevelEncryptionConfig(inner)
-            }
+            crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigError::NoSuchFieldLevelEncryptionConfig(inner) => Error::NoSuchFieldLevelEncryptionConfig(inner),
             crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_field_level_encryption_profile::GetFieldLevelEncryptionProfileError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_field_level_encryption_profile::GetFieldLevelEncryptionProfileError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_field_level_encryption_profile::GetFieldLevelEncryptionProfileError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_field_level_encryption_profile::GetFieldLevelEncryptionProfileError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_field_level_encryption_profile::GetFieldLevelEncryptionProfileError> for Error {
     fn from(err: crate::operation::get_field_level_encryption_profile::GetFieldLevelEncryptionProfileError) -> Self {
         match err {
-            crate::operation::get_field_level_encryption_profile::GetFieldLevelEncryptionProfileError::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::operation::get_field_level_encryption_profile::GetFieldLevelEncryptionProfileError::NoSuchFieldLevelEncryptionProfile(inner) => {
-                Error::NoSuchFieldLevelEncryptionProfile(inner)
-            }
+            crate::operation::get_field_level_encryption_profile::GetFieldLevelEncryptionProfileError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::get_field_level_encryption_profile::GetFieldLevelEncryptionProfileError::NoSuchFieldLevelEncryptionProfile(inner) => Error::NoSuchFieldLevelEncryptionProfile(inner),
             crate::operation::get_field_level_encryption_profile::GetFieldLevelEncryptionProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_field_level_encryption_profile_config::GetFieldLevelEncryptionProfileConfigError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_field_level_encryption_profile_config::GetFieldLevelEncryptionProfileConfigError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_field_level_encryption_profile_config::GetFieldLevelEncryptionProfileConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_field_level_encryption_profile_config::GetFieldLevelEncryptionProfileConfigError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2686,17 +2081,16 @@ impl From<crate::operation::get_field_level_encryption_profile_config::GetFieldL
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_function::GetFunctionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_function::GetFunctionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_function::GetFunctionError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2709,17 +2103,16 @@ impl From<crate::operation::get_function::GetFunctionError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_invalidation::GetInvalidationError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_invalidation::GetInvalidationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_invalidation::GetInvalidationError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2733,17 +2126,16 @@ impl From<crate::operation::get_invalidation::GetInvalidationError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_key_group::GetKeyGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_key_group::GetKeyGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_key_group::GetKeyGroupError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2755,17 +2147,16 @@ impl From<crate::operation::get_key_group::GetKeyGroupError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_key_group_config::GetKeyGroupConfigError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_key_group_config::GetKeyGroupConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_key_group_config::GetKeyGroupConfigError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2777,20 +2168,16 @@ impl From<crate::operation::get_key_group_config::GetKeyGroupConfigError> for Er
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_monitoring_subscription::GetMonitoringSubscriptionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_monitoring_subscription::GetMonitoringSubscriptionError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_monitoring_subscription::GetMonitoringSubscriptionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_monitoring_subscription::GetMonitoringSubscriptionError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2798,33 +2185,23 @@ impl From<crate::operation::get_monitoring_subscription::GetMonitoringSubscripti
     fn from(err: crate::operation::get_monitoring_subscription::GetMonitoringSubscriptionError) -> Self {
         match err {
             crate::operation::get_monitoring_subscription::GetMonitoringSubscriptionError::AccessDenied(inner) => Error::AccessDenied(inner),
-            crate::operation::get_monitoring_subscription::GetMonitoringSubscriptionError::NoSuchDistribution(inner) => {
-                Error::NoSuchDistribution(inner)
-            }
-            crate::operation::get_monitoring_subscription::GetMonitoringSubscriptionError::NoSuchMonitoringSubscription(inner) => {
-                Error::NoSuchMonitoringSubscription(inner)
-            }
-            crate::operation::get_monitoring_subscription::GetMonitoringSubscriptionError::UnsupportedOperation(inner) => {
-                Error::UnsupportedOperation(inner)
-            }
+            crate::operation::get_monitoring_subscription::GetMonitoringSubscriptionError::NoSuchDistribution(inner) => Error::NoSuchDistribution(inner),
+            crate::operation::get_monitoring_subscription::GetMonitoringSubscriptionError::NoSuchMonitoringSubscription(inner) => Error::NoSuchMonitoringSubscription(inner),
+            crate::operation::get_monitoring_subscription::GetMonitoringSubscriptionError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
             crate::operation::get_monitoring_subscription::GetMonitoringSubscriptionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_origin_access_control::GetOriginAccessControlError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_origin_access_control::GetOriginAccessControlError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_origin_access_control::GetOriginAccessControlError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_origin_access_control::GetOriginAccessControlError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2832,31 +2209,21 @@ impl From<crate::operation::get_origin_access_control::GetOriginAccessControlErr
     fn from(err: crate::operation::get_origin_access_control::GetOriginAccessControlError) -> Self {
         match err {
             crate::operation::get_origin_access_control::GetOriginAccessControlError::AccessDenied(inner) => Error::AccessDenied(inner),
-            crate::operation::get_origin_access_control::GetOriginAccessControlError::NoSuchOriginAccessControl(inner) => {
-                Error::NoSuchOriginAccessControl(inner)
-            }
+            crate::operation::get_origin_access_control::GetOriginAccessControlError::NoSuchOriginAccessControl(inner) => Error::NoSuchOriginAccessControl(inner),
             crate::operation::get_origin_access_control::GetOriginAccessControlError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_origin_access_control_config::GetOriginAccessControlConfigError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_origin_access_control_config::GetOriginAccessControlConfigError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_origin_access_control_config::GetOriginAccessControlConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_origin_access_control_config::GetOriginAccessControlConfigError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2864,27 +2231,21 @@ impl From<crate::operation::get_origin_access_control_config::GetOriginAccessCon
     fn from(err: crate::operation::get_origin_access_control_config::GetOriginAccessControlConfigError) -> Self {
         match err {
             crate::operation::get_origin_access_control_config::GetOriginAccessControlConfigError::AccessDenied(inner) => Error::AccessDenied(inner),
-            crate::operation::get_origin_access_control_config::GetOriginAccessControlConfigError::NoSuchOriginAccessControl(inner) => {
-                Error::NoSuchOriginAccessControl(inner)
-            }
+            crate::operation::get_origin_access_control_config::GetOriginAccessControlConfigError::NoSuchOriginAccessControl(inner) => Error::NoSuchOriginAccessControl(inner),
             crate::operation::get_origin_access_control_config::GetOriginAccessControlConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_origin_request_policy::GetOriginRequestPolicyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_origin_request_policy::GetOriginRequestPolicyError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_origin_request_policy::GetOriginRequestPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_origin_request_policy::GetOriginRequestPolicyError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2892,31 +2253,21 @@ impl From<crate::operation::get_origin_request_policy::GetOriginRequestPolicyErr
     fn from(err: crate::operation::get_origin_request_policy::GetOriginRequestPolicyError) -> Self {
         match err {
             crate::operation::get_origin_request_policy::GetOriginRequestPolicyError::AccessDenied(inner) => Error::AccessDenied(inner),
-            crate::operation::get_origin_request_policy::GetOriginRequestPolicyError::NoSuchOriginRequestPolicy(inner) => {
-                Error::NoSuchOriginRequestPolicy(inner)
-            }
+            crate::operation::get_origin_request_policy::GetOriginRequestPolicyError::NoSuchOriginRequestPolicy(inner) => Error::NoSuchOriginRequestPolicy(inner),
             crate::operation::get_origin_request_policy::GetOriginRequestPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2924,24 +2275,21 @@ impl From<crate::operation::get_origin_request_policy_config::GetOriginRequestPo
     fn from(err: crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigError) -> Self {
         match err {
             crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigError::AccessDenied(inner) => Error::AccessDenied(inner),
-            crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigError::NoSuchOriginRequestPolicy(inner) => {
-                Error::NoSuchOriginRequestPolicy(inner)
-            }
+            crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigError::NoSuchOriginRequestPolicy(inner) => Error::NoSuchOriginRequestPolicy(inner),
             crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_public_key::GetPublicKeyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_public_key::GetPublicKeyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_public_key::GetPublicKeyError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2954,17 +2302,16 @@ impl From<crate::operation::get_public_key::GetPublicKeyError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_public_key_config::GetPublicKeyConfigError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_public_key_config::GetPublicKeyConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_public_key_config::GetPublicKeyConfigError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2977,19 +2324,16 @@ impl From<crate::operation::get_public_key_config::GetPublicKeyConfigError> for 
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_realtime_log_config::GetRealtimeLogConfigError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_realtime_log_config::GetRealtimeLogConfigError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_realtime_log_config::GetRealtimeLogConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_realtime_log_config::GetRealtimeLogConfigError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2998,27 +2342,21 @@ impl From<crate::operation::get_realtime_log_config::GetRealtimeLogConfigError> 
         match err {
             crate::operation::get_realtime_log_config::GetRealtimeLogConfigError::AccessDenied(inner) => Error::AccessDenied(inner),
             crate::operation::get_realtime_log_config::GetRealtimeLogConfigError::InvalidArgument(inner) => Error::InvalidArgument(inner),
-            crate::operation::get_realtime_log_config::GetRealtimeLogConfigError::NoSuchRealtimeLogConfig(inner) => {
-                Error::NoSuchRealtimeLogConfig(inner)
-            }
+            crate::operation::get_realtime_log_config::GetRealtimeLogConfigError::NoSuchRealtimeLogConfig(inner) => Error::NoSuchRealtimeLogConfig(inner),
             crate::operation::get_realtime_log_config::GetRealtimeLogConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_response_headers_policy::GetResponseHeadersPolicyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_response_headers_policy::GetResponseHeadersPolicyError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_response_headers_policy::GetResponseHeadersPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_response_headers_policy::GetResponseHeadersPolicyError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -3026,65 +2364,43 @@ impl From<crate::operation::get_response_headers_policy::GetResponseHeadersPolic
     fn from(err: crate::operation::get_response_headers_policy::GetResponseHeadersPolicyError) -> Self {
         match err {
             crate::operation::get_response_headers_policy::GetResponseHeadersPolicyError::AccessDenied(inner) => Error::AccessDenied(inner),
-            crate::operation::get_response_headers_policy::GetResponseHeadersPolicyError::NoSuchResponseHeadersPolicy(inner) => {
-                Error::NoSuchResponseHeadersPolicy(inner)
-            }
+            crate::operation::get_response_headers_policy::GetResponseHeadersPolicyError::NoSuchResponseHeadersPolicy(inner) => Error::NoSuchResponseHeadersPolicy(inner),
             crate::operation::get_response_headers_policy::GetResponseHeadersPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_response_headers_policy_config::GetResponseHeadersPolicyConfigError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_response_headers_policy_config::GetResponseHeadersPolicyConfigError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_response_headers_policy_config::GetResponseHeadersPolicyConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_response_headers_policy_config::GetResponseHeadersPolicyConfigError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_response_headers_policy_config::GetResponseHeadersPolicyConfigError> for Error {
     fn from(err: crate::operation::get_response_headers_policy_config::GetResponseHeadersPolicyConfigError) -> Self {
         match err {
-            crate::operation::get_response_headers_policy_config::GetResponseHeadersPolicyConfigError::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::operation::get_response_headers_policy_config::GetResponseHeadersPolicyConfigError::NoSuchResponseHeadersPolicy(inner) => {
-                Error::NoSuchResponseHeadersPolicy(inner)
-            }
+            crate::operation::get_response_headers_policy_config::GetResponseHeadersPolicyConfigError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::get_response_headers_policy_config::GetResponseHeadersPolicyConfigError::NoSuchResponseHeadersPolicy(inner) => Error::NoSuchResponseHeadersPolicy(inner),
             crate::operation::get_response_headers_policy_config::GetResponseHeadersPolicyConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_streaming_distribution::GetStreamingDistributionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_streaming_distribution::GetStreamingDistributionError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_streaming_distribution::GetStreamingDistributionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_streaming_distribution::GetStreamingDistributionError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -3092,62 +2408,43 @@ impl From<crate::operation::get_streaming_distribution::GetStreamingDistribution
     fn from(err: crate::operation::get_streaming_distribution::GetStreamingDistributionError) -> Self {
         match err {
             crate::operation::get_streaming_distribution::GetStreamingDistributionError::AccessDenied(inner) => Error::AccessDenied(inner),
-            crate::operation::get_streaming_distribution::GetStreamingDistributionError::NoSuchStreamingDistribution(inner) => {
-                Error::NoSuchStreamingDistribution(inner)
-            }
+            crate::operation::get_streaming_distribution::GetStreamingDistributionError::NoSuchStreamingDistribution(inner) => Error::NoSuchStreamingDistribution(inner),
             crate::operation::get_streaming_distribution::GetStreamingDistributionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_streaming_distribution_config::GetStreamingDistributionConfigError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_streaming_distribution_config::GetStreamingDistributionConfigError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_streaming_distribution_config::GetStreamingDistributionConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_streaming_distribution_config::GetStreamingDistributionConfigError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_streaming_distribution_config::GetStreamingDistributionConfigError> for Error {
     fn from(err: crate::operation::get_streaming_distribution_config::GetStreamingDistributionConfigError) -> Self {
         match err {
-            crate::operation::get_streaming_distribution_config::GetStreamingDistributionConfigError::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::operation::get_streaming_distribution_config::GetStreamingDistributionConfigError::NoSuchStreamingDistribution(inner) => {
-                Error::NoSuchStreamingDistribution(inner)
-            }
+            crate::operation::get_streaming_distribution_config::GetStreamingDistributionConfigError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::get_streaming_distribution_config::GetStreamingDistributionConfigError::NoSuchStreamingDistribution(inner) => Error::NoSuchStreamingDistribution(inner),
             crate::operation::get_streaming_distribution_config::GetStreamingDistributionConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_cache_policies::ListCachePoliciesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_cache_policies::ListCachePoliciesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_cache_policies::ListCachePoliciesError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -3161,56 +2458,37 @@ impl From<crate::operation::list_cache_policies::ListCachePoliciesError> for Err
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesError> for Error {
     fn from(err: crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesError) -> Self {
         match err {
-            crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesError::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_conflicting_aliases::ListConflictingAliasesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_conflicting_aliases::ListConflictingAliasesError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_conflicting_aliases::ListConflictingAliasesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_conflicting_aliases::ListConflictingAliasesError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -3223,58 +2501,39 @@ impl From<crate::operation::list_conflicting_aliases::ListConflictingAliasesErro
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesError> for Error {
     fn from(err: crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesError) -> Self {
         match err {
-            crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesError::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesError::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesError::NoSuchContinuousDeploymentPolicy(inner) => {
-                Error::NoSuchContinuousDeploymentPolicy(inner)
-            }
+            crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesError::NoSuchContinuousDeploymentPolicy(inner) => Error::NoSuchContinuousDeploymentPolicy(inner),
             crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_distributions::ListDistributionsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_distributions::ListDistributionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_distributions::ListDistributionsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -3286,105 +2545,61 @@ impl From<crate::operation::list_distributions::ListDistributionsError> for Erro
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdError> for Error {
     fn from(err: crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdError) -> Self {
         match err {
-            crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdError::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdError::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdError::NoSuchCachePolicy(inner) => {
-                Error::NoSuchCachePolicy(inner)
-            }
-            crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdError::NoSuchCachePolicy(inner) => Error::NoSuchCachePolicy(inner),
+            crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupError> for Error {
     fn from(err: crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupError) -> Self {
         match err {
-            crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupError::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupError::NoSuchResource(inner) => {
-                Error::NoSuchResource(inner)
-            }
+            crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupError::NoSuchResource(inner) => Error::NoSuchResource(inner),
             crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_distributions_by_origin_request_policy_id::ListDistributionsByOriginRequestPolicyIdError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_distributions_by_origin_request_policy_id::ListDistributionsByOriginRequestPolicyIdError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_distributions_by_origin_request_policy_id::ListDistributionsByOriginRequestPolicyIdError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_distributions_by_origin_request_policy_id::ListDistributionsByOriginRequestPolicyIdError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -3398,65 +2613,37 @@ impl From<crate::operation::list_distributions_by_origin_request_policy_id::List
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigError> for Error {
     fn from(err: crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigError) -> Self {
         match err {
-            crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigError::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -3470,123 +2657,80 @@ impl From<crate::operation::list_distributions_by_response_headers_policy_id::Li
         }
     }
 }
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLIdError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLIdError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLIdError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLIdError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLIdError> for Error {
     fn from(err: crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLIdError) -> Self {
         match err {
-            crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLIdError::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLIdError::InvalidWebAclId(inner) => {
-                Error::InvalidWebAclId(inner)
-            }
+            crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLIdError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLIdError::InvalidWebAclId(inner) => Error::InvalidWebAclId(inner),
             crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLIdError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsError> for Error {
     fn from(err: crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsError) -> Self {
         match err {
-            crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsError::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
+            crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsError::InvalidArgument(inner) => Error::InvalidArgument(inner),
             crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_field_level_encryption_profiles::ListFieldLevelEncryptionProfilesError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_field_level_encryption_profiles::ListFieldLevelEncryptionProfilesError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_field_level_encryption_profiles::ListFieldLevelEncryptionProfilesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_field_level_encryption_profiles::ListFieldLevelEncryptionProfilesError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_field_level_encryption_profiles::ListFieldLevelEncryptionProfilesError> for Error {
     fn from(err: crate::operation::list_field_level_encryption_profiles::ListFieldLevelEncryptionProfilesError) -> Self {
         match err {
-            crate::operation::list_field_level_encryption_profiles::ListFieldLevelEncryptionProfilesError::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::operation::list_field_level_encryption_profiles::ListFieldLevelEncryptionProfilesError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::list_field_level_encryption_profiles::ListFieldLevelEncryptionProfilesError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::list_field_level_encryption_profiles::ListFieldLevelEncryptionProfilesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_functions::ListFunctionsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_functions::ListFunctionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_functions::ListFunctionsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -3599,17 +2743,16 @@ impl From<crate::operation::list_functions::ListFunctionsError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_invalidations::ListInvalidationsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_invalidations::ListInvalidationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_invalidations::ListInvalidationsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -3623,17 +2766,16 @@ impl From<crate::operation::list_invalidations::ListInvalidationsError> for Erro
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_key_groups::ListKeyGroupsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_key_groups::ListKeyGroupsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_key_groups::ListKeyGroupsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -3645,17 +2787,16 @@ impl From<crate::operation::list_key_groups::ListKeyGroupsError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_key_value_stores::ListKeyValueStoresError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_key_value_stores::ListKeyValueStoresError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_key_value_stores::ListKeyValueStoresError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -3668,20 +2809,16 @@ impl From<crate::operation::list_key_value_stores::ListKeyValueStoresError> for 
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_origin_access_controls::ListOriginAccessControlsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_origin_access_controls::ListOriginAccessControlsError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_origin_access_controls::ListOriginAccessControlsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_origin_access_controls::ListOriginAccessControlsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -3693,20 +2830,16 @@ impl From<crate::operation::list_origin_access_controls::ListOriginAccessControl
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_origin_request_policies::ListOriginRequestPoliciesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_origin_request_policies::ListOriginRequestPoliciesError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_origin_request_policies::ListOriginRequestPoliciesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_origin_request_policies::ListOriginRequestPoliciesError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -3715,24 +2848,21 @@ impl From<crate::operation::list_origin_request_policies::ListOriginRequestPolic
         match err {
             crate::operation::list_origin_request_policies::ListOriginRequestPoliciesError::AccessDenied(inner) => Error::AccessDenied(inner),
             crate::operation::list_origin_request_policies::ListOriginRequestPoliciesError::InvalidArgument(inner) => Error::InvalidArgument(inner),
-            crate::operation::list_origin_request_policies::ListOriginRequestPoliciesError::NoSuchOriginRequestPolicy(inner) => {
-                Error::NoSuchOriginRequestPolicy(inner)
-            }
+            crate::operation::list_origin_request_policies::ListOriginRequestPoliciesError::NoSuchOriginRequestPolicy(inner) => Error::NoSuchOriginRequestPolicy(inner),
             crate::operation::list_origin_request_policies::ListOriginRequestPoliciesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_public_keys::ListPublicKeysError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_public_keys::ListPublicKeysError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_public_keys::ListPublicKeysError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -3744,20 +2874,16 @@ impl From<crate::operation::list_public_keys::ListPublicKeysError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -3766,31 +2892,21 @@ impl From<crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsErr
         match err {
             crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsError::AccessDenied(inner) => Error::AccessDenied(inner),
             crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsError::InvalidArgument(inner) => Error::InvalidArgument(inner),
-            crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsError::NoSuchRealtimeLogConfig(inner) => {
-                Error::NoSuchRealtimeLogConfig(inner)
-            }
+            crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsError::NoSuchRealtimeLogConfig(inner) => Error::NoSuchRealtimeLogConfig(inner),
             crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -3798,30 +2914,22 @@ impl From<crate::operation::list_response_headers_policies::ListResponseHeadersP
     fn from(err: crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesError) -> Self {
         match err {
             crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesError::AccessDenied(inner) => Error::AccessDenied(inner),
-            crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesError::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesError::NoSuchResponseHeadersPolicy(inner) => {
-                Error::NoSuchResponseHeadersPolicy(inner)
-            }
+            crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesError::NoSuchResponseHeadersPolicy(inner) => Error::NoSuchResponseHeadersPolicy(inner),
             crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_streaming_distributions::ListStreamingDistributionsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_streaming_distributions::ListStreamingDistributionsError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_streaming_distributions::ListStreamingDistributionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_streaming_distributions::ListStreamingDistributionsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -3833,17 +2941,16 @@ impl From<crate::operation::list_streaming_distributions::ListStreamingDistribut
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -3858,17 +2965,16 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::publish_function::PublishFunctionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::publish_function::PublishFunctionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::publish_function::PublishFunctionError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -3884,17 +2990,16 @@ impl From<crate::operation::publish_function::PublishFunctionError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -3909,17 +3014,16 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::test_function::TestFunctionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::test_function::TestFunctionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::test_function::TestFunctionError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -3935,17 +3039,16 @@ impl From<crate::operation::test_function::TestFunctionError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -3960,17 +3063,16 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_cache_policy::UpdateCachePolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_cache_policy::UpdateCachePolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_cache_policy::UpdateCachePolicyError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -3985,41 +3087,23 @@ impl From<crate::operation::update_cache_policy::UpdateCachePolicyError> for Err
             crate::operation::update_cache_policy::UpdateCachePolicyError::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
             crate::operation::update_cache_policy::UpdateCachePolicyError::NoSuchCachePolicy(inner) => Error::NoSuchCachePolicy(inner),
             crate::operation::update_cache_policy::UpdateCachePolicyError::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
-            crate::operation::update_cache_policy::UpdateCachePolicyError::TooManyCookiesInCachePolicy(inner) => {
-                Error::TooManyCookiesInCachePolicy(inner)
-            }
-            crate::operation::update_cache_policy::UpdateCachePolicyError::TooManyHeadersInCachePolicy(inner) => {
-                Error::TooManyHeadersInCachePolicy(inner)
-            }
-            crate::operation::update_cache_policy::UpdateCachePolicyError::TooManyQueryStringsInCachePolicy(inner) => {
-                Error::TooManyQueryStringsInCachePolicy(inner)
-            }
+            crate::operation::update_cache_policy::UpdateCachePolicyError::TooManyCookiesInCachePolicy(inner) => Error::TooManyCookiesInCachePolicy(inner),
+            crate::operation::update_cache_policy::UpdateCachePolicyError::TooManyHeadersInCachePolicy(inner) => Error::TooManyHeadersInCachePolicy(inner),
+            crate::operation::update_cache_policy::UpdateCachePolicyError::TooManyQueryStringsInCachePolicy(inner) => Error::TooManyQueryStringsInCachePolicy(inner),
             crate::operation::update_cache_policy::UpdateCachePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_cloud_front_origin_access_identity::UpdateCloudFrontOriginAccessIdentityError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_cloud_front_origin_access_identity::UpdateCloudFrontOriginAccessIdentityError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_cloud_front_origin_access_identity::UpdateCloudFrontOriginAccessIdentityError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_cloud_front_origin_access_identity::UpdateCloudFrontOriginAccessIdentityError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -4038,70 +3122,43 @@ impl From<crate::operation::update_cloud_front_origin_access_identity::UpdateClo
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyError> for Error {
     fn from(err: crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyError) -> Self {
         match err {
-            crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyError::AccessDenied(inner) => {
-                Error::AccessDenied(inner)
-            }
-            crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyError::InconsistentQuantities(inner) => {
-                Error::InconsistentQuantities(inner)
-            }
-            crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyError::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyError::InvalidIfMatchVersion(inner) => {
-                Error::InvalidIfMatchVersion(inner)
-            }
-            crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyError::NoSuchContinuousDeploymentPolicy(inner) => {
-                Error::NoSuchContinuousDeploymentPolicy(inner)
-            }
-            crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyError::PreconditionFailed(inner) => {
-                Error::PreconditionFailed(inner)
-            }
-            crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyError::StagingDistributionInUse(inner) => {
-                Error::StagingDistributionInUse(inner)
-            }
+            crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyError::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
+            crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyError::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyError::NoSuchContinuousDeploymentPolicy(inner) => Error::NoSuchContinuousDeploymentPolicy(inner),
+            crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyError::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyError::StagingDistributionInUse(inner) => Error::StagingDistributionInUse(inner),
             crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_distribution::UpdateDistributionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_distribution::UpdateDistributionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_distribution::UpdateDistributionError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -4110,54 +3167,28 @@ impl From<crate::operation::update_distribution::UpdateDistributionError> for Er
         match err {
             crate::operation::update_distribution::UpdateDistributionError::AccessDenied(inner) => Error::AccessDenied(inner),
             crate::operation::update_distribution::UpdateDistributionError::CnameAlreadyExists(inner) => Error::CnameAlreadyExists(inner),
-            crate::operation::update_distribution::UpdateDistributionError::ContinuousDeploymentPolicyInUse(inner) => {
-                Error::ContinuousDeploymentPolicyInUse(inner)
-            }
-            crate::operation::update_distribution::UpdateDistributionError::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner) => {
-                Error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner)
-            }
-            crate::operation::update_distribution::UpdateDistributionError::IllegalOriginAccessConfiguration(inner) => {
-                Error::IllegalOriginAccessConfiguration(inner)
-            }
+            crate::operation::update_distribution::UpdateDistributionError::ContinuousDeploymentPolicyInUse(inner) => Error::ContinuousDeploymentPolicyInUse(inner),
+            crate::operation::update_distribution::UpdateDistributionError::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner) => Error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner),
+            crate::operation::update_distribution::UpdateDistributionError::IllegalOriginAccessConfiguration(inner) => Error::IllegalOriginAccessConfiguration(inner),
             crate::operation::update_distribution::UpdateDistributionError::IllegalUpdate(inner) => Error::IllegalUpdate(inner),
             crate::operation::update_distribution::UpdateDistributionError::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
             crate::operation::update_distribution::UpdateDistributionError::InvalidArgument(inner) => Error::InvalidArgument(inner),
             crate::operation::update_distribution::UpdateDistributionError::InvalidDefaultRootObject(inner) => Error::InvalidDefaultRootObject(inner),
-            crate::operation::update_distribution::UpdateDistributionError::InvalidDomainNameForOriginAccessControl(inner) => {
-                Error::InvalidDomainNameForOriginAccessControl(inner)
-            }
+            crate::operation::update_distribution::UpdateDistributionError::InvalidDomainNameForOriginAccessControl(inner) => Error::InvalidDomainNameForOriginAccessControl(inner),
             crate::operation::update_distribution::UpdateDistributionError::InvalidErrorCode(inner) => Error::InvalidErrorCode(inner),
             crate::operation::update_distribution::UpdateDistributionError::InvalidForwardCookies(inner) => Error::InvalidForwardCookies(inner),
-            crate::operation::update_distribution::UpdateDistributionError::InvalidFunctionAssociation(inner) => {
-                Error::InvalidFunctionAssociation(inner)
-            }
-            crate::operation::update_distribution::UpdateDistributionError::InvalidGeoRestrictionParameter(inner) => {
-                Error::InvalidGeoRestrictionParameter(inner)
-            }
-            crate::operation::update_distribution::UpdateDistributionError::InvalidHeadersForS3Origin(inner) => {
-                Error::InvalidHeadersForS3Origin(inner)
-            }
+            crate::operation::update_distribution::UpdateDistributionError::InvalidFunctionAssociation(inner) => Error::InvalidFunctionAssociation(inner),
+            crate::operation::update_distribution::UpdateDistributionError::InvalidGeoRestrictionParameter(inner) => Error::InvalidGeoRestrictionParameter(inner),
+            crate::operation::update_distribution::UpdateDistributionError::InvalidHeadersForS3Origin(inner) => Error::InvalidHeadersForS3Origin(inner),
             crate::operation::update_distribution::UpdateDistributionError::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
-            crate::operation::update_distribution::UpdateDistributionError::InvalidLambdaFunctionAssociation(inner) => {
-                Error::InvalidLambdaFunctionAssociation(inner)
-            }
+            crate::operation::update_distribution::UpdateDistributionError::InvalidLambdaFunctionAssociation(inner) => Error::InvalidLambdaFunctionAssociation(inner),
             crate::operation::update_distribution::UpdateDistributionError::InvalidLocationCode(inner) => Error::InvalidLocationCode(inner),
-            crate::operation::update_distribution::UpdateDistributionError::InvalidMinimumProtocolVersion(inner) => {
-                Error::InvalidMinimumProtocolVersion(inner)
-            }
-            crate::operation::update_distribution::UpdateDistributionError::InvalidOriginAccessControl(inner) => {
-                Error::InvalidOriginAccessControl(inner)
-            }
-            crate::operation::update_distribution::UpdateDistributionError::InvalidOriginAccessIdentity(inner) => {
-                Error::InvalidOriginAccessIdentity(inner)
-            }
-            crate::operation::update_distribution::UpdateDistributionError::InvalidOriginKeepaliveTimeout(inner) => {
-                Error::InvalidOriginKeepaliveTimeout(inner)
-            }
+            crate::operation::update_distribution::UpdateDistributionError::InvalidMinimumProtocolVersion(inner) => Error::InvalidMinimumProtocolVersion(inner),
+            crate::operation::update_distribution::UpdateDistributionError::InvalidOriginAccessControl(inner) => Error::InvalidOriginAccessControl(inner),
+            crate::operation::update_distribution::UpdateDistributionError::InvalidOriginAccessIdentity(inner) => Error::InvalidOriginAccessIdentity(inner),
+            crate::operation::update_distribution::UpdateDistributionError::InvalidOriginKeepaliveTimeout(inner) => Error::InvalidOriginKeepaliveTimeout(inner),
             crate::operation::update_distribution::UpdateDistributionError::InvalidOriginReadTimeout(inner) => Error::InvalidOriginReadTimeout(inner),
-            crate::operation::update_distribution::UpdateDistributionError::InvalidQueryStringParameters(inner) => {
-                Error::InvalidQueryStringParameters(inner)
-            }
+            crate::operation::update_distribution::UpdateDistributionError::InvalidQueryStringParameters(inner) => Error::InvalidQueryStringParameters(inner),
             crate::operation::update_distribution::UpdateDistributionError::InvalidRelativePath(inner) => Error::InvalidRelativePath(inner),
             crate::operation::update_distribution::UpdateDistributionError::InvalidRequiredProtocol(inner) => Error::InvalidRequiredProtocol(inner),
             crate::operation::update_distribution::UpdateDistributionError::InvalidResponseCode(inner) => Error::InvalidResponseCode(inner),
@@ -4166,116 +3197,54 @@ impl From<crate::operation::update_distribution::UpdateDistributionError> for Er
             crate::operation::update_distribution::UpdateDistributionError::InvalidWebAclId(inner) => Error::InvalidWebAclId(inner),
             crate::operation::update_distribution::UpdateDistributionError::MissingBody(inner) => Error::MissingBody(inner),
             crate::operation::update_distribution::UpdateDistributionError::NoSuchCachePolicy(inner) => Error::NoSuchCachePolicy(inner),
-            crate::operation::update_distribution::UpdateDistributionError::NoSuchContinuousDeploymentPolicy(inner) => {
-                Error::NoSuchContinuousDeploymentPolicy(inner)
-            }
+            crate::operation::update_distribution::UpdateDistributionError::NoSuchContinuousDeploymentPolicy(inner) => Error::NoSuchContinuousDeploymentPolicy(inner),
             crate::operation::update_distribution::UpdateDistributionError::NoSuchDistribution(inner) => Error::NoSuchDistribution(inner),
-            crate::operation::update_distribution::UpdateDistributionError::NoSuchFieldLevelEncryptionConfig(inner) => {
-                Error::NoSuchFieldLevelEncryptionConfig(inner)
-            }
+            crate::operation::update_distribution::UpdateDistributionError::NoSuchFieldLevelEncryptionConfig(inner) => Error::NoSuchFieldLevelEncryptionConfig(inner),
             crate::operation::update_distribution::UpdateDistributionError::NoSuchOrigin(inner) => Error::NoSuchOrigin(inner),
-            crate::operation::update_distribution::UpdateDistributionError::NoSuchOriginRequestPolicy(inner) => {
-                Error::NoSuchOriginRequestPolicy(inner)
-            }
+            crate::operation::update_distribution::UpdateDistributionError::NoSuchOriginRequestPolicy(inner) => Error::NoSuchOriginRequestPolicy(inner),
             crate::operation::update_distribution::UpdateDistributionError::NoSuchRealtimeLogConfig(inner) => Error::NoSuchRealtimeLogConfig(inner),
-            crate::operation::update_distribution::UpdateDistributionError::NoSuchResponseHeadersPolicy(inner) => {
-                Error::NoSuchResponseHeadersPolicy(inner)
-            }
+            crate::operation::update_distribution::UpdateDistributionError::NoSuchResponseHeadersPolicy(inner) => Error::NoSuchResponseHeadersPolicy(inner),
             crate::operation::update_distribution::UpdateDistributionError::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
-            crate::operation::update_distribution::UpdateDistributionError::RealtimeLogConfigOwnerMismatch(inner) => {
-                Error::RealtimeLogConfigOwnerMismatch(inner)
-            }
+            crate::operation::update_distribution::UpdateDistributionError::RealtimeLogConfigOwnerMismatch(inner) => Error::RealtimeLogConfigOwnerMismatch(inner),
             crate::operation::update_distribution::UpdateDistributionError::StagingDistributionInUse(inner) => Error::StagingDistributionInUse(inner),
             crate::operation::update_distribution::UpdateDistributionError::TooManyCacheBehaviors(inner) => Error::TooManyCacheBehaviors(inner),
             crate::operation::update_distribution::UpdateDistributionError::TooManyCertificates(inner) => Error::TooManyCertificates(inner),
-            crate::operation::update_distribution::UpdateDistributionError::TooManyCookieNamesInWhiteList(inner) => {
-                Error::TooManyCookieNamesInWhiteList(inner)
-            }
-            crate::operation::update_distribution::UpdateDistributionError::TooManyDistributionCnamEs(inner) => {
-                Error::TooManyDistributionCnamEs(inner)
-            }
-            crate::operation::update_distribution::UpdateDistributionError::TooManyDistributionsAssociatedToCachePolicy(inner) => {
-                Error::TooManyDistributionsAssociatedToCachePolicy(inner)
-            }
-            crate::operation::update_distribution::UpdateDistributionError::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner) => {
-                Error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner)
-            }
-            crate::operation::update_distribution::UpdateDistributionError::TooManyDistributionsAssociatedToKeyGroup(inner) => {
-                Error::TooManyDistributionsAssociatedToKeyGroup(inner)
-            }
-            crate::operation::update_distribution::UpdateDistributionError::TooManyDistributionsAssociatedToOriginAccessControl(inner) => {
-                Error::TooManyDistributionsAssociatedToOriginAccessControl(inner)
-            }
-            crate::operation::update_distribution::UpdateDistributionError::TooManyDistributionsAssociatedToOriginRequestPolicy(inner) => {
-                Error::TooManyDistributionsAssociatedToOriginRequestPolicy(inner)
-            }
-            crate::operation::update_distribution::UpdateDistributionError::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner) => {
-                Error::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner)
-            }
-            crate::operation::update_distribution::UpdateDistributionError::TooManyDistributionsWithFunctionAssociations(inner) => {
-                Error::TooManyDistributionsWithFunctionAssociations(inner)
-            }
-            crate::operation::update_distribution::UpdateDistributionError::TooManyDistributionsWithLambdaAssociations(inner) => {
-                Error::TooManyDistributionsWithLambdaAssociations(inner)
-            }
-            crate::operation::update_distribution::UpdateDistributionError::TooManyDistributionsWithSingleFunctionArn(inner) => {
-                Error::TooManyDistributionsWithSingleFunctionArn(inner)
-            }
-            crate::operation::update_distribution::UpdateDistributionError::TooManyFunctionAssociations(inner) => {
-                Error::TooManyFunctionAssociations(inner)
-            }
-            crate::operation::update_distribution::UpdateDistributionError::TooManyHeadersInForwardedValues(inner) => {
-                Error::TooManyHeadersInForwardedValues(inner)
-            }
-            crate::operation::update_distribution::UpdateDistributionError::TooManyKeyGroupsAssociatedToDistribution(inner) => {
-                Error::TooManyKeyGroupsAssociatedToDistribution(inner)
-            }
-            crate::operation::update_distribution::UpdateDistributionError::TooManyLambdaFunctionAssociations(inner) => {
-                Error::TooManyLambdaFunctionAssociations(inner)
-            }
-            crate::operation::update_distribution::UpdateDistributionError::TooManyOriginCustomHeaders(inner) => {
-                Error::TooManyOriginCustomHeaders(inner)
-            }
-            crate::operation::update_distribution::UpdateDistributionError::TooManyOriginGroupsPerDistribution(inner) => {
-                Error::TooManyOriginGroupsPerDistribution(inner)
-            }
+            crate::operation::update_distribution::UpdateDistributionError::TooManyCookieNamesInWhiteList(inner) => Error::TooManyCookieNamesInWhiteList(inner),
+            crate::operation::update_distribution::UpdateDistributionError::TooManyDistributionCnamEs(inner) => Error::TooManyDistributionCnamEs(inner),
+            crate::operation::update_distribution::UpdateDistributionError::TooManyDistributionsAssociatedToCachePolicy(inner) => Error::TooManyDistributionsAssociatedToCachePolicy(inner),
+            crate::operation::update_distribution::UpdateDistributionError::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner) => Error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner),
+            crate::operation::update_distribution::UpdateDistributionError::TooManyDistributionsAssociatedToKeyGroup(inner) => Error::TooManyDistributionsAssociatedToKeyGroup(inner),
+            crate::operation::update_distribution::UpdateDistributionError::TooManyDistributionsAssociatedToOriginAccessControl(inner) => Error::TooManyDistributionsAssociatedToOriginAccessControl(inner),
+            crate::operation::update_distribution::UpdateDistributionError::TooManyDistributionsAssociatedToOriginRequestPolicy(inner) => Error::TooManyDistributionsAssociatedToOriginRequestPolicy(inner),
+            crate::operation::update_distribution::UpdateDistributionError::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner) => Error::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner),
+            crate::operation::update_distribution::UpdateDistributionError::TooManyDistributionsWithFunctionAssociations(inner) => Error::TooManyDistributionsWithFunctionAssociations(inner),
+            crate::operation::update_distribution::UpdateDistributionError::TooManyDistributionsWithLambdaAssociations(inner) => Error::TooManyDistributionsWithLambdaAssociations(inner),
+            crate::operation::update_distribution::UpdateDistributionError::TooManyDistributionsWithSingleFunctionArn(inner) => Error::TooManyDistributionsWithSingleFunctionArn(inner),
+            crate::operation::update_distribution::UpdateDistributionError::TooManyFunctionAssociations(inner) => Error::TooManyFunctionAssociations(inner),
+            crate::operation::update_distribution::UpdateDistributionError::TooManyHeadersInForwardedValues(inner) => Error::TooManyHeadersInForwardedValues(inner),
+            crate::operation::update_distribution::UpdateDistributionError::TooManyKeyGroupsAssociatedToDistribution(inner) => Error::TooManyKeyGroupsAssociatedToDistribution(inner),
+            crate::operation::update_distribution::UpdateDistributionError::TooManyLambdaFunctionAssociations(inner) => Error::TooManyLambdaFunctionAssociations(inner),
+            crate::operation::update_distribution::UpdateDistributionError::TooManyOriginCustomHeaders(inner) => Error::TooManyOriginCustomHeaders(inner),
+            crate::operation::update_distribution::UpdateDistributionError::TooManyOriginGroupsPerDistribution(inner) => Error::TooManyOriginGroupsPerDistribution(inner),
             crate::operation::update_distribution::UpdateDistributionError::TooManyOrigins(inner) => Error::TooManyOrigins(inner),
-            crate::operation::update_distribution::UpdateDistributionError::TooManyQueryStringParameters(inner) => {
-                Error::TooManyQueryStringParameters(inner)
-            }
+            crate::operation::update_distribution::UpdateDistributionError::TooManyQueryStringParameters(inner) => Error::TooManyQueryStringParameters(inner),
             crate::operation::update_distribution::UpdateDistributionError::TooManyTrustedSigners(inner) => Error::TooManyTrustedSigners(inner),
-            crate::operation::update_distribution::UpdateDistributionError::TrustedKeyGroupDoesNotExist(inner) => {
-                Error::TrustedKeyGroupDoesNotExist(inner)
-            }
-            crate::operation::update_distribution::UpdateDistributionError::TrustedSignerDoesNotExist(inner) => {
-                Error::TrustedSignerDoesNotExist(inner)
-            }
+            crate::operation::update_distribution::UpdateDistributionError::TrustedKeyGroupDoesNotExist(inner) => Error::TrustedKeyGroupDoesNotExist(inner),
+            crate::operation::update_distribution::UpdateDistributionError::TrustedSignerDoesNotExist(inner) => Error::TrustedSignerDoesNotExist(inner),
             crate::operation::update_distribution::UpdateDistributionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -4347,28 +3316,16 @@ impl From<crate::operation::update_distribution_with_staging_config::UpdateDistr
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -4390,28 +3347,16 @@ impl From<crate::operation::update_field_level_encryption_config::UpdateFieldLev
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_field_level_encryption_profile::UpdateFieldLevelEncryptionProfileError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -4434,17 +3379,16 @@ impl From<crate::operation::update_field_level_encryption_profile::UpdateFieldLe
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_function::UpdateFunctionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_function::UpdateFunctionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_function::UpdateFunctionError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -4461,17 +3405,16 @@ impl From<crate::operation::update_function::UpdateFunctionError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_key_group::UpdateKeyGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_key_group::UpdateKeyGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_key_group::UpdateKeyGroupError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -4488,17 +3431,16 @@ impl From<crate::operation::update_key_group::UpdateKeyGroupError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_key_value_store::UpdateKeyValueStoreError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_key_value_store::UpdateKeyValueStoreError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_key_value_store::UpdateKeyValueStoreError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -4514,20 +3456,16 @@ impl From<crate::operation::update_key_value_store::UpdateKeyValueStoreError> fo
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_origin_access_control::UpdateOriginAccessControlError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_origin_access_control::UpdateOriginAccessControlError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_origin_access_control::UpdateOriginAccessControlError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_origin_access_control::UpdateOriginAccessControlError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -4537,36 +3475,24 @@ impl From<crate::operation::update_origin_access_control::UpdateOriginAccessCont
             crate::operation::update_origin_access_control::UpdateOriginAccessControlError::AccessDenied(inner) => Error::AccessDenied(inner),
             crate::operation::update_origin_access_control::UpdateOriginAccessControlError::IllegalUpdate(inner) => Error::IllegalUpdate(inner),
             crate::operation::update_origin_access_control::UpdateOriginAccessControlError::InvalidArgument(inner) => Error::InvalidArgument(inner),
-            crate::operation::update_origin_access_control::UpdateOriginAccessControlError::InvalidIfMatchVersion(inner) => {
-                Error::InvalidIfMatchVersion(inner)
-            }
-            crate::operation::update_origin_access_control::UpdateOriginAccessControlError::NoSuchOriginAccessControl(inner) => {
-                Error::NoSuchOriginAccessControl(inner)
-            }
-            crate::operation::update_origin_access_control::UpdateOriginAccessControlError::OriginAccessControlAlreadyExists(inner) => {
-                Error::OriginAccessControlAlreadyExists(inner)
-            }
-            crate::operation::update_origin_access_control::UpdateOriginAccessControlError::PreconditionFailed(inner) => {
-                Error::PreconditionFailed(inner)
-            }
+            crate::operation::update_origin_access_control::UpdateOriginAccessControlError::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::operation::update_origin_access_control::UpdateOriginAccessControlError::NoSuchOriginAccessControl(inner) => Error::NoSuchOriginAccessControl(inner),
+            crate::operation::update_origin_access_control::UpdateOriginAccessControlError::OriginAccessControlAlreadyExists(inner) => Error::OriginAccessControlAlreadyExists(inner),
+            crate::operation::update_origin_access_control::UpdateOriginAccessControlError::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
             crate::operation::update_origin_access_control::UpdateOriginAccessControlError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -4575,46 +3501,29 @@ impl From<crate::operation::update_origin_request_policy::UpdateOriginRequestPol
         match err {
             crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyError::AccessDenied(inner) => Error::AccessDenied(inner),
             crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyError::IllegalUpdate(inner) => Error::IllegalUpdate(inner),
-            crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyError::InconsistentQuantities(inner) => {
-                Error::InconsistentQuantities(inner)
-            }
+            crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyError::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
             crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyError::InvalidArgument(inner) => Error::InvalidArgument(inner),
-            crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyError::InvalidIfMatchVersion(inner) => {
-                Error::InvalidIfMatchVersion(inner)
-            }
-            crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyError::NoSuchOriginRequestPolicy(inner) => {
-                Error::NoSuchOriginRequestPolicy(inner)
-            }
-            crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyError::OriginRequestPolicyAlreadyExists(inner) => {
-                Error::OriginRequestPolicyAlreadyExists(inner)
-            }
-            crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyError::PreconditionFailed(inner) => {
-                Error::PreconditionFailed(inner)
-            }
-            crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyError::TooManyCookiesInOriginRequestPolicy(inner) => {
-                Error::TooManyCookiesInOriginRequestPolicy(inner)
-            }
-            crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyError::TooManyHeadersInOriginRequestPolicy(inner) => {
-                Error::TooManyHeadersInOriginRequestPolicy(inner)
-            }
-            crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyError::TooManyQueryStringsInOriginRequestPolicy(inner) => {
-                Error::TooManyQueryStringsInOriginRequestPolicy(inner)
-            }
+            crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyError::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyError::NoSuchOriginRequestPolicy(inner) => Error::NoSuchOriginRequestPolicy(inner),
+            crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyError::OriginRequestPolicyAlreadyExists(inner) => Error::OriginRequestPolicyAlreadyExists(inner),
+            crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyError::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyError::TooManyCookiesInOriginRequestPolicy(inner) => Error::TooManyCookiesInOriginRequestPolicy(inner),
+            crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyError::TooManyHeadersInOriginRequestPolicy(inner) => Error::TooManyHeadersInOriginRequestPolicy(inner),
+            crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyError::TooManyQueryStringsInOriginRequestPolicy(inner) => Error::TooManyQueryStringsInOriginRequestPolicy(inner),
             crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_public_key::UpdatePublicKeyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_public_key::UpdatePublicKeyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_public_key::UpdatePublicKeyError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -4622,9 +3531,7 @@ impl From<crate::operation::update_public_key::UpdatePublicKeyError> for Error {
     fn from(err: crate::operation::update_public_key::UpdatePublicKeyError) -> Self {
         match err {
             crate::operation::update_public_key::UpdatePublicKeyError::AccessDenied(inner) => Error::AccessDenied(inner),
-            crate::operation::update_public_key::UpdatePublicKeyError::CannotChangeImmutablePublicKeyFields(inner) => {
-                Error::CannotChangeImmutablePublicKeyFields(inner)
-            }
+            crate::operation::update_public_key::UpdatePublicKeyError::CannotChangeImmutablePublicKeyFields(inner) => Error::CannotChangeImmutablePublicKeyFields(inner),
             crate::operation::update_public_key::UpdatePublicKeyError::IllegalUpdate(inner) => Error::IllegalUpdate(inner),
             crate::operation::update_public_key::UpdatePublicKeyError::InvalidArgument(inner) => Error::InvalidArgument(inner),
             crate::operation::update_public_key::UpdatePublicKeyError::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
@@ -4634,20 +3541,16 @@ impl From<crate::operation::update_public_key::UpdatePublicKeyError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -4656,31 +3559,21 @@ impl From<crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigE
         match err {
             crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigError::AccessDenied(inner) => Error::AccessDenied(inner),
             crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigError::InvalidArgument(inner) => Error::InvalidArgument(inner),
-            crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigError::NoSuchRealtimeLogConfig(inner) => {
-                Error::NoSuchRealtimeLogConfig(inner)
-            }
+            crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigError::NoSuchRealtimeLogConfig(inner) => Error::NoSuchRealtimeLogConfig(inner),
             crate::operation::update_realtime_log_config::UpdateRealtimeLogConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -4689,51 +3582,29 @@ impl From<crate::operation::update_response_headers_policy::UpdateResponseHeader
         match err {
             crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyError::AccessDenied(inner) => Error::AccessDenied(inner),
             crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyError::IllegalUpdate(inner) => Error::IllegalUpdate(inner),
-            crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyError::InconsistentQuantities(inner) => {
-                Error::InconsistentQuantities(inner)
-            }
-            crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyError::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyError::InvalidIfMatchVersion(inner) => {
-                Error::InvalidIfMatchVersion(inner)
-            }
-            crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyError::NoSuchResponseHeadersPolicy(inner) => {
-                Error::NoSuchResponseHeadersPolicy(inner)
-            }
-            crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyError::PreconditionFailed(inner) => {
-                Error::PreconditionFailed(inner)
-            }
-            crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyError::ResponseHeadersPolicyAlreadyExists(inner) => {
-                Error::ResponseHeadersPolicyAlreadyExists(inner)
-            }
-            crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyError::TooLongCspInResponseHeadersPolicy(inner) => {
-                Error::TooLongCspInResponseHeadersPolicy(inner)
-            }
-            crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyError::TooManyCustomHeadersInResponseHeadersPolicy(
-                inner,
-            ) => Error::TooManyCustomHeadersInResponseHeadersPolicy(inner),
-            crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyError::TooManyRemoveHeadersInResponseHeadersPolicy(
-                inner,
-            ) => Error::TooManyRemoveHeadersInResponseHeadersPolicy(inner),
+            crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyError::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
+            crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyError::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyError::NoSuchResponseHeadersPolicy(inner) => Error::NoSuchResponseHeadersPolicy(inner),
+            crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyError::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyError::ResponseHeadersPolicyAlreadyExists(inner) => Error::ResponseHeadersPolicyAlreadyExists(inner),
+            crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyError::TooLongCspInResponseHeadersPolicy(inner) => Error::TooLongCspInResponseHeadersPolicy(inner),
+            crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyError::TooManyCustomHeadersInResponseHeadersPolicy(inner) => Error::TooManyCustomHeadersInResponseHeadersPolicy(inner),
+            crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyError::TooManyRemoveHeadersInResponseHeadersPolicy(inner) => Error::TooManyRemoveHeadersInResponseHeadersPolicy(inner),
             crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_streaming_distribution::UpdateStreamingDistributionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_streaming_distribution::UpdateStreamingDistributionError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_streaming_distribution::UpdateStreamingDistributionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_streaming_distribution::UpdateStreamingDistributionError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -4741,41 +3612,19 @@ impl From<crate::operation::update_streaming_distribution::UpdateStreamingDistri
     fn from(err: crate::operation::update_streaming_distribution::UpdateStreamingDistributionError) -> Self {
         match err {
             crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::AccessDenied(inner) => Error::AccessDenied(inner),
-            crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::CnameAlreadyExists(inner) => {
-                Error::CnameAlreadyExists(inner)
-            }
+            crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::CnameAlreadyExists(inner) => Error::CnameAlreadyExists(inner),
             crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::IllegalUpdate(inner) => Error::IllegalUpdate(inner),
-            crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::InconsistentQuantities(inner) => {
-                Error::InconsistentQuantities(inner)
-            }
-            crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::InvalidIfMatchVersion(inner) => {
-                Error::InvalidIfMatchVersion(inner)
-            }
-            crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::InvalidOriginAccessControl(inner) => {
-                Error::InvalidOriginAccessControl(inner)
-            }
-            crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::InvalidOriginAccessIdentity(inner) => {
-                Error::InvalidOriginAccessIdentity(inner)
-            }
+            crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
+            crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::InvalidOriginAccessControl(inner) => Error::InvalidOriginAccessControl(inner),
+            crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::InvalidOriginAccessIdentity(inner) => Error::InvalidOriginAccessIdentity(inner),
             crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::MissingBody(inner) => Error::MissingBody(inner),
-            crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::NoSuchStreamingDistribution(inner) => {
-                Error::NoSuchStreamingDistribution(inner)
-            }
-            crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::PreconditionFailed(inner) => {
-                Error::PreconditionFailed(inner)
-            }
-            crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::TooManyStreamingDistributionCnamEs(inner) => {
-                Error::TooManyStreamingDistributionCnamEs(inner)
-            }
-            crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::TooManyTrustedSigners(inner) => {
-                Error::TooManyTrustedSigners(inner)
-            }
-            crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::TrustedSignerDoesNotExist(inner) => {
-                Error::TrustedSignerDoesNotExist(inner)
-            }
+            crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::NoSuchStreamingDistribution(inner) => Error::NoSuchStreamingDistribution(inner),
+            crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::TooManyStreamingDistributionCnamEs(inner) => Error::TooManyStreamingDistributionCnamEs(inner),
+            crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::TooManyTrustedSigners(inner) => Error::TooManyTrustedSigners(inner),
+            crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::TrustedSignerDoesNotExist(inner) => Error::TrustedSignerDoesNotExist(inner),
             crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -4932,7 +3781,7 @@ impl ::std::error::Error for Error {
             Error::TrustedKeyGroupDoesNotExist(inner) => inner.source(),
             Error::TrustedSignerDoesNotExist(inner) => inner.source(),
             Error::UnsupportedOperation(inner) => inner.source(),
-            Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
+            Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source)
         }
     }
 }
@@ -5092,3 +3941,4 @@ impl ::aws_types::request_id::RequestId for Error {
         }
     }
 }
+

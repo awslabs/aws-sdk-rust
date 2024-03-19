@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetPasswordDataOutput {
+pub struct GetPasswordDataOutput  {
     /// <p>The ID of the Windows instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The password of the instance. Returns an empty string if the password is not available.</p>
@@ -11,21 +11,21 @@ pub struct GetPasswordDataOutput {
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl GetPasswordDataOutput {
+impl  GetPasswordDataOutput  {
     /// <p>The ID of the Windows instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The password of the instance. Returns an empty string if the password is not available.</p>
-    pub fn password_data(&self) -> ::std::option::Option<&str> {
+    pub fn password_data(&self) -> ::std::option::Option<& str> {
         self.password_data.as_deref()
     }
     /// <p>The time the data was last updated.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
 }
-impl ::std::fmt::Debug for GetPasswordDataOutput {
+impl  ::std::fmt::Debug for GetPasswordDataOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetPasswordDataOutput");
         formatter.field("instance_id", &self.instance_id);
@@ -36,10 +36,10 @@ impl ::std::fmt::Debug for GetPasswordDataOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetPasswordDataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetPasswordDataOutput {
     /// Creates a new builder-style object to manufacture [`GetPasswordDataOutput`](crate::operation::get_password_data::GetPasswordDataOutput).
     pub fn builder() -> crate::operation::get_password_data::builders::GetPasswordDataOutputBuilder {
@@ -64,8 +64,7 @@ impl GetPasswordDataOutputBuilder {
     }
     /// <p>The ID of the Windows instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID of the Windows instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +77,7 @@ impl GetPasswordDataOutputBuilder {
     }
     /// <p>The password of the instance. Returns an empty string if the password is not available.</p>
     pub fn set_password_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.password_data = input;
-        self
+        self.password_data = input; self
     }
     /// <p>The password of the instance. Returns an empty string if the password is not available.</p>
     pub fn get_password_data(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,28 +90,30 @@ impl GetPasswordDataOutputBuilder {
     }
     /// <p>The time the data was last updated.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p>The time the data was last updated.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetPasswordDataOutput`](crate::operation::get_password_data::GetPasswordDataOutput).
     pub fn build(self) -> crate::operation::get_password_data::GetPasswordDataOutput {
         crate::operation::get_password_data::GetPasswordDataOutput {
-            instance_id: self.instance_id,
-            password_data: self.password_data,
-            timestamp: self.timestamp,
+            instance_id: self.instance_id
+            ,
+            password_data: self.password_data
+            ,
+            timestamp: self.timestamp
+            ,
             _request_id: self._request_id,
         }
     }
@@ -128,3 +128,4 @@ impl ::std::fmt::Debug for GetPasswordDataOutputBuilder {
         formatter.finish()
     }
 }
+

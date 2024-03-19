@@ -3,19 +3,19 @@
 /// <p>Contains information about the expected and input values for the user turn.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserTurnSpecification {
+pub struct UserTurnSpecification  {
     /// <p>Contains information about the user messages in the turn in the input.</p>
     pub input: ::std::option::Option<crate::types::UserTurnInputSpecification>,
     /// <p>Contains results about the expected output for the user turn.</p>
     pub expected: ::std::option::Option<crate::types::UserTurnOutputSpecification>,
 }
-impl UserTurnSpecification {
+impl  UserTurnSpecification  {
     /// <p>Contains information about the user messages in the turn in the input.</p>
-    pub fn input(&self) -> ::std::option::Option<&crate::types::UserTurnInputSpecification> {
+    pub fn input(&self) -> ::std::option::Option<& crate::types::UserTurnInputSpecification> {
         self.input.as_ref()
     }
     /// <p>Contains results about the expected output for the user turn.</p>
-    pub fn expected(&self) -> ::std::option::Option<&crate::types::UserTurnOutputSpecification> {
+    pub fn expected(&self) -> ::std::option::Option<& crate::types::UserTurnOutputSpecification> {
         self.expected.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl UserTurnSpecificationBuilder {
     }
     /// <p>Contains information about the user messages in the turn in the input.</p>
     pub fn set_input(mut self, input: ::std::option::Option<crate::types::UserTurnInputSpecification>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
     }
     /// <p>Contains information about the user messages in the turn in the input.</p>
     pub fn get_input(&self) -> &::std::option::Option<crate::types::UserTurnInputSpecification> {
@@ -57,8 +56,7 @@ impl UserTurnSpecificationBuilder {
     }
     /// <p>Contains results about the expected output for the user turn.</p>
     pub fn set_expected(mut self, input: ::std::option::Option<crate::types::UserTurnOutputSpecification>) -> Self {
-        self.expected = input;
-        self
+        self.expected = input; self
     }
     /// <p>Contains results about the expected output for the user turn.</p>
     pub fn get_expected(&self) -> &::std::option::Option<crate::types::UserTurnOutputSpecification> {
@@ -67,8 +65,11 @@ impl UserTurnSpecificationBuilder {
     /// Consumes the builder and constructs a [`UserTurnSpecification`](crate::types::UserTurnSpecification).
     pub fn build(self) -> crate::types::UserTurnSpecification {
         crate::types::UserTurnSpecification {
-            input: self.input,
-            expected: self.expected,
+            input: self.input
+            ,
+            expected: self.expected
+            ,
         }
     }
 }
+

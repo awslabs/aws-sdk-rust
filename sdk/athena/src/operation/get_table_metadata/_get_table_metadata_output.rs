@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTableMetadataOutput {
+pub struct GetTableMetadataOutput  {
     /// <p>An object that contains table metadata.</p>
     pub table_metadata: ::std::option::Option<crate::types::TableMetadata>,
     _request_id: Option<String>,
 }
-impl GetTableMetadataOutput {
+impl  GetTableMetadataOutput  {
     /// <p>An object that contains table metadata.</p>
-    pub fn table_metadata(&self) -> ::std::option::Option<&crate::types::TableMetadata> {
+    pub fn table_metadata(&self) -> ::std::option::Option<& crate::types::TableMetadata> {
         self.table_metadata.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetTableMetadataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetTableMetadataOutput {
     /// Creates a new builder-style object to manufacture [`GetTableMetadataOutput`](crate::operation::get_table_metadata::GetTableMetadataOutput).
     pub fn builder() -> crate::operation::get_table_metadata::builders::GetTableMetadataOutputBuilder {
@@ -40,27 +40,28 @@ impl GetTableMetadataOutputBuilder {
     }
     /// <p>An object that contains table metadata.</p>
     pub fn set_table_metadata(mut self, input: ::std::option::Option<crate::types::TableMetadata>) -> Self {
-        self.table_metadata = input;
-        self
+        self.table_metadata = input; self
     }
     /// <p>An object that contains table metadata.</p>
     pub fn get_table_metadata(&self) -> &::std::option::Option<crate::types::TableMetadata> {
         &self.table_metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetTableMetadataOutput`](crate::operation::get_table_metadata::GetTableMetadataOutput).
     pub fn build(self) -> crate::operation::get_table_metadata::GetTableMetadataOutput {
         crate::operation::get_table_metadata::GetTableMetadataOutput {
-            table_metadata: self.table_metadata,
+            table_metadata: self.table_metadata
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

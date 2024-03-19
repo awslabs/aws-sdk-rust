@@ -21,11 +21,7 @@ impl AuthenticationMethod {
     /// Tries to convert the enum instance into [`Iam`](crate::types::AuthenticationMethod::Iam), extracting the inner [`IamAuthenticationMethod`](crate::types::IamAuthenticationMethod).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_iam(&self) -> ::std::result::Result<&crate::types::IamAuthenticationMethod, &Self> {
-        if let AuthenticationMethod::Iam(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AuthenticationMethod::Iam(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Iam`](crate::types::AuthenticationMethod::Iam).
     pub fn is_iam(&self) -> bool {
@@ -36,3 +32,4 @@ impl AuthenticationMethod {
         matches!(self, Self::Unknown)
     }
 }
+

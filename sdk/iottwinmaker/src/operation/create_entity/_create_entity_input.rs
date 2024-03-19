@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateEntityInput {
+pub struct CreateEntityInput  {
     /// <p>The ID of the workspace that contains the entity.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the entity.</p>
@@ -12,47 +12,45 @@ pub struct CreateEntityInput {
     /// <p>The description of the entity.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
-    pub components: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentRequest>>,
+    pub components: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ComponentRequest>>,
     /// <p>This is an object that maps strings to <code>compositeComponent</code> updates in the request. Each key of the map represents the <code>componentPath</code> of the <code>compositeComponent</code>.</p>
-    pub composite_components: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CompositeComponentRequest>>,
+    pub composite_components: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::CompositeComponentRequest>>,
     /// <p>The ID of the entity's parent entity.</p>
     pub parent_entity_id: ::std::option::Option<::std::string::String>,
     /// <p>Metadata that you can use to manage the entity.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateEntityInput {
+impl  CreateEntityInput  {
     /// <p>The ID of the workspace that contains the entity.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// <p>The ID of the entity.</p>
-    pub fn entity_id(&self) -> ::std::option::Option<&str> {
+    pub fn entity_id(&self) -> ::std::option::Option<& str> {
         self.entity_id.as_deref()
     }
     /// <p>The name of the entity.</p>
-    pub fn entity_name(&self) -> ::std::option::Option<&str> {
+    pub fn entity_name(&self) -> ::std::option::Option<& str> {
         self.entity_name.as_deref()
     }
     /// <p>The description of the entity.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
-    pub fn components(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ComponentRequest>> {
+    pub fn components(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::ComponentRequest>> {
         self.components.as_ref()
     }
     /// <p>This is an object that maps strings to <code>compositeComponent</code> updates in the request. Each key of the map represents the <code>componentPath</code> of the <code>compositeComponent</code>.</p>
-    pub fn composite_components(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::CompositeComponentRequest>> {
+    pub fn composite_components(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::CompositeComponentRequest>> {
         self.composite_components.as_ref()
     }
     /// <p>The ID of the entity's parent entity.</p>
-    pub fn parent_entity_id(&self) -> ::std::option::Option<&str> {
+    pub fn parent_entity_id(&self) -> ::std::option::Option<& str> {
         self.parent_entity_id.as_deref()
     }
     /// <p>Metadata that you can use to manage the entity.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -71,11 +69,10 @@ pub struct CreateEntityInputBuilder {
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,
     pub(crate) entity_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) components: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentRequest>>,
-    pub(crate) composite_components:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CompositeComponentRequest>>,
+    pub(crate) components: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ComponentRequest>>,
+    pub(crate) composite_components: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::CompositeComponentRequest>>,
     pub(crate) parent_entity_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateEntityInputBuilder {
     /// <p>The ID of the workspace that contains the entity.</p>
@@ -86,8 +83,7 @@ impl CreateEntityInputBuilder {
     }
     /// <p>The ID of the workspace that contains the entity.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The ID of the workspace that contains the entity.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +96,7 @@ impl CreateEntityInputBuilder {
     }
     /// <p>The ID of the entity.</p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>The ID of the entity.</p>
     pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +110,7 @@ impl CreateEntityInputBuilder {
     }
     /// <p>The name of the entity.</p>
     pub fn set_entity_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_name = input;
-        self
+        self.entity_name = input; self
     }
     /// <p>The name of the entity.</p>
     pub fn get_entity_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +123,7 @@ impl CreateEntityInputBuilder {
     }
     /// <p>The description of the entity.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the entity.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,20 +136,16 @@ impl CreateEntityInputBuilder {
     /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
     pub fn components(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ComponentRequest) -> Self {
         let mut hash_map = self.components.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.components = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.components = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
-    pub fn set_components(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentRequest>>,
-    ) -> Self {
-        self.components = input;
-        self
+    pub fn set_components(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ComponentRequest>>) -> Self {
+        self.components = input; self
     }
     /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
-    pub fn get_components(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentRequest>> {
+    pub fn get_components(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ComponentRequest>> {
         &self.components
     }
     /// Adds a key-value pair to `composite_components`.
@@ -166,22 +155,16 @@ impl CreateEntityInputBuilder {
     /// <p>This is an object that maps strings to <code>compositeComponent</code> updates in the request. Each key of the map represents the <code>componentPath</code> of the <code>compositeComponent</code>.</p>
     pub fn composite_components(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::CompositeComponentRequest) -> Self {
         let mut hash_map = self.composite_components.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.composite_components = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.composite_components = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>This is an object that maps strings to <code>compositeComponent</code> updates in the request. Each key of the map represents the <code>componentPath</code> of the <code>compositeComponent</code>.</p>
-    pub fn set_composite_components(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CompositeComponentRequest>>,
-    ) -> Self {
-        self.composite_components = input;
-        self
+    pub fn set_composite_components(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::CompositeComponentRequest>>) -> Self {
+        self.composite_components = input; self
     }
     /// <p>This is an object that maps strings to <code>compositeComponent</code> updates in the request. Each key of the map represents the <code>componentPath</code> of the <code>compositeComponent</code>.</p>
-    pub fn get_composite_components(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CompositeComponentRequest>> {
+    pub fn get_composite_components(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::CompositeComponentRequest>> {
         &self.composite_components
     }
     /// <p>The ID of the entity's parent entity.</p>
@@ -191,8 +174,7 @@ impl CreateEntityInputBuilder {
     }
     /// <p>The ID of the entity's parent entity.</p>
     pub fn set_parent_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parent_entity_id = input;
-        self
+        self.parent_entity_id = input; self
     }
     /// <p>The ID of the entity's parent entity.</p>
     pub fn get_parent_entity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -205,32 +187,40 @@ impl CreateEntityInputBuilder {
     /// <p>Metadata that you can use to manage the entity.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Metadata that you can use to manage the entity.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Metadata that you can use to manage the entity.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateEntityInput`](crate::operation::create_entity::CreateEntityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_entity::CreateEntityInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_entity::CreateEntityInput {
-            workspace_id: self.workspace_id,
-            entity_id: self.entity_id,
-            entity_name: self.entity_name,
-            description: self.description,
-            components: self.components,
-            composite_components: self.composite_components,
-            parent_entity_id: self.parent_entity_id,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_entity::CreateEntityInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_entity::CreateEntityInput {
+                workspace_id: self.workspace_id
+                ,
+                entity_id: self.entity_id
+                ,
+                entity_name: self.entity_name
+                ,
+                description: self.description
+                ,
+                components: self.components
+                ,
+                composite_components: self.composite_components
+                ,
+                parent_entity_id: self.parent_entity_id
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

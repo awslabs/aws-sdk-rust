@@ -28,19 +28,19 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RouteMatrixEntryError {
+pub struct RouteMatrixEntryError  {
     /// <p>The type of error which occurred for the route calculation.</p>
     pub code: crate::types::RouteMatrixErrorCode,
     /// <p>A message about the error that occurred for the route calculation.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl RouteMatrixEntryError {
+impl  RouteMatrixEntryError  {
     /// <p>The type of error which occurred for the route calculation.</p>
-    pub fn code(&self) -> &crate::types::RouteMatrixErrorCode {
+    pub fn code(&self) -> & crate::types::RouteMatrixErrorCode {
         &self.code
     }
     /// <p>A message about the error that occurred for the route calculation.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -67,8 +67,7 @@ impl RouteMatrixEntryErrorBuilder {
     }
     /// <p>The type of error which occurred for the route calculation.</p>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::RouteMatrixErrorCode>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The type of error which occurred for the route calculation.</p>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::RouteMatrixErrorCode> {
@@ -81,8 +80,7 @@ impl RouteMatrixEntryErrorBuilder {
     }
     /// <p>A message about the error that occurred for the route calculation.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>A message about the error that occurred for the route calculation.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,14 +90,17 @@ impl RouteMatrixEntryErrorBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`code`](crate::types::builders::RouteMatrixEntryErrorBuilder::code)
     pub fn build(self) -> ::std::result::Result<crate::types::RouteMatrixEntryError, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RouteMatrixEntryError {
-            code: self.code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "code",
-                    "code was not specified but it is required when building RouteMatrixEntryError",
-                )
-            })?,
-            message: self.message,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RouteMatrixEntryError {
+                code: self.code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("code", "code was not specified but it is required when building RouteMatrixEntryError")
+                    )?
+                ,
+                message: self.message
+                ,
+            }
+        )
     }
 }
+

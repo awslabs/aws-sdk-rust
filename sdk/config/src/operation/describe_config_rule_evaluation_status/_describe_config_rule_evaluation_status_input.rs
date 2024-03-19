@@ -3,9 +3,9 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeConfigRuleEvaluationStatusInput {
+pub struct DescribeConfigRuleEvaluationStatusInput  {
     /// <p>The name of the Config managed rules for which you want status information. If you do not specify any names, Config returns status information for all Config managed rules that you use.</p>
-    pub config_rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub config_rule_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The number of rule evaluation results that you want returned.</p>
@@ -13,15 +13,16 @@ pub struct DescribeConfigRuleEvaluationStatusInput {
     /// <p>For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub limit: ::std::option::Option<i32>,
 }
-impl DescribeConfigRuleEvaluationStatusInput {
+impl  DescribeConfigRuleEvaluationStatusInput  {
     /// <p>The name of the Config managed rules for which you want status information. If you do not specify any names, Config returns status information for all Config managed rules that you use.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.config_rule_names.is_none()`.
-    pub fn config_rule_names(&self) -> &[::std::string::String] {
-        self.config_rule_names.as_deref().unwrap_or_default()
+    pub fn config_rule_names(&self) -> & [::std::string::String] {
+        self.config_rule_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The number of rule evaluation results that you want returned.</p>
@@ -42,7 +43,7 @@ impl DescribeConfigRuleEvaluationStatusInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConfigRuleEvaluationStatusInputBuilder {
-    pub(crate) config_rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) config_rule_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
 }
@@ -54,17 +55,16 @@ impl DescribeConfigRuleEvaluationStatusInputBuilder {
     /// <p>The name of the Config managed rules for which you want status information. If you do not specify any names, Config returns status information for all Config managed rules that you use.</p>
     pub fn config_rule_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.config_rule_names.unwrap_or_default();
-        v.push(input.into());
-        self.config_rule_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.config_rule_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The name of the Config managed rules for which you want status information. If you do not specify any names, Config returns status information for all Config managed rules that you use.</p>
-    pub fn set_config_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.config_rule_names = input;
-        self
+    pub fn set_config_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.config_rule_names = input; self
     }
     /// <p>The name of the Config managed rules for which you want status information. If you do not specify any names, Config returns status information for all Config managed rules that you use.</p>
-    pub fn get_config_rule_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_config_rule_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.config_rule_names
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -74,8 +74,7 @@ impl DescribeConfigRuleEvaluationStatusInputBuilder {
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +91,7 @@ impl DescribeConfigRuleEvaluationStatusInputBuilder {
     /// <p>This parameter is required if the rule limit for your account is more than the default of 150 rules.</p>
     /// <p>For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The number of rule evaluation results that you want returned.</p>
     /// <p>This parameter is required if the rule limit for your account is more than the default of 150 rules.</p>
@@ -102,18 +100,17 @@ impl DescribeConfigRuleEvaluationStatusInputBuilder {
         &self.limit
     }
     /// Consumes the builder and constructs a [`DescribeConfigRuleEvaluationStatusInput`](crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusInput {
-                config_rule_names: self.config_rule_names,
-                next_token: self.next_token,
-                limit: self.limit,
-            },
+                config_rule_names: self.config_rule_names
+                ,
+                next_token: self.next_token
+                ,
+                limit: self.limit
+                ,
+            }
         )
     }
 }
+

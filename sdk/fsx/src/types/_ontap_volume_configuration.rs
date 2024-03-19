@@ -3,7 +3,7 @@
 /// <p>The configuration of an Amazon FSx for NetApp ONTAP volume.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OntapVolumeConfiguration {
+pub struct OntapVolumeConfiguration  {
     /// <p>Specifies the FlexCache endpoint type of the volume. Valid values are the following:</p>
     /// <ul>
     /// <li>
@@ -64,7 +64,7 @@ pub struct OntapVolumeConfiguration {
     /// <p>The configured size of the volume, in bytes.</p>
     pub size_in_bytes: ::std::option::Option<i64>,
 }
-impl OntapVolumeConfiguration {
+impl  OntapVolumeConfiguration  {
     /// <p>Specifies the FlexCache endpoint type of the volume. Valid values are the following:</p>
     /// <ul>
     /// <li>
@@ -74,15 +74,15 @@ impl OntapVolumeConfiguration {
     /// <li>
     /// <p><code>CACHE</code> specifies that the volume is a FlexCache volume.</p></li>
     /// </ul>
-    pub fn flex_cache_endpoint_type(&self) -> ::std::option::Option<&crate::types::FlexCacheEndpointType> {
+    pub fn flex_cache_endpoint_type(&self) -> ::std::option::Option<& crate::types::FlexCacheEndpointType> {
         self.flex_cache_endpoint_type.as_ref()
     }
     /// <p>Specifies the directory that network-attached storage (NAS) clients use to mount the volume, along with the storage virtual machine (SVM) Domain Name System (DNS) name or IP address. You can create a <code>JunctionPath</code> directly below a parent volume junction or on a directory within a volume. A <code>JunctionPath</code> for a volume named <code>vol3</code> might be <code>/vol1/vol2/vol3</code>, or <code>/vol1/dir2/vol3</code>, or even <code>/dir1/dir2/vol3</code>.</p>
-    pub fn junction_path(&self) -> ::std::option::Option<&str> {
+    pub fn junction_path(&self) -> ::std::option::Option<& str> {
         self.junction_path.as_deref()
     }
     /// <p>The security style for the volume, which can be <code>UNIX</code>, <code>NTFS</code>, or <code>MIXED</code>.</p>
-    pub fn security_style(&self) -> ::std::option::Option<&crate::types::SecurityStyle> {
+    pub fn security_style(&self) -> ::std::option::Option<& crate::types::SecurityStyle> {
         self.security_style.as_ref()
     }
     /// <p>The configured size of the volume, in megabytes (MBs).</p>
@@ -94,7 +94,7 @@ impl OntapVolumeConfiguration {
         self.storage_efficiency_enabled
     }
     /// <p>The ID of the volume's storage virtual machine.</p>
-    pub fn storage_virtual_machine_id(&self) -> ::std::option::Option<&str> {
+    pub fn storage_virtual_machine_id(&self) -> ::std::option::Option<& str> {
         self.storage_virtual_machine_id.as_deref()
     }
     /// <p>A Boolean flag indicating whether this volume is the root volume for its storage virtual machine (SVM). Only one volume on an SVM can be the root volume. This value defaults to <code>false</code>. If this value is <code>true</code>, then this is the SVM root volume.</p>
@@ -103,11 +103,11 @@ impl OntapVolumeConfiguration {
         self.storage_virtual_machine_root
     }
     /// <p>The volume's <code>TieringPolicy</code> setting.</p>
-    pub fn tiering_policy(&self) -> ::std::option::Option<&crate::types::TieringPolicy> {
+    pub fn tiering_policy(&self) -> ::std::option::Option<& crate::types::TieringPolicy> {
         self.tiering_policy.as_ref()
     }
     /// <p>The volume's universally unique identifier (UUID).</p>
-    pub fn uuid(&self) -> ::std::option::Option<&str> {
+    pub fn uuid(&self) -> ::std::option::Option<& str> {
         self.uuid.as_deref()
     }
     /// <p>Specifies the type of volume. Valid values are the following:</p>
@@ -119,7 +119,7 @@ impl OntapVolumeConfiguration {
     /// <li>
     /// <p><code>LS</code> specifies a load-sharing mirror volume. A load-sharing mirror reduces the network traffic to a FlexVol volume by providing additional read-only access to clients.</p></li>
     /// </ul>
-    pub fn ontap_volume_type(&self) -> ::std::option::Option<&crate::types::OntapVolumeType> {
+    pub fn ontap_volume_type(&self) -> ::std::option::Option<& crate::types::OntapVolumeType> {
         self.ontap_volume_type.as_ref()
     }
     /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
@@ -133,7 +133,7 @@ impl OntapVolumeConfiguration {
     /// </ul>
     /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
-    pub fn snapshot_policy(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_policy(&self) -> ::std::option::Option<& str> {
         self.snapshot_policy.as_deref()
     }
     /// <p>A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the volume, regardless of this value.</p>
@@ -141,15 +141,15 @@ impl OntapVolumeConfiguration {
         self.copy_tags_to_backups
     }
     /// <p>The SnapLock configuration object for an FSx for ONTAP SnapLock volume.</p>
-    pub fn snaplock_configuration(&self) -> ::std::option::Option<&crate::types::SnaplockConfiguration> {
+    pub fn snaplock_configuration(&self) -> ::std::option::Option<& crate::types::SnaplockConfiguration> {
         self.snaplock_configuration.as_ref()
     }
     /// <p>Use to specify the style of an ONTAP volume. For more information about FlexVols and FlexGroups, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume types</a> in Amazon FSx for NetApp ONTAP User Guide.</p>
-    pub fn volume_style(&self) -> ::std::option::Option<&crate::types::VolumeStyle> {
+    pub fn volume_style(&self) -> ::std::option::Option<& crate::types::VolumeStyle> {
         self.volume_style.as_ref()
     }
     /// <p>This structure specifies configuration options for a volume’s storage aggregate or aggregates.</p>
-    pub fn aggregate_configuration(&self) -> ::std::option::Option<&crate::types::AggregateConfiguration> {
+    pub fn aggregate_configuration(&self) -> ::std::option::Option<& crate::types::AggregateConfiguration> {
         self.aggregate_configuration.as_ref()
     }
     /// <p>The configured size of the volume, in bytes.</p>
@@ -209,8 +209,7 @@ impl OntapVolumeConfigurationBuilder {
     /// <p><code>CACHE</code> specifies that the volume is a FlexCache volume.</p></li>
     /// </ul>
     pub fn set_flex_cache_endpoint_type(mut self, input: ::std::option::Option<crate::types::FlexCacheEndpointType>) -> Self {
-        self.flex_cache_endpoint_type = input;
-        self
+        self.flex_cache_endpoint_type = input; self
     }
     /// <p>Specifies the FlexCache endpoint type of the volume. Valid values are the following:</p>
     /// <ul>
@@ -231,8 +230,7 @@ impl OntapVolumeConfigurationBuilder {
     }
     /// <p>Specifies the directory that network-attached storage (NAS) clients use to mount the volume, along with the storage virtual machine (SVM) Domain Name System (DNS) name or IP address. You can create a <code>JunctionPath</code> directly below a parent volume junction or on a directory within a volume. A <code>JunctionPath</code> for a volume named <code>vol3</code> might be <code>/vol1/vol2/vol3</code>, or <code>/vol1/dir2/vol3</code>, or even <code>/dir1/dir2/vol3</code>.</p>
     pub fn set_junction_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.junction_path = input;
-        self
+        self.junction_path = input; self
     }
     /// <p>Specifies the directory that network-attached storage (NAS) clients use to mount the volume, along with the storage virtual machine (SVM) Domain Name System (DNS) name or IP address. You can create a <code>JunctionPath</code> directly below a parent volume junction or on a directory within a volume. A <code>JunctionPath</code> for a volume named <code>vol3</code> might be <code>/vol1/vol2/vol3</code>, or <code>/vol1/dir2/vol3</code>, or even <code>/dir1/dir2/vol3</code>.</p>
     pub fn get_junction_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -245,8 +243,7 @@ impl OntapVolumeConfigurationBuilder {
     }
     /// <p>The security style for the volume, which can be <code>UNIX</code>, <code>NTFS</code>, or <code>MIXED</code>.</p>
     pub fn set_security_style(mut self, input: ::std::option::Option<crate::types::SecurityStyle>) -> Self {
-        self.security_style = input;
-        self
+        self.security_style = input; self
     }
     /// <p>The security style for the volume, which can be <code>UNIX</code>, <code>NTFS</code>, or <code>MIXED</code>.</p>
     pub fn get_security_style(&self) -> &::std::option::Option<crate::types::SecurityStyle> {
@@ -259,8 +256,7 @@ impl OntapVolumeConfigurationBuilder {
     }
     /// <p>The configured size of the volume, in megabytes (MBs).</p>
     pub fn set_size_in_megabytes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.size_in_megabytes = input;
-        self
+        self.size_in_megabytes = input; self
     }
     /// <p>The configured size of the volume, in megabytes (MBs).</p>
     pub fn get_size_in_megabytes(&self) -> &::std::option::Option<i32> {
@@ -273,8 +269,7 @@ impl OntapVolumeConfigurationBuilder {
     }
     /// <p>The volume's storage efficiency setting.</p>
     pub fn set_storage_efficiency_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.storage_efficiency_enabled = input;
-        self
+        self.storage_efficiency_enabled = input; self
     }
     /// <p>The volume's storage efficiency setting.</p>
     pub fn get_storage_efficiency_enabled(&self) -> &::std::option::Option<bool> {
@@ -287,8 +282,7 @@ impl OntapVolumeConfigurationBuilder {
     }
     /// <p>The ID of the volume's storage virtual machine.</p>
     pub fn set_storage_virtual_machine_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.storage_virtual_machine_id = input;
-        self
+        self.storage_virtual_machine_id = input; self
     }
     /// <p>The ID of the volume's storage virtual machine.</p>
     pub fn get_storage_virtual_machine_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -303,8 +297,7 @@ impl OntapVolumeConfigurationBuilder {
     /// <p>A Boolean flag indicating whether this volume is the root volume for its storage virtual machine (SVM). Only one volume on an SVM can be the root volume. This value defaults to <code>false</code>. If this value is <code>true</code>, then this is the SVM root volume.</p>
     /// <p>This flag is useful when you're deleting an SVM, because you must first delete all non-root volumes. This flag, when set to <code>false</code>, helps you identify which volumes to delete before you can delete the SVM.</p>
     pub fn set_storage_virtual_machine_root(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.storage_virtual_machine_root = input;
-        self
+        self.storage_virtual_machine_root = input; self
     }
     /// <p>A Boolean flag indicating whether this volume is the root volume for its storage virtual machine (SVM). Only one volume on an SVM can be the root volume. This value defaults to <code>false</code>. If this value is <code>true</code>, then this is the SVM root volume.</p>
     /// <p>This flag is useful when you're deleting an SVM, because you must first delete all non-root volumes. This flag, when set to <code>false</code>, helps you identify which volumes to delete before you can delete the SVM.</p>
@@ -318,8 +311,7 @@ impl OntapVolumeConfigurationBuilder {
     }
     /// <p>The volume's <code>TieringPolicy</code> setting.</p>
     pub fn set_tiering_policy(mut self, input: ::std::option::Option<crate::types::TieringPolicy>) -> Self {
-        self.tiering_policy = input;
-        self
+        self.tiering_policy = input; self
     }
     /// <p>The volume's <code>TieringPolicy</code> setting.</p>
     pub fn get_tiering_policy(&self) -> &::std::option::Option<crate::types::TieringPolicy> {
@@ -332,8 +324,7 @@ impl OntapVolumeConfigurationBuilder {
     }
     /// <p>The volume's universally unique identifier (UUID).</p>
     pub fn set_uuid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.uuid = input;
-        self
+        self.uuid = input; self
     }
     /// <p>The volume's universally unique identifier (UUID).</p>
     pub fn get_uuid(&self) -> &::std::option::Option<::std::string::String> {
@@ -362,8 +353,7 @@ impl OntapVolumeConfigurationBuilder {
     /// <p><code>LS</code> specifies a load-sharing mirror volume. A load-sharing mirror reduces the network traffic to a FlexVol volume by providing additional read-only access to clients.</p></li>
     /// </ul>
     pub fn set_ontap_volume_type(mut self, input: ::std::option::Option<crate::types::OntapVolumeType>) -> Self {
-        self.ontap_volume_type = input;
-        self
+        self.ontap_volume_type = input; self
     }
     /// <p>Specifies the type of volume. Valid values are the following:</p>
     /// <ul>
@@ -404,8 +394,7 @@ impl OntapVolumeConfigurationBuilder {
     /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
     pub fn set_snapshot_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_policy = input;
-        self
+        self.snapshot_policy = input; self
     }
     /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
     /// <ul>
@@ -428,8 +417,7 @@ impl OntapVolumeConfigurationBuilder {
     }
     /// <p>A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the volume, regardless of this value.</p>
     pub fn set_copy_tags_to_backups(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.copy_tags_to_backups = input;
-        self
+        self.copy_tags_to_backups = input; self
     }
     /// <p>A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the volume, regardless of this value.</p>
     pub fn get_copy_tags_to_backups(&self) -> &::std::option::Option<bool> {
@@ -442,8 +430,7 @@ impl OntapVolumeConfigurationBuilder {
     }
     /// <p>The SnapLock configuration object for an FSx for ONTAP SnapLock volume.</p>
     pub fn set_snaplock_configuration(mut self, input: ::std::option::Option<crate::types::SnaplockConfiguration>) -> Self {
-        self.snaplock_configuration = input;
-        self
+        self.snaplock_configuration = input; self
     }
     /// <p>The SnapLock configuration object for an FSx for ONTAP SnapLock volume.</p>
     pub fn get_snaplock_configuration(&self) -> &::std::option::Option<crate::types::SnaplockConfiguration> {
@@ -456,8 +443,7 @@ impl OntapVolumeConfigurationBuilder {
     }
     /// <p>Use to specify the style of an ONTAP volume. For more information about FlexVols and FlexGroups, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume types</a> in Amazon FSx for NetApp ONTAP User Guide.</p>
     pub fn set_volume_style(mut self, input: ::std::option::Option<crate::types::VolumeStyle>) -> Self {
-        self.volume_style = input;
-        self
+        self.volume_style = input; self
     }
     /// <p>Use to specify the style of an ONTAP volume. For more information about FlexVols and FlexGroups, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume types</a> in Amazon FSx for NetApp ONTAP User Guide.</p>
     pub fn get_volume_style(&self) -> &::std::option::Option<crate::types::VolumeStyle> {
@@ -470,8 +456,7 @@ impl OntapVolumeConfigurationBuilder {
     }
     /// <p>This structure specifies configuration options for a volume’s storage aggregate or aggregates.</p>
     pub fn set_aggregate_configuration(mut self, input: ::std::option::Option<crate::types::AggregateConfiguration>) -> Self {
-        self.aggregate_configuration = input;
-        self
+        self.aggregate_configuration = input; self
     }
     /// <p>This structure specifies configuration options for a volume’s storage aggregate or aggregates.</p>
     pub fn get_aggregate_configuration(&self) -> &::std::option::Option<crate::types::AggregateConfiguration> {
@@ -484,8 +469,7 @@ impl OntapVolumeConfigurationBuilder {
     }
     /// <p>The configured size of the volume, in bytes.</p>
     pub fn set_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.size_in_bytes = input;
-        self
+        self.size_in_bytes = input; self
     }
     /// <p>The configured size of the volume, in bytes.</p>
     pub fn get_size_in_bytes(&self) -> &::std::option::Option<i64> {
@@ -494,22 +478,39 @@ impl OntapVolumeConfigurationBuilder {
     /// Consumes the builder and constructs a [`OntapVolumeConfiguration`](crate::types::OntapVolumeConfiguration).
     pub fn build(self) -> crate::types::OntapVolumeConfiguration {
         crate::types::OntapVolumeConfiguration {
-            flex_cache_endpoint_type: self.flex_cache_endpoint_type,
-            junction_path: self.junction_path,
-            security_style: self.security_style,
-            size_in_megabytes: self.size_in_megabytes,
-            storage_efficiency_enabled: self.storage_efficiency_enabled,
-            storage_virtual_machine_id: self.storage_virtual_machine_id,
-            storage_virtual_machine_root: self.storage_virtual_machine_root,
-            tiering_policy: self.tiering_policy,
-            uuid: self.uuid,
-            ontap_volume_type: self.ontap_volume_type,
-            snapshot_policy: self.snapshot_policy,
-            copy_tags_to_backups: self.copy_tags_to_backups,
-            snaplock_configuration: self.snaplock_configuration,
-            volume_style: self.volume_style,
-            aggregate_configuration: self.aggregate_configuration,
-            size_in_bytes: self.size_in_bytes,
+            flex_cache_endpoint_type: self.flex_cache_endpoint_type
+            ,
+            junction_path: self.junction_path
+            ,
+            security_style: self.security_style
+            ,
+            size_in_megabytes: self.size_in_megabytes
+            ,
+            storage_efficiency_enabled: self.storage_efficiency_enabled
+            ,
+            storage_virtual_machine_id: self.storage_virtual_machine_id
+            ,
+            storage_virtual_machine_root: self.storage_virtual_machine_root
+            ,
+            tiering_policy: self.tiering_policy
+            ,
+            uuid: self.uuid
+            ,
+            ontap_volume_type: self.ontap_volume_type
+            ,
+            snapshot_policy: self.snapshot_policy
+            ,
+            copy_tags_to_backups: self.copy_tags_to_backups
+            ,
+            snaplock_configuration: self.snaplock_configuration
+            ,
+            volume_style: self.volume_style
+            ,
+            aggregate_configuration: self.aggregate_configuration
+            ,
+            size_in_bytes: self.size_in_bytes
+            ,
         }
     }
 }
+

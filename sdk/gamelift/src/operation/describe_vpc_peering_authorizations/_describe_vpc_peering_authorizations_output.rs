@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeVpcPeeringAuthorizationsOutput {
+pub struct DescribeVpcPeeringAuthorizationsOutput  {
     /// <p>A collection of objects that describe all valid VPC peering operations for the current Amazon Web Services account.</p>
-    pub vpc_peering_authorizations: ::std::option::Option<::std::vec::Vec<crate::types::VpcPeeringAuthorization>>,
+    pub vpc_peering_authorizations: ::std::option::Option<::std::vec::Vec::<crate::types::VpcPeeringAuthorization>>,
     _request_id: Option<String>,
 }
-impl DescribeVpcPeeringAuthorizationsOutput {
+impl  DescribeVpcPeeringAuthorizationsOutput  {
     /// <p>A collection of objects that describe all valid VPC peering operations for the current Amazon Web Services account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_peering_authorizations.is_none()`.
-    pub fn vpc_peering_authorizations(&self) -> &[crate::types::VpcPeeringAuthorization] {
-        self.vpc_peering_authorizations.as_deref().unwrap_or_default()
+    pub fn vpc_peering_authorizations(&self) -> & [crate::types::VpcPeeringAuthorization] {
+        self.vpc_peering_authorizations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeVpcPeeringAuthorizationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeVpcPeeringAuthorizationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcPeeringAuthorizationsOutput`](crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsOutput).
     pub fn builder() -> crate::operation::describe_vpc_peering_authorizations::builders::DescribeVpcPeeringAuthorizationsOutputBuilder {
@@ -31,7 +32,7 @@ impl DescribeVpcPeeringAuthorizationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVpcPeeringAuthorizationsOutputBuilder {
-    pub(crate) vpc_peering_authorizations: ::std::option::Option<::std::vec::Vec<crate::types::VpcPeeringAuthorization>>,
+    pub(crate) vpc_peering_authorizations: ::std::option::Option<::std::vec::Vec::<crate::types::VpcPeeringAuthorization>>,
     _request_id: Option<String>,
 }
 impl DescribeVpcPeeringAuthorizationsOutputBuilder {
@@ -42,33 +43,34 @@ impl DescribeVpcPeeringAuthorizationsOutputBuilder {
     /// <p>A collection of objects that describe all valid VPC peering operations for the current Amazon Web Services account.</p>
     pub fn vpc_peering_authorizations(mut self, input: crate::types::VpcPeeringAuthorization) -> Self {
         let mut v = self.vpc_peering_authorizations.unwrap_or_default();
-        v.push(input);
-        self.vpc_peering_authorizations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.vpc_peering_authorizations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A collection of objects that describe all valid VPC peering operations for the current Amazon Web Services account.</p>
-    pub fn set_vpc_peering_authorizations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcPeeringAuthorization>>) -> Self {
-        self.vpc_peering_authorizations = input;
-        self
+    pub fn set_vpc_peering_authorizations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VpcPeeringAuthorization>>) -> Self {
+        self.vpc_peering_authorizations = input; self
     }
     /// <p>A collection of objects that describe all valid VPC peering operations for the current Amazon Web Services account.</p>
-    pub fn get_vpc_peering_authorizations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcPeeringAuthorization>> {
+    pub fn get_vpc_peering_authorizations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VpcPeeringAuthorization>> {
         &self.vpc_peering_authorizations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeVpcPeeringAuthorizationsOutput`](crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsOutput).
     pub fn build(self) -> crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsOutput {
         crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsOutput {
-            vpc_peering_authorizations: self.vpc_peering_authorizations,
+            vpc_peering_authorizations: self.vpc_peering_authorizations
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

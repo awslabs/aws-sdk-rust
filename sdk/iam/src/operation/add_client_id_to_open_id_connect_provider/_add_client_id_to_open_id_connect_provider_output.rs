@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddClientIdToOpenIdConnectProviderOutput {
+pub struct AddClientIdToOpenIdConnectProviderOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for AddClientIdToOpenIdConnectProviderOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AddClientIdToOpenIdConnectProviderOutput {
     /// Creates a new builder-style object to manufacture [`AddClientIdToOpenIdConnectProviderOutput`](crate::operation::add_client_id_to_open_id_connect_provider::AddClientIdToOpenIdConnectProviderOutput).
     pub fn builder() -> crate::operation::add_client_id_to_open_id_connect_provider::builders::AddClientIdToOpenIdConnectProviderOutputBuilder {
@@ -25,14 +25,14 @@ pub struct AddClientIdToOpenIdConnectProviderOutputBuilder {
 }
 impl AddClientIdToOpenIdConnectProviderOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AddClientIdToOpenIdConnectProviderOutput`](crate::operation::add_client_id_to_open_id_connect_provider::AddClientIdToOpenIdConnectProviderOutput).
     pub fn build(self) -> crate::operation::add_client_id_to_open_id_connect_provider::AddClientIdToOpenIdConnectProviderOutput {
         crate::operation::add_client_id_to_open_id_connect_provider::AddClientIdToOpenIdConnectProviderOutput {
@@ -40,3 +40,4 @@ impl AddClientIdToOpenIdConnectProviderOutputBuilder {
         }
     }
 }
+

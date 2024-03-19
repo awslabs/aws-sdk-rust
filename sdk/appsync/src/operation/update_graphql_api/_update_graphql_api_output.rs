@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateGraphqlApiOutput {
+pub struct UpdateGraphqlApiOutput  {
     /// <p>The updated <code>GraphqlApi</code> object.</p>
     pub graphql_api: ::std::option::Option<crate::types::GraphqlApi>,
     _request_id: Option<String>,
 }
-impl UpdateGraphqlApiOutput {
+impl  UpdateGraphqlApiOutput  {
     /// <p>The updated <code>GraphqlApi</code> object.</p>
-    pub fn graphql_api(&self) -> ::std::option::Option<&crate::types::GraphqlApi> {
+    pub fn graphql_api(&self) -> ::std::option::Option<& crate::types::GraphqlApi> {
         self.graphql_api.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateGraphqlApiOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateGraphqlApiOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGraphqlApiOutput`](crate::operation::update_graphql_api::UpdateGraphqlApiOutput).
     pub fn builder() -> crate::operation::update_graphql_api::builders::UpdateGraphqlApiOutputBuilder {
@@ -40,27 +40,28 @@ impl UpdateGraphqlApiOutputBuilder {
     }
     /// <p>The updated <code>GraphqlApi</code> object.</p>
     pub fn set_graphql_api(mut self, input: ::std::option::Option<crate::types::GraphqlApi>) -> Self {
-        self.graphql_api = input;
-        self
+        self.graphql_api = input; self
     }
     /// <p>The updated <code>GraphqlApi</code> object.</p>
     pub fn get_graphql_api(&self) -> &::std::option::Option<crate::types::GraphqlApi> {
         &self.graphql_api
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateGraphqlApiOutput`](crate::operation::update_graphql_api::UpdateGraphqlApiOutput).
     pub fn build(self) -> crate::operation::update_graphql_api::UpdateGraphqlApiOutput {
         crate::operation::update_graphql_api::UpdateGraphqlApiOutput {
-            graphql_api: self.graphql_api,
+            graphql_api: self.graphql_api
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

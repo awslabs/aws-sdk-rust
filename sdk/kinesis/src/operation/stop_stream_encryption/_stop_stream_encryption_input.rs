@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopStreamEncryptionInput {
+pub struct StopStreamEncryptionInput  {
     /// <p>The name of the stream on which to stop encrypting records.</p>
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The encryption type. The only valid value is <code>KMS</code>.</p>
@@ -24,13 +24,13 @@ pub struct StopStreamEncryptionInput {
     /// <p>The ARN of the stream.</p>
     pub stream_arn: ::std::option::Option<::std::string::String>,
 }
-impl StopStreamEncryptionInput {
+impl  StopStreamEncryptionInput  {
     /// <p>The name of the stream on which to stop encrypting records.</p>
-    pub fn stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn stream_name(&self) -> ::std::option::Option<& str> {
         self.stream_name.as_deref()
     }
     /// <p>The encryption type. The only valid value is <code>KMS</code>.</p>
-    pub fn encryption_type(&self) -> ::std::option::Option<&crate::types::EncryptionType> {
+    pub fn encryption_type(&self) -> ::std::option::Option<& crate::types::EncryptionType> {
         self.encryption_type.as_ref()
     }
     /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption. This value can be a globally unique identifier, a fully specified Amazon Resource Name (ARN) to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.</p>
@@ -46,11 +46,11 @@ impl StopStreamEncryptionInput {
     /// <li>
     /// <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code></p></li>
     /// </ul>
-    pub fn key_id(&self) -> ::std::option::Option<&str> {
+    pub fn key_id(&self) -> ::std::option::Option<& str> {
         self.key_id.as_deref()
     }
     /// <p>The ARN of the stream.</p>
-    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
 }
@@ -78,8 +78,7 @@ impl StopStreamEncryptionInputBuilder {
     }
     /// <p>The name of the stream on which to stop encrypting records.</p>
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_name = input;
-        self
+        self.stream_name = input; self
     }
     /// <p>The name of the stream on which to stop encrypting records.</p>
     pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +92,7 @@ impl StopStreamEncryptionInputBuilder {
     }
     /// <p>The encryption type. The only valid value is <code>KMS</code>.</p>
     pub fn set_encryption_type(mut self, input: ::std::option::Option<crate::types::EncryptionType>) -> Self {
-        self.encryption_type = input;
-        self
+        self.encryption_type = input; self
     }
     /// <p>The encryption type. The only valid value is <code>KMS</code>.</p>
     pub fn get_encryption_type(&self) -> &::std::option::Option<crate::types::EncryptionType> {
@@ -132,8 +130,7 @@ impl StopStreamEncryptionInputBuilder {
     /// <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code></p></li>
     /// </ul>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_id = input;
-        self
+        self.key_id = input; self
     }
     /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption. This value can be a globally unique identifier, a fully specified Amazon Resource Name (ARN) to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.</p>
     /// <ul>
@@ -158,23 +155,26 @@ impl StopStreamEncryptionInputBuilder {
     }
     /// <p>The ARN of the stream.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// <p>The ARN of the stream.</p>
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_arn
     }
     /// Consumes the builder and constructs a [`StopStreamEncryptionInput`](crate::operation::stop_stream_encryption::StopStreamEncryptionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::stop_stream_encryption::StopStreamEncryptionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::stop_stream_encryption::StopStreamEncryptionInput {
-            stream_name: self.stream_name,
-            encryption_type: self.encryption_type,
-            key_id: self.key_id,
-            stream_arn: self.stream_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_stream_encryption::StopStreamEncryptionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_stream_encryption::StopStreamEncryptionInput {
+                stream_name: self.stream_name
+                ,
+                encryption_type: self.encryption_type
+                ,
+                key_id: self.key_id
+                ,
+                stream_arn: self.stream_arn
+                ,
+            }
+        )
     }
 }
+

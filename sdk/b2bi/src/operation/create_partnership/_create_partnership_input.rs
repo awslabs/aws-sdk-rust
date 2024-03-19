@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreatePartnershipInput {
+pub struct CreatePartnershipInput  {
     /// <p>Specifies the unique, system-generated identifier for the profile connected to this partnership.</p>
     pub profile_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a descriptive name for the partnership.</p>
@@ -12,47 +12,49 @@ pub struct CreatePartnershipInput {
     /// <p>Specifies the phone number associated with the partnership.</p>
     pub phone: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a list of the capabilities associated with this partnership.</p>
-    pub capabilities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub capabilities: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Reserved for future use.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can attach this metadata to resources (capabilities, partnerships, and so on) for any purpose.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreatePartnershipInput {
+impl  CreatePartnershipInput  {
     /// <p>Specifies the unique, system-generated identifier for the profile connected to this partnership.</p>
-    pub fn profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn profile_id(&self) -> ::std::option::Option<& str> {
         self.profile_id.as_deref()
     }
     /// <p>Specifies a descriptive name for the partnership.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies the email address associated with this trading partner.</p>
-    pub fn email(&self) -> ::std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>Specifies the phone number associated with the partnership.</p>
-    pub fn phone(&self) -> ::std::option::Option<&str> {
+    pub fn phone(&self) -> ::std::option::Option<& str> {
         self.phone.as_deref()
     }
     /// <p>Specifies a list of the capabilities associated with this partnership.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capabilities.is_none()`.
-    pub fn capabilities(&self) -> &[::std::string::String] {
-        self.capabilities.as_deref().unwrap_or_default()
+    pub fn capabilities(&self) -> & [::std::string::String] {
+        self.capabilities.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Reserved for future use.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Specifies the key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can attach this metadata to resources (capabilities, partnerships, and so on) for any purpose.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for CreatePartnershipInput {
+impl  ::std::fmt::Debug for CreatePartnershipInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePartnershipInput");
         formatter.field("profile_id", &self.profile_id);
@@ -80,9 +82,9 @@ pub struct CreatePartnershipInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) email: ::std::option::Option<::std::string::String>,
     pub(crate) phone: ::std::option::Option<::std::string::String>,
-    pub(crate) capabilities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) capabilities: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreatePartnershipInputBuilder {
     /// <p>Specifies the unique, system-generated identifier for the profile connected to this partnership.</p>
@@ -93,8 +95,7 @@ impl CreatePartnershipInputBuilder {
     }
     /// <p>Specifies the unique, system-generated identifier for the profile connected to this partnership.</p>
     pub fn set_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_id = input;
-        self
+        self.profile_id = input; self
     }
     /// <p>Specifies the unique, system-generated identifier for the profile connected to this partnership.</p>
     pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +109,7 @@ impl CreatePartnershipInputBuilder {
     }
     /// <p>Specifies a descriptive name for the partnership.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Specifies a descriptive name for the partnership.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +123,7 @@ impl CreatePartnershipInputBuilder {
     }
     /// <p>Specifies the email address associated with this trading partner.</p>
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
     }
     /// <p>Specifies the email address associated with this trading partner.</p>
     pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,8 +136,7 @@ impl CreatePartnershipInputBuilder {
     }
     /// <p>Specifies the phone number associated with the partnership.</p>
     pub fn set_phone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone = input;
-        self
+        self.phone = input; self
     }
     /// <p>Specifies the phone number associated with the partnership.</p>
     pub fn get_phone(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,17 +149,16 @@ impl CreatePartnershipInputBuilder {
     /// <p>Specifies a list of the capabilities associated with this partnership.</p>
     pub fn capabilities(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.capabilities.unwrap_or_default();
-        v.push(input.into());
-        self.capabilities = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.capabilities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies a list of the capabilities associated with this partnership.</p>
-    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.capabilities = input;
-        self
+    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.capabilities = input; self
     }
     /// <p>Specifies a list of the capabilities associated with this partnership.</p>
-    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.capabilities
     }
     /// <p>Reserved for future use.</p>
@@ -171,8 +168,7 @@ impl CreatePartnershipInputBuilder {
     }
     /// <p>Reserved for future use.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Reserved for future use.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -185,32 +181,38 @@ impl CreatePartnershipInputBuilder {
     /// <p>Specifies the key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can attach this metadata to resources (capabilities, partnerships, and so on) for any purpose.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can attach this metadata to resources (capabilities, partnerships, and so on) for any purpose.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Specifies the key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can attach this metadata to resources (capabilities, partnerships, and so on) for any purpose.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreatePartnershipInput`](crate::operation::create_partnership::CreatePartnershipInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_partnership::CreatePartnershipInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_partnership::CreatePartnershipInput {
-            profile_id: self.profile_id,
-            name: self.name,
-            email: self.email,
-            phone: self.phone,
-            capabilities: self.capabilities,
-            client_token: self.client_token,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_partnership::CreatePartnershipInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_partnership::CreatePartnershipInput {
+                profile_id: self.profile_id
+                ,
+                name: self.name
+                ,
+                email: self.email
+                ,
+                phone: self.phone
+                ,
+                capabilities: self.capabilities
+                ,
+                client_token: self.client_token
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreatePartnershipInputBuilder {
@@ -226,3 +228,4 @@ impl ::std::fmt::Debug for CreatePartnershipInputBuilder {
         formatter.finish()
     }
 }
+

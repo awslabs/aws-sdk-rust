@@ -2,33 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLinkAttributesInput {
+pub struct GetLinkAttributesInput  {
     /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     pub directory_arn: ::std::option::Option<::std::string::String>,
     /// <p>Allows a typed link specifier to be accepted as input.</p>
     pub typed_link_specifier: ::std::option::Option<crate::types::TypedLinkSpecifier>,
     /// <p>A list of attribute names whose values will be retrieved.</p>
-    pub attribute_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub attribute_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The consistency level at which to retrieve the attributes on a typed link.</p>
     pub consistency_level: ::std::option::Option<crate::types::ConsistencyLevel>,
 }
-impl GetLinkAttributesInput {
+impl  GetLinkAttributesInput  {
     /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    pub fn directory_arn(&self) -> ::std::option::Option<&str> {
+    pub fn directory_arn(&self) -> ::std::option::Option<& str> {
         self.directory_arn.as_deref()
     }
     /// <p>Allows a typed link specifier to be accepted as input.</p>
-    pub fn typed_link_specifier(&self) -> ::std::option::Option<&crate::types::TypedLinkSpecifier> {
+    pub fn typed_link_specifier(&self) -> ::std::option::Option<& crate::types::TypedLinkSpecifier> {
         self.typed_link_specifier.as_ref()
     }
     /// <p>A list of attribute names whose values will be retrieved.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_names.is_none()`.
-    pub fn attribute_names(&self) -> &[::std::string::String] {
-        self.attribute_names.as_deref().unwrap_or_default()
+    pub fn attribute_names(&self) -> & [::std::string::String] {
+        self.attribute_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The consistency level at which to retrieve the attributes on a typed link.</p>
-    pub fn consistency_level(&self) -> ::std::option::Option<&crate::types::ConsistencyLevel> {
+    pub fn consistency_level(&self) -> ::std::option::Option<& crate::types::ConsistencyLevel> {
         self.consistency_level.as_ref()
     }
 }
@@ -45,7 +46,7 @@ impl GetLinkAttributesInput {
 pub struct GetLinkAttributesInputBuilder {
     pub(crate) directory_arn: ::std::option::Option<::std::string::String>,
     pub(crate) typed_link_specifier: ::std::option::Option<crate::types::TypedLinkSpecifier>,
-    pub(crate) attribute_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) attribute_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) consistency_level: ::std::option::Option<crate::types::ConsistencyLevel>,
 }
 impl GetLinkAttributesInputBuilder {
@@ -57,8 +58,7 @@ impl GetLinkAttributesInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_arn = input;
-        self
+        self.directory_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +72,7 @@ impl GetLinkAttributesInputBuilder {
     }
     /// <p>Allows a typed link specifier to be accepted as input.</p>
     pub fn set_typed_link_specifier(mut self, input: ::std::option::Option<crate::types::TypedLinkSpecifier>) -> Self {
-        self.typed_link_specifier = input;
-        self
+        self.typed_link_specifier = input; self
     }
     /// <p>Allows a typed link specifier to be accepted as input.</p>
     pub fn get_typed_link_specifier(&self) -> &::std::option::Option<crate::types::TypedLinkSpecifier> {
@@ -86,17 +85,16 @@ impl GetLinkAttributesInputBuilder {
     /// <p>A list of attribute names whose values will be retrieved.</p>
     pub fn attribute_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.attribute_names.unwrap_or_default();
-        v.push(input.into());
-        self.attribute_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.attribute_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of attribute names whose values will be retrieved.</p>
-    pub fn set_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.attribute_names = input;
-        self
+    pub fn set_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.attribute_names = input; self
     }
     /// <p>A list of attribute names whose values will be retrieved.</p>
-    pub fn get_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.attribute_names
     }
     /// <p>The consistency level at which to retrieve the attributes on a typed link.</p>
@@ -106,22 +104,26 @@ impl GetLinkAttributesInputBuilder {
     }
     /// <p>The consistency level at which to retrieve the attributes on a typed link.</p>
     pub fn set_consistency_level(mut self, input: ::std::option::Option<crate::types::ConsistencyLevel>) -> Self {
-        self.consistency_level = input;
-        self
+        self.consistency_level = input; self
     }
     /// <p>The consistency level at which to retrieve the attributes on a typed link.</p>
     pub fn get_consistency_level(&self) -> &::std::option::Option<crate::types::ConsistencyLevel> {
         &self.consistency_level
     }
     /// Consumes the builder and constructs a [`GetLinkAttributesInput`](crate::operation::get_link_attributes::GetLinkAttributesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_link_attributes::GetLinkAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_link_attributes::GetLinkAttributesInput {
-            directory_arn: self.directory_arn,
-            typed_link_specifier: self.typed_link_specifier,
-            attribute_names: self.attribute_names,
-            consistency_level: self.consistency_level,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_link_attributes::GetLinkAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_link_attributes::GetLinkAttributesInput {
+                directory_arn: self.directory_arn
+                ,
+                typed_link_specifier: self.typed_link_specifier
+                ,
+                attribute_names: self.attribute_names
+                ,
+                consistency_level: self.consistency_level
+                ,
+            }
+        )
     }
 }
+

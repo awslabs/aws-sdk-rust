@@ -14,7 +14,7 @@
 /// <p>To match the settings in this <code>Rule</code>, a request must originate from <code>192.0.2.44</code> AND include a <code>User-Agent</code> header for which the value is <code>BadBot</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Rule {
+pub struct Rule  {
     /// <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p>
     /// <p><code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
     pub rule_id: ::std::string::String,
@@ -23,27 +23,25 @@ pub struct Rule {
     /// <p>A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change <code>MetricName</code> after you create the <code>Rule</code>.</p>
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The <code>Predicates</code> object contains one <code>Predicate</code> element for each <code>ByteMatchSet</code>, <code>IPSet</code>, or <code>SqlInjectionMatchSet</code> object that you want to include in a <code>Rule</code>.</p>
-    pub predicates: ::std::vec::Vec<crate::types::Predicate>,
+    pub predicates: ::std::vec::Vec::<crate::types::Predicate>,
 }
-impl Rule {
+impl  Rule  {
     /// <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p>
     /// <p><code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
-    pub fn rule_id(&self) -> &str {
-        use std::ops::Deref;
-        self.rule_id.deref()
+    pub fn rule_id(&self) -> & str {
+        use std::ops::Deref; self.rule_id.deref()
     }
     /// <p>The friendly name or description for the <code>Rule</code>. You can't change the name of a <code>Rule</code> after you create it.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change <code>MetricName</code> after you create the <code>Rule</code>.</p>
-    pub fn metric_name(&self) -> ::std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The <code>Predicates</code> object contains one <code>Predicate</code> element for each <code>ByteMatchSet</code>, <code>IPSet</code>, or <code>SqlInjectionMatchSet</code> object that you want to include in a <code>Rule</code>.</p>
-    pub fn predicates(&self) -> &[crate::types::Predicate] {
-        use std::ops::Deref;
-        self.predicates.deref()
+    pub fn predicates(&self) -> & [crate::types::Predicate] {
+        use std::ops::Deref; self.predicates.deref()
     }
 }
 impl Rule {
@@ -60,7 +58,7 @@ pub struct RuleBuilder {
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
-    pub(crate) predicates: ::std::option::Option<::std::vec::Vec<crate::types::Predicate>>,
+    pub(crate) predicates: ::std::option::Option<::std::vec::Vec::<crate::types::Predicate>>,
 }
 impl RuleBuilder {
     /// <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p>
@@ -73,8 +71,7 @@ impl RuleBuilder {
     /// <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p>
     /// <p><code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
     pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_id = input;
-        self
+        self.rule_id = input; self
     }
     /// <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p>
     /// <p><code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
@@ -88,8 +85,7 @@ impl RuleBuilder {
     }
     /// <p>The friendly name or description for the <code>Rule</code>. You can't change the name of a <code>Rule</code> after you create it.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The friendly name or description for the <code>Rule</code>. You can't change the name of a <code>Rule</code> after you create it.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +98,7 @@ impl RuleBuilder {
     }
     /// <p>A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change <code>MetricName</code> after you create the <code>Rule</code>.</p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// <p>A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change <code>MetricName</code> after you create the <code>Rule</code>.</p>
     pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,17 +111,16 @@ impl RuleBuilder {
     /// <p>The <code>Predicates</code> object contains one <code>Predicate</code> element for each <code>ByteMatchSet</code>, <code>IPSet</code>, or <code>SqlInjectionMatchSet</code> object that you want to include in a <code>Rule</code>.</p>
     pub fn predicates(mut self, input: crate::types::Predicate) -> Self {
         let mut v = self.predicates.unwrap_or_default();
-        v.push(input);
-        self.predicates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.predicates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The <code>Predicates</code> object contains one <code>Predicate</code> element for each <code>ByteMatchSet</code>, <code>IPSet</code>, or <code>SqlInjectionMatchSet</code> object that you want to include in a <code>Rule</code>.</p>
-    pub fn set_predicates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Predicate>>) -> Self {
-        self.predicates = input;
-        self
+    pub fn set_predicates(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Predicate>>) -> Self {
+        self.predicates = input; self
     }
     /// <p>The <code>Predicates</code> object contains one <code>Predicate</code> element for each <code>ByteMatchSet</code>, <code>IPSet</code>, or <code>SqlInjectionMatchSet</code> object that you want to include in a <code>Rule</code>.</p>
-    pub fn get_predicates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Predicate>> {
+    pub fn get_predicates(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Predicate>> {
         &self.predicates
     }
     /// Consumes the builder and constructs a [`Rule`](crate::types::Rule).
@@ -134,21 +128,24 @@ impl RuleBuilder {
     /// - [`rule_id`](crate::types::builders::RuleBuilder::rule_id)
     /// - [`predicates`](crate::types::builders::RuleBuilder::predicates)
     pub fn build(self) -> ::std::result::Result<crate::types::Rule, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Rule {
-            rule_id: self.rule_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rule_id",
-                    "rule_id was not specified but it is required when building Rule",
-                )
-            })?,
-            name: self.name,
-            metric_name: self.metric_name,
-            predicates: self.predicates.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "predicates",
-                    "predicates was not specified but it is required when building Rule",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Rule {
+                rule_id: self.rule_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rule_id", "rule_id was not specified but it is required when building Rule")
+                    )?
+                ,
+                name: self.name
+                ,
+                metric_name: self.metric_name
+                ,
+                predicates: self.predicates
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("predicates", "predicates was not specified but it is required when building Rule")
+                    )?
+                ,
+            }
+        )
     }
 }
+

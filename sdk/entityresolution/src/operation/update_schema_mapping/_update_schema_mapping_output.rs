@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSchemaMappingOutput {
+pub struct UpdateSchemaMappingOutput  {
     /// <p>The name of the schema.</p>
     pub schema_name: ::std::string::String,
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>SchemaMapping</code>.</p>
@@ -10,35 +10,32 @@ pub struct UpdateSchemaMappingOutput {
     /// <p>A description of the schema.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information that Entity Resolution uses for matching.</p>
-    pub mapped_input_fields: ::std::vec::Vec<crate::types::SchemaInputAttribute>,
+    pub mapped_input_fields: ::std::vec::Vec::<crate::types::SchemaInputAttribute>,
     _request_id: Option<String>,
 }
-impl UpdateSchemaMappingOutput {
+impl  UpdateSchemaMappingOutput  {
     /// <p>The name of the schema.</p>
-    pub fn schema_name(&self) -> &str {
-        use std::ops::Deref;
-        self.schema_name.deref()
+    pub fn schema_name(&self) -> & str {
+        use std::ops::Deref; self.schema_name.deref()
     }
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>SchemaMapping</code>.</p>
-    pub fn schema_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.schema_arn.deref()
+    pub fn schema_arn(&self) -> & str {
+        use std::ops::Deref; self.schema_arn.deref()
     }
     /// <p>A description of the schema.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information that Entity Resolution uses for matching.</p>
-    pub fn mapped_input_fields(&self) -> &[crate::types::SchemaInputAttribute] {
-        use std::ops::Deref;
-        self.mapped_input_fields.deref()
+    pub fn mapped_input_fields(&self) -> & [crate::types::SchemaInputAttribute] {
+        use std::ops::Deref; self.mapped_input_fields.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateSchemaMappingOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateSchemaMappingOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSchemaMappingOutput`](crate::operation::update_schema_mapping::UpdateSchemaMappingOutput).
     pub fn builder() -> crate::operation::update_schema_mapping::builders::UpdateSchemaMappingOutputBuilder {
@@ -53,7 +50,7 @@ pub struct UpdateSchemaMappingOutputBuilder {
     pub(crate) schema_name: ::std::option::Option<::std::string::String>,
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) mapped_input_fields: ::std::option::Option<::std::vec::Vec<crate::types::SchemaInputAttribute>>,
+    pub(crate) mapped_input_fields: ::std::option::Option<::std::vec::Vec::<crate::types::SchemaInputAttribute>>,
     _request_id: Option<String>,
 }
 impl UpdateSchemaMappingOutputBuilder {
@@ -65,8 +62,7 @@ impl UpdateSchemaMappingOutputBuilder {
     }
     /// <p>The name of the schema.</p>
     pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_name = input;
-        self
+        self.schema_name = input; self
     }
     /// <p>The name of the schema.</p>
     pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl UpdateSchemaMappingOutputBuilder {
     }
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>SchemaMapping</code>.</p>
     pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_arn = input;
-        self
+        self.schema_arn = input; self
     }
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>SchemaMapping</code>.</p>
     pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +89,7 @@ impl UpdateSchemaMappingOutputBuilder {
     }
     /// <p>A description of the schema.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the schema.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,58 +102,55 @@ impl UpdateSchemaMappingOutputBuilder {
     /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information that Entity Resolution uses for matching.</p>
     pub fn mapped_input_fields(mut self, input: crate::types::SchemaInputAttribute) -> Self {
         let mut v = self.mapped_input_fields.unwrap_or_default();
-        v.push(input);
-        self.mapped_input_fields = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.mapped_input_fields = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information that Entity Resolution uses for matching.</p>
-    pub fn set_mapped_input_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaInputAttribute>>) -> Self {
-        self.mapped_input_fields = input;
-        self
+    pub fn set_mapped_input_fields(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SchemaInputAttribute>>) -> Self {
+        self.mapped_input_fields = input; self
     }
     /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information that Entity Resolution uses for matching.</p>
-    pub fn get_mapped_input_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaInputAttribute>> {
+    pub fn get_mapped_input_fields(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SchemaInputAttribute>> {
         &self.mapped_input_fields
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateSchemaMappingOutput`](crate::operation::update_schema_mapping::UpdateSchemaMappingOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`schema_name`](crate::operation::update_schema_mapping::builders::UpdateSchemaMappingOutputBuilder::schema_name)
     /// - [`schema_arn`](crate::operation::update_schema_mapping::builders::UpdateSchemaMappingOutputBuilder::schema_arn)
     /// - [`mapped_input_fields`](crate::operation::update_schema_mapping::builders::UpdateSchemaMappingOutputBuilder::mapped_input_fields)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_schema_mapping::UpdateSchemaMappingOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_schema_mapping::UpdateSchemaMappingOutput {
-            schema_name: self.schema_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "schema_name",
-                    "schema_name was not specified but it is required when building UpdateSchemaMappingOutput",
-                )
-            })?,
-            schema_arn: self.schema_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "schema_arn",
-                    "schema_arn was not specified but it is required when building UpdateSchemaMappingOutput",
-                )
-            })?,
-            description: self.description,
-            mapped_input_fields: self.mapped_input_fields.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "mapped_input_fields",
-                    "mapped_input_fields was not specified but it is required when building UpdateSchemaMappingOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_schema_mapping::UpdateSchemaMappingOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_schema_mapping::UpdateSchemaMappingOutput {
+                schema_name: self.schema_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("schema_name", "schema_name was not specified but it is required when building UpdateSchemaMappingOutput")
+                    )?
+                ,
+                schema_arn: self.schema_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("schema_arn", "schema_arn was not specified but it is required when building UpdateSchemaMappingOutput")
+                    )?
+                ,
+                description: self.description
+                ,
+                mapped_input_fields: self.mapped_input_fields
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("mapped_input_fields", "mapped_input_fields was not specified but it is required when building UpdateSchemaMappingOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

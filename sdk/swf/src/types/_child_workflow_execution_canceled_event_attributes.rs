@@ -3,7 +3,7 @@
 /// <p>Provide details of the <code>ChildWorkflowExecutionCanceled</code> event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChildWorkflowExecutionCanceledEventAttributes {
+pub struct ChildWorkflowExecutionCanceledEventAttributes  {
     /// <p>The child workflow execution that was canceled.</p>
     pub workflow_execution: ::std::option::Option<crate::types::WorkflowExecution>,
     /// <p>The type of the child workflow execution.</p>
@@ -15,17 +15,17 @@ pub struct ChildWorkflowExecutionCanceledEventAttributes {
     /// <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when this child workflow execution was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub started_event_id: i64,
 }
-impl ChildWorkflowExecutionCanceledEventAttributes {
+impl  ChildWorkflowExecutionCanceledEventAttributes  {
     /// <p>The child workflow execution that was canceled.</p>
-    pub fn workflow_execution(&self) -> ::std::option::Option<&crate::types::WorkflowExecution> {
+    pub fn workflow_execution(&self) -> ::std::option::Option<& crate::types::WorkflowExecution> {
         self.workflow_execution.as_ref()
     }
     /// <p>The type of the child workflow execution.</p>
-    pub fn workflow_type(&self) -> ::std::option::Option<&crate::types::WorkflowType> {
+    pub fn workflow_type(&self) -> ::std::option::Option<& crate::types::WorkflowType> {
         self.workflow_type.as_ref()
     }
     /// <p>Details of the cancellation (if provided).</p>
-    pub fn details(&self) -> ::std::option::Option<&str> {
+    pub fn details(&self) -> ::std::option::Option<& str> {
         self.details.as_deref()
     }
     /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <code>Decision</code> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
@@ -63,8 +63,7 @@ impl ChildWorkflowExecutionCanceledEventAttributesBuilder {
     }
     /// <p>The child workflow execution that was canceled.</p>
     pub fn set_workflow_execution(mut self, input: ::std::option::Option<crate::types::WorkflowExecution>) -> Self {
-        self.workflow_execution = input;
-        self
+        self.workflow_execution = input; self
     }
     /// <p>The child workflow execution that was canceled.</p>
     pub fn get_workflow_execution(&self) -> &::std::option::Option<crate::types::WorkflowExecution> {
@@ -78,8 +77,7 @@ impl ChildWorkflowExecutionCanceledEventAttributesBuilder {
     }
     /// <p>The type of the child workflow execution.</p>
     pub fn set_workflow_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
-        self.workflow_type = input;
-        self
+        self.workflow_type = input; self
     }
     /// <p>The type of the child workflow execution.</p>
     pub fn get_workflow_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
@@ -92,8 +90,7 @@ impl ChildWorkflowExecutionCanceledEventAttributesBuilder {
     }
     /// <p>Details of the cancellation (if provided).</p>
     pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.details = input;
-        self
+        self.details = input; self
     }
     /// <p>Details of the cancellation (if provided).</p>
     pub fn get_details(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +104,7 @@ impl ChildWorkflowExecutionCanceledEventAttributesBuilder {
     }
     /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <code>Decision</code> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn set_initiated_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.initiated_event_id = input;
-        self
+        self.initiated_event_id = input; self
     }
     /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <code>Decision</code> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn get_initiated_event_id(&self) -> &::std::option::Option<i64> {
@@ -122,8 +118,7 @@ impl ChildWorkflowExecutionCanceledEventAttributesBuilder {
     }
     /// <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when this child workflow execution was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn set_started_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.started_event_id = input;
-        self
+        self.started_event_id = input; self
     }
     /// <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when this child workflow execution was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn get_started_event_id(&self) -> &::std::option::Option<i64> {
@@ -132,11 +127,19 @@ impl ChildWorkflowExecutionCanceledEventAttributesBuilder {
     /// Consumes the builder and constructs a [`ChildWorkflowExecutionCanceledEventAttributes`](crate::types::ChildWorkflowExecutionCanceledEventAttributes).
     pub fn build(self) -> crate::types::ChildWorkflowExecutionCanceledEventAttributes {
         crate::types::ChildWorkflowExecutionCanceledEventAttributes {
-            workflow_execution: self.workflow_execution,
-            workflow_type: self.workflow_type,
-            details: self.details,
-            initiated_event_id: self.initiated_event_id.unwrap_or_default(),
-            started_event_id: self.started_event_id.unwrap_or_default(),
+            workflow_execution: self.workflow_execution
+            ,
+            workflow_type: self.workflow_type
+            ,
+            details: self.details
+            ,
+            initiated_event_id: self.initiated_event_id
+                .unwrap_or_default()
+            ,
+            started_event_id: self.started_event_id
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

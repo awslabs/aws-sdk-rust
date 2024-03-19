@@ -26,11 +26,7 @@ impl TranslationIsoFormats {
     /// Tries to convert the enum instance into [`IsoFormat0`](crate::types::TranslationIsoFormats::IsoFormat0), extracting the inner [`TranslationPinDataIsoFormat034`](crate::types::TranslationPinDataIsoFormat034).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_iso_format0(&self) -> ::std::result::Result<&crate::types::TranslationPinDataIsoFormat034, &Self> {
-        if let TranslationIsoFormats::IsoFormat0(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let TranslationIsoFormats::IsoFormat0(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`IsoFormat0`](crate::types::TranslationIsoFormats::IsoFormat0).
     pub fn is_iso_format0(&self) -> bool {
@@ -39,11 +35,7 @@ impl TranslationIsoFormats {
     /// Tries to convert the enum instance into [`IsoFormat1`](crate::types::TranslationIsoFormats::IsoFormat1), extracting the inner [`TranslationPinDataIsoFormat1`](crate::types::TranslationPinDataIsoFormat1).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_iso_format1(&self) -> ::std::result::Result<&crate::types::TranslationPinDataIsoFormat1, &Self> {
-        if let TranslationIsoFormats::IsoFormat1(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let TranslationIsoFormats::IsoFormat1(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`IsoFormat1`](crate::types::TranslationIsoFormats::IsoFormat1).
     pub fn is_iso_format1(&self) -> bool {
@@ -52,11 +44,7 @@ impl TranslationIsoFormats {
     /// Tries to convert the enum instance into [`IsoFormat3`](crate::types::TranslationIsoFormats::IsoFormat3), extracting the inner [`TranslationPinDataIsoFormat034`](crate::types::TranslationPinDataIsoFormat034).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_iso_format3(&self) -> ::std::result::Result<&crate::types::TranslationPinDataIsoFormat034, &Self> {
-        if let TranslationIsoFormats::IsoFormat3(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let TranslationIsoFormats::IsoFormat3(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`IsoFormat3`](crate::types::TranslationIsoFormats::IsoFormat3).
     pub fn is_iso_format3(&self) -> bool {
@@ -65,11 +53,7 @@ impl TranslationIsoFormats {
     /// Tries to convert the enum instance into [`IsoFormat4`](crate::types::TranslationIsoFormats::IsoFormat4), extracting the inner [`TranslationPinDataIsoFormat034`](crate::types::TranslationPinDataIsoFormat034).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_iso_format4(&self) -> ::std::result::Result<&crate::types::TranslationPinDataIsoFormat034, &Self> {
-        if let TranslationIsoFormats::IsoFormat4(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let TranslationIsoFormats::IsoFormat4(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`IsoFormat4`](crate::types::TranslationIsoFormats::IsoFormat4).
     pub fn is_iso_format4(&self) -> bool {
@@ -80,3 +64,4 @@ impl TranslationIsoFormats {
         matches!(self, Self::Unknown)
     }
 }
+

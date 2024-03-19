@@ -3,7 +3,7 @@
 /// <p>Provides configuration information about a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AliasConfiguration {
+pub struct AliasConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the alias.</p>
     pub alias_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the alias.</p>
@@ -17,29 +17,29 @@ pub struct AliasConfiguration {
     /// <p>A unique identifier that changes when you update the alias.</p>
     pub revision_id: ::std::option::Option<::std::string::String>,
 }
-impl AliasConfiguration {
+impl  AliasConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the alias.</p>
-    pub fn alias_arn(&self) -> ::std::option::Option<&str> {
+    pub fn alias_arn(&self) -> ::std::option::Option<& str> {
         self.alias_arn.as_deref()
     }
     /// <p>The name of the alias.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The function version that the alias invokes.</p>
-    pub fn function_version(&self) -> ::std::option::Option<&str> {
+    pub fn function_version(&self) -> ::std::option::Option<& str> {
         self.function_version.as_deref()
     }
     /// <p>A description of the alias.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
-    pub fn routing_config(&self) -> ::std::option::Option<&crate::types::AliasRoutingConfiguration> {
+    pub fn routing_config(&self) -> ::std::option::Option<& crate::types::AliasRoutingConfiguration> {
         self.routing_config.as_ref()
     }
     /// <p>A unique identifier that changes when you update the alias.</p>
-    pub fn revision_id(&self) -> ::std::option::Option<&str> {
+    pub fn revision_id(&self) -> ::std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl AliasConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the alias.</p>
     pub fn set_alias_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias_arn = input;
-        self
+        self.alias_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the alias.</p>
     pub fn get_alias_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl AliasConfigurationBuilder {
     }
     /// <p>The name of the alias.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the alias.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl AliasConfigurationBuilder {
     }
     /// <p>The function version that the alias invokes.</p>
     pub fn set_function_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_version = input;
-        self
+        self.function_version = input; self
     }
     /// <p>The function version that the alias invokes.</p>
     pub fn get_function_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl AliasConfigurationBuilder {
     }
     /// <p>A description of the alias.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the alias.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl AliasConfigurationBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
     pub fn set_routing_config(mut self, input: ::std::option::Option<crate::types::AliasRoutingConfiguration>) -> Self {
-        self.routing_config = input;
-        self
+        self.routing_config = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
     pub fn get_routing_config(&self) -> &::std::option::Option<crate::types::AliasRoutingConfiguration> {
@@ -139,8 +134,7 @@ impl AliasConfigurationBuilder {
     }
     /// <p>A unique identifier that changes when you update the alias.</p>
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
     }
     /// <p>A unique identifier that changes when you update the alias.</p>
     pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,12 +143,19 @@ impl AliasConfigurationBuilder {
     /// Consumes the builder and constructs a [`AliasConfiguration`](crate::types::AliasConfiguration).
     pub fn build(self) -> crate::types::AliasConfiguration {
         crate::types::AliasConfiguration {
-            alias_arn: self.alias_arn,
-            name: self.name,
-            function_version: self.function_version,
-            description: self.description,
-            routing_config: self.routing_config,
-            revision_id: self.revision_id,
+            alias_arn: self.alias_arn
+            ,
+            name: self.name
+            ,
+            function_version: self.function_version
+            ,
+            description: self.description
+            ,
+            routing_config: self.routing_config
+            ,
+            revision_id: self.revision_id
+            ,
         }
     }
 }
+

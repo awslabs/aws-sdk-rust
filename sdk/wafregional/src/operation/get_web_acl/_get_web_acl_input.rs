@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWebAclInput {
+pub struct GetWebAclInput  {
     /// <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to get. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
     pub web_acl_id: ::std::option::Option<::std::string::String>,
 }
-impl GetWebAclInput {
+impl  GetWebAclInput  {
     /// <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to get. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
-    pub fn web_acl_id(&self) -> ::std::option::Option<&str> {
+    pub fn web_acl_id(&self) -> ::std::option::Option<& str> {
         self.web_acl_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetWebAclInputBuilder {
     }
     /// <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to get. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
     pub fn set_web_acl_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.web_acl_id = input;
-        self
+        self.web_acl_id = input; self
     }
     /// <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to get. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
     pub fn get_web_acl_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl GetWebAclInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetWebAclInput`](crate::operation::get_web_acl::GetWebAclInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_web_acl::GetWebAclInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_web_acl::GetWebAclInput { web_acl_id: self.web_acl_id })
+        ::std::result::Result::Ok(
+            crate::operation::get_web_acl::GetWebAclInput {
+                web_acl_id: self.web_acl_id
+                ,
+            }
+        )
     }
 }
+

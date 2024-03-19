@@ -12,7 +12,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Limit {
+pub struct Limit  {
     /// <p>The name of the limit. The possible values are:</p>
     /// <ul>
     /// <li>
@@ -56,7 +56,7 @@ pub struct Limit {
     /// <p>The maximum value of the limit.</p>
     pub max: ::std::option::Option<::std::string::String>,
 }
-impl Limit {
+impl  Limit  {
     /// <p>The name of the limit. The possible values are:</p>
     /// <ul>
     /// <li>
@@ -96,11 +96,11 @@ impl Limit {
     /// <li>
     /// <p>targets-per-network-load-balancer</p></li>
     /// </ul>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The maximum value of the limit.</p>
-    pub fn max(&self) -> ::std::option::Option<&str> {
+    pub fn max(&self) -> ::std::option::Option<& str> {
         self.max.as_deref()
     }
 }
@@ -202,8 +202,7 @@ impl LimitBuilder {
     /// <p>targets-per-network-load-balancer</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the limit. The possible values are:</p>
     /// <ul>
@@ -254,8 +253,7 @@ impl LimitBuilder {
     }
     /// <p>The maximum value of the limit.</p>
     pub fn set_max(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.max = input;
-        self
+        self.max = input; self
     }
     /// <p>The maximum value of the limit.</p>
     pub fn get_max(&self) -> &::std::option::Option<::std::string::String> {
@@ -264,8 +262,11 @@ impl LimitBuilder {
     /// Consumes the builder and constructs a [`Limit`](crate::types::Limit).
     pub fn build(self) -> crate::types::Limit {
         crate::types::Limit {
-            name: self.name,
-            max: self.max,
+            name: self.name
+            ,
+            max: self.max
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetApiMappingsInput {
+pub struct GetApiMappingsInput  {
     /// <p>The domain name.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of elements to be returned for this resource.</p>
@@ -10,17 +10,17 @@ pub struct GetApiMappingsInput {
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl GetApiMappingsInput {
+impl  GetApiMappingsInput  {
     /// <p>The domain name.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The maximum number of elements to be returned for this resource.</p>
-    pub fn max_results(&self) -> ::std::option::Option<&str> {
+    pub fn max_results(&self) -> ::std::option::Option<& str> {
         self.max_results.as_deref()
     }
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl GetApiMappingsInputBuilder {
     }
     /// <p>The domain name.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The domain name.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl GetApiMappingsInputBuilder {
     }
     /// <p>The maximum number of elements to be returned for this resource.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of elements to be returned for this resource.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,21 +74,24 @@ impl GetApiMappingsInputBuilder {
     }
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetApiMappingsInput`](crate::operation::get_api_mappings::GetApiMappingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_api_mappings::GetApiMappingsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_api_mappings::GetApiMappingsInput {
-            domain_name: self.domain_name,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_api_mappings::GetApiMappingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_api_mappings::GetApiMappingsInput {
+                domain_name: self.domain_name
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

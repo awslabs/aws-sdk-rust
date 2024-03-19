@@ -3,7 +3,7 @@
 /// <p>Specifies limits on the messages that a journey can send and the number of times participants can enter a journey.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JourneyLimits {
+pub struct JourneyLimits  {
     /// <p>The maximum number of messages that the journey can send to a single participant during a 24-hour period. The maximum value is 100.</p>
     pub daily_cap: ::std::option::Option<i32>,
     /// <p>The maximum number of times that a participant can enter the journey. The maximum value is 100. To allow participants to enter the journey an unlimited number of times, set this value to 0.</p>
@@ -17,7 +17,7 @@ pub struct JourneyLimits {
     /// <p>The maximum number of messages a journey can sent to a single endpoint. The maximum value is 100. If set to 0, this limit will not apply.</p>
     pub total_cap: ::std::option::Option<i32>,
 }
-impl JourneyLimits {
+impl  JourneyLimits  {
     /// <p>The maximum number of messages that the journey can send to a single participant during a 24-hour period. The maximum value is 100.</p>
     pub fn daily_cap(&self) -> ::std::option::Option<i32> {
         self.daily_cap
@@ -31,11 +31,11 @@ impl JourneyLimits {
         self.messages_per_second
     }
     /// <p>Minimum time that must pass before an endpoint can re-enter a given journey. The duration should use an ISO 8601 format, such as PT1H.</p>
-    pub fn endpoint_reentry_interval(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_reentry_interval(&self) -> ::std::option::Option<& str> {
         self.endpoint_reentry_interval.as_deref()
     }
     /// <p>The number of messages that an endpoint can receive during the specified timeframe.</p>
-    pub fn timeframe_cap(&self) -> ::std::option::Option<&crate::types::JourneyTimeframeCap> {
+    pub fn timeframe_cap(&self) -> ::std::option::Option<& crate::types::JourneyTimeframeCap> {
         self.timeframe_cap.as_ref()
     }
     /// <p>The maximum number of messages a journey can sent to a single endpoint. The maximum value is 100. If set to 0, this limit will not apply.</p>
@@ -69,8 +69,7 @@ impl JourneyLimitsBuilder {
     }
     /// <p>The maximum number of messages that the journey can send to a single participant during a 24-hour period. The maximum value is 100.</p>
     pub fn set_daily_cap(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.daily_cap = input;
-        self
+        self.daily_cap = input; self
     }
     /// <p>The maximum number of messages that the journey can send to a single participant during a 24-hour period. The maximum value is 100.</p>
     pub fn get_daily_cap(&self) -> &::std::option::Option<i32> {
@@ -83,8 +82,7 @@ impl JourneyLimitsBuilder {
     }
     /// <p>The maximum number of times that a participant can enter the journey. The maximum value is 100. To allow participants to enter the journey an unlimited number of times, set this value to 0.</p>
     pub fn set_endpoint_reentry_cap(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.endpoint_reentry_cap = input;
-        self
+        self.endpoint_reentry_cap = input; self
     }
     /// <p>The maximum number of times that a participant can enter the journey. The maximum value is 100. To allow participants to enter the journey an unlimited number of times, set this value to 0.</p>
     pub fn get_endpoint_reentry_cap(&self) -> &::std::option::Option<i32> {
@@ -97,8 +95,7 @@ impl JourneyLimitsBuilder {
     }
     /// <p>The maximum number of messages that the journey can send each second.</p>
     pub fn set_messages_per_second(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.messages_per_second = input;
-        self
+        self.messages_per_second = input; self
     }
     /// <p>The maximum number of messages that the journey can send each second.</p>
     pub fn get_messages_per_second(&self) -> &::std::option::Option<i32> {
@@ -111,8 +108,7 @@ impl JourneyLimitsBuilder {
     }
     /// <p>Minimum time that must pass before an endpoint can re-enter a given journey. The duration should use an ISO 8601 format, such as PT1H.</p>
     pub fn set_endpoint_reentry_interval(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_reentry_interval = input;
-        self
+        self.endpoint_reentry_interval = input; self
     }
     /// <p>Minimum time that must pass before an endpoint can re-enter a given journey. The duration should use an ISO 8601 format, such as PT1H.</p>
     pub fn get_endpoint_reentry_interval(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl JourneyLimitsBuilder {
     }
     /// <p>The number of messages that an endpoint can receive during the specified timeframe.</p>
     pub fn set_timeframe_cap(mut self, input: ::std::option::Option<crate::types::JourneyTimeframeCap>) -> Self {
-        self.timeframe_cap = input;
-        self
+        self.timeframe_cap = input; self
     }
     /// <p>The number of messages that an endpoint can receive during the specified timeframe.</p>
     pub fn get_timeframe_cap(&self) -> &::std::option::Option<crate::types::JourneyTimeframeCap> {
@@ -139,8 +134,7 @@ impl JourneyLimitsBuilder {
     }
     /// <p>The maximum number of messages a journey can sent to a single endpoint. The maximum value is 100. If set to 0, this limit will not apply.</p>
     pub fn set_total_cap(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_cap = input;
-        self
+        self.total_cap = input; self
     }
     /// <p>The maximum number of messages a journey can sent to a single endpoint. The maximum value is 100. If set to 0, this limit will not apply.</p>
     pub fn get_total_cap(&self) -> &::std::option::Option<i32> {
@@ -149,12 +143,19 @@ impl JourneyLimitsBuilder {
     /// Consumes the builder and constructs a [`JourneyLimits`](crate::types::JourneyLimits).
     pub fn build(self) -> crate::types::JourneyLimits {
         crate::types::JourneyLimits {
-            daily_cap: self.daily_cap,
-            endpoint_reentry_cap: self.endpoint_reentry_cap,
-            messages_per_second: self.messages_per_second,
-            endpoint_reentry_interval: self.endpoint_reentry_interval,
-            timeframe_cap: self.timeframe_cap,
-            total_cap: self.total_cap,
+            daily_cap: self.daily_cap
+            ,
+            endpoint_reentry_cap: self.endpoint_reentry_cap
+            ,
+            messages_per_second: self.messages_per_second
+            ,
+            endpoint_reentry_interval: self.endpoint_reentry_interval
+            ,
+            timeframe_cap: self.timeframe_cap
+            ,
+            total_cap: self.total_cap
+            ,
         }
     }
 }
+

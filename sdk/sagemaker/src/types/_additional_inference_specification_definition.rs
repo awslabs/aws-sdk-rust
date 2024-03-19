@@ -3,60 +3,65 @@
 /// <p>A structure of additional Inference Specification. Additional Inference Specification specifies details about inference jobs that can be run with models based on this model package</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AdditionalInferenceSpecificationDefinition {
+pub struct AdditionalInferenceSpecificationDefinition  {
     /// <p>A unique name to identify the additional inference specification. The name must be unique within the list of your additional inference specifications for a particular model package.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the additional Inference specification</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon ECR registry path of the Docker image that contains the inference code.</p>
-    pub containers: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageContainerDefinition>>,
+    pub containers: ::std::option::Option<::std::vec::Vec::<crate::types::ModelPackageContainerDefinition>>,
     /// <p>A list of the instance types on which a transformation job can be run or on which an endpoint can be deployed.</p>
-    pub supported_transform_instance_types: ::std::option::Option<::std::vec::Vec<crate::types::TransformInstanceType>>,
+    pub supported_transform_instance_types: ::std::option::Option<::std::vec::Vec::<crate::types::TransformInstanceType>>,
     /// <p>A list of the instance types that are used to generate inferences in real-time.</p>
-    pub supported_realtime_inference_instance_types: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantInstanceType>>,
+    pub supported_realtime_inference_instance_types: ::std::option::Option<::std::vec::Vec::<crate::types::ProductionVariantInstanceType>>,
     /// <p>The supported MIME types for the input data.</p>
-    pub supported_content_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub supported_content_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The supported MIME types for the output data.</p>
-    pub supported_response_mime_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub supported_response_mime_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl AdditionalInferenceSpecificationDefinition {
+impl  AdditionalInferenceSpecificationDefinition  {
     /// <p>A unique name to identify the additional inference specification. The name must be unique within the list of your additional inference specifications for a particular model package.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the additional Inference specification</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon ECR registry path of the Docker image that contains the inference code.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.containers.is_none()`.
-    pub fn containers(&self) -> &[crate::types::ModelPackageContainerDefinition] {
-        self.containers.as_deref().unwrap_or_default()
+    pub fn containers(&self) -> & [crate::types::ModelPackageContainerDefinition] {
+        self.containers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of the instance types on which a transformation job can be run or on which an endpoint can be deployed.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_transform_instance_types.is_none()`.
-    pub fn supported_transform_instance_types(&self) -> &[crate::types::TransformInstanceType] {
-        self.supported_transform_instance_types.as_deref().unwrap_or_default()
+    pub fn supported_transform_instance_types(&self) -> & [crate::types::TransformInstanceType] {
+        self.supported_transform_instance_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of the instance types that are used to generate inferences in real-time.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_realtime_inference_instance_types.is_none()`.
-    pub fn supported_realtime_inference_instance_types(&self) -> &[crate::types::ProductionVariantInstanceType] {
-        self.supported_realtime_inference_instance_types.as_deref().unwrap_or_default()
+    pub fn supported_realtime_inference_instance_types(&self) -> & [crate::types::ProductionVariantInstanceType] {
+        self.supported_realtime_inference_instance_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The supported MIME types for the input data.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_content_types.is_none()`.
-    pub fn supported_content_types(&self) -> &[::std::string::String] {
-        self.supported_content_types.as_deref().unwrap_or_default()
+    pub fn supported_content_types(&self) -> & [::std::string::String] {
+        self.supported_content_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The supported MIME types for the output data.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_response_mime_types.is_none()`.
-    pub fn supported_response_mime_types(&self) -> &[::std::string::String] {
-        self.supported_response_mime_types.as_deref().unwrap_or_default()
+    pub fn supported_response_mime_types(&self) -> & [::std::string::String] {
+        self.supported_response_mime_types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AdditionalInferenceSpecificationDefinition {
@@ -72,11 +77,11 @@ impl AdditionalInferenceSpecificationDefinition {
 pub struct AdditionalInferenceSpecificationDefinitionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) containers: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageContainerDefinition>>,
-    pub(crate) supported_transform_instance_types: ::std::option::Option<::std::vec::Vec<crate::types::TransformInstanceType>>,
-    pub(crate) supported_realtime_inference_instance_types: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantInstanceType>>,
-    pub(crate) supported_content_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) supported_response_mime_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) containers: ::std::option::Option<::std::vec::Vec::<crate::types::ModelPackageContainerDefinition>>,
+    pub(crate) supported_transform_instance_types: ::std::option::Option<::std::vec::Vec::<crate::types::TransformInstanceType>>,
+    pub(crate) supported_realtime_inference_instance_types: ::std::option::Option<::std::vec::Vec::<crate::types::ProductionVariantInstanceType>>,
+    pub(crate) supported_content_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) supported_response_mime_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AdditionalInferenceSpecificationDefinitionBuilder {
     /// <p>A unique name to identify the additional inference specification. The name must be unique within the list of your additional inference specifications for a particular model package.</p>
@@ -87,8 +92,7 @@ impl AdditionalInferenceSpecificationDefinitionBuilder {
     }
     /// <p>A unique name to identify the additional inference specification. The name must be unique within the list of your additional inference specifications for a particular model package.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A unique name to identify the additional inference specification. The name must be unique within the list of your additional inference specifications for a particular model package.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +105,7 @@ impl AdditionalInferenceSpecificationDefinitionBuilder {
     }
     /// <p>A description of the additional Inference specification</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the additional Inference specification</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,17 +118,16 @@ impl AdditionalInferenceSpecificationDefinitionBuilder {
     /// <p>The Amazon ECR registry path of the Docker image that contains the inference code.</p>
     pub fn containers(mut self, input: crate::types::ModelPackageContainerDefinition) -> Self {
         let mut v = self.containers.unwrap_or_default();
-        v.push(input);
-        self.containers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.containers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon ECR registry path of the Docker image that contains the inference code.</p>
-    pub fn set_containers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageContainerDefinition>>) -> Self {
-        self.containers = input;
-        self
+    pub fn set_containers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ModelPackageContainerDefinition>>) -> Self {
+        self.containers = input; self
     }
     /// <p>The Amazon ECR registry path of the Docker image that contains the inference code.</p>
-    pub fn get_containers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelPackageContainerDefinition>> {
+    pub fn get_containers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ModelPackageContainerDefinition>> {
         &self.containers
     }
     /// Appends an item to `supported_transform_instance_types`.
@@ -135,20 +137,16 @@ impl AdditionalInferenceSpecificationDefinitionBuilder {
     /// <p>A list of the instance types on which a transformation job can be run or on which an endpoint can be deployed.</p>
     pub fn supported_transform_instance_types(mut self, input: crate::types::TransformInstanceType) -> Self {
         let mut v = self.supported_transform_instance_types.unwrap_or_default();
-        v.push(input);
-        self.supported_transform_instance_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_transform_instance_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the instance types on which a transformation job can be run or on which an endpoint can be deployed.</p>
-    pub fn set_supported_transform_instance_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TransformInstanceType>>,
-    ) -> Self {
-        self.supported_transform_instance_types = input;
-        self
+    pub fn set_supported_transform_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TransformInstanceType>>) -> Self {
+        self.supported_transform_instance_types = input; self
     }
     /// <p>A list of the instance types on which a transformation job can be run or on which an endpoint can be deployed.</p>
-    pub fn get_supported_transform_instance_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TransformInstanceType>> {
+    pub fn get_supported_transform_instance_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TransformInstanceType>> {
         &self.supported_transform_instance_types
     }
     /// Appends an item to `supported_realtime_inference_instance_types`.
@@ -158,22 +156,16 @@ impl AdditionalInferenceSpecificationDefinitionBuilder {
     /// <p>A list of the instance types that are used to generate inferences in real-time.</p>
     pub fn supported_realtime_inference_instance_types(mut self, input: crate::types::ProductionVariantInstanceType) -> Self {
         let mut v = self.supported_realtime_inference_instance_types.unwrap_or_default();
-        v.push(input);
-        self.supported_realtime_inference_instance_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_realtime_inference_instance_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the instance types that are used to generate inferences in real-time.</p>
-    pub fn set_supported_realtime_inference_instance_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantInstanceType>>,
-    ) -> Self {
-        self.supported_realtime_inference_instance_types = input;
-        self
+    pub fn set_supported_realtime_inference_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProductionVariantInstanceType>>) -> Self {
+        self.supported_realtime_inference_instance_types = input; self
     }
     /// <p>A list of the instance types that are used to generate inferences in real-time.</p>
-    pub fn get_supported_realtime_inference_instance_types(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantInstanceType>> {
+    pub fn get_supported_realtime_inference_instance_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProductionVariantInstanceType>> {
         &self.supported_realtime_inference_instance_types
     }
     /// Appends an item to `supported_content_types`.
@@ -183,17 +175,16 @@ impl AdditionalInferenceSpecificationDefinitionBuilder {
     /// <p>The supported MIME types for the input data.</p>
     pub fn supported_content_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_content_types.unwrap_or_default();
-        v.push(input.into());
-        self.supported_content_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.supported_content_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The supported MIME types for the input data.</p>
-    pub fn set_supported_content_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.supported_content_types = input;
-        self
+    pub fn set_supported_content_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.supported_content_types = input; self
     }
     /// <p>The supported MIME types for the input data.</p>
-    pub fn get_supported_content_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supported_content_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.supported_content_types
     }
     /// Appends an item to `supported_response_mime_types`.
@@ -203,29 +194,36 @@ impl AdditionalInferenceSpecificationDefinitionBuilder {
     /// <p>The supported MIME types for the output data.</p>
     pub fn supported_response_mime_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_response_mime_types.unwrap_or_default();
-        v.push(input.into());
-        self.supported_response_mime_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.supported_response_mime_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The supported MIME types for the output data.</p>
-    pub fn set_supported_response_mime_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.supported_response_mime_types = input;
-        self
+    pub fn set_supported_response_mime_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.supported_response_mime_types = input; self
     }
     /// <p>The supported MIME types for the output data.</p>
-    pub fn get_supported_response_mime_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supported_response_mime_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.supported_response_mime_types
     }
     /// Consumes the builder and constructs a [`AdditionalInferenceSpecificationDefinition`](crate::types::AdditionalInferenceSpecificationDefinition).
     pub fn build(self) -> crate::types::AdditionalInferenceSpecificationDefinition {
         crate::types::AdditionalInferenceSpecificationDefinition {
-            name: self.name,
-            description: self.description,
-            containers: self.containers,
-            supported_transform_instance_types: self.supported_transform_instance_types,
-            supported_realtime_inference_instance_types: self.supported_realtime_inference_instance_types,
-            supported_content_types: self.supported_content_types,
-            supported_response_mime_types: self.supported_response_mime_types,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            containers: self.containers
+            ,
+            supported_transform_instance_types: self.supported_transform_instance_types
+            ,
+            supported_realtime_inference_instance_types: self.supported_realtime_inference_instance_types
+            ,
+            supported_content_types: self.supported_content_types
+            ,
+            supported_response_mime_types: self.supported_response_mime_types
+            ,
         }
     }
 }
+

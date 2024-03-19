@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let conflicttype = unimplemented!();
 /// match conflicttype {
@@ -38,16 +38,14 @@
 /// Specifically, when `conflicttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConflictType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ConflictType {
     #[allow(missing_docs)] // documentation missing in model
     AnotherActiveStream,
@@ -71,96 +69,86 @@ pub enum ConflictType {
     SpeakerOptedOut,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ConflictType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ANOTHER_ACTIVE_STREAM" => ConflictType::AnotherActiveStream,
-            "CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT" => ConflictType::CannotChangeSpeakerAfterEnrollment,
-            "CANNOT_DELETE_NON_EMPTY_WATCHLIST" => ConflictType::CannotDeleteNonEmptyWatchlist,
-            "CONCURRENT_CHANGES" => ConflictType::ConcurrentChanges,
-            "DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES" => ConflictType::DomainLockedFromEncryptionUpdates,
-            "DOMAIN_NOT_ACTIVE" => ConflictType::DomainNotActive,
-            "ENROLLMENT_ALREADY_EXISTS" => ConflictType::EnrollmentAlreadyExists,
-            "FRAUDSTER_MUST_BELONG_TO_AT_LEAST_ONE_WATCHLIST" => ConflictType::FraudsterMustBelongToAtLeastOneWatchlist,
-            "SPEAKER_NOT_SET" => ConflictType::SpeakerNotSet,
-            "SPEAKER_OPTED_OUT" => ConflictType::SpeakerOptedOut,
-            other => ConflictType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ANOTHER_ACTIVE_STREAM" => ConflictType::AnotherActiveStream,
+"CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT" => ConflictType::CannotChangeSpeakerAfterEnrollment,
+"CANNOT_DELETE_NON_EMPTY_WATCHLIST" => ConflictType::CannotDeleteNonEmptyWatchlist,
+"CONCURRENT_CHANGES" => ConflictType::ConcurrentChanges,
+"DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES" => ConflictType::DomainLockedFromEncryptionUpdates,
+"DOMAIN_NOT_ACTIVE" => ConflictType::DomainNotActive,
+"ENROLLMENT_ALREADY_EXISTS" => ConflictType::EnrollmentAlreadyExists,
+"FRAUDSTER_MUST_BELONG_TO_AT_LEAST_ONE_WATCHLIST" => ConflictType::FraudsterMustBelongToAtLeastOneWatchlist,
+"SPEAKER_NOT_SET" => ConflictType::SpeakerNotSet,
+"SPEAKER_OPTED_OUT" => ConflictType::SpeakerOptedOut,
+other => ConflictType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ConflictType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ConflictType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ConflictType::from(s))
+                    }
+                }
 impl ConflictType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ConflictType::AnotherActiveStream => "ANOTHER_ACTIVE_STREAM",
-            ConflictType::CannotChangeSpeakerAfterEnrollment => "CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT",
-            ConflictType::CannotDeleteNonEmptyWatchlist => "CANNOT_DELETE_NON_EMPTY_WATCHLIST",
-            ConflictType::ConcurrentChanges => "CONCURRENT_CHANGES",
-            ConflictType::DomainLockedFromEncryptionUpdates => "DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES",
-            ConflictType::DomainNotActive => "DOMAIN_NOT_ACTIVE",
-            ConflictType::EnrollmentAlreadyExists => "ENROLLMENT_ALREADY_EXISTS",
-            ConflictType::FraudsterMustBelongToAtLeastOneWatchlist => "FRAUDSTER_MUST_BELONG_TO_AT_LEAST_ONE_WATCHLIST",
-            ConflictType::SpeakerNotSet => "SPEAKER_NOT_SET",
-            ConflictType::SpeakerOptedOut => "SPEAKER_OPTED_OUT",
-            ConflictType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ANOTHER_ACTIVE_STREAM",
-            "CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT",
-            "CANNOT_DELETE_NON_EMPTY_WATCHLIST",
-            "CONCURRENT_CHANGES",
-            "DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES",
-            "DOMAIN_NOT_ACTIVE",
-            "ENROLLMENT_ALREADY_EXISTS",
-            "FRAUDSTER_MUST_BELONG_TO_AT_LEAST_ONE_WATCHLIST",
-            "SPEAKER_NOT_SET",
-            "SPEAKER_OPTED_OUT",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ConflictType::AnotherActiveStream => "ANOTHER_ACTIVE_STREAM",
+    ConflictType::CannotChangeSpeakerAfterEnrollment => "CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT",
+    ConflictType::CannotDeleteNonEmptyWatchlist => "CANNOT_DELETE_NON_EMPTY_WATCHLIST",
+    ConflictType::ConcurrentChanges => "CONCURRENT_CHANGES",
+    ConflictType::DomainLockedFromEncryptionUpdates => "DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES",
+    ConflictType::DomainNotActive => "DOMAIN_NOT_ACTIVE",
+    ConflictType::EnrollmentAlreadyExists => "ENROLLMENT_ALREADY_EXISTS",
+    ConflictType::FraudsterMustBelongToAtLeastOneWatchlist => "FRAUDSTER_MUST_BELONG_TO_AT_LEAST_ONE_WATCHLIST",
+    ConflictType::SpeakerNotSet => "SPEAKER_NOT_SET",
+    ConflictType::SpeakerOptedOut => "SPEAKER_OPTED_OUT",
+    ConflictType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ANOTHER_ACTIVE_STREAM", "CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT", "CANNOT_DELETE_NON_EMPTY_WATCHLIST", "CONCURRENT_CHANGES", "DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES", "DOMAIN_NOT_ACTIVE", "ENROLLMENT_ALREADY_EXISTS", "FRAUDSTER_MUST_BELONG_TO_AT_LEAST_ONE_WATCHLIST", "SPEAKER_NOT_SET", "SPEAKER_OPTED_OUT"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ConflictType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ConflictType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ConflictType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ConflictType::AnotherActiveStream => write!(f, "ANOTHER_ACTIVE_STREAM"),
-            ConflictType::CannotChangeSpeakerAfterEnrollment => write!(f, "CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT"),
-            ConflictType::CannotDeleteNonEmptyWatchlist => write!(f, "CANNOT_DELETE_NON_EMPTY_WATCHLIST"),
-            ConflictType::ConcurrentChanges => write!(f, "CONCURRENT_CHANGES"),
-            ConflictType::DomainLockedFromEncryptionUpdates => write!(f, "DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES"),
-            ConflictType::DomainNotActive => write!(f, "DOMAIN_NOT_ACTIVE"),
-            ConflictType::EnrollmentAlreadyExists => write!(f, "ENROLLMENT_ALREADY_EXISTS"),
-            ConflictType::FraudsterMustBelongToAtLeastOneWatchlist => write!(f, "FRAUDSTER_MUST_BELONG_TO_AT_LEAST_ONE_WATCHLIST"),
-            ConflictType::SpeakerNotSet => write!(f, "SPEAKER_NOT_SET"),
-            ConflictType::SpeakerOptedOut => write!(f, "SPEAKER_OPTED_OUT"),
-            ConflictType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ConflictType::AnotherActiveStream => write!(f, "ANOTHER_ACTIVE_STREAM"),
+ConflictType::CannotChangeSpeakerAfterEnrollment => write!(f, "CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT"),
+ConflictType::CannotDeleteNonEmptyWatchlist => write!(f, "CANNOT_DELETE_NON_EMPTY_WATCHLIST"),
+ConflictType::ConcurrentChanges => write!(f, "CONCURRENT_CHANGES"),
+ConflictType::DomainLockedFromEncryptionUpdates => write!(f, "DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES"),
+ConflictType::DomainNotActive => write!(f, "DOMAIN_NOT_ACTIVE"),
+ConflictType::EnrollmentAlreadyExists => write!(f, "ENROLLMENT_ALREADY_EXISTS"),
+ConflictType::FraudsterMustBelongToAtLeastOneWatchlist => write!(f, "FRAUDSTER_MUST_BELONG_TO_AT_LEAST_ONE_WATCHLIST"),
+ConflictType::SpeakerNotSet => write!(f, "SPEAKER_NOT_SET"),
+ConflictType::SpeakerOptedOut => write!(f, "SPEAKER_OPTED_OUT"),
+ConflictType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

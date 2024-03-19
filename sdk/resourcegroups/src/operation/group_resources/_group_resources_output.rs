@@ -2,40 +2,43 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GroupResourcesOutput {
+pub struct GroupResourcesOutput  {
     /// <p>A list of ARNs of the resources that this operation successfully added to the group.</p>
-    pub succeeded: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub succeeded: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of ARNs of any resources that this operation failed to add to the group.</p>
-    pub failed: ::std::option::Option<::std::vec::Vec<crate::types::FailedResource>>,
+    pub failed: ::std::option::Option<::std::vec::Vec::<crate::types::FailedResource>>,
     /// <p>A list of ARNs of any resources that this operation is still in the process adding to the group. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array.</p>
-    pub pending: ::std::option::Option<::std::vec::Vec<crate::types::PendingResource>>,
+    pub pending: ::std::option::Option<::std::vec::Vec::<crate::types::PendingResource>>,
     _request_id: Option<String>,
 }
-impl GroupResourcesOutput {
+impl  GroupResourcesOutput  {
     /// <p>A list of ARNs of the resources that this operation successfully added to the group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.succeeded.is_none()`.
-    pub fn succeeded(&self) -> &[::std::string::String] {
-        self.succeeded.as_deref().unwrap_or_default()
+    pub fn succeeded(&self) -> & [::std::string::String] {
+        self.succeeded.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of ARNs of any resources that this operation failed to add to the group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed.is_none()`.
-    pub fn failed(&self) -> &[crate::types::FailedResource] {
-        self.failed.as_deref().unwrap_or_default()
+    pub fn failed(&self) -> & [crate::types::FailedResource] {
+        self.failed.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of ARNs of any resources that this operation is still in the process adding to the group. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pending.is_none()`.
-    pub fn pending(&self) -> &[crate::types::PendingResource] {
-        self.pending.as_deref().unwrap_or_default()
+    pub fn pending(&self) -> & [crate::types::PendingResource] {
+        self.pending.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GroupResourcesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GroupResourcesOutput {
     /// Creates a new builder-style object to manufacture [`GroupResourcesOutput`](crate::operation::group_resources::GroupResourcesOutput).
     pub fn builder() -> crate::operation::group_resources::builders::GroupResourcesOutputBuilder {
@@ -47,9 +50,9 @@ impl GroupResourcesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GroupResourcesOutputBuilder {
-    pub(crate) succeeded: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) failed: ::std::option::Option<::std::vec::Vec<crate::types::FailedResource>>,
-    pub(crate) pending: ::std::option::Option<::std::vec::Vec<crate::types::PendingResource>>,
+    pub(crate) succeeded: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) failed: ::std::option::Option<::std::vec::Vec::<crate::types::FailedResource>>,
+    pub(crate) pending: ::std::option::Option<::std::vec::Vec::<crate::types::PendingResource>>,
     _request_id: Option<String>,
 }
 impl GroupResourcesOutputBuilder {
@@ -60,17 +63,16 @@ impl GroupResourcesOutputBuilder {
     /// <p>A list of ARNs of the resources that this operation successfully added to the group.</p>
     pub fn succeeded(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.succeeded.unwrap_or_default();
-        v.push(input.into());
-        self.succeeded = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.succeeded = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of ARNs of the resources that this operation successfully added to the group.</p>
-    pub fn set_succeeded(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.succeeded = input;
-        self
+    pub fn set_succeeded(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.succeeded = input; self
     }
     /// <p>A list of ARNs of the resources that this operation successfully added to the group.</p>
-    pub fn get_succeeded(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_succeeded(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.succeeded
     }
     /// Appends an item to `failed`.
@@ -80,17 +82,16 @@ impl GroupResourcesOutputBuilder {
     /// <p>A list of ARNs of any resources that this operation failed to add to the group.</p>
     pub fn failed(mut self, input: crate::types::FailedResource) -> Self {
         let mut v = self.failed.unwrap_or_default();
-        v.push(input);
-        self.failed = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failed = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of ARNs of any resources that this operation failed to add to the group.</p>
-    pub fn set_failed(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FailedResource>>) -> Self {
-        self.failed = input;
-        self
+    pub fn set_failed(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FailedResource>>) -> Self {
+        self.failed = input; self
     }
     /// <p>A list of ARNs of any resources that this operation failed to add to the group.</p>
-    pub fn get_failed(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedResource>> {
+    pub fn get_failed(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FailedResource>> {
         &self.failed
     }
     /// Appends an item to `pending`.
@@ -100,35 +101,38 @@ impl GroupResourcesOutputBuilder {
     /// <p>A list of ARNs of any resources that this operation is still in the process adding to the group. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array.</p>
     pub fn pending(mut self, input: crate::types::PendingResource) -> Self {
         let mut v = self.pending.unwrap_or_default();
-        v.push(input);
-        self.pending = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.pending = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of ARNs of any resources that this operation is still in the process adding to the group. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array.</p>
-    pub fn set_pending(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PendingResource>>) -> Self {
-        self.pending = input;
-        self
+    pub fn set_pending(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PendingResource>>) -> Self {
+        self.pending = input; self
     }
     /// <p>A list of ARNs of any resources that this operation is still in the process adding to the group. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array.</p>
-    pub fn get_pending(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PendingResource>> {
+    pub fn get_pending(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PendingResource>> {
         &self.pending
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GroupResourcesOutput`](crate::operation::group_resources::GroupResourcesOutput).
     pub fn build(self) -> crate::operation::group_resources::GroupResourcesOutput {
         crate::operation::group_resources::GroupResourcesOutput {
-            succeeded: self.succeeded,
-            failed: self.failed,
-            pending: self.pending,
+            succeeded: self.succeeded
+            ,
+            failed: self.failed
+            ,
+            pending: self.pending
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

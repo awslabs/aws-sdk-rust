@@ -3,15 +3,15 @@
 /// <p>Represents a request to return a list of sending authorization policies that are attached to an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListIdentityPoliciesInput {
+pub struct ListIdentityPoliciesInput  {
     /// <p>The identity that is associated with the policy for which the policies are listed. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     /// <p>To successfully call this operation, you must own the identity.</p>
     pub identity: ::std::option::Option<::std::string::String>,
 }
-impl ListIdentityPoliciesInput {
+impl  ListIdentityPoliciesInput  {
     /// <p>The identity that is associated with the policy for which the policies are listed. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     /// <p>To successfully call this operation, you must own the identity.</p>
-    pub fn identity(&self) -> ::std::option::Option<&str> {
+    pub fn identity(&self) -> ::std::option::Option<& str> {
         self.identity.as_deref()
     }
 }
@@ -39,8 +39,7 @@ impl ListIdentityPoliciesInputBuilder {
     /// <p>The identity that is associated with the policy for which the policies are listed. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     /// <p>To successfully call this operation, you must own the identity.</p>
     pub fn set_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity = input;
-        self
+        self.identity = input; self
     }
     /// <p>The identity that is associated with the policy for which the policies are listed. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     /// <p>To successfully call this operation, you must own the identity.</p>
@@ -48,10 +47,13 @@ impl ListIdentityPoliciesInputBuilder {
         &self.identity
     }
     /// Consumes the builder and constructs a [`ListIdentityPoliciesInput`](crate::operation::list_identity_policies::ListIdentityPoliciesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_identity_policies::ListIdentityPoliciesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_identity_policies::ListIdentityPoliciesInput { identity: self.identity })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_identity_policies::ListIdentityPoliciesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_identity_policies::ListIdentityPoliciesInput {
+                identity: self.identity
+                ,
+            }
+        )
     }
 }
+

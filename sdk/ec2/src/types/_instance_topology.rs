@@ -3,7 +3,7 @@
 /// <p>Information about the instance topology.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceTopology {
+pub struct InstanceTopology  {
     /// <p>The instance ID.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance type.</p>
@@ -11,37 +11,38 @@ pub struct InstanceTopology {
     /// <p>The name of the placement group that the instance is in.</p>
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The network nodes. The nodes are hashed based on your account. Instances from different accounts running under the same server will return a different hashed list of strings.</p>
-    pub network_nodes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub network_nodes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The name of the Availability Zone or Local Zone that the instance is in.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Availability Zone or Local Zone that the instance is in.</p>
     pub zone_id: ::std::option::Option<::std::string::String>,
 }
-impl InstanceTopology {
+impl  InstanceTopology  {
     /// <p>The instance ID.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The instance type.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The name of the placement group that the instance is in.</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>The network nodes. The nodes are hashed based on your account. Instances from different accounts running under the same server will return a different hashed list of strings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_nodes.is_none()`.
-    pub fn network_nodes(&self) -> &[::std::string::String] {
-        self.network_nodes.as_deref().unwrap_or_default()
+    pub fn network_nodes(&self) -> & [::std::string::String] {
+        self.network_nodes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the Availability Zone or Local Zone that the instance is in.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The ID of the Availability Zone or Local Zone that the instance is in.</p>
-    pub fn zone_id(&self) -> ::std::option::Option<&str> {
+    pub fn zone_id(&self) -> ::std::option::Option<& str> {
         self.zone_id.as_deref()
     }
 }
@@ -59,7 +60,7 @@ pub struct InstanceTopologyBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) network_nodes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) network_nodes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) zone_id: ::std::option::Option<::std::string::String>,
 }
@@ -71,8 +72,7 @@ impl InstanceTopologyBuilder {
     }
     /// <p>The instance ID.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The instance ID.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +85,7 @@ impl InstanceTopologyBuilder {
     }
     /// <p>The instance type.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The instance type.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +98,7 @@ impl InstanceTopologyBuilder {
     }
     /// <p>The name of the placement group that the instance is in.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>The name of the placement group that the instance is in.</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,17 +111,16 @@ impl InstanceTopologyBuilder {
     /// <p>The network nodes. The nodes are hashed based on your account. Instances from different accounts running under the same server will return a different hashed list of strings.</p>
     pub fn network_nodes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.network_nodes.unwrap_or_default();
-        v.push(input.into());
-        self.network_nodes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.network_nodes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The network nodes. The nodes are hashed based on your account. Instances from different accounts running under the same server will return a different hashed list of strings.</p>
-    pub fn set_network_nodes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.network_nodes = input;
-        self
+    pub fn set_network_nodes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.network_nodes = input; self
     }
     /// <p>The network nodes. The nodes are hashed based on your account. Instances from different accounts running under the same server will return a different hashed list of strings.</p>
-    pub fn get_network_nodes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_network_nodes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.network_nodes
     }
     /// <p>The name of the Availability Zone or Local Zone that the instance is in.</p>
@@ -133,8 +130,7 @@ impl InstanceTopologyBuilder {
     }
     /// <p>The name of the Availability Zone or Local Zone that the instance is in.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// <p>The name of the Availability Zone or Local Zone that the instance is in.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +143,7 @@ impl InstanceTopologyBuilder {
     }
     /// <p>The ID of the Availability Zone or Local Zone that the instance is in.</p>
     pub fn set_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.zone_id = input;
-        self
+        self.zone_id = input; self
     }
     /// <p>The ID of the Availability Zone or Local Zone that the instance is in.</p>
     pub fn get_zone_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,12 +152,19 @@ impl InstanceTopologyBuilder {
     /// Consumes the builder and constructs a [`InstanceTopology`](crate::types::InstanceTopology).
     pub fn build(self) -> crate::types::InstanceTopology {
         crate::types::InstanceTopology {
-            instance_id: self.instance_id,
-            instance_type: self.instance_type,
-            group_name: self.group_name,
-            network_nodes: self.network_nodes,
-            availability_zone: self.availability_zone,
-            zone_id: self.zone_id,
+            instance_id: self.instance_id
+            ,
+            instance_type: self.instance_type
+            ,
+            group_name: self.group_name
+            ,
+            network_nodes: self.network_nodes
+            ,
+            availability_zone: self.availability_zone
+            ,
+            zone_id: self.zone_id
+            ,
         }
     }
 }
+

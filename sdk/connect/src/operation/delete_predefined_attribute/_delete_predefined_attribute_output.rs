@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePredefinedAttributeOutput {
+pub struct DeletePredefinedAttributeOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for DeletePredefinedAttributeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeletePredefinedAttributeOutput {
     /// Creates a new builder-style object to manufacture [`DeletePredefinedAttributeOutput`](crate::operation::delete_predefined_attribute::DeletePredefinedAttributeOutput).
     pub fn builder() -> crate::operation::delete_predefined_attribute::builders::DeletePredefinedAttributeOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DeletePredefinedAttributeOutputBuilder {
 }
 impl DeletePredefinedAttributeOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeletePredefinedAttributeOutput`](crate::operation::delete_predefined_attribute::DeletePredefinedAttributeOutput).
     pub fn build(self) -> crate::operation::delete_predefined_attribute::DeletePredefinedAttributeOutput {
         crate::operation::delete_predefined_attribute::DeletePredefinedAttributeOutput {
@@ -40,3 +40,4 @@ impl DeletePredefinedAttributeOutputBuilder {
         }
     }
 }
+

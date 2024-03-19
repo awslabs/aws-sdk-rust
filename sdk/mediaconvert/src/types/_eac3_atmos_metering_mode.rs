@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let eac3atmosmeteringmode = unimplemented!();
 /// match eac3atmosmeteringmode {
@@ -33,16 +33,14 @@
 /// Specifically, when `eac3atmosmeteringmode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Eac3AtmosMeteringMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Choose how the service meters the loudness of your audio.
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum Eac3AtmosMeteringMode {
     #[allow(missing_docs)] // documentation missing in model
     ItuBs17701,
@@ -56,70 +54,71 @@ pub enum Eac3AtmosMeteringMode {
     LeqA,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for Eac3AtmosMeteringMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ITU_BS_1770_1" => Eac3AtmosMeteringMode::ItuBs17701,
-            "ITU_BS_1770_2" => Eac3AtmosMeteringMode::ItuBs17702,
-            "ITU_BS_1770_3" => Eac3AtmosMeteringMode::ItuBs17703,
-            "ITU_BS_1770_4" => Eac3AtmosMeteringMode::ItuBs17704,
-            "LEQ_A" => Eac3AtmosMeteringMode::LeqA,
-            other => Eac3AtmosMeteringMode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ITU_BS_1770_1" => Eac3AtmosMeteringMode::ItuBs17701,
+"ITU_BS_1770_2" => Eac3AtmosMeteringMode::ItuBs17702,
+"ITU_BS_1770_3" => Eac3AtmosMeteringMode::ItuBs17703,
+"ITU_BS_1770_4" => Eac3AtmosMeteringMode::ItuBs17704,
+"LEQ_A" => Eac3AtmosMeteringMode::LeqA,
+other => Eac3AtmosMeteringMode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for Eac3AtmosMeteringMode {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(Eac3AtmosMeteringMode::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(Eac3AtmosMeteringMode::from(s))
+                    }
+                }
 impl Eac3AtmosMeteringMode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Eac3AtmosMeteringMode::ItuBs17701 => "ITU_BS_1770_1",
-            Eac3AtmosMeteringMode::ItuBs17702 => "ITU_BS_1770_2",
-            Eac3AtmosMeteringMode::ItuBs17703 => "ITU_BS_1770_3",
-            Eac3AtmosMeteringMode::ItuBs17704 => "ITU_BS_1770_4",
-            Eac3AtmosMeteringMode::LeqA => "LEQ_A",
-            Eac3AtmosMeteringMode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["ITU_BS_1770_1", "ITU_BS_1770_2", "ITU_BS_1770_3", "ITU_BS_1770_4", "LEQ_A"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Eac3AtmosMeteringMode::ItuBs17701 => "ITU_BS_1770_1",
+    Eac3AtmosMeteringMode::ItuBs17702 => "ITU_BS_1770_2",
+    Eac3AtmosMeteringMode::ItuBs17703 => "ITU_BS_1770_3",
+    Eac3AtmosMeteringMode::ItuBs17704 => "ITU_BS_1770_4",
+    Eac3AtmosMeteringMode::LeqA => "LEQ_A",
+    Eac3AtmosMeteringMode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ITU_BS_1770_1", "ITU_BS_1770_2", "ITU_BS_1770_3", "ITU_BS_1770_4", "LEQ_A"]
+                }
+            }
 impl ::std::convert::AsRef<str> for Eac3AtmosMeteringMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl Eac3AtmosMeteringMode {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for Eac3AtmosMeteringMode {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            Eac3AtmosMeteringMode::ItuBs17701 => write!(f, "ITU_BS_1770_1"),
-            Eac3AtmosMeteringMode::ItuBs17702 => write!(f, "ITU_BS_1770_2"),
-            Eac3AtmosMeteringMode::ItuBs17703 => write!(f, "ITU_BS_1770_3"),
-            Eac3AtmosMeteringMode::ItuBs17704 => write!(f, "ITU_BS_1770_4"),
-            Eac3AtmosMeteringMode::LeqA => write!(f, "LEQ_A"),
-            Eac3AtmosMeteringMode::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                Eac3AtmosMeteringMode::ItuBs17701 => write!(f, "ITU_BS_1770_1"),
+Eac3AtmosMeteringMode::ItuBs17702 => write!(f, "ITU_BS_1770_2"),
+Eac3AtmosMeteringMode::ItuBs17703 => write!(f, "ITU_BS_1770_3"),
+Eac3AtmosMeteringMode::ItuBs17704 => write!(f, "ITU_BS_1770_4"),
+Eac3AtmosMeteringMode::LeqA => write!(f, "LEQ_A"),
+Eac3AtmosMeteringMode::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

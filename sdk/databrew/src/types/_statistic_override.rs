@@ -3,20 +3,19 @@
 /// <p>Override of a particular evaluation for a profile job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StatisticOverride {
+pub struct StatisticOverride  {
     /// <p>The name of an evaluation</p>
     pub statistic: ::std::string::String,
     /// <p>A map that includes overrides of an evaluation’s parameters.</p>
-    pub parameters: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    pub parameters: ::std::collections::HashMap::<::std::string::String, ::std::string::String>,
 }
-impl StatisticOverride {
+impl  StatisticOverride  {
     /// <p>The name of an evaluation</p>
-    pub fn statistic(&self) -> &str {
-        use std::ops::Deref;
-        self.statistic.deref()
+    pub fn statistic(&self) -> & str {
+        use std::ops::Deref; self.statistic.deref()
     }
     /// <p>A map that includes overrides of an evaluation’s parameters.</p>
-    pub fn parameters(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+    pub fn parameters(&self) -> & ::std::collections::HashMap::<::std::string::String, ::std::string::String> {
         &self.parameters
     }
 }
@@ -32,7 +31,7 @@ impl StatisticOverride {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StatisticOverrideBuilder {
     pub(crate) statistic: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl StatisticOverrideBuilder {
     /// <p>The name of an evaluation</p>
@@ -43,8 +42,7 @@ impl StatisticOverrideBuilder {
     }
     /// <p>The name of an evaluation</p>
     pub fn set_statistic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.statistic = input;
-        self
+        self.statistic = input; self
     }
     /// <p>The name of an evaluation</p>
     pub fn get_statistic(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,17 +55,16 @@ impl StatisticOverrideBuilder {
     /// <p>A map that includes overrides of an evaluation’s parameters.</p>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map that includes overrides of an evaluation’s parameters.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>A map that includes overrides of an evaluation’s parameters.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`StatisticOverride`](crate::types::StatisticOverride).
@@ -75,19 +72,20 @@ impl StatisticOverrideBuilder {
     /// - [`statistic`](crate::types::builders::StatisticOverrideBuilder::statistic)
     /// - [`parameters`](crate::types::builders::StatisticOverrideBuilder::parameters)
     pub fn build(self) -> ::std::result::Result<crate::types::StatisticOverride, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StatisticOverride {
-            statistic: self.statistic.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "statistic",
-                    "statistic was not specified but it is required when building StatisticOverride",
-                )
-            })?,
-            parameters: self.parameters.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "parameters",
-                    "parameters was not specified but it is required when building StatisticOverride",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::StatisticOverride {
+                statistic: self.statistic
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("statistic", "statistic was not specified but it is required when building StatisticOverride")
+                    )?
+                ,
+                parameters: self.parameters
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("parameters", "parameters was not specified but it is required when building StatisticOverride")
+                    )?
+                ,
+            }
+        )
     }
 }
+

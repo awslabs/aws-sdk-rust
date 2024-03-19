@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPresetsOutput {
+pub struct ListPresetsOutput  {
     /// Use this string to request the next batch of presets.
     pub next_token: ::std::option::Option<::std::string::String>,
     /// List of presets
-    pub presets: ::std::option::Option<::std::vec::Vec<crate::types::Preset>>,
+    pub presets: ::std::option::Option<::std::vec::Vec::<crate::types::Preset>>,
     _request_id: Option<String>,
 }
-impl ListPresetsOutput {
+impl  ListPresetsOutput  {
     /// Use this string to request the next batch of presets.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// List of presets
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.presets.is_none()`.
-    pub fn presets(&self) -> &[crate::types::Preset] {
-        self.presets.as_deref().unwrap_or_default()
+    pub fn presets(&self) -> & [crate::types::Preset] {
+        self.presets.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListPresetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListPresetsOutput {
     /// Creates a new builder-style object to manufacture [`ListPresetsOutput`](crate::operation::list_presets::ListPresetsOutput).
     pub fn builder() -> crate::operation::list_presets::builders::ListPresetsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListPresetsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPresetsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) presets: ::std::option::Option<::std::vec::Vec<crate::types::Preset>>,
+    pub(crate) presets: ::std::option::Option<::std::vec::Vec::<crate::types::Preset>>,
     _request_id: Option<String>,
 }
 impl ListPresetsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListPresetsOutputBuilder {
     }
     /// Use this string to request the next batch of presets.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Use this string to request the next batch of presets.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListPresetsOutputBuilder {
     /// List of presets
     pub fn presets(mut self, input: crate::types::Preset) -> Self {
         let mut v = self.presets.unwrap_or_default();
-        v.push(input);
-        self.presets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.presets = ::std::option::Option::Some(v);
+                        self
     }
     /// List of presets
-    pub fn set_presets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Preset>>) -> Self {
-        self.presets = input;
-        self
+    pub fn set_presets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Preset>>) -> Self {
+        self.presets = input; self
     }
     /// List of presets
-    pub fn get_presets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Preset>> {
+    pub fn get_presets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Preset>> {
         &self.presets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListPresetsOutput`](crate::operation::list_presets::ListPresetsOutput).
     pub fn build(self) -> crate::operation::list_presets::ListPresetsOutput {
         crate::operation::list_presets::ListPresetsOutput {
-            next_token: self.next_token,
-            presets: self.presets,
+            next_token: self.next_token
+            ,
+            presets: self.presets
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

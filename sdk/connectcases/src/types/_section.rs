@@ -21,11 +21,7 @@ impl Section {
     /// Tries to convert the enum instance into [`FieldGroup`](crate::types::Section::FieldGroup), extracting the inner [`FieldGroup`](crate::types::FieldGroup).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_field_group(&self) -> ::std::result::Result<&crate::types::FieldGroup, &Self> {
-        if let Section::FieldGroup(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Section::FieldGroup(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`FieldGroup`](crate::types::Section::FieldGroup).
     pub fn is_field_group(&self) -> bool {
@@ -36,3 +32,4 @@ impl Section {
         matches!(self, Self::Unknown)
     }
 }
+

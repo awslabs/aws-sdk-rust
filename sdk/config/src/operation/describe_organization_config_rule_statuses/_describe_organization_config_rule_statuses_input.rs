@@ -2,27 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeOrganizationConfigRuleStatusesInput {
+pub struct DescribeOrganizationConfigRuleStatusesInput  {
     /// <p>The names of organization Config rules for which you want status details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
-    pub organization_config_rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub organization_config_rule_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The maximum number of <code>OrganizationConfigRuleStatuses</code> returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
     pub limit: ::std::option::Option<i32>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeOrganizationConfigRuleStatusesInput {
+impl  DescribeOrganizationConfigRuleStatusesInput  {
     /// <p>The names of organization Config rules for which you want status details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organization_config_rule_names.is_none()`.
-    pub fn organization_config_rule_names(&self) -> &[::std::string::String] {
-        self.organization_config_rule_names.as_deref().unwrap_or_default()
+    pub fn organization_config_rule_names(&self) -> & [::std::string::String] {
+        self.organization_config_rule_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of <code>OrganizationConfigRuleStatuses</code> returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -37,7 +38,7 @@ impl DescribeOrganizationConfigRuleStatusesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOrganizationConfigRuleStatusesInputBuilder {
-    pub(crate) organization_config_rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) organization_config_rule_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -49,17 +50,16 @@ impl DescribeOrganizationConfigRuleStatusesInputBuilder {
     /// <p>The names of organization Config rules for which you want status details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
     pub fn organization_config_rule_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.organization_config_rule_names.unwrap_or_default();
-        v.push(input.into());
-        self.organization_config_rule_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.organization_config_rule_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of organization Config rules for which you want status details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
-    pub fn set_organization_config_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.organization_config_rule_names = input;
-        self
+    pub fn set_organization_config_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.organization_config_rule_names = input; self
     }
     /// <p>The names of organization Config rules for which you want status details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
-    pub fn get_organization_config_rule_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_organization_config_rule_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.organization_config_rule_names
     }
     /// <p>The maximum number of <code>OrganizationConfigRuleStatuses</code> returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
@@ -69,8 +69,7 @@ impl DescribeOrganizationConfigRuleStatusesInputBuilder {
     }
     /// <p>The maximum number of <code>OrganizationConfigRuleStatuses</code> returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of <code>OrganizationConfigRuleStatuses</code> returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
@@ -83,26 +82,24 @@ impl DescribeOrganizationConfigRuleStatusesInputBuilder {
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeOrganizationConfigRuleStatusesInput`](crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesInput {
-                organization_config_rule_names: self.organization_config_rule_names,
-                limit: self.limit,
-                next_token: self.next_token,
-            },
+                organization_config_rule_names: self.organization_config_rule_names
+                ,
+                limit: self.limit
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

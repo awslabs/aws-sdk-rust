@@ -3,13 +3,13 @@
 /// <p>Specifies the location of ML model data to deploy. If specified, you must specify one and only one of the available data sources.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModelDataSource {
+pub struct ModelDataSource  {
     /// <p>Specifies the S3 location of ML model data to deploy.</p>
     pub s3_data_source: ::std::option::Option<crate::types::S3ModelDataSource>,
 }
-impl ModelDataSource {
+impl  ModelDataSource  {
     /// <p>Specifies the S3 location of ML model data to deploy.</p>
-    pub fn s3_data_source(&self) -> ::std::option::Option<&crate::types::S3ModelDataSource> {
+    pub fn s3_data_source(&self) -> ::std::option::Option<& crate::types::S3ModelDataSource> {
         self.s3_data_source.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ModelDataSourceBuilder {
     }
     /// <p>Specifies the S3 location of ML model data to deploy.</p>
     pub fn set_s3_data_source(mut self, input: ::std::option::Option<crate::types::S3ModelDataSource>) -> Self {
-        self.s3_data_source = input;
-        self
+        self.s3_data_source = input; self
     }
     /// <p>Specifies the S3 location of ML model data to deploy.</p>
     pub fn get_s3_data_source(&self) -> &::std::option::Option<crate::types::S3ModelDataSource> {
@@ -44,7 +43,9 @@ impl ModelDataSourceBuilder {
     /// Consumes the builder and constructs a [`ModelDataSource`](crate::types::ModelDataSource).
     pub fn build(self) -> crate::types::ModelDataSource {
         crate::types::ModelDataSource {
-            s3_data_source: self.s3_data_source,
+            s3_data_source: self.s3_data_source
+            ,
         }
     }
 }
+

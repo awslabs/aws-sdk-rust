@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateFromAdministratorAccountInput {
+pub struct DisassociateFromAdministratorAccountInput  {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
 }
-impl DisassociateFromAdministratorAccountInput {
+impl  DisassociateFromAdministratorAccountInput  {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
-    pub fn detector_id(&self) -> ::std::option::Option<&str> {
+    pub fn detector_id(&self) -> ::std::option::Option<& str> {
         self.detector_id.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl DisassociateFromAdministratorAccountInputBuilder {
     }
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
     }
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.detector_id
     }
     /// Consumes the builder and constructs a [`DisassociateFromAdministratorAccountInput`](crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccountInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccountInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccountInput {
-                detector_id: self.detector_id,
-            },
+                detector_id: self.detector_id
+                ,
+            }
         )
     }
 }
+

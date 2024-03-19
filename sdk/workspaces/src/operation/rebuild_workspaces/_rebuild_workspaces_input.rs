@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RebuildWorkspacesInput {
+pub struct RebuildWorkspacesInput  {
     /// <p>The WorkSpace to rebuild. You can specify a single WorkSpace.</p>
-    pub rebuild_workspace_requests: ::std::option::Option<::std::vec::Vec<crate::types::RebuildRequest>>,
+    pub rebuild_workspace_requests: ::std::option::Option<::std::vec::Vec::<crate::types::RebuildRequest>>,
 }
-impl RebuildWorkspacesInput {
+impl  RebuildWorkspacesInput  {
     /// <p>The WorkSpace to rebuild. You can specify a single WorkSpace.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rebuild_workspace_requests.is_none()`.
-    pub fn rebuild_workspace_requests(&self) -> &[crate::types::RebuildRequest] {
-        self.rebuild_workspace_requests.as_deref().unwrap_or_default()
+    pub fn rebuild_workspace_requests(&self) -> & [crate::types::RebuildRequest] {
+        self.rebuild_workspace_requests.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RebuildWorkspacesInput {
@@ -25,7 +26,7 @@ impl RebuildWorkspacesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RebuildWorkspacesInputBuilder {
-    pub(crate) rebuild_workspace_requests: ::std::option::Option<::std::vec::Vec<crate::types::RebuildRequest>>,
+    pub(crate) rebuild_workspace_requests: ::std::option::Option<::std::vec::Vec::<crate::types::RebuildRequest>>,
 }
 impl RebuildWorkspacesInputBuilder {
     /// Appends an item to `rebuild_workspace_requests`.
@@ -35,25 +36,26 @@ impl RebuildWorkspacesInputBuilder {
     /// <p>The WorkSpace to rebuild. You can specify a single WorkSpace.</p>
     pub fn rebuild_workspace_requests(mut self, input: crate::types::RebuildRequest) -> Self {
         let mut v = self.rebuild_workspace_requests.unwrap_or_default();
-        v.push(input);
-        self.rebuild_workspace_requests = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rebuild_workspace_requests = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The WorkSpace to rebuild. You can specify a single WorkSpace.</p>
-    pub fn set_rebuild_workspace_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RebuildRequest>>) -> Self {
-        self.rebuild_workspace_requests = input;
-        self
+    pub fn set_rebuild_workspace_requests(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RebuildRequest>>) -> Self {
+        self.rebuild_workspace_requests = input; self
     }
     /// <p>The WorkSpace to rebuild. You can specify a single WorkSpace.</p>
-    pub fn get_rebuild_workspace_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RebuildRequest>> {
+    pub fn get_rebuild_workspace_requests(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RebuildRequest>> {
         &self.rebuild_workspace_requests
     }
     /// Consumes the builder and constructs a [`RebuildWorkspacesInput`](crate::operation::rebuild_workspaces::RebuildWorkspacesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::rebuild_workspaces::RebuildWorkspacesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::rebuild_workspaces::RebuildWorkspacesInput {
-            rebuild_workspace_requests: self.rebuild_workspace_requests,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::rebuild_workspaces::RebuildWorkspacesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::rebuild_workspaces::RebuildWorkspacesInput {
+                rebuild_workspace_requests: self.rebuild_workspace_requests
+                ,
+            }
+        )
     }
 }
+

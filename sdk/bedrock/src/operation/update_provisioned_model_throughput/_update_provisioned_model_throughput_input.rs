@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateProvisionedModelThroughputInput {
+pub struct UpdateProvisionedModelThroughputInput  {
     /// <p>The ARN or name of the provisioned throughput to update.</p>
     pub provisioned_model_id: ::std::option::Option<::std::string::String>,
     /// <p>The new name for this provisioned throughput.</p>
@@ -10,17 +10,17 @@ pub struct UpdateProvisionedModelThroughputInput {
     /// <p>The ARN of the new model to associate with this provisioned throughput.</p>
     pub desired_model_id: ::std::option::Option<::std::string::String>,
 }
-impl UpdateProvisionedModelThroughputInput {
+impl  UpdateProvisionedModelThroughputInput  {
     /// <p>The ARN or name of the provisioned throughput to update.</p>
-    pub fn provisioned_model_id(&self) -> ::std::option::Option<&str> {
+    pub fn provisioned_model_id(&self) -> ::std::option::Option<& str> {
         self.provisioned_model_id.as_deref()
     }
     /// <p>The new name for this provisioned throughput.</p>
-    pub fn desired_provisioned_model_name(&self) -> ::std::option::Option<&str> {
+    pub fn desired_provisioned_model_name(&self) -> ::std::option::Option<& str> {
         self.desired_provisioned_model_name.as_deref()
     }
     /// <p>The ARN of the new model to associate with this provisioned throughput.</p>
-    pub fn desired_model_id(&self) -> ::std::option::Option<&str> {
+    pub fn desired_model_id(&self) -> ::std::option::Option<& str> {
         self.desired_model_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateProvisionedModelThroughputInputBuilder {
     }
     /// <p>The ARN or name of the provisioned throughput to update.</p>
     pub fn set_provisioned_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provisioned_model_id = input;
-        self
+        self.provisioned_model_id = input; self
     }
     /// <p>The ARN or name of the provisioned throughput to update.</p>
     pub fn get_provisioned_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UpdateProvisionedModelThroughputInputBuilder {
     }
     /// <p>The new name for this provisioned throughput.</p>
     pub fn set_desired_provisioned_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.desired_provisioned_model_name = input;
-        self
+        self.desired_provisioned_model_name = input; self
     }
     /// <p>The new name for this provisioned throughput.</p>
     pub fn get_desired_provisioned_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,26 +74,24 @@ impl UpdateProvisionedModelThroughputInputBuilder {
     }
     /// <p>The ARN of the new model to associate with this provisioned throughput.</p>
     pub fn set_desired_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.desired_model_id = input;
-        self
+        self.desired_model_id = input; self
     }
     /// <p>The ARN of the new model to associate with this provisioned throughput.</p>
     pub fn get_desired_model_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.desired_model_id
     }
     /// Consumes the builder and constructs a [`UpdateProvisionedModelThroughputInput`](crate::operation::update_provisioned_model_throughput::UpdateProvisionedModelThroughputInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_provisioned_model_throughput::UpdateProvisionedModelThroughputInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_provisioned_model_throughput::UpdateProvisionedModelThroughputInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_provisioned_model_throughput::UpdateProvisionedModelThroughputInput {
-                provisioned_model_id: self.provisioned_model_id,
-                desired_provisioned_model_name: self.desired_provisioned_model_name,
-                desired_model_id: self.desired_model_id,
-            },
+                provisioned_model_id: self.provisioned_model_id
+                ,
+                desired_provisioned_model_name: self.desired_provisioned_model_name
+                ,
+                desired_model_id: self.desired_model_id
+                ,
+            }
         )
     }
 }
+

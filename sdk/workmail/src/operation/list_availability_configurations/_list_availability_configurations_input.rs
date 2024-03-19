@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAvailabilityConfigurationsInput {
+pub struct ListAvailabilityConfigurationsInput  {
     /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
@@ -10,9 +10,9 @@ pub struct ListAvailabilityConfigurationsInput {
     /// <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListAvailabilityConfigurationsInput {
+impl  ListAvailabilityConfigurationsInput  {
     /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The maximum number of results to return in a single call.</p>
@@ -20,7 +20,7 @@ impl ListAvailabilityConfigurationsInput {
         self.max_results
     }
     /// <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ListAvailabilityConfigurationsInputBuilder {
     }
     /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListAvailabilityConfigurationsInputBuilder {
     }
     /// <p>The maximum number of results to return in a single call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in a single call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -76,24 +74,24 @@ impl ListAvailabilityConfigurationsInputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAvailabilityConfigurationsInput`](crate::operation::list_availability_configurations::ListAvailabilityConfigurationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_availability_configurations::ListAvailabilityConfigurationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_availability_configurations::ListAvailabilityConfigurationsInput {
-            organization_id: self.organization_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_availability_configurations::ListAvailabilityConfigurationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_availability_configurations::ListAvailabilityConfigurationsInput {
+                organization_id: self.organization_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

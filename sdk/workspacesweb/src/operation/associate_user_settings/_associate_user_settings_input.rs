@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateUserSettingsInput {
+pub struct AssociateUserSettingsInput  {
     /// <p>The ARN of the web portal.</p>
     pub portal_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the user settings.</p>
     pub user_settings_arn: ::std::option::Option<::std::string::String>,
 }
-impl AssociateUserSettingsInput {
+impl  AssociateUserSettingsInput  {
     /// <p>The ARN of the web portal.</p>
-    pub fn portal_arn(&self) -> ::std::option::Option<&str> {
+    pub fn portal_arn(&self) -> ::std::option::Option<& str> {
         self.portal_arn.as_deref()
     }
     /// <p>The ARN of the user settings.</p>
-    pub fn user_settings_arn(&self) -> ::std::option::Option<&str> {
+    pub fn user_settings_arn(&self) -> ::std::option::Option<& str> {
         self.user_settings_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AssociateUserSettingsInputBuilder {
     }
     /// <p>The ARN of the web portal.</p>
     pub fn set_portal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.portal_arn = input;
-        self
+        self.portal_arn = input; self
     }
     /// <p>The ARN of the web portal.</p>
     pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl AssociateUserSettingsInputBuilder {
     }
     /// <p>The ARN of the user settings.</p>
     pub fn set_user_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_settings_arn = input;
-        self
+        self.user_settings_arn = input; self
     }
     /// <p>The ARN of the user settings.</p>
     pub fn get_user_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_settings_arn
     }
     /// Consumes the builder and constructs a [`AssociateUserSettingsInput`](crate::operation::associate_user_settings::AssociateUserSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::associate_user_settings::AssociateUserSettingsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::associate_user_settings::AssociateUserSettingsInput {
-            portal_arn: self.portal_arn,
-            user_settings_arn: self.user_settings_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_user_settings::AssociateUserSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_user_settings::AssociateUserSettingsInput {
+                portal_arn: self.portal_arn
+                ,
+                user_settings_arn: self.user_settings_arn
+                ,
+            }
+        )
     }
 }
+

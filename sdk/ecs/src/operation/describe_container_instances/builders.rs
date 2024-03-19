@@ -5,54 +5,50 @@ pub use crate::operation::describe_container_instances::_describe_container_inst
 
 impl DescribeContainerInstancesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_container_instances::DescribeContainerInstancesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_container_instances::DescribeContainerInstancesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_container_instances();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_container_instances::DescribeContainerInstancesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_container_instances::DescribeContainerInstancesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_container_instances();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeContainerInstances`.
-///
+/// 
 /// <p>Describes one or more container instances. Returns metadata about each container instance requested.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeContainerInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_container_instances::builders::DescribeContainerInstancesInputBuilder,
+                    inner: crate::operation::describe_container_instances::builders::DescribeContainerInstancesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_container_instances::DescribeContainerInstancesOutput,
-        crate::operation::describe_container_instances::DescribeContainerInstancesError,
-    > for DescribeContainerInstancesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_container_instances::DescribeContainerInstancesOutput,
-            crate::operation::describe_container_instances::DescribeContainerInstancesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_container_instances::DescribeContainerInstancesOutput,
+                    crate::operation::describe_container_instances::DescribeContainerInstancesError,
+                > for DescribeContainerInstancesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_container_instances::DescribeContainerInstancesOutput,
+                        crate::operation::describe_container_instances::DescribeContainerInstancesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeContainerInstancesFluentBuilder {
     /// Creates a new `DescribeContainerInstances`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl DescribeContainerInstancesFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_container_instances::DescribeContainerInstancesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_container_instances::DescribeContainerInstancesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_container_instances::DescribeContainerInstances::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_container_instances::DescribeContainerInstances::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_container_instances::DescribeContainerInstancesOutput,
-        crate::operation::describe_container_instances::DescribeContainerInstancesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_container_instances::DescribeContainerInstancesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_container_instances::DescribeContainerInstancesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_container_instances::DescribeContainerInstances::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_container_instances::DescribeContainerInstances::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_container_instances::DescribeContainerInstancesOutput, crate::operation::describe_container_instances::DescribeContainerInstancesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances to describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the container instance or container instances you are describing were launched in any cluster other than the default cluster.</p>
     pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster(input.into());
@@ -132,12 +119,12 @@ impl DescribeContainerInstancesFluentBuilder {
         self
     }
     /// <p>A list of up to 100 container instance IDs or full Amazon Resource Name (ARN) entries.</p>
-    pub fn set_container_instances(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_container_instances(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_container_instances(input);
         self
     }
     /// <p>A list of up to 100 container instance IDs or full Amazon Resource Name (ARN) entries.</p>
-    pub fn get_container_instances(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_container_instances(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_container_instances()
     }
     /// Appends an item to `include`.
@@ -150,12 +137,13 @@ impl DescribeContainerInstancesFluentBuilder {
         self
     }
     /// <p>Specifies whether you want to see the resource tags for the container instance. If <code>TAGS</code> is specified, the tags are included in the response. If <code>CONTAINER_INSTANCE_HEALTH</code> is specified, the container instance health is included in the response. If this field is omitted, tags and container instance health status aren't included in the response.</p>
-    pub fn set_include(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerInstanceField>>) -> Self {
+    pub fn set_include(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ContainerInstanceField>>) -> Self {
         self.inner = self.inner.set_include(input);
         self
     }
     /// <p>Specifies whether you want to see the resource tags for the container instance. If <code>TAGS</code> is specified, the tags are included in the response. If <code>CONTAINER_INSTANCE_HEALTH</code> is specified, the container instance health is included in the response. If this field is omitted, tags and container instance health status aren't included in the response.</p>
-    pub fn get_include(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerInstanceField>> {
+    pub fn get_include(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ContainerInstanceField>> {
         self.inner.get_include()
     }
 }
+

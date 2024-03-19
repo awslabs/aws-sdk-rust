@@ -3,13 +3,13 @@
 /// <p>Describes configuration parameters for Amazon CloudWatch logging for a Managed Service for Apache Flink Studio notebook. For more information about CloudWatch logging, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/monitoring-overview.html">Monitoring</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ZeppelinMonitoringConfiguration {
+pub struct ZeppelinMonitoringConfiguration  {
     /// <p>The verbosity of the CloudWatch Logs for an application.</p>
     pub log_level: crate::types::LogLevel,
 }
-impl ZeppelinMonitoringConfiguration {
+impl  ZeppelinMonitoringConfiguration  {
     /// <p>The verbosity of the CloudWatch Logs for an application.</p>
-    pub fn log_level(&self) -> &crate::types::LogLevel {
+    pub fn log_level(&self) -> & crate::types::LogLevel {
         &self.log_level
     }
 }
@@ -35,8 +35,7 @@ impl ZeppelinMonitoringConfigurationBuilder {
     }
     /// <p>The verbosity of the CloudWatch Logs for an application.</p>
     pub fn set_log_level(mut self, input: ::std::option::Option<crate::types::LogLevel>) -> Self {
-        self.log_level = input;
-        self
+        self.log_level = input; self
     }
     /// <p>The verbosity of the CloudWatch Logs for an application.</p>
     pub fn get_log_level(&self) -> &::std::option::Option<crate::types::LogLevel> {
@@ -46,13 +45,15 @@ impl ZeppelinMonitoringConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`log_level`](crate::types::builders::ZeppelinMonitoringConfigurationBuilder::log_level)
     pub fn build(self) -> ::std::result::Result<crate::types::ZeppelinMonitoringConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ZeppelinMonitoringConfiguration {
-            log_level: self.log_level.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "log_level",
-                    "log_level was not specified but it is required when building ZeppelinMonitoringConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ZeppelinMonitoringConfiguration {
+                log_level: self.log_level
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("log_level", "log_level was not specified but it is required when building ZeppelinMonitoringConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,21 +3,20 @@
 /// <p>Contains the details about the policy generation error.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobError {
+pub struct JobError  {
     /// <p>The job error code.</p>
     pub code: crate::types::JobErrorCode,
     /// <p>Specific information about the error. For example, which service quota was exceeded or which resource was not found.</p>
     pub message: ::std::string::String,
 }
-impl JobError {
+impl  JobError  {
     /// <p>The job error code.</p>
-    pub fn code(&self) -> &crate::types::JobErrorCode {
+    pub fn code(&self) -> & crate::types::JobErrorCode {
         &self.code
     }
     /// <p>Specific information about the error. For example, which service quota was exceeded or which resource was not found.</p>
-    pub fn message(&self) -> &str {
-        use std::ops::Deref;
-        self.message.deref()
+    pub fn message(&self) -> & str {
+        use std::ops::Deref; self.message.deref()
     }
 }
 impl JobError {
@@ -43,8 +42,7 @@ impl JobErrorBuilder {
     }
     /// <p>The job error code.</p>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::JobErrorCode>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The job error code.</p>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::JobErrorCode> {
@@ -58,8 +56,7 @@ impl JobErrorBuilder {
     }
     /// <p>Specific information about the error. For example, which service quota was exceeded or which resource was not found.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Specific information about the error. For example, which service quota was exceeded or which resource was not found.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,19 +67,20 @@ impl JobErrorBuilder {
     /// - [`code`](crate::types::builders::JobErrorBuilder::code)
     /// - [`message`](crate::types::builders::JobErrorBuilder::message)
     pub fn build(self) -> ::std::result::Result<crate::types::JobError, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::JobError {
-            code: self.code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "code",
-                    "code was not specified but it is required when building JobError",
-                )
-            })?,
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building JobError",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::JobError {
+                code: self.code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("code", "code was not specified but it is required when building JobError")
+                    )?
+                ,
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building JobError")
+                    )?
+                ,
+            }
+        )
     }
 }
+

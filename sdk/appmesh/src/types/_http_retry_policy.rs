@@ -3,7 +3,7 @@
 /// <p>An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>. Both <code>server-error</code> and <code>gateway-error</code> under <code>httpRetryEvents</code> include the Envoy <code>reset</code> policy. For more information on the <code>reset</code> policy, see the <a href="https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/router_filter#x-envoy-retry-on">Envoy documentation</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HttpRetryPolicy {
+pub struct HttpRetryPolicy  {
     /// <p>The timeout for each retry attempt.</p>
     pub per_retry_timeout: ::std::option::Option<crate::types::Duration>,
     /// <p>The maximum number of retry attempts.</p>
@@ -19,13 +19,13 @@ pub struct HttpRetryPolicy {
     /// <li>
     /// <p><b>stream-error</b> – Retry on refused stream</p></li>
     /// </ul>
-    pub http_retry_events: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub http_retry_events: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specify a valid value. The event occurs before any processing of a request has started and is encountered when the upstream is temporarily or permanently unavailable.</p>
-    pub tcp_retry_events: ::std::option::Option<::std::vec::Vec<crate::types::TcpRetryPolicyEvent>>,
+    pub tcp_retry_events: ::std::option::Option<::std::vec::Vec::<crate::types::TcpRetryPolicyEvent>>,
 }
-impl HttpRetryPolicy {
+impl  HttpRetryPolicy  {
     /// <p>The timeout for each retry attempt.</p>
-    pub fn per_retry_timeout(&self) -> ::std::option::Option<&crate::types::Duration> {
+    pub fn per_retry_timeout(&self) -> ::std::option::Option<& crate::types::Duration> {
         self.per_retry_timeout.as_ref()
     }
     /// <p>The maximum number of retry attempts.</p>
@@ -43,16 +43,18 @@ impl HttpRetryPolicy {
     /// <li>
     /// <p><b>stream-error</b> – Retry on refused stream</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.http_retry_events.is_none()`.
-    pub fn http_retry_events(&self) -> &[::std::string::String] {
-        self.http_retry_events.as_deref().unwrap_or_default()
+    pub fn http_retry_events(&self) -> & [::std::string::String] {
+        self.http_retry_events.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specify a valid value. The event occurs before any processing of a request has started and is encountered when the upstream is temporarily or permanently unavailable.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tcp_retry_events.is_none()`.
-    pub fn tcp_retry_events(&self) -> &[crate::types::TcpRetryPolicyEvent] {
-        self.tcp_retry_events.as_deref().unwrap_or_default()
+    pub fn tcp_retry_events(&self) -> & [crate::types::TcpRetryPolicyEvent] {
+        self.tcp_retry_events.as_deref()
+        .unwrap_or_default()
     }
 }
 impl HttpRetryPolicy {
@@ -68,8 +70,8 @@ impl HttpRetryPolicy {
 pub struct HttpRetryPolicyBuilder {
     pub(crate) per_retry_timeout: ::std::option::Option<crate::types::Duration>,
     pub(crate) max_retries: ::std::option::Option<i64>,
-    pub(crate) http_retry_events: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tcp_retry_events: ::std::option::Option<::std::vec::Vec<crate::types::TcpRetryPolicyEvent>>,
+    pub(crate) http_retry_events: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tcp_retry_events: ::std::option::Option<::std::vec::Vec::<crate::types::TcpRetryPolicyEvent>>,
 }
 impl HttpRetryPolicyBuilder {
     /// <p>The timeout for each retry attempt.</p>
@@ -80,8 +82,7 @@ impl HttpRetryPolicyBuilder {
     }
     /// <p>The timeout for each retry attempt.</p>
     pub fn set_per_retry_timeout(mut self, input: ::std::option::Option<crate::types::Duration>) -> Self {
-        self.per_retry_timeout = input;
-        self
+        self.per_retry_timeout = input; self
     }
     /// <p>The timeout for each retry attempt.</p>
     pub fn get_per_retry_timeout(&self) -> &::std::option::Option<crate::types::Duration> {
@@ -95,8 +96,7 @@ impl HttpRetryPolicyBuilder {
     }
     /// <p>The maximum number of retry attempts.</p>
     pub fn set_max_retries(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.max_retries = input;
-        self
+        self.max_retries = input; self
     }
     /// <p>The maximum number of retry attempts.</p>
     pub fn get_max_retries(&self) -> &::std::option::Option<i64> {
@@ -119,9 +119,9 @@ impl HttpRetryPolicyBuilder {
     /// </ul>
     pub fn http_retry_events(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.http_retry_events.unwrap_or_default();
-        v.push(input.into());
-        self.http_retry_events = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.http_retry_events = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specify at least one of the following values.</p>
     /// <ul>
@@ -134,9 +134,8 @@ impl HttpRetryPolicyBuilder {
     /// <li>
     /// <p><b>stream-error</b> – Retry on refused stream</p></li>
     /// </ul>
-    pub fn set_http_retry_events(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.http_retry_events = input;
-        self
+    pub fn set_http_retry_events(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.http_retry_events = input; self
     }
     /// <p>Specify at least one of the following values.</p>
     /// <ul>
@@ -149,7 +148,7 @@ impl HttpRetryPolicyBuilder {
     /// <li>
     /// <p><b>stream-error</b> – Retry on refused stream</p></li>
     /// </ul>
-    pub fn get_http_retry_events(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_http_retry_events(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.http_retry_events
     }
     /// Appends an item to `tcp_retry_events`.
@@ -159,33 +158,37 @@ impl HttpRetryPolicyBuilder {
     /// <p>Specify a valid value. The event occurs before any processing of a request has started and is encountered when the upstream is temporarily or permanently unavailable.</p>
     pub fn tcp_retry_events(mut self, input: crate::types::TcpRetryPolicyEvent) -> Self {
         let mut v = self.tcp_retry_events.unwrap_or_default();
-        v.push(input);
-        self.tcp_retry_events = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tcp_retry_events = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specify a valid value. The event occurs before any processing of a request has started and is encountered when the upstream is temporarily or permanently unavailable.</p>
-    pub fn set_tcp_retry_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TcpRetryPolicyEvent>>) -> Self {
-        self.tcp_retry_events = input;
-        self
+    pub fn set_tcp_retry_events(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TcpRetryPolicyEvent>>) -> Self {
+        self.tcp_retry_events = input; self
     }
     /// <p>Specify a valid value. The event occurs before any processing of a request has started and is encountered when the upstream is temporarily or permanently unavailable.</p>
-    pub fn get_tcp_retry_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TcpRetryPolicyEvent>> {
+    pub fn get_tcp_retry_events(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TcpRetryPolicyEvent>> {
         &self.tcp_retry_events
     }
     /// Consumes the builder and constructs a [`HttpRetryPolicy`](crate::types::HttpRetryPolicy).
     /// This method will fail if any of the following fields are not set:
     /// - [`max_retries`](crate::types::builders::HttpRetryPolicyBuilder::max_retries)
     pub fn build(self) -> ::std::result::Result<crate::types::HttpRetryPolicy, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::HttpRetryPolicy {
-            per_retry_timeout: self.per_retry_timeout,
-            max_retries: self.max_retries.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "max_retries",
-                    "max_retries was not specified but it is required when building HttpRetryPolicy",
-                )
-            })?,
-            http_retry_events: self.http_retry_events,
-            tcp_retry_events: self.tcp_retry_events,
-        })
+        ::std::result::Result::Ok(
+            crate::types::HttpRetryPolicy {
+                per_retry_timeout: self.per_retry_timeout
+                ,
+                max_retries: self.max_retries
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("max_retries", "max_retries was not specified but it is required when building HttpRetryPolicy")
+                    )?
+                ,
+                http_retry_events: self.http_retry_events
+                ,
+                tcp_retry_events: self.tcp_retry_events
+                ,
+            }
+        )
     }
 }
+

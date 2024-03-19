@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPlaybackConfigurations`](crate::operation::list_playback_configurations::builders::ListPlaybackConfigurationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_playback_configurations::builders::ListPlaybackConfigurationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_playback_configurations::builders::ListPlaybackConfigurationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_playback_configurations::builders::ListPlaybackConfigurationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of playback configurations that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> playback configurations, use the value of <code>NextToken</code> in the response to get the next page of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_playback_configurations::builders::ListPlaybackConfigurationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_playback_configurations::builders::ListPlaybackConfigurationsFluentBuilder::set_next_token):<br>required: **false**<br><p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p><br>
-    /// - On success, responds with [`ListPlaybackConfigurationsOutput`](crate::operation::list_playback_configurations::ListPlaybackConfigurationsOutput) with field(s):
+                            /// - On success, responds with [`ListPlaybackConfigurationsOutput`](crate::operation::list_playback_configurations::ListPlaybackConfigurationsOutput) with field(s):
     ///   - [`items(Option<Vec::<PlaybackConfiguration>>)`](crate::operation::list_playback_configurations::ListPlaybackConfigurationsOutput::items): <p>Array of playback configurations. This might be all the available configurations or a subset, depending on the settings that you provide and the total number of configurations stored.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_playback_configurations::ListPlaybackConfigurationsOutput::next_token): <p>Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListPlaybackConfigurationsError>`](crate::operation::list_playback_configurations::ListPlaybackConfigurationsError)
+                            /// - On failure, responds with [`SdkError<ListPlaybackConfigurationsError>`](crate::operation::list_playback_configurations::ListPlaybackConfigurationsError)
     pub fn list_playback_configurations(&self) -> crate::operation::list_playback_configurations::builders::ListPlaybackConfigurationsFluentBuilder {
-        crate::operation::list_playback_configurations::builders::ListPlaybackConfigurationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_playback_configurations::builders::ListPlaybackConfigurationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

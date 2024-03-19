@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeIpRestrictionOutput {
+pub struct DescribeIpRestrictionOutput  {
     /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>A map that describes the IP rules with CIDR range and description.</p>
-    pub ip_restriction_rule_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub ip_restriction_rule_map: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>A value that specifies whether IP rules are turned on.</p>
     pub enabled: ::std::option::Option<bool>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
@@ -15,13 +15,13 @@ pub struct DescribeIpRestrictionOutput {
     pub status: i32,
     _request_id: Option<String>,
 }
-impl DescribeIpRestrictionOutput {
+impl  DescribeIpRestrictionOutput  {
     /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>A map that describes the IP rules with CIDR range and description.</p>
-    pub fn ip_restriction_rule_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn ip_restriction_rule_map(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.ip_restriction_rule_map.as_ref()
     }
     /// <p>A value that specifies whether IP rules are turned on.</p>
@@ -29,7 +29,7 @@ impl DescribeIpRestrictionOutput {
         self.enabled
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -38,10 +38,10 @@ impl DescribeIpRestrictionOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeIpRestrictionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeIpRestrictionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIpRestrictionOutput`](crate::operation::describe_ip_restriction::DescribeIpRestrictionOutput).
     pub fn builder() -> crate::operation::describe_ip_restriction::builders::DescribeIpRestrictionOutputBuilder {
@@ -54,7 +54,7 @@ impl DescribeIpRestrictionOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIpRestrictionOutputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
-    pub(crate) ip_restriction_rule_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) ip_restriction_rule_map: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
@@ -68,8 +68,7 @@ impl DescribeIpRestrictionOutputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,26 +79,18 @@ impl DescribeIpRestrictionOutputBuilder {
     /// To override the contents of this collection use [`set_ip_restriction_rule_map`](Self::set_ip_restriction_rule_map).
     ///
     /// <p>A map that describes the IP rules with CIDR range and description.</p>
-    pub fn ip_restriction_rule_map(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn ip_restriction_rule_map(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.ip_restriction_rule_map.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.ip_restriction_rule_map = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.ip_restriction_rule_map = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map that describes the IP rules with CIDR range and description.</p>
-    pub fn set_ip_restriction_rule_map(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.ip_restriction_rule_map = input;
-        self
+    pub fn set_ip_restriction_rule_map(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.ip_restriction_rule_map = input; self
     }
     /// <p>A map that describes the IP rules with CIDR range and description.</p>
-    pub fn get_ip_restriction_rule_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_ip_restriction_rule_map(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.ip_restriction_rule_map
     }
     /// <p>A value that specifies whether IP rules are turned on.</p>
@@ -109,8 +100,7 @@ impl DescribeIpRestrictionOutputBuilder {
     }
     /// <p>A value that specifies whether IP rules are turned on.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>A value that specifies whether IP rules are turned on.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -123,8 +113,7 @@ impl DescribeIpRestrictionOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,31 +126,37 @@ impl DescribeIpRestrictionOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn get_status(&self) -> &::std::option::Option<i32> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeIpRestrictionOutput`](crate::operation::describe_ip_restriction::DescribeIpRestrictionOutput).
     pub fn build(self) -> crate::operation::describe_ip_restriction::DescribeIpRestrictionOutput {
         crate::operation::describe_ip_restriction::DescribeIpRestrictionOutput {
-            aws_account_id: self.aws_account_id,
-            ip_restriction_rule_map: self.ip_restriction_rule_map,
-            enabled: self.enabled,
-            request_id: self.request_id,
-            status: self.status.unwrap_or_default(),
+            aws_account_id: self.aws_account_id
+            ,
+            ip_restriction_rule_map: self.ip_restriction_rule_map
+            ,
+            enabled: self.enabled
+            ,
+            request_id: self.request_id
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

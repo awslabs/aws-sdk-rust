@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListUsersOutput {
+pub struct ListUsersOutput  {
     /// <p>Required. The unique ID that Amazon MQ generates for the broker.</p>
     pub broker_id: ::std::option::Option<::std::string::String>,
     /// <p>Required. The maximum number of ActiveMQ users that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
@@ -10,12 +10,12 @@ pub struct ListUsersOutput {
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Required. The list of all ActiveMQ usernames for the specified broker. Does not apply to RabbitMQ brokers.</p>
-    pub users: ::std::option::Option<::std::vec::Vec<crate::types::UserSummary>>,
+    pub users: ::std::option::Option<::std::vec::Vec::<crate::types::UserSummary>>,
     _request_id: Option<String>,
 }
-impl ListUsersOutput {
+impl  ListUsersOutput  {
     /// <p>Required. The unique ID that Amazon MQ generates for the broker.</p>
-    pub fn broker_id(&self) -> ::std::option::Option<&str> {
+    pub fn broker_id(&self) -> ::std::option::Option<& str> {
         self.broker_id.as_deref()
     }
     /// <p>Required. The maximum number of ActiveMQ users that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
@@ -23,21 +23,22 @@ impl ListUsersOutput {
         self.max_results
     }
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Required. The list of all ActiveMQ usernames for the specified broker. Does not apply to RabbitMQ brokers.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.users.is_none()`.
-    pub fn users(&self) -> &[crate::types::UserSummary] {
-        self.users.as_deref().unwrap_or_default()
+    pub fn users(&self) -> & [crate::types::UserSummary] {
+        self.users.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListUsersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListUsersOutput {
     /// Creates a new builder-style object to manufacture [`ListUsersOutput`](crate::operation::list_users::ListUsersOutput).
     pub fn builder() -> crate::operation::list_users::builders::ListUsersOutputBuilder {
@@ -52,7 +53,7 @@ pub struct ListUsersOutputBuilder {
     pub(crate) broker_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) users: ::std::option::Option<::std::vec::Vec<crate::types::UserSummary>>,
+    pub(crate) users: ::std::option::Option<::std::vec::Vec::<crate::types::UserSummary>>,
     _request_id: Option<String>,
 }
 impl ListUsersOutputBuilder {
@@ -63,8 +64,7 @@ impl ListUsersOutputBuilder {
     }
     /// <p>Required. The unique ID that Amazon MQ generates for the broker.</p>
     pub fn set_broker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.broker_id = input;
-        self
+        self.broker_id = input; self
     }
     /// <p>Required. The unique ID that Amazon MQ generates for the broker.</p>
     pub fn get_broker_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +77,7 @@ impl ListUsersOutputBuilder {
     }
     /// <p>Required. The maximum number of ActiveMQ users that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Required. The maximum number of ActiveMQ users that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -91,8 +90,7 @@ impl ListUsersOutputBuilder {
     }
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,36 +103,40 @@ impl ListUsersOutputBuilder {
     /// <p>Required. The list of all ActiveMQ usernames for the specified broker. Does not apply to RabbitMQ brokers.</p>
     pub fn users(mut self, input: crate::types::UserSummary) -> Self {
         let mut v = self.users.unwrap_or_default();
-        v.push(input);
-        self.users = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.users = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Required. The list of all ActiveMQ usernames for the specified broker. Does not apply to RabbitMQ brokers.</p>
-    pub fn set_users(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserSummary>>) -> Self {
-        self.users = input;
-        self
+    pub fn set_users(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UserSummary>>) -> Self {
+        self.users = input; self
     }
     /// <p>Required. The list of all ActiveMQ usernames for the specified broker. Does not apply to RabbitMQ brokers.</p>
-    pub fn get_users(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserSummary>> {
+    pub fn get_users(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UserSummary>> {
         &self.users
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListUsersOutput`](crate::operation::list_users::ListUsersOutput).
     pub fn build(self) -> crate::operation::list_users::ListUsersOutput {
         crate::operation::list_users::ListUsersOutput {
-            broker_id: self.broker_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            users: self.users,
+            broker_id: self.broker_id
+            ,
+            max_results: self.max_results
+            ,
+            next_token: self.next_token
+            ,
+            users: self.users
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

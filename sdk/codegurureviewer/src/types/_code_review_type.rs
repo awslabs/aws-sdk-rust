@@ -9,22 +9,23 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CodeReviewType {
+pub struct CodeReviewType  {
     /// <p>A code review that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.</p>
     pub repository_analysis: ::std::option::Option<crate::types::RepositoryAnalysis>,
     /// <p>They types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
-    pub analysis_types: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisType>>,
+    pub analysis_types: ::std::option::Option<::std::vec::Vec::<crate::types::AnalysisType>>,
 }
-impl CodeReviewType {
+impl  CodeReviewType  {
     /// <p>A code review that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.</p>
-    pub fn repository_analysis(&self) -> ::std::option::Option<&crate::types::RepositoryAnalysis> {
+    pub fn repository_analysis(&self) -> ::std::option::Option<& crate::types::RepositoryAnalysis> {
         self.repository_analysis.as_ref()
     }
     /// <p>They types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.analysis_types.is_none()`.
-    pub fn analysis_types(&self) -> &[crate::types::AnalysisType] {
-        self.analysis_types.as_deref().unwrap_or_default()
+    pub fn analysis_types(&self) -> & [crate::types::AnalysisType] {
+        self.analysis_types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CodeReviewType {
@@ -39,7 +40,7 @@ impl CodeReviewType {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CodeReviewTypeBuilder {
     pub(crate) repository_analysis: ::std::option::Option<crate::types::RepositoryAnalysis>,
-    pub(crate) analysis_types: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisType>>,
+    pub(crate) analysis_types: ::std::option::Option<::std::vec::Vec::<crate::types::AnalysisType>>,
 }
 impl CodeReviewTypeBuilder {
     /// <p>A code review that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.</p>
@@ -50,8 +51,7 @@ impl CodeReviewTypeBuilder {
     }
     /// <p>A code review that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.</p>
     pub fn set_repository_analysis(mut self, input: ::std::option::Option<crate::types::RepositoryAnalysis>) -> Self {
-        self.repository_analysis = input;
-        self
+        self.repository_analysis = input; self
     }
     /// <p>A code review that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.</p>
     pub fn get_repository_analysis(&self) -> &::std::option::Option<crate::types::RepositoryAnalysis> {
@@ -64,24 +64,26 @@ impl CodeReviewTypeBuilder {
     /// <p>They types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
     pub fn analysis_types(mut self, input: crate::types::AnalysisType) -> Self {
         let mut v = self.analysis_types.unwrap_or_default();
-        v.push(input);
-        self.analysis_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.analysis_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>They types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
-    pub fn set_analysis_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisType>>) -> Self {
-        self.analysis_types = input;
-        self
+    pub fn set_analysis_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AnalysisType>>) -> Self {
+        self.analysis_types = input; self
     }
     /// <p>They types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
-    pub fn get_analysis_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisType>> {
+    pub fn get_analysis_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AnalysisType>> {
         &self.analysis_types
     }
     /// Consumes the builder and constructs a [`CodeReviewType`](crate::types::CodeReviewType).
     pub fn build(self) -> crate::types::CodeReviewType {
         crate::types::CodeReviewType {
-            repository_analysis: self.repository_analysis,
-            analysis_types: self.analysis_types,
+            repository_analysis: self.repository_analysis
+            ,
+            analysis_types: self.analysis_types
+            ,
         }
     }
 }
+

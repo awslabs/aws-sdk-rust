@@ -23,13 +23,13 @@
 /// <p>To update the <code>deliveryFrequency</code> with which Config delivers your configuration snapshots, use the <code>PutDeliveryChannel</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfigSnapshotDeliveryProperties {
+pub struct ConfigSnapshotDeliveryProperties  {
     /// <p>The frequency with which Config delivers configuration snapshots.</p>
     pub delivery_frequency: ::std::option::Option<crate::types::MaximumExecutionFrequency>,
 }
-impl ConfigSnapshotDeliveryProperties {
+impl  ConfigSnapshotDeliveryProperties  {
     /// <p>The frequency with which Config delivers configuration snapshots.</p>
-    pub fn delivery_frequency(&self) -> ::std::option::Option<&crate::types::MaximumExecutionFrequency> {
+    pub fn delivery_frequency(&self) -> ::std::option::Option<& crate::types::MaximumExecutionFrequency> {
         self.delivery_frequency.as_ref()
     }
 }
@@ -54,8 +54,7 @@ impl ConfigSnapshotDeliveryPropertiesBuilder {
     }
     /// <p>The frequency with which Config delivers configuration snapshots.</p>
     pub fn set_delivery_frequency(mut self, input: ::std::option::Option<crate::types::MaximumExecutionFrequency>) -> Self {
-        self.delivery_frequency = input;
-        self
+        self.delivery_frequency = input; self
     }
     /// <p>The frequency with which Config delivers configuration snapshots.</p>
     pub fn get_delivery_frequency(&self) -> &::std::option::Option<crate::types::MaximumExecutionFrequency> {
@@ -64,7 +63,9 @@ impl ConfigSnapshotDeliveryPropertiesBuilder {
     /// Consumes the builder and constructs a [`ConfigSnapshotDeliveryProperties`](crate::types::ConfigSnapshotDeliveryProperties).
     pub fn build(self) -> crate::types::ConfigSnapshotDeliveryProperties {
         crate::types::ConfigSnapshotDeliveryProperties {
-            delivery_frequency: self.delivery_frequency,
+            delivery_frequency: self.delivery_frequency
+            ,
         }
     }
 }
+

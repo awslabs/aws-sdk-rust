@@ -3,7 +3,7 @@
 /// <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TaskSet {
+pub struct TaskSet  {
     /// <p>The ID of the task set.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the task set.</p>
@@ -55,7 +55,7 @@ pub struct TaskSet {
     /// <p>The launch type the tasks in the task set are using. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub launch_type: ::std::option::Option<crate::types::LaunchType>,
     /// <p>The capacity provider strategy that are associated with the task set.</p>
-    pub capacity_provider_strategy: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
+    pub capacity_provider_strategy: ::std::option::Option<::std::vec::Vec::<crate::types::CapacityProviderStrategyItem>>,
     /// <p>The Fargate platform version where the tasks in the task set are running. A platform version is only specified for tasks run on Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub platform_version: ::std::option::Option<::std::string::String>,
     /// <p>The operating system that your tasks in the set are running on. A platform family is specified only for tasks that use the Fargate launch type.</p>
@@ -64,9 +64,9 @@ pub struct TaskSet {
     /// <p>The network configuration for the task set.</p>
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     /// <p>Details on a load balancer that are used with a task set.</p>
-    pub load_balancers: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>>,
+    pub load_balancers: ::std::option::Option<::std::vec::Vec::<crate::types::LoadBalancer>>,
     /// <p>The details for the service discovery registries to assign to this task set. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.</p>
-    pub service_registries: ::std::option::Option<::std::vec::Vec<crate::types::ServiceRegistry>>,
+    pub service_registries: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceRegistry>>,
     /// <p>A floating-point percentage of your desired number of tasks to place and keep running in the task set.</p>
     pub scale: ::std::option::Option<crate::types::Scale>,
     /// <p>The stability status. This indicates whether the task set has reached a steady state. If the following conditions are met, the task set are in <code>STEADY_STATE</code>:</p>
@@ -102,33 +102,33 @@ pub struct TaskSet {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl TaskSet {
+impl  TaskSet  {
     /// <p>The ID of the task set.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the task set.</p>
-    pub fn task_set_arn(&self) -> ::std::option::Option<&str> {
+    pub fn task_set_arn(&self) -> ::std::option::Option<& str> {
         self.task_set_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service the task set exists in.</p>
-    pub fn service_arn(&self) -> ::std::option::Option<&str> {
+    pub fn service_arn(&self) -> ::std::option::Option<& str> {
         self.service_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster that the service that hosts the task set exists in.</p>
-    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> ::std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The tag specified when a task set is started. If an CodeDeploy deployment created the task set, the <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. If an external deployment created the task set, the <code>startedBy</code> field isn't used.</p>
-    pub fn started_by(&self) -> ::std::option::Option<&str> {
+    pub fn started_by(&self) -> ::std::option::Option<& str> {
         self.started_by.as_deref()
     }
     /// <p>The external ID associated with the task set.</p>
     /// <p>If an CodeDeploy deployment created a task set, the <code>externalId</code> parameter contains the CodeDeploy deployment ID.</p>
     /// <p>If a task set is created for an external deployment and is associated with a service discovery registry, the <code>externalId</code> parameter contains the <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute.</p>
-    pub fn external_id(&self) -> ::std::option::Option<&str> {
+    pub fn external_id(&self) -> ::std::option::Option<& str> {
         self.external_id.as_deref()
     }
     /// <p>The status of the task set. The following describes each state.</p>
@@ -152,11 +152,11 @@ impl TaskSet {
     /// <p>The tasks in the task set are being stopped, and their corresponding targets are being deregistered from their target group.</p>
     /// </dd>
     /// </dl>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The task definition that the task set is using.</p>
-    pub fn task_definition(&self) -> ::std::option::Option<&str> {
+    pub fn task_definition(&self) -> ::std::option::Option<& str> {
         self.task_definition.as_deref()
     }
     /// <p>The computed desired count for the task set. This is calculated by multiplying the service's <code>desiredCount</code> by the task set's <code>scale</code> percentage. The result is always rounded up. For example, if the computed desired count is 1.2, it rounds up to 2 tasks.</p>
@@ -172,50 +172,53 @@ impl TaskSet {
         self.running_count
     }
     /// <p>The Unix timestamp for the time when the task set was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix timestamp for the time when the task set was last updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The launch type the tasks in the task set are using. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn launch_type(&self) -> ::std::option::Option<&crate::types::LaunchType> {
+    pub fn launch_type(&self) -> ::std::option::Option<& crate::types::LaunchType> {
         self.launch_type.as_ref()
     }
     /// <p>The capacity provider strategy that are associated with the task set.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_provider_strategy.is_none()`.
-    pub fn capacity_provider_strategy(&self) -> &[crate::types::CapacityProviderStrategyItem] {
-        self.capacity_provider_strategy.as_deref().unwrap_or_default()
+    pub fn capacity_provider_strategy(&self) -> & [crate::types::CapacityProviderStrategyItem] {
+        self.capacity_provider_strategy.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Fargate platform version where the tasks in the task set are running. A platform version is only specified for tasks run on Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn platform_version(&self) -> ::std::option::Option<&str> {
+    pub fn platform_version(&self) -> ::std::option::Option<& str> {
         self.platform_version.as_deref()
     }
     /// <p>The operating system that your tasks in the set are running on. A platform family is specified only for tasks that use the Fargate launch type.</p>
     /// <p>All tasks in the set must have the same value.</p>
-    pub fn platform_family(&self) -> ::std::option::Option<&str> {
+    pub fn platform_family(&self) -> ::std::option::Option<& str> {
         self.platform_family.as_deref()
     }
     /// <p>The network configuration for the task set.</p>
-    pub fn network_configuration(&self) -> ::std::option::Option<&crate::types::NetworkConfiguration> {
+    pub fn network_configuration(&self) -> ::std::option::Option<& crate::types::NetworkConfiguration> {
         self.network_configuration.as_ref()
     }
     /// <p>Details on a load balancer that are used with a task set.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.load_balancers.is_none()`.
-    pub fn load_balancers(&self) -> &[crate::types::LoadBalancer] {
-        self.load_balancers.as_deref().unwrap_or_default()
+    pub fn load_balancers(&self) -> & [crate::types::LoadBalancer] {
+        self.load_balancers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The details for the service discovery registries to assign to this task set. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_registries.is_none()`.
-    pub fn service_registries(&self) -> &[crate::types::ServiceRegistry] {
-        self.service_registries.as_deref().unwrap_or_default()
+    pub fn service_registries(&self) -> & [crate::types::ServiceRegistry] {
+        self.service_registries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A floating-point percentage of your desired number of tasks to place and keep running in the task set.</p>
-    pub fn scale(&self) -> ::std::option::Option<&crate::types::Scale> {
+    pub fn scale(&self) -> ::std::option::Option<& crate::types::Scale> {
         self.scale.as_ref()
     }
     /// <p>The stability status. This indicates whether the task set has reached a steady state. If the following conditions are met, the task set are in <code>STEADY_STATE</code>:</p>
@@ -230,11 +233,11 @@ impl TaskSet {
     /// <p>All tasks are reporting a healthy status from the load balancers, service discovery, and container health checks.</p></li>
     /// </ul>
     /// <p>If any of those conditions aren't met, the stability status returns <code>STABILIZING</code>.</p>
-    pub fn stability_status(&self) -> ::std::option::Option<&crate::types::StabilityStatus> {
+    pub fn stability_status(&self) -> ::std::option::Option<& crate::types::StabilityStatus> {
         self.stability_status.as_ref()
     }
     /// <p>The Unix timestamp for the time when the task set stability status was retrieved.</p>
-    pub fn stability_status_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn stability_status_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.stability_status_at.as_ref()
     }
     /// <p>The metadata that you apply to the task set to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
@@ -255,10 +258,11 @@ impl TaskSet {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TaskSet {
@@ -286,16 +290,16 @@ pub struct TaskSetBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) launch_type: ::std::option::Option<crate::types::LaunchType>,
-    pub(crate) capacity_provider_strategy: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
+    pub(crate) capacity_provider_strategy: ::std::option::Option<::std::vec::Vec::<crate::types::CapacityProviderStrategyItem>>,
     pub(crate) platform_version: ::std::option::Option<::std::string::String>,
     pub(crate) platform_family: ::std::option::Option<::std::string::String>,
     pub(crate) network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
-    pub(crate) load_balancers: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>>,
-    pub(crate) service_registries: ::std::option::Option<::std::vec::Vec<crate::types::ServiceRegistry>>,
+    pub(crate) load_balancers: ::std::option::Option<::std::vec::Vec::<crate::types::LoadBalancer>>,
+    pub(crate) service_registries: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceRegistry>>,
     pub(crate) scale: ::std::option::Option<crate::types::Scale>,
     pub(crate) stability_status: ::std::option::Option<crate::types::StabilityStatus>,
     pub(crate) stability_status_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl TaskSetBuilder {
     /// <p>The ID of the task set.</p>
@@ -305,8 +309,7 @@ impl TaskSetBuilder {
     }
     /// <p>The ID of the task set.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the task set.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -319,8 +322,7 @@ impl TaskSetBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the task set.</p>
     pub fn set_task_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_set_arn = input;
-        self
+        self.task_set_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the task set.</p>
     pub fn get_task_set_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -333,8 +335,7 @@ impl TaskSetBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the service the task set exists in.</p>
     pub fn set_service_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_arn = input;
-        self
+        self.service_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the service the task set exists in.</p>
     pub fn get_service_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -347,8 +348,7 @@ impl TaskSetBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster that the service that hosts the task set exists in.</p>
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster that the service that hosts the task set exists in.</p>
     pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -361,8 +361,7 @@ impl TaskSetBuilder {
     }
     /// <p>The tag specified when a task set is started. If an CodeDeploy deployment created the task set, the <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. If an external deployment created the task set, the <code>startedBy</code> field isn't used.</p>
     pub fn set_started_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.started_by = input;
-        self
+        self.started_by = input; self
     }
     /// <p>The tag specified when a task set is started. If an CodeDeploy deployment created the task set, the <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. If an external deployment created the task set, the <code>startedBy</code> field isn't used.</p>
     pub fn get_started_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -379,8 +378,7 @@ impl TaskSetBuilder {
     /// <p>If an CodeDeploy deployment created a task set, the <code>externalId</code> parameter contains the CodeDeploy deployment ID.</p>
     /// <p>If a task set is created for an external deployment and is associated with a service discovery registry, the <code>externalId</code> parameter contains the <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute.</p>
     pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.external_id = input;
-        self
+        self.external_id = input; self
     }
     /// <p>The external ID associated with the task set.</p>
     /// <p>If an CodeDeploy deployment created a task set, the <code>externalId</code> parameter contains the CodeDeploy deployment ID.</p>
@@ -435,8 +433,7 @@ impl TaskSetBuilder {
     /// </dd>
     /// </dl>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the task set. The following describes each state.</p>
     /// <dl>
@@ -469,8 +466,7 @@ impl TaskSetBuilder {
     }
     /// <p>The task definition that the task set is using.</p>
     pub fn set_task_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_definition = input;
-        self
+        self.task_definition = input; self
     }
     /// <p>The task definition that the task set is using.</p>
     pub fn get_task_definition(&self) -> &::std::option::Option<::std::string::String> {
@@ -483,8 +479,7 @@ impl TaskSetBuilder {
     }
     /// <p>The computed desired count for the task set. This is calculated by multiplying the service's <code>desiredCount</code> by the task set's <code>scale</code> percentage. The result is always rounded up. For example, if the computed desired count is 1.2, it rounds up to 2 tasks.</p>
     pub fn set_computed_desired_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.computed_desired_count = input;
-        self
+        self.computed_desired_count = input; self
     }
     /// <p>The computed desired count for the task set. This is calculated by multiplying the service's <code>desiredCount</code> by the task set's <code>scale</code> percentage. The result is always rounded up. For example, if the computed desired count is 1.2, it rounds up to 2 tasks.</p>
     pub fn get_computed_desired_count(&self) -> &::std::option::Option<i32> {
@@ -497,8 +492,7 @@ impl TaskSetBuilder {
     }
     /// <p>The number of tasks in the task set that are in the <code>PENDING</code> status during a deployment. A task in the <code>PENDING</code> state is preparing to enter the <code>RUNNING</code> state. A task set enters the <code>PENDING</code> status when it launches for the first time or when it's restarted after being in the <code>STOPPED</code> state.</p>
     pub fn set_pending_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.pending_count = input;
-        self
+        self.pending_count = input; self
     }
     /// <p>The number of tasks in the task set that are in the <code>PENDING</code> status during a deployment. A task in the <code>PENDING</code> state is preparing to enter the <code>RUNNING</code> state. A task set enters the <code>PENDING</code> status when it launches for the first time or when it's restarted after being in the <code>STOPPED</code> state.</p>
     pub fn get_pending_count(&self) -> &::std::option::Option<i32> {
@@ -511,8 +505,7 @@ impl TaskSetBuilder {
     }
     /// <p>The number of tasks in the task set that are in the <code>RUNNING</code> status during a deployment. A task in the <code>RUNNING</code> state is running and ready for use.</p>
     pub fn set_running_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.running_count = input;
-        self
+        self.running_count = input; self
     }
     /// <p>The number of tasks in the task set that are in the <code>RUNNING</code> status during a deployment. A task in the <code>RUNNING</code> state is running and ready for use.</p>
     pub fn get_running_count(&self) -> &::std::option::Option<i32> {
@@ -525,8 +518,7 @@ impl TaskSetBuilder {
     }
     /// <p>The Unix timestamp for the time when the task set was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The Unix timestamp for the time when the task set was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -539,8 +531,7 @@ impl TaskSetBuilder {
     }
     /// <p>The Unix timestamp for the time when the task set was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The Unix timestamp for the time when the task set was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -553,8 +544,7 @@ impl TaskSetBuilder {
     }
     /// <p>The launch type the tasks in the task set are using. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn set_launch_type(mut self, input: ::std::option::Option<crate::types::LaunchType>) -> Self {
-        self.launch_type = input;
-        self
+        self.launch_type = input; self
     }
     /// <p>The launch type the tasks in the task set are using. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn get_launch_type(&self) -> &::std::option::Option<crate::types::LaunchType> {
@@ -567,20 +557,16 @@ impl TaskSetBuilder {
     /// <p>The capacity provider strategy that are associated with the task set.</p>
     pub fn capacity_provider_strategy(mut self, input: crate::types::CapacityProviderStrategyItem) -> Self {
         let mut v = self.capacity_provider_strategy.unwrap_or_default();
-        v.push(input);
-        self.capacity_provider_strategy = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.capacity_provider_strategy = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The capacity provider strategy that are associated with the task set.</p>
-    pub fn set_capacity_provider_strategy(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
-    ) -> Self {
-        self.capacity_provider_strategy = input;
-        self
+    pub fn set_capacity_provider_strategy(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CapacityProviderStrategyItem>>) -> Self {
+        self.capacity_provider_strategy = input; self
     }
     /// <p>The capacity provider strategy that are associated with the task set.</p>
-    pub fn get_capacity_provider_strategy(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>> {
+    pub fn get_capacity_provider_strategy(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CapacityProviderStrategyItem>> {
         &self.capacity_provider_strategy
     }
     /// <p>The Fargate platform version where the tasks in the task set are running. A platform version is only specified for tasks run on Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
@@ -590,8 +576,7 @@ impl TaskSetBuilder {
     }
     /// <p>The Fargate platform version where the tasks in the task set are running. A platform version is only specified for tasks run on Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn set_platform_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform_version = input;
-        self
+        self.platform_version = input; self
     }
     /// <p>The Fargate platform version where the tasks in the task set are running. A platform version is only specified for tasks run on Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn get_platform_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -606,8 +591,7 @@ impl TaskSetBuilder {
     /// <p>The operating system that your tasks in the set are running on. A platform family is specified only for tasks that use the Fargate launch type.</p>
     /// <p>All tasks in the set must have the same value.</p>
     pub fn set_platform_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform_family = input;
-        self
+        self.platform_family = input; self
     }
     /// <p>The operating system that your tasks in the set are running on. A platform family is specified only for tasks that use the Fargate launch type.</p>
     /// <p>All tasks in the set must have the same value.</p>
@@ -621,8 +605,7 @@ impl TaskSetBuilder {
     }
     /// <p>The network configuration for the task set.</p>
     pub fn set_network_configuration(mut self, input: ::std::option::Option<crate::types::NetworkConfiguration>) -> Self {
-        self.network_configuration = input;
-        self
+        self.network_configuration = input; self
     }
     /// <p>The network configuration for the task set.</p>
     pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
@@ -635,17 +618,16 @@ impl TaskSetBuilder {
     /// <p>Details on a load balancer that are used with a task set.</p>
     pub fn load_balancers(mut self, input: crate::types::LoadBalancer) -> Self {
         let mut v = self.load_balancers.unwrap_or_default();
-        v.push(input);
-        self.load_balancers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.load_balancers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details on a load balancer that are used with a task set.</p>
-    pub fn set_load_balancers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>>) -> Self {
-        self.load_balancers = input;
-        self
+    pub fn set_load_balancers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LoadBalancer>>) -> Self {
+        self.load_balancers = input; self
     }
     /// <p>Details on a load balancer that are used with a task set.</p>
-    pub fn get_load_balancers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>> {
+    pub fn get_load_balancers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LoadBalancer>> {
         &self.load_balancers
     }
     /// Appends an item to `service_registries`.
@@ -655,17 +637,16 @@ impl TaskSetBuilder {
     /// <p>The details for the service discovery registries to assign to this task set. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.</p>
     pub fn service_registries(mut self, input: crate::types::ServiceRegistry) -> Self {
         let mut v = self.service_registries.unwrap_or_default();
-        v.push(input);
-        self.service_registries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.service_registries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The details for the service discovery registries to assign to this task set. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.</p>
-    pub fn set_service_registries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceRegistry>>) -> Self {
-        self.service_registries = input;
-        self
+    pub fn set_service_registries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceRegistry>>) -> Self {
+        self.service_registries = input; self
     }
     /// <p>The details for the service discovery registries to assign to this task set. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.</p>
-    pub fn get_service_registries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceRegistry>> {
+    pub fn get_service_registries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ServiceRegistry>> {
         &self.service_registries
     }
     /// <p>A floating-point percentage of your desired number of tasks to place and keep running in the task set.</p>
@@ -675,8 +656,7 @@ impl TaskSetBuilder {
     }
     /// <p>A floating-point percentage of your desired number of tasks to place and keep running in the task set.</p>
     pub fn set_scale(mut self, input: ::std::option::Option<crate::types::Scale>) -> Self {
-        self.scale = input;
-        self
+        self.scale = input; self
     }
     /// <p>A floating-point percentage of your desired number of tasks to place and keep running in the task set.</p>
     pub fn get_scale(&self) -> &::std::option::Option<crate::types::Scale> {
@@ -711,8 +691,7 @@ impl TaskSetBuilder {
     /// </ul>
     /// <p>If any of those conditions aren't met, the stability status returns <code>STABILIZING</code>.</p>
     pub fn set_stability_status(mut self, input: ::std::option::Option<crate::types::StabilityStatus>) -> Self {
-        self.stability_status = input;
-        self
+        self.stability_status = input; self
     }
     /// <p>The stability status. This indicates whether the task set has reached a steady state. If the following conditions are met, the task set are in <code>STEADY_STATE</code>:</p>
     /// <ul>
@@ -736,8 +715,7 @@ impl TaskSetBuilder {
     }
     /// <p>The Unix timestamp for the time when the task set stability status was retrieved.</p>
     pub fn set_stability_status_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.stability_status_at = input;
-        self
+        self.stability_status_at = input; self
     }
     /// <p>The Unix timestamp for the time when the task set stability status was retrieved.</p>
     pub fn get_stability_status_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -767,9 +745,9 @@ impl TaskSetBuilder {
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The metadata that you apply to the task set to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -789,9 +767,8 @@ impl TaskSetBuilder {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The metadata that you apply to the task set to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -811,36 +788,64 @@ impl TaskSetBuilder {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`TaskSet`](crate::types::TaskSet).
     pub fn build(self) -> crate::types::TaskSet {
         crate::types::TaskSet {
-            id: self.id,
-            task_set_arn: self.task_set_arn,
-            service_arn: self.service_arn,
-            cluster_arn: self.cluster_arn,
-            started_by: self.started_by,
-            external_id: self.external_id,
-            status: self.status,
-            task_definition: self.task_definition,
-            computed_desired_count: self.computed_desired_count.unwrap_or_default(),
-            pending_count: self.pending_count.unwrap_or_default(),
-            running_count: self.running_count.unwrap_or_default(),
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-            launch_type: self.launch_type,
-            capacity_provider_strategy: self.capacity_provider_strategy,
-            platform_version: self.platform_version,
-            platform_family: self.platform_family,
-            network_configuration: self.network_configuration,
-            load_balancers: self.load_balancers,
-            service_registries: self.service_registries,
-            scale: self.scale,
-            stability_status: self.stability_status,
-            stability_status_at: self.stability_status_at,
-            tags: self.tags,
+            id: self.id
+            ,
+            task_set_arn: self.task_set_arn
+            ,
+            service_arn: self.service_arn
+            ,
+            cluster_arn: self.cluster_arn
+            ,
+            started_by: self.started_by
+            ,
+            external_id: self.external_id
+            ,
+            status: self.status
+            ,
+            task_definition: self.task_definition
+            ,
+            computed_desired_count: self.computed_desired_count
+                .unwrap_or_default()
+            ,
+            pending_count: self.pending_count
+                .unwrap_or_default()
+            ,
+            running_count: self.running_count
+                .unwrap_or_default()
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
+            launch_type: self.launch_type
+            ,
+            capacity_provider_strategy: self.capacity_provider_strategy
+            ,
+            platform_version: self.platform_version
+            ,
+            platform_family: self.platform_family
+            ,
+            network_configuration: self.network_configuration
+            ,
+            load_balancers: self.load_balancers
+            ,
+            service_registries: self.service_registries
+            ,
+            scale: self.scale
+            ,
+            stability_status: self.stability_status
+            ,
+            stability_status_at: self.stability_status_at
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

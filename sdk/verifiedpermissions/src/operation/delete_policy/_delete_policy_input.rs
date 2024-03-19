@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePolicyInput {
+pub struct DeletePolicyInput  {
     /// <p>Specifies the ID of the policy store that contains the policy that you want to delete.</p>
     pub policy_store_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the ID of the policy that you want to delete.</p>
     pub policy_id: ::std::option::Option<::std::string::String>,
 }
-impl DeletePolicyInput {
+impl  DeletePolicyInput  {
     /// <p>Specifies the ID of the policy store that contains the policy that you want to delete.</p>
-    pub fn policy_store_id(&self) -> ::std::option::Option<&str> {
+    pub fn policy_store_id(&self) -> ::std::option::Option<& str> {
         self.policy_store_id.as_deref()
     }
     /// <p>Specifies the ID of the policy that you want to delete.</p>
-    pub fn policy_id(&self) -> ::std::option::Option<&str> {
+    pub fn policy_id(&self) -> ::std::option::Option<& str> {
         self.policy_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeletePolicyInputBuilder {
     }
     /// <p>Specifies the ID of the policy store that contains the policy that you want to delete.</p>
     pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_store_id = input;
-        self
+        self.policy_store_id = input; self
     }
     /// <p>Specifies the ID of the policy store that contains the policy that you want to delete.</p>
     pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DeletePolicyInputBuilder {
     }
     /// <p>Specifies the ID of the policy that you want to delete.</p>
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_id = input;
-        self
+        self.policy_id = input; self
     }
     /// <p>Specifies the ID of the policy that you want to delete.</p>
     pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_id
     }
     /// Consumes the builder and constructs a [`DeletePolicyInput`](crate::operation::delete_policy::DeletePolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_policy::DeletePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_policy::DeletePolicyInput {
-            policy_store_id: self.policy_store_id,
-            policy_id: self.policy_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_policy::DeletePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_policy::DeletePolicyInput {
+                policy_store_id: self.policy_store_id
+                ,
+                policy_id: self.policy_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Ephemeris item.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EphemerisItem {
+pub struct EphemerisItem  {
     /// <p>The AWS Ground Station ephemeris ID.</p>
     pub ephemeris_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the ephemeris.</p>
@@ -21,13 +21,13 @@ pub struct EphemerisItem {
     /// <p>Source S3 object used for the ephemeris.</p>
     pub source_s3_object: ::std::option::Option<crate::types::S3Object>,
 }
-impl EphemerisItem {
+impl  EphemerisItem  {
     /// <p>The AWS Ground Station ephemeris ID.</p>
-    pub fn ephemeris_id(&self) -> ::std::option::Option<&str> {
+    pub fn ephemeris_id(&self) -> ::std::option::Option<& str> {
         self.ephemeris_id.as_deref()
     }
     /// <p>The status of the ephemeris.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::EphemerisStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::EphemerisStatus> {
         self.status.as_ref()
     }
     /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
@@ -41,15 +41,15 @@ impl EphemerisItem {
         self.enabled
     }
     /// <p>The time the ephemeris was uploaded in UTC.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Source S3 object used for the ephemeris.</p>
-    pub fn source_s3_object(&self) -> ::std::option::Option<&crate::types::S3Object> {
+    pub fn source_s3_object(&self) -> ::std::option::Option<& crate::types::S3Object> {
         self.source_s3_object.as_ref()
     }
 }
@@ -80,8 +80,7 @@ impl EphemerisItemBuilder {
     }
     /// <p>The AWS Ground Station ephemeris ID.</p>
     pub fn set_ephemeris_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ephemeris_id = input;
-        self
+        self.ephemeris_id = input; self
     }
     /// <p>The AWS Ground Station ephemeris ID.</p>
     pub fn get_ephemeris_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +93,7 @@ impl EphemerisItemBuilder {
     }
     /// <p>The status of the ephemeris.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EphemerisStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the ephemeris.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EphemerisStatus> {
@@ -112,8 +110,7 @@ impl EphemerisItemBuilder {
     /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
     /// <p>Priority must be 1 or greater</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
     /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
@@ -128,8 +125,7 @@ impl EphemerisItemBuilder {
     }
     /// <p>Whether or not the ephemeris is enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Whether or not the ephemeris is enabled.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -142,8 +138,7 @@ impl EphemerisItemBuilder {
     }
     /// <p>The time the ephemeris was uploaded in UTC.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time the ephemeris was uploaded in UTC.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -156,8 +151,7 @@ impl EphemerisItemBuilder {
     }
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,8 +164,7 @@ impl EphemerisItemBuilder {
     }
     /// <p>Source S3 object used for the ephemeris.</p>
     pub fn set_source_s3_object(mut self, input: ::std::option::Option<crate::types::S3Object>) -> Self {
-        self.source_s3_object = input;
-        self
+        self.source_s3_object = input; self
     }
     /// <p>Source S3 object used for the ephemeris.</p>
     pub fn get_source_s3_object(&self) -> &::std::option::Option<crate::types::S3Object> {
@@ -180,13 +173,21 @@ impl EphemerisItemBuilder {
     /// Consumes the builder and constructs a [`EphemerisItem`](crate::types::EphemerisItem).
     pub fn build(self) -> crate::types::EphemerisItem {
         crate::types::EphemerisItem {
-            ephemeris_id: self.ephemeris_id,
-            status: self.status,
-            priority: self.priority,
-            enabled: self.enabled,
-            creation_time: self.creation_time,
-            name: self.name,
-            source_s3_object: self.source_s3_object,
+            ephemeris_id: self.ephemeris_id
+            ,
+            status: self.status
+            ,
+            priority: self.priority
+            ,
+            enabled: self.enabled
+            ,
+            creation_time: self.creation_time
+            ,
+            name: self.name
+            ,
+            source_s3_object: self.source_s3_object
+            ,
         }
     }
 }
+

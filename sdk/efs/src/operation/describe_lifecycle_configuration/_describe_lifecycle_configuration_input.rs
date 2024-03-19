@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLifecycleConfigurationInput {
+pub struct DescribeLifecycleConfigurationInput  {
     /// <p>The ID of the file system whose <code>LifecycleConfiguration</code> object you want to retrieve (String).</p>
     pub file_system_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeLifecycleConfigurationInput {
+impl  DescribeLifecycleConfigurationInput  {
     /// <p>The ID of the file system whose <code>LifecycleConfiguration</code> object you want to retrieve (String).</p>
-    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
+    pub fn file_system_id(&self) -> ::std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeLifecycleConfigurationInputBuilder {
     }
     /// <p>The ID of the file system whose <code>LifecycleConfiguration</code> object you want to retrieve (String).</p>
     pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_system_id = input;
-        self
+        self.file_system_id = input; self
     }
     /// <p>The ID of the file system whose <code>LifecycleConfiguration</code> object you want to retrieve (String).</p>
     pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_system_id
     }
     /// Consumes the builder and constructs a [`DescribeLifecycleConfigurationInput`](crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationInput {
-            file_system_id: self.file_system_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationInput {
+                file_system_id: self.file_system_id
+                ,
+            }
+        )
     }
 }
+

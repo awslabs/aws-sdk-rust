@@ -3,19 +3,19 @@
 /// <p>The status of the pipeline element.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MediaInsightsPipelineElementStatus {
+pub struct MediaInsightsPipelineElementStatus  {
     /// <p>The type of status.</p>
     pub r#type: ::std::option::Option<crate::types::MediaInsightsPipelineConfigurationElementType>,
     /// <p>The element's status.</p>
     pub status: ::std::option::Option<crate::types::MediaPipelineElementStatus>,
 }
-impl MediaInsightsPipelineElementStatus {
+impl  MediaInsightsPipelineElementStatus  {
     /// <p>The type of status.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::MediaInsightsPipelineConfigurationElementType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::MediaInsightsPipelineConfigurationElementType> {
         self.r#type.as_ref()
     }
     /// <p>The element's status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::MediaPipelineElementStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::MediaPipelineElementStatus> {
         self.status.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl MediaInsightsPipelineElementStatusBuilder {
     }
     /// <p>The type of status.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::MediaInsightsPipelineConfigurationElementType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of status.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::MediaInsightsPipelineConfigurationElementType> {
@@ -55,8 +54,7 @@ impl MediaInsightsPipelineElementStatusBuilder {
     }
     /// <p>The element's status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MediaPipelineElementStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The element's status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::MediaPipelineElementStatus> {
@@ -65,8 +63,11 @@ impl MediaInsightsPipelineElementStatusBuilder {
     /// Consumes the builder and constructs a [`MediaInsightsPipelineElementStatus`](crate::types::MediaInsightsPipelineElementStatus).
     pub fn build(self) -> crate::types::MediaInsightsPipelineElementStatus {
         crate::types::MediaInsightsPipelineElementStatus {
-            r#type: self.r#type,
-            status: self.status,
+            r#type: self.r#type
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

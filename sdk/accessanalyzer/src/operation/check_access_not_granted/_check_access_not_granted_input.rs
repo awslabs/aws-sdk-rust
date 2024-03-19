@@ -2,33 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CheckAccessNotGrantedInput {
+pub struct CheckAccessNotGrantedInput  {
     /// <p>The JSON policy document to use as the content for the policy.</p>
     pub policy_document: ::std::option::Option<::std::string::String>,
     /// <p>An access object containing the permissions that shouldn't be granted by the specified policy.</p>
-    pub access: ::std::option::Option<::std::vec::Vec<crate::types::Access>>,
+    pub access: ::std::option::Option<::std::vec::Vec::<crate::types::Access>>,
     /// <p>The type of policy. Identity policies grant permissions to IAM principals. Identity policies include managed and inline policies for IAM roles, users, and groups.</p>
     /// <p>Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust policies for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic input such as identity policy or resource policy or a specific input such as managed policy or Amazon S3 bucket policy.</p>
     pub policy_type: ::std::option::Option<crate::types::AccessCheckPolicyType>,
 }
-impl CheckAccessNotGrantedInput {
+impl  CheckAccessNotGrantedInput  {
     /// <p>The JSON policy document to use as the content for the policy.</p>
-    pub fn policy_document(&self) -> ::std::option::Option<&str> {
+    pub fn policy_document(&self) -> ::std::option::Option<& str> {
         self.policy_document.as_deref()
     }
     /// <p>An access object containing the permissions that shouldn't be granted by the specified policy.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access.is_none()`.
-    pub fn access(&self) -> &[crate::types::Access] {
-        self.access.as_deref().unwrap_or_default()
+    pub fn access(&self) -> & [crate::types::Access] {
+        self.access.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The type of policy. Identity policies grant permissions to IAM principals. Identity policies include managed and inline policies for IAM roles, users, and groups.</p>
     /// <p>Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust policies for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic input such as identity policy or resource policy or a specific input such as managed policy or Amazon S3 bucket policy.</p>
-    pub fn policy_type(&self) -> ::std::option::Option<&crate::types::AccessCheckPolicyType> {
+    pub fn policy_type(&self) -> ::std::option::Option<& crate::types::AccessCheckPolicyType> {
         self.policy_type.as_ref()
     }
 }
-impl ::std::fmt::Debug for CheckAccessNotGrantedInput {
+impl  ::std::fmt::Debug for CheckAccessNotGrantedInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CheckAccessNotGrantedInput");
         formatter.field("policy_document", &"*** Sensitive Data Redacted ***");
@@ -49,7 +50,7 @@ impl CheckAccessNotGrantedInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct CheckAccessNotGrantedInputBuilder {
     pub(crate) policy_document: ::std::option::Option<::std::string::String>,
-    pub(crate) access: ::std::option::Option<::std::vec::Vec<crate::types::Access>>,
+    pub(crate) access: ::std::option::Option<::std::vec::Vec::<crate::types::Access>>,
     pub(crate) policy_type: ::std::option::Option<crate::types::AccessCheckPolicyType>,
 }
 impl CheckAccessNotGrantedInputBuilder {
@@ -61,8 +62,7 @@ impl CheckAccessNotGrantedInputBuilder {
     }
     /// <p>The JSON policy document to use as the content for the policy.</p>
     pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_document = input;
-        self
+        self.policy_document = input; self
     }
     /// <p>The JSON policy document to use as the content for the policy.</p>
     pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,17 +75,16 @@ impl CheckAccessNotGrantedInputBuilder {
     /// <p>An access object containing the permissions that shouldn't be granted by the specified policy.</p>
     pub fn access(mut self, input: crate::types::Access) -> Self {
         let mut v = self.access.unwrap_or_default();
-        v.push(input);
-        self.access = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.access = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An access object containing the permissions that shouldn't be granted by the specified policy.</p>
-    pub fn set_access(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Access>>) -> Self {
-        self.access = input;
-        self
+    pub fn set_access(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Access>>) -> Self {
+        self.access = input; self
     }
     /// <p>An access object containing the permissions that shouldn't be granted by the specified policy.</p>
-    pub fn get_access(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Access>> {
+    pub fn get_access(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Access>> {
         &self.access
     }
     /// <p>The type of policy. Identity policies grant permissions to IAM principals. Identity policies include managed and inline policies for IAM roles, users, and groups.</p>
@@ -98,8 +97,7 @@ impl CheckAccessNotGrantedInputBuilder {
     /// <p>The type of policy. Identity policies grant permissions to IAM principals. Identity policies include managed and inline policies for IAM roles, users, and groups.</p>
     /// <p>Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust policies for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic input such as identity policy or resource policy or a specific input such as managed policy or Amazon S3 bucket policy.</p>
     pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::AccessCheckPolicyType>) -> Self {
-        self.policy_type = input;
-        self
+        self.policy_type = input; self
     }
     /// <p>The type of policy. Identity policies grant permissions to IAM principals. Identity policies include managed and inline policies for IAM roles, users, and groups.</p>
     /// <p>Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust policies for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic input such as identity policy or resource policy or a specific input such as managed policy or Amazon S3 bucket policy.</p>
@@ -107,15 +105,17 @@ impl CheckAccessNotGrantedInputBuilder {
         &self.policy_type
     }
     /// Consumes the builder and constructs a [`CheckAccessNotGrantedInput`](crate::operation::check_access_not_granted::CheckAccessNotGrantedInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::check_access_not_granted::CheckAccessNotGrantedInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::check_access_not_granted::CheckAccessNotGrantedInput {
-            policy_document: self.policy_document,
-            access: self.access,
-            policy_type: self.policy_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::check_access_not_granted::CheckAccessNotGrantedInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::check_access_not_granted::CheckAccessNotGrantedInput {
+                policy_document: self.policy_document
+                ,
+                access: self.access
+                ,
+                policy_type: self.policy_type
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CheckAccessNotGrantedInputBuilder {
@@ -127,3 +127,4 @@ impl ::std::fmt::Debug for CheckAccessNotGrantedInputBuilder {
         formatter.finish()
     }
 }
+

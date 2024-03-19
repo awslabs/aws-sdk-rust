@@ -3,7 +3,7 @@
 /// <p>A comment that's posted by a user on a control. This includes the author's name, the comment text, and a timestamp.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ControlComment {
+pub struct ControlComment  {
     /// <p>The name of the user who authored the comment.</p>
     pub author_name: ::std::option::Option<::std::string::String>,
     /// <p>The body text of a control comment.</p>
@@ -11,21 +11,21 @@ pub struct ControlComment {
     /// <p>The time when the comment was posted.</p>
     pub posted_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ControlComment {
+impl  ControlComment  {
     /// <p>The name of the user who authored the comment.</p>
-    pub fn author_name(&self) -> ::std::option::Option<&str> {
+    pub fn author_name(&self) -> ::std::option::Option<& str> {
         self.author_name.as_deref()
     }
     /// <p>The body text of a control comment.</p>
-    pub fn comment_body(&self) -> ::std::option::Option<&str> {
+    pub fn comment_body(&self) -> ::std::option::Option<& str> {
         self.comment_body.as_deref()
     }
     /// <p>The time when the comment was posted.</p>
-    pub fn posted_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn posted_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.posted_date.as_ref()
     }
 }
-impl ::std::fmt::Debug for ControlComment {
+impl  ::std::fmt::Debug for ControlComment  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ControlComment");
         formatter.field("author_name", &"*** Sensitive Data Redacted ***");
@@ -57,8 +57,7 @@ impl ControlCommentBuilder {
     }
     /// <p>The name of the user who authored the comment.</p>
     pub fn set_author_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.author_name = input;
-        self
+        self.author_name = input; self
     }
     /// <p>The name of the user who authored the comment.</p>
     pub fn get_author_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl ControlCommentBuilder {
     }
     /// <p>The body text of a control comment.</p>
     pub fn set_comment_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comment_body = input;
-        self
+        self.comment_body = input; self
     }
     /// <p>The body text of a control comment.</p>
     pub fn get_comment_body(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl ControlCommentBuilder {
     }
     /// <p>The time when the comment was posted.</p>
     pub fn set_posted_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.posted_date = input;
-        self
+        self.posted_date = input; self
     }
     /// <p>The time when the comment was posted.</p>
     pub fn get_posted_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -95,9 +92,12 @@ impl ControlCommentBuilder {
     /// Consumes the builder and constructs a [`ControlComment`](crate::types::ControlComment).
     pub fn build(self) -> crate::types::ControlComment {
         crate::types::ControlComment {
-            author_name: self.author_name,
-            comment_body: self.comment_body,
-            posted_date: self.posted_date,
+            author_name: self.author_name
+            ,
+            comment_body: self.comment_body
+            ,
+            posted_date: self.posted_date
+            ,
         }
     }
 }
@@ -110,3 +110,4 @@ impl ::std::fmt::Debug for ControlCommentBuilder {
         formatter.finish()
     }
 }
+

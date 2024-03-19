@@ -78,7 +78,7 @@ pub enum Error {
     &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
      \
     See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-Error) for what information is available for the error.")]
-    Unhandled(crate::error::sealed_unhandled::Unhandled),
+    Unhandled(crate::error::sealed_unhandled::Unhandled)
 }
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -117,76 +117,70 @@ impl ::std::fmt::Display for Error {
             Error::TimeLimitExceededException(inner) => inner.fmt(f),
             Error::TooManyRequestsException(inner) => inner.fmt(f),
             Error::UnsupportedOperationException(inner) => inner.fmt(f),
-            Error::Unhandled(_) => {
-                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
-                    write!(f, "unhandled error ({code})")
-                } else {
-                    f.write_str("unhandled error")
-                }
-            }
+            Error::Unhandled(_) => if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                                        write!(f, "unhandled error ({code})")
+                                    } else {
+                                        f.write_str("unhandled error")
+                                    }
         }
     }
 }
 impl From<::aws_smithy_types::error::operation::BuildError> for Error {
-    fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
-        Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source: value.into(),
-            meta: ::std::default::Default::default(),
-        })
-    }
-}
+                fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
+                    Error::Unhandled(crate::error::sealed_unhandled::Unhandled { source: value.into(), meta: ::std::default::Default::default() })
+                }
+            }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
-    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
-        match self {
-            Self::AccessDeniedException(inner) => inner.meta(),
-            Self::BadRequestException(inner) => inner.meta(),
-            Self::BulkLoadIdNotFoundException(inner) => inner.meta(),
-            Self::CancelledByUserException(inner) => inner.meta(),
-            Self::ClientTimeoutException(inner) => inner.meta(),
-            Self::ConcurrentModificationException(inner) => inner.meta(),
-            Self::ConstraintViolationException(inner) => inner.meta(),
-            Self::ExpiredStreamException(inner) => inner.meta(),
-            Self::FailureByQueryException(inner) => inner.meta(),
-            Self::IllegalArgumentException(inner) => inner.meta(),
-            Self::InternalFailureException(inner) => inner.meta(),
-            Self::InvalidArgumentException(inner) => inner.meta(),
-            Self::InvalidNumericDataException(inner) => inner.meta(),
-            Self::InvalidParameterException(inner) => inner.meta(),
-            Self::LoadUrlAccessDeniedException(inner) => inner.meta(),
-            Self::MlResourceNotFoundException(inner) => inner.meta(),
-            Self::MalformedQueryException(inner) => inner.meta(),
-            Self::MemoryLimitExceededException(inner) => inner.meta(),
-            Self::MethodNotAllowedException(inner) => inner.meta(),
-            Self::MissingParameterException(inner) => inner.meta(),
-            Self::ParsingException(inner) => inner.meta(),
-            Self::PreconditionsFailedException(inner) => inner.meta(),
-            Self::QueryLimitExceededException(inner) => inner.meta(),
-            Self::QueryLimitException(inner) => inner.meta(),
-            Self::QueryTooLargeException(inner) => inner.meta(),
-            Self::ReadOnlyViolationException(inner) => inner.meta(),
-            Self::S3Exception(inner) => inner.meta(),
-            Self::ServerShutdownException(inner) => inner.meta(),
-            Self::StatisticsNotAvailableException(inner) => inner.meta(),
-            Self::StreamRecordsNotFoundException(inner) => inner.meta(),
-            Self::ThrottlingException(inner) => inner.meta(),
-            Self::TimeLimitExceededException(inner) => inner.meta(),
-            Self::TooManyRequestsException(inner) => inner.meta(),
-            Self::UnsupportedOperationException(inner) => inner.meta(),
-            Self::Unhandled(inner) => &inner.meta,
-        }
-    }
-}
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_gremlin_query::CancelGremlinQueryError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+                fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+                    match self {
+                        Self::AccessDeniedException(inner) => inner.meta(),
+Self::BadRequestException(inner) => inner.meta(),
+Self::BulkLoadIdNotFoundException(inner) => inner.meta(),
+Self::CancelledByUserException(inner) => inner.meta(),
+Self::ClientTimeoutException(inner) => inner.meta(),
+Self::ConcurrentModificationException(inner) => inner.meta(),
+Self::ConstraintViolationException(inner) => inner.meta(),
+Self::ExpiredStreamException(inner) => inner.meta(),
+Self::FailureByQueryException(inner) => inner.meta(),
+Self::IllegalArgumentException(inner) => inner.meta(),
+Self::InternalFailureException(inner) => inner.meta(),
+Self::InvalidArgumentException(inner) => inner.meta(),
+Self::InvalidNumericDataException(inner) => inner.meta(),
+Self::InvalidParameterException(inner) => inner.meta(),
+Self::LoadUrlAccessDeniedException(inner) => inner.meta(),
+Self::MlResourceNotFoundException(inner) => inner.meta(),
+Self::MalformedQueryException(inner) => inner.meta(),
+Self::MemoryLimitExceededException(inner) => inner.meta(),
+Self::MethodNotAllowedException(inner) => inner.meta(),
+Self::MissingParameterException(inner) => inner.meta(),
+Self::ParsingException(inner) => inner.meta(),
+Self::PreconditionsFailedException(inner) => inner.meta(),
+Self::QueryLimitExceededException(inner) => inner.meta(),
+Self::QueryLimitException(inner) => inner.meta(),
+Self::QueryTooLargeException(inner) => inner.meta(),
+Self::ReadOnlyViolationException(inner) => inner.meta(),
+Self::S3Exception(inner) => inner.meta(),
+Self::ServerShutdownException(inner) => inner.meta(),
+Self::StatisticsNotAvailableException(inner) => inner.meta(),
+Self::StreamRecordsNotFoundException(inner) => inner.meta(),
+Self::ThrottlingException(inner) => inner.meta(),
+Self::TimeLimitExceededException(inner) => inner.meta(),
+Self::TooManyRequestsException(inner) => inner.meta(),
+Self::UnsupportedOperationException(inner) => inner.meta(),
+                        Self::Unhandled(inner) => &inner.meta,
+                    }
+                }
+            }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_gremlin_query::CancelGremlinQueryError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_gremlin_query::CancelGremlinQueryError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -195,53 +189,32 @@ impl From<crate::operation::cancel_gremlin_query::CancelGremlinQueryError> for E
         match err {
             crate::operation::cancel_gremlin_query::CancelGremlinQueryError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::cancel_gremlin_query::CancelGremlinQueryError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
-            crate::operation::cancel_gremlin_query::CancelGremlinQueryError::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::operation::cancel_gremlin_query::CancelGremlinQueryError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
+            crate::operation::cancel_gremlin_query::CancelGremlinQueryError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::cancel_gremlin_query::CancelGremlinQueryError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
             crate::operation::cancel_gremlin_query::CancelGremlinQueryError::FailureByQueryException(inner) => Error::FailureByQueryException(inner),
-            crate::operation::cancel_gremlin_query::CancelGremlinQueryError::IllegalArgumentException(inner) => {
-                Error::IllegalArgumentException(inner)
-            }
-            crate::operation::cancel_gremlin_query::CancelGremlinQueryError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::cancel_gremlin_query::CancelGremlinQueryError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::cancel_gremlin_query::CancelGremlinQueryError::MissingParameterException(inner) => {
-                Error::MissingParameterException(inner)
-            }
+            crate::operation::cancel_gremlin_query::CancelGremlinQueryError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::cancel_gremlin_query::CancelGremlinQueryError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::cancel_gremlin_query::CancelGremlinQueryError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::cancel_gremlin_query::CancelGremlinQueryError::MissingParameterException(inner) => Error::MissingParameterException(inner),
             crate::operation::cancel_gremlin_query::CancelGremlinQueryError::ParsingException(inner) => Error::ParsingException(inner),
-            crate::operation::cancel_gremlin_query::CancelGremlinQueryError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
-            crate::operation::cancel_gremlin_query::CancelGremlinQueryError::TimeLimitExceededException(inner) => {
-                Error::TimeLimitExceededException(inner)
-            }
-            crate::operation::cancel_gremlin_query::CancelGremlinQueryError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::cancel_gremlin_query::CancelGremlinQueryError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::cancel_gremlin_query::CancelGremlinQueryError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
+            crate::operation::cancel_gremlin_query::CancelGremlinQueryError::TimeLimitExceededException(inner) => Error::TimeLimitExceededException(inner),
+            crate::operation::cancel_gremlin_query::CancelGremlinQueryError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::cancel_gremlin_query::CancelGremlinQueryError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::cancel_gremlin_query::CancelGremlinQueryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_loader_job::CancelLoaderJobError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_loader_job::CancelLoaderJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_loader_job::CancelLoaderJobError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -249,216 +222,125 @@ impl From<crate::operation::cancel_loader_job::CancelLoaderJobError> for Error {
     fn from(err: crate::operation::cancel_loader_job::CancelLoaderJobError) -> Self {
         match err {
             crate::operation::cancel_loader_job::CancelLoaderJobError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::cancel_loader_job::CancelLoaderJobError::BulkLoadIdNotFoundException(inner) => {
-                Error::BulkLoadIdNotFoundException(inner)
-            }
+            crate::operation::cancel_loader_job::CancelLoaderJobError::BulkLoadIdNotFoundException(inner) => Error::BulkLoadIdNotFoundException(inner),
             crate::operation::cancel_loader_job::CancelLoaderJobError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
-            crate::operation::cancel_loader_job::CancelLoaderJobError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
+            crate::operation::cancel_loader_job::CancelLoaderJobError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
             crate::operation::cancel_loader_job::CancelLoaderJobError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
             crate::operation::cancel_loader_job::CancelLoaderJobError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::cancel_loader_job::CancelLoaderJobError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
             crate::operation::cancel_loader_job::CancelLoaderJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::cancel_loader_job::CancelLoaderJobError::LoadUrlAccessDeniedException(inner) => {
-                Error::LoadUrlAccessDeniedException(inner)
-            }
+            crate::operation::cancel_loader_job::CancelLoaderJobError::LoadUrlAccessDeniedException(inner) => Error::LoadUrlAccessDeniedException(inner),
             crate::operation::cancel_loader_job::CancelLoaderJobError::MissingParameterException(inner) => Error::MissingParameterException(inner),
-            crate::operation::cancel_loader_job::CancelLoaderJobError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
+            crate::operation::cancel_loader_job::CancelLoaderJobError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
             crate::operation::cancel_loader_job::CancelLoaderJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::cancel_loader_job::CancelLoaderJobError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::cancel_loader_job::CancelLoaderJobError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::cancel_loader_job::CancelLoaderJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_ml_data_processing_job::CancelMLDataProcessingJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_ml_data_processing_job::CancelMLDataProcessingJobError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_ml_data_processing_job::CancelMLDataProcessingJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_ml_data_processing_job::CancelMLDataProcessingJobError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::cancel_ml_data_processing_job::CancelMLDataProcessingJobError> for Error {
     fn from(err: crate::operation::cancel_ml_data_processing_job::CancelMLDataProcessingJobError) -> Self {
         match err {
-            crate::operation::cancel_ml_data_processing_job::CancelMLDataProcessingJobError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::operation::cancel_ml_data_processing_job::CancelMLDataProcessingJobError::ClientTimeoutException(inner) => {
-                Error::ClientTimeoutException(inner)
-            }
-            crate::operation::cancel_ml_data_processing_job::CancelMLDataProcessingJobError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::operation::cancel_ml_data_processing_job::CancelMLDataProcessingJobError::IllegalArgumentException(inner) => {
-                Error::IllegalArgumentException(inner)
-            }
-            crate::operation::cancel_ml_data_processing_job::CancelMLDataProcessingJobError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::cancel_ml_data_processing_job::CancelMLDataProcessingJobError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::cancel_ml_data_processing_job::CancelMLDataProcessingJobError::MissingParameterException(inner) => {
-                Error::MissingParameterException(inner)
-            }
-            crate::operation::cancel_ml_data_processing_job::CancelMLDataProcessingJobError::MlResourceNotFoundException(inner) => {
-                Error::MlResourceNotFoundException(inner)
-            }
-            crate::operation::cancel_ml_data_processing_job::CancelMLDataProcessingJobError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
-            crate::operation::cancel_ml_data_processing_job::CancelMLDataProcessingJobError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::cancel_ml_data_processing_job::CancelMLDataProcessingJobError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::cancel_ml_data_processing_job::CancelMLDataProcessingJobError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::cancel_ml_data_processing_job::CancelMLDataProcessingJobError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
+            crate::operation::cancel_ml_data_processing_job::CancelMLDataProcessingJobError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::operation::cancel_ml_data_processing_job::CancelMLDataProcessingJobError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::cancel_ml_data_processing_job::CancelMLDataProcessingJobError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::cancel_ml_data_processing_job::CancelMLDataProcessingJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::cancel_ml_data_processing_job::CancelMLDataProcessingJobError::MissingParameterException(inner) => Error::MissingParameterException(inner),
+            crate::operation::cancel_ml_data_processing_job::CancelMLDataProcessingJobError::MlResourceNotFoundException(inner) => Error::MlResourceNotFoundException(inner),
+            crate::operation::cancel_ml_data_processing_job::CancelMLDataProcessingJobError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
+            crate::operation::cancel_ml_data_processing_job::CancelMLDataProcessingJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::cancel_ml_data_processing_job::CancelMLDataProcessingJobError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::cancel_ml_data_processing_job::CancelMLDataProcessingJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_ml_model_training_job::CancelMLModelTrainingJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_ml_model_training_job::CancelMLModelTrainingJobError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_ml_model_training_job::CancelMLModelTrainingJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_ml_model_training_job::CancelMLModelTrainingJobError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::cancel_ml_model_training_job::CancelMLModelTrainingJobError> for Error {
     fn from(err: crate::operation::cancel_ml_model_training_job::CancelMLModelTrainingJobError) -> Self {
         match err {
-            crate::operation::cancel_ml_model_training_job::CancelMLModelTrainingJobError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::operation::cancel_ml_model_training_job::CancelMLModelTrainingJobError::ClientTimeoutException(inner) => {
-                Error::ClientTimeoutException(inner)
-            }
-            crate::operation::cancel_ml_model_training_job::CancelMLModelTrainingJobError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::operation::cancel_ml_model_training_job::CancelMLModelTrainingJobError::IllegalArgumentException(inner) => {
-                Error::IllegalArgumentException(inner)
-            }
-            crate::operation::cancel_ml_model_training_job::CancelMLModelTrainingJobError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::cancel_ml_model_training_job::CancelMLModelTrainingJobError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::cancel_ml_model_training_job::CancelMLModelTrainingJobError::MissingParameterException(inner) => {
-                Error::MissingParameterException(inner)
-            }
-            crate::operation::cancel_ml_model_training_job::CancelMLModelTrainingJobError::MlResourceNotFoundException(inner) => {
-                Error::MlResourceNotFoundException(inner)
-            }
-            crate::operation::cancel_ml_model_training_job::CancelMLModelTrainingJobError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
-            crate::operation::cancel_ml_model_training_job::CancelMLModelTrainingJobError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::cancel_ml_model_training_job::CancelMLModelTrainingJobError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::cancel_ml_model_training_job::CancelMLModelTrainingJobError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::cancel_ml_model_training_job::CancelMLModelTrainingJobError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
+            crate::operation::cancel_ml_model_training_job::CancelMLModelTrainingJobError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::operation::cancel_ml_model_training_job::CancelMLModelTrainingJobError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::cancel_ml_model_training_job::CancelMLModelTrainingJobError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::cancel_ml_model_training_job::CancelMLModelTrainingJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::cancel_ml_model_training_job::CancelMLModelTrainingJobError::MissingParameterException(inner) => Error::MissingParameterException(inner),
+            crate::operation::cancel_ml_model_training_job::CancelMLModelTrainingJobError::MlResourceNotFoundException(inner) => Error::MlResourceNotFoundException(inner),
+            crate::operation::cancel_ml_model_training_job::CancelMLModelTrainingJobError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
+            crate::operation::cancel_ml_model_training_job::CancelMLModelTrainingJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::cancel_ml_model_training_job::CancelMLModelTrainingJobError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::cancel_ml_model_training_job::CancelMLModelTrainingJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_ml_model_transform_job::CancelMLModelTransformJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_ml_model_transform_job::CancelMLModelTransformJobError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_ml_model_transform_job::CancelMLModelTransformJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_ml_model_transform_job::CancelMLModelTransformJobError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::cancel_ml_model_transform_job::CancelMLModelTransformJobError> for Error {
     fn from(err: crate::operation::cancel_ml_model_transform_job::CancelMLModelTransformJobError) -> Self {
         match err {
-            crate::operation::cancel_ml_model_transform_job::CancelMLModelTransformJobError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::operation::cancel_ml_model_transform_job::CancelMLModelTransformJobError::ClientTimeoutException(inner) => {
-                Error::ClientTimeoutException(inner)
-            }
-            crate::operation::cancel_ml_model_transform_job::CancelMLModelTransformJobError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::operation::cancel_ml_model_transform_job::CancelMLModelTransformJobError::IllegalArgumentException(inner) => {
-                Error::IllegalArgumentException(inner)
-            }
-            crate::operation::cancel_ml_model_transform_job::CancelMLModelTransformJobError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::cancel_ml_model_transform_job::CancelMLModelTransformJobError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::cancel_ml_model_transform_job::CancelMLModelTransformJobError::MissingParameterException(inner) => {
-                Error::MissingParameterException(inner)
-            }
-            crate::operation::cancel_ml_model_transform_job::CancelMLModelTransformJobError::MlResourceNotFoundException(inner) => {
-                Error::MlResourceNotFoundException(inner)
-            }
-            crate::operation::cancel_ml_model_transform_job::CancelMLModelTransformJobError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
-            crate::operation::cancel_ml_model_transform_job::CancelMLModelTransformJobError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::cancel_ml_model_transform_job::CancelMLModelTransformJobError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::cancel_ml_model_transform_job::CancelMLModelTransformJobError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::cancel_ml_model_transform_job::CancelMLModelTransformJobError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
+            crate::operation::cancel_ml_model_transform_job::CancelMLModelTransformJobError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::operation::cancel_ml_model_transform_job::CancelMLModelTransformJobError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::cancel_ml_model_transform_job::CancelMLModelTransformJobError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::cancel_ml_model_transform_job::CancelMLModelTransformJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::cancel_ml_model_transform_job::CancelMLModelTransformJobError::MissingParameterException(inner) => Error::MissingParameterException(inner),
+            crate::operation::cancel_ml_model_transform_job::CancelMLModelTransformJobError::MlResourceNotFoundException(inner) => Error::MlResourceNotFoundException(inner),
+            crate::operation::cancel_ml_model_transform_job::CancelMLModelTransformJobError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
+            crate::operation::cancel_ml_model_transform_job::CancelMLModelTransformJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::cancel_ml_model_transform_job::CancelMLModelTransformJobError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::cancel_ml_model_transform_job::CancelMLModelTransformJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -466,61 +348,34 @@ impl From<crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError
     fn from(err: crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError) -> Self {
         match err {
             crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError::ClientTimeoutException(inner) => {
-                Error::ClientTimeoutException(inner)
-            }
-            crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError::FailureByQueryException(inner) => {
-                Error::FailureByQueryException(inner)
-            }
-            crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError::IllegalArgumentException(inner) => {
-                Error::IllegalArgumentException(inner)
-            }
-            crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError::InvalidNumericDataException(inner) => {
-                Error::InvalidNumericDataException(inner)
-            }
-            crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError::MissingParameterException(inner) => {
-                Error::MissingParameterException(inner)
-            }
+            crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
+            crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError::FailureByQueryException(inner) => Error::FailureByQueryException(inner),
+            crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError::InvalidNumericDataException(inner) => Error::InvalidNumericDataException(inner),
+            crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError::MissingParameterException(inner) => Error::MissingParameterException(inner),
             crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError::ParsingException(inner) => Error::ParsingException(inner),
-            crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
-            crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError::TimeLimitExceededException(inner) => {
-                Error::TimeLimitExceededException(inner)
-            }
-            crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
+            crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError::TimeLimitExceededException(inner) => Error::TimeLimitExceededException(inner),
+            crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ml_endpoint::CreateMLEndpointError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ml_endpoint::CreateMLEndpointError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ml_endpoint::CreateMLEndpointError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -529,38 +384,29 @@ impl From<crate::operation::create_ml_endpoint::CreateMLEndpointError> for Error
         match err {
             crate::operation::create_ml_endpoint::CreateMLEndpointError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::create_ml_endpoint::CreateMLEndpointError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
-            crate::operation::create_ml_endpoint::CreateMLEndpointError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
+            crate::operation::create_ml_endpoint::CreateMLEndpointError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
             crate::operation::create_ml_endpoint::CreateMLEndpointError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
             crate::operation::create_ml_endpoint::CreateMLEndpointError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
             crate::operation::create_ml_endpoint::CreateMLEndpointError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::create_ml_endpoint::CreateMLEndpointError::MissingParameterException(inner) => Error::MissingParameterException(inner),
-            crate::operation::create_ml_endpoint::CreateMLEndpointError::MlResourceNotFoundException(inner) => {
-                Error::MlResourceNotFoundException(inner)
-            }
-            crate::operation::create_ml_endpoint::CreateMLEndpointError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
+            crate::operation::create_ml_endpoint::CreateMLEndpointError::MlResourceNotFoundException(inner) => Error::MlResourceNotFoundException(inner),
+            crate::operation::create_ml_endpoint::CreateMLEndpointError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
             crate::operation::create_ml_endpoint::CreateMLEndpointError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::create_ml_endpoint::CreateMLEndpointError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::create_ml_endpoint::CreateMLEndpointError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::create_ml_endpoint::CreateMLEndpointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ml_endpoint::DeleteMLEndpointError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ml_endpoint::DeleteMLEndpointError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ml_endpoint::DeleteMLEndpointError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -569,165 +415,95 @@ impl From<crate::operation::delete_ml_endpoint::DeleteMLEndpointError> for Error
         match err {
             crate::operation::delete_ml_endpoint::DeleteMLEndpointError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::delete_ml_endpoint::DeleteMLEndpointError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
-            crate::operation::delete_ml_endpoint::DeleteMLEndpointError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
+            crate::operation::delete_ml_endpoint::DeleteMLEndpointError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
             crate::operation::delete_ml_endpoint::DeleteMLEndpointError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
             crate::operation::delete_ml_endpoint::DeleteMLEndpointError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
             crate::operation::delete_ml_endpoint::DeleteMLEndpointError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::delete_ml_endpoint::DeleteMLEndpointError::MissingParameterException(inner) => Error::MissingParameterException(inner),
-            crate::operation::delete_ml_endpoint::DeleteMLEndpointError::MlResourceNotFoundException(inner) => {
-                Error::MlResourceNotFoundException(inner)
-            }
-            crate::operation::delete_ml_endpoint::DeleteMLEndpointError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
+            crate::operation::delete_ml_endpoint::DeleteMLEndpointError::MlResourceNotFoundException(inner) => Error::MlResourceNotFoundException(inner),
+            crate::operation::delete_ml_endpoint::DeleteMLEndpointError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
             crate::operation::delete_ml_endpoint::DeleteMLEndpointError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::delete_ml_endpoint::DeleteMLEndpointError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::delete_ml_endpoint::DeleteMLEndpointError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::delete_ml_endpoint::DeleteMLEndpointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_propertygraph_statistics::DeletePropertygraphStatisticsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_propertygraph_statistics::DeletePropertygraphStatisticsError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_propertygraph_statistics::DeletePropertygraphStatisticsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_propertygraph_statistics::DeletePropertygraphStatisticsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_propertygraph_statistics::DeletePropertygraphStatisticsError> for Error {
     fn from(err: crate::operation::delete_propertygraph_statistics::DeletePropertygraphStatisticsError) -> Self {
         match err {
-            crate::operation::delete_propertygraph_statistics::DeletePropertygraphStatisticsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::delete_propertygraph_statistics::DeletePropertygraphStatisticsError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::operation::delete_propertygraph_statistics::DeletePropertygraphStatisticsError::ClientTimeoutException(inner) => {
-                Error::ClientTimeoutException(inner)
-            }
-            crate::operation::delete_propertygraph_statistics::DeletePropertygraphStatisticsError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::operation::delete_propertygraph_statistics::DeletePropertygraphStatisticsError::IllegalArgumentException(inner) => {
-                Error::IllegalArgumentException(inner)
-            }
-            crate::operation::delete_propertygraph_statistics::DeletePropertygraphStatisticsError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::delete_propertygraph_statistics::DeletePropertygraphStatisticsError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::delete_propertygraph_statistics::DeletePropertygraphStatisticsError::MissingParameterException(inner) => {
-                Error::MissingParameterException(inner)
-            }
-            crate::operation::delete_propertygraph_statistics::DeletePropertygraphStatisticsError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
-            crate::operation::delete_propertygraph_statistics::DeletePropertygraphStatisticsError::ReadOnlyViolationException(inner) => {
-                Error::ReadOnlyViolationException(inner)
-            }
-            crate::operation::delete_propertygraph_statistics::DeletePropertygraphStatisticsError::StatisticsNotAvailableException(inner) => {
-                Error::StatisticsNotAvailableException(inner)
-            }
-            crate::operation::delete_propertygraph_statistics::DeletePropertygraphStatisticsError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::delete_propertygraph_statistics::DeletePropertygraphStatisticsError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::delete_propertygraph_statistics::DeletePropertygraphStatisticsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_propertygraph_statistics::DeletePropertygraphStatisticsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_propertygraph_statistics::DeletePropertygraphStatisticsError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
+            crate::operation::delete_propertygraph_statistics::DeletePropertygraphStatisticsError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::operation::delete_propertygraph_statistics::DeletePropertygraphStatisticsError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::delete_propertygraph_statistics::DeletePropertygraphStatisticsError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::delete_propertygraph_statistics::DeletePropertygraphStatisticsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_propertygraph_statistics::DeletePropertygraphStatisticsError::MissingParameterException(inner) => Error::MissingParameterException(inner),
+            crate::operation::delete_propertygraph_statistics::DeletePropertygraphStatisticsError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
+            crate::operation::delete_propertygraph_statistics::DeletePropertygraphStatisticsError::ReadOnlyViolationException(inner) => Error::ReadOnlyViolationException(inner),
+            crate::operation::delete_propertygraph_statistics::DeletePropertygraphStatisticsError::StatisticsNotAvailableException(inner) => Error::StatisticsNotAvailableException(inner),
+            crate::operation::delete_propertygraph_statistics::DeletePropertygraphStatisticsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_propertygraph_statistics::DeletePropertygraphStatisticsError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::delete_propertygraph_statistics::DeletePropertygraphStatisticsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsError> for Error {
     fn from(err: crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsError) -> Self {
         match err {
-            crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
+            crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsError::ClientTimeoutException(inner) => {
-                Error::ClientTimeoutException(inner)
-            }
-            crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsError::IllegalArgumentException(inner) => {
-                Error::IllegalArgumentException(inner)
-            }
-            crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsError::MissingParameterException(inner) => {
-                Error::MissingParameterException(inner)
-            }
-            crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
-            crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsError::ReadOnlyViolationException(inner) => {
-                Error::ReadOnlyViolationException(inner)
-            }
-            crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsError::StatisticsNotAvailableException(inner) => {
-                Error::StatisticsNotAvailableException(inner)
-            }
-            crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
+            crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsError::MissingParameterException(inner) => Error::MissingParameterException(inner),
+            crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
+            crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsError::ReadOnlyViolationException(inner) => Error::ReadOnlyViolationException(inner),
+            crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsError::StatisticsNotAvailableException(inner) => Error::StatisticsNotAvailableException(inner),
+            crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::execute_fast_reset::ExecuteFastResetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::execute_fast_reset::ExecuteFastResetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::execute_fast_reset::ExecuteFastResetError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -736,208 +512,111 @@ impl From<crate::operation::execute_fast_reset::ExecuteFastResetError> for Error
         match err {
             crate::operation::execute_fast_reset::ExecuteFastResetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::execute_fast_reset::ExecuteFastResetError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
-            crate::operation::execute_fast_reset::ExecuteFastResetError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
+            crate::operation::execute_fast_reset::ExecuteFastResetError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
             crate::operation::execute_fast_reset::ExecuteFastResetError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
             crate::operation::execute_fast_reset::ExecuteFastResetError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
             crate::operation::execute_fast_reset::ExecuteFastResetError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::execute_fast_reset::ExecuteFastResetError::MethodNotAllowedException(inner) => Error::MethodNotAllowedException(inner),
             crate::operation::execute_fast_reset::ExecuteFastResetError::MissingParameterException(inner) => Error::MissingParameterException(inner),
-            crate::operation::execute_fast_reset::ExecuteFastResetError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
-            crate::operation::execute_fast_reset::ExecuteFastResetError::ReadOnlyViolationException(inner) => {
-                Error::ReadOnlyViolationException(inner)
-            }
+            crate::operation::execute_fast_reset::ExecuteFastResetError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
+            crate::operation::execute_fast_reset::ExecuteFastResetError::ReadOnlyViolationException(inner) => Error::ReadOnlyViolationException(inner),
             crate::operation::execute_fast_reset::ExecuteFastResetError::ServerShutdownException(inner) => Error::ServerShutdownException(inner),
             crate::operation::execute_fast_reset::ExecuteFastResetError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::execute_fast_reset::ExecuteFastResetError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::execute_fast_reset::ExecuteFastResetError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::execute_fast_reset::ExecuteFastResetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError> for Error {
     fn from(err: crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError) -> Self {
         match err {
-            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::CancelledByUserException(inner) => {
-                Error::CancelledByUserException(inner)
-            }
-            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::ClientTimeoutException(inner) => {
-                Error::ClientTimeoutException(inner)
-            }
-            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::FailureByQueryException(inner) => {
-                Error::FailureByQueryException(inner)
-            }
-            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::IllegalArgumentException(inner) => {
-                Error::IllegalArgumentException(inner)
-            }
-            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::MalformedQueryException(inner) => {
-                Error::MalformedQueryException(inner)
-            }
-            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::MemoryLimitExceededException(inner) => {
-                Error::MemoryLimitExceededException(inner)
-            }
-            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::MissingParameterException(inner) => {
-                Error::MissingParameterException(inner)
-            }
-            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::ParsingException(inner) => {
-                Error::ParsingException(inner)
-            }
-            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
-            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::QueryLimitExceededException(inner) => {
-                Error::QueryLimitExceededException(inner)
-            }
-            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::QueryLimitException(inner) => {
-                Error::QueryLimitException(inner)
-            }
-            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::QueryTooLargeException(inner) => {
-                Error::QueryTooLargeException(inner)
-            }
-            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::TimeLimitExceededException(inner) => {
-                Error::TimeLimitExceededException(inner)
-            }
-            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::CancelledByUserException(inner) => Error::CancelledByUserException(inner),
+            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
+            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::FailureByQueryException(inner) => Error::FailureByQueryException(inner),
+            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::MalformedQueryException(inner) => Error::MalformedQueryException(inner),
+            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::MemoryLimitExceededException(inner) => Error::MemoryLimitExceededException(inner),
+            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::MissingParameterException(inner) => Error::MissingParameterException(inner),
+            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::ParsingException(inner) => Error::ParsingException(inner),
+            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
+            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::QueryLimitExceededException(inner) => Error::QueryLimitExceededException(inner),
+            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::QueryLimitException(inner) => Error::QueryLimitException(inner),
+            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::QueryTooLargeException(inner) => Error::QueryTooLargeException(inner),
+            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::TimeLimitExceededException(inner) => Error::TimeLimitExceededException(inner),
+            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError> for Error {
     fn from(err: crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError) -> Self {
         match err {
-            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::CancelledByUserException(inner) => {
-                Error::CancelledByUserException(inner)
-            }
-            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::ClientTimeoutException(inner) => {
-                Error::ClientTimeoutException(inner)
-            }
-            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::FailureByQueryException(inner) => {
-                Error::FailureByQueryException(inner)
-            }
-            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::IllegalArgumentException(inner) => {
-                Error::IllegalArgumentException(inner)
-            }
-            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::MalformedQueryException(inner) => {
-                Error::MalformedQueryException(inner)
-            }
-            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::MemoryLimitExceededException(inner) => {
-                Error::MemoryLimitExceededException(inner)
-            }
-            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::MissingParameterException(inner) => {
-                Error::MissingParameterException(inner)
-            }
-            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::ParsingException(inner) => {
-                Error::ParsingException(inner)
-            }
-            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
-            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::QueryLimitExceededException(inner) => {
-                Error::QueryLimitExceededException(inner)
-            }
-            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::QueryLimitException(inner) => {
-                Error::QueryLimitException(inner)
-            }
-            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::QueryTooLargeException(inner) => {
-                Error::QueryTooLargeException(inner)
-            }
-            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::TimeLimitExceededException(inner) => {
-                Error::TimeLimitExceededException(inner)
-            }
-            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::CancelledByUserException(inner) => Error::CancelledByUserException(inner),
+            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
+            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::FailureByQueryException(inner) => Error::FailureByQueryException(inner),
+            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::MalformedQueryException(inner) => Error::MalformedQueryException(inner),
+            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::MemoryLimitExceededException(inner) => Error::MemoryLimitExceededException(inner),
+            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::MissingParameterException(inner) => Error::MissingParameterException(inner),
+            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::ParsingException(inner) => Error::ParsingException(inner),
+            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
+            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::QueryLimitExceededException(inner) => Error::QueryLimitExceededException(inner),
+            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::QueryLimitException(inner) => Error::QueryLimitException(inner),
+            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::QueryTooLargeException(inner) => Error::QueryTooLargeException(inner),
+            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::TimeLimitExceededException(inner) => Error::TimeLimitExceededException(inner),
+            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::execute_gremlin_query::ExecuteGremlinQueryError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::execute_gremlin_query::ExecuteGremlinQueryError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::execute_gremlin_query::ExecuteGremlinQueryError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -945,168 +624,80 @@ impl From<crate::operation::execute_gremlin_query::ExecuteGremlinQueryError> for
     fn from(err: crate::operation::execute_gremlin_query::ExecuteGremlinQueryError) -> Self {
         match err {
             crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::CancelledByUserException(inner) => {
-                Error::CancelledByUserException(inner)
-            }
+            crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::CancelledByUserException(inner) => Error::CancelledByUserException(inner),
             crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
-            crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::FailureByQueryException(inner) => {
-                Error::FailureByQueryException(inner)
-            }
-            crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::IllegalArgumentException(inner) => {
-                Error::IllegalArgumentException(inner)
-            }
-            crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::MalformedQueryException(inner) => {
-                Error::MalformedQueryException(inner)
-            }
-            crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::MemoryLimitExceededException(inner) => {
-                Error::MemoryLimitExceededException(inner)
-            }
-            crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::MissingParameterException(inner) => {
-                Error::MissingParameterException(inner)
-            }
+            crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::FailureByQueryException(inner) => Error::FailureByQueryException(inner),
+            crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::MalformedQueryException(inner) => Error::MalformedQueryException(inner),
+            crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::MemoryLimitExceededException(inner) => Error::MemoryLimitExceededException(inner),
+            crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::MissingParameterException(inner) => Error::MissingParameterException(inner),
             crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::ParsingException(inner) => Error::ParsingException(inner),
-            crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
-            crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::QueryLimitExceededException(inner) => {
-                Error::QueryLimitExceededException(inner)
-            }
+            crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
+            crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::QueryLimitExceededException(inner) => Error::QueryLimitExceededException(inner),
             crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::QueryLimitException(inner) => Error::QueryLimitException(inner),
             crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::QueryTooLargeException(inner) => Error::QueryTooLargeException(inner),
-            crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::TimeLimitExceededException(inner) => {
-                Error::TimeLimitExceededException(inner)
-            }
-            crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::TimeLimitExceededException(inner) => Error::TimeLimitExceededException(inner),
+            crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::execute_gremlin_query::ExecuteGremlinQueryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError> for Error {
     fn from(err: crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError) -> Self {
         match err {
-            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::CancelledByUserException(inner) => {
-                Error::CancelledByUserException(inner)
-            }
-            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::ClientTimeoutException(inner) => {
-                Error::ClientTimeoutException(inner)
-            }
-            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::FailureByQueryException(inner) => {
-                Error::FailureByQueryException(inner)
-            }
-            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::IllegalArgumentException(inner) => {
-                Error::IllegalArgumentException(inner)
-            }
-            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::InvalidNumericDataException(inner) => {
-                Error::InvalidNumericDataException(inner)
-            }
-            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::MalformedQueryException(inner) => {
-                Error::MalformedQueryException(inner)
-            }
-            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::MemoryLimitExceededException(inner) => {
-                Error::MemoryLimitExceededException(inner)
-            }
-            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::MissingParameterException(inner) => {
-                Error::MissingParameterException(inner)
-            }
-            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::ParsingException(inner) => {
-                Error::ParsingException(inner)
-            }
-            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
-            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::QueryLimitExceededException(inner) => {
-                Error::QueryLimitExceededException(inner)
-            }
-            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::QueryLimitException(inner) => {
-                Error::QueryLimitException(inner)
-            }
-            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::QueryTooLargeException(inner) => {
-                Error::QueryTooLargeException(inner)
-            }
-            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::TimeLimitExceededException(inner) => {
-                Error::TimeLimitExceededException(inner)
-            }
-            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::CancelledByUserException(inner) => Error::CancelledByUserException(inner),
+            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
+            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::FailureByQueryException(inner) => Error::FailureByQueryException(inner),
+            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::InvalidNumericDataException(inner) => Error::InvalidNumericDataException(inner),
+            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::MalformedQueryException(inner) => Error::MalformedQueryException(inner),
+            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::MemoryLimitExceededException(inner) => Error::MemoryLimitExceededException(inner),
+            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::MissingParameterException(inner) => Error::MissingParameterException(inner),
+            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::ParsingException(inner) => Error::ParsingException(inner),
+            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
+            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::QueryLimitExceededException(inner) => Error::QueryLimitExceededException(inner),
+            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::QueryLimitException(inner) => Error::QueryLimitException(inner),
+            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::QueryTooLargeException(inner) => Error::QueryTooLargeException(inner),
+            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::TimeLimitExceededException(inner) => Error::TimeLimitExceededException(inner),
+            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::execute_open_cypher_explain_query::ExecuteOpenCypherExplainQueryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1114,77 +705,40 @@ impl From<crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryErr
     fn from(err: crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError) -> Self {
         match err {
             crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::CancelledByUserException(inner) => {
-                Error::CancelledByUserException(inner)
-            }
-            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::ClientTimeoutException(inner) => {
-                Error::ClientTimeoutException(inner)
-            }
-            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::FailureByQueryException(inner) => {
-                Error::FailureByQueryException(inner)
-            }
-            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::IllegalArgumentException(inner) => {
-                Error::IllegalArgumentException(inner)
-            }
-            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::InvalidNumericDataException(inner) => {
-                Error::InvalidNumericDataException(inner)
-            }
-            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::MalformedQueryException(inner) => {
-                Error::MalformedQueryException(inner)
-            }
-            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::MemoryLimitExceededException(inner) => {
-                Error::MemoryLimitExceededException(inner)
-            }
-            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::MissingParameterException(inner) => {
-                Error::MissingParameterException(inner)
-            }
+            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::CancelledByUserException(inner) => Error::CancelledByUserException(inner),
+            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
+            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::FailureByQueryException(inner) => Error::FailureByQueryException(inner),
+            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::InvalidNumericDataException(inner) => Error::InvalidNumericDataException(inner),
+            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::MalformedQueryException(inner) => Error::MalformedQueryException(inner),
+            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::MemoryLimitExceededException(inner) => Error::MemoryLimitExceededException(inner),
+            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::MissingParameterException(inner) => Error::MissingParameterException(inner),
             crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::ParsingException(inner) => Error::ParsingException(inner),
-            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
-            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::QueryLimitExceededException(inner) => {
-                Error::QueryLimitExceededException(inner)
-            }
+            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
+            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::QueryLimitExceededException(inner) => Error::QueryLimitExceededException(inner),
             crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::QueryLimitException(inner) => Error::QueryLimitException(inner),
-            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::QueryTooLargeException(inner) => {
-                Error::QueryTooLargeException(inner)
-            }
-            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::TimeLimitExceededException(inner) => {
-                Error::TimeLimitExceededException(inner)
-            }
-            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::QueryTooLargeException(inner) => Error::QueryTooLargeException(inner),
+            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::TimeLimitExceededException(inner) => Error::TimeLimitExceededException(inner),
+            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_engine_status::GetEngineStatusError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_engine_status::GetEngineStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_engine_status::GetEngineStatusError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1192,101 +746,63 @@ impl From<crate::operation::get_engine_status::GetEngineStatusError> for Error {
     fn from(err: crate::operation::get_engine_status::GetEngineStatusError) -> Self {
         match err {
             crate::operation::get_engine_status::GetEngineStatusError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
-            crate::operation::get_engine_status::GetEngineStatusError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
+            crate::operation::get_engine_status::GetEngineStatusError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
             crate::operation::get_engine_status::GetEngineStatusError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
             crate::operation::get_engine_status::GetEngineStatusError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::get_engine_status::GetEngineStatusError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::operation::get_engine_status::GetEngineStatusError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
+            crate::operation::get_engine_status::GetEngineStatusError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
             crate::operation::get_engine_status::GetEngineStatusError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::get_engine_status::GetEngineStatusError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::get_engine_status::GetEngineStatusError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::get_engine_status::GetEngineStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError> for Error {
     fn from(err: crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError) -> Self {
         match err {
-            crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
+            crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError::ClientTimeoutException(inner) => {
-                Error::ClientTimeoutException(inner)
-            }
-            crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError::FailureByQueryException(inner) => {
-                Error::FailureByQueryException(inner)
-            }
-            crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError::IllegalArgumentException(inner) => {
-                Error::IllegalArgumentException(inner)
-            }
-            crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError::MissingParameterException(inner) => {
-                Error::MissingParameterException(inner)
-            }
+            crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
+            crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError::FailureByQueryException(inner) => Error::FailureByQueryException(inner),
+            crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError::MissingParameterException(inner) => Error::MissingParameterException(inner),
             crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError::ParsingException(inner) => Error::ParsingException(inner),
-            crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
-            crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError::ReadOnlyViolationException(inner) => {
-                Error::ReadOnlyViolationException(inner)
-            }
-            crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError::TimeLimitExceededException(inner) => {
-                Error::TimeLimitExceededException(inner)
-            }
-            crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
+            crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError::ReadOnlyViolationException(inner) => Error::ReadOnlyViolationException(inner),
+            crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError::TimeLimitExceededException(inner) => Error::TimeLimitExceededException(inner),
+            crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::get_gremlin_query_status::GetGremlinQueryStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_loader_job_status::GetLoaderJobStatusError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_loader_job_status::GetLoaderJobStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_loader_job_status::GetLoaderJobStatusError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1294,112 +810,63 @@ impl From<crate::operation::get_loader_job_status::GetLoaderJobStatusError> for 
     fn from(err: crate::operation::get_loader_job_status::GetLoaderJobStatusError) -> Self {
         match err {
             crate::operation::get_loader_job_status::GetLoaderJobStatusError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::get_loader_job_status::GetLoaderJobStatusError::BulkLoadIdNotFoundException(inner) => {
-                Error::BulkLoadIdNotFoundException(inner)
-            }
+            crate::operation::get_loader_job_status::GetLoaderJobStatusError::BulkLoadIdNotFoundException(inner) => Error::BulkLoadIdNotFoundException(inner),
             crate::operation::get_loader_job_status::GetLoaderJobStatusError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
-            crate::operation::get_loader_job_status::GetLoaderJobStatusError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::operation::get_loader_job_status::GetLoaderJobStatusError::IllegalArgumentException(inner) => {
-                Error::IllegalArgumentException(inner)
-            }
-            crate::operation::get_loader_job_status::GetLoaderJobStatusError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::operation::get_loader_job_status::GetLoaderJobStatusError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::get_loader_job_status::GetLoaderJobStatusError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::get_loader_job_status::GetLoaderJobStatusError::LoadUrlAccessDeniedException(inner) => {
-                Error::LoadUrlAccessDeniedException(inner)
-            }
-            crate::operation::get_loader_job_status::GetLoaderJobStatusError::MissingParameterException(inner) => {
-                Error::MissingParameterException(inner)
-            }
-            crate::operation::get_loader_job_status::GetLoaderJobStatusError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
-            crate::operation::get_loader_job_status::GetLoaderJobStatusError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::get_loader_job_status::GetLoaderJobStatusError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::get_loader_job_status::GetLoaderJobStatusError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::operation::get_loader_job_status::GetLoaderJobStatusError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::get_loader_job_status::GetLoaderJobStatusError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::get_loader_job_status::GetLoaderJobStatusError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::get_loader_job_status::GetLoaderJobStatusError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_loader_job_status::GetLoaderJobStatusError::LoadUrlAccessDeniedException(inner) => Error::LoadUrlAccessDeniedException(inner),
+            crate::operation::get_loader_job_status::GetLoaderJobStatusError::MissingParameterException(inner) => Error::MissingParameterException(inner),
+            crate::operation::get_loader_job_status::GetLoaderJobStatusError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
+            crate::operation::get_loader_job_status::GetLoaderJobStatusError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_loader_job_status::GetLoaderJobStatusError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::get_loader_job_status::GetLoaderJobStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ml_data_processing_job::GetMLDataProcessingJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ml_data_processing_job::GetMLDataProcessingJobError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ml_data_processing_job::GetMLDataProcessingJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ml_data_processing_job::GetMLDataProcessingJobError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_ml_data_processing_job::GetMLDataProcessingJobError> for Error {
     fn from(err: crate::operation::get_ml_data_processing_job::GetMLDataProcessingJobError) -> Self {
         match err {
-            crate::operation::get_ml_data_processing_job::GetMLDataProcessingJobError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::operation::get_ml_data_processing_job::GetMLDataProcessingJobError::ClientTimeoutException(inner) => {
-                Error::ClientTimeoutException(inner)
-            }
-            crate::operation::get_ml_data_processing_job::GetMLDataProcessingJobError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::operation::get_ml_data_processing_job::GetMLDataProcessingJobError::IllegalArgumentException(inner) => {
-                Error::IllegalArgumentException(inner)
-            }
-            crate::operation::get_ml_data_processing_job::GetMLDataProcessingJobError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::get_ml_data_processing_job::GetMLDataProcessingJobError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::get_ml_data_processing_job::GetMLDataProcessingJobError::MissingParameterException(inner) => {
-                Error::MissingParameterException(inner)
-            }
-            crate::operation::get_ml_data_processing_job::GetMLDataProcessingJobError::MlResourceNotFoundException(inner) => {
-                Error::MlResourceNotFoundException(inner)
-            }
-            crate::operation::get_ml_data_processing_job::GetMLDataProcessingJobError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
-            crate::operation::get_ml_data_processing_job::GetMLDataProcessingJobError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::get_ml_data_processing_job::GetMLDataProcessingJobError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::get_ml_data_processing_job::GetMLDataProcessingJobError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_ml_data_processing_job::GetMLDataProcessingJobError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
+            crate::operation::get_ml_data_processing_job::GetMLDataProcessingJobError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::operation::get_ml_data_processing_job::GetMLDataProcessingJobError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::get_ml_data_processing_job::GetMLDataProcessingJobError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::get_ml_data_processing_job::GetMLDataProcessingJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_ml_data_processing_job::GetMLDataProcessingJobError::MissingParameterException(inner) => Error::MissingParameterException(inner),
+            crate::operation::get_ml_data_processing_job::GetMLDataProcessingJobError::MlResourceNotFoundException(inner) => Error::MlResourceNotFoundException(inner),
+            crate::operation::get_ml_data_processing_job::GetMLDataProcessingJobError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
+            crate::operation::get_ml_data_processing_job::GetMLDataProcessingJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_ml_data_processing_job::GetMLDataProcessingJobError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::get_ml_data_processing_job::GetMLDataProcessingJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ml_endpoint::GetMLEndpointError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ml_endpoint::GetMLEndpointError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ml_endpoint::GetMLEndpointError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1416,26 +883,21 @@ impl From<crate::operation::get_ml_endpoint::GetMLEndpointError> for Error {
             crate::operation::get_ml_endpoint::GetMLEndpointError::MlResourceNotFoundException(inner) => Error::MlResourceNotFoundException(inner),
             crate::operation::get_ml_endpoint::GetMLEndpointError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
             crate::operation::get_ml_endpoint::GetMLEndpointError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::get_ml_endpoint::GetMLEndpointError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::get_ml_endpoint::GetMLEndpointError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::get_ml_endpoint::GetMLEndpointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ml_model_training_job::GetMLModelTrainingJobError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ml_model_training_job::GetMLModelTrainingJobError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ml_model_training_job::GetMLModelTrainingJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ml_model_training_job::GetMLModelTrainingJobError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1443,364 +905,196 @@ impl From<crate::operation::get_ml_model_training_job::GetMLModelTrainingJobErro
     fn from(err: crate::operation::get_ml_model_training_job::GetMLModelTrainingJobError) -> Self {
         match err {
             crate::operation::get_ml_model_training_job::GetMLModelTrainingJobError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::get_ml_model_training_job::GetMLModelTrainingJobError::ClientTimeoutException(inner) => {
-                Error::ClientTimeoutException(inner)
-            }
-            crate::operation::get_ml_model_training_job::GetMLModelTrainingJobError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::operation::get_ml_model_training_job::GetMLModelTrainingJobError::IllegalArgumentException(inner) => {
-                Error::IllegalArgumentException(inner)
-            }
-            crate::operation::get_ml_model_training_job::GetMLModelTrainingJobError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::get_ml_model_training_job::GetMLModelTrainingJobError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::get_ml_model_training_job::GetMLModelTrainingJobError::MissingParameterException(inner) => {
-                Error::MissingParameterException(inner)
-            }
-            crate::operation::get_ml_model_training_job::GetMLModelTrainingJobError::MlResourceNotFoundException(inner) => {
-                Error::MlResourceNotFoundException(inner)
-            }
-            crate::operation::get_ml_model_training_job::GetMLModelTrainingJobError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
-            crate::operation::get_ml_model_training_job::GetMLModelTrainingJobError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::get_ml_model_training_job::GetMLModelTrainingJobError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::get_ml_model_training_job::GetMLModelTrainingJobError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
+            crate::operation::get_ml_model_training_job::GetMLModelTrainingJobError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::operation::get_ml_model_training_job::GetMLModelTrainingJobError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::get_ml_model_training_job::GetMLModelTrainingJobError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::get_ml_model_training_job::GetMLModelTrainingJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_ml_model_training_job::GetMLModelTrainingJobError::MissingParameterException(inner) => Error::MissingParameterException(inner),
+            crate::operation::get_ml_model_training_job::GetMLModelTrainingJobError::MlResourceNotFoundException(inner) => Error::MlResourceNotFoundException(inner),
+            crate::operation::get_ml_model_training_job::GetMLModelTrainingJobError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
+            crate::operation::get_ml_model_training_job::GetMLModelTrainingJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_ml_model_training_job::GetMLModelTrainingJobError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::get_ml_model_training_job::GetMLModelTrainingJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ml_model_transform_job::GetMLModelTransformJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ml_model_transform_job::GetMLModelTransformJobError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ml_model_transform_job::GetMLModelTransformJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ml_model_transform_job::GetMLModelTransformJobError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_ml_model_transform_job::GetMLModelTransformJobError> for Error {
     fn from(err: crate::operation::get_ml_model_transform_job::GetMLModelTransformJobError) -> Self {
         match err {
-            crate::operation::get_ml_model_transform_job::GetMLModelTransformJobError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::operation::get_ml_model_transform_job::GetMLModelTransformJobError::ClientTimeoutException(inner) => {
-                Error::ClientTimeoutException(inner)
-            }
-            crate::operation::get_ml_model_transform_job::GetMLModelTransformJobError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::operation::get_ml_model_transform_job::GetMLModelTransformJobError::IllegalArgumentException(inner) => {
-                Error::IllegalArgumentException(inner)
-            }
-            crate::operation::get_ml_model_transform_job::GetMLModelTransformJobError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::get_ml_model_transform_job::GetMLModelTransformJobError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::get_ml_model_transform_job::GetMLModelTransformJobError::MissingParameterException(inner) => {
-                Error::MissingParameterException(inner)
-            }
-            crate::operation::get_ml_model_transform_job::GetMLModelTransformJobError::MlResourceNotFoundException(inner) => {
-                Error::MlResourceNotFoundException(inner)
-            }
-            crate::operation::get_ml_model_transform_job::GetMLModelTransformJobError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
-            crate::operation::get_ml_model_transform_job::GetMLModelTransformJobError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::get_ml_model_transform_job::GetMLModelTransformJobError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::get_ml_model_transform_job::GetMLModelTransformJobError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_ml_model_transform_job::GetMLModelTransformJobError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
+            crate::operation::get_ml_model_transform_job::GetMLModelTransformJobError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::operation::get_ml_model_transform_job::GetMLModelTransformJobError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::get_ml_model_transform_job::GetMLModelTransformJobError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::get_ml_model_transform_job::GetMLModelTransformJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_ml_model_transform_job::GetMLModelTransformJobError::MissingParameterException(inner) => Error::MissingParameterException(inner),
+            crate::operation::get_ml_model_transform_job::GetMLModelTransformJobError::MlResourceNotFoundException(inner) => Error::MlResourceNotFoundException(inner),
+            crate::operation::get_ml_model_transform_job::GetMLModelTransformJobError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
+            crate::operation::get_ml_model_transform_job::GetMLModelTransformJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_ml_model_transform_job::GetMLModelTransformJobError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::get_ml_model_transform_job::GetMLModelTransformJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError> for Error {
     fn from(err: crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError) -> Self {
         match err {
-            crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError::ClientTimeoutException(inner) => {
-                Error::ClientTimeoutException(inner)
-            }
-            crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError::FailureByQueryException(inner) => {
-                Error::FailureByQueryException(inner)
-            }
-            crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError::IllegalArgumentException(inner) => {
-                Error::IllegalArgumentException(inner)
-            }
-            crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError::InvalidNumericDataException(inner) => {
-                Error::InvalidNumericDataException(inner)
-            }
-            crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError::MissingParameterException(inner) => {
-                Error::MissingParameterException(inner)
-            }
+            crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
+            crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError::FailureByQueryException(inner) => Error::FailureByQueryException(inner),
+            crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError::InvalidNumericDataException(inner) => Error::InvalidNumericDataException(inner),
+            crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError::MissingParameterException(inner) => Error::MissingParameterException(inner),
             crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError::ParsingException(inner) => Error::ParsingException(inner),
-            crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
-            crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError::ReadOnlyViolationException(inner) => {
-                Error::ReadOnlyViolationException(inner)
-            }
-            crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError::TimeLimitExceededException(inner) => {
-                Error::TimeLimitExceededException(inner)
-            }
-            crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
+            crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError::ReadOnlyViolationException(inner) => Error::ReadOnlyViolationException(inner),
+            crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError::TimeLimitExceededException(inner) => Error::TimeLimitExceededException(inner),
+            crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError> for Error {
     fn from(err: crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError) -> Self {
         match err {
-            crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::ClientTimeoutException(inner) => {
-                Error::ClientTimeoutException(inner)
-            }
-            crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::IllegalArgumentException(inner) => {
-                Error::IllegalArgumentException(inner)
-            }
-            crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::MissingParameterException(inner) => {
-                Error::MissingParameterException(inner)
-            }
-            crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
-            crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::ReadOnlyViolationException(inner) => {
-                Error::ReadOnlyViolationException(inner)
-            }
-            crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::StatisticsNotAvailableException(inner) => {
-                Error::StatisticsNotAvailableException(inner)
-            }
-            crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
+            crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::MissingParameterException(inner) => Error::MissingParameterException(inner),
+            crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
+            crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::ReadOnlyViolationException(inner) => Error::ReadOnlyViolationException(inner),
+            crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::StatisticsNotAvailableException(inner) => Error::StatisticsNotAvailableException(inner),
+            crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::get_propertygraph_statistics::GetPropertygraphStatisticsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_propertygraph_stream::GetPropertygraphStreamError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_propertygraph_stream::GetPropertygraphStreamError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_propertygraph_stream::GetPropertygraphStreamError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_propertygraph_stream::GetPropertygraphStreamError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_propertygraph_stream::GetPropertygraphStreamError> for Error {
     fn from(err: crate::operation::get_propertygraph_stream::GetPropertygraphStreamError) -> Self {
         match err {
-            crate::operation::get_propertygraph_stream::GetPropertygraphStreamError::ClientTimeoutException(inner) => {
-                Error::ClientTimeoutException(inner)
-            }
-            crate::operation::get_propertygraph_stream::GetPropertygraphStreamError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::operation::get_propertygraph_stream::GetPropertygraphStreamError::ExpiredStreamException(inner) => {
-                Error::ExpiredStreamException(inner)
-            }
-            crate::operation::get_propertygraph_stream::GetPropertygraphStreamError::IllegalArgumentException(inner) => {
-                Error::IllegalArgumentException(inner)
-            }
-            crate::operation::get_propertygraph_stream::GetPropertygraphStreamError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::get_propertygraph_stream::GetPropertygraphStreamError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::get_propertygraph_stream::GetPropertygraphStreamError::MemoryLimitExceededException(inner) => {
-                Error::MemoryLimitExceededException(inner)
-            }
-            crate::operation::get_propertygraph_stream::GetPropertygraphStreamError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
-            crate::operation::get_propertygraph_stream::GetPropertygraphStreamError::StreamRecordsNotFoundException(inner) => {
-                Error::StreamRecordsNotFoundException(inner)
-            }
+            crate::operation::get_propertygraph_stream::GetPropertygraphStreamError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
+            crate::operation::get_propertygraph_stream::GetPropertygraphStreamError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::operation::get_propertygraph_stream::GetPropertygraphStreamError::ExpiredStreamException(inner) => Error::ExpiredStreamException(inner),
+            crate::operation::get_propertygraph_stream::GetPropertygraphStreamError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::get_propertygraph_stream::GetPropertygraphStreamError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::get_propertygraph_stream::GetPropertygraphStreamError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_propertygraph_stream::GetPropertygraphStreamError::MemoryLimitExceededException(inner) => Error::MemoryLimitExceededException(inner),
+            crate::operation::get_propertygraph_stream::GetPropertygraphStreamError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
+            crate::operation::get_propertygraph_stream::GetPropertygraphStreamError::StreamRecordsNotFoundException(inner) => Error::StreamRecordsNotFoundException(inner),
             crate::operation::get_propertygraph_stream::GetPropertygraphStreamError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::get_propertygraph_stream::GetPropertygraphStreamError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::get_propertygraph_stream::GetPropertygraphStreamError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::get_propertygraph_stream::GetPropertygraphStreamError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_propertygraph_stream::GetPropertygraphStreamError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::get_propertygraph_stream::GetPropertygraphStreamError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_propertygraph_summary::GetPropertygraphSummaryError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_propertygraph_summary::GetPropertygraphSummaryError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_propertygraph_summary::GetPropertygraphSummaryError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_propertygraph_summary::GetPropertygraphSummaryError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_propertygraph_summary::GetPropertygraphSummaryError> for Error {
     fn from(err: crate::operation::get_propertygraph_summary::GetPropertygraphSummaryError) -> Self {
         match err {
-            crate::operation::get_propertygraph_summary::GetPropertygraphSummaryError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::get_propertygraph_summary::GetPropertygraphSummaryError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::operation::get_propertygraph_summary::GetPropertygraphSummaryError::ClientTimeoutException(inner) => {
-                Error::ClientTimeoutException(inner)
-            }
-            crate::operation::get_propertygraph_summary::GetPropertygraphSummaryError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::operation::get_propertygraph_summary::GetPropertygraphSummaryError::IllegalArgumentException(inner) => {
-                Error::IllegalArgumentException(inner)
-            }
-            crate::operation::get_propertygraph_summary::GetPropertygraphSummaryError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::get_propertygraph_summary::GetPropertygraphSummaryError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::get_propertygraph_summary::GetPropertygraphSummaryError::MissingParameterException(inner) => {
-                Error::MissingParameterException(inner)
-            }
-            crate::operation::get_propertygraph_summary::GetPropertygraphSummaryError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
-            crate::operation::get_propertygraph_summary::GetPropertygraphSummaryError::ReadOnlyViolationException(inner) => {
-                Error::ReadOnlyViolationException(inner)
-            }
-            crate::operation::get_propertygraph_summary::GetPropertygraphSummaryError::StatisticsNotAvailableException(inner) => {
-                Error::StatisticsNotAvailableException(inner)
-            }
-            crate::operation::get_propertygraph_summary::GetPropertygraphSummaryError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::get_propertygraph_summary::GetPropertygraphSummaryError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::get_propertygraph_summary::GetPropertygraphSummaryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_propertygraph_summary::GetPropertygraphSummaryError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_propertygraph_summary::GetPropertygraphSummaryError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
+            crate::operation::get_propertygraph_summary::GetPropertygraphSummaryError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::operation::get_propertygraph_summary::GetPropertygraphSummaryError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::get_propertygraph_summary::GetPropertygraphSummaryError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::get_propertygraph_summary::GetPropertygraphSummaryError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_propertygraph_summary::GetPropertygraphSummaryError::MissingParameterException(inner) => Error::MissingParameterException(inner),
+            crate::operation::get_propertygraph_summary::GetPropertygraphSummaryError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
+            crate::operation::get_propertygraph_summary::GetPropertygraphSummaryError::ReadOnlyViolationException(inner) => Error::ReadOnlyViolationException(inner),
+            crate::operation::get_propertygraph_summary::GetPropertygraphSummaryError::StatisticsNotAvailableException(inner) => Error::StatisticsNotAvailableException(inner),
+            crate::operation::get_propertygraph_summary::GetPropertygraphSummaryError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_propertygraph_summary::GetPropertygraphSummaryError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::get_propertygraph_summary::GetPropertygraphSummaryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_rdf_graph_summary::GetRDFGraphSummaryError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_rdf_graph_summary::GetRDFGraphSummaryError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_rdf_graph_summary::GetRDFGraphSummaryError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1810,51 +1104,30 @@ impl From<crate::operation::get_rdf_graph_summary::GetRDFGraphSummaryError> for 
             crate::operation::get_rdf_graph_summary::GetRDFGraphSummaryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_rdf_graph_summary::GetRDFGraphSummaryError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::get_rdf_graph_summary::GetRDFGraphSummaryError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
-            crate::operation::get_rdf_graph_summary::GetRDFGraphSummaryError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::operation::get_rdf_graph_summary::GetRDFGraphSummaryError::IllegalArgumentException(inner) => {
-                Error::IllegalArgumentException(inner)
-            }
-            crate::operation::get_rdf_graph_summary::GetRDFGraphSummaryError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::get_rdf_graph_summary::GetRDFGraphSummaryError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::get_rdf_graph_summary::GetRDFGraphSummaryError::MissingParameterException(inner) => {
-                Error::MissingParameterException(inner)
-            }
-            crate::operation::get_rdf_graph_summary::GetRDFGraphSummaryError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
-            crate::operation::get_rdf_graph_summary::GetRDFGraphSummaryError::ReadOnlyViolationException(inner) => {
-                Error::ReadOnlyViolationException(inner)
-            }
-            crate::operation::get_rdf_graph_summary::GetRDFGraphSummaryError::StatisticsNotAvailableException(inner) => {
-                Error::StatisticsNotAvailableException(inner)
-            }
-            crate::operation::get_rdf_graph_summary::GetRDFGraphSummaryError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::get_rdf_graph_summary::GetRDFGraphSummaryError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::get_rdf_graph_summary::GetRDFGraphSummaryError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::operation::get_rdf_graph_summary::GetRDFGraphSummaryError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::get_rdf_graph_summary::GetRDFGraphSummaryError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::get_rdf_graph_summary::GetRDFGraphSummaryError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_rdf_graph_summary::GetRDFGraphSummaryError::MissingParameterException(inner) => Error::MissingParameterException(inner),
+            crate::operation::get_rdf_graph_summary::GetRDFGraphSummaryError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
+            crate::operation::get_rdf_graph_summary::GetRDFGraphSummaryError::ReadOnlyViolationException(inner) => Error::ReadOnlyViolationException(inner),
+            crate::operation::get_rdf_graph_summary::GetRDFGraphSummaryError::StatisticsNotAvailableException(inner) => Error::StatisticsNotAvailableException(inner),
+            crate::operation::get_rdf_graph_summary::GetRDFGraphSummaryError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_rdf_graph_summary::GetRDFGraphSummaryError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::get_rdf_graph_summary::GetRDFGraphSummaryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_sparql_statistics::GetSparqlStatisticsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_sparql_statistics::GetSparqlStatisticsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_sparql_statistics::GetSparqlStatisticsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1864,51 +1137,30 @@ impl From<crate::operation::get_sparql_statistics::GetSparqlStatisticsError> for
             crate::operation::get_sparql_statistics::GetSparqlStatisticsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_sparql_statistics::GetSparqlStatisticsError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::get_sparql_statistics::GetSparqlStatisticsError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
-            crate::operation::get_sparql_statistics::GetSparqlStatisticsError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::operation::get_sparql_statistics::GetSparqlStatisticsError::IllegalArgumentException(inner) => {
-                Error::IllegalArgumentException(inner)
-            }
-            crate::operation::get_sparql_statistics::GetSparqlStatisticsError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::get_sparql_statistics::GetSparqlStatisticsError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::get_sparql_statistics::GetSparqlStatisticsError::MissingParameterException(inner) => {
-                Error::MissingParameterException(inner)
-            }
-            crate::operation::get_sparql_statistics::GetSparqlStatisticsError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
-            crate::operation::get_sparql_statistics::GetSparqlStatisticsError::ReadOnlyViolationException(inner) => {
-                Error::ReadOnlyViolationException(inner)
-            }
-            crate::operation::get_sparql_statistics::GetSparqlStatisticsError::StatisticsNotAvailableException(inner) => {
-                Error::StatisticsNotAvailableException(inner)
-            }
-            crate::operation::get_sparql_statistics::GetSparqlStatisticsError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::get_sparql_statistics::GetSparqlStatisticsError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::get_sparql_statistics::GetSparqlStatisticsError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::operation::get_sparql_statistics::GetSparqlStatisticsError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::get_sparql_statistics::GetSparqlStatisticsError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::get_sparql_statistics::GetSparqlStatisticsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_sparql_statistics::GetSparqlStatisticsError::MissingParameterException(inner) => Error::MissingParameterException(inner),
+            crate::operation::get_sparql_statistics::GetSparqlStatisticsError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
+            crate::operation::get_sparql_statistics::GetSparqlStatisticsError::ReadOnlyViolationException(inner) => Error::ReadOnlyViolationException(inner),
+            crate::operation::get_sparql_statistics::GetSparqlStatisticsError::StatisticsNotAvailableException(inner) => Error::StatisticsNotAvailableException(inner),
+            crate::operation::get_sparql_statistics::GetSparqlStatisticsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_sparql_statistics::GetSparqlStatisticsError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::get_sparql_statistics::GetSparqlStatisticsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_sparql_stream::GetSparqlStreamError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_sparql_stream::GetSparqlStreamError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_sparql_stream::GetSparqlStreamError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1916,42 +1168,31 @@ impl From<crate::operation::get_sparql_stream::GetSparqlStreamError> for Error {
     fn from(err: crate::operation::get_sparql_stream::GetSparqlStreamError) -> Self {
         match err {
             crate::operation::get_sparql_stream::GetSparqlStreamError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
-            crate::operation::get_sparql_stream::GetSparqlStreamError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
+            crate::operation::get_sparql_stream::GetSparqlStreamError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
             crate::operation::get_sparql_stream::GetSparqlStreamError::ExpiredStreamException(inner) => Error::ExpiredStreamException(inner),
             crate::operation::get_sparql_stream::GetSparqlStreamError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
             crate::operation::get_sparql_stream::GetSparqlStreamError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
             crate::operation::get_sparql_stream::GetSparqlStreamError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::get_sparql_stream::GetSparqlStreamError::MemoryLimitExceededException(inner) => {
-                Error::MemoryLimitExceededException(inner)
-            }
-            crate::operation::get_sparql_stream::GetSparqlStreamError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
-            crate::operation::get_sparql_stream::GetSparqlStreamError::StreamRecordsNotFoundException(inner) => {
-                Error::StreamRecordsNotFoundException(inner)
-            }
+            crate::operation::get_sparql_stream::GetSparqlStreamError::MemoryLimitExceededException(inner) => Error::MemoryLimitExceededException(inner),
+            crate::operation::get_sparql_stream::GetSparqlStreamError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
+            crate::operation::get_sparql_stream::GetSparqlStreamError::StreamRecordsNotFoundException(inner) => Error::StreamRecordsNotFoundException(inner),
             crate::operation::get_sparql_stream::GetSparqlStreamError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_sparql_stream::GetSparqlStreamError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::get_sparql_stream::GetSparqlStreamError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::get_sparql_stream::GetSparqlStreamError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::get_sparql_stream::GetSparqlStreamError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_gremlin_queries::ListGremlinQueriesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_gremlin_queries::ListGremlinQueriesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_gremlin_queries::ListGremlinQueriesError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1961,56 +1202,33 @@ impl From<crate::operation::list_gremlin_queries::ListGremlinQueriesError> for E
             crate::operation::list_gremlin_queries::ListGremlinQueriesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_gremlin_queries::ListGremlinQueriesError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::list_gremlin_queries::ListGremlinQueriesError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
-            crate::operation::list_gremlin_queries::ListGremlinQueriesError::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::operation::list_gremlin_queries::ListGremlinQueriesError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
+            crate::operation::list_gremlin_queries::ListGremlinQueriesError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::list_gremlin_queries::ListGremlinQueriesError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
             crate::operation::list_gremlin_queries::ListGremlinQueriesError::FailureByQueryException(inner) => Error::FailureByQueryException(inner),
-            crate::operation::list_gremlin_queries::ListGremlinQueriesError::IllegalArgumentException(inner) => {
-                Error::IllegalArgumentException(inner)
-            }
-            crate::operation::list_gremlin_queries::ListGremlinQueriesError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::list_gremlin_queries::ListGremlinQueriesError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::list_gremlin_queries::ListGremlinQueriesError::MissingParameterException(inner) => {
-                Error::MissingParameterException(inner)
-            }
+            crate::operation::list_gremlin_queries::ListGremlinQueriesError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::list_gremlin_queries::ListGremlinQueriesError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::list_gremlin_queries::ListGremlinQueriesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_gremlin_queries::ListGremlinQueriesError::MissingParameterException(inner) => Error::MissingParameterException(inner),
             crate::operation::list_gremlin_queries::ListGremlinQueriesError::ParsingException(inner) => Error::ParsingException(inner),
-            crate::operation::list_gremlin_queries::ListGremlinQueriesError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
-            crate::operation::list_gremlin_queries::ListGremlinQueriesError::ReadOnlyViolationException(inner) => {
-                Error::ReadOnlyViolationException(inner)
-            }
-            crate::operation::list_gremlin_queries::ListGremlinQueriesError::TimeLimitExceededException(inner) => {
-                Error::TimeLimitExceededException(inner)
-            }
-            crate::operation::list_gremlin_queries::ListGremlinQueriesError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::list_gremlin_queries::ListGremlinQueriesError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::list_gremlin_queries::ListGremlinQueriesError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
+            crate::operation::list_gremlin_queries::ListGremlinQueriesError::ReadOnlyViolationException(inner) => Error::ReadOnlyViolationException(inner),
+            crate::operation::list_gremlin_queries::ListGremlinQueriesError::TimeLimitExceededException(inner) => Error::TimeLimitExceededException(inner),
+            crate::operation::list_gremlin_queries::ListGremlinQueriesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_gremlin_queries::ListGremlinQueriesError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::list_gremlin_queries::ListGremlinQueriesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_loader_jobs::ListLoaderJobsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_loader_jobs::ListLoaderJobsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_loader_jobs::ListLoaderJobsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2020,95 +1238,60 @@ impl From<crate::operation::list_loader_jobs::ListLoaderJobsError> for Error {
             crate::operation::list_loader_jobs::ListLoaderJobsError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::list_loader_jobs::ListLoaderJobsError::BulkLoadIdNotFoundException(inner) => Error::BulkLoadIdNotFoundException(inner),
             crate::operation::list_loader_jobs::ListLoaderJobsError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
-            crate::operation::list_loader_jobs::ListLoaderJobsError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
+            crate::operation::list_loader_jobs::ListLoaderJobsError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
             crate::operation::list_loader_jobs::ListLoaderJobsError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
             crate::operation::list_loader_jobs::ListLoaderJobsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::list_loader_jobs::ListLoaderJobsError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
             crate::operation::list_loader_jobs::ListLoaderJobsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::list_loader_jobs::ListLoaderJobsError::LoadUrlAccessDeniedException(inner) => {
-                Error::LoadUrlAccessDeniedException(inner)
-            }
-            crate::operation::list_loader_jobs::ListLoaderJobsError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
+            crate::operation::list_loader_jobs::ListLoaderJobsError::LoadUrlAccessDeniedException(inner) => Error::LoadUrlAccessDeniedException(inner),
+            crate::operation::list_loader_jobs::ListLoaderJobsError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
             crate::operation::list_loader_jobs::ListLoaderJobsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::list_loader_jobs::ListLoaderJobsError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::list_loader_jobs::ListLoaderJobsError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::list_loader_jobs::ListLoaderJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ml_data_processing_jobs::ListMLDataProcessingJobsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ml_data_processing_jobs::ListMLDataProcessingJobsError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ml_data_processing_jobs::ListMLDataProcessingJobsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ml_data_processing_jobs::ListMLDataProcessingJobsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_ml_data_processing_jobs::ListMLDataProcessingJobsError> for Error {
     fn from(err: crate::operation::list_ml_data_processing_jobs::ListMLDataProcessingJobsError) -> Self {
         match err {
-            crate::operation::list_ml_data_processing_jobs::ListMLDataProcessingJobsError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::operation::list_ml_data_processing_jobs::ListMLDataProcessingJobsError::ClientTimeoutException(inner) => {
-                Error::ClientTimeoutException(inner)
-            }
-            crate::operation::list_ml_data_processing_jobs::ListMLDataProcessingJobsError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::operation::list_ml_data_processing_jobs::ListMLDataProcessingJobsError::IllegalArgumentException(inner) => {
-                Error::IllegalArgumentException(inner)
-            }
-            crate::operation::list_ml_data_processing_jobs::ListMLDataProcessingJobsError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::list_ml_data_processing_jobs::ListMLDataProcessingJobsError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::list_ml_data_processing_jobs::ListMLDataProcessingJobsError::MissingParameterException(inner) => {
-                Error::MissingParameterException(inner)
-            }
-            crate::operation::list_ml_data_processing_jobs::ListMLDataProcessingJobsError::MlResourceNotFoundException(inner) => {
-                Error::MlResourceNotFoundException(inner)
-            }
-            crate::operation::list_ml_data_processing_jobs::ListMLDataProcessingJobsError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
-            crate::operation::list_ml_data_processing_jobs::ListMLDataProcessingJobsError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::list_ml_data_processing_jobs::ListMLDataProcessingJobsError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::list_ml_data_processing_jobs::ListMLDataProcessingJobsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_ml_data_processing_jobs::ListMLDataProcessingJobsError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
+            crate::operation::list_ml_data_processing_jobs::ListMLDataProcessingJobsError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::operation::list_ml_data_processing_jobs::ListMLDataProcessingJobsError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::list_ml_data_processing_jobs::ListMLDataProcessingJobsError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::list_ml_data_processing_jobs::ListMLDataProcessingJobsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_ml_data_processing_jobs::ListMLDataProcessingJobsError::MissingParameterException(inner) => Error::MissingParameterException(inner),
+            crate::operation::list_ml_data_processing_jobs::ListMLDataProcessingJobsError::MlResourceNotFoundException(inner) => Error::MlResourceNotFoundException(inner),
+            crate::operation::list_ml_data_processing_jobs::ListMLDataProcessingJobsError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
+            crate::operation::list_ml_data_processing_jobs::ListMLDataProcessingJobsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_ml_data_processing_jobs::ListMLDataProcessingJobsError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::list_ml_data_processing_jobs::ListMLDataProcessingJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ml_endpoints::ListMLEndpointsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ml_endpoints::ListMLEndpointsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ml_endpoints::ListMLEndpointsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2117,349 +1300,194 @@ impl From<crate::operation::list_ml_endpoints::ListMLEndpointsError> for Error {
         match err {
             crate::operation::list_ml_endpoints::ListMLEndpointsError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::list_ml_endpoints::ListMLEndpointsError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
-            crate::operation::list_ml_endpoints::ListMLEndpointsError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
+            crate::operation::list_ml_endpoints::ListMLEndpointsError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
             crate::operation::list_ml_endpoints::ListMLEndpointsError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
             crate::operation::list_ml_endpoints::ListMLEndpointsError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
             crate::operation::list_ml_endpoints::ListMLEndpointsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::list_ml_endpoints::ListMLEndpointsError::MissingParameterException(inner) => Error::MissingParameterException(inner),
-            crate::operation::list_ml_endpoints::ListMLEndpointsError::MlResourceNotFoundException(inner) => {
-                Error::MlResourceNotFoundException(inner)
-            }
-            crate::operation::list_ml_endpoints::ListMLEndpointsError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
+            crate::operation::list_ml_endpoints::ListMLEndpointsError::MlResourceNotFoundException(inner) => Error::MlResourceNotFoundException(inner),
+            crate::operation::list_ml_endpoints::ListMLEndpointsError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
             crate::operation::list_ml_endpoints::ListMLEndpointsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::list_ml_endpoints::ListMLEndpointsError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::list_ml_endpoints::ListMLEndpointsError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::list_ml_endpoints::ListMLEndpointsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ml_model_training_jobs::ListMLModelTrainingJobsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ml_model_training_jobs::ListMLModelTrainingJobsError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ml_model_training_jobs::ListMLModelTrainingJobsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ml_model_training_jobs::ListMLModelTrainingJobsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_ml_model_training_jobs::ListMLModelTrainingJobsError> for Error {
     fn from(err: crate::operation::list_ml_model_training_jobs::ListMLModelTrainingJobsError) -> Self {
         match err {
-            crate::operation::list_ml_model_training_jobs::ListMLModelTrainingJobsError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::operation::list_ml_model_training_jobs::ListMLModelTrainingJobsError::ClientTimeoutException(inner) => {
-                Error::ClientTimeoutException(inner)
-            }
-            crate::operation::list_ml_model_training_jobs::ListMLModelTrainingJobsError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::operation::list_ml_model_training_jobs::ListMLModelTrainingJobsError::IllegalArgumentException(inner) => {
-                Error::IllegalArgumentException(inner)
-            }
-            crate::operation::list_ml_model_training_jobs::ListMLModelTrainingJobsError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::list_ml_model_training_jobs::ListMLModelTrainingJobsError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::list_ml_model_training_jobs::ListMLModelTrainingJobsError::MissingParameterException(inner) => {
-                Error::MissingParameterException(inner)
-            }
-            crate::operation::list_ml_model_training_jobs::ListMLModelTrainingJobsError::MlResourceNotFoundException(inner) => {
-                Error::MlResourceNotFoundException(inner)
-            }
-            crate::operation::list_ml_model_training_jobs::ListMLModelTrainingJobsError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
-            crate::operation::list_ml_model_training_jobs::ListMLModelTrainingJobsError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::list_ml_model_training_jobs::ListMLModelTrainingJobsError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::list_ml_model_training_jobs::ListMLModelTrainingJobsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_ml_model_training_jobs::ListMLModelTrainingJobsError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
+            crate::operation::list_ml_model_training_jobs::ListMLModelTrainingJobsError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::operation::list_ml_model_training_jobs::ListMLModelTrainingJobsError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::list_ml_model_training_jobs::ListMLModelTrainingJobsError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::list_ml_model_training_jobs::ListMLModelTrainingJobsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_ml_model_training_jobs::ListMLModelTrainingJobsError::MissingParameterException(inner) => Error::MissingParameterException(inner),
+            crate::operation::list_ml_model_training_jobs::ListMLModelTrainingJobsError::MlResourceNotFoundException(inner) => Error::MlResourceNotFoundException(inner),
+            crate::operation::list_ml_model_training_jobs::ListMLModelTrainingJobsError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
+            crate::operation::list_ml_model_training_jobs::ListMLModelTrainingJobsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_ml_model_training_jobs::ListMLModelTrainingJobsError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::list_ml_model_training_jobs::ListMLModelTrainingJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ml_model_transform_jobs::ListMLModelTransformJobsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ml_model_transform_jobs::ListMLModelTransformJobsError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ml_model_transform_jobs::ListMLModelTransformJobsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ml_model_transform_jobs::ListMLModelTransformJobsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_ml_model_transform_jobs::ListMLModelTransformJobsError> for Error {
     fn from(err: crate::operation::list_ml_model_transform_jobs::ListMLModelTransformJobsError) -> Self {
         match err {
-            crate::operation::list_ml_model_transform_jobs::ListMLModelTransformJobsError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::operation::list_ml_model_transform_jobs::ListMLModelTransformJobsError::ClientTimeoutException(inner) => {
-                Error::ClientTimeoutException(inner)
-            }
-            crate::operation::list_ml_model_transform_jobs::ListMLModelTransformJobsError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::operation::list_ml_model_transform_jobs::ListMLModelTransformJobsError::IllegalArgumentException(inner) => {
-                Error::IllegalArgumentException(inner)
-            }
-            crate::operation::list_ml_model_transform_jobs::ListMLModelTransformJobsError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::list_ml_model_transform_jobs::ListMLModelTransformJobsError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::list_ml_model_transform_jobs::ListMLModelTransformJobsError::MissingParameterException(inner) => {
-                Error::MissingParameterException(inner)
-            }
-            crate::operation::list_ml_model_transform_jobs::ListMLModelTransformJobsError::MlResourceNotFoundException(inner) => {
-                Error::MlResourceNotFoundException(inner)
-            }
-            crate::operation::list_ml_model_transform_jobs::ListMLModelTransformJobsError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
-            crate::operation::list_ml_model_transform_jobs::ListMLModelTransformJobsError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::list_ml_model_transform_jobs::ListMLModelTransformJobsError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::list_ml_model_transform_jobs::ListMLModelTransformJobsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_ml_model_transform_jobs::ListMLModelTransformJobsError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
+            crate::operation::list_ml_model_transform_jobs::ListMLModelTransformJobsError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::operation::list_ml_model_transform_jobs::ListMLModelTransformJobsError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::list_ml_model_transform_jobs::ListMLModelTransformJobsError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::list_ml_model_transform_jobs::ListMLModelTransformJobsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_ml_model_transform_jobs::ListMLModelTransformJobsError::MissingParameterException(inner) => Error::MissingParameterException(inner),
+            crate::operation::list_ml_model_transform_jobs::ListMLModelTransformJobsError::MlResourceNotFoundException(inner) => Error::MlResourceNotFoundException(inner),
+            crate::operation::list_ml_model_transform_jobs::ListMLModelTransformJobsError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
+            crate::operation::list_ml_model_transform_jobs::ListMLModelTransformJobsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_ml_model_transform_jobs::ListMLModelTransformJobsError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::list_ml_model_transform_jobs::ListMLModelTransformJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError> for Error {
     fn from(err: crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError) -> Self {
         match err {
-            crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
+            crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError::ClientTimeoutException(inner) => {
-                Error::ClientTimeoutException(inner)
-            }
-            crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError::FailureByQueryException(inner) => {
-                Error::FailureByQueryException(inner)
-            }
-            crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError::IllegalArgumentException(inner) => {
-                Error::IllegalArgumentException(inner)
-            }
-            crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError::InvalidNumericDataException(inner) => {
-                Error::InvalidNumericDataException(inner)
-            }
-            crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError::MissingParameterException(inner) => {
-                Error::MissingParameterException(inner)
-            }
+            crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
+            crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError::FailureByQueryException(inner) => Error::FailureByQueryException(inner),
+            crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError::InvalidNumericDataException(inner) => Error::InvalidNumericDataException(inner),
+            crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError::MissingParameterException(inner) => Error::MissingParameterException(inner),
             crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError::ParsingException(inner) => Error::ParsingException(inner),
-            crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
-            crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError::ReadOnlyViolationException(inner) => {
-                Error::ReadOnlyViolationException(inner)
-            }
-            crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError::TimeLimitExceededException(inner) => {
-                Error::TimeLimitExceededException(inner)
-            }
-            crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
+            crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError::ReadOnlyViolationException(inner) => Error::ReadOnlyViolationException(inner),
+            crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError::TimeLimitExceededException(inner) => Error::TimeLimitExceededException(inner),
+            crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsError> for Error {
     fn from(err: crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsError) -> Self {
         match err {
-            crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsError::ClientTimeoutException(inner) => {
-                Error::ClientTimeoutException(inner)
-            }
-            crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsError::IllegalArgumentException(inner) => {
-                Error::IllegalArgumentException(inner)
-            }
-            crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsError::MissingParameterException(inner) => {
-                Error::MissingParameterException(inner)
-            }
-            crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
-            crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsError::ReadOnlyViolationException(inner) => {
-                Error::ReadOnlyViolationException(inner)
-            }
-            crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsError::StatisticsNotAvailableException(inner) => {
-                Error::StatisticsNotAvailableException(inner)
-            }
-            crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
+            crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsError::MissingParameterException(inner) => Error::MissingParameterException(inner),
+            crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
+            crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsError::ReadOnlyViolationException(inner) => Error::ReadOnlyViolationException(inner),
+            crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsError::StatisticsNotAvailableException(inner) => Error::StatisticsNotAvailableException(inner),
+            crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::manage_propertygraph_statistics::ManagePropertygraphStatisticsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::manage_sparql_statistics::ManageSparqlStatisticsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::manage_sparql_statistics::ManageSparqlStatisticsError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::manage_sparql_statistics::ManageSparqlStatisticsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::manage_sparql_statistics::ManageSparqlStatisticsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::manage_sparql_statistics::ManageSparqlStatisticsError> for Error {
     fn from(err: crate::operation::manage_sparql_statistics::ManageSparqlStatisticsError) -> Self {
         match err {
-            crate::operation::manage_sparql_statistics::ManageSparqlStatisticsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
+            crate::operation::manage_sparql_statistics::ManageSparqlStatisticsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::manage_sparql_statistics::ManageSparqlStatisticsError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::manage_sparql_statistics::ManageSparqlStatisticsError::ClientTimeoutException(inner) => {
-                Error::ClientTimeoutException(inner)
-            }
-            crate::operation::manage_sparql_statistics::ManageSparqlStatisticsError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::operation::manage_sparql_statistics::ManageSparqlStatisticsError::IllegalArgumentException(inner) => {
-                Error::IllegalArgumentException(inner)
-            }
-            crate::operation::manage_sparql_statistics::ManageSparqlStatisticsError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::manage_sparql_statistics::ManageSparqlStatisticsError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::manage_sparql_statistics::ManageSparqlStatisticsError::MissingParameterException(inner) => {
-                Error::MissingParameterException(inner)
-            }
-            crate::operation::manage_sparql_statistics::ManageSparqlStatisticsError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
-            crate::operation::manage_sparql_statistics::ManageSparqlStatisticsError::ReadOnlyViolationException(inner) => {
-                Error::ReadOnlyViolationException(inner)
-            }
-            crate::operation::manage_sparql_statistics::ManageSparqlStatisticsError::StatisticsNotAvailableException(inner) => {
-                Error::StatisticsNotAvailableException(inner)
-            }
-            crate::operation::manage_sparql_statistics::ManageSparqlStatisticsError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::manage_sparql_statistics::ManageSparqlStatisticsError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::manage_sparql_statistics::ManageSparqlStatisticsError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
+            crate::operation::manage_sparql_statistics::ManageSparqlStatisticsError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::operation::manage_sparql_statistics::ManageSparqlStatisticsError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::manage_sparql_statistics::ManageSparqlStatisticsError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::manage_sparql_statistics::ManageSparqlStatisticsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::manage_sparql_statistics::ManageSparqlStatisticsError::MissingParameterException(inner) => Error::MissingParameterException(inner),
+            crate::operation::manage_sparql_statistics::ManageSparqlStatisticsError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
+            crate::operation::manage_sparql_statistics::ManageSparqlStatisticsError::ReadOnlyViolationException(inner) => Error::ReadOnlyViolationException(inner),
+            crate::operation::manage_sparql_statistics::ManageSparqlStatisticsError::StatisticsNotAvailableException(inner) => Error::StatisticsNotAvailableException(inner),
+            crate::operation::manage_sparql_statistics::ManageSparqlStatisticsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::manage_sparql_statistics::ManageSparqlStatisticsError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::manage_sparql_statistics::ManageSparqlStatisticsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_loader_job::StartLoaderJobError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_loader_job::StartLoaderJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_loader_job::StartLoaderJobError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -2469,196 +1497,110 @@ impl From<crate::operation::start_loader_job::StartLoaderJobError> for Error {
             crate::operation::start_loader_job::StartLoaderJobError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::start_loader_job::StartLoaderJobError::BulkLoadIdNotFoundException(inner) => Error::BulkLoadIdNotFoundException(inner),
             crate::operation::start_loader_job::StartLoaderJobError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
-            crate::operation::start_loader_job::StartLoaderJobError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
+            crate::operation::start_loader_job::StartLoaderJobError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
             crate::operation::start_loader_job::StartLoaderJobError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
             crate::operation::start_loader_job::StartLoaderJobError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::start_loader_job::StartLoaderJobError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
             crate::operation::start_loader_job::StartLoaderJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::start_loader_job::StartLoaderJobError::LoadUrlAccessDeniedException(inner) => {
-                Error::LoadUrlAccessDeniedException(inner)
-            }
+            crate::operation::start_loader_job::StartLoaderJobError::LoadUrlAccessDeniedException(inner) => Error::LoadUrlAccessDeniedException(inner),
             crate::operation::start_loader_job::StartLoaderJobError::MissingParameterException(inner) => Error::MissingParameterException(inner),
-            crate::operation::start_loader_job::StartLoaderJobError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
+            crate::operation::start_loader_job::StartLoaderJobError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
             crate::operation::start_loader_job::StartLoaderJobError::S3Exception(inner) => Error::S3Exception(inner),
             crate::operation::start_loader_job::StartLoaderJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::operation::start_loader_job::StartLoaderJobError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::start_loader_job::StartLoaderJobError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::start_loader_job::StartLoaderJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_ml_data_processing_job::StartMLDataProcessingJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_ml_data_processing_job::StartMLDataProcessingJobError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_ml_data_processing_job::StartMLDataProcessingJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_ml_data_processing_job::StartMLDataProcessingJobError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::start_ml_data_processing_job::StartMLDataProcessingJobError> for Error {
     fn from(err: crate::operation::start_ml_data_processing_job::StartMLDataProcessingJobError) -> Self {
         match err {
-            crate::operation::start_ml_data_processing_job::StartMLDataProcessingJobError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::operation::start_ml_data_processing_job::StartMLDataProcessingJobError::ClientTimeoutException(inner) => {
-                Error::ClientTimeoutException(inner)
-            }
-            crate::operation::start_ml_data_processing_job::StartMLDataProcessingJobError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::operation::start_ml_data_processing_job::StartMLDataProcessingJobError::IllegalArgumentException(inner) => {
-                Error::IllegalArgumentException(inner)
-            }
-            crate::operation::start_ml_data_processing_job::StartMLDataProcessingJobError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::start_ml_data_processing_job::StartMLDataProcessingJobError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::start_ml_data_processing_job::StartMLDataProcessingJobError::MissingParameterException(inner) => {
-                Error::MissingParameterException(inner)
-            }
-            crate::operation::start_ml_data_processing_job::StartMLDataProcessingJobError::MlResourceNotFoundException(inner) => {
-                Error::MlResourceNotFoundException(inner)
-            }
-            crate::operation::start_ml_data_processing_job::StartMLDataProcessingJobError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
-            crate::operation::start_ml_data_processing_job::StartMLDataProcessingJobError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::start_ml_data_processing_job::StartMLDataProcessingJobError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::start_ml_data_processing_job::StartMLDataProcessingJobError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::start_ml_data_processing_job::StartMLDataProcessingJobError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
+            crate::operation::start_ml_data_processing_job::StartMLDataProcessingJobError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::operation::start_ml_data_processing_job::StartMLDataProcessingJobError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::start_ml_data_processing_job::StartMLDataProcessingJobError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::start_ml_data_processing_job::StartMLDataProcessingJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::start_ml_data_processing_job::StartMLDataProcessingJobError::MissingParameterException(inner) => Error::MissingParameterException(inner),
+            crate::operation::start_ml_data_processing_job::StartMLDataProcessingJobError::MlResourceNotFoundException(inner) => Error::MlResourceNotFoundException(inner),
+            crate::operation::start_ml_data_processing_job::StartMLDataProcessingJobError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
+            crate::operation::start_ml_data_processing_job::StartMLDataProcessingJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::start_ml_data_processing_job::StartMLDataProcessingJobError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::start_ml_data_processing_job::StartMLDataProcessingJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_ml_model_training_job::StartMLModelTrainingJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_ml_model_training_job::StartMLModelTrainingJobError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_ml_model_training_job::StartMLModelTrainingJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_ml_model_training_job::StartMLModelTrainingJobError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::start_ml_model_training_job::StartMLModelTrainingJobError> for Error {
     fn from(err: crate::operation::start_ml_model_training_job::StartMLModelTrainingJobError) -> Self {
         match err {
-            crate::operation::start_ml_model_training_job::StartMLModelTrainingJobError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::operation::start_ml_model_training_job::StartMLModelTrainingJobError::ClientTimeoutException(inner) => {
-                Error::ClientTimeoutException(inner)
-            }
-            crate::operation::start_ml_model_training_job::StartMLModelTrainingJobError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::operation::start_ml_model_training_job::StartMLModelTrainingJobError::IllegalArgumentException(inner) => {
-                Error::IllegalArgumentException(inner)
-            }
-            crate::operation::start_ml_model_training_job::StartMLModelTrainingJobError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::start_ml_model_training_job::StartMLModelTrainingJobError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::start_ml_model_training_job::StartMLModelTrainingJobError::MissingParameterException(inner) => {
-                Error::MissingParameterException(inner)
-            }
-            crate::operation::start_ml_model_training_job::StartMLModelTrainingJobError::MlResourceNotFoundException(inner) => {
-                Error::MlResourceNotFoundException(inner)
-            }
-            crate::operation::start_ml_model_training_job::StartMLModelTrainingJobError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
-            crate::operation::start_ml_model_training_job::StartMLModelTrainingJobError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::start_ml_model_training_job::StartMLModelTrainingJobError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::start_ml_model_training_job::StartMLModelTrainingJobError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::start_ml_model_training_job::StartMLModelTrainingJobError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
+            crate::operation::start_ml_model_training_job::StartMLModelTrainingJobError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::operation::start_ml_model_training_job::StartMLModelTrainingJobError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::start_ml_model_training_job::StartMLModelTrainingJobError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::start_ml_model_training_job::StartMLModelTrainingJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::start_ml_model_training_job::StartMLModelTrainingJobError::MissingParameterException(inner) => Error::MissingParameterException(inner),
+            crate::operation::start_ml_model_training_job::StartMLModelTrainingJobError::MlResourceNotFoundException(inner) => Error::MlResourceNotFoundException(inner),
+            crate::operation::start_ml_model_training_job::StartMLModelTrainingJobError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
+            crate::operation::start_ml_model_training_job::StartMLModelTrainingJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::start_ml_model_training_job::StartMLModelTrainingJobError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::start_ml_model_training_job::StartMLModelTrainingJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_ml_model_transform_job::StartMLModelTransformJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_ml_model_transform_job::StartMLModelTransformJobError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_ml_model_transform_job::StartMLModelTransformJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_ml_model_transform_job::StartMLModelTransformJobError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::start_ml_model_transform_job::StartMLModelTransformJobError> for Error {
     fn from(err: crate::operation::start_ml_model_transform_job::StartMLModelTransformJobError) -> Self {
         match err {
-            crate::operation::start_ml_model_transform_job::StartMLModelTransformJobError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::operation::start_ml_model_transform_job::StartMLModelTransformJobError::ClientTimeoutException(inner) => {
-                Error::ClientTimeoutException(inner)
-            }
-            crate::operation::start_ml_model_transform_job::StartMLModelTransformJobError::ConstraintViolationException(inner) => {
-                Error::ConstraintViolationException(inner)
-            }
-            crate::operation::start_ml_model_transform_job::StartMLModelTransformJobError::IllegalArgumentException(inner) => {
-                Error::IllegalArgumentException(inner)
-            }
-            crate::operation::start_ml_model_transform_job::StartMLModelTransformJobError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::start_ml_model_transform_job::StartMLModelTransformJobError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::start_ml_model_transform_job::StartMLModelTransformJobError::MissingParameterException(inner) => {
-                Error::MissingParameterException(inner)
-            }
-            crate::operation::start_ml_model_transform_job::StartMLModelTransformJobError::MlResourceNotFoundException(inner) => {
-                Error::MlResourceNotFoundException(inner)
-            }
-            crate::operation::start_ml_model_transform_job::StartMLModelTransformJobError::PreconditionsFailedException(inner) => {
-                Error::PreconditionsFailedException(inner)
-            }
-            crate::operation::start_ml_model_transform_job::StartMLModelTransformJobError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::operation::start_ml_model_transform_job::StartMLModelTransformJobError::UnsupportedOperationException(inner) => {
-                Error::UnsupportedOperationException(inner)
-            }
+            crate::operation::start_ml_model_transform_job::StartMLModelTransformJobError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::start_ml_model_transform_job::StartMLModelTransformJobError::ClientTimeoutException(inner) => Error::ClientTimeoutException(inner),
+            crate::operation::start_ml_model_transform_job::StartMLModelTransformJobError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::operation::start_ml_model_transform_job::StartMLModelTransformJobError::IllegalArgumentException(inner) => Error::IllegalArgumentException(inner),
+            crate::operation::start_ml_model_transform_job::StartMLModelTransformJobError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::start_ml_model_transform_job::StartMLModelTransformJobError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::start_ml_model_transform_job::StartMLModelTransformJobError::MissingParameterException(inner) => Error::MissingParameterException(inner),
+            crate::operation::start_ml_model_transform_job::StartMLModelTransformJobError::MlResourceNotFoundException(inner) => Error::MlResourceNotFoundException(inner),
+            crate::operation::start_ml_model_transform_job::StartMLModelTransformJobError::PreconditionsFailedException(inner) => Error::PreconditionsFailedException(inner),
+            crate::operation::start_ml_model_transform_job::StartMLModelTransformJobError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::start_ml_model_transform_job::StartMLModelTransformJobError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
             crate::operation::start_ml_model_transform_job::StartMLModelTransformJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2700,7 +1642,7 @@ impl ::std::error::Error for Error {
             Error::TimeLimitExceededException(inner) => inner.source(),
             Error::TooManyRequestsException(inner) => inner.source(),
             Error::UnsupportedOperationException(inner) => inner.source(),
-            Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
+            Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source)
         }
     }
 }
@@ -2745,3 +1687,4 @@ impl ::aws_types::request_id::RequestId for Error {
         }
     }
 }
+

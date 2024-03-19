@@ -3,7 +3,7 @@
 /// <p>Information about a specified personal access token (PAT).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccessTokenSummary {
+pub struct AccessTokenSummary  {
     /// <p>The system-generated ID of the personal access token.</p>
     pub id: ::std::string::String,
     /// <p>The friendly name of the personal access token.</p>
@@ -11,19 +11,17 @@ pub struct AccessTokenSummary {
     /// <p>The date and time when the personal access token will expire, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
     pub expires_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl AccessTokenSummary {
+impl  AccessTokenSummary  {
     /// <p>The system-generated ID of the personal access token.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The friendly name of the personal access token.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The date and time when the personal access token will expire, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    pub fn expires_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn expires_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.expires_time.as_ref()
     }
 }
@@ -51,8 +49,7 @@ impl AccessTokenSummaryBuilder {
     }
     /// <p>The system-generated ID of the personal access token.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The system-generated ID of the personal access token.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl AccessTokenSummaryBuilder {
     }
     /// <p>The friendly name of the personal access token.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The friendly name of the personal access token.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl AccessTokenSummaryBuilder {
     }
     /// <p>The date and time when the personal access token will expire, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
     pub fn set_expires_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.expires_time = input;
-        self
+        self.expires_time = input; self
     }
     /// <p>The date and time when the personal access token will expire, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
     pub fn get_expires_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -92,20 +87,22 @@ impl AccessTokenSummaryBuilder {
     /// - [`id`](crate::types::builders::AccessTokenSummaryBuilder::id)
     /// - [`name`](crate::types::builders::AccessTokenSummaryBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::AccessTokenSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AccessTokenSummary {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building AccessTokenSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building AccessTokenSummary",
-                )
-            })?,
-            expires_time: self.expires_time,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AccessTokenSummary {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building AccessTokenSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building AccessTokenSummary")
+                    )?
+                ,
+                expires_time: self.expires_time
+                ,
+            }
+        )
     }
 }
+

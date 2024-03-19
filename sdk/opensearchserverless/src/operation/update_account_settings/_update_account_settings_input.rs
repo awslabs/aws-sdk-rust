@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAccountSettingsInput {
+pub struct UpdateAccountSettingsInput  {
     /// <p>The maximum capacity limits for all OpenSearch Serverless collections, in OpenSearch Compute Units (OCUs). These limits are used to scale your collections based on the current workload. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-scaling.html">Managing capacity limits for Amazon OpenSearch Serverless</a>.</p>
     pub capacity_limits: ::std::option::Option<crate::types::CapacityLimits>,
 }
-impl UpdateAccountSettingsInput {
+impl  UpdateAccountSettingsInput  {
     /// <p>The maximum capacity limits for all OpenSearch Serverless collections, in OpenSearch Compute Units (OCUs). These limits are used to scale your collections based on the current workload. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-scaling.html">Managing capacity limits for Amazon OpenSearch Serverless</a>.</p>
-    pub fn capacity_limits(&self) -> ::std::option::Option<&crate::types::CapacityLimits> {
+    pub fn capacity_limits(&self) -> ::std::option::Option<& crate::types::CapacityLimits> {
         self.capacity_limits.as_ref()
     }
 }
@@ -33,20 +33,20 @@ impl UpdateAccountSettingsInputBuilder {
     }
     /// <p>The maximum capacity limits for all OpenSearch Serverless collections, in OpenSearch Compute Units (OCUs). These limits are used to scale your collections based on the current workload. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-scaling.html">Managing capacity limits for Amazon OpenSearch Serverless</a>.</p>
     pub fn set_capacity_limits(mut self, input: ::std::option::Option<crate::types::CapacityLimits>) -> Self {
-        self.capacity_limits = input;
-        self
+        self.capacity_limits = input; self
     }
     /// <p>The maximum capacity limits for all OpenSearch Serverless collections, in OpenSearch Compute Units (OCUs). These limits are used to scale your collections based on the current workload. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-scaling.html">Managing capacity limits for Amazon OpenSearch Serverless</a>.</p>
     pub fn get_capacity_limits(&self) -> &::std::option::Option<crate::types::CapacityLimits> {
         &self.capacity_limits
     }
     /// Consumes the builder and constructs a [`UpdateAccountSettingsInput`](crate::operation::update_account_settings::UpdateAccountSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_account_settings::UpdateAccountSettingsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_account_settings::UpdateAccountSettingsInput {
-            capacity_limits: self.capacity_limits,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_account_settings::UpdateAccountSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_account_settings::UpdateAccountSettingsInput {
+                capacity_limits: self.capacity_limits
+                ,
+            }
+        )
     }
 }
+

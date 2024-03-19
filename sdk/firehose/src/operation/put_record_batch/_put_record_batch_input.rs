@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutRecordBatchInput {
+pub struct PutRecordBatchInput  {
     /// <p>The name of the delivery stream.</p>
     pub delivery_stream_name: ::std::option::Option<::std::string::String>,
     /// <p>One or more records.</p>
-    pub records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
+    pub records: ::std::option::Option<::std::vec::Vec::<crate::types::Record>>,
 }
-impl PutRecordBatchInput {
+impl  PutRecordBatchInput  {
     /// <p>The name of the delivery stream.</p>
-    pub fn delivery_stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn delivery_stream_name(&self) -> ::std::option::Option<& str> {
         self.delivery_stream_name.as_deref()
     }
     /// <p>One or more records.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.records.is_none()`.
-    pub fn records(&self) -> &[crate::types::Record] {
-        self.records.as_deref().unwrap_or_default()
+    pub fn records(&self) -> & [crate::types::Record] {
+        self.records.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PutRecordBatchInput {
@@ -32,7 +33,7 @@ impl PutRecordBatchInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutRecordBatchInputBuilder {
     pub(crate) delivery_stream_name: ::std::option::Option<::std::string::String>,
-    pub(crate) records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
+    pub(crate) records: ::std::option::Option<::std::vec::Vec::<crate::types::Record>>,
 }
 impl PutRecordBatchInputBuilder {
     /// <p>The name of the delivery stream.</p>
@@ -43,8 +44,7 @@ impl PutRecordBatchInputBuilder {
     }
     /// <p>The name of the delivery stream.</p>
     pub fn set_delivery_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delivery_stream_name = input;
-        self
+        self.delivery_stream_name = input; self
     }
     /// <p>The name of the delivery stream.</p>
     pub fn get_delivery_stream_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,26 +57,28 @@ impl PutRecordBatchInputBuilder {
     /// <p>One or more records.</p>
     pub fn records(mut self, input: crate::types::Record) -> Self {
         let mut v = self.records.unwrap_or_default();
-        v.push(input);
-        self.records = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.records = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more records.</p>
-    pub fn set_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Record>>) -> Self {
-        self.records = input;
-        self
+    pub fn set_records(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Record>>) -> Self {
+        self.records = input; self
     }
     /// <p>One or more records.</p>
-    pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Record>> {
+    pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Record>> {
         &self.records
     }
     /// Consumes the builder and constructs a [`PutRecordBatchInput`](crate::operation::put_record_batch::PutRecordBatchInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_record_batch::PutRecordBatchInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_record_batch::PutRecordBatchInput {
-            delivery_stream_name: self.delivery_stream_name,
-            records: self.records,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_record_batch::PutRecordBatchInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_record_batch::PutRecordBatchInput {
+                delivery_stream_name: self.delivery_stream_name
+                ,
+                records: self.records
+                ,
+            }
+        )
     }
 }
+

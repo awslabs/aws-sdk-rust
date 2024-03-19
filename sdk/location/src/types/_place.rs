@@ -4,7 +4,7 @@
 /// <p>Not all details are included with all responses. Some details may only be returned by specific data partners.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Place {
+pub struct Place  {
     /// <p>The full name and address of the point of interest such as a city, region, or country. For example, <code>123 Any Street, Any Town, USA</code>.</p>
     pub label: ::std::option::Option<::std::string::String>,
     /// <p>Places uses a point geometry to specify a location or a Place.</p>
@@ -42,54 +42,54 @@ pub struct Place {
     pub unit_number: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Location categories that describe this Place.</p>
     /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
-    pub categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub categories: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.</p>
-    pub supplemental_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub supplemental_categories: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>An area that's part of a larger municipality. For example, <code>Blissville</code> is a submunicipality in the Queen County in New York.</p><note>
     /// <p>This property is only returned for a place index that uses Esri as a data provider. The property is represented as a <code>district</code>.</p>
     /// </note>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub sub_municipality: ::std::option::Option<::std::string::String>,
 }
-impl Place {
+impl  Place  {
     /// <p>The full name and address of the point of interest such as a city, region, or country. For example, <code>123 Any Street, Any Town, USA</code>.</p>
-    pub fn label(&self) -> ::std::option::Option<&str> {
+    pub fn label(&self) -> ::std::option::Option<& str> {
         self.label.as_deref()
     }
     /// <p>Places uses a point geometry to specify a location or a Place.</p>
-    pub fn geometry(&self) -> ::std::option::Option<&crate::types::PlaceGeometry> {
+    pub fn geometry(&self) -> ::std::option::Option<& crate::types::PlaceGeometry> {
         self.geometry.as_ref()
     }
     /// <p>The numerical portion of an address, such as a building number.</p>
-    pub fn address_number(&self) -> ::std::option::Option<&str> {
+    pub fn address_number(&self) -> ::std::option::Option<& str> {
         self.address_number.as_deref()
     }
     /// <p>The name for a street or a road to identify a location. For example, <code>Main Street</code>.</p>
-    pub fn street(&self) -> ::std::option::Option<&str> {
+    pub fn street(&self) -> ::std::option::Option<& str> {
         self.street.as_deref()
     }
     /// <p>The name of a community district. For example, <code>Downtown</code>.</p>
-    pub fn neighborhood(&self) -> ::std::option::Option<&str> {
+    pub fn neighborhood(&self) -> ::std::option::Option<& str> {
         self.neighborhood.as_deref()
     }
     /// <p>A name for a local area, such as a city or town name. For example, <code>Toronto</code>.</p>
-    pub fn municipality(&self) -> ::std::option::Option<&str> {
+    pub fn municipality(&self) -> ::std::option::Option<& str> {
         self.municipality.as_deref()
     }
     /// <p>A county, or an area that's part of a larger region. For example, <code>Metro Vancouver</code>.</p>
-    pub fn sub_region(&self) -> ::std::option::Option<&str> {
+    pub fn sub_region(&self) -> ::std::option::Option<& str> {
         self.sub_region.as_deref()
     }
     /// <p>A name for an area or geographical division, such as a province or state name. For example, <code>British Columbia</code>.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>A country/region specified using <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country/region code. For example, <code>CAN</code>.</p>
-    pub fn country(&self) -> ::std::option::Option<&str> {
+    pub fn country(&self) -> ::std::option::Option<& str> {
         self.country.as_deref()
     }
     /// <p>A group of numbers and letters in a country-specific format, which accompanies the address for the purpose of identifying a location.</p>
-    pub fn postal_code(&self) -> ::std::option::Option<&str> {
+    pub fn postal_code(&self) -> ::std::option::Option<& str> {
         self.postal_code.as_deref()
     }
     /// <p><code>True</code> if the result is interpolated from other known places.</p>
@@ -100,39 +100,41 @@ impl Place {
         self.interpolated
     }
     /// <p>The time zone in which the <code>Place</code> is located. Returned only when using HERE or Grab as the selected partner.</p>
-    pub fn time_zone(&self) -> ::std::option::Option<&crate::types::TimeZone> {
+    pub fn time_zone(&self) -> ::std::option::Option<& crate::types::TimeZone> {
         self.time_zone.as_ref()
     }
     /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p><note>
     /// <p>This property is returned only for a place index that uses Esri as a data provider.</p>
     /// </note>
-    pub fn unit_type(&self) -> ::std::option::Option<&str> {
+    pub fn unit_type(&self) -> ::std::option::Option<& str> {
         self.unit_type.as_deref()
     }
     /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p><note>
     /// <p>This property is returned only for a place index that uses Esri or Grab as a data provider. It is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
     /// </note>
-    pub fn unit_number(&self) -> ::std::option::Option<&str> {
+    pub fn unit_number(&self) -> ::std::option::Option<& str> {
         self.unit_number.as_deref()
     }
     /// <p>The Amazon Location categories that describe this Place.</p>
     /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.categories.is_none()`.
-    pub fn categories(&self) -> &[::std::string::String] {
-        self.categories.as_deref().unwrap_or_default()
+    pub fn categories(&self) -> & [::std::string::String] {
+        self.categories.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supplemental_categories.is_none()`.
-    pub fn supplemental_categories(&self) -> &[::std::string::String] {
-        self.supplemental_categories.as_deref().unwrap_or_default()
+    pub fn supplemental_categories(&self) -> & [::std::string::String] {
+        self.supplemental_categories.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An area that's part of a larger municipality. For example, <code>Blissville</code> is a submunicipality in the Queen County in New York.</p><note>
     /// <p>This property is only returned for a place index that uses Esri as a data provider. The property is represented as a <code>district</code>.</p>
     /// </note>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
-    pub fn sub_municipality(&self) -> ::std::option::Option<&str> {
+    pub fn sub_municipality(&self) -> ::std::option::Option<& str> {
         self.sub_municipality.as_deref()
     }
 }
@@ -161,8 +163,8 @@ pub struct PlaceBuilder {
     pub(crate) time_zone: ::std::option::Option<crate::types::TimeZone>,
     pub(crate) unit_type: ::std::option::Option<::std::string::String>,
     pub(crate) unit_number: ::std::option::Option<::std::string::String>,
-    pub(crate) categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) supplemental_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) categories: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) supplemental_categories: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) sub_municipality: ::std::option::Option<::std::string::String>,
 }
 impl PlaceBuilder {
@@ -173,8 +175,7 @@ impl PlaceBuilder {
     }
     /// <p>The full name and address of the point of interest such as a city, region, or country. For example, <code>123 Any Street, Any Town, USA</code>.</p>
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label = input;
-        self
+        self.label = input; self
     }
     /// <p>The full name and address of the point of interest such as a city, region, or country. For example, <code>123 Any Street, Any Town, USA</code>.</p>
     pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +189,7 @@ impl PlaceBuilder {
     }
     /// <p>Places uses a point geometry to specify a location or a Place.</p>
     pub fn set_geometry(mut self, input: ::std::option::Option<crate::types::PlaceGeometry>) -> Self {
-        self.geometry = input;
-        self
+        self.geometry = input; self
     }
     /// <p>Places uses a point geometry to specify a location or a Place.</p>
     pub fn get_geometry(&self) -> &::std::option::Option<crate::types::PlaceGeometry> {
@@ -202,8 +202,7 @@ impl PlaceBuilder {
     }
     /// <p>The numerical portion of an address, such as a building number.</p>
     pub fn set_address_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.address_number = input;
-        self
+        self.address_number = input; self
     }
     /// <p>The numerical portion of an address, such as a building number.</p>
     pub fn get_address_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -216,8 +215,7 @@ impl PlaceBuilder {
     }
     /// <p>The name for a street or a road to identify a location. For example, <code>Main Street</code>.</p>
     pub fn set_street(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.street = input;
-        self
+        self.street = input; self
     }
     /// <p>The name for a street or a road to identify a location. For example, <code>Main Street</code>.</p>
     pub fn get_street(&self) -> &::std::option::Option<::std::string::String> {
@@ -230,8 +228,7 @@ impl PlaceBuilder {
     }
     /// <p>The name of a community district. For example, <code>Downtown</code>.</p>
     pub fn set_neighborhood(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.neighborhood = input;
-        self
+        self.neighborhood = input; self
     }
     /// <p>The name of a community district. For example, <code>Downtown</code>.</p>
     pub fn get_neighborhood(&self) -> &::std::option::Option<::std::string::String> {
@@ -244,8 +241,7 @@ impl PlaceBuilder {
     }
     /// <p>A name for a local area, such as a city or town name. For example, <code>Toronto</code>.</p>
     pub fn set_municipality(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.municipality = input;
-        self
+        self.municipality = input; self
     }
     /// <p>A name for a local area, such as a city or town name. For example, <code>Toronto</code>.</p>
     pub fn get_municipality(&self) -> &::std::option::Option<::std::string::String> {
@@ -258,8 +254,7 @@ impl PlaceBuilder {
     }
     /// <p>A county, or an area that's part of a larger region. For example, <code>Metro Vancouver</code>.</p>
     pub fn set_sub_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sub_region = input;
-        self
+        self.sub_region = input; self
     }
     /// <p>A county, or an area that's part of a larger region. For example, <code>Metro Vancouver</code>.</p>
     pub fn get_sub_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -272,8 +267,7 @@ impl PlaceBuilder {
     }
     /// <p>A name for an area or geographical division, such as a province or state name. For example, <code>British Columbia</code>.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>A name for an area or geographical division, such as a province or state name. For example, <code>British Columbia</code>.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -286,8 +280,7 @@ impl PlaceBuilder {
     }
     /// <p>A country/region specified using <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country/region code. For example, <code>CAN</code>.</p>
     pub fn set_country(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.country = input;
-        self
+        self.country = input; self
     }
     /// <p>A country/region specified using <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country/region code. For example, <code>CAN</code>.</p>
     pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
@@ -300,8 +293,7 @@ impl PlaceBuilder {
     }
     /// <p>A group of numbers and letters in a country-specific format, which accompanies the address for the purpose of identifying a location.</p>
     pub fn set_postal_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.postal_code = input;
-        self
+        self.postal_code = input; self
     }
     /// <p>A group of numbers and letters in a country-specific format, which accompanies the address for the purpose of identifying a location.</p>
     pub fn get_postal_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -320,8 +312,7 @@ impl PlaceBuilder {
     /// <p>Not returned when the partner does not provide the information.</p>
     /// <p>For example, returns <code>False</code> for an address location that is found in the partner data, but returns <code>True</code> if an address does not exist in the partner data and its location is calculated by interpolating between other known addresses.</p>
     pub fn set_interpolated(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.interpolated = input;
-        self
+        self.interpolated = input; self
     }
     /// <p><code>True</code> if the result is interpolated from other known places.</p>
     /// <p><code>False</code> if the Place is a known place.</p>
@@ -337,8 +328,7 @@ impl PlaceBuilder {
     }
     /// <p>The time zone in which the <code>Place</code> is located. Returned only when using HERE or Grab as the selected partner.</p>
     pub fn set_time_zone(mut self, input: ::std::option::Option<crate::types::TimeZone>) -> Self {
-        self.time_zone = input;
-        self
+        self.time_zone = input; self
     }
     /// <p>The time zone in which the <code>Place</code> is located. Returned only when using HERE or Grab as the selected partner.</p>
     pub fn get_time_zone(&self) -> &::std::option::Option<crate::types::TimeZone> {
@@ -355,8 +345,7 @@ impl PlaceBuilder {
     /// <p>This property is returned only for a place index that uses Esri as a data provider.</p>
     /// </note>
     pub fn set_unit_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.unit_type = input;
-        self
+        self.unit_type = input; self
     }
     /// <p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p><note>
     /// <p>This property is returned only for a place index that uses Esri as a data provider.</p>
@@ -375,8 +364,7 @@ impl PlaceBuilder {
     /// <p>This property is returned only for a place index that uses Esri or Grab as a data provider. It is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
     /// </note>
     pub fn set_unit_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.unit_number = input;
-        self
+        self.unit_number = input; self
     }
     /// <p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p><note>
     /// <p>This property is returned only for a place index that uses Esri or Grab as a data provider. It is not returned for <code>SearchPlaceIndexForPosition</code>.</p>
@@ -392,19 +380,18 @@ impl PlaceBuilder {
     /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
     pub fn categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.categories.unwrap_or_default();
-        v.push(input.into());
-        self.categories = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.categories = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Location categories that describe this Place.</p>
     /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
-    pub fn set_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.categories = input;
-        self
+    pub fn set_categories(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.categories = input; self
     }
     /// <p>The Amazon Location categories that describe this Place.</p>
     /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
-    pub fn get_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_categories(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.categories
     }
     /// Appends an item to `supplemental_categories`.
@@ -414,17 +401,16 @@ impl PlaceBuilder {
     /// <p>Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.</p>
     pub fn supplemental_categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supplemental_categories.unwrap_or_default();
-        v.push(input.into());
-        self.supplemental_categories = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.supplemental_categories = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.</p>
-    pub fn set_supplemental_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.supplemental_categories = input;
-        self
+    pub fn set_supplemental_categories(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.supplemental_categories = input; self
     }
     /// <p>Categories from the data provider that describe the Place that are not mapped to any Amazon Location categories.</p>
-    pub fn get_supplemental_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supplemental_categories(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.supplemental_categories
     }
     /// <p>An area that's part of a larger municipality. For example, <code>Blissville</code> is a submunicipality in the Queen County in New York.</p><note>
@@ -440,8 +426,7 @@ impl PlaceBuilder {
     /// </note>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn set_sub_municipality(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sub_municipality = input;
-        self
+        self.sub_municipality = input; self
     }
     /// <p>An area that's part of a larger municipality. For example, <code>Blissville</code> is a submunicipality in the Queen County in New York.</p><note>
     /// <p>This property is only returned for a place index that uses Esri as a data provider. The property is represented as a <code>district</code>.</p>
@@ -453,23 +438,41 @@ impl PlaceBuilder {
     /// Consumes the builder and constructs a [`Place`](crate::types::Place).
     pub fn build(self) -> crate::types::Place {
         crate::types::Place {
-            label: self.label,
-            geometry: self.geometry,
-            address_number: self.address_number,
-            street: self.street,
-            neighborhood: self.neighborhood,
-            municipality: self.municipality,
-            sub_region: self.sub_region,
-            region: self.region,
-            country: self.country,
-            postal_code: self.postal_code,
-            interpolated: self.interpolated,
-            time_zone: self.time_zone,
-            unit_type: self.unit_type,
-            unit_number: self.unit_number,
-            categories: self.categories,
-            supplemental_categories: self.supplemental_categories,
-            sub_municipality: self.sub_municipality,
+            label: self.label
+            ,
+            geometry: self.geometry
+            ,
+            address_number: self.address_number
+            ,
+            street: self.street
+            ,
+            neighborhood: self.neighborhood
+            ,
+            municipality: self.municipality
+            ,
+            sub_region: self.sub_region
+            ,
+            region: self.region
+            ,
+            country: self.country
+            ,
+            postal_code: self.postal_code
+            ,
+            interpolated: self.interpolated
+            ,
+            time_zone: self.time_zone
+            ,
+            unit_type: self.unit_type
+            ,
+            unit_number: self.unit_number
+            ,
+            categories: self.categories
+            ,
+            supplemental_categories: self.supplemental_categories
+            ,
+            sub_municipality: self.sub_municipality
+            ,
         }
     }
 }
+

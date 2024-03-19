@@ -3,20 +3,19 @@
 /// <p>Contains details about a specific state machine version.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StateMachineVersionListItem {
+pub struct StateMachineVersionListItem  {
     /// <p>The Amazon Resource Name (ARN) that identifies a state machine version. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>
     pub state_machine_version_arn: ::std::string::String,
     /// <p>The creation date of a state machine version.</p>
     pub creation_date: ::aws_smithy_types::DateTime,
 }
-impl StateMachineVersionListItem {
+impl  StateMachineVersionListItem  {
     /// <p>The Amazon Resource Name (ARN) that identifies a state machine version. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>
-    pub fn state_machine_version_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.state_machine_version_arn.deref()
+    pub fn state_machine_version_arn(&self) -> & str {
+        use std::ops::Deref; self.state_machine_version_arn.deref()
     }
     /// <p>The creation date of a state machine version.</p>
-    pub fn creation_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_date
     }
 }
@@ -43,8 +42,7 @@ impl StateMachineVersionListItemBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that identifies a state machine version. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>
     pub fn set_state_machine_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_machine_version_arn = input;
-        self
+        self.state_machine_version_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies a state machine version. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>
     pub fn get_state_machine_version_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl StateMachineVersionListItemBuilder {
     }
     /// <p>The creation date of a state machine version.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The creation date of a state machine version.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -70,19 +67,20 @@ impl StateMachineVersionListItemBuilder {
     /// - [`state_machine_version_arn`](crate::types::builders::StateMachineVersionListItemBuilder::state_machine_version_arn)
     /// - [`creation_date`](crate::types::builders::StateMachineVersionListItemBuilder::creation_date)
     pub fn build(self) -> ::std::result::Result<crate::types::StateMachineVersionListItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StateMachineVersionListItem {
-            state_machine_version_arn: self.state_machine_version_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state_machine_version_arn",
-                    "state_machine_version_arn was not specified but it is required when building StateMachineVersionListItem",
-                )
-            })?,
-            creation_date: self.creation_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_date",
-                    "creation_date was not specified but it is required when building StateMachineVersionListItem",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::StateMachineVersionListItem {
+                state_machine_version_arn: self.state_machine_version_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state_machine_version_arn", "state_machine_version_arn was not specified but it is required when building StateMachineVersionListItem")
+                    )?
+                ,
+                creation_date: self.creation_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_date", "creation_date was not specified but it is required when building StateMachineVersionListItem")
+                    )?
+                ,
+            }
+        )
     }
 }
+

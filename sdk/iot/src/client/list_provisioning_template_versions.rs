@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListProvisioningTemplateVersions`](crate::operation::list_provisioning_template_versions::builders::ListProvisioningTemplateVersionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_provisioning_template_versions::builders::ListProvisioningTemplateVersionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`template_name(impl Into<String>)`](crate::operation::list_provisioning_template_versions::builders::ListProvisioningTemplateVersionsFluentBuilder::template_name) / [`set_template_name(Option<String>)`](crate::operation::list_provisioning_template_versions::builders::ListProvisioningTemplateVersionsFluentBuilder::set_template_name):<br>required: **true**<br><p>The name of the provisioning template.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_provisioning_template_versions::builders::ListProvisioningTemplateVersionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_provisioning_template_versions::builders::ListProvisioningTemplateVersionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return at one time.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_provisioning_template_versions::builders::ListProvisioningTemplateVersionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_provisioning_template_versions::builders::ListProvisioningTemplateVersionsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to retrieve the next set of results.</p><br>
-    /// - On success, responds with [`ListProvisioningTemplateVersionsOutput`](crate::operation::list_provisioning_template_versions::ListProvisioningTemplateVersionsOutput) with field(s):
+                            /// - On success, responds with [`ListProvisioningTemplateVersionsOutput`](crate::operation::list_provisioning_template_versions::ListProvisioningTemplateVersionsOutput) with field(s):
     ///   - [`versions(Option<Vec::<ProvisioningTemplateVersionSummary>>)`](crate::operation::list_provisioning_template_versions::ListProvisioningTemplateVersionsOutput::versions): <p>The list of provisioning template versions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_provisioning_template_versions::ListProvisioningTemplateVersionsOutput::next_token): <p>A token to retrieve the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListProvisioningTemplateVersionsError>`](crate::operation::list_provisioning_template_versions::ListProvisioningTemplateVersionsError)
-    pub fn list_provisioning_template_versions(
-        &self,
-    ) -> crate::operation::list_provisioning_template_versions::builders::ListProvisioningTemplateVersionsFluentBuilder {
-        crate::operation::list_provisioning_template_versions::builders::ListProvisioningTemplateVersionsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListProvisioningTemplateVersionsError>`](crate::operation::list_provisioning_template_versions::ListProvisioningTemplateVersionsError)
+    pub fn list_provisioning_template_versions(&self) -> crate::operation::list_provisioning_template_versions::builders::ListProvisioningTemplateVersionsFluentBuilder {
+                                crate::operation::list_provisioning_template_versions::builders::ListProvisioningTemplateVersionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

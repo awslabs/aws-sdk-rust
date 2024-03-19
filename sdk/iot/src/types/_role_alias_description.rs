@@ -3,7 +3,7 @@
 /// <p>Role alias description.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RoleAliasDescription {
+pub struct RoleAliasDescription  {
     /// <p>The role alias.</p>
     pub role_alias: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the role alias.</p>
@@ -19,21 +19,21 @@ pub struct RoleAliasDescription {
     /// <p>The UNIX timestamp of when the role alias was last modified.</p>
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl RoleAliasDescription {
+impl  RoleAliasDescription  {
     /// <p>The role alias.</p>
-    pub fn role_alias(&self) -> ::std::option::Option<&str> {
+    pub fn role_alias(&self) -> ::std::option::Option<& str> {
         self.role_alias.as_deref()
     }
     /// <p>The ARN of the role alias.</p>
-    pub fn role_alias_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_alias_arn(&self) -> ::std::option::Option<& str> {
         self.role_alias_arn.as_deref()
     }
     /// <p>The role ARN.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The role alias owner.</p>
-    pub fn owner(&self) -> ::std::option::Option<&str> {
+    pub fn owner(&self) -> ::std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>The number of seconds for which the credential is valid.</p>
@@ -41,11 +41,11 @@ impl RoleAliasDescription {
         self.credential_duration_seconds
     }
     /// <p>The UNIX timestamp of when the role alias was created.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The UNIX timestamp of when the role alias was last modified.</p>
-    pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl RoleAliasDescriptionBuilder {
     }
     /// <p>The role alias.</p>
     pub fn set_role_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_alias = input;
-        self
+        self.role_alias = input; self
     }
     /// <p>The role alias.</p>
     pub fn get_role_alias(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl RoleAliasDescriptionBuilder {
     }
     /// <p>The ARN of the role alias.</p>
     pub fn set_role_alias_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_alias_arn = input;
-        self
+        self.role_alias_arn = input; self
     }
     /// <p>The ARN of the role alias.</p>
     pub fn get_role_alias_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl RoleAliasDescriptionBuilder {
     }
     /// <p>The role ARN.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The role ARN.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl RoleAliasDescriptionBuilder {
     }
     /// <p>The role alias owner.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// <p>The role alias owner.</p>
     pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl RoleAliasDescriptionBuilder {
     }
     /// <p>The number of seconds for which the credential is valid.</p>
     pub fn set_credential_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.credential_duration_seconds = input;
-        self
+        self.credential_duration_seconds = input; self
     }
     /// <p>The number of seconds for which the credential is valid.</p>
     pub fn get_credential_duration_seconds(&self) -> &::std::option::Option<i32> {
@@ -146,8 +141,7 @@ impl RoleAliasDescriptionBuilder {
     }
     /// <p>The UNIX timestamp of when the role alias was created.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The UNIX timestamp of when the role alias was created.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -160,8 +154,7 @@ impl RoleAliasDescriptionBuilder {
     }
     /// <p>The UNIX timestamp of when the role alias was last modified.</p>
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_date = input;
-        self
+        self.last_modified_date = input; self
     }
     /// <p>The UNIX timestamp of when the role alias was last modified.</p>
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -170,13 +163,21 @@ impl RoleAliasDescriptionBuilder {
     /// Consumes the builder and constructs a [`RoleAliasDescription`](crate::types::RoleAliasDescription).
     pub fn build(self) -> crate::types::RoleAliasDescription {
         crate::types::RoleAliasDescription {
-            role_alias: self.role_alias,
-            role_alias_arn: self.role_alias_arn,
-            role_arn: self.role_arn,
-            owner: self.owner,
-            credential_duration_seconds: self.credential_duration_seconds,
-            creation_date: self.creation_date,
-            last_modified_date: self.last_modified_date,
+            role_alias: self.role_alias
+            ,
+            role_alias_arn: self.role_alias_arn
+            ,
+            role_arn: self.role_arn
+            ,
+            owner: self.owner
+            ,
+            credential_duration_seconds: self.credential_duration_seconds
+            ,
+            creation_date: self.creation_date
+            ,
+            last_modified_date: self.last_modified_date
+            ,
         }
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let appreplicationstatus = unimplemented!();
 /// match appreplicationstatus {
@@ -44,16 +44,14 @@
 /// Specifically, when `appreplicationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AppReplicationStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum AppReplicationStatus {
     #[allow(missing_docs)] // documentation missing in model
     ConfigurationInvalid,
@@ -89,120 +87,104 @@ pub enum AppReplicationStatus {
     ValidationInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for AppReplicationStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CONFIGURATION_INVALID" => AppReplicationStatus::ConfigurationInvalid,
-            "CONFIGURATION_IN_PROGRESS" => AppReplicationStatus::ConfigurationInProgress,
-            "DELTA_REPLICATED" => AppReplicationStatus::DeltaReplicated,
-            "DELTA_REPLICATION_FAILED" => AppReplicationStatus::DeltaReplicationFailed,
-            "DELTA_REPLICATION_IN_PROGRESS" => AppReplicationStatus::DeltaReplicationInProgress,
-            "PARTIALLY_REPLICATED" => AppReplicationStatus::PartiallyReplicated,
-            "READY_FOR_CONFIGURATION" => AppReplicationStatus::ReadyForConfiguration,
-            "READY_FOR_REPLICATION" => AppReplicationStatus::ReadyForReplication,
-            "REPLICATED" => AppReplicationStatus::Replicated,
-            "REPLICATION_FAILED" => AppReplicationStatus::ReplicationFailed,
-            "REPLICATION_IN_PROGRESS" => AppReplicationStatus::ReplicationInProgress,
-            "REPLICATION_PENDING" => AppReplicationStatus::ReplicationPending,
-            "REPLICATION_STOPPED" => AppReplicationStatus::ReplicationStopped,
-            "REPLICATION_STOPPING" => AppReplicationStatus::ReplicationStopping,
-            "REPLICATION_STOP_FAILED" => AppReplicationStatus::ReplicationStopFailed,
-            "VALIDATION_IN_PROGRESS" => AppReplicationStatus::ValidationInProgress,
-            other => AppReplicationStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "CONFIGURATION_INVALID" => AppReplicationStatus::ConfigurationInvalid,
+"CONFIGURATION_IN_PROGRESS" => AppReplicationStatus::ConfigurationInProgress,
+"DELTA_REPLICATED" => AppReplicationStatus::DeltaReplicated,
+"DELTA_REPLICATION_FAILED" => AppReplicationStatus::DeltaReplicationFailed,
+"DELTA_REPLICATION_IN_PROGRESS" => AppReplicationStatus::DeltaReplicationInProgress,
+"PARTIALLY_REPLICATED" => AppReplicationStatus::PartiallyReplicated,
+"READY_FOR_CONFIGURATION" => AppReplicationStatus::ReadyForConfiguration,
+"READY_FOR_REPLICATION" => AppReplicationStatus::ReadyForReplication,
+"REPLICATED" => AppReplicationStatus::Replicated,
+"REPLICATION_FAILED" => AppReplicationStatus::ReplicationFailed,
+"REPLICATION_IN_PROGRESS" => AppReplicationStatus::ReplicationInProgress,
+"REPLICATION_PENDING" => AppReplicationStatus::ReplicationPending,
+"REPLICATION_STOPPED" => AppReplicationStatus::ReplicationStopped,
+"REPLICATION_STOPPING" => AppReplicationStatus::ReplicationStopping,
+"REPLICATION_STOP_FAILED" => AppReplicationStatus::ReplicationStopFailed,
+"VALIDATION_IN_PROGRESS" => AppReplicationStatus::ValidationInProgress,
+other => AppReplicationStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for AppReplicationStatus {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(AppReplicationStatus::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(AppReplicationStatus::from(s))
+                    }
+                }
 impl AppReplicationStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AppReplicationStatus::ConfigurationInvalid => "CONFIGURATION_INVALID",
-            AppReplicationStatus::ConfigurationInProgress => "CONFIGURATION_IN_PROGRESS",
-            AppReplicationStatus::DeltaReplicated => "DELTA_REPLICATED",
-            AppReplicationStatus::DeltaReplicationFailed => "DELTA_REPLICATION_FAILED",
-            AppReplicationStatus::DeltaReplicationInProgress => "DELTA_REPLICATION_IN_PROGRESS",
-            AppReplicationStatus::PartiallyReplicated => "PARTIALLY_REPLICATED",
-            AppReplicationStatus::ReadyForConfiguration => "READY_FOR_CONFIGURATION",
-            AppReplicationStatus::ReadyForReplication => "READY_FOR_REPLICATION",
-            AppReplicationStatus::Replicated => "REPLICATED",
-            AppReplicationStatus::ReplicationFailed => "REPLICATION_FAILED",
-            AppReplicationStatus::ReplicationInProgress => "REPLICATION_IN_PROGRESS",
-            AppReplicationStatus::ReplicationPending => "REPLICATION_PENDING",
-            AppReplicationStatus::ReplicationStopped => "REPLICATION_STOPPED",
-            AppReplicationStatus::ReplicationStopping => "REPLICATION_STOPPING",
-            AppReplicationStatus::ReplicationStopFailed => "REPLICATION_STOP_FAILED",
-            AppReplicationStatus::ValidationInProgress => "VALIDATION_IN_PROGRESS",
-            AppReplicationStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CONFIGURATION_INVALID",
-            "CONFIGURATION_IN_PROGRESS",
-            "DELTA_REPLICATED",
-            "DELTA_REPLICATION_FAILED",
-            "DELTA_REPLICATION_IN_PROGRESS",
-            "PARTIALLY_REPLICATED",
-            "READY_FOR_CONFIGURATION",
-            "READY_FOR_REPLICATION",
-            "REPLICATED",
-            "REPLICATION_FAILED",
-            "REPLICATION_IN_PROGRESS",
-            "REPLICATION_PENDING",
-            "REPLICATION_STOPPED",
-            "REPLICATION_STOPPING",
-            "REPLICATION_STOP_FAILED",
-            "VALIDATION_IN_PROGRESS",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AppReplicationStatus::ConfigurationInvalid => "CONFIGURATION_INVALID",
+    AppReplicationStatus::ConfigurationInProgress => "CONFIGURATION_IN_PROGRESS",
+    AppReplicationStatus::DeltaReplicated => "DELTA_REPLICATED",
+    AppReplicationStatus::DeltaReplicationFailed => "DELTA_REPLICATION_FAILED",
+    AppReplicationStatus::DeltaReplicationInProgress => "DELTA_REPLICATION_IN_PROGRESS",
+    AppReplicationStatus::PartiallyReplicated => "PARTIALLY_REPLICATED",
+    AppReplicationStatus::ReadyForConfiguration => "READY_FOR_CONFIGURATION",
+    AppReplicationStatus::ReadyForReplication => "READY_FOR_REPLICATION",
+    AppReplicationStatus::Replicated => "REPLICATED",
+    AppReplicationStatus::ReplicationFailed => "REPLICATION_FAILED",
+    AppReplicationStatus::ReplicationInProgress => "REPLICATION_IN_PROGRESS",
+    AppReplicationStatus::ReplicationPending => "REPLICATION_PENDING",
+    AppReplicationStatus::ReplicationStopped => "REPLICATION_STOPPED",
+    AppReplicationStatus::ReplicationStopping => "REPLICATION_STOPPING",
+    AppReplicationStatus::ReplicationStopFailed => "REPLICATION_STOP_FAILED",
+    AppReplicationStatus::ValidationInProgress => "VALIDATION_IN_PROGRESS",
+    AppReplicationStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CONFIGURATION_INVALID", "CONFIGURATION_IN_PROGRESS", "DELTA_REPLICATED", "DELTA_REPLICATION_FAILED", "DELTA_REPLICATION_IN_PROGRESS", "PARTIALLY_REPLICATED", "READY_FOR_CONFIGURATION", "READY_FOR_REPLICATION", "REPLICATED", "REPLICATION_FAILED", "REPLICATION_IN_PROGRESS", "REPLICATION_PENDING", "REPLICATION_STOPPED", "REPLICATION_STOPPING", "REPLICATION_STOP_FAILED", "VALIDATION_IN_PROGRESS"]
+                }
+            }
 impl ::std::convert::AsRef<str> for AppReplicationStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl AppReplicationStatus {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for AppReplicationStatus {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            AppReplicationStatus::ConfigurationInvalid => write!(f, "CONFIGURATION_INVALID"),
-            AppReplicationStatus::ConfigurationInProgress => write!(f, "CONFIGURATION_IN_PROGRESS"),
-            AppReplicationStatus::DeltaReplicated => write!(f, "DELTA_REPLICATED"),
-            AppReplicationStatus::DeltaReplicationFailed => write!(f, "DELTA_REPLICATION_FAILED"),
-            AppReplicationStatus::DeltaReplicationInProgress => write!(f, "DELTA_REPLICATION_IN_PROGRESS"),
-            AppReplicationStatus::PartiallyReplicated => write!(f, "PARTIALLY_REPLICATED"),
-            AppReplicationStatus::ReadyForConfiguration => write!(f, "READY_FOR_CONFIGURATION"),
-            AppReplicationStatus::ReadyForReplication => write!(f, "READY_FOR_REPLICATION"),
-            AppReplicationStatus::Replicated => write!(f, "REPLICATED"),
-            AppReplicationStatus::ReplicationFailed => write!(f, "REPLICATION_FAILED"),
-            AppReplicationStatus::ReplicationInProgress => write!(f, "REPLICATION_IN_PROGRESS"),
-            AppReplicationStatus::ReplicationPending => write!(f, "REPLICATION_PENDING"),
-            AppReplicationStatus::ReplicationStopped => write!(f, "REPLICATION_STOPPED"),
-            AppReplicationStatus::ReplicationStopping => write!(f, "REPLICATION_STOPPING"),
-            AppReplicationStatus::ReplicationStopFailed => write!(f, "REPLICATION_STOP_FAILED"),
-            AppReplicationStatus::ValidationInProgress => write!(f, "VALIDATION_IN_PROGRESS"),
-            AppReplicationStatus::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                AppReplicationStatus::ConfigurationInvalid => write!(f, "CONFIGURATION_INVALID"),
+AppReplicationStatus::ConfigurationInProgress => write!(f, "CONFIGURATION_IN_PROGRESS"),
+AppReplicationStatus::DeltaReplicated => write!(f, "DELTA_REPLICATED"),
+AppReplicationStatus::DeltaReplicationFailed => write!(f, "DELTA_REPLICATION_FAILED"),
+AppReplicationStatus::DeltaReplicationInProgress => write!(f, "DELTA_REPLICATION_IN_PROGRESS"),
+AppReplicationStatus::PartiallyReplicated => write!(f, "PARTIALLY_REPLICATED"),
+AppReplicationStatus::ReadyForConfiguration => write!(f, "READY_FOR_CONFIGURATION"),
+AppReplicationStatus::ReadyForReplication => write!(f, "READY_FOR_REPLICATION"),
+AppReplicationStatus::Replicated => write!(f, "REPLICATED"),
+AppReplicationStatus::ReplicationFailed => write!(f, "REPLICATION_FAILED"),
+AppReplicationStatus::ReplicationInProgress => write!(f, "REPLICATION_IN_PROGRESS"),
+AppReplicationStatus::ReplicationPending => write!(f, "REPLICATION_PENDING"),
+AppReplicationStatus::ReplicationStopped => write!(f, "REPLICATION_STOPPED"),
+AppReplicationStatus::ReplicationStopping => write!(f, "REPLICATION_STOPPING"),
+AppReplicationStatus::ReplicationStopFailed => write!(f, "REPLICATION_STOP_FAILED"),
+AppReplicationStatus::ValidationInProgress => write!(f, "VALIDATION_IN_PROGRESS"),
+AppReplicationStatus::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

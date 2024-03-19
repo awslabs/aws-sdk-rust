@@ -3,13 +3,13 @@
 /// <p>The configuration object of a video concatenation pipeline.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VideoConcatenationConfiguration {
+pub struct VideoConcatenationConfiguration  {
     /// <p>Enables or disables the configuration object.</p>
     pub state: crate::types::ArtifactsConcatenationState,
 }
-impl VideoConcatenationConfiguration {
+impl  VideoConcatenationConfiguration  {
     /// <p>Enables or disables the configuration object.</p>
-    pub fn state(&self) -> &crate::types::ArtifactsConcatenationState {
+    pub fn state(&self) -> & crate::types::ArtifactsConcatenationState {
         &self.state
     }
 }
@@ -35,8 +35,7 @@ impl VideoConcatenationConfigurationBuilder {
     }
     /// <p>Enables or disables the configuration object.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ArtifactsConcatenationState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Enables or disables the configuration object.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ArtifactsConcatenationState> {
@@ -46,13 +45,15 @@ impl VideoConcatenationConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`state`](crate::types::builders::VideoConcatenationConfigurationBuilder::state)
     pub fn build(self) -> ::std::result::Result<crate::types::VideoConcatenationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VideoConcatenationConfiguration {
-            state: self.state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state",
-                    "state was not specified but it is required when building VideoConcatenationConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VideoConcatenationConfiguration {
+                state: self.state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state", "state was not specified but it is required when building VideoConcatenationConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDomains`](crate::operation::list_domains::builders::ListDomainsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain more pages of results. The default is 100; the maximum allowed page size is also 100.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::set_next_token):<br>required: **false**<br><p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.</p><br>
-    /// - On success, responds with [`ListDomainsOutput`](crate::operation::list_domains::ListDomainsOutput) with field(s):
+                            /// - On success, responds with [`ListDomainsOutput`](crate::operation::list_domains::ListDomainsOutput) with field(s):
     ///   - [`domain_summaries(Option<Vec::<DomainSummary>>)`](crate::operation::list_domains::ListDomainsOutput::domain_summaries): <p>A list containing details about each domain in the Amazon Web Services account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_domains::ListDomainsOutput::next_token): <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.</p>
-    /// - On failure, responds with [`SdkError<ListDomainsError>`](crate::operation::list_domains::ListDomainsError)
+                            /// - On failure, responds with [`SdkError<ListDomainsError>`](crate::operation::list_domains::ListDomainsError)
     pub fn list_domains(&self) -> crate::operation::list_domains::builders::ListDomainsFluentBuilder {
-        crate::operation::list_domains::builders::ListDomainsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_domains::builders::ListDomainsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

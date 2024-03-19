@@ -3,13 +3,13 @@
 /// <p>Specifies experiment options for running an experiment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartExperimentExperimentOptionsInput {
+pub struct StartExperimentExperimentOptionsInput  {
     /// <p>Specifies the actions mode for experiment options.</p>
     pub actions_mode: ::std::option::Option<crate::types::ActionsMode>,
 }
-impl StartExperimentExperimentOptionsInput {
+impl  StartExperimentExperimentOptionsInput  {
     /// <p>Specifies the actions mode for experiment options.</p>
-    pub fn actions_mode(&self) -> ::std::option::Option<&crate::types::ActionsMode> {
+    pub fn actions_mode(&self) -> ::std::option::Option<& crate::types::ActionsMode> {
         self.actions_mode.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl StartExperimentExperimentOptionsInputBuilder {
     }
     /// <p>Specifies the actions mode for experiment options.</p>
     pub fn set_actions_mode(mut self, input: ::std::option::Option<crate::types::ActionsMode>) -> Self {
-        self.actions_mode = input;
-        self
+        self.actions_mode = input; self
     }
     /// <p>Specifies the actions mode for experiment options.</p>
     pub fn get_actions_mode(&self) -> &::std::option::Option<crate::types::ActionsMode> {
@@ -44,7 +43,9 @@ impl StartExperimentExperimentOptionsInputBuilder {
     /// Consumes the builder and constructs a [`StartExperimentExperimentOptionsInput`](crate::types::StartExperimentExperimentOptionsInput).
     pub fn build(self) -> crate::types::StartExperimentExperimentOptionsInput {
         crate::types::StartExperimentExperimentOptionsInput {
-            actions_mode: self.actions_mode,
+            actions_mode: self.actions_mode
+            ,
         }
     }
 }
+

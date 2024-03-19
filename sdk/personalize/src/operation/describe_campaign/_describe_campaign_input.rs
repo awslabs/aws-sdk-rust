@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCampaignInput {
+pub struct DescribeCampaignInput  {
     /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
     pub campaign_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeCampaignInput {
+impl  DescribeCampaignInput  {
     /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
-    pub fn campaign_arn(&self) -> ::std::option::Option<&str> {
+    pub fn campaign_arn(&self) -> ::std::option::Option<& str> {
         self.campaign_arn.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DescribeCampaignInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
     pub fn set_campaign_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.campaign_arn = input;
-        self
+        self.campaign_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
     pub fn get_campaign_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.campaign_arn
     }
     /// Consumes the builder and constructs a [`DescribeCampaignInput`](crate::operation::describe_campaign::DescribeCampaignInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_campaign::DescribeCampaignInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_campaign::DescribeCampaignInput {
-            campaign_arn: self.campaign_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_campaign::DescribeCampaignInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_campaign::DescribeCampaignInput {
+                campaign_arn: self.campaign_arn
+                ,
+            }
+        )
     }
 }
+

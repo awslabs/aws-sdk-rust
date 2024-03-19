@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteMulticastGroupInput {
+pub struct DeleteMulticastGroupInput  {
     /// <p>The ID of the multicast group.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteMulticastGroupInput {
+impl  DeleteMulticastGroupInput  {
     /// <p>The ID of the multicast group.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl DeleteMulticastGroupInputBuilder {
     }
     /// <p>The ID of the multicast group.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the multicast group.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     /// Consumes the builder and constructs a [`DeleteMulticastGroupInput`](crate::operation::delete_multicast_group::DeleteMulticastGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_multicast_group::DeleteMulticastGroupInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_multicast_group::DeleteMulticastGroupInput { id: self.id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_multicast_group::DeleteMulticastGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_multicast_group::DeleteMulticastGroupInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

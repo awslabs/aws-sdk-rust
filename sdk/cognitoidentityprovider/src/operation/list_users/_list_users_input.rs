@@ -3,12 +3,12 @@
 /// <p>Represents the request to list users.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListUsersInput {
+pub struct ListUsersInput  {
     /// <p>The user pool ID for the user pool on which the search should be performed.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>A JSON array of user attribute names, for example <code>given_name</code>, that you want Amazon Cognito to include in the response for each user. When you don't provide an <code>AttributesToGet</code> parameter, Amazon Cognito returns all attributes for each user.</p>
     /// <p>Use <code>AttributesToGet</code> with required attributes in your user pool, or in conjunction with <code>Filter</code>. Amazon Cognito returns an error if not all users in the results have set a value for the attribute you request. Attributes that you can't filter on, including custom attributes, must have a value set in every user profile before an <code>AttributesToGet</code> parameter returns results.</p>
-    pub attributes_to_get: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub attributes_to_get: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Maximum number of users to be returned.</p>
     pub limit: ::std::option::Option<i32>,
     /// <p>This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.</p>
@@ -53,24 +53,25 @@ pub struct ListUsersInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching for Users Using the ListUsers API</a> and <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples of Using the ListUsers API</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
     pub filter: ::std::option::Option<::std::string::String>,
 }
-impl ListUsersInput {
+impl  ListUsersInput  {
     /// <p>The user pool ID for the user pool on which the search should be performed.</p>
-    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>A JSON array of user attribute names, for example <code>given_name</code>, that you want Amazon Cognito to include in the response for each user. When you don't provide an <code>AttributesToGet</code> parameter, Amazon Cognito returns all attributes for each user.</p>
     /// <p>Use <code>AttributesToGet</code> with required attributes in your user pool, or in conjunction with <code>Filter</code>. Amazon Cognito returns an error if not all users in the results have set a value for the attribute you request. Attributes that you can't filter on, including custom attributes, must have a value set in every user profile before an <code>AttributesToGet</code> parameter returns results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes_to_get.is_none()`.
-    pub fn attributes_to_get(&self) -> &[::std::string::String] {
-        self.attributes_to_get.as_deref().unwrap_or_default()
+    pub fn attributes_to_get(&self) -> & [::std::string::String] {
+        self.attributes_to_get.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Maximum number of users to be returned.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
     /// <p>This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.</p>
-    pub fn pagination_token(&self) -> ::std::option::Option<&str> {
+    pub fn pagination_token(&self) -> ::std::option::Option<& str> {
         self.pagination_token.as_deref()
     }
     /// <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation marks within the filter string must be escaped using the backslash (<code>\</code>) character. For example, <code>"family_name = \"Reddy\""</code>.</p>
@@ -111,7 +112,7 @@ impl ListUsersInput {
     /// <p>For more information about server-side and client-side filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">FilteringCLI output</a> in the <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Command Line Interface User Guide</a>.</p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching for Users Using the ListUsers API</a> and <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples of Using the ListUsers API</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
-    pub fn filter(&self) -> ::std::option::Option<&str> {
+    pub fn filter(&self) -> ::std::option::Option<& str> {
         self.filter.as_deref()
     }
 }
@@ -127,7 +128,7 @@ impl ListUsersInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUsersInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes_to_get: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) attributes_to_get: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) pagination_token: ::std::option::Option<::std::string::String>,
     pub(crate) filter: ::std::option::Option<::std::string::String>,
@@ -141,8 +142,7 @@ impl ListUsersInputBuilder {
     }
     /// <p>The user pool ID for the user pool on which the search should be performed.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The user pool ID for the user pool on which the search should be performed.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,19 +156,18 @@ impl ListUsersInputBuilder {
     /// <p>Use <code>AttributesToGet</code> with required attributes in your user pool, or in conjunction with <code>Filter</code>. Amazon Cognito returns an error if not all users in the results have set a value for the attribute you request. Attributes that you can't filter on, including custom attributes, must have a value set in every user profile before an <code>AttributesToGet</code> parameter returns results.</p>
     pub fn attributes_to_get(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.attributes_to_get.unwrap_or_default();
-        v.push(input.into());
-        self.attributes_to_get = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.attributes_to_get = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A JSON array of user attribute names, for example <code>given_name</code>, that you want Amazon Cognito to include in the response for each user. When you don't provide an <code>AttributesToGet</code> parameter, Amazon Cognito returns all attributes for each user.</p>
     /// <p>Use <code>AttributesToGet</code> with required attributes in your user pool, or in conjunction with <code>Filter</code>. Amazon Cognito returns an error if not all users in the results have set a value for the attribute you request. Attributes that you can't filter on, including custom attributes, must have a value set in every user profile before an <code>AttributesToGet</code> parameter returns results.</p>
-    pub fn set_attributes_to_get(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.attributes_to_get = input;
-        self
+    pub fn set_attributes_to_get(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.attributes_to_get = input; self
     }
     /// <p>A JSON array of user attribute names, for example <code>given_name</code>, that you want Amazon Cognito to include in the response for each user. When you don't provide an <code>AttributesToGet</code> parameter, Amazon Cognito returns all attributes for each user.</p>
     /// <p>Use <code>AttributesToGet</code> with required attributes in your user pool, or in conjunction with <code>Filter</code>. Amazon Cognito returns an error if not all users in the results have set a value for the attribute you request. Attributes that you can't filter on, including custom attributes, must have a value set in every user profile before an <code>AttributesToGet</code> parameter returns results.</p>
-    pub fn get_attributes_to_get(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_attributes_to_get(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.attributes_to_get
     }
     /// <p>Maximum number of users to be returned.</p>
@@ -178,8 +177,7 @@ impl ListUsersInputBuilder {
     }
     /// <p>Maximum number of users to be returned.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>Maximum number of users to be returned.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
@@ -192,8 +190,7 @@ impl ListUsersInputBuilder {
     }
     /// <p>This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.</p>
     pub fn set_pagination_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pagination_token = input;
-        self
+        self.pagination_token = input; self
     }
     /// <p>This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.</p>
     pub fn get_pagination_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -280,8 +277,7 @@ impl ListUsersInputBuilder {
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching for Users Using the ListUsers API</a> and <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples of Using the ListUsers API</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation marks within the filter string must be escaped using the backslash (<code>\</code>) character. For example, <code>"family_name = \"Reddy\""</code>.</p>
     /// <ul>
@@ -326,12 +322,20 @@ impl ListUsersInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListUsersInput`](crate::operation::list_users::ListUsersInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_users::ListUsersInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_users::ListUsersInput {
-            user_pool_id: self.user_pool_id,
-            attributes_to_get: self.attributes_to_get,
-            limit: self.limit,
-            pagination_token: self.pagination_token,
-            filter: self.filter,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_users::ListUsersInput {
+                user_pool_id: self.user_pool_id
+                ,
+                attributes_to_get: self.attributes_to_get
+                ,
+                limit: self.limit
+                ,
+                pagination_token: self.pagination_token
+                ,
+                filter: self.filter
+                ,
+            }
+        )
     }
 }
+

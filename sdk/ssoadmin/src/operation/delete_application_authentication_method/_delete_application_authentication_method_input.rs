@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteApplicationAuthenticationMethodInput {
+pub struct DeleteApplicationAuthenticationMethodInput  {
     /// <p>Specifies the ARN of the application with the authentication method to delete.</p>
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the authentication method type to delete from the application.</p>
     pub authentication_method_type: ::std::option::Option<crate::types::AuthenticationMethodType>,
 }
-impl DeleteApplicationAuthenticationMethodInput {
+impl  DeleteApplicationAuthenticationMethodInput  {
     /// <p>Specifies the ARN of the application with the authentication method to delete.</p>
-    pub fn application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn application_arn(&self) -> ::std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>Specifies the authentication method type to delete from the application.</p>
-    pub fn authentication_method_type(&self) -> ::std::option::Option<&crate::types::AuthenticationMethodType> {
+    pub fn authentication_method_type(&self) -> ::std::option::Option<& crate::types::AuthenticationMethodType> {
         self.authentication_method_type.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteApplicationAuthenticationMethodInputBuilder {
     }
     /// <p>Specifies the ARN of the application with the authentication method to delete.</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_arn = input;
-        self
+        self.application_arn = input; self
     }
     /// <p>Specifies the ARN of the application with the authentication method to delete.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl DeleteApplicationAuthenticationMethodInputBuilder {
     }
     /// <p>Specifies the authentication method type to delete from the application.</p>
     pub fn set_authentication_method_type(mut self, input: ::std::option::Option<crate::types::AuthenticationMethodType>) -> Self {
-        self.authentication_method_type = input;
-        self
+        self.authentication_method_type = input; self
     }
     /// <p>Specifies the authentication method type to delete from the application.</p>
     pub fn get_authentication_method_type(&self) -> &::std::option::Option<crate::types::AuthenticationMethodType> {
         &self.authentication_method_type
     }
     /// Consumes the builder and constructs a [`DeleteApplicationAuthenticationMethodInput`](crate::operation::delete_application_authentication_method::DeleteApplicationAuthenticationMethodInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_application_authentication_method::DeleteApplicationAuthenticationMethodInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_application_authentication_method::DeleteApplicationAuthenticationMethodInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_application_authentication_method::DeleteApplicationAuthenticationMethodInput {
-                application_arn: self.application_arn,
-                authentication_method_type: self.authentication_method_type,
-            },
+                application_arn: self.application_arn
+                ,
+                authentication_method_type: self.authentication_method_type
+                ,
+            }
         )
     }
 }
+

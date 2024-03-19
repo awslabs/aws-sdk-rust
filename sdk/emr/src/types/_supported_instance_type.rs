@@ -3,7 +3,7 @@
 /// <p>An instance type that the specified Amazon EMR release supports.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SupportedInstanceType {
+pub struct SupportedInstanceType  {
     /// <p>The <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 instance type</a>, for example <code>m5.xlarge</code>, of the <code>SupportedInstanceType</code>.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The amount of memory that is available to Amazon EMR from the <code>SupportedInstanceType</code>. The kernel and hypervisor software consume some memory, so this value might be lower than the overall memory for the instance type.</p>
@@ -27,9 +27,9 @@ pub struct SupportedInstanceType {
     /// <p>The CPU architecture, for example <code>X86_64</code> or <code>AARCH64</code>.</p>
     pub architecture: ::std::option::Option<::std::string::String>,
 }
-impl SupportedInstanceType {
+impl  SupportedInstanceType  {
     /// <p>The <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 instance type</a>, for example <code>m5.xlarge</code>, of the <code>SupportedInstanceType</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The amount of memory that is available to Amazon EMR from the <code>SupportedInstanceType</code>. The kernel and hypervisor software consume some memory, so this value might be lower than the overall memory for the instance type.</p>
@@ -49,7 +49,7 @@ impl SupportedInstanceType {
         self.is64_bits_only
     }
     /// <p>The Amazon EC2 family and generation for the <code>SupportedInstanceType</code>.</p>
-    pub fn instance_family_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_family_id(&self) -> ::std::option::Option<& str> {
         self.instance_family_id.as_deref()
     }
     /// <p>Indicates whether the <code>SupportedInstanceType</code> supports Amazon EBS optimization.</p>
@@ -69,7 +69,7 @@ impl SupportedInstanceType {
         self.ebs_storage_only
     }
     /// <p>The CPU architecture, for example <code>X86_64</code> or <code>AARCH64</code>.</p>
-    pub fn architecture(&self) -> ::std::option::Option<&str> {
+    pub fn architecture(&self) -> ::std::option::Option<& str> {
         self.architecture.as_deref()
     }
 }
@@ -104,8 +104,7 @@ impl SupportedInstanceTypeBuilder {
     }
     /// <p>The <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 instance type</a>, for example <code>m5.xlarge</code>, of the <code>SupportedInstanceType</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 instance type</a>, for example <code>m5.xlarge</code>, of the <code>SupportedInstanceType</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +117,7 @@ impl SupportedInstanceTypeBuilder {
     }
     /// <p>The amount of memory that is available to Amazon EMR from the <code>SupportedInstanceType</code>. The kernel and hypervisor software consume some memory, so this value might be lower than the overall memory for the instance type.</p>
     pub fn set_memory_gb(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.memory_gb = input;
-        self
+        self.memory_gb = input; self
     }
     /// <p>The amount of memory that is available to Amazon EMR from the <code>SupportedInstanceType</code>. The kernel and hypervisor software consume some memory, so this value might be lower than the overall memory for the instance type.</p>
     pub fn get_memory_gb(&self) -> &::std::option::Option<f32> {
@@ -132,8 +130,7 @@ impl SupportedInstanceTypeBuilder {
     }
     /// <p><code>StorageGB</code> represents the storage capacity of the <code>SupportedInstanceType</code>. This value is <code>0</code> for Amazon EBS-only instance types.</p>
     pub fn set_storage_gb(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.storage_gb = input;
-        self
+        self.storage_gb = input; self
     }
     /// <p><code>StorageGB</code> represents the storage capacity of the <code>SupportedInstanceType</code>. This value is <code>0</code> for Amazon EBS-only instance types.</p>
     pub fn get_storage_gb(&self) -> &::std::option::Option<i32> {
@@ -146,8 +143,7 @@ impl SupportedInstanceTypeBuilder {
     }
     /// <p>The number of vCPUs available for the <code>SupportedInstanceType</code>.</p>
     pub fn set_vcpu(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.vcpu = input;
-        self
+        self.vcpu = input; self
     }
     /// <p>The number of vCPUs available for the <code>SupportedInstanceType</code>.</p>
     pub fn get_vcpu(&self) -> &::std::option::Option<i32> {
@@ -160,8 +156,7 @@ impl SupportedInstanceTypeBuilder {
     }
     /// <p>Indicates whether the <code>SupportedInstanceType</code> only supports 64-bit architecture.</p>
     pub fn set_is64_bits_only(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is64_bits_only = input;
-        self
+        self.is64_bits_only = input; self
     }
     /// <p>Indicates whether the <code>SupportedInstanceType</code> only supports 64-bit architecture.</p>
     pub fn get_is64_bits_only(&self) -> &::std::option::Option<bool> {
@@ -174,8 +169,7 @@ impl SupportedInstanceTypeBuilder {
     }
     /// <p>The Amazon EC2 family and generation for the <code>SupportedInstanceType</code>.</p>
     pub fn set_instance_family_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_family_id = input;
-        self
+        self.instance_family_id = input; self
     }
     /// <p>The Amazon EC2 family and generation for the <code>SupportedInstanceType</code>.</p>
     pub fn get_instance_family_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +182,7 @@ impl SupportedInstanceTypeBuilder {
     }
     /// <p>Indicates whether the <code>SupportedInstanceType</code> supports Amazon EBS optimization.</p>
     pub fn set_ebs_optimized_available(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ebs_optimized_available = input;
-        self
+        self.ebs_optimized_available = input; self
     }
     /// <p>Indicates whether the <code>SupportedInstanceType</code> supports Amazon EBS optimization.</p>
     pub fn get_ebs_optimized_available(&self) -> &::std::option::Option<bool> {
@@ -202,8 +195,7 @@ impl SupportedInstanceTypeBuilder {
     }
     /// <p>Indicates whether the <code>SupportedInstanceType</code> uses Amazon EBS optimization by default.</p>
     pub fn set_ebs_optimized_by_default(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ebs_optimized_by_default = input;
-        self
+        self.ebs_optimized_by_default = input; self
     }
     /// <p>Indicates whether the <code>SupportedInstanceType</code> uses Amazon EBS optimization by default.</p>
     pub fn get_ebs_optimized_by_default(&self) -> &::std::option::Option<bool> {
@@ -216,8 +208,7 @@ impl SupportedInstanceTypeBuilder {
     }
     /// <p>Number of disks for the <code>SupportedInstanceType</code>. This value is <code>0</code> for Amazon EBS-only instance types.</p>
     pub fn set_number_of_disks(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_disks = input;
-        self
+        self.number_of_disks = input; self
     }
     /// <p>Number of disks for the <code>SupportedInstanceType</code>. This value is <code>0</code> for Amazon EBS-only instance types.</p>
     pub fn get_number_of_disks(&self) -> &::std::option::Option<i32> {
@@ -230,8 +221,7 @@ impl SupportedInstanceTypeBuilder {
     }
     /// <p>Indicates whether the <code>SupportedInstanceType</code> only supports Amazon EBS.</p>
     pub fn set_ebs_storage_only(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ebs_storage_only = input;
-        self
+        self.ebs_storage_only = input; self
     }
     /// <p>Indicates whether the <code>SupportedInstanceType</code> only supports Amazon EBS.</p>
     pub fn get_ebs_storage_only(&self) -> &::std::option::Option<bool> {
@@ -244,8 +234,7 @@ impl SupportedInstanceTypeBuilder {
     }
     /// <p>The CPU architecture, for example <code>X86_64</code> or <code>AARCH64</code>.</p>
     pub fn set_architecture(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.architecture = input;
-        self
+        self.architecture = input; self
     }
     /// <p>The CPU architecture, for example <code>X86_64</code> or <code>AARCH64</code>.</p>
     pub fn get_architecture(&self) -> &::std::option::Option<::std::string::String> {
@@ -254,17 +243,29 @@ impl SupportedInstanceTypeBuilder {
     /// Consumes the builder and constructs a [`SupportedInstanceType`](crate::types::SupportedInstanceType).
     pub fn build(self) -> crate::types::SupportedInstanceType {
         crate::types::SupportedInstanceType {
-            r#type: self.r#type,
-            memory_gb: self.memory_gb,
-            storage_gb: self.storage_gb,
-            vcpu: self.vcpu,
-            is64_bits_only: self.is64_bits_only,
-            instance_family_id: self.instance_family_id,
-            ebs_optimized_available: self.ebs_optimized_available,
-            ebs_optimized_by_default: self.ebs_optimized_by_default,
-            number_of_disks: self.number_of_disks,
-            ebs_storage_only: self.ebs_storage_only,
-            architecture: self.architecture,
+            r#type: self.r#type
+            ,
+            memory_gb: self.memory_gb
+            ,
+            storage_gb: self.storage_gb
+            ,
+            vcpu: self.vcpu
+            ,
+            is64_bits_only: self.is64_bits_only
+            ,
+            instance_family_id: self.instance_family_id
+            ,
+            ebs_optimized_available: self.ebs_optimized_available
+            ,
+            ebs_optimized_by_default: self.ebs_optimized_by_default
+            ,
+            number_of_disks: self.number_of_disks
+            ,
+            ebs_storage_only: self.ebs_storage_only
+            ,
+            architecture: self.architecture
+            ,
         }
     }
 }
+

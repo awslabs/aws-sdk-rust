@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTagKeysInput {
+pub struct GetTagKeysInput  {
     /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
     pub pagination_token: ::std::option::Option<::std::string::String>,
 }
-impl GetTagKeysInput {
+impl  GetTagKeysInput  {
     /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
-    pub fn pagination_token(&self) -> ::std::option::Option<&str> {
+    pub fn pagination_token(&self) -> ::std::option::Option<& str> {
         self.pagination_token.as_deref()
     }
 }
@@ -33,8 +33,7 @@ impl GetTagKeysInputBuilder {
     }
     /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
     pub fn set_pagination_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pagination_token = input;
-        self
+        self.pagination_token = input; self
     }
     /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
     pub fn get_pagination_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -42,8 +41,12 @@ impl GetTagKeysInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetTagKeysInput`](crate::operation::get_tag_keys::GetTagKeysInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_tag_keys::GetTagKeysInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_tag_keys::GetTagKeysInput {
-            pagination_token: self.pagination_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_tag_keys::GetTagKeysInput {
+                pagination_token: self.pagination_token
+                ,
+            }
+        )
     }
 }
+

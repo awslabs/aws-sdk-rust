@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListRules`](crate::operation::list_rules::builders::ListRulesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_rules::builders::ListRulesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::set_instance_id):<br>required: **true**<br><p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p><br>
     ///   - [`publish_status(RulePublishStatus)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::publish_status) / [`set_publish_status(Option<RulePublishStatus>)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::set_publish_status):<br>required: **false**<br><p>The publish status of the rule.</p><br>
     ///   - [`event_source_name(EventSourceName)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::event_source_name) / [`set_event_source_name(Option<EventSourceName>)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::set_event_source_name):<br>required: **false**<br><p>The name of the event source.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_rules::builders::ListRulesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
-    /// - On success, responds with [`ListRulesOutput`](crate::operation::list_rules::ListRulesOutput) with field(s):
+                            /// - On success, responds with [`ListRulesOutput`](crate::operation::list_rules::ListRulesOutput) with field(s):
     ///   - [`rule_summary_list(Vec::<RuleSummary>)`](crate::operation::list_rules::ListRulesOutput::rule_summary_list): <p>Summary information about a rule.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_rules::ListRulesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListRulesError>`](crate::operation::list_rules::ListRulesError)
+                            /// - On failure, responds with [`SdkError<ListRulesError>`](crate::operation::list_rules::ListRulesError)
     pub fn list_rules(&self) -> crate::operation::list_rules::builders::ListRulesFluentBuilder {
-        crate::operation::list_rules::builders::ListRulesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_rules::builders::ListRulesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

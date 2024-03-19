@@ -3,13 +3,13 @@
 /// <p>Entity that comprises information on operating modes in data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MultipleOperatingModes {
+pub struct MultipleOperatingModes  {
     /// <p>Indicates whether there is a potential data issue related to having multiple operating modes.</p>
     pub status: crate::types::StatisticalIssueStatus,
 }
-impl MultipleOperatingModes {
+impl  MultipleOperatingModes  {
     /// <p>Indicates whether there is a potential data issue related to having multiple operating modes.</p>
-    pub fn status(&self) -> &crate::types::StatisticalIssueStatus {
+    pub fn status(&self) -> & crate::types::StatisticalIssueStatus {
         &self.status
     }
 }
@@ -35,8 +35,7 @@ impl MultipleOperatingModesBuilder {
     }
     /// <p>Indicates whether there is a potential data issue related to having multiple operating modes.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StatisticalIssueStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Indicates whether there is a potential data issue related to having multiple operating modes.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::StatisticalIssueStatus> {
@@ -46,13 +45,15 @@ impl MultipleOperatingModesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::MultipleOperatingModesBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::MultipleOperatingModes, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MultipleOperatingModes {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building MultipleOperatingModes",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MultipleOperatingModes {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building MultipleOperatingModes")
+                    )?
+                ,
+            }
+        )
     }
 }
+

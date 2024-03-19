@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTrialComponentInput {
+pub struct DeleteTrialComponentInput  {
     /// <p>The name of the component to delete.</p>
     pub trial_component_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteTrialComponentInput {
+impl  DeleteTrialComponentInput  {
     /// <p>The name of the component to delete.</p>
-    pub fn trial_component_name(&self) -> ::std::option::Option<&str> {
+    pub fn trial_component_name(&self) -> ::std::option::Option<& str> {
         self.trial_component_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteTrialComponentInputBuilder {
     }
     /// <p>The name of the component to delete.</p>
     pub fn set_trial_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trial_component_name = input;
-        self
+        self.trial_component_name = input; self
     }
     /// <p>The name of the component to delete.</p>
     pub fn get_trial_component_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.trial_component_name
     }
     /// Consumes the builder and constructs a [`DeleteTrialComponentInput`](crate::operation::delete_trial_component::DeleteTrialComponentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_trial_component::DeleteTrialComponentInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_trial_component::DeleteTrialComponentInput {
-            trial_component_name: self.trial_component_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_trial_component::DeleteTrialComponentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_trial_component::DeleteTrialComponentInput {
+                trial_component_name: self.trial_component_name
+                ,
+            }
+        )
     }
 }
+

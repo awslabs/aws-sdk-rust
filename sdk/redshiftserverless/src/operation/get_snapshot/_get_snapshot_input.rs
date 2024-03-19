@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSnapshotInput {
+pub struct GetSnapshotInput  {
     /// <p>The name of the snapshot to return.</p>
     pub snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>The owner Amazon Web Services account of a snapshot shared with another user.</p>
@@ -10,17 +10,17 @@ pub struct GetSnapshotInput {
     /// <p>The Amazon Resource Name (ARN) of the snapshot to return.</p>
     pub snapshot_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetSnapshotInput {
+impl  GetSnapshotInput  {
     /// <p>The name of the snapshot to return.</p>
-    pub fn snapshot_name(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_name(&self) -> ::std::option::Option<& str> {
         self.snapshot_name.as_deref()
     }
     /// <p>The owner Amazon Web Services account of a snapshot shared with another user.</p>
-    pub fn owner_account(&self) -> ::std::option::Option<&str> {
+    pub fn owner_account(&self) -> ::std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the snapshot to return.</p>
-    pub fn snapshot_arn(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_arn(&self) -> ::std::option::Option<& str> {
         self.snapshot_arn.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl GetSnapshotInputBuilder {
     }
     /// <p>The name of the snapshot to return.</p>
     pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_name = input;
-        self
+        self.snapshot_name = input; self
     }
     /// <p>The name of the snapshot to return.</p>
     pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl GetSnapshotInputBuilder {
     }
     /// <p>The owner Amazon Web Services account of a snapshot shared with another user.</p>
     pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_account = input;
-        self
+        self.owner_account = input; self
     }
     /// <p>The owner Amazon Web Services account of a snapshot shared with another user.</p>
     pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +73,7 @@ impl GetSnapshotInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the snapshot to return.</p>
     pub fn set_snapshot_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_arn = input;
-        self
+        self.snapshot_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the snapshot to return.</p>
     pub fn get_snapshot_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,10 +81,16 @@ impl GetSnapshotInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetSnapshotInput`](crate::operation::get_snapshot::GetSnapshotInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_snapshot::GetSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_snapshot::GetSnapshotInput {
-            snapshot_name: self.snapshot_name,
-            owner_account: self.owner_account,
-            snapshot_arn: self.snapshot_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_snapshot::GetSnapshotInput {
+                snapshot_name: self.snapshot_name
+                ,
+                owner_account: self.owner_account
+                ,
+                snapshot_arn: self.snapshot_arn
+                ,
+            }
+        )
     }
 }
+

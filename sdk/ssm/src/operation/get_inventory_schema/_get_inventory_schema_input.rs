@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetInventorySchemaInput {
+pub struct GetInventorySchemaInput  {
     /// <p>The type of inventory item to return.</p>
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -14,13 +14,13 @@ pub struct GetInventorySchemaInput {
     /// <p>Returns the sub-type schema for a specified inventory type.</p>
     pub sub_type: ::std::option::Option<bool>,
 }
-impl GetInventorySchemaInput {
+impl  GetInventorySchemaInput  {
     /// <p>The type of inventory item to return.</p>
-    pub fn type_name(&self) -> ::std::option::Option<&str> {
+    pub fn type_name(&self) -> ::std::option::Option<& str> {
         self.type_name.as_deref()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -61,8 +61,7 @@ impl GetInventorySchemaInputBuilder {
     }
     /// <p>The type of inventory item to return.</p>
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_name = input;
-        self
+        self.type_name = input; self
     }
     /// <p>The type of inventory item to return.</p>
     pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl GetInventorySchemaInputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl GetInventorySchemaInputBuilder {
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -103,8 +100,7 @@ impl GetInventorySchemaInputBuilder {
     }
     /// <p>Returns inventory schemas that support aggregation. For example, this call returns the <code>AWS:InstanceInformation</code> type, because it supports aggregation based on the <code>PlatformName</code>, <code>PlatformType</code>, and <code>PlatformVersion</code> attributes.</p>
     pub fn set_aggregator(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.aggregator = input;
-        self
+        self.aggregator = input; self
     }
     /// <p>Returns inventory schemas that support aggregation. For example, this call returns the <code>AWS:InstanceInformation</code> type, because it supports aggregation based on the <code>PlatformName</code>, <code>PlatformType</code>, and <code>PlatformVersion</code> attributes.</p>
     pub fn get_aggregator(&self) -> &::std::option::Option<bool> {
@@ -117,24 +113,28 @@ impl GetInventorySchemaInputBuilder {
     }
     /// <p>Returns the sub-type schema for a specified inventory type.</p>
     pub fn set_sub_type(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.sub_type = input;
-        self
+        self.sub_type = input; self
     }
     /// <p>Returns the sub-type schema for a specified inventory type.</p>
     pub fn get_sub_type(&self) -> &::std::option::Option<bool> {
         &self.sub_type
     }
     /// Consumes the builder and constructs a [`GetInventorySchemaInput`](crate::operation::get_inventory_schema::GetInventorySchemaInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_inventory_schema::GetInventorySchemaInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_inventory_schema::GetInventorySchemaInput {
-            type_name: self.type_name,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            aggregator: self.aggregator,
-            sub_type: self.sub_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_inventory_schema::GetInventorySchemaInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_inventory_schema::GetInventorySchemaInput {
+                type_name: self.type_name
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                aggregator: self.aggregator
+                ,
+                sub_type: self.sub_type
+                ,
+            }
+        )
     }
 }
+

@@ -5,23 +5,20 @@ pub use crate::operation::describe_matchmaking_configurations::_describe_matchma
 
 impl DescribeMatchmakingConfigurationsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_matchmaking_configurations();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_matchmaking_configurations();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeMatchmakingConfigurations`.
-///
+/// 
 /// <p>Retrieves the details of FlexMatch matchmaking configurations.</p>
 /// <p>This operation offers the following options: (1) retrieve all matchmaking configurations, (2) retrieve configurations for a specified list, or (3) retrieve all configurations that use a specified rule set name. When requesting multiple items, use the pagination parameters to retrieve results as a set of sequential pages.</p>
 /// <p>If successful, a configuration is returned for each requested name. When specifying a list of names, only configurations that currently exist are returned.</p>
@@ -30,33 +27,32 @@ impl DescribeMatchmakingConfigurationsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeMatchmakingConfigurationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_matchmaking_configurations::builders::DescribeMatchmakingConfigurationsInputBuilder,
+                    inner: crate::operation::describe_matchmaking_configurations::builders::DescribeMatchmakingConfigurationsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsOutput,
-        crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsError,
-    > for DescribeMatchmakingConfigurationsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsOutput,
-            crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsOutput,
+                    crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsError,
+                > for DescribeMatchmakingConfigurationsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsOutput,
+                        crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeMatchmakingConfigurationsFluentBuilder {
     /// Creates a new `DescribeMatchmakingConfigurations`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -65,59 +61,50 @@ impl DescribeMatchmakingConfigurationsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurations::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurations::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsOutput,
-        crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurations::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurations::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsOutput, crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_matchmaking_configurations::paginator::DescribeMatchmakingConfigurationsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::describe_matchmaking_configurations::paginator::DescribeMatchmakingConfigurationsPaginator {
-        crate::operation::describe_matchmaking_configurations::paginator::DescribeMatchmakingConfigurationsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_matchmaking_configurations::paginator::DescribeMatchmakingConfigurationsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::describe_matchmaking_configurations::paginator::DescribeMatchmakingConfigurationsPaginator {
+                                crate::operation::describe_matchmaking_configurations::paginator::DescribeMatchmakingConfigurationsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `Names`.
     ///
     /// To override the contents of this collection use [`set_names`](Self::set_names).
@@ -128,12 +115,12 @@ impl DescribeMatchmakingConfigurationsFluentBuilder {
         self
     }
     /// <p>A unique identifier for the matchmaking configuration(s) to retrieve. You can use either the configuration name or ARN value. To request all existing configurations, leave this parameter empty.</p>
-    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_names(input);
         self
     }
     /// <p>A unique identifier for the matchmaking configuration(s) to retrieve. You can use either the configuration name or ARN value. To request all existing configurations, leave this parameter empty.</p>
-    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_names()
     }
     /// <p>A unique identifier for the matchmaking rule set. You can use either the rule set name or ARN value. Use this parameter to retrieve all matchmaking configurations that use this rule set.</p>
@@ -179,3 +166,4 @@ impl DescribeMatchmakingConfigurationsFluentBuilder {
         self.inner.get_next_token()
     }
 }
+

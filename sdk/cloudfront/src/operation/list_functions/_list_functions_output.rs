@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListFunctionsOutput {
+pub struct ListFunctionsOutput  {
     /// <p>A list of CloudFront functions.</p>
     pub function_list: ::std::option::Option<crate::types::FunctionList>,
     _request_id: Option<String>,
 }
-impl ListFunctionsOutput {
+impl  ListFunctionsOutput  {
     /// <p>A list of CloudFront functions.</p>
-    pub fn function_list(&self) -> ::std::option::Option<&crate::types::FunctionList> {
+    pub fn function_list(&self) -> ::std::option::Option<& crate::types::FunctionList> {
         self.function_list.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListFunctionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListFunctionsOutput {
     /// Creates a new builder-style object to manufacture [`ListFunctionsOutput`](crate::operation::list_functions::ListFunctionsOutput).
     pub fn builder() -> crate::operation::list_functions::builders::ListFunctionsOutputBuilder {
@@ -40,27 +40,28 @@ impl ListFunctionsOutputBuilder {
     }
     /// <p>A list of CloudFront functions.</p>
     pub fn set_function_list(mut self, input: ::std::option::Option<crate::types::FunctionList>) -> Self {
-        self.function_list = input;
-        self
+        self.function_list = input; self
     }
     /// <p>A list of CloudFront functions.</p>
     pub fn get_function_list(&self) -> &::std::option::Option<crate::types::FunctionList> {
         &self.function_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListFunctionsOutput`](crate::operation::list_functions::ListFunctionsOutput).
     pub fn build(self) -> crate::operation::list_functions::ListFunctionsOutput {
         crate::operation::list_functions::ListFunctionsOutput {
-            function_list: self.function_list,
+            function_list: self.function_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

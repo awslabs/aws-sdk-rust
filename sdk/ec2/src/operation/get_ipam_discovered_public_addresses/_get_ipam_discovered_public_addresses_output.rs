@@ -2,36 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetIpamDiscoveredPublicAddressesOutput {
+pub struct GetIpamDiscoveredPublicAddressesOutput  {
     /// <p>IPAM discovered public addresses.</p>
-    pub ipam_discovered_public_addresses: ::std::option::Option<::std::vec::Vec<crate::types::IpamDiscoveredPublicAddress>>,
+    pub ipam_discovered_public_addresses: ::std::option::Option<::std::vec::Vec::<crate::types::IpamDiscoveredPublicAddress>>,
     /// <p>The oldest successful resource discovery time.</p>
     pub oldest_sample_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetIpamDiscoveredPublicAddressesOutput {
+impl  GetIpamDiscoveredPublicAddressesOutput  {
     /// <p>IPAM discovered public addresses.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipam_discovered_public_addresses.is_none()`.
-    pub fn ipam_discovered_public_addresses(&self) -> &[crate::types::IpamDiscoveredPublicAddress] {
-        self.ipam_discovered_public_addresses.as_deref().unwrap_or_default()
+    pub fn ipam_discovered_public_addresses(&self) -> & [crate::types::IpamDiscoveredPublicAddress] {
+        self.ipam_discovered_public_addresses.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The oldest successful resource discovery time.</p>
-    pub fn oldest_sample_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn oldest_sample_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.oldest_sample_time.as_ref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetIpamDiscoveredPublicAddressesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetIpamDiscoveredPublicAddressesOutput {
     /// Creates a new builder-style object to manufacture [`GetIpamDiscoveredPublicAddressesOutput`](crate::operation::get_ipam_discovered_public_addresses::GetIpamDiscoveredPublicAddressesOutput).
     pub fn builder() -> crate::operation::get_ipam_discovered_public_addresses::builders::GetIpamDiscoveredPublicAddressesOutputBuilder {
@@ -43,7 +44,7 @@ impl GetIpamDiscoveredPublicAddressesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIpamDiscoveredPublicAddressesOutputBuilder {
-    pub(crate) ipam_discovered_public_addresses: ::std::option::Option<::std::vec::Vec<crate::types::IpamDiscoveredPublicAddress>>,
+    pub(crate) ipam_discovered_public_addresses: ::std::option::Option<::std::vec::Vec::<crate::types::IpamDiscoveredPublicAddress>>,
     pub(crate) oldest_sample_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -56,20 +57,16 @@ impl GetIpamDiscoveredPublicAddressesOutputBuilder {
     /// <p>IPAM discovered public addresses.</p>
     pub fn ipam_discovered_public_addresses(mut self, input: crate::types::IpamDiscoveredPublicAddress) -> Self {
         let mut v = self.ipam_discovered_public_addresses.unwrap_or_default();
-        v.push(input);
-        self.ipam_discovered_public_addresses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ipam_discovered_public_addresses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>IPAM discovered public addresses.</p>
-    pub fn set_ipam_discovered_public_addresses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::IpamDiscoveredPublicAddress>>,
-    ) -> Self {
-        self.ipam_discovered_public_addresses = input;
-        self
+    pub fn set_ipam_discovered_public_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IpamDiscoveredPublicAddress>>) -> Self {
+        self.ipam_discovered_public_addresses = input; self
     }
     /// <p>IPAM discovered public addresses.</p>
-    pub fn get_ipam_discovered_public_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamDiscoveredPublicAddress>> {
+    pub fn get_ipam_discovered_public_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IpamDiscoveredPublicAddress>> {
         &self.ipam_discovered_public_addresses
     }
     /// <p>The oldest successful resource discovery time.</p>
@@ -79,8 +76,7 @@ impl GetIpamDiscoveredPublicAddressesOutputBuilder {
     }
     /// <p>The oldest successful resource discovery time.</p>
     pub fn set_oldest_sample_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.oldest_sample_time = input;
-        self
+        self.oldest_sample_time = input; self
     }
     /// <p>The oldest successful resource discovery time.</p>
     pub fn get_oldest_sample_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -93,29 +89,32 @@ impl GetIpamDiscoveredPublicAddressesOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetIpamDiscoveredPublicAddressesOutput`](crate::operation::get_ipam_discovered_public_addresses::GetIpamDiscoveredPublicAddressesOutput).
     pub fn build(self) -> crate::operation::get_ipam_discovered_public_addresses::GetIpamDiscoveredPublicAddressesOutput {
         crate::operation::get_ipam_discovered_public_addresses::GetIpamDiscoveredPublicAddressesOutput {
-            ipam_discovered_public_addresses: self.ipam_discovered_public_addresses,
-            oldest_sample_time: self.oldest_sample_time,
-            next_token: self.next_token,
+            ipam_discovered_public_addresses: self.ipam_discovered_public_addresses
+            ,
+            oldest_sample_time: self.oldest_sample_time
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRealtimeContactAnalysisSegmentsV2Input {
+pub struct ListRealtimeContactAnalysisSegmentsV2Input  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
@@ -14,15 +14,15 @@ pub struct ListRealtimeContactAnalysisSegmentsV2Input {
     /// <p>The Contact Lens output type to be returned.</p>
     pub output_type: ::std::option::Option<crate::types::RealTimeContactAnalysisOutputType>,
     /// <p>Enum with segment types . Each value corresponds to a segment type returned in the segments list of the API. Each segment type has its own structure. Different channels may have different sets of supported segment types.</p>
-    pub segment_types: ::std::option::Option<::std::vec::Vec<crate::types::RealTimeContactAnalysisSegmentType>>,
+    pub segment_types: ::std::option::Option<::std::vec::Vec::<crate::types::RealTimeContactAnalysisSegmentType>>,
 }
-impl ListRealtimeContactAnalysisSegmentsV2Input {
+impl  ListRealtimeContactAnalysisSegmentsV2Input  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
-    pub fn contact_id(&self) -> ::std::option::Option<&str> {
+    pub fn contact_id(&self) -> ::std::option::Option<& str> {
         self.contact_id.as_deref()
     }
     /// <p>The maximum number of results to return per page.</p>
@@ -30,18 +30,19 @@ impl ListRealtimeContactAnalysisSegmentsV2Input {
         self.max_results
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The Contact Lens output type to be returned.</p>
-    pub fn output_type(&self) -> ::std::option::Option<&crate::types::RealTimeContactAnalysisOutputType> {
+    pub fn output_type(&self) -> ::std::option::Option<& crate::types::RealTimeContactAnalysisOutputType> {
         self.output_type.as_ref()
     }
     /// <p>Enum with segment types . Each value corresponds to a segment type returned in the segments list of the API. Each segment type has its own structure. Different channels may have different sets of supported segment types.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.segment_types.is_none()`.
-    pub fn segment_types(&self) -> &[crate::types::RealTimeContactAnalysisSegmentType] {
-        self.segment_types.as_deref().unwrap_or_default()
+    pub fn segment_types(&self) -> & [crate::types::RealTimeContactAnalysisSegmentType] {
+        self.segment_types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ListRealtimeContactAnalysisSegmentsV2Input {
@@ -60,7 +61,7 @@ pub struct ListRealtimeContactAnalysisSegmentsV2InputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) output_type: ::std::option::Option<crate::types::RealTimeContactAnalysisOutputType>,
-    pub(crate) segment_types: ::std::option::Option<::std::vec::Vec<crate::types::RealTimeContactAnalysisSegmentType>>,
+    pub(crate) segment_types: ::std::option::Option<::std::vec::Vec::<crate::types::RealTimeContactAnalysisSegmentType>>,
 }
 impl ListRealtimeContactAnalysisSegmentsV2InputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -71,8 +72,7 @@ impl ListRealtimeContactAnalysisSegmentsV2InputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +86,7 @@ impl ListRealtimeContactAnalysisSegmentsV2InputBuilder {
     }
     /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_id = input;
-        self
+        self.contact_id = input; self
     }
     /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +99,7 @@ impl ListRealtimeContactAnalysisSegmentsV2InputBuilder {
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -114,8 +112,7 @@ impl ListRealtimeContactAnalysisSegmentsV2InputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +126,7 @@ impl ListRealtimeContactAnalysisSegmentsV2InputBuilder {
     }
     /// <p>The Contact Lens output type to be returned.</p>
     pub fn set_output_type(mut self, input: ::std::option::Option<crate::types::RealTimeContactAnalysisOutputType>) -> Self {
-        self.output_type = input;
-        self
+        self.output_type = input; self
     }
     /// <p>The Contact Lens output type to be returned.</p>
     pub fn get_output_type(&self) -> &::std::option::Option<crate::types::RealTimeContactAnalysisOutputType> {
@@ -143,35 +139,36 @@ impl ListRealtimeContactAnalysisSegmentsV2InputBuilder {
     /// <p>Enum with segment types . Each value corresponds to a segment type returned in the segments list of the API. Each segment type has its own structure. Different channels may have different sets of supported segment types.</p>
     pub fn segment_types(mut self, input: crate::types::RealTimeContactAnalysisSegmentType) -> Self {
         let mut v = self.segment_types.unwrap_or_default();
-        v.push(input);
-        self.segment_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.segment_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Enum with segment types . Each value corresponds to a segment type returned in the segments list of the API. Each segment type has its own structure. Different channels may have different sets of supported segment types.</p>
-    pub fn set_segment_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RealTimeContactAnalysisSegmentType>>) -> Self {
-        self.segment_types = input;
-        self
+    pub fn set_segment_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RealTimeContactAnalysisSegmentType>>) -> Self {
+        self.segment_types = input; self
     }
     /// <p>Enum with segment types . Each value corresponds to a segment type returned in the segments list of the API. Each segment type has its own structure. Different channels may have different sets of supported segment types.</p>
-    pub fn get_segment_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RealTimeContactAnalysisSegmentType>> {
+    pub fn get_segment_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RealTimeContactAnalysisSegmentType>> {
         &self.segment_types
     }
     /// Consumes the builder and constructs a [`ListRealtimeContactAnalysisSegmentsV2Input`](crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2Input).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2Input,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2Input, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2Input {
-                instance_id: self.instance_id,
-                contact_id: self.contact_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                output_type: self.output_type,
-                segment_types: self.segment_types,
-            },
+                instance_id: self.instance_id
+                ,
+                contact_id: self.contact_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                output_type: self.output_type
+                ,
+                segment_types: self.segment_types
+                ,
+            }
         )
     }
 }
+

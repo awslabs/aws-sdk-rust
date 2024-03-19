@@ -3,30 +3,31 @@
 /// <p>Result structure contains a list of all available bundles with details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBundlesOutput {
+pub struct ListBundlesOutput  {
     /// <p>A list of bundles.</p>
-    pub bundle_list: ::std::option::Option<::std::vec::Vec<crate::types::BundleDetails>>,
+    pub bundle_list: ::std::option::Option<::std::vec::Vec::<crate::types::BundleDetails>>,
     /// <p>Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListBundlesOutput {
+impl  ListBundlesOutput  {
     /// <p>A list of bundles.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bundle_list.is_none()`.
-    pub fn bundle_list(&self) -> &[crate::types::BundleDetails] {
-        self.bundle_list.as_deref().unwrap_or_default()
+    pub fn bundle_list(&self) -> & [crate::types::BundleDetails] {
+        self.bundle_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListBundlesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListBundlesOutput {
     /// Creates a new builder-style object to manufacture [`ListBundlesOutput`](crate::operation::list_bundles::ListBundlesOutput).
     pub fn builder() -> crate::operation::list_bundles::builders::ListBundlesOutputBuilder {
@@ -38,7 +39,7 @@ impl ListBundlesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBundlesOutputBuilder {
-    pub(crate) bundle_list: ::std::option::Option<::std::vec::Vec<crate::types::BundleDetails>>,
+    pub(crate) bundle_list: ::std::option::Option<::std::vec::Vec::<crate::types::BundleDetails>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +51,16 @@ impl ListBundlesOutputBuilder {
     /// <p>A list of bundles.</p>
     pub fn bundle_list(mut self, input: crate::types::BundleDetails) -> Self {
         let mut v = self.bundle_list.unwrap_or_default();
-        v.push(input);
-        self.bundle_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.bundle_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of bundles.</p>
-    pub fn set_bundle_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BundleDetails>>) -> Self {
-        self.bundle_list = input;
-        self
+    pub fn set_bundle_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BundleDetails>>) -> Self {
+        self.bundle_list = input; self
     }
     /// <p>A list of bundles.</p>
-    pub fn get_bundle_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BundleDetails>> {
+    pub fn get_bundle_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BundleDetails>> {
         &self.bundle_list
     }
     /// <p>Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries.</p>
@@ -70,28 +70,30 @@ impl ListBundlesOutputBuilder {
     }
     /// <p>Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListBundlesOutput`](crate::operation::list_bundles::ListBundlesOutput).
     pub fn build(self) -> crate::operation::list_bundles::ListBundlesOutput {
         crate::operation::list_bundles::ListBundlesOutput {
-            bundle_list: self.bundle_list,
-            next_token: self.next_token,
+            bundle_list: self.bundle_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

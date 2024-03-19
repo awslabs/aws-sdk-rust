@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListObjectPolicies`](crate::operation::list_object_policies::builders::ListObjectPoliciesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_object_policies::builders::ListObjectPoliciesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`directory_arn(impl Into<String>)`](crate::operation::list_object_policies::builders::ListObjectPoliciesFluentBuilder::directory_arn) / [`set_directory_arn(Option<String>)`](crate::operation::list_object_policies::builders::ListObjectPoliciesFluentBuilder::set_directory_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p><br>
     ///   - [`object_reference(ObjectReference)`](crate::operation::list_object_policies::builders::ListObjectPoliciesFluentBuilder::object_reference) / [`set_object_reference(Option<ObjectReference>)`](crate::operation::list_object_policies::builders::ListObjectPoliciesFluentBuilder::set_object_reference):<br>required: **true**<br><p>Reference that identifies the object for which policies will be listed.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_object_policies::builders::ListObjectPoliciesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_object_policies::builders::ListObjectPoliciesFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_object_policies::builders::ListObjectPoliciesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_object_policies::builders::ListObjectPoliciesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p><br>
     ///   - [`consistency_level(ConsistencyLevel)`](crate::operation::list_object_policies::builders::ListObjectPoliciesFluentBuilder::consistency_level) / [`set_consistency_level(Option<ConsistencyLevel>)`](crate::operation::list_object_policies::builders::ListObjectPoliciesFluentBuilder::set_consistency_level):<br>required: **false**<br><p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p><br>
-    /// - On success, responds with [`ListObjectPoliciesOutput`](crate::operation::list_object_policies::ListObjectPoliciesOutput) with field(s):
+                            /// - On success, responds with [`ListObjectPoliciesOutput`](crate::operation::list_object_policies::ListObjectPoliciesOutput) with field(s):
     ///   - [`attached_policy_ids(Option<Vec::<String>>)`](crate::operation::list_object_policies::ListObjectPoliciesOutput::attached_policy_ids): <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the object.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_object_policies::ListObjectPoliciesOutput::next_token): <p>The pagination token.</p>
-    /// - On failure, responds with [`SdkError<ListObjectPoliciesError>`](crate::operation::list_object_policies::ListObjectPoliciesError)
+                            /// - On failure, responds with [`SdkError<ListObjectPoliciesError>`](crate::operation::list_object_policies::ListObjectPoliciesError)
     pub fn list_object_policies(&self) -> crate::operation::list_object_policies::builders::ListObjectPoliciesFluentBuilder {
-        crate::operation::list_object_policies::builders::ListObjectPoliciesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_object_policies::builders::ListObjectPoliciesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

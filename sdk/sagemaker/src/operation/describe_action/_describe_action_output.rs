@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeActionOutput {
+pub struct DescribeActionOutput  {
     /// <p>The name of the action.</p>
     pub action_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the action.</p>
@@ -16,7 +16,7 @@ pub struct DescribeActionOutput {
     /// <p>The status of the action.</p>
     pub status: ::std::option::Option<crate::types::ActionStatus>,
     /// <p>A list of the action's properties.</p>
-    pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub properties: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>When the action was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
@@ -31,65 +31,65 @@ pub struct DescribeActionOutput {
     pub lineage_group_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeActionOutput {
+impl  DescribeActionOutput  {
     /// <p>The name of the action.</p>
-    pub fn action_name(&self) -> ::std::option::Option<&str> {
+    pub fn action_name(&self) -> ::std::option::Option<& str> {
         self.action_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the action.</p>
-    pub fn action_arn(&self) -> ::std::option::Option<&str> {
+    pub fn action_arn(&self) -> ::std::option::Option<& str> {
         self.action_arn.as_deref()
     }
     /// <p>The source of the action.</p>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::ActionSource> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::ActionSource> {
         self.source.as_ref()
     }
     /// <p>The type of the action.</p>
-    pub fn action_type(&self) -> ::std::option::Option<&str> {
+    pub fn action_type(&self) -> ::std::option::Option<& str> {
         self.action_type.as_deref()
     }
     /// <p>The description of the action.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The status of the action.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ActionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ActionStatus> {
         self.status.as_ref()
     }
     /// <p>A list of the action's properties.</p>
-    pub fn properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn properties(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.properties.as_ref()
     }
     /// <p>When the action was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
+    pub fn created_by(&self) -> ::std::option::Option<& crate::types::UserContext> {
         self.created_by.as_ref()
     }
     /// <p>When the action was last modified.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn last_modified_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
+    pub fn last_modified_by(&self) -> ::std::option::Option<& crate::types::UserContext> {
         self.last_modified_by.as_ref()
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    pub fn metadata_properties(&self) -> ::std::option::Option<&crate::types::MetadataProperties> {
+    pub fn metadata_properties(&self) -> ::std::option::Option<& crate::types::MetadataProperties> {
         self.metadata_properties.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
-    pub fn lineage_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn lineage_group_arn(&self) -> ::std::option::Option<& str> {
         self.lineage_group_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeActionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeActionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeActionOutput`](crate::operation::describe_action::DescribeActionOutput).
     pub fn builder() -> crate::operation::describe_action::builders::DescribeActionOutputBuilder {
@@ -107,7 +107,7 @@ pub struct DescribeActionOutputBuilder {
     pub(crate) action_type: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ActionStatus>,
-    pub(crate) properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) properties: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<crate::types::UserContext>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -124,8 +124,7 @@ impl DescribeActionOutputBuilder {
     }
     /// <p>The name of the action.</p>
     pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_name = input;
-        self
+        self.action_name = input; self
     }
     /// <p>The name of the action.</p>
     pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +137,7 @@ impl DescribeActionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the action.</p>
     pub fn set_action_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_arn = input;
-        self
+        self.action_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the action.</p>
     pub fn get_action_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +150,7 @@ impl DescribeActionOutputBuilder {
     }
     /// <p>The source of the action.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::ActionSource>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The source of the action.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::ActionSource> {
@@ -166,8 +163,7 @@ impl DescribeActionOutputBuilder {
     }
     /// <p>The type of the action.</p>
     pub fn set_action_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_type = input;
-        self
+        self.action_type = input; self
     }
     /// <p>The type of the action.</p>
     pub fn get_action_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -180,8 +176,7 @@ impl DescribeActionOutputBuilder {
     }
     /// <p>The description of the action.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the action.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,8 +189,7 @@ impl DescribeActionOutputBuilder {
     }
     /// <p>The status of the action.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ActionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the action.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ActionStatus> {
@@ -208,17 +202,16 @@ impl DescribeActionOutputBuilder {
     /// <p>A list of the action's properties.</p>
     pub fn properties(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.properties.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.properties = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.properties = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of the action's properties.</p>
-    pub fn set_properties(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.properties = input;
-        self
+    pub fn set_properties(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.properties = input; self
     }
     /// <p>A list of the action's properties.</p>
-    pub fn get_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_properties(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.properties
     }
     /// <p>When the action was created.</p>
@@ -228,8 +221,7 @@ impl DescribeActionOutputBuilder {
     }
     /// <p>When the action was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>When the action was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -242,8 +234,7 @@ impl DescribeActionOutputBuilder {
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<crate::types::UserContext> {
@@ -256,8 +247,7 @@ impl DescribeActionOutputBuilder {
     }
     /// <p>When the action was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>When the action was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -270,8 +260,7 @@ impl DescribeActionOutputBuilder {
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn set_last_modified_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
-        self.last_modified_by = input;
-        self
+        self.last_modified_by = input; self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn get_last_modified_by(&self) -> &::std::option::Option<crate::types::UserContext> {
@@ -284,8 +273,7 @@ impl DescribeActionOutputBuilder {
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub fn set_metadata_properties(mut self, input: ::std::option::Option<crate::types::MetadataProperties>) -> Self {
-        self.metadata_properties = input;
-        self
+        self.metadata_properties = input; self
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub fn get_metadata_properties(&self) -> &::std::option::Option<crate::types::MetadataProperties> {
@@ -298,39 +286,52 @@ impl DescribeActionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
     pub fn set_lineage_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lineage_group_arn = input;
-        self
+        self.lineage_group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
     pub fn get_lineage_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.lineage_group_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeActionOutput`](crate::operation::describe_action::DescribeActionOutput).
     pub fn build(self) -> crate::operation::describe_action::DescribeActionOutput {
         crate::operation::describe_action::DescribeActionOutput {
-            action_name: self.action_name,
-            action_arn: self.action_arn,
-            source: self.source,
-            action_type: self.action_type,
-            description: self.description,
-            status: self.status,
-            properties: self.properties,
-            creation_time: self.creation_time,
-            created_by: self.created_by,
-            last_modified_time: self.last_modified_time,
-            last_modified_by: self.last_modified_by,
-            metadata_properties: self.metadata_properties,
-            lineage_group_arn: self.lineage_group_arn,
+            action_name: self.action_name
+            ,
+            action_arn: self.action_arn
+            ,
+            source: self.source
+            ,
+            action_type: self.action_type
+            ,
+            description: self.description
+            ,
+            status: self.status
+            ,
+            properties: self.properties
+            ,
+            creation_time: self.creation_time
+            ,
+            created_by: self.created_by
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            last_modified_by: self.last_modified_by
+            ,
+            metadata_properties: self.metadata_properties
+            ,
+            lineage_group_arn: self.lineage_group_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

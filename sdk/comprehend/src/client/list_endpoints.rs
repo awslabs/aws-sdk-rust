@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListEndpoints`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filter(EndpointFilter)`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::filter) / [`set_filter(Option<EndpointFilter>)`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::set_filter):<br>required: **false**<br><p>Filters the endpoints that are returned. You can filter endpoints on their name, model, status, or the date and time that they were created. You can only set one filter at a time.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::set_next_token):<br>required: **false**<br><p>Identifies the next page of results to return.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in each page. The default is 100.</p><br>
-    /// - On success, responds with [`ListEndpointsOutput`](crate::operation::list_endpoints::ListEndpointsOutput) with field(s):
+                            /// - On success, responds with [`ListEndpointsOutput`](crate::operation::list_endpoints::ListEndpointsOutput) with field(s):
     ///   - [`endpoint_properties_list(Option<Vec::<EndpointProperties>>)`](crate::operation::list_endpoints::ListEndpointsOutput::endpoint_properties_list): <p>Displays a list of endpoint properties being retrieved by the service in response to the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_endpoints::ListEndpointsOutput::next_token): <p>Identifies the next page of results to return.</p>
-    /// - On failure, responds with [`SdkError<ListEndpointsError>`](crate::operation::list_endpoints::ListEndpointsError)
+                            /// - On failure, responds with [`SdkError<ListEndpointsError>`](crate::operation::list_endpoints::ListEndpointsError)
     pub fn list_endpoints(&self) -> crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder {
-        crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_endpoints::builders::ListEndpointsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

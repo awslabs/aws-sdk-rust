@@ -3,16 +3,17 @@
 /// <p>Contains citations for a part of an agent response.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Attribution {
+pub struct Attribution  {
     /// <p>A list of citations and related information for a part of an agent response.</p>
-    pub citations: ::std::option::Option<::std::vec::Vec<crate::types::Citation>>,
+    pub citations: ::std::option::Option<::std::vec::Vec::<crate::types::Citation>>,
 }
-impl Attribution {
+impl  Attribution  {
     /// <p>A list of citations and related information for a part of an agent response.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.citations.is_none()`.
-    pub fn citations(&self) -> &[crate::types::Citation] {
-        self.citations.as_deref().unwrap_or_default()
+    pub fn citations(&self) -> & [crate::types::Citation] {
+        self.citations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Attribution {
@@ -26,7 +27,7 @@ impl Attribution {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AttributionBuilder {
-    pub(crate) citations: ::std::option::Option<::std::vec::Vec<crate::types::Citation>>,
+    pub(crate) citations: ::std::option::Option<::std::vec::Vec::<crate::types::Citation>>,
 }
 impl AttributionBuilder {
     /// Appends an item to `citations`.
@@ -36,21 +37,24 @@ impl AttributionBuilder {
     /// <p>A list of citations and related information for a part of an agent response.</p>
     pub fn citations(mut self, input: crate::types::Citation) -> Self {
         let mut v = self.citations.unwrap_or_default();
-        v.push(input);
-        self.citations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.citations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of citations and related information for a part of an agent response.</p>
-    pub fn set_citations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Citation>>) -> Self {
-        self.citations = input;
-        self
+    pub fn set_citations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Citation>>) -> Self {
+        self.citations = input; self
     }
     /// <p>A list of citations and related information for a part of an agent response.</p>
-    pub fn get_citations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Citation>> {
+    pub fn get_citations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Citation>> {
         &self.citations
     }
     /// Consumes the builder and constructs a [`Attribution`](crate::types::Attribution).
     pub fn build(self) -> crate::types::Attribution {
-        crate::types::Attribution { citations: self.citations }
+        crate::types::Attribution {
+            citations: self.citations
+            ,
+        }
     }
 }
+

@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateLogicallyAirGappedBackupVaultInput {
+pub struct CreateLogicallyAirGappedBackupVaultInput  {
     /// <p>This is the name of the vault that is being created.</p>
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
     /// <p>These are the tags that will be included in the newly-created vault.</p>
-    pub backup_vault_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub backup_vault_tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>This is the ID of the creation request.</p>
     /// <p>This parameter is optional. If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub creator_request_id: ::std::option::Option<::std::string::String>,
@@ -17,18 +17,18 @@ pub struct CreateLogicallyAirGappedBackupVaultInput {
     /// <p>If specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault.</p>
     pub max_retention_days: ::std::option::Option<i64>,
 }
-impl CreateLogicallyAirGappedBackupVaultInput {
+impl  CreateLogicallyAirGappedBackupVaultInput  {
     /// <p>This is the name of the vault that is being created.</p>
-    pub fn backup_vault_name(&self) -> ::std::option::Option<&str> {
+    pub fn backup_vault_name(&self) -> ::std::option::Option<& str> {
         self.backup_vault_name.as_deref()
     }
     /// <p>These are the tags that will be included in the newly-created vault.</p>
-    pub fn backup_vault_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn backup_vault_tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.backup_vault_tags.as_ref()
     }
     /// <p>This is the ID of the creation request.</p>
     /// <p>This parameter is optional. If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
-    pub fn creator_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn creator_request_id(&self) -> ::std::option::Option<& str> {
         self.creator_request_id.as_deref()
     }
     /// <p>This setting specifies the minimum retention period that the vault retains its recovery points. If this parameter is not specified, no minimum retention period is enforced.</p>
@@ -42,7 +42,7 @@ impl CreateLogicallyAirGappedBackupVaultInput {
         self.max_retention_days
     }
 }
-impl ::std::fmt::Debug for CreateLogicallyAirGappedBackupVaultInput {
+impl  ::std::fmt::Debug for CreateLogicallyAirGappedBackupVaultInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLogicallyAirGappedBackupVaultInput");
         formatter.field("backup_vault_name", &self.backup_vault_name);
@@ -65,7 +65,7 @@ impl CreateLogicallyAirGappedBackupVaultInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct CreateLogicallyAirGappedBackupVaultInputBuilder {
     pub(crate) backup_vault_name: ::std::option::Option<::std::string::String>,
-    pub(crate) backup_vault_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) backup_vault_tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) creator_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) min_retention_days: ::std::option::Option<i64>,
     pub(crate) max_retention_days: ::std::option::Option<i64>,
@@ -79,8 +79,7 @@ impl CreateLogicallyAirGappedBackupVaultInputBuilder {
     }
     /// <p>This is the name of the vault that is being created.</p>
     pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_vault_name = input;
-        self
+        self.backup_vault_name = input; self
     }
     /// <p>This is the name of the vault that is being created.</p>
     pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,26 +90,18 @@ impl CreateLogicallyAirGappedBackupVaultInputBuilder {
     /// To override the contents of this collection use [`set_backup_vault_tags`](Self::set_backup_vault_tags).
     ///
     /// <p>These are the tags that will be included in the newly-created vault.</p>
-    pub fn backup_vault_tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_vault_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.backup_vault_tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.backup_vault_tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.backup_vault_tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>These are the tags that will be included in the newly-created vault.</p>
-    pub fn set_backup_vault_tags(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.backup_vault_tags = input;
-        self
+    pub fn set_backup_vault_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.backup_vault_tags = input; self
     }
     /// <p>These are the tags that will be included in the newly-created vault.</p>
-    pub fn get_backup_vault_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_backup_vault_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.backup_vault_tags
     }
     /// <p>This is the ID of the creation request.</p>
@@ -122,8 +113,7 @@ impl CreateLogicallyAirGappedBackupVaultInputBuilder {
     /// <p>This is the ID of the creation request.</p>
     /// <p>This parameter is optional. If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creator_request_id = input;
-        self
+        self.creator_request_id = input; self
     }
     /// <p>This is the ID of the creation request.</p>
     /// <p>This parameter is optional. If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
@@ -140,8 +130,7 @@ impl CreateLogicallyAirGappedBackupVaultInputBuilder {
     /// <p>This setting specifies the minimum retention period that the vault retains its recovery points. If this parameter is not specified, no minimum retention period is enforced.</p>
     /// <p>If specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If a job retention period is shorter than that minimum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault.</p>
     pub fn set_min_retention_days(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.min_retention_days = input;
-        self
+        self.min_retention_days = input; self
     }
     /// <p>This setting specifies the minimum retention period that the vault retains its recovery points. If this parameter is not specified, no minimum retention period is enforced.</p>
     /// <p>If specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If a job retention period is shorter than that minimum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault.</p>
@@ -158,8 +147,7 @@ impl CreateLogicallyAirGappedBackupVaultInputBuilder {
     /// <p>This is the setting that specifies the maximum retention period that the vault retains its recovery points. If this parameter is not specified, Backup does not enforce a maximum retention period on the recovery points in the vault (allowing indefinite storage).</p>
     /// <p>If specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault.</p>
     pub fn set_max_retention_days(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.max_retention_days = input;
-        self
+        self.max_retention_days = input; self
     }
     /// <p>This is the setting that specifies the maximum retention period that the vault retains its recovery points. If this parameter is not specified, Backup does not enforce a maximum retention period on the recovery points in the vault (allowing indefinite storage).</p>
     /// <p>If specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault.</p>
@@ -167,20 +155,20 @@ impl CreateLogicallyAirGappedBackupVaultInputBuilder {
         &self.max_retention_days
     }
     /// Consumes the builder and constructs a [`CreateLogicallyAirGappedBackupVaultInput`](crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultInput {
-                backup_vault_name: self.backup_vault_name,
-                backup_vault_tags: self.backup_vault_tags,
-                creator_request_id: self.creator_request_id,
-                min_retention_days: self.min_retention_days,
-                max_retention_days: self.max_retention_days,
-            },
+                backup_vault_name: self.backup_vault_name
+                ,
+                backup_vault_tags: self.backup_vault_tags
+                ,
+                creator_request_id: self.creator_request_id
+                ,
+                min_retention_days: self.min_retention_days
+                ,
+                max_retention_days: self.max_retention_days
+                ,
+            }
         )
     }
 }
@@ -195,3 +183,4 @@ impl ::std::fmt::Debug for CreateLogicallyAirGappedBackupVaultInputBuilder {
         formatter.finish()
     }
 }
+

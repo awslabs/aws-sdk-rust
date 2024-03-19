@@ -3,7 +3,7 @@
 /// <p>The selected field options for the pivot table field options.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PivotTableFieldOption {
+pub struct PivotTableFieldOption  {
     /// <p>The field ID of the pivot table field.</p>
     pub field_id: ::std::string::String,
     /// <p>The custom label of the pivot table field.</p>
@@ -11,18 +11,17 @@ pub struct PivotTableFieldOption {
     /// <p>The visibility of the pivot table field.</p>
     pub visibility: ::std::option::Option<crate::types::Visibility>,
 }
-impl PivotTableFieldOption {
+impl  PivotTableFieldOption  {
     /// <p>The field ID of the pivot table field.</p>
-    pub fn field_id(&self) -> &str {
-        use std::ops::Deref;
-        self.field_id.deref()
+    pub fn field_id(&self) -> & str {
+        use std::ops::Deref; self.field_id.deref()
     }
     /// <p>The custom label of the pivot table field.</p>
-    pub fn custom_label(&self) -> ::std::option::Option<&str> {
+    pub fn custom_label(&self) -> ::std::option::Option<& str> {
         self.custom_label.as_deref()
     }
     /// <p>The visibility of the pivot table field.</p>
-    pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+    pub fn visibility(&self) -> ::std::option::Option<& crate::types::Visibility> {
         self.visibility.as_ref()
     }
 }
@@ -50,8 +49,7 @@ impl PivotTableFieldOptionBuilder {
     }
     /// <p>The field ID of the pivot table field.</p>
     pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_id = input;
-        self
+        self.field_id = input; self
     }
     /// <p>The field ID of the pivot table field.</p>
     pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl PivotTableFieldOptionBuilder {
     }
     /// <p>The custom label of the pivot table field.</p>
     pub fn set_custom_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_label = input;
-        self
+        self.custom_label = input; self
     }
     /// <p>The custom label of the pivot table field.</p>
     pub fn get_custom_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +75,7 @@ impl PivotTableFieldOptionBuilder {
     }
     /// <p>The visibility of the pivot table field.</p>
     pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
-        self.visibility = input;
-        self
+        self.visibility = input; self
     }
     /// <p>The visibility of the pivot table field.</p>
     pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
@@ -89,15 +85,19 @@ impl PivotTableFieldOptionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`field_id`](crate::types::builders::PivotTableFieldOptionBuilder::field_id)
     pub fn build(self) -> ::std::result::Result<crate::types::PivotTableFieldOption, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PivotTableFieldOption {
-            field_id: self.field_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "field_id",
-                    "field_id was not specified but it is required when building PivotTableFieldOption",
-                )
-            })?,
-            custom_label: self.custom_label,
-            visibility: self.visibility,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PivotTableFieldOption {
+                field_id: self.field_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("field_id", "field_id was not specified but it is required when building PivotTableFieldOption")
+                    )?
+                ,
+                custom_label: self.custom_label
+                ,
+                visibility: self.visibility
+                ,
+            }
+        )
     }
 }
+

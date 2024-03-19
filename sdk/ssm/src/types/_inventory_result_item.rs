@@ -3,7 +3,7 @@
 /// <p>The inventory result item.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InventoryResultItem {
+pub struct InventoryResultItem  {
     /// <p>The name of the inventory result item type.</p>
     pub type_name: ::std::string::String,
     /// <p>The schema version for the inventory result item/</p>
@@ -13,31 +13,28 @@ pub struct InventoryResultItem {
     /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory information. The PutInventory API doesn't update the inventory item type contents if the MD5 hash hasn't changed since last update.</p>
     pub content_hash: ::std::option::Option<::std::string::String>,
     /// <p>Contains all the inventory data of the item type. Results include attribute names and values.</p>
-    pub content: ::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub content: ::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl InventoryResultItem {
+impl  InventoryResultItem  {
     /// <p>The name of the inventory result item type.</p>
-    pub fn type_name(&self) -> &str {
-        use std::ops::Deref;
-        self.type_name.deref()
+    pub fn type_name(&self) -> & str {
+        use std::ops::Deref; self.type_name.deref()
     }
     /// <p>The schema version for the inventory result item/</p>
-    pub fn schema_version(&self) -> &str {
-        use std::ops::Deref;
-        self.schema_version.deref()
+    pub fn schema_version(&self) -> & str {
+        use std::ops::Deref; self.schema_version.deref()
     }
     /// <p>The time inventory item data was captured.</p>
-    pub fn capture_time(&self) -> ::std::option::Option<&str> {
+    pub fn capture_time(&self) -> ::std::option::Option<& str> {
         self.capture_time.as_deref()
     }
     /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory information. The PutInventory API doesn't update the inventory item type contents if the MD5 hash hasn't changed since last update.</p>
-    pub fn content_hash(&self) -> ::std::option::Option<&str> {
+    pub fn content_hash(&self) -> ::std::option::Option<& str> {
         self.content_hash.as_deref()
     }
     /// <p>Contains all the inventory data of the item type. Results include attribute names and values.</p>
-    pub fn content(&self) -> &[::std::collections::HashMap<::std::string::String, ::std::string::String>] {
-        use std::ops::Deref;
-        self.content.deref()
+    pub fn content(&self) -> & [::std::collections::HashMap::<::std::string::String, ::std::string::String>] {
+        use std::ops::Deref; self.content.deref()
     }
 }
 impl InventoryResultItem {
@@ -55,7 +52,7 @@ pub struct InventoryResultItemBuilder {
     pub(crate) schema_version: ::std::option::Option<::std::string::String>,
     pub(crate) capture_time: ::std::option::Option<::std::string::String>,
     pub(crate) content_hash: ::std::option::Option<::std::string::String>,
-    pub(crate) content: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
+    pub(crate) content: ::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, ::std::string::String>>>,
 }
 impl InventoryResultItemBuilder {
     /// <p>The name of the inventory result item type.</p>
@@ -66,8 +63,7 @@ impl InventoryResultItemBuilder {
     }
     /// <p>The name of the inventory result item type.</p>
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_name = input;
-        self
+        self.type_name = input; self
     }
     /// <p>The name of the inventory result item type.</p>
     pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl InventoryResultItemBuilder {
     }
     /// <p>The schema version for the inventory result item/</p>
     pub fn set_schema_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_version = input;
-        self
+        self.schema_version = input; self
     }
     /// <p>The schema version for the inventory result item/</p>
     pub fn get_schema_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +90,7 @@ impl InventoryResultItemBuilder {
     }
     /// <p>The time inventory item data was captured.</p>
     pub fn set_capture_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.capture_time = input;
-        self
+        self.capture_time = input; self
     }
     /// <p>The time inventory item data was captured.</p>
     pub fn get_capture_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +103,7 @@ impl InventoryResultItemBuilder {
     }
     /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory information. The PutInventory API doesn't update the inventory item type contents if the MD5 hash hasn't changed since last update.</p>
     pub fn set_content_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_hash = input;
-        self
+        self.content_hash = input; self
     }
     /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory information. The PutInventory API doesn't update the inventory item type contents if the MD5 hash hasn't changed since last update.</p>
     pub fn get_content_hash(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,22 +114,18 @@ impl InventoryResultItemBuilder {
     /// To override the contents of this collection use [`set_content`](Self::set_content).
     ///
     /// <p>Contains all the inventory data of the item type. Results include attribute names and values.</p>
-    pub fn content(mut self, input: ::std::collections::HashMap<::std::string::String, ::std::string::String>) -> Self {
+    pub fn content(mut self, input: ::std::collections::HashMap::<::std::string::String, ::std::string::String>) -> Self {
         let mut v = self.content.unwrap_or_default();
-        v.push(input);
-        self.content = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.content = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains all the inventory data of the item type. Results include attribute names and values.</p>
-    pub fn set_content(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
-    ) -> Self {
-        self.content = input;
-        self
+    pub fn set_content(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, ::std::string::String>>>) -> Self {
+        self.content = input; self
     }
     /// <p>Contains all the inventory data of the item type. Results include attribute names and values.</p>
-    pub fn get_content(&self) -> &::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>> {
+    pub fn get_content(&self) -> &::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, ::std::string::String>>> {
         &self.content
     }
     /// Consumes the builder and constructs a [`InventoryResultItem`](crate::types::InventoryResultItem).
@@ -145,27 +134,29 @@ impl InventoryResultItemBuilder {
     /// - [`schema_version`](crate::types::builders::InventoryResultItemBuilder::schema_version)
     /// - [`content`](crate::types::builders::InventoryResultItemBuilder::content)
     pub fn build(self) -> ::std::result::Result<crate::types::InventoryResultItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::InventoryResultItem {
-            type_name: self.type_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "type_name",
-                    "type_name was not specified but it is required when building InventoryResultItem",
-                )
-            })?,
-            schema_version: self.schema_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "schema_version",
-                    "schema_version was not specified but it is required when building InventoryResultItem",
-                )
-            })?,
-            capture_time: self.capture_time,
-            content_hash: self.content_hash,
-            content: self.content.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "content",
-                    "content was not specified but it is required when building InventoryResultItem",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::InventoryResultItem {
+                type_name: self.type_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("type_name", "type_name was not specified but it is required when building InventoryResultItem")
+                    )?
+                ,
+                schema_version: self.schema_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("schema_version", "schema_version was not specified but it is required when building InventoryResultItem")
+                    )?
+                ,
+                capture_time: self.capture_time
+                ,
+                content_hash: self.content_hash
+                ,
+                content: self.content
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("content", "content was not specified but it is required when building InventoryResultItem")
+                    )?
+                ,
+            }
+        )
     }
 }
+

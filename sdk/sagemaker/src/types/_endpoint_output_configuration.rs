@@ -3,7 +3,7 @@
 /// <p>The endpoint configuration made by Inference Recommender during a recommendation job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EndpointOutputConfiguration {
+pub struct EndpointOutputConfiguration  {
     /// <p>The name of the endpoint made during a recommendation job.</p>
     pub endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the production variant (deployed model) made during a recommendation job.</p>
@@ -15,17 +15,17 @@ pub struct EndpointOutputConfiguration {
     /// <p>Specifies the serverless configuration for an endpoint variant.</p>
     pub serverless_config: ::std::option::Option<crate::types::ProductionVariantServerlessConfig>,
 }
-impl EndpointOutputConfiguration {
+impl  EndpointOutputConfiguration  {
     /// <p>The name of the endpoint made during a recommendation job.</p>
-    pub fn endpoint_name(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_name(&self) -> ::std::option::Option<& str> {
         self.endpoint_name.as_deref()
     }
     /// <p>The name of the production variant (deployed model) made during a recommendation job.</p>
-    pub fn variant_name(&self) -> ::std::option::Option<&str> {
+    pub fn variant_name(&self) -> ::std::option::Option<& str> {
         self.variant_name.as_deref()
     }
     /// <p>The instance type recommended by Amazon SageMaker Inference Recommender.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::ProductionVariantInstanceType> {
+    pub fn instance_type(&self) -> ::std::option::Option<& crate::types::ProductionVariantInstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>The number of instances recommended to launch initially.</p>
@@ -33,7 +33,7 @@ impl EndpointOutputConfiguration {
         self.initial_instance_count
     }
     /// <p>Specifies the serverless configuration for an endpoint variant.</p>
-    pub fn serverless_config(&self) -> ::std::option::Option<&crate::types::ProductionVariantServerlessConfig> {
+    pub fn serverless_config(&self) -> ::std::option::Option<& crate::types::ProductionVariantServerlessConfig> {
         self.serverless_config.as_ref()
     }
 }
@@ -63,8 +63,7 @@ impl EndpointOutputConfigurationBuilder {
     }
     /// <p>The name of the endpoint made during a recommendation job.</p>
     pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_name = input;
-        self
+        self.endpoint_name = input; self
     }
     /// <p>The name of the endpoint made during a recommendation job.</p>
     pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +77,7 @@ impl EndpointOutputConfigurationBuilder {
     }
     /// <p>The name of the production variant (deployed model) made during a recommendation job.</p>
     pub fn set_variant_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.variant_name = input;
-        self
+        self.variant_name = input; self
     }
     /// <p>The name of the production variant (deployed model) made during a recommendation job.</p>
     pub fn get_variant_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +90,7 @@ impl EndpointOutputConfigurationBuilder {
     }
     /// <p>The instance type recommended by Amazon SageMaker Inference Recommender.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::ProductionVariantInstanceType>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The instance type recommended by Amazon SageMaker Inference Recommender.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::ProductionVariantInstanceType> {
@@ -106,8 +103,7 @@ impl EndpointOutputConfigurationBuilder {
     }
     /// <p>The number of instances recommended to launch initially.</p>
     pub fn set_initial_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.initial_instance_count = input;
-        self
+        self.initial_instance_count = input; self
     }
     /// <p>The number of instances recommended to launch initially.</p>
     pub fn get_initial_instance_count(&self) -> &::std::option::Option<i32> {
@@ -120,8 +116,7 @@ impl EndpointOutputConfigurationBuilder {
     }
     /// <p>Specifies the serverless configuration for an endpoint variant.</p>
     pub fn set_serverless_config(mut self, input: ::std::option::Option<crate::types::ProductionVariantServerlessConfig>) -> Self {
-        self.serverless_config = input;
-        self
+        self.serverless_config = input; self
     }
     /// <p>Specifies the serverless configuration for an endpoint variant.</p>
     pub fn get_serverless_config(&self) -> &::std::option::Option<crate::types::ProductionVariantServerlessConfig> {
@@ -130,11 +125,17 @@ impl EndpointOutputConfigurationBuilder {
     /// Consumes the builder and constructs a [`EndpointOutputConfiguration`](crate::types::EndpointOutputConfiguration).
     pub fn build(self) -> crate::types::EndpointOutputConfiguration {
         crate::types::EndpointOutputConfiguration {
-            endpoint_name: self.endpoint_name,
-            variant_name: self.variant_name,
-            instance_type: self.instance_type,
-            initial_instance_count: self.initial_instance_count,
-            serverless_config: self.serverless_config,
+            endpoint_name: self.endpoint_name
+            ,
+            variant_name: self.variant_name
+            ,
+            instance_type: self.instance_type
+            ,
+            initial_instance_count: self.initial_instance_count
+            ,
+            serverless_config: self.serverless_config
+            ,
         }
     }
 }
+

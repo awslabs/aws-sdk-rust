@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListKafkaVersions`](crate::operation::list_kafka_versions::builders::ListKafkaVersionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_kafka_versions::builders::ListKafkaVersionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_kafka_versions::builders::ListKafkaVersionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_kafka_versions::builders::ListKafkaVersionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_kafka_versions::builders::ListKafkaVersionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_kafka_versions::builders::ListKafkaVersionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p><br>
-    /// - On success, responds with [`ListKafkaVersionsOutput`](crate::operation::list_kafka_versions::ListKafkaVersionsOutput) with field(s):
+                            /// - On success, responds with [`ListKafkaVersionsOutput`](crate::operation::list_kafka_versions::ListKafkaVersionsOutput) with field(s):
     ///   - [`kafka_versions(Option<Vec::<KafkaVersion>>)`](crate::operation::list_kafka_versions::ListKafkaVersionsOutput::kafka_versions): (undocumented)
     ///   - [`next_token(Option<String>)`](crate::operation::list_kafka_versions::ListKafkaVersionsOutput::next_token): (undocumented)
-    /// - On failure, responds with [`SdkError<ListKafkaVersionsError>`](crate::operation::list_kafka_versions::ListKafkaVersionsError)
+                            /// - On failure, responds with [`SdkError<ListKafkaVersionsError>`](crate::operation::list_kafka_versions::ListKafkaVersionsError)
     pub fn list_kafka_versions(&self) -> crate::operation::list_kafka_versions::builders::ListKafkaVersionsFluentBuilder {
-        crate::operation::list_kafka_versions::builders::ListKafkaVersionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_kafka_versions::builders::ListKafkaVersionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

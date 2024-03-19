@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListContacts`](crate::operation::list_contacts::builders::ListContactsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_contacts::builders::ListContactsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`contact_list_name(impl Into<String>)`](crate::operation::list_contacts::builders::ListContactsFluentBuilder::contact_list_name) / [`set_contact_list_name(Option<String>)`](crate::operation::list_contacts::builders::ListContactsFluentBuilder::set_contact_list_name):<br>required: **true**<br><p>The name of the contact list.</p><br>
     ///   - [`filter(ListContactsFilter)`](crate::operation::list_contacts::builders::ListContactsFluentBuilder::filter) / [`set_filter(Option<ListContactsFilter>)`](crate::operation::list_contacts::builders::ListContactsFluentBuilder::set_filter):<br>required: **false**<br><p>A filter that can be applied to a list of contacts.</p><br>
     ///   - [`page_size(i32)`](crate::operation::list_contacts::builders::ListContactsFluentBuilder::page_size) / [`set_page_size(Option<i32>)`](crate::operation::list_contacts::builders::ListContactsFluentBuilder::set_page_size):<br>required: **false**<br><p>The number of contacts that may be returned at once, which is dependent on if there are more or less contacts than the value of the PageSize. Use this parameter to paginate results. If additional contacts exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional contacts.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_contacts::builders::ListContactsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_contacts::builders::ListContactsFluentBuilder::set_next_token):<br>required: **false**<br><p>A string token indicating that there might be additional contacts available to be listed. Use the token provided in the Response to use in the subsequent call to ListContacts with the same parameters to retrieve the next page of contacts.</p><br>
-    /// - On success, responds with [`ListContactsOutput`](crate::operation::list_contacts::ListContactsOutput) with field(s):
+                            /// - On success, responds with [`ListContactsOutput`](crate::operation::list_contacts::ListContactsOutput) with field(s):
     ///   - [`contacts(Option<Vec::<Contact>>)`](crate::operation::list_contacts::ListContactsOutput::contacts): <p>The contacts present in a specific contact list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_contacts::ListContactsOutput::next_token): <p>A string token indicating that there might be additional contacts available to be listed. Copy this token to a subsequent call to <code>ListContacts</code> with the same parameters to retrieve the next page of contacts.</p>
-    /// - On failure, responds with [`SdkError<ListContactsError>`](crate::operation::list_contacts::ListContactsError)
+                            /// - On failure, responds with [`SdkError<ListContactsError>`](crate::operation::list_contacts::ListContactsError)
     pub fn list_contacts(&self) -> crate::operation::list_contacts::builders::ListContactsFluentBuilder {
-        crate::operation::list_contacts::builders::ListContactsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_contacts::builders::ListContactsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

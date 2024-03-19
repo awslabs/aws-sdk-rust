@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveWorkloadInput {
+pub struct RemoveWorkloadInput  {
     /// <p>The name of the resource group.</p>
     pub resource_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the component.</p>
@@ -10,17 +10,17 @@ pub struct RemoveWorkloadInput {
     /// <p>The ID of the workload.</p>
     pub workload_id: ::std::option::Option<::std::string::String>,
 }
-impl RemoveWorkloadInput {
+impl  RemoveWorkloadInput  {
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_group_name(&self) -> ::std::option::Option<& str> {
         self.resource_group_name.as_deref()
     }
     /// <p>The name of the component.</p>
-    pub fn component_name(&self) -> ::std::option::Option<&str> {
+    pub fn component_name(&self) -> ::std::option::Option<& str> {
         self.component_name.as_deref()
     }
     /// <p>The ID of the workload.</p>
-    pub fn workload_id(&self) -> ::std::option::Option<&str> {
+    pub fn workload_id(&self) -> ::std::option::Option<& str> {
         self.workload_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl RemoveWorkloadInputBuilder {
     }
     /// <p>The name of the resource group.</p>
     pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_group_name = input;
-        self
+        self.resource_group_name = input; self
     }
     /// <p>The name of the resource group.</p>
     pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl RemoveWorkloadInputBuilder {
     }
     /// <p>The name of the component.</p>
     pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_name = input;
-        self
+        self.component_name = input; self
     }
     /// <p>The name of the component.</p>
     pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,21 +76,24 @@ impl RemoveWorkloadInputBuilder {
     }
     /// <p>The ID of the workload.</p>
     pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_id = input;
-        self
+        self.workload_id = input; self
     }
     /// <p>The ID of the workload.</p>
     pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.workload_id
     }
     /// Consumes the builder and constructs a [`RemoveWorkloadInput`](crate::operation::remove_workload::RemoveWorkloadInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::remove_workload::RemoveWorkloadInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::remove_workload::RemoveWorkloadInput {
-            resource_group_name: self.resource_group_name,
-            component_name: self.component_name,
-            workload_id: self.workload_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_workload::RemoveWorkloadInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::remove_workload::RemoveWorkloadInput {
+                resource_group_name: self.resource_group_name
+                ,
+                component_name: self.component_name
+                ,
+                workload_id: self.workload_id
+                ,
+            }
+        )
     }
 }
+

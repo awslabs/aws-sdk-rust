@@ -3,16 +3,17 @@
 /// <p>Contains any warnings returned by the <code>GetTemplateSummary</code> API action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Warnings {
+pub struct Warnings  {
     /// <p>A list of all of the unrecognized resource types. This is only returned if the <code>TemplateSummaryConfig</code> parameter has the <code>TreatUnrecognizedResourceTypesAsWarning</code> configuration set to <code>True</code>.</p>
-    pub unrecognized_resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub unrecognized_resource_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl Warnings {
+impl  Warnings  {
     /// <p>A list of all of the unrecognized resource types. This is only returned if the <code>TemplateSummaryConfig</code> parameter has the <code>TreatUnrecognizedResourceTypesAsWarning</code> configuration set to <code>True</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unrecognized_resource_types.is_none()`.
-    pub fn unrecognized_resource_types(&self) -> &[::std::string::String] {
-        self.unrecognized_resource_types.as_deref().unwrap_or_default()
+    pub fn unrecognized_resource_types(&self) -> & [::std::string::String] {
+        self.unrecognized_resource_types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Warnings {
@@ -26,7 +27,7 @@ impl Warnings {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WarningsBuilder {
-    pub(crate) unrecognized_resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) unrecognized_resource_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl WarningsBuilder {
     /// Appends an item to `unrecognized_resource_types`.
@@ -36,23 +37,24 @@ impl WarningsBuilder {
     /// <p>A list of all of the unrecognized resource types. This is only returned if the <code>TemplateSummaryConfig</code> parameter has the <code>TreatUnrecognizedResourceTypesAsWarning</code> configuration set to <code>True</code>.</p>
     pub fn unrecognized_resource_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.unrecognized_resource_types.unwrap_or_default();
-        v.push(input.into());
-        self.unrecognized_resource_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.unrecognized_resource_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of all of the unrecognized resource types. This is only returned if the <code>TemplateSummaryConfig</code> parameter has the <code>TreatUnrecognizedResourceTypesAsWarning</code> configuration set to <code>True</code>.</p>
-    pub fn set_unrecognized_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.unrecognized_resource_types = input;
-        self
+    pub fn set_unrecognized_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.unrecognized_resource_types = input; self
     }
     /// <p>A list of all of the unrecognized resource types. This is only returned if the <code>TemplateSummaryConfig</code> parameter has the <code>TreatUnrecognizedResourceTypesAsWarning</code> configuration set to <code>True</code>.</p>
-    pub fn get_unrecognized_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_unrecognized_resource_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.unrecognized_resource_types
     }
     /// Consumes the builder and constructs a [`Warnings`](crate::types::Warnings).
     pub fn build(self) -> crate::types::Warnings {
         crate::types::Warnings {
-            unrecognized_resource_types: self.unrecognized_resource_types,
+            unrecognized_resource_types: self.unrecognized_resource_types
+            ,
         }
     }
 }
+

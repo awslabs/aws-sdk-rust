@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetDesiredCapacityInput {
+pub struct SetDesiredCapacityInput  {
     /// <p>The name of the Auto Scaling group.</p>
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The desired capacity is the initial capacity of the Auto Scaling group after this operation completes and the capacity it attempts to maintain.</p>
@@ -10,9 +10,9 @@ pub struct SetDesiredCapacityInput {
     /// <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating a scaling activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling does not honor the cooldown period during manual scaling activities.</p>
     pub honor_cooldown: ::std::option::Option<bool>,
 }
-impl SetDesiredCapacityInput {
+impl  SetDesiredCapacityInput  {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<& str> {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>The desired capacity is the initial capacity of the Auto Scaling group after this operation completes and the capacity it attempts to maintain.</p>
@@ -48,8 +48,7 @@ impl SetDesiredCapacityInputBuilder {
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auto_scaling_group_name = input;
-        self
+        self.auto_scaling_group_name = input; self
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl SetDesiredCapacityInputBuilder {
     }
     /// <p>The desired capacity is the initial capacity of the Auto Scaling group after this operation completes and the capacity it attempts to maintain.</p>
     pub fn set_desired_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.desired_capacity = input;
-        self
+        self.desired_capacity = input; self
     }
     /// <p>The desired capacity is the initial capacity of the Auto Scaling group after this operation completes and the capacity it attempts to maintain.</p>
     pub fn get_desired_capacity(&self) -> &::std::option::Option<i32> {
@@ -77,22 +75,24 @@ impl SetDesiredCapacityInputBuilder {
     }
     /// <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating a scaling activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling does not honor the cooldown period during manual scaling activities.</p>
     pub fn set_honor_cooldown(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.honor_cooldown = input;
-        self
+        self.honor_cooldown = input; self
     }
     /// <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating a scaling activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling does not honor the cooldown period during manual scaling activities.</p>
     pub fn get_honor_cooldown(&self) -> &::std::option::Option<bool> {
         &self.honor_cooldown
     }
     /// Consumes the builder and constructs a [`SetDesiredCapacityInput`](crate::operation::set_desired_capacity::SetDesiredCapacityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::set_desired_capacity::SetDesiredCapacityInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::set_desired_capacity::SetDesiredCapacityInput {
-            auto_scaling_group_name: self.auto_scaling_group_name,
-            desired_capacity: self.desired_capacity,
-            honor_cooldown: self.honor_cooldown,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_desired_capacity::SetDesiredCapacityInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::set_desired_capacity::SetDesiredCapacityInput {
+                auto_scaling_group_name: self.auto_scaling_group_name
+                ,
+                desired_capacity: self.desired_capacity
+                ,
+                honor_cooldown: self.honor_cooldown
+                ,
+            }
+        )
     }
 }
+

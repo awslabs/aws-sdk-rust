@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let initiatedby = unimplemented!();
 /// match initiatedby {
@@ -37,16 +37,14 @@
 /// Specifically, when `initiatedby` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InitiatedBy::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum InitiatedBy {
     #[allow(missing_docs)] // documentation missing in model
     AssociateNetworkRecovery,
@@ -68,92 +66,83 @@ pub enum InitiatedBy {
     UpdateNetworkRecovery,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for InitiatedBy {
-    fn from(s: &str) -> Self {
-        match s {
-            "ASSOCIATE_NETWORK_RECOVERY" => InitiatedBy::AssociateNetworkRecovery,
-            "CREATE_NETWORK_RECOVERY" => InitiatedBy::CreateNetworkRecovery,
-            "DIAGNOSTIC" => InitiatedBy::Diagnostic,
-            "FAILBACK" => InitiatedBy::Failback,
-            "START_DRILL" => InitiatedBy::StartDrill,
-            "START_RECOVERY" => InitiatedBy::StartRecovery,
-            "TARGET_ACCOUNT" => InitiatedBy::TargetAccount,
-            "TERMINATE_RECOVERY_INSTANCES" => InitiatedBy::TerminateRecoveryInstances,
-            "UPDATE_NETWORK_RECOVERY" => InitiatedBy::UpdateNetworkRecovery,
-            other => InitiatedBy::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ASSOCIATE_NETWORK_RECOVERY" => InitiatedBy::AssociateNetworkRecovery,
+"CREATE_NETWORK_RECOVERY" => InitiatedBy::CreateNetworkRecovery,
+"DIAGNOSTIC" => InitiatedBy::Diagnostic,
+"FAILBACK" => InitiatedBy::Failback,
+"START_DRILL" => InitiatedBy::StartDrill,
+"START_RECOVERY" => InitiatedBy::StartRecovery,
+"TARGET_ACCOUNT" => InitiatedBy::TargetAccount,
+"TERMINATE_RECOVERY_INSTANCES" => InitiatedBy::TerminateRecoveryInstances,
+"UPDATE_NETWORK_RECOVERY" => InitiatedBy::UpdateNetworkRecovery,
+other => InitiatedBy::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for InitiatedBy {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(InitiatedBy::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(InitiatedBy::from(s))
+                    }
+                }
 impl InitiatedBy {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            InitiatedBy::AssociateNetworkRecovery => "ASSOCIATE_NETWORK_RECOVERY",
-            InitiatedBy::CreateNetworkRecovery => "CREATE_NETWORK_RECOVERY",
-            InitiatedBy::Diagnostic => "DIAGNOSTIC",
-            InitiatedBy::Failback => "FAILBACK",
-            InitiatedBy::StartDrill => "START_DRILL",
-            InitiatedBy::StartRecovery => "START_RECOVERY",
-            InitiatedBy::TargetAccount => "TARGET_ACCOUNT",
-            InitiatedBy::TerminateRecoveryInstances => "TERMINATE_RECOVERY_INSTANCES",
-            InitiatedBy::UpdateNetworkRecovery => "UPDATE_NETWORK_RECOVERY",
-            InitiatedBy::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ASSOCIATE_NETWORK_RECOVERY",
-            "CREATE_NETWORK_RECOVERY",
-            "DIAGNOSTIC",
-            "FAILBACK",
-            "START_DRILL",
-            "START_RECOVERY",
-            "TARGET_ACCOUNT",
-            "TERMINATE_RECOVERY_INSTANCES",
-            "UPDATE_NETWORK_RECOVERY",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    InitiatedBy::AssociateNetworkRecovery => "ASSOCIATE_NETWORK_RECOVERY",
+    InitiatedBy::CreateNetworkRecovery => "CREATE_NETWORK_RECOVERY",
+    InitiatedBy::Diagnostic => "DIAGNOSTIC",
+    InitiatedBy::Failback => "FAILBACK",
+    InitiatedBy::StartDrill => "START_DRILL",
+    InitiatedBy::StartRecovery => "START_RECOVERY",
+    InitiatedBy::TargetAccount => "TARGET_ACCOUNT",
+    InitiatedBy::TerminateRecoveryInstances => "TERMINATE_RECOVERY_INSTANCES",
+    InitiatedBy::UpdateNetworkRecovery => "UPDATE_NETWORK_RECOVERY",
+    InitiatedBy::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ASSOCIATE_NETWORK_RECOVERY", "CREATE_NETWORK_RECOVERY", "DIAGNOSTIC", "FAILBACK", "START_DRILL", "START_RECOVERY", "TARGET_ACCOUNT", "TERMINATE_RECOVERY_INSTANCES", "UPDATE_NETWORK_RECOVERY"]
+                }
+            }
 impl ::std::convert::AsRef<str> for InitiatedBy {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl InitiatedBy {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for InitiatedBy {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            InitiatedBy::AssociateNetworkRecovery => write!(f, "ASSOCIATE_NETWORK_RECOVERY"),
-            InitiatedBy::CreateNetworkRecovery => write!(f, "CREATE_NETWORK_RECOVERY"),
-            InitiatedBy::Diagnostic => write!(f, "DIAGNOSTIC"),
-            InitiatedBy::Failback => write!(f, "FAILBACK"),
-            InitiatedBy::StartDrill => write!(f, "START_DRILL"),
-            InitiatedBy::StartRecovery => write!(f, "START_RECOVERY"),
-            InitiatedBy::TargetAccount => write!(f, "TARGET_ACCOUNT"),
-            InitiatedBy::TerminateRecoveryInstances => write!(f, "TERMINATE_RECOVERY_INSTANCES"),
-            InitiatedBy::UpdateNetworkRecovery => write!(f, "UPDATE_NETWORK_RECOVERY"),
-            InitiatedBy::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                InitiatedBy::AssociateNetworkRecovery => write!(f, "ASSOCIATE_NETWORK_RECOVERY"),
+InitiatedBy::CreateNetworkRecovery => write!(f, "CREATE_NETWORK_RECOVERY"),
+InitiatedBy::Diagnostic => write!(f, "DIAGNOSTIC"),
+InitiatedBy::Failback => write!(f, "FAILBACK"),
+InitiatedBy::StartDrill => write!(f, "START_DRILL"),
+InitiatedBy::StartRecovery => write!(f, "START_RECOVERY"),
+InitiatedBy::TargetAccount => write!(f, "TARGET_ACCOUNT"),
+InitiatedBy::TerminateRecoveryInstances => write!(f, "TERMINATE_RECOVERY_INSTANCES"),
+InitiatedBy::UpdateNetworkRecovery => write!(f, "UPDATE_NETWORK_RECOVERY"),
+InitiatedBy::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

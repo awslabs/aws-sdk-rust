@@ -3,22 +3,20 @@
 /// <p>Query argument-profile mapping for field-level encryption.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QueryArgProfile {
+pub struct QueryArgProfile  {
     /// <p>Query argument for field-level encryption query argument-profile mapping.</p>
     pub query_arg: ::std::string::String,
     /// <p>ID of profile to use for field-level encryption query argument-profile mapping</p>
     pub profile_id: ::std::string::String,
 }
-impl QueryArgProfile {
+impl  QueryArgProfile  {
     /// <p>Query argument for field-level encryption query argument-profile mapping.</p>
-    pub fn query_arg(&self) -> &str {
-        use std::ops::Deref;
-        self.query_arg.deref()
+    pub fn query_arg(&self) -> & str {
+        use std::ops::Deref; self.query_arg.deref()
     }
     /// <p>ID of profile to use for field-level encryption query argument-profile mapping</p>
-    pub fn profile_id(&self) -> &str {
-        use std::ops::Deref;
-        self.profile_id.deref()
+    pub fn profile_id(&self) -> & str {
+        use std::ops::Deref; self.profile_id.deref()
     }
 }
 impl QueryArgProfile {
@@ -44,8 +42,7 @@ impl QueryArgProfileBuilder {
     }
     /// <p>Query argument for field-level encryption query argument-profile mapping.</p>
     pub fn set_query_arg(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_arg = input;
-        self
+        self.query_arg = input; self
     }
     /// <p>Query argument for field-level encryption query argument-profile mapping.</p>
     pub fn get_query_arg(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl QueryArgProfileBuilder {
     }
     /// <p>ID of profile to use for field-level encryption query argument-profile mapping</p>
     pub fn set_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_id = input;
-        self
+        self.profile_id = input; self
     }
     /// <p>ID of profile to use for field-level encryption query argument-profile mapping</p>
     pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl QueryArgProfileBuilder {
     /// - [`query_arg`](crate::types::builders::QueryArgProfileBuilder::query_arg)
     /// - [`profile_id`](crate::types::builders::QueryArgProfileBuilder::profile_id)
     pub fn build(self) -> ::std::result::Result<crate::types::QueryArgProfile, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::QueryArgProfile {
-            query_arg: self.query_arg.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "query_arg",
-                    "query_arg was not specified but it is required when building QueryArgProfile",
-                )
-            })?,
-            profile_id: self.profile_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "profile_id",
-                    "profile_id was not specified but it is required when building QueryArgProfile",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::QueryArgProfile {
+                query_arg: self.query_arg
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("query_arg", "query_arg was not specified but it is required when building QueryArgProfile")
+                    )?
+                ,
+                profile_id: self.profile_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("profile_id", "profile_id was not specified but it is required when building QueryArgProfile")
+                    )?
+                ,
+            }
+        )
     }
 }
+

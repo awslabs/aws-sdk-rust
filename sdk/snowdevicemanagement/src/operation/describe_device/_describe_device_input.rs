@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDeviceInput {
+pub struct DescribeDeviceInput  {
     /// <p>The ID of the device that you are checking the information of.</p>
     pub managed_device_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeDeviceInput {
+impl  DescribeDeviceInput  {
     /// <p>The ID of the device that you are checking the information of.</p>
-    pub fn managed_device_id(&self) -> ::std::option::Option<&str> {
+    pub fn managed_device_id(&self) -> ::std::option::Option<& str> {
         self.managed_device_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DescribeDeviceInputBuilder {
     }
     /// <p>The ID of the device that you are checking the information of.</p>
     pub fn set_managed_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.managed_device_id = input;
-        self
+        self.managed_device_id = input; self
     }
     /// <p>The ID of the device that you are checking the information of.</p>
     pub fn get_managed_device_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.managed_device_id
     }
     /// Consumes the builder and constructs a [`DescribeDeviceInput`](crate::operation::describe_device::DescribeDeviceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_device::DescribeDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_device::DescribeDeviceInput {
-            managed_device_id: self.managed_device_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_device::DescribeDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_device::DescribeDeviceInput {
+                managed_device_id: self.managed_device_id
+                ,
+            }
+        )
     }
 }
+

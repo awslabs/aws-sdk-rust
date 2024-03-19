@@ -5,54 +5,50 @@ pub use crate::operation::update_table::_update_table_input::UpdateTableInputBui
 
 impl UpdateTableInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_table::UpdateTableOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_table::UpdateTableError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_table();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_table::UpdateTableOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_table::UpdateTableError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_table();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateTable`.
-///
+/// 
 /// <p>Adds new columns to the table or updates one of the table's settings, for example capacity mode, auto scaling, encryption, point-in-time recovery, or ttl settings. Note that you can only update one specific table setting per update operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateTableFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_table::builders::UpdateTableInputBuilder,
+                    inner: crate::operation::update_table::builders::UpdateTableInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_table::UpdateTableOutput,
-        crate::operation::update_table::UpdateTableError,
-    > for UpdateTableFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_table::UpdateTableOutput,
-            crate::operation::update_table::UpdateTableError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_table::UpdateTableOutput,
+                    crate::operation::update_table::UpdateTableError,
+                > for UpdateTableFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_table::UpdateTableOutput,
+                        crate::operation::update_table::UpdateTableError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateTableFluentBuilder {
     /// Creates a new `UpdateTable`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl UpdateTableFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_table::UpdateTableOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_table::UpdateTableError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_table::UpdateTable::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_table::UpdateTable::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_table::UpdateTableOutput,
-        crate::operation::update_table::UpdateTableError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_table::UpdateTableOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_table::UpdateTableError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_table::UpdateTable::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_table::UpdateTable::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_table::UpdateTableOutput, crate::operation::update_table::UpdateTableError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the keyspace the specified table is stored in.</p>
     pub fn keyspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.keyspace_name(input.into());
@@ -158,7 +145,7 @@ impl UpdateTableFluentBuilder {
     /// <li>
     /// <p><code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p></li>
     /// </ul>
-    pub fn set_add_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnDefinition>>) -> Self {
+    pub fn set_add_columns(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnDefinition>>) -> Self {
         self.inner = self.inner.set_add_columns(input);
         self
     }
@@ -169,7 +156,7 @@ impl UpdateTableFluentBuilder {
     /// <li>
     /// <p><code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p></li>
     /// </ul>
-    pub fn get_add_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnDefinition>> {
+    pub fn get_add_columns(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ColumnDefinition>> {
         self.inner.get_add_columns()
     }
     /// <p>Modifies the read/write throughput capacity mode for the table. The options are:</p>
@@ -400,12 +387,13 @@ impl UpdateTableFluentBuilder {
         self
     }
     /// <p>The Region specific settings of a multi-Regional table.</p>
-    pub fn set_replica_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecification>>) -> Self {
+    pub fn set_replica_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicaSpecification>>) -> Self {
         self.inner = self.inner.set_replica_specifications(input);
         self
     }
     /// <p>The Region specific settings of a multi-Regional table.</p>
-    pub fn get_replica_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecification>> {
+    pub fn get_replica_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReplicaSpecification>> {
         self.inner.get_replica_specifications()
     }
 }
+

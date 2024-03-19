@@ -5,55 +5,51 @@ pub use crate::operation::test_authorization::_test_authorization_input::TestAut
 
 impl TestAuthorizationInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::test_authorization::TestAuthorizationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::test_authorization::TestAuthorizationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.test_authorization();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::test_authorization::TestAuthorizationOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::test_authorization::TestAuthorizationError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.test_authorization();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `TestAuthorization`.
-///
+/// 
 /// <p>Tests if a specified principal is authorized to perform an IoT action on a specified resource. Use this to test and debug the authorization behavior of devices that connect to the IoT device gateway.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">TestAuthorization</a> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TestAuthorizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::test_authorization::builders::TestAuthorizationInputBuilder,
+                    inner: crate::operation::test_authorization::builders::TestAuthorizationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::test_authorization::TestAuthorizationOutput,
-        crate::operation::test_authorization::TestAuthorizationError,
-    > for TestAuthorizationFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::test_authorization::TestAuthorizationOutput,
-            crate::operation::test_authorization::TestAuthorizationError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::test_authorization::TestAuthorizationOutput,
+                    crate::operation::test_authorization::TestAuthorizationError,
+                > for TestAuthorizationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::test_authorization::TestAuthorizationOutput,
+                        crate::operation::test_authorization::TestAuthorizationError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl TestAuthorizationFluentBuilder {
     /// Creates a new `TestAuthorization`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl TestAuthorizationFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::test_authorization::TestAuthorizationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::test_authorization::TestAuthorizationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::test_authorization::TestAuthorization::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::test_authorization::TestAuthorization::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::test_authorization::TestAuthorizationOutput,
-        crate::operation::test_authorization::TestAuthorizationError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::test_authorization::TestAuthorizationOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::test_authorization::TestAuthorizationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::test_authorization::TestAuthorization::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::test_authorization::TestAuthorization::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::test_authorization::TestAuthorizationOutput, crate::operation::test_authorization::TestAuthorizationError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
     pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.principal(input.into());
@@ -147,12 +134,12 @@ impl TestAuthorizationFluentBuilder {
         self
     }
     /// <p>A list of authorization info objects. Simulating authorization will create a response for each <code>authInfo</code> object in the list.</p>
-    pub fn set_auth_infos(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuthInfo>>) -> Self {
+    pub fn set_auth_infos(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AuthInfo>>) -> Self {
         self.inner = self.inner.set_auth_infos(input);
         self
     }
     /// <p>A list of authorization info objects. Simulating authorization will create a response for each <code>authInfo</code> object in the list.</p>
-    pub fn get_auth_infos(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthInfo>> {
+    pub fn get_auth_infos(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AuthInfo>> {
         self.inner.get_auth_infos()
     }
     /// <p>The MQTT client ID.</p>
@@ -179,12 +166,12 @@ impl TestAuthorizationFluentBuilder {
         self
     }
     /// <p>When testing custom authorization, the policies specified here are treated as if they are attached to the principal being authorized.</p>
-    pub fn set_policy_names_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_policy_names_to_add(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_policy_names_to_add(input);
         self
     }
     /// <p>When testing custom authorization, the policies specified here are treated as if they are attached to the principal being authorized.</p>
-    pub fn get_policy_names_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_policy_names_to_add(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_policy_names_to_add()
     }
     /// Appends an item to `policyNamesToSkip`.
@@ -197,12 +184,13 @@ impl TestAuthorizationFluentBuilder {
         self
     }
     /// <p>When testing custom authorization, the policies specified here are treated as if they are not attached to the principal being authorized.</p>
-    pub fn set_policy_names_to_skip(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_policy_names_to_skip(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_policy_names_to_skip(input);
         self
     }
     /// <p>When testing custom authorization, the policies specified here are treated as if they are not attached to the principal being authorized.</p>
-    pub fn get_policy_names_to_skip(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_policy_names_to_skip(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_policy_names_to_skip()
     }
 }
+

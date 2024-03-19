@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelMlDataProcessingJobOutput {
+pub struct CancelMlDataProcessingJobOutput  {
     /// <p>The status of the cancellation request.</p>
     pub status: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CancelMlDataProcessingJobOutput {
+impl  CancelMlDataProcessingJobOutput  {
     /// <p>The status of the cancellation request.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CancelMlDataProcessingJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CancelMlDataProcessingJobOutput {
     /// Creates a new builder-style object to manufacture [`CancelMlDataProcessingJobOutput`](crate::operation::cancel_ml_data_processing_job::CancelMlDataProcessingJobOutput).
     pub fn builder() -> crate::operation::cancel_ml_data_processing_job::builders::CancelMlDataProcessingJobOutputBuilder {
@@ -40,27 +40,28 @@ impl CancelMlDataProcessingJobOutputBuilder {
     }
     /// <p>The status of the cancellation request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the cancellation request.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CancelMlDataProcessingJobOutput`](crate::operation::cancel_ml_data_processing_job::CancelMlDataProcessingJobOutput).
     pub fn build(self) -> crate::operation::cancel_ml_data_processing_job::CancelMlDataProcessingJobOutput {
         crate::operation::cancel_ml_data_processing_job::CancelMlDataProcessingJobOutput {
-            status: self.status,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

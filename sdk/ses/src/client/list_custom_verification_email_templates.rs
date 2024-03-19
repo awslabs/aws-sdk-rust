@@ -2,19 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCustomVerificationEmailTemplates`](crate::operation::list_custom_verification_email_templates::builders::ListCustomVerificationEmailTemplatesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_custom_verification_email_templates::builders::ListCustomVerificationEmailTemplatesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_custom_verification_email_templates::builders::ListCustomVerificationEmailTemplatesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_custom_verification_email_templates::builders::ListCustomVerificationEmailTemplatesFluentBuilder::set_next_token):<br>required: **false**<br><p>An array the contains the name and creation time stamp for each template in your Amazon SES account.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_custom_verification_email_templates::builders::ListCustomVerificationEmailTemplatesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_custom_verification_email_templates::builders::ListCustomVerificationEmailTemplatesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of custom verification email templates to return. This value must be at least 1 and less than or equal to 50. If you do not specify a value, or if you specify a value less than 1 or greater than 50, the operation returns up to 50 results.</p><br>
-    /// - On success, responds with [`ListCustomVerificationEmailTemplatesOutput`](crate::operation::list_custom_verification_email_templates::ListCustomVerificationEmailTemplatesOutput) with field(s):
+                            /// - On success, responds with [`ListCustomVerificationEmailTemplatesOutput`](crate::operation::list_custom_verification_email_templates::ListCustomVerificationEmailTemplatesOutput) with field(s):
     ///   - [`custom_verification_email_templates(Option<Vec::<CustomVerificationEmailTemplate>>)`](crate::operation::list_custom_verification_email_templates::ListCustomVerificationEmailTemplatesOutput::custom_verification_email_templates): <p>A list of the custom verification email templates that exist in your account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_custom_verification_email_templates::ListCustomVerificationEmailTemplatesOutput::next_token): <p>A token indicating that there are additional custom verification email templates available to be listed. Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the next 50 custom verification email templates.</p>
-    /// - On failure, responds with [`SdkError<ListCustomVerificationEmailTemplatesError>`](crate::operation::list_custom_verification_email_templates::ListCustomVerificationEmailTemplatesError)
-    pub fn list_custom_verification_email_templates(
-        &self,
-    ) -> crate::operation::list_custom_verification_email_templates::builders::ListCustomVerificationEmailTemplatesFluentBuilder {
-        crate::operation::list_custom_verification_email_templates::builders::ListCustomVerificationEmailTemplatesFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<ListCustomVerificationEmailTemplatesError>`](crate::operation::list_custom_verification_email_templates::ListCustomVerificationEmailTemplatesError)
+    pub fn list_custom_verification_email_templates(&self) -> crate::operation::list_custom_verification_email_templates::builders::ListCustomVerificationEmailTemplatesFluentBuilder {
+                                crate::operation::list_custom_verification_email_templates::builders::ListCustomVerificationEmailTemplatesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

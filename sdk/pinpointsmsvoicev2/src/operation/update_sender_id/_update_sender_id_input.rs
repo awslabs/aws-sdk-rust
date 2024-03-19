@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSenderIdInput {
+pub struct UpdateSenderIdInput  {
     /// <p>The sender ID to update.</p>
     pub sender_id: ::std::option::Option<::std::string::String>,
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
@@ -10,13 +10,13 @@ pub struct UpdateSenderIdInput {
     /// <p>By default this is set to false. When set to true the sender ID can't be deleted.</p>
     pub deletion_protection_enabled: ::std::option::Option<bool>,
 }
-impl UpdateSenderIdInput {
+impl  UpdateSenderIdInput  {
     /// <p>The sender ID to update.</p>
-    pub fn sender_id(&self) -> ::std::option::Option<&str> {
+    pub fn sender_id(&self) -> ::std::option::Option<& str> {
         self.sender_id.as_deref()
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
-    pub fn iso_country_code(&self) -> ::std::option::Option<&str> {
+    pub fn iso_country_code(&self) -> ::std::option::Option<& str> {
         self.iso_country_code.as_deref()
     }
     /// <p>By default this is set to false. When set to true the sender ID can't be deleted.</p>
@@ -48,8 +48,7 @@ impl UpdateSenderIdInputBuilder {
     }
     /// <p>The sender ID to update.</p>
     pub fn set_sender_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sender_id = input;
-        self
+        self.sender_id = input; self
     }
     /// <p>The sender ID to update.</p>
     pub fn get_sender_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateSenderIdInputBuilder {
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     pub fn set_iso_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iso_country_code = input;
-        self
+        self.iso_country_code = input; self
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     pub fn get_iso_country_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,21 +75,24 @@ impl UpdateSenderIdInputBuilder {
     }
     /// <p>By default this is set to false. When set to true the sender ID can't be deleted.</p>
     pub fn set_deletion_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.deletion_protection_enabled = input;
-        self
+        self.deletion_protection_enabled = input; self
     }
     /// <p>By default this is set to false. When set to true the sender ID can't be deleted.</p>
     pub fn get_deletion_protection_enabled(&self) -> &::std::option::Option<bool> {
         &self.deletion_protection_enabled
     }
     /// Consumes the builder and constructs a [`UpdateSenderIdInput`](crate::operation::update_sender_id::UpdateSenderIdInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_sender_id::UpdateSenderIdInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_sender_id::UpdateSenderIdInput {
-            sender_id: self.sender_id,
-            iso_country_code: self.iso_country_code,
-            deletion_protection_enabled: self.deletion_protection_enabled,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_sender_id::UpdateSenderIdInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_sender_id::UpdateSenderIdInput {
+                sender_id: self.sender_id
+                ,
+                iso_country_code: self.iso_country_code
+                ,
+                deletion_protection_enabled: self.deletion_protection_enabled
+                ,
+            }
+        )
     }
 }
+

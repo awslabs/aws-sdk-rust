@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetLinkAssociations`](crate::operation::get_link_associations::builders::GetLinkAssociationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_link_associations::builders::GetLinkAssociationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`global_network_id(impl Into<String>)`](crate::operation::get_link_associations::builders::GetLinkAssociationsFluentBuilder::global_network_id) / [`set_global_network_id(Option<String>)`](crate::operation::get_link_associations::builders::GetLinkAssociationsFluentBuilder::set_global_network_id):<br>required: **true**<br><p>The ID of the global network.</p><br>
     ///   - [`device_id(impl Into<String>)`](crate::operation::get_link_associations::builders::GetLinkAssociationsFluentBuilder::device_id) / [`set_device_id(Option<String>)`](crate::operation::get_link_associations::builders::GetLinkAssociationsFluentBuilder::set_device_id):<br>required: **false**<br><p>The ID of the device.</p><br>
     ///   - [`link_id(impl Into<String>)`](crate::operation::get_link_associations::builders::GetLinkAssociationsFluentBuilder::link_id) / [`set_link_id(Option<String>)`](crate::operation::get_link_associations::builders::GetLinkAssociationsFluentBuilder::set_link_id):<br>required: **false**<br><p>The ID of the link.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_link_associations::builders::GetLinkAssociationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_link_associations::builders::GetLinkAssociationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_link_associations::builders::GetLinkAssociationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_link_associations::builders::GetLinkAssociationsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
-    /// - On success, responds with [`GetLinkAssociationsOutput`](crate::operation::get_link_associations::GetLinkAssociationsOutput) with field(s):
+                            /// - On success, responds with [`GetLinkAssociationsOutput`](crate::operation::get_link_associations::GetLinkAssociationsOutput) with field(s):
     ///   - [`link_associations(Option<Vec::<LinkAssociation>>)`](crate::operation::get_link_associations::GetLinkAssociationsOutput::link_associations): <p>The link associations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_link_associations::GetLinkAssociationsOutput::next_token): <p>The token for the next page of results.</p>
-    /// - On failure, responds with [`SdkError<GetLinkAssociationsError>`](crate::operation::get_link_associations::GetLinkAssociationsError)
+                            /// - On failure, responds with [`SdkError<GetLinkAssociationsError>`](crate::operation::get_link_associations::GetLinkAssociationsError)
     pub fn get_link_associations(&self) -> crate::operation::get_link_associations::builders::GetLinkAssociationsFluentBuilder {
-        crate::operation::get_link_associations::builders::GetLinkAssociationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_link_associations::builders::GetLinkAssociationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

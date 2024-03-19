@@ -3,13 +3,13 @@
 /// <p>Details about the runtime settings for the model that is deployed with the inference component.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InferenceComponentRuntimeConfigSummary {
+pub struct InferenceComponentRuntimeConfigSummary  {
     /// <p>The number of runtime copies of the model container that you requested to deploy with the inference component.</p>
     pub desired_copy_count: ::std::option::Option<i32>,
     /// <p>The number of runtime copies of the model container that are currently deployed.</p>
     pub current_copy_count: ::std::option::Option<i32>,
 }
-impl InferenceComponentRuntimeConfigSummary {
+impl  InferenceComponentRuntimeConfigSummary  {
     /// <p>The number of runtime copies of the model container that you requested to deploy with the inference component.</p>
     pub fn desired_copy_count(&self) -> ::std::option::Option<i32> {
         self.desired_copy_count
@@ -41,8 +41,7 @@ impl InferenceComponentRuntimeConfigSummaryBuilder {
     }
     /// <p>The number of runtime copies of the model container that you requested to deploy with the inference component.</p>
     pub fn set_desired_copy_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.desired_copy_count = input;
-        self
+        self.desired_copy_count = input; self
     }
     /// <p>The number of runtime copies of the model container that you requested to deploy with the inference component.</p>
     pub fn get_desired_copy_count(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl InferenceComponentRuntimeConfigSummaryBuilder {
     }
     /// <p>The number of runtime copies of the model container that are currently deployed.</p>
     pub fn set_current_copy_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.current_copy_count = input;
-        self
+        self.current_copy_count = input; self
     }
     /// <p>The number of runtime copies of the model container that are currently deployed.</p>
     pub fn get_current_copy_count(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl InferenceComponentRuntimeConfigSummaryBuilder {
     /// Consumes the builder and constructs a [`InferenceComponentRuntimeConfigSummary`](crate::types::InferenceComponentRuntimeConfigSummary).
     pub fn build(self) -> crate::types::InferenceComponentRuntimeConfigSummary {
         crate::types::InferenceComponentRuntimeConfigSummary {
-            desired_copy_count: self.desired_copy_count,
-            current_copy_count: self.current_copy_count,
+            desired_copy_count: self.desired_copy_count
+            ,
+            current_copy_count: self.current_copy_count
+            ,
         }
     }
 }
+

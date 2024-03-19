@@ -3,7 +3,7 @@
 /// <p>Import task.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportTask {
+pub struct ImportTask  {
     /// <p>Import task id.</p>
     pub import_id: ::std::option::Option<::std::string::String>,
     /// <p>Import task s3 bucket source.</p>
@@ -19,25 +19,25 @@ pub struct ImportTask {
     /// <p>Import task summary.</p>
     pub summary: ::std::option::Option<crate::types::ImportTaskSummary>,
 }
-impl ImportTask {
+impl  ImportTask  {
     /// <p>Import task id.</p>
-    pub fn import_id(&self) -> ::std::option::Option<&str> {
+    pub fn import_id(&self) -> ::std::option::Option<& str> {
         self.import_id.as_deref()
     }
     /// <p>Import task s3 bucket source.</p>
-    pub fn s3_bucket_source(&self) -> ::std::option::Option<&crate::types::S3BucketSource> {
+    pub fn s3_bucket_source(&self) -> ::std::option::Option<& crate::types::S3BucketSource> {
         self.s3_bucket_source.as_ref()
     }
     /// <p>Import task creation datetime.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&str> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& str> {
         self.creation_date_time.as_deref()
     }
     /// <p>Import task end datetime.</p>
-    pub fn end_date_time(&self) -> ::std::option::Option<&str> {
+    pub fn end_date_time(&self) -> ::std::option::Option<& str> {
         self.end_date_time.as_deref()
     }
     /// <p>Import task status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ImportStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ImportStatus> {
         self.status.as_ref()
     }
     /// <p>Import task progress percentage.</p>
@@ -45,7 +45,7 @@ impl ImportTask {
         self.progress_percentage
     }
     /// <p>Import task summary.</p>
-    pub fn summary(&self) -> ::std::option::Option<&crate::types::ImportTaskSummary> {
+    pub fn summary(&self) -> ::std::option::Option<& crate::types::ImportTaskSummary> {
         self.summary.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl ImportTaskBuilder {
     }
     /// <p>Import task id.</p>
     pub fn set_import_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.import_id = input;
-        self
+        self.import_id = input; self
     }
     /// <p>Import task id.</p>
     pub fn get_import_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl ImportTaskBuilder {
     }
     /// <p>Import task s3 bucket source.</p>
     pub fn set_s3_bucket_source(mut self, input: ::std::option::Option<crate::types::S3BucketSource>) -> Self {
-        self.s3_bucket_source = input;
-        self
+        self.s3_bucket_source = input; self
     }
     /// <p>Import task s3 bucket source.</p>
     pub fn get_s3_bucket_source(&self) -> &::std::option::Option<crate::types::S3BucketSource> {
@@ -104,8 +102,7 @@ impl ImportTaskBuilder {
     }
     /// <p>Import task creation datetime.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>Import task creation datetime.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl ImportTaskBuilder {
     }
     /// <p>Import task end datetime.</p>
     pub fn set_end_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.end_date_time = input;
-        self
+        self.end_date_time = input; self
     }
     /// <p>Import task end datetime.</p>
     pub fn get_end_date_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl ImportTaskBuilder {
     }
     /// <p>Import task status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ImportStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Import task status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ImportStatus> {
@@ -146,8 +141,7 @@ impl ImportTaskBuilder {
     }
     /// <p>Import task progress percentage.</p>
     pub fn set_progress_percentage(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.progress_percentage = input;
-        self
+        self.progress_percentage = input; self
     }
     /// <p>Import task progress percentage.</p>
     pub fn get_progress_percentage(&self) -> &::std::option::Option<f32> {
@@ -160,8 +154,7 @@ impl ImportTaskBuilder {
     }
     /// <p>Import task summary.</p>
     pub fn set_summary(mut self, input: ::std::option::Option<crate::types::ImportTaskSummary>) -> Self {
-        self.summary = input;
-        self
+        self.summary = input; self
     }
     /// <p>Import task summary.</p>
     pub fn get_summary(&self) -> &::std::option::Option<crate::types::ImportTaskSummary> {
@@ -170,13 +163,21 @@ impl ImportTaskBuilder {
     /// Consumes the builder and constructs a [`ImportTask`](crate::types::ImportTask).
     pub fn build(self) -> crate::types::ImportTask {
         crate::types::ImportTask {
-            import_id: self.import_id,
-            s3_bucket_source: self.s3_bucket_source,
-            creation_date_time: self.creation_date_time,
-            end_date_time: self.end_date_time,
-            status: self.status,
-            progress_percentage: self.progress_percentage,
-            summary: self.summary,
+            import_id: self.import_id
+            ,
+            s3_bucket_source: self.s3_bucket_source
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            end_date_time: self.end_date_time
+            ,
+            status: self.status
+            ,
+            progress_percentage: self.progress_percentage
+            ,
+            summary: self.summary
+            ,
         }
     }
 }
+

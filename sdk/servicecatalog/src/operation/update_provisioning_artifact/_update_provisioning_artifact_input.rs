@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateProvisioningArtifactInput {
+pub struct UpdateProvisioningArtifactInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -27,7 +27,7 @@ pub struct UpdateProvisioningArtifactInput {
     /// <p>The administrator can set the guidance to <code>DEPRECATED</code> to inform users that the product version is deprecated. Users are able to make updates to a provisioned product of a deprecated version but cannot launch new provisioned products using a deprecated version.</p>
     pub guidance: ::std::option::Option<crate::types::ProvisioningArtifactGuidance>,
 }
-impl UpdateProvisioningArtifactInput {
+impl  UpdateProvisioningArtifactInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -35,23 +35,23 @@ impl UpdateProvisioningArtifactInput {
     /// <li>
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
-    pub fn accept_language(&self) -> ::std::option::Option<&str> {
+    pub fn accept_language(&self) -> ::std::option::Option<& str> {
         self.accept_language.as_deref()
     }
     /// <p>The product identifier.</p>
-    pub fn product_id(&self) -> ::std::option::Option<&str> {
+    pub fn product_id(&self) -> ::std::option::Option<& str> {
         self.product_id.as_deref()
     }
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn provisioning_artifact_id(&self) -> ::std::option::Option<&str> {
+    pub fn provisioning_artifact_id(&self) -> ::std::option::Option<& str> {
         self.provisioning_artifact_id.as_deref()
     }
     /// <p>The updated name of the provisioning artifact.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The updated description of the provisioning artifact.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Indicates whether the product version is active.</p>
@@ -62,7 +62,7 @@ impl UpdateProvisioningArtifactInput {
     /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
     /// <p>The <code>DEFAULT</code> value indicates that the product version is active.</p>
     /// <p>The administrator can set the guidance to <code>DEPRECATED</code> to inform users that the product version is deprecated. Users are able to make updates to a provisioned product of a deprecated version but cannot launch new provisioned products using a deprecated version.</p>
-    pub fn guidance(&self) -> ::std::option::Option<&crate::types::ProvisioningArtifactGuidance> {
+    pub fn guidance(&self) -> ::std::option::Option<& crate::types::ProvisioningArtifactGuidance> {
         self.guidance.as_ref()
     }
 }
@@ -105,8 +105,7 @@ impl UpdateProvisioningArtifactInputBuilder {
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accept_language = input;
-        self
+        self.accept_language = input; self
     }
     /// <p>The language code.</p>
     /// <ul>
@@ -126,8 +125,7 @@ impl UpdateProvisioningArtifactInputBuilder {
     }
     /// <p>The product identifier.</p>
     pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_id = input;
-        self
+        self.product_id = input; self
     }
     /// <p>The product identifier.</p>
     pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +139,7 @@ impl UpdateProvisioningArtifactInputBuilder {
     }
     /// <p>The identifier of the provisioning artifact.</p>
     pub fn set_provisioning_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provisioning_artifact_id = input;
-        self
+        self.provisioning_artifact_id = input; self
     }
     /// <p>The identifier of the provisioning artifact.</p>
     pub fn get_provisioning_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +152,7 @@ impl UpdateProvisioningArtifactInputBuilder {
     }
     /// <p>The updated name of the provisioning artifact.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The updated name of the provisioning artifact.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,8 +165,7 @@ impl UpdateProvisioningArtifactInputBuilder {
     }
     /// <p>The updated description of the provisioning artifact.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The updated description of the provisioning artifact.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -185,8 +180,7 @@ impl UpdateProvisioningArtifactInputBuilder {
     /// <p>Indicates whether the product version is active.</p>
     /// <p>Inactive provisioning artifacts are invisible to end users. End users cannot launch or update a provisioned product from an inactive provisioning artifact.</p>
     pub fn set_active(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.active = input;
-        self
+        self.active = input; self
     }
     /// <p>Indicates whether the product version is active.</p>
     /// <p>Inactive provisioning artifacts are invisible to end users. End users cannot launch or update a provisioned product from an inactive provisioning artifact.</p>
@@ -204,8 +198,7 @@ impl UpdateProvisioningArtifactInputBuilder {
     /// <p>The <code>DEFAULT</code> value indicates that the product version is active.</p>
     /// <p>The administrator can set the guidance to <code>DEPRECATED</code> to inform users that the product version is deprecated. Users are able to make updates to a provisioned product of a deprecated version but cannot launch new provisioned products using a deprecated version.</p>
     pub fn set_guidance(mut self, input: ::std::option::Option<crate::types::ProvisioningArtifactGuidance>) -> Self {
-        self.guidance = input;
-        self
+        self.guidance = input; self
     }
     /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
     /// <p>The <code>DEFAULT</code> value indicates that the product version is active.</p>
@@ -214,20 +207,25 @@ impl UpdateProvisioningArtifactInputBuilder {
         &self.guidance
     }
     /// Consumes the builder and constructs a [`UpdateProvisioningArtifactInput`](crate::operation::update_provisioning_artifact::UpdateProvisioningArtifactInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_provisioning_artifact::UpdateProvisioningArtifactInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_provisioning_artifact::UpdateProvisioningArtifactInput {
-            accept_language: self.accept_language,
-            product_id: self.product_id,
-            provisioning_artifact_id: self.provisioning_artifact_id,
-            name: self.name,
-            description: self.description,
-            active: self.active,
-            guidance: self.guidance,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_provisioning_artifact::UpdateProvisioningArtifactInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_provisioning_artifact::UpdateProvisioningArtifactInput {
+                accept_language: self.accept_language
+                ,
+                product_id: self.product_id
+                ,
+                provisioning_artifact_id: self.provisioning_artifact_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                active: self.active
+                ,
+                guidance: self.guidance
+                ,
+            }
+        )
     }
 }
+

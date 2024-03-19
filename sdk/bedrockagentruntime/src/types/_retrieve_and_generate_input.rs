@@ -3,18 +3,17 @@
 /// <p>Contains the query made to the knowledge base.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct RetrieveAndGenerateInput {
+pub struct RetrieveAndGenerateInput  {
     /// <p>The query made to the knowledge base.</p>
     pub text: ::std::string::String,
 }
-impl RetrieveAndGenerateInput {
+impl  RetrieveAndGenerateInput  {
     /// <p>The query made to the knowledge base.</p>
-    pub fn text(&self) -> &str {
-        use std::ops::Deref;
-        self.text.deref()
+    pub fn text(&self) -> & str {
+        use std::ops::Deref; self.text.deref()
     }
 }
-impl ::std::fmt::Debug for RetrieveAndGenerateInput {
+impl  ::std::fmt::Debug for RetrieveAndGenerateInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RetrieveAndGenerateInput");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
@@ -43,8 +42,7 @@ impl RetrieveAndGenerateInputBuilder {
     }
     /// <p>The query made to the knowledge base.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>The query made to the knowledge base.</p>
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,14 +52,15 @@ impl RetrieveAndGenerateInputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`text`](crate::types::builders::RetrieveAndGenerateInputBuilder::text)
     pub fn build(self) -> ::std::result::Result<crate::types::RetrieveAndGenerateInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RetrieveAndGenerateInput {
-            text: self.text.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "text",
-                    "text was not specified but it is required when building RetrieveAndGenerateInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RetrieveAndGenerateInput {
+                text: self.text
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("text", "text was not specified but it is required when building RetrieveAndGenerateInput")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for RetrieveAndGenerateInputBuilder {
@@ -71,3 +70,4 @@ impl ::std::fmt::Debug for RetrieveAndGenerateInputBuilder {
         formatter.finish()
     }
 }
+

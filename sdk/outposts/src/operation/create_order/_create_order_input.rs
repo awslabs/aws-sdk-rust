@@ -2,33 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateOrderInput {
+pub struct CreateOrderInput  {
     /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
     pub outpost_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The line items that make up the order.</p>
-    pub line_items: ::std::option::Option<::std::vec::Vec<crate::types::LineItemRequest>>,
+    pub line_items: ::std::option::Option<::std::vec::Vec::<crate::types::LineItemRequest>>,
     /// <p>The payment option.</p>
     pub payment_option: ::std::option::Option<crate::types::PaymentOption>,
     /// <p>The payment terms.</p>
     pub payment_term: ::std::option::Option<crate::types::PaymentTerm>,
 }
-impl CreateOrderInput {
+impl  CreateOrderInput  {
     /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
-    pub fn outpost_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn outpost_identifier(&self) -> ::std::option::Option<& str> {
         self.outpost_identifier.as_deref()
     }
     /// <p>The line items that make up the order.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.line_items.is_none()`.
-    pub fn line_items(&self) -> &[crate::types::LineItemRequest] {
-        self.line_items.as_deref().unwrap_or_default()
+    pub fn line_items(&self) -> & [crate::types::LineItemRequest] {
+        self.line_items.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The payment option.</p>
-    pub fn payment_option(&self) -> ::std::option::Option<&crate::types::PaymentOption> {
+    pub fn payment_option(&self) -> ::std::option::Option<& crate::types::PaymentOption> {
         self.payment_option.as_ref()
     }
     /// <p>The payment terms.</p>
-    pub fn payment_term(&self) -> ::std::option::Option<&crate::types::PaymentTerm> {
+    pub fn payment_term(&self) -> ::std::option::Option<& crate::types::PaymentTerm> {
         self.payment_term.as_ref()
     }
 }
@@ -44,7 +45,7 @@ impl CreateOrderInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateOrderInputBuilder {
     pub(crate) outpost_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) line_items: ::std::option::Option<::std::vec::Vec<crate::types::LineItemRequest>>,
+    pub(crate) line_items: ::std::option::Option<::std::vec::Vec::<crate::types::LineItemRequest>>,
     pub(crate) payment_option: ::std::option::Option<crate::types::PaymentOption>,
     pub(crate) payment_term: ::std::option::Option<crate::types::PaymentTerm>,
 }
@@ -57,8 +58,7 @@ impl CreateOrderInputBuilder {
     }
     /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn set_outpost_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.outpost_identifier = input;
-        self
+        self.outpost_identifier = input; self
     }
     /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn get_outpost_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,17 +71,16 @@ impl CreateOrderInputBuilder {
     /// <p>The line items that make up the order.</p>
     pub fn line_items(mut self, input: crate::types::LineItemRequest) -> Self {
         let mut v = self.line_items.unwrap_or_default();
-        v.push(input);
-        self.line_items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.line_items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The line items that make up the order.</p>
-    pub fn set_line_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LineItemRequest>>) -> Self {
-        self.line_items = input;
-        self
+    pub fn set_line_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LineItemRequest>>) -> Self {
+        self.line_items = input; self
     }
     /// <p>The line items that make up the order.</p>
-    pub fn get_line_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LineItemRequest>> {
+    pub fn get_line_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LineItemRequest>> {
         &self.line_items
     }
     /// <p>The payment option.</p>
@@ -92,8 +91,7 @@ impl CreateOrderInputBuilder {
     }
     /// <p>The payment option.</p>
     pub fn set_payment_option(mut self, input: ::std::option::Option<crate::types::PaymentOption>) -> Self {
-        self.payment_option = input;
-        self
+        self.payment_option = input; self
     }
     /// <p>The payment option.</p>
     pub fn get_payment_option(&self) -> &::std::option::Option<crate::types::PaymentOption> {
@@ -106,8 +104,7 @@ impl CreateOrderInputBuilder {
     }
     /// <p>The payment terms.</p>
     pub fn set_payment_term(mut self, input: ::std::option::Option<crate::types::PaymentTerm>) -> Self {
-        self.payment_term = input;
-        self
+        self.payment_term = input; self
     }
     /// <p>The payment terms.</p>
     pub fn get_payment_term(&self) -> &::std::option::Option<crate::types::PaymentTerm> {
@@ -115,11 +112,18 @@ impl CreateOrderInputBuilder {
     }
     /// Consumes the builder and constructs a [`CreateOrderInput`](crate::operation::create_order::CreateOrderInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_order::CreateOrderInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_order::CreateOrderInput {
-            outpost_identifier: self.outpost_identifier,
-            line_items: self.line_items,
-            payment_option: self.payment_option,
-            payment_term: self.payment_term,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_order::CreateOrderInput {
+                outpost_identifier: self.outpost_identifier
+                ,
+                line_items: self.line_items
+                ,
+                payment_option: self.payment_option
+                ,
+                payment_term: self.payment_term
+                ,
+            }
+        )
     }
 }
+

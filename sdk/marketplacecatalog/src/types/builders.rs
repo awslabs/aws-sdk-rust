@@ -154,3 +154,4 @@ pub use crate::types::_batch_describe_error_detail::BatchDescribeErrorDetailBuil
 pub use crate::types::_entity_detail::EntityDetailBuilder;
 
 pub use crate::types::_entity_request::EntityRequestBuilder;
+

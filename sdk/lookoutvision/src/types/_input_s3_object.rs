@@ -3,7 +3,7 @@
 /// <p>Amazon S3 Location information for an input manifest file.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputS3Object {
+pub struct InputS3Object  {
     /// <p>The Amazon S3 bucket that contains the manifest.</p>
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The name and location of the manifest file withiin the bucket.</p>
@@ -11,17 +11,17 @@ pub struct InputS3Object {
     /// <p>The version ID of the bucket.</p>
     pub version_id: ::std::option::Option<::std::string::String>,
 }
-impl InputS3Object {
+impl  InputS3Object  {
     /// <p>The Amazon S3 bucket that contains the manifest.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The name and location of the manifest file withiin the bucket.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The version ID of the bucket.</p>
-    pub fn version_id(&self) -> ::std::option::Option<&str> {
+    pub fn version_id(&self) -> ::std::option::Option<& str> {
         self.version_id.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl InputS3ObjectBuilder {
     }
     /// <p>The Amazon S3 bucket that contains the manifest.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The Amazon S3 bucket that contains the manifest.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl InputS3ObjectBuilder {
     }
     /// <p>The name and location of the manifest file withiin the bucket.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The name and location of the manifest file withiin the bucket.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +76,7 @@ impl InputS3ObjectBuilder {
     }
     /// <p>The version ID of the bucket.</p>
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_id = input;
-        self
+        self.version_id = input; self
     }
     /// <p>The version ID of the bucket.</p>
     pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,9 +85,13 @@ impl InputS3ObjectBuilder {
     /// Consumes the builder and constructs a [`InputS3Object`](crate::types::InputS3Object).
     pub fn build(self) -> crate::types::InputS3Object {
         crate::types::InputS3Object {
-            bucket: self.bucket,
-            key: self.key,
-            version_id: self.version_id,
+            bucket: self.bucket
+            ,
+            key: self.key
+            ,
+            version_id: self.version_id
+            ,
         }
     }
 }
+

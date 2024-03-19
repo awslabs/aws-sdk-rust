@@ -3,28 +3,29 @@
 /// <p>Updates a GatewayResponse of a specified response type on the given RestApi.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateGatewayResponseInput {
+pub struct UpdateGatewayResponseInput  {
     /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The response type of the associated GatewayResponse.</p>
     pub response_type: ::std::option::Option<crate::types::GatewayResponseType>,
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub patch_operations: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
+    pub patch_operations: ::std::option::Option<::std::vec::Vec::<crate::types::PatchOperation>>,
 }
-impl UpdateGatewayResponseInput {
+impl  UpdateGatewayResponseInput  {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<& str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The response type of the associated GatewayResponse.</p>
-    pub fn response_type(&self) -> ::std::option::Option<&crate::types::GatewayResponseType> {
+    pub fn response_type(&self) -> ::std::option::Option<& crate::types::GatewayResponseType> {
         self.response_type.as_ref()
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.patch_operations.is_none()`.
-    pub fn patch_operations(&self) -> &[crate::types::PatchOperation] {
-        self.patch_operations.as_deref().unwrap_or_default()
+    pub fn patch_operations(&self) -> & [crate::types::PatchOperation] {
+        self.patch_operations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateGatewayResponseInput {
@@ -40,7 +41,7 @@ impl UpdateGatewayResponseInput {
 pub struct UpdateGatewayResponseInputBuilder {
     pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
     pub(crate) response_type: ::std::option::Option<crate::types::GatewayResponseType>,
-    pub(crate) patch_operations: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
+    pub(crate) patch_operations: ::std::option::Option<::std::vec::Vec::<crate::types::PatchOperation>>,
 }
 impl UpdateGatewayResponseInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
@@ -51,8 +52,7 @@ impl UpdateGatewayResponseInputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rest_api_id = input;
-        self
+        self.rest_api_id = input; self
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +66,7 @@ impl UpdateGatewayResponseInputBuilder {
     }
     /// <p>The response type of the associated GatewayResponse.</p>
     pub fn set_response_type(mut self, input: ::std::option::Option<crate::types::GatewayResponseType>) -> Self {
-        self.response_type = input;
-        self
+        self.response_type = input; self
     }
     /// <p>The response type of the associated GatewayResponse.</p>
     pub fn get_response_type(&self) -> &::std::option::Option<crate::types::GatewayResponseType> {
@@ -80,28 +79,30 @@ impl UpdateGatewayResponseInputBuilder {
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub fn patch_operations(mut self, input: crate::types::PatchOperation) -> Self {
         let mut v = self.patch_operations.unwrap_or_default();
-        v.push(input);
-        self.patch_operations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.patch_operations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn set_patch_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>) -> Self {
-        self.patch_operations = input;
-        self
+    pub fn set_patch_operations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PatchOperation>>) -> Self {
+        self.patch_operations = input; self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn get_patch_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+    pub fn get_patch_operations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PatchOperation>> {
         &self.patch_operations
     }
     /// Consumes the builder and constructs a [`UpdateGatewayResponseInput`](crate::operation::update_gateway_response::UpdateGatewayResponseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_gateway_response::UpdateGatewayResponseInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_gateway_response::UpdateGatewayResponseInput {
-            rest_api_id: self.rest_api_id,
-            response_type: self.response_type,
-            patch_operations: self.patch_operations,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_gateway_response::UpdateGatewayResponseInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_gateway_response::UpdateGatewayResponseInput {
+                rest_api_id: self.rest_api_id
+                ,
+                response_type: self.response_type
+                ,
+                patch_operations: self.patch_operations
+                ,
+            }
+        )
     }
 }
+

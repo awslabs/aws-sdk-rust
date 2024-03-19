@@ -3,13 +3,13 @@
 /// <p>Updated DNS properties for the public DNS namespace.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PublicDnsPropertiesMutableChange {
+pub struct PublicDnsPropertiesMutableChange  {
     /// <p>Updated fields for the Start of Authority (SOA) record for the hosted zone for the public DNS namespace.</p>
     pub soa: ::std::option::Option<crate::types::SoaChange>,
 }
-impl PublicDnsPropertiesMutableChange {
+impl  PublicDnsPropertiesMutableChange  {
     /// <p>Updated fields for the Start of Authority (SOA) record for the hosted zone for the public DNS namespace.</p>
-    pub fn soa(&self) -> ::std::option::Option<&crate::types::SoaChange> {
+    pub fn soa(&self) -> ::std::option::Option<& crate::types::SoaChange> {
         self.soa.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl PublicDnsPropertiesMutableChangeBuilder {
     }
     /// <p>Updated fields for the Start of Authority (SOA) record for the hosted zone for the public DNS namespace.</p>
     pub fn set_soa(mut self, input: ::std::option::Option<crate::types::SoaChange>) -> Self {
-        self.soa = input;
-        self
+        self.soa = input; self
     }
     /// <p>Updated fields for the Start of Authority (SOA) record for the hosted zone for the public DNS namespace.</p>
     pub fn get_soa(&self) -> &::std::option::Option<crate::types::SoaChange> {
@@ -44,6 +43,10 @@ impl PublicDnsPropertiesMutableChangeBuilder {
     }
     /// Consumes the builder and constructs a [`PublicDnsPropertiesMutableChange`](crate::types::PublicDnsPropertiesMutableChange).
     pub fn build(self) -> crate::types::PublicDnsPropertiesMutableChange {
-        crate::types::PublicDnsPropertiesMutableChange { soa: self.soa }
+        crate::types::PublicDnsPropertiesMutableChange {
+            soa: self.soa
+            ,
+        }
     }
 }
+

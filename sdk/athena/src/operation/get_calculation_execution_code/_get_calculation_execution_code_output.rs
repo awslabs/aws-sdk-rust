@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCalculationExecutionCodeOutput {
+pub struct GetCalculationExecutionCodeOutput  {
     /// <p>The unencrypted code that was executed for the calculation.</p>
     pub code_block: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetCalculationExecutionCodeOutput {
+impl  GetCalculationExecutionCodeOutput  {
     /// <p>The unencrypted code that was executed for the calculation.</p>
-    pub fn code_block(&self) -> ::std::option::Option<&str> {
+    pub fn code_block(&self) -> ::std::option::Option<& str> {
         self.code_block.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetCalculationExecutionCodeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetCalculationExecutionCodeOutput {
     /// Creates a new builder-style object to manufacture [`GetCalculationExecutionCodeOutput`](crate::operation::get_calculation_execution_code::GetCalculationExecutionCodeOutput).
     pub fn builder() -> crate::operation::get_calculation_execution_code::builders::GetCalculationExecutionCodeOutputBuilder {
@@ -40,27 +40,28 @@ impl GetCalculationExecutionCodeOutputBuilder {
     }
     /// <p>The unencrypted code that was executed for the calculation.</p>
     pub fn set_code_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code_block = input;
-        self
+        self.code_block = input; self
     }
     /// <p>The unencrypted code that was executed for the calculation.</p>
     pub fn get_code_block(&self) -> &::std::option::Option<::std::string::String> {
         &self.code_block
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetCalculationExecutionCodeOutput`](crate::operation::get_calculation_execution_code::GetCalculationExecutionCodeOutput).
     pub fn build(self) -> crate::operation::get_calculation_execution_code::GetCalculationExecutionCodeOutput {
         crate::operation::get_calculation_execution_code::GetCalculationExecutionCodeOutput {
-            code_block: self.code_block,
+            code_block: self.code_block
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

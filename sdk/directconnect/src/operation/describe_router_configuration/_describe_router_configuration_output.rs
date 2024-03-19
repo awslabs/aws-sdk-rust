@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRouterConfigurationOutput {
+pub struct DescribeRouterConfigurationOutput  {
     /// <p>The customer router configuration.</p>
     pub customer_router_config: ::std::option::Option<::std::string::String>,
     /// <p>The details about the router.</p>
@@ -13,29 +13,29 @@ pub struct DescribeRouterConfigurationOutput {
     pub virtual_interface_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeRouterConfigurationOutput {
+impl  DescribeRouterConfigurationOutput  {
     /// <p>The customer router configuration.</p>
-    pub fn customer_router_config(&self) -> ::std::option::Option<&str> {
+    pub fn customer_router_config(&self) -> ::std::option::Option<& str> {
         self.customer_router_config.as_deref()
     }
     /// <p>The details about the router.</p>
-    pub fn router(&self) -> ::std::option::Option<&crate::types::RouterType> {
+    pub fn router(&self) -> ::std::option::Option<& crate::types::RouterType> {
         self.router.as_ref()
     }
     /// <p>The ID assigned to the virtual interface.</p>
-    pub fn virtual_interface_id(&self) -> ::std::option::Option<&str> {
+    pub fn virtual_interface_id(&self) -> ::std::option::Option<& str> {
         self.virtual_interface_id.as_deref()
     }
     /// <p>Provides the details about a virtual interface's router.</p>
-    pub fn virtual_interface_name(&self) -> ::std::option::Option<&str> {
+    pub fn virtual_interface_name(&self) -> ::std::option::Option<& str> {
         self.virtual_interface_name.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeRouterConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeRouterConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRouterConfigurationOutput`](crate::operation::describe_router_configuration::DescribeRouterConfigurationOutput).
     pub fn builder() -> crate::operation::describe_router_configuration::builders::DescribeRouterConfigurationOutputBuilder {
@@ -61,8 +61,7 @@ impl DescribeRouterConfigurationOutputBuilder {
     }
     /// <p>The customer router configuration.</p>
     pub fn set_customer_router_config(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.customer_router_config = input;
-        self
+        self.customer_router_config = input; self
     }
     /// <p>The customer router configuration.</p>
     pub fn get_customer_router_config(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl DescribeRouterConfigurationOutputBuilder {
     }
     /// <p>The details about the router.</p>
     pub fn set_router(mut self, input: ::std::option::Option<crate::types::RouterType>) -> Self {
-        self.router = input;
-        self
+        self.router = input; self
     }
     /// <p>The details about the router.</p>
     pub fn get_router(&self) -> &::std::option::Option<crate::types::RouterType> {
@@ -89,8 +87,7 @@ impl DescribeRouterConfigurationOutputBuilder {
     }
     /// <p>The ID assigned to the virtual interface.</p>
     pub fn set_virtual_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.virtual_interface_id = input;
-        self
+        self.virtual_interface_id = input; self
     }
     /// <p>The ID assigned to the virtual interface.</p>
     pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,30 +100,34 @@ impl DescribeRouterConfigurationOutputBuilder {
     }
     /// <p>Provides the details about a virtual interface's router.</p>
     pub fn set_virtual_interface_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.virtual_interface_name = input;
-        self
+        self.virtual_interface_name = input; self
     }
     /// <p>Provides the details about a virtual interface's router.</p>
     pub fn get_virtual_interface_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.virtual_interface_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeRouterConfigurationOutput`](crate::operation::describe_router_configuration::DescribeRouterConfigurationOutput).
     pub fn build(self) -> crate::operation::describe_router_configuration::DescribeRouterConfigurationOutput {
         crate::operation::describe_router_configuration::DescribeRouterConfigurationOutput {
-            customer_router_config: self.customer_router_config,
-            router: self.router,
-            virtual_interface_id: self.virtual_interface_id,
-            virtual_interface_name: self.virtual_interface_name,
+            customer_router_config: self.customer_router_config
+            ,
+            router: self.router
+            ,
+            virtual_interface_id: self.virtual_interface_id
+            ,
+            virtual_interface_name: self.virtual_interface_name
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

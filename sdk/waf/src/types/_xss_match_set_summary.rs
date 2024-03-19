@@ -7,24 +7,22 @@
 /// <p>The <code>Id</code> and <code>Name</code> of an <code>XssMatchSet</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct XssMatchSetSummary {
+pub struct XssMatchSetSummary  {
     /// <p>A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code> to get information about a <code>XssMatchSet</code> (see <code>GetXssMatchSet</code>), update an <code>XssMatchSet</code> (see <code>UpdateXssMatchSet</code>), insert an <code>XssMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>XssMatchSet</code> from AWS WAF (see <code>DeleteXssMatchSet</code>).</p>
     /// <p><code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
     pub xss_match_set_id: ::std::string::String,
     /// <p>The name of the <code>XssMatchSet</code>, if any, specified by <code>Id</code>.</p>
     pub name: ::std::string::String,
 }
-impl XssMatchSetSummary {
+impl  XssMatchSetSummary  {
     /// <p>A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code> to get information about a <code>XssMatchSet</code> (see <code>GetXssMatchSet</code>), update an <code>XssMatchSet</code> (see <code>UpdateXssMatchSet</code>), insert an <code>XssMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>XssMatchSet</code> from AWS WAF (see <code>DeleteXssMatchSet</code>).</p>
     /// <p><code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
-    pub fn xss_match_set_id(&self) -> &str {
-        use std::ops::Deref;
-        self.xss_match_set_id.deref()
+    pub fn xss_match_set_id(&self) -> & str {
+        use std::ops::Deref; self.xss_match_set_id.deref()
     }
     /// <p>The name of the <code>XssMatchSet</code>, if any, specified by <code>Id</code>.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
 }
 impl XssMatchSetSummary {
@@ -52,8 +50,7 @@ impl XssMatchSetSummaryBuilder {
     /// <p>A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code> to get information about a <code>XssMatchSet</code> (see <code>GetXssMatchSet</code>), update an <code>XssMatchSet</code> (see <code>UpdateXssMatchSet</code>), insert an <code>XssMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>XssMatchSet</code> from AWS WAF (see <code>DeleteXssMatchSet</code>).</p>
     /// <p><code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
     pub fn set_xss_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.xss_match_set_id = input;
-        self
+        self.xss_match_set_id = input; self
     }
     /// <p>A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code> to get information about a <code>XssMatchSet</code> (see <code>GetXssMatchSet</code>), update an <code>XssMatchSet</code> (see <code>UpdateXssMatchSet</code>), insert an <code>XssMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>XssMatchSet</code> from AWS WAF (see <code>DeleteXssMatchSet</code>).</p>
     /// <p><code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
@@ -68,8 +65,7 @@ impl XssMatchSetSummaryBuilder {
     }
     /// <p>The name of the <code>XssMatchSet</code>, if any, specified by <code>Id</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the <code>XssMatchSet</code>, if any, specified by <code>Id</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,19 +76,20 @@ impl XssMatchSetSummaryBuilder {
     /// - [`xss_match_set_id`](crate::types::builders::XssMatchSetSummaryBuilder::xss_match_set_id)
     /// - [`name`](crate::types::builders::XssMatchSetSummaryBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::XssMatchSetSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::XssMatchSetSummary {
-            xss_match_set_id: self.xss_match_set_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "xss_match_set_id",
-                    "xss_match_set_id was not specified but it is required when building XssMatchSetSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building XssMatchSetSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::XssMatchSetSummary {
+                xss_match_set_id: self.xss_match_set_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("xss_match_set_id", "xss_match_set_id was not specified but it is required when building XssMatchSetSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building XssMatchSetSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

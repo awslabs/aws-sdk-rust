@@ -3,22 +3,23 @@
 /// <p>Describes the estimated cost for resources in your Lightsail for Research account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CostEstimate {
+pub struct CostEstimate  {
     /// <p>The types of usage that are included in the estimate, such as costs, usage, or data transfer.</p>
     pub usage_type: ::std::option::Option<::std::string::String>,
     /// <p>The cost estimate result that's associated with a time period.</p>
-    pub results_by_time: ::std::option::Option<::std::vec::Vec<crate::types::EstimateByTime>>,
+    pub results_by_time: ::std::option::Option<::std::vec::Vec::<crate::types::EstimateByTime>>,
 }
-impl CostEstimate {
+impl  CostEstimate  {
     /// <p>The types of usage that are included in the estimate, such as costs, usage, or data transfer.</p>
-    pub fn usage_type(&self) -> ::std::option::Option<&str> {
+    pub fn usage_type(&self) -> ::std::option::Option<& str> {
         self.usage_type.as_deref()
     }
     /// <p>The cost estimate result that's associated with a time period.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.results_by_time.is_none()`.
-    pub fn results_by_time(&self) -> &[crate::types::EstimateByTime] {
-        self.results_by_time.as_deref().unwrap_or_default()
+    pub fn results_by_time(&self) -> & [crate::types::EstimateByTime] {
+        self.results_by_time.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CostEstimate {
@@ -33,7 +34,7 @@ impl CostEstimate {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CostEstimateBuilder {
     pub(crate) usage_type: ::std::option::Option<::std::string::String>,
-    pub(crate) results_by_time: ::std::option::Option<::std::vec::Vec<crate::types::EstimateByTime>>,
+    pub(crate) results_by_time: ::std::option::Option<::std::vec::Vec::<crate::types::EstimateByTime>>,
 }
 impl CostEstimateBuilder {
     /// <p>The types of usage that are included in the estimate, such as costs, usage, or data transfer.</p>
@@ -43,8 +44,7 @@ impl CostEstimateBuilder {
     }
     /// <p>The types of usage that are included in the estimate, such as costs, usage, or data transfer.</p>
     pub fn set_usage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.usage_type = input;
-        self
+        self.usage_type = input; self
     }
     /// <p>The types of usage that are included in the estimate, such as costs, usage, or data transfer.</p>
     pub fn get_usage_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl CostEstimateBuilder {
     /// <p>The cost estimate result that's associated with a time period.</p>
     pub fn results_by_time(mut self, input: crate::types::EstimateByTime) -> Self {
         let mut v = self.results_by_time.unwrap_or_default();
-        v.push(input);
-        self.results_by_time = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.results_by_time = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The cost estimate result that's associated with a time period.</p>
-    pub fn set_results_by_time(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EstimateByTime>>) -> Self {
-        self.results_by_time = input;
-        self
+    pub fn set_results_by_time(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EstimateByTime>>) -> Self {
+        self.results_by_time = input; self
     }
     /// <p>The cost estimate result that's associated with a time period.</p>
-    pub fn get_results_by_time(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EstimateByTime>> {
+    pub fn get_results_by_time(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EstimateByTime>> {
         &self.results_by_time
     }
     /// Consumes the builder and constructs a [`CostEstimate`](crate::types::CostEstimate).
     pub fn build(self) -> crate::types::CostEstimate {
         crate::types::CostEstimate {
-            usage_type: self.usage_type,
-            results_by_time: self.results_by_time,
+            usage_type: self.usage_type
+            ,
+            results_by_time: self.results_by_time
+            ,
         }
     }
 }
+

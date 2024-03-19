@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableSnapshotBlockPublicAccessInput {
+pub struct EnableSnapshotBlockPublicAccessInput  {
     /// <p>The mode in which to enable block public access for snapshots for the Region. Specify one of the following values:</p>
     /// <ul>
     /// <li>
@@ -17,7 +17,7 @@ pub struct EnableSnapshotBlockPublicAccessInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl EnableSnapshotBlockPublicAccessInput {
+impl  EnableSnapshotBlockPublicAccessInput  {
     /// <p>The mode in which to enable block public access for snapshots for the Region. Specify one of the following values:</p>
     /// <ul>
     /// <li>
@@ -28,7 +28,7 @@ impl EnableSnapshotBlockPublicAccessInput {
     /// <p><code>block-new-sharing</code> - Prevents only new public sharing of snapshots in the Region. Users in the account will no longer be able to request new public sharing. However, snapshots that are already publicly shared, remain publicly available.</p></li>
     /// </ul>
     /// <p><code>unblocked</code> is not a valid value for <b>EnableSnapshotBlockPublicAccess</b>.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::SnapshotBlockPublicAccessState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::SnapshotBlockPublicAccessState> {
         self.state.as_ref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -77,8 +77,7 @@ impl EnableSnapshotBlockPublicAccessInputBuilder {
     /// </ul>
     /// <p><code>unblocked</code> is not a valid value for <b>EnableSnapshotBlockPublicAccess</b>.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::SnapshotBlockPublicAccessState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The mode in which to enable block public access for snapshots for the Region. Specify one of the following values:</p>
     /// <ul>
@@ -100,25 +99,22 @@ impl EnableSnapshotBlockPublicAccessInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`EnableSnapshotBlockPublicAccessInput`](crate::operation::enable_snapshot_block_public_access::EnableSnapshotBlockPublicAccessInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::enable_snapshot_block_public_access::EnableSnapshotBlockPublicAccessInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_snapshot_block_public_access::EnableSnapshotBlockPublicAccessInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::enable_snapshot_block_public_access::EnableSnapshotBlockPublicAccessInput {
-                state: self.state,
-                dry_run: self.dry_run,
-            },
+                state: self.state
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

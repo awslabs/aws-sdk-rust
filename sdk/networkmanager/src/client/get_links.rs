@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetLinks`](crate::operation::get_links::builders::GetLinksFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_links::builders::GetLinksFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`global_network_id(impl Into<String>)`](crate::operation::get_links::builders::GetLinksFluentBuilder::global_network_id) / [`set_global_network_id(Option<String>)`](crate::operation::get_links::builders::GetLinksFluentBuilder::set_global_network_id):<br>required: **true**<br><p>The ID of the global network.</p><br>
     ///   - [`link_ids(impl Into<String>)`](crate::operation::get_links::builders::GetLinksFluentBuilder::link_ids) / [`set_link_ids(Option<Vec::<String>>)`](crate::operation::get_links::builders::GetLinksFluentBuilder::set_link_ids):<br>required: **false**<br><p>One or more link IDs. The maximum is 10.</p><br>
     ///   - [`site_id(impl Into<String>)`](crate::operation::get_links::builders::GetLinksFluentBuilder::site_id) / [`set_site_id(Option<String>)`](crate::operation::get_links::builders::GetLinksFluentBuilder::set_site_id):<br>required: **false**<br><p>The ID of the site.</p><br>
@@ -11,11 +11,12 @@ impl super::Client {
     ///   - [`provider(impl Into<String>)`](crate::operation::get_links::builders::GetLinksFluentBuilder::provider) / [`set_provider(Option<String>)`](crate::operation::get_links::builders::GetLinksFluentBuilder::set_provider):<br>required: **false**<br><p>The link provider.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_links::builders::GetLinksFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_links::builders::GetLinksFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_links::builders::GetLinksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_links::builders::GetLinksFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
-    /// - On success, responds with [`GetLinksOutput`](crate::operation::get_links::GetLinksOutput) with field(s):
+                            /// - On success, responds with [`GetLinksOutput`](crate::operation::get_links::GetLinksOutput) with field(s):
     ///   - [`links(Option<Vec::<Link>>)`](crate::operation::get_links::GetLinksOutput::links): <p>The links.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_links::GetLinksOutput::next_token): <p>The token for the next page of results.</p>
-    /// - On failure, responds with [`SdkError<GetLinksError>`](crate::operation::get_links::GetLinksError)
+                            /// - On failure, responds with [`SdkError<GetLinksError>`](crate::operation::get_links::GetLinksError)
     pub fn get_links(&self) -> crate::operation::get_links::builders::GetLinksFluentBuilder {
-        crate::operation::get_links::builders::GetLinksFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_links::builders::GetLinksFluentBuilder::new(self.handle.clone())
+                            }
 }
+

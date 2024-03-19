@@ -3,7 +3,7 @@
 /// <p>The name of the shard.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Shard {
+pub struct Shard  {
     /// <p>The ID of the shard.</p>
     pub shard_id: ::std::string::String,
     /// <p>The time when the shard was created in Universal Coordinated Time (UTC).</p>
@@ -11,19 +11,17 @@ pub struct Shard {
     /// <p>The current status of the shard.</p>
     pub status: crate::types::Status,
 }
-impl Shard {
+impl  Shard  {
     /// <p>The ID of the shard.</p>
-    pub fn shard_id(&self) -> &str {
-        use std::ops::Deref;
-        self.shard_id.deref()
+    pub fn shard_id(&self) -> & str {
+        use std::ops::Deref; self.shard_id.deref()
     }
     /// <p>The time when the shard was created in Universal Coordinated Time (UTC).</p>
-    pub fn create_time(&self) -> &str {
-        use std::ops::Deref;
-        self.create_time.deref()
+    pub fn create_time(&self) -> & str {
+        use std::ops::Deref; self.create_time.deref()
     }
     /// <p>The current status of the shard.</p>
-    pub fn status(&self) -> &crate::types::Status {
+    pub fn status(&self) -> & crate::types::Status {
         &self.status
     }
 }
@@ -51,8 +49,7 @@ impl ShardBuilder {
     }
     /// <p>The ID of the shard.</p>
     pub fn set_shard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.shard_id = input;
-        self
+        self.shard_id = input; self
     }
     /// <p>The ID of the shard.</p>
     pub fn get_shard_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl ShardBuilder {
     }
     /// <p>The time when the shard was created in Universal Coordinated Time (UTC).</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The time when the shard was created in Universal Coordinated Time (UTC).</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl ShardBuilder {
     }
     /// <p>The current status of the shard.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the shard.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
@@ -94,25 +89,25 @@ impl ShardBuilder {
     /// - [`create_time`](crate::types::builders::ShardBuilder::create_time)
     /// - [`status`](crate::types::builders::ShardBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::Shard, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Shard {
-            shard_id: self.shard_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "shard_id",
-                    "shard_id was not specified but it is required when building Shard",
-                )
-            })?,
-            create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "create_time",
-                    "create_time was not specified but it is required when building Shard",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building Shard",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Shard {
+                shard_id: self.shard_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("shard_id", "shard_id was not specified but it is required when building Shard")
+                    )?
+                ,
+                create_time: self.create_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("create_time", "create_time was not specified but it is required when building Shard")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building Shard")
+                    )?
+                ,
+            }
+        )
     }
 }
+

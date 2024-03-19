@@ -2,27 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateApplicationsInput {
+pub struct AssociateApplicationsInput  {
     /// <p>Wave ID.</p>
     pub wave_id: ::std::option::Option<::std::string::String>,
     /// <p>Application IDs list.</p>
-    pub application_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub application_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl AssociateApplicationsInput {
+impl  AssociateApplicationsInput  {
     /// <p>Wave ID.</p>
-    pub fn wave_id(&self) -> ::std::option::Option<&str> {
+    pub fn wave_id(&self) -> ::std::option::Option<& str> {
         self.wave_id.as_deref()
     }
     /// <p>Application IDs list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_ids.is_none()`.
-    pub fn application_ids(&self) -> &[::std::string::String] {
-        self.application_ids.as_deref().unwrap_or_default()
+    pub fn application_ids(&self) -> & [::std::string::String] {
+        self.application_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -38,7 +39,7 @@ impl AssociateApplicationsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateApplicationsInputBuilder {
     pub(crate) wave_id: ::std::option::Option<::std::string::String>,
-    pub(crate) application_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) application_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl AssociateApplicationsInputBuilder {
@@ -50,8 +51,7 @@ impl AssociateApplicationsInputBuilder {
     }
     /// <p>Wave ID.</p>
     pub fn set_wave_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.wave_id = input;
-        self
+        self.wave_id = input; self
     }
     /// <p>Wave ID.</p>
     pub fn get_wave_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,17 +64,16 @@ impl AssociateApplicationsInputBuilder {
     /// <p>Application IDs list.</p>
     pub fn application_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.application_ids.unwrap_or_default();
-        v.push(input.into());
-        self.application_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.application_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Application IDs list.</p>
-    pub fn set_application_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.application_ids = input;
-        self
+    pub fn set_application_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.application_ids = input; self
     }
     /// <p>Application IDs list.</p>
-    pub fn get_application_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_application_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.application_ids
     }
     /// <p>Account ID.</p>
@@ -84,22 +83,24 @@ impl AssociateApplicationsInputBuilder {
     }
     /// <p>Account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>Account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`AssociateApplicationsInput`](crate::operation::associate_applications::AssociateApplicationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::associate_applications::AssociateApplicationsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::associate_applications::AssociateApplicationsInput {
-            wave_id: self.wave_id,
-            application_ids: self.application_ids,
-            account_id: self.account_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_applications::AssociateApplicationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_applications::AssociateApplicationsInput {
+                wave_id: self.wave_id
+                ,
+                application_ids: self.application_ids
+                ,
+                account_id: self.account_id
+                ,
+            }
+        )
     }
 }
+

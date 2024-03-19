@@ -3,13 +3,13 @@
 /// <p>The information about the Amazon EKS cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EksInfo {
+pub struct EksInfo  {
     /// <p>The namespaces of the Amazon EKS cluster.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
 }
-impl EksInfo {
+impl  EksInfo  {
     /// <p>The namespaces of the Amazon EKS cluster.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl EksInfoBuilder {
     }
     /// <p>The namespaces of the Amazon EKS cluster.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The namespaces of the Amazon EKS cluster.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl EksInfoBuilder {
     }
     /// Consumes the builder and constructs a [`EksInfo`](crate::types::EksInfo).
     pub fn build(self) -> crate::types::EksInfo {
-        crate::types::EksInfo { namespace: self.namespace }
+        crate::types::EksInfo {
+            namespace: self.namespace
+            ,
+        }
     }
 }
+

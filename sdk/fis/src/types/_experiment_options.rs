@@ -3,7 +3,7 @@
 /// <p>Describes the options for an experiment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExperimentOptions {
+pub struct ExperimentOptions  {
     /// <p>The account targeting setting for an experiment.</p>
     pub account_targeting: ::std::option::Option<crate::types::AccountTargeting>,
     /// <p>The empty target resolution mode for an experiment.</p>
@@ -11,17 +11,17 @@ pub struct ExperimentOptions {
     /// <p>The actions mode of the experiment that is set from the StartExperiment API command.</p>
     pub actions_mode: ::std::option::Option<crate::types::ActionsMode>,
 }
-impl ExperimentOptions {
+impl  ExperimentOptions  {
     /// <p>The account targeting setting for an experiment.</p>
-    pub fn account_targeting(&self) -> ::std::option::Option<&crate::types::AccountTargeting> {
+    pub fn account_targeting(&self) -> ::std::option::Option<& crate::types::AccountTargeting> {
         self.account_targeting.as_ref()
     }
     /// <p>The empty target resolution mode for an experiment.</p>
-    pub fn empty_target_resolution_mode(&self) -> ::std::option::Option<&crate::types::EmptyTargetResolutionMode> {
+    pub fn empty_target_resolution_mode(&self) -> ::std::option::Option<& crate::types::EmptyTargetResolutionMode> {
         self.empty_target_resolution_mode.as_ref()
     }
     /// <p>The actions mode of the experiment that is set from the StartExperiment API command.</p>
-    pub fn actions_mode(&self) -> ::std::option::Option<&crate::types::ActionsMode> {
+    pub fn actions_mode(&self) -> ::std::option::Option<& crate::types::ActionsMode> {
         self.actions_mode.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl ExperimentOptionsBuilder {
     }
     /// <p>The account targeting setting for an experiment.</p>
     pub fn set_account_targeting(mut self, input: ::std::option::Option<crate::types::AccountTargeting>) -> Self {
-        self.account_targeting = input;
-        self
+        self.account_targeting = input; self
     }
     /// <p>The account targeting setting for an experiment.</p>
     pub fn get_account_targeting(&self) -> &::std::option::Option<crate::types::AccountTargeting> {
@@ -62,8 +61,7 @@ impl ExperimentOptionsBuilder {
     }
     /// <p>The empty target resolution mode for an experiment.</p>
     pub fn set_empty_target_resolution_mode(mut self, input: ::std::option::Option<crate::types::EmptyTargetResolutionMode>) -> Self {
-        self.empty_target_resolution_mode = input;
-        self
+        self.empty_target_resolution_mode = input; self
     }
     /// <p>The empty target resolution mode for an experiment.</p>
     pub fn get_empty_target_resolution_mode(&self) -> &::std::option::Option<crate::types::EmptyTargetResolutionMode> {
@@ -76,8 +74,7 @@ impl ExperimentOptionsBuilder {
     }
     /// <p>The actions mode of the experiment that is set from the StartExperiment API command.</p>
     pub fn set_actions_mode(mut self, input: ::std::option::Option<crate::types::ActionsMode>) -> Self {
-        self.actions_mode = input;
-        self
+        self.actions_mode = input; self
     }
     /// <p>The actions mode of the experiment that is set from the StartExperiment API command.</p>
     pub fn get_actions_mode(&self) -> &::std::option::Option<crate::types::ActionsMode> {
@@ -86,9 +83,13 @@ impl ExperimentOptionsBuilder {
     /// Consumes the builder and constructs a [`ExperimentOptions`](crate::types::ExperimentOptions).
     pub fn build(self) -> crate::types::ExperimentOptions {
         crate::types::ExperimentOptions {
-            account_targeting: self.account_targeting,
-            empty_target_resolution_mode: self.empty_target_resolution_mode,
-            actions_mode: self.actions_mode,
+            account_targeting: self.account_targeting
+            ,
+            empty_target_resolution_mode: self.empty_target_resolution_mode
+            ,
+            actions_mode: self.actions_mode
+            ,
         }
     }
 }
+

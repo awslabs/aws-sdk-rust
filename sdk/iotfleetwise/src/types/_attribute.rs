@@ -3,7 +3,7 @@
 /// <p>A signal that represents static information about the vehicle, such as engine type or manufacturing date.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Attribute {
+pub struct Attribute  {
     /// <p>The fully qualified name of the attribute. For example, the fully qualified name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
     pub fully_qualified_name: ::std::string::String,
     /// <p>The specified data type of the attribute.</p>
@@ -13,7 +13,7 @@ pub struct Attribute {
     /// <p>The scientific unit for the attribute.</p>
     pub unit: ::std::option::Option<::std::string::String>,
     /// <p>A list of possible values an attribute can be assigned.</p>
-    pub allowed_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub allowed_values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The specified possible minimum value of the attribute.</p>
     pub min: ::std::option::Option<f64>,
     /// <p>The specified possible maximum value of the attribute.</p>
@@ -28,29 +28,29 @@ pub struct Attribute {
     /// <p>A comment in addition to the description.</p>
     pub comment: ::std::option::Option<::std::string::String>,
 }
-impl Attribute {
+impl  Attribute  {
     /// <p>The fully qualified name of the attribute. For example, the fully qualified name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
-    pub fn fully_qualified_name(&self) -> &str {
-        use std::ops::Deref;
-        self.fully_qualified_name.deref()
+    pub fn fully_qualified_name(&self) -> & str {
+        use std::ops::Deref; self.fully_qualified_name.deref()
     }
     /// <p>The specified data type of the attribute.</p>
-    pub fn data_type(&self) -> &crate::types::NodeDataType {
+    pub fn data_type(&self) -> & crate::types::NodeDataType {
         &self.data_type
     }
     /// <p>A brief description of the attribute.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The scientific unit for the attribute.</p>
-    pub fn unit(&self) -> ::std::option::Option<&str> {
+    pub fn unit(&self) -> ::std::option::Option<& str> {
         self.unit.as_deref()
     }
     /// <p>A list of possible values an attribute can be assigned.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_values.is_none()`.
-    pub fn allowed_values(&self) -> &[::std::string::String] {
-        self.allowed_values.as_deref().unwrap_or_default()
+    pub fn allowed_values(&self) -> & [::std::string::String] {
+        self.allowed_values.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The specified possible minimum value of the attribute.</p>
     pub fn min(&self) -> ::std::option::Option<f64> {
@@ -62,19 +62,19 @@ impl Attribute {
     }
     /// <p>A specified value for the attribute.</p>
     #[deprecated(note = "assignedValue is no longer in use")]
-    pub fn assigned_value(&self) -> ::std::option::Option<&str> {
+    pub fn assigned_value(&self) -> ::std::option::Option<& str> {
         self.assigned_value.as_deref()
     }
     /// <p>The default value of the attribute.</p>
-    pub fn default_value(&self) -> ::std::option::Option<&str> {
+    pub fn default_value(&self) -> ::std::option::Option<& str> {
         self.default_value.as_deref()
     }
     /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
-    pub fn deprecation_message(&self) -> ::std::option::Option<&str> {
+    pub fn deprecation_message(&self) -> ::std::option::Option<& str> {
         self.deprecation_message.as_deref()
     }
     /// <p>A comment in addition to the description.</p>
-    pub fn comment(&self) -> ::std::option::Option<&str> {
+    pub fn comment(&self) -> ::std::option::Option<& str> {
         self.comment.as_deref()
     }
 }
@@ -93,7 +93,7 @@ pub struct AttributeBuilder {
     pub(crate) data_type: ::std::option::Option<crate::types::NodeDataType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) unit: ::std::option::Option<::std::string::String>,
-    pub(crate) allowed_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) allowed_values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) min: ::std::option::Option<f64>,
     pub(crate) max: ::std::option::Option<f64>,
     pub(crate) assigned_value: ::std::option::Option<::std::string::String>,
@@ -110,8 +110,7 @@ impl AttributeBuilder {
     }
     /// <p>The fully qualified name of the attribute. For example, the fully qualified name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
     pub fn set_fully_qualified_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fully_qualified_name = input;
-        self
+        self.fully_qualified_name = input; self
     }
     /// <p>The fully qualified name of the attribute. For example, the fully qualified name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
     pub fn get_fully_qualified_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +124,7 @@ impl AttributeBuilder {
     }
     /// <p>The specified data type of the attribute.</p>
     pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::NodeDataType>) -> Self {
-        self.data_type = input;
-        self
+        self.data_type = input; self
     }
     /// <p>The specified data type of the attribute.</p>
     pub fn get_data_type(&self) -> &::std::option::Option<crate::types::NodeDataType> {
@@ -139,8 +137,7 @@ impl AttributeBuilder {
     }
     /// <p>A brief description of the attribute.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A brief description of the attribute.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +150,7 @@ impl AttributeBuilder {
     }
     /// <p>The scientific unit for the attribute.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// <p>The scientific unit for the attribute.</p>
     pub fn get_unit(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,17 +163,16 @@ impl AttributeBuilder {
     /// <p>A list of possible values an attribute can be assigned.</p>
     pub fn allowed_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allowed_values.unwrap_or_default();
-        v.push(input.into());
-        self.allowed_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.allowed_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of possible values an attribute can be assigned.</p>
-    pub fn set_allowed_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.allowed_values = input;
-        self
+    pub fn set_allowed_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.allowed_values = input; self
     }
     /// <p>A list of possible values an attribute can be assigned.</p>
-    pub fn get_allowed_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allowed_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.allowed_values
     }
     /// <p>The specified possible minimum value of the attribute.</p>
@@ -187,8 +182,7 @@ impl AttributeBuilder {
     }
     /// <p>The specified possible minimum value of the attribute.</p>
     pub fn set_min(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.min = input;
-        self
+        self.min = input; self
     }
     /// <p>The specified possible minimum value of the attribute.</p>
     pub fn get_min(&self) -> &::std::option::Option<f64> {
@@ -201,8 +195,7 @@ impl AttributeBuilder {
     }
     /// <p>The specified possible maximum value of the attribute.</p>
     pub fn set_max(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.max = input;
-        self
+        self.max = input; self
     }
     /// <p>The specified possible maximum value of the attribute.</p>
     pub fn get_max(&self) -> &::std::option::Option<f64> {
@@ -217,8 +210,7 @@ impl AttributeBuilder {
     /// <p>A specified value for the attribute.</p>
     #[deprecated(note = "assignedValue is no longer in use")]
     pub fn set_assigned_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assigned_value = input;
-        self
+        self.assigned_value = input; self
     }
     /// <p>A specified value for the attribute.</p>
     #[deprecated(note = "assignedValue is no longer in use")]
@@ -232,8 +224,7 @@ impl AttributeBuilder {
     }
     /// <p>The default value of the attribute.</p>
     pub fn set_default_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_value = input;
-        self
+        self.default_value = input; self
     }
     /// <p>The default value of the attribute.</p>
     pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -246,8 +237,7 @@ impl AttributeBuilder {
     }
     /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
     pub fn set_deprecation_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deprecation_message = input;
-        self
+        self.deprecation_message = input; self
     }
     /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
     pub fn get_deprecation_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -260,8 +250,7 @@ impl AttributeBuilder {
     }
     /// <p>A comment in addition to the description.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// <p>A comment in addition to the description.</p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
@@ -272,28 +261,38 @@ impl AttributeBuilder {
     /// - [`fully_qualified_name`](crate::types::builders::AttributeBuilder::fully_qualified_name)
     /// - [`data_type`](crate::types::builders::AttributeBuilder::data_type)
     pub fn build(self) -> ::std::result::Result<crate::types::Attribute, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Attribute {
-            fully_qualified_name: self.fully_qualified_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "fully_qualified_name",
-                    "fully_qualified_name was not specified but it is required when building Attribute",
-                )
-            })?,
-            data_type: self.data_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_type",
-                    "data_type was not specified but it is required when building Attribute",
-                )
-            })?,
-            description: self.description,
-            unit: self.unit,
-            allowed_values: self.allowed_values,
-            min: self.min,
-            max: self.max,
-            assigned_value: self.assigned_value,
-            default_value: self.default_value,
-            deprecation_message: self.deprecation_message,
-            comment: self.comment,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Attribute {
+                fully_qualified_name: self.fully_qualified_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("fully_qualified_name", "fully_qualified_name was not specified but it is required when building Attribute")
+                    )?
+                ,
+                data_type: self.data_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_type", "data_type was not specified but it is required when building Attribute")
+                    )?
+                ,
+                description: self.description
+                ,
+                unit: self.unit
+                ,
+                allowed_values: self.allowed_values
+                ,
+                min: self.min
+                ,
+                max: self.max
+                ,
+                assigned_value: self.assigned_value
+                ,
+                default_value: self.default_value
+                ,
+                deprecation_message: self.deprecation_message
+                ,
+                comment: self.comment
+                ,
+            }
+        )
     }
 }
+

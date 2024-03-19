@@ -2,24 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDbClusterSnapshotOutput {
+pub struct CreateDbClusterSnapshotOutput  {
     /// <p>Contains the details for an Amazon RDS DB cluster snapshot</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
     pub db_cluster_snapshot: ::std::option::Option<crate::types::DbClusterSnapshot>,
     _request_id: Option<String>,
 }
-impl CreateDbClusterSnapshotOutput {
+impl  CreateDbClusterSnapshotOutput  {
     /// <p>Contains the details for an Amazon RDS DB cluster snapshot</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
-    pub fn db_cluster_snapshot(&self) -> ::std::option::Option<&crate::types::DbClusterSnapshot> {
+    pub fn db_cluster_snapshot(&self) -> ::std::option::Option<& crate::types::DbClusterSnapshot> {
         self.db_cluster_snapshot.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateDbClusterSnapshotOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateDbClusterSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`CreateDbClusterSnapshotOutput`](crate::operation::create_db_cluster_snapshot::CreateDbClusterSnapshotOutput).
     pub fn builder() -> crate::operation::create_db_cluster_snapshot::builders::CreateDbClusterSnapshotOutputBuilder {
@@ -44,8 +44,7 @@ impl CreateDbClusterSnapshotOutputBuilder {
     /// <p>Contains the details for an Amazon RDS DB cluster snapshot</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
     pub fn set_db_cluster_snapshot(mut self, input: ::std::option::Option<crate::types::DbClusterSnapshot>) -> Self {
-        self.db_cluster_snapshot = input;
-        self
+        self.db_cluster_snapshot = input; self
     }
     /// <p>Contains the details for an Amazon RDS DB cluster snapshot</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
@@ -53,19 +52,21 @@ impl CreateDbClusterSnapshotOutputBuilder {
         &self.db_cluster_snapshot
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateDbClusterSnapshotOutput`](crate::operation::create_db_cluster_snapshot::CreateDbClusterSnapshotOutput).
     pub fn build(self) -> crate::operation::create_db_cluster_snapshot::CreateDbClusterSnapshotOutput {
         crate::operation::create_db_cluster_snapshot::CreateDbClusterSnapshotOutput {
-            db_cluster_snapshot: self.db_cluster_snapshot,
+            db_cluster_snapshot: self.db_cluster_snapshot
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

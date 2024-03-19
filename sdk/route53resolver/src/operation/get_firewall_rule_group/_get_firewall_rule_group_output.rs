@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFirewallRuleGroupOutput {
+pub struct GetFirewallRuleGroupOutput  {
     /// <p>A collection of rules used to filter DNS network traffic.</p>
     pub firewall_rule_group: ::std::option::Option<crate::types::FirewallRuleGroup>,
     _request_id: Option<String>,
 }
-impl GetFirewallRuleGroupOutput {
+impl  GetFirewallRuleGroupOutput  {
     /// <p>A collection of rules used to filter DNS network traffic.</p>
-    pub fn firewall_rule_group(&self) -> ::std::option::Option<&crate::types::FirewallRuleGroup> {
+    pub fn firewall_rule_group(&self) -> ::std::option::Option<& crate::types::FirewallRuleGroup> {
         self.firewall_rule_group.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetFirewallRuleGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetFirewallRuleGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetFirewallRuleGroupOutput`](crate::operation::get_firewall_rule_group::GetFirewallRuleGroupOutput).
     pub fn builder() -> crate::operation::get_firewall_rule_group::builders::GetFirewallRuleGroupOutputBuilder {
@@ -40,27 +40,28 @@ impl GetFirewallRuleGroupOutputBuilder {
     }
     /// <p>A collection of rules used to filter DNS network traffic.</p>
     pub fn set_firewall_rule_group(mut self, input: ::std::option::Option<crate::types::FirewallRuleGroup>) -> Self {
-        self.firewall_rule_group = input;
-        self
+        self.firewall_rule_group = input; self
     }
     /// <p>A collection of rules used to filter DNS network traffic.</p>
     pub fn get_firewall_rule_group(&self) -> &::std::option::Option<crate::types::FirewallRuleGroup> {
         &self.firewall_rule_group
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetFirewallRuleGroupOutput`](crate::operation::get_firewall_rule_group::GetFirewallRuleGroupOutput).
     pub fn build(self) -> crate::operation::get_firewall_rule_group::GetFirewallRuleGroupOutput {
         crate::operation::get_firewall_rule_group::GetFirewallRuleGroupOutput {
-            firewall_rule_group: self.firewall_rule_group,
+            firewall_rule_group: self.firewall_rule_group
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

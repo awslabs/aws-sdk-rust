@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetContainerRecipePolicyOutput {
+pub struct GetContainerRecipePolicyOutput  {
     /// <p>The request ID that uniquely identifies this request.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The container recipe policy object that is returned.</p>
     pub policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetContainerRecipePolicyOutput {
+impl  GetContainerRecipePolicyOutput  {
     /// <p>The request ID that uniquely identifies this request.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The container recipe policy object that is returned.</p>
-    pub fn policy(&self) -> ::std::option::Option<&str> {
+    pub fn policy(&self) -> ::std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetContainerRecipePolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetContainerRecipePolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetContainerRecipePolicyOutput`](crate::operation::get_container_recipe_policy::GetContainerRecipePolicyOutput).
     pub fn builder() -> crate::operation::get_container_recipe_policy::builders::GetContainerRecipePolicyOutputBuilder {
@@ -47,8 +47,7 @@ impl GetContainerRecipePolicyOutputBuilder {
     }
     /// <p>The request ID that uniquely identifies this request.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The request ID that uniquely identifies this request.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl GetContainerRecipePolicyOutputBuilder {
     }
     /// <p>The container recipe policy object that is returned.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>The container recipe policy object that is returned.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetContainerRecipePolicyOutput`](crate::operation::get_container_recipe_policy::GetContainerRecipePolicyOutput).
     pub fn build(self) -> crate::operation::get_container_recipe_policy::GetContainerRecipePolicyOutput {
         crate::operation::get_container_recipe_policy::GetContainerRecipePolicyOutput {
-            request_id: self.request_id,
-            policy: self.policy,
+            request_id: self.request_id
+            ,
+            policy: self.policy
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

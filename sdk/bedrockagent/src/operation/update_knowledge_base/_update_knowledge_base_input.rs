@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateKnowledgeBaseInput {
+pub struct UpdateKnowledgeBaseInput  {
     /// Identifier for a resource.
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
     /// Name for a resource.
@@ -16,29 +16,29 @@ pub struct UpdateKnowledgeBaseInput {
     /// Configures the physical storage of ingested data in a knowledge base.
     pub storage_configuration: ::std::option::Option<crate::types::StorageConfiguration>,
 }
-impl UpdateKnowledgeBaseInput {
+impl  UpdateKnowledgeBaseInput  {
     /// Identifier for a resource.
-    pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
+    pub fn knowledge_base_id(&self) -> ::std::option::Option<& str> {
         self.knowledge_base_id.as_deref()
     }
     /// Name for a resource.
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Description of the Resource.
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// ARN of a IAM role.
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// Configures a bedrock knowledge base.
-    pub fn knowledge_base_configuration(&self) -> ::std::option::Option<&crate::types::KnowledgeBaseConfiguration> {
+    pub fn knowledge_base_configuration(&self) -> ::std::option::Option<& crate::types::KnowledgeBaseConfiguration> {
         self.knowledge_base_configuration.as_ref()
     }
     /// Configures the physical storage of ingested data in a knowledge base.
-    pub fn storage_configuration(&self) -> ::std::option::Option<&crate::types::StorageConfiguration> {
+    pub fn storage_configuration(&self) -> ::std::option::Option<& crate::types::StorageConfiguration> {
         self.storage_configuration.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl UpdateKnowledgeBaseInputBuilder {
     }
     /// Identifier for a resource.
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.knowledge_base_id = input;
-        self
+        self.knowledge_base_id = input; self
     }
     /// Identifier for a resource.
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl UpdateKnowledgeBaseInputBuilder {
     }
     /// Name for a resource.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Name for a resource.
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +96,7 @@ impl UpdateKnowledgeBaseInputBuilder {
     }
     /// Description of the Resource.
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Description of the Resource.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +110,7 @@ impl UpdateKnowledgeBaseInputBuilder {
     }
     /// ARN of a IAM role.
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// ARN of a IAM role.
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +124,7 @@ impl UpdateKnowledgeBaseInputBuilder {
     }
     /// Configures a bedrock knowledge base.
     pub fn set_knowledge_base_configuration(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseConfiguration>) -> Self {
-        self.knowledge_base_configuration = input;
-        self
+        self.knowledge_base_configuration = input; self
     }
     /// Configures a bedrock knowledge base.
     pub fn get_knowledge_base_configuration(&self) -> &::std::option::Option<crate::types::KnowledgeBaseConfiguration> {
@@ -143,25 +138,30 @@ impl UpdateKnowledgeBaseInputBuilder {
     }
     /// Configures the physical storage of ingested data in a knowledge base.
     pub fn set_storage_configuration(mut self, input: ::std::option::Option<crate::types::StorageConfiguration>) -> Self {
-        self.storage_configuration = input;
-        self
+        self.storage_configuration = input; self
     }
     /// Configures the physical storage of ingested data in a knowledge base.
     pub fn get_storage_configuration(&self) -> &::std::option::Option<crate::types::StorageConfiguration> {
         &self.storage_configuration
     }
     /// Consumes the builder and constructs a [`UpdateKnowledgeBaseInput`](crate::operation::update_knowledge_base::UpdateKnowledgeBaseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_knowledge_base::UpdateKnowledgeBaseInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_knowledge_base::UpdateKnowledgeBaseInput {
-            knowledge_base_id: self.knowledge_base_id,
-            name: self.name,
-            description: self.description,
-            role_arn: self.role_arn,
-            knowledge_base_configuration: self.knowledge_base_configuration,
-            storage_configuration: self.storage_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_knowledge_base::UpdateKnowledgeBaseInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_knowledge_base::UpdateKnowledgeBaseInput {
+                knowledge_base_id: self.knowledge_base_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                role_arn: self.role_arn
+                ,
+                knowledge_base_configuration: self.knowledge_base_configuration
+                ,
+                storage_configuration: self.storage_configuration
+                ,
+            }
+        )
     }
 }
+

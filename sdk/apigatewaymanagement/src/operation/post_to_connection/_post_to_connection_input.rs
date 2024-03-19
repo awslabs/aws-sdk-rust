@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PostToConnectionInput {
+pub struct PostToConnectionInput  {
     /// <p>The data to be sent to the client specified by its connection id.</p>
     pub data: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The identifier of the connection that a specific client is using.</p>
     pub connection_id: ::std::option::Option<::std::string::String>,
 }
-impl PostToConnectionInput {
+impl  PostToConnectionInput  {
     /// <p>The data to be sent to the client specified by its connection id.</p>
-    pub fn data(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn data(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.data.as_ref()
     }
     /// <p>The identifier of the connection that a specific client is using.</p>
-    pub fn connection_id(&self) -> ::std::option::Option<&str> {
+    pub fn connection_id(&self) -> ::std::option::Option<& str> {
         self.connection_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl PostToConnectionInputBuilder {
     }
     /// <p>The data to be sent to the client specified by its connection id.</p>
     pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
     }
     /// <p>The data to be sent to the client specified by its connection id.</p>
     pub fn get_data(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -56,20 +55,22 @@ impl PostToConnectionInputBuilder {
     }
     /// <p>The identifier of the connection that a specific client is using.</p>
     pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_id = input;
-        self
+        self.connection_id = input; self
     }
     /// <p>The identifier of the connection that a specific client is using.</p>
     pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.connection_id
     }
     /// Consumes the builder and constructs a [`PostToConnectionInput`](crate::operation::post_to_connection::PostToConnectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::post_to_connection::PostToConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::post_to_connection::PostToConnectionInput {
-            data: self.data,
-            connection_id: self.connection_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::post_to_connection::PostToConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::post_to_connection::PostToConnectionInput {
+                data: self.data
+                ,
+                connection_id: self.connection_id
+                ,
+            }
+        )
     }
 }
+

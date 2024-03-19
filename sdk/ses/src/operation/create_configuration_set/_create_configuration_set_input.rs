@@ -3,13 +3,13 @@
 /// <p>Represents a request to create a configuration set. Configuration sets enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateConfigurationSetInput {
+pub struct CreateConfigurationSetInput  {
     /// <p>A data structure that contains the name of the configuration set.</p>
     pub configuration_set: ::std::option::Option<crate::types::ConfigurationSet>,
 }
-impl CreateConfigurationSetInput {
+impl  CreateConfigurationSetInput  {
     /// <p>A data structure that contains the name of the configuration set.</p>
-    pub fn configuration_set(&self) -> ::std::option::Option<&crate::types::ConfigurationSet> {
+    pub fn configuration_set(&self) -> ::std::option::Option<& crate::types::ConfigurationSet> {
         self.configuration_set.as_ref()
     }
 }
@@ -35,22 +35,20 @@ impl CreateConfigurationSetInputBuilder {
     }
     /// <p>A data structure that contains the name of the configuration set.</p>
     pub fn set_configuration_set(mut self, input: ::std::option::Option<crate::types::ConfigurationSet>) -> Self {
-        self.configuration_set = input;
-        self
+        self.configuration_set = input; self
     }
     /// <p>A data structure that contains the name of the configuration set.</p>
     pub fn get_configuration_set(&self) -> &::std::option::Option<crate::types::ConfigurationSet> {
         &self.configuration_set
     }
     /// Consumes the builder and constructs a [`CreateConfigurationSetInput`](crate::operation::create_configuration_set::CreateConfigurationSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_configuration_set::CreateConfigurationSetInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_configuration_set::CreateConfigurationSetInput {
-            configuration_set: self.configuration_set,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_configuration_set::CreateConfigurationSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_configuration_set::CreateConfigurationSetInput {
+                configuration_set: self.configuration_set
+                ,
+            }
+        )
     }
 }
+

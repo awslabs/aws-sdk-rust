@@ -7,7 +7,7 @@
 /// <p>For more information about using snapshot archiving, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive">Considerations for snapshot lifecycle policies</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RetentionArchiveTier {
+pub struct RetentionArchiveTier  {
     /// <p>The maximum number of snapshots to retain in the archive storage tier for each volume. The count must ensure that each snapshot remains in the archive tier for at least 90 days. For example, if the schedule creates snapshots every 30 days, you must specify a count of 3 or more to ensure that each snapshot is archived for at least 90 days.</p>
     pub count: ::std::option::Option<i32>,
     /// <p>Specifies the period of time to retain snapshots in the archive tier. After this period expires, the snapshot is permanently deleted.</p>
@@ -15,7 +15,7 @@ pub struct RetentionArchiveTier {
     /// <p>The unit of time in which to measure the <b>Interval</b>. For example, to retain a snapshots in the archive tier for 6 months, specify <code>Interval=6</code> and <code>IntervalUnit=MONTHS</code>.</p>
     pub interval_unit: ::std::option::Option<crate::types::RetentionIntervalUnitValues>,
 }
-impl RetentionArchiveTier {
+impl  RetentionArchiveTier  {
     /// <p>The maximum number of snapshots to retain in the archive storage tier for each volume. The count must ensure that each snapshot remains in the archive tier for at least 90 days. For example, if the schedule creates snapshots every 30 days, you must specify a count of 3 or more to ensure that each snapshot is archived for at least 90 days.</p>
     pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
@@ -25,7 +25,7 @@ impl RetentionArchiveTier {
         self.interval
     }
     /// <p>The unit of time in which to measure the <b>Interval</b>. For example, to retain a snapshots in the archive tier for 6 months, specify <code>Interval=6</code> and <code>IntervalUnit=MONTHS</code>.</p>
-    pub fn interval_unit(&self) -> ::std::option::Option<&crate::types::RetentionIntervalUnitValues> {
+    pub fn interval_unit(&self) -> ::std::option::Option<& crate::types::RetentionIntervalUnitValues> {
         self.interval_unit.as_ref()
     }
 }
@@ -52,8 +52,7 @@ impl RetentionArchiveTierBuilder {
     }
     /// <p>The maximum number of snapshots to retain in the archive storage tier for each volume. The count must ensure that each snapshot remains in the archive tier for at least 90 days. For example, if the schedule creates snapshots every 30 days, you must specify a count of 3 or more to ensure that each snapshot is archived for at least 90 days.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>The maximum number of snapshots to retain in the archive storage tier for each volume. The count must ensure that each snapshot remains in the archive tier for at least 90 days. For example, if the schedule creates snapshots every 30 days, you must specify a count of 3 or more to ensure that each snapshot is archived for at least 90 days.</p>
     pub fn get_count(&self) -> &::std::option::Option<i32> {
@@ -66,8 +65,7 @@ impl RetentionArchiveTierBuilder {
     }
     /// <p>Specifies the period of time to retain snapshots in the archive tier. After this period expires, the snapshot is permanently deleted.</p>
     pub fn set_interval(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.interval = input;
-        self
+        self.interval = input; self
     }
     /// <p>Specifies the period of time to retain snapshots in the archive tier. After this period expires, the snapshot is permanently deleted.</p>
     pub fn get_interval(&self) -> &::std::option::Option<i32> {
@@ -80,8 +78,7 @@ impl RetentionArchiveTierBuilder {
     }
     /// <p>The unit of time in which to measure the <b>Interval</b>. For example, to retain a snapshots in the archive tier for 6 months, specify <code>Interval=6</code> and <code>IntervalUnit=MONTHS</code>.</p>
     pub fn set_interval_unit(mut self, input: ::std::option::Option<crate::types::RetentionIntervalUnitValues>) -> Self {
-        self.interval_unit = input;
-        self
+        self.interval_unit = input; self
     }
     /// <p>The unit of time in which to measure the <b>Interval</b>. For example, to retain a snapshots in the archive tier for 6 months, specify <code>Interval=6</code> and <code>IntervalUnit=MONTHS</code>.</p>
     pub fn get_interval_unit(&self) -> &::std::option::Option<crate::types::RetentionIntervalUnitValues> {
@@ -90,9 +87,13 @@ impl RetentionArchiveTierBuilder {
     /// Consumes the builder and constructs a [`RetentionArchiveTier`](crate::types::RetentionArchiveTier).
     pub fn build(self) -> crate::types::RetentionArchiveTier {
         crate::types::RetentionArchiveTier {
-            count: self.count,
-            interval: self.interval,
-            interval_unit: self.interval_unit,
+            count: self.count
+            ,
+            interval: self.interval
+            ,
+            interval_unit: self.interval_unit
+            ,
         }
     }
 }
+

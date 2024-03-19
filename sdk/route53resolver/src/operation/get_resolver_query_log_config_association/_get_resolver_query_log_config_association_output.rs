@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetResolverQueryLogConfigAssociationOutput {
+pub struct GetResolverQueryLogConfigAssociationOutput  {
     /// <p>Information about the Resolver query logging configuration association that you specified in a <code>GetQueryLogConfigAssociation</code> request.</p>
     pub resolver_query_log_config_association: ::std::option::Option<crate::types::ResolverQueryLogConfigAssociation>,
     _request_id: Option<String>,
 }
-impl GetResolverQueryLogConfigAssociationOutput {
+impl  GetResolverQueryLogConfigAssociationOutput  {
     /// <p>Information about the Resolver query logging configuration association that you specified in a <code>GetQueryLogConfigAssociation</code> request.</p>
-    pub fn resolver_query_log_config_association(&self) -> ::std::option::Option<&crate::types::ResolverQueryLogConfigAssociation> {
+    pub fn resolver_query_log_config_association(&self) -> ::std::option::Option<& crate::types::ResolverQueryLogConfigAssociation> {
         self.resolver_query_log_config_association.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetResolverQueryLogConfigAssociationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetResolverQueryLogConfigAssociationOutput {
     /// Creates a new builder-style object to manufacture [`GetResolverQueryLogConfigAssociationOutput`](crate::operation::get_resolver_query_log_config_association::GetResolverQueryLogConfigAssociationOutput).
     pub fn builder() -> crate::operation::get_resolver_query_log_config_association::builders::GetResolverQueryLogConfigAssociationOutputBuilder {
@@ -39,31 +39,29 @@ impl GetResolverQueryLogConfigAssociationOutputBuilder {
         self
     }
     /// <p>Information about the Resolver query logging configuration association that you specified in a <code>GetQueryLogConfigAssociation</code> request.</p>
-    pub fn set_resolver_query_log_config_association(
-        mut self,
-        input: ::std::option::Option<crate::types::ResolverQueryLogConfigAssociation>,
-    ) -> Self {
-        self.resolver_query_log_config_association = input;
-        self
+    pub fn set_resolver_query_log_config_association(mut self, input: ::std::option::Option<crate::types::ResolverQueryLogConfigAssociation>) -> Self {
+        self.resolver_query_log_config_association = input; self
     }
     /// <p>Information about the Resolver query logging configuration association that you specified in a <code>GetQueryLogConfigAssociation</code> request.</p>
     pub fn get_resolver_query_log_config_association(&self) -> &::std::option::Option<crate::types::ResolverQueryLogConfigAssociation> {
         &self.resolver_query_log_config_association
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetResolverQueryLogConfigAssociationOutput`](crate::operation::get_resolver_query_log_config_association::GetResolverQueryLogConfigAssociationOutput).
     pub fn build(self) -> crate::operation::get_resolver_query_log_config_association::GetResolverQueryLogConfigAssociationOutput {
         crate::operation::get_resolver_query_log_config_association::GetResolverQueryLogConfigAssociationOutput {
-            resolver_query_log_config_association: self.resolver_query_log_config_association,
+            resolver_query_log_config_association: self.resolver_query_log_config_association
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

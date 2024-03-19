@@ -4,7 +4,7 @@
 /// <p>WAF assigns an ARN to each <code>IPSet</code> that you create. To use an IP set in a rule, you provide the ARN to the <code>Rule</code> statement <code>IPSetReferenceStatement</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IpSet {
+pub struct IpSet  {
     /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
     pub name: ::std::string::String,
     /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
@@ -39,30 +39,27 @@ pub struct IpSet {
     /// <li>
     /// <p>INVALID specification: <code>"Addresses": [""]</code> INVALID</p></li>
     /// </ul>
-    pub addresses: ::std::vec::Vec<::std::string::String>,
+    pub addresses: ::std::vec::Vec::<::std::string::String>,
 }
-impl IpSet {
+impl  IpSet  {
     /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>A description of the IP set that helps with identification.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>.</p>
-    pub fn ip_address_version(&self) -> &crate::types::IpAddressVersion {
+    pub fn ip_address_version(&self) -> & crate::types::IpAddressVersion {
         &self.ip_address_version
     }
     /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses that you want WAF to inspect for in incoming requests. All addresses must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>.</p>
@@ -89,9 +86,8 @@ impl IpSet {
     /// <li>
     /// <p>INVALID specification: <code>"Addresses": [""]</code> INVALID</p></li>
     /// </ul>
-    pub fn addresses(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.addresses.deref()
+    pub fn addresses(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.addresses.deref()
     }
 }
 impl IpSet {
@@ -110,7 +106,7 @@ pub struct IpSetBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address_version: ::std::option::Option<crate::types::IpAddressVersion>,
-    pub(crate) addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl IpSetBuilder {
     /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
@@ -121,8 +117,7 @@ impl IpSetBuilder {
     }
     /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +131,7 @@ impl IpSetBuilder {
     }
     /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,8 +145,7 @@ impl IpSetBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,8 +158,7 @@ impl IpSetBuilder {
     }
     /// <p>A description of the IP set that helps with identification.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the IP set that helps with identification.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -180,8 +172,7 @@ impl IpSetBuilder {
     }
     /// <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>.</p>
     pub fn set_ip_address_version(mut self, input: ::std::option::Option<crate::types::IpAddressVersion>) -> Self {
-        self.ip_address_version = input;
-        self
+        self.ip_address_version = input; self
     }
     /// <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>.</p>
     pub fn get_ip_address_version(&self) -> &::std::option::Option<crate::types::IpAddressVersion> {
@@ -217,9 +208,9 @@ impl IpSetBuilder {
     /// </ul>
     pub fn addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.addresses.unwrap_or_default();
-        v.push(input.into());
-        self.addresses = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.addresses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses that you want WAF to inspect for in incoming requests. All addresses must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>.</p>
     /// <p>Example address strings:</p>
@@ -245,9 +236,8 @@ impl IpSetBuilder {
     /// <li>
     /// <p>INVALID specification: <code>"Addresses": [""]</code> INVALID</p></li>
     /// </ul>
-    pub fn set_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.addresses = input;
-        self
+    pub fn set_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.addresses = input; self
     }
     /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses that you want WAF to inspect for in incoming requests. All addresses must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>.</p>
     /// <p>Example address strings:</p>
@@ -273,7 +263,7 @@ impl IpSetBuilder {
     /// <li>
     /// <p>INVALID specification: <code>"Addresses": [""]</code> INVALID</p></li>
     /// </ul>
-    pub fn get_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.addresses
     }
     /// Consumes the builder and constructs a [`IpSet`](crate::types::IpSet).
@@ -284,32 +274,37 @@ impl IpSetBuilder {
     /// - [`ip_address_version`](crate::types::builders::IpSetBuilder::ip_address_version)
     /// - [`addresses`](crate::types::builders::IpSetBuilder::addresses)
     pub fn build(self) -> ::std::result::Result<crate::types::IpSet, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IpSet {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building IpSet",
-                )
-            })?,
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building IpSet")
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building IpSet")
-            })?,
-            description: self.description,
-            ip_address_version: self.ip_address_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ip_address_version",
-                    "ip_address_version was not specified but it is required when building IpSet",
-                )
-            })?,
-            addresses: self.addresses.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "addresses",
-                    "addresses was not specified but it is required when building IpSet",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IpSet {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building IpSet")
+                    )?
+                ,
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building IpSet")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building IpSet")
+                    )?
+                ,
+                description: self.description
+                ,
+                ip_address_version: self.ip_address_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ip_address_version", "ip_address_version was not specified but it is required when building IpSet")
+                    )?
+                ,
+                addresses: self.addresses
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("addresses", "addresses was not specified but it is required when building IpSet")
+                    )?
+                ,
+            }
+        )
     }
 }
+

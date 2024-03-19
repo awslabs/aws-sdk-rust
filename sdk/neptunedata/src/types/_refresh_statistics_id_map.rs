@@ -3,13 +3,13 @@
 /// <p>Statistics for <code>REFRESH</code> mode.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RefreshStatisticsIdMap {
+pub struct RefreshStatisticsIdMap  {
     /// <p>The ID of the statistics generation run that is currently occurring.</p>
     pub statistics_id: ::std::option::Option<::std::string::String>,
 }
-impl RefreshStatisticsIdMap {
+impl  RefreshStatisticsIdMap  {
     /// <p>The ID of the statistics generation run that is currently occurring.</p>
-    pub fn statistics_id(&self) -> ::std::option::Option<&str> {
+    pub fn statistics_id(&self) -> ::std::option::Option<& str> {
         self.statistics_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl RefreshStatisticsIdMapBuilder {
     }
     /// <p>The ID of the statistics generation run that is currently occurring.</p>
     pub fn set_statistics_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.statistics_id = input;
-        self
+        self.statistics_id = input; self
     }
     /// <p>The ID of the statistics generation run that is currently occurring.</p>
     pub fn get_statistics_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl RefreshStatisticsIdMapBuilder {
     /// Consumes the builder and constructs a [`RefreshStatisticsIdMap`](crate::types::RefreshStatisticsIdMap).
     pub fn build(self) -> crate::types::RefreshStatisticsIdMap {
         crate::types::RefreshStatisticsIdMap {
-            statistics_id: self.statistics_id,
+            statistics_id: self.statistics_id
+            ,
         }
     }
 }
+

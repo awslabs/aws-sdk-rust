@@ -3,13 +3,13 @@
 /// <p>Describes the action that WAF should take on a web request when it matches the criteria defined in the rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsWafRegionalRuleGroupRulesActionDetails {
+pub struct AwsWafRegionalRuleGroupRulesActionDetails  {
     /// <p>Specifies the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, and <code>SizeConstraintSet</code> objects that you want to add to a rule and, for each object, indicates whether you want to negate the settings.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
 }
-impl AwsWafRegionalRuleGroupRulesActionDetails {
+impl  AwsWafRegionalRuleGroupRulesActionDetails  {
     /// <p>Specifies the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, and <code>SizeConstraintSet</code> objects that you want to add to a rule and, for each object, indicates whether you want to negate the settings.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AwsWafRegionalRuleGroupRulesActionDetailsBuilder {
     }
     /// <p>Specifies the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, and <code>SizeConstraintSet</code> objects that you want to add to a rule and, for each object, indicates whether you want to negate the settings.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Specifies the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, and <code>SizeConstraintSet</code> objects that you want to add to a rule and, for each object, indicates whether you want to negate the settings.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl AwsWafRegionalRuleGroupRulesActionDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`AwsWafRegionalRuleGroupRulesActionDetails`](crate::types::AwsWafRegionalRuleGroupRulesActionDetails).
     pub fn build(self) -> crate::types::AwsWafRegionalRuleGroupRulesActionDetails {
-        crate::types::AwsWafRegionalRuleGroupRulesActionDetails { r#type: self.r#type }
+        crate::types::AwsWafRegionalRuleGroupRulesActionDetails {
+            r#type: self.r#type
+            ,
+        }
     }
 }
+

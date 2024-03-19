@@ -3,7 +3,7 @@
 /// <p>Provides options to upload a part of an archive in a multipart upload operation.</p>
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
-pub struct UploadMultipartPartInput {
+pub struct UploadMultipartPartInput  {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the vault.</p>
@@ -17,37 +17,37 @@ pub struct UploadMultipartPartInput {
     /// <p>The data to upload.</p>
     pub body: ::aws_smithy_types::byte_stream::ByteStream,
 }
-impl UploadMultipartPartInput {
+impl  UploadMultipartPartInput  {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> ::std::option::Option<&str> {
+    pub fn vault_name(&self) -> ::std::option::Option<& str> {
         self.vault_name.as_deref()
     }
     /// <p>The upload ID of the multipart upload.</p>
-    pub fn upload_id(&self) -> ::std::option::Option<&str> {
+    pub fn upload_id(&self) -> ::std::option::Option<& str> {
         self.upload_id.as_deref()
     }
     /// <p>The SHA256 tree hash of the data being uploaded.</p>
-    pub fn checksum(&self) -> ::std::option::Option<&str> {
+    pub fn checksum(&self) -> ::std::option::Option<& str> {
         self.checksum.as_deref()
     }
     /// <p>Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon S3 Glacier uses this information to assemble the archive in the proper sequence. The format of this header follows RFC 2616. An example header is Content-Range:bytes 0-4194303/*.</p>
-    pub fn range(&self) -> ::std::option::Option<&str> {
+    pub fn range(&self) -> ::std::option::Option<& str> {
         self.range.as_deref()
     }
     /// <p>The data to upload.</p>
-    pub fn body(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
+    pub fn body(&self) -> & ::aws_smithy_types::byte_stream::ByteStream {
         &self.body
     }
 }
 impl crate::glacier_interceptors::GlacierAccountId for UploadMultipartPartInput {
-    fn account_id_mut(&mut self) -> &mut Option<String> {
-        &mut self.account_id
-    }
-}
+                        fn account_id_mut(&mut self) -> &mut Option<String> {
+                            &mut self.account_id
+                        }
+                    }
 impl UploadMultipartPartInput {
     /// Creates a new builder-style object to manufacture [`UploadMultipartPartInput`](crate::operation::upload_multipart_part::UploadMultipartPartInput).
     pub fn builder() -> crate::operation::upload_multipart_part::builders::UploadMultipartPartInputBuilder {
@@ -75,8 +75,7 @@ impl UploadMultipartPartInputBuilder {
     }
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl UploadMultipartPartInputBuilder {
     }
     /// <p>The name of the vault.</p>
     pub fn set_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vault_name = input;
-        self
+        self.vault_name = input; self
     }
     /// <p>The name of the vault.</p>
     pub fn get_vault_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +103,7 @@ impl UploadMultipartPartInputBuilder {
     }
     /// <p>The upload ID of the multipart upload.</p>
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.upload_id = input;
-        self
+        self.upload_id = input; self
     }
     /// <p>The upload ID of the multipart upload.</p>
     pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +116,7 @@ impl UploadMultipartPartInputBuilder {
     }
     /// <p>The SHA256 tree hash of the data being uploaded.</p>
     pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.checksum = input;
-        self
+        self.checksum = input; self
     }
     /// <p>The SHA256 tree hash of the data being uploaded.</p>
     pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +129,7 @@ impl UploadMultipartPartInputBuilder {
     }
     /// <p>Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon S3 Glacier uses this information to assemble the archive in the proper sequence. The format of this header follows RFC 2616. An example header is Content-Range:bytes 0-4194303/*.</p>
     pub fn set_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.range = input;
-        self
+        self.range = input; self
     }
     /// <p>Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon S3 Glacier uses this information to assemble the archive in the proper sequence. The format of this header follows RFC 2616. An example header is Content-Range:bytes 0-4194303/*.</p>
     pub fn get_range(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,25 +142,31 @@ impl UploadMultipartPartInputBuilder {
     }
     /// <p>The data to upload.</p>
     pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
-        self.body = input;
-        self
+        self.body = input; self
     }
     /// <p>The data to upload.</p>
     pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.body
     }
     /// Consumes the builder and constructs a [`UploadMultipartPartInput`](crate::operation::upload_multipart_part::UploadMultipartPartInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::upload_multipart_part::UploadMultipartPartInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::upload_multipart_part::UploadMultipartPartInput {
-            account_id: self.account_id,
-            vault_name: self.vault_name,
-            upload_id: self.upload_id,
-            checksum: self.checksum,
-            range: self.range,
-            body: self.body.unwrap_or_default(),
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::upload_multipart_part::UploadMultipartPartInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::upload_multipart_part::UploadMultipartPartInput {
+                account_id: self.account_id
+                ,
+                vault_name: self.vault_name
+                ,
+                upload_id: self.upload_id
+                ,
+                checksum: self.checksum
+                ,
+                range: self.range
+                ,
+                body: self.body
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Summary information about the source file for the import.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportSummary {
+pub struct ImportSummary  {
     /// <p>The Amazon Resource Number (ARN) corresponding to the import request.</p>
     pub import_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the import operation.</p>
@@ -21,37 +21,37 @@ pub struct ImportSummary {
     /// <p>The time at which this import task ended. (Does this include the successful complete creation of the table it was imported to?)</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ImportSummary {
+impl  ImportSummary  {
     /// <p>The Amazon Resource Number (ARN) corresponding to the import request.</p>
-    pub fn import_arn(&self) -> ::std::option::Option<&str> {
+    pub fn import_arn(&self) -> ::std::option::Option<& str> {
         self.import_arn.as_deref()
     }
     /// <p>The status of the import operation.</p>
-    pub fn import_status(&self) -> ::std::option::Option<&crate::types::ImportStatus> {
+    pub fn import_status(&self) -> ::std::option::Option<& crate::types::ImportStatus> {
         self.import_status.as_ref()
     }
     /// <p>The Amazon Resource Number (ARN) of the table being imported into.</p>
-    pub fn table_arn(&self) -> ::std::option::Option<&str> {
+    pub fn table_arn(&self) -> ::std::option::Option<& str> {
         self.table_arn.as_deref()
     }
     /// <p>The path and S3 bucket of the source file that is being imported. This includes the S3Bucket (required), S3KeyPrefix (optional) and S3BucketOwner (optional if the bucket is owned by the requester).</p>
-    pub fn s3_bucket_source(&self) -> ::std::option::Option<&crate::types::S3BucketSource> {
+    pub fn s3_bucket_source(&self) -> ::std::option::Option<& crate::types::S3BucketSource> {
         self.s3_bucket_source.as_ref()
     }
     /// <p>The Amazon Resource Number (ARN) of the Cloudwatch Log Group associated with this import task.</p>
-    pub fn cloud_watch_log_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cloud_watch_log_group_arn(&self) -> ::std::option::Option<& str> {
         self.cloud_watch_log_group_arn.as_deref()
     }
     /// <p>The format of the source data. Valid values are <code>CSV</code>, <code>DYNAMODB_JSON</code> or <code>ION</code>.</p>
-    pub fn input_format(&self) -> ::std::option::Option<&crate::types::InputFormat> {
+    pub fn input_format(&self) -> ::std::option::Option<& crate::types::InputFormat> {
         self.input_format.as_ref()
     }
     /// <p>The time at which this import task began.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time at which this import task ended. (Does this include the successful complete creation of the table it was imported to?)</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -83,8 +83,7 @@ impl ImportSummaryBuilder {
     }
     /// <p>The Amazon Resource Number (ARN) corresponding to the import request.</p>
     pub fn set_import_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.import_arn = input;
-        self
+        self.import_arn = input; self
     }
     /// <p>The Amazon Resource Number (ARN) corresponding to the import request.</p>
     pub fn get_import_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl ImportSummaryBuilder {
     }
     /// <p>The status of the import operation.</p>
     pub fn set_import_status(mut self, input: ::std::option::Option<crate::types::ImportStatus>) -> Self {
-        self.import_status = input;
-        self
+        self.import_status = input; self
     }
     /// <p>The status of the import operation.</p>
     pub fn get_import_status(&self) -> &::std::option::Option<crate::types::ImportStatus> {
@@ -111,8 +109,7 @@ impl ImportSummaryBuilder {
     }
     /// <p>The Amazon Resource Number (ARN) of the table being imported into.</p>
     pub fn set_table_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_arn = input;
-        self
+        self.table_arn = input; self
     }
     /// <p>The Amazon Resource Number (ARN) of the table being imported into.</p>
     pub fn get_table_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +122,7 @@ impl ImportSummaryBuilder {
     }
     /// <p>The path and S3 bucket of the source file that is being imported. This includes the S3Bucket (required), S3KeyPrefix (optional) and S3BucketOwner (optional if the bucket is owned by the requester).</p>
     pub fn set_s3_bucket_source(mut self, input: ::std::option::Option<crate::types::S3BucketSource>) -> Self {
-        self.s3_bucket_source = input;
-        self
+        self.s3_bucket_source = input; self
     }
     /// <p>The path and S3 bucket of the source file that is being imported. This includes the S3Bucket (required), S3KeyPrefix (optional) and S3BucketOwner (optional if the bucket is owned by the requester).</p>
     pub fn get_s3_bucket_source(&self) -> &::std::option::Option<crate::types::S3BucketSource> {
@@ -139,8 +135,7 @@ impl ImportSummaryBuilder {
     }
     /// <p>The Amazon Resource Number (ARN) of the Cloudwatch Log Group associated with this import task.</p>
     pub fn set_cloud_watch_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cloud_watch_log_group_arn = input;
-        self
+        self.cloud_watch_log_group_arn = input; self
     }
     /// <p>The Amazon Resource Number (ARN) of the Cloudwatch Log Group associated with this import task.</p>
     pub fn get_cloud_watch_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +148,7 @@ impl ImportSummaryBuilder {
     }
     /// <p>The format of the source data. Valid values are <code>CSV</code>, <code>DYNAMODB_JSON</code> or <code>ION</code>.</p>
     pub fn set_input_format(mut self, input: ::std::option::Option<crate::types::InputFormat>) -> Self {
-        self.input_format = input;
-        self
+        self.input_format = input; self
     }
     /// <p>The format of the source data. Valid values are <code>CSV</code>, <code>DYNAMODB_JSON</code> or <code>ION</code>.</p>
     pub fn get_input_format(&self) -> &::std::option::Option<crate::types::InputFormat> {
@@ -167,8 +161,7 @@ impl ImportSummaryBuilder {
     }
     /// <p>The time at which this import task began.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The time at which this import task began.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -181,8 +174,7 @@ impl ImportSummaryBuilder {
     }
     /// <p>The time at which this import task ended. (Does this include the successful complete creation of the table it was imported to?)</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The time at which this import task ended. (Does this include the successful complete creation of the table it was imported to?)</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -191,14 +183,23 @@ impl ImportSummaryBuilder {
     /// Consumes the builder and constructs a [`ImportSummary`](crate::types::ImportSummary).
     pub fn build(self) -> crate::types::ImportSummary {
         crate::types::ImportSummary {
-            import_arn: self.import_arn,
-            import_status: self.import_status,
-            table_arn: self.table_arn,
-            s3_bucket_source: self.s3_bucket_source,
-            cloud_watch_log_group_arn: self.cloud_watch_log_group_arn,
-            input_format: self.input_format,
-            start_time: self.start_time,
-            end_time: self.end_time,
+            import_arn: self.import_arn
+            ,
+            import_status: self.import_status
+            ,
+            table_arn: self.table_arn
+            ,
+            s3_bucket_source: self.s3_bucket_source
+            ,
+            cloud_watch_log_group_arn: self.cloud_watch_log_group_arn
+            ,
+            input_format: self.input_format
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
         }
     }
 }
+

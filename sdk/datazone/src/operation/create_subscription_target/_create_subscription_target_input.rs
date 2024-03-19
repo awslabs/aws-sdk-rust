@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateSubscriptionTargetInput {
+pub struct CreateSubscriptionTargetInput  {
     /// <p>The ID of the Amazon DataZone domain in which subscription target is created.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the environment in which subscription target is created.</p>
@@ -12,67 +12,70 @@ pub struct CreateSubscriptionTargetInput {
     /// <p>The type of the subscription target.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The configuration of the subscription target.</p>
-    pub subscription_target_config: ::std::option::Option<::std::vec::Vec<crate::types::SubscriptionTargetForm>>,
+    pub subscription_target_config: ::std::option::Option<::std::vec::Vec::<crate::types::SubscriptionTargetForm>>,
     /// <p>The authorized principals of the subscription target.</p>
-    pub authorized_principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub authorized_principals: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The manage access role that is used to create the subscription target.</p>
     pub manage_access_role: ::std::option::Option<::std::string::String>,
     /// <p>The asset types that can be included in the subscription target.</p>
-    pub applicable_asset_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub applicable_asset_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The provider of the subscription target.</p>
     pub provider: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateSubscriptionTargetInput {
+impl  CreateSubscriptionTargetInput  {
     /// <p>The ID of the Amazon DataZone domain in which subscription target is created.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The ID of the environment in which subscription target is created.</p>
-    pub fn environment_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn environment_identifier(&self) -> ::std::option::Option<& str> {
         self.environment_identifier.as_deref()
     }
     /// <p>The name of the subscription target.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of the subscription target.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The configuration of the subscription target.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscription_target_config.is_none()`.
-    pub fn subscription_target_config(&self) -> &[crate::types::SubscriptionTargetForm] {
-        self.subscription_target_config.as_deref().unwrap_or_default()
+    pub fn subscription_target_config(&self) -> & [crate::types::SubscriptionTargetForm] {
+        self.subscription_target_config.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The authorized principals of the subscription target.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.authorized_principals.is_none()`.
-    pub fn authorized_principals(&self) -> &[::std::string::String] {
-        self.authorized_principals.as_deref().unwrap_or_default()
+    pub fn authorized_principals(&self) -> & [::std::string::String] {
+        self.authorized_principals.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The manage access role that is used to create the subscription target.</p>
-    pub fn manage_access_role(&self) -> ::std::option::Option<&str> {
+    pub fn manage_access_role(&self) -> ::std::option::Option<& str> {
         self.manage_access_role.as_deref()
     }
     /// <p>The asset types that can be included in the subscription target.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.applicable_asset_types.is_none()`.
-    pub fn applicable_asset_types(&self) -> &[::std::string::String] {
-        self.applicable_asset_types.as_deref().unwrap_or_default()
+    pub fn applicable_asset_types(&self) -> & [::std::string::String] {
+        self.applicable_asset_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The provider of the subscription target.</p>
-    pub fn provider(&self) -> ::std::option::Option<&str> {
+    pub fn provider(&self) -> ::std::option::Option<& str> {
         self.provider.as_deref()
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreateSubscriptionTargetInput {
+impl  ::std::fmt::Debug for CreateSubscriptionTargetInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSubscriptionTargetInput");
         formatter.field("domain_identifier", &self.domain_identifier);
@@ -103,10 +106,10 @@ pub struct CreateSubscriptionTargetInputBuilder {
     pub(crate) environment_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
-    pub(crate) subscription_target_config: ::std::option::Option<::std::vec::Vec<crate::types::SubscriptionTargetForm>>,
-    pub(crate) authorized_principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subscription_target_config: ::std::option::Option<::std::vec::Vec::<crate::types::SubscriptionTargetForm>>,
+    pub(crate) authorized_principals: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) manage_access_role: ::std::option::Option<::std::string::String>,
-    pub(crate) applicable_asset_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) applicable_asset_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) provider: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
@@ -119,8 +122,7 @@ impl CreateSubscriptionTargetInputBuilder {
     }
     /// <p>The ID of the Amazon DataZone domain in which subscription target is created.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The ID of the Amazon DataZone domain in which subscription target is created.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +136,7 @@ impl CreateSubscriptionTargetInputBuilder {
     }
     /// <p>The ID of the environment in which subscription target is created.</p>
     pub fn set_environment_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_identifier = input;
-        self
+        self.environment_identifier = input; self
     }
     /// <p>The ID of the environment in which subscription target is created.</p>
     pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +150,7 @@ impl CreateSubscriptionTargetInputBuilder {
     }
     /// <p>The name of the subscription target.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the subscription target.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,8 +164,7 @@ impl CreateSubscriptionTargetInputBuilder {
     }
     /// <p>The type of the subscription target.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the subscription target.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -178,17 +177,16 @@ impl CreateSubscriptionTargetInputBuilder {
     /// <p>The configuration of the subscription target.</p>
     pub fn subscription_target_config(mut self, input: crate::types::SubscriptionTargetForm) -> Self {
         let mut v = self.subscription_target_config.unwrap_or_default();
-        v.push(input);
-        self.subscription_target_config = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.subscription_target_config = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The configuration of the subscription target.</p>
-    pub fn set_subscription_target_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubscriptionTargetForm>>) -> Self {
-        self.subscription_target_config = input;
-        self
+    pub fn set_subscription_target_config(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SubscriptionTargetForm>>) -> Self {
+        self.subscription_target_config = input; self
     }
     /// <p>The configuration of the subscription target.</p>
-    pub fn get_subscription_target_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubscriptionTargetForm>> {
+    pub fn get_subscription_target_config(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SubscriptionTargetForm>> {
         &self.subscription_target_config
     }
     /// Appends an item to `authorized_principals`.
@@ -198,17 +196,16 @@ impl CreateSubscriptionTargetInputBuilder {
     /// <p>The authorized principals of the subscription target.</p>
     pub fn authorized_principals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.authorized_principals.unwrap_or_default();
-        v.push(input.into());
-        self.authorized_principals = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.authorized_principals = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The authorized principals of the subscription target.</p>
-    pub fn set_authorized_principals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.authorized_principals = input;
-        self
+    pub fn set_authorized_principals(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.authorized_principals = input; self
     }
     /// <p>The authorized principals of the subscription target.</p>
-    pub fn get_authorized_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_authorized_principals(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.authorized_principals
     }
     /// <p>The manage access role that is used to create the subscription target.</p>
@@ -219,8 +216,7 @@ impl CreateSubscriptionTargetInputBuilder {
     }
     /// <p>The manage access role that is used to create the subscription target.</p>
     pub fn set_manage_access_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.manage_access_role = input;
-        self
+        self.manage_access_role = input; self
     }
     /// <p>The manage access role that is used to create the subscription target.</p>
     pub fn get_manage_access_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -233,17 +229,16 @@ impl CreateSubscriptionTargetInputBuilder {
     /// <p>The asset types that can be included in the subscription target.</p>
     pub fn applicable_asset_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.applicable_asset_types.unwrap_or_default();
-        v.push(input.into());
-        self.applicable_asset_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.applicable_asset_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The asset types that can be included in the subscription target.</p>
-    pub fn set_applicable_asset_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.applicable_asset_types = input;
-        self
+    pub fn set_applicable_asset_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.applicable_asset_types = input; self
     }
     /// <p>The asset types that can be included in the subscription target.</p>
-    pub fn get_applicable_asset_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_applicable_asset_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.applicable_asset_types
     }
     /// <p>The provider of the subscription target.</p>
@@ -253,8 +248,7 @@ impl CreateSubscriptionTargetInputBuilder {
     }
     /// <p>The provider of the subscription target.</p>
     pub fn set_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider = input;
-        self
+        self.provider = input; self
     }
     /// <p>The provider of the subscription target.</p>
     pub fn get_provider(&self) -> &::std::option::Option<::std::string::String> {
@@ -267,32 +261,38 @@ impl CreateSubscriptionTargetInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateSubscriptionTargetInput`](crate::operation::create_subscription_target::CreateSubscriptionTargetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_subscription_target::CreateSubscriptionTargetInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_subscription_target::CreateSubscriptionTargetInput {
-            domain_identifier: self.domain_identifier,
-            environment_identifier: self.environment_identifier,
-            name: self.name,
-            r#type: self.r#type,
-            subscription_target_config: self.subscription_target_config,
-            authorized_principals: self.authorized_principals,
-            manage_access_role: self.manage_access_role,
-            applicable_asset_types: self.applicable_asset_types,
-            provider: self.provider,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_subscription_target::CreateSubscriptionTargetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_subscription_target::CreateSubscriptionTargetInput {
+                domain_identifier: self.domain_identifier
+                ,
+                environment_identifier: self.environment_identifier
+                ,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                subscription_target_config: self.subscription_target_config
+                ,
+                authorized_principals: self.authorized_principals
+                ,
+                manage_access_role: self.manage_access_role
+                ,
+                applicable_asset_types: self.applicable_asset_types
+                ,
+                provider: self.provider
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateSubscriptionTargetInputBuilder {
@@ -311,3 +311,4 @@ impl ::std::fmt::Debug for CreateSubscriptionTargetInputBuilder {
         formatter.finish()
     }
 }
+

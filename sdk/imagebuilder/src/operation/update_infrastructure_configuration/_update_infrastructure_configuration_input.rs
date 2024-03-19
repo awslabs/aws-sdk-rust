@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateInfrastructureConfigurationInput {
+pub struct UpdateInfrastructureConfigurationInput  {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update.</p>
     pub infrastructure_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the infrastructure configuration.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability.</p>
-    pub instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub instance_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
     pub instance_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.</p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The subnet ID to place the instance used to customize your Amazon EC2 AMI in.</p>
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The logging configuration of the infrastructure configuration.</p>
@@ -28,7 +28,7 @@ pub struct UpdateInfrastructureConfigurationInput {
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags attached to the resource created by Image Builder.</p>
-    pub resource_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub resource_tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see one of the following links:</p>
     /// <ul>
     /// <li>
@@ -38,41 +38,43 @@ pub struct UpdateInfrastructureConfigurationInput {
     /// </ul>
     pub instance_metadata_options: ::std::option::Option<crate::types::InstanceMetadataOptions>,
 }
-impl UpdateInfrastructureConfigurationInput {
+impl  UpdateInfrastructureConfigurationInput  {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update.</p>
-    pub fn infrastructure_configuration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn infrastructure_configuration_arn(&self) -> ::std::option::Option<& str> {
         self.infrastructure_configuration_arn.as_deref()
     }
     /// <p>The description of the infrastructure configuration.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_types.is_none()`.
-    pub fn instance_types(&self) -> &[::std::string::String] {
-        self.instance_types.as_deref().unwrap_or_default()
+    pub fn instance_types(&self) -> & [::std::string::String] {
+        self.instance_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
-    pub fn instance_profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn instance_profile_name(&self) -> ::std::option::Option<& str> {
         self.instance_profile_name.as_deref()
     }
     /// <p>The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
-    pub fn security_group_ids(&self) -> &[::std::string::String] {
-        self.security_group_ids.as_deref().unwrap_or_default()
+    pub fn security_group_ids(&self) -> & [::std::string::String] {
+        self.security_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The subnet ID to place the instance used to customize your Amazon EC2 AMI in.</p>
-    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>The logging configuration of the infrastructure configuration.</p>
-    pub fn logging(&self) -> ::std::option::Option<&crate::types::Logging> {
+    pub fn logging(&self) -> ::std::option::Option<& crate::types::Logging> {
         self.logging.as_ref()
     }
     /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug the instance used to create your image.</p>
-    pub fn key_pair(&self) -> ::std::option::Option<&str> {
+    pub fn key_pair(&self) -> ::std::option::Option<& str> {
         self.key_pair.as_deref()
     }
     /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.</p>
@@ -82,15 +84,15 @@ impl UpdateInfrastructureConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p><note>
     /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
     /// </note>
-    pub fn sns_topic_arn(&self) -> ::std::option::Option<&str> {
+    pub fn sns_topic_arn(&self) -> ::std::option::Option<& str> {
         self.sns_topic_arn.as_deref()
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The tags attached to the resource created by Image Builder.</p>
-    pub fn resource_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn resource_tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.resource_tags.as_ref()
     }
     /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see one of the following links:</p>
@@ -100,7 +102,7 @@ impl UpdateInfrastructureConfigurationInput {
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p></li>
     /// </ul>
-    pub fn instance_metadata_options(&self) -> ::std::option::Option<&crate::types::InstanceMetadataOptions> {
+    pub fn instance_metadata_options(&self) -> ::std::option::Option<& crate::types::InstanceMetadataOptions> {
         self.instance_metadata_options.as_ref()
     }
 }
@@ -117,16 +119,16 @@ impl UpdateInfrastructureConfigurationInput {
 pub struct UpdateInfrastructureConfigurationInputBuilder {
     pub(crate) infrastructure_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) instance_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) instance_profile_name: ::std::option::Option<::std::string::String>,
-    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) logging: ::std::option::Option<crate::types::Logging>,
     pub(crate) key_pair: ::std::option::Option<::std::string::String>,
     pub(crate) terminate_instance_on_failure: ::std::option::Option<bool>,
     pub(crate) sns_topic_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) resource_tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) instance_metadata_options: ::std::option::Option<crate::types::InstanceMetadataOptions>,
 }
 impl UpdateInfrastructureConfigurationInputBuilder {
@@ -138,8 +140,7 @@ impl UpdateInfrastructureConfigurationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update.</p>
     pub fn set_infrastructure_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.infrastructure_configuration_arn = input;
-        self
+        self.infrastructure_configuration_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update.</p>
     pub fn get_infrastructure_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +153,7 @@ impl UpdateInfrastructureConfigurationInputBuilder {
     }
     /// <p>The description of the infrastructure configuration.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the infrastructure configuration.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,17 +166,16 @@ impl UpdateInfrastructureConfigurationInputBuilder {
     /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability.</p>
     pub fn instance_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_types.unwrap_or_default();
-        v.push(input.into());
-        self.instance_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.instance_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability.</p>
-    pub fn set_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.instance_types = input;
-        self
+    pub fn set_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.instance_types = input; self
     }
     /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability.</p>
-    pub fn get_instance_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.instance_types
     }
     /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
@@ -187,8 +186,7 @@ impl UpdateInfrastructureConfigurationInputBuilder {
     }
     /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
     pub fn set_instance_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_profile_name = input;
-        self
+        self.instance_profile_name = input; self
     }
     /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
     pub fn get_instance_profile_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -201,17 +199,16 @@ impl UpdateInfrastructureConfigurationInputBuilder {
     /// <p>The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.</p>
-    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_group_ids = input; self
     }
     /// <p>The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.</p>
-    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_group_ids
     }
     /// <p>The subnet ID to place the instance used to customize your Amazon EC2 AMI in.</p>
@@ -221,8 +218,7 @@ impl UpdateInfrastructureConfigurationInputBuilder {
     }
     /// <p>The subnet ID to place the instance used to customize your Amazon EC2 AMI in.</p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
     }
     /// <p>The subnet ID to place the instance used to customize your Amazon EC2 AMI in.</p>
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -235,8 +231,7 @@ impl UpdateInfrastructureConfigurationInputBuilder {
     }
     /// <p>The logging configuration of the infrastructure configuration.</p>
     pub fn set_logging(mut self, input: ::std::option::Option<crate::types::Logging>) -> Self {
-        self.logging = input;
-        self
+        self.logging = input; self
     }
     /// <p>The logging configuration of the infrastructure configuration.</p>
     pub fn get_logging(&self) -> &::std::option::Option<crate::types::Logging> {
@@ -249,8 +244,7 @@ impl UpdateInfrastructureConfigurationInputBuilder {
     }
     /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug the instance used to create your image.</p>
     pub fn set_key_pair(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_pair = input;
-        self
+        self.key_pair = input; self
     }
     /// <p>The key pair of the infrastructure configuration. You can use this to log on to and debug the instance used to create your image.</p>
     pub fn get_key_pair(&self) -> &::std::option::Option<::std::string::String> {
@@ -263,8 +257,7 @@ impl UpdateInfrastructureConfigurationInputBuilder {
     }
     /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.</p>
     pub fn set_terminate_instance_on_failure(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.terminate_instance_on_failure = input;
-        self
+        self.terminate_instance_on_failure = input; self
     }
     /// <p>The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.</p>
     pub fn get_terminate_instance_on_failure(&self) -> &::std::option::Option<bool> {
@@ -281,8 +274,7 @@ impl UpdateInfrastructureConfigurationInputBuilder {
     /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
     /// </note>
     pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sns_topic_arn = input;
-        self
+        self.sns_topic_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p><note>
     /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
@@ -298,8 +290,7 @@ impl UpdateInfrastructureConfigurationInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -312,20 +303,16 @@ impl UpdateInfrastructureConfigurationInputBuilder {
     /// <p>The tags attached to the resource created by Image Builder.</p>
     pub fn resource_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.resource_tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.resource_tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.resource_tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags attached to the resource created by Image Builder.</p>
-    pub fn set_resource_tags(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.resource_tags = input;
-        self
+    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.resource_tags = input; self
     }
     /// <p>The tags attached to the resource created by Image Builder.</p>
-    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.resource_tags
     }
     /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see one of the following links:</p>
@@ -347,8 +334,7 @@ impl UpdateInfrastructureConfigurationInputBuilder {
     /// <p><a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p></li>
     /// </ul>
     pub fn set_instance_metadata_options(mut self, input: ::std::option::Option<crate::types::InstanceMetadataOptions>) -> Self {
-        self.instance_metadata_options = input;
-        self
+        self.instance_metadata_options = input; self
     }
     /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see one of the following links:</p>
     /// <ul>
@@ -361,28 +347,37 @@ impl UpdateInfrastructureConfigurationInputBuilder {
         &self.instance_metadata_options
     }
     /// Consumes the builder and constructs a [`UpdateInfrastructureConfigurationInput`](crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_infrastructure_configuration::UpdateInfrastructureConfigurationInput {
-                infrastructure_configuration_arn: self.infrastructure_configuration_arn,
-                description: self.description,
-                instance_types: self.instance_types,
-                instance_profile_name: self.instance_profile_name,
-                security_group_ids: self.security_group_ids,
-                subnet_id: self.subnet_id,
-                logging: self.logging,
-                key_pair: self.key_pair,
-                terminate_instance_on_failure: self.terminate_instance_on_failure,
-                sns_topic_arn: self.sns_topic_arn,
-                client_token: self.client_token,
-                resource_tags: self.resource_tags,
-                instance_metadata_options: self.instance_metadata_options,
-            },
+                infrastructure_configuration_arn: self.infrastructure_configuration_arn
+                ,
+                description: self.description
+                ,
+                instance_types: self.instance_types
+                ,
+                instance_profile_name: self.instance_profile_name
+                ,
+                security_group_ids: self.security_group_ids
+                ,
+                subnet_id: self.subnet_id
+                ,
+                logging: self.logging
+                ,
+                key_pair: self.key_pair
+                ,
+                terminate_instance_on_failure: self.terminate_instance_on_failure
+                ,
+                sns_topic_arn: self.sns_topic_arn
+                ,
+                client_token: self.client_token
+                ,
+                resource_tags: self.resource_tags
+                ,
+                instance_metadata_options: self.instance_metadata_options
+                ,
+            }
         )
     }
 }
+

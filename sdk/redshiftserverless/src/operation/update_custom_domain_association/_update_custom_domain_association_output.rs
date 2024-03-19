@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateCustomDomainAssociationOutput {
+pub struct UpdateCustomDomainAssociationOutput  {
     /// <p>The custom domain name associated with the workgroup.</p>
     pub custom_domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the workgroup associated with the database.</p>
@@ -13,29 +13,29 @@ pub struct UpdateCustomDomainAssociationOutput {
     pub custom_domain_certificate_expiry_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl UpdateCustomDomainAssociationOutput {
+impl  UpdateCustomDomainAssociationOutput  {
     /// <p>The custom domain name associated with the workgroup.</p>
-    pub fn custom_domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn custom_domain_name(&self) -> ::std::option::Option<& str> {
         self.custom_domain_name.as_deref()
     }
     /// <p>The name of the workgroup associated with the database.</p>
-    pub fn workgroup_name(&self) -> ::std::option::Option<&str> {
+    pub fn workgroup_name(&self) -> ::std::option::Option<& str> {
         self.workgroup_name.as_deref()
     }
     /// <p>The custom domain name’s certificate Amazon resource name (ARN).</p>
-    pub fn custom_domain_certificate_arn(&self) -> ::std::option::Option<&str> {
+    pub fn custom_domain_certificate_arn(&self) -> ::std::option::Option<& str> {
         self.custom_domain_certificate_arn.as_deref()
     }
     /// <p>The expiration time for the certificate.</p>
-    pub fn custom_domain_certificate_expiry_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn custom_domain_certificate_expiry_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.custom_domain_certificate_expiry_time.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateCustomDomainAssociationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateCustomDomainAssociationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCustomDomainAssociationOutput`](crate::operation::update_custom_domain_association::UpdateCustomDomainAssociationOutput).
     pub fn builder() -> crate::operation::update_custom_domain_association::builders::UpdateCustomDomainAssociationOutputBuilder {
@@ -61,8 +61,7 @@ impl UpdateCustomDomainAssociationOutputBuilder {
     }
     /// <p>The custom domain name associated with the workgroup.</p>
     pub fn set_custom_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_domain_name = input;
-        self
+        self.custom_domain_name = input; self
     }
     /// <p>The custom domain name associated with the workgroup.</p>
     pub fn get_custom_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl UpdateCustomDomainAssociationOutputBuilder {
     }
     /// <p>The name of the workgroup associated with the database.</p>
     pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workgroup_name = input;
-        self
+        self.workgroup_name = input; self
     }
     /// <p>The name of the workgroup associated with the database.</p>
     pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl UpdateCustomDomainAssociationOutputBuilder {
     }
     /// <p>The custom domain name’s certificate Amazon resource name (ARN).</p>
     pub fn set_custom_domain_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_domain_certificate_arn = input;
-        self
+        self.custom_domain_certificate_arn = input; self
     }
     /// <p>The custom domain name’s certificate Amazon resource name (ARN).</p>
     pub fn get_custom_domain_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,30 +100,34 @@ impl UpdateCustomDomainAssociationOutputBuilder {
     }
     /// <p>The expiration time for the certificate.</p>
     pub fn set_custom_domain_certificate_expiry_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.custom_domain_certificate_expiry_time = input;
-        self
+        self.custom_domain_certificate_expiry_time = input; self
     }
     /// <p>The expiration time for the certificate.</p>
     pub fn get_custom_domain_certificate_expiry_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.custom_domain_certificate_expiry_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateCustomDomainAssociationOutput`](crate::operation::update_custom_domain_association::UpdateCustomDomainAssociationOutput).
     pub fn build(self) -> crate::operation::update_custom_domain_association::UpdateCustomDomainAssociationOutput {
         crate::operation::update_custom_domain_association::UpdateCustomDomainAssociationOutput {
-            custom_domain_name: self.custom_domain_name,
-            workgroup_name: self.workgroup_name,
-            custom_domain_certificate_arn: self.custom_domain_certificate_arn,
-            custom_domain_certificate_expiry_time: self.custom_domain_certificate_expiry_time,
+            custom_domain_name: self.custom_domain_name
+            ,
+            workgroup_name: self.workgroup_name
+            ,
+            custom_domain_certificate_arn: self.custom_domain_certificate_arn
+            ,
+            custom_domain_certificate_expiry_time: self.custom_domain_certificate_expiry_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

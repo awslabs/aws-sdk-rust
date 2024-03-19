@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteFlowInput {
+pub struct DeleteFlowInput  {
     /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
     pub flow_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use.</p>
     pub force_delete: ::std::option::Option<bool>,
 }
-impl DeleteFlowInput {
+impl  DeleteFlowInput  {
     /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
-    pub fn flow_name(&self) -> ::std::option::Option<&str> {
+    pub fn flow_name(&self) -> ::std::option::Option<& str> {
         self.flow_name.as_deref()
     }
     /// <p>Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use.</p>
@@ -41,8 +41,7 @@ impl DeleteFlowInputBuilder {
     }
     /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
     pub fn set_flow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flow_name = input;
-        self
+        self.flow_name = input; self
     }
     /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
     pub fn get_flow_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl DeleteFlowInputBuilder {
     }
     /// <p>Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use.</p>
     pub fn set_force_delete(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force_delete = input;
-        self
+        self.force_delete = input; self
     }
     /// <p>Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use.</p>
     pub fn get_force_delete(&self) -> &::std::option::Option<bool> {
@@ -64,9 +62,14 @@ impl DeleteFlowInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteFlowInput`](crate::operation::delete_flow::DeleteFlowInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_flow::DeleteFlowInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_flow::DeleteFlowInput {
-            flow_name: self.flow_name,
-            force_delete: self.force_delete,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::delete_flow::DeleteFlowInput {
+                flow_name: self.flow_name
+                ,
+                force_delete: self.force_delete
+                ,
+            }
+        )
     }
 }
+

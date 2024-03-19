@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListServers`](crate::operation::list_servers::builders::ListServersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_servers::builders::ListServersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_servers::builders::ListServersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_servers::builders::ListServersFluentBuilder::set_max_results):<br>required: **false**<br><p>Specifies the number of servers to return as a response to the <code>ListServers</code> query.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_servers::builders::ListServersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_servers::builders::ListServersFluentBuilder::set_next_token):<br>required: **false**<br><p>When additional results are obtained from the <code>ListServers</code> command, a <code>NextToken</code> parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional servers.</p><br>
-    /// - On success, responds with [`ListServersOutput`](crate::operation::list_servers::ListServersOutput) with field(s):
+                            /// - On success, responds with [`ListServersOutput`](crate::operation::list_servers::ListServersOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_servers::ListServersOutput::next_token): <p>When you can get additional results from the <code>ListServers</code> operation, a <code>NextToken</code> parameter is returned in the output. In a following command, you can pass in the <code>NextToken</code> parameter to continue listing additional servers.</p>
     ///   - [`servers(Vec::<ListedServer>)`](crate::operation::list_servers::ListServersOutput::servers): <p>An array of servers that were listed.</p>
-    /// - On failure, responds with [`SdkError<ListServersError>`](crate::operation::list_servers::ListServersError)
+                            /// - On failure, responds with [`SdkError<ListServersError>`](crate::operation::list_servers::ListServersError)
     pub fn list_servers(&self) -> crate::operation::list_servers::builders::ListServersFluentBuilder {
-        crate::operation::list_servers::builders::ListServersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_servers::builders::ListServersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

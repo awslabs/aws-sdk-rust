@@ -4,7 +4,7 @@
 /// <p>For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/understanding-dns-in-amazon-lightsail">DNS in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NameServersUpdateState {
+pub struct NameServersUpdateState  {
     /// <p>The status code for the name servers update.</p>
     /// <p>Following are the possible values:</p>
     /// <ul>
@@ -21,7 +21,7 @@ pub struct NameServersUpdateState {
     /// <p>The message that describes the reason for the status code.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl NameServersUpdateState {
+impl  NameServersUpdateState  {
     /// <p>The status code for the name servers update.</p>
     /// <p>Following are the possible values:</p>
     /// <ul>
@@ -34,11 +34,11 @@ impl NameServersUpdateState {
     /// <li>
     /// <p><code>STARTED</code> - The automatic name server record update started.</p></li>
     /// </ul>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::NameServersUpdateStateCode> {
+    pub fn code(&self) -> ::std::option::Option<& crate::types::NameServersUpdateStateCode> {
         self.code.as_ref()
     }
     /// <p>The message that describes the reason for the status code.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -86,8 +86,7 @@ impl NameServersUpdateStateBuilder {
     /// <p><code>STARTED</code> - The automatic name server record update started.</p></li>
     /// </ul>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::NameServersUpdateStateCode>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The status code for the name servers update.</p>
     /// <p>Following are the possible values:</p>
@@ -111,8 +110,7 @@ impl NameServersUpdateStateBuilder {
     }
     /// <p>The message that describes the reason for the status code.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The message that describes the reason for the status code.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +119,11 @@ impl NameServersUpdateStateBuilder {
     /// Consumes the builder and constructs a [`NameServersUpdateState`](crate::types::NameServersUpdateState).
     pub fn build(self) -> crate::types::NameServersUpdateState {
         crate::types::NameServersUpdateState {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

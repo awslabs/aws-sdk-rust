@@ -2,38 +2,40 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAlarmsOutput {
+pub struct DescribeAlarmsOutput  {
     /// <p>The information about any composite alarms returned by the operation.</p>
-    pub composite_alarms: ::std::option::Option<::std::vec::Vec<crate::types::CompositeAlarm>>,
+    pub composite_alarms: ::std::option::Option<::std::vec::Vec::<crate::types::CompositeAlarm>>,
     /// <p>The information about any metric alarms returned by the operation.</p>
-    pub metric_alarms: ::std::option::Option<::std::vec::Vec<crate::types::MetricAlarm>>,
+    pub metric_alarms: ::std::option::Option<::std::vec::Vec::<crate::types::MetricAlarm>>,
     /// <p>The token that marks the start of the next batch of returned results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeAlarmsOutput {
+impl  DescribeAlarmsOutput  {
     /// <p>The information about any composite alarms returned by the operation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.composite_alarms.is_none()`.
-    pub fn composite_alarms(&self) -> &[crate::types::CompositeAlarm] {
-        self.composite_alarms.as_deref().unwrap_or_default()
+    pub fn composite_alarms(&self) -> & [crate::types::CompositeAlarm] {
+        self.composite_alarms.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The information about any metric alarms returned by the operation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_alarms.is_none()`.
-    pub fn metric_alarms(&self) -> &[crate::types::MetricAlarm] {
-        self.metric_alarms.as_deref().unwrap_or_default()
+    pub fn metric_alarms(&self) -> & [crate::types::MetricAlarm] {
+        self.metric_alarms.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token that marks the start of the next batch of returned results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAlarmsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAlarmsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAlarmsOutput`](crate::operation::describe_alarms::DescribeAlarmsOutput).
     pub fn builder() -> crate::operation::describe_alarms::builders::DescribeAlarmsOutputBuilder {
@@ -45,8 +47,8 @@ impl DescribeAlarmsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAlarmsOutputBuilder {
-    pub(crate) composite_alarms: ::std::option::Option<::std::vec::Vec<crate::types::CompositeAlarm>>,
-    pub(crate) metric_alarms: ::std::option::Option<::std::vec::Vec<crate::types::MetricAlarm>>,
+    pub(crate) composite_alarms: ::std::option::Option<::std::vec::Vec::<crate::types::CompositeAlarm>>,
+    pub(crate) metric_alarms: ::std::option::Option<::std::vec::Vec::<crate::types::MetricAlarm>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +60,16 @@ impl DescribeAlarmsOutputBuilder {
     /// <p>The information about any composite alarms returned by the operation.</p>
     pub fn composite_alarms(mut self, input: crate::types::CompositeAlarm) -> Self {
         let mut v = self.composite_alarms.unwrap_or_default();
-        v.push(input);
-        self.composite_alarms = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.composite_alarms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The information about any composite alarms returned by the operation.</p>
-    pub fn set_composite_alarms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CompositeAlarm>>) -> Self {
-        self.composite_alarms = input;
-        self
+    pub fn set_composite_alarms(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CompositeAlarm>>) -> Self {
+        self.composite_alarms = input; self
     }
     /// <p>The information about any composite alarms returned by the operation.</p>
-    pub fn get_composite_alarms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CompositeAlarm>> {
+    pub fn get_composite_alarms(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CompositeAlarm>> {
         &self.composite_alarms
     }
     /// Appends an item to `metric_alarms`.
@@ -78,17 +79,16 @@ impl DescribeAlarmsOutputBuilder {
     /// <p>The information about any metric alarms returned by the operation.</p>
     pub fn metric_alarms(mut self, input: crate::types::MetricAlarm) -> Self {
         let mut v = self.metric_alarms.unwrap_or_default();
-        v.push(input);
-        self.metric_alarms = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.metric_alarms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The information about any metric alarms returned by the operation.</p>
-    pub fn set_metric_alarms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricAlarm>>) -> Self {
-        self.metric_alarms = input;
-        self
+    pub fn set_metric_alarms(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MetricAlarm>>) -> Self {
+        self.metric_alarms = input; self
     }
     /// <p>The information about any metric alarms returned by the operation.</p>
-    pub fn get_metric_alarms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricAlarm>> {
+    pub fn get_metric_alarms(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MetricAlarm>> {
         &self.metric_alarms
     }
     /// <p>The token that marks the start of the next batch of returned results.</p>
@@ -98,29 +98,32 @@ impl DescribeAlarmsOutputBuilder {
     }
     /// <p>The token that marks the start of the next batch of returned results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token that marks the start of the next batch of returned results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAlarmsOutput`](crate::operation::describe_alarms::DescribeAlarmsOutput).
     pub fn build(self) -> crate::operation::describe_alarms::DescribeAlarmsOutput {
         crate::operation::describe_alarms::DescribeAlarmsOutput {
-            composite_alarms: self.composite_alarms,
-            metric_alarms: self.metric_alarms,
-            next_token: self.next_token,
+            composite_alarms: self.composite_alarms
+            ,
+            metric_alarms: self.metric_alarms
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

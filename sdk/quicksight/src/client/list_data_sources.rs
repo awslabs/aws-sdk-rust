@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDataSources`](crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`aws_account_id(impl Into<String>)`](crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::set_aws_account_id):<br>required: **true**<br><p>The Amazon Web Services account ID.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results, or null if there are no more results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to be returned per request.</p><br>
-    /// - On success, responds with [`ListDataSourcesOutput`](crate::operation::list_data_sources::ListDataSourcesOutput) with field(s):
+                            /// - On success, responds with [`ListDataSourcesOutput`](crate::operation::list_data_sources::ListDataSourcesOutput) with field(s):
     ///   - [`data_sources(Option<Vec::<DataSource>>)`](crate::operation::list_data_sources::ListDataSourcesOutput::data_sources): <p>A list of data sources.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_sources::ListDataSourcesOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::list_data_sources::ListDataSourcesOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::list_data_sources::ListDataSourcesOutput::status): <p>The HTTP status of the request.</p>
-    /// - On failure, responds with [`SdkError<ListDataSourcesError>`](crate::operation::list_data_sources::ListDataSourcesError)
+                            /// - On failure, responds with [`SdkError<ListDataSourcesError>`](crate::operation::list_data_sources::ListDataSourcesError)
     pub fn list_data_sources(&self) -> crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder {
-        crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteVerifiedAccessEndpointInput {
+pub struct DeleteVerifiedAccessEndpointInput  {
     /// <p>The ID of the Verified Access endpoint.</p>
     pub verified_access_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
@@ -10,13 +10,13 @@ pub struct DeleteVerifiedAccessEndpointInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl DeleteVerifiedAccessEndpointInput {
+impl  DeleteVerifiedAccessEndpointInput  {
     /// <p>The ID of the Verified Access endpoint.</p>
-    pub fn verified_access_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn verified_access_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.verified_access_endpoint_id.as_deref()
     }
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -48,8 +48,7 @@ impl DeleteVerifiedAccessEndpointInputBuilder {
     }
     /// <p>The ID of the Verified Access endpoint.</p>
     pub fn set_verified_access_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.verified_access_endpoint_id = input;
-        self
+        self.verified_access_endpoint_id = input; self
     }
     /// <p>The ID of the Verified Access endpoint.</p>
     pub fn get_verified_access_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl DeleteVerifiedAccessEndpointInputBuilder {
     }
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,24 +74,24 @@ impl DeleteVerifiedAccessEndpointInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DeleteVerifiedAccessEndpointInput`](crate::operation::delete_verified_access_endpoint::DeleteVerifiedAccessEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_verified_access_endpoint::DeleteVerifiedAccessEndpointInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_verified_access_endpoint::DeleteVerifiedAccessEndpointInput {
-            verified_access_endpoint_id: self.verified_access_endpoint_id,
-            client_token: self.client_token,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_verified_access_endpoint::DeleteVerifiedAccessEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_verified_access_endpoint::DeleteVerifiedAccessEndpointInput {
+                verified_access_endpoint_id: self.verified_access_endpoint_id
+                ,
+                client_token: self.client_token
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

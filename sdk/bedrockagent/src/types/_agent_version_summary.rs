@@ -3,7 +3,7 @@
 /// Summary of agent version.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AgentVersionSummary {
+pub struct AgentVersionSummary  {
     /// Name for a resource.
     pub agent_name: ::std::string::String,
     /// Schema Type for Action APIs.
@@ -17,31 +17,29 @@ pub struct AgentVersionSummary {
     /// Description of the Resource.
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl AgentVersionSummary {
+impl  AgentVersionSummary  {
     /// Name for a resource.
-    pub fn agent_name(&self) -> &str {
-        use std::ops::Deref;
-        self.agent_name.deref()
+    pub fn agent_name(&self) -> & str {
+        use std::ops::Deref; self.agent_name.deref()
     }
     /// Schema Type for Action APIs.
-    pub fn agent_status(&self) -> &crate::types::AgentStatus {
+    pub fn agent_status(&self) -> & crate::types::AgentStatus {
         &self.agent_status
     }
     /// Agent Version.
-    pub fn agent_version(&self) -> &str {
-        use std::ops::Deref;
-        self.agent_version.deref()
+    pub fn agent_version(&self) -> & str {
+        use std::ops::Deref; self.agent_version.deref()
     }
     /// Time Stamp.
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// Time Stamp.
-    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.updated_at
     }
     /// Description of the Resource.
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -72,8 +70,7 @@ impl AgentVersionSummaryBuilder {
     }
     /// Name for a resource.
     pub fn set_agent_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_name = input;
-        self
+        self.agent_name = input; self
     }
     /// Name for a resource.
     pub fn get_agent_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +84,7 @@ impl AgentVersionSummaryBuilder {
     }
     /// Schema Type for Action APIs.
     pub fn set_agent_status(mut self, input: ::std::option::Option<crate::types::AgentStatus>) -> Self {
-        self.agent_status = input;
-        self
+        self.agent_status = input; self
     }
     /// Schema Type for Action APIs.
     pub fn get_agent_status(&self) -> &::std::option::Option<crate::types::AgentStatus> {
@@ -102,8 +98,7 @@ impl AgentVersionSummaryBuilder {
     }
     /// Agent Version.
     pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_version = input;
-        self
+        self.agent_version = input; self
     }
     /// Agent Version.
     pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +112,7 @@ impl AgentVersionSummaryBuilder {
     }
     /// Time Stamp.
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// Time Stamp.
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -132,8 +126,7 @@ impl AgentVersionSummaryBuilder {
     }
     /// Time Stamp.
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// Time Stamp.
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -146,8 +139,7 @@ impl AgentVersionSummaryBuilder {
     }
     /// Description of the Resource.
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Description of the Resource.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,38 +153,37 @@ impl AgentVersionSummaryBuilder {
     /// - [`created_at`](crate::types::builders::AgentVersionSummaryBuilder::created_at)
     /// - [`updated_at`](crate::types::builders::AgentVersionSummaryBuilder::updated_at)
     pub fn build(self) -> ::std::result::Result<crate::types::AgentVersionSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AgentVersionSummary {
-            agent_name: self.agent_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "agent_name",
-                    "agent_name was not specified but it is required when building AgentVersionSummary",
-                )
-            })?,
-            agent_status: self.agent_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "agent_status",
-                    "agent_status was not specified but it is required when building AgentVersionSummary",
-                )
-            })?,
-            agent_version: self.agent_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "agent_version",
-                    "agent_version was not specified but it is required when building AgentVersionSummary",
-                )
-            })?,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building AgentVersionSummary",
-                )
-            })?,
-            updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "updated_at",
-                    "updated_at was not specified but it is required when building AgentVersionSummary",
-                )
-            })?,
-            description: self.description,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AgentVersionSummary {
+                agent_name: self.agent_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("agent_name", "agent_name was not specified but it is required when building AgentVersionSummary")
+                    )?
+                ,
+                agent_status: self.agent_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("agent_status", "agent_status was not specified but it is required when building AgentVersionSummary")
+                    )?
+                ,
+                agent_version: self.agent_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("agent_version", "agent_version was not specified but it is required when building AgentVersionSummary")
+                    )?
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building AgentVersionSummary")
+                    )?
+                ,
+                updated_at: self.updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("updated_at", "updated_at was not specified but it is required when building AgentVersionSummary")
+                    )?
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEnrollmentStatusInput {}
+pub struct GetEnrollmentStatusInput  {
+}
 impl GetEnrollmentStatusInput {
     /// Creates a new builder-style object to manufacture [`GetEnrollmentStatusInput`](crate::operation::get_enrollment_status::GetEnrollmentStatusInput).
     pub fn builder() -> crate::operation::get_enrollment_status::builders::GetEnrollmentStatusInputBuilder {
@@ -13,13 +14,15 @@ impl GetEnrollmentStatusInput {
 /// A builder for [`GetEnrollmentStatusInput`](crate::operation::get_enrollment_status::GetEnrollmentStatusInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetEnrollmentStatusInputBuilder {}
+pub struct GetEnrollmentStatusInputBuilder {
+}
 impl GetEnrollmentStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetEnrollmentStatusInput`](crate::operation::get_enrollment_status::GetEnrollmentStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_enrollment_status::GetEnrollmentStatusInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_enrollment_status::GetEnrollmentStatusInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_enrollment_status::GetEnrollmentStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_enrollment_status::GetEnrollmentStatusInput {
+            }
+        )
     }
 }
+

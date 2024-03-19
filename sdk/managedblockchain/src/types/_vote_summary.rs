@@ -4,7 +4,7 @@
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VoteSummary {
+pub struct VoteSummary  {
     /// <p>The vote value, either <code>YES</code> or <code>NO</code>.</p>
     pub vote: ::std::option::Option<crate::types::VoteValue>,
     /// <p>The name of the member that cast the vote.</p>
@@ -12,17 +12,17 @@ pub struct VoteSummary {
     /// <p>The unique identifier of the member that cast the vote.</p>
     pub member_id: ::std::option::Option<::std::string::String>,
 }
-impl VoteSummary {
+impl  VoteSummary  {
     /// <p>The vote value, either <code>YES</code> or <code>NO</code>.</p>
-    pub fn vote(&self) -> ::std::option::Option<&crate::types::VoteValue> {
+    pub fn vote(&self) -> ::std::option::Option<& crate::types::VoteValue> {
         self.vote.as_ref()
     }
     /// <p>The name of the member that cast the vote.</p>
-    pub fn member_name(&self) -> ::std::option::Option<&str> {
+    pub fn member_name(&self) -> ::std::option::Option<& str> {
         self.member_name.as_deref()
     }
     /// <p>The unique identifier of the member that cast the vote.</p>
-    pub fn member_id(&self) -> ::std::option::Option<&str> {
+    pub fn member_id(&self) -> ::std::option::Option<& str> {
         self.member_id.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl VoteSummaryBuilder {
     }
     /// <p>The vote value, either <code>YES</code> or <code>NO</code>.</p>
     pub fn set_vote(mut self, input: ::std::option::Option<crate::types::VoteValue>) -> Self {
-        self.vote = input;
-        self
+        self.vote = input; self
     }
     /// <p>The vote value, either <code>YES</code> or <code>NO</code>.</p>
     pub fn get_vote(&self) -> &::std::option::Option<crate::types::VoteValue> {
@@ -63,8 +62,7 @@ impl VoteSummaryBuilder {
     }
     /// <p>The name of the member that cast the vote.</p>
     pub fn set_member_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.member_name = input;
-        self
+        self.member_name = input; self
     }
     /// <p>The name of the member that cast the vote.</p>
     pub fn get_member_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +75,7 @@ impl VoteSummaryBuilder {
     }
     /// <p>The unique identifier of the member that cast the vote.</p>
     pub fn set_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.member_id = input;
-        self
+        self.member_id = input; self
     }
     /// <p>The unique identifier of the member that cast the vote.</p>
     pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,9 +84,13 @@ impl VoteSummaryBuilder {
     /// Consumes the builder and constructs a [`VoteSummary`](crate::types::VoteSummary).
     pub fn build(self) -> crate::types::VoteSummary {
         crate::types::VoteSummary {
-            vote: self.vote,
-            member_name: self.member_name,
-            member_id: self.member_id,
+            vote: self.vote
+            ,
+            member_name: self.member_name
+            ,
+            member_id: self.member_id
+            ,
         }
     }
 }
+

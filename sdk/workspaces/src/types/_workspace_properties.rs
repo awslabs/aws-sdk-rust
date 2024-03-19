@@ -3,7 +3,7 @@
 /// <p>Describes a WorkSpace.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkspaceProperties {
+pub struct WorkspaceProperties  {
     /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running Mode</a>.</p><note>
     /// <p>The <code>MANUAL</code> value is only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use this value. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
     /// </note>
@@ -26,15 +26,15 @@ pub struct WorkspaceProperties {
     /// <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p></li>
     /// </ul>
     /// </note>
-    pub protocols: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
+    pub protocols: ::std::option::Option<::std::vec::Vec::<crate::types::Protocol>>,
     /// <p>The name of the operating system.</p>
     pub operating_system_name: ::std::option::Option<crate::types::OperatingSystemName>,
 }
-impl WorkspaceProperties {
+impl  WorkspaceProperties  {
     /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running Mode</a>.</p><note>
     /// <p>The <code>MANUAL</code> value is only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use this value. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
     /// </note>
-    pub fn running_mode(&self) -> ::std::option::Option<&crate::types::RunningMode> {
+    pub fn running_mode(&self) -> ::std::option::Option<& crate::types::RunningMode> {
         self.running_mode.as_ref()
     }
     /// <p>The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60-minute intervals.</p>
@@ -50,7 +50,7 @@ impl WorkspaceProperties {
         self.user_volume_size_gib
     }
     /// <p>The compute type. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.</p>
-    pub fn compute_type_name(&self) -> ::std::option::Option<&crate::types::Compute> {
+    pub fn compute_type_name(&self) -> ::std::option::Option<& crate::types::Compute> {
         self.compute_type_name.as_ref()
     }
     /// <p>The protocol. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html"> Protocols for Amazon WorkSpaces</a>.</p><note>
@@ -63,13 +63,14 @@ impl WorkspaceProperties {
     /// <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p></li>
     /// </ul>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protocols.is_none()`.
-    pub fn protocols(&self) -> &[crate::types::Protocol] {
-        self.protocols.as_deref().unwrap_or_default()
+    pub fn protocols(&self) -> & [crate::types::Protocol] {
+        self.protocols.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the operating system.</p>
-    pub fn operating_system_name(&self) -> ::std::option::Option<&crate::types::OperatingSystemName> {
+    pub fn operating_system_name(&self) -> ::std::option::Option<& crate::types::OperatingSystemName> {
         self.operating_system_name.as_ref()
     }
 }
@@ -89,7 +90,7 @@ pub struct WorkspacePropertiesBuilder {
     pub(crate) root_volume_size_gib: ::std::option::Option<i32>,
     pub(crate) user_volume_size_gib: ::std::option::Option<i32>,
     pub(crate) compute_type_name: ::std::option::Option<crate::types::Compute>,
-    pub(crate) protocols: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
+    pub(crate) protocols: ::std::option::Option<::std::vec::Vec::<crate::types::Protocol>>,
     pub(crate) operating_system_name: ::std::option::Option<crate::types::OperatingSystemName>,
 }
 impl WorkspacePropertiesBuilder {
@@ -104,8 +105,7 @@ impl WorkspacePropertiesBuilder {
     /// <p>The <code>MANUAL</code> value is only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use this value. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
     /// </note>
     pub fn set_running_mode(mut self, input: ::std::option::Option<crate::types::RunningMode>) -> Self {
-        self.running_mode = input;
-        self
+        self.running_mode = input; self
     }
     /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running Mode</a>.</p><note>
     /// <p>The <code>MANUAL</code> value is only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use this value. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
@@ -120,8 +120,7 @@ impl WorkspacePropertiesBuilder {
     }
     /// <p>The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60-minute intervals.</p>
     pub fn set_running_mode_auto_stop_timeout_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.running_mode_auto_stop_timeout_in_minutes = input;
-        self
+        self.running_mode_auto_stop_timeout_in_minutes = input; self
     }
     /// <p>The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60-minute intervals.</p>
     pub fn get_running_mode_auto_stop_timeout_in_minutes(&self) -> &::std::option::Option<i32> {
@@ -134,8 +133,7 @@ impl WorkspacePropertiesBuilder {
     }
     /// <p>The size of the root volume. For important information about how to modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a WorkSpace</a>.</p>
     pub fn set_root_volume_size_gib(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.root_volume_size_gib = input;
-        self
+        self.root_volume_size_gib = input; self
     }
     /// <p>The size of the root volume. For important information about how to modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a WorkSpace</a>.</p>
     pub fn get_root_volume_size_gib(&self) -> &::std::option::Option<i32> {
@@ -148,8 +146,7 @@ impl WorkspacePropertiesBuilder {
     }
     /// <p>The size of the user storage. For important information about how to modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a WorkSpace</a>.</p>
     pub fn set_user_volume_size_gib(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.user_volume_size_gib = input;
-        self
+        self.user_volume_size_gib = input; self
     }
     /// <p>The size of the user storage. For important information about how to modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a WorkSpace</a>.</p>
     pub fn get_user_volume_size_gib(&self) -> &::std::option::Option<i32> {
@@ -162,8 +159,7 @@ impl WorkspacePropertiesBuilder {
     }
     /// <p>The compute type. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.</p>
     pub fn set_compute_type_name(mut self, input: ::std::option::Option<crate::types::Compute>) -> Self {
-        self.compute_type_name = input;
-        self
+        self.compute_type_name = input; self
     }
     /// <p>The compute type. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.</p>
     pub fn get_compute_type_name(&self) -> &::std::option::Option<crate::types::Compute> {
@@ -185,9 +181,9 @@ impl WorkspacePropertiesBuilder {
     /// </note>
     pub fn protocols(mut self, input: crate::types::Protocol) -> Self {
         let mut v = self.protocols.unwrap_or_default();
-        v.push(input);
-        self.protocols = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.protocols = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The protocol. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html"> Protocols for Amazon WorkSpaces</a>.</p><note>
     /// <ul>
@@ -199,9 +195,8 @@ impl WorkspacePropertiesBuilder {
     /// <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p></li>
     /// </ul>
     /// </note>
-    pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>) -> Self {
-        self.protocols = input;
-        self
+    pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Protocol>>) -> Self {
+        self.protocols = input; self
     }
     /// <p>The protocol. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html"> Protocols for Amazon WorkSpaces</a>.</p><note>
     /// <ul>
@@ -213,7 +208,7 @@ impl WorkspacePropertiesBuilder {
     /// <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p></li>
     /// </ul>
     /// </note>
-    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Protocol>> {
+    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Protocol>> {
         &self.protocols
     }
     /// <p>The name of the operating system.</p>
@@ -223,8 +218,7 @@ impl WorkspacePropertiesBuilder {
     }
     /// <p>The name of the operating system.</p>
     pub fn set_operating_system_name(mut self, input: ::std::option::Option<crate::types::OperatingSystemName>) -> Self {
-        self.operating_system_name = input;
-        self
+        self.operating_system_name = input; self
     }
     /// <p>The name of the operating system.</p>
     pub fn get_operating_system_name(&self) -> &::std::option::Option<crate::types::OperatingSystemName> {
@@ -233,13 +227,21 @@ impl WorkspacePropertiesBuilder {
     /// Consumes the builder and constructs a [`WorkspaceProperties`](crate::types::WorkspaceProperties).
     pub fn build(self) -> crate::types::WorkspaceProperties {
         crate::types::WorkspaceProperties {
-            running_mode: self.running_mode,
-            running_mode_auto_stop_timeout_in_minutes: self.running_mode_auto_stop_timeout_in_minutes,
-            root_volume_size_gib: self.root_volume_size_gib,
-            user_volume_size_gib: self.user_volume_size_gib,
-            compute_type_name: self.compute_type_name,
-            protocols: self.protocols,
-            operating_system_name: self.operating_system_name,
+            running_mode: self.running_mode
+            ,
+            running_mode_auto_stop_timeout_in_minutes: self.running_mode_auto_stop_timeout_in_minutes
+            ,
+            root_volume_size_gib: self.root_volume_size_gib
+            ,
+            user_volume_size_gib: self.user_volume_size_gib
+            ,
+            compute_type_name: self.compute_type_name
+            ,
+            protocols: self.protocols
+            ,
+            operating_system_name: self.operating_system_name
+            ,
         }
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteVerifiedDestinationNumberInput {
+pub struct DeleteVerifiedDestinationNumberInput  {
     /// <p>The unique identifier for the verified destination phone number.</p>
     pub verified_destination_number_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteVerifiedDestinationNumberInput {
+impl  DeleteVerifiedDestinationNumberInput  {
     /// <p>The unique identifier for the verified destination phone number.</p>
-    pub fn verified_destination_number_id(&self) -> ::std::option::Option<&str> {
+    pub fn verified_destination_number_id(&self) -> ::std::option::Option<& str> {
         self.verified_destination_number_id.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl DeleteVerifiedDestinationNumberInputBuilder {
     }
     /// <p>The unique identifier for the verified destination phone number.</p>
     pub fn set_verified_destination_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.verified_destination_number_id = input;
-        self
+        self.verified_destination_number_id = input; self
     }
     /// <p>The unique identifier for the verified destination phone number.</p>
     pub fn get_verified_destination_number_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.verified_destination_number_id
     }
     /// Consumes the builder and constructs a [`DeleteVerifiedDestinationNumberInput`](crate::operation::delete_verified_destination_number::DeleteVerifiedDestinationNumberInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_verified_destination_number::DeleteVerifiedDestinationNumberInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_verified_destination_number::DeleteVerifiedDestinationNumberInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_verified_destination_number::DeleteVerifiedDestinationNumberInput {
-                verified_destination_number_id: self.verified_destination_number_id,
-            },
+                verified_destination_number_id: self.verified_destination_number_id
+                ,
+            }
         )
     }
 }
+

@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutBlockPublicAccessConfigurationInput {
+pub struct PutBlockPublicAccessConfigurationInput  {
     /// <p>A configuration for Amazon EMR block public access. The configuration applies to all clusters created in your account for the current Region. The configuration specifies whether block public access is enabled. If block public access is enabled, security groups associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code> in the <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception, and public access is allowed on this port. You can change this by updating <code>BlockPublicSecurityGroupRules</code> to remove the exception.</p><note>
     /// <p>For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not create an Amazon EMR cluster in a Region before this date, block public access is enabled by default in that Region.</p>
     /// </note>
     pub block_public_access_configuration: ::std::option::Option<crate::types::BlockPublicAccessConfiguration>,
 }
-impl PutBlockPublicAccessConfigurationInput {
+impl  PutBlockPublicAccessConfigurationInput  {
     /// <p>A configuration for Amazon EMR block public access. The configuration applies to all clusters created in your account for the current Region. The configuration specifies whether block public access is enabled. If block public access is enabled, security groups associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code> in the <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception, and public access is allowed on this port. You can change this by updating <code>BlockPublicSecurityGroupRules</code> to remove the exception.</p><note>
     /// <p>For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not create an Amazon EMR cluster in a Region before this date, block public access is enabled by default in that Region.</p>
     /// </note>
-    pub fn block_public_access_configuration(&self) -> ::std::option::Option<&crate::types::BlockPublicAccessConfiguration> {
+    pub fn block_public_access_configuration(&self) -> ::std::option::Option<& crate::types::BlockPublicAccessConfiguration> {
         self.block_public_access_configuration.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl PutBlockPublicAccessConfigurationInputBuilder {
     /// <p>For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not create an Amazon EMR cluster in a Region before this date, block public access is enabled by default in that Region.</p>
     /// </note>
     pub fn set_block_public_access_configuration(mut self, input: ::std::option::Option<crate::types::BlockPublicAccessConfiguration>) -> Self {
-        self.block_public_access_configuration = input;
-        self
+        self.block_public_access_configuration = input; self
     }
     /// <p>A configuration for Amazon EMR block public access. The configuration applies to all clusters created in your account for the current Region. The configuration specifies whether block public access is enabled. If block public access is enabled, security groups associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code> in the <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception, and public access is allowed on this port. You can change this by updating <code>BlockPublicSecurityGroupRules</code> to remove the exception.</p><note>
     /// <p>For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not create an Amazon EMR cluster in a Region before this date, block public access is enabled by default in that Region.</p>
@@ -52,16 +51,13 @@ impl PutBlockPublicAccessConfigurationInputBuilder {
         &self.block_public_access_configuration
     }
     /// Consumes the builder and constructs a [`PutBlockPublicAccessConfigurationInput`](crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationInput {
-                block_public_access_configuration: self.block_public_access_configuration,
-            },
+                block_public_access_configuration: self.block_public_access_configuration
+                ,
+            }
         )
     }
 }
+

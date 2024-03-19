@@ -3,19 +3,19 @@
 /// <p>Defines an audio channel in a Kinesis video stream.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChannelDefinition {
+pub struct ChannelDefinition  {
     /// <p>The channel ID.</p>
     pub channel_id: i32,
     /// <p>Specifies whether the audio in a channel belongs to the <code>AGENT</code> or <code>CUSTOMER</code>.</p>
     pub participant_role: ::std::option::Option<crate::types::ParticipantRole>,
 }
-impl ChannelDefinition {
+impl  ChannelDefinition  {
     /// <p>The channel ID.</p>
     pub fn channel_id(&self) -> i32 {
         self.channel_id
     }
     /// <p>Specifies whether the audio in a channel belongs to the <code>AGENT</code> or <code>CUSTOMER</code>.</p>
-    pub fn participant_role(&self) -> ::std::option::Option<&crate::types::ParticipantRole> {
+    pub fn participant_role(&self) -> ::std::option::Option<& crate::types::ParticipantRole> {
         self.participant_role.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl ChannelDefinitionBuilder {
     }
     /// <p>The channel ID.</p>
     pub fn set_channel_id(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.channel_id = input;
-        self
+        self.channel_id = input; self
     }
     /// <p>The channel ID.</p>
     pub fn get_channel_id(&self) -> &::std::option::Option<i32> {
@@ -56,8 +55,7 @@ impl ChannelDefinitionBuilder {
     }
     /// <p>Specifies whether the audio in a channel belongs to the <code>AGENT</code> or <code>CUSTOMER</code>.</p>
     pub fn set_participant_role(mut self, input: ::std::option::Option<crate::types::ParticipantRole>) -> Self {
-        self.participant_role = input;
-        self
+        self.participant_role = input; self
     }
     /// <p>Specifies whether the audio in a channel belongs to the <code>AGENT</code> or <code>CUSTOMER</code>.</p>
     pub fn get_participant_role(&self) -> &::std::option::Option<crate::types::ParticipantRole> {
@@ -66,8 +64,12 @@ impl ChannelDefinitionBuilder {
     /// Consumes the builder and constructs a [`ChannelDefinition`](crate::types::ChannelDefinition).
     pub fn build(self) -> crate::types::ChannelDefinition {
         crate::types::ChannelDefinition {
-            channel_id: self.channel_id.unwrap_or_default(),
-            participant_role: self.participant_role,
+            channel_id: self.channel_id
+                .unwrap_or_default()
+            ,
+            participant_role: self.participant_role
+            ,
         }
     }
 }
+

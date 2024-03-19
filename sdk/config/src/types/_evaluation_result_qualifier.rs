@@ -3,7 +3,7 @@
 /// <p>Identifies an Config rule that evaluated an Amazon Web Services resource, and provides the type and ID of the resource that the rule evaluated.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EvaluationResultQualifier {
+pub struct EvaluationResultQualifier  {
     /// <p>The name of the Config rule that was used in the evaluation.</p>
     pub config_rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of Amazon Web Services resource that was evaluated.</p>
@@ -13,21 +13,21 @@ pub struct EvaluationResultQualifier {
     /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
     pub evaluation_mode: ::std::option::Option<crate::types::EvaluationMode>,
 }
-impl EvaluationResultQualifier {
+impl  EvaluationResultQualifier  {
     /// <p>The name of the Config rule that was used in the evaluation.</p>
-    pub fn config_rule_name(&self) -> ::std::option::Option<&str> {
+    pub fn config_rule_name(&self) -> ::std::option::Option<& str> {
         self.config_rule_name.as_deref()
     }
     /// <p>The type of Amazon Web Services resource that was evaluated.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The ID of the evaluated Amazon Web Services resource.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
-    pub fn evaluation_mode(&self) -> ::std::option::Option<&crate::types::EvaluationMode> {
+    pub fn evaluation_mode(&self) -> ::std::option::Option<& crate::types::EvaluationMode> {
         self.evaluation_mode.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl EvaluationResultQualifierBuilder {
     }
     /// <p>The name of the Config rule that was used in the evaluation.</p>
     pub fn set_config_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.config_rule_name = input;
-        self
+        self.config_rule_name = input; self
     }
     /// <p>The name of the Config rule that was used in the evaluation.</p>
     pub fn get_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl EvaluationResultQualifierBuilder {
     }
     /// <p>The type of Amazon Web Services resource that was evaluated.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of Amazon Web Services resource that was evaluated.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl EvaluationResultQualifierBuilder {
     }
     /// <p>The ID of the evaluated Amazon Web Services resource.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The ID of the evaluated Amazon Web Services resource.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl EvaluationResultQualifierBuilder {
     }
     /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
     pub fn set_evaluation_mode(mut self, input: ::std::option::Option<crate::types::EvaluationMode>) -> Self {
-        self.evaluation_mode = input;
-        self
+        self.evaluation_mode = input; self
     }
     /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
     pub fn get_evaluation_mode(&self) -> &::std::option::Option<crate::types::EvaluationMode> {
@@ -107,10 +103,15 @@ impl EvaluationResultQualifierBuilder {
     /// Consumes the builder and constructs a [`EvaluationResultQualifier`](crate::types::EvaluationResultQualifier).
     pub fn build(self) -> crate::types::EvaluationResultQualifier {
         crate::types::EvaluationResultQualifier {
-            config_rule_name: self.config_rule_name,
-            resource_type: self.resource_type,
-            resource_id: self.resource_id,
-            evaluation_mode: self.evaluation_mode,
+            config_rule_name: self.config_rule_name
+            ,
+            resource_type: self.resource_type
+            ,
+            resource_id: self.resource_id
+            ,
+            evaluation_mode: self.evaluation_mode
+            ,
         }
     }
 }
+

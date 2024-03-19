@@ -3,13 +3,13 @@
 /// <p>The structure representing the <code>getPolicyRequest</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPolicyInput {
+pub struct GetPolicyInput  {
     /// <p>The name of the profiling group.</p>
     pub profiling_group_name: ::std::option::Option<::std::string::String>,
 }
-impl GetPolicyInput {
+impl  GetPolicyInput  {
     /// <p>The name of the profiling group.</p>
-    pub fn profiling_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn profiling_group_name(&self) -> ::std::option::Option<& str> {
         self.profiling_group_name.as_deref()
     }
 }
@@ -35,8 +35,7 @@ impl GetPolicyInputBuilder {
     }
     /// <p>The name of the profiling group.</p>
     pub fn set_profiling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profiling_group_name = input;
-        self
+        self.profiling_group_name = input; self
     }
     /// <p>The name of the profiling group.</p>
     pub fn get_profiling_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,8 +43,12 @@ impl GetPolicyInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetPolicyInput`](crate::operation::get_policy::GetPolicyInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_policy::GetPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_policy::GetPolicyInput {
-            profiling_group_name: self.profiling_group_name,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_policy::GetPolicyInput {
+                profiling_group_name: self.profiling_group_name
+                ,
+            }
+        )
     }
 }
+

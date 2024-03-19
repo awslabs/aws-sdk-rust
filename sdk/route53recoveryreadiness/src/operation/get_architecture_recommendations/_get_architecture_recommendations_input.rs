@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetArchitectureRecommendationsInput {
+pub struct GetArchitectureRecommendationsInput  {
     /// <p>The number of objects that you want to return with this call.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token that identifies which batch of results you want to see.</p>
@@ -10,17 +10,17 @@ pub struct GetArchitectureRecommendationsInput {
     /// <p>The name of a recovery group.</p>
     pub recovery_group_name: ::std::option::Option<::std::string::String>,
 }
-impl GetArchitectureRecommendationsInput {
+impl  GetArchitectureRecommendationsInput  {
     /// <p>The number of objects that you want to return with this call.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The name of a recovery group.</p>
-    pub fn recovery_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn recovery_group_name(&self) -> ::std::option::Option<& str> {
         self.recovery_group_name.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl GetArchitectureRecommendationsInputBuilder {
     }
     /// <p>The number of objects that you want to return with this call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The number of objects that you want to return with this call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -61,8 +60,7 @@ impl GetArchitectureRecommendationsInputBuilder {
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,24 +74,24 @@ impl GetArchitectureRecommendationsInputBuilder {
     }
     /// <p>The name of a recovery group.</p>
     pub fn set_recovery_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recovery_group_name = input;
-        self
+        self.recovery_group_name = input; self
     }
     /// <p>The name of a recovery group.</p>
     pub fn get_recovery_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.recovery_group_name
     }
     /// Consumes the builder and constructs a [`GetArchitectureRecommendationsInput`](crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-            recovery_group_name: self.recovery_group_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                recovery_group_name: self.recovery_group_name
+                ,
+            }
+        )
     }
 }
+

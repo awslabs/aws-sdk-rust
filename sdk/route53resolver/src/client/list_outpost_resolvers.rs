@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListOutpostResolvers`](crate::operation::list_outpost_resolvers::builders::ListOutpostResolversFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_outpost_resolvers::builders::ListOutpostResolversFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`outpost_arn(impl Into<String>)`](crate::operation::list_outpost_resolvers::builders::ListOutpostResolversFluentBuilder::outpost_arn) / [`set_outpost_arn(Option<String>)`](crate::operation::list_outpost_resolvers::builders::ListOutpostResolversFluentBuilder::set_outpost_arn):<br>required: **false**<br><p>The Amazon Resource Name (ARN) of the Outpost.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_outpost_resolvers::builders::ListOutpostResolversFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_outpost_resolvers::builders::ListOutpostResolversFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of Resolvers on the Outpost that you want to return in the response to a <code>ListOutpostResolver</code> request. If you don't specify a value for <code>MaxResults</code>, the request returns up to 100 Resolvers.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_outpost_resolvers::builders::ListOutpostResolversFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_outpost_resolvers::builders::ListOutpostResolversFluentBuilder::set_next_token):<br>required: **false**<br><p>For the first <code>ListOutpostResolver</code> request, omit this value.</p> <p></p><br>
-    /// - On success, responds with [`ListOutpostResolversOutput`](crate::operation::list_outpost_resolvers::ListOutpostResolversOutput) with field(s):
+                            /// - On success, responds with [`ListOutpostResolversOutput`](crate::operation::list_outpost_resolvers::ListOutpostResolversOutput) with field(s):
     ///   - [`outpost_resolvers(Option<Vec::<OutpostResolver>>)`](crate::operation::list_outpost_resolvers::ListOutpostResolversOutput::outpost_resolvers): <p>The Resolvers on Outposts that were created by using the current Amazon Web Services account, and that match the specified filters, if any.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_outpost_resolvers::ListOutpostResolversOutput::next_token): <p>If more than <code>MaxResults</code> Resolvers match the specified criteria, you can submit another <code>ListOutpostResolver</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response.</p>
-    /// - On failure, responds with [`SdkError<ListOutpostResolversError>`](crate::operation::list_outpost_resolvers::ListOutpostResolversError)
+                            /// - On failure, responds with [`SdkError<ListOutpostResolversError>`](crate::operation::list_outpost_resolvers::ListOutpostResolversError)
     pub fn list_outpost_resolvers(&self) -> crate::operation::list_outpost_resolvers::builders::ListOutpostResolversFluentBuilder {
-        crate::operation::list_outpost_resolvers::builders::ListOutpostResolversFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_outpost_resolvers::builders::ListOutpostResolversFluentBuilder::new(self.handle.clone())
+                            }
 }
+

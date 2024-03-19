@@ -3,7 +3,7 @@
 /// <p>Contains asset property value information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetPropertyValue {
+pub struct AssetPropertyValue  {
     /// <p>The value of the asset property (see <code>Variant</code>).</p>
     pub value: ::std::option::Option<crate::types::Variant>,
     /// <p>The timestamp of the asset property value.</p>
@@ -11,17 +11,17 @@ pub struct AssetPropertyValue {
     /// <p>The quality of the asset property value.</p>
     pub quality: ::std::option::Option<crate::types::Quality>,
 }
-impl AssetPropertyValue {
+impl  AssetPropertyValue  {
     /// <p>The value of the asset property (see <code>Variant</code>).</p>
-    pub fn value(&self) -> ::std::option::Option<&crate::types::Variant> {
+    pub fn value(&self) -> ::std::option::Option<& crate::types::Variant> {
         self.value.as_ref()
     }
     /// <p>The timestamp of the asset property value.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&crate::types::TimeInNanos> {
+    pub fn timestamp(&self) -> ::std::option::Option<& crate::types::TimeInNanos> {
         self.timestamp.as_ref()
     }
     /// <p>The quality of the asset property value.</p>
-    pub fn quality(&self) -> ::std::option::Option<&crate::types::Quality> {
+    pub fn quality(&self) -> ::std::option::Option<& crate::types::Quality> {
         self.quality.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl AssetPropertyValueBuilder {
     }
     /// <p>The value of the asset property (see <code>Variant</code>).</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::Variant>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the asset property (see <code>Variant</code>).</p>
     pub fn get_value(&self) -> &::std::option::Option<crate::types::Variant> {
@@ -64,8 +63,7 @@ impl AssetPropertyValueBuilder {
     }
     /// <p>The timestamp of the asset property value.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<crate::types::TimeInNanos>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p>The timestamp of the asset property value.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<crate::types::TimeInNanos> {
@@ -78,8 +76,7 @@ impl AssetPropertyValueBuilder {
     }
     /// <p>The quality of the asset property value.</p>
     pub fn set_quality(mut self, input: ::std::option::Option<crate::types::Quality>) -> Self {
-        self.quality = input;
-        self
+        self.quality = input; self
     }
     /// <p>The quality of the asset property value.</p>
     pub fn get_quality(&self) -> &::std::option::Option<crate::types::Quality> {
@@ -88,9 +85,13 @@ impl AssetPropertyValueBuilder {
     /// Consumes the builder and constructs a [`AssetPropertyValue`](crate::types::AssetPropertyValue).
     pub fn build(self) -> crate::types::AssetPropertyValue {
         crate::types::AssetPropertyValue {
-            value: self.value,
-            timestamp: self.timestamp,
-            quality: self.quality,
+            value: self.value
+            ,
+            timestamp: self.timestamp
+            ,
+            quality: self.quality
+            ,
         }
     }
 }
+

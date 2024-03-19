@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteMemberInput {
+pub struct DeleteMemberInput  {
     /// <p>The unique identifier for the associated collaboration.</p>
     pub collaboration_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The account ID of the member to remove.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteMemberInput {
+impl  DeleteMemberInput  {
     /// <p>The unique identifier for the associated collaboration.</p>
-    pub fn collaboration_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn collaboration_identifier(&self) -> ::std::option::Option<& str> {
         self.collaboration_identifier.as_deref()
     }
     /// <p>The account ID of the member to remove.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteMemberInputBuilder {
     }
     /// <p>The unique identifier for the associated collaboration.</p>
     pub fn set_collaboration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collaboration_identifier = input;
-        self
+        self.collaboration_identifier = input; self
     }
     /// <p>The unique identifier for the associated collaboration.</p>
     pub fn get_collaboration_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DeleteMemberInputBuilder {
     }
     /// <p>The account ID of the member to remove.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The account ID of the member to remove.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`DeleteMemberInput`](crate::operation::delete_member::DeleteMemberInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_member::DeleteMemberInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_member::DeleteMemberInput {
-            collaboration_identifier: self.collaboration_identifier,
-            account_id: self.account_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_member::DeleteMemberInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_member::DeleteMemberInput {
+                collaboration_identifier: self.collaboration_identifier
+                ,
+                account_id: self.account_id
+                ,
+            }
+        )
     }
 }
+

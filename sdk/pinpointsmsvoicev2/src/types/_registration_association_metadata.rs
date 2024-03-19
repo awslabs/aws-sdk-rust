@@ -3,7 +3,7 @@
 /// <p>Metadata for the origination identity that is associated with the registration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegistrationAssociationMetadata {
+pub struct RegistrationAssociationMetadata  {
     /// <p>The Amazon Resource Name (ARN) of the origination identity that is associated with the registration.</p>
     pub resource_arn: ::std::string::String,
     /// <p>The unique identifier for the origination identity. For example this could be a <b>PhoneNumberId</b> or <b>SenderId</b>.</p>
@@ -15,28 +15,25 @@ pub struct RegistrationAssociationMetadata {
     /// <p>The phone number associated with the registration in E.164 format.</p>
     pub phone_number: ::std::option::Option<::std::string::String>,
 }
-impl RegistrationAssociationMetadata {
+impl  RegistrationAssociationMetadata  {
     /// <p>The Amazon Resource Name (ARN) of the origination identity that is associated with the registration.</p>
-    pub fn resource_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_arn.deref()
+    pub fn resource_arn(&self) -> & str {
+        use std::ops::Deref; self.resource_arn.deref()
     }
     /// <p>The unique identifier for the origination identity. For example this could be a <b>PhoneNumberId</b> or <b>SenderId</b>.</p>
-    pub fn resource_id(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_id.deref()
+    pub fn resource_id(&self) -> & str {
+        use std::ops::Deref; self.resource_id.deref()
     }
     /// <p>The origination identity type.</p>
-    pub fn resource_type(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_type.deref()
+    pub fn resource_type(&self) -> & str {
+        use std::ops::Deref; self.resource_type.deref()
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
-    pub fn iso_country_code(&self) -> ::std::option::Option<&str> {
+    pub fn iso_country_code(&self) -> ::std::option::Option<& str> {
         self.iso_country_code.as_deref()
     }
     /// <p>The phone number associated with the registration in E.164 format.</p>
-    pub fn phone_number(&self) -> ::std::option::Option<&str> {
+    pub fn phone_number(&self) -> ::std::option::Option<& str> {
         self.phone_number.as_deref()
     }
 }
@@ -66,8 +63,7 @@ impl RegistrationAssociationMetadataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the origination identity that is associated with the registration.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the origination identity that is associated with the registration.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl RegistrationAssociationMetadataBuilder {
     }
     /// <p>The unique identifier for the origination identity. For example this could be a <b>PhoneNumberId</b> or <b>SenderId</b>.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The unique identifier for the origination identity. For example this could be a <b>PhoneNumberId</b> or <b>SenderId</b>.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +91,7 @@ impl RegistrationAssociationMetadataBuilder {
     }
     /// <p>The origination identity type.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The origination identity type.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +104,7 @@ impl RegistrationAssociationMetadataBuilder {
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     pub fn set_iso_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iso_country_code = input;
-        self
+        self.iso_country_code = input; self
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     pub fn get_iso_country_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +117,7 @@ impl RegistrationAssociationMetadataBuilder {
     }
     /// <p>The phone number associated with the registration in E.164 format.</p>
     pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone_number = input;
-        self
+        self.phone_number = input; self
     }
     /// <p>The phone number associated with the registration in E.164 format.</p>
     pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,27 +129,29 @@ impl RegistrationAssociationMetadataBuilder {
     /// - [`resource_id`](crate::types::builders::RegistrationAssociationMetadataBuilder::resource_id)
     /// - [`resource_type`](crate::types::builders::RegistrationAssociationMetadataBuilder::resource_type)
     pub fn build(self) -> ::std::result::Result<crate::types::RegistrationAssociationMetadata, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RegistrationAssociationMetadata {
-            resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_arn",
-                    "resource_arn was not specified but it is required when building RegistrationAssociationMetadata",
-                )
-            })?,
-            resource_id: self.resource_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_id",
-                    "resource_id was not specified but it is required when building RegistrationAssociationMetadata",
-                )
-            })?,
-            resource_type: self.resource_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_type",
-                    "resource_type was not specified but it is required when building RegistrationAssociationMetadata",
-                )
-            })?,
-            iso_country_code: self.iso_country_code,
-            phone_number: self.phone_number,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RegistrationAssociationMetadata {
+                resource_arn: self.resource_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_arn", "resource_arn was not specified but it is required when building RegistrationAssociationMetadata")
+                    )?
+                ,
+                resource_id: self.resource_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_id", "resource_id was not specified but it is required when building RegistrationAssociationMetadata")
+                    )?
+                ,
+                resource_type: self.resource_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_type", "resource_type was not specified but it is required when building RegistrationAssociationMetadata")
+                    )?
+                ,
+                iso_country_code: self.iso_country_code
+                ,
+                phone_number: self.phone_number
+                ,
+            }
+        )
     }
 }
+

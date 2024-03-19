@@ -3,13 +3,13 @@
 /// <p>Information about an instance type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceTypeItem {
+pub struct InstanceTypeItem  {
     /// <p>The instance type.</p>
     pub instance_type: ::std::option::Option<::std::string::String>,
 }
-impl InstanceTypeItem {
+impl  InstanceTypeItem  {
     /// <p>The instance type.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<& str> {
         self.instance_type.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl InstanceTypeItemBuilder {
     }
     /// <p>The instance type.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The instance type.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl InstanceTypeItemBuilder {
     /// Consumes the builder and constructs a [`InstanceTypeItem`](crate::types::InstanceTypeItem).
     pub fn build(self) -> crate::types::InstanceTypeItem {
         crate::types::InstanceTypeItem {
-            instance_type: self.instance_type,
+            instance_type: self.instance_type
+            ,
         }
     }
 }
+

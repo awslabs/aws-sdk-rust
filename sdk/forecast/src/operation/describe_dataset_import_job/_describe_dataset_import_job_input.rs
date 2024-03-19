@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDatasetImportJobInput {
+pub struct DescribeDatasetImportJobInput  {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
     pub dataset_import_job_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeDatasetImportJobInput {
+impl  DescribeDatasetImportJobInput  {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
-    pub fn dataset_import_job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_import_job_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_import_job_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeDatasetImportJobInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
     pub fn set_dataset_import_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_import_job_arn = input;
-        self
+        self.dataset_import_job_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
     pub fn get_dataset_import_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataset_import_job_arn
     }
     /// Consumes the builder and constructs a [`DescribeDatasetImportJobInput`](crate::operation::describe_dataset_import_job::DescribeDatasetImportJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_dataset_import_job::DescribeDatasetImportJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_dataset_import_job::DescribeDatasetImportJobInput {
-            dataset_import_job_arn: self.dataset_import_job_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_dataset_import_job::DescribeDatasetImportJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_dataset_import_job::DescribeDatasetImportJobInput {
+                dataset_import_job_arn: self.dataset_import_job_arn
+                ,
+            }
+        )
     }
 }
+

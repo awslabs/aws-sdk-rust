@@ -3,7 +3,7 @@
 /// <p>Contains metadata about the ruleset.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RulesetItem {
+pub struct RulesetItem  {
     /// <p>The ID of the Amazon Web Services account that owns the ruleset.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the user who created the ruleset.</p>
@@ -23,42 +23,41 @@ pub struct RulesetItem {
     /// <p>The number of rules that are defined in the ruleset.</p>
     pub rule_count: i32,
     /// <p>Metadata tags that have been applied to the ruleset.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
     pub target_arn: ::std::string::String,
 }
-impl RulesetItem {
+impl  RulesetItem  {
     /// <p>The ID of the Amazon Web Services account that owns the ruleset.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user who created the ruleset.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&str> {
+    pub fn created_by(&self) -> ::std::option::Option<& str> {
         self.created_by.as_deref()
     }
     /// <p>The date and time that the ruleset was created.</p>
-    pub fn create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn create_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The description of the ruleset.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last modified the ruleset.</p>
-    pub fn last_modified_by(&self) -> ::std::option::Option<&str> {
+    pub fn last_modified_by(&self) -> ::std::option::Option<& str> {
         self.last_modified_by.as_deref()
     }
     /// <p>The modification date and time of the ruleset.</p>
-    pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The name of the ruleset.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the ruleset.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The number of rules that are defined in the ruleset.</p>
@@ -66,13 +65,12 @@ impl RulesetItem {
         self.rule_count
     }
     /// <p>Metadata tags that have been applied to the ruleset.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
-    pub fn target_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.target_arn.deref()
+    pub fn target_arn(&self) -> & str {
+        use std::ops::Deref; self.target_arn.deref()
     }
 }
 impl RulesetItem {
@@ -95,7 +93,7 @@ pub struct RulesetItemBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) rule_count: ::std::option::Option<i32>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) target_arn: ::std::option::Option<::std::string::String>,
 }
 impl RulesetItemBuilder {
@@ -106,8 +104,7 @@ impl RulesetItemBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that owns the ruleset.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that owns the ruleset.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +117,7 @@ impl RulesetItemBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the user who created the ruleset.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the user who created the ruleset.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +130,7 @@ impl RulesetItemBuilder {
     }
     /// <p>The date and time that the ruleset was created.</p>
     pub fn set_create_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_date = input;
-        self
+        self.create_date = input; self
     }
     /// <p>The date and time that the ruleset was created.</p>
     pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -148,8 +143,7 @@ impl RulesetItemBuilder {
     }
     /// <p>The description of the ruleset.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the ruleset.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,8 +156,7 @@ impl RulesetItemBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last modified the ruleset.</p>
     pub fn set_last_modified_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_modified_by = input;
-        self
+        self.last_modified_by = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last modified the ruleset.</p>
     pub fn get_last_modified_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -176,8 +169,7 @@ impl RulesetItemBuilder {
     }
     /// <p>The modification date and time of the ruleset.</p>
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_date = input;
-        self
+        self.last_modified_date = input; self
     }
     /// <p>The modification date and time of the ruleset.</p>
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -191,8 +183,7 @@ impl RulesetItemBuilder {
     }
     /// <p>The name of the ruleset.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the ruleset.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -205,8 +196,7 @@ impl RulesetItemBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the ruleset.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the ruleset.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -219,8 +209,7 @@ impl RulesetItemBuilder {
     }
     /// <p>The number of rules that are defined in the ruleset.</p>
     pub fn set_rule_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.rule_count = input;
-        self
+        self.rule_count = input; self
     }
     /// <p>The number of rules that are defined in the ruleset.</p>
     pub fn get_rule_count(&self) -> &::std::option::Option<i32> {
@@ -233,17 +222,16 @@ impl RulesetItemBuilder {
     /// <p>Metadata tags that have been applied to the ruleset.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Metadata tags that have been applied to the ruleset.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Metadata tags that have been applied to the ruleset.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
@@ -254,8 +242,7 @@ impl RulesetItemBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
     pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_arn = input;
-        self
+        self.target_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
     pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -266,28 +253,39 @@ impl RulesetItemBuilder {
     /// - [`name`](crate::types::builders::RulesetItemBuilder::name)
     /// - [`target_arn`](crate::types::builders::RulesetItemBuilder::target_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::RulesetItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RulesetItem {
-            account_id: self.account_id,
-            created_by: self.created_by,
-            create_date: self.create_date,
-            description: self.description,
-            last_modified_by: self.last_modified_by,
-            last_modified_date: self.last_modified_date,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building RulesetItem",
-                )
-            })?,
-            resource_arn: self.resource_arn,
-            rule_count: self.rule_count.unwrap_or_default(),
-            tags: self.tags,
-            target_arn: self.target_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "target_arn",
-                    "target_arn was not specified but it is required when building RulesetItem",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RulesetItem {
+                account_id: self.account_id
+                ,
+                created_by: self.created_by
+                ,
+                create_date: self.create_date
+                ,
+                description: self.description
+                ,
+                last_modified_by: self.last_modified_by
+                ,
+                last_modified_date: self.last_modified_date
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building RulesetItem")
+                    )?
+                ,
+                resource_arn: self.resource_arn
+                ,
+                rule_count: self.rule_count
+                    .unwrap_or_default()
+                ,
+                tags: self.tags
+                ,
+                target_arn: self.target_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("target_arn", "target_arn was not specified but it is required when building RulesetItem")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,23 +3,23 @@
 /// <p>The foundation model output from the post-processing step.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct PostProcessingModelInvocationOutput {
+pub struct PostProcessingModelInvocationOutput  {
     /// <p>The unique identifier of the trace.</p>
     pub trace_id: ::std::option::Option<::std::string::String>,
     /// <p>Details about the response from the Lambda parsing of the output of the post-processing step.</p>
     pub parsed_response: ::std::option::Option<crate::types::PostProcessingParsedResponse>,
 }
-impl PostProcessingModelInvocationOutput {
+impl  PostProcessingModelInvocationOutput  {
     /// <p>The unique identifier of the trace.</p>
-    pub fn trace_id(&self) -> ::std::option::Option<&str> {
+    pub fn trace_id(&self) -> ::std::option::Option<& str> {
         self.trace_id.as_deref()
     }
     /// <p>Details about the response from the Lambda parsing of the output of the post-processing step.</p>
-    pub fn parsed_response(&self) -> ::std::option::Option<&crate::types::PostProcessingParsedResponse> {
+    pub fn parsed_response(&self) -> ::std::option::Option<& crate::types::PostProcessingParsedResponse> {
         self.parsed_response.as_ref()
     }
 }
-impl ::std::fmt::Debug for PostProcessingModelInvocationOutput {
+impl  ::std::fmt::Debug for PostProcessingModelInvocationOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PostProcessingModelInvocationOutput");
         formatter.field("trace_id", &"*** Sensitive Data Redacted ***");
@@ -49,8 +49,7 @@ impl PostProcessingModelInvocationOutputBuilder {
     }
     /// <p>The unique identifier of the trace.</p>
     pub fn set_trace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trace_id = input;
-        self
+        self.trace_id = input; self
     }
     /// <p>The unique identifier of the trace.</p>
     pub fn get_trace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl PostProcessingModelInvocationOutputBuilder {
     }
     /// <p>Details about the response from the Lambda parsing of the output of the post-processing step.</p>
     pub fn set_parsed_response(mut self, input: ::std::option::Option<crate::types::PostProcessingParsedResponse>) -> Self {
-        self.parsed_response = input;
-        self
+        self.parsed_response = input; self
     }
     /// <p>Details about the response from the Lambda parsing of the output of the post-processing step.</p>
     pub fn get_parsed_response(&self) -> &::std::option::Option<crate::types::PostProcessingParsedResponse> {
@@ -73,8 +71,10 @@ impl PostProcessingModelInvocationOutputBuilder {
     /// Consumes the builder and constructs a [`PostProcessingModelInvocationOutput`](crate::types::PostProcessingModelInvocationOutput).
     pub fn build(self) -> crate::types::PostProcessingModelInvocationOutput {
         crate::types::PostProcessingModelInvocationOutput {
-            trace_id: self.trace_id,
-            parsed_response: self.parsed_response,
+            trace_id: self.trace_id
+            ,
+            parsed_response: self.parsed_response
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for PostProcessingModelInvocationOutputBuilder {
         formatter.finish()
     }
 }
+

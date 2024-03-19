@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateReportGroupInput {
+pub struct CreateReportGroupInput  {
     /// <p>The name of the report group.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of report group.</p>
@@ -11,27 +11,28 @@ pub struct CreateReportGroupInput {
     pub export_config: ::std::option::Option<crate::types::ReportExportConfig>,
     /// <p>A list of tag key and value pairs associated with this report group.</p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateReportGroupInput {
+impl  CreateReportGroupInput  {
     /// <p>The name of the report group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of report group.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ReportType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ReportType> {
         self.r#type.as_ref()
     }
     /// <p>A <code>ReportExportConfig</code> object that contains information about where the report group test results are exported.</p>
-    pub fn export_config(&self) -> ::std::option::Option<&crate::types::ReportExportConfig> {
+    pub fn export_config(&self) -> ::std::option::Option<& crate::types::ReportExportConfig> {
         self.export_config.as_ref()
     }
     /// <p>A list of tag key and value pairs associated with this report group.</p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateReportGroupInput {
@@ -48,7 +49,7 @@ pub struct CreateReportGroupInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::ReportType>,
     pub(crate) export_config: ::std::option::Option<crate::types::ReportExportConfig>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateReportGroupInputBuilder {
     /// <p>The name of the report group.</p>
@@ -59,8 +60,7 @@ impl CreateReportGroupInputBuilder {
     }
     /// <p>The name of the report group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the report group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +74,7 @@ impl CreateReportGroupInputBuilder {
     }
     /// <p>The type of report group.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ReportType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of report group.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ReportType> {
@@ -89,8 +88,7 @@ impl CreateReportGroupInputBuilder {
     }
     /// <p>A <code>ReportExportConfig</code> object that contains information about where the report group test results are exported.</p>
     pub fn set_export_config(mut self, input: ::std::option::Option<crate::types::ReportExportConfig>) -> Self {
-        self.export_config = input;
-        self
+        self.export_config = input; self
     }
     /// <p>A <code>ReportExportConfig</code> object that contains information about where the report group test results are exported.</p>
     pub fn get_export_config(&self) -> &::std::option::Option<crate::types::ReportExportConfig> {
@@ -104,30 +102,34 @@ impl CreateReportGroupInputBuilder {
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tag key and value pairs associated with this report group.</p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tag key and value pairs associated with this report group.</p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateReportGroupInput`](crate::operation::create_report_group::CreateReportGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_report_group::CreateReportGroupInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_report_group::CreateReportGroupInput {
-            name: self.name,
-            r#type: self.r#type,
-            export_config: self.export_config,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_report_group::CreateReportGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_report_group::CreateReportGroupInput {
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                export_config: self.export_config
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListProposalVotesInput {
+pub struct ListProposalVotesInput  {
     /// <p>The unique identifier of the network.</p>
     pub network_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the proposal.</p>
@@ -12,13 +12,13 @@ pub struct ListProposalVotesInput {
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListProposalVotesInput {
+impl  ListProposalVotesInput  {
     /// <p>The unique identifier of the network.</p>
-    pub fn network_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_id(&self) -> ::std::option::Option<& str> {
         self.network_id.as_deref()
     }
     /// <p>The unique identifier of the proposal.</p>
-    pub fn proposal_id(&self) -> ::std::option::Option<&str> {
+    pub fn proposal_id(&self) -> ::std::option::Option<& str> {
         self.proposal_id.as_deref()
     }
     /// <p>The maximum number of votes to return.</p>
@@ -26,7 +26,7 @@ impl ListProposalVotesInput {
         self.max_results
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl ListProposalVotesInputBuilder {
     }
     /// <p>The unique identifier of the network.</p>
     pub fn set_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_id = input;
-        self
+        self.network_id = input; self
     }
     /// <p>The unique identifier of the network.</p>
     pub fn get_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl ListProposalVotesInputBuilder {
     }
     /// <p>The unique identifier of the proposal.</p>
     pub fn set_proposal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.proposal_id = input;
-        self
+        self.proposal_id = input; self
     }
     /// <p>The unique identifier of the proposal.</p>
     pub fn get_proposal_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl ListProposalVotesInputBuilder {
     }
     /// <p>The maximum number of votes to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of votes to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -98,22 +95,26 @@ impl ListProposalVotesInputBuilder {
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListProposalVotesInput`](crate::operation::list_proposal_votes::ListProposalVotesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_proposal_votes::ListProposalVotesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_proposal_votes::ListProposalVotesInput {
-            network_id: self.network_id,
-            proposal_id: self.proposal_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_proposal_votes::ListProposalVotesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_proposal_votes::ListProposalVotesInput {
+                network_id: self.network_id
+                ,
+                proposal_id: self.proposal_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

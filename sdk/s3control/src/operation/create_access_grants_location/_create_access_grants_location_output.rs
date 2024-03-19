@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAccessGrantsLocationOutput {
+pub struct CreateAccessGrantsLocationOutput  {
     /// <p>The date and time when you registered the location.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the registered location to which you are granting access. S3 Access Grants assigns this ID when you register the location. S3 Access Grants assigns the ID <code>default</code> to the default location <code>s3://</code> and assigns an auto-generated ID to other locations that you register.</p>
@@ -15,33 +15,33 @@ pub struct CreateAccessGrantsLocationOutput {
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateAccessGrantsLocationOutput {
+impl  CreateAccessGrantsLocationOutput  {
     /// <p>The date and time when you registered the location.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The ID of the registered location to which you are granting access. S3 Access Grants assigns this ID when you register the location. S3 Access Grants assigns the ID <code>default</code> to the default location <code>s3://</code> and assigns an auto-generated ID to other locations that you register.</p>
-    pub fn access_grants_location_id(&self) -> ::std::option::Option<&str> {
+    pub fn access_grants_location_id(&self) -> ::std::option::Option<& str> {
         self.access_grants_location_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the location you are registering.</p>
-    pub fn access_grants_location_arn(&self) -> ::std::option::Option<&str> {
+    pub fn access_grants_location_arn(&self) -> ::std::option::Option<& str> {
         self.access_grants_location_arn.as_deref()
     }
     /// <p>The S3 URI path to the location that you are registering. The location scope can be the default S3 location <code>s3://</code>, the S3 path to a bucket, or the S3 path to a bucket and prefix. A prefix in S3 is a string of characters at the beginning of an object key name used to organize the objects that you store in your S3 buckets. For example, object key names that start with the <code>engineering/</code> prefix or object key names that start with the <code>marketing/campaigns/</code> prefix.</p>
-    pub fn location_scope(&self) -> ::std::option::Option<&str> {
+    pub fn location_scope(&self) -> ::std::option::Option<& str> {
         self.location_scope.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role for the registered location. S3 Access Grants assumes this role to manage access to the registered location.</p>
-    pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn iam_role_arn(&self) -> ::std::option::Option<& str> {
         self.iam_role_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateAccessGrantsLocationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateAccessGrantsLocationOutput {
     /// Creates a new builder-style object to manufacture [`CreateAccessGrantsLocationOutput`](crate::operation::create_access_grants_location::CreateAccessGrantsLocationOutput).
     pub fn builder() -> crate::operation::create_access_grants_location::builders::CreateAccessGrantsLocationOutputBuilder {
@@ -68,8 +68,7 @@ impl CreateAccessGrantsLocationOutputBuilder {
     }
     /// <p>The date and time when you registered the location.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time when you registered the location.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -82,8 +81,7 @@ impl CreateAccessGrantsLocationOutputBuilder {
     }
     /// <p>The ID of the registered location to which you are granting access. S3 Access Grants assigns this ID when you register the location. S3 Access Grants assigns the ID <code>default</code> to the default location <code>s3://</code> and assigns an auto-generated ID to other locations that you register.</p>
     pub fn set_access_grants_location_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_grants_location_id = input;
-        self
+        self.access_grants_location_id = input; self
     }
     /// <p>The ID of the registered location to which you are granting access. S3 Access Grants assigns this ID when you register the location. S3 Access Grants assigns the ID <code>default</code> to the default location <code>s3://</code> and assigns an auto-generated ID to other locations that you register.</p>
     pub fn get_access_grants_location_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +94,7 @@ impl CreateAccessGrantsLocationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the location you are registering.</p>
     pub fn set_access_grants_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_grants_location_arn = input;
-        self
+        self.access_grants_location_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the location you are registering.</p>
     pub fn get_access_grants_location_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +107,7 @@ impl CreateAccessGrantsLocationOutputBuilder {
     }
     /// <p>The S3 URI path to the location that you are registering. The location scope can be the default S3 location <code>s3://</code>, the S3 path to a bucket, or the S3 path to a bucket and prefix. A prefix in S3 is a string of characters at the beginning of an object key name used to organize the objects that you store in your S3 buckets. For example, object key names that start with the <code>engineering/</code> prefix or object key names that start with the <code>marketing/campaigns/</code> prefix.</p>
     pub fn set_location_scope(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location_scope = input;
-        self
+        self.location_scope = input; self
     }
     /// <p>The S3 URI path to the location that you are registering. The location scope can be the default S3 location <code>s3://</code>, the S3 path to a bucket, or the S3 path to a bucket and prefix. A prefix in S3 is a string of characters at the beginning of an object key name used to organize the objects that you store in your S3 buckets. For example, object key names that start with the <code>engineering/</code> prefix or object key names that start with the <code>marketing/campaigns/</code> prefix.</p>
     pub fn get_location_scope(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,31 +120,36 @@ impl CreateAccessGrantsLocationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role for the registered location. S3 Access Grants assumes this role to manage access to the registered location.</p>
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_role_arn = input;
-        self
+        self.iam_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role for the registered location. S3 Access Grants assumes this role to manage access to the registered location.</p>
     pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.iam_role_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateAccessGrantsLocationOutput`](crate::operation::create_access_grants_location::CreateAccessGrantsLocationOutput).
     pub fn build(self) -> crate::operation::create_access_grants_location::CreateAccessGrantsLocationOutput {
         crate::operation::create_access_grants_location::CreateAccessGrantsLocationOutput {
-            created_at: self.created_at,
-            access_grants_location_id: self.access_grants_location_id,
-            access_grants_location_arn: self.access_grants_location_arn,
-            location_scope: self.location_scope,
-            iam_role_arn: self.iam_role_arn,
+            created_at: self.created_at
+            ,
+            access_grants_location_id: self.access_grants_location_id
+            ,
+            access_grants_location_arn: self.access_grants_location_arn
+            ,
+            location_scope: self.location_scope
+            ,
+            iam_role_arn: self.iam_role_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

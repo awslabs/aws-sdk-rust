@@ -3,7 +3,7 @@
 /// <p>The reference details for a given export.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportReference {
+pub struct ExportReference  {
     /// <p>The Amazon Resource Name (ARN) for this export.</p>
     pub export_arn: ::std::string::String,
     /// <p>The name of this specific data export.</p>
@@ -11,19 +11,17 @@ pub struct ExportReference {
     /// <p>The status of this specific data export.</p>
     pub export_status: ::std::option::Option<crate::types::ExportStatus>,
 }
-impl ExportReference {
+impl  ExportReference  {
     /// <p>The Amazon Resource Name (ARN) for this export.</p>
-    pub fn export_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.export_arn.deref()
+    pub fn export_arn(&self) -> & str {
+        use std::ops::Deref; self.export_arn.deref()
     }
     /// <p>The name of this specific data export.</p>
-    pub fn export_name(&self) -> &str {
-        use std::ops::Deref;
-        self.export_name.deref()
+    pub fn export_name(&self) -> & str {
+        use std::ops::Deref; self.export_name.deref()
     }
     /// <p>The status of this specific data export.</p>
-    pub fn export_status(&self) -> ::std::option::Option<&crate::types::ExportStatus> {
+    pub fn export_status(&self) -> ::std::option::Option<& crate::types::ExportStatus> {
         self.export_status.as_ref()
     }
 }
@@ -51,8 +49,7 @@ impl ExportReferenceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for this export.</p>
     pub fn set_export_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.export_arn = input;
-        self
+        self.export_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for this export.</p>
     pub fn get_export_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl ExportReferenceBuilder {
     }
     /// <p>The name of this specific data export.</p>
     pub fn set_export_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.export_name = input;
-        self
+        self.export_name = input; self
     }
     /// <p>The name of this specific data export.</p>
     pub fn get_export_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl ExportReferenceBuilder {
     }
     /// <p>The status of this specific data export.</p>
     pub fn set_export_status(mut self, input: ::std::option::Option<crate::types::ExportStatus>) -> Self {
-        self.export_status = input;
-        self
+        self.export_status = input; self
     }
     /// <p>The status of this specific data export.</p>
     pub fn get_export_status(&self) -> &::std::option::Option<crate::types::ExportStatus> {
@@ -93,20 +88,22 @@ impl ExportReferenceBuilder {
     /// - [`export_arn`](crate::types::builders::ExportReferenceBuilder::export_arn)
     /// - [`export_name`](crate::types::builders::ExportReferenceBuilder::export_name)
     pub fn build(self) -> ::std::result::Result<crate::types::ExportReference, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ExportReference {
-            export_arn: self.export_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "export_arn",
-                    "export_arn was not specified but it is required when building ExportReference",
-                )
-            })?,
-            export_name: self.export_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "export_name",
-                    "export_name was not specified but it is required when building ExportReference",
-                )
-            })?,
-            export_status: self.export_status,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ExportReference {
+                export_arn: self.export_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("export_arn", "export_arn was not specified but it is required when building ExportReference")
+                    )?
+                ,
+                export_name: self.export_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("export_name", "export_name was not specified but it is required when building ExportReference")
+                    )?
+                ,
+                export_status: self.export_status
+                ,
+            }
+        )
     }
 }
+

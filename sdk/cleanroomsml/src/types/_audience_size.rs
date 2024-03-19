@@ -3,15 +3,15 @@
 /// <p>The size of the generated audience. Must match one of the sizes in the configured audience model.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AudienceSize {
+pub struct AudienceSize  {
     /// <p>Whether the audience size is defined in absolute terms or as a percentage. You can use the <code>ABSOLUTE</code> <code>AudienceSize</code> to configure out audience sizes using the count of identifiers in the output. You can use the <code>Percentage</code> <code>AudienceSize</code> to configure sizes in the range 1-100 percent.</p>
     pub r#type: crate::types::AudienceSizeType,
     /// <p>Specify an audience size value.</p>
     pub value: i32,
 }
-impl AudienceSize {
+impl  AudienceSize  {
     /// <p>Whether the audience size is defined in absolute terms or as a percentage. You can use the <code>ABSOLUTE</code> <code>AudienceSize</code> to configure out audience sizes using the count of identifiers in the output. You can use the <code>Percentage</code> <code>AudienceSize</code> to configure sizes in the range 1-100 percent.</p>
-    pub fn r#type(&self) -> &crate::types::AudienceSizeType {
+    pub fn r#type(&self) -> & crate::types::AudienceSizeType {
         &self.r#type
     }
     /// <p>Specify an audience size value.</p>
@@ -42,8 +42,7 @@ impl AudienceSizeBuilder {
     }
     /// <p>Whether the audience size is defined in absolute terms or as a percentage. You can use the <code>ABSOLUTE</code> <code>AudienceSize</code> to configure out audience sizes using the count of identifiers in the output. You can use the <code>Percentage</code> <code>AudienceSize</code> to configure sizes in the range 1-100 percent.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::AudienceSizeType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Whether the audience size is defined in absolute terms or as a percentage. You can use the <code>ABSOLUTE</code> <code>AudienceSize</code> to configure out audience sizes using the count of identifiers in the output. You can use the <code>Percentage</code> <code>AudienceSize</code> to configure sizes in the range 1-100 percent.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::AudienceSizeType> {
@@ -57,8 +56,7 @@ impl AudienceSizeBuilder {
     }
     /// <p>Specify an audience size value.</p>
     pub fn set_value(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>Specify an audience size value.</p>
     pub fn get_value(&self) -> &::std::option::Option<i32> {
@@ -69,19 +67,20 @@ impl AudienceSizeBuilder {
     /// - [`r#type`](crate::types::builders::AudienceSizeBuilder::r#type)
     /// - [`value`](crate::types::builders::AudienceSizeBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::AudienceSize, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AudienceSize {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building AudienceSize",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building AudienceSize",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AudienceSize {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building AudienceSize")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building AudienceSize")
+                    )?
+                ,
+            }
+        )
     }
 }
+

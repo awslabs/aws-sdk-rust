@@ -5,54 +5,50 @@ pub use crate::operation::get_compliance_summary_by_resource_type::_get_complian
 
 impl GetComplianceSummaryByResourceTypeInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_compliance_summary_by_resource_type();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_compliance_summary_by_resource_type();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetComplianceSummaryByResourceType`.
-///
+/// 
 /// <p>Returns the number of resources that are compliant and the number that are noncompliant. You can specify one or more resource types to get these numbers for each resource type. The maximum number returned is 100.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetComplianceSummaryByResourceTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_compliance_summary_by_resource_type::builders::GetComplianceSummaryByResourceTypeInputBuilder,
+                    inner: crate::operation::get_compliance_summary_by_resource_type::builders::GetComplianceSummaryByResourceTypeInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeOutput,
-        crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeError,
-    > for GetComplianceSummaryByResourceTypeFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeOutput,
-            crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeOutput,
+                    crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeError,
+                > for GetComplianceSummaryByResourceTypeFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeOutput,
+                        crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetComplianceSummaryByResourceTypeFluentBuilder {
     /// Creates a new `GetComplianceSummaryByResourceType`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,54 +57,44 @@ impl GetComplianceSummaryByResourceTypeFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins =
-            crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceType::operation_runtime_plugins(
-                self.handle.runtime_plugins.clone(),
-                &self.handle.conf,
-                self.config_override,
-            );
-        crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceType::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeOutput,
-        crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceType::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceType::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeOutput, crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `ResourceTypes`.
     ///
     /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
@@ -121,13 +107,14 @@ impl GetComplianceSummaryByResourceTypeFluentBuilder {
     }
     /// <p>Specify one or more resource types to get the number of resources that are compliant and the number that are noncompliant for each resource type.</p>
     /// <p>For this request, you can specify an Amazon Web Services resource type such as <code>AWS::EC2::Instance</code>. You can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
-    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_types(input);
         self
     }
     /// <p>Specify one or more resource types to get the number of resources that are compliant and the number that are noncompliant for each resource type.</p>
     /// <p>For this request, you can specify an Amazon Web Services resource type such as <code>AWS::EC2::Instance</code>. You can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
-    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_resource_types()
     }
 }
+

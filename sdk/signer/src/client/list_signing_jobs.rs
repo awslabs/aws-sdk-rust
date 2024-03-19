@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSigningJobs`](crate::operation::list_signing_jobs::builders::ListSigningJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_signing_jobs::builders::ListSigningJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`status(SigningStatus)`](crate::operation::list_signing_jobs::builders::ListSigningJobsFluentBuilder::status) / [`set_status(Option<SigningStatus>)`](crate::operation::list_signing_jobs::builders::ListSigningJobsFluentBuilder::set_status):<br>required: **false**<br><p>A status value with which to filter your results.</p><br>
     ///   - [`platform_id(impl Into<String>)`](crate::operation::list_signing_jobs::builders::ListSigningJobsFluentBuilder::platform_id) / [`set_platform_id(Option<String>)`](crate::operation::list_signing_jobs::builders::ListSigningJobsFluentBuilder::set_platform_id):<br>required: **false**<br><p>The ID of microcontroller platform that you specified for the distribution of your code image.</p><br>
     ///   - [`requested_by(impl Into<String>)`](crate::operation::list_signing_jobs::builders::ListSigningJobsFluentBuilder::requested_by) / [`set_requested_by(Option<String>)`](crate::operation::list_signing_jobs::builders::ListSigningJobsFluentBuilder::set_requested_by):<br>required: **false**<br><p>The IAM principal that requested the signing job.</p><br>
@@ -13,11 +13,12 @@ impl super::Client {
     ///   - [`signature_expires_before(DateTime)`](crate::operation::list_signing_jobs::builders::ListSigningJobsFluentBuilder::signature_expires_before) / [`set_signature_expires_before(Option<DateTime>)`](crate::operation::list_signing_jobs::builders::ListSigningJobsFluentBuilder::set_signature_expires_before):<br>required: **false**<br><p>Filters results to return only signing jobs with signatures expiring before a specified timestamp.</p><br>
     ///   - [`signature_expires_after(DateTime)`](crate::operation::list_signing_jobs::builders::ListSigningJobsFluentBuilder::signature_expires_after) / [`set_signature_expires_after(Option<DateTime>)`](crate::operation::list_signing_jobs::builders::ListSigningJobsFluentBuilder::set_signature_expires_after):<br>required: **false**<br><p>Filters results to return only signing jobs with signatures expiring after a specified timestamp.</p><br>
     ///   - [`job_invoker(impl Into<String>)`](crate::operation::list_signing_jobs::builders::ListSigningJobsFluentBuilder::job_invoker) / [`set_job_invoker(Option<String>)`](crate::operation::list_signing_jobs::builders::ListSigningJobsFluentBuilder::set_job_invoker):<br>required: **false**<br><p>Filters results to return only signing jobs initiated by a specified IAM entity.</p><br>
-    /// - On success, responds with [`ListSigningJobsOutput`](crate::operation::list_signing_jobs::ListSigningJobsOutput) with field(s):
+                            /// - On success, responds with [`ListSigningJobsOutput`](crate::operation::list_signing_jobs::ListSigningJobsOutput) with field(s):
     ///   - [`jobs(Option<Vec::<SigningJob>>)`](crate::operation::list_signing_jobs::ListSigningJobsOutput::jobs): <p>A list of your signing jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_signing_jobs::ListSigningJobsOutput::next_token): <p>String for specifying the next set of paginated results.</p>
-    /// - On failure, responds with [`SdkError<ListSigningJobsError>`](crate::operation::list_signing_jobs::ListSigningJobsError)
+                            /// - On failure, responds with [`SdkError<ListSigningJobsError>`](crate::operation::list_signing_jobs::ListSigningJobsError)
     pub fn list_signing_jobs(&self) -> crate::operation::list_signing_jobs::builders::ListSigningJobsFluentBuilder {
-        crate::operation::list_signing_jobs::builders::ListSigningJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_signing_jobs::builders::ListSigningJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

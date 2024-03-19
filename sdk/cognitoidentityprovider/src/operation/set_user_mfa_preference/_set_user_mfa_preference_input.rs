@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SetUserMfaPreferenceInput {
+pub struct SetUserMfaPreferenceInput  {
     /// <p>The SMS text message multi-factor authentication (MFA) settings.</p>
     pub sms_mfa_settings: ::std::option::Option<crate::types::SmsMfaSettingsType>,
     /// <p>The time-based one-time password (TOTP) software token MFA settings.</p>
@@ -10,21 +10,21 @@ pub struct SetUserMfaPreferenceInput {
     /// <p>A valid access token that Amazon Cognito issued to the user whose MFA preference you want to set.</p>
     pub access_token: ::std::option::Option<::std::string::String>,
 }
-impl SetUserMfaPreferenceInput {
+impl  SetUserMfaPreferenceInput  {
     /// <p>The SMS text message multi-factor authentication (MFA) settings.</p>
-    pub fn sms_mfa_settings(&self) -> ::std::option::Option<&crate::types::SmsMfaSettingsType> {
+    pub fn sms_mfa_settings(&self) -> ::std::option::Option<& crate::types::SmsMfaSettingsType> {
         self.sms_mfa_settings.as_ref()
     }
     /// <p>The time-based one-time password (TOTP) software token MFA settings.</p>
-    pub fn software_token_mfa_settings(&self) -> ::std::option::Option<&crate::types::SoftwareTokenMfaSettingsType> {
+    pub fn software_token_mfa_settings(&self) -> ::std::option::Option<& crate::types::SoftwareTokenMfaSettingsType> {
         self.software_token_mfa_settings.as_ref()
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose MFA preference you want to set.</p>
-    pub fn access_token(&self) -> ::std::option::Option<&str> {
+    pub fn access_token(&self) -> ::std::option::Option<& str> {
         self.access_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for SetUserMfaPreferenceInput {
+impl  ::std::fmt::Debug for SetUserMfaPreferenceInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SetUserMfaPreferenceInput");
         formatter.field("sms_mfa_settings", &self.sms_mfa_settings);
@@ -56,8 +56,7 @@ impl SetUserMfaPreferenceInputBuilder {
     }
     /// <p>The SMS text message multi-factor authentication (MFA) settings.</p>
     pub fn set_sms_mfa_settings(mut self, input: ::std::option::Option<crate::types::SmsMfaSettingsType>) -> Self {
-        self.sms_mfa_settings = input;
-        self
+        self.sms_mfa_settings = input; self
     }
     /// <p>The SMS text message multi-factor authentication (MFA) settings.</p>
     pub fn get_sms_mfa_settings(&self) -> &::std::option::Option<crate::types::SmsMfaSettingsType> {
@@ -70,8 +69,7 @@ impl SetUserMfaPreferenceInputBuilder {
     }
     /// <p>The time-based one-time password (TOTP) software token MFA settings.</p>
     pub fn set_software_token_mfa_settings(mut self, input: ::std::option::Option<crate::types::SoftwareTokenMfaSettingsType>) -> Self {
-        self.software_token_mfa_settings = input;
-        self
+        self.software_token_mfa_settings = input; self
     }
     /// <p>The time-based one-time password (TOTP) software token MFA settings.</p>
     pub fn get_software_token_mfa_settings(&self) -> &::std::option::Option<crate::types::SoftwareTokenMfaSettingsType> {
@@ -85,23 +83,24 @@ impl SetUserMfaPreferenceInputBuilder {
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose MFA preference you want to set.</p>
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_token = input;
-        self
+        self.access_token = input; self
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose MFA preference you want to set.</p>
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_token
     }
     /// Consumes the builder and constructs a [`SetUserMfaPreferenceInput`](crate::operation::set_user_mfa_preference::SetUserMfaPreferenceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::set_user_mfa_preference::SetUserMfaPreferenceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::set_user_mfa_preference::SetUserMfaPreferenceInput {
-            sms_mfa_settings: self.sms_mfa_settings,
-            software_token_mfa_settings: self.software_token_mfa_settings,
-            access_token: self.access_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_user_mfa_preference::SetUserMfaPreferenceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::set_user_mfa_preference::SetUserMfaPreferenceInput {
+                sms_mfa_settings: self.sms_mfa_settings
+                ,
+                software_token_mfa_settings: self.software_token_mfa_settings
+                ,
+                access_token: self.access_token
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for SetUserMfaPreferenceInputBuilder {
@@ -113,3 +112,4 @@ impl ::std::fmt::Debug for SetUserMfaPreferenceInputBuilder {
         formatter.finish()
     }
 }
+

@@ -3,22 +3,20 @@
 /// <p>Copy the destination image set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CopyDestinationImageSet {
+pub struct CopyDestinationImageSet  {
     /// <p>The image set identifier for the destination image set.</p>
     pub image_set_id: ::std::string::String,
     /// <p>The latest version identifier for the destination image set.</p>
     pub latest_version_id: ::std::string::String,
 }
-impl CopyDestinationImageSet {
+impl  CopyDestinationImageSet  {
     /// <p>The image set identifier for the destination image set.</p>
-    pub fn image_set_id(&self) -> &str {
-        use std::ops::Deref;
-        self.image_set_id.deref()
+    pub fn image_set_id(&self) -> & str {
+        use std::ops::Deref; self.image_set_id.deref()
     }
     /// <p>The latest version identifier for the destination image set.</p>
-    pub fn latest_version_id(&self) -> &str {
-        use std::ops::Deref;
-        self.latest_version_id.deref()
+    pub fn latest_version_id(&self) -> & str {
+        use std::ops::Deref; self.latest_version_id.deref()
     }
 }
 impl CopyDestinationImageSet {
@@ -44,8 +42,7 @@ impl CopyDestinationImageSetBuilder {
     }
     /// <p>The image set identifier for the destination image set.</p>
     pub fn set_image_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_set_id = input;
-        self
+        self.image_set_id = input; self
     }
     /// <p>The image set identifier for the destination image set.</p>
     pub fn get_image_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl CopyDestinationImageSetBuilder {
     }
     /// <p>The latest version identifier for the destination image set.</p>
     pub fn set_latest_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.latest_version_id = input;
-        self
+        self.latest_version_id = input; self
     }
     /// <p>The latest version identifier for the destination image set.</p>
     pub fn get_latest_version_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl CopyDestinationImageSetBuilder {
     /// - [`image_set_id`](crate::types::builders::CopyDestinationImageSetBuilder::image_set_id)
     /// - [`latest_version_id`](crate::types::builders::CopyDestinationImageSetBuilder::latest_version_id)
     pub fn build(self) -> ::std::result::Result<crate::types::CopyDestinationImageSet, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CopyDestinationImageSet {
-            image_set_id: self.image_set_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "image_set_id",
-                    "image_set_id was not specified but it is required when building CopyDestinationImageSet",
-                )
-            })?,
-            latest_version_id: self.latest_version_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "latest_version_id",
-                    "latest_version_id was not specified but it is required when building CopyDestinationImageSet",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CopyDestinationImageSet {
+                image_set_id: self.image_set_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("image_set_id", "image_set_id was not specified but it is required when building CopyDestinationImageSet")
+                    )?
+                ,
+                latest_version_id: self.latest_version_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("latest_version_id", "latest_version_id was not specified but it is required when building CopyDestinationImageSet")
+                    )?
+                ,
+            }
+        )
     }
 }
+

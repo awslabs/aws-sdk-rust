@@ -3,15 +3,14 @@
 /// <p>Describes execution properties for a Managed Service for Apache Flink application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnvironmentProperties {
+pub struct EnvironmentProperties  {
     /// <p>Describes the execution property groups.</p>
-    pub property_groups: ::std::vec::Vec<crate::types::PropertyGroup>,
+    pub property_groups: ::std::vec::Vec::<crate::types::PropertyGroup>,
 }
-impl EnvironmentProperties {
+impl  EnvironmentProperties  {
     /// <p>Describes the execution property groups.</p>
-    pub fn property_groups(&self) -> &[crate::types::PropertyGroup] {
-        use std::ops::Deref;
-        self.property_groups.deref()
+    pub fn property_groups(&self) -> & [crate::types::PropertyGroup] {
+        use std::ops::Deref; self.property_groups.deref()
     }
 }
 impl EnvironmentProperties {
@@ -25,7 +24,7 @@ impl EnvironmentProperties {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnvironmentPropertiesBuilder {
-    pub(crate) property_groups: ::std::option::Option<::std::vec::Vec<crate::types::PropertyGroup>>,
+    pub(crate) property_groups: ::std::option::Option<::std::vec::Vec::<crate::types::PropertyGroup>>,
 }
 impl EnvironmentPropertiesBuilder {
     /// Appends an item to `property_groups`.
@@ -35,30 +34,31 @@ impl EnvironmentPropertiesBuilder {
     /// <p>Describes the execution property groups.</p>
     pub fn property_groups(mut self, input: crate::types::PropertyGroup) -> Self {
         let mut v = self.property_groups.unwrap_or_default();
-        v.push(input);
-        self.property_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.property_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Describes the execution property groups.</p>
-    pub fn set_property_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PropertyGroup>>) -> Self {
-        self.property_groups = input;
-        self
+    pub fn set_property_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PropertyGroup>>) -> Self {
+        self.property_groups = input; self
     }
     /// <p>Describes the execution property groups.</p>
-    pub fn get_property_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyGroup>> {
+    pub fn get_property_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PropertyGroup>> {
         &self.property_groups
     }
     /// Consumes the builder and constructs a [`EnvironmentProperties`](crate::types::EnvironmentProperties).
     /// This method will fail if any of the following fields are not set:
     /// - [`property_groups`](crate::types::builders::EnvironmentPropertiesBuilder::property_groups)
     pub fn build(self) -> ::std::result::Result<crate::types::EnvironmentProperties, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EnvironmentProperties {
-            property_groups: self.property_groups.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "property_groups",
-                    "property_groups was not specified but it is required when building EnvironmentProperties",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EnvironmentProperties {
+                property_groups: self.property_groups
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("property_groups", "property_groups was not specified but it is required when building EnvironmentProperties")
+                    )?
+                ,
+            }
+        )
     }
 }
+

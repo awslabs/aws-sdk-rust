@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateLandingZoneInput {
+pub struct UpdateLandingZoneInput  {
     /// <p>The landing zone version, for example, 3.2.</p>
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The <code>manifest.yaml</code> file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/the-manifest-file">The manifest file</a>.</p>
@@ -10,17 +10,17 @@ pub struct UpdateLandingZoneInput {
     /// <p>The unique identifier of the landing zone.</p>
     pub landing_zone_identifier: ::std::option::Option<::std::string::String>,
 }
-impl UpdateLandingZoneInput {
+impl  UpdateLandingZoneInput  {
     /// <p>The landing zone version, for example, 3.2.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The <code>manifest.yaml</code> file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/the-manifest-file">The manifest file</a>.</p>
-    pub fn manifest(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+    pub fn manifest(&self) -> ::std::option::Option<& ::aws_smithy_types::Document> {
         self.manifest.as_ref()
     }
     /// <p>The unique identifier of the landing zone.</p>
-    pub fn landing_zone_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn landing_zone_identifier(&self) -> ::std::option::Option<& str> {
         self.landing_zone_identifier.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateLandingZoneInputBuilder {
     }
     /// <p>The landing zone version, for example, 3.2.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The landing zone version, for example, 3.2.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateLandingZoneInputBuilder {
     }
     /// <p>The <code>manifest.yaml</code> file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/the-manifest-file">The manifest file</a>.</p>
     pub fn set_manifest(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
-        self.manifest = input;
-        self
+        self.manifest = input; self
     }
     /// <p>The <code>manifest.yaml</code> file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/the-manifest-file">The manifest file</a>.</p>
     pub fn get_manifest(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
@@ -78,21 +76,24 @@ impl UpdateLandingZoneInputBuilder {
     }
     /// <p>The unique identifier of the landing zone.</p>
     pub fn set_landing_zone_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.landing_zone_identifier = input;
-        self
+        self.landing_zone_identifier = input; self
     }
     /// <p>The unique identifier of the landing zone.</p>
     pub fn get_landing_zone_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.landing_zone_identifier
     }
     /// Consumes the builder and constructs a [`UpdateLandingZoneInput`](crate::operation::update_landing_zone::UpdateLandingZoneInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_landing_zone::UpdateLandingZoneInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_landing_zone::UpdateLandingZoneInput {
-            version: self.version,
-            manifest: self.manifest,
-            landing_zone_identifier: self.landing_zone_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_landing_zone::UpdateLandingZoneInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_landing_zone::UpdateLandingZoneInput {
+                version: self.version
+                ,
+                manifest: self.manifest
+                ,
+                landing_zone_identifier: self.landing_zone_identifier
+                ,
+            }
+        )
     }
 }
+

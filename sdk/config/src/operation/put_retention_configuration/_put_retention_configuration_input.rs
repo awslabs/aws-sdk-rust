@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutRetentionConfigurationInput {
+pub struct PutRetentionConfigurationInput  {
     /// <p>Number of days Config stores your historical information.</p><note>
     /// <p>Currently, only applicable to the configuration item history.</p>
     /// </note>
     pub retention_period_in_days: ::std::option::Option<i32>,
 }
-impl PutRetentionConfigurationInput {
+impl  PutRetentionConfigurationInput  {
     /// <p>Number of days Config stores your historical information.</p><note>
     /// <p>Currently, only applicable to the configuration item history.</p>
     /// </note>
@@ -42,8 +42,7 @@ impl PutRetentionConfigurationInputBuilder {
     /// <p>Currently, only applicable to the configuration item history.</p>
     /// </note>
     pub fn set_retention_period_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.retention_period_in_days = input;
-        self
+        self.retention_period_in_days = input; self
     }
     /// <p>Number of days Config stores your historical information.</p><note>
     /// <p>Currently, only applicable to the configuration item history.</p>
@@ -52,14 +51,13 @@ impl PutRetentionConfigurationInputBuilder {
         &self.retention_period_in_days
     }
     /// Consumes the builder and constructs a [`PutRetentionConfigurationInput`](crate::operation::put_retention_configuration::PutRetentionConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_retention_configuration::PutRetentionConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_retention_configuration::PutRetentionConfigurationInput {
-            retention_period_in_days: self.retention_period_in_days,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_retention_configuration::PutRetentionConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_retention_configuration::PutRetentionConfigurationInput {
+                retention_period_in_days: self.retention_period_in_days
+                ,
+            }
+        )
     }
 }
+

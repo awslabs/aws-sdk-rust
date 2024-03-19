@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCuratedEnvironmentImagesOutput {
+pub struct ListCuratedEnvironmentImagesOutput  {
     /// <p>Information about supported platforms for Docker images that are managed by CodeBuild.</p>
-    pub platforms: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentPlatform>>,
+    pub platforms: ::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentPlatform>>,
     _request_id: Option<String>,
 }
-impl ListCuratedEnvironmentImagesOutput {
+impl  ListCuratedEnvironmentImagesOutput  {
     /// <p>Information about supported platforms for Docker images that are managed by CodeBuild.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.platforms.is_none()`.
-    pub fn platforms(&self) -> &[crate::types::EnvironmentPlatform] {
-        self.platforms.as_deref().unwrap_or_default()
+    pub fn platforms(&self) -> & [crate::types::EnvironmentPlatform] {
+        self.platforms.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListCuratedEnvironmentImagesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListCuratedEnvironmentImagesOutput {
     /// Creates a new builder-style object to manufacture [`ListCuratedEnvironmentImagesOutput`](crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesOutput).
     pub fn builder() -> crate::operation::list_curated_environment_images::builders::ListCuratedEnvironmentImagesOutputBuilder {
@@ -31,7 +32,7 @@ impl ListCuratedEnvironmentImagesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCuratedEnvironmentImagesOutputBuilder {
-    pub(crate) platforms: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentPlatform>>,
+    pub(crate) platforms: ::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentPlatform>>,
     _request_id: Option<String>,
 }
 impl ListCuratedEnvironmentImagesOutputBuilder {
@@ -42,33 +43,34 @@ impl ListCuratedEnvironmentImagesOutputBuilder {
     /// <p>Information about supported platforms for Docker images that are managed by CodeBuild.</p>
     pub fn platforms(mut self, input: crate::types::EnvironmentPlatform) -> Self {
         let mut v = self.platforms.unwrap_or_default();
-        v.push(input);
-        self.platforms = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.platforms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about supported platforms for Docker images that are managed by CodeBuild.</p>
-    pub fn set_platforms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentPlatform>>) -> Self {
-        self.platforms = input;
-        self
+    pub fn set_platforms(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentPlatform>>) -> Self {
+        self.platforms = input; self
     }
     /// <p>Information about supported platforms for Docker images that are managed by CodeBuild.</p>
-    pub fn get_platforms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentPlatform>> {
+    pub fn get_platforms(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentPlatform>> {
         &self.platforms
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListCuratedEnvironmentImagesOutput`](crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesOutput).
     pub fn build(self) -> crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesOutput {
         crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesOutput {
-            platforms: self.platforms,
+            platforms: self.platforms
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A response that contains details on the results of a finding aggregation by repository.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RepositoryAggregationResponse {
+pub struct RepositoryAggregationResponse  {
     /// <p>The name of the repository associated with the findings.</p>
     pub repository: ::std::string::String,
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
@@ -13,18 +13,17 @@ pub struct RepositoryAggregationResponse {
     /// <p>The number of container images impacted by the findings.</p>
     pub affected_images: ::std::option::Option<i64>,
 }
-impl RepositoryAggregationResponse {
+impl  RepositoryAggregationResponse  {
     /// <p>The name of the repository associated with the findings.</p>
-    pub fn repository(&self) -> &str {
-        use std::ops::Deref;
-        self.repository.deref()
+    pub fn repository(&self) -> & str {
+        use std::ops::Deref; self.repository.deref()
     }
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>An object that represent the count of matched findings per severity.</p>
-    pub fn severity_counts(&self) -> ::std::option::Option<&crate::types::SeverityCounts> {
+    pub fn severity_counts(&self) -> ::std::option::Option<& crate::types::SeverityCounts> {
         self.severity_counts.as_ref()
     }
     /// <p>The number of container images impacted by the findings.</p>
@@ -57,8 +56,7 @@ impl RepositoryAggregationResponseBuilder {
     }
     /// <p>The name of the repository associated with the findings.</p>
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository = input;
-        self
+        self.repository = input; self
     }
     /// <p>The name of the repository associated with the findings.</p>
     pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +69,7 @@ impl RepositoryAggregationResponseBuilder {
     }
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +82,7 @@ impl RepositoryAggregationResponseBuilder {
     }
     /// <p>An object that represent the count of matched findings per severity.</p>
     pub fn set_severity_counts(mut self, input: ::std::option::Option<crate::types::SeverityCounts>) -> Self {
-        self.severity_counts = input;
-        self
+        self.severity_counts = input; self
     }
     /// <p>An object that represent the count of matched findings per severity.</p>
     pub fn get_severity_counts(&self) -> &::std::option::Option<crate::types::SeverityCounts> {
@@ -99,8 +95,7 @@ impl RepositoryAggregationResponseBuilder {
     }
     /// <p>The number of container images impacted by the findings.</p>
     pub fn set_affected_images(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.affected_images = input;
-        self
+        self.affected_images = input; self
     }
     /// <p>The number of container images impacted by the findings.</p>
     pub fn get_affected_images(&self) -> &::std::option::Option<i64> {
@@ -110,16 +105,21 @@ impl RepositoryAggregationResponseBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`repository`](crate::types::builders::RepositoryAggregationResponseBuilder::repository)
     pub fn build(self) -> ::std::result::Result<crate::types::RepositoryAggregationResponse, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RepositoryAggregationResponse {
-            repository: self.repository.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "repository",
-                    "repository was not specified but it is required when building RepositoryAggregationResponse",
-                )
-            })?,
-            account_id: self.account_id,
-            severity_counts: self.severity_counts,
-            affected_images: self.affected_images,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RepositoryAggregationResponse {
+                repository: self.repository
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("repository", "repository was not specified but it is required when building RepositoryAggregationResponse")
+                    )?
+                ,
+                account_id: self.account_id
+                ,
+                severity_counts: self.severity_counts
+                ,
+                affected_images: self.affected_images
+                ,
+            }
+        )
     }
 }
+

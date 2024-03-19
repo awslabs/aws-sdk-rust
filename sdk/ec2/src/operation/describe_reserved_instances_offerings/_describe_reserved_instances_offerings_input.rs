@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for DescribeReservedInstancesOfferings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeReservedInstancesOfferingsInput {
+pub struct DescribeReservedInstancesOfferingsInput  {
     /// <p>The Availability Zone in which the Reserved Instance can be used.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>One or more filters.</p>
@@ -27,7 +27,7 @@ pub struct DescribeReservedInstancesOfferingsInput {
     /// <li>
     /// <p><code>usage-price</code> - The usage price of the Reserved Instance, per hour (for example, 0.84).</p></li>
     /// </ul>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     /// <p>Include Reserved Instance Marketplace offerings in the response.</p>
     pub include_marketplace: ::std::option::Option<bool>,
     /// <p>The instance type that the reservation will cover (for example, <code>m1.small</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -46,7 +46,7 @@ pub struct DescribeReservedInstancesOfferingsInput {
     /// <p>The Reserved Instance product platform description. Instances that include <code>(Amazon VPC)</code> in the description are for use with Amazon VPC.</p>
     pub product_description: ::std::option::Option<crate::types::RiProductDescription>,
     /// <p>One or more Reserved Instances offering IDs.</p>
-    pub reserved_instances_offering_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub reserved_instances_offering_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The tenancy of the instances covered by the reservation. A Reserved Instance with a tenancy of <code>dedicated</code> is applied to instances that run in a VPC on single-tenant hardware (i.e., Dedicated Instances).</p>
@@ -61,9 +61,9 @@ pub struct DescribeReservedInstancesOfferingsInput {
     /// <p>The Reserved Instance offering type. If you are using tools that predate the 2011-11-01 API version, you only have access to the <code>Medium Utilization</code> Reserved Instance offering type.</p>
     pub offering_type: ::std::option::Option<crate::types::OfferingTypeValues>,
 }
-impl DescribeReservedInstancesOfferingsInput {
+impl  DescribeReservedInstancesOfferingsInput  {
     /// <p>The Availability Zone in which the Reserved Instance can be used.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>One or more filters.</p>
@@ -87,17 +87,18 @@ impl DescribeReservedInstancesOfferingsInput {
     /// <li>
     /// <p><code>usage-price</code> - The usage price of the Reserved Instance, per hour (for example, 0.84).</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Include Reserved Instance Marketplace offerings in the response.</p>
     pub fn include_marketplace(&self) -> ::std::option::Option<bool> {
         self.include_marketplace
     }
     /// <p>The instance type that the reservation will cover (for example, <code>m1.small</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::InstanceType> {
+    pub fn instance_type(&self) -> ::std::option::Option<& crate::types::InstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>The maximum duration (in seconds) to filter when searching for offerings.</p>
@@ -116,18 +117,19 @@ impl DescribeReservedInstancesOfferingsInput {
         self.min_duration
     }
     /// <p>The offering class of the Reserved Instance. Can be <code>standard</code> or <code>convertible</code>.</p>
-    pub fn offering_class(&self) -> ::std::option::Option<&crate::types::OfferingClassType> {
+    pub fn offering_class(&self) -> ::std::option::Option<& crate::types::OfferingClassType> {
         self.offering_class.as_ref()
     }
     /// <p>The Reserved Instance product platform description. Instances that include <code>(Amazon VPC)</code> in the description are for use with Amazon VPC.</p>
-    pub fn product_description(&self) -> ::std::option::Option<&crate::types::RiProductDescription> {
+    pub fn product_description(&self) -> ::std::option::Option<& crate::types::RiProductDescription> {
         self.product_description.as_ref()
     }
     /// <p>One or more Reserved Instances offering IDs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reserved_instances_offering_ids.is_none()`.
-    pub fn reserved_instances_offering_ids(&self) -> &[::std::string::String] {
-        self.reserved_instances_offering_ids.as_deref().unwrap_or_default()
+    pub fn reserved_instances_offering_ids(&self) -> & [::std::string::String] {
+        self.reserved_instances_offering_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -136,7 +138,7 @@ impl DescribeReservedInstancesOfferingsInput {
     /// <p>The tenancy of the instances covered by the reservation. A Reserved Instance with a tenancy of <code>dedicated</code> is applied to instances that run in a VPC on single-tenant hardware (i.e., Dedicated Instances).</p>
     /// <p><b>Important:</b> The <code>host</code> value cannot be used with this parameter. Use the <code>default</code> or <code>dedicated</code> values only.</p>
     /// <p>Default: <code>default</code></p>
-    pub fn instance_tenancy(&self) -> ::std::option::Option<&crate::types::Tenancy> {
+    pub fn instance_tenancy(&self) -> ::std::option::Option<& crate::types::Tenancy> {
         self.instance_tenancy.as_ref()
     }
     /// <p>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. The maximum is 100.</p>
@@ -145,11 +147,11 @@ impl DescribeReservedInstancesOfferingsInput {
         self.max_results
     }
     /// <p>The token to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The Reserved Instance offering type. If you are using tools that predate the 2011-11-01 API version, you only have access to the <code>Medium Utilization</code> Reserved Instance offering type.</p>
-    pub fn offering_type(&self) -> ::std::option::Option<&crate::types::OfferingTypeValues> {
+    pub fn offering_type(&self) -> ::std::option::Option<& crate::types::OfferingTypeValues> {
         self.offering_type.as_ref()
     }
 }
@@ -165,7 +167,7 @@ impl DescribeReservedInstancesOfferingsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReservedInstancesOfferingsInputBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     pub(crate) include_marketplace: ::std::option::Option<bool>,
     pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
     pub(crate) max_duration: ::std::option::Option<i64>,
@@ -173,7 +175,7 @@ pub struct DescribeReservedInstancesOfferingsInputBuilder {
     pub(crate) min_duration: ::std::option::Option<i64>,
     pub(crate) offering_class: ::std::option::Option<crate::types::OfferingClassType>,
     pub(crate) product_description: ::std::option::Option<crate::types::RiProductDescription>,
-    pub(crate) reserved_instances_offering_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) reserved_instances_offering_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) instance_tenancy: ::std::option::Option<crate::types::Tenancy>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -188,8 +190,7 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
     }
     /// <p>The Availability Zone in which the Reserved Instance can be used.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// <p>The Availability Zone in which the Reserved Instance can be used.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -222,9 +223,9 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more filters.</p>
     /// <ul>
@@ -247,9 +248,8 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
     /// <li>
     /// <p><code>usage-price</code> - The usage price of the Reserved Instance, per hour (for example, 0.84).</p></li>
     /// </ul>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>One or more filters.</p>
     /// <ul>
@@ -272,7 +272,7 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
     /// <li>
     /// <p><code>usage-price</code> - The usage price of the Reserved Instance, per hour (for example, 0.84).</p></li>
     /// </ul>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// <p>Include Reserved Instance Marketplace offerings in the response.</p>
@@ -282,8 +282,7 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
     }
     /// <p>Include Reserved Instance Marketplace offerings in the response.</p>
     pub fn set_include_marketplace(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_marketplace = input;
-        self
+        self.include_marketplace = input; self
     }
     /// <p>Include Reserved Instance Marketplace offerings in the response.</p>
     pub fn get_include_marketplace(&self) -> &::std::option::Option<bool> {
@@ -296,8 +295,7 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
     }
     /// <p>The instance type that the reservation will cover (for example, <code>m1.small</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The instance type that the reservation will cover (for example, <code>m1.small</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
@@ -312,8 +310,7 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
     /// <p>The maximum duration (in seconds) to filter when searching for offerings.</p>
     /// <p>Default: 94608000 (3 years)</p>
     pub fn set_max_duration(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.max_duration = input;
-        self
+        self.max_duration = input; self
     }
     /// <p>The maximum duration (in seconds) to filter when searching for offerings.</p>
     /// <p>Default: 94608000 (3 years)</p>
@@ -329,8 +326,7 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
     /// <p>The maximum number of instances to filter when searching for offerings.</p>
     /// <p>Default: 20</p>
     pub fn set_max_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_instance_count = input;
-        self
+        self.max_instance_count = input; self
     }
     /// <p>The maximum number of instances to filter when searching for offerings.</p>
     /// <p>Default: 20</p>
@@ -346,8 +342,7 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
     /// <p>The minimum duration (in seconds) to filter when searching for offerings.</p>
     /// <p>Default: 2592000 (1 month)</p>
     pub fn set_min_duration(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.min_duration = input;
-        self
+        self.min_duration = input; self
     }
     /// <p>The minimum duration (in seconds) to filter when searching for offerings.</p>
     /// <p>Default: 2592000 (1 month)</p>
@@ -361,8 +356,7 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
     }
     /// <p>The offering class of the Reserved Instance. Can be <code>standard</code> or <code>convertible</code>.</p>
     pub fn set_offering_class(mut self, input: ::std::option::Option<crate::types::OfferingClassType>) -> Self {
-        self.offering_class = input;
-        self
+        self.offering_class = input; self
     }
     /// <p>The offering class of the Reserved Instance. Can be <code>standard</code> or <code>convertible</code>.</p>
     pub fn get_offering_class(&self) -> &::std::option::Option<crate::types::OfferingClassType> {
@@ -375,8 +369,7 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
     }
     /// <p>The Reserved Instance product platform description. Instances that include <code>(Amazon VPC)</code> in the description are for use with Amazon VPC.</p>
     pub fn set_product_description(mut self, input: ::std::option::Option<crate::types::RiProductDescription>) -> Self {
-        self.product_description = input;
-        self
+        self.product_description = input; self
     }
     /// <p>The Reserved Instance product platform description. Instances that include <code>(Amazon VPC)</code> in the description are for use with Amazon VPC.</p>
     pub fn get_product_description(&self) -> &::std::option::Option<crate::types::RiProductDescription> {
@@ -389,17 +382,16 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
     /// <p>One or more Reserved Instances offering IDs.</p>
     pub fn reserved_instances_offering_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.reserved_instances_offering_ids.unwrap_or_default();
-        v.push(input.into());
-        self.reserved_instances_offering_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.reserved_instances_offering_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more Reserved Instances offering IDs.</p>
-    pub fn set_reserved_instances_offering_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.reserved_instances_offering_ids = input;
-        self
+    pub fn set_reserved_instances_offering_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.reserved_instances_offering_ids = input; self
     }
     /// <p>One or more Reserved Instances offering IDs.</p>
-    pub fn get_reserved_instances_offering_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_reserved_instances_offering_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.reserved_instances_offering_ids
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -409,8 +401,7 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -427,8 +418,7 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
     /// <p><b>Important:</b> The <code>host</code> value cannot be used with this parameter. Use the <code>default</code> or <code>dedicated</code> values only.</p>
     /// <p>Default: <code>default</code></p>
     pub fn set_instance_tenancy(mut self, input: ::std::option::Option<crate::types::Tenancy>) -> Self {
-        self.instance_tenancy = input;
-        self
+        self.instance_tenancy = input; self
     }
     /// <p>The tenancy of the instances covered by the reservation. A Reserved Instance with a tenancy of <code>dedicated</code> is applied to instances that run in a VPC on single-tenant hardware (i.e., Dedicated Instances).</p>
     /// <p><b>Important:</b> The <code>host</code> value cannot be used with this parameter. Use the <code>default</code> or <code>dedicated</code> values only.</p>
@@ -445,8 +435,7 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
     /// <p>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. The maximum is 100.</p>
     /// <p>Default: 100</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. The maximum is 100.</p>
     /// <p>Default: 100</p>
@@ -460,8 +449,7 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
     }
     /// <p>The token to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -474,38 +462,48 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
     }
     /// <p>The Reserved Instance offering type. If you are using tools that predate the 2011-11-01 API version, you only have access to the <code>Medium Utilization</code> Reserved Instance offering type.</p>
     pub fn set_offering_type(mut self, input: ::std::option::Option<crate::types::OfferingTypeValues>) -> Self {
-        self.offering_type = input;
-        self
+        self.offering_type = input; self
     }
     /// <p>The Reserved Instance offering type. If you are using tools that predate the 2011-11-01 API version, you only have access to the <code>Medium Utilization</code> Reserved Instance offering type.</p>
     pub fn get_offering_type(&self) -> &::std::option::Option<crate::types::OfferingTypeValues> {
         &self.offering_type
     }
     /// Consumes the builder and constructs a [`DescribeReservedInstancesOfferingsInput`](crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsInput {
-                availability_zone: self.availability_zone,
-                filters: self.filters,
-                include_marketplace: self.include_marketplace,
-                instance_type: self.instance_type,
-                max_duration: self.max_duration,
-                max_instance_count: self.max_instance_count,
-                min_duration: self.min_duration,
-                offering_class: self.offering_class,
-                product_description: self.product_description,
-                reserved_instances_offering_ids: self.reserved_instances_offering_ids,
-                dry_run: self.dry_run,
-                instance_tenancy: self.instance_tenancy,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                offering_type: self.offering_type,
-            },
+                availability_zone: self.availability_zone
+                ,
+                filters: self.filters
+                ,
+                include_marketplace: self.include_marketplace
+                ,
+                instance_type: self.instance_type
+                ,
+                max_duration: self.max_duration
+                ,
+                max_instance_count: self.max_instance_count
+                ,
+                min_duration: self.min_duration
+                ,
+                offering_class: self.offering_class
+                ,
+                product_description: self.product_description
+                ,
+                reserved_instances_offering_ids: self.reserved_instances_offering_ids
+                ,
+                dry_run: self.dry_run
+                ,
+                instance_tenancy: self.instance_tenancy
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                offering_type: self.offering_type
+                ,
+            }
         )
     }
 }
+

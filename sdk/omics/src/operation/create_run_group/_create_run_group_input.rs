@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRunGroupInput {
+pub struct CreateRunGroupInput  {
     /// <p>A name for the group.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of CPUs to use in the group.</p>
@@ -12,15 +12,15 @@ pub struct CreateRunGroupInput {
     /// <p>A maximum run time for the group in minutes.</p>
     pub max_duration: ::std::option::Option<i32>,
     /// <p>Tags for the group.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum GPUs that can be used by a run group.</p>
     pub max_gpus: ::std::option::Option<i32>,
 }
-impl CreateRunGroupInput {
+impl  CreateRunGroupInput  {
     /// <p>A name for the group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The maximum number of CPUs to use in the group.</p>
@@ -36,11 +36,11 @@ impl CreateRunGroupInput {
         self.max_duration
     }
     /// <p>Tags for the group.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The maximum GPUs that can be used by a run group.</p>
@@ -63,7 +63,7 @@ pub struct CreateRunGroupInputBuilder {
     pub(crate) max_cpus: ::std::option::Option<i32>,
     pub(crate) max_runs: ::std::option::Option<i32>,
     pub(crate) max_duration: ::std::option::Option<i32>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_gpus: ::std::option::Option<i32>,
 }
@@ -75,8 +75,7 @@ impl CreateRunGroupInputBuilder {
     }
     /// <p>A name for the group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A name for the group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +88,7 @@ impl CreateRunGroupInputBuilder {
     }
     /// <p>The maximum number of CPUs to use in the group.</p>
     pub fn set_max_cpus(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_cpus = input;
-        self
+        self.max_cpus = input; self
     }
     /// <p>The maximum number of CPUs to use in the group.</p>
     pub fn get_max_cpus(&self) -> &::std::option::Option<i32> {
@@ -103,8 +101,7 @@ impl CreateRunGroupInputBuilder {
     }
     /// <p>The maximum number of concurrent runs for the group.</p>
     pub fn set_max_runs(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_runs = input;
-        self
+        self.max_runs = input; self
     }
     /// <p>The maximum number of concurrent runs for the group.</p>
     pub fn get_max_runs(&self) -> &::std::option::Option<i32> {
@@ -117,8 +114,7 @@ impl CreateRunGroupInputBuilder {
     }
     /// <p>A maximum run time for the group in minutes.</p>
     pub fn set_max_duration(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_duration = input;
-        self
+        self.max_duration = input; self
     }
     /// <p>A maximum run time for the group in minutes.</p>
     pub fn get_max_duration(&self) -> &::std::option::Option<i32> {
@@ -131,17 +127,16 @@ impl CreateRunGroupInputBuilder {
     /// <p>Tags for the group.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Tags for the group.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags for the group.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
@@ -152,8 +147,7 @@ impl CreateRunGroupInputBuilder {
     }
     /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,25 +160,32 @@ impl CreateRunGroupInputBuilder {
     }
     /// <p>The maximum GPUs that can be used by a run group.</p>
     pub fn set_max_gpus(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_gpus = input;
-        self
+        self.max_gpus = input; self
     }
     /// <p>The maximum GPUs that can be used by a run group.</p>
     pub fn get_max_gpus(&self) -> &::std::option::Option<i32> {
         &self.max_gpus
     }
     /// Consumes the builder and constructs a [`CreateRunGroupInput`](crate::operation::create_run_group::CreateRunGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_run_group::CreateRunGroupInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_run_group::CreateRunGroupInput {
-            name: self.name,
-            max_cpus: self.max_cpus,
-            max_runs: self.max_runs,
-            max_duration: self.max_duration,
-            tags: self.tags,
-            request_id: self.request_id,
-            max_gpus: self.max_gpus,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_run_group::CreateRunGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_run_group::CreateRunGroupInput {
+                name: self.name
+                ,
+                max_cpus: self.max_cpus
+                ,
+                max_runs: self.max_runs
+                ,
+                max_duration: self.max_duration
+                ,
+                tags: self.tags
+                ,
+                request_id: self.request_id
+                ,
+                max_gpus: self.max_gpus
+                ,
+            }
+        )
     }
 }
+

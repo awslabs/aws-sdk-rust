@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateLagInput {
+pub struct UpdateLagInput  {
     /// <p>The ID of the LAG.</p>
     pub lag_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the LAG.</p>
@@ -13,13 +13,13 @@ pub struct UpdateLagInput {
     /// <p>Amazon Web Services applies the value to all connections which are part of the LAG.</p>
     pub encryption_mode: ::std::option::Option<::std::string::String>,
 }
-impl UpdateLagInput {
+impl  UpdateLagInput  {
     /// <p>The ID of the LAG.</p>
-    pub fn lag_id(&self) -> ::std::option::Option<&str> {
+    pub fn lag_id(&self) -> ::std::option::Option<& str> {
         self.lag_id.as_deref()
     }
     /// <p>The name of the LAG.</p>
-    pub fn lag_name(&self) -> ::std::option::Option<&str> {
+    pub fn lag_name(&self) -> ::std::option::Option<& str> {
         self.lag_name.as_deref()
     }
     /// <p>The minimum number of physical connections that must be operational for the LAG itself to be operational.</p>
@@ -28,7 +28,7 @@ impl UpdateLagInput {
     }
     /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
     /// <p>Amazon Web Services applies the value to all connections which are part of the LAG.</p>
-    pub fn encryption_mode(&self) -> ::std::option::Option<&str> {
+    pub fn encryption_mode(&self) -> ::std::option::Option<& str> {
         self.encryption_mode.as_deref()
     }
 }
@@ -57,8 +57,7 @@ impl UpdateLagInputBuilder {
     }
     /// <p>The ID of the LAG.</p>
     pub fn set_lag_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lag_id = input;
-        self
+        self.lag_id = input; self
     }
     /// <p>The ID of the LAG.</p>
     pub fn get_lag_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl UpdateLagInputBuilder {
     }
     /// <p>The name of the LAG.</p>
     pub fn set_lag_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lag_name = input;
-        self
+        self.lag_name = input; self
     }
     /// <p>The name of the LAG.</p>
     pub fn get_lag_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl UpdateLagInputBuilder {
     }
     /// <p>The minimum number of physical connections that must be operational for the LAG itself to be operational.</p>
     pub fn set_minimum_links(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.minimum_links = input;
-        self
+        self.minimum_links = input; self
     }
     /// <p>The minimum number of physical connections that must be operational for the LAG itself to be operational.</p>
     pub fn get_minimum_links(&self) -> &::std::option::Option<i32> {
@@ -101,8 +98,7 @@ impl UpdateLagInputBuilder {
     /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
     /// <p>Amazon Web Services applies the value to all connections which are part of the LAG.</p>
     pub fn set_encryption_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.encryption_mode = input;
-        self
+        self.encryption_mode = input; self
     }
     /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
     /// <p>Amazon Web Services applies the value to all connections which are part of the LAG.</p>
@@ -111,11 +107,18 @@ impl UpdateLagInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateLagInput`](crate::operation::update_lag::UpdateLagInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_lag::UpdateLagInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_lag::UpdateLagInput {
-            lag_id: self.lag_id,
-            lag_name: self.lag_name,
-            minimum_links: self.minimum_links,
-            encryption_mode: self.encryption_mode,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_lag::UpdateLagInput {
+                lag_id: self.lag_id
+                ,
+                lag_name: self.lag_name
+                ,
+                minimum_links: self.minimum_links
+                ,
+                encryption_mode: self.encryption_mode
+                ,
+            }
+        )
     }
 }
+

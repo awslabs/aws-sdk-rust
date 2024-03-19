@@ -3,7 +3,7 @@
 /// <p>A budget action resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Action {
+pub struct Action  {
     /// <p>A system-generated universally unique identifier (UUID) for the action.</p>
     pub action_id: ::std::string::String,
     /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
@@ -23,52 +23,48 @@ pub struct Action {
     /// <p>The status of the action.</p>
     pub status: crate::types::ActionStatus,
     /// <p>A list of subscribers.</p>
-    pub subscribers: ::std::vec::Vec<crate::types::Subscriber>,
+    pub subscribers: ::std::vec::Vec::<crate::types::Subscriber>,
 }
-impl Action {
+impl  Action  {
     /// <p>A system-generated universally unique identifier (UUID) for the action.</p>
-    pub fn action_id(&self) -> &str {
-        use std::ops::Deref;
-        self.action_id.deref()
+    pub fn action_id(&self) -> & str {
+        use std::ops::Deref; self.action_id.deref()
     }
     /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
-    pub fn budget_name(&self) -> &str {
-        use std::ops::Deref;
-        self.budget_name.deref()
+    pub fn budget_name(&self) -> & str {
+        use std::ops::Deref; self.budget_name.deref()
     }
     /// <p>The type of a notification. It must be ACTUAL or FORECASTED.</p>
-    pub fn notification_type(&self) -> &crate::types::NotificationType {
+    pub fn notification_type(&self) -> & crate::types::NotificationType {
         &self.notification_type
     }
     /// <p>The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition.</p>
-    pub fn action_type(&self) -> &crate::types::ActionType {
+    pub fn action_type(&self) -> & crate::types::ActionType {
         &self.action_type
     }
     /// <p>The trigger threshold of the action.</p>
-    pub fn action_threshold(&self) -> ::std::option::Option<&crate::types::ActionThreshold> {
+    pub fn action_threshold(&self) -> ::std::option::Option<& crate::types::ActionThreshold> {
         self.action_threshold.as_ref()
     }
     /// <p>Where you specify all of the type-specific parameters.</p>
-    pub fn definition(&self) -> ::std::option::Option<&crate::types::Definition> {
+    pub fn definition(&self) -> ::std::option::Option<& crate::types::Definition> {
         self.definition.as_ref()
     }
     /// <p>The role passed for action execution and reversion. Roles and actions must be in the same account.</p>
-    pub fn execution_role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.execution_role_arn.deref()
+    pub fn execution_role_arn(&self) -> & str {
+        use std::ops::Deref; self.execution_role_arn.deref()
     }
     /// <p>This specifies if the action needs manual or automatic approval.</p>
-    pub fn approval_model(&self) -> &crate::types::ApprovalModel {
+    pub fn approval_model(&self) -> & crate::types::ApprovalModel {
         &self.approval_model
     }
     /// <p>The status of the action.</p>
-    pub fn status(&self) -> &crate::types::ActionStatus {
+    pub fn status(&self) -> & crate::types::ActionStatus {
         &self.status
     }
     /// <p>A list of subscribers.</p>
-    pub fn subscribers(&self) -> &[crate::types::Subscriber] {
-        use std::ops::Deref;
-        self.subscribers.deref()
+    pub fn subscribers(&self) -> & [crate::types::Subscriber] {
+        use std::ops::Deref; self.subscribers.deref()
     }
 }
 impl Action {
@@ -91,7 +87,7 @@ pub struct ActionBuilder {
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) approval_model: ::std::option::Option<crate::types::ApprovalModel>,
     pub(crate) status: ::std::option::Option<crate::types::ActionStatus>,
-    pub(crate) subscribers: ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>>,
+    pub(crate) subscribers: ::std::option::Option<::std::vec::Vec::<crate::types::Subscriber>>,
 }
 impl ActionBuilder {
     /// <p>A system-generated universally unique identifier (UUID) for the action.</p>
@@ -102,8 +98,7 @@ impl ActionBuilder {
     }
     /// <p>A system-generated universally unique identifier (UUID) for the action.</p>
     pub fn set_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_id = input;
-        self
+        self.action_id = input; self
     }
     /// <p>A system-generated universally unique identifier (UUID) for the action.</p>
     pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +112,7 @@ impl ActionBuilder {
     }
     /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.budget_name = input;
-        self
+        self.budget_name = input; self
     }
     /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +126,7 @@ impl ActionBuilder {
     }
     /// <p>The type of a notification. It must be ACTUAL or FORECASTED.</p>
     pub fn set_notification_type(mut self, input: ::std::option::Option<crate::types::NotificationType>) -> Self {
-        self.notification_type = input;
-        self
+        self.notification_type = input; self
     }
     /// <p>The type of a notification. It must be ACTUAL or FORECASTED.</p>
     pub fn get_notification_type(&self) -> &::std::option::Option<crate::types::NotificationType> {
@@ -147,8 +140,7 @@ impl ActionBuilder {
     }
     /// <p>The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition.</p>
     pub fn set_action_type(mut self, input: ::std::option::Option<crate::types::ActionType>) -> Self {
-        self.action_type = input;
-        self
+        self.action_type = input; self
     }
     /// <p>The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition.</p>
     pub fn get_action_type(&self) -> &::std::option::Option<crate::types::ActionType> {
@@ -162,8 +154,7 @@ impl ActionBuilder {
     }
     /// <p>The trigger threshold of the action.</p>
     pub fn set_action_threshold(mut self, input: ::std::option::Option<crate::types::ActionThreshold>) -> Self {
-        self.action_threshold = input;
-        self
+        self.action_threshold = input; self
     }
     /// <p>The trigger threshold of the action.</p>
     pub fn get_action_threshold(&self) -> &::std::option::Option<crate::types::ActionThreshold> {
@@ -177,8 +168,7 @@ impl ActionBuilder {
     }
     /// <p>Where you specify all of the type-specific parameters.</p>
     pub fn set_definition(mut self, input: ::std::option::Option<crate::types::Definition>) -> Self {
-        self.definition = input;
-        self
+        self.definition = input; self
     }
     /// <p>Where you specify all of the type-specific parameters.</p>
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::Definition> {
@@ -192,8 +182,7 @@ impl ActionBuilder {
     }
     /// <p>The role passed for action execution and reversion. Roles and actions must be in the same account.</p>
     pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_role_arn = input;
-        self
+        self.execution_role_arn = input; self
     }
     /// <p>The role passed for action execution and reversion. Roles and actions must be in the same account.</p>
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -207,8 +196,7 @@ impl ActionBuilder {
     }
     /// <p>This specifies if the action needs manual or automatic approval.</p>
     pub fn set_approval_model(mut self, input: ::std::option::Option<crate::types::ApprovalModel>) -> Self {
-        self.approval_model = input;
-        self
+        self.approval_model = input; self
     }
     /// <p>This specifies if the action needs manual or automatic approval.</p>
     pub fn get_approval_model(&self) -> &::std::option::Option<crate::types::ApprovalModel> {
@@ -222,8 +210,7 @@ impl ActionBuilder {
     }
     /// <p>The status of the action.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ActionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the action.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ActionStatus> {
@@ -236,17 +223,16 @@ impl ActionBuilder {
     /// <p>A list of subscribers.</p>
     pub fn subscribers(mut self, input: crate::types::Subscriber) -> Self {
         let mut v = self.subscribers.unwrap_or_default();
-        v.push(input);
-        self.subscribers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.subscribers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of subscribers.</p>
-    pub fn set_subscribers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>>) -> Self {
-        self.subscribers = input;
-        self
+    pub fn set_subscribers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Subscriber>>) -> Self {
+        self.subscribers = input; self
     }
     /// <p>A list of subscribers.</p>
-    pub fn get_subscribers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscriber>> {
+    pub fn get_subscribers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Subscriber>> {
         &self.subscribers
     }
     /// Consumes the builder and constructs a [`Action`](crate::types::Action).
@@ -260,57 +246,54 @@ impl ActionBuilder {
     /// - [`status`](crate::types::builders::ActionBuilder::status)
     /// - [`subscribers`](crate::types::builders::ActionBuilder::subscribers)
     pub fn build(self) -> ::std::result::Result<crate::types::Action, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Action {
-            action_id: self.action_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "action_id",
-                    "action_id was not specified but it is required when building Action",
-                )
-            })?,
-            budget_name: self.budget_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "budget_name",
-                    "budget_name was not specified but it is required when building Action",
-                )
-            })?,
-            notification_type: self.notification_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "notification_type",
-                    "notification_type was not specified but it is required when building Action",
-                )
-            })?,
-            action_type: self.action_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "action_type",
-                    "action_type was not specified but it is required when building Action",
-                )
-            })?,
-            action_threshold: self.action_threshold,
-            definition: self.definition,
-            execution_role_arn: self.execution_role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "execution_role_arn",
-                    "execution_role_arn was not specified but it is required when building Action",
-                )
-            })?,
-            approval_model: self.approval_model.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "approval_model",
-                    "approval_model was not specified but it is required when building Action",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building Action",
-                )
-            })?,
-            subscribers: self.subscribers.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "subscribers",
-                    "subscribers was not specified but it is required when building Action",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Action {
+                action_id: self.action_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("action_id", "action_id was not specified but it is required when building Action")
+                    )?
+                ,
+                budget_name: self.budget_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("budget_name", "budget_name was not specified but it is required when building Action")
+                    )?
+                ,
+                notification_type: self.notification_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("notification_type", "notification_type was not specified but it is required when building Action")
+                    )?
+                ,
+                action_type: self.action_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("action_type", "action_type was not specified but it is required when building Action")
+                    )?
+                ,
+                action_threshold: self.action_threshold
+                ,
+                definition: self.definition
+                ,
+                execution_role_arn: self.execution_role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("execution_role_arn", "execution_role_arn was not specified but it is required when building Action")
+                    )?
+                ,
+                approval_model: self.approval_model
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("approval_model", "approval_model was not specified but it is required when building Action")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building Action")
+                    )?
+                ,
+                subscribers: self.subscribers
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("subscribers", "subscribers was not specified but it is required when building Action")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -36,3 +36,4 @@ pub mod builders;
 
 /// Error types that Amazon CloudWatch Network Monitor can respond with.
 pub mod error;
+

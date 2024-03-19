@@ -3,27 +3,28 @@
 /// <p>Output details listed for an action execution, such as the action execution result.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActionExecutionOutput {
+pub struct ActionExecutionOutput  {
     /// <p>Details of output artifacts of the action that correspond to the action execution.</p>
-    pub output_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::ArtifactDetail>>,
+    pub output_artifacts: ::std::option::Option<::std::vec::Vec::<crate::types::ArtifactDetail>>,
     /// <p>Execution result information listed in the output details for an action execution.</p>
     pub execution_result: ::std::option::Option<crate::types::ActionExecutionResult>,
     /// <p>The outputVariables field shows the key-value pairs that were output as part of that execution.</p>
-    pub output_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub output_variables: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl ActionExecutionOutput {
+impl  ActionExecutionOutput  {
     /// <p>Details of output artifacts of the action that correspond to the action execution.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_artifacts.is_none()`.
-    pub fn output_artifacts(&self) -> &[crate::types::ArtifactDetail] {
-        self.output_artifacts.as_deref().unwrap_or_default()
+    pub fn output_artifacts(&self) -> & [crate::types::ArtifactDetail] {
+        self.output_artifacts.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Execution result information listed in the output details for an action execution.</p>
-    pub fn execution_result(&self) -> ::std::option::Option<&crate::types::ActionExecutionResult> {
+    pub fn execution_result(&self) -> ::std::option::Option<& crate::types::ActionExecutionResult> {
         self.execution_result.as_ref()
     }
     /// <p>The outputVariables field shows the key-value pairs that were output as part of that execution.</p>
-    pub fn output_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn output_variables(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.output_variables.as_ref()
     }
 }
@@ -38,9 +39,9 @@ impl ActionExecutionOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionExecutionOutputBuilder {
-    pub(crate) output_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::ArtifactDetail>>,
+    pub(crate) output_artifacts: ::std::option::Option<::std::vec::Vec::<crate::types::ArtifactDetail>>,
     pub(crate) execution_result: ::std::option::Option<crate::types::ActionExecutionResult>,
-    pub(crate) output_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) output_variables: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl ActionExecutionOutputBuilder {
     /// Appends an item to `output_artifacts`.
@@ -50,17 +51,16 @@ impl ActionExecutionOutputBuilder {
     /// <p>Details of output artifacts of the action that correspond to the action execution.</p>
     pub fn output_artifacts(mut self, input: crate::types::ArtifactDetail) -> Self {
         let mut v = self.output_artifacts.unwrap_or_default();
-        v.push(input);
-        self.output_artifacts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.output_artifacts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details of output artifacts of the action that correspond to the action execution.</p>
-    pub fn set_output_artifacts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ArtifactDetail>>) -> Self {
-        self.output_artifacts = input;
-        self
+    pub fn set_output_artifacts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ArtifactDetail>>) -> Self {
+        self.output_artifacts = input; self
     }
     /// <p>Details of output artifacts of the action that correspond to the action execution.</p>
-    pub fn get_output_artifacts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ArtifactDetail>> {
+    pub fn get_output_artifacts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ArtifactDetail>> {
         &self.output_artifacts
     }
     /// <p>Execution result information listed in the output details for an action execution.</p>
@@ -70,8 +70,7 @@ impl ActionExecutionOutputBuilder {
     }
     /// <p>Execution result information listed in the output details for an action execution.</p>
     pub fn set_execution_result(mut self, input: ::std::option::Option<crate::types::ActionExecutionResult>) -> Self {
-        self.execution_result = input;
-        self
+        self.execution_result = input; self
     }
     /// <p>Execution result information listed in the output details for an action execution.</p>
     pub fn get_execution_result(&self) -> &::std::option::Option<crate::types::ActionExecutionResult> {
@@ -82,34 +81,30 @@ impl ActionExecutionOutputBuilder {
     /// To override the contents of this collection use [`set_output_variables`](Self::set_output_variables).
     ///
     /// <p>The outputVariables field shows the key-value pairs that were output as part of that execution.</p>
-    pub fn output_variables(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn output_variables(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.output_variables.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.output_variables = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.output_variables = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The outputVariables field shows the key-value pairs that were output as part of that execution.</p>
-    pub fn set_output_variables(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.output_variables = input;
-        self
+    pub fn set_output_variables(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.output_variables = input; self
     }
     /// <p>The outputVariables field shows the key-value pairs that were output as part of that execution.</p>
-    pub fn get_output_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_output_variables(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.output_variables
     }
     /// Consumes the builder and constructs a [`ActionExecutionOutput`](crate::types::ActionExecutionOutput).
     pub fn build(self) -> crate::types::ActionExecutionOutput {
         crate::types::ActionExecutionOutput {
-            output_artifacts: self.output_artifacts,
-            execution_result: self.execution_result,
-            output_variables: self.output_variables,
+            output_artifacts: self.output_artifacts
+            ,
+            execution_result: self.execution_result
+            ,
+            output_variables: self.output_variables
+            ,
         }
     }
 }
+

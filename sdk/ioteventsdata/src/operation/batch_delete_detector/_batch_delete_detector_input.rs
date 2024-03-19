@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDeleteDetectorInput {
+pub struct BatchDeleteDetectorInput  {
     /// <p>The list of one or more detectors to be deleted.</p>
-    pub detectors: ::std::option::Option<::std::vec::Vec<crate::types::DeleteDetectorRequest>>,
+    pub detectors: ::std::option::Option<::std::vec::Vec::<crate::types::DeleteDetectorRequest>>,
 }
-impl BatchDeleteDetectorInput {
+impl  BatchDeleteDetectorInput  {
     /// <p>The list of one or more detectors to be deleted.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.detectors.is_none()`.
-    pub fn detectors(&self) -> &[crate::types::DeleteDetectorRequest] {
-        self.detectors.as_deref().unwrap_or_default()
+    pub fn detectors(&self) -> & [crate::types::DeleteDetectorRequest] {
+        self.detectors.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchDeleteDetectorInput {
@@ -25,7 +26,7 @@ impl BatchDeleteDetectorInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteDetectorInputBuilder {
-    pub(crate) detectors: ::std::option::Option<::std::vec::Vec<crate::types::DeleteDetectorRequest>>,
+    pub(crate) detectors: ::std::option::Option<::std::vec::Vec::<crate::types::DeleteDetectorRequest>>,
 }
 impl BatchDeleteDetectorInputBuilder {
     /// Appends an item to `detectors`.
@@ -35,24 +36,26 @@ impl BatchDeleteDetectorInputBuilder {
     /// <p>The list of one or more detectors to be deleted.</p>
     pub fn detectors(mut self, input: crate::types::DeleteDetectorRequest) -> Self {
         let mut v = self.detectors.unwrap_or_default();
-        v.push(input);
-        self.detectors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.detectors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of one or more detectors to be deleted.</p>
-    pub fn set_detectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteDetectorRequest>>) -> Self {
-        self.detectors = input;
-        self
+    pub fn set_detectors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DeleteDetectorRequest>>) -> Self {
+        self.detectors = input; self
     }
     /// <p>The list of one or more detectors to be deleted.</p>
-    pub fn get_detectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteDetectorRequest>> {
+    pub fn get_detectors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DeleteDetectorRequest>> {
         &self.detectors
     }
     /// Consumes the builder and constructs a [`BatchDeleteDetectorInput`](crate::operation::batch_delete_detector::BatchDeleteDetectorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_delete_detector::BatchDeleteDetectorInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::batch_delete_detector::BatchDeleteDetectorInput { detectors: self.detectors })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_delete_detector::BatchDeleteDetectorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_delete_detector::BatchDeleteDetectorInput {
+                detectors: self.detectors
+                ,
+            }
+        )
     }
 }
+

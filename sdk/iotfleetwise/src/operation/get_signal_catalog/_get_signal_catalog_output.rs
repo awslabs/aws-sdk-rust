@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSignalCatalogOutput {
+pub struct GetSignalCatalogOutput  {
     /// <p>The name of the signal catalog.</p>
     pub name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the signal catalog.</p>
@@ -17,39 +17,37 @@ pub struct GetSignalCatalogOutput {
     pub last_modification_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
-impl GetSignalCatalogOutput {
+impl  GetSignalCatalogOutput  {
     /// <p>The name of the signal catalog.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the signal catalog.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>A brief description of the signal catalog.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The total number of network nodes specified in a signal catalog.</p>
-    pub fn node_counts(&self) -> ::std::option::Option<&crate::types::NodeCounts> {
+    pub fn node_counts(&self) -> ::std::option::Option<& crate::types::NodeCounts> {
         self.node_counts.as_ref()
     }
     /// <p>The time the signal catalog was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_time
     }
     /// <p>The last time the signal catalog was modified.</p>
-    pub fn last_modification_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_modification_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_modification_time
     }
 }
 impl ::aws_types::request_id::RequestId for GetSignalCatalogOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSignalCatalogOutput {
     /// Creates a new builder-style object to manufacture [`GetSignalCatalogOutput`](crate::operation::get_signal_catalog::GetSignalCatalogOutput).
     pub fn builder() -> crate::operation::get_signal_catalog::builders::GetSignalCatalogOutputBuilder {
@@ -78,8 +76,7 @@ impl GetSignalCatalogOutputBuilder {
     }
     /// <p>The name of the signal catalog.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the signal catalog.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +90,7 @@ impl GetSignalCatalogOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the signal catalog.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the signal catalog.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +103,7 @@ impl GetSignalCatalogOutputBuilder {
     }
     /// <p>A brief description of the signal catalog.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A brief description of the signal catalog.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +116,7 @@ impl GetSignalCatalogOutputBuilder {
     }
     /// <p>The total number of network nodes specified in a signal catalog.</p>
     pub fn set_node_counts(mut self, input: ::std::option::Option<crate::types::NodeCounts>) -> Self {
-        self.node_counts = input;
-        self
+        self.node_counts = input; self
     }
     /// <p>The total number of network nodes specified in a signal catalog.</p>
     pub fn get_node_counts(&self) -> &::std::option::Option<crate::types::NodeCounts> {
@@ -136,8 +130,7 @@ impl GetSignalCatalogOutputBuilder {
     }
     /// <p>The time the signal catalog was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time the signal catalog was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -151,59 +144,57 @@ impl GetSignalCatalogOutputBuilder {
     }
     /// <p>The last time the signal catalog was modified.</p>
     pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modification_time = input;
-        self
+        self.last_modification_time = input; self
     }
     /// <p>The last time the signal catalog was modified.</p>
     pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSignalCatalogOutput`](crate::operation::get_signal_catalog::GetSignalCatalogOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::operation::get_signal_catalog::builders::GetSignalCatalogOutputBuilder::name)
     /// - [`arn`](crate::operation::get_signal_catalog::builders::GetSignalCatalogOutputBuilder::arn)
     /// - [`creation_time`](crate::operation::get_signal_catalog::builders::GetSignalCatalogOutputBuilder::creation_time)
     /// - [`last_modification_time`](crate::operation::get_signal_catalog::builders::GetSignalCatalogOutputBuilder::last_modification_time)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_signal_catalog::GetSignalCatalogOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_signal_catalog::GetSignalCatalogOutput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building GetSignalCatalogOutput",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building GetSignalCatalogOutput",
-                )
-            })?,
-            description: self.description,
-            node_counts: self.node_counts,
-            creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_time",
-                    "creation_time was not specified but it is required when building GetSignalCatalogOutput",
-                )
-            })?,
-            last_modification_time: self.last_modification_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_modification_time",
-                    "last_modification_time was not specified but it is required when building GetSignalCatalogOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_signal_catalog::GetSignalCatalogOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_signal_catalog::GetSignalCatalogOutput {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building GetSignalCatalogOutput")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building GetSignalCatalogOutput")
+                    )?
+                ,
+                description: self.description
+                ,
+                node_counts: self.node_counts
+                ,
+                creation_time: self.creation_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_time", "creation_time was not specified but it is required when building GetSignalCatalogOutput")
+                    )?
+                ,
+                last_modification_time: self.last_modification_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_modification_time", "last_modification_time was not specified but it is required when building GetSignalCatalogOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

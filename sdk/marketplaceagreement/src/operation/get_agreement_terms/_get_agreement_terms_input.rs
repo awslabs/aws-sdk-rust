@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAgreementTermsInput {
+pub struct GetAgreementTermsInput  {
     /// <p>The unique identifier of the agreement.</p>
     pub agreement_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of agreements to return in the response.</p>
@@ -10,9 +10,9 @@ pub struct GetAgreementTermsInput {
     /// <p>A token to specify where to start pagination</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl GetAgreementTermsInput {
+impl  GetAgreementTermsInput  {
     /// <p>The unique identifier of the agreement.</p>
-    pub fn agreement_id(&self) -> ::std::option::Option<&str> {
+    pub fn agreement_id(&self) -> ::std::option::Option<& str> {
         self.agreement_id.as_deref()
     }
     /// <p>The maximum number of agreements to return in the response.</p>
@@ -20,7 +20,7 @@ impl GetAgreementTermsInput {
         self.max_results
     }
     /// <p>A token to specify where to start pagination</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl GetAgreementTermsInputBuilder {
     }
     /// <p>The unique identifier of the agreement.</p>
     pub fn set_agreement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agreement_id = input;
-        self
+        self.agreement_id = input; self
     }
     /// <p>The unique identifier of the agreement.</p>
     pub fn get_agreement_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl GetAgreementTermsInputBuilder {
     }
     /// <p>The maximum number of agreements to return in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of agreements to return in the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -76,21 +74,24 @@ impl GetAgreementTermsInputBuilder {
     }
     /// <p>A token to specify where to start pagination</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token to specify where to start pagination</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetAgreementTermsInput`](crate::operation::get_agreement_terms::GetAgreementTermsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_agreement_terms::GetAgreementTermsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_agreement_terms::GetAgreementTermsInput {
-            agreement_id: self.agreement_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_agreement_terms::GetAgreementTermsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_agreement_terms::GetAgreementTermsInput {
+                agreement_id: self.agreement_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

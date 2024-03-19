@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateKeyInput {
+pub struct CreateKeyInput  {
     /// <p>A custom name for the API key resource.</p>
     /// <p>Requirements:</p>
     /// <ul>
@@ -39,9 +39,9 @@ pub struct CreateKeyInput {
     /// <li>
     /// <p>Cannot use "aws:" as a prefix for a key.</p></li>
     /// </ul>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateKeyInput {
+impl  CreateKeyInput  {
     /// <p>A custom name for the API key resource.</p>
     /// <p>Requirements:</p>
     /// <ul>
@@ -52,19 +52,19 @@ impl CreateKeyInput {
     /// <li>
     /// <p>No spaces allowed. For example, <code>ExampleAPIKey</code>.</p></li>
     /// </ul>
-    pub fn key_name(&self) -> ::std::option::Option<&str> {
+    pub fn key_name(&self) -> ::std::option::Option<& str> {
         self.key_name.as_deref()
     }
     /// <p>The API key restrictions for the API key resource.</p>
-    pub fn restrictions(&self) -> ::std::option::Option<&crate::types::ApiKeyRestrictions> {
+    pub fn restrictions(&self) -> ::std::option::Option<& crate::types::ApiKeyRestrictions> {
         self.restrictions.as_ref()
     }
     /// <p>An optional description for the API key resource.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The optional timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. One of <code>NoExpiry</code> or <code>ExpireTime</code> must be set.</p>
-    pub fn expire_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn expire_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.expire_time.as_ref()
     }
     /// <p>Optionally set to <code>true</code> to set no expiration time for the API key. One of <code>NoExpiry</code> or <code>ExpireTime</code> must be set.</p>
@@ -88,7 +88,7 @@ impl CreateKeyInput {
     /// <li>
     /// <p>Cannot use "aws:" as a prefix for a key.</p></li>
     /// </ul>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -108,7 +108,7 @@ pub struct CreateKeyInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) expire_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) no_expiry: ::std::option::Option<bool>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateKeyInputBuilder {
     /// <p>A custom name for the API key resource.</p>
@@ -137,8 +137,7 @@ impl CreateKeyInputBuilder {
     /// <p>No spaces allowed. For example, <code>ExampleAPIKey</code>.</p></li>
     /// </ul>
     pub fn set_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_name = input;
-        self
+        self.key_name = input; self
     }
     /// <p>A custom name for the API key resource.</p>
     /// <p>Requirements:</p>
@@ -161,8 +160,7 @@ impl CreateKeyInputBuilder {
     }
     /// <p>The API key restrictions for the API key resource.</p>
     pub fn set_restrictions(mut self, input: ::std::option::Option<crate::types::ApiKeyRestrictions>) -> Self {
-        self.restrictions = input;
-        self
+        self.restrictions = input; self
     }
     /// <p>The API key restrictions for the API key resource.</p>
     pub fn get_restrictions(&self) -> &::std::option::Option<crate::types::ApiKeyRestrictions> {
@@ -175,8 +173,7 @@ impl CreateKeyInputBuilder {
     }
     /// <p>An optional description for the API key resource.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>An optional description for the API key resource.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -189,8 +186,7 @@ impl CreateKeyInputBuilder {
     }
     /// <p>The optional timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. One of <code>NoExpiry</code> or <code>ExpireTime</code> must be set.</p>
     pub fn set_expire_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.expire_time = input;
-        self
+        self.expire_time = input; self
     }
     /// <p>The optional timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. One of <code>NoExpiry</code> or <code>ExpireTime</code> must be set.</p>
     pub fn get_expire_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -203,8 +199,7 @@ impl CreateKeyInputBuilder {
     }
     /// <p>Optionally set to <code>true</code> to set no expiration time for the API key. One of <code>NoExpiry</code> or <code>ExpireTime</code> must be set.</p>
     pub fn set_no_expiry(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.no_expiry = input;
-        self
+        self.no_expiry = input; self
     }
     /// <p>Optionally set to <code>true</code> to set no expiration time for the API key. One of <code>NoExpiry</code> or <code>ExpireTime</code> must be set.</p>
     pub fn get_no_expiry(&self) -> &::std::option::Option<bool> {
@@ -233,9 +228,9 @@ impl CreateKeyInputBuilder {
     /// </ul>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Applies one or more tags to the map resource. A tag is a key-value pair that helps manage, identify, search, and filter your resources by labelling them.</p>
     /// <p>Format: <code>"key" : "value"</code></p>
@@ -254,9 +249,8 @@ impl CreateKeyInputBuilder {
     /// <li>
     /// <p>Cannot use "aws:" as a prefix for a key.</p></li>
     /// </ul>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Applies one or more tags to the map resource. A tag is a key-value pair that helps manage, identify, search, and filter your resources by labelling them.</p>
     /// <p>Format: <code>"key" : "value"</code></p>
@@ -275,18 +269,27 @@ impl CreateKeyInputBuilder {
     /// <li>
     /// <p>Cannot use "aws:" as a prefix for a key.</p></li>
     /// </ul>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateKeyInput`](crate::operation::create_key::CreateKeyInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_key::CreateKeyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_key::CreateKeyInput {
-            key_name: self.key_name,
-            restrictions: self.restrictions,
-            description: self.description,
-            expire_time: self.expire_time,
-            no_expiry: self.no_expiry,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_key::CreateKeyInput {
+                key_name: self.key_name
+                ,
+                restrictions: self.restrictions
+                ,
+                description: self.description
+                ,
+                expire_time: self.expire_time
+                ,
+                no_expiry: self.no_expiry
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

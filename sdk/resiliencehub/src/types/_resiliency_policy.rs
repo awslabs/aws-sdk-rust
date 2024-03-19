@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ResiliencyPolicy {
+pub struct ResiliencyPolicy  {
     /// <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the policy</p>
@@ -19,51 +19,51 @@ pub struct ResiliencyPolicy {
     /// <p>Specifies the estimated cost tier of the resiliency policy.</p>
     pub estimated_cost_tier: ::std::option::Option<crate::types::EstimatedCostTier>,
     /// <p>The resiliency policy.</p>
-    pub policy: ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>>,
+    pub policy: ::std::option::Option<::std::collections::HashMap::<crate::types::DisruptionType, crate::types::FailurePolicy>>,
     /// <p>Date and time when the resiliency policy was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl ResiliencyPolicy {
+impl  ResiliencyPolicy  {
     /// <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub fn policy_arn(&self) -> ::std::option::Option<&str> {
+    pub fn policy_arn(&self) -> ::std::option::Option<& str> {
         self.policy_arn.as_deref()
     }
     /// <p>The name of the policy</p>
-    pub fn policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<& str> {
         self.policy_name.as_deref()
     }
     /// <p>The description for the policy.</p>
-    pub fn policy_description(&self) -> ::std::option::Option<&str> {
+    pub fn policy_description(&self) -> ::std::option::Option<& str> {
         self.policy_description.as_deref()
     }
     /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
-    pub fn data_location_constraint(&self) -> ::std::option::Option<&crate::types::DataLocationConstraint> {
+    pub fn data_location_constraint(&self) -> ::std::option::Option<& crate::types::DataLocationConstraint> {
         self.data_location_constraint.as_ref()
     }
     /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
-    pub fn tier(&self) -> ::std::option::Option<&crate::types::ResiliencyPolicyTier> {
+    pub fn tier(&self) -> ::std::option::Option<& crate::types::ResiliencyPolicyTier> {
         self.tier.as_ref()
     }
     /// <p>Specifies the estimated cost tier of the resiliency policy.</p>
-    pub fn estimated_cost_tier(&self) -> ::std::option::Option<&crate::types::EstimatedCostTier> {
+    pub fn estimated_cost_tier(&self) -> ::std::option::Option<& crate::types::EstimatedCostTier> {
         self.estimated_cost_tier.as_ref()
     }
     /// <p>The resiliency policy.</p>
-    pub fn policy(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>> {
+    pub fn policy(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::DisruptionType, crate::types::FailurePolicy>> {
         self.policy.as_ref()
     }
     /// <p>Date and time when the resiliency policy was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl ::std::fmt::Debug for ResiliencyPolicy {
+impl  ::std::fmt::Debug for ResiliencyPolicy  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ResiliencyPolicy");
         formatter.field("policy_arn", &self.policy_arn);
@@ -95,9 +95,9 @@ pub struct ResiliencyPolicyBuilder {
     pub(crate) data_location_constraint: ::std::option::Option<crate::types::DataLocationConstraint>,
     pub(crate) tier: ::std::option::Option<crate::types::ResiliencyPolicyTier>,
     pub(crate) estimated_cost_tier: ::std::option::Option<crate::types::EstimatedCostTier>,
-    pub(crate) policy: ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>>,
+    pub(crate) policy: ::std::option::Option<::std::collections::HashMap::<crate::types::DisruptionType, crate::types::FailurePolicy>>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl ResiliencyPolicyBuilder {
     /// <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
@@ -107,8 +107,7 @@ impl ResiliencyPolicyBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_arn = input;
-        self
+        self.policy_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +120,7 @@ impl ResiliencyPolicyBuilder {
     }
     /// <p>The name of the policy</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// <p>The name of the policy</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +133,7 @@ impl ResiliencyPolicyBuilder {
     }
     /// <p>The description for the policy.</p>
     pub fn set_policy_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_description = input;
-        self
+        self.policy_description = input; self
     }
     /// <p>The description for the policy.</p>
     pub fn get_policy_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +146,7 @@ impl ResiliencyPolicyBuilder {
     }
     /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
     pub fn set_data_location_constraint(mut self, input: ::std::option::Option<crate::types::DataLocationConstraint>) -> Self {
-        self.data_location_constraint = input;
-        self
+        self.data_location_constraint = input; self
     }
     /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
     pub fn get_data_location_constraint(&self) -> &::std::option::Option<crate::types::DataLocationConstraint> {
@@ -163,8 +159,7 @@ impl ResiliencyPolicyBuilder {
     }
     /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
     pub fn set_tier(mut self, input: ::std::option::Option<crate::types::ResiliencyPolicyTier>) -> Self {
-        self.tier = input;
-        self
+        self.tier = input; self
     }
     /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
     pub fn get_tier(&self) -> &::std::option::Option<crate::types::ResiliencyPolicyTier> {
@@ -177,8 +172,7 @@ impl ResiliencyPolicyBuilder {
     }
     /// <p>Specifies the estimated cost tier of the resiliency policy.</p>
     pub fn set_estimated_cost_tier(mut self, input: ::std::option::Option<crate::types::EstimatedCostTier>) -> Self {
-        self.estimated_cost_tier = input;
-        self
+        self.estimated_cost_tier = input; self
     }
     /// <p>Specifies the estimated cost tier of the resiliency policy.</p>
     pub fn get_estimated_cost_tier(&self) -> &::std::option::Option<crate::types::EstimatedCostTier> {
@@ -191,20 +185,16 @@ impl ResiliencyPolicyBuilder {
     /// <p>The resiliency policy.</p>
     pub fn policy(mut self, k: crate::types::DisruptionType, v: crate::types::FailurePolicy) -> Self {
         let mut hash_map = self.policy.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.policy = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.policy = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The resiliency policy.</p>
-    pub fn set_policy(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>>,
-    ) -> Self {
-        self.policy = input;
-        self
+    pub fn set_policy(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::DisruptionType, crate::types::FailurePolicy>>) -> Self {
+        self.policy = input; self
     }
     /// <p>The resiliency policy.</p>
-    pub fn get_policy(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>> {
+    pub fn get_policy(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::DisruptionType, crate::types::FailurePolicy>> {
         &self.policy
     }
     /// <p>Date and time when the resiliency policy was created.</p>
@@ -214,8 +204,7 @@ impl ResiliencyPolicyBuilder {
     }
     /// <p>Date and time when the resiliency policy was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>Date and time when the resiliency policy was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -228,31 +217,39 @@ impl ResiliencyPolicyBuilder {
     /// <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ResiliencyPolicy`](crate::types::ResiliencyPolicy).
     pub fn build(self) -> crate::types::ResiliencyPolicy {
         crate::types::ResiliencyPolicy {
-            policy_arn: self.policy_arn,
-            policy_name: self.policy_name,
-            policy_description: self.policy_description,
-            data_location_constraint: self.data_location_constraint,
-            tier: self.tier,
-            estimated_cost_tier: self.estimated_cost_tier,
-            policy: self.policy,
-            creation_time: self.creation_time,
-            tags: self.tags,
+            policy_arn: self.policy_arn
+            ,
+            policy_name: self.policy_name
+            ,
+            policy_description: self.policy_description
+            ,
+            data_location_constraint: self.data_location_constraint
+            ,
+            tier: self.tier
+            ,
+            estimated_cost_tier: self.estimated_cost_tier
+            ,
+            policy: self.policy
+            ,
+            creation_time: self.creation_time
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
@@ -271,3 +268,4 @@ impl ::std::fmt::Debug for ResiliencyPolicyBuilder {
         formatter.finish()
     }
 }
+

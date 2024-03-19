@@ -3,7 +3,7 @@
 /// <p>A string filter for filtering Security Hub findings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StringFilter {
+pub struct StringFilter  {
     /// <p>The string filter value. Filter values are case sensitive. For example, the product name for control-based findings is <code>Security Hub</code>. If you provide <code>security hub</code> as the filter value, there's no match.</p>
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The condition to apply to a string value when filtering Security Hub findings.</p>
@@ -43,9 +43,9 @@ pub struct StringFilter {
     /// <p><code>CONTAINS</code> and <code>NOT_CONTAINS</code> operators can be used only with automation rules. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules.html">Automation rules</a> in the <i>Security Hub User Guide</i>.</p>
     pub comparison: ::std::option::Option<crate::types::StringFilterComparison>,
 }
-impl StringFilter {
+impl  StringFilter  {
     /// <p>The string filter value. Filter values are case sensitive. For example, the product name for control-based findings is <code>Security Hub</code>. If you provide <code>security hub</code> as the filter value, there's no match.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>The condition to apply to a string value when filtering Security Hub findings.</p>
@@ -83,7 +83,7 @@ impl StringFilter {
     /// <p><code>ResourceType NOT_EQUALS AwsEc2NetworkInterface</code></p></li>
     /// </ul>
     /// <p><code>CONTAINS</code> and <code>NOT_CONTAINS</code> operators can be used only with automation rules. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules.html">Automation rules</a> in the <i>Security Hub User Guide</i>.</p>
-    pub fn comparison(&self) -> ::std::option::Option<&crate::types::StringFilterComparison> {
+    pub fn comparison(&self) -> ::std::option::Option<& crate::types::StringFilterComparison> {
         self.comparison.as_ref()
     }
 }
@@ -109,8 +109,7 @@ impl StringFilterBuilder {
     }
     /// <p>The string filter value. Filter values are case sensitive. For example, the product name for control-based findings is <code>Security Hub</code>. If you provide <code>security hub</code> as the filter value, there's no match.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The string filter value. Filter values are case sensitive. For example, the product name for control-based findings is <code>Security Hub</code>. If you provide <code>security hub</code> as the filter value, there's no match.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -191,8 +190,7 @@ impl StringFilterBuilder {
     /// </ul>
     /// <p><code>CONTAINS</code> and <code>NOT_CONTAINS</code> operators can be used only with automation rules. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules.html">Automation rules</a> in the <i>Security Hub User Guide</i>.</p>
     pub fn set_comparison(mut self, input: ::std::option::Option<crate::types::StringFilterComparison>) -> Self {
-        self.comparison = input;
-        self
+        self.comparison = input; self
     }
     /// <p>The condition to apply to a string value when filtering Security Hub findings.</p>
     /// <p>To search for values that have the filter value, use one of the following comparison operators:</p>
@@ -235,8 +233,11 @@ impl StringFilterBuilder {
     /// Consumes the builder and constructs a [`StringFilter`](crate::types::StringFilter).
     pub fn build(self) -> crate::types::StringFilter {
         crate::types::StringFilter {
-            value: self.value,
-            comparison: self.comparison,
+            value: self.value
+            ,
+            comparison: self.comparison
+            ,
         }
     }
 }
+

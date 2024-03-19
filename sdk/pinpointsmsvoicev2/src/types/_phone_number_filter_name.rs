@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let phonenumberfiltername = unimplemented!();
 /// match phonenumberfiltername {
@@ -38,16 +38,14 @@
 /// Specifically, when `phonenumberfiltername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PhoneNumberFilterName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum PhoneNumberFilterName {
     #[allow(missing_docs)] // documentation missing in model
     DeletionProtectionEnabled,
@@ -71,96 +69,86 @@ pub enum PhoneNumberFilterName {
     TwoWayEnabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for PhoneNumberFilterName {
-    fn from(s: &str) -> Self {
-        match s {
-            "deletion-protection-enabled" => PhoneNumberFilterName::DeletionProtectionEnabled,
-            "iso-country-code" => PhoneNumberFilterName::IsoCountryCode,
-            "message-type" => PhoneNumberFilterName::MessageType,
-            "number-capability" => PhoneNumberFilterName::NumberCapability,
-            "number-type" => PhoneNumberFilterName::NumberType,
-            "opt-out-list-name" => PhoneNumberFilterName::OptOutListName,
-            "self-managed-opt-outs-enabled" => PhoneNumberFilterName::SelfManagedOptOutsEnabled,
-            "status" => PhoneNumberFilterName::Status,
-            "two-way-channel-arn" => PhoneNumberFilterName::TwoWayChannelArn,
-            "two-way-enabled" => PhoneNumberFilterName::TwoWayEnabled,
-            other => PhoneNumberFilterName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "deletion-protection-enabled" => PhoneNumberFilterName::DeletionProtectionEnabled,
+"iso-country-code" => PhoneNumberFilterName::IsoCountryCode,
+"message-type" => PhoneNumberFilterName::MessageType,
+"number-capability" => PhoneNumberFilterName::NumberCapability,
+"number-type" => PhoneNumberFilterName::NumberType,
+"opt-out-list-name" => PhoneNumberFilterName::OptOutListName,
+"self-managed-opt-outs-enabled" => PhoneNumberFilterName::SelfManagedOptOutsEnabled,
+"status" => PhoneNumberFilterName::Status,
+"two-way-channel-arn" => PhoneNumberFilterName::TwoWayChannelArn,
+"two-way-enabled" => PhoneNumberFilterName::TwoWayEnabled,
+other => PhoneNumberFilterName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for PhoneNumberFilterName {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(PhoneNumberFilterName::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(PhoneNumberFilterName::from(s))
+                    }
+                }
 impl PhoneNumberFilterName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PhoneNumberFilterName::DeletionProtectionEnabled => "deletion-protection-enabled",
-            PhoneNumberFilterName::IsoCountryCode => "iso-country-code",
-            PhoneNumberFilterName::MessageType => "message-type",
-            PhoneNumberFilterName::NumberCapability => "number-capability",
-            PhoneNumberFilterName::NumberType => "number-type",
-            PhoneNumberFilterName::OptOutListName => "opt-out-list-name",
-            PhoneNumberFilterName::SelfManagedOptOutsEnabled => "self-managed-opt-outs-enabled",
-            PhoneNumberFilterName::Status => "status",
-            PhoneNumberFilterName::TwoWayChannelArn => "two-way-channel-arn",
-            PhoneNumberFilterName::TwoWayEnabled => "two-way-enabled",
-            PhoneNumberFilterName::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "deletion-protection-enabled",
-            "iso-country-code",
-            "message-type",
-            "number-capability",
-            "number-type",
-            "opt-out-list-name",
-            "self-managed-opt-outs-enabled",
-            "status",
-            "two-way-channel-arn",
-            "two-way-enabled",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PhoneNumberFilterName::DeletionProtectionEnabled => "deletion-protection-enabled",
+    PhoneNumberFilterName::IsoCountryCode => "iso-country-code",
+    PhoneNumberFilterName::MessageType => "message-type",
+    PhoneNumberFilterName::NumberCapability => "number-capability",
+    PhoneNumberFilterName::NumberType => "number-type",
+    PhoneNumberFilterName::OptOutListName => "opt-out-list-name",
+    PhoneNumberFilterName::SelfManagedOptOutsEnabled => "self-managed-opt-outs-enabled",
+    PhoneNumberFilterName::Status => "status",
+    PhoneNumberFilterName::TwoWayChannelArn => "two-way-channel-arn",
+    PhoneNumberFilterName::TwoWayEnabled => "two-way-enabled",
+    PhoneNumberFilterName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["deletion-protection-enabled", "iso-country-code", "message-type", "number-capability", "number-type", "opt-out-list-name", "self-managed-opt-outs-enabled", "status", "two-way-channel-arn", "two-way-enabled"]
+                }
+            }
 impl ::std::convert::AsRef<str> for PhoneNumberFilterName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl PhoneNumberFilterName {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for PhoneNumberFilterName {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            PhoneNumberFilterName::DeletionProtectionEnabled => write!(f, "deletion-protection-enabled"),
-            PhoneNumberFilterName::IsoCountryCode => write!(f, "iso-country-code"),
-            PhoneNumberFilterName::MessageType => write!(f, "message-type"),
-            PhoneNumberFilterName::NumberCapability => write!(f, "number-capability"),
-            PhoneNumberFilterName::NumberType => write!(f, "number-type"),
-            PhoneNumberFilterName::OptOutListName => write!(f, "opt-out-list-name"),
-            PhoneNumberFilterName::SelfManagedOptOutsEnabled => write!(f, "self-managed-opt-outs-enabled"),
-            PhoneNumberFilterName::Status => write!(f, "status"),
-            PhoneNumberFilterName::TwoWayChannelArn => write!(f, "two-way-channel-arn"),
-            PhoneNumberFilterName::TwoWayEnabled => write!(f, "two-way-enabled"),
-            PhoneNumberFilterName::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                PhoneNumberFilterName::DeletionProtectionEnabled => write!(f, "deletion-protection-enabled"),
+PhoneNumberFilterName::IsoCountryCode => write!(f, "iso-country-code"),
+PhoneNumberFilterName::MessageType => write!(f, "message-type"),
+PhoneNumberFilterName::NumberCapability => write!(f, "number-capability"),
+PhoneNumberFilterName::NumberType => write!(f, "number-type"),
+PhoneNumberFilterName::OptOutListName => write!(f, "opt-out-list-name"),
+PhoneNumberFilterName::SelfManagedOptOutsEnabled => write!(f, "self-managed-opt-outs-enabled"),
+PhoneNumberFilterName::Status => write!(f, "status"),
+PhoneNumberFilterName::TwoWayChannelArn => write!(f, "two-way-channel-arn"),
+PhoneNumberFilterName::TwoWayEnabled => write!(f, "two-way-enabled"),
+PhoneNumberFilterName::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

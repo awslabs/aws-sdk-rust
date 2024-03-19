@@ -3,15 +3,14 @@
 /// <p>Defines a list of values that Amazon Lex should use as the default value for a slot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SlotDefaultValueSpecification {
+pub struct SlotDefaultValueSpecification  {
     /// <p>A list of default values. Amazon Lex chooses the default value to use in the order that they are presented in the list.</p>
-    pub default_value_list: ::std::vec::Vec<crate::types::SlotDefaultValue>,
+    pub default_value_list: ::std::vec::Vec::<crate::types::SlotDefaultValue>,
 }
-impl SlotDefaultValueSpecification {
+impl  SlotDefaultValueSpecification  {
     /// <p>A list of default values. Amazon Lex chooses the default value to use in the order that they are presented in the list.</p>
-    pub fn default_value_list(&self) -> &[crate::types::SlotDefaultValue] {
-        use std::ops::Deref;
-        self.default_value_list.deref()
+    pub fn default_value_list(&self) -> & [crate::types::SlotDefaultValue] {
+        use std::ops::Deref; self.default_value_list.deref()
     }
 }
 impl SlotDefaultValueSpecification {
@@ -25,7 +24,7 @@ impl SlotDefaultValueSpecification {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SlotDefaultValueSpecificationBuilder {
-    pub(crate) default_value_list: ::std::option::Option<::std::vec::Vec<crate::types::SlotDefaultValue>>,
+    pub(crate) default_value_list: ::std::option::Option<::std::vec::Vec::<crate::types::SlotDefaultValue>>,
 }
 impl SlotDefaultValueSpecificationBuilder {
     /// Appends an item to `default_value_list`.
@@ -35,30 +34,31 @@ impl SlotDefaultValueSpecificationBuilder {
     /// <p>A list of default values. Amazon Lex chooses the default value to use in the order that they are presented in the list.</p>
     pub fn default_value_list(mut self, input: crate::types::SlotDefaultValue) -> Self {
         let mut v = self.default_value_list.unwrap_or_default();
-        v.push(input);
-        self.default_value_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.default_value_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of default values. Amazon Lex chooses the default value to use in the order that they are presented in the list.</p>
-    pub fn set_default_value_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SlotDefaultValue>>) -> Self {
-        self.default_value_list = input;
-        self
+    pub fn set_default_value_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SlotDefaultValue>>) -> Self {
+        self.default_value_list = input; self
     }
     /// <p>A list of default values. Amazon Lex chooses the default value to use in the order that they are presented in the list.</p>
-    pub fn get_default_value_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotDefaultValue>> {
+    pub fn get_default_value_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SlotDefaultValue>> {
         &self.default_value_list
     }
     /// Consumes the builder and constructs a [`SlotDefaultValueSpecification`](crate::types::SlotDefaultValueSpecification).
     /// This method will fail if any of the following fields are not set:
     /// - [`default_value_list`](crate::types::builders::SlotDefaultValueSpecificationBuilder::default_value_list)
     pub fn build(self) -> ::std::result::Result<crate::types::SlotDefaultValueSpecification, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SlotDefaultValueSpecification {
-            default_value_list: self.default_value_list.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "default_value_list",
-                    "default_value_list was not specified but it is required when building SlotDefaultValueSpecification",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SlotDefaultValueSpecification {
+                default_value_list: self.default_value_list
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("default_value_list", "default_value_list was not specified but it is required when building SlotDefaultValueSpecification")
+                    )?
+                ,
+            }
+        )
     }
 }
+

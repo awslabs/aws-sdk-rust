@@ -5,7 +5,7 @@
 /// <p>The finding must have either <code>Label</code> or <code>Normalized</code> populated. If only one of these attributes is populated, then Security Hub automatically populates the other one. If neither attribute is populated, then the finding is invalid. <code>Label</code> is the preferred attribute.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Severity {
+pub struct Severity  {
     /// <p>Deprecated. This attribute isn't included in findings. Instead of providing <code>Product</code>, provide <code>Original</code>.</p>
     /// <p>The native severity as defined by the Amazon Web Services service or integrated partner product that generated the finding.</p>
     pub product: ::std::option::Option<f64>,
@@ -54,7 +54,7 @@ pub struct Severity {
     /// <p>The native severity from the finding product that generated the finding.</p>
     pub original: ::std::option::Option<::std::string::String>,
 }
-impl Severity {
+impl  Severity  {
     /// <p>Deprecated. This attribute isn't included in findings. Instead of providing <code>Product</code>, provide <code>Original</code>.</p>
     /// <p>The native severity as defined by the Amazon Web Services service or integrated partner product that generated the finding.</p>
     pub fn product(&self) -> ::std::option::Option<f64> {
@@ -86,7 +86,7 @@ impl Severity {
     /// <li>
     /// <p>90–100 - <code>CRITICAL</code></p></li>
     /// </ul>
-    pub fn label(&self) -> ::std::option::Option<&crate::types::SeverityLabel> {
+    pub fn label(&self) -> ::std::option::Option<& crate::types::SeverityLabel> {
         self.label.as_ref()
     }
     /// <p>Deprecated. The normalized severity of a finding. Instead of providing <code>Normalized</code>, provide <code>Label</code>.</p>
@@ -107,7 +107,7 @@ impl Severity {
         self.normalized
     }
     /// <p>The native severity from the finding product that generated the finding.</p>
-    pub fn original(&self) -> ::std::option::Option<&str> {
+    pub fn original(&self) -> ::std::option::Option<& str> {
         self.original.as_deref()
     }
 }
@@ -137,8 +137,7 @@ impl SeverityBuilder {
     /// <p>Deprecated. This attribute isn't included in findings. Instead of providing <code>Product</code>, provide <code>Original</code>.</p>
     /// <p>The native severity as defined by the Amazon Web Services service or integrated partner product that generated the finding.</p>
     pub fn set_product(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.product = input;
-        self
+        self.product = input; self
     }
     /// <p>Deprecated. This attribute isn't included in findings. Instead of providing <code>Product</code>, provide <code>Original</code>.</p>
     /// <p>The native severity as defined by the Amazon Web Services service or integrated partner product that generated the finding.</p>
@@ -202,8 +201,7 @@ impl SeverityBuilder {
     /// <p>90–100 - <code>CRITICAL</code></p></li>
     /// </ul>
     pub fn set_label(mut self, input: ::std::option::Option<crate::types::SeverityLabel>) -> Self {
-        self.label = input;
-        self
+        self.label = input; self
     }
     /// <p>The severity value of the finding. The allowed values are the following.</p>
     /// <ul>
@@ -267,8 +265,7 @@ impl SeverityBuilder {
     /// <p><code>CRITICAL</code> - 90</p></li>
     /// </ul>
     pub fn set_normalized(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.normalized = input;
-        self
+        self.normalized = input; self
     }
     /// <p>Deprecated. The normalized severity of a finding. Instead of providing <code>Normalized</code>, provide <code>Label</code>.</p>
     /// <p>If you provide <code>Label</code> and do not provide <code>Normalized</code>, then <code>Normalized</code> is set automatically as follows.</p>
@@ -294,8 +291,7 @@ impl SeverityBuilder {
     }
     /// <p>The native severity from the finding product that generated the finding.</p>
     pub fn set_original(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.original = input;
-        self
+        self.original = input; self
     }
     /// <p>The native severity from the finding product that generated the finding.</p>
     pub fn get_original(&self) -> &::std::option::Option<::std::string::String> {
@@ -304,10 +300,15 @@ impl SeverityBuilder {
     /// Consumes the builder and constructs a [`Severity`](crate::types::Severity).
     pub fn build(self) -> crate::types::Severity {
         crate::types::Severity {
-            product: self.product,
-            label: self.label,
-            normalized: self.normalized,
-            original: self.original,
+            product: self.product
+            ,
+            label: self.label
+            ,
+            normalized: self.normalized
+            ,
+            original: self.original
+            ,
         }
     }
 }
+

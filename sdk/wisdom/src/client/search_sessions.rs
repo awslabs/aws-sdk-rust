@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`SearchSessions`](crate::operation::search_sessions::builders::SearchSessionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::search_sessions::builders::SearchSessionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::search_sessions::builders::SearchSessionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::search_sessions::builders::SearchSessionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::search_sessions::builders::SearchSessionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::search_sessions::builders::SearchSessionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page.</p><br>
     ///   - [`assistant_id(impl Into<String>)`](crate::operation::search_sessions::builders::SearchSessionsFluentBuilder::assistant_id) / [`set_assistant_id(Option<String>)`](crate::operation::search_sessions::builders::SearchSessionsFluentBuilder::set_assistant_id):<br>required: **true**<br><p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p><br>
     ///   - [`search_expression(SearchExpression)`](crate::operation::search_sessions::builders::SearchSessionsFluentBuilder::search_expression) / [`set_search_expression(Option<SearchExpression>)`](crate::operation::search_sessions::builders::SearchSessionsFluentBuilder::set_search_expression):<br>required: **true**<br><p>The search expression to filter results.</p><br>
-    /// - On success, responds with [`SearchSessionsOutput`](crate::operation::search_sessions::SearchSessionsOutput) with field(s):
+                            /// - On success, responds with [`SearchSessionsOutput`](crate::operation::search_sessions::SearchSessionsOutput) with field(s):
     ///   - [`session_summaries(Vec::<SessionSummary>)`](crate::operation::search_sessions::SearchSessionsOutput::session_summaries): <p>Summary information about the sessions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_sessions::SearchSessionsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
-    /// - On failure, responds with [`SdkError<SearchSessionsError>`](crate::operation::search_sessions::SearchSessionsError)
+                            /// - On failure, responds with [`SdkError<SearchSessionsError>`](crate::operation::search_sessions::SearchSessionsError)
     pub fn search_sessions(&self) -> crate::operation::search_sessions::builders::SearchSessionsFluentBuilder {
-        crate::operation::search_sessions::builders::SearchSessionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::search_sessions::builders::SearchSessionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateComponentOutput {
+pub struct CreateComponentOutput  {
     /// <p>The request ID that uniquely identifies this request.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The client token that uniquely identifies the request.</p>
@@ -11,25 +11,25 @@ pub struct CreateComponentOutput {
     pub component_build_version_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateComponentOutput {
+impl  CreateComponentOutput  {
     /// <p>The request ID that uniquely identifies this request.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The client token that uniquely identifies the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the component that the request created.</p>
-    pub fn component_build_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn component_build_version_arn(&self) -> ::std::option::Option<& str> {
         self.component_build_version_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateComponentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateComponentOutput {
     /// Creates a new builder-style object to manufacture [`CreateComponentOutput`](crate::operation::create_component::CreateComponentOutput).
     pub fn builder() -> crate::operation::create_component::builders::CreateComponentOutputBuilder {
@@ -54,8 +54,7 @@ impl CreateComponentOutputBuilder {
     }
     /// <p>The request ID that uniquely identifies this request.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The request ID that uniquely identifies this request.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl CreateComponentOutputBuilder {
     }
     /// <p>The client token that uniquely identifies the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The client token that uniquely identifies the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl CreateComponentOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the component that the request created.</p>
     pub fn set_component_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_build_version_arn = input;
-        self
+        self.component_build_version_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the component that the request created.</p>
     pub fn get_component_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.component_build_version_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateComponentOutput`](crate::operation::create_component::CreateComponentOutput).
     pub fn build(self) -> crate::operation::create_component::CreateComponentOutput {
         crate::operation::create_component::CreateComponentOutput {
-            request_id: self.request_id,
-            client_token: self.client_token,
-            component_build_version_arn: self.component_build_version_arn,
+            request_id: self.request_id
+            ,
+            client_token: self.client_token
+            ,
+            component_build_version_arn: self.component_build_version_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

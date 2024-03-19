@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListModelCardVersions`](crate::operation::list_model_card_versions::builders::ListModelCardVersionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_model_card_versions::builders::ListModelCardVersionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`creation_time_after(DateTime)`](crate::operation::list_model_card_versions::builders::ListModelCardVersionsFluentBuilder::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::operation::list_model_card_versions::builders::ListModelCardVersionsFluentBuilder::set_creation_time_after):<br>required: **false**<br><p>Only list model card versions that were created after the time specified.</p><br>
     ///   - [`creation_time_before(DateTime)`](crate::operation::list_model_card_versions::builders::ListModelCardVersionsFluentBuilder::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::operation::list_model_card_versions::builders::ListModelCardVersionsFluentBuilder::set_creation_time_before):<br>required: **false**<br><p>Only list model card versions that were created before the time specified.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_model_card_versions::builders::ListModelCardVersionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_model_card_versions::builders::ListModelCardVersionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of model card versions to list.</p><br>
@@ -12,11 +12,12 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_model_card_versions::builders::ListModelCardVersionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_model_card_versions::builders::ListModelCardVersionsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the response to a previous <code>ListModelCardVersions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model card versions, use the token in the next request.</p><br>
     ///   - [`sort_by(ModelCardVersionSortBy)`](crate::operation::list_model_card_versions::builders::ListModelCardVersionsFluentBuilder::sort_by) / [`set_sort_by(Option<ModelCardVersionSortBy>)`](crate::operation::list_model_card_versions::builders::ListModelCardVersionsFluentBuilder::set_sort_by):<br>required: **false**<br><p>Sort listed model card versions by version. Sorts by version by default.</p><br>
     ///   - [`sort_order(ModelCardSortOrder)`](crate::operation::list_model_card_versions::builders::ListModelCardVersionsFluentBuilder::sort_order) / [`set_sort_order(Option<ModelCardSortOrder>)`](crate::operation::list_model_card_versions::builders::ListModelCardVersionsFluentBuilder::set_sort_order):<br>required: **false**<br><p>Sort model card versions by ascending or descending order.</p><br>
-    /// - On success, responds with [`ListModelCardVersionsOutput`](crate::operation::list_model_card_versions::ListModelCardVersionsOutput) with field(s):
+                            /// - On success, responds with [`ListModelCardVersionsOutput`](crate::operation::list_model_card_versions::ListModelCardVersionsOutput) with field(s):
     ///   - [`model_card_version_summary_list(Option<Vec::<ModelCardVersionSummary>>)`](crate::operation::list_model_card_versions::ListModelCardVersionsOutput::model_card_version_summary_list): <p>The summaries of the listed versions of the model card.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_model_card_versions::ListModelCardVersionsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of model card versions, use it in the subsequent request.</p>
-    /// - On failure, responds with [`SdkError<ListModelCardVersionsError>`](crate::operation::list_model_card_versions::ListModelCardVersionsError)
+                            /// - On failure, responds with [`SdkError<ListModelCardVersionsError>`](crate::operation::list_model_card_versions::ListModelCardVersionsError)
     pub fn list_model_card_versions(&self) -> crate::operation::list_model_card_versions::builders::ListModelCardVersionsFluentBuilder {
-        crate::operation::list_model_card_versions::builders::ListModelCardVersionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_model_card_versions::builders::ListModelCardVersionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

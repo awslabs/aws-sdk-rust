@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetCollaborationAnalysisTemplateInput {
+pub struct BatchGetCollaborationAnalysisTemplateInput  {
     /// <p>A unique identifier for the collaboration that the analysis templates belong to. Currently accepts collaboration ID.</p>
     pub collaboration_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) associated with the analysis template within a collaboration.</p>
-    pub analysis_template_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub analysis_template_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl BatchGetCollaborationAnalysisTemplateInput {
+impl  BatchGetCollaborationAnalysisTemplateInput  {
     /// <p>A unique identifier for the collaboration that the analysis templates belong to. Currently accepts collaboration ID.</p>
-    pub fn collaboration_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn collaboration_identifier(&self) -> ::std::option::Option<& str> {
         self.collaboration_identifier.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) associated with the analysis template within a collaboration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.analysis_template_arns.is_none()`.
-    pub fn analysis_template_arns(&self) -> &[::std::string::String] {
-        self.analysis_template_arns.as_deref().unwrap_or_default()
+    pub fn analysis_template_arns(&self) -> & [::std::string::String] {
+        self.analysis_template_arns.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchGetCollaborationAnalysisTemplateInput {
@@ -32,7 +33,7 @@ impl BatchGetCollaborationAnalysisTemplateInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetCollaborationAnalysisTemplateInputBuilder {
     pub(crate) collaboration_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) analysis_template_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) analysis_template_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl BatchGetCollaborationAnalysisTemplateInputBuilder {
     /// <p>A unique identifier for the collaboration that the analysis templates belong to. Currently accepts collaboration ID.</p>
@@ -43,8 +44,7 @@ impl BatchGetCollaborationAnalysisTemplateInputBuilder {
     }
     /// <p>A unique identifier for the collaboration that the analysis templates belong to. Currently accepts collaboration ID.</p>
     pub fn set_collaboration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collaboration_identifier = input;
-        self
+        self.collaboration_identifier = input; self
     }
     /// <p>A unique identifier for the collaboration that the analysis templates belong to. Currently accepts collaboration ID.</p>
     pub fn get_collaboration_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,31 +57,28 @@ impl BatchGetCollaborationAnalysisTemplateInputBuilder {
     /// <p>The Amazon Resource Name (ARN) associated with the analysis template within a collaboration.</p>
     pub fn analysis_template_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.analysis_template_arns.unwrap_or_default();
-        v.push(input.into());
-        self.analysis_template_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.analysis_template_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Resource Name (ARN) associated with the analysis template within a collaboration.</p>
-    pub fn set_analysis_template_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.analysis_template_arns = input;
-        self
+    pub fn set_analysis_template_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.analysis_template_arns = input; self
     }
     /// <p>The Amazon Resource Name (ARN) associated with the analysis template within a collaboration.</p>
-    pub fn get_analysis_template_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_analysis_template_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.analysis_template_arns
     }
     /// Consumes the builder and constructs a [`BatchGetCollaborationAnalysisTemplateInput`](crate::operation::batch_get_collaboration_analysis_template::BatchGetCollaborationAnalysisTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_collaboration_analysis_template::BatchGetCollaborationAnalysisTemplateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_collaboration_analysis_template::BatchGetCollaborationAnalysisTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::batch_get_collaboration_analysis_template::BatchGetCollaborationAnalysisTemplateInput {
-                collaboration_identifier: self.collaboration_identifier,
-                analysis_template_arns: self.analysis_template_arns,
-            },
+                collaboration_identifier: self.collaboration_identifier
+                ,
+                analysis_template_arns: self.analysis_template_arns
+                ,
+            }
         )
     }
 }
+

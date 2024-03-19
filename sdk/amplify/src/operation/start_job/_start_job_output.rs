@@ -3,22 +3,22 @@
 /// <p>The result structure for the run job request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartJobOutput {
+pub struct StartJobOutput  {
     /// <p>The summary for the job.</p>
     pub job_summary: ::std::option::Option<crate::types::JobSummary>,
     _request_id: Option<String>,
 }
-impl StartJobOutput {
+impl  StartJobOutput  {
     /// <p>The summary for the job.</p>
-    pub fn job_summary(&self) -> ::std::option::Option<&crate::types::JobSummary> {
+    pub fn job_summary(&self) -> ::std::option::Option<& crate::types::JobSummary> {
         self.job_summary.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartJobOutput {
     /// Creates a new builder-style object to manufacture [`StartJobOutput`](crate::operation::start_job::StartJobOutput).
     pub fn builder() -> crate::operation::start_job::builders::StartJobOutputBuilder {
@@ -42,27 +42,28 @@ impl StartJobOutputBuilder {
     }
     /// <p>The summary for the job.</p>
     pub fn set_job_summary(mut self, input: ::std::option::Option<crate::types::JobSummary>) -> Self {
-        self.job_summary = input;
-        self
+        self.job_summary = input; self
     }
     /// <p>The summary for the job.</p>
     pub fn get_job_summary(&self) -> &::std::option::Option<crate::types::JobSummary> {
         &self.job_summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartJobOutput`](crate::operation::start_job::StartJobOutput).
     pub fn build(self) -> crate::operation::start_job::StartJobOutput {
         crate::operation::start_job::StartJobOutput {
-            job_summary: self.job_summary,
+            job_summary: self.job_summary
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,15 +3,14 @@
 /// <p>Details of what case data is published through the case event stream.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CaseEventIncludedData {
+pub struct CaseEventIncludedData  {
     /// <p>List of field identifiers.</p>
-    pub fields: ::std::vec::Vec<crate::types::FieldIdentifier>,
+    pub fields: ::std::vec::Vec::<crate::types::FieldIdentifier>,
 }
-impl CaseEventIncludedData {
+impl  CaseEventIncludedData  {
     /// <p>List of field identifiers.</p>
-    pub fn fields(&self) -> &[crate::types::FieldIdentifier] {
-        use std::ops::Deref;
-        self.fields.deref()
+    pub fn fields(&self) -> & [crate::types::FieldIdentifier] {
+        use std::ops::Deref; self.fields.deref()
     }
 }
 impl CaseEventIncludedData {
@@ -25,7 +24,7 @@ impl CaseEventIncludedData {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CaseEventIncludedDataBuilder {
-    pub(crate) fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>>,
+    pub(crate) fields: ::std::option::Option<::std::vec::Vec::<crate::types::FieldIdentifier>>,
 }
 impl CaseEventIncludedDataBuilder {
     /// Appends an item to `fields`.
@@ -35,30 +34,31 @@ impl CaseEventIncludedDataBuilder {
     /// <p>List of field identifiers.</p>
     pub fn fields(mut self, input: crate::types::FieldIdentifier) -> Self {
         let mut v = self.fields.unwrap_or_default();
-        v.push(input);
-        self.fields = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.fields = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of field identifiers.</p>
-    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>>) -> Self {
-        self.fields = input;
-        self
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FieldIdentifier>>) -> Self {
+        self.fields = input; self
     }
     /// <p>List of field identifiers.</p>
-    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>> {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FieldIdentifier>> {
         &self.fields
     }
     /// Consumes the builder and constructs a [`CaseEventIncludedData`](crate::types::CaseEventIncludedData).
     /// This method will fail if any of the following fields are not set:
     /// - [`fields`](crate::types::builders::CaseEventIncludedDataBuilder::fields)
     pub fn build(self) -> ::std::result::Result<crate::types::CaseEventIncludedData, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CaseEventIncludedData {
-            fields: self.fields.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "fields",
-                    "fields was not specified but it is required when building CaseEventIncludedData",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CaseEventIncludedData {
+                fields: self.fields
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("fields", "fields was not specified but it is required when building CaseEventIncludedData")
+                    )?
+                ,
+            }
+        )
     }
 }
+

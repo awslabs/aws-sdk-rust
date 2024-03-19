@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeSnapshots`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`replication_group_id(impl Into<String>)`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::replication_group_id) / [`set_replication_group_id(Option<String>)`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::set_replication_group_id):<br>required: **false**<br><p>A user-supplied replication group identifier. If this parameter is specified, only snapshots associated with that specific replication group are described.</p><br>
     ///   - [`cache_cluster_id(impl Into<String>)`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::cache_cluster_id) / [`set_cache_cluster_id(Option<String>)`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::set_cache_cluster_id):<br>required: **false**<br><p>A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific cluster are described.</p><br>
     ///   - [`snapshot_name(impl Into<String>)`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::snapshot_name) / [`set_snapshot_name(Option<String>)`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::set_snapshot_name):<br>required: **false**<br><p>A user-supplied name of the snapshot. If this parameter is specified, only this snapshot are described.</p><br>
@@ -11,11 +11,12 @@ impl super::Client {
     ///   - [`marker(impl Into<String>)`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::set_marker):<br>required: **false**<br><p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p><br>
     ///   - [`max_records(i32)`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::max_records) / [`set_max_records(Option<i32>)`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::set_max_records):<br>required: **false**<br><p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p> <p>Default: 50</p> <p>Constraints: minimum 20; maximum 50.</p><br>
     ///   - [`show_node_group_config(bool)`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::show_node_group_config) / [`set_show_node_group_config(Option<bool>)`](crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::set_show_node_group_config):<br>required: **false**<br><p>A Boolean value which if true, the node group (shard) configuration is included in the snapshot description.</p><br>
-    /// - On success, responds with [`DescribeSnapshotsOutput`](crate::operation::describe_snapshots::DescribeSnapshotsOutput) with field(s):
+                            /// - On success, responds with [`DescribeSnapshotsOutput`](crate::operation::describe_snapshots::DescribeSnapshotsOutput) with field(s):
     ///   - [`marker(Option<String>)`](crate::operation::describe_snapshots::DescribeSnapshotsOutput::marker): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     ///   - [`snapshots(Option<Vec::<Snapshot>>)`](crate::operation::describe_snapshots::DescribeSnapshotsOutput::snapshots): <p>A list of snapshots. Each item in the list contains detailed information about one snapshot.</p>
-    /// - On failure, responds with [`SdkError<DescribeSnapshotsError>`](crate::operation::describe_snapshots::DescribeSnapshotsError)
+                            /// - On failure, responds with [`SdkError<DescribeSnapshotsError>`](crate::operation::describe_snapshots::DescribeSnapshotsError)
     pub fn describe_snapshots(&self) -> crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder {
-        crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_snapshots::builders::DescribeSnapshotsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

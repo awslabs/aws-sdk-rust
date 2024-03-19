@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateEventTrackerOutput {
+pub struct CreateEventTrackerOutput  {
     /// <p>The ARN of the event tracker.</p>
     pub event_tracker_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the event tracker. Include this ID in requests to the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
     pub tracking_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateEventTrackerOutput {
+impl  CreateEventTrackerOutput  {
     /// <p>The ARN of the event tracker.</p>
-    pub fn event_tracker_arn(&self) -> ::std::option::Option<&str> {
+    pub fn event_tracker_arn(&self) -> ::std::option::Option<& str> {
         self.event_tracker_arn.as_deref()
     }
     /// <p>The ID of the event tracker. Include this ID in requests to the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
-    pub fn tracking_id(&self) -> ::std::option::Option<&str> {
+    pub fn tracking_id(&self) -> ::std::option::Option<& str> {
         self.tracking_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateEventTrackerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateEventTrackerOutput {
     /// Creates a new builder-style object to manufacture [`CreateEventTrackerOutput`](crate::operation::create_event_tracker::CreateEventTrackerOutput).
     pub fn builder() -> crate::operation::create_event_tracker::builders::CreateEventTrackerOutputBuilder {
@@ -47,8 +47,7 @@ impl CreateEventTrackerOutputBuilder {
     }
     /// <p>The ARN of the event tracker.</p>
     pub fn set_event_tracker_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_tracker_arn = input;
-        self
+        self.event_tracker_arn = input; self
     }
     /// <p>The ARN of the event tracker.</p>
     pub fn get_event_tracker_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl CreateEventTrackerOutputBuilder {
     }
     /// <p>The ID of the event tracker. Include this ID in requests to the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
     pub fn set_tracking_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tracking_id = input;
-        self
+        self.tracking_id = input; self
     }
     /// <p>The ID of the event tracker. Include this ID in requests to the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
     pub fn get_tracking_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.tracking_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateEventTrackerOutput`](crate::operation::create_event_tracker::CreateEventTrackerOutput).
     pub fn build(self) -> crate::operation::create_event_tracker::CreateEventTrackerOutput {
         crate::operation::create_event_tracker::CreateEventTrackerOutput {
-            event_tracker_arn: self.event_tracker_arn,
-            tracking_id: self.tracking_id,
+            event_tracker_arn: self.event_tracker_arn
+            ,
+            tracking_id: self.tracking_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

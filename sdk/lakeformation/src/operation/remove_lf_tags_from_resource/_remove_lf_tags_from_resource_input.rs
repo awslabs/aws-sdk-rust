@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveLfTagsFromResourceInput {
+pub struct RemoveLfTagsFromResourceInput  {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The database, table, or column resource where you want to remove an LF-tag.</p>
     pub resource: ::std::option::Option<crate::types::Resource>,
     /// <p>The LF-tags to be removed from the resource.</p>
-    pub lf_tags: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,
+    pub lf_tags: ::std::option::Option<::std::vec::Vec::<crate::types::LfTagPair>>,
 }
-impl RemoveLfTagsFromResourceInput {
+impl  RemoveLfTagsFromResourceInput  {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The database, table, or column resource where you want to remove an LF-tag.</p>
-    pub fn resource(&self) -> ::std::option::Option<&crate::types::Resource> {
+    pub fn resource(&self) -> ::std::option::Option<& crate::types::Resource> {
         self.resource.as_ref()
     }
     /// <p>The LF-tags to be removed from the resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lf_tags.is_none()`.
-    pub fn lf_tags(&self) -> &[crate::types::LfTagPair] {
-        self.lf_tags.as_deref().unwrap_or_default()
+    pub fn lf_tags(&self) -> & [crate::types::LfTagPair] {
+        self.lf_tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RemoveLfTagsFromResourceInput {
@@ -39,7 +40,7 @@ impl RemoveLfTagsFromResourceInput {
 pub struct RemoveLfTagsFromResourceInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource: ::std::option::Option<crate::types::Resource>,
-    pub(crate) lf_tags: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,
+    pub(crate) lf_tags: ::std::option::Option<::std::vec::Vec::<crate::types::LfTagPair>>,
 }
 impl RemoveLfTagsFromResourceInputBuilder {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p>
@@ -49,8 +50,7 @@ impl RemoveLfTagsFromResourceInputBuilder {
     }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl RemoveLfTagsFromResourceInputBuilder {
     }
     /// <p>The database, table, or column resource where you want to remove an LF-tag.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<crate::types::Resource>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
     }
     /// <p>The database, table, or column resource where you want to remove an LF-tag.</p>
     pub fn get_resource(&self) -> &::std::option::Option<crate::types::Resource> {
@@ -78,30 +77,30 @@ impl RemoveLfTagsFromResourceInputBuilder {
     /// <p>The LF-tags to be removed from the resource.</p>
     pub fn lf_tags(mut self, input: crate::types::LfTagPair) -> Self {
         let mut v = self.lf_tags.unwrap_or_default();
-        v.push(input);
-        self.lf_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.lf_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The LF-tags to be removed from the resource.</p>
-    pub fn set_lf_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>) -> Self {
-        self.lf_tags = input;
-        self
+    pub fn set_lf_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LfTagPair>>) -> Self {
+        self.lf_tags = input; self
     }
     /// <p>The LF-tags to be removed from the resource.</p>
-    pub fn get_lf_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>> {
+    pub fn get_lf_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LfTagPair>> {
         &self.lf_tags
     }
     /// Consumes the builder and constructs a [`RemoveLfTagsFromResourceInput`](crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceInput {
-            catalog_id: self.catalog_id,
-            resource: self.resource,
-            lf_tags: self.lf_tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceInput {
+                catalog_id: self.catalog_id
+                ,
+                resource: self.resource
+                ,
+                lf_tags: self.lf_tags
+                ,
+            }
+        )
     }
 }
+

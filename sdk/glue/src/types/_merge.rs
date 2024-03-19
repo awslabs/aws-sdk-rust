@@ -3,36 +3,32 @@
 /// <p>Specifies a transform that merges a <code>DynamicFrame</code> with a staging <code>DynamicFrame</code> based on the specified primary keys to identify records. Duplicate records (records with the same primary keys) are not de-duplicated.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Merge {
+pub struct Merge  {
     /// <p>The name of the transform node.</p>
     pub name: ::std::string::String,
     /// <p>The data inputs identified by their node names.</p>
-    pub inputs: ::std::vec::Vec<::std::string::String>,
+    pub inputs: ::std::vec::Vec::<::std::string::String>,
     /// <p>The source <code>DynamicFrame</code> that will be merged with a staging <code>DynamicFrame</code>.</p>
     pub source: ::std::string::String,
     /// <p>The list of primary key fields to match records from the source and staging dynamic frames.</p>
-    pub primary_keys: ::std::vec::Vec<::std::vec::Vec<::std::string::String>>,
+    pub primary_keys: ::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>,
 }
-impl Merge {
+impl  Merge  {
     /// <p>The name of the transform node.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn inputs(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.inputs.deref()
+    pub fn inputs(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.inputs.deref()
     }
     /// <p>The source <code>DynamicFrame</code> that will be merged with a staging <code>DynamicFrame</code>.</p>
-    pub fn source(&self) -> &str {
-        use std::ops::Deref;
-        self.source.deref()
+    pub fn source(&self) -> & str {
+        use std::ops::Deref; self.source.deref()
     }
     /// <p>The list of primary key fields to match records from the source and staging dynamic frames.</p>
-    pub fn primary_keys(&self) -> &[::std::vec::Vec<::std::string::String>] {
-        use std::ops::Deref;
-        self.primary_keys.deref()
+    pub fn primary_keys(&self) -> & [::std::vec::Vec::<::std::string::String>] {
+        use std::ops::Deref; self.primary_keys.deref()
     }
 }
 impl Merge {
@@ -47,9 +43,9 @@ impl Merge {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MergeBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) inputs: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) source: ::std::option::Option<::std::string::String>,
-    pub(crate) primary_keys: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
+    pub(crate) primary_keys: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>>,
 }
 impl MergeBuilder {
     /// <p>The name of the transform node.</p>
@@ -60,8 +56,7 @@ impl MergeBuilder {
     }
     /// <p>The name of the transform node.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the transform node.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,17 +69,16 @@ impl MergeBuilder {
     /// <p>The data inputs identified by their node names.</p>
     pub fn inputs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
-        v.push(input.into());
-        self.inputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.inputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inputs = input;
-        self
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.inputs = input; self
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.inputs
     }
     /// <p>The source <code>DynamicFrame</code> that will be merged with a staging <code>DynamicFrame</code>.</p>
@@ -95,8 +89,7 @@ impl MergeBuilder {
     }
     /// <p>The source <code>DynamicFrame</code> that will be merged with a staging <code>DynamicFrame</code>.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The source <code>DynamicFrame</code> that will be merged with a staging <code>DynamicFrame</code>.</p>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,19 +100,18 @@ impl MergeBuilder {
     /// To override the contents of this collection use [`set_primary_keys`](Self::set_primary_keys).
     ///
     /// <p>The list of primary key fields to match records from the source and staging dynamic frames.</p>
-    pub fn primary_keys(mut self, input: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn primary_keys(mut self, input: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut v = self.primary_keys.unwrap_or_default();
-        v.push(input);
-        self.primary_keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.primary_keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of primary key fields to match records from the source and staging dynamic frames.</p>
-    pub fn set_primary_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>) -> Self {
-        self.primary_keys = input;
-        self
+    pub fn set_primary_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.primary_keys = input; self
     }
     /// <p>The list of primary key fields to match records from the source and staging dynamic frames.</p>
-    pub fn get_primary_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+    pub fn get_primary_keys(&self) -> &::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>> {
         &self.primary_keys
     }
     /// Consumes the builder and constructs a [`Merge`](crate::types::Merge).
@@ -129,31 +121,30 @@ impl MergeBuilder {
     /// - [`source`](crate::types::builders::MergeBuilder::source)
     /// - [`primary_keys`](crate::types::builders::MergeBuilder::primary_keys)
     pub fn build(self) -> ::std::result::Result<crate::types::Merge, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Merge {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building Merge",
-                )
-            })?,
-            inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "inputs",
-                    "inputs was not specified but it is required when building Merge",
-                )
-            })?,
-            source: self.source.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source",
-                    "source was not specified but it is required when building Merge",
-                )
-            })?,
-            primary_keys: self.primary_keys.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "primary_keys",
-                    "primary_keys was not specified but it is required when building Merge",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Merge {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building Merge")
+                    )?
+                ,
+                inputs: self.inputs
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("inputs", "inputs was not specified but it is required when building Merge")
+                    )?
+                ,
+                source: self.source
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source", "source was not specified but it is required when building Merge")
+                    )?
+                ,
+                primary_keys: self.primary_keys
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("primary_keys", "primary_keys was not specified but it is required when building Merge")
+                    )?
+                ,
+            }
+        )
     }
 }
+

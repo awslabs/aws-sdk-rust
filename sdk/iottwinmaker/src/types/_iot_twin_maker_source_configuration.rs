@@ -3,23 +3,23 @@
 /// <p>The metadata transfer job AWS IoT TwinMaker source configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IotTwinMakerSourceConfiguration {
+pub struct IotTwinMakerSourceConfiguration  {
     /// <p>The IoT TwinMaker workspace.</p>
     pub workspace: ::std::string::String,
     /// <p>The metadata transfer job AWS IoT TwinMaker source configuration filters.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::IotTwinMakerSourceConfigurationFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::IotTwinMakerSourceConfigurationFilter>>,
 }
-impl IotTwinMakerSourceConfiguration {
+impl  IotTwinMakerSourceConfiguration  {
     /// <p>The IoT TwinMaker workspace.</p>
-    pub fn workspace(&self) -> &str {
-        use std::ops::Deref;
-        self.workspace.deref()
+    pub fn workspace(&self) -> & str {
+        use std::ops::Deref; self.workspace.deref()
     }
     /// <p>The metadata transfer job AWS IoT TwinMaker source configuration filters.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::IotTwinMakerSourceConfigurationFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::IotTwinMakerSourceConfigurationFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl IotTwinMakerSourceConfiguration {
@@ -34,7 +34,7 @@ impl IotTwinMakerSourceConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IotTwinMakerSourceConfigurationBuilder {
     pub(crate) workspace: ::std::option::Option<::std::string::String>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::IotTwinMakerSourceConfigurationFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::IotTwinMakerSourceConfigurationFilter>>,
 }
 impl IotTwinMakerSourceConfigurationBuilder {
     /// <p>The IoT TwinMaker workspace.</p>
@@ -45,8 +45,7 @@ impl IotTwinMakerSourceConfigurationBuilder {
     }
     /// <p>The IoT TwinMaker workspace.</p>
     pub fn set_workspace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace = input;
-        self
+        self.workspace = input; self
     }
     /// <p>The IoT TwinMaker workspace.</p>
     pub fn get_workspace(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,31 +58,33 @@ impl IotTwinMakerSourceConfigurationBuilder {
     /// <p>The metadata transfer job AWS IoT TwinMaker source configuration filters.</p>
     pub fn filters(mut self, input: crate::types::IotTwinMakerSourceConfigurationFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The metadata transfer job AWS IoT TwinMaker source configuration filters.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IotTwinMakerSourceConfigurationFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IotTwinMakerSourceConfigurationFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The metadata transfer job AWS IoT TwinMaker source configuration filters.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IotTwinMakerSourceConfigurationFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IotTwinMakerSourceConfigurationFilter>> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`IotTwinMakerSourceConfiguration`](crate::types::IotTwinMakerSourceConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`workspace`](crate::types::builders::IotTwinMakerSourceConfigurationBuilder::workspace)
     pub fn build(self) -> ::std::result::Result<crate::types::IotTwinMakerSourceConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IotTwinMakerSourceConfiguration {
-            workspace: self.workspace.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "workspace",
-                    "workspace was not specified but it is required when building IotTwinMakerSourceConfiguration",
-                )
-            })?,
-            filters: self.filters,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IotTwinMakerSourceConfiguration {
+                workspace: self.workspace
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("workspace", "workspace was not specified but it is required when building IotTwinMakerSourceConfiguration")
+                    )?
+                ,
+                filters: self.filters
+                ,
+            }
+        )
     }
 }
+

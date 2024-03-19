@@ -3,22 +3,23 @@
 /// A request to add sources to the flow.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddFlowSourcesInput {
+pub struct AddFlowSourcesInput  {
     /// The flow that you want to mutate.
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// A list of sources that you want to add.
-    pub sources: ::std::option::Option<::std::vec::Vec<crate::types::SetSourceRequest>>,
+    pub sources: ::std::option::Option<::std::vec::Vec::<crate::types::SetSourceRequest>>,
 }
-impl AddFlowSourcesInput {
+impl  AddFlowSourcesInput  {
     /// The flow that you want to mutate.
-    pub fn flow_arn(&self) -> ::std::option::Option<&str> {
+    pub fn flow_arn(&self) -> ::std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// A list of sources that you want to add.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
-    pub fn sources(&self) -> &[crate::types::SetSourceRequest] {
-        self.sources.as_deref().unwrap_or_default()
+    pub fn sources(&self) -> & [crate::types::SetSourceRequest] {
+        self.sources.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AddFlowSourcesInput {
@@ -33,7 +34,7 @@ impl AddFlowSourcesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddFlowSourcesInputBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::SetSourceRequest>>,
+    pub(crate) sources: ::std::option::Option<::std::vec::Vec::<crate::types::SetSourceRequest>>,
 }
 impl AddFlowSourcesInputBuilder {
     /// The flow that you want to mutate.
@@ -44,8 +45,7 @@ impl AddFlowSourcesInputBuilder {
     }
     /// The flow that you want to mutate.
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flow_arn = input;
-        self
+        self.flow_arn = input; self
     }
     /// The flow that you want to mutate.
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,26 +58,28 @@ impl AddFlowSourcesInputBuilder {
     /// A list of sources that you want to add.
     pub fn sources(mut self, input: crate::types::SetSourceRequest) -> Self {
         let mut v = self.sources.unwrap_or_default();
-        v.push(input);
-        self.sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sources = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of sources that you want to add.
-    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SetSourceRequest>>) -> Self {
-        self.sources = input;
-        self
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SetSourceRequest>>) -> Self {
+        self.sources = input; self
     }
     /// A list of sources that you want to add.
-    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SetSourceRequest>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SetSourceRequest>> {
         &self.sources
     }
     /// Consumes the builder and constructs a [`AddFlowSourcesInput`](crate::operation::add_flow_sources::AddFlowSourcesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::add_flow_sources::AddFlowSourcesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::add_flow_sources::AddFlowSourcesInput {
-            flow_arn: self.flow_arn,
-            sources: self.sources,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_flow_sources::AddFlowSourcesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::add_flow_sources::AddFlowSourcesInput {
+                flow_arn: self.flow_arn
+                ,
+                sources: self.sources
+                ,
+            }
+        )
     }
 }
+

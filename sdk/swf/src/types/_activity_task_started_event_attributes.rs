@@ -3,15 +3,15 @@
 /// <p>Provides the details of the <code>ActivityTaskStarted</code> event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActivityTaskStartedEventAttributes {
+pub struct ActivityTaskStartedEventAttributes  {
     /// <p>Identity of the worker that was assigned this task. This aids diagnostics when problems arise. The form of this identity is user defined.</p>
     pub identity: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub scheduled_event_id: i64,
 }
-impl ActivityTaskStartedEventAttributes {
+impl  ActivityTaskStartedEventAttributes  {
     /// <p>Identity of the worker that was assigned this task. This aids diagnostics when problems arise. The form of this identity is user defined.</p>
-    pub fn identity(&self) -> ::std::option::Option<&str> {
+    pub fn identity(&self) -> ::std::option::Option<& str> {
         self.identity.as_deref()
     }
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
@@ -41,8 +41,7 @@ impl ActivityTaskStartedEventAttributesBuilder {
     }
     /// <p>Identity of the worker that was assigned this task. This aids diagnostics when problems arise. The form of this identity is user defined.</p>
     pub fn set_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity = input;
-        self
+        self.identity = input; self
     }
     /// <p>Identity of the worker that was assigned this task. This aids diagnostics when problems arise. The form of this identity is user defined.</p>
     pub fn get_identity(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl ActivityTaskStartedEventAttributesBuilder {
     }
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn set_scheduled_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.scheduled_event_id = input;
-        self
+        self.scheduled_event_id = input; self
     }
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn get_scheduled_event_id(&self) -> &::std::option::Option<i64> {
@@ -66,8 +64,12 @@ impl ActivityTaskStartedEventAttributesBuilder {
     /// Consumes the builder and constructs a [`ActivityTaskStartedEventAttributes`](crate::types::ActivityTaskStartedEventAttributes).
     pub fn build(self) -> crate::types::ActivityTaskStartedEventAttributes {
         crate::types::ActivityTaskStartedEventAttributes {
-            identity: self.identity,
-            scheduled_event_id: self.scheduled_event_id.unwrap_or_default(),
+            identity: self.identity
+            ,
+            scheduled_event_id: self.scheduled_event_id
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

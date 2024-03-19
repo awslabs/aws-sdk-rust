@@ -2,26 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateMediaInsightsPipelineConfigurationOutput {
+pub struct CreateMediaInsightsPipelineConfigurationOutput  {
     /// <p>The configuration settings for the media insights pipeline.</p>
     pub media_insights_pipeline_configuration: ::std::option::Option<crate::types::MediaInsightsPipelineConfiguration>,
     _request_id: Option<String>,
 }
-impl CreateMediaInsightsPipelineConfigurationOutput {
+impl  CreateMediaInsightsPipelineConfigurationOutput  {
     /// <p>The configuration settings for the media insights pipeline.</p>
-    pub fn media_insights_pipeline_configuration(&self) -> ::std::option::Option<&crate::types::MediaInsightsPipelineConfiguration> {
+    pub fn media_insights_pipeline_configuration(&self) -> ::std::option::Option<& crate::types::MediaInsightsPipelineConfiguration> {
         self.media_insights_pipeline_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateMediaInsightsPipelineConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateMediaInsightsPipelineConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateMediaInsightsPipelineConfigurationOutput`](crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationOutput).
-    pub fn builder() -> crate::operation::create_media_insights_pipeline_configuration::builders::CreateMediaInsightsPipelineConfigurationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_media_insights_pipeline_configuration::builders::CreateMediaInsightsPipelineConfigurationOutputBuilder {
         crate::operation::create_media_insights_pipeline_configuration::builders::CreateMediaInsightsPipelineConfigurationOutputBuilder::default()
     }
 }
@@ -40,31 +39,29 @@ impl CreateMediaInsightsPipelineConfigurationOutputBuilder {
         self
     }
     /// <p>The configuration settings for the media insights pipeline.</p>
-    pub fn set_media_insights_pipeline_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::MediaInsightsPipelineConfiguration>,
-    ) -> Self {
-        self.media_insights_pipeline_configuration = input;
-        self
+    pub fn set_media_insights_pipeline_configuration(mut self, input: ::std::option::Option<crate::types::MediaInsightsPipelineConfiguration>) -> Self {
+        self.media_insights_pipeline_configuration = input; self
     }
     /// <p>The configuration settings for the media insights pipeline.</p>
     pub fn get_media_insights_pipeline_configuration(&self) -> &::std::option::Option<crate::types::MediaInsightsPipelineConfiguration> {
         &self.media_insights_pipeline_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateMediaInsightsPipelineConfigurationOutput`](crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationOutput).
     pub fn build(self) -> crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationOutput {
         crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationOutput {
-            media_insights_pipeline_configuration: self.media_insights_pipeline_configuration,
+            media_insights_pipeline_configuration: self.media_insights_pipeline_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

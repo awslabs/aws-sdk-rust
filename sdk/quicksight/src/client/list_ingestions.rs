@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListIngestions`](crate::operation::list_ingestions::builders::ListIngestionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_ingestions::builders::ListIngestionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`data_set_id(impl Into<String>)`](crate::operation::list_ingestions::builders::ListIngestionsFluentBuilder::data_set_id) / [`set_data_set_id(Option<String>)`](crate::operation::list_ingestions::builders::ListIngestionsFluentBuilder::set_data_set_id):<br>required: **true**<br><p>The ID of the dataset used in the ingestion.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_ingestions::builders::ListIngestionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_ingestions::builders::ListIngestionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results, or null if there are no more results.</p><br>
     ///   - [`aws_account_id(impl Into<String>)`](crate::operation::list_ingestions::builders::ListIngestionsFluentBuilder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::operation::list_ingestions::builders::ListIngestionsFluentBuilder::set_aws_account_id):<br>required: **true**<br><p>The Amazon Web Services account ID.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_ingestions::builders::ListIngestionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_ingestions::builders::ListIngestionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to be returned per request.</p><br>
-    /// - On success, responds with [`ListIngestionsOutput`](crate::operation::list_ingestions::ListIngestionsOutput) with field(s):
+                            /// - On success, responds with [`ListIngestionsOutput`](crate::operation::list_ingestions::ListIngestionsOutput) with field(s):
     ///   - [`ingestions(Option<Vec::<Ingestion>>)`](crate::operation::list_ingestions::ListIngestionsOutput::ingestions): <p>A list of the ingestions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_ingestions::ListIngestionsOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::list_ingestions::ListIngestionsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::list_ingestions::ListIngestionsOutput::status): <p>The HTTP status of the request.</p>
-    /// - On failure, responds with [`SdkError<ListIngestionsError>`](crate::operation::list_ingestions::ListIngestionsError)
+                            /// - On failure, responds with [`SdkError<ListIngestionsError>`](crate::operation::list_ingestions::ListIngestionsError)
     pub fn list_ingestions(&self) -> crate::operation::list_ingestions::builders::ListIngestionsFluentBuilder {
-        crate::operation::list_ingestions::builders::ListIngestionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_ingestions::builders::ListIngestionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

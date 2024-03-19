@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListInvitationsOutput {
+pub struct ListInvitationsOutput  {
     /// <p>The list of behavior graphs for which the member account has open or accepted invitations.</p>
-    pub invitations: ::std::option::Option<::std::vec::Vec<crate::types::MemberDetail>>,
+    pub invitations: ::std::option::Option<::std::vec::Vec::<crate::types::MemberDetail>>,
     /// <p>If there are more behavior graphs remaining in the results, then this is the pagination token to use to request the next page of behavior graphs.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListInvitationsOutput {
+impl  ListInvitationsOutput  {
     /// <p>The list of behavior graphs for which the member account has open or accepted invitations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.invitations.is_none()`.
-    pub fn invitations(&self) -> &[crate::types::MemberDetail] {
-        self.invitations.as_deref().unwrap_or_default()
+    pub fn invitations(&self) -> & [crate::types::MemberDetail] {
+        self.invitations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If there are more behavior graphs remaining in the results, then this is the pagination token to use to request the next page of behavior graphs.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListInvitationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListInvitationsOutput {
     /// Creates a new builder-style object to manufacture [`ListInvitationsOutput`](crate::operation::list_invitations::ListInvitationsOutput).
     pub fn builder() -> crate::operation::list_invitations::builders::ListInvitationsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListInvitationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInvitationsOutputBuilder {
-    pub(crate) invitations: ::std::option::Option<::std::vec::Vec<crate::types::MemberDetail>>,
+    pub(crate) invitations: ::std::option::Option<::std::vec::Vec::<crate::types::MemberDetail>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListInvitationsOutputBuilder {
     /// <p>The list of behavior graphs for which the member account has open or accepted invitations.</p>
     pub fn invitations(mut self, input: crate::types::MemberDetail) -> Self {
         let mut v = self.invitations.unwrap_or_default();
-        v.push(input);
-        self.invitations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.invitations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of behavior graphs for which the member account has open or accepted invitations.</p>
-    pub fn set_invitations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberDetail>>) -> Self {
-        self.invitations = input;
-        self
+    pub fn set_invitations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MemberDetail>>) -> Self {
+        self.invitations = input; self
     }
     /// <p>The list of behavior graphs for which the member account has open or accepted invitations.</p>
-    pub fn get_invitations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberDetail>> {
+    pub fn get_invitations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MemberDetail>> {
         &self.invitations
     }
     /// <p>If there are more behavior graphs remaining in the results, then this is the pagination token to use to request the next page of behavior graphs.</p>
@@ -69,28 +69,30 @@ impl ListInvitationsOutputBuilder {
     }
     /// <p>If there are more behavior graphs remaining in the results, then this is the pagination token to use to request the next page of behavior graphs.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If there are more behavior graphs remaining in the results, then this is the pagination token to use to request the next page of behavior graphs.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListInvitationsOutput`](crate::operation::list_invitations::ListInvitationsOutput).
     pub fn build(self) -> crate::operation::list_invitations::ListInvitationsOutput {
         crate::operation::list_invitations::ListInvitationsOutput {
-            invitations: self.invitations,
-            next_token: self.next_token,
+            invitations: self.invitations
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

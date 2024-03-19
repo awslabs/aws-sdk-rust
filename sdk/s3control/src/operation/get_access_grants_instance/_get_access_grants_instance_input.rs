@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAccessGrantsInstanceInput {
+pub struct GetAccessGrantsInstanceInput  {
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl GetAccessGrantsInstanceInput {
+impl  GetAccessGrantsInstanceInput  {
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetAccessGrantsInstanceInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`GetAccessGrantsInstanceInput`](crate::operation::get_access_grants_instance::GetAccessGrantsInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_access_grants_instance::GetAccessGrantsInstanceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_access_grants_instance::GetAccessGrantsInstanceInput { account_id: self.account_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_access_grants_instance::GetAccessGrantsInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_access_grants_instance::GetAccessGrantsInstanceInput {
+                account_id: self.account_id
+                ,
+            }
+        )
     }
 }
+

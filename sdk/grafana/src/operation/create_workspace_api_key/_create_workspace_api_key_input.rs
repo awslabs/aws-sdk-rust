@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateWorkspaceApiKeyInput {
+pub struct CreateWorkspaceApiKeyInput  {
     /// <p>Specifies the name of the key. Keynames must be unique to the workspace.</p>
     pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the permission level of the key.</p>
@@ -13,14 +13,14 @@ pub struct CreateWorkspaceApiKeyInput {
     /// <p>The ID of the workspace to create an API key.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
 }
-impl CreateWorkspaceApiKeyInput {
+impl  CreateWorkspaceApiKeyInput  {
     /// <p>Specifies the name of the key. Keynames must be unique to the workspace.</p>
-    pub fn key_name(&self) -> ::std::option::Option<&str> {
+    pub fn key_name(&self) -> ::std::option::Option<& str> {
         self.key_name.as_deref()
     }
     /// <p>Specifies the permission level of the key.</p>
     /// <p>Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code></p>
-    pub fn key_role(&self) -> ::std::option::Option<&str> {
+    pub fn key_role(&self) -> ::std::option::Option<& str> {
         self.key_role.as_deref()
     }
     /// <p>Specifies the time in seconds until the key expires. Keys can be valid for up to 30 days.</p>
@@ -28,7 +28,7 @@ impl CreateWorkspaceApiKeyInput {
         self.seconds_to_live
     }
     /// <p>The ID of the workspace to create an API key.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
 }
@@ -57,8 +57,7 @@ impl CreateWorkspaceApiKeyInputBuilder {
     }
     /// <p>Specifies the name of the key. Keynames must be unique to the workspace.</p>
     pub fn set_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_name = input;
-        self
+        self.key_name = input; self
     }
     /// <p>Specifies the name of the key. Keynames must be unique to the workspace.</p>
     pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +73,7 @@ impl CreateWorkspaceApiKeyInputBuilder {
     /// <p>Specifies the permission level of the key.</p>
     /// <p>Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code></p>
     pub fn set_key_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_role = input;
-        self
+        self.key_role = input; self
     }
     /// <p>Specifies the permission level of the key.</p>
     /// <p>Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code></p>
@@ -90,8 +88,7 @@ impl CreateWorkspaceApiKeyInputBuilder {
     }
     /// <p>Specifies the time in seconds until the key expires. Keys can be valid for up to 30 days.</p>
     pub fn set_seconds_to_live(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.seconds_to_live = input;
-        self
+        self.seconds_to_live = input; self
     }
     /// <p>Specifies the time in seconds until the key expires. Keys can be valid for up to 30 days.</p>
     pub fn get_seconds_to_live(&self) -> &::std::option::Option<i32> {
@@ -105,23 +102,26 @@ impl CreateWorkspaceApiKeyInputBuilder {
     }
     /// <p>The ID of the workspace to create an API key.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The ID of the workspace to create an API key.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.workspace_id
     }
     /// Consumes the builder and constructs a [`CreateWorkspaceApiKeyInput`](crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyInput {
-            key_name: self.key_name,
-            key_role: self.key_role,
-            seconds_to_live: self.seconds_to_live,
-            workspace_id: self.workspace_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyInput {
+                key_name: self.key_name
+                ,
+                key_role: self.key_role
+                ,
+                seconds_to_live: self.seconds_to_live
+                ,
+                workspace_id: self.workspace_id
+                ,
+            }
+        )
     }
 }
+

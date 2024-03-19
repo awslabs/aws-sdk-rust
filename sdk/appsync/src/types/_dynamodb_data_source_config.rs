@@ -3,7 +3,7 @@
 /// <p>Describes an Amazon DynamoDB data source configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DynamodbDataSourceConfig {
+pub struct DynamodbDataSourceConfig  {
     /// <p>The table name.</p>
     pub table_name: ::std::string::String,
     /// <p>The Amazon Web Services Region.</p>
@@ -15,23 +15,21 @@ pub struct DynamodbDataSourceConfig {
     /// <p>Set to TRUE to use Conflict Detection and Resolution with this data source.</p>
     pub versioned: bool,
 }
-impl DynamodbDataSourceConfig {
+impl  DynamodbDataSourceConfig  {
     /// <p>The table name.</p>
-    pub fn table_name(&self) -> &str {
-        use std::ops::Deref;
-        self.table_name.deref()
+    pub fn table_name(&self) -> & str {
+        use std::ops::Deref; self.table_name.deref()
     }
     /// <p>The Amazon Web Services Region.</p>
-    pub fn aws_region(&self) -> &str {
-        use std::ops::Deref;
-        self.aws_region.deref()
+    pub fn aws_region(&self) -> & str {
+        use std::ops::Deref; self.aws_region.deref()
     }
     /// <p>Set to TRUE to use Amazon Cognito credentials with this data source.</p>
     pub fn use_caller_credentials(&self) -> bool {
         self.use_caller_credentials
     }
     /// <p>The <code>DeltaSyncConfig</code> for a versioned data source.</p>
-    pub fn delta_sync_config(&self) -> ::std::option::Option<&crate::types::DeltaSyncConfig> {
+    pub fn delta_sync_config(&self) -> ::std::option::Option<& crate::types::DeltaSyncConfig> {
         self.delta_sync_config.as_ref()
     }
     /// <p>Set to TRUE to use Conflict Detection and Resolution with this data source.</p>
@@ -65,8 +63,7 @@ impl DynamodbDataSourceConfigBuilder {
     }
     /// <p>The table name.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The table name.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +77,7 @@ impl DynamodbDataSourceConfigBuilder {
     }
     /// <p>The Amazon Web Services Region.</p>
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_region = input;
-        self
+        self.aws_region = input; self
     }
     /// <p>The Amazon Web Services Region.</p>
     pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +90,7 @@ impl DynamodbDataSourceConfigBuilder {
     }
     /// <p>Set to TRUE to use Amazon Cognito credentials with this data source.</p>
     pub fn set_use_caller_credentials(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.use_caller_credentials = input;
-        self
+        self.use_caller_credentials = input; self
     }
     /// <p>Set to TRUE to use Amazon Cognito credentials with this data source.</p>
     pub fn get_use_caller_credentials(&self) -> &::std::option::Option<bool> {
@@ -108,8 +103,7 @@ impl DynamodbDataSourceConfigBuilder {
     }
     /// <p>The <code>DeltaSyncConfig</code> for a versioned data source.</p>
     pub fn set_delta_sync_config(mut self, input: ::std::option::Option<crate::types::DeltaSyncConfig>) -> Self {
-        self.delta_sync_config = input;
-        self
+        self.delta_sync_config = input; self
     }
     /// <p>The <code>DeltaSyncConfig</code> for a versioned data source.</p>
     pub fn get_delta_sync_config(&self) -> &::std::option::Option<crate::types::DeltaSyncConfig> {
@@ -122,8 +116,7 @@ impl DynamodbDataSourceConfigBuilder {
     }
     /// <p>Set to TRUE to use Conflict Detection and Resolution with this data source.</p>
     pub fn set_versioned(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.versioned = input;
-        self
+        self.versioned = input; self
     }
     /// <p>Set to TRUE to use Conflict Detection and Resolution with this data source.</p>
     pub fn get_versioned(&self) -> &::std::option::Option<bool> {
@@ -134,22 +127,28 @@ impl DynamodbDataSourceConfigBuilder {
     /// - [`table_name`](crate::types::builders::DynamodbDataSourceConfigBuilder::table_name)
     /// - [`aws_region`](crate::types::builders::DynamodbDataSourceConfigBuilder::aws_region)
     pub fn build(self) -> ::std::result::Result<crate::types::DynamodbDataSourceConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DynamodbDataSourceConfig {
-            table_name: self.table_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "table_name",
-                    "table_name was not specified but it is required when building DynamodbDataSourceConfig",
-                )
-            })?,
-            aws_region: self.aws_region.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "aws_region",
-                    "aws_region was not specified but it is required when building DynamodbDataSourceConfig",
-                )
-            })?,
-            use_caller_credentials: self.use_caller_credentials.unwrap_or_default(),
-            delta_sync_config: self.delta_sync_config,
-            versioned: self.versioned.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::DynamodbDataSourceConfig {
+                table_name: self.table_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("table_name", "table_name was not specified but it is required when building DynamodbDataSourceConfig")
+                    )?
+                ,
+                aws_region: self.aws_region
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("aws_region", "aws_region was not specified but it is required when building DynamodbDataSourceConfig")
+                    )?
+                ,
+                use_caller_credentials: self.use_caller_credentials
+                    .unwrap_or_default()
+                ,
+                delta_sync_config: self.delta_sync_config
+                ,
+                versioned: self.versioned
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

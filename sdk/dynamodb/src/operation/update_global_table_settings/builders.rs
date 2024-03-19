@@ -5,56 +5,52 @@ pub use crate::operation::update_global_table_settings::_update_global_table_set
 
 impl UpdateGlobalTableSettingsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_global_table_settings::UpdateGlobalTableSettingsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_global_table_settings::UpdateGlobalTableSettingsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_global_table_settings();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_global_table_settings::UpdateGlobalTableSettingsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_global_table_settings::UpdateGlobalTableSettingsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_global_table_settings();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateGlobalTableSettings`.
-///
+/// 
 /// <p>Updates settings for a global table.</p><important>
 /// <p>This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version 2017.11.29 (Legacy)</a> of global tables. We recommend using <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21 (Current)</a> when creating new global tables, as it provides greater flexibility, higher efficiency and consumes less write capacity than 2017.11.29 (Legacy). To determine which version you are using, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining the version</a>. To update existing global tables from version 2017.11.29 (Legacy) to version 2019.11.21 (Current), see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html"> Updating global tables</a>.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateGlobalTableSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_global_table_settings::builders::UpdateGlobalTableSettingsInputBuilder,
+                    inner: crate::operation::update_global_table_settings::builders::UpdateGlobalTableSettingsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_global_table_settings::UpdateGlobalTableSettingsOutput,
-        crate::operation::update_global_table_settings::UpdateGlobalTableSettingsError,
-    > for UpdateGlobalTableSettingsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_global_table_settings::UpdateGlobalTableSettingsOutput,
-            crate::operation::update_global_table_settings::UpdateGlobalTableSettingsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_global_table_settings::UpdateGlobalTableSettingsOutput,
+                    crate::operation::update_global_table_settings::UpdateGlobalTableSettingsError,
+                > for UpdateGlobalTableSettingsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_global_table_settings::UpdateGlobalTableSettingsOutput,
+                        crate::operation::update_global_table_settings::UpdateGlobalTableSettingsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateGlobalTableSettingsFluentBuilder {
     /// Creates a new `UpdateGlobalTableSettings`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl UpdateGlobalTableSettingsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_global_table_settings::UpdateGlobalTableSettingsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_global_table_settings::UpdateGlobalTableSettingsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_global_table_settings::UpdateGlobalTableSettings::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_global_table_settings::UpdateGlobalTableSettings::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_global_table_settings::UpdateGlobalTableSettingsOutput,
-        crate::operation::update_global_table_settings::UpdateGlobalTableSettingsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_global_table_settings::UpdateGlobalTableSettingsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_global_table_settings::UpdateGlobalTableSettingsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_global_table_settings::UpdateGlobalTableSettings::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_global_table_settings::UpdateGlobalTableSettings::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_global_table_settings::UpdateGlobalTableSettingsOutput, crate::operation::update_global_table_settings::UpdateGlobalTableSettingsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the global table</p>
     pub fn global_table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_table_name(input.into());
@@ -176,17 +163,12 @@ impl UpdateGlobalTableSettingsFluentBuilder {
         self
     }
     /// <p>Auto scaling settings for managing provisioned write capacity for the global table.</p>
-    pub fn set_global_table_provisioned_write_capacity_auto_scaling_settings_update(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoScalingSettingsUpdate>,
-    ) -> Self {
+    pub fn set_global_table_provisioned_write_capacity_auto_scaling_settings_update(mut self, input: ::std::option::Option<crate::types::AutoScalingSettingsUpdate>) -> Self {
         self.inner = self.inner.set_global_table_provisioned_write_capacity_auto_scaling_settings_update(input);
         self
     }
     /// <p>Auto scaling settings for managing provisioned write capacity for the global table.</p>
-    pub fn get_global_table_provisioned_write_capacity_auto_scaling_settings_update(
-        &self,
-    ) -> &::std::option::Option<crate::types::AutoScalingSettingsUpdate> {
+    pub fn get_global_table_provisioned_write_capacity_auto_scaling_settings_update(&self) -> &::std::option::Option<crate::types::AutoScalingSettingsUpdate> {
         self.inner.get_global_table_provisioned_write_capacity_auto_scaling_settings_update()
     }
     /// Appends an item to `GlobalTableGlobalSecondaryIndexSettingsUpdate`.
@@ -199,17 +181,12 @@ impl UpdateGlobalTableSettingsFluentBuilder {
         self
     }
     /// <p>Represents the settings of a global secondary index for a global table that will be modified.</p>
-    pub fn set_global_table_global_secondary_index_settings_update(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GlobalTableGlobalSecondaryIndexSettingsUpdate>>,
-    ) -> Self {
+    pub fn set_global_table_global_secondary_index_settings_update(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GlobalTableGlobalSecondaryIndexSettingsUpdate>>) -> Self {
         self.inner = self.inner.set_global_table_global_secondary_index_settings_update(input);
         self
     }
     /// <p>Represents the settings of a global secondary index for a global table that will be modified.</p>
-    pub fn get_global_table_global_secondary_index_settings_update(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalTableGlobalSecondaryIndexSettingsUpdate>> {
+    pub fn get_global_table_global_secondary_index_settings_update(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GlobalTableGlobalSecondaryIndexSettingsUpdate>> {
         self.inner.get_global_table_global_secondary_index_settings_update()
     }
     /// Appends an item to `ReplicaSettingsUpdate`.
@@ -222,12 +199,13 @@ impl UpdateGlobalTableSettingsFluentBuilder {
         self
     }
     /// <p>Represents the settings for a global table in a Region that will be modified.</p>
-    pub fn set_replica_settings_update(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaSettingsUpdate>>) -> Self {
+    pub fn set_replica_settings_update(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicaSettingsUpdate>>) -> Self {
         self.inner = self.inner.set_replica_settings_update(input);
         self
     }
     /// <p>Represents the settings for a global table in a Region that will be modified.</p>
-    pub fn get_replica_settings_update(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaSettingsUpdate>> {
+    pub fn get_replica_settings_update(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReplicaSettingsUpdate>> {
         self.inner.get_replica_settings_update()
     }
 }
+

@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeGroups`](crate::operation::describe_groups::builders::DescribeGroupsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_groups::builders::DescribeGroupsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`authentication_token(impl Into<String>)`](crate::operation::describe_groups::builders::DescribeGroupsFluentBuilder::authentication_token) / [`set_authentication_token(Option<String>)`](crate::operation::describe_groups::builders::DescribeGroupsFluentBuilder::set_authentication_token):<br>required: **false**<br><p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p><br>
     ///   - [`search_query(impl Into<String>)`](crate::operation::describe_groups::builders::DescribeGroupsFluentBuilder::search_query) / [`set_search_query(Option<String>)`](crate::operation::describe_groups::builders::DescribeGroupsFluentBuilder::set_search_query):<br>required: **true**<br><p>A query to describe groups by group name.</p><br>
     ///   - [`organization_id(impl Into<String>)`](crate::operation::describe_groups::builders::DescribeGroupsFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::describe_groups::builders::DescribeGroupsFluentBuilder::set_organization_id):<br>required: **false**<br><p>The ID of the organization.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::describe_groups::builders::DescribeGroupsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_groups::builders::DescribeGroupsFluentBuilder::set_marker):<br>required: **false**<br><p>The marker for the next set of results. (You received this marker from a previous call.)</p><br>
     ///   - [`limit(i32)`](crate::operation::describe_groups::builders::DescribeGroupsFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::describe_groups::builders::DescribeGroupsFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of items to return with this call.</p><br>
-    /// - On success, responds with [`DescribeGroupsOutput`](crate::operation::describe_groups::DescribeGroupsOutput) with field(s):
+                            /// - On success, responds with [`DescribeGroupsOutput`](crate::operation::describe_groups::DescribeGroupsOutput) with field(s):
     ///   - [`groups(Option<Vec::<GroupMetadata>>)`](crate::operation::describe_groups::DescribeGroupsOutput::groups): <p>The list of groups.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_groups::DescribeGroupsOutput::marker): <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    /// - On failure, responds with [`SdkError<DescribeGroupsError>`](crate::operation::describe_groups::DescribeGroupsError)
+                            /// - On failure, responds with [`SdkError<DescribeGroupsError>`](crate::operation::describe_groups::DescribeGroupsError)
     pub fn describe_groups(&self) -> crate::operation::describe_groups::builders::DescribeGroupsFluentBuilder {
-        crate::operation::describe_groups::builders::DescribeGroupsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_groups::builders::DescribeGroupsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

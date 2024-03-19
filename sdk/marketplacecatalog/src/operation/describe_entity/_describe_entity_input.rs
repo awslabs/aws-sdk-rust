@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEntityInput {
+pub struct DescribeEntityInput  {
     /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code></p>
     pub catalog: ::std::option::Option<::std::string::String>,
     /// <p>Required. The unique ID of the entity to describe.</p>
     pub entity_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeEntityInput {
+impl  DescribeEntityInput  {
     /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code></p>
-    pub fn catalog(&self) -> ::std::option::Option<&str> {
+    pub fn catalog(&self) -> ::std::option::Option<& str> {
         self.catalog.as_deref()
     }
     /// <p>Required. The unique ID of the entity to describe.</p>
-    pub fn entity_id(&self) -> ::std::option::Option<&str> {
+    pub fn entity_id(&self) -> ::std::option::Option<& str> {
         self.entity_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeEntityInputBuilder {
     }
     /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code></p>
     pub fn set_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog = input;
-        self
+        self.catalog = input; self
     }
     /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code></p>
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DescribeEntityInputBuilder {
     }
     /// <p>Required. The unique ID of the entity to describe.</p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>Required. The unique ID of the entity to describe.</p>
     pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.entity_id
     }
     /// Consumes the builder and constructs a [`DescribeEntityInput`](crate::operation::describe_entity::DescribeEntityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_entity::DescribeEntityInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_entity::DescribeEntityInput {
-            catalog: self.catalog,
-            entity_id: self.entity_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_entity::DescribeEntityInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_entity::DescribeEntityInput {
+                catalog: self.catalog
+                ,
+                entity_id: self.entity_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateBudgetActionOutput {
+pub struct CreateBudgetActionOutput  {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub account_id: ::std::string::String,
     /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
@@ -11,28 +11,25 @@ pub struct CreateBudgetActionOutput {
     pub action_id: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CreateBudgetActionOutput {
+impl  CreateBudgetActionOutput  {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    pub fn account_id(&self) -> &str {
-        use std::ops::Deref;
-        self.account_id.deref()
+    pub fn account_id(&self) -> & str {
+        use std::ops::Deref; self.account_id.deref()
     }
     /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
-    pub fn budget_name(&self) -> &str {
-        use std::ops::Deref;
-        self.budget_name.deref()
+    pub fn budget_name(&self) -> & str {
+        use std::ops::Deref; self.budget_name.deref()
     }
     /// <p>A system-generated universally unique identifier (UUID) for the action.</p>
-    pub fn action_id(&self) -> &str {
-        use std::ops::Deref;
-        self.action_id.deref()
+    pub fn action_id(&self) -> & str {
+        use std::ops::Deref; self.action_id.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateBudgetActionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateBudgetActionOutput {
     /// Creates a new builder-style object to manufacture [`CreateBudgetActionOutput`](crate::operation::create_budget_action::CreateBudgetActionOutput).
     pub fn builder() -> crate::operation::create_budget_action::builders::CreateBudgetActionOutputBuilder {
@@ -58,8 +55,7 @@ impl CreateBudgetActionOutputBuilder {
     }
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +69,7 @@ impl CreateBudgetActionOutputBuilder {
     }
     /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.budget_name = input;
-        self
+        self.budget_name = input; self
     }
     /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
     pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,51 +83,47 @@ impl CreateBudgetActionOutputBuilder {
     }
     /// <p>A system-generated universally unique identifier (UUID) for the action.</p>
     pub fn set_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_id = input;
-        self
+        self.action_id = input; self
     }
     /// <p>A system-generated universally unique identifier (UUID) for the action.</p>
     pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.action_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateBudgetActionOutput`](crate::operation::create_budget_action::CreateBudgetActionOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`account_id`](crate::operation::create_budget_action::builders::CreateBudgetActionOutputBuilder::account_id)
     /// - [`budget_name`](crate::operation::create_budget_action::builders::CreateBudgetActionOutputBuilder::budget_name)
     /// - [`action_id`](crate::operation::create_budget_action::builders::CreateBudgetActionOutputBuilder::action_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_budget_action::CreateBudgetActionOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_budget_action::CreateBudgetActionOutput {
-            account_id: self.account_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "account_id",
-                    "account_id was not specified but it is required when building CreateBudgetActionOutput",
-                )
-            })?,
-            budget_name: self.budget_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "budget_name",
-                    "budget_name was not specified but it is required when building CreateBudgetActionOutput",
-                )
-            })?,
-            action_id: self.action_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "action_id",
-                    "action_id was not specified but it is required when building CreateBudgetActionOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_budget_action::CreateBudgetActionOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_budget_action::CreateBudgetActionOutput {
+                account_id: self.account_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("account_id", "account_id was not specified but it is required when building CreateBudgetActionOutput")
+                    )?
+                ,
+                budget_name: self.budget_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("budget_name", "budget_name was not specified but it is required when building CreateBudgetActionOutput")
+                    )?
+                ,
+                action_id: self.action_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("action_id", "action_id was not specified but it is required when building CreateBudgetActionOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

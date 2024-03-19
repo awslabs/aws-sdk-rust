@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartQueryInput {
+pub struct StartQueryInput  {
     /// <p>The SQL code of your query.</p>
     pub query_statement: ::std::option::Option<::std::string::String>,
     /// <p>The URI for the S3 bucket where CloudTrail delivers the query results.</p>
@@ -10,26 +10,27 @@ pub struct StartQueryInput {
     /// <p>The alias that identifies a query template.</p>
     pub query_alias: ::std::option::Option<::std::string::String>,
     /// <p>The query parameters for the specified <code>QueryAlias</code>.</p>
-    pub query_parameters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub query_parameters: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl StartQueryInput {
+impl  StartQueryInput  {
     /// <p>The SQL code of your query.</p>
-    pub fn query_statement(&self) -> ::std::option::Option<&str> {
+    pub fn query_statement(&self) -> ::std::option::Option<& str> {
         self.query_statement.as_deref()
     }
     /// <p>The URI for the S3 bucket where CloudTrail delivers the query results.</p>
-    pub fn delivery_s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn delivery_s3_uri(&self) -> ::std::option::Option<& str> {
         self.delivery_s3_uri.as_deref()
     }
     /// <p>The alias that identifies a query template.</p>
-    pub fn query_alias(&self) -> ::std::option::Option<&str> {
+    pub fn query_alias(&self) -> ::std::option::Option<& str> {
         self.query_alias.as_deref()
     }
     /// <p>The query parameters for the specified <code>QueryAlias</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.query_parameters.is_none()`.
-    pub fn query_parameters(&self) -> &[::std::string::String] {
-        self.query_parameters.as_deref().unwrap_or_default()
+    pub fn query_parameters(&self) -> & [::std::string::String] {
+        self.query_parameters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl StartQueryInput {
@@ -46,7 +47,7 @@ pub struct StartQueryInputBuilder {
     pub(crate) query_statement: ::std::option::Option<::std::string::String>,
     pub(crate) delivery_s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) query_alias: ::std::option::Option<::std::string::String>,
-    pub(crate) query_parameters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) query_parameters: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl StartQueryInputBuilder {
     /// <p>The SQL code of your query.</p>
@@ -56,8 +57,7 @@ impl StartQueryInputBuilder {
     }
     /// <p>The SQL code of your query.</p>
     pub fn set_query_statement(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_statement = input;
-        self
+        self.query_statement = input; self
     }
     /// <p>The SQL code of your query.</p>
     pub fn get_query_statement(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +70,7 @@ impl StartQueryInputBuilder {
     }
     /// <p>The URI for the S3 bucket where CloudTrail delivers the query results.</p>
     pub fn set_delivery_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delivery_s3_uri = input;
-        self
+        self.delivery_s3_uri = input; self
     }
     /// <p>The URI for the S3 bucket where CloudTrail delivers the query results.</p>
     pub fn get_delivery_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl StartQueryInputBuilder {
     }
     /// <p>The alias that identifies a query template.</p>
     pub fn set_query_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_alias = input;
-        self
+        self.query_alias = input; self
     }
     /// <p>The alias that identifies a query template.</p>
     pub fn get_query_alias(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,26 +96,32 @@ impl StartQueryInputBuilder {
     /// <p>The query parameters for the specified <code>QueryAlias</code>.</p>
     pub fn query_parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.query_parameters.unwrap_or_default();
-        v.push(input.into());
-        self.query_parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.query_parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The query parameters for the specified <code>QueryAlias</code>.</p>
-    pub fn set_query_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.query_parameters = input;
-        self
+    pub fn set_query_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.query_parameters = input; self
     }
     /// <p>The query parameters for the specified <code>QueryAlias</code>.</p>
-    pub fn get_query_parameters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_query_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.query_parameters
     }
     /// Consumes the builder and constructs a [`StartQueryInput`](crate::operation::start_query::StartQueryInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::start_query::StartQueryInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_query::StartQueryInput {
-            query_statement: self.query_statement,
-            delivery_s3_uri: self.delivery_s3_uri,
-            query_alias: self.query_alias,
-            query_parameters: self.query_parameters,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::start_query::StartQueryInput {
+                query_statement: self.query_statement
+                ,
+                delivery_s3_uri: self.delivery_s3_uri
+                ,
+                query_alias: self.query_alias
+                ,
+                query_parameters: self.query_parameters
+                ,
+            }
+        )
     }
 }
+

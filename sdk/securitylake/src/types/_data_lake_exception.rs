@@ -3,7 +3,7 @@
 /// <p>The details for an Amazon Security Lake exception.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataLakeException {
+pub struct DataLakeException  {
     /// <p>The Amazon Web Services Regions where the exception occurred.</p>
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The underlying exception of a Security Lake exception.</p>
@@ -13,21 +13,21 @@ pub struct DataLakeException {
     /// <p>This error can occur if you configure the wrong timestamp format, or if the subset of entries used for validation had errors or missing values.</p>
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl DataLakeException {
+impl  DataLakeException  {
     /// <p>The Amazon Web Services Regions where the exception occurred.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The underlying exception of a Security Lake exception.</p>
-    pub fn exception(&self) -> ::std::option::Option<&str> {
+    pub fn exception(&self) -> ::std::option::Option<& str> {
         self.exception.as_deref()
     }
     /// <p>List of all remediation steps for a Security Lake exception.</p>
-    pub fn remediation(&self) -> ::std::option::Option<&str> {
+    pub fn remediation(&self) -> ::std::option::Option<& str> {
         self.remediation.as_deref()
     }
     /// <p>This error can occur if you configure the wrong timestamp format, or if the subset of entries used for validation had errors or missing values.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl DataLakeExceptionBuilder {
     }
     /// <p>The Amazon Web Services Regions where the exception occurred.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Amazon Web Services Regions where the exception occurred.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl DataLakeExceptionBuilder {
     }
     /// <p>The underlying exception of a Security Lake exception.</p>
     pub fn set_exception(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.exception = input;
-        self
+        self.exception = input; self
     }
     /// <p>The underlying exception of a Security Lake exception.</p>
     pub fn get_exception(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl DataLakeExceptionBuilder {
     }
     /// <p>List of all remediation steps for a Security Lake exception.</p>
     pub fn set_remediation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.remediation = input;
-        self
+        self.remediation = input; self
     }
     /// <p>List of all remediation steps for a Security Lake exception.</p>
     pub fn get_remediation(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl DataLakeExceptionBuilder {
     }
     /// <p>This error can occur if you configure the wrong timestamp format, or if the subset of entries used for validation had errors or missing values.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p>This error can occur if you configure the wrong timestamp format, or if the subset of entries used for validation had errors or missing values.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -107,10 +103,15 @@ impl DataLakeExceptionBuilder {
     /// Consumes the builder and constructs a [`DataLakeException`](crate::types::DataLakeException).
     pub fn build(self) -> crate::types::DataLakeException {
         crate::types::DataLakeException {
-            region: self.region,
-            exception: self.exception,
-            remediation: self.remediation,
-            timestamp: self.timestamp,
+            region: self.region
+            ,
+            exception: self.exception
+            ,
+            remediation: self.remediation
+            ,
+            timestamp: self.timestamp
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateIntegrationOutput {
+pub struct CreateIntegrationOutput  {
     /// <p>Specifies whether an integration is managed by API Gateway. If you created an API using using quick create, the resulting integration is managed by API Gateway. You can update a managed integration, but you can't delete it.</p>
     pub api_gateway_managed: ::std::option::Option<bool>,
     /// <p>The ID of the VPC link for a private integration. Supported only for HTTP APIs.</p>
@@ -55,13 +55,11 @@ pub struct CreateIntegrationOutput {
     /// </replaceable> must be a valid and unique method request parameter name.</p>
     /// <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p>
     /// <p>For HTTP API integrations, without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to backend integrations. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;. The action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
-    pub request_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub request_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value. Supported only for WebSocket APIs.</p>
-    pub request_templates: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub request_templates: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend integration before returning the response to clients. Specify a key-value map from a selection key to response parameters. The selection key must be a valid HTTP status code within the range of 200-599. Response parameters are a key-value map. The key must match pattern &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The action can be append, overwrite or remove. The value can be a static value, or map to response data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
-    pub response_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    >,
+    pub response_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, ::std::string::String>>>,
     /// <p>The template selection expression for the integration. Supported only for WebSocket APIs.</p>
     pub template_selection_expression: ::std::option::Option<::std::string::String>,
     /// <p>Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.</p>
@@ -70,48 +68,48 @@ pub struct CreateIntegrationOutput {
     pub tls_config: ::std::option::Option<crate::types::TlsConfig>,
     _request_id: Option<String>,
 }
-impl CreateIntegrationOutput {
+impl  CreateIntegrationOutput  {
     /// <p>Specifies whether an integration is managed by API Gateway. If you created an API using using quick create, the resulting integration is managed by API Gateway. You can update a managed integration, but you can't delete it.</p>
     pub fn api_gateway_managed(&self) -> ::std::option::Option<bool> {
         self.api_gateway_managed
     }
     /// <p>The ID of the VPC link for a private integration. Supported only for HTTP APIs.</p>
-    pub fn connection_id(&self) -> ::std::option::Option<&str> {
+    pub fn connection_id(&self) -> ::std::option::Option<& str> {
         self.connection_id.as_deref()
     }
     /// <p>The type of the network connection to the integration endpoint. Specify INTERNET for connections through the public routable internet or VPC_LINK for private connections between API Gateway and resources in a VPC. The default value is INTERNET.</p>
-    pub fn connection_type(&self) -> ::std::option::Option<&crate::types::ConnectionType> {
+    pub fn connection_type(&self) -> ::std::option::Option<& crate::types::ConnectionType> {
         self.connection_type.as_ref()
     }
     /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
     /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
     /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
-    pub fn content_handling_strategy(&self) -> ::std::option::Option<&crate::types::ContentHandlingStrategy> {
+    pub fn content_handling_strategy(&self) -> ::std::option::Option<& crate::types::ContentHandlingStrategy> {
         self.content_handling_strategy.as_ref()
     }
     /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null.</p>
-    pub fn credentials_arn(&self) -> ::std::option::Option<&str> {
+    pub fn credentials_arn(&self) -> ::std::option::Option<& str> {
         self.credentials_arn.as_deref()
     }
     /// <p>Represents the description of an integration.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Represents the identifier of an integration.</p>
-    pub fn integration_id(&self) -> ::std::option::Option<&str> {
+    pub fn integration_id(&self) -> ::std::option::Option<& str> {
         self.integration_id.as_deref()
     }
     /// <p>Specifies the integration's HTTP method type.</p>
-    pub fn integration_method(&self) -> ::std::option::Option<&str> {
+    pub fn integration_method(&self) -> ::std::option::Option<& str> {
         self.integration_method.as_deref()
     }
     /// <p>The integration response selection expression for the integration. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-integration-response-selection-expressions">Integration Response Selection Expressions</a>.</p>
-    pub fn integration_response_selection_expression(&self) -> ::std::option::Option<&str> {
+    pub fn integration_response_selection_expression(&self) -> ::std::option::Option<& str> {
         self.integration_response_selection_expression.as_deref()
     }
     /// <p>Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service action to invoke. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html">Integration subtype reference</a>.</p>
-    pub fn integration_subtype(&self) -> ::std::option::Option<&str> {
+    pub fn integration_subtype(&self) -> ::std::option::Option<& str> {
         self.integration_subtype.as_deref()
     }
     /// <p>The integration type of an integration. One of the following:</p>
@@ -120,24 +118,24 @@ impl CreateIntegrationOutput {
     /// <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p>
     /// <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration.</p>
     /// <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
-    pub fn integration_type(&self) -> ::std::option::Option<&crate::types::IntegrationType> {
+    pub fn integration_type(&self) -> ::std::option::Option<& crate::types::IntegrationType> {
         self.integration_type.as_ref()
     }
     /// <p>For a Lambda integration, specify the URI of a Lambda function.</p>
     /// <p>For an HTTP integration, specify a fully-qualified URL.</p>
     /// <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
-    pub fn integration_uri(&self) -> ::std::option::Option<&str> {
+    pub fn integration_uri(&self) -> ::std::option::Option<& str> {
         self.integration_uri.as_deref()
     }
     /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p>
     /// <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p>
     /// <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p>
     /// <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
-    pub fn passthrough_behavior(&self) -> ::std::option::Option<&crate::types::PassthroughBehavior> {
+    pub fn passthrough_behavior(&self) -> ::std::option::Option<& crate::types::PassthroughBehavior> {
         self.passthrough_behavior.as_ref()
     }
     /// <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs.</p>
-    pub fn payload_format_version(&self) -> ::std::option::Option<&str> {
+    pub fn payload_format_version(&self) -> ::std::option::Option<& str> {
         self.payload_format_version.as_deref()
     }
     /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>
@@ -151,23 +149,19 @@ impl CreateIntegrationOutput {
     /// </replaceable> must be a valid and unique method request parameter name.</p>
     /// <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p>
     /// <p>For HTTP API integrations, without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to backend integrations. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;. The action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
-    pub fn request_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn request_parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.request_parameters.as_ref()
     }
     /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value. Supported only for WebSocket APIs.</p>
-    pub fn request_templates(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn request_templates(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.request_templates.as_ref()
     }
     /// <p>Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend integration before returning the response to clients. Specify a key-value map from a selection key to response parameters. The selection key must be a valid HTTP status code within the range of 200-599. Response parameters are a key-value map. The key must match pattern &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The action can be append, overwrite or remove. The value can be a static value, or map to response data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
-    pub fn response_parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    > {
+    pub fn response_parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, ::std::string::String>>> {
         self.response_parameters.as_ref()
     }
     /// <p>The template selection expression for the integration. Supported only for WebSocket APIs.</p>
-    pub fn template_selection_expression(&self) -> ::std::option::Option<&str> {
+    pub fn template_selection_expression(&self) -> ::std::option::Option<& str> {
         self.template_selection_expression.as_deref()
     }
     /// <p>Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.</p>
@@ -175,15 +169,15 @@ impl CreateIntegrationOutput {
         self.timeout_in_millis
     }
     /// <p>The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.</p>
-    pub fn tls_config(&self) -> ::std::option::Option<&crate::types::TlsConfig> {
+    pub fn tls_config(&self) -> ::std::option::Option<& crate::types::TlsConfig> {
         self.tls_config.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateIntegrationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateIntegrationOutput {
     /// Creates a new builder-style object to manufacture [`CreateIntegrationOutput`](crate::operation::create_integration::CreateIntegrationOutput).
     pub fn builder() -> crate::operation::create_integration::builders::CreateIntegrationOutputBuilder {
@@ -209,11 +203,9 @@ pub struct CreateIntegrationOutputBuilder {
     pub(crate) integration_uri: ::std::option::Option<::std::string::String>,
     pub(crate) passthrough_behavior: ::std::option::Option<crate::types::PassthroughBehavior>,
     pub(crate) payload_format_version: ::std::option::Option<::std::string::String>,
-    pub(crate) request_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) request_templates: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) response_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    >,
+    pub(crate) request_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) request_templates: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) response_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, ::std::string::String>>>,
     pub(crate) template_selection_expression: ::std::option::Option<::std::string::String>,
     pub(crate) timeout_in_millis: ::std::option::Option<i32>,
     pub(crate) tls_config: ::std::option::Option<crate::types::TlsConfig>,
@@ -227,8 +219,7 @@ impl CreateIntegrationOutputBuilder {
     }
     /// <p>Specifies whether an integration is managed by API Gateway. If you created an API using using quick create, the resulting integration is managed by API Gateway. You can update a managed integration, but you can't delete it.</p>
     pub fn set_api_gateway_managed(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.api_gateway_managed = input;
-        self
+        self.api_gateway_managed = input; self
     }
     /// <p>Specifies whether an integration is managed by API Gateway. If you created an API using using quick create, the resulting integration is managed by API Gateway. You can update a managed integration, but you can't delete it.</p>
     pub fn get_api_gateway_managed(&self) -> &::std::option::Option<bool> {
@@ -241,8 +232,7 @@ impl CreateIntegrationOutputBuilder {
     }
     /// <p>The ID of the VPC link for a private integration. Supported only for HTTP APIs.</p>
     pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_id = input;
-        self
+        self.connection_id = input; self
     }
     /// <p>The ID of the VPC link for a private integration. Supported only for HTTP APIs.</p>
     pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -255,8 +245,7 @@ impl CreateIntegrationOutputBuilder {
     }
     /// <p>The type of the network connection to the integration endpoint. Specify INTERNET for connections through the public routable internet or VPC_LINK for private connections between API Gateway and resources in a VPC. The default value is INTERNET.</p>
     pub fn set_connection_type(mut self, input: ::std::option::Option<crate::types::ConnectionType>) -> Self {
-        self.connection_type = input;
-        self
+        self.connection_type = input; self
     }
     /// <p>The type of the network connection to the integration endpoint. Specify INTERNET for connections through the public routable internet or VPC_LINK for private connections between API Gateway and resources in a VPC. The default value is INTERNET.</p>
     pub fn get_connection_type(&self) -> &::std::option::Option<crate::types::ConnectionType> {
@@ -275,8 +264,7 @@ impl CreateIntegrationOutputBuilder {
     /// <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p>
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
     pub fn set_content_handling_strategy(mut self, input: ::std::option::Option<crate::types::ContentHandlingStrategy>) -> Self {
-        self.content_handling_strategy = input;
-        self
+        self.content_handling_strategy = input; self
     }
     /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
     /// <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p>
@@ -292,8 +280,7 @@ impl CreateIntegrationOutputBuilder {
     }
     /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null.</p>
     pub fn set_credentials_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.credentials_arn = input;
-        self
+        self.credentials_arn = input; self
     }
     /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null.</p>
     pub fn get_credentials_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -306,8 +293,7 @@ impl CreateIntegrationOutputBuilder {
     }
     /// <p>Represents the description of an integration.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Represents the description of an integration.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -320,8 +306,7 @@ impl CreateIntegrationOutputBuilder {
     }
     /// <p>Represents the identifier of an integration.</p>
     pub fn set_integration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.integration_id = input;
-        self
+        self.integration_id = input; self
     }
     /// <p>Represents the identifier of an integration.</p>
     pub fn get_integration_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -334,8 +319,7 @@ impl CreateIntegrationOutputBuilder {
     }
     /// <p>Specifies the integration's HTTP method type.</p>
     pub fn set_integration_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.integration_method = input;
-        self
+        self.integration_method = input; self
     }
     /// <p>Specifies the integration's HTTP method type.</p>
     pub fn get_integration_method(&self) -> &::std::option::Option<::std::string::String> {
@@ -348,8 +332,7 @@ impl CreateIntegrationOutputBuilder {
     }
     /// <p>The integration response selection expression for the integration. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-integration-response-selection-expressions">Integration Response Selection Expressions</a>.</p>
     pub fn set_integration_response_selection_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.integration_response_selection_expression = input;
-        self
+        self.integration_response_selection_expression = input; self
     }
     /// <p>The integration response selection expression for the integration. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-integration-response-selection-expressions">Integration Response Selection Expressions</a>.</p>
     pub fn get_integration_response_selection_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -362,8 +345,7 @@ impl CreateIntegrationOutputBuilder {
     }
     /// <p>Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service action to invoke. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html">Integration subtype reference</a>.</p>
     pub fn set_integration_subtype(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.integration_subtype = input;
-        self
+        self.integration_subtype = input; self
     }
     /// <p>Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service action to invoke. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html">Integration subtype reference</a>.</p>
     pub fn get_integration_subtype(&self) -> &::std::option::Option<::std::string::String> {
@@ -386,8 +368,7 @@ impl CreateIntegrationOutputBuilder {
     /// <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration.</p>
     /// <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
     pub fn set_integration_type(mut self, input: ::std::option::Option<crate::types::IntegrationType>) -> Self {
-        self.integration_type = input;
-        self
+        self.integration_type = input; self
     }
     /// <p>The integration type of an integration. One of the following:</p>
     /// <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p>
@@ -409,8 +390,7 @@ impl CreateIntegrationOutputBuilder {
     /// <p>For an HTTP integration, specify a fully-qualified URL.</p>
     /// <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
     pub fn set_integration_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.integration_uri = input;
-        self
+        self.integration_uri = input; self
     }
     /// <p>For a Lambda integration, specify the URI of a Lambda function.</p>
     /// <p>For an HTTP integration, specify a fully-qualified URL.</p>
@@ -431,8 +411,7 @@ impl CreateIntegrationOutputBuilder {
     /// <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p>
     /// <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
     pub fn set_passthrough_behavior(mut self, input: ::std::option::Option<crate::types::PassthroughBehavior>) -> Self {
-        self.passthrough_behavior = input;
-        self
+        self.passthrough_behavior = input; self
     }
     /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p>
     /// <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p>
@@ -448,8 +427,7 @@ impl CreateIntegrationOutputBuilder {
     }
     /// <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs.</p>
     pub fn set_payload_format_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.payload_format_version = input;
-        self
+        self.payload_format_version = input; self
     }
     /// <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs.</p>
     pub fn get_payload_format_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -470,15 +448,11 @@ impl CreateIntegrationOutputBuilder {
     /// </replaceable> must be a valid and unique method request parameter name.</p>
     /// <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p>
     /// <p>For HTTP API integrations, without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to backend integrations. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;. The action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
-    pub fn request_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.request_parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.request_parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.request_parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>
     /// {location}
@@ -491,12 +465,8 @@ impl CreateIntegrationOutputBuilder {
     /// </replaceable> must be a valid and unique method request parameter name.</p>
     /// <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p>
     /// <p>For HTTP API integrations, without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to backend integrations. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;. The action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
-    pub fn set_request_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.request_parameters = input;
-        self
+    pub fn set_request_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.request_parameters = input; self
     }
     /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>
     /// {location}
@@ -509,7 +479,7 @@ impl CreateIntegrationOutputBuilder {
     /// </replaceable> must be a valid and unique method request parameter name.</p>
     /// <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p>
     /// <p>For HTTP API integrations, without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to backend integrations. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;. The action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
-    pub fn get_request_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_request_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.request_parameters
     }
     /// Adds a key-value pair to `request_templates`.
@@ -517,26 +487,18 @@ impl CreateIntegrationOutputBuilder {
     /// To override the contents of this collection use [`set_request_templates`](Self::set_request_templates).
     ///
     /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value. Supported only for WebSocket APIs.</p>
-    pub fn request_templates(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_templates(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.request_templates.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.request_templates = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.request_templates = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value. Supported only for WebSocket APIs.</p>
-    pub fn set_request_templates(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.request_templates = input;
-        self
+    pub fn set_request_templates(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.request_templates = input; self
     }
     /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value. Supported only for WebSocket APIs.</p>
-    pub fn get_request_templates(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_request_templates(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.request_templates
     }
     /// Adds a key-value pair to `response_parameters`.
@@ -544,32 +506,18 @@ impl CreateIntegrationOutputBuilder {
     /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
     ///
     /// <p>Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend integration before returning the response to clients. Specify a key-value map from a selection key to response parameters. The selection key must be a valid HTTP status code within the range of 200-599. Response parameters are a key-value map. The key must match pattern &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The action can be append, overwrite or remove. The value can be a static value, or map to response data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
-    pub fn response_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    ) -> Self {
+    pub fn response_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::collections::HashMap::<::std::string::String, ::std::string::String>) -> Self {
         let mut hash_map = self.response_parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.response_parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.response_parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend integration before returning the response to clients. Specify a key-value map from a selection key to response parameters. The selection key must be a valid HTTP status code within the range of 200-599. Response parameters are a key-value map. The key must match pattern &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The action can be append, overwrite or remove. The value can be a static value, or map to response data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
-    pub fn set_response_parameters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-        >,
-    ) -> Self {
-        self.response_parameters = input;
-        self
+    pub fn set_response_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, ::std::string::String>>>) -> Self {
+        self.response_parameters = input; self
     }
     /// <p>Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend integration before returning the response to clients. Specify a key-value map from a selection key to response parameters. The selection key must be a valid HTTP status code within the range of 200-599. Response parameters are a key-value map. The key must match pattern &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The action can be append, overwrite or remove. The value can be a static value, or map to response data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
-    pub fn get_response_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    > {
+    pub fn get_response_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, ::std::string::String>>> {
         &self.response_parameters
     }
     /// <p>The template selection expression for the integration. Supported only for WebSocket APIs.</p>
@@ -579,8 +527,7 @@ impl CreateIntegrationOutputBuilder {
     }
     /// <p>The template selection expression for the integration. Supported only for WebSocket APIs.</p>
     pub fn set_template_selection_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_selection_expression = input;
-        self
+        self.template_selection_expression = input; self
     }
     /// <p>The template selection expression for the integration. Supported only for WebSocket APIs.</p>
     pub fn get_template_selection_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -593,8 +540,7 @@ impl CreateIntegrationOutputBuilder {
     }
     /// <p>Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.</p>
     pub fn set_timeout_in_millis(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.timeout_in_millis = input;
-        self
+        self.timeout_in_millis = input; self
     }
     /// <p>Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.</p>
     pub fn get_timeout_in_millis(&self) -> &::std::option::Option<i32> {
@@ -607,46 +553,66 @@ impl CreateIntegrationOutputBuilder {
     }
     /// <p>The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.</p>
     pub fn set_tls_config(mut self, input: ::std::option::Option<crate::types::TlsConfig>) -> Self {
-        self.tls_config = input;
-        self
+        self.tls_config = input; self
     }
     /// <p>The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.</p>
     pub fn get_tls_config(&self) -> &::std::option::Option<crate::types::TlsConfig> {
         &self.tls_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateIntegrationOutput`](crate::operation::create_integration::CreateIntegrationOutput).
     pub fn build(self) -> crate::operation::create_integration::CreateIntegrationOutput {
         crate::operation::create_integration::CreateIntegrationOutput {
-            api_gateway_managed: self.api_gateway_managed,
-            connection_id: self.connection_id,
-            connection_type: self.connection_type,
-            content_handling_strategy: self.content_handling_strategy,
-            credentials_arn: self.credentials_arn,
-            description: self.description,
-            integration_id: self.integration_id,
-            integration_method: self.integration_method,
-            integration_response_selection_expression: self.integration_response_selection_expression,
-            integration_subtype: self.integration_subtype,
-            integration_type: self.integration_type,
-            integration_uri: self.integration_uri,
-            passthrough_behavior: self.passthrough_behavior,
-            payload_format_version: self.payload_format_version,
-            request_parameters: self.request_parameters,
-            request_templates: self.request_templates,
-            response_parameters: self.response_parameters,
-            template_selection_expression: self.template_selection_expression,
-            timeout_in_millis: self.timeout_in_millis,
-            tls_config: self.tls_config,
+            api_gateway_managed: self.api_gateway_managed
+            ,
+            connection_id: self.connection_id
+            ,
+            connection_type: self.connection_type
+            ,
+            content_handling_strategy: self.content_handling_strategy
+            ,
+            credentials_arn: self.credentials_arn
+            ,
+            description: self.description
+            ,
+            integration_id: self.integration_id
+            ,
+            integration_method: self.integration_method
+            ,
+            integration_response_selection_expression: self.integration_response_selection_expression
+            ,
+            integration_subtype: self.integration_subtype
+            ,
+            integration_type: self.integration_type
+            ,
+            integration_uri: self.integration_uri
+            ,
+            passthrough_behavior: self.passthrough_behavior
+            ,
+            payload_format_version: self.payload_format_version
+            ,
+            request_parameters: self.request_parameters
+            ,
+            request_templates: self.request_templates
+            ,
+            response_parameters: self.response_parameters
+            ,
+            template_selection_expression: self.template_selection_expression
+            ,
+            timeout_in_millis: self.timeout_in_millis
+            ,
+            tls_config: self.tls_config
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

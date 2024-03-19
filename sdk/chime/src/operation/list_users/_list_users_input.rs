@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ListUsersInput {
+pub struct ListUsersInput  {
     /// <p>The Amazon Chime account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Optional. The user email address used to filter results. Maximum 1.</p>
@@ -14,17 +14,17 @@ pub struct ListUsersInput {
     /// <p>The token to use to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListUsersInput {
+impl  ListUsersInput  {
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>Optional. The user email address used to filter results. Maximum 1.</p>
-    pub fn user_email(&self) -> ::std::option::Option<&str> {
+    pub fn user_email(&self) -> ::std::option::Option<& str> {
         self.user_email.as_deref()
     }
     /// <p>The user type.</p>
-    pub fn user_type(&self) -> ::std::option::Option<&crate::types::UserType> {
+    pub fn user_type(&self) -> ::std::option::Option<& crate::types::UserType> {
         self.user_type.as_ref()
     }
     /// <p>The maximum number of results to return in a single call. Defaults to 100.</p>
@@ -32,11 +32,11 @@ impl ListUsersInput {
         self.max_results
     }
     /// <p>The token to use to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for ListUsersInput {
+impl  ::std::fmt::Debug for ListUsersInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ListUsersInput");
         formatter.field("account_id", &self.account_id);
@@ -73,8 +73,7 @@ impl ListUsersInputBuilder {
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +86,7 @@ impl ListUsersInputBuilder {
     }
     /// <p>Optional. The user email address used to filter results. Maximum 1.</p>
     pub fn set_user_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_email = input;
-        self
+        self.user_email = input; self
     }
     /// <p>Optional. The user email address used to filter results. Maximum 1.</p>
     pub fn get_user_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +99,7 @@ impl ListUsersInputBuilder {
     }
     /// <p>The user type.</p>
     pub fn set_user_type(mut self, input: ::std::option::Option<crate::types::UserType>) -> Self {
-        self.user_type = input;
-        self
+        self.user_type = input; self
     }
     /// <p>The user type.</p>
     pub fn get_user_type(&self) -> &::std::option::Option<crate::types::UserType> {
@@ -115,8 +112,7 @@ impl ListUsersInputBuilder {
     }
     /// <p>The maximum number of results to return in a single call. Defaults to 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in a single call. Defaults to 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -129,8 +125,7 @@ impl ListUsersInputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,13 +133,20 @@ impl ListUsersInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListUsersInput`](crate::operation::list_users::ListUsersInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_users::ListUsersInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_users::ListUsersInput {
-            account_id: self.account_id,
-            user_email: self.user_email,
-            user_type: self.user_type,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_users::ListUsersInput {
+                account_id: self.account_id
+                ,
+                user_email: self.user_email
+                ,
+                user_type: self.user_type
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ListUsersInputBuilder {
@@ -158,3 +160,4 @@ impl ::std::fmt::Debug for ListUsersInputBuilder {
         formatter.finish()
     }
 }
+

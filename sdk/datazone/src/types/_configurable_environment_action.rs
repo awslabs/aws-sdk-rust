@@ -3,28 +3,26 @@
 /// <p>The configurable action of a Amazon DataZone environment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfigurableEnvironmentAction {
+pub struct ConfigurableEnvironmentAction  {
     /// <p>The type of a configurable action in a Amazon DataZone environment.</p>
     pub r#type: ::std::string::String,
     /// <p>The authentication type of a configurable action of a Amazon DataZone environment.</p>
     pub auth: ::std::option::Option<crate::types::ConfigurableActionTypeAuthorization>,
     /// <p>The parameters of a configurable action in a Amazon DataZone environment.</p>
-    pub parameters: ::std::vec::Vec<crate::types::ConfigurableActionParameter>,
+    pub parameters: ::std::vec::Vec::<crate::types::ConfigurableActionParameter>,
 }
-impl ConfigurableEnvironmentAction {
+impl  ConfigurableEnvironmentAction  {
     /// <p>The type of a configurable action in a Amazon DataZone environment.</p>
-    pub fn r#type(&self) -> &str {
-        use std::ops::Deref;
-        self.r#type.deref()
+    pub fn r#type(&self) -> & str {
+        use std::ops::Deref; self.r#type.deref()
     }
     /// <p>The authentication type of a configurable action of a Amazon DataZone environment.</p>
-    pub fn auth(&self) -> ::std::option::Option<&crate::types::ConfigurableActionTypeAuthorization> {
+    pub fn auth(&self) -> ::std::option::Option<& crate::types::ConfigurableActionTypeAuthorization> {
         self.auth.as_ref()
     }
     /// <p>The parameters of a configurable action in a Amazon DataZone environment.</p>
-    pub fn parameters(&self) -> &[crate::types::ConfigurableActionParameter] {
-        use std::ops::Deref;
-        self.parameters.deref()
+    pub fn parameters(&self) -> & [crate::types::ConfigurableActionParameter] {
+        use std::ops::Deref; self.parameters.deref()
     }
 }
 impl ConfigurableEnvironmentAction {
@@ -40,7 +38,7 @@ impl ConfigurableEnvironmentAction {
 pub struct ConfigurableEnvironmentActionBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) auth: ::std::option::Option<crate::types::ConfigurableActionTypeAuthorization>,
-    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurableActionParameter>>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec::<crate::types::ConfigurableActionParameter>>,
 }
 impl ConfigurableEnvironmentActionBuilder {
     /// <p>The type of a configurable action in a Amazon DataZone environment.</p>
@@ -51,8 +49,7 @@ impl ConfigurableEnvironmentActionBuilder {
     }
     /// <p>The type of a configurable action in a Amazon DataZone environment.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of a configurable action in a Amazon DataZone environment.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +62,7 @@ impl ConfigurableEnvironmentActionBuilder {
     }
     /// <p>The authentication type of a configurable action of a Amazon DataZone environment.</p>
     pub fn set_auth(mut self, input: ::std::option::Option<crate::types::ConfigurableActionTypeAuthorization>) -> Self {
-        self.auth = input;
-        self
+        self.auth = input; self
     }
     /// <p>The authentication type of a configurable action of a Amazon DataZone environment.</p>
     pub fn get_auth(&self) -> &::std::option::Option<crate::types::ConfigurableActionTypeAuthorization> {
@@ -79,17 +75,16 @@ impl ConfigurableEnvironmentActionBuilder {
     /// <p>The parameters of a configurable action in a Amazon DataZone environment.</p>
     pub fn parameters(mut self, input: crate::types::ConfigurableActionParameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The parameters of a configurable action in a Amazon DataZone environment.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurableActionParameter>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ConfigurableActionParameter>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>The parameters of a configurable action in a Amazon DataZone environment.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurableActionParameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ConfigurableActionParameter>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`ConfigurableEnvironmentAction`](crate::types::ConfigurableEnvironmentAction).
@@ -97,20 +92,22 @@ impl ConfigurableEnvironmentActionBuilder {
     /// - [`r#type`](crate::types::builders::ConfigurableEnvironmentActionBuilder::r#type)
     /// - [`parameters`](crate::types::builders::ConfigurableEnvironmentActionBuilder::parameters)
     pub fn build(self) -> ::std::result::Result<crate::types::ConfigurableEnvironmentAction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ConfigurableEnvironmentAction {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building ConfigurableEnvironmentAction",
-                )
-            })?,
-            auth: self.auth,
-            parameters: self.parameters.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "parameters",
-                    "parameters was not specified but it is required when building ConfigurableEnvironmentAction",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ConfigurableEnvironmentAction {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building ConfigurableEnvironmentAction")
+                    )?
+                ,
+                auth: self.auth
+                ,
+                parameters: self.parameters
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("parameters", "parameters was not specified but it is required when building ConfigurableEnvironmentAction")
+                    )?
+                ,
+            }
+        )
     }
 }
+

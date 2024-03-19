@@ -3,35 +3,37 @@
 /// <p>Details about an EC2 VPC.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2VpcDetails {
+pub struct AwsEc2VpcDetails  {
     /// <p>Information about the IPv4 CIDR blocks associated with the VPC.</p>
-    pub cidr_block_association_set: ::std::option::Option<::std::vec::Vec<crate::types::CidrBlockAssociation>>,
+    pub cidr_block_association_set: ::std::option::Option<::std::vec::Vec::<crate::types::CidrBlockAssociation>>,
     /// <p>Information about the IPv6 CIDR blocks associated with the VPC.</p>
-    pub ipv6_cidr_block_association_set: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrBlockAssociation>>,
+    pub ipv6_cidr_block_association_set: ::std::option::Option<::std::vec::Vec::<crate::types::Ipv6CidrBlockAssociation>>,
     /// <p>The identifier of the set of Dynamic Host Configuration Protocol (DHCP) options that are associated with the VPC. If the default options are associated with the VPC, then this is default.</p>
     pub dhcp_options_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the VPC. Valid values are <code>available</code> or <code>pending</code>.</p>
     pub state: ::std::option::Option<::std::string::String>,
 }
-impl AwsEc2VpcDetails {
+impl  AwsEc2VpcDetails  {
     /// <p>Information about the IPv4 CIDR blocks associated with the VPC.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cidr_block_association_set.is_none()`.
-    pub fn cidr_block_association_set(&self) -> &[crate::types::CidrBlockAssociation] {
-        self.cidr_block_association_set.as_deref().unwrap_or_default()
+    pub fn cidr_block_association_set(&self) -> & [crate::types::CidrBlockAssociation] {
+        self.cidr_block_association_set.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Information about the IPv6 CIDR blocks associated with the VPC.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_cidr_block_association_set.is_none()`.
-    pub fn ipv6_cidr_block_association_set(&self) -> &[crate::types::Ipv6CidrBlockAssociation] {
-        self.ipv6_cidr_block_association_set.as_deref().unwrap_or_default()
+    pub fn ipv6_cidr_block_association_set(&self) -> & [crate::types::Ipv6CidrBlockAssociation] {
+        self.ipv6_cidr_block_association_set.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The identifier of the set of Dynamic Host Configuration Protocol (DHCP) options that are associated with the VPC. If the default options are associated with the VPC, then this is default.</p>
-    pub fn dhcp_options_id(&self) -> ::std::option::Option<&str> {
+    pub fn dhcp_options_id(&self) -> ::std::option::Option<& str> {
         self.dhcp_options_id.as_deref()
     }
     /// <p>The current state of the VPC. Valid values are <code>available</code> or <code>pending</code>.</p>
-    pub fn state(&self) -> ::std::option::Option<&str> {
+    pub fn state(&self) -> ::std::option::Option<& str> {
         self.state.as_deref()
     }
 }
@@ -46,8 +48,8 @@ impl AwsEc2VpcDetails {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEc2VpcDetailsBuilder {
-    pub(crate) cidr_block_association_set: ::std::option::Option<::std::vec::Vec<crate::types::CidrBlockAssociation>>,
-    pub(crate) ipv6_cidr_block_association_set: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrBlockAssociation>>,
+    pub(crate) cidr_block_association_set: ::std::option::Option<::std::vec::Vec::<crate::types::CidrBlockAssociation>>,
+    pub(crate) ipv6_cidr_block_association_set: ::std::option::Option<::std::vec::Vec::<crate::types::Ipv6CidrBlockAssociation>>,
     pub(crate) dhcp_options_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<::std::string::String>,
 }
@@ -59,17 +61,16 @@ impl AwsEc2VpcDetailsBuilder {
     /// <p>Information about the IPv4 CIDR blocks associated with the VPC.</p>
     pub fn cidr_block_association_set(mut self, input: crate::types::CidrBlockAssociation) -> Self {
         let mut v = self.cidr_block_association_set.unwrap_or_default();
-        v.push(input);
-        self.cidr_block_association_set = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cidr_block_association_set = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the IPv4 CIDR blocks associated with the VPC.</p>
-    pub fn set_cidr_block_association_set(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CidrBlockAssociation>>) -> Self {
-        self.cidr_block_association_set = input;
-        self
+    pub fn set_cidr_block_association_set(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CidrBlockAssociation>>) -> Self {
+        self.cidr_block_association_set = input; self
     }
     /// <p>Information about the IPv4 CIDR blocks associated with the VPC.</p>
-    pub fn get_cidr_block_association_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CidrBlockAssociation>> {
+    pub fn get_cidr_block_association_set(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CidrBlockAssociation>> {
         &self.cidr_block_association_set
     }
     /// Appends an item to `ipv6_cidr_block_association_set`.
@@ -79,20 +80,16 @@ impl AwsEc2VpcDetailsBuilder {
     /// <p>Information about the IPv6 CIDR blocks associated with the VPC.</p>
     pub fn ipv6_cidr_block_association_set(mut self, input: crate::types::Ipv6CidrBlockAssociation) -> Self {
         let mut v = self.ipv6_cidr_block_association_set.unwrap_or_default();
-        v.push(input);
-        self.ipv6_cidr_block_association_set = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ipv6_cidr_block_association_set = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the IPv6 CIDR blocks associated with the VPC.</p>
-    pub fn set_ipv6_cidr_block_association_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrBlockAssociation>>,
-    ) -> Self {
-        self.ipv6_cidr_block_association_set = input;
-        self
+    pub fn set_ipv6_cidr_block_association_set(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Ipv6CidrBlockAssociation>>) -> Self {
+        self.ipv6_cidr_block_association_set = input; self
     }
     /// <p>Information about the IPv6 CIDR blocks associated with the VPC.</p>
-    pub fn get_ipv6_cidr_block_association_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrBlockAssociation>> {
+    pub fn get_ipv6_cidr_block_association_set(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Ipv6CidrBlockAssociation>> {
         &self.ipv6_cidr_block_association_set
     }
     /// <p>The identifier of the set of Dynamic Host Configuration Protocol (DHCP) options that are associated with the VPC. If the default options are associated with the VPC, then this is default.</p>
@@ -102,8 +99,7 @@ impl AwsEc2VpcDetailsBuilder {
     }
     /// <p>The identifier of the set of Dynamic Host Configuration Protocol (DHCP) options that are associated with the VPC. If the default options are associated with the VPC, then this is default.</p>
     pub fn set_dhcp_options_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dhcp_options_id = input;
-        self
+        self.dhcp_options_id = input; self
     }
     /// <p>The identifier of the set of Dynamic Host Configuration Protocol (DHCP) options that are associated with the VPC. If the default options are associated with the VPC, then this is default.</p>
     pub fn get_dhcp_options_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +112,7 @@ impl AwsEc2VpcDetailsBuilder {
     }
     /// <p>The current state of the VPC. Valid values are <code>available</code> or <code>pending</code>.</p>
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The current state of the VPC. Valid values are <code>available</code> or <code>pending</code>.</p>
     pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,10 +121,15 @@ impl AwsEc2VpcDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEc2VpcDetails`](crate::types::AwsEc2VpcDetails).
     pub fn build(self) -> crate::types::AwsEc2VpcDetails {
         crate::types::AwsEc2VpcDetails {
-            cidr_block_association_set: self.cidr_block_association_set,
-            ipv6_cidr_block_association_set: self.ipv6_cidr_block_association_set,
-            dhcp_options_id: self.dhcp_options_id,
-            state: self.state,
+            cidr_block_association_set: self.cidr_block_association_set
+            ,
+            ipv6_cidr_block_association_set: self.ipv6_cidr_block_association_set
+            ,
+            dhcp_options_id: self.dhcp_options_id
+            ,
+            state: self.state
+            ,
         }
     }
 }
+

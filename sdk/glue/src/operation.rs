@@ -639,3 +639,4 @@ pub mod update_user_defined_function;
 
 /// Types for the `UpdateWorkflow` operation.
 pub mod update_workflow;
+

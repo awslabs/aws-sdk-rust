@@ -3,7 +3,7 @@
 /// <p>A rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Rule {
+pub struct Rule  {
     /// <p>The detector for which the rule is associated.</p>
     pub detector_id: ::std::string::String,
     /// <p>The rule ID.</p>
@@ -11,21 +11,18 @@ pub struct Rule {
     /// <p>The rule version.</p>
     pub rule_version: ::std::string::String,
 }
-impl Rule {
+impl  Rule  {
     /// <p>The detector for which the rule is associated.</p>
-    pub fn detector_id(&self) -> &str {
-        use std::ops::Deref;
-        self.detector_id.deref()
+    pub fn detector_id(&self) -> & str {
+        use std::ops::Deref; self.detector_id.deref()
     }
     /// <p>The rule ID.</p>
-    pub fn rule_id(&self) -> &str {
-        use std::ops::Deref;
-        self.rule_id.deref()
+    pub fn rule_id(&self) -> & str {
+        use std::ops::Deref; self.rule_id.deref()
     }
     /// <p>The rule version.</p>
-    pub fn rule_version(&self) -> &str {
-        use std::ops::Deref;
-        self.rule_version.deref()
+    pub fn rule_version(&self) -> & str {
+        use std::ops::Deref; self.rule_version.deref()
     }
 }
 impl Rule {
@@ -52,8 +49,7 @@ impl RuleBuilder {
     }
     /// <p>The detector for which the rule is associated.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
     }
     /// <p>The detector for which the rule is associated.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +63,7 @@ impl RuleBuilder {
     }
     /// <p>The rule ID.</p>
     pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_id = input;
-        self
+        self.rule_id = input; self
     }
     /// <p>The rule ID.</p>
     pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +77,7 @@ impl RuleBuilder {
     }
     /// <p>The rule version.</p>
     pub fn set_rule_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_version = input;
-        self
+        self.rule_version = input; self
     }
     /// <p>The rule version.</p>
     pub fn get_rule_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,25 +89,25 @@ impl RuleBuilder {
     /// - [`rule_id`](crate::types::builders::RuleBuilder::rule_id)
     /// - [`rule_version`](crate::types::builders::RuleBuilder::rule_version)
     pub fn build(self) -> ::std::result::Result<crate::types::Rule, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Rule {
-            detector_id: self.detector_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "detector_id",
-                    "detector_id was not specified but it is required when building Rule",
-                )
-            })?,
-            rule_id: self.rule_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rule_id",
-                    "rule_id was not specified but it is required when building Rule",
-                )
-            })?,
-            rule_version: self.rule_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rule_version",
-                    "rule_version was not specified but it is required when building Rule",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Rule {
+                detector_id: self.detector_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("detector_id", "detector_id was not specified but it is required when building Rule")
+                    )?
+                ,
+                rule_id: self.rule_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rule_id", "rule_id was not specified but it is required when building Rule")
+                    )?
+                ,
+                rule_version: self.rule_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rule_version", "rule_version was not specified but it is required when building Rule")
+                    )?
+                ,
+            }
+        )
     }
 }
+

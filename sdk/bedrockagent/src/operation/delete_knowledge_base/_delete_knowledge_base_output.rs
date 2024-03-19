@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteKnowledgeBaseOutput {
+pub struct DeleteKnowledgeBaseOutput  {
     /// Identifier for a resource.
     pub knowledge_base_id: ::std::string::String,
     /// The status of a knowledge base.
     pub status: crate::types::KnowledgeBaseStatus,
     _request_id: Option<String>,
 }
-impl DeleteKnowledgeBaseOutput {
+impl  DeleteKnowledgeBaseOutput  {
     /// Identifier for a resource.
-    pub fn knowledge_base_id(&self) -> &str {
-        use std::ops::Deref;
-        self.knowledge_base_id.deref()
+    pub fn knowledge_base_id(&self) -> & str {
+        use std::ops::Deref; self.knowledge_base_id.deref()
     }
     /// The status of a knowledge base.
-    pub fn status(&self) -> &crate::types::KnowledgeBaseStatus {
+    pub fn status(&self) -> & crate::types::KnowledgeBaseStatus {
         &self.status
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteKnowledgeBaseOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteKnowledgeBaseOutput {
     /// Creates a new builder-style object to manufacture [`DeleteKnowledgeBaseOutput`](crate::operation::delete_knowledge_base::DeleteKnowledgeBaseOutput).
     pub fn builder() -> crate::operation::delete_knowledge_base::builders::DeleteKnowledgeBaseOutputBuilder {
@@ -49,8 +48,7 @@ impl DeleteKnowledgeBaseOutputBuilder {
     }
     /// Identifier for a resource.
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.knowledge_base_id = input;
-        self
+        self.knowledge_base_id = input; self
     }
     /// Identifier for a resource.
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,44 +62,41 @@ impl DeleteKnowledgeBaseOutputBuilder {
     }
     /// The status of a knowledge base.
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// The status of a knowledge base.
     pub fn get_status(&self) -> &::std::option::Option<crate::types::KnowledgeBaseStatus> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteKnowledgeBaseOutput`](crate::operation::delete_knowledge_base::DeleteKnowledgeBaseOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`knowledge_base_id`](crate::operation::delete_knowledge_base::builders::DeleteKnowledgeBaseOutputBuilder::knowledge_base_id)
     /// - [`status`](crate::operation::delete_knowledge_base::builders::DeleteKnowledgeBaseOutputBuilder::status)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_knowledge_base::DeleteKnowledgeBaseOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_knowledge_base::DeleteKnowledgeBaseOutput {
-            knowledge_base_id: self.knowledge_base_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "knowledge_base_id",
-                    "knowledge_base_id was not specified but it is required when building DeleteKnowledgeBaseOutput",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building DeleteKnowledgeBaseOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_knowledge_base::DeleteKnowledgeBaseOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_knowledge_base::DeleteKnowledgeBaseOutput {
+                knowledge_base_id: self.knowledge_base_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("knowledge_base_id", "knowledge_base_id was not specified but it is required when building DeleteKnowledgeBaseOutput")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building DeleteKnowledgeBaseOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

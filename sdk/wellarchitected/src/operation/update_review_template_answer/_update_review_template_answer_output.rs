@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateReviewTemplateAnswerOutput {
+pub struct UpdateReviewTemplateAnswerOutput  {
     /// <p>The review template ARN.</p>
     pub template_arn: ::std::option::Option<::std::string::String>,
     /// <p>The alias of the lens.</p>
@@ -14,28 +14,28 @@ pub struct UpdateReviewTemplateAnswerOutput {
     pub answer: ::std::option::Option<crate::types::ReviewTemplateAnswer>,
     _request_id: Option<String>,
 }
-impl UpdateReviewTemplateAnswerOutput {
+impl  UpdateReviewTemplateAnswerOutput  {
     /// <p>The review template ARN.</p>
-    pub fn template_arn(&self) -> ::std::option::Option<&str> {
+    pub fn template_arn(&self) -> ::std::option::Option<& str> {
         self.template_arn.as_deref()
     }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn lens_alias(&self) -> ::std::option::Option<&str> {
+    pub fn lens_alias(&self) -> ::std::option::Option<& str> {
         self.lens_alias.as_deref()
     }
     /// <p>An answer of the question.</p>
-    pub fn answer(&self) -> ::std::option::Option<&crate::types::ReviewTemplateAnswer> {
+    pub fn answer(&self) -> ::std::option::Option<& crate::types::ReviewTemplateAnswer> {
         self.answer.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateReviewTemplateAnswerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateReviewTemplateAnswerOutput {
     /// Creates a new builder-style object to manufacture [`UpdateReviewTemplateAnswerOutput`](crate::operation::update_review_template_answer::UpdateReviewTemplateAnswerOutput).
     pub fn builder() -> crate::operation::update_review_template_answer::builders::UpdateReviewTemplateAnswerOutputBuilder {
@@ -60,8 +60,7 @@ impl UpdateReviewTemplateAnswerOutputBuilder {
     }
     /// <p>The review template ARN.</p>
     pub fn set_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_arn = input;
-        self
+        self.template_arn = input; self
     }
     /// <p>The review template ARN.</p>
     pub fn get_template_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +79,7 @@ impl UpdateReviewTemplateAnswerOutputBuilder {
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn set_lens_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lens_alias = input;
-        self
+        self.lens_alias = input; self
     }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
@@ -97,29 +95,32 @@ impl UpdateReviewTemplateAnswerOutputBuilder {
     }
     /// <p>An answer of the question.</p>
     pub fn set_answer(mut self, input: ::std::option::Option<crate::types::ReviewTemplateAnswer>) -> Self {
-        self.answer = input;
-        self
+        self.answer = input; self
     }
     /// <p>An answer of the question.</p>
     pub fn get_answer(&self) -> &::std::option::Option<crate::types::ReviewTemplateAnswer> {
         &self.answer
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateReviewTemplateAnswerOutput`](crate::operation::update_review_template_answer::UpdateReviewTemplateAnswerOutput).
     pub fn build(self) -> crate::operation::update_review_template_answer::UpdateReviewTemplateAnswerOutput {
         crate::operation::update_review_template_answer::UpdateReviewTemplateAnswerOutput {
-            template_arn: self.template_arn,
-            lens_alias: self.lens_alias,
-            answer: self.answer,
+            template_arn: self.template_arn
+            ,
+            lens_alias: self.lens_alias
+            ,
+            answer: self.answer
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

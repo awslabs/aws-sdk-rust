@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSchemaMappingInput {
+pub struct GetSchemaMappingInput  {
     /// <p>The name of the schema to be retrieved.</p>
     pub schema_name: ::std::option::Option<::std::string::String>,
 }
-impl GetSchemaMappingInput {
+impl  GetSchemaMappingInput  {
     /// <p>The name of the schema to be retrieved.</p>
-    pub fn schema_name(&self) -> ::std::option::Option<&str> {
+    pub fn schema_name(&self) -> ::std::option::Option<& str> {
         self.schema_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetSchemaMappingInputBuilder {
     }
     /// <p>The name of the schema to be retrieved.</p>
     pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_name = input;
-        self
+        self.schema_name = input; self
     }
     /// <p>The name of the schema to be retrieved.</p>
     pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.schema_name
     }
     /// Consumes the builder and constructs a [`GetSchemaMappingInput`](crate::operation::get_schema_mapping::GetSchemaMappingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_schema_mapping::GetSchemaMappingInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_schema_mapping::GetSchemaMappingInput {
-            schema_name: self.schema_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_schema_mapping::GetSchemaMappingInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_schema_mapping::GetSchemaMappingInput {
+                schema_name: self.schema_name
+                ,
+            }
+        )
     }
 }
+

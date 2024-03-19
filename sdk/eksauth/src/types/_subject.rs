@@ -3,22 +3,20 @@
 /// <p>An object containing the name of the Kubernetes service account inside the cluster to associate the IAM credentials with.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Subject {
+pub struct Subject  {
     /// <p>The name of the Kubernetes namespace inside the cluster to create the association in. The service account and the pods that use the service account must be in this namespace.</p>
     pub namespace: ::std::string::String,
     /// <p>The name of the Kubernetes service account inside the cluster to associate the IAM credentials with.</p>
     pub service_account: ::std::string::String,
 }
-impl Subject {
+impl  Subject  {
     /// <p>The name of the Kubernetes namespace inside the cluster to create the association in. The service account and the pods that use the service account must be in this namespace.</p>
-    pub fn namespace(&self) -> &str {
-        use std::ops::Deref;
-        self.namespace.deref()
+    pub fn namespace(&self) -> & str {
+        use std::ops::Deref; self.namespace.deref()
     }
     /// <p>The name of the Kubernetes service account inside the cluster to associate the IAM credentials with.</p>
-    pub fn service_account(&self) -> &str {
-        use std::ops::Deref;
-        self.service_account.deref()
+    pub fn service_account(&self) -> & str {
+        use std::ops::Deref; self.service_account.deref()
     }
 }
 impl Subject {
@@ -44,8 +42,7 @@ impl SubjectBuilder {
     }
     /// <p>The name of the Kubernetes namespace inside the cluster to create the association in. The service account and the pods that use the service account must be in this namespace.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The name of the Kubernetes namespace inside the cluster to create the association in. The service account and the pods that use the service account must be in this namespace.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl SubjectBuilder {
     }
     /// <p>The name of the Kubernetes service account inside the cluster to associate the IAM credentials with.</p>
     pub fn set_service_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_account = input;
-        self
+        self.service_account = input; self
     }
     /// <p>The name of the Kubernetes service account inside the cluster to associate the IAM credentials with.</p>
     pub fn get_service_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl SubjectBuilder {
     /// - [`namespace`](crate::types::builders::SubjectBuilder::namespace)
     /// - [`service_account`](crate::types::builders::SubjectBuilder::service_account)
     pub fn build(self) -> ::std::result::Result<crate::types::Subject, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Subject {
-            namespace: self.namespace.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "namespace",
-                    "namespace was not specified but it is required when building Subject",
-                )
-            })?,
-            service_account: self.service_account.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "service_account",
-                    "service_account was not specified but it is required when building Subject",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Subject {
+                namespace: self.namespace
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("namespace", "namespace was not specified but it is required when building Subject")
+                    )?
+                ,
+                service_account: self.service_account
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("service_account", "service_account was not specified but it is required when building Subject")
+                    )?
+                ,
+            }
+        )
     }
 }
+

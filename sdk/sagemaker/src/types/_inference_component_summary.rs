@@ -3,7 +3,7 @@
 /// <p>A summary of the properties of an inference component.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InferenceComponentSummary {
+pub struct InferenceComponentSummary  {
     /// <p>The time when the inference component was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the inference component.</p>
@@ -21,37 +21,37 @@ pub struct InferenceComponentSummary {
     /// <p>The time when the inference component was last updated.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl InferenceComponentSummary {
+impl  InferenceComponentSummary  {
     /// <p>The time when the inference component was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the inference component.</p>
-    pub fn inference_component_arn(&self) -> ::std::option::Option<&str> {
+    pub fn inference_component_arn(&self) -> ::std::option::Option<& str> {
         self.inference_component_arn.as_deref()
     }
     /// <p>The name of the inference component.</p>
-    pub fn inference_component_name(&self) -> ::std::option::Option<&str> {
+    pub fn inference_component_name(&self) -> ::std::option::Option<& str> {
         self.inference_component_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint that hosts the inference component.</p>
-    pub fn endpoint_arn(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_arn(&self) -> ::std::option::Option<& str> {
         self.endpoint_arn.as_deref()
     }
     /// <p>The name of the endpoint that hosts the inference component.</p>
-    pub fn endpoint_name(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_name(&self) -> ::std::option::Option<& str> {
         self.endpoint_name.as_deref()
     }
     /// <p>The name of the production variant that hosts the inference component.</p>
-    pub fn variant_name(&self) -> ::std::option::Option<&str> {
+    pub fn variant_name(&self) -> ::std::option::Option<& str> {
         self.variant_name.as_deref()
     }
     /// <p>The status of the inference component.</p>
-    pub fn inference_component_status(&self) -> ::std::option::Option<&crate::types::InferenceComponentStatus> {
+    pub fn inference_component_status(&self) -> ::std::option::Option<& crate::types::InferenceComponentStatus> {
         self.inference_component_status.as_ref()
     }
     /// <p>The time when the inference component was last updated.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -84,8 +84,7 @@ impl InferenceComponentSummaryBuilder {
     }
     /// <p>The time when the inference component was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time when the inference component was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -99,8 +98,7 @@ impl InferenceComponentSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the inference component.</p>
     pub fn set_inference_component_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inference_component_arn = input;
-        self
+        self.inference_component_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the inference component.</p>
     pub fn get_inference_component_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +112,7 @@ impl InferenceComponentSummaryBuilder {
     }
     /// <p>The name of the inference component.</p>
     pub fn set_inference_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inference_component_name = input;
-        self
+        self.inference_component_name = input; self
     }
     /// <p>The name of the inference component.</p>
     pub fn get_inference_component_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +126,7 @@ impl InferenceComponentSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint that hosts the inference component.</p>
     pub fn set_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_arn = input;
-        self
+        self.endpoint_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint that hosts the inference component.</p>
     pub fn get_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,8 +140,7 @@ impl InferenceComponentSummaryBuilder {
     }
     /// <p>The name of the endpoint that hosts the inference component.</p>
     pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_name = input;
-        self
+        self.endpoint_name = input; self
     }
     /// <p>The name of the endpoint that hosts the inference component.</p>
     pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +154,7 @@ impl InferenceComponentSummaryBuilder {
     }
     /// <p>The name of the production variant that hosts the inference component.</p>
     pub fn set_variant_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.variant_name = input;
-        self
+        self.variant_name = input; self
     }
     /// <p>The name of the production variant that hosts the inference component.</p>
     pub fn get_variant_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,8 +167,7 @@ impl InferenceComponentSummaryBuilder {
     }
     /// <p>The status of the inference component.</p>
     pub fn set_inference_component_status(mut self, input: ::std::option::Option<crate::types::InferenceComponentStatus>) -> Self {
-        self.inference_component_status = input;
-        self
+        self.inference_component_status = input; self
     }
     /// <p>The status of the inference component.</p>
     pub fn get_inference_component_status(&self) -> &::std::option::Option<crate::types::InferenceComponentStatus> {
@@ -188,8 +181,7 @@ impl InferenceComponentSummaryBuilder {
     }
     /// <p>The time when the inference component was last updated.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The time when the inference component was last updated.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -198,14 +190,23 @@ impl InferenceComponentSummaryBuilder {
     /// Consumes the builder and constructs a [`InferenceComponentSummary`](crate::types::InferenceComponentSummary).
     pub fn build(self) -> crate::types::InferenceComponentSummary {
         crate::types::InferenceComponentSummary {
-            creation_time: self.creation_time,
-            inference_component_arn: self.inference_component_arn,
-            inference_component_name: self.inference_component_name,
-            endpoint_arn: self.endpoint_arn,
-            endpoint_name: self.endpoint_name,
-            variant_name: self.variant_name,
-            inference_component_status: self.inference_component_status,
-            last_modified_time: self.last_modified_time,
+            creation_time: self.creation_time
+            ,
+            inference_component_arn: self.inference_component_arn
+            ,
+            inference_component_name: self.inference_component_name
+            ,
+            endpoint_arn: self.endpoint_arn
+            ,
+            endpoint_name: self.endpoint_name
+            ,
+            variant_name: self.variant_name
+            ,
+            inference_component_status: self.inference_component_status
+            ,
+            last_modified_time: self.last_modified_time
+            ,
         }
     }
 }
+

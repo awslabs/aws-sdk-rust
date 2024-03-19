@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAssetContractInput {
+pub struct GetAssetContractInput  {
     /// <p>Contains the blockchain address and network information about the contract.</p>
     pub contract_identifier: ::std::option::Option<crate::types::ContractIdentifier>,
 }
-impl GetAssetContractInput {
+impl  GetAssetContractInput  {
     /// <p>Contains the blockchain address and network information about the contract.</p>
-    pub fn contract_identifier(&self) -> ::std::option::Option<&crate::types::ContractIdentifier> {
+    pub fn contract_identifier(&self) -> ::std::option::Option<& crate::types::ContractIdentifier> {
         self.contract_identifier.as_ref()
     }
 }
@@ -34,19 +34,20 @@ impl GetAssetContractInputBuilder {
     }
     /// <p>Contains the blockchain address and network information about the contract.</p>
     pub fn set_contract_identifier(mut self, input: ::std::option::Option<crate::types::ContractIdentifier>) -> Self {
-        self.contract_identifier = input;
-        self
+        self.contract_identifier = input; self
     }
     /// <p>Contains the blockchain address and network information about the contract.</p>
     pub fn get_contract_identifier(&self) -> &::std::option::Option<crate::types::ContractIdentifier> {
         &self.contract_identifier
     }
     /// Consumes the builder and constructs a [`GetAssetContractInput`](crate::operation::get_asset_contract::GetAssetContractInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_asset_contract::GetAssetContractInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_asset_contract::GetAssetContractInput {
-            contract_identifier: self.contract_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_asset_contract::GetAssetContractInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_asset_contract::GetAssetContractInput {
+                contract_identifier: self.contract_identifier
+                ,
+            }
+        )
     }
 }
+

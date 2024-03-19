@@ -3,7 +3,7 @@
 /// <p>Input to the GetId action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetIdInput {
+pub struct GetIdInput  {
     /// <p>A standard AWS account ID (9+ digits).</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>An identity pool ID in the format REGION:GUID.</p>
@@ -26,15 +26,15 @@ pub struct GetIdInput {
     /// <li>
     /// <p>Digits: <code>www.digits.com</code></p></li>
     /// </ul>
-    pub logins: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub logins: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl GetIdInput {
+impl  GetIdInput  {
     /// <p>A standard AWS account ID (9+ digits).</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> ::std::option::Option<& str> {
         self.identity_pool_id.as_deref()
     }
     /// <p>A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p>
@@ -55,7 +55,7 @@ impl GetIdInput {
     /// <li>
     /// <p>Digits: <code>www.digits.com</code></p></li>
     /// </ul>
-    pub fn logins(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn logins(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.logins.as_ref()
     }
 }
@@ -72,7 +72,7 @@ impl GetIdInput {
 pub struct GetIdInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
-    pub(crate) logins: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) logins: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl GetIdInputBuilder {
     /// <p>A standard AWS account ID (9+ digits).</p>
@@ -82,8 +82,7 @@ impl GetIdInputBuilder {
     }
     /// <p>A standard AWS account ID (9+ digits).</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>A standard AWS account ID (9+ digits).</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl GetIdInputBuilder {
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_pool_id = input;
-        self
+        self.identity_pool_id = input; self
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,9 +126,9 @@ impl GetIdInputBuilder {
     /// </ul>
     pub fn logins(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.logins.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.logins = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.logins = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p>
     /// <ul>
@@ -150,9 +148,8 @@ impl GetIdInputBuilder {
     /// <li>
     /// <p>Digits: <code>www.digits.com</code></p></li>
     /// </ul>
-    pub fn set_logins(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.logins = input;
-        self
+    pub fn set_logins(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.logins = input; self
     }
     /// <p>A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p>
     /// <ul>
@@ -172,15 +169,21 @@ impl GetIdInputBuilder {
     /// <li>
     /// <p>Digits: <code>www.digits.com</code></p></li>
     /// </ul>
-    pub fn get_logins(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_logins(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.logins
     }
     /// Consumes the builder and constructs a [`GetIdInput`](crate::operation::get_id::GetIdInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_id::GetIdInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_id::GetIdInput {
-            account_id: self.account_id,
-            identity_pool_id: self.identity_pool_id,
-            logins: self.logins,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_id::GetIdInput {
+                account_id: self.account_id
+                ,
+                identity_pool_id: self.identity_pool_id
+                ,
+                logins: self.logins
+                ,
+            }
+        )
     }
 }
+

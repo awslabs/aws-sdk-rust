@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateScheduledActionInput {
+pub struct CreateScheduledActionInput  {
     /// <p>The name of the scheduled action.</p>
     pub scheduled_action_name: ::std::option::Option<::std::string::String>,
     /// <p>A JSON format string of the Amazon Redshift Serverless API operation with input parameters. The following is an example of a target action.</p>
@@ -25,28 +25,28 @@ pub struct CreateScheduledActionInput {
     /// <p>The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl CreateScheduledActionInput {
+impl  CreateScheduledActionInput  {
     /// <p>The name of the scheduled action.</p>
-    pub fn scheduled_action_name(&self) -> ::std::option::Option<&str> {
+    pub fn scheduled_action_name(&self) -> ::std::option::Option<& str> {
         self.scheduled_action_name.as_deref()
     }
     /// <p>A JSON format string of the Amazon Redshift Serverless API operation with input parameters. The following is an example of a target action.</p>
     /// <p><code>"{"CreateSnapshot": {"NamespaceName": "sampleNamespace","SnapshotName": "sampleSnapshot", "retentionPeriod": "1"}}"</code></p>
-    pub fn target_action(&self) -> ::std::option::Option<&crate::types::TargetAction> {
+    pub fn target_action(&self) -> ::std::option::Option<& crate::types::TargetAction> {
         self.target_action.as_ref()
     }
     /// <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action. Schedule invocations must be separated by at least one hour.</p>
     /// <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For example, "<code>at(2016-03-04T17:27:00)</code>".</p>
     /// <p>Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
-    pub fn schedule(&self) -> ::std::option::Option<&crate::types::Schedule> {
+    pub fn schedule(&self) -> ::std::option::Option<& crate::types::Schedule> {
         self.schedule.as_ref()
     }
     /// <p>The ARN of the IAM role to assume to run the scheduled action. This IAM role must have permission to run the Amazon Redshift Serverless API operation in the scheduled action. This IAM role must allow the Amazon Redshift scheduler to schedule creating snapshots. (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf. For more information about the IAM role to use with the Amazon Redshift scheduler, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using Identity-Based Policies for Amazon Redshift</a> in the Amazon Redshift Cluster Management Guide</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The name of the namespace for which to create a scheduled action.</p>
-    pub fn namespace_name(&self) -> ::std::option::Option<&str> {
+    pub fn namespace_name(&self) -> ::std::option::Option<& str> {
         self.namespace_name.as_deref()
     }
     /// <p>Indicates whether the schedule is enabled. If false, the scheduled action does not trigger. For more information about <code>state</code> of the scheduled action, see <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_ScheduledAction.html">ScheduledAction</a>.</p>
@@ -54,15 +54,15 @@ impl CreateScheduledActionInput {
         self.enabled
     }
     /// <p>The description of the scheduled action.</p>
-    pub fn scheduled_action_description(&self) -> ::std::option::Option<&str> {
+    pub fn scheduled_action_description(&self) -> ::std::option::Option<& str> {
         self.scheduled_action_description.as_deref()
     }
     /// <p>The start time in UTC when the schedule is active. Before this time, the scheduled action does not trigger.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -96,8 +96,7 @@ impl CreateScheduledActionInputBuilder {
     }
     /// <p>The name of the scheduled action.</p>
     pub fn set_scheduled_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scheduled_action_name = input;
-        self
+        self.scheduled_action_name = input; self
     }
     /// <p>The name of the scheduled action.</p>
     pub fn get_scheduled_action_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +112,7 @@ impl CreateScheduledActionInputBuilder {
     /// <p>A JSON format string of the Amazon Redshift Serverless API operation with input parameters. The following is an example of a target action.</p>
     /// <p><code>"{"CreateSnapshot": {"NamespaceName": "sampleNamespace","SnapshotName": "sampleSnapshot", "retentionPeriod": "1"}}"</code></p>
     pub fn set_target_action(mut self, input: ::std::option::Option<crate::types::TargetAction>) -> Self {
-        self.target_action = input;
-        self
+        self.target_action = input; self
     }
     /// <p>A JSON format string of the Amazon Redshift Serverless API operation with input parameters. The following is an example of a target action.</p>
     /// <p><code>"{"CreateSnapshot": {"NamespaceName": "sampleNamespace","SnapshotName": "sampleSnapshot", "retentionPeriod": "1"}}"</code></p>
@@ -133,8 +131,7 @@ impl CreateScheduledActionInputBuilder {
     /// <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For example, "<code>at(2016-03-04T17:27:00)</code>".</p>
     /// <p>Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
     pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::Schedule>) -> Self {
-        self.schedule = input;
-        self
+        self.schedule = input; self
     }
     /// <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action. Schedule invocations must be separated by at least one hour.</p>
     /// <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For example, "<code>at(2016-03-04T17:27:00)</code>".</p>
@@ -150,8 +147,7 @@ impl CreateScheduledActionInputBuilder {
     }
     /// <p>The ARN of the IAM role to assume to run the scheduled action. This IAM role must have permission to run the Amazon Redshift Serverless API operation in the scheduled action. This IAM role must allow the Amazon Redshift scheduler to schedule creating snapshots. (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf. For more information about the IAM role to use with the Amazon Redshift scheduler, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using Identity-Based Policies for Amazon Redshift</a> in the Amazon Redshift Cluster Management Guide</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the IAM role to assume to run the scheduled action. This IAM role must have permission to run the Amazon Redshift Serverless API operation in the scheduled action. This IAM role must allow the Amazon Redshift scheduler to schedule creating snapshots. (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf. For more information about the IAM role to use with the Amazon Redshift scheduler, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using Identity-Based Policies for Amazon Redshift</a> in the Amazon Redshift Cluster Management Guide</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,8 +161,7 @@ impl CreateScheduledActionInputBuilder {
     }
     /// <p>The name of the namespace for which to create a scheduled action.</p>
     pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace_name = input;
-        self
+        self.namespace_name = input; self
     }
     /// <p>The name of the namespace for which to create a scheduled action.</p>
     pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -179,8 +174,7 @@ impl CreateScheduledActionInputBuilder {
     }
     /// <p>Indicates whether the schedule is enabled. If false, the scheduled action does not trigger. For more information about <code>state</code> of the scheduled action, see <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_ScheduledAction.html">ScheduledAction</a>.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Indicates whether the schedule is enabled. If false, the scheduled action does not trigger. For more information about <code>state</code> of the scheduled action, see <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_ScheduledAction.html">ScheduledAction</a>.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -193,8 +187,7 @@ impl CreateScheduledActionInputBuilder {
     }
     /// <p>The description of the scheduled action.</p>
     pub fn set_scheduled_action_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scheduled_action_description = input;
-        self
+        self.scheduled_action_description = input; self
     }
     /// <p>The description of the scheduled action.</p>
     pub fn get_scheduled_action_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -207,8 +200,7 @@ impl CreateScheduledActionInputBuilder {
     }
     /// <p>The start time in UTC when the schedule is active. Before this time, the scheduled action does not trigger.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The start time in UTC when the schedule is active. Before this time, the scheduled action does not trigger.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -221,28 +213,36 @@ impl CreateScheduledActionInputBuilder {
     }
     /// <p>The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }
     /// Consumes the builder and constructs a [`CreateScheduledActionInput`](crate::operation::create_scheduled_action::CreateScheduledActionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_scheduled_action::CreateScheduledActionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_scheduled_action::CreateScheduledActionInput {
-            scheduled_action_name: self.scheduled_action_name,
-            target_action: self.target_action,
-            schedule: self.schedule,
-            role_arn: self.role_arn,
-            namespace_name: self.namespace_name,
-            enabled: self.enabled,
-            scheduled_action_description: self.scheduled_action_description,
-            start_time: self.start_time,
-            end_time: self.end_time,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_scheduled_action::CreateScheduledActionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_scheduled_action::CreateScheduledActionInput {
+                scheduled_action_name: self.scheduled_action_name
+                ,
+                target_action: self.target_action
+                ,
+                schedule: self.schedule
+                ,
+                role_arn: self.role_arn
+                ,
+                namespace_name: self.namespace_name
+                ,
+                enabled: self.enabled
+                ,
+                scheduled_action_description: self.scheduled_action_description
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+            }
+        )
     }
 }
+

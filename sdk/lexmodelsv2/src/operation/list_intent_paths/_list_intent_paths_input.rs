@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListIntentPathsInput {
+pub struct ListIntentPathsInput  {
     /// <p>The identifier for the bot for which you want to retrieve intent path metrics.</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that marks the beginning of the range of time for which you want to see intent path metrics.</p>
@@ -20,19 +20,19 @@ pub struct ListIntentPathsInput {
     /// </ul>
     pub intent_path: ::std::option::Option<::std::string::String>,
     /// <p>A list of objects, each describes a condition by which you want to filter the results.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsPathFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsPathFilter>>,
 }
-impl ListIntentPathsInput {
+impl  ListIntentPathsInput  {
     /// <p>The identifier for the bot for which you want to retrieve intent path metrics.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The date and time that marks the beginning of the range of time for which you want to see intent path metrics.</p>
-    pub fn start_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_date_time.as_ref()
     }
     /// <p>The date and time that marks the end of the range of time for which you want to see intent path metrics.</p>
-    pub fn end_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
     }
     /// <p>The intent path for which you want to retrieve metrics. Use a forward slash to separate intents in the path. For example:</p>
@@ -44,14 +44,15 @@ impl ListIntentPathsInput {
     /// <li>
     /// <p>/BookHotel/BookCar</p></li>
     /// </ul>
-    pub fn intent_path(&self) -> ::std::option::Option<&str> {
+    pub fn intent_path(&self) -> ::std::option::Option<& str> {
         self.intent_path.as_deref()
     }
     /// <p>A list of objects, each describes a condition by which you want to filter the results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::AnalyticsPathFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::AnalyticsPathFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ListIntentPathsInput {
@@ -69,7 +70,7 @@ pub struct ListIntentPathsInputBuilder {
     pub(crate) start_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) intent_path: ::std::option::Option<::std::string::String>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsPathFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsPathFilter>>,
 }
 impl ListIntentPathsInputBuilder {
     /// <p>The identifier for the bot for which you want to retrieve intent path metrics.</p>
@@ -80,8 +81,7 @@ impl ListIntentPathsInputBuilder {
     }
     /// <p>The identifier for the bot for which you want to retrieve intent path metrics.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The identifier for the bot for which you want to retrieve intent path metrics.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +95,7 @@ impl ListIntentPathsInputBuilder {
     }
     /// <p>The date and time that marks the beginning of the range of time for which you want to see intent path metrics.</p>
     pub fn set_start_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_date_time = input;
-        self
+        self.start_date_time = input; self
     }
     /// <p>The date and time that marks the beginning of the range of time for which you want to see intent path metrics.</p>
     pub fn get_start_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -110,8 +109,7 @@ impl ListIntentPathsInputBuilder {
     }
     /// <p>The date and time that marks the end of the range of time for which you want to see intent path metrics.</p>
     pub fn set_end_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_date_time = input;
-        self
+        self.end_date_time = input; self
     }
     /// <p>The date and time that marks the end of the range of time for which you want to see intent path metrics.</p>
     pub fn get_end_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -141,8 +139,7 @@ impl ListIntentPathsInputBuilder {
     /// <p>/BookHotel/BookCar</p></li>
     /// </ul>
     pub fn set_intent_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.intent_path = input;
-        self
+        self.intent_path = input; self
     }
     /// <p>The intent path for which you want to retrieve metrics. Use a forward slash to separate intents in the path. For example:</p>
     /// <ul>
@@ -163,29 +160,34 @@ impl ListIntentPathsInputBuilder {
     /// <p>A list of objects, each describes a condition by which you want to filter the results.</p>
     pub fn filters(mut self, input: crate::types::AnalyticsPathFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of objects, each describes a condition by which you want to filter the results.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsPathFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsPathFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>A list of objects, each describes a condition by which you want to filter the results.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsPathFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsPathFilter>> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListIntentPathsInput`](crate::operation::list_intent_paths::ListIntentPathsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_intent_paths::ListIntentPathsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_intent_paths::ListIntentPathsInput {
-            bot_id: self.bot_id,
-            start_date_time: self.start_date_time,
-            end_date_time: self.end_date_time,
-            intent_path: self.intent_path,
-            filters: self.filters,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_intent_paths::ListIntentPathsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_intent_paths::ListIntentPathsInput {
+                bot_id: self.bot_id
+                ,
+                start_date_time: self.start_date_time
+                ,
+                end_date_time: self.end_date_time
+                ,
+                intent_path: self.intent_path
+                ,
+                filters: self.filters
+                ,
+            }
+        )
     }
 }
+

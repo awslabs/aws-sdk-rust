@@ -3,13 +3,13 @@
 /// <p>Account settings for the customer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccountSettings {
+pub struct AccountSettings  {
     /// <p>Notification subscription status of the customer.</p>
     pub notification_subscription_status: ::std::option::Option<crate::types::NotificationSubscriptionStatus>,
 }
-impl AccountSettings {
+impl  AccountSettings  {
     /// <p>Notification subscription status of the customer.</p>
-    pub fn notification_subscription_status(&self) -> ::std::option::Option<&crate::types::NotificationSubscriptionStatus> {
+    pub fn notification_subscription_status(&self) -> ::std::option::Option<& crate::types::NotificationSubscriptionStatus> {
         self.notification_subscription_status.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl AccountSettingsBuilder {
     }
     /// <p>Notification subscription status of the customer.</p>
     pub fn set_notification_subscription_status(mut self, input: ::std::option::Option<crate::types::NotificationSubscriptionStatus>) -> Self {
-        self.notification_subscription_status = input;
-        self
+        self.notification_subscription_status = input; self
     }
     /// <p>Notification subscription status of the customer.</p>
     pub fn get_notification_subscription_status(&self) -> &::std::option::Option<crate::types::NotificationSubscriptionStatus> {
@@ -44,7 +43,9 @@ impl AccountSettingsBuilder {
     /// Consumes the builder and constructs a [`AccountSettings`](crate::types::AccountSettings).
     pub fn build(self) -> crate::types::AccountSettings {
         crate::types::AccountSettings {
-            notification_subscription_status: self.notification_subscription_status,
+            notification_subscription_status: self.notification_subscription_status
+            ,
         }
     }
 }
+

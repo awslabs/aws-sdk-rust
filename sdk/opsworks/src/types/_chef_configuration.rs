@@ -3,19 +3,19 @@
 /// <p>Describes the Chef configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChefConfiguration {
+pub struct ChefConfiguration  {
     /// <p>Whether to enable Berkshelf.</p>
     pub manage_berkshelf: ::std::option::Option<bool>,
     /// <p>The Berkshelf version.</p>
     pub berkshelf_version: ::std::option::Option<::std::string::String>,
 }
-impl ChefConfiguration {
+impl  ChefConfiguration  {
     /// <p>Whether to enable Berkshelf.</p>
     pub fn manage_berkshelf(&self) -> ::std::option::Option<bool> {
         self.manage_berkshelf
     }
     /// <p>The Berkshelf version.</p>
-    pub fn berkshelf_version(&self) -> ::std::option::Option<&str> {
+    pub fn berkshelf_version(&self) -> ::std::option::Option<& str> {
         self.berkshelf_version.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ChefConfigurationBuilder {
     }
     /// <p>Whether to enable Berkshelf.</p>
     pub fn set_manage_berkshelf(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.manage_berkshelf = input;
-        self
+        self.manage_berkshelf = input; self
     }
     /// <p>Whether to enable Berkshelf.</p>
     pub fn get_manage_berkshelf(&self) -> &::std::option::Option<bool> {
@@ -55,8 +54,7 @@ impl ChefConfigurationBuilder {
     }
     /// <p>The Berkshelf version.</p>
     pub fn set_berkshelf_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.berkshelf_version = input;
-        self
+        self.berkshelf_version = input; self
     }
     /// <p>The Berkshelf version.</p>
     pub fn get_berkshelf_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ChefConfigurationBuilder {
     /// Consumes the builder and constructs a [`ChefConfiguration`](crate::types::ChefConfiguration).
     pub fn build(self) -> crate::types::ChefConfiguration {
         crate::types::ChefConfiguration {
-            manage_berkshelf: self.manage_berkshelf,
-            berkshelf_version: self.berkshelf_version,
+            manage_berkshelf: self.manage_berkshelf
+            ,
+            berkshelf_version: self.berkshelf_version
+            ,
         }
     }
 }
+

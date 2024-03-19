@@ -3,15 +3,14 @@
 /// <p>Contains information about adapters used when analyzing a document, with each adapter specified using an AdapterId and version</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AdaptersConfig {
+pub struct AdaptersConfig  {
     /// <p>A list of adapters to be used when analyzing the specified document.</p>
-    pub adapters: ::std::vec::Vec<crate::types::Adapter>,
+    pub adapters: ::std::vec::Vec::<crate::types::Adapter>,
 }
-impl AdaptersConfig {
+impl  AdaptersConfig  {
     /// <p>A list of adapters to be used when analyzing the specified document.</p>
-    pub fn adapters(&self) -> &[crate::types::Adapter] {
-        use std::ops::Deref;
-        self.adapters.deref()
+    pub fn adapters(&self) -> & [crate::types::Adapter] {
+        use std::ops::Deref; self.adapters.deref()
     }
 }
 impl AdaptersConfig {
@@ -25,7 +24,7 @@ impl AdaptersConfig {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdaptersConfigBuilder {
-    pub(crate) adapters: ::std::option::Option<::std::vec::Vec<crate::types::Adapter>>,
+    pub(crate) adapters: ::std::option::Option<::std::vec::Vec::<crate::types::Adapter>>,
 }
 impl AdaptersConfigBuilder {
     /// Appends an item to `adapters`.
@@ -35,30 +34,31 @@ impl AdaptersConfigBuilder {
     /// <p>A list of adapters to be used when analyzing the specified document.</p>
     pub fn adapters(mut self, input: crate::types::Adapter) -> Self {
         let mut v = self.adapters.unwrap_or_default();
-        v.push(input);
-        self.adapters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.adapters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of adapters to be used when analyzing the specified document.</p>
-    pub fn set_adapters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Adapter>>) -> Self {
-        self.adapters = input;
-        self
+    pub fn set_adapters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Adapter>>) -> Self {
+        self.adapters = input; self
     }
     /// <p>A list of adapters to be used when analyzing the specified document.</p>
-    pub fn get_adapters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Adapter>> {
+    pub fn get_adapters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Adapter>> {
         &self.adapters
     }
     /// Consumes the builder and constructs a [`AdaptersConfig`](crate::types::AdaptersConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`adapters`](crate::types::builders::AdaptersConfigBuilder::adapters)
     pub fn build(self) -> ::std::result::Result<crate::types::AdaptersConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AdaptersConfig {
-            adapters: self.adapters.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "adapters",
-                    "adapters was not specified but it is required when building AdaptersConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AdaptersConfig {
+                adapters: self.adapters
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("adapters", "adapters was not specified but it is required when building AdaptersConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

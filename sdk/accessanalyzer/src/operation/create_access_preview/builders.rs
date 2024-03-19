@@ -5,54 +5,50 @@ pub use crate::operation::create_access_preview::_create_access_preview_input::C
 
 impl CreateAccessPreviewInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_access_preview::CreateAccessPreviewOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_access_preview::CreateAccessPreviewError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_access_preview();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_access_preview::CreateAccessPreviewOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_access_preview::CreateAccessPreviewError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_access_preview();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateAccessPreview`.
-///
+/// 
 /// <p>Creates an access preview that allows you to preview IAM Access Analyzer findings for your resource before deploying resource permissions.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAccessPreviewFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_access_preview::builders::CreateAccessPreviewInputBuilder,
+                    inner: crate::operation::create_access_preview::builders::CreateAccessPreviewInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_access_preview::CreateAccessPreviewOutput,
-        crate::operation::create_access_preview::CreateAccessPreviewError,
-    > for CreateAccessPreviewFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_access_preview::CreateAccessPreviewOutput,
-            crate::operation::create_access_preview::CreateAccessPreviewError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_access_preview::CreateAccessPreviewOutput,
+                    crate::operation::create_access_preview::CreateAccessPreviewError,
+                > for CreateAccessPreviewFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_access_preview::CreateAccessPreviewOutput,
+                        crate::operation::create_access_preview::CreateAccessPreviewError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateAccessPreviewFluentBuilder {
     /// Creates a new `CreateAccessPreview`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl CreateAccessPreviewFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_access_preview::CreateAccessPreviewOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_access_preview::CreateAccessPreviewError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_access_preview::CreateAccessPreview::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_access_preview::CreateAccessPreview::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_access_preview::CreateAccessPreviewOutput,
-        crate::operation::create_access_preview::CreateAccessPreviewError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_access_preview::CreateAccessPreviewOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_access_preview::CreateAccessPreviewError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_access_preview::CreateAccessPreview::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_access_preview::CreateAccessPreview::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_access_preview::CreateAccessPreviewOutput, crate::operation::create_access_preview::CreateAccessPreviewError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the account analyzer</a> used to generate the access preview. You can only create an access preview for analyzers with an <code>Account</code> type and <code>Active</code> status.</p>
     pub fn analyzer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.analyzer_arn(input.into());
@@ -132,15 +119,12 @@ impl CreateAccessPreviewFluentBuilder {
         self
     }
     /// <p>Access control configuration for your resource that is used to generate the access preview. The access preview includes findings for external access allowed to the resource with the proposed access control configuration. The configuration must contain exactly one element.</p>
-    pub fn set_configurations(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Configuration>>,
-    ) -> Self {
+    pub fn set_configurations(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Configuration>>) -> Self {
         self.inner = self.inner.set_configurations(input);
         self
     }
     /// <p>Access control configuration for your resource that is used to generate the access preview. The access preview includes findings for external access allowed to the resource with the proposed access control configuration. The configuration must contain exactly one element.</p>
-    pub fn get_configurations(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Configuration>> {
+    pub fn get_configurations(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Configuration>> {
         self.inner.get_configurations()
     }
     /// <p>A client token.</p>
@@ -158,3 +142,4 @@ impl CreateAccessPreviewFluentBuilder {
         self.inner.get_client_token()
     }
 }
+

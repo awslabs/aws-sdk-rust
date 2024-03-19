@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct VerifyInput {
+pub struct VerifyInput  {
     /// <p>Identifies the asymmetric KMS key that will be used to verify the signature. This must be the same KMS key that was used to generate the signature. If you specify a different KMS key, the signature verification fails.</p>
     /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
@@ -45,12 +45,12 @@ pub struct VerifyInput {
     pub signing_algorithm: ::std::option::Option<crate::types::SigningAlgorithmSpec>,
     /// <p>A list of grant tokens.</p>
     /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    pub grant_tokens: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub grant_tokens: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
     /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl VerifyInput {
+impl  VerifyInput  {
     /// <p>Identifies the asymmetric KMS key that will be used to verify the signature. This must be the same KMS key that was used to generate the signature. If you specify a different KMS key, the signature verification fails.</p>
     /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
@@ -65,12 +65,12 @@ impl VerifyInput {
     /// <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code></p></li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>. To get the alias name and alias ARN, use <code>ListAliases</code>.</p>
-    pub fn key_id(&self) -> ::std::option::Option<&str> {
+    pub fn key_id(&self) -> ::std::option::Option<& str> {
         self.key_id.as_deref()
     }
     /// <p>Specifies the message that was signed. You can submit a raw message of up to 4096 bytes, or a hash digest of the message. If you submit a digest, use the <code>MessageType</code> parameter with a value of <code>DIGEST</code>.</p>
     /// <p>If the message specified here is different from the message that was signed, the signature verification fails. A message and its hash digest are considered to be the same message.</p>
-    pub fn message(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn message(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.message.as_ref()
     }
     /// <p>Tells KMS whether the value of the <code>Message</code> parameter should be hashed as part of the signing algorithm. Use <code>RAW</code> for unhashed messages; use <code>DIGEST</code> for message digests, which are already hashed.</p>
@@ -90,23 +90,24 @@ impl VerifyInput {
     /// <li>
     /// <p>SM2DSA uses the SM3 hashing algorithm. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline verification with SM2 key pairs</a>.</p></li>
     /// </ul>
-    pub fn message_type(&self) -> ::std::option::Option<&crate::types::MessageType> {
+    pub fn message_type(&self) -> ::std::option::Option<& crate::types::MessageType> {
         self.message_type.as_ref()
     }
     /// <p>The signature that the <code>Sign</code> operation generated.</p>
-    pub fn signature(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn signature(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.signature.as_ref()
     }
     /// <p>The signing algorithm that was used to sign the message. If you submit a different algorithm, the signature verification fails.</p>
-    pub fn signing_algorithm(&self) -> ::std::option::Option<&crate::types::SigningAlgorithmSpec> {
+    pub fn signing_algorithm(&self) -> ::std::option::Option<& crate::types::SigningAlgorithmSpec> {
         self.signing_algorithm.as_ref()
     }
     /// <p>A list of grant tokens.</p>
     /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.grant_tokens.is_none()`.
-    pub fn grant_tokens(&self) -> &[::std::string::String] {
-        self.grant_tokens.as_deref().unwrap_or_default()
+    pub fn grant_tokens(&self) -> & [::std::string::String] {
+        self.grant_tokens.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
     /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
@@ -114,7 +115,7 @@ impl VerifyInput {
         self.dry_run
     }
 }
-impl ::std::fmt::Debug for VerifyInput {
+impl  ::std::fmt::Debug for VerifyInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("VerifyInput");
         formatter.field("key_id", &self.key_id);
@@ -143,7 +144,7 @@ pub struct VerifyInputBuilder {
     pub(crate) message_type: ::std::option::Option<crate::types::MessageType>,
     pub(crate) signature: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) signing_algorithm: ::std::option::Option<crate::types::SigningAlgorithmSpec>,
-    pub(crate) grant_tokens: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) grant_tokens: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl VerifyInputBuilder {
@@ -181,8 +182,7 @@ impl VerifyInputBuilder {
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>. To get the alias name and alias ARN, use <code>ListAliases</code>.</p>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_id = input;
-        self
+        self.key_id = input; self
     }
     /// <p>Identifies the asymmetric KMS key that will be used to verify the signature. This must be the same KMS key that was used to generate the signature. If you specify a different KMS key, the signature verification fails.</p>
     /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
@@ -211,8 +211,7 @@ impl VerifyInputBuilder {
     /// <p>Specifies the message that was signed. You can submit a raw message of up to 4096 bytes, or a hash digest of the message. If you submit a digest, use the <code>MessageType</code> parameter with a value of <code>DIGEST</code>.</p>
     /// <p>If the message specified here is different from the message that was signed, the signature verification fails. A message and its hash digest are considered to be the same message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Specifies the message that was signed. You can submit a raw message of up to 4096 bytes, or a hash digest of the message. If you submit a digest, use the <code>MessageType</code> parameter with a value of <code>DIGEST</code>.</p>
     /// <p>If the message specified here is different from the message that was signed, the signature verification fails. A message and its hash digest are considered to be the same message.</p>
@@ -258,8 +257,7 @@ impl VerifyInputBuilder {
     /// <p>SM2DSA uses the SM3 hashing algorithm. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline verification with SM2 key pairs</a>.</p></li>
     /// </ul>
     pub fn set_message_type(mut self, input: ::std::option::Option<crate::types::MessageType>) -> Self {
-        self.message_type = input;
-        self
+        self.message_type = input; self
     }
     /// <p>Tells KMS whether the value of the <code>Message</code> parameter should be hashed as part of the signing algorithm. Use <code>RAW</code> for unhashed messages; use <code>DIGEST</code> for message digests, which are already hashed.</p>
     /// <p>When the value of <code>MessageType</code> is <code>RAW</code>, KMS uses the standard signing algorithm, which begins with a hash function. When the value is <code>DIGEST</code>, KMS skips the hashing step in the signing algorithm.</p><important>
@@ -289,8 +287,7 @@ impl VerifyInputBuilder {
     }
     /// <p>The signature that the <code>Sign</code> operation generated.</p>
     pub fn set_signature(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.signature = input;
-        self
+        self.signature = input; self
     }
     /// <p>The signature that the <code>Sign</code> operation generated.</p>
     pub fn get_signature(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -304,8 +301,7 @@ impl VerifyInputBuilder {
     }
     /// <p>The signing algorithm that was used to sign the message. If you submit a different algorithm, the signature verification fails.</p>
     pub fn set_signing_algorithm(mut self, input: ::std::option::Option<crate::types::SigningAlgorithmSpec>) -> Self {
-        self.signing_algorithm = input;
-        self
+        self.signing_algorithm = input; self
     }
     /// <p>The signing algorithm that was used to sign the message. If you submit a different algorithm, the signature verification fails.</p>
     pub fn get_signing_algorithm(&self) -> &::std::option::Option<crate::types::SigningAlgorithmSpec> {
@@ -319,19 +315,18 @@ impl VerifyInputBuilder {
     /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn grant_tokens(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.grant_tokens.unwrap_or_default();
-        v.push(input.into());
-        self.grant_tokens = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.grant_tokens = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of grant tokens.</p>
     /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    pub fn set_grant_tokens(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.grant_tokens = input;
-        self
+    pub fn set_grant_tokens(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.grant_tokens = input; self
     }
     /// <p>A list of grant tokens.</p>
     /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    pub fn get_grant_tokens(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_grant_tokens(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.grant_tokens
     }
     /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
@@ -343,8 +338,7 @@ impl VerifyInputBuilder {
     /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
     /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
     /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
@@ -353,15 +347,24 @@ impl VerifyInputBuilder {
     }
     /// Consumes the builder and constructs a [`VerifyInput`](crate::operation::verify::VerifyInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::verify::VerifyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::verify::VerifyInput {
-            key_id: self.key_id,
-            message: self.message,
-            message_type: self.message_type,
-            signature: self.signature,
-            signing_algorithm: self.signing_algorithm,
-            grant_tokens: self.grant_tokens,
-            dry_run: self.dry_run,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::verify::VerifyInput {
+                key_id: self.key_id
+                ,
+                message: self.message
+                ,
+                message_type: self.message_type
+                ,
+                signature: self.signature
+                ,
+                signing_algorithm: self.signing_algorithm
+                ,
+                grant_tokens: self.grant_tokens
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for VerifyInputBuilder {
@@ -377,3 +380,4 @@ impl ::std::fmt::Debug for VerifyInputBuilder {
         formatter.finish()
     }
 }
+

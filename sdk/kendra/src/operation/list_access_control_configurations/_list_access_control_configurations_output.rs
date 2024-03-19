@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAccessControlConfigurationsOutput {
+pub struct ListAccessControlConfigurationsOutput  {
     /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in the subsequent request to retrieve the next set of access control configurations.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The details of your access control configurations.</p>
-    pub access_control_configurations: ::std::vec::Vec<crate::types::AccessControlConfigurationSummary>,
+    pub access_control_configurations: ::std::vec::Vec::<crate::types::AccessControlConfigurationSummary>,
     _request_id: Option<String>,
 }
-impl ListAccessControlConfigurationsOutput {
+impl  ListAccessControlConfigurationsOutput  {
     /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in the subsequent request to retrieve the next set of access control configurations.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The details of your access control configurations.</p>
-    pub fn access_control_configurations(&self) -> &[crate::types::AccessControlConfigurationSummary] {
-        use std::ops::Deref;
-        self.access_control_configurations.deref()
+    pub fn access_control_configurations(&self) -> & [crate::types::AccessControlConfigurationSummary] {
+        use std::ops::Deref; self.access_control_configurations.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAccessControlConfigurationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAccessControlConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListAccessControlConfigurationsOutput`](crate::operation::list_access_control_configurations::ListAccessControlConfigurationsOutput).
     pub fn builder() -> crate::operation::list_access_control_configurations::builders::ListAccessControlConfigurationsOutputBuilder {
@@ -37,7 +36,7 @@ impl ListAccessControlConfigurationsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccessControlConfigurationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) access_control_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AccessControlConfigurationSummary>>,
+    pub(crate) access_control_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::AccessControlConfigurationSummary>>,
     _request_id: Option<String>,
 }
 impl ListAccessControlConfigurationsOutputBuilder {
@@ -48,8 +47,7 @@ impl ListAccessControlConfigurationsOutputBuilder {
     }
     /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in the subsequent request to retrieve the next set of access control configurations.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in the subsequent request to retrieve the next set of access control configurations.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,51 +60,43 @@ impl ListAccessControlConfigurationsOutputBuilder {
     /// <p>The details of your access control configurations.</p>
     pub fn access_control_configurations(mut self, input: crate::types::AccessControlConfigurationSummary) -> Self {
         let mut v = self.access_control_configurations.unwrap_or_default();
-        v.push(input);
-        self.access_control_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.access_control_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The details of your access control configurations.</p>
-    pub fn set_access_control_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AccessControlConfigurationSummary>>,
-    ) -> Self {
-        self.access_control_configurations = input;
-        self
+    pub fn set_access_control_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AccessControlConfigurationSummary>>) -> Self {
+        self.access_control_configurations = input; self
     }
     /// <p>The details of your access control configurations.</p>
-    pub fn get_access_control_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessControlConfigurationSummary>> {
+    pub fn get_access_control_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AccessControlConfigurationSummary>> {
         &self.access_control_configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAccessControlConfigurationsOutput`](crate::operation::list_access_control_configurations::ListAccessControlConfigurationsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`access_control_configurations`](crate::operation::list_access_control_configurations::builders::ListAccessControlConfigurationsOutputBuilder::access_control_configurations)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_access_control_configurations::ListAccessControlConfigurationsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_access_control_configurations::ListAccessControlConfigurationsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_access_control_configurations::ListAccessControlConfigurationsOutput {
-                next_token: self.next_token,
-                access_control_configurations: self.access_control_configurations.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "access_control_configurations",
-                        "access_control_configurations was not specified but it is required when building ListAccessControlConfigurationsOutput",
-                    )
-                })?,
+                next_token: self.next_token
+                ,
+                access_control_configurations: self.access_control_configurations
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("access_control_configurations", "access_control_configurations was not specified but it is required when building ListAccessControlConfigurationsOutput")
+                    )?
+                ,
                 _request_id: self._request_id,
-            },
+            }
         )
     }
 }
+

@@ -4,7 +4,7 @@
 /// <p>Image Builder does not automatically install the Systems Manager agent on Windows instances. If your base image includes the Systems Manager agent, then the AMI that you create will also include the agent. For Linux instances, if the base image does not already include the Systems Manager agent, Image Builder installs it. For Linux instances where Image Builder installs the Systems Manager agent, you can choose whether to keep it for the AMI that you create.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AdditionalInstanceConfiguration {
+pub struct AdditionalInstanceConfiguration  {
     /// <p>Contains settings for the Systems Manager agent on your build instance.</p>
     pub systems_manager_agent: ::std::option::Option<crate::types::SystemsManagerAgent>,
     /// <p>Use this property to provide commands or a command script to run when you launch your build instance.</p>
@@ -16,9 +16,9 @@ pub struct AdditionalInstanceConfiguration {
     /// </note>
     pub user_data_override: ::std::option::Option<::std::string::String>,
 }
-impl AdditionalInstanceConfiguration {
+impl  AdditionalInstanceConfiguration  {
     /// <p>Contains settings for the Systems Manager agent on your build instance.</p>
-    pub fn systems_manager_agent(&self) -> ::std::option::Option<&crate::types::SystemsManagerAgent> {
+    pub fn systems_manager_agent(&self) -> ::std::option::Option<& crate::types::SystemsManagerAgent> {
         self.systems_manager_agent.as_ref()
     }
     /// <p>Use this property to provide commands or a command script to run when you launch your build instance.</p>
@@ -28,7 +28,7 @@ impl AdditionalInstanceConfiguration {
     /// <p>mkdir -p /var/bb/</p>
     /// <p>touch /var</p>
     /// </note>
-    pub fn user_data_override(&self) -> ::std::option::Option<&str> {
+    pub fn user_data_override(&self) -> ::std::option::Option<& str> {
         self.user_data_override.as_deref()
     }
 }
@@ -54,8 +54,7 @@ impl AdditionalInstanceConfigurationBuilder {
     }
     /// <p>Contains settings for the Systems Manager agent on your build instance.</p>
     pub fn set_systems_manager_agent(mut self, input: ::std::option::Option<crate::types::SystemsManagerAgent>) -> Self {
-        self.systems_manager_agent = input;
-        self
+        self.systems_manager_agent = input; self
     }
     /// <p>Contains settings for the Systems Manager agent on your build instance.</p>
     pub fn get_systems_manager_agent(&self) -> &::std::option::Option<crate::types::SystemsManagerAgent> {
@@ -80,8 +79,7 @@ impl AdditionalInstanceConfigurationBuilder {
     /// <p>touch /var</p>
     /// </note>
     pub fn set_user_data_override(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_data_override = input;
-        self
+        self.user_data_override = input; self
     }
     /// <p>Use this property to provide commands or a command script to run when you launch your build instance.</p>
     /// <p>The userDataOverride property replaces any commands that Image Builder might have added to ensure that Systems Manager is installed on your Linux build instance. If you override the user data, make sure that you add commands to install Systems Manager, if it is not pre-installed on your base image.</p><note>
@@ -96,8 +94,11 @@ impl AdditionalInstanceConfigurationBuilder {
     /// Consumes the builder and constructs a [`AdditionalInstanceConfiguration`](crate::types::AdditionalInstanceConfiguration).
     pub fn build(self) -> crate::types::AdditionalInstanceConfiguration {
         crate::types::AdditionalInstanceConfiguration {
-            systems_manager_agent: self.systems_manager_agent,
-            user_data_override: self.user_data_override,
+            systems_manager_agent: self.systems_manager_agent
+            ,
+            user_data_override: self.user_data_override
+            ,
         }
     }
 }
+

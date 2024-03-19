@@ -3,7 +3,7 @@
 /// <p>Contains the metadata for a column.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ColumnMetadata {
+pub struct ColumnMetadata  {
     /// <p>The name of the column.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the column.</p>
@@ -33,9 +33,9 @@ pub struct ColumnMetadata {
     /// <p>The type of the column.</p>
     pub array_base_column_type: i32,
 }
-impl ColumnMetadata {
+impl  ColumnMetadata  {
     /// <p>The name of the column.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of the column.</p>
@@ -43,19 +43,19 @@ impl ColumnMetadata {
         self.r#type
     }
     /// <p>The database-specific data type of the column.</p>
-    pub fn type_name(&self) -> ::std::option::Option<&str> {
+    pub fn type_name(&self) -> ::std::option::Option<& str> {
         self.type_name.as_deref()
     }
     /// <p>The label for the column.</p>
-    pub fn label(&self) -> ::std::option::Option<&str> {
+    pub fn label(&self) -> ::std::option::Option<& str> {
         self.label.as_deref()
     }
     /// <p>The name of the schema that owns the table that includes the column.</p>
-    pub fn schema_name(&self) -> ::std::option::Option<&str> {
+    pub fn schema_name(&self) -> ::std::option::Option<& str> {
         self.schema_name.as_deref()
     }
     /// <p>The name of the table that includes the column.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>A value that indicates whether the column increments automatically.</p>
@@ -125,8 +125,7 @@ impl ColumnMetadataBuilder {
     }
     /// <p>The name of the column.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the column.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +138,7 @@ impl ColumnMetadataBuilder {
     }
     /// <p>The type of the column.</p>
     pub fn set_type(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the column.</p>
     pub fn get_type(&self) -> &::std::option::Option<i32> {
@@ -153,8 +151,7 @@ impl ColumnMetadataBuilder {
     }
     /// <p>The database-specific data type of the column.</p>
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_name = input;
-        self
+        self.type_name = input; self
     }
     /// <p>The database-specific data type of the column.</p>
     pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +164,7 @@ impl ColumnMetadataBuilder {
     }
     /// <p>The label for the column.</p>
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label = input;
-        self
+        self.label = input; self
     }
     /// <p>The label for the column.</p>
     pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +177,7 @@ impl ColumnMetadataBuilder {
     }
     /// <p>The name of the schema that owns the table that includes the column.</p>
     pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_name = input;
-        self
+        self.schema_name = input; self
     }
     /// <p>The name of the schema that owns the table that includes the column.</p>
     pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -195,8 +190,7 @@ impl ColumnMetadataBuilder {
     }
     /// <p>The name of the table that includes the column.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the table that includes the column.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -209,8 +203,7 @@ impl ColumnMetadataBuilder {
     }
     /// <p>A value that indicates whether the column increments automatically.</p>
     pub fn set_is_auto_increment(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_auto_increment = input;
-        self
+        self.is_auto_increment = input; self
     }
     /// <p>A value that indicates whether the column increments automatically.</p>
     pub fn get_is_auto_increment(&self) -> &::std::option::Option<bool> {
@@ -223,8 +216,7 @@ impl ColumnMetadataBuilder {
     }
     /// <p>A value that indicates whether an integer column is signed.</p>
     pub fn set_is_signed(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_signed = input;
-        self
+        self.is_signed = input; self
     }
     /// <p>A value that indicates whether an integer column is signed.</p>
     pub fn get_is_signed(&self) -> &::std::option::Option<bool> {
@@ -237,8 +229,7 @@ impl ColumnMetadataBuilder {
     }
     /// <p>A value that indicates whether the column contains currency values.</p>
     pub fn set_is_currency(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_currency = input;
-        self
+        self.is_currency = input; self
     }
     /// <p>A value that indicates whether the column contains currency values.</p>
     pub fn get_is_currency(&self) -> &::std::option::Option<bool> {
@@ -251,8 +242,7 @@ impl ColumnMetadataBuilder {
     }
     /// <p>A value that indicates whether the column is case-sensitive.</p>
     pub fn set_is_case_sensitive(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_case_sensitive = input;
-        self
+        self.is_case_sensitive = input; self
     }
     /// <p>A value that indicates whether the column is case-sensitive.</p>
     pub fn get_is_case_sensitive(&self) -> &::std::option::Option<bool> {
@@ -265,8 +255,7 @@ impl ColumnMetadataBuilder {
     }
     /// <p>A value that indicates whether the column is nullable.</p>
     pub fn set_nullable(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.nullable = input;
-        self
+        self.nullable = input; self
     }
     /// <p>A value that indicates whether the column is nullable.</p>
     pub fn get_nullable(&self) -> &::std::option::Option<i32> {
@@ -279,8 +268,7 @@ impl ColumnMetadataBuilder {
     }
     /// <p>The precision value of a decimal number column.</p>
     pub fn set_precision(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.precision = input;
-        self
+        self.precision = input; self
     }
     /// <p>The precision value of a decimal number column.</p>
     pub fn get_precision(&self) -> &::std::option::Option<i32> {
@@ -293,8 +281,7 @@ impl ColumnMetadataBuilder {
     }
     /// <p>The scale value of a decimal number column.</p>
     pub fn set_scale(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.scale = input;
-        self
+        self.scale = input; self
     }
     /// <p>The scale value of a decimal number column.</p>
     pub fn get_scale(&self) -> &::std::option::Option<i32> {
@@ -307,8 +294,7 @@ impl ColumnMetadataBuilder {
     }
     /// <p>The type of the column.</p>
     pub fn set_array_base_column_type(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.array_base_column_type = input;
-        self
+        self.array_base_column_type = input; self
     }
     /// <p>The type of the column.</p>
     pub fn get_array_base_column_type(&self) -> &::std::option::Option<i32> {
@@ -317,20 +303,44 @@ impl ColumnMetadataBuilder {
     /// Consumes the builder and constructs a [`ColumnMetadata`](crate::types::ColumnMetadata).
     pub fn build(self) -> crate::types::ColumnMetadata {
         crate::types::ColumnMetadata {
-            name: self.name,
-            r#type: self.r#type.unwrap_or_default(),
-            type_name: self.type_name,
-            label: self.label,
-            schema_name: self.schema_name,
-            table_name: self.table_name,
-            is_auto_increment: self.is_auto_increment.unwrap_or_default(),
-            is_signed: self.is_signed.unwrap_or_default(),
-            is_currency: self.is_currency.unwrap_or_default(),
-            is_case_sensitive: self.is_case_sensitive.unwrap_or_default(),
-            nullable: self.nullable.unwrap_or_default(),
-            precision: self.precision.unwrap_or_default(),
-            scale: self.scale.unwrap_or_default(),
-            array_base_column_type: self.array_base_column_type.unwrap_or_default(),
+            name: self.name
+            ,
+            r#type: self.r#type
+                .unwrap_or_default()
+            ,
+            type_name: self.type_name
+            ,
+            label: self.label
+            ,
+            schema_name: self.schema_name
+            ,
+            table_name: self.table_name
+            ,
+            is_auto_increment: self.is_auto_increment
+                .unwrap_or_default()
+            ,
+            is_signed: self.is_signed
+                .unwrap_or_default()
+            ,
+            is_currency: self.is_currency
+                .unwrap_or_default()
+            ,
+            is_case_sensitive: self.is_case_sensitive
+                .unwrap_or_default()
+            ,
+            nullable: self.nullable
+                .unwrap_or_default()
+            ,
+            precision: self.precision
+                .unwrap_or_default()
+            ,
+            scale: self.scale
+                .unwrap_or_default()
+            ,
+            array_base_column_type: self.array_base_column_type
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

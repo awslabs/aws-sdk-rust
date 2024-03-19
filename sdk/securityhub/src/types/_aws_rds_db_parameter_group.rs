@@ -3,19 +3,19 @@
 /// <p>Provides information about a parameter group for a DB instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsRdsDbParameterGroup {
+pub struct AwsRdsDbParameterGroup  {
     /// <p>The name of the parameter group.</p>
     pub db_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of parameter updates.</p>
     pub parameter_apply_status: ::std::option::Option<::std::string::String>,
 }
-impl AwsRdsDbParameterGroup {
+impl  AwsRdsDbParameterGroup  {
     /// <p>The name of the parameter group.</p>
-    pub fn db_parameter_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn db_parameter_group_name(&self) -> ::std::option::Option<& str> {
         self.db_parameter_group_name.as_deref()
     }
     /// <p>The status of parameter updates.</p>
-    pub fn parameter_apply_status(&self) -> ::std::option::Option<&str> {
+    pub fn parameter_apply_status(&self) -> ::std::option::Option<& str> {
         self.parameter_apply_status.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AwsRdsDbParameterGroupBuilder {
     }
     /// <p>The name of the parameter group.</p>
     pub fn set_db_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_parameter_group_name = input;
-        self
+        self.db_parameter_group_name = input; self
     }
     /// <p>The name of the parameter group.</p>
     pub fn get_db_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AwsRdsDbParameterGroupBuilder {
     }
     /// <p>The status of parameter updates.</p>
     pub fn set_parameter_apply_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_apply_status = input;
-        self
+        self.parameter_apply_status = input; self
     }
     /// <p>The status of parameter updates.</p>
     pub fn get_parameter_apply_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AwsRdsDbParameterGroupBuilder {
     /// Consumes the builder and constructs a [`AwsRdsDbParameterGroup`](crate::types::AwsRdsDbParameterGroup).
     pub fn build(self) -> crate::types::AwsRdsDbParameterGroup {
         crate::types::AwsRdsDbParameterGroup {
-            db_parameter_group_name: self.db_parameter_group_name,
-            parameter_apply_status: self.parameter_apply_status,
+            db_parameter_group_name: self.db_parameter_group_name
+            ,
+            parameter_apply_status: self.parameter_apply_status
+            ,
         }
     }
 }
+

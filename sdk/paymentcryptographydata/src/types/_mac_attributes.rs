@@ -28,11 +28,7 @@ impl MacAttributes {
     /// Tries to convert the enum instance into [`Algorithm`](crate::types::MacAttributes::Algorithm), extracting the inner [`MacAlgorithm`](crate::types::MacAlgorithm).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_algorithm(&self) -> ::std::result::Result<&crate::types::MacAlgorithm, &Self> {
-        if let MacAttributes::Algorithm(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let MacAttributes::Algorithm(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Algorithm`](crate::types::MacAttributes::Algorithm).
     pub fn is_algorithm(&self) -> bool {
@@ -41,11 +37,7 @@ impl MacAttributes {
     /// Tries to convert the enum instance into [`DukptCmac`](crate::types::MacAttributes::DukptCmac), extracting the inner [`MacAlgorithmDukpt`](crate::types::MacAlgorithmDukpt).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_dukpt_cmac(&self) -> ::std::result::Result<&crate::types::MacAlgorithmDukpt, &Self> {
-        if let MacAttributes::DukptCmac(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let MacAttributes::DukptCmac(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`DukptCmac`](crate::types::MacAttributes::DukptCmac).
     pub fn is_dukpt_cmac(&self) -> bool {
@@ -54,11 +46,7 @@ impl MacAttributes {
     /// Tries to convert the enum instance into [`DukptIso9797Algorithm1`](crate::types::MacAttributes::DukptIso9797Algorithm1), extracting the inner [`MacAlgorithmDukpt`](crate::types::MacAlgorithmDukpt).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_dukpt_iso9797_algorithm1(&self) -> ::std::result::Result<&crate::types::MacAlgorithmDukpt, &Self> {
-        if let MacAttributes::DukptIso9797Algorithm1(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let MacAttributes::DukptIso9797Algorithm1(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`DukptIso9797Algorithm1`](crate::types::MacAttributes::DukptIso9797Algorithm1).
     pub fn is_dukpt_iso9797_algorithm1(&self) -> bool {
@@ -67,11 +55,7 @@ impl MacAttributes {
     /// Tries to convert the enum instance into [`DukptIso9797Algorithm3`](crate::types::MacAttributes::DukptIso9797Algorithm3), extracting the inner [`MacAlgorithmDukpt`](crate::types::MacAlgorithmDukpt).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_dukpt_iso9797_algorithm3(&self) -> ::std::result::Result<&crate::types::MacAlgorithmDukpt, &Self> {
-        if let MacAttributes::DukptIso9797Algorithm3(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let MacAttributes::DukptIso9797Algorithm3(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`DukptIso9797Algorithm3`](crate::types::MacAttributes::DukptIso9797Algorithm3).
     pub fn is_dukpt_iso9797_algorithm3(&self) -> bool {
@@ -80,11 +64,7 @@ impl MacAttributes {
     /// Tries to convert the enum instance into [`EmvMac`](crate::types::MacAttributes::EmvMac), extracting the inner [`MacAlgorithmEmv`](crate::types::MacAlgorithmEmv).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_emv_mac(&self) -> ::std::result::Result<&crate::types::MacAlgorithmEmv, &Self> {
-        if let MacAttributes::EmvMac(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let MacAttributes::EmvMac(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`EmvMac`](crate::types::MacAttributes::EmvMac).
     pub fn is_emv_mac(&self) -> bool {
@@ -95,3 +75,4 @@ impl MacAttributes {
         matches!(self, Self::Unknown)
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GenerateBotElementInput {
+pub struct GenerateBotElementInput  {
     /// <p>The intent unique Id for the bot request to generate utterances.</p>
     pub intent_id: ::std::option::Option<::std::string::String>,
     /// <p>The bot unique Id for the bot request to generate utterances.</p>
@@ -12,21 +12,21 @@ pub struct GenerateBotElementInput {
     /// <p>The unique locale Id for the bot request to generate utterances.</p>
     pub locale_id: ::std::option::Option<::std::string::String>,
 }
-impl GenerateBotElementInput {
+impl  GenerateBotElementInput  {
     /// <p>The intent unique Id for the bot request to generate utterances.</p>
-    pub fn intent_id(&self) -> ::std::option::Option<&str> {
+    pub fn intent_id(&self) -> ::std::option::Option<& str> {
         self.intent_id.as_deref()
     }
     /// <p>The bot unique Id for the bot request to generate utterances.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The bot version for the bot request to generate utterances.</p>
-    pub fn bot_version(&self) -> ::std::option::Option<&str> {
+    pub fn bot_version(&self) -> ::std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The unique locale Id for the bot request to generate utterances.</p>
-    pub fn locale_id(&self) -> ::std::option::Option<&str> {
+    pub fn locale_id(&self) -> ::std::option::Option<& str> {
         self.locale_id.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl GenerateBotElementInputBuilder {
     }
     /// <p>The intent unique Id for the bot request to generate utterances.</p>
     pub fn set_intent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.intent_id = input;
-        self
+        self.intent_id = input; self
     }
     /// <p>The intent unique Id for the bot request to generate utterances.</p>
     pub fn get_intent_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl GenerateBotElementInputBuilder {
     }
     /// <p>The bot unique Id for the bot request to generate utterances.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The bot unique Id for the bot request to generate utterances.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl GenerateBotElementInputBuilder {
     }
     /// <p>The bot version for the bot request to generate utterances.</p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The bot version for the bot request to generate utterances.</p>
     pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,23 +97,26 @@ impl GenerateBotElementInputBuilder {
     }
     /// <p>The unique locale Id for the bot request to generate utterances.</p>
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
     }
     /// <p>The unique locale Id for the bot request to generate utterances.</p>
     pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.locale_id
     }
     /// Consumes the builder and constructs a [`GenerateBotElementInput`](crate::operation::generate_bot_element::GenerateBotElementInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::generate_bot_element::GenerateBotElementInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::generate_bot_element::GenerateBotElementInput {
-            intent_id: self.intent_id,
-            bot_id: self.bot_id,
-            bot_version: self.bot_version,
-            locale_id: self.locale_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::generate_bot_element::GenerateBotElementInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::generate_bot_element::GenerateBotElementInput {
+                intent_id: self.intent_id
+                ,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+            }
+        )
     }
 }
+

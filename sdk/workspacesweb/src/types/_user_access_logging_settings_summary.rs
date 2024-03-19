@@ -3,20 +3,19 @@
 /// <p>The summary of user access logging settings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserAccessLoggingSettingsSummary {
+pub struct UserAccessLoggingSettingsSummary  {
     /// <p>The ARN of the user access logging settings.</p>
     pub user_access_logging_settings_arn: ::std::string::String,
     /// <p>The ARN of the Kinesis stream.</p>
     pub kinesis_stream_arn: ::std::option::Option<::std::string::String>,
 }
-impl UserAccessLoggingSettingsSummary {
+impl  UserAccessLoggingSettingsSummary  {
     /// <p>The ARN of the user access logging settings.</p>
-    pub fn user_access_logging_settings_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.user_access_logging_settings_arn.deref()
+    pub fn user_access_logging_settings_arn(&self) -> & str {
+        use std::ops::Deref; self.user_access_logging_settings_arn.deref()
     }
     /// <p>The ARN of the Kinesis stream.</p>
-    pub fn kinesis_stream_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kinesis_stream_arn(&self) -> ::std::option::Option<& str> {
         self.kinesis_stream_arn.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl UserAccessLoggingSettingsSummaryBuilder {
     }
     /// <p>The ARN of the user access logging settings.</p>
     pub fn set_user_access_logging_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_access_logging_settings_arn = input;
-        self
+        self.user_access_logging_settings_arn = input; self
     }
     /// <p>The ARN of the user access logging settings.</p>
     pub fn get_user_access_logging_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl UserAccessLoggingSettingsSummaryBuilder {
     }
     /// <p>The ARN of the Kinesis stream.</p>
     pub fn set_kinesis_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kinesis_stream_arn = input;
-        self
+        self.kinesis_stream_arn = input; self
     }
     /// <p>The ARN of the Kinesis stream.</p>
     pub fn get_kinesis_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl UserAccessLoggingSettingsSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`user_access_logging_settings_arn`](crate::types::builders::UserAccessLoggingSettingsSummaryBuilder::user_access_logging_settings_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::UserAccessLoggingSettingsSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UserAccessLoggingSettingsSummary {
-            user_access_logging_settings_arn: self.user_access_logging_settings_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user_access_logging_settings_arn",
-                    "user_access_logging_settings_arn was not specified but it is required when building UserAccessLoggingSettingsSummary",
-                )
-            })?,
-            kinesis_stream_arn: self.kinesis_stream_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UserAccessLoggingSettingsSummary {
+                user_access_logging_settings_arn: self.user_access_logging_settings_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user_access_logging_settings_arn", "user_access_logging_settings_arn was not specified but it is required when building UserAccessLoggingSettingsSummary")
+                    )?
+                ,
+                kinesis_stream_arn: self.kinesis_stream_arn
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestConnectionOutput {
+pub struct TestConnectionOutput  {
     /// <p>Returns the identifier of the connector object that you are testing.</p>
     pub connector_id: ::std::option::Option<::std::string::String>,
     /// <p>Returns <code>OK</code> for successful test, or <code>ERROR</code> if the test fails.</p>
@@ -21,13 +21,13 @@ pub struct TestConnectionOutput {
     pub status_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl TestConnectionOutput {
+impl  TestConnectionOutput  {
     /// <p>Returns the identifier of the connector object that you are testing.</p>
-    pub fn connector_id(&self) -> ::std::option::Option<&str> {
+    pub fn connector_id(&self) -> ::std::option::Option<& str> {
         self.connector_id.as_deref()
     }
     /// <p>Returns <code>OK</code> for successful test, or <code>ERROR</code> if the test fails.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>Returns <code>Connection succeeded</code> if the test is successful. Or, returns a descriptive error message if the test fails. The following list provides troubleshooting details, depending on the error message that you receive.</p>
@@ -41,15 +41,15 @@ impl TestConnectionOutput {
     /// <li>
     /// <p>Verify that the trusted host key in the connector configuration matches the <code>ssh-keyscan</code> output.</p></li>
     /// </ul>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for TestConnectionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl TestConnectionOutput {
     /// Creates a new builder-style object to manufacture [`TestConnectionOutput`](crate::operation::test_connection::TestConnectionOutput).
     pub fn builder() -> crate::operation::test_connection::builders::TestConnectionOutputBuilder {
@@ -74,8 +74,7 @@ impl TestConnectionOutputBuilder {
     }
     /// <p>Returns the identifier of the connector object that you are testing.</p>
     pub fn set_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connector_id = input;
-        self
+        self.connector_id = input; self
     }
     /// <p>Returns the identifier of the connector object that you are testing.</p>
     pub fn get_connector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +87,7 @@ impl TestConnectionOutputBuilder {
     }
     /// <p>Returns <code>OK</code> for successful test, or <code>ERROR</code> if the test fails.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Returns <code>OK</code> for successful test, or <code>ERROR</code> if the test fails.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +120,7 @@ impl TestConnectionOutputBuilder {
     /// <p>Verify that the trusted host key in the connector configuration matches the <code>ssh-keyscan</code> output.</p></li>
     /// </ul>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>Returns <code>Connection succeeded</code> if the test is successful. Or, returns a descriptive error message if the test fails. The following list provides troubleshooting details, depending on the error message that you receive.</p>
     /// <ul>
@@ -140,21 +137,25 @@ impl TestConnectionOutputBuilder {
         &self.status_message
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`TestConnectionOutput`](crate::operation::test_connection::TestConnectionOutput).
     pub fn build(self) -> crate::operation::test_connection::TestConnectionOutput {
         crate::operation::test_connection::TestConnectionOutput {
-            connector_id: self.connector_id,
-            status: self.status,
-            status_message: self.status_message,
+            connector_id: self.connector_id
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

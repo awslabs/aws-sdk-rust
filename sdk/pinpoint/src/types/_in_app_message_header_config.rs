@@ -3,7 +3,7 @@
 /// <p>Text config for Message Header.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InAppMessageHeaderConfig {
+pub struct InAppMessageHeaderConfig  {
     /// <p>The alignment of the text. Valid values: LEFT, CENTER, RIGHT.</p>
     pub alignment: ::std::option::Option<crate::types::Alignment>,
     /// <p>Message Header.</p>
@@ -11,17 +11,17 @@ pub struct InAppMessageHeaderConfig {
     /// <p>The text color.</p>
     pub text_color: ::std::option::Option<::std::string::String>,
 }
-impl InAppMessageHeaderConfig {
+impl  InAppMessageHeaderConfig  {
     /// <p>The alignment of the text. Valid values: LEFT, CENTER, RIGHT.</p>
-    pub fn alignment(&self) -> ::std::option::Option<&crate::types::Alignment> {
+    pub fn alignment(&self) -> ::std::option::Option<& crate::types::Alignment> {
         self.alignment.as_ref()
     }
     /// <p>Message Header.</p>
-    pub fn header(&self) -> ::std::option::Option<&str> {
+    pub fn header(&self) -> ::std::option::Option<& str> {
         self.header.as_deref()
     }
     /// <p>The text color.</p>
-    pub fn text_color(&self) -> ::std::option::Option<&str> {
+    pub fn text_color(&self) -> ::std::option::Option<& str> {
         self.text_color.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl InAppMessageHeaderConfigBuilder {
     }
     /// <p>The alignment of the text. Valid values: LEFT, CENTER, RIGHT.</p>
     pub fn set_alignment(mut self, input: ::std::option::Option<crate::types::Alignment>) -> Self {
-        self.alignment = input;
-        self
+        self.alignment = input; self
     }
     /// <p>The alignment of the text. Valid values: LEFT, CENTER, RIGHT.</p>
     pub fn get_alignment(&self) -> &::std::option::Option<crate::types::Alignment> {
@@ -64,8 +63,7 @@ impl InAppMessageHeaderConfigBuilder {
     }
     /// <p>Message Header.</p>
     pub fn set_header(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.header = input;
-        self
+        self.header = input; self
     }
     /// <p>Message Header.</p>
     pub fn get_header(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +77,7 @@ impl InAppMessageHeaderConfigBuilder {
     }
     /// <p>The text color.</p>
     pub fn set_text_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text_color = input;
-        self
+        self.text_color = input; self
     }
     /// <p>The text color.</p>
     pub fn get_text_color(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,9 +86,13 @@ impl InAppMessageHeaderConfigBuilder {
     /// Consumes the builder and constructs a [`InAppMessageHeaderConfig`](crate::types::InAppMessageHeaderConfig).
     pub fn build(self) -> crate::types::InAppMessageHeaderConfig {
         crate::types::InAppMessageHeaderConfig {
-            alignment: self.alignment,
-            header: self.header,
-            text_color: self.text_color,
+            alignment: self.alignment
+            ,
+            header: self.header
+            ,
+            text_color: self.text_color
+            ,
         }
     }
 }
+

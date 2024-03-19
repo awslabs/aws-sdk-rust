@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMetricPolicyInput {
+pub struct GetMetricPolicyInput  {
     /// <p>The name of the container that is associated with the metric policy.</p>
     pub container_name: ::std::option::Option<::std::string::String>,
 }
-impl GetMetricPolicyInput {
+impl  GetMetricPolicyInput  {
     /// <p>The name of the container that is associated with the metric policy.</p>
-    pub fn container_name(&self) -> ::std::option::Option<&str> {
+    pub fn container_name(&self) -> ::std::option::Option<& str> {
         self.container_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetMetricPolicyInputBuilder {
     }
     /// <p>The name of the container that is associated with the metric policy.</p>
     pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.container_name = input;
-        self
+        self.container_name = input; self
     }
     /// <p>The name of the container that is associated with the metric policy.</p>
     pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.container_name
     }
     /// Consumes the builder and constructs a [`GetMetricPolicyInput`](crate::operation::get_metric_policy::GetMetricPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_metric_policy::GetMetricPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_metric_policy::GetMetricPolicyInput {
-            container_name: self.container_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_metric_policy::GetMetricPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_metric_policy::GetMetricPolicyInput {
+                container_name: self.container_name
+                ,
+            }
+        )
     }
 }
+

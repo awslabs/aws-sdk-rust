@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetIpamResourceCidrs`](crate::operation::get_ipam_resource_cidrs::builders::GetIpamResourceCidrsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_ipam_resource_cidrs::builders::GetIpamResourceCidrsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`dry_run(bool)`](crate::operation::get_ipam_resource_cidrs::builders::GetIpamResourceCidrsFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::get_ipam_resource_cidrs::builders::GetIpamResourceCidrsFluentBuilder::set_dry_run):<br>required: **false**<br><p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p><br>
     ///   - [`filters(Filter)`](crate::operation::get_ipam_resource_cidrs::builders::GetIpamResourceCidrsFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::get_ipam_resource_cidrs::builders::GetIpamResourceCidrsFluentBuilder::set_filters):<br>required: **false**<br><p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_ipam_resource_cidrs::builders::GetIpamResourceCidrsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_ipam_resource_cidrs::builders::GetIpamResourceCidrsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the request.</p><br>
@@ -14,11 +14,12 @@ impl super::Client {
     ///   - [`resource_type(IpamResourceType)`](crate::operation::get_ipam_resource_cidrs::builders::GetIpamResourceCidrsFluentBuilder::resource_type) / [`set_resource_type(Option<IpamResourceType>)`](crate::operation::get_ipam_resource_cidrs::builders::GetIpamResourceCidrsFluentBuilder::set_resource_type):<br>required: **false**<br><p>The resource type.</p><br>
     ///   - [`resource_tag(RequestIpamResourceTag)`](crate::operation::get_ipam_resource_cidrs::builders::GetIpamResourceCidrsFluentBuilder::resource_tag) / [`set_resource_tag(Option<RequestIpamResourceTag>)`](crate::operation::get_ipam_resource_cidrs::builders::GetIpamResourceCidrsFluentBuilder::set_resource_tag):<br>required: **false**<br><p>The resource tag.</p><br>
     ///   - [`resource_owner(impl Into<String>)`](crate::operation::get_ipam_resource_cidrs::builders::GetIpamResourceCidrsFluentBuilder::resource_owner) / [`set_resource_owner(Option<String>)`](crate::operation::get_ipam_resource_cidrs::builders::GetIpamResourceCidrsFluentBuilder::set_resource_owner):<br>required: **false**<br><p>The ID of the Amazon Web Services account that owns the resource.</p><br>
-    /// - On success, responds with [`GetIpamResourceCidrsOutput`](crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsOutput) with field(s):
+                            /// - On success, responds with [`GetIpamResourceCidrsOutput`](crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     ///   - [`ipam_resource_cidrs(Option<Vec::<IpamResourceCidr>>)`](crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsOutput::ipam_resource_cidrs): <p>The resource CIDRs.</p>
-    /// - On failure, responds with [`SdkError<GetIpamResourceCidrsError>`](crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsError)
+                            /// - On failure, responds with [`SdkError<GetIpamResourceCidrsError>`](crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsError)
     pub fn get_ipam_resource_cidrs(&self) -> crate::operation::get_ipam_resource_cidrs::builders::GetIpamResourceCidrsFluentBuilder {
-        crate::operation::get_ipam_resource_cidrs::builders::GetIpamResourceCidrsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_ipam_resource_cidrs::builders::GetIpamResourceCidrsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

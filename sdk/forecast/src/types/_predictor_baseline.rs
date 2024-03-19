@@ -3,16 +3,17 @@
 /// <p>Metrics you can use as a baseline for comparison purposes. Use these metrics when you interpret monitoring results for an auto predictor.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PredictorBaseline {
+pub struct PredictorBaseline  {
     /// <p>The initial <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy metrics</a> for the predictor. Use these metrics as a baseline for comparison purposes as you use your predictor and the metrics change.</p>
-    pub baseline_metrics: ::std::option::Option<::std::vec::Vec<crate::types::BaselineMetric>>,
+    pub baseline_metrics: ::std::option::Option<::std::vec::Vec::<crate::types::BaselineMetric>>,
 }
-impl PredictorBaseline {
+impl  PredictorBaseline  {
     /// <p>The initial <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy metrics</a> for the predictor. Use these metrics as a baseline for comparison purposes as you use your predictor and the metrics change.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.baseline_metrics.is_none()`.
-    pub fn baseline_metrics(&self) -> &[crate::types::BaselineMetric] {
-        self.baseline_metrics.as_deref().unwrap_or_default()
+    pub fn baseline_metrics(&self) -> & [crate::types::BaselineMetric] {
+        self.baseline_metrics.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PredictorBaseline {
@@ -26,7 +27,7 @@ impl PredictorBaseline {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PredictorBaselineBuilder {
-    pub(crate) baseline_metrics: ::std::option::Option<::std::vec::Vec<crate::types::BaselineMetric>>,
+    pub(crate) baseline_metrics: ::std::option::Option<::std::vec::Vec::<crate::types::BaselineMetric>>,
 }
 impl PredictorBaselineBuilder {
     /// Appends an item to `baseline_metrics`.
@@ -36,23 +37,24 @@ impl PredictorBaselineBuilder {
     /// <p>The initial <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy metrics</a> for the predictor. Use these metrics as a baseline for comparison purposes as you use your predictor and the metrics change.</p>
     pub fn baseline_metrics(mut self, input: crate::types::BaselineMetric) -> Self {
         let mut v = self.baseline_metrics.unwrap_or_default();
-        v.push(input);
-        self.baseline_metrics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.baseline_metrics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The initial <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy metrics</a> for the predictor. Use these metrics as a baseline for comparison purposes as you use your predictor and the metrics change.</p>
-    pub fn set_baseline_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BaselineMetric>>) -> Self {
-        self.baseline_metrics = input;
-        self
+    pub fn set_baseline_metrics(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BaselineMetric>>) -> Self {
+        self.baseline_metrics = input; self
     }
     /// <p>The initial <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy metrics</a> for the predictor. Use these metrics as a baseline for comparison purposes as you use your predictor and the metrics change.</p>
-    pub fn get_baseline_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BaselineMetric>> {
+    pub fn get_baseline_metrics(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BaselineMetric>> {
         &self.baseline_metrics
     }
     /// Consumes the builder and constructs a [`PredictorBaseline`](crate::types::PredictorBaseline).
     pub fn build(self) -> crate::types::PredictorBaseline {
         crate::types::PredictorBaseline {
-            baseline_metrics: self.baseline_metrics,
+            baseline_metrics: self.baseline_metrics
+            ,
         }
     }
 }
+

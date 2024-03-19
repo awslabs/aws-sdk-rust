@@ -3,11 +3,11 @@
 /// <p>A complex type that lets you specify the namespaces that you want to list services for.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServiceFilter {
+pub struct ServiceFilter  {
     /// <p>Specify <code>NAMESPACE_ID</code>.</p>
     pub name: crate::types::ServiceFilterName,
     /// <p>The values that are applicable to the value that you specify for <code>Condition</code> to filter the list of services.</p>
-    pub values: ::std::vec::Vec<::std::string::String>,
+    pub values: ::std::vec::Vec::<::std::string::String>,
     /// <p>The operator that you want to use to determine whether a service is returned by <code>ListServices</code>. Valid values for <code>Condition</code> include the following:</p>
     /// <ul>
     /// <li>
@@ -15,22 +15,21 @@ pub struct ServiceFilter {
     /// </ul>
     pub condition: ::std::option::Option<crate::types::FilterCondition>,
 }
-impl ServiceFilter {
+impl  ServiceFilter  {
     /// <p>Specify <code>NAMESPACE_ID</code>.</p>
-    pub fn name(&self) -> &crate::types::ServiceFilterName {
+    pub fn name(&self) -> & crate::types::ServiceFilterName {
         &self.name
     }
     /// <p>The values that are applicable to the value that you specify for <code>Condition</code> to filter the list of services.</p>
-    pub fn values(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.values.deref()
+    pub fn values(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.values.deref()
     }
     /// <p>The operator that you want to use to determine whether a service is returned by <code>ListServices</code>. Valid values for <code>Condition</code> include the following:</p>
     /// <ul>
     /// <li>
     /// <p><code>EQ</code>: When you specify <code>EQ</code>, specify one namespace ID for <code>Values</code>. <code>EQ</code> is the default condition and can be omitted.</p></li>
     /// </ul>
-    pub fn condition(&self) -> ::std::option::Option<&crate::types::FilterCondition> {
+    pub fn condition(&self) -> ::std::option::Option<& crate::types::FilterCondition> {
         self.condition.as_ref()
     }
 }
@@ -46,7 +45,7 @@ impl ServiceFilter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::ServiceFilterName>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) condition: ::std::option::Option<crate::types::FilterCondition>,
 }
 impl ServiceFilterBuilder {
@@ -58,8 +57,7 @@ impl ServiceFilterBuilder {
     }
     /// <p>Specify <code>NAMESPACE_ID</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::ServiceFilterName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Specify <code>NAMESPACE_ID</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::ServiceFilterName> {
@@ -72,17 +70,16 @@ impl ServiceFilterBuilder {
     /// <p>The values that are applicable to the value that you specify for <code>Condition</code> to filter the list of services.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The values that are applicable to the value that you specify for <code>Condition</code> to filter the list of services.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The values that are applicable to the value that you specify for <code>Condition</code> to filter the list of services.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// <p>The operator that you want to use to determine whether a service is returned by <code>ListServices</code>. Valid values for <code>Condition</code> include the following:</p>
@@ -100,8 +97,7 @@ impl ServiceFilterBuilder {
     /// <p><code>EQ</code>: When you specify <code>EQ</code>, specify one namespace ID for <code>Values</code>. <code>EQ</code> is the default condition and can be omitted.</p></li>
     /// </ul>
     pub fn set_condition(mut self, input: ::std::option::Option<crate::types::FilterCondition>) -> Self {
-        self.condition = input;
-        self
+        self.condition = input; self
     }
     /// <p>The operator that you want to use to determine whether a service is returned by <code>ListServices</code>. Valid values for <code>Condition</code> include the following:</p>
     /// <ul>
@@ -116,20 +112,22 @@ impl ServiceFilterBuilder {
     /// - [`name`](crate::types::builders::ServiceFilterBuilder::name)
     /// - [`values`](crate::types::builders::ServiceFilterBuilder::values)
     pub fn build(self) -> ::std::result::Result<crate::types::ServiceFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ServiceFilter {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ServiceFilter",
-                )
-            })?,
-            values: self.values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "values",
-                    "values was not specified but it is required when building ServiceFilter",
-                )
-            })?,
-            condition: self.condition,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ServiceFilter {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ServiceFilter")
+                    )?
+                ,
+                values: self.values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("values", "values was not specified but it is required when building ServiceFilter")
+                    )?
+                ,
+                condition: self.condition
+                ,
+            }
+        )
     }
 }
+

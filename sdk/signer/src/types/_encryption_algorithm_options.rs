@@ -3,20 +3,19 @@
 /// <p>The encryption algorithm options that are available to a code-signing job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EncryptionAlgorithmOptions {
+pub struct EncryptionAlgorithmOptions  {
     /// <p>The set of accepted encryption algorithms that are allowed in a code-signing job.</p>
-    pub allowed_values: ::std::vec::Vec<crate::types::EncryptionAlgorithm>,
+    pub allowed_values: ::std::vec::Vec::<crate::types::EncryptionAlgorithm>,
     /// <p>The default encryption algorithm that is used by a code-signing job.</p>
     pub default_value: crate::types::EncryptionAlgorithm,
 }
-impl EncryptionAlgorithmOptions {
+impl  EncryptionAlgorithmOptions  {
     /// <p>The set of accepted encryption algorithms that are allowed in a code-signing job.</p>
-    pub fn allowed_values(&self) -> &[crate::types::EncryptionAlgorithm] {
-        use std::ops::Deref;
-        self.allowed_values.deref()
+    pub fn allowed_values(&self) -> & [crate::types::EncryptionAlgorithm] {
+        use std::ops::Deref; self.allowed_values.deref()
     }
     /// <p>The default encryption algorithm that is used by a code-signing job.</p>
-    pub fn default_value(&self) -> &crate::types::EncryptionAlgorithm {
+    pub fn default_value(&self) -> & crate::types::EncryptionAlgorithm {
         &self.default_value
     }
 }
@@ -31,7 +30,7 @@ impl EncryptionAlgorithmOptions {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EncryptionAlgorithmOptionsBuilder {
-    pub(crate) allowed_values: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionAlgorithm>>,
+    pub(crate) allowed_values: ::std::option::Option<::std::vec::Vec::<crate::types::EncryptionAlgorithm>>,
     pub(crate) default_value: ::std::option::Option<crate::types::EncryptionAlgorithm>,
 }
 impl EncryptionAlgorithmOptionsBuilder {
@@ -42,17 +41,16 @@ impl EncryptionAlgorithmOptionsBuilder {
     /// <p>The set of accepted encryption algorithms that are allowed in a code-signing job.</p>
     pub fn allowed_values(mut self, input: crate::types::EncryptionAlgorithm) -> Self {
         let mut v = self.allowed_values.unwrap_or_default();
-        v.push(input);
-        self.allowed_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.allowed_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The set of accepted encryption algorithms that are allowed in a code-signing job.</p>
-    pub fn set_allowed_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionAlgorithm>>) -> Self {
-        self.allowed_values = input;
-        self
+    pub fn set_allowed_values(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EncryptionAlgorithm>>) -> Self {
+        self.allowed_values = input; self
     }
     /// <p>The set of accepted encryption algorithms that are allowed in a code-signing job.</p>
-    pub fn get_allowed_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EncryptionAlgorithm>> {
+    pub fn get_allowed_values(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EncryptionAlgorithm>> {
         &self.allowed_values
     }
     /// <p>The default encryption algorithm that is used by a code-signing job.</p>
@@ -63,8 +61,7 @@ impl EncryptionAlgorithmOptionsBuilder {
     }
     /// <p>The default encryption algorithm that is used by a code-signing job.</p>
     pub fn set_default_value(mut self, input: ::std::option::Option<crate::types::EncryptionAlgorithm>) -> Self {
-        self.default_value = input;
-        self
+        self.default_value = input; self
     }
     /// <p>The default encryption algorithm that is used by a code-signing job.</p>
     pub fn get_default_value(&self) -> &::std::option::Option<crate::types::EncryptionAlgorithm> {
@@ -75,19 +72,20 @@ impl EncryptionAlgorithmOptionsBuilder {
     /// - [`allowed_values`](crate::types::builders::EncryptionAlgorithmOptionsBuilder::allowed_values)
     /// - [`default_value`](crate::types::builders::EncryptionAlgorithmOptionsBuilder::default_value)
     pub fn build(self) -> ::std::result::Result<crate::types::EncryptionAlgorithmOptions, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EncryptionAlgorithmOptions {
-            allowed_values: self.allowed_values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "allowed_values",
-                    "allowed_values was not specified but it is required when building EncryptionAlgorithmOptions",
-                )
-            })?,
-            default_value: self.default_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "default_value",
-                    "default_value was not specified but it is required when building EncryptionAlgorithmOptions",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EncryptionAlgorithmOptions {
+                allowed_values: self.allowed_values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("allowed_values", "allowed_values was not specified but it is required when building EncryptionAlgorithmOptions")
+                    )?
+                ,
+                default_value: self.default_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("default_value", "default_value was not specified but it is required when building EncryptionAlgorithmOptions")
+                    )?
+                ,
+            }
+        )
     }
 }
+

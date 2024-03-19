@@ -3,21 +3,22 @@
 /// <p>Information on the Amazon ECR image metadata associated with a finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EcrContainerImageMetadata {
+pub struct EcrContainerImageMetadata  {
     /// <p>Tags associated with the Amazon ECR image metadata.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The date an image was last pulled at.</p>
     pub image_pulled_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl EcrContainerImageMetadata {
+impl  EcrContainerImageMetadata  {
     /// <p>Tags associated with the Amazon ECR image metadata.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[::std::string::String] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [::std::string::String] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The date an image was last pulled at.</p>
-    pub fn image_pulled_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn image_pulled_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.image_pulled_at.as_ref()
     }
 }
@@ -32,7 +33,7 @@ impl EcrContainerImageMetadata {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EcrContainerImageMetadataBuilder {
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) image_pulled_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EcrContainerImageMetadataBuilder {
@@ -43,17 +44,16 @@ impl EcrContainerImageMetadataBuilder {
     /// <p>Tags associated with the Amazon ECR image metadata.</p>
     pub fn tags(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input.into());
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Tags associated with the Amazon ECR image metadata.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags associated with the Amazon ECR image metadata.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.tags
     }
     /// <p>The date an image was last pulled at.</p>
@@ -63,8 +63,7 @@ impl EcrContainerImageMetadataBuilder {
     }
     /// <p>The date an image was last pulled at.</p>
     pub fn set_image_pulled_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.image_pulled_at = input;
-        self
+        self.image_pulled_at = input; self
     }
     /// <p>The date an image was last pulled at.</p>
     pub fn get_image_pulled_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -73,8 +72,11 @@ impl EcrContainerImageMetadataBuilder {
     /// Consumes the builder and constructs a [`EcrContainerImageMetadata`](crate::types::EcrContainerImageMetadata).
     pub fn build(self) -> crate::types::EcrContainerImageMetadata {
         crate::types::EcrContainerImageMetadata {
-            tags: self.tags,
-            image_pulled_at: self.image_pulled_at,
+            tags: self.tags
+            ,
+            image_pulled_at: self.image_pulled_at
+            ,
         }
     }
 }
+

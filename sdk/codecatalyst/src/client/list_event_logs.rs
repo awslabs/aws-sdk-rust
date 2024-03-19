@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListEventLogs`](crate::operation::list_event_logs::builders::ListEventLogsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_event_logs::builders::ListEventLogsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`space_name(impl Into<String>)`](crate::operation::list_event_logs::builders::ListEventLogsFluentBuilder::space_name) / [`set_space_name(Option<String>)`](crate::operation::list_event_logs::builders::ListEventLogsFluentBuilder::set_space_name):<br>required: **true**<br><p>The name of the space.</p><br>
     ///   - [`start_time(DateTime)`](crate::operation::list_event_logs::builders::ListEventLogsFluentBuilder::start_time) / [`set_start_time(Option<DateTime>)`](crate::operation::list_event_logs::builders::ListEventLogsFluentBuilder::set_start_time):<br>required: **true**<br><p>The date and time when you want to start retrieving events, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p><br>
     ///   - [`end_time(DateTime)`](crate::operation::list_event_logs::builders::ListEventLogsFluentBuilder::end_time) / [`set_end_time(Option<DateTime>)`](crate::operation::list_event_logs::builders::ListEventLogsFluentBuilder::set_end_time):<br>required: **true**<br><p>The time after which you do not want any events retrieved, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p><br>
     ///   - [`event_name(impl Into<String>)`](crate::operation::list_event_logs::builders::ListEventLogsFluentBuilder::event_name) / [`set_event_name(Option<String>)`](crate::operation::list_event_logs::builders::ListEventLogsFluentBuilder::set_event_name):<br>required: **false**<br><p>The name of the event.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_event_logs::builders::ListEventLogsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_event_logs::builders::ListEventLogsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_event_logs::builders::ListEventLogsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_event_logs::builders::ListEventLogsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a <code>NextToken</code> element, which you can use to obtain additional results.</p><br>
-    /// - On success, responds with [`ListEventLogsOutput`](crate::operation::list_event_logs::ListEventLogsOutput) with field(s):
+                            /// - On success, responds with [`ListEventLogsOutput`](crate::operation::list_event_logs::ListEventLogsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_event_logs::ListEventLogsOutput::next_token): <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     ///   - [`items(Vec::<EventLogEntry>)`](crate::operation::list_event_logs::ListEventLogsOutput::items): <p>Information about each event retrieved in the list.</p>
-    /// - On failure, responds with [`SdkError<ListEventLogsError>`](crate::operation::list_event_logs::ListEventLogsError)
+                            /// - On failure, responds with [`SdkError<ListEventLogsError>`](crate::operation::list_event_logs::ListEventLogsError)
     pub fn list_event_logs(&self) -> crate::operation::list_event_logs::builders::ListEventLogsFluentBuilder {
-        crate::operation::list_event_logs::builders::ListEventLogsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_event_logs::builders::ListEventLogsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

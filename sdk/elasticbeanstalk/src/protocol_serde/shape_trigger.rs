@@ -23,3 +23,4 @@ pub fn de_trigger(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resu
     }
     Ok(builder.build())
 }
+

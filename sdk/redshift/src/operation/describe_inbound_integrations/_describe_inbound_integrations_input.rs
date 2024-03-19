@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeInboundIntegrationsInput {
+pub struct DescribeInboundIntegrationsInput  {
     /// <p>The Amazon Resource Name (ARN) of the inbound integration.</p>
     pub integration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the target of an inbound integration.</p>
@@ -14,13 +14,13 @@ pub struct DescribeInboundIntegrationsInput {
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeInboundIntegrations</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
     pub marker: ::std::option::Option<::std::string::String>,
 }
-impl DescribeInboundIntegrationsInput {
+impl  DescribeInboundIntegrationsInput  {
     /// <p>The Amazon Resource Name (ARN) of the inbound integration.</p>
-    pub fn integration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn integration_arn(&self) -> ::std::option::Option<& str> {
         self.integration_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the target of an inbound integration.</p>
-    pub fn target_arn(&self) -> ::std::option::Option<&str> {
+    pub fn target_arn(&self) -> ::std::option::Option<& str> {
         self.target_arn.as_deref()
     }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p>
@@ -30,7 +30,7 @@ impl DescribeInboundIntegrationsInput {
         self.max_records
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeInboundIntegrations</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
@@ -58,8 +58,7 @@ impl DescribeInboundIntegrationsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the inbound integration.</p>
     pub fn set_integration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.integration_arn = input;
-        self
+        self.integration_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the inbound integration.</p>
     pub fn get_integration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +71,7 @@ impl DescribeInboundIntegrationsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the target of an inbound integration.</p>
     pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_arn = input;
-        self
+        self.target_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the target of an inbound integration.</p>
     pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl DescribeInboundIntegrationsInputBuilder {
     /// <p>Default: <code>100</code></p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p>
     /// <p>Default: <code>100</code></p>
@@ -106,25 +103,26 @@ impl DescribeInboundIntegrationsInputBuilder {
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeInboundIntegrations</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeInboundIntegrations</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeInboundIntegrationsInput`](crate::operation::describe_inbound_integrations::DescribeInboundIntegrationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_inbound_integrations::DescribeInboundIntegrationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_inbound_integrations::DescribeInboundIntegrationsInput {
-            integration_arn: self.integration_arn,
-            target_arn: self.target_arn,
-            max_records: self.max_records,
-            marker: self.marker,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_inbound_integrations::DescribeInboundIntegrationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_inbound_integrations::DescribeInboundIntegrationsInput {
+                integration_arn: self.integration_arn
+                ,
+                target_arn: self.target_arn
+                ,
+                max_records: self.max_records
+                ,
+                marker: self.marker
+                ,
+            }
+        )
     }
 }
+

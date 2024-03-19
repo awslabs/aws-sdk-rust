@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTrustStoreOutput {
+pub struct CreateTrustStoreOutput  {
     /// <p>Information about the trust store created.</p>
-    pub trust_stores: ::std::option::Option<::std::vec::Vec<crate::types::TrustStore>>,
+    pub trust_stores: ::std::option::Option<::std::vec::Vec::<crate::types::TrustStore>>,
     _request_id: Option<String>,
 }
-impl CreateTrustStoreOutput {
+impl  CreateTrustStoreOutput  {
     /// <p>Information about the trust store created.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trust_stores.is_none()`.
-    pub fn trust_stores(&self) -> &[crate::types::TrustStore] {
-        self.trust_stores.as_deref().unwrap_or_default()
+    pub fn trust_stores(&self) -> & [crate::types::TrustStore] {
+        self.trust_stores.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateTrustStoreOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateTrustStoreOutput {
     /// Creates a new builder-style object to manufacture [`CreateTrustStoreOutput`](crate::operation::create_trust_store::CreateTrustStoreOutput).
     pub fn builder() -> crate::operation::create_trust_store::builders::CreateTrustStoreOutputBuilder {
@@ -31,7 +32,7 @@ impl CreateTrustStoreOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTrustStoreOutputBuilder {
-    pub(crate) trust_stores: ::std::option::Option<::std::vec::Vec<crate::types::TrustStore>>,
+    pub(crate) trust_stores: ::std::option::Option<::std::vec::Vec::<crate::types::TrustStore>>,
     _request_id: Option<String>,
 }
 impl CreateTrustStoreOutputBuilder {
@@ -42,33 +43,34 @@ impl CreateTrustStoreOutputBuilder {
     /// <p>Information about the trust store created.</p>
     pub fn trust_stores(mut self, input: crate::types::TrustStore) -> Self {
         let mut v = self.trust_stores.unwrap_or_default();
-        v.push(input);
-        self.trust_stores = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.trust_stores = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the trust store created.</p>
-    pub fn set_trust_stores(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrustStore>>) -> Self {
-        self.trust_stores = input;
-        self
+    pub fn set_trust_stores(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TrustStore>>) -> Self {
+        self.trust_stores = input; self
     }
     /// <p>Information about the trust store created.</p>
-    pub fn get_trust_stores(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrustStore>> {
+    pub fn get_trust_stores(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TrustStore>> {
         &self.trust_stores
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateTrustStoreOutput`](crate::operation::create_trust_store::CreateTrustStoreOutput).
     pub fn build(self) -> crate::operation::create_trust_store::CreateTrustStoreOutput {
         crate::operation::create_trust_store::CreateTrustStoreOutput {
-            trust_stores: self.trust_stores,
+            trust_stores: self.trust_stores
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

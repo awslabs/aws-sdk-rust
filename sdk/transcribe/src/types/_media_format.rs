@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let mediaformat = unimplemented!();
 /// match mediaformat {
@@ -36,16 +36,14 @@
 /// Specifically, when `mediaformat` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MediaFormat::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum MediaFormat {
     #[allow(missing_docs)] // documentation missing in model
     Amr,
@@ -65,79 +63,80 @@ pub enum MediaFormat {
     Webm,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for MediaFormat {
-    fn from(s: &str) -> Self {
-        match s {
-            "amr" => MediaFormat::Amr,
-            "flac" => MediaFormat::Flac,
-            "m4a" => MediaFormat::M4A,
-            "mp3" => MediaFormat::Mp3,
-            "mp4" => MediaFormat::Mp4,
-            "ogg" => MediaFormat::Ogg,
-            "wav" => MediaFormat::Wav,
-            "webm" => MediaFormat::Webm,
-            other => MediaFormat::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "amr" => MediaFormat::Amr,
+"flac" => MediaFormat::Flac,
+"m4a" => MediaFormat::M4A,
+"mp3" => MediaFormat::Mp3,
+"mp4" => MediaFormat::Mp4,
+"ogg" => MediaFormat::Ogg,
+"wav" => MediaFormat::Wav,
+"webm" => MediaFormat::Webm,
+other => MediaFormat::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for MediaFormat {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(MediaFormat::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(MediaFormat::from(s))
+                    }
+                }
 impl MediaFormat {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MediaFormat::Amr => "amr",
-            MediaFormat::Flac => "flac",
-            MediaFormat::M4A => "m4a",
-            MediaFormat::Mp3 => "mp3",
-            MediaFormat::Mp4 => "mp4",
-            MediaFormat::Ogg => "ogg",
-            MediaFormat::Wav => "wav",
-            MediaFormat::Webm => "webm",
-            MediaFormat::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["amr", "flac", "m4a", "mp3", "mp4", "ogg", "wav", "webm"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MediaFormat::Amr => "amr",
+    MediaFormat::Flac => "flac",
+    MediaFormat::M4A => "m4a",
+    MediaFormat::Mp3 => "mp3",
+    MediaFormat::Mp4 => "mp4",
+    MediaFormat::Ogg => "ogg",
+    MediaFormat::Wav => "wav",
+    MediaFormat::Webm => "webm",
+    MediaFormat::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["amr", "flac", "m4a", "mp3", "mp4", "ogg", "wav", "webm"]
+                }
+            }
 impl ::std::convert::AsRef<str> for MediaFormat {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl MediaFormat {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for MediaFormat {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            MediaFormat::Amr => write!(f, "amr"),
-            MediaFormat::Flac => write!(f, "flac"),
-            MediaFormat::M4A => write!(f, "m4a"),
-            MediaFormat::Mp3 => write!(f, "mp3"),
-            MediaFormat::Mp4 => write!(f, "mp4"),
-            MediaFormat::Ogg => write!(f, "ogg"),
-            MediaFormat::Wav => write!(f, "wav"),
-            MediaFormat::Webm => write!(f, "webm"),
-            MediaFormat::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                MediaFormat::Amr => write!(f, "amr"),
+MediaFormat::Flac => write!(f, "flac"),
+MediaFormat::M4A => write!(f, "m4a"),
+MediaFormat::Mp3 => write!(f, "mp3"),
+MediaFormat::Mp4 => write!(f, "mp4"),
+MediaFormat::Ogg => write!(f, "ogg"),
+MediaFormat::Wav => write!(f, "wav"),
+MediaFormat::Webm => write!(f, "webm"),
+MediaFormat::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

@@ -3,7 +3,7 @@
 /// Disassociate Agent Knowledge Base Request
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateAgentKnowledgeBaseInput {
+pub struct DisassociateAgentKnowledgeBaseInput  {
     /// Id generated at the server side when an Agent is created
     pub agent_id: ::std::option::Option<::std::string::String>,
     /// Draft Version of the Agent.
@@ -11,17 +11,17 @@ pub struct DisassociateAgentKnowledgeBaseInput {
     /// Id generated at the server side when a Knowledge Base is associated to an Agent
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
 }
-impl DisassociateAgentKnowledgeBaseInput {
+impl  DisassociateAgentKnowledgeBaseInput  {
     /// Id generated at the server side when an Agent is created
-    pub fn agent_id(&self) -> ::std::option::Option<&str> {
+    pub fn agent_id(&self) -> ::std::option::Option<& str> {
         self.agent_id.as_deref()
     }
     /// Draft Version of the Agent.
-    pub fn agent_version(&self) -> ::std::option::Option<&str> {
+    pub fn agent_version(&self) -> ::std::option::Option<& str> {
         self.agent_version.as_deref()
     }
     /// Id generated at the server side when a Knowledge Base is associated to an Agent
-    pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
+    pub fn knowledge_base_id(&self) -> ::std::option::Option<& str> {
         self.knowledge_base_id.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl DisassociateAgentKnowledgeBaseInputBuilder {
     }
     /// Id generated at the server side when an Agent is created
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_id = input;
-        self
+        self.agent_id = input; self
     }
     /// Id generated at the server side when an Agent is created
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl DisassociateAgentKnowledgeBaseInputBuilder {
     }
     /// Draft Version of the Agent.
     pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_version = input;
-        self
+        self.agent_version = input; self
     }
     /// Draft Version of the Agent.
     pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,24 +77,24 @@ impl DisassociateAgentKnowledgeBaseInputBuilder {
     }
     /// Id generated at the server side when a Knowledge Base is associated to an Agent
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.knowledge_base_id = input;
-        self
+        self.knowledge_base_id = input; self
     }
     /// Id generated at the server side when a Knowledge Base is associated to an Agent
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.knowledge_base_id
     }
     /// Consumes the builder and constructs a [`DisassociateAgentKnowledgeBaseInput`](crate::operation::disassociate_agent_knowledge_base::DisassociateAgentKnowledgeBaseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_agent_knowledge_base::DisassociateAgentKnowledgeBaseInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::disassociate_agent_knowledge_base::DisassociateAgentKnowledgeBaseInput {
-            agent_id: self.agent_id,
-            agent_version: self.agent_version,
-            knowledge_base_id: self.knowledge_base_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_agent_knowledge_base::DisassociateAgentKnowledgeBaseInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disassociate_agent_knowledge_base::DisassociateAgentKnowledgeBaseInput {
+                agent_id: self.agent_id
+                ,
+                agent_version: self.agent_version
+                ,
+                knowledge_base_id: self.knowledge_base_id
+                ,
+            }
+        )
     }
 }
+

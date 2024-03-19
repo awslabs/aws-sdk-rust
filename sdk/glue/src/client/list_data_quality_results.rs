@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDataQualityResults`](crate::operation::list_data_quality_results::builders::ListDataQualityResultsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_data_quality_results::builders::ListDataQualityResultsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filter(DataQualityResultFilterCriteria)`](crate::operation::list_data_quality_results::builders::ListDataQualityResultsFluentBuilder::filter) / [`set_filter(Option<DataQualityResultFilterCriteria>)`](crate::operation::list_data_quality_results::builders::ListDataQualityResultsFluentBuilder::set_filter):<br>required: **false**<br><p>The filter criteria.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_data_quality_results::builders::ListDataQualityResultsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_data_quality_results::builders::ListDataQualityResultsFluentBuilder::set_next_token):<br>required: **false**<br><p>A paginated token to offset the results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_data_quality_results::builders::ListDataQualityResultsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_data_quality_results::builders::ListDataQualityResultsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
-    /// - On success, responds with [`ListDataQualityResultsOutput`](crate::operation::list_data_quality_results::ListDataQualityResultsOutput) with field(s):
+                            /// - On success, responds with [`ListDataQualityResultsOutput`](crate::operation::list_data_quality_results::ListDataQualityResultsOutput) with field(s):
     ///   - [`results(Vec::<DataQualityResultDescription>)`](crate::operation::list_data_quality_results::ListDataQualityResultsOutput::results): <p>A list of <code>DataQualityResultDescription</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_quality_results::ListDataQualityResultsOutput::next_token): <p>A pagination token, if more results are available.</p>
-    /// - On failure, responds with [`SdkError<ListDataQualityResultsError>`](crate::operation::list_data_quality_results::ListDataQualityResultsError)
+                            /// - On failure, responds with [`SdkError<ListDataQualityResultsError>`](crate::operation::list_data_quality_results::ListDataQualityResultsError)
     pub fn list_data_quality_results(&self) -> crate::operation::list_data_quality_results::builders::ListDataQualityResultsFluentBuilder {
-        crate::operation::list_data_quality_results::builders::ListDataQualityResultsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_data_quality_results::builders::ListDataQualityResultsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

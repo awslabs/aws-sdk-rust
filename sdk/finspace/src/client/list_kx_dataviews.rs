@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListKxDataviews`](crate::operation::list_kx_dataviews::builders::ListKxDataviewsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_kx_dataviews::builders::ListKxDataviewsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`environment_id(impl Into<String>)`](crate::operation::list_kx_dataviews::builders::ListKxDataviewsFluentBuilder::environment_id) / [`set_environment_id(Option<String>)`](crate::operation::list_kx_dataviews::builders::ListKxDataviewsFluentBuilder::set_environment_id):<br>required: **true**<br><p>A unique identifier for the kdb environment, for which you want to retrieve a list of dataviews.</p><br>
     ///   - [`database_name(impl Into<String>)`](crate::operation::list_kx_dataviews::builders::ListKxDataviewsFluentBuilder::database_name) / [`set_database_name(Option<String>)`](crate::operation::list_kx_dataviews::builders::ListKxDataviewsFluentBuilder::set_database_name):<br>required: **true**<br><p>The name of the database where the dataviews were created.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_kx_dataviews::builders::ListKxDataviewsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_kx_dataviews::builders::ListKxDataviewsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates where a results page should begin.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_kx_dataviews::builders::ListKxDataviewsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_kx_dataviews::builders::ListKxDataviewsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in this request.</p><br>
-    /// - On success, responds with [`ListKxDataviewsOutput`](crate::operation::list_kx_dataviews::ListKxDataviewsOutput) with field(s):
+                            /// - On success, responds with [`ListKxDataviewsOutput`](crate::operation::list_kx_dataviews::ListKxDataviewsOutput) with field(s):
     ///   - [`kx_dataviews(Option<Vec::<KxDataviewListEntry>>)`](crate::operation::list_kx_dataviews::ListKxDataviewsOutput::kx_dataviews): <p>The list of kdb dataviews that are currently active for the given database.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_kx_dataviews::ListKxDataviewsOutput::next_token): <p>A token that indicates where a results page should begin.</p>
-    /// - On failure, responds with [`SdkError<ListKxDataviewsError>`](crate::operation::list_kx_dataviews::ListKxDataviewsError)
+                            /// - On failure, responds with [`SdkError<ListKxDataviewsError>`](crate::operation::list_kx_dataviews::ListKxDataviewsError)
     pub fn list_kx_dataviews(&self) -> crate::operation::list_kx_dataviews::builders::ListKxDataviewsFluentBuilder {
-        crate::operation::list_kx_dataviews::builders::ListKxDataviewsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_kx_dataviews::builders::ListKxDataviewsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

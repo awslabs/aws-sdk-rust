@@ -21,11 +21,7 @@ impl ResourceId {
     /// Tries to convert the enum instance into [`CodeArtifactId`](crate::types::ResourceId::CodeArtifactId), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_code_artifact_id(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let ResourceId::CodeArtifactId(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ResourceId::CodeArtifactId(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`CodeArtifactId`](crate::types::ResourceId::CodeArtifactId).
     pub fn is_code_artifact_id(&self) -> bool {
@@ -36,3 +32,4 @@ impl ResourceId {
         matches!(self, Self::Unknown)
     }
 }
+

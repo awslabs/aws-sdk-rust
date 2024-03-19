@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRemediationConfigurationsOutput {
+pub struct DescribeRemediationConfigurationsOutput  {
     /// <p>Returns a remediation configuration object.</p>
-    pub remediation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::RemediationConfiguration>>,
+    pub remediation_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::RemediationConfiguration>>,
     _request_id: Option<String>,
 }
-impl DescribeRemediationConfigurationsOutput {
+impl  DescribeRemediationConfigurationsOutput  {
     /// <p>Returns a remediation configuration object.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remediation_configurations.is_none()`.
-    pub fn remediation_configurations(&self) -> &[crate::types::RemediationConfiguration] {
-        self.remediation_configurations.as_deref().unwrap_or_default()
+    pub fn remediation_configurations(&self) -> & [crate::types::RemediationConfiguration] {
+        self.remediation_configurations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeRemediationConfigurationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeRemediationConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRemediationConfigurationsOutput`](crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsOutput).
     pub fn builder() -> crate::operation::describe_remediation_configurations::builders::DescribeRemediationConfigurationsOutputBuilder {
@@ -31,7 +32,7 @@ impl DescribeRemediationConfigurationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRemediationConfigurationsOutputBuilder {
-    pub(crate) remediation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::RemediationConfiguration>>,
+    pub(crate) remediation_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::RemediationConfiguration>>,
     _request_id: Option<String>,
 }
 impl DescribeRemediationConfigurationsOutputBuilder {
@@ -42,33 +43,34 @@ impl DescribeRemediationConfigurationsOutputBuilder {
     /// <p>Returns a remediation configuration object.</p>
     pub fn remediation_configurations(mut self, input: crate::types::RemediationConfiguration) -> Self {
         let mut v = self.remediation_configurations.unwrap_or_default();
-        v.push(input);
-        self.remediation_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.remediation_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Returns a remediation configuration object.</p>
-    pub fn set_remediation_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RemediationConfiguration>>) -> Self {
-        self.remediation_configurations = input;
-        self
+    pub fn set_remediation_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RemediationConfiguration>>) -> Self {
+        self.remediation_configurations = input; self
     }
     /// <p>Returns a remediation configuration object.</p>
-    pub fn get_remediation_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RemediationConfiguration>> {
+    pub fn get_remediation_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RemediationConfiguration>> {
         &self.remediation_configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeRemediationConfigurationsOutput`](crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsOutput).
     pub fn build(self) -> crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsOutput {
         crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsOutput {
-            remediation_configurations: self.remediation_configurations,
+            remediation_configurations: self.remediation_configurations
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

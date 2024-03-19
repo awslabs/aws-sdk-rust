@@ -3,19 +3,19 @@
 /// <p>An object that represents an Batch job dependency.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchJobDependency {
+pub struct BatchJobDependency  {
     /// <p>The job ID of the Batch job that's associated with this dependency.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the job dependency.</p>
     pub r#type: ::std::option::Option<crate::types::BatchJobDependencyType>,
 }
-impl BatchJobDependency {
+impl  BatchJobDependency  {
     /// <p>The job ID of the Batch job that's associated with this dependency.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The type of the job dependency.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::BatchJobDependencyType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::BatchJobDependencyType> {
         self.r#type.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl BatchJobDependencyBuilder {
     }
     /// <p>The job ID of the Batch job that's associated with this dependency.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The job ID of the Batch job that's associated with this dependency.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl BatchJobDependencyBuilder {
     }
     /// <p>The type of the job dependency.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::BatchJobDependencyType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the job dependency.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::BatchJobDependencyType> {
@@ -65,8 +63,11 @@ impl BatchJobDependencyBuilder {
     /// Consumes the builder and constructs a [`BatchJobDependency`](crate::types::BatchJobDependency).
     pub fn build(self) -> crate::types::BatchJobDependency {
         crate::types::BatchJobDependency {
-            job_id: self.job_id,
-            r#type: self.r#type,
+            job_id: self.job_id
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

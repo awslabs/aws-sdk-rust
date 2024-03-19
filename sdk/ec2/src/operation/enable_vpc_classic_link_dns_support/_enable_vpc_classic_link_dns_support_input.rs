@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableVpcClassicLinkDnsSupportInput {
+pub struct EnableVpcClassicLinkDnsSupportInput  {
     /// <p>The ID of the VPC.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
 }
-impl EnableVpcClassicLinkDnsSupportInput {
+impl  EnableVpcClassicLinkDnsSupportInput  {
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
 }
@@ -33,20 +33,20 @@ impl EnableVpcClassicLinkDnsSupportInputBuilder {
     }
     /// <p>The ID of the VPC.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The ID of the VPC.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_id
     }
     /// Consumes the builder and constructs a [`EnableVpcClassicLinkDnsSupportInput`](crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupportInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupportInput { vpc_id: self.vpc_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupportInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupportInput {
+                vpc_id: self.vpc_id
+                ,
+            }
+        )
     }
 }
+

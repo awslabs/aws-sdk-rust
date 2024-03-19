@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListVoiceProfileDomains`](crate::operation::list_voice_profile_domains::builders::ListVoiceProfileDomainsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_voice_profile_domains::builders::ListVoiceProfileDomainsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_voice_profile_domains::builders::ListVoiceProfileDomainsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_voice_profile_domains::builders::ListVoiceProfileDomainsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token used to return the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_voice_profile_domains::builders::ListVoiceProfileDomainsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_voice_profile_domains::builders::ListVoiceProfileDomainsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call.</p><br>
-    /// - On success, responds with [`ListVoiceProfileDomainsOutput`](crate::operation::list_voice_profile_domains::ListVoiceProfileDomainsOutput) with field(s):
+                            /// - On success, responds with [`ListVoiceProfileDomainsOutput`](crate::operation::list_voice_profile_domains::ListVoiceProfileDomainsOutput) with field(s):
     ///   - [`voice_profile_domains(Option<Vec::<VoiceProfileDomainSummary>>)`](crate::operation::list_voice_profile_domains::ListVoiceProfileDomainsOutput::voice_profile_domains): <p>The list of voice profile domains.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_voice_profile_domains::ListVoiceProfileDomainsOutput::next_token): <p>The token used to return the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListVoiceProfileDomainsError>`](crate::operation::list_voice_profile_domains::ListVoiceProfileDomainsError)
+                            /// - On failure, responds with [`SdkError<ListVoiceProfileDomainsError>`](crate::operation::list_voice_profile_domains::ListVoiceProfileDomainsError)
     pub fn list_voice_profile_domains(&self) -> crate::operation::list_voice_profile_domains::builders::ListVoiceProfileDomainsFluentBuilder {
-        crate::operation::list_voice_profile_domains::builders::ListVoiceProfileDomainsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_voice_profile_domains::builders::ListVoiceProfileDomainsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

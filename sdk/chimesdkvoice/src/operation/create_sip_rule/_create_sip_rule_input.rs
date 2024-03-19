@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSipRuleInput {
+pub struct CreateSipRuleInput  {
     /// <p>The name of the SIP rule.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.</p>
@@ -12,19 +12,19 @@ pub struct CreateSipRuleInput {
     /// <p>Disables or enables a SIP rule. You must disable SIP rules before you can delete them.</p>
     pub disabled: ::std::option::Option<bool>,
     /// <p>List of SIP media applications, with priority and AWS Region. Only one SIP application per AWS Region can be used.</p>
-    pub target_applications: ::std::option::Option<::std::vec::Vec<crate::types::SipRuleTargetApplication>>,
+    pub target_applications: ::std::option::Option<::std::vec::Vec::<crate::types::SipRuleTargetApplication>>,
 }
-impl CreateSipRuleInput {
+impl  CreateSipRuleInput  {
     /// <p>The name of the SIP rule.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.</p>
-    pub fn trigger_type(&self) -> ::std::option::Option<&crate::types::SipRuleTriggerType> {
+    pub fn trigger_type(&self) -> ::std::option::Option<& crate::types::SipRuleTriggerType> {
         self.trigger_type.as_ref()
     }
     /// <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the outbound host name of a Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>, the value can be a customer-owned phone number in the E164 format. The <code>SipMediaApplication</code> specified in the <code>SipRule</code> is triggered if the request URI in an incoming SIP request matches the <code>RequestUriHostname</code>, or if the <code>To</code> header in the incoming SIP request matches the <code>ToPhoneNumber</code> value.</p>
-    pub fn trigger_value(&self) -> ::std::option::Option<&str> {
+    pub fn trigger_value(&self) -> ::std::option::Option<& str> {
         self.trigger_value.as_deref()
     }
     /// <p>Disables or enables a SIP rule. You must disable SIP rules before you can delete them.</p>
@@ -32,10 +32,11 @@ impl CreateSipRuleInput {
         self.disabled
     }
     /// <p>List of SIP media applications, with priority and AWS Region. Only one SIP application per AWS Region can be used.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_applications.is_none()`.
-    pub fn target_applications(&self) -> &[crate::types::SipRuleTargetApplication] {
-        self.target_applications.as_deref().unwrap_or_default()
+    pub fn target_applications(&self) -> & [crate::types::SipRuleTargetApplication] {
+        self.target_applications.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateSipRuleInput {
@@ -53,7 +54,7 @@ pub struct CreateSipRuleInputBuilder {
     pub(crate) trigger_type: ::std::option::Option<crate::types::SipRuleTriggerType>,
     pub(crate) trigger_value: ::std::option::Option<::std::string::String>,
     pub(crate) disabled: ::std::option::Option<bool>,
-    pub(crate) target_applications: ::std::option::Option<::std::vec::Vec<crate::types::SipRuleTargetApplication>>,
+    pub(crate) target_applications: ::std::option::Option<::std::vec::Vec::<crate::types::SipRuleTargetApplication>>,
 }
 impl CreateSipRuleInputBuilder {
     /// <p>The name of the SIP rule.</p>
@@ -64,8 +65,7 @@ impl CreateSipRuleInputBuilder {
     }
     /// <p>The name of the SIP rule.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the SIP rule.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +79,7 @@ impl CreateSipRuleInputBuilder {
     }
     /// <p>The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.</p>
     pub fn set_trigger_type(mut self, input: ::std::option::Option<crate::types::SipRuleTriggerType>) -> Self {
-        self.trigger_type = input;
-        self
+        self.trigger_type = input; self
     }
     /// <p>The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.</p>
     pub fn get_trigger_type(&self) -> &::std::option::Option<crate::types::SipRuleTriggerType> {
@@ -94,8 +93,7 @@ impl CreateSipRuleInputBuilder {
     }
     /// <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the outbound host name of a Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>, the value can be a customer-owned phone number in the E164 format. The <code>SipMediaApplication</code> specified in the <code>SipRule</code> is triggered if the request URI in an incoming SIP request matches the <code>RequestUriHostname</code>, or if the <code>To</code> header in the incoming SIP request matches the <code>ToPhoneNumber</code> value.</p>
     pub fn set_trigger_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trigger_value = input;
-        self
+        self.trigger_value = input; self
     }
     /// <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the outbound host name of a Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>, the value can be a customer-owned phone number in the E164 format. The <code>SipMediaApplication</code> specified in the <code>SipRule</code> is triggered if the request URI in an incoming SIP request matches the <code>RequestUriHostname</code>, or if the <code>To</code> header in the incoming SIP request matches the <code>ToPhoneNumber</code> value.</p>
     pub fn get_trigger_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +106,7 @@ impl CreateSipRuleInputBuilder {
     }
     /// <p>Disables or enables a SIP rule. You must disable SIP rules before you can delete them.</p>
     pub fn set_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.disabled = input;
-        self
+        self.disabled = input; self
     }
     /// <p>Disables or enables a SIP rule. You must disable SIP rules before you can delete them.</p>
     pub fn get_disabled(&self) -> &::std::option::Option<bool> {
@@ -122,29 +119,34 @@ impl CreateSipRuleInputBuilder {
     /// <p>List of SIP media applications, with priority and AWS Region. Only one SIP application per AWS Region can be used.</p>
     pub fn target_applications(mut self, input: crate::types::SipRuleTargetApplication) -> Self {
         let mut v = self.target_applications.unwrap_or_default();
-        v.push(input);
-        self.target_applications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.target_applications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of SIP media applications, with priority and AWS Region. Only one SIP application per AWS Region can be used.</p>
-    pub fn set_target_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SipRuleTargetApplication>>) -> Self {
-        self.target_applications = input;
-        self
+    pub fn set_target_applications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SipRuleTargetApplication>>) -> Self {
+        self.target_applications = input; self
     }
     /// <p>List of SIP media applications, with priority and AWS Region. Only one SIP application per AWS Region can be used.</p>
-    pub fn get_target_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SipRuleTargetApplication>> {
+    pub fn get_target_applications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SipRuleTargetApplication>> {
         &self.target_applications
     }
     /// Consumes the builder and constructs a [`CreateSipRuleInput`](crate::operation::create_sip_rule::CreateSipRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_sip_rule::CreateSipRuleInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_sip_rule::CreateSipRuleInput {
-            name: self.name,
-            trigger_type: self.trigger_type,
-            trigger_value: self.trigger_value,
-            disabled: self.disabled,
-            target_applications: self.target_applications,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_sip_rule::CreateSipRuleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_sip_rule::CreateSipRuleInput {
+                name: self.name
+                ,
+                trigger_type: self.trigger_type
+                ,
+                trigger_value: self.trigger_value
+                ,
+                disabled: self.disabled
+                ,
+                target_applications: self.target_applications
+                ,
+            }
+        )
     }
 }
+

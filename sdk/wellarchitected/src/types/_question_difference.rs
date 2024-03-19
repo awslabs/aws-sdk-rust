@@ -3,7 +3,7 @@
 /// <p>A question difference return object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QuestionDifference {
+pub struct QuestionDifference  {
     /// <p>The ID of the question.</p>
     pub question_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the question.</p>
@@ -11,17 +11,17 @@ pub struct QuestionDifference {
     /// <p>Indicates the type of change to the question.</p>
     pub difference_status: ::std::option::Option<crate::types::DifferenceStatus>,
 }
-impl QuestionDifference {
+impl  QuestionDifference  {
     /// <p>The ID of the question.</p>
-    pub fn question_id(&self) -> ::std::option::Option<&str> {
+    pub fn question_id(&self) -> ::std::option::Option<& str> {
         self.question_id.as_deref()
     }
     /// <p>The title of the question.</p>
-    pub fn question_title(&self) -> ::std::option::Option<&str> {
+    pub fn question_title(&self) -> ::std::option::Option<& str> {
         self.question_title.as_deref()
     }
     /// <p>Indicates the type of change to the question.</p>
-    pub fn difference_status(&self) -> ::std::option::Option<&crate::types::DifferenceStatus> {
+    pub fn difference_status(&self) -> ::std::option::Option<& crate::types::DifferenceStatus> {
         self.difference_status.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl QuestionDifferenceBuilder {
     }
     /// <p>The ID of the question.</p>
     pub fn set_question_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.question_id = input;
-        self
+        self.question_id = input; self
     }
     /// <p>The ID of the question.</p>
     pub fn get_question_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl QuestionDifferenceBuilder {
     }
     /// <p>The title of the question.</p>
     pub fn set_question_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.question_title = input;
-        self
+        self.question_title = input; self
     }
     /// <p>The title of the question.</p>
     pub fn get_question_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl QuestionDifferenceBuilder {
     }
     /// <p>Indicates the type of change to the question.</p>
     pub fn set_difference_status(mut self, input: ::std::option::Option<crate::types::DifferenceStatus>) -> Self {
-        self.difference_status = input;
-        self
+        self.difference_status = input; self
     }
     /// <p>Indicates the type of change to the question.</p>
     pub fn get_difference_status(&self) -> &::std::option::Option<crate::types::DifferenceStatus> {
@@ -86,9 +83,13 @@ impl QuestionDifferenceBuilder {
     /// Consumes the builder and constructs a [`QuestionDifference`](crate::types::QuestionDifference).
     pub fn build(self) -> crate::types::QuestionDifference {
         crate::types::QuestionDifference {
-            question_id: self.question_id,
-            question_title: self.question_title,
-            difference_status: self.difference_status,
+            question_id: self.question_id
+            ,
+            question_title: self.question_title
+            ,
+            difference_status: self.difference_status
+            ,
         }
     }
 }
+

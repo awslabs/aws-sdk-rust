@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAccessPolicyOutput {
+pub struct CreateAccessPolicyOutput  {
     /// <p>The ID of the access policy.</p>
     pub access_policy_id: ::std::string::String,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
@@ -10,24 +10,22 @@ pub struct CreateAccessPolicyOutput {
     pub access_policy_arn: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CreateAccessPolicyOutput {
+impl  CreateAccessPolicyOutput  {
     /// <p>The ID of the access policy.</p>
-    pub fn access_policy_id(&self) -> &str {
-        use std::ops::Deref;
-        self.access_policy_id.deref()
+    pub fn access_policy_id(&self) -> & str {
+        use std::ops::Deref; self.access_policy_id.deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
     /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code></p>
-    pub fn access_policy_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.access_policy_arn.deref()
+    pub fn access_policy_arn(&self) -> & str {
+        use std::ops::Deref; self.access_policy_arn.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateAccessPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateAccessPolicyOutput {
     /// Creates a new builder-style object to manufacture [`CreateAccessPolicyOutput`](crate::operation::create_access_policy::CreateAccessPolicyOutput).
     pub fn builder() -> crate::operation::create_access_policy::builders::CreateAccessPolicyOutputBuilder {
@@ -52,8 +50,7 @@ impl CreateAccessPolicyOutputBuilder {
     }
     /// <p>The ID of the access policy.</p>
     pub fn set_access_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_policy_id = input;
-        self
+        self.access_policy_id = input; self
     }
     /// <p>The ID of the access policy.</p>
     pub fn get_access_policy_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +66,7 @@ impl CreateAccessPolicyOutputBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
     /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code></p>
     pub fn set_access_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_policy_arn = input;
-        self
+        self.access_policy_arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
     /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code></p>
@@ -78,36 +74,34 @@ impl CreateAccessPolicyOutputBuilder {
         &self.access_policy_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateAccessPolicyOutput`](crate::operation::create_access_policy::CreateAccessPolicyOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`access_policy_id`](crate::operation::create_access_policy::builders::CreateAccessPolicyOutputBuilder::access_policy_id)
     /// - [`access_policy_arn`](crate::operation::create_access_policy::builders::CreateAccessPolicyOutputBuilder::access_policy_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_access_policy::CreateAccessPolicyOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_access_policy::CreateAccessPolicyOutput {
-            access_policy_id: self.access_policy_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "access_policy_id",
-                    "access_policy_id was not specified but it is required when building CreateAccessPolicyOutput",
-                )
-            })?,
-            access_policy_arn: self.access_policy_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "access_policy_arn",
-                    "access_policy_arn was not specified but it is required when building CreateAccessPolicyOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_access_policy::CreateAccessPolicyOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_access_policy::CreateAccessPolicyOutput {
+                access_policy_id: self.access_policy_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("access_policy_id", "access_policy_id was not specified but it is required when building CreateAccessPolicyOutput")
+                    )?
+                ,
+                access_policy_arn: self.access_policy_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("access_policy_arn", "access_policy_arn was not specified but it is required when building CreateAccessPolicyOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

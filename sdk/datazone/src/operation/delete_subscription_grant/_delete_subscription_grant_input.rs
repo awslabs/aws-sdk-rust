@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSubscriptionGrantInput {
+pub struct DeleteSubscriptionGrantInput  {
     /// <p>The ID of the Amazon DataZone domain where the subscription grant is deleted.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subscription grant that is deleted.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
 }
-impl DeleteSubscriptionGrantInput {
+impl  DeleteSubscriptionGrantInput  {
     /// <p>The ID of the Amazon DataZone domain where the subscription grant is deleted.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The ID of the subscription grant that is deleted.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteSubscriptionGrantInputBuilder {
     }
     /// <p>The ID of the Amazon DataZone domain where the subscription grant is deleted.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The ID of the Amazon DataZone domain where the subscription grant is deleted.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DeleteSubscriptionGrantInputBuilder {
     }
     /// <p>The ID of the subscription grant that is deleted.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The ID of the subscription grant that is deleted.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`DeleteSubscriptionGrantInput`](crate::operation::delete_subscription_grant::DeleteSubscriptionGrantInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_subscription_grant::DeleteSubscriptionGrantInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_subscription_grant::DeleteSubscriptionGrantInput {
-            domain_identifier: self.domain_identifier,
-            identifier: self.identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_subscription_grant::DeleteSubscriptionGrantInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_subscription_grant::DeleteSubscriptionGrantInput {
+                domain_identifier: self.domain_identifier
+                ,
+                identifier: self.identifier
+                ,
+            }
+        )
     }
 }
+

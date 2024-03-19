@@ -3,7 +3,7 @@
 /// <p>Amazon Web Services credentials for API authentication.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Credentials {
+pub struct Credentials  {
     /// <p>The access key ID that identifies the temporary security credentials.</p>
     pub access_key_id: ::std::string::String,
     /// <p>The secret access key that can be used to sign requests.</p>
@@ -13,28 +13,25 @@ pub struct Credentials {
     /// <p>The date on which the current credentials expire.</p>
     pub expiration: ::aws_smithy_types::DateTime,
 }
-impl Credentials {
+impl  Credentials  {
     /// <p>The access key ID that identifies the temporary security credentials.</p>
-    pub fn access_key_id(&self) -> &str {
-        use std::ops::Deref;
-        self.access_key_id.deref()
+    pub fn access_key_id(&self) -> & str {
+        use std::ops::Deref; self.access_key_id.deref()
     }
     /// <p>The secret access key that can be used to sign requests.</p>
-    pub fn secret_access_key(&self) -> &str {
-        use std::ops::Deref;
-        self.secret_access_key.deref()
+    pub fn secret_access_key(&self) -> & str {
+        use std::ops::Deref; self.secret_access_key.deref()
     }
     /// <p>The token that users must pass to the service API to use the temporary credentials.</p>
-    pub fn session_token(&self) -> &str {
-        use std::ops::Deref;
-        self.session_token.deref()
+    pub fn session_token(&self) -> & str {
+        use std::ops::Deref; self.session_token.deref()
     }
     /// <p>The date on which the current credentials expire.</p>
-    pub fn expiration(&self) -> &::aws_smithy_types::DateTime {
+    pub fn expiration(&self) -> & ::aws_smithy_types::DateTime {
         &self.expiration
     }
 }
-impl ::std::fmt::Debug for Credentials {
+impl  ::std::fmt::Debug for Credentials  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Credentials");
         formatter.field("access_key_id", &"*** Sensitive Data Redacted ***");
@@ -69,8 +66,7 @@ impl CredentialsBuilder {
     }
     /// <p>The access key ID that identifies the temporary security credentials.</p>
     pub fn set_access_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_key_id = input;
-        self
+        self.access_key_id = input; self
     }
     /// <p>The access key ID that identifies the temporary security credentials.</p>
     pub fn get_access_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +80,7 @@ impl CredentialsBuilder {
     }
     /// <p>The secret access key that can be used to sign requests.</p>
     pub fn set_secret_access_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_access_key = input;
-        self
+        self.secret_access_key = input; self
     }
     /// <p>The secret access key that can be used to sign requests.</p>
     pub fn get_secret_access_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +94,7 @@ impl CredentialsBuilder {
     }
     /// <p>The token that users must pass to the service API to use the temporary credentials.</p>
     pub fn set_session_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_token = input;
-        self
+        self.session_token = input; self
     }
     /// <p>The token that users must pass to the service API to use the temporary credentials.</p>
     pub fn get_session_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +108,7 @@ impl CredentialsBuilder {
     }
     /// <p>The date on which the current credentials expire.</p>
     pub fn set_expiration(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.expiration = input;
-        self
+        self.expiration = input; self
     }
     /// <p>The date on which the current credentials expire.</p>
     pub fn get_expiration(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -128,32 +121,30 @@ impl CredentialsBuilder {
     /// - [`session_token`](crate::types::builders::CredentialsBuilder::session_token)
     /// - [`expiration`](crate::types::builders::CredentialsBuilder::expiration)
     pub fn build(self) -> ::std::result::Result<crate::types::Credentials, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Credentials {
-            access_key_id: self.access_key_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "access_key_id",
-                    "access_key_id was not specified but it is required when building Credentials",
-                )
-            })?,
-            secret_access_key: self.secret_access_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "secret_access_key",
-                    "secret_access_key was not specified but it is required when building Credentials",
-                )
-            })?,
-            session_token: self.session_token.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "session_token",
-                    "session_token was not specified but it is required when building Credentials",
-                )
-            })?,
-            expiration: self.expiration.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "expiration",
-                    "expiration was not specified but it is required when building Credentials",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Credentials {
+                access_key_id: self.access_key_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("access_key_id", "access_key_id was not specified but it is required when building Credentials")
+                    )?
+                ,
+                secret_access_key: self.secret_access_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("secret_access_key", "secret_access_key was not specified but it is required when building Credentials")
+                    )?
+                ,
+                session_token: self.session_token
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("session_token", "session_token was not specified but it is required when building Credentials")
+                    )?
+                ,
+                expiration: self.expiration
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("expiration", "expiration was not specified but it is required when building Credentials")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CredentialsBuilder {
@@ -166,3 +157,4 @@ impl ::std::fmt::Debug for CredentialsBuilder {
         formatter.finish()
     }
 }
+

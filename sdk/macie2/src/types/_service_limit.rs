@@ -3,7 +3,7 @@
 /// <p>Specifies a current quota for an Amazon Macie account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServiceLimit {
+pub struct ServiceLimit  {
     /// <p>Specifies whether the account has met the quota that corresponds to the metric specified by the UsageByAccount.type field in the response.</p>
     pub is_service_limited: ::std::option::Option<bool>,
     /// <p>The unit of measurement for the value specified by the value field.</p>
@@ -11,13 +11,13 @@ pub struct ServiceLimit {
     /// <p>The value for the metric specified by the UsageByAccount.type field in the response.</p>
     pub value: ::std::option::Option<i64>,
 }
-impl ServiceLimit {
+impl  ServiceLimit  {
     /// <p>Specifies whether the account has met the quota that corresponds to the metric specified by the UsageByAccount.type field in the response.</p>
     pub fn is_service_limited(&self) -> ::std::option::Option<bool> {
         self.is_service_limited
     }
     /// <p>The unit of measurement for the value specified by the value field.</p>
-    pub fn unit(&self) -> ::std::option::Option<&crate::types::Unit> {
+    pub fn unit(&self) -> ::std::option::Option<& crate::types::Unit> {
         self.unit.as_ref()
     }
     /// <p>The value for the metric specified by the UsageByAccount.type field in the response.</p>
@@ -48,8 +48,7 @@ impl ServiceLimitBuilder {
     }
     /// <p>Specifies whether the account has met the quota that corresponds to the metric specified by the UsageByAccount.type field in the response.</p>
     pub fn set_is_service_limited(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_service_limited = input;
-        self
+        self.is_service_limited = input; self
     }
     /// <p>Specifies whether the account has met the quota that corresponds to the metric specified by the UsageByAccount.type field in the response.</p>
     pub fn get_is_service_limited(&self) -> &::std::option::Option<bool> {
@@ -62,8 +61,7 @@ impl ServiceLimitBuilder {
     }
     /// <p>The unit of measurement for the value specified by the value field.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::Unit>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// <p>The unit of measurement for the value specified by the value field.</p>
     pub fn get_unit(&self) -> &::std::option::Option<crate::types::Unit> {
@@ -76,8 +74,7 @@ impl ServiceLimitBuilder {
     }
     /// <p>The value for the metric specified by the UsageByAccount.type field in the response.</p>
     pub fn set_value(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value for the metric specified by the UsageByAccount.type field in the response.</p>
     pub fn get_value(&self) -> &::std::option::Option<i64> {
@@ -86,9 +83,13 @@ impl ServiceLimitBuilder {
     /// Consumes the builder and constructs a [`ServiceLimit`](crate::types::ServiceLimit).
     pub fn build(self) -> crate::types::ServiceLimit {
         crate::types::ServiceLimit {
-            is_service_limited: self.is_service_limited,
-            unit: self.unit,
-            value: self.value,
+            is_service_limited: self.is_service_limited
+            ,
+            unit: self.unit
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

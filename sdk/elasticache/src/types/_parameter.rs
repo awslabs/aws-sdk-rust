@@ -3,7 +3,7 @@
 /// <p>Describes an individual setting that controls some aspect of ElastiCache behavior.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Parameter {
+pub struct Parameter  {
     /// <p>The name of the parameter.</p>
     pub parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the parameter.</p>
@@ -23,29 +23,29 @@ pub struct Parameter {
     /// <p>Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to be applied. You can force a reboot or wait until the next maintenance window's reboot. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a Cluster</a>.</p>
     pub change_type: ::std::option::Option<crate::types::ChangeType>,
 }
-impl Parameter {
+impl  Parameter  {
     /// <p>The name of the parameter.</p>
-    pub fn parameter_name(&self) -> ::std::option::Option<&str> {
+    pub fn parameter_name(&self) -> ::std::option::Option<& str> {
         self.parameter_name.as_deref()
     }
     /// <p>The value of the parameter.</p>
-    pub fn parameter_value(&self) -> ::std::option::Option<&str> {
+    pub fn parameter_value(&self) -> ::std::option::Option<& str> {
         self.parameter_value.as_deref()
     }
     /// <p>A description of the parameter.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The source of the parameter.</p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
+    pub fn source(&self) -> ::std::option::Option<& str> {
         self.source.as_deref()
     }
     /// <p>The valid data type for the parameter.</p>
-    pub fn data_type(&self) -> ::std::option::Option<&str> {
+    pub fn data_type(&self) -> ::std::option::Option<& str> {
         self.data_type.as_deref()
     }
     /// <p>The valid range of values for the parameter.</p>
-    pub fn allowed_values(&self) -> ::std::option::Option<&str> {
+    pub fn allowed_values(&self) -> ::std::option::Option<& str> {
         self.allowed_values.as_deref()
     }
     /// <p>Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed.</p>
@@ -53,11 +53,11 @@ impl Parameter {
         self.is_modifiable
     }
     /// <p>The earliest cache engine version to which the parameter can apply.</p>
-    pub fn minimum_engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn minimum_engine_version(&self) -> ::std::option::Option<& str> {
         self.minimum_engine_version.as_deref()
     }
     /// <p>Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to be applied. You can force a reboot or wait until the next maintenance window's reboot. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a Cluster</a>.</p>
-    pub fn change_type(&self) -> ::std::option::Option<&crate::types::ChangeType> {
+    pub fn change_type(&self) -> ::std::option::Option<& crate::types::ChangeType> {
         self.change_type.as_ref()
     }
 }
@@ -90,8 +90,7 @@ impl ParameterBuilder {
     }
     /// <p>The name of the parameter.</p>
     pub fn set_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_name = input;
-        self
+        self.parameter_name = input; self
     }
     /// <p>The name of the parameter.</p>
     pub fn get_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl ParameterBuilder {
     }
     /// <p>The value of the parameter.</p>
     pub fn set_parameter_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_value = input;
-        self
+        self.parameter_value = input; self
     }
     /// <p>The value of the parameter.</p>
     pub fn get_parameter_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +116,7 @@ impl ParameterBuilder {
     }
     /// <p>A description of the parameter.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the parameter.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +129,7 @@ impl ParameterBuilder {
     }
     /// <p>The source of the parameter.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The source of the parameter.</p>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +142,7 @@ impl ParameterBuilder {
     }
     /// <p>The valid data type for the parameter.</p>
     pub fn set_data_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_type = input;
-        self
+        self.data_type = input; self
     }
     /// <p>The valid data type for the parameter.</p>
     pub fn get_data_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +155,7 @@ impl ParameterBuilder {
     }
     /// <p>The valid range of values for the parameter.</p>
     pub fn set_allowed_values(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.allowed_values = input;
-        self
+        self.allowed_values = input; self
     }
     /// <p>The valid range of values for the parameter.</p>
     pub fn get_allowed_values(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +168,7 @@ impl ParameterBuilder {
     }
     /// <p>Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed.</p>
     pub fn set_is_modifiable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_modifiable = input;
-        self
+        self.is_modifiable = input; self
     }
     /// <p>Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed.</p>
     pub fn get_is_modifiable(&self) -> &::std::option::Option<bool> {
@@ -188,8 +181,7 @@ impl ParameterBuilder {
     }
     /// <p>The earliest cache engine version to which the parameter can apply.</p>
     pub fn set_minimum_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.minimum_engine_version = input;
-        self
+        self.minimum_engine_version = input; self
     }
     /// <p>The earliest cache engine version to which the parameter can apply.</p>
     pub fn get_minimum_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +194,7 @@ impl ParameterBuilder {
     }
     /// <p>Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to be applied. You can force a reboot or wait until the next maintenance window's reboot. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a Cluster</a>.</p>
     pub fn set_change_type(mut self, input: ::std::option::Option<crate::types::ChangeType>) -> Self {
-        self.change_type = input;
-        self
+        self.change_type = input; self
     }
     /// <p>Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to be applied. You can force a reboot or wait until the next maintenance window's reboot. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a Cluster</a>.</p>
     pub fn get_change_type(&self) -> &::std::option::Option<crate::types::ChangeType> {
@@ -212,15 +203,25 @@ impl ParameterBuilder {
     /// Consumes the builder and constructs a [`Parameter`](crate::types::Parameter).
     pub fn build(self) -> crate::types::Parameter {
         crate::types::Parameter {
-            parameter_name: self.parameter_name,
-            parameter_value: self.parameter_value,
-            description: self.description,
-            source: self.source,
-            data_type: self.data_type,
-            allowed_values: self.allowed_values,
-            is_modifiable: self.is_modifiable,
-            minimum_engine_version: self.minimum_engine_version,
-            change_type: self.change_type,
+            parameter_name: self.parameter_name
+            ,
+            parameter_value: self.parameter_value
+            ,
+            description: self.description
+            ,
+            source: self.source
+            ,
+            data_type: self.data_type
+            ,
+            allowed_values: self.allowed_values
+            ,
+            is_modifiable: self.is_modifiable
+            ,
+            minimum_engine_version: self.minimum_engine_version
+            ,
+            change_type: self.change_type
+            ,
         }
     }
 }
+

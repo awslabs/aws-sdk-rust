@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeObservationInput {
+pub struct DescribeObservationInput  {
     /// <p>The ID of the observation.</p>
     pub observation_id: ::std::option::Option<::std::string::String>,
     /// <p>The AWS account ID for the resource group owner.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeObservationInput {
+impl  DescribeObservationInput  {
     /// <p>The ID of the observation.</p>
-    pub fn observation_id(&self) -> ::std::option::Option<&str> {
+    pub fn observation_id(&self) -> ::std::option::Option<& str> {
         self.observation_id.as_deref()
     }
     /// <p>The AWS account ID for the resource group owner.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeObservationInputBuilder {
     }
     /// <p>The ID of the observation.</p>
     pub fn set_observation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.observation_id = input;
-        self
+        self.observation_id = input; self
     }
     /// <p>The ID of the observation.</p>
     pub fn get_observation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,21 +54,22 @@ impl DescribeObservationInputBuilder {
     }
     /// <p>The AWS account ID for the resource group owner.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The AWS account ID for the resource group owner.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`DescribeObservationInput`](crate::operation::describe_observation::DescribeObservationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_observation::DescribeObservationInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_observation::DescribeObservationInput {
-            observation_id: self.observation_id,
-            account_id: self.account_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_observation::DescribeObservationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_observation::DescribeObservationInput {
+                observation_id: self.observation_id
+                ,
+                account_id: self.account_id
+                ,
+            }
+        )
     }
 }
+

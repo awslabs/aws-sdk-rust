@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateKxVolumeOutput {
+pub struct UpdateKxVolumeOutput  {
     /// <p>A unique identifier for the kdb environment where you want to update the volume.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the volume that you want to update.</p>
@@ -44,32 +44,32 @@ pub struct UpdateKxVolumeOutput {
     /// <p>The number of availability zones you want to assign per volume. Currently, FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in a single AZ.</p>
     pub az_mode: ::std::option::Option<crate::types::KxAzMode>,
     /// <p>The identifier of the availability zones.</p>
-    pub availability_zone_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub availability_zone_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The last time that the volume was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub last_modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies the clusters that a volume is attached to.</p>
-    pub attached_clusters: ::std::option::Option<::std::vec::Vec<crate::types::KxAttachedCluster>>,
+    pub attached_clusters: ::std::option::Option<::std::vec::Vec::<crate::types::KxAttachedCluster>>,
     _request_id: Option<String>,
 }
-impl UpdateKxVolumeOutput {
+impl  UpdateKxVolumeOutput  {
     /// <p>A unique identifier for the kdb environment where you want to update the volume.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>A unique identifier for the volume that you want to update.</p>
-    pub fn volume_name(&self) -> ::std::option::Option<&str> {
+    pub fn volume_name(&self) -> ::std::option::Option<& str> {
         self.volume_name.as_deref()
     }
     /// <p>The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type.</p>
-    pub fn volume_type(&self) -> ::std::option::Option<&crate::types::KxVolumeType> {
+    pub fn volume_type(&self) -> ::std::option::Option<& crate::types::KxVolumeType> {
         self.volume_type.as_ref()
     }
     /// <p>The ARN identifier of the volume.</p>
-    pub fn volume_arn(&self) -> ::std::option::Option<&str> {
+    pub fn volume_arn(&self) -> ::std::option::Option<& str> {
         self.volume_arn.as_deref()
     }
     /// <p>Specifies the configuration for the Network attached storage (NAS_1) file system volume.</p>
-    pub fn nas1_configuration(&self) -> ::std::option::Option<&crate::types::KxNas1Configuration> {
+    pub fn nas1_configuration(&self) -> ::std::option::Option<& crate::types::KxNas1Configuration> {
         self.nas1_configuration.as_ref()
     }
     /// <p>The status of the volume.</p>
@@ -93,47 +93,49 @@ impl UpdateKxVolumeOutput {
     /// <li>
     /// <p>DELETED – The volume is successfully deleted.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::KxVolumeStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::KxVolumeStatus> {
         self.status.as_ref()
     }
     /// <p>The description for the volume.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The error message when a failed state occurs.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>The timestamp at which the volume was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The number of availability zones you want to assign per volume. Currently, FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in a single AZ.</p>
-    pub fn az_mode(&self) -> ::std::option::Option<&crate::types::KxAzMode> {
+    pub fn az_mode(&self) -> ::std::option::Option<& crate::types::KxAzMode> {
         self.az_mode.as_ref()
     }
     /// <p>The identifier of the availability zones.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zone_ids.is_none()`.
-    pub fn availability_zone_ids(&self) -> &[::std::string::String] {
-        self.availability_zone_ids.as_deref().unwrap_or_default()
+    pub fn availability_zone_ids(&self) -> & [::std::string::String] {
+        self.availability_zone_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The last time that the volume was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    pub fn last_modified_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_timestamp.as_ref()
     }
     /// <p>Specifies the clusters that a volume is attached to.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attached_clusters.is_none()`.
-    pub fn attached_clusters(&self) -> &[crate::types::KxAttachedCluster] {
-        self.attached_clusters.as_deref().unwrap_or_default()
+    pub fn attached_clusters(&self) -> & [crate::types::KxAttachedCluster] {
+        self.attached_clusters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateKxVolumeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateKxVolumeOutput {
     /// Creates a new builder-style object to manufacture [`UpdateKxVolumeOutput`](crate::operation::update_kx_volume::UpdateKxVolumeOutput).
     pub fn builder() -> crate::operation::update_kx_volume::builders::UpdateKxVolumeOutputBuilder {
@@ -155,9 +157,9 @@ pub struct UpdateKxVolumeOutputBuilder {
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) az_mode: ::std::option::Option<crate::types::KxAzMode>,
-    pub(crate) availability_zone_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) availability_zone_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) last_modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) attached_clusters: ::std::option::Option<::std::vec::Vec<crate::types::KxAttachedCluster>>,
+    pub(crate) attached_clusters: ::std::option::Option<::std::vec::Vec::<crate::types::KxAttachedCluster>>,
     _request_id: Option<String>,
 }
 impl UpdateKxVolumeOutputBuilder {
@@ -168,8 +170,7 @@ impl UpdateKxVolumeOutputBuilder {
     }
     /// <p>A unique identifier for the kdb environment where you want to update the volume.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>A unique identifier for the kdb environment where you want to update the volume.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -182,8 +183,7 @@ impl UpdateKxVolumeOutputBuilder {
     }
     /// <p>A unique identifier for the volume that you want to update.</p>
     pub fn set_volume_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_name = input;
-        self
+        self.volume_name = input; self
     }
     /// <p>A unique identifier for the volume that you want to update.</p>
     pub fn get_volume_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -196,8 +196,7 @@ impl UpdateKxVolumeOutputBuilder {
     }
     /// <p>The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type.</p>
     pub fn set_volume_type(mut self, input: ::std::option::Option<crate::types::KxVolumeType>) -> Self {
-        self.volume_type = input;
-        self
+        self.volume_type = input; self
     }
     /// <p>The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type.</p>
     pub fn get_volume_type(&self) -> &::std::option::Option<crate::types::KxVolumeType> {
@@ -210,8 +209,7 @@ impl UpdateKxVolumeOutputBuilder {
     }
     /// <p>The ARN identifier of the volume.</p>
     pub fn set_volume_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_arn = input;
-        self
+        self.volume_arn = input; self
     }
     /// <p>The ARN identifier of the volume.</p>
     pub fn get_volume_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -224,8 +222,7 @@ impl UpdateKxVolumeOutputBuilder {
     }
     /// <p>Specifies the configuration for the Network attached storage (NAS_1) file system volume.</p>
     pub fn set_nas1_configuration(mut self, input: ::std::option::Option<crate::types::KxNas1Configuration>) -> Self {
-        self.nas1_configuration = input;
-        self
+        self.nas1_configuration = input; self
     }
     /// <p>Specifies the configuration for the Network attached storage (NAS_1) file system volume.</p>
     pub fn get_nas1_configuration(&self) -> &::std::option::Option<crate::types::KxNas1Configuration> {
@@ -278,8 +275,7 @@ impl UpdateKxVolumeOutputBuilder {
     /// <p>DELETED – The volume is successfully deleted.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::KxVolumeStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the volume.</p>
     /// <ul>
@@ -312,8 +308,7 @@ impl UpdateKxVolumeOutputBuilder {
     }
     /// <p>The description for the volume.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description for the volume.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -326,8 +321,7 @@ impl UpdateKxVolumeOutputBuilder {
     }
     /// <p>The error message when a failed state occurs.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>The error message when a failed state occurs.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -340,8 +334,7 @@ impl UpdateKxVolumeOutputBuilder {
     }
     /// <p>The timestamp at which the volume was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input;
-        self
+        self.created_timestamp = input; self
     }
     /// <p>The timestamp at which the volume was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -354,8 +347,7 @@ impl UpdateKxVolumeOutputBuilder {
     }
     /// <p>The number of availability zones you want to assign per volume. Currently, FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in a single AZ.</p>
     pub fn set_az_mode(mut self, input: ::std::option::Option<crate::types::KxAzMode>) -> Self {
-        self.az_mode = input;
-        self
+        self.az_mode = input; self
     }
     /// <p>The number of availability zones you want to assign per volume. Currently, FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in a single AZ.</p>
     pub fn get_az_mode(&self) -> &::std::option::Option<crate::types::KxAzMode> {
@@ -368,17 +360,16 @@ impl UpdateKxVolumeOutputBuilder {
     /// <p>The identifier of the availability zones.</p>
     pub fn availability_zone_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zone_ids.unwrap_or_default();
-        v.push(input.into());
-        self.availability_zone_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.availability_zone_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The identifier of the availability zones.</p>
-    pub fn set_availability_zone_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.availability_zone_ids = input;
-        self
+    pub fn set_availability_zone_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.availability_zone_ids = input; self
     }
     /// <p>The identifier of the availability zones.</p>
-    pub fn get_availability_zone_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zone_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.availability_zone_ids
     }
     /// <p>The last time that the volume was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
@@ -388,8 +379,7 @@ impl UpdateKxVolumeOutputBuilder {
     }
     /// <p>The last time that the volume was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn set_last_modified_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_timestamp = input;
-        self
+        self.last_modified_timestamp = input; self
     }
     /// <p>The last time that the volume was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn get_last_modified_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -402,45 +392,58 @@ impl UpdateKxVolumeOutputBuilder {
     /// <p>Specifies the clusters that a volume is attached to.</p>
     pub fn attached_clusters(mut self, input: crate::types::KxAttachedCluster) -> Self {
         let mut v = self.attached_clusters.unwrap_or_default();
-        v.push(input);
-        self.attached_clusters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attached_clusters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the clusters that a volume is attached to.</p>
-    pub fn set_attached_clusters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxAttachedCluster>>) -> Self {
-        self.attached_clusters = input;
-        self
+    pub fn set_attached_clusters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KxAttachedCluster>>) -> Self {
+        self.attached_clusters = input; self
     }
     /// <p>Specifies the clusters that a volume is attached to.</p>
-    pub fn get_attached_clusters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxAttachedCluster>> {
+    pub fn get_attached_clusters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KxAttachedCluster>> {
         &self.attached_clusters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateKxVolumeOutput`](crate::operation::update_kx_volume::UpdateKxVolumeOutput).
     pub fn build(self) -> crate::operation::update_kx_volume::UpdateKxVolumeOutput {
         crate::operation::update_kx_volume::UpdateKxVolumeOutput {
-            environment_id: self.environment_id,
-            volume_name: self.volume_name,
-            volume_type: self.volume_type,
-            volume_arn: self.volume_arn,
-            nas1_configuration: self.nas1_configuration,
-            status: self.status,
-            description: self.description,
-            status_reason: self.status_reason,
-            created_timestamp: self.created_timestamp,
-            az_mode: self.az_mode,
-            availability_zone_ids: self.availability_zone_ids,
-            last_modified_timestamp: self.last_modified_timestamp,
-            attached_clusters: self.attached_clusters,
+            environment_id: self.environment_id
+            ,
+            volume_name: self.volume_name
+            ,
+            volume_type: self.volume_type
+            ,
+            volume_arn: self.volume_arn
+            ,
+            nas1_configuration: self.nas1_configuration
+            ,
+            status: self.status
+            ,
+            description: self.description
+            ,
+            status_reason: self.status_reason
+            ,
+            created_timestamp: self.created_timestamp
+            ,
+            az_mode: self.az_mode
+            ,
+            availability_zone_ids: self.availability_zone_ids
+            ,
+            last_modified_timestamp: self.last_modified_timestamp
+            ,
+            attached_clusters: self.attached_clusters
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

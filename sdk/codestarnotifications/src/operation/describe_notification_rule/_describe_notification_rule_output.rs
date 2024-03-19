@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DescribeNotificationRuleOutput {
+pub struct DescribeNotificationRuleOutput  {
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
     pub arn: ::std::string::String,
     /// <p>The name of the notification rule.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A list of the event types associated with the notification rule.</p>
-    pub event_types: ::std::option::Option<::std::vec::Vec<crate::types::EventTypeSummary>>,
+    pub event_types: ::std::option::Option<::std::vec::Vec::<crate::types::EventTypeSummary>>,
     /// <p>The Amazon Resource Name (ARN) of the resource associated with the notification rule.</p>
     pub resource: ::std::option::Option<::std::string::String>,
     /// <p>A list of the Chatbot topics and Chatbot clients associated with the notification rule.</p>
-    pub targets: ::std::option::Option<::std::vec::Vec<crate::types::TargetSummary>>,
+    pub targets: ::std::option::Option<::std::vec::Vec::<crate::types::TargetSummary>>,
     /// <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
     pub detail_type: ::std::option::Option<crate::types::DetailType>,
     /// <p>The name or email alias of the person who created the notification rule.</p>
@@ -24,61 +24,62 @@ pub struct DescribeNotificationRuleOutput {
     /// <p>The date and time the notification rule was most recently updated, in timestamp format.</p>
     pub last_modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags associated with the notification rule.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl DescribeNotificationRuleOutput {
+impl  DescribeNotificationRuleOutput  {
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The name of the notification rule.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A list of the event types associated with the notification rule.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_types.is_none()`.
-    pub fn event_types(&self) -> &[crate::types::EventTypeSummary] {
-        self.event_types.as_deref().unwrap_or_default()
+    pub fn event_types(&self) -> & [crate::types::EventTypeSummary] {
+        self.event_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the resource associated with the notification rule.</p>
-    pub fn resource(&self) -> ::std::option::Option<&str> {
+    pub fn resource(&self) -> ::std::option::Option<& str> {
         self.resource.as_deref()
     }
     /// <p>A list of the Chatbot topics and Chatbot clients associated with the notification rule.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
-    pub fn targets(&self) -> &[crate::types::TargetSummary] {
-        self.targets.as_deref().unwrap_or_default()
+    pub fn targets(&self) -> & [crate::types::TargetSummary] {
+        self.targets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
-    pub fn detail_type(&self) -> ::std::option::Option<&crate::types::DetailType> {
+    pub fn detail_type(&self) -> ::std::option::Option<& crate::types::DetailType> {
         self.detail_type.as_ref()
     }
     /// <p>The name or email alias of the person who created the notification rule.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&str> {
+    pub fn created_by(&self) -> ::std::option::Option<& str> {
         self.created_by.as_deref()
     }
     /// <p>The status of the notification rule. Valid statuses are on (sending notifications) or off (not sending notifications).</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::NotificationRuleStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::NotificationRuleStatus> {
         self.status.as_ref()
     }
     /// <p>The date and time the notification rule was created, in timestamp format.</p>
-    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The date and time the notification rule was most recently updated, in timestamp format.</p>
-    pub fn last_modified_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_timestamp.as_ref()
     }
     /// <p>The tags associated with the notification rule.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl ::std::fmt::Debug for DescribeNotificationRuleOutput {
+impl  ::std::fmt::Debug for DescribeNotificationRuleOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeNotificationRuleOutput");
         formatter.field("arn", &self.arn);
@@ -97,10 +98,10 @@ impl ::std::fmt::Debug for DescribeNotificationRuleOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeNotificationRuleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeNotificationRuleOutput {
     /// Creates a new builder-style object to manufacture [`DescribeNotificationRuleOutput`](crate::operation::describe_notification_rule::DescribeNotificationRuleOutput).
     pub fn builder() -> crate::operation::describe_notification_rule::builders::DescribeNotificationRuleOutputBuilder {
@@ -114,15 +115,15 @@ impl DescribeNotificationRuleOutput {
 pub struct DescribeNotificationRuleOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) event_types: ::std::option::Option<::std::vec::Vec<crate::types::EventTypeSummary>>,
+    pub(crate) event_types: ::std::option::Option<::std::vec::Vec::<crate::types::EventTypeSummary>>,
     pub(crate) resource: ::std::option::Option<::std::string::String>,
-    pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::TargetSummary>>,
+    pub(crate) targets: ::std::option::Option<::std::vec::Vec::<crate::types::TargetSummary>>,
     pub(crate) detail_type: ::std::option::Option<crate::types::DetailType>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::NotificationRuleStatus>,
     pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeNotificationRuleOutputBuilder {
@@ -134,8 +135,7 @@ impl DescribeNotificationRuleOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +148,7 @@ impl DescribeNotificationRuleOutputBuilder {
     }
     /// <p>The name of the notification rule.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the notification rule.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,17 +161,16 @@ impl DescribeNotificationRuleOutputBuilder {
     /// <p>A list of the event types associated with the notification rule.</p>
     pub fn event_types(mut self, input: crate::types::EventTypeSummary) -> Self {
         let mut v = self.event_types.unwrap_or_default();
-        v.push(input);
-        self.event_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.event_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the event types associated with the notification rule.</p>
-    pub fn set_event_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventTypeSummary>>) -> Self {
-        self.event_types = input;
-        self
+    pub fn set_event_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EventTypeSummary>>) -> Self {
+        self.event_types = input; self
     }
     /// <p>A list of the event types associated with the notification rule.</p>
-    pub fn get_event_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventTypeSummary>> {
+    pub fn get_event_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EventTypeSummary>> {
         &self.event_types
     }
     /// <p>The Amazon Resource Name (ARN) of the resource associated with the notification rule.</p>
@@ -182,8 +180,7 @@ impl DescribeNotificationRuleOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource associated with the notification rule.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource associated with the notification rule.</p>
     pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
@@ -196,17 +193,16 @@ impl DescribeNotificationRuleOutputBuilder {
     /// <p>A list of the Chatbot topics and Chatbot clients associated with the notification rule.</p>
     pub fn targets(mut self, input: crate::types::TargetSummary) -> Self {
         let mut v = self.targets.unwrap_or_default();
-        v.push(input);
-        self.targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the Chatbot topics and Chatbot clients associated with the notification rule.</p>
-    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetSummary>>) -> Self {
-        self.targets = input;
-        self
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TargetSummary>>) -> Self {
+        self.targets = input; self
     }
     /// <p>A list of the Chatbot topics and Chatbot clients associated with the notification rule.</p>
-    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetSummary>> {
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TargetSummary>> {
         &self.targets
     }
     /// <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
@@ -216,8 +212,7 @@ impl DescribeNotificationRuleOutputBuilder {
     }
     /// <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
     pub fn set_detail_type(mut self, input: ::std::option::Option<crate::types::DetailType>) -> Self {
-        self.detail_type = input;
-        self
+        self.detail_type = input; self
     }
     /// <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
     pub fn get_detail_type(&self) -> &::std::option::Option<crate::types::DetailType> {
@@ -230,8 +225,7 @@ impl DescribeNotificationRuleOutputBuilder {
     }
     /// <p>The name or email alias of the person who created the notification rule.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>The name or email alias of the person who created the notification rule.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -244,8 +238,7 @@ impl DescribeNotificationRuleOutputBuilder {
     }
     /// <p>The status of the notification rule. Valid statuses are on (sending notifications) or off (not sending notifications).</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::NotificationRuleStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the notification rule. Valid statuses are on (sending notifications) or off (not sending notifications).</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::NotificationRuleStatus> {
@@ -258,8 +251,7 @@ impl DescribeNotificationRuleOutputBuilder {
     }
     /// <p>The date and time the notification rule was created, in timestamp format.</p>
     pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input;
-        self
+        self.created_timestamp = input; self
     }
     /// <p>The date and time the notification rule was created, in timestamp format.</p>
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -272,8 +264,7 @@ impl DescribeNotificationRuleOutputBuilder {
     }
     /// <p>The date and time the notification rule was most recently updated, in timestamp format.</p>
     pub fn set_last_modified_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_timestamp = input;
-        self
+        self.last_modified_timestamp = input; self
     }
     /// <p>The date and time the notification rule was most recently updated, in timestamp format.</p>
     pub fn get_last_modified_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -286,56 +277,61 @@ impl DescribeNotificationRuleOutputBuilder {
     /// <p>The tags associated with the notification rule.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags associated with the notification rule.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags associated with the notification rule.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeNotificationRuleOutput`](crate::operation::describe_notification_rule::DescribeNotificationRuleOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::operation::describe_notification_rule::builders::DescribeNotificationRuleOutputBuilder::arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_notification_rule::DescribeNotificationRuleOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_notification_rule::DescribeNotificationRuleOutput {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building DescribeNotificationRuleOutput",
-                )
-            })?,
-            name: self.name,
-            event_types: self.event_types,
-            resource: self.resource,
-            targets: self.targets,
-            detail_type: self.detail_type,
-            created_by: self.created_by,
-            status: self.status,
-            created_timestamp: self.created_timestamp,
-            last_modified_timestamp: self.last_modified_timestamp,
-            tags: self.tags,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_notification_rule::DescribeNotificationRuleOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_notification_rule::DescribeNotificationRuleOutput {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building DescribeNotificationRuleOutput")
+                    )?
+                ,
+                name: self.name
+                ,
+                event_types: self.event_types
+                ,
+                resource: self.resource
+                ,
+                targets: self.targets
+                ,
+                detail_type: self.detail_type
+                ,
+                created_by: self.created_by
+                ,
+                status: self.status
+                ,
+                created_timestamp: self.created_timestamp
+                ,
+                last_modified_timestamp: self.last_modified_timestamp
+                ,
+                tags: self.tags
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for DescribeNotificationRuleOutputBuilder {
@@ -356,3 +352,4 @@ impl ::std::fmt::Debug for DescribeNotificationRuleOutputBuilder {
         formatter.finish()
     }
 }
+

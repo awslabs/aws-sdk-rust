@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchCreateAttendeeInput {
+pub struct BatchCreateAttendeeInput  {
     /// <p>The Amazon Chime SDK meeting ID.</p>
     pub meeting_id: ::std::option::Option<::std::string::String>,
     /// <p>The request containing the attendees to create.</p>
-    pub attendees: ::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeRequestItem>>,
+    pub attendees: ::std::option::Option<::std::vec::Vec::<crate::types::CreateAttendeeRequestItem>>,
 }
-impl BatchCreateAttendeeInput {
+impl  BatchCreateAttendeeInput  {
     /// <p>The Amazon Chime SDK meeting ID.</p>
-    pub fn meeting_id(&self) -> ::std::option::Option<&str> {
+    pub fn meeting_id(&self) -> ::std::option::Option<& str> {
         self.meeting_id.as_deref()
     }
     /// <p>The request containing the attendees to create.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attendees.is_none()`.
-    pub fn attendees(&self) -> &[crate::types::CreateAttendeeRequestItem] {
-        self.attendees.as_deref().unwrap_or_default()
+    pub fn attendees(&self) -> & [crate::types::CreateAttendeeRequestItem] {
+        self.attendees.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchCreateAttendeeInput {
@@ -32,7 +33,7 @@ impl BatchCreateAttendeeInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchCreateAttendeeInputBuilder {
     pub(crate) meeting_id: ::std::option::Option<::std::string::String>,
-    pub(crate) attendees: ::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeRequestItem>>,
+    pub(crate) attendees: ::std::option::Option<::std::vec::Vec::<crate::types::CreateAttendeeRequestItem>>,
 }
 impl BatchCreateAttendeeInputBuilder {
     /// <p>The Amazon Chime SDK meeting ID.</p>
@@ -43,8 +44,7 @@ impl BatchCreateAttendeeInputBuilder {
     }
     /// <p>The Amazon Chime SDK meeting ID.</p>
     pub fn set_meeting_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.meeting_id = input;
-        self
+        self.meeting_id = input; self
     }
     /// <p>The Amazon Chime SDK meeting ID.</p>
     pub fn get_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,27 +57,28 @@ impl BatchCreateAttendeeInputBuilder {
     /// <p>The request containing the attendees to create.</p>
     pub fn attendees(mut self, input: crate::types::CreateAttendeeRequestItem) -> Self {
         let mut v = self.attendees.unwrap_or_default();
-        v.push(input);
-        self.attendees = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attendees = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The request containing the attendees to create.</p>
-    pub fn set_attendees(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeRequestItem>>) -> Self {
-        self.attendees = input;
-        self
+    pub fn set_attendees(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CreateAttendeeRequestItem>>) -> Self {
+        self.attendees = input; self
     }
     /// <p>The request containing the attendees to create.</p>
-    pub fn get_attendees(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeRequestItem>> {
+    pub fn get_attendees(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CreateAttendeeRequestItem>> {
         &self.attendees
     }
     /// Consumes the builder and constructs a [`BatchCreateAttendeeInput`](crate::operation::batch_create_attendee::BatchCreateAttendeeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_create_attendee::BatchCreateAttendeeInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::batch_create_attendee::BatchCreateAttendeeInput {
-            meeting_id: self.meeting_id,
-            attendees: self.attendees,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_create_attendee::BatchCreateAttendeeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_create_attendee::BatchCreateAttendeeInput {
+                meeting_id: self.meeting_id
+                ,
+                attendees: self.attendees
+                ,
+            }
+        )
     }
 }
+

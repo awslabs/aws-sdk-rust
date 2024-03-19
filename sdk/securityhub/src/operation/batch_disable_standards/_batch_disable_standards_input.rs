@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDisableStandardsInput {
+pub struct BatchDisableStandardsInput  {
     /// <p>The ARNs of the standards subscriptions to disable.</p>
-    pub standards_subscription_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub standards_subscription_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl BatchDisableStandardsInput {
+impl  BatchDisableStandardsInput  {
     /// <p>The ARNs of the standards subscriptions to disable.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.standards_subscription_arns.is_none()`.
-    pub fn standards_subscription_arns(&self) -> &[::std::string::String] {
-        self.standards_subscription_arns.as_deref().unwrap_or_default()
+    pub fn standards_subscription_arns(&self) -> & [::std::string::String] {
+        self.standards_subscription_arns.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchDisableStandardsInput {
@@ -25,7 +26,7 @@ impl BatchDisableStandardsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDisableStandardsInputBuilder {
-    pub(crate) standards_subscription_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) standards_subscription_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl BatchDisableStandardsInputBuilder {
     /// Appends an item to `standards_subscription_arns`.
@@ -35,26 +36,26 @@ impl BatchDisableStandardsInputBuilder {
     /// <p>The ARNs of the standards subscriptions to disable.</p>
     pub fn standards_subscription_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.standards_subscription_arns.unwrap_or_default();
-        v.push(input.into());
-        self.standards_subscription_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.standards_subscription_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ARNs of the standards subscriptions to disable.</p>
-    pub fn set_standards_subscription_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.standards_subscription_arns = input;
-        self
+    pub fn set_standards_subscription_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.standards_subscription_arns = input; self
     }
     /// <p>The ARNs of the standards subscriptions to disable.</p>
-    pub fn get_standards_subscription_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_standards_subscription_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.standards_subscription_arns
     }
     /// Consumes the builder and constructs a [`BatchDisableStandardsInput`](crate::operation::batch_disable_standards::BatchDisableStandardsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_disable_standards::BatchDisableStandardsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::batch_disable_standards::BatchDisableStandardsInput {
-            standards_subscription_arns: self.standards_subscription_arns,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_disable_standards::BatchDisableStandardsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_disable_standards::BatchDisableStandardsInput {
+                standards_subscription_arns: self.standards_subscription_arns
+                ,
+            }
+        )
     }
 }
+

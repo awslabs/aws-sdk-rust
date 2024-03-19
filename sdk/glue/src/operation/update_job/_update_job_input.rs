@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateJobInput {
+pub struct UpdateJobInput  {
     /// <p>The name of the job definition to update.</p>
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the values with which to update the job definition. Unspecified configuration is removed or reset to default values.</p>
     pub job_update: ::std::option::Option<crate::types::JobUpdate>,
 }
-impl UpdateJobInput {
+impl  UpdateJobInput  {
     /// <p>The name of the job definition to update.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>Specifies the values with which to update the job definition. Unspecified configuration is removed or reset to default values.</p>
-    pub fn job_update(&self) -> ::std::option::Option<&crate::types::JobUpdate> {
+    pub fn job_update(&self) -> ::std::option::Option<& crate::types::JobUpdate> {
         self.job_update.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateJobInputBuilder {
     }
     /// <p>The name of the job definition to update.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// <p>The name of the job definition to update.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl UpdateJobInputBuilder {
     }
     /// <p>Specifies the values with which to update the job definition. Unspecified configuration is removed or reset to default values.</p>
     pub fn set_job_update(mut self, input: ::std::option::Option<crate::types::JobUpdate>) -> Self {
-        self.job_update = input;
-        self
+        self.job_update = input; self
     }
     /// <p>Specifies the values with which to update the job definition. Unspecified configuration is removed or reset to default values.</p>
     pub fn get_job_update(&self) -> &::std::option::Option<crate::types::JobUpdate> {
@@ -65,9 +63,14 @@ impl UpdateJobInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateJobInput`](crate::operation::update_job::UpdateJobInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_job::UpdateJobInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_job::UpdateJobInput {
-            job_name: self.job_name,
-            job_update: self.job_update,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_job::UpdateJobInput {
+                job_name: self.job_name
+                ,
+                job_update: self.job_update
+                ,
+            }
+        )
     }
 }
+

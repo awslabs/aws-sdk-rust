@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalyzeExpenseInput {
+pub struct AnalyzeExpenseInput  {
     /// <p>The input document, either as bytes or as an S3 object.</p>
     /// <p>You pass image bytes to an Amazon Textract API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass a document loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64 encoded. Your code might not need to encode document file bytes if you're using an AWS SDK to call Amazon Textract API operations.</p>
     /// <p>You pass images stored in an S3 bucket to an Amazon Textract API operation by using the <code>S3Object</code> property. Documents stored in an S3 bucket don't need to be base64 encoded.</p>
@@ -11,14 +11,14 @@ pub struct AnalyzeExpenseInput {
     /// <p>For Amazon Textract to process an S3 object, the user must have permission to access the S3 object.</p>
     pub document: ::std::option::Option<crate::types::Document>,
 }
-impl AnalyzeExpenseInput {
+impl  AnalyzeExpenseInput  {
     /// <p>The input document, either as bytes or as an S3 object.</p>
     /// <p>You pass image bytes to an Amazon Textract API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass a document loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64 encoded. Your code might not need to encode document file bytes if you're using an AWS SDK to call Amazon Textract API operations.</p>
     /// <p>You pass images stored in an S3 bucket to an Amazon Textract API operation by using the <code>S3Object</code> property. Documents stored in an S3 bucket don't need to be base64 encoded.</p>
     /// <p>The AWS Region for the S3 bucket that contains the S3 object must match the AWS Region that you use for Amazon Textract operations.</p>
     /// <p>If you use the AWS CLI to call Amazon Textract operations, passing image bytes using the Bytes property isn't supported. You must first upload the document to an Amazon S3 bucket, and then call the operation using the S3Object property.</p>
     /// <p>For Amazon Textract to process an S3 object, the user must have permission to access the S3 object.</p>
-    pub fn document(&self) -> ::std::option::Option<&crate::types::Document> {
+    pub fn document(&self) -> ::std::option::Option<& crate::types::Document> {
         self.document.as_ref()
     }
 }
@@ -54,8 +54,7 @@ impl AnalyzeExpenseInputBuilder {
     /// <p>If you use the AWS CLI to call Amazon Textract operations, passing image bytes using the Bytes property isn't supported. You must first upload the document to an Amazon S3 bucket, and then call the operation using the S3Object property.</p>
     /// <p>For Amazon Textract to process an S3 object, the user must have permission to access the S3 object.</p>
     pub fn set_document(mut self, input: ::std::option::Option<crate::types::Document>) -> Self {
-        self.document = input;
-        self
+        self.document = input; self
     }
     /// <p>The input document, either as bytes or as an S3 object.</p>
     /// <p>You pass image bytes to an Amazon Textract API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass a document loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64 encoded. Your code might not need to encode document file bytes if you're using an AWS SDK to call Amazon Textract API operations.</p>
@@ -67,9 +66,13 @@ impl AnalyzeExpenseInputBuilder {
         &self.document
     }
     /// Consumes the builder and constructs a [`AnalyzeExpenseInput`](crate::operation::analyze_expense::AnalyzeExpenseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::analyze_expense::AnalyzeExpenseInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::analyze_expense::AnalyzeExpenseInput { document: self.document })
+    pub fn build(self) -> ::std::result::Result<crate::operation::analyze_expense::AnalyzeExpenseInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::analyze_expense::AnalyzeExpenseInput {
+                document: self.document
+                ,
+            }
+        )
     }
 }
+

@@ -3,22 +3,20 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StorageLensTag {
+pub struct StorageLensTag  {
     /// <p></p>
     pub key: ::std::string::String,
     /// <p></p>
     pub value: ::std::string::String,
 }
-impl StorageLensTag {
+impl  StorageLensTag  {
     /// <p></p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p></p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl StorageLensTag {
@@ -44,8 +42,7 @@ impl StorageLensTagBuilder {
     }
     /// <p></p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p></p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl StorageLensTagBuilder {
     }
     /// <p></p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p></p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl StorageLensTagBuilder {
     /// - [`key`](crate::types::builders::StorageLensTagBuilder::key)
     /// - [`value`](crate::types::builders::StorageLensTagBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::StorageLensTag, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StorageLensTag {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building StorageLensTag",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building StorageLensTag",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::StorageLensTag {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building StorageLensTag")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building StorageLensTag")
+                    )?
+                ,
+            }
+        )
     }
 }
+

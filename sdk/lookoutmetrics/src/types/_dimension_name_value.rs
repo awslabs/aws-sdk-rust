@@ -3,22 +3,20 @@
 /// <p>A dimension name and value.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DimensionNameValue {
+pub struct DimensionNameValue  {
     /// <p>The name of the dimension.</p>
     pub dimension_name: ::std::string::String,
     /// <p>The value of the dimension.</p>
     pub dimension_value: ::std::string::String,
 }
-impl DimensionNameValue {
+impl  DimensionNameValue  {
     /// <p>The name of the dimension.</p>
-    pub fn dimension_name(&self) -> &str {
-        use std::ops::Deref;
-        self.dimension_name.deref()
+    pub fn dimension_name(&self) -> & str {
+        use std::ops::Deref; self.dimension_name.deref()
     }
     /// <p>The value of the dimension.</p>
-    pub fn dimension_value(&self) -> &str {
-        use std::ops::Deref;
-        self.dimension_value.deref()
+    pub fn dimension_value(&self) -> & str {
+        use std::ops::Deref; self.dimension_value.deref()
     }
 }
 impl DimensionNameValue {
@@ -44,8 +42,7 @@ impl DimensionNameValueBuilder {
     }
     /// <p>The name of the dimension.</p>
     pub fn set_dimension_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dimension_name = input;
-        self
+        self.dimension_name = input; self
     }
     /// <p>The name of the dimension.</p>
     pub fn get_dimension_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl DimensionNameValueBuilder {
     }
     /// <p>The value of the dimension.</p>
     pub fn set_dimension_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dimension_value = input;
-        self
+        self.dimension_value = input; self
     }
     /// <p>The value of the dimension.</p>
     pub fn get_dimension_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl DimensionNameValueBuilder {
     /// - [`dimension_name`](crate::types::builders::DimensionNameValueBuilder::dimension_name)
     /// - [`dimension_value`](crate::types::builders::DimensionNameValueBuilder::dimension_value)
     pub fn build(self) -> ::std::result::Result<crate::types::DimensionNameValue, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DimensionNameValue {
-            dimension_name: self.dimension_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "dimension_name",
-                    "dimension_name was not specified but it is required when building DimensionNameValue",
-                )
-            })?,
-            dimension_value: self.dimension_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "dimension_value",
-                    "dimension_value was not specified but it is required when building DimensionNameValue",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DimensionNameValue {
+                dimension_name: self.dimension_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("dimension_name", "dimension_name was not specified but it is required when building DimensionNameValue")
+                    )?
+                ,
+                dimension_value: self.dimension_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("dimension_value", "dimension_value was not specified but it is required when building DimensionNameValue")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRecommendationsOutput {
+pub struct ListRecommendationsOutput  {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of Recommendations</p>
-    pub recommendation_summaries: ::std::vec::Vec<crate::types::RecommendationSummary>,
+    pub recommendation_summaries: ::std::vec::Vec::<crate::types::RecommendationSummary>,
     _request_id: Option<String>,
 }
-impl ListRecommendationsOutput {
+impl  ListRecommendationsOutput  {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The list of Recommendations</p>
-    pub fn recommendation_summaries(&self) -> &[crate::types::RecommendationSummary] {
-        use std::ops::Deref;
-        self.recommendation_summaries.deref()
+    pub fn recommendation_summaries(&self) -> & [crate::types::RecommendationSummary] {
+        use std::ops::Deref; self.recommendation_summaries.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListRecommendationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`ListRecommendationsOutput`](crate::operation::list_recommendations::ListRecommendationsOutput).
     pub fn builder() -> crate::operation::list_recommendations::builders::ListRecommendationsOutputBuilder {
@@ -37,7 +36,7 @@ impl ListRecommendationsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRecommendationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) recommendation_summaries: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationSummary>>,
+    pub(crate) recommendation_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::RecommendationSummary>>,
     _request_id: Option<String>,
 }
 impl ListRecommendationsOutputBuilder {
@@ -48,8 +47,7 @@ impl ListRecommendationsOutputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,44 +60,43 @@ impl ListRecommendationsOutputBuilder {
     /// <p>The list of Recommendations</p>
     pub fn recommendation_summaries(mut self, input: crate::types::RecommendationSummary) -> Self {
         let mut v = self.recommendation_summaries.unwrap_or_default();
-        v.push(input);
-        self.recommendation_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.recommendation_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of Recommendations</p>
-    pub fn set_recommendation_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationSummary>>) -> Self {
-        self.recommendation_summaries = input;
-        self
+    pub fn set_recommendation_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RecommendationSummary>>) -> Self {
+        self.recommendation_summaries = input; self
     }
     /// <p>The list of Recommendations</p>
-    pub fn get_recommendation_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationSummary>> {
+    pub fn get_recommendation_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RecommendationSummary>> {
         &self.recommendation_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListRecommendationsOutput`](crate::operation::list_recommendations::ListRecommendationsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`recommendation_summaries`](crate::operation::list_recommendations::builders::ListRecommendationsOutputBuilder::recommendation_summaries)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_recommendations::ListRecommendationsOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_recommendations::ListRecommendationsOutput {
-            next_token: self.next_token,
-            recommendation_summaries: self.recommendation_summaries.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "recommendation_summaries",
-                    "recommendation_summaries was not specified but it is required when building ListRecommendationsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_recommendations::ListRecommendationsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_recommendations::ListRecommendationsOutput {
+                next_token: self.next_token
+                ,
+                recommendation_summaries: self.recommendation_summaries
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("recommendation_summaries", "recommendation_summaries was not specified but it is required when building ListRecommendationsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

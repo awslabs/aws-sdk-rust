@@ -3,7 +3,7 @@
 /// <p>A summary of a resource available on the device.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceSummary {
+pub struct ResourceSummary  {
     /// <p>The resource type.</p>
     pub resource_type: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -11,18 +11,17 @@ pub struct ResourceSummary {
     /// <p>The ID of the resource.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl ResourceSummary {
+impl  ResourceSummary  {
     /// <p>The resource type.</p>
-    pub fn resource_type(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_type.deref()
+    pub fn resource_type(&self) -> & str {
+        use std::ops::Deref; self.resource_type.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the resource.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -50,8 +49,7 @@ impl ResourceSummaryBuilder {
     }
     /// <p>The resource type.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl ResourceSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +75,7 @@ impl ResourceSummaryBuilder {
     }
     /// <p>The ID of the resource.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the resource.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,15 +85,19 @@ impl ResourceSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_type`](crate::types::builders::ResourceSummaryBuilder::resource_type)
     pub fn build(self) -> ::std::result::Result<crate::types::ResourceSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResourceSummary {
-            resource_type: self.resource_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_type",
-                    "resource_type was not specified but it is required when building ResourceSummary",
-                )
-            })?,
-            arn: self.arn,
-            id: self.id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResourceSummary {
+                resource_type: self.resource_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_type", "resource_type was not specified but it is required when building ResourceSummary")
+                    )?
+                ,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

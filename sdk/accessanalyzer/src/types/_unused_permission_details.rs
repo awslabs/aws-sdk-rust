@@ -3,28 +3,28 @@
 /// <p>Contains information about an unused access finding for a permission. IAM Access Analyzer charges for unused access analysis based on the number of IAM roles and users analyzed per month. For more details on pricing, see <a href="https://aws.amazon.com/iam/access-analyzer/pricing">IAM Access Analyzer pricing</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnusedPermissionDetails {
+pub struct UnusedPermissionDetails  {
     /// <p>A list of unused actions for which the unused access finding was generated.</p>
-    pub actions: ::std::option::Option<::std::vec::Vec<crate::types::UnusedAction>>,
+    pub actions: ::std::option::Option<::std::vec::Vec::<crate::types::UnusedAction>>,
     /// <p>The namespace of the Amazon Web Services service that contains the unused actions.</p>
     pub service_namespace: ::std::string::String,
     /// <p>The time at which the permission last accessed.</p>
     pub last_accessed: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl UnusedPermissionDetails {
+impl  UnusedPermissionDetails  {
     /// <p>A list of unused actions for which the unused access finding was generated.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
-    pub fn actions(&self) -> &[crate::types::UnusedAction] {
-        self.actions.as_deref().unwrap_or_default()
+    pub fn actions(&self) -> & [crate::types::UnusedAction] {
+        self.actions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The namespace of the Amazon Web Services service that contains the unused actions.</p>
-    pub fn service_namespace(&self) -> &str {
-        use std::ops::Deref;
-        self.service_namespace.deref()
+    pub fn service_namespace(&self) -> & str {
+        use std::ops::Deref; self.service_namespace.deref()
     }
     /// <p>The time at which the permission last accessed.</p>
-    pub fn last_accessed(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_accessed(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_accessed.as_ref()
     }
 }
@@ -39,7 +39,7 @@ impl UnusedPermissionDetails {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnusedPermissionDetailsBuilder {
-    pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::UnusedAction>>,
+    pub(crate) actions: ::std::option::Option<::std::vec::Vec::<crate::types::UnusedAction>>,
     pub(crate) service_namespace: ::std::option::Option<::std::string::String>,
     pub(crate) last_accessed: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -51,17 +51,16 @@ impl UnusedPermissionDetailsBuilder {
     /// <p>A list of unused actions for which the unused access finding was generated.</p>
     pub fn actions(mut self, input: crate::types::UnusedAction) -> Self {
         let mut v = self.actions.unwrap_or_default();
-        v.push(input);
-        self.actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of unused actions for which the unused access finding was generated.</p>
-    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnusedAction>>) -> Self {
-        self.actions = input;
-        self
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UnusedAction>>) -> Self {
+        self.actions = input; self
     }
     /// <p>A list of unused actions for which the unused access finding was generated.</p>
-    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnusedAction>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UnusedAction>> {
         &self.actions
     }
     /// <p>The namespace of the Amazon Web Services service that contains the unused actions.</p>
@@ -72,8 +71,7 @@ impl UnusedPermissionDetailsBuilder {
     }
     /// <p>The namespace of the Amazon Web Services service that contains the unused actions.</p>
     pub fn set_service_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_namespace = input;
-        self
+        self.service_namespace = input; self
     }
     /// <p>The namespace of the Amazon Web Services service that contains the unused actions.</p>
     pub fn get_service_namespace(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +84,7 @@ impl UnusedPermissionDetailsBuilder {
     }
     /// <p>The time at which the permission last accessed.</p>
     pub fn set_last_accessed(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_accessed = input;
-        self
+        self.last_accessed = input; self
     }
     /// <p>The time at which the permission last accessed.</p>
     pub fn get_last_accessed(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -97,15 +94,19 @@ impl UnusedPermissionDetailsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`service_namespace`](crate::types::builders::UnusedPermissionDetailsBuilder::service_namespace)
     pub fn build(self) -> ::std::result::Result<crate::types::UnusedPermissionDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UnusedPermissionDetails {
-            actions: self.actions,
-            service_namespace: self.service_namespace.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "service_namespace",
-                    "service_namespace was not specified but it is required when building UnusedPermissionDetails",
-                )
-            })?,
-            last_accessed: self.last_accessed,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UnusedPermissionDetails {
+                actions: self.actions
+                ,
+                service_namespace: self.service_namespace
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("service_namespace", "service_namespace was not specified but it is required when building UnusedPermissionDetails")
+                    )?
+                ,
+                last_accessed: self.last_accessed
+                ,
+            }
+        )
     }
 }
+

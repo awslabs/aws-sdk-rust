@@ -3,17 +3,16 @@
 /// <p>Parameter information for IPEK generation during export.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportDukptInitialKey {
+pub struct ExportDukptInitialKey  {
     /// <p>The KSN for IPEK generation using DUKPT.</p>
     /// <p>KSN must be padded before sending to Amazon Web Services Payment Cryptography. KSN hex length should be 20 for a TDES_2KEY key or 24 for an AES key.</p>
     pub key_serial_number: ::std::string::String,
 }
-impl ExportDukptInitialKey {
+impl  ExportDukptInitialKey  {
     /// <p>The KSN for IPEK generation using DUKPT.</p>
     /// <p>KSN must be padded before sending to Amazon Web Services Payment Cryptography. KSN hex length should be 20 for a TDES_2KEY key or 24 for an AES key.</p>
-    pub fn key_serial_number(&self) -> &str {
-        use std::ops::Deref;
-        self.key_serial_number.deref()
+    pub fn key_serial_number(&self) -> & str {
+        use std::ops::Deref; self.key_serial_number.deref()
     }
 }
 impl ExportDukptInitialKey {
@@ -40,8 +39,7 @@ impl ExportDukptInitialKeyBuilder {
     /// <p>The KSN for IPEK generation using DUKPT.</p>
     /// <p>KSN must be padded before sending to Amazon Web Services Payment Cryptography. KSN hex length should be 20 for a TDES_2KEY key or 24 for an AES key.</p>
     pub fn set_key_serial_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_serial_number = input;
-        self
+        self.key_serial_number = input; self
     }
     /// <p>The KSN for IPEK generation using DUKPT.</p>
     /// <p>KSN must be padded before sending to Amazon Web Services Payment Cryptography. KSN hex length should be 20 for a TDES_2KEY key or 24 for an AES key.</p>
@@ -52,13 +50,15 @@ impl ExportDukptInitialKeyBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`key_serial_number`](crate::types::builders::ExportDukptInitialKeyBuilder::key_serial_number)
     pub fn build(self) -> ::std::result::Result<crate::types::ExportDukptInitialKey, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ExportDukptInitialKey {
-            key_serial_number: self.key_serial_number.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key_serial_number",
-                    "key_serial_number was not specified but it is required when building ExportDukptInitialKey",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ExportDukptInitialKey {
+                key_serial_number: self.key_serial_number
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key_serial_number", "key_serial_number was not specified but it is required when building ExportDukptInitialKey")
+                    )?
+                ,
+            }
+        )
     }
 }
+

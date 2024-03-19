@@ -5,23 +5,20 @@ pub use crate::operation::get_dash_streaming_session_url::_get_dash_streaming_se
 
 impl GetDashStreamingSessionUrlInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_dash_streaming_session_url::GetDashStreamingSessionUrlOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_dash_streaming_session_url::GetDASHStreamingSessionURLError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_dash_streaming_session_url();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_dash_streaming_session_url::GetDashStreamingSessionUrlOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_dash_streaming_session_url::GetDASHStreamingSessionURLError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_dash_streaming_session_url();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetDASHStreamingSessionURL`.
-///
+/// 
 /// <p>Retrieves an MPEG Dynamic Adaptive Streaming over HTTP (DASH) URL for the stream. You can then open the URL in a media player to view the stream contents.</p>
 /// <p>Both the <code>StreamName</code> and the <code>StreamARN</code> parameters are optional, but you must specify either the <code>StreamName</code> or the <code>StreamARN</code> when invoking this API operation.</p>
 /// <p>An Amazon Kinesis video stream has the following requirements for providing data through MPEG-DASH:</p>
@@ -78,33 +75,32 @@ impl GetDashStreamingSessionUrlInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDASHStreamingSessionURLFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_dash_streaming_session_url::builders::GetDashStreamingSessionUrlInputBuilder,
+                    inner: crate::operation::get_dash_streaming_session_url::builders::GetDashStreamingSessionUrlInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_dash_streaming_session_url::GetDashStreamingSessionUrlOutput,
-        crate::operation::get_dash_streaming_session_url::GetDASHStreamingSessionURLError,
-    > for GetDASHStreamingSessionURLFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_dash_streaming_session_url::GetDashStreamingSessionUrlOutput,
-            crate::operation::get_dash_streaming_session_url::GetDASHStreamingSessionURLError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_dash_streaming_session_url::GetDashStreamingSessionUrlOutput,
+                    crate::operation::get_dash_streaming_session_url::GetDASHStreamingSessionURLError,
+                > for GetDASHStreamingSessionURLFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_dash_streaming_session_url::GetDashStreamingSessionUrlOutput,
+                        crate::operation::get_dash_streaming_session_url::GetDASHStreamingSessionURLError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetDASHStreamingSessionURLFluentBuilder {
     /// Creates a new `GetDASHStreamingSessionURL`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -113,53 +109,44 @@ impl GetDASHStreamingSessionURLFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_dash_streaming_session_url::GetDashStreamingSessionUrlOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_dash_streaming_session_url::GetDASHStreamingSessionURLError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::get_dash_streaming_session_url::GetDASHStreamingSessionURL::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::get_dash_streaming_session_url::GetDASHStreamingSessionURL::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_dash_streaming_session_url::GetDashStreamingSessionUrlOutput,
-        crate::operation::get_dash_streaming_session_url::GetDASHStreamingSessionURLError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_dash_streaming_session_url::GetDashStreamingSessionUrlOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_dash_streaming_session_url::GetDASHStreamingSessionURLError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_dash_streaming_session_url::GetDASHStreamingSessionURL::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_dash_streaming_session_url::GetDASHStreamingSessionURL::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_dash_streaming_session_url::GetDashStreamingSessionUrlOutput, crate::operation::get_dash_streaming_session_url::GetDASHStreamingSessionURLError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the stream for which to retrieve the MPEG-DASH manifest URL.</p>
     /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
     pub fn stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -345,3 +332,4 @@ impl GetDASHStreamingSessionURLFluentBuilder {
         self.inner.get_max_manifest_fragment_results()
     }
 }
+

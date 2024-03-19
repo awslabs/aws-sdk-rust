@@ -2,32 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetAutomationRulesOutput {
+pub struct BatchGetAutomationRulesOutput  {
     /// <p>A list of rule details for the provided rule ARNs.</p>
-    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesConfig>>,
+    pub rules: ::std::option::Option<::std::vec::Vec::<crate::types::AutomationRulesConfig>>,
     /// <p>A list of objects containing <code>RuleArn</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. This parameter tells you which automation rules the request didn't retrieve and why.</p>
-    pub unprocessed_automation_rules: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAutomationRule>>,
+    pub unprocessed_automation_rules: ::std::option::Option<::std::vec::Vec::<crate::types::UnprocessedAutomationRule>>,
     _request_id: Option<String>,
 }
-impl BatchGetAutomationRulesOutput {
+impl  BatchGetAutomationRulesOutput  {
     /// <p>A list of rule details for the provided rule ARNs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
-    pub fn rules(&self) -> &[crate::types::AutomationRulesConfig] {
-        self.rules.as_deref().unwrap_or_default()
+    pub fn rules(&self) -> & [crate::types::AutomationRulesConfig] {
+        self.rules.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of objects containing <code>RuleArn</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. This parameter tells you which automation rules the request didn't retrieve and why.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_automation_rules.is_none()`.
-    pub fn unprocessed_automation_rules(&self) -> &[crate::types::UnprocessedAutomationRule] {
-        self.unprocessed_automation_rules.as_deref().unwrap_or_default()
+    pub fn unprocessed_automation_rules(&self) -> & [crate::types::UnprocessedAutomationRule] {
+        self.unprocessed_automation_rules.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchGetAutomationRulesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchGetAutomationRulesOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetAutomationRulesOutput`](crate::operation::batch_get_automation_rules::BatchGetAutomationRulesOutput).
     pub fn builder() -> crate::operation::batch_get_automation_rules::builders::BatchGetAutomationRulesOutputBuilder {
@@ -39,8 +41,8 @@ impl BatchGetAutomationRulesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetAutomationRulesOutputBuilder {
-    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesConfig>>,
-    pub(crate) unprocessed_automation_rules: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAutomationRule>>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec::<crate::types::AutomationRulesConfig>>,
+    pub(crate) unprocessed_automation_rules: ::std::option::Option<::std::vec::Vec::<crate::types::UnprocessedAutomationRule>>,
     _request_id: Option<String>,
 }
 impl BatchGetAutomationRulesOutputBuilder {
@@ -51,17 +53,16 @@ impl BatchGetAutomationRulesOutputBuilder {
     /// <p>A list of rule details for the provided rule ARNs.</p>
     pub fn rules(mut self, input: crate::types::AutomationRulesConfig) -> Self {
         let mut v = self.rules.unwrap_or_default();
-        v.push(input);
-        self.rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of rule details for the provided rule ARNs.</p>
-    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesConfig>>) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AutomationRulesConfig>>) -> Self {
+        self.rules = input; self
     }
     /// <p>A list of rule details for the provided rule ARNs.</p>
-    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesConfig>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AutomationRulesConfig>> {
         &self.rules
     }
     /// Appends an item to `unprocessed_automation_rules`.
@@ -71,37 +72,36 @@ impl BatchGetAutomationRulesOutputBuilder {
     /// <p>A list of objects containing <code>RuleArn</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. This parameter tells you which automation rules the request didn't retrieve and why.</p>
     pub fn unprocessed_automation_rules(mut self, input: crate::types::UnprocessedAutomationRule) -> Self {
         let mut v = self.unprocessed_automation_rules.unwrap_or_default();
-        v.push(input);
-        self.unprocessed_automation_rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.unprocessed_automation_rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of objects containing <code>RuleArn</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. This parameter tells you which automation rules the request didn't retrieve and why.</p>
-    pub fn set_unprocessed_automation_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAutomationRule>>,
-    ) -> Self {
-        self.unprocessed_automation_rules = input;
-        self
+    pub fn set_unprocessed_automation_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UnprocessedAutomationRule>>) -> Self {
+        self.unprocessed_automation_rules = input; self
     }
     /// <p>A list of objects containing <code>RuleArn</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. This parameter tells you which automation rules the request didn't retrieve and why.</p>
-    pub fn get_unprocessed_automation_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAutomationRule>> {
+    pub fn get_unprocessed_automation_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UnprocessedAutomationRule>> {
         &self.unprocessed_automation_rules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchGetAutomationRulesOutput`](crate::operation::batch_get_automation_rules::BatchGetAutomationRulesOutput).
     pub fn build(self) -> crate::operation::batch_get_automation_rules::BatchGetAutomationRulesOutput {
         crate::operation::batch_get_automation_rules::BatchGetAutomationRulesOutput {
-            rules: self.rules,
-            unprocessed_automation_rules: self.unprocessed_automation_rules,
+            rules: self.rules
+            ,
+            unprocessed_automation_rules: self.unprocessed_automation_rules
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

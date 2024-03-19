@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSupportedResourceTypesOutput {
+pub struct ListSupportedResourceTypesOutput  {
     /// <p>The list of resource types supported by Resource Explorer.</p>
-    pub resource_types: ::std::option::Option<::std::vec::Vec<crate::types::SupportedResourceType>>,
+    pub resource_types: ::std::option::Option<::std::vec::Vec::<crate::types::SupportedResourceType>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. The pagination tokens expire after 24 hours.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListSupportedResourceTypesOutput {
+impl  ListSupportedResourceTypesOutput  {
     /// <p>The list of resource types supported by Resource Explorer.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types.is_none()`.
-    pub fn resource_types(&self) -> &[crate::types::SupportedResourceType] {
-        self.resource_types.as_deref().unwrap_or_default()
+    pub fn resource_types(&self) -> & [crate::types::SupportedResourceType] {
+        self.resource_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. The pagination tokens expire after 24 hours.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListSupportedResourceTypesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListSupportedResourceTypesOutput {
     /// Creates a new builder-style object to manufacture [`ListSupportedResourceTypesOutput`](crate::operation::list_supported_resource_types::ListSupportedResourceTypesOutput).
     pub fn builder() -> crate::operation::list_supported_resource_types::builders::ListSupportedResourceTypesOutputBuilder {
@@ -37,7 +38,7 @@ impl ListSupportedResourceTypesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSupportedResourceTypesOutputBuilder {
-    pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<crate::types::SupportedResourceType>>,
+    pub(crate) resource_types: ::std::option::Option<::std::vec::Vec::<crate::types::SupportedResourceType>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListSupportedResourceTypesOutputBuilder {
     /// <p>The list of resource types supported by Resource Explorer.</p>
     pub fn resource_types(mut self, input: crate::types::SupportedResourceType) -> Self {
         let mut v = self.resource_types.unwrap_or_default();
-        v.push(input);
-        self.resource_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of resource types supported by Resource Explorer.</p>
-    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SupportedResourceType>>) -> Self {
-        self.resource_types = input;
-        self
+    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SupportedResourceType>>) -> Self {
+        self.resource_types = input; self
     }
     /// <p>The list of resource types supported by Resource Explorer.</p>
-    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedResourceType>> {
+    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SupportedResourceType>> {
         &self.resource_types
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. The pagination tokens expire after 24 hours.</p>
@@ -69,28 +69,30 @@ impl ListSupportedResourceTypesOutputBuilder {
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. The pagination tokens expire after 24 hours.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. The pagination tokens expire after 24 hours.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListSupportedResourceTypesOutput`](crate::operation::list_supported_resource_types::ListSupportedResourceTypesOutput).
     pub fn build(self) -> crate::operation::list_supported_resource_types::ListSupportedResourceTypesOutput {
         crate::operation::list_supported_resource_types::ListSupportedResourceTypesOutput {
-            resource_types: self.resource_types,
-            next_token: self.next_token,
+            resource_types: self.resource_types
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

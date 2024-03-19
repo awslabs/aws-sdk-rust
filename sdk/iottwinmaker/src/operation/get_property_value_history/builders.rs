@@ -5,55 +5,51 @@ pub use crate::operation::get_property_value_history::_get_property_value_histor
 
 impl GetPropertyValueHistoryInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_property_value_history::GetPropertyValueHistoryOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_property_value_history::GetPropertyValueHistoryError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_property_value_history();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_property_value_history::GetPropertyValueHistoryOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_property_value_history::GetPropertyValueHistoryError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_property_value_history();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetPropertyValueHistory`.
-///
+/// 
 /// <p>Retrieves information about the history of a time series property value for a component, component type, entity, or workspace.</p>
 /// <p>You must specify a value for <code>workspaceId</code>. For entity-specific queries, specify values for <code>componentName</code> and <code>entityId</code>. For cross-entity quries, specify a value for <code>componentTypeId</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPropertyValueHistoryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_property_value_history::builders::GetPropertyValueHistoryInputBuilder,
+                    inner: crate::operation::get_property_value_history::builders::GetPropertyValueHistoryInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_property_value_history::GetPropertyValueHistoryOutput,
-        crate::operation::get_property_value_history::GetPropertyValueHistoryError,
-    > for GetPropertyValueHistoryFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_property_value_history::GetPropertyValueHistoryOutput,
-            crate::operation::get_property_value_history::GetPropertyValueHistoryError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_property_value_history::GetPropertyValueHistoryOutput,
+                    crate::operation::get_property_value_history::GetPropertyValueHistoryError,
+                > for GetPropertyValueHistoryFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_property_value_history::GetPropertyValueHistoryOutput,
+                        crate::operation::get_property_value_history::GetPropertyValueHistoryError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetPropertyValueHistoryFluentBuilder {
     /// Creates a new `GetPropertyValueHistory`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,59 +58,50 @@ impl GetPropertyValueHistoryFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_property_value_history::GetPropertyValueHistoryOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_property_value_history::GetPropertyValueHistoryError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::get_property_value_history::GetPropertyValueHistory::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::get_property_value_history::GetPropertyValueHistory::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_property_value_history::GetPropertyValueHistoryOutput,
-        crate::operation::get_property_value_history::GetPropertyValueHistoryError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_property_value_history::GetPropertyValueHistoryOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_property_value_history::GetPropertyValueHistoryError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_property_value_history::GetPropertyValueHistory::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_property_value_history::GetPropertyValueHistory::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_property_value_history::GetPropertyValueHistoryOutput, crate::operation::get_property_value_history::GetPropertyValueHistoryError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::get_property_value_history::paginator::GetPropertyValueHistoryPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::get_property_value_history::paginator::GetPropertyValueHistoryPaginator {
-        crate::operation::get_property_value_history::paginator::GetPropertyValueHistoryPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_property_value_history::paginator::GetPropertyValueHistoryPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::get_property_value_history::paginator::GetPropertyValueHistoryPaginator {
+                                crate::operation::get_property_value_history::paginator::GetPropertyValueHistoryPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the workspace.</p>
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workspace_id(input.into());
@@ -195,12 +182,12 @@ impl GetPropertyValueHistoryFluentBuilder {
         self
     }
     /// <p>A list of properties whose value histories the request retrieves.</p>
-    pub fn set_selected_properties(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_selected_properties(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_selected_properties(input);
         self
     }
     /// <p>A list of properties whose value histories the request retrieves.</p>
-    pub fn get_selected_properties(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_selected_properties(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_selected_properties()
     }
     /// Appends an item to `propertyFilters`.
@@ -213,12 +200,12 @@ impl GetPropertyValueHistoryFluentBuilder {
         self
     }
     /// <p>A list of objects that filter the property value history request.</p>
-    pub fn set_property_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PropertyFilter>>) -> Self {
+    pub fn set_property_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PropertyFilter>>) -> Self {
         self.inner = self.inner.set_property_filters(input);
         self
     }
     /// <p>A list of objects that filter the property value history request.</p>
-    pub fn get_property_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyFilter>> {
+    pub fn get_property_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PropertyFilter>> {
         self.inner.get_property_filters()
     }
     /// <p>The date and time of the earliest property value to return.</p>
@@ -349,3 +336,4 @@ impl GetPropertyValueHistoryFluentBuilder {
         self.inner.get_end_time()
     }
 }
+

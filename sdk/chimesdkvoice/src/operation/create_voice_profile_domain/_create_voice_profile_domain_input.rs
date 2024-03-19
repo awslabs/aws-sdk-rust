@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateVoiceProfileDomainInput {
+pub struct CreateVoiceProfileDomainInput  {
     /// <p>The name of the voice profile domain.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the voice profile domain.</p>
@@ -12,30 +12,31 @@ pub struct CreateVoiceProfileDomainInput {
     /// <p>The unique identifier for the client request. Use a different token for different domain creation requests.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the domain.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateVoiceProfileDomainInput {
+impl  CreateVoiceProfileDomainInput  {
     /// <p>The name of the voice profile domain.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the voice profile domain.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The server-side encryption configuration for the request.</p>
-    pub fn server_side_encryption_configuration(&self) -> ::std::option::Option<&crate::types::ServerSideEncryptionConfiguration> {
+    pub fn server_side_encryption_configuration(&self) -> ::std::option::Option<& crate::types::ServerSideEncryptionConfiguration> {
         self.server_side_encryption_configuration.as_ref()
     }
     /// <p>The unique identifier for the client request. Use a different token for different domain creation requests.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The tags assigned to the domain.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateVoiceProfileDomainInput {
@@ -53,7 +54,7 @@ pub struct CreateVoiceProfileDomainInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) server_side_encryption_configuration: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateVoiceProfileDomainInputBuilder {
     /// <p>The name of the voice profile domain.</p>
@@ -64,8 +65,7 @@ impl CreateVoiceProfileDomainInputBuilder {
     }
     /// <p>The name of the voice profile domain.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the voice profile domain.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl CreateVoiceProfileDomainInputBuilder {
     }
     /// <p>A description of the voice profile domain.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the voice profile domain.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +92,7 @@ impl CreateVoiceProfileDomainInputBuilder {
     }
     /// <p>The server-side encryption configuration for the request.</p>
     pub fn set_server_side_encryption_configuration(mut self, input: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>) -> Self {
-        self.server_side_encryption_configuration = input;
-        self
+        self.server_side_encryption_configuration = input; self
     }
     /// <p>The server-side encryption configuration for the request.</p>
     pub fn get_server_side_encryption_configuration(&self) -> &::std::option::Option<crate::types::ServerSideEncryptionConfiguration> {
@@ -107,8 +105,7 @@ impl CreateVoiceProfileDomainInputBuilder {
     }
     /// <p>The unique identifier for the client request. Use a different token for different domain creation requests.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>The unique identifier for the client request. Use a different token for different domain creation requests.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,32 +118,34 @@ impl CreateVoiceProfileDomainInputBuilder {
     /// <p>The tags assigned to the domain.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags assigned to the domain.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags assigned to the domain.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateVoiceProfileDomainInput`](crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainInput {
-            name: self.name,
-            description: self.description,
-            server_side_encryption_configuration: self.server_side_encryption_configuration,
-            client_request_token: self.client_request_token,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                server_side_encryption_configuration: self.server_side_encryption_configuration
+                ,
+                client_request_token: self.client_request_token
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

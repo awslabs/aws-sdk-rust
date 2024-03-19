@@ -3,7 +3,7 @@
 /// <p>Contains information about the reasoning why a check for access passed or failed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReasonSummary {
+pub struct ReasonSummary  {
     /// <p>A description of the reasoning of a result of checking for access.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The index number of the reason statement.</p>
@@ -11,9 +11,9 @@ pub struct ReasonSummary {
     /// <p>The identifier for the reason statement.</p>
     pub statement_id: ::std::option::Option<::std::string::String>,
 }
-impl ReasonSummary {
+impl  ReasonSummary  {
     /// <p>A description of the reasoning of a result of checking for access.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The index number of the reason statement.</p>
@@ -21,7 +21,7 @@ impl ReasonSummary {
         self.statement_index
     }
     /// <p>The identifier for the reason statement.</p>
-    pub fn statement_id(&self) -> ::std::option::Option<&str> {
+    pub fn statement_id(&self) -> ::std::option::Option<& str> {
         self.statement_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ReasonSummaryBuilder {
     }
     /// <p>A description of the reasoning of a result of checking for access.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the reasoning of a result of checking for access.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ReasonSummaryBuilder {
     }
     /// <p>The index number of the reason statement.</p>
     pub fn set_statement_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.statement_index = input;
-        self
+        self.statement_index = input; self
     }
     /// <p>The index number of the reason statement.</p>
     pub fn get_statement_index(&self) -> &::std::option::Option<i32> {
@@ -76,8 +74,7 @@ impl ReasonSummaryBuilder {
     }
     /// <p>The identifier for the reason statement.</p>
     pub fn set_statement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.statement_id = input;
-        self
+        self.statement_id = input; self
     }
     /// <p>The identifier for the reason statement.</p>
     pub fn get_statement_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl ReasonSummaryBuilder {
     /// Consumes the builder and constructs a [`ReasonSummary`](crate::types::ReasonSummary).
     pub fn build(self) -> crate::types::ReasonSummary {
         crate::types::ReasonSummary {
-            description: self.description,
-            statement_index: self.statement_index,
-            statement_id: self.statement_id,
+            description: self.description
+            ,
+            statement_index: self.statement_index
+            ,
+            statement_id: self.statement_id
+            ,
         }
     }
 }
+

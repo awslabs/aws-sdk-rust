@@ -22,11 +22,7 @@ impl DataSourceConfigurationOutput {
     /// Tries to convert the enum instance into [`GlueRunConfiguration`](crate::types::DataSourceConfigurationOutput::GlueRunConfiguration), extracting the inner [`GlueRunConfigurationOutput`](crate::types::GlueRunConfigurationOutput).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_glue_run_configuration(&self) -> ::std::result::Result<&crate::types::GlueRunConfigurationOutput, &Self> {
-        if let DataSourceConfigurationOutput::GlueRunConfiguration(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DataSourceConfigurationOutput::GlueRunConfiguration(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`GlueRunConfiguration`](crate::types::DataSourceConfigurationOutput::GlueRunConfiguration).
     pub fn is_glue_run_configuration(&self) -> bool {
@@ -35,11 +31,7 @@ impl DataSourceConfigurationOutput {
     /// Tries to convert the enum instance into [`RedshiftRunConfiguration`](crate::types::DataSourceConfigurationOutput::RedshiftRunConfiguration), extracting the inner [`RedshiftRunConfigurationOutput`](crate::types::RedshiftRunConfigurationOutput).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_redshift_run_configuration(&self) -> ::std::result::Result<&crate::types::RedshiftRunConfigurationOutput, &Self> {
-        if let DataSourceConfigurationOutput::RedshiftRunConfiguration(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DataSourceConfigurationOutput::RedshiftRunConfiguration(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`RedshiftRunConfiguration`](crate::types::DataSourceConfigurationOutput::RedshiftRunConfiguration).
     pub fn is_redshift_run_configuration(&self) -> bool {
@@ -50,3 +42,4 @@ impl DataSourceConfigurationOutput {
         matches!(self, Self::Unknown)
     }
 }
+

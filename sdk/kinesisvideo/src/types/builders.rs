@@ -48,3 +48,4 @@ pub use crate::types::_edge_agent_status::EdgeAgentStatusBuilder;
 pub use crate::types::_last_uploader_status::LastUploaderStatusBuilder;
 
 pub use crate::types::_last_recorder_status::LastRecorderStatusBuilder;
+

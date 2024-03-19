@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct InstantiateSolNetworkInstanceInput {
+pub struct InstantiateSolNetworkInstanceInput  {
     /// <p>ID of the network instance.</p>
     pub ns_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -10,11 +10,11 @@ pub struct InstantiateSolNetworkInstanceInput {
     /// <p>Provides values for the configurable properties.</p>
     pub additional_params_for_ns: ::std::option::Option<::aws_smithy_types::Document>,
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are transferred to the network operation that is created. Use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl InstantiateSolNetworkInstanceInput {
+impl  InstantiateSolNetworkInstanceInput  {
     /// <p>ID of the network instance.</p>
-    pub fn ns_instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn ns_instance_id(&self) -> ::std::option::Option<& str> {
         self.ns_instance_id.as_deref()
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -22,15 +22,15 @@ impl InstantiateSolNetworkInstanceInput {
         self.dry_run
     }
     /// <p>Provides values for the configurable properties.</p>
-    pub fn additional_params_for_ns(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+    pub fn additional_params_for_ns(&self) -> ::std::option::Option<& ::aws_smithy_types::Document> {
         self.additional_params_for_ns.as_ref()
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are transferred to the network operation that is created. Use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl ::std::fmt::Debug for InstantiateSolNetworkInstanceInput {
+impl  ::std::fmt::Debug for InstantiateSolNetworkInstanceInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("InstantiateSolNetworkInstanceInput");
         formatter.field("ns_instance_id", &self.ns_instance_id);
@@ -54,7 +54,7 @@ pub struct InstantiateSolNetworkInstanceInputBuilder {
     pub(crate) ns_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) additional_params_for_ns: ::std::option::Option<::aws_smithy_types::Document>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl InstantiateSolNetworkInstanceInputBuilder {
     /// <p>ID of the network instance.</p>
@@ -65,8 +65,7 @@ impl InstantiateSolNetworkInstanceInputBuilder {
     }
     /// <p>ID of the network instance.</p>
     pub fn set_ns_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ns_instance_id = input;
-        self
+        self.ns_instance_id = input; self
     }
     /// <p>ID of the network instance.</p>
     pub fn get_ns_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl InstantiateSolNetworkInstanceInputBuilder {
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -93,8 +91,7 @@ impl InstantiateSolNetworkInstanceInputBuilder {
     }
     /// <p>Provides values for the configurable properties.</p>
     pub fn set_additional_params_for_ns(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
-        self.additional_params_for_ns = input;
-        self
+        self.additional_params_for_ns = input; self
     }
     /// <p>Provides values for the configurable properties.</p>
     pub fn get_additional_params_for_ns(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
@@ -107,32 +104,32 @@ impl InstantiateSolNetworkInstanceInputBuilder {
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are transferred to the network operation that is created. Use tags to search and filter your resources or track your Amazon Web Services costs.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are transferred to the network operation that is created. Use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are transferred to the network operation that is created. Use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`InstantiateSolNetworkInstanceInput`](crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceInput {
-            ns_instance_id: self.ns_instance_id,
-            dry_run: self.dry_run,
-            additional_params_for_ns: self.additional_params_for_ns,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceInput {
+                ns_instance_id: self.ns_instance_id
+                ,
+                dry_run: self.dry_run
+                ,
+                additional_params_for_ns: self.additional_params_for_ns
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for InstantiateSolNetworkInstanceInputBuilder {
@@ -145,3 +142,4 @@ impl ::std::fmt::Debug for InstantiateSolNetworkInstanceInputBuilder {
         formatter.finish()
     }
 }
+

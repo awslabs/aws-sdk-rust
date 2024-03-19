@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateOriginRequestPolicyOutput {
+pub struct CreateOriginRequestPolicyOutput  {
     /// <p>An origin request policy.</p>
     pub origin_request_policy: ::std::option::Option<crate::types::OriginRequestPolicy>,
     /// <p>The fully qualified URI of the origin request policy just created.</p>
@@ -11,25 +11,25 @@ pub struct CreateOriginRequestPolicyOutput {
     pub e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateOriginRequestPolicyOutput {
+impl  CreateOriginRequestPolicyOutput  {
     /// <p>An origin request policy.</p>
-    pub fn origin_request_policy(&self) -> ::std::option::Option<&crate::types::OriginRequestPolicy> {
+    pub fn origin_request_policy(&self) -> ::std::option::Option<& crate::types::OriginRequestPolicy> {
         self.origin_request_policy.as_ref()
     }
     /// <p>The fully qualified URI of the origin request policy just created.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The current version of the origin request policy.</p>
-    pub fn e_tag(&self) -> ::std::option::Option<&str> {
+    pub fn e_tag(&self) -> ::std::option::Option<& str> {
         self.e_tag.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateOriginRequestPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateOriginRequestPolicyOutput {
     /// Creates a new builder-style object to manufacture [`CreateOriginRequestPolicyOutput`](crate::operation::create_origin_request_policy::CreateOriginRequestPolicyOutput).
     pub fn builder() -> crate::operation::create_origin_request_policy::builders::CreateOriginRequestPolicyOutputBuilder {
@@ -54,8 +54,7 @@ impl CreateOriginRequestPolicyOutputBuilder {
     }
     /// <p>An origin request policy.</p>
     pub fn set_origin_request_policy(mut self, input: ::std::option::Option<crate::types::OriginRequestPolicy>) -> Self {
-        self.origin_request_policy = input;
-        self
+        self.origin_request_policy = input; self
     }
     /// <p>An origin request policy.</p>
     pub fn get_origin_request_policy(&self) -> &::std::option::Option<crate::types::OriginRequestPolicy> {
@@ -68,8 +67,7 @@ impl CreateOriginRequestPolicyOutputBuilder {
     }
     /// <p>The fully qualified URI of the origin request policy just created.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The fully qualified URI of the origin request policy just created.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl CreateOriginRequestPolicyOutputBuilder {
     }
     /// <p>The current version of the origin request policy.</p>
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.e_tag = input;
-        self
+        self.e_tag = input; self
     }
     /// <p>The current version of the origin request policy.</p>
     pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
         &self.e_tag
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateOriginRequestPolicyOutput`](crate::operation::create_origin_request_policy::CreateOriginRequestPolicyOutput).
     pub fn build(self) -> crate::operation::create_origin_request_policy::CreateOriginRequestPolicyOutput {
         crate::operation::create_origin_request_policy::CreateOriginRequestPolicyOutput {
-            origin_request_policy: self.origin_request_policy,
-            location: self.location,
-            e_tag: self.e_tag,
+            origin_request_policy: self.origin_request_policy
+            ,
+            location: self.location
+            ,
+            e_tag: self.e_tag
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

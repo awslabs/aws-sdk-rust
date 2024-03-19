@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateLaunchTemplateOutput {
+pub struct CreateLaunchTemplateOutput  {
     /// <p>Information about the launch template.</p>
     pub launch_template: ::std::option::Option<crate::types::LaunchTemplate>,
     /// <p>If the launch template contains parameters or parameter combinations that are not valid, an error code and an error message are returned for each issue that's found.</p>
     pub warning: ::std::option::Option<crate::types::ValidationWarning>,
     _request_id: Option<String>,
 }
-impl CreateLaunchTemplateOutput {
+impl  CreateLaunchTemplateOutput  {
     /// <p>Information about the launch template.</p>
-    pub fn launch_template(&self) -> ::std::option::Option<&crate::types::LaunchTemplate> {
+    pub fn launch_template(&self) -> ::std::option::Option<& crate::types::LaunchTemplate> {
         self.launch_template.as_ref()
     }
     /// <p>If the launch template contains parameters or parameter combinations that are not valid, an error code and an error message are returned for each issue that's found.</p>
-    pub fn warning(&self) -> ::std::option::Option<&crate::types::ValidationWarning> {
+    pub fn warning(&self) -> ::std::option::Option<& crate::types::ValidationWarning> {
         self.warning.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateLaunchTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateLaunchTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateLaunchTemplateOutput`](crate::operation::create_launch_template::CreateLaunchTemplateOutput).
     pub fn builder() -> crate::operation::create_launch_template::builders::CreateLaunchTemplateOutputBuilder {
@@ -47,8 +47,7 @@ impl CreateLaunchTemplateOutputBuilder {
     }
     /// <p>Information about the launch template.</p>
     pub fn set_launch_template(mut self, input: ::std::option::Option<crate::types::LaunchTemplate>) -> Self {
-        self.launch_template = input;
-        self
+        self.launch_template = input; self
     }
     /// <p>Information about the launch template.</p>
     pub fn get_launch_template(&self) -> &::std::option::Option<crate::types::LaunchTemplate> {
@@ -61,28 +60,30 @@ impl CreateLaunchTemplateOutputBuilder {
     }
     /// <p>If the launch template contains parameters or parameter combinations that are not valid, an error code and an error message are returned for each issue that's found.</p>
     pub fn set_warning(mut self, input: ::std::option::Option<crate::types::ValidationWarning>) -> Self {
-        self.warning = input;
-        self
+        self.warning = input; self
     }
     /// <p>If the launch template contains parameters or parameter combinations that are not valid, an error code and an error message are returned for each issue that's found.</p>
     pub fn get_warning(&self) -> &::std::option::Option<crate::types::ValidationWarning> {
         &self.warning
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateLaunchTemplateOutput`](crate::operation::create_launch_template::CreateLaunchTemplateOutput).
     pub fn build(self) -> crate::operation::create_launch_template::CreateLaunchTemplateOutput {
         crate::operation::create_launch_template::CreateLaunchTemplateOutput {
-            launch_template: self.launch_template,
-            warning: self.warning,
+            launch_template: self.launch_template
+            ,
+            warning: self.warning
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

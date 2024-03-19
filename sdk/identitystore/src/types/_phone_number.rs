@@ -3,7 +3,7 @@
 /// <p>The phone number associated with the user.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct PhoneNumber {
+pub struct PhoneNumber  {
     /// <p>A string containing a phone number. For example, "8675309" or "+1 (800) 123-4567".</p>
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>A string representing the type of a phone number. For example, "Mobile."</p>
@@ -11,13 +11,13 @@ pub struct PhoneNumber {
     /// <p>A Boolean value representing whether this is the primary phone number for the associated resource.</p>
     pub primary: bool,
 }
-impl PhoneNumber {
+impl  PhoneNumber  {
     /// <p>A string containing a phone number. For example, "8675309" or "+1 (800) 123-4567".</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>A string representing the type of a phone number. For example, "Mobile."</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>A Boolean value representing whether this is the primary phone number for the associated resource.</p>
@@ -25,7 +25,7 @@ impl PhoneNumber {
         self.primary
     }
 }
-impl ::std::fmt::Debug for PhoneNumber {
+impl  ::std::fmt::Debug for PhoneNumber  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PhoneNumber");
         formatter.field("value", &"*** Sensitive Data Redacted ***");
@@ -57,8 +57,7 @@ impl PhoneNumberBuilder {
     }
     /// <p>A string containing a phone number. For example, "8675309" or "+1 (800) 123-4567".</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>A string containing a phone number. For example, "8675309" or "+1 (800) 123-4567".</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl PhoneNumberBuilder {
     }
     /// <p>A string representing the type of a phone number. For example, "Mobile."</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>A string representing the type of a phone number. For example, "Mobile."</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl PhoneNumberBuilder {
     }
     /// <p>A Boolean value representing whether this is the primary phone number for the associated resource.</p>
     pub fn set_primary(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.primary = input;
-        self
+        self.primary = input; self
     }
     /// <p>A Boolean value representing whether this is the primary phone number for the associated resource.</p>
     pub fn get_primary(&self) -> &::std::option::Option<bool> {
@@ -95,9 +92,13 @@ impl PhoneNumberBuilder {
     /// Consumes the builder and constructs a [`PhoneNumber`](crate::types::PhoneNumber).
     pub fn build(self) -> crate::types::PhoneNumber {
         crate::types::PhoneNumber {
-            value: self.value,
-            r#type: self.r#type,
-            primary: self.primary.unwrap_or_default(),
+            value: self.value
+            ,
+            r#type: self.r#type
+            ,
+            primary: self.primary
+                .unwrap_or_default()
+            ,
         }
     }
 }
@@ -110,3 +111,4 @@ impl ::std::fmt::Debug for PhoneNumberBuilder {
         formatter.finish()
     }
 }
+

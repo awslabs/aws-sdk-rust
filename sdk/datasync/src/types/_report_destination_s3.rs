@@ -3,7 +3,7 @@
 /// <p>Specifies the Amazon S3 bucket where DataSync uploads your <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">task report</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReportDestinationS3 {
+pub struct ReportDestinationS3  {
     /// <p>Specifies a bucket prefix for your report.</p>
     pub subdirectory: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the ARN of the S3 bucket where DataSync uploads your report.</p>
@@ -11,20 +11,18 @@ pub struct ReportDestinationS3 {
     /// <p>Specifies the Amazon Resource Name (ARN) of the IAM policy that allows DataSync to upload a task report to your S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Allowing DataSync to upload a task report to an Amazon S3 bucket</a>.</p>
     pub bucket_access_role_arn: ::std::string::String,
 }
-impl ReportDestinationS3 {
+impl  ReportDestinationS3  {
     /// <p>Specifies a bucket prefix for your report.</p>
-    pub fn subdirectory(&self) -> ::std::option::Option<&str> {
+    pub fn subdirectory(&self) -> ::std::option::Option<& str> {
         self.subdirectory.as_deref()
     }
     /// <p>Specifies the ARN of the S3 bucket where DataSync uploads your report.</p>
-    pub fn s3_bucket_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_bucket_arn.deref()
+    pub fn s3_bucket_arn(&self) -> & str {
+        use std::ops::Deref; self.s3_bucket_arn.deref()
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the IAM policy that allows DataSync to upload a task report to your S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Allowing DataSync to upload a task report to an Amazon S3 bucket</a>.</p>
-    pub fn bucket_access_role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket_access_role_arn.deref()
+    pub fn bucket_access_role_arn(&self) -> & str {
+        use std::ops::Deref; self.bucket_access_role_arn.deref()
     }
 }
 impl ReportDestinationS3 {
@@ -50,8 +48,7 @@ impl ReportDestinationS3Builder {
     }
     /// <p>Specifies a bucket prefix for your report.</p>
     pub fn set_subdirectory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subdirectory = input;
-        self
+        self.subdirectory = input; self
     }
     /// <p>Specifies a bucket prefix for your report.</p>
     pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +62,7 @@ impl ReportDestinationS3Builder {
     }
     /// <p>Specifies the ARN of the S3 bucket where DataSync uploads your report.</p>
     pub fn set_s3_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket_arn = input;
-        self
+        self.s3_bucket_arn = input; self
     }
     /// <p>Specifies the ARN of the S3 bucket where DataSync uploads your report.</p>
     pub fn get_s3_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl ReportDestinationS3Builder {
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the IAM policy that allows DataSync to upload a task report to your S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Allowing DataSync to upload a task report to an Amazon S3 bucket</a>.</p>
     pub fn set_bucket_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_access_role_arn = input;
-        self
+        self.bucket_access_role_arn = input; self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the IAM policy that allows DataSync to upload a task report to your S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Allowing DataSync to upload a task report to an Amazon S3 bucket</a>.</p>
     pub fn get_bucket_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,20 +87,22 @@ impl ReportDestinationS3Builder {
     /// - [`s3_bucket_arn`](crate::types::builders::ReportDestinationS3Builder::s3_bucket_arn)
     /// - [`bucket_access_role_arn`](crate::types::builders::ReportDestinationS3Builder::bucket_access_role_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::ReportDestinationS3, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ReportDestinationS3 {
-            subdirectory: self.subdirectory,
-            s3_bucket_arn: self.s3_bucket_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_bucket_arn",
-                    "s3_bucket_arn was not specified but it is required when building ReportDestinationS3",
-                )
-            })?,
-            bucket_access_role_arn: self.bucket_access_role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket_access_role_arn",
-                    "bucket_access_role_arn was not specified but it is required when building ReportDestinationS3",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ReportDestinationS3 {
+                subdirectory: self.subdirectory
+                ,
+                s3_bucket_arn: self.s3_bucket_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_bucket_arn", "s3_bucket_arn was not specified but it is required when building ReportDestinationS3")
+                    )?
+                ,
+                bucket_access_role_arn: self.bucket_access_role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket_access_role_arn", "bucket_access_role_arn was not specified but it is required when building ReportDestinationS3")
+                    )?
+                ,
+            }
+        )
     }
 }
+

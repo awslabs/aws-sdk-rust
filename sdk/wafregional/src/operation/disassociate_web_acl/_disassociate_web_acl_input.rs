@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateWebAclInput {
+pub struct DisassociateWebAclInput  {
     /// <p>The ARN (Amazon Resource Name) of the resource from which the web ACL is being removed, either an application load balancer or Amazon API Gateway stage.</p>
     /// <p>The ARN should be in one of the following formats:</p>
     /// <ul>
@@ -13,7 +13,7 @@ pub struct DisassociateWebAclInput {
     /// </ul>
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
-impl DisassociateWebAclInput {
+impl  DisassociateWebAclInput  {
     /// <p>The ARN (Amazon Resource Name) of the resource from which the web ACL is being removed, either an application load balancer or Amazon API Gateway stage.</p>
     /// <p>The ARN should be in one of the following formats:</p>
     /// <ul>
@@ -22,7 +22,7 @@ impl DisassociateWebAclInput {
     /// <li>
     /// <p>For an Amazon API Gateway stage: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code></p></li>
     /// </ul>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl DisassociateWebAclInputBuilder {
     /// <p>For an Amazon API Gateway stage: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code></p></li>
     /// </ul>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The ARN (Amazon Resource Name) of the resource from which the web ACL is being removed, either an application load balancer or Amazon API Gateway stage.</p>
     /// <p>The ARN should be in one of the following formats:</p>
@@ -77,12 +76,13 @@ impl DisassociateWebAclInputBuilder {
         &self.resource_arn
     }
     /// Consumes the builder and constructs a [`DisassociateWebAclInput`](crate::operation::disassociate_web_acl::DisassociateWebAclInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::disassociate_web_acl::DisassociateWebAclInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::disassociate_web_acl::DisassociateWebAclInput {
-            resource_arn: self.resource_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_web_acl::DisassociateWebAclInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disassociate_web_acl::DisassociateWebAclInput {
+                resource_arn: self.resource_arn
+                ,
+            }
+        )
     }
 }
+

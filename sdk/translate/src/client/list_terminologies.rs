@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTerminologies`](crate::operation::list_terminologies::builders::ListTerminologiesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_terminologies::builders::ListTerminologiesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_terminologies::builders::ListTerminologiesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_terminologies::builders::ListTerminologiesFluentBuilder::set_next_token):<br>required: **false**<br><p>If the result of the request to ListTerminologies was truncated, include the NextToken to fetch the next group of custom terminologies.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_terminologies::builders::ListTerminologiesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_terminologies::builders::ListTerminologiesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of custom terminologies returned per list request.</p><br>
-    /// - On success, responds with [`ListTerminologiesOutput`](crate::operation::list_terminologies::ListTerminologiesOutput) with field(s):
+                            /// - On success, responds with [`ListTerminologiesOutput`](crate::operation::list_terminologies::ListTerminologiesOutput) with field(s):
     ///   - [`terminology_properties_list(Option<Vec::<TerminologyProperties>>)`](crate::operation::list_terminologies::ListTerminologiesOutput::terminology_properties_list): <p>The properties list of the custom terminologies returned on the list request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_terminologies::ListTerminologiesOutput::next_token): <p>If the response to the ListTerminologies was truncated, the NextToken fetches the next group of custom terminologies.</p>
-    /// - On failure, responds with [`SdkError<ListTerminologiesError>`](crate::operation::list_terminologies::ListTerminologiesError)
+                            /// - On failure, responds with [`SdkError<ListTerminologiesError>`](crate::operation::list_terminologies::ListTerminologiesError)
     pub fn list_terminologies(&self) -> crate::operation::list_terminologies::builders::ListTerminologiesFluentBuilder {
-        crate::operation::list_terminologies::builders::ListTerminologiesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_terminologies::builders::ListTerminologiesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

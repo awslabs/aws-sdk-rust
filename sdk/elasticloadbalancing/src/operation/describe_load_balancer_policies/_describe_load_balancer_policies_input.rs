@@ -3,22 +3,23 @@
 /// <p>Contains the parameters for DescribeLoadBalancerPolicies.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLoadBalancerPoliciesInput {
+pub struct DescribeLoadBalancerPoliciesInput  {
     /// <p>The name of the load balancer.</p>
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The names of the policies.</p>
-    pub policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub policy_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DescribeLoadBalancerPoliciesInput {
+impl  DescribeLoadBalancerPoliciesInput  {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> ::std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> ::std::option::Option<& str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The names of the policies.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_names.is_none()`.
-    pub fn policy_names(&self) -> &[::std::string::String] {
-        self.policy_names.as_deref().unwrap_or_default()
+    pub fn policy_names(&self) -> & [::std::string::String] {
+        self.policy_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeLoadBalancerPoliciesInput {
@@ -33,7 +34,7 @@ impl DescribeLoadBalancerPoliciesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLoadBalancerPoliciesInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
-    pub(crate) policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) policy_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DescribeLoadBalancerPoliciesInputBuilder {
     /// <p>The name of the load balancer.</p>
@@ -43,8 +44,7 @@ impl DescribeLoadBalancerPoliciesInputBuilder {
     }
     /// <p>The name of the load balancer.</p>
     pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.load_balancer_name = input;
-        self
+        self.load_balancer_name = input; self
     }
     /// <p>The name of the load balancer.</p>
     pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,29 +57,28 @@ impl DescribeLoadBalancerPoliciesInputBuilder {
     /// <p>The names of the policies.</p>
     pub fn policy_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.policy_names.unwrap_or_default();
-        v.push(input.into());
-        self.policy_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.policy_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of the policies.</p>
-    pub fn set_policy_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.policy_names = input;
-        self
+    pub fn set_policy_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.policy_names = input; self
     }
     /// <p>The names of the policies.</p>
-    pub fn get_policy_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_policy_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.policy_names
     }
     /// Consumes the builder and constructs a [`DescribeLoadBalancerPoliciesInput`](crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesInput {
-            load_balancer_name: self.load_balancer_name,
-            policy_names: self.policy_names,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesInput {
+                load_balancer_name: self.load_balancer_name
+                ,
+                policy_names: self.policy_names
+                ,
+            }
+        )
     }
 }
+

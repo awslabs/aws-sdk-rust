@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateWebAclInput {
+pub struct AssociateWebAclInput  {
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with the resource.</p>
     pub web_acl_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resource to associate with the web ACL.</p>
@@ -23,9 +23,9 @@ pub struct AssociateWebAclInput {
     /// </ul>
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
-impl AssociateWebAclInput {
+impl  AssociateWebAclInput  {
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with the resource.</p>
-    pub fn web_acl_arn(&self) -> ::std::option::Option<&str> {
+    pub fn web_acl_arn(&self) -> ::std::option::Option<& str> {
         self.web_acl_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the resource to associate with the web ACL.</p>
@@ -44,7 +44,7 @@ impl AssociateWebAclInput {
     /// <li>
     /// <p>For an Amazon Web Services Verified Access instance: <code>arn:<i>partition</i>:ec2:<i>region</i>:<i>account-id</i>:verified-access-instance/<i>instance-id</i> </code></p></li>
     /// </ul>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
@@ -71,8 +71,7 @@ impl AssociateWebAclInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with the resource.</p>
     pub fn set_web_acl_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.web_acl_arn = input;
-        self
+        self.web_acl_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with the resource.</p>
     pub fn get_web_acl_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +115,7 @@ impl AssociateWebAclInputBuilder {
     /// <p>For an Amazon Web Services Verified Access instance: <code>arn:<i>partition</i>:ec2:<i>region</i>:<i>account-id</i>:verified-access-instance/<i>instance-id</i> </code></p></li>
     /// </ul>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource to associate with the web ACL.</p>
     /// <p>The ARN must be in one of the following formats:</p>
@@ -139,12 +137,15 @@ impl AssociateWebAclInputBuilder {
         &self.resource_arn
     }
     /// Consumes the builder and constructs a [`AssociateWebAclInput`](crate::operation::associate_web_acl::AssociateWebAclInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::associate_web_acl::AssociateWebAclInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::associate_web_acl::AssociateWebAclInput {
-            web_acl_arn: self.web_acl_arn,
-            resource_arn: self.resource_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_web_acl::AssociateWebAclInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_web_acl::AssociateWebAclInput {
+                web_acl_arn: self.web_acl_arn
+                ,
+                resource_arn: self.resource_arn
+                ,
+            }
+        )
     }
 }
+

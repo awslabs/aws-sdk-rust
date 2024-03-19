@@ -26,11 +26,7 @@ impl EncryptionDecryptionAttributes {
     /// Tries to convert the enum instance into [`Asymmetric`](crate::types::EncryptionDecryptionAttributes::Asymmetric), extracting the inner [`AsymmetricEncryptionAttributes`](crate::types::AsymmetricEncryptionAttributes).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_asymmetric(&self) -> ::std::result::Result<&crate::types::AsymmetricEncryptionAttributes, &Self> {
-        if let EncryptionDecryptionAttributes::Asymmetric(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let EncryptionDecryptionAttributes::Asymmetric(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Asymmetric`](crate::types::EncryptionDecryptionAttributes::Asymmetric).
     pub fn is_asymmetric(&self) -> bool {
@@ -39,11 +35,7 @@ impl EncryptionDecryptionAttributes {
     /// Tries to convert the enum instance into [`Dukpt`](crate::types::EncryptionDecryptionAttributes::Dukpt), extracting the inner [`DukptEncryptionAttributes`](crate::types::DukptEncryptionAttributes).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_dukpt(&self) -> ::std::result::Result<&crate::types::DukptEncryptionAttributes, &Self> {
-        if let EncryptionDecryptionAttributes::Dukpt(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let EncryptionDecryptionAttributes::Dukpt(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Dukpt`](crate::types::EncryptionDecryptionAttributes::Dukpt).
     pub fn is_dukpt(&self) -> bool {
@@ -52,11 +44,7 @@ impl EncryptionDecryptionAttributes {
     /// Tries to convert the enum instance into [`Emv`](crate::types::EncryptionDecryptionAttributes::Emv), extracting the inner [`EmvEncryptionAttributes`](crate::types::EmvEncryptionAttributes).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_emv(&self) -> ::std::result::Result<&crate::types::EmvEncryptionAttributes, &Self> {
-        if let EncryptionDecryptionAttributes::Emv(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let EncryptionDecryptionAttributes::Emv(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Emv`](crate::types::EncryptionDecryptionAttributes::Emv).
     pub fn is_emv(&self) -> bool {
@@ -65,11 +53,7 @@ impl EncryptionDecryptionAttributes {
     /// Tries to convert the enum instance into [`Symmetric`](crate::types::EncryptionDecryptionAttributes::Symmetric), extracting the inner [`SymmetricEncryptionAttributes`](crate::types::SymmetricEncryptionAttributes).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_symmetric(&self) -> ::std::result::Result<&crate::types::SymmetricEncryptionAttributes, &Self> {
-        if let EncryptionDecryptionAttributes::Symmetric(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let EncryptionDecryptionAttributes::Symmetric(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Symmetric`](crate::types::EncryptionDecryptionAttributes::Symmetric).
     pub fn is_symmetric(&self) -> bool {
@@ -80,3 +64,4 @@ impl EncryptionDecryptionAttributes {
         matches!(self, Self::Unknown)
     }
 }
+

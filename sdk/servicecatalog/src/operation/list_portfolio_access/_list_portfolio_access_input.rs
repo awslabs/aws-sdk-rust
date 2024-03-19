@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPortfolioAccessInput {
+pub struct ListPortfolioAccessInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -20,7 +20,7 @@ pub struct ListPortfolioAccessInput {
     /// <p>The maximum number of items to return with this call.</p>
     pub page_size: ::std::option::Option<i32>,
 }
-impl ListPortfolioAccessInput {
+impl  ListPortfolioAccessInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -28,19 +28,19 @@ impl ListPortfolioAccessInput {
     /// <li>
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
-    pub fn accept_language(&self) -> ::std::option::Option<&str> {
+    pub fn accept_language(&self) -> ::std::option::Option<& str> {
         self.accept_language.as_deref()
     }
     /// <p>The portfolio identifier.</p>
-    pub fn portfolio_id(&self) -> ::std::option::Option<&str> {
+    pub fn portfolio_id(&self) -> ::std::option::Option<& str> {
         self.portfolio_id.as_deref()
     }
     /// <p>The ID of an organization node the portfolio is shared with. All children of this node with an inherited portfolio share will be returned.</p>
-    pub fn organization_parent_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_parent_id(&self) -> ::std::option::Option<& str> {
         self.organization_parent_id.as_deref()
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    pub fn page_token(&self) -> ::std::option::Option<&str> {
+    pub fn page_token(&self) -> ::std::option::Option<& str> {
         self.page_token.as_deref()
     }
     /// <p>The maximum number of items to return with this call.</p>
@@ -85,8 +85,7 @@ impl ListPortfolioAccessInputBuilder {
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accept_language = input;
-        self
+        self.accept_language = input; self
     }
     /// <p>The language code.</p>
     /// <ul>
@@ -106,8 +105,7 @@ impl ListPortfolioAccessInputBuilder {
     }
     /// <p>The portfolio identifier.</p>
     pub fn set_portfolio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.portfolio_id = input;
-        self
+        self.portfolio_id = input; self
     }
     /// <p>The portfolio identifier.</p>
     pub fn get_portfolio_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +118,7 @@ impl ListPortfolioAccessInputBuilder {
     }
     /// <p>The ID of an organization node the portfolio is shared with. All children of this node with an inherited portfolio share will be returned.</p>
     pub fn set_organization_parent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_parent_id = input;
-        self
+        self.organization_parent_id = input; self
     }
     /// <p>The ID of an organization node the portfolio is shared with. All children of this node with an inherited portfolio share will be returned.</p>
     pub fn get_organization_parent_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +131,7 @@ impl ListPortfolioAccessInputBuilder {
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.page_token = input;
-        self
+        self.page_token = input; self
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,24 +144,28 @@ impl ListPortfolioAccessInputBuilder {
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
         &self.page_size
     }
     /// Consumes the builder and constructs a [`ListPortfolioAccessInput`](crate::operation::list_portfolio_access::ListPortfolioAccessInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_portfolio_access::ListPortfolioAccessInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_portfolio_access::ListPortfolioAccessInput {
-            accept_language: self.accept_language,
-            portfolio_id: self.portfolio_id,
-            organization_parent_id: self.organization_parent_id,
-            page_token: self.page_token,
-            page_size: self.page_size,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_portfolio_access::ListPortfolioAccessInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_portfolio_access::ListPortfolioAccessInput {
+                accept_language: self.accept_language
+                ,
+                portfolio_id: self.portfolio_id
+                ,
+                organization_parent_id: self.organization_parent_id
+                ,
+                page_token: self.page_token
+                ,
+                page_size: self.page_size
+                ,
+            }
+        )
     }
 }
+

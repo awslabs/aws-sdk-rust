@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteManagedPrefixListInput {
+pub struct DeleteManagedPrefixListInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the prefix list.</p>
     pub prefix_list_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteManagedPrefixListInput {
+impl  DeleteManagedPrefixListInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn prefix_list_id(&self) -> ::std::option::Option<&str> {
+    pub fn prefix_list_id(&self) -> ::std::option::Option<& str> {
         self.prefix_list_id.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl DeleteManagedPrefixListInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -55,23 +54,22 @@ impl DeleteManagedPrefixListInputBuilder {
     }
     /// <p>The ID of the prefix list.</p>
     pub fn set_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix_list_id = input;
-        self
+        self.prefix_list_id = input; self
     }
     /// <p>The ID of the prefix list.</p>
     pub fn get_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.prefix_list_id
     }
     /// Consumes the builder and constructs a [`DeleteManagedPrefixListInput`](crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListInput {
-            dry_run: self.dry_run,
-            prefix_list_id: self.prefix_list_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListInput {
+                dry_run: self.dry_run
+                ,
+                prefix_list_id: self.prefix_list_id
+                ,
+            }
+        )
     }
 }
+

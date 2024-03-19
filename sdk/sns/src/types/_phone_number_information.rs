@@ -3,7 +3,7 @@
 /// <p>A list of phone numbers and their metadata.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct PhoneNumberInformation {
+pub struct PhoneNumberInformation  {
     /// <p>The date and time when the phone number was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The phone number.</p>
@@ -15,37 +15,38 @@ pub struct PhoneNumberInformation {
     /// <p>The list of supported routes.</p>
     pub route_type: ::std::option::Option<crate::types::RouteType>,
     /// <p>The capabilities of each phone number.</p>
-    pub number_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>,
+    pub number_capabilities: ::std::option::Option<::std::vec::Vec::<crate::types::NumberCapability>>,
 }
-impl PhoneNumberInformation {
+impl  PhoneNumberInformation  {
     /// <p>The date and time when the phone number was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The phone number.</p>
-    pub fn phone_number(&self) -> ::std::option::Option<&str> {
+    pub fn phone_number(&self) -> ::std::option::Option<& str> {
         self.phone_number.as_deref()
     }
     /// <p>The status of the phone number.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The two-character code for the country or region, in ISO 3166-1 alpha-2 format.</p>
-    pub fn iso2_country_code(&self) -> ::std::option::Option<&str> {
+    pub fn iso2_country_code(&self) -> ::std::option::Option<& str> {
         self.iso2_country_code.as_deref()
     }
     /// <p>The list of supported routes.</p>
-    pub fn route_type(&self) -> ::std::option::Option<&crate::types::RouteType> {
+    pub fn route_type(&self) -> ::std::option::Option<& crate::types::RouteType> {
         self.route_type.as_ref()
     }
     /// <p>The capabilities of each phone number.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.number_capabilities.is_none()`.
-    pub fn number_capabilities(&self) -> &[crate::types::NumberCapability] {
-        self.number_capabilities.as_deref().unwrap_or_default()
+    pub fn number_capabilities(&self) -> & [crate::types::NumberCapability] {
+        self.number_capabilities.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for PhoneNumberInformation {
+impl  ::std::fmt::Debug for PhoneNumberInformation  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PhoneNumberInformation");
         formatter.field("created_at", &self.created_at);
@@ -73,7 +74,7 @@ pub struct PhoneNumberInformationBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) iso2_country_code: ::std::option::Option<::std::string::String>,
     pub(crate) route_type: ::std::option::Option<crate::types::RouteType>,
-    pub(crate) number_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>,
+    pub(crate) number_capabilities: ::std::option::Option<::std::vec::Vec::<crate::types::NumberCapability>>,
 }
 impl PhoneNumberInformationBuilder {
     /// <p>The date and time when the phone number was created.</p>
@@ -83,8 +84,7 @@ impl PhoneNumberInformationBuilder {
     }
     /// <p>The date and time when the phone number was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time when the phone number was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -97,8 +97,7 @@ impl PhoneNumberInformationBuilder {
     }
     /// <p>The phone number.</p>
     pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone_number = input;
-        self
+        self.phone_number = input; self
     }
     /// <p>The phone number.</p>
     pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl PhoneNumberInformationBuilder {
     }
     /// <p>The status of the phone number.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the phone number.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +123,7 @@ impl PhoneNumberInformationBuilder {
     }
     /// <p>The two-character code for the country or region, in ISO 3166-1 alpha-2 format.</p>
     pub fn set_iso2_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iso2_country_code = input;
-        self
+        self.iso2_country_code = input; self
     }
     /// <p>The two-character code for the country or region, in ISO 3166-1 alpha-2 format.</p>
     pub fn get_iso2_country_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +136,7 @@ impl PhoneNumberInformationBuilder {
     }
     /// <p>The list of supported routes.</p>
     pub fn set_route_type(mut self, input: ::std::option::Option<crate::types::RouteType>) -> Self {
-        self.route_type = input;
-        self
+        self.route_type = input; self
     }
     /// <p>The list of supported routes.</p>
     pub fn get_route_type(&self) -> &::std::option::Option<crate::types::RouteType> {
@@ -153,28 +149,33 @@ impl PhoneNumberInformationBuilder {
     /// <p>The capabilities of each phone number.</p>
     pub fn number_capabilities(mut self, input: crate::types::NumberCapability) -> Self {
         let mut v = self.number_capabilities.unwrap_or_default();
-        v.push(input);
-        self.number_capabilities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.number_capabilities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The capabilities of each phone number.</p>
-    pub fn set_number_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>) -> Self {
-        self.number_capabilities = input;
-        self
+    pub fn set_number_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NumberCapability>>) -> Self {
+        self.number_capabilities = input; self
     }
     /// <p>The capabilities of each phone number.</p>
-    pub fn get_number_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>> {
+    pub fn get_number_capabilities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NumberCapability>> {
         &self.number_capabilities
     }
     /// Consumes the builder and constructs a [`PhoneNumberInformation`](crate::types::PhoneNumberInformation).
     pub fn build(self) -> crate::types::PhoneNumberInformation {
         crate::types::PhoneNumberInformation {
-            created_at: self.created_at,
-            phone_number: self.phone_number,
-            status: self.status,
-            iso2_country_code: self.iso2_country_code,
-            route_type: self.route_type,
-            number_capabilities: self.number_capabilities,
+            created_at: self.created_at
+            ,
+            phone_number: self.phone_number
+            ,
+            status: self.status
+            ,
+            iso2_country_code: self.iso2_country_code
+            ,
+            route_type: self.route_type
+            ,
+            number_capabilities: self.number_capabilities
+            ,
         }
     }
 }
@@ -190,3 +191,4 @@ impl ::std::fmt::Debug for PhoneNumberInformationBuilder {
         formatter.finish()
     }
 }
+

@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListEntityRecognizers`](crate::operation::list_entity_recognizers::builders::ListEntityRecognizersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_entity_recognizers::builders::ListEntityRecognizersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filter(EntityRecognizerFilter)`](crate::operation::list_entity_recognizers::builders::ListEntityRecognizersFluentBuilder::filter) / [`set_filter(Option<EntityRecognizerFilter>)`](crate::operation::list_entity_recognizers::builders::ListEntityRecognizersFluentBuilder::set_filter):<br>required: **false**<br><p>Filters the list of entities returned. You can filter on <code>Status</code>, <code>SubmitTimeBefore</code>, or <code>SubmitTimeAfter</code>. You can only set one filter at a time.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_entity_recognizers::builders::ListEntityRecognizersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_entity_recognizers::builders::ListEntityRecognizersFluentBuilder::set_next_token):<br>required: **false**<br><p>Identifies the next page of results to return.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_entity_recognizers::builders::ListEntityRecognizersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_entity_recognizers::builders::ListEntityRecognizersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return on each page. The default is 100.</p><br>
-    /// - On success, responds with [`ListEntityRecognizersOutput`](crate::operation::list_entity_recognizers::ListEntityRecognizersOutput) with field(s):
+                            /// - On success, responds with [`ListEntityRecognizersOutput`](crate::operation::list_entity_recognizers::ListEntityRecognizersOutput) with field(s):
     ///   - [`entity_recognizer_properties_list(Option<Vec::<EntityRecognizerProperties>>)`](crate::operation::list_entity_recognizers::ListEntityRecognizersOutput::entity_recognizer_properties_list): <p>The list of properties of an entity recognizer.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_entity_recognizers::ListEntityRecognizersOutput::next_token): <p>Identifies the next page of results to return.</p>
-    /// - On failure, responds with [`SdkError<ListEntityRecognizersError>`](crate::operation::list_entity_recognizers::ListEntityRecognizersError)
+                            /// - On failure, responds with [`SdkError<ListEntityRecognizersError>`](crate::operation::list_entity_recognizers::ListEntityRecognizersError)
     pub fn list_entity_recognizers(&self) -> crate::operation::list_entity_recognizers::builders::ListEntityRecognizersFluentBuilder {
-        crate::operation::list_entity_recognizers::builders::ListEntityRecognizersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_entity_recognizers::builders::ListEntityRecognizersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

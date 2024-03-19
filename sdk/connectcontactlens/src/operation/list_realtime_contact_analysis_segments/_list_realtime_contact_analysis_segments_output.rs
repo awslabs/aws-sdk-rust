@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRealtimeContactAnalysisSegmentsOutput {
+pub struct ListRealtimeContactAnalysisSegmentsOutput  {
     /// <p>An analyzed transcript or category.</p>
-    pub segments: ::std::option::Option<::std::vec::Vec<crate::types::RealtimeContactAnalysisSegment>>,
+    pub segments: ::std::option::Option<::std::vec::Vec::<crate::types::RealtimeContactAnalysisSegment>>,
     /// <p>If there are additional results, this is the token for the next set of results. If response includes <code>nextToken</code> there are two possible scenarios:</p>
     /// <ul>
     /// <li>
@@ -16,12 +16,13 @@ pub struct ListRealtimeContactAnalysisSegmentsOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListRealtimeContactAnalysisSegmentsOutput {
+impl  ListRealtimeContactAnalysisSegmentsOutput  {
     /// <p>An analyzed transcript or category.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.segments.is_none()`.
-    pub fn segments(&self) -> &[crate::types::RealtimeContactAnalysisSegment] {
-        self.segments.as_deref().unwrap_or_default()
+    pub fn segments(&self) -> & [crate::types::RealtimeContactAnalysisSegment] {
+        self.segments.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If there are additional results, this is the token for the next set of results. If response includes <code>nextToken</code> there are two possible scenarios:</p>
     /// <ul>
@@ -31,15 +32,15 @@ impl ListRealtimeContactAnalysisSegmentsOutput {
     /// <p>There are no more segments at this time, but more may be available later (real-time analysis is in progress) so the client should call the operation again to get new segments.</p></li>
     /// </ul>
     /// <p>If response does not include <code>nextToken</code>, the analysis is completed (successfully or failed) and there are no more segments to retrieve.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListRealtimeContactAnalysisSegmentsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListRealtimeContactAnalysisSegmentsOutput {
     /// Creates a new builder-style object to manufacture [`ListRealtimeContactAnalysisSegmentsOutput`](crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsOutput).
     pub fn builder() -> crate::operation::list_realtime_contact_analysis_segments::builders::ListRealtimeContactAnalysisSegmentsOutputBuilder {
@@ -51,7 +52,7 @@ impl ListRealtimeContactAnalysisSegmentsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRealtimeContactAnalysisSegmentsOutputBuilder {
-    pub(crate) segments: ::std::option::Option<::std::vec::Vec<crate::types::RealtimeContactAnalysisSegment>>,
+    pub(crate) segments: ::std::option::Option<::std::vec::Vec::<crate::types::RealtimeContactAnalysisSegment>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -63,17 +64,16 @@ impl ListRealtimeContactAnalysisSegmentsOutputBuilder {
     /// <p>An analyzed transcript or category.</p>
     pub fn segments(mut self, input: crate::types::RealtimeContactAnalysisSegment) -> Self {
         let mut v = self.segments.unwrap_or_default();
-        v.push(input);
-        self.segments = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.segments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An analyzed transcript or category.</p>
-    pub fn set_segments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RealtimeContactAnalysisSegment>>) -> Self {
-        self.segments = input;
-        self
+    pub fn set_segments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RealtimeContactAnalysisSegment>>) -> Self {
+        self.segments = input; self
     }
     /// <p>An analyzed transcript or category.</p>
-    pub fn get_segments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RealtimeContactAnalysisSegment>> {
+    pub fn get_segments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RealtimeContactAnalysisSegment>> {
         &self.segments
     }
     /// <p>If there are additional results, this is the token for the next set of results. If response includes <code>nextToken</code> there are two possible scenarios:</p>
@@ -97,8 +97,7 @@ impl ListRealtimeContactAnalysisSegmentsOutputBuilder {
     /// </ul>
     /// <p>If response does not include <code>nextToken</code>, the analysis is completed (successfully or failed) and there are no more segments to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If there are additional results, this is the token for the next set of results. If response includes <code>nextToken</code> there are two possible scenarios:</p>
     /// <ul>
@@ -112,20 +111,23 @@ impl ListRealtimeContactAnalysisSegmentsOutputBuilder {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListRealtimeContactAnalysisSegmentsOutput`](crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsOutput).
     pub fn build(self) -> crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsOutput {
         crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsOutput {
-            segments: self.segments,
-            next_token: self.next_token,
+            segments: self.segments
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

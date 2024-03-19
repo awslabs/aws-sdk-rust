@@ -3,7 +3,7 @@
 /// <p>Location of the source code for an application version.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SourceBuildInformation {
+pub struct SourceBuildInformation  {
     /// <p>The type of repository.</p>
     /// <ul>
     /// <li>
@@ -29,7 +29,7 @@ pub struct SourceBuildInformation {
     /// </ul>
     pub source_location: ::std::string::String,
 }
-impl SourceBuildInformation {
+impl  SourceBuildInformation  {
     /// <p>The type of repository.</p>
     /// <ul>
     /// <li>
@@ -37,7 +37,7 @@ impl SourceBuildInformation {
     /// <li>
     /// <p><code>Zip</code></p></li>
     /// </ul>
-    pub fn source_type(&self) -> &crate::types::SourceType {
+    pub fn source_type(&self) -> & crate::types::SourceType {
         &self.source_type
     }
     /// <p>Location where the repository is stored.</p>
@@ -47,7 +47,7 @@ impl SourceBuildInformation {
     /// <li>
     /// <p><code>S3</code></p></li>
     /// </ul>
-    pub fn source_repository(&self) -> &crate::types::SourceRepository {
+    pub fn source_repository(&self) -> & crate::types::SourceRepository {
         &self.source_repository
     }
     /// <p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code></p>
@@ -57,9 +57,8 @@ impl SourceBuildInformation {
     /// <li>
     /// <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p></li>
     /// </ul>
-    pub fn source_location(&self) -> &str {
-        use std::ops::Deref;
-        self.source_location.deref()
+    pub fn source_location(&self) -> & str {
+        use std::ops::Deref; self.source_location.deref()
     }
 }
 impl SourceBuildInformation {
@@ -98,8 +97,7 @@ impl SourceBuildInformationBuilder {
     /// <p><code>Zip</code></p></li>
     /// </ul>
     pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::SourceType>) -> Self {
-        self.source_type = input;
-        self
+        self.source_type = input; self
     }
     /// <p>The type of repository.</p>
     /// <ul>
@@ -131,8 +129,7 @@ impl SourceBuildInformationBuilder {
     /// <p><code>S3</code></p></li>
     /// </ul>
     pub fn set_source_repository(mut self, input: ::std::option::Option<crate::types::SourceRepository>) -> Self {
-        self.source_repository = input;
-        self
+        self.source_repository = input; self
     }
     /// <p>Location where the repository is stored.</p>
     /// <ul>
@@ -164,8 +161,7 @@ impl SourceBuildInformationBuilder {
     /// <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p></li>
     /// </ul>
     pub fn set_source_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_location = input;
-        self
+        self.source_location = input; self
     }
     /// <p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code></p>
     /// <ul>
@@ -183,25 +179,25 @@ impl SourceBuildInformationBuilder {
     /// - [`source_repository`](crate::types::builders::SourceBuildInformationBuilder::source_repository)
     /// - [`source_location`](crate::types::builders::SourceBuildInformationBuilder::source_location)
     pub fn build(self) -> ::std::result::Result<crate::types::SourceBuildInformation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SourceBuildInformation {
-            source_type: self.source_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_type",
-                    "source_type was not specified but it is required when building SourceBuildInformation",
-                )
-            })?,
-            source_repository: self.source_repository.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_repository",
-                    "source_repository was not specified but it is required when building SourceBuildInformation",
-                )
-            })?,
-            source_location: self.source_location.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_location",
-                    "source_location was not specified but it is required when building SourceBuildInformation",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SourceBuildInformation {
+                source_type: self.source_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source_type", "source_type was not specified but it is required when building SourceBuildInformation")
+                    )?
+                ,
+                source_repository: self.source_repository
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source_repository", "source_repository was not specified but it is required when building SourceBuildInformation")
+                    )?
+                ,
+                source_location: self.source_location
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source_location", "source_location was not specified but it is required when building SourceBuildInformation")
+                    )?
+                ,
+            }
+        )
     }
 }
+

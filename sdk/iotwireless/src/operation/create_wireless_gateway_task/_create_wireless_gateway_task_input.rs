@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateWirelessGatewayTaskInput {
+pub struct CreateWirelessGatewayTaskInput  {
     /// <p>The ID of the resource to update.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the WirelessGatewayTaskDefinition.</p>
     pub wireless_gateway_task_definition_id: ::std::option::Option<::std::string::String>,
 }
-impl CreateWirelessGatewayTaskInput {
+impl  CreateWirelessGatewayTaskInput  {
     /// <p>The ID of the resource to update.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ID of the WirelessGatewayTaskDefinition.</p>
-    pub fn wireless_gateway_task_definition_id(&self) -> ::std::option::Option<&str> {
+    pub fn wireless_gateway_task_definition_id(&self) -> ::std::option::Option<& str> {
         self.wireless_gateway_task_definition_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl CreateWirelessGatewayTaskInputBuilder {
     }
     /// <p>The ID of the resource to update.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the resource to update.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl CreateWirelessGatewayTaskInputBuilder {
     }
     /// <p>The ID of the WirelessGatewayTaskDefinition.</p>
     pub fn set_wireless_gateway_task_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.wireless_gateway_task_definition_id = input;
-        self
+        self.wireless_gateway_task_definition_id = input; self
     }
     /// <p>The ID of the WirelessGatewayTaskDefinition.</p>
     pub fn get_wireless_gateway_task_definition_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.wireless_gateway_task_definition_id
     }
     /// Consumes the builder and constructs a [`CreateWirelessGatewayTaskInput`](crate::operation::create_wireless_gateway_task::CreateWirelessGatewayTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_wireless_gateway_task::CreateWirelessGatewayTaskInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_wireless_gateway_task::CreateWirelessGatewayTaskInput {
-            id: self.id,
-            wireless_gateway_task_definition_id: self.wireless_gateway_task_definition_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_wireless_gateway_task::CreateWirelessGatewayTaskInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_wireless_gateway_task::CreateWirelessGatewayTaskInput {
+                id: self.id
+                ,
+                wireless_gateway_task_definition_id: self.wireless_gateway_task_definition_id
+                ,
+            }
+        )
     }
 }
+

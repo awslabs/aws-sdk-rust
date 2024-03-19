@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateFeaturedResultsSetInput {
+pub struct CreateFeaturedResultsSetInput  {
     /// <p>The identifier of the index that you want to use for featuring results.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>A name for the set of featured results.</p>
@@ -14,50 +14,53 @@ pub struct CreateFeaturedResultsSetInput {
     /// <p>The current status of the set of featured results. When the value is <code>ACTIVE</code>, featured results are ready for use. You can still configure your settings before setting the status to <code>ACTIVE</code>. You can set the status to <code>ACTIVE</code> or <code>INACTIVE</code> using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateFeaturedResultsSet.html">UpdateFeaturedResultsSet</a> API. The queries you specify for featured results must be unique per featured results set for each index, whether the status is <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
     pub status: ::std::option::Option<crate::types::FeaturedResultsSetStatus>,
     /// <p>A list of queries for featuring results. For more information on the list of queries, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
-    pub query_texts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub query_texts: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of document IDs for the documents you want to feature at the top of the search results page. For more information on the list of documents, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
-    pub featured_documents: ::std::option::Option<::std::vec::Vec<crate::types::FeaturedDocument>>,
+    pub featured_documents: ::std::option::Option<::std::vec::Vec::<crate::types::FeaturedDocument>>,
     /// <p>A list of key-value pairs that identify or categorize the featured results set. You can also use tags to help control access to the featured results set. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols:_ . : / = + - @.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateFeaturedResultsSetInput {
+impl  CreateFeaturedResultsSetInput  {
     /// <p>The identifier of the index that you want to use for featuring results.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>A name for the set of featured results.</p>
-    pub fn featured_results_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn featured_results_set_name(&self) -> ::std::option::Option<& str> {
         self.featured_results_set_name.as_deref()
     }
     /// <p>A description for the set of featured results.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A token that you provide to identify the request to create a set of featured results. Multiple calls to the <code>CreateFeaturedResultsSet</code> API with the same client token will create only one featured results set.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The current status of the set of featured results. When the value is <code>ACTIVE</code>, featured results are ready for use. You can still configure your settings before setting the status to <code>ACTIVE</code>. You can set the status to <code>ACTIVE</code> or <code>INACTIVE</code> using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateFeaturedResultsSet.html">UpdateFeaturedResultsSet</a> API. The queries you specify for featured results must be unique per featured results set for each index, whether the status is <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::FeaturedResultsSetStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::FeaturedResultsSetStatus> {
         self.status.as_ref()
     }
     /// <p>A list of queries for featuring results. For more information on the list of queries, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.query_texts.is_none()`.
-    pub fn query_texts(&self) -> &[::std::string::String] {
-        self.query_texts.as_deref().unwrap_or_default()
+    pub fn query_texts(&self) -> & [::std::string::String] {
+        self.query_texts.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of document IDs for the documents you want to feature at the top of the search results page. For more information on the list of documents, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.featured_documents.is_none()`.
-    pub fn featured_documents(&self) -> &[crate::types::FeaturedDocument] {
-        self.featured_documents.as_deref().unwrap_or_default()
+    pub fn featured_documents(&self) -> & [crate::types::FeaturedDocument] {
+        self.featured_documents.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of key-value pairs that identify or categorize the featured results set. You can also use tags to help control access to the featured results set. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols:_ . : / = + - @.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateFeaturedResultsSetInput {
@@ -76,9 +79,9 @@ pub struct CreateFeaturedResultsSetInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::FeaturedResultsSetStatus>,
-    pub(crate) query_texts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) featured_documents: ::std::option::Option<::std::vec::Vec<crate::types::FeaturedDocument>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) query_texts: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) featured_documents: ::std::option::Option<::std::vec::Vec::<crate::types::FeaturedDocument>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateFeaturedResultsSetInputBuilder {
     /// <p>The identifier of the index that you want to use for featuring results.</p>
@@ -89,8 +92,7 @@ impl CreateFeaturedResultsSetInputBuilder {
     }
     /// <p>The identifier of the index that you want to use for featuring results.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>The identifier of the index that you want to use for featuring results.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +106,7 @@ impl CreateFeaturedResultsSetInputBuilder {
     }
     /// <p>A name for the set of featured results.</p>
     pub fn set_featured_results_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.featured_results_set_name = input;
-        self
+        self.featured_results_set_name = input; self
     }
     /// <p>A name for the set of featured results.</p>
     pub fn get_featured_results_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +119,7 @@ impl CreateFeaturedResultsSetInputBuilder {
     }
     /// <p>A description for the set of featured results.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description for the set of featured results.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +132,7 @@ impl CreateFeaturedResultsSetInputBuilder {
     }
     /// <p>A token that you provide to identify the request to create a set of featured results. Multiple calls to the <code>CreateFeaturedResultsSet</code> API with the same client token will create only one featured results set.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A token that you provide to identify the request to create a set of featured results. Multiple calls to the <code>CreateFeaturedResultsSet</code> API with the same client token will create only one featured results set.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +145,7 @@ impl CreateFeaturedResultsSetInputBuilder {
     }
     /// <p>The current status of the set of featured results. When the value is <code>ACTIVE</code>, featured results are ready for use. You can still configure your settings before setting the status to <code>ACTIVE</code>. You can set the status to <code>ACTIVE</code> or <code>INACTIVE</code> using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateFeaturedResultsSet.html">UpdateFeaturedResultsSet</a> API. The queries you specify for featured results must be unique per featured results set for each index, whether the status is <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FeaturedResultsSetStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the set of featured results. When the value is <code>ACTIVE</code>, featured results are ready for use. You can still configure your settings before setting the status to <code>ACTIVE</code>. You can set the status to <code>ACTIVE</code> or <code>INACTIVE</code> using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateFeaturedResultsSet.html">UpdateFeaturedResultsSet</a> API. The queries you specify for featured results must be unique per featured results set for each index, whether the status is <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FeaturedResultsSetStatus> {
@@ -160,17 +158,16 @@ impl CreateFeaturedResultsSetInputBuilder {
     /// <p>A list of queries for featuring results. For more information on the list of queries, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
     pub fn query_texts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.query_texts.unwrap_or_default();
-        v.push(input.into());
-        self.query_texts = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.query_texts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of queries for featuring results. For more information on the list of queries, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
-    pub fn set_query_texts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.query_texts = input;
-        self
+    pub fn set_query_texts(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.query_texts = input; self
     }
     /// <p>A list of queries for featuring results. For more information on the list of queries, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
-    pub fn get_query_texts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_query_texts(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.query_texts
     }
     /// Appends an item to `featured_documents`.
@@ -180,17 +177,16 @@ impl CreateFeaturedResultsSetInputBuilder {
     /// <p>A list of document IDs for the documents you want to feature at the top of the search results page. For more information on the list of documents, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
     pub fn featured_documents(mut self, input: crate::types::FeaturedDocument) -> Self {
         let mut v = self.featured_documents.unwrap_or_default();
-        v.push(input);
-        self.featured_documents = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.featured_documents = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of document IDs for the documents you want to feature at the top of the search results page. For more information on the list of documents, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
-    pub fn set_featured_documents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeaturedDocument>>) -> Self {
-        self.featured_documents = input;
-        self
+    pub fn set_featured_documents(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FeaturedDocument>>) -> Self {
+        self.featured_documents = input; self
     }
     /// <p>A list of document IDs for the documents you want to feature at the top of the search results page. For more information on the list of documents, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
-    pub fn get_featured_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeaturedDocument>> {
+    pub fn get_featured_documents(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FeaturedDocument>> {
         &self.featured_documents
     }
     /// Appends an item to `tags`.
@@ -200,35 +196,40 @@ impl CreateFeaturedResultsSetInputBuilder {
     /// <p>A list of key-value pairs that identify or categorize the featured results set. You can also use tags to help control access to the featured results set. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols:_ . : / = + - @.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of key-value pairs that identify or categorize the featured results set. You can also use tags to help control access to the featured results set. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols:_ . : / = + - @.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of key-value pairs that identify or categorize the featured results set. You can also use tags to help control access to the featured results set. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols:_ . : / = + - @.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateFeaturedResultsSetInput`](crate::operation::create_featured_results_set::CreateFeaturedResultsSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_featured_results_set::CreateFeaturedResultsSetInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_featured_results_set::CreateFeaturedResultsSetInput {
-            index_id: self.index_id,
-            featured_results_set_name: self.featured_results_set_name,
-            description: self.description,
-            client_token: self.client_token,
-            status: self.status,
-            query_texts: self.query_texts,
-            featured_documents: self.featured_documents,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_featured_results_set::CreateFeaturedResultsSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_featured_results_set::CreateFeaturedResultsSetInput {
+                index_id: self.index_id
+                ,
+                featured_results_set_name: self.featured_results_set_name
+                ,
+                description: self.description
+                ,
+                client_token: self.client_token
+                ,
+                status: self.status
+                ,
+                query_texts: self.query_texts
+                ,
+                featured_documents: self.featured_documents
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

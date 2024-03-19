@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateTemplateSyncConfigInput {
+pub struct UpdateTemplateSyncConfigInput  {
     /// <p>The synced template name.</p>
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The synced template type.</p>
@@ -16,29 +16,29 @@ pub struct UpdateTemplateSyncConfigInput {
     /// <p>A subdirectory path to your template bundle version. When included, limits the template bundle search to this repository directory.</p>
     pub subdirectory: ::std::option::Option<::std::string::String>,
 }
-impl UpdateTemplateSyncConfigInput {
+impl  UpdateTemplateSyncConfigInput  {
     /// <p>The synced template name.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The synced template type.</p>
-    pub fn template_type(&self) -> ::std::option::Option<&crate::types::TemplateType> {
+    pub fn template_type(&self) -> ::std::option::Option<& crate::types::TemplateType> {
         self.template_type.as_ref()
     }
     /// <p>The repository provider.</p>
-    pub fn repository_provider(&self) -> ::std::option::Option<&crate::types::RepositoryProvider> {
+    pub fn repository_provider(&self) -> ::std::option::Option<& crate::types::RepositoryProvider> {
         self.repository_provider.as_ref()
     }
     /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The repository branch for your template.</p>
-    pub fn branch(&self) -> ::std::option::Option<&str> {
+    pub fn branch(&self) -> ::std::option::Option<& str> {
         self.branch.as_deref()
     }
     /// <p>A subdirectory path to your template bundle version. When included, limits the template bundle search to this repository directory.</p>
-    pub fn subdirectory(&self) -> ::std::option::Option<&str> {
+    pub fn subdirectory(&self) -> ::std::option::Option<& str> {
         self.subdirectory.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl UpdateTemplateSyncConfigInputBuilder {
     }
     /// <p>The synced template name.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The synced template name.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl UpdateTemplateSyncConfigInputBuilder {
     }
     /// <p>The synced template type.</p>
     pub fn set_template_type(mut self, input: ::std::option::Option<crate::types::TemplateType>) -> Self {
-        self.template_type = input;
-        self
+        self.template_type = input; self
     }
     /// <p>The synced template type.</p>
     pub fn get_template_type(&self) -> &::std::option::Option<crate::types::TemplateType> {
@@ -99,8 +97,7 @@ impl UpdateTemplateSyncConfigInputBuilder {
     }
     /// <p>The repository provider.</p>
     pub fn set_repository_provider(mut self, input: ::std::option::Option<crate::types::RepositoryProvider>) -> Self {
-        self.repository_provider = input;
-        self
+        self.repository_provider = input; self
     }
     /// <p>The repository provider.</p>
     pub fn get_repository_provider(&self) -> &::std::option::Option<crate::types::RepositoryProvider> {
@@ -114,8 +111,7 @@ impl UpdateTemplateSyncConfigInputBuilder {
     }
     /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +125,7 @@ impl UpdateTemplateSyncConfigInputBuilder {
     }
     /// <p>The repository branch for your template.</p>
     pub fn set_branch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.branch = input;
-        self
+        self.branch = input; self
     }
     /// <p>The repository branch for your template.</p>
     pub fn get_branch(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,27 +138,30 @@ impl UpdateTemplateSyncConfigInputBuilder {
     }
     /// <p>A subdirectory path to your template bundle version. When included, limits the template bundle search to this repository directory.</p>
     pub fn set_subdirectory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subdirectory = input;
-        self
+        self.subdirectory = input; self
     }
     /// <p>A subdirectory path to your template bundle version. When included, limits the template bundle search to this repository directory.</p>
     pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
         &self.subdirectory
     }
     /// Consumes the builder and constructs a [`UpdateTemplateSyncConfigInput`](crate::operation::update_template_sync_config::UpdateTemplateSyncConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_template_sync_config::UpdateTemplateSyncConfigInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_template_sync_config::UpdateTemplateSyncConfigInput {
-            template_name: self.template_name,
-            template_type: self.template_type,
-            repository_provider: self.repository_provider,
-            repository_name: self.repository_name,
-            branch: self.branch,
-            subdirectory: self.subdirectory,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_template_sync_config::UpdateTemplateSyncConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_template_sync_config::UpdateTemplateSyncConfigInput {
+                template_name: self.template_name
+                ,
+                template_type: self.template_type
+                ,
+                repository_provider: self.repository_provider
+                ,
+                repository_name: self.repository_name
+                ,
+                branch: self.branch
+                ,
+                subdirectory: self.subdirectory
+                ,
+            }
+        )
     }
 }
+

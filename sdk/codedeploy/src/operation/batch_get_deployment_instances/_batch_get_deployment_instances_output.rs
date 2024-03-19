@@ -3,30 +3,31 @@
 /// <p>Represents the output of a <code>BatchGetDeploymentInstances</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetDeploymentInstancesOutput {
+pub struct BatchGetDeploymentInstancesOutput  {
     /// <p>Information about the instance.</p>
-    pub instances_summary: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>,
+    pub instances_summary: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceSummary>>,
     /// <p>Information about errors that might have occurred during the API call.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl BatchGetDeploymentInstancesOutput {
+impl  BatchGetDeploymentInstancesOutput  {
     /// <p>Information about the instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances_summary.is_none()`.
-    pub fn instances_summary(&self) -> &[crate::types::InstanceSummary] {
-        self.instances_summary.as_deref().unwrap_or_default()
+    pub fn instances_summary(&self) -> & [crate::types::InstanceSummary] {
+        self.instances_summary.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Information about errors that might have occurred during the API call.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchGetDeploymentInstancesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchGetDeploymentInstancesOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetDeploymentInstancesOutput`](crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesOutput).
     pub fn builder() -> crate::operation::batch_get_deployment_instances::builders::BatchGetDeploymentInstancesOutputBuilder {
@@ -38,7 +39,7 @@ impl BatchGetDeploymentInstancesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetDeploymentInstancesOutputBuilder {
-    pub(crate) instances_summary: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>,
+    pub(crate) instances_summary: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceSummary>>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +51,16 @@ impl BatchGetDeploymentInstancesOutputBuilder {
     /// <p>Information about the instance.</p>
     pub fn instances_summary(mut self, input: crate::types::InstanceSummary) -> Self {
         let mut v = self.instances_summary.unwrap_or_default();
-        v.push(input);
-        self.instances_summary = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.instances_summary = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the instance.</p>
-    pub fn set_instances_summary(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>) -> Self {
-        self.instances_summary = input;
-        self
+    pub fn set_instances_summary(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceSummary>>) -> Self {
+        self.instances_summary = input; self
     }
     /// <p>Information about the instance.</p>
-    pub fn get_instances_summary(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>> {
+    pub fn get_instances_summary(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InstanceSummary>> {
         &self.instances_summary
     }
     /// <p>Information about errors that might have occurred during the API call.</p>
@@ -70,28 +70,30 @@ impl BatchGetDeploymentInstancesOutputBuilder {
     }
     /// <p>Information about errors that might have occurred during the API call.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>Information about errors that might have occurred during the API call.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.error_message
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchGetDeploymentInstancesOutput`](crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesOutput).
     pub fn build(self) -> crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesOutput {
         crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesOutput {
-            instances_summary: self.instances_summary,
-            error_message: self.error_message,
+            instances_summary: self.instances_summary
+            ,
+            error_message: self.error_message
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

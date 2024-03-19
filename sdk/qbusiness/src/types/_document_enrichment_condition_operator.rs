@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let documentenrichmentconditionoperator = unimplemented!();
 /// match documentenrichmentconditionoperator {
@@ -39,16 +39,14 @@
 /// Specifically, when `documentenrichmentconditionoperator` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DocumentEnrichmentConditionOperator::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum DocumentEnrichmentConditionOperator {
     #[allow(missing_docs)] // documentation missing in model
     BeginsWith,
@@ -74,100 +72,89 @@ pub enum DocumentEnrichmentConditionOperator {
     NotExists,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for DocumentEnrichmentConditionOperator {
-    fn from(s: &str) -> Self {
-        match s {
-            "BEGINS_WITH" => DocumentEnrichmentConditionOperator::BeginsWith,
-            "CONTAINS" => DocumentEnrichmentConditionOperator::Contains,
-            "EQUALS" => DocumentEnrichmentConditionOperator::Equals,
-            "EXISTS" => DocumentEnrichmentConditionOperator::Exists,
-            "GREATER_THAN" => DocumentEnrichmentConditionOperator::GreaterThan,
-            "GREATER_THAN_OR_EQUALS" => DocumentEnrichmentConditionOperator::GreaterThanOrEquals,
-            "LESS_THAN" => DocumentEnrichmentConditionOperator::LessThan,
-            "LESS_THAN_OR_EQUALS" => DocumentEnrichmentConditionOperator::LessThanOrEquals,
-            "NOT_CONTAINS" => DocumentEnrichmentConditionOperator::NotContains,
-            "NOT_EQUALS" => DocumentEnrichmentConditionOperator::NotEquals,
-            "NOT_EXISTS" => DocumentEnrichmentConditionOperator::NotExists,
-            other => DocumentEnrichmentConditionOperator::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "BEGINS_WITH" => DocumentEnrichmentConditionOperator::BeginsWith,
+"CONTAINS" => DocumentEnrichmentConditionOperator::Contains,
+"EQUALS" => DocumentEnrichmentConditionOperator::Equals,
+"EXISTS" => DocumentEnrichmentConditionOperator::Exists,
+"GREATER_THAN" => DocumentEnrichmentConditionOperator::GreaterThan,
+"GREATER_THAN_OR_EQUALS" => DocumentEnrichmentConditionOperator::GreaterThanOrEquals,
+"LESS_THAN" => DocumentEnrichmentConditionOperator::LessThan,
+"LESS_THAN_OR_EQUALS" => DocumentEnrichmentConditionOperator::LessThanOrEquals,
+"NOT_CONTAINS" => DocumentEnrichmentConditionOperator::NotContains,
+"NOT_EQUALS" => DocumentEnrichmentConditionOperator::NotEquals,
+"NOT_EXISTS" => DocumentEnrichmentConditionOperator::NotExists,
+other => DocumentEnrichmentConditionOperator::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for DocumentEnrichmentConditionOperator {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(DocumentEnrichmentConditionOperator::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(DocumentEnrichmentConditionOperator::from(s))
+                    }
+                }
 impl DocumentEnrichmentConditionOperator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DocumentEnrichmentConditionOperator::BeginsWith => "BEGINS_WITH",
-            DocumentEnrichmentConditionOperator::Contains => "CONTAINS",
-            DocumentEnrichmentConditionOperator::Equals => "EQUALS",
-            DocumentEnrichmentConditionOperator::Exists => "EXISTS",
-            DocumentEnrichmentConditionOperator::GreaterThan => "GREATER_THAN",
-            DocumentEnrichmentConditionOperator::GreaterThanOrEquals => "GREATER_THAN_OR_EQUALS",
-            DocumentEnrichmentConditionOperator::LessThan => "LESS_THAN",
-            DocumentEnrichmentConditionOperator::LessThanOrEquals => "LESS_THAN_OR_EQUALS",
-            DocumentEnrichmentConditionOperator::NotContains => "NOT_CONTAINS",
-            DocumentEnrichmentConditionOperator::NotEquals => "NOT_EQUALS",
-            DocumentEnrichmentConditionOperator::NotExists => "NOT_EXISTS",
-            DocumentEnrichmentConditionOperator::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BEGINS_WITH",
-            "CONTAINS",
-            "EQUALS",
-            "EXISTS",
-            "GREATER_THAN",
-            "GREATER_THAN_OR_EQUALS",
-            "LESS_THAN",
-            "LESS_THAN_OR_EQUALS",
-            "NOT_CONTAINS",
-            "NOT_EQUALS",
-            "NOT_EXISTS",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DocumentEnrichmentConditionOperator::BeginsWith => "BEGINS_WITH",
+    DocumentEnrichmentConditionOperator::Contains => "CONTAINS",
+    DocumentEnrichmentConditionOperator::Equals => "EQUALS",
+    DocumentEnrichmentConditionOperator::Exists => "EXISTS",
+    DocumentEnrichmentConditionOperator::GreaterThan => "GREATER_THAN",
+    DocumentEnrichmentConditionOperator::GreaterThanOrEquals => "GREATER_THAN_OR_EQUALS",
+    DocumentEnrichmentConditionOperator::LessThan => "LESS_THAN",
+    DocumentEnrichmentConditionOperator::LessThanOrEquals => "LESS_THAN_OR_EQUALS",
+    DocumentEnrichmentConditionOperator::NotContains => "NOT_CONTAINS",
+    DocumentEnrichmentConditionOperator::NotEquals => "NOT_EQUALS",
+    DocumentEnrichmentConditionOperator::NotExists => "NOT_EXISTS",
+    DocumentEnrichmentConditionOperator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BEGINS_WITH", "CONTAINS", "EQUALS", "EXISTS", "GREATER_THAN", "GREATER_THAN_OR_EQUALS", "LESS_THAN", "LESS_THAN_OR_EQUALS", "NOT_CONTAINS", "NOT_EQUALS", "NOT_EXISTS"]
+                }
+            }
 impl ::std::convert::AsRef<str> for DocumentEnrichmentConditionOperator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl DocumentEnrichmentConditionOperator {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for DocumentEnrichmentConditionOperator {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            DocumentEnrichmentConditionOperator::BeginsWith => write!(f, "BEGINS_WITH"),
-            DocumentEnrichmentConditionOperator::Contains => write!(f, "CONTAINS"),
-            DocumentEnrichmentConditionOperator::Equals => write!(f, "EQUALS"),
-            DocumentEnrichmentConditionOperator::Exists => write!(f, "EXISTS"),
-            DocumentEnrichmentConditionOperator::GreaterThan => write!(f, "GREATER_THAN"),
-            DocumentEnrichmentConditionOperator::GreaterThanOrEquals => write!(f, "GREATER_THAN_OR_EQUALS"),
-            DocumentEnrichmentConditionOperator::LessThan => write!(f, "LESS_THAN"),
-            DocumentEnrichmentConditionOperator::LessThanOrEquals => write!(f, "LESS_THAN_OR_EQUALS"),
-            DocumentEnrichmentConditionOperator::NotContains => write!(f, "NOT_CONTAINS"),
-            DocumentEnrichmentConditionOperator::NotEquals => write!(f, "NOT_EQUALS"),
-            DocumentEnrichmentConditionOperator::NotExists => write!(f, "NOT_EXISTS"),
-            DocumentEnrichmentConditionOperator::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                DocumentEnrichmentConditionOperator::BeginsWith => write!(f, "BEGINS_WITH"),
+DocumentEnrichmentConditionOperator::Contains => write!(f, "CONTAINS"),
+DocumentEnrichmentConditionOperator::Equals => write!(f, "EQUALS"),
+DocumentEnrichmentConditionOperator::Exists => write!(f, "EXISTS"),
+DocumentEnrichmentConditionOperator::GreaterThan => write!(f, "GREATER_THAN"),
+DocumentEnrichmentConditionOperator::GreaterThanOrEquals => write!(f, "GREATER_THAN_OR_EQUALS"),
+DocumentEnrichmentConditionOperator::LessThan => write!(f, "LESS_THAN"),
+DocumentEnrichmentConditionOperator::LessThanOrEquals => write!(f, "LESS_THAN_OR_EQUALS"),
+DocumentEnrichmentConditionOperator::NotContains => write!(f, "NOT_CONTAINS"),
+DocumentEnrichmentConditionOperator::NotEquals => write!(f, "NOT_EQUALS"),
+DocumentEnrichmentConditionOperator::NotExists => write!(f, "NOT_EXISTS"),
+DocumentEnrichmentConditionOperator::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

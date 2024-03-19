@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRetrainingSchedulerInput {
+pub struct DescribeRetrainingSchedulerInput  {
     /// <p>The name of the model that the retraining scheduler is attached to.</p>
     pub model_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeRetrainingSchedulerInput {
+impl  DescribeRetrainingSchedulerInput  {
     /// <p>The name of the model that the retraining scheduler is attached to.</p>
-    pub fn model_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<& str> {
         self.model_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DescribeRetrainingSchedulerInputBuilder {
     }
     /// <p>The name of the model that the retraining scheduler is attached to.</p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_name = input;
-        self
+        self.model_name = input; self
     }
     /// <p>The name of the model that the retraining scheduler is attached to.</p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_name
     }
     /// Consumes the builder and constructs a [`DescribeRetrainingSchedulerInput`](crate::operation::describe_retraining_scheduler::DescribeRetrainingSchedulerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_retraining_scheduler::DescribeRetrainingSchedulerInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_retraining_scheduler::DescribeRetrainingSchedulerInput { model_name: self.model_name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_retraining_scheduler::DescribeRetrainingSchedulerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_retraining_scheduler::DescribeRetrainingSchedulerInput {
+                model_name: self.model_name
+                ,
+            }
+        )
     }
 }
+

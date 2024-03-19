@@ -3,7 +3,7 @@
 /// <p>Summary information about the knowledge base.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KnowledgeBaseSummary {
+pub struct KnowledgeBaseSummary  {
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it.</p>
     pub knowledge_base_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
@@ -25,52 +25,49 @@ pub struct KnowledgeBaseSummary {
     /// <p>The description of the knowledge base.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl KnowledgeBaseSummary {
+impl  KnowledgeBaseSummary  {
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it.</p>
-    pub fn knowledge_base_id(&self) -> &str {
-        use std::ops::Deref;
-        self.knowledge_base_id.deref()
+    pub fn knowledge_base_id(&self) -> & str {
+        use std::ops::Deref; self.knowledge_base_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
-    pub fn knowledge_base_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.knowledge_base_arn.deref()
+    pub fn knowledge_base_arn(&self) -> & str {
+        use std::ops::Deref; self.knowledge_base_arn.deref()
     }
     /// <p>The name of the knowledge base.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The type of knowledge base.</p>
-    pub fn knowledge_base_type(&self) -> &crate::types::KnowledgeBaseType {
+    pub fn knowledge_base_type(&self) -> & crate::types::KnowledgeBaseType {
         &self.knowledge_base_type
     }
     /// <p>The status of the knowledge base summary.</p>
-    pub fn status(&self) -> &crate::types::KnowledgeBaseStatus {
+    pub fn status(&self) -> & crate::types::KnowledgeBaseStatus {
         &self.status
     }
     /// <p>Configuration information about the external data source.</p>
-    pub fn source_configuration(&self) -> ::std::option::Option<&crate::types::SourceConfiguration> {
+    pub fn source_configuration(&self) -> ::std::option::Option<& crate::types::SourceConfiguration> {
         self.source_configuration.as_ref()
     }
     /// <p>Information about how to render the content.</p>
-    pub fn rendering_configuration(&self) -> ::std::option::Option<&crate::types::RenderingConfiguration> {
+    pub fn rendering_configuration(&self) -> ::std::option::Option<& crate::types::RenderingConfiguration> {
         self.rendering_configuration.as_ref()
     }
     /// <p>The configuration information for the customer managed key used for encryption.</p>
     /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to the IAM identity using the key to invoke Amazon Q.</p>
     /// <p>For more information about setting up a customer managed key for Amazon Q, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable Amazon Q in Connect for your instance</a>.</p>
-    pub fn server_side_encryption_configuration(&self) -> ::std::option::Option<&crate::types::ServerSideEncryptionConfiguration> {
+    pub fn server_side_encryption_configuration(&self) -> ::std::option::Option<& crate::types::ServerSideEncryptionConfiguration> {
         self.server_side_encryption_configuration.as_ref()
     }
     /// <p>The description of the knowledge base.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -94,7 +91,7 @@ pub struct KnowledgeBaseSummaryBuilder {
     pub(crate) rendering_configuration: ::std::option::Option<crate::types::RenderingConfiguration>,
     pub(crate) server_side_encryption_configuration: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl KnowledgeBaseSummaryBuilder {
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it.</p>
@@ -105,8 +102,7 @@ impl KnowledgeBaseSummaryBuilder {
     }
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.knowledge_base_id = input;
-        self
+        self.knowledge_base_id = input; self
     }
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +116,7 @@ impl KnowledgeBaseSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
     pub fn set_knowledge_base_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.knowledge_base_arn = input;
-        self
+        self.knowledge_base_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
     pub fn get_knowledge_base_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +130,7 @@ impl KnowledgeBaseSummaryBuilder {
     }
     /// <p>The name of the knowledge base.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the knowledge base.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +144,7 @@ impl KnowledgeBaseSummaryBuilder {
     }
     /// <p>The type of knowledge base.</p>
     pub fn set_knowledge_base_type(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseType>) -> Self {
-        self.knowledge_base_type = input;
-        self
+        self.knowledge_base_type = input; self
     }
     /// <p>The type of knowledge base.</p>
     pub fn get_knowledge_base_type(&self) -> &::std::option::Option<crate::types::KnowledgeBaseType> {
@@ -165,8 +158,7 @@ impl KnowledgeBaseSummaryBuilder {
     }
     /// <p>The status of the knowledge base summary.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the knowledge base summary.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::KnowledgeBaseStatus> {
@@ -179,8 +171,7 @@ impl KnowledgeBaseSummaryBuilder {
     }
     /// <p>Configuration information about the external data source.</p>
     pub fn set_source_configuration(mut self, input: ::std::option::Option<crate::types::SourceConfiguration>) -> Self {
-        self.source_configuration = input;
-        self
+        self.source_configuration = input; self
     }
     /// <p>Configuration information about the external data source.</p>
     pub fn get_source_configuration(&self) -> &::std::option::Option<crate::types::SourceConfiguration> {
@@ -193,8 +184,7 @@ impl KnowledgeBaseSummaryBuilder {
     }
     /// <p>Information about how to render the content.</p>
     pub fn set_rendering_configuration(mut self, input: ::std::option::Option<crate::types::RenderingConfiguration>) -> Self {
-        self.rendering_configuration = input;
-        self
+        self.rendering_configuration = input; self
     }
     /// <p>Information about how to render the content.</p>
     pub fn get_rendering_configuration(&self) -> &::std::option::Option<crate::types::RenderingConfiguration> {
@@ -211,8 +201,7 @@ impl KnowledgeBaseSummaryBuilder {
     /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to the IAM identity using the key to invoke Amazon Q.</p>
     /// <p>For more information about setting up a customer managed key for Amazon Q, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable Amazon Q in Connect for your instance</a>.</p>
     pub fn set_server_side_encryption_configuration(mut self, input: ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>) -> Self {
-        self.server_side_encryption_configuration = input;
-        self
+        self.server_side_encryption_configuration = input; self
     }
     /// <p>The configuration information for the customer managed key used for encryption.</p>
     /// <p>This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to the IAM identity using the key to invoke Amazon Q.</p>
@@ -227,8 +216,7 @@ impl KnowledgeBaseSummaryBuilder {
     }
     /// <p>The description of the knowledge base.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the knowledge base.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -241,17 +229,16 @@ impl KnowledgeBaseSummaryBuilder {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`KnowledgeBaseSummary`](crate::types::KnowledgeBaseSummary).
@@ -262,42 +249,45 @@ impl KnowledgeBaseSummaryBuilder {
     /// - [`knowledge_base_type`](crate::types::builders::KnowledgeBaseSummaryBuilder::knowledge_base_type)
     /// - [`status`](crate::types::builders::KnowledgeBaseSummaryBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::KnowledgeBaseSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KnowledgeBaseSummary {
-            knowledge_base_id: self.knowledge_base_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "knowledge_base_id",
-                    "knowledge_base_id was not specified but it is required when building KnowledgeBaseSummary",
-                )
-            })?,
-            knowledge_base_arn: self.knowledge_base_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "knowledge_base_arn",
-                    "knowledge_base_arn was not specified but it is required when building KnowledgeBaseSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building KnowledgeBaseSummary",
-                )
-            })?,
-            knowledge_base_type: self.knowledge_base_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "knowledge_base_type",
-                    "knowledge_base_type was not specified but it is required when building KnowledgeBaseSummary",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building KnowledgeBaseSummary",
-                )
-            })?,
-            source_configuration: self.source_configuration,
-            rendering_configuration: self.rendering_configuration,
-            server_side_encryption_configuration: self.server_side_encryption_configuration,
-            description: self.description,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KnowledgeBaseSummary {
+                knowledge_base_id: self.knowledge_base_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("knowledge_base_id", "knowledge_base_id was not specified but it is required when building KnowledgeBaseSummary")
+                    )?
+                ,
+                knowledge_base_arn: self.knowledge_base_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("knowledge_base_arn", "knowledge_base_arn was not specified but it is required when building KnowledgeBaseSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building KnowledgeBaseSummary")
+                    )?
+                ,
+                knowledge_base_type: self.knowledge_base_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("knowledge_base_type", "knowledge_base_type was not specified but it is required when building KnowledgeBaseSummary")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building KnowledgeBaseSummary")
+                    )?
+                ,
+                source_configuration: self.source_configuration
+                ,
+                rendering_configuration: self.rendering_configuration
+                ,
+                server_side_encryption_configuration: self.server_side_encryption_configuration
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

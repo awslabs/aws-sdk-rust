@@ -3,7 +3,7 @@
 /// <p>Summary of import job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DicomImportJobSummary {
+pub struct DicomImportJobSummary  {
     /// <p>The import job identifier.</p>
     pub job_id: ::std::string::String,
     /// <p>The import job name.</p>
@@ -21,40 +21,37 @@ pub struct DicomImportJobSummary {
     /// <p>The error message thrown if an import job fails.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl DicomImportJobSummary {
+impl  DicomImportJobSummary  {
     /// <p>The import job identifier.</p>
-    pub fn job_id(&self) -> &str {
-        use std::ops::Deref;
-        self.job_id.deref()
+    pub fn job_id(&self) -> & str {
+        use std::ops::Deref; self.job_id.deref()
     }
     /// <p>The import job name.</p>
-    pub fn job_name(&self) -> &str {
-        use std::ops::Deref;
-        self.job_name.deref()
+    pub fn job_name(&self) -> & str {
+        use std::ops::Deref; self.job_name.deref()
     }
     /// <p>The filters for listing import jobs based on status.</p>
-    pub fn job_status(&self) -> &crate::types::JobStatus {
+    pub fn job_status(&self) -> & crate::types::JobStatus {
         &self.job_status
     }
     /// <p>The data store identifier.</p>
-    pub fn datastore_id(&self) -> &str {
-        use std::ops::Deref;
-        self.datastore_id.deref()
+    pub fn datastore_id(&self) -> & str {
+        use std::ops::Deref; self.datastore_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) that grants permissions to access medical imaging resources.</p>
-    pub fn data_access_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn data_access_role_arn(&self) -> ::std::option::Option<& str> {
         self.data_access_role_arn.as_deref()
     }
     /// <p>The timestamp when an import job ended.</p>
-    pub fn ended_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn ended_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.ended_at.as_ref()
     }
     /// <p>The timestamp when an import job was submitted.</p>
-    pub fn submitted_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn submitted_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.submitted_at.as_ref()
     }
     /// <p>The error message thrown if an import job fails.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -87,8 +84,7 @@ impl DicomImportJobSummaryBuilder {
     }
     /// <p>The import job identifier.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The import job identifier.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +98,7 @@ impl DicomImportJobSummaryBuilder {
     }
     /// <p>The import job name.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// <p>The import job name.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +112,7 @@ impl DicomImportJobSummaryBuilder {
     }
     /// <p>The filters for listing import jobs based on status.</p>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
-        self.job_status = input;
-        self
+        self.job_status = input; self
     }
     /// <p>The filters for listing import jobs based on status.</p>
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
@@ -132,8 +126,7 @@ impl DicomImportJobSummaryBuilder {
     }
     /// <p>The data store identifier.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.datastore_id = input;
-        self
+        self.datastore_id = input; self
     }
     /// <p>The data store identifier.</p>
     pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +139,7 @@ impl DicomImportJobSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that grants permissions to access medical imaging resources.</p>
     pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_access_role_arn = input;
-        self
+        self.data_access_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that grants permissions to access medical imaging resources.</p>
     pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +152,7 @@ impl DicomImportJobSummaryBuilder {
     }
     /// <p>The timestamp when an import job ended.</p>
     pub fn set_ended_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.ended_at = input;
-        self
+        self.ended_at = input; self
     }
     /// <p>The timestamp when an import job ended.</p>
     pub fn get_ended_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -174,8 +165,7 @@ impl DicomImportJobSummaryBuilder {
     }
     /// <p>The timestamp when an import job was submitted.</p>
     pub fn set_submitted_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.submitted_at = input;
-        self
+        self.submitted_at = input; self
     }
     /// <p>The timestamp when an import job was submitted.</p>
     pub fn get_submitted_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -188,8 +178,7 @@ impl DicomImportJobSummaryBuilder {
     }
     /// <p>The error message thrown if an import job fails.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The error message thrown if an import job fails.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,35 +191,38 @@ impl DicomImportJobSummaryBuilder {
     /// - [`job_status`](crate::types::builders::DicomImportJobSummaryBuilder::job_status)
     /// - [`datastore_id`](crate::types::builders::DicomImportJobSummaryBuilder::datastore_id)
     pub fn build(self) -> ::std::result::Result<crate::types::DicomImportJobSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DicomImportJobSummary {
-            job_id: self.job_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "job_id",
-                    "job_id was not specified but it is required when building DicomImportJobSummary",
-                )
-            })?,
-            job_name: self.job_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "job_name",
-                    "job_name was not specified but it is required when building DicomImportJobSummary",
-                )
-            })?,
-            job_status: self.job_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "job_status",
-                    "job_status was not specified but it is required when building DicomImportJobSummary",
-                )
-            })?,
-            datastore_id: self.datastore_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "datastore_id",
-                    "datastore_id was not specified but it is required when building DicomImportJobSummary",
-                )
-            })?,
-            data_access_role_arn: self.data_access_role_arn,
-            ended_at: self.ended_at,
-            submitted_at: self.submitted_at,
-            message: self.message,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DicomImportJobSummary {
+                job_id: self.job_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("job_id", "job_id was not specified but it is required when building DicomImportJobSummary")
+                    )?
+                ,
+                job_name: self.job_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("job_name", "job_name was not specified but it is required when building DicomImportJobSummary")
+                    )?
+                ,
+                job_status: self.job_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("job_status", "job_status was not specified but it is required when building DicomImportJobSummary")
+                    )?
+                ,
+                datastore_id: self.datastore_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("datastore_id", "datastore_id was not specified but it is required when building DicomImportJobSummary")
+                    )?
+                ,
+                data_access_role_arn: self.data_access_role_arn
+                ,
+                ended_at: self.ended_at
+                ,
+                submitted_at: self.submitted_at
+                ,
+                message: self.message
+                ,
+            }
+        )
     }
 }
+

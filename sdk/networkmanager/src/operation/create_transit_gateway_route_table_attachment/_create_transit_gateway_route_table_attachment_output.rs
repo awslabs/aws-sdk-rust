@@ -2,26 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTransitGatewayRouteTableAttachmentOutput {
+pub struct CreateTransitGatewayRouteTableAttachmentOutput  {
     /// <p>The route table associated with the create transit gateway route table attachment request.</p>
     pub transit_gateway_route_table_attachment: ::std::option::Option<crate::types::TransitGatewayRouteTableAttachment>,
     _request_id: Option<String>,
 }
-impl CreateTransitGatewayRouteTableAttachmentOutput {
+impl  CreateTransitGatewayRouteTableAttachmentOutput  {
     /// <p>The route table associated with the create transit gateway route table attachment request.</p>
-    pub fn transit_gateway_route_table_attachment(&self) -> ::std::option::Option<&crate::types::TransitGatewayRouteTableAttachment> {
+    pub fn transit_gateway_route_table_attachment(&self) -> ::std::option::Option<& crate::types::TransitGatewayRouteTableAttachment> {
         self.transit_gateway_route_table_attachment.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateTransitGatewayRouteTableAttachmentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateTransitGatewayRouteTableAttachmentOutput {
     /// Creates a new builder-style object to manufacture [`CreateTransitGatewayRouteTableAttachmentOutput`](crate::operation::create_transit_gateway_route_table_attachment::CreateTransitGatewayRouteTableAttachmentOutput).
-    pub fn builder(
-    ) -> crate::operation::create_transit_gateway_route_table_attachment::builders::CreateTransitGatewayRouteTableAttachmentOutputBuilder {
+    pub fn builder() -> crate::operation::create_transit_gateway_route_table_attachment::builders::CreateTransitGatewayRouteTableAttachmentOutputBuilder {
         crate::operation::create_transit_gateway_route_table_attachment::builders::CreateTransitGatewayRouteTableAttachmentOutputBuilder::default()
     }
 }
@@ -40,31 +39,29 @@ impl CreateTransitGatewayRouteTableAttachmentOutputBuilder {
         self
     }
     /// <p>The route table associated with the create transit gateway route table attachment request.</p>
-    pub fn set_transit_gateway_route_table_attachment(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayRouteTableAttachment>,
-    ) -> Self {
-        self.transit_gateway_route_table_attachment = input;
-        self
+    pub fn set_transit_gateway_route_table_attachment(mut self, input: ::std::option::Option<crate::types::TransitGatewayRouteTableAttachment>) -> Self {
+        self.transit_gateway_route_table_attachment = input; self
     }
     /// <p>The route table associated with the create transit gateway route table attachment request.</p>
     pub fn get_transit_gateway_route_table_attachment(&self) -> &::std::option::Option<crate::types::TransitGatewayRouteTableAttachment> {
         &self.transit_gateway_route_table_attachment
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateTransitGatewayRouteTableAttachmentOutput`](crate::operation::create_transit_gateway_route_table_attachment::CreateTransitGatewayRouteTableAttachmentOutput).
     pub fn build(self) -> crate::operation::create_transit_gateway_route_table_attachment::CreateTransitGatewayRouteTableAttachmentOutput {
         crate::operation::create_transit_gateway_route_table_attachment::CreateTransitGatewayRouteTableAttachmentOutput {
-            transit_gateway_route_table_attachment: self.transit_gateway_route_table_attachment,
+            transit_gateway_route_table_attachment: self.transit_gateway_route_table_attachment
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

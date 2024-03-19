@@ -2,23 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DescribeSpeakerInput {
+pub struct DescribeSpeakerInput  {
     /// <p>The identifier of the domain that contains the speaker.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the speaker you are describing.</p>
     pub speaker_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeSpeakerInput {
+impl  DescribeSpeakerInput  {
     /// <p>The identifier of the domain that contains the speaker.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn domain_id(&self) -> ::std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The identifier of the speaker you are describing.</p>
-    pub fn speaker_id(&self) -> ::std::option::Option<&str> {
+    pub fn speaker_id(&self) -> ::std::option::Option<& str> {
         self.speaker_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for DescribeSpeakerInput {
+impl  ::std::fmt::Debug for DescribeSpeakerInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeSpeakerInput");
         formatter.field("domain_id", &self.domain_id);
@@ -49,8 +49,7 @@ impl DescribeSpeakerInputBuilder {
     }
     /// <p>The identifier of the domain that contains the speaker.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The identifier of the domain that contains the speaker.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,21 +63,22 @@ impl DescribeSpeakerInputBuilder {
     }
     /// <p>The identifier of the speaker you are describing.</p>
     pub fn set_speaker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.speaker_id = input;
-        self
+        self.speaker_id = input; self
     }
     /// <p>The identifier of the speaker you are describing.</p>
     pub fn get_speaker_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.speaker_id
     }
     /// Consumes the builder and constructs a [`DescribeSpeakerInput`](crate::operation::describe_speaker::DescribeSpeakerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_speaker::DescribeSpeakerInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_speaker::DescribeSpeakerInput {
-            domain_id: self.domain_id,
-            speaker_id: self.speaker_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_speaker::DescribeSpeakerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_speaker::DescribeSpeakerInput {
+                domain_id: self.domain_id
+                ,
+                speaker_id: self.speaker_id
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for DescribeSpeakerInputBuilder {
@@ -89,3 +89,4 @@ impl ::std::fmt::Debug for DescribeSpeakerInputBuilder {
         formatter.finish()
     }
 }
+

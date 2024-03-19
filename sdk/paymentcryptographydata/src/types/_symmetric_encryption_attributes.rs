@@ -3,7 +3,7 @@
 /// <p>Parameters requried to encrypt plaintext data using symmetric keys.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SymmetricEncryptionAttributes {
+pub struct SymmetricEncryptionAttributes  {
     /// <p>The block cipher method to use for encryption.</p>
     pub mode: crate::types::EncryptionMode,
     /// <p>An input used to provide the intial state. If no value is provided, Amazon Web Services Payment Cryptography defaults it to zero.</p>
@@ -11,21 +11,21 @@ pub struct SymmetricEncryptionAttributes {
     /// <p>The padding to be included with the data.</p>
     pub padding_type: ::std::option::Option<crate::types::PaddingType>,
 }
-impl SymmetricEncryptionAttributes {
+impl  SymmetricEncryptionAttributes  {
     /// <p>The block cipher method to use for encryption.</p>
-    pub fn mode(&self) -> &crate::types::EncryptionMode {
+    pub fn mode(&self) -> & crate::types::EncryptionMode {
         &self.mode
     }
     /// <p>An input used to provide the intial state. If no value is provided, Amazon Web Services Payment Cryptography defaults it to zero.</p>
-    pub fn initialization_vector(&self) -> ::std::option::Option<&str> {
+    pub fn initialization_vector(&self) -> ::std::option::Option<& str> {
         self.initialization_vector.as_deref()
     }
     /// <p>The padding to be included with the data.</p>
-    pub fn padding_type(&self) -> ::std::option::Option<&crate::types::PaddingType> {
+    pub fn padding_type(&self) -> ::std::option::Option<& crate::types::PaddingType> {
         self.padding_type.as_ref()
     }
 }
-impl ::std::fmt::Debug for SymmetricEncryptionAttributes {
+impl  ::std::fmt::Debug for SymmetricEncryptionAttributes  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SymmetricEncryptionAttributes");
         formatter.field("mode", &self.mode);
@@ -58,8 +58,7 @@ impl SymmetricEncryptionAttributesBuilder {
     }
     /// <p>The block cipher method to use for encryption.</p>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::EncryptionMode>) -> Self {
-        self.mode = input;
-        self
+        self.mode = input; self
     }
     /// <p>The block cipher method to use for encryption.</p>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::EncryptionMode> {
@@ -72,8 +71,7 @@ impl SymmetricEncryptionAttributesBuilder {
     }
     /// <p>An input used to provide the intial state. If no value is provided, Amazon Web Services Payment Cryptography defaults it to zero.</p>
     pub fn set_initialization_vector(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.initialization_vector = input;
-        self
+        self.initialization_vector = input; self
     }
     /// <p>An input used to provide the intial state. If no value is provided, Amazon Web Services Payment Cryptography defaults it to zero.</p>
     pub fn get_initialization_vector(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +84,7 @@ impl SymmetricEncryptionAttributesBuilder {
     }
     /// <p>The padding to be included with the data.</p>
     pub fn set_padding_type(mut self, input: ::std::option::Option<crate::types::PaddingType>) -> Self {
-        self.padding_type = input;
-        self
+        self.padding_type = input; self
     }
     /// <p>The padding to be included with the data.</p>
     pub fn get_padding_type(&self) -> &::std::option::Option<crate::types::PaddingType> {
@@ -97,16 +94,19 @@ impl SymmetricEncryptionAttributesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`mode`](crate::types::builders::SymmetricEncryptionAttributesBuilder::mode)
     pub fn build(self) -> ::std::result::Result<crate::types::SymmetricEncryptionAttributes, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SymmetricEncryptionAttributes {
-            mode: self.mode.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "mode",
-                    "mode was not specified but it is required when building SymmetricEncryptionAttributes",
-                )
-            })?,
-            initialization_vector: self.initialization_vector,
-            padding_type: self.padding_type,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SymmetricEncryptionAttributes {
+                mode: self.mode
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("mode", "mode was not specified but it is required when building SymmetricEncryptionAttributes")
+                    )?
+                ,
+                initialization_vector: self.initialization_vector
+                ,
+                padding_type: self.padding_type
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for SymmetricEncryptionAttributesBuilder {
@@ -118,3 +118,4 @@ impl ::std::fmt::Debug for SymmetricEncryptionAttributesBuilder {
         formatter.finish()
     }
 }
+

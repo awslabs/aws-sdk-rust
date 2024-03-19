@@ -3,13 +3,13 @@
 /// <p>The full description of your identity configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IdentityProviderConfigResponse {
+pub struct IdentityProviderConfigResponse  {
     /// <p>An object representing an OpenID Connect (OIDC) identity provider configuration.</p>
     pub oidc: ::std::option::Option<crate::types::OidcIdentityProviderConfig>,
 }
-impl IdentityProviderConfigResponse {
+impl  IdentityProviderConfigResponse  {
     /// <p>An object representing an OpenID Connect (OIDC) identity provider configuration.</p>
-    pub fn oidc(&self) -> ::std::option::Option<&crate::types::OidcIdentityProviderConfig> {
+    pub fn oidc(&self) -> ::std::option::Option<& crate::types::OidcIdentityProviderConfig> {
         self.oidc.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl IdentityProviderConfigResponseBuilder {
     }
     /// <p>An object representing an OpenID Connect (OIDC) identity provider configuration.</p>
     pub fn set_oidc(mut self, input: ::std::option::Option<crate::types::OidcIdentityProviderConfig>) -> Self {
-        self.oidc = input;
-        self
+        self.oidc = input; self
     }
     /// <p>An object representing an OpenID Connect (OIDC) identity provider configuration.</p>
     pub fn get_oidc(&self) -> &::std::option::Option<crate::types::OidcIdentityProviderConfig> {
@@ -43,6 +42,10 @@ impl IdentityProviderConfigResponseBuilder {
     }
     /// Consumes the builder and constructs a [`IdentityProviderConfigResponse`](crate::types::IdentityProviderConfigResponse).
     pub fn build(self) -> crate::types::IdentityProviderConfigResponse {
-        crate::types::IdentityProviderConfigResponse { oidc: self.oidc }
+        crate::types::IdentityProviderConfigResponse {
+            oidc: self.oidc
+            ,
+        }
     }
 }
+

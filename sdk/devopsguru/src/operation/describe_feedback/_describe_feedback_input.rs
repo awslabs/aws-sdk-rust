@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFeedbackInput {
+pub struct DescribeFeedbackInput  {
     /// <p>The ID of the insight for which the feedback was provided.</p>
     pub insight_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeFeedbackInput {
+impl  DescribeFeedbackInput  {
     /// <p>The ID of the insight for which the feedback was provided.</p>
-    pub fn insight_id(&self) -> ::std::option::Option<&str> {
+    pub fn insight_id(&self) -> ::std::option::Option<& str> {
         self.insight_id.as_deref()
     }
 }
@@ -33,17 +33,20 @@ impl DescribeFeedbackInputBuilder {
     }
     /// <p>The ID of the insight for which the feedback was provided.</p>
     pub fn set_insight_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.insight_id = input;
-        self
+        self.insight_id = input; self
     }
     /// <p>The ID of the insight for which the feedback was provided.</p>
     pub fn get_insight_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.insight_id
     }
     /// Consumes the builder and constructs a [`DescribeFeedbackInput`](crate::operation::describe_feedback::DescribeFeedbackInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_feedback::DescribeFeedbackInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_feedback::DescribeFeedbackInput { insight_id: self.insight_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_feedback::DescribeFeedbackInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_feedback::DescribeFeedbackInput {
+                insight_id: self.insight_id
+                ,
+            }
+        )
     }
 }
+

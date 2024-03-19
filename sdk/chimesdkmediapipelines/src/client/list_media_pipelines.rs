@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListMediaPipelines`](crate::operation::list_media_pipelines::builders::ListMediaPipelinesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_media_pipelines::builders::ListMediaPipelinesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_media_pipelines::builders::ListMediaPipelinesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_media_pipelines::builders::ListMediaPipelinesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token used to retrieve the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_media_pipelines::builders::ListMediaPipelinesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_media_pipelines::builders::ListMediaPipelinesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call. Valid Range: 1 - 99.</p><br>
-    /// - On success, responds with [`ListMediaPipelinesOutput`](crate::operation::list_media_pipelines::ListMediaPipelinesOutput) with field(s):
+                            /// - On success, responds with [`ListMediaPipelinesOutput`](crate::operation::list_media_pipelines::ListMediaPipelinesOutput) with field(s):
     ///   - [`media_pipelines(Option<Vec::<MediaPipelineSummary>>)`](crate::operation::list_media_pipelines::ListMediaPipelinesOutput::media_pipelines): <p>The media pipeline objects in the list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_media_pipelines::ListMediaPipelinesOutput::next_token): <p>The token used to retrieve the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListMediaPipelinesError>`](crate::operation::list_media_pipelines::ListMediaPipelinesError)
+                            /// - On failure, responds with [`SdkError<ListMediaPipelinesError>`](crate::operation::list_media_pipelines::ListMediaPipelinesError)
     pub fn list_media_pipelines(&self) -> crate::operation::list_media_pipelines::builders::ListMediaPipelinesFluentBuilder {
-        crate::operation::list_media_pipelines::builders::ListMediaPipelinesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_media_pipelines::builders::ListMediaPipelinesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

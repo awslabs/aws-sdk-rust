@@ -3,34 +3,36 @@
 /// <p>Specifies an Apache Hudi data source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HudiTarget {
+pub struct HudiTarget  {
     /// <p>An array of Amazon S3 location strings for Hudi, each indicating the root folder with which the metadata files for a Hudi table resides. The Hudi folder may be located in a child folder of the root folder.</p>
     /// <p>The crawler will scan all folders underneath a path for a Hudi folder.</p>
-    pub paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub paths: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The name of the connection to use to connect to the Hudi target. If your Hudi files are stored in buckets that require VPC authorization, you can set their connection properties here.</p>
     pub connection_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of glob patterns used to exclude from the crawl. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
-    pub exclusions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub exclusions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The maximum depth of Amazon S3 paths that the crawler can traverse to discover the Hudi metadata folder in your Amazon S3 path. Used to limit the crawler run time.</p>
     pub maximum_traversal_depth: ::std::option::Option<i32>,
 }
-impl HudiTarget {
+impl  HudiTarget  {
     /// <p>An array of Amazon S3 location strings for Hudi, each indicating the root folder with which the metadata files for a Hudi table resides. The Hudi folder may be located in a child folder of the root folder.</p>
     /// <p>The crawler will scan all folders underneath a path for a Hudi folder.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.paths.is_none()`.
-    pub fn paths(&self) -> &[::std::string::String] {
-        self.paths.as_deref().unwrap_or_default()
+    pub fn paths(&self) -> & [::std::string::String] {
+        self.paths.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the connection to use to connect to the Hudi target. If your Hudi files are stored in buckets that require VPC authorization, you can set their connection properties here.</p>
-    pub fn connection_name(&self) -> ::std::option::Option<&str> {
+    pub fn connection_name(&self) -> ::std::option::Option<& str> {
         self.connection_name.as_deref()
     }
     /// <p>A list of glob patterns used to exclude from the crawl. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclusions.is_none()`.
-    pub fn exclusions(&self) -> &[::std::string::String] {
-        self.exclusions.as_deref().unwrap_or_default()
+    pub fn exclusions(&self) -> & [::std::string::String] {
+        self.exclusions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum depth of Amazon S3 paths that the crawler can traverse to discover the Hudi metadata folder in your Amazon S3 path. Used to limit the crawler run time.</p>
     pub fn maximum_traversal_depth(&self) -> ::std::option::Option<i32> {
@@ -48,9 +50,9 @@ impl HudiTarget {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HudiTargetBuilder {
-    pub(crate) paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) paths: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) connection_name: ::std::option::Option<::std::string::String>,
-    pub(crate) exclusions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) exclusions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) maximum_traversal_depth: ::std::option::Option<i32>,
 }
 impl HudiTargetBuilder {
@@ -62,19 +64,18 @@ impl HudiTargetBuilder {
     /// <p>The crawler will scan all folders underneath a path for a Hudi folder.</p>
     pub fn paths(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.paths.unwrap_or_default();
-        v.push(input.into());
-        self.paths = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.paths = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of Amazon S3 location strings for Hudi, each indicating the root folder with which the metadata files for a Hudi table resides. The Hudi folder may be located in a child folder of the root folder.</p>
     /// <p>The crawler will scan all folders underneath a path for a Hudi folder.</p>
-    pub fn set_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.paths = input;
-        self
+    pub fn set_paths(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.paths = input; self
     }
     /// <p>An array of Amazon S3 location strings for Hudi, each indicating the root folder with which the metadata files for a Hudi table resides. The Hudi folder may be located in a child folder of the root folder.</p>
     /// <p>The crawler will scan all folders underneath a path for a Hudi folder.</p>
-    pub fn get_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_paths(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.paths
     }
     /// <p>The name of the connection to use to connect to the Hudi target. If your Hudi files are stored in buckets that require VPC authorization, you can set their connection properties here.</p>
@@ -84,8 +85,7 @@ impl HudiTargetBuilder {
     }
     /// <p>The name of the connection to use to connect to the Hudi target. If your Hudi files are stored in buckets that require VPC authorization, you can set their connection properties here.</p>
     pub fn set_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_name = input;
-        self
+        self.connection_name = input; self
     }
     /// <p>The name of the connection to use to connect to the Hudi target. If your Hudi files are stored in buckets that require VPC authorization, you can set their connection properties here.</p>
     pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,17 +98,16 @@ impl HudiTargetBuilder {
     /// <p>A list of glob patterns used to exclude from the crawl. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
     pub fn exclusions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.exclusions.unwrap_or_default();
-        v.push(input.into());
-        self.exclusions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.exclusions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of glob patterns used to exclude from the crawl. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
-    pub fn set_exclusions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.exclusions = input;
-        self
+    pub fn set_exclusions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.exclusions = input; self
     }
     /// <p>A list of glob patterns used to exclude from the crawl. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
-    pub fn get_exclusions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_exclusions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.exclusions
     }
     /// <p>The maximum depth of Amazon S3 paths that the crawler can traverse to discover the Hudi metadata folder in your Amazon S3 path. Used to limit the crawler run time.</p>
@@ -118,8 +117,7 @@ impl HudiTargetBuilder {
     }
     /// <p>The maximum depth of Amazon S3 paths that the crawler can traverse to discover the Hudi metadata folder in your Amazon S3 path. Used to limit the crawler run time.</p>
     pub fn set_maximum_traversal_depth(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum_traversal_depth = input;
-        self
+        self.maximum_traversal_depth = input; self
     }
     /// <p>The maximum depth of Amazon S3 paths that the crawler can traverse to discover the Hudi metadata folder in your Amazon S3 path. Used to limit the crawler run time.</p>
     pub fn get_maximum_traversal_depth(&self) -> &::std::option::Option<i32> {
@@ -128,10 +126,15 @@ impl HudiTargetBuilder {
     /// Consumes the builder and constructs a [`HudiTarget`](crate::types::HudiTarget).
     pub fn build(self) -> crate::types::HudiTarget {
         crate::types::HudiTarget {
-            paths: self.paths,
-            connection_name: self.connection_name,
-            exclusions: self.exclusions,
-            maximum_traversal_depth: self.maximum_traversal_depth,
+            paths: self.paths
+            ,
+            connection_name: self.connection_name
+            ,
+            exclusions: self.exclusions
+            ,
+            maximum_traversal_depth: self.maximum_traversal_depth
+            ,
         }
     }
 }
+

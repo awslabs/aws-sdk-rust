@@ -3,28 +3,28 @@
 /// <p>Contains details of a domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDomainOutput {
+pub struct DescribeDomainOutput  {
     /// <p>The basic information about a domain, such as its name, status, and description.</p>
     pub domain_info: ::std::option::Option<crate::types::DomainInfo>,
     /// <p>The domain configuration. Currently, this includes only the domain's retention period.</p>
     pub configuration: ::std::option::Option<crate::types::DomainConfiguration>,
     _request_id: Option<String>,
 }
-impl DescribeDomainOutput {
+impl  DescribeDomainOutput  {
     /// <p>The basic information about a domain, such as its name, status, and description.</p>
-    pub fn domain_info(&self) -> ::std::option::Option<&crate::types::DomainInfo> {
+    pub fn domain_info(&self) -> ::std::option::Option<& crate::types::DomainInfo> {
         self.domain_info.as_ref()
     }
     /// <p>The domain configuration. Currently, this includes only the domain's retention period.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::DomainConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::DomainConfiguration> {
         self.configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeDomainOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeDomainOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDomainOutput`](crate::operation::describe_domain::DescribeDomainOutput).
     pub fn builder() -> crate::operation::describe_domain::builders::DescribeDomainOutputBuilder {
@@ -49,8 +49,7 @@ impl DescribeDomainOutputBuilder {
     }
     /// <p>The basic information about a domain, such as its name, status, and description.</p>
     pub fn set_domain_info(mut self, input: ::std::option::Option<crate::types::DomainInfo>) -> Self {
-        self.domain_info = input;
-        self
+        self.domain_info = input; self
     }
     /// <p>The basic information about a domain, such as its name, status, and description.</p>
     pub fn get_domain_info(&self) -> &::std::option::Option<crate::types::DomainInfo> {
@@ -64,28 +63,30 @@ impl DescribeDomainOutputBuilder {
     }
     /// <p>The domain configuration. Currently, this includes only the domain's retention period.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::DomainConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>The domain configuration. Currently, this includes only the domain's retention period.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::DomainConfiguration> {
         &self.configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeDomainOutput`](crate::operation::describe_domain::DescribeDomainOutput).
     pub fn build(self) -> crate::operation::describe_domain::DescribeDomainOutput {
         crate::operation::describe_domain::DescribeDomainOutput {
-            domain_info: self.domain_info,
-            configuration: self.configuration,
+            domain_info: self.domain_info
+            ,
+            configuration: self.configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

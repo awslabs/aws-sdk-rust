@@ -3,13 +3,13 @@
 /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StreamingExperienceSettings {
+pub struct StreamingExperienceSettings  {
     /// <p>The preferred protocol that you want to use while streaming your application.</p>
     pub preferred_protocol: ::std::option::Option<crate::types::PreferredProtocol>,
 }
-impl StreamingExperienceSettings {
+impl  StreamingExperienceSettings  {
     /// <p>The preferred protocol that you want to use while streaming your application.</p>
-    pub fn preferred_protocol(&self) -> ::std::option::Option<&crate::types::PreferredProtocol> {
+    pub fn preferred_protocol(&self) -> ::std::option::Option<& crate::types::PreferredProtocol> {
         self.preferred_protocol.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl StreamingExperienceSettingsBuilder {
     }
     /// <p>The preferred protocol that you want to use while streaming your application.</p>
     pub fn set_preferred_protocol(mut self, input: ::std::option::Option<crate::types::PreferredProtocol>) -> Self {
-        self.preferred_protocol = input;
-        self
+        self.preferred_protocol = input; self
     }
     /// <p>The preferred protocol that you want to use while streaming your application.</p>
     pub fn get_preferred_protocol(&self) -> &::std::option::Option<crate::types::PreferredProtocol> {
@@ -44,7 +43,9 @@ impl StreamingExperienceSettingsBuilder {
     /// Consumes the builder and constructs a [`StreamingExperienceSettings`](crate::types::StreamingExperienceSettings).
     pub fn build(self) -> crate::types::StreamingExperienceSettings {
         crate::types::StreamingExperienceSettings {
-            preferred_protocol: self.preferred_protocol,
+            preferred_protocol: self.preferred_protocol
+            ,
         }
     }
 }
+

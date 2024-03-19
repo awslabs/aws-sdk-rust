@@ -3,15 +3,14 @@
 /// Configurations for a vector knowledge base.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VectorKnowledgeBaseConfiguration {
+pub struct VectorKnowledgeBaseConfiguration  {
     /// Arn of a Bedrock model.
     pub embedding_model_arn: ::std::string::String,
 }
-impl VectorKnowledgeBaseConfiguration {
+impl  VectorKnowledgeBaseConfiguration  {
     /// Arn of a Bedrock model.
-    pub fn embedding_model_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.embedding_model_arn.deref()
+    pub fn embedding_model_arn(&self) -> & str {
+        use std::ops::Deref; self.embedding_model_arn.deref()
     }
 }
 impl VectorKnowledgeBaseConfiguration {
@@ -36,8 +35,7 @@ impl VectorKnowledgeBaseConfigurationBuilder {
     }
     /// Arn of a Bedrock model.
     pub fn set_embedding_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.embedding_model_arn = input;
-        self
+        self.embedding_model_arn = input; self
     }
     /// Arn of a Bedrock model.
     pub fn get_embedding_model_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl VectorKnowledgeBaseConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`embedding_model_arn`](crate::types::builders::VectorKnowledgeBaseConfigurationBuilder::embedding_model_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::VectorKnowledgeBaseConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VectorKnowledgeBaseConfiguration {
-            embedding_model_arn: self.embedding_model_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "embedding_model_arn",
-                    "embedding_model_arn was not specified but it is required when building VectorKnowledgeBaseConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VectorKnowledgeBaseConfiguration {
+                embedding_model_arn: self.embedding_model_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("embedding_model_arn", "embedding_model_arn was not specified but it is required when building VectorKnowledgeBaseConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

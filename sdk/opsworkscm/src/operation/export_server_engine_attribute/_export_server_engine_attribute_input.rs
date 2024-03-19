@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportServerEngineAttributeInput {
+pub struct ExportServerEngineAttributeInput  {
     /// <p>The name of the export attribute. Currently, the supported export attribute is <code>Userdata</code>. This exports a user data script that includes parameters and values provided in the <code>InputAttributes</code> list.</p>
     pub export_attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the server from which you are exporting the attribute.</p>
@@ -18,15 +18,15 @@ pub struct ExportServerEngineAttributeInput {
     /// <li>
     /// <p><b>NodeClientVersion</b> In Chef, the version of the Chef engine (three numbers separated by dots, such as 13.8.5). If this attribute is empty, OpsWorks for Chef Automate uses the most current version. In Puppet, this parameter is ignored.</p></li>
     /// </ul>
-    pub input_attributes: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>,
+    pub input_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::EngineAttribute>>,
 }
-impl ExportServerEngineAttributeInput {
+impl  ExportServerEngineAttributeInput  {
     /// <p>The name of the export attribute. Currently, the supported export attribute is <code>Userdata</code>. This exports a user data script that includes parameters and values provided in the <code>InputAttributes</code> list.</p>
-    pub fn export_attribute_name(&self) -> ::std::option::Option<&str> {
+    pub fn export_attribute_name(&self) -> ::std::option::Option<& str> {
         self.export_attribute_name.as_deref()
     }
     /// <p>The name of the server from which you are exporting the attribute.</p>
-    pub fn server_name(&self) -> ::std::option::Option<&str> {
+    pub fn server_name(&self) -> ::std::option::Option<& str> {
         self.server_name.as_deref()
     }
     /// <p>The list of engine attributes. The list type is <code>EngineAttribute</code>. An <code>EngineAttribute</code> list item is a pair that includes an attribute name and its value. For the <code>Userdata</code> ExportAttributeName, the following are supported engine attribute names.</p>
@@ -40,10 +40,11 @@ impl ExportServerEngineAttributeInput {
     /// <li>
     /// <p><b>NodeClientVersion</b> In Chef, the version of the Chef engine (three numbers separated by dots, such as 13.8.5). If this attribute is empty, OpsWorks for Chef Automate uses the most current version. In Puppet, this parameter is ignored.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_attributes.is_none()`.
-    pub fn input_attributes(&self) -> &[crate::types::EngineAttribute] {
-        self.input_attributes.as_deref().unwrap_or_default()
+    pub fn input_attributes(&self) -> & [crate::types::EngineAttribute] {
+        self.input_attributes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ExportServerEngineAttributeInput {
@@ -59,7 +60,7 @@ impl ExportServerEngineAttributeInput {
 pub struct ExportServerEngineAttributeInputBuilder {
     pub(crate) export_attribute_name: ::std::option::Option<::std::string::String>,
     pub(crate) server_name: ::std::option::Option<::std::string::String>,
-    pub(crate) input_attributes: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>,
+    pub(crate) input_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::EngineAttribute>>,
 }
 impl ExportServerEngineAttributeInputBuilder {
     /// <p>The name of the export attribute. Currently, the supported export attribute is <code>Userdata</code>. This exports a user data script that includes parameters and values provided in the <code>InputAttributes</code> list.</p>
@@ -70,8 +71,7 @@ impl ExportServerEngineAttributeInputBuilder {
     }
     /// <p>The name of the export attribute. Currently, the supported export attribute is <code>Userdata</code>. This exports a user data script that includes parameters and values provided in the <code>InputAttributes</code> list.</p>
     pub fn set_export_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.export_attribute_name = input;
-        self
+        self.export_attribute_name = input; self
     }
     /// <p>The name of the export attribute. Currently, the supported export attribute is <code>Userdata</code>. This exports a user data script that includes parameters and values provided in the <code>InputAttributes</code> list.</p>
     pub fn get_export_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +85,7 @@ impl ExportServerEngineAttributeInputBuilder {
     }
     /// <p>The name of the server from which you are exporting the attribute.</p>
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_name = input;
-        self
+        self.server_name = input; self
     }
     /// <p>The name of the server from which you are exporting the attribute.</p>
     pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,9 +108,9 @@ impl ExportServerEngineAttributeInputBuilder {
     /// </ul>
     pub fn input_attributes(mut self, input: crate::types::EngineAttribute) -> Self {
         let mut v = self.input_attributes.unwrap_or_default();
-        v.push(input);
-        self.input_attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.input_attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of engine attributes. The list type is <code>EngineAttribute</code>. An <code>EngineAttribute</code> list item is a pair that includes an attribute name and its value. For the <code>Userdata</code> ExportAttributeName, the following are supported engine attribute names.</p>
     /// <ul>
@@ -124,9 +123,8 @@ impl ExportServerEngineAttributeInputBuilder {
     /// <li>
     /// <p><b>NodeClientVersion</b> In Chef, the version of the Chef engine (three numbers separated by dots, such as 13.8.5). If this attribute is empty, OpsWorks for Chef Automate uses the most current version. In Puppet, this parameter is ignored.</p></li>
     /// </ul>
-    pub fn set_input_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>) -> Self {
-        self.input_attributes = input;
-        self
+    pub fn set_input_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EngineAttribute>>) -> Self {
+        self.input_attributes = input; self
     }
     /// <p>The list of engine attributes. The list type is <code>EngineAttribute</code>. An <code>EngineAttribute</code> list item is a pair that includes an attribute name and its value. For the <code>Userdata</code> ExportAttributeName, the following are supported engine attribute names.</p>
     /// <ul>
@@ -139,20 +137,21 @@ impl ExportServerEngineAttributeInputBuilder {
     /// <li>
     /// <p><b>NodeClientVersion</b> In Chef, the version of the Chef engine (three numbers separated by dots, such as 13.8.5). If this attribute is empty, OpsWorks for Chef Automate uses the most current version. In Puppet, this parameter is ignored.</p></li>
     /// </ul>
-    pub fn get_input_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>> {
+    pub fn get_input_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EngineAttribute>> {
         &self.input_attributes
     }
     /// Consumes the builder and constructs a [`ExportServerEngineAttributeInput`](crate::operation::export_server_engine_attribute::ExportServerEngineAttributeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::export_server_engine_attribute::ExportServerEngineAttributeInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::export_server_engine_attribute::ExportServerEngineAttributeInput {
-            export_attribute_name: self.export_attribute_name,
-            server_name: self.server_name,
-            input_attributes: self.input_attributes,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::export_server_engine_attribute::ExportServerEngineAttributeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::export_server_engine_attribute::ExportServerEngineAttributeInput {
+                export_attribute_name: self.export_attribute_name
+                ,
+                server_name: self.server_name
+                ,
+                input_attributes: self.input_attributes
+                ,
+            }
+        )
     }
 }
+

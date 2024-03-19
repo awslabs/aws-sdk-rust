@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDeadLetterSourceQueues`](crate::operation::list_dead_letter_source_queues::builders::ListDeadLetterSourceQueuesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_dead_letter_source_queues::builders::ListDeadLetterSourceQueuesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`queue_url(impl Into<String>)`](crate::operation::list_dead_letter_source_queues::builders::ListDeadLetterSourceQueuesFluentBuilder::queue_url) / [`set_queue_url(Option<String>)`](crate::operation::list_dead_letter_source_queues::builders::ListDeadLetterSourceQueuesFluentBuilder::set_queue_url):<br>required: **true**<br><p>The URL of a dead-letter queue.</p> <p>Queue URLs and names are case-sensitive.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_dead_letter_source_queues::builders::ListDeadLetterSourceQueuesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_dead_letter_source_queues::builders::ListDeadLetterSourceQueuesFluentBuilder::set_next_token):<br>required: **false**<br><p>Pagination token to request the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_dead_letter_source_queues::builders::ListDeadLetterSourceQueuesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_dead_letter_source_queues::builders::ListDeadLetterSourceQueuesFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results to include in the response. Value range is 1 to 1000. You must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.</p><br>
-    /// - On success, responds with [`ListDeadLetterSourceQueuesOutput`](crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesOutput) with field(s):
+                            /// - On success, responds with [`ListDeadLetterSourceQueuesOutput`](crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesOutput) with field(s):
     ///   - [`queue_urls(Vec::<String>)`](crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesOutput::queue_urls): <p>A list of source queue URLs that have the <code>RedrivePolicy</code> queue attribute configured with a dead-letter queue.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesOutput::next_token): <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
-    /// - On failure, responds with [`SdkError<ListDeadLetterSourceQueuesError>`](crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesError)
-    pub fn list_dead_letter_source_queues(
-        &self,
-    ) -> crate::operation::list_dead_letter_source_queues::builders::ListDeadLetterSourceQueuesFluentBuilder {
-        crate::operation::list_dead_letter_source_queues::builders::ListDeadLetterSourceQueuesFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListDeadLetterSourceQueuesError>`](crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesError)
+    pub fn list_dead_letter_source_queues(&self) -> crate::operation::list_dead_letter_source_queues::builders::ListDeadLetterSourceQueuesFluentBuilder {
+                                crate::operation::list_dead_letter_source_queues::builders::ListDeadLetterSourceQueuesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

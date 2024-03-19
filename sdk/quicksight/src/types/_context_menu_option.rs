@@ -3,13 +3,13 @@
 /// <p>The context menu options for a visual's interactions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContextMenuOption {
+pub struct ContextMenuOption  {
     /// <p>The availability status of the context menu options. If the value of this property is set to <code>ENABLED</code>, dashboard readers can interact with the context menu.</p>
     pub availability_status: ::std::option::Option<crate::types::DashboardBehavior>,
 }
-impl ContextMenuOption {
+impl  ContextMenuOption  {
     /// <p>The availability status of the context menu options. If the value of this property is set to <code>ENABLED</code>, dashboard readers can interact with the context menu.</p>
-    pub fn availability_status(&self) -> ::std::option::Option<&crate::types::DashboardBehavior> {
+    pub fn availability_status(&self) -> ::std::option::Option<& crate::types::DashboardBehavior> {
         self.availability_status.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ContextMenuOptionBuilder {
     }
     /// <p>The availability status of the context menu options. If the value of this property is set to <code>ENABLED</code>, dashboard readers can interact with the context menu.</p>
     pub fn set_availability_status(mut self, input: ::std::option::Option<crate::types::DashboardBehavior>) -> Self {
-        self.availability_status = input;
-        self
+        self.availability_status = input; self
     }
     /// <p>The availability status of the context menu options. If the value of this property is set to <code>ENABLED</code>, dashboard readers can interact with the context menu.</p>
     pub fn get_availability_status(&self) -> &::std::option::Option<crate::types::DashboardBehavior> {
@@ -44,7 +43,9 @@ impl ContextMenuOptionBuilder {
     /// Consumes the builder and constructs a [`ContextMenuOption`](crate::types::ContextMenuOption).
     pub fn build(self) -> crate::types::ContextMenuOption {
         crate::types::ContextMenuOption {
-            availability_status: self.availability_status,
+            availability_status: self.availability_status
+            ,
         }
     }
 }
+

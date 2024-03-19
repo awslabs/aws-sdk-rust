@@ -3,21 +3,21 @@
 /// <p>Provides information about the billing for read/write capacity on the table.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsDynamoDbTableBillingModeSummary {
+pub struct AwsDynamoDbTableBillingModeSummary  {
     /// <p>The method used to charge for read and write throughput and to manage capacity.</p>
     pub billing_mode: ::std::option::Option<::std::string::String>,
     /// <p>If the billing mode is <code>PAY_PER_REQUEST</code>, indicates when the billing mode was set to that value.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub last_update_to_pay_per_request_date_time: ::std::option::Option<::std::string::String>,
 }
-impl AwsDynamoDbTableBillingModeSummary {
+impl  AwsDynamoDbTableBillingModeSummary  {
     /// <p>The method used to charge for read and write throughput and to manage capacity.</p>
-    pub fn billing_mode(&self) -> ::std::option::Option<&str> {
+    pub fn billing_mode(&self) -> ::std::option::Option<& str> {
         self.billing_mode.as_deref()
     }
     /// <p>If the billing mode is <code>PAY_PER_REQUEST</code>, indicates when the billing mode was set to that value.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn last_update_to_pay_per_request_date_time(&self) -> ::std::option::Option<&str> {
+    pub fn last_update_to_pay_per_request_date_time(&self) -> ::std::option::Option<& str> {
         self.last_update_to_pay_per_request_date_time.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl AwsDynamoDbTableBillingModeSummaryBuilder {
     }
     /// <p>The method used to charge for read and write throughput and to manage capacity.</p>
     pub fn set_billing_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.billing_mode = input;
-        self
+        self.billing_mode = input; self
     }
     /// <p>The method used to charge for read and write throughput and to manage capacity.</p>
     pub fn get_billing_mode(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +58,7 @@ impl AwsDynamoDbTableBillingModeSummaryBuilder {
     /// <p>If the billing mode is <code>PAY_PER_REQUEST</code>, indicates when the billing mode was set to that value.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_last_update_to_pay_per_request_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_update_to_pay_per_request_date_time = input;
-        self
+        self.last_update_to_pay_per_request_date_time = input; self
     }
     /// <p>If the billing mode is <code>PAY_PER_REQUEST</code>, indicates when the billing mode was set to that value.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -70,8 +68,11 @@ impl AwsDynamoDbTableBillingModeSummaryBuilder {
     /// Consumes the builder and constructs a [`AwsDynamoDbTableBillingModeSummary`](crate::types::AwsDynamoDbTableBillingModeSummary).
     pub fn build(self) -> crate::types::AwsDynamoDbTableBillingModeSummary {
         crate::types::AwsDynamoDbTableBillingModeSummary {
-            billing_mode: self.billing_mode,
-            last_update_to_pay_per_request_date_time: self.last_update_to_pay_per_request_date_time,
+            billing_mode: self.billing_mode
+            ,
+            last_update_to_pay_per_request_date_time: self.last_update_to_pay_per_request_date_time
+            ,
         }
     }
 }
+

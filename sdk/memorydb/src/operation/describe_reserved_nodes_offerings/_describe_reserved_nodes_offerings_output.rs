@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeReservedNodesOfferingsOutput {
+pub struct DescribeReservedNodesOfferingsOutput  {
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Lists available reserved node offerings.</p>
-    pub reserved_nodes_offerings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedNodesOffering>>,
+    pub reserved_nodes_offerings: ::std::option::Option<::std::vec::Vec::<crate::types::ReservedNodesOffering>>,
     _request_id: Option<String>,
 }
-impl DescribeReservedNodesOfferingsOutput {
+impl  DescribeReservedNodesOfferingsOutput  {
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Lists available reserved node offerings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reserved_nodes_offerings.is_none()`.
-    pub fn reserved_nodes_offerings(&self) -> &[crate::types::ReservedNodesOffering] {
-        self.reserved_nodes_offerings.as_deref().unwrap_or_default()
+    pub fn reserved_nodes_offerings(&self) -> & [crate::types::ReservedNodesOffering] {
+        self.reserved_nodes_offerings.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeReservedNodesOfferingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeReservedNodesOfferingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedNodesOfferingsOutput`](crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferingsOutput).
     pub fn builder() -> crate::operation::describe_reserved_nodes_offerings::builders::DescribeReservedNodesOfferingsOutputBuilder {
@@ -38,7 +39,7 @@ impl DescribeReservedNodesOfferingsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReservedNodesOfferingsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) reserved_nodes_offerings: ::std::option::Option<::std::vec::Vec<crate::types::ReservedNodesOffering>>,
+    pub(crate) reserved_nodes_offerings: ::std::option::Option<::std::vec::Vec::<crate::types::ReservedNodesOffering>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedNodesOfferingsOutputBuilder {
@@ -49,8 +50,7 @@ impl DescribeReservedNodesOfferingsOutputBuilder {
     }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl DescribeReservedNodesOfferingsOutputBuilder {
     /// <p>Lists available reserved node offerings.</p>
     pub fn reserved_nodes_offerings(mut self, input: crate::types::ReservedNodesOffering) -> Self {
         let mut v = self.reserved_nodes_offerings.unwrap_or_default();
-        v.push(input);
-        self.reserved_nodes_offerings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.reserved_nodes_offerings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Lists available reserved node offerings.</p>
-    pub fn set_reserved_nodes_offerings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReservedNodesOffering>>) -> Self {
-        self.reserved_nodes_offerings = input;
-        self
+    pub fn set_reserved_nodes_offerings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReservedNodesOffering>>) -> Self {
+        self.reserved_nodes_offerings = input; self
     }
     /// <p>Lists available reserved node offerings.</p>
-    pub fn get_reserved_nodes_offerings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedNodesOffering>> {
+    pub fn get_reserved_nodes_offerings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReservedNodesOffering>> {
         &self.reserved_nodes_offerings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeReservedNodesOfferingsOutput`](crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferingsOutput).
     pub fn build(self) -> crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferingsOutput {
         crate::operation::describe_reserved_nodes_offerings::DescribeReservedNodesOfferingsOutput {
-            next_token: self.next_token,
-            reserved_nodes_offerings: self.reserved_nodes_offerings,
+            next_token: self.next_token
+            ,
+            reserved_nodes_offerings: self.reserved_nodes_offerings
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

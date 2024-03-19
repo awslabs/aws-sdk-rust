@@ -3,7 +3,7 @@
 /// <p>The deployment controller to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeploymentController {
+pub struct DeploymentController  {
     /// <p>The deployment controller type to use.</p>
     /// <p>There are three deployment controller types available:</p>
     /// <dl>
@@ -28,7 +28,7 @@ pub struct DeploymentController {
     /// </dl>
     pub r#type: crate::types::DeploymentControllerType,
 }
-impl DeploymentController {
+impl  DeploymentController  {
     /// <p>The deployment controller type to use.</p>
     /// <p>There are three deployment controller types available:</p>
     /// <dl>
@@ -51,7 +51,7 @@ impl DeploymentController {
     /// <p>The external (<code>EXTERNAL</code>) deployment type enables you to use any third-party deployment controller for full control over the deployment process for an Amazon ECS service.</p>
     /// </dd>
     /// </dl>
-    pub fn r#type(&self) -> &crate::types::DeploymentControllerType {
+    pub fn r#type(&self) -> & crate::types::DeploymentControllerType {
         &self.r#type
     }
 }
@@ -119,8 +119,7 @@ impl DeploymentControllerBuilder {
     /// </dd>
     /// </dl>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DeploymentControllerType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The deployment controller type to use.</p>
     /// <p>There are three deployment controller types available:</p>
@@ -151,13 +150,15 @@ impl DeploymentControllerBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::DeploymentControllerBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::DeploymentController, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DeploymentController {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building DeploymentController",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DeploymentController {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building DeploymentController")
+                    )?
+                ,
+            }
+        )
     }
 }
+

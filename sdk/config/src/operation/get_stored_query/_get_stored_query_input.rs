@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetStoredQueryInput {
+pub struct GetStoredQueryInput  {
     /// <p>The name of the query.</p>
     pub query_name: ::std::option::Option<::std::string::String>,
 }
-impl GetStoredQueryInput {
+impl  GetStoredQueryInput  {
     /// <p>The name of the query.</p>
-    pub fn query_name(&self) -> ::std::option::Option<&str> {
+    pub fn query_name(&self) -> ::std::option::Option<& str> {
         self.query_name.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl GetStoredQueryInputBuilder {
     }
     /// <p>The name of the query.</p>
     pub fn set_query_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_name = input;
-        self
+        self.query_name = input; self
     }
     /// <p>The name of the query.</p>
     pub fn get_query_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_name
     }
     /// Consumes the builder and constructs a [`GetStoredQueryInput`](crate::operation::get_stored_query::GetStoredQueryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_stored_query::GetStoredQueryInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_stored_query::GetStoredQueryInput { query_name: self.query_name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_stored_query::GetStoredQueryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_stored_query::GetStoredQueryInput {
+                query_name: self.query_name
+                ,
+            }
+        )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteHypervisorInput {
+pub struct DeleteHypervisorInput  {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor to delete.</p>
     pub hypervisor_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteHypervisorInput {
+impl  DeleteHypervisorInput  {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor to delete.</p>
-    pub fn hypervisor_arn(&self) -> ::std::option::Option<&str> {
+    pub fn hypervisor_arn(&self) -> ::std::option::Option<& str> {
         self.hypervisor_arn.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteHypervisorInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor to delete.</p>
     pub fn set_hypervisor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hypervisor_arn = input;
-        self
+        self.hypervisor_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor to delete.</p>
     pub fn get_hypervisor_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.hypervisor_arn
     }
     /// Consumes the builder and constructs a [`DeleteHypervisorInput`](crate::operation::delete_hypervisor::DeleteHypervisorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_hypervisor::DeleteHypervisorInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_hypervisor::DeleteHypervisorInput {
-            hypervisor_arn: self.hypervisor_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_hypervisor::DeleteHypervisorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_hypervisor::DeleteHypervisorInput {
+                hypervisor_arn: self.hypervisor_arn
+                ,
+            }
+        )
     }
 }
+

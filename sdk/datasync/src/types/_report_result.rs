@@ -3,7 +3,7 @@
 /// <p>Indicates whether DataSync created a complete <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">task report</a> for your transfer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReportResult {
+pub struct ReportResult  {
     /// <p>Indicates whether DataSync is still working on your report, created a report, or can't create a complete report.</p>
     pub status: ::std::option::Option<crate::types::PhaseStatus>,
     /// <p>Indicates the code associated with the error if DataSync can't create a complete report.</p>
@@ -11,17 +11,17 @@ pub struct ReportResult {
     /// <p>Provides details about issues creating a report.</p>
     pub error_detail: ::std::option::Option<::std::string::String>,
 }
-impl ReportResult {
+impl  ReportResult  {
     /// <p>Indicates whether DataSync is still working on your report, created a report, or can't create a complete report.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::PhaseStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::PhaseStatus> {
         self.status.as_ref()
     }
     /// <p>Indicates the code associated with the error if DataSync can't create a complete report.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>Provides details about issues creating a report.</p>
-    pub fn error_detail(&self) -> ::std::option::Option<&str> {
+    pub fn error_detail(&self) -> ::std::option::Option<& str> {
         self.error_detail.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ReportResultBuilder {
     }
     /// <p>Indicates whether DataSync is still working on your report, created a report, or can't create a complete report.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::PhaseStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Indicates whether DataSync is still working on your report, created a report, or can't create a complete report.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PhaseStatus> {
@@ -62,8 +61,7 @@ impl ReportResultBuilder {
     }
     /// <p>Indicates the code associated with the error if DataSync can't create a complete report.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>Indicates the code associated with the error if DataSync can't create a complete report.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl ReportResultBuilder {
     }
     /// <p>Provides details about issues creating a report.</p>
     pub fn set_error_detail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_detail = input;
-        self
+        self.error_detail = input; self
     }
     /// <p>Provides details about issues creating a report.</p>
     pub fn get_error_detail(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl ReportResultBuilder {
     /// Consumes the builder and constructs a [`ReportResult`](crate::types::ReportResult).
     pub fn build(self) -> crate::types::ReportResult {
         crate::types::ReportResult {
-            status: self.status,
-            error_code: self.error_code,
-            error_detail: self.error_detail,
+            status: self.status
+            ,
+            error_code: self.error_code
+            ,
+            error_detail: self.error_detail
+            ,
         }
     }
 }
+

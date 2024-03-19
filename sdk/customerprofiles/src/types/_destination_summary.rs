@@ -3,7 +3,7 @@
 /// <p>Summary information about the Kinesis data stream</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DestinationSummary {
+pub struct DestinationSummary  {
     /// <p>The StreamARN of the destination to deliver profile events to. For example, arn:aws:kinesis:region:account-id:stream/stream-name.</p>
     pub uri: ::std::string::String,
     /// <p>The status of enabling the Kinesis stream as a destination for export.</p>
@@ -11,18 +11,17 @@ pub struct DestinationSummary {
     /// <p>The timestamp when the status last changed to <code>UNHEALHY</code>.</p>
     pub unhealthy_since: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl DestinationSummary {
+impl  DestinationSummary  {
     /// <p>The StreamARN of the destination to deliver profile events to. For example, arn:aws:kinesis:region:account-id:stream/stream-name.</p>
-    pub fn uri(&self) -> &str {
-        use std::ops::Deref;
-        self.uri.deref()
+    pub fn uri(&self) -> & str {
+        use std::ops::Deref; self.uri.deref()
     }
     /// <p>The status of enabling the Kinesis stream as a destination for export.</p>
-    pub fn status(&self) -> &crate::types::EventStreamDestinationStatus {
+    pub fn status(&self) -> & crate::types::EventStreamDestinationStatus {
         &self.status
     }
     /// <p>The timestamp when the status last changed to <code>UNHEALHY</code>.</p>
-    pub fn unhealthy_since(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn unhealthy_since(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.unhealthy_since.as_ref()
     }
 }
@@ -50,8 +49,7 @@ impl DestinationSummaryBuilder {
     }
     /// <p>The StreamARN of the destination to deliver profile events to. For example, arn:aws:kinesis:region:account-id:stream/stream-name.</p>
     pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.uri = input;
-        self
+        self.uri = input; self
     }
     /// <p>The StreamARN of the destination to deliver profile events to. For example, arn:aws:kinesis:region:account-id:stream/stream-name.</p>
     pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl DestinationSummaryBuilder {
     }
     /// <p>The status of enabling the Kinesis stream as a destination for export.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EventStreamDestinationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of enabling the Kinesis stream as a destination for export.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EventStreamDestinationStatus> {
@@ -79,8 +76,7 @@ impl DestinationSummaryBuilder {
     }
     /// <p>The timestamp when the status last changed to <code>UNHEALHY</code>.</p>
     pub fn set_unhealthy_since(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.unhealthy_since = input;
-        self
+        self.unhealthy_since = input; self
     }
     /// <p>The timestamp when the status last changed to <code>UNHEALHY</code>.</p>
     pub fn get_unhealthy_since(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -91,20 +87,22 @@ impl DestinationSummaryBuilder {
     /// - [`uri`](crate::types::builders::DestinationSummaryBuilder::uri)
     /// - [`status`](crate::types::builders::DestinationSummaryBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::DestinationSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DestinationSummary {
-            uri: self.uri.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "uri",
-                    "uri was not specified but it is required when building DestinationSummary",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building DestinationSummary",
-                )
-            })?,
-            unhealthy_since: self.unhealthy_since,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DestinationSummary {
+                uri: self.uri
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("uri", "uri was not specified but it is required when building DestinationSummary")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building DestinationSummary")
+                    )?
+                ,
+                unhealthy_since: self.unhealthy_since
+                ,
+            }
+        )
     }
 }
+

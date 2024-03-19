@@ -3,7 +3,7 @@
 /// <p>Object stored in S3 containing ephemeris data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3Object {
+pub struct S3Object  {
     /// <p>An Amazon S3 Bucket name.</p>
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon S3 key for the ephemeris.</p>
@@ -11,17 +11,17 @@ pub struct S3Object {
     /// <p>For versioned S3 objects, the version to use for the ephemeris.</p>
     pub version: ::std::option::Option<::std::string::String>,
 }
-impl S3Object {
+impl  S3Object  {
     /// <p>An Amazon S3 Bucket name.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>An Amazon S3 key for the ephemeris.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>For versioned S3 objects, the version to use for the ephemeris.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl S3ObjectBuilder {
     }
     /// <p>An Amazon S3 Bucket name.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>An Amazon S3 Bucket name.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl S3ObjectBuilder {
     }
     /// <p>An Amazon S3 key for the ephemeris.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>An Amazon S3 key for the ephemeris.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl S3ObjectBuilder {
     }
     /// <p>For versioned S3 objects, the version to use for the ephemeris.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>For versioned S3 objects, the version to use for the ephemeris.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl S3ObjectBuilder {
     /// Consumes the builder and constructs a [`S3Object`](crate::types::S3Object).
     pub fn build(self) -> crate::types::S3Object {
         crate::types::S3Object {
-            bucket: self.bucket,
-            key: self.key,
-            version: self.version,
+            bucket: self.bucket
+            ,
+            key: self.key
+            ,
+            version: self.version
+            ,
         }
     }
 }
+

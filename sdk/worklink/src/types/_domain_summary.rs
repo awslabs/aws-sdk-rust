@@ -3,7 +3,7 @@
 /// <p>The summary of the domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DomainSummary {
+pub struct DomainSummary  {
     /// <p>The name of the domain.</p>
     pub domain_name: ::std::string::String,
     /// <p>The name to display.</p>
@@ -13,22 +13,21 @@ pub struct DomainSummary {
     /// <p>The status of the domain.</p>
     pub domain_status: crate::types::DomainStatus,
 }
-impl DomainSummary {
+impl  DomainSummary  {
     /// <p>The name of the domain.</p>
-    pub fn domain_name(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_name.deref()
+    pub fn domain_name(&self) -> & str {
+        use std::ops::Deref; self.domain_name.deref()
     }
     /// <p>The name to display.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The time that the domain was created.</p>
-    pub fn created_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_time
     }
     /// <p>The status of the domain.</p>
-    pub fn domain_status(&self) -> &crate::types::DomainStatus {
+    pub fn domain_status(&self) -> & crate::types::DomainStatus {
         &self.domain_status
     }
 }
@@ -57,8 +56,7 @@ impl DomainSummaryBuilder {
     }
     /// <p>The name of the domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The name of the domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +69,7 @@ impl DomainSummaryBuilder {
     }
     /// <p>The name to display.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The name to display.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +83,7 @@ impl DomainSummaryBuilder {
     }
     /// <p>The time that the domain was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The time that the domain was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -101,8 +97,7 @@ impl DomainSummaryBuilder {
     }
     /// <p>The status of the domain.</p>
     pub fn set_domain_status(mut self, input: ::std::option::Option<crate::types::DomainStatus>) -> Self {
-        self.domain_status = input;
-        self
+        self.domain_status = input; self
     }
     /// <p>The status of the domain.</p>
     pub fn get_domain_status(&self) -> &::std::option::Option<crate::types::DomainStatus> {
@@ -114,26 +109,27 @@ impl DomainSummaryBuilder {
     /// - [`created_time`](crate::types::builders::DomainSummaryBuilder::created_time)
     /// - [`domain_status`](crate::types::builders::DomainSummaryBuilder::domain_status)
     pub fn build(self) -> ::std::result::Result<crate::types::DomainSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DomainSummary {
-            domain_name: self.domain_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain_name",
-                    "domain_name was not specified but it is required when building DomainSummary",
-                )
-            })?,
-            display_name: self.display_name,
-            created_time: self.created_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_time",
-                    "created_time was not specified but it is required when building DomainSummary",
-                )
-            })?,
-            domain_status: self.domain_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain_status",
-                    "domain_status was not specified but it is required when building DomainSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DomainSummary {
+                domain_name: self.domain_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain_name", "domain_name was not specified but it is required when building DomainSummary")
+                    )?
+                ,
+                display_name: self.display_name
+                ,
+                created_time: self.created_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_time", "created_time was not specified but it is required when building DomainSummary")
+                    )?
+                ,
+                domain_status: self.domain_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain_status", "domain_status was not specified but it is required when building DomainSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

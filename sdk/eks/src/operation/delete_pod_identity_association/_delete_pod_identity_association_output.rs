@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePodIdentityAssociationOutput {
+pub struct DeletePodIdentityAssociationOutput  {
     /// <p>The full description of the EKS Pod Identity association that was deleted.</p>
     pub association: ::std::option::Option<crate::types::PodIdentityAssociation>,
     _request_id: Option<String>,
 }
-impl DeletePodIdentityAssociationOutput {
+impl  DeletePodIdentityAssociationOutput  {
     /// <p>The full description of the EKS Pod Identity association that was deleted.</p>
-    pub fn association(&self) -> ::std::option::Option<&crate::types::PodIdentityAssociation> {
+    pub fn association(&self) -> ::std::option::Option<& crate::types::PodIdentityAssociation> {
         self.association.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeletePodIdentityAssociationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeletePodIdentityAssociationOutput {
     /// Creates a new builder-style object to manufacture [`DeletePodIdentityAssociationOutput`](crate::operation::delete_pod_identity_association::DeletePodIdentityAssociationOutput).
     pub fn builder() -> crate::operation::delete_pod_identity_association::builders::DeletePodIdentityAssociationOutputBuilder {
@@ -40,27 +40,28 @@ impl DeletePodIdentityAssociationOutputBuilder {
     }
     /// <p>The full description of the EKS Pod Identity association that was deleted.</p>
     pub fn set_association(mut self, input: ::std::option::Option<crate::types::PodIdentityAssociation>) -> Self {
-        self.association = input;
-        self
+        self.association = input; self
     }
     /// <p>The full description of the EKS Pod Identity association that was deleted.</p>
     pub fn get_association(&self) -> &::std::option::Option<crate::types::PodIdentityAssociation> {
         &self.association
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeletePodIdentityAssociationOutput`](crate::operation::delete_pod_identity_association::DeletePodIdentityAssociationOutput).
     pub fn build(self) -> crate::operation::delete_pod_identity_association::DeletePodIdentityAssociationOutput {
         crate::operation::delete_pod_identity_association::DeletePodIdentityAssociationOutput {
-            association: self.association,
+            association: self.association
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

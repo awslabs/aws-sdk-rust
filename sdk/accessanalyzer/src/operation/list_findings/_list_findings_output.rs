@@ -3,29 +3,28 @@
 /// <p>The response to the request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListFindingsOutput {
+pub struct ListFindingsOutput  {
     /// <p>A list of findings retrieved from the analyzer that match the filter criteria specified, if any.</p>
-    pub findings: ::std::vec::Vec<crate::types::FindingSummary>,
+    pub findings: ::std::vec::Vec::<crate::types::FindingSummary>,
     /// <p>A token used for pagination of results returned.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListFindingsOutput {
+impl  ListFindingsOutput  {
     /// <p>A list of findings retrieved from the analyzer that match the filter criteria specified, if any.</p>
-    pub fn findings(&self) -> &[crate::types::FindingSummary] {
-        use std::ops::Deref;
-        self.findings.deref()
+    pub fn findings(&self) -> & [crate::types::FindingSummary] {
+        use std::ops::Deref; self.findings.deref()
     }
     /// <p>A token used for pagination of results returned.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListFindingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListFindingsOutput {
     /// Creates a new builder-style object to manufacture [`ListFindingsOutput`](crate::operation::list_findings::ListFindingsOutput).
     pub fn builder() -> crate::operation::list_findings::builders::ListFindingsOutputBuilder {
@@ -37,7 +36,7 @@ impl ListFindingsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFindingsOutputBuilder {
-    pub(crate) findings: ::std::option::Option<::std::vec::Vec<crate::types::FindingSummary>>,
+    pub(crate) findings: ::std::option::Option<::std::vec::Vec::<crate::types::FindingSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +48,16 @@ impl ListFindingsOutputBuilder {
     /// <p>A list of findings retrieved from the analyzer that match the filter criteria specified, if any.</p>
     pub fn findings(mut self, input: crate::types::FindingSummary) -> Self {
         let mut v = self.findings.unwrap_or_default();
-        v.push(input);
-        self.findings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.findings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of findings retrieved from the analyzer that match the filter criteria specified, if any.</p>
-    pub fn set_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FindingSummary>>) -> Self {
-        self.findings = input;
-        self
+    pub fn set_findings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FindingSummary>>) -> Self {
+        self.findings = input; self
     }
     /// <p>A list of findings retrieved from the analyzer that match the filter criteria specified, if any.</p>
-    pub fn get_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingSummary>> {
+    pub fn get_findings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FindingSummary>> {
         &self.findings
     }
     /// <p>A token used for pagination of results returned.</p>
@@ -69,37 +67,37 @@ impl ListFindingsOutputBuilder {
     }
     /// <p>A token used for pagination of results returned.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token used for pagination of results returned.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListFindingsOutput`](crate::operation::list_findings::ListFindingsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`findings`](crate::operation::list_findings::builders::ListFindingsOutputBuilder::findings)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_findings::ListFindingsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_findings::ListFindingsOutput {
-            findings: self.findings.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "findings",
-                    "findings was not specified but it is required when building ListFindingsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_findings::ListFindingsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_findings::ListFindingsOutput {
+                findings: self.findings
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("findings", "findings was not specified but it is required when building ListFindingsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

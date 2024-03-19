@@ -3,7 +3,7 @@
 /// <p>Configuration information for a deployment launch.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeploymentLaunchConfig {
+pub struct DeploymentLaunchConfig  {
     /// <p>The package name.</p>
     pub package_name: ::std::string::String,
     /// <p>The deployment pre-launch file. This file will be executed prior to the launch file.</p>
@@ -13,29 +13,27 @@ pub struct DeploymentLaunchConfig {
     /// <p>The deployment post-launch file. This file will be executed after the launch file.</p>
     pub post_launch_file: ::std::option::Option<::std::string::String>,
     /// <p>An array of key/value pairs specifying environment variables for the robot application</p>
-    pub environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub environment_variables: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl DeploymentLaunchConfig {
+impl  DeploymentLaunchConfig  {
     /// <p>The package name.</p>
-    pub fn package_name(&self) -> &str {
-        use std::ops::Deref;
-        self.package_name.deref()
+    pub fn package_name(&self) -> & str {
+        use std::ops::Deref; self.package_name.deref()
     }
     /// <p>The deployment pre-launch file. This file will be executed prior to the launch file.</p>
-    pub fn pre_launch_file(&self) -> ::std::option::Option<&str> {
+    pub fn pre_launch_file(&self) -> ::std::option::Option<& str> {
         self.pre_launch_file.as_deref()
     }
     /// <p>The launch file name.</p>
-    pub fn launch_file(&self) -> &str {
-        use std::ops::Deref;
-        self.launch_file.deref()
+    pub fn launch_file(&self) -> & str {
+        use std::ops::Deref; self.launch_file.deref()
     }
     /// <p>The deployment post-launch file. This file will be executed after the launch file.</p>
-    pub fn post_launch_file(&self) -> ::std::option::Option<&str> {
+    pub fn post_launch_file(&self) -> ::std::option::Option<& str> {
         self.post_launch_file.as_deref()
     }
     /// <p>An array of key/value pairs specifying environment variables for the robot application</p>
-    pub fn environment_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn environment_variables(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.environment_variables.as_ref()
     }
 }
@@ -54,7 +52,7 @@ pub struct DeploymentLaunchConfigBuilder {
     pub(crate) pre_launch_file: ::std::option::Option<::std::string::String>,
     pub(crate) launch_file: ::std::option::Option<::std::string::String>,
     pub(crate) post_launch_file: ::std::option::Option<::std::string::String>,
-    pub(crate) environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) environment_variables: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl DeploymentLaunchConfigBuilder {
     /// <p>The package name.</p>
@@ -65,8 +63,7 @@ impl DeploymentLaunchConfigBuilder {
     }
     /// <p>The package name.</p>
     pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_name = input;
-        self
+        self.package_name = input; self
     }
     /// <p>The package name.</p>
     pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +76,7 @@ impl DeploymentLaunchConfigBuilder {
     }
     /// <p>The deployment pre-launch file. This file will be executed prior to the launch file.</p>
     pub fn set_pre_launch_file(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pre_launch_file = input;
-        self
+        self.pre_launch_file = input; self
     }
     /// <p>The deployment pre-launch file. This file will be executed prior to the launch file.</p>
     pub fn get_pre_launch_file(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +90,7 @@ impl DeploymentLaunchConfigBuilder {
     }
     /// <p>The launch file name.</p>
     pub fn set_launch_file(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.launch_file = input;
-        self
+        self.launch_file = input; self
     }
     /// <p>The launch file name.</p>
     pub fn get_launch_file(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +103,7 @@ impl DeploymentLaunchConfigBuilder {
     }
     /// <p>The deployment post-launch file. This file will be executed after the launch file.</p>
     pub fn set_post_launch_file(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.post_launch_file = input;
-        self
+        self.post_launch_file = input; self
     }
     /// <p>The deployment post-launch file. This file will be executed after the launch file.</p>
     pub fn get_post_launch_file(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,26 +114,18 @@ impl DeploymentLaunchConfigBuilder {
     /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
     ///
     /// <p>An array of key/value pairs specifying environment variables for the robot application</p>
-    pub fn environment_variables(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_variables(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.environment_variables.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.environment_variables = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.environment_variables = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>An array of key/value pairs specifying environment variables for the robot application</p>
-    pub fn set_environment_variables(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.environment_variables = input;
-        self
+    pub fn set_environment_variables(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.environment_variables = input; self
     }
     /// <p>An array of key/value pairs specifying environment variables for the robot application</p>
-    pub fn get_environment_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_environment_variables(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.environment_variables
     }
     /// Consumes the builder and constructs a [`DeploymentLaunchConfig`](crate::types::DeploymentLaunchConfig).
@@ -147,22 +133,26 @@ impl DeploymentLaunchConfigBuilder {
     /// - [`package_name`](crate::types::builders::DeploymentLaunchConfigBuilder::package_name)
     /// - [`launch_file`](crate::types::builders::DeploymentLaunchConfigBuilder::launch_file)
     pub fn build(self) -> ::std::result::Result<crate::types::DeploymentLaunchConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DeploymentLaunchConfig {
-            package_name: self.package_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "package_name",
-                    "package_name was not specified but it is required when building DeploymentLaunchConfig",
-                )
-            })?,
-            pre_launch_file: self.pre_launch_file,
-            launch_file: self.launch_file.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "launch_file",
-                    "launch_file was not specified but it is required when building DeploymentLaunchConfig",
-                )
-            })?,
-            post_launch_file: self.post_launch_file,
-            environment_variables: self.environment_variables,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DeploymentLaunchConfig {
+                package_name: self.package_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("package_name", "package_name was not specified but it is required when building DeploymentLaunchConfig")
+                    )?
+                ,
+                pre_launch_file: self.pre_launch_file
+                ,
+                launch_file: self.launch_file
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("launch_file", "launch_file was not specified but it is required when building DeploymentLaunchConfig")
+                    )?
+                ,
+                post_launch_file: self.post_launch_file
+                ,
+                environment_variables: self.environment_variables
+                ,
+            }
+        )
     }
 }
+

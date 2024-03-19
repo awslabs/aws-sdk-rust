@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListComponents`](crate::operation::list_components::builders::ListComponentsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_components::builders::ListComponentsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_components::builders::ListComponentsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_components::builders::ListComponentsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates the location of the next component in the array of components, after the list of components that was previously requested.</p><br>
     ///   - [`environment_name(impl Into<String>)`](crate::operation::list_components::builders::ListComponentsFluentBuilder::environment_name) / [`set_environment_name(Option<String>)`](crate::operation::list_components::builders::ListComponentsFluentBuilder::set_environment_name):<br>required: **false**<br><p>The name of an environment for result list filtering. Proton returns components associated with the environment or attached to service instances running in it.</p><br>
     ///   - [`service_name(impl Into<String>)`](crate::operation::list_components::builders::ListComponentsFluentBuilder::service_name) / [`set_service_name(Option<String>)`](crate::operation::list_components::builders::ListComponentsFluentBuilder::set_service_name):<br>required: **false**<br><p>The name of a service for result list filtering. Proton returns components attached to service instances of the service.</p><br>
     ///   - [`service_instance_name(impl Into<String>)`](crate::operation::list_components::builders::ListComponentsFluentBuilder::service_instance_name) / [`set_service_instance_name(Option<String>)`](crate::operation::list_components::builders::ListComponentsFluentBuilder::set_service_instance_name):<br>required: **false**<br><p>The name of a service instance for result list filtering. Proton returns the component attached to the service instance, if any.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_components::builders::ListComponentsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_components::builders::ListComponentsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of components to list.</p><br>
-    /// - On success, responds with [`ListComponentsOutput`](crate::operation::list_components::ListComponentsOutput) with field(s):
+                            /// - On success, responds with [`ListComponentsOutput`](crate::operation::list_components::ListComponentsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_components::ListComponentsOutput::next_token): <p>A token that indicates the location of the next component in the array of components, after the current requested list of components.</p>
     ///   - [`components(Vec::<ComponentSummary>)`](crate::operation::list_components::ListComponentsOutput::components): <p>An array of components with summary data.</p>
-    /// - On failure, responds with [`SdkError<ListComponentsError>`](crate::operation::list_components::ListComponentsError)
+                            /// - On failure, responds with [`SdkError<ListComponentsError>`](crate::operation::list_components::ListComponentsError)
     pub fn list_components(&self) -> crate::operation::list_components::builders::ListComponentsFluentBuilder {
-        crate::operation::list_components::builders::ListComponentsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_components::builders::ListComponentsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Represents the request to start the user import job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartUserImportJobInput {
+pub struct StartUserImportJobInput  {
     /// <p>The user pool ID for the user pool that the users are being imported into.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The job ID for the user import job.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
 }
-impl StartUserImportJobInput {
+impl  StartUserImportJobInput  {
     /// <p>The user pool ID for the user pool that the users are being imported into.</p>
-    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The job ID for the user import job.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl StartUserImportJobInputBuilder {
     }
     /// <p>The user pool ID for the user pool that the users are being imported into.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The user pool ID for the user pool that the users are being imported into.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,21 +56,22 @@ impl StartUserImportJobInputBuilder {
     }
     /// <p>The job ID for the user import job.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The job ID for the user import job.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
     /// Consumes the builder and constructs a [`StartUserImportJobInput`](crate::operation::start_user_import_job::StartUserImportJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_user_import_job::StartUserImportJobInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_user_import_job::StartUserImportJobInput {
-            user_pool_id: self.user_pool_id,
-            job_id: self.job_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_user_import_job::StartUserImportJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_user_import_job::StartUserImportJobInput {
+                user_pool_id: self.user_pool_id
+                ,
+                job_id: self.job_id
+                ,
+            }
+        )
     }
 }
+

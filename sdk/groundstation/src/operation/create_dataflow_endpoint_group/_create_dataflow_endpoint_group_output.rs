@@ -3,22 +3,22 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDataflowEndpointGroupOutput {
+pub struct CreateDataflowEndpointGroupOutput  {
     /// <p>UUID of a dataflow endpoint group.</p>
     pub dataflow_endpoint_group_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateDataflowEndpointGroupOutput {
+impl  CreateDataflowEndpointGroupOutput  {
     /// <p>UUID of a dataflow endpoint group.</p>
-    pub fn dataflow_endpoint_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn dataflow_endpoint_group_id(&self) -> ::std::option::Option<& str> {
         self.dataflow_endpoint_group_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateDataflowEndpointGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateDataflowEndpointGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateDataflowEndpointGroupOutput`](crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupOutput).
     pub fn builder() -> crate::operation::create_dataflow_endpoint_group::builders::CreateDataflowEndpointGroupOutputBuilder {
@@ -41,27 +41,28 @@ impl CreateDataflowEndpointGroupOutputBuilder {
     }
     /// <p>UUID of a dataflow endpoint group.</p>
     pub fn set_dataflow_endpoint_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataflow_endpoint_group_id = input;
-        self
+        self.dataflow_endpoint_group_id = input; self
     }
     /// <p>UUID of a dataflow endpoint group.</p>
     pub fn get_dataflow_endpoint_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataflow_endpoint_group_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateDataflowEndpointGroupOutput`](crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupOutput).
     pub fn build(self) -> crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupOutput {
         crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupOutput {
-            dataflow_endpoint_group_id: self.dataflow_endpoint_group_id,
+            dataflow_endpoint_group_id: self.dataflow_endpoint_group_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateProxySessionInput {
+pub struct UpdateProxySessionInput  {
     /// <p>The Voice Connector ID.</p>
     pub voice_connector_id: ::std::option::Option<::std::string::String>,
     /// <p>The proxy session ID.</p>
     pub proxy_session_id: ::std::option::Option<::std::string::String>,
     /// <p>The proxy session capabilities.</p>
-    pub capabilities: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
+    pub capabilities: ::std::option::Option<::std::vec::Vec::<crate::types::Capability>>,
     /// <p>The number of minutes allowed for the proxy session.</p>
     pub expiry_minutes: ::std::option::Option<i32>,
 }
-impl UpdateProxySessionInput {
+impl  UpdateProxySessionInput  {
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(&self) -> ::std::option::Option<&str> {
+    pub fn voice_connector_id(&self) -> ::std::option::Option<& str> {
         self.voice_connector_id.as_deref()
     }
     /// <p>The proxy session ID.</p>
-    pub fn proxy_session_id(&self) -> ::std::option::Option<&str> {
+    pub fn proxy_session_id(&self) -> ::std::option::Option<& str> {
         self.proxy_session_id.as_deref()
     }
     /// <p>The proxy session capabilities.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capabilities.is_none()`.
-    pub fn capabilities(&self) -> &[crate::types::Capability] {
-        self.capabilities.as_deref().unwrap_or_default()
+    pub fn capabilities(&self) -> & [crate::types::Capability] {
+        self.capabilities.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The number of minutes allowed for the proxy session.</p>
     pub fn expiry_minutes(&self) -> ::std::option::Option<i32> {
@@ -45,7 +46,7 @@ impl UpdateProxySessionInput {
 pub struct UpdateProxySessionInputBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) proxy_session_id: ::std::option::Option<::std::string::String>,
-    pub(crate) capabilities: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
+    pub(crate) capabilities: ::std::option::Option<::std::vec::Vec::<crate::types::Capability>>,
     pub(crate) expiry_minutes: ::std::option::Option<i32>,
 }
 impl UpdateProxySessionInputBuilder {
@@ -57,8 +58,7 @@ impl UpdateProxySessionInputBuilder {
     }
     /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.voice_connector_id = input;
-        self
+        self.voice_connector_id = input; self
     }
     /// <p>The Voice Connector ID.</p>
     pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +72,7 @@ impl UpdateProxySessionInputBuilder {
     }
     /// <p>The proxy session ID.</p>
     pub fn set_proxy_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.proxy_session_id = input;
-        self
+        self.proxy_session_id = input; self
     }
     /// <p>The proxy session ID.</p>
     pub fn get_proxy_session_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,17 +85,16 @@ impl UpdateProxySessionInputBuilder {
     /// <p>The proxy session capabilities.</p>
     pub fn capabilities(mut self, input: crate::types::Capability) -> Self {
         let mut v = self.capabilities.unwrap_or_default();
-        v.push(input);
-        self.capabilities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.capabilities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The proxy session capabilities.</p>
-    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>) -> Self {
-        self.capabilities = input;
-        self
+    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Capability>>) -> Self {
+        self.capabilities = input; self
     }
     /// <p>The proxy session capabilities.</p>
-    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Capability>> {
+    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Capability>> {
         &self.capabilities
     }
     /// <p>The number of minutes allowed for the proxy session.</p>
@@ -106,23 +104,26 @@ impl UpdateProxySessionInputBuilder {
     }
     /// <p>The number of minutes allowed for the proxy session.</p>
     pub fn set_expiry_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.expiry_minutes = input;
-        self
+        self.expiry_minutes = input; self
     }
     /// <p>The number of minutes allowed for the proxy session.</p>
     pub fn get_expiry_minutes(&self) -> &::std::option::Option<i32> {
         &self.expiry_minutes
     }
     /// Consumes the builder and constructs a [`UpdateProxySessionInput`](crate::operation::update_proxy_session::UpdateProxySessionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_proxy_session::UpdateProxySessionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_proxy_session::UpdateProxySessionInput {
-            voice_connector_id: self.voice_connector_id,
-            proxy_session_id: self.proxy_session_id,
-            capabilities: self.capabilities,
-            expiry_minutes: self.expiry_minutes,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_proxy_session::UpdateProxySessionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_proxy_session::UpdateProxySessionInput {
+                voice_connector_id: self.voice_connector_id
+                ,
+                proxy_session_id: self.proxy_session_id
+                ,
+                capabilities: self.capabilities
+                ,
+                expiry_minutes: self.expiry_minutes
+                ,
+            }
+        )
     }
 }
+

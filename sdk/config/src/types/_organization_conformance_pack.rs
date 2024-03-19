@@ -3,7 +3,7 @@
 /// <p>An organization conformance pack that has information about conformance packs that Config creates in member accounts.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OrganizationConformancePack {
+pub struct OrganizationConformancePack  {
     /// <p>The name you assign to an organization conformance pack.</p>
     pub organization_conformance_pack_name: ::std::string::String,
     /// <p>Amazon Resource Name (ARN) of organization conformance pack.</p>
@@ -17,49 +17,49 @@ pub struct OrganizationConformancePack {
     /// </note>
     pub delivery_s3_key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
-    pub conformance_pack_input_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackInputParameter>>,
+    pub conformance_pack_input_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::ConformancePackInputParameter>>,
     /// <p>A comma-separated list of accounts excluded from organization conformance pack.</p>
-    pub excluded_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub excluded_accounts: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Last time when organization conformation pack was updated.</p>
     pub last_update_time: ::aws_smithy_types::DateTime,
 }
-impl OrganizationConformancePack {
+impl  OrganizationConformancePack  {
     /// <p>The name you assign to an organization conformance pack.</p>
-    pub fn organization_conformance_pack_name(&self) -> &str {
-        use std::ops::Deref;
-        self.organization_conformance_pack_name.deref()
+    pub fn organization_conformance_pack_name(&self) -> & str {
+        use std::ops::Deref; self.organization_conformance_pack_name.deref()
     }
     /// <p>Amazon Resource Name (ARN) of organization conformance pack.</p>
-    pub fn organization_conformance_pack_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.organization_conformance_pack_arn.deref()
+    pub fn organization_conformance_pack_arn(&self) -> & str {
+        use std::ops::Deref; self.organization_conformance_pack_arn.deref()
     }
     /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p><note>
     /// <p>This field is optional.</p>
     /// </note>
-    pub fn delivery_s3_bucket(&self) -> ::std::option::Option<&str> {
+    pub fn delivery_s3_bucket(&self) -> ::std::option::Option<& str> {
         self.delivery_s3_bucket.as_deref()
     }
     /// <p>Any folder structure you want to add to an Amazon S3 bucket.</p><note>
     /// <p>This field is optional.</p>
     /// </note>
-    pub fn delivery_s3_key_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn delivery_s3_key_prefix(&self) -> ::std::option::Option<& str> {
         self.delivery_s3_key_prefix.as_deref()
     }
     /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.conformance_pack_input_parameters.is_none()`.
-    pub fn conformance_pack_input_parameters(&self) -> &[crate::types::ConformancePackInputParameter] {
-        self.conformance_pack_input_parameters.as_deref().unwrap_or_default()
+    pub fn conformance_pack_input_parameters(&self) -> & [crate::types::ConformancePackInputParameter] {
+        self.conformance_pack_input_parameters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A comma-separated list of accounts excluded from organization conformance pack.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excluded_accounts.is_none()`.
-    pub fn excluded_accounts(&self) -> &[::std::string::String] {
-        self.excluded_accounts.as_deref().unwrap_or_default()
+    pub fn excluded_accounts(&self) -> & [::std::string::String] {
+        self.excluded_accounts.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Last time when organization conformation pack was updated.</p>
-    pub fn last_update_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_update_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_update_time
     }
 }
@@ -78,8 +78,8 @@ pub struct OrganizationConformancePackBuilder {
     pub(crate) organization_conformance_pack_arn: ::std::option::Option<::std::string::String>,
     pub(crate) delivery_s3_bucket: ::std::option::Option<::std::string::String>,
     pub(crate) delivery_s3_key_prefix: ::std::option::Option<::std::string::String>,
-    pub(crate) conformance_pack_input_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackInputParameter>>,
-    pub(crate) excluded_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) conformance_pack_input_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::ConformancePackInputParameter>>,
+    pub(crate) excluded_accounts: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl OrganizationConformancePackBuilder {
@@ -91,8 +91,7 @@ impl OrganizationConformancePackBuilder {
     }
     /// <p>The name you assign to an organization conformance pack.</p>
     pub fn set_organization_conformance_pack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_conformance_pack_name = input;
-        self
+        self.organization_conformance_pack_name = input; self
     }
     /// <p>The name you assign to an organization conformance pack.</p>
     pub fn get_organization_conformance_pack_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +105,7 @@ impl OrganizationConformancePackBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of organization conformance pack.</p>
     pub fn set_organization_conformance_pack_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_conformance_pack_arn = input;
-        self
+        self.organization_conformance_pack_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of organization conformance pack.</p>
     pub fn get_organization_conformance_pack_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +122,7 @@ impl OrganizationConformancePackBuilder {
     /// <p>This field is optional.</p>
     /// </note>
     pub fn set_delivery_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delivery_s3_bucket = input;
-        self
+        self.delivery_s3_bucket = input; self
     }
     /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p><note>
     /// <p>This field is optional.</p>
@@ -144,8 +141,7 @@ impl OrganizationConformancePackBuilder {
     /// <p>This field is optional.</p>
     /// </note>
     pub fn set_delivery_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delivery_s3_key_prefix = input;
-        self
+        self.delivery_s3_key_prefix = input; self
     }
     /// <p>Any folder structure you want to add to an Amazon S3 bucket.</p><note>
     /// <p>This field is optional.</p>
@@ -160,20 +156,16 @@ impl OrganizationConformancePackBuilder {
     /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
     pub fn conformance_pack_input_parameters(mut self, input: crate::types::ConformancePackInputParameter) -> Self {
         let mut v = self.conformance_pack_input_parameters.unwrap_or_default();
-        v.push(input);
-        self.conformance_pack_input_parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.conformance_pack_input_parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
-    pub fn set_conformance_pack_input_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackInputParameter>>,
-    ) -> Self {
-        self.conformance_pack_input_parameters = input;
-        self
+    pub fn set_conformance_pack_input_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ConformancePackInputParameter>>) -> Self {
+        self.conformance_pack_input_parameters = input; self
     }
     /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
-    pub fn get_conformance_pack_input_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConformancePackInputParameter>> {
+    pub fn get_conformance_pack_input_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ConformancePackInputParameter>> {
         &self.conformance_pack_input_parameters
     }
     /// Appends an item to `excluded_accounts`.
@@ -183,17 +175,16 @@ impl OrganizationConformancePackBuilder {
     /// <p>A comma-separated list of accounts excluded from organization conformance pack.</p>
     pub fn excluded_accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.excluded_accounts.unwrap_or_default();
-        v.push(input.into());
-        self.excluded_accounts = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.excluded_accounts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A comma-separated list of accounts excluded from organization conformance pack.</p>
-    pub fn set_excluded_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.excluded_accounts = input;
-        self
+    pub fn set_excluded_accounts(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.excluded_accounts = input; self
     }
     /// <p>A comma-separated list of accounts excluded from organization conformance pack.</p>
-    pub fn get_excluded_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_excluded_accounts(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.excluded_accounts
     }
     /// <p>Last time when organization conformation pack was updated.</p>
@@ -204,8 +195,7 @@ impl OrganizationConformancePackBuilder {
     }
     /// <p>Last time when organization conformation pack was updated.</p>
     pub fn set_last_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_update_time = input;
-        self
+        self.last_update_time = input; self
     }
     /// <p>Last time when organization conformation pack was updated.</p>
     pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -217,29 +207,33 @@ impl OrganizationConformancePackBuilder {
     /// - [`organization_conformance_pack_arn`](crate::types::builders::OrganizationConformancePackBuilder::organization_conformance_pack_arn)
     /// - [`last_update_time`](crate::types::builders::OrganizationConformancePackBuilder::last_update_time)
     pub fn build(self) -> ::std::result::Result<crate::types::OrganizationConformancePack, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OrganizationConformancePack {
-            organization_conformance_pack_name: self.organization_conformance_pack_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "organization_conformance_pack_name",
-                    "organization_conformance_pack_name was not specified but it is required when building OrganizationConformancePack",
-                )
-            })?,
-            organization_conformance_pack_arn: self.organization_conformance_pack_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "organization_conformance_pack_arn",
-                    "organization_conformance_pack_arn was not specified but it is required when building OrganizationConformancePack",
-                )
-            })?,
-            delivery_s3_bucket: self.delivery_s3_bucket,
-            delivery_s3_key_prefix: self.delivery_s3_key_prefix,
-            conformance_pack_input_parameters: self.conformance_pack_input_parameters,
-            excluded_accounts: self.excluded_accounts,
-            last_update_time: self.last_update_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_update_time",
-                    "last_update_time was not specified but it is required when building OrganizationConformancePack",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OrganizationConformancePack {
+                organization_conformance_pack_name: self.organization_conformance_pack_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("organization_conformance_pack_name", "organization_conformance_pack_name was not specified but it is required when building OrganizationConformancePack")
+                    )?
+                ,
+                organization_conformance_pack_arn: self.organization_conformance_pack_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("organization_conformance_pack_arn", "organization_conformance_pack_arn was not specified but it is required when building OrganizationConformancePack")
+                    )?
+                ,
+                delivery_s3_bucket: self.delivery_s3_bucket
+                ,
+                delivery_s3_key_prefix: self.delivery_s3_key_prefix
+                ,
+                conformance_pack_input_parameters: self.conformance_pack_input_parameters
+                ,
+                excluded_accounts: self.excluded_accounts
+                ,
+                last_update_time: self.last_update_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_update_time", "last_update_time was not specified but it is required when building OrganizationConformancePack")
+                    )?
+                ,
+            }
+        )
     }
 }
+

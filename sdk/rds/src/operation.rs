@@ -486,3 +486,4 @@ pub mod switchover_global_cluster;
 
 /// Types for the `SwitchoverReadReplica` operation.
 pub mod switchover_read_replica;
+

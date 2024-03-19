@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateOutpostResolverInput {
+pub struct UpdateOutpostResolverInput  {
     /// <p>A unique string that identifies Resolver on an Outpost.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Name of the Resolver on the Outpost.</p>
@@ -12,13 +12,13 @@ pub struct UpdateOutpostResolverInput {
     /// <p>Amazon EC2 instance type.</p>
     pub preferred_instance_type: ::std::option::Option<::std::string::String>,
 }
-impl UpdateOutpostResolverInput {
+impl  UpdateOutpostResolverInput  {
     /// <p>A unique string that identifies Resolver on an Outpost.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Name of the Resolver on the Outpost.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon EC2 instance count for a Resolver on the Outpost.</p>
@@ -26,7 +26,7 @@ impl UpdateOutpostResolverInput {
         self.instance_count
     }
     /// <p>Amazon EC2 instance type.</p>
-    pub fn preferred_instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_instance_type(&self) -> ::std::option::Option<& str> {
         self.preferred_instance_type.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl UpdateOutpostResolverInputBuilder {
     }
     /// <p>A unique string that identifies Resolver on an Outpost.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>A unique string that identifies Resolver on an Outpost.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl UpdateOutpostResolverInputBuilder {
     }
     /// <p>Name of the Resolver on the Outpost.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of the Resolver on the Outpost.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl UpdateOutpostResolverInputBuilder {
     }
     /// <p>The Amazon EC2 instance count for a Resolver on the Outpost.</p>
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.instance_count = input;
-        self
+        self.instance_count = input; self
     }
     /// <p>The Amazon EC2 instance count for a Resolver on the Outpost.</p>
     pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
@@ -97,23 +94,26 @@ impl UpdateOutpostResolverInputBuilder {
     }
     /// <p>Amazon EC2 instance type.</p>
     pub fn set_preferred_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_instance_type = input;
-        self
+        self.preferred_instance_type = input; self
     }
     /// <p>Amazon EC2 instance type.</p>
     pub fn get_preferred_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_instance_type
     }
     /// Consumes the builder and constructs a [`UpdateOutpostResolverInput`](crate::operation::update_outpost_resolver::UpdateOutpostResolverInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_outpost_resolver::UpdateOutpostResolverInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_outpost_resolver::UpdateOutpostResolverInput {
-            id: self.id,
-            name: self.name,
-            instance_count: self.instance_count,
-            preferred_instance_type: self.preferred_instance_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_outpost_resolver::UpdateOutpostResolverInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_outpost_resolver::UpdateOutpostResolverInput {
+                id: self.id
+                ,
+                name: self.name
+                ,
+                instance_count: self.instance_count
+                ,
+                preferred_instance_type: self.preferred_instance_type
+                ,
+            }
+        )
     }
 }
+

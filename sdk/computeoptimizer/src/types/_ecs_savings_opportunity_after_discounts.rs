@@ -4,19 +4,19 @@
 /// <p>Savings opportunity represents the estimated monthly savings after applying Savings Plans discounts. You can achieve this by implementing a given Compute Optimizer recommendation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EcsSavingsOpportunityAfterDiscounts {
+pub struct EcsSavingsOpportunityAfterDiscounts  {
     /// <p>The estimated monthly savings possible as a percentage of monthly cost by adopting Compute Optimizer’s Amazon ECS service recommendations. This includes any applicable Savings Plans discounts.</p>
     pub savings_opportunity_percentage: f64,
     /// <p>The estimated monthly savings possible by adopting Compute Optimizer’s Amazon ECS service recommendations. This includes any applicable Savings Plans discounts.</p>
     pub estimated_monthly_savings: ::std::option::Option<crate::types::EcsEstimatedMonthlySavings>,
 }
-impl EcsSavingsOpportunityAfterDiscounts {
+impl  EcsSavingsOpportunityAfterDiscounts  {
     /// <p>The estimated monthly savings possible as a percentage of monthly cost by adopting Compute Optimizer’s Amazon ECS service recommendations. This includes any applicable Savings Plans discounts.</p>
     pub fn savings_opportunity_percentage(&self) -> f64 {
         self.savings_opportunity_percentage
     }
     /// <p>The estimated monthly savings possible by adopting Compute Optimizer’s Amazon ECS service recommendations. This includes any applicable Savings Plans discounts.</p>
-    pub fn estimated_monthly_savings(&self) -> ::std::option::Option<&crate::types::EcsEstimatedMonthlySavings> {
+    pub fn estimated_monthly_savings(&self) -> ::std::option::Option<& crate::types::EcsEstimatedMonthlySavings> {
         self.estimated_monthly_savings.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl EcsSavingsOpportunityAfterDiscountsBuilder {
     }
     /// <p>The estimated monthly savings possible as a percentage of monthly cost by adopting Compute Optimizer’s Amazon ECS service recommendations. This includes any applicable Savings Plans discounts.</p>
     pub fn set_savings_opportunity_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.savings_opportunity_percentage = input;
-        self
+        self.savings_opportunity_percentage = input; self
     }
     /// <p>The estimated monthly savings possible as a percentage of monthly cost by adopting Compute Optimizer’s Amazon ECS service recommendations. This includes any applicable Savings Plans discounts.</p>
     pub fn get_savings_opportunity_percentage(&self) -> &::std::option::Option<f64> {
@@ -56,8 +55,7 @@ impl EcsSavingsOpportunityAfterDiscountsBuilder {
     }
     /// <p>The estimated monthly savings possible by adopting Compute Optimizer’s Amazon ECS service recommendations. This includes any applicable Savings Plans discounts.</p>
     pub fn set_estimated_monthly_savings(mut self, input: ::std::option::Option<crate::types::EcsEstimatedMonthlySavings>) -> Self {
-        self.estimated_monthly_savings = input;
-        self
+        self.estimated_monthly_savings = input; self
     }
     /// <p>The estimated monthly savings possible by adopting Compute Optimizer’s Amazon ECS service recommendations. This includes any applicable Savings Plans discounts.</p>
     pub fn get_estimated_monthly_savings(&self) -> &::std::option::Option<crate::types::EcsEstimatedMonthlySavings> {
@@ -66,8 +64,12 @@ impl EcsSavingsOpportunityAfterDiscountsBuilder {
     /// Consumes the builder and constructs a [`EcsSavingsOpportunityAfterDiscounts`](crate::types::EcsSavingsOpportunityAfterDiscounts).
     pub fn build(self) -> crate::types::EcsSavingsOpportunityAfterDiscounts {
         crate::types::EcsSavingsOpportunityAfterDiscounts {
-            savings_opportunity_percentage: self.savings_opportunity_percentage.unwrap_or_default(),
-            estimated_monthly_savings: self.estimated_monthly_savings,
+            savings_opportunity_percentage: self.savings_opportunity_percentage
+                .unwrap_or_default()
+            ,
+            estimated_monthly_savings: self.estimated_monthly_savings
+            ,
         }
     }
 }
+

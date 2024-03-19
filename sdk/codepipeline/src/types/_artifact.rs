@@ -3,7 +3,7 @@
 /// <p>Artifacts are the files that are worked on by actions in the pipeline. See the action configuration for each action for details about artifact parameters. For example, the S3 source action artifact is a file name (or file path), and the files are generally provided as a ZIP file. Example artifact name: SampleApp_Windows.zip</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Artifact {
+pub struct Artifact  {
     /// <p>The artifact's name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The artifact's revision ID. Depending on the type of object, this could be a commit ID (GitHub) or a revision ID (Amazon S3).</p>
@@ -11,17 +11,17 @@ pub struct Artifact {
     /// <p>The location of an artifact.</p>
     pub location: ::std::option::Option<crate::types::ArtifactLocation>,
 }
-impl Artifact {
+impl  Artifact  {
     /// <p>The artifact's name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The artifact's revision ID. Depending on the type of object, this could be a commit ID (GitHub) or a revision ID (Amazon S3).</p>
-    pub fn revision(&self) -> ::std::option::Option<&str> {
+    pub fn revision(&self) -> ::std::option::Option<& str> {
         self.revision.as_deref()
     }
     /// <p>The location of an artifact.</p>
-    pub fn location(&self) -> ::std::option::Option<&crate::types::ArtifactLocation> {
+    pub fn location(&self) -> ::std::option::Option<& crate::types::ArtifactLocation> {
         self.location.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl ArtifactBuilder {
     }
     /// <p>The artifact's name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The artifact's name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ArtifactBuilder {
     }
     /// <p>The artifact's revision ID. Depending on the type of object, this could be a commit ID (GitHub) or a revision ID (Amazon S3).</p>
     pub fn set_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision = input;
-        self
+        self.revision = input; self
     }
     /// <p>The artifact's revision ID. Depending on the type of object, this could be a commit ID (GitHub) or a revision ID (Amazon S3).</p>
     pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl ArtifactBuilder {
     }
     /// <p>The location of an artifact.</p>
     pub fn set_location(mut self, input: ::std::option::Option<crate::types::ArtifactLocation>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The location of an artifact.</p>
     pub fn get_location(&self) -> &::std::option::Option<crate::types::ArtifactLocation> {
@@ -86,9 +83,13 @@ impl ArtifactBuilder {
     /// Consumes the builder and constructs a [`Artifact`](crate::types::Artifact).
     pub fn build(self) -> crate::types::Artifact {
         crate::types::Artifact {
-            name: self.name,
-            revision: self.revision,
-            location: self.location,
+            name: self.name
+            ,
+            revision: self.revision
+            ,
+            location: self.location
+            ,
         }
     }
 }
+

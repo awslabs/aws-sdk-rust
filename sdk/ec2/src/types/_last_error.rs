@@ -3,19 +3,19 @@
 /// <p>The last error that occurred for a VPC endpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LastError {
+pub struct LastError  {
     /// <p>The error message for the VPC endpoint error.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The error code for the VPC endpoint error.</p>
     pub code: ::std::option::Option<::std::string::String>,
 }
-impl LastError {
+impl  LastError  {
     /// <p>The error message for the VPC endpoint error.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The error code for the VPC endpoint error.</p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl LastErrorBuilder {
     }
     /// <p>The error message for the VPC endpoint error.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The error message for the VPC endpoint error.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl LastErrorBuilder {
     }
     /// <p>The error code for the VPC endpoint error.</p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The error code for the VPC endpoint error.</p>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl LastErrorBuilder {
     /// Consumes the builder and constructs a [`LastError`](crate::types::LastError).
     pub fn build(self) -> crate::types::LastError {
         crate::types::LastError {
-            message: self.message,
-            code: self.code,
+            message: self.message
+            ,
+            code: self.code
+            ,
         }
     }
 }
+

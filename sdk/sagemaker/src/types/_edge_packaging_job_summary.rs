@@ -3,7 +3,7 @@
 /// <p>Summary of edge packaging job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EdgePackagingJobSummary {
+pub struct EdgePackagingJobSummary  {
     /// <p>The Amazon Resource Name (ARN) of the edge packaging job.</p>
     pub edge_packaging_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the edge packaging job.</p>
@@ -21,37 +21,37 @@ pub struct EdgePackagingJobSummary {
     /// <p>The timestamp of when the edge packaging job was last updated.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl EdgePackagingJobSummary {
+impl  EdgePackagingJobSummary  {
     /// <p>The Amazon Resource Name (ARN) of the edge packaging job.</p>
-    pub fn edge_packaging_job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn edge_packaging_job_arn(&self) -> ::std::option::Option<& str> {
         self.edge_packaging_job_arn.as_deref()
     }
     /// <p>The name of the edge packaging job.</p>
-    pub fn edge_packaging_job_name(&self) -> ::std::option::Option<&str> {
+    pub fn edge_packaging_job_name(&self) -> ::std::option::Option<& str> {
         self.edge_packaging_job_name.as_deref()
     }
     /// <p>The status of the edge packaging job.</p>
-    pub fn edge_packaging_job_status(&self) -> ::std::option::Option<&crate::types::EdgePackagingJobStatus> {
+    pub fn edge_packaging_job_status(&self) -> ::std::option::Option<& crate::types::EdgePackagingJobStatus> {
         self.edge_packaging_job_status.as_ref()
     }
     /// <p>The name of the SageMaker Neo compilation job.</p>
-    pub fn compilation_job_name(&self) -> ::std::option::Option<&str> {
+    pub fn compilation_job_name(&self) -> ::std::option::Option<& str> {
         self.compilation_job_name.as_deref()
     }
     /// <p>The name of the model.</p>
-    pub fn model_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<& str> {
         self.model_name.as_deref()
     }
     /// <p>The version of the model.</p>
-    pub fn model_version(&self) -> ::std::option::Option<&str> {
+    pub fn model_version(&self) -> ::std::option::Option<& str> {
         self.model_version.as_deref()
     }
     /// <p>The timestamp of when the job was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The timestamp of when the edge packaging job was last updated.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -84,8 +84,7 @@ impl EdgePackagingJobSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the edge packaging job.</p>
     pub fn set_edge_packaging_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.edge_packaging_job_arn = input;
-        self
+        self.edge_packaging_job_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the edge packaging job.</p>
     pub fn get_edge_packaging_job_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +98,7 @@ impl EdgePackagingJobSummaryBuilder {
     }
     /// <p>The name of the edge packaging job.</p>
     pub fn set_edge_packaging_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.edge_packaging_job_name = input;
-        self
+        self.edge_packaging_job_name = input; self
     }
     /// <p>The name of the edge packaging job.</p>
     pub fn get_edge_packaging_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +112,7 @@ impl EdgePackagingJobSummaryBuilder {
     }
     /// <p>The status of the edge packaging job.</p>
     pub fn set_edge_packaging_job_status(mut self, input: ::std::option::Option<crate::types::EdgePackagingJobStatus>) -> Self {
-        self.edge_packaging_job_status = input;
-        self
+        self.edge_packaging_job_status = input; self
     }
     /// <p>The status of the edge packaging job.</p>
     pub fn get_edge_packaging_job_status(&self) -> &::std::option::Option<crate::types::EdgePackagingJobStatus> {
@@ -128,8 +125,7 @@ impl EdgePackagingJobSummaryBuilder {
     }
     /// <p>The name of the SageMaker Neo compilation job.</p>
     pub fn set_compilation_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.compilation_job_name = input;
-        self
+        self.compilation_job_name = input; self
     }
     /// <p>The name of the SageMaker Neo compilation job.</p>
     pub fn get_compilation_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +138,7 @@ impl EdgePackagingJobSummaryBuilder {
     }
     /// <p>The name of the model.</p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_name = input;
-        self
+        self.model_name = input; self
     }
     /// <p>The name of the model.</p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,8 +151,7 @@ impl EdgePackagingJobSummaryBuilder {
     }
     /// <p>The version of the model.</p>
     pub fn set_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_version = input;
-        self
+        self.model_version = input; self
     }
     /// <p>The version of the model.</p>
     pub fn get_model_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,8 +164,7 @@ impl EdgePackagingJobSummaryBuilder {
     }
     /// <p>The timestamp of when the job was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The timestamp of when the job was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -184,8 +177,7 @@ impl EdgePackagingJobSummaryBuilder {
     }
     /// <p>The timestamp of when the edge packaging job was last updated.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The timestamp of when the edge packaging job was last updated.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -194,14 +186,23 @@ impl EdgePackagingJobSummaryBuilder {
     /// Consumes the builder and constructs a [`EdgePackagingJobSummary`](crate::types::EdgePackagingJobSummary).
     pub fn build(self) -> crate::types::EdgePackagingJobSummary {
         crate::types::EdgePackagingJobSummary {
-            edge_packaging_job_arn: self.edge_packaging_job_arn,
-            edge_packaging_job_name: self.edge_packaging_job_name,
-            edge_packaging_job_status: self.edge_packaging_job_status,
-            compilation_job_name: self.compilation_job_name,
-            model_name: self.model_name,
-            model_version: self.model_version,
-            creation_time: self.creation_time,
-            last_modified_time: self.last_modified_time,
+            edge_packaging_job_arn: self.edge_packaging_job_arn
+            ,
+            edge_packaging_job_name: self.edge_packaging_job_name
+            ,
+            edge_packaging_job_status: self.edge_packaging_job_status
+            ,
+            compilation_job_name: self.compilation_job_name
+            ,
+            model_name: self.model_name
+            ,
+            model_version: self.model_version
+            ,
+            creation_time: self.creation_time
+            ,
+            last_modified_time: self.last_modified_time
+            ,
         }
     }
 }
+

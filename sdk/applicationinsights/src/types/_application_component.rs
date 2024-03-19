@@ -3,7 +3,7 @@
 /// <p>Describes a standalone resource or similarly grouped resources that the application is made up of.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationComponent {
+pub struct ApplicationComponent  {
     /// <p>The name of the component.</p>
     pub component_name: ::std::option::Option<::std::string::String>,
     /// <p>If logging is supported for the resource type, indicates whether the component has configured logs to be monitored.</p>
@@ -17,29 +17,27 @@ pub struct ApplicationComponent {
     /// <p>Indicates whether the application component is monitored.</p>
     pub monitor: ::std::option::Option<bool>,
     /// <p>Workloads detected in the application component.</p>
-    pub detected_workload: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::Tier, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    >,
+    pub detected_workload: ::std::option::Option<::std::collections::HashMap::<crate::types::Tier, ::std::collections::HashMap::<::std::string::String, ::std::string::String>>>,
 }
-impl ApplicationComponent {
+impl  ApplicationComponent  {
     /// <p>The name of the component.</p>
-    pub fn component_name(&self) -> ::std::option::Option<&str> {
+    pub fn component_name(&self) -> ::std::option::Option<& str> {
         self.component_name.as_deref()
     }
     /// <p>If logging is supported for the resource type, indicates whether the component has configured logs to be monitored.</p>
-    pub fn component_remarks(&self) -> ::std::option::Option<&str> {
+    pub fn component_remarks(&self) -> ::std::option::Option<& str> {
         self.component_remarks.as_deref()
     }
     /// <p>The resource type. Supported resource types include EC2 instances, Auto Scaling group, Classic ELB, Application ELB, and SQS Queue.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The operating system of the component.</p>
-    pub fn os_type(&self) -> ::std::option::Option<&crate::types::OsType> {
+    pub fn os_type(&self) -> ::std::option::Option<& crate::types::OsType> {
         self.os_type.as_ref()
     }
     /// <p>The stack tier of the application component.</p>
-    pub fn tier(&self) -> ::std::option::Option<&crate::types::Tier> {
+    pub fn tier(&self) -> ::std::option::Option<& crate::types::Tier> {
         self.tier.as_ref()
     }
     /// <p>Indicates whether the application component is monitored.</p>
@@ -47,11 +45,7 @@ impl ApplicationComponent {
         self.monitor
     }
     /// <p>Workloads detected in the application component.</p>
-    pub fn detected_workload(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<crate::types::Tier, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    > {
+    pub fn detected_workload(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::Tier, ::std::collections::HashMap::<::std::string::String, ::std::string::String>>> {
         self.detected_workload.as_ref()
     }
 }
@@ -72,9 +66,7 @@ pub struct ApplicationComponentBuilder {
     pub(crate) os_type: ::std::option::Option<crate::types::OsType>,
     pub(crate) tier: ::std::option::Option<crate::types::Tier>,
     pub(crate) monitor: ::std::option::Option<bool>,
-    pub(crate) detected_workload: ::std::option::Option<
-        ::std::collections::HashMap<crate::types::Tier, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    >,
+    pub(crate) detected_workload: ::std::option::Option<::std::collections::HashMap::<crate::types::Tier, ::std::collections::HashMap::<::std::string::String, ::std::string::String>>>,
 }
 impl ApplicationComponentBuilder {
     /// <p>The name of the component.</p>
@@ -84,8 +76,7 @@ impl ApplicationComponentBuilder {
     }
     /// <p>The name of the component.</p>
     pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_name = input;
-        self
+        self.component_name = input; self
     }
     /// <p>The name of the component.</p>
     pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +89,7 @@ impl ApplicationComponentBuilder {
     }
     /// <p>If logging is supported for the resource type, indicates whether the component has configured logs to be monitored.</p>
     pub fn set_component_remarks(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_remarks = input;
-        self
+        self.component_remarks = input; self
     }
     /// <p>If logging is supported for the resource type, indicates whether the component has configured logs to be monitored.</p>
     pub fn get_component_remarks(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +102,7 @@ impl ApplicationComponentBuilder {
     }
     /// <p>The resource type. Supported resource types include EC2 instances, Auto Scaling group, Classic ELB, Application ELB, and SQS Queue.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type. Supported resource types include EC2 instances, Auto Scaling group, Classic ELB, Application ELB, and SQS Queue.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +115,7 @@ impl ApplicationComponentBuilder {
     }
     /// <p>The operating system of the component.</p>
     pub fn set_os_type(mut self, input: ::std::option::Option<crate::types::OsType>) -> Self {
-        self.os_type = input;
-        self
+        self.os_type = input; self
     }
     /// <p>The operating system of the component.</p>
     pub fn get_os_type(&self) -> &::std::option::Option<crate::types::OsType> {
@@ -140,8 +128,7 @@ impl ApplicationComponentBuilder {
     }
     /// <p>The stack tier of the application component.</p>
     pub fn set_tier(mut self, input: ::std::option::Option<crate::types::Tier>) -> Self {
-        self.tier = input;
-        self
+        self.tier = input; self
     }
     /// <p>The stack tier of the application component.</p>
     pub fn get_tier(&self) -> &::std::option::Option<crate::types::Tier> {
@@ -154,8 +141,7 @@ impl ApplicationComponentBuilder {
     }
     /// <p>Indicates whether the application component is monitored.</p>
     pub fn set_monitor(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.monitor = input;
-        self
+        self.monitor = input; self
     }
     /// <p>Indicates whether the application component is monitored.</p>
     pub fn get_monitor(&self) -> &::std::option::Option<bool> {
@@ -166,40 +152,38 @@ impl ApplicationComponentBuilder {
     /// To override the contents of this collection use [`set_detected_workload`](Self::set_detected_workload).
     ///
     /// <p>Workloads detected in the application component.</p>
-    pub fn detected_workload(mut self, k: crate::types::Tier, v: ::std::collections::HashMap<::std::string::String, ::std::string::String>) -> Self {
+    pub fn detected_workload(mut self, k: crate::types::Tier, v: ::std::collections::HashMap::<::std::string::String, ::std::string::String>) -> Self {
         let mut hash_map = self.detected_workload.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.detected_workload = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.detected_workload = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Workloads detected in the application component.</p>
-    pub fn set_detected_workload(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<crate::types::Tier, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-        >,
-    ) -> Self {
-        self.detected_workload = input;
-        self
+    pub fn set_detected_workload(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::Tier, ::std::collections::HashMap::<::std::string::String, ::std::string::String>>>) -> Self {
+        self.detected_workload = input; self
     }
     /// <p>Workloads detected in the application component.</p>
-    pub fn get_detected_workload(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<crate::types::Tier, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    > {
+    pub fn get_detected_workload(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::Tier, ::std::collections::HashMap::<::std::string::String, ::std::string::String>>> {
         &self.detected_workload
     }
     /// Consumes the builder and constructs a [`ApplicationComponent`](crate::types::ApplicationComponent).
     pub fn build(self) -> crate::types::ApplicationComponent {
         crate::types::ApplicationComponent {
-            component_name: self.component_name,
-            component_remarks: self.component_remarks,
-            resource_type: self.resource_type,
-            os_type: self.os_type,
-            tier: self.tier,
-            monitor: self.monitor,
-            detected_workload: self.detected_workload,
+            component_name: self.component_name
+            ,
+            component_remarks: self.component_remarks
+            ,
+            resource_type: self.resource_type
+            ,
+            os_type: self.os_type
+            ,
+            tier: self.tier
+            ,
+            monitor: self.monitor
+            ,
+            detected_workload: self.detected_workload
+            ,
         }
     }
 }
+

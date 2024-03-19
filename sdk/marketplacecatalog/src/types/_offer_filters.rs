@@ -3,7 +3,7 @@
 /// <p>Object containing all the filter fields for offers entity. Client can add only one wildcard filter and a maximum of 8 filters in a single <code>ListEntities</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OfferFilters {
+pub struct OfferFilters  {
     /// <p>Allows filtering on <code>EntityId</code> of an offer.</p>
     pub entity_id: ::std::option::Option<crate::types::OfferEntityIdFilter>,
     /// <p>Allows filtering on the <code>Name</code> of an offer.</p>
@@ -23,41 +23,41 @@ pub struct OfferFilters {
     /// <p>Allows filtering on the <code>LastModifiedDate</code> of an offer.</p>
     pub last_modified_date: ::std::option::Option<crate::types::OfferLastModifiedDateFilter>,
 }
-impl OfferFilters {
+impl  OfferFilters  {
     /// <p>Allows filtering on <code>EntityId</code> of an offer.</p>
-    pub fn entity_id(&self) -> ::std::option::Option<&crate::types::OfferEntityIdFilter> {
+    pub fn entity_id(&self) -> ::std::option::Option<& crate::types::OfferEntityIdFilter> {
         self.entity_id.as_ref()
     }
     /// <p>Allows filtering on the <code>Name</code> of an offer.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::OfferNameFilter> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::OfferNameFilter> {
         self.name.as_ref()
     }
     /// <p>Allows filtering on the <code>ProductId</code> of an offer.</p>
-    pub fn product_id(&self) -> ::std::option::Option<&crate::types::OfferProductIdFilter> {
+    pub fn product_id(&self) -> ::std::option::Option<& crate::types::OfferProductIdFilter> {
         self.product_id.as_ref()
     }
     /// <p>Allows filtering on the <code>ReleaseDate</code> of an offer.</p>
-    pub fn release_date(&self) -> ::std::option::Option<&crate::types::OfferReleaseDateFilter> {
+    pub fn release_date(&self) -> ::std::option::Option<& crate::types::OfferReleaseDateFilter> {
         self.release_date.as_ref()
     }
     /// <p>Allows filtering on the <code>AvailabilityEndDate</code> of an offer.</p>
-    pub fn availability_end_date(&self) -> ::std::option::Option<&crate::types::OfferAvailabilityEndDateFilter> {
+    pub fn availability_end_date(&self) -> ::std::option::Option<& crate::types::OfferAvailabilityEndDateFilter> {
         self.availability_end_date.as_ref()
     }
     /// <p>Allows filtering on the <code>BuyerAccounts</code> of an offer.</p>
-    pub fn buyer_accounts(&self) -> ::std::option::Option<&crate::types::OfferBuyerAccountsFilter> {
+    pub fn buyer_accounts(&self) -> ::std::option::Option<& crate::types::OfferBuyerAccountsFilter> {
         self.buyer_accounts.as_ref()
     }
     /// <p>Allows filtering on the <code>State</code> of an offer.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::OfferStateFilter> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::OfferStateFilter> {
         self.state.as_ref()
     }
     /// <p>Allows filtering on the <code>Targeting</code> of an offer.</p>
-    pub fn targeting(&self) -> ::std::option::Option<&crate::types::OfferTargetingFilter> {
+    pub fn targeting(&self) -> ::std::option::Option<& crate::types::OfferTargetingFilter> {
         self.targeting.as_ref()
     }
     /// <p>Allows filtering on the <code>LastModifiedDate</code> of an offer.</p>
-    pub fn last_modified_date(&self) -> ::std::option::Option<&crate::types::OfferLastModifiedDateFilter> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<& crate::types::OfferLastModifiedDateFilter> {
         self.last_modified_date.as_ref()
     }
 }
@@ -90,8 +90,7 @@ impl OfferFiltersBuilder {
     }
     /// <p>Allows filtering on <code>EntityId</code> of an offer.</p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<crate::types::OfferEntityIdFilter>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>Allows filtering on <code>EntityId</code> of an offer.</p>
     pub fn get_entity_id(&self) -> &::std::option::Option<crate::types::OfferEntityIdFilter> {
@@ -104,8 +103,7 @@ impl OfferFiltersBuilder {
     }
     /// <p>Allows filtering on the <code>Name</code> of an offer.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::OfferNameFilter>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Allows filtering on the <code>Name</code> of an offer.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::OfferNameFilter> {
@@ -118,8 +116,7 @@ impl OfferFiltersBuilder {
     }
     /// <p>Allows filtering on the <code>ProductId</code> of an offer.</p>
     pub fn set_product_id(mut self, input: ::std::option::Option<crate::types::OfferProductIdFilter>) -> Self {
-        self.product_id = input;
-        self
+        self.product_id = input; self
     }
     /// <p>Allows filtering on the <code>ProductId</code> of an offer.</p>
     pub fn get_product_id(&self) -> &::std::option::Option<crate::types::OfferProductIdFilter> {
@@ -132,8 +129,7 @@ impl OfferFiltersBuilder {
     }
     /// <p>Allows filtering on the <code>ReleaseDate</code> of an offer.</p>
     pub fn set_release_date(mut self, input: ::std::option::Option<crate::types::OfferReleaseDateFilter>) -> Self {
-        self.release_date = input;
-        self
+        self.release_date = input; self
     }
     /// <p>Allows filtering on the <code>ReleaseDate</code> of an offer.</p>
     pub fn get_release_date(&self) -> &::std::option::Option<crate::types::OfferReleaseDateFilter> {
@@ -146,8 +142,7 @@ impl OfferFiltersBuilder {
     }
     /// <p>Allows filtering on the <code>AvailabilityEndDate</code> of an offer.</p>
     pub fn set_availability_end_date(mut self, input: ::std::option::Option<crate::types::OfferAvailabilityEndDateFilter>) -> Self {
-        self.availability_end_date = input;
-        self
+        self.availability_end_date = input; self
     }
     /// <p>Allows filtering on the <code>AvailabilityEndDate</code> of an offer.</p>
     pub fn get_availability_end_date(&self) -> &::std::option::Option<crate::types::OfferAvailabilityEndDateFilter> {
@@ -160,8 +155,7 @@ impl OfferFiltersBuilder {
     }
     /// <p>Allows filtering on the <code>BuyerAccounts</code> of an offer.</p>
     pub fn set_buyer_accounts(mut self, input: ::std::option::Option<crate::types::OfferBuyerAccountsFilter>) -> Self {
-        self.buyer_accounts = input;
-        self
+        self.buyer_accounts = input; self
     }
     /// <p>Allows filtering on the <code>BuyerAccounts</code> of an offer.</p>
     pub fn get_buyer_accounts(&self) -> &::std::option::Option<crate::types::OfferBuyerAccountsFilter> {
@@ -174,8 +168,7 @@ impl OfferFiltersBuilder {
     }
     /// <p>Allows filtering on the <code>State</code> of an offer.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::OfferStateFilter>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Allows filtering on the <code>State</code> of an offer.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::OfferStateFilter> {
@@ -188,8 +181,7 @@ impl OfferFiltersBuilder {
     }
     /// <p>Allows filtering on the <code>Targeting</code> of an offer.</p>
     pub fn set_targeting(mut self, input: ::std::option::Option<crate::types::OfferTargetingFilter>) -> Self {
-        self.targeting = input;
-        self
+        self.targeting = input; self
     }
     /// <p>Allows filtering on the <code>Targeting</code> of an offer.</p>
     pub fn get_targeting(&self) -> &::std::option::Option<crate::types::OfferTargetingFilter> {
@@ -202,8 +194,7 @@ impl OfferFiltersBuilder {
     }
     /// <p>Allows filtering on the <code>LastModifiedDate</code> of an offer.</p>
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<crate::types::OfferLastModifiedDateFilter>) -> Self {
-        self.last_modified_date = input;
-        self
+        self.last_modified_date = input; self
     }
     /// <p>Allows filtering on the <code>LastModifiedDate</code> of an offer.</p>
     pub fn get_last_modified_date(&self) -> &::std::option::Option<crate::types::OfferLastModifiedDateFilter> {
@@ -212,15 +203,25 @@ impl OfferFiltersBuilder {
     /// Consumes the builder and constructs a [`OfferFilters`](crate::types::OfferFilters).
     pub fn build(self) -> crate::types::OfferFilters {
         crate::types::OfferFilters {
-            entity_id: self.entity_id,
-            name: self.name,
-            product_id: self.product_id,
-            release_date: self.release_date,
-            availability_end_date: self.availability_end_date,
-            buyer_accounts: self.buyer_accounts,
-            state: self.state,
-            targeting: self.targeting,
-            last_modified_date: self.last_modified_date,
+            entity_id: self.entity_id
+            ,
+            name: self.name
+            ,
+            product_id: self.product_id
+            ,
+            release_date: self.release_date
+            ,
+            availability_end_date: self.availability_end_date
+            ,
+            buyer_accounts: self.buyer_accounts
+            ,
+            state: self.state
+            ,
+            targeting: self.targeting
+            ,
+            last_modified_date: self.last_modified_date
+            ,
         }
     }
 }
+

@@ -15,19 +15,19 @@
 /// <p>A fragment selector range with a start time of 00:00:01 and end time of 00:00:04 would return the fragments with start times of 00:00:02 and 00:00:04.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FragmentSelector {
+pub struct FragmentSelector  {
     /// <p>The origin of the timestamps to use (Server or Producer).</p>
     pub fragment_selector_type: crate::types::FragmentSelectorType,
     /// <p>The range of timestamps to return.</p>
     pub timestamp_range: ::std::option::Option<crate::types::TimestampRange>,
 }
-impl FragmentSelector {
+impl  FragmentSelector  {
     /// <p>The origin of the timestamps to use (Server or Producer).</p>
-    pub fn fragment_selector_type(&self) -> &crate::types::FragmentSelectorType {
+    pub fn fragment_selector_type(&self) -> & crate::types::FragmentSelectorType {
         &self.fragment_selector_type
     }
     /// <p>The range of timestamps to return.</p>
-    pub fn timestamp_range(&self) -> ::std::option::Option<&crate::types::TimestampRange> {
+    pub fn timestamp_range(&self) -> ::std::option::Option<& crate::types::TimestampRange> {
         self.timestamp_range.as_ref()
     }
 }
@@ -54,8 +54,7 @@ impl FragmentSelectorBuilder {
     }
     /// <p>The origin of the timestamps to use (Server or Producer).</p>
     pub fn set_fragment_selector_type(mut self, input: ::std::option::Option<crate::types::FragmentSelectorType>) -> Self {
-        self.fragment_selector_type = input;
-        self
+        self.fragment_selector_type = input; self
     }
     /// <p>The origin of the timestamps to use (Server or Producer).</p>
     pub fn get_fragment_selector_type(&self) -> &::std::option::Option<crate::types::FragmentSelectorType> {
@@ -69,8 +68,7 @@ impl FragmentSelectorBuilder {
     }
     /// <p>The range of timestamps to return.</p>
     pub fn set_timestamp_range(mut self, input: ::std::option::Option<crate::types::TimestampRange>) -> Self {
-        self.timestamp_range = input;
-        self
+        self.timestamp_range = input; self
     }
     /// <p>The range of timestamps to return.</p>
     pub fn get_timestamp_range(&self) -> &::std::option::Option<crate::types::TimestampRange> {
@@ -80,14 +78,17 @@ impl FragmentSelectorBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`fragment_selector_type`](crate::types::builders::FragmentSelectorBuilder::fragment_selector_type)
     pub fn build(self) -> ::std::result::Result<crate::types::FragmentSelector, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FragmentSelector {
-            fragment_selector_type: self.fragment_selector_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "fragment_selector_type",
-                    "fragment_selector_type was not specified but it is required when building FragmentSelector",
-                )
-            })?,
-            timestamp_range: self.timestamp_range,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FragmentSelector {
+                fragment_selector_type: self.fragment_selector_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("fragment_selector_type", "fragment_selector_type was not specified but it is required when building FragmentSelector")
+                    )?
+                ,
+                timestamp_range: self.timestamp_range
+                ,
+            }
+        )
     }
 }
+

@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCompilationJobs`](crate::operation::list_compilation_jobs::builders::ListCompilationJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_compilation_jobs::builders::ListCompilationJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_compilation_jobs::builders::ListCompilationJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_compilation_jobs::builders::ListCompilationJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the result of the previous <code>ListCompilationJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model compilation jobs, use the token in the next request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_compilation_jobs::builders::ListCompilationJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_compilation_jobs::builders::ListCompilationJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of model compilation jobs to return in the response.</p><br>
     ///   - [`creation_time_after(DateTime)`](crate::operation::list_compilation_jobs::builders::ListCompilationJobsFluentBuilder::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::operation::list_compilation_jobs::builders::ListCompilationJobsFluentBuilder::set_creation_time_after):<br>required: **false**<br><p>A filter that returns the model compilation jobs that were created after a specified time.</p><br>
@@ -14,11 +14,12 @@ impl super::Client {
     ///   - [`status_equals(CompilationJobStatus)`](crate::operation::list_compilation_jobs::builders::ListCompilationJobsFluentBuilder::status_equals) / [`set_status_equals(Option<CompilationJobStatus>)`](crate::operation::list_compilation_jobs::builders::ListCompilationJobsFluentBuilder::set_status_equals):<br>required: **false**<br><p>A filter that retrieves model compilation jobs with a specific <code>CompilationJobStatus</code> status.</p><br>
     ///   - [`sort_by(ListCompilationJobsSortBy)`](crate::operation::list_compilation_jobs::builders::ListCompilationJobsFluentBuilder::sort_by) / [`set_sort_by(Option<ListCompilationJobsSortBy>)`](crate::operation::list_compilation_jobs::builders::ListCompilationJobsFluentBuilder::set_sort_by):<br>required: **false**<br><p>The field by which to sort results. The default is <code>CreationTime</code>.</p><br>
     ///   - [`sort_order(SortOrder)`](crate::operation::list_compilation_jobs::builders::ListCompilationJobsFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_compilation_jobs::builders::ListCompilationJobsFluentBuilder::set_sort_order):<br>required: **false**<br><p>The sort order for results. The default is <code>Ascending</code>.</p><br>
-    /// - On success, responds with [`ListCompilationJobsOutput`](crate::operation::list_compilation_jobs::ListCompilationJobsOutput) with field(s):
+                            /// - On success, responds with [`ListCompilationJobsOutput`](crate::operation::list_compilation_jobs::ListCompilationJobsOutput) with field(s):
     ///   - [`compilation_job_summaries(Option<Vec::<CompilationJobSummary>>)`](crate::operation::list_compilation_jobs::ListCompilationJobsOutput::compilation_job_summaries): <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html">CompilationJobSummary</a> objects, each describing a model compilation job.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_compilation_jobs::ListCompilationJobsOutput::next_token): <p>If the response is truncated, Amazon SageMaker returns this <code>NextToken</code>. To retrieve the next set of model compilation jobs, use this token in the next request.</p>
-    /// - On failure, responds with [`SdkError<ListCompilationJobsError>`](crate::operation::list_compilation_jobs::ListCompilationJobsError)
+                            /// - On failure, responds with [`SdkError<ListCompilationJobsError>`](crate::operation::list_compilation_jobs::ListCompilationJobsError)
     pub fn list_compilation_jobs(&self) -> crate::operation::list_compilation_jobs::builders::ListCompilationJobsFluentBuilder {
-        crate::operation::list_compilation_jobs::builders::ListCompilationJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_compilation_jobs::builders::ListCompilationJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

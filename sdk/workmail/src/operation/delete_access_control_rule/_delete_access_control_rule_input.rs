@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAccessControlRuleInput {
+pub struct DeleteAccessControlRuleInput  {
     /// <p>The identifier for the organization.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the access control rule.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteAccessControlRuleInput {
+impl  DeleteAccessControlRuleInput  {
     /// <p>The identifier for the organization.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The name of the access control rule.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteAccessControlRuleInputBuilder {
     }
     /// <p>The identifier for the organization.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The identifier for the organization.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DeleteAccessControlRuleInputBuilder {
     }
     /// <p>The name of the access control rule.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the access control rule.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     /// Consumes the builder and constructs a [`DeleteAccessControlRuleInput`](crate::operation::delete_access_control_rule::DeleteAccessControlRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_access_control_rule::DeleteAccessControlRuleInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_access_control_rule::DeleteAccessControlRuleInput {
-            organization_id: self.organization_id,
-            name: self.name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_access_control_rule::DeleteAccessControlRuleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_access_control_rule::DeleteAccessControlRuleInput {
+                organization_id: self.organization_id
+                ,
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

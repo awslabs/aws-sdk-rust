@@ -2,39 +2,40 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateWorkteamInput {
+pub struct UpdateWorkteamInput  {
     /// <p>The name of the work team to update.</p>
     pub workteam_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the work team.</p>
     /// <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>. You should not provide input for both of these parameters in a single request.</p>
     /// <p>For workforces created using Amazon Cognito, private work teams correspond to Amazon Cognito <i>user groups</i> within the user pool used to create a workforce. All of the <code>CognitoMemberDefinition</code> objects that make up the member definition must have the same <code>ClientId</code> and <code>UserPool</code> values. To add a Amazon Cognito user group to an existing worker pool, see <code>Adding groups to a User Pool</code>. For more information about user pools, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito User Pools</a>.</p>
     /// <p>For workforces created using your own OIDC IdP, specify the user groups that you want to include in your private work team in <code>OidcMemberDefinition</code> by listing those groups in <code>Groups</code>. Be aware that user groups that are already in the work team must also be listed in <code>Groups</code> when you make this request to remain on the work team. If you do not include these user groups, they will no longer be associated with the work team you update.</p>
-    pub member_definitions: ::std::option::Option<::std::vec::Vec<crate::types::MemberDefinition>>,
+    pub member_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::MemberDefinition>>,
     /// <p>An updated description for the work team.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Configures SNS topic notifications for available or expiring work items</p>
     pub notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
 }
-impl UpdateWorkteamInput {
+impl  UpdateWorkteamInput  {
     /// <p>The name of the work team to update.</p>
-    pub fn workteam_name(&self) -> ::std::option::Option<&str> {
+    pub fn workteam_name(&self) -> ::std::option::Option<& str> {
         self.workteam_name.as_deref()
     }
     /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the work team.</p>
     /// <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>. You should not provide input for both of these parameters in a single request.</p>
     /// <p>For workforces created using Amazon Cognito, private work teams correspond to Amazon Cognito <i>user groups</i> within the user pool used to create a workforce. All of the <code>CognitoMemberDefinition</code> objects that make up the member definition must have the same <code>ClientId</code> and <code>UserPool</code> values. To add a Amazon Cognito user group to an existing worker pool, see <code>Adding groups to a User Pool</code>. For more information about user pools, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito User Pools</a>.</p>
     /// <p>For workforces created using your own OIDC IdP, specify the user groups that you want to include in your private work team in <code>OidcMemberDefinition</code> by listing those groups in <code>Groups</code>. Be aware that user groups that are already in the work team must also be listed in <code>Groups</code> when you make this request to remain on the work team. If you do not include these user groups, they will no longer be associated with the work team you update.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.member_definitions.is_none()`.
-    pub fn member_definitions(&self) -> &[crate::types::MemberDefinition] {
-        self.member_definitions.as_deref().unwrap_or_default()
+    pub fn member_definitions(&self) -> & [crate::types::MemberDefinition] {
+        self.member_definitions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An updated description for the work team.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Configures SNS topic notifications for available or expiring work items</p>
-    pub fn notification_configuration(&self) -> ::std::option::Option<&crate::types::NotificationConfiguration> {
+    pub fn notification_configuration(&self) -> ::std::option::Option<& crate::types::NotificationConfiguration> {
         self.notification_configuration.as_ref()
     }
 }
@@ -50,7 +51,7 @@ impl UpdateWorkteamInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateWorkteamInputBuilder {
     pub(crate) workteam_name: ::std::option::Option<::std::string::String>,
-    pub(crate) member_definitions: ::std::option::Option<::std::vec::Vec<crate::types::MemberDefinition>>,
+    pub(crate) member_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::MemberDefinition>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
 }
@@ -63,8 +64,7 @@ impl UpdateWorkteamInputBuilder {
     }
     /// <p>The name of the work team to update.</p>
     pub fn set_workteam_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workteam_name = input;
-        self
+        self.workteam_name = input; self
     }
     /// <p>The name of the work team to update.</p>
     pub fn get_workteam_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,23 +80,22 @@ impl UpdateWorkteamInputBuilder {
     /// <p>For workforces created using your own OIDC IdP, specify the user groups that you want to include in your private work team in <code>OidcMemberDefinition</code> by listing those groups in <code>Groups</code>. Be aware that user groups that are already in the work team must also be listed in <code>Groups</code> when you make this request to remain on the work team. If you do not include these user groups, they will no longer be associated with the work team you update.</p>
     pub fn member_definitions(mut self, input: crate::types::MemberDefinition) -> Self {
         let mut v = self.member_definitions.unwrap_or_default();
-        v.push(input);
-        self.member_definitions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.member_definitions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the work team.</p>
     /// <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>. You should not provide input for both of these parameters in a single request.</p>
     /// <p>For workforces created using Amazon Cognito, private work teams correspond to Amazon Cognito <i>user groups</i> within the user pool used to create a workforce. All of the <code>CognitoMemberDefinition</code> objects that make up the member definition must have the same <code>ClientId</code> and <code>UserPool</code> values. To add a Amazon Cognito user group to an existing worker pool, see <code>Adding groups to a User Pool</code>. For more information about user pools, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito User Pools</a>.</p>
     /// <p>For workforces created using your own OIDC IdP, specify the user groups that you want to include in your private work team in <code>OidcMemberDefinition</code> by listing those groups in <code>Groups</code>. Be aware that user groups that are already in the work team must also be listed in <code>Groups</code> when you make this request to remain on the work team. If you do not include these user groups, they will no longer be associated with the work team you update.</p>
-    pub fn set_member_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberDefinition>>) -> Self {
-        self.member_definitions = input;
-        self
+    pub fn set_member_definitions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MemberDefinition>>) -> Self {
+        self.member_definitions = input; self
     }
     /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the work team.</p>
     /// <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>. You should not provide input for both of these parameters in a single request.</p>
     /// <p>For workforces created using Amazon Cognito, private work teams correspond to Amazon Cognito <i>user groups</i> within the user pool used to create a workforce. All of the <code>CognitoMemberDefinition</code> objects that make up the member definition must have the same <code>ClientId</code> and <code>UserPool</code> values. To add a Amazon Cognito user group to an existing worker pool, see <code>Adding groups to a User Pool</code>. For more information about user pools, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito User Pools</a>.</p>
     /// <p>For workforces created using your own OIDC IdP, specify the user groups that you want to include in your private work team in <code>OidcMemberDefinition</code> by listing those groups in <code>Groups</code>. Be aware that user groups that are already in the work team must also be listed in <code>Groups</code> when you make this request to remain on the work team. If you do not include these user groups, they will no longer be associated with the work team you update.</p>
-    pub fn get_member_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberDefinition>> {
+    pub fn get_member_definitions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MemberDefinition>> {
         &self.member_definitions
     }
     /// <p>An updated description for the work team.</p>
@@ -106,8 +105,7 @@ impl UpdateWorkteamInputBuilder {
     }
     /// <p>An updated description for the work team.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>An updated description for the work team.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,22 +118,26 @@ impl UpdateWorkteamInputBuilder {
     }
     /// <p>Configures SNS topic notifications for available or expiring work items</p>
     pub fn set_notification_configuration(mut self, input: ::std::option::Option<crate::types::NotificationConfiguration>) -> Self {
-        self.notification_configuration = input;
-        self
+        self.notification_configuration = input; self
     }
     /// <p>Configures SNS topic notifications for available or expiring work items</p>
     pub fn get_notification_configuration(&self) -> &::std::option::Option<crate::types::NotificationConfiguration> {
         &self.notification_configuration
     }
     /// Consumes the builder and constructs a [`UpdateWorkteamInput`](crate::operation::update_workteam::UpdateWorkteamInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_workteam::UpdateWorkteamInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_workteam::UpdateWorkteamInput {
-            workteam_name: self.workteam_name,
-            member_definitions: self.member_definitions,
-            description: self.description,
-            notification_configuration: self.notification_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_workteam::UpdateWorkteamInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_workteam::UpdateWorkteamInput {
+                workteam_name: self.workteam_name
+                ,
+                member_definitions: self.member_definitions
+                ,
+                description: self.description
+                ,
+                notification_configuration: self.notification_configuration
+                ,
+            }
+        )
     }
 }
+

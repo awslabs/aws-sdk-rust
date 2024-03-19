@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAutoScalingInstancesOutput {
+pub struct DescribeAutoScalingInstancesOutput  {
     /// <p>The instances.</p>
-    pub auto_scaling_instances: ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingInstanceDetails>>,
+    pub auto_scaling_instances: ::std::option::Option<::std::vec::Vec::<crate::types::AutoScalingInstanceDetails>>,
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeAutoScalingInstancesOutput {
+impl  DescribeAutoScalingInstancesOutput  {
     /// <p>The instances.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_scaling_instances.is_none()`.
-    pub fn auto_scaling_instances(&self) -> &[crate::types::AutoScalingInstanceDetails] {
-        self.auto_scaling_instances.as_deref().unwrap_or_default()
+    pub fn auto_scaling_instances(&self) -> & [crate::types::AutoScalingInstanceDetails] {
+        self.auto_scaling_instances.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAutoScalingInstancesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAutoScalingInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAutoScalingInstancesOutput`](crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesOutput).
     pub fn builder() -> crate::operation::describe_auto_scaling_instances::builders::DescribeAutoScalingInstancesOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeAutoScalingInstancesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAutoScalingInstancesOutputBuilder {
-    pub(crate) auto_scaling_instances: ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingInstanceDetails>>,
+    pub(crate) auto_scaling_instances: ::std::option::Option<::std::vec::Vec::<crate::types::AutoScalingInstanceDetails>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeAutoScalingInstancesOutputBuilder {
     /// <p>The instances.</p>
     pub fn auto_scaling_instances(mut self, input: crate::types::AutoScalingInstanceDetails) -> Self {
         let mut v = self.auto_scaling_instances.unwrap_or_default();
-        v.push(input);
-        self.auto_scaling_instances = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.auto_scaling_instances = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The instances.</p>
-    pub fn set_auto_scaling_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingInstanceDetails>>) -> Self {
-        self.auto_scaling_instances = input;
-        self
+    pub fn set_auto_scaling_instances(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AutoScalingInstanceDetails>>) -> Self {
+        self.auto_scaling_instances = input; self
     }
     /// <p>The instances.</p>
-    pub fn get_auto_scaling_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoScalingInstanceDetails>> {
+    pub fn get_auto_scaling_instances(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AutoScalingInstanceDetails>> {
         &self.auto_scaling_instances
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
@@ -69,28 +69,30 @@ impl DescribeAutoScalingInstancesOutputBuilder {
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAutoScalingInstancesOutput`](crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesOutput).
     pub fn build(self) -> crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesOutput {
         crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesOutput {
-            auto_scaling_instances: self.auto_scaling_instances,
-            next_token: self.next_token,
+            auto_scaling_instances: self.auto_scaling_instances
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

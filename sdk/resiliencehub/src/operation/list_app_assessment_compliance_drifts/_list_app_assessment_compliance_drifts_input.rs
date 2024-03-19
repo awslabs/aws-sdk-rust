@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAppAssessmentComplianceDriftsInput {
+pub struct ListAppAssessmentComplianceDriftsInput  {
     /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub assessment_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the unique token number of the next application to be checked for compliance and regulatory requirements from the list of applications.</p>
@@ -10,13 +10,13 @@ pub struct ListAppAssessmentComplianceDriftsInput {
     /// <p>Indicates the maximum number of applications requested.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListAppAssessmentComplianceDriftsInput {
+impl  ListAppAssessmentComplianceDriftsInput  {
     /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub fn assessment_arn(&self) -> ::std::option::Option<&str> {
+    pub fn assessment_arn(&self) -> ::std::option::Option<& str> {
         self.assessment_arn.as_deref()
     }
     /// <p>Indicates the unique token number of the next application to be checked for compliance and regulatory requirements from the list of applications.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Indicates the maximum number of applications requested.</p>
@@ -48,8 +48,7 @@ impl ListAppAssessmentComplianceDriftsInputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn set_assessment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_arn = input;
-        self
+        self.assessment_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn get_assessment_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListAppAssessmentComplianceDriftsInputBuilder {
     }
     /// <p>Indicates the unique token number of the next application to be checked for compliance and regulatory requirements from the list of applications.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Indicates the unique token number of the next application to be checked for compliance and regulatory requirements from the list of applications.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,26 +74,24 @@ impl ListAppAssessmentComplianceDriftsInputBuilder {
     }
     /// <p>Indicates the maximum number of applications requested.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Indicates the maximum number of applications requested.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAppAssessmentComplianceDriftsInput`](crate::operation::list_app_assessment_compliance_drifts::ListAppAssessmentComplianceDriftsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_app_assessment_compliance_drifts::ListAppAssessmentComplianceDriftsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_app_assessment_compliance_drifts::ListAppAssessmentComplianceDriftsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_app_assessment_compliance_drifts::ListAppAssessmentComplianceDriftsInput {
-                assessment_arn: self.assessment_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                assessment_arn: self.assessment_arn
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

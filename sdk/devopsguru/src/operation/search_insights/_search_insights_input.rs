@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchInsightsInput {
+pub struct SearchInsightsInput  {
     /// <p>The start of the time range passed in. Returned insights occurred after this time.</p>
     pub start_time_range: ::std::option::Option<crate::types::StartTimeRange>,
     /// <p>A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search.</p>
@@ -14,13 +14,13 @@ pub struct SearchInsightsInput {
     /// <p>The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>).</p>
     pub r#type: ::std::option::Option<crate::types::InsightType>,
 }
-impl SearchInsightsInput {
+impl  SearchInsightsInput  {
     /// <p>The start of the time range passed in. Returned insights occurred after this time.</p>
-    pub fn start_time_range(&self) -> ::std::option::Option<&crate::types::StartTimeRange> {
+    pub fn start_time_range(&self) -> ::std::option::Option<& crate::types::StartTimeRange> {
         self.start_time_range.as_ref()
     }
     /// <p>A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search.</p>
-    pub fn filters(&self) -> ::std::option::Option<&crate::types::SearchInsightsFilters> {
+    pub fn filters(&self) -> ::std::option::Option<& crate::types::SearchInsightsFilters> {
         self.filters.as_ref()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -28,11 +28,11 @@ impl SearchInsightsInput {
         self.max_results
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>).</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::InsightType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::InsightType> {
         self.r#type.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl SearchInsightsInputBuilder {
     }
     /// <p>The start of the time range passed in. Returned insights occurred after this time.</p>
     pub fn set_start_time_range(mut self, input: ::std::option::Option<crate::types::StartTimeRange>) -> Self {
-        self.start_time_range = input;
-        self
+        self.start_time_range = input; self
     }
     /// <p>The start of the time range passed in. Returned insights occurred after this time.</p>
     pub fn get_start_time_range(&self) -> &::std::option::Option<crate::types::StartTimeRange> {
@@ -76,8 +75,7 @@ impl SearchInsightsInputBuilder {
     }
     /// <p>A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::SearchInsightsFilters>) -> Self {
-        self.filters = input;
-        self
+        self.filters = input; self
     }
     /// <p>A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search.</p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::SearchInsightsFilters> {
@@ -90,8 +88,7 @@ impl SearchInsightsInputBuilder {
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -104,8 +101,7 @@ impl SearchInsightsInputBuilder {
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,23 +115,28 @@ impl SearchInsightsInputBuilder {
     }
     /// <p>The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>).</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::InsightType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>).</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::InsightType> {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`SearchInsightsInput`](crate::operation::search_insights::SearchInsightsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::search_insights::SearchInsightsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::search_insights::SearchInsightsInput {
-            start_time_range: self.start_time_range,
-            filters: self.filters,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            r#type: self.r#type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_insights::SearchInsightsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::search_insights::SearchInsightsInput {
+                start_time_range: self.start_time_range
+                ,
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                r#type: self.r#type
+                ,
+            }
+        )
     }
 }
+

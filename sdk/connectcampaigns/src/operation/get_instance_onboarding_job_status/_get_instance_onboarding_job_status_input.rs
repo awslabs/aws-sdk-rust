@@ -3,13 +3,13 @@
 /// GetInstanceOnboardingJobStatusRequest
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetInstanceOnboardingJobStatusInput {
+pub struct GetInstanceOnboardingJobStatusInput  {
     /// Amazon Connect Instance Id
     pub connect_instance_id: ::std::option::Option<::std::string::String>,
 }
-impl GetInstanceOnboardingJobStatusInput {
+impl  GetInstanceOnboardingJobStatusInput  {
     /// Amazon Connect Instance Id
-    pub fn connect_instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn connect_instance_id(&self) -> ::std::option::Option<& str> {
         self.connect_instance_id.as_deref()
     }
 }
@@ -35,24 +35,20 @@ impl GetInstanceOnboardingJobStatusInputBuilder {
     }
     /// Amazon Connect Instance Id
     pub fn set_connect_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connect_instance_id = input;
-        self
+        self.connect_instance_id = input; self
     }
     /// Amazon Connect Instance Id
     pub fn get_connect_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.connect_instance_id
     }
     /// Consumes the builder and constructs a [`GetInstanceOnboardingJobStatusInput`](crate::operation::get_instance_onboarding_job_status::GetInstanceOnboardingJobStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_instance_onboarding_job_status::GetInstanceOnboardingJobStatusInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_instance_onboarding_job_status::GetInstanceOnboardingJobStatusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_instance_onboarding_job_status::GetInstanceOnboardingJobStatusInput {
-                connect_instance_id: self.connect_instance_id,
-            },
+                connect_instance_id: self.connect_instance_id
+                ,
+            }
         )
     }
 }
+

@@ -3,16 +3,16 @@
 /// <p>Specifies a transform that identifies, removes or masks PII data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PiiDetection {
+pub struct PiiDetection  {
     /// <p>The name of the transform node.</p>
     pub name: ::std::string::String,
     /// <p>The node ID inputs to the transform.</p>
-    pub inputs: ::std::vec::Vec<::std::string::String>,
+    pub inputs: ::std::vec::Vec::<::std::string::String>,
     /// <p>Indicates the type of PIIDetection transform.</p>
     pub pii_type: crate::types::PiiType,
     /// <p>Indicates the types of entities the PIIDetection transform will identify as PII data.</p>
     /// <p>PII type entities include: PERSON_NAME, DATE, USA_SNN, EMAIL, USA_ITIN, USA_PASSPORT_NUMBER, PHONE_NUMBER, BANK_ACCOUNT, IP_ADDRESS, MAC_ADDRESS, USA_CPT_CODE, USA_HCPCS_CODE, USA_NATIONAL_DRUG_CODE, USA_MEDICARE_BENEFICIARY_IDENTIFIER, USA_HEALTH_INSURANCE_CLAIM_NUMBER,CREDIT_CARD,USA_NATIONAL_PROVIDER_IDENTIFIER,USA_DEA_NUMBER,USA_DRIVING_LICENSE</p>
-    pub entity_types_to_detect: ::std::vec::Vec<::std::string::String>,
+    pub entity_types_to_detect: ::std::vec::Vec::<::std::string::String>,
     /// <p>Indicates the output column name that will contain any entity type detected in that row.</p>
     pub output_column_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the fraction of the data to sample when scanning for PII entities.</p>
@@ -22,29 +22,26 @@ pub struct PiiDetection {
     /// <p>Indicates the value that will replace the detected entity.</p>
     pub mask_value: ::std::option::Option<::std::string::String>,
 }
-impl PiiDetection {
+impl  PiiDetection  {
     /// <p>The name of the transform node.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The node ID inputs to the transform.</p>
-    pub fn inputs(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.inputs.deref()
+    pub fn inputs(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.inputs.deref()
     }
     /// <p>Indicates the type of PIIDetection transform.</p>
-    pub fn pii_type(&self) -> &crate::types::PiiType {
+    pub fn pii_type(&self) -> & crate::types::PiiType {
         &self.pii_type
     }
     /// <p>Indicates the types of entities the PIIDetection transform will identify as PII data.</p>
     /// <p>PII type entities include: PERSON_NAME, DATE, USA_SNN, EMAIL, USA_ITIN, USA_PASSPORT_NUMBER, PHONE_NUMBER, BANK_ACCOUNT, IP_ADDRESS, MAC_ADDRESS, USA_CPT_CODE, USA_HCPCS_CODE, USA_NATIONAL_DRUG_CODE, USA_MEDICARE_BENEFICIARY_IDENTIFIER, USA_HEALTH_INSURANCE_CLAIM_NUMBER,CREDIT_CARD,USA_NATIONAL_PROVIDER_IDENTIFIER,USA_DEA_NUMBER,USA_DRIVING_LICENSE</p>
-    pub fn entity_types_to_detect(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.entity_types_to_detect.deref()
+    pub fn entity_types_to_detect(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.entity_types_to_detect.deref()
     }
     /// <p>Indicates the output column name that will contain any entity type detected in that row.</p>
-    pub fn output_column_name(&self) -> ::std::option::Option<&str> {
+    pub fn output_column_name(&self) -> ::std::option::Option<& str> {
         self.output_column_name.as_deref()
     }
     /// <p>Indicates the fraction of the data to sample when scanning for PII entities.</p>
@@ -56,7 +53,7 @@ impl PiiDetection {
         self.threshold_fraction
     }
     /// <p>Indicates the value that will replace the detected entity.</p>
-    pub fn mask_value(&self) -> ::std::option::Option<&str> {
+    pub fn mask_value(&self) -> ::std::option::Option<& str> {
         self.mask_value.as_deref()
     }
 }
@@ -72,9 +69,9 @@ impl PiiDetection {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PiiDetectionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) inputs: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) pii_type: ::std::option::Option<crate::types::PiiType>,
-    pub(crate) entity_types_to_detect: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) entity_types_to_detect: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) output_column_name: ::std::option::Option<::std::string::String>,
     pub(crate) sample_fraction: ::std::option::Option<f64>,
     pub(crate) threshold_fraction: ::std::option::Option<f64>,
@@ -89,8 +86,7 @@ impl PiiDetectionBuilder {
     }
     /// <p>The name of the transform node.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the transform node.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,17 +99,16 @@ impl PiiDetectionBuilder {
     /// <p>The node ID inputs to the transform.</p>
     pub fn inputs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
-        v.push(input.into());
-        self.inputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.inputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The node ID inputs to the transform.</p>
-    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inputs = input;
-        self
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.inputs = input; self
     }
     /// <p>The node ID inputs to the transform.</p>
-    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.inputs
     }
     /// <p>Indicates the type of PIIDetection transform.</p>
@@ -124,8 +119,7 @@ impl PiiDetectionBuilder {
     }
     /// <p>Indicates the type of PIIDetection transform.</p>
     pub fn set_pii_type(mut self, input: ::std::option::Option<crate::types::PiiType>) -> Self {
-        self.pii_type = input;
-        self
+        self.pii_type = input; self
     }
     /// <p>Indicates the type of PIIDetection transform.</p>
     pub fn get_pii_type(&self) -> &::std::option::Option<crate::types::PiiType> {
@@ -139,19 +133,18 @@ impl PiiDetectionBuilder {
     /// <p>PII type entities include: PERSON_NAME, DATE, USA_SNN, EMAIL, USA_ITIN, USA_PASSPORT_NUMBER, PHONE_NUMBER, BANK_ACCOUNT, IP_ADDRESS, MAC_ADDRESS, USA_CPT_CODE, USA_HCPCS_CODE, USA_NATIONAL_DRUG_CODE, USA_MEDICARE_BENEFICIARY_IDENTIFIER, USA_HEALTH_INSURANCE_CLAIM_NUMBER,CREDIT_CARD,USA_NATIONAL_PROVIDER_IDENTIFIER,USA_DEA_NUMBER,USA_DRIVING_LICENSE</p>
     pub fn entity_types_to_detect(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.entity_types_to_detect.unwrap_or_default();
-        v.push(input.into());
-        self.entity_types_to_detect = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.entity_types_to_detect = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Indicates the types of entities the PIIDetection transform will identify as PII data.</p>
     /// <p>PII type entities include: PERSON_NAME, DATE, USA_SNN, EMAIL, USA_ITIN, USA_PASSPORT_NUMBER, PHONE_NUMBER, BANK_ACCOUNT, IP_ADDRESS, MAC_ADDRESS, USA_CPT_CODE, USA_HCPCS_CODE, USA_NATIONAL_DRUG_CODE, USA_MEDICARE_BENEFICIARY_IDENTIFIER, USA_HEALTH_INSURANCE_CLAIM_NUMBER,CREDIT_CARD,USA_NATIONAL_PROVIDER_IDENTIFIER,USA_DEA_NUMBER,USA_DRIVING_LICENSE</p>
-    pub fn set_entity_types_to_detect(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.entity_types_to_detect = input;
-        self
+    pub fn set_entity_types_to_detect(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.entity_types_to_detect = input; self
     }
     /// <p>Indicates the types of entities the PIIDetection transform will identify as PII data.</p>
     /// <p>PII type entities include: PERSON_NAME, DATE, USA_SNN, EMAIL, USA_ITIN, USA_PASSPORT_NUMBER, PHONE_NUMBER, BANK_ACCOUNT, IP_ADDRESS, MAC_ADDRESS, USA_CPT_CODE, USA_HCPCS_CODE, USA_NATIONAL_DRUG_CODE, USA_MEDICARE_BENEFICIARY_IDENTIFIER, USA_HEALTH_INSURANCE_CLAIM_NUMBER,CREDIT_CARD,USA_NATIONAL_PROVIDER_IDENTIFIER,USA_DEA_NUMBER,USA_DRIVING_LICENSE</p>
-    pub fn get_entity_types_to_detect(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_entity_types_to_detect(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.entity_types_to_detect
     }
     /// <p>Indicates the output column name that will contain any entity type detected in that row.</p>
@@ -161,8 +154,7 @@ impl PiiDetectionBuilder {
     }
     /// <p>Indicates the output column name that will contain any entity type detected in that row.</p>
     pub fn set_output_column_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output_column_name = input;
-        self
+        self.output_column_name = input; self
     }
     /// <p>Indicates the output column name that will contain any entity type detected in that row.</p>
     pub fn get_output_column_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,8 +167,7 @@ impl PiiDetectionBuilder {
     }
     /// <p>Indicates the fraction of the data to sample when scanning for PII entities.</p>
     pub fn set_sample_fraction(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.sample_fraction = input;
-        self
+        self.sample_fraction = input; self
     }
     /// <p>Indicates the fraction of the data to sample when scanning for PII entities.</p>
     pub fn get_sample_fraction(&self) -> &::std::option::Option<f64> {
@@ -189,8 +180,7 @@ impl PiiDetectionBuilder {
     }
     /// <p>Indicates the fraction of the data that must be met in order for a column to be identified as PII data.</p>
     pub fn set_threshold_fraction(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.threshold_fraction = input;
-        self
+        self.threshold_fraction = input; self
     }
     /// <p>Indicates the fraction of the data that must be met in order for a column to be identified as PII data.</p>
     pub fn get_threshold_fraction(&self) -> &::std::option::Option<f64> {
@@ -203,8 +193,7 @@ impl PiiDetectionBuilder {
     }
     /// <p>Indicates the value that will replace the detected entity.</p>
     pub fn set_mask_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mask_value = input;
-        self
+        self.mask_value = input; self
     }
     /// <p>Indicates the value that will replace the detected entity.</p>
     pub fn get_mask_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -217,35 +206,38 @@ impl PiiDetectionBuilder {
     /// - [`pii_type`](crate::types::builders::PiiDetectionBuilder::pii_type)
     /// - [`entity_types_to_detect`](crate::types::builders::PiiDetectionBuilder::entity_types_to_detect)
     pub fn build(self) -> ::std::result::Result<crate::types::PiiDetection, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PiiDetection {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building PiiDetection",
-                )
-            })?,
-            inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "inputs",
-                    "inputs was not specified but it is required when building PiiDetection",
-                )
-            })?,
-            pii_type: self.pii_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "pii_type",
-                    "pii_type was not specified but it is required when building PiiDetection",
-                )
-            })?,
-            entity_types_to_detect: self.entity_types_to_detect.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "entity_types_to_detect",
-                    "entity_types_to_detect was not specified but it is required when building PiiDetection",
-                )
-            })?,
-            output_column_name: self.output_column_name,
-            sample_fraction: self.sample_fraction,
-            threshold_fraction: self.threshold_fraction,
-            mask_value: self.mask_value,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PiiDetection {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building PiiDetection")
+                    )?
+                ,
+                inputs: self.inputs
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("inputs", "inputs was not specified but it is required when building PiiDetection")
+                    )?
+                ,
+                pii_type: self.pii_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("pii_type", "pii_type was not specified but it is required when building PiiDetection")
+                    )?
+                ,
+                entity_types_to_detect: self.entity_types_to_detect
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("entity_types_to_detect", "entity_types_to_detect was not specified but it is required when building PiiDetection")
+                    )?
+                ,
+                output_column_name: self.output_column_name
+                ,
+                sample_fraction: self.sample_fraction
+                ,
+                threshold_fraction: self.threshold_fraction
+                ,
+                mask_value: self.mask_value
+                ,
+            }
+        )
     }
 }
+

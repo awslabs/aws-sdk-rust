@@ -40,11 +40,7 @@ impl AcceptedTerm {
     /// Tries to convert the enum instance into [`ByolPricingTerm`](crate::types::AcceptedTerm::ByolPricingTerm), extracting the inner [`ByolPricingTerm`](crate::types::ByolPricingTerm).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_byol_pricing_term(&self) -> ::std::result::Result<&crate::types::ByolPricingTerm, &Self> {
-        if let AcceptedTerm::ByolPricingTerm(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AcceptedTerm::ByolPricingTerm(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ByolPricingTerm`](crate::types::AcceptedTerm::ByolPricingTerm).
     pub fn is_byol_pricing_term(&self) -> bool {
@@ -53,11 +49,7 @@ impl AcceptedTerm {
     /// Tries to convert the enum instance into [`ConfigurableUpfrontPricingTerm`](crate::types::AcceptedTerm::ConfigurableUpfrontPricingTerm), extracting the inner [`ConfigurableUpfrontPricingTerm`](crate::types::ConfigurableUpfrontPricingTerm).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_configurable_upfront_pricing_term(&self) -> ::std::result::Result<&crate::types::ConfigurableUpfrontPricingTerm, &Self> {
-        if let AcceptedTerm::ConfigurableUpfrontPricingTerm(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AcceptedTerm::ConfigurableUpfrontPricingTerm(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ConfigurableUpfrontPricingTerm`](crate::types::AcceptedTerm::ConfigurableUpfrontPricingTerm).
     pub fn is_configurable_upfront_pricing_term(&self) -> bool {
@@ -66,11 +58,7 @@ impl AcceptedTerm {
     /// Tries to convert the enum instance into [`FixedUpfrontPricingTerm`](crate::types::AcceptedTerm::FixedUpfrontPricingTerm), extracting the inner [`FixedUpfrontPricingTerm`](crate::types::FixedUpfrontPricingTerm).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_fixed_upfront_pricing_term(&self) -> ::std::result::Result<&crate::types::FixedUpfrontPricingTerm, &Self> {
-        if let AcceptedTerm::FixedUpfrontPricingTerm(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AcceptedTerm::FixedUpfrontPricingTerm(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`FixedUpfrontPricingTerm`](crate::types::AcceptedTerm::FixedUpfrontPricingTerm).
     pub fn is_fixed_upfront_pricing_term(&self) -> bool {
@@ -79,11 +67,7 @@ impl AcceptedTerm {
     /// Tries to convert the enum instance into [`FreeTrialPricingTerm`](crate::types::AcceptedTerm::FreeTrialPricingTerm), extracting the inner [`FreeTrialPricingTerm`](crate::types::FreeTrialPricingTerm).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_free_trial_pricing_term(&self) -> ::std::result::Result<&crate::types::FreeTrialPricingTerm, &Self> {
-        if let AcceptedTerm::FreeTrialPricingTerm(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AcceptedTerm::FreeTrialPricingTerm(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`FreeTrialPricingTerm`](crate::types::AcceptedTerm::FreeTrialPricingTerm).
     pub fn is_free_trial_pricing_term(&self) -> bool {
@@ -92,11 +76,7 @@ impl AcceptedTerm {
     /// Tries to convert the enum instance into [`LegalTerm`](crate::types::AcceptedTerm::LegalTerm), extracting the inner [`LegalTerm`](crate::types::LegalTerm).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_legal_term(&self) -> ::std::result::Result<&crate::types::LegalTerm, &Self> {
-        if let AcceptedTerm::LegalTerm(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AcceptedTerm::LegalTerm(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`LegalTerm`](crate::types::AcceptedTerm::LegalTerm).
     pub fn is_legal_term(&self) -> bool {
@@ -105,11 +85,7 @@ impl AcceptedTerm {
     /// Tries to convert the enum instance into [`PaymentScheduleTerm`](crate::types::AcceptedTerm::PaymentScheduleTerm), extracting the inner [`PaymentScheduleTerm`](crate::types::PaymentScheduleTerm).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_payment_schedule_term(&self) -> ::std::result::Result<&crate::types::PaymentScheduleTerm, &Self> {
-        if let AcceptedTerm::PaymentScheduleTerm(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AcceptedTerm::PaymentScheduleTerm(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`PaymentScheduleTerm`](crate::types::AcceptedTerm::PaymentScheduleTerm).
     pub fn is_payment_schedule_term(&self) -> bool {
@@ -118,11 +94,7 @@ impl AcceptedTerm {
     /// Tries to convert the enum instance into [`RecurringPaymentTerm`](crate::types::AcceptedTerm::RecurringPaymentTerm), extracting the inner [`RecurringPaymentTerm`](crate::types::RecurringPaymentTerm).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_recurring_payment_term(&self) -> ::std::result::Result<&crate::types::RecurringPaymentTerm, &Self> {
-        if let AcceptedTerm::RecurringPaymentTerm(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AcceptedTerm::RecurringPaymentTerm(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`RecurringPaymentTerm`](crate::types::AcceptedTerm::RecurringPaymentTerm).
     pub fn is_recurring_payment_term(&self) -> bool {
@@ -131,11 +103,7 @@ impl AcceptedTerm {
     /// Tries to convert the enum instance into [`RenewalTerm`](crate::types::AcceptedTerm::RenewalTerm), extracting the inner [`RenewalTerm`](crate::types::RenewalTerm).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_renewal_term(&self) -> ::std::result::Result<&crate::types::RenewalTerm, &Self> {
-        if let AcceptedTerm::RenewalTerm(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AcceptedTerm::RenewalTerm(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`RenewalTerm`](crate::types::AcceptedTerm::RenewalTerm).
     pub fn is_renewal_term(&self) -> bool {
@@ -144,11 +112,7 @@ impl AcceptedTerm {
     /// Tries to convert the enum instance into [`SupportTerm`](crate::types::AcceptedTerm::SupportTerm), extracting the inner [`SupportTerm`](crate::types::SupportTerm).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_support_term(&self) -> ::std::result::Result<&crate::types::SupportTerm, &Self> {
-        if let AcceptedTerm::SupportTerm(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AcceptedTerm::SupportTerm(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`SupportTerm`](crate::types::AcceptedTerm::SupportTerm).
     pub fn is_support_term(&self) -> bool {
@@ -157,11 +121,7 @@ impl AcceptedTerm {
     /// Tries to convert the enum instance into [`UsageBasedPricingTerm`](crate::types::AcceptedTerm::UsageBasedPricingTerm), extracting the inner [`UsageBasedPricingTerm`](crate::types::UsageBasedPricingTerm).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_usage_based_pricing_term(&self) -> ::std::result::Result<&crate::types::UsageBasedPricingTerm, &Self> {
-        if let AcceptedTerm::UsageBasedPricingTerm(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AcceptedTerm::UsageBasedPricingTerm(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`UsageBasedPricingTerm`](crate::types::AcceptedTerm::UsageBasedPricingTerm).
     pub fn is_usage_based_pricing_term(&self) -> bool {
@@ -170,11 +130,7 @@ impl AcceptedTerm {
     /// Tries to convert the enum instance into [`ValidityTerm`](crate::types::AcceptedTerm::ValidityTerm), extracting the inner [`ValidityTerm`](crate::types::ValidityTerm).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_validity_term(&self) -> ::std::result::Result<&crate::types::ValidityTerm, &Self> {
-        if let AcceptedTerm::ValidityTerm(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AcceptedTerm::ValidityTerm(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ValidityTerm`](crate::types::AcceptedTerm::ValidityTerm).
     pub fn is_validity_term(&self) -> bool {
@@ -185,3 +141,4 @@ impl AcceptedTerm {
         matches!(self, Self::Unknown)
     }
 }
+

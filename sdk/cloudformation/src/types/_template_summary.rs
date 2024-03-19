@@ -3,7 +3,7 @@
 /// <p>The summary of a generated template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TemplateSummary {
+pub struct TemplateSummary  {
     /// <p>The Amazon Resource Name (ARN) of the generated template. The format is <code>arn:${Partition}:cloudformation:${Region}:${Account}:generatedtemplate/${Id}</code>. For example, <code>arn:aws:cloudformation:<i>us-east-1</i>:<i>123456789012</i>:generatedtemplate/<i>2e8465c1-9a80-43ea-a3a3-4f2d692fe6dc</i> </code>.</p>
     pub generated_template_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the generated template.</p>
@@ -37,13 +37,13 @@ pub struct TemplateSummary {
     /// <p>The number of resources in the generated template. This is a total of resources in pending, in-progress, completed, and failed states.</p>
     pub number_of_resources: ::std::option::Option<i32>,
 }
-impl TemplateSummary {
+impl  TemplateSummary  {
     /// <p>The Amazon Resource Name (ARN) of the generated template. The format is <code>arn:${Partition}:cloudformation:${Region}:${Account}:generatedtemplate/${Id}</code>. For example, <code>arn:aws:cloudformation:<i>us-east-1</i>:<i>123456789012</i>:generatedtemplate/<i>2e8465c1-9a80-43ea-a3a3-4f2d692fe6dc</i> </code>.</p>
-    pub fn generated_template_id(&self) -> ::std::option::Option<&str> {
+    pub fn generated_template_id(&self) -> ::std::option::Option<& str> {
         self.generated_template_id.as_deref()
     }
     /// <p>The name of the generated template.</p>
-    pub fn generated_template_name(&self) -> ::std::option::Option<&str> {
+    pub fn generated_template_name(&self) -> ::std::option::Option<& str> {
         self.generated_template_name.as_deref()
     }
     /// <p>The status of the template generation. Supported values are:</p>
@@ -65,19 +65,19 @@ impl TemplateSummary {
     /// <li>
     /// <p><code>Complete</code> - the template operation is complete.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::GeneratedTemplateStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::GeneratedTemplateStatus> {
         self.status.as_ref()
     }
     /// <p>The reason for the current template generation status. This will provide more details if a failure happened.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>The time the generated template was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time the generated template was last updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The number of resources in the generated template. This is a total of resources in pending, in-progress, completed, and failed states.</p>
@@ -112,8 +112,7 @@ impl TemplateSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the generated template. The format is <code>arn:${Partition}:cloudformation:${Region}:${Account}:generatedtemplate/${Id}</code>. For example, <code>arn:aws:cloudformation:<i>us-east-1</i>:<i>123456789012</i>:generatedtemplate/<i>2e8465c1-9a80-43ea-a3a3-4f2d692fe6dc</i> </code>.</p>
     pub fn set_generated_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.generated_template_id = input;
-        self
+        self.generated_template_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the generated template. The format is <code>arn:${Partition}:cloudformation:${Region}:${Account}:generatedtemplate/${Id}</code>. For example, <code>arn:aws:cloudformation:<i>us-east-1</i>:<i>123456789012</i>:generatedtemplate/<i>2e8465c1-9a80-43ea-a3a3-4f2d692fe6dc</i> </code>.</p>
     pub fn get_generated_template_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +125,7 @@ impl TemplateSummaryBuilder {
     }
     /// <p>The name of the generated template.</p>
     pub fn set_generated_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.generated_template_name = input;
-        self
+        self.generated_template_name = input; self
     }
     /// <p>The name of the generated template.</p>
     pub fn get_generated_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -176,8 +174,7 @@ impl TemplateSummaryBuilder {
     /// <p><code>Complete</code> - the template operation is complete.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::GeneratedTemplateStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the template generation. Supported values are:</p>
     /// <ul>
@@ -208,8 +205,7 @@ impl TemplateSummaryBuilder {
     }
     /// <p>The reason for the current template generation status. This will provide more details if a failure happened.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>The reason for the current template generation status. This will provide more details if a failure happened.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -222,8 +218,7 @@ impl TemplateSummaryBuilder {
     }
     /// <p>The time the generated template was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time the generated template was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -236,8 +231,7 @@ impl TemplateSummaryBuilder {
     }
     /// <p>The time the generated template was last updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The time the generated template was last updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -250,8 +244,7 @@ impl TemplateSummaryBuilder {
     }
     /// <p>The number of resources in the generated template. This is a total of resources in pending, in-progress, completed, and failed states.</p>
     pub fn set_number_of_resources(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_resources = input;
-        self
+        self.number_of_resources = input; self
     }
     /// <p>The number of resources in the generated template. This is a total of resources in pending, in-progress, completed, and failed states.</p>
     pub fn get_number_of_resources(&self) -> &::std::option::Option<i32> {
@@ -260,13 +253,21 @@ impl TemplateSummaryBuilder {
     /// Consumes the builder and constructs a [`TemplateSummary`](crate::types::TemplateSummary).
     pub fn build(self) -> crate::types::TemplateSummary {
         crate::types::TemplateSummary {
-            generated_template_id: self.generated_template_id,
-            generated_template_name: self.generated_template_name,
-            status: self.status,
-            status_reason: self.status_reason,
-            creation_time: self.creation_time,
-            last_updated_time: self.last_updated_time,
-            number_of_resources: self.number_of_resources,
+            generated_template_id: self.generated_template_id
+            ,
+            generated_template_name: self.generated_template_name
+            ,
+            status: self.status
+            ,
+            status_reason: self.status_reason
+            ,
+            creation_time: self.creation_time
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            number_of_resources: self.number_of_resources
+            ,
         }
     }
 }
+

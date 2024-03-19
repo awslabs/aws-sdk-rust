@@ -3,13 +3,13 @@
 /// <p>Represents a request to cancel an export job using the export job ID.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelExportJobInput {
+pub struct CancelExportJobInput  {
     /// <p>The export job ID.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
 }
-impl CancelExportJobInput {
+impl  CancelExportJobInput  {
     /// <p>The export job ID.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
@@ -35,17 +35,20 @@ impl CancelExportJobInputBuilder {
     }
     /// <p>The export job ID.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The export job ID.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
     /// Consumes the builder and constructs a [`CancelExportJobInput`](crate::operation::cancel_export_job::CancelExportJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::cancel_export_job::CancelExportJobInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::cancel_export_job::CancelExportJobInput { job_id: self.job_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_export_job::CancelExportJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_export_job::CancelExportJobInput {
+                job_id: self.job_id
+                ,
+            }
+        )
     }
 }
+

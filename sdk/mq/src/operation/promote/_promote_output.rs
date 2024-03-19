@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PromoteOutput {
+pub struct PromoteOutput  {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub broker_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl PromoteOutput {
+impl  PromoteOutput  {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
-    pub fn broker_id(&self) -> ::std::option::Option<&str> {
+    pub fn broker_id(&self) -> ::std::option::Option<& str> {
         self.broker_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for PromoteOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PromoteOutput {
     /// Creates a new builder-style object to manufacture [`PromoteOutput`](crate::operation::promote::PromoteOutput).
     pub fn builder() -> crate::operation::promote::builders::PromoteOutputBuilder {
@@ -40,27 +40,28 @@ impl PromoteOutputBuilder {
     }
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub fn set_broker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.broker_id = input;
-        self
+        self.broker_id = input; self
     }
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub fn get_broker_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.broker_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PromoteOutput`](crate::operation::promote::PromoteOutput).
     pub fn build(self) -> crate::operation::promote::PromoteOutput {
         crate::operation::promote::PromoteOutput {
-            broker_id: self.broker_id,
+            broker_id: self.broker_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

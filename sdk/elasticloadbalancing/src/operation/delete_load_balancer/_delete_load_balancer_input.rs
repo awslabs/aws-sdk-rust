@@ -3,13 +3,13 @@
 /// <p>Contains the parameters for DeleteLoadBalancer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteLoadBalancerInput {
+pub struct DeleteLoadBalancerInput  {
     /// <p>The name of the load balancer.</p>
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteLoadBalancerInput {
+impl  DeleteLoadBalancerInput  {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> ::std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> ::std::option::Option<& str> {
         self.load_balancer_name.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl DeleteLoadBalancerInputBuilder {
     }
     /// <p>The name of the load balancer.</p>
     pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.load_balancer_name = input;
-        self
+        self.load_balancer_name = input; self
     }
     /// <p>The name of the load balancer.</p>
     pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.load_balancer_name
     }
     /// Consumes the builder and constructs a [`DeleteLoadBalancerInput`](crate::operation::delete_load_balancer::DeleteLoadBalancerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_load_balancer::DeleteLoadBalancerInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_load_balancer::DeleteLoadBalancerInput {
-            load_balancer_name: self.load_balancer_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_load_balancer::DeleteLoadBalancerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_load_balancer::DeleteLoadBalancerInput {
+                load_balancer_name: self.load_balancer_name
+                ,
+            }
+        )
     }
 }
+

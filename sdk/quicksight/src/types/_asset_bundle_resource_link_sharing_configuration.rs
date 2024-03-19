@@ -3,13 +3,13 @@
 /// <p>A structure that contains the configuration of a shared link to an Amazon QuickSight dashboard.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetBundleResourceLinkSharingConfiguration {
+pub struct AssetBundleResourceLinkSharingConfiguration  {
     /// <p>A list of link sharing permissions for the dashboards that you want to apply overrides to.</p>
     pub permissions: ::std::option::Option<crate::types::AssetBundleResourcePermissions>,
 }
-impl AssetBundleResourceLinkSharingConfiguration {
+impl  AssetBundleResourceLinkSharingConfiguration  {
     /// <p>A list of link sharing permissions for the dashboards that you want to apply overrides to.</p>
-    pub fn permissions(&self) -> ::std::option::Option<&crate::types::AssetBundleResourcePermissions> {
+    pub fn permissions(&self) -> ::std::option::Option<& crate::types::AssetBundleResourcePermissions> {
         self.permissions.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl AssetBundleResourceLinkSharingConfigurationBuilder {
     }
     /// <p>A list of link sharing permissions for the dashboards that you want to apply overrides to.</p>
     pub fn set_permissions(mut self, input: ::std::option::Option<crate::types::AssetBundleResourcePermissions>) -> Self {
-        self.permissions = input;
-        self
+        self.permissions = input; self
     }
     /// <p>A list of link sharing permissions for the dashboards that you want to apply overrides to.</p>
     pub fn get_permissions(&self) -> &::std::option::Option<crate::types::AssetBundleResourcePermissions> {
@@ -44,7 +43,9 @@ impl AssetBundleResourceLinkSharingConfigurationBuilder {
     /// Consumes the builder and constructs a [`AssetBundleResourceLinkSharingConfiguration`](crate::types::AssetBundleResourceLinkSharingConfiguration).
     pub fn build(self) -> crate::types::AssetBundleResourceLinkSharingConfiguration {
         crate::types::AssetBundleResourceLinkSharingConfiguration {
-            permissions: self.permissions,
+            permissions: self.permissions
+            ,
         }
     }
 }
+

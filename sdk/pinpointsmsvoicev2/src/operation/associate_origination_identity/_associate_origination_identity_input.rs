@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateOriginationIdentityInput {
+pub struct AssociateOriginationIdentityInput  {
     /// <p>The pool to update with the new Identity. This value can be either the PoolId or PoolArn, and you can find these values using <code>DescribePools</code>.</p>
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The origination identity to use, such as PhoneNumberId, PhoneNumberArn, SenderId, or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn, while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
@@ -12,21 +12,21 @@ pub struct AssociateOriginationIdentityInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl AssociateOriginationIdentityInput {
+impl  AssociateOriginationIdentityInput  {
     /// <p>The pool to update with the new Identity. This value can be either the PoolId or PoolArn, and you can find these values using <code>DescribePools</code>.</p>
-    pub fn pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn pool_id(&self) -> ::std::option::Option<& str> {
         self.pool_id.as_deref()
     }
     /// <p>The origination identity to use, such as PhoneNumberId, PhoneNumberArn, SenderId, or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn, while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-    pub fn origination_identity(&self) -> ::std::option::Option<&str> {
+    pub fn origination_identity(&self) -> ::std::option::Option<& str> {
         self.origination_identity.as_deref()
     }
     /// <p>The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region of the origination identity.</p>
-    pub fn iso_country_code(&self) -> ::std::option::Option<&str> {
+    pub fn iso_country_code(&self) -> ::std::option::Option<& str> {
         self.iso_country_code.as_deref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl AssociateOriginationIdentityInputBuilder {
     }
     /// <p>The pool to update with the new Identity. This value can be either the PoolId or PoolArn, and you can find these values using <code>DescribePools</code>.</p>
     pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pool_id = input;
-        self
+        self.pool_id = input; self
     }
     /// <p>The pool to update with the new Identity. This value can be either the PoolId or PoolArn, and you can find these values using <code>DescribePools</code>.</p>
     pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl AssociateOriginationIdentityInputBuilder {
     }
     /// <p>The origination identity to use, such as PhoneNumberId, PhoneNumberArn, SenderId, or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn, while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
     pub fn set_origination_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.origination_identity = input;
-        self
+        self.origination_identity = input; self
     }
     /// <p>The origination identity to use, such as PhoneNumberId, PhoneNumberArn, SenderId, or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn, while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
     pub fn get_origination_identity(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl AssociateOriginationIdentityInputBuilder {
     }
     /// <p>The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region of the origination identity.</p>
     pub fn set_iso_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iso_country_code = input;
-        self
+        self.iso_country_code = input; self
     }
     /// <p>The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region of the origination identity.</p>
     pub fn get_iso_country_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,25 +96,26 @@ impl AssociateOriginationIdentityInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`AssociateOriginationIdentityInput`](crate::operation::associate_origination_identity::AssociateOriginationIdentityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_origination_identity::AssociateOriginationIdentityInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::associate_origination_identity::AssociateOriginationIdentityInput {
-            pool_id: self.pool_id,
-            origination_identity: self.origination_identity,
-            iso_country_code: self.iso_country_code,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_origination_identity::AssociateOriginationIdentityInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_origination_identity::AssociateOriginationIdentityInput {
+                pool_id: self.pool_id
+                ,
+                origination_identity: self.origination_identity
+                ,
+                iso_country_code: self.iso_country_code
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

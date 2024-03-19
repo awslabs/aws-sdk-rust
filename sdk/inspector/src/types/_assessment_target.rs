@@ -3,7 +3,7 @@
 /// <p>Contains information about an Amazon Inspector application. This data type is used as the response element in the <code>DescribeAssessmentTargets</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssessmentTarget {
+pub struct AssessmentTarget  {
     /// <p>The ARN that specifies the Amazon Inspector assessment target.</p>
     pub arn: ::std::string::String,
     /// <p>The name of the Amazon Inspector assessment target.</p>
@@ -15,27 +15,25 @@ pub struct AssessmentTarget {
     /// <p>The time at which <code>UpdateAssessmentTarget</code> is called.</p>
     pub updated_at: ::aws_smithy_types::DateTime,
 }
-impl AssessmentTarget {
+impl  AssessmentTarget  {
     /// <p>The ARN that specifies the Amazon Inspector assessment target.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The name of the Amazon Inspector assessment target.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The ARN that specifies the resource group that is associated with the assessment target.</p>
-    pub fn resource_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_group_arn(&self) -> ::std::option::Option<& str> {
         self.resource_group_arn.as_deref()
     }
     /// <p>The time at which the assessment target is created.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The time at which <code>UpdateAssessmentTarget</code> is called.</p>
-    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.updated_at
     }
 }
@@ -65,8 +63,7 @@ impl AssessmentTargetBuilder {
     }
     /// <p>The ARN that specifies the Amazon Inspector assessment target.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN that specifies the Amazon Inspector assessment target.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +77,7 @@ impl AssessmentTargetBuilder {
     }
     /// <p>The name of the Amazon Inspector assessment target.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Amazon Inspector assessment target.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +90,7 @@ impl AssessmentTargetBuilder {
     }
     /// <p>The ARN that specifies the resource group that is associated with the assessment target.</p>
     pub fn set_resource_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_group_arn = input;
-        self
+        self.resource_group_arn = input; self
     }
     /// <p>The ARN that specifies the resource group that is associated with the assessment target.</p>
     pub fn get_resource_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +104,7 @@ impl AssessmentTargetBuilder {
     }
     /// <p>The time at which the assessment target is created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time at which the assessment target is created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -124,8 +118,7 @@ impl AssessmentTargetBuilder {
     }
     /// <p>The time at which <code>UpdateAssessmentTarget</code> is called.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The time at which <code>UpdateAssessmentTarget</code> is called.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -138,32 +131,32 @@ impl AssessmentTargetBuilder {
     /// - [`created_at`](crate::types::builders::AssessmentTargetBuilder::created_at)
     /// - [`updated_at`](crate::types::builders::AssessmentTargetBuilder::updated_at)
     pub fn build(self) -> ::std::result::Result<crate::types::AssessmentTarget, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AssessmentTarget {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building AssessmentTarget",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building AssessmentTarget",
-                )
-            })?,
-            resource_group_arn: self.resource_group_arn,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building AssessmentTarget",
-                )
-            })?,
-            updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "updated_at",
-                    "updated_at was not specified but it is required when building AssessmentTarget",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AssessmentTarget {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building AssessmentTarget")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building AssessmentTarget")
+                    )?
+                ,
+                resource_group_arn: self.resource_group_arn
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building AssessmentTarget")
+                    )?
+                ,
+                updated_at: self.updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("updated_at", "updated_at was not specified but it is required when building AssessmentTarget")
+                    )?
+                ,
+            }
+        )
     }
 }
+

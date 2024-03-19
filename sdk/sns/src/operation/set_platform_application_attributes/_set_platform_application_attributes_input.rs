@@ -3,7 +3,7 @@
 /// <p>Input for <code>SetPlatformApplicationAttributes</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetPlatformApplicationAttributesInput {
+pub struct SetPlatformApplicationAttributesInput  {
     /// <p><code>PlatformApplicationArn</code> for <code>SetPlatformApplicationAttributes</code> action.</p>
     pub platform_application_arn: ::std::option::Option<::std::string::String>,
     /// <p>A map of the platform application attributes. Attributes in this map include the following:</p>
@@ -60,11 +60,11 @@ pub struct SetPlatformApplicationAttributesInput {
     /// <li>
     /// <p><code>ApplePlatformBundleID</code> – The bundle identifier that's assigned to your iOS app.</p></li>
     /// </ul>
-    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl SetPlatformApplicationAttributesInput {
+impl  SetPlatformApplicationAttributesInput  {
     /// <p><code>PlatformApplicationArn</code> for <code>SetPlatformApplicationAttributes</code> action.</p>
-    pub fn platform_application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn platform_application_arn(&self) -> ::std::option::Option<& str> {
         self.platform_application_arn.as_deref()
     }
     /// <p>A map of the platform application attributes. Attributes in this map include the following:</p>
@@ -121,7 +121,7 @@ impl SetPlatformApplicationAttributesInput {
     /// <li>
     /// <p><code>ApplePlatformBundleID</code> – The bundle identifier that's assigned to your iOS app.</p></li>
     /// </ul>
-    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
 }
@@ -137,7 +137,7 @@ impl SetPlatformApplicationAttributesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetPlatformApplicationAttributesInputBuilder {
     pub(crate) platform_application_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl SetPlatformApplicationAttributesInputBuilder {
     /// <p><code>PlatformApplicationArn</code> for <code>SetPlatformApplicationAttributes</code> action.</p>
@@ -148,8 +148,7 @@ impl SetPlatformApplicationAttributesInputBuilder {
     }
     /// <p><code>PlatformApplicationArn</code> for <code>SetPlatformApplicationAttributes</code> action.</p>
     pub fn set_platform_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform_application_arn = input;
-        self
+        self.platform_application_arn = input; self
     }
     /// <p><code>PlatformApplicationArn</code> for <code>SetPlatformApplicationAttributes</code> action.</p>
     pub fn get_platform_application_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -215,9 +214,9 @@ impl SetPlatformApplicationAttributesInputBuilder {
     /// </ul>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of the platform application attributes. Attributes in this map include the following:</p>
     /// <ul>
@@ -273,9 +272,8 @@ impl SetPlatformApplicationAttributesInputBuilder {
     /// <li>
     /// <p><code>ApplePlatformBundleID</code> – The bundle identifier that's assigned to your iOS app.</p></li>
     /// </ul>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>A map of the platform application attributes. Attributes in this map include the following:</p>
     /// <ul>
@@ -331,21 +329,19 @@ impl SetPlatformApplicationAttributesInputBuilder {
     /// <li>
     /// <p><code>ApplePlatformBundleID</code> – The bundle identifier that's assigned to your iOS app.</p></li>
     /// </ul>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`SetPlatformApplicationAttributesInput`](crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::set_platform_application_attributes::SetPlatformApplicationAttributesInput {
-                platform_application_arn: self.platform_application_arn,
-                attributes: self.attributes,
-            },
+                platform_application_arn: self.platform_application_arn
+                ,
+                attributes: self.attributes
+                ,
+            }
         )
     }
 }
+

@@ -3,32 +3,35 @@
 /// <p>The aggregated field wells of a heat map.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HeatMapAggregatedFieldWells {
+pub struct HeatMapAggregatedFieldWells  {
     /// <p>The rows field well of a heat map.</p>
-    pub rows: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
+    pub rows: ::std::option::Option<::std::vec::Vec::<crate::types::DimensionField>>,
     /// <p>The columns field well of a heat map.</p>
-    pub columns: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
+    pub columns: ::std::option::Option<::std::vec::Vec::<crate::types::DimensionField>>,
     /// <p>The values field well of a heat map.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<crate::types::MeasureField>>,
 }
-impl HeatMapAggregatedFieldWells {
+impl  HeatMapAggregatedFieldWells  {
     /// <p>The rows field well of a heat map.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rows.is_none()`.
-    pub fn rows(&self) -> &[crate::types::DimensionField] {
-        self.rows.as_deref().unwrap_or_default()
+    pub fn rows(&self) -> & [crate::types::DimensionField] {
+        self.rows.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The columns field well of a heat map.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.columns.is_none()`.
-    pub fn columns(&self) -> &[crate::types::DimensionField] {
-        self.columns.as_deref().unwrap_or_default()
+    pub fn columns(&self) -> & [crate::types::DimensionField] {
+        self.columns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The values field well of a heat map.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[crate::types::MeasureField] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [crate::types::MeasureField] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl HeatMapAggregatedFieldWells {
@@ -42,9 +45,9 @@ impl HeatMapAggregatedFieldWells {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HeatMapAggregatedFieldWellsBuilder {
-    pub(crate) rows: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
-    pub(crate) columns: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
+    pub(crate) rows: ::std::option::Option<::std::vec::Vec::<crate::types::DimensionField>>,
+    pub(crate) columns: ::std::option::Option<::std::vec::Vec::<crate::types::DimensionField>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<crate::types::MeasureField>>,
 }
 impl HeatMapAggregatedFieldWellsBuilder {
     /// Appends an item to `rows`.
@@ -54,17 +57,16 @@ impl HeatMapAggregatedFieldWellsBuilder {
     /// <p>The rows field well of a heat map.</p>
     pub fn rows(mut self, input: crate::types::DimensionField) -> Self {
         let mut v = self.rows.unwrap_or_default();
-        v.push(input);
-        self.rows = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rows = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The rows field well of a heat map.</p>
-    pub fn set_rows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>) -> Self {
-        self.rows = input;
-        self
+    pub fn set_rows(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DimensionField>>) -> Self {
+        self.rows = input; self
     }
     /// <p>The rows field well of a heat map.</p>
-    pub fn get_rows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+    pub fn get_rows(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DimensionField>> {
         &self.rows
     }
     /// Appends an item to `columns`.
@@ -74,17 +76,16 @@ impl HeatMapAggregatedFieldWellsBuilder {
     /// <p>The columns field well of a heat map.</p>
     pub fn columns(mut self, input: crate::types::DimensionField) -> Self {
         let mut v = self.columns.unwrap_or_default();
-        v.push(input);
-        self.columns = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.columns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The columns field well of a heat map.</p>
-    pub fn set_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>) -> Self {
-        self.columns = input;
-        self
+    pub fn set_columns(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DimensionField>>) -> Self {
+        self.columns = input; self
     }
     /// <p>The columns field well of a heat map.</p>
-    pub fn get_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+    pub fn get_columns(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DimensionField>> {
         &self.columns
     }
     /// Appends an item to `values`.
@@ -94,25 +95,28 @@ impl HeatMapAggregatedFieldWellsBuilder {
     /// <p>The values field well of a heat map.</p>
     pub fn values(mut self, input: crate::types::MeasureField) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input);
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The values field well of a heat map.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MeasureField>>) -> Self {
+        self.values = input; self
     }
     /// <p>The values field well of a heat map.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MeasureField>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`HeatMapAggregatedFieldWells`](crate::types::HeatMapAggregatedFieldWells).
     pub fn build(self) -> crate::types::HeatMapAggregatedFieldWells {
         crate::types::HeatMapAggregatedFieldWells {
-            rows: self.rows,
-            columns: self.columns,
-            values: self.values,
+            rows: self.rows
+            ,
+            columns: self.columns
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

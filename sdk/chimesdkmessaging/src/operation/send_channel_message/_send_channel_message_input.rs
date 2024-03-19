@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SendChannelMessageInput {
+pub struct SendChannelMessageInput  {
     /// <p>The ARN of the channel.</p>
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The content of the channel message.</p>
@@ -22,71 +22,70 @@ pub struct SendChannelMessageInput {
     /// <p>The push notification configuration of the message.</p>
     pub push_notification: ::std::option::Option<crate::types::PushNotificationConfiguration>,
     /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.</p>
-    pub message_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>>,
+    pub message_attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::MessageAttributeValue>>,
     /// <p>The ID of the SubChannel in the request.</p>
     pub sub_channel_id: ::std::option::Option<::std::string::String>,
     /// <p>The content type of the channel message.</p>
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The target of a message. Must be a member of the channel, such as another user, a bot, or the sender. Only the target and the sender can view targeted messages. Only users who can see targeted messages can take actions on them. However, administrators can delete targeted messages that they can’t see.</p>
-    pub target: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
+    pub target: ::std::option::Option<::std::vec::Vec::<crate::types::Target>>,
 }
-impl SendChannelMessageInput {
+impl  SendChannelMessageInput  {
     /// <p>The ARN of the channel.</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn channel_arn(&self) -> ::std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>The content of the channel message.</p>
-    pub fn content(&self) -> ::std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<& str> {
         self.content.as_deref()
     }
     /// <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
     /// <p><code>STANDARD</code> messages can be up to 4KB in size and contain metadata. Metadata is arbitrary, and you can use it in a variety of ways, such as containing a link to an attachment.</p>
     /// <p><code>CONTROL</code> messages are limited to 30 bytes and do not contain metadata.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ChannelMessageType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ChannelMessageType> {
         self.r#type.as_ref()
     }
     /// <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
-    pub fn persistence(&self) -> ::std::option::Option<&crate::types::ChannelMessagePersistenceType> {
+    pub fn persistence(&self) -> ::std::option::Option<& crate::types::ChannelMessagePersistenceType> {
         self.persistence.as_ref()
     }
     /// <p>The optional metadata for each message.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&str> {
+    pub fn metadata(&self) -> ::std::option::Option<& str> {
         self.metadata.as_deref()
     }
     /// <p>The <code>Idempotency</code> token for each client request.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
-    pub fn chime_bearer(&self) -> ::std::option::Option<&str> {
+    pub fn chime_bearer(&self) -> ::std::option::Option<& str> {
         self.chime_bearer.as_deref()
     }
     /// <p>The push notification configuration of the message.</p>
-    pub fn push_notification(&self) -> ::std::option::Option<&crate::types::PushNotificationConfiguration> {
+    pub fn push_notification(&self) -> ::std::option::Option<& crate::types::PushNotificationConfiguration> {
         self.push_notification.as_ref()
     }
     /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.</p>
-    pub fn message_attributes(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>> {
+    pub fn message_attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::MessageAttributeValue>> {
         self.message_attributes.as_ref()
     }
     /// <p>The ID of the SubChannel in the request.</p>
-    pub fn sub_channel_id(&self) -> ::std::option::Option<&str> {
+    pub fn sub_channel_id(&self) -> ::std::option::Option<& str> {
         self.sub_channel_id.as_deref()
     }
     /// <p>The content type of the channel message.</p>
-    pub fn content_type(&self) -> ::std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>The target of a message. Must be a member of the channel, such as another user, a bot, or the sender. Only the target and the sender can view targeted messages. Only users who can see targeted messages can take actions on them. However, administrators can delete targeted messages that they can’t see.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target.is_none()`.
-    pub fn target(&self) -> &[crate::types::Target] {
-        self.target.as_deref().unwrap_or_default()
+    pub fn target(&self) -> & [crate::types::Target] {
+        self.target.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for SendChannelMessageInput {
+impl  ::std::fmt::Debug for SendChannelMessageInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SendChannelMessageInput");
         formatter.field("channel_arn", &self.channel_arn);
@@ -123,10 +122,10 @@ pub struct SendChannelMessageInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) chime_bearer: ::std::option::Option<::std::string::String>,
     pub(crate) push_notification: ::std::option::Option<crate::types::PushNotificationConfiguration>,
-    pub(crate) message_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>>,
+    pub(crate) message_attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::MessageAttributeValue>>,
     pub(crate) sub_channel_id: ::std::option::Option<::std::string::String>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
-    pub(crate) target: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
+    pub(crate) target: ::std::option::Option<::std::vec::Vec::<crate::types::Target>>,
 }
 impl SendChannelMessageInputBuilder {
     /// <p>The ARN of the channel.</p>
@@ -137,8 +136,7 @@ impl SendChannelMessageInputBuilder {
     }
     /// <p>The ARN of the channel.</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// <p>The ARN of the channel.</p>
     pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +150,7 @@ impl SendChannelMessageInputBuilder {
     }
     /// <p>The content of the channel message.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>The content of the channel message.</p>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,8 +168,7 @@ impl SendChannelMessageInputBuilder {
     /// <p><code>STANDARD</code> messages can be up to 4KB in size and contain metadata. Metadata is arbitrary, and you can use it in a variety of ways, such as containing a link to an attachment.</p>
     /// <p><code>CONTROL</code> messages are limited to 30 bytes and do not contain metadata.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ChannelMessageType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
     /// <p><code>STANDARD</code> messages can be up to 4KB in size and contain metadata. Metadata is arbitrary, and you can use it in a variety of ways, such as containing a link to an attachment.</p>
@@ -188,8 +184,7 @@ impl SendChannelMessageInputBuilder {
     }
     /// <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
     pub fn set_persistence(mut self, input: ::std::option::Option<crate::types::ChannelMessagePersistenceType>) -> Self {
-        self.persistence = input;
-        self
+        self.persistence = input; self
     }
     /// <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
     pub fn get_persistence(&self) -> &::std::option::Option<crate::types::ChannelMessagePersistenceType> {
@@ -202,8 +197,7 @@ impl SendChannelMessageInputBuilder {
     }
     /// <p>The optional metadata for each message.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// <p>The optional metadata for each message.</p>
     pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
@@ -217,8 +211,7 @@ impl SendChannelMessageInputBuilder {
     }
     /// <p>The <code>Idempotency</code> token for each client request.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>The <code>Idempotency</code> token for each client request.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -232,8 +225,7 @@ impl SendChannelMessageInputBuilder {
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.chime_bearer = input;
-        self
+        self.chime_bearer = input; self
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
@@ -246,8 +238,7 @@ impl SendChannelMessageInputBuilder {
     }
     /// <p>The push notification configuration of the message.</p>
     pub fn set_push_notification(mut self, input: ::std::option::Option<crate::types::PushNotificationConfiguration>) -> Self {
-        self.push_notification = input;
-        self
+        self.push_notification = input; self
     }
     /// <p>The push notification configuration of the message.</p>
     pub fn get_push_notification(&self) -> &::std::option::Option<crate::types::PushNotificationConfiguration> {
@@ -260,22 +251,16 @@ impl SendChannelMessageInputBuilder {
     /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.</p>
     pub fn message_attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::MessageAttributeValue) -> Self {
         let mut hash_map = self.message_attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.message_attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.message_attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.</p>
-    pub fn set_message_attributes(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>>,
-    ) -> Self {
-        self.message_attributes = input;
-        self
+    pub fn set_message_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::MessageAttributeValue>>) -> Self {
+        self.message_attributes = input; self
     }
     /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.</p>
-    pub fn get_message_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>> {
+    pub fn get_message_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::MessageAttributeValue>> {
         &self.message_attributes
     }
     /// <p>The ID of the SubChannel in the request.</p>
@@ -285,8 +270,7 @@ impl SendChannelMessageInputBuilder {
     }
     /// <p>The ID of the SubChannel in the request.</p>
     pub fn set_sub_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sub_channel_id = input;
-        self
+        self.sub_channel_id = input; self
     }
     /// <p>The ID of the SubChannel in the request.</p>
     pub fn get_sub_channel_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -299,8 +283,7 @@ impl SendChannelMessageInputBuilder {
     }
     /// <p>The content type of the channel message.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>The content type of the channel message.</p>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -313,38 +296,48 @@ impl SendChannelMessageInputBuilder {
     /// <p>The target of a message. Must be a member of the channel, such as another user, a bot, or the sender. Only the target and the sender can view targeted messages. Only users who can see targeted messages can take actions on them. However, administrators can delete targeted messages that they can’t see.</p>
     pub fn target(mut self, input: crate::types::Target) -> Self {
         let mut v = self.target.unwrap_or_default();
-        v.push(input);
-        self.target = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.target = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The target of a message. Must be a member of the channel, such as another user, a bot, or the sender. Only the target and the sender can view targeted messages. Only users who can see targeted messages can take actions on them. However, administrators can delete targeted messages that they can’t see.</p>
-    pub fn set_target(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
-        self.target = input;
-        self
+    pub fn set_target(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Target>>) -> Self {
+        self.target = input; self
     }
     /// <p>The target of a message. Must be a member of the channel, such as another user, a bot, or the sender. Only the target and the sender can view targeted messages. Only users who can see targeted messages can take actions on them. However, administrators can delete targeted messages that they can’t see.</p>
-    pub fn get_target(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
+    pub fn get_target(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Target>> {
         &self.target
     }
     /// Consumes the builder and constructs a [`SendChannelMessageInput`](crate::operation::send_channel_message::SendChannelMessageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::send_channel_message::SendChannelMessageInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::send_channel_message::SendChannelMessageInput {
-            channel_arn: self.channel_arn,
-            content: self.content,
-            r#type: self.r#type,
-            persistence: self.persistence,
-            metadata: self.metadata,
-            client_request_token: self.client_request_token,
-            chime_bearer: self.chime_bearer,
-            push_notification: self.push_notification,
-            message_attributes: self.message_attributes,
-            sub_channel_id: self.sub_channel_id,
-            content_type: self.content_type,
-            target: self.target,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::send_channel_message::SendChannelMessageInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::send_channel_message::SendChannelMessageInput {
+                channel_arn: self.channel_arn
+                ,
+                content: self.content
+                ,
+                r#type: self.r#type
+                ,
+                persistence: self.persistence
+                ,
+                metadata: self.metadata
+                ,
+                client_request_token: self.client_request_token
+                ,
+                chime_bearer: self.chime_bearer
+                ,
+                push_notification: self.push_notification
+                ,
+                message_attributes: self.message_attributes
+                ,
+                sub_channel_id: self.sub_channel_id
+                ,
+                content_type: self.content_type
+                ,
+                target: self.target
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for SendChannelMessageInputBuilder {
@@ -365,3 +358,4 @@ impl ::std::fmt::Debug for SendChannelMessageInputBuilder {
         formatter.finish()
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCapacityAssignmentConfigurationInput {
+pub struct GetCapacityAssignmentConfigurationInput  {
     /// <p>The name of the capacity reservation to retrieve the capacity assignment configuration for.</p>
     pub capacity_reservation_name: ::std::option::Option<::std::string::String>,
 }
-impl GetCapacityAssignmentConfigurationInput {
+impl  GetCapacityAssignmentConfigurationInput  {
     /// <p>The name of the capacity reservation to retrieve the capacity assignment configuration for.</p>
-    pub fn capacity_reservation_name(&self) -> ::std::option::Option<&str> {
+    pub fn capacity_reservation_name(&self) -> ::std::option::Option<& str> {
         self.capacity_reservation_name.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl GetCapacityAssignmentConfigurationInputBuilder {
     }
     /// <p>The name of the capacity reservation to retrieve the capacity assignment configuration for.</p>
     pub fn set_capacity_reservation_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.capacity_reservation_name = input;
-        self
+        self.capacity_reservation_name = input; self
     }
     /// <p>The name of the capacity reservation to retrieve the capacity assignment configuration for.</p>
     pub fn get_capacity_reservation_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.capacity_reservation_name
     }
     /// Consumes the builder and constructs a [`GetCapacityAssignmentConfigurationInput`](crate::operation::get_capacity_assignment_configuration::GetCapacityAssignmentConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_capacity_assignment_configuration::GetCapacityAssignmentConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_capacity_assignment_configuration::GetCapacityAssignmentConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_capacity_assignment_configuration::GetCapacityAssignmentConfigurationInput {
-                capacity_reservation_name: self.capacity_reservation_name,
-            },
+                capacity_reservation_name: self.capacity_reservation_name
+                ,
+            }
         )
     }
 }
+

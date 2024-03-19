@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateProvisionedModelThroughputInput {
+pub struct CreateProvisionedModelThroughputInput  {
     /// <p>Unique token value that you can provide. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>Number of model units to allocate.</p>
@@ -14,11 +14,11 @@ pub struct CreateProvisionedModelThroughputInput {
     /// <p>Commitment duration requested for the provisioned throughput.</p>
     pub commitment_duration: ::std::option::Option<crate::types::CommitmentDuration>,
     /// <p>Tags to associate with this provisioned throughput.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateProvisionedModelThroughputInput {
+impl  CreateProvisionedModelThroughputInput  {
     /// <p>Unique token value that you can provide. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>Number of model units to allocate.</p>
@@ -26,22 +26,23 @@ impl CreateProvisionedModelThroughputInput {
         self.model_units
     }
     /// <p>Unique name for this provisioned throughput.</p>
-    pub fn provisioned_model_name(&self) -> ::std::option::Option<&str> {
+    pub fn provisioned_model_name(&self) -> ::std::option::Option<& str> {
         self.provisioned_model_name.as_deref()
     }
     /// <p>Name or ARN of the model to associate with this provisioned throughput.</p>
-    pub fn model_id(&self) -> ::std::option::Option<&str> {
+    pub fn model_id(&self) -> ::std::option::Option<& str> {
         self.model_id.as_deref()
     }
     /// <p>Commitment duration requested for the provisioned throughput.</p>
-    pub fn commitment_duration(&self) -> ::std::option::Option<&crate::types::CommitmentDuration> {
+    pub fn commitment_duration(&self) -> ::std::option::Option<& crate::types::CommitmentDuration> {
         self.commitment_duration.as_ref()
     }
     /// <p>Tags to associate with this provisioned throughput.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateProvisionedModelThroughputInput {
@@ -60,7 +61,7 @@ pub struct CreateProvisionedModelThroughputInputBuilder {
     pub(crate) provisioned_model_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_id: ::std::option::Option<::std::string::String>,
     pub(crate) commitment_duration: ::std::option::Option<crate::types::CommitmentDuration>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateProvisionedModelThroughputInputBuilder {
     /// <p>Unique token value that you can provide. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error.</p>
@@ -70,8 +71,7 @@ impl CreateProvisionedModelThroughputInputBuilder {
     }
     /// <p>Unique token value that you can provide. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>Unique token value that you can provide. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +85,7 @@ impl CreateProvisionedModelThroughputInputBuilder {
     }
     /// <p>Number of model units to allocate.</p>
     pub fn set_model_units(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.model_units = input;
-        self
+        self.model_units = input; self
     }
     /// <p>Number of model units to allocate.</p>
     pub fn get_model_units(&self) -> &::std::option::Option<i32> {
@@ -100,8 +99,7 @@ impl CreateProvisionedModelThroughputInputBuilder {
     }
     /// <p>Unique name for this provisioned throughput.</p>
     pub fn set_provisioned_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provisioned_model_name = input;
-        self
+        self.provisioned_model_name = input; self
     }
     /// <p>Unique name for this provisioned throughput.</p>
     pub fn get_provisioned_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +113,7 @@ impl CreateProvisionedModelThroughputInputBuilder {
     }
     /// <p>Name or ARN of the model to associate with this provisioned throughput.</p>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_id = input;
-        self
+        self.model_id = input; self
     }
     /// <p>Name or ARN of the model to associate with this provisioned throughput.</p>
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +126,7 @@ impl CreateProvisionedModelThroughputInputBuilder {
     }
     /// <p>Commitment duration requested for the provisioned throughput.</p>
     pub fn set_commitment_duration(mut self, input: ::std::option::Option<crate::types::CommitmentDuration>) -> Self {
-        self.commitment_duration = input;
-        self
+        self.commitment_duration = input; self
     }
     /// <p>Commitment duration requested for the provisioned throughput.</p>
     pub fn get_commitment_duration(&self) -> &::std::option::Option<crate::types::CommitmentDuration> {
@@ -143,35 +139,36 @@ impl CreateProvisionedModelThroughputInputBuilder {
     /// <p>Tags to associate with this provisioned throughput.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Tags to associate with this provisioned throughput.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags to associate with this provisioned throughput.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateProvisionedModelThroughputInput`](crate::operation::create_provisioned_model_throughput::CreateProvisionedModelThroughputInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_provisioned_model_throughput::CreateProvisionedModelThroughputInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_provisioned_model_throughput::CreateProvisionedModelThroughputInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_provisioned_model_throughput::CreateProvisionedModelThroughputInput {
-                client_request_token: self.client_request_token,
-                model_units: self.model_units,
-                provisioned_model_name: self.provisioned_model_name,
-                model_id: self.model_id,
-                commitment_duration: self.commitment_duration,
-                tags: self.tags,
-            },
+                client_request_token: self.client_request_token
+                ,
+                model_units: self.model_units
+                ,
+                provisioned_model_name: self.provisioned_model_name
+                ,
+                model_id: self.model_id
+                ,
+                commitment_duration: self.commitment_duration
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

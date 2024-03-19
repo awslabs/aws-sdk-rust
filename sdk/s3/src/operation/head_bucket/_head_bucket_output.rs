@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HeadBucketOutput {
+pub struct HeadBucketOutput  {
     /// <p>The type of location where the bucket is created.</p><note>
     /// <p>This functionality is only supported by directory buckets.</p>
     /// </note>
@@ -23,24 +23,24 @@ pub struct HeadBucketOutput {
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
-impl HeadBucketOutput {
+impl  HeadBucketOutput  {
     /// <p>The type of location where the bucket is created.</p><note>
     /// <p>This functionality is only supported by directory buckets.</p>
     /// </note>
-    pub fn bucket_location_type(&self) -> ::std::option::Option<&crate::types::LocationType> {
+    pub fn bucket_location_type(&self) -> ::std::option::Option<& crate::types::LocationType> {
         self.bucket_location_type.as_ref()
     }
     /// <p>The name of the location where the bucket will be created.</p>
     /// <p>For directory buckets, the AZ ID of the Availability Zone where the bucket is created. An example AZ ID value is <code>usw2-az1</code>.</p><note>
     /// <p>This functionality is only supported by directory buckets.</p>
     /// </note>
-    pub fn bucket_location_name(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_location_name(&self) -> ::std::option::Option<& str> {
         self.bucket_location_name.as_deref()
     }
     /// <p>The Region that the bucket is located.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn bucket_region(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_region(&self) -> ::std::option::Option<& str> {
         self.bucket_region.as_deref()
     }
     /// <p>Indicates whether the bucket name used in the request is an access point alias.</p><note>
@@ -51,15 +51,15 @@ impl HeadBucketOutput {
     }
 }
 impl crate::s3_request_id::RequestIdExt for HeadBucketOutput {
-    fn extended_request_id(&self) -> Option<&str> {
-        self._extended_request_id.as_deref()
-    }
-}
+                                    fn extended_request_id(&self) -> Option<&str> {
+                                        self._extended_request_id.as_deref()
+                                    }
+                                }
 impl ::aws_types::request_id::RequestId for HeadBucketOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl HeadBucketOutput {
     /// Creates a new builder-style object to manufacture [`HeadBucketOutput`](crate::operation::head_bucket::HeadBucketOutput).
     pub fn builder() -> crate::operation::head_bucket::builders::HeadBucketOutputBuilder {
@@ -90,8 +90,7 @@ impl HeadBucketOutputBuilder {
     /// <p>This functionality is only supported by directory buckets.</p>
     /// </note>
     pub fn set_bucket_location_type(mut self, input: ::std::option::Option<crate::types::LocationType>) -> Self {
-        self.bucket_location_type = input;
-        self
+        self.bucket_location_type = input; self
     }
     /// <p>The type of location where the bucket is created.</p><note>
     /// <p>This functionality is only supported by directory buckets.</p>
@@ -112,8 +111,7 @@ impl HeadBucketOutputBuilder {
     /// <p>This functionality is only supported by directory buckets.</p>
     /// </note>
     pub fn set_bucket_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_location_name = input;
-        self
+        self.bucket_location_name = input; self
     }
     /// <p>The name of the location where the bucket will be created.</p>
     /// <p>For directory buckets, the AZ ID of the Availability Zone where the bucket is created. An example AZ ID value is <code>usw2-az1</code>.</p><note>
@@ -133,8 +131,7 @@ impl HeadBucketOutputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_bucket_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_region = input;
-        self
+        self.bucket_region = input; self
     }
     /// <p>The Region that the bucket is located.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -153,8 +150,7 @@ impl HeadBucketOutputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_access_point_alias(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.access_point_alias = input;
-        self
+        self.access_point_alias = input; self
     }
     /// <p>Indicates whether the bucket name used in the request is an access point alias.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -163,32 +159,37 @@ impl HeadBucketOutputBuilder {
         &self.access_point_alias
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
-        self._extended_request_id = Some(extended_request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
-        self._extended_request_id = extended_request_id;
-        self
-    }
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`HeadBucketOutput`](crate::operation::head_bucket::HeadBucketOutput).
     pub fn build(self) -> crate::operation::head_bucket::HeadBucketOutput {
         crate::operation::head_bucket::HeadBucketOutput {
-            bucket_location_type: self.bucket_location_type,
-            bucket_location_name: self.bucket_location_name,
-            bucket_region: self.bucket_region,
-            access_point_alias: self.access_point_alias,
+            bucket_location_type: self.bucket_location_type
+            ,
+            bucket_location_name: self.bucket_location_name
+            ,
+            bucket_region: self.bucket_region
+            ,
+            access_point_alias: self.access_point_alias
+            ,
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,
         }
     }
 }
+

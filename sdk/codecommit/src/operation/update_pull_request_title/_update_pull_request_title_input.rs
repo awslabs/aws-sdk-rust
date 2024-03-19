@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePullRequestTitleInput {
+pub struct UpdatePullRequestTitleInput  {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
     pub pull_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The updated title of the pull request. This replaces the existing title.</p>
     pub title: ::std::option::Option<::std::string::String>,
 }
-impl UpdatePullRequestTitleInput {
+impl  UpdatePullRequestTitleInput  {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn pull_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn pull_request_id(&self) -> ::std::option::Option<& str> {
         self.pull_request_id.as_deref()
     }
     /// <p>The updated title of the pull request. This replaces the existing title.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<& str> {
         self.title.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdatePullRequestTitleInputBuilder {
     }
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
     pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pull_request_id = input;
-        self
+        self.pull_request_id = input; self
     }
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
     pub fn get_pull_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl UpdatePullRequestTitleInputBuilder {
     }
     /// <p>The updated title of the pull request. This replaces the existing title.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The updated title of the pull request. This replaces the existing title.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
         &self.title
     }
     /// Consumes the builder and constructs a [`UpdatePullRequestTitleInput`](crate::operation::update_pull_request_title::UpdatePullRequestTitleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_pull_request_title::UpdatePullRequestTitleInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_pull_request_title::UpdatePullRequestTitleInput {
-            pull_request_id: self.pull_request_id,
-            title: self.title,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_pull_request_title::UpdatePullRequestTitleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_pull_request_title::UpdatePullRequestTitleInput {
+                pull_request_id: self.pull_request_id
+                ,
+                title: self.title
+                ,
+            }
+        )
     }
 }
+

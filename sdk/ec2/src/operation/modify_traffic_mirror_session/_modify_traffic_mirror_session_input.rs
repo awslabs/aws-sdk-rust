@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyTrafficMirrorSessionInput {
+pub struct ModifyTrafficMirrorSessionInput  {
     /// <p>The ID of the Traffic Mirror session.</p>
     pub traffic_mirror_session_id: ::std::option::Option<::std::string::String>,
     /// <p>The Traffic Mirror target. The target must be in the same VPC as the source, or have a VPC peering connection with the source.</p>
@@ -21,21 +21,21 @@ pub struct ModifyTrafficMirrorSessionInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The properties that you want to remove from the Traffic Mirror session.</p>
     /// <p>When you remove a property from a Traffic Mirror session, the property is set to the default.</p>
-    pub remove_fields: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorSessionField>>,
+    pub remove_fields: ::std::option::Option<::std::vec::Vec::<crate::types::TrafficMirrorSessionField>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl ModifyTrafficMirrorSessionInput {
+impl  ModifyTrafficMirrorSessionInput  {
     /// <p>The ID of the Traffic Mirror session.</p>
-    pub fn traffic_mirror_session_id(&self) -> ::std::option::Option<&str> {
+    pub fn traffic_mirror_session_id(&self) -> ::std::option::Option<& str> {
         self.traffic_mirror_session_id.as_deref()
     }
     /// <p>The Traffic Mirror target. The target must be in the same VPC as the source, or have a VPC peering connection with the source.</p>
-    pub fn traffic_mirror_target_id(&self) -> ::std::option::Option<&str> {
+    pub fn traffic_mirror_target_id(&self) -> ::std::option::Option<& str> {
         self.traffic_mirror_target_id.as_deref()
     }
     /// <p>The ID of the Traffic Mirror filter.</p>
-    pub fn traffic_mirror_filter_id(&self) -> ::std::option::Option<&str> {
+    pub fn traffic_mirror_filter_id(&self) -> ::std::option::Option<& str> {
         self.traffic_mirror_filter_id.as_deref()
     }
     /// <p>The number of bytes in each packet to mirror. These are bytes after the VXLAN header. To mirror a subset, set this to the length (in bytes) to mirror. For example, if you set this value to 100, then the first 100 bytes that meet the filter criteria are copied to the target. Do not specify this parameter when you want to mirror the entire packet.</p>
@@ -53,15 +53,16 @@ impl ModifyTrafficMirrorSessionInput {
         self.virtual_network_id
     }
     /// <p>The description to assign to the Traffic Mirror session.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The properties that you want to remove from the Traffic Mirror session.</p>
     /// <p>When you remove a property from a Traffic Mirror session, the property is set to the default.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_fields.is_none()`.
-    pub fn remove_fields(&self) -> &[crate::types::TrafficMirrorSessionField] {
-        self.remove_fields.as_deref().unwrap_or_default()
+    pub fn remove_fields(&self) -> & [crate::types::TrafficMirrorSessionField] {
+        self.remove_fields.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -86,7 +87,7 @@ pub struct ModifyTrafficMirrorSessionInputBuilder {
     pub(crate) session_number: ::std::option::Option<i32>,
     pub(crate) virtual_network_id: ::std::option::Option<i32>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) remove_fields: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorSessionField>>,
+    pub(crate) remove_fields: ::std::option::Option<::std::vec::Vec::<crate::types::TrafficMirrorSessionField>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl ModifyTrafficMirrorSessionInputBuilder {
@@ -98,8 +99,7 @@ impl ModifyTrafficMirrorSessionInputBuilder {
     }
     /// <p>The ID of the Traffic Mirror session.</p>
     pub fn set_traffic_mirror_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.traffic_mirror_session_id = input;
-        self
+        self.traffic_mirror_session_id = input; self
     }
     /// <p>The ID of the Traffic Mirror session.</p>
     pub fn get_traffic_mirror_session_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +112,7 @@ impl ModifyTrafficMirrorSessionInputBuilder {
     }
     /// <p>The Traffic Mirror target. The target must be in the same VPC as the source, or have a VPC peering connection with the source.</p>
     pub fn set_traffic_mirror_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.traffic_mirror_target_id = input;
-        self
+        self.traffic_mirror_target_id = input; self
     }
     /// <p>The Traffic Mirror target. The target must be in the same VPC as the source, or have a VPC peering connection with the source.</p>
     pub fn get_traffic_mirror_target_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +125,7 @@ impl ModifyTrafficMirrorSessionInputBuilder {
     }
     /// <p>The ID of the Traffic Mirror filter.</p>
     pub fn set_traffic_mirror_filter_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.traffic_mirror_filter_id = input;
-        self
+        self.traffic_mirror_filter_id = input; self
     }
     /// <p>The ID of the Traffic Mirror filter.</p>
     pub fn get_traffic_mirror_filter_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +140,7 @@ impl ModifyTrafficMirrorSessionInputBuilder {
     /// <p>The number of bytes in each packet to mirror. These are bytes after the VXLAN header. To mirror a subset, set this to the length (in bytes) to mirror. For example, if you set this value to 100, then the first 100 bytes that meet the filter criteria are copied to the target. Do not specify this parameter when you want to mirror the entire packet.</p>
     /// <p>For sessions with Network Load Balancer (NLB) traffic mirror targets, the default <code>PacketLength</code> will be set to 8500. Valid values are 1-8500. Setting a <code>PacketLength</code> greater than 8500 will result in an error response.</p>
     pub fn set_packet_length(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.packet_length = input;
-        self
+        self.packet_length = input; self
     }
     /// <p>The number of bytes in each packet to mirror. These are bytes after the VXLAN header. To mirror a subset, set this to the length (in bytes) to mirror. For example, if you set this value to 100, then the first 100 bytes that meet the filter criteria are copied to the target. Do not specify this parameter when you want to mirror the entire packet.</p>
     /// <p>For sessions with Network Load Balancer (NLB) traffic mirror targets, the default <code>PacketLength</code> will be set to 8500. Valid values are 1-8500. Setting a <code>PacketLength</code> greater than 8500 will result in an error response.</p>
@@ -159,8 +156,7 @@ impl ModifyTrafficMirrorSessionInputBuilder {
     /// <p>The session number determines the order in which sessions are evaluated when an interface is used by multiple sessions. The first session with a matching filter is the one that mirrors the packets.</p>
     /// <p>Valid values are 1-32766.</p>
     pub fn set_session_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.session_number = input;
-        self
+        self.session_number = input; self
     }
     /// <p>The session number determines the order in which sessions are evaluated when an interface is used by multiple sessions. The first session with a matching filter is the one that mirrors the packets.</p>
     /// <p>Valid values are 1-32766.</p>
@@ -174,8 +170,7 @@ impl ModifyTrafficMirrorSessionInputBuilder {
     }
     /// <p>The virtual network ID of the Traffic Mirror session.</p>
     pub fn set_virtual_network_id(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.virtual_network_id = input;
-        self
+        self.virtual_network_id = input; self
     }
     /// <p>The virtual network ID of the Traffic Mirror session.</p>
     pub fn get_virtual_network_id(&self) -> &::std::option::Option<i32> {
@@ -188,8 +183,7 @@ impl ModifyTrafficMirrorSessionInputBuilder {
     }
     /// <p>The description to assign to the Traffic Mirror session.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description to assign to the Traffic Mirror session.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -203,19 +197,18 @@ impl ModifyTrafficMirrorSessionInputBuilder {
     /// <p>When you remove a property from a Traffic Mirror session, the property is set to the default.</p>
     pub fn remove_fields(mut self, input: crate::types::TrafficMirrorSessionField) -> Self {
         let mut v = self.remove_fields.unwrap_or_default();
-        v.push(input);
-        self.remove_fields = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.remove_fields = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The properties that you want to remove from the Traffic Mirror session.</p>
     /// <p>When you remove a property from a Traffic Mirror session, the property is set to the default.</p>
-    pub fn set_remove_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorSessionField>>) -> Self {
-        self.remove_fields = input;
-        self
+    pub fn set_remove_fields(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TrafficMirrorSessionField>>) -> Self {
+        self.remove_fields = input; self
     }
     /// <p>The properties that you want to remove from the Traffic Mirror session.</p>
     /// <p>When you remove a property from a Traffic Mirror session, the property is set to the default.</p>
-    pub fn get_remove_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorSessionField>> {
+    pub fn get_remove_fields(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TrafficMirrorSessionField>> {
         &self.remove_fields
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -225,30 +218,36 @@ impl ModifyTrafficMirrorSessionInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`ModifyTrafficMirrorSessionInput`](crate::operation::modify_traffic_mirror_session::ModifyTrafficMirrorSessionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_traffic_mirror_session::ModifyTrafficMirrorSessionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::modify_traffic_mirror_session::ModifyTrafficMirrorSessionInput {
-            traffic_mirror_session_id: self.traffic_mirror_session_id,
-            traffic_mirror_target_id: self.traffic_mirror_target_id,
-            traffic_mirror_filter_id: self.traffic_mirror_filter_id,
-            packet_length: self.packet_length,
-            session_number: self.session_number,
-            virtual_network_id: self.virtual_network_id,
-            description: self.description,
-            remove_fields: self.remove_fields,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_traffic_mirror_session::ModifyTrafficMirrorSessionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_traffic_mirror_session::ModifyTrafficMirrorSessionInput {
+                traffic_mirror_session_id: self.traffic_mirror_session_id
+                ,
+                traffic_mirror_target_id: self.traffic_mirror_target_id
+                ,
+                traffic_mirror_filter_id: self.traffic_mirror_filter_id
+                ,
+                packet_length: self.packet_length
+                ,
+                session_number: self.session_number
+                ,
+                virtual_network_id: self.virtual_network_id
+                ,
+                description: self.description
+                ,
+                remove_fields: self.remove_fields
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

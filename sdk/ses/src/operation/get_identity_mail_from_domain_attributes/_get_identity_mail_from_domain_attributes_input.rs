@@ -3,16 +3,17 @@
 /// <p>Represents a request to return the Amazon SES custom MAIL FROM attributes for a list of identities. For information about using a custom MAIL FROM domain, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/mail-from.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetIdentityMailFromDomainAttributesInput {
+pub struct GetIdentityMailFromDomainAttributesInput  {
     /// <p>A list of one or more identities.</p>
-    pub identities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub identities: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl GetIdentityMailFromDomainAttributesInput {
+impl  GetIdentityMailFromDomainAttributesInput  {
     /// <p>A list of one or more identities.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.identities.is_none()`.
-    pub fn identities(&self) -> &[::std::string::String] {
-        self.identities.as_deref().unwrap_or_default()
+    pub fn identities(&self) -> & [::std::string::String] {
+        self.identities.as_deref()
+        .unwrap_or_default()
     }
 }
 impl GetIdentityMailFromDomainAttributesInput {
@@ -26,7 +27,7 @@ impl GetIdentityMailFromDomainAttributesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIdentityMailFromDomainAttributesInputBuilder {
-    pub(crate) identities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) identities: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl GetIdentityMailFromDomainAttributesInputBuilder {
     /// Appends an item to `identities`.
@@ -36,28 +37,26 @@ impl GetIdentityMailFromDomainAttributesInputBuilder {
     /// <p>A list of one or more identities.</p>
     pub fn identities(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.identities.unwrap_or_default();
-        v.push(input.into());
-        self.identities = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.identities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of one or more identities.</p>
-    pub fn set_identities(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.identities = input;
-        self
+    pub fn set_identities(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.identities = input; self
     }
     /// <p>A list of one or more identities.</p>
-    pub fn get_identities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_identities(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.identities
     }
     /// Consumes the builder and constructs a [`GetIdentityMailFromDomainAttributesInput`](crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesInput { identities: self.identities },
+            crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesInput {
+                identities: self.identities
+                ,
+            }
         )
     }
 }
+

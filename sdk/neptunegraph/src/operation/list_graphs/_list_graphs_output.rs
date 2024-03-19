@@ -2,31 +2,30 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListGraphsOutput {
+pub struct ListGraphsOutput  {
     /// <p>A list of the graphs.</p>
-    pub graphs: ::std::vec::Vec<crate::types::GraphSummary>,
+    pub graphs: ::std::vec::Vec::<crate::types::GraphSummary>,
     /// <p>Pagination token used to paginate output.</p>
     /// <p>When this value is provided as input, the service returns results from where the previous response left off. When this value is present in output, it indicates that there are more results to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListGraphsOutput {
+impl  ListGraphsOutput  {
     /// <p>A list of the graphs.</p>
-    pub fn graphs(&self) -> &[crate::types::GraphSummary] {
-        use std::ops::Deref;
-        self.graphs.deref()
+    pub fn graphs(&self) -> & [crate::types::GraphSummary] {
+        use std::ops::Deref; self.graphs.deref()
     }
     /// <p>Pagination token used to paginate output.</p>
     /// <p>When this value is provided as input, the service returns results from where the previous response left off. When this value is present in output, it indicates that there are more results to retrieve.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListGraphsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListGraphsOutput {
     /// Creates a new builder-style object to manufacture [`ListGraphsOutput`](crate::operation::list_graphs::ListGraphsOutput).
     pub fn builder() -> crate::operation::list_graphs::builders::ListGraphsOutputBuilder {
@@ -38,7 +37,7 @@ impl ListGraphsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGraphsOutputBuilder {
-    pub(crate) graphs: ::std::option::Option<::std::vec::Vec<crate::types::GraphSummary>>,
+    pub(crate) graphs: ::std::option::Option<::std::vec::Vec::<crate::types::GraphSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +49,16 @@ impl ListGraphsOutputBuilder {
     /// <p>A list of the graphs.</p>
     pub fn graphs(mut self, input: crate::types::GraphSummary) -> Self {
         let mut v = self.graphs.unwrap_or_default();
-        v.push(input);
-        self.graphs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.graphs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the graphs.</p>
-    pub fn set_graphs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GraphSummary>>) -> Self {
-        self.graphs = input;
-        self
+    pub fn set_graphs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GraphSummary>>) -> Self {
+        self.graphs = input; self
     }
     /// <p>A list of the graphs.</p>
-    pub fn get_graphs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GraphSummary>> {
+    pub fn get_graphs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GraphSummary>> {
         &self.graphs
     }
     /// <p>Pagination token used to paginate output.</p>
@@ -72,8 +70,7 @@ impl ListGraphsOutputBuilder {
     /// <p>Pagination token used to paginate output.</p>
     /// <p>When this value is provided as input, the service returns results from where the previous response left off. When this value is present in output, it indicates that there are more results to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Pagination token used to paginate output.</p>
     /// <p>When this value is provided as input, the service returns results from where the previous response left off. When this value is present in output, it indicates that there are more results to retrieve.</p>
@@ -81,27 +78,30 @@ impl ListGraphsOutputBuilder {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListGraphsOutput`](crate::operation::list_graphs::ListGraphsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`graphs`](crate::operation::list_graphs::builders::ListGraphsOutputBuilder::graphs)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_graphs::ListGraphsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_graphs::ListGraphsOutput {
-            graphs: self.graphs.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "graphs",
-                    "graphs was not specified but it is required when building ListGraphsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_graphs::ListGraphsOutput {
+                graphs: self.graphs
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("graphs", "graphs was not specified but it is required when building ListGraphsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

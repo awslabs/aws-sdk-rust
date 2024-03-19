@@ -3,23 +3,23 @@
 /// <p>SetSMBGuestPasswordInput</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SetSmbGuestPasswordInput {
+pub struct SetSmbGuestPasswordInput  {
     /// <p>The Amazon Resource Name (ARN) of the S3 File Gateway the SMB file share is associated with.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The password that you want to set for your SMB server.</p>
     pub password: ::std::option::Option<::std::string::String>,
 }
-impl SetSmbGuestPasswordInput {
+impl  SetSmbGuestPasswordInput  {
     /// <p>The Amazon Resource Name (ARN) of the S3 File Gateway the SMB file share is associated with.</p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     /// <p>The password that you want to set for your SMB server.</p>
-    pub fn password(&self) -> ::std::option::Option<&str> {
+    pub fn password(&self) -> ::std::option::Option<& str> {
         self.password.as_deref()
     }
 }
-impl ::std::fmt::Debug for SetSmbGuestPasswordInput {
+impl  ::std::fmt::Debug for SetSmbGuestPasswordInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SetSmbGuestPasswordInput");
         formatter.field("gateway_arn", &self.gateway_arn);
@@ -50,8 +50,7 @@ impl SetSmbGuestPasswordInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the S3 File Gateway the SMB file share is associated with.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the S3 File Gateway the SMB file share is associated with.</p>
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,22 +64,22 @@ impl SetSmbGuestPasswordInputBuilder {
     }
     /// <p>The password that you want to set for your SMB server.</p>
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// <p>The password that you want to set for your SMB server.</p>
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.password
     }
     /// Consumes the builder and constructs a [`SetSmbGuestPasswordInput`](crate::operation::set_smb_guest_password::SetSmbGuestPasswordInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::set_smb_guest_password::SetSmbGuestPasswordInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::set_smb_guest_password::SetSmbGuestPasswordInput {
-            gateway_arn: self.gateway_arn,
-            password: self.password,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_smb_guest_password::SetSmbGuestPasswordInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::set_smb_guest_password::SetSmbGuestPasswordInput {
+                gateway_arn: self.gateway_arn
+                ,
+                password: self.password
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for SetSmbGuestPasswordInputBuilder {
@@ -91,3 +90,4 @@ impl ::std::fmt::Debug for SetSmbGuestPasswordInputBuilder {
         formatter.finish()
     }
 }
+

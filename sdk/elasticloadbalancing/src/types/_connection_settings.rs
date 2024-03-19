@@ -3,11 +3,11 @@
 /// <p>Information about the <code>ConnectionSettings</code> attribute.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConnectionSettings {
+pub struct ConnectionSettings  {
     /// <p>The time, in seconds, that the connection is allowed to be idle (no data has been sent over the connection) before it is closed by the load balancer.</p>
     pub idle_timeout: i32,
 }
-impl ConnectionSettings {
+impl  ConnectionSettings  {
     /// <p>The time, in seconds, that the connection is allowed to be idle (no data has been sent over the connection) before it is closed by the load balancer.</p>
     pub fn idle_timeout(&self) -> i32 {
         self.idle_timeout
@@ -35,8 +35,7 @@ impl ConnectionSettingsBuilder {
     }
     /// <p>The time, in seconds, that the connection is allowed to be idle (no data has been sent over the connection) before it is closed by the load balancer.</p>
     pub fn set_idle_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.idle_timeout = input;
-        self
+        self.idle_timeout = input; self
     }
     /// <p>The time, in seconds, that the connection is allowed to be idle (no data has been sent over the connection) before it is closed by the load balancer.</p>
     pub fn get_idle_timeout(&self) -> &::std::option::Option<i32> {
@@ -46,13 +45,15 @@ impl ConnectionSettingsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`idle_timeout`](crate::types::builders::ConnectionSettingsBuilder::idle_timeout)
     pub fn build(self) -> ::std::result::Result<crate::types::ConnectionSettings, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ConnectionSettings {
-            idle_timeout: self.idle_timeout.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "idle_timeout",
-                    "idle_timeout was not specified but it is required when building ConnectionSettings",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ConnectionSettings {
+                idle_timeout: self.idle_timeout
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("idle_timeout", "idle_timeout was not specified but it is required when building ConnectionSettings")
+                    )?
+                ,
+            }
+        )
     }
 }
+

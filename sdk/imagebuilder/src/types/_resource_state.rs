@@ -3,13 +3,13 @@
 /// <p>The current state of an impacted resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceState {
+pub struct ResourceState  {
     /// <p>Shows the current lifecycle policy action that was applied to an impacted resource.</p>
     pub status: ::std::option::Option<crate::types::ResourceStatus>,
 }
-impl ResourceState {
+impl  ResourceState  {
     /// <p>Shows the current lifecycle policy action that was applied to an impacted resource.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ResourceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ResourceStatus> {
         self.status.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ResourceStateBuilder {
     }
     /// <p>Shows the current lifecycle policy action that was applied to an impacted resource.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Shows the current lifecycle policy action that was applied to an impacted resource.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {
@@ -43,6 +42,10 @@ impl ResourceStateBuilder {
     }
     /// Consumes the builder and constructs a [`ResourceState`](crate::types::ResourceState).
     pub fn build(self) -> crate::types::ResourceState {
-        crate::types::ResourceState { status: self.status }
+        crate::types::ResourceState {
+            status: self.status
+            ,
+        }
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let generatedtemplatestatus = unimplemented!();
 /// match generatedtemplatestatus {
@@ -36,16 +36,14 @@
 /// Specifically, when `generatedtemplatestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `GeneratedTemplateStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum GeneratedTemplateStatus {
     #[allow(missing_docs)] // documentation missing in model
     Complete,
@@ -65,88 +63,80 @@ pub enum GeneratedTemplateStatus {
     UpdatePending,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for GeneratedTemplateStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "COMPLETE" => GeneratedTemplateStatus::Complete,
-            "CREATE_IN_PROGRESS" => GeneratedTemplateStatus::CreateInProgress,
-            "CREATE_PENDING" => GeneratedTemplateStatus::CreatePending,
-            "DELETE_IN_PROGRESS" => GeneratedTemplateStatus::DeleteInProgress,
-            "DELETE_PENDING" => GeneratedTemplateStatus::DeletePending,
-            "FAILED" => GeneratedTemplateStatus::Failed,
-            "UPDATE_IN_PROGRESS" => GeneratedTemplateStatus::UpdateInProgress,
-            "UPDATE_PENDING" => GeneratedTemplateStatus::UpdatePending,
-            other => GeneratedTemplateStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "COMPLETE" => GeneratedTemplateStatus::Complete,
+"CREATE_IN_PROGRESS" => GeneratedTemplateStatus::CreateInProgress,
+"CREATE_PENDING" => GeneratedTemplateStatus::CreatePending,
+"DELETE_IN_PROGRESS" => GeneratedTemplateStatus::DeleteInProgress,
+"DELETE_PENDING" => GeneratedTemplateStatus::DeletePending,
+"FAILED" => GeneratedTemplateStatus::Failed,
+"UPDATE_IN_PROGRESS" => GeneratedTemplateStatus::UpdateInProgress,
+"UPDATE_PENDING" => GeneratedTemplateStatus::UpdatePending,
+other => GeneratedTemplateStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for GeneratedTemplateStatus {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(GeneratedTemplateStatus::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(GeneratedTemplateStatus::from(s))
+                    }
+                }
 impl GeneratedTemplateStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            GeneratedTemplateStatus::Complete => "COMPLETE",
-            GeneratedTemplateStatus::CreateInProgress => "CREATE_IN_PROGRESS",
-            GeneratedTemplateStatus::CreatePending => "CREATE_PENDING",
-            GeneratedTemplateStatus::DeleteInProgress => "DELETE_IN_PROGRESS",
-            GeneratedTemplateStatus::DeletePending => "DELETE_PENDING",
-            GeneratedTemplateStatus::Failed => "FAILED",
-            GeneratedTemplateStatus::UpdateInProgress => "UPDATE_IN_PROGRESS",
-            GeneratedTemplateStatus::UpdatePending => "UPDATE_PENDING",
-            GeneratedTemplateStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "COMPLETE",
-            "CREATE_IN_PROGRESS",
-            "CREATE_PENDING",
-            "DELETE_IN_PROGRESS",
-            "DELETE_PENDING",
-            "FAILED",
-            "UPDATE_IN_PROGRESS",
-            "UPDATE_PENDING",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    GeneratedTemplateStatus::Complete => "COMPLETE",
+    GeneratedTemplateStatus::CreateInProgress => "CREATE_IN_PROGRESS",
+    GeneratedTemplateStatus::CreatePending => "CREATE_PENDING",
+    GeneratedTemplateStatus::DeleteInProgress => "DELETE_IN_PROGRESS",
+    GeneratedTemplateStatus::DeletePending => "DELETE_PENDING",
+    GeneratedTemplateStatus::Failed => "FAILED",
+    GeneratedTemplateStatus::UpdateInProgress => "UPDATE_IN_PROGRESS",
+    GeneratedTemplateStatus::UpdatePending => "UPDATE_PENDING",
+    GeneratedTemplateStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["COMPLETE", "CREATE_IN_PROGRESS", "CREATE_PENDING", "DELETE_IN_PROGRESS", "DELETE_PENDING", "FAILED", "UPDATE_IN_PROGRESS", "UPDATE_PENDING"]
+                }
+            }
 impl ::std::convert::AsRef<str> for GeneratedTemplateStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl GeneratedTemplateStatus {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for GeneratedTemplateStatus {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            GeneratedTemplateStatus::Complete => write!(f, "COMPLETE"),
-            GeneratedTemplateStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
-            GeneratedTemplateStatus::CreatePending => write!(f, "CREATE_PENDING"),
-            GeneratedTemplateStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
-            GeneratedTemplateStatus::DeletePending => write!(f, "DELETE_PENDING"),
-            GeneratedTemplateStatus::Failed => write!(f, "FAILED"),
-            GeneratedTemplateStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
-            GeneratedTemplateStatus::UpdatePending => write!(f, "UPDATE_PENDING"),
-            GeneratedTemplateStatus::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                GeneratedTemplateStatus::Complete => write!(f, "COMPLETE"),
+GeneratedTemplateStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+GeneratedTemplateStatus::CreatePending => write!(f, "CREATE_PENDING"),
+GeneratedTemplateStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+GeneratedTemplateStatus::DeletePending => write!(f, "DELETE_PENDING"),
+GeneratedTemplateStatus::Failed => write!(f, "FAILED"),
+GeneratedTemplateStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
+GeneratedTemplateStatus::UpdatePending => write!(f, "UPDATE_PENDING"),
+GeneratedTemplateStatus::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

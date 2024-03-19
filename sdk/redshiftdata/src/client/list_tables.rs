@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTables`](crate::operation::list_tables::builders::ListTablesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_tables::builders::ListTablesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`cluster_identifier(impl Into<String>)`](crate::operation::list_tables::builders::ListTablesFluentBuilder::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::operation::list_tables::builders::ListTablesFluentBuilder::set_cluster_identifier):<br>required: **false**<br><p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials.</p><br>
     ///   - [`secret_arn(impl Into<String>)`](crate::operation::list_tables::builders::ListTablesFluentBuilder::secret_arn) / [`set_secret_arn(Option<String>)`](crate::operation::list_tables::builders::ListTablesFluentBuilder::set_secret_arn):<br>required: **false**<br><p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager.</p><br>
     ///   - [`db_user(impl Into<String>)`](crate::operation::list_tables::builders::ListTablesFluentBuilder::db_user) / [`set_db_user(Option<String>)`](crate::operation::list_tables::builders::ListTablesFluentBuilder::set_db_user):<br>required: **false**<br><p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials.</p><br>
@@ -14,11 +14,12 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_tables::builders::ListTablesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_tables::builders::ListTablesFluentBuilder::set_next_token):<br>required: **false**<br><p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_tables::builders::ListTablesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_tables::builders::ListTablesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of tables to return in the response. If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results.</p><br>
     ///   - [`workgroup_name(impl Into<String>)`](crate::operation::list_tables::builders::ListTablesFluentBuilder::workgroup_name) / [`set_workgroup_name(Option<String>)`](crate::operation::list_tables::builders::ListTablesFluentBuilder::set_workgroup_name):<br>required: **false**<br><p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p><br>
-    /// - On success, responds with [`ListTablesOutput`](crate::operation::list_tables::ListTablesOutput) with field(s):
+                            /// - On success, responds with [`ListTablesOutput`](crate::operation::list_tables::ListTablesOutput) with field(s):
     ///   - [`tables(Option<Vec::<TableMember>>)`](crate::operation::list_tables::ListTablesOutput::tables): <p>The tables that match the request pattern.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_tables::ListTablesOutput::next_token): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request.</p>
-    /// - On failure, responds with [`SdkError<ListTablesError>`](crate::operation::list_tables::ListTablesError)
+                            /// - On failure, responds with [`SdkError<ListTablesError>`](crate::operation::list_tables::ListTablesError)
     pub fn list_tables(&self) -> crate::operation::list_tables::builders::ListTablesFluentBuilder {
-        crate::operation::list_tables::builders::ListTablesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_tables::builders::ListTablesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

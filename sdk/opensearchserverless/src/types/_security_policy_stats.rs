@@ -3,13 +3,13 @@
 /// <p>Statistics for an OpenSearch Serverless security policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SecurityPolicyStats {
+pub struct SecurityPolicyStats  {
     /// <p>The number of encryption policies in the current account.</p>
     pub encryption_policy_count: ::std::option::Option<i64>,
     /// <p>The number of network policies in the current account.</p>
     pub network_policy_count: ::std::option::Option<i64>,
 }
-impl SecurityPolicyStats {
+impl  SecurityPolicyStats  {
     /// <p>The number of encryption policies in the current account.</p>
     pub fn encryption_policy_count(&self) -> ::std::option::Option<i64> {
         self.encryption_policy_count
@@ -41,8 +41,7 @@ impl SecurityPolicyStatsBuilder {
     }
     /// <p>The number of encryption policies in the current account.</p>
     pub fn set_encryption_policy_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.encryption_policy_count = input;
-        self
+        self.encryption_policy_count = input; self
     }
     /// <p>The number of encryption policies in the current account.</p>
     pub fn get_encryption_policy_count(&self) -> &::std::option::Option<i64> {
@@ -55,8 +54,7 @@ impl SecurityPolicyStatsBuilder {
     }
     /// <p>The number of network policies in the current account.</p>
     pub fn set_network_policy_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.network_policy_count = input;
-        self
+        self.network_policy_count = input; self
     }
     /// <p>The number of network policies in the current account.</p>
     pub fn get_network_policy_count(&self) -> &::std::option::Option<i64> {
@@ -65,8 +63,11 @@ impl SecurityPolicyStatsBuilder {
     /// Consumes the builder and constructs a [`SecurityPolicyStats`](crate::types::SecurityPolicyStats).
     pub fn build(self) -> crate::types::SecurityPolicyStats {
         crate::types::SecurityPolicyStats {
-            encryption_policy_count: self.encryption_policy_count,
-            network_policy_count: self.network_policy_count,
+            encryption_policy_count: self.encryption_policy_count
+            ,
+            network_policy_count: self.network_policy_count
+            ,
         }
     }
 }
+

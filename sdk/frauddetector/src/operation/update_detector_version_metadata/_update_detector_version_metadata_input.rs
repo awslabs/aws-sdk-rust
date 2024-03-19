@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDetectorVersionMetadataInput {
+pub struct UpdateDetectorVersionMetadataInput  {
     /// <p>The detector ID.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The detector version ID.</p>
@@ -10,17 +10,17 @@ pub struct UpdateDetectorVersionMetadataInput {
     /// <p>The description.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl UpdateDetectorVersionMetadataInput {
+impl  UpdateDetectorVersionMetadataInput  {
     /// <p>The detector ID.</p>
-    pub fn detector_id(&self) -> ::std::option::Option<&str> {
+    pub fn detector_id(&self) -> ::std::option::Option<& str> {
         self.detector_id.as_deref()
     }
     /// <p>The detector version ID.</p>
-    pub fn detector_version_id(&self) -> ::std::option::Option<&str> {
+    pub fn detector_version_id(&self) -> ::std::option::Option<& str> {
         self.detector_version_id.as_deref()
     }
     /// <p>The description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateDetectorVersionMetadataInputBuilder {
     }
     /// <p>The detector ID.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
     }
     /// <p>The detector ID.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateDetectorVersionMetadataInputBuilder {
     }
     /// <p>The detector version ID.</p>
     pub fn set_detector_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_version_id = input;
-        self
+        self.detector_version_id = input; self
     }
     /// <p>The detector version ID.</p>
     pub fn get_detector_version_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl UpdateDetectorVersionMetadataInputBuilder {
     }
     /// <p>The description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateDetectorVersionMetadataInput`](crate::operation::update_detector_version_metadata::UpdateDetectorVersionMetadataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_detector_version_metadata::UpdateDetectorVersionMetadataInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_detector_version_metadata::UpdateDetectorVersionMetadataInput {
-            detector_id: self.detector_id,
-            detector_version_id: self.detector_version_id,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_detector_version_metadata::UpdateDetectorVersionMetadataInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_detector_version_metadata::UpdateDetectorVersionMetadataInput {
+                detector_id: self.detector_id
+                ,
+                detector_version_id: self.detector_version_id
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

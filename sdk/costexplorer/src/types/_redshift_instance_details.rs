@@ -3,7 +3,7 @@
 /// <p>Details about the Amazon Redshift reservations that Amazon Web Services recommends that you purchase.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RedshiftInstanceDetails {
+pub struct RedshiftInstanceDetails  {
     /// <p>The instance family of the recommended reservation.</p>
     pub family: ::std::option::Option<::std::string::String>,
     /// <p>The type of node that Amazon Web Services recommends.</p>
@@ -15,17 +15,17 @@ pub struct RedshiftInstanceDetails {
     /// <p>Determines whether the recommended reservation is size flexible.</p>
     pub size_flex_eligible: bool,
 }
-impl RedshiftInstanceDetails {
+impl  RedshiftInstanceDetails  {
     /// <p>The instance family of the recommended reservation.</p>
-    pub fn family(&self) -> ::std::option::Option<&str> {
+    pub fn family(&self) -> ::std::option::Option<& str> {
         self.family.as_deref()
     }
     /// <p>The type of node that Amazon Web Services recommends.</p>
-    pub fn node_type(&self) -> ::std::option::Option<&str> {
+    pub fn node_type(&self) -> ::std::option::Option<& str> {
         self.node_type.as_deref()
     }
     /// <p>The Amazon Web Services Region of the recommended reservation.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>Determines whether the recommendation is for a current-generation instance.</p>
@@ -62,8 +62,7 @@ impl RedshiftInstanceDetailsBuilder {
     }
     /// <p>The instance family of the recommended reservation.</p>
     pub fn set_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.family = input;
-        self
+        self.family = input; self
     }
     /// <p>The instance family of the recommended reservation.</p>
     pub fn get_family(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl RedshiftInstanceDetailsBuilder {
     }
     /// <p>The type of node that Amazon Web Services recommends.</p>
     pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.node_type = input;
-        self
+        self.node_type = input; self
     }
     /// <p>The type of node that Amazon Web Services recommends.</p>
     pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl RedshiftInstanceDetailsBuilder {
     }
     /// <p>The Amazon Web Services Region of the recommended reservation.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Amazon Web Services Region of the recommended reservation.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl RedshiftInstanceDetailsBuilder {
     }
     /// <p>Determines whether the recommendation is for a current-generation instance.</p>
     pub fn set_current_generation(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.current_generation = input;
-        self
+        self.current_generation = input; self
     }
     /// <p>Determines whether the recommendation is for a current-generation instance.</p>
     pub fn get_current_generation(&self) -> &::std::option::Option<bool> {
@@ -118,8 +114,7 @@ impl RedshiftInstanceDetailsBuilder {
     }
     /// <p>Determines whether the recommended reservation is size flexible.</p>
     pub fn set_size_flex_eligible(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.size_flex_eligible = input;
-        self
+        self.size_flex_eligible = input; self
     }
     /// <p>Determines whether the recommended reservation is size flexible.</p>
     pub fn get_size_flex_eligible(&self) -> &::std::option::Option<bool> {
@@ -128,11 +123,19 @@ impl RedshiftInstanceDetailsBuilder {
     /// Consumes the builder and constructs a [`RedshiftInstanceDetails`](crate::types::RedshiftInstanceDetails).
     pub fn build(self) -> crate::types::RedshiftInstanceDetails {
         crate::types::RedshiftInstanceDetails {
-            family: self.family,
-            node_type: self.node_type,
-            region: self.region,
-            current_generation: self.current_generation.unwrap_or_default(),
-            size_flex_eligible: self.size_flex_eligible.unwrap_or_default(),
+            family: self.family
+            ,
+            node_type: self.node_type
+            ,
+            region: self.region
+            ,
+            current_generation: self.current_generation
+                .unwrap_or_default()
+            ,
+            size_flex_eligible: self.size_flex_eligible
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

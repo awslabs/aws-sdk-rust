@@ -3,7 +3,7 @@
 /// <p>A request to delete an existing MethodResponse resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteMethodResponseInput {
+pub struct DeleteMethodResponseInput  {
     /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The Resource identifier for the MethodResponse resource.</p>
@@ -13,21 +13,21 @@ pub struct DeleteMethodResponseInput {
     /// <p>The status code identifier for the MethodResponse resource.</p>
     pub status_code: ::std::option::Option<::std::string::String>,
 }
-impl DeleteMethodResponseInput {
+impl  DeleteMethodResponseInput  {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<& str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The Resource identifier for the MethodResponse resource.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The HTTP verb of the Method resource.</p>
-    pub fn http_method(&self) -> ::std::option::Option<&str> {
+    pub fn http_method(&self) -> ::std::option::Option<& str> {
         self.http_method.as_deref()
     }
     /// <p>The status code identifier for the MethodResponse resource.</p>
-    pub fn status_code(&self) -> ::std::option::Option<&str> {
+    pub fn status_code(&self) -> ::std::option::Option<& str> {
         self.status_code.as_deref()
     }
 }
@@ -56,8 +56,7 @@ impl DeleteMethodResponseInputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rest_api_id = input;
-        self
+        self.rest_api_id = input; self
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl DeleteMethodResponseInputBuilder {
     }
     /// <p>The Resource identifier for the MethodResponse resource.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The Resource identifier for the MethodResponse resource.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +84,7 @@ impl DeleteMethodResponseInputBuilder {
     }
     /// <p>The HTTP verb of the Method resource.</p>
     pub fn set_http_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.http_method = input;
-        self
+        self.http_method = input; self
     }
     /// <p>The HTTP verb of the Method resource.</p>
     pub fn get_http_method(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,23 +98,26 @@ impl DeleteMethodResponseInputBuilder {
     }
     /// <p>The status code identifier for the MethodResponse resource.</p>
     pub fn set_status_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_code = input;
-        self
+        self.status_code = input; self
     }
     /// <p>The status code identifier for the MethodResponse resource.</p>
     pub fn get_status_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_code
     }
     /// Consumes the builder and constructs a [`DeleteMethodResponseInput`](crate::operation::delete_method_response::DeleteMethodResponseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_method_response::DeleteMethodResponseInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_method_response::DeleteMethodResponseInput {
-            rest_api_id: self.rest_api_id,
-            resource_id: self.resource_id,
-            http_method: self.http_method,
-            status_code: self.status_code,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_method_response::DeleteMethodResponseInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_method_response::DeleteMethodResponseInput {
+                rest_api_id: self.rest_api_id
+                ,
+                resource_id: self.resource_id
+                ,
+                http_method: self.http_method
+                ,
+                status_code: self.status_code
+                ,
+            }
+        )
     }
 }
+

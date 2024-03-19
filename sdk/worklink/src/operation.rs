@@ -99,3 +99,4 @@ pub mod update_fleet_metadata;
 
 /// Types for the `UpdateIdentityProviderConfiguration` operation.
 pub mod update_identity_provider_configuration;
+

@@ -2,14 +2,14 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetContentModeration`](crate::operation::get_content_moderation::builders::GetContentModerationFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_content_moderation::builders::GetContentModerationFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`job_id(impl Into<String>)`](crate::operation::get_content_moderation::builders::GetContentModerationFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_content_moderation::builders::GetContentModerationFluentBuilder::set_job_id):<br>required: **true**<br><p>The identifier for the inappropriate, unwanted, or offensive content moderation job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetContentModeration</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_content_moderation::builders::GetContentModerationFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_content_moderation::builders::GetContentModerationFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_content_moderation::builders::GetContentModerationFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_content_moderation::builders::GetContentModerationFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of content moderation labels.</p><br>
     ///   - [`sort_by(ContentModerationSortBy)`](crate::operation::get_content_moderation::builders::GetContentModerationFluentBuilder::sort_by) / [`set_sort_by(Option<ContentModerationSortBy>)`](crate::operation::get_content_moderation::builders::GetContentModerationFluentBuilder::set_sort_by):<br>required: **false**<br><p>Sort to use for elements in the <code>ModerationLabelDetections</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected. Use <code>NAME</code> to alphabetically group elements for a label together. Within each label group, the array element are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p><br>
     ///   - [`aggregate_by(ContentModerationAggregateBy)`](crate::operation::get_content_moderation::builders::GetContentModerationFluentBuilder::aggregate_by) / [`set_aggregate_by(Option<ContentModerationAggregateBy>)`](crate::operation::get_content_moderation::builders::GetContentModerationFluentBuilder::set_aggregate_by):<br>required: **false**<br><p>Defines how to aggregate results of the StartContentModeration request. Default aggregation option is TIMESTAMPS. SEGMENTS mode aggregates moderation labels over time.</p><br>
-    /// - On success, responds with [`GetContentModerationOutput`](crate::operation::get_content_moderation::GetContentModerationOutput) with field(s):
+                            /// - On success, responds with [`GetContentModerationOutput`](crate::operation::get_content_moderation::GetContentModerationOutput) with field(s):
     ///   - [`job_status(Option<VideoJobStatus>)`](crate::operation::get_content_moderation::GetContentModerationOutput::job_status): <p>The current status of the content moderation analysis job.</p>
     ///   - [`status_message(Option<String>)`](crate::operation::get_content_moderation::GetContentModerationOutput::status_message): <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
     ///   - [`video_metadata(Option<VideoMetadata>)`](crate::operation::get_content_moderation::GetContentModerationOutput::video_metadata): <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from <code>GetContentModeration</code>.</p>
@@ -20,8 +20,9 @@ impl super::Client {
     ///   - [`video(Option<Video>)`](crate::operation::get_content_moderation::GetContentModerationOutput::video): <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
     ///   - [`job_tag(Option<String>)`](crate::operation::get_content_moderation::GetContentModerationOutput::job_tag): <p>A job identifier specified in the call to StartContentModeration and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
     ///   - [`get_request_metadata(Option<GetContentModerationRequestMetadata>)`](crate::operation::get_content_moderation::GetContentModerationOutput::get_request_metadata): <p>Information about the paramters used when getting a response. Includes information on aggregation and sorting methods.</p>
-    /// - On failure, responds with [`SdkError<GetContentModerationError>`](crate::operation::get_content_moderation::GetContentModerationError)
+                            /// - On failure, responds with [`SdkError<GetContentModerationError>`](crate::operation::get_content_moderation::GetContentModerationError)
     pub fn get_content_moderation(&self) -> crate::operation::get_content_moderation::builders::GetContentModerationFluentBuilder {
-        crate::operation::get_content_moderation::builders::GetContentModerationFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_content_moderation::builders::GetContentModerationFluentBuilder::new(self.handle.clone())
+                            }
 }
+

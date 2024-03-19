@@ -3,13 +3,13 @@
 /// <p>A validation message associated with a <code>ValidatePipeline</code> request in OpenSearch Ingestion.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ValidationMessage {
+pub struct ValidationMessage  {
     /// <p>The validation message.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl ValidationMessage {
+impl  ValidationMessage  {
     /// <p>The validation message.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl ValidationMessageBuilder {
     }
     /// <p>The validation message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The validation message.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl ValidationMessageBuilder {
     }
     /// Consumes the builder and constructs a [`ValidationMessage`](crate::types::ValidationMessage).
     pub fn build(self) -> crate::types::ValidationMessage {
-        crate::types::ValidationMessage { message: self.message }
+        crate::types::ValidationMessage {
+            message: self.message
+            ,
+        }
     }
 }
+

@@ -2,33 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OpenTunnelInput {
+pub struct OpenTunnelInput  {
     /// <p>A short text description of the tunnel.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A collection of tag metadata.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The destination configuration for the OpenTunnel request.</p>
     pub destination_config: ::std::option::Option<crate::types::DestinationConfig>,
     /// <p>Timeout configuration for a tunnel.</p>
     pub timeout_config: ::std::option::Option<crate::types::TimeoutConfig>,
 }
-impl OpenTunnelInput {
+impl  OpenTunnelInput  {
     /// <p>A short text description of the tunnel.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A collection of tag metadata.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The destination configuration for the OpenTunnel request.</p>
-    pub fn destination_config(&self) -> ::std::option::Option<&crate::types::DestinationConfig> {
+    pub fn destination_config(&self) -> ::std::option::Option<& crate::types::DestinationConfig> {
         self.destination_config.as_ref()
     }
     /// <p>Timeout configuration for a tunnel.</p>
-    pub fn timeout_config(&self) -> ::std::option::Option<&crate::types::TimeoutConfig> {
+    pub fn timeout_config(&self) -> ::std::option::Option<& crate::types::TimeoutConfig> {
         self.timeout_config.as_ref()
     }
 }
@@ -44,7 +45,7 @@ impl OpenTunnelInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OpenTunnelInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) destination_config: ::std::option::Option<crate::types::DestinationConfig>,
     pub(crate) timeout_config: ::std::option::Option<crate::types::TimeoutConfig>,
 }
@@ -56,8 +57,7 @@ impl OpenTunnelInputBuilder {
     }
     /// <p>A short text description of the tunnel.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A short text description of the tunnel.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,17 +70,16 @@ impl OpenTunnelInputBuilder {
     /// <p>A collection of tag metadata.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A collection of tag metadata.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A collection of tag metadata.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The destination configuration for the OpenTunnel request.</p>
@@ -90,8 +89,7 @@ impl OpenTunnelInputBuilder {
     }
     /// <p>The destination configuration for the OpenTunnel request.</p>
     pub fn set_destination_config(mut self, input: ::std::option::Option<crate::types::DestinationConfig>) -> Self {
-        self.destination_config = input;
-        self
+        self.destination_config = input; self
     }
     /// <p>The destination configuration for the OpenTunnel request.</p>
     pub fn get_destination_config(&self) -> &::std::option::Option<crate::types::DestinationConfig> {
@@ -104,8 +102,7 @@ impl OpenTunnelInputBuilder {
     }
     /// <p>Timeout configuration for a tunnel.</p>
     pub fn set_timeout_config(mut self, input: ::std::option::Option<crate::types::TimeoutConfig>) -> Self {
-        self.timeout_config = input;
-        self
+        self.timeout_config = input; self
     }
     /// <p>Timeout configuration for a tunnel.</p>
     pub fn get_timeout_config(&self) -> &::std::option::Option<crate::types::TimeoutConfig> {
@@ -113,11 +110,18 @@ impl OpenTunnelInputBuilder {
     }
     /// Consumes the builder and constructs a [`OpenTunnelInput`](crate::operation::open_tunnel::OpenTunnelInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::open_tunnel::OpenTunnelInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::open_tunnel::OpenTunnelInput {
-            description: self.description,
-            tags: self.tags,
-            destination_config: self.destination_config,
-            timeout_config: self.timeout_config,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::open_tunnel::OpenTunnelInput {
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+                destination_config: self.destination_config
+                ,
+                timeout_config: self.timeout_config
+                ,
+            }
+        )
     }
 }
+

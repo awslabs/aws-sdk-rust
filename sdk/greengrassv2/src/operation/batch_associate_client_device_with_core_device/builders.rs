@@ -5,118 +5,98 @@ pub use crate::operation::batch_associate_client_device_with_core_device::_batch
 
 impl BatchAssociateClientDeviceWithCoreDeviceInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.batch_associate_client_device_with_core_device();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.batch_associate_client_device_with_core_device();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `BatchAssociateClientDeviceWithCoreDevice`.
-///
+/// 
 /// <p>Associates a list of client devices with a core device. Use this API operation to specify which client devices can discover a core device through cloud discovery. With cloud discovery, client devices connect to IoT Greengrass to retrieve associated core devices' connectivity information and certificates. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-cloud-discovery.html">Configure cloud discovery</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p><note>
 /// <p>Client devices are local IoT devices that connect to and communicate with an IoT Greengrass core device over MQTT. You can connect client devices to a core device to sync MQTT messages and data to Amazon Web Services IoT Core and interact with client devices in Greengrass components. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interact-with-local-iot-devices.html">Interact with local IoT devices</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchAssociateClientDeviceWithCoreDeviceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::batch_associate_client_device_with_core_device::builders::BatchAssociateClientDeviceWithCoreDeviceInputBuilder,
+                    inner: crate::operation::batch_associate_client_device_with_core_device::builders::BatchAssociateClientDeviceWithCoreDeviceInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceOutput,
-        crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceError,
-    > for BatchAssociateClientDeviceWithCoreDeviceFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceOutput,
-            crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceOutput,
+                    crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceError,
+                > for BatchAssociateClientDeviceWithCoreDeviceFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceOutput,
+                        crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl BatchAssociateClientDeviceWithCoreDeviceFluentBuilder {
     /// Creates a new `BatchAssociateClientDeviceWithCoreDevice`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
     /// Access the BatchAssociateClientDeviceWithCoreDevice as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::batch_associate_client_device_with_core_device::builders::BatchAssociateClientDeviceWithCoreDeviceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::batch_associate_client_device_with_core_device::builders::BatchAssociateClientDeviceWithCoreDeviceInputBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins =
-            crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDevice::operation_runtime_plugins(
-                self.handle.runtime_plugins.clone(),
-                &self.handle.conf,
-                self.config_override,
-            );
-        crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDevice::orchestrate(
-            &runtime_plugins,
-            input,
-        )
-        .await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceOutput,
-        crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDevice::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDevice::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceOutput, crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `entries`.
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
@@ -127,12 +107,12 @@ impl BatchAssociateClientDeviceWithCoreDeviceFluentBuilder {
         self
     }
     /// <p>The list of client devices to associate.</p>
-    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociateClientDeviceWithCoreDeviceEntry>>) -> Self {
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssociateClientDeviceWithCoreDeviceEntry>>) -> Self {
         self.inner = self.inner.set_entries(input);
         self
     }
     /// <p>The list of client devices to associate.</p>
-    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociateClientDeviceWithCoreDeviceEntry>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssociateClientDeviceWithCoreDeviceEntry>> {
         self.inner.get_entries()
     }
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
@@ -150,3 +130,4 @@ impl BatchAssociateClientDeviceWithCoreDeviceFluentBuilder {
         self.inner.get_core_device_thing_name()
     }
 }
+

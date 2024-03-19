@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCrossAccountResourceAccountsInput {}
+pub struct ListCrossAccountResourceAccountsInput  {
+}
 impl ListCrossAccountResourceAccountsInput {
     /// Creates a new builder-style object to manufacture [`ListCrossAccountResourceAccountsInput`](crate::operation::list_cross_account_resource_accounts::ListCrossAccountResourceAccountsInput).
     pub fn builder() -> crate::operation::list_cross_account_resource_accounts::builders::ListCrossAccountResourceAccountsInputBuilder {
@@ -13,15 +14,15 @@ impl ListCrossAccountResourceAccountsInput {
 /// A builder for [`ListCrossAccountResourceAccountsInput`](crate::operation::list_cross_account_resource_accounts::ListCrossAccountResourceAccountsInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct ListCrossAccountResourceAccountsInputBuilder {}
+pub struct ListCrossAccountResourceAccountsInputBuilder {
+}
 impl ListCrossAccountResourceAccountsInputBuilder {
     /// Consumes the builder and constructs a [`ListCrossAccountResourceAccountsInput`](crate::operation::list_cross_account_resource_accounts::ListCrossAccountResourceAccountsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_cross_account_resource_accounts::ListCrossAccountResourceAccountsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_cross_account_resource_accounts::ListCrossAccountResourceAccountsInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_cross_account_resource_accounts::ListCrossAccountResourceAccountsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_cross_account_resource_accounts::ListCrossAccountResourceAccountsInput {
+            }
+        )
     }
 }
+

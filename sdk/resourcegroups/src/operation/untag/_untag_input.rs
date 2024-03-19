@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UntagInput {
+pub struct UntagInput  {
     /// <p>The ARN of the resource group from which to remove tags. The command removed both the specified keys and any values associated with those keys.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The keys of the tags to be removed.</p>
-    pub keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub keys: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl UntagInput {
+impl  UntagInput  {
     /// <p>The ARN of the resource group from which to remove tags. The command removed both the specified keys and any values associated with those keys.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The keys of the tags to be removed.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.keys.is_none()`.
-    pub fn keys(&self) -> &[::std::string::String] {
-        self.keys.as_deref().unwrap_or_default()
+    pub fn keys(&self) -> & [::std::string::String] {
+        self.keys.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UntagInput {
@@ -32,7 +33,7 @@ impl UntagInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UntagInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) keys: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl UntagInputBuilder {
     /// <p>The ARN of the resource group from which to remove tags. The command removed both the specified keys and any values associated with those keys.</p>
@@ -43,8 +44,7 @@ impl UntagInputBuilder {
     }
     /// <p>The ARN of the resource group from which to remove tags. The command removed both the specified keys and any values associated with those keys.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the resource group from which to remove tags. The command removed both the specified keys and any values associated with those keys.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,28 @@ impl UntagInputBuilder {
     /// <p>The keys of the tags to be removed.</p>
     pub fn keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.keys.unwrap_or_default();
-        v.push(input.into());
-        self.keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The keys of the tags to be removed.</p>
-    pub fn set_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.keys = input;
-        self
+    pub fn set_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.keys = input; self
     }
     /// <p>The keys of the tags to be removed.</p>
-    pub fn get_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_keys(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.keys
     }
     /// Consumes the builder and constructs a [`UntagInput`](crate::operation::untag::UntagInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::untag::UntagInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::untag::UntagInput {
-            arn: self.arn,
-            keys: self.keys,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::untag::UntagInput {
+                arn: self.arn
+                ,
+                keys: self.keys
+                ,
+            }
+        )
     }
 }
+

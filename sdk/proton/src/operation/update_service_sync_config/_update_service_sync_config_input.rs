@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateServiceSyncConfigInput {
+pub struct UpdateServiceSyncConfigInput  {
     /// <p>The name of the service the Proton Ops file is for.</p>
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository provider where the Proton Ops file is found.</p>
@@ -14,25 +14,25 @@ pub struct UpdateServiceSyncConfigInput {
     /// <p>The path to the Proton Ops file.</p>
     pub file_path: ::std::option::Option<::std::string::String>,
 }
-impl UpdateServiceSyncConfigInput {
+impl  UpdateServiceSyncConfigInput  {
     /// <p>The name of the service the Proton Ops file is for.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<& str> {
         self.service_name.as_deref()
     }
     /// <p>The name of the repository provider where the Proton Ops file is found.</p>
-    pub fn repository_provider(&self) -> ::std::option::Option<&crate::types::RepositoryProvider> {
+    pub fn repository_provider(&self) -> ::std::option::Option<& crate::types::RepositoryProvider> {
         self.repository_provider.as_ref()
     }
     /// <p>The name of the repository where the Proton Ops file is found.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The name of the code repository branch where the Proton Ops file is found.</p>
-    pub fn branch(&self) -> ::std::option::Option<&str> {
+    pub fn branch(&self) -> ::std::option::Option<& str> {
         self.branch.as_deref()
     }
     /// <p>The path to the Proton Ops file.</p>
-    pub fn file_path(&self) -> ::std::option::Option<&str> {
+    pub fn file_path(&self) -> ::std::option::Option<& str> {
         self.file_path.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl UpdateServiceSyncConfigInputBuilder {
     }
     /// <p>The name of the service the Proton Ops file is for.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>The name of the service the Proton Ops file is for.</p>
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl UpdateServiceSyncConfigInputBuilder {
     }
     /// <p>The name of the repository provider where the Proton Ops file is found.</p>
     pub fn set_repository_provider(mut self, input: ::std::option::Option<crate::types::RepositoryProvider>) -> Self {
-        self.repository_provider = input;
-        self
+        self.repository_provider = input; self
     }
     /// <p>The name of the repository provider where the Proton Ops file is found.</p>
     pub fn get_repository_provider(&self) -> &::std::option::Option<crate::types::RepositoryProvider> {
@@ -92,8 +90,7 @@ impl UpdateServiceSyncConfigInputBuilder {
     }
     /// <p>The name of the repository where the Proton Ops file is found.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The name of the repository where the Proton Ops file is found.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +104,7 @@ impl UpdateServiceSyncConfigInputBuilder {
     }
     /// <p>The name of the code repository branch where the Proton Ops file is found.</p>
     pub fn set_branch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.branch = input;
-        self
+        self.branch = input; self
     }
     /// <p>The name of the code repository branch where the Proton Ops file is found.</p>
     pub fn get_branch(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,26 +118,28 @@ impl UpdateServiceSyncConfigInputBuilder {
     }
     /// <p>The path to the Proton Ops file.</p>
     pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_path = input;
-        self
+        self.file_path = input; self
     }
     /// <p>The path to the Proton Ops file.</p>
     pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_path
     }
     /// Consumes the builder and constructs a [`UpdateServiceSyncConfigInput`](crate::operation::update_service_sync_config::UpdateServiceSyncConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_service_sync_config::UpdateServiceSyncConfigInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_service_sync_config::UpdateServiceSyncConfigInput {
-            service_name: self.service_name,
-            repository_provider: self.repository_provider,
-            repository_name: self.repository_name,
-            branch: self.branch,
-            file_path: self.file_path,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_service_sync_config::UpdateServiceSyncConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_service_sync_config::UpdateServiceSyncConfigInput {
+                service_name: self.service_name
+                ,
+                repository_provider: self.repository_provider
+                ,
+                repository_name: self.repository_name
+                ,
+                branch: self.branch
+                ,
+                file_path: self.file_path
+                ,
+            }
+        )
     }
 }
+

@@ -5,54 +5,50 @@ pub use crate::operation::update_feature_metadata::_update_feature_metadata_inpu
 
 impl UpdateFeatureMetadataInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_feature_metadata::UpdateFeatureMetadataOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_feature_metadata::UpdateFeatureMetadataError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_feature_metadata();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_feature_metadata::UpdateFeatureMetadataOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_feature_metadata::UpdateFeatureMetadataError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_feature_metadata();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateFeatureMetadata`.
-///
+/// 
 /// <p>Updates the description and parameters of the feature group.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFeatureMetadataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_feature_metadata::builders::UpdateFeatureMetadataInputBuilder,
+                    inner: crate::operation::update_feature_metadata::builders::UpdateFeatureMetadataInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_feature_metadata::UpdateFeatureMetadataOutput,
-        crate::operation::update_feature_metadata::UpdateFeatureMetadataError,
-    > for UpdateFeatureMetadataFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_feature_metadata::UpdateFeatureMetadataOutput,
-            crate::operation::update_feature_metadata::UpdateFeatureMetadataError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_feature_metadata::UpdateFeatureMetadataOutput,
+                    crate::operation::update_feature_metadata::UpdateFeatureMetadataError,
+                > for UpdateFeatureMetadataFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_feature_metadata::UpdateFeatureMetadataOutput,
+                        crate::operation::update_feature_metadata::UpdateFeatureMetadataError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateFeatureMetadataFluentBuilder {
     /// Creates a new `UpdateFeatureMetadata`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl UpdateFeatureMetadataFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_feature_metadata::UpdateFeatureMetadataOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_feature_metadata::UpdateFeatureMetadataError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_feature_metadata::UpdateFeatureMetadata::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_feature_metadata::UpdateFeatureMetadata::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_feature_metadata::UpdateFeatureMetadataOutput,
-        crate::operation::update_feature_metadata::UpdateFeatureMetadataError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_feature_metadata::UpdateFeatureMetadataOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_feature_metadata::UpdateFeatureMetadataError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_feature_metadata::UpdateFeatureMetadata::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_feature_metadata::UpdateFeatureMetadata::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_feature_metadata::UpdateFeatureMetadataOutput, crate::operation::update_feature_metadata::UpdateFeatureMetadataError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name or Amazon Resource Name (ARN) of the feature group containing the feature that you're updating.</p>
     pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.feature_group_name(input.into());
@@ -160,12 +147,12 @@ impl UpdateFeatureMetadataFluentBuilder {
         self
     }
     /// <p>A list of key-value pairs that you can add to better describe the feature.</p>
-    pub fn set_parameter_additions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureParameter>>) -> Self {
+    pub fn set_parameter_additions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FeatureParameter>>) -> Self {
         self.inner = self.inner.set_parameter_additions(input);
         self
     }
     /// <p>A list of key-value pairs that you can add to better describe the feature.</p>
-    pub fn get_parameter_additions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureParameter>> {
+    pub fn get_parameter_additions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FeatureParameter>> {
         self.inner.get_parameter_additions()
     }
     /// Appends an item to `ParameterRemovals`.
@@ -178,12 +165,13 @@ impl UpdateFeatureMetadataFluentBuilder {
         self
     }
     /// <p>A list of parameter keys that you can specify to remove parameters that describe your feature.</p>
-    pub fn set_parameter_removals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_parameter_removals(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_parameter_removals(input);
         self
     }
     /// <p>A list of parameter keys that you can specify to remove parameters that describe your feature.</p>
-    pub fn get_parameter_removals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_parameter_removals(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_parameter_removals()
     }
 }
+

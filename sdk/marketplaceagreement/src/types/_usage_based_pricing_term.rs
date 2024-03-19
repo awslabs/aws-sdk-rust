@@ -3,28 +3,29 @@
 /// <p>Defines a usage-based pricing model (typically, pay-as-you-go pricing), where the customers are charged based on product usage.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UsageBasedPricingTerm {
+pub struct UsageBasedPricingTerm  {
     /// <p>Category of the term.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Defines the currency for the prices mentioned in the term.</p>
     pub currency_code: ::std::option::Option<::std::string::String>,
     /// <p>List of rate cards.</p>
-    pub rate_cards: ::std::option::Option<::std::vec::Vec<crate::types::UsageBasedRateCardItem>>,
+    pub rate_cards: ::std::option::Option<::std::vec::Vec::<crate::types::UsageBasedRateCardItem>>,
 }
-impl UsageBasedPricingTerm {
+impl  UsageBasedPricingTerm  {
     /// <p>Category of the term.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>Defines the currency for the prices mentioned in the term.</p>
-    pub fn currency_code(&self) -> ::std::option::Option<&str> {
+    pub fn currency_code(&self) -> ::std::option::Option<& str> {
         self.currency_code.as_deref()
     }
     /// <p>List of rate cards.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rate_cards.is_none()`.
-    pub fn rate_cards(&self) -> &[crate::types::UsageBasedRateCardItem] {
-        self.rate_cards.as_deref().unwrap_or_default()
+    pub fn rate_cards(&self) -> & [crate::types::UsageBasedRateCardItem] {
+        self.rate_cards.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UsageBasedPricingTerm {
@@ -40,7 +41,7 @@ impl UsageBasedPricingTerm {
 pub struct UsageBasedPricingTermBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) currency_code: ::std::option::Option<::std::string::String>,
-    pub(crate) rate_cards: ::std::option::Option<::std::vec::Vec<crate::types::UsageBasedRateCardItem>>,
+    pub(crate) rate_cards: ::std::option::Option<::std::vec::Vec::<crate::types::UsageBasedRateCardItem>>,
 }
 impl UsageBasedPricingTermBuilder {
     /// <p>Category of the term.</p>
@@ -50,8 +51,7 @@ impl UsageBasedPricingTermBuilder {
     }
     /// <p>Category of the term.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Category of the term.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl UsageBasedPricingTermBuilder {
     }
     /// <p>Defines the currency for the prices mentioned in the term.</p>
     pub fn set_currency_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.currency_code = input;
-        self
+        self.currency_code = input; self
     }
     /// <p>Defines the currency for the prices mentioned in the term.</p>
     pub fn get_currency_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,25 +77,28 @@ impl UsageBasedPricingTermBuilder {
     /// <p>List of rate cards.</p>
     pub fn rate_cards(mut self, input: crate::types::UsageBasedRateCardItem) -> Self {
         let mut v = self.rate_cards.unwrap_or_default();
-        v.push(input);
-        self.rate_cards = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rate_cards = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of rate cards.</p>
-    pub fn set_rate_cards(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UsageBasedRateCardItem>>) -> Self {
-        self.rate_cards = input;
-        self
+    pub fn set_rate_cards(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UsageBasedRateCardItem>>) -> Self {
+        self.rate_cards = input; self
     }
     /// <p>List of rate cards.</p>
-    pub fn get_rate_cards(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageBasedRateCardItem>> {
+    pub fn get_rate_cards(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UsageBasedRateCardItem>> {
         &self.rate_cards
     }
     /// Consumes the builder and constructs a [`UsageBasedPricingTerm`](crate::types::UsageBasedPricingTerm).
     pub fn build(self) -> crate::types::UsageBasedPricingTerm {
         crate::types::UsageBasedPricingTerm {
-            r#type: self.r#type,
-            currency_code: self.currency_code,
-            rate_cards: self.rate_cards,
+            r#type: self.r#type
+            ,
+            currency_code: self.currency_code
+            ,
+            rate_cards: self.rate_cards
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Each step type has its own <code>StepDetails</code> structure.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CopyStepDetails {
+pub struct CopyStepDetails  {
     /// <p>The name of the step, used as an identifier.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the location for the file being copied. Use <code>${Transfer:UserName}</code> or <code>${Transfer:UploadDate}</code> in this field to parametrize the destination prefix by username or uploaded date.</p>
@@ -34,9 +34,9 @@ pub struct CopyStepDetails {
     /// </ul>
     pub source_file_location: ::std::option::Option<::std::string::String>,
 }
-impl CopyStepDetails {
+impl  CopyStepDetails  {
     /// <p>The name of the step, used as an identifier.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies the location for the file being copied. Use <code>${Transfer:UserName}</code> or <code>${Transfer:UploadDate}</code> in this field to parametrize the destination prefix by username or uploaded date.</p>
@@ -48,7 +48,7 @@ impl CopyStepDetails {
     /// <p>The system resolves <code>UploadDate</code> to a date format of <i>YYYY-MM-DD</i>, based on the date the file is uploaded in UTC.</p>
     /// </note></li>
     /// </ul>
-    pub fn destination_file_location(&self) -> ::std::option::Option<&crate::types::InputFileLocation> {
+    pub fn destination_file_location(&self) -> ::std::option::Option<& crate::types::InputFileLocation> {
         self.destination_file_location.as_ref()
     }
     /// <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p>
@@ -59,7 +59,7 @@ impl CopyStepDetails {
     /// <li>
     /// <p>If <code>OverwriteExisting</code> is <code>FALSE</code>, nothing happens, and the workflow processing stops.</p></li>
     /// </ul>
-    pub fn overwrite_existing(&self) -> ::std::option::Option<&crate::types::OverwriteExisting> {
+    pub fn overwrite_existing(&self) -> ::std::option::Option<& crate::types::OverwriteExisting> {
         self.overwrite_existing.as_ref()
     }
     /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
@@ -69,7 +69,7 @@ impl CopyStepDetails {
     /// <li>
     /// <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p></li>
     /// </ul>
-    pub fn source_file_location(&self) -> ::std::option::Option<&str> {
+    pub fn source_file_location(&self) -> ::std::option::Option<& str> {
         self.source_file_location.as_deref()
     }
 }
@@ -97,8 +97,7 @@ impl CopyStepDetailsBuilder {
     }
     /// <p>The name of the step, used as an identifier.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the step, used as an identifier.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +126,7 @@ impl CopyStepDetailsBuilder {
     /// </note></li>
     /// </ul>
     pub fn set_destination_file_location(mut self, input: ::std::option::Option<crate::types::InputFileLocation>) -> Self {
-        self.destination_file_location = input;
-        self
+        self.destination_file_location = input; self
     }
     /// <p>Specifies the location for the file being copied. Use <code>${Transfer:UserName}</code> or <code>${Transfer:UploadDate}</code> in this field to parametrize the destination prefix by username or uploaded date.</p>
     /// <ul>
@@ -163,8 +161,7 @@ impl CopyStepDetailsBuilder {
     /// <p>If <code>OverwriteExisting</code> is <code>FALSE</code>, nothing happens, and the workflow processing stops.</p></li>
     /// </ul>
     pub fn set_overwrite_existing(mut self, input: ::std::option::Option<crate::types::OverwriteExisting>) -> Self {
-        self.overwrite_existing = input;
-        self
+        self.overwrite_existing = input; self
     }
     /// <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p>
     /// <p>If the workflow is processing a file that has the same name as an existing file, the behavior is as follows:</p>
@@ -196,8 +193,7 @@ impl CopyStepDetailsBuilder {
     /// <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p></li>
     /// </ul>
     pub fn set_source_file_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_file_location = input;
-        self
+        self.source_file_location = input; self
     }
     /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
     /// <ul>
@@ -212,10 +208,15 @@ impl CopyStepDetailsBuilder {
     /// Consumes the builder and constructs a [`CopyStepDetails`](crate::types::CopyStepDetails).
     pub fn build(self) -> crate::types::CopyStepDetails {
         crate::types::CopyStepDetails {
-            name: self.name,
-            destination_file_location: self.destination_file_location,
-            overwrite_existing: self.overwrite_existing,
-            source_file_location: self.source_file_location,
+            name: self.name
+            ,
+            destination_file_location: self.destination_file_location
+            ,
+            overwrite_existing: self.overwrite_existing
+            ,
+            source_file_location: self.source_file_location
+            ,
         }
     }
 }
+

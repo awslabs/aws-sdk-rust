@@ -5,23 +5,20 @@ pub use crate::operation::modify_instance_placement::_modify_instance_placement_
 
 impl ModifyInstancePlacementInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::modify_instance_placement::ModifyInstancePlacementOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::modify_instance_placement::ModifyInstancePlacementError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.modify_instance_placement();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::modify_instance_placement::ModifyInstancePlacementOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::modify_instance_placement::ModifyInstancePlacementError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.modify_instance_placement();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ModifyInstancePlacement`.
-///
+/// 
 /// <p>Modifies the placement attributes for a specified instance. You can do the following:</p>
 /// <ul>
 /// <li>
@@ -38,33 +35,32 @@ impl ModifyInstancePlacementInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyInstancePlacementFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::modify_instance_placement::builders::ModifyInstancePlacementInputBuilder,
+                    inner: crate::operation::modify_instance_placement::builders::ModifyInstancePlacementInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::modify_instance_placement::ModifyInstancePlacementOutput,
-        crate::operation::modify_instance_placement::ModifyInstancePlacementError,
-    > for ModifyInstancePlacementFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::modify_instance_placement::ModifyInstancePlacementOutput,
-            crate::operation::modify_instance_placement::ModifyInstancePlacementError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::modify_instance_placement::ModifyInstancePlacementOutput,
+                    crate::operation::modify_instance_placement::ModifyInstancePlacementError,
+                > for ModifyInstancePlacementFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::modify_instance_placement::ModifyInstancePlacementOutput,
+                        crate::operation::modify_instance_placement::ModifyInstancePlacementError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ModifyInstancePlacementFluentBuilder {
     /// Creates a new `ModifyInstancePlacement`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -73,53 +69,44 @@ impl ModifyInstancePlacementFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_instance_placement::ModifyInstancePlacementOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::modify_instance_placement::ModifyInstancePlacementError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::modify_instance_placement::ModifyInstancePlacement::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::modify_instance_placement::ModifyInstancePlacement::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::modify_instance_placement::ModifyInstancePlacementOutput,
-        crate::operation::modify_instance_placement::ModifyInstancePlacementError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::modify_instance_placement::ModifyInstancePlacementOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_instance_placement::ModifyInstancePlacementError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::modify_instance_placement::ModifyInstancePlacement::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::modify_instance_placement::ModifyInstancePlacement::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::modify_instance_placement::ModifyInstancePlacementOutput, crate::operation::modify_instance_placement::ModifyInstancePlacementError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The affinity setting for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn affinity(mut self, input: crate::types::Affinity) -> Self {
         self.inner = self.inner.affinity(input);
@@ -242,3 +229,4 @@ impl ModifyInstancePlacementFluentBuilder {
         self.inner.get_group_id()
     }
 }
+

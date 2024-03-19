@@ -3,19 +3,19 @@
 /// <p>An object with identifying information for an Amazon ECR image.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImageIdentifier {
+pub struct ImageIdentifier  {
     /// <p>The <code>sha256</code> digest of the image manifest.</p>
     pub image_digest: ::std::option::Option<::std::string::String>,
     /// <p>The tag that's used for the image.</p>
     pub image_tag: ::std::option::Option<::std::string::String>,
 }
-impl ImageIdentifier {
+impl  ImageIdentifier  {
     /// <p>The <code>sha256</code> digest of the image manifest.</p>
-    pub fn image_digest(&self) -> ::std::option::Option<&str> {
+    pub fn image_digest(&self) -> ::std::option::Option<& str> {
         self.image_digest.as_deref()
     }
     /// <p>The tag that's used for the image.</p>
-    pub fn image_tag(&self) -> ::std::option::Option<&str> {
+    pub fn image_tag(&self) -> ::std::option::Option<& str> {
         self.image_tag.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ImageIdentifierBuilder {
     }
     /// <p>The <code>sha256</code> digest of the image manifest.</p>
     pub fn set_image_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_digest = input;
-        self
+        self.image_digest = input; self
     }
     /// <p>The <code>sha256</code> digest of the image manifest.</p>
     pub fn get_image_digest(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ImageIdentifierBuilder {
     }
     /// <p>The tag that's used for the image.</p>
     pub fn set_image_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_tag = input;
-        self
+        self.image_tag = input; self
     }
     /// <p>The tag that's used for the image.</p>
     pub fn get_image_tag(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ImageIdentifierBuilder {
     /// Consumes the builder and constructs a [`ImageIdentifier`](crate::types::ImageIdentifier).
     pub fn build(self) -> crate::types::ImageIdentifier {
         crate::types::ImageIdentifier {
-            image_digest: self.image_digest,
-            image_tag: self.image_tag,
+            image_digest: self.image_digest
+            ,
+            image_tag: self.image_tag
+            ,
         }
     }
 }
+

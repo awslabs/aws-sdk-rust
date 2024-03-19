@@ -3,13 +3,13 @@
 /// <p>The parameters for using a Amazon SQS stream as a source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PipeSourceSqsQueueParameters {
+pub struct PipeSourceSqsQueueParameters  {
     /// <p>The maximum number of records to include in each batch.</p>
     pub batch_size: ::std::option::Option<i32>,
     /// <p>The maximum length of a time to wait for events.</p>
     pub maximum_batching_window_in_seconds: ::std::option::Option<i32>,
 }
-impl PipeSourceSqsQueueParameters {
+impl  PipeSourceSqsQueueParameters  {
     /// <p>The maximum number of records to include in each batch.</p>
     pub fn batch_size(&self) -> ::std::option::Option<i32> {
         self.batch_size
@@ -41,8 +41,7 @@ impl PipeSourceSqsQueueParametersBuilder {
     }
     /// <p>The maximum number of records to include in each batch.</p>
     pub fn set_batch_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.batch_size = input;
-        self
+        self.batch_size = input; self
     }
     /// <p>The maximum number of records to include in each batch.</p>
     pub fn get_batch_size(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl PipeSourceSqsQueueParametersBuilder {
     }
     /// <p>The maximum length of a time to wait for events.</p>
     pub fn set_maximum_batching_window_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum_batching_window_in_seconds = input;
-        self
+        self.maximum_batching_window_in_seconds = input; self
     }
     /// <p>The maximum length of a time to wait for events.</p>
     pub fn get_maximum_batching_window_in_seconds(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl PipeSourceSqsQueueParametersBuilder {
     /// Consumes the builder and constructs a [`PipeSourceSqsQueueParameters`](crate::types::PipeSourceSqsQueueParameters).
     pub fn build(self) -> crate::types::PipeSourceSqsQueueParameters {
         crate::types::PipeSourceSqsQueueParameters {
-            batch_size: self.batch_size,
-            maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
+            batch_size: self.batch_size
+            ,
+            maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds
+            ,
         }
     }
 }
+

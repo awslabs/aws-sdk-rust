@@ -3,13 +3,13 @@
 /// <p>The menu options for a visual.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VisualMenuOption {
+pub struct VisualMenuOption  {
     /// <p>The availaiblity status of a visual's menu options.</p>
     pub availability_status: ::std::option::Option<crate::types::DashboardBehavior>,
 }
-impl VisualMenuOption {
+impl  VisualMenuOption  {
     /// <p>The availaiblity status of a visual's menu options.</p>
-    pub fn availability_status(&self) -> ::std::option::Option<&crate::types::DashboardBehavior> {
+    pub fn availability_status(&self) -> ::std::option::Option<& crate::types::DashboardBehavior> {
         self.availability_status.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl VisualMenuOptionBuilder {
     }
     /// <p>The availaiblity status of a visual's menu options.</p>
     pub fn set_availability_status(mut self, input: ::std::option::Option<crate::types::DashboardBehavior>) -> Self {
-        self.availability_status = input;
-        self
+        self.availability_status = input; self
     }
     /// <p>The availaiblity status of a visual's menu options.</p>
     pub fn get_availability_status(&self) -> &::std::option::Option<crate::types::DashboardBehavior> {
@@ -44,7 +43,9 @@ impl VisualMenuOptionBuilder {
     /// Consumes the builder and constructs a [`VisualMenuOption`](crate::types::VisualMenuOption).
     pub fn build(self) -> crate::types::VisualMenuOption {
         crate::types::VisualMenuOption {
-            availability_status: self.availability_status,
+            availability_status: self.availability_status
+            ,
         }
     }
 }
+

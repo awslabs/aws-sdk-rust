@@ -3,7 +3,7 @@
 /// <p>A topic summary.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TopicSummary {
+pub struct TopicSummary  {
     /// <p>The Amazon Resource Name (ARN) of the topic.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the topic. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
@@ -11,17 +11,17 @@ pub struct TopicSummary {
     /// <p>The name of the topic.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl TopicSummary {
+impl  TopicSummary  {
     /// <p>The Amazon Resource Name (ARN) of the topic.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID for the topic. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn topic_id(&self) -> ::std::option::Option<&str> {
+    pub fn topic_id(&self) -> ::std::option::Option<& str> {
         self.topic_id.as_deref()
     }
     /// <p>The name of the topic.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl TopicSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the topic.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the topic.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl TopicSummaryBuilder {
     }
     /// <p>The ID for the topic. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn set_topic_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_id = input;
-        self
+        self.topic_id = input; self
     }
     /// <p>The ID for the topic. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn get_topic_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl TopicSummaryBuilder {
     }
     /// <p>The name of the topic.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the topic.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl TopicSummaryBuilder {
     /// Consumes the builder and constructs a [`TopicSummary`](crate::types::TopicSummary).
     pub fn build(self) -> crate::types::TopicSummary {
         crate::types::TopicSummary {
-            arn: self.arn,
-            topic_id: self.topic_id,
-            name: self.name,
+            arn: self.arn
+            ,
+            topic_id: self.topic_id
+            ,
+            name: self.name
+            ,
         }
     }
 }
+

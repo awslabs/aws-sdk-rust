@@ -3,7 +3,7 @@
 /// <p>The settings for using the social identity providers for access to your Amplify app.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SocialProviderSettings {
+pub struct SocialProviderSettings  {
     /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
     pub facebook: ::std::option::Option<crate::types::BackendAuthSocialProviderConfig>,
     /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
@@ -13,25 +13,25 @@ pub struct SocialProviderSettings {
     /// <p>Describes Apple social federation configurations for allowing your app users to sign in using OAuth.</p>
     pub sign_in_with_apple: ::std::option::Option<crate::types::BackendAuthAppleProviderConfig>,
 }
-impl SocialProviderSettings {
+impl  SocialProviderSettings  {
     /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
-    pub fn facebook(&self) -> ::std::option::Option<&crate::types::BackendAuthSocialProviderConfig> {
+    pub fn facebook(&self) -> ::std::option::Option<& crate::types::BackendAuthSocialProviderConfig> {
         self.facebook.as_ref()
     }
     /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
-    pub fn google(&self) -> ::std::option::Option<&crate::types::BackendAuthSocialProviderConfig> {
+    pub fn google(&self) -> ::std::option::Option<& crate::types::BackendAuthSocialProviderConfig> {
         self.google.as_ref()
     }
     /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
-    pub fn login_with_amazon(&self) -> ::std::option::Option<&crate::types::BackendAuthSocialProviderConfig> {
+    pub fn login_with_amazon(&self) -> ::std::option::Option<& crate::types::BackendAuthSocialProviderConfig> {
         self.login_with_amazon.as_ref()
     }
     /// <p>Describes Apple social federation configurations for allowing your app users to sign in using OAuth.</p>
-    pub fn sign_in_with_apple(&self) -> ::std::option::Option<&crate::types::BackendAuthAppleProviderConfig> {
+    pub fn sign_in_with_apple(&self) -> ::std::option::Option<& crate::types::BackendAuthAppleProviderConfig> {
         self.sign_in_with_apple.as_ref()
     }
 }
-impl ::std::fmt::Debug for SocialProviderSettings {
+impl  ::std::fmt::Debug for SocialProviderSettings  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SocialProviderSettings");
         formatter.field("facebook", &"*** Sensitive Data Redacted ***");
@@ -65,8 +65,7 @@ impl SocialProviderSettingsBuilder {
     }
     /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
     pub fn set_facebook(mut self, input: ::std::option::Option<crate::types::BackendAuthSocialProviderConfig>) -> Self {
-        self.facebook = input;
-        self
+        self.facebook = input; self
     }
     /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
     pub fn get_facebook(&self) -> &::std::option::Option<crate::types::BackendAuthSocialProviderConfig> {
@@ -79,8 +78,7 @@ impl SocialProviderSettingsBuilder {
     }
     /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
     pub fn set_google(mut self, input: ::std::option::Option<crate::types::BackendAuthSocialProviderConfig>) -> Self {
-        self.google = input;
-        self
+        self.google = input; self
     }
     /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
     pub fn get_google(&self) -> &::std::option::Option<crate::types::BackendAuthSocialProviderConfig> {
@@ -93,8 +91,7 @@ impl SocialProviderSettingsBuilder {
     }
     /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
     pub fn set_login_with_amazon(mut self, input: ::std::option::Option<crate::types::BackendAuthSocialProviderConfig>) -> Self {
-        self.login_with_amazon = input;
-        self
+        self.login_with_amazon = input; self
     }
     /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
     pub fn get_login_with_amazon(&self) -> &::std::option::Option<crate::types::BackendAuthSocialProviderConfig> {
@@ -107,8 +104,7 @@ impl SocialProviderSettingsBuilder {
     }
     /// <p>Describes Apple social federation configurations for allowing your app users to sign in using OAuth.</p>
     pub fn set_sign_in_with_apple(mut self, input: ::std::option::Option<crate::types::BackendAuthAppleProviderConfig>) -> Self {
-        self.sign_in_with_apple = input;
-        self
+        self.sign_in_with_apple = input; self
     }
     /// <p>Describes Apple social federation configurations for allowing your app users to sign in using OAuth.</p>
     pub fn get_sign_in_with_apple(&self) -> &::std::option::Option<crate::types::BackendAuthAppleProviderConfig> {
@@ -117,10 +113,14 @@ impl SocialProviderSettingsBuilder {
     /// Consumes the builder and constructs a [`SocialProviderSettings`](crate::types::SocialProviderSettings).
     pub fn build(self) -> crate::types::SocialProviderSettings {
         crate::types::SocialProviderSettings {
-            facebook: self.facebook,
-            google: self.google,
-            login_with_amazon: self.login_with_amazon,
-            sign_in_with_apple: self.sign_in_with_apple,
+            facebook: self.facebook
+            ,
+            google: self.google
+            ,
+            login_with_amazon: self.login_with_amazon
+            ,
+            sign_in_with_apple: self.sign_in_with_apple
+            ,
         }
     }
 }
@@ -134,3 +134,4 @@ impl ::std::fmt::Debug for SocialProviderSettingsBuilder {
         formatter.finish()
     }
 }
+

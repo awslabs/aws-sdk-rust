@@ -2,24 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetViewOutput {
+pub struct GetViewOutput  {
     /// <p>A structure that contains the details for the requested view.</p>
     pub view: ::std::option::Option<crate::types::View>,
     /// <p>Tag key and value pairs that are attached to the view.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl GetViewOutput {
+impl  GetViewOutput  {
     /// <p>A structure that contains the details for the requested view.</p>
-    pub fn view(&self) -> ::std::option::Option<&crate::types::View> {
+    pub fn view(&self) -> ::std::option::Option<& crate::types::View> {
         self.view.as_ref()
     }
     /// <p>Tag key and value pairs that are attached to the view.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl ::std::fmt::Debug for GetViewOutput {
+impl  ::std::fmt::Debug for GetViewOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetViewOutput");
         formatter.field("view", &self.view);
@@ -29,10 +29,10 @@ impl ::std::fmt::Debug for GetViewOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetViewOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetViewOutput {
     /// Creates a new builder-style object to manufacture [`GetViewOutput`](crate::operation::get_view::GetViewOutput).
     pub fn builder() -> crate::operation::get_view::builders::GetViewOutputBuilder {
@@ -45,7 +45,7 @@ impl GetViewOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct GetViewOutputBuilder {
     pub(crate) view: ::std::option::Option<crate::types::View>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetViewOutputBuilder {
@@ -56,8 +56,7 @@ impl GetViewOutputBuilder {
     }
     /// <p>A structure that contains the details for the requested view.</p>
     pub fn set_view(mut self, input: ::std::option::Option<crate::types::View>) -> Self {
-        self.view = input;
-        self
+        self.view = input; self
     }
     /// <p>A structure that contains the details for the requested view.</p>
     pub fn get_view(&self) -> &::std::option::Option<crate::types::View> {
@@ -70,33 +69,34 @@ impl GetViewOutputBuilder {
     /// <p>Tag key and value pairs that are attached to the view.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Tag key and value pairs that are attached to the view.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tag key and value pairs that are attached to the view.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetViewOutput`](crate::operation::get_view::GetViewOutput).
     pub fn build(self) -> crate::operation::get_view::GetViewOutput {
         crate::operation::get_view::GetViewOutput {
-            view: self.view,
-            tags: self.tags,
+            view: self.view
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
@@ -110,3 +110,4 @@ impl ::std::fmt::Debug for GetViewOutputBuilder {
         formatter.finish()
     }
 }
+

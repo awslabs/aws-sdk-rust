@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMailDomainInput {
+pub struct GetMailDomainInput  {
     /// <p>The WorkMail organization for which the domain is retrieved.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The domain from which you want to retrieve details.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
 }
-impl GetMailDomainInput {
+impl  GetMailDomainInput  {
     /// <p>The WorkMail organization for which the domain is retrieved.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The domain from which you want to retrieve details.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetMailDomainInputBuilder {
     }
     /// <p>The WorkMail organization for which the domain is retrieved.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The WorkMail organization for which the domain is retrieved.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl GetMailDomainInputBuilder {
     }
     /// <p>The domain from which you want to retrieve details.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The domain from which you want to retrieve details.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
     /// Consumes the builder and constructs a [`GetMailDomainInput`](crate::operation::get_mail_domain::GetMailDomainInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_mail_domain::GetMailDomainInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_mail_domain::GetMailDomainInput {
-            organization_id: self.organization_id,
-            domain_name: self.domain_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_mail_domain::GetMailDomainInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_mail_domain::GetMailDomainInput {
+                organization_id: self.organization_id
+                ,
+                domain_name: self.domain_name
+                ,
+            }
+        )
     }
 }
+

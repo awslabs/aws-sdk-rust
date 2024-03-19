@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListComplianceStatus`](crate::operation::list_compliance_status::builders::ListComplianceStatusFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_compliance_status::builders::ListComplianceStatusFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`policy_id(impl Into<String>)`](crate::operation::list_compliance_status::builders::ListComplianceStatusFluentBuilder::policy_id) / [`set_policy_id(Option<String>)`](crate::operation::list_compliance_status::builders::ListComplianceStatusFluentBuilder::set_policy_id):<br>required: **true**<br><p>The ID of the Firewall Manager policy that you want the details for.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_compliance_status::builders::ListComplianceStatusFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_compliance_status::builders::ListComplianceStatusFluentBuilder::set_next_token):<br>required: **false**<br><p>If you specify a value for <code>MaxResults</code> and you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicyComplianceStatus</code> objects. For the second and subsequent <code>ListComplianceStatus</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicyComplianceStatus</code> objects.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_compliance_status::builders::ListComplianceStatusFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_compliance_status::builders::ListComplianceStatusFluentBuilder::set_max_results):<br>required: **false**<br><p>Specifies the number of <code>PolicyComplianceStatus</code> objects that you want Firewall Manager to return for this request. If you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicyComplianceStatus</code> objects.</p><br>
-    /// - On success, responds with [`ListComplianceStatusOutput`](crate::operation::list_compliance_status::ListComplianceStatusOutput) with field(s):
+                            /// - On success, responds with [`ListComplianceStatusOutput`](crate::operation::list_compliance_status::ListComplianceStatusOutput) with field(s):
     ///   - [`policy_compliance_status_list(Option<Vec::<PolicyComplianceStatus>>)`](crate::operation::list_compliance_status::ListComplianceStatusOutput::policy_compliance_status_list): <p>An array of <code>PolicyComplianceStatus</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_compliance_status::ListComplianceStatusOutput::next_token): <p>If you have more <code>PolicyComplianceStatus</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicyComplianceStatus</code> objects, submit another <code>ListComplianceStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
-    /// - On failure, responds with [`SdkError<ListComplianceStatusError>`](crate::operation::list_compliance_status::ListComplianceStatusError)
+                            /// - On failure, responds with [`SdkError<ListComplianceStatusError>`](crate::operation::list_compliance_status::ListComplianceStatusError)
     pub fn list_compliance_status(&self) -> crate::operation::list_compliance_status::builders::ListComplianceStatusFluentBuilder {
-        crate::operation::list_compliance_status::builders::ListComplianceStatusFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_compliance_status::builders::ListComplianceStatusFluentBuilder::new(self.handle.clone())
+                            }
 }
+

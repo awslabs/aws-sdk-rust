@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListParticipantEventsInput {
+pub struct ListParticipantEventsInput  {
     /// <p>Stage ARN.</p>
     pub stage_arn: ::std::option::Option<::std::string::String>,
     /// <p>ID of a session within the stage.</p>
@@ -14,21 +14,21 @@ pub struct ListParticipantEventsInput {
     /// <p>Maximum number of results to return. Default: 50.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListParticipantEventsInput {
+impl  ListParticipantEventsInput  {
     /// <p>Stage ARN.</p>
-    pub fn stage_arn(&self) -> ::std::option::Option<&str> {
+    pub fn stage_arn(&self) -> ::std::option::Option<& str> {
         self.stage_arn.as_deref()
     }
     /// <p>ID of a session within the stage.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>Unique identifier for this participant. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
-    pub fn participant_id(&self) -> ::std::option::Option<&str> {
+    pub fn participant_id(&self) -> ::std::option::Option<& str> {
         self.participant_id.as_deref()
     }
     /// <p>The first participant event to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of results to return. Default: 50.</p>
@@ -62,8 +62,7 @@ impl ListParticipantEventsInputBuilder {
     }
     /// <p>Stage ARN.</p>
     pub fn set_stage_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stage_arn = input;
-        self
+        self.stage_arn = input; self
     }
     /// <p>Stage ARN.</p>
     pub fn get_stage_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl ListParticipantEventsInputBuilder {
     }
     /// <p>ID of a session within the stage.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>ID of a session within the stage.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +90,7 @@ impl ListParticipantEventsInputBuilder {
     }
     /// <p>Unique identifier for this participant. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
     pub fn set_participant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.participant_id = input;
-        self
+        self.participant_id = input; self
     }
     /// <p>Unique identifier for this participant. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
     pub fn get_participant_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +103,7 @@ impl ListParticipantEventsInputBuilder {
     }
     /// <p>The first participant event to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The first participant event to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,24 +116,28 @@ impl ListParticipantEventsInputBuilder {
     }
     /// <p>Maximum number of results to return. Default: 50.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Maximum number of results to return. Default: 50.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListParticipantEventsInput`](crate::operation::list_participant_events::ListParticipantEventsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_participant_events::ListParticipantEventsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_participant_events::ListParticipantEventsInput {
-            stage_arn: self.stage_arn,
-            session_id: self.session_id,
-            participant_id: self.participant_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_participant_events::ListParticipantEventsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_participant_events::ListParticipantEventsInput {
+                stage_arn: self.stage_arn
+                ,
+                session_id: self.session_id
+                ,
+                participant_id: self.participant_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

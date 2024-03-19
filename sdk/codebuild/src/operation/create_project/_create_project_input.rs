@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateProjectInput {
+pub struct CreateProjectInput  {
     /// <p>The name of the build project.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description that makes the build project easy to identify.</p>
@@ -10,7 +10,7 @@ pub struct CreateProjectInput {
     /// <p>Information about the build input source code for the build project.</p>
     pub source: ::std::option::Option<crate::types::ProjectSource>,
     /// <p>An array of <code>ProjectSource</code> objects.</p>
-    pub secondary_sources: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>>,
+    pub secondary_sources: ::std::option::Option<::std::vec::Vec::<crate::types::ProjectSource>>,
     /// <p>A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of:</p>
     /// <ul>
     /// <li>
@@ -26,11 +26,11 @@ pub struct CreateProjectInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>.</p>
     pub source_version: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take precedence over these <code>secondarySourceVersions</code> (at the project level).</p>
-    pub secondary_source_versions: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>>,
+    pub secondary_source_versions: ::std::option::Option<::std::vec::Vec::<crate::types::ProjectSourceVersion>>,
     /// <p>Information about the build output artifacts for the build project.</p>
     pub artifacts: ::std::option::Option<crate::types::ProjectArtifacts>,
     /// <p>An array of <code>ProjectArtifacts</code> objects.</p>
-    pub secondary_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::ProjectArtifacts>>,
+    pub secondary_artifacts: ::std::option::Option<::std::vec::Vec::<crate::types::ProjectArtifacts>>,
     /// <p>Stores recently used information so that it can be quickly accessed at a later time.</p>
     pub cache: ::std::option::Option<crate::types::ProjectCache>,
     /// <p>Information about the build environment for the build project.</p>
@@ -48,7 +48,7 @@ pub struct CreateProjectInput {
     pub encryption_key: ::std::option::Option<::std::string::String>,
     /// <p>A list of tag key and value pairs associated with this build project.</p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>Set this to true to generate a publicly accessible URL for your project's build badge.</p>
@@ -56,31 +56,32 @@ pub struct CreateProjectInput {
     /// <p>Information about logs for the build project. These can be logs in CloudWatch Logs, logs uploaded to a specified S3 bucket, or both.</p>
     pub logs_config: ::std::option::Option<crate::types::LogsConfig>,
     /// <p>An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System.</p>
-    pub file_system_locations: ::std::option::Option<::std::vec::Vec<crate::types::ProjectFileSystemLocation>>,
+    pub file_system_locations: ::std::option::Option<::std::vec::Vec::<crate::types::ProjectFileSystemLocation>>,
     /// <p>A <code>ProjectBuildBatchConfig</code> object that defines the batch build options for the project.</p>
     pub build_batch_config: ::std::option::Option<crate::types::ProjectBuildBatchConfig>,
     /// <p>The maximum number of concurrent builds that are allowed for this project.</p>
     /// <p>New builds are only started if the current number of builds is less than or equal to this limit. If the current build count meets this limit, new builds are throttled and are not run.</p>
     pub concurrent_build_limit: ::std::option::Option<i32>,
 }
-impl CreateProjectInput {
+impl  CreateProjectInput  {
     /// <p>The name of the build project.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description that makes the build project easy to identify.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Information about the build input source code for the build project.</p>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::ProjectSource> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::ProjectSource> {
         self.source.as_ref()
     }
     /// <p>An array of <code>ProjectSource</code> objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_sources.is_none()`.
-    pub fn secondary_sources(&self) -> &[crate::types::ProjectSource] {
-        self.secondary_sources.as_deref().unwrap_or_default()
+    pub fn secondary_sources(&self) -> & [crate::types::ProjectSource] {
+        self.secondary_sources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of:</p>
     /// <ul>
@@ -95,35 +96,37 @@ impl CreateProjectInput {
     /// </ul>
     /// <p>If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>.</p>
-    pub fn source_version(&self) -> ::std::option::Option<&str> {
+    pub fn source_version(&self) -> ::std::option::Option<& str> {
         self.source_version.as_deref()
     }
     /// <p>An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take precedence over these <code>secondarySourceVersions</code> (at the project level).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_source_versions.is_none()`.
-    pub fn secondary_source_versions(&self) -> &[crate::types::ProjectSourceVersion] {
-        self.secondary_source_versions.as_deref().unwrap_or_default()
+    pub fn secondary_source_versions(&self) -> & [crate::types::ProjectSourceVersion] {
+        self.secondary_source_versions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Information about the build output artifacts for the build project.</p>
-    pub fn artifacts(&self) -> ::std::option::Option<&crate::types::ProjectArtifacts> {
+    pub fn artifacts(&self) -> ::std::option::Option<& crate::types::ProjectArtifacts> {
         self.artifacts.as_ref()
     }
     /// <p>An array of <code>ProjectArtifacts</code> objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_artifacts.is_none()`.
-    pub fn secondary_artifacts(&self) -> &[crate::types::ProjectArtifacts] {
-        self.secondary_artifacts.as_deref().unwrap_or_default()
+    pub fn secondary_artifacts(&self) -> & [crate::types::ProjectArtifacts] {
+        self.secondary_artifacts.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Stores recently used information so that it can be quickly accessed at a later time.</p>
-    pub fn cache(&self) -> ::std::option::Option<&crate::types::ProjectCache> {
+    pub fn cache(&self) -> ::std::option::Option<& crate::types::ProjectCache> {
         self.cache.as_ref()
     }
     /// <p>Information about the build environment for the build project.</p>
-    pub fn environment(&self) -> ::std::option::Option<&crate::types::ProjectEnvironment> {
+    pub fn environment(&self) -> ::std::option::Option<& crate::types::ProjectEnvironment> {
         self.environment.as_ref()
     }
     /// <p>The ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services on behalf of the Amazon Web Services account.</p>
-    pub fn service_role(&self) -> ::std::option::Option<&str> {
+    pub fn service_role(&self) -> ::std::option::Option<& str> {
         self.service_role.as_deref()
     }
     /// <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out any build that has not been marked as completed. The default is 60 minutes.</p>
@@ -138,18 +141,19 @@ impl CreateProjectInput {
     /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key.</p>
     /// </note>
     /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/<alias-name></alias-name></code>).</p>
-    pub fn encryption_key(&self) -> ::std::option::Option<&str> {
+    pub fn encryption_key(&self) -> ::std::option::Option<& str> {
         self.encryption_key.as_deref()
     }
     /// <p>A list of tag key and value pairs associated with this build project.</p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
-    pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
+    pub fn vpc_config(&self) -> ::std::option::Option<& crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
     /// <p>Set this to true to generate a publicly accessible URL for your project's build badge.</p>
@@ -157,17 +161,18 @@ impl CreateProjectInput {
         self.badge_enabled
     }
     /// <p>Information about logs for the build project. These can be logs in CloudWatch Logs, logs uploaded to a specified S3 bucket, or both.</p>
-    pub fn logs_config(&self) -> ::std::option::Option<&crate::types::LogsConfig> {
+    pub fn logs_config(&self) -> ::std::option::Option<& crate::types::LogsConfig> {
         self.logs_config.as_ref()
     }
     /// <p>An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_system_locations.is_none()`.
-    pub fn file_system_locations(&self) -> &[crate::types::ProjectFileSystemLocation] {
-        self.file_system_locations.as_deref().unwrap_or_default()
+    pub fn file_system_locations(&self) -> & [crate::types::ProjectFileSystemLocation] {
+        self.file_system_locations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A <code>ProjectBuildBatchConfig</code> object that defines the batch build options for the project.</p>
-    pub fn build_batch_config(&self) -> ::std::option::Option<&crate::types::ProjectBuildBatchConfig> {
+    pub fn build_batch_config(&self) -> ::std::option::Option<& crate::types::ProjectBuildBatchConfig> {
         self.build_batch_config.as_ref()
     }
     /// <p>The maximum number of concurrent builds that are allowed for this project.</p>
@@ -190,22 +195,22 @@ pub struct CreateProjectInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<crate::types::ProjectSource>,
-    pub(crate) secondary_sources: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>>,
+    pub(crate) secondary_sources: ::std::option::Option<::std::vec::Vec::<crate::types::ProjectSource>>,
     pub(crate) source_version: ::std::option::Option<::std::string::String>,
-    pub(crate) secondary_source_versions: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>>,
+    pub(crate) secondary_source_versions: ::std::option::Option<::std::vec::Vec::<crate::types::ProjectSourceVersion>>,
     pub(crate) artifacts: ::std::option::Option<crate::types::ProjectArtifacts>,
-    pub(crate) secondary_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::ProjectArtifacts>>,
+    pub(crate) secondary_artifacts: ::std::option::Option<::std::vec::Vec::<crate::types::ProjectArtifacts>>,
     pub(crate) cache: ::std::option::Option<crate::types::ProjectCache>,
     pub(crate) environment: ::std::option::Option<crate::types::ProjectEnvironment>,
     pub(crate) service_role: ::std::option::Option<::std::string::String>,
     pub(crate) timeout_in_minutes: ::std::option::Option<i32>,
     pub(crate) queued_timeout_in_minutes: ::std::option::Option<i32>,
     pub(crate) encryption_key: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     pub(crate) badge_enabled: ::std::option::Option<bool>,
     pub(crate) logs_config: ::std::option::Option<crate::types::LogsConfig>,
-    pub(crate) file_system_locations: ::std::option::Option<::std::vec::Vec<crate::types::ProjectFileSystemLocation>>,
+    pub(crate) file_system_locations: ::std::option::Option<::std::vec::Vec::<crate::types::ProjectFileSystemLocation>>,
     pub(crate) build_batch_config: ::std::option::Option<crate::types::ProjectBuildBatchConfig>,
     pub(crate) concurrent_build_limit: ::std::option::Option<i32>,
 }
@@ -218,8 +223,7 @@ impl CreateProjectInputBuilder {
     }
     /// <p>The name of the build project.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the build project.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -232,8 +236,7 @@ impl CreateProjectInputBuilder {
     }
     /// <p>A description that makes the build project easy to identify.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description that makes the build project easy to identify.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -247,8 +250,7 @@ impl CreateProjectInputBuilder {
     }
     /// <p>Information about the build input source code for the build project.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::ProjectSource>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>Information about the build input source code for the build project.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::ProjectSource> {
@@ -261,17 +263,16 @@ impl CreateProjectInputBuilder {
     /// <p>An array of <code>ProjectSource</code> objects.</p>
     pub fn secondary_sources(mut self, input: crate::types::ProjectSource) -> Self {
         let mut v = self.secondary_sources.unwrap_or_default();
-        v.push(input);
-        self.secondary_sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.secondary_sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>ProjectSource</code> objects.</p>
-    pub fn set_secondary_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>>) -> Self {
-        self.secondary_sources = input;
-        self
+    pub fn set_secondary_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProjectSource>>) -> Self {
+        self.secondary_sources = input; self
     }
     /// <p>An array of <code>ProjectSource</code> objects.</p>
-    pub fn get_secondary_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>> {
+    pub fn get_secondary_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProjectSource>> {
         &self.secondary_sources
     }
     /// <p>A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of:</p>
@@ -305,8 +306,7 @@ impl CreateProjectInputBuilder {
     /// <p>If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>.</p>
     pub fn set_source_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_version = input;
-        self
+        self.source_version = input; self
     }
     /// <p>A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of:</p>
     /// <ul>
@@ -331,17 +331,16 @@ impl CreateProjectInputBuilder {
     /// <p>An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take precedence over these <code>secondarySourceVersions</code> (at the project level).</p>
     pub fn secondary_source_versions(mut self, input: crate::types::ProjectSourceVersion) -> Self {
         let mut v = self.secondary_source_versions.unwrap_or_default();
-        v.push(input);
-        self.secondary_source_versions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.secondary_source_versions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take precedence over these <code>secondarySourceVersions</code> (at the project level).</p>
-    pub fn set_secondary_source_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>>) -> Self {
-        self.secondary_source_versions = input;
-        self
+    pub fn set_secondary_source_versions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProjectSourceVersion>>) -> Self {
+        self.secondary_source_versions = input; self
     }
     /// <p>An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take precedence over these <code>secondarySourceVersions</code> (at the project level).</p>
-    pub fn get_secondary_source_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>> {
+    pub fn get_secondary_source_versions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProjectSourceVersion>> {
         &self.secondary_source_versions
     }
     /// <p>Information about the build output artifacts for the build project.</p>
@@ -352,8 +351,7 @@ impl CreateProjectInputBuilder {
     }
     /// <p>Information about the build output artifacts for the build project.</p>
     pub fn set_artifacts(mut self, input: ::std::option::Option<crate::types::ProjectArtifacts>) -> Self {
-        self.artifacts = input;
-        self
+        self.artifacts = input; self
     }
     /// <p>Information about the build output artifacts for the build project.</p>
     pub fn get_artifacts(&self) -> &::std::option::Option<crate::types::ProjectArtifacts> {
@@ -366,17 +364,16 @@ impl CreateProjectInputBuilder {
     /// <p>An array of <code>ProjectArtifacts</code> objects.</p>
     pub fn secondary_artifacts(mut self, input: crate::types::ProjectArtifacts) -> Self {
         let mut v = self.secondary_artifacts.unwrap_or_default();
-        v.push(input);
-        self.secondary_artifacts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.secondary_artifacts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>ProjectArtifacts</code> objects.</p>
-    pub fn set_secondary_artifacts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectArtifacts>>) -> Self {
-        self.secondary_artifacts = input;
-        self
+    pub fn set_secondary_artifacts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProjectArtifacts>>) -> Self {
+        self.secondary_artifacts = input; self
     }
     /// <p>An array of <code>ProjectArtifacts</code> objects.</p>
-    pub fn get_secondary_artifacts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectArtifacts>> {
+    pub fn get_secondary_artifacts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProjectArtifacts>> {
         &self.secondary_artifacts
     }
     /// <p>Stores recently used information so that it can be quickly accessed at a later time.</p>
@@ -386,8 +383,7 @@ impl CreateProjectInputBuilder {
     }
     /// <p>Stores recently used information so that it can be quickly accessed at a later time.</p>
     pub fn set_cache(mut self, input: ::std::option::Option<crate::types::ProjectCache>) -> Self {
-        self.cache = input;
-        self
+        self.cache = input; self
     }
     /// <p>Stores recently used information so that it can be quickly accessed at a later time.</p>
     pub fn get_cache(&self) -> &::std::option::Option<crate::types::ProjectCache> {
@@ -401,8 +397,7 @@ impl CreateProjectInputBuilder {
     }
     /// <p>Information about the build environment for the build project.</p>
     pub fn set_environment(mut self, input: ::std::option::Option<crate::types::ProjectEnvironment>) -> Self {
-        self.environment = input;
-        self
+        self.environment = input; self
     }
     /// <p>Information about the build environment for the build project.</p>
     pub fn get_environment(&self) -> &::std::option::Option<crate::types::ProjectEnvironment> {
@@ -416,8 +411,7 @@ impl CreateProjectInputBuilder {
     }
     /// <p>The ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services on behalf of the Amazon Web Services account.</p>
     pub fn set_service_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_role = input;
-        self
+        self.service_role = input; self
     }
     /// <p>The ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services on behalf of the Amazon Web Services account.</p>
     pub fn get_service_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -430,8 +424,7 @@ impl CreateProjectInputBuilder {
     }
     /// <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out any build that has not been marked as completed. The default is 60 minutes.</p>
     pub fn set_timeout_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.timeout_in_minutes = input;
-        self
+        self.timeout_in_minutes = input; self
     }
     /// <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out any build that has not been marked as completed. The default is 60 minutes.</p>
     pub fn get_timeout_in_minutes(&self) -> &::std::option::Option<i32> {
@@ -444,8 +437,7 @@ impl CreateProjectInputBuilder {
     }
     /// <p>The number of minutes a build is allowed to be queued before it times out.</p>
     pub fn set_queued_timeout_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.queued_timeout_in_minutes = input;
-        self
+        self.queued_timeout_in_minutes = input; self
     }
     /// <p>The number of minutes a build is allowed to be queued before it times out.</p>
     pub fn get_queued_timeout_in_minutes(&self) -> &::std::option::Option<i32> {
@@ -464,8 +456,7 @@ impl CreateProjectInputBuilder {
     /// </note>
     /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/<alias-name></alias-name></code>).</p>
     pub fn set_encryption_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.encryption_key = input;
-        self
+        self.encryption_key = input; self
     }
     /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p><note>
     /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key.</p>
@@ -482,19 +473,18 @@ impl CreateProjectInputBuilder {
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tag key and value pairs associated with this build project.</p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tag key and value pairs associated with this build project.</p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
@@ -504,8 +494,7 @@ impl CreateProjectInputBuilder {
     }
     /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
-        self.vpc_config = input;
-        self
+        self.vpc_config = input; self
     }
     /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
@@ -518,8 +507,7 @@ impl CreateProjectInputBuilder {
     }
     /// <p>Set this to true to generate a publicly accessible URL for your project's build badge.</p>
     pub fn set_badge_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.badge_enabled = input;
-        self
+        self.badge_enabled = input; self
     }
     /// <p>Set this to true to generate a publicly accessible URL for your project's build badge.</p>
     pub fn get_badge_enabled(&self) -> &::std::option::Option<bool> {
@@ -532,8 +520,7 @@ impl CreateProjectInputBuilder {
     }
     /// <p>Information about logs for the build project. These can be logs in CloudWatch Logs, logs uploaded to a specified S3 bucket, or both.</p>
     pub fn set_logs_config(mut self, input: ::std::option::Option<crate::types::LogsConfig>) -> Self {
-        self.logs_config = input;
-        self
+        self.logs_config = input; self
     }
     /// <p>Information about logs for the build project. These can be logs in CloudWatch Logs, logs uploaded to a specified S3 bucket, or both.</p>
     pub fn get_logs_config(&self) -> &::std::option::Option<crate::types::LogsConfig> {
@@ -546,17 +533,16 @@ impl CreateProjectInputBuilder {
     /// <p>An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System.</p>
     pub fn file_system_locations(mut self, input: crate::types::ProjectFileSystemLocation) -> Self {
         let mut v = self.file_system_locations.unwrap_or_default();
-        v.push(input);
-        self.file_system_locations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.file_system_locations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System.</p>
-    pub fn set_file_system_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectFileSystemLocation>>) -> Self {
-        self.file_system_locations = input;
-        self
+    pub fn set_file_system_locations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProjectFileSystemLocation>>) -> Self {
+        self.file_system_locations = input; self
     }
     /// <p>An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System.</p>
-    pub fn get_file_system_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectFileSystemLocation>> {
+    pub fn get_file_system_locations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProjectFileSystemLocation>> {
         &self.file_system_locations
     }
     /// <p>A <code>ProjectBuildBatchConfig</code> object that defines the batch build options for the project.</p>
@@ -566,8 +552,7 @@ impl CreateProjectInputBuilder {
     }
     /// <p>A <code>ProjectBuildBatchConfig</code> object that defines the batch build options for the project.</p>
     pub fn set_build_batch_config(mut self, input: ::std::option::Option<crate::types::ProjectBuildBatchConfig>) -> Self {
-        self.build_batch_config = input;
-        self
+        self.build_batch_config = input; self
     }
     /// <p>A <code>ProjectBuildBatchConfig</code> object that defines the batch build options for the project.</p>
     pub fn get_build_batch_config(&self) -> &::std::option::Option<crate::types::ProjectBuildBatchConfig> {
@@ -582,8 +567,7 @@ impl CreateProjectInputBuilder {
     /// <p>The maximum number of concurrent builds that are allowed for this project.</p>
     /// <p>New builds are only started if the current number of builds is less than or equal to this limit. If the current build count meets this limit, new builds are throttled and are not run.</p>
     pub fn set_concurrent_build_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.concurrent_build_limit = input;
-        self
+        self.concurrent_build_limit = input; self
     }
     /// <p>The maximum number of concurrent builds that are allowed for this project.</p>
     /// <p>New builds are only started if the current number of builds is less than or equal to this limit. If the current build count meets this limit, new builds are throttled and are not run.</p>
@@ -591,31 +575,53 @@ impl CreateProjectInputBuilder {
         &self.concurrent_build_limit
     }
     /// Consumes the builder and constructs a [`CreateProjectInput`](crate::operation::create_project::CreateProjectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_project::CreateProjectInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_project::CreateProjectInput {
-            name: self.name,
-            description: self.description,
-            source: self.source,
-            secondary_sources: self.secondary_sources,
-            source_version: self.source_version,
-            secondary_source_versions: self.secondary_source_versions,
-            artifacts: self.artifacts,
-            secondary_artifacts: self.secondary_artifacts,
-            cache: self.cache,
-            environment: self.environment,
-            service_role: self.service_role,
-            timeout_in_minutes: self.timeout_in_minutes,
-            queued_timeout_in_minutes: self.queued_timeout_in_minutes,
-            encryption_key: self.encryption_key,
-            tags: self.tags,
-            vpc_config: self.vpc_config,
-            badge_enabled: self.badge_enabled,
-            logs_config: self.logs_config,
-            file_system_locations: self.file_system_locations,
-            build_batch_config: self.build_batch_config,
-            concurrent_build_limit: self.concurrent_build_limit,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_project::CreateProjectInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_project::CreateProjectInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                source: self.source
+                ,
+                secondary_sources: self.secondary_sources
+                ,
+                source_version: self.source_version
+                ,
+                secondary_source_versions: self.secondary_source_versions
+                ,
+                artifacts: self.artifacts
+                ,
+                secondary_artifacts: self.secondary_artifacts
+                ,
+                cache: self.cache
+                ,
+                environment: self.environment
+                ,
+                service_role: self.service_role
+                ,
+                timeout_in_minutes: self.timeout_in_minutes
+                ,
+                queued_timeout_in_minutes: self.queued_timeout_in_minutes
+                ,
+                encryption_key: self.encryption_key
+                ,
+                tags: self.tags
+                ,
+                vpc_config: self.vpc_config
+                ,
+                badge_enabled: self.badge_enabled
+                ,
+                logs_config: self.logs_config
+                ,
+                file_system_locations: self.file_system_locations
+                ,
+                build_batch_config: self.build_batch_config
+                ,
+                concurrent_build_limit: self.concurrent_build_limit
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribePackageVersionOutput {
+pub struct DescribePackageVersionOutput  {
     /// <p>The account ID of the version's owner.</p>
     pub owner_account: ::std::option::Option<::std::string::String>,
     /// <p>The version's ID.</p>
@@ -25,57 +25,53 @@ pub struct DescribePackageVersionOutput {
     pub registered_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl DescribePackageVersionOutput {
+impl  DescribePackageVersionOutput  {
     /// <p>The account ID of the version's owner.</p>
-    pub fn owner_account(&self) -> ::std::option::Option<&str> {
+    pub fn owner_account(&self) -> ::std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>The version's ID.</p>
-    pub fn package_id(&self) -> &str {
-        use std::ops::Deref;
-        self.package_id.deref()
+    pub fn package_id(&self) -> & str {
+        use std::ops::Deref; self.package_id.deref()
     }
     /// <p>The ARN of the package.</p>
-    pub fn package_arn(&self) -> ::std::option::Option<&str> {
+    pub fn package_arn(&self) -> ::std::option::Option<& str> {
         self.package_arn.as_deref()
     }
     /// <p>The version's name.</p>
-    pub fn package_name(&self) -> &str {
-        use std::ops::Deref;
-        self.package_name.deref()
+    pub fn package_name(&self) -> & str {
+        use std::ops::Deref; self.package_name.deref()
     }
     /// <p>The version's version.</p>
-    pub fn package_version(&self) -> &str {
-        use std::ops::Deref;
-        self.package_version.deref()
+    pub fn package_version(&self) -> & str {
+        use std::ops::Deref; self.package_version.deref()
     }
     /// <p>The version's patch version.</p>
-    pub fn patch_version(&self) -> &str {
-        use std::ops::Deref;
-        self.patch_version.deref()
+    pub fn patch_version(&self) -> & str {
+        use std::ops::Deref; self.patch_version.deref()
     }
     /// <p>Whether the version is the latest available.</p>
     pub fn is_latest_patch(&self) -> bool {
         self.is_latest_patch
     }
     /// <p>The version's status.</p>
-    pub fn status(&self) -> &crate::types::PackageVersionStatus {
+    pub fn status(&self) -> & crate::types::PackageVersionStatus {
         &self.status
     }
     /// <p>The version's status description.</p>
-    pub fn status_description(&self) -> ::std::option::Option<&str> {
+    pub fn status_description(&self) -> ::std::option::Option<& str> {
         self.status_description.as_deref()
     }
     /// <p>The version's registered time.</p>
-    pub fn registered_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn registered_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.registered_time.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribePackageVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribePackageVersionOutput {
     /// Creates a new builder-style object to manufacture [`DescribePackageVersionOutput`](crate::operation::describe_package_version::DescribePackageVersionOutput).
     pub fn builder() -> crate::operation::describe_package_version::builders::DescribePackageVersionOutputBuilder {
@@ -107,8 +103,7 @@ impl DescribePackageVersionOutputBuilder {
     }
     /// <p>The account ID of the version's owner.</p>
     pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_account = input;
-        self
+        self.owner_account = input; self
     }
     /// <p>The account ID of the version's owner.</p>
     pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +117,7 @@ impl DescribePackageVersionOutputBuilder {
     }
     /// <p>The version's ID.</p>
     pub fn set_package_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_id = input;
-        self
+        self.package_id = input; self
     }
     /// <p>The version's ID.</p>
     pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +130,7 @@ impl DescribePackageVersionOutputBuilder {
     }
     /// <p>The ARN of the package.</p>
     pub fn set_package_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_arn = input;
-        self
+        self.package_arn = input; self
     }
     /// <p>The ARN of the package.</p>
     pub fn get_package_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,8 +144,7 @@ impl DescribePackageVersionOutputBuilder {
     }
     /// <p>The version's name.</p>
     pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_name = input;
-        self
+        self.package_name = input; self
     }
     /// <p>The version's name.</p>
     pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +158,7 @@ impl DescribePackageVersionOutputBuilder {
     }
     /// <p>The version's version.</p>
     pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_version = input;
-        self
+        self.package_version = input; self
     }
     /// <p>The version's version.</p>
     pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +172,7 @@ impl DescribePackageVersionOutputBuilder {
     }
     /// <p>The version's patch version.</p>
     pub fn set_patch_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.patch_version = input;
-        self
+        self.patch_version = input; self
     }
     /// <p>The version's patch version.</p>
     pub fn get_patch_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -196,8 +186,7 @@ impl DescribePackageVersionOutputBuilder {
     }
     /// <p>Whether the version is the latest available.</p>
     pub fn set_is_latest_patch(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_latest_patch = input;
-        self
+        self.is_latest_patch = input; self
     }
     /// <p>Whether the version is the latest available.</p>
     pub fn get_is_latest_patch(&self) -> &::std::option::Option<bool> {
@@ -211,8 +200,7 @@ impl DescribePackageVersionOutputBuilder {
     }
     /// <p>The version's status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::PackageVersionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The version's status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PackageVersionStatus> {
@@ -225,8 +213,7 @@ impl DescribePackageVersionOutputBuilder {
     }
     /// <p>The version's status description.</p>
     pub fn set_status_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_description = input;
-        self
+        self.status_description = input; self
     }
     /// <p>The version's status description.</p>
     pub fn get_status_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -239,22 +226,21 @@ impl DescribePackageVersionOutputBuilder {
     }
     /// <p>The version's registered time.</p>
     pub fn set_registered_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.registered_time = input;
-        self
+        self.registered_time = input; self
     }
     /// <p>The version's registered time.</p>
     pub fn get_registered_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.registered_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribePackageVersionOutput`](crate::operation::describe_package_version::DescribePackageVersionOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`package_id`](crate::operation::describe_package_version::builders::DescribePackageVersionOutputBuilder::package_id)
@@ -262,49 +248,48 @@ impl DescribePackageVersionOutputBuilder {
     /// - [`package_version`](crate::operation::describe_package_version::builders::DescribePackageVersionOutputBuilder::package_version)
     /// - [`patch_version`](crate::operation::describe_package_version::builders::DescribePackageVersionOutputBuilder::patch_version)
     /// - [`status`](crate::operation::describe_package_version::builders::DescribePackageVersionOutputBuilder::status)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_package_version::DescribePackageVersionOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_package_version::DescribePackageVersionOutput {
-            owner_account: self.owner_account,
-            package_id: self.package_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "package_id",
-                    "package_id was not specified but it is required when building DescribePackageVersionOutput",
-                )
-            })?,
-            package_arn: self.package_arn,
-            package_name: self.package_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "package_name",
-                    "package_name was not specified but it is required when building DescribePackageVersionOutput",
-                )
-            })?,
-            package_version: self.package_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "package_version",
-                    "package_version was not specified but it is required when building DescribePackageVersionOutput",
-                )
-            })?,
-            patch_version: self.patch_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "patch_version",
-                    "patch_version was not specified but it is required when building DescribePackageVersionOutput",
-                )
-            })?,
-            is_latest_patch: self.is_latest_patch.unwrap_or_default(),
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building DescribePackageVersionOutput",
-                )
-            })?,
-            status_description: self.status_description,
-            registered_time: self.registered_time,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_package_version::DescribePackageVersionOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_package_version::DescribePackageVersionOutput {
+                owner_account: self.owner_account
+                ,
+                package_id: self.package_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("package_id", "package_id was not specified but it is required when building DescribePackageVersionOutput")
+                    )?
+                ,
+                package_arn: self.package_arn
+                ,
+                package_name: self.package_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("package_name", "package_name was not specified but it is required when building DescribePackageVersionOutput")
+                    )?
+                ,
+                package_version: self.package_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("package_version", "package_version was not specified but it is required when building DescribePackageVersionOutput")
+                    )?
+                ,
+                patch_version: self.patch_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("patch_version", "patch_version was not specified but it is required when building DescribePackageVersionOutput")
+                    )?
+                ,
+                is_latest_patch: self.is_latest_patch
+                    .unwrap_or_default()
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building DescribePackageVersionOutput")
+                    )?
+                ,
+                status_description: self.status_description
+                ,
+                registered_time: self.registered_time
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

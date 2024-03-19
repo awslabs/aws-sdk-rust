@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateServerlessCacheInput {
+pub struct CreateServerlessCacheInput  {
     /// <p>User-provided identifier for the serverless cache. This parameter is stored as a lowercase string.</p>
     pub serverless_cache_name: ::std::option::Option<::std::string::String>,
     /// <p>User-provided description for the serverless cache. The default is NULL, i.e. if no description is provided then an empty string will be returned. The maximum length is 255 characters.</p>
@@ -16,79 +16,83 @@ pub struct CreateServerlessCacheInput {
     /// <p>ARN of the customer managed key for encrypting the data at rest. If no KMS key is provided, a default service key is used.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of the one or more VPC security groups to be associated with the serverless cache. The security group will authorize traffic access for the VPC end-point (private-link). If no other information is given this will be the VPC’s Default Security Group that is associated with the cluster VPC end-point.</p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The ARN(s) of the snapshot that the new serverless cache will be created from. Available for Redis only.</p>
-    pub snapshot_arns_to_restore: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub snapshot_arns_to_restore: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The list of tags (key, value) pairs to be added to the serverless cache resource. Default is NULL.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The identifier of the UserGroup to be associated with the serverless cache. Available for Redis only. Default is NULL.</p>
     pub user_group_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of the identifiers of the subnets where the VPC endpoint for the serverless cache will be deployed. All the subnetIds must belong to the same VPC.</p>
-    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The number of snapshots that will be retained for the serverless cache that is being created. As new snapshots beyond this limit are added, the oldest snapshots will be deleted on a rolling basis. Available for Redis only.</p>
     pub snapshot_retention_limit: ::std::option::Option<i32>,
     /// <p>The daily time that snapshots will be created from the new serverless cache. By default this number is populated with 0, i.e. no snapshots will be created on an automatic daily basis. Available for Redis only.</p>
     pub daily_snapshot_time: ::std::option::Option<::std::string::String>,
 }
-impl CreateServerlessCacheInput {
+impl  CreateServerlessCacheInput  {
     /// <p>User-provided identifier for the serverless cache. This parameter is stored as a lowercase string.</p>
-    pub fn serverless_cache_name(&self) -> ::std::option::Option<&str> {
+    pub fn serverless_cache_name(&self) -> ::std::option::Option<& str> {
         self.serverless_cache_name.as_deref()
     }
     /// <p>User-provided description for the serverless cache. The default is NULL, i.e. if no description is provided then an empty string will be returned. The maximum length is 255 characters.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name of the cache engine to be used for creating the serverless cache.</p>
-    pub fn engine(&self) -> ::std::option::Option<&str> {
+    pub fn engine(&self) -> ::std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The version of the cache engine that will be used to create the serverless cache.</p>
-    pub fn major_engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn major_engine_version(&self) -> ::std::option::Option<& str> {
         self.major_engine_version.as_deref()
     }
     /// <p>Sets the cache usage limits for storage and ElastiCache Processing Units for the cache.</p>
-    pub fn cache_usage_limits(&self) -> ::std::option::Option<&crate::types::CacheUsageLimits> {
+    pub fn cache_usage_limits(&self) -> ::std::option::Option<& crate::types::CacheUsageLimits> {
         self.cache_usage_limits.as_ref()
     }
     /// <p>ARN of the customer managed key for encrypting the data at rest. If no KMS key is provided, a default service key is used.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>A list of the one or more VPC security groups to be associated with the serverless cache. The security group will authorize traffic access for the VPC end-point (private-link). If no other information is given this will be the VPC’s Default Security Group that is associated with the cluster VPC end-point.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
-    pub fn security_group_ids(&self) -> &[::std::string::String] {
-        self.security_group_ids.as_deref().unwrap_or_default()
+    pub fn security_group_ids(&self) -> & [::std::string::String] {
+        self.security_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ARN(s) of the snapshot that the new serverless cache will be created from. Available for Redis only.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshot_arns_to_restore.is_none()`.
-    pub fn snapshot_arns_to_restore(&self) -> &[::std::string::String] {
-        self.snapshot_arns_to_restore.as_deref().unwrap_or_default()
+    pub fn snapshot_arns_to_restore(&self) -> & [::std::string::String] {
+        self.snapshot_arns_to_restore.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The list of tags (key, value) pairs to be added to the serverless cache resource. Default is NULL.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The identifier of the UserGroup to be associated with the serverless cache. Available for Redis only. Default is NULL.</p>
-    pub fn user_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_group_id(&self) -> ::std::option::Option<& str> {
         self.user_group_id.as_deref()
     }
     /// <p>A list of the identifiers of the subnets where the VPC endpoint for the serverless cache will be deployed. All the subnetIds must belong to the same VPC.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
-    pub fn subnet_ids(&self) -> &[::std::string::String] {
-        self.subnet_ids.as_deref().unwrap_or_default()
+    pub fn subnet_ids(&self) -> & [::std::string::String] {
+        self.subnet_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The number of snapshots that will be retained for the serverless cache that is being created. As new snapshots beyond this limit are added, the oldest snapshots will be deleted on a rolling basis. Available for Redis only.</p>
     pub fn snapshot_retention_limit(&self) -> ::std::option::Option<i32> {
         self.snapshot_retention_limit
     }
     /// <p>The daily time that snapshots will be created from the new serverless cache. By default this number is populated with 0, i.e. no snapshots will be created on an automatic daily basis. Available for Redis only.</p>
-    pub fn daily_snapshot_time(&self) -> ::std::option::Option<&str> {
+    pub fn daily_snapshot_time(&self) -> ::std::option::Option<& str> {
         self.daily_snapshot_time.as_deref()
     }
 }
@@ -109,11 +113,11 @@ pub struct CreateServerlessCacheInputBuilder {
     pub(crate) major_engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) cache_usage_limits: ::std::option::Option<crate::types::CacheUsageLimits>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
-    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) snapshot_arns_to_restore: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) snapshot_arns_to_restore: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) user_group_id: ::std::option::Option<::std::string::String>,
-    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) snapshot_retention_limit: ::std::option::Option<i32>,
     pub(crate) daily_snapshot_time: ::std::option::Option<::std::string::String>,
 }
@@ -126,8 +130,7 @@ impl CreateServerlessCacheInputBuilder {
     }
     /// <p>User-provided identifier for the serverless cache. This parameter is stored as a lowercase string.</p>
     pub fn set_serverless_cache_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.serverless_cache_name = input;
-        self
+        self.serverless_cache_name = input; self
     }
     /// <p>User-provided identifier for the serverless cache. This parameter is stored as a lowercase string.</p>
     pub fn get_serverless_cache_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +143,7 @@ impl CreateServerlessCacheInputBuilder {
     }
     /// <p>User-provided description for the serverless cache. The default is NULL, i.e. if no description is provided then an empty string will be returned. The maximum length is 255 characters.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>User-provided description for the serverless cache. The default is NULL, i.e. if no description is provided then an empty string will be returned. The maximum length is 255 characters.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +157,7 @@ impl CreateServerlessCacheInputBuilder {
     }
     /// <p>The name of the cache engine to be used for creating the serverless cache.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine = input;
-        self
+        self.engine = input; self
     }
     /// <p>The name of the cache engine to be used for creating the serverless cache.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,8 +170,7 @@ impl CreateServerlessCacheInputBuilder {
     }
     /// <p>The version of the cache engine that will be used to create the serverless cache.</p>
     pub fn set_major_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.major_engine_version = input;
-        self
+        self.major_engine_version = input; self
     }
     /// <p>The version of the cache engine that will be used to create the serverless cache.</p>
     pub fn get_major_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,8 +183,7 @@ impl CreateServerlessCacheInputBuilder {
     }
     /// <p>Sets the cache usage limits for storage and ElastiCache Processing Units for the cache.</p>
     pub fn set_cache_usage_limits(mut self, input: ::std::option::Option<crate::types::CacheUsageLimits>) -> Self {
-        self.cache_usage_limits = input;
-        self
+        self.cache_usage_limits = input; self
     }
     /// <p>Sets the cache usage limits for storage and ElastiCache Processing Units for the cache.</p>
     pub fn get_cache_usage_limits(&self) -> &::std::option::Option<crate::types::CacheUsageLimits> {
@@ -197,8 +196,7 @@ impl CreateServerlessCacheInputBuilder {
     }
     /// <p>ARN of the customer managed key for encrypting the data at rest. If no KMS key is provided, a default service key is used.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>ARN of the customer managed key for encrypting the data at rest. If no KMS key is provided, a default service key is used.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -211,17 +209,16 @@ impl CreateServerlessCacheInputBuilder {
     /// <p>A list of the one or more VPC security groups to be associated with the serverless cache. The security group will authorize traffic access for the VPC end-point (private-link). If no other information is given this will be the VPC’s Default Security Group that is associated with the cluster VPC end-point.</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the one or more VPC security groups to be associated with the serverless cache. The security group will authorize traffic access for the VPC end-point (private-link). If no other information is given this will be the VPC’s Default Security Group that is associated with the cluster VPC end-point.</p>
-    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_group_ids = input; self
     }
     /// <p>A list of the one or more VPC security groups to be associated with the serverless cache. The security group will authorize traffic access for the VPC end-point (private-link). If no other information is given this will be the VPC’s Default Security Group that is associated with the cluster VPC end-point.</p>
-    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_group_ids
     }
     /// Appends an item to `snapshot_arns_to_restore`.
@@ -231,17 +228,16 @@ impl CreateServerlessCacheInputBuilder {
     /// <p>The ARN(s) of the snapshot that the new serverless cache will be created from. Available for Redis only.</p>
     pub fn snapshot_arns_to_restore(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.snapshot_arns_to_restore.unwrap_or_default();
-        v.push(input.into());
-        self.snapshot_arns_to_restore = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.snapshot_arns_to_restore = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ARN(s) of the snapshot that the new serverless cache will be created from. Available for Redis only.</p>
-    pub fn set_snapshot_arns_to_restore(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.snapshot_arns_to_restore = input;
-        self
+    pub fn set_snapshot_arns_to_restore(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.snapshot_arns_to_restore = input; self
     }
     /// <p>The ARN(s) of the snapshot that the new serverless cache will be created from. Available for Redis only.</p>
-    pub fn get_snapshot_arns_to_restore(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_snapshot_arns_to_restore(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.snapshot_arns_to_restore
     }
     /// Appends an item to `tags`.
@@ -251,17 +247,16 @@ impl CreateServerlessCacheInputBuilder {
     /// <p>The list of tags (key, value) pairs to be added to the serverless cache resource. Default is NULL.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of tags (key, value) pairs to be added to the serverless cache resource. Default is NULL.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The list of tags (key, value) pairs to be added to the serverless cache resource. Default is NULL.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The identifier of the UserGroup to be associated with the serverless cache. Available for Redis only. Default is NULL.</p>
@@ -271,8 +266,7 @@ impl CreateServerlessCacheInputBuilder {
     }
     /// <p>The identifier of the UserGroup to be associated with the serverless cache. Available for Redis only. Default is NULL.</p>
     pub fn set_user_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_group_id = input;
-        self
+        self.user_group_id = input; self
     }
     /// <p>The identifier of the UserGroup to be associated with the serverless cache. Available for Redis only. Default is NULL.</p>
     pub fn get_user_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -285,17 +279,16 @@ impl CreateServerlessCacheInputBuilder {
     /// <p>A list of the identifiers of the subnets where the VPC endpoint for the serverless cache will be deployed. All the subnetIds must belong to the same VPC.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the identifiers of the subnets where the VPC endpoint for the serverless cache will be deployed. All the subnetIds must belong to the same VPC.</p>
-    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
     /// <p>A list of the identifiers of the subnets where the VPC endpoint for the serverless cache will be deployed. All the subnetIds must belong to the same VPC.</p>
-    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnet_ids
     }
     /// <p>The number of snapshots that will be retained for the serverless cache that is being created. As new snapshots beyond this limit are added, the oldest snapshots will be deleted on a rolling basis. Available for Redis only.</p>
@@ -305,8 +298,7 @@ impl CreateServerlessCacheInputBuilder {
     }
     /// <p>The number of snapshots that will be retained for the serverless cache that is being created. As new snapshots beyond this limit are added, the oldest snapshots will be deleted on a rolling basis. Available for Redis only.</p>
     pub fn set_snapshot_retention_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.snapshot_retention_limit = input;
-        self
+        self.snapshot_retention_limit = input; self
     }
     /// <p>The number of snapshots that will be retained for the serverless cache that is being created. As new snapshots beyond this limit are added, the oldest snapshots will be deleted on a rolling basis. Available for Redis only.</p>
     pub fn get_snapshot_retention_limit(&self) -> &::std::option::Option<i32> {
@@ -319,32 +311,44 @@ impl CreateServerlessCacheInputBuilder {
     }
     /// <p>The daily time that snapshots will be created from the new serverless cache. By default this number is populated with 0, i.e. no snapshots will be created on an automatic daily basis. Available for Redis only.</p>
     pub fn set_daily_snapshot_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.daily_snapshot_time = input;
-        self
+        self.daily_snapshot_time = input; self
     }
     /// <p>The daily time that snapshots will be created from the new serverless cache. By default this number is populated with 0, i.e. no snapshots will be created on an automatic daily basis. Available for Redis only.</p>
     pub fn get_daily_snapshot_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.daily_snapshot_time
     }
     /// Consumes the builder and constructs a [`CreateServerlessCacheInput`](crate::operation::create_serverless_cache::CreateServerlessCacheInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_serverless_cache::CreateServerlessCacheInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_serverless_cache::CreateServerlessCacheInput {
-            serverless_cache_name: self.serverless_cache_name,
-            description: self.description,
-            engine: self.engine,
-            major_engine_version: self.major_engine_version,
-            cache_usage_limits: self.cache_usage_limits,
-            kms_key_id: self.kms_key_id,
-            security_group_ids: self.security_group_ids,
-            snapshot_arns_to_restore: self.snapshot_arns_to_restore,
-            tags: self.tags,
-            user_group_id: self.user_group_id,
-            subnet_ids: self.subnet_ids,
-            snapshot_retention_limit: self.snapshot_retention_limit,
-            daily_snapshot_time: self.daily_snapshot_time,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_serverless_cache::CreateServerlessCacheInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_serverless_cache::CreateServerlessCacheInput {
+                serverless_cache_name: self.serverless_cache_name
+                ,
+                description: self.description
+                ,
+                engine: self.engine
+                ,
+                major_engine_version: self.major_engine_version
+                ,
+                cache_usage_limits: self.cache_usage_limits
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                security_group_ids: self.security_group_ids
+                ,
+                snapshot_arns_to_restore: self.snapshot_arns_to_restore
+                ,
+                tags: self.tags
+                ,
+                user_group_id: self.user_group_id
+                ,
+                subnet_ids: self.subnet_ids
+                ,
+                snapshot_retention_limit: self.snapshot_retention_limit
+                ,
+                daily_snapshot_time: self.daily_snapshot_time
+                ,
+            }
+        )
     }
 }
+

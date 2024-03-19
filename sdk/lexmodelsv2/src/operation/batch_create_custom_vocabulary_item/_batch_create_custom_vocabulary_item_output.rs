@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchCreateCustomVocabularyItemOutput {
+pub struct BatchCreateCustomVocabularyItemOutput  {
     /// <p>The identifier of the bot associated with this custom vocabulary.</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the version of the bot associated with this custom vocabulary.</p>
@@ -10,42 +10,44 @@ pub struct BatchCreateCustomVocabularyItemOutput {
     /// <p>The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html"> Supported Languages </a>.</p>
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of custom vocabulary items that failed to create during the operation. The reason for the error is contained within each error object.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::FailedCustomVocabularyItem>>,
+    pub errors: ::std::option::Option<::std::vec::Vec::<crate::types::FailedCustomVocabularyItem>>,
     /// <p>A list of custom vocabulary items that were successfully created during the operation.</p>
-    pub resources: ::std::option::Option<::std::vec::Vec<crate::types::CustomVocabularyItem>>,
+    pub resources: ::std::option::Option<::std::vec::Vec::<crate::types::CustomVocabularyItem>>,
     _request_id: Option<String>,
 }
-impl BatchCreateCustomVocabularyItemOutput {
+impl  BatchCreateCustomVocabularyItemOutput  {
     /// <p>The identifier of the bot associated with this custom vocabulary.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The identifier of the version of the bot associated with this custom vocabulary.</p>
-    pub fn bot_version(&self) -> ::std::option::Option<&str> {
+    pub fn bot_version(&self) -> ::std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html"> Supported Languages </a>.</p>
-    pub fn locale_id(&self) -> ::std::option::Option<&str> {
+    pub fn locale_id(&self) -> ::std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>A list of custom vocabulary items that failed to create during the operation. The reason for the error is contained within each error object.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
-    pub fn errors(&self) -> &[crate::types::FailedCustomVocabularyItem] {
-        self.errors.as_deref().unwrap_or_default()
+    pub fn errors(&self) -> & [crate::types::FailedCustomVocabularyItem] {
+        self.errors.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of custom vocabulary items that were successfully created during the operation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
-    pub fn resources(&self) -> &[crate::types::CustomVocabularyItem] {
-        self.resources.as_deref().unwrap_or_default()
+    pub fn resources(&self) -> & [crate::types::CustomVocabularyItem] {
+        self.resources.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchCreateCustomVocabularyItemOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchCreateCustomVocabularyItemOutput {
     /// Creates a new builder-style object to manufacture [`BatchCreateCustomVocabularyItemOutput`](crate::operation::batch_create_custom_vocabulary_item::BatchCreateCustomVocabularyItemOutput).
     pub fn builder() -> crate::operation::batch_create_custom_vocabulary_item::builders::BatchCreateCustomVocabularyItemOutputBuilder {
@@ -60,8 +62,8 @@ pub struct BatchCreateCustomVocabularyItemOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
     pub(crate) locale_id: ::std::option::Option<::std::string::String>,
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::FailedCustomVocabularyItem>>,
-    pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::CustomVocabularyItem>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::FailedCustomVocabularyItem>>,
+    pub(crate) resources: ::std::option::Option<::std::vec::Vec::<crate::types::CustomVocabularyItem>>,
     _request_id: Option<String>,
 }
 impl BatchCreateCustomVocabularyItemOutputBuilder {
@@ -72,8 +74,7 @@ impl BatchCreateCustomVocabularyItemOutputBuilder {
     }
     /// <p>The identifier of the bot associated with this custom vocabulary.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The identifier of the bot associated with this custom vocabulary.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +87,7 @@ impl BatchCreateCustomVocabularyItemOutputBuilder {
     }
     /// <p>The identifier of the version of the bot associated with this custom vocabulary.</p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The identifier of the version of the bot associated with this custom vocabulary.</p>
     pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +100,7 @@ impl BatchCreateCustomVocabularyItemOutputBuilder {
     }
     /// <p>The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html"> Supported Languages </a>.</p>
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
     }
     /// <p>The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html"> Supported Languages </a>.</p>
     pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,17 +113,16 @@ impl BatchCreateCustomVocabularyItemOutputBuilder {
     /// <p>A list of custom vocabulary items that failed to create during the operation. The reason for the error is contained within each error object.</p>
     pub fn errors(mut self, input: crate::types::FailedCustomVocabularyItem) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of custom vocabulary items that failed to create during the operation. The reason for the error is contained within each error object.</p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FailedCustomVocabularyItem>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FailedCustomVocabularyItem>>) -> Self {
+        self.errors = input; self
     }
     /// <p>A list of custom vocabulary items that failed to create during the operation. The reason for the error is contained within each error object.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedCustomVocabularyItem>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FailedCustomVocabularyItem>> {
         &self.errors
     }
     /// Appends an item to `resources`.
@@ -134,37 +132,42 @@ impl BatchCreateCustomVocabularyItemOutputBuilder {
     /// <p>A list of custom vocabulary items that were successfully created during the operation.</p>
     pub fn resources(mut self, input: crate::types::CustomVocabularyItem) -> Self {
         let mut v = self.resources.unwrap_or_default();
-        v.push(input);
-        self.resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of custom vocabulary items that were successfully created during the operation.</p>
-    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomVocabularyItem>>) -> Self {
-        self.resources = input;
-        self
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CustomVocabularyItem>>) -> Self {
+        self.resources = input; self
     }
     /// <p>A list of custom vocabulary items that were successfully created during the operation.</p>
-    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomVocabularyItem>> {
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CustomVocabularyItem>> {
         &self.resources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchCreateCustomVocabularyItemOutput`](crate::operation::batch_create_custom_vocabulary_item::BatchCreateCustomVocabularyItemOutput).
     pub fn build(self) -> crate::operation::batch_create_custom_vocabulary_item::BatchCreateCustomVocabularyItemOutput {
         crate::operation::batch_create_custom_vocabulary_item::BatchCreateCustomVocabularyItemOutput {
-            bot_id: self.bot_id,
-            bot_version: self.bot_version,
-            locale_id: self.locale_id,
-            errors: self.errors,
-            resources: self.resources,
+            bot_id: self.bot_id
+            ,
+            bot_version: self.bot_version
+            ,
+            locale_id: self.locale_id
+            ,
+            errors: self.errors
+            ,
+            resources: self.resources
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -144,3 +144,4 @@ pub mod builders;
 
 /// Error types that Amazon DocumentDB with MongoDB compatibility can respond with.
 pub mod error;
+

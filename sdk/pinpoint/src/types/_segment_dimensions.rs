@@ -3,9 +3,9 @@
 /// <p>Specifies the dimension settings for a segment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SegmentDimensions {
+pub struct SegmentDimensions  {
     /// <p>One or more custom attributes to use as criteria for the segment.</p>
-    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>>,
+    pub attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AttributeDimension>>,
     /// <p>The behavior-based criteria, such as how recently users have used your app, for the segment.</p>
     pub behavior: ::std::option::Option<crate::types::SegmentBehaviors>,
     /// <p>The demographic-based criteria, such as device platform, for the segment.</p>
@@ -13,33 +13,33 @@ pub struct SegmentDimensions {
     /// <p>The location-based criteria, such as region or GPS coordinates, for the segment.</p>
     pub location: ::std::option::Option<crate::types::SegmentLocation>,
     /// <p>One or more custom metrics to use as criteria for the segment.</p>
-    pub metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetricDimension>>,
+    pub metrics: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::MetricDimension>>,
     /// <p>One or more custom user attributes to use as criteria for the segment.</p>
-    pub user_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>>,
+    pub user_attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AttributeDimension>>,
 }
-impl SegmentDimensions {
+impl  SegmentDimensions  {
     /// <p>One or more custom attributes to use as criteria for the segment.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>> {
+    pub fn attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::AttributeDimension>> {
         self.attributes.as_ref()
     }
     /// <p>The behavior-based criteria, such as how recently users have used your app, for the segment.</p>
-    pub fn behavior(&self) -> ::std::option::Option<&crate::types::SegmentBehaviors> {
+    pub fn behavior(&self) -> ::std::option::Option<& crate::types::SegmentBehaviors> {
         self.behavior.as_ref()
     }
     /// <p>The demographic-based criteria, such as device platform, for the segment.</p>
-    pub fn demographic(&self) -> ::std::option::Option<&crate::types::SegmentDemographics> {
+    pub fn demographic(&self) -> ::std::option::Option<& crate::types::SegmentDemographics> {
         self.demographic.as_ref()
     }
     /// <p>The location-based criteria, such as region or GPS coordinates, for the segment.</p>
-    pub fn location(&self) -> ::std::option::Option<&crate::types::SegmentLocation> {
+    pub fn location(&self) -> ::std::option::Option<& crate::types::SegmentLocation> {
         self.location.as_ref()
     }
     /// <p>One or more custom metrics to use as criteria for the segment.</p>
-    pub fn metrics(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::MetricDimension>> {
+    pub fn metrics(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::MetricDimension>> {
         self.metrics.as_ref()
     }
     /// <p>One or more custom user attributes to use as criteria for the segment.</p>
-    pub fn user_attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>> {
+    pub fn user_attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::AttributeDimension>> {
         self.user_attributes.as_ref()
     }
 }
@@ -54,12 +54,12 @@ impl SegmentDimensions {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SegmentDimensionsBuilder {
-    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AttributeDimension>>,
     pub(crate) behavior: ::std::option::Option<crate::types::SegmentBehaviors>,
     pub(crate) demographic: ::std::option::Option<crate::types::SegmentDemographics>,
     pub(crate) location: ::std::option::Option<crate::types::SegmentLocation>,
-    pub(crate) metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetricDimension>>,
-    pub(crate) user_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>>,
+    pub(crate) metrics: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::MetricDimension>>,
+    pub(crate) user_attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AttributeDimension>>,
 }
 impl SegmentDimensionsBuilder {
     /// Adds a key-value pair to `attributes`.
@@ -69,20 +69,16 @@ impl SegmentDimensionsBuilder {
     /// <p>One or more custom attributes to use as criteria for the segment.</p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::AttributeDimension) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>One or more custom attributes to use as criteria for the segment.</p>
-    pub fn set_attributes(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>>,
-    ) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AttributeDimension>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>One or more custom attributes to use as criteria for the segment.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AttributeDimension>> {
         &self.attributes
     }
     /// <p>The behavior-based criteria, such as how recently users have used your app, for the segment.</p>
@@ -92,8 +88,7 @@ impl SegmentDimensionsBuilder {
     }
     /// <p>The behavior-based criteria, such as how recently users have used your app, for the segment.</p>
     pub fn set_behavior(mut self, input: ::std::option::Option<crate::types::SegmentBehaviors>) -> Self {
-        self.behavior = input;
-        self
+        self.behavior = input; self
     }
     /// <p>The behavior-based criteria, such as how recently users have used your app, for the segment.</p>
     pub fn get_behavior(&self) -> &::std::option::Option<crate::types::SegmentBehaviors> {
@@ -106,8 +101,7 @@ impl SegmentDimensionsBuilder {
     }
     /// <p>The demographic-based criteria, such as device platform, for the segment.</p>
     pub fn set_demographic(mut self, input: ::std::option::Option<crate::types::SegmentDemographics>) -> Self {
-        self.demographic = input;
-        self
+        self.demographic = input; self
     }
     /// <p>The demographic-based criteria, such as device platform, for the segment.</p>
     pub fn get_demographic(&self) -> &::std::option::Option<crate::types::SegmentDemographics> {
@@ -120,8 +114,7 @@ impl SegmentDimensionsBuilder {
     }
     /// <p>The location-based criteria, such as region or GPS coordinates, for the segment.</p>
     pub fn set_location(mut self, input: ::std::option::Option<crate::types::SegmentLocation>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The location-based criteria, such as region or GPS coordinates, for the segment.</p>
     pub fn get_location(&self) -> &::std::option::Option<crate::types::SegmentLocation> {
@@ -134,20 +127,16 @@ impl SegmentDimensionsBuilder {
     /// <p>One or more custom metrics to use as criteria for the segment.</p>
     pub fn metrics(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::MetricDimension) -> Self {
         let mut hash_map = self.metrics.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.metrics = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.metrics = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>One or more custom metrics to use as criteria for the segment.</p>
-    pub fn set_metrics(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetricDimension>>,
-    ) -> Self {
-        self.metrics = input;
-        self
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::MetricDimension>>) -> Self {
+        self.metrics = input; self
     }
     /// <p>One or more custom metrics to use as criteria for the segment.</p>
-    pub fn get_metrics(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetricDimension>> {
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::MetricDimension>> {
         &self.metrics
     }
     /// Adds a key-value pair to `user_attributes`.
@@ -157,33 +146,34 @@ impl SegmentDimensionsBuilder {
     /// <p>One or more custom user attributes to use as criteria for the segment.</p>
     pub fn user_attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::AttributeDimension) -> Self {
         let mut hash_map = self.user_attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.user_attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.user_attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>One or more custom user attributes to use as criteria for the segment.</p>
-    pub fn set_user_attributes(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>>,
-    ) -> Self {
-        self.user_attributes = input;
-        self
+    pub fn set_user_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AttributeDimension>>) -> Self {
+        self.user_attributes = input; self
     }
     /// <p>One or more custom user attributes to use as criteria for the segment.</p>
-    pub fn get_user_attributes(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>> {
+    pub fn get_user_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AttributeDimension>> {
         &self.user_attributes
     }
     /// Consumes the builder and constructs a [`SegmentDimensions`](crate::types::SegmentDimensions).
     pub fn build(self) -> crate::types::SegmentDimensions {
         crate::types::SegmentDimensions {
-            attributes: self.attributes,
-            behavior: self.behavior,
-            demographic: self.demographic,
-            location: self.location,
-            metrics: self.metrics,
-            user_attributes: self.user_attributes,
+            attributes: self.attributes
+            ,
+            behavior: self.behavior
+            ,
+            demographic: self.demographic
+            ,
+            location: self.location
+            ,
+            metrics: self.metrics
+            ,
+            user_attributes: self.user_attributes
+            ,
         }
     }
 }
+

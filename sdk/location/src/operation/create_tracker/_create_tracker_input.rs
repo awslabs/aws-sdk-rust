@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTrackerInput {
+pub struct CreateTrackerInput  {
     /// <p>The name for the tracker resource.</p>
     /// <p>Requirements:</p>
     /// <ul>
@@ -41,7 +41,7 @@ pub struct CreateTrackerInput {
     /// <li>
     /// <p>Cannot use "aws:" as a prefix for a key.</p></li>
     /// </ul>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Specifies the position filtering for the tracker resource.</p>
     /// <p>Valid values:</p>
     /// <ul>
@@ -65,7 +65,7 @@ pub struct CreateTrackerInput {
     /// </note>
     pub kms_key_enable_geospatial_queries: ::std::option::Option<bool>,
 }
-impl CreateTrackerInput {
+impl  CreateTrackerInput  {
     /// <p>The name for the tracker resource.</p>
     /// <p>Requirements:</p>
     /// <ul>
@@ -76,25 +76,25 @@ impl CreateTrackerInput {
     /// <li>
     /// <p>No spaces allowed. For example, <code>ExampleTracker</code>.</p></li>
     /// </ul>
-    pub fn tracker_name(&self) -> ::std::option::Option<&str> {
+    pub fn tracker_name(&self) -> ::std::option::Option<& str> {
         self.tracker_name.as_deref()
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
-    pub fn pricing_plan(&self) -> ::std::option::Option<&crate::types::PricingPlan> {
+    pub fn pricing_plan(&self) -> ::std::option::Option<& crate::types::PricingPlan> {
         self.pricing_plan.as_ref()
     }
     /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>This parameter is no longer used.</p>
     #[deprecated(note = "Deprecated. No longer allowed.", since = "2022-02-01")]
-    pub fn pricing_plan_data_source(&self) -> ::std::option::Option<&str> {
+    pub fn pricing_plan_data_source(&self) -> ::std::option::Option<& str> {
         self.pricing_plan_data_source.as_deref()
     }
     /// <p>An optional description for the tracker resource.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Applies one or more tags to the tracker resource. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
@@ -114,7 +114,7 @@ impl CreateTrackerInput {
     /// <li>
     /// <p>Cannot use "aws:" as a prefix for a key.</p></li>
     /// </ul>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Specifies the position filtering for the tracker resource.</p>
@@ -128,7 +128,7 @@ impl CreateTrackerInput {
     /// <p><code>AccuracyBased</code> - If the device has moved less than the measured accuracy, location updates are ignored. For example, if two consecutive updates from a device have a horizontal accuracy of 5 m and 10 m, the second update is ignored if the device has moved less than 15 m. Ignored location updates are neither evaluated against linked geofence collections, nor stored. This can reduce the effects of GPS noise when displaying device trajectories on a map, and can help control your costs by reducing the number of geofence evaluations.</p></li>
     /// </ul>
     /// <p>This field is optional. If not specified, the default value is <code>TimeBased</code>.</p>
-    pub fn position_filtering(&self) -> ::std::option::Option<&crate::types::PositionFiltering> {
+    pub fn position_filtering(&self) -> ::std::option::Option<& crate::types::PositionFiltering> {
         self.position_filtering.as_ref()
     }
     /// <p>Whether to enable position <code>UPDATE</code> events from this tracker to be sent to EventBridge.</p><note>
@@ -162,7 +162,7 @@ pub struct CreateTrackerInputBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) pricing_plan_data_source: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) position_filtering: ::std::option::Option<crate::types::PositionFiltering>,
     pub(crate) event_bridge_enabled: ::std::option::Option<bool>,
     pub(crate) kms_key_enable_geospatial_queries: ::std::option::Option<bool>,
@@ -194,8 +194,7 @@ impl CreateTrackerInputBuilder {
     /// <p>No spaces allowed. For example, <code>ExampleTracker</code>.</p></li>
     /// </ul>
     pub fn set_tracker_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tracker_name = input;
-        self
+        self.tracker_name = input; self
     }
     /// <p>The name for the tracker resource.</p>
     /// <p>Requirements:</p>
@@ -219,8 +218,7 @@ impl CreateTrackerInputBuilder {
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
     pub fn set_pricing_plan(mut self, input: ::std::option::Option<crate::types::PricingPlan>) -> Self {
-        self.pricing_plan = input;
-        self
+        self.pricing_plan = input; self
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
@@ -234,8 +232,7 @@ impl CreateTrackerInputBuilder {
     }
     /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -250,8 +247,7 @@ impl CreateTrackerInputBuilder {
     /// <p>This parameter is no longer used.</p>
     #[deprecated(note = "Deprecated. No longer allowed.", since = "2022-02-01")]
     pub fn set_pricing_plan_data_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pricing_plan_data_source = input;
-        self
+        self.pricing_plan_data_source = input; self
     }
     /// <p>This parameter is no longer used.</p>
     #[deprecated(note = "Deprecated. No longer allowed.", since = "2022-02-01")]
@@ -265,8 +261,7 @@ impl CreateTrackerInputBuilder {
     }
     /// <p>An optional description for the tracker resource.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>An optional description for the tracker resource.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -295,9 +290,9 @@ impl CreateTrackerInputBuilder {
     /// </ul>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Applies one or more tags to the tracker resource. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
     /// <p>Format: <code>"key" : "value"</code></p>
@@ -316,9 +311,8 @@ impl CreateTrackerInputBuilder {
     /// <li>
     /// <p>Cannot use "aws:" as a prefix for a key.</p></li>
     /// </ul>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Applies one or more tags to the tracker resource. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
     /// <p>Format: <code>"key" : "value"</code></p>
@@ -337,7 +331,7 @@ impl CreateTrackerInputBuilder {
     /// <li>
     /// <p>Cannot use "aws:" as a prefix for a key.</p></li>
     /// </ul>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Specifies the position filtering for the tracker resource.</p>
@@ -367,8 +361,7 @@ impl CreateTrackerInputBuilder {
     /// </ul>
     /// <p>This field is optional. If not specified, the default value is <code>TimeBased</code>.</p>
     pub fn set_position_filtering(mut self, input: ::std::option::Option<crate::types::PositionFiltering>) -> Self {
-        self.position_filtering = input;
-        self
+        self.position_filtering = input; self
     }
     /// <p>Specifies the position filtering for the tracker resource.</p>
     /// <p>Valid values:</p>
@@ -395,8 +388,7 @@ impl CreateTrackerInputBuilder {
     /// <p>You do not need enable this feature to get <code>ENTER</code> and <code>EXIT</code> events for geofences with this tracker. Those events are always sent to EventBridge.</p>
     /// </note>
     pub fn set_event_bridge_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.event_bridge_enabled = input;
-        self
+        self.event_bridge_enabled = input; self
     }
     /// <p>Whether to enable position <code>UPDATE</code> events from this tracker to be sent to EventBridge.</p><note>
     /// <p>You do not need enable this feature to get <code>ENTER</code> and <code>EXIT</code> events for geofences with this tracker. Those events are always sent to EventBridge.</p>
@@ -419,8 +411,7 @@ impl CreateTrackerInputBuilder {
     /// <p>You can choose to opt-in to the Bounding Polygon Quseries feature. This is done by setting the <code>KmsKeyEnableGeospatialQueries</code> parameter to true when creating or updating a Tracker.</p>
     /// </note>
     pub fn set_kms_key_enable_geospatial_queries(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.kms_key_enable_geospatial_queries = input;
-        self
+        self.kms_key_enable_geospatial_queries = input; self
     }
     /// <p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a>.</p>
     /// <p>This parameter is only used if you are using a KMS customer managed key.</p><note>
@@ -431,19 +422,29 @@ impl CreateTrackerInputBuilder {
         &self.kms_key_enable_geospatial_queries
     }
     /// Consumes the builder and constructs a [`CreateTrackerInput`](crate::operation::create_tracker::CreateTrackerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_tracker::CreateTrackerInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_tracker::CreateTrackerInput {
-            tracker_name: self.tracker_name,
-            pricing_plan: self.pricing_plan,
-            kms_key_id: self.kms_key_id,
-            pricing_plan_data_source: self.pricing_plan_data_source,
-            description: self.description,
-            tags: self.tags,
-            position_filtering: self.position_filtering,
-            event_bridge_enabled: self.event_bridge_enabled,
-            kms_key_enable_geospatial_queries: self.kms_key_enable_geospatial_queries,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_tracker::CreateTrackerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_tracker::CreateTrackerInput {
+                tracker_name: self.tracker_name
+                ,
+                pricing_plan: self.pricing_plan
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                pricing_plan_data_source: self.pricing_plan_data_source
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+                position_filtering: self.position_filtering
+                ,
+                event_bridge_enabled: self.event_bridge_enabled
+                ,
+                kms_key_enable_geospatial_queries: self.kms_key_enable_geospatial_queries
+                ,
+            }
+        )
     }
 }
+

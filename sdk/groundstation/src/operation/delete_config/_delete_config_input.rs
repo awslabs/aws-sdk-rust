@@ -3,19 +3,19 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteConfigInput {
+pub struct DeleteConfigInput  {
     /// <p>UUID of a <code>Config</code>.</p>
     pub config_id: ::std::option::Option<::std::string::String>,
     /// <p>Type of a <code>Config</code>.</p>
     pub config_type: ::std::option::Option<crate::types::ConfigCapabilityType>,
 }
-impl DeleteConfigInput {
+impl  DeleteConfigInput  {
     /// <p>UUID of a <code>Config</code>.</p>
-    pub fn config_id(&self) -> ::std::option::Option<&str> {
+    pub fn config_id(&self) -> ::std::option::Option<& str> {
         self.config_id.as_deref()
     }
     /// <p>Type of a <code>Config</code>.</p>
-    pub fn config_type(&self) -> ::std::option::Option<&crate::types::ConfigCapabilityType> {
+    pub fn config_type(&self) -> ::std::option::Option<& crate::types::ConfigCapabilityType> {
         self.config_type.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl DeleteConfigInputBuilder {
     }
     /// <p>UUID of a <code>Config</code>.</p>
     pub fn set_config_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.config_id = input;
-        self
+        self.config_id = input; self
     }
     /// <p>UUID of a <code>Config</code>.</p>
     pub fn get_config_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,20 +56,22 @@ impl DeleteConfigInputBuilder {
     }
     /// <p>Type of a <code>Config</code>.</p>
     pub fn set_config_type(mut self, input: ::std::option::Option<crate::types::ConfigCapabilityType>) -> Self {
-        self.config_type = input;
-        self
+        self.config_type = input; self
     }
     /// <p>Type of a <code>Config</code>.</p>
     pub fn get_config_type(&self) -> &::std::option::Option<crate::types::ConfigCapabilityType> {
         &self.config_type
     }
     /// Consumes the builder and constructs a [`DeleteConfigInput`](crate::operation::delete_config::DeleteConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_config::DeleteConfigInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_config::DeleteConfigInput {
-            config_id: self.config_id,
-            config_type: self.config_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_config::DeleteConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_config::DeleteConfigInput {
+                config_id: self.config_id
+                ,
+                config_type: self.config_type
+                ,
+            }
+        )
     }
 }
+

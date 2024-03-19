@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeScalingPlansOutput {
+pub struct DescribeScalingPlansOutput  {
     /// <p>Information about the scaling plans.</p>
-    pub scaling_plans: ::std::option::Option<::std::vec::Vec<crate::types::ScalingPlan>>,
+    pub scaling_plans: ::std::option::Option<::std::vec::Vec::<crate::types::ScalingPlan>>,
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeScalingPlansOutput {
+impl  DescribeScalingPlansOutput  {
     /// <p>Information about the scaling plans.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scaling_plans.is_none()`.
-    pub fn scaling_plans(&self) -> &[crate::types::ScalingPlan] {
-        self.scaling_plans.as_deref().unwrap_or_default()
+    pub fn scaling_plans(&self) -> & [crate::types::ScalingPlan] {
+        self.scaling_plans.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeScalingPlansOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeScalingPlansOutput {
     /// Creates a new builder-style object to manufacture [`DescribeScalingPlansOutput`](crate::operation::describe_scaling_plans::DescribeScalingPlansOutput).
     pub fn builder() -> crate::operation::describe_scaling_plans::builders::DescribeScalingPlansOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeScalingPlansOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeScalingPlansOutputBuilder {
-    pub(crate) scaling_plans: ::std::option::Option<::std::vec::Vec<crate::types::ScalingPlan>>,
+    pub(crate) scaling_plans: ::std::option::Option<::std::vec::Vec::<crate::types::ScalingPlan>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeScalingPlansOutputBuilder {
     /// <p>Information about the scaling plans.</p>
     pub fn scaling_plans(mut self, input: crate::types::ScalingPlan) -> Self {
         let mut v = self.scaling_plans.unwrap_or_default();
-        v.push(input);
-        self.scaling_plans = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.scaling_plans = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the scaling plans.</p>
-    pub fn set_scaling_plans(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScalingPlan>>) -> Self {
-        self.scaling_plans = input;
-        self
+    pub fn set_scaling_plans(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ScalingPlan>>) -> Self {
+        self.scaling_plans = input; self
     }
     /// <p>Information about the scaling plans.</p>
-    pub fn get_scaling_plans(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScalingPlan>> {
+    pub fn get_scaling_plans(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ScalingPlan>> {
         &self.scaling_plans
     }
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
@@ -69,28 +69,30 @@ impl DescribeScalingPlansOutputBuilder {
     }
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeScalingPlansOutput`](crate::operation::describe_scaling_plans::DescribeScalingPlansOutput).
     pub fn build(self) -> crate::operation::describe_scaling_plans::DescribeScalingPlansOutput {
         crate::operation::describe_scaling_plans::DescribeScalingPlansOutput {
-            scaling_plans: self.scaling_plans,
-            next_token: self.next_token,
+            scaling_plans: self.scaling_plans
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

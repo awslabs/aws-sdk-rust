@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBucketMetricDataInput {
+pub struct GetBucketMetricDataInput  {
     /// <p>The name of the bucket for which to get metric data.</p>
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The metric for which you want to return information.</p>
@@ -42,14 +42,14 @@ pub struct GetBucketMetricDataInput {
     /// <li>
     /// <p><code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p></li>
     /// </ul>
-    pub statistics: ::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>>,
+    pub statistics: ::std::option::Option<::std::vec::Vec::<crate::types::MetricStatistic>>,
     /// <p>The unit for the metric data request.</p>
     /// <p>Valid units depend on the metric data being requested. For the valid units with each available metric, see the <code>metricName</code> parameter.</p>
     pub unit: ::std::option::Option<crate::types::MetricUnit>,
 }
-impl GetBucketMetricDataInput {
+impl  GetBucketMetricDataInput  {
     /// <p>The name of the bucket for which to get metric data.</p>
-    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_name(&self) -> ::std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p>The metric for which you want to return information.</p>
@@ -66,15 +66,15 @@ impl GetBucketMetricDataInput {
     /// <p>Statistics: The most useful statistic is <code>Average</code>.</p>
     /// <p>Unit: The published unit is <code>Count</code>.</p></li>
     /// </ul>
-    pub fn metric_name(&self) -> ::std::option::Option<&crate::types::BucketMetricName> {
+    pub fn metric_name(&self) -> ::std::option::Option<& crate::types::BucketMetricName> {
         self.metric_name.as_ref()
     }
     /// <p>The timestamp indicating the earliest data to be returned.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The timestamp indicating the latest data to be returned.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The granularity, in seconds, of the returned data points.</p><note>
@@ -97,14 +97,15 @@ impl GetBucketMetricDataInput {
     /// <li>
     /// <p><code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.statistics.is_none()`.
-    pub fn statistics(&self) -> &[crate::types::MetricStatistic] {
-        self.statistics.as_deref().unwrap_or_default()
+    pub fn statistics(&self) -> & [crate::types::MetricStatistic] {
+        self.statistics.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The unit for the metric data request.</p>
     /// <p>Valid units depend on the metric data being requested. For the valid units with each available metric, see the <code>metricName</code> parameter.</p>
-    pub fn unit(&self) -> ::std::option::Option<&crate::types::MetricUnit> {
+    pub fn unit(&self) -> ::std::option::Option<& crate::types::MetricUnit> {
         self.unit.as_ref()
     }
 }
@@ -124,7 +125,7 @@ pub struct GetBucketMetricDataInputBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) period: ::std::option::Option<i32>,
-    pub(crate) statistics: ::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>>,
+    pub(crate) statistics: ::std::option::Option<::std::vec::Vec::<crate::types::MetricStatistic>>,
     pub(crate) unit: ::std::option::Option<crate::types::MetricUnit>,
 }
 impl GetBucketMetricDataInputBuilder {
@@ -136,8 +137,7 @@ impl GetBucketMetricDataInputBuilder {
     }
     /// <p>The name of the bucket for which to get metric data.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>The name of the bucket for which to get metric data.</p>
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -177,8 +177,7 @@ impl GetBucketMetricDataInputBuilder {
     /// <p>Unit: The published unit is <code>Count</code>.</p></li>
     /// </ul>
     pub fn set_metric_name(mut self, input: ::std::option::Option<crate::types::BucketMetricName>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// <p>The metric for which you want to return information.</p>
     /// <p>Valid bucket metric names are listed below, along with the most useful statistics to include in your request, and the published unit value.</p><note>
@@ -205,8 +204,7 @@ impl GetBucketMetricDataInputBuilder {
     }
     /// <p>The timestamp indicating the earliest data to be returned.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The timestamp indicating the earliest data to be returned.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -220,8 +218,7 @@ impl GetBucketMetricDataInputBuilder {
     }
     /// <p>The timestamp indicating the latest data to be returned.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The timestamp indicating the latest data to be returned.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -239,8 +236,7 @@ impl GetBucketMetricDataInputBuilder {
     /// <p>Bucket storage metrics are reported once per day. Therefore, you should specify a period of 86400 seconds, which is the number of seconds in a day.</p>
     /// </note>
     pub fn set_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.period = input;
-        self
+        self.period = input; self
     }
     /// <p>The granularity, in seconds, of the returned data points.</p><note>
     /// <p>Bucket storage metrics are reported once per day. Therefore, you should specify a period of 86400 seconds, which is the number of seconds in a day.</p>
@@ -268,9 +264,9 @@ impl GetBucketMetricDataInputBuilder {
     /// </ul>
     pub fn statistics(mut self, input: crate::types::MetricStatistic) -> Self {
         let mut v = self.statistics.unwrap_or_default();
-        v.push(input);
-        self.statistics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.statistics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The statistic for the metric.</p>
     /// <p>The following statistics are available:</p>
@@ -286,9 +282,8 @@ impl GetBucketMetricDataInputBuilder {
     /// <li>
     /// <p><code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p></li>
     /// </ul>
-    pub fn set_statistics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>>) -> Self {
-        self.statistics = input;
-        self
+    pub fn set_statistics(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MetricStatistic>>) -> Self {
+        self.statistics = input; self
     }
     /// <p>The statistic for the metric.</p>
     /// <p>The following statistics are available:</p>
@@ -304,7 +299,7 @@ impl GetBucketMetricDataInputBuilder {
     /// <li>
     /// <p><code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p></li>
     /// </ul>
-    pub fn get_statistics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>> {
+    pub fn get_statistics(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MetricStatistic>> {
         &self.statistics
     }
     /// <p>The unit for the metric data request.</p>
@@ -317,8 +312,7 @@ impl GetBucketMetricDataInputBuilder {
     /// <p>The unit for the metric data request.</p>
     /// <p>Valid units depend on the metric data being requested. For the valid units with each available metric, see the <code>metricName</code> parameter.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::MetricUnit>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// <p>The unit for the metric data request.</p>
     /// <p>Valid units depend on the metric data being requested. For the valid units with each available metric, see the <code>metricName</code> parameter.</p>
@@ -326,18 +320,25 @@ impl GetBucketMetricDataInputBuilder {
         &self.unit
     }
     /// Consumes the builder and constructs a [`GetBucketMetricDataInput`](crate::operation::get_bucket_metric_data::GetBucketMetricDataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_bucket_metric_data::GetBucketMetricDataInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_bucket_metric_data::GetBucketMetricDataInput {
-            bucket_name: self.bucket_name,
-            metric_name: self.metric_name,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            period: self.period,
-            statistics: self.statistics,
-            unit: self.unit,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_bucket_metric_data::GetBucketMetricDataInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_bucket_metric_data::GetBucketMetricDataInput {
+                bucket_name: self.bucket_name
+                ,
+                metric_name: self.metric_name
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                period: self.period
+                ,
+                statistics: self.statistics
+                ,
+                unit: self.unit
+                ,
+            }
+        )
     }
 }
+

@@ -3,15 +3,15 @@
 /// <p>Details new user agents used either at the resource or account level.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NewUserAgentDetail {
+pub struct NewUserAgentDetail  {
     /// <p>New user agent which accessed the resource.</p>
     pub user_agent: ::std::option::Option<::std::string::String>,
     /// <p>Checks if the user agent is new for the entire account.</p>
     pub is_new_for_entire_account: bool,
 }
-impl NewUserAgentDetail {
+impl  NewUserAgentDetail  {
     /// <p>New user agent which accessed the resource.</p>
-    pub fn user_agent(&self) -> ::std::option::Option<&str> {
+    pub fn user_agent(&self) -> ::std::option::Option<& str> {
         self.user_agent.as_deref()
     }
     /// <p>Checks if the user agent is new for the entire account.</p>
@@ -41,8 +41,7 @@ impl NewUserAgentDetailBuilder {
     }
     /// <p>New user agent which accessed the resource.</p>
     pub fn set_user_agent(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_agent = input;
-        self
+        self.user_agent = input; self
     }
     /// <p>New user agent which accessed the resource.</p>
     pub fn get_user_agent(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl NewUserAgentDetailBuilder {
     }
     /// <p>Checks if the user agent is new for the entire account.</p>
     pub fn set_is_new_for_entire_account(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_new_for_entire_account = input;
-        self
+        self.is_new_for_entire_account = input; self
     }
     /// <p>Checks if the user agent is new for the entire account.</p>
     pub fn get_is_new_for_entire_account(&self) -> &::std::option::Option<bool> {
@@ -65,8 +63,12 @@ impl NewUserAgentDetailBuilder {
     /// Consumes the builder and constructs a [`NewUserAgentDetail`](crate::types::NewUserAgentDetail).
     pub fn build(self) -> crate::types::NewUserAgentDetail {
         crate::types::NewUserAgentDetail {
-            user_agent: self.user_agent,
-            is_new_for_entire_account: self.is_new_for_entire_account.unwrap_or_default(),
+            user_agent: self.user_agent
+            ,
+            is_new_for_entire_account: self.is_new_for_entire_account
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

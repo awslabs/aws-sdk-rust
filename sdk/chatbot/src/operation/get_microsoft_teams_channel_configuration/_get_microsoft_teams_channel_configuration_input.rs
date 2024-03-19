@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMicrosoftTeamsChannelConfigurationInput {
+pub struct GetMicrosoftTeamsChannelConfigurationInput  {
     /// The ARN of the MicrosoftTeamsChannelConfiguration to retrieve.
     pub chat_configuration_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetMicrosoftTeamsChannelConfigurationInput {
+impl  GetMicrosoftTeamsChannelConfigurationInput  {
     /// The ARN of the MicrosoftTeamsChannelConfiguration to retrieve.
-    pub fn chat_configuration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn chat_configuration_arn(&self) -> ::std::option::Option<& str> {
         self.chat_configuration_arn.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl GetMicrosoftTeamsChannelConfigurationInputBuilder {
     }
     /// The ARN of the MicrosoftTeamsChannelConfiguration to retrieve.
     pub fn set_chat_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.chat_configuration_arn = input;
-        self
+        self.chat_configuration_arn = input; self
     }
     /// The ARN of the MicrosoftTeamsChannelConfiguration to retrieve.
     pub fn get_chat_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.chat_configuration_arn
     }
     /// Consumes the builder and constructs a [`GetMicrosoftTeamsChannelConfigurationInput`](crate::operation::get_microsoft_teams_channel_configuration::GetMicrosoftTeamsChannelConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_microsoft_teams_channel_configuration::GetMicrosoftTeamsChannelConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_microsoft_teams_channel_configuration::GetMicrosoftTeamsChannelConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_microsoft_teams_channel_configuration::GetMicrosoftTeamsChannelConfigurationInput {
-                chat_configuration_arn: self.chat_configuration_arn,
-            },
+                chat_configuration_arn: self.chat_configuration_arn
+                ,
+            }
         )
     }
 }
+

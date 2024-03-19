@@ -24,3 +24,4 @@ pub use crate::types::error::_validation_exception::ValidationExceptionBuilder;
 pub use crate::types::error::_query_timeout_exception::QueryTimeoutExceptionBuilder;
 
 pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuilder;
+

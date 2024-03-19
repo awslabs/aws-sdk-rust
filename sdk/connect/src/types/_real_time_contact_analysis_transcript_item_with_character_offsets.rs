@@ -3,20 +3,19 @@
 /// <p>Transcript representation containing Id and list of character intervals that are associated with analysis data. For example, this object within a <code>RealTimeContactAnalysisPointOfInterest</code> in <code>Category.MatchedDetails</code> would have character interval describing part of the text that matched category.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RealTimeContactAnalysisTranscriptItemWithCharacterOffsets {
+pub struct RealTimeContactAnalysisTranscriptItemWithCharacterOffsets  {
     /// <p>Transcript identifier. Matches the identifier from one of the TranscriptSegments.</p>
     pub id: ::std::string::String,
     /// <p>List of character intervals within transcript content/text.</p>
     pub character_offsets: ::std::option::Option<crate::types::RealTimeContactAnalysisCharacterInterval>,
 }
-impl RealTimeContactAnalysisTranscriptItemWithCharacterOffsets {
+impl  RealTimeContactAnalysisTranscriptItemWithCharacterOffsets  {
     /// <p>Transcript identifier. Matches the identifier from one of the TranscriptSegments.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>List of character intervals within transcript content/text.</p>
-    pub fn character_offsets(&self) -> ::std::option::Option<&crate::types::RealTimeContactAnalysisCharacterInterval> {
+    pub fn character_offsets(&self) -> ::std::option::Option<& crate::types::RealTimeContactAnalysisCharacterInterval> {
         self.character_offsets.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl RealTimeContactAnalysisTranscriptItemWithCharacterOffsetsBuilder {
     }
     /// <p>Transcript identifier. Matches the identifier from one of the TranscriptSegments.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Transcript identifier. Matches the identifier from one of the TranscriptSegments.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl RealTimeContactAnalysisTranscriptItemWithCharacterOffsetsBuilder {
     }
     /// <p>List of character intervals within transcript content/text.</p>
     pub fn set_character_offsets(mut self, input: ::std::option::Option<crate::types::RealTimeContactAnalysisCharacterInterval>) -> Self {
-        self.character_offsets = input;
-        self
+        self.character_offsets = input; self
     }
     /// <p>List of character intervals within transcript content/text.</p>
     pub fn get_character_offsets(&self) -> &::std::option::Option<crate::types::RealTimeContactAnalysisCharacterInterval> {
@@ -67,20 +64,18 @@ impl RealTimeContactAnalysisTranscriptItemWithCharacterOffsetsBuilder {
     /// Consumes the builder and constructs a [`RealTimeContactAnalysisTranscriptItemWithCharacterOffsets`](crate::types::RealTimeContactAnalysisTranscriptItemWithCharacterOffsets).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::RealTimeContactAnalysisTranscriptItemWithCharacterOffsetsBuilder::id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::types::RealTimeContactAnalysisTranscriptItemWithCharacterOffsets,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::types::RealTimeContactAnalysisTranscriptItemWithCharacterOffsets {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building RealTimeContactAnalysisTranscriptItemWithCharacterOffsets",
-                )
-            })?,
-            character_offsets: self.character_offsets,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::RealTimeContactAnalysisTranscriptItemWithCharacterOffsets, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::RealTimeContactAnalysisTranscriptItemWithCharacterOffsets {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building RealTimeContactAnalysisTranscriptItemWithCharacterOffsets")
+                    )?
+                ,
+                character_offsets: self.character_offsets
+                ,
+            }
+        )
     }
 }
+

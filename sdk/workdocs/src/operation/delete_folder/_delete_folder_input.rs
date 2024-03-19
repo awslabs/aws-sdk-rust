@@ -2,23 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DeleteFolderInput {
+pub struct DeleteFolderInput  {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub authentication_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the folder.</p>
     pub folder_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteFolderInput {
+impl  DeleteFolderInput  {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(&self) -> ::std::option::Option<&str> {
+    pub fn authentication_token(&self) -> ::std::option::Option<& str> {
         self.authentication_token.as_deref()
     }
     /// <p>The ID of the folder.</p>
-    pub fn folder_id(&self) -> ::std::option::Option<&str> {
+    pub fn folder_id(&self) -> ::std::option::Option<& str> {
         self.folder_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for DeleteFolderInput {
+impl  ::std::fmt::Debug for DeleteFolderInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFolderInput");
         formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
@@ -48,8 +48,7 @@ impl DeleteFolderInputBuilder {
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.authentication_token = input;
-        self
+        self.authentication_token = input; self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,21 +62,22 @@ impl DeleteFolderInputBuilder {
     }
     /// <p>The ID of the folder.</p>
     pub fn set_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.folder_id = input;
-        self
+        self.folder_id = input; self
     }
     /// <p>The ID of the folder.</p>
     pub fn get_folder_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.folder_id
     }
     /// Consumes the builder and constructs a [`DeleteFolderInput`](crate::operation::delete_folder::DeleteFolderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_folder::DeleteFolderInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_folder::DeleteFolderInput {
-            authentication_token: self.authentication_token,
-            folder_id: self.folder_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_folder::DeleteFolderInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_folder::DeleteFolderInput {
+                authentication_token: self.authentication_token
+                ,
+                folder_id: self.folder_id
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for DeleteFolderInputBuilder {
@@ -88,3 +88,4 @@ impl ::std::fmt::Debug for DeleteFolderInputBuilder {
         formatter.finish()
     }
 }
+

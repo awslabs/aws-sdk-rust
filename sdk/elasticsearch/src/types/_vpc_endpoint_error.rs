@@ -3,7 +3,7 @@
 /// <p>Error information when attempting to describe an Amazon OpenSearch Service-managed VPC endpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VpcEndpointError {
+pub struct VpcEndpointError  {
     /// <p>The unique identifier of the endpoint.</p>
     pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The code associated with the error.</p>
@@ -11,17 +11,17 @@ pub struct VpcEndpointError {
     /// <p>A message describing the error.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
-impl VpcEndpointError {
+impl  VpcEndpointError  {
     /// <p>The unique identifier of the endpoint.</p>
-    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.vpc_endpoint_id.as_deref()
     }
     /// <p>The code associated with the error.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&crate::types::VpcEndpointErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<& crate::types::VpcEndpointErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>A message describing the error.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl VpcEndpointErrorBuilder {
     }
     /// <p>The unique identifier of the endpoint.</p>
     pub fn set_vpc_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_endpoint_id = input;
-        self
+        self.vpc_endpoint_id = input; self
     }
     /// <p>The unique identifier of the endpoint.</p>
     pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl VpcEndpointErrorBuilder {
     }
     /// <p>The code associated with the error.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::VpcEndpointErrorCode>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The code associated with the error.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::VpcEndpointErrorCode> {
@@ -76,8 +74,7 @@ impl VpcEndpointErrorBuilder {
     }
     /// <p>A message describing the error.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>A message describing the error.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl VpcEndpointErrorBuilder {
     /// Consumes the builder and constructs a [`VpcEndpointError`](crate::types::VpcEndpointError).
     pub fn build(self) -> crate::types::VpcEndpointError {
         crate::types::VpcEndpointError {
-            vpc_endpoint_id: self.vpc_endpoint_id,
-            error_code: self.error_code,
-            error_message: self.error_message,
+            vpc_endpoint_id: self.vpc_endpoint_id
+            ,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

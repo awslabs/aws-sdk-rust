@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePullThroughCacheRuleInput {
+pub struct CreatePullThroughCacheRuleInput  {
     /// <p>The repository name prefix to use when caching images from the source registry.</p>
     pub ecr_repository_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The registry URL of the upstream public registry to use as the source for the pull through cache rule. The following is the syntax to use for each supported upstream registry.</p>
@@ -30,9 +30,9 @@ pub struct CreatePullThroughCacheRuleInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that identifies the credentials to authenticate to the upstream registry.</p>
     pub credential_arn: ::std::option::Option<::std::string::String>,
 }
-impl CreatePullThroughCacheRuleInput {
+impl  CreatePullThroughCacheRuleInput  {
     /// <p>The repository name prefix to use when caching images from the source registry.</p>
-    pub fn ecr_repository_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn ecr_repository_prefix(&self) -> ::std::option::Option<& str> {
         self.ecr_repository_prefix.as_deref()
     }
     /// <p>The registry URL of the upstream public registry to use as the source for the pull through cache rule. The following is the syntax to use for each supported upstream registry.</p>
@@ -52,19 +52,19 @@ impl CreatePullThroughCacheRuleInput {
     /// .azurecr.io
     /// </custom></code></p></li>
     /// </ul>
-    pub fn upstream_registry_url(&self) -> ::std::option::Option<&str> {
+    pub fn upstream_registry_url(&self) -> ::std::option::Option<& str> {
         self.upstream_registry_url.as_deref()
     }
     /// <p>The Amazon Web Services account ID associated with the registry to create the pull through cache rule for. If you do not specify a registry, the default registry is assumed.</p>
-    pub fn registry_id(&self) -> ::std::option::Option<&str> {
+    pub fn registry_id(&self) -> ::std::option::Option<& str> {
         self.registry_id.as_deref()
     }
     /// <p>The name of the upstream registry.</p>
-    pub fn upstream_registry(&self) -> ::std::option::Option<&crate::types::UpstreamRegistry> {
+    pub fn upstream_registry(&self) -> ::std::option::Option<& crate::types::UpstreamRegistry> {
         self.upstream_registry.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that identifies the credentials to authenticate to the upstream registry.</p>
-    pub fn credential_arn(&self) -> ::std::option::Option<&str> {
+    pub fn credential_arn(&self) -> ::std::option::Option<& str> {
         self.credential_arn.as_deref()
     }
 }
@@ -94,8 +94,7 @@ impl CreatePullThroughCacheRuleInputBuilder {
     }
     /// <p>The repository name prefix to use when caching images from the source registry.</p>
     pub fn set_ecr_repository_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ecr_repository_prefix = input;
-        self
+        self.ecr_repository_prefix = input; self
     }
     /// <p>The repository name prefix to use when caching images from the source registry.</p>
     pub fn get_ecr_repository_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +140,7 @@ impl CreatePullThroughCacheRuleInputBuilder {
     /// </custom></code></p></li>
     /// </ul>
     pub fn set_upstream_registry_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.upstream_registry_url = input;
-        self
+        self.upstream_registry_url = input; self
     }
     /// <p>The registry URL of the upstream public registry to use as the source for the pull through cache rule. The following is the syntax to use for each supported upstream registry.</p>
     /// <ul>
@@ -171,8 +169,7 @@ impl CreatePullThroughCacheRuleInputBuilder {
     }
     /// <p>The Amazon Web Services account ID associated with the registry to create the pull through cache rule for. If you do not specify a registry, the default registry is assumed.</p>
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
     }
     /// <p>The Amazon Web Services account ID associated with the registry to create the pull through cache rule for. If you do not specify a registry, the default registry is assumed.</p>
     pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -185,8 +182,7 @@ impl CreatePullThroughCacheRuleInputBuilder {
     }
     /// <p>The name of the upstream registry.</p>
     pub fn set_upstream_registry(mut self, input: ::std::option::Option<crate::types::UpstreamRegistry>) -> Self {
-        self.upstream_registry = input;
-        self
+        self.upstream_registry = input; self
     }
     /// <p>The name of the upstream registry.</p>
     pub fn get_upstream_registry(&self) -> &::std::option::Option<crate::types::UpstreamRegistry> {
@@ -199,26 +195,28 @@ impl CreatePullThroughCacheRuleInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that identifies the credentials to authenticate to the upstream registry.</p>
     pub fn set_credential_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.credential_arn = input;
-        self
+        self.credential_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that identifies the credentials to authenticate to the upstream registry.</p>
     pub fn get_credential_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.credential_arn
     }
     /// Consumes the builder and constructs a [`CreatePullThroughCacheRuleInput`](crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleInput {
-            ecr_repository_prefix: self.ecr_repository_prefix,
-            upstream_registry_url: self.upstream_registry_url,
-            registry_id: self.registry_id,
-            upstream_registry: self.upstream_registry,
-            credential_arn: self.credential_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleInput {
+                ecr_repository_prefix: self.ecr_repository_prefix
+                ,
+                upstream_registry_url: self.upstream_registry_url
+                ,
+                registry_id: self.registry_id
+                ,
+                upstream_registry: self.upstream_registry
+                ,
+                credential_arn: self.credential_arn
+                ,
+            }
+        )
     }
 }
+

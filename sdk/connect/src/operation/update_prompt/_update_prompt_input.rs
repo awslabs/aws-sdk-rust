@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePromptInput {
+pub struct UpdatePromptInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the prompt.</p>
@@ -14,25 +14,25 @@ pub struct UpdatePromptInput {
     /// <p>The URI for the S3 bucket where the prompt is stored. You can provide S3 pre-signed URLs returned by the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetPromptFile.html">GetPromptFile</a> API instead of providing S3 URIs.</p>
     pub s3_uri: ::std::option::Option<::std::string::String>,
 }
-impl UpdatePromptInput {
+impl  UpdatePromptInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>A unique identifier for the prompt.</p>
-    pub fn prompt_id(&self) -> ::std::option::Option<&str> {
+    pub fn prompt_id(&self) -> ::std::option::Option<& str> {
         self.prompt_id.as_deref()
     }
     /// <p>The name of the prompt.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the prompt.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The URI for the S3 bucket where the prompt is stored. You can provide S3 pre-signed URLs returned by the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetPromptFile.html">GetPromptFile</a> API instead of providing S3 URIs.</p>
-    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn s3_uri(&self) -> ::std::option::Option<& str> {
         self.s3_uri.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl UpdatePromptInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl UpdatePromptInputBuilder {
     }
     /// <p>A unique identifier for the prompt.</p>
     pub fn set_prompt_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prompt_id = input;
-        self
+        self.prompt_id = input; self
     }
     /// <p>A unique identifier for the prompt.</p>
     pub fn get_prompt_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl UpdatePromptInputBuilder {
     }
     /// <p>The name of the prompt.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the prompt.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +102,7 @@ impl UpdatePromptInputBuilder {
     }
     /// <p>A description of the prompt.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the prompt.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,23 +115,28 @@ impl UpdatePromptInputBuilder {
     }
     /// <p>The URI for the S3 bucket where the prompt is stored. You can provide S3 pre-signed URLs returned by the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetPromptFile.html">GetPromptFile</a> API instead of providing S3 URIs.</p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
     }
     /// <p>The URI for the S3 bucket where the prompt is stored. You can provide S3 pre-signed URLs returned by the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetPromptFile.html">GetPromptFile</a> API instead of providing S3 URIs.</p>
     pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_uri
     }
     /// Consumes the builder and constructs a [`UpdatePromptInput`](crate::operation::update_prompt::UpdatePromptInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_prompt::UpdatePromptInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_prompt::UpdatePromptInput {
-            instance_id: self.instance_id,
-            prompt_id: self.prompt_id,
-            name: self.name,
-            description: self.description,
-            s3_uri: self.s3_uri,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_prompt::UpdatePromptInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_prompt::UpdatePromptInput {
+                instance_id: self.instance_id
+                ,
+                prompt_id: self.prompt_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                s3_uri: self.s3_uri
+                ,
+            }
+        )
     }
 }
+

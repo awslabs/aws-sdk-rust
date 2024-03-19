@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeReplicatorInput {
+pub struct DescribeReplicatorInput  {
     /// <p>The Amazon Resource Name (ARN) of the replicator to be described.</p>
     pub replicator_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeReplicatorInput {
+impl  DescribeReplicatorInput  {
     /// <p>The Amazon Resource Name (ARN) of the replicator to be described.</p>
-    pub fn replicator_arn(&self) -> ::std::option::Option<&str> {
+    pub fn replicator_arn(&self) -> ::std::option::Option<& str> {
         self.replicator_arn.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DescribeReplicatorInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the replicator to be described.</p>
     pub fn set_replicator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replicator_arn = input;
-        self
+        self.replicator_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the replicator to be described.</p>
     pub fn get_replicator_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.replicator_arn
     }
     /// Consumes the builder and constructs a [`DescribeReplicatorInput`](crate::operation::describe_replicator::DescribeReplicatorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_replicator::DescribeReplicatorInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_replicator::DescribeReplicatorInput {
-            replicator_arn: self.replicator_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_replicator::DescribeReplicatorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_replicator::DescribeReplicatorInput {
+                replicator_arn: self.replicator_arn
+                ,
+            }
+        )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLineageGroupPolicyInput {
+pub struct GetLineageGroupPolicyInput  {
     /// <p>The name or Amazon Resource Name (ARN) of the lineage group.</p>
     pub lineage_group_name: ::std::option::Option<::std::string::String>,
 }
-impl GetLineageGroupPolicyInput {
+impl  GetLineageGroupPolicyInput  {
     /// <p>The name or Amazon Resource Name (ARN) of the lineage group.</p>
-    pub fn lineage_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn lineage_group_name(&self) -> ::std::option::Option<& str> {
         self.lineage_group_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetLineageGroupPolicyInputBuilder {
     }
     /// <p>The name or Amazon Resource Name (ARN) of the lineage group.</p>
     pub fn set_lineage_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lineage_group_name = input;
-        self
+        self.lineage_group_name = input; self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the lineage group.</p>
     pub fn get_lineage_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.lineage_group_name
     }
     /// Consumes the builder and constructs a [`GetLineageGroupPolicyInput`](crate::operation::get_lineage_group_policy::GetLineageGroupPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_lineage_group_policy::GetLineageGroupPolicyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_lineage_group_policy::GetLineageGroupPolicyInput {
-            lineage_group_name: self.lineage_group_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_lineage_group_policy::GetLineageGroupPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_lineage_group_policy::GetLineageGroupPolicyInput {
+                lineage_group_name: self.lineage_group_name
+                ,
+            }
+        )
     }
 }
+

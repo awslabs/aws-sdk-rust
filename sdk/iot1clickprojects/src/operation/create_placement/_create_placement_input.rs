@@ -2,25 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePlacementInput {
+pub struct CreatePlacementInput  {
     /// <p>The name of the placement to be created.</p>
     pub placement_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project in which to create the placement.</p>
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.</p>
-    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreatePlacementInput {
+impl  CreatePlacementInput  {
     /// <p>The name of the placement to be created.</p>
-    pub fn placement_name(&self) -> ::std::option::Option<&str> {
+    pub fn placement_name(&self) -> ::std::option::Option<& str> {
         self.placement_name.as_deref()
     }
     /// <p>The name of the project in which to create the placement.</p>
-    pub fn project_name(&self) -> ::std::option::Option<&str> {
+    pub fn project_name(&self) -> ::std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
 }
@@ -37,7 +37,7 @@ impl CreatePlacementInput {
 pub struct CreatePlacementInputBuilder {
     pub(crate) placement_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreatePlacementInputBuilder {
     /// <p>The name of the placement to be created.</p>
@@ -48,8 +48,7 @@ impl CreatePlacementInputBuilder {
     }
     /// <p>The name of the placement to be created.</p>
     pub fn set_placement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.placement_name = input;
-        self
+        self.placement_name = input; self
     }
     /// <p>The name of the placement to be created.</p>
     pub fn get_placement_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl CreatePlacementInputBuilder {
     }
     /// <p>The name of the project in which to create the placement.</p>
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
     }
     /// <p>The name of the project in which to create the placement.</p>
     pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,27 +75,30 @@ impl CreatePlacementInputBuilder {
     /// <p>Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.</p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`CreatePlacementInput`](crate::operation::create_placement::CreatePlacementInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_placement::CreatePlacementInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_placement::CreatePlacementInput {
-            placement_name: self.placement_name,
-            project_name: self.project_name,
-            attributes: self.attributes,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_placement::CreatePlacementInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_placement::CreatePlacementInput {
+                placement_name: self.placement_name
+                ,
+                project_name: self.project_name
+                ,
+                attributes: self.attributes
+                ,
+            }
+        )
     }
 }
+

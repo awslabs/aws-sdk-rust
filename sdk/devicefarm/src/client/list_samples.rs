@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSamples`](crate::operation::list_samples::builders::ListSamplesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_samples::builders::ListSamplesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`arn(impl Into<String>)`](crate::operation::list_samples::builders::ListSamplesFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::list_samples::builders::ListSamplesFluentBuilder::set_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the job used to list samples.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_samples::builders::ListSamplesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_samples::builders::ListSamplesFluentBuilder::set_next_token):<br>required: **false**<br><p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p><br>
-    /// - On success, responds with [`ListSamplesOutput`](crate::operation::list_samples::ListSamplesOutput) with field(s):
+                            /// - On success, responds with [`ListSamplesOutput`](crate::operation::list_samples::ListSamplesOutput) with field(s):
     ///   - [`samples(Option<Vec::<Sample>>)`](crate::operation::list_samples::ListSamplesOutput::samples): <p>Information about the samples.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_samples::ListSamplesOutput::next_token): <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
-    /// - On failure, responds with [`SdkError<ListSamplesError>`](crate::operation::list_samples::ListSamplesError)
+                            /// - On failure, responds with [`SdkError<ListSamplesError>`](crate::operation::list_samples::ListSamplesError)
     pub fn list_samples(&self) -> crate::operation::list_samples::builders::ListSamplesFluentBuilder {
-        crate::operation::list_samples::builders::ListSamplesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_samples::builders::ListSamplesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

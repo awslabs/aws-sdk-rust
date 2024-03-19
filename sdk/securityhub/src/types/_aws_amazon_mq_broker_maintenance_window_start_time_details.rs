@@ -3,7 +3,7 @@
 /// <p>The scheduled time period (UTC) during which Amazon MQ begins to apply pending updates or patches to the broker.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails {
+pub struct AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails  {
     /// <p>The day of the week on which the maintenance window falls.</p>
     pub day_of_week: ::std::option::Option<::std::string::String>,
     /// <p>The time, in 24-hour format, on which the maintenance window falls.</p>
@@ -11,17 +11,17 @@ pub struct AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails {
     /// <p>The time zone in either the Country/City format or the UTC offset format. UTC is the default format.</p>
     pub time_zone: ::std::option::Option<::std::string::String>,
 }
-impl AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails {
+impl  AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails  {
     /// <p>The day of the week on which the maintenance window falls.</p>
-    pub fn day_of_week(&self) -> ::std::option::Option<&str> {
+    pub fn day_of_week(&self) -> ::std::option::Option<& str> {
         self.day_of_week.as_deref()
     }
     /// <p>The time, in 24-hour format, on which the maintenance window falls.</p>
-    pub fn time_of_day(&self) -> ::std::option::Option<&str> {
+    pub fn time_of_day(&self) -> ::std::option::Option<& str> {
         self.time_of_day.as_deref()
     }
     /// <p>The time zone in either the Country/City format or the UTC offset format. UTC is the default format.</p>
-    pub fn time_zone(&self) -> ::std::option::Option<&str> {
+    pub fn time_zone(&self) -> ::std::option::Option<& str> {
         self.time_zone.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl AwsAmazonMqBrokerMaintenanceWindowStartTimeDetailsBuilder {
     }
     /// <p>The day of the week on which the maintenance window falls.</p>
     pub fn set_day_of_week(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.day_of_week = input;
-        self
+        self.day_of_week = input; self
     }
     /// <p>The day of the week on which the maintenance window falls.</p>
     pub fn get_day_of_week(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl AwsAmazonMqBrokerMaintenanceWindowStartTimeDetailsBuilder {
     }
     /// <p>The time, in 24-hour format, on which the maintenance window falls.</p>
     pub fn set_time_of_day(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.time_of_day = input;
-        self
+        self.time_of_day = input; self
     }
     /// <p>The time, in 24-hour format, on which the maintenance window falls.</p>
     pub fn get_time_of_day(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl AwsAmazonMqBrokerMaintenanceWindowStartTimeDetailsBuilder {
     }
     /// <p>The time zone in either the Country/City format or the UTC offset format. UTC is the default format.</p>
     pub fn set_time_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.time_zone = input;
-        self
+        self.time_zone = input; self
     }
     /// <p>The time zone in either the Country/City format or the UTC offset format. UTC is the default format.</p>
     pub fn get_time_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl AwsAmazonMqBrokerMaintenanceWindowStartTimeDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails`](crate::types::AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails).
     pub fn build(self) -> crate::types::AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails {
         crate::types::AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails {
-            day_of_week: self.day_of_week,
-            time_of_day: self.time_of_day,
-            time_zone: self.time_zone,
+            day_of_week: self.day_of_week
+            ,
+            time_of_day: self.time_of_day
+            ,
+            time_zone: self.time_zone
+            ,
         }
     }
 }
+

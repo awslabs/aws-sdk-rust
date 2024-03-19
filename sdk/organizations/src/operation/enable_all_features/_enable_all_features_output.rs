@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableAllFeaturesOutput {
+pub struct EnableAllFeaturesOutput  {
     /// <p>A structure that contains details about the handshake created to support this request to enable all features in the organization.</p>
     pub handshake: ::std::option::Option<crate::types::Handshake>,
     _request_id: Option<String>,
 }
-impl EnableAllFeaturesOutput {
+impl  EnableAllFeaturesOutput  {
     /// <p>A structure that contains details about the handshake created to support this request to enable all features in the organization.</p>
-    pub fn handshake(&self) -> ::std::option::Option<&crate::types::Handshake> {
+    pub fn handshake(&self) -> ::std::option::Option<& crate::types::Handshake> {
         self.handshake.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for EnableAllFeaturesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl EnableAllFeaturesOutput {
     /// Creates a new builder-style object to manufacture [`EnableAllFeaturesOutput`](crate::operation::enable_all_features::EnableAllFeaturesOutput).
     pub fn builder() -> crate::operation::enable_all_features::builders::EnableAllFeaturesOutputBuilder {
@@ -40,27 +40,28 @@ impl EnableAllFeaturesOutputBuilder {
     }
     /// <p>A structure that contains details about the handshake created to support this request to enable all features in the organization.</p>
     pub fn set_handshake(mut self, input: ::std::option::Option<crate::types::Handshake>) -> Self {
-        self.handshake = input;
-        self
+        self.handshake = input; self
     }
     /// <p>A structure that contains details about the handshake created to support this request to enable all features in the organization.</p>
     pub fn get_handshake(&self) -> &::std::option::Option<crate::types::Handshake> {
         &self.handshake
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`EnableAllFeaturesOutput`](crate::operation::enable_all_features::EnableAllFeaturesOutput).
     pub fn build(self) -> crate::operation::enable_all_features::EnableAllFeaturesOutput {
         crate::operation::enable_all_features::EnableAllFeaturesOutput {
-            handshake: self.handshake,
+            handshake: self.handshake
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

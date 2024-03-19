@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateIpSetInput {
+pub struct UpdateIpSetInput  {
     /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
@@ -42,13 +42,13 @@ pub struct UpdateIpSetInput {
     /// <li>
     /// <p>INVALID specification: <code>"Addresses": [""]</code> INVALID</p></li>
     /// </ul>
-    pub addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
     pub lock_token: ::std::option::Option<::std::string::String>,
 }
-impl UpdateIpSetInput {
+impl  UpdateIpSetInput  {
     /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
@@ -59,15 +59,15 @@ impl UpdateIpSetInput {
     /// <li>
     /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
     /// </ul>
-    pub fn scope(&self) -> ::std::option::Option<&crate::types::Scope> {
+    pub fn scope(&self) -> ::std::option::Option<& crate::types::Scope> {
         self.scope.as_ref()
     }
     /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A description of the IP set that helps with identification.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses that you want WAF to inspect for in incoming requests. All addresses must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>.</p>
@@ -94,13 +94,14 @@ impl UpdateIpSetInput {
     /// <li>
     /// <p>INVALID specification: <code>"Addresses": [""]</code> INVALID</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.addresses.is_none()`.
-    pub fn addresses(&self) -> &[::std::string::String] {
-        self.addresses.as_deref().unwrap_or_default()
+    pub fn addresses(&self) -> & [::std::string::String] {
+        self.addresses.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
-    pub fn lock_token(&self) -> ::std::option::Option<&str> {
+    pub fn lock_token(&self) -> ::std::option::Option<& str> {
         self.lock_token.as_deref()
     }
 }
@@ -119,7 +120,7 @@ pub struct UpdateIpSetInputBuilder {
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) lock_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateIpSetInputBuilder {
@@ -131,8 +132,7 @@ impl UpdateIpSetInputBuilder {
     }
     /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +160,7 @@ impl UpdateIpSetInputBuilder {
     /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
     /// </ul>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
-        self.scope = input;
-        self
+        self.scope = input; self
     }
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
@@ -182,8 +181,7 @@ impl UpdateIpSetInputBuilder {
     }
     /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -196,8 +194,7 @@ impl UpdateIpSetInputBuilder {
     }
     /// <p>A description of the IP set that helps with identification.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the IP set that helps with identification.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -233,9 +230,9 @@ impl UpdateIpSetInputBuilder {
     /// </ul>
     pub fn addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.addresses.unwrap_or_default();
-        v.push(input.into());
-        self.addresses = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.addresses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses that you want WAF to inspect for in incoming requests. All addresses must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>.</p>
     /// <p>Example address strings:</p>
@@ -261,9 +258,8 @@ impl UpdateIpSetInputBuilder {
     /// <li>
     /// <p>INVALID specification: <code>"Addresses": [""]</code> INVALID</p></li>
     /// </ul>
-    pub fn set_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.addresses = input;
-        self
+    pub fn set_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.addresses = input; self
     }
     /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses that you want WAF to inspect for in incoming requests. All addresses must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>.</p>
     /// <p>Example address strings:</p>
@@ -289,7 +285,7 @@ impl UpdateIpSetInputBuilder {
     /// <li>
     /// <p>INVALID specification: <code>"Addresses": [""]</code> INVALID</p></li>
     /// </ul>
-    pub fn get_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.addresses
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
@@ -300,8 +296,7 @@ impl UpdateIpSetInputBuilder {
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
     pub fn set_lock_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lock_token = input;
-        self
+        self.lock_token = input; self
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
     pub fn get_lock_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -309,13 +304,22 @@ impl UpdateIpSetInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateIpSetInput`](crate::operation::update_ip_set::UpdateIpSetInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_ip_set::UpdateIpSetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_ip_set::UpdateIpSetInput {
-            name: self.name,
-            scope: self.scope,
-            id: self.id,
-            description: self.description,
-            addresses: self.addresses,
-            lock_token: self.lock_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_ip_set::UpdateIpSetInput {
+                name: self.name
+                ,
+                scope: self.scope
+                ,
+                id: self.id
+                ,
+                description: self.description
+                ,
+                addresses: self.addresses
+                ,
+                lock_token: self.lock_token
+                ,
+            }
+        )
     }
 }
+

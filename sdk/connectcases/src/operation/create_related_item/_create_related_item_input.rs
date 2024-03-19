@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRelatedItemInput {
+pub struct CreateRelatedItemInput  {
     /// <p>The unique identifier of the Cases domain.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier of the case.</p>
@@ -14,25 +14,25 @@ pub struct CreateRelatedItemInput {
     /// <p>Represents the creator of the related item.</p>
     pub performed_by: ::std::option::Option<crate::types::UserUnion>,
 }
-impl CreateRelatedItemInput {
+impl  CreateRelatedItemInput  {
     /// <p>The unique identifier of the Cases domain.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn domain_id(&self) -> ::std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>A unique identifier of the case.</p>
-    pub fn case_id(&self) -> ::std::option::Option<&str> {
+    pub fn case_id(&self) -> ::std::option::Option<& str> {
         self.case_id.as_deref()
     }
     /// <p>The type of a related item.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::RelatedItemType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::RelatedItemType> {
         self.r#type.as_ref()
     }
     /// <p>The content of a related item to be created.</p>
-    pub fn content(&self) -> ::std::option::Option<&crate::types::RelatedItemInputContent> {
+    pub fn content(&self) -> ::std::option::Option<& crate::types::RelatedItemInputContent> {
         self.content.as_ref()
     }
     /// <p>Represents the creator of the related item.</p>
-    pub fn performed_by(&self) -> ::std::option::Option<&crate::types::UserUnion> {
+    pub fn performed_by(&self) -> ::std::option::Option<& crate::types::UserUnion> {
         self.performed_by.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl CreateRelatedItemInputBuilder {
     }
     /// <p>The unique identifier of the Cases domain.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The unique identifier of the Cases domain.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl CreateRelatedItemInputBuilder {
     }
     /// <p>A unique identifier of the case.</p>
     pub fn set_case_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.case_id = input;
-        self
+        self.case_id = input; self
     }
     /// <p>A unique identifier of the case.</p>
     pub fn get_case_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +90,7 @@ impl CreateRelatedItemInputBuilder {
     }
     /// <p>The type of a related item.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RelatedItemType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of a related item.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::RelatedItemType> {
@@ -107,8 +104,7 @@ impl CreateRelatedItemInputBuilder {
     }
     /// <p>The content of a related item to be created.</p>
     pub fn set_content(mut self, input: ::std::option::Option<crate::types::RelatedItemInputContent>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>The content of a related item to be created.</p>
     pub fn get_content(&self) -> &::std::option::Option<crate::types::RelatedItemInputContent> {
@@ -121,23 +117,28 @@ impl CreateRelatedItemInputBuilder {
     }
     /// <p>Represents the creator of the related item.</p>
     pub fn set_performed_by(mut self, input: ::std::option::Option<crate::types::UserUnion>) -> Self {
-        self.performed_by = input;
-        self
+        self.performed_by = input; self
     }
     /// <p>Represents the creator of the related item.</p>
     pub fn get_performed_by(&self) -> &::std::option::Option<crate::types::UserUnion> {
         &self.performed_by
     }
     /// Consumes the builder and constructs a [`CreateRelatedItemInput`](crate::operation::create_related_item::CreateRelatedItemInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_related_item::CreateRelatedItemInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_related_item::CreateRelatedItemInput {
-            domain_id: self.domain_id,
-            case_id: self.case_id,
-            r#type: self.r#type,
-            content: self.content,
-            performed_by: self.performed_by,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_related_item::CreateRelatedItemInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_related_item::CreateRelatedItemInput {
+                domain_id: self.domain_id
+                ,
+                case_id: self.case_id
+                ,
+                r#type: self.r#type
+                ,
+                content: self.content
+                ,
+                performed_by: self.performed_by
+                ,
+            }
+        )
     }
 }
+

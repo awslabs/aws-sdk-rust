@@ -3,7 +3,7 @@
 /// <p>Contains pricing information about the specified resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourcePricing {
+pub struct ResourcePricing  {
     /// <p>The savings estimate using Amazon Web Services public pricing without incorporating any discounts.</p>
     pub estimated_cost_before_discounts: ::std::option::Option<f64>,
     /// <p>The estimated net unused amortized commitment for the recommendation.</p>
@@ -13,7 +13,7 @@ pub struct ResourcePricing {
     /// <p>The savings estimate incorporating all discounts with Amazon Web Services, such as Reserved Instances and Savings Plans.</p>
     pub estimated_cost_after_discounts: ::std::option::Option<f64>,
 }
-impl ResourcePricing {
+impl  ResourcePricing  {
     /// <p>The savings estimate using Amazon Web Services public pricing without incorporating any discounts.</p>
     pub fn estimated_cost_before_discounts(&self) -> ::std::option::Option<f64> {
         self.estimated_cost_before_discounts
@@ -23,7 +23,7 @@ impl ResourcePricing {
         self.estimated_net_unused_amortized_commitments
     }
     /// <p>The estimated discounts for a recommendation.</p>
-    pub fn estimated_discounts(&self) -> ::std::option::Option<&crate::types::EstimatedDiscounts> {
+    pub fn estimated_discounts(&self) -> ::std::option::Option<& crate::types::EstimatedDiscounts> {
         self.estimated_discounts.as_ref()
     }
     /// <p>The savings estimate incorporating all discounts with Amazon Web Services, such as Reserved Instances and Savings Plans.</p>
@@ -55,8 +55,7 @@ impl ResourcePricingBuilder {
     }
     /// <p>The savings estimate using Amazon Web Services public pricing without incorporating any discounts.</p>
     pub fn set_estimated_cost_before_discounts(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.estimated_cost_before_discounts = input;
-        self
+        self.estimated_cost_before_discounts = input; self
     }
     /// <p>The savings estimate using Amazon Web Services public pricing without incorporating any discounts.</p>
     pub fn get_estimated_cost_before_discounts(&self) -> &::std::option::Option<f64> {
@@ -69,8 +68,7 @@ impl ResourcePricingBuilder {
     }
     /// <p>The estimated net unused amortized commitment for the recommendation.</p>
     pub fn set_estimated_net_unused_amortized_commitments(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.estimated_net_unused_amortized_commitments = input;
-        self
+        self.estimated_net_unused_amortized_commitments = input; self
     }
     /// <p>The estimated net unused amortized commitment for the recommendation.</p>
     pub fn get_estimated_net_unused_amortized_commitments(&self) -> &::std::option::Option<f64> {
@@ -83,8 +81,7 @@ impl ResourcePricingBuilder {
     }
     /// <p>The estimated discounts for a recommendation.</p>
     pub fn set_estimated_discounts(mut self, input: ::std::option::Option<crate::types::EstimatedDiscounts>) -> Self {
-        self.estimated_discounts = input;
-        self
+        self.estimated_discounts = input; self
     }
     /// <p>The estimated discounts for a recommendation.</p>
     pub fn get_estimated_discounts(&self) -> &::std::option::Option<crate::types::EstimatedDiscounts> {
@@ -97,8 +94,7 @@ impl ResourcePricingBuilder {
     }
     /// <p>The savings estimate incorporating all discounts with Amazon Web Services, such as Reserved Instances and Savings Plans.</p>
     pub fn set_estimated_cost_after_discounts(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.estimated_cost_after_discounts = input;
-        self
+        self.estimated_cost_after_discounts = input; self
     }
     /// <p>The savings estimate incorporating all discounts with Amazon Web Services, such as Reserved Instances and Savings Plans.</p>
     pub fn get_estimated_cost_after_discounts(&self) -> &::std::option::Option<f64> {
@@ -107,10 +103,15 @@ impl ResourcePricingBuilder {
     /// Consumes the builder and constructs a [`ResourcePricing`](crate::types::ResourcePricing).
     pub fn build(self) -> crate::types::ResourcePricing {
         crate::types::ResourcePricing {
-            estimated_cost_before_discounts: self.estimated_cost_before_discounts,
-            estimated_net_unused_amortized_commitments: self.estimated_net_unused_amortized_commitments,
-            estimated_discounts: self.estimated_discounts,
-            estimated_cost_after_discounts: self.estimated_cost_after_discounts,
+            estimated_cost_before_discounts: self.estimated_cost_before_discounts
+            ,
+            estimated_net_unused_amortized_commitments: self.estimated_net_unused_amortized_commitments
+            ,
+            estimated_discounts: self.estimated_discounts
+            ,
+            estimated_cost_after_discounts: self.estimated_cost_after_discounts
+            ,
         }
     }
 }
+

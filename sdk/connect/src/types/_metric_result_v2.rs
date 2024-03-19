@@ -3,28 +3,29 @@
 /// <p>Contains information about the metric results.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetricResultV2 {
+pub struct MetricResultV2  {
     /// <p>The dimension for the metrics.</p>
-    pub dimensions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub dimensions: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The interval period with the start and end time for the metrics.</p>
     pub metric_interval: ::std::option::Option<crate::types::MetricInterval>,
     /// <p>The set of metrics.</p>
-    pub collections: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataV2>>,
+    pub collections: ::std::option::Option<::std::vec::Vec::<crate::types::MetricDataV2>>,
 }
-impl MetricResultV2 {
+impl  MetricResultV2  {
     /// <p>The dimension for the metrics.</p>
-    pub fn dimensions(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn dimensions(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.dimensions.as_ref()
     }
     /// <p>The interval period with the start and end time for the metrics.</p>
-    pub fn metric_interval(&self) -> ::std::option::Option<&crate::types::MetricInterval> {
+    pub fn metric_interval(&self) -> ::std::option::Option<& crate::types::MetricInterval> {
         self.metric_interval.as_ref()
     }
     /// <p>The set of metrics.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.collections.is_none()`.
-    pub fn collections(&self) -> &[crate::types::MetricDataV2] {
-        self.collections.as_deref().unwrap_or_default()
+    pub fn collections(&self) -> & [crate::types::MetricDataV2] {
+        self.collections.as_deref()
+        .unwrap_or_default()
     }
 }
 impl MetricResultV2 {
@@ -38,9 +39,9 @@ impl MetricResultV2 {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MetricResultV2Builder {
-    pub(crate) dimensions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) dimensions: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) metric_interval: ::std::option::Option<crate::types::MetricInterval>,
-    pub(crate) collections: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataV2>>,
+    pub(crate) collections: ::std::option::Option<::std::vec::Vec::<crate::types::MetricDataV2>>,
 }
 impl MetricResultV2Builder {
     /// Adds a key-value pair to `dimensions`.
@@ -50,17 +51,16 @@ impl MetricResultV2Builder {
     /// <p>The dimension for the metrics.</p>
     pub fn dimensions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.dimensions.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.dimensions = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.dimensions = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The dimension for the metrics.</p>
-    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.dimensions = input;
-        self
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.dimensions = input; self
     }
     /// <p>The dimension for the metrics.</p>
-    pub fn get_dimensions(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.dimensions
     }
     /// <p>The interval period with the start and end time for the metrics.</p>
@@ -70,8 +70,7 @@ impl MetricResultV2Builder {
     }
     /// <p>The interval period with the start and end time for the metrics.</p>
     pub fn set_metric_interval(mut self, input: ::std::option::Option<crate::types::MetricInterval>) -> Self {
-        self.metric_interval = input;
-        self
+        self.metric_interval = input; self
     }
     /// <p>The interval period with the start and end time for the metrics.</p>
     pub fn get_metric_interval(&self) -> &::std::option::Option<crate::types::MetricInterval> {
@@ -84,25 +83,28 @@ impl MetricResultV2Builder {
     /// <p>The set of metrics.</p>
     pub fn collections(mut self, input: crate::types::MetricDataV2) -> Self {
         let mut v = self.collections.unwrap_or_default();
-        v.push(input);
-        self.collections = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.collections = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The set of metrics.</p>
-    pub fn set_collections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataV2>>) -> Self {
-        self.collections = input;
-        self
+    pub fn set_collections(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MetricDataV2>>) -> Self {
+        self.collections = input; self
     }
     /// <p>The set of metrics.</p>
-    pub fn get_collections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDataV2>> {
+    pub fn get_collections(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MetricDataV2>> {
         &self.collections
     }
     /// Consumes the builder and constructs a [`MetricResultV2`](crate::types::MetricResultV2).
     pub fn build(self) -> crate::types::MetricResultV2 {
         crate::types::MetricResultV2 {
-            dimensions: self.dimensions,
-            metric_interval: self.metric_interval,
-            collections: self.collections,
+            dimensions: self.dimensions
+            ,
+            metric_interval: self.metric_interval
+            ,
+            collections: self.collections
+            ,
         }
     }
 }
+

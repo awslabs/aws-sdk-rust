@@ -3,7 +3,7 @@
 /// <p>Represents a server participating in an asynchronous Job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ParticipatingServer {
+pub struct ParticipatingServer  {
     /// <p>The Source Server ID of a participating server.</p>
     pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>The Recovery Instance ID of a participating server.</p>
@@ -13,21 +13,21 @@ pub struct ParticipatingServer {
     /// <p>The post-launch action runs of a participating server.</p>
     pub launch_actions_status: ::std::option::Option<crate::types::LaunchActionsStatus>,
 }
-impl ParticipatingServer {
+impl  ParticipatingServer  {
     /// <p>The Source Server ID of a participating server.</p>
-    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_server_id(&self) -> ::std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
     /// <p>The Recovery Instance ID of a participating server.</p>
-    pub fn recovery_instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn recovery_instance_id(&self) -> ::std::option::Option<& str> {
         self.recovery_instance_id.as_deref()
     }
     /// <p>The launch status of a participating server.</p>
-    pub fn launch_status(&self) -> ::std::option::Option<&crate::types::LaunchStatus> {
+    pub fn launch_status(&self) -> ::std::option::Option<& crate::types::LaunchStatus> {
         self.launch_status.as_ref()
     }
     /// <p>The post-launch action runs of a participating server.</p>
-    pub fn launch_actions_status(&self) -> ::std::option::Option<&crate::types::LaunchActionsStatus> {
+    pub fn launch_actions_status(&self) -> ::std::option::Option<& crate::types::LaunchActionsStatus> {
         self.launch_actions_status.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl ParticipatingServerBuilder {
     }
     /// <p>The Source Server ID of a participating server.</p>
     pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_server_id = input;
-        self
+        self.source_server_id = input; self
     }
     /// <p>The Source Server ID of a participating server.</p>
     pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ParticipatingServerBuilder {
     }
     /// <p>The Recovery Instance ID of a participating server.</p>
     pub fn set_recovery_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recovery_instance_id = input;
-        self
+        self.recovery_instance_id = input; self
     }
     /// <p>The Recovery Instance ID of a participating server.</p>
     pub fn get_recovery_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ParticipatingServerBuilder {
     }
     /// <p>The launch status of a participating server.</p>
     pub fn set_launch_status(mut self, input: ::std::option::Option<crate::types::LaunchStatus>) -> Self {
-        self.launch_status = input;
-        self
+        self.launch_status = input; self
     }
     /// <p>The launch status of a participating server.</p>
     pub fn get_launch_status(&self) -> &::std::option::Option<crate::types::LaunchStatus> {
@@ -97,8 +94,7 @@ impl ParticipatingServerBuilder {
     }
     /// <p>The post-launch action runs of a participating server.</p>
     pub fn set_launch_actions_status(mut self, input: ::std::option::Option<crate::types::LaunchActionsStatus>) -> Self {
-        self.launch_actions_status = input;
-        self
+        self.launch_actions_status = input; self
     }
     /// <p>The post-launch action runs of a participating server.</p>
     pub fn get_launch_actions_status(&self) -> &::std::option::Option<crate::types::LaunchActionsStatus> {
@@ -107,10 +103,15 @@ impl ParticipatingServerBuilder {
     /// Consumes the builder and constructs a [`ParticipatingServer`](crate::types::ParticipatingServer).
     pub fn build(self) -> crate::types::ParticipatingServer {
         crate::types::ParticipatingServer {
-            source_server_id: self.source_server_id,
-            recovery_instance_id: self.recovery_instance_id,
-            launch_status: self.launch_status,
-            launch_actions_status: self.launch_actions_status,
+            source_server_id: self.source_server_id
+            ,
+            recovery_instance_id: self.recovery_instance_id
+            ,
+            launch_status: self.launch_status
+            ,
+            launch_actions_status: self.launch_actions_status
+            ,
         }
     }
 }
+

@@ -3,30 +3,31 @@
 /// <p>Result message wrapping a list of application version descriptions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeApplicationVersionsOutput {
+pub struct DescribeApplicationVersionsOutput  {
     /// <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of creation.</p>
-    pub application_versions: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionDescription>>,
+    pub application_versions: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationVersionDescription>>,
     /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeApplicationVersionsOutput {
+impl  DescribeApplicationVersionsOutput  {
     /// <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of creation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_versions.is_none()`.
-    pub fn application_versions(&self) -> &[crate::types::ApplicationVersionDescription] {
-        self.application_versions.as_deref().unwrap_or_default()
+    pub fn application_versions(&self) -> & [crate::types::ApplicationVersionDescription] {
+        self.application_versions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeApplicationVersionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeApplicationVersionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationVersionsOutput`](crate::operation::describe_application_versions::DescribeApplicationVersionsOutput).
     pub fn builder() -> crate::operation::describe_application_versions::builders::DescribeApplicationVersionsOutputBuilder {
@@ -38,7 +39,7 @@ impl DescribeApplicationVersionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeApplicationVersionsOutputBuilder {
-    pub(crate) application_versions: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionDescription>>,
+    pub(crate) application_versions: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationVersionDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +51,16 @@ impl DescribeApplicationVersionsOutputBuilder {
     /// <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of creation.</p>
     pub fn application_versions(mut self, input: crate::types::ApplicationVersionDescription) -> Self {
         let mut v = self.application_versions.unwrap_or_default();
-        v.push(input);
-        self.application_versions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.application_versions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of creation.</p>
-    pub fn set_application_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionDescription>>) -> Self {
-        self.application_versions = input;
-        self
+    pub fn set_application_versions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationVersionDescription>>) -> Self {
+        self.application_versions = input; self
     }
     /// <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of creation.</p>
-    pub fn get_application_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionDescription>> {
+    pub fn get_application_versions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ApplicationVersionDescription>> {
         &self.application_versions
     }
     /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
@@ -70,28 +70,30 @@ impl DescribeApplicationVersionsOutputBuilder {
     }
     /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeApplicationVersionsOutput`](crate::operation::describe_application_versions::DescribeApplicationVersionsOutput).
     pub fn build(self) -> crate::operation::describe_application_versions::DescribeApplicationVersionsOutput {
         crate::operation::describe_application_versions::DescribeApplicationVersionsOutput {
-            application_versions: self.application_versions,
-            next_token: self.next_token,
+            application_versions: self.application_versions
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

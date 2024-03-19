@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateLifecyclePolicyInput {
+pub struct CreateLifecyclePolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.</p>
@@ -14,7 +14,7 @@ pub struct CreateLifecyclePolicyInput {
     /// </important>
     pub policy_details: ::std::option::Option<crate::types::PolicyDetails>,
     /// <p>The tags to apply to the lifecycle policy during creation.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p><b>[Default policies only]</b> Specify the type of default policy to create.</p>
     /// <ul>
     /// <li>
@@ -45,31 +45,31 @@ pub struct CreateLifecyclePolicyInput {
     /// <p>Default: false</p>
     pub extend_deletion: ::std::option::Option<bool>,
     /// <p><b>[Default policies only]</b> Specifies destination Regions for snapshot or AMI copies. You can specify up to 3 destination Regions. If you do not want to create cross-Region copies, omit this parameter.</p>
-    pub cross_region_copy_targets: ::std::option::Option<::std::vec::Vec<crate::types::CrossRegionCopyTarget>>,
+    pub cross_region_copy_targets: ::std::option::Option<::std::vec::Vec::<crate::types::CrossRegionCopyTarget>>,
     /// <p><b>[Default policies only]</b> Specifies exclusion parameters for volumes or instances for which you do not want to create snapshots or AMIs. The policy will not create snapshots or AMIs for target resources that match any of the specified exclusion parameters.</p>
     pub exclusions: ::std::option::Option<crate::types::Exclusions>,
 }
-impl CreateLifecyclePolicyInput {
+impl  CreateLifecyclePolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
-    pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> ::std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
     /// <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The activation state of the lifecycle policy after creation.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::SettablePolicyStateValues> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::SettablePolicyStateValues> {
         self.state.as_ref()
     }
     /// <p>The configuration details of the lifecycle policy.</p><important>
     /// <p>If you create a default policy, you can specify the request parameters either in the request body, or in the PolicyDetails request structure, but not both.</p>
     /// </important>
-    pub fn policy_details(&self) -> ::std::option::Option<&crate::types::PolicyDetails> {
+    pub fn policy_details(&self) -> ::std::option::Option<& crate::types::PolicyDetails> {
         self.policy_details.as_ref()
     }
     /// <p>The tags to apply to the lifecycle policy during creation.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p><b>[Default policies only]</b> Specify the type of default policy to create.</p>
@@ -79,7 +79,7 @@ impl CreateLifecyclePolicyInput {
     /// <li>
     /// <p>To create a default policy for EBS-backed AMIs, that creates EBS-backed AMIs from all instances in the Region that do not have recent backups, specify <code>INSTANCE</code>.</p></li>
     /// </ul>
-    pub fn default_policy(&self) -> ::std::option::Option<&crate::types::DefaultPolicyTypeValues> {
+    pub fn default_policy(&self) -> ::std::option::Option<& crate::types::DefaultPolicyTypeValues> {
         self.default_policy.as_ref()
     }
     /// <p><b>[Default policies only]</b> Specifies how often the policy should run and create snapshots or AMIs. The creation frequency can range from 1 to 7 days. If you do not specify a value, the default is 1.</p>
@@ -112,13 +112,14 @@ impl CreateLifecyclePolicyInput {
         self.extend_deletion
     }
     /// <p><b>[Default policies only]</b> Specifies destination Regions for snapshot or AMI copies. You can specify up to 3 destination Regions. If you do not want to create cross-Region copies, omit this parameter.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cross_region_copy_targets.is_none()`.
-    pub fn cross_region_copy_targets(&self) -> &[crate::types::CrossRegionCopyTarget] {
-        self.cross_region_copy_targets.as_deref().unwrap_or_default()
+    pub fn cross_region_copy_targets(&self) -> & [crate::types::CrossRegionCopyTarget] {
+        self.cross_region_copy_targets.as_deref()
+        .unwrap_or_default()
     }
     /// <p><b>[Default policies only]</b> Specifies exclusion parameters for volumes or instances for which you do not want to create snapshots or AMIs. The policy will not create snapshots or AMIs for target resources that match any of the specified exclusion parameters.</p>
-    pub fn exclusions(&self) -> ::std::option::Option<&crate::types::Exclusions> {
+    pub fn exclusions(&self) -> ::std::option::Option<& crate::types::Exclusions> {
         self.exclusions.as_ref()
     }
 }
@@ -137,13 +138,13 @@ pub struct CreateLifecyclePolicyInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::SettablePolicyStateValues>,
     pub(crate) policy_details: ::std::option::Option<crate::types::PolicyDetails>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) default_policy: ::std::option::Option<crate::types::DefaultPolicyTypeValues>,
     pub(crate) create_interval: ::std::option::Option<i32>,
     pub(crate) retain_interval: ::std::option::Option<i32>,
     pub(crate) copy_tags: ::std::option::Option<bool>,
     pub(crate) extend_deletion: ::std::option::Option<bool>,
-    pub(crate) cross_region_copy_targets: ::std::option::Option<::std::vec::Vec<crate::types::CrossRegionCopyTarget>>,
+    pub(crate) cross_region_copy_targets: ::std::option::Option<::std::vec::Vec::<crate::types::CrossRegionCopyTarget>>,
     pub(crate) exclusions: ::std::option::Option<crate::types::Exclusions>,
 }
 impl CreateLifecyclePolicyInputBuilder {
@@ -155,8 +156,7 @@ impl CreateLifecyclePolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
     pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_role_arn = input;
-        self
+        self.execution_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,8 +170,7 @@ impl CreateLifecyclePolicyInputBuilder {
     }
     /// <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -185,8 +184,7 @@ impl CreateLifecyclePolicyInputBuilder {
     }
     /// <p>The activation state of the lifecycle policy after creation.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::SettablePolicyStateValues>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The activation state of the lifecycle policy after creation.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::SettablePolicyStateValues> {
@@ -203,8 +201,7 @@ impl CreateLifecyclePolicyInputBuilder {
     /// <p>If you create a default policy, you can specify the request parameters either in the request body, or in the PolicyDetails request structure, but not both.</p>
     /// </important>
     pub fn set_policy_details(mut self, input: ::std::option::Option<crate::types::PolicyDetails>) -> Self {
-        self.policy_details = input;
-        self
+        self.policy_details = input; self
     }
     /// <p>The configuration details of the lifecycle policy.</p><important>
     /// <p>If you create a default policy, you can specify the request parameters either in the request body, or in the PolicyDetails request structure, but not both.</p>
@@ -219,17 +216,16 @@ impl CreateLifecyclePolicyInputBuilder {
     /// <p>The tags to apply to the lifecycle policy during creation.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags to apply to the lifecycle policy during creation.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to apply to the lifecycle policy during creation.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p><b>[Default policies only]</b> Specify the type of default policy to create.</p>
@@ -251,8 +247,7 @@ impl CreateLifecyclePolicyInputBuilder {
     /// <p>To create a default policy for EBS-backed AMIs, that creates EBS-backed AMIs from all instances in the Region that do not have recent backups, specify <code>INSTANCE</code>.</p></li>
     /// </ul>
     pub fn set_default_policy(mut self, input: ::std::option::Option<crate::types::DefaultPolicyTypeValues>) -> Self {
-        self.default_policy = input;
-        self
+        self.default_policy = input; self
     }
     /// <p><b>[Default policies only]</b> Specify the type of default policy to create.</p>
     /// <ul>
@@ -273,8 +268,7 @@ impl CreateLifecyclePolicyInputBuilder {
     /// <p><b>[Default policies only]</b> Specifies how often the policy should run and create snapshots or AMIs. The creation frequency can range from 1 to 7 days. If you do not specify a value, the default is 1.</p>
     /// <p>Default: 1</p>
     pub fn set_create_interval(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.create_interval = input;
-        self
+        self.create_interval = input; self
     }
     /// <p><b>[Default policies only]</b> Specifies how often the policy should run and create snapshots or AMIs. The creation frequency can range from 1 to 7 days. If you do not specify a value, the default is 1.</p>
     /// <p>Default: 1</p>
@@ -290,8 +284,7 @@ impl CreateLifecyclePolicyInputBuilder {
     /// <p><b>[Default policies only]</b> Specifies how long the policy should retain snapshots or AMIs before deleting them. The retention period can range from 2 to 14 days, but it must be greater than the creation frequency to ensure that the policy retains at least 1 snapshot or AMI at any given time. If you do not specify a value, the default is 7.</p>
     /// <p>Default: 7</p>
     pub fn set_retain_interval(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.retain_interval = input;
-        self
+        self.retain_interval = input; self
     }
     /// <p><b>[Default policies only]</b> Specifies how long the policy should retain snapshots or AMIs before deleting them. The retention period can range from 2 to 14 days, but it must be greater than the creation frequency to ensure that the policy retains at least 1 snapshot or AMI at any given time. If you do not specify a value, the default is 7.</p>
     /// <p>Default: 7</p>
@@ -307,8 +300,7 @@ impl CreateLifecyclePolicyInputBuilder {
     /// <p><b>[Default policies only]</b> Indicates whether the policy should copy tags from the source resource to the snapshot or AMI. If you do not specify a value, the default is <code>false</code>.</p>
     /// <p>Default: false</p>
     pub fn set_copy_tags(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.copy_tags = input;
-        self
+        self.copy_tags = input; self
     }
     /// <p><b>[Default policies only]</b> Indicates whether the policy should copy tags from the source resource to the snapshot or AMI. If you do not specify a value, the default is <code>false</code>.</p>
     /// <p>Default: false</p>
@@ -342,8 +334,7 @@ impl CreateLifecyclePolicyInputBuilder {
     /// <p>If you do not specify a value, the default is <code>false</code>.</p>
     /// <p>Default: false</p>
     pub fn set_extend_deletion(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.extend_deletion = input;
-        self
+        self.extend_deletion = input; self
     }
     /// <p><b>[Default policies only]</b> Defines the snapshot or AMI retention behavior for the policy if the source volume or instance is deleted, or if the policy enters the error, disabled, or deleted state.</p>
     /// <p>By default (<b>ExtendDeletion=false</b>):</p>
@@ -366,17 +357,16 @@ impl CreateLifecyclePolicyInputBuilder {
     /// <p><b>[Default policies only]</b> Specifies destination Regions for snapshot or AMI copies. You can specify up to 3 destination Regions. If you do not want to create cross-Region copies, omit this parameter.</p>
     pub fn cross_region_copy_targets(mut self, input: crate::types::CrossRegionCopyTarget) -> Self {
         let mut v = self.cross_region_copy_targets.unwrap_or_default();
-        v.push(input);
-        self.cross_region_copy_targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cross_region_copy_targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p><b>[Default policies only]</b> Specifies destination Regions for snapshot or AMI copies. You can specify up to 3 destination Regions. If you do not want to create cross-Region copies, omit this parameter.</p>
-    pub fn set_cross_region_copy_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CrossRegionCopyTarget>>) -> Self {
-        self.cross_region_copy_targets = input;
-        self
+    pub fn set_cross_region_copy_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CrossRegionCopyTarget>>) -> Self {
+        self.cross_region_copy_targets = input; self
     }
     /// <p><b>[Default policies only]</b> Specifies destination Regions for snapshot or AMI copies. You can specify up to 3 destination Regions. If you do not want to create cross-Region copies, omit this parameter.</p>
-    pub fn get_cross_region_copy_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CrossRegionCopyTarget>> {
+    pub fn get_cross_region_copy_targets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CrossRegionCopyTarget>> {
         &self.cross_region_copy_targets
     }
     /// <p><b>[Default policies only]</b> Specifies exclusion parameters for volumes or instances for which you do not want to create snapshots or AMIs. The policy will not create snapshots or AMIs for target resources that match any of the specified exclusion parameters.</p>
@@ -386,31 +376,42 @@ impl CreateLifecyclePolicyInputBuilder {
     }
     /// <p><b>[Default policies only]</b> Specifies exclusion parameters for volumes or instances for which you do not want to create snapshots or AMIs. The policy will not create snapshots or AMIs for target resources that match any of the specified exclusion parameters.</p>
     pub fn set_exclusions(mut self, input: ::std::option::Option<crate::types::Exclusions>) -> Self {
-        self.exclusions = input;
-        self
+        self.exclusions = input; self
     }
     /// <p><b>[Default policies only]</b> Specifies exclusion parameters for volumes or instances for which you do not want to create snapshots or AMIs. The policy will not create snapshots or AMIs for target resources that match any of the specified exclusion parameters.</p>
     pub fn get_exclusions(&self) -> &::std::option::Option<crate::types::Exclusions> {
         &self.exclusions
     }
     /// Consumes the builder and constructs a [`CreateLifecyclePolicyInput`](crate::operation::create_lifecycle_policy::CreateLifecyclePolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_lifecycle_policy::CreateLifecyclePolicyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_lifecycle_policy::CreateLifecyclePolicyInput {
-            execution_role_arn: self.execution_role_arn,
-            description: self.description,
-            state: self.state,
-            policy_details: self.policy_details,
-            tags: self.tags,
-            default_policy: self.default_policy,
-            create_interval: self.create_interval,
-            retain_interval: self.retain_interval,
-            copy_tags: self.copy_tags,
-            extend_deletion: self.extend_deletion,
-            cross_region_copy_targets: self.cross_region_copy_targets,
-            exclusions: self.exclusions,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_lifecycle_policy::CreateLifecyclePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_lifecycle_policy::CreateLifecyclePolicyInput {
+                execution_role_arn: self.execution_role_arn
+                ,
+                description: self.description
+                ,
+                state: self.state
+                ,
+                policy_details: self.policy_details
+                ,
+                tags: self.tags
+                ,
+                default_policy: self.default_policy
+                ,
+                create_interval: self.create_interval
+                ,
+                retain_interval: self.retain_interval
+                ,
+                copy_tags: self.copy_tags
+                ,
+                extend_deletion: self.extend_deletion
+                ,
+                cross_region_copy_targets: self.cross_region_copy_targets
+                ,
+                exclusions: self.exclusions
+                ,
+            }
+        )
     }
 }
+

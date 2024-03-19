@@ -3,7 +3,7 @@
 /// <p>When updating an output configuration using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html">UpdateApplication</a> operation, provides information about an AWS Lambda function configured as the destination.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LambdaOutputUpdate {
+pub struct LambdaOutputUpdate  {
     /// <p>Amazon Resource Name (ARN) of the destination Lambda function.</p><note>
     /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a></p>
     /// </note>
@@ -11,15 +11,15 @@ pub struct LambdaOutputUpdate {
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination function on your behalf. You need to grant the necessary permissions to this role.</p>
     pub role_arn_update: ::std::option::Option<::std::string::String>,
 }
-impl LambdaOutputUpdate {
+impl  LambdaOutputUpdate  {
     /// <p>Amazon Resource Name (ARN) of the destination Lambda function.</p><note>
     /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a></p>
     /// </note>
-    pub fn resource_arn_update(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn_update(&self) -> ::std::option::Option<& str> {
         self.resource_arn_update.as_deref()
     }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination function on your behalf. You need to grant the necessary permissions to this role.</p>
-    pub fn role_arn_update(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn_update(&self) -> ::std::option::Option<& str> {
         self.role_arn_update.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl LambdaOutputUpdateBuilder {
     /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a></p>
     /// </note>
     pub fn set_resource_arn_update(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn_update = input;
-        self
+        self.resource_arn_update = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the destination Lambda function.</p><note>
     /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: AWS Lambda</a></p>
@@ -65,8 +64,7 @@ impl LambdaOutputUpdateBuilder {
     }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination function on your behalf. You need to grant the necessary permissions to this role.</p>
     pub fn set_role_arn_update(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn_update = input;
-        self
+        self.role_arn_update = input; self
     }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination function on your behalf. You need to grant the necessary permissions to this role.</p>
     pub fn get_role_arn_update(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +73,11 @@ impl LambdaOutputUpdateBuilder {
     /// Consumes the builder and constructs a [`LambdaOutputUpdate`](crate::types::LambdaOutputUpdate).
     pub fn build(self) -> crate::types::LambdaOutputUpdate {
         crate::types::LambdaOutputUpdate {
-            resource_arn_update: self.resource_arn_update,
-            role_arn_update: self.role_arn_update,
+            resource_arn_update: self.resource_arn_update
+            ,
+            role_arn_update: self.role_arn_update
+            ,
         }
     }
 }
+

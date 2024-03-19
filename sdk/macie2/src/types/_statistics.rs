@@ -3,13 +3,13 @@
 /// <p>Provides processing statistics for a classification job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Statistics {
+pub struct Statistics  {
     /// <p>The approximate number of objects that the job has yet to process during its current run.</p>
     pub approximate_number_of_objects_to_process: ::std::option::Option<f64>,
     /// <p>The number of times that the job has run.</p>
     pub number_of_runs: ::std::option::Option<f64>,
 }
-impl Statistics {
+impl  Statistics  {
     /// <p>The approximate number of objects that the job has yet to process during its current run.</p>
     pub fn approximate_number_of_objects_to_process(&self) -> ::std::option::Option<f64> {
         self.approximate_number_of_objects_to_process
@@ -41,8 +41,7 @@ impl StatisticsBuilder {
     }
     /// <p>The approximate number of objects that the job has yet to process during its current run.</p>
     pub fn set_approximate_number_of_objects_to_process(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.approximate_number_of_objects_to_process = input;
-        self
+        self.approximate_number_of_objects_to_process = input; self
     }
     /// <p>The approximate number of objects that the job has yet to process during its current run.</p>
     pub fn get_approximate_number_of_objects_to_process(&self) -> &::std::option::Option<f64> {
@@ -55,8 +54,7 @@ impl StatisticsBuilder {
     }
     /// <p>The number of times that the job has run.</p>
     pub fn set_number_of_runs(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.number_of_runs = input;
-        self
+        self.number_of_runs = input; self
     }
     /// <p>The number of times that the job has run.</p>
     pub fn get_number_of_runs(&self) -> &::std::option::Option<f64> {
@@ -65,8 +63,11 @@ impl StatisticsBuilder {
     /// Consumes the builder and constructs a [`Statistics`](crate::types::Statistics).
     pub fn build(self) -> crate::types::Statistics {
         crate::types::Statistics {
-            approximate_number_of_objects_to_process: self.approximate_number_of_objects_to_process,
-            number_of_runs: self.number_of_runs,
+            approximate_number_of_objects_to_process: self.approximate_number_of_objects_to_process
+            ,
+            number_of_runs: self.number_of_runs
+            ,
         }
     }
 }
+

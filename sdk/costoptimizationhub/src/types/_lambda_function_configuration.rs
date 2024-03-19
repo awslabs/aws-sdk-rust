@@ -3,13 +3,13 @@
 /// <p>The Lambda function configuration used for recommendations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LambdaFunctionConfiguration {
+pub struct LambdaFunctionConfiguration  {
     /// <p>Details about the compute configuration.</p>
     pub compute: ::std::option::Option<crate::types::ComputeConfiguration>,
 }
-impl LambdaFunctionConfiguration {
+impl  LambdaFunctionConfiguration  {
     /// <p>Details about the compute configuration.</p>
-    pub fn compute(&self) -> ::std::option::Option<&crate::types::ComputeConfiguration> {
+    pub fn compute(&self) -> ::std::option::Option<& crate::types::ComputeConfiguration> {
         self.compute.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl LambdaFunctionConfigurationBuilder {
     }
     /// <p>Details about the compute configuration.</p>
     pub fn set_compute(mut self, input: ::std::option::Option<crate::types::ComputeConfiguration>) -> Self {
-        self.compute = input;
-        self
+        self.compute = input; self
     }
     /// <p>Details about the compute configuration.</p>
     pub fn get_compute(&self) -> &::std::option::Option<crate::types::ComputeConfiguration> {
@@ -43,6 +42,10 @@ impl LambdaFunctionConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`LambdaFunctionConfiguration`](crate::types::LambdaFunctionConfiguration).
     pub fn build(self) -> crate::types::LambdaFunctionConfiguration {
-        crate::types::LambdaFunctionConfiguration { compute: self.compute }
+        crate::types::LambdaFunctionConfiguration {
+            compute: self.compute
+            ,
+        }
     }
 }
+

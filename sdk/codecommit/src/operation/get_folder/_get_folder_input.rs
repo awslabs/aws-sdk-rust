@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFolderInput {
+pub struct GetFolderInput  {
     /// <p>The name of the repository.</p>
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>A fully qualified reference used to identify a commit that contains the version of the folder's content to return. A fully qualified reference can be a commit ID, branch name, tag, or reference such as HEAD. If no specifier is provided, the folder content is returned as it exists in the HEAD commit.</p>
@@ -10,17 +10,17 @@ pub struct GetFolderInput {
     /// <p>The fully qualified path to the folder whose contents are returned, including the folder name. For example, /examples is a fully-qualified path to a folder named examples that was created off of the root directory (/) of a repository.</p>
     pub folder_path: ::std::option::Option<::std::string::String>,
 }
-impl GetFolderInput {
+impl  GetFolderInput  {
     /// <p>The name of the repository.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>A fully qualified reference used to identify a commit that contains the version of the folder's content to return. A fully qualified reference can be a commit ID, branch name, tag, or reference such as HEAD. If no specifier is provided, the folder content is returned as it exists in the HEAD commit.</p>
-    pub fn commit_specifier(&self) -> ::std::option::Option<&str> {
+    pub fn commit_specifier(&self) -> ::std::option::Option<& str> {
         self.commit_specifier.as_deref()
     }
     /// <p>The fully qualified path to the folder whose contents are returned, including the folder name. For example, /examples is a fully-qualified path to a folder named examples that was created off of the root directory (/) of a repository.</p>
-    pub fn folder_path(&self) -> ::std::option::Option<&str> {
+    pub fn folder_path(&self) -> ::std::option::Option<& str> {
         self.folder_path.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl GetFolderInputBuilder {
     }
     /// <p>The name of the repository.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The name of the repository.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl GetFolderInputBuilder {
     }
     /// <p>A fully qualified reference used to identify a commit that contains the version of the folder's content to return. A fully qualified reference can be a commit ID, branch name, tag, or reference such as HEAD. If no specifier is provided, the folder content is returned as it exists in the HEAD commit.</p>
     pub fn set_commit_specifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.commit_specifier = input;
-        self
+        self.commit_specifier = input; self
     }
     /// <p>A fully qualified reference used to identify a commit that contains the version of the folder's content to return. A fully qualified reference can be a commit ID, branch name, tag, or reference such as HEAD. If no specifier is provided, the folder content is returned as it exists in the HEAD commit.</p>
     pub fn get_commit_specifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +75,7 @@ impl GetFolderInputBuilder {
     }
     /// <p>The fully qualified path to the folder whose contents are returned, including the folder name. For example, /examples is a fully-qualified path to a folder named examples that was created off of the root directory (/) of a repository.</p>
     pub fn set_folder_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.folder_path = input;
-        self
+        self.folder_path = input; self
     }
     /// <p>The fully qualified path to the folder whose contents are returned, including the folder name. For example, /examples is a fully-qualified path to a folder named examples that was created off of the root directory (/) of a repository.</p>
     pub fn get_folder_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,10 +83,16 @@ impl GetFolderInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetFolderInput`](crate::operation::get_folder::GetFolderInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_folder::GetFolderInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_folder::GetFolderInput {
-            repository_name: self.repository_name,
-            commit_specifier: self.commit_specifier,
-            folder_path: self.folder_path,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_folder::GetFolderInput {
+                repository_name: self.repository_name
+                ,
+                commit_specifier: self.commit_specifier
+                ,
+                folder_path: self.folder_path
+                ,
+            }
+        )
     }
 }
+

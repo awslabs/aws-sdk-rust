@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListNodesOutput {
+pub struct ListNodesOutput  {
     /// <p>The paginated results marker. When the result of a ListNodes operation is truncated, the call returns NextToken in the response. To get another batch of nodes, provide this token in your next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>List containing a NodeInfo object.</p>
-    pub node_info_list: ::std::option::Option<::std::vec::Vec<crate::types::NodeInfo>>,
+    pub node_info_list: ::std::option::Option<::std::vec::Vec::<crate::types::NodeInfo>>,
     _request_id: Option<String>,
 }
-impl ListNodesOutput {
+impl  ListNodesOutput  {
     /// <p>The paginated results marker. When the result of a ListNodes operation is truncated, the call returns NextToken in the response. To get another batch of nodes, provide this token in your next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>List containing a NodeInfo object.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_info_list.is_none()`.
-    pub fn node_info_list(&self) -> &[crate::types::NodeInfo] {
-        self.node_info_list.as_deref().unwrap_or_default()
+    pub fn node_info_list(&self) -> & [crate::types::NodeInfo] {
+        self.node_info_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListNodesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListNodesOutput {
     /// Creates a new builder-style object to manufacture [`ListNodesOutput`](crate::operation::list_nodes::ListNodesOutput).
     pub fn builder() -> crate::operation::list_nodes::builders::ListNodesOutputBuilder {
@@ -38,7 +39,7 @@ impl ListNodesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNodesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) node_info_list: ::std::option::Option<::std::vec::Vec<crate::types::NodeInfo>>,
+    pub(crate) node_info_list: ::std::option::Option<::std::vec::Vec::<crate::types::NodeInfo>>,
     _request_id: Option<String>,
 }
 impl ListNodesOutputBuilder {
@@ -49,8 +50,7 @@ impl ListNodesOutputBuilder {
     }
     /// <p>The paginated results marker. When the result of a ListNodes operation is truncated, the call returns NextToken in the response. To get another batch of nodes, provide this token in your next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The paginated results marker. When the result of a ListNodes operation is truncated, the call returns NextToken in the response. To get another batch of nodes, provide this token in your next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListNodesOutputBuilder {
     /// <p>List containing a NodeInfo object.</p>
     pub fn node_info_list(mut self, input: crate::types::NodeInfo) -> Self {
         let mut v = self.node_info_list.unwrap_or_default();
-        v.push(input);
-        self.node_info_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.node_info_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List containing a NodeInfo object.</p>
-    pub fn set_node_info_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NodeInfo>>) -> Self {
-        self.node_info_list = input;
-        self
+    pub fn set_node_info_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NodeInfo>>) -> Self {
+        self.node_info_list = input; self
     }
     /// <p>List containing a NodeInfo object.</p>
-    pub fn get_node_info_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeInfo>> {
+    pub fn get_node_info_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NodeInfo>> {
         &self.node_info_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListNodesOutput`](crate::operation::list_nodes::ListNodesOutput).
     pub fn build(self) -> crate::operation::list_nodes::ListNodesOutput {
         crate::operation::list_nodes::ListNodesOutput {
-            next_token: self.next_token,
-            node_info_list: self.node_info_list,
+            next_token: self.next_token
+            ,
+            node_info_list: self.node_info_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

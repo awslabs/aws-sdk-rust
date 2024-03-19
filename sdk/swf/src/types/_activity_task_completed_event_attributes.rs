@@ -3,7 +3,7 @@
 /// <p>Provides the details of the <code>ActivityTaskCompleted</code> event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActivityTaskCompletedEventAttributes {
+pub struct ActivityTaskCompletedEventAttributes  {
     /// <p>The results of the activity task.</p>
     pub result: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
@@ -11,9 +11,9 @@ pub struct ActivityTaskCompletedEventAttributes {
     /// <p>The ID of the <code>ActivityTaskStarted</code> event recorded when this activity task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub started_event_id: i64,
 }
-impl ActivityTaskCompletedEventAttributes {
+impl  ActivityTaskCompletedEventAttributes  {
     /// <p>The results of the activity task.</p>
-    pub fn result(&self) -> ::std::option::Option<&str> {
+    pub fn result(&self) -> ::std::option::Option<& str> {
         self.result.as_deref()
     }
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
@@ -48,8 +48,7 @@ impl ActivityTaskCompletedEventAttributesBuilder {
     }
     /// <p>The results of the activity task.</p>
     pub fn set_result(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.result = input;
-        self
+        self.result = input; self
     }
     /// <p>The results of the activity task.</p>
     pub fn get_result(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl ActivityTaskCompletedEventAttributesBuilder {
     }
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn set_scheduled_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.scheduled_event_id = input;
-        self
+        self.scheduled_event_id = input; self
     }
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn get_scheduled_event_id(&self) -> &::std::option::Option<i64> {
@@ -78,8 +76,7 @@ impl ActivityTaskCompletedEventAttributesBuilder {
     }
     /// <p>The ID of the <code>ActivityTaskStarted</code> event recorded when this activity task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn set_started_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.started_event_id = input;
-        self
+        self.started_event_id = input; self
     }
     /// <p>The ID of the <code>ActivityTaskStarted</code> event recorded when this activity task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn get_started_event_id(&self) -> &::std::option::Option<i64> {
@@ -88,9 +85,15 @@ impl ActivityTaskCompletedEventAttributesBuilder {
     /// Consumes the builder and constructs a [`ActivityTaskCompletedEventAttributes`](crate::types::ActivityTaskCompletedEventAttributes).
     pub fn build(self) -> crate::types::ActivityTaskCompletedEventAttributes {
         crate::types::ActivityTaskCompletedEventAttributes {
-            result: self.result,
-            scheduled_event_id: self.scheduled_event_id.unwrap_or_default(),
-            started_event_id: self.started_event_id.unwrap_or_default(),
+            result: self.result
+            ,
+            scheduled_event_id: self.scheduled_event_id
+                .unwrap_or_default()
+            ,
+            started_event_id: self.started_event_id
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

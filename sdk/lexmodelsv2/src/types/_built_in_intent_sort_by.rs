@@ -3,19 +3,19 @@
 /// <p>Specifies attributes for sorting a list of built-in intents.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BuiltInIntentSortBy {
+pub struct BuiltInIntentSortBy  {
     /// <p>The attribute to use to sort the list of built-in intents.</p>
     pub attribute: crate::types::BuiltInIntentSortAttribute,
     /// <p>The order to sort the list. You can specify ascending or descending order.</p>
     pub order: crate::types::SortOrder,
 }
-impl BuiltInIntentSortBy {
+impl  BuiltInIntentSortBy  {
     /// <p>The attribute to use to sort the list of built-in intents.</p>
-    pub fn attribute(&self) -> &crate::types::BuiltInIntentSortAttribute {
+    pub fn attribute(&self) -> & crate::types::BuiltInIntentSortAttribute {
         &self.attribute
     }
     /// <p>The order to sort the list. You can specify ascending or descending order.</p>
-    pub fn order(&self) -> &crate::types::SortOrder {
+    pub fn order(&self) -> & crate::types::SortOrder {
         &self.order
     }
 }
@@ -42,8 +42,7 @@ impl BuiltInIntentSortByBuilder {
     }
     /// <p>The attribute to use to sort the list of built-in intents.</p>
     pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::BuiltInIntentSortAttribute>) -> Self {
-        self.attribute = input;
-        self
+        self.attribute = input; self
     }
     /// <p>The attribute to use to sort the list of built-in intents.</p>
     pub fn get_attribute(&self) -> &::std::option::Option<crate::types::BuiltInIntentSortAttribute> {
@@ -57,8 +56,7 @@ impl BuiltInIntentSortByBuilder {
     }
     /// <p>The order to sort the list. You can specify ascending or descending order.</p>
     pub fn set_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.order = input;
-        self
+        self.order = input; self
     }
     /// <p>The order to sort the list. You can specify ascending or descending order.</p>
     pub fn get_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -69,19 +67,20 @@ impl BuiltInIntentSortByBuilder {
     /// - [`attribute`](crate::types::builders::BuiltInIntentSortByBuilder::attribute)
     /// - [`order`](crate::types::builders::BuiltInIntentSortByBuilder::order)
     pub fn build(self) -> ::std::result::Result<crate::types::BuiltInIntentSortBy, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BuiltInIntentSortBy {
-            attribute: self.attribute.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attribute",
-                    "attribute was not specified but it is required when building BuiltInIntentSortBy",
-                )
-            })?,
-            order: self.order.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "order",
-                    "order was not specified but it is required when building BuiltInIntentSortBy",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BuiltInIntentSortBy {
+                attribute: self.attribute
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attribute", "attribute was not specified but it is required when building BuiltInIntentSortBy")
+                    )?
+                ,
+                order: self.order
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("order", "order was not specified but it is required when building BuiltInIntentSortBy")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListWorkflowStepGroups`](crate::operation::list_workflow_step_groups::builders::ListWorkflowStepGroupsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_workflow_step_groups::builders::ListWorkflowStepGroupsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_workflow_step_groups::builders::ListWorkflowStepGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_workflow_step_groups::builders::ListWorkflowStepGroupsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_workflow_step_groups::builders::ListWorkflowStepGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_workflow_step_groups::builders::ListWorkflowStepGroupsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results that can be returned.</p><br>
     ///   - [`workflow_id(impl Into<String>)`](crate::operation::list_workflow_step_groups::builders::ListWorkflowStepGroupsFluentBuilder::workflow_id) / [`set_workflow_id(Option<String>)`](crate::operation::list_workflow_step_groups::builders::ListWorkflowStepGroupsFluentBuilder::set_workflow_id):<br>required: **true**<br><p>The ID of the migration workflow.</p><br>
-    /// - On success, responds with [`ListWorkflowStepGroupsOutput`](crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsOutput) with field(s):
+                            /// - On success, responds with [`ListWorkflowStepGroupsOutput`](crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsOutput::next_token): <p>The pagination token.</p>
     ///   - [`workflow_step_groups_summary(Vec::<WorkflowStepGroupSummary>)`](crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsOutput::workflow_step_groups_summary): <p>The summary of step groups in a migration workflow.</p>
-    /// - On failure, responds with [`SdkError<ListWorkflowStepGroupsError>`](crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsError)
+                            /// - On failure, responds with [`SdkError<ListWorkflowStepGroupsError>`](crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsError)
     pub fn list_workflow_step_groups(&self) -> crate::operation::list_workflow_step_groups::builders::ListWorkflowStepGroupsFluentBuilder {
-        crate::operation::list_workflow_step_groups::builders::ListWorkflowStepGroupsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_workflow_step_groups::builders::ListWorkflowStepGroupsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

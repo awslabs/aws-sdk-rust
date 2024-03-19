@@ -3,13 +3,13 @@
 /// <p>Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon MSK) cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsMskClusterDetails {
+pub struct AwsMskClusterDetails  {
     /// <p>Provides information about a cluster.</p>
     pub cluster_info: ::std::option::Option<crate::types::AwsMskClusterClusterInfoDetails>,
 }
-impl AwsMskClusterDetails {
+impl  AwsMskClusterDetails  {
     /// <p>Provides information about a cluster.</p>
-    pub fn cluster_info(&self) -> ::std::option::Option<&crate::types::AwsMskClusterClusterInfoDetails> {
+    pub fn cluster_info(&self) -> ::std::option::Option<& crate::types::AwsMskClusterClusterInfoDetails> {
         self.cluster_info.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl AwsMskClusterDetailsBuilder {
     }
     /// <p>Provides information about a cluster.</p>
     pub fn set_cluster_info(mut self, input: ::std::option::Option<crate::types::AwsMskClusterClusterInfoDetails>) -> Self {
-        self.cluster_info = input;
-        self
+        self.cluster_info = input; self
     }
     /// <p>Provides information about a cluster.</p>
     pub fn get_cluster_info(&self) -> &::std::option::Option<crate::types::AwsMskClusterClusterInfoDetails> {
@@ -44,7 +43,9 @@ impl AwsMskClusterDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsMskClusterDetails`](crate::types::AwsMskClusterDetails).
     pub fn build(self) -> crate::types::AwsMskClusterDetails {
         crate::types::AwsMskClusterDetails {
-            cluster_info: self.cluster_info,
+            cluster_info: self.cluster_info
+            ,
         }
     }
 }
+

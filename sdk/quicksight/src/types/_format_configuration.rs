@@ -3,7 +3,7 @@
 /// <p>The formatting configuration for all types of field.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FormatConfiguration {
+pub struct FormatConfiguration  {
     /// <p>Formatting configuration for string fields.</p>
     pub string_format_configuration: ::std::option::Option<crate::types::StringFormatConfiguration>,
     /// <p>Formatting configuration for number fields.</p>
@@ -11,17 +11,17 @@ pub struct FormatConfiguration {
     /// <p>Formatting configuration for <code>DateTime</code> fields.</p>
     pub date_time_format_configuration: ::std::option::Option<crate::types::DateTimeFormatConfiguration>,
 }
-impl FormatConfiguration {
+impl  FormatConfiguration  {
     /// <p>Formatting configuration for string fields.</p>
-    pub fn string_format_configuration(&self) -> ::std::option::Option<&crate::types::StringFormatConfiguration> {
+    pub fn string_format_configuration(&self) -> ::std::option::Option<& crate::types::StringFormatConfiguration> {
         self.string_format_configuration.as_ref()
     }
     /// <p>Formatting configuration for number fields.</p>
-    pub fn number_format_configuration(&self) -> ::std::option::Option<&crate::types::NumberFormatConfiguration> {
+    pub fn number_format_configuration(&self) -> ::std::option::Option<& crate::types::NumberFormatConfiguration> {
         self.number_format_configuration.as_ref()
     }
     /// <p>Formatting configuration for <code>DateTime</code> fields.</p>
-    pub fn date_time_format_configuration(&self) -> ::std::option::Option<&crate::types::DateTimeFormatConfiguration> {
+    pub fn date_time_format_configuration(&self) -> ::std::option::Option<& crate::types::DateTimeFormatConfiguration> {
         self.date_time_format_configuration.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl FormatConfigurationBuilder {
     }
     /// <p>Formatting configuration for string fields.</p>
     pub fn set_string_format_configuration(mut self, input: ::std::option::Option<crate::types::StringFormatConfiguration>) -> Self {
-        self.string_format_configuration = input;
-        self
+        self.string_format_configuration = input; self
     }
     /// <p>Formatting configuration for string fields.</p>
     pub fn get_string_format_configuration(&self) -> &::std::option::Option<crate::types::StringFormatConfiguration> {
@@ -62,8 +61,7 @@ impl FormatConfigurationBuilder {
     }
     /// <p>Formatting configuration for number fields.</p>
     pub fn set_number_format_configuration(mut self, input: ::std::option::Option<crate::types::NumberFormatConfiguration>) -> Self {
-        self.number_format_configuration = input;
-        self
+        self.number_format_configuration = input; self
     }
     /// <p>Formatting configuration for number fields.</p>
     pub fn get_number_format_configuration(&self) -> &::std::option::Option<crate::types::NumberFormatConfiguration> {
@@ -76,8 +74,7 @@ impl FormatConfigurationBuilder {
     }
     /// <p>Formatting configuration for <code>DateTime</code> fields.</p>
     pub fn set_date_time_format_configuration(mut self, input: ::std::option::Option<crate::types::DateTimeFormatConfiguration>) -> Self {
-        self.date_time_format_configuration = input;
-        self
+        self.date_time_format_configuration = input; self
     }
     /// <p>Formatting configuration for <code>DateTime</code> fields.</p>
     pub fn get_date_time_format_configuration(&self) -> &::std::option::Option<crate::types::DateTimeFormatConfiguration> {
@@ -86,9 +83,13 @@ impl FormatConfigurationBuilder {
     /// Consumes the builder and constructs a [`FormatConfiguration`](crate::types::FormatConfiguration).
     pub fn build(self) -> crate::types::FormatConfiguration {
         crate::types::FormatConfiguration {
-            string_format_configuration: self.string_format_configuration,
-            number_format_configuration: self.number_format_configuration,
-            date_time_format_configuration: self.date_time_format_configuration,
+            string_format_configuration: self.string_format_configuration
+            ,
+            number_format_configuration: self.number_format_configuration
+            ,
+            date_time_format_configuration: self.date_time_format_configuration
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The detailed data about the current state of the service pipeline.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ServicePipelineState {
+pub struct ServicePipelineState  {
     /// <p>The service spec that was used to create the service pipeline.</p>
     pub spec: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service template that was used to create the service pipeline.</p>
@@ -13,28 +13,25 @@ pub struct ServicePipelineState {
     /// <p>The minor version of the service template that was used to create the service pipeline.</p>
     pub template_minor_version: ::std::string::String,
 }
-impl ServicePipelineState {
+impl  ServicePipelineState  {
     /// <p>The service spec that was used to create the service pipeline.</p>
-    pub fn spec(&self) -> ::std::option::Option<&str> {
+    pub fn spec(&self) -> ::std::option::Option<& str> {
         self.spec.as_deref()
     }
     /// <p>The name of the service template that was used to create the service pipeline.</p>
-    pub fn template_name(&self) -> &str {
-        use std::ops::Deref;
-        self.template_name.deref()
+    pub fn template_name(&self) -> & str {
+        use std::ops::Deref; self.template_name.deref()
     }
     /// <p>The major version of the service template that was used to create the service pipeline.</p>
-    pub fn template_major_version(&self) -> &str {
-        use std::ops::Deref;
-        self.template_major_version.deref()
+    pub fn template_major_version(&self) -> & str {
+        use std::ops::Deref; self.template_major_version.deref()
     }
     /// <p>The minor version of the service template that was used to create the service pipeline.</p>
-    pub fn template_minor_version(&self) -> &str {
-        use std::ops::Deref;
-        self.template_minor_version.deref()
+    pub fn template_minor_version(&self) -> & str {
+        use std::ops::Deref; self.template_minor_version.deref()
     }
 }
-impl ::std::fmt::Debug for ServicePipelineState {
+impl  ::std::fmt::Debug for ServicePipelineState  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ServicePipelineState");
         formatter.field("spec", &"*** Sensitive Data Redacted ***");
@@ -68,8 +65,7 @@ impl ServicePipelineStateBuilder {
     }
     /// <p>The service spec that was used to create the service pipeline.</p>
     pub fn set_spec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.spec = input;
-        self
+        self.spec = input; self
     }
     /// <p>The service spec that was used to create the service pipeline.</p>
     pub fn get_spec(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +79,7 @@ impl ServicePipelineStateBuilder {
     }
     /// <p>The name of the service template that was used to create the service pipeline.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The name of the service template that was used to create the service pipeline.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +93,7 @@ impl ServicePipelineStateBuilder {
     }
     /// <p>The major version of the service template that was used to create the service pipeline.</p>
     pub fn set_template_major_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_major_version = input;
-        self
+        self.template_major_version = input; self
     }
     /// <p>The major version of the service template that was used to create the service pipeline.</p>
     pub fn get_template_major_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +107,7 @@ impl ServicePipelineStateBuilder {
     }
     /// <p>The minor version of the service template that was used to create the service pipeline.</p>
     pub fn set_template_minor_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_minor_version = input;
-        self
+        self.template_minor_version = input; self
     }
     /// <p>The minor version of the service template that was used to create the service pipeline.</p>
     pub fn get_template_minor_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,27 +119,27 @@ impl ServicePipelineStateBuilder {
     /// - [`template_major_version`](crate::types::builders::ServicePipelineStateBuilder::template_major_version)
     /// - [`template_minor_version`](crate::types::builders::ServicePipelineStateBuilder::template_minor_version)
     pub fn build(self) -> ::std::result::Result<crate::types::ServicePipelineState, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ServicePipelineState {
-            spec: self.spec,
-            template_name: self.template_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "template_name",
-                    "template_name was not specified but it is required when building ServicePipelineState",
-                )
-            })?,
-            template_major_version: self.template_major_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "template_major_version",
-                    "template_major_version was not specified but it is required when building ServicePipelineState",
-                )
-            })?,
-            template_minor_version: self.template_minor_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "template_minor_version",
-                    "template_minor_version was not specified but it is required when building ServicePipelineState",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ServicePipelineState {
+                spec: self.spec
+                ,
+                template_name: self.template_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("template_name", "template_name was not specified but it is required when building ServicePipelineState")
+                    )?
+                ,
+                template_major_version: self.template_major_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("template_major_version", "template_major_version was not specified but it is required when building ServicePipelineState")
+                    )?
+                ,
+                template_minor_version: self.template_minor_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("template_minor_version", "template_minor_version was not specified but it is required when building ServicePipelineState")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ServicePipelineStateBuilder {
@@ -159,3 +152,4 @@ impl ::std::fmt::Debug for ServicePipelineStateBuilder {
         formatter.finish()
     }
 }
+

@@ -3,7 +3,7 @@
 /// H265 Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct H265Settings {
+pub struct H265Settings  {
     /// Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
     pub adaptive_quantization: ::std::option::Option<crate::types::H265AdaptiveQuantization>,
     /// Indicates that AFD values will be written into the output stream. If afdSignaling is "auto", the system will try to preserve the input AFD value (in cases where multiple AFD values are valid). If set to "fixed", the AFD value will be the value configured in the fixedAfd parameter.
@@ -65,17 +65,17 @@ pub struct H265Settings {
     /// Timecode burn-in settings
     pub timecode_burnin_settings: ::std::option::Option<crate::types::TimecodeBurninSettings>,
 }
-impl H265Settings {
+impl  H265Settings  {
     /// Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
-    pub fn adaptive_quantization(&self) -> ::std::option::Option<&crate::types::H265AdaptiveQuantization> {
+    pub fn adaptive_quantization(&self) -> ::std::option::Option<& crate::types::H265AdaptiveQuantization> {
         self.adaptive_quantization.as_ref()
     }
     /// Indicates that AFD values will be written into the output stream. If afdSignaling is "auto", the system will try to preserve the input AFD value (in cases where multiple AFD values are valid). If set to "fixed", the AFD value will be the value configured in the fixedAfd parameter.
-    pub fn afd_signaling(&self) -> ::std::option::Option<&crate::types::AfdSignaling> {
+    pub fn afd_signaling(&self) -> ::std::option::Option<& crate::types::AfdSignaling> {
         self.afd_signaling.as_ref()
     }
     /// Whether or not EML should insert an Alternative Transfer Function SEI message to support backwards compatibility with non-HDR decoders and displays.
-    pub fn alternative_transfer_function(&self) -> ::std::option::Option<&crate::types::H265AlternativeTransferFunction> {
+    pub fn alternative_transfer_function(&self) -> ::std::option::Option<& crate::types::H265AlternativeTransferFunction> {
         self.alternative_transfer_function.as_ref()
     }
     /// Average bitrate in bits/second. Required when the rate control mode is VBR or CBR. Not used for QVBR. In an MS Smooth output group, each output must have a unique value when its bitrate is rounded down to the nearest multiple of 1000.
@@ -87,23 +87,23 @@ impl H265Settings {
         self.buf_size
     }
     /// Includes colorspace metadata in the output.
-    pub fn color_metadata(&self) -> ::std::option::Option<&crate::types::H265ColorMetadata> {
+    pub fn color_metadata(&self) -> ::std::option::Option<& crate::types::H265ColorMetadata> {
         self.color_metadata.as_ref()
     }
     /// Color Space settings
-    pub fn color_space_settings(&self) -> ::std::option::Option<&crate::types::H265ColorSpaceSettings> {
+    pub fn color_space_settings(&self) -> ::std::option::Option<& crate::types::H265ColorSpaceSettings> {
         self.color_space_settings.as_ref()
     }
     /// Optional filters that you can apply to an encode.
-    pub fn filter_settings(&self) -> ::std::option::Option<&crate::types::H265FilterSettings> {
+    pub fn filter_settings(&self) -> ::std::option::Option<& crate::types::H265FilterSettings> {
         self.filter_settings.as_ref()
     }
     /// Four bit AFD value to write on all frames of video in the output stream. Only valid when afdSignaling is set to 'Fixed'.
-    pub fn fixed_afd(&self) -> ::std::option::Option<&crate::types::FixedAfd> {
+    pub fn fixed_afd(&self) -> ::std::option::Option<& crate::types::FixedAfd> {
         self.fixed_afd.as_ref()
     }
     /// If set to enabled, adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
-    pub fn flicker_aq(&self) -> ::std::option::Option<&crate::types::H265FlickerAq> {
+    pub fn flicker_aq(&self) -> ::std::option::Option<& crate::types::H265FlickerAq> {
         self.flicker_aq.as_ref()
     }
     /// Framerate denominator.
@@ -123,15 +123,15 @@ impl H265Settings {
         self.gop_size
     }
     /// Indicates if the gopSize is specified in frames or seconds. If seconds the system will convert the gopSize into a frame count at run time.
-    pub fn gop_size_units(&self) -> ::std::option::Option<&crate::types::H265GopSizeUnits> {
+    pub fn gop_size_units(&self) -> ::std::option::Option<& crate::types::H265GopSizeUnits> {
         self.gop_size_units.as_ref()
     }
     /// H.265 Level.
-    pub fn level(&self) -> ::std::option::Option<&crate::types::H265Level> {
+    pub fn level(&self) -> ::std::option::Option<& crate::types::H265Level> {
         self.level.as_ref()
     }
     /// Amount of lookahead. A value of low can decrease latency and memory usage, while high can produce better quality for certain content.
-    pub fn look_ahead_rate_control(&self) -> ::std::option::Option<&crate::types::H265LookAheadRateControl> {
+    pub fn look_ahead_rate_control(&self) -> ::std::option::Option<& crate::types::H265LookAheadRateControl> {
         self.look_ahead_rate_control.as_ref()
     }
     /// For QVBR: See the tooltip for Quality level
@@ -151,7 +151,7 @@ impl H265Settings {
         self.par_numerator
     }
     /// H.265 Profile.
-    pub fn profile(&self) -> ::std::option::Option<&crate::types::H265Profile> {
+    pub fn profile(&self) -> ::std::option::Option<& crate::types::H265Profile> {
         self.profile.as_ref()
     }
     /// Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. Set values for the QVBR quality level field and Max bitrate field that suit your most important viewing devices. Recommended values are: - Primary screen: Quality level: 8 to 10. Max bitrate: 4M - PC or tablet: Quality level: 7. Max bitrate: 1.5M to 3M - Smartphone: Quality level: 6. Max bitrate: 1M to 1.5M
@@ -159,15 +159,15 @@ impl H265Settings {
         self.qvbr_quality_level
     }
     /// Rate control mode. QVBR: Quality will match the specified quality level except when it is constrained by the maximum bitrate. Recommended if you or your viewers pay for bandwidth. CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to devices that cannot handle variable bitrates. Multiplex: This rate control mode is only supported (and is required) when the video is being delivered to a MediaLive Multiplex in which case the rate control configuration is controlled by the properties within the Multiplex Program.
-    pub fn rate_control_mode(&self) -> ::std::option::Option<&crate::types::H265RateControlMode> {
+    pub fn rate_control_mode(&self) -> ::std::option::Option<& crate::types::H265RateControlMode> {
         self.rate_control_mode.as_ref()
     }
     /// Sets the scan type of the output to progressive or top-field-first interlaced.
-    pub fn scan_type(&self) -> ::std::option::Option<&crate::types::H265ScanType> {
+    pub fn scan_type(&self) -> ::std::option::Option<& crate::types::H265ScanType> {
         self.scan_type.as_ref()
     }
     /// Scene change detection.
-    pub fn scene_change_detect(&self) -> ::std::option::Option<&crate::types::H265SceneChangeDetect> {
+    pub fn scene_change_detect(&self) -> ::std::option::Option<& crate::types::H265SceneChangeDetect> {
         self.scene_change_detect.as_ref()
     }
     /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures. This field is optional; when no value is specified the encoder will choose the number of slices based on encode resolution.
@@ -175,15 +175,15 @@ impl H265Settings {
         self.slices
     }
     /// H.265 Tier.
-    pub fn tier(&self) -> ::std::option::Option<&crate::types::H265Tier> {
+    pub fn tier(&self) -> ::std::option::Option<& crate::types::H265Tier> {
         self.tier.as_ref()
     }
     /// Determines how timecodes should be inserted into the video elementary stream. - 'disabled': Do not include timecodes - 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config
-    pub fn timecode_insertion(&self) -> ::std::option::Option<&crate::types::H265TimecodeInsertionBehavior> {
+    pub fn timecode_insertion(&self) -> ::std::option::Option<& crate::types::H265TimecodeInsertionBehavior> {
         self.timecode_insertion.as_ref()
     }
     /// Timecode burn-in settings
-    pub fn timecode_burnin_settings(&self) -> ::std::option::Option<&crate::types::TimecodeBurninSettings> {
+    pub fn timecode_burnin_settings(&self) -> ::std::option::Option<& crate::types::TimecodeBurninSettings> {
         self.timecode_burnin_settings.as_ref()
     }
 }
@@ -237,8 +237,7 @@ impl H265SettingsBuilder {
     }
     /// Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
     pub fn set_adaptive_quantization(mut self, input: ::std::option::Option<crate::types::H265AdaptiveQuantization>) -> Self {
-        self.adaptive_quantization = input;
-        self
+        self.adaptive_quantization = input; self
     }
     /// Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
     pub fn get_adaptive_quantization(&self) -> &::std::option::Option<crate::types::H265AdaptiveQuantization> {
@@ -251,8 +250,7 @@ impl H265SettingsBuilder {
     }
     /// Indicates that AFD values will be written into the output stream. If afdSignaling is "auto", the system will try to preserve the input AFD value (in cases where multiple AFD values are valid). If set to "fixed", the AFD value will be the value configured in the fixedAfd parameter.
     pub fn set_afd_signaling(mut self, input: ::std::option::Option<crate::types::AfdSignaling>) -> Self {
-        self.afd_signaling = input;
-        self
+        self.afd_signaling = input; self
     }
     /// Indicates that AFD values will be written into the output stream. If afdSignaling is "auto", the system will try to preserve the input AFD value (in cases where multiple AFD values are valid). If set to "fixed", the AFD value will be the value configured in the fixedAfd parameter.
     pub fn get_afd_signaling(&self) -> &::std::option::Option<crate::types::AfdSignaling> {
@@ -265,8 +263,7 @@ impl H265SettingsBuilder {
     }
     /// Whether or not EML should insert an Alternative Transfer Function SEI message to support backwards compatibility with non-HDR decoders and displays.
     pub fn set_alternative_transfer_function(mut self, input: ::std::option::Option<crate::types::H265AlternativeTransferFunction>) -> Self {
-        self.alternative_transfer_function = input;
-        self
+        self.alternative_transfer_function = input; self
     }
     /// Whether or not EML should insert an Alternative Transfer Function SEI message to support backwards compatibility with non-HDR decoders and displays.
     pub fn get_alternative_transfer_function(&self) -> &::std::option::Option<crate::types::H265AlternativeTransferFunction> {
@@ -279,8 +276,7 @@ impl H265SettingsBuilder {
     }
     /// Average bitrate in bits/second. Required when the rate control mode is VBR or CBR. Not used for QVBR. In an MS Smooth output group, each output must have a unique value when its bitrate is rounded down to the nearest multiple of 1000.
     pub fn set_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.bitrate = input;
-        self
+        self.bitrate = input; self
     }
     /// Average bitrate in bits/second. Required when the rate control mode is VBR or CBR. Not used for QVBR. In an MS Smooth output group, each output must have a unique value when its bitrate is rounded down to the nearest multiple of 1000.
     pub fn get_bitrate(&self) -> &::std::option::Option<i32> {
@@ -293,8 +289,7 @@ impl H265SettingsBuilder {
     }
     /// Size of buffer (HRD buffer model) in bits.
     pub fn set_buf_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.buf_size = input;
-        self
+        self.buf_size = input; self
     }
     /// Size of buffer (HRD buffer model) in bits.
     pub fn get_buf_size(&self) -> &::std::option::Option<i32> {
@@ -307,8 +302,7 @@ impl H265SettingsBuilder {
     }
     /// Includes colorspace metadata in the output.
     pub fn set_color_metadata(mut self, input: ::std::option::Option<crate::types::H265ColorMetadata>) -> Self {
-        self.color_metadata = input;
-        self
+        self.color_metadata = input; self
     }
     /// Includes colorspace metadata in the output.
     pub fn get_color_metadata(&self) -> &::std::option::Option<crate::types::H265ColorMetadata> {
@@ -321,8 +315,7 @@ impl H265SettingsBuilder {
     }
     /// Color Space settings
     pub fn set_color_space_settings(mut self, input: ::std::option::Option<crate::types::H265ColorSpaceSettings>) -> Self {
-        self.color_space_settings = input;
-        self
+        self.color_space_settings = input; self
     }
     /// Color Space settings
     pub fn get_color_space_settings(&self) -> &::std::option::Option<crate::types::H265ColorSpaceSettings> {
@@ -335,8 +328,7 @@ impl H265SettingsBuilder {
     }
     /// Optional filters that you can apply to an encode.
     pub fn set_filter_settings(mut self, input: ::std::option::Option<crate::types::H265FilterSettings>) -> Self {
-        self.filter_settings = input;
-        self
+        self.filter_settings = input; self
     }
     /// Optional filters that you can apply to an encode.
     pub fn get_filter_settings(&self) -> &::std::option::Option<crate::types::H265FilterSettings> {
@@ -349,8 +341,7 @@ impl H265SettingsBuilder {
     }
     /// Four bit AFD value to write on all frames of video in the output stream. Only valid when afdSignaling is set to 'Fixed'.
     pub fn set_fixed_afd(mut self, input: ::std::option::Option<crate::types::FixedAfd>) -> Self {
-        self.fixed_afd = input;
-        self
+        self.fixed_afd = input; self
     }
     /// Four bit AFD value to write on all frames of video in the output stream. Only valid when afdSignaling is set to 'Fixed'.
     pub fn get_fixed_afd(&self) -> &::std::option::Option<crate::types::FixedAfd> {
@@ -363,8 +354,7 @@ impl H265SettingsBuilder {
     }
     /// If set to enabled, adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
     pub fn set_flicker_aq(mut self, input: ::std::option::Option<crate::types::H265FlickerAq>) -> Self {
-        self.flicker_aq = input;
-        self
+        self.flicker_aq = input; self
     }
     /// If set to enabled, adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
     pub fn get_flicker_aq(&self) -> &::std::option::Option<crate::types::H265FlickerAq> {
@@ -378,8 +368,7 @@ impl H265SettingsBuilder {
     }
     /// Framerate denominator.
     pub fn set_framerate_denominator(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.framerate_denominator = input;
-        self
+        self.framerate_denominator = input; self
     }
     /// Framerate denominator.
     pub fn get_framerate_denominator(&self) -> &::std::option::Option<i32> {
@@ -393,8 +382,7 @@ impl H265SettingsBuilder {
     }
     /// Framerate numerator - framerate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
     pub fn set_framerate_numerator(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.framerate_numerator = input;
-        self
+        self.framerate_numerator = input; self
     }
     /// Framerate numerator - framerate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
     pub fn get_framerate_numerator(&self) -> &::std::option::Option<i32> {
@@ -407,8 +395,7 @@ impl H265SettingsBuilder {
     }
     /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
     pub fn set_gop_closed_cadence(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.gop_closed_cadence = input;
-        self
+        self.gop_closed_cadence = input; self
     }
     /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
     pub fn get_gop_closed_cadence(&self) -> &::std::option::Option<i32> {
@@ -421,8 +408,7 @@ impl H265SettingsBuilder {
     }
     /// GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits. If gopSizeUnits is frames, gopSize must be an integer and must be greater than or equal to 1. If gopSizeUnits is seconds, gopSize must be greater than 0, but need not be an integer.
     pub fn set_gop_size(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.gop_size = input;
-        self
+        self.gop_size = input; self
     }
     /// GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits. If gopSizeUnits is frames, gopSize must be an integer and must be greater than or equal to 1. If gopSizeUnits is seconds, gopSize must be greater than 0, but need not be an integer.
     pub fn get_gop_size(&self) -> &::std::option::Option<f64> {
@@ -435,8 +421,7 @@ impl H265SettingsBuilder {
     }
     /// Indicates if the gopSize is specified in frames or seconds. If seconds the system will convert the gopSize into a frame count at run time.
     pub fn set_gop_size_units(mut self, input: ::std::option::Option<crate::types::H265GopSizeUnits>) -> Self {
-        self.gop_size_units = input;
-        self
+        self.gop_size_units = input; self
     }
     /// Indicates if the gopSize is specified in frames or seconds. If seconds the system will convert the gopSize into a frame count at run time.
     pub fn get_gop_size_units(&self) -> &::std::option::Option<crate::types::H265GopSizeUnits> {
@@ -449,8 +434,7 @@ impl H265SettingsBuilder {
     }
     /// H.265 Level.
     pub fn set_level(mut self, input: ::std::option::Option<crate::types::H265Level>) -> Self {
-        self.level = input;
-        self
+        self.level = input; self
     }
     /// H.265 Level.
     pub fn get_level(&self) -> &::std::option::Option<crate::types::H265Level> {
@@ -463,8 +447,7 @@ impl H265SettingsBuilder {
     }
     /// Amount of lookahead. A value of low can decrease latency and memory usage, while high can produce better quality for certain content.
     pub fn set_look_ahead_rate_control(mut self, input: ::std::option::Option<crate::types::H265LookAheadRateControl>) -> Self {
-        self.look_ahead_rate_control = input;
-        self
+        self.look_ahead_rate_control = input; self
     }
     /// Amount of lookahead. A value of low can decrease latency and memory usage, while high can produce better quality for certain content.
     pub fn get_look_ahead_rate_control(&self) -> &::std::option::Option<crate::types::H265LookAheadRateControl> {
@@ -477,8 +460,7 @@ impl H265SettingsBuilder {
     }
     /// For QVBR: See the tooltip for Quality level
     pub fn set_max_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_bitrate = input;
-        self
+        self.max_bitrate = input; self
     }
     /// For QVBR: See the tooltip for Quality level
     pub fn get_max_bitrate(&self) -> &::std::option::Option<i32> {
@@ -491,8 +473,7 @@ impl H265SettingsBuilder {
     }
     /// Only meaningful if sceneChangeDetect is set to enabled. Defaults to 5 if multiplex rate control is used. Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
     pub fn set_min_i_interval(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_i_interval = input;
-        self
+        self.min_i_interval = input; self
     }
     /// Only meaningful if sceneChangeDetect is set to enabled. Defaults to 5 if multiplex rate control is used. Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
     pub fn get_min_i_interval(&self) -> &::std::option::Option<i32> {
@@ -505,8 +486,7 @@ impl H265SettingsBuilder {
     }
     /// Pixel Aspect Ratio denominator.
     pub fn set_par_denominator(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.par_denominator = input;
-        self
+        self.par_denominator = input; self
     }
     /// Pixel Aspect Ratio denominator.
     pub fn get_par_denominator(&self) -> &::std::option::Option<i32> {
@@ -519,8 +499,7 @@ impl H265SettingsBuilder {
     }
     /// Pixel Aspect Ratio numerator.
     pub fn set_par_numerator(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.par_numerator = input;
-        self
+        self.par_numerator = input; self
     }
     /// Pixel Aspect Ratio numerator.
     pub fn get_par_numerator(&self) -> &::std::option::Option<i32> {
@@ -533,8 +512,7 @@ impl H265SettingsBuilder {
     }
     /// H.265 Profile.
     pub fn set_profile(mut self, input: ::std::option::Option<crate::types::H265Profile>) -> Self {
-        self.profile = input;
-        self
+        self.profile = input; self
     }
     /// H.265 Profile.
     pub fn get_profile(&self) -> &::std::option::Option<crate::types::H265Profile> {
@@ -547,8 +525,7 @@ impl H265SettingsBuilder {
     }
     /// Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. Set values for the QVBR quality level field and Max bitrate field that suit your most important viewing devices. Recommended values are: - Primary screen: Quality level: 8 to 10. Max bitrate: 4M - PC or tablet: Quality level: 7. Max bitrate: 1.5M to 3M - Smartphone: Quality level: 6. Max bitrate: 1M to 1.5M
     pub fn set_qvbr_quality_level(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.qvbr_quality_level = input;
-        self
+        self.qvbr_quality_level = input; self
     }
     /// Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. Set values for the QVBR quality level field and Max bitrate field that suit your most important viewing devices. Recommended values are: - Primary screen: Quality level: 8 to 10. Max bitrate: 4M - PC or tablet: Quality level: 7. Max bitrate: 1.5M to 3M - Smartphone: Quality level: 6. Max bitrate: 1M to 1.5M
     pub fn get_qvbr_quality_level(&self) -> &::std::option::Option<i32> {
@@ -561,8 +538,7 @@ impl H265SettingsBuilder {
     }
     /// Rate control mode. QVBR: Quality will match the specified quality level except when it is constrained by the maximum bitrate. Recommended if you or your viewers pay for bandwidth. CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to devices that cannot handle variable bitrates. Multiplex: This rate control mode is only supported (and is required) when the video is being delivered to a MediaLive Multiplex in which case the rate control configuration is controlled by the properties within the Multiplex Program.
     pub fn set_rate_control_mode(mut self, input: ::std::option::Option<crate::types::H265RateControlMode>) -> Self {
-        self.rate_control_mode = input;
-        self
+        self.rate_control_mode = input; self
     }
     /// Rate control mode. QVBR: Quality will match the specified quality level except when it is constrained by the maximum bitrate. Recommended if you or your viewers pay for bandwidth. CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to devices that cannot handle variable bitrates. Multiplex: This rate control mode is only supported (and is required) when the video is being delivered to a MediaLive Multiplex in which case the rate control configuration is controlled by the properties within the Multiplex Program.
     pub fn get_rate_control_mode(&self) -> &::std::option::Option<crate::types::H265RateControlMode> {
@@ -575,8 +551,7 @@ impl H265SettingsBuilder {
     }
     /// Sets the scan type of the output to progressive or top-field-first interlaced.
     pub fn set_scan_type(mut self, input: ::std::option::Option<crate::types::H265ScanType>) -> Self {
-        self.scan_type = input;
-        self
+        self.scan_type = input; self
     }
     /// Sets the scan type of the output to progressive or top-field-first interlaced.
     pub fn get_scan_type(&self) -> &::std::option::Option<crate::types::H265ScanType> {
@@ -589,8 +564,7 @@ impl H265SettingsBuilder {
     }
     /// Scene change detection.
     pub fn set_scene_change_detect(mut self, input: ::std::option::Option<crate::types::H265SceneChangeDetect>) -> Self {
-        self.scene_change_detect = input;
-        self
+        self.scene_change_detect = input; self
     }
     /// Scene change detection.
     pub fn get_scene_change_detect(&self) -> &::std::option::Option<crate::types::H265SceneChangeDetect> {
@@ -603,8 +577,7 @@ impl H265SettingsBuilder {
     }
     /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures. This field is optional; when no value is specified the encoder will choose the number of slices based on encode resolution.
     pub fn set_slices(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.slices = input;
-        self
+        self.slices = input; self
     }
     /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures. This field is optional; when no value is specified the encoder will choose the number of slices based on encode resolution.
     pub fn get_slices(&self) -> &::std::option::Option<i32> {
@@ -617,8 +590,7 @@ impl H265SettingsBuilder {
     }
     /// H.265 Tier.
     pub fn set_tier(mut self, input: ::std::option::Option<crate::types::H265Tier>) -> Self {
-        self.tier = input;
-        self
+        self.tier = input; self
     }
     /// H.265 Tier.
     pub fn get_tier(&self) -> &::std::option::Option<crate::types::H265Tier> {
@@ -631,8 +603,7 @@ impl H265SettingsBuilder {
     }
     /// Determines how timecodes should be inserted into the video elementary stream. - 'disabled': Do not include timecodes - 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config
     pub fn set_timecode_insertion(mut self, input: ::std::option::Option<crate::types::H265TimecodeInsertionBehavior>) -> Self {
-        self.timecode_insertion = input;
-        self
+        self.timecode_insertion = input; self
     }
     /// Determines how timecodes should be inserted into the video elementary stream. - 'disabled': Do not include timecodes - 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config
     pub fn get_timecode_insertion(&self) -> &::std::option::Option<crate::types::H265TimecodeInsertionBehavior> {
@@ -645,8 +616,7 @@ impl H265SettingsBuilder {
     }
     /// Timecode burn-in settings
     pub fn set_timecode_burnin_settings(mut self, input: ::std::option::Option<crate::types::TimecodeBurninSettings>) -> Self {
-        self.timecode_burnin_settings = input;
-        self
+        self.timecode_burnin_settings = input; self
     }
     /// Timecode burn-in settings
     pub fn get_timecode_burnin_settings(&self) -> &::std::option::Option<crate::types::TimecodeBurninSettings> {
@@ -655,36 +625,67 @@ impl H265SettingsBuilder {
     /// Consumes the builder and constructs a [`H265Settings`](crate::types::H265Settings).
     pub fn build(self) -> crate::types::H265Settings {
         crate::types::H265Settings {
-            adaptive_quantization: self.adaptive_quantization,
-            afd_signaling: self.afd_signaling,
-            alternative_transfer_function: self.alternative_transfer_function,
-            bitrate: self.bitrate,
-            buf_size: self.buf_size,
-            color_metadata: self.color_metadata,
-            color_space_settings: self.color_space_settings,
-            filter_settings: self.filter_settings,
-            fixed_afd: self.fixed_afd,
-            flicker_aq: self.flicker_aq,
-            framerate_denominator: self.framerate_denominator,
-            framerate_numerator: self.framerate_numerator,
-            gop_closed_cadence: self.gop_closed_cadence,
-            gop_size: self.gop_size,
-            gop_size_units: self.gop_size_units,
-            level: self.level,
-            look_ahead_rate_control: self.look_ahead_rate_control,
-            max_bitrate: self.max_bitrate,
-            min_i_interval: self.min_i_interval,
-            par_denominator: self.par_denominator,
-            par_numerator: self.par_numerator,
-            profile: self.profile,
-            qvbr_quality_level: self.qvbr_quality_level,
-            rate_control_mode: self.rate_control_mode,
-            scan_type: self.scan_type,
-            scene_change_detect: self.scene_change_detect,
-            slices: self.slices,
-            tier: self.tier,
-            timecode_insertion: self.timecode_insertion,
-            timecode_burnin_settings: self.timecode_burnin_settings,
+            adaptive_quantization: self.adaptive_quantization
+            ,
+            afd_signaling: self.afd_signaling
+            ,
+            alternative_transfer_function: self.alternative_transfer_function
+            ,
+            bitrate: self.bitrate
+            ,
+            buf_size: self.buf_size
+            ,
+            color_metadata: self.color_metadata
+            ,
+            color_space_settings: self.color_space_settings
+            ,
+            filter_settings: self.filter_settings
+            ,
+            fixed_afd: self.fixed_afd
+            ,
+            flicker_aq: self.flicker_aq
+            ,
+            framerate_denominator: self.framerate_denominator
+            ,
+            framerate_numerator: self.framerate_numerator
+            ,
+            gop_closed_cadence: self.gop_closed_cadence
+            ,
+            gop_size: self.gop_size
+            ,
+            gop_size_units: self.gop_size_units
+            ,
+            level: self.level
+            ,
+            look_ahead_rate_control: self.look_ahead_rate_control
+            ,
+            max_bitrate: self.max_bitrate
+            ,
+            min_i_interval: self.min_i_interval
+            ,
+            par_denominator: self.par_denominator
+            ,
+            par_numerator: self.par_numerator
+            ,
+            profile: self.profile
+            ,
+            qvbr_quality_level: self.qvbr_quality_level
+            ,
+            rate_control_mode: self.rate_control_mode
+            ,
+            scan_type: self.scan_type
+            ,
+            scene_change_detect: self.scene_change_detect
+            ,
+            slices: self.slices
+            ,
+            tier: self.tier
+            ,
+            timecode_insertion: self.timecode_insertion
+            ,
+            timecode_burnin_settings: self.timecode_burnin_settings
+            ,
         }
     }
 }
+

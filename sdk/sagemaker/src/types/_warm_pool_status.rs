@@ -3,7 +3,7 @@
 /// <p>Status and billing information about the warm pool.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WarmPoolStatus {
+pub struct WarmPoolStatus  {
     /// <p>The status of the warm pool.</p>
     /// <ul>
     /// <li>
@@ -22,7 +22,7 @@ pub struct WarmPoolStatus {
     /// <p>The name of the matching training job that reused the warm pool.</p>
     pub reused_by_job: ::std::option::Option<::std::string::String>,
 }
-impl WarmPoolStatus {
+impl  WarmPoolStatus  {
     /// <p>The status of the warm pool.</p>
     /// <ul>
     /// <li>
@@ -34,7 +34,7 @@ impl WarmPoolStatus {
     /// <li>
     /// <p><code>Terminated</code>: The warm pool is no longer available. Warm pools are unavailable if they are terminated by a user, terminated for a patch update, or terminated for exceeding the specified <code>KeepAlivePeriodInSeconds</code>.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::WarmPoolResourceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::WarmPoolResourceStatus> {
         self.status.as_ref()
     }
     /// <p>The billable time in seconds used by the warm pool. Billable time refers to the absolute wall-clock time.</p>
@@ -43,7 +43,7 @@ impl WarmPoolStatus {
         self.resource_retained_billable_time_in_seconds
     }
     /// <p>The name of the matching training job that reused the warm pool.</p>
-    pub fn reused_by_job(&self) -> ::std::option::Option<&str> {
+    pub fn reused_by_job(&self) -> ::std::option::Option<& str> {
         self.reused_by_job.as_deref()
     }
 }
@@ -91,8 +91,7 @@ impl WarmPoolStatusBuilder {
     /// <p><code>Terminated</code>: The warm pool is no longer available. Warm pools are unavailable if they are terminated by a user, terminated for a patch update, or terminated for exceeding the specified <code>KeepAlivePeriodInSeconds</code>.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::WarmPoolResourceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the warm pool.</p>
     /// <ul>
@@ -117,8 +116,7 @@ impl WarmPoolStatusBuilder {
     /// <p>The billable time in seconds used by the warm pool. Billable time refers to the absolute wall-clock time.</p>
     /// <p>Multiply <code>ResourceRetainedBillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in your training cluster to get the total compute time SageMaker bills you if you run warm pool training. The formula is as follows: <code>ResourceRetainedBillableTimeInSeconds * InstanceCount</code>.</p>
     pub fn set_resource_retained_billable_time_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.resource_retained_billable_time_in_seconds = input;
-        self
+        self.resource_retained_billable_time_in_seconds = input; self
     }
     /// <p>The billable time in seconds used by the warm pool. Billable time refers to the absolute wall-clock time.</p>
     /// <p>Multiply <code>ResourceRetainedBillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in your training cluster to get the total compute time SageMaker bills you if you run warm pool training. The formula is as follows: <code>ResourceRetainedBillableTimeInSeconds * InstanceCount</code>.</p>
@@ -132,8 +130,7 @@ impl WarmPoolStatusBuilder {
     }
     /// <p>The name of the matching training job that reused the warm pool.</p>
     pub fn set_reused_by_job(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reused_by_job = input;
-        self
+        self.reused_by_job = input; self
     }
     /// <p>The name of the matching training job that reused the warm pool.</p>
     pub fn get_reused_by_job(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,9 +139,13 @@ impl WarmPoolStatusBuilder {
     /// Consumes the builder and constructs a [`WarmPoolStatus`](crate::types::WarmPoolStatus).
     pub fn build(self) -> crate::types::WarmPoolStatus {
         crate::types::WarmPoolStatus {
-            status: self.status,
-            resource_retained_billable_time_in_seconds: self.resource_retained_billable_time_in_seconds,
-            reused_by_job: self.reused_by_job,
+            status: self.status
+            ,
+            resource_retained_billable_time_in_seconds: self.resource_retained_billable_time_in_seconds
+            ,
+            reused_by_job: self.reused_by_job
+            ,
         }
     }
 }
+

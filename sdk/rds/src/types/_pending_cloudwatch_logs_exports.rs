@@ -3,24 +3,26 @@
 /// <p>A list of the log types whose configuration is still pending. In other words, these log types are in the process of being activated or deactivated.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PendingCloudwatchLogsExports {
+pub struct PendingCloudwatchLogsExports  {
     /// <p>Log types that are in the process of being deactivated. After they are deactivated, these log types aren't exported to CloudWatch Logs.</p>
-    pub log_types_to_enable: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub log_types_to_enable: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Log types that are in the process of being enabled. After they are enabled, these log types are exported to CloudWatch Logs.</p>
-    pub log_types_to_disable: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub log_types_to_disable: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl PendingCloudwatchLogsExports {
+impl  PendingCloudwatchLogsExports  {
     /// <p>Log types that are in the process of being deactivated. After they are deactivated, these log types aren't exported to CloudWatch Logs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_types_to_enable.is_none()`.
-    pub fn log_types_to_enable(&self) -> &[::std::string::String] {
-        self.log_types_to_enable.as_deref().unwrap_or_default()
+    pub fn log_types_to_enable(&self) -> & [::std::string::String] {
+        self.log_types_to_enable.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Log types that are in the process of being enabled. After they are enabled, these log types are exported to CloudWatch Logs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_types_to_disable.is_none()`.
-    pub fn log_types_to_disable(&self) -> &[::std::string::String] {
-        self.log_types_to_disable.as_deref().unwrap_or_default()
+    pub fn log_types_to_disable(&self) -> & [::std::string::String] {
+        self.log_types_to_disable.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PendingCloudwatchLogsExports {
@@ -34,8 +36,8 @@ impl PendingCloudwatchLogsExports {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PendingCloudwatchLogsExportsBuilder {
-    pub(crate) log_types_to_enable: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) log_types_to_disable: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) log_types_to_enable: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) log_types_to_disable: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl PendingCloudwatchLogsExportsBuilder {
     /// Appends an item to `log_types_to_enable`.
@@ -45,17 +47,16 @@ impl PendingCloudwatchLogsExportsBuilder {
     /// <p>Log types that are in the process of being deactivated. After they are deactivated, these log types aren't exported to CloudWatch Logs.</p>
     pub fn log_types_to_enable(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.log_types_to_enable.unwrap_or_default();
-        v.push(input.into());
-        self.log_types_to_enable = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.log_types_to_enable = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Log types that are in the process of being deactivated. After they are deactivated, these log types aren't exported to CloudWatch Logs.</p>
-    pub fn set_log_types_to_enable(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.log_types_to_enable = input;
-        self
+    pub fn set_log_types_to_enable(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.log_types_to_enable = input; self
     }
     /// <p>Log types that are in the process of being deactivated. After they are deactivated, these log types aren't exported to CloudWatch Logs.</p>
-    pub fn get_log_types_to_enable(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_log_types_to_enable(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.log_types_to_enable
     }
     /// Appends an item to `log_types_to_disable`.
@@ -65,24 +66,26 @@ impl PendingCloudwatchLogsExportsBuilder {
     /// <p>Log types that are in the process of being enabled. After they are enabled, these log types are exported to CloudWatch Logs.</p>
     pub fn log_types_to_disable(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.log_types_to_disable.unwrap_or_default();
-        v.push(input.into());
-        self.log_types_to_disable = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.log_types_to_disable = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Log types that are in the process of being enabled. After they are enabled, these log types are exported to CloudWatch Logs.</p>
-    pub fn set_log_types_to_disable(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.log_types_to_disable = input;
-        self
+    pub fn set_log_types_to_disable(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.log_types_to_disable = input; self
     }
     /// <p>Log types that are in the process of being enabled. After they are enabled, these log types are exported to CloudWatch Logs.</p>
-    pub fn get_log_types_to_disable(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_log_types_to_disable(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.log_types_to_disable
     }
     /// Consumes the builder and constructs a [`PendingCloudwatchLogsExports`](crate::types::PendingCloudwatchLogsExports).
     pub fn build(self) -> crate::types::PendingCloudwatchLogsExports {
         crate::types::PendingCloudwatchLogsExports {
-            log_types_to_enable: self.log_types_to_enable,
-            log_types_to_disable: self.log_types_to_disable,
+            log_types_to_enable: self.log_types_to_enable
+            ,
+            log_types_to_disable: self.log_types_to_disable
+            ,
         }
     }
 }
+

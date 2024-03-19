@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMonitorsOutput {
+pub struct ListMonitorsOutput  {
     /// <p>A list of monitors.</p>
-    pub monitors: ::std::vec::Vec<crate::types::Monitor>,
+    pub monitors: ::std::vec::Vec::<crate::types::Monitor>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListMonitorsOutput {
+impl  ListMonitorsOutput  {
     /// <p>A list of monitors.</p>
-    pub fn monitors(&self) -> &[crate::types::Monitor] {
-        use std::ops::Deref;
-        self.monitors.deref()
+    pub fn monitors(&self) -> & [crate::types::Monitor] {
+        use std::ops::Deref; self.monitors.deref()
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListMonitorsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListMonitorsOutput {
     /// Creates a new builder-style object to manufacture [`ListMonitorsOutput`](crate::operation::list_monitors::ListMonitorsOutput).
     pub fn builder() -> crate::operation::list_monitors::builders::ListMonitorsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListMonitorsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMonitorsOutputBuilder {
-    pub(crate) monitors: ::std::option::Option<::std::vec::Vec<crate::types::Monitor>>,
+    pub(crate) monitors: ::std::option::Option<::std::vec::Vec::<crate::types::Monitor>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListMonitorsOutputBuilder {
     /// <p>A list of monitors.</p>
     pub fn monitors(mut self, input: crate::types::Monitor) -> Self {
         let mut v = self.monitors.unwrap_or_default();
-        v.push(input);
-        self.monitors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.monitors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of monitors.</p>
-    pub fn set_monitors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Monitor>>) -> Self {
-        self.monitors = input;
-        self
+    pub fn set_monitors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Monitor>>) -> Self {
+        self.monitors = input; self
     }
     /// <p>A list of monitors.</p>
-    pub fn get_monitors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Monitor>> {
+    pub fn get_monitors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Monitor>> {
         &self.monitors
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
@@ -68,37 +66,37 @@ impl ListMonitorsOutputBuilder {
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListMonitorsOutput`](crate::operation::list_monitors::ListMonitorsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`monitors`](crate::operation::list_monitors::builders::ListMonitorsOutputBuilder::monitors)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_monitors::ListMonitorsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_monitors::ListMonitorsOutput {
-            monitors: self.monitors.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "monitors",
-                    "monitors was not specified but it is required when building ListMonitorsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_monitors::ListMonitorsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_monitors::ListMonitorsOutput {
+                monitors: self.monitors
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("monitors", "monitors was not specified but it is required when building ListMonitorsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

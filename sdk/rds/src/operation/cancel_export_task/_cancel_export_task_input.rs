@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelExportTaskInput {
+pub struct CancelExportTaskInput  {
     /// <p>The identifier of the snapshot or cluster export task to cancel.</p>
     pub export_task_identifier: ::std::option::Option<::std::string::String>,
 }
-impl CancelExportTaskInput {
+impl  CancelExportTaskInput  {
     /// <p>The identifier of the snapshot or cluster export task to cancel.</p>
-    pub fn export_task_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn export_task_identifier(&self) -> ::std::option::Option<& str> {
         self.export_task_identifier.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl CancelExportTaskInputBuilder {
     }
     /// <p>The identifier of the snapshot or cluster export task to cancel.</p>
     pub fn set_export_task_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.export_task_identifier = input;
-        self
+        self.export_task_identifier = input; self
     }
     /// <p>The identifier of the snapshot or cluster export task to cancel.</p>
     pub fn get_export_task_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.export_task_identifier
     }
     /// Consumes the builder and constructs a [`CancelExportTaskInput`](crate::operation::cancel_export_task::CancelExportTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::cancel_export_task::CancelExportTaskInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::cancel_export_task::CancelExportTaskInput {
-            export_task_identifier: self.export_task_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_export_task::CancelExportTaskInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_export_task::CancelExportTaskInput {
+                export_task_identifier: self.export_task_identifier
+                ,
+            }
+        )
     }
 }
+

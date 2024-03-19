@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAutomationExecutions`](crate::operation::describe_automation_executions::builders::DescribeAutomationExecutionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_automation_executions::builders::DescribeAutomationExecutionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filters(AutomationExecutionFilter)`](crate::operation::describe_automation_executions::builders::DescribeAutomationExecutionsFluentBuilder::filters) / [`set_filters(Option<Vec::<AutomationExecutionFilter>>)`](crate::operation::describe_automation_executions::builders::DescribeAutomationExecutionsFluentBuilder::set_filters):<br>required: **false**<br><p>Filters used to limit the scope of executions that are requested.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_automation_executions::builders::DescribeAutomationExecutionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_automation_executions::builders::DescribeAutomationExecutionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_automation_executions::builders::DescribeAutomationExecutionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_automation_executions::builders::DescribeAutomationExecutionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of items to return. (You received this token from a previous call.)</p><br>
-    /// - On success, responds with [`DescribeAutomationExecutionsOutput`](crate::operation::describe_automation_executions::DescribeAutomationExecutionsOutput) with field(s):
+                            /// - On success, responds with [`DescribeAutomationExecutionsOutput`](crate::operation::describe_automation_executions::DescribeAutomationExecutionsOutput) with field(s):
     ///   - [`automation_execution_metadata_list(Option<Vec::<AutomationExecutionMetadata>>)`](crate::operation::describe_automation_executions::DescribeAutomationExecutionsOutput::automation_execution_metadata_list): <p>The list of details about each automation execution which has occurred which matches the filter specification, if any.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_automation_executions::DescribeAutomationExecutionsOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    /// - On failure, responds with [`SdkError<DescribeAutomationExecutionsError>`](crate::operation::describe_automation_executions::DescribeAutomationExecutionsError)
-    pub fn describe_automation_executions(
-        &self,
-    ) -> crate::operation::describe_automation_executions::builders::DescribeAutomationExecutionsFluentBuilder {
-        crate::operation::describe_automation_executions::builders::DescribeAutomationExecutionsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeAutomationExecutionsError>`](crate::operation::describe_automation_executions::DescribeAutomationExecutionsError)
+    pub fn describe_automation_executions(&self) -> crate::operation::describe_automation_executions::builders::DescribeAutomationExecutionsFluentBuilder {
+                                crate::operation::describe_automation_executions::builders::DescribeAutomationExecutionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

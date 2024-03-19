@@ -3,13 +3,13 @@
 /// <p>TD-SCDMA local identification (local Id) information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TdscdmaLocalId {
+pub struct TdscdmaLocalId  {
     /// <p>TD-SCDMA UTRA (Universal Terrestrial Radio Access Network) absolute RF channel number (UARFCN).</p>
     pub uarfcn: i32,
     /// <p>Cell parameters for TD-SCDMA.</p>
     pub cell_params: i32,
 }
-impl TdscdmaLocalId {
+impl  TdscdmaLocalId  {
     /// <p>TD-SCDMA UTRA (Universal Terrestrial Radio Access Network) absolute RF channel number (UARFCN).</p>
     pub fn uarfcn(&self) -> i32 {
         self.uarfcn
@@ -42,8 +42,7 @@ impl TdscdmaLocalIdBuilder {
     }
     /// <p>TD-SCDMA UTRA (Universal Terrestrial Radio Access Network) absolute RF channel number (UARFCN).</p>
     pub fn set_uarfcn(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.uarfcn = input;
-        self
+        self.uarfcn = input; self
     }
     /// <p>TD-SCDMA UTRA (Universal Terrestrial Radio Access Network) absolute RF channel number (UARFCN).</p>
     pub fn get_uarfcn(&self) -> &::std::option::Option<i32> {
@@ -57,8 +56,7 @@ impl TdscdmaLocalIdBuilder {
     }
     /// <p>Cell parameters for TD-SCDMA.</p>
     pub fn set_cell_params(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.cell_params = input;
-        self
+        self.cell_params = input; self
     }
     /// <p>Cell parameters for TD-SCDMA.</p>
     pub fn get_cell_params(&self) -> &::std::option::Option<i32> {
@@ -69,19 +67,20 @@ impl TdscdmaLocalIdBuilder {
     /// - [`uarfcn`](crate::types::builders::TdscdmaLocalIdBuilder::uarfcn)
     /// - [`cell_params`](crate::types::builders::TdscdmaLocalIdBuilder::cell_params)
     pub fn build(self) -> ::std::result::Result<crate::types::TdscdmaLocalId, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TdscdmaLocalId {
-            uarfcn: self.uarfcn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "uarfcn",
-                    "uarfcn was not specified but it is required when building TdscdmaLocalId",
-                )
-            })?,
-            cell_params: self.cell_params.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "cell_params",
-                    "cell_params was not specified but it is required when building TdscdmaLocalId",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TdscdmaLocalId {
+                uarfcn: self.uarfcn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("uarfcn", "uarfcn was not specified but it is required when building TdscdmaLocalId")
+                    )?
+                ,
+                cell_params: self.cell_params
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("cell_params", "cell_params was not specified but it is required when building TdscdmaLocalId")
+                    )?
+                ,
+            }
+        )
     }
 }
+

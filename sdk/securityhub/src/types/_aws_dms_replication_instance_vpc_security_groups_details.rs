@@ -3,13 +3,13 @@
 /// <p>Provides details about the virtual private cloud (VPC) security group that’s associated with the replication instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsDmsReplicationInstanceVpcSecurityGroupsDetails {
+pub struct AwsDmsReplicationInstanceVpcSecurityGroupsDetails  {
     /// <p>The identifier of the VPC security group that’s associated with the replication instance.</p>
     pub vpc_security_group_id: ::std::option::Option<::std::string::String>,
 }
-impl AwsDmsReplicationInstanceVpcSecurityGroupsDetails {
+impl  AwsDmsReplicationInstanceVpcSecurityGroupsDetails  {
     /// <p>The identifier of the VPC security group that’s associated with the replication instance.</p>
-    pub fn vpc_security_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_security_group_id(&self) -> ::std::option::Option<& str> {
         self.vpc_security_group_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AwsDmsReplicationInstanceVpcSecurityGroupsDetailsBuilder {
     }
     /// <p>The identifier of the VPC security group that’s associated with the replication instance.</p>
     pub fn set_vpc_security_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_security_group_id = input;
-        self
+        self.vpc_security_group_id = input; self
     }
     /// <p>The identifier of the VPC security group that’s associated with the replication instance.</p>
     pub fn get_vpc_security_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl AwsDmsReplicationInstanceVpcSecurityGroupsDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsDmsReplicationInstanceVpcSecurityGroupsDetails`](crate::types::AwsDmsReplicationInstanceVpcSecurityGroupsDetails).
     pub fn build(self) -> crate::types::AwsDmsReplicationInstanceVpcSecurityGroupsDetails {
         crate::types::AwsDmsReplicationInstanceVpcSecurityGroupsDetails {
-            vpc_security_group_id: self.vpc_security_group_id,
+            vpc_security_group_id: self.vpc_security_group_id
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains additional details about the state's execution, including its input and output data processing flow, and HTTP response information. The <code>inspectionLevel</code> request parameter specifies which details are returned.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InspectionDataResponse {
+pub struct InspectionDataResponse  {
     /// <p>The protocol used to return the HTTP response.</p>
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP response status code for the HTTP response.</p>
@@ -15,25 +15,25 @@ pub struct InspectionDataResponse {
     /// <p>The HTTP response returned.</p>
     pub body: ::std::option::Option<::std::string::String>,
 }
-impl InspectionDataResponse {
+impl  InspectionDataResponse  {
     /// <p>The protocol used to return the HTTP response.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&str> {
+    pub fn protocol(&self) -> ::std::option::Option<& str> {
         self.protocol.as_deref()
     }
     /// <p>The HTTP response status code for the HTTP response.</p>
-    pub fn status_code(&self) -> ::std::option::Option<&str> {
+    pub fn status_code(&self) -> ::std::option::Option<& str> {
         self.status_code.as_deref()
     }
     /// <p>The message associated with the HTTP status code.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The response headers associated with the HTTP response.</p>
-    pub fn headers(&self) -> ::std::option::Option<&str> {
+    pub fn headers(&self) -> ::std::option::Option<& str> {
         self.headers.as_deref()
     }
     /// <p>The HTTP response returned.</p>
-    pub fn body(&self) -> ::std::option::Option<&str> {
+    pub fn body(&self) -> ::std::option::Option<& str> {
         self.body.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl InspectionDataResponseBuilder {
     }
     /// <p>The protocol used to return the HTTP response.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// <p>The protocol used to return the HTTP response.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl InspectionDataResponseBuilder {
     }
     /// <p>The HTTP response status code for the HTTP response.</p>
     pub fn set_status_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_code = input;
-        self
+        self.status_code = input; self
     }
     /// <p>The HTTP response status code for the HTTP response.</p>
     pub fn get_status_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl InspectionDataResponseBuilder {
     }
     /// <p>The message associated with the HTTP status code.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The message associated with the HTTP status code.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl InspectionDataResponseBuilder {
     }
     /// <p>The response headers associated with the HTTP response.</p>
     pub fn set_headers(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.headers = input;
-        self
+        self.headers = input; self
     }
     /// <p>The response headers associated with the HTTP response.</p>
     pub fn get_headers(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl InspectionDataResponseBuilder {
     }
     /// <p>The HTTP response returned.</p>
     pub fn set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.body = input;
-        self
+        self.body = input; self
     }
     /// <p>The HTTP response returned.</p>
     pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,11 +123,17 @@ impl InspectionDataResponseBuilder {
     /// Consumes the builder and constructs a [`InspectionDataResponse`](crate::types::InspectionDataResponse).
     pub fn build(self) -> crate::types::InspectionDataResponse {
         crate::types::InspectionDataResponse {
-            protocol: self.protocol,
-            status_code: self.status_code,
-            status_message: self.status_message,
-            headers: self.headers,
-            body: self.body,
+            protocol: self.protocol
+            ,
+            status_code: self.status_code
+            ,
+            status_message: self.status_message
+            ,
+            headers: self.headers
+            ,
+            body: self.body
+            ,
         }
     }
 }
+

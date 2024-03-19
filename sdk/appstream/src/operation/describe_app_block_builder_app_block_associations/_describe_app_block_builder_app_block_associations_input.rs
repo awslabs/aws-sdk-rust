@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAppBlockBuilderAppBlockAssociationsInput {
+pub struct DescribeAppBlockBuilderAppBlockAssociationsInput  {
     /// <p>The ARN of the app block.</p>
     pub app_block_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the app block builder.</p>
@@ -12,13 +12,13 @@ pub struct DescribeAppBlockBuilderAppBlockAssociationsInput {
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeAppBlockBuilderAppBlockAssociationsInput {
+impl  DescribeAppBlockBuilderAppBlockAssociationsInput  {
     /// <p>The ARN of the app block.</p>
-    pub fn app_block_arn(&self) -> ::std::option::Option<&str> {
+    pub fn app_block_arn(&self) -> ::std::option::Option<& str> {
         self.app_block_arn.as_deref()
     }
     /// <p>The name of the app block builder.</p>
-    pub fn app_block_builder_name(&self) -> ::std::option::Option<&str> {
+    pub fn app_block_builder_name(&self) -> ::std::option::Option<& str> {
         self.app_block_builder_name.as_deref()
     }
     /// <p>The maximum size of each page of results.</p>
@@ -26,14 +26,13 @@ impl DescribeAppBlockBuilderAppBlockAssociationsInput {
         self.max_results
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeAppBlockBuilderAppBlockAssociationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeAppBlockBuilderAppBlockAssociationsInput`](crate::operation::describe_app_block_builder_app_block_associations::DescribeAppBlockBuilderAppBlockAssociationsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_app_block_builder_app_block_associations::builders::DescribeAppBlockBuilderAppBlockAssociationsInputBuilder {
+    pub fn builder() -> crate::operation::describe_app_block_builder_app_block_associations::builders::DescribeAppBlockBuilderAppBlockAssociationsInputBuilder {
         crate::operation::describe_app_block_builder_app_block_associations::builders::DescribeAppBlockBuilderAppBlockAssociationsInputBuilder::default()
     }
 }
@@ -55,8 +54,7 @@ impl DescribeAppBlockBuilderAppBlockAssociationsInputBuilder {
     }
     /// <p>The ARN of the app block.</p>
     pub fn set_app_block_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_block_arn = input;
-        self
+        self.app_block_arn = input; self
     }
     /// <p>The ARN of the app block.</p>
     pub fn get_app_block_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +67,7 @@ impl DescribeAppBlockBuilderAppBlockAssociationsInputBuilder {
     }
     /// <p>The name of the app block builder.</p>
     pub fn set_app_block_builder_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_block_builder_name = input;
-        self
+        self.app_block_builder_name = input; self
     }
     /// <p>The name of the app block builder.</p>
     pub fn get_app_block_builder_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +80,7 @@ impl DescribeAppBlockBuilderAppBlockAssociationsInputBuilder {
     }
     /// <p>The maximum size of each page of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum size of each page of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -97,27 +93,26 @@ impl DescribeAppBlockBuilderAppBlockAssociationsInputBuilder {
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeAppBlockBuilderAppBlockAssociationsInput`](crate::operation::describe_app_block_builder_app_block_associations::DescribeAppBlockBuilderAppBlockAssociationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_app_block_builder_app_block_associations::DescribeAppBlockBuilderAppBlockAssociationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_app_block_builder_app_block_associations::DescribeAppBlockBuilderAppBlockAssociationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_app_block_builder_app_block_associations::DescribeAppBlockBuilderAppBlockAssociationsInput {
-                app_block_arn: self.app_block_arn,
-                app_block_builder_name: self.app_block_builder_name,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                app_block_arn: self.app_block_arn
+                ,
+                app_block_builder_name: self.app_block_builder_name
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

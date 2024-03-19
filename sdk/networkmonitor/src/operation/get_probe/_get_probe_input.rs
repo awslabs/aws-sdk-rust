@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetProbeInput {
+pub struct GetProbeInput  {
     /// <p>The name of the monitor associated with the probe. Run <code>ListMonitors</code> to get a list of monitor names.</p>
     pub monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the probe to get information about. Run <code>GetMonitor</code> action to get a list of probes and probe IDs for the monitor.</p>
     pub probe_id: ::std::option::Option<::std::string::String>,
 }
-impl GetProbeInput {
+impl  GetProbeInput  {
     /// <p>The name of the monitor associated with the probe. Run <code>ListMonitors</code> to get a list of monitor names.</p>
-    pub fn monitor_name(&self) -> ::std::option::Option<&str> {
+    pub fn monitor_name(&self) -> ::std::option::Option<& str> {
         self.monitor_name.as_deref()
     }
     /// <p>The ID of the probe to get information about. Run <code>GetMonitor</code> action to get a list of probes and probe IDs for the monitor.</p>
-    pub fn probe_id(&self) -> ::std::option::Option<&str> {
+    pub fn probe_id(&self) -> ::std::option::Option<& str> {
         self.probe_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetProbeInputBuilder {
     }
     /// <p>The name of the monitor associated with the probe. Run <code>ListMonitors</code> to get a list of monitor names.</p>
     pub fn set_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitor_name = input;
-        self
+        self.monitor_name = input; self
     }
     /// <p>The name of the monitor associated with the probe. Run <code>ListMonitors</code> to get a list of monitor names.</p>
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl GetProbeInputBuilder {
     }
     /// <p>The ID of the probe to get information about. Run <code>GetMonitor</code> action to get a list of probes and probe IDs for the monitor.</p>
     pub fn set_probe_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.probe_id = input;
-        self
+        self.probe_id = input; self
     }
     /// <p>The ID of the probe to get information about. Run <code>GetMonitor</code> action to get a list of probes and probe IDs for the monitor.</p>
     pub fn get_probe_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,9 +63,14 @@ impl GetProbeInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetProbeInput`](crate::operation::get_probe::GetProbeInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_probe::GetProbeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_probe::GetProbeInput {
-            monitor_name: self.monitor_name,
-            probe_id: self.probe_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_probe::GetProbeInput {
+                monitor_name: self.monitor_name
+                ,
+                probe_id: self.probe_id
+                ,
+            }
+        )
     }
 }
+

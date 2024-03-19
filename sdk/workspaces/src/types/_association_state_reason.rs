@@ -3,19 +3,19 @@
 /// <p>Indicates the reason that the association deployment failed, including the error code and error message.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociationStateReason {
+pub struct AssociationStateReason  {
     /// <p>The error code of the association deployment failure.</p>
     pub error_code: ::std::option::Option<crate::types::AssociationErrorCode>,
     /// <p>The error message of the association deployment failure.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
-impl AssociationStateReason {
+impl  AssociationStateReason  {
     /// <p>The error code of the association deployment failure.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&crate::types::AssociationErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<& crate::types::AssociationErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The error message of the association deployment failure.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AssociationStateReasonBuilder {
     }
     /// <p>The error code of the association deployment failure.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::AssociationErrorCode>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code of the association deployment failure.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::AssociationErrorCode> {
@@ -55,8 +54,7 @@ impl AssociationStateReasonBuilder {
     }
     /// <p>The error message of the association deployment failure.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The error message of the association deployment failure.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AssociationStateReasonBuilder {
     /// Consumes the builder and constructs a [`AssociationStateReason`](crate::types::AssociationStateReason).
     pub fn build(self) -> crate::types::AssociationStateReason {
         crate::types::AssociationStateReason {
-            error_code: self.error_code,
-            error_message: self.error_message,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

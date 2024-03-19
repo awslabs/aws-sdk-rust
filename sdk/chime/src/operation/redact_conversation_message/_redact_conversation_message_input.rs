@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RedactConversationMessageInput {
+pub struct RedactConversationMessageInput  {
     /// <p>The Amazon Chime account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The conversation ID.</p>
@@ -10,17 +10,17 @@ pub struct RedactConversationMessageInput {
     /// <p>The message ID.</p>
     pub message_id: ::std::option::Option<::std::string::String>,
 }
-impl RedactConversationMessageInput {
+impl  RedactConversationMessageInput  {
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The conversation ID.</p>
-    pub fn conversation_id(&self) -> ::std::option::Option<&str> {
+    pub fn conversation_id(&self) -> ::std::option::Option<& str> {
         self.conversation_id.as_deref()
     }
     /// <p>The message ID.</p>
-    pub fn message_id(&self) -> ::std::option::Option<&str> {
+    pub fn message_id(&self) -> ::std::option::Option<& str> {
         self.message_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl RedactConversationMessageInputBuilder {
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl RedactConversationMessageInputBuilder {
     }
     /// <p>The conversation ID.</p>
     pub fn set_conversation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.conversation_id = input;
-        self
+        self.conversation_id = input; self
     }
     /// <p>The conversation ID.</p>
     pub fn get_conversation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl RedactConversationMessageInputBuilder {
     }
     /// <p>The message ID.</p>
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message_id = input;
-        self
+        self.message_id = input; self
     }
     /// <p>The message ID.</p>
     pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.message_id
     }
     /// Consumes the builder and constructs a [`RedactConversationMessageInput`](crate::operation::redact_conversation_message::RedactConversationMessageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::redact_conversation_message::RedactConversationMessageInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::redact_conversation_message::RedactConversationMessageInput {
-            account_id: self.account_id,
-            conversation_id: self.conversation_id,
-            message_id: self.message_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::redact_conversation_message::RedactConversationMessageInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::redact_conversation_message::RedactConversationMessageInput {
+                account_id: self.account_id
+                ,
+                conversation_id: self.conversation_id
+                ,
+                message_id: self.message_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetServiceNetworkInput {
+pub struct GetServiceNetworkInput  {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
     pub service_network_identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetServiceNetworkInput {
+impl  GetServiceNetworkInput  {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
-    pub fn service_network_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn service_network_identifier(&self) -> ::std::option::Option<& str> {
         self.service_network_identifier.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetServiceNetworkInputBuilder {
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
     pub fn set_service_network_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_network_identifier = input;
-        self
+        self.service_network_identifier = input; self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
     pub fn get_service_network_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_network_identifier
     }
     /// Consumes the builder and constructs a [`GetServiceNetworkInput`](crate::operation::get_service_network::GetServiceNetworkInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_service_network::GetServiceNetworkInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_service_network::GetServiceNetworkInput {
-            service_network_identifier: self.service_network_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_service_network::GetServiceNetworkInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_service_network::GetServiceNetworkInput {
+                service_network_identifier: self.service_network_identifier
+                ,
+            }
+        )
     }
 }
+

@@ -3,11 +3,11 @@
 /// Agentless Dialer config
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AgentlessDialerConfig {
+pub struct AgentlessDialerConfig  {
     /// Allocates dialing capacity for this campaign between multiple active campaigns
     pub dialing_capacity: ::std::option::Option<f64>,
 }
-impl AgentlessDialerConfig {
+impl  AgentlessDialerConfig  {
     /// Allocates dialing capacity for this campaign between multiple active campaigns
     pub fn dialing_capacity(&self) -> ::std::option::Option<f64> {
         self.dialing_capacity
@@ -34,8 +34,7 @@ impl AgentlessDialerConfigBuilder {
     }
     /// Allocates dialing capacity for this campaign between multiple active campaigns
     pub fn set_dialing_capacity(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.dialing_capacity = input;
-        self
+        self.dialing_capacity = input; self
     }
     /// Allocates dialing capacity for this campaign between multiple active campaigns
     pub fn get_dialing_capacity(&self) -> &::std::option::Option<f64> {
@@ -44,7 +43,9 @@ impl AgentlessDialerConfigBuilder {
     /// Consumes the builder and constructs a [`AgentlessDialerConfig`](crate::types::AgentlessDialerConfig).
     pub fn build(self) -> crate::types::AgentlessDialerConfig {
         crate::types::AgentlessDialerConfig {
-            dialing_capacity: self.dialing_capacity,
+            dialing_capacity: self.dialing_capacity
+            ,
         }
     }
 }
+

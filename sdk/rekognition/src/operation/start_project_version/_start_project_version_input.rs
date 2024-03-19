@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartProjectVersionInput {
+pub struct StartProjectVersionInput  {
     /// <p>The Amazon Resource Name(ARN) of the model version that you want to start.</p>
     pub project_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing.</p>
@@ -11,9 +11,9 @@ pub struct StartProjectVersionInput {
     /// <p>The maximum number of inference units to use for auto-scaling the model. If you don't specify a value, Amazon Rekognition Custom Labels doesn't auto-scale the model.</p>
     pub max_inference_units: ::std::option::Option<i32>,
 }
-impl StartProjectVersionInput {
+impl  StartProjectVersionInput  {
     /// <p>The Amazon Resource Name(ARN) of the model version that you want to start.</p>
-    pub fn project_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn project_version_arn(&self) -> ::std::option::Option<& str> {
         self.project_version_arn.as_deref()
     }
     /// <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing.</p>
@@ -50,8 +50,7 @@ impl StartProjectVersionInputBuilder {
     }
     /// <p>The Amazon Resource Name(ARN) of the model version that you want to start.</p>
     pub fn set_project_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_version_arn = input;
-        self
+        self.project_version_arn = input; self
     }
     /// <p>The Amazon Resource Name(ARN) of the model version that you want to start.</p>
     pub fn get_project_version_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +66,7 @@ impl StartProjectVersionInputBuilder {
     /// <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing.</p>
     /// <p>Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use.</p>
     pub fn set_min_inference_units(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_inference_units = input;
-        self
+        self.min_inference_units = input; self
     }
     /// <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing.</p>
     /// <p>Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use.</p>
@@ -82,22 +80,24 @@ impl StartProjectVersionInputBuilder {
     }
     /// <p>The maximum number of inference units to use for auto-scaling the model. If you don't specify a value, Amazon Rekognition Custom Labels doesn't auto-scale the model.</p>
     pub fn set_max_inference_units(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_inference_units = input;
-        self
+        self.max_inference_units = input; self
     }
     /// <p>The maximum number of inference units to use for auto-scaling the model. If you don't specify a value, Amazon Rekognition Custom Labels doesn't auto-scale the model.</p>
     pub fn get_max_inference_units(&self) -> &::std::option::Option<i32> {
         &self.max_inference_units
     }
     /// Consumes the builder and constructs a [`StartProjectVersionInput`](crate::operation::start_project_version::StartProjectVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_project_version::StartProjectVersionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_project_version::StartProjectVersionInput {
-            project_version_arn: self.project_version_arn,
-            min_inference_units: self.min_inference_units,
-            max_inference_units: self.max_inference_units,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_project_version::StartProjectVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_project_version::StartProjectVersionInput {
+                project_version_arn: self.project_version_arn
+                ,
+                min_inference_units: self.min_inference_units
+                ,
+                max_inference_units: self.max_inference_units
+                ,
+            }
+        )
     }
 }
+

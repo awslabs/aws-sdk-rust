@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let inputdeviceuhdaudiochannelpairprofile = unimplemented!();
 /// match inputdeviceuhdaudiochannelpairprofile {
@@ -36,16 +36,14 @@
 /// Specifically, when `inputdeviceuhdaudiochannelpairprofile` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InputDeviceUhdAudioChannelPairProfile::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Property of InputDeviceUhdAudioChannelPairConfig, which describes one audio channel that the device is configured to produce.
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum InputDeviceUhdAudioChannelPairProfile {
     #[allow(missing_docs)] // documentation missing in model
     CbrAacHq192000,
@@ -65,88 +63,80 @@ pub enum InputDeviceUhdAudioChannelPairProfile {
     VbrAacLc128000,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for InputDeviceUhdAudioChannelPairProfile {
-    fn from(s: &str) -> Self {
-        match s {
-            "CBR-AAC_HQ-192000" => InputDeviceUhdAudioChannelPairProfile::CbrAacHq192000,
-            "CBR-AAC_HQ-256000" => InputDeviceUhdAudioChannelPairProfile::CbrAacHq256000,
-            "CBR-AAC_HQ-384000" => InputDeviceUhdAudioChannelPairProfile::CbrAacHq384000,
-            "CBR-AAC_HQ-512000" => InputDeviceUhdAudioChannelPairProfile::CbrAacHq512000,
-            "DISABLED" => InputDeviceUhdAudioChannelPairProfile::Disabled,
-            "VBR-AAC_HE-64000" => InputDeviceUhdAudioChannelPairProfile::VbrAacHe64000,
-            "VBR-AAC_HHE-16000" => InputDeviceUhdAudioChannelPairProfile::VbrAacHhe16000,
-            "VBR-AAC_LC-128000" => InputDeviceUhdAudioChannelPairProfile::VbrAacLc128000,
-            other => InputDeviceUhdAudioChannelPairProfile::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "CBR-AAC_HQ-192000" => InputDeviceUhdAudioChannelPairProfile::CbrAacHq192000,
+"CBR-AAC_HQ-256000" => InputDeviceUhdAudioChannelPairProfile::CbrAacHq256000,
+"CBR-AAC_HQ-384000" => InputDeviceUhdAudioChannelPairProfile::CbrAacHq384000,
+"CBR-AAC_HQ-512000" => InputDeviceUhdAudioChannelPairProfile::CbrAacHq512000,
+"DISABLED" => InputDeviceUhdAudioChannelPairProfile::Disabled,
+"VBR-AAC_HE-64000" => InputDeviceUhdAudioChannelPairProfile::VbrAacHe64000,
+"VBR-AAC_HHE-16000" => InputDeviceUhdAudioChannelPairProfile::VbrAacHhe16000,
+"VBR-AAC_LC-128000" => InputDeviceUhdAudioChannelPairProfile::VbrAacLc128000,
+other => InputDeviceUhdAudioChannelPairProfile::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for InputDeviceUhdAudioChannelPairProfile {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(InputDeviceUhdAudioChannelPairProfile::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(InputDeviceUhdAudioChannelPairProfile::from(s))
+                    }
+                }
 impl InputDeviceUhdAudioChannelPairProfile {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            InputDeviceUhdAudioChannelPairProfile::CbrAacHq192000 => "CBR-AAC_HQ-192000",
-            InputDeviceUhdAudioChannelPairProfile::CbrAacHq256000 => "CBR-AAC_HQ-256000",
-            InputDeviceUhdAudioChannelPairProfile::CbrAacHq384000 => "CBR-AAC_HQ-384000",
-            InputDeviceUhdAudioChannelPairProfile::CbrAacHq512000 => "CBR-AAC_HQ-512000",
-            InputDeviceUhdAudioChannelPairProfile::Disabled => "DISABLED",
-            InputDeviceUhdAudioChannelPairProfile::VbrAacHe64000 => "VBR-AAC_HE-64000",
-            InputDeviceUhdAudioChannelPairProfile::VbrAacHhe16000 => "VBR-AAC_HHE-16000",
-            InputDeviceUhdAudioChannelPairProfile::VbrAacLc128000 => "VBR-AAC_LC-128000",
-            InputDeviceUhdAudioChannelPairProfile::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CBR-AAC_HQ-192000",
-            "CBR-AAC_HQ-256000",
-            "CBR-AAC_HQ-384000",
-            "CBR-AAC_HQ-512000",
-            "DISABLED",
-            "VBR-AAC_HE-64000",
-            "VBR-AAC_HHE-16000",
-            "VBR-AAC_LC-128000",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    InputDeviceUhdAudioChannelPairProfile::CbrAacHq192000 => "CBR-AAC_HQ-192000",
+    InputDeviceUhdAudioChannelPairProfile::CbrAacHq256000 => "CBR-AAC_HQ-256000",
+    InputDeviceUhdAudioChannelPairProfile::CbrAacHq384000 => "CBR-AAC_HQ-384000",
+    InputDeviceUhdAudioChannelPairProfile::CbrAacHq512000 => "CBR-AAC_HQ-512000",
+    InputDeviceUhdAudioChannelPairProfile::Disabled => "DISABLED",
+    InputDeviceUhdAudioChannelPairProfile::VbrAacHe64000 => "VBR-AAC_HE-64000",
+    InputDeviceUhdAudioChannelPairProfile::VbrAacHhe16000 => "VBR-AAC_HHE-16000",
+    InputDeviceUhdAudioChannelPairProfile::VbrAacLc128000 => "VBR-AAC_LC-128000",
+    InputDeviceUhdAudioChannelPairProfile::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CBR-AAC_HQ-192000", "CBR-AAC_HQ-256000", "CBR-AAC_HQ-384000", "CBR-AAC_HQ-512000", "DISABLED", "VBR-AAC_HE-64000", "VBR-AAC_HHE-16000", "VBR-AAC_LC-128000"]
+                }
+            }
 impl ::std::convert::AsRef<str> for InputDeviceUhdAudioChannelPairProfile {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl InputDeviceUhdAudioChannelPairProfile {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for InputDeviceUhdAudioChannelPairProfile {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            InputDeviceUhdAudioChannelPairProfile::CbrAacHq192000 => write!(f, "CBR-AAC_HQ-192000"),
-            InputDeviceUhdAudioChannelPairProfile::CbrAacHq256000 => write!(f, "CBR-AAC_HQ-256000"),
-            InputDeviceUhdAudioChannelPairProfile::CbrAacHq384000 => write!(f, "CBR-AAC_HQ-384000"),
-            InputDeviceUhdAudioChannelPairProfile::CbrAacHq512000 => write!(f, "CBR-AAC_HQ-512000"),
-            InputDeviceUhdAudioChannelPairProfile::Disabled => write!(f, "DISABLED"),
-            InputDeviceUhdAudioChannelPairProfile::VbrAacHe64000 => write!(f, "VBR-AAC_HE-64000"),
-            InputDeviceUhdAudioChannelPairProfile::VbrAacHhe16000 => write!(f, "VBR-AAC_HHE-16000"),
-            InputDeviceUhdAudioChannelPairProfile::VbrAacLc128000 => write!(f, "VBR-AAC_LC-128000"),
-            InputDeviceUhdAudioChannelPairProfile::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                InputDeviceUhdAudioChannelPairProfile::CbrAacHq192000 => write!(f, "CBR-AAC_HQ-192000"),
+InputDeviceUhdAudioChannelPairProfile::CbrAacHq256000 => write!(f, "CBR-AAC_HQ-256000"),
+InputDeviceUhdAudioChannelPairProfile::CbrAacHq384000 => write!(f, "CBR-AAC_HQ-384000"),
+InputDeviceUhdAudioChannelPairProfile::CbrAacHq512000 => write!(f, "CBR-AAC_HQ-512000"),
+InputDeviceUhdAudioChannelPairProfile::Disabled => write!(f, "DISABLED"),
+InputDeviceUhdAudioChannelPairProfile::VbrAacHe64000 => write!(f, "VBR-AAC_HE-64000"),
+InputDeviceUhdAudioChannelPairProfile::VbrAacHhe16000 => write!(f, "VBR-AAC_HHE-16000"),
+InputDeviceUhdAudioChannelPairProfile::VbrAacLc128000 => write!(f, "VBR-AAC_LC-128000"),
+InputDeviceUhdAudioChannelPairProfile::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

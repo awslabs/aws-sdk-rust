@@ -3,19 +3,19 @@
 /// <p>The error code and description resulting from an operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecordError {
+pub struct RecordError  {
     /// <p>The numeric value of the error.</p>
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>The description of the error.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl RecordError {
+impl  RecordError  {
     /// <p>The numeric value of the error.</p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>The description of the error.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl RecordErrorBuilder {
     }
     /// <p>The numeric value of the error.</p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The numeric value of the error.</p>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl RecordErrorBuilder {
     }
     /// <p>The description of the error.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the error.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl RecordErrorBuilder {
     /// Consumes the builder and constructs a [`RecordError`](crate::types::RecordError).
     pub fn build(self) -> crate::types::RecordError {
         crate::types::RecordError {
-            code: self.code,
-            description: self.description,
+            code: self.code
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// Instance onboarding job status object
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceOnboardingJobStatus {
+pub struct InstanceOnboardingJobStatus  {
     /// Amazon Connect Instance Id
     pub connect_instance_id: ::std::string::String,
     /// Enumeration of the possible states for instance onboarding job
@@ -11,18 +11,17 @@ pub struct InstanceOnboardingJobStatus {
     /// Enumeration of the possible failure codes for instance onboarding job
     pub failure_code: ::std::option::Option<crate::types::InstanceOnboardingJobFailureCode>,
 }
-impl InstanceOnboardingJobStatus {
+impl  InstanceOnboardingJobStatus  {
     /// Amazon Connect Instance Id
-    pub fn connect_instance_id(&self) -> &str {
-        use std::ops::Deref;
-        self.connect_instance_id.deref()
+    pub fn connect_instance_id(&self) -> & str {
+        use std::ops::Deref; self.connect_instance_id.deref()
     }
     /// Enumeration of the possible states for instance onboarding job
-    pub fn status(&self) -> &crate::types::InstanceOnboardingJobStatusCode {
+    pub fn status(&self) -> & crate::types::InstanceOnboardingJobStatusCode {
         &self.status
     }
     /// Enumeration of the possible failure codes for instance onboarding job
-    pub fn failure_code(&self) -> ::std::option::Option<&crate::types::InstanceOnboardingJobFailureCode> {
+    pub fn failure_code(&self) -> ::std::option::Option<& crate::types::InstanceOnboardingJobFailureCode> {
         self.failure_code.as_ref()
     }
 }
@@ -50,8 +49,7 @@ impl InstanceOnboardingJobStatusBuilder {
     }
     /// Amazon Connect Instance Id
     pub fn set_connect_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connect_instance_id = input;
-        self
+        self.connect_instance_id = input; self
     }
     /// Amazon Connect Instance Id
     pub fn get_connect_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl InstanceOnboardingJobStatusBuilder {
     }
     /// Enumeration of the possible states for instance onboarding job
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::InstanceOnboardingJobStatusCode>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// Enumeration of the possible states for instance onboarding job
     pub fn get_status(&self) -> &::std::option::Option<crate::types::InstanceOnboardingJobStatusCode> {
@@ -79,8 +76,7 @@ impl InstanceOnboardingJobStatusBuilder {
     }
     /// Enumeration of the possible failure codes for instance onboarding job
     pub fn set_failure_code(mut self, input: ::std::option::Option<crate::types::InstanceOnboardingJobFailureCode>) -> Self {
-        self.failure_code = input;
-        self
+        self.failure_code = input; self
     }
     /// Enumeration of the possible failure codes for instance onboarding job
     pub fn get_failure_code(&self) -> &::std::option::Option<crate::types::InstanceOnboardingJobFailureCode> {
@@ -91,20 +87,22 @@ impl InstanceOnboardingJobStatusBuilder {
     /// - [`connect_instance_id`](crate::types::builders::InstanceOnboardingJobStatusBuilder::connect_instance_id)
     /// - [`status`](crate::types::builders::InstanceOnboardingJobStatusBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::InstanceOnboardingJobStatus, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::InstanceOnboardingJobStatus {
-            connect_instance_id: self.connect_instance_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "connect_instance_id",
-                    "connect_instance_id was not specified but it is required when building InstanceOnboardingJobStatus",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building InstanceOnboardingJobStatus",
-                )
-            })?,
-            failure_code: self.failure_code,
-        })
+        ::std::result::Result::Ok(
+            crate::types::InstanceOnboardingJobStatus {
+                connect_instance_id: self.connect_instance_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("connect_instance_id", "connect_instance_id was not specified but it is required when building InstanceOnboardingJobStatus")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building InstanceOnboardingJobStatus")
+                    )?
+                ,
+                failure_code: self.failure_code
+                ,
+            }
+        )
     }
 }
+

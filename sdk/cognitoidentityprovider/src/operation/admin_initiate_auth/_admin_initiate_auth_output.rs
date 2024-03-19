@@ -3,7 +3,7 @@
 /// <p>Initiates the authentication response, as an administrator.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AdminInitiateAuthOutput {
+pub struct AdminInitiateAuthOutput  {
     /// <p>The name of the challenge that you're responding to with this call. This is returned in the <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
     /// <ul>
     /// <li>
@@ -36,12 +36,12 @@ pub struct AdminInitiateAuthOutput {
     /// <p>The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code> response if you must pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>AdminRespondToAuthChallenge</code>).</p>
     /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p>
     /// <p>The value of the <code>USER_ID_FOR_SRP</code> attribute is the user's actual username, not an alias (such as email address or phone number), even if you specified an alias in your call to <code>AdminInitiateAuth</code>. This happens because, in the <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute can't be an alias.</p>
-    pub challenge_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub challenge_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The result of the authentication response. This is only returned if the caller doesn't need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
     pub authentication_result: ::std::option::Option<crate::types::AuthenticationResultType>,
     _request_id: Option<String>,
 }
-impl AdminInitiateAuthOutput {
+impl  AdminInitiateAuthOutput  {
     /// <p>The name of the challenge that you're responding to with this call. This is returned in the <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
     /// <ul>
     /// <li>
@@ -68,25 +68,25 @@ impl AdminInitiateAuthOutput {
     /// <p><code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFAS_CAN_SETUP</code> value.</p>
     /// <p>To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA, users will need help from an administrator to add a phone number to their account and then call <code>InitiateAuth</code> again to restart sign-in.</p></li>
     /// </ul>
-    pub fn challenge_name(&self) -> ::std::option::Option<&crate::types::ChallengeNameType> {
+    pub fn challenge_name(&self) -> ::std::option::Option<& crate::types::ChallengeNameType> {
         self.challenge_name.as_ref()
     }
     /// <p>The session that should be passed both ways in challenge-response calls to the service. If <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API call determines that the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>AdminRespondToAuthChallenge</code> API call.</p>
-    pub fn session(&self) -> ::std::option::Option<&str> {
+    pub fn session(&self) -> ::std::option::Option<& str> {
         self.session.as_deref()
     }
     /// <p>The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code> response if you must pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>AdminRespondToAuthChallenge</code>).</p>
     /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p>
     /// <p>The value of the <code>USER_ID_FOR_SRP</code> attribute is the user's actual username, not an alias (such as email address or phone number), even if you specified an alias in your call to <code>AdminInitiateAuth</code>. This happens because, in the <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute can't be an alias.</p>
-    pub fn challenge_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn challenge_parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.challenge_parameters.as_ref()
     }
     /// <p>The result of the authentication response. This is only returned if the caller doesn't need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
-    pub fn authentication_result(&self) -> ::std::option::Option<&crate::types::AuthenticationResultType> {
+    pub fn authentication_result(&self) -> ::std::option::Option<& crate::types::AuthenticationResultType> {
         self.authentication_result.as_ref()
     }
 }
-impl ::std::fmt::Debug for AdminInitiateAuthOutput {
+impl  ::std::fmt::Debug for AdminInitiateAuthOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AdminInitiateAuthOutput");
         formatter.field("challenge_name", &self.challenge_name);
@@ -98,10 +98,10 @@ impl ::std::fmt::Debug for AdminInitiateAuthOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for AdminInitiateAuthOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AdminInitiateAuthOutput {
     /// Creates a new builder-style object to manufacture [`AdminInitiateAuthOutput`](crate::operation::admin_initiate_auth::AdminInitiateAuthOutput).
     pub fn builder() -> crate::operation::admin_initiate_auth::builders::AdminInitiateAuthOutputBuilder {
@@ -115,7 +115,7 @@ impl AdminInitiateAuthOutput {
 pub struct AdminInitiateAuthOutputBuilder {
     pub(crate) challenge_name: ::std::option::Option<crate::types::ChallengeNameType>,
     pub(crate) session: ::std::option::Option<::std::string::String>,
-    pub(crate) challenge_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) challenge_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) authentication_result: ::std::option::Option<crate::types::AuthenticationResultType>,
     _request_id: Option<String>,
 }
@@ -177,8 +177,7 @@ impl AdminInitiateAuthOutputBuilder {
     /// <p>To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA, users will need help from an administrator to add a phone number to their account and then call <code>InitiateAuth</code> again to restart sign-in.</p></li>
     /// </ul>
     pub fn set_challenge_name(mut self, input: ::std::option::Option<crate::types::ChallengeNameType>) -> Self {
-        self.challenge_name = input;
-        self
+        self.challenge_name = input; self
     }
     /// <p>The name of the challenge that you're responding to with this call. This is returned in the <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
     /// <ul>
@@ -216,8 +215,7 @@ impl AdminInitiateAuthOutputBuilder {
     }
     /// <p>The session that should be passed both ways in challenge-response calls to the service. If <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API call determines that the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>AdminRespondToAuthChallenge</code> API call.</p>
     pub fn set_session(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session = input;
-        self
+        self.session = input; self
     }
     /// <p>The session that should be passed both ways in challenge-response calls to the service. If <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API call determines that the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>AdminRespondToAuthChallenge</code> API call.</p>
     pub fn get_session(&self) -> &::std::option::Option<::std::string::String> {
@@ -230,30 +228,22 @@ impl AdminInitiateAuthOutputBuilder {
     /// <p>The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code> response if you must pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>AdminRespondToAuthChallenge</code>).</p>
     /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p>
     /// <p>The value of the <code>USER_ID_FOR_SRP</code> attribute is the user's actual username, not an alias (such as email address or phone number), even if you specified an alias in your call to <code>AdminInitiateAuth</code>. This happens because, in the <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute can't be an alias.</p>
-    pub fn challenge_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn challenge_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.challenge_parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.challenge_parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.challenge_parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code> response if you must pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>AdminRespondToAuthChallenge</code>).</p>
     /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p>
     /// <p>The value of the <code>USER_ID_FOR_SRP</code> attribute is the user's actual username, not an alias (such as email address or phone number), even if you specified an alias in your call to <code>AdminInitiateAuth</code>. This happens because, in the <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute can't be an alias.</p>
-    pub fn set_challenge_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.challenge_parameters = input;
-        self
+    pub fn set_challenge_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.challenge_parameters = input; self
     }
     /// <p>The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code> response if you must pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>AdminRespondToAuthChallenge</code>).</p>
     /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p>
     /// <p>The value of the <code>USER_ID_FOR_SRP</code> attribute is the user's actual username, not an alias (such as email address or phone number), even if you specified an alias in your call to <code>AdminInitiateAuth</code>. This happens because, in the <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute can't be an alias.</p>
-    pub fn get_challenge_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_challenge_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.challenge_parameters
     }
     /// <p>The result of the authentication response. This is only returned if the caller doesn't need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
@@ -263,29 +253,32 @@ impl AdminInitiateAuthOutputBuilder {
     }
     /// <p>The result of the authentication response. This is only returned if the caller doesn't need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
     pub fn set_authentication_result(mut self, input: ::std::option::Option<crate::types::AuthenticationResultType>) -> Self {
-        self.authentication_result = input;
-        self
+        self.authentication_result = input; self
     }
     /// <p>The result of the authentication response. This is only returned if the caller doesn't need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
     pub fn get_authentication_result(&self) -> &::std::option::Option<crate::types::AuthenticationResultType> {
         &self.authentication_result
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AdminInitiateAuthOutput`](crate::operation::admin_initiate_auth::AdminInitiateAuthOutput).
     pub fn build(self) -> crate::operation::admin_initiate_auth::AdminInitiateAuthOutput {
         crate::operation::admin_initiate_auth::AdminInitiateAuthOutput {
-            challenge_name: self.challenge_name,
-            session: self.session,
-            challenge_parameters: self.challenge_parameters,
-            authentication_result: self.authentication_result,
+            challenge_name: self.challenge_name
+            ,
+            session: self.session
+            ,
+            challenge_parameters: self.challenge_parameters
+            ,
+            authentication_result: self.authentication_result
+            ,
             _request_id: self._request_id,
         }
     }
@@ -301,3 +294,4 @@ impl ::std::fmt::Debug for AdminInitiateAuthOutputBuilder {
         formatter.finish()
     }
 }
+

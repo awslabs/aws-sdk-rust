@@ -3,13 +3,13 @@
 /// <p>The section of the contact audio where that category rule was detected.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PointOfInterest {
+pub struct PointOfInterest  {
     /// <p>The beginning offset in milliseconds where the category rule was detected.</p>
     pub begin_offset_millis: ::std::option::Option<i32>,
     /// <p>The ending offset in milliseconds where the category rule was detected.</p>
     pub end_offset_millis: ::std::option::Option<i32>,
 }
-impl PointOfInterest {
+impl  PointOfInterest  {
     /// <p>The beginning offset in milliseconds where the category rule was detected.</p>
     pub fn begin_offset_millis(&self) -> ::std::option::Option<i32> {
         self.begin_offset_millis
@@ -42,8 +42,7 @@ impl PointOfInterestBuilder {
     }
     /// <p>The beginning offset in milliseconds where the category rule was detected.</p>
     pub fn set_begin_offset_millis(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.begin_offset_millis = input;
-        self
+        self.begin_offset_millis = input; self
     }
     /// <p>The beginning offset in milliseconds where the category rule was detected.</p>
     pub fn get_begin_offset_millis(&self) -> &::std::option::Option<i32> {
@@ -57,8 +56,7 @@ impl PointOfInterestBuilder {
     }
     /// <p>The ending offset in milliseconds where the category rule was detected.</p>
     pub fn set_end_offset_millis(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.end_offset_millis = input;
-        self
+        self.end_offset_millis = input; self
     }
     /// <p>The ending offset in milliseconds where the category rule was detected.</p>
     pub fn get_end_offset_millis(&self) -> &::std::option::Option<i32> {
@@ -67,8 +65,11 @@ impl PointOfInterestBuilder {
     /// Consumes the builder and constructs a [`PointOfInterest`](crate::types::PointOfInterest).
     pub fn build(self) -> crate::types::PointOfInterest {
         crate::types::PointOfInterest {
-            begin_offset_millis: self.begin_offset_millis,
-            end_offset_millis: self.end_offset_millis,
+            begin_offset_millis: self.begin_offset_millis
+            ,
+            end_offset_millis: self.end_offset_millis
+            ,
         }
     }
 }
+

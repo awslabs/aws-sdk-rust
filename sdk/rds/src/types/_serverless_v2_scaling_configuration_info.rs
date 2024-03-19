@@ -4,13 +4,13 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServerlessV2ScalingConfigurationInfo {
+pub struct ServerlessV2ScalingConfigurationInfo  {
     /// <p>The minimum number of Aurora capacity units (ACUs) for a DB instance in an Aurora Serverless v2 cluster. You can specify ACU values in half-step increments, such as 8, 8.5, 9, and so on. The smallest value that you can use is 0.5.</p>
     pub min_capacity: ::std::option::Option<f64>,
     /// <p>The maximum number of Aurora capacity units (ACUs) for a DB instance in an Aurora Serverless v2 cluster. You can specify ACU values in half-step increments, such as 40, 40.5, 41, and so on. The largest value that you can use is 128.</p>
     pub max_capacity: ::std::option::Option<f64>,
 }
-impl ServerlessV2ScalingConfigurationInfo {
+impl  ServerlessV2ScalingConfigurationInfo  {
     /// <p>The minimum number of Aurora capacity units (ACUs) for a DB instance in an Aurora Serverless v2 cluster. You can specify ACU values in half-step increments, such as 8, 8.5, 9, and so on. The smallest value that you can use is 0.5.</p>
     pub fn min_capacity(&self) -> ::std::option::Option<f64> {
         self.min_capacity
@@ -42,8 +42,7 @@ impl ServerlessV2ScalingConfigurationInfoBuilder {
     }
     /// <p>The minimum number of Aurora capacity units (ACUs) for a DB instance in an Aurora Serverless v2 cluster. You can specify ACU values in half-step increments, such as 8, 8.5, 9, and so on. The smallest value that you can use is 0.5.</p>
     pub fn set_min_capacity(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.min_capacity = input;
-        self
+        self.min_capacity = input; self
     }
     /// <p>The minimum number of Aurora capacity units (ACUs) for a DB instance in an Aurora Serverless v2 cluster. You can specify ACU values in half-step increments, such as 8, 8.5, 9, and so on. The smallest value that you can use is 0.5.</p>
     pub fn get_min_capacity(&self) -> &::std::option::Option<f64> {
@@ -56,8 +55,7 @@ impl ServerlessV2ScalingConfigurationInfoBuilder {
     }
     /// <p>The maximum number of Aurora capacity units (ACUs) for a DB instance in an Aurora Serverless v2 cluster. You can specify ACU values in half-step increments, such as 40, 40.5, 41, and so on. The largest value that you can use is 128.</p>
     pub fn set_max_capacity(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.max_capacity = input;
-        self
+        self.max_capacity = input; self
     }
     /// <p>The maximum number of Aurora capacity units (ACUs) for a DB instance in an Aurora Serverless v2 cluster. You can specify ACU values in half-step increments, such as 40, 40.5, 41, and so on. The largest value that you can use is 128.</p>
     pub fn get_max_capacity(&self) -> &::std::option::Option<f64> {
@@ -66,8 +64,11 @@ impl ServerlessV2ScalingConfigurationInfoBuilder {
     /// Consumes the builder and constructs a [`ServerlessV2ScalingConfigurationInfo`](crate::types::ServerlessV2ScalingConfigurationInfo).
     pub fn build(self) -> crate::types::ServerlessV2ScalingConfigurationInfo {
         crate::types::ServerlessV2ScalingConfigurationInfo {
-            min_capacity: self.min_capacity,
-            max_capacity: self.max_capacity,
+            min_capacity: self.min_capacity
+            ,
+            max_capacity: self.max_capacity
+            ,
         }
     }
 }
+

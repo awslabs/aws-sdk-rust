@@ -7,24 +7,22 @@
 /// <p>The <code>Id</code> and <code>Name</code> of a <code>SizeConstraintSet</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SizeConstraintSetSummary {
+pub struct SizeConstraintSetSummary  {
     /// <p>A unique identifier for a <code>SizeConstraintSet</code>. You use <code>SizeConstraintSetId</code> to get information about a <code>SizeConstraintSet</code> (see <code>GetSizeConstraintSet</code>), update a <code>SizeConstraintSet</code> (see <code>UpdateSizeConstraintSet</code>), insert a <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SizeConstraintSet</code> from AWS WAF (see <code>DeleteSizeConstraintSet</code>).</p>
     /// <p><code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
     pub size_constraint_set_id: ::std::string::String,
     /// <p>The name of the <code>SizeConstraintSet</code>, if any.</p>
     pub name: ::std::string::String,
 }
-impl SizeConstraintSetSummary {
+impl  SizeConstraintSetSummary  {
     /// <p>A unique identifier for a <code>SizeConstraintSet</code>. You use <code>SizeConstraintSetId</code> to get information about a <code>SizeConstraintSet</code> (see <code>GetSizeConstraintSet</code>), update a <code>SizeConstraintSet</code> (see <code>UpdateSizeConstraintSet</code>), insert a <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SizeConstraintSet</code> from AWS WAF (see <code>DeleteSizeConstraintSet</code>).</p>
     /// <p><code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
-    pub fn size_constraint_set_id(&self) -> &str {
-        use std::ops::Deref;
-        self.size_constraint_set_id.deref()
+    pub fn size_constraint_set_id(&self) -> & str {
+        use std::ops::Deref; self.size_constraint_set_id.deref()
     }
     /// <p>The name of the <code>SizeConstraintSet</code>, if any.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
 }
 impl SizeConstraintSetSummary {
@@ -52,8 +50,7 @@ impl SizeConstraintSetSummaryBuilder {
     /// <p>A unique identifier for a <code>SizeConstraintSet</code>. You use <code>SizeConstraintSetId</code> to get information about a <code>SizeConstraintSet</code> (see <code>GetSizeConstraintSet</code>), update a <code>SizeConstraintSet</code> (see <code>UpdateSizeConstraintSet</code>), insert a <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SizeConstraintSet</code> from AWS WAF (see <code>DeleteSizeConstraintSet</code>).</p>
     /// <p><code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
     pub fn set_size_constraint_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.size_constraint_set_id = input;
-        self
+        self.size_constraint_set_id = input; self
     }
     /// <p>A unique identifier for a <code>SizeConstraintSet</code>. You use <code>SizeConstraintSetId</code> to get information about a <code>SizeConstraintSet</code> (see <code>GetSizeConstraintSet</code>), update a <code>SizeConstraintSet</code> (see <code>UpdateSizeConstraintSet</code>), insert a <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SizeConstraintSet</code> from AWS WAF (see <code>DeleteSizeConstraintSet</code>).</p>
     /// <p><code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
@@ -68,8 +65,7 @@ impl SizeConstraintSetSummaryBuilder {
     }
     /// <p>The name of the <code>SizeConstraintSet</code>, if any.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the <code>SizeConstraintSet</code>, if any.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,19 +76,20 @@ impl SizeConstraintSetSummaryBuilder {
     /// - [`size_constraint_set_id`](crate::types::builders::SizeConstraintSetSummaryBuilder::size_constraint_set_id)
     /// - [`name`](crate::types::builders::SizeConstraintSetSummaryBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::SizeConstraintSetSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SizeConstraintSetSummary {
-            size_constraint_set_id: self.size_constraint_set_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "size_constraint_set_id",
-                    "size_constraint_set_id was not specified but it is required when building SizeConstraintSetSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building SizeConstraintSetSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SizeConstraintSetSummary {
+                size_constraint_set_id: self.size_constraint_set_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("size_constraint_set_id", "size_constraint_set_id was not specified but it is required when building SizeConstraintSetSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building SizeConstraintSetSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

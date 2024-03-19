@@ -3,13 +3,13 @@
 /// <p>A JSON object containing the <code>DescribeSnapshotScheduleInput$VolumeARN</code> of the volume.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSnapshotScheduleInput {
+pub struct DescribeSnapshotScheduleInput  {
     /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
     pub volume_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeSnapshotScheduleInput {
+impl  DescribeSnapshotScheduleInput  {
     /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
-    pub fn volume_arn(&self) -> ::std::option::Option<&str> {
+    pub fn volume_arn(&self) -> ::std::option::Option<& str> {
         self.volume_arn.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl DescribeSnapshotScheduleInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
     pub fn set_volume_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_arn = input;
-        self
+        self.volume_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
     pub fn get_volume_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_arn
     }
     /// Consumes the builder and constructs a [`DescribeSnapshotScheduleInput`](crate::operation::describe_snapshot_schedule::DescribeSnapshotScheduleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_snapshot_schedule::DescribeSnapshotScheduleInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_snapshot_schedule::DescribeSnapshotScheduleInput { volume_arn: self.volume_arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_snapshot_schedule::DescribeSnapshotScheduleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_snapshot_schedule::DescribeSnapshotScheduleInput {
+                volume_arn: self.volume_arn
+                ,
+            }
+        )
     }
 }
+

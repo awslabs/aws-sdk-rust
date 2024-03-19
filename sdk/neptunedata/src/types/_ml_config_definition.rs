@@ -3,19 +3,19 @@
 /// <p>Contains a Neptune ML configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MlConfigDefinition {
+pub struct MlConfigDefinition  {
     /// <p>The configuration name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the configuration.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl MlConfigDefinition {
+impl  MlConfigDefinition  {
     /// <p>The configuration name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN for the configuration.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl MlConfigDefinitionBuilder {
     }
     /// <p>The configuration name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The configuration name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl MlConfigDefinitionBuilder {
     }
     /// <p>The ARN for the configuration.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN for the configuration.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl MlConfigDefinitionBuilder {
     /// Consumes the builder and constructs a [`MlConfigDefinition`](crate::types::MlConfigDefinition).
     pub fn build(self) -> crate::types::MlConfigDefinition {
         crate::types::MlConfigDefinition {
-            name: self.name,
-            arn: self.arn,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
         }
     }
 }
+

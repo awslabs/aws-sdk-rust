@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResetEncryptionKeyInput {
+pub struct ResetEncryptionKeyInput  {
     /// <p>The scan type the key encrypts.</p>
     pub scan_type: ::std::option::Option<crate::types::ScanType>,
     /// <p>The resource type the key encrypts.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
 }
-impl ResetEncryptionKeyInput {
+impl  ResetEncryptionKeyInput  {
     /// <p>The scan type the key encrypts.</p>
-    pub fn scan_type(&self) -> ::std::option::Option<&crate::types::ScanType> {
+    pub fn scan_type(&self) -> ::std::option::Option<& crate::types::ScanType> {
         self.scan_type.as_ref()
     }
     /// <p>The resource type the key encrypts.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ResetEncryptionKeyInputBuilder {
     }
     /// <p>The scan type the key encrypts.</p>
     pub fn set_scan_type(mut self, input: ::std::option::Option<crate::types::ScanType>) -> Self {
-        self.scan_type = input;
-        self
+        self.scan_type = input; self
     }
     /// <p>The scan type the key encrypts.</p>
     pub fn get_scan_type(&self) -> &::std::option::Option<crate::types::ScanType> {
@@ -56,21 +55,22 @@ impl ResetEncryptionKeyInputBuilder {
     }
     /// <p>The resource type the key encrypts.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type the key encrypts.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         &self.resource_type
     }
     /// Consumes the builder and constructs a [`ResetEncryptionKeyInput`](crate::operation::reset_encryption_key::ResetEncryptionKeyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::reset_encryption_key::ResetEncryptionKeyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::reset_encryption_key::ResetEncryptionKeyInput {
-            scan_type: self.scan_type,
-            resource_type: self.resource_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::reset_encryption_key::ResetEncryptionKeyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::reset_encryption_key::ResetEncryptionKeyInput {
+                scan_type: self.scan_type
+                ,
+                resource_type: self.resource_type
+                ,
+            }
+        )
     }
 }
+

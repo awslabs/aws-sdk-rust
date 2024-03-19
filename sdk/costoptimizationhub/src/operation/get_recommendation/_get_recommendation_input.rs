@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRecommendationInput {
+pub struct GetRecommendationInput  {
     /// <p>The ID for the recommendation.</p>
     pub recommendation_id: ::std::option::Option<::std::string::String>,
 }
-impl GetRecommendationInput {
+impl  GetRecommendationInput  {
     /// <p>The ID for the recommendation.</p>
-    pub fn recommendation_id(&self) -> ::std::option::Option<&str> {
+    pub fn recommendation_id(&self) -> ::std::option::Option<& str> {
         self.recommendation_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetRecommendationInputBuilder {
     }
     /// <p>The ID for the recommendation.</p>
     pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommendation_id = input;
-        self
+        self.recommendation_id = input; self
     }
     /// <p>The ID for the recommendation.</p>
     pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.recommendation_id
     }
     /// Consumes the builder and constructs a [`GetRecommendationInput`](crate::operation::get_recommendation::GetRecommendationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_recommendation::GetRecommendationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_recommendation::GetRecommendationInput {
-            recommendation_id: self.recommendation_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_recommendation::GetRecommendationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_recommendation::GetRecommendationInput {
+                recommendation_id: self.recommendation_id
+                ,
+            }
+        )
     }
 }
+

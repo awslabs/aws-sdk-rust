@@ -3,19 +3,19 @@
 /// <p>Contains the percentage of traffic to send to a staging distribution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContinuousDeploymentSingleWeightConfig {
+pub struct ContinuousDeploymentSingleWeightConfig  {
     /// <p>The percentage of traffic to send to a staging distribution, expressed as a decimal number between 0 and .15.</p>
     pub weight: f32,
     /// <p>Session stickiness provides the ability to define multiple requests from a single viewer as a single session. This prevents the potentially inconsistent experience of sending some of a given user's requests to your staging distribution, while others are sent to your primary distribution. Define the session duration using TTL values.</p>
     pub session_stickiness_config: ::std::option::Option<crate::types::SessionStickinessConfig>,
 }
-impl ContinuousDeploymentSingleWeightConfig {
+impl  ContinuousDeploymentSingleWeightConfig  {
     /// <p>The percentage of traffic to send to a staging distribution, expressed as a decimal number between 0 and .15.</p>
     pub fn weight(&self) -> f32 {
         self.weight
     }
     /// <p>Session stickiness provides the ability to define multiple requests from a single viewer as a single session. This prevents the potentially inconsistent experience of sending some of a given user's requests to your staging distribution, while others are sent to your primary distribution. Define the session duration using TTL values.</p>
-    pub fn session_stickiness_config(&self) -> ::std::option::Option<&crate::types::SessionStickinessConfig> {
+    pub fn session_stickiness_config(&self) -> ::std::option::Option<& crate::types::SessionStickinessConfig> {
         self.session_stickiness_config.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl ContinuousDeploymentSingleWeightConfigBuilder {
     }
     /// <p>The percentage of traffic to send to a staging distribution, expressed as a decimal number between 0 and .15.</p>
     pub fn set_weight(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.weight = input;
-        self
+        self.weight = input; self
     }
     /// <p>The percentage of traffic to send to a staging distribution, expressed as a decimal number between 0 and .15.</p>
     pub fn get_weight(&self) -> &::std::option::Option<f32> {
@@ -56,8 +55,7 @@ impl ContinuousDeploymentSingleWeightConfigBuilder {
     }
     /// <p>Session stickiness provides the ability to define multiple requests from a single viewer as a single session. This prevents the potentially inconsistent experience of sending some of a given user's requests to your staging distribution, while others are sent to your primary distribution. Define the session duration using TTL values.</p>
     pub fn set_session_stickiness_config(mut self, input: ::std::option::Option<crate::types::SessionStickinessConfig>) -> Self {
-        self.session_stickiness_config = input;
-        self
+        self.session_stickiness_config = input; self
     }
     /// <p>Session stickiness provides the ability to define multiple requests from a single viewer as a single session. This prevents the potentially inconsistent experience of sending some of a given user's requests to your staging distribution, while others are sent to your primary distribution. Define the session duration using TTL values.</p>
     pub fn get_session_stickiness_config(&self) -> &::std::option::Option<crate::types::SessionStickinessConfig> {
@@ -66,17 +64,18 @@ impl ContinuousDeploymentSingleWeightConfigBuilder {
     /// Consumes the builder and constructs a [`ContinuousDeploymentSingleWeightConfig`](crate::types::ContinuousDeploymentSingleWeightConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`weight`](crate::types::builders::ContinuousDeploymentSingleWeightConfigBuilder::weight)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::ContinuousDeploymentSingleWeightConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ContinuousDeploymentSingleWeightConfig {
-            weight: self.weight.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "weight",
-                    "weight was not specified but it is required when building ContinuousDeploymentSingleWeightConfig",
-                )
-            })?,
-            session_stickiness_config: self.session_stickiness_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::ContinuousDeploymentSingleWeightConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::ContinuousDeploymentSingleWeightConfig {
+                weight: self.weight
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("weight", "weight was not specified but it is required when building ContinuousDeploymentSingleWeightConfig")
+                    )?
+                ,
+                session_stickiness_config: self.session_stickiness_config
+                ,
+            }
+        )
     }
 }
+

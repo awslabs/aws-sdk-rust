@@ -3,13 +3,13 @@
 /// <p>Filtering options for <i>ListGroupsForEntity</i> operation. This is only used as input to Operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListGroupsForEntityFilters {
+pub struct ListGroupsForEntityFilters  {
     /// <p>Filters only group names that start with the provided name prefix.</p>
     pub group_name_prefix: ::std::option::Option<::std::string::String>,
 }
-impl ListGroupsForEntityFilters {
+impl  ListGroupsForEntityFilters  {
     /// <p>Filters only group names that start with the provided name prefix.</p>
-    pub fn group_name_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn group_name_prefix(&self) -> ::std::option::Option<& str> {
         self.group_name_prefix.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl ListGroupsForEntityFiltersBuilder {
     }
     /// <p>Filters only group names that start with the provided name prefix.</p>
     pub fn set_group_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name_prefix = input;
-        self
+        self.group_name_prefix = input; self
     }
     /// <p>Filters only group names that start with the provided name prefix.</p>
     pub fn get_group_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl ListGroupsForEntityFiltersBuilder {
     /// Consumes the builder and constructs a [`ListGroupsForEntityFilters`](crate::types::ListGroupsForEntityFilters).
     pub fn build(self) -> crate::types::ListGroupsForEntityFilters {
         crate::types::ListGroupsForEntityFilters {
-            group_name_prefix: self.group_name_prefix,
+            group_name_prefix: self.group_name_prefix
+            ,
         }
     }
 }
+

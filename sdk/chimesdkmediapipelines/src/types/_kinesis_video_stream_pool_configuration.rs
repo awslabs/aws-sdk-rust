@@ -3,7 +3,7 @@
 /// <p>The video stream pool configuration object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct KinesisVideoStreamPoolConfiguration {
+pub struct KinesisVideoStreamPoolConfiguration  {
     /// <p>The ARN of the video stream pool configuration.</p>
     pub pool_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the video stream pool configuration.</p>
@@ -21,21 +21,21 @@ pub struct KinesisVideoStreamPoolConfiguration {
     /// <p>The time at which the configuration was updated.</p>
     pub updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl KinesisVideoStreamPoolConfiguration {
+impl  KinesisVideoStreamPoolConfiguration  {
     /// <p>The ARN of the video stream pool configuration.</p>
-    pub fn pool_arn(&self) -> ::std::option::Option<&str> {
+    pub fn pool_arn(&self) -> ::std::option::Option<& str> {
         self.pool_arn.as_deref()
     }
     /// <p>The name of the video stream pool configuration.</p>
-    pub fn pool_name(&self) -> ::std::option::Option<&str> {
+    pub fn pool_name(&self) -> ::std::option::Option<& str> {
         self.pool_name.as_deref()
     }
     /// <p>The ID of the video stream pool in the configuration.</p>
-    pub fn pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn pool_id(&self) -> ::std::option::Option<& str> {
         self.pool_id.as_deref()
     }
     /// <p>The status of the video stream pool in the configuration.</p>
-    pub fn pool_status(&self) -> ::std::option::Option<&crate::types::KinesisVideoStreamPoolStatus> {
+    pub fn pool_status(&self) -> ::std::option::Option<& crate::types::KinesisVideoStreamPoolStatus> {
         self.pool_status.as_ref()
     }
     /// <p>The size of the video stream pool in the configuration.</p>
@@ -43,19 +43,19 @@ impl KinesisVideoStreamPoolConfiguration {
         self.pool_size
     }
     /// <p>The Kinesis video stream pool configuration object.</p>
-    pub fn stream_configuration(&self) -> ::std::option::Option<&crate::types::KinesisVideoStreamConfiguration> {
+    pub fn stream_configuration(&self) -> ::std::option::Option<& crate::types::KinesisVideoStreamConfiguration> {
         self.stream_configuration.as_ref()
     }
     /// <p>The time at which the configuration was created.</p>
-    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time at which the configuration was updated.</p>
-    pub fn updated_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
 }
-impl ::std::fmt::Debug for KinesisVideoStreamPoolConfiguration {
+impl  ::std::fmt::Debug for KinesisVideoStreamPoolConfiguration  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("KinesisVideoStreamPoolConfiguration");
         formatter.field("pool_arn", &"*** Sensitive Data Redacted ***");
@@ -97,8 +97,7 @@ impl KinesisVideoStreamPoolConfigurationBuilder {
     }
     /// <p>The ARN of the video stream pool configuration.</p>
     pub fn set_pool_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pool_arn = input;
-        self
+        self.pool_arn = input; self
     }
     /// <p>The ARN of the video stream pool configuration.</p>
     pub fn get_pool_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl KinesisVideoStreamPoolConfigurationBuilder {
     }
     /// <p>The name of the video stream pool configuration.</p>
     pub fn set_pool_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pool_name = input;
-        self
+        self.pool_name = input; self
     }
     /// <p>The name of the video stream pool configuration.</p>
     pub fn get_pool_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +123,7 @@ impl KinesisVideoStreamPoolConfigurationBuilder {
     }
     /// <p>The ID of the video stream pool in the configuration.</p>
     pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pool_id = input;
-        self
+        self.pool_id = input; self
     }
     /// <p>The ID of the video stream pool in the configuration.</p>
     pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +136,7 @@ impl KinesisVideoStreamPoolConfigurationBuilder {
     }
     /// <p>The status of the video stream pool in the configuration.</p>
     pub fn set_pool_status(mut self, input: ::std::option::Option<crate::types::KinesisVideoStreamPoolStatus>) -> Self {
-        self.pool_status = input;
-        self
+        self.pool_status = input; self
     }
     /// <p>The status of the video stream pool in the configuration.</p>
     pub fn get_pool_status(&self) -> &::std::option::Option<crate::types::KinesisVideoStreamPoolStatus> {
@@ -153,8 +149,7 @@ impl KinesisVideoStreamPoolConfigurationBuilder {
     }
     /// <p>The size of the video stream pool in the configuration.</p>
     pub fn set_pool_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.pool_size = input;
-        self
+        self.pool_size = input; self
     }
     /// <p>The size of the video stream pool in the configuration.</p>
     pub fn get_pool_size(&self) -> &::std::option::Option<i32> {
@@ -167,8 +162,7 @@ impl KinesisVideoStreamPoolConfigurationBuilder {
     }
     /// <p>The Kinesis video stream pool configuration object.</p>
     pub fn set_stream_configuration(mut self, input: ::std::option::Option<crate::types::KinesisVideoStreamConfiguration>) -> Self {
-        self.stream_configuration = input;
-        self
+        self.stream_configuration = input; self
     }
     /// <p>The Kinesis video stream pool configuration object.</p>
     pub fn get_stream_configuration(&self) -> &::std::option::Option<crate::types::KinesisVideoStreamConfiguration> {
@@ -181,8 +175,7 @@ impl KinesisVideoStreamPoolConfigurationBuilder {
     }
     /// <p>The time at which the configuration was created.</p>
     pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input;
-        self
+        self.created_timestamp = input; self
     }
     /// <p>The time at which the configuration was created.</p>
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -195,8 +188,7 @@ impl KinesisVideoStreamPoolConfigurationBuilder {
     }
     /// <p>The time at which the configuration was updated.</p>
     pub fn set_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_timestamp = input;
-        self
+        self.updated_timestamp = input; self
     }
     /// <p>The time at which the configuration was updated.</p>
     pub fn get_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -205,14 +197,22 @@ impl KinesisVideoStreamPoolConfigurationBuilder {
     /// Consumes the builder and constructs a [`KinesisVideoStreamPoolConfiguration`](crate::types::KinesisVideoStreamPoolConfiguration).
     pub fn build(self) -> crate::types::KinesisVideoStreamPoolConfiguration {
         crate::types::KinesisVideoStreamPoolConfiguration {
-            pool_arn: self.pool_arn,
-            pool_name: self.pool_name,
-            pool_id: self.pool_id,
-            pool_status: self.pool_status,
-            pool_size: self.pool_size,
-            stream_configuration: self.stream_configuration,
-            created_timestamp: self.created_timestamp,
-            updated_timestamp: self.updated_timestamp,
+            pool_arn: self.pool_arn
+            ,
+            pool_name: self.pool_name
+            ,
+            pool_id: self.pool_id
+            ,
+            pool_status: self.pool_status
+            ,
+            pool_size: self.pool_size
+            ,
+            stream_configuration: self.stream_configuration
+            ,
+            created_timestamp: self.created_timestamp
+            ,
+            updated_timestamp: self.updated_timestamp
+            ,
         }
     }
 }
@@ -230,3 +230,4 @@ impl ::std::fmt::Debug for KinesisVideoStreamPoolConfigurationBuilder {
         formatter.finish()
     }
 }
+

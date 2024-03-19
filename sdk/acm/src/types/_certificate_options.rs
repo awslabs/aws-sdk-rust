@@ -3,13 +3,13 @@
 /// <p>Structure that contains options for your certificate. Currently, you can use this only to specify whether to opt in to or out of certificate transparency logging. Some browsers require that public certificates issued for your domain be recorded in a log. Certificates that are not logged typically generate a browser error. Transparency makes it possible for you to detect SSL/TLS certificates that have been mistakenly or maliciously issued for your domain. For general information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate Transparency Logging</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CertificateOptions {
+pub struct CertificateOptions  {
     /// <p>You can opt out of certificate transparency logging by specifying the <code>DISABLED</code> option. Opt in by specifying <code>ENABLED</code>.</p>
     pub certificate_transparency_logging_preference: ::std::option::Option<crate::types::CertificateTransparencyLoggingPreference>,
 }
-impl CertificateOptions {
+impl  CertificateOptions  {
     /// <p>You can opt out of certificate transparency logging by specifying the <code>DISABLED</code> option. Opt in by specifying <code>ENABLED</code>.</p>
-    pub fn certificate_transparency_logging_preference(&self) -> ::std::option::Option<&crate::types::CertificateTransparencyLoggingPreference> {
+    pub fn certificate_transparency_logging_preference(&self) -> ::std::option::Option<& crate::types::CertificateTransparencyLoggingPreference> {
         self.certificate_transparency_logging_preference.as_ref()
     }
 }
@@ -33,12 +33,8 @@ impl CertificateOptionsBuilder {
         self
     }
     /// <p>You can opt out of certificate transparency logging by specifying the <code>DISABLED</code> option. Opt in by specifying <code>ENABLED</code>.</p>
-    pub fn set_certificate_transparency_logging_preference(
-        mut self,
-        input: ::std::option::Option<crate::types::CertificateTransparencyLoggingPreference>,
-    ) -> Self {
-        self.certificate_transparency_logging_preference = input;
-        self
+    pub fn set_certificate_transparency_logging_preference(mut self, input: ::std::option::Option<crate::types::CertificateTransparencyLoggingPreference>) -> Self {
+        self.certificate_transparency_logging_preference = input; self
     }
     /// <p>You can opt out of certificate transparency logging by specifying the <code>DISABLED</code> option. Opt in by specifying <code>ENABLED</code>.</p>
     pub fn get_certificate_transparency_logging_preference(&self) -> &::std::option::Option<crate::types::CertificateTransparencyLoggingPreference> {
@@ -47,7 +43,9 @@ impl CertificateOptionsBuilder {
     /// Consumes the builder and constructs a [`CertificateOptions`](crate::types::CertificateOptions).
     pub fn build(self) -> crate::types::CertificateOptions {
         crate::types::CertificateOptions {
-            certificate_transparency_logging_preference: self.certificate_transparency_logging_preference,
+            certificate_transparency_logging_preference: self.certificate_transparency_logging_preference
+            ,
         }
     }
 }
+

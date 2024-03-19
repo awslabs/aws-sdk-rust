@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateProtectionInput {
+pub struct CreateProtectionInput  {
     /// <p>Friendly name for the <code>Protection</code> you are creating.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the resource to be protected.</p>
@@ -23,11 +23,11 @@ pub struct CreateProtectionInput {
     /// </ul>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>One or more tag key-value pairs for the <code>Protection</code> object that is created.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateProtectionInput {
+impl  CreateProtectionInput  {
     /// <p>Friendly name for the <code>Protection</code> you are creating.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN (Amazon Resource Name) of the resource to be protected.</p>
@@ -46,14 +46,15 @@ impl CreateProtectionInput {
     /// <li>
     /// <p>For an Elastic IP address: <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i> </code></p></li>
     /// </ul>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>One or more tag key-value pairs for the <code>Protection</code> object that is created.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateProtectionInput {
@@ -69,7 +70,7 @@ impl CreateProtectionInput {
 pub struct CreateProtectionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateProtectionInputBuilder {
     /// <p>Friendly name for the <code>Protection</code> you are creating.</p>
@@ -80,8 +81,7 @@ impl CreateProtectionInputBuilder {
     }
     /// <p>Friendly name for the <code>Protection</code> you are creating.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Friendly name for the <code>Protection</code> you are creating.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +125,7 @@ impl CreateProtectionInputBuilder {
     /// <p>For an Elastic IP address: <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i> </code></p></li>
     /// </ul>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The ARN (Amazon Resource Name) of the resource to be protected.</p>
     /// <p>The ARN should be in one of the following formats:</p>
@@ -154,27 +153,30 @@ impl CreateProtectionInputBuilder {
     /// <p>One or more tag key-value pairs for the <code>Protection</code> object that is created.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more tag key-value pairs for the <code>Protection</code> object that is created.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>One or more tag key-value pairs for the <code>Protection</code> object that is created.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateProtectionInput`](crate::operation::create_protection::CreateProtectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_protection::CreateProtectionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_protection::CreateProtectionInput {
-            name: self.name,
-            resource_arn: self.resource_arn,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_protection::CreateProtectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_protection::CreateProtectionInput {
+                name: self.name
+                ,
+                resource_arn: self.resource_arn
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

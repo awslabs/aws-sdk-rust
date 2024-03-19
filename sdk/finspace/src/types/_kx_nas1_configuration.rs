@@ -3,15 +3,15 @@
 /// <p>The structure containing the size and type of the network attached storage (NAS_1) file system volume.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KxNas1Configuration {
+pub struct KxNas1Configuration  {
     /// <p>The type of the network attached storage.</p>
     pub r#type: ::std::option::Option<crate::types::KxNas1Type>,
     /// <p>The size of the network attached storage.</p>
     pub size: ::std::option::Option<i32>,
 }
-impl KxNas1Configuration {
+impl  KxNas1Configuration  {
     /// <p>The type of the network attached storage.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::KxNas1Type> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::KxNas1Type> {
         self.r#type.as_ref()
     }
     /// <p>The size of the network attached storage.</p>
@@ -41,8 +41,7 @@ impl KxNas1ConfigurationBuilder {
     }
     /// <p>The type of the network attached storage.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::KxNas1Type>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the network attached storage.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::KxNas1Type> {
@@ -55,8 +54,7 @@ impl KxNas1ConfigurationBuilder {
     }
     /// <p>The size of the network attached storage.</p>
     pub fn set_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.size = input;
-        self
+        self.size = input; self
     }
     /// <p>The size of the network attached storage.</p>
     pub fn get_size(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl KxNas1ConfigurationBuilder {
     /// Consumes the builder and constructs a [`KxNas1Configuration`](crate::types::KxNas1Configuration).
     pub fn build(self) -> crate::types::KxNas1Configuration {
         crate::types::KxNas1Configuration {
-            r#type: self.r#type,
-            size: self.size,
+            r#type: self.r#type
+            ,
+            size: self.size
+            ,
         }
     }
 }
+

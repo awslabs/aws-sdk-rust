@@ -3,7 +3,7 @@
 /// <p>The representation of an organization.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OrganizationSummary {
+pub struct OrganizationSummary  {
     /// <p>The identifier associated with the organization.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The alias associated with the organization.</p>
@@ -15,25 +15,25 @@ pub struct OrganizationSummary {
     /// <p>The state associated with the organization.</p>
     pub state: ::std::option::Option<::std::string::String>,
 }
-impl OrganizationSummary {
+impl  OrganizationSummary  {
     /// <p>The identifier associated with the organization.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The alias associated with the organization.</p>
-    pub fn alias(&self) -> ::std::option::Option<&str> {
+    pub fn alias(&self) -> ::std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// <p>The default email domain associated with the organization.</p>
-    pub fn default_mail_domain(&self) -> ::std::option::Option<&str> {
+    pub fn default_mail_domain(&self) -> ::std::option::Option<& str> {
         self.default_mail_domain.as_deref()
     }
     /// <p>The error message associated with the organization. It is only present if unexpected behavior has occurred with regards to the organization. It provides insight or solutions regarding unexpected behavior.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>The state associated with the organization.</p>
-    pub fn state(&self) -> ::std::option::Option<&str> {
+    pub fn state(&self) -> ::std::option::Option<& str> {
         self.state.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl OrganizationSummaryBuilder {
     }
     /// <p>The identifier associated with the organization.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The identifier associated with the organization.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl OrganizationSummaryBuilder {
     }
     /// <p>The alias associated with the organization.</p>
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias = input;
-        self
+        self.alias = input; self
     }
     /// <p>The alias associated with the organization.</p>
     pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl OrganizationSummaryBuilder {
     }
     /// <p>The default email domain associated with the organization.</p>
     pub fn set_default_mail_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_mail_domain = input;
-        self
+        self.default_mail_domain = input; self
     }
     /// <p>The default email domain associated with the organization.</p>
     pub fn get_default_mail_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl OrganizationSummaryBuilder {
     }
     /// <p>The error message associated with the organization. It is only present if unexpected behavior has occurred with regards to the organization. It provides insight or solutions regarding unexpected behavior.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The error message associated with the organization. It is only present if unexpected behavior has occurred with regards to the organization. It provides insight or solutions regarding unexpected behavior.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl OrganizationSummaryBuilder {
     }
     /// <p>The state associated with the organization.</p>
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state associated with the organization.</p>
     pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,11 +123,17 @@ impl OrganizationSummaryBuilder {
     /// Consumes the builder and constructs a [`OrganizationSummary`](crate::types::OrganizationSummary).
     pub fn build(self) -> crate::types::OrganizationSummary {
         crate::types::OrganizationSummary {
-            organization_id: self.organization_id,
-            alias: self.alias,
-            default_mail_domain: self.default_mail_domain,
-            error_message: self.error_message,
-            state: self.state,
+            organization_id: self.organization_id
+            ,
+            alias: self.alias
+            ,
+            default_mail_domain: self.default_mail_domain
+            ,
+            error_message: self.error_message
+            ,
+            state: self.state
+            ,
         }
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTransformerInput {
+pub struct DeleteTransformerInput  {
     /// <p>Specifies the system-assigned unique identifier for the transformer.</p>
     pub transformer_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteTransformerInput {
+impl  DeleteTransformerInput  {
     /// <p>Specifies the system-assigned unique identifier for the transformer.</p>
-    pub fn transformer_id(&self) -> ::std::option::Option<&str> {
+    pub fn transformer_id(&self) -> ::std::option::Option<& str> {
         self.transformer_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteTransformerInputBuilder {
     }
     /// <p>Specifies the system-assigned unique identifier for the transformer.</p>
     pub fn set_transformer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transformer_id = input;
-        self
+        self.transformer_id = input; self
     }
     /// <p>Specifies the system-assigned unique identifier for the transformer.</p>
     pub fn get_transformer_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transformer_id
     }
     /// Consumes the builder and constructs a [`DeleteTransformerInput`](crate::operation::delete_transformer::DeleteTransformerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_transformer::DeleteTransformerInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_transformer::DeleteTransformerInput {
-            transformer_id: self.transformer_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_transformer::DeleteTransformerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_transformer::DeleteTransformerInput {
+                transformer_id: self.transformer_id
+                ,
+            }
+        )
     }
 }
+

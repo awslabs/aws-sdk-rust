@@ -3,24 +3,25 @@
 /// <p>Information about a network resource definition.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkResourceDefinition {
+pub struct NetworkResourceDefinition  {
     /// <p>The type in the network resource definition.</p>
     pub r#type: crate::types::NetworkResourceDefinitionType,
     /// <p>The options in the network resource definition.</p>
-    pub options: ::std::option::Option<::std::vec::Vec<crate::types::NameValuePair>>,
+    pub options: ::std::option::Option<::std::vec::Vec::<crate::types::NameValuePair>>,
     /// <p>The count in the network resource definition.</p>
     pub count: i32,
 }
-impl NetworkResourceDefinition {
+impl  NetworkResourceDefinition  {
     /// <p>The type in the network resource definition.</p>
-    pub fn r#type(&self) -> &crate::types::NetworkResourceDefinitionType {
+    pub fn r#type(&self) -> & crate::types::NetworkResourceDefinitionType {
         &self.r#type
     }
     /// <p>The options in the network resource definition.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.options.is_none()`.
-    pub fn options(&self) -> &[crate::types::NameValuePair] {
-        self.options.as_deref().unwrap_or_default()
+    pub fn options(&self) -> & [crate::types::NameValuePair] {
+        self.options.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The count in the network resource definition.</p>
     pub fn count(&self) -> i32 {
@@ -39,7 +40,7 @@ impl NetworkResourceDefinition {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkResourceDefinitionBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::NetworkResourceDefinitionType>,
-    pub(crate) options: ::std::option::Option<::std::vec::Vec<crate::types::NameValuePair>>,
+    pub(crate) options: ::std::option::Option<::std::vec::Vec::<crate::types::NameValuePair>>,
     pub(crate) count: ::std::option::Option<i32>,
 }
 impl NetworkResourceDefinitionBuilder {
@@ -51,8 +52,7 @@ impl NetworkResourceDefinitionBuilder {
     }
     /// <p>The type in the network resource definition.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::NetworkResourceDefinitionType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type in the network resource definition.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::NetworkResourceDefinitionType> {
@@ -65,17 +65,16 @@ impl NetworkResourceDefinitionBuilder {
     /// <p>The options in the network resource definition.</p>
     pub fn options(mut self, input: crate::types::NameValuePair) -> Self {
         let mut v = self.options.unwrap_or_default();
-        v.push(input);
-        self.options = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The options in the network resource definition.</p>
-    pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NameValuePair>>) -> Self {
-        self.options = input;
-        self
+    pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NameValuePair>>) -> Self {
+        self.options = input; self
     }
     /// <p>The options in the network resource definition.</p>
-    pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NameValuePair>> {
+    pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NameValuePair>> {
         &self.options
     }
     /// <p>The count in the network resource definition.</p>
@@ -86,8 +85,7 @@ impl NetworkResourceDefinitionBuilder {
     }
     /// <p>The count in the network resource definition.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>The count in the network resource definition.</p>
     pub fn get_count(&self) -> &::std::option::Option<i32> {
@@ -98,20 +96,22 @@ impl NetworkResourceDefinitionBuilder {
     /// - [`r#type`](crate::types::builders::NetworkResourceDefinitionBuilder::r#type)
     /// - [`count`](crate::types::builders::NetworkResourceDefinitionBuilder::count)
     pub fn build(self) -> ::std::result::Result<crate::types::NetworkResourceDefinition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::NetworkResourceDefinition {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building NetworkResourceDefinition",
-                )
-            })?,
-            options: self.options,
-            count: self.count.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "count",
-                    "count was not specified but it is required when building NetworkResourceDefinition",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::NetworkResourceDefinition {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building NetworkResourceDefinition")
+                    )?
+                ,
+                options: self.options
+                ,
+                count: self.count
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("count", "count was not specified but it is required when building NetworkResourceDefinition")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,32 +3,34 @@
 /// <p>Information about an add-on version.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddonVersionInfo {
+pub struct AddonVersionInfo  {
     /// <p>The version of the add-on.</p>
     pub addon_version: ::std::option::Option<::std::string::String>,
     /// <p>The architectures that the version supports.</p>
-    pub architecture: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub architecture: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>An object representing the compatibilities of a version.</p>
-    pub compatibilities: ::std::option::Option<::std::vec::Vec<crate::types::Compatibility>>,
+    pub compatibilities: ::std::option::Option<::std::vec::Vec::<crate::types::Compatibility>>,
     /// <p>Whether the add-on requires configuration.</p>
     pub requires_configuration: bool,
 }
-impl AddonVersionInfo {
+impl  AddonVersionInfo  {
     /// <p>The version of the add-on.</p>
-    pub fn addon_version(&self) -> ::std::option::Option<&str> {
+    pub fn addon_version(&self) -> ::std::option::Option<& str> {
         self.addon_version.as_deref()
     }
     /// <p>The architectures that the version supports.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.architecture.is_none()`.
-    pub fn architecture(&self) -> &[::std::string::String] {
-        self.architecture.as_deref().unwrap_or_default()
+    pub fn architecture(&self) -> & [::std::string::String] {
+        self.architecture.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An object representing the compatibilities of a version.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compatibilities.is_none()`.
-    pub fn compatibilities(&self) -> &[crate::types::Compatibility] {
-        self.compatibilities.as_deref().unwrap_or_default()
+    pub fn compatibilities(&self) -> & [crate::types::Compatibility] {
+        self.compatibilities.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Whether the add-on requires configuration.</p>
     pub fn requires_configuration(&self) -> bool {
@@ -47,8 +49,8 @@ impl AddonVersionInfo {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddonVersionInfoBuilder {
     pub(crate) addon_version: ::std::option::Option<::std::string::String>,
-    pub(crate) architecture: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) compatibilities: ::std::option::Option<::std::vec::Vec<crate::types::Compatibility>>,
+    pub(crate) architecture: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) compatibilities: ::std::option::Option<::std::vec::Vec::<crate::types::Compatibility>>,
     pub(crate) requires_configuration: ::std::option::Option<bool>,
 }
 impl AddonVersionInfoBuilder {
@@ -59,8 +61,7 @@ impl AddonVersionInfoBuilder {
     }
     /// <p>The version of the add-on.</p>
     pub fn set_addon_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.addon_version = input;
-        self
+        self.addon_version = input; self
     }
     /// <p>The version of the add-on.</p>
     pub fn get_addon_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,17 +74,16 @@ impl AddonVersionInfoBuilder {
     /// <p>The architectures that the version supports.</p>
     pub fn architecture(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.architecture.unwrap_or_default();
-        v.push(input.into());
-        self.architecture = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.architecture = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The architectures that the version supports.</p>
-    pub fn set_architecture(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.architecture = input;
-        self
+    pub fn set_architecture(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.architecture = input; self
     }
     /// <p>The architectures that the version supports.</p>
-    pub fn get_architecture(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_architecture(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.architecture
     }
     /// Appends an item to `compatibilities`.
@@ -93,17 +93,16 @@ impl AddonVersionInfoBuilder {
     /// <p>An object representing the compatibilities of a version.</p>
     pub fn compatibilities(mut self, input: crate::types::Compatibility) -> Self {
         let mut v = self.compatibilities.unwrap_or_default();
-        v.push(input);
-        self.compatibilities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.compatibilities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An object representing the compatibilities of a version.</p>
-    pub fn set_compatibilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Compatibility>>) -> Self {
-        self.compatibilities = input;
-        self
+    pub fn set_compatibilities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Compatibility>>) -> Self {
+        self.compatibilities = input; self
     }
     /// <p>An object representing the compatibilities of a version.</p>
-    pub fn get_compatibilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Compatibility>> {
+    pub fn get_compatibilities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Compatibility>> {
         &self.compatibilities
     }
     /// <p>Whether the add-on requires configuration.</p>
@@ -113,8 +112,7 @@ impl AddonVersionInfoBuilder {
     }
     /// <p>Whether the add-on requires configuration.</p>
     pub fn set_requires_configuration(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.requires_configuration = input;
-        self
+        self.requires_configuration = input; self
     }
     /// <p>Whether the add-on requires configuration.</p>
     pub fn get_requires_configuration(&self) -> &::std::option::Option<bool> {
@@ -123,10 +121,16 @@ impl AddonVersionInfoBuilder {
     /// Consumes the builder and constructs a [`AddonVersionInfo`](crate::types::AddonVersionInfo).
     pub fn build(self) -> crate::types::AddonVersionInfo {
         crate::types::AddonVersionInfo {
-            addon_version: self.addon_version,
-            architecture: self.architecture,
-            compatibilities: self.compatibilities,
-            requires_configuration: self.requires_configuration.unwrap_or_default(),
+            addon_version: self.addon_version
+            ,
+            architecture: self.architecture
+            ,
+            compatibilities: self.compatibilities
+            ,
+            requires_configuration: self.requires_configuration
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A facet attribute definition. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FacetAttributeDefinition {
+pub struct FacetAttributeDefinition  {
     /// <p>The type of the attribute.</p>
     pub r#type: crate::types::FacetAttributeType,
     /// <p>The default value of the attribute (if configured).</p>
@@ -11,15 +11,15 @@ pub struct FacetAttributeDefinition {
     /// <p>Whether the attribute is mutable or not.</p>
     pub is_immutable: bool,
     /// <p>Validation rules attached to the attribute definition.</p>
-    pub rules: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Rule>>,
+    pub rules: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Rule>>,
 }
-impl FacetAttributeDefinition {
+impl  FacetAttributeDefinition  {
     /// <p>The type of the attribute.</p>
-    pub fn r#type(&self) -> &crate::types::FacetAttributeType {
+    pub fn r#type(&self) -> & crate::types::FacetAttributeType {
         &self.r#type
     }
     /// <p>The default value of the attribute (if configured).</p>
-    pub fn default_value(&self) -> ::std::option::Option<&crate::types::TypedAttributeValue> {
+    pub fn default_value(&self) -> ::std::option::Option<& crate::types::TypedAttributeValue> {
         self.default_value.as_ref()
     }
     /// <p>Whether the attribute is mutable or not.</p>
@@ -27,7 +27,7 @@ impl FacetAttributeDefinition {
         self.is_immutable
     }
     /// <p>Validation rules attached to the attribute definition.</p>
-    pub fn rules(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Rule>> {
+    pub fn rules(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::Rule>> {
         self.rules.as_ref()
     }
 }
@@ -45,7 +45,7 @@ pub struct FacetAttributeDefinitionBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::FacetAttributeType>,
     pub(crate) default_value: ::std::option::Option<crate::types::TypedAttributeValue>,
     pub(crate) is_immutable: ::std::option::Option<bool>,
-    pub(crate) rules: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Rule>>,
+    pub(crate) rules: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Rule>>,
 }
 impl FacetAttributeDefinitionBuilder {
     /// <p>The type of the attribute.</p>
@@ -56,8 +56,7 @@ impl FacetAttributeDefinitionBuilder {
     }
     /// <p>The type of the attribute.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::FacetAttributeType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the attribute.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::FacetAttributeType> {
@@ -70,8 +69,7 @@ impl FacetAttributeDefinitionBuilder {
     }
     /// <p>The default value of the attribute (if configured).</p>
     pub fn set_default_value(mut self, input: ::std::option::Option<crate::types::TypedAttributeValue>) -> Self {
-        self.default_value = input;
-        self
+        self.default_value = input; self
     }
     /// <p>The default value of the attribute (if configured).</p>
     pub fn get_default_value(&self) -> &::std::option::Option<crate::types::TypedAttributeValue> {
@@ -84,8 +82,7 @@ impl FacetAttributeDefinitionBuilder {
     }
     /// <p>Whether the attribute is mutable or not.</p>
     pub fn set_is_immutable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_immutable = input;
-        self
+        self.is_immutable = input; self
     }
     /// <p>Whether the attribute is mutable or not.</p>
     pub fn get_is_immutable(&self) -> &::std::option::Option<bool> {
@@ -98,33 +95,38 @@ impl FacetAttributeDefinitionBuilder {
     /// <p>Validation rules attached to the attribute definition.</p>
     pub fn rules(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Rule) -> Self {
         let mut hash_map = self.rules.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.rules = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.rules = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Validation rules attached to the attribute definition.</p>
-    pub fn set_rules(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Rule>>) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Rule>>) -> Self {
+        self.rules = input; self
     }
     /// <p>Validation rules attached to the attribute definition.</p>
-    pub fn get_rules(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Rule>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Rule>> {
         &self.rules
     }
     /// Consumes the builder and constructs a [`FacetAttributeDefinition`](crate::types::FacetAttributeDefinition).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::FacetAttributeDefinitionBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::FacetAttributeDefinition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FacetAttributeDefinition {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building FacetAttributeDefinition",
-                )
-            })?,
-            default_value: self.default_value,
-            is_immutable: self.is_immutable.unwrap_or_default(),
-            rules: self.rules,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FacetAttributeDefinition {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building FacetAttributeDefinition")
+                    )?
+                ,
+                default_value: self.default_value
+                ,
+                is_immutable: self.is_immutable
+                    .unwrap_or_default()
+                ,
+                rules: self.rules
+                ,
+            }
+        )
     }
 }
+

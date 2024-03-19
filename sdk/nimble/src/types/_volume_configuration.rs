@@ -4,7 +4,7 @@
 /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VolumeConfiguration {
+pub struct VolumeConfiguration  {
     /// <p>The size of the root volume that is attached to the streaming session. The root volume size is measured in GiBs.</p>
     pub size: i32,
     /// <p>The throughput to provision for the root volume that is attached to the streaming session. The throughput is measured in MiB/s.</p>
@@ -12,7 +12,7 @@ pub struct VolumeConfiguration {
     /// <p>The number of I/O operations per second for the root volume that is attached to streaming session.</p>
     pub iops: i32,
 }
-impl VolumeConfiguration {
+impl  VolumeConfiguration  {
     /// <p>The size of the root volume that is attached to the streaming session. The root volume size is measured in GiBs.</p>
     pub fn size(&self) -> i32 {
         self.size
@@ -49,8 +49,7 @@ impl VolumeConfigurationBuilder {
     }
     /// <p>The size of the root volume that is attached to the streaming session. The root volume size is measured in GiBs.</p>
     pub fn set_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.size = input;
-        self
+        self.size = input; self
     }
     /// <p>The size of the root volume that is attached to the streaming session. The root volume size is measured in GiBs.</p>
     pub fn get_size(&self) -> &::std::option::Option<i32> {
@@ -63,8 +62,7 @@ impl VolumeConfigurationBuilder {
     }
     /// <p>The throughput to provision for the root volume that is attached to the streaming session. The throughput is measured in MiB/s.</p>
     pub fn set_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.throughput = input;
-        self
+        self.throughput = input; self
     }
     /// <p>The throughput to provision for the root volume that is attached to the streaming session. The throughput is measured in MiB/s.</p>
     pub fn get_throughput(&self) -> &::std::option::Option<i32> {
@@ -77,8 +75,7 @@ impl VolumeConfigurationBuilder {
     }
     /// <p>The number of I/O operations per second for the root volume that is attached to streaming session.</p>
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.iops = input;
-        self
+        self.iops = input; self
     }
     /// <p>The number of I/O operations per second for the root volume that is attached to streaming session.</p>
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
@@ -87,9 +84,16 @@ impl VolumeConfigurationBuilder {
     /// Consumes the builder and constructs a [`VolumeConfiguration`](crate::types::VolumeConfiguration).
     pub fn build(self) -> crate::types::VolumeConfiguration {
         crate::types::VolumeConfiguration {
-            size: self.size.unwrap_or(500),
-            throughput: self.throughput.unwrap_or(125),
-            iops: self.iops.unwrap_or(3000),
+            size: self.size
+                .unwrap_or(500)
+            ,
+            throughput: self.throughput
+                .unwrap_or(125)
+            ,
+            iops: self.iops
+                .unwrap_or(3000)
+            ,
         }
     }
 }
+

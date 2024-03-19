@@ -3,19 +3,19 @@
 /// <p>The trigger settings that determine how and when Amazon AppFlow runs the specified flow.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TriggerConfig {
+pub struct TriggerConfig  {
     /// <p>Specifies the type of flow trigger. It can be OnDemand, Scheduled, or Event.</p>
     pub trigger_type: crate::types::TriggerType,
     /// <p>Specifies the configuration details of a schedule-triggered flow that you define. Currently, these settings only apply to the Scheduled trigger type.</p>
     pub trigger_properties: ::std::option::Option<crate::types::TriggerProperties>,
 }
-impl TriggerConfig {
+impl  TriggerConfig  {
     /// <p>Specifies the type of flow trigger. It can be OnDemand, Scheduled, or Event.</p>
-    pub fn trigger_type(&self) -> &crate::types::TriggerType {
+    pub fn trigger_type(&self) -> & crate::types::TriggerType {
         &self.trigger_type
     }
     /// <p>Specifies the configuration details of a schedule-triggered flow that you define. Currently, these settings only apply to the Scheduled trigger type.</p>
-    pub fn trigger_properties(&self) -> ::std::option::Option<&crate::types::TriggerProperties> {
+    pub fn trigger_properties(&self) -> ::std::option::Option<& crate::types::TriggerProperties> {
         self.trigger_properties.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl TriggerConfigBuilder {
     }
     /// <p>Specifies the type of flow trigger. It can be OnDemand, Scheduled, or Event.</p>
     pub fn set_trigger_type(mut self, input: ::std::option::Option<crate::types::TriggerType>) -> Self {
-        self.trigger_type = input;
-        self
+        self.trigger_type = input; self
     }
     /// <p>Specifies the type of flow trigger. It can be OnDemand, Scheduled, or Event.</p>
     pub fn get_trigger_type(&self) -> &::std::option::Option<crate::types::TriggerType> {
@@ -56,8 +55,7 @@ impl TriggerConfigBuilder {
     }
     /// <p>Specifies the configuration details of a schedule-triggered flow that you define. Currently, these settings only apply to the Scheduled trigger type.</p>
     pub fn set_trigger_properties(mut self, input: ::std::option::Option<crate::types::TriggerProperties>) -> Self {
-        self.trigger_properties = input;
-        self
+        self.trigger_properties = input; self
     }
     /// <p>Specifies the configuration details of a schedule-triggered flow that you define. Currently, these settings only apply to the Scheduled trigger type.</p>
     pub fn get_trigger_properties(&self) -> &::std::option::Option<crate::types::TriggerProperties> {
@@ -67,14 +65,17 @@ impl TriggerConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`trigger_type`](crate::types::builders::TriggerConfigBuilder::trigger_type)
     pub fn build(self) -> ::std::result::Result<crate::types::TriggerConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TriggerConfig {
-            trigger_type: self.trigger_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "trigger_type",
-                    "trigger_type was not specified but it is required when building TriggerConfig",
-                )
-            })?,
-            trigger_properties: self.trigger_properties,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TriggerConfig {
+                trigger_type: self.trigger_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("trigger_type", "trigger_type was not specified but it is required when building TriggerConfig")
+                    )?
+                ,
+                trigger_properties: self.trigger_properties
+                ,
+            }
+        )
     }
 }
+

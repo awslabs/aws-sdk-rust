@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetResolverConfigInput {
+pub struct GetResolverConfigInput  {
     /// <p>Resource ID of the Amazon VPC that you want to get information about.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
 }
-impl GetResolverConfigInput {
+impl  GetResolverConfigInput  {
     /// <p>Resource ID of the Amazon VPC that you want to get information about.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetResolverConfigInputBuilder {
     }
     /// <p>Resource ID of the Amazon VPC that you want to get information about.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>Resource ID of the Amazon VPC that you want to get information about.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id
     }
     /// Consumes the builder and constructs a [`GetResolverConfigInput`](crate::operation::get_resolver_config::GetResolverConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_resolver_config::GetResolverConfigInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_resolver_config::GetResolverConfigInput {
-            resource_id: self.resource_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_resolver_config::GetResolverConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_resolver_config::GetResolverConfigInput {
+                resource_id: self.resource_id
+                ,
+            }
+        )
     }
 }
+

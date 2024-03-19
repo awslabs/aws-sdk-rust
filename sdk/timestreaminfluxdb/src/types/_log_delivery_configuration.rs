@@ -3,13 +3,13 @@
 /// <p>Configuration for sending InfluxDB engine logs to send to specified S3 bucket.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LogDeliveryConfiguration {
+pub struct LogDeliveryConfiguration  {
     /// <p>Configuration for S3 bucket log delivery.</p>
     pub s3_configuration: ::std::option::Option<crate::types::S3Configuration>,
 }
-impl LogDeliveryConfiguration {
+impl  LogDeliveryConfiguration  {
     /// <p>Configuration for S3 bucket log delivery.</p>
-    pub fn s3_configuration(&self) -> ::std::option::Option<&crate::types::S3Configuration> {
+    pub fn s3_configuration(&self) -> ::std::option::Option<& crate::types::S3Configuration> {
         self.s3_configuration.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl LogDeliveryConfigurationBuilder {
     }
     /// <p>Configuration for S3 bucket log delivery.</p>
     pub fn set_s3_configuration(mut self, input: ::std::option::Option<crate::types::S3Configuration>) -> Self {
-        self.s3_configuration = input;
-        self
+        self.s3_configuration = input; self
     }
     /// <p>Configuration for S3 bucket log delivery.</p>
     pub fn get_s3_configuration(&self) -> &::std::option::Option<crate::types::S3Configuration> {
@@ -45,7 +44,9 @@ impl LogDeliveryConfigurationBuilder {
     /// Consumes the builder and constructs a [`LogDeliveryConfiguration`](crate::types::LogDeliveryConfiguration).
     pub fn build(self) -> crate::types::LogDeliveryConfiguration {
         crate::types::LogDeliveryConfiguration {
-            s3_configuration: self.s3_configuration,
+            s3_configuration: self.s3_configuration
+            ,
         }
     }
 }
+

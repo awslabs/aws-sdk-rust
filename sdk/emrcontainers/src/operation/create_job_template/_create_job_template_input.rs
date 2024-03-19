@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateJobTemplateInput {
+pub struct CreateJobTemplateInput  {
     /// <p>The specified name of the job template.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The client token of the job template.</p>
@@ -10,29 +10,29 @@ pub struct CreateJobTemplateInput {
     /// <p>The job template data which holds values of StartJobRun API request.</p>
     pub job_template_data: ::std::option::Option<crate::types::JobTemplateData>,
     /// <p>The tags that are associated with the job template.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The KMS key ARN used to encrypt the job template.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
-impl CreateJobTemplateInput {
+impl  CreateJobTemplateInput  {
     /// <p>The specified name of the job template.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The client token of the job template.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The job template data which holds values of StartJobRun API request.</p>
-    pub fn job_template_data(&self) -> ::std::option::Option<&crate::types::JobTemplateData> {
+    pub fn job_template_data(&self) -> ::std::option::Option<& crate::types::JobTemplateData> {
         self.job_template_data.as_ref()
     }
     /// <p>The tags that are associated with the job template.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The KMS key ARN used to encrypt the job template.</p>
-    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
 }
@@ -50,7 +50,7 @@ pub struct CreateJobTemplateInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) job_template_data: ::std::option::Option<crate::types::JobTemplateData>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateJobTemplateInputBuilder {
@@ -62,8 +62,7 @@ impl CreateJobTemplateInputBuilder {
     }
     /// <p>The specified name of the job template.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The specified name of the job template.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl CreateJobTemplateInputBuilder {
     }
     /// <p>The client token of the job template.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The client token of the job template.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +90,7 @@ impl CreateJobTemplateInputBuilder {
     }
     /// <p>The job template data which holds values of StartJobRun API request.</p>
     pub fn set_job_template_data(mut self, input: ::std::option::Option<crate::types::JobTemplateData>) -> Self {
-        self.job_template_data = input;
-        self
+        self.job_template_data = input; self
     }
     /// <p>The job template data which holds values of StartJobRun API request.</p>
     pub fn get_job_template_data(&self) -> &::std::option::Option<crate::types::JobTemplateData> {
@@ -106,17 +103,16 @@ impl CreateJobTemplateInputBuilder {
     /// <p>The tags that are associated with the job template.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags that are associated with the job template.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags that are associated with the job template.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The KMS key ARN used to encrypt the job template.</p>
@@ -126,23 +122,28 @@ impl CreateJobTemplateInputBuilder {
     }
     /// <p>The KMS key ARN used to encrypt the job template.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
     }
     /// <p>The KMS key ARN used to encrypt the job template.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_arn
     }
     /// Consumes the builder and constructs a [`CreateJobTemplateInput`](crate::operation::create_job_template::CreateJobTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_job_template::CreateJobTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_job_template::CreateJobTemplateInput {
-            name: self.name,
-            client_token: self.client_token,
-            job_template_data: self.job_template_data,
-            tags: self.tags,
-            kms_key_arn: self.kms_key_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_job_template::CreateJobTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_job_template::CreateJobTemplateInput {
+                name: self.name
+                ,
+                client_token: self.client_token
+                ,
+                job_template_data: self.job_template_data
+                ,
+                tags: self.tags
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
+            }
+        )
     }
 }
+

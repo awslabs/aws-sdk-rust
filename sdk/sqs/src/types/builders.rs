@@ -20,3 +20,4 @@ pub use crate::types::_delete_message_batch_request_entry::DeleteMessageBatchReq
 pub use crate::types::_change_message_visibility_batch_result_entry::ChangeMessageVisibilityBatchResultEntryBuilder;
 
 pub use crate::types::_change_message_visibility_batch_request_entry::ChangeMessageVisibilityBatchRequestEntryBuilder;
+

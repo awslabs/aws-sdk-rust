@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRevisionInput {
+pub struct GetRevisionInput  {
     /// <p>The unique identifier for a data set.</p>
     pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for a revision.</p>
     pub revision_id: ::std::option::Option<::std::string::String>,
 }
-impl GetRevisionInput {
+impl  GetRevisionInput  {
     /// <p>The unique identifier for a data set.</p>
-    pub fn data_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_set_id(&self) -> ::std::option::Option<& str> {
         self.data_set_id.as_deref()
     }
     /// <p>The unique identifier for a revision.</p>
-    pub fn revision_id(&self) -> ::std::option::Option<&str> {
+    pub fn revision_id(&self) -> ::std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetRevisionInputBuilder {
     }
     /// <p>The unique identifier for a data set.</p>
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_id = input;
-        self
+        self.data_set_id = input; self
     }
     /// <p>The unique identifier for a data set.</p>
     pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl GetRevisionInputBuilder {
     }
     /// <p>The unique identifier for a revision.</p>
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
     }
     /// <p>The unique identifier for a revision.</p>
     pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,9 +63,14 @@ impl GetRevisionInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetRevisionInput`](crate::operation::get_revision::GetRevisionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_revision::GetRevisionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_revision::GetRevisionInput {
-            data_set_id: self.data_set_id,
-            revision_id: self.revision_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_revision::GetRevisionInput {
+                data_set_id: self.data_set_id
+                ,
+                revision_id: self.revision_id
+                ,
+            }
+        )
     }
 }
+

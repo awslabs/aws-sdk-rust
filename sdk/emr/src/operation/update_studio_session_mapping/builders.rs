@@ -5,54 +5,50 @@ pub use crate::operation::update_studio_session_mapping::_update_studio_session_
 
 impl UpdateStudioSessionMappingInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_studio_session_mapping::UpdateStudioSessionMappingOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_studio_session_mapping::UpdateStudioSessionMappingError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_studio_session_mapping();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_studio_session_mapping::UpdateStudioSessionMappingOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_studio_session_mapping::UpdateStudioSessionMappingError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_studio_session_mapping();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateStudioSessionMapping`.
-///
+/// 
 /// <p>Updates the session policy attached to the user or group for the specified Amazon EMR Studio.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateStudioSessionMappingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_studio_session_mapping::builders::UpdateStudioSessionMappingInputBuilder,
+                    inner: crate::operation::update_studio_session_mapping::builders::UpdateStudioSessionMappingInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_studio_session_mapping::UpdateStudioSessionMappingOutput,
-        crate::operation::update_studio_session_mapping::UpdateStudioSessionMappingError,
-    > for UpdateStudioSessionMappingFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_studio_session_mapping::UpdateStudioSessionMappingOutput,
-            crate::operation::update_studio_session_mapping::UpdateStudioSessionMappingError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_studio_session_mapping::UpdateStudioSessionMappingOutput,
+                    crate::operation::update_studio_session_mapping::UpdateStudioSessionMappingError,
+                > for UpdateStudioSessionMappingFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_studio_session_mapping::UpdateStudioSessionMappingOutput,
+                        crate::operation::update_studio_session_mapping::UpdateStudioSessionMappingError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateStudioSessionMappingFluentBuilder {
     /// Creates a new `UpdateStudioSessionMapping`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl UpdateStudioSessionMappingFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_studio_session_mapping::UpdateStudioSessionMappingOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_studio_session_mapping::UpdateStudioSessionMappingError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_studio_session_mapping::UpdateStudioSessionMapping::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_studio_session_mapping::UpdateStudioSessionMapping::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_studio_session_mapping::UpdateStudioSessionMappingOutput,
-        crate::operation::update_studio_session_mapping::UpdateStudioSessionMappingError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_studio_session_mapping::UpdateStudioSessionMappingOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_studio_session_mapping::UpdateStudioSessionMappingError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_studio_session_mapping::UpdateStudioSessionMapping::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_studio_session_mapping::UpdateStudioSessionMapping::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_studio_session_mapping::UpdateStudioSessionMappingOutput, crate::operation::update_studio_session_mapping::UpdateStudioSessionMappingError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID of the Amazon EMR Studio.</p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.studio_id(input.into());
@@ -179,3 +166,4 @@ impl UpdateStudioSessionMappingFluentBuilder {
         self.inner.get_session_policy_arn()
     }
 }
+

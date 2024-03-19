@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetLabels`](crate::operation::get_labels::builders::GetLabelsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_labels::builders::GetLabelsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::operation::get_labels::builders::GetLabelsFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_labels::builders::GetLabelsFluentBuilder::set_name):<br>required: **false**<br><p>The name of the label or labels to get.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_labels::builders::GetLabelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_labels::builders::GetLabelsFluentBuilder::set_next_token):<br>required: **false**<br><p>The next token for the subsequent request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_labels::builders::GetLabelsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_labels::builders::GetLabelsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of objects to return for the request.</p><br>
-    /// - On success, responds with [`GetLabelsOutput`](crate::operation::get_labels::GetLabelsOutput) with field(s):
+                            /// - On success, responds with [`GetLabelsOutput`](crate::operation::get_labels::GetLabelsOutput) with field(s):
     ///   - [`labels(Option<Vec::<Label>>)`](crate::operation::get_labels::GetLabelsOutput::labels): <p>An array of labels.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_labels::GetLabelsOutput::next_token): <p>The next page token.</p>
-    /// - On failure, responds with [`SdkError<GetLabelsError>`](crate::operation::get_labels::GetLabelsError)
+                            /// - On failure, responds with [`SdkError<GetLabelsError>`](crate::operation::get_labels::GetLabelsError)
     pub fn get_labels(&self) -> crate::operation::get_labels::builders::GetLabelsFluentBuilder {
-        crate::operation::get_labels::builders::GetLabelsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_labels::builders::GetLabelsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

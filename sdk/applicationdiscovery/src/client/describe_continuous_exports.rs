@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeContinuousExports`](crate::operation::describe_continuous_exports::builders::DescribeContinuousExportsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_continuous_exports::builders::DescribeContinuousExportsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`export_ids(impl Into<String>)`](crate::operation::describe_continuous_exports::builders::DescribeContinuousExportsFluentBuilder::export_ids) / [`set_export_ids(Option<Vec::<String>>)`](crate::operation::describe_continuous_exports::builders::DescribeContinuousExportsFluentBuilder::set_export_ids):<br>required: **false**<br><p>The unique IDs assigned to the exports.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_continuous_exports::builders::DescribeContinuousExportsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_continuous_exports::builders::DescribeContinuousExportsFluentBuilder::set_max_results):<br>required: **false**<br><p>A number between 1 and 100 specifying the maximum number of continuous export descriptions returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_continuous_exports::builders::DescribeContinuousExportsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_continuous_exports::builders::DescribeContinuousExportsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token from the previous call to <code>DescribeExportTasks</code>.</p><br>
-    /// - On success, responds with [`DescribeContinuousExportsOutput`](crate::operation::describe_continuous_exports::DescribeContinuousExportsOutput) with field(s):
+                            /// - On success, responds with [`DescribeContinuousExportsOutput`](crate::operation::describe_continuous_exports::DescribeContinuousExportsOutput) with field(s):
     ///   - [`descriptions(Option<Vec::<ContinuousExportDescription>>)`](crate::operation::describe_continuous_exports::DescribeContinuousExportsOutput::descriptions): <p>A list of continuous export descriptions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_continuous_exports::DescribeContinuousExportsOutput::next_token): <p>The token from the previous call to <code>DescribeExportTasks</code>.</p>
-    /// - On failure, responds with [`SdkError<DescribeContinuousExportsError>`](crate::operation::describe_continuous_exports::DescribeContinuousExportsError)
+                            /// - On failure, responds with [`SdkError<DescribeContinuousExportsError>`](crate::operation::describe_continuous_exports::DescribeContinuousExportsError)
     pub fn describe_continuous_exports(&self) -> crate::operation::describe_continuous_exports::builders::DescribeContinuousExportsFluentBuilder {
-        crate::operation::describe_continuous_exports::builders::DescribeContinuousExportsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_continuous_exports::builders::DescribeContinuousExportsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

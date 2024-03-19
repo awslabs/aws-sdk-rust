@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateParallelDataInput {
+pub struct UpdateParallelDataInput  {
     /// <p>The name of the parallel data resource being updated.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A custom description for the parallel data resource in Amazon Translate.</p>
@@ -12,21 +12,21 @@ pub struct UpdateParallelDataInput {
     /// <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl UpdateParallelDataInput {
+impl  UpdateParallelDataInput  {
     /// <p>The name of the parallel data resource being updated.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A custom description for the parallel data resource in Amazon Translate.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Specifies the format and S3 location of the parallel data input file.</p>
-    pub fn parallel_data_config(&self) -> ::std::option::Option<&crate::types::ParallelDataConfig> {
+    pub fn parallel_data_config(&self) -> ::std::option::Option<& crate::types::ParallelDataConfig> {
         self.parallel_data_config.as_ref()
     }
     /// <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl UpdateParallelDataInputBuilder {
     }
     /// <p>The name of the parallel data resource being updated.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the parallel data resource being updated.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl UpdateParallelDataInputBuilder {
     }
     /// <p>A custom description for the parallel data resource in Amazon Translate.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A custom description for the parallel data resource in Amazon Translate.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl UpdateParallelDataInputBuilder {
     }
     /// <p>Specifies the format and S3 location of the parallel data input file.</p>
     pub fn set_parallel_data_config(mut self, input: ::std::option::Option<crate::types::ParallelDataConfig>) -> Self {
-        self.parallel_data_config = input;
-        self
+        self.parallel_data_config = input; self
     }
     /// <p>Specifies the format and S3 location of the parallel data input file.</p>
     pub fn get_parallel_data_config(&self) -> &::std::option::Option<crate::types::ParallelDataConfig> {
@@ -99,23 +96,26 @@ impl UpdateParallelDataInputBuilder {
     }
     /// <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateParallelDataInput`](crate::operation::update_parallel_data::UpdateParallelDataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_parallel_data::UpdateParallelDataInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_parallel_data::UpdateParallelDataInput {
-            name: self.name,
-            description: self.description,
-            parallel_data_config: self.parallel_data_config,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_parallel_data::UpdateParallelDataInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_parallel_data::UpdateParallelDataInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                parallel_data_config: self.parallel_data_config
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

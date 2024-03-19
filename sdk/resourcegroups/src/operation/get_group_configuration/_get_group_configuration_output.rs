@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetGroupConfigurationOutput {
+pub struct GetGroupConfigurationOutput  {
     /// <p>A structure that describes the service configuration attached with the specified group. For details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p>
     pub group_configuration: ::std::option::Option<crate::types::GroupConfiguration>,
     _request_id: Option<String>,
 }
-impl GetGroupConfigurationOutput {
+impl  GetGroupConfigurationOutput  {
     /// <p>A structure that describes the service configuration attached with the specified group. For details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p>
-    pub fn group_configuration(&self) -> ::std::option::Option<&crate::types::GroupConfiguration> {
+    pub fn group_configuration(&self) -> ::std::option::Option<& crate::types::GroupConfiguration> {
         self.group_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetGroupConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetGroupConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetGroupConfigurationOutput`](crate::operation::get_group_configuration::GetGroupConfigurationOutput).
     pub fn builder() -> crate::operation::get_group_configuration::builders::GetGroupConfigurationOutputBuilder {
@@ -40,27 +40,28 @@ impl GetGroupConfigurationOutputBuilder {
     }
     /// <p>A structure that describes the service configuration attached with the specified group. For details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p>
     pub fn set_group_configuration(mut self, input: ::std::option::Option<crate::types::GroupConfiguration>) -> Self {
-        self.group_configuration = input;
-        self
+        self.group_configuration = input; self
     }
     /// <p>A structure that describes the service configuration attached with the specified group. For details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p>
     pub fn get_group_configuration(&self) -> &::std::option::Option<crate::types::GroupConfiguration> {
         &self.group_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetGroupConfigurationOutput`](crate::operation::get_group_configuration::GetGroupConfigurationOutput).
     pub fn build(self) -> crate::operation::get_group_configuration::GetGroupConfigurationOutput {
         crate::operation::get_group_configuration::GetGroupConfigurationOutput {
-            group_configuration: self.group_configuration,
+            group_configuration: self.group_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

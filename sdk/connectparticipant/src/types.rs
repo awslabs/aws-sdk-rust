@@ -72,3 +72,4 @@ pub mod builders;
 
 /// Error types that Amazon Connect Participant Service can respond with.
 pub mod error;
+

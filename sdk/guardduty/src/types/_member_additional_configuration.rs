@@ -3,19 +3,19 @@
 /// <p>Information about the additional configuration for the member account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MemberAdditionalConfiguration {
+pub struct MemberAdditionalConfiguration  {
     /// <p>Name of the additional configuration.</p>
     pub name: ::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration>,
     /// <p>Status of the additional configuration.</p>
     pub status: ::std::option::Option<crate::types::FeatureStatus>,
 }
-impl MemberAdditionalConfiguration {
+impl  MemberAdditionalConfiguration  {
     /// <p>Name of the additional configuration.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::OrgFeatureAdditionalConfiguration> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::OrgFeatureAdditionalConfiguration> {
         self.name.as_ref()
     }
     /// <p>Status of the additional configuration.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::FeatureStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::FeatureStatus> {
         self.status.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl MemberAdditionalConfigurationBuilder {
     }
     /// <p>Name of the additional configuration.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of the additional configuration.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration> {
@@ -55,8 +54,7 @@ impl MemberAdditionalConfigurationBuilder {
     }
     /// <p>Status of the additional configuration.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FeatureStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Status of the additional configuration.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FeatureStatus> {
@@ -65,8 +63,11 @@ impl MemberAdditionalConfigurationBuilder {
     /// Consumes the builder and constructs a [`MemberAdditionalConfiguration`](crate::types::MemberAdditionalConfiguration).
     pub fn build(self) -> crate::types::MemberAdditionalConfiguration {
         crate::types::MemberAdditionalConfiguration {
-            name: self.name,
-            status: self.status,
+            name: self.name
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

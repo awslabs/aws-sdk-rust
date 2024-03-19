@@ -5,7 +5,7 @@
 /// <p>Branch coverage determines if your tests cover every possible branch of a control structure, such as an <code>if</code> or <code>case</code> statement.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CodeCoverageReportSummary {
+pub struct CodeCoverageReportSummary  {
     /// <p>The percentage of lines that are covered by your tests.</p>
     pub line_coverage_percentage: ::std::option::Option<f64>,
     /// <p>The number of lines that are covered by your tests.</p>
@@ -19,7 +19,7 @@ pub struct CodeCoverageReportSummary {
     /// <p>The number of conditional branches that are not covered by your tests.</p>
     pub branches_missed: ::std::option::Option<i32>,
 }
-impl CodeCoverageReportSummary {
+impl  CodeCoverageReportSummary  {
     /// <p>The percentage of lines that are covered by your tests.</p>
     pub fn line_coverage_percentage(&self) -> ::std::option::Option<f64> {
         self.line_coverage_percentage
@@ -71,8 +71,7 @@ impl CodeCoverageReportSummaryBuilder {
     }
     /// <p>The percentage of lines that are covered by your tests.</p>
     pub fn set_line_coverage_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.line_coverage_percentage = input;
-        self
+        self.line_coverage_percentage = input; self
     }
     /// <p>The percentage of lines that are covered by your tests.</p>
     pub fn get_line_coverage_percentage(&self) -> &::std::option::Option<f64> {
@@ -85,8 +84,7 @@ impl CodeCoverageReportSummaryBuilder {
     }
     /// <p>The number of lines that are covered by your tests.</p>
     pub fn set_lines_covered(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.lines_covered = input;
-        self
+        self.lines_covered = input; self
     }
     /// <p>The number of lines that are covered by your tests.</p>
     pub fn get_lines_covered(&self) -> &::std::option::Option<i32> {
@@ -99,8 +97,7 @@ impl CodeCoverageReportSummaryBuilder {
     }
     /// <p>The number of lines that are not covered by your tests.</p>
     pub fn set_lines_missed(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.lines_missed = input;
-        self
+        self.lines_missed = input; self
     }
     /// <p>The number of lines that are not covered by your tests.</p>
     pub fn get_lines_missed(&self) -> &::std::option::Option<i32> {
@@ -113,8 +110,7 @@ impl CodeCoverageReportSummaryBuilder {
     }
     /// <p>The percentage of branches that are covered by your tests.</p>
     pub fn set_branch_coverage_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.branch_coverage_percentage = input;
-        self
+        self.branch_coverage_percentage = input; self
     }
     /// <p>The percentage of branches that are covered by your tests.</p>
     pub fn get_branch_coverage_percentage(&self) -> &::std::option::Option<f64> {
@@ -127,8 +123,7 @@ impl CodeCoverageReportSummaryBuilder {
     }
     /// <p>The number of conditional branches that are covered by your tests.</p>
     pub fn set_branches_covered(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.branches_covered = input;
-        self
+        self.branches_covered = input; self
     }
     /// <p>The number of conditional branches that are covered by your tests.</p>
     pub fn get_branches_covered(&self) -> &::std::option::Option<i32> {
@@ -141,8 +136,7 @@ impl CodeCoverageReportSummaryBuilder {
     }
     /// <p>The number of conditional branches that are not covered by your tests.</p>
     pub fn set_branches_missed(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.branches_missed = input;
-        self
+        self.branches_missed = input; self
     }
     /// <p>The number of conditional branches that are not covered by your tests.</p>
     pub fn get_branches_missed(&self) -> &::std::option::Option<i32> {
@@ -151,12 +145,19 @@ impl CodeCoverageReportSummaryBuilder {
     /// Consumes the builder and constructs a [`CodeCoverageReportSummary`](crate::types::CodeCoverageReportSummary).
     pub fn build(self) -> crate::types::CodeCoverageReportSummary {
         crate::types::CodeCoverageReportSummary {
-            line_coverage_percentage: self.line_coverage_percentage,
-            lines_covered: self.lines_covered,
-            lines_missed: self.lines_missed,
-            branch_coverage_percentage: self.branch_coverage_percentage,
-            branches_covered: self.branches_covered,
-            branches_missed: self.branches_missed,
+            line_coverage_percentage: self.line_coverage_percentage
+            ,
+            lines_covered: self.lines_covered
+            ,
+            lines_missed: self.lines_missed
+            ,
+            branch_coverage_percentage: self.branch_coverage_percentage
+            ,
+            branches_covered: self.branches_covered
+            ,
+            branches_missed: self.branches_missed
+            ,
         }
     }
 }
+

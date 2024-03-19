@@ -5,54 +5,50 @@ pub use crate::operation::create_mobile_device_access_rule::_create_mobile_devic
 
 impl CreateMobileDeviceAccessRuleInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_mobile_device_access_rule();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_mobile_device_access_rule();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateMobileDeviceAccessRule`.
-///
+/// 
 /// <p>Creates a new mobile device access rule for the specified WorkMail organization.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMobileDeviceAccessRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_mobile_device_access_rule::builders::CreateMobileDeviceAccessRuleInputBuilder,
+                    inner: crate::operation::create_mobile_device_access_rule::builders::CreateMobileDeviceAccessRuleInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleOutput,
-        crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleError,
-    > for CreateMobileDeviceAccessRuleFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleOutput,
-            crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleOutput,
+                    crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleError,
+                > for CreateMobileDeviceAccessRuleFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleOutput,
+                        crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateMobileDeviceAccessRuleFluentBuilder {
     /// Creates a new `CreateMobileDeviceAccessRule`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl CreateMobileDeviceAccessRuleFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRule::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRule::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleOutput,
-        crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRule::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRule::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleOutput, crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The WorkMail organization under which the rule will be created.</p>
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
@@ -188,12 +175,12 @@ impl CreateMobileDeviceAccessRuleFluentBuilder {
         self
     }
     /// <p>Device types that the rule will match.</p>
-    pub fn set_device_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_device_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_device_types(input);
         self
     }
     /// <p>Device types that the rule will match.</p>
-    pub fn get_device_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_device_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_device_types()
     }
     /// Appends an item to `NotDeviceTypes`.
@@ -206,12 +193,12 @@ impl CreateMobileDeviceAccessRuleFluentBuilder {
         self
     }
     /// <p>Device types that the rule <b>will not</b> match. All other device types will match.</p>
-    pub fn set_not_device_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_not_device_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_not_device_types(input);
         self
     }
     /// <p>Device types that the rule <b>will not</b> match. All other device types will match.</p>
-    pub fn get_not_device_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_not_device_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_not_device_types()
     }
     /// Appends an item to `DeviceModels`.
@@ -224,12 +211,12 @@ impl CreateMobileDeviceAccessRuleFluentBuilder {
         self
     }
     /// <p>Device models that the rule will match.</p>
-    pub fn set_device_models(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_device_models(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_device_models(input);
         self
     }
     /// <p>Device models that the rule will match.</p>
-    pub fn get_device_models(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_device_models(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_device_models()
     }
     /// Appends an item to `NotDeviceModels`.
@@ -242,12 +229,12 @@ impl CreateMobileDeviceAccessRuleFluentBuilder {
         self
     }
     /// <p>Device models that the rule <b>will not</b> match. All other device models will match.</p>
-    pub fn set_not_device_models(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_not_device_models(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_not_device_models(input);
         self
     }
     /// <p>Device models that the rule <b>will not</b> match. All other device models will match.</p>
-    pub fn get_not_device_models(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_not_device_models(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_not_device_models()
     }
     /// Appends an item to `DeviceOperatingSystems`.
@@ -260,12 +247,12 @@ impl CreateMobileDeviceAccessRuleFluentBuilder {
         self
     }
     /// <p>Device operating systems that the rule will match.</p>
-    pub fn set_device_operating_systems(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_device_operating_systems(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_device_operating_systems(input);
         self
     }
     /// <p>Device operating systems that the rule will match.</p>
-    pub fn get_device_operating_systems(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_device_operating_systems(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_device_operating_systems()
     }
     /// Appends an item to `NotDeviceOperatingSystems`.
@@ -278,12 +265,12 @@ impl CreateMobileDeviceAccessRuleFluentBuilder {
         self
     }
     /// <p>Device operating systems that the rule <b>will not</b> match. All other device operating systems will match.</p>
-    pub fn set_not_device_operating_systems(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_not_device_operating_systems(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_not_device_operating_systems(input);
         self
     }
     /// <p>Device operating systems that the rule <b>will not</b> match. All other device operating systems will match.</p>
-    pub fn get_not_device_operating_systems(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_not_device_operating_systems(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_not_device_operating_systems()
     }
     /// Appends an item to `DeviceUserAgents`.
@@ -296,12 +283,12 @@ impl CreateMobileDeviceAccessRuleFluentBuilder {
         self
     }
     /// <p>Device user agents that the rule will match.</p>
-    pub fn set_device_user_agents(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_device_user_agents(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_device_user_agents(input);
         self
     }
     /// <p>Device user agents that the rule will match.</p>
-    pub fn get_device_user_agents(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_device_user_agents(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_device_user_agents()
     }
     /// Appends an item to `NotDeviceUserAgents`.
@@ -314,12 +301,13 @@ impl CreateMobileDeviceAccessRuleFluentBuilder {
         self
     }
     /// <p>Device user agents that the rule <b>will not</b> match. All other device user agents will match.</p>
-    pub fn set_not_device_user_agents(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_not_device_user_agents(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_not_device_user_agents(input);
         self
     }
     /// <p>Device user agents that the rule <b>will not</b> match. All other device user agents will match.</p>
-    pub fn get_not_device_user_agents(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_not_device_user_agents(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_not_device_user_agents()
     }
 }
+

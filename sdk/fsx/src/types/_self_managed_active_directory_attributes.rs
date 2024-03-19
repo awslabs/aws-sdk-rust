@@ -3,7 +3,7 @@
 /// <p>The configuration of the self-managed Microsoft Active Directory (AD) directory to which the Windows File Server or ONTAP storage virtual machine (SVM) instance is joined.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SelfManagedActiveDirectoryAttributes {
+pub struct SelfManagedActiveDirectoryAttributes  {
     /// <p>The fully qualified domain name of the self-managed AD directory.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The fully qualified distinguished name of the organizational unit within the self-managed AD directory to which the Windows File Server or ONTAP storage virtual machine (SVM) instance is joined.</p>
@@ -13,30 +13,31 @@ pub struct SelfManagedActiveDirectoryAttributes {
     /// <p>The user name for the service account on your self-managed AD domain that FSx uses to join to your AD domain.</p>
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the self-managed AD directory.</p>
-    pub dns_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub dns_ips: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl SelfManagedActiveDirectoryAttributes {
+impl  SelfManagedActiveDirectoryAttributes  {
     /// <p>The fully qualified domain name of the self-managed AD directory.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The fully qualified distinguished name of the organizational unit within the self-managed AD directory to which the Windows File Server or ONTAP storage virtual machine (SVM) instance is joined.</p>
-    pub fn organizational_unit_distinguished_name(&self) -> ::std::option::Option<&str> {
+    pub fn organizational_unit_distinguished_name(&self) -> ::std::option::Option<& str> {
         self.organizational_unit_distinguished_name.as_deref()
     }
     /// <p>The name of the domain group whose members have administrative privileges for the FSx file system.</p>
-    pub fn file_system_administrators_group(&self) -> ::std::option::Option<&str> {
+    pub fn file_system_administrators_group(&self) -> ::std::option::Option<& str> {
         self.file_system_administrators_group.as_deref()
     }
     /// <p>The user name for the service account on your self-managed AD domain that FSx uses to join to your AD domain.</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the self-managed AD directory.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_ips.is_none()`.
-    pub fn dns_ips(&self) -> &[::std::string::String] {
-        self.dns_ips.as_deref().unwrap_or_default()
+    pub fn dns_ips(&self) -> & [::std::string::String] {
+        self.dns_ips.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SelfManagedActiveDirectoryAttributes {
@@ -54,7 +55,7 @@ pub struct SelfManagedActiveDirectoryAttributesBuilder {
     pub(crate) organizational_unit_distinguished_name: ::std::option::Option<::std::string::String>,
     pub(crate) file_system_administrators_group: ::std::option::Option<::std::string::String>,
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
-    pub(crate) dns_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) dns_ips: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl SelfManagedActiveDirectoryAttributesBuilder {
     /// <p>The fully qualified domain name of the self-managed AD directory.</p>
@@ -64,8 +65,7 @@ impl SelfManagedActiveDirectoryAttributesBuilder {
     }
     /// <p>The fully qualified domain name of the self-managed AD directory.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The fully qualified domain name of the self-managed AD directory.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl SelfManagedActiveDirectoryAttributesBuilder {
     }
     /// <p>The fully qualified distinguished name of the organizational unit within the self-managed AD directory to which the Windows File Server or ONTAP storage virtual machine (SVM) instance is joined.</p>
     pub fn set_organizational_unit_distinguished_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organizational_unit_distinguished_name = input;
-        self
+        self.organizational_unit_distinguished_name = input; self
     }
     /// <p>The fully qualified distinguished name of the organizational unit within the self-managed AD directory to which the Windows File Server or ONTAP storage virtual machine (SVM) instance is joined.</p>
     pub fn get_organizational_unit_distinguished_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +91,7 @@ impl SelfManagedActiveDirectoryAttributesBuilder {
     }
     /// <p>The name of the domain group whose members have administrative privileges for the FSx file system.</p>
     pub fn set_file_system_administrators_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_system_administrators_group = input;
-        self
+        self.file_system_administrators_group = input; self
     }
     /// <p>The name of the domain group whose members have administrative privileges for the FSx file system.</p>
     pub fn get_file_system_administrators_group(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +104,7 @@ impl SelfManagedActiveDirectoryAttributesBuilder {
     }
     /// <p>The user name for the service account on your self-managed AD domain that FSx uses to join to your AD domain.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>The user name for the service account on your self-managed AD domain that FSx uses to join to your AD domain.</p>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,27 +117,32 @@ impl SelfManagedActiveDirectoryAttributesBuilder {
     /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the self-managed AD directory.</p>
     pub fn dns_ips(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dns_ips.unwrap_or_default();
-        v.push(input.into());
-        self.dns_ips = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.dns_ips = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the self-managed AD directory.</p>
-    pub fn set_dns_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.dns_ips = input;
-        self
+    pub fn set_dns_ips(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.dns_ips = input; self
     }
     /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the self-managed AD directory.</p>
-    pub fn get_dns_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dns_ips(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.dns_ips
     }
     /// Consumes the builder and constructs a [`SelfManagedActiveDirectoryAttributes`](crate::types::SelfManagedActiveDirectoryAttributes).
     pub fn build(self) -> crate::types::SelfManagedActiveDirectoryAttributes {
         crate::types::SelfManagedActiveDirectoryAttributes {
-            domain_name: self.domain_name,
-            organizational_unit_distinguished_name: self.organizational_unit_distinguished_name,
-            file_system_administrators_group: self.file_system_administrators_group,
-            user_name: self.user_name,
-            dns_ips: self.dns_ips,
+            domain_name: self.domain_name
+            ,
+            organizational_unit_distinguished_name: self.organizational_unit_distinguished_name
+            ,
+            file_system_administrators_group: self.file_system_administrators_group
+            ,
+            user_name: self.user_name
+            ,
+            dns_ips: self.dns_ips
+            ,
         }
     }
 }
+

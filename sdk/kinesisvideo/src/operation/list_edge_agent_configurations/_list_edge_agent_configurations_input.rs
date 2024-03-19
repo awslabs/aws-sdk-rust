@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListEdgeAgentConfigurationsInput {
+pub struct ListEdgeAgentConfigurationsInput  {
     /// <p>The "Internet of Things (IoT) Thing" Arn of the edge agent.</p>
     pub hub_device_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of edge configurations to return in the response. The default is 5.</p>
@@ -10,9 +10,9 @@ pub struct ListEdgeAgentConfigurationsInput {
     /// <p>If you specify this parameter, when the result of a <code>ListEdgeAgentConfigurations</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of edge configurations, provide this token in your next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListEdgeAgentConfigurationsInput {
+impl  ListEdgeAgentConfigurationsInput  {
     /// <p>The "Internet of Things (IoT) Thing" Arn of the edge agent.</p>
-    pub fn hub_device_arn(&self) -> ::std::option::Option<&str> {
+    pub fn hub_device_arn(&self) -> ::std::option::Option<& str> {
         self.hub_device_arn.as_deref()
     }
     /// <p>The maximum number of edge configurations to return in the response. The default is 5.</p>
@@ -20,7 +20,7 @@ impl ListEdgeAgentConfigurationsInput {
         self.max_results
     }
     /// <p>If you specify this parameter, when the result of a <code>ListEdgeAgentConfigurations</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of edge configurations, provide this token in your next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ListEdgeAgentConfigurationsInputBuilder {
     }
     /// <p>The "Internet of Things (IoT) Thing" Arn of the edge agent.</p>
     pub fn set_hub_device_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hub_device_arn = input;
-        self
+        self.hub_device_arn = input; self
     }
     /// <p>The "Internet of Things (IoT) Thing" Arn of the edge agent.</p>
     pub fn get_hub_device_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListEdgeAgentConfigurationsInputBuilder {
     }
     /// <p>The maximum number of edge configurations to return in the response. The default is 5.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of edge configurations to return in the response. The default is 5.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -76,24 +74,24 @@ impl ListEdgeAgentConfigurationsInputBuilder {
     }
     /// <p>If you specify this parameter, when the result of a <code>ListEdgeAgentConfigurations</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of edge configurations, provide this token in your next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If you specify this parameter, when the result of a <code>ListEdgeAgentConfigurations</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of edge configurations, provide this token in your next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListEdgeAgentConfigurationsInput`](crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsInput {
-            hub_device_arn: self.hub_device_arn,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_edge_agent_configurations::ListEdgeAgentConfigurationsInput {
+                hub_device_arn: self.hub_device_arn
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

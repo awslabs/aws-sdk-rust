@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRetrieverInput {
+pub struct UpdateRetrieverInput  {
     /// <p>The identifier of your Amazon Q application.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of your retriever.</p>
@@ -14,25 +14,25 @@ pub struct UpdateRetrieverInput {
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the retriever and required resources.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
-impl UpdateRetrieverInput {
+impl  UpdateRetrieverInput  {
     /// <p>The identifier of your Amazon Q application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The identifier of your retriever.</p>
-    pub fn retriever_id(&self) -> ::std::option::Option<&str> {
+    pub fn retriever_id(&self) -> ::std::option::Option<& str> {
         self.retriever_id.as_deref()
     }
     /// <p>Provides information on how the retriever used for your Amazon Q application is configured.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::RetrieverConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::RetrieverConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>The name of your retriever.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the retriever and required resources.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl UpdateRetrieverInputBuilder {
     }
     /// <p>The identifier of your Amazon Q application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier of your Amazon Q application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl UpdateRetrieverInputBuilder {
     }
     /// <p>The identifier of your retriever.</p>
     pub fn set_retriever_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.retriever_id = input;
-        self
+        self.retriever_id = input; self
     }
     /// <p>The identifier of your retriever.</p>
     pub fn get_retriever_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl UpdateRetrieverInputBuilder {
     }
     /// <p>Provides information on how the retriever used for your Amazon Q application is configured.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::RetrieverConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>Provides information on how the retriever used for your Amazon Q application is configured.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::RetrieverConfiguration> {
@@ -105,8 +102,7 @@ impl UpdateRetrieverInputBuilder {
     }
     /// <p>The name of your retriever.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The name of your retriever.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,23 +115,28 @@ impl UpdateRetrieverInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the retriever and required resources.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the retriever and required resources.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`UpdateRetrieverInput`](crate::operation::update_retriever::UpdateRetrieverInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_retriever::UpdateRetrieverInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_retriever::UpdateRetrieverInput {
-            application_id: self.application_id,
-            retriever_id: self.retriever_id,
-            configuration: self.configuration,
-            display_name: self.display_name,
-            role_arn: self.role_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_retriever::UpdateRetrieverInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_retriever::UpdateRetrieverInput {
+                application_id: self.application_id
+                ,
+                retriever_id: self.retriever_id
+                ,
+                configuration: self.configuration
+                ,
+                display_name: self.display_name
+                ,
+                role_arn: self.role_arn
+                ,
+            }
+        )
     }
 }
+

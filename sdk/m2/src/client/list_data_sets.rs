@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDataSets`](crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`application_id(impl Into<String>)`](crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::set_application_id):<br>required: **true**<br><p>The unique identifier of the application for which you want to list the associated data sets.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of objects to return.</p><br>
     ///   - [`prefix(impl Into<String>)`](crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::prefix) / [`set_prefix(Option<String>)`](crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::set_prefix):<br>required: **false**<br><p>The prefix of the data set name, which you can use to filter the list of data sets.</p><br>
     ///   - [`name_filter(impl Into<String>)`](crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::name_filter) / [`set_name_filter(Option<String>)`](crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::set_name_filter):<br>required: **false**<br><p>Filter dataset name matching the specified pattern. Can use * and % as wild cards.</p><br>
-    /// - On success, responds with [`ListDataSetsOutput`](crate::operation::list_data_sets::ListDataSetsOutput) with field(s):
+                            /// - On success, responds with [`ListDataSetsOutput`](crate::operation::list_data_sets::ListDataSetsOutput) with field(s):
     ///   - [`data_sets(Vec::<DataSetSummary>)`](crate::operation::list_data_sets::ListDataSetsOutput::data_sets): <p>The list of data sets, containing information including the creation time, the data set name, the data set organization, the data set format, and the last time the data set was referenced or updated.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_sets::ListDataSetsOutput::next_token): <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
-    /// - On failure, responds with [`SdkError<ListDataSetsError>`](crate::operation::list_data_sets::ListDataSetsError)
+                            /// - On failure, responds with [`SdkError<ListDataSetsError>`](crate::operation::list_data_sets::ListDataSetsError)
     pub fn list_data_sets(&self) -> crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder {
-        crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

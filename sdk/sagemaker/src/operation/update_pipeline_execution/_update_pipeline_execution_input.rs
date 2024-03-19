@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePipelineExecutionInput {
+pub struct UpdatePipelineExecutionInput  {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
     pub pipeline_execution_arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the pipeline execution.</p>
@@ -12,21 +12,21 @@ pub struct UpdatePipelineExecutionInput {
     /// <p>This configuration, if specified, overrides the parallelism configuration of the parent pipeline for this specific run.</p>
     pub parallelism_configuration: ::std::option::Option<crate::types::ParallelismConfiguration>,
 }
-impl UpdatePipelineExecutionInput {
+impl  UpdatePipelineExecutionInput  {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    pub fn pipeline_execution_arn(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_execution_arn(&self) -> ::std::option::Option<& str> {
         self.pipeline_execution_arn.as_deref()
     }
     /// <p>The description of the pipeline execution.</p>
-    pub fn pipeline_execution_description(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_execution_description(&self) -> ::std::option::Option<& str> {
         self.pipeline_execution_description.as_deref()
     }
     /// <p>The display name of the pipeline execution.</p>
-    pub fn pipeline_execution_display_name(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_execution_display_name(&self) -> ::std::option::Option<& str> {
         self.pipeline_execution_display_name.as_deref()
     }
     /// <p>This configuration, if specified, overrides the parallelism configuration of the parent pipeline for this specific run.</p>
-    pub fn parallelism_configuration(&self) -> ::std::option::Option<&crate::types::ParallelismConfiguration> {
+    pub fn parallelism_configuration(&self) -> ::std::option::Option<& crate::types::ParallelismConfiguration> {
         self.parallelism_configuration.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl UpdatePipelineExecutionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
     pub fn set_pipeline_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_execution_arn = input;
-        self
+        self.pipeline_execution_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
     pub fn get_pipeline_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl UpdatePipelineExecutionInputBuilder {
     }
     /// <p>The description of the pipeline execution.</p>
     pub fn set_pipeline_execution_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_execution_description = input;
-        self
+        self.pipeline_execution_description = input; self
     }
     /// <p>The description of the pipeline execution.</p>
     pub fn get_pipeline_execution_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl UpdatePipelineExecutionInputBuilder {
     }
     /// <p>The display name of the pipeline execution.</p>
     pub fn set_pipeline_execution_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_execution_display_name = input;
-        self
+        self.pipeline_execution_display_name = input; self
     }
     /// <p>The display name of the pipeline execution.</p>
     pub fn get_pipeline_execution_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,25 +94,26 @@ impl UpdatePipelineExecutionInputBuilder {
     }
     /// <p>This configuration, if specified, overrides the parallelism configuration of the parent pipeline for this specific run.</p>
     pub fn set_parallelism_configuration(mut self, input: ::std::option::Option<crate::types::ParallelismConfiguration>) -> Self {
-        self.parallelism_configuration = input;
-        self
+        self.parallelism_configuration = input; self
     }
     /// <p>This configuration, if specified, overrides the parallelism configuration of the parent pipeline for this specific run.</p>
     pub fn get_parallelism_configuration(&self) -> &::std::option::Option<crate::types::ParallelismConfiguration> {
         &self.parallelism_configuration
     }
     /// Consumes the builder and constructs a [`UpdatePipelineExecutionInput`](crate::operation::update_pipeline_execution::UpdatePipelineExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_pipeline_execution::UpdatePipelineExecutionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_pipeline_execution::UpdatePipelineExecutionInput {
-            pipeline_execution_arn: self.pipeline_execution_arn,
-            pipeline_execution_description: self.pipeline_execution_description,
-            pipeline_execution_display_name: self.pipeline_execution_display_name,
-            parallelism_configuration: self.parallelism_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_pipeline_execution::UpdatePipelineExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_pipeline_execution::UpdatePipelineExecutionInput {
+                pipeline_execution_arn: self.pipeline_execution_arn
+                ,
+                pipeline_execution_description: self.pipeline_execution_description
+                ,
+                pipeline_execution_display_name: self.pipeline_execution_display_name
+                ,
+                parallelism_configuration: self.parallelism_configuration
+                ,
+            }
+        )
     }
 }
+

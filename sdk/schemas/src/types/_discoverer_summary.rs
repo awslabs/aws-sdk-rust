@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DiscovererSummary {
+pub struct DiscovererSummary  {
     /// <p>The ARN of the discoverer.</p>
     pub discoverer_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the discoverer.</p>
@@ -14,23 +14,23 @@ pub struct DiscovererSummary {
     /// <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
     pub cross_account: ::std::option::Option<bool>,
     /// <p>Tags associated with the resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl DiscovererSummary {
+impl  DiscovererSummary  {
     /// <p>The ARN of the discoverer.</p>
-    pub fn discoverer_arn(&self) -> ::std::option::Option<&str> {
+    pub fn discoverer_arn(&self) -> ::std::option::Option<& str> {
         self.discoverer_arn.as_deref()
     }
     /// <p>The ID of the discoverer.</p>
-    pub fn discoverer_id(&self) -> ::std::option::Option<&str> {
+    pub fn discoverer_id(&self) -> ::std::option::Option<& str> {
         self.discoverer_id.as_deref()
     }
     /// <p>The ARN of the event bus.</p>
-    pub fn source_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_arn(&self) -> ::std::option::Option<& str> {
         self.source_arn.as_deref()
     }
     /// <p>The state of the discoverer.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::DiscovererState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::DiscovererState> {
         self.state.as_ref()
     }
     /// <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
@@ -38,7 +38,7 @@ impl DiscovererSummary {
         self.cross_account
     }
     /// <p>Tags associated with the resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -58,7 +58,7 @@ pub struct DiscovererSummaryBuilder {
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::DiscovererState>,
     pub(crate) cross_account: ::std::option::Option<bool>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl DiscovererSummaryBuilder {
     /// <p>The ARN of the discoverer.</p>
@@ -68,8 +68,7 @@ impl DiscovererSummaryBuilder {
     }
     /// <p>The ARN of the discoverer.</p>
     pub fn set_discoverer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.discoverer_arn = input;
-        self
+        self.discoverer_arn = input; self
     }
     /// <p>The ARN of the discoverer.</p>
     pub fn get_discoverer_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +81,7 @@ impl DiscovererSummaryBuilder {
     }
     /// <p>The ID of the discoverer.</p>
     pub fn set_discoverer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.discoverer_id = input;
-        self
+        self.discoverer_id = input; self
     }
     /// <p>The ID of the discoverer.</p>
     pub fn get_discoverer_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +94,7 @@ impl DiscovererSummaryBuilder {
     }
     /// <p>The ARN of the event bus.</p>
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_arn = input;
-        self
+        self.source_arn = input; self
     }
     /// <p>The ARN of the event bus.</p>
     pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +107,7 @@ impl DiscovererSummaryBuilder {
     }
     /// <p>The state of the discoverer.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::DiscovererState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the discoverer.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::DiscovererState> {
@@ -124,8 +120,7 @@ impl DiscovererSummaryBuilder {
     }
     /// <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
     pub fn set_cross_account(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.cross_account = input;
-        self
+        self.cross_account = input; self
     }
     /// <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
     pub fn get_cross_account(&self) -> &::std::option::Option<bool> {
@@ -138,28 +133,34 @@ impl DiscovererSummaryBuilder {
     /// <p>Tags associated with the resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Tags associated with the resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags associated with the resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`DiscovererSummary`](crate::types::DiscovererSummary).
     pub fn build(self) -> crate::types::DiscovererSummary {
         crate::types::DiscovererSummary {
-            discoverer_arn: self.discoverer_arn,
-            discoverer_id: self.discoverer_id,
-            source_arn: self.source_arn,
-            state: self.state,
-            cross_account: self.cross_account,
-            tags: self.tags,
+            discoverer_arn: self.discoverer_arn
+            ,
+            discoverer_id: self.discoverer_id
+            ,
+            source_arn: self.source_arn
+            ,
+            state: self.state
+            ,
+            cross_account: self.cross_account
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

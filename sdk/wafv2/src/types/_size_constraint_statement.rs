@@ -5,7 +5,7 @@
 /// <p>If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as one character. For example, the URI <code>/logo.jpg</code> is nine characters long.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SizeConstraintStatement {
+pub struct SizeConstraintStatement  {
     /// <p>The part of the web request that you want WAF to inspect.</p>
     pub field_to_match: ::std::option::Option<crate::types::FieldToMatch>,
     /// <p>The operator to use to compare the request part to the size setting.</p>
@@ -13,15 +13,15 @@ pub struct SizeConstraintStatement {
     /// <p>The size, in byte, to compare to the request part, after any transformations.</p>
     pub size: i64,
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents.</p>
-    pub text_transformations: ::std::vec::Vec<crate::types::TextTransformation>,
+    pub text_transformations: ::std::vec::Vec::<crate::types::TextTransformation>,
 }
-impl SizeConstraintStatement {
+impl  SizeConstraintStatement  {
     /// <p>The part of the web request that you want WAF to inspect.</p>
-    pub fn field_to_match(&self) -> ::std::option::Option<&crate::types::FieldToMatch> {
+    pub fn field_to_match(&self) -> ::std::option::Option<& crate::types::FieldToMatch> {
         self.field_to_match.as_ref()
     }
     /// <p>The operator to use to compare the request part to the size setting.</p>
-    pub fn comparison_operator(&self) -> &crate::types::ComparisonOperator {
+    pub fn comparison_operator(&self) -> & crate::types::ComparisonOperator {
         &self.comparison_operator
     }
     /// <p>The size, in byte, to compare to the request part, after any transformations.</p>
@@ -29,9 +29,8 @@ impl SizeConstraintStatement {
         self.size
     }
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents.</p>
-    pub fn text_transformations(&self) -> &[crate::types::TextTransformation] {
-        use std::ops::Deref;
-        self.text_transformations.deref()
+    pub fn text_transformations(&self) -> & [crate::types::TextTransformation] {
+        use std::ops::Deref; self.text_transformations.deref()
     }
 }
 impl SizeConstraintStatement {
@@ -48,7 +47,7 @@ pub struct SizeConstraintStatementBuilder {
     pub(crate) field_to_match: ::std::option::Option<crate::types::FieldToMatch>,
     pub(crate) comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
     pub(crate) size: ::std::option::Option<i64>,
-    pub(crate) text_transformations: ::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>>,
+    pub(crate) text_transformations: ::std::option::Option<::std::vec::Vec::<crate::types::TextTransformation>>,
 }
 impl SizeConstraintStatementBuilder {
     /// <p>The part of the web request that you want WAF to inspect.</p>
@@ -59,8 +58,7 @@ impl SizeConstraintStatementBuilder {
     }
     /// <p>The part of the web request that you want WAF to inspect.</p>
     pub fn set_field_to_match(mut self, input: ::std::option::Option<crate::types::FieldToMatch>) -> Self {
-        self.field_to_match = input;
-        self
+        self.field_to_match = input; self
     }
     /// <p>The part of the web request that you want WAF to inspect.</p>
     pub fn get_field_to_match(&self) -> &::std::option::Option<crate::types::FieldToMatch> {
@@ -74,8 +72,7 @@ impl SizeConstraintStatementBuilder {
     }
     /// <p>The operator to use to compare the request part to the size setting.</p>
     pub fn set_comparison_operator(mut self, input: ::std::option::Option<crate::types::ComparisonOperator>) -> Self {
-        self.comparison_operator = input;
-        self
+        self.comparison_operator = input; self
     }
     /// <p>The operator to use to compare the request part to the size setting.</p>
     pub fn get_comparison_operator(&self) -> &::std::option::Option<crate::types::ComparisonOperator> {
@@ -89,8 +86,7 @@ impl SizeConstraintStatementBuilder {
     }
     /// <p>The size, in byte, to compare to the request part, after any transformations.</p>
     pub fn set_size(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.size = input;
-        self
+        self.size = input; self
     }
     /// <p>The size, in byte, to compare to the request part, after any transformations.</p>
     pub fn get_size(&self) -> &::std::option::Option<i64> {
@@ -103,17 +99,16 @@ impl SizeConstraintStatementBuilder {
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents.</p>
     pub fn text_transformations(mut self, input: crate::types::TextTransformation) -> Self {
         let mut v = self.text_transformations.unwrap_or_default();
-        v.push(input);
-        self.text_transformations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.text_transformations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents.</p>
-    pub fn set_text_transformations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>>) -> Self {
-        self.text_transformations = input;
-        self
+    pub fn set_text_transformations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TextTransformation>>) -> Self {
+        self.text_transformations = input; self
     }
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents.</p>
-    pub fn get_text_transformations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>> {
+    pub fn get_text_transformations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TextTransformation>> {
         &self.text_transformations
     }
     /// Consumes the builder and constructs a [`SizeConstraintStatement`](crate::types::SizeConstraintStatement).
@@ -121,21 +116,25 @@ impl SizeConstraintStatementBuilder {
     /// - [`comparison_operator`](crate::types::builders::SizeConstraintStatementBuilder::comparison_operator)
     /// - [`text_transformations`](crate::types::builders::SizeConstraintStatementBuilder::text_transformations)
     pub fn build(self) -> ::std::result::Result<crate::types::SizeConstraintStatement, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SizeConstraintStatement {
-            field_to_match: self.field_to_match,
-            comparison_operator: self.comparison_operator.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "comparison_operator",
-                    "comparison_operator was not specified but it is required when building SizeConstraintStatement",
-                )
-            })?,
-            size: self.size.unwrap_or_default(),
-            text_transformations: self.text_transformations.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "text_transformations",
-                    "text_transformations was not specified but it is required when building SizeConstraintStatement",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SizeConstraintStatement {
+                field_to_match: self.field_to_match
+                ,
+                comparison_operator: self.comparison_operator
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("comparison_operator", "comparison_operator was not specified but it is required when building SizeConstraintStatement")
+                    )?
+                ,
+                size: self.size
+                    .unwrap_or_default()
+                ,
+                text_transformations: self.text_transformations
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("text_transformations", "text_transformations was not specified but it is required when building SizeConstraintStatement")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPriceListsOutput {
+pub struct ListPriceListsOutput  {
     /// <p>The type of price list references that match your request.</p>
-    pub price_lists: ::std::option::Option<::std::vec::Vec<crate::types::PriceList>>,
+    pub price_lists: ::std::option::Option<::std::vec::Vec::<crate::types::PriceList>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListPriceListsOutput {
+impl  ListPriceListsOutput  {
     /// <p>The type of price list references that match your request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.price_lists.is_none()`.
-    pub fn price_lists(&self) -> &[crate::types::PriceList] {
-        self.price_lists.as_deref().unwrap_or_default()
+    pub fn price_lists(&self) -> & [crate::types::PriceList] {
+        self.price_lists.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListPriceListsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListPriceListsOutput {
     /// Creates a new builder-style object to manufacture [`ListPriceListsOutput`](crate::operation::list_price_lists::ListPriceListsOutput).
     pub fn builder() -> crate::operation::list_price_lists::builders::ListPriceListsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListPriceListsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPriceListsOutputBuilder {
-    pub(crate) price_lists: ::std::option::Option<::std::vec::Vec<crate::types::PriceList>>,
+    pub(crate) price_lists: ::std::option::Option<::std::vec::Vec::<crate::types::PriceList>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListPriceListsOutputBuilder {
     /// <p>The type of price list references that match your request.</p>
     pub fn price_lists(mut self, input: crate::types::PriceList) -> Self {
         let mut v = self.price_lists.unwrap_or_default();
-        v.push(input);
-        self.price_lists = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.price_lists = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The type of price list references that match your request.</p>
-    pub fn set_price_lists(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PriceList>>) -> Self {
-        self.price_lists = input;
-        self
+    pub fn set_price_lists(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PriceList>>) -> Self {
+        self.price_lists = input; self
     }
     /// <p>The type of price list references that match your request.</p>
-    pub fn get_price_lists(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PriceList>> {
+    pub fn get_price_lists(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PriceList>> {
         &self.price_lists
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -69,28 +69,30 @@ impl ListPriceListsOutputBuilder {
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListPriceListsOutput`](crate::operation::list_price_lists::ListPriceListsOutput).
     pub fn build(self) -> crate::operation::list_price_lists::ListPriceListsOutput {
         crate::operation::list_price_lists::ListPriceListsOutput {
-            price_lists: self.price_lists,
-            next_token: self.next_token,
+            price_lists: self.price_lists
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

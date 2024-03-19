@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetFederationTokenOutput {
+pub struct GetFederationTokenOutput  {
     /// <p>The credentials to use for federation.</p>
     pub credentials: ::std::option::Option<crate::types::Credentials>,
     /// <p>The URL to sign into the user's instance.</p>
@@ -13,25 +13,25 @@ pub struct GetFederationTokenOutput {
     pub user_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetFederationTokenOutput {
+impl  GetFederationTokenOutput  {
     /// <p>The credentials to use for federation.</p>
-    pub fn credentials(&self) -> ::std::option::Option<&crate::types::Credentials> {
+    pub fn credentials(&self) -> ::std::option::Option<& crate::types::Credentials> {
         self.credentials.as_ref()
     }
     /// <p>The URL to sign into the user's instance.</p>
-    pub fn sign_in_url(&self) -> ::std::option::Option<&str> {
+    pub fn sign_in_url(&self) -> ::std::option::Option<& str> {
         self.sign_in_url.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
-    pub fn user_arn(&self) -> ::std::option::Option<&str> {
+    pub fn user_arn(&self) -> ::std::option::Option<& str> {
         self.user_arn.as_deref()
     }
     /// <p>The identifier for the user. This can be the ID or the ARN of the user.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for GetFederationTokenOutput {
+impl  ::std::fmt::Debug for GetFederationTokenOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetFederationTokenOutput");
         formatter.field("credentials", &"*** Sensitive Data Redacted ***");
@@ -43,10 +43,10 @@ impl ::std::fmt::Debug for GetFederationTokenOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetFederationTokenOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetFederationTokenOutput {
     /// Creates a new builder-style object to manufacture [`GetFederationTokenOutput`](crate::operation::get_federation_token::GetFederationTokenOutput).
     pub fn builder() -> crate::operation::get_federation_token::builders::GetFederationTokenOutputBuilder {
@@ -72,8 +72,7 @@ impl GetFederationTokenOutputBuilder {
     }
     /// <p>The credentials to use for federation.</p>
     pub fn set_credentials(mut self, input: ::std::option::Option<crate::types::Credentials>) -> Self {
-        self.credentials = input;
-        self
+        self.credentials = input; self
     }
     /// <p>The credentials to use for federation.</p>
     pub fn get_credentials(&self) -> &::std::option::Option<crate::types::Credentials> {
@@ -86,8 +85,7 @@ impl GetFederationTokenOutputBuilder {
     }
     /// <p>The URL to sign into the user's instance.</p>
     pub fn set_sign_in_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sign_in_url = input;
-        self
+        self.sign_in_url = input; self
     }
     /// <p>The URL to sign into the user's instance.</p>
     pub fn get_sign_in_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +98,7 @@ impl GetFederationTokenOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
     pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_arn = input;
-        self
+        self.user_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
     pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,29 +111,32 @@ impl GetFederationTokenOutputBuilder {
     }
     /// <p>The identifier for the user. This can be the ID or the ARN of the user.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The identifier for the user. This can be the ID or the ARN of the user.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetFederationTokenOutput`](crate::operation::get_federation_token::GetFederationTokenOutput).
     pub fn build(self) -> crate::operation::get_federation_token::GetFederationTokenOutput {
         crate::operation::get_federation_token::GetFederationTokenOutput {
-            credentials: self.credentials,
-            sign_in_url: self.sign_in_url,
-            user_arn: self.user_arn,
-            user_id: self.user_id,
+            credentials: self.credentials
+            ,
+            sign_in_url: self.sign_in_url
+            ,
+            user_arn: self.user_arn
+            ,
+            user_id: self.user_id
+            ,
             _request_id: self._request_id,
         }
     }
@@ -152,3 +152,4 @@ impl ::std::fmt::Debug for GetFederationTokenOutputBuilder {
         formatter.finish()
     }
 }
+

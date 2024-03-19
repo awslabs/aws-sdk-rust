@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UploadSigningCertificateInput {
+pub struct UploadSigningCertificateInput  {
     /// <p>The name of the user the signing certificate is for.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub user_name: ::std::option::Option<::std::string::String>,
@@ -18,10 +18,10 @@ pub struct UploadSigningCertificateInput {
     /// </ul>
     pub certificate_body: ::std::option::Option<::std::string::String>,
 }
-impl UploadSigningCertificateInput {
+impl  UploadSigningCertificateInput  {
     /// <p>The name of the user the signing certificate is for.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>The contents of the signing certificate.</p>
@@ -34,7 +34,7 @@ impl UploadSigningCertificateInput {
     /// <li>
     /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p></li>
     /// </ul>
-    pub fn certificate_body(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_body(&self) -> ::std::option::Option<& str> {
         self.certificate_body.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl UploadSigningCertificateInputBuilder {
     /// <p>The name of the user the signing certificate is for.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>The name of the user the signing certificate is for.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
@@ -96,8 +95,7 @@ impl UploadSigningCertificateInputBuilder {
     /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p></li>
     /// </ul>
     pub fn set_certificate_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_body = input;
-        self
+        self.certificate_body = input; self
     }
     /// <p>The contents of the signing certificate.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following:</p>
@@ -113,15 +111,15 @@ impl UploadSigningCertificateInputBuilder {
         &self.certificate_body
     }
     /// Consumes the builder and constructs a [`UploadSigningCertificateInput`](crate::operation::upload_signing_certificate::UploadSigningCertificateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::upload_signing_certificate::UploadSigningCertificateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::upload_signing_certificate::UploadSigningCertificateInput {
-            user_name: self.user_name,
-            certificate_body: self.certificate_body,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::upload_signing_certificate::UploadSigningCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::upload_signing_certificate::UploadSigningCertificateInput {
+                user_name: self.user_name
+                ,
+                certificate_body: self.certificate_body
+                ,
+            }
+        )
     }
 }
+

@@ -4,7 +4,7 @@
 /// <p>A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSolVnfcResourceInfoMetadata {
+pub struct GetSolVnfcResourceInfoMetadata  {
     /// <p>Information about the node group.</p>
     pub node_group: ::std::option::Option<::std::string::String>,
     /// <p>Information about the cluster.</p>
@@ -12,17 +12,17 @@ pub struct GetSolVnfcResourceInfoMetadata {
     /// <p>Information about the helm chart.</p>
     pub helm_chart: ::std::option::Option<::std::string::String>,
 }
-impl GetSolVnfcResourceInfoMetadata {
+impl  GetSolVnfcResourceInfoMetadata  {
     /// <p>Information about the node group.</p>
-    pub fn node_group(&self) -> ::std::option::Option<&str> {
+    pub fn node_group(&self) -> ::std::option::Option<& str> {
         self.node_group.as_deref()
     }
     /// <p>Information about the cluster.</p>
-    pub fn cluster(&self) -> ::std::option::Option<&str> {
+    pub fn cluster(&self) -> ::std::option::Option<& str> {
         self.cluster.as_deref()
     }
     /// <p>Information about the helm chart.</p>
-    pub fn helm_chart(&self) -> ::std::option::Option<&str> {
+    pub fn helm_chart(&self) -> ::std::option::Option<& str> {
         self.helm_chart.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl GetSolVnfcResourceInfoMetadataBuilder {
     }
     /// <p>Information about the node group.</p>
     pub fn set_node_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.node_group = input;
-        self
+        self.node_group = input; self
     }
     /// <p>Information about the node group.</p>
     pub fn get_node_group(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl GetSolVnfcResourceInfoMetadataBuilder {
     }
     /// <p>Information about the cluster.</p>
     pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster = input;
-        self
+        self.cluster = input; self
     }
     /// <p>Information about the cluster.</p>
     pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +75,7 @@ impl GetSolVnfcResourceInfoMetadataBuilder {
     }
     /// <p>Information about the helm chart.</p>
     pub fn set_helm_chart(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.helm_chart = input;
-        self
+        self.helm_chart = input; self
     }
     /// <p>Information about the helm chart.</p>
     pub fn get_helm_chart(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,9 +84,13 @@ impl GetSolVnfcResourceInfoMetadataBuilder {
     /// Consumes the builder and constructs a [`GetSolVnfcResourceInfoMetadata`](crate::types::GetSolVnfcResourceInfoMetadata).
     pub fn build(self) -> crate::types::GetSolVnfcResourceInfoMetadata {
         crate::types::GetSolVnfcResourceInfoMetadata {
-            node_group: self.node_group,
-            cluster: self.cluster,
-            helm_chart: self.helm_chart,
+            node_group: self.node_group
+            ,
+            cluster: self.cluster
+            ,
+            helm_chart: self.helm_chart
+            ,
         }
     }
 }
+

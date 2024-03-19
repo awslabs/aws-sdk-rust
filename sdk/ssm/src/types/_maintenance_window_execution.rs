@@ -3,7 +3,7 @@
 /// <p>Describes the information about an execution of a maintenance window.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MaintenanceWindowExecution {
+pub struct MaintenanceWindowExecution  {
     /// <p>The ID of the maintenance window.</p>
     pub window_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the maintenance window execution.</p>
@@ -17,29 +17,29 @@ pub struct MaintenanceWindowExecution {
     /// <p>The time the execution finished.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl MaintenanceWindowExecution {
+impl  MaintenanceWindowExecution  {
     /// <p>The ID of the maintenance window.</p>
-    pub fn window_id(&self) -> ::std::option::Option<&str> {
+    pub fn window_id(&self) -> ::std::option::Option<& str> {
         self.window_id.as_deref()
     }
     /// <p>The ID of the maintenance window execution.</p>
-    pub fn window_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn window_execution_id(&self) -> ::std::option::Option<& str> {
         self.window_execution_id.as_deref()
     }
     /// <p>The status of the execution.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::MaintenanceWindowExecutionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::MaintenanceWindowExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>The details explaining the status. Not available for all status values.</p>
-    pub fn status_details(&self) -> ::std::option::Option<&str> {
+    pub fn status_details(&self) -> ::std::option::Option<& str> {
         self.status_details.as_deref()
     }
     /// <p>The time the execution started.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time the execution finished.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl MaintenanceWindowExecutionBuilder {
     }
     /// <p>The ID of the maintenance window.</p>
     pub fn set_window_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.window_id = input;
-        self
+        self.window_id = input; self
     }
     /// <p>The ID of the maintenance window.</p>
     pub fn get_window_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl MaintenanceWindowExecutionBuilder {
     }
     /// <p>The ID of the maintenance window execution.</p>
     pub fn set_window_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.window_execution_id = input;
-        self
+        self.window_execution_id = input; self
     }
     /// <p>The ID of the maintenance window execution.</p>
     pub fn get_window_execution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl MaintenanceWindowExecutionBuilder {
     }
     /// <p>The status of the execution.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MaintenanceWindowExecutionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the execution.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::MaintenanceWindowExecutionStatus> {
@@ -111,8 +108,7 @@ impl MaintenanceWindowExecutionBuilder {
     }
     /// <p>The details explaining the status. Not available for all status values.</p>
     pub fn set_status_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_details = input;
-        self
+        self.status_details = input; self
     }
     /// <p>The details explaining the status. Not available for all status values.</p>
     pub fn get_status_details(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl MaintenanceWindowExecutionBuilder {
     }
     /// <p>The time the execution started.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The time the execution started.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -139,8 +134,7 @@ impl MaintenanceWindowExecutionBuilder {
     }
     /// <p>The time the execution finished.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The time the execution finished.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -149,12 +143,19 @@ impl MaintenanceWindowExecutionBuilder {
     /// Consumes the builder and constructs a [`MaintenanceWindowExecution`](crate::types::MaintenanceWindowExecution).
     pub fn build(self) -> crate::types::MaintenanceWindowExecution {
         crate::types::MaintenanceWindowExecution {
-            window_id: self.window_id,
-            window_execution_id: self.window_execution_id,
-            status: self.status,
-            status_details: self.status_details,
-            start_time: self.start_time,
-            end_time: self.end_time,
+            window_id: self.window_id
+            ,
+            window_execution_id: self.window_execution_id
+            ,
+            status: self.status
+            ,
+            status_details: self.status_details
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
         }
     }
 }
+

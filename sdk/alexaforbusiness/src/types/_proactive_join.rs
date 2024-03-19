@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProactiveJoin {
+pub struct ProactiveJoin  {
     #[allow(missing_docs)] // documentation missing in model
     pub enabled_by_motion: ::std::option::Option<bool>,
 }
-impl ProactiveJoin {
+impl  ProactiveJoin  {
     #[allow(missing_docs)] // documentation missing in model
     pub fn enabled_by_motion(&self) -> ::std::option::Option<bool> {
         self.enabled_by_motion
@@ -33,8 +33,7 @@ impl ProactiveJoinBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_enabled_by_motion(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled_by_motion = input;
-        self
+        self.enabled_by_motion = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_enabled_by_motion(&self) -> &::std::option::Option<bool> {
@@ -43,7 +42,9 @@ impl ProactiveJoinBuilder {
     /// Consumes the builder and constructs a [`ProactiveJoin`](crate::types::ProactiveJoin).
     pub fn build(self) -> crate::types::ProactiveJoin {
         crate::types::ProactiveJoin {
-            enabled_by_motion: self.enabled_by_motion,
+            enabled_by_motion: self.enabled_by_motion
+            ,
         }
     }
 }
+

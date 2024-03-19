@@ -3,7 +3,7 @@
 /// <p>Details of an instance group in a SageMaker HyperPod cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClusterInstanceGroupDetails {
+pub struct ClusterInstanceGroupDetails  {
     /// <p>The number of instances that are currently in the instance group of a SageMaker HyperPod cluster.</p>
     pub current_count: ::std::option::Option<i32>,
     /// <p>The number of instances you specified to add to the instance group of a SageMaker HyperPod cluster.</p>
@@ -19,7 +19,7 @@ pub struct ClusterInstanceGroupDetails {
     /// <p>The number you specified to <code>TreadsPerCore</code> in <code>CreateCluster</code> for enabling or disabling multithreading. For instance types that support multithreading, you can specify 1 for disabling multithreading and 2 for enabling multithreading. For more information, see the reference table of <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cpu-options-supported-instances-values.html">CPU cores and threads per CPU core per instance type</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub threads_per_core: ::std::option::Option<i32>,
 }
-impl ClusterInstanceGroupDetails {
+impl  ClusterInstanceGroupDetails  {
     /// <p>The number of instances that are currently in the instance group of a SageMaker HyperPod cluster.</p>
     pub fn current_count(&self) -> ::std::option::Option<i32> {
         self.current_count
@@ -29,19 +29,19 @@ impl ClusterInstanceGroupDetails {
         self.target_count
     }
     /// <p>The name of the instance group of a SageMaker HyperPod cluster.</p>
-    pub fn instance_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn instance_group_name(&self) -> ::std::option::Option<& str> {
         self.instance_group_name.as_deref()
     }
     /// <p>The instance type of the instance group of a SageMaker HyperPod cluster.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::ClusterInstanceType> {
+    pub fn instance_type(&self) -> ::std::option::Option<& crate::types::ClusterInstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>Details of LifeCycle configuration for the instance group.</p>
-    pub fn life_cycle_config(&self) -> ::std::option::Option<&crate::types::ClusterLifeCycleConfig> {
+    pub fn life_cycle_config(&self) -> ::std::option::Option<& crate::types::ClusterLifeCycleConfig> {
         self.life_cycle_config.as_ref()
     }
     /// <p>The execution role for the instance group to assume.</p>
-    pub fn execution_role(&self) -> ::std::option::Option<&str> {
+    pub fn execution_role(&self) -> ::std::option::Option<& str> {
         self.execution_role.as_deref()
     }
     /// <p>The number you specified to <code>TreadsPerCore</code> in <code>CreateCluster</code> for enabling or disabling multithreading. For instance types that support multithreading, you can specify 1 for disabling multithreading and 2 for enabling multithreading. For more information, see the reference table of <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cpu-options-supported-instances-values.html">CPU cores and threads per CPU core per instance type</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
@@ -76,8 +76,7 @@ impl ClusterInstanceGroupDetailsBuilder {
     }
     /// <p>The number of instances that are currently in the instance group of a SageMaker HyperPod cluster.</p>
     pub fn set_current_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.current_count = input;
-        self
+        self.current_count = input; self
     }
     /// <p>The number of instances that are currently in the instance group of a SageMaker HyperPod cluster.</p>
     pub fn get_current_count(&self) -> &::std::option::Option<i32> {
@@ -90,8 +89,7 @@ impl ClusterInstanceGroupDetailsBuilder {
     }
     /// <p>The number of instances you specified to add to the instance group of a SageMaker HyperPod cluster.</p>
     pub fn set_target_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.target_count = input;
-        self
+        self.target_count = input; self
     }
     /// <p>The number of instances you specified to add to the instance group of a SageMaker HyperPod cluster.</p>
     pub fn get_target_count(&self) -> &::std::option::Option<i32> {
@@ -104,8 +102,7 @@ impl ClusterInstanceGroupDetailsBuilder {
     }
     /// <p>The name of the instance group of a SageMaker HyperPod cluster.</p>
     pub fn set_instance_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_group_name = input;
-        self
+        self.instance_group_name = input; self
     }
     /// <p>The name of the instance group of a SageMaker HyperPod cluster.</p>
     pub fn get_instance_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl ClusterInstanceGroupDetailsBuilder {
     }
     /// <p>The instance type of the instance group of a SageMaker HyperPod cluster.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::ClusterInstanceType>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The instance type of the instance group of a SageMaker HyperPod cluster.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::ClusterInstanceType> {
@@ -132,8 +128,7 @@ impl ClusterInstanceGroupDetailsBuilder {
     }
     /// <p>Details of LifeCycle configuration for the instance group.</p>
     pub fn set_life_cycle_config(mut self, input: ::std::option::Option<crate::types::ClusterLifeCycleConfig>) -> Self {
-        self.life_cycle_config = input;
-        self
+        self.life_cycle_config = input; self
     }
     /// <p>Details of LifeCycle configuration for the instance group.</p>
     pub fn get_life_cycle_config(&self) -> &::std::option::Option<crate::types::ClusterLifeCycleConfig> {
@@ -146,8 +141,7 @@ impl ClusterInstanceGroupDetailsBuilder {
     }
     /// <p>The execution role for the instance group to assume.</p>
     pub fn set_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_role = input;
-        self
+        self.execution_role = input; self
     }
     /// <p>The execution role for the instance group to assume.</p>
     pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +154,7 @@ impl ClusterInstanceGroupDetailsBuilder {
     }
     /// <p>The number you specified to <code>TreadsPerCore</code> in <code>CreateCluster</code> for enabling or disabling multithreading. For instance types that support multithreading, you can specify 1 for disabling multithreading and 2 for enabling multithreading. For more information, see the reference table of <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cpu-options-supported-instances-values.html">CPU cores and threads per CPU core per instance type</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn set_threads_per_core(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.threads_per_core = input;
-        self
+        self.threads_per_core = input; self
     }
     /// <p>The number you specified to <code>TreadsPerCore</code> in <code>CreateCluster</code> for enabling or disabling multithreading. For instance types that support multithreading, you can specify 1 for disabling multithreading and 2 for enabling multithreading. For more information, see the reference table of <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cpu-options-supported-instances-values.html">CPU cores and threads per CPU core per instance type</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn get_threads_per_core(&self) -> &::std::option::Option<i32> {
@@ -170,13 +163,21 @@ impl ClusterInstanceGroupDetailsBuilder {
     /// Consumes the builder and constructs a [`ClusterInstanceGroupDetails`](crate::types::ClusterInstanceGroupDetails).
     pub fn build(self) -> crate::types::ClusterInstanceGroupDetails {
         crate::types::ClusterInstanceGroupDetails {
-            current_count: self.current_count,
-            target_count: self.target_count,
-            instance_group_name: self.instance_group_name,
-            instance_type: self.instance_type,
-            life_cycle_config: self.life_cycle_config,
-            execution_role: self.execution_role,
-            threads_per_core: self.threads_per_core,
+            current_count: self.current_count
+            ,
+            target_count: self.target_count
+            ,
+            instance_group_name: self.instance_group_name
+            ,
+            instance_type: self.instance_type
+            ,
+            life_cycle_config: self.life_cycle_config
+            ,
+            execution_role: self.execution_role
+            ,
+            threads_per_core: self.threads_per_core
+            ,
         }
     }
 }
+

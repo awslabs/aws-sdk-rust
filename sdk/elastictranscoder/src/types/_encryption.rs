@@ -3,7 +3,7 @@
 /// <p>The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Encryption {
+pub struct Encryption  {
     /// <p>The specific server-side encryption mode that you want Elastic Transcoder to use when decrypting your input files or encrypting your output files. Elastic Transcoder supports the following options:</p>
     /// <ul>
     /// <li>
@@ -38,7 +38,7 @@ pub struct Encryption {
     /// <p>The series of random bits created by a random bit generator, unique for every encryption operation, that you used to encrypt your input files or that you want Elastic Transcoder to use to encrypt your output files. The initialization vector must be base64-encoded, and it must be exactly 16 bytes long before being base64-encoded.</p>
     pub initialization_vector: ::std::option::Option<::std::string::String>,
 }
-impl Encryption {
+impl  Encryption  {
     /// <p>The specific server-side encryption mode that you want Elastic Transcoder to use when decrypting your input files or encrypting your output files. Elastic Transcoder supports the following options:</p>
     /// <ul>
     /// <li>
@@ -63,21 +63,21 @@ impl Encryption {
     /// </ul><important>
     /// <p>For the AES modes, your private encryption keys and your unencrypted data are never stored by AWS; therefore, it is important that you safely manage your encryption keys. If you lose them, you won't be able to unencrypt your data.</p>
     /// </important>
-    pub fn mode(&self) -> ::std::option::Option<&str> {
+    pub fn mode(&self) -> ::std::option::Option<& str> {
         self.mode.as_deref()
     }
     /// <p>The data encryption key that you want Elastic Transcoder to use to encrypt your output file, or that was used to encrypt your input file. The key must be base64-encoded and it must be one of the following bit lengths before being base64-encoded:</p>
     /// <p><code>128</code>, <code>192</code>, or <code>256</code>.</p>
     /// <p>The key must also be encrypted by using the Amazon Key Management Service.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The MD5 digest of the key that you used to encrypt your input file, or that you want Elastic Transcoder to use to encrypt your output file. Elastic Transcoder uses the key digest as a checksum to make sure your key was not corrupted in transit. The key MD5 must be base64-encoded, and it must be exactly 16 bytes long before being base64-encoded.</p>
-    pub fn key_md5(&self) -> ::std::option::Option<&str> {
+    pub fn key_md5(&self) -> ::std::option::Option<& str> {
         self.key_md5.as_deref()
     }
     /// <p>The series of random bits created by a random bit generator, unique for every encryption operation, that you used to encrypt your input files or that you want Elastic Transcoder to use to encrypt your output files. The initialization vector must be base64-encoded, and it must be exactly 16 bytes long before being base64-encoded.</p>
-    pub fn initialization_vector(&self) -> ::std::option::Option<&str> {
+    pub fn initialization_vector(&self) -> ::std::option::Option<& str> {
         self.initialization_vector.as_deref()
     }
 }
@@ -151,8 +151,7 @@ impl EncryptionBuilder {
     /// <p>For the AES modes, your private encryption keys and your unencrypted data are never stored by AWS; therefore, it is important that you safely manage your encryption keys. If you lose them, you won't be able to unencrypt your data.</p>
     /// </important>
     pub fn set_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mode = input;
-        self
+        self.mode = input; self
     }
     /// <p>The specific server-side encryption mode that you want Elastic Transcoder to use when decrypting your input files or encrypting your output files. Elastic Transcoder supports the following options:</p>
     /// <ul>
@@ -192,8 +191,7 @@ impl EncryptionBuilder {
     /// <p><code>128</code>, <code>192</code>, or <code>256</code>.</p>
     /// <p>The key must also be encrypted by using the Amazon Key Management Service.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The data encryption key that you want Elastic Transcoder to use to encrypt your output file, or that was used to encrypt your input file. The key must be base64-encoded and it must be one of the following bit lengths before being base64-encoded:</p>
     /// <p><code>128</code>, <code>192</code>, or <code>256</code>.</p>
@@ -208,8 +206,7 @@ impl EncryptionBuilder {
     }
     /// <p>The MD5 digest of the key that you used to encrypt your input file, or that you want Elastic Transcoder to use to encrypt your output file. Elastic Transcoder uses the key digest as a checksum to make sure your key was not corrupted in transit. The key MD5 must be base64-encoded, and it must be exactly 16 bytes long before being base64-encoded.</p>
     pub fn set_key_md5(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_md5 = input;
-        self
+        self.key_md5 = input; self
     }
     /// <p>The MD5 digest of the key that you used to encrypt your input file, or that you want Elastic Transcoder to use to encrypt your output file. Elastic Transcoder uses the key digest as a checksum to make sure your key was not corrupted in transit. The key MD5 must be base64-encoded, and it must be exactly 16 bytes long before being base64-encoded.</p>
     pub fn get_key_md5(&self) -> &::std::option::Option<::std::string::String> {
@@ -222,8 +219,7 @@ impl EncryptionBuilder {
     }
     /// <p>The series of random bits created by a random bit generator, unique for every encryption operation, that you used to encrypt your input files or that you want Elastic Transcoder to use to encrypt your output files. The initialization vector must be base64-encoded, and it must be exactly 16 bytes long before being base64-encoded.</p>
     pub fn set_initialization_vector(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.initialization_vector = input;
-        self
+        self.initialization_vector = input; self
     }
     /// <p>The series of random bits created by a random bit generator, unique for every encryption operation, that you used to encrypt your input files or that you want Elastic Transcoder to use to encrypt your output files. The initialization vector must be base64-encoded, and it must be exactly 16 bytes long before being base64-encoded.</p>
     pub fn get_initialization_vector(&self) -> &::std::option::Option<::std::string::String> {
@@ -232,10 +228,15 @@ impl EncryptionBuilder {
     /// Consumes the builder and constructs a [`Encryption`](crate::types::Encryption).
     pub fn build(self) -> crate::types::Encryption {
         crate::types::Encryption {
-            mode: self.mode,
-            key: self.key,
-            key_md5: self.key_md5,
-            initialization_vector: self.initialization_vector,
+            mode: self.mode
+            ,
+            key: self.key
+            ,
+            key_md5: self.key_md5
+            ,
+            initialization_vector: self.initialization_vector
+            ,
         }
     }
 }
+

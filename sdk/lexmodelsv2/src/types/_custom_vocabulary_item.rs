@@ -3,7 +3,7 @@
 /// <p>The unique custom vocabulary item from the custom vocabulary list.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomVocabularyItem {
+pub struct CustomVocabularyItem  {
     /// <p>The unique item identifer for the custom vocabulary item from the custom vocabulary list.</p>
     pub item_id: ::std::string::String,
     /// <p>The unique phrase for the custom vocabulary item from the custom vocabulary list.</p>
@@ -13,23 +13,21 @@ pub struct CustomVocabularyItem {
     /// <p>The DisplayAs value for the custom vocabulary item from the custom vocabulary list.</p>
     pub display_as: ::std::option::Option<::std::string::String>,
 }
-impl CustomVocabularyItem {
+impl  CustomVocabularyItem  {
     /// <p>The unique item identifer for the custom vocabulary item from the custom vocabulary list.</p>
-    pub fn item_id(&self) -> &str {
-        use std::ops::Deref;
-        self.item_id.deref()
+    pub fn item_id(&self) -> & str {
+        use std::ops::Deref; self.item_id.deref()
     }
     /// <p>The unique phrase for the custom vocabulary item from the custom vocabulary list.</p>
-    pub fn phrase(&self) -> &str {
-        use std::ops::Deref;
-        self.phrase.deref()
+    pub fn phrase(&self) -> & str {
+        use std::ops::Deref; self.phrase.deref()
     }
     /// <p>The weight assigned for the custom vocabulary item from the custom vocabulary list.</p>
     pub fn weight(&self) -> ::std::option::Option<i32> {
         self.weight
     }
     /// <p>The DisplayAs value for the custom vocabulary item from the custom vocabulary list.</p>
-    pub fn display_as(&self) -> ::std::option::Option<&str> {
+    pub fn display_as(&self) -> ::std::option::Option<& str> {
         self.display_as.as_deref()
     }
 }
@@ -58,8 +56,7 @@ impl CustomVocabularyItemBuilder {
     }
     /// <p>The unique item identifer for the custom vocabulary item from the custom vocabulary list.</p>
     pub fn set_item_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.item_id = input;
-        self
+        self.item_id = input; self
     }
     /// <p>The unique item identifer for the custom vocabulary item from the custom vocabulary list.</p>
     pub fn get_item_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +70,7 @@ impl CustomVocabularyItemBuilder {
     }
     /// <p>The unique phrase for the custom vocabulary item from the custom vocabulary list.</p>
     pub fn set_phrase(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phrase = input;
-        self
+        self.phrase = input; self
     }
     /// <p>The unique phrase for the custom vocabulary item from the custom vocabulary list.</p>
     pub fn get_phrase(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +83,7 @@ impl CustomVocabularyItemBuilder {
     }
     /// <p>The weight assigned for the custom vocabulary item from the custom vocabulary list.</p>
     pub fn set_weight(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.weight = input;
-        self
+        self.weight = input; self
     }
     /// <p>The weight assigned for the custom vocabulary item from the custom vocabulary list.</p>
     pub fn get_weight(&self) -> &::std::option::Option<i32> {
@@ -101,8 +96,7 @@ impl CustomVocabularyItemBuilder {
     }
     /// <p>The DisplayAs value for the custom vocabulary item from the custom vocabulary list.</p>
     pub fn set_display_as(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_as = input;
-        self
+        self.display_as = input; self
     }
     /// <p>The DisplayAs value for the custom vocabulary item from the custom vocabulary list.</p>
     pub fn get_display_as(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,21 +107,24 @@ impl CustomVocabularyItemBuilder {
     /// - [`item_id`](crate::types::builders::CustomVocabularyItemBuilder::item_id)
     /// - [`phrase`](crate::types::builders::CustomVocabularyItemBuilder::phrase)
     pub fn build(self) -> ::std::result::Result<crate::types::CustomVocabularyItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CustomVocabularyItem {
-            item_id: self.item_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "item_id",
-                    "item_id was not specified but it is required when building CustomVocabularyItem",
-                )
-            })?,
-            phrase: self.phrase.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "phrase",
-                    "phrase was not specified but it is required when building CustomVocabularyItem",
-                )
-            })?,
-            weight: self.weight,
-            display_as: self.display_as,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CustomVocabularyItem {
+                item_id: self.item_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("item_id", "item_id was not specified but it is required when building CustomVocabularyItem")
+                    )?
+                ,
+                phrase: self.phrase
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("phrase", "phrase was not specified but it is required when building CustomVocabularyItem")
+                    )?
+                ,
+                weight: self.weight
+                ,
+                display_as: self.display_as
+                ,
+            }
+        )
     }
 }
+

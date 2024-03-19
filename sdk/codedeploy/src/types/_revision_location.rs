@@ -3,7 +3,7 @@
 /// <p>Information about the location of an application revision.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RevisionLocation {
+pub struct RevisionLocation  {
     /// <p>The type of application revision:</p>
     /// <ul>
     /// <li>
@@ -25,7 +25,7 @@ pub struct RevisionLocation {
     /// <p>The content of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML and stored as a RawString.</p>
     pub app_spec_content: ::std::option::Option<crate::types::AppSpecContent>,
 }
-impl RevisionLocation {
+impl  RevisionLocation  {
     /// <p>The type of application revision:</p>
     /// <ul>
     /// <li>
@@ -37,23 +37,23 @@ impl RevisionLocation {
     /// <li>
     /// <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p></li>
     /// </ul>
-    pub fn revision_type(&self) -> ::std::option::Option<&crate::types::RevisionLocationType> {
+    pub fn revision_type(&self) -> ::std::option::Option<& crate::types::RevisionLocationType> {
         self.revision_type.as_ref()
     }
     /// <p>Information about the location of a revision stored in Amazon S3.</p>
-    pub fn s3_location(&self) -> ::std::option::Option<&crate::types::S3Location> {
+    pub fn s3_location(&self) -> ::std::option::Option<& crate::types::S3Location> {
         self.s3_location.as_ref()
     }
     /// <p>Information about the location of application artifacts stored in GitHub.</p>
-    pub fn git_hub_location(&self) -> ::std::option::Option<&crate::types::GitHubLocation> {
+    pub fn git_hub_location(&self) -> ::std::option::Option<& crate::types::GitHubLocation> {
         self.git_hub_location.as_ref()
     }
     /// <p>Information about the location of an Lambda deployment revision stored as a RawString.</p>
-    pub fn string(&self) -> ::std::option::Option<&crate::types::RawString> {
+    pub fn string(&self) -> ::std::option::Option<& crate::types::RawString> {
         self.string.as_ref()
     }
     /// <p>The content of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML and stored as a RawString.</p>
-    pub fn app_spec_content(&self) -> ::std::option::Option<&crate::types::AppSpecContent> {
+    pub fn app_spec_content(&self) -> ::std::option::Option<& crate::types::AppSpecContent> {
         self.app_spec_content.as_ref()
     }
 }
@@ -102,8 +102,7 @@ impl RevisionLocationBuilder {
     /// <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p></li>
     /// </ul>
     pub fn set_revision_type(mut self, input: ::std::option::Option<crate::types::RevisionLocationType>) -> Self {
-        self.revision_type = input;
-        self
+        self.revision_type = input; self
     }
     /// <p>The type of application revision:</p>
     /// <ul>
@@ -126,8 +125,7 @@ impl RevisionLocationBuilder {
     }
     /// <p>Information about the location of a revision stored in Amazon S3.</p>
     pub fn set_s3_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
-        self.s3_location = input;
-        self
+        self.s3_location = input; self
     }
     /// <p>Information about the location of a revision stored in Amazon S3.</p>
     pub fn get_s3_location(&self) -> &::std::option::Option<crate::types::S3Location> {
@@ -140,8 +138,7 @@ impl RevisionLocationBuilder {
     }
     /// <p>Information about the location of application artifacts stored in GitHub.</p>
     pub fn set_git_hub_location(mut self, input: ::std::option::Option<crate::types::GitHubLocation>) -> Self {
-        self.git_hub_location = input;
-        self
+        self.git_hub_location = input; self
     }
     /// <p>Information about the location of application artifacts stored in GitHub.</p>
     pub fn get_git_hub_location(&self) -> &::std::option::Option<crate::types::GitHubLocation> {
@@ -154,8 +151,7 @@ impl RevisionLocationBuilder {
     }
     /// <p>Information about the location of an Lambda deployment revision stored as a RawString.</p>
     pub fn set_string(mut self, input: ::std::option::Option<crate::types::RawString>) -> Self {
-        self.string = input;
-        self
+        self.string = input; self
     }
     /// <p>Information about the location of an Lambda deployment revision stored as a RawString.</p>
     pub fn get_string(&self) -> &::std::option::Option<crate::types::RawString> {
@@ -168,8 +164,7 @@ impl RevisionLocationBuilder {
     }
     /// <p>The content of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML and stored as a RawString.</p>
     pub fn set_app_spec_content(mut self, input: ::std::option::Option<crate::types::AppSpecContent>) -> Self {
-        self.app_spec_content = input;
-        self
+        self.app_spec_content = input; self
     }
     /// <p>The content of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML and stored as a RawString.</p>
     pub fn get_app_spec_content(&self) -> &::std::option::Option<crate::types::AppSpecContent> {
@@ -178,11 +173,17 @@ impl RevisionLocationBuilder {
     /// Consumes the builder and constructs a [`RevisionLocation`](crate::types::RevisionLocation).
     pub fn build(self) -> crate::types::RevisionLocation {
         crate::types::RevisionLocation {
-            revision_type: self.revision_type,
-            s3_location: self.s3_location,
-            git_hub_location: self.git_hub_location,
-            string: self.string,
-            app_spec_content: self.app_spec_content,
+            revision_type: self.revision_type
+            ,
+            s3_location: self.s3_location
+            ,
+            git_hub_location: self.git_hub_location
+            ,
+            string: self.string
+            ,
+            app_spec_content: self.app_spec_content
+            ,
         }
     }
 }
+

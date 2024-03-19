@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutConfiguredAudienceModelPolicyInput {
+pub struct PutConfiguredAudienceModelPolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that the resource policy will govern.</p>
     pub configured_audience_model_arn: ::std::option::Option<::std::string::String>,
     /// <p>The IAM resource policy.</p>
@@ -12,21 +12,21 @@ pub struct PutConfiguredAudienceModelPolicyInput {
     /// <p>Use this to prevent unexpected concurrent modification of the policy.</p>
     pub policy_existence_condition: ::std::option::Option<crate::types::PolicyExistenceCondition>,
 }
-impl PutConfiguredAudienceModelPolicyInput {
+impl  PutConfiguredAudienceModelPolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that the resource policy will govern.</p>
-    pub fn configured_audience_model_arn(&self) -> ::std::option::Option<&str> {
+    pub fn configured_audience_model_arn(&self) -> ::std::option::Option<& str> {
         self.configured_audience_model_arn.as_deref()
     }
     /// <p>The IAM resource policy.</p>
-    pub fn configured_audience_model_policy(&self) -> ::std::option::Option<&str> {
+    pub fn configured_audience_model_policy(&self) -> ::std::option::Option<& str> {
         self.configured_audience_model_policy.as_deref()
     }
     /// <p>A cryptographic hash of the contents of the policy used to prevent unexpected concurrent modification of the policy.</p>
-    pub fn previous_policy_hash(&self) -> ::std::option::Option<&str> {
+    pub fn previous_policy_hash(&self) -> ::std::option::Option<& str> {
         self.previous_policy_hash.as_deref()
     }
     /// <p>Use this to prevent unexpected concurrent modification of the policy.</p>
-    pub fn policy_existence_condition(&self) -> ::std::option::Option<&crate::types::PolicyExistenceCondition> {
+    pub fn policy_existence_condition(&self) -> ::std::option::Option<& crate::types::PolicyExistenceCondition> {
         self.policy_existence_condition.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl PutConfiguredAudienceModelPolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that the resource policy will govern.</p>
     pub fn set_configured_audience_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configured_audience_model_arn = input;
-        self
+        self.configured_audience_model_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that the resource policy will govern.</p>
     pub fn get_configured_audience_model_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl PutConfiguredAudienceModelPolicyInputBuilder {
     }
     /// <p>The IAM resource policy.</p>
     pub fn set_configured_audience_model_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configured_audience_model_policy = input;
-        self
+        self.configured_audience_model_policy = input; self
     }
     /// <p>The IAM resource policy.</p>
     pub fn get_configured_audience_model_policy(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl PutConfiguredAudienceModelPolicyInputBuilder {
     }
     /// <p>A cryptographic hash of the contents of the policy used to prevent unexpected concurrent modification of the policy.</p>
     pub fn set_previous_policy_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.previous_policy_hash = input;
-        self
+        self.previous_policy_hash = input; self
     }
     /// <p>A cryptographic hash of the contents of the policy used to prevent unexpected concurrent modification of the policy.</p>
     pub fn get_previous_policy_hash(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,27 +95,26 @@ impl PutConfiguredAudienceModelPolicyInputBuilder {
     }
     /// <p>Use this to prevent unexpected concurrent modification of the policy.</p>
     pub fn set_policy_existence_condition(mut self, input: ::std::option::Option<crate::types::PolicyExistenceCondition>) -> Self {
-        self.policy_existence_condition = input;
-        self
+        self.policy_existence_condition = input; self
     }
     /// <p>Use this to prevent unexpected concurrent modification of the policy.</p>
     pub fn get_policy_existence_condition(&self) -> &::std::option::Option<crate::types::PolicyExistenceCondition> {
         &self.policy_existence_condition
     }
     /// Consumes the builder and constructs a [`PutConfiguredAudienceModelPolicyInput`](crate::operation::put_configured_audience_model_policy::PutConfiguredAudienceModelPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_configured_audience_model_policy::PutConfiguredAudienceModelPolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_configured_audience_model_policy::PutConfiguredAudienceModelPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_configured_audience_model_policy::PutConfiguredAudienceModelPolicyInput {
-                configured_audience_model_arn: self.configured_audience_model_arn,
-                configured_audience_model_policy: self.configured_audience_model_policy,
-                previous_policy_hash: self.previous_policy_hash,
-                policy_existence_condition: self.policy_existence_condition,
-            },
+                configured_audience_model_arn: self.configured_audience_model_arn
+                ,
+                configured_audience_model_policy: self.configured_audience_model_policy
+                ,
+                previous_policy_hash: self.previous_policy_hash
+                ,
+                policy_existence_condition: self.policy_existence_condition
+                ,
+            }
         )
     }
 }
+

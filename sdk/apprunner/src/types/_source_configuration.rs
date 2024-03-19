@@ -3,7 +3,7 @@
 /// <p>Describes the source deployed to an App Runner service. It can be a code or an image repository.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SourceConfiguration {
+pub struct SourceConfiguration  {
     /// <p>The description of a source code repository.</p>
     /// <p>You must provide either this member or <code>ImageRepository</code> (but not both).</p>
     pub code_repository: ::std::option::Option<crate::types::CodeRepository>,
@@ -16,15 +16,15 @@ pub struct SourceConfiguration {
     /// <p>Describes the resources that are needed to authenticate access to some source repositories.</p>
     pub authentication_configuration: ::std::option::Option<crate::types::AuthenticationConfiguration>,
 }
-impl SourceConfiguration {
+impl  SourceConfiguration  {
     /// <p>The description of a source code repository.</p>
     /// <p>You must provide either this member or <code>ImageRepository</code> (but not both).</p>
-    pub fn code_repository(&self) -> ::std::option::Option<&crate::types::CodeRepository> {
+    pub fn code_repository(&self) -> ::std::option::Option<& crate::types::CodeRepository> {
         self.code_repository.as_ref()
     }
     /// <p>The description of a source image repository.</p>
     /// <p>You must provide either this member or <code>CodeRepository</code> (but not both).</p>
-    pub fn image_repository(&self) -> ::std::option::Option<&crate::types::ImageRepository> {
+    pub fn image_repository(&self) -> ::std::option::Option<& crate::types::ImageRepository> {
         self.image_repository.as_ref()
     }
     /// <p>If <code>true</code>, continuous integration from the source repository is enabled for the App Runner service. Each repository change (including any source code commit or new image version) starts a deployment.</p>
@@ -33,7 +33,7 @@ impl SourceConfiguration {
         self.auto_deployments_enabled
     }
     /// <p>Describes the resources that are needed to authenticate access to some source repositories.</p>
-    pub fn authentication_configuration(&self) -> ::std::option::Option<&crate::types::AuthenticationConfiguration> {
+    pub fn authentication_configuration(&self) -> ::std::option::Option<& crate::types::AuthenticationConfiguration> {
         self.authentication_configuration.as_ref()
     }
 }
@@ -63,8 +63,7 @@ impl SourceConfigurationBuilder {
     /// <p>The description of a source code repository.</p>
     /// <p>You must provide either this member or <code>ImageRepository</code> (but not both).</p>
     pub fn set_code_repository(mut self, input: ::std::option::Option<crate::types::CodeRepository>) -> Self {
-        self.code_repository = input;
-        self
+        self.code_repository = input; self
     }
     /// <p>The description of a source code repository.</p>
     /// <p>You must provide either this member or <code>ImageRepository</code> (but not both).</p>
@@ -80,8 +79,7 @@ impl SourceConfigurationBuilder {
     /// <p>The description of a source image repository.</p>
     /// <p>You must provide either this member or <code>CodeRepository</code> (but not both).</p>
     pub fn set_image_repository(mut self, input: ::std::option::Option<crate::types::ImageRepository>) -> Self {
-        self.image_repository = input;
-        self
+        self.image_repository = input; self
     }
     /// <p>The description of a source image repository.</p>
     /// <p>You must provide either this member or <code>CodeRepository</code> (but not both).</p>
@@ -97,8 +95,7 @@ impl SourceConfigurationBuilder {
     /// <p>If <code>true</code>, continuous integration from the source repository is enabled for the App Runner service. Each repository change (including any source code commit or new image version) starts a deployment.</p>
     /// <p>Default: App Runner sets to <code>false</code> for a source image that uses an ECR Public repository or an ECR repository that's in an Amazon Web Services account other than the one that the service is in. App Runner sets to <code>true</code> in all other cases (which currently include a source code repository or a source image using a same-account ECR repository).</p>
     pub fn set_auto_deployments_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_deployments_enabled = input;
-        self
+        self.auto_deployments_enabled = input; self
     }
     /// <p>If <code>true</code>, continuous integration from the source repository is enabled for the App Runner service. Each repository change (including any source code commit or new image version) starts a deployment.</p>
     /// <p>Default: App Runner sets to <code>false</code> for a source image that uses an ECR Public repository or an ECR repository that's in an Amazon Web Services account other than the one that the service is in. App Runner sets to <code>true</code> in all other cases (which currently include a source code repository or a source image using a same-account ECR repository).</p>
@@ -112,8 +109,7 @@ impl SourceConfigurationBuilder {
     }
     /// <p>Describes the resources that are needed to authenticate access to some source repositories.</p>
     pub fn set_authentication_configuration(mut self, input: ::std::option::Option<crate::types::AuthenticationConfiguration>) -> Self {
-        self.authentication_configuration = input;
-        self
+        self.authentication_configuration = input; self
     }
     /// <p>Describes the resources that are needed to authenticate access to some source repositories.</p>
     pub fn get_authentication_configuration(&self) -> &::std::option::Option<crate::types::AuthenticationConfiguration> {
@@ -122,10 +118,15 @@ impl SourceConfigurationBuilder {
     /// Consumes the builder and constructs a [`SourceConfiguration`](crate::types::SourceConfiguration).
     pub fn build(self) -> crate::types::SourceConfiguration {
         crate::types::SourceConfiguration {
-            code_repository: self.code_repository,
-            image_repository: self.image_repository,
-            auto_deployments_enabled: self.auto_deployments_enabled,
-            authentication_configuration: self.authentication_configuration,
+            code_repository: self.code_repository
+            ,
+            image_repository: self.image_repository
+            ,
+            auto_deployments_enabled: self.auto_deployments_enabled
+            ,
+            authentication_configuration: self.authentication_configuration
+            ,
         }
     }
 }
+

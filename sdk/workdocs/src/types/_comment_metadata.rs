@@ -3,7 +3,7 @@
 /// <p>Describes the metadata of a comment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CommentMetadata {
+pub struct CommentMetadata  {
     /// <p>The ID of the comment.</p>
     pub comment_id: ::std::option::Option<::std::string::String>,
     /// <p>The user who made the comment.</p>
@@ -17,29 +17,29 @@ pub struct CommentMetadata {
     /// <p>The ID of the user who made the comment.</p>
     pub contributor_id: ::std::option::Option<::std::string::String>,
 }
-impl CommentMetadata {
+impl  CommentMetadata  {
     /// <p>The ID of the comment.</p>
-    pub fn comment_id(&self) -> ::std::option::Option<&str> {
+    pub fn comment_id(&self) -> ::std::option::Option<& str> {
         self.comment_id.as_deref()
     }
     /// <p>The user who made the comment.</p>
-    pub fn contributor(&self) -> ::std::option::Option<&crate::types::User> {
+    pub fn contributor(&self) -> ::std::option::Option<& crate::types::User> {
         self.contributor.as_ref()
     }
     /// <p>The timestamp that the comment was created.</p>
-    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The status of the comment.</p>
-    pub fn comment_status(&self) -> ::std::option::Option<&crate::types::CommentStatusType> {
+    pub fn comment_status(&self) -> ::std::option::Option<& crate::types::CommentStatusType> {
         self.comment_status.as_ref()
     }
     /// <p>The ID of the user being replied to.</p>
-    pub fn recipient_id(&self) -> ::std::option::Option<&str> {
+    pub fn recipient_id(&self) -> ::std::option::Option<& str> {
         self.recipient_id.as_deref()
     }
     /// <p>The ID of the user who made the comment.</p>
-    pub fn contributor_id(&self) -> ::std::option::Option<&str> {
+    pub fn contributor_id(&self) -> ::std::option::Option<& str> {
         self.contributor_id.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl CommentMetadataBuilder {
     }
     /// <p>The ID of the comment.</p>
     pub fn set_comment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comment_id = input;
-        self
+        self.comment_id = input; self
     }
     /// <p>The ID of the comment.</p>
     pub fn get_comment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl CommentMetadataBuilder {
     }
     /// <p>The user who made the comment.</p>
     pub fn set_contributor(mut self, input: ::std::option::Option<crate::types::User>) -> Self {
-        self.contributor = input;
-        self
+        self.contributor = input; self
     }
     /// <p>The user who made the comment.</p>
     pub fn get_contributor(&self) -> &::std::option::Option<crate::types::User> {
@@ -97,8 +95,7 @@ impl CommentMetadataBuilder {
     }
     /// <p>The timestamp that the comment was created.</p>
     pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input;
-        self
+        self.created_timestamp = input; self
     }
     /// <p>The timestamp that the comment was created.</p>
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -111,8 +108,7 @@ impl CommentMetadataBuilder {
     }
     /// <p>The status of the comment.</p>
     pub fn set_comment_status(mut self, input: ::std::option::Option<crate::types::CommentStatusType>) -> Self {
-        self.comment_status = input;
-        self
+        self.comment_status = input; self
     }
     /// <p>The status of the comment.</p>
     pub fn get_comment_status(&self) -> &::std::option::Option<crate::types::CommentStatusType> {
@@ -125,8 +121,7 @@ impl CommentMetadataBuilder {
     }
     /// <p>The ID of the user being replied to.</p>
     pub fn set_recipient_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recipient_id = input;
-        self
+        self.recipient_id = input; self
     }
     /// <p>The ID of the user being replied to.</p>
     pub fn get_recipient_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +134,7 @@ impl CommentMetadataBuilder {
     }
     /// <p>The ID of the user who made the comment.</p>
     pub fn set_contributor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contributor_id = input;
-        self
+        self.contributor_id = input; self
     }
     /// <p>The ID of the user who made the comment.</p>
     pub fn get_contributor_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,12 +143,19 @@ impl CommentMetadataBuilder {
     /// Consumes the builder and constructs a [`CommentMetadata`](crate::types::CommentMetadata).
     pub fn build(self) -> crate::types::CommentMetadata {
         crate::types::CommentMetadata {
-            comment_id: self.comment_id,
-            contributor: self.contributor,
-            created_timestamp: self.created_timestamp,
-            comment_status: self.comment_status,
-            recipient_id: self.recipient_id,
-            contributor_id: self.contributor_id,
+            comment_id: self.comment_id
+            ,
+            contributor: self.contributor
+            ,
+            created_timestamp: self.created_timestamp
+            ,
+            comment_status: self.comment_status
+            ,
+            recipient_id: self.recipient_id
+            ,
+            contributor_id: self.contributor_id
+            ,
         }
     }
 }
+

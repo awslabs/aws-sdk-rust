@@ -2,3 +2,4 @@
 
 /// Error types that AWS EC2 Instance Connect can respond with.
 pub mod error;
+

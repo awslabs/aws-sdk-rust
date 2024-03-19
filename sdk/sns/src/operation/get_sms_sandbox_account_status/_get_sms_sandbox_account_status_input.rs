@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSmsSandboxAccountStatusInput {}
+pub struct GetSmsSandboxAccountStatusInput  {
+}
 impl GetSmsSandboxAccountStatusInput {
     /// Creates a new builder-style object to manufacture [`GetSmsSandboxAccountStatusInput`](crate::operation::get_sms_sandbox_account_status::GetSmsSandboxAccountStatusInput).
     pub fn builder() -> crate::operation::get_sms_sandbox_account_status::builders::GetSmsSandboxAccountStatusInputBuilder {
@@ -13,15 +14,15 @@ impl GetSmsSandboxAccountStatusInput {
 /// A builder for [`GetSmsSandboxAccountStatusInput`](crate::operation::get_sms_sandbox_account_status::GetSmsSandboxAccountStatusInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetSmsSandboxAccountStatusInputBuilder {}
+pub struct GetSmsSandboxAccountStatusInputBuilder {
+}
 impl GetSmsSandboxAccountStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetSmsSandboxAccountStatusInput`](crate::operation::get_sms_sandbox_account_status::GetSmsSandboxAccountStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_sms_sandbox_account_status::GetSmsSandboxAccountStatusInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_sms_sandbox_account_status::GetSmsSandboxAccountStatusInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_sms_sandbox_account_status::GetSmsSandboxAccountStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_sms_sandbox_account_status::GetSmsSandboxAccountStatusInput {
+            }
+        )
     }
 }
+

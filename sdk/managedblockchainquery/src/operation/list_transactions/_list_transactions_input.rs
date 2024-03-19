@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTransactionsInput {
+pub struct ListTransactionsInput  {
     /// <p>The address (either a contract or wallet), whose transactions are being requested.</p>
     pub address: ::std::option::Option<::std::string::String>,
     /// <p>The blockchain network where the transactions occurred.</p>
@@ -24,29 +24,29 @@ pub struct ListTransactionsInput {
     /// <p>This filter is used to include transactions in the response that haven't reached <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality"> <i>finality</i> </a>. Transactions that have reached finality are always part of the response.</p>
     pub confirmation_status_filter: ::std::option::Option<crate::types::ConfirmationStatusFilter>,
 }
-impl ListTransactionsInput {
+impl  ListTransactionsInput  {
     /// <p>The address (either a contract or wallet), whose transactions are being requested.</p>
-    pub fn address(&self) -> ::std::option::Option<&str> {
+    pub fn address(&self) -> ::std::option::Option<& str> {
         self.address.as_deref()
     }
     /// <p>The blockchain network where the transactions occurred.</p>
-    pub fn network(&self) -> ::std::option::Option<&crate::types::QueryNetwork> {
+    pub fn network(&self) -> ::std::option::Option<& crate::types::QueryNetwork> {
         self.network.as_ref()
     }
     /// <p>The container for time.</p>
-    pub fn from_blockchain_instant(&self) -> ::std::option::Option<&crate::types::BlockchainInstant> {
+    pub fn from_blockchain_instant(&self) -> ::std::option::Option<& crate::types::BlockchainInstant> {
         self.from_blockchain_instant.as_ref()
     }
     /// <p>The container for time.</p>
-    pub fn to_blockchain_instant(&self) -> ::std::option::Option<&crate::types::BlockchainInstant> {
+    pub fn to_blockchain_instant(&self) -> ::std::option::Option<& crate::types::BlockchainInstant> {
         self.to_blockchain_instant.as_ref()
     }
     /// <p>The order by which the results will be sorted.</p>
-    pub fn sort(&self) -> ::std::option::Option<&crate::types::ListTransactionsSort> {
+    pub fn sort(&self) -> ::std::option::Option<& crate::types::ListTransactionsSort> {
         self.sort.as_ref()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of transactions to list.</p>
@@ -58,7 +58,7 @@ impl ListTransactionsInput {
         self.max_results
     }
     /// <p>This filter is used to include transactions in the response that haven't reached <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality"> <i>finality</i> </a>. Transactions that have reached finality are always part of the response.</p>
-    pub fn confirmation_status_filter(&self) -> ::std::option::Option<&crate::types::ConfirmationStatusFilter> {
+    pub fn confirmation_status_filter(&self) -> ::std::option::Option<& crate::types::ConfirmationStatusFilter> {
         self.confirmation_status_filter.as_ref()
     }
 }
@@ -91,8 +91,7 @@ impl ListTransactionsInputBuilder {
     }
     /// <p>The address (either a contract or wallet), whose transactions are being requested.</p>
     pub fn set_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.address = input;
-        self
+        self.address = input; self
     }
     /// <p>The address (either a contract or wallet), whose transactions are being requested.</p>
     pub fn get_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +105,7 @@ impl ListTransactionsInputBuilder {
     }
     /// <p>The blockchain network where the transactions occurred.</p>
     pub fn set_network(mut self, input: ::std::option::Option<crate::types::QueryNetwork>) -> Self {
-        self.network = input;
-        self
+        self.network = input; self
     }
     /// <p>The blockchain network where the transactions occurred.</p>
     pub fn get_network(&self) -> &::std::option::Option<crate::types::QueryNetwork> {
@@ -120,8 +118,7 @@ impl ListTransactionsInputBuilder {
     }
     /// <p>The container for time.</p>
     pub fn set_from_blockchain_instant(mut self, input: ::std::option::Option<crate::types::BlockchainInstant>) -> Self {
-        self.from_blockchain_instant = input;
-        self
+        self.from_blockchain_instant = input; self
     }
     /// <p>The container for time.</p>
     pub fn get_from_blockchain_instant(&self) -> &::std::option::Option<crate::types::BlockchainInstant> {
@@ -134,8 +131,7 @@ impl ListTransactionsInputBuilder {
     }
     /// <p>The container for time.</p>
     pub fn set_to_blockchain_instant(mut self, input: ::std::option::Option<crate::types::BlockchainInstant>) -> Self {
-        self.to_blockchain_instant = input;
-        self
+        self.to_blockchain_instant = input; self
     }
     /// <p>The container for time.</p>
     pub fn get_to_blockchain_instant(&self) -> &::std::option::Option<crate::types::BlockchainInstant> {
@@ -148,8 +144,7 @@ impl ListTransactionsInputBuilder {
     }
     /// <p>The order by which the results will be sorted.</p>
     pub fn set_sort(mut self, input: ::std::option::Option<crate::types::ListTransactionsSort>) -> Self {
-        self.sort = input;
-        self
+        self.sort = input; self
     }
     /// <p>The order by which the results will be sorted.</p>
     pub fn get_sort(&self) -> &::std::option::Option<crate::types::ListTransactionsSort> {
@@ -162,8 +157,7 @@ impl ListTransactionsInputBuilder {
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -184,8 +178,7 @@ impl ListTransactionsInputBuilder {
     /// <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p>
     /// </note>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of transactions to list.</p>
     /// <p>Default: <code>100</code></p><note>
@@ -202,26 +195,34 @@ impl ListTransactionsInputBuilder {
     }
     /// <p>This filter is used to include transactions in the response that haven't reached <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality"> <i>finality</i> </a>. Transactions that have reached finality are always part of the response.</p>
     pub fn set_confirmation_status_filter(mut self, input: ::std::option::Option<crate::types::ConfirmationStatusFilter>) -> Self {
-        self.confirmation_status_filter = input;
-        self
+        self.confirmation_status_filter = input; self
     }
     /// <p>This filter is used to include transactions in the response that haven't reached <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality"> <i>finality</i> </a>. Transactions that have reached finality are always part of the response.</p>
     pub fn get_confirmation_status_filter(&self) -> &::std::option::Option<crate::types::ConfirmationStatusFilter> {
         &self.confirmation_status_filter
     }
     /// Consumes the builder and constructs a [`ListTransactionsInput`](crate::operation::list_transactions::ListTransactionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_transactions::ListTransactionsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_transactions::ListTransactionsInput {
-            address: self.address,
-            network: self.network,
-            from_blockchain_instant: self.from_blockchain_instant,
-            to_blockchain_instant: self.to_blockchain_instant,
-            sort: self.sort,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            confirmation_status_filter: self.confirmation_status_filter,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_transactions::ListTransactionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_transactions::ListTransactionsInput {
+                address: self.address
+                ,
+                network: self.network
+                ,
+                from_blockchain_instant: self.from_blockchain_instant
+                ,
+                to_blockchain_instant: self.to_blockchain_instant
+                ,
+                sort: self.sort
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                confirmation_status_filter: self.confirmation_status_filter
+                ,
+            }
+        )
     }
 }
+

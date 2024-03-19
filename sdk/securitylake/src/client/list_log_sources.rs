@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListLogSources`](crate::operation::list_log_sources::builders::ListLogSourcesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_log_sources::builders::ListLogSourcesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`accounts(impl Into<String>)`](crate::operation::list_log_sources::builders::ListLogSourcesFluentBuilder::accounts) / [`set_accounts(Option<Vec::<String>>)`](crate::operation::list_log_sources::builders::ListLogSourcesFluentBuilder::set_accounts):<br>required: **false**<br><p>The list of Amazon Web Services accounts for which log sources are displayed.</p><br>
     ///   - [`regions(impl Into<String>)`](crate::operation::list_log_sources::builders::ListLogSourcesFluentBuilder::regions) / [`set_regions(Option<Vec::<String>>)`](crate::operation::list_log_sources::builders::ListLogSourcesFluentBuilder::set_regions):<br>required: **false**<br><p>The list of Regions for which log sources are displayed.</p><br>
     ///   - [`sources(LogSourceResource)`](crate::operation::list_log_sources::builders::ListLogSourcesFluentBuilder::sources) / [`set_sources(Option<Vec::<LogSourceResource>>)`](crate::operation::list_log_sources::builders::ListLogSourcesFluentBuilder::set_sources):<br>required: **false**<br><p>The list of sources for which log sources are displayed.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_log_sources::builders::ListLogSourcesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_log_sources::builders::ListLogSourcesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of accounts for which the log sources are displayed.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_log_sources::builders::ListLogSourcesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_log_sources::builders::ListLogSourcesFluentBuilder::set_next_token):<br>required: **false**<br><p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p><br>
-    /// - On success, responds with [`ListLogSourcesOutput`](crate::operation::list_log_sources::ListLogSourcesOutput) with field(s):
+                            /// - On success, responds with [`ListLogSourcesOutput`](crate::operation::list_log_sources::ListLogSourcesOutput) with field(s):
     ///   - [`sources(Option<Vec::<LogSource>>)`](crate::operation::list_log_sources::ListLogSourcesOutput::sources): <p>The list of log sources in your organization that send data to the data lake.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_log_sources::ListLogSourcesOutput::next_token): <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
-    /// - On failure, responds with [`SdkError<ListLogSourcesError>`](crate::operation::list_log_sources::ListLogSourcesError)
+                            /// - On failure, responds with [`SdkError<ListLogSourcesError>`](crate::operation::list_log_sources::ListLogSourcesError)
     pub fn list_log_sources(&self) -> crate::operation::list_log_sources::builders::ListLogSourcesFluentBuilder {
-        crate::operation::list_log_sources::builders::ListLogSourcesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_log_sources::builders::ListLogSourcesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

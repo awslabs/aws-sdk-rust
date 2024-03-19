@@ -3,19 +3,19 @@
 /// <p>A request to delete a <code>SqlInjectionMatchSet</code> from AWS WAF.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSqlInjectionMatchSetInput {
+pub struct DeleteSqlInjectionMatchSetInput  {
     /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to delete. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
     pub sql_injection_match_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: ::std::option::Option<::std::string::String>,
 }
-impl DeleteSqlInjectionMatchSetInput {
+impl  DeleteSqlInjectionMatchSetInput  {
     /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to delete. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
-    pub fn sql_injection_match_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn sql_injection_match_set_id(&self) -> ::std::option::Option<& str> {
         self.sql_injection_match_set_id.as_deref()
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    pub fn change_token(&self) -> ::std::option::Option<&str> {
+    pub fn change_token(&self) -> ::std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DeleteSqlInjectionMatchSetInputBuilder {
     }
     /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to delete. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
     pub fn set_sql_injection_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sql_injection_match_set_id = input;
-        self
+        self.sql_injection_match_set_id = input; self
     }
     /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to delete. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
     pub fn get_sql_injection_match_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,23 +56,22 @@ impl DeleteSqlInjectionMatchSetInputBuilder {
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.change_token = input;
-        self
+        self.change_token = input; self
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.change_token
     }
     /// Consumes the builder and constructs a [`DeleteSqlInjectionMatchSetInput`](crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetInput {
-            sql_injection_match_set_id: self.sql_injection_match_set_id,
-            change_token: self.change_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetInput {
+                sql_injection_match_set_id: self.sql_injection_match_set_id
+                ,
+                change_token: self.change_token
+                ,
+            }
+        )
     }
 }
+

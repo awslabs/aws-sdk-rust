@@ -3,16 +3,17 @@
 /// <p>The details of a Job node present in the workflow.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobNodeDetails {
+pub struct JobNodeDetails  {
     /// <p>The information for the job runs represented by the job node.</p>
-    pub job_runs: ::std::option::Option<::std::vec::Vec<crate::types::JobRun>>,
+    pub job_runs: ::std::option::Option<::std::vec::Vec::<crate::types::JobRun>>,
 }
-impl JobNodeDetails {
+impl  JobNodeDetails  {
     /// <p>The information for the job runs represented by the job node.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_runs.is_none()`.
-    pub fn job_runs(&self) -> &[crate::types::JobRun] {
-        self.job_runs.as_deref().unwrap_or_default()
+    pub fn job_runs(&self) -> & [crate::types::JobRun] {
+        self.job_runs.as_deref()
+        .unwrap_or_default()
     }
 }
 impl JobNodeDetails {
@@ -26,7 +27,7 @@ impl JobNodeDetails {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobNodeDetailsBuilder {
-    pub(crate) job_runs: ::std::option::Option<::std::vec::Vec<crate::types::JobRun>>,
+    pub(crate) job_runs: ::std::option::Option<::std::vec::Vec::<crate::types::JobRun>>,
 }
 impl JobNodeDetailsBuilder {
     /// Appends an item to `job_runs`.
@@ -36,21 +37,24 @@ impl JobNodeDetailsBuilder {
     /// <p>The information for the job runs represented by the job node.</p>
     pub fn job_runs(mut self, input: crate::types::JobRun) -> Self {
         let mut v = self.job_runs.unwrap_or_default();
-        v.push(input);
-        self.job_runs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.job_runs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The information for the job runs represented by the job node.</p>
-    pub fn set_job_runs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobRun>>) -> Self {
-        self.job_runs = input;
-        self
+    pub fn set_job_runs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::JobRun>>) -> Self {
+        self.job_runs = input; self
     }
     /// <p>The information for the job runs represented by the job node.</p>
-    pub fn get_job_runs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobRun>> {
+    pub fn get_job_runs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::JobRun>> {
         &self.job_runs
     }
     /// Consumes the builder and constructs a [`JobNodeDetails`](crate::types::JobNodeDetails).
     pub fn build(self) -> crate::types::JobNodeDetails {
-        crate::types::JobNodeDetails { job_runs: self.job_runs }
+        crate::types::JobNodeDetails {
+            job_runs: self.job_runs
+            ,
+        }
     }
 }
+

@@ -3,15 +3,14 @@
 /// <p>Information about overrides to an on-call rotation shift.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ShiftDetails {
+pub struct ShiftDetails  {
     /// <p>The Amazon Resources Names (ARNs) of the contacts who were replaced in a shift when an override was created. If the override is deleted, these contacts are restored to the shift.</p>
-    pub overridden_contact_ids: ::std::vec::Vec<::std::string::String>,
+    pub overridden_contact_ids: ::std::vec::Vec::<::std::string::String>,
 }
-impl ShiftDetails {
+impl  ShiftDetails  {
     /// <p>The Amazon Resources Names (ARNs) of the contacts who were replaced in a shift when an override was created. If the override is deleted, these contacts are restored to the shift.</p>
-    pub fn overridden_contact_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.overridden_contact_ids.deref()
+    pub fn overridden_contact_ids(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.overridden_contact_ids.deref()
     }
 }
 impl ShiftDetails {
@@ -25,7 +24,7 @@ impl ShiftDetails {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ShiftDetailsBuilder {
-    pub(crate) overridden_contact_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) overridden_contact_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ShiftDetailsBuilder {
     /// Appends an item to `overridden_contact_ids`.
@@ -35,30 +34,31 @@ impl ShiftDetailsBuilder {
     /// <p>The Amazon Resources Names (ARNs) of the contacts who were replaced in a shift when an override was created. If the override is deleted, these contacts are restored to the shift.</p>
     pub fn overridden_contact_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.overridden_contact_ids.unwrap_or_default();
-        v.push(input.into());
-        self.overridden_contact_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.overridden_contact_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Resources Names (ARNs) of the contacts who were replaced in a shift when an override was created. If the override is deleted, these contacts are restored to the shift.</p>
-    pub fn set_overridden_contact_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.overridden_contact_ids = input;
-        self
+    pub fn set_overridden_contact_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.overridden_contact_ids = input; self
     }
     /// <p>The Amazon Resources Names (ARNs) of the contacts who were replaced in a shift when an override was created. If the override is deleted, these contacts are restored to the shift.</p>
-    pub fn get_overridden_contact_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_overridden_contact_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.overridden_contact_ids
     }
     /// Consumes the builder and constructs a [`ShiftDetails`](crate::types::ShiftDetails).
     /// This method will fail if any of the following fields are not set:
     /// - [`overridden_contact_ids`](crate::types::builders::ShiftDetailsBuilder::overridden_contact_ids)
     pub fn build(self) -> ::std::result::Result<crate::types::ShiftDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ShiftDetails {
-            overridden_contact_ids: self.overridden_contact_ids.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "overridden_contact_ids",
-                    "overridden_contact_ids was not specified but it is required when building ShiftDetails",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ShiftDetails {
+                overridden_contact_ids: self.overridden_contact_ids
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("overridden_contact_ids", "overridden_contact_ids was not specified but it is required when building ShiftDetails")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Summary information for an OpenSearch Ingestion pipeline.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PipelineSummary {
+pub struct PipelineSummary  {
     /// <p>The current status of the pipeline.</p>
     pub status: ::std::option::Option<crate::types::PipelineStatus>,
     /// <p>Information about a pipeline's current status.</p>
@@ -21,23 +21,23 @@ pub struct PipelineSummary {
     /// <p>The date and time when the pipeline was last updated.</p>
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of tags associated with the given pipeline.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl PipelineSummary {
+impl  PipelineSummary  {
     /// <p>The current status of the pipeline.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::PipelineStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::PipelineStatus> {
         self.status.as_ref()
     }
     /// <p>Information about a pipeline's current status.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&crate::types::PipelineStatusReason> {
+    pub fn status_reason(&self) -> ::std::option::Option<& crate::types::PipelineStatusReason> {
         self.status_reason.as_ref()
     }
     /// <p>The name of the pipeline.</p>
-    pub fn pipeline_name(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_name(&self) -> ::std::option::Option<& str> {
         self.pipeline_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
-    pub fn pipeline_arn(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_arn(&self) -> ::std::option::Option<& str> {
         self.pipeline_arn.as_deref()
     }
     /// <p>The minimum pipeline capacity, in Ingestion Compute Units (ICUs).</p>
@@ -49,18 +49,19 @@ impl PipelineSummary {
         self.max_units
     }
     /// <p>The date and time when the pipeline was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The date and time when the pipeline was last updated.</p>
-    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>A list of tags associated with the given pipeline.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PipelineSummary {
@@ -82,7 +83,7 @@ pub struct PipelineSummaryBuilder {
     pub(crate) max_units: ::std::option::Option<i32>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl PipelineSummaryBuilder {
     /// <p>The current status of the pipeline.</p>
@@ -92,8 +93,7 @@ impl PipelineSummaryBuilder {
     }
     /// <p>The current status of the pipeline.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::PipelineStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the pipeline.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PipelineStatus> {
@@ -106,8 +106,7 @@ impl PipelineSummaryBuilder {
     }
     /// <p>Information about a pipeline's current status.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<crate::types::PipelineStatusReason>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>Information about a pipeline's current status.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<crate::types::PipelineStatusReason> {
@@ -120,8 +119,7 @@ impl PipelineSummaryBuilder {
     }
     /// <p>The name of the pipeline.</p>
     pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_name = input;
-        self
+        self.pipeline_name = input; self
     }
     /// <p>The name of the pipeline.</p>
     pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +132,7 @@ impl PipelineSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
     pub fn set_pipeline_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_arn = input;
-        self
+        self.pipeline_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
     pub fn get_pipeline_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +145,7 @@ impl PipelineSummaryBuilder {
     }
     /// <p>The minimum pipeline capacity, in Ingestion Compute Units (ICUs).</p>
     pub fn set_min_units(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_units = input;
-        self
+        self.min_units = input; self
     }
     /// <p>The minimum pipeline capacity, in Ingestion Compute Units (ICUs).</p>
     pub fn get_min_units(&self) -> &::std::option::Option<i32> {
@@ -162,8 +158,7 @@ impl PipelineSummaryBuilder {
     }
     /// <p>The maximum pipeline capacity, in Ingestion Compute Units (ICUs).</p>
     pub fn set_max_units(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_units = input;
-        self
+        self.max_units = input; self
     }
     /// <p>The maximum pipeline capacity, in Ingestion Compute Units (ICUs).</p>
     pub fn get_max_units(&self) -> &::std::option::Option<i32> {
@@ -176,8 +171,7 @@ impl PipelineSummaryBuilder {
     }
     /// <p>The date and time when the pipeline was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time when the pipeline was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -190,8 +184,7 @@ impl PipelineSummaryBuilder {
     }
     /// <p>The date and time when the pipeline was last updated.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input;
-        self
+        self.last_updated_at = input; self
     }
     /// <p>The date and time when the pipeline was last updated.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -204,31 +197,40 @@ impl PipelineSummaryBuilder {
     /// <p>A list of tags associated with the given pipeline.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags associated with the given pipeline.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags associated with the given pipeline.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`PipelineSummary`](crate::types::PipelineSummary).
     pub fn build(self) -> crate::types::PipelineSummary {
         crate::types::PipelineSummary {
-            status: self.status,
-            status_reason: self.status_reason,
-            pipeline_name: self.pipeline_name,
-            pipeline_arn: self.pipeline_arn,
-            min_units: self.min_units,
-            max_units: self.max_units,
-            created_at: self.created_at,
-            last_updated_at: self.last_updated_at,
-            tags: self.tags,
+            status: self.status
+            ,
+            status_reason: self.status_reason
+            ,
+            pipeline_name: self.pipeline_name
+            ,
+            pipeline_arn: self.pipeline_arn
+            ,
+            min_units: self.min_units
+            ,
+            max_units: self.max_units
+            ,
+            created_at: self.created_at
+            ,
+            last_updated_at: self.last_updated_at
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

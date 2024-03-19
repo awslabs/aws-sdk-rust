@@ -3,20 +3,19 @@
 /// <p>The conditional formatting that determines the shape of the filled map.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FilledMapShapeConditionalFormatting {
+pub struct FilledMapShapeConditionalFormatting  {
     /// <p>The field ID of the filled map shape.</p>
     pub field_id: ::std::string::String,
     /// <p>The conditional formatting that determines the background color of a filled map's shape.</p>
     pub format: ::std::option::Option<crate::types::ShapeConditionalFormat>,
 }
-impl FilledMapShapeConditionalFormatting {
+impl  FilledMapShapeConditionalFormatting  {
     /// <p>The field ID of the filled map shape.</p>
-    pub fn field_id(&self) -> &str {
-        use std::ops::Deref;
-        self.field_id.deref()
+    pub fn field_id(&self) -> & str {
+        use std::ops::Deref; self.field_id.deref()
     }
     /// <p>The conditional formatting that determines the background color of a filled map's shape.</p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::ShapeConditionalFormat> {
+    pub fn format(&self) -> ::std::option::Option<& crate::types::ShapeConditionalFormat> {
         self.format.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl FilledMapShapeConditionalFormattingBuilder {
     }
     /// <p>The field ID of the filled map shape.</p>
     pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_id = input;
-        self
+        self.field_id = input; self
     }
     /// <p>The field ID of the filled map shape.</p>
     pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl FilledMapShapeConditionalFormattingBuilder {
     }
     /// <p>The conditional formatting that determines the background color of a filled map's shape.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::ShapeConditionalFormat>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>The conditional formatting that determines the background color of a filled map's shape.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::ShapeConditionalFormat> {
@@ -68,14 +65,17 @@ impl FilledMapShapeConditionalFormattingBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`field_id`](crate::types::builders::FilledMapShapeConditionalFormattingBuilder::field_id)
     pub fn build(self) -> ::std::result::Result<crate::types::FilledMapShapeConditionalFormatting, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FilledMapShapeConditionalFormatting {
-            field_id: self.field_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "field_id",
-                    "field_id was not specified but it is required when building FilledMapShapeConditionalFormatting",
-                )
-            })?,
-            format: self.format,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FilledMapShapeConditionalFormatting {
+                field_id: self.field_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("field_id", "field_id was not specified but it is required when building FilledMapShapeConditionalFormatting")
+                    )?
+                ,
+                format: self.format
+                ,
+            }
+        )
     }
 }
+

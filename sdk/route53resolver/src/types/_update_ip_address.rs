@@ -3,22 +3,20 @@
 /// <p>Provides information about the IP address type in response to <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverEndpoint.html">UpdateResolverEndpoint</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateIpAddress {
+pub struct UpdateIpAddress  {
     /// <p>The ID of the IP address, specified by the <code>ResolverEndpointId</code>.</p>
     pub ip_id: ::std::string::String,
     /// <p>The IPv6 address that you want to use for DNS queries.</p>
     pub ipv6: ::std::string::String,
 }
-impl UpdateIpAddress {
+impl  UpdateIpAddress  {
     /// <p>The ID of the IP address, specified by the <code>ResolverEndpointId</code>.</p>
-    pub fn ip_id(&self) -> &str {
-        use std::ops::Deref;
-        self.ip_id.deref()
+    pub fn ip_id(&self) -> & str {
+        use std::ops::Deref; self.ip_id.deref()
     }
     /// <p>The IPv6 address that you want to use for DNS queries.</p>
-    pub fn ipv6(&self) -> &str {
-        use std::ops::Deref;
-        self.ipv6.deref()
+    pub fn ipv6(&self) -> & str {
+        use std::ops::Deref; self.ipv6.deref()
     }
 }
 impl UpdateIpAddress {
@@ -44,8 +42,7 @@ impl UpdateIpAddressBuilder {
     }
     /// <p>The ID of the IP address, specified by the <code>ResolverEndpointId</code>.</p>
     pub fn set_ip_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_id = input;
-        self
+        self.ip_id = input; self
     }
     /// <p>The ID of the IP address, specified by the <code>ResolverEndpointId</code>.</p>
     pub fn get_ip_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl UpdateIpAddressBuilder {
     }
     /// <p>The IPv6 address that you want to use for DNS queries.</p>
     pub fn set_ipv6(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipv6 = input;
-        self
+        self.ipv6 = input; self
     }
     /// <p>The IPv6 address that you want to use for DNS queries.</p>
     pub fn get_ipv6(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl UpdateIpAddressBuilder {
     /// - [`ip_id`](crate::types::builders::UpdateIpAddressBuilder::ip_id)
     /// - [`ipv6`](crate::types::builders::UpdateIpAddressBuilder::ipv6)
     pub fn build(self) -> ::std::result::Result<crate::types::UpdateIpAddress, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UpdateIpAddress {
-            ip_id: self.ip_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ip_id",
-                    "ip_id was not specified but it is required when building UpdateIpAddress",
-                )
-            })?,
-            ipv6: self.ipv6.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ipv6",
-                    "ipv6 was not specified but it is required when building UpdateIpAddress",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UpdateIpAddress {
+                ip_id: self.ip_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ip_id", "ip_id was not specified but it is required when building UpdateIpAddress")
+                    )?
+                ,
+                ipv6: self.ipv6
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ipv6", "ipv6 was not specified but it is required when building UpdateIpAddress")
+                    )?
+                ,
+            }
+        )
     }
 }
+

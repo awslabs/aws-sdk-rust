@@ -17,13 +17,13 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Autotune {
+pub struct Autotune  {
     /// <p>Set <code>Mode</code> to <code>Enabled</code> if you want to use Autotune.</p>
     pub mode: ::std::option::Option<crate::types::AutotuneMode>,
 }
-impl Autotune {
+impl  Autotune  {
     /// <p>Set <code>Mode</code> to <code>Enabled</code> if you want to use Autotune.</p>
-    pub fn mode(&self) -> ::std::option::Option<&crate::types::AutotuneMode> {
+    pub fn mode(&self) -> ::std::option::Option<& crate::types::AutotuneMode> {
         self.mode.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl AutotuneBuilder {
     }
     /// <p>Set <code>Mode</code> to <code>Enabled</code> if you want to use Autotune.</p>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::AutotuneMode>) -> Self {
-        self.mode = input;
-        self
+        self.mode = input; self
     }
     /// <p>Set <code>Mode</code> to <code>Enabled</code> if you want to use Autotune.</p>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::AutotuneMode> {
@@ -58,6 +57,10 @@ impl AutotuneBuilder {
     }
     /// Consumes the builder and constructs a [`Autotune`](crate::types::Autotune).
     pub fn build(self) -> crate::types::Autotune {
-        crate::types::Autotune { mode: self.mode }
+        crate::types::Autotune {
+            mode: self.mode
+            ,
+        }
     }
 }
+

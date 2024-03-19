@@ -3,19 +3,19 @@
 /// <p>The line of code where a finding was detected.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CodeLine {
+pub struct CodeLine  {
     /// <p>The code line number.</p>
     pub number: ::std::option::Option<i32>,
     /// <p>The code that contains a vulnerability.</p>
     pub content: ::std::option::Option<::std::string::String>,
 }
-impl CodeLine {
+impl  CodeLine  {
     /// <p>The code line number.</p>
     pub fn number(&self) -> ::std::option::Option<i32> {
         self.number
     }
     /// <p>The code that contains a vulnerability.</p>
-    pub fn content(&self) -> ::std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<& str> {
         self.content.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl CodeLineBuilder {
     }
     /// <p>The code line number.</p>
     pub fn set_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number = input;
-        self
+        self.number = input; self
     }
     /// <p>The code line number.</p>
     pub fn get_number(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl CodeLineBuilder {
     }
     /// <p>The code that contains a vulnerability.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>The code that contains a vulnerability.</p>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl CodeLineBuilder {
     /// Consumes the builder and constructs a [`CodeLine`](crate::types::CodeLine).
     pub fn build(self) -> crate::types::CodeLine {
         crate::types::CodeLine {
-            number: self.number,
-            content: self.content,
+            number: self.number
+            ,
+            content: self.content
+            ,
         }
     }
 }
+

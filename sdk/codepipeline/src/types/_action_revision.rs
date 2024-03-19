@@ -3,7 +3,7 @@
 /// <p>Represents information about the version (or revision) of an action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActionRevision {
+pub struct ActionRevision  {
     /// <p>The system-generated unique ID that identifies the revision number of the action.</p>
     pub revision_id: ::std::string::String,
     /// <p>The unique identifier of the change that set the state to this revision (for example, a deployment ID or timestamp).</p>
@@ -11,19 +11,17 @@ pub struct ActionRevision {
     /// <p>The date and time when the most recent version of the action was created, in timestamp format.</p>
     pub created: ::aws_smithy_types::DateTime,
 }
-impl ActionRevision {
+impl  ActionRevision  {
     /// <p>The system-generated unique ID that identifies the revision number of the action.</p>
-    pub fn revision_id(&self) -> &str {
-        use std::ops::Deref;
-        self.revision_id.deref()
+    pub fn revision_id(&self) -> & str {
+        use std::ops::Deref; self.revision_id.deref()
     }
     /// <p>The unique identifier of the change that set the state to this revision (for example, a deployment ID or timestamp).</p>
-    pub fn revision_change_id(&self) -> &str {
-        use std::ops::Deref;
-        self.revision_change_id.deref()
+    pub fn revision_change_id(&self) -> & str {
+        use std::ops::Deref; self.revision_change_id.deref()
     }
     /// <p>The date and time when the most recent version of the action was created, in timestamp format.</p>
-    pub fn created(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created(&self) -> & ::aws_smithy_types::DateTime {
         &self.created
     }
 }
@@ -51,8 +49,7 @@ impl ActionRevisionBuilder {
     }
     /// <p>The system-generated unique ID that identifies the revision number of the action.</p>
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
     }
     /// <p>The system-generated unique ID that identifies the revision number of the action.</p>
     pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl ActionRevisionBuilder {
     }
     /// <p>The unique identifier of the change that set the state to this revision (for example, a deployment ID or timestamp).</p>
     pub fn set_revision_change_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision_change_id = input;
-        self
+        self.revision_change_id = input; self
     }
     /// <p>The unique identifier of the change that set the state to this revision (for example, a deployment ID or timestamp).</p>
     pub fn get_revision_change_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl ActionRevisionBuilder {
     }
     /// <p>The date and time when the most recent version of the action was created, in timestamp format.</p>
     pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created = input;
-        self
+        self.created = input; self
     }
     /// <p>The date and time when the most recent version of the action was created, in timestamp format.</p>
     pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -94,25 +89,25 @@ impl ActionRevisionBuilder {
     /// - [`revision_change_id`](crate::types::builders::ActionRevisionBuilder::revision_change_id)
     /// - [`created`](crate::types::builders::ActionRevisionBuilder::created)
     pub fn build(self) -> ::std::result::Result<crate::types::ActionRevision, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ActionRevision {
-            revision_id: self.revision_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "revision_id",
-                    "revision_id was not specified but it is required when building ActionRevision",
-                )
-            })?,
-            revision_change_id: self.revision_change_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "revision_change_id",
-                    "revision_change_id was not specified but it is required when building ActionRevision",
-                )
-            })?,
-            created: self.created.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created",
-                    "created was not specified but it is required when building ActionRevision",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ActionRevision {
+                revision_id: self.revision_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("revision_id", "revision_id was not specified but it is required when building ActionRevision")
+                    )?
+                ,
+                revision_change_id: self.revision_change_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("revision_change_id", "revision_change_id was not specified but it is required when building ActionRevision")
+                    )?
+                ,
+                created: self.created
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created", "created was not specified but it is required when building ActionRevision")
+                    )?
+                ,
+            }
+        )
     }
 }
+

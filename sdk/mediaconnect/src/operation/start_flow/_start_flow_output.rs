@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartFlowOutput {
+pub struct StartFlowOutput  {
     /// The ARN of the flow that you started.
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// The status of the flow when the StartFlow process begins.
     pub status: ::std::option::Option<crate::types::Status>,
     _request_id: Option<String>,
 }
-impl StartFlowOutput {
+impl  StartFlowOutput  {
     /// The ARN of the flow that you started.
-    pub fn flow_arn(&self) -> ::std::option::Option<&str> {
+    pub fn flow_arn(&self) -> ::std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// The status of the flow when the StartFlow process begins.
-    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::Status> {
         self.status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartFlowOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartFlowOutput {
     /// Creates a new builder-style object to manufacture [`StartFlowOutput`](crate::operation::start_flow::StartFlowOutput).
     pub fn builder() -> crate::operation::start_flow::builders::StartFlowOutputBuilder {
@@ -47,8 +47,7 @@ impl StartFlowOutputBuilder {
     }
     /// The ARN of the flow that you started.
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flow_arn = input;
-        self
+        self.flow_arn = input; self
     }
     /// The ARN of the flow that you started.
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl StartFlowOutputBuilder {
     }
     /// The status of the flow when the StartFlow process begins.
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// The status of the flow when the StartFlow process begins.
     pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartFlowOutput`](crate::operation::start_flow::StartFlowOutput).
     pub fn build(self) -> crate::operation::start_flow::StartFlowOutput {
         crate::operation::start_flow::StartFlowOutput {
-            flow_arn: self.flow_arn,
-            status: self.status,
+            flow_arn: self.flow_arn
+            ,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

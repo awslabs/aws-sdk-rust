@@ -3,7 +3,7 @@
 /// <p>Contains information about multiple utterances in the results of a test set execution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UtteranceLevelTestResultItem {
+pub struct UtteranceLevelTestResultItem  {
     /// <p>The record number of the result.</p>
     pub record_number: i64,
     /// <p>The unique identifier for the conversation associated with the result.</p>
@@ -11,17 +11,17 @@ pub struct UtteranceLevelTestResultItem {
     /// <p>Contains information about the turn associated with the result.</p>
     pub turn_result: ::std::option::Option<crate::types::TestSetTurnResult>,
 }
-impl UtteranceLevelTestResultItem {
+impl  UtteranceLevelTestResultItem  {
     /// <p>The record number of the result.</p>
     pub fn record_number(&self) -> i64 {
         self.record_number
     }
     /// <p>The unique identifier for the conversation associated with the result.</p>
-    pub fn conversation_id(&self) -> ::std::option::Option<&str> {
+    pub fn conversation_id(&self) -> ::std::option::Option<& str> {
         self.conversation_id.as_deref()
     }
     /// <p>Contains information about the turn associated with the result.</p>
-    pub fn turn_result(&self) -> ::std::option::Option<&crate::types::TestSetTurnResult> {
+    pub fn turn_result(&self) -> ::std::option::Option<& crate::types::TestSetTurnResult> {
         self.turn_result.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl UtteranceLevelTestResultItemBuilder {
     }
     /// <p>The record number of the result.</p>
     pub fn set_record_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.record_number = input;
-        self
+        self.record_number = input; self
     }
     /// <p>The record number of the result.</p>
     pub fn get_record_number(&self) -> &::std::option::Option<i64> {
@@ -63,8 +62,7 @@ impl UtteranceLevelTestResultItemBuilder {
     }
     /// <p>The unique identifier for the conversation associated with the result.</p>
     pub fn set_conversation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.conversation_id = input;
-        self
+        self.conversation_id = input; self
     }
     /// <p>The unique identifier for the conversation associated with the result.</p>
     pub fn get_conversation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +76,7 @@ impl UtteranceLevelTestResultItemBuilder {
     }
     /// <p>Contains information about the turn associated with the result.</p>
     pub fn set_turn_result(mut self, input: ::std::option::Option<crate::types::TestSetTurnResult>) -> Self {
-        self.turn_result = input;
-        self
+        self.turn_result = input; self
     }
     /// <p>Contains information about the turn associated with the result.</p>
     pub fn get_turn_result(&self) -> &::std::option::Option<crate::types::TestSetTurnResult> {
@@ -89,15 +86,19 @@ impl UtteranceLevelTestResultItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`record_number`](crate::types::builders::UtteranceLevelTestResultItemBuilder::record_number)
     pub fn build(self) -> ::std::result::Result<crate::types::UtteranceLevelTestResultItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UtteranceLevelTestResultItem {
-            record_number: self.record_number.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "record_number",
-                    "record_number was not specified but it is required when building UtteranceLevelTestResultItem",
-                )
-            })?,
-            conversation_id: self.conversation_id,
-            turn_result: self.turn_result,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UtteranceLevelTestResultItem {
+                record_number: self.record_number
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("record_number", "record_number was not specified but it is required when building UtteranceLevelTestResultItem")
+                    )?
+                ,
+                conversation_id: self.conversation_id
+                ,
+                turn_result: self.turn_result
+                ,
+            }
+        )
     }
 }
+

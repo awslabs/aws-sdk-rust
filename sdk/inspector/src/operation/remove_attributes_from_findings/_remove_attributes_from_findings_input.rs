@@ -2,24 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveAttributesFromFindingsInput {
+pub struct RemoveAttributesFromFindingsInput  {
     /// <p>The ARNs that specify the findings that you want to remove attributes from.</p>
-    pub finding_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub finding_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The array of attribute keys that you want to remove from specified findings.</p>
-    pub attribute_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub attribute_keys: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl RemoveAttributesFromFindingsInput {
+impl  RemoveAttributesFromFindingsInput  {
     /// <p>The ARNs that specify the findings that you want to remove attributes from.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_arns.is_none()`.
-    pub fn finding_arns(&self) -> &[::std::string::String] {
-        self.finding_arns.as_deref().unwrap_or_default()
+    pub fn finding_arns(&self) -> & [::std::string::String] {
+        self.finding_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The array of attribute keys that you want to remove from specified findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_keys.is_none()`.
-    pub fn attribute_keys(&self) -> &[::std::string::String] {
-        self.attribute_keys.as_deref().unwrap_or_default()
+    pub fn attribute_keys(&self) -> & [::std::string::String] {
+        self.attribute_keys.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RemoveAttributesFromFindingsInput {
@@ -33,8 +35,8 @@ impl RemoveAttributesFromFindingsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveAttributesFromFindingsInputBuilder {
-    pub(crate) finding_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) attribute_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) finding_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) attribute_keys: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl RemoveAttributesFromFindingsInputBuilder {
     /// Appends an item to `finding_arns`.
@@ -44,17 +46,16 @@ impl RemoveAttributesFromFindingsInputBuilder {
     /// <p>The ARNs that specify the findings that you want to remove attributes from.</p>
     pub fn finding_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.finding_arns.unwrap_or_default();
-        v.push(input.into());
-        self.finding_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.finding_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ARNs that specify the findings that you want to remove attributes from.</p>
-    pub fn set_finding_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.finding_arns = input;
-        self
+    pub fn set_finding_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.finding_arns = input; self
     }
     /// <p>The ARNs that specify the findings that you want to remove attributes from.</p>
-    pub fn get_finding_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_finding_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.finding_arns
     }
     /// Appends an item to `attribute_keys`.
@@ -64,29 +65,28 @@ impl RemoveAttributesFromFindingsInputBuilder {
     /// <p>The array of attribute keys that you want to remove from specified findings.</p>
     pub fn attribute_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.attribute_keys.unwrap_or_default();
-        v.push(input.into());
-        self.attribute_keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.attribute_keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The array of attribute keys that you want to remove from specified findings.</p>
-    pub fn set_attribute_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.attribute_keys = input;
-        self
+    pub fn set_attribute_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.attribute_keys = input; self
     }
     /// <p>The array of attribute keys that you want to remove from specified findings.</p>
-    pub fn get_attribute_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_attribute_keys(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.attribute_keys
     }
     /// Consumes the builder and constructs a [`RemoveAttributesFromFindingsInput`](crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsInput {
-            finding_arns: self.finding_arns,
-            attribute_keys: self.attribute_keys,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsInput {
+                finding_arns: self.finding_arns
+                ,
+                attribute_keys: self.attribute_keys
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The latest status of a stream's edge recording job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LastRecorderStatus {
+pub struct LastRecorderStatus  {
     /// <p>A description of a recorder job’s latest status.</p>
     pub job_status_details: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp at which the recorder job was last executed and media stored to local disk.</p>
@@ -13,21 +13,21 @@ pub struct LastRecorderStatus {
     /// <p>The status of the latest recorder job.</p>
     pub recorder_status: ::std::option::Option<crate::types::RecorderStatus>,
 }
-impl LastRecorderStatus {
+impl  LastRecorderStatus  {
     /// <p>A description of a recorder job’s latest status.</p>
-    pub fn job_status_details(&self) -> ::std::option::Option<&str> {
+    pub fn job_status_details(&self) -> ::std::option::Option<& str> {
         self.job_status_details.as_deref()
     }
     /// <p>The timestamp at which the recorder job was last executed and media stored to local disk.</p>
-    pub fn last_collected_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_collected_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_collected_time.as_ref()
     }
     /// <p>The timestamp at which the recorder status was last updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The status of the latest recorder job.</p>
-    pub fn recorder_status(&self) -> ::std::option::Option<&crate::types::RecorderStatus> {
+    pub fn recorder_status(&self) -> ::std::option::Option<& crate::types::RecorderStatus> {
         self.recorder_status.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl LastRecorderStatusBuilder {
     }
     /// <p>A description of a recorder job’s latest status.</p>
     pub fn set_job_status_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_status_details = input;
-        self
+        self.job_status_details = input; self
     }
     /// <p>A description of a recorder job’s latest status.</p>
     pub fn get_job_status_details(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl LastRecorderStatusBuilder {
     }
     /// <p>The timestamp at which the recorder job was last executed and media stored to local disk.</p>
     pub fn set_last_collected_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_collected_time = input;
-        self
+        self.last_collected_time = input; self
     }
     /// <p>The timestamp at which the recorder job was last executed and media stored to local disk.</p>
     pub fn get_last_collected_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -83,8 +81,7 @@ impl LastRecorderStatusBuilder {
     }
     /// <p>The timestamp at which the recorder status was last updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The timestamp at which the recorder status was last updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -97,8 +94,7 @@ impl LastRecorderStatusBuilder {
     }
     /// <p>The status of the latest recorder job.</p>
     pub fn set_recorder_status(mut self, input: ::std::option::Option<crate::types::RecorderStatus>) -> Self {
-        self.recorder_status = input;
-        self
+        self.recorder_status = input; self
     }
     /// <p>The status of the latest recorder job.</p>
     pub fn get_recorder_status(&self) -> &::std::option::Option<crate::types::RecorderStatus> {
@@ -107,10 +103,15 @@ impl LastRecorderStatusBuilder {
     /// Consumes the builder and constructs a [`LastRecorderStatus`](crate::types::LastRecorderStatus).
     pub fn build(self) -> crate::types::LastRecorderStatus {
         crate::types::LastRecorderStatus {
-            job_status_details: self.job_status_details,
-            last_collected_time: self.last_collected_time,
-            last_updated_time: self.last_updated_time,
-            recorder_status: self.recorder_status,
+            job_status_details: self.job_status_details
+            ,
+            last_collected_time: self.last_collected_time
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            recorder_status: self.recorder_status
+            ,
         }
     }
 }
+

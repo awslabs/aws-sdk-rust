@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CopyDbClusterParameterGroupOutput {
+pub struct CopyDbClusterParameterGroupOutput  {
     /// <p>Detailed information about a cluster parameter group.</p>
     pub db_cluster_parameter_group: ::std::option::Option<crate::types::DbClusterParameterGroup>,
     _request_id: Option<String>,
 }
-impl CopyDbClusterParameterGroupOutput {
+impl  CopyDbClusterParameterGroupOutput  {
     /// <p>Detailed information about a cluster parameter group.</p>
-    pub fn db_cluster_parameter_group(&self) -> ::std::option::Option<&crate::types::DbClusterParameterGroup> {
+    pub fn db_cluster_parameter_group(&self) -> ::std::option::Option<& crate::types::DbClusterParameterGroup> {
         self.db_cluster_parameter_group.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CopyDbClusterParameterGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CopyDbClusterParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`CopyDbClusterParameterGroupOutput`](crate::operation::copy_db_cluster_parameter_group::CopyDbClusterParameterGroupOutput).
     pub fn builder() -> crate::operation::copy_db_cluster_parameter_group::builders::CopyDbClusterParameterGroupOutputBuilder {
@@ -40,27 +40,28 @@ impl CopyDbClusterParameterGroupOutputBuilder {
     }
     /// <p>Detailed information about a cluster parameter group.</p>
     pub fn set_db_cluster_parameter_group(mut self, input: ::std::option::Option<crate::types::DbClusterParameterGroup>) -> Self {
-        self.db_cluster_parameter_group = input;
-        self
+        self.db_cluster_parameter_group = input; self
     }
     /// <p>Detailed information about a cluster parameter group.</p>
     pub fn get_db_cluster_parameter_group(&self) -> &::std::option::Option<crate::types::DbClusterParameterGroup> {
         &self.db_cluster_parameter_group
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CopyDbClusterParameterGroupOutput`](crate::operation::copy_db_cluster_parameter_group::CopyDbClusterParameterGroupOutput).
     pub fn build(self) -> crate::operation::copy_db_cluster_parameter_group::CopyDbClusterParameterGroupOutput {
         crate::operation::copy_db_cluster_parameter_group::CopyDbClusterParameterGroupOutput {
-            db_cluster_parameter_group: self.db_cluster_parameter_group,
+            db_cluster_parameter_group: self.db_cluster_parameter_group
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Error related to a specific channel, specified by its ARN.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchError {
+pub struct BatchError  {
     /// <p>Channel ARN.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Error code.</p>
@@ -11,17 +11,17 @@ pub struct BatchError {
     /// <p>Error message, determined by the application.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl BatchError {
+impl  BatchError  {
     /// <p>Channel ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Error code.</p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>Error message, determined by the application.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl BatchErrorBuilder {
     }
     /// <p>Channel ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>Channel ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl BatchErrorBuilder {
     }
     /// <p>Error code.</p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>Error code.</p>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl BatchErrorBuilder {
     }
     /// <p>Error message, determined by the application.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Error message, determined by the application.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl BatchErrorBuilder {
     /// Consumes the builder and constructs a [`BatchError`](crate::types::BatchError).
     pub fn build(self) -> crate::types::BatchError {
         crate::types::BatchError {
-            arn: self.arn,
-            code: self.code,
-            message: self.message,
+            arn: self.arn
+            ,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

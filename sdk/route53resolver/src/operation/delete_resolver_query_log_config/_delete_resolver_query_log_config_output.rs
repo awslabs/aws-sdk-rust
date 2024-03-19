@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteResolverQueryLogConfigOutput {
+pub struct DeleteResolverQueryLogConfigOutput  {
     /// <p>Information about the query logging configuration that you deleted, including the status of the request.</p>
     pub resolver_query_log_config: ::std::option::Option<crate::types::ResolverQueryLogConfig>,
     _request_id: Option<String>,
 }
-impl DeleteResolverQueryLogConfigOutput {
+impl  DeleteResolverQueryLogConfigOutput  {
     /// <p>Information about the query logging configuration that you deleted, including the status of the request.</p>
-    pub fn resolver_query_log_config(&self) -> ::std::option::Option<&crate::types::ResolverQueryLogConfig> {
+    pub fn resolver_query_log_config(&self) -> ::std::option::Option<& crate::types::ResolverQueryLogConfig> {
         self.resolver_query_log_config.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteResolverQueryLogConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteResolverQueryLogConfigOutput {
     /// Creates a new builder-style object to manufacture [`DeleteResolverQueryLogConfigOutput`](crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigOutput).
     pub fn builder() -> crate::operation::delete_resolver_query_log_config::builders::DeleteResolverQueryLogConfigOutputBuilder {
@@ -40,27 +40,28 @@ impl DeleteResolverQueryLogConfigOutputBuilder {
     }
     /// <p>Information about the query logging configuration that you deleted, including the status of the request.</p>
     pub fn set_resolver_query_log_config(mut self, input: ::std::option::Option<crate::types::ResolverQueryLogConfig>) -> Self {
-        self.resolver_query_log_config = input;
-        self
+        self.resolver_query_log_config = input; self
     }
     /// <p>Information about the query logging configuration that you deleted, including the status of the request.</p>
     pub fn get_resolver_query_log_config(&self) -> &::std::option::Option<crate::types::ResolverQueryLogConfig> {
         &self.resolver_query_log_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteResolverQueryLogConfigOutput`](crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigOutput).
     pub fn build(self) -> crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigOutput {
         crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigOutput {
-            resolver_query_log_config: self.resolver_query_log_config,
+            resolver_query_log_config: self.resolver_query_log_config
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

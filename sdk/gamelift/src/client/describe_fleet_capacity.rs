@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeFleetCapacity`](crate::operation::describe_fleet_capacity::builders::DescribeFleetCapacityFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_fleet_capacity::builders::DescribeFleetCapacityFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`fleet_ids(impl Into<String>)`](crate::operation::describe_fleet_capacity::builders::DescribeFleetCapacityFluentBuilder::fleet_ids) / [`set_fleet_ids(Option<Vec::<String>>)`](crate::operation::describe_fleet_capacity::builders::DescribeFleetCapacityFluentBuilder::set_fleet_ids):<br>required: **false**<br><p>A unique identifier for the fleet to retrieve capacity information for. You can use either the fleet ID or ARN value. Leave this parameter empty to retrieve capacity information for all fleets.</p><br>
     ///   - [`limit(i32)`](crate::operation::describe_fleet_capacity::builders::DescribeFleetCapacityFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::describe_fleet_capacity::builders::DescribeFleetCapacityFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_fleet_capacity::builders::DescribeFleetCapacityFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_fleet_capacity::builders::DescribeFleetCapacityFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet IDs.</p><br>
-    /// - On success, responds with [`DescribeFleetCapacityOutput`](crate::operation::describe_fleet_capacity::DescribeFleetCapacityOutput) with field(s):
+                            /// - On success, responds with [`DescribeFleetCapacityOutput`](crate::operation::describe_fleet_capacity::DescribeFleetCapacityOutput) with field(s):
     ///   - [`fleet_capacity(Option<Vec::<FleetCapacity>>)`](crate::operation::describe_fleet_capacity::DescribeFleetCapacityOutput::fleet_capacity): <p>A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are returned only for fleets that currently exist. Changes in desired instance value can take up to 1 minute to be reflected.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_fleet_capacity::DescribeFleetCapacityOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    /// - On failure, responds with [`SdkError<DescribeFleetCapacityError>`](crate::operation::describe_fleet_capacity::DescribeFleetCapacityError)
+                            /// - On failure, responds with [`SdkError<DescribeFleetCapacityError>`](crate::operation::describe_fleet_capacity::DescribeFleetCapacityError)
     pub fn describe_fleet_capacity(&self) -> crate::operation::describe_fleet_capacity::builders::DescribeFleetCapacityFluentBuilder {
-        crate::operation::describe_fleet_capacity::builders::DescribeFleetCapacityFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_fleet_capacity::builders::DescribeFleetCapacityFluentBuilder::new(self.handle.clone())
+                            }
 }
+

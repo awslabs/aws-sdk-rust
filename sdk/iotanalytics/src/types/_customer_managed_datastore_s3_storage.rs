@@ -3,7 +3,7 @@
 /// <p>S3-customer-managed; When you choose customer-managed storage, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice of Amazon S3 storage after your data store is created.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomerManagedDatastoreS3Storage {
+pub struct CustomerManagedDatastoreS3Storage  {
     /// <p>The name of the Amazon S3 bucket where your data is stored.</p>
     pub bucket: ::std::string::String,
     /// <p>(Optional) The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/).</p>
@@ -11,20 +11,18 @@ pub struct CustomerManagedDatastoreS3Storage {
     /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
     pub role_arn: ::std::string::String,
 }
-impl CustomerManagedDatastoreS3Storage {
+impl  CustomerManagedDatastoreS3Storage  {
     /// <p>The name of the Amazon S3 bucket where your data is stored.</p>
-    pub fn bucket(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket.deref()
+    pub fn bucket(&self) -> & str {
+        use std::ops::Deref; self.bucket.deref()
     }
     /// <p>(Optional) The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/).</p>
-    pub fn key_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn key_prefix(&self) -> ::std::option::Option<& str> {
         self.key_prefix.as_deref()
     }
     /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
 }
 impl CustomerManagedDatastoreS3Storage {
@@ -51,8 +49,7 @@ impl CustomerManagedDatastoreS3StorageBuilder {
     }
     /// <p>The name of the Amazon S3 bucket where your data is stored.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The name of the Amazon S3 bucket where your data is stored.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +62,7 @@ impl CustomerManagedDatastoreS3StorageBuilder {
     }
     /// <p>(Optional) The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/).</p>
     pub fn set_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_prefix = input;
-        self
+        self.key_prefix = input; self
     }
     /// <p>(Optional) The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/).</p>
     pub fn get_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl CustomerManagedDatastoreS3StorageBuilder {
     }
     /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,20 +87,22 @@ impl CustomerManagedDatastoreS3StorageBuilder {
     /// - [`bucket`](crate::types::builders::CustomerManagedDatastoreS3StorageBuilder::bucket)
     /// - [`role_arn`](crate::types::builders::CustomerManagedDatastoreS3StorageBuilder::role_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::CustomerManagedDatastoreS3Storage, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CustomerManagedDatastoreS3Storage {
-            bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket",
-                    "bucket was not specified but it is required when building CustomerManagedDatastoreS3Storage",
-                )
-            })?,
-            key_prefix: self.key_prefix,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building CustomerManagedDatastoreS3Storage",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CustomerManagedDatastoreS3Storage {
+                bucket: self.bucket
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket", "bucket was not specified but it is required when building CustomerManagedDatastoreS3Storage")
+                    )?
+                ,
+                key_prefix: self.key_prefix
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building CustomerManagedDatastoreS3Storage")
+                    )?
+                ,
+            }
+        )
     }
 }
+

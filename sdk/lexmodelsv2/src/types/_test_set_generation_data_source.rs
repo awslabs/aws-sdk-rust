@@ -3,13 +3,13 @@
 /// <p>Contains information about the data source from which the test set is generated.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestSetGenerationDataSource {
+pub struct TestSetGenerationDataSource  {
     /// <p>Contains information about the bot from which the conversation logs are sourced.</p>
     pub conversation_logs_data_source: ::std::option::Option<crate::types::ConversationLogsDataSource>,
 }
-impl TestSetGenerationDataSource {
+impl  TestSetGenerationDataSource  {
     /// <p>Contains information about the bot from which the conversation logs are sourced.</p>
-    pub fn conversation_logs_data_source(&self) -> ::std::option::Option<&crate::types::ConversationLogsDataSource> {
+    pub fn conversation_logs_data_source(&self) -> ::std::option::Option<& crate::types::ConversationLogsDataSource> {
         self.conversation_logs_data_source.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl TestSetGenerationDataSourceBuilder {
     }
     /// <p>Contains information about the bot from which the conversation logs are sourced.</p>
     pub fn set_conversation_logs_data_source(mut self, input: ::std::option::Option<crate::types::ConversationLogsDataSource>) -> Self {
-        self.conversation_logs_data_source = input;
-        self
+        self.conversation_logs_data_source = input; self
     }
     /// <p>Contains information about the bot from which the conversation logs are sourced.</p>
     pub fn get_conversation_logs_data_source(&self) -> &::std::option::Option<crate::types::ConversationLogsDataSource> {
@@ -44,7 +43,9 @@ impl TestSetGenerationDataSourceBuilder {
     /// Consumes the builder and constructs a [`TestSetGenerationDataSource`](crate::types::TestSetGenerationDataSource).
     pub fn build(self) -> crate::types::TestSetGenerationDataSource {
         crate::types::TestSetGenerationDataSource {
-            conversation_logs_data_source: self.conversation_logs_data_source,
+            conversation_logs_data_source: self.conversation_logs_data_source
+            ,
         }
     }
 }
+

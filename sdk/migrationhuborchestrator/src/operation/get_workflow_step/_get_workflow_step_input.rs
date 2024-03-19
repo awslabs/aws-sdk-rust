@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWorkflowStepInput {
+pub struct GetWorkflowStepInput  {
     /// <p>The ID of the migration workflow.</p>
     pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the step group.</p>
@@ -10,17 +10,17 @@ pub struct GetWorkflowStepInput {
     /// <p>The ID of the step.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl GetWorkflowStepInput {
+impl  GetWorkflowStepInput  {
     /// <p>The ID of the migration workflow.</p>
-    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
+    pub fn workflow_id(&self) -> ::std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>The ID of the step group.</p>
-    pub fn step_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn step_group_id(&self) -> ::std::option::Option<& str> {
         self.step_group_id.as_deref()
     }
     /// <p>The ID of the step.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl GetWorkflowStepInputBuilder {
     }
     /// <p>The ID of the migration workflow.</p>
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_id = input;
-        self
+        self.workflow_id = input; self
     }
     /// <p>The ID of the migration workflow.</p>
     pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl GetWorkflowStepInputBuilder {
     }
     /// <p>The ID of the step group.</p>
     pub fn set_step_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.step_group_id = input;
-        self
+        self.step_group_id = input; self
     }
     /// <p>The ID of the step group.</p>
     pub fn get_step_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,21 +76,24 @@ impl GetWorkflowStepInputBuilder {
     }
     /// <p>The ID of the step.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the step.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetWorkflowStepInput`](crate::operation::get_workflow_step::GetWorkflowStepInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_workflow_step::GetWorkflowStepInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_workflow_step::GetWorkflowStepInput {
-            workflow_id: self.workflow_id,
-            step_group_id: self.step_group_id,
-            id: self.id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_workflow_step::GetWorkflowStepInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_workflow_step::GetWorkflowStepInput {
+                workflow_id: self.workflow_id
+                ,
+                step_group_id: self.step_group_id
+                ,
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

@@ -5,54 +5,50 @@ pub use crate::operation::is_vpc_peered::_is_vpc_peered_input::IsVpcPeeredInputB
 
 impl IsVpcPeeredInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::is_vpc_peered::IsVpcPeeredOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::is_vpc_peered::IsVpcPeeredError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.is_vpc_peered();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::is_vpc_peered::IsVpcPeeredOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::is_vpc_peered::IsVpcPeeredError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.is_vpc_peered();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `IsVpcPeered`.
-///
+/// 
 /// <p>Returns a Boolean value indicating whether your Lightsail VPC is peered.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct IsVpcPeeredFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::is_vpc_peered::builders::IsVpcPeeredInputBuilder,
+                    inner: crate::operation::is_vpc_peered::builders::IsVpcPeeredInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::is_vpc_peered::IsVpcPeeredOutput,
-        crate::operation::is_vpc_peered::IsVpcPeeredError,
-    > for IsVpcPeeredFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::is_vpc_peered::IsVpcPeeredOutput,
-            crate::operation::is_vpc_peered::IsVpcPeeredError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::is_vpc_peered::IsVpcPeeredOutput,
+                    crate::operation::is_vpc_peered::IsVpcPeeredError,
+                > for IsVpcPeeredFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::is_vpc_peered::IsVpcPeeredOutput,
+                        crate::operation::is_vpc_peered::IsVpcPeeredError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl IsVpcPeeredFluentBuilder {
     /// Creates a new `IsVpcPeered`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,51 +57,43 @@ impl IsVpcPeeredFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::is_vpc_peered::IsVpcPeeredOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::is_vpc_peered::IsVpcPeeredError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::is_vpc_peered::IsVpcPeered::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::is_vpc_peered::IsVpcPeered::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::is_vpc_peered::IsVpcPeeredOutput,
-        crate::operation::is_vpc_peered::IsVpcPeeredError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::is_vpc_peered::IsVpcPeeredOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::is_vpc_peered::IsVpcPeeredError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::is_vpc_peered::IsVpcPeered::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::is_vpc_peered::IsVpcPeered::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::is_vpc_peered::IsVpcPeeredOutput, crate::operation::is_vpc_peered::IsVpcPeeredError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
 }
+

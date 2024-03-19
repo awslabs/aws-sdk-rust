@@ -3,13 +3,13 @@
 /// Hdr10 Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Hdr10Settings {
+pub struct Hdr10Settings  {
     /// Maximum Content Light Level An integer metadata value defining the maximum light level, in nits, of any single pixel within an encoded HDR video stream or file.
     pub max_cll: ::std::option::Option<i32>,
     /// Maximum Frame Average Light Level An integer metadata value defining the maximum average light level, in nits, for any single frame within an encoded HDR video stream or file.
     pub max_fall: ::std::option::Option<i32>,
 }
-impl Hdr10Settings {
+impl  Hdr10Settings  {
     /// Maximum Content Light Level An integer metadata value defining the maximum light level, in nits, of any single pixel within an encoded HDR video stream or file.
     pub fn max_cll(&self) -> ::std::option::Option<i32> {
         self.max_cll
@@ -41,8 +41,7 @@ impl Hdr10SettingsBuilder {
     }
     /// Maximum Content Light Level An integer metadata value defining the maximum light level, in nits, of any single pixel within an encoded HDR video stream or file.
     pub fn set_max_cll(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_cll = input;
-        self
+        self.max_cll = input; self
     }
     /// Maximum Content Light Level An integer metadata value defining the maximum light level, in nits, of any single pixel within an encoded HDR video stream or file.
     pub fn get_max_cll(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl Hdr10SettingsBuilder {
     }
     /// Maximum Frame Average Light Level An integer metadata value defining the maximum average light level, in nits, for any single frame within an encoded HDR video stream or file.
     pub fn set_max_fall(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_fall = input;
-        self
+        self.max_fall = input; self
     }
     /// Maximum Frame Average Light Level An integer metadata value defining the maximum average light level, in nits, for any single frame within an encoded HDR video stream or file.
     pub fn get_max_fall(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl Hdr10SettingsBuilder {
     /// Consumes the builder and constructs a [`Hdr10Settings`](crate::types::Hdr10Settings).
     pub fn build(self) -> crate::types::Hdr10Settings {
         crate::types::Hdr10Settings {
-            max_cll: self.max_cll,
-            max_fall: self.max_fall,
+            max_cll: self.max_cll
+            ,
+            max_fall: self.max_fall
+            ,
         }
     }
 }
+

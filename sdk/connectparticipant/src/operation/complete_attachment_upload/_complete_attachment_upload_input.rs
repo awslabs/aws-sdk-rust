@@ -2,27 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CompleteAttachmentUploadInput {
+pub struct CompleteAttachmentUploadInput  {
     /// <p>A list of unique identifiers for the attachments.</p>
-    pub attachment_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub attachment_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The authentication token associated with the participant's connection.</p>
     pub connection_token: ::std::option::Option<::std::string::String>,
 }
-impl CompleteAttachmentUploadInput {
+impl  CompleteAttachmentUploadInput  {
     /// <p>A list of unique identifiers for the attachments.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachment_ids.is_none()`.
-    pub fn attachment_ids(&self) -> &[::std::string::String] {
-        self.attachment_ids.as_deref().unwrap_or_default()
+    pub fn attachment_ids(&self) -> & [::std::string::String] {
+        self.attachment_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The authentication token associated with the participant's connection.</p>
-    pub fn connection_token(&self) -> ::std::option::Option<&str> {
+    pub fn connection_token(&self) -> ::std::option::Option<& str> {
         self.connection_token.as_deref()
     }
 }
@@ -37,7 +38,7 @@ impl CompleteAttachmentUploadInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CompleteAttachmentUploadInputBuilder {
-    pub(crate) attachment_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) attachment_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) connection_token: ::std::option::Option<::std::string::String>,
 }
@@ -49,17 +50,16 @@ impl CompleteAttachmentUploadInputBuilder {
     /// <p>A list of unique identifiers for the attachments.</p>
     pub fn attachment_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.attachment_ids.unwrap_or_default();
-        v.push(input.into());
-        self.attachment_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.attachment_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of unique identifiers for the attachments.</p>
-    pub fn set_attachment_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.attachment_ids = input;
-        self
+    pub fn set_attachment_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.attachment_ids = input; self
     }
     /// <p>A list of unique identifiers for the attachments.</p>
-    pub fn get_attachment_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_attachment_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.attachment_ids
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
@@ -70,8 +70,7 @@ impl CompleteAttachmentUploadInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,24 +84,24 @@ impl CompleteAttachmentUploadInputBuilder {
     }
     /// <p>The authentication token associated with the participant's connection.</p>
     pub fn set_connection_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_token = input;
-        self
+        self.connection_token = input; self
     }
     /// <p>The authentication token associated with the participant's connection.</p>
     pub fn get_connection_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.connection_token
     }
     /// Consumes the builder and constructs a [`CompleteAttachmentUploadInput`](crate::operation::complete_attachment_upload::CompleteAttachmentUploadInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::complete_attachment_upload::CompleteAttachmentUploadInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::complete_attachment_upload::CompleteAttachmentUploadInput {
-            attachment_ids: self.attachment_ids,
-            client_token: self.client_token,
-            connection_token: self.connection_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::complete_attachment_upload::CompleteAttachmentUploadInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::complete_attachment_upload::CompleteAttachmentUploadInput {
+                attachment_ids: self.attachment_ids
+                ,
+                client_token: self.client_token
+                ,
+                connection_token: self.connection_token
+                ,
+            }
+        )
     }
 }
+

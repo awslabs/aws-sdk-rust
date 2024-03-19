@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InvokeDeviceMethodInput {
+pub struct InvokeDeviceMethodInput  {
     /// <p>The unique identifier of the device.</p>
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>The device method to invoke.</p>
@@ -10,17 +10,17 @@ pub struct InvokeDeviceMethodInput {
     /// <p>A JSON encoded string containing the device method request parameters.</p>
     pub device_method_parameters: ::std::option::Option<::std::string::String>,
 }
-impl InvokeDeviceMethodInput {
+impl  InvokeDeviceMethodInput  {
     /// <p>The unique identifier of the device.</p>
-    pub fn device_id(&self) -> ::std::option::Option<&str> {
+    pub fn device_id(&self) -> ::std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// <p>The device method to invoke.</p>
-    pub fn device_method(&self) -> ::std::option::Option<&crate::types::DeviceMethod> {
+    pub fn device_method(&self) -> ::std::option::Option<& crate::types::DeviceMethod> {
         self.device_method.as_ref()
     }
     /// <p>A JSON encoded string containing the device method request parameters.</p>
-    pub fn device_method_parameters(&self) -> ::std::option::Option<&str> {
+    pub fn device_method_parameters(&self) -> ::std::option::Option<& str> {
         self.device_method_parameters.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl InvokeDeviceMethodInputBuilder {
     }
     /// <p>The unique identifier of the device.</p>
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_id = input;
-        self
+        self.device_id = input; self
     }
     /// <p>The unique identifier of the device.</p>
     pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl InvokeDeviceMethodInputBuilder {
     }
     /// <p>The device method to invoke.</p>
     pub fn set_device_method(mut self, input: ::std::option::Option<crate::types::DeviceMethod>) -> Self {
-        self.device_method = input;
-        self
+        self.device_method = input; self
     }
     /// <p>The device method to invoke.</p>
     pub fn get_device_method(&self) -> &::std::option::Option<crate::types::DeviceMethod> {
@@ -76,22 +74,24 @@ impl InvokeDeviceMethodInputBuilder {
     }
     /// <p>A JSON encoded string containing the device method request parameters.</p>
     pub fn set_device_method_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_method_parameters = input;
-        self
+        self.device_method_parameters = input; self
     }
     /// <p>A JSON encoded string containing the device method request parameters.</p>
     pub fn get_device_method_parameters(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_method_parameters
     }
     /// Consumes the builder and constructs a [`InvokeDeviceMethodInput`](crate::operation::invoke_device_method::InvokeDeviceMethodInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::invoke_device_method::InvokeDeviceMethodInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::invoke_device_method::InvokeDeviceMethodInput {
-            device_id: self.device_id,
-            device_method: self.device_method,
-            device_method_parameters: self.device_method_parameters,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::invoke_device_method::InvokeDeviceMethodInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::invoke_device_method::InvokeDeviceMethodInput {
+                device_id: self.device_id
+                ,
+                device_method: self.device_method
+                ,
+                device_method_parameters: self.device_method_parameters
+                ,
+            }
+        )
     }
 }
+

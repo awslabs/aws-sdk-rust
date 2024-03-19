@@ -3,19 +3,19 @@
 /// <p>A structure that defines a single grant and its configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GrantItem {
+pub struct GrantItem  {
     /// <p>The type of the selected grant.</p>
     pub grant_type: crate::types::GrantType,
     /// <p>The configuration structure for the selected grant.</p>
     pub grant: ::std::option::Option<crate::types::Grant>,
 }
-impl GrantItem {
+impl  GrantItem  {
     /// <p>The type of the selected grant.</p>
-    pub fn grant_type(&self) -> &crate::types::GrantType {
+    pub fn grant_type(&self) -> & crate::types::GrantType {
         &self.grant_type
     }
     /// <p>The configuration structure for the selected grant.</p>
-    pub fn grant(&self) -> ::std::option::Option<&crate::types::Grant> {
+    pub fn grant(&self) -> ::std::option::Option<& crate::types::Grant> {
         self.grant.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl GrantItemBuilder {
     }
     /// <p>The type of the selected grant.</p>
     pub fn set_grant_type(mut self, input: ::std::option::Option<crate::types::GrantType>) -> Self {
-        self.grant_type = input;
-        self
+        self.grant_type = input; self
     }
     /// <p>The type of the selected grant.</p>
     pub fn get_grant_type(&self) -> &::std::option::Option<crate::types::GrantType> {
@@ -57,8 +56,7 @@ impl GrantItemBuilder {
     }
     /// <p>The configuration structure for the selected grant.</p>
     pub fn set_grant(mut self, input: ::std::option::Option<crate::types::Grant>) -> Self {
-        self.grant = input;
-        self
+        self.grant = input; self
     }
     /// <p>The configuration structure for the selected grant.</p>
     pub fn get_grant(&self) -> &::std::option::Option<crate::types::Grant> {
@@ -68,14 +66,17 @@ impl GrantItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`grant_type`](crate::types::builders::GrantItemBuilder::grant_type)
     pub fn build(self) -> ::std::result::Result<crate::types::GrantItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GrantItem {
-            grant_type: self.grant_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "grant_type",
-                    "grant_type was not specified but it is required when building GrantItem",
-                )
-            })?,
-            grant: self.grant,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GrantItem {
+                grant_type: self.grant_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("grant_type", "grant_type was not specified but it is required when building GrantItem")
+                    )?
+                ,
+                grant: self.grant
+                ,
+            }
+        )
     }
 }
+

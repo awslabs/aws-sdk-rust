@@ -3,21 +3,22 @@
 /// <p>Provides information on any <code>TranscriptFilterType</code> categories that matched your transcription output. Matches are identified for each segment upon completion of that segment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CategoryEvent {
+pub struct CategoryEvent  {
     /// <p>Lists the categories that were matched in your audio segment.</p>
-    pub matched_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub matched_categories: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Contains information about the matched categories, including category names and timestamps.</p>
-    pub matched_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PointsOfInterest>>,
+    pub matched_details: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::PointsOfInterest>>,
 }
-impl CategoryEvent {
+impl  CategoryEvent  {
     /// <p>Lists the categories that were matched in your audio segment.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.matched_categories.is_none()`.
-    pub fn matched_categories(&self) -> &[::std::string::String] {
-        self.matched_categories.as_deref().unwrap_or_default()
+    pub fn matched_categories(&self) -> & [::std::string::String] {
+        self.matched_categories.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Contains information about the matched categories, including category names and timestamps.</p>
-    pub fn matched_details(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::PointsOfInterest>> {
+    pub fn matched_details(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::PointsOfInterest>> {
         self.matched_details.as_ref()
     }
 }
@@ -32,8 +33,8 @@ impl CategoryEvent {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CategoryEventBuilder {
-    pub(crate) matched_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) matched_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PointsOfInterest>>,
+    pub(crate) matched_categories: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) matched_details: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::PointsOfInterest>>,
 }
 impl CategoryEventBuilder {
     /// Appends an item to `matched_categories`.
@@ -43,17 +44,16 @@ impl CategoryEventBuilder {
     /// <p>Lists the categories that were matched in your audio segment.</p>
     pub fn matched_categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.matched_categories.unwrap_or_default();
-        v.push(input.into());
-        self.matched_categories = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.matched_categories = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Lists the categories that were matched in your audio segment.</p>
-    pub fn set_matched_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.matched_categories = input;
-        self
+    pub fn set_matched_categories(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.matched_categories = input; self
     }
     /// <p>Lists the categories that were matched in your audio segment.</p>
-    pub fn get_matched_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_matched_categories(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.matched_categories
     }
     /// Adds a key-value pair to `matched_details`.
@@ -63,27 +63,26 @@ impl CategoryEventBuilder {
     /// <p>Contains information about the matched categories, including category names and timestamps.</p>
     pub fn matched_details(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::PointsOfInterest) -> Self {
         let mut hash_map = self.matched_details.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.matched_details = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.matched_details = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Contains information about the matched categories, including category names and timestamps.</p>
-    pub fn set_matched_details(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PointsOfInterest>>,
-    ) -> Self {
-        self.matched_details = input;
-        self
+    pub fn set_matched_details(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::PointsOfInterest>>) -> Self {
+        self.matched_details = input; self
     }
     /// <p>Contains information about the matched categories, including category names and timestamps.</p>
-    pub fn get_matched_details(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PointsOfInterest>> {
+    pub fn get_matched_details(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::PointsOfInterest>> {
         &self.matched_details
     }
     /// Consumes the builder and constructs a [`CategoryEvent`](crate::types::CategoryEvent).
     pub fn build(self) -> crate::types::CategoryEvent {
         crate::types::CategoryEvent {
-            matched_categories: self.matched_categories,
-            matched_details: self.matched_details,
+            matched_categories: self.matched_categories
+            ,
+            matched_details: self.matched_details
+            ,
         }
     }
 }
+

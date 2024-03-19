@@ -4,22 +4,20 @@
 /// <p>In addition to a workflow to execute when a file is uploaded completely, <code>WorkflowDetails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when the server session disconnects while the file is still being uploaded.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkflowDetail {
+pub struct WorkflowDetail  {
     /// <p>A unique identifier for the workflow.</p>
     pub workflow_id: ::std::string::String,
     /// <p>Includes the necessary permissions for S3, EFS, and Lambda operations that Transfer can assume, so that all workflow steps can operate on the required resources</p>
     pub execution_role: ::std::string::String,
 }
-impl WorkflowDetail {
+impl  WorkflowDetail  {
     /// <p>A unique identifier for the workflow.</p>
-    pub fn workflow_id(&self) -> &str {
-        use std::ops::Deref;
-        self.workflow_id.deref()
+    pub fn workflow_id(&self) -> & str {
+        use std::ops::Deref; self.workflow_id.deref()
     }
     /// <p>Includes the necessary permissions for S3, EFS, and Lambda operations that Transfer can assume, so that all workflow steps can operate on the required resources</p>
-    pub fn execution_role(&self) -> &str {
-        use std::ops::Deref;
-        self.execution_role.deref()
+    pub fn execution_role(&self) -> & str {
+        use std::ops::Deref; self.execution_role.deref()
     }
 }
 impl WorkflowDetail {
@@ -45,8 +43,7 @@ impl WorkflowDetailBuilder {
     }
     /// <p>A unique identifier for the workflow.</p>
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_id = input;
-        self
+        self.workflow_id = input; self
     }
     /// <p>A unique identifier for the workflow.</p>
     pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -60,8 +57,7 @@ impl WorkflowDetailBuilder {
     }
     /// <p>Includes the necessary permissions for S3, EFS, and Lambda operations that Transfer can assume, so that all workflow steps can operate on the required resources</p>
     pub fn set_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_role = input;
-        self
+        self.execution_role = input; self
     }
     /// <p>Includes the necessary permissions for S3, EFS, and Lambda operations that Transfer can assume, so that all workflow steps can operate on the required resources</p>
     pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,19 +68,20 @@ impl WorkflowDetailBuilder {
     /// - [`workflow_id`](crate::types::builders::WorkflowDetailBuilder::workflow_id)
     /// - [`execution_role`](crate::types::builders::WorkflowDetailBuilder::execution_role)
     pub fn build(self) -> ::std::result::Result<crate::types::WorkflowDetail, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::WorkflowDetail {
-            workflow_id: self.workflow_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "workflow_id",
-                    "workflow_id was not specified but it is required when building WorkflowDetail",
-                )
-            })?,
-            execution_role: self.execution_role.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "execution_role",
-                    "execution_role was not specified but it is required when building WorkflowDetail",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::WorkflowDetail {
+                workflow_id: self.workflow_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("workflow_id", "workflow_id was not specified but it is required when building WorkflowDetail")
+                    )?
+                ,
+                execution_role: self.execution_role
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("execution_role", "execution_role was not specified but it is required when building WorkflowDetail")
+                    )?
+                ,
+            }
+        )
     }
 }
+

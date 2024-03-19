@@ -3,19 +3,19 @@
 /// <p>Action required for a broker.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActionRequired {
+pub struct ActionRequired  {
     /// <p>The code you can use to find instructions on the action required to resolve your broker issue.</p>
     pub action_required_code: ::std::option::Option<::std::string::String>,
     /// <p>Information about the action required to resolve your broker issue.</p>
     pub action_required_info: ::std::option::Option<::std::string::String>,
 }
-impl ActionRequired {
+impl  ActionRequired  {
     /// <p>The code you can use to find instructions on the action required to resolve your broker issue.</p>
-    pub fn action_required_code(&self) -> ::std::option::Option<&str> {
+    pub fn action_required_code(&self) -> ::std::option::Option<& str> {
         self.action_required_code.as_deref()
     }
     /// <p>Information about the action required to resolve your broker issue.</p>
-    pub fn action_required_info(&self) -> ::std::option::Option<&str> {
+    pub fn action_required_info(&self) -> ::std::option::Option<& str> {
         self.action_required_info.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ActionRequiredBuilder {
     }
     /// <p>The code you can use to find instructions on the action required to resolve your broker issue.</p>
     pub fn set_action_required_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_required_code = input;
-        self
+        self.action_required_code = input; self
     }
     /// <p>The code you can use to find instructions on the action required to resolve your broker issue.</p>
     pub fn get_action_required_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ActionRequiredBuilder {
     }
     /// <p>Information about the action required to resolve your broker issue.</p>
     pub fn set_action_required_info(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_required_info = input;
-        self
+        self.action_required_info = input; self
     }
     /// <p>Information about the action required to resolve your broker issue.</p>
     pub fn get_action_required_info(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ActionRequiredBuilder {
     /// Consumes the builder and constructs a [`ActionRequired`](crate::types::ActionRequired).
     pub fn build(self) -> crate::types::ActionRequired {
         crate::types::ActionRequired {
-            action_required_code: self.action_required_code,
-            action_required_info: self.action_required_info,
+            action_required_code: self.action_required_code
+            ,
+            action_required_info: self.action_required_info
+            ,
         }
     }
 }
+

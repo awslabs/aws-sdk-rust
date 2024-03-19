@@ -24,7 +24,10 @@ impl DiagnosticCollector {
 
     #[allow(unused)]
     /// Capture a result, returning Some(t) when the input was `Ok` and `None` otherwise
-    pub(crate) fn capture<T, E: Into<Box<dyn Error + Send + Sync>>>(&mut self, err: Result<T, E>) -> Option<T> {
+    pub(crate) fn capture<T, E: Into<Box<dyn Error + Send + Sync>>>(
+        &mut self,
+        err: Result<T, E>,
+    ) -> Option<T> {
         match err {
             Ok(res) => Some(res),
             Err(e) => {
@@ -43,3 +46,4 @@ impl DiagnosticCollector {
         Self { last_error: None }
     }
 }
+

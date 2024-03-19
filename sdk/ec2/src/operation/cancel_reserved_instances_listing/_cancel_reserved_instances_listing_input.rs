@@ -3,13 +3,13 @@
 /// <p>Contains the parameters for CancelReservedInstancesListing.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelReservedInstancesListingInput {
+pub struct CancelReservedInstancesListingInput  {
     /// <p>The ID of the Reserved Instance listing.</p>
     pub reserved_instances_listing_id: ::std::option::Option<::std::string::String>,
 }
-impl CancelReservedInstancesListingInput {
+impl  CancelReservedInstancesListingInput  {
     /// <p>The ID of the Reserved Instance listing.</p>
-    pub fn reserved_instances_listing_id(&self) -> ::std::option::Option<&str> {
+    pub fn reserved_instances_listing_id(&self) -> ::std::option::Option<& str> {
         self.reserved_instances_listing_id.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl CancelReservedInstancesListingInputBuilder {
     }
     /// <p>The ID of the Reserved Instance listing.</p>
     pub fn set_reserved_instances_listing_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reserved_instances_listing_id = input;
-        self
+        self.reserved_instances_listing_id = input; self
     }
     /// <p>The ID of the Reserved Instance listing.</p>
     pub fn get_reserved_instances_listing_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.reserved_instances_listing_id
     }
     /// Consumes the builder and constructs a [`CancelReservedInstancesListingInput`](crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingInput {
-            reserved_instances_listing_id: self.reserved_instances_listing_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingInput {
+                reserved_instances_listing_id: self.reserved_instances_listing_id
+                ,
+            }
+        )
     }
 }
+

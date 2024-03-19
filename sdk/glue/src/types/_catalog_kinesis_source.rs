@@ -3,7 +3,7 @@
 /// <p>Specifies a Kinesis data source in the Glue Data Catalog.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CatalogKinesisSource {
+pub struct CatalogKinesisSource  {
     /// <p>The name of the data source.</p>
     pub name: ::std::string::String,
     /// <p>The amount of time to spend processing each micro batch.</p>
@@ -19,11 +19,10 @@ pub struct CatalogKinesisSource {
     /// <p>Additional options for data preview.</p>
     pub data_preview_options: ::std::option::Option<crate::types::StreamingDataPreviewOptions>,
 }
-impl CatalogKinesisSource {
+impl  CatalogKinesisSource  {
     /// <p>The name of the data source.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The amount of time to spend processing each micro batch.</p>
     pub fn window_size(&self) -> ::std::option::Option<i32> {
@@ -34,21 +33,19 @@ impl CatalogKinesisSource {
         self.detect_schema
     }
     /// <p>The name of the table in the database to read from.</p>
-    pub fn table(&self) -> &str {
-        use std::ops::Deref;
-        self.table.deref()
+    pub fn table(&self) -> & str {
+        use std::ops::Deref; self.table.deref()
     }
     /// <p>The name of the database to read from.</p>
-    pub fn database(&self) -> &str {
-        use std::ops::Deref;
-        self.database.deref()
+    pub fn database(&self) -> & str {
+        use std::ops::Deref; self.database.deref()
     }
     /// <p>Additional options for the Kinesis streaming data source.</p>
-    pub fn streaming_options(&self) -> ::std::option::Option<&crate::types::KinesisStreamingSourceOptions> {
+    pub fn streaming_options(&self) -> ::std::option::Option<& crate::types::KinesisStreamingSourceOptions> {
         self.streaming_options.as_ref()
     }
     /// <p>Additional options for data preview.</p>
-    pub fn data_preview_options(&self) -> ::std::option::Option<&crate::types::StreamingDataPreviewOptions> {
+    pub fn data_preview_options(&self) -> ::std::option::Option<& crate::types::StreamingDataPreviewOptions> {
         self.data_preview_options.as_ref()
     }
 }
@@ -80,8 +77,7 @@ impl CatalogKinesisSourceBuilder {
     }
     /// <p>The name of the data source.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the data source.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +90,7 @@ impl CatalogKinesisSourceBuilder {
     }
     /// <p>The amount of time to spend processing each micro batch.</p>
     pub fn set_window_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.window_size = input;
-        self
+        self.window_size = input; self
     }
     /// <p>The amount of time to spend processing each micro batch.</p>
     pub fn get_window_size(&self) -> &::std::option::Option<i32> {
@@ -108,8 +103,7 @@ impl CatalogKinesisSourceBuilder {
     }
     /// <p>Whether to automatically determine the schema from the incoming data.</p>
     pub fn set_detect_schema(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.detect_schema = input;
-        self
+        self.detect_schema = input; self
     }
     /// <p>Whether to automatically determine the schema from the incoming data.</p>
     pub fn get_detect_schema(&self) -> &::std::option::Option<bool> {
@@ -123,8 +117,7 @@ impl CatalogKinesisSourceBuilder {
     }
     /// <p>The name of the table in the database to read from.</p>
     pub fn set_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table = input;
-        self
+        self.table = input; self
     }
     /// <p>The name of the table in the database to read from.</p>
     pub fn get_table(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +131,7 @@ impl CatalogKinesisSourceBuilder {
     }
     /// <p>The name of the database to read from.</p>
     pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>The name of the database to read from.</p>
     pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +144,7 @@ impl CatalogKinesisSourceBuilder {
     }
     /// <p>Additional options for the Kinesis streaming data source.</p>
     pub fn set_streaming_options(mut self, input: ::std::option::Option<crate::types::KinesisStreamingSourceOptions>) -> Self {
-        self.streaming_options = input;
-        self
+        self.streaming_options = input; self
     }
     /// <p>Additional options for the Kinesis streaming data source.</p>
     pub fn get_streaming_options(&self) -> &::std::option::Option<crate::types::KinesisStreamingSourceOptions> {
@@ -166,8 +157,7 @@ impl CatalogKinesisSourceBuilder {
     }
     /// <p>Additional options for data preview.</p>
     pub fn set_data_preview_options(mut self, input: ::std::option::Option<crate::types::StreamingDataPreviewOptions>) -> Self {
-        self.data_preview_options = input;
-        self
+        self.data_preview_options = input; self
     }
     /// <p>Additional options for data preview.</p>
     pub fn get_data_preview_options(&self) -> &::std::option::Option<crate::types::StreamingDataPreviewOptions> {
@@ -179,29 +169,33 @@ impl CatalogKinesisSourceBuilder {
     /// - [`table`](crate::types::builders::CatalogKinesisSourceBuilder::table)
     /// - [`database`](crate::types::builders::CatalogKinesisSourceBuilder::database)
     pub fn build(self) -> ::std::result::Result<crate::types::CatalogKinesisSource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CatalogKinesisSource {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CatalogKinesisSource",
-                )
-            })?,
-            window_size: self.window_size,
-            detect_schema: self.detect_schema,
-            table: self.table.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "table",
-                    "table was not specified but it is required when building CatalogKinesisSource",
-                )
-            })?,
-            database: self.database.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "database",
-                    "database was not specified but it is required when building CatalogKinesisSource",
-                )
-            })?,
-            streaming_options: self.streaming_options,
-            data_preview_options: self.data_preview_options,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CatalogKinesisSource {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building CatalogKinesisSource")
+                    )?
+                ,
+                window_size: self.window_size
+                ,
+                detect_schema: self.detect_schema
+                ,
+                table: self.table
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("table", "table was not specified but it is required when building CatalogKinesisSource")
+                    )?
+                ,
+                database: self.database
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("database", "database was not specified but it is required when building CatalogKinesisSource")
+                    )?
+                ,
+                streaming_options: self.streaming_options
+                ,
+                data_preview_options: self.data_preview_options
+                ,
+            }
+        )
     }
 }
+

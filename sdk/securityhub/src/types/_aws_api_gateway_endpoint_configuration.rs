@@ -3,18 +3,19 @@
 /// <p>Contains information about the endpoints for the API.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsApiGatewayEndpointConfiguration {
+pub struct AwsApiGatewayEndpointConfiguration  {
     /// <p>A list of endpoint types for the REST API.</p>
     /// <p>For an edge-optimized API, the endpoint type is <code>EDGE</code>. For a Regional API, the endpoint type is <code>REGIONAL</code>. For a private API, the endpoint type is <code>PRIVATE</code>.</p>
-    pub types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl AwsApiGatewayEndpointConfiguration {
+impl  AwsApiGatewayEndpointConfiguration  {
     /// <p>A list of endpoint types for the REST API.</p>
     /// <p>For an edge-optimized API, the endpoint type is <code>EDGE</code>. For a Regional API, the endpoint type is <code>REGIONAL</code>. For a private API, the endpoint type is <code>PRIVATE</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.types.is_none()`.
-    pub fn types(&self) -> &[::std::string::String] {
-        self.types.as_deref().unwrap_or_default()
+    pub fn types(&self) -> & [::std::string::String] {
+        self.types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AwsApiGatewayEndpointConfiguration {
@@ -28,7 +29,7 @@ impl AwsApiGatewayEndpointConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsApiGatewayEndpointConfigurationBuilder {
-    pub(crate) types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AwsApiGatewayEndpointConfigurationBuilder {
     /// Appends an item to `types`.
@@ -39,23 +40,26 @@ impl AwsApiGatewayEndpointConfigurationBuilder {
     /// <p>For an edge-optimized API, the endpoint type is <code>EDGE</code>. For a Regional API, the endpoint type is <code>REGIONAL</code>. For a private API, the endpoint type is <code>PRIVATE</code>.</p>
     pub fn types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.types.unwrap_or_default();
-        v.push(input.into());
-        self.types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of endpoint types for the REST API.</p>
     /// <p>For an edge-optimized API, the endpoint type is <code>EDGE</code>. For a Regional API, the endpoint type is <code>REGIONAL</code>. For a private API, the endpoint type is <code>PRIVATE</code>.</p>
-    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.types = input;
-        self
+    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.types = input; self
     }
     /// <p>A list of endpoint types for the REST API.</p>
     /// <p>For an edge-optimized API, the endpoint type is <code>EDGE</code>. For a Regional API, the endpoint type is <code>REGIONAL</code>. For a private API, the endpoint type is <code>PRIVATE</code>.</p>
-    pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.types
     }
     /// Consumes the builder and constructs a [`AwsApiGatewayEndpointConfiguration`](crate::types::AwsApiGatewayEndpointConfiguration).
     pub fn build(self) -> crate::types::AwsApiGatewayEndpointConfiguration {
-        crate::types::AwsApiGatewayEndpointConfiguration { types: self.types }
+        crate::types::AwsApiGatewayEndpointConfiguration {
+            types: self.types
+            ,
+        }
     }
 }
+

@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDataSetImportHistoryOutput {
+pub struct ListDataSetImportHistoryOutput  {
     /// <p>The data set import tasks.</p>
-    pub data_set_import_tasks: ::std::vec::Vec<crate::types::DataSetImportTask>,
+    pub data_set_import_tasks: ::std::vec::Vec::<crate::types::DataSetImportTask>,
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListDataSetImportHistoryOutput {
+impl  ListDataSetImportHistoryOutput  {
     /// <p>The data set import tasks.</p>
-    pub fn data_set_import_tasks(&self) -> &[crate::types::DataSetImportTask] {
-        use std::ops::Deref;
-        self.data_set_import_tasks.deref()
+    pub fn data_set_import_tasks(&self) -> & [crate::types::DataSetImportTask] {
+        use std::ops::Deref; self.data_set_import_tasks.deref()
     }
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListDataSetImportHistoryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListDataSetImportHistoryOutput {
     /// Creates a new builder-style object to manufacture [`ListDataSetImportHistoryOutput`](crate::operation::list_data_set_import_history::ListDataSetImportHistoryOutput).
     pub fn builder() -> crate::operation::list_data_set_import_history::builders::ListDataSetImportHistoryOutputBuilder {
@@ -36,7 +35,7 @@ impl ListDataSetImportHistoryOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataSetImportHistoryOutputBuilder {
-    pub(crate) data_set_import_tasks: ::std::option::Option<::std::vec::Vec<crate::types::DataSetImportTask>>,
+    pub(crate) data_set_import_tasks: ::std::option::Option<::std::vec::Vec::<crate::types::DataSetImportTask>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListDataSetImportHistoryOutputBuilder {
     /// <p>The data set import tasks.</p>
     pub fn data_set_import_tasks(mut self, input: crate::types::DataSetImportTask) -> Self {
         let mut v = self.data_set_import_tasks.unwrap_or_default();
-        v.push(input);
-        self.data_set_import_tasks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.data_set_import_tasks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The data set import tasks.</p>
-    pub fn set_data_set_import_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSetImportTask>>) -> Self {
-        self.data_set_import_tasks = input;
-        self
+    pub fn set_data_set_import_tasks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataSetImportTask>>) -> Self {
+        self.data_set_import_tasks = input; self
     }
     /// <p>The data set import tasks.</p>
-    pub fn get_data_set_import_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSetImportTask>> {
+    pub fn get_data_set_import_tasks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataSetImportTask>> {
         &self.data_set_import_tasks
     }
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
@@ -68,40 +66,37 @@ impl ListDataSetImportHistoryOutputBuilder {
     }
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListDataSetImportHistoryOutput`](crate::operation::list_data_set_import_history::ListDataSetImportHistoryOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`data_set_import_tasks`](crate::operation::list_data_set_import_history::builders::ListDataSetImportHistoryOutputBuilder::data_set_import_tasks)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_data_set_import_history::ListDataSetImportHistoryOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_data_set_import_history::ListDataSetImportHistoryOutput {
-            data_set_import_tasks: self.data_set_import_tasks.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_set_import_tasks",
-                    "data_set_import_tasks was not specified but it is required when building ListDataSetImportHistoryOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_data_set_import_history::ListDataSetImportHistoryOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_data_set_import_history::ListDataSetImportHistoryOutput {
+                data_set_import_tasks: self.data_set_import_tasks
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_set_import_tasks", "data_set_import_tasks was not specified but it is required when building ListDataSetImportHistoryOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

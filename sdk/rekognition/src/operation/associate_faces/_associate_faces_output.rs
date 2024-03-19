@@ -2,38 +2,40 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateFacesOutput {
+pub struct AssociateFacesOutput  {
     /// <p>An array of AssociatedFace objects containing FaceIDs that have been successfully associated with the UserID. Returned if the AssociateFaces action is successful.</p>
-    pub associated_faces: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedFace>>,
+    pub associated_faces: ::std::option::Option<::std::vec::Vec::<crate::types::AssociatedFace>>,
     /// <p>An array of UnsuccessfulAssociation objects containing FaceIDs that are not successfully associated along with the reasons. Returned if the AssociateFaces action is successful.</p>
-    pub unsuccessful_face_associations: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceAssociation>>,
+    pub unsuccessful_face_associations: ::std::option::Option<::std::vec::Vec::<crate::types::UnsuccessfulFaceAssociation>>,
     /// <p>The status of an update made to a UserID. Reflects if the UserID has been updated for every requested change.</p>
     pub user_status: ::std::option::Option<crate::types::UserStatus>,
     _request_id: Option<String>,
 }
-impl AssociateFacesOutput {
+impl  AssociateFacesOutput  {
     /// <p>An array of AssociatedFace objects containing FaceIDs that have been successfully associated with the UserID. Returned if the AssociateFaces action is successful.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_faces.is_none()`.
-    pub fn associated_faces(&self) -> &[crate::types::AssociatedFace] {
-        self.associated_faces.as_deref().unwrap_or_default()
+    pub fn associated_faces(&self) -> & [crate::types::AssociatedFace] {
+        self.associated_faces.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of UnsuccessfulAssociation objects containing FaceIDs that are not successfully associated along with the reasons. Returned if the AssociateFaces action is successful.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unsuccessful_face_associations.is_none()`.
-    pub fn unsuccessful_face_associations(&self) -> &[crate::types::UnsuccessfulFaceAssociation] {
-        self.unsuccessful_face_associations.as_deref().unwrap_or_default()
+    pub fn unsuccessful_face_associations(&self) -> & [crate::types::UnsuccessfulFaceAssociation] {
+        self.unsuccessful_face_associations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The status of an update made to a UserID. Reflects if the UserID has been updated for every requested change.</p>
-    pub fn user_status(&self) -> ::std::option::Option<&crate::types::UserStatus> {
+    pub fn user_status(&self) -> ::std::option::Option<& crate::types::UserStatus> {
         self.user_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for AssociateFacesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AssociateFacesOutput {
     /// Creates a new builder-style object to manufacture [`AssociateFacesOutput`](crate::operation::associate_faces::AssociateFacesOutput).
     pub fn builder() -> crate::operation::associate_faces::builders::AssociateFacesOutputBuilder {
@@ -45,8 +47,8 @@ impl AssociateFacesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateFacesOutputBuilder {
-    pub(crate) associated_faces: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedFace>>,
-    pub(crate) unsuccessful_face_associations: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceAssociation>>,
+    pub(crate) associated_faces: ::std::option::Option<::std::vec::Vec::<crate::types::AssociatedFace>>,
+    pub(crate) unsuccessful_face_associations: ::std::option::Option<::std::vec::Vec::<crate::types::UnsuccessfulFaceAssociation>>,
     pub(crate) user_status: ::std::option::Option<crate::types::UserStatus>,
     _request_id: Option<String>,
 }
@@ -58,17 +60,16 @@ impl AssociateFacesOutputBuilder {
     /// <p>An array of AssociatedFace objects containing FaceIDs that have been successfully associated with the UserID. Returned if the AssociateFaces action is successful.</p>
     pub fn associated_faces(mut self, input: crate::types::AssociatedFace) -> Self {
         let mut v = self.associated_faces.unwrap_or_default();
-        v.push(input);
-        self.associated_faces = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.associated_faces = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of AssociatedFace objects containing FaceIDs that have been successfully associated with the UserID. Returned if the AssociateFaces action is successful.</p>
-    pub fn set_associated_faces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedFace>>) -> Self {
-        self.associated_faces = input;
-        self
+    pub fn set_associated_faces(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssociatedFace>>) -> Self {
+        self.associated_faces = input; self
     }
     /// <p>An array of AssociatedFace objects containing FaceIDs that have been successfully associated with the UserID. Returned if the AssociateFaces action is successful.</p>
-    pub fn get_associated_faces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociatedFace>> {
+    pub fn get_associated_faces(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssociatedFace>> {
         &self.associated_faces
     }
     /// Appends an item to `unsuccessful_face_associations`.
@@ -78,20 +79,16 @@ impl AssociateFacesOutputBuilder {
     /// <p>An array of UnsuccessfulAssociation objects containing FaceIDs that are not successfully associated along with the reasons. Returned if the AssociateFaces action is successful.</p>
     pub fn unsuccessful_face_associations(mut self, input: crate::types::UnsuccessfulFaceAssociation) -> Self {
         let mut v = self.unsuccessful_face_associations.unwrap_or_default();
-        v.push(input);
-        self.unsuccessful_face_associations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.unsuccessful_face_associations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of UnsuccessfulAssociation objects containing FaceIDs that are not successfully associated along with the reasons. Returned if the AssociateFaces action is successful.</p>
-    pub fn set_unsuccessful_face_associations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceAssociation>>,
-    ) -> Self {
-        self.unsuccessful_face_associations = input;
-        self
+    pub fn set_unsuccessful_face_associations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UnsuccessfulFaceAssociation>>) -> Self {
+        self.unsuccessful_face_associations = input; self
     }
     /// <p>An array of UnsuccessfulAssociation objects containing FaceIDs that are not successfully associated along with the reasons. Returned if the AssociateFaces action is successful.</p>
-    pub fn get_unsuccessful_face_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceAssociation>> {
+    pub fn get_unsuccessful_face_associations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UnsuccessfulFaceAssociation>> {
         &self.unsuccessful_face_associations
     }
     /// <p>The status of an update made to a UserID. Reflects if the UserID has been updated for every requested change.</p>
@@ -101,29 +98,32 @@ impl AssociateFacesOutputBuilder {
     }
     /// <p>The status of an update made to a UserID. Reflects if the UserID has been updated for every requested change.</p>
     pub fn set_user_status(mut self, input: ::std::option::Option<crate::types::UserStatus>) -> Self {
-        self.user_status = input;
-        self
+        self.user_status = input; self
     }
     /// <p>The status of an update made to a UserID. Reflects if the UserID has been updated for every requested change.</p>
     pub fn get_user_status(&self) -> &::std::option::Option<crate::types::UserStatus> {
         &self.user_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AssociateFacesOutput`](crate::operation::associate_faces::AssociateFacesOutput).
     pub fn build(self) -> crate::operation::associate_faces::AssociateFacesOutput {
         crate::operation::associate_faces::AssociateFacesOutput {
-            associated_faces: self.associated_faces,
-            unsuccessful_face_associations: self.unsuccessful_face_associations,
-            user_status: self.user_status,
+            associated_faces: self.associated_faces
+            ,
+            unsuccessful_face_associations: self.unsuccessful_face_associations
+            ,
+            user_status: self.user_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

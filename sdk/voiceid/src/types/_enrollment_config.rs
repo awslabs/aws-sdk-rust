@@ -3,19 +3,19 @@
 /// <p>Contains configurations defining enrollment behavior for the batch job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnrollmentConfig {
+pub struct EnrollmentConfig  {
     /// <p>The action to take when the specified speaker is already enrolled in the specified domain. The default value is <code>SKIP</code>, which skips the enrollment for the existing speaker. Setting the value to <code>OVERWRITE</code> replaces the existing voice prints and enrollment audio stored for that speaker with new data generated from the latest audio.</p>
     pub existing_enrollment_action: ::std::option::Option<crate::types::ExistingEnrollmentAction>,
     /// <p>The fraud detection configuration to use for the speaker enrollment job.</p>
     pub fraud_detection_config: ::std::option::Option<crate::types::EnrollmentJobFraudDetectionConfig>,
 }
-impl EnrollmentConfig {
+impl  EnrollmentConfig  {
     /// <p>The action to take when the specified speaker is already enrolled in the specified domain. The default value is <code>SKIP</code>, which skips the enrollment for the existing speaker. Setting the value to <code>OVERWRITE</code> replaces the existing voice prints and enrollment audio stored for that speaker with new data generated from the latest audio.</p>
-    pub fn existing_enrollment_action(&self) -> ::std::option::Option<&crate::types::ExistingEnrollmentAction> {
+    pub fn existing_enrollment_action(&self) -> ::std::option::Option<& crate::types::ExistingEnrollmentAction> {
         self.existing_enrollment_action.as_ref()
     }
     /// <p>The fraud detection configuration to use for the speaker enrollment job.</p>
-    pub fn fraud_detection_config(&self) -> ::std::option::Option<&crate::types::EnrollmentJobFraudDetectionConfig> {
+    pub fn fraud_detection_config(&self) -> ::std::option::Option<& crate::types::EnrollmentJobFraudDetectionConfig> {
         self.fraud_detection_config.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl EnrollmentConfigBuilder {
     }
     /// <p>The action to take when the specified speaker is already enrolled in the specified domain. The default value is <code>SKIP</code>, which skips the enrollment for the existing speaker. Setting the value to <code>OVERWRITE</code> replaces the existing voice prints and enrollment audio stored for that speaker with new data generated from the latest audio.</p>
     pub fn set_existing_enrollment_action(mut self, input: ::std::option::Option<crate::types::ExistingEnrollmentAction>) -> Self {
-        self.existing_enrollment_action = input;
-        self
+        self.existing_enrollment_action = input; self
     }
     /// <p>The action to take when the specified speaker is already enrolled in the specified domain. The default value is <code>SKIP</code>, which skips the enrollment for the existing speaker. Setting the value to <code>OVERWRITE</code> replaces the existing voice prints and enrollment audio stored for that speaker with new data generated from the latest audio.</p>
     pub fn get_existing_enrollment_action(&self) -> &::std::option::Option<crate::types::ExistingEnrollmentAction> {
@@ -55,8 +54,7 @@ impl EnrollmentConfigBuilder {
     }
     /// <p>The fraud detection configuration to use for the speaker enrollment job.</p>
     pub fn set_fraud_detection_config(mut self, input: ::std::option::Option<crate::types::EnrollmentJobFraudDetectionConfig>) -> Self {
-        self.fraud_detection_config = input;
-        self
+        self.fraud_detection_config = input; self
     }
     /// <p>The fraud detection configuration to use for the speaker enrollment job.</p>
     pub fn get_fraud_detection_config(&self) -> &::std::option::Option<crate::types::EnrollmentJobFraudDetectionConfig> {
@@ -65,8 +63,11 @@ impl EnrollmentConfigBuilder {
     /// Consumes the builder and constructs a [`EnrollmentConfig`](crate::types::EnrollmentConfig).
     pub fn build(self) -> crate::types::EnrollmentConfig {
         crate::types::EnrollmentConfig {
-            existing_enrollment_action: self.existing_enrollment_action,
-            fraud_detection_config: self.fraud_detection_config,
+            existing_enrollment_action: self.existing_enrollment_action
+            ,
+            fraud_detection_config: self.fraud_detection_config
+            ,
         }
     }
 }
+

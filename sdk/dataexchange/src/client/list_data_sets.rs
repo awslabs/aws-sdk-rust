@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDataSets`](crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results returned by a single call.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token value retrieved from a previous call to access the next page of results.</p><br>
     ///   - [`origin(impl Into<String>)`](crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::origin) / [`set_origin(Option<String>)`](crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::set_origin):<br>required: **false**<br><p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p><br>
-    /// - On success, responds with [`ListDataSetsOutput`](crate::operation::list_data_sets::ListDataSetsOutput) with field(s):
+                            /// - On success, responds with [`ListDataSetsOutput`](crate::operation::list_data_sets::ListDataSetsOutput) with field(s):
     ///   - [`data_sets(Option<Vec::<DataSetEntry>>)`](crate::operation::list_data_sets::ListDataSetsOutput::data_sets): <p>The data set objects listed by the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_sets::ListDataSetsOutput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListDataSetsError>`](crate::operation::list_data_sets::ListDataSetsError)
+                            /// - On failure, responds with [`SdkError<ListDataSetsError>`](crate::operation::list_data_sets::ListDataSetsError)
     pub fn list_data_sets(&self) -> crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder {
-        crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_data_sets::builders::ListDataSetsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

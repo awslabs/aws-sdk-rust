@@ -2,31 +2,32 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRuleGroupInput {
+pub struct UpdateRuleGroupInput  {
     /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to update. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
     pub rule_group_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into or delete from a <code>RuleGroup</code>.</p>
     /// <p>You can only insert <code>REGULAR</code> rules into a rule group.</p>
     /// <p><code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
-    pub updates: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupUpdate>>,
+    pub updates: ::std::option::Option<::std::vec::Vec::<crate::types::RuleGroupUpdate>>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: ::std::option::Option<::std::string::String>,
 }
-impl UpdateRuleGroupInput {
+impl  UpdateRuleGroupInput  {
     /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to update. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
-    pub fn rule_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn rule_group_id(&self) -> ::std::option::Option<& str> {
         self.rule_group_id.as_deref()
     }
     /// <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into or delete from a <code>RuleGroup</code>.</p>
     /// <p>You can only insert <code>REGULAR</code> rules into a rule group.</p>
     /// <p><code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.updates.is_none()`.
-    pub fn updates(&self) -> &[crate::types::RuleGroupUpdate] {
-        self.updates.as_deref().unwrap_or_default()
+    pub fn updates(&self) -> & [crate::types::RuleGroupUpdate] {
+        self.updates.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    pub fn change_token(&self) -> ::std::option::Option<&str> {
+    pub fn change_token(&self) -> ::std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
@@ -42,7 +43,7 @@ impl UpdateRuleGroupInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRuleGroupInputBuilder {
     pub(crate) rule_group_id: ::std::option::Option<::std::string::String>,
-    pub(crate) updates: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupUpdate>>,
+    pub(crate) updates: ::std::option::Option<::std::vec::Vec::<crate::types::RuleGroupUpdate>>,
     pub(crate) change_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateRuleGroupInputBuilder {
@@ -54,8 +55,7 @@ impl UpdateRuleGroupInputBuilder {
     }
     /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to update. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
     pub fn set_rule_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_group_id = input;
-        self
+        self.rule_group_id = input; self
     }
     /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to update. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
     pub fn get_rule_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,21 +70,20 @@ impl UpdateRuleGroupInputBuilder {
     /// <p><code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
     pub fn updates(mut self, input: crate::types::RuleGroupUpdate) -> Self {
         let mut v = self.updates.unwrap_or_default();
-        v.push(input);
-        self.updates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.updates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into or delete from a <code>RuleGroup</code>.</p>
     /// <p>You can only insert <code>REGULAR</code> rules into a rule group.</p>
     /// <p><code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
-    pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupUpdate>>) -> Self {
-        self.updates = input;
-        self
+    pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RuleGroupUpdate>>) -> Self {
+        self.updates = input; self
     }
     /// <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into or delete from a <code>RuleGroup</code>.</p>
     /// <p>You can only insert <code>REGULAR</code> rules into a rule group.</p>
     /// <p><code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
-    pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleGroupUpdate>> {
+    pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RuleGroupUpdate>> {
         &self.updates
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
@@ -95,21 +94,24 @@ impl UpdateRuleGroupInputBuilder {
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.change_token = input;
-        self
+        self.change_token = input; self
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.change_token
     }
     /// Consumes the builder and constructs a [`UpdateRuleGroupInput`](crate::operation::update_rule_group::UpdateRuleGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_rule_group::UpdateRuleGroupInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_rule_group::UpdateRuleGroupInput {
-            rule_group_id: self.rule_group_id,
-            updates: self.updates,
-            change_token: self.change_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_rule_group::UpdateRuleGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_rule_group::UpdateRuleGroupInput {
+                rule_group_id: self.rule_group_id
+                ,
+                updates: self.updates
+                ,
+                change_token: self.change_token
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMatchingJobOutput {
+pub struct GetMatchingJobOutput  {
     /// <p>The ID of the job.</p>
     pub job_id: ::std::string::String,
     /// <p>The current status of the job.</p>
@@ -17,38 +17,37 @@ pub struct GetMatchingJobOutput {
     pub error_details: ::std::option::Option<crate::types::ErrorDetails>,
     _request_id: Option<String>,
 }
-impl GetMatchingJobOutput {
+impl  GetMatchingJobOutput  {
     /// <p>The ID of the job.</p>
-    pub fn job_id(&self) -> &str {
-        use std::ops::Deref;
-        self.job_id.deref()
+    pub fn job_id(&self) -> & str {
+        use std::ops::Deref; self.job_id.deref()
     }
     /// <p>The current status of the job.</p>
-    pub fn status(&self) -> &crate::types::JobStatus {
+    pub fn status(&self) -> & crate::types::JobStatus {
         &self.status
     }
     /// <p>The time at which the job was started.</p>
-    pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn start_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.start_time
     }
     /// <p>The time at which the job has finished.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>Metrics associated with the execution, specifically total records processed, unique IDs generated, and records the execution skipped.</p>
-    pub fn metrics(&self) -> ::std::option::Option<&crate::types::JobMetrics> {
+    pub fn metrics(&self) -> ::std::option::Option<& crate::types::JobMetrics> {
         self.metrics.as_ref()
     }
     /// <p>An object containing an error message, if there was an error.</p>
-    pub fn error_details(&self) -> ::std::option::Option<&crate::types::ErrorDetails> {
+    pub fn error_details(&self) -> ::std::option::Option<& crate::types::ErrorDetails> {
         self.error_details.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetMatchingJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetMatchingJobOutput {
     /// Creates a new builder-style object to manufacture [`GetMatchingJobOutput`](crate::operation::get_matching_job::GetMatchingJobOutput).
     pub fn builder() -> crate::operation::get_matching_job::builders::GetMatchingJobOutputBuilder {
@@ -77,8 +76,7 @@ impl GetMatchingJobOutputBuilder {
     }
     /// <p>The ID of the job.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The ID of the job.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +90,7 @@ impl GetMatchingJobOutputBuilder {
     }
     /// <p>The current status of the job.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the job.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
@@ -107,8 +104,7 @@ impl GetMatchingJobOutputBuilder {
     }
     /// <p>The time at which the job was started.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The time at which the job was started.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -121,8 +117,7 @@ impl GetMatchingJobOutputBuilder {
     }
     /// <p>The time at which the job has finished.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The time at which the job has finished.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -135,8 +130,7 @@ impl GetMatchingJobOutputBuilder {
     }
     /// <p>Metrics associated with the execution, specifically total records processed, unique IDs generated, and records the execution skipped.</p>
     pub fn set_metrics(mut self, input: ::std::option::Option<crate::types::JobMetrics>) -> Self {
-        self.metrics = input;
-        self
+        self.metrics = input; self
     }
     /// <p>Metrics associated with the execution, specifically total records processed, unique IDs generated, and records the execution skipped.</p>
     pub fn get_metrics(&self) -> &::std::option::Option<crate::types::JobMetrics> {
@@ -149,53 +143,53 @@ impl GetMatchingJobOutputBuilder {
     }
     /// <p>An object containing an error message, if there was an error.</p>
     pub fn set_error_details(mut self, input: ::std::option::Option<crate::types::ErrorDetails>) -> Self {
-        self.error_details = input;
-        self
+        self.error_details = input; self
     }
     /// <p>An object containing an error message, if there was an error.</p>
     pub fn get_error_details(&self) -> &::std::option::Option<crate::types::ErrorDetails> {
         &self.error_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetMatchingJobOutput`](crate::operation::get_matching_job::GetMatchingJobOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`job_id`](crate::operation::get_matching_job::builders::GetMatchingJobOutputBuilder::job_id)
     /// - [`status`](crate::operation::get_matching_job::builders::GetMatchingJobOutputBuilder::status)
     /// - [`start_time`](crate::operation::get_matching_job::builders::GetMatchingJobOutputBuilder::start_time)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_matching_job::GetMatchingJobOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_matching_job::GetMatchingJobOutput {
-            job_id: self.job_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "job_id",
-                    "job_id was not specified but it is required when building GetMatchingJobOutput",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building GetMatchingJobOutput",
-                )
-            })?,
-            start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start_time",
-                    "start_time was not specified but it is required when building GetMatchingJobOutput",
-                )
-            })?,
-            end_time: self.end_time,
-            metrics: self.metrics,
-            error_details: self.error_details,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_matching_job::GetMatchingJobOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_matching_job::GetMatchingJobOutput {
+                job_id: self.job_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("job_id", "job_id was not specified but it is required when building GetMatchingJobOutput")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building GetMatchingJobOutput")
+                    )?
+                ,
+                start_time: self.start_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start_time", "start_time was not specified but it is required when building GetMatchingJobOutput")
+                    )?
+                ,
+                end_time: self.end_time
+                ,
+                metrics: self.metrics
+                ,
+                error_details: self.error_details
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -3,22 +3,23 @@
 /// <p>Set of optional parameters that let you set the criteria text must meet to be included in your response. <code>WordFilter</code> looks at a word's height, width and minimum confidence. <code>RegionOfInterest</code> lets you set a specific region of the screen to look for text in.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartTextDetectionFilters {
+pub struct StartTextDetectionFilters  {
     /// <p>Filters focusing on qualities of the text, such as confidence or size.</p>
     pub word_filter: ::std::option::Option<crate::types::DetectionFilter>,
     /// <p>Filter focusing on a certain area of the frame. Uses a <code>BoundingBox</code> object to set the region of the screen.</p>
-    pub regions_of_interest: ::std::option::Option<::std::vec::Vec<crate::types::RegionOfInterest>>,
+    pub regions_of_interest: ::std::option::Option<::std::vec::Vec::<crate::types::RegionOfInterest>>,
 }
-impl StartTextDetectionFilters {
+impl  StartTextDetectionFilters  {
     /// <p>Filters focusing on qualities of the text, such as confidence or size.</p>
-    pub fn word_filter(&self) -> ::std::option::Option<&crate::types::DetectionFilter> {
+    pub fn word_filter(&self) -> ::std::option::Option<& crate::types::DetectionFilter> {
         self.word_filter.as_ref()
     }
     /// <p>Filter focusing on a certain area of the frame. Uses a <code>BoundingBox</code> object to set the region of the screen.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions_of_interest.is_none()`.
-    pub fn regions_of_interest(&self) -> &[crate::types::RegionOfInterest] {
-        self.regions_of_interest.as_deref().unwrap_or_default()
+    pub fn regions_of_interest(&self) -> & [crate::types::RegionOfInterest] {
+        self.regions_of_interest.as_deref()
+        .unwrap_or_default()
     }
 }
 impl StartTextDetectionFilters {
@@ -33,7 +34,7 @@ impl StartTextDetectionFilters {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartTextDetectionFiltersBuilder {
     pub(crate) word_filter: ::std::option::Option<crate::types::DetectionFilter>,
-    pub(crate) regions_of_interest: ::std::option::Option<::std::vec::Vec<crate::types::RegionOfInterest>>,
+    pub(crate) regions_of_interest: ::std::option::Option<::std::vec::Vec::<crate::types::RegionOfInterest>>,
 }
 impl StartTextDetectionFiltersBuilder {
     /// <p>Filters focusing on qualities of the text, such as confidence or size.</p>
@@ -43,8 +44,7 @@ impl StartTextDetectionFiltersBuilder {
     }
     /// <p>Filters focusing on qualities of the text, such as confidence or size.</p>
     pub fn set_word_filter(mut self, input: ::std::option::Option<crate::types::DetectionFilter>) -> Self {
-        self.word_filter = input;
-        self
+        self.word_filter = input; self
     }
     /// <p>Filters focusing on qualities of the text, such as confidence or size.</p>
     pub fn get_word_filter(&self) -> &::std::option::Option<crate::types::DetectionFilter> {
@@ -57,24 +57,26 @@ impl StartTextDetectionFiltersBuilder {
     /// <p>Filter focusing on a certain area of the frame. Uses a <code>BoundingBox</code> object to set the region of the screen.</p>
     pub fn regions_of_interest(mut self, input: crate::types::RegionOfInterest) -> Self {
         let mut v = self.regions_of_interest.unwrap_or_default();
-        v.push(input);
-        self.regions_of_interest = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.regions_of_interest = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Filter focusing on a certain area of the frame. Uses a <code>BoundingBox</code> object to set the region of the screen.</p>
-    pub fn set_regions_of_interest(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegionOfInterest>>) -> Self {
-        self.regions_of_interest = input;
-        self
+    pub fn set_regions_of_interest(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RegionOfInterest>>) -> Self {
+        self.regions_of_interest = input; self
     }
     /// <p>Filter focusing on a certain area of the frame. Uses a <code>BoundingBox</code> object to set the region of the screen.</p>
-    pub fn get_regions_of_interest(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegionOfInterest>> {
+    pub fn get_regions_of_interest(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RegionOfInterest>> {
         &self.regions_of_interest
     }
     /// Consumes the builder and constructs a [`StartTextDetectionFilters`](crate::types::StartTextDetectionFilters).
     pub fn build(self) -> crate::types::StartTextDetectionFilters {
         crate::types::StartTextDetectionFilters {
-            word_filter: self.word_filter,
-            regions_of_interest: self.regions_of_interest,
+            word_filter: self.word_filter
+            ,
+            regions_of_interest: self.regions_of_interest
+            ,
         }
     }
 }
+

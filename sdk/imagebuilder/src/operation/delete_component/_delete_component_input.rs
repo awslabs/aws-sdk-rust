@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteComponentInput {
+pub struct DeleteComponentInput  {
     /// <p>The Amazon Resource Name (ARN) of the component build version to delete.</p>
     pub component_build_version_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteComponentInput {
+impl  DeleteComponentInput  {
     /// <p>The Amazon Resource Name (ARN) of the component build version to delete.</p>
-    pub fn component_build_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn component_build_version_arn(&self) -> ::std::option::Option<& str> {
         self.component_build_version_arn.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteComponentInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the component build version to delete.</p>
     pub fn set_component_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_build_version_arn = input;
-        self
+        self.component_build_version_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the component build version to delete.</p>
     pub fn get_component_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.component_build_version_arn
     }
     /// Consumes the builder and constructs a [`DeleteComponentInput`](crate::operation::delete_component::DeleteComponentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_component::DeleteComponentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_component::DeleteComponentInput {
-            component_build_version_arn: self.component_build_version_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_component::DeleteComponentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_component::DeleteComponentInput {
+                component_build_version_arn: self.component_build_version_arn
+                ,
+            }
+        )
     }
 }
+

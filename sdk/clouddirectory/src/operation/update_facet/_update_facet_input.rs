@@ -2,33 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFacetInput {
+pub struct UpdateFacetInput  {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
     pub schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the facet.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform.</p>
-    pub attribute_updates: ::std::option::Option<::std::vec::Vec<crate::types::FacetAttributeUpdate>>,
+    pub attribute_updates: ::std::option::Option<::std::vec::Vec::<crate::types::FacetAttributeUpdate>>,
     /// <p>The object type that is associated with the facet. See <code>CreateFacetRequest$ObjectType</code> for more details.</p>
     pub object_type: ::std::option::Option<crate::types::ObjectType>,
 }
-impl UpdateFacetInput {
+impl  UpdateFacetInput  {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
-    pub fn schema_arn(&self) -> ::std::option::Option<&str> {
+    pub fn schema_arn(&self) -> ::std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
     /// <p>The name of the facet.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_updates.is_none()`.
-    pub fn attribute_updates(&self) -> &[crate::types::FacetAttributeUpdate] {
-        self.attribute_updates.as_deref().unwrap_or_default()
+    pub fn attribute_updates(&self) -> & [crate::types::FacetAttributeUpdate] {
+        self.attribute_updates.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The object type that is associated with the facet. See <code>CreateFacetRequest$ObjectType</code> for more details.</p>
-    pub fn object_type(&self) -> ::std::option::Option<&crate::types::ObjectType> {
+    pub fn object_type(&self) -> ::std::option::Option<& crate::types::ObjectType> {
         self.object_type.as_ref()
     }
 }
@@ -45,7 +46,7 @@ impl UpdateFacetInput {
 pub struct UpdateFacetInputBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) attribute_updates: ::std::option::Option<::std::vec::Vec<crate::types::FacetAttributeUpdate>>,
+    pub(crate) attribute_updates: ::std::option::Option<::std::vec::Vec::<crate::types::FacetAttributeUpdate>>,
     pub(crate) object_type: ::std::option::Option<crate::types::ObjectType>,
 }
 impl UpdateFacetInputBuilder {
@@ -57,8 +58,7 @@ impl UpdateFacetInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
     pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_arn = input;
-        self
+        self.schema_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
     pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +72,7 @@ impl UpdateFacetInputBuilder {
     }
     /// <p>The name of the facet.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the facet.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,17 +85,16 @@ impl UpdateFacetInputBuilder {
     /// <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform.</p>
     pub fn attribute_updates(mut self, input: crate::types::FacetAttributeUpdate) -> Self {
         let mut v = self.attribute_updates.unwrap_or_default();
-        v.push(input);
-        self.attribute_updates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attribute_updates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform.</p>
-    pub fn set_attribute_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FacetAttributeUpdate>>) -> Self {
-        self.attribute_updates = input;
-        self
+    pub fn set_attribute_updates(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FacetAttributeUpdate>>) -> Self {
+        self.attribute_updates = input; self
     }
     /// <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform.</p>
-    pub fn get_attribute_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FacetAttributeUpdate>> {
+    pub fn get_attribute_updates(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FacetAttributeUpdate>> {
         &self.attribute_updates
     }
     /// <p>The object type that is associated with the facet. See <code>CreateFacetRequest$ObjectType</code> for more details.</p>
@@ -106,8 +104,7 @@ impl UpdateFacetInputBuilder {
     }
     /// <p>The object type that is associated with the facet. See <code>CreateFacetRequest$ObjectType</code> for more details.</p>
     pub fn set_object_type(mut self, input: ::std::option::Option<crate::types::ObjectType>) -> Self {
-        self.object_type = input;
-        self
+        self.object_type = input; self
     }
     /// <p>The object type that is associated with the facet. See <code>CreateFacetRequest$ObjectType</code> for more details.</p>
     pub fn get_object_type(&self) -> &::std::option::Option<crate::types::ObjectType> {
@@ -115,11 +112,18 @@ impl UpdateFacetInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateFacetInput`](crate::operation::update_facet::UpdateFacetInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_facet::UpdateFacetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_facet::UpdateFacetInput {
-            schema_arn: self.schema_arn,
-            name: self.name,
-            attribute_updates: self.attribute_updates,
-            object_type: self.object_type,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_facet::UpdateFacetInput {
+                schema_arn: self.schema_arn
+                ,
+                name: self.name
+                ,
+                attribute_updates: self.attribute_updates
+                ,
+                object_type: self.object_type
+                ,
+            }
+        )
     }
 }
+

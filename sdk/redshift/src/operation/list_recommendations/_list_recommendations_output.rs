@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRecommendationsOutput {
+pub struct ListRecommendationsOutput  {
     /// <p>The Advisor recommendations for action on the Amazon Redshift cluster.</p>
-    pub recommendations: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
+    pub recommendations: ::std::option::Option<::std::vec::Vec::<crate::types::Recommendation>>,
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the Marker parameter and retrying the command. If the Marker field is empty, all response records have been retrieved for the request.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListRecommendationsOutput {
+impl  ListRecommendationsOutput  {
     /// <p>The Advisor recommendations for action on the Amazon Redshift cluster.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommendations.is_none()`.
-    pub fn recommendations(&self) -> &[crate::types::Recommendation] {
-        self.recommendations.as_deref().unwrap_or_default()
+    pub fn recommendations(&self) -> & [crate::types::Recommendation] {
+        self.recommendations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the Marker parameter and retrying the command. If the Marker field is empty, all response records have been retrieved for the request.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListRecommendationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`ListRecommendationsOutput`](crate::operation::list_recommendations::ListRecommendationsOutput).
     pub fn builder() -> crate::operation::list_recommendations::builders::ListRecommendationsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListRecommendationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRecommendationsOutputBuilder {
-    pub(crate) recommendations: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
+    pub(crate) recommendations: ::std::option::Option<::std::vec::Vec::<crate::types::Recommendation>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListRecommendationsOutputBuilder {
     /// <p>The Advisor recommendations for action on the Amazon Redshift cluster.</p>
     pub fn recommendations(mut self, input: crate::types::Recommendation) -> Self {
         let mut v = self.recommendations.unwrap_or_default();
-        v.push(input);
-        self.recommendations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.recommendations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Advisor recommendations for action on the Amazon Redshift cluster.</p>
-    pub fn set_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>) -> Self {
-        self.recommendations = input;
-        self
+    pub fn set_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Recommendation>>) -> Self {
+        self.recommendations = input; self
     }
     /// <p>The Advisor recommendations for action on the Amazon Redshift cluster.</p>
-    pub fn get_recommendations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Recommendation>> {
+    pub fn get_recommendations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Recommendation>> {
         &self.recommendations
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the Marker parameter and retrying the command. If the Marker field is empty, all response records have been retrieved for the request.</p>
@@ -69,28 +69,30 @@ impl ListRecommendationsOutputBuilder {
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the Marker parameter and retrying the command. If the Marker field is empty, all response records have been retrieved for the request.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the Marker parameter and retrying the command. If the Marker field is empty, all response records have been retrieved for the request.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListRecommendationsOutput`](crate::operation::list_recommendations::ListRecommendationsOutput).
     pub fn build(self) -> crate::operation::list_recommendations::ListRecommendationsOutput {
         crate::operation::list_recommendations::ListRecommendationsOutput {
-            recommendations: self.recommendations,
-            marker: self.marker,
+            recommendations: self.recommendations
+            ,
+            marker: self.marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

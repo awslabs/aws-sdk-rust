@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetachLoadBalancerTargetGroupsOutput {
+pub struct DetachLoadBalancerTargetGroupsOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for DetachLoadBalancerTargetGroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DetachLoadBalancerTargetGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DetachLoadBalancerTargetGroupsOutput`](crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsOutput).
     pub fn builder() -> crate::operation::detach_load_balancer_target_groups::builders::DetachLoadBalancerTargetGroupsOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DetachLoadBalancerTargetGroupsOutputBuilder {
 }
 impl DetachLoadBalancerTargetGroupsOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DetachLoadBalancerTargetGroupsOutput`](crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsOutput).
     pub fn build(self) -> crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsOutput {
         crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsOutput {
@@ -40,3 +40,4 @@ impl DetachLoadBalancerTargetGroupsOutputBuilder {
         }
     }
 }
+

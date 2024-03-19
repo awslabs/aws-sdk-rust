@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListRecoveryPointsByResource`](crate::operation::list_recovery_points_by_resource::builders::ListRecoveryPointsByResourceFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_recovery_points_by_resource::builders::ListRecoveryPointsByResourceFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`resource_arn(impl Into<String>)`](crate::operation::list_recovery_points_by_resource::builders::ListRecoveryPointsByResourceFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::list_recovery_points_by_resource::builders::ListRecoveryPointsByResourceFluentBuilder::set_resource_arn):<br>required: **true**<br><p>An ARN that uniquely identifies a resource. The format of the ARN depends on the resource type.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_recovery_points_by_resource::builders::ListRecoveryPointsByResourceFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_recovery_points_by_resource::builders::ListRecoveryPointsByResourceFluentBuilder::set_next_token):<br>required: **false**<br><p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_recovery_points_by_resource::builders::ListRecoveryPointsByResourceFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_recovery_points_by_resource::builders::ListRecoveryPointsByResourceFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to be returned.</p><note>  <p>Amazon RDS requires a value of at least 20.</p> </note><br>
     ///   - [`managed_by_aws_backup_only(bool)`](crate::operation::list_recovery_points_by_resource::builders::ListRecoveryPointsByResourceFluentBuilder::managed_by_aws_backup_only) / [`set_managed_by_aws_backup_only(Option<bool>)`](crate::operation::list_recovery_points_by_resource::builders::ListRecoveryPointsByResourceFluentBuilder::set_managed_by_aws_backup_only):<br>required: **false**<br><p>This attribute filters recovery points based on ownership.</p> <p>If this is set to <code>TRUE</code>, the response will contain recovery points associated with the selected resources that are managed by Backup.</p> <p>If this is set to <code>FALSE</code>, the response will contain all recovery points associated with the selected resource.</p> <p>Type: Boolean</p><br>
-    /// - On success, responds with [`ListRecoveryPointsByResourceOutput`](crate::operation::list_recovery_points_by_resource::ListRecoveryPointsByResourceOutput) with field(s):
+                            /// - On success, responds with [`ListRecoveryPointsByResourceOutput`](crate::operation::list_recovery_points_by_resource::ListRecoveryPointsByResourceOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_recovery_points_by_resource::ListRecoveryPointsByResourceOutput::next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     ///   - [`recovery_points(Option<Vec::<RecoveryPointByResource>>)`](crate::operation::list_recovery_points_by_resource::ListRecoveryPointsByResourceOutput::recovery_points): <p>An array of objects that contain detailed information about recovery points of the specified resource type.</p><note>  <p>Only Amazon EFS and Amazon EC2 recovery points return BackupVaultName.</p> </note>
-    /// - On failure, responds with [`SdkError<ListRecoveryPointsByResourceError>`](crate::operation::list_recovery_points_by_resource::ListRecoveryPointsByResourceError)
-    pub fn list_recovery_points_by_resource(
-        &self,
-    ) -> crate::operation::list_recovery_points_by_resource::builders::ListRecoveryPointsByResourceFluentBuilder {
-        crate::operation::list_recovery_points_by_resource::builders::ListRecoveryPointsByResourceFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListRecoveryPointsByResourceError>`](crate::operation::list_recovery_points_by_resource::ListRecoveryPointsByResourceError)
+    pub fn list_recovery_points_by_resource(&self) -> crate::operation::list_recovery_points_by_resource::builders::ListRecoveryPointsByResourceFluentBuilder {
+                                crate::operation::list_recovery_points_by_resource::builders::ListRecoveryPointsByResourceFluentBuilder::new(self.handle.clone())
+                            }
 }
+

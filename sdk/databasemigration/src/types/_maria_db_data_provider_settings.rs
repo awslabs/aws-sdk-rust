@@ -3,7 +3,7 @@
 /// <p>Provides information that defines a MariaDB data provider.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MariaDbDataProviderSettings {
+pub struct MariaDbDataProviderSettings  {
     /// <p>The name of the MariaDB server.</p>
     pub server_name: ::std::option::Option<::std::string::String>,
     /// <p>The port value for the MariaDB data provider</p>
@@ -13,9 +13,9 @@ pub struct MariaDbDataProviderSettings {
     /// <p>The Amazon Resource Name (ARN) of the certificate used for SSL connection.</p>
     pub certificate_arn: ::std::option::Option<::std::string::String>,
 }
-impl MariaDbDataProviderSettings {
+impl  MariaDbDataProviderSettings  {
     /// <p>The name of the MariaDB server.</p>
-    pub fn server_name(&self) -> ::std::option::Option<&str> {
+    pub fn server_name(&self) -> ::std::option::Option<& str> {
         self.server_name.as_deref()
     }
     /// <p>The port value for the MariaDB data provider</p>
@@ -23,11 +23,11 @@ impl MariaDbDataProviderSettings {
         self.port
     }
     /// <p>The SSL mode used to connect to the MariaDB data provider. The default value is <code>none</code>.</p>
-    pub fn ssl_mode(&self) -> ::std::option::Option<&crate::types::DmsSslModeValue> {
+    pub fn ssl_mode(&self) -> ::std::option::Option<& crate::types::DmsSslModeValue> {
         self.ssl_mode.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate used for SSL connection.</p>
-    pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> ::std::option::Option<& str> {
         self.certificate_arn.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl MariaDbDataProviderSettingsBuilder {
     }
     /// <p>The name of the MariaDB server.</p>
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_name = input;
-        self
+        self.server_name = input; self
     }
     /// <p>The name of the MariaDB server.</p>
     pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl MariaDbDataProviderSettingsBuilder {
     }
     /// <p>The port value for the MariaDB data provider</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port value for the MariaDB data provider</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -83,8 +81,7 @@ impl MariaDbDataProviderSettingsBuilder {
     }
     /// <p>The SSL mode used to connect to the MariaDB data provider. The default value is <code>none</code>.</p>
     pub fn set_ssl_mode(mut self, input: ::std::option::Option<crate::types::DmsSslModeValue>) -> Self {
-        self.ssl_mode = input;
-        self
+        self.ssl_mode = input; self
     }
     /// <p>The SSL mode used to connect to the MariaDB data provider. The default value is <code>none</code>.</p>
     pub fn get_ssl_mode(&self) -> &::std::option::Option<crate::types::DmsSslModeValue> {
@@ -97,8 +94,7 @@ impl MariaDbDataProviderSettingsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate used for SSL connection.</p>
     pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_arn = input;
-        self
+        self.certificate_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate used for SSL connection.</p>
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl MariaDbDataProviderSettingsBuilder {
     /// Consumes the builder and constructs a [`MariaDbDataProviderSettings`](crate::types::MariaDbDataProviderSettings).
     pub fn build(self) -> crate::types::MariaDbDataProviderSettings {
         crate::types::MariaDbDataProviderSettings {
-            server_name: self.server_name,
-            port: self.port,
-            ssl_mode: self.ssl_mode,
-            certificate_arn: self.certificate_arn,
+            server_name: self.server_name
+            ,
+            port: self.port
+            ,
+            ssl_mode: self.ssl_mode
+            ,
+            certificate_arn: self.certificate_arn
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AuthorizeSnapshotAccessInput {
+pub struct AuthorizeSnapshotAccessInput  {
     /// <p>The identifier of the snapshot the account is authorized to restore.</p>
     pub snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the snapshot to authorize access to.</p>
@@ -20,13 +20,13 @@ pub struct AuthorizeSnapshotAccessInput {
     /// <p>To share a snapshot with Amazon Web Services Support, specify amazon-redshift-support.</p>
     pub account_with_restore_access: ::std::option::Option<::std::string::String>,
 }
-impl AuthorizeSnapshotAccessInput {
+impl  AuthorizeSnapshotAccessInput  {
     /// <p>The identifier of the snapshot the account is authorized to restore.</p>
-    pub fn snapshot_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_identifier(&self) -> ::std::option::Option<& str> {
         self.snapshot_identifier.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the snapshot to authorize access to.</p>
-    pub fn snapshot_arn(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_arn(&self) -> ::std::option::Option<& str> {
         self.snapshot_arn.as_deref()
     }
     /// <p>The identifier of the cluster the snapshot was created from.</p>
@@ -36,12 +36,12 @@ impl AuthorizeSnapshotAccessInput {
     /// <li>
     /// <p><i>If the snapshot to access exists</i> - This parameter isn't required. Redshift can retrieve the cluster identifier and use it to validate snapshot authorization.</p></li>
     /// </ul>
-    pub fn snapshot_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.snapshot_cluster_identifier.as_deref()
     }
     /// <p>The identifier of the Amazon Web Services account authorized to restore the specified snapshot.</p>
     /// <p>To share a snapshot with Amazon Web Services Support, specify amazon-redshift-support.</p>
-    pub fn account_with_restore_access(&self) -> ::std::option::Option<&str> {
+    pub fn account_with_restore_access(&self) -> ::std::option::Option<& str> {
         self.account_with_restore_access.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl AuthorizeSnapshotAccessInputBuilder {
     }
     /// <p>The identifier of the snapshot the account is authorized to restore.</p>
     pub fn set_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_identifier = input;
-        self
+        self.snapshot_identifier = input; self
     }
     /// <p>The identifier of the snapshot the account is authorized to restore.</p>
     pub fn get_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl AuthorizeSnapshotAccessInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the snapshot to authorize access to.</p>
     pub fn set_snapshot_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_arn = input;
-        self
+        self.snapshot_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the snapshot to authorize access to.</p>
     pub fn get_snapshot_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +107,7 @@ impl AuthorizeSnapshotAccessInputBuilder {
     /// <p><i>If the snapshot to access exists</i> - This parameter isn't required. Redshift can retrieve the cluster identifier and use it to validate snapshot authorization.</p></li>
     /// </ul>
     pub fn set_snapshot_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_cluster_identifier = input;
-        self
+        self.snapshot_cluster_identifier = input; self
     }
     /// <p>The identifier of the cluster the snapshot was created from.</p>
     /// <ul>
@@ -132,8 +129,7 @@ impl AuthorizeSnapshotAccessInputBuilder {
     /// <p>The identifier of the Amazon Web Services account authorized to restore the specified snapshot.</p>
     /// <p>To share a snapshot with Amazon Web Services Support, specify amazon-redshift-support.</p>
     pub fn set_account_with_restore_access(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_with_restore_access = input;
-        self
+        self.account_with_restore_access = input; self
     }
     /// <p>The identifier of the Amazon Web Services account authorized to restore the specified snapshot.</p>
     /// <p>To share a snapshot with Amazon Web Services Support, specify amazon-redshift-support.</p>
@@ -141,17 +137,19 @@ impl AuthorizeSnapshotAccessInputBuilder {
         &self.account_with_restore_access
     }
     /// Consumes the builder and constructs a [`AuthorizeSnapshotAccessInput`](crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessInput {
-            snapshot_identifier: self.snapshot_identifier,
-            snapshot_arn: self.snapshot_arn,
-            snapshot_cluster_identifier: self.snapshot_cluster_identifier,
-            account_with_restore_access: self.account_with_restore_access,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessInput {
+                snapshot_identifier: self.snapshot_identifier
+                ,
+                snapshot_arn: self.snapshot_arn
+                ,
+                snapshot_cluster_identifier: self.snapshot_cluster_identifier
+                ,
+                account_with_restore_access: self.account_with_restore_access
+                ,
+            }
+        )
     }
 }
+

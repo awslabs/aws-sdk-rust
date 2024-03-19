@@ -3,27 +3,27 @@
 /// <p>SetDataRetrievalPolicy input.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetDataRetrievalPolicyInput {
+pub struct SetDataRetrievalPolicyInput  {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The data retrieval policy in JSON format.</p>
     pub policy: ::std::option::Option<crate::types::DataRetrievalPolicy>,
 }
-impl SetDataRetrievalPolicyInput {
+impl  SetDataRetrievalPolicyInput  {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The data retrieval policy in JSON format.</p>
-    pub fn policy(&self) -> ::std::option::Option<&crate::types::DataRetrievalPolicy> {
+    pub fn policy(&self) -> ::std::option::Option<& crate::types::DataRetrievalPolicy> {
         self.policy.as_ref()
     }
 }
 impl crate::glacier_interceptors::GlacierAccountId for SetDataRetrievalPolicyInput {
-    fn account_id_mut(&mut self) -> &mut Option<String> {
-        &mut self.account_id
-    }
-}
+                        fn account_id_mut(&mut self) -> &mut Option<String> {
+                            &mut self.account_id
+                        }
+                    }
 impl SetDataRetrievalPolicyInput {
     /// Creates a new builder-style object to manufacture [`SetDataRetrievalPolicyInput`](crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyInput).
     pub fn builder() -> crate::operation::set_data_retrieval_policy::builders::SetDataRetrievalPolicyInputBuilder {
@@ -47,8 +47,7 @@ impl SetDataRetrievalPolicyInputBuilder {
     }
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,23 +60,22 @@ impl SetDataRetrievalPolicyInputBuilder {
     }
     /// <p>The data retrieval policy in JSON format.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<crate::types::DataRetrievalPolicy>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>The data retrieval policy in JSON format.</p>
     pub fn get_policy(&self) -> &::std::option::Option<crate::types::DataRetrievalPolicy> {
         &self.policy
     }
     /// Consumes the builder and constructs a [`SetDataRetrievalPolicyInput`](crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyInput {
-            account_id: self.account_id,
-            policy: self.policy,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyInput {
+                account_id: self.account_id
+                ,
+                policy: self.policy
+                ,
+            }
+        )
     }
 }
+

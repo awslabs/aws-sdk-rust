@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateEvaluationFormInput {
+pub struct UpdateEvaluationFormInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the evaluation form.</p>
@@ -16,19 +16,19 @@ pub struct UpdateEvaluationFormInput {
     /// <p>The description of the evaluation form.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Items that are part of the evaluation form. The total number of sections and questions must not exceed 100 each. Questions must be contained in a section.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>>,
+    pub items: ::std::option::Option<::std::vec::Vec::<crate::types::EvaluationFormItem>>,
     /// <p>A scoring strategy of the evaluation form.</p>
     pub scoring_strategy: ::std::option::Option<crate::types::EvaluationFormScoringStrategy>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl UpdateEvaluationFormInput {
+impl  UpdateEvaluationFormInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn evaluation_form_id(&self) -> ::std::option::Option<&str> {
+    pub fn evaluation_form_id(&self) -> ::std::option::Option<& str> {
         self.evaluation_form_id.as_deref()
     }
     /// <p>A version of the evaluation form to update.</p>
@@ -40,25 +40,26 @@ impl UpdateEvaluationFormInput {
         self.create_new_version
     }
     /// <p>A title of the evaluation form.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The description of the evaluation form.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Items that are part of the evaluation form. The total number of sections and questions must not exceed 100 each. Questions must be contained in a section.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
-    pub fn items(&self) -> &[crate::types::EvaluationFormItem] {
-        self.items.as_deref().unwrap_or_default()
+    pub fn items(&self) -> & [crate::types::EvaluationFormItem] {
+        self.items.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A scoring strategy of the evaluation form.</p>
-    pub fn scoring_strategy(&self) -> ::std::option::Option<&crate::types::EvaluationFormScoringStrategy> {
+    pub fn scoring_strategy(&self) -> ::std::option::Option<& crate::types::EvaluationFormScoringStrategy> {
         self.scoring_strategy.as_ref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -79,7 +80,7 @@ pub struct UpdateEvaluationFormInputBuilder {
     pub(crate) create_new_version: ::std::option::Option<bool>,
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::EvaluationFormItem>>,
     pub(crate) scoring_strategy: ::std::option::Option<crate::types::EvaluationFormScoringStrategy>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
@@ -92,8 +93,7 @@ impl UpdateEvaluationFormInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +107,7 @@ impl UpdateEvaluationFormInputBuilder {
     }
     /// <p>The unique identifier for the evaluation form.</p>
     pub fn set_evaluation_form_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.evaluation_form_id = input;
-        self
+        self.evaluation_form_id = input; self
     }
     /// <p>The unique identifier for the evaluation form.</p>
     pub fn get_evaluation_form_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +121,7 @@ impl UpdateEvaluationFormInputBuilder {
     }
     /// <p>A version of the evaluation form to update.</p>
     pub fn set_evaluation_form_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.evaluation_form_version = input;
-        self
+        self.evaluation_form_version = input; self
     }
     /// <p>A version of the evaluation form to update.</p>
     pub fn get_evaluation_form_version(&self) -> &::std::option::Option<i32> {
@@ -136,8 +134,7 @@ impl UpdateEvaluationFormInputBuilder {
     }
     /// <p>A flag indicating whether the operation must create a new version.</p>
     pub fn set_create_new_version(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.create_new_version = input;
-        self
+        self.create_new_version = input; self
     }
     /// <p>A flag indicating whether the operation must create a new version.</p>
     pub fn get_create_new_version(&self) -> &::std::option::Option<bool> {
@@ -151,8 +148,7 @@ impl UpdateEvaluationFormInputBuilder {
     }
     /// <p>A title of the evaluation form.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>A title of the evaluation form.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,8 +161,7 @@ impl UpdateEvaluationFormInputBuilder {
     }
     /// <p>The description of the evaluation form.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the evaluation form.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -179,17 +174,16 @@ impl UpdateEvaluationFormInputBuilder {
     /// <p>Items that are part of the evaluation form. The total number of sections and questions must not exceed 100 each. Questions must be contained in a section.</p>
     pub fn items(mut self, input: crate::types::EvaluationFormItem) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Items that are part of the evaluation form. The total number of sections and questions must not exceed 100 each. Questions must be contained in a section.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EvaluationFormItem>>) -> Self {
+        self.items = input; self
     }
     /// <p>Items that are part of the evaluation form. The total number of sections and questions must not exceed 100 each. Questions must be contained in a section.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EvaluationFormItem>> {
         &self.items
     }
     /// <p>A scoring strategy of the evaluation form.</p>
@@ -199,8 +193,7 @@ impl UpdateEvaluationFormInputBuilder {
     }
     /// <p>A scoring strategy of the evaluation form.</p>
     pub fn set_scoring_strategy(mut self, input: ::std::option::Option<crate::types::EvaluationFormScoringStrategy>) -> Self {
-        self.scoring_strategy = input;
-        self
+        self.scoring_strategy = input; self
     }
     /// <p>A scoring strategy of the evaluation form.</p>
     pub fn get_scoring_strategy(&self) -> &::std::option::Option<crate::types::EvaluationFormScoringStrategy> {
@@ -213,28 +206,36 @@ impl UpdateEvaluationFormInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateEvaluationFormInput`](crate::operation::update_evaluation_form::UpdateEvaluationFormInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_evaluation_form::UpdateEvaluationFormInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_evaluation_form::UpdateEvaluationFormInput {
-            instance_id: self.instance_id,
-            evaluation_form_id: self.evaluation_form_id,
-            evaluation_form_version: self.evaluation_form_version,
-            create_new_version: self.create_new_version,
-            title: self.title,
-            description: self.description,
-            items: self.items,
-            scoring_strategy: self.scoring_strategy,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_evaluation_form::UpdateEvaluationFormInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_evaluation_form::UpdateEvaluationFormInput {
+                instance_id: self.instance_id
+                ,
+                evaluation_form_id: self.evaluation_form_id
+                ,
+                evaluation_form_version: self.evaluation_form_version
+                ,
+                create_new_version: self.create_new_version
+                ,
+                title: self.title
+                ,
+                description: self.description
+                ,
+                items: self.items
+                ,
+                scoring_strategy: self.scoring_strategy
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

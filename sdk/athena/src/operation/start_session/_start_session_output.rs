@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartSessionOutput {
+pub struct StartSessionOutput  {
     /// <p>The session ID.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the session. A description of each state follows.</p>
@@ -17,9 +17,9 @@ pub struct StartSessionOutput {
     pub state: ::std::option::Option<crate::types::SessionState>,
     _request_id: Option<String>,
 }
-impl StartSessionOutput {
+impl  StartSessionOutput  {
     /// <p>The session ID.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>The state of the session. A description of each state follows.</p>
@@ -31,15 +31,15 @@ impl StartSessionOutput {
     /// <p><code>TERMINATED</code> - The session and its resources are no longer running.</p>
     /// <p><code>DEGRADED</code> - The session has no healthy coordinators.</p>
     /// <p><code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::SessionState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::SessionState> {
         self.state.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartSessionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartSessionOutput {
     /// Creates a new builder-style object to manufacture [`StartSessionOutput`](crate::operation::start_session::StartSessionOutput).
     pub fn builder() -> crate::operation::start_session::builders::StartSessionOutputBuilder {
@@ -63,8 +63,7 @@ impl StartSessionOutputBuilder {
     }
     /// <p>The session ID.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>The session ID.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +92,7 @@ impl StartSessionOutputBuilder {
     /// <p><code>DEGRADED</code> - The session has no healthy coordinators.</p>
     /// <p><code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::SessionState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the session. A description of each state follows.</p>
     /// <p><code>CREATING</code> - The session is being started, including acquiring resources.</p>
@@ -109,20 +107,23 @@ impl StartSessionOutputBuilder {
         &self.state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartSessionOutput`](crate::operation::start_session::StartSessionOutput).
     pub fn build(self) -> crate::operation::start_session::StartSessionOutput {
         crate::operation::start_session::StartSessionOutput {
-            session_id: self.session_id,
-            state: self.state,
+            session_id: self.session_id
+            ,
+            state: self.state
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

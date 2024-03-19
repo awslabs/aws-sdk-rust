@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartMatchmakingOutput {
+pub struct StartMatchmakingOutput  {
     /// <p>Ticket representing the matchmaking request. This object include the information included in the request, ticket status, and match results as generated during the matchmaking process.</p>
     pub matchmaking_ticket: ::std::option::Option<crate::types::MatchmakingTicket>,
     _request_id: Option<String>,
 }
-impl StartMatchmakingOutput {
+impl  StartMatchmakingOutput  {
     /// <p>Ticket representing the matchmaking request. This object include the information included in the request, ticket status, and match results as generated during the matchmaking process.</p>
-    pub fn matchmaking_ticket(&self) -> ::std::option::Option<&crate::types::MatchmakingTicket> {
+    pub fn matchmaking_ticket(&self) -> ::std::option::Option<& crate::types::MatchmakingTicket> {
         self.matchmaking_ticket.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartMatchmakingOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartMatchmakingOutput {
     /// Creates a new builder-style object to manufacture [`StartMatchmakingOutput`](crate::operation::start_matchmaking::StartMatchmakingOutput).
     pub fn builder() -> crate::operation::start_matchmaking::builders::StartMatchmakingOutputBuilder {
@@ -40,27 +40,28 @@ impl StartMatchmakingOutputBuilder {
     }
     /// <p>Ticket representing the matchmaking request. This object include the information included in the request, ticket status, and match results as generated during the matchmaking process.</p>
     pub fn set_matchmaking_ticket(mut self, input: ::std::option::Option<crate::types::MatchmakingTicket>) -> Self {
-        self.matchmaking_ticket = input;
-        self
+        self.matchmaking_ticket = input; self
     }
     /// <p>Ticket representing the matchmaking request. This object include the information included in the request, ticket status, and match results as generated during the matchmaking process.</p>
     pub fn get_matchmaking_ticket(&self) -> &::std::option::Option<crate::types::MatchmakingTicket> {
         &self.matchmaking_ticket
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartMatchmakingOutput`](crate::operation::start_matchmaking::StartMatchmakingOutput).
     pub fn build(self) -> crate::operation::start_matchmaking::StartMatchmakingOutput {
         crate::operation::start_matchmaking::StartMatchmakingOutput {
-            matchmaking_ticket: self.matchmaking_ticket,
+            matchmaking_ticket: self.matchmaking_ticket
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

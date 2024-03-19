@@ -3,13 +3,13 @@
 /// <p>Represents a request to list the receipt rule sets that exist under your Amazon Web Services account. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListReceiptRuleSetsInput {
+pub struct ListReceiptRuleSetsInput  {
     /// <p>A token returned from a previous call to <code>ListReceiptRuleSets</code> to indicate the position in the receipt rule set list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListReceiptRuleSetsInput {
+impl  ListReceiptRuleSetsInput  {
     /// <p>A token returned from a previous call to <code>ListReceiptRuleSets</code> to indicate the position in the receipt rule set list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl ListReceiptRuleSetsInputBuilder {
     }
     /// <p>A token returned from a previous call to <code>ListReceiptRuleSets</code> to indicate the position in the receipt rule set list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token returned from a previous call to <code>ListReceiptRuleSets</code> to indicate the position in the receipt rule set list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListReceiptRuleSetsInput`](crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsInput { next_token: self.next_token })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsInput {
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>A list that contains contacts that have subscribed to a particular topic or topics.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContactList {
+pub struct ContactList  {
     /// <p>The name of the contact list.</p>
     pub contact_list_name: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp noting the last time the contact list was updated.</p>
     pub last_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ContactList {
+impl  ContactList  {
     /// <p>The name of the contact list.</p>
-    pub fn contact_list_name(&self) -> ::std::option::Option<&str> {
+    pub fn contact_list_name(&self) -> ::std::option::Option<& str> {
         self.contact_list_name.as_deref()
     }
     /// <p>A timestamp noting the last time the contact list was updated.</p>
-    pub fn last_updated_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ContactListBuilder {
     }
     /// <p>The name of the contact list.</p>
     pub fn set_contact_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_list_name = input;
-        self
+        self.contact_list_name = input; self
     }
     /// <p>The name of the contact list.</p>
     pub fn get_contact_list_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ContactListBuilder {
     }
     /// <p>A timestamp noting the last time the contact list was updated.</p>
     pub fn set_last_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_timestamp = input;
-        self
+        self.last_updated_timestamp = input; self
     }
     /// <p>A timestamp noting the last time the contact list was updated.</p>
     pub fn get_last_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -65,8 +63,11 @@ impl ContactListBuilder {
     /// Consumes the builder and constructs a [`ContactList`](crate::types::ContactList).
     pub fn build(self) -> crate::types::ContactList {
         crate::types::ContactList {
-            contact_list_name: self.contact_list_name,
-            last_updated_timestamp: self.last_updated_timestamp,
+            contact_list_name: self.contact_list_name
+            ,
+            last_updated_timestamp: self.last_updated_timestamp
+            ,
         }
     }
 }
+

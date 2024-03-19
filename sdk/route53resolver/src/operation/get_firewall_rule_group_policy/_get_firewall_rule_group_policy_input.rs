@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFirewallRuleGroupPolicyInput {
+pub struct GetFirewallRuleGroupPolicyInput  {
     /// <p>The ARN (Amazon Resource Name) for the rule group.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl GetFirewallRuleGroupPolicyInput {
+impl  GetFirewallRuleGroupPolicyInput  {
     /// <p>The ARN (Amazon Resource Name) for the rule group.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetFirewallRuleGroupPolicyInputBuilder {
     }
     /// <p>The ARN (Amazon Resource Name) for the rule group.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN (Amazon Resource Name) for the rule group.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
     /// Consumes the builder and constructs a [`GetFirewallRuleGroupPolicyInput`](crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyInput { arn: self.arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyInput {
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

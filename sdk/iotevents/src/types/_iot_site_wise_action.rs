@@ -17,7 +17,7 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IotSiteWiseAction {
+pub struct IotSiteWiseAction  {
     /// <p>A unique identifier for this entry. You can use the entry ID to track which data entry causes an error in case of failure. The default is a new unique identifier.</p>
     pub entry_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the asset that has the specified property.</p>
@@ -29,25 +29,25 @@ pub struct IotSiteWiseAction {
     /// <p>The value to send to the asset property. This value contains timestamp, quality, and value (TQV) information.</p>
     pub property_value: ::std::option::Option<crate::types::AssetPropertyValue>,
 }
-impl IotSiteWiseAction {
+impl  IotSiteWiseAction  {
     /// <p>A unique identifier for this entry. You can use the entry ID to track which data entry causes an error in case of failure. The default is a new unique identifier.</p>
-    pub fn entry_id(&self) -> ::std::option::Option<&str> {
+    pub fn entry_id(&self) -> ::std::option::Option<& str> {
         self.entry_id.as_deref()
     }
     /// <p>The ID of the asset that has the specified property.</p>
-    pub fn asset_id(&self) -> ::std::option::Option<&str> {
+    pub fn asset_id(&self) -> ::std::option::Option<& str> {
         self.asset_id.as_deref()
     }
     /// <p>The ID of the asset property.</p>
-    pub fn property_id(&self) -> ::std::option::Option<&str> {
+    pub fn property_id(&self) -> ::std::option::Option<& str> {
         self.property_id.as_deref()
     }
     /// <p>The alias of the asset property.</p>
-    pub fn property_alias(&self) -> ::std::option::Option<&str> {
+    pub fn property_alias(&self) -> ::std::option::Option<& str> {
         self.property_alias.as_deref()
     }
     /// <p>The value to send to the asset property. This value contains timestamp, quality, and value (TQV) information.</p>
-    pub fn property_value(&self) -> ::std::option::Option<&crate::types::AssetPropertyValue> {
+    pub fn property_value(&self) -> ::std::option::Option<& crate::types::AssetPropertyValue> {
         self.property_value.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl IotSiteWiseActionBuilder {
     }
     /// <p>A unique identifier for this entry. You can use the entry ID to track which data entry causes an error in case of failure. The default is a new unique identifier.</p>
     pub fn set_entry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entry_id = input;
-        self
+        self.entry_id = input; self
     }
     /// <p>A unique identifier for this entry. You can use the entry ID to track which data entry causes an error in case of failure. The default is a new unique identifier.</p>
     pub fn get_entry_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl IotSiteWiseActionBuilder {
     }
     /// <p>The ID of the asset that has the specified property.</p>
     pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_id = input;
-        self
+        self.asset_id = input; self
     }
     /// <p>The ID of the asset that has the specified property.</p>
     pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl IotSiteWiseActionBuilder {
     }
     /// <p>The ID of the asset property.</p>
     pub fn set_property_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.property_id = input;
-        self
+        self.property_id = input; self
     }
     /// <p>The ID of the asset property.</p>
     pub fn get_property_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl IotSiteWiseActionBuilder {
     }
     /// <p>The alias of the asset property.</p>
     pub fn set_property_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.property_alias = input;
-        self
+        self.property_alias = input; self
     }
     /// <p>The alias of the asset property.</p>
     pub fn get_property_alias(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl IotSiteWiseActionBuilder {
     }
     /// <p>The value to send to the asset property. This value contains timestamp, quality, and value (TQV) information.</p>
     pub fn set_property_value(mut self, input: ::std::option::Option<crate::types::AssetPropertyValue>) -> Self {
-        self.property_value = input;
-        self
+        self.property_value = input; self
     }
     /// <p>The value to send to the asset property. This value contains timestamp, quality, and value (TQV) information.</p>
     pub fn get_property_value(&self) -> &::std::option::Option<crate::types::AssetPropertyValue> {
@@ -142,11 +137,17 @@ impl IotSiteWiseActionBuilder {
     /// Consumes the builder and constructs a [`IotSiteWiseAction`](crate::types::IotSiteWiseAction).
     pub fn build(self) -> crate::types::IotSiteWiseAction {
         crate::types::IotSiteWiseAction {
-            entry_id: self.entry_id,
-            asset_id: self.asset_id,
-            property_id: self.property_id,
-            property_alias: self.property_alias,
-            property_value: self.property_value,
+            entry_id: self.entry_id
+            ,
+            asset_id: self.asset_id
+            ,
+            property_id: self.property_id
+            ,
+            property_alias: self.property_alias
+            ,
+            property_value: self.property_value
+            ,
         }
     }
 }
+

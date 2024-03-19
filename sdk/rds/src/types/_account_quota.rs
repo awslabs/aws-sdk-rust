@@ -44,7 +44,7 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Limits.html">Quotas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_Limits.html">Quotas for Amazon Aurora</a> in the <i>Amazon Aurora User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccountQuota {
+pub struct AccountQuota  {
     /// <p>The name of the Amazon RDS quota for this Amazon Web Services account.</p>
     pub account_quota_name: ::std::option::Option<::std::string::String>,
     /// <p>The amount currently used toward the quota maximum.</p>
@@ -52,9 +52,9 @@ pub struct AccountQuota {
     /// <p>The maximum allowed value for the quota.</p>
     pub max: ::std::option::Option<i64>,
 }
-impl AccountQuota {
+impl  AccountQuota  {
     /// <p>The name of the Amazon RDS quota for this Amazon Web Services account.</p>
-    pub fn account_quota_name(&self) -> ::std::option::Option<&str> {
+    pub fn account_quota_name(&self) -> ::std::option::Option<& str> {
         self.account_quota_name.as_deref()
     }
     /// <p>The amount currently used toward the quota maximum.</p>
@@ -89,8 +89,7 @@ impl AccountQuotaBuilder {
     }
     /// <p>The name of the Amazon RDS quota for this Amazon Web Services account.</p>
     pub fn set_account_quota_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_quota_name = input;
-        self
+        self.account_quota_name = input; self
     }
     /// <p>The name of the Amazon RDS quota for this Amazon Web Services account.</p>
     pub fn get_account_quota_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl AccountQuotaBuilder {
     }
     /// <p>The amount currently used toward the quota maximum.</p>
     pub fn set_used(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.used = input;
-        self
+        self.used = input; self
     }
     /// <p>The amount currently used toward the quota maximum.</p>
     pub fn get_used(&self) -> &::std::option::Option<i64> {
@@ -117,8 +115,7 @@ impl AccountQuotaBuilder {
     }
     /// <p>The maximum allowed value for the quota.</p>
     pub fn set_max(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.max = input;
-        self
+        self.max = input; self
     }
     /// <p>The maximum allowed value for the quota.</p>
     pub fn get_max(&self) -> &::std::option::Option<i64> {
@@ -127,9 +124,13 @@ impl AccountQuotaBuilder {
     /// Consumes the builder and constructs a [`AccountQuota`](crate::types::AccountQuota).
     pub fn build(self) -> crate::types::AccountQuota {
         crate::types::AccountQuota {
-            account_quota_name: self.account_quota_name,
-            used: self.used,
-            max: self.max,
+            account_quota_name: self.account_quota_name
+            ,
+            used: self.used
+            ,
+            max: self.max
+            ,
         }
     }
 }
+

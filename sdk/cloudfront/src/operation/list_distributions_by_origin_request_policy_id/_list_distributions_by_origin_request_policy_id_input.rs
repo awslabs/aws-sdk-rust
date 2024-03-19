@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDistributionsByOriginRequestPolicyIdInput {
+pub struct ListDistributionsByOriginRequestPolicyIdInput  {
     /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of distribution IDs that you want in the response.</p>
@@ -10,9 +10,9 @@ pub struct ListDistributionsByOriginRequestPolicyIdInput {
     /// <p>The ID of the origin request policy whose associated distribution IDs you want to list.</p>
     pub origin_request_policy_id: ::std::option::Option<::std::string::String>,
 }
-impl ListDistributionsByOriginRequestPolicyIdInput {
+impl  ListDistributionsByOriginRequestPolicyIdInput  {
     /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of distribution IDs that you want in the response.</p>
@@ -20,14 +20,13 @@ impl ListDistributionsByOriginRequestPolicyIdInput {
         self.max_items
     }
     /// <p>The ID of the origin request policy whose associated distribution IDs you want to list.</p>
-    pub fn origin_request_policy_id(&self) -> ::std::option::Option<&str> {
+    pub fn origin_request_policy_id(&self) -> ::std::option::Option<& str> {
         self.origin_request_policy_id.as_deref()
     }
 }
 impl ListDistributionsByOriginRequestPolicyIdInput {
     /// Creates a new builder-style object to manufacture [`ListDistributionsByOriginRequestPolicyIdInput`](crate::operation::list_distributions_by_origin_request_policy_id::ListDistributionsByOriginRequestPolicyIdInput).
-    pub fn builder(
-    ) -> crate::operation::list_distributions_by_origin_request_policy_id::builders::ListDistributionsByOriginRequestPolicyIdInputBuilder {
+    pub fn builder() -> crate::operation::list_distributions_by_origin_request_policy_id::builders::ListDistributionsByOriginRequestPolicyIdInputBuilder {
         crate::operation::list_distributions_by_origin_request_policy_id::builders::ListDistributionsByOriginRequestPolicyIdInputBuilder::default()
     }
 }
@@ -48,8 +47,7 @@ impl ListDistributionsByOriginRequestPolicyIdInputBuilder {
     }
     /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +60,7 @@ impl ListDistributionsByOriginRequestPolicyIdInputBuilder {
     }
     /// <p>The maximum number of distribution IDs that you want in the response.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>The maximum number of distribution IDs that you want in the response.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
@@ -77,26 +74,24 @@ impl ListDistributionsByOriginRequestPolicyIdInputBuilder {
     }
     /// <p>The ID of the origin request policy whose associated distribution IDs you want to list.</p>
     pub fn set_origin_request_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.origin_request_policy_id = input;
-        self
+        self.origin_request_policy_id = input; self
     }
     /// <p>The ID of the origin request policy whose associated distribution IDs you want to list.</p>
     pub fn get_origin_request_policy_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.origin_request_policy_id
     }
     /// Consumes the builder and constructs a [`ListDistributionsByOriginRequestPolicyIdInput`](crate::operation::list_distributions_by_origin_request_policy_id::ListDistributionsByOriginRequestPolicyIdInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_distributions_by_origin_request_policy_id::ListDistributionsByOriginRequestPolicyIdInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_distributions_by_origin_request_policy_id::ListDistributionsByOriginRequestPolicyIdInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_distributions_by_origin_request_policy_id::ListDistributionsByOriginRequestPolicyIdInput {
-                marker: self.marker,
-                max_items: self.max_items,
-                origin_request_policy_id: self.origin_request_policy_id,
-            },
+                marker: self.marker
+                ,
+                max_items: self.max_items
+                ,
+                origin_request_policy_id: self.origin_request_policy_id
+                ,
+            }
         )
     }
 }
+

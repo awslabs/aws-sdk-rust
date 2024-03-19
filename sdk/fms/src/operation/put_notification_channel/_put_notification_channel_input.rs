@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutNotificationChannelInput {
+pub struct PutNotificationChannelInput  {
     /// <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from Firewall Manager.</p>
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record Firewall Manager activity.</p>
     pub sns_role_name: ::std::option::Option<::std::string::String>,
 }
-impl PutNotificationChannelInput {
+impl  PutNotificationChannelInput  {
     /// <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from Firewall Manager.</p>
-    pub fn sns_topic_arn(&self) -> ::std::option::Option<&str> {
+    pub fn sns_topic_arn(&self) -> ::std::option::Option<& str> {
         self.sns_topic_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record Firewall Manager activity.</p>
-    pub fn sns_role_name(&self) -> ::std::option::Option<&str> {
+    pub fn sns_role_name(&self) -> ::std::option::Option<& str> {
         self.sns_role_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl PutNotificationChannelInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from Firewall Manager.</p>
     pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sns_topic_arn = input;
-        self
+        self.sns_topic_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from Firewall Manager.</p>
     pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl PutNotificationChannelInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record Firewall Manager activity.</p>
     pub fn set_sns_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sns_role_name = input;
-        self
+        self.sns_role_name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record Firewall Manager activity.</p>
     pub fn get_sns_role_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.sns_role_name
     }
     /// Consumes the builder and constructs a [`PutNotificationChannelInput`](crate::operation::put_notification_channel::PutNotificationChannelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_notification_channel::PutNotificationChannelInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_notification_channel::PutNotificationChannelInput {
-            sns_topic_arn: self.sns_topic_arn,
-            sns_role_name: self.sns_role_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_notification_channel::PutNotificationChannelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_notification_channel::PutNotificationChannelInput {
+                sns_topic_arn: self.sns_topic_arn
+                ,
+                sns_role_name: self.sns_role_name
+                ,
+            }
+        )
     }
 }
+

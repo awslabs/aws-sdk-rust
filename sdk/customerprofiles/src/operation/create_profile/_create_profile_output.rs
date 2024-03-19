@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateProfileOutput {
+pub struct CreateProfileOutput  {
     /// <p>The unique identifier of a customer profile.</p>
     pub profile_id: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CreateProfileOutput {
+impl  CreateProfileOutput  {
     /// <p>The unique identifier of a customer profile.</p>
-    pub fn profile_id(&self) -> &str {
-        use std::ops::Deref;
-        self.profile_id.deref()
+    pub fn profile_id(&self) -> & str {
+        use std::ops::Deref; self.profile_id.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateProfileOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateProfileOutput {
     /// Creates a new builder-style object to manufacture [`CreateProfileOutput`](crate::operation::create_profile::CreateProfileOutput).
     pub fn builder() -> crate::operation::create_profile::builders::CreateProfileOutputBuilder {
@@ -42,36 +41,35 @@ impl CreateProfileOutputBuilder {
     }
     /// <p>The unique identifier of a customer profile.</p>
     pub fn set_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_id = input;
-        self
+        self.profile_id = input; self
     }
     /// <p>The unique identifier of a customer profile.</p>
     pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.profile_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateProfileOutput`](crate::operation::create_profile::CreateProfileOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`profile_id`](crate::operation::create_profile::builders::CreateProfileOutputBuilder::profile_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_profile::CreateProfileOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_profile::CreateProfileOutput {
-            profile_id: self.profile_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "profile_id",
-                    "profile_id was not specified but it is required when building CreateProfileOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_profile::CreateProfileOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_profile::CreateProfileOutput {
+                profile_id: self.profile_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("profile_id", "profile_id was not specified but it is required when building CreateProfileOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

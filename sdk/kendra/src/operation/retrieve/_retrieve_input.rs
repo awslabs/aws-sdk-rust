@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RetrieveInput {
+pub struct RetrieveInput  {
     /// <p>The identifier of the index to retrieve relevant passages for the search.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>The input query text to retrieve relevant passages for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries.</p>
@@ -11,11 +11,11 @@ pub struct RetrieveInput {
     /// <p>The <code>AttributeFilter</code> parameter means you can create a set of filtering rules that a document must satisfy to be included in the query results.</p>
     pub attribute_filter: ::std::option::Option<crate::types::AttributeFilter>,
     /// <p>A list of document fields/attributes to include in the response. You can limit the response to include certain document fields. By default, all document fields are included in the response.</p>
-    pub requested_document_attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub requested_document_attributes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Overrides relevance tuning configurations of fields/attributes set at the index level.</p>
     /// <p>If you use this API to override the relevance tuning configured at the index level, but there is no relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.</p>
     /// <p>If there is relevance tuning configured for fields at the index level, and you use this API to override only some of these fields, then for the fields you did not override, the importance is set to 1.</p>
-    pub document_relevance_override_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DocumentRelevanceConfiguration>>,
+    pub document_relevance_override_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentRelevanceConfiguration>>,
     /// <p>Retrieved relevant passages are returned in pages the size of the <code>PageSize</code> parameter. By default, Amazon Kendra returns the first page of results. Use this parameter to get result pages after the first one.</p>
     pub page_number: ::std::option::Option<i32>,
     /// <p>Sets the number of retrieved relevant passages that are returned in each page of results. The default page size is 10. The maximum number of results returned is 100. If you ask for more than 100 results, only 100 are returned.</p>
@@ -23,33 +23,35 @@ pub struct RetrieveInput {
     /// <p>The user context token or user and group information.</p>
     pub user_context: ::std::option::Option<crate::types::UserContext>,
 }
-impl RetrieveInput {
+impl  RetrieveInput  {
     /// <p>The identifier of the index to retrieve relevant passages for the search.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>The input query text to retrieve relevant passages for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries.</p>
-    pub fn query_text(&self) -> ::std::option::Option<&str> {
+    pub fn query_text(&self) -> ::std::option::Option<& str> {
         self.query_text.as_deref()
     }
     /// <p>Filters search results by document fields/attributes. You can only provide one attribute filter; however, the <code>AndAllFilters</code>, <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list of other filters.</p>
     /// <p>The <code>AttributeFilter</code> parameter means you can create a set of filtering rules that a document must satisfy to be included in the query results.</p>
-    pub fn attribute_filter(&self) -> ::std::option::Option<&crate::types::AttributeFilter> {
+    pub fn attribute_filter(&self) -> ::std::option::Option<& crate::types::AttributeFilter> {
         self.attribute_filter.as_ref()
     }
     /// <p>A list of document fields/attributes to include in the response. You can limit the response to include certain document fields. By default, all document fields are included in the response.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.requested_document_attributes.is_none()`.
-    pub fn requested_document_attributes(&self) -> &[::std::string::String] {
-        self.requested_document_attributes.as_deref().unwrap_or_default()
+    pub fn requested_document_attributes(&self) -> & [::std::string::String] {
+        self.requested_document_attributes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Overrides relevance tuning configurations of fields/attributes set at the index level.</p>
     /// <p>If you use this API to override the relevance tuning configured at the index level, but there is no relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.</p>
     /// <p>If there is relevance tuning configured for fields at the index level, and you use this API to override only some of these fields, then for the fields you did not override, the importance is set to 1.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.document_relevance_override_configurations.is_none()`.
-    pub fn document_relevance_override_configurations(&self) -> &[crate::types::DocumentRelevanceConfiguration] {
-        self.document_relevance_override_configurations.as_deref().unwrap_or_default()
+    pub fn document_relevance_override_configurations(&self) -> & [crate::types::DocumentRelevanceConfiguration] {
+        self.document_relevance_override_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Retrieved relevant passages are returned in pages the size of the <code>PageSize</code> parameter. By default, Amazon Kendra returns the first page of results. Use this parameter to get result pages after the first one.</p>
     pub fn page_number(&self) -> ::std::option::Option<i32> {
@@ -60,7 +62,7 @@ impl RetrieveInput {
         self.page_size
     }
     /// <p>The user context token or user and group information.</p>
-    pub fn user_context(&self) -> ::std::option::Option<&crate::types::UserContext> {
+    pub fn user_context(&self) -> ::std::option::Option<& crate::types::UserContext> {
         self.user_context.as_ref()
     }
 }
@@ -78,8 +80,8 @@ pub struct RetrieveInputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
     pub(crate) query_text: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_filter: ::std::option::Option<crate::types::AttributeFilter>,
-    pub(crate) requested_document_attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) document_relevance_override_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DocumentRelevanceConfiguration>>,
+    pub(crate) requested_document_attributes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) document_relevance_override_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentRelevanceConfiguration>>,
     pub(crate) page_number: ::std::option::Option<i32>,
     pub(crate) page_size: ::std::option::Option<i32>,
     pub(crate) user_context: ::std::option::Option<crate::types::UserContext>,
@@ -93,8 +95,7 @@ impl RetrieveInputBuilder {
     }
     /// <p>The identifier of the index to retrieve relevant passages for the search.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>The identifier of the index to retrieve relevant passages for the search.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +109,7 @@ impl RetrieveInputBuilder {
     }
     /// <p>The input query text to retrieve relevant passages for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries.</p>
     pub fn set_query_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_text = input;
-        self
+        self.query_text = input; self
     }
     /// <p>The input query text to retrieve relevant passages for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries.</p>
     pub fn get_query_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +124,7 @@ impl RetrieveInputBuilder {
     /// <p>Filters search results by document fields/attributes. You can only provide one attribute filter; however, the <code>AndAllFilters</code>, <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list of other filters.</p>
     /// <p>The <code>AttributeFilter</code> parameter means you can create a set of filtering rules that a document must satisfy to be included in the query results.</p>
     pub fn set_attribute_filter(mut self, input: ::std::option::Option<crate::types::AttributeFilter>) -> Self {
-        self.attribute_filter = input;
-        self
+        self.attribute_filter = input; self
     }
     /// <p>Filters search results by document fields/attributes. You can only provide one attribute filter; however, the <code>AndAllFilters</code>, <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list of other filters.</p>
     /// <p>The <code>AttributeFilter</code> parameter means you can create a set of filtering rules that a document must satisfy to be included in the query results.</p>
@@ -139,17 +138,16 @@ impl RetrieveInputBuilder {
     /// <p>A list of document fields/attributes to include in the response. You can limit the response to include certain document fields. By default, all document fields are included in the response.</p>
     pub fn requested_document_attributes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.requested_document_attributes.unwrap_or_default();
-        v.push(input.into());
-        self.requested_document_attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.requested_document_attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of document fields/attributes to include in the response. You can limit the response to include certain document fields. By default, all document fields are included in the response.</p>
-    pub fn set_requested_document_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.requested_document_attributes = input;
-        self
+    pub fn set_requested_document_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.requested_document_attributes = input; self
     }
     /// <p>A list of document fields/attributes to include in the response. You can limit the response to include certain document fields. By default, all document fields are included in the response.</p>
-    pub fn get_requested_document_attributes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_requested_document_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.requested_document_attributes
     }
     /// Appends an item to `document_relevance_override_configurations`.
@@ -161,26 +159,20 @@ impl RetrieveInputBuilder {
     /// <p>If there is relevance tuning configured for fields at the index level, and you use this API to override only some of these fields, then for the fields you did not override, the importance is set to 1.</p>
     pub fn document_relevance_override_configurations(mut self, input: crate::types::DocumentRelevanceConfiguration) -> Self {
         let mut v = self.document_relevance_override_configurations.unwrap_or_default();
-        v.push(input);
-        self.document_relevance_override_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.document_relevance_override_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Overrides relevance tuning configurations of fields/attributes set at the index level.</p>
     /// <p>If you use this API to override the relevance tuning configured at the index level, but there is no relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.</p>
     /// <p>If there is relevance tuning configured for fields at the index level, and you use this API to override only some of these fields, then for the fields you did not override, the importance is set to 1.</p>
-    pub fn set_document_relevance_override_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentRelevanceConfiguration>>,
-    ) -> Self {
-        self.document_relevance_override_configurations = input;
-        self
+    pub fn set_document_relevance_override_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentRelevanceConfiguration>>) -> Self {
+        self.document_relevance_override_configurations = input; self
     }
     /// <p>Overrides relevance tuning configurations of fields/attributes set at the index level.</p>
     /// <p>If you use this API to override the relevance tuning configured at the index level, but there is no relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.</p>
     /// <p>If there is relevance tuning configured for fields at the index level, and you use this API to override only some of these fields, then for the fields you did not override, the importance is set to 1.</p>
-    pub fn get_document_relevance_override_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentRelevanceConfiguration>> {
+    pub fn get_document_relevance_override_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DocumentRelevanceConfiguration>> {
         &self.document_relevance_override_configurations
     }
     /// <p>Retrieved relevant passages are returned in pages the size of the <code>PageSize</code> parameter. By default, Amazon Kendra returns the first page of results. Use this parameter to get result pages after the first one.</p>
@@ -190,8 +182,7 @@ impl RetrieveInputBuilder {
     }
     /// <p>Retrieved relevant passages are returned in pages the size of the <code>PageSize</code> parameter. By default, Amazon Kendra returns the first page of results. Use this parameter to get result pages after the first one.</p>
     pub fn set_page_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_number = input;
-        self
+        self.page_number = input; self
     }
     /// <p>Retrieved relevant passages are returned in pages the size of the <code>PageSize</code> parameter. By default, Amazon Kendra returns the first page of results. Use this parameter to get result pages after the first one.</p>
     pub fn get_page_number(&self) -> &::std::option::Option<i32> {
@@ -204,8 +195,7 @@ impl RetrieveInputBuilder {
     }
     /// <p>Sets the number of retrieved relevant passages that are returned in each page of results. The default page size is 10. The maximum number of results returned is 100. If you ask for more than 100 results, only 100 are returned.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// <p>Sets the number of retrieved relevant passages that are returned in each page of results. The default page size is 10. The maximum number of results returned is 100. If you ask for more than 100 results, only 100 are returned.</p>
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
@@ -218,8 +208,7 @@ impl RetrieveInputBuilder {
     }
     /// <p>The user context token or user and group information.</p>
     pub fn set_user_context(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
-        self.user_context = input;
-        self
+        self.user_context = input; self
     }
     /// <p>The user context token or user and group information.</p>
     pub fn get_user_context(&self) -> &::std::option::Option<crate::types::UserContext> {
@@ -227,15 +216,26 @@ impl RetrieveInputBuilder {
     }
     /// Consumes the builder and constructs a [`RetrieveInput`](crate::operation::retrieve::RetrieveInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::retrieve::RetrieveInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::retrieve::RetrieveInput {
-            index_id: self.index_id,
-            query_text: self.query_text,
-            attribute_filter: self.attribute_filter,
-            requested_document_attributes: self.requested_document_attributes,
-            document_relevance_override_configurations: self.document_relevance_override_configurations,
-            page_number: self.page_number,
-            page_size: self.page_size,
-            user_context: self.user_context,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::retrieve::RetrieveInput {
+                index_id: self.index_id
+                ,
+                query_text: self.query_text
+                ,
+                attribute_filter: self.attribute_filter
+                ,
+                requested_document_attributes: self.requested_document_attributes
+                ,
+                document_relevance_override_configurations: self.document_relevance_override_configurations
+                ,
+                page_number: self.page_number
+                ,
+                page_size: self.page_size
+                ,
+                user_context: self.user_context
+                ,
+            }
+        )
     }
 }
+

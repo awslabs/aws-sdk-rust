@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDatabasesOutput {
+pub struct GetDatabasesOutput  {
     /// <p>A list of <code>Database</code> objects from the specified catalog.</p>
-    pub database_list: ::std::vec::Vec<crate::types::Database>,
+    pub database_list: ::std::vec::Vec::<crate::types::Database>,
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetDatabasesOutput {
+impl  GetDatabasesOutput  {
     /// <p>A list of <code>Database</code> objects from the specified catalog.</p>
-    pub fn database_list(&self) -> &[crate::types::Database] {
-        use std::ops::Deref;
-        self.database_list.deref()
+    pub fn database_list(&self) -> & [crate::types::Database] {
+        use std::ops::Deref; self.database_list.deref()
     }
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDatabasesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDatabasesOutput {
     /// Creates a new builder-style object to manufacture [`GetDatabasesOutput`](crate::operation::get_databases::GetDatabasesOutput).
     pub fn builder() -> crate::operation::get_databases::builders::GetDatabasesOutputBuilder {
@@ -36,7 +35,7 @@ impl GetDatabasesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDatabasesOutputBuilder {
-    pub(crate) database_list: ::std::option::Option<::std::vec::Vec<crate::types::Database>>,
+    pub(crate) database_list: ::std::option::Option<::std::vec::Vec::<crate::types::Database>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl GetDatabasesOutputBuilder {
     /// <p>A list of <code>Database</code> objects from the specified catalog.</p>
     pub fn database_list(mut self, input: crate::types::Database) -> Self {
         let mut v = self.database_list.unwrap_or_default();
-        v.push(input);
-        self.database_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.database_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>Database</code> objects from the specified catalog.</p>
-    pub fn set_database_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Database>>) -> Self {
-        self.database_list = input;
-        self
+    pub fn set_database_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Database>>) -> Self {
+        self.database_list = input; self
     }
     /// <p>A list of <code>Database</code> objects from the specified catalog.</p>
-    pub fn get_database_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Database>> {
+    pub fn get_database_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Database>> {
         &self.database_list
     }
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
@@ -68,37 +66,37 @@ impl GetDatabasesOutputBuilder {
     }
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDatabasesOutput`](crate::operation::get_databases::GetDatabasesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`database_list`](crate::operation::get_databases::builders::GetDatabasesOutputBuilder::database_list)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_databases::GetDatabasesOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_databases::GetDatabasesOutput {
-            database_list: self.database_list.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "database_list",
-                    "database_list was not specified but it is required when building GetDatabasesOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_databases::GetDatabasesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_databases::GetDatabasesOutput {
+                database_list: self.database_list
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("database_list", "database_list was not specified but it is required when building GetDatabasesOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

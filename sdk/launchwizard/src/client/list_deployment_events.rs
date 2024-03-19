@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDeploymentEvents`](crate::operation::list_deployment_events::builders::ListDeploymentEventsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_deployment_events::builders::ListDeploymentEventsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`deployment_id(impl Into<String>)`](crate::operation::list_deployment_events::builders::ListDeploymentEventsFluentBuilder::deployment_id) / [`set_deployment_id(Option<String>)`](crate::operation::list_deployment_events::builders::ListDeploymentEventsFluentBuilder::set_deployment_id):<br>required: **true**<br><p>The ID of the deployment.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_deployment_events::builders::ListDeploymentEventsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_deployment_events::builders::ListDeploymentEventsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_deployment_events::builders::ListDeploymentEventsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_deployment_events::builders::ListDeploymentEventsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p><br>
-    /// - On success, responds with [`ListDeploymentEventsOutput`](crate::operation::list_deployment_events::ListDeploymentEventsOutput) with field(s):
+                            /// - On success, responds with [`ListDeploymentEventsOutput`](crate::operation::list_deployment_events::ListDeploymentEventsOutput) with field(s):
     ///   - [`deployment_events(Option<Vec::<DeploymentEventDataSummary>>)`](crate::operation::list_deployment_events::ListDeploymentEventsOutput::deployment_events): <p>Lists the deployment events.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_deployment_events::ListDeploymentEventsOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    /// - On failure, responds with [`SdkError<ListDeploymentEventsError>`](crate::operation::list_deployment_events::ListDeploymentEventsError)
+                            /// - On failure, responds with [`SdkError<ListDeploymentEventsError>`](crate::operation::list_deployment_events::ListDeploymentEventsError)
     pub fn list_deployment_events(&self) -> crate::operation::list_deployment_events::builders::ListDeploymentEventsFluentBuilder {
-        crate::operation::list_deployment_events::builders::ListDeploymentEventsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_deployment_events::builders::ListDeploymentEventsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

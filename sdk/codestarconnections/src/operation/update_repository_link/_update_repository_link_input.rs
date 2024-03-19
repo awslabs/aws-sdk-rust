@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRepositoryLinkInput {
+pub struct UpdateRepositoryLinkInput  {
     /// <p>The Amazon Resource Name (ARN) of the connection for the repository link to be updated. The updated connection ARN must have the same providerType (such as GitHub) as the original connection ARN for the repo link.</p>
     pub connection_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the encryption key for the repository link to be updated.</p>
@@ -10,17 +10,17 @@ pub struct UpdateRepositoryLinkInput {
     /// <p>The ID of the repository link to be updated.</p>
     pub repository_link_id: ::std::option::Option<::std::string::String>,
 }
-impl UpdateRepositoryLinkInput {
+impl  UpdateRepositoryLinkInput  {
     /// <p>The Amazon Resource Name (ARN) of the connection for the repository link to be updated. The updated connection ARN must have the same providerType (such as GitHub) as the original connection ARN for the repo link.</p>
-    pub fn connection_arn(&self) -> ::std::option::Option<&str> {
+    pub fn connection_arn(&self) -> ::std::option::Option<& str> {
         self.connection_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the encryption key for the repository link to be updated.</p>
-    pub fn encryption_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn encryption_key_arn(&self) -> ::std::option::Option<& str> {
         self.encryption_key_arn.as_deref()
     }
     /// <p>The ID of the repository link to be updated.</p>
-    pub fn repository_link_id(&self) -> ::std::option::Option<&str> {
+    pub fn repository_link_id(&self) -> ::std::option::Option<& str> {
         self.repository_link_id.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl UpdateRepositoryLinkInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the connection for the repository link to be updated. The updated connection ARN must have the same providerType (such as GitHub) as the original connection ARN for the repo link.</p>
     pub fn set_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_arn = input;
-        self
+        self.connection_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the connection for the repository link to be updated. The updated connection ARN must have the same providerType (such as GitHub) as the original connection ARN for the repo link.</p>
     pub fn get_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl UpdateRepositoryLinkInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the encryption key for the repository link to be updated.</p>
     pub fn set_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.encryption_key_arn = input;
-        self
+        self.encryption_key_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the encryption key for the repository link to be updated.</p>
     pub fn get_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,22 +74,24 @@ impl UpdateRepositoryLinkInputBuilder {
     }
     /// <p>The ID of the repository link to be updated.</p>
     pub fn set_repository_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_link_id = input;
-        self
+        self.repository_link_id = input; self
     }
     /// <p>The ID of the repository link to be updated.</p>
     pub fn get_repository_link_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.repository_link_id
     }
     /// Consumes the builder and constructs a [`UpdateRepositoryLinkInput`](crate::operation::update_repository_link::UpdateRepositoryLinkInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_repository_link::UpdateRepositoryLinkInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_repository_link::UpdateRepositoryLinkInput {
-            connection_arn: self.connection_arn,
-            encryption_key_arn: self.encryption_key_arn,
-            repository_link_id: self.repository_link_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_repository_link::UpdateRepositoryLinkInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_repository_link::UpdateRepositoryLinkInput {
+                connection_arn: self.connection_arn
+                ,
+                encryption_key_arn: self.encryption_key_arn
+                ,
+                repository_link_id: self.repository_link_id
+                ,
+            }
+        )
     }
 }
+

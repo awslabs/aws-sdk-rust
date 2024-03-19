@@ -3,17 +3,16 @@
 /// <p>For Amazon Chime SDK Voice Connector groups, the Amazon Chime SDK Voice Connectors to which you route inbound calls. Includes priority configuration settings. Limit: 3 VoiceConnectorItems per Voice Connector group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VoiceConnectorItem {
+pub struct VoiceConnectorItem  {
     /// <p>The Voice Connector ID.</p>
     pub voice_connector_id: ::std::string::String,
     /// <p>The priority setting of a Voice Connector item. Calls are routed to hosts in priority order, with 1 as the highest priority. When hosts have equal priority, the system distributes calls among them based on their relative weight.</p>
     pub priority: i32,
 }
-impl VoiceConnectorItem {
+impl  VoiceConnectorItem  {
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(&self) -> &str {
-        use std::ops::Deref;
-        self.voice_connector_id.deref()
+    pub fn voice_connector_id(&self) -> & str {
+        use std::ops::Deref; self.voice_connector_id.deref()
     }
     /// <p>The priority setting of a Voice Connector item. Calls are routed to hosts in priority order, with 1 as the highest priority. When hosts have equal priority, the system distributes calls among them based on their relative weight.</p>
     pub fn priority(&self) -> i32 {
@@ -43,8 +42,7 @@ impl VoiceConnectorItemBuilder {
     }
     /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.voice_connector_id = input;
-        self
+        self.voice_connector_id = input; self
     }
     /// <p>The Voice Connector ID.</p>
     pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl VoiceConnectorItemBuilder {
     }
     /// <p>The priority setting of a Voice Connector item. Calls are routed to hosts in priority order, with 1 as the highest priority. When hosts have equal priority, the system distributes calls among them based on their relative weight.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// <p>The priority setting of a Voice Connector item. Calls are routed to hosts in priority order, with 1 as the highest priority. When hosts have equal priority, the system distributes calls among them based on their relative weight.</p>
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
@@ -70,19 +67,20 @@ impl VoiceConnectorItemBuilder {
     /// - [`voice_connector_id`](crate::types::builders::VoiceConnectorItemBuilder::voice_connector_id)
     /// - [`priority`](crate::types::builders::VoiceConnectorItemBuilder::priority)
     pub fn build(self) -> ::std::result::Result<crate::types::VoiceConnectorItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VoiceConnectorItem {
-            voice_connector_id: self.voice_connector_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "voice_connector_id",
-                    "voice_connector_id was not specified but it is required when building VoiceConnectorItem",
-                )
-            })?,
-            priority: self.priority.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "priority",
-                    "priority was not specified but it is required when building VoiceConnectorItem",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VoiceConnectorItem {
+                voice_connector_id: self.voice_connector_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("voice_connector_id", "voice_connector_id was not specified but it is required when building VoiceConnectorItem")
+                    )?
+                ,
+                priority: self.priority
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("priority", "priority was not specified but it is required when building VoiceConnectorItem")
+                    )?
+                ,
+            }
+        )
     }
 }
+

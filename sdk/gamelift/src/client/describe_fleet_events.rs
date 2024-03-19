@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeFleetEvents`](crate::operation::describe_fleet_events::builders::DescribeFleetEventsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_fleet_events::builders::DescribeFleetEventsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`fleet_id(impl Into<String>)`](crate::operation::describe_fleet_events::builders::DescribeFleetEventsFluentBuilder::fleet_id) / [`set_fleet_id(Option<String>)`](crate::operation::describe_fleet_events::builders::DescribeFleetEventsFluentBuilder::set_fleet_id):<br>required: **true**<br><p>A unique identifier for the fleet to get event logs for. You can use either the fleet ID or ARN value.</p><br>
     ///   - [`start_time(DateTime)`](crate::operation::describe_fleet_events::builders::DescribeFleetEventsFluentBuilder::start_time) / [`set_start_time(Option<DateTime>)`](crate::operation::describe_fleet_events::builders::DescribeFleetEventsFluentBuilder::set_start_time):<br>required: **false**<br><p>The earliest date to retrieve event logs for. If no start time is specified, this call returns entries starting from when the fleet was created to the specified end time. Format is a number expressed in Unix time as milliseconds (ex: "1469498468.057").</p><br>
     ///   - [`end_time(DateTime)`](crate::operation::describe_fleet_events::builders::DescribeFleetEventsFluentBuilder::end_time) / [`set_end_time(Option<DateTime>)`](crate::operation::describe_fleet_events::builders::DescribeFleetEventsFluentBuilder::set_end_time):<br>required: **false**<br><p>The most recent date to retrieve event logs for. If no end time is specified, this call returns entries from the specified start time up to the present. Format is a number expressed in Unix time as milliseconds (ex: "1469498468.057").</p><br>
     ///   - [`limit(i32)`](crate::operation::describe_fleet_events::builders::DescribeFleetEventsFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::describe_fleet_events::builders::DescribeFleetEventsFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_fleet_events::builders::DescribeFleetEventsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_fleet_events::builders::DescribeFleetEventsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p><br>
-    /// - On success, responds with [`DescribeFleetEventsOutput`](crate::operation::describe_fleet_events::DescribeFleetEventsOutput) with field(s):
+                            /// - On success, responds with [`DescribeFleetEventsOutput`](crate::operation::describe_fleet_events::DescribeFleetEventsOutput) with field(s):
     ///   - [`events(Option<Vec::<Event>>)`](crate::operation::describe_fleet_events::DescribeFleetEventsOutput::events): <p>A collection of objects containing event log entries for the specified fleet.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_fleet_events::DescribeFleetEventsOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    /// - On failure, responds with [`SdkError<DescribeFleetEventsError>`](crate::operation::describe_fleet_events::DescribeFleetEventsError)
+                            /// - On failure, responds with [`SdkError<DescribeFleetEventsError>`](crate::operation::describe_fleet_events::DescribeFleetEventsError)
     pub fn describe_fleet_events(&self) -> crate::operation::describe_fleet_events::builders::DescribeFleetEventsFluentBuilder {
-        crate::operation::describe_fleet_events::builders::DescribeFleetEventsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_fleet_events::builders::DescribeFleetEventsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

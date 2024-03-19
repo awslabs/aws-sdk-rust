@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ChatChannel {
     /// <p>The Amazon SNS targets that Chatbot uses to notify the chat channel of updates to an incident. You can also make updates to the incident through the chat channel by using the Amazon SNS topics.</p>
-    ChatbotSns(::std::vec::Vec<::std::string::String>),
+    ChatbotSns(::std::vec::Vec::<::std::string::String>),
     /// <p>Used to remove the chat channel from an incident record or response plan.</p>
     Empty(crate::types::EmptyChatChannel),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -21,12 +21,8 @@ pub enum ChatChannel {
 impl ChatChannel {
     /// Tries to convert the enum instance into [`ChatbotSns`](crate::types::ChatChannel::ChatbotSns), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_chatbot_sns(&self) -> ::std::result::Result<&::std::vec::Vec<::std::string::String>, &Self> {
-        if let ChatChannel::ChatbotSns(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+    pub fn as_chatbot_sns(&self) -> ::std::result::Result<&::std::vec::Vec::<::std::string::String>, &Self> {
+        if let ChatChannel::ChatbotSns(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ChatbotSns`](crate::types::ChatChannel::ChatbotSns).
     pub fn is_chatbot_sns(&self) -> bool {
@@ -35,11 +31,7 @@ impl ChatChannel {
     /// Tries to convert the enum instance into [`Empty`](crate::types::ChatChannel::Empty), extracting the inner [`EmptyChatChannel`](crate::types::EmptyChatChannel).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_empty(&self) -> ::std::result::Result<&crate::types::EmptyChatChannel, &Self> {
-        if let ChatChannel::Empty(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ChatChannel::Empty(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Empty`](crate::types::ChatChannel::Empty).
     pub fn is_empty(&self) -> bool {
@@ -50,3 +42,4 @@ impl ChatChannel {
         matches!(self, Self::Unknown)
     }
 }
+

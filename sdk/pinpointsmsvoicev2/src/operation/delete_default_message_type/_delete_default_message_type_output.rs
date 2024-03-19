@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDefaultMessageTypeOutput {
+pub struct DeleteDefaultMessageTypeOutput  {
     /// <p>The Amazon Resource Name (ARN) of the configuration set.</p>
     pub configuration_set_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configuration set.</p>
@@ -11,25 +11,25 @@ pub struct DeleteDefaultMessageTypeOutput {
     pub message_type: ::std::option::Option<crate::types::MessageType>,
     _request_id: Option<String>,
 }
-impl DeleteDefaultMessageTypeOutput {
+impl  DeleteDefaultMessageTypeOutput  {
     /// <p>The Amazon Resource Name (ARN) of the configuration set.</p>
-    pub fn configuration_set_arn(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_set_arn(&self) -> ::std::option::Option<& str> {
         self.configuration_set_arn.as_deref()
     }
     /// <p>The name of the configuration set.</p>
-    pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> ::std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>The current message type for the configuration set.</p>
-    pub fn message_type(&self) -> ::std::option::Option<&crate::types::MessageType> {
+    pub fn message_type(&self) -> ::std::option::Option<& crate::types::MessageType> {
         self.message_type.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteDefaultMessageTypeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteDefaultMessageTypeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDefaultMessageTypeOutput`](crate::operation::delete_default_message_type::DeleteDefaultMessageTypeOutput).
     pub fn builder() -> crate::operation::delete_default_message_type::builders::DeleteDefaultMessageTypeOutputBuilder {
@@ -54,8 +54,7 @@ impl DeleteDefaultMessageTypeOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the configuration set.</p>
     pub fn set_configuration_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_set_arn = input;
-        self
+        self.configuration_set_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the configuration set.</p>
     pub fn get_configuration_set_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl DeleteDefaultMessageTypeOutputBuilder {
     }
     /// <p>The name of the configuration set.</p>
     pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_set_name = input;
-        self
+        self.configuration_set_name = input; self
     }
     /// <p>The name of the configuration set.</p>
     pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl DeleteDefaultMessageTypeOutputBuilder {
     }
     /// <p>The current message type for the configuration set.</p>
     pub fn set_message_type(mut self, input: ::std::option::Option<crate::types::MessageType>) -> Self {
-        self.message_type = input;
-        self
+        self.message_type = input; self
     }
     /// <p>The current message type for the configuration set.</p>
     pub fn get_message_type(&self) -> &::std::option::Option<crate::types::MessageType> {
         &self.message_type
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteDefaultMessageTypeOutput`](crate::operation::delete_default_message_type::DeleteDefaultMessageTypeOutput).
     pub fn build(self) -> crate::operation::delete_default_message_type::DeleteDefaultMessageTypeOutput {
         crate::operation::delete_default_message_type::DeleteDefaultMessageTypeOutput {
-            configuration_set_arn: self.configuration_set_arn,
-            configuration_set_name: self.configuration_set_name,
-            message_type: self.message_type,
+            configuration_set_arn: self.configuration_set_arn
+            ,
+            configuration_set_name: self.configuration_set_name
+            ,
+            message_type: self.message_type
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

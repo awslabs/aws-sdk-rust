@@ -2,27 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeUploadBufferOutput {
+pub struct DescribeUploadBufferOutput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of the gateway's local disk IDs that are configured as working storage. Each local disk ID is specified as a string (minimum length of 1 and maximum length of 300). If no local disks are configured as working storage, then the DiskIds array is empty.</p>
-    pub disk_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub disk_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The total number of bytes being used in the gateway's upload buffer.</p>
     pub upload_buffer_used_in_bytes: i64,
     /// <p>The total number of bytes allocated in the gateway's as upload buffer.</p>
     pub upload_buffer_allocated_in_bytes: i64,
     _request_id: Option<String>,
 }
-impl DescribeUploadBufferOutput {
+impl  DescribeUploadBufferOutput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     /// <p>An array of the gateway's local disk IDs that are configured as working storage. Each local disk ID is specified as a string (minimum length of 1 and maximum length of 300). If no local disks are configured as working storage, then the DiskIds array is empty.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.disk_ids.is_none()`.
-    pub fn disk_ids(&self) -> &[::std::string::String] {
-        self.disk_ids.as_deref().unwrap_or_default()
+    pub fn disk_ids(&self) -> & [::std::string::String] {
+        self.disk_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The total number of bytes being used in the gateway's upload buffer.</p>
     pub fn upload_buffer_used_in_bytes(&self) -> i64 {
@@ -34,10 +35,10 @@ impl DescribeUploadBufferOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeUploadBufferOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeUploadBufferOutput {
     /// Creates a new builder-style object to manufacture [`DescribeUploadBufferOutput`](crate::operation::describe_upload_buffer::DescribeUploadBufferOutput).
     pub fn builder() -> crate::operation::describe_upload_buffer::builders::DescribeUploadBufferOutputBuilder {
@@ -50,7 +51,7 @@ impl DescribeUploadBufferOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeUploadBufferOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) disk_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) disk_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) upload_buffer_used_in_bytes: ::std::option::Option<i64>,
     pub(crate) upload_buffer_allocated_in_bytes: ::std::option::Option<i64>,
     _request_id: Option<String>,
@@ -63,8 +64,7 @@ impl DescribeUploadBufferOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,17 +77,16 @@ impl DescribeUploadBufferOutputBuilder {
     /// <p>An array of the gateway's local disk IDs that are configured as working storage. Each local disk ID is specified as a string (minimum length of 1 and maximum length of 300). If no local disks are configured as working storage, then the DiskIds array is empty.</p>
     pub fn disk_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.disk_ids.unwrap_or_default();
-        v.push(input.into());
-        self.disk_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.disk_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of the gateway's local disk IDs that are configured as working storage. Each local disk ID is specified as a string (minimum length of 1 and maximum length of 300). If no local disks are configured as working storage, then the DiskIds array is empty.</p>
-    pub fn set_disk_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.disk_ids = input;
-        self
+    pub fn set_disk_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.disk_ids = input; self
     }
     /// <p>An array of the gateway's local disk IDs that are configured as working storage. Each local disk ID is specified as a string (minimum length of 1 and maximum length of 300). If no local disks are configured as working storage, then the DiskIds array is empty.</p>
-    pub fn get_disk_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_disk_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.disk_ids
     }
     /// <p>The total number of bytes being used in the gateway's upload buffer.</p>
@@ -97,8 +96,7 @@ impl DescribeUploadBufferOutputBuilder {
     }
     /// <p>The total number of bytes being used in the gateway's upload buffer.</p>
     pub fn set_upload_buffer_used_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.upload_buffer_used_in_bytes = input;
-        self
+        self.upload_buffer_used_in_bytes = input; self
     }
     /// <p>The total number of bytes being used in the gateway's upload buffer.</p>
     pub fn get_upload_buffer_used_in_bytes(&self) -> &::std::option::Option<i64> {
@@ -111,30 +109,36 @@ impl DescribeUploadBufferOutputBuilder {
     }
     /// <p>The total number of bytes allocated in the gateway's as upload buffer.</p>
     pub fn set_upload_buffer_allocated_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.upload_buffer_allocated_in_bytes = input;
-        self
+        self.upload_buffer_allocated_in_bytes = input; self
     }
     /// <p>The total number of bytes allocated in the gateway's as upload buffer.</p>
     pub fn get_upload_buffer_allocated_in_bytes(&self) -> &::std::option::Option<i64> {
         &self.upload_buffer_allocated_in_bytes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeUploadBufferOutput`](crate::operation::describe_upload_buffer::DescribeUploadBufferOutput).
     pub fn build(self) -> crate::operation::describe_upload_buffer::DescribeUploadBufferOutput {
         crate::operation::describe_upload_buffer::DescribeUploadBufferOutput {
-            gateway_arn: self.gateway_arn,
-            disk_ids: self.disk_ids,
-            upload_buffer_used_in_bytes: self.upload_buffer_used_in_bytes.unwrap_or_default(),
-            upload_buffer_allocated_in_bytes: self.upload_buffer_allocated_in_bytes.unwrap_or_default(),
+            gateway_arn: self.gateway_arn
+            ,
+            disk_ids: self.disk_ids
+            ,
+            upload_buffer_used_in_bytes: self.upload_buffer_used_in_bytes
+                .unwrap_or_default()
+            ,
+            upload_buffer_allocated_in_bytes: self.upload_buffer_allocated_in_bytes
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

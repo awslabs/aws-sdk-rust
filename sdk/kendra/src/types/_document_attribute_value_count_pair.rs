@@ -3,7 +3,7 @@
 /// <p>Provides the count of documents that match a particular document attribute or field when doing a faceted search.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DocumentAttributeValueCountPair {
+pub struct DocumentAttributeValueCountPair  {
     /// <p>The value of the attribute/field. For example, "HR".</p>
     pub document_attribute_value: ::std::option::Option<crate::types::DocumentAttributeValue>,
     /// <p>The number of documents in the response that have the attribute/field value for the key.</p>
@@ -12,11 +12,11 @@ pub struct DocumentAttributeValueCountPair {
     /// <p>For example, the document attribute or facet "Department" includes a value called "Engineering". In addition, the document attribute or facet "SubDepartment" includes the values "Frontend" and "Backend" for documents assigned to "Engineering". You can display nested facets in the search results so that documents can be searched not only by department but also by a sub department within a department. The counts for documents that belong to "Frontend" and "Backend" within "Engineering" are returned for a query.</p>
     /// <p></p>
     /// <p></p>
-    pub facet_results: ::std::option::Option<::std::vec::Vec<crate::types::FacetResult>>,
+    pub facet_results: ::std::option::Option<::std::vec::Vec::<crate::types::FacetResult>>,
 }
-impl DocumentAttributeValueCountPair {
+impl  DocumentAttributeValueCountPair  {
     /// <p>The value of the attribute/field. For example, "HR".</p>
-    pub fn document_attribute_value(&self) -> ::std::option::Option<&crate::types::DocumentAttributeValue> {
+    pub fn document_attribute_value(&self) -> ::std::option::Option<& crate::types::DocumentAttributeValue> {
         self.document_attribute_value.as_ref()
     }
     /// <p>The number of documents in the response that have the attribute/field value for the key.</p>
@@ -27,10 +27,11 @@ impl DocumentAttributeValueCountPair {
     /// <p>For example, the document attribute or facet "Department" includes a value called "Engineering". In addition, the document attribute or facet "SubDepartment" includes the values "Frontend" and "Backend" for documents assigned to "Engineering". You can display nested facets in the search results so that documents can be searched not only by department but also by a sub department within a department. The counts for documents that belong to "Frontend" and "Backend" within "Engineering" are returned for a query.</p>
     /// <p></p>
     /// <p></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.facet_results.is_none()`.
-    pub fn facet_results(&self) -> &[crate::types::FacetResult] {
-        self.facet_results.as_deref().unwrap_or_default()
+    pub fn facet_results(&self) -> & [crate::types::FacetResult] {
+        self.facet_results.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DocumentAttributeValueCountPair {
@@ -46,7 +47,7 @@ impl DocumentAttributeValueCountPair {
 pub struct DocumentAttributeValueCountPairBuilder {
     pub(crate) document_attribute_value: ::std::option::Option<crate::types::DocumentAttributeValue>,
     pub(crate) count: ::std::option::Option<i32>,
-    pub(crate) facet_results: ::std::option::Option<::std::vec::Vec<crate::types::FacetResult>>,
+    pub(crate) facet_results: ::std::option::Option<::std::vec::Vec::<crate::types::FacetResult>>,
 }
 impl DocumentAttributeValueCountPairBuilder {
     /// <p>The value of the attribute/field. For example, "HR".</p>
@@ -56,8 +57,7 @@ impl DocumentAttributeValueCountPairBuilder {
     }
     /// <p>The value of the attribute/field. For example, "HR".</p>
     pub fn set_document_attribute_value(mut self, input: ::std::option::Option<crate::types::DocumentAttributeValue>) -> Self {
-        self.document_attribute_value = input;
-        self
+        self.document_attribute_value = input; self
     }
     /// <p>The value of the attribute/field. For example, "HR".</p>
     pub fn get_document_attribute_value(&self) -> &::std::option::Option<crate::types::DocumentAttributeValue> {
@@ -70,8 +70,7 @@ impl DocumentAttributeValueCountPairBuilder {
     }
     /// <p>The number of documents in the response that have the attribute/field value for the key.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>The number of documents in the response that have the attribute/field value for the key.</p>
     pub fn get_count(&self) -> &::std::option::Option<i32> {
@@ -87,31 +86,34 @@ impl DocumentAttributeValueCountPairBuilder {
     /// <p></p>
     pub fn facet_results(mut self, input: crate::types::FacetResult) -> Self {
         let mut v = self.facet_results.unwrap_or_default();
-        v.push(input);
-        self.facet_results = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.facet_results = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains the results of a document attribute/field that is a nested facet. A <code>FacetResult</code> contains the counts for each facet nested within a facet.</p>
     /// <p>For example, the document attribute or facet "Department" includes a value called "Engineering". In addition, the document attribute or facet "SubDepartment" includes the values "Frontend" and "Backend" for documents assigned to "Engineering". You can display nested facets in the search results so that documents can be searched not only by department but also by a sub department within a department. The counts for documents that belong to "Frontend" and "Backend" within "Engineering" are returned for a query.</p>
     /// <p></p>
     /// <p></p>
-    pub fn set_facet_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FacetResult>>) -> Self {
-        self.facet_results = input;
-        self
+    pub fn set_facet_results(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FacetResult>>) -> Self {
+        self.facet_results = input; self
     }
     /// <p>Contains the results of a document attribute/field that is a nested facet. A <code>FacetResult</code> contains the counts for each facet nested within a facet.</p>
     /// <p>For example, the document attribute or facet "Department" includes a value called "Engineering". In addition, the document attribute or facet "SubDepartment" includes the values "Frontend" and "Backend" for documents assigned to "Engineering". You can display nested facets in the search results so that documents can be searched not only by department but also by a sub department within a department. The counts for documents that belong to "Frontend" and "Backend" within "Engineering" are returned for a query.</p>
     /// <p></p>
     /// <p></p>
-    pub fn get_facet_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FacetResult>> {
+    pub fn get_facet_results(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FacetResult>> {
         &self.facet_results
     }
     /// Consumes the builder and constructs a [`DocumentAttributeValueCountPair`](crate::types::DocumentAttributeValueCountPair).
     pub fn build(self) -> crate::types::DocumentAttributeValueCountPair {
         crate::types::DocumentAttributeValueCountPair {
-            document_attribute_value: self.document_attribute_value,
-            count: self.count,
-            facet_results: self.facet_results,
+            document_attribute_value: self.document_attribute_value
+            ,
+            count: self.count
+            ,
+            facet_results: self.facet_results
+            ,
         }
     }
 }
+

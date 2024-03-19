@@ -3,19 +3,18 @@
 /// <p>Contains details about the routing configuration of a state machine alias. In a routing configuration, you define an array of objects that specify up to two state machine versions. You also specify the percentage of traffic to be routed to each version.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RoutingConfigurationListItem {
+pub struct RoutingConfigurationListItem  {
     /// <p>The Amazon Resource Name (ARN) that identifies one or two state machine versions defined in the routing configuration.</p>
     /// <p>If you specify the ARN of a second version, it must belong to the same state machine as the first version.</p>
     pub state_machine_version_arn: ::std::string::String,
     /// <p>The percentage of traffic you want to route to a state machine version. The sum of the weights in the routing configuration must be equal to 100.</p>
     pub weight: i32,
 }
-impl RoutingConfigurationListItem {
+impl  RoutingConfigurationListItem  {
     /// <p>The Amazon Resource Name (ARN) that identifies one or two state machine versions defined in the routing configuration.</p>
     /// <p>If you specify the ARN of a second version, it must belong to the same state machine as the first version.</p>
-    pub fn state_machine_version_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.state_machine_version_arn.deref()
+    pub fn state_machine_version_arn(&self) -> & str {
+        use std::ops::Deref; self.state_machine_version_arn.deref()
     }
     /// <p>The percentage of traffic you want to route to a state machine version. The sum of the weights in the routing configuration must be equal to 100.</p>
     pub fn weight(&self) -> i32 {
@@ -47,8 +46,7 @@ impl RoutingConfigurationListItemBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies one or two state machine versions defined in the routing configuration.</p>
     /// <p>If you specify the ARN of a second version, it must belong to the same state machine as the first version.</p>
     pub fn set_state_machine_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_machine_version_arn = input;
-        self
+        self.state_machine_version_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies one or two state machine versions defined in the routing configuration.</p>
     /// <p>If you specify the ARN of a second version, it must belong to the same state machine as the first version.</p>
@@ -63,8 +61,7 @@ impl RoutingConfigurationListItemBuilder {
     }
     /// <p>The percentage of traffic you want to route to a state machine version. The sum of the weights in the routing configuration must be equal to 100.</p>
     pub fn set_weight(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.weight = input;
-        self
+        self.weight = input; self
     }
     /// <p>The percentage of traffic you want to route to a state machine version. The sum of the weights in the routing configuration must be equal to 100.</p>
     pub fn get_weight(&self) -> &::std::option::Option<i32> {
@@ -74,14 +71,18 @@ impl RoutingConfigurationListItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`state_machine_version_arn`](crate::types::builders::RoutingConfigurationListItemBuilder::state_machine_version_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::RoutingConfigurationListItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RoutingConfigurationListItem {
-            state_machine_version_arn: self.state_machine_version_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state_machine_version_arn",
-                    "state_machine_version_arn was not specified but it is required when building RoutingConfigurationListItem",
-                )
-            })?,
-            weight: self.weight.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::RoutingConfigurationListItem {
+                state_machine_version_arn: self.state_machine_version_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state_machine_version_arn", "state_machine_version_arn was not specified but it is required when building RoutingConfigurationListItem")
+                    )?
+                ,
+                weight: self.weight
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

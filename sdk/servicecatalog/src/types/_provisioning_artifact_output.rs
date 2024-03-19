@@ -3,19 +3,19 @@
 /// <p>Provisioning artifact output.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProvisioningArtifactOutput {
+pub struct ProvisioningArtifactOutput  {
     /// <p>The provisioning artifact output key.</p>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>Description of the provisioning artifact output key.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl ProvisioningArtifactOutput {
+impl  ProvisioningArtifactOutput  {
     /// <p>The provisioning artifact output key.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>Description of the provisioning artifact output key.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ProvisioningArtifactOutputBuilder {
     }
     /// <p>The provisioning artifact output key.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The provisioning artifact output key.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ProvisioningArtifactOutputBuilder {
     }
     /// <p>Description of the provisioning artifact output key.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Description of the provisioning artifact output key.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ProvisioningArtifactOutputBuilder {
     /// Consumes the builder and constructs a [`ProvisioningArtifactOutput`](crate::types::ProvisioningArtifactOutput).
     pub fn build(self) -> crate::types::ProvisioningArtifactOutput {
         crate::types::ProvisioningArtifactOutput {
-            key: self.key,
-            description: self.description,
+            key: self.key
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

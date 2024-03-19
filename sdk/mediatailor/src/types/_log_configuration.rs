@@ -3,12 +3,12 @@
 /// <p>Returns Amazon CloudWatch log settings for a playback configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LogConfiguration {
+pub struct LogConfiguration  {
     /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and <code>percentEnabled</code> is set to <code>60</code>, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
     /// <p>Valid values: <code>0</code> - <code>100</code></p>
     pub percent_enabled: i32,
 }
-impl LogConfiguration {
+impl  LogConfiguration  {
     /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and <code>percentEnabled</code> is set to <code>60</code>, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
     /// <p>Valid values: <code>0</code> - <code>100</code></p>
     pub fn percent_enabled(&self) -> i32 {
@@ -39,8 +39,7 @@ impl LogConfigurationBuilder {
     /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and <code>percentEnabled</code> is set to <code>60</code>, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
     /// <p>Valid values: <code>0</code> - <code>100</code></p>
     pub fn set_percent_enabled(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.percent_enabled = input;
-        self
+        self.percent_enabled = input; self
     }
     /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and <code>percentEnabled</code> is set to <code>60</code>, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
     /// <p>Valid values: <code>0</code> - <code>100</code></p>
@@ -50,7 +49,10 @@ impl LogConfigurationBuilder {
     /// Consumes the builder and constructs a [`LogConfiguration`](crate::types::LogConfiguration).
     pub fn build(self) -> crate::types::LogConfiguration {
         crate::types::LogConfiguration {
-            percent_enabled: self.percent_enabled.unwrap_or_default(),
+            percent_enabled: self.percent_enabled
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeProjectsOutput {
+pub struct DescribeProjectsOutput  {
     /// <p>A list of project descriptions. The list is sorted by the date and time the projects are created.</p>
-    pub project_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::ProjectDescription>>,
+    pub project_descriptions: ::std::option::Option<::std::vec::Vec::<crate::types::ProjectDescription>>,
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeProjectsOutput {
+impl  DescribeProjectsOutput  {
     /// <p>A list of project descriptions. The list is sorted by the date and time the projects are created.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.project_descriptions.is_none()`.
-    pub fn project_descriptions(&self) -> &[crate::types::ProjectDescription] {
-        self.project_descriptions.as_deref().unwrap_or_default()
+    pub fn project_descriptions(&self) -> & [crate::types::ProjectDescription] {
+        self.project_descriptions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeProjectsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeProjectsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProjectsOutput`](crate::operation::describe_projects::DescribeProjectsOutput).
     pub fn builder() -> crate::operation::describe_projects::builders::DescribeProjectsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeProjectsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeProjectsOutputBuilder {
-    pub(crate) project_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::ProjectDescription>>,
+    pub(crate) project_descriptions: ::std::option::Option<::std::vec::Vec::<crate::types::ProjectDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeProjectsOutputBuilder {
     /// <p>A list of project descriptions. The list is sorted by the date and time the projects are created.</p>
     pub fn project_descriptions(mut self, input: crate::types::ProjectDescription) -> Self {
         let mut v = self.project_descriptions.unwrap_or_default();
-        v.push(input);
-        self.project_descriptions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.project_descriptions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of project descriptions. The list is sorted by the date and time the projects are created.</p>
-    pub fn set_project_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectDescription>>) -> Self {
-        self.project_descriptions = input;
-        self
+    pub fn set_project_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProjectDescription>>) -> Self {
+        self.project_descriptions = input; self
     }
     /// <p>A list of project descriptions. The list is sorted by the date and time the projects are created.</p>
-    pub fn get_project_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectDescription>> {
+    pub fn get_project_descriptions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProjectDescription>> {
         &self.project_descriptions
     }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
@@ -69,28 +69,30 @@ impl DescribeProjectsOutputBuilder {
     }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeProjectsOutput`](crate::operation::describe_projects::DescribeProjectsOutput).
     pub fn build(self) -> crate::operation::describe_projects::DescribeProjectsOutput {
         crate::operation::describe_projects::DescribeProjectsOutput {
-            project_descriptions: self.project_descriptions,
-            next_token: self.next_token,
+            project_descriptions: self.project_descriptions
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

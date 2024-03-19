@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateIpamByoasnOutput {
+pub struct DisassociateIpamByoasnOutput  {
     /// <p>An ASN and BYOIP CIDR association.</p>
     pub asn_association: ::std::option::Option<crate::types::AsnAssociation>,
     _request_id: Option<String>,
 }
-impl DisassociateIpamByoasnOutput {
+impl  DisassociateIpamByoasnOutput  {
     /// <p>An ASN and BYOIP CIDR association.</p>
-    pub fn asn_association(&self) -> ::std::option::Option<&crate::types::AsnAssociation> {
+    pub fn asn_association(&self) -> ::std::option::Option<& crate::types::AsnAssociation> {
         self.asn_association.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DisassociateIpamByoasnOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DisassociateIpamByoasnOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateIpamByoasnOutput`](crate::operation::disassociate_ipam_byoasn::DisassociateIpamByoasnOutput).
     pub fn builder() -> crate::operation::disassociate_ipam_byoasn::builders::DisassociateIpamByoasnOutputBuilder {
@@ -40,27 +40,28 @@ impl DisassociateIpamByoasnOutputBuilder {
     }
     /// <p>An ASN and BYOIP CIDR association.</p>
     pub fn set_asn_association(mut self, input: ::std::option::Option<crate::types::AsnAssociation>) -> Self {
-        self.asn_association = input;
-        self
+        self.asn_association = input; self
     }
     /// <p>An ASN and BYOIP CIDR association.</p>
     pub fn get_asn_association(&self) -> &::std::option::Option<crate::types::AsnAssociation> {
         &self.asn_association
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DisassociateIpamByoasnOutput`](crate::operation::disassociate_ipam_byoasn::DisassociateIpamByoasnOutput).
     pub fn build(self) -> crate::operation::disassociate_ipam_byoasn::DisassociateIpamByoasnOutput {
         crate::operation::disassociate_ipam_byoasn::DisassociateIpamByoasnOutput {
-            asn_association: self.asn_association,
+            asn_association: self.asn_association
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

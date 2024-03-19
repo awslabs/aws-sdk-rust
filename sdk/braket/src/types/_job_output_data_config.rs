@@ -3,21 +3,20 @@
 /// <p>Specifies the path to the S3 location where you want to store job artifacts and the encryption key used to store them.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobOutputDataConfig {
+pub struct JobOutputDataConfig  {
     /// <p>The AWS Key Management Service (AWS KMS) key that Amazon Braket uses to encrypt the job training artifacts at rest using Amazon S3 server-side encryption.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the S3 path where you want Amazon Braket to store the job training artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
     pub s3_path: ::std::string::String,
 }
-impl JobOutputDataConfig {
+impl  JobOutputDataConfig  {
     /// <p>The AWS Key Management Service (AWS KMS) key that Amazon Braket uses to encrypt the job training artifacts at rest using Amazon S3 server-side encryption.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Identifies the S3 path where you want Amazon Braket to store the job training artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
-    pub fn s3_path(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_path.deref()
+    pub fn s3_path(&self) -> & str {
+        use std::ops::Deref; self.s3_path.deref()
     }
 }
 impl JobOutputDataConfig {
@@ -42,8 +41,7 @@ impl JobOutputDataConfigBuilder {
     }
     /// <p>The AWS Key Management Service (AWS KMS) key that Amazon Braket uses to encrypt the job training artifacts at rest using Amazon S3 server-side encryption.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The AWS Key Management Service (AWS KMS) key that Amazon Braket uses to encrypt the job training artifacts at rest using Amazon S3 server-side encryption.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl JobOutputDataConfigBuilder {
     }
     /// <p>Identifies the S3 path where you want Amazon Braket to store the job training artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
     pub fn set_s3_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_path = input;
-        self
+        self.s3_path = input; self
     }
     /// <p>Identifies the S3 path where you want Amazon Braket to store the job training artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
     pub fn get_s3_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl JobOutputDataConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`s3_path`](crate::types::builders::JobOutputDataConfigBuilder::s3_path)
     pub fn build(self) -> ::std::result::Result<crate::types::JobOutputDataConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::JobOutputDataConfig {
-            kms_key_id: self.kms_key_id,
-            s3_path: self.s3_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_path",
-                    "s3_path was not specified but it is required when building JobOutputDataConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::JobOutputDataConfig {
+                kms_key_id: self.kms_key_id
+                ,
+                s3_path: self.s3_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_path", "s3_path was not specified but it is required when building JobOutputDataConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

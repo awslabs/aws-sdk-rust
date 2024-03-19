@@ -3,22 +3,22 @@
 /// <p>The result of a <code>DeleteSuggester</code> request. Contains the status of the deleted suggester.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSuggesterOutput {
+pub struct DeleteSuggesterOutput  {
     /// <p>The status of the suggester being deleted.</p>
     pub suggester: ::std::option::Option<crate::types::SuggesterStatus>,
     _request_id: Option<String>,
 }
-impl DeleteSuggesterOutput {
+impl  DeleteSuggesterOutput  {
     /// <p>The status of the suggester being deleted.</p>
-    pub fn suggester(&self) -> ::std::option::Option<&crate::types::SuggesterStatus> {
+    pub fn suggester(&self) -> ::std::option::Option<& crate::types::SuggesterStatus> {
         self.suggester.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteSuggesterOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteSuggesterOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSuggesterOutput`](crate::operation::delete_suggester::DeleteSuggesterOutput).
     pub fn builder() -> crate::operation::delete_suggester::builders::DeleteSuggesterOutputBuilder {
@@ -42,27 +42,28 @@ impl DeleteSuggesterOutputBuilder {
     }
     /// <p>The status of the suggester being deleted.</p>
     pub fn set_suggester(mut self, input: ::std::option::Option<crate::types::SuggesterStatus>) -> Self {
-        self.suggester = input;
-        self
+        self.suggester = input; self
     }
     /// <p>The status of the suggester being deleted.</p>
     pub fn get_suggester(&self) -> &::std::option::Option<crate::types::SuggesterStatus> {
         &self.suggester
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteSuggesterOutput`](crate::operation::delete_suggester::DeleteSuggesterOutput).
     pub fn build(self) -> crate::operation::delete_suggester::DeleteSuggesterOutput {
         crate::operation::delete_suggester::DeleteSuggesterOutput {
-            suggester: self.suggester,
+            suggester: self.suggester
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

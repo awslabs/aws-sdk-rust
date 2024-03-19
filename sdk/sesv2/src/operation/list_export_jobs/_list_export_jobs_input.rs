@@ -3,7 +3,7 @@
 /// <p>Represents a request to list all export jobs with filters.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListExportJobsInput {
+pub struct ListExportJobsInput  {
     /// <p>The pagination token returned from a previous call to <code>ListExportJobs</code> to indicate the position in the list of export jobs.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of export jobs to return at once. Use this parameter to paginate results. If additional export jobs exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent calls to <code>ListExportJobs</code> to retrieve additional export jobs.</p>
@@ -13,9 +13,9 @@ pub struct ListExportJobsInput {
     /// <p>A value used to list export jobs that have a certain <code>JobStatus</code>.</p>
     pub job_status: ::std::option::Option<crate::types::JobStatus>,
 }
-impl ListExportJobsInput {
+impl  ListExportJobsInput  {
     /// <p>The pagination token returned from a previous call to <code>ListExportJobs</code> to indicate the position in the list of export jobs.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of export jobs to return at once. Use this parameter to paginate results. If additional export jobs exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent calls to <code>ListExportJobs</code> to retrieve additional export jobs.</p>
@@ -23,11 +23,11 @@ impl ListExportJobsInput {
         self.page_size
     }
     /// <p>A value used to list export jobs that have a certain <code>ExportSourceType</code>.</p>
-    pub fn export_source_type(&self) -> ::std::option::Option<&crate::types::ExportSourceType> {
+    pub fn export_source_type(&self) -> ::std::option::Option<& crate::types::ExportSourceType> {
         self.export_source_type.as_ref()
     }
     /// <p>A value used to list export jobs that have a certain <code>JobStatus</code>.</p>
-    pub fn job_status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
+    pub fn job_status(&self) -> ::std::option::Option<& crate::types::JobStatus> {
         self.job_status.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl ListExportJobsInputBuilder {
     }
     /// <p>The pagination token returned from a previous call to <code>ListExportJobs</code> to indicate the position in the list of export jobs.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token returned from a previous call to <code>ListExportJobs</code> to indicate the position in the list of export jobs.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ListExportJobsInputBuilder {
     }
     /// <p>Maximum number of export jobs to return at once. Use this parameter to paginate results. If additional export jobs exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent calls to <code>ListExportJobs</code> to retrieve additional export jobs.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// <p>Maximum number of export jobs to return at once. Use this parameter to paginate results. If additional export jobs exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent calls to <code>ListExportJobs</code> to retrieve additional export jobs.</p>
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
@@ -83,8 +81,7 @@ impl ListExportJobsInputBuilder {
     }
     /// <p>A value used to list export jobs that have a certain <code>ExportSourceType</code>.</p>
     pub fn set_export_source_type(mut self, input: ::std::option::Option<crate::types::ExportSourceType>) -> Self {
-        self.export_source_type = input;
-        self
+        self.export_source_type = input; self
     }
     /// <p>A value used to list export jobs that have a certain <code>ExportSourceType</code>.</p>
     pub fn get_export_source_type(&self) -> &::std::option::Option<crate::types::ExportSourceType> {
@@ -97,22 +94,26 @@ impl ListExportJobsInputBuilder {
     }
     /// <p>A value used to list export jobs that have a certain <code>JobStatus</code>.</p>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
-        self.job_status = input;
-        self
+        self.job_status = input; self
     }
     /// <p>A value used to list export jobs that have a certain <code>JobStatus</code>.</p>
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
         &self.job_status
     }
     /// Consumes the builder and constructs a [`ListExportJobsInput`](crate::operation::list_export_jobs::ListExportJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_export_jobs::ListExportJobsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_export_jobs::ListExportJobsInput {
-            next_token: self.next_token,
-            page_size: self.page_size,
-            export_source_type: self.export_source_type,
-            job_status: self.job_status,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_export_jobs::ListExportJobsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_export_jobs::ListExportJobsInput {
+                next_token: self.next_token
+                ,
+                page_size: self.page_size
+                ,
+                export_source_type: self.export_source_type
+                ,
+                job_status: self.job_status
+                ,
+            }
+        )
     }
 }
+

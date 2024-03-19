@@ -4,19 +4,19 @@
 /// <p>The data provided in the validation profile is made available to your buyers on Amazon Web Services Marketplace.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModelPackageValidationProfile {
+pub struct ModelPackageValidationProfile  {
     /// <p>The name of the profile for the model package.</p>
     pub profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The <code>TransformJobDefinition</code> object that describes the transform job used for the validation of the model package.</p>
     pub transform_job_definition: ::std::option::Option<crate::types::TransformJobDefinition>,
 }
-impl ModelPackageValidationProfile {
+impl  ModelPackageValidationProfile  {
     /// <p>The name of the profile for the model package.</p>
-    pub fn profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn profile_name(&self) -> ::std::option::Option<& str> {
         self.profile_name.as_deref()
     }
     /// <p>The <code>TransformJobDefinition</code> object that describes the transform job used for the validation of the model package.</p>
-    pub fn transform_job_definition(&self) -> ::std::option::Option<&crate::types::TransformJobDefinition> {
+    pub fn transform_job_definition(&self) -> ::std::option::Option<& crate::types::TransformJobDefinition> {
         self.transform_job_definition.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl ModelPackageValidationProfileBuilder {
     }
     /// <p>The name of the profile for the model package.</p>
     pub fn set_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_name = input;
-        self
+        self.profile_name = input; self
     }
     /// <p>The name of the profile for the model package.</p>
     pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +57,7 @@ impl ModelPackageValidationProfileBuilder {
     }
     /// <p>The <code>TransformJobDefinition</code> object that describes the transform job used for the validation of the model package.</p>
     pub fn set_transform_job_definition(mut self, input: ::std::option::Option<crate::types::TransformJobDefinition>) -> Self {
-        self.transform_job_definition = input;
-        self
+        self.transform_job_definition = input; self
     }
     /// <p>The <code>TransformJobDefinition</code> object that describes the transform job used for the validation of the model package.</p>
     pub fn get_transform_job_definition(&self) -> &::std::option::Option<crate::types::TransformJobDefinition> {
@@ -68,8 +66,11 @@ impl ModelPackageValidationProfileBuilder {
     /// Consumes the builder and constructs a [`ModelPackageValidationProfile`](crate::types::ModelPackageValidationProfile).
     pub fn build(self) -> crate::types::ModelPackageValidationProfile {
         crate::types::ModelPackageValidationProfile {
-            profile_name: self.profile_name,
-            transform_job_definition: self.transform_job_definition,
+            profile_name: self.profile_name
+            ,
+            transform_job_definition: self.transform_job_definition
+            ,
         }
     }
 }
+

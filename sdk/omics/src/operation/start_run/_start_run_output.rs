@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartRunOutput {
+pub struct StartRunOutput  {
     /// <p>The run's ARN.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The run's ID.</p>
@@ -10,44 +10,44 @@ pub struct StartRunOutput {
     /// <p>The run's status.</p>
     pub status: ::std::option::Option<crate::types::RunStatus>,
     /// <p>The run's tags.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The universally unique identifier for a run.</p>
     pub uuid: ::std::option::Option<::std::string::String>,
     /// <p>The destination for workflow outputs.</p>
     pub run_output_uri: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl StartRunOutput {
+impl  StartRunOutput  {
     /// <p>The run's ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The run's ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The run's status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::RunStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::RunStatus> {
         self.status.as_ref()
     }
     /// <p>The run's tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The universally unique identifier for a run.</p>
-    pub fn uuid(&self) -> ::std::option::Option<&str> {
+    pub fn uuid(&self) -> ::std::option::Option<& str> {
         self.uuid.as_deref()
     }
     /// <p>The destination for workflow outputs.</p>
-    pub fn run_output_uri(&self) -> ::std::option::Option<&str> {
+    pub fn run_output_uri(&self) -> ::std::option::Option<& str> {
         self.run_output_uri.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartRunOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartRunOutput {
     /// Creates a new builder-style object to manufacture [`StartRunOutput`](crate::operation::start_run::StartRunOutput).
     pub fn builder() -> crate::operation::start_run::builders::StartRunOutputBuilder {
@@ -62,7 +62,7 @@ pub struct StartRunOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::RunStatus>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) uuid: ::std::option::Option<::std::string::String>,
     pub(crate) run_output_uri: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -75,8 +75,7 @@ impl StartRunOutputBuilder {
     }
     /// <p>The run's ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The run's ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +88,7 @@ impl StartRunOutputBuilder {
     }
     /// <p>The run's ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The run's ID.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +101,7 @@ impl StartRunOutputBuilder {
     }
     /// <p>The run's status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RunStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The run's status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RunStatus> {
@@ -117,17 +114,16 @@ impl StartRunOutputBuilder {
     /// <p>The run's tags.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The run's tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The run's tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The universally unique identifier for a run.</p>
@@ -137,8 +133,7 @@ impl StartRunOutputBuilder {
     }
     /// <p>The universally unique identifier for a run.</p>
     pub fn set_uuid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.uuid = input;
-        self
+        self.uuid = input; self
     }
     /// <p>The universally unique identifier for a run.</p>
     pub fn get_uuid(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,32 +146,38 @@ impl StartRunOutputBuilder {
     }
     /// <p>The destination for workflow outputs.</p>
     pub fn set_run_output_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.run_output_uri = input;
-        self
+        self.run_output_uri = input; self
     }
     /// <p>The destination for workflow outputs.</p>
     pub fn get_run_output_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.run_output_uri
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartRunOutput`](crate::operation::start_run::StartRunOutput).
     pub fn build(self) -> crate::operation::start_run::StartRunOutput {
         crate::operation::start_run::StartRunOutput {
-            arn: self.arn,
-            id: self.id,
-            status: self.status,
-            tags: self.tags,
-            uuid: self.uuid,
-            run_output_uri: self.run_output_uri,
+            arn: self.arn
+            ,
+            id: self.id
+            ,
+            status: self.status
+            ,
+            tags: self.tags
+            ,
+            uuid: self.uuid
+            ,
+            run_output_uri: self.run_output_uri
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

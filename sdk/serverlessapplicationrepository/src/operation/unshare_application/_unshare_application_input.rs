@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnshareApplicationInput {
+pub struct UnshareApplicationInput  {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The AWS Organization ID to unshare the application from.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
 }
-impl UnshareApplicationInput {
+impl  UnshareApplicationInput  {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The AWS Organization ID to unshare the application from.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl UnshareApplicationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl UnshareApplicationInputBuilder {
     }
     /// <p>The AWS Organization ID to unshare the application from.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The AWS Organization ID to unshare the application from.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.organization_id
     }
     /// Consumes the builder and constructs a [`UnshareApplicationInput`](crate::operation::unshare_application::UnshareApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::unshare_application::UnshareApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::unshare_application::UnshareApplicationInput {
-            application_id: self.application_id,
-            organization_id: self.organization_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::unshare_application::UnshareApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::unshare_application::UnshareApplicationInput {
+                application_id: self.application_id
+                ,
+                organization_id: self.organization_id
+                ,
+            }
+        )
     }
 }
+

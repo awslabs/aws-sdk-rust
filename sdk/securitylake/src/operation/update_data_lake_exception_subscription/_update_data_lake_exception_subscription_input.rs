@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDataLakeExceptionSubscriptionInput {
+pub struct UpdateDataLakeExceptionSubscriptionInput  {
     /// <p>The subscription protocol to which exception messages are posted.</p>
     pub subscription_protocol: ::std::option::Option<::std::string::String>,
     /// <p>The account that is subscribed to receive exception notifications.</p>
@@ -10,13 +10,13 @@ pub struct UpdateDataLakeExceptionSubscriptionInput {
     /// <p>The time-to-live (TTL) for the exception message to remain.</p>
     pub exception_time_to_live: ::std::option::Option<i64>,
 }
-impl UpdateDataLakeExceptionSubscriptionInput {
+impl  UpdateDataLakeExceptionSubscriptionInput  {
     /// <p>The subscription protocol to which exception messages are posted.</p>
-    pub fn subscription_protocol(&self) -> ::std::option::Option<&str> {
+    pub fn subscription_protocol(&self) -> ::std::option::Option<& str> {
         self.subscription_protocol.as_deref()
     }
     /// <p>The account that is subscribed to receive exception notifications.</p>
-    pub fn notification_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn notification_endpoint(&self) -> ::std::option::Option<& str> {
         self.notification_endpoint.as_deref()
     }
     /// <p>The time-to-live (TTL) for the exception message to remain.</p>
@@ -48,8 +48,7 @@ impl UpdateDataLakeExceptionSubscriptionInputBuilder {
     }
     /// <p>The subscription protocol to which exception messages are posted.</p>
     pub fn set_subscription_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subscription_protocol = input;
-        self
+        self.subscription_protocol = input; self
     }
     /// <p>The subscription protocol to which exception messages are posted.</p>
     pub fn get_subscription_protocol(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateDataLakeExceptionSubscriptionInputBuilder {
     }
     /// <p>The account that is subscribed to receive exception notifications.</p>
     pub fn set_notification_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.notification_endpoint = input;
-        self
+        self.notification_endpoint = input; self
     }
     /// <p>The account that is subscribed to receive exception notifications.</p>
     pub fn get_notification_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,26 +75,24 @@ impl UpdateDataLakeExceptionSubscriptionInputBuilder {
     }
     /// <p>The time-to-live (TTL) for the exception message to remain.</p>
     pub fn set_exception_time_to_live(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.exception_time_to_live = input;
-        self
+        self.exception_time_to_live = input; self
     }
     /// <p>The time-to-live (TTL) for the exception message to remain.</p>
     pub fn get_exception_time_to_live(&self) -> &::std::option::Option<i64> {
         &self.exception_time_to_live
     }
     /// Consumes the builder and constructs a [`UpdateDataLakeExceptionSubscriptionInput`](crate::operation::update_data_lake_exception_subscription::UpdateDataLakeExceptionSubscriptionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_data_lake_exception_subscription::UpdateDataLakeExceptionSubscriptionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_data_lake_exception_subscription::UpdateDataLakeExceptionSubscriptionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_data_lake_exception_subscription::UpdateDataLakeExceptionSubscriptionInput {
-                subscription_protocol: self.subscription_protocol,
-                notification_endpoint: self.notification_endpoint,
-                exception_time_to_live: self.exception_time_to_live,
-            },
+                subscription_protocol: self.subscription_protocol
+                ,
+                notification_endpoint: self.notification_endpoint
+                ,
+                exception_time_to_live: self.exception_time_to_live
+                ,
+            }
         )
     }
 }
+

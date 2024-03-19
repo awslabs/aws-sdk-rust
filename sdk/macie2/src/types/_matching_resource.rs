@@ -3,13 +3,13 @@
 /// <p>Provides statistical data and other information about an Amazon Web Services resource that Amazon Macie monitors and analyzes for your account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MatchingResource {
+pub struct MatchingResource  {
     /// <p>The details of an S3 bucket that Amazon Macie monitors and analyzes.</p>
     pub matching_bucket: ::std::option::Option<crate::types::MatchingBucket>,
 }
-impl MatchingResource {
+impl  MatchingResource  {
     /// <p>The details of an S3 bucket that Amazon Macie monitors and analyzes.</p>
-    pub fn matching_bucket(&self) -> ::std::option::Option<&crate::types::MatchingBucket> {
+    pub fn matching_bucket(&self) -> ::std::option::Option<& crate::types::MatchingBucket> {
         self.matching_bucket.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl MatchingResourceBuilder {
     }
     /// <p>The details of an S3 bucket that Amazon Macie monitors and analyzes.</p>
     pub fn set_matching_bucket(mut self, input: ::std::option::Option<crate::types::MatchingBucket>) -> Self {
-        self.matching_bucket = input;
-        self
+        self.matching_bucket = input; self
     }
     /// <p>The details of an S3 bucket that Amazon Macie monitors and analyzes.</p>
     pub fn get_matching_bucket(&self) -> &::std::option::Option<crate::types::MatchingBucket> {
@@ -44,7 +43,9 @@ impl MatchingResourceBuilder {
     /// Consumes the builder and constructs a [`MatchingResource`](crate::types::MatchingResource).
     pub fn build(self) -> crate::types::MatchingResource {
         crate::types::MatchingResource {
-            matching_bucket: self.matching_bucket,
+            matching_bucket: self.matching_bucket
+            ,
         }
     }
 }
+

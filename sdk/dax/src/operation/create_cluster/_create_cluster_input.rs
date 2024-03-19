@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateClusterInput {
+pub struct CreateClusterInput  {
     /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
     /// <p><b>Constraints:</b></p>
     /// <ul>
@@ -23,14 +23,14 @@ pub struct CreateClusterInput {
     /// </note>
     pub replication_factor: ::std::option::Option<i32>,
     /// <p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>
-    pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub availability_zones: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The name of the subnet group to be used for the replication group.</p><important>
     /// <p>DAX clusters can only run in an Amazon VPC environment. All of the subnets that you specify in a subnet group must exist in the same VPC.</p>
     /// </important>
     pub subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of security group IDs to be assigned to each node in the DAX cluster. (Each of the security group ID is system-generated.)</p>
     /// <p>If this parameter is not specified, DAX assigns the default VPC security group to each node.</p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies the weekly time range during which maintenance on the DAX cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code> are:</p>
     /// <ul>
     /// <li>
@@ -61,7 +61,7 @@ pub struct CreateClusterInput {
     /// <p>The parameter group to be associated with the DAX cluster.</p>
     pub parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A set of tags to associate with the DAX cluster.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Represents the settings used to enable server-side encryption on the cluster.</p>
     pub sse_specification: ::std::option::Option<crate::types::SseSpecification>,
     /// <p>The type of encryption the cluster's endpoint should support. Values are:</p>
@@ -73,7 +73,7 @@ pub struct CreateClusterInput {
     /// </ul>
     pub cluster_endpoint_encryption_type: ::std::option::Option<crate::types::ClusterEndpointEncryptionType>,
 }
-impl CreateClusterInput {
+impl  CreateClusterInput  {
     /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
     /// <p><b>Constraints:</b></p>
     /// <ul>
@@ -84,15 +84,15 @@ impl CreateClusterInput {
     /// <li>
     /// <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The compute and memory capacity of the nodes in the cluster.</p>
-    pub fn node_type(&self) -> ::std::option::Option<&str> {
+    pub fn node_type(&self) -> ::std::option::Option<& str> {
         self.node_type.as_deref()
     }
     /// <p>A description of the cluster.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p><note>
@@ -102,23 +102,25 @@ impl CreateClusterInput {
         self.replication_factor
     }
     /// <p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
-    pub fn availability_zones(&self) -> &[::std::string::String] {
-        self.availability_zones.as_deref().unwrap_or_default()
+    pub fn availability_zones(&self) -> & [::std::string::String] {
+        self.availability_zones.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the subnet group to be used for the replication group.</p><important>
     /// <p>DAX clusters can only run in an Amazon VPC environment. All of the subnets that you specify in a subnet group must exist in the same VPC.</p>
     /// </important>
-    pub fn subnet_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_group_name(&self) -> ::std::option::Option<& str> {
         self.subnet_group_name.as_deref()
     }
     /// <p>A list of security group IDs to be assigned to each node in the DAX cluster. (Each of the security group ID is system-generated.)</p>
     /// <p>If this parameter is not specified, DAX assigns the default VPC security group to each node.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
-    pub fn security_group_ids(&self) -> &[::std::string::String] {
-        self.security_group_ids.as_deref().unwrap_or_default()
+    pub fn security_group_ids(&self) -> & [::std::string::String] {
+        self.security_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the weekly time range during which maintenance on the DAX cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code> are:</p>
     /// <ul>
@@ -140,31 +142,32 @@ impl CreateClusterInput {
     /// <p>Example: <code>sun:05:00-sun:09:00</code></p><note>
     /// <p>If you don't specify a preferred maintenance window when you create or modify a cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day of the week.</p>
     /// </note>
-    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<& str> {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.</p><note>
     /// <p>The Amazon SNS topic owner must be same as the DAX cluster owner.</p>
     /// </note>
-    pub fn notification_topic_arn(&self) -> ::std::option::Option<&str> {
+    pub fn notification_topic_arn(&self) -> ::std::option::Option<& str> {
         self.notification_topic_arn.as_deref()
     }
     /// <p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX will assume this role and use the role's permissions to access DynamoDB on your behalf.</p>
-    pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn iam_role_arn(&self) -> ::std::option::Option<& str> {
         self.iam_role_arn.as_deref()
     }
     /// <p>The parameter group to be associated with the DAX cluster.</p>
-    pub fn parameter_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn parameter_group_name(&self) -> ::std::option::Option<& str> {
         self.parameter_group_name.as_deref()
     }
     /// <p>A set of tags to associate with the DAX cluster.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Represents the settings used to enable server-side encryption on the cluster.</p>
-    pub fn sse_specification(&self) -> ::std::option::Option<&crate::types::SseSpecification> {
+    pub fn sse_specification(&self) -> ::std::option::Option<& crate::types::SseSpecification> {
         self.sse_specification.as_ref()
     }
     /// <p>The type of encryption the cluster's endpoint should support. Values are:</p>
@@ -174,7 +177,7 @@ impl CreateClusterInput {
     /// <li>
     /// <p><code>TLS</code> for Transport Layer Security</p></li>
     /// </ul>
-    pub fn cluster_endpoint_encryption_type(&self) -> ::std::option::Option<&crate::types::ClusterEndpointEncryptionType> {
+    pub fn cluster_endpoint_encryption_type(&self) -> ::std::option::Option<& crate::types::ClusterEndpointEncryptionType> {
         self.cluster_endpoint_encryption_type.as_ref()
     }
 }
@@ -193,14 +196,14 @@ pub struct CreateClusterInputBuilder {
     pub(crate) node_type: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) replication_factor: ::std::option::Option<i32>,
-    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) subnet_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     pub(crate) notification_topic_arn: ::std::option::Option<::std::string::String>,
     pub(crate) iam_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) parameter_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) sse_specification: ::std::option::Option<crate::types::SseSpecification>,
     pub(crate) cluster_endpoint_encryption_type: ::std::option::Option<crate::types::ClusterEndpointEncryptionType>,
 }
@@ -231,8 +234,7 @@ impl CreateClusterInputBuilder {
     /// <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
     /// <p><b>Constraints:</b></p>
@@ -255,8 +257,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The compute and memory capacity of the nodes in the cluster.</p>
     pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.node_type = input;
-        self
+        self.node_type = input; self
     }
     /// <p>The compute and memory capacity of the nodes in the cluster.</p>
     pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -269,8 +270,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>A description of the cluster.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the cluster.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -288,8 +288,7 @@ impl CreateClusterInputBuilder {
     /// <p>AWS recommends that you have at least two read replicas per cluster.</p>
     /// </note>
     pub fn set_replication_factor(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.replication_factor = input;
-        self
+        self.replication_factor = input; self
     }
     /// <p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p><note>
     /// <p>AWS recommends that you have at least two read replicas per cluster.</p>
@@ -304,17 +303,16 @@ impl CreateClusterInputBuilder {
     /// <p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>
     pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
-        v.push(input.into());
-        self.availability_zones = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.availability_zones = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>
-    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.availability_zones = input;
-        self
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.availability_zones = input; self
     }
     /// <p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>
-    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.availability_zones
     }
     /// <p>The name of the subnet group to be used for the replication group.</p><important>
@@ -328,8 +326,7 @@ impl CreateClusterInputBuilder {
     /// <p>DAX clusters can only run in an Amazon VPC environment. All of the subnets that you specify in a subnet group must exist in the same VPC.</p>
     /// </important>
     pub fn set_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_group_name = input;
-        self
+        self.subnet_group_name = input; self
     }
     /// <p>The name of the subnet group to be used for the replication group.</p><important>
     /// <p>DAX clusters can only run in an Amazon VPC environment. All of the subnets that you specify in a subnet group must exist in the same VPC.</p>
@@ -345,19 +342,18 @@ impl CreateClusterInputBuilder {
     /// <p>If this parameter is not specified, DAX assigns the default VPC security group to each node.</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of security group IDs to be assigned to each node in the DAX cluster. (Each of the security group ID is system-generated.)</p>
     /// <p>If this parameter is not specified, DAX assigns the default VPC security group to each node.</p>
-    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_group_ids = input; self
     }
     /// <p>A list of security group IDs to be assigned to each node in the DAX cluster. (Each of the security group ID is system-generated.)</p>
     /// <p>If this parameter is not specified, DAX assigns the default VPC security group to each node.</p>
-    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_group_ids
     }
     /// <p>Specifies the weekly time range during which maintenance on the DAX cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code> are:</p>
@@ -405,8 +401,7 @@ impl CreateClusterInputBuilder {
     /// <p>If you don't specify a preferred maintenance window when you create or modify a cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day of the week.</p>
     /// </note>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_maintenance_window = input;
-        self
+        self.preferred_maintenance_window = input; self
     }
     /// <p>Specifies the weekly time range during which maintenance on the DAX cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code> are:</p>
     /// <ul>
@@ -442,8 +437,7 @@ impl CreateClusterInputBuilder {
     /// <p>The Amazon SNS topic owner must be same as the DAX cluster owner.</p>
     /// </note>
     pub fn set_notification_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.notification_topic_arn = input;
-        self
+        self.notification_topic_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.</p><note>
     /// <p>The Amazon SNS topic owner must be same as the DAX cluster owner.</p>
@@ -459,8 +453,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX will assume this role and use the role's permissions to access DynamoDB on your behalf.</p>
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_role_arn = input;
-        self
+        self.iam_role_arn = input; self
     }
     /// <p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX will assume this role and use the role's permissions to access DynamoDB on your behalf.</p>
     pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -473,8 +466,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The parameter group to be associated with the DAX cluster.</p>
     pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_group_name = input;
-        self
+        self.parameter_group_name = input; self
     }
     /// <p>The parameter group to be associated with the DAX cluster.</p>
     pub fn get_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -487,17 +479,16 @@ impl CreateClusterInputBuilder {
     /// <p>A set of tags to associate with the DAX cluster.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A set of tags to associate with the DAX cluster.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A set of tags to associate with the DAX cluster.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>Represents the settings used to enable server-side encryption on the cluster.</p>
@@ -507,8 +498,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>Represents the settings used to enable server-side encryption on the cluster.</p>
     pub fn set_sse_specification(mut self, input: ::std::option::Option<crate::types::SseSpecification>) -> Self {
-        self.sse_specification = input;
-        self
+        self.sse_specification = input; self
     }
     /// <p>Represents the settings used to enable server-side encryption on the cluster.</p>
     pub fn get_sse_specification(&self) -> &::std::option::Option<crate::types::SseSpecification> {
@@ -533,8 +523,7 @@ impl CreateClusterInputBuilder {
     /// <p><code>TLS</code> for Transport Layer Security</p></li>
     /// </ul>
     pub fn set_cluster_endpoint_encryption_type(mut self, input: ::std::option::Option<crate::types::ClusterEndpointEncryptionType>) -> Self {
-        self.cluster_endpoint_encryption_type = input;
-        self
+        self.cluster_endpoint_encryption_type = input; self
     }
     /// <p>The type of encryption the cluster's endpoint should support. Values are:</p>
     /// <ul>
@@ -547,24 +536,39 @@ impl CreateClusterInputBuilder {
         &self.cluster_endpoint_encryption_type
     }
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_cluster::CreateClusterInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_cluster::CreateClusterInput {
-            cluster_name: self.cluster_name,
-            node_type: self.node_type,
-            description: self.description,
-            replication_factor: self.replication_factor,
-            availability_zones: self.availability_zones,
-            subnet_group_name: self.subnet_group_name,
-            security_group_ids: self.security_group_ids,
-            preferred_maintenance_window: self.preferred_maintenance_window,
-            notification_topic_arn: self.notification_topic_arn,
-            iam_role_arn: self.iam_role_arn,
-            parameter_group_name: self.parameter_group_name,
-            tags: self.tags,
-            sse_specification: self.sse_specification,
-            cluster_endpoint_encryption_type: self.cluster_endpoint_encryption_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_cluster::CreateClusterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_cluster::CreateClusterInput {
+                cluster_name: self.cluster_name
+                ,
+                node_type: self.node_type
+                ,
+                description: self.description
+                ,
+                replication_factor: self.replication_factor
+                ,
+                availability_zones: self.availability_zones
+                ,
+                subnet_group_name: self.subnet_group_name
+                ,
+                security_group_ids: self.security_group_ids
+                ,
+                preferred_maintenance_window: self.preferred_maintenance_window
+                ,
+                notification_topic_arn: self.notification_topic_arn
+                ,
+                iam_role_arn: self.iam_role_arn
+                ,
+                parameter_group_name: self.parameter_group_name
+                ,
+                tags: self.tags
+                ,
+                sse_specification: self.sse_specification
+                ,
+                cluster_endpoint_encryption_type: self.cluster_endpoint_encryption_type
+                ,
+            }
+        )
     }
 }
+

@@ -3,15 +3,14 @@
 /// <p>Details of the license configuration that this generator reports on.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReportContext {
+pub struct ReportContext  {
     /// <p>Amazon Resource Name (ARN) of the license configuration that this generator reports on.</p>
-    pub license_configuration_arns: ::std::vec::Vec<::std::string::String>,
+    pub license_configuration_arns: ::std::vec::Vec::<::std::string::String>,
 }
-impl ReportContext {
+impl  ReportContext  {
     /// <p>Amazon Resource Name (ARN) of the license configuration that this generator reports on.</p>
-    pub fn license_configuration_arns(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.license_configuration_arns.deref()
+    pub fn license_configuration_arns(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.license_configuration_arns.deref()
     }
 }
 impl ReportContext {
@@ -25,7 +24,7 @@ impl ReportContext {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReportContextBuilder {
-    pub(crate) license_configuration_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) license_configuration_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ReportContextBuilder {
     /// Appends an item to `license_configuration_arns`.
@@ -35,30 +34,31 @@ impl ReportContextBuilder {
     /// <p>Amazon Resource Name (ARN) of the license configuration that this generator reports on.</p>
     pub fn license_configuration_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.license_configuration_arns.unwrap_or_default();
-        v.push(input.into());
-        self.license_configuration_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.license_configuration_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Amazon Resource Name (ARN) of the license configuration that this generator reports on.</p>
-    pub fn set_license_configuration_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.license_configuration_arns = input;
-        self
+    pub fn set_license_configuration_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.license_configuration_arns = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the license configuration that this generator reports on.</p>
-    pub fn get_license_configuration_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_license_configuration_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.license_configuration_arns
     }
     /// Consumes the builder and constructs a [`ReportContext`](crate::types::ReportContext).
     /// This method will fail if any of the following fields are not set:
     /// - [`license_configuration_arns`](crate::types::builders::ReportContextBuilder::license_configuration_arns)
     pub fn build(self) -> ::std::result::Result<crate::types::ReportContext, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ReportContext {
-            license_configuration_arns: self.license_configuration_arns.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "license_configuration_arns",
-                    "license_configuration_arns was not specified but it is required when building ReportContext",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ReportContext {
+                license_configuration_arns: self.license_configuration_arns
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("license_configuration_arns", "license_configuration_arns was not specified but it is required when building ReportContext")
+                    )?
+                ,
+            }
+        )
     }
 }
+

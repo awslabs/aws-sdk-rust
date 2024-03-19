@@ -3,7 +3,7 @@
 /// <p>Specifies the S3 bucket where you're hosting the manifest that you want DataSync to use. For more information and configuration examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3ManifestConfig {
+pub struct S3ManifestConfig  {
     /// <p>Specifies the Amazon S3 object key of your manifest. This can include a prefix (for example, <code>prefix/my-manifest.csv</code>).</p>
     pub manifest_object_path: ::std::string::String,
     /// <p>Specifies the Identity and Access Management (IAM) role that allows DataSync to access your manifest. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html#transferring-with-manifest-access">Providing DataSync access to your manifest</a>.</p>
@@ -13,24 +13,21 @@ pub struct S3ManifestConfig {
     /// <p>Specifies the object version ID of the manifest that you want DataSync to use. If you don't set this, DataSync uses the latest version of the object.</p>
     pub manifest_object_version_id: ::std::option::Option<::std::string::String>,
 }
-impl S3ManifestConfig {
+impl  S3ManifestConfig  {
     /// <p>Specifies the Amazon S3 object key of your manifest. This can include a prefix (for example, <code>prefix/my-manifest.csv</code>).</p>
-    pub fn manifest_object_path(&self) -> &str {
-        use std::ops::Deref;
-        self.manifest_object_path.deref()
+    pub fn manifest_object_path(&self) -> & str {
+        use std::ops::Deref; self.manifest_object_path.deref()
     }
     /// <p>Specifies the Identity and Access Management (IAM) role that allows DataSync to access your manifest. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html#transferring-with-manifest-access">Providing DataSync access to your manifest</a>.</p>
-    pub fn bucket_access_role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket_access_role_arn.deref()
+    pub fn bucket_access_role_arn(&self) -> & str {
+        use std::ops::Deref; self.bucket_access_role_arn.deref()
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the S3 bucket where you're hosting your manifest.</p>
-    pub fn s3_bucket_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_bucket_arn.deref()
+    pub fn s3_bucket_arn(&self) -> & str {
+        use std::ops::Deref; self.s3_bucket_arn.deref()
     }
     /// <p>Specifies the object version ID of the manifest that you want DataSync to use. If you don't set this, DataSync uses the latest version of the object.</p>
-    pub fn manifest_object_version_id(&self) -> ::std::option::Option<&str> {
+    pub fn manifest_object_version_id(&self) -> ::std::option::Option<& str> {
         self.manifest_object_version_id.as_deref()
     }
 }
@@ -59,8 +56,7 @@ impl S3ManifestConfigBuilder {
     }
     /// <p>Specifies the Amazon S3 object key of your manifest. This can include a prefix (for example, <code>prefix/my-manifest.csv</code>).</p>
     pub fn set_manifest_object_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.manifest_object_path = input;
-        self
+        self.manifest_object_path = input; self
     }
     /// <p>Specifies the Amazon S3 object key of your manifest. This can include a prefix (for example, <code>prefix/my-manifest.csv</code>).</p>
     pub fn get_manifest_object_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +70,7 @@ impl S3ManifestConfigBuilder {
     }
     /// <p>Specifies the Identity and Access Management (IAM) role that allows DataSync to access your manifest. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html#transferring-with-manifest-access">Providing DataSync access to your manifest</a>.</p>
     pub fn set_bucket_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_access_role_arn = input;
-        self
+        self.bucket_access_role_arn = input; self
     }
     /// <p>Specifies the Identity and Access Management (IAM) role that allows DataSync to access your manifest. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html#transferring-with-manifest-access">Providing DataSync access to your manifest</a>.</p>
     pub fn get_bucket_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +84,7 @@ impl S3ManifestConfigBuilder {
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the S3 bucket where you're hosting your manifest.</p>
     pub fn set_s3_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket_arn = input;
-        self
+        self.s3_bucket_arn = input; self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the S3 bucket where you're hosting your manifest.</p>
     pub fn get_s3_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +97,7 @@ impl S3ManifestConfigBuilder {
     }
     /// <p>Specifies the object version ID of the manifest that you want DataSync to use. If you don't set this, DataSync uses the latest version of the object.</p>
     pub fn set_manifest_object_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.manifest_object_version_id = input;
-        self
+        self.manifest_object_version_id = input; self
     }
     /// <p>Specifies the object version ID of the manifest that you want DataSync to use. If you don't set this, DataSync uses the latest version of the object.</p>
     pub fn get_manifest_object_version_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,26 +109,27 @@ impl S3ManifestConfigBuilder {
     /// - [`bucket_access_role_arn`](crate::types::builders::S3ManifestConfigBuilder::bucket_access_role_arn)
     /// - [`s3_bucket_arn`](crate::types::builders::S3ManifestConfigBuilder::s3_bucket_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::S3ManifestConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3ManifestConfig {
-            manifest_object_path: self.manifest_object_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "manifest_object_path",
-                    "manifest_object_path was not specified but it is required when building S3ManifestConfig",
-                )
-            })?,
-            bucket_access_role_arn: self.bucket_access_role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket_access_role_arn",
-                    "bucket_access_role_arn was not specified but it is required when building S3ManifestConfig",
-                )
-            })?,
-            s3_bucket_arn: self.s3_bucket_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_bucket_arn",
-                    "s3_bucket_arn was not specified but it is required when building S3ManifestConfig",
-                )
-            })?,
-            manifest_object_version_id: self.manifest_object_version_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3ManifestConfig {
+                manifest_object_path: self.manifest_object_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("manifest_object_path", "manifest_object_path was not specified but it is required when building S3ManifestConfig")
+                    )?
+                ,
+                bucket_access_role_arn: self.bucket_access_role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket_access_role_arn", "bucket_access_role_arn was not specified but it is required when building S3ManifestConfig")
+                    )?
+                ,
+                s3_bucket_arn: self.s3_bucket_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_bucket_arn", "s3_bucket_arn was not specified but it is required when building S3ManifestConfig")
+                    )?
+                ,
+                manifest_object_version_id: self.manifest_object_version_id
+                ,
+            }
+        )
     }
 }
+

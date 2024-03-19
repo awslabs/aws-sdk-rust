@@ -3,13 +3,13 @@
 /// <p>Location information about a manifest file. You can use a manifest file to create a dataset.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatasetGroundTruthManifest {
+pub struct DatasetGroundTruthManifest  {
     /// <p>The S3 bucket location for the manifest file.</p>
     pub s3_object: ::std::option::Option<crate::types::InputS3Object>,
 }
-impl DatasetGroundTruthManifest {
+impl  DatasetGroundTruthManifest  {
     /// <p>The S3 bucket location for the manifest file.</p>
-    pub fn s3_object(&self) -> ::std::option::Option<&crate::types::InputS3Object> {
+    pub fn s3_object(&self) -> ::std::option::Option<& crate::types::InputS3Object> {
         self.s3_object.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl DatasetGroundTruthManifestBuilder {
     }
     /// <p>The S3 bucket location for the manifest file.</p>
     pub fn set_s3_object(mut self, input: ::std::option::Option<crate::types::InputS3Object>) -> Self {
-        self.s3_object = input;
-        self
+        self.s3_object = input; self
     }
     /// <p>The S3 bucket location for the manifest file.</p>
     pub fn get_s3_object(&self) -> &::std::option::Option<crate::types::InputS3Object> {
@@ -43,6 +42,10 @@ impl DatasetGroundTruthManifestBuilder {
     }
     /// Consumes the builder and constructs a [`DatasetGroundTruthManifest`](crate::types::DatasetGroundTruthManifest).
     pub fn build(self) -> crate::types::DatasetGroundTruthManifest {
-        crate::types::DatasetGroundTruthManifest { s3_object: self.s3_object }
+        crate::types::DatasetGroundTruthManifest {
+            s3_object: self.s3_object
+            ,
+        }
     }
 }
+

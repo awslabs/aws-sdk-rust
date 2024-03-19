@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetPartitionIndexes`](crate::operation::get_partition_indexes::builders::GetPartitionIndexesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_partition_indexes::builders::GetPartitionIndexesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`catalog_id(impl Into<String>)`](crate::operation::get_partition_indexes::builders::GetPartitionIndexesFluentBuilder::catalog_id) / [`set_catalog_id(Option<String>)`](crate::operation::get_partition_indexes::builders::GetPartitionIndexesFluentBuilder::set_catalog_id):<br>required: **false**<br><p>The catalog ID where the table resides.</p><br>
     ///   - [`database_name(impl Into<String>)`](crate::operation::get_partition_indexes::builders::GetPartitionIndexesFluentBuilder::database_name) / [`set_database_name(Option<String>)`](crate::operation::get_partition_indexes::builders::GetPartitionIndexesFluentBuilder::set_database_name):<br>required: **true**<br><p>Specifies the name of a database from which you want to retrieve partition indexes.</p><br>
     ///   - [`table_name(impl Into<String>)`](crate::operation::get_partition_indexes::builders::GetPartitionIndexesFluentBuilder::table_name) / [`set_table_name(Option<String>)`](crate::operation::get_partition_indexes::builders::GetPartitionIndexesFluentBuilder::set_table_name):<br>required: **true**<br><p>Specifies the name of a table for which you want to retrieve the partition indexes.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_partition_indexes::builders::GetPartitionIndexesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_partition_indexes::builders::GetPartitionIndexesFluentBuilder::set_next_token):<br>required: **false**<br><p>A continuation token, included if this is a continuation call.</p><br>
-    /// - On success, responds with [`GetPartitionIndexesOutput`](crate::operation::get_partition_indexes::GetPartitionIndexesOutput) with field(s):
+                            /// - On success, responds with [`GetPartitionIndexesOutput`](crate::operation::get_partition_indexes::GetPartitionIndexesOutput) with field(s):
     ///   - [`partition_index_descriptor_list(Option<Vec::<PartitionIndexDescriptor>>)`](crate::operation::get_partition_indexes::GetPartitionIndexesOutput::partition_index_descriptor_list): <p>A list of index descriptors.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_partition_indexes::GetPartitionIndexesOutput::next_token): <p>A continuation token, present if the current list segment is not the last.</p>
-    /// - On failure, responds with [`SdkError<GetPartitionIndexesError>`](crate::operation::get_partition_indexes::GetPartitionIndexesError)
+                            /// - On failure, responds with [`SdkError<GetPartitionIndexesError>`](crate::operation::get_partition_indexes::GetPartitionIndexesError)
     pub fn get_partition_indexes(&self) -> crate::operation::get_partition_indexes::builders::GetPartitionIndexesFluentBuilder {
-        crate::operation::get_partition_indexes::builders::GetPartitionIndexesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_partition_indexes::builders::GetPartitionIndexesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

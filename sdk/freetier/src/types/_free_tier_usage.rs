@@ -3,7 +3,7 @@
 /// <p>Consists of a Amazon Web Services Free Tier offer’s metadata and your data usage for the offer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FreeTierUsage {
+pub struct FreeTierUsage  {
     /// <p>The name of the Amazon Web Service providing the Free Tier offer. For example, this can be Amazon Elastic Compute Cloud.</p>
     pub service: ::std::option::Option<::std::string::String>,
     /// <p>Describes <code>usageType</code> more granularly with the specific Amazon Web Service API operation. For example, this can be the <code>RunInstances</code> API operation for Amazon Elastic Compute Cloud.</p>
@@ -25,21 +25,21 @@ pub struct FreeTierUsage {
     /// <p>Describes the type of the Free Tier offer. For example, the offer can be <code>"12 Months Free"</code>, <code>"Always Free"</code>, and <code>"Free Trial"</code>.</p>
     pub free_tier_type: ::std::option::Option<::std::string::String>,
 }
-impl FreeTierUsage {
+impl  FreeTierUsage  {
     /// <p>The name of the Amazon Web Service providing the Free Tier offer. For example, this can be Amazon Elastic Compute Cloud.</p>
-    pub fn service(&self) -> ::std::option::Option<&str> {
+    pub fn service(&self) -> ::std::option::Option<& str> {
         self.service.as_deref()
     }
     /// <p>Describes <code>usageType</code> more granularly with the specific Amazon Web Service API operation. For example, this can be the <code>RunInstances</code> API operation for Amazon Elastic Compute Cloud.</p>
-    pub fn operation(&self) -> ::std::option::Option<&str> {
+    pub fn operation(&self) -> ::std::option::Option<& str> {
         self.operation.as_deref()
     }
     /// <p>Describes the usage details of the offer. For example, this might be <code>Global-BoxUsage:freetrial</code>.</p>
-    pub fn usage_type(&self) -> ::std::option::Option<&str> {
+    pub fn usage_type(&self) -> ::std::option::Option<& str> {
         self.usage_type.as_deref()
     }
     /// <p>Describes the Amazon Web Services Region for which this offer is applicable</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>Describes the actual usage accrued month-to-day (MTD) that you've used so far.</p>
@@ -55,15 +55,15 @@ impl FreeTierUsage {
         self.limit
     }
     /// <p>Describes the unit of the <code>usageType</code>, such as <code>Hrs</code>.</p>
-    pub fn unit(&self) -> ::std::option::Option<&str> {
+    pub fn unit(&self) -> ::std::option::Option<& str> {
         self.unit.as_deref()
     }
     /// <p>The description of the Free Tier offer.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Describes the type of the Free Tier offer. For example, the offer can be <code>"12 Months Free"</code>, <code>"Always Free"</code>, and <code>"Free Trial"</code>.</p>
-    pub fn free_tier_type(&self) -> ::std::option::Option<&str> {
+    pub fn free_tier_type(&self) -> ::std::option::Option<& str> {
         self.free_tier_type.as_deref()
     }
 }
@@ -97,8 +97,7 @@ impl FreeTierUsageBuilder {
     }
     /// <p>The name of the Amazon Web Service providing the Free Tier offer. For example, this can be Amazon Elastic Compute Cloud.</p>
     pub fn set_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service = input;
-        self
+        self.service = input; self
     }
     /// <p>The name of the Amazon Web Service providing the Free Tier offer. For example, this can be Amazon Elastic Compute Cloud.</p>
     pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl FreeTierUsageBuilder {
     }
     /// <p>Describes <code>usageType</code> more granularly with the specific Amazon Web Service API operation. For example, this can be the <code>RunInstances</code> API operation for Amazon Elastic Compute Cloud.</p>
     pub fn set_operation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operation = input;
-        self
+        self.operation = input; self
     }
     /// <p>Describes <code>usageType</code> more granularly with the specific Amazon Web Service API operation. For example, this can be the <code>RunInstances</code> API operation for Amazon Elastic Compute Cloud.</p>
     pub fn get_operation(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +123,7 @@ impl FreeTierUsageBuilder {
     }
     /// <p>Describes the usage details of the offer. For example, this might be <code>Global-BoxUsage:freetrial</code>.</p>
     pub fn set_usage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.usage_type = input;
-        self
+        self.usage_type = input; self
     }
     /// <p>Describes the usage details of the offer. For example, this might be <code>Global-BoxUsage:freetrial</code>.</p>
     pub fn get_usage_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +136,7 @@ impl FreeTierUsageBuilder {
     }
     /// <p>Describes the Amazon Web Services Region for which this offer is applicable</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>Describes the Amazon Web Services Region for which this offer is applicable</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +149,7 @@ impl FreeTierUsageBuilder {
     }
     /// <p>Describes the actual usage accrued month-to-day (MTD) that you've used so far.</p>
     pub fn set_actual_usage_amount(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.actual_usage_amount = input;
-        self
+        self.actual_usage_amount = input; self
     }
     /// <p>Describes the actual usage accrued month-to-day (MTD) that you've used so far.</p>
     pub fn get_actual_usage_amount(&self) -> &::std::option::Option<f64> {
@@ -167,8 +162,7 @@ impl FreeTierUsageBuilder {
     }
     /// <p>Describes the forecasted usage by the month that you're expected to use.</p>
     pub fn set_forecasted_usage_amount(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.forecasted_usage_amount = input;
-        self
+        self.forecasted_usage_amount = input; self
     }
     /// <p>Describes the forecasted usage by the month that you're expected to use.</p>
     pub fn get_forecasted_usage_amount(&self) -> &::std::option::Option<f64> {
@@ -181,8 +175,7 @@ impl FreeTierUsageBuilder {
     }
     /// <p>Describes the maximum usage allowed in Free Tier.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>Describes the maximum usage allowed in Free Tier.</p>
     pub fn get_limit(&self) -> &::std::option::Option<f64> {
@@ -195,8 +188,7 @@ impl FreeTierUsageBuilder {
     }
     /// <p>Describes the unit of the <code>usageType</code>, such as <code>Hrs</code>.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// <p>Describes the unit of the <code>usageType</code>, such as <code>Hrs</code>.</p>
     pub fn get_unit(&self) -> &::std::option::Option<::std::string::String> {
@@ -209,8 +201,7 @@ impl FreeTierUsageBuilder {
     }
     /// <p>The description of the Free Tier offer.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the Free Tier offer.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -223,8 +214,7 @@ impl FreeTierUsageBuilder {
     }
     /// <p>Describes the type of the Free Tier offer. For example, the offer can be <code>"12 Months Free"</code>, <code>"Always Free"</code>, and <code>"Free Trial"</code>.</p>
     pub fn set_free_tier_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.free_tier_type = input;
-        self
+        self.free_tier_type = input; self
     }
     /// <p>Describes the type of the Free Tier offer. For example, the offer can be <code>"12 Months Free"</code>, <code>"Always Free"</code>, and <code>"Free Trial"</code>.</p>
     pub fn get_free_tier_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -233,16 +223,30 @@ impl FreeTierUsageBuilder {
     /// Consumes the builder and constructs a [`FreeTierUsage`](crate::types::FreeTierUsage).
     pub fn build(self) -> crate::types::FreeTierUsage {
         crate::types::FreeTierUsage {
-            service: self.service,
-            operation: self.operation,
-            usage_type: self.usage_type,
-            region: self.region,
-            actual_usage_amount: self.actual_usage_amount.unwrap_or_default(),
-            forecasted_usage_amount: self.forecasted_usage_amount.unwrap_or_default(),
-            limit: self.limit.unwrap_or_default(),
-            unit: self.unit,
-            description: self.description,
-            free_tier_type: self.free_tier_type,
+            service: self.service
+            ,
+            operation: self.operation
+            ,
+            usage_type: self.usage_type
+            ,
+            region: self.region
+            ,
+            actual_usage_amount: self.actual_usage_amount
+                .unwrap_or_default()
+            ,
+            forecasted_usage_amount: self.forecasted_usage_amount
+                .unwrap_or_default()
+            ,
+            limit: self.limit
+                .unwrap_or_default()
+            ,
+            unit: self.unit
+            ,
+            description: self.description
+            ,
+            free_tier_type: self.free_tier_type
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The configuration that allows you to choose how you want to update the databases on a cluster. Depending on the option you choose, you can reduce the time it takes to update the cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KxDeploymentConfiguration {
+pub struct KxDeploymentConfiguration  {
     /// <p>The type of deployment that you want on a cluster.</p>
     /// <ul>
     /// <li>
@@ -14,7 +14,7 @@ pub struct KxDeploymentConfiguration {
     /// </ul>
     pub deployment_strategy: crate::types::KxDeploymentStrategy,
 }
-impl KxDeploymentConfiguration {
+impl  KxDeploymentConfiguration  {
     /// <p>The type of deployment that you want on a cluster.</p>
     /// <ul>
     /// <li>
@@ -23,7 +23,7 @@ impl KxDeploymentConfiguration {
     /// <p>NO_RESTART – This option updates the cluster without stopping the running q process. It is only available for <code>HDB</code> type cluster. This option is quicker as it reduces the turn around time to update configuration on a cluster.</p>
     /// <p>With this deployment mode, you cannot update the <code>initializationScript</code> and <code>commandLineArguments</code> parameters.</p></li>
     /// </ul>
-    pub fn deployment_strategy(&self) -> &crate::types::KxDeploymentStrategy {
+    pub fn deployment_strategy(&self) -> & crate::types::KxDeploymentStrategy {
         &self.deployment_strategy
     }
 }
@@ -63,8 +63,7 @@ impl KxDeploymentConfigurationBuilder {
     /// <p>With this deployment mode, you cannot update the <code>initializationScript</code> and <code>commandLineArguments</code> parameters.</p></li>
     /// </ul>
     pub fn set_deployment_strategy(mut self, input: ::std::option::Option<crate::types::KxDeploymentStrategy>) -> Self {
-        self.deployment_strategy = input;
-        self
+        self.deployment_strategy = input; self
     }
     /// <p>The type of deployment that you want on a cluster.</p>
     /// <ul>
@@ -81,13 +80,15 @@ impl KxDeploymentConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`deployment_strategy`](crate::types::builders::KxDeploymentConfigurationBuilder::deployment_strategy)
     pub fn build(self) -> ::std::result::Result<crate::types::KxDeploymentConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KxDeploymentConfiguration {
-            deployment_strategy: self.deployment_strategy.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "deployment_strategy",
-                    "deployment_strategy was not specified but it is required when building KxDeploymentConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KxDeploymentConfiguration {
+                deployment_strategy: self.deployment_strategy
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("deployment_strategy", "deployment_strategy was not specified but it is required when building KxDeploymentConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

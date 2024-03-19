@@ -168,3 +168,4 @@ pub use crate::types::_total_impact_filter::TotalImpactFilterBuilder;
 pub use crate::types::_anomaly_date_interval::AnomalyDateIntervalBuilder;
 
 pub use crate::types::_cost_category::CostCategoryBuilder;
+

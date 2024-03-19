@@ -3,13 +3,13 @@
 /// <p>A step selected to run in selective execution mode.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SelectedStep {
+pub struct SelectedStep  {
     /// <p>The name of the pipeline step.</p>
     pub step_name: ::std::option::Option<::std::string::String>,
 }
-impl SelectedStep {
+impl  SelectedStep  {
     /// <p>The name of the pipeline step.</p>
-    pub fn step_name(&self) -> ::std::option::Option<&str> {
+    pub fn step_name(&self) -> ::std::option::Option<& str> {
         self.step_name.as_deref()
     }
 }
@@ -35,8 +35,7 @@ impl SelectedStepBuilder {
     }
     /// <p>The name of the pipeline step.</p>
     pub fn set_step_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.step_name = input;
-        self
+        self.step_name = input; self
     }
     /// <p>The name of the pipeline step.</p>
     pub fn get_step_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,6 +43,10 @@ impl SelectedStepBuilder {
     }
     /// Consumes the builder and constructs a [`SelectedStep`](crate::types::SelectedStep).
     pub fn build(self) -> crate::types::SelectedStep {
-        crate::types::SelectedStep { step_name: self.step_name }
+        crate::types::SelectedStep {
+            step_name: self.step_name
+            ,
+        }
     }
 }
+

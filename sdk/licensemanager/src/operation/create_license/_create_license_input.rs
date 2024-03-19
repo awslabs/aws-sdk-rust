@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateLicenseInput {
+pub struct CreateLicenseInput  {
     /// <p>License name.</p>
     pub license_name: ::std::option::Option<::std::string::String>,
     /// <p>Product name.</p>
@@ -16,63 +16,65 @@ pub struct CreateLicenseInput {
     /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
     pub validity: ::std::option::Option<crate::types::DatetimeRange>,
     /// <p>License entitlements.</p>
-    pub entitlements: ::std::option::Option<::std::vec::Vec<crate::types::Entitlement>>,
+    pub entitlements: ::std::option::Option<::std::vec::Vec::<crate::types::Entitlement>>,
     /// <p>License beneficiary.</p>
     pub beneficiary: ::std::option::Option<::std::string::String>,
     /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
     pub consumption_configuration: ::std::option::Option<crate::types::ConsumptionConfiguration>,
     /// <p>Information about the license.</p>
-    pub license_metadata: ::std::option::Option<::std::vec::Vec<crate::types::Metadata>>,
+    pub license_metadata: ::std::option::Option<::std::vec::Vec::<crate::types::Metadata>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateLicenseInput {
+impl  CreateLicenseInput  {
     /// <p>License name.</p>
-    pub fn license_name(&self) -> ::std::option::Option<&str> {
+    pub fn license_name(&self) -> ::std::option::Option<& str> {
         self.license_name.as_deref()
     }
     /// <p>Product name.</p>
-    pub fn product_name(&self) -> ::std::option::Option<&str> {
+    pub fn product_name(&self) -> ::std::option::Option<& str> {
         self.product_name.as_deref()
     }
     /// <p>Product SKU.</p>
-    pub fn product_sku(&self) -> ::std::option::Option<&str> {
+    pub fn product_sku(&self) -> ::std::option::Option<& str> {
         self.product_sku.as_deref()
     }
     /// <p>License issuer.</p>
-    pub fn issuer(&self) -> ::std::option::Option<&crate::types::Issuer> {
+    pub fn issuer(&self) -> ::std::option::Option<& crate::types::Issuer> {
         self.issuer.as_ref()
     }
     /// <p>Home Region for the license.</p>
-    pub fn home_region(&self) -> ::std::option::Option<&str> {
+    pub fn home_region(&self) -> ::std::option::Option<& str> {
         self.home_region.as_deref()
     }
     /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
-    pub fn validity(&self) -> ::std::option::Option<&crate::types::DatetimeRange> {
+    pub fn validity(&self) -> ::std::option::Option<& crate::types::DatetimeRange> {
         self.validity.as_ref()
     }
     /// <p>License entitlements.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entitlements.is_none()`.
-    pub fn entitlements(&self) -> &[crate::types::Entitlement] {
-        self.entitlements.as_deref().unwrap_or_default()
+    pub fn entitlements(&self) -> & [crate::types::Entitlement] {
+        self.entitlements.as_deref()
+        .unwrap_or_default()
     }
     /// <p>License beneficiary.</p>
-    pub fn beneficiary(&self) -> ::std::option::Option<&str> {
+    pub fn beneficiary(&self) -> ::std::option::Option<& str> {
         self.beneficiary.as_deref()
     }
     /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
-    pub fn consumption_configuration(&self) -> ::std::option::Option<&crate::types::ConsumptionConfiguration> {
+    pub fn consumption_configuration(&self) -> ::std::option::Option<& crate::types::ConsumptionConfiguration> {
         self.consumption_configuration.as_ref()
     }
     /// <p>Information about the license.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.license_metadata.is_none()`.
-    pub fn license_metadata(&self) -> &[crate::types::Metadata] {
-        self.license_metadata.as_deref().unwrap_or_default()
+    pub fn license_metadata(&self) -> & [crate::types::Metadata] {
+        self.license_metadata.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -93,10 +95,10 @@ pub struct CreateLicenseInputBuilder {
     pub(crate) issuer: ::std::option::Option<crate::types::Issuer>,
     pub(crate) home_region: ::std::option::Option<::std::string::String>,
     pub(crate) validity: ::std::option::Option<crate::types::DatetimeRange>,
-    pub(crate) entitlements: ::std::option::Option<::std::vec::Vec<crate::types::Entitlement>>,
+    pub(crate) entitlements: ::std::option::Option<::std::vec::Vec::<crate::types::Entitlement>>,
     pub(crate) beneficiary: ::std::option::Option<::std::string::String>,
     pub(crate) consumption_configuration: ::std::option::Option<crate::types::ConsumptionConfiguration>,
-    pub(crate) license_metadata: ::std::option::Option<::std::vec::Vec<crate::types::Metadata>>,
+    pub(crate) license_metadata: ::std::option::Option<::std::vec::Vec::<crate::types::Metadata>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateLicenseInputBuilder {
@@ -108,8 +110,7 @@ impl CreateLicenseInputBuilder {
     }
     /// <p>License name.</p>
     pub fn set_license_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.license_name = input;
-        self
+        self.license_name = input; self
     }
     /// <p>License name.</p>
     pub fn get_license_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +124,7 @@ impl CreateLicenseInputBuilder {
     }
     /// <p>Product name.</p>
     pub fn set_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_name = input;
-        self
+        self.product_name = input; self
     }
     /// <p>Product name.</p>
     pub fn get_product_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +138,7 @@ impl CreateLicenseInputBuilder {
     }
     /// <p>Product SKU.</p>
     pub fn set_product_sku(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_sku = input;
-        self
+        self.product_sku = input; self
     }
     /// <p>Product SKU.</p>
     pub fn get_product_sku(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +152,7 @@ impl CreateLicenseInputBuilder {
     }
     /// <p>License issuer.</p>
     pub fn set_issuer(mut self, input: ::std::option::Option<crate::types::Issuer>) -> Self {
-        self.issuer = input;
-        self
+        self.issuer = input; self
     }
     /// <p>License issuer.</p>
     pub fn get_issuer(&self) -> &::std::option::Option<crate::types::Issuer> {
@@ -168,8 +166,7 @@ impl CreateLicenseInputBuilder {
     }
     /// <p>Home Region for the license.</p>
     pub fn set_home_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.home_region = input;
-        self
+        self.home_region = input; self
     }
     /// <p>Home Region for the license.</p>
     pub fn get_home_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,8 +180,7 @@ impl CreateLicenseInputBuilder {
     }
     /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
     pub fn set_validity(mut self, input: ::std::option::Option<crate::types::DatetimeRange>) -> Self {
-        self.validity = input;
-        self
+        self.validity = input; self
     }
     /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
     pub fn get_validity(&self) -> &::std::option::Option<crate::types::DatetimeRange> {
@@ -197,17 +193,16 @@ impl CreateLicenseInputBuilder {
     /// <p>License entitlements.</p>
     pub fn entitlements(mut self, input: crate::types::Entitlement) -> Self {
         let mut v = self.entitlements.unwrap_or_default();
-        v.push(input);
-        self.entitlements = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entitlements = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>License entitlements.</p>
-    pub fn set_entitlements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Entitlement>>) -> Self {
-        self.entitlements = input;
-        self
+    pub fn set_entitlements(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Entitlement>>) -> Self {
+        self.entitlements = input; self
     }
     /// <p>License entitlements.</p>
-    pub fn get_entitlements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Entitlement>> {
+    pub fn get_entitlements(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Entitlement>> {
         &self.entitlements
     }
     /// <p>License beneficiary.</p>
@@ -218,8 +213,7 @@ impl CreateLicenseInputBuilder {
     }
     /// <p>License beneficiary.</p>
     pub fn set_beneficiary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.beneficiary = input;
-        self
+        self.beneficiary = input; self
     }
     /// <p>License beneficiary.</p>
     pub fn get_beneficiary(&self) -> &::std::option::Option<::std::string::String> {
@@ -233,8 +227,7 @@ impl CreateLicenseInputBuilder {
     }
     /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
     pub fn set_consumption_configuration(mut self, input: ::std::option::Option<crate::types::ConsumptionConfiguration>) -> Self {
-        self.consumption_configuration = input;
-        self
+        self.consumption_configuration = input; self
     }
     /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
     pub fn get_consumption_configuration(&self) -> &::std::option::Option<crate::types::ConsumptionConfiguration> {
@@ -247,17 +240,16 @@ impl CreateLicenseInputBuilder {
     /// <p>Information about the license.</p>
     pub fn license_metadata(mut self, input: crate::types::Metadata) -> Self {
         let mut v = self.license_metadata.unwrap_or_default();
-        v.push(input);
-        self.license_metadata = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.license_metadata = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the license.</p>
-    pub fn set_license_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Metadata>>) -> Self {
-        self.license_metadata = input;
-        self
+    pub fn set_license_metadata(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Metadata>>) -> Self {
+        self.license_metadata = input; self
     }
     /// <p>Information about the license.</p>
-    pub fn get_license_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Metadata>> {
+    pub fn get_license_metadata(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Metadata>> {
         &self.license_metadata
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -268,29 +260,40 @@ impl CreateLicenseInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateLicenseInput`](crate::operation::create_license::CreateLicenseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_license::CreateLicenseInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_license::CreateLicenseInput {
-            license_name: self.license_name,
-            product_name: self.product_name,
-            product_sku: self.product_sku,
-            issuer: self.issuer,
-            home_region: self.home_region,
-            validity: self.validity,
-            entitlements: self.entitlements,
-            beneficiary: self.beneficiary,
-            consumption_configuration: self.consumption_configuration,
-            license_metadata: self.license_metadata,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_license::CreateLicenseInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_license::CreateLicenseInput {
+                license_name: self.license_name
+                ,
+                product_name: self.product_name
+                ,
+                product_sku: self.product_sku
+                ,
+                issuer: self.issuer
+                ,
+                home_region: self.home_region
+                ,
+                validity: self.validity
+                ,
+                entitlements: self.entitlements
+                ,
+                beneficiary: self.beneficiary
+                ,
+                consumption_configuration: self.consumption_configuration
+                ,
+                license_metadata: self.license_metadata
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Configures Amazon SNS notifications of available or expiring work items for work teams.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NotificationConfiguration {
+pub struct NotificationConfiguration  {
     /// <p>The ARN for the Amazon SNS topic to which notifications should be published.</p>
     pub notification_topic_arn: ::std::option::Option<::std::string::String>,
 }
-impl NotificationConfiguration {
+impl  NotificationConfiguration  {
     /// <p>The ARN for the Amazon SNS topic to which notifications should be published.</p>
-    pub fn notification_topic_arn(&self) -> ::std::option::Option<&str> {
+    pub fn notification_topic_arn(&self) -> ::std::option::Option<& str> {
         self.notification_topic_arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl NotificationConfigurationBuilder {
     }
     /// <p>The ARN for the Amazon SNS topic to which notifications should be published.</p>
     pub fn set_notification_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.notification_topic_arn = input;
-        self
+        self.notification_topic_arn = input; self
     }
     /// <p>The ARN for the Amazon SNS topic to which notifications should be published.</p>
     pub fn get_notification_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl NotificationConfigurationBuilder {
     /// Consumes the builder and constructs a [`NotificationConfiguration`](crate::types::NotificationConfiguration).
     pub fn build(self) -> crate::types::NotificationConfiguration {
         crate::types::NotificationConfiguration {
-            notification_topic_arn: self.notification_topic_arn,
+            notification_topic_arn: self.notification_topic_arn
+            ,
         }
     }
 }
+

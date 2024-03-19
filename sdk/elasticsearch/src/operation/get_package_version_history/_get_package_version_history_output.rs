@@ -3,36 +3,37 @@
 /// <p>Container for response returned by <code> <code>GetPackageVersionHistory</code> </code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPackageVersionHistoryOutput {
+pub struct GetPackageVersionHistoryOutput  {
     #[allow(missing_docs)] // documentation missing in model
     pub package_id: ::std::option::Option<::std::string::String>,
     /// <p>List of <code>PackageVersionHistory</code> objects.</p>
-    pub package_version_history_list: ::std::option::Option<::std::vec::Vec<crate::types::PackageVersionHistory>>,
+    pub package_version_history_list: ::std::option::Option<::std::vec::Vec::<crate::types::PackageVersionHistory>>,
     #[allow(missing_docs)] // documentation missing in model
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetPackageVersionHistoryOutput {
+impl  GetPackageVersionHistoryOutput  {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn package_id(&self) -> ::std::option::Option<&str> {
+    pub fn package_id(&self) -> ::std::option::Option<& str> {
         self.package_id.as_deref()
     }
     /// <p>List of <code>PackageVersionHistory</code> objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.package_version_history_list.is_none()`.
-    pub fn package_version_history_list(&self) -> &[crate::types::PackageVersionHistory] {
-        self.package_version_history_list.as_deref().unwrap_or_default()
+    pub fn package_version_history_list(&self) -> & [crate::types::PackageVersionHistory] {
+        self.package_version_history_list.as_deref()
+        .unwrap_or_default()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetPackageVersionHistoryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetPackageVersionHistoryOutput {
     /// Creates a new builder-style object to manufacture [`GetPackageVersionHistoryOutput`](crate::operation::get_package_version_history::GetPackageVersionHistoryOutput).
     pub fn builder() -> crate::operation::get_package_version_history::builders::GetPackageVersionHistoryOutputBuilder {
@@ -45,7 +46,7 @@ impl GetPackageVersionHistoryOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPackageVersionHistoryOutputBuilder {
     pub(crate) package_id: ::std::option::Option<::std::string::String>,
-    pub(crate) package_version_history_list: ::std::option::Option<::std::vec::Vec<crate::types::PackageVersionHistory>>,
+    pub(crate) package_version_history_list: ::std::option::Option<::std::vec::Vec::<crate::types::PackageVersionHistory>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,8 +58,7 @@ impl GetPackageVersionHistoryOutputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_package_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_id = input;
-        self
+        self.package_id = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,17 +71,16 @@ impl GetPackageVersionHistoryOutputBuilder {
     /// <p>List of <code>PackageVersionHistory</code> objects.</p>
     pub fn package_version_history_list(mut self, input: crate::types::PackageVersionHistory) -> Self {
         let mut v = self.package_version_history_list.unwrap_or_default();
-        v.push(input);
-        self.package_version_history_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.package_version_history_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of <code>PackageVersionHistory</code> objects.</p>
-    pub fn set_package_version_history_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PackageVersionHistory>>) -> Self {
-        self.package_version_history_list = input;
-        self
+    pub fn set_package_version_history_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PackageVersionHistory>>) -> Self {
+        self.package_version_history_list = input; self
     }
     /// <p>List of <code>PackageVersionHistory</code> objects.</p>
-    pub fn get_package_version_history_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PackageVersionHistory>> {
+    pub fn get_package_version_history_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PackageVersionHistory>> {
         &self.package_version_history_list
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -91,29 +90,32 @@ impl GetPackageVersionHistoryOutputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetPackageVersionHistoryOutput`](crate::operation::get_package_version_history::GetPackageVersionHistoryOutput).
     pub fn build(self) -> crate::operation::get_package_version_history::GetPackageVersionHistoryOutput {
         crate::operation::get_package_version_history::GetPackageVersionHistoryOutput {
-            package_id: self.package_id,
-            package_version_history_list: self.package_version_history_list,
-            next_token: self.next_token,
+            package_id: self.package_id
+            ,
+            package_version_history_list: self.package_version_history_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

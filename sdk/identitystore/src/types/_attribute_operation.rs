@@ -3,20 +3,19 @@
 /// <p>An operation that applies to the requested group. This operation might add, replace, or remove an attribute.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttributeOperation {
+pub struct AttributeOperation  {
     /// <p>A string representation of the path to a given attribute or sub-attribute. Supports JMESPath.</p>
     pub attribute_path: ::std::string::String,
     /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the CLI.</p>
     pub attribute_value: ::std::option::Option<::aws_smithy_types::Document>,
 }
-impl AttributeOperation {
+impl  AttributeOperation  {
     /// <p>A string representation of the path to a given attribute or sub-attribute. Supports JMESPath.</p>
-    pub fn attribute_path(&self) -> &str {
-        use std::ops::Deref;
-        self.attribute_path.deref()
+    pub fn attribute_path(&self) -> & str {
+        use std::ops::Deref; self.attribute_path.deref()
     }
     /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the CLI.</p>
-    pub fn attribute_value(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+    pub fn attribute_value(&self) -> ::std::option::Option<& ::aws_smithy_types::Document> {
         self.attribute_value.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl AttributeOperationBuilder {
     }
     /// <p>A string representation of the path to a given attribute or sub-attribute. Supports JMESPath.</p>
     pub fn set_attribute_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attribute_path = input;
-        self
+        self.attribute_path = input; self
     }
     /// <p>A string representation of the path to a given attribute or sub-attribute. Supports JMESPath.</p>
     pub fn get_attribute_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl AttributeOperationBuilder {
     }
     /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the CLI.</p>
     pub fn set_attribute_value(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
-        self.attribute_value = input;
-        self
+        self.attribute_value = input; self
     }
     /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the CLI.</p>
     pub fn get_attribute_value(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
@@ -68,14 +65,17 @@ impl AttributeOperationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`attribute_path`](crate::types::builders::AttributeOperationBuilder::attribute_path)
     pub fn build(self) -> ::std::result::Result<crate::types::AttributeOperation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AttributeOperation {
-            attribute_path: self.attribute_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attribute_path",
-                    "attribute_path was not specified but it is required when building AttributeOperation",
-                )
-            })?,
-            attribute_value: self.attribute_value,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AttributeOperation {
+                attribute_path: self.attribute_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attribute_path", "attribute_path was not specified but it is required when building AttributeOperation")
+                    )?
+                ,
+                attribute_value: self.attribute_value
+                ,
+            }
+        )
     }
 }
+

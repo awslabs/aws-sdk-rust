@@ -21,11 +21,7 @@ impl SubscribedPrincipal {
     /// Tries to convert the enum instance into [`Project`](crate::types::SubscribedPrincipal::Project), extracting the inner [`SubscribedProject`](crate::types::SubscribedProject).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_project(&self) -> ::std::result::Result<&crate::types::SubscribedProject, &Self> {
-        if let SubscribedPrincipal::Project(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let SubscribedPrincipal::Project(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Project`](crate::types::SubscribedPrincipal::Project).
     pub fn is_project(&self) -> bool {
@@ -36,3 +32,4 @@ impl SubscribedPrincipal {
         matches!(self, Self::Unknown)
     }
 }
+

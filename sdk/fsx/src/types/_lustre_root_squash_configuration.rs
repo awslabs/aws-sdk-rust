@@ -4,7 +4,7 @@
 /// <p>You can also use the <code>NoSquashNids</code> parameter to provide an array of clients who are not affected by the root squash setting. These clients will access the file system as root, with unrestricted privileges.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LustreRootSquashConfiguration {
+pub struct LustreRootSquashConfiguration  {
     /// <p>You enable root squash by setting a user ID (UID) and group ID (GID) for the file system in the format <code>UID:GID</code> (for example, <code>365534:65534</code>). The UID and GID values can range from <code>0</code> to <code>4294967294</code>:</p>
     /// <ul>
     /// <li>
@@ -21,9 +21,9 @@ pub struct LustreRootSquashConfiguration {
     /// <li>
     /// <p>An address range is described using a dash to separate the range (for example, <code>10.0.[2-10].[1-255]@tcp</code>).</p></li>
     /// </ul>
-    pub no_squash_nids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub no_squash_nids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl LustreRootSquashConfiguration {
+impl  LustreRootSquashConfiguration  {
     /// <p>You enable root squash by setting a user ID (UID) and group ID (GID) for the file system in the format <code>UID:GID</code> (for example, <code>365534:65534</code>). The UID and GID values can range from <code>0</code> to <code>4294967294</code>:</p>
     /// <ul>
     /// <li>
@@ -32,7 +32,7 @@ impl LustreRootSquashConfiguration {
     /// <p>A value of <code>0</code> (zero) for UID and GID indicates root, and therefore disables root squash.</p></li>
     /// </ul>
     /// <p>When root squash is enabled, the user ID and group ID of a root user accessing the file system are re-mapped to the UID and GID you provide.</p>
-    pub fn root_squash(&self) -> ::std::option::Option<&str> {
+    pub fn root_squash(&self) -> ::std::option::Option<& str> {
         self.root_squash.as_deref()
     }
     /// <p>When root squash is enabled, you can optionally specify an array of NIDs of clients for which root squash does not apply. A client NID is a Lustre Network Identifier used to uniquely identify a client. You can specify the NID as either a single address or a range of addresses:</p>
@@ -42,10 +42,11 @@ impl LustreRootSquashConfiguration {
     /// <li>
     /// <p>An address range is described using a dash to separate the range (for example, <code>10.0.[2-10].[1-255]@tcp</code>).</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.no_squash_nids.is_none()`.
-    pub fn no_squash_nids(&self) -> &[::std::string::String] {
-        self.no_squash_nids.as_deref().unwrap_or_default()
+    pub fn no_squash_nids(&self) -> & [::std::string::String] {
+        self.no_squash_nids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl LustreRootSquashConfiguration {
@@ -60,7 +61,7 @@ impl LustreRootSquashConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LustreRootSquashConfigurationBuilder {
     pub(crate) root_squash: ::std::option::Option<::std::string::String>,
-    pub(crate) no_squash_nids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) no_squash_nids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl LustreRootSquashConfigurationBuilder {
     /// <p>You enable root squash by setting a user ID (UID) and group ID (GID) for the file system in the format <code>UID:GID</code> (for example, <code>365534:65534</code>). The UID and GID values can range from <code>0</code> to <code>4294967294</code>:</p>
@@ -84,8 +85,7 @@ impl LustreRootSquashConfigurationBuilder {
     /// </ul>
     /// <p>When root squash is enabled, the user ID and group ID of a root user accessing the file system are re-mapped to the UID and GID you provide.</p>
     pub fn set_root_squash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.root_squash = input;
-        self
+        self.root_squash = input; self
     }
     /// <p>You enable root squash by setting a user ID (UID) and group ID (GID) for the file system in the format <code>UID:GID</code> (for example, <code>365534:65534</code>). The UID and GID values can range from <code>0</code> to <code>4294967294</code>:</p>
     /// <ul>
@@ -111,9 +111,9 @@ impl LustreRootSquashConfigurationBuilder {
     /// </ul>
     pub fn no_squash_nids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.no_squash_nids.unwrap_or_default();
-        v.push(input.into());
-        self.no_squash_nids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.no_squash_nids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>When root squash is enabled, you can optionally specify an array of NIDs of clients for which root squash does not apply. A client NID is a Lustre Network Identifier used to uniquely identify a client. You can specify the NID as either a single address or a range of addresses:</p>
     /// <ul>
@@ -122,9 +122,8 @@ impl LustreRootSquashConfigurationBuilder {
     /// <li>
     /// <p>An address range is described using a dash to separate the range (for example, <code>10.0.[2-10].[1-255]@tcp</code>).</p></li>
     /// </ul>
-    pub fn set_no_squash_nids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.no_squash_nids = input;
-        self
+    pub fn set_no_squash_nids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.no_squash_nids = input; self
     }
     /// <p>When root squash is enabled, you can optionally specify an array of NIDs of clients for which root squash does not apply. A client NID is a Lustre Network Identifier used to uniquely identify a client. You can specify the NID as either a single address or a range of addresses:</p>
     /// <ul>
@@ -133,14 +132,17 @@ impl LustreRootSquashConfigurationBuilder {
     /// <li>
     /// <p>An address range is described using a dash to separate the range (for example, <code>10.0.[2-10].[1-255]@tcp</code>).</p></li>
     /// </ul>
-    pub fn get_no_squash_nids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_no_squash_nids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.no_squash_nids
     }
     /// Consumes the builder and constructs a [`LustreRootSquashConfiguration`](crate::types::LustreRootSquashConfiguration).
     pub fn build(self) -> crate::types::LustreRootSquashConfiguration {
         crate::types::LustreRootSquashConfiguration {
-            root_squash: self.root_squash,
-            no_squash_nids: self.no_squash_nids,
+            root_squash: self.root_squash
+            ,
+            no_squash_nids: self.no_squash_nids
+            ,
         }
     }
 }
+

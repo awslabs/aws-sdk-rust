@@ -3,7 +3,7 @@
 /// <p>The container for the properties of a token balance output.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetTokenBalanceOutputItem {
+pub struct BatchGetTokenBalanceOutputItem  {
     /// <p>The container for the owner identifier.</p>
     pub owner_identifier: ::std::option::Option<crate::types::OwnerIdentifier>,
     /// <p>The container for the identifier for the token including the unique token ID and its blockchain network.</p><note>
@@ -17,28 +17,27 @@ pub struct BatchGetTokenBalanceOutputItem {
     /// <p>The container for time.</p>
     pub last_updated_time: ::std::option::Option<crate::types::BlockchainInstant>,
 }
-impl BatchGetTokenBalanceOutputItem {
+impl  BatchGetTokenBalanceOutputItem  {
     /// <p>The container for the owner identifier.</p>
-    pub fn owner_identifier(&self) -> ::std::option::Option<&crate::types::OwnerIdentifier> {
+    pub fn owner_identifier(&self) -> ::std::option::Option<& crate::types::OwnerIdentifier> {
         self.owner_identifier.as_ref()
     }
     /// <p>The container for the identifier for the token including the unique token ID and its blockchain network.</p><note>
     /// <p>Only the native tokens BTC and ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are supported.</p>
     /// </note>
-    pub fn token_identifier(&self) -> ::std::option::Option<&crate::types::TokenIdentifier> {
+    pub fn token_identifier(&self) -> ::std::option::Option<& crate::types::TokenIdentifier> {
         self.token_identifier.as_ref()
     }
     /// <p>The container for the token balance.</p>
-    pub fn balance(&self) -> &str {
-        use std::ops::Deref;
-        self.balance.deref()
+    pub fn balance(&self) -> & str {
+        use std::ops::Deref; self.balance.deref()
     }
     /// <p>The container for time.</p>
-    pub fn at_blockchain_instant(&self) -> ::std::option::Option<&crate::types::BlockchainInstant> {
+    pub fn at_blockchain_instant(&self) -> ::std::option::Option<& crate::types::BlockchainInstant> {
         self.at_blockchain_instant.as_ref()
     }
     /// <p>The container for time.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&crate::types::BlockchainInstant> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& crate::types::BlockchainInstant> {
         self.last_updated_time.as_ref()
     }
 }
@@ -67,8 +66,7 @@ impl BatchGetTokenBalanceOutputItemBuilder {
     }
     /// <p>The container for the owner identifier.</p>
     pub fn set_owner_identifier(mut self, input: ::std::option::Option<crate::types::OwnerIdentifier>) -> Self {
-        self.owner_identifier = input;
-        self
+        self.owner_identifier = input; self
     }
     /// <p>The container for the owner identifier.</p>
     pub fn get_owner_identifier(&self) -> &::std::option::Option<crate::types::OwnerIdentifier> {
@@ -85,8 +83,7 @@ impl BatchGetTokenBalanceOutputItemBuilder {
     /// <p>Only the native tokens BTC and ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are supported.</p>
     /// </note>
     pub fn set_token_identifier(mut self, input: ::std::option::Option<crate::types::TokenIdentifier>) -> Self {
-        self.token_identifier = input;
-        self
+        self.token_identifier = input; self
     }
     /// <p>The container for the identifier for the token including the unique token ID and its blockchain network.</p><note>
     /// <p>Only the native tokens BTC and ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are supported.</p>
@@ -102,8 +99,7 @@ impl BatchGetTokenBalanceOutputItemBuilder {
     }
     /// <p>The container for the token balance.</p>
     pub fn set_balance(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.balance = input;
-        self
+        self.balance = input; self
     }
     /// <p>The container for the token balance.</p>
     pub fn get_balance(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +113,7 @@ impl BatchGetTokenBalanceOutputItemBuilder {
     }
     /// <p>The container for time.</p>
     pub fn set_at_blockchain_instant(mut self, input: ::std::option::Option<crate::types::BlockchainInstant>) -> Self {
-        self.at_blockchain_instant = input;
-        self
+        self.at_blockchain_instant = input; self
     }
     /// <p>The container for time.</p>
     pub fn get_at_blockchain_instant(&self) -> &::std::option::Option<crate::types::BlockchainInstant> {
@@ -131,8 +126,7 @@ impl BatchGetTokenBalanceOutputItemBuilder {
     }
     /// <p>The container for time.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<crate::types::BlockchainInstant>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The container for time.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<crate::types::BlockchainInstant> {
@@ -142,17 +136,23 @@ impl BatchGetTokenBalanceOutputItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`balance`](crate::types::builders::BatchGetTokenBalanceOutputItemBuilder::balance)
     pub fn build(self) -> ::std::result::Result<crate::types::BatchGetTokenBalanceOutputItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BatchGetTokenBalanceOutputItem {
-            owner_identifier: self.owner_identifier,
-            token_identifier: self.token_identifier,
-            balance: self.balance.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "balance",
-                    "balance was not specified but it is required when building BatchGetTokenBalanceOutputItem",
-                )
-            })?,
-            at_blockchain_instant: self.at_blockchain_instant,
-            last_updated_time: self.last_updated_time,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BatchGetTokenBalanceOutputItem {
+                owner_identifier: self.owner_identifier
+                ,
+                token_identifier: self.token_identifier
+                ,
+                balance: self.balance
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("balance", "balance was not specified but it is required when building BatchGetTokenBalanceOutputItem")
+                    )?
+                ,
+                at_blockchain_instant: self.at_blockchain_instant
+                ,
+                last_updated_time: self.last_updated_time
+                ,
+            }
+        )
     }
 }
+

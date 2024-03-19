@@ -3,28 +3,29 @@
 /// <p>Describes the default cluster parameters for a parameter group family.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DefaultClusterParameters {
+pub struct DefaultClusterParameters  {
     /// <p>The name of the cluster parameter group family to which the engine default parameters apply.</p>
     pub parameter_group_family: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The list of cluster default parameters.</p>
-    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec::<crate::types::Parameter>>,
 }
-impl DefaultClusterParameters {
+impl  DefaultClusterParameters  {
     /// <p>The name of the cluster parameter group family to which the engine default parameters apply.</p>
-    pub fn parameter_group_family(&self) -> ::std::option::Option<&str> {
+    pub fn parameter_group_family(&self) -> ::std::option::Option<& str> {
         self.parameter_group_family.as_deref()
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The list of cluster default parameters.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
-    pub fn parameters(&self) -> &[crate::types::Parameter] {
-        self.parameters.as_deref().unwrap_or_default()
+    pub fn parameters(&self) -> & [crate::types::Parameter] {
+        self.parameters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DefaultClusterParameters {
@@ -40,7 +41,7 @@ impl DefaultClusterParameters {
 pub struct DefaultClusterParametersBuilder {
     pub(crate) parameter_group_family: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec::<crate::types::Parameter>>,
 }
 impl DefaultClusterParametersBuilder {
     /// <p>The name of the cluster parameter group family to which the engine default parameters apply.</p>
@@ -50,8 +51,7 @@ impl DefaultClusterParametersBuilder {
     }
     /// <p>The name of the cluster parameter group family to which the engine default parameters apply.</p>
     pub fn set_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_group_family = input;
-        self
+        self.parameter_group_family = input; self
     }
     /// <p>The name of the cluster parameter group family to which the engine default parameters apply.</p>
     pub fn get_parameter_group_family(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl DefaultClusterParametersBuilder {
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,25 +77,28 @@ impl DefaultClusterParametersBuilder {
     /// <p>The list of cluster default parameters.</p>
     pub fn parameters(mut self, input: crate::types::Parameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of cluster default parameters.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Parameter>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>The list of cluster default parameters.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Parameter>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`DefaultClusterParameters`](crate::types::DefaultClusterParameters).
     pub fn build(self) -> crate::types::DefaultClusterParameters {
         crate::types::DefaultClusterParameters {
-            parameter_group_family: self.parameter_group_family,
-            marker: self.marker,
-            parameters: self.parameters,
+            parameter_group_family: self.parameter_group_family
+            ,
+            marker: self.marker
+            ,
+            parameters: self.parameters
+            ,
         }
     }
 }
+

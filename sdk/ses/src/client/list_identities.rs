@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListIdentities`](crate::operation::list_identities::builders::ListIdentitiesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_identities::builders::ListIdentitiesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`identity_type(IdentityType)`](crate::operation::list_identities::builders::ListIdentitiesFluentBuilder::identity_type) / [`set_identity_type(Option<IdentityType>)`](crate::operation::list_identities::builders::ListIdentitiesFluentBuilder::set_identity_type):<br>required: **false**<br><p>The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is omitted, then all identities are listed.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_identities::builders::ListIdentitiesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_identities::builders::ListIdentitiesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use for pagination.</p><br>
     ///   - [`max_items(i32)`](crate::operation::list_identities::builders::ListIdentitiesFluentBuilder::max_items) / [`set_max_items(Option<i32>)`](crate::operation::list_identities::builders::ListIdentitiesFluentBuilder::set_max_items):<br>required: **false**<br><p>The maximum number of identities per page. Possible values are 1-1000 inclusive.</p><br>
-    /// - On success, responds with [`ListIdentitiesOutput`](crate::operation::list_identities::ListIdentitiesOutput) with field(s):
+                            /// - On success, responds with [`ListIdentitiesOutput`](crate::operation::list_identities::ListIdentitiesOutput) with field(s):
     ///   - [`identities(Vec::<String>)`](crate::operation::list_identities::ListIdentitiesOutput::identities): <p>A list of identities.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_identities::ListIdentitiesOutput::next_token): <p>The token used for pagination.</p>
-    /// - On failure, responds with [`SdkError<ListIdentitiesError>`](crate::operation::list_identities::ListIdentitiesError)
+                            /// - On failure, responds with [`SdkError<ListIdentitiesError>`](crate::operation::list_identities::ListIdentitiesError)
     pub fn list_identities(&self) -> crate::operation::list_identities::builders::ListIdentitiesFluentBuilder {
-        crate::operation::list_identities::builders::ListIdentitiesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_identities::builders::ListIdentitiesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

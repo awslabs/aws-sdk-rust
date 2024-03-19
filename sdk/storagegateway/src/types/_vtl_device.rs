@@ -3,7 +3,7 @@
 /// <p>Represents a device object associated with a tape gateway.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VtlDevice {
+pub struct VtlDevice  {
     /// <p>Specifies the unique Amazon Resource Name (ARN) of the device (tape drive or media changer).</p>
     pub vtl_device_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the type of device that the VTL device emulates.</p>
@@ -15,25 +15,25 @@ pub struct VtlDevice {
     /// <p>A list of iSCSI information about a VTL device.</p>
     pub devicei_scsi_attributes: ::std::option::Option<crate::types::DeviceiScsiAttributes>,
 }
-impl VtlDevice {
+impl  VtlDevice  {
     /// <p>Specifies the unique Amazon Resource Name (ARN) of the device (tape drive or media changer).</p>
-    pub fn vtl_device_arn(&self) -> ::std::option::Option<&str> {
+    pub fn vtl_device_arn(&self) -> ::std::option::Option<& str> {
         self.vtl_device_arn.as_deref()
     }
     /// <p>Specifies the type of device that the VTL device emulates.</p>
-    pub fn vtl_device_type(&self) -> ::std::option::Option<&str> {
+    pub fn vtl_device_type(&self) -> ::std::option::Option<& str> {
         self.vtl_device_type.as_deref()
     }
     /// <p>Specifies the vendor of the device that the VTL device object emulates.</p>
-    pub fn vtl_device_vendor(&self) -> ::std::option::Option<&str> {
+    pub fn vtl_device_vendor(&self) -> ::std::option::Option<& str> {
         self.vtl_device_vendor.as_deref()
     }
     /// <p>Specifies the model number of device that the VTL device emulates.</p>
-    pub fn vtl_device_product_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn vtl_device_product_identifier(&self) -> ::std::option::Option<& str> {
         self.vtl_device_product_identifier.as_deref()
     }
     /// <p>A list of iSCSI information about a VTL device.</p>
-    pub fn devicei_scsi_attributes(&self) -> ::std::option::Option<&crate::types::DeviceiScsiAttributes> {
+    pub fn devicei_scsi_attributes(&self) -> ::std::option::Option<& crate::types::DeviceiScsiAttributes> {
         self.devicei_scsi_attributes.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl VtlDeviceBuilder {
     }
     /// <p>Specifies the unique Amazon Resource Name (ARN) of the device (tape drive or media changer).</p>
     pub fn set_vtl_device_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vtl_device_arn = input;
-        self
+        self.vtl_device_arn = input; self
     }
     /// <p>Specifies the unique Amazon Resource Name (ARN) of the device (tape drive or media changer).</p>
     pub fn get_vtl_device_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl VtlDeviceBuilder {
     }
     /// <p>Specifies the type of device that the VTL device emulates.</p>
     pub fn set_vtl_device_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vtl_device_type = input;
-        self
+        self.vtl_device_type = input; self
     }
     /// <p>Specifies the type of device that the VTL device emulates.</p>
     pub fn get_vtl_device_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl VtlDeviceBuilder {
     }
     /// <p>Specifies the vendor of the device that the VTL device object emulates.</p>
     pub fn set_vtl_device_vendor(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vtl_device_vendor = input;
-        self
+        self.vtl_device_vendor = input; self
     }
     /// <p>Specifies the vendor of the device that the VTL device object emulates.</p>
     pub fn get_vtl_device_vendor(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl VtlDeviceBuilder {
     }
     /// <p>Specifies the model number of device that the VTL device emulates.</p>
     pub fn set_vtl_device_product_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vtl_device_product_identifier = input;
-        self
+        self.vtl_device_product_identifier = input; self
     }
     /// <p>Specifies the model number of device that the VTL device emulates.</p>
     pub fn get_vtl_device_product_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl VtlDeviceBuilder {
     }
     /// <p>A list of iSCSI information about a VTL device.</p>
     pub fn set_devicei_scsi_attributes(mut self, input: ::std::option::Option<crate::types::DeviceiScsiAttributes>) -> Self {
-        self.devicei_scsi_attributes = input;
-        self
+        self.devicei_scsi_attributes = input; self
     }
     /// <p>A list of iSCSI information about a VTL device.</p>
     pub fn get_devicei_scsi_attributes(&self) -> &::std::option::Option<crate::types::DeviceiScsiAttributes> {
@@ -128,11 +123,17 @@ impl VtlDeviceBuilder {
     /// Consumes the builder and constructs a [`VtlDevice`](crate::types::VtlDevice).
     pub fn build(self) -> crate::types::VtlDevice {
         crate::types::VtlDevice {
-            vtl_device_arn: self.vtl_device_arn,
-            vtl_device_type: self.vtl_device_type,
-            vtl_device_vendor: self.vtl_device_vendor,
-            vtl_device_product_identifier: self.vtl_device_product_identifier,
-            devicei_scsi_attributes: self.devicei_scsi_attributes,
+            vtl_device_arn: self.vtl_device_arn
+            ,
+            vtl_device_type: self.vtl_device_type
+            ,
+            vtl_device_vendor: self.vtl_device_vendor
+            ,
+            vtl_device_product_identifier: self.vtl_device_product_identifier
+            ,
+            devicei_scsi_attributes: self.devicei_scsi_attributes
+            ,
         }
     }
 }
+

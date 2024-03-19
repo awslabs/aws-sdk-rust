@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCustomRulePolicyInput {
+pub struct GetCustomRulePolicyInput  {
     /// <p>The name of your Config Custom Policy rule.</p>
     pub config_rule_name: ::std::option::Option<::std::string::String>,
 }
-impl GetCustomRulePolicyInput {
+impl  GetCustomRulePolicyInput  {
     /// <p>The name of your Config Custom Policy rule.</p>
-    pub fn config_rule_name(&self) -> ::std::option::Option<&str> {
+    pub fn config_rule_name(&self) -> ::std::option::Option<& str> {
         self.config_rule_name.as_deref()
     }
 }
@@ -33,20 +33,20 @@ impl GetCustomRulePolicyInputBuilder {
     }
     /// <p>The name of your Config Custom Policy rule.</p>
     pub fn set_config_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.config_rule_name = input;
-        self
+        self.config_rule_name = input; self
     }
     /// <p>The name of your Config Custom Policy rule.</p>
     pub fn get_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.config_rule_name
     }
     /// Consumes the builder and constructs a [`GetCustomRulePolicyInput`](crate::operation::get_custom_rule_policy::GetCustomRulePolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_custom_rule_policy::GetCustomRulePolicyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_custom_rule_policy::GetCustomRulePolicyInput {
-            config_rule_name: self.config_rule_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_custom_rule_policy::GetCustomRulePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_custom_rule_policy::GetCustomRulePolicyInput {
+                config_rule_name: self.config_rule_name
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAnalysisTemplateInput {
+pub struct UpdateAnalysisTemplateInput  {
     /// <p>The identifier for a membership resource.</p>
     pub membership_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the analysis template resource.</p>
@@ -10,17 +10,17 @@ pub struct UpdateAnalysisTemplateInput {
     /// <p>A new description for the analysis template.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl UpdateAnalysisTemplateInput {
+impl  UpdateAnalysisTemplateInput  {
     /// <p>The identifier for a membership resource.</p>
-    pub fn membership_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn membership_identifier(&self) -> ::std::option::Option<& str> {
         self.membership_identifier.as_deref()
     }
     /// <p>The identifier for the analysis template resource.</p>
-    pub fn analysis_template_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn analysis_template_identifier(&self) -> ::std::option::Option<& str> {
         self.analysis_template_identifier.as_deref()
     }
     /// <p>A new description for the analysis template.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateAnalysisTemplateInputBuilder {
     }
     /// <p>The identifier for a membership resource.</p>
     pub fn set_membership_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.membership_identifier = input;
-        self
+        self.membership_identifier = input; self
     }
     /// <p>The identifier for a membership resource.</p>
     pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateAnalysisTemplateInputBuilder {
     }
     /// <p>The identifier for the analysis template resource.</p>
     pub fn set_analysis_template_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.analysis_template_identifier = input;
-        self
+        self.analysis_template_identifier = input; self
     }
     /// <p>The identifier for the analysis template resource.</p>
     pub fn get_analysis_template_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,24 +75,24 @@ impl UpdateAnalysisTemplateInputBuilder {
     }
     /// <p>A new description for the analysis template.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A new description for the analysis template.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateAnalysisTemplateInput`](crate::operation::update_analysis_template::UpdateAnalysisTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_analysis_template::UpdateAnalysisTemplateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_analysis_template::UpdateAnalysisTemplateInput {
-            membership_identifier: self.membership_identifier,
-            analysis_template_identifier: self.analysis_template_identifier,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_analysis_template::UpdateAnalysisTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_analysis_template::UpdateAnalysisTemplateInput {
+                membership_identifier: self.membership_identifier
+                ,
+                analysis_template_identifier: self.analysis_template_identifier
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DiscardRegistrationVersionOutput {
+pub struct DiscardRegistrationVersionOutput  {
     /// <p>The Amazon Resource Name (ARN) for the registration.</p>
     pub registration_arn: ::std::string::String,
     /// <p>The unique identifier for the registration.</p>
@@ -33,16 +33,14 @@ pub struct DiscardRegistrationVersionOutput {
     pub registration_version_status_history: ::std::option::Option<crate::types::RegistrationVersionStatusHistory>,
     _request_id: Option<String>,
 }
-impl DiscardRegistrationVersionOutput {
+impl  DiscardRegistrationVersionOutput  {
     /// <p>The Amazon Resource Name (ARN) for the registration.</p>
-    pub fn registration_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.registration_arn.deref()
+    pub fn registration_arn(&self) -> & str {
+        use std::ops::Deref; self.registration_arn.deref()
     }
     /// <p>The unique identifier for the registration.</p>
-    pub fn registration_id(&self) -> &str {
-        use std::ops::Deref;
-        self.registration_id.deref()
+    pub fn registration_id(&self) -> & str {
+        use std::ops::Deref; self.registration_id.deref()
     }
     /// <p>The version number of the registration.</p>
     pub fn version_number(&self) -> i64 {
@@ -67,19 +65,19 @@ impl DiscardRegistrationVersionOutput {
     /// <li>
     /// <p><code>ARCHIVED</code>: Your previously approved registration version moves into this status when a more recently submitted version is approved.</p></li>
     /// </ul>
-    pub fn registration_version_status(&self) -> &crate::types::RegistrationVersionStatus {
+    pub fn registration_version_status(&self) -> & crate::types::RegistrationVersionStatus {
         &self.registration_version_status
     }
     /// <p>The <b>RegistrationVersionStatusHistory</b> object contains the time stamps for when the reservations status changes.</p>
-    pub fn registration_version_status_history(&self) -> ::std::option::Option<&crate::types::RegistrationVersionStatusHistory> {
+    pub fn registration_version_status_history(&self) -> ::std::option::Option<& crate::types::RegistrationVersionStatusHistory> {
         self.registration_version_status_history.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DiscardRegistrationVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DiscardRegistrationVersionOutput {
     /// Creates a new builder-style object to manufacture [`DiscardRegistrationVersionOutput`](crate::operation::discard_registration_version::DiscardRegistrationVersionOutput).
     pub fn builder() -> crate::operation::discard_registration_version::builders::DiscardRegistrationVersionOutputBuilder {
@@ -107,8 +105,7 @@ impl DiscardRegistrationVersionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the registration.</p>
     pub fn set_registration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registration_arn = input;
-        self
+        self.registration_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the registration.</p>
     pub fn get_registration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +119,7 @@ impl DiscardRegistrationVersionOutputBuilder {
     }
     /// <p>The unique identifier for the registration.</p>
     pub fn set_registration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registration_id = input;
-        self
+        self.registration_id = input; self
     }
     /// <p>The unique identifier for the registration.</p>
     pub fn get_registration_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,8 +133,7 @@ impl DiscardRegistrationVersionOutputBuilder {
     }
     /// <p>The version number of the registration.</p>
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.version_number = input;
-        self
+        self.version_number = input; self
     }
     /// <p>The version number of the registration.</p>
     pub fn get_version_number(&self) -> &::std::option::Option<i64> {
@@ -188,8 +183,7 @@ impl DiscardRegistrationVersionOutputBuilder {
     /// <p><code>ARCHIVED</code>: Your previously approved registration version moves into this status when a more recently submitted version is approved.</p></li>
     /// </ul>
     pub fn set_registration_version_status(mut self, input: ::std::option::Option<crate::types::RegistrationVersionStatus>) -> Self {
-        self.registration_version_status = input;
-        self
+        self.registration_version_status = input; self
     }
     /// <p>The status of the registration version.</p>
     /// <ul>
@@ -221,61 +215,55 @@ impl DiscardRegistrationVersionOutputBuilder {
     }
     /// <p>The <b>RegistrationVersionStatusHistory</b> object contains the time stamps for when the reservations status changes.</p>
     pub fn set_registration_version_status_history(mut self, input: ::std::option::Option<crate::types::RegistrationVersionStatusHistory>) -> Self {
-        self.registration_version_status_history = input;
-        self
+        self.registration_version_status_history = input; self
     }
     /// <p>The <b>RegistrationVersionStatusHistory</b> object contains the time stamps for when the reservations status changes.</p>
     pub fn get_registration_version_status_history(&self) -> &::std::option::Option<crate::types::RegistrationVersionStatusHistory> {
         &self.registration_version_status_history
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DiscardRegistrationVersionOutput`](crate::operation::discard_registration_version::DiscardRegistrationVersionOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`registration_arn`](crate::operation::discard_registration_version::builders::DiscardRegistrationVersionOutputBuilder::registration_arn)
     /// - [`registration_id`](crate::operation::discard_registration_version::builders::DiscardRegistrationVersionOutputBuilder::registration_id)
     /// - [`version_number`](crate::operation::discard_registration_version::builders::DiscardRegistrationVersionOutputBuilder::version_number)
     /// - [`registration_version_status`](crate::operation::discard_registration_version::builders::DiscardRegistrationVersionOutputBuilder::registration_version_status)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::discard_registration_version::DiscardRegistrationVersionOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::discard_registration_version::DiscardRegistrationVersionOutput {
-            registration_arn: self.registration_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "registration_arn",
-                    "registration_arn was not specified but it is required when building DiscardRegistrationVersionOutput",
-                )
-            })?,
-            registration_id: self.registration_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "registration_id",
-                    "registration_id was not specified but it is required when building DiscardRegistrationVersionOutput",
-                )
-            })?,
-            version_number: self.version_number.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "version_number",
-                    "version_number was not specified but it is required when building DiscardRegistrationVersionOutput",
-                )
-            })?,
-            registration_version_status: self.registration_version_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "registration_version_status",
-                    "registration_version_status was not specified but it is required when building DiscardRegistrationVersionOutput",
-                )
-            })?,
-            registration_version_status_history: self.registration_version_status_history,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::discard_registration_version::DiscardRegistrationVersionOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::discard_registration_version::DiscardRegistrationVersionOutput {
+                registration_arn: self.registration_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("registration_arn", "registration_arn was not specified but it is required when building DiscardRegistrationVersionOutput")
+                    )?
+                ,
+                registration_id: self.registration_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("registration_id", "registration_id was not specified but it is required when building DiscardRegistrationVersionOutput")
+                    )?
+                ,
+                version_number: self.version_number
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("version_number", "version_number was not specified but it is required when building DiscardRegistrationVersionOutput")
+                    )?
+                ,
+                registration_version_status: self.registration_version_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("registration_version_status", "registration_version_status was not specified but it is required when building DiscardRegistrationVersionOutput")
+                    )?
+                ,
+                registration_version_status_history: self.registration_version_status_history
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

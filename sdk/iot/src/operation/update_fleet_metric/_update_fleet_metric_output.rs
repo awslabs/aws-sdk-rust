@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFleetMetricOutput {
+pub struct UpdateFleetMetricOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for UpdateFleetMetricOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateFleetMetricOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFleetMetricOutput`](crate::operation::update_fleet_metric::UpdateFleetMetricOutput).
     pub fn builder() -> crate::operation::update_fleet_metric::builders::UpdateFleetMetricOutputBuilder {
@@ -25,14 +25,14 @@ pub struct UpdateFleetMetricOutputBuilder {
 }
 impl UpdateFleetMetricOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateFleetMetricOutput`](crate::operation::update_fleet_metric::UpdateFleetMetricOutput).
     pub fn build(self) -> crate::operation::update_fleet_metric::UpdateFleetMetricOutput {
         crate::operation::update_fleet_metric::UpdateFleetMetricOutput {
@@ -40,3 +40,4 @@ impl UpdateFleetMetricOutputBuilder {
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The configuration of a <code>GaugeChartVisual</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GaugeChartConfiguration {
+pub struct GaugeChartConfiguration  {
     /// <p>The field well configuration of a <code>GaugeChartVisual</code>.</p>
     pub field_wells: ::std::option::Option<crate::types::GaugeChartFieldWells>,
     /// <p>The options that determine the presentation of the <code>GaugeChartVisual</code>.</p>
@@ -17,29 +17,29 @@ pub struct GaugeChartConfiguration {
     /// <p>The general visual interactions setup for a visual.</p>
     pub interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
-impl GaugeChartConfiguration {
+impl  GaugeChartConfiguration  {
     /// <p>The field well configuration of a <code>GaugeChartVisual</code>.</p>
-    pub fn field_wells(&self) -> ::std::option::Option<&crate::types::GaugeChartFieldWells> {
+    pub fn field_wells(&self) -> ::std::option::Option<& crate::types::GaugeChartFieldWells> {
         self.field_wells.as_ref()
     }
     /// <p>The options that determine the presentation of the <code>GaugeChartVisual</code>.</p>
-    pub fn gauge_chart_options(&self) -> ::std::option::Option<&crate::types::GaugeChartOptions> {
+    pub fn gauge_chart_options(&self) -> ::std::option::Option<& crate::types::GaugeChartOptions> {
         self.gauge_chart_options.as_ref()
     }
     /// <p>The data label configuration of a <code>GaugeChartVisual</code>.</p>
-    pub fn data_labels(&self) -> ::std::option::Option<&crate::types::DataLabelOptions> {
+    pub fn data_labels(&self) -> ::std::option::Option<& crate::types::DataLabelOptions> {
         self.data_labels.as_ref()
     }
     /// <p>The tooltip configuration of a <code>GaugeChartVisual</code>.</p>
-    pub fn tooltip_options(&self) -> ::std::option::Option<&crate::types::TooltipOptions> {
+    pub fn tooltip_options(&self) -> ::std::option::Option<& crate::types::TooltipOptions> {
         self.tooltip_options.as_ref()
     }
     /// <p>The visual palette configuration of a <code>GaugeChartVisual</code>.</p>
-    pub fn visual_palette(&self) -> ::std::option::Option<&crate::types::VisualPalette> {
+    pub fn visual_palette(&self) -> ::std::option::Option<& crate::types::VisualPalette> {
         self.visual_palette.as_ref()
     }
     /// <p>The general visual interactions setup for a visual.</p>
-    pub fn interactions(&self) -> ::std::option::Option<&crate::types::VisualInteractionOptions> {
+    pub fn interactions(&self) -> ::std::option::Option<& crate::types::VisualInteractionOptions> {
         self.interactions.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl GaugeChartConfigurationBuilder {
     }
     /// <p>The field well configuration of a <code>GaugeChartVisual</code>.</p>
     pub fn set_field_wells(mut self, input: ::std::option::Option<crate::types::GaugeChartFieldWells>) -> Self {
-        self.field_wells = input;
-        self
+        self.field_wells = input; self
     }
     /// <p>The field well configuration of a <code>GaugeChartVisual</code>.</p>
     pub fn get_field_wells(&self) -> &::std::option::Option<crate::types::GaugeChartFieldWells> {
@@ -83,8 +82,7 @@ impl GaugeChartConfigurationBuilder {
     }
     /// <p>The options that determine the presentation of the <code>GaugeChartVisual</code>.</p>
     pub fn set_gauge_chart_options(mut self, input: ::std::option::Option<crate::types::GaugeChartOptions>) -> Self {
-        self.gauge_chart_options = input;
-        self
+        self.gauge_chart_options = input; self
     }
     /// <p>The options that determine the presentation of the <code>GaugeChartVisual</code>.</p>
     pub fn get_gauge_chart_options(&self) -> &::std::option::Option<crate::types::GaugeChartOptions> {
@@ -97,8 +95,7 @@ impl GaugeChartConfigurationBuilder {
     }
     /// <p>The data label configuration of a <code>GaugeChartVisual</code>.</p>
     pub fn set_data_labels(mut self, input: ::std::option::Option<crate::types::DataLabelOptions>) -> Self {
-        self.data_labels = input;
-        self
+        self.data_labels = input; self
     }
     /// <p>The data label configuration of a <code>GaugeChartVisual</code>.</p>
     pub fn get_data_labels(&self) -> &::std::option::Option<crate::types::DataLabelOptions> {
@@ -111,8 +108,7 @@ impl GaugeChartConfigurationBuilder {
     }
     /// <p>The tooltip configuration of a <code>GaugeChartVisual</code>.</p>
     pub fn set_tooltip_options(mut self, input: ::std::option::Option<crate::types::TooltipOptions>) -> Self {
-        self.tooltip_options = input;
-        self
+        self.tooltip_options = input; self
     }
     /// <p>The tooltip configuration of a <code>GaugeChartVisual</code>.</p>
     pub fn get_tooltip_options(&self) -> &::std::option::Option<crate::types::TooltipOptions> {
@@ -125,8 +121,7 @@ impl GaugeChartConfigurationBuilder {
     }
     /// <p>The visual palette configuration of a <code>GaugeChartVisual</code>.</p>
     pub fn set_visual_palette(mut self, input: ::std::option::Option<crate::types::VisualPalette>) -> Self {
-        self.visual_palette = input;
-        self
+        self.visual_palette = input; self
     }
     /// <p>The visual palette configuration of a <code>GaugeChartVisual</code>.</p>
     pub fn get_visual_palette(&self) -> &::std::option::Option<crate::types::VisualPalette> {
@@ -139,8 +134,7 @@ impl GaugeChartConfigurationBuilder {
     }
     /// <p>The general visual interactions setup for a visual.</p>
     pub fn set_interactions(mut self, input: ::std::option::Option<crate::types::VisualInteractionOptions>) -> Self {
-        self.interactions = input;
-        self
+        self.interactions = input; self
     }
     /// <p>The general visual interactions setup for a visual.</p>
     pub fn get_interactions(&self) -> &::std::option::Option<crate::types::VisualInteractionOptions> {
@@ -149,12 +143,19 @@ impl GaugeChartConfigurationBuilder {
     /// Consumes the builder and constructs a [`GaugeChartConfiguration`](crate::types::GaugeChartConfiguration).
     pub fn build(self) -> crate::types::GaugeChartConfiguration {
         crate::types::GaugeChartConfiguration {
-            field_wells: self.field_wells,
-            gauge_chart_options: self.gauge_chart_options,
-            data_labels: self.data_labels,
-            tooltip_options: self.tooltip_options,
-            visual_palette: self.visual_palette,
-            interactions: self.interactions,
+            field_wells: self.field_wells
+            ,
+            gauge_chart_options: self.gauge_chart_options
+            ,
+            data_labels: self.data_labels
+            ,
+            tooltip_options: self.tooltip_options
+            ,
+            visual_palette: self.visual_palette
+            ,
+            interactions: self.interactions
+            ,
         }
     }
 }
+

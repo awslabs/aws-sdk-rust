@@ -7,7 +7,7 @@
 /// <p>Specifies the part of a web request that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct XssMatchTuple {
+pub struct XssMatchTuple  {
     /// <p>Specifies where in a web request to look for cross-site scripting attacks.</p>
     pub field_to_match: ::std::option::Option<crate::types::FieldToMatch>,
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p>
@@ -67,9 +67,9 @@ pub struct XssMatchTuple {
     /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
     pub text_transformation: crate::types::TextTransformation,
 }
-impl XssMatchTuple {
+impl  XssMatchTuple  {
     /// <p>Specifies where in a web request to look for cross-site scripting attacks.</p>
-    pub fn field_to_match(&self) -> ::std::option::Option<&crate::types::FieldToMatch> {
+    pub fn field_to_match(&self) -> ::std::option::Option<& crate::types::FieldToMatch> {
         self.field_to_match.as_ref()
     }
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p>
@@ -127,7 +127,7 @@ impl XssMatchTuple {
     /// <p>Use this option to decode a URL-encoded value.</p>
     /// <p><b>NONE</b></p>
     /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
-    pub fn text_transformation(&self) -> &crate::types::TextTransformation {
+    pub fn text_transformation(&self) -> & crate::types::TextTransformation {
         &self.text_transformation
     }
 }
@@ -154,8 +154,7 @@ impl XssMatchTupleBuilder {
     }
     /// <p>Specifies where in a web request to look for cross-site scripting attacks.</p>
     pub fn set_field_to_match(mut self, input: ::std::option::Option<crate::types::FieldToMatch>) -> Self {
-        self.field_to_match = input;
-        self
+        self.field_to_match = input; self
     }
     /// <p>Specifies where in a web request to look for cross-site scripting attacks.</p>
     pub fn get_field_to_match(&self) -> &::std::option::Option<crate::types::FieldToMatch> {
@@ -277,8 +276,7 @@ impl XssMatchTupleBuilder {
     /// <p><b>NONE</b></p>
     /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
     pub fn set_text_transformation(mut self, input: ::std::option::Option<crate::types::TextTransformation>) -> Self {
-        self.text_transformation = input;
-        self
+        self.text_transformation = input; self
     }
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p>
     /// <p>You can only specify a single type of TextTransformation.</p>
@@ -342,14 +340,17 @@ impl XssMatchTupleBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`text_transformation`](crate::types::builders::XssMatchTupleBuilder::text_transformation)
     pub fn build(self) -> ::std::result::Result<crate::types::XssMatchTuple, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::XssMatchTuple {
-            field_to_match: self.field_to_match,
-            text_transformation: self.text_transformation.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "text_transformation",
-                    "text_transformation was not specified but it is required when building XssMatchTuple",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::XssMatchTuple {
+                field_to_match: self.field_to_match
+                ,
+                text_transformation: self.text_transformation
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("text_transformation", "text_transformation was not specified but it is required when building XssMatchTuple")
+                    )?
+                ,
+            }
+        )
     }
 }
+

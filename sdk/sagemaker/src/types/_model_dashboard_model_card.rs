@@ -3,7 +3,7 @@
 /// <p>The model card for a model displayed in the Amazon SageMaker Model Dashboard.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModelDashboardModelCard {
+pub struct ModelDashboardModelCard  {
     /// <p>The Amazon Resource Name (ARN) for a model card.</p>
     pub model_card_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of a model card.</p>
@@ -23,19 +23,19 @@ pub struct ModelDashboardModelCard {
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub last_modified_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>The tags associated with a model card.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>For models created in SageMaker, this is the model ARN. For models created outside of SageMaker, this is a user-customized string.</p>
     pub model_id: ::std::option::Option<::std::string::String>,
     /// <p>A model card's risk rating. Can be low, medium, or high.</p>
     pub risk_rating: ::std::option::Option<::std::string::String>,
 }
-impl ModelDashboardModelCard {
+impl  ModelDashboardModelCard  {
     /// <p>The Amazon Resource Name (ARN) for a model card.</p>
-    pub fn model_card_arn(&self) -> ::std::option::Option<&str> {
+    pub fn model_card_arn(&self) -> ::std::option::Option<& str> {
         self.model_card_arn.as_deref()
     }
     /// <p>The name of a model card.</p>
-    pub fn model_card_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_card_name(&self) -> ::std::option::Option<& str> {
         self.model_card_name.as_deref()
     }
     /// <p>The model card version.</p>
@@ -43,41 +43,42 @@ impl ModelDashboardModelCard {
         self.model_card_version
     }
     /// <p>The model card status.</p>
-    pub fn model_card_status(&self) -> ::std::option::Option<&crate::types::ModelCardStatus> {
+    pub fn model_card_status(&self) -> ::std::option::Option<& crate::types::ModelCardStatus> {
         self.model_card_status.as_ref()
     }
     /// <p>The KMS Key ID (<code>KMSKeyId</code>) for encryption of model card information.</p>
-    pub fn security_config(&self) -> ::std::option::Option<&crate::types::ModelCardSecurityConfig> {
+    pub fn security_config(&self) -> ::std::option::Option<& crate::types::ModelCardSecurityConfig> {
         self.security_config.as_ref()
     }
     /// <p>A timestamp that indicates when the model card was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
+    pub fn created_by(&self) -> ::std::option::Option<& crate::types::UserContext> {
         self.created_by.as_ref()
     }
     /// <p>A timestamp that indicates when the model card was last updated.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn last_modified_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
+    pub fn last_modified_by(&self) -> ::std::option::Option<& crate::types::UserContext> {
         self.last_modified_by.as_ref()
     }
     /// <p>The tags associated with a model card.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>For models created in SageMaker, this is the model ARN. For models created outside of SageMaker, this is a user-customized string.</p>
-    pub fn model_id(&self) -> ::std::option::Option<&str> {
+    pub fn model_id(&self) -> ::std::option::Option<& str> {
         self.model_id.as_deref()
     }
     /// <p>A model card's risk rating. Can be low, medium, or high.</p>
-    pub fn risk_rating(&self) -> ::std::option::Option<&str> {
+    pub fn risk_rating(&self) -> ::std::option::Option<& str> {
         self.risk_rating.as_deref()
     }
 }
@@ -101,7 +102,7 @@ pub struct ModelDashboardModelCardBuilder {
     pub(crate) created_by: ::std::option::Option<crate::types::UserContext>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_by: ::std::option::Option<crate::types::UserContext>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) model_id: ::std::option::Option<::std::string::String>,
     pub(crate) risk_rating: ::std::option::Option<::std::string::String>,
 }
@@ -113,8 +114,7 @@ impl ModelDashboardModelCardBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for a model card.</p>
     pub fn set_model_card_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_card_arn = input;
-        self
+        self.model_card_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for a model card.</p>
     pub fn get_model_card_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +127,7 @@ impl ModelDashboardModelCardBuilder {
     }
     /// <p>The name of a model card.</p>
     pub fn set_model_card_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_card_name = input;
-        self
+        self.model_card_name = input; self
     }
     /// <p>The name of a model card.</p>
     pub fn get_model_card_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +140,7 @@ impl ModelDashboardModelCardBuilder {
     }
     /// <p>The model card version.</p>
     pub fn set_model_card_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.model_card_version = input;
-        self
+        self.model_card_version = input; self
     }
     /// <p>The model card version.</p>
     pub fn get_model_card_version(&self) -> &::std::option::Option<i32> {
@@ -155,8 +153,7 @@ impl ModelDashboardModelCardBuilder {
     }
     /// <p>The model card status.</p>
     pub fn set_model_card_status(mut self, input: ::std::option::Option<crate::types::ModelCardStatus>) -> Self {
-        self.model_card_status = input;
-        self
+        self.model_card_status = input; self
     }
     /// <p>The model card status.</p>
     pub fn get_model_card_status(&self) -> &::std::option::Option<crate::types::ModelCardStatus> {
@@ -169,8 +166,7 @@ impl ModelDashboardModelCardBuilder {
     }
     /// <p>The KMS Key ID (<code>KMSKeyId</code>) for encryption of model card information.</p>
     pub fn set_security_config(mut self, input: ::std::option::Option<crate::types::ModelCardSecurityConfig>) -> Self {
-        self.security_config = input;
-        self
+        self.security_config = input; self
     }
     /// <p>The KMS Key ID (<code>KMSKeyId</code>) for encryption of model card information.</p>
     pub fn get_security_config(&self) -> &::std::option::Option<crate::types::ModelCardSecurityConfig> {
@@ -183,8 +179,7 @@ impl ModelDashboardModelCardBuilder {
     }
     /// <p>A timestamp that indicates when the model card was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>A timestamp that indicates when the model card was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -197,8 +192,7 @@ impl ModelDashboardModelCardBuilder {
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<crate::types::UserContext> {
@@ -211,8 +205,7 @@ impl ModelDashboardModelCardBuilder {
     }
     /// <p>A timestamp that indicates when the model card was last updated.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>A timestamp that indicates when the model card was last updated.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -225,8 +218,7 @@ impl ModelDashboardModelCardBuilder {
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn set_last_modified_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
-        self.last_modified_by = input;
-        self
+        self.last_modified_by = input; self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn get_last_modified_by(&self) -> &::std::option::Option<crate::types::UserContext> {
@@ -239,17 +231,16 @@ impl ModelDashboardModelCardBuilder {
     /// <p>The tags associated with a model card.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags associated with a model card.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags associated with a model card.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>For models created in SageMaker, this is the model ARN. For models created outside of SageMaker, this is a user-customized string.</p>
@@ -259,8 +250,7 @@ impl ModelDashboardModelCardBuilder {
     }
     /// <p>For models created in SageMaker, this is the model ARN. For models created outside of SageMaker, this is a user-customized string.</p>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_id = input;
-        self
+        self.model_id = input; self
     }
     /// <p>For models created in SageMaker, this is the model ARN. For models created outside of SageMaker, this is a user-customized string.</p>
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -273,8 +263,7 @@ impl ModelDashboardModelCardBuilder {
     }
     /// <p>A model card's risk rating. Can be low, medium, or high.</p>
     pub fn set_risk_rating(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.risk_rating = input;
-        self
+        self.risk_rating = input; self
     }
     /// <p>A model card's risk rating. Can be low, medium, or high.</p>
     pub fn get_risk_rating(&self) -> &::std::option::Option<::std::string::String> {
@@ -283,18 +272,31 @@ impl ModelDashboardModelCardBuilder {
     /// Consumes the builder and constructs a [`ModelDashboardModelCard`](crate::types::ModelDashboardModelCard).
     pub fn build(self) -> crate::types::ModelDashboardModelCard {
         crate::types::ModelDashboardModelCard {
-            model_card_arn: self.model_card_arn,
-            model_card_name: self.model_card_name,
-            model_card_version: self.model_card_version,
-            model_card_status: self.model_card_status,
-            security_config: self.security_config,
-            creation_time: self.creation_time,
-            created_by: self.created_by,
-            last_modified_time: self.last_modified_time,
-            last_modified_by: self.last_modified_by,
-            tags: self.tags,
-            model_id: self.model_id,
-            risk_rating: self.risk_rating,
+            model_card_arn: self.model_card_arn
+            ,
+            model_card_name: self.model_card_name
+            ,
+            model_card_version: self.model_card_version
+            ,
+            model_card_status: self.model_card_status
+            ,
+            security_config: self.security_config
+            ,
+            creation_time: self.creation_time
+            ,
+            created_by: self.created_by
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            last_modified_by: self.last_modified_by
+            ,
+            tags: self.tags
+            ,
+            model_id: self.model_id
+            ,
+            risk_rating: self.risk_rating
+            ,
         }
     }
 }
+

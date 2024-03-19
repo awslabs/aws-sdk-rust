@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTokenBalanceOutput {
+pub struct GetTokenBalanceOutput  {
     /// <p>The container for the owner identifier.</p>
     pub owner_identifier: ::std::option::Option<crate::types::OwnerIdentifier>,
     /// <p>The container for the identifier for the token including the unique token ID and its blockchain network.</p><note>
@@ -17,36 +17,35 @@ pub struct GetTokenBalanceOutput {
     pub last_updated_time: ::std::option::Option<crate::types::BlockchainInstant>,
     _request_id: Option<String>,
 }
-impl GetTokenBalanceOutput {
+impl  GetTokenBalanceOutput  {
     /// <p>The container for the owner identifier.</p>
-    pub fn owner_identifier(&self) -> ::std::option::Option<&crate::types::OwnerIdentifier> {
+    pub fn owner_identifier(&self) -> ::std::option::Option<& crate::types::OwnerIdentifier> {
         self.owner_identifier.as_ref()
     }
     /// <p>The container for the identifier for the token including the unique token ID and its blockchain network.</p><note>
     /// <p>Only the native tokens BTC and ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are supported.</p>
     /// </note>
-    pub fn token_identifier(&self) -> ::std::option::Option<&crate::types::TokenIdentifier> {
+    pub fn token_identifier(&self) -> ::std::option::Option<& crate::types::TokenIdentifier> {
         self.token_identifier.as_ref()
     }
     /// <p>The container for the token balance.</p>
-    pub fn balance(&self) -> &str {
-        use std::ops::Deref;
-        self.balance.deref()
+    pub fn balance(&self) -> & str {
+        use std::ops::Deref; self.balance.deref()
     }
     /// <p>The container for time.</p>
-    pub fn at_blockchain_instant(&self) -> ::std::option::Option<&crate::types::BlockchainInstant> {
+    pub fn at_blockchain_instant(&self) -> ::std::option::Option<& crate::types::BlockchainInstant> {
         self.at_blockchain_instant.as_ref()
     }
     /// <p>The container for time.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&crate::types::BlockchainInstant> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& crate::types::BlockchainInstant> {
         self.last_updated_time.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetTokenBalanceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetTokenBalanceOutput {
     /// Creates a new builder-style object to manufacture [`GetTokenBalanceOutput`](crate::operation::get_token_balance::GetTokenBalanceOutput).
     pub fn builder() -> crate::operation::get_token_balance::builders::GetTokenBalanceOutputBuilder {
@@ -73,8 +72,7 @@ impl GetTokenBalanceOutputBuilder {
     }
     /// <p>The container for the owner identifier.</p>
     pub fn set_owner_identifier(mut self, input: ::std::option::Option<crate::types::OwnerIdentifier>) -> Self {
-        self.owner_identifier = input;
-        self
+        self.owner_identifier = input; self
     }
     /// <p>The container for the owner identifier.</p>
     pub fn get_owner_identifier(&self) -> &::std::option::Option<crate::types::OwnerIdentifier> {
@@ -91,8 +89,7 @@ impl GetTokenBalanceOutputBuilder {
     /// <p>Only the native tokens BTC and ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are supported.</p>
     /// </note>
     pub fn set_token_identifier(mut self, input: ::std::option::Option<crate::types::TokenIdentifier>) -> Self {
-        self.token_identifier = input;
-        self
+        self.token_identifier = input; self
     }
     /// <p>The container for the identifier for the token including the unique token ID and its blockchain network.</p><note>
     /// <p>Only the native tokens BTC and ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are supported.</p>
@@ -108,8 +105,7 @@ impl GetTokenBalanceOutputBuilder {
     }
     /// <p>The container for the token balance.</p>
     pub fn set_balance(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.balance = input;
-        self
+        self.balance = input; self
     }
     /// <p>The container for the token balance.</p>
     pub fn get_balance(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +119,7 @@ impl GetTokenBalanceOutputBuilder {
     }
     /// <p>The container for time.</p>
     pub fn set_at_blockchain_instant(mut self, input: ::std::option::Option<crate::types::BlockchainInstant>) -> Self {
-        self.at_blockchain_instant = input;
-        self
+        self.at_blockchain_instant = input; self
     }
     /// <p>The container for time.</p>
     pub fn get_at_blockchain_instant(&self) -> &::std::option::Option<crate::types::BlockchainInstant> {
@@ -137,40 +132,43 @@ impl GetTokenBalanceOutputBuilder {
     }
     /// <p>The container for time.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<crate::types::BlockchainInstant>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The container for time.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<crate::types::BlockchainInstant> {
         &self.last_updated_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetTokenBalanceOutput`](crate::operation::get_token_balance::GetTokenBalanceOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`balance`](crate::operation::get_token_balance::builders::GetTokenBalanceOutputBuilder::balance)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_token_balance::GetTokenBalanceOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_token_balance::GetTokenBalanceOutput {
-            owner_identifier: self.owner_identifier,
-            token_identifier: self.token_identifier,
-            balance: self.balance.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "balance",
-                    "balance was not specified but it is required when building GetTokenBalanceOutput",
-                )
-            })?,
-            at_blockchain_instant: self.at_blockchain_instant,
-            last_updated_time: self.last_updated_time,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_token_balance::GetTokenBalanceOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_token_balance::GetTokenBalanceOutput {
+                owner_identifier: self.owner_identifier
+                ,
+                token_identifier: self.token_identifier
+                ,
+                balance: self.balance
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("balance", "balance was not specified but it is required when building GetTokenBalanceOutput")
+                    )?
+                ,
+                at_blockchain_instant: self.at_blockchain_instant
+                ,
+                last_updated_time: self.last_updated_time
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

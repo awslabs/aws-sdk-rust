@@ -3,19 +3,19 @@
 /// <p>Returns information about a branch.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BranchInfo {
+pub struct BranchInfo  {
     /// <p>The name of the branch.</p>
     pub branch_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the last commit made to the branch.</p>
     pub commit_id: ::std::option::Option<::std::string::String>,
 }
-impl BranchInfo {
+impl  BranchInfo  {
     /// <p>The name of the branch.</p>
-    pub fn branch_name(&self) -> ::std::option::Option<&str> {
+    pub fn branch_name(&self) -> ::std::option::Option<& str> {
         self.branch_name.as_deref()
     }
     /// <p>The ID of the last commit made to the branch.</p>
-    pub fn commit_id(&self) -> ::std::option::Option<&str> {
+    pub fn commit_id(&self) -> ::std::option::Option<& str> {
         self.commit_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl BranchInfoBuilder {
     }
     /// <p>The name of the branch.</p>
     pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.branch_name = input;
-        self
+        self.branch_name = input; self
     }
     /// <p>The name of the branch.</p>
     pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl BranchInfoBuilder {
     }
     /// <p>The ID of the last commit made to the branch.</p>
     pub fn set_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.commit_id = input;
-        self
+        self.commit_id = input; self
     }
     /// <p>The ID of the last commit made to the branch.</p>
     pub fn get_commit_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl BranchInfoBuilder {
     /// Consumes the builder and constructs a [`BranchInfo`](crate::types::BranchInfo).
     pub fn build(self) -> crate::types::BranchInfo {
         crate::types::BranchInfo {
-            branch_name: self.branch_name,
-            commit_id: self.commit_id,
+            branch_name: self.branch_name
+            ,
+            commit_id: self.commit_id
+            ,
         }
     }
 }
+

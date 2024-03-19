@@ -3,7 +3,8 @@
 /// Dolby Vision81 Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DolbyVision81Settings {}
+pub struct DolbyVision81Settings  {
+}
 impl DolbyVision81Settings {
     /// Creates a new builder-style object to manufacture [`DolbyVision81Settings`](crate::types::DolbyVision81Settings).
     pub fn builder() -> crate::types::builders::DolbyVision81SettingsBuilder {
@@ -14,10 +15,13 @@ impl DolbyVision81Settings {
 /// A builder for [`DolbyVision81Settings`](crate::types::DolbyVision81Settings).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct DolbyVision81SettingsBuilder {}
+pub struct DolbyVision81SettingsBuilder {
+}
 impl DolbyVision81SettingsBuilder {
     /// Consumes the builder and constructs a [`DolbyVision81Settings`](crate::types::DolbyVision81Settings).
     pub fn build(self) -> crate::types::DolbyVision81Settings {
-        crate::types::DolbyVision81Settings {}
+        crate::types::DolbyVision81Settings {
+        }
     }
 }
+

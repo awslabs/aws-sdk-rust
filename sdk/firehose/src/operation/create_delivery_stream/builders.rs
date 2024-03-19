@@ -5,23 +5,20 @@ pub use crate::operation::create_delivery_stream::_create_delivery_stream_input:
 
 impl CreateDeliveryStreamInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_delivery_stream::CreateDeliveryStreamOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_delivery_stream::CreateDeliveryStreamError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_delivery_stream();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_delivery_stream::CreateDeliveryStreamOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_delivery_stream::CreateDeliveryStreamError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_delivery_stream();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateDeliveryStream`.
-///
+/// 
 /// <p>Creates a Firehose delivery stream.</p>
 /// <p>By default, you can create up to 50 delivery streams per Amazon Web Services Region.</p>
 /// <p>This is an asynchronous operation that immediately returns. The initial status of the delivery stream is <code>CREATING</code>. After the delivery stream is created, its status is <code>ACTIVE</code> and it now accepts data. If the delivery stream creation fails, the status transitions to <code>CREATING_FAILED</code>. Attempts to send data to a delivery stream that is not in the <code>ACTIVE</code> state cause an exception. To check the state of a delivery stream, use <code>DescribeDeliveryStream</code>.</p>
@@ -43,33 +40,32 @@ impl CreateDeliveryStreamInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDeliveryStreamFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_delivery_stream::builders::CreateDeliveryStreamInputBuilder,
+                    inner: crate::operation::create_delivery_stream::builders::CreateDeliveryStreamInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_delivery_stream::CreateDeliveryStreamOutput,
-        crate::operation::create_delivery_stream::CreateDeliveryStreamError,
-    > for CreateDeliveryStreamFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_delivery_stream::CreateDeliveryStreamOutput,
-            crate::operation::create_delivery_stream::CreateDeliveryStreamError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_delivery_stream::CreateDeliveryStreamOutput,
+                    crate::operation::create_delivery_stream::CreateDeliveryStreamError,
+                > for CreateDeliveryStreamFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_delivery_stream::CreateDeliveryStreamOutput,
+                        crate::operation::create_delivery_stream::CreateDeliveryStreamError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateDeliveryStreamFluentBuilder {
     /// Creates a new `CreateDeliveryStream`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -78,53 +74,44 @@ impl CreateDeliveryStreamFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_delivery_stream::CreateDeliveryStreamOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_delivery_stream::CreateDeliveryStreamError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_delivery_stream::CreateDeliveryStream::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_delivery_stream::CreateDeliveryStream::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_delivery_stream::CreateDeliveryStreamOutput,
-        crate::operation::create_delivery_stream::CreateDeliveryStreamError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_delivery_stream::CreateDeliveryStreamOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_delivery_stream::CreateDeliveryStreamError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_delivery_stream::CreateDeliveryStream::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_delivery_stream::CreateDeliveryStream::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_delivery_stream::CreateDeliveryStreamOutput, crate::operation::create_delivery_stream::CreateDeliveryStreamError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the delivery stream. This name must be unique per Amazon Web Services account in the same Amazon Web Services Region. If the delivery streams are in different accounts or different Regions, you can have multiple delivery streams with the same name.</p>
     pub fn delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.delivery_stream_name(input.into());
@@ -191,17 +178,12 @@ impl CreateDeliveryStreamFluentBuilder {
         self
     }
     /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).</p>
-    pub fn set_delivery_stream_encryption_configuration_input(
-        mut self,
-        input: ::std::option::Option<crate::types::DeliveryStreamEncryptionConfigurationInput>,
-    ) -> Self {
+    pub fn set_delivery_stream_encryption_configuration_input(mut self, input: ::std::option::Option<crate::types::DeliveryStreamEncryptionConfigurationInput>) -> Self {
         self.inner = self.inner.set_delivery_stream_encryption_configuration_input(input);
         self
     }
     /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).</p>
-    pub fn get_delivery_stream_encryption_configuration_input(
-        &self,
-    ) -> &::std::option::Option<crate::types::DeliveryStreamEncryptionConfigurationInput> {
+    pub fn get_delivery_stream_encryption_configuration_input(&self) -> &::std::option::Option<crate::types::DeliveryStreamEncryptionConfigurationInput> {
         self.inner.get_delivery_stream_encryption_configuration_input()
     }
     /// <p>[Deprecated] The destination in Amazon S3. You can specify only one destination.</p>
@@ -227,10 +209,7 @@ impl CreateDeliveryStreamFluentBuilder {
         self
     }
     /// <p>The destination in Amazon S3. You can specify only one destination.</p>
-    pub fn set_extended_s3_destination_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ExtendedS3DestinationConfiguration>,
-    ) -> Self {
+    pub fn set_extended_s3_destination_configuration(mut self, input: ::std::option::Option<crate::types::ExtendedS3DestinationConfiguration>) -> Self {
         self.inner = self.inner.set_extended_s3_destination_configuration(input);
         self
     }
@@ -258,10 +237,7 @@ impl CreateDeliveryStreamFluentBuilder {
         self
     }
     /// <p>The destination in Amazon ES. You can specify only one destination.</p>
-    pub fn set_elasticsearch_destination_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ElasticsearchDestinationConfiguration>,
-    ) -> Self {
+    pub fn set_elasticsearch_destination_configuration(mut self, input: ::std::option::Option<crate::types::ElasticsearchDestinationConfiguration>) -> Self {
         self.inner = self.inner.set_elasticsearch_destination_configuration(input);
         self
     }
@@ -275,17 +251,12 @@ impl CreateDeliveryStreamFluentBuilder {
         self
     }
     /// <p>The destination in Amazon OpenSearch Service. You can specify only one destination.</p>
-    pub fn set_amazonopensearchservice_destination_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AmazonopensearchserviceDestinationConfiguration>,
-    ) -> Self {
+    pub fn set_amazonopensearchservice_destination_configuration(mut self, input: ::std::option::Option<crate::types::AmazonopensearchserviceDestinationConfiguration>) -> Self {
         self.inner = self.inner.set_amazonopensearchservice_destination_configuration(input);
         self
     }
     /// <p>The destination in Amazon OpenSearch Service. You can specify only one destination.</p>
-    pub fn get_amazonopensearchservice_destination_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AmazonopensearchserviceDestinationConfiguration> {
+    pub fn get_amazonopensearchservice_destination_configuration(&self) -> &::std::option::Option<crate::types::AmazonopensearchserviceDestinationConfiguration> {
         self.inner.get_amazonopensearchservice_destination_configuration()
     }
     /// <p>The destination in Splunk. You can specify only one destination.</p>
@@ -308,10 +279,7 @@ impl CreateDeliveryStreamFluentBuilder {
         self
     }
     /// <p>Enables configuring Kinesis Firehose to deliver data to any HTTP endpoint destination. You can specify only one destination.</p>
-    pub fn set_http_endpoint_destination_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::HttpEndpointDestinationConfiguration>,
-    ) -> Self {
+    pub fn set_http_endpoint_destination_configuration(mut self, input: ::std::option::Option<crate::types::HttpEndpointDestinationConfiguration>) -> Self {
         self.inner = self.inner.set_http_endpoint_destination_configuration(input);
         self
     }
@@ -331,35 +299,27 @@ impl CreateDeliveryStreamFluentBuilder {
     }
     /// <p>A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to Amazon Web Services resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of information that can help you distinguish the delivery stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the Amazon Web Services Billing and Cost Management User Guide.</p>
     /// <p>You can specify up to 50 tags when creating a delivery stream.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to Amazon Web Services resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of information that can help you distinguish the delivery stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the Amazon Web Services Billing and Cost Management User Guide.</p>
     /// <p>You can specify up to 50 tags when creating a delivery stream.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
     /// <p>The destination in the Serverless offering for Amazon OpenSearch Service. You can specify only one destination.</p>
-    pub fn amazon_open_search_serverless_destination_configuration(
-        mut self,
-        input: crate::types::AmazonOpenSearchServerlessDestinationConfiguration,
-    ) -> Self {
+    pub fn amazon_open_search_serverless_destination_configuration(mut self, input: crate::types::AmazonOpenSearchServerlessDestinationConfiguration) -> Self {
         self.inner = self.inner.amazon_open_search_serverless_destination_configuration(input);
         self
     }
     /// <p>The destination in the Serverless offering for Amazon OpenSearch Service. You can specify only one destination.</p>
-    pub fn set_amazon_open_search_serverless_destination_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationConfiguration>,
-    ) -> Self {
+    pub fn set_amazon_open_search_serverless_destination_configuration(mut self, input: ::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationConfiguration>) -> Self {
         self.inner = self.inner.set_amazon_open_search_serverless_destination_configuration(input);
         self
     }
     /// <p>The destination in the Serverless offering for Amazon OpenSearch Service. You can specify only one destination.</p>
-    pub fn get_amazon_open_search_serverless_destination_configuration(
-        &self,
-    ) -> &::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationConfiguration> {
+    pub fn get_amazon_open_search_serverless_destination_configuration(&self) -> &::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationConfiguration> {
         self.inner.get_amazon_open_search_serverless_destination_configuration()
     }
     /// <p>The configuration for the Amazon MSK cluster to be used as the source for a delivery stream.</p>
@@ -391,3 +351,4 @@ impl CreateDeliveryStreamFluentBuilder {
         self.inner.get_snowflake_destination_configuration()
     }
 }
+

@@ -3,16 +3,17 @@
 /// <p>Automatic rollback configuration for handling endpoint deployment failures and recovery.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutoRollbackConfig {
+pub struct AutoRollbackConfig  {
     /// <p>List of CloudWatch alarms in your account that are configured to monitor metrics on an endpoint. If any alarms are tripped during a deployment, SageMaker rolls back the deployment.</p>
-    pub alarms: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>,
+    pub alarms: ::std::option::Option<::std::vec::Vec::<crate::types::Alarm>>,
 }
-impl AutoRollbackConfig {
+impl  AutoRollbackConfig  {
     /// <p>List of CloudWatch alarms in your account that are configured to monitor metrics on an endpoint. If any alarms are tripped during a deployment, SageMaker rolls back the deployment.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alarms.is_none()`.
-    pub fn alarms(&self) -> &[crate::types::Alarm] {
-        self.alarms.as_deref().unwrap_or_default()
+    pub fn alarms(&self) -> & [crate::types::Alarm] {
+        self.alarms.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AutoRollbackConfig {
@@ -26,7 +27,7 @@ impl AutoRollbackConfig {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoRollbackConfigBuilder {
-    pub(crate) alarms: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>,
+    pub(crate) alarms: ::std::option::Option<::std::vec::Vec::<crate::types::Alarm>>,
 }
 impl AutoRollbackConfigBuilder {
     /// Appends an item to `alarms`.
@@ -36,21 +37,24 @@ impl AutoRollbackConfigBuilder {
     /// <p>List of CloudWatch alarms in your account that are configured to monitor metrics on an endpoint. If any alarms are tripped during a deployment, SageMaker rolls back the deployment.</p>
     pub fn alarms(mut self, input: crate::types::Alarm) -> Self {
         let mut v = self.alarms.unwrap_or_default();
-        v.push(input);
-        self.alarms = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.alarms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of CloudWatch alarms in your account that are configured to monitor metrics on an endpoint. If any alarms are tripped during a deployment, SageMaker rolls back the deployment.</p>
-    pub fn set_alarms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>) -> Self {
-        self.alarms = input;
-        self
+    pub fn set_alarms(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Alarm>>) -> Self {
+        self.alarms = input; self
     }
     /// <p>List of CloudWatch alarms in your account that are configured to monitor metrics on an endpoint. If any alarms are tripped during a deployment, SageMaker rolls back the deployment.</p>
-    pub fn get_alarms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Alarm>> {
+    pub fn get_alarms(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Alarm>> {
         &self.alarms
     }
     /// Consumes the builder and constructs a [`AutoRollbackConfig`](crate::types::AutoRollbackConfig).
     pub fn build(self) -> crate::types::AutoRollbackConfig {
-        crate::types::AutoRollbackConfig { alarms: self.alarms }
+        crate::types::AutoRollbackConfig {
+            alarms: self.alarms
+            ,
+        }
     }
 }
+

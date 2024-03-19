@@ -3,7 +3,7 @@
 /// Settings related to audio encoding. The settings in this group vary depending on the value that you choose for your audio codec.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AudioCodecSettings {
+pub struct AudioCodecSettings  {
     /// Required when you set Codec to the value AAC. The service accepts one of two mutually exclusive groups of AAC settings--VBR and CBR. To select one of these modes, set the value of Bitrate control mode to "VBR" or "CBR". In VBR mode, you control the audio quality with the setting VBR quality. In CBR mode, you use the setting Bitrate. Defaults and valid values depend on the rate control mode.
     pub aac_settings: ::std::option::Option<crate::types::AacSettings>,
     /// Required when you set Codec to the value AC3.
@@ -29,53 +29,53 @@ pub struct AudioCodecSettings {
     /// Required when you set Codec to the value WAV.
     pub wav_settings: ::std::option::Option<crate::types::WavSettings>,
 }
-impl AudioCodecSettings {
+impl  AudioCodecSettings  {
     /// Required when you set Codec to the value AAC. The service accepts one of two mutually exclusive groups of AAC settings--VBR and CBR. To select one of these modes, set the value of Bitrate control mode to "VBR" or "CBR". In VBR mode, you control the audio quality with the setting VBR quality. In CBR mode, you use the setting Bitrate. Defaults and valid values depend on the rate control mode.
-    pub fn aac_settings(&self) -> ::std::option::Option<&crate::types::AacSettings> {
+    pub fn aac_settings(&self) -> ::std::option::Option<& crate::types::AacSettings> {
         self.aac_settings.as_ref()
     }
     /// Required when you set Codec to the value AC3.
-    pub fn ac3_settings(&self) -> ::std::option::Option<&crate::types::Ac3Settings> {
+    pub fn ac3_settings(&self) -> ::std::option::Option<& crate::types::Ac3Settings> {
         self.ac3_settings.as_ref()
     }
     /// Required when you set Codec to the value AIFF.
-    pub fn aiff_settings(&self) -> ::std::option::Option<&crate::types::AiffSettings> {
+    pub fn aiff_settings(&self) -> ::std::option::Option<& crate::types::AiffSettings> {
         self.aiff_settings.as_ref()
     }
     /// Choose the audio codec for this output. Note that the option Dolby Digital passthrough applies only to Dolby Digital and Dolby Digital Plus audio inputs. Make sure that you choose a codec that's supported with your output container: https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#reference-codecs-containers-output-audio For audio-only outputs, make sure that both your input audio codec and your output audio codec are supported for audio-only workflows. For more information, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers-input.html#reference-codecs-containers-input-audio-only and https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#audio-only-output
-    pub fn codec(&self) -> ::std::option::Option<&crate::types::AudioCodec> {
+    pub fn codec(&self) -> ::std::option::Option<& crate::types::AudioCodec> {
         self.codec.as_ref()
     }
     /// Required when you set Codec to the value EAC3_ATMOS.
-    pub fn eac3_atmos_settings(&self) -> ::std::option::Option<&crate::types::Eac3AtmosSettings> {
+    pub fn eac3_atmos_settings(&self) -> ::std::option::Option<& crate::types::Eac3AtmosSettings> {
         self.eac3_atmos_settings.as_ref()
     }
     /// Required when you set Codec to the value EAC3.
-    pub fn eac3_settings(&self) -> ::std::option::Option<&crate::types::Eac3Settings> {
+    pub fn eac3_settings(&self) -> ::std::option::Option<& crate::types::Eac3Settings> {
         self.eac3_settings.as_ref()
     }
     /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value FLAC.
-    pub fn flac_settings(&self) -> ::std::option::Option<&crate::types::FlacSettings> {
+    pub fn flac_settings(&self) -> ::std::option::Option<& crate::types::FlacSettings> {
         self.flac_settings.as_ref()
     }
     /// Required when you set Codec to the value MP2.
-    pub fn mp2_settings(&self) -> ::std::option::Option<&crate::types::Mp2Settings> {
+    pub fn mp2_settings(&self) -> ::std::option::Option<& crate::types::Mp2Settings> {
         self.mp2_settings.as_ref()
     }
     /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value MP3.
-    pub fn mp3_settings(&self) -> ::std::option::Option<&crate::types::Mp3Settings> {
+    pub fn mp3_settings(&self) -> ::std::option::Option<& crate::types::Mp3Settings> {
         self.mp3_settings.as_ref()
     }
     /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value OPUS.
-    pub fn opus_settings(&self) -> ::std::option::Option<&crate::types::OpusSettings> {
+    pub fn opus_settings(&self) -> ::std::option::Option<& crate::types::OpusSettings> {
         self.opus_settings.as_ref()
     }
     /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value Vorbis.
-    pub fn vorbis_settings(&self) -> ::std::option::Option<&crate::types::VorbisSettings> {
+    pub fn vorbis_settings(&self) -> ::std::option::Option<& crate::types::VorbisSettings> {
         self.vorbis_settings.as_ref()
     }
     /// Required when you set Codec to the value WAV.
-    pub fn wav_settings(&self) -> ::std::option::Option<&crate::types::WavSettings> {
+    pub fn wav_settings(&self) -> ::std::option::Option<& crate::types::WavSettings> {
         self.wav_settings.as_ref()
     }
 }
@@ -111,8 +111,7 @@ impl AudioCodecSettingsBuilder {
     }
     /// Required when you set Codec to the value AAC. The service accepts one of two mutually exclusive groups of AAC settings--VBR and CBR. To select one of these modes, set the value of Bitrate control mode to "VBR" or "CBR". In VBR mode, you control the audio quality with the setting VBR quality. In CBR mode, you use the setting Bitrate. Defaults and valid values depend on the rate control mode.
     pub fn set_aac_settings(mut self, input: ::std::option::Option<crate::types::AacSettings>) -> Self {
-        self.aac_settings = input;
-        self
+        self.aac_settings = input; self
     }
     /// Required when you set Codec to the value AAC. The service accepts one of two mutually exclusive groups of AAC settings--VBR and CBR. To select one of these modes, set the value of Bitrate control mode to "VBR" or "CBR". In VBR mode, you control the audio quality with the setting VBR quality. In CBR mode, you use the setting Bitrate. Defaults and valid values depend on the rate control mode.
     pub fn get_aac_settings(&self) -> &::std::option::Option<crate::types::AacSettings> {
@@ -125,8 +124,7 @@ impl AudioCodecSettingsBuilder {
     }
     /// Required when you set Codec to the value AC3.
     pub fn set_ac3_settings(mut self, input: ::std::option::Option<crate::types::Ac3Settings>) -> Self {
-        self.ac3_settings = input;
-        self
+        self.ac3_settings = input; self
     }
     /// Required when you set Codec to the value AC3.
     pub fn get_ac3_settings(&self) -> &::std::option::Option<crate::types::Ac3Settings> {
@@ -139,8 +137,7 @@ impl AudioCodecSettingsBuilder {
     }
     /// Required when you set Codec to the value AIFF.
     pub fn set_aiff_settings(mut self, input: ::std::option::Option<crate::types::AiffSettings>) -> Self {
-        self.aiff_settings = input;
-        self
+        self.aiff_settings = input; self
     }
     /// Required when you set Codec to the value AIFF.
     pub fn get_aiff_settings(&self) -> &::std::option::Option<crate::types::AiffSettings> {
@@ -153,8 +150,7 @@ impl AudioCodecSettingsBuilder {
     }
     /// Choose the audio codec for this output. Note that the option Dolby Digital passthrough applies only to Dolby Digital and Dolby Digital Plus audio inputs. Make sure that you choose a codec that's supported with your output container: https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#reference-codecs-containers-output-audio For audio-only outputs, make sure that both your input audio codec and your output audio codec are supported for audio-only workflows. For more information, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers-input.html#reference-codecs-containers-input-audio-only and https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#audio-only-output
     pub fn set_codec(mut self, input: ::std::option::Option<crate::types::AudioCodec>) -> Self {
-        self.codec = input;
-        self
+        self.codec = input; self
     }
     /// Choose the audio codec for this output. Note that the option Dolby Digital passthrough applies only to Dolby Digital and Dolby Digital Plus audio inputs. Make sure that you choose a codec that's supported with your output container: https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#reference-codecs-containers-output-audio For audio-only outputs, make sure that both your input audio codec and your output audio codec are supported for audio-only workflows. For more information, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers-input.html#reference-codecs-containers-input-audio-only and https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#audio-only-output
     pub fn get_codec(&self) -> &::std::option::Option<crate::types::AudioCodec> {
@@ -167,8 +163,7 @@ impl AudioCodecSettingsBuilder {
     }
     /// Required when you set Codec to the value EAC3_ATMOS.
     pub fn set_eac3_atmos_settings(mut self, input: ::std::option::Option<crate::types::Eac3AtmosSettings>) -> Self {
-        self.eac3_atmos_settings = input;
-        self
+        self.eac3_atmos_settings = input; self
     }
     /// Required when you set Codec to the value EAC3_ATMOS.
     pub fn get_eac3_atmos_settings(&self) -> &::std::option::Option<crate::types::Eac3AtmosSettings> {
@@ -181,8 +176,7 @@ impl AudioCodecSettingsBuilder {
     }
     /// Required when you set Codec to the value EAC3.
     pub fn set_eac3_settings(mut self, input: ::std::option::Option<crate::types::Eac3Settings>) -> Self {
-        self.eac3_settings = input;
-        self
+        self.eac3_settings = input; self
     }
     /// Required when you set Codec to the value EAC3.
     pub fn get_eac3_settings(&self) -> &::std::option::Option<crate::types::Eac3Settings> {
@@ -195,8 +189,7 @@ impl AudioCodecSettingsBuilder {
     }
     /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value FLAC.
     pub fn set_flac_settings(mut self, input: ::std::option::Option<crate::types::FlacSettings>) -> Self {
-        self.flac_settings = input;
-        self
+        self.flac_settings = input; self
     }
     /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value FLAC.
     pub fn get_flac_settings(&self) -> &::std::option::Option<crate::types::FlacSettings> {
@@ -209,8 +202,7 @@ impl AudioCodecSettingsBuilder {
     }
     /// Required when you set Codec to the value MP2.
     pub fn set_mp2_settings(mut self, input: ::std::option::Option<crate::types::Mp2Settings>) -> Self {
-        self.mp2_settings = input;
-        self
+        self.mp2_settings = input; self
     }
     /// Required when you set Codec to the value MP2.
     pub fn get_mp2_settings(&self) -> &::std::option::Option<crate::types::Mp2Settings> {
@@ -223,8 +215,7 @@ impl AudioCodecSettingsBuilder {
     }
     /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value MP3.
     pub fn set_mp3_settings(mut self, input: ::std::option::Option<crate::types::Mp3Settings>) -> Self {
-        self.mp3_settings = input;
-        self
+        self.mp3_settings = input; self
     }
     /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value MP3.
     pub fn get_mp3_settings(&self) -> &::std::option::Option<crate::types::Mp3Settings> {
@@ -237,8 +228,7 @@ impl AudioCodecSettingsBuilder {
     }
     /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value OPUS.
     pub fn set_opus_settings(mut self, input: ::std::option::Option<crate::types::OpusSettings>) -> Self {
-        self.opus_settings = input;
-        self
+        self.opus_settings = input; self
     }
     /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value OPUS.
     pub fn get_opus_settings(&self) -> &::std::option::Option<crate::types::OpusSettings> {
@@ -251,8 +241,7 @@ impl AudioCodecSettingsBuilder {
     }
     /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value Vorbis.
     pub fn set_vorbis_settings(mut self, input: ::std::option::Option<crate::types::VorbisSettings>) -> Self {
-        self.vorbis_settings = input;
-        self
+        self.vorbis_settings = input; self
     }
     /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value Vorbis.
     pub fn get_vorbis_settings(&self) -> &::std::option::Option<crate::types::VorbisSettings> {
@@ -265,8 +254,7 @@ impl AudioCodecSettingsBuilder {
     }
     /// Required when you set Codec to the value WAV.
     pub fn set_wav_settings(mut self, input: ::std::option::Option<crate::types::WavSettings>) -> Self {
-        self.wav_settings = input;
-        self
+        self.wav_settings = input; self
     }
     /// Required when you set Codec to the value WAV.
     pub fn get_wav_settings(&self) -> &::std::option::Option<crate::types::WavSettings> {
@@ -275,18 +263,31 @@ impl AudioCodecSettingsBuilder {
     /// Consumes the builder and constructs a [`AudioCodecSettings`](crate::types::AudioCodecSettings).
     pub fn build(self) -> crate::types::AudioCodecSettings {
         crate::types::AudioCodecSettings {
-            aac_settings: self.aac_settings,
-            ac3_settings: self.ac3_settings,
-            aiff_settings: self.aiff_settings,
-            codec: self.codec,
-            eac3_atmos_settings: self.eac3_atmos_settings,
-            eac3_settings: self.eac3_settings,
-            flac_settings: self.flac_settings,
-            mp2_settings: self.mp2_settings,
-            mp3_settings: self.mp3_settings,
-            opus_settings: self.opus_settings,
-            vorbis_settings: self.vorbis_settings,
-            wav_settings: self.wav_settings,
+            aac_settings: self.aac_settings
+            ,
+            ac3_settings: self.ac3_settings
+            ,
+            aiff_settings: self.aiff_settings
+            ,
+            codec: self.codec
+            ,
+            eac3_atmos_settings: self.eac3_atmos_settings
+            ,
+            eac3_settings: self.eac3_settings
+            ,
+            flac_settings: self.flac_settings
+            ,
+            mp2_settings: self.mp2_settings
+            ,
+            mp3_settings: self.mp3_settings
+            ,
+            opus_settings: self.opus_settings
+            ,
+            vorbis_settings: self.vorbis_settings
+            ,
+            wav_settings: self.wav_settings
+            ,
         }
     }
 }
+

@@ -3,27 +3,28 @@
 /// <p>Reservation coverage for a specified period, in hours.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CoverageByTime {
+pub struct CoverageByTime  {
     /// <p>The period that this coverage was used over.</p>
     pub time_period: ::std::option::Option<crate::types::DateInterval>,
     /// <p>The groups of instances that the reservation covered.</p>
-    pub groups: ::std::option::Option<::std::vec::Vec<crate::types::ReservationCoverageGroup>>,
+    pub groups: ::std::option::Option<::std::vec::Vec::<crate::types::ReservationCoverageGroup>>,
     /// <p>The total reservation coverage, in hours.</p>
     pub total: ::std::option::Option<crate::types::Coverage>,
 }
-impl CoverageByTime {
+impl  CoverageByTime  {
     /// <p>The period that this coverage was used over.</p>
-    pub fn time_period(&self) -> ::std::option::Option<&crate::types::DateInterval> {
+    pub fn time_period(&self) -> ::std::option::Option<& crate::types::DateInterval> {
         self.time_period.as_ref()
     }
     /// <p>The groups of instances that the reservation covered.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
-    pub fn groups(&self) -> &[crate::types::ReservationCoverageGroup] {
-        self.groups.as_deref().unwrap_or_default()
+    pub fn groups(&self) -> & [crate::types::ReservationCoverageGroup] {
+        self.groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The total reservation coverage, in hours.</p>
-    pub fn total(&self) -> ::std::option::Option<&crate::types::Coverage> {
+    pub fn total(&self) -> ::std::option::Option<& crate::types::Coverage> {
         self.total.as_ref()
     }
 }
@@ -39,7 +40,7 @@ impl CoverageByTime {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CoverageByTimeBuilder {
     pub(crate) time_period: ::std::option::Option<crate::types::DateInterval>,
-    pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::ReservationCoverageGroup>>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec::<crate::types::ReservationCoverageGroup>>,
     pub(crate) total: ::std::option::Option<crate::types::Coverage>,
 }
 impl CoverageByTimeBuilder {
@@ -50,8 +51,7 @@ impl CoverageByTimeBuilder {
     }
     /// <p>The period that this coverage was used over.</p>
     pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
-        self.time_period = input;
-        self
+        self.time_period = input; self
     }
     /// <p>The period that this coverage was used over.</p>
     pub fn get_time_period(&self) -> &::std::option::Option<crate::types::DateInterval> {
@@ -64,17 +64,16 @@ impl CoverageByTimeBuilder {
     /// <p>The groups of instances that the reservation covered.</p>
     pub fn groups(mut self, input: crate::types::ReservationCoverageGroup) -> Self {
         let mut v = self.groups.unwrap_or_default();
-        v.push(input);
-        self.groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The groups of instances that the reservation covered.</p>
-    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReservationCoverageGroup>>) -> Self {
-        self.groups = input;
-        self
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReservationCoverageGroup>>) -> Self {
+        self.groups = input; self
     }
     /// <p>The groups of instances that the reservation covered.</p>
-    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservationCoverageGroup>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReservationCoverageGroup>> {
         &self.groups
     }
     /// <p>The total reservation coverage, in hours.</p>
@@ -84,8 +83,7 @@ impl CoverageByTimeBuilder {
     }
     /// <p>The total reservation coverage, in hours.</p>
     pub fn set_total(mut self, input: ::std::option::Option<crate::types::Coverage>) -> Self {
-        self.total = input;
-        self
+        self.total = input; self
     }
     /// <p>The total reservation coverage, in hours.</p>
     pub fn get_total(&self) -> &::std::option::Option<crate::types::Coverage> {
@@ -94,9 +92,13 @@ impl CoverageByTimeBuilder {
     /// Consumes the builder and constructs a [`CoverageByTime`](crate::types::CoverageByTime).
     pub fn build(self) -> crate::types::CoverageByTime {
         crate::types::CoverageByTime {
-            time_period: self.time_period,
-            groups: self.groups,
-            total: self.total,
+            time_period: self.time_period
+            ,
+            groups: self.groups
+            ,
+            total: self.total
+            ,
         }
     }
 }
+

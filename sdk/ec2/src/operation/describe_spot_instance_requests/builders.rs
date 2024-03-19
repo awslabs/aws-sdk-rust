@@ -5,23 +5,20 @@ pub use crate::operation::describe_spot_instance_requests::_describe_spot_instan
 
 impl DescribeSpotInstanceRequestsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_spot_instance_requests();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_spot_instance_requests();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeSpotInstanceRequests`.
-///
+/// 
 /// <p>Describes the specified Spot Instance requests.</p>
 /// <p>You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance by examining the response. If the status of the Spot Instance is <code>fulfilled</code>, the instance ID appears in the response and contains the identifier of the instance. Alternatively, you can use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances">DescribeInstances</a> with a filter to look for instances where the instance lifecycle is <code>spot</code>.</p>
 /// <p>We recommend that you set <code>MaxResults</code> to a value between 5 and 1000 to limit the number of items returned. This paginates the output, which makes the list more manageable and returns the items faster. If the list of items exceeds your <code>MaxResults</code> value, then that number of items is returned along with a <code>NextToken</code> value that can be passed to a subsequent <code>DescribeSpotInstanceRequests</code> request to retrieve the remaining items.</p>
@@ -29,33 +26,32 @@ impl DescribeSpotInstanceRequestsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSpotInstanceRequestsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_spot_instance_requests::builders::DescribeSpotInstanceRequestsInputBuilder,
+                    inner: crate::operation::describe_spot_instance_requests::builders::DescribeSpotInstanceRequestsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsOutput,
-        crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsError,
-    > for DescribeSpotInstanceRequestsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsOutput,
-            crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsOutput,
+                    crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsError,
+                > for DescribeSpotInstanceRequestsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsOutput,
+                        crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeSpotInstanceRequestsFluentBuilder {
     /// Creates a new `DescribeSpotInstanceRequests`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,59 +60,50 @@ impl DescribeSpotInstanceRequestsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequests::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequests::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsOutput,
-        crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequests::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequests::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsOutput, crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_spot_instance_requests::paginator::DescribeSpotInstanceRequestsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::describe_spot_instance_requests::paginator::DescribeSpotInstanceRequestsPaginator {
-        crate::operation::describe_spot_instance_requests::paginator::DescribeSpotInstanceRequestsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_spot_instance_requests::paginator::DescribeSpotInstanceRequestsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::describe_spot_instance_requests::paginator::DescribeSpotInstanceRequestsPaginator {
+                                crate::operation::describe_spot_instance_requests::paginator::DescribeSpotInstanceRequestsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -287,7 +274,7 @@ impl DescribeSpotInstanceRequestsFluentBuilder {
     /// <li>
     /// <p><code>valid-until</code> - The end date of the request.</p></li>
     /// </ul>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -372,7 +359,7 @@ impl DescribeSpotInstanceRequestsFluentBuilder {
     /// <li>
     /// <p><code>valid-until</code> - The end date of the request.</p></li>
     /// </ul>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         self.inner.get_filters()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -399,12 +386,12 @@ impl DescribeSpotInstanceRequestsFluentBuilder {
         self
     }
     /// <p>The IDs of the Spot Instance requests.</p>
-    pub fn set_spot_instance_request_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_spot_instance_request_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_spot_instance_request_ids(input);
         self
     }
     /// <p>The IDs of the Spot Instance requests.</p>
-    pub fn get_spot_instance_request_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_spot_instance_request_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_spot_instance_request_ids()
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
@@ -436,3 +423,4 @@ impl DescribeSpotInstanceRequestsFluentBuilder {
         self.inner.get_max_results()
     }
 }
+

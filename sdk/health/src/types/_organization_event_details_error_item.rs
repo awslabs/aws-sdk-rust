@@ -3,7 +3,7 @@
 /// <p>Error information returned when a <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a> operation can't find a specified event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OrganizationEventDetailsErrorItem {
+pub struct OrganizationEventDetailsErrorItem  {
     /// <p>Error information returned when a <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a> operation can't find a specified event.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
@@ -24,19 +24,19 @@ pub struct OrganizationEventDetailsErrorItem {
     /// </ul>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
-impl OrganizationEventDetailsErrorItem {
+impl  OrganizationEventDetailsErrorItem  {
     /// <p>Error information returned when a <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a> operation can't find a specified event.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p><code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code></p>
-    pub fn event_arn(&self) -> ::std::option::Option<&str> {
+    pub fn event_arn(&self) -> ::std::option::Option<& str> {
         self.event_arn.as_deref()
     }
     /// <p>The name of the error.</p>
-    pub fn error_name(&self) -> ::std::option::Option<&str> {
+    pub fn error_name(&self) -> ::std::option::Option<& str> {
         self.error_name.as_deref()
     }
     /// <p>A message that describes the error.</p>
@@ -49,7 +49,7 @@ impl OrganizationEventDetailsErrorItem {
     /// <li>
     /// <p>Your Amazon Web Services account doesn't include the Amazon Web Services Support plan required to use the Health API. You must have either a Business, Enterprise On-Ramp, or Enterprise Support plan.</p></li>
     /// </ul>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -77,8 +77,7 @@ impl OrganizationEventDetailsErrorItemBuilder {
     }
     /// <p>Error information returned when a <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a> operation can't find a specified event.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>Error information returned when a <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a> operation can't find a specified event.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +94,7 @@ impl OrganizationEventDetailsErrorItemBuilder {
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p><code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code></p>
     pub fn set_event_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_arn = input;
-        self
+        self.event_arn = input; self
     }
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
@@ -111,8 +109,7 @@ impl OrganizationEventDetailsErrorItemBuilder {
     }
     /// <p>The name of the error.</p>
     pub fn set_error_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_name = input;
-        self
+        self.error_name = input; self
     }
     /// <p>The name of the error.</p>
     pub fn get_error_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +140,7 @@ impl OrganizationEventDetailsErrorItemBuilder {
     /// <p>Your Amazon Web Services account doesn't include the Amazon Web Services Support plan required to use the Health API. You must have either a Business, Enterprise On-Ramp, or Enterprise Support plan.</p></li>
     /// </ul>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>A message that describes the error.</p>
     /// <p>If you call the <code>DescribeEventDetailsForOrganization</code> operation and receive one of the following errors, follow the recommendations in the message:</p>
@@ -162,10 +158,15 @@ impl OrganizationEventDetailsErrorItemBuilder {
     /// Consumes the builder and constructs a [`OrganizationEventDetailsErrorItem`](crate::types::OrganizationEventDetailsErrorItem).
     pub fn build(self) -> crate::types::OrganizationEventDetailsErrorItem {
         crate::types::OrganizationEventDetailsErrorItem {
-            aws_account_id: self.aws_account_id,
-            event_arn: self.event_arn,
-            error_name: self.error_name,
-            error_message: self.error_message,
+            aws_account_id: self.aws_account_id
+            ,
+            event_arn: self.event_arn
+            ,
+            error_name: self.error_name
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

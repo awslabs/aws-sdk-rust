@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListKeysInput {
+pub struct ListKeysInput  {
     /// <p>The key state of the keys you want to list.</p>
     pub key_state: ::std::option::Option<crate::types::KeyState>,
     /// <p>Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextToken</code> from the truncated response you just received.</p>
@@ -11,13 +11,13 @@ pub struct ListKeysInput {
     /// <p>This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListKeysInput {
+impl  ListKeysInput  {
     /// <p>The key state of the keys you want to list.</p>
-    pub fn key_state(&self) -> ::std::option::Option<&crate::types::KeyState> {
+    pub fn key_state(&self) -> ::std::option::Option<& crate::types::KeyState> {
         self.key_state.as_ref()
     }
     /// <p>Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextToken</code> from the truncated response you just received.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, Amazon Web Services Payment Cryptography does not return more than the specified number of items, but it might return fewer.</p>
@@ -49,8 +49,7 @@ impl ListKeysInputBuilder {
     }
     /// <p>The key state of the keys you want to list.</p>
     pub fn set_key_state(mut self, input: ::std::option::Option<crate::types::KeyState>) -> Self {
-        self.key_state = input;
-        self
+        self.key_state = input; self
     }
     /// <p>The key state of the keys you want to list.</p>
     pub fn get_key_state(&self) -> &::std::option::Option<crate::types::KeyState> {
@@ -63,8 +62,7 @@ impl ListKeysInputBuilder {
     }
     /// <p>Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextToken</code> from the truncated response you just received.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextToken</code> from the truncated response you just received.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +77,7 @@ impl ListKeysInputBuilder {
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, Amazon Web Services Payment Cryptography does not return more than the specified number of items, but it might return fewer.</p>
     /// <p>This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, Amazon Web Services Payment Cryptography does not return more than the specified number of items, but it might return fewer.</p>
     /// <p>This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.</p>
@@ -89,10 +86,16 @@ impl ListKeysInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListKeysInput`](crate::operation::list_keys::ListKeysInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_keys::ListKeysInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_keys::ListKeysInput {
-            key_state: self.key_state,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_keys::ListKeysInput {
+                key_state: self.key_state
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

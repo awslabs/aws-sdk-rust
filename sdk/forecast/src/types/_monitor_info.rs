@@ -3,7 +3,7 @@
 /// <p>Provides information about the monitor resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MonitorInfo {
+pub struct MonitorInfo  {
     /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
     pub monitor_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the monitor. States include:</p>
@@ -21,9 +21,9 @@ pub struct MonitorInfo {
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
 }
-impl MonitorInfo {
+impl  MonitorInfo  {
     /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
-    pub fn monitor_arn(&self) -> ::std::option::Option<&str> {
+    pub fn monitor_arn(&self) -> ::std::option::Option<& str> {
         self.monitor_arn.as_deref()
     }
     /// <p>The status of the monitor. States include:</p>
@@ -39,7 +39,7 @@ impl MonitorInfo {
     /// <li>
     /// <p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -65,8 +65,7 @@ impl MonitorInfoBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
     pub fn set_monitor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitor_arn = input;
-        self
+        self.monitor_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
     pub fn get_monitor_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl MonitorInfoBuilder {
     /// <p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the monitor. States include:</p>
     /// <ul>
@@ -125,8 +123,11 @@ impl MonitorInfoBuilder {
     /// Consumes the builder and constructs a [`MonitorInfo`](crate::types::MonitorInfo).
     pub fn build(self) -> crate::types::MonitorInfo {
         crate::types::MonitorInfo {
-            monitor_arn: self.monitor_arn,
-            status: self.status,
+            monitor_arn: self.monitor_arn
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

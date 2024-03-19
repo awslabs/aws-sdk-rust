@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeGeneratedTemplateOutput {
+pub struct DescribeGeneratedTemplateOutput  {
     /// <p>The Amazon Resource Name (ARN) of the generated template. The format is <code>arn:${Partition}:cloudformation:${Region}:${Account}:generatedtemplate/${Id}</code>. For example, <code>arn:aws:cloudformation:<i>us-east-1</i>:<i>123456789012</i>:generatedtemplate/<i>2e8465c1-9a80-43ea-a3a3-4f2d692fe6dc</i> </code>.</p>
     pub generated_template_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the generated template.</p>
     pub generated_template_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of objects describing the details of the resources in the template generation.</p>
-    pub resources: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDetail>>,
+    pub resources: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceDetail>>,
     /// <p>The status of the template generation. Supported values are:</p>
     /// <ul>
     /// <li>
@@ -45,20 +45,21 @@ pub struct DescribeGeneratedTemplateOutput {
     pub total_warnings: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
-impl DescribeGeneratedTemplateOutput {
+impl  DescribeGeneratedTemplateOutput  {
     /// <p>The Amazon Resource Name (ARN) of the generated template. The format is <code>arn:${Partition}:cloudformation:${Region}:${Account}:generatedtemplate/${Id}</code>. For example, <code>arn:aws:cloudformation:<i>us-east-1</i>:<i>123456789012</i>:generatedtemplate/<i>2e8465c1-9a80-43ea-a3a3-4f2d692fe6dc</i> </code>.</p>
-    pub fn generated_template_id(&self) -> ::std::option::Option<&str> {
+    pub fn generated_template_id(&self) -> ::std::option::Option<& str> {
         self.generated_template_id.as_deref()
     }
     /// <p>The name of the generated template.</p>
-    pub fn generated_template_name(&self) -> ::std::option::Option<&str> {
+    pub fn generated_template_name(&self) -> ::std::option::Option<& str> {
         self.generated_template_name.as_deref()
     }
     /// <p>A list of objects describing the details of the resources in the template generation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
-    pub fn resources(&self) -> &[crate::types::ResourceDetail] {
-        self.resources.as_deref().unwrap_or_default()
+    pub fn resources(&self) -> & [crate::types::ResourceDetail] {
+        self.resources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The status of the template generation. Supported values are:</p>
     /// <ul>
@@ -79,31 +80,31 @@ impl DescribeGeneratedTemplateOutput {
     /// <li>
     /// <p><code>Complete</code> - the template operation is complete.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::GeneratedTemplateStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::GeneratedTemplateStatus> {
         self.status.as_ref()
     }
     /// <p>The reason for the current template generation status. This will provide more details if a failure happened.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>The time the generated template was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time the generated template was last updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>An object describing the progress of the template generation.</p>
-    pub fn progress(&self) -> ::std::option::Option<&crate::types::TemplateProgress> {
+    pub fn progress(&self) -> ::std::option::Option<& crate::types::TemplateProgress> {
         self.progress.as_ref()
     }
     /// <p>The stack ARN of the base stack if a base stack was provided when generating the template.</p>
-    pub fn stack_id(&self) -> ::std::option::Option<&str> {
+    pub fn stack_id(&self) -> ::std::option::Option<& str> {
         self.stack_id.as_deref()
     }
     /// <p>The configuration details of the generated template, including the <code>DeletionPolicy</code> and <code>UpdateReplacePolicy</code>.</p>
-    pub fn template_configuration(&self) -> ::std::option::Option<&crate::types::TemplateConfiguration> {
+    pub fn template_configuration(&self) -> ::std::option::Option<& crate::types::TemplateConfiguration> {
         self.template_configuration.as_ref()
     }
     /// <p>The number of warnings generated for this template. The warnings are found in the details of each of the resources in the template.</p>
@@ -112,10 +113,10 @@ impl DescribeGeneratedTemplateOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeGeneratedTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeGeneratedTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGeneratedTemplateOutput`](crate::operation::describe_generated_template::DescribeGeneratedTemplateOutput).
     pub fn builder() -> crate::operation::describe_generated_template::builders::DescribeGeneratedTemplateOutputBuilder {
@@ -129,7 +130,7 @@ impl DescribeGeneratedTemplateOutput {
 pub struct DescribeGeneratedTemplateOutputBuilder {
     pub(crate) generated_template_id: ::std::option::Option<::std::string::String>,
     pub(crate) generated_template_name: ::std::option::Option<::std::string::String>,
-    pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDetail>>,
+    pub(crate) resources: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceDetail>>,
     pub(crate) status: ::std::option::Option<crate::types::GeneratedTemplateStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -148,8 +149,7 @@ impl DescribeGeneratedTemplateOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the generated template. The format is <code>arn:${Partition}:cloudformation:${Region}:${Account}:generatedtemplate/${Id}</code>. For example, <code>arn:aws:cloudformation:<i>us-east-1</i>:<i>123456789012</i>:generatedtemplate/<i>2e8465c1-9a80-43ea-a3a3-4f2d692fe6dc</i> </code>.</p>
     pub fn set_generated_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.generated_template_id = input;
-        self
+        self.generated_template_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the generated template. The format is <code>arn:${Partition}:cloudformation:${Region}:${Account}:generatedtemplate/${Id}</code>. For example, <code>arn:aws:cloudformation:<i>us-east-1</i>:<i>123456789012</i>:generatedtemplate/<i>2e8465c1-9a80-43ea-a3a3-4f2d692fe6dc</i> </code>.</p>
     pub fn get_generated_template_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,8 +162,7 @@ impl DescribeGeneratedTemplateOutputBuilder {
     }
     /// <p>The name of the generated template.</p>
     pub fn set_generated_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.generated_template_name = input;
-        self
+        self.generated_template_name = input; self
     }
     /// <p>The name of the generated template.</p>
     pub fn get_generated_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -176,17 +175,16 @@ impl DescribeGeneratedTemplateOutputBuilder {
     /// <p>A list of objects describing the details of the resources in the template generation.</p>
     pub fn resources(mut self, input: crate::types::ResourceDetail) -> Self {
         let mut v = self.resources.unwrap_or_default();
-        v.push(input);
-        self.resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of objects describing the details of the resources in the template generation.</p>
-    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDetail>>) -> Self {
-        self.resources = input;
-        self
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceDetail>>) -> Self {
+        self.resources = input; self
     }
     /// <p>A list of objects describing the details of the resources in the template generation.</p>
-    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceDetail>> {
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceDetail>> {
         &self.resources
     }
     /// <p>The status of the template generation. Supported values are:</p>
@@ -232,8 +230,7 @@ impl DescribeGeneratedTemplateOutputBuilder {
     /// <p><code>Complete</code> - the template operation is complete.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::GeneratedTemplateStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the template generation. Supported values are:</p>
     /// <ul>
@@ -264,8 +261,7 @@ impl DescribeGeneratedTemplateOutputBuilder {
     }
     /// <p>The reason for the current template generation status. This will provide more details if a failure happened.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>The reason for the current template generation status. This will provide more details if a failure happened.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -278,8 +274,7 @@ impl DescribeGeneratedTemplateOutputBuilder {
     }
     /// <p>The time the generated template was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time the generated template was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -292,8 +287,7 @@ impl DescribeGeneratedTemplateOutputBuilder {
     }
     /// <p>The time the generated template was last updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The time the generated template was last updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -306,8 +300,7 @@ impl DescribeGeneratedTemplateOutputBuilder {
     }
     /// <p>An object describing the progress of the template generation.</p>
     pub fn set_progress(mut self, input: ::std::option::Option<crate::types::TemplateProgress>) -> Self {
-        self.progress = input;
-        self
+        self.progress = input; self
     }
     /// <p>An object describing the progress of the template generation.</p>
     pub fn get_progress(&self) -> &::std::option::Option<crate::types::TemplateProgress> {
@@ -320,8 +313,7 @@ impl DescribeGeneratedTemplateOutputBuilder {
     }
     /// <p>The stack ARN of the base stack if a base stack was provided when generating the template.</p>
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_id = input;
-        self
+        self.stack_id = input; self
     }
     /// <p>The stack ARN of the base stack if a base stack was provided when generating the template.</p>
     pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -334,8 +326,7 @@ impl DescribeGeneratedTemplateOutputBuilder {
     }
     /// <p>The configuration details of the generated template, including the <code>DeletionPolicy</code> and <code>UpdateReplacePolicy</code>.</p>
     pub fn set_template_configuration(mut self, input: ::std::option::Option<crate::types::TemplateConfiguration>) -> Self {
-        self.template_configuration = input;
-        self
+        self.template_configuration = input; self
     }
     /// <p>The configuration details of the generated template, including the <code>DeletionPolicy</code> and <code>UpdateReplacePolicy</code>.</p>
     pub fn get_template_configuration(&self) -> &::std::option::Option<crate::types::TemplateConfiguration> {
@@ -348,37 +339,48 @@ impl DescribeGeneratedTemplateOutputBuilder {
     }
     /// <p>The number of warnings generated for this template. The warnings are found in the details of each of the resources in the template.</p>
     pub fn set_total_warnings(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_warnings = input;
-        self
+        self.total_warnings = input; self
     }
     /// <p>The number of warnings generated for this template. The warnings are found in the details of each of the resources in the template.</p>
     pub fn get_total_warnings(&self) -> &::std::option::Option<i32> {
         &self.total_warnings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeGeneratedTemplateOutput`](crate::operation::describe_generated_template::DescribeGeneratedTemplateOutput).
     pub fn build(self) -> crate::operation::describe_generated_template::DescribeGeneratedTemplateOutput {
         crate::operation::describe_generated_template::DescribeGeneratedTemplateOutput {
-            generated_template_id: self.generated_template_id,
-            generated_template_name: self.generated_template_name,
-            resources: self.resources,
-            status: self.status,
-            status_reason: self.status_reason,
-            creation_time: self.creation_time,
-            last_updated_time: self.last_updated_time,
-            progress: self.progress,
-            stack_id: self.stack_id,
-            template_configuration: self.template_configuration,
-            total_warnings: self.total_warnings,
+            generated_template_id: self.generated_template_id
+            ,
+            generated_template_name: self.generated_template_name
+            ,
+            resources: self.resources
+            ,
+            status: self.status
+            ,
+            status_reason: self.status_reason
+            ,
+            creation_time: self.creation_time
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            progress: self.progress
+            ,
+            stack_id: self.stack_id
+            ,
+            template_configuration: self.template_configuration
+            ,
+            total_warnings: self.total_warnings
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

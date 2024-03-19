@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSparqlStatisticsInput {}
+pub struct DeleteSparqlStatisticsInput  {
+}
 impl DeleteSparqlStatisticsInput {
     /// Creates a new builder-style object to manufacture [`DeleteSparqlStatisticsInput`](crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsInput).
     pub fn builder() -> crate::operation::delete_sparql_statistics::builders::DeleteSparqlStatisticsInputBuilder {
@@ -13,15 +14,15 @@ impl DeleteSparqlStatisticsInput {
 /// A builder for [`DeleteSparqlStatisticsInput`](crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct DeleteSparqlStatisticsInputBuilder {}
+pub struct DeleteSparqlStatisticsInputBuilder {
+}
 impl DeleteSparqlStatisticsInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSparqlStatisticsInput`](crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsInput {
+            }
+        )
     }
 }
+

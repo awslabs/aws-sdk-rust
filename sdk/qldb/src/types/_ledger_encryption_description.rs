@@ -4,7 +4,7 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/encryption-at-rest.html">Encryption at rest</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LedgerEncryptionDescription {
+pub struct LedgerEncryptionDescription  {
     /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption. It will display <code>AWS_OWNED_KMS_KEY</code> when updating the ledger's encryption configuration to the Amazon Web Services owned KMS key.</p>
     pub kms_key_arn: ::std::string::String,
     /// <p>The current state of encryption at rest for the ledger. This can be one of the following values:</p>
@@ -23,11 +23,10 @@ pub struct LedgerEncryptionDescription {
     /// <p>This parameter is undefined if the KMS key is accessible.</p>
     pub inaccessible_kms_key_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl LedgerEncryptionDescription {
+impl  LedgerEncryptionDescription  {
     /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption. It will display <code>AWS_OWNED_KMS_KEY</code> when updating the ledger's encryption configuration to the Amazon Web Services owned KMS key.</p>
-    pub fn kms_key_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.kms_key_arn.deref()
+    pub fn kms_key_arn(&self) -> & str {
+        use std::ops::Deref; self.kms_key_arn.deref()
     }
     /// <p>The current state of encryption at rest for the ledger. This can be one of the following values:</p>
     /// <ul>
@@ -40,12 +39,12 @@ impl LedgerEncryptionDescription {
     /// <p><code>KMS_KEY_INACCESSIBLE</code>: The specified customer managed KMS key is not accessible, and the ledger is impaired. Either the key was disabled or deleted, or the grants on the key were revoked. When a ledger is impaired, it is not accessible and does not accept any read or write requests.</p>
     /// <p>An impaired ledger automatically returns to an active state after you restore the grants on the key, or re-enable the key that was disabled. However, deleting a customer managed KMS key is irreversible. After a key is deleted, you can no longer access the ledgers that are protected with that key, and the data becomes unrecoverable permanently.</p></li>
     /// </ul>
-    pub fn encryption_status(&self) -> &crate::types::EncryptionStatus {
+    pub fn encryption_status(&self) -> & crate::types::EncryptionStatus {
         &self.encryption_status
     }
     /// <p>The date and time, in epoch time format, when the KMS key first became inaccessible, in the case of an error. (Epoch time format is the number of seconds that have elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
     /// <p>This parameter is undefined if the KMS key is accessible.</p>
-    pub fn inaccessible_kms_key_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn inaccessible_kms_key_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.inaccessible_kms_key_date_time.as_ref()
     }
 }
@@ -73,8 +72,7 @@ impl LedgerEncryptionDescriptionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption. It will display <code>AWS_OWNED_KMS_KEY</code> when updating the ledger's encryption configuration to the Amazon Web Services owned KMS key.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption. It will display <code>AWS_OWNED_KMS_KEY</code> when updating the ledger's encryption configuration to the Amazon Web Services owned KMS key.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +106,7 @@ impl LedgerEncryptionDescriptionBuilder {
     /// <p>An impaired ledger automatically returns to an active state after you restore the grants on the key, or re-enable the key that was disabled. However, deleting a customer managed KMS key is irreversible. After a key is deleted, you can no longer access the ledgers that are protected with that key, and the data becomes unrecoverable permanently.</p></li>
     /// </ul>
     pub fn set_encryption_status(mut self, input: ::std::option::Option<crate::types::EncryptionStatus>) -> Self {
-        self.encryption_status = input;
-        self
+        self.encryption_status = input; self
     }
     /// <p>The current state of encryption at rest for the ledger. This can be one of the following values:</p>
     /// <ul>
@@ -134,8 +131,7 @@ impl LedgerEncryptionDescriptionBuilder {
     /// <p>The date and time, in epoch time format, when the KMS key first became inaccessible, in the case of an error. (Epoch time format is the number of seconds that have elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
     /// <p>This parameter is undefined if the KMS key is accessible.</p>
     pub fn set_inaccessible_kms_key_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.inaccessible_kms_key_date_time = input;
-        self
+        self.inaccessible_kms_key_date_time = input; self
     }
     /// <p>The date and time, in epoch time format, when the KMS key first became inaccessible, in the case of an error. (Epoch time format is the number of seconds that have elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
     /// <p>This parameter is undefined if the KMS key is accessible.</p>
@@ -147,20 +143,22 @@ impl LedgerEncryptionDescriptionBuilder {
     /// - [`kms_key_arn`](crate::types::builders::LedgerEncryptionDescriptionBuilder::kms_key_arn)
     /// - [`encryption_status`](crate::types::builders::LedgerEncryptionDescriptionBuilder::encryption_status)
     pub fn build(self) -> ::std::result::Result<crate::types::LedgerEncryptionDescription, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LedgerEncryptionDescription {
-            kms_key_arn: self.kms_key_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "kms_key_arn",
-                    "kms_key_arn was not specified but it is required when building LedgerEncryptionDescription",
-                )
-            })?,
-            encryption_status: self.encryption_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "encryption_status",
-                    "encryption_status was not specified but it is required when building LedgerEncryptionDescription",
-                )
-            })?,
-            inaccessible_kms_key_date_time: self.inaccessible_kms_key_date_time,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LedgerEncryptionDescription {
+                kms_key_arn: self.kms_key_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("kms_key_arn", "kms_key_arn was not specified but it is required when building LedgerEncryptionDescription")
+                    )?
+                ,
+                encryption_status: self.encryption_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("encryption_status", "encryption_status was not specified but it is required when building LedgerEncryptionDescription")
+                    )?
+                ,
+                inaccessible_kms_key_date_time: self.inaccessible_kms_key_date_time
+                ,
+            }
+        )
     }
 }
+

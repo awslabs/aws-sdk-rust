@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetachTypedLinkInput {
+pub struct DetachTypedLinkInput  {
     /// <p>The Amazon Resource Name (ARN) of the directory where you want to detach the typed link.</p>
     pub directory_arn: ::std::option::Option<::std::string::String>,
     /// <p>Used to accept a typed link specifier as input.</p>
     pub typed_link_specifier: ::std::option::Option<crate::types::TypedLinkSpecifier>,
 }
-impl DetachTypedLinkInput {
+impl  DetachTypedLinkInput  {
     /// <p>The Amazon Resource Name (ARN) of the directory where you want to detach the typed link.</p>
-    pub fn directory_arn(&self) -> ::std::option::Option<&str> {
+    pub fn directory_arn(&self) -> ::std::option::Option<& str> {
         self.directory_arn.as_deref()
     }
     /// <p>Used to accept a typed link specifier as input.</p>
-    pub fn typed_link_specifier(&self) -> ::std::option::Option<&crate::types::TypedLinkSpecifier> {
+    pub fn typed_link_specifier(&self) -> ::std::option::Option<& crate::types::TypedLinkSpecifier> {
         self.typed_link_specifier.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl DetachTypedLinkInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the directory where you want to detach the typed link.</p>
     pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_arn = input;
-        self
+        self.directory_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the directory where you want to detach the typed link.</p>
     pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DetachTypedLinkInputBuilder {
     }
     /// <p>Used to accept a typed link specifier as input.</p>
     pub fn set_typed_link_specifier(mut self, input: ::std::option::Option<crate::types::TypedLinkSpecifier>) -> Self {
-        self.typed_link_specifier = input;
-        self
+        self.typed_link_specifier = input; self
     }
     /// <p>Used to accept a typed link specifier as input.</p>
     pub fn get_typed_link_specifier(&self) -> &::std::option::Option<crate::types::TypedLinkSpecifier> {
         &self.typed_link_specifier
     }
     /// Consumes the builder and constructs a [`DetachTypedLinkInput`](crate::operation::detach_typed_link::DetachTypedLinkInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::detach_typed_link::DetachTypedLinkInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::detach_typed_link::DetachTypedLinkInput {
-            directory_arn: self.directory_arn,
-            typed_link_specifier: self.typed_link_specifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::detach_typed_link::DetachTypedLinkInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::detach_typed_link::DetachTypedLinkInput {
+                directory_arn: self.directory_arn
+                ,
+                typed_link_specifier: self.typed_link_specifier
+                ,
+            }
+        )
     }
 }
+

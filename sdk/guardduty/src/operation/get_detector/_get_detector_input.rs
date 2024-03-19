@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDetectorInput {
+pub struct GetDetectorInput  {
     /// <p>The unique ID of the detector that you want to get.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
 }
-impl GetDetectorInput {
+impl  GetDetectorInput  {
     /// <p>The unique ID of the detector that you want to get.</p>
-    pub fn detector_id(&self) -> ::std::option::Option<&str> {
+    pub fn detector_id(&self) -> ::std::option::Option<& str> {
         self.detector_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetDetectorInputBuilder {
     }
     /// <p>The unique ID of the detector that you want to get.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
     }
     /// <p>The unique ID of the detector that you want to get.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,8 +42,12 @@ impl GetDetectorInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetDetectorInput`](crate::operation::get_detector::GetDetectorInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_detector::GetDetectorInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_detector::GetDetectorInput {
-            detector_id: self.detector_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_detector::GetDetectorInput {
+                detector_id: self.detector_id
+                ,
+            }
+        )
     }
 }
+

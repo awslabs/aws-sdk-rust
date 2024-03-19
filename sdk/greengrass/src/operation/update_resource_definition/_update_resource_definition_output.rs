@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateResourceDefinitionOutput {
+pub struct UpdateResourceDefinitionOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for UpdateResourceDefinitionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateResourceDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateResourceDefinitionOutput`](crate::operation::update_resource_definition::UpdateResourceDefinitionOutput).
     pub fn builder() -> crate::operation::update_resource_definition::builders::UpdateResourceDefinitionOutputBuilder {
@@ -25,14 +25,14 @@ pub struct UpdateResourceDefinitionOutputBuilder {
 }
 impl UpdateResourceDefinitionOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateResourceDefinitionOutput`](crate::operation::update_resource_definition::UpdateResourceDefinitionOutput).
     pub fn build(self) -> crate::operation::update_resource_definition::UpdateResourceDefinitionOutput {
         crate::operation::update_resource_definition::UpdateResourceDefinitionOutput {
@@ -40,3 +40,4 @@ impl UpdateResourceDefinitionOutputBuilder {
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>RetryStageExecution</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RetryStageExecutionInput {
+pub struct RetryStageExecutionInput  {
     /// <p>The name of the pipeline that contains the failed stage.</p>
     pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the failed stage to be retried.</p>
@@ -13,21 +13,21 @@ pub struct RetryStageExecutionInput {
     /// <p>The scope of the retry attempt.</p>
     pub retry_mode: ::std::option::Option<crate::types::StageRetryMode>,
 }
-impl RetryStageExecutionInput {
+impl  RetryStageExecutionInput  {
     /// <p>The name of the pipeline that contains the failed stage.</p>
-    pub fn pipeline_name(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_name(&self) -> ::std::option::Option<& str> {
         self.pipeline_name.as_deref()
     }
     /// <p>The name of the failed stage to be retried.</p>
-    pub fn stage_name(&self) -> ::std::option::Option<&str> {
+    pub fn stage_name(&self) -> ::std::option::Option<& str> {
         self.stage_name.as_deref()
     }
     /// <p>The ID of the pipeline execution in the failed stage to be retried. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId of the failed stage</p>
-    pub fn pipeline_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_execution_id(&self) -> ::std::option::Option<& str> {
         self.pipeline_execution_id.as_deref()
     }
     /// <p>The scope of the retry attempt.</p>
-    pub fn retry_mode(&self) -> ::std::option::Option<&crate::types::StageRetryMode> {
+    pub fn retry_mode(&self) -> ::std::option::Option<& crate::types::StageRetryMode> {
         self.retry_mode.as_ref()
     }
 }
@@ -56,8 +56,7 @@ impl RetryStageExecutionInputBuilder {
     }
     /// <p>The name of the pipeline that contains the failed stage.</p>
     pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_name = input;
-        self
+        self.pipeline_name = input; self
     }
     /// <p>The name of the pipeline that contains the failed stage.</p>
     pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl RetryStageExecutionInputBuilder {
     }
     /// <p>The name of the failed stage to be retried.</p>
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stage_name = input;
-        self
+        self.stage_name = input; self
     }
     /// <p>The name of the failed stage to be retried.</p>
     pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +84,7 @@ impl RetryStageExecutionInputBuilder {
     }
     /// <p>The ID of the pipeline execution in the failed stage to be retried. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId of the failed stage</p>
     pub fn set_pipeline_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_execution_id = input;
-        self
+        self.pipeline_execution_id = input; self
     }
     /// <p>The ID of the pipeline execution in the failed stage to be retried. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId of the failed stage</p>
     pub fn get_pipeline_execution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,23 +98,26 @@ impl RetryStageExecutionInputBuilder {
     }
     /// <p>The scope of the retry attempt.</p>
     pub fn set_retry_mode(mut self, input: ::std::option::Option<crate::types::StageRetryMode>) -> Self {
-        self.retry_mode = input;
-        self
+        self.retry_mode = input; self
     }
     /// <p>The scope of the retry attempt.</p>
     pub fn get_retry_mode(&self) -> &::std::option::Option<crate::types::StageRetryMode> {
         &self.retry_mode
     }
     /// Consumes the builder and constructs a [`RetryStageExecutionInput`](crate::operation::retry_stage_execution::RetryStageExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::retry_stage_execution::RetryStageExecutionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::retry_stage_execution::RetryStageExecutionInput {
-            pipeline_name: self.pipeline_name,
-            stage_name: self.stage_name,
-            pipeline_execution_id: self.pipeline_execution_id,
-            retry_mode: self.retry_mode,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::retry_stage_execution::RetryStageExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::retry_stage_execution::RetryStageExecutionInput {
+                pipeline_name: self.pipeline_name
+                ,
+                stage_name: self.stage_name
+                ,
+                pipeline_execution_id: self.pipeline_execution_id
+                ,
+                retry_mode: self.retry_mode
+                ,
+            }
+        )
     }
 }
+

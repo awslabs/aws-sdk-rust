@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteVerifiedAccessTrustProviderInput {
+pub struct DeleteVerifiedAccessTrustProviderInput  {
     /// <p>The ID of the Verified Access trust provider.</p>
     pub verified_access_trust_provider_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -10,9 +10,9 @@ pub struct DeleteVerifiedAccessTrustProviderInput {
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl DeleteVerifiedAccessTrustProviderInput {
+impl  DeleteVerifiedAccessTrustProviderInput  {
     /// <p>The ID of the Verified Access trust provider.</p>
-    pub fn verified_access_trust_provider_id(&self) -> ::std::option::Option<&str> {
+    pub fn verified_access_trust_provider_id(&self) -> ::std::option::Option<& str> {
         self.verified_access_trust_provider_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -20,7 +20,7 @@ impl DeleteVerifiedAccessTrustProviderInput {
         self.dry_run
     }
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DeleteVerifiedAccessTrustProviderInputBuilder {
     }
     /// <p>The ID of the Verified Access trust provider.</p>
     pub fn set_verified_access_trust_provider_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.verified_access_trust_provider_id = input;
-        self
+        self.verified_access_trust_provider_id = input; self
     }
     /// <p>The ID of the Verified Access trust provider.</p>
     pub fn get_verified_access_trust_provider_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl DeleteVerifiedAccessTrustProviderInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -76,26 +74,24 @@ impl DeleteVerifiedAccessTrustProviderInputBuilder {
     }
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`DeleteVerifiedAccessTrustProviderInput`](crate::operation::delete_verified_access_trust_provider::DeleteVerifiedAccessTrustProviderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_verified_access_trust_provider::DeleteVerifiedAccessTrustProviderInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_verified_access_trust_provider::DeleteVerifiedAccessTrustProviderInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_verified_access_trust_provider::DeleteVerifiedAccessTrustProviderInput {
-                verified_access_trust_provider_id: self.verified_access_trust_provider_id,
-                dry_run: self.dry_run,
-                client_token: self.client_token,
-            },
+                verified_access_trust_provider_id: self.verified_access_trust_provider_id
+                ,
+                dry_run: self.dry_run
+                ,
+                client_token: self.client_token
+                ,
+            }
         )
     }
 }
+

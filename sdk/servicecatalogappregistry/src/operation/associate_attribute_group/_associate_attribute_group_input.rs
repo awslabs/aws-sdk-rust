@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateAttributeGroupInput {
+pub struct AssociateAttributeGroupInput  {
     /// <p>The name, ID, or ARN of the application.</p>
     pub application: ::std::option::Option<::std::string::String>,
     /// <p>The name, ID, or ARN of the attribute group that holds the attributes to describe the application.</p>
     pub attribute_group: ::std::option::Option<::std::string::String>,
 }
-impl AssociateAttributeGroupInput {
+impl  AssociateAttributeGroupInput  {
     /// <p>The name, ID, or ARN of the application.</p>
-    pub fn application(&self) -> ::std::option::Option<&str> {
+    pub fn application(&self) -> ::std::option::Option<& str> {
         self.application.as_deref()
     }
     /// <p>The name, ID, or ARN of the attribute group that holds the attributes to describe the application.</p>
-    pub fn attribute_group(&self) -> ::std::option::Option<&str> {
+    pub fn attribute_group(&self) -> ::std::option::Option<& str> {
         self.attribute_group.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AssociateAttributeGroupInputBuilder {
     }
     /// <p>The name, ID, or ARN of the application.</p>
     pub fn set_application(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application = input;
-        self
+        self.application = input; self
     }
     /// <p>The name, ID, or ARN of the application.</p>
     pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl AssociateAttributeGroupInputBuilder {
     }
     /// <p>The name, ID, or ARN of the attribute group that holds the attributes to describe the application.</p>
     pub fn set_attribute_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attribute_group = input;
-        self
+        self.attribute_group = input; self
     }
     /// <p>The name, ID, or ARN of the attribute group that holds the attributes to describe the application.</p>
     pub fn get_attribute_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.attribute_group
     }
     /// Consumes the builder and constructs a [`AssociateAttributeGroupInput`](crate::operation::associate_attribute_group::AssociateAttributeGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_attribute_group::AssociateAttributeGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::associate_attribute_group::AssociateAttributeGroupInput {
-            application: self.application,
-            attribute_group: self.attribute_group,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_attribute_group::AssociateAttributeGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_attribute_group::AssociateAttributeGroupInput {
+                application: self.application
+                ,
+                attribute_group: self.attribute_group
+                ,
+            }
+        )
     }
 }
+

@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetCustomerGatewayAssociations`](crate::operation::get_customer_gateway_associations::builders::GetCustomerGatewayAssociationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_customer_gateway_associations::builders::GetCustomerGatewayAssociationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`global_network_id(impl Into<String>)`](crate::operation::get_customer_gateway_associations::builders::GetCustomerGatewayAssociationsFluentBuilder::global_network_id) / [`set_global_network_id(Option<String>)`](crate::operation::get_customer_gateway_associations::builders::GetCustomerGatewayAssociationsFluentBuilder::set_global_network_id):<br>required: **true**<br><p>The ID of the global network.</p><br>
     ///   - [`customer_gateway_arns(impl Into<String>)`](crate::operation::get_customer_gateway_associations::builders::GetCustomerGatewayAssociationsFluentBuilder::customer_gateway_arns) / [`set_customer_gateway_arns(Option<Vec::<String>>)`](crate::operation::get_customer_gateway_associations::builders::GetCustomerGatewayAssociationsFluentBuilder::set_customer_gateway_arns):<br>required: **false**<br><p>One or more customer gateway Amazon Resource Names (ARNs). The maximum is 10.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_customer_gateway_associations::builders::GetCustomerGatewayAssociationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_customer_gateway_associations::builders::GetCustomerGatewayAssociationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_customer_gateway_associations::builders::GetCustomerGatewayAssociationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_customer_gateway_associations::builders::GetCustomerGatewayAssociationsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
-    /// - On success, responds with [`GetCustomerGatewayAssociationsOutput`](crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsOutput) with field(s):
+                            /// - On success, responds with [`GetCustomerGatewayAssociationsOutput`](crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsOutput) with field(s):
     ///   - [`customer_gateway_associations(Option<Vec::<CustomerGatewayAssociation>>)`](crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsOutput::customer_gateway_associations): <p>The customer gateway associations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsOutput::next_token): <p>The token for the next page of results.</p>
-    /// - On failure, responds with [`SdkError<GetCustomerGatewayAssociationsError>`](crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsError)
-    pub fn get_customer_gateway_associations(
-        &self,
-    ) -> crate::operation::get_customer_gateway_associations::builders::GetCustomerGatewayAssociationsFluentBuilder {
-        crate::operation::get_customer_gateway_associations::builders::GetCustomerGatewayAssociationsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<GetCustomerGatewayAssociationsError>`](crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsError)
+    pub fn get_customer_gateway_associations(&self) -> crate::operation::get_customer_gateway_associations::builders::GetCustomerGatewayAssociationsFluentBuilder {
+                                crate::operation::get_customer_gateway_associations::builders::GetCustomerGatewayAssociationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

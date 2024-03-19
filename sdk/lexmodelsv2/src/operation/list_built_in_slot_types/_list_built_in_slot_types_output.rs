@@ -2,36 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBuiltInSlotTypesOutput {
+pub struct ListBuiltInSlotTypesOutput  {
     /// <p>Summary information for the built-in slot types that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more slot types available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub built_in_slot_type_summaries: ::std::option::Option<::std::vec::Vec<crate::types::BuiltInSlotTypeSummary>>,
+    pub built_in_slot_type_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::BuiltInSlotTypeSummary>>,
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBuiltInSlotTypes</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>LIstBuiltInSlotTypes</code> operation request to get the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The language and locale of the slot types in the list.</p>
     pub locale_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListBuiltInSlotTypesOutput {
+impl  ListBuiltInSlotTypesOutput  {
     /// <p>Summary information for the built-in slot types that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more slot types available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.built_in_slot_type_summaries.is_none()`.
-    pub fn built_in_slot_type_summaries(&self) -> &[crate::types::BuiltInSlotTypeSummary] {
-        self.built_in_slot_type_summaries.as_deref().unwrap_or_default()
+    pub fn built_in_slot_type_summaries(&self) -> & [crate::types::BuiltInSlotTypeSummary] {
+        self.built_in_slot_type_summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBuiltInSlotTypes</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>LIstBuiltInSlotTypes</code> operation request to get the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The language and locale of the slot types in the list.</p>
-    pub fn locale_id(&self) -> ::std::option::Option<&str> {
+    pub fn locale_id(&self) -> ::std::option::Option<& str> {
         self.locale_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListBuiltInSlotTypesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListBuiltInSlotTypesOutput {
     /// Creates a new builder-style object to manufacture [`ListBuiltInSlotTypesOutput`](crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesOutput).
     pub fn builder() -> crate::operation::list_built_in_slot_types::builders::ListBuiltInSlotTypesOutputBuilder {
@@ -43,7 +44,7 @@ impl ListBuiltInSlotTypesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBuiltInSlotTypesOutputBuilder {
-    pub(crate) built_in_slot_type_summaries: ::std::option::Option<::std::vec::Vec<crate::types::BuiltInSlotTypeSummary>>,
+    pub(crate) built_in_slot_type_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::BuiltInSlotTypeSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) locale_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -56,17 +57,16 @@ impl ListBuiltInSlotTypesOutputBuilder {
     /// <p>Summary information for the built-in slot types that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more slot types available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
     pub fn built_in_slot_type_summaries(mut self, input: crate::types::BuiltInSlotTypeSummary) -> Self {
         let mut v = self.built_in_slot_type_summaries.unwrap_or_default();
-        v.push(input);
-        self.built_in_slot_type_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.built_in_slot_type_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Summary information for the built-in slot types that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more slot types available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn set_built_in_slot_type_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BuiltInSlotTypeSummary>>) -> Self {
-        self.built_in_slot_type_summaries = input;
-        self
+    pub fn set_built_in_slot_type_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BuiltInSlotTypeSummary>>) -> Self {
+        self.built_in_slot_type_summaries = input; self
     }
     /// <p>Summary information for the built-in slot types that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more slot types available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
-    pub fn get_built_in_slot_type_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BuiltInSlotTypeSummary>> {
+    pub fn get_built_in_slot_type_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BuiltInSlotTypeSummary>> {
         &self.built_in_slot_type_summaries
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBuiltInSlotTypes</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>LIstBuiltInSlotTypes</code> operation request to get the next page of results.</p>
@@ -76,8 +76,7 @@ impl ListBuiltInSlotTypesOutputBuilder {
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBuiltInSlotTypes</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>LIstBuiltInSlotTypes</code> operation request to get the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListBuiltInSlotTypes</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>LIstBuiltInSlotTypes</code> operation request to get the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,29 +89,32 @@ impl ListBuiltInSlotTypesOutputBuilder {
     }
     /// <p>The language and locale of the slot types in the list.</p>
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
     }
     /// <p>The language and locale of the slot types in the list.</p>
     pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.locale_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListBuiltInSlotTypesOutput`](crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesOutput).
     pub fn build(self) -> crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesOutput {
         crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesOutput {
-            built_in_slot_type_summaries: self.built_in_slot_type_summaries,
-            next_token: self.next_token,
-            locale_id: self.locale_id,
+            built_in_slot_type_summaries: self.built_in_slot_type_summaries
+            ,
+            next_token: self.next_token
+            ,
+            locale_id: self.locale_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

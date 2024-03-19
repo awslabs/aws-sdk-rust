@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribePullRequestEvents`](crate::operation::describe_pull_request_events::builders::DescribePullRequestEventsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_pull_request_events::builders::DescribePullRequestEventsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`pull_request_id(impl Into<String>)`](crate::operation::describe_pull_request_events::builders::DescribePullRequestEventsFluentBuilder::pull_request_id) / [`set_pull_request_id(Option<String>)`](crate::operation::describe_pull_request_events::builders::DescribePullRequestEventsFluentBuilder::set_pull_request_id):<br>required: **true**<br><p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p><br>
     ///   - [`pull_request_event_type(PullRequestEventType)`](crate::operation::describe_pull_request_events::builders::DescribePullRequestEventsFluentBuilder::pull_request_event_type) / [`set_pull_request_event_type(Option<PullRequestEventType>)`](crate::operation::describe_pull_request_events::builders::DescribePullRequestEventsFluentBuilder::set_pull_request_event_type):<br>required: **false**<br><p>Optional. The pull request event type about which you want to return information.</p><br>
     ///   - [`actor_arn(impl Into<String>)`](crate::operation::describe_pull_request_events::builders::DescribePullRequestEventsFluentBuilder::actor_arn) / [`set_actor_arn(Option<String>)`](crate::operation::describe_pull_request_events::builders::DescribePullRequestEventsFluentBuilder::set_actor_arn):<br>required: **false**<br><p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating the pull request with more commits or changing the status of a pull request.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_pull_request_events::builders::DescribePullRequestEventsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_pull_request_events::builders::DescribePullRequestEventsFluentBuilder::set_next_token):<br>required: **false**<br><p>An enumeration token that, when provided in a request, returns the next batch of the results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_pull_request_events::builders::DescribePullRequestEventsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_pull_request_events::builders::DescribePullRequestEventsFluentBuilder::set_max_results):<br>required: **false**<br><p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 events, which is also the maximum number of events that can be returned in a result.</p><br>
-    /// - On success, responds with [`DescribePullRequestEventsOutput`](crate::operation::describe_pull_request_events::DescribePullRequestEventsOutput) with field(s):
+                            /// - On success, responds with [`DescribePullRequestEventsOutput`](crate::operation::describe_pull_request_events::DescribePullRequestEventsOutput) with field(s):
     ///   - [`pull_request_events(Vec::<PullRequestEvent>)`](crate::operation::describe_pull_request_events::DescribePullRequestEventsOutput::pull_request_events): <p>Information about the pull request events.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_pull_request_events::DescribePullRequestEventsOutput::next_token): <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
-    /// - On failure, responds with [`SdkError<DescribePullRequestEventsError>`](crate::operation::describe_pull_request_events::DescribePullRequestEventsError)
+                            /// - On failure, responds with [`SdkError<DescribePullRequestEventsError>`](crate::operation::describe_pull_request_events::DescribePullRequestEventsError)
     pub fn describe_pull_request_events(&self) -> crate::operation::describe_pull_request_events::builders::DescribePullRequestEventsFluentBuilder {
-        crate::operation::describe_pull_request_events::builders::DescribePullRequestEventsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_pull_request_events::builders::DescribePullRequestEventsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

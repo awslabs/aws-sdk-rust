@@ -3,7 +3,7 @@
 /// <p>Information about a request to return a network resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReturnInformation {
+pub struct ReturnInformation  {
     /// <p>The shipping address.</p>
     pub shipping_address: ::std::option::Option<crate::types::Address>,
     /// <p>The reason for the return. If the return request did not include a reason for the return, this value is null.</p>
@@ -13,21 +13,21 @@ pub struct ReturnInformation {
     /// <p>The URL of the shipping label. The shipping label is available for download only if the status of the network resource is <code>PENDING_RETURN</code>. For more information, see <a href="https://docs.aws.amazon.com/private-networks/latest/userguide/radio-units.html#return-radio-unit">Return a radio unit</a>.</p>
     pub shipping_label: ::std::option::Option<::std::string::String>,
 }
-impl ReturnInformation {
+impl  ReturnInformation  {
     /// <p>The shipping address.</p>
-    pub fn shipping_address(&self) -> ::std::option::Option<&crate::types::Address> {
+    pub fn shipping_address(&self) -> ::std::option::Option<& crate::types::Address> {
         self.shipping_address.as_ref()
     }
     /// <p>The reason for the return. If the return request did not include a reason for the return, this value is null.</p>
-    pub fn return_reason(&self) -> ::std::option::Option<&str> {
+    pub fn return_reason(&self) -> ::std::option::Option<& str> {
         self.return_reason.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the replacement order.</p>
-    pub fn replacement_order_arn(&self) -> ::std::option::Option<&str> {
+    pub fn replacement_order_arn(&self) -> ::std::option::Option<& str> {
         self.replacement_order_arn.as_deref()
     }
     /// <p>The URL of the shipping label. The shipping label is available for download only if the status of the network resource is <code>PENDING_RETURN</code>. For more information, see <a href="https://docs.aws.amazon.com/private-networks/latest/userguide/radio-units.html#return-radio-unit">Return a radio unit</a>.</p>
-    pub fn shipping_label(&self) -> ::std::option::Option<&str> {
+    pub fn shipping_label(&self) -> ::std::option::Option<& str> {
         self.shipping_label.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl ReturnInformationBuilder {
     }
     /// <p>The shipping address.</p>
     pub fn set_shipping_address(mut self, input: ::std::option::Option<crate::types::Address>) -> Self {
-        self.shipping_address = input;
-        self
+        self.shipping_address = input; self
     }
     /// <p>The shipping address.</p>
     pub fn get_shipping_address(&self) -> &::std::option::Option<crate::types::Address> {
@@ -69,8 +68,7 @@ impl ReturnInformationBuilder {
     }
     /// <p>The reason for the return. If the return request did not include a reason for the return, this value is null.</p>
     pub fn set_return_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.return_reason = input;
-        self
+        self.return_reason = input; self
     }
     /// <p>The reason for the return. If the return request did not include a reason for the return, this value is null.</p>
     pub fn get_return_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ReturnInformationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the replacement order.</p>
     pub fn set_replacement_order_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replacement_order_arn = input;
-        self
+        self.replacement_order_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the replacement order.</p>
     pub fn get_replacement_order_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl ReturnInformationBuilder {
     }
     /// <p>The URL of the shipping label. The shipping label is available for download only if the status of the network resource is <code>PENDING_RETURN</code>. For more information, see <a href="https://docs.aws.amazon.com/private-networks/latest/userguide/radio-units.html#return-radio-unit">Return a radio unit</a>.</p>
     pub fn set_shipping_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.shipping_label = input;
-        self
+        self.shipping_label = input; self
     }
     /// <p>The URL of the shipping label. The shipping label is available for download only if the status of the network resource is <code>PENDING_RETURN</code>. For more information, see <a href="https://docs.aws.amazon.com/private-networks/latest/userguide/radio-units.html#return-radio-unit">Return a radio unit</a>.</p>
     pub fn get_shipping_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl ReturnInformationBuilder {
     /// Consumes the builder and constructs a [`ReturnInformation`](crate::types::ReturnInformation).
     pub fn build(self) -> crate::types::ReturnInformation {
         crate::types::ReturnInformation {
-            shipping_address: self.shipping_address,
-            return_reason: self.return_reason,
-            replacement_order_arn: self.replacement_order_arn,
-            shipping_label: self.shipping_label,
+            shipping_address: self.shipping_address
+            ,
+            return_reason: self.return_reason
+            ,
+            replacement_order_arn: self.replacement_order_arn
+            ,
+            shipping_label: self.shipping_label
+            ,
         }
     }
 }
+

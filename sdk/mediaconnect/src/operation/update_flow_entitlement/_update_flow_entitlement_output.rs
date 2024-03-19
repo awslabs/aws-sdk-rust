@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFlowEntitlementOutput {
+pub struct UpdateFlowEntitlementOutput  {
     /// The new configuration of the entitlement that you updated.
     pub entitlement: ::std::option::Option<crate::types::Entitlement>,
     /// The ARN of the flow that this entitlement was granted on.
     pub flow_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl UpdateFlowEntitlementOutput {
+impl  UpdateFlowEntitlementOutput  {
     /// The new configuration of the entitlement that you updated.
-    pub fn entitlement(&self) -> ::std::option::Option<&crate::types::Entitlement> {
+    pub fn entitlement(&self) -> ::std::option::Option<& crate::types::Entitlement> {
         self.entitlement.as_ref()
     }
     /// The ARN of the flow that this entitlement was granted on.
-    pub fn flow_arn(&self) -> ::std::option::Option<&str> {
+    pub fn flow_arn(&self) -> ::std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateFlowEntitlementOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateFlowEntitlementOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFlowEntitlementOutput`](crate::operation::update_flow_entitlement::UpdateFlowEntitlementOutput).
     pub fn builder() -> crate::operation::update_flow_entitlement::builders::UpdateFlowEntitlementOutputBuilder {
@@ -47,8 +47,7 @@ impl UpdateFlowEntitlementOutputBuilder {
     }
     /// The new configuration of the entitlement that you updated.
     pub fn set_entitlement(mut self, input: ::std::option::Option<crate::types::Entitlement>) -> Self {
-        self.entitlement = input;
-        self
+        self.entitlement = input; self
     }
     /// The new configuration of the entitlement that you updated.
     pub fn get_entitlement(&self) -> &::std::option::Option<crate::types::Entitlement> {
@@ -61,28 +60,30 @@ impl UpdateFlowEntitlementOutputBuilder {
     }
     /// The ARN of the flow that this entitlement was granted on.
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flow_arn = input;
-        self
+        self.flow_arn = input; self
     }
     /// The ARN of the flow that this entitlement was granted on.
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateFlowEntitlementOutput`](crate::operation::update_flow_entitlement::UpdateFlowEntitlementOutput).
     pub fn build(self) -> crate::operation::update_flow_entitlement::UpdateFlowEntitlementOutput {
         crate::operation::update_flow_entitlement::UpdateFlowEntitlementOutput {
-            entitlement: self.entitlement,
-            flow_arn: self.flow_arn,
+            entitlement: self.entitlement
+            ,
+            flow_arn: self.flow_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

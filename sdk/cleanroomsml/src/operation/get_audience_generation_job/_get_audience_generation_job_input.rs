@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAudienceGenerationJobInput {
+pub struct GetAudienceGenerationJobInput  {
     /// <p>The Amazon Resource Name (ARN) of the audience generation job that you are interested in.</p>
     pub audience_generation_job_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetAudienceGenerationJobInput {
+impl  GetAudienceGenerationJobInput  {
     /// <p>The Amazon Resource Name (ARN) of the audience generation job that you are interested in.</p>
-    pub fn audience_generation_job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn audience_generation_job_arn(&self) -> ::std::option::Option<& str> {
         self.audience_generation_job_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetAudienceGenerationJobInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the audience generation job that you are interested in.</p>
     pub fn set_audience_generation_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.audience_generation_job_arn = input;
-        self
+        self.audience_generation_job_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the audience generation job that you are interested in.</p>
     pub fn get_audience_generation_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.audience_generation_job_arn
     }
     /// Consumes the builder and constructs a [`GetAudienceGenerationJobInput`](crate::operation::get_audience_generation_job::GetAudienceGenerationJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_audience_generation_job::GetAudienceGenerationJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_audience_generation_job::GetAudienceGenerationJobInput {
-            audience_generation_job_arn: self.audience_generation_job_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_audience_generation_job::GetAudienceGenerationJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_audience_generation_job::GetAudienceGenerationJobInput {
+                audience_generation_job_arn: self.audience_generation_job_arn
+                ,
+            }
+        )
     }
 }
+

@@ -52,3 +52,4 @@ pub use crate::types::_finding::FindingBuilder;
 pub use crate::types::_cloud_formation_stack_update::CloudFormationStackUpdateBuilder;
 
 pub use crate::types::_code_deploy_deployment::CodeDeployDeploymentBuilder;
+

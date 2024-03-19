@@ -3,19 +3,18 @@
 /// <p>Container for the <code>Suffix</code> element.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IndexDocument {
+pub struct IndexDocument  {
     /// <p>A suffix that is appended to a request that is for a directory on the website endpoint (for example,if the suffix is index.html and you make a request to samplebucket/images/ the data that is returned will be for the object with the key name images/index.html) The suffix must not be empty and must not include a slash character.</p><important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     pub suffix: ::std::string::String,
 }
-impl IndexDocument {
+impl  IndexDocument  {
     /// <p>A suffix that is appended to a request that is for a directory on the website endpoint (for example,if the suffix is index.html and you make a request to samplebucket/images/ the data that is returned will be for the object with the key name images/index.html) The suffix must not be empty and must not include a slash character.</p><important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
-    pub fn suffix(&self) -> &str {
-        use std::ops::Deref;
-        self.suffix.deref()
+    pub fn suffix(&self) -> & str {
+        use std::ops::Deref; self.suffix.deref()
     }
 }
 impl IndexDocument {
@@ -44,8 +43,7 @@ impl IndexDocumentBuilder {
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     pub fn set_suffix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.suffix = input;
-        self
+        self.suffix = input; self
     }
     /// <p>A suffix that is appended to a request that is for a directory on the website endpoint (for example,if the suffix is index.html and you make a request to samplebucket/images/ the data that is returned will be for the object with the key name images/index.html) The suffix must not be empty and must not include a slash character.</p><important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
@@ -57,13 +55,15 @@ impl IndexDocumentBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`suffix`](crate::types::builders::IndexDocumentBuilder::suffix)
     pub fn build(self) -> ::std::result::Result<crate::types::IndexDocument, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IndexDocument {
-            suffix: self.suffix.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "suffix",
-                    "suffix was not specified but it is required when building IndexDocument",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IndexDocument {
+                suffix: self.suffix
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("suffix", "suffix was not specified but it is required when building IndexDocument")
+                    )?
+                ,
+            }
+        )
     }
 }
+

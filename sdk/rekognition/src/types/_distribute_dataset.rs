@@ -3,15 +3,14 @@
 /// <p>A training dataset or a test dataset used in a dataset distribution operation. For more information, see <code>DistributeDatasetEntries</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DistributeDataset {
+pub struct DistributeDataset  {
     /// <p>The Amazon Resource Name (ARN) of the dataset that you want to use.</p>
     pub arn: ::std::string::String,
 }
-impl DistributeDataset {
+impl  DistributeDataset  {
     /// <p>The Amazon Resource Name (ARN) of the dataset that you want to use.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
 }
 impl DistributeDataset {
@@ -36,8 +35,7 @@ impl DistributeDatasetBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset that you want to use.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset that you want to use.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl DistributeDatasetBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::DistributeDatasetBuilder::arn)
     pub fn build(self) -> ::std::result::Result<crate::types::DistributeDataset, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DistributeDataset {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building DistributeDataset",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DistributeDataset {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building DistributeDataset")
+                    )?
+                ,
+            }
+        )
     }
 }
+

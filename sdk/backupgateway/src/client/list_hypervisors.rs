@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListHypervisors`](crate::operation::list_hypervisors::builders::ListHypervisorsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_hypervisors::builders::ListHypervisorsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_hypervisors::builders::ListHypervisorsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_hypervisors::builders::ListHypervisorsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of hypervisors to list.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_hypervisors::builders::ListHypervisorsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_hypervisors::builders::ListHypervisorsFluentBuilder::set_next_token):<br>required: **false**<br><p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p><br>
-    /// - On success, responds with [`ListHypervisorsOutput`](crate::operation::list_hypervisors::ListHypervisorsOutput) with field(s):
+                            /// - On success, responds with [`ListHypervisorsOutput`](crate::operation::list_hypervisors::ListHypervisorsOutput) with field(s):
     ///   - [`hypervisors(Option<Vec::<Hypervisor>>)`](crate::operation::list_hypervisors::ListHypervisorsOutput::hypervisors): <p>A list of your <code>Hypervisor</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_hypervisors::ListHypervisorsOutput::next_token): <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    /// - On failure, responds with [`SdkError<ListHypervisorsError>`](crate::operation::list_hypervisors::ListHypervisorsError)
+                            /// - On failure, responds with [`SdkError<ListHypervisorsError>`](crate::operation::list_hypervisors::ListHypervisorsError)
     pub fn list_hypervisors(&self) -> crate::operation::list_hypervisors::builders::ListHypervisorsFluentBuilder {
-        crate::operation::list_hypervisors::builders::ListHypervisorsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_hypervisors::builders::ListHypervisorsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

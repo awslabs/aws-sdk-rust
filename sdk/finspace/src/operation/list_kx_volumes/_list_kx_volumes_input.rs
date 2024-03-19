@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListKxVolumesInput {
+pub struct ListKxVolumesInput  {
     /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in this request.</p>
@@ -12,9 +12,9 @@ pub struct ListKxVolumesInput {
     /// <p>The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type.</p>
     pub volume_type: ::std::option::Option<crate::types::KxVolumeType>,
 }
-impl ListKxVolumesInput {
+impl  ListKxVolumesInput  {
     /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The maximum number of results to return in this request.</p>
@@ -22,11 +22,11 @@ impl ListKxVolumesInput {
         self.max_results
     }
     /// <p>A token that indicates where a results page should begin.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type.</p>
-    pub fn volume_type(&self) -> ::std::option::Option<&crate::types::KxVolumeType> {
+    pub fn volume_type(&self) -> ::std::option::Option<& crate::types::KxVolumeType> {
         self.volume_type.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl ListKxVolumesInputBuilder {
     }
     /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>A unique identifier for the kdb environment, whose clusters can attach to the volume.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ListKxVolumesInputBuilder {
     }
     /// <p>The maximum number of results to return in this request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in this request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -83,8 +81,7 @@ impl ListKxVolumesInputBuilder {
     }
     /// <p>A token that indicates where a results page should begin.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates where a results page should begin.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,22 +94,26 @@ impl ListKxVolumesInputBuilder {
     }
     /// <p>The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type.</p>
     pub fn set_volume_type(mut self, input: ::std::option::Option<crate::types::KxVolumeType>) -> Self {
-        self.volume_type = input;
-        self
+        self.volume_type = input; self
     }
     /// <p>The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type.</p>
     pub fn get_volume_type(&self) -> &::std::option::Option<crate::types::KxVolumeType> {
         &self.volume_type
     }
     /// Consumes the builder and constructs a [`ListKxVolumesInput`](crate::operation::list_kx_volumes::ListKxVolumesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_kx_volumes::ListKxVolumesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_kx_volumes::ListKxVolumesInput {
-            environment_id: self.environment_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            volume_type: self.volume_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_kx_volumes::ListKxVolumesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_kx_volumes::ListKxVolumesInput {
+                environment_id: self.environment_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                volume_type: self.volume_type
+                ,
+            }
+        )
     }
 }
+

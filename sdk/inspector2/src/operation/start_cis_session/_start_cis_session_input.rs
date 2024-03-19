@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartCisSessionInput {
+pub struct StartCisSessionInput  {
     /// <p>A unique identifier for the scan job.</p>
     pub scan_job_id: ::std::option::Option<::std::string::String>,
     /// <p>The start CIS session message.</p>
     pub message: ::std::option::Option<crate::types::StartCisSessionMessage>,
 }
-impl StartCisSessionInput {
+impl  StartCisSessionInput  {
     /// <p>A unique identifier for the scan job.</p>
-    pub fn scan_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn scan_job_id(&self) -> ::std::option::Option<& str> {
         self.scan_job_id.as_deref()
     }
     /// <p>The start CIS session message.</p>
-    pub fn message(&self) -> ::std::option::Option<&crate::types::StartCisSessionMessage> {
+    pub fn message(&self) -> ::std::option::Option<& crate::types::StartCisSessionMessage> {
         self.message.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl StartCisSessionInputBuilder {
     }
     /// <p>A unique identifier for the scan job.</p>
     pub fn set_scan_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scan_job_id = input;
-        self
+        self.scan_job_id = input; self
     }
     /// <p>A unique identifier for the scan job.</p>
     pub fn get_scan_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl StartCisSessionInputBuilder {
     }
     /// <p>The start CIS session message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<crate::types::StartCisSessionMessage>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The start CIS session message.</p>
     pub fn get_message(&self) -> &::std::option::Option<crate::types::StartCisSessionMessage> {
         &self.message
     }
     /// Consumes the builder and constructs a [`StartCisSessionInput`](crate::operation::start_cis_session::StartCisSessionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_cis_session::StartCisSessionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_cis_session::StartCisSessionInput {
-            scan_job_id: self.scan_job_id,
-            message: self.message,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_cis_session::StartCisSessionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_cis_session::StartCisSessionInput {
+                scan_job_id: self.scan_job_id
+                ,
+                message: self.message
+                ,
+            }
+        )
     }
 }
+

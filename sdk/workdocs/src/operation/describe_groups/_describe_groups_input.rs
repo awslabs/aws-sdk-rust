@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DescribeGroupsInput {
+pub struct DescribeGroupsInput  {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub authentication_token: ::std::option::Option<::std::string::String>,
     /// <p>A query to describe groups by group name.</p>
@@ -14,21 +14,21 @@ pub struct DescribeGroupsInput {
     /// <p>The maximum number of items to return with this call.</p>
     pub limit: ::std::option::Option<i32>,
 }
-impl DescribeGroupsInput {
+impl  DescribeGroupsInput  {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(&self) -> ::std::option::Option<&str> {
+    pub fn authentication_token(&self) -> ::std::option::Option<& str> {
         self.authentication_token.as_deref()
     }
     /// <p>A query to describe groups by group name.</p>
-    pub fn search_query(&self) -> ::std::option::Option<&str> {
+    pub fn search_query(&self) -> ::std::option::Option<& str> {
         self.search_query.as_deref()
     }
     /// <p>The ID of the organization.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of items to return with this call.</p>
@@ -36,7 +36,7 @@ impl DescribeGroupsInput {
         self.limit
     }
 }
-impl ::std::fmt::Debug for DescribeGroupsInput {
+impl  ::std::fmt::Debug for DescribeGroupsInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeGroupsInput");
         formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
@@ -72,8 +72,7 @@ impl DescribeGroupsInputBuilder {
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.authentication_token = input;
-        self
+        self.authentication_token = input; self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +86,7 @@ impl DescribeGroupsInputBuilder {
     }
     /// <p>A query to describe groups by group name.</p>
     pub fn set_search_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.search_query = input;
-        self
+        self.search_query = input; self
     }
     /// <p>A query to describe groups by group name.</p>
     pub fn get_search_query(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +99,7 @@ impl DescribeGroupsInputBuilder {
     }
     /// <p>The ID of the organization.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The ID of the organization.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +112,7 @@ impl DescribeGroupsInputBuilder {
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,24 +125,28 @@ impl DescribeGroupsInputBuilder {
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }
     /// Consumes the builder and constructs a [`DescribeGroupsInput`](crate::operation::describe_groups::DescribeGroupsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_groups::DescribeGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_groups::DescribeGroupsInput {
-            authentication_token: self.authentication_token,
-            search_query: self.search_query,
-            organization_id: self.organization_id,
-            marker: self.marker,
-            limit: self.limit,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_groups::DescribeGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_groups::DescribeGroupsInput {
+                authentication_token: self.authentication_token
+                ,
+                search_query: self.search_query
+                ,
+                organization_id: self.organization_id
+                ,
+                marker: self.marker
+                ,
+                limit: self.limit
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for DescribeGroupsInputBuilder {
@@ -160,3 +160,4 @@ impl ::std::fmt::Debug for DescribeGroupsInputBuilder {
         formatter.finish()
     }
 }
+

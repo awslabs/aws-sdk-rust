@@ -78,3 +78,4 @@ pub use crate::types::_batch_update_recommendation_status_successful_entry::Batc
 pub use crate::types::_update_recommendation_status_item::UpdateRecommendationStatusItemBuilder;
 
 pub use crate::types::_update_recommendation_status_request_entry::UpdateRecommendationStatusRequestEntryBuilder;
+

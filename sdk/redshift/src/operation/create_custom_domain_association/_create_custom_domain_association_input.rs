@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCustomDomainAssociationInput {
+pub struct CreateCustomDomainAssociationInput  {
     /// <p>The custom domain name for a custom domain association.</p>
     pub custom_domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The certificate Amazon Resource Name (ARN) for the custom domain name association.</p>
@@ -10,17 +10,17 @@ pub struct CreateCustomDomainAssociationInput {
     /// <p>The cluster identifier that the custom domain is associated with.</p>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
 }
-impl CreateCustomDomainAssociationInput {
+impl  CreateCustomDomainAssociationInput  {
     /// <p>The custom domain name for a custom domain association.</p>
-    pub fn custom_domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn custom_domain_name(&self) -> ::std::option::Option<& str> {
         self.custom_domain_name.as_deref()
     }
     /// <p>The certificate Amazon Resource Name (ARN) for the custom domain name association.</p>
-    pub fn custom_domain_certificate_arn(&self) -> ::std::option::Option<&str> {
+    pub fn custom_domain_certificate_arn(&self) -> ::std::option::Option<& str> {
         self.custom_domain_certificate_arn.as_deref()
     }
     /// <p>The cluster identifier that the custom domain is associated with.</p>
-    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl CreateCustomDomainAssociationInputBuilder {
     }
     /// <p>The custom domain name for a custom domain association.</p>
     pub fn set_custom_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_domain_name = input;
-        self
+        self.custom_domain_name = input; self
     }
     /// <p>The custom domain name for a custom domain association.</p>
     pub fn get_custom_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl CreateCustomDomainAssociationInputBuilder {
     }
     /// <p>The certificate Amazon Resource Name (ARN) for the custom domain name association.</p>
     pub fn set_custom_domain_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_domain_certificate_arn = input;
-        self
+        self.custom_domain_certificate_arn = input; self
     }
     /// <p>The certificate Amazon Resource Name (ARN) for the custom domain name association.</p>
     pub fn get_custom_domain_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl CreateCustomDomainAssociationInputBuilder {
     }
     /// <p>The cluster identifier that the custom domain is associated with.</p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_identifier = input;
-        self
+        self.cluster_identifier = input; self
     }
     /// <p>The cluster identifier that the custom domain is associated with.</p>
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_identifier
     }
     /// Consumes the builder and constructs a [`CreateCustomDomainAssociationInput`](crate::operation::create_custom_domain_association::CreateCustomDomainAssociationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_custom_domain_association::CreateCustomDomainAssociationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_custom_domain_association::CreateCustomDomainAssociationInput {
-            custom_domain_name: self.custom_domain_name,
-            custom_domain_certificate_arn: self.custom_domain_certificate_arn,
-            cluster_identifier: self.cluster_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_custom_domain_association::CreateCustomDomainAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_custom_domain_association::CreateCustomDomainAssociationInput {
+                custom_domain_name: self.custom_domain_name
+                ,
+                custom_domain_certificate_arn: self.custom_domain_certificate_arn
+                ,
+                cluster_identifier: self.cluster_identifier
+                ,
+            }
+        )
     }
 }
+

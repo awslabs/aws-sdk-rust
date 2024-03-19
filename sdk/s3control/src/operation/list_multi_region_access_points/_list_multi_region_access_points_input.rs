@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMultiRegionAccessPointsInput {
+pub struct ListMultiRegionAccessPointsInput  {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Not currently used. Do not use this parameter.</p>
@@ -10,13 +10,13 @@ pub struct ListMultiRegionAccessPointsInput {
     /// <p>Not currently used. Do not use this parameter.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListMultiRegionAccessPointsInput {
+impl  ListMultiRegionAccessPointsInput  {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>Not currently used. Do not use this parameter.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Not currently used. Do not use this parameter.</p>
@@ -48,8 +48,7 @@ impl ListMultiRegionAccessPointsInputBuilder {
     }
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListMultiRegionAccessPointsInputBuilder {
     }
     /// <p>Not currently used. Do not use this parameter.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Not currently used. Do not use this parameter.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,24 +74,24 @@ impl ListMultiRegionAccessPointsInputBuilder {
     }
     /// <p>Not currently used. Do not use this parameter.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Not currently used. Do not use this parameter.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListMultiRegionAccessPointsInput`](crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsInput {
-            account_id: self.account_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsInput {
+                account_id: self.account_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

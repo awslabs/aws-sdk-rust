@@ -3,21 +3,20 @@
 /// <p>A weekly schedule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WeeklySchedule {
+pub struct WeeklySchedule  {
     /// <p>The weekly schedule's start time.</p>
     pub start_time: ::std::option::Option<crate::types::Time>,
     /// <p>The weekly schedule's days.</p>
-    pub days: ::std::vec::Vec<crate::types::Day>,
+    pub days: ::std::vec::Vec::<crate::types::Day>,
 }
-impl WeeklySchedule {
+impl  WeeklySchedule  {
     /// <p>The weekly schedule's start time.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&crate::types::Time> {
+    pub fn start_time(&self) -> ::std::option::Option<& crate::types::Time> {
         self.start_time.as_ref()
     }
     /// <p>The weekly schedule's days.</p>
-    pub fn days(&self) -> &[crate::types::Day] {
-        use std::ops::Deref;
-        self.days.deref()
+    pub fn days(&self) -> & [crate::types::Day] {
+        use std::ops::Deref; self.days.deref()
     }
 }
 impl WeeklySchedule {
@@ -32,7 +31,7 @@ impl WeeklySchedule {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WeeklyScheduleBuilder {
     pub(crate) start_time: ::std::option::Option<crate::types::Time>,
-    pub(crate) days: ::std::option::Option<::std::vec::Vec<crate::types::Day>>,
+    pub(crate) days: ::std::option::Option<::std::vec::Vec::<crate::types::Day>>,
 }
 impl WeeklyScheduleBuilder {
     /// <p>The weekly schedule's start time.</p>
@@ -43,8 +42,7 @@ impl WeeklyScheduleBuilder {
     }
     /// <p>The weekly schedule's start time.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<crate::types::Time>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The weekly schedule's start time.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<crate::types::Time> {
@@ -57,31 +55,33 @@ impl WeeklyScheduleBuilder {
     /// <p>The weekly schedule's days.</p>
     pub fn days(mut self, input: crate::types::Day) -> Self {
         let mut v = self.days.unwrap_or_default();
-        v.push(input);
-        self.days = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.days = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The weekly schedule's days.</p>
-    pub fn set_days(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Day>>) -> Self {
-        self.days = input;
-        self
+    pub fn set_days(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Day>>) -> Self {
+        self.days = input; self
     }
     /// <p>The weekly schedule's days.</p>
-    pub fn get_days(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Day>> {
+    pub fn get_days(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Day>> {
         &self.days
     }
     /// Consumes the builder and constructs a [`WeeklySchedule`](crate::types::WeeklySchedule).
     /// This method will fail if any of the following fields are not set:
     /// - [`days`](crate::types::builders::WeeklyScheduleBuilder::days)
     pub fn build(self) -> ::std::result::Result<crate::types::WeeklySchedule, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::WeeklySchedule {
-            start_time: self.start_time,
-            days: self.days.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "days",
-                    "days was not specified but it is required when building WeeklySchedule",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::WeeklySchedule {
+                start_time: self.start_time
+                ,
+                days: self.days
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("days", "days was not specified but it is required when building WeeklySchedule")
+                    )?
+                ,
+            }
+        )
     }
 }
+

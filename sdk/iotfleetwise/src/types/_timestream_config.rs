@@ -3,22 +3,20 @@
 /// <p>The Amazon Timestream table where the Amazon Web Services IoT FleetWise campaign sends data. Timestream stores and organizes data to optimize query processing time and to reduce storage costs. For more information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/data-modeling.html">Data modeling</a> in the <i>Amazon Timestream Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TimestreamConfig {
+pub struct TimestreamConfig  {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Timestream table.</p>
     pub timestream_table_arn: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the task execution role that grants Amazon Web Services IoT FleetWise permission to deliver data to the Amazon Timestream table.</p>
     pub execution_role_arn: ::std::string::String,
 }
-impl TimestreamConfig {
+impl  TimestreamConfig  {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Timestream table.</p>
-    pub fn timestream_table_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.timestream_table_arn.deref()
+    pub fn timestream_table_arn(&self) -> & str {
+        use std::ops::Deref; self.timestream_table_arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the task execution role that grants Amazon Web Services IoT FleetWise permission to deliver data to the Amazon Timestream table.</p>
-    pub fn execution_role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.execution_role_arn.deref()
+    pub fn execution_role_arn(&self) -> & str {
+        use std::ops::Deref; self.execution_role_arn.deref()
     }
 }
 impl TimestreamConfig {
@@ -44,8 +42,7 @@ impl TimestreamConfigBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Timestream table.</p>
     pub fn set_timestream_table_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.timestream_table_arn = input;
-        self
+        self.timestream_table_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Timestream table.</p>
     pub fn get_timestream_table_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl TimestreamConfigBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the task execution role that grants Amazon Web Services IoT FleetWise permission to deliver data to the Amazon Timestream table.</p>
     pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_role_arn = input;
-        self
+        self.execution_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the task execution role that grants Amazon Web Services IoT FleetWise permission to deliver data to the Amazon Timestream table.</p>
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl TimestreamConfigBuilder {
     /// - [`timestream_table_arn`](crate::types::builders::TimestreamConfigBuilder::timestream_table_arn)
     /// - [`execution_role_arn`](crate::types::builders::TimestreamConfigBuilder::execution_role_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::TimestreamConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TimestreamConfig {
-            timestream_table_arn: self.timestream_table_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "timestream_table_arn",
-                    "timestream_table_arn was not specified but it is required when building TimestreamConfig",
-                )
-            })?,
-            execution_role_arn: self.execution_role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "execution_role_arn",
-                    "execution_role_arn was not specified but it is required when building TimestreamConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TimestreamConfig {
+                timestream_table_arn: self.timestream_table_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("timestream_table_arn", "timestream_table_arn was not specified but it is required when building TimestreamConfig")
+                    )?
+                ,
+                execution_role_arn: self.execution_role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("execution_role_arn", "execution_role_arn was not specified but it is required when building TimestreamConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

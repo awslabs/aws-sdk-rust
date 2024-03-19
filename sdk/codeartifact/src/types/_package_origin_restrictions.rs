@@ -3,19 +3,19 @@
 /// <p>Details about the origin restrictions set on the package. The package origin restrictions determine how new versions of a package can be added to a specific repository.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PackageOriginRestrictions {
+pub struct PackageOriginRestrictions  {
     /// <p>The package origin configuration that determines if new versions of the package can be published directly to the repository.</p>
     pub publish: crate::types::AllowPublish,
     /// <p>The package origin configuration that determines if new versions of the package can be added to the repository from an external connection or upstream source.</p>
     pub upstream: crate::types::AllowUpstream,
 }
-impl PackageOriginRestrictions {
+impl  PackageOriginRestrictions  {
     /// <p>The package origin configuration that determines if new versions of the package can be published directly to the repository.</p>
-    pub fn publish(&self) -> &crate::types::AllowPublish {
+    pub fn publish(&self) -> & crate::types::AllowPublish {
         &self.publish
     }
     /// <p>The package origin configuration that determines if new versions of the package can be added to the repository from an external connection or upstream source.</p>
-    pub fn upstream(&self) -> &crate::types::AllowUpstream {
+    pub fn upstream(&self) -> & crate::types::AllowUpstream {
         &self.upstream
     }
 }
@@ -42,8 +42,7 @@ impl PackageOriginRestrictionsBuilder {
     }
     /// <p>The package origin configuration that determines if new versions of the package can be published directly to the repository.</p>
     pub fn set_publish(mut self, input: ::std::option::Option<crate::types::AllowPublish>) -> Self {
-        self.publish = input;
-        self
+        self.publish = input; self
     }
     /// <p>The package origin configuration that determines if new versions of the package can be published directly to the repository.</p>
     pub fn get_publish(&self) -> &::std::option::Option<crate::types::AllowPublish> {
@@ -57,8 +56,7 @@ impl PackageOriginRestrictionsBuilder {
     }
     /// <p>The package origin configuration that determines if new versions of the package can be added to the repository from an external connection or upstream source.</p>
     pub fn set_upstream(mut self, input: ::std::option::Option<crate::types::AllowUpstream>) -> Self {
-        self.upstream = input;
-        self
+        self.upstream = input; self
     }
     /// <p>The package origin configuration that determines if new versions of the package can be added to the repository from an external connection or upstream source.</p>
     pub fn get_upstream(&self) -> &::std::option::Option<crate::types::AllowUpstream> {
@@ -69,19 +67,20 @@ impl PackageOriginRestrictionsBuilder {
     /// - [`publish`](crate::types::builders::PackageOriginRestrictionsBuilder::publish)
     /// - [`upstream`](crate::types::builders::PackageOriginRestrictionsBuilder::upstream)
     pub fn build(self) -> ::std::result::Result<crate::types::PackageOriginRestrictions, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PackageOriginRestrictions {
-            publish: self.publish.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "publish",
-                    "publish was not specified but it is required when building PackageOriginRestrictions",
-                )
-            })?,
-            upstream: self.upstream.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "upstream",
-                    "upstream was not specified but it is required when building PackageOriginRestrictions",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PackageOriginRestrictions {
+                publish: self.publish
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("publish", "publish was not specified but it is required when building PackageOriginRestrictions")
+                    )?
+                ,
+                upstream: self.upstream
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("upstream", "upstream was not specified but it is required when building PackageOriginRestrictions")
+                    )?
+                ,
+            }
+        )
     }
 }
+

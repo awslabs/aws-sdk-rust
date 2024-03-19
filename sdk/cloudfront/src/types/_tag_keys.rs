@@ -3,16 +3,17 @@
 /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TagKeys {
+pub struct TagKeys  {
     /// <p>A complex type that contains <code>Tag</code> key elements.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub items: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl TagKeys {
+impl  TagKeys  {
     /// <p>A complex type that contains <code>Tag</code> key elements.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
-    pub fn items(&self) -> &[::std::string::String] {
-        self.items.as_deref().unwrap_or_default()
+    pub fn items(&self) -> & [::std::string::String] {
+        self.items.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TagKeys {
@@ -26,7 +27,7 @@ impl TagKeys {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TagKeysBuilder {
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl TagKeysBuilder {
     /// Appends an item to `items`.
@@ -36,21 +37,24 @@ impl TagKeysBuilder {
     /// <p>A complex type that contains <code>Tag</code> key elements.</p>
     pub fn items(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input.into());
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A complex type that contains <code>Tag</code> key elements.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.items = input; self
     }
     /// <p>A complex type that contains <code>Tag</code> key elements.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`TagKeys`](crate::types::TagKeys).
     pub fn build(self) -> crate::types::TagKeys {
-        crate::types::TagKeys { items: self.items }
+        crate::types::TagKeys {
+            items: self.items
+            ,
+        }
     }
 }
+

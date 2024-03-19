@@ -3,7 +3,7 @@
 /// <p>Contains project summary information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProjectSummary {
+pub struct ProjectSummary  {
     /// <p>The ID of the project.</p>
     pub id: ::std::string::String,
     /// <p>The name of the project.</p>
@@ -15,27 +15,25 @@ pub struct ProjectSummary {
     /// <p>The date the project was last updated, in Unix epoch time.</p>
     pub last_update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ProjectSummary {
+impl  ProjectSummary  {
     /// <p>The ID of the project.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The name of the project.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The project's description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date the project was created, in Unix epoch time.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date the project was last updated, in Unix epoch time.</p>
-    pub fn last_update_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_update_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
     }
 }
@@ -65,8 +63,7 @@ impl ProjectSummaryBuilder {
     }
     /// <p>The ID of the project.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the project.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +77,7 @@ impl ProjectSummaryBuilder {
     }
     /// <p>The name of the project.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the project.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +90,7 @@ impl ProjectSummaryBuilder {
     }
     /// <p>The project's description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The project's description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +103,7 @@ impl ProjectSummaryBuilder {
     }
     /// <p>The date the project was created, in Unix epoch time.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The date the project was created, in Unix epoch time.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -122,8 +116,7 @@ impl ProjectSummaryBuilder {
     }
     /// <p>The date the project was last updated, in Unix epoch time.</p>
     pub fn set_last_update_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_update_date = input;
-        self
+        self.last_update_date = input; self
     }
     /// <p>The date the project was last updated, in Unix epoch time.</p>
     pub fn get_last_update_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -134,22 +127,26 @@ impl ProjectSummaryBuilder {
     /// - [`id`](crate::types::builders::ProjectSummaryBuilder::id)
     /// - [`name`](crate::types::builders::ProjectSummaryBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::ProjectSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ProjectSummary {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building ProjectSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ProjectSummary",
-                )
-            })?,
-            description: self.description,
-            creation_date: self.creation_date,
-            last_update_date: self.last_update_date,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ProjectSummary {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building ProjectSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ProjectSummary")
+                    )?
+                ,
+                description: self.description
+                ,
+                creation_date: self.creation_date
+                ,
+                last_update_date: self.last_update_date
+                ,
+            }
+        )
     }
 }
+

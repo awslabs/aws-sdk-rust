@@ -3,22 +3,22 @@
 /// <p>The output for a <code>DescribeStackResource</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeStackResourceOutput {
+pub struct DescribeStackResourceOutput  {
     /// <p>A <code>StackResourceDetail</code> structure containing the description of the specified resource in the specified stack.</p>
     pub stack_resource_detail: ::std::option::Option<crate::types::StackResourceDetail>,
     _request_id: Option<String>,
 }
-impl DescribeStackResourceOutput {
+impl  DescribeStackResourceOutput  {
     /// <p>A <code>StackResourceDetail</code> structure containing the description of the specified resource in the specified stack.</p>
-    pub fn stack_resource_detail(&self) -> ::std::option::Option<&crate::types::StackResourceDetail> {
+    pub fn stack_resource_detail(&self) -> ::std::option::Option<& crate::types::StackResourceDetail> {
         self.stack_resource_detail.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeStackResourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeStackResourceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStackResourceOutput`](crate::operation::describe_stack_resource::DescribeStackResourceOutput).
     pub fn builder() -> crate::operation::describe_stack_resource::builders::DescribeStackResourceOutputBuilder {
@@ -41,27 +41,28 @@ impl DescribeStackResourceOutputBuilder {
     }
     /// <p>A <code>StackResourceDetail</code> structure containing the description of the specified resource in the specified stack.</p>
     pub fn set_stack_resource_detail(mut self, input: ::std::option::Option<crate::types::StackResourceDetail>) -> Self {
-        self.stack_resource_detail = input;
-        self
+        self.stack_resource_detail = input; self
     }
     /// <p>A <code>StackResourceDetail</code> structure containing the description of the specified resource in the specified stack.</p>
     pub fn get_stack_resource_detail(&self) -> &::std::option::Option<crate::types::StackResourceDetail> {
         &self.stack_resource_detail
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeStackResourceOutput`](crate::operation::describe_stack_resource::DescribeStackResourceOutput).
     pub fn build(self) -> crate::operation::describe_stack_resource::DescribeStackResourceOutput {
         crate::operation::describe_stack_resource::DescribeStackResourceOutput {
-            stack_resource_detail: self.stack_resource_detail,
+            stack_resource_detail: self.stack_resource_detail
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

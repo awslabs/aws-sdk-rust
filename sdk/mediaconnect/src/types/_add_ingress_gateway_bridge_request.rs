@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddIngressGatewayBridgeRequest {
+pub struct AddIngressGatewayBridgeRequest  {
     /// The maximum expected bitrate (in bps).
     pub max_bitrate: ::std::option::Option<i32>,
     /// The maximum number of expected outputs.
     pub max_outputs: ::std::option::Option<i32>,
 }
-impl AddIngressGatewayBridgeRequest {
+impl  AddIngressGatewayBridgeRequest  {
     /// The maximum expected bitrate (in bps).
     pub fn max_bitrate(&self) -> ::std::option::Option<i32> {
         self.max_bitrate
@@ -41,8 +41,7 @@ impl AddIngressGatewayBridgeRequestBuilder {
     }
     /// The maximum expected bitrate (in bps).
     pub fn set_max_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_bitrate = input;
-        self
+        self.max_bitrate = input; self
     }
     /// The maximum expected bitrate (in bps).
     pub fn get_max_bitrate(&self) -> &::std::option::Option<i32> {
@@ -56,8 +55,7 @@ impl AddIngressGatewayBridgeRequestBuilder {
     }
     /// The maximum number of expected outputs.
     pub fn set_max_outputs(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_outputs = input;
-        self
+        self.max_outputs = input; self
     }
     /// The maximum number of expected outputs.
     pub fn get_max_outputs(&self) -> &::std::option::Option<i32> {
@@ -66,8 +64,11 @@ impl AddIngressGatewayBridgeRequestBuilder {
     /// Consumes the builder and constructs a [`AddIngressGatewayBridgeRequest`](crate::types::AddIngressGatewayBridgeRequest).
     pub fn build(self) -> crate::types::AddIngressGatewayBridgeRequest {
         crate::types::AddIngressGatewayBridgeRequest {
-            max_bitrate: self.max_bitrate,
-            max_outputs: self.max_outputs,
+            max_bitrate: self.max_bitrate
+            ,
+            max_outputs: self.max_outputs
+            ,
         }
     }
 }
+

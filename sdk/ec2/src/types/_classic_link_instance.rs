@@ -6,35 +6,37 @@
 /// <p>Describes a linked EC2-Classic instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClassicLinkInstance {
+pub struct ClassicLinkInstance  {
     /// <p>The security groups.</p>
-    pub groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
+    pub groups: ::std::option::Option<::std::vec::Vec::<crate::types::GroupIdentifier>>,
     /// <p>The ID of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Any tags assigned to the instance.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The ID of the VPC.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
 }
-impl ClassicLinkInstance {
+impl  ClassicLinkInstance  {
     /// <p>The security groups.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
-    pub fn groups(&self) -> &[crate::types::GroupIdentifier] {
-        self.groups.as_deref().unwrap_or_default()
+    pub fn groups(&self) -> & [crate::types::GroupIdentifier] {
+        self.groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>Any tags assigned to the instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
 }
@@ -49,9 +51,9 @@ impl ClassicLinkInstance {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClassicLinkInstanceBuilder {
-    pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec::<crate::types::GroupIdentifier>>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl ClassicLinkInstanceBuilder {
@@ -62,17 +64,16 @@ impl ClassicLinkInstanceBuilder {
     /// <p>The security groups.</p>
     pub fn groups(mut self, input: crate::types::GroupIdentifier) -> Self {
         let mut v = self.groups.unwrap_or_default();
-        v.push(input);
-        self.groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The security groups.</p>
-    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>) -> Self {
-        self.groups = input;
-        self
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GroupIdentifier>>) -> Self {
+        self.groups = input; self
     }
     /// <p>The security groups.</p>
-    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GroupIdentifier>> {
         &self.groups
     }
     /// <p>The ID of the instance.</p>
@@ -82,8 +83,7 @@ impl ClassicLinkInstanceBuilder {
     }
     /// <p>The ID of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,17 +96,16 @@ impl ClassicLinkInstanceBuilder {
     /// <p>Any tags assigned to the instance.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Any tags assigned to the instance.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Any tags assigned to the instance.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The ID of the VPC.</p>
@@ -116,8 +115,7 @@ impl ClassicLinkInstanceBuilder {
     }
     /// <p>The ID of the VPC.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The ID of the VPC.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,10 +124,15 @@ impl ClassicLinkInstanceBuilder {
     /// Consumes the builder and constructs a [`ClassicLinkInstance`](crate::types::ClassicLinkInstance).
     pub fn build(self) -> crate::types::ClassicLinkInstance {
         crate::types::ClassicLinkInstance {
-            groups: self.groups,
-            instance_id: self.instance_id,
-            tags: self.tags,
-            vpc_id: self.vpc_id,
+            groups: self.groups
+            ,
+            instance_id: self.instance_id
+            ,
+            tags: self.tags
+            ,
+            vpc_id: self.vpc_id
+            ,
         }
     }
 }
+

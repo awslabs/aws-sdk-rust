@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutDeliveryDestinationPolicyInput {
+pub struct PutDeliveryDestinationPolicyInput  {
     /// <p>The name of the delivery destination to assign this policy to.</p>
     pub delivery_destination_name: ::std::option::Option<::std::string::String>,
     /// <p>The contents of the policy.</p>
     pub delivery_destination_policy: ::std::option::Option<::std::string::String>,
 }
-impl PutDeliveryDestinationPolicyInput {
+impl  PutDeliveryDestinationPolicyInput  {
     /// <p>The name of the delivery destination to assign this policy to.</p>
-    pub fn delivery_destination_name(&self) -> ::std::option::Option<&str> {
+    pub fn delivery_destination_name(&self) -> ::std::option::Option<& str> {
         self.delivery_destination_name.as_deref()
     }
     /// <p>The contents of the policy.</p>
-    pub fn delivery_destination_policy(&self) -> ::std::option::Option<&str> {
+    pub fn delivery_destination_policy(&self) -> ::std::option::Option<& str> {
         self.delivery_destination_policy.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl PutDeliveryDestinationPolicyInputBuilder {
     }
     /// <p>The name of the delivery destination to assign this policy to.</p>
     pub fn set_delivery_destination_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delivery_destination_name = input;
-        self
+        self.delivery_destination_name = input; self
     }
     /// <p>The name of the delivery destination to assign this policy to.</p>
     pub fn get_delivery_destination_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl PutDeliveryDestinationPolicyInputBuilder {
     }
     /// <p>The contents of the policy.</p>
     pub fn set_delivery_destination_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delivery_destination_policy = input;
-        self
+        self.delivery_destination_policy = input; self
     }
     /// <p>The contents of the policy.</p>
     pub fn get_delivery_destination_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.delivery_destination_policy
     }
     /// Consumes the builder and constructs a [`PutDeliveryDestinationPolicyInput`](crate::operation::put_delivery_destination_policy::PutDeliveryDestinationPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_delivery_destination_policy::PutDeliveryDestinationPolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_delivery_destination_policy::PutDeliveryDestinationPolicyInput {
-            delivery_destination_name: self.delivery_destination_name,
-            delivery_destination_policy: self.delivery_destination_policy,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_delivery_destination_policy::PutDeliveryDestinationPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_delivery_destination_policy::PutDeliveryDestinationPolicyInput {
+                delivery_destination_name: self.delivery_destination_name
+                ,
+                delivery_destination_policy: self.delivery_destination_policy
+                ,
+            }
+        )
     }
 }
+

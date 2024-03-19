@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCustomEntityTypesOutput {
+pub struct ListCustomEntityTypesOutput  {
     /// <p>A list of <code>CustomEntityType</code> objects representing custom patterns.</p>
-    pub custom_entity_types: ::std::option::Option<::std::vec::Vec<crate::types::CustomEntityType>>,
+    pub custom_entity_types: ::std::option::Option<::std::vec::Vec::<crate::types::CustomEntityType>>,
     /// <p>A pagination token, if more results are available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListCustomEntityTypesOutput {
+impl  ListCustomEntityTypesOutput  {
     /// <p>A list of <code>CustomEntityType</code> objects representing custom patterns.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_entity_types.is_none()`.
-    pub fn custom_entity_types(&self) -> &[crate::types::CustomEntityType] {
-        self.custom_entity_types.as_deref().unwrap_or_default()
+    pub fn custom_entity_types(&self) -> & [crate::types::CustomEntityType] {
+        self.custom_entity_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A pagination token, if more results are available.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListCustomEntityTypesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListCustomEntityTypesOutput {
     /// Creates a new builder-style object to manufacture [`ListCustomEntityTypesOutput`](crate::operation::list_custom_entity_types::ListCustomEntityTypesOutput).
     pub fn builder() -> crate::operation::list_custom_entity_types::builders::ListCustomEntityTypesOutputBuilder {
@@ -37,7 +38,7 @@ impl ListCustomEntityTypesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCustomEntityTypesOutputBuilder {
-    pub(crate) custom_entity_types: ::std::option::Option<::std::vec::Vec<crate::types::CustomEntityType>>,
+    pub(crate) custom_entity_types: ::std::option::Option<::std::vec::Vec::<crate::types::CustomEntityType>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListCustomEntityTypesOutputBuilder {
     /// <p>A list of <code>CustomEntityType</code> objects representing custom patterns.</p>
     pub fn custom_entity_types(mut self, input: crate::types::CustomEntityType) -> Self {
         let mut v = self.custom_entity_types.unwrap_or_default();
-        v.push(input);
-        self.custom_entity_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.custom_entity_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>CustomEntityType</code> objects representing custom patterns.</p>
-    pub fn set_custom_entity_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomEntityType>>) -> Self {
-        self.custom_entity_types = input;
-        self
+    pub fn set_custom_entity_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CustomEntityType>>) -> Self {
+        self.custom_entity_types = input; self
     }
     /// <p>A list of <code>CustomEntityType</code> objects representing custom patterns.</p>
-    pub fn get_custom_entity_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomEntityType>> {
+    pub fn get_custom_entity_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CustomEntityType>> {
         &self.custom_entity_types
     }
     /// <p>A pagination token, if more results are available.</p>
@@ -69,28 +69,30 @@ impl ListCustomEntityTypesOutputBuilder {
     }
     /// <p>A pagination token, if more results are available.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token, if more results are available.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListCustomEntityTypesOutput`](crate::operation::list_custom_entity_types::ListCustomEntityTypesOutput).
     pub fn build(self) -> crate::operation::list_custom_entity_types::ListCustomEntityTypesOutput {
         crate::operation::list_custom_entity_types::ListCustomEntityTypesOutput {
-            custom_entity_types: self.custom_entity_types,
-            next_token: self.next_token,
+            custom_entity_types: self.custom_entity_types
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,15 +3,15 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisableLoggingInput {
+pub struct DisableLoggingInput  {
     /// <p>The identifier of the cluster on which logging is to be stopped.</p>
     /// <p>Example: <code>examplecluster</code></p>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
 }
-impl DisableLoggingInput {
+impl  DisableLoggingInput  {
     /// <p>The identifier of the cluster on which logging is to be stopped.</p>
     /// <p>Example: <code>examplecluster</code></p>
-    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
 }
@@ -39,8 +39,7 @@ impl DisableLoggingInputBuilder {
     /// <p>The identifier of the cluster on which logging is to be stopped.</p>
     /// <p>Example: <code>examplecluster</code></p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_identifier = input;
-        self
+        self.cluster_identifier = input; self
     }
     /// <p>The identifier of the cluster on which logging is to be stopped.</p>
     /// <p>Example: <code>examplecluster</code></p>
@@ -48,11 +47,13 @@ impl DisableLoggingInputBuilder {
         &self.cluster_identifier
     }
     /// Consumes the builder and constructs a [`DisableLoggingInput`](crate::operation::disable_logging::DisableLoggingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::disable_logging::DisableLoggingInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::disable_logging::DisableLoggingInput {
-            cluster_identifier: self.cluster_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disable_logging::DisableLoggingInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disable_logging::DisableLoggingInput {
+                cluster_identifier: self.cluster_identifier
+                ,
+            }
+        )
     }
 }
+

@@ -5,23 +5,20 @@ pub use crate::operation::describe_job_flows::_describe_job_flows_input::Describ
 
 impl DescribeJobFlowsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_job_flows::DescribeJobFlowsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_job_flows::DescribeJobFlowsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_job_flows();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_job_flows::DescribeJobFlowsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_job_flows::DescribeJobFlowsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_job_flows();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeJobFlows`.
-///
+/// 
 /// <p>This API is no longer supported and will eventually be removed. We recommend you use <code>ListClusters</code>, <code>DescribeCluster</code>, <code>ListSteps</code>, <code>ListInstanceGroups</code> and <code>ListBootstrapActions</code> instead.</p>
 /// <p>DescribeJobFlows returns a list of job flows that match all of the supplied parameters. The parameters can include a list of job flow IDs, job flow states, and restrictions on job flow creation date and time.</p>
 /// <p>Regardless of supplied parameters, only job flows created within the last two months are returned.</p>
@@ -37,33 +34,32 @@ impl DescribeJobFlowsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeJobFlowsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_job_flows::builders::DescribeJobFlowsInputBuilder,
+                    inner: crate::operation::describe_job_flows::builders::DescribeJobFlowsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_job_flows::DescribeJobFlowsOutput,
-        crate::operation::describe_job_flows::DescribeJobFlowsError,
-    > for DescribeJobFlowsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_job_flows::DescribeJobFlowsOutput,
-            crate::operation::describe_job_flows::DescribeJobFlowsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_job_flows::DescribeJobFlowsOutput,
+                    crate::operation::describe_job_flows::DescribeJobFlowsError,
+                > for DescribeJobFlowsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_job_flows::DescribeJobFlowsOutput,
+                        crate::operation::describe_job_flows::DescribeJobFlowsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeJobFlowsFluentBuilder {
     /// Creates a new `DescribeJobFlows`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -72,53 +68,44 @@ impl DescribeJobFlowsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_job_flows::DescribeJobFlowsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_job_flows::DescribeJobFlowsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_job_flows::DescribeJobFlows::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_job_flows::DescribeJobFlows::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_job_flows::DescribeJobFlowsOutput,
-        crate::operation::describe_job_flows::DescribeJobFlowsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_job_flows::DescribeJobFlowsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_job_flows::DescribeJobFlowsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_job_flows::DescribeJobFlows::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_job_flows::DescribeJobFlows::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_job_flows::DescribeJobFlowsOutput, crate::operation::describe_job_flows::DescribeJobFlowsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Return only job flows created after this date and time.</p>
     pub fn created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.created_after(input);
@@ -157,12 +144,12 @@ impl DescribeJobFlowsFluentBuilder {
         self
     }
     /// <p>Return only job flows whose job flow ID is contained in this list.</p>
-    pub fn set_job_flow_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_job_flow_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_job_flow_ids(input);
         self
     }
     /// <p>Return only job flows whose job flow ID is contained in this list.</p>
-    pub fn get_job_flow_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_job_flow_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_job_flow_ids()
     }
     /// Appends an item to `JobFlowStates`.
@@ -175,12 +162,13 @@ impl DescribeJobFlowsFluentBuilder {
         self
     }
     /// <p>Return only job flows whose state is contained in this list.</p>
-    pub fn set_job_flow_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobFlowExecutionState>>) -> Self {
+    pub fn set_job_flow_states(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::JobFlowExecutionState>>) -> Self {
         self.inner = self.inner.set_job_flow_states(input);
         self
     }
     /// <p>Return only job flows whose state is contained in this list.</p>
-    pub fn get_job_flow_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobFlowExecutionState>> {
+    pub fn get_job_flow_states(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::JobFlowExecutionState>> {
         self.inner.get_job_flow_states()
     }
 }
+

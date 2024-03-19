@@ -3,17 +3,16 @@
 /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResponseSpecification {
+pub struct ResponseSpecification  {
     /// <p>A collection of responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime.</p>
-    pub message_groups: ::std::vec::Vec<crate::types::MessageGroup>,
+    pub message_groups: ::std::vec::Vec::<crate::types::MessageGroup>,
     /// <p>Indicates whether the user can interrupt a speech response from Amazon Lex.</p>
     pub allow_interrupt: ::std::option::Option<bool>,
 }
-impl ResponseSpecification {
+impl  ResponseSpecification  {
     /// <p>A collection of responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime.</p>
-    pub fn message_groups(&self) -> &[crate::types::MessageGroup] {
-        use std::ops::Deref;
-        self.message_groups.deref()
+    pub fn message_groups(&self) -> & [crate::types::MessageGroup] {
+        use std::ops::Deref; self.message_groups.deref()
     }
     /// <p>Indicates whether the user can interrupt a speech response from Amazon Lex.</p>
     pub fn allow_interrupt(&self) -> ::std::option::Option<bool> {
@@ -31,7 +30,7 @@ impl ResponseSpecification {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponseSpecificationBuilder {
-    pub(crate) message_groups: ::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>>,
+    pub(crate) message_groups: ::std::option::Option<::std::vec::Vec::<crate::types::MessageGroup>>,
     pub(crate) allow_interrupt: ::std::option::Option<bool>,
 }
 impl ResponseSpecificationBuilder {
@@ -42,17 +41,16 @@ impl ResponseSpecificationBuilder {
     /// <p>A collection of responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime.</p>
     pub fn message_groups(mut self, input: crate::types::MessageGroup) -> Self {
         let mut v = self.message_groups.unwrap_or_default();
-        v.push(input);
-        self.message_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.message_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A collection of responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime.</p>
-    pub fn set_message_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>>) -> Self {
-        self.message_groups = input;
-        self
+    pub fn set_message_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MessageGroup>>) -> Self {
+        self.message_groups = input; self
     }
     /// <p>A collection of responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime.</p>
-    pub fn get_message_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>> {
+    pub fn get_message_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MessageGroup>> {
         &self.message_groups
     }
     /// <p>Indicates whether the user can interrupt a speech response from Amazon Lex.</p>
@@ -62,8 +60,7 @@ impl ResponseSpecificationBuilder {
     }
     /// <p>Indicates whether the user can interrupt a speech response from Amazon Lex.</p>
     pub fn set_allow_interrupt(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_interrupt = input;
-        self
+        self.allow_interrupt = input; self
     }
     /// <p>Indicates whether the user can interrupt a speech response from Amazon Lex.</p>
     pub fn get_allow_interrupt(&self) -> &::std::option::Option<bool> {
@@ -73,14 +70,17 @@ impl ResponseSpecificationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`message_groups`](crate::types::builders::ResponseSpecificationBuilder::message_groups)
     pub fn build(self) -> ::std::result::Result<crate::types::ResponseSpecification, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResponseSpecification {
-            message_groups: self.message_groups.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message_groups",
-                    "message_groups was not specified but it is required when building ResponseSpecification",
-                )
-            })?,
-            allow_interrupt: self.allow_interrupt,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResponseSpecification {
+                message_groups: self.message_groups
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message_groups", "message_groups was not specified but it is required when building ResponseSpecification")
+                    )?
+                ,
+                allow_interrupt: self.allow_interrupt
+                ,
+            }
+        )
     }
 }
+

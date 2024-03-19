@@ -3,19 +3,19 @@
 /// <p>The warning code and message that explains a problem with a query.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Warning {
+pub struct Warning  {
     /// <p>The message that explains the problem with the query.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The code used to show the type of warning for the query.</p>
     pub code: ::std::option::Option<crate::types::WarningCode>,
 }
-impl Warning {
+impl  Warning  {
     /// <p>The message that explains the problem with the query.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The code used to show the type of warning for the query.</p>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::WarningCode> {
+    pub fn code(&self) -> ::std::option::Option<& crate::types::WarningCode> {
         self.code.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl WarningBuilder {
     }
     /// <p>The message that explains the problem with the query.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The message that explains the problem with the query.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl WarningBuilder {
     }
     /// <p>The code used to show the type of warning for the query.</p>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::WarningCode>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The code used to show the type of warning for the query.</p>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::WarningCode> {
@@ -65,8 +63,11 @@ impl WarningBuilder {
     /// Consumes the builder and constructs a [`Warning`](crate::types::Warning).
     pub fn build(self) -> crate::types::Warning {
         crate::types::Warning {
-            message: self.message,
-            code: self.code,
+            message: self.message
+            ,
+            code: self.code
+            ,
         }
     }
 }
+

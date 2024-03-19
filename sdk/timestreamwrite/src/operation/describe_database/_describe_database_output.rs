@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDatabaseOutput {
+pub struct DescribeDatabaseOutput  {
     /// <p>The name of the Timestream table.</p>
     pub database: ::std::option::Option<crate::types::Database>,
     _request_id: Option<String>,
 }
-impl DescribeDatabaseOutput {
+impl  DescribeDatabaseOutput  {
     /// <p>The name of the Timestream table.</p>
-    pub fn database(&self) -> ::std::option::Option<&crate::types::Database> {
+    pub fn database(&self) -> ::std::option::Option<& crate::types::Database> {
         self.database.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeDatabaseOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeDatabaseOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDatabaseOutput`](crate::operation::describe_database::DescribeDatabaseOutput).
     pub fn builder() -> crate::operation::describe_database::builders::DescribeDatabaseOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeDatabaseOutputBuilder {
     }
     /// <p>The name of the Timestream table.</p>
     pub fn set_database(mut self, input: ::std::option::Option<crate::types::Database>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>The name of the Timestream table.</p>
     pub fn get_database(&self) -> &::std::option::Option<crate::types::Database> {
         &self.database
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeDatabaseOutput`](crate::operation::describe_database::DescribeDatabaseOutput).
     pub fn build(self) -> crate::operation::describe_database::DescribeDatabaseOutput {
         crate::operation::describe_database::DescribeDatabaseOutput {
-            database: self.database,
+            database: self.database
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

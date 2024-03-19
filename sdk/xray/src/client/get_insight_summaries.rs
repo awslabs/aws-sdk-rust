@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetInsightSummaries`](crate::operation::get_insight_summaries::builders::GetInsightSummariesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_insight_summaries::builders::GetInsightSummariesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`states(InsightState)`](crate::operation::get_insight_summaries::builders::GetInsightSummariesFluentBuilder::states) / [`set_states(Option<Vec::<InsightState>>)`](crate::operation::get_insight_summaries::builders::GetInsightSummariesFluentBuilder::set_states):<br>required: **false**<br><p>The list of insight states.</p><br>
     ///   - [`group_arn(impl Into<String>)`](crate::operation::get_insight_summaries::builders::GetInsightSummariesFluentBuilder::group_arn) / [`set_group_arn(Option<String>)`](crate::operation::get_insight_summaries::builders::GetInsightSummariesFluentBuilder::set_group_arn):<br>required: **false**<br><p>The Amazon Resource Name (ARN) of the group. Required if the GroupName isn't provided.</p><br>
     ///   - [`group_name(impl Into<String>)`](crate::operation::get_insight_summaries::builders::GetInsightSummariesFluentBuilder::group_name) / [`set_group_name(Option<String>)`](crate::operation::get_insight_summaries::builders::GetInsightSummariesFluentBuilder::set_group_name):<br>required: **false**<br><p>The name of the group. Required if the GroupARN isn't provided.</p><br>
@@ -11,11 +11,12 @@ impl super::Client {
     ///   - [`end_time(DateTime)`](crate::operation::get_insight_summaries::builders::GetInsightSummariesFluentBuilder::end_time) / [`set_end_time(Option<DateTime>)`](crate::operation::get_insight_summaries::builders::GetInsightSummariesFluentBuilder::set_end_time):<br>required: **true**<br><p>The end of the time frame in which the insights ended. The end time can't be more than 30 days old.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_insight_summaries::builders::GetInsightSummariesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_insight_summaries::builders::GetInsightSummariesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to display.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_insight_summaries::builders::GetInsightSummariesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_insight_summaries::builders::GetInsightSummariesFluentBuilder::set_next_token):<br>required: **false**<br><p>Pagination token.</p><br>
-    /// - On success, responds with [`GetInsightSummariesOutput`](crate::operation::get_insight_summaries::GetInsightSummariesOutput) with field(s):
+                            /// - On success, responds with [`GetInsightSummariesOutput`](crate::operation::get_insight_summaries::GetInsightSummariesOutput) with field(s):
     ///   - [`insight_summaries(Option<Vec::<InsightSummary>>)`](crate::operation::get_insight_summaries::GetInsightSummariesOutput::insight_summaries): <p>The summary of each insight within the group matching the provided filters. The summary contains the InsightID, start and end time, the root cause service, the root cause and client impact statistics, the top anomalous services, and the status of the insight.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_insight_summaries::GetInsightSummariesOutput::next_token): <p>Pagination token.</p>
-    /// - On failure, responds with [`SdkError<GetInsightSummariesError>`](crate::operation::get_insight_summaries::GetInsightSummariesError)
+                            /// - On failure, responds with [`SdkError<GetInsightSummariesError>`](crate::operation::get_insight_summaries::GetInsightSummariesError)
     pub fn get_insight_summaries(&self) -> crate::operation::get_insight_summaries::builders::GetInsightSummariesFluentBuilder {
-        crate::operation::get_insight_summaries::builders::GetInsightSummariesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_insight_summaries::builders::GetInsightSummariesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

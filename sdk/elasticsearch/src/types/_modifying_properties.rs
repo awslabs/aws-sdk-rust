@@ -3,7 +3,7 @@
 /// <p>Information about the domain properties that are currently being modified.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyingProperties {
+pub struct ModifyingProperties  {
     /// <p>The name of the property that is currently being modified.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current value of the domain property that is being modified.</p>
@@ -17,17 +17,17 @@ pub struct ModifyingProperties {
     /// </ul>
     pub value_type: ::std::option::Option<crate::types::PropertyValueType>,
 }
-impl ModifyingProperties {
+impl  ModifyingProperties  {
     /// <p>The name of the property that is currently being modified.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current value of the domain property that is being modified.</p>
-    pub fn active_value(&self) -> ::std::option::Option<&str> {
+    pub fn active_value(&self) -> ::std::option::Option<& str> {
         self.active_value.as_deref()
     }
     /// <p>The value that the property that is currently being modified will eventually have.</p>
-    pub fn pending_value(&self) -> ::std::option::Option<&str> {
+    pub fn pending_value(&self) -> ::std::option::Option<& str> {
         self.pending_value.as_deref()
     }
     /// <p>The type of value that is currently being modified. Properties can have two types:</p>
@@ -35,7 +35,7 @@ impl ModifyingProperties {
     /// <li><b>PLAIN_TEXT</b>: Contain direct values such as "1", "True", or "c5.large.search".</li>
     /// <li><b>STRINGIFIED_JSON</b>: Contain content in JSON format, such as {"Enabled":"True"}".</li>
     /// </ul>
-    pub fn value_type(&self) -> ::std::option::Option<&crate::types::PropertyValueType> {
+    pub fn value_type(&self) -> ::std::option::Option<& crate::types::PropertyValueType> {
         self.value_type.as_ref()
     }
 }
@@ -63,8 +63,7 @@ impl ModifyingPropertiesBuilder {
     }
     /// <p>The name of the property that is currently being modified.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the property that is currently being modified.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl ModifyingPropertiesBuilder {
     }
     /// <p>The current value of the domain property that is being modified.</p>
     pub fn set_active_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.active_value = input;
-        self
+        self.active_value = input; self
     }
     /// <p>The current value of the domain property that is being modified.</p>
     pub fn get_active_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl ModifyingPropertiesBuilder {
     }
     /// <p>The value that the property that is currently being modified will eventually have.</p>
     pub fn set_pending_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pending_value = input;
-        self
+        self.pending_value = input; self
     }
     /// <p>The value that the property that is currently being modified will eventually have.</p>
     pub fn get_pending_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +110,7 @@ impl ModifyingPropertiesBuilder {
     /// <li><b>STRINGIFIED_JSON</b>: Contain content in JSON format, such as {"Enabled":"True"}".</li>
     /// </ul>
     pub fn set_value_type(mut self, input: ::std::option::Option<crate::types::PropertyValueType>) -> Self {
-        self.value_type = input;
-        self
+        self.value_type = input; self
     }
     /// <p>The type of value that is currently being modified. Properties can have two types:</p>
     /// <ul>
@@ -127,10 +123,15 @@ impl ModifyingPropertiesBuilder {
     /// Consumes the builder and constructs a [`ModifyingProperties`](crate::types::ModifyingProperties).
     pub fn build(self) -> crate::types::ModifyingProperties {
         crate::types::ModifyingProperties {
-            name: self.name,
-            active_value: self.active_value,
-            pending_value: self.pending_value,
-            value_type: self.value_type,
+            name: self.name
+            ,
+            active_value: self.active_value
+            ,
+            pending_value: self.pending_value
+            ,
+            value_type: self.value_type
+            ,
         }
     }
 }
+

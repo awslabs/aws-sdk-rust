@@ -3,13 +3,13 @@
 /// <p>The DELETE request to delete a usage plan of a given plan Id.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteUsagePlanInput {
+pub struct DeleteUsagePlanInput  {
     /// <p>The Id of the to-be-deleted usage plan.</p>
     pub usage_plan_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteUsagePlanInput {
+impl  DeleteUsagePlanInput  {
     /// <p>The Id of the to-be-deleted usage plan.</p>
-    pub fn usage_plan_id(&self) -> ::std::option::Option<&str> {
+    pub fn usage_plan_id(&self) -> ::std::option::Option<& str> {
         self.usage_plan_id.as_deref()
     }
 }
@@ -35,19 +35,20 @@ impl DeleteUsagePlanInputBuilder {
     }
     /// <p>The Id of the to-be-deleted usage plan.</p>
     pub fn set_usage_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.usage_plan_id = input;
-        self
+        self.usage_plan_id = input; self
     }
     /// <p>The Id of the to-be-deleted usage plan.</p>
     pub fn get_usage_plan_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.usage_plan_id
     }
     /// Consumes the builder and constructs a [`DeleteUsagePlanInput`](crate::operation::delete_usage_plan::DeleteUsagePlanInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_usage_plan::DeleteUsagePlanInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_usage_plan::DeleteUsagePlanInput {
-            usage_plan_id: self.usage_plan_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_usage_plan::DeleteUsagePlanInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_usage_plan::DeleteUsagePlanInput {
+                usage_plan_id: self.usage_plan_id
+                ,
+            }
+        )
     }
 }
+

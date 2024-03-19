@@ -3,15 +3,14 @@
 /// <p>The Amazon Kinesis Data Firehose logging configuration settings for the pipe.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FirehoseLogDestinationParameters {
+pub struct FirehoseLogDestinationParameters  {
     /// <p>Specifies the Amazon Resource Name (ARN) of the Kinesis Data Firehose delivery stream to which EventBridge delivers the pipe log records.</p>
     pub delivery_stream_arn: ::std::string::String,
 }
-impl FirehoseLogDestinationParameters {
+impl  FirehoseLogDestinationParameters  {
     /// <p>Specifies the Amazon Resource Name (ARN) of the Kinesis Data Firehose delivery stream to which EventBridge delivers the pipe log records.</p>
-    pub fn delivery_stream_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.delivery_stream_arn.deref()
+    pub fn delivery_stream_arn(&self) -> & str {
+        use std::ops::Deref; self.delivery_stream_arn.deref()
     }
 }
 impl FirehoseLogDestinationParameters {
@@ -36,8 +35,7 @@ impl FirehoseLogDestinationParametersBuilder {
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the Kinesis Data Firehose delivery stream to which EventBridge delivers the pipe log records.</p>
     pub fn set_delivery_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delivery_stream_arn = input;
-        self
+        self.delivery_stream_arn = input; self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the Kinesis Data Firehose delivery stream to which EventBridge delivers the pipe log records.</p>
     pub fn get_delivery_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl FirehoseLogDestinationParametersBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`delivery_stream_arn`](crate::types::builders::FirehoseLogDestinationParametersBuilder::delivery_stream_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::FirehoseLogDestinationParameters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FirehoseLogDestinationParameters {
-            delivery_stream_arn: self.delivery_stream_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "delivery_stream_arn",
-                    "delivery_stream_arn was not specified but it is required when building FirehoseLogDestinationParameters",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FirehoseLogDestinationParameters {
+                delivery_stream_arn: self.delivery_stream_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("delivery_stream_arn", "delivery_stream_arn was not specified but it is required when building FirehoseLogDestinationParameters")
+                    )?
+                ,
+            }
+        )
     }
 }
+

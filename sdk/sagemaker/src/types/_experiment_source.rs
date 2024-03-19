@@ -3,19 +3,19 @@
 /// <p>The source of the experiment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExperimentSource {
+pub struct ExperimentSource  {
     /// <p>The Amazon Resource Name (ARN) of the source.</p>
     pub source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The source type.</p>
     pub source_type: ::std::option::Option<::std::string::String>,
 }
-impl ExperimentSource {
+impl  ExperimentSource  {
     /// <p>The Amazon Resource Name (ARN) of the source.</p>
-    pub fn source_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_arn(&self) -> ::std::option::Option<& str> {
         self.source_arn.as_deref()
     }
     /// <p>The source type.</p>
-    pub fn source_type(&self) -> ::std::option::Option<&str> {
+    pub fn source_type(&self) -> ::std::option::Option<& str> {
         self.source_type.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl ExperimentSourceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the source.</p>
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_arn = input;
-        self
+        self.source_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the source.</p>
     pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl ExperimentSourceBuilder {
     }
     /// <p>The source type.</p>
     pub fn set_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_type = input;
-        self
+        self.source_type = input; self
     }
     /// <p>The source type.</p>
     pub fn get_source_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,11 @@ impl ExperimentSourceBuilder {
     /// Consumes the builder and constructs a [`ExperimentSource`](crate::types::ExperimentSource).
     pub fn build(self) -> crate::types::ExperimentSource {
         crate::types::ExperimentSource {
-            source_arn: self.source_arn,
-            source_type: self.source_type,
+            source_arn: self.source_arn
+            ,
+            source_type: self.source_type
+            ,
         }
     }
 }
+

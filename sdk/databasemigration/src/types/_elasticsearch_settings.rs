@@ -3,7 +3,7 @@
 /// <p>Provides information that defines an OpenSearch endpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ElasticsearchSettings {
+pub struct ElasticsearchSettings  {
     /// <p>The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
     pub service_access_role_arn: ::std::string::String,
     /// <p>The endpoint for the OpenSearch cluster. DMS uses HTTPS if a transport protocol (http/https) is not specified.</p>
@@ -16,16 +16,14 @@ pub struct ElasticsearchSettings {
     /// <p>Set this option to <code>true</code> for DMS to migrate documentation using the documentation type <code>_doc</code>. OpenSearch and an Elasticsearch cluster only support the _doc documentation type in versions 7. x and later. The default value is <code>false</code>.</p>
     pub use_new_mapping_type: ::std::option::Option<bool>,
 }
-impl ElasticsearchSettings {
+impl  ElasticsearchSettings  {
     /// <p>The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
-    pub fn service_access_role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.service_access_role_arn.deref()
+    pub fn service_access_role_arn(&self) -> & str {
+        use std::ops::Deref; self.service_access_role_arn.deref()
     }
     /// <p>The endpoint for the OpenSearch cluster. DMS uses HTTPS if a transport protocol (http/https) is not specified.</p>
-    pub fn endpoint_uri(&self) -> &str {
-        use std::ops::Deref;
-        self.endpoint_uri.deref()
+    pub fn endpoint_uri(&self) -> & str {
+        use std::ops::Deref; self.endpoint_uri.deref()
     }
     /// <p>The maximum percentage of records that can fail to be written before a full load operation stops.</p>
     /// <p>To avoid early failure, this counter is only effective after 1000 records are transferred. OpenSearch also has the concept of error monitoring during the last 10 minutes of an Observation Window. If transfer of all records fail in the last 10 minutes, the full load operation stops.</p>
@@ -67,8 +65,7 @@ impl ElasticsearchSettingsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
     pub fn set_service_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_access_role_arn = input;
-        self
+        self.service_access_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
     pub fn get_service_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +79,7 @@ impl ElasticsearchSettingsBuilder {
     }
     /// <p>The endpoint for the OpenSearch cluster. DMS uses HTTPS if a transport protocol (http/https) is not specified.</p>
     pub fn set_endpoint_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_uri = input;
-        self
+        self.endpoint_uri = input; self
     }
     /// <p>The endpoint for the OpenSearch cluster. DMS uses HTTPS if a transport protocol (http/https) is not specified.</p>
     pub fn get_endpoint_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +94,7 @@ impl ElasticsearchSettingsBuilder {
     /// <p>The maximum percentage of records that can fail to be written before a full load operation stops.</p>
     /// <p>To avoid early failure, this counter is only effective after 1000 records are transferred. OpenSearch also has the concept of error monitoring during the last 10 minutes of an Observation Window. If transfer of all records fail in the last 10 minutes, the full load operation stops.</p>
     pub fn set_full_load_error_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.full_load_error_percentage = input;
-        self
+        self.full_load_error_percentage = input; self
     }
     /// <p>The maximum percentage of records that can fail to be written before a full load operation stops.</p>
     /// <p>To avoid early failure, this counter is only effective after 1000 records are transferred. OpenSearch also has the concept of error monitoring during the last 10 minutes of an Observation Window. If transfer of all records fail in the last 10 minutes, the full load operation stops.</p>
@@ -113,8 +108,7 @@ impl ElasticsearchSettingsBuilder {
     }
     /// <p>The maximum number of seconds for which DMS retries failed API requests to the OpenSearch cluster.</p>
     pub fn set_error_retry_duration(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.error_retry_duration = input;
-        self
+        self.error_retry_duration = input; self
     }
     /// <p>The maximum number of seconds for which DMS retries failed API requests to the OpenSearch cluster.</p>
     pub fn get_error_retry_duration(&self) -> &::std::option::Option<i32> {
@@ -127,8 +121,7 @@ impl ElasticsearchSettingsBuilder {
     }
     /// <p>Set this option to <code>true</code> for DMS to migrate documentation using the documentation type <code>_doc</code>. OpenSearch and an Elasticsearch cluster only support the _doc documentation type in versions 7. x and later. The default value is <code>false</code>.</p>
     pub fn set_use_new_mapping_type(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.use_new_mapping_type = input;
-        self
+        self.use_new_mapping_type = input; self
     }
     /// <p>Set this option to <code>true</code> for DMS to migrate documentation using the documentation type <code>_doc</code>. OpenSearch and an Elasticsearch cluster only support the _doc documentation type in versions 7. x and later. The default value is <code>false</code>.</p>
     pub fn get_use_new_mapping_type(&self) -> &::std::option::Option<bool> {
@@ -139,22 +132,26 @@ impl ElasticsearchSettingsBuilder {
     /// - [`service_access_role_arn`](crate::types::builders::ElasticsearchSettingsBuilder::service_access_role_arn)
     /// - [`endpoint_uri`](crate::types::builders::ElasticsearchSettingsBuilder::endpoint_uri)
     pub fn build(self) -> ::std::result::Result<crate::types::ElasticsearchSettings, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ElasticsearchSettings {
-            service_access_role_arn: self.service_access_role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "service_access_role_arn",
-                    "service_access_role_arn was not specified but it is required when building ElasticsearchSettings",
-                )
-            })?,
-            endpoint_uri: self.endpoint_uri.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "endpoint_uri",
-                    "endpoint_uri was not specified but it is required when building ElasticsearchSettings",
-                )
-            })?,
-            full_load_error_percentage: self.full_load_error_percentage,
-            error_retry_duration: self.error_retry_duration,
-            use_new_mapping_type: self.use_new_mapping_type,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ElasticsearchSettings {
+                service_access_role_arn: self.service_access_role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("service_access_role_arn", "service_access_role_arn was not specified but it is required when building ElasticsearchSettings")
+                    )?
+                ,
+                endpoint_uri: self.endpoint_uri
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("endpoint_uri", "endpoint_uri was not specified but it is required when building ElasticsearchSettings")
+                    )?
+                ,
+                full_load_error_percentage: self.full_load_error_percentage
+                ,
+                error_retry_duration: self.error_retry_duration
+                ,
+                use_new_mapping_type: self.use_new_mapping_type
+                ,
+            }
+        )
     }
 }
+

@@ -3,22 +3,20 @@
 /// <p>A revision to be made to an asset published in a Amazon DataZone catalog.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListingRevisionInput {
+pub struct ListingRevisionInput  {
     /// <p>An identifier of revision to be made to an asset published in a Amazon DataZone catalog.</p>
     pub identifier: ::std::string::String,
     /// <p>The details of a revision to be made to an asset published in a Amazon DataZone catalog.</p>
     pub revision: ::std::string::String,
 }
-impl ListingRevisionInput {
+impl  ListingRevisionInput  {
     /// <p>An identifier of revision to be made to an asset published in a Amazon DataZone catalog.</p>
-    pub fn identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.identifier.deref()
+    pub fn identifier(&self) -> & str {
+        use std::ops::Deref; self.identifier.deref()
     }
     /// <p>The details of a revision to be made to an asset published in a Amazon DataZone catalog.</p>
-    pub fn revision(&self) -> &str {
-        use std::ops::Deref;
-        self.revision.deref()
+    pub fn revision(&self) -> & str {
+        use std::ops::Deref; self.revision.deref()
     }
 }
 impl ListingRevisionInput {
@@ -44,8 +42,7 @@ impl ListingRevisionInputBuilder {
     }
     /// <p>An identifier of revision to be made to an asset published in a Amazon DataZone catalog.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>An identifier of revision to be made to an asset published in a Amazon DataZone catalog.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl ListingRevisionInputBuilder {
     }
     /// <p>The details of a revision to be made to an asset published in a Amazon DataZone catalog.</p>
     pub fn set_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision = input;
-        self
+        self.revision = input; self
     }
     /// <p>The details of a revision to be made to an asset published in a Amazon DataZone catalog.</p>
     pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl ListingRevisionInputBuilder {
     /// - [`identifier`](crate::types::builders::ListingRevisionInputBuilder::identifier)
     /// - [`revision`](crate::types::builders::ListingRevisionInputBuilder::revision)
     pub fn build(self) -> ::std::result::Result<crate::types::ListingRevisionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ListingRevisionInput {
-            identifier: self.identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "identifier",
-                    "identifier was not specified but it is required when building ListingRevisionInput",
-                )
-            })?,
-            revision: self.revision.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "revision",
-                    "revision was not specified but it is required when building ListingRevisionInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ListingRevisionInput {
+                identifier: self.identifier
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("identifier", "identifier was not specified but it is required when building ListingRevisionInput")
+                    )?
+                ,
+                revision: self.revision
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("revision", "revision was not specified but it is required when building ListingRevisionInput")
+                    )?
+                ,
+            }
+        )
     }
 }
+

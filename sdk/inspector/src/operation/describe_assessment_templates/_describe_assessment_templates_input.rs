@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAssessmentTemplatesInput {
+pub struct DescribeAssessmentTemplatesInput  {
     #[allow(missing_docs)] // documentation missing in model
-    pub assessment_template_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub assessment_template_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DescribeAssessmentTemplatesInput {
+impl  DescribeAssessmentTemplatesInput  {
     #[allow(missing_docs)] // documentation missing in model
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assessment_template_arns.is_none()`.
-    pub fn assessment_template_arns(&self) -> &[::std::string::String] {
-        self.assessment_template_arns.as_deref().unwrap_or_default()
+    pub fn assessment_template_arns(&self) -> & [::std::string::String] {
+        self.assessment_template_arns.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeAssessmentTemplatesInput {
@@ -25,7 +26,7 @@ impl DescribeAssessmentTemplatesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAssessmentTemplatesInputBuilder {
-    pub(crate) assessment_template_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) assessment_template_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DescribeAssessmentTemplatesInputBuilder {
     /// Appends an item to `assessment_template_arns`.
@@ -34,28 +35,26 @@ impl DescribeAssessmentTemplatesInputBuilder {
     ///
     pub fn assessment_template_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.assessment_template_arns.unwrap_or_default();
-        v.push(input.into());
-        self.assessment_template_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.assessment_template_arns = ::std::option::Option::Some(v);
+                        self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_assessment_template_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.assessment_template_arns = input;
-        self
+    pub fn set_assessment_template_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.assessment_template_arns = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn get_assessment_template_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_assessment_template_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.assessment_template_arns
     }
     /// Consumes the builder and constructs a [`DescribeAssessmentTemplatesInput`](crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesInput {
-            assessment_template_arns: self.assessment_template_arns,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesInput {
+                assessment_template_arns: self.assessment_template_arns
+                ,
+            }
+        )
     }
 }
+

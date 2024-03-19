@@ -3,7 +3,7 @@
 /// <p>The FireLens configuration for the container. The configuration specifies and configures a log router for container logs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails {
+pub struct AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails  {
     /// <p>The options to use to configure the log router.</p>
     /// <p>The valid option keys are as follows:</p>
     /// <ul>
@@ -14,11 +14,11 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails 
     /// <li>
     /// <p><code>config-file-value</code>. The value is either an S3 ARN or a file path.</p></li>
     /// </ul>
-    pub options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub options: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The log router to use. Valid values are <code>fluentbit</code> or <code>fluentd</code>.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
 }
-impl AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails {
+impl  AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails  {
     /// <p>The options to use to configure the log router.</p>
     /// <p>The valid option keys are as follows:</p>
     /// <ul>
@@ -29,11 +29,11 @@ impl AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails {
     /// <li>
     /// <p><code>config-file-value</code>. The value is either an S3 ARN or a file path.</p></li>
     /// </ul>
-    pub fn options(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn options(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.options.as_ref()
     }
     /// <p>The log router to use. Valid values are <code>fluentbit</code> or <code>fluentd</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
@@ -48,7 +48,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetailsBuilder {
-    pub(crate) options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) options: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetailsBuilder {
@@ -68,9 +68,9 @@ impl AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetailsBuilder
     /// </ul>
     pub fn options(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.options.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.options = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.options = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The options to use to configure the log router.</p>
     /// <p>The valid option keys are as follows:</p>
@@ -82,9 +82,8 @@ impl AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetailsBuilder
     /// <li>
     /// <p><code>config-file-value</code>. The value is either an S3 ARN or a file path.</p></li>
     /// </ul>
-    pub fn set_options(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.options = input;
-        self
+    pub fn set_options(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.options = input; self
     }
     /// <p>The options to use to configure the log router.</p>
     /// <p>The valid option keys are as follows:</p>
@@ -96,7 +95,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetailsBuilder
     /// <li>
     /// <p><code>config-file-value</code>. The value is either an S3 ARN or a file path.</p></li>
     /// </ul>
-    pub fn get_options(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_options(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.options
     }
     /// <p>The log router to use. Valid values are <code>fluentbit</code> or <code>fluentd</code>.</p>
@@ -106,8 +105,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetailsBuilder
     }
     /// <p>The log router to use. Valid values are <code>fluentbit</code> or <code>fluentd</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The log router to use. Valid values are <code>fluentbit</code> or <code>fluentd</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +114,11 @@ impl AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetailsBuilder
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails).
     pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails {
         crate::types::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails {
-            options: self.options,
-            r#type: self.r#type,
+            options: self.options
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

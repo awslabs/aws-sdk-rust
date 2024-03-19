@@ -2,35 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeVolumesInput {
+pub struct DescribeVolumesInput  {
     /// <p>The IDs of the volumes whose descriptions you want to retrieve.</p>
-    pub volume_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub volume_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Enter a filter <code>Name</code> and <code>Values</code> pair to view a select set of volumes.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::VolumeFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::VolumeFilter>>,
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeVolumesInput {
+impl  DescribeVolumesInput  {
     /// <p>The IDs of the volumes whose descriptions you want to retrieve.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volume_ids.is_none()`.
-    pub fn volume_ids(&self) -> &[::std::string::String] {
-        self.volume_ids.as_deref().unwrap_or_default()
+    pub fn volume_ids(&self) -> & [::std::string::String] {
+        self.volume_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Enter a filter <code>Name</code> and <code>Values</code> pair to view a select set of volumes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::VolumeFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::VolumeFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -45,8 +47,8 @@ impl DescribeVolumesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVolumesInputBuilder {
-    pub(crate) volume_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::VolumeFilter>>,
+    pub(crate) volume_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::VolumeFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -58,17 +60,16 @@ impl DescribeVolumesInputBuilder {
     /// <p>The IDs of the volumes whose descriptions you want to retrieve.</p>
     pub fn volume_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.volume_ids.unwrap_or_default();
-        v.push(input.into());
-        self.volume_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.volume_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the volumes whose descriptions you want to retrieve.</p>
-    pub fn set_volume_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.volume_ids = input;
-        self
+    pub fn set_volume_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.volume_ids = input; self
     }
     /// <p>The IDs of the volumes whose descriptions you want to retrieve.</p>
-    pub fn get_volume_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_volume_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.volume_ids
     }
     /// Appends an item to `filters`.
@@ -78,17 +79,16 @@ impl DescribeVolumesInputBuilder {
     /// <p>Enter a filter <code>Name</code> and <code>Values</code> pair to view a select set of volumes.</p>
     pub fn filters(mut self, input: crate::types::VolumeFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Enter a filter <code>Name</code> and <code>Values</code> pair to view a select set of volumes.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VolumeFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>Enter a filter <code>Name</code> and <code>Values</code> pair to view a select set of volumes.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VolumeFilter>> {
         &self.filters
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
@@ -98,8 +98,7 @@ impl DescribeVolumesInputBuilder {
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -112,22 +111,26 @@ impl DescribeVolumesInputBuilder {
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeVolumesInput`](crate::operation::describe_volumes::DescribeVolumesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_volumes::DescribeVolumesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_volumes::DescribeVolumesInput {
-            volume_ids: self.volume_ids,
-            filters: self.filters,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_volumes::DescribeVolumesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_volumes::DescribeVolumesInput {
+                volume_ids: self.volume_ids
+                ,
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

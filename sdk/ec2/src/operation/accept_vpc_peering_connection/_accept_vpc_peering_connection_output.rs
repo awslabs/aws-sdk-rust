@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AcceptVpcPeeringConnectionOutput {
+pub struct AcceptVpcPeeringConnectionOutput  {
     /// <p>Information about the VPC peering connection.</p>
     pub vpc_peering_connection: ::std::option::Option<crate::types::VpcPeeringConnection>,
     _request_id: Option<String>,
 }
-impl AcceptVpcPeeringConnectionOutput {
+impl  AcceptVpcPeeringConnectionOutput  {
     /// <p>Information about the VPC peering connection.</p>
-    pub fn vpc_peering_connection(&self) -> ::std::option::Option<&crate::types::VpcPeeringConnection> {
+    pub fn vpc_peering_connection(&self) -> ::std::option::Option<& crate::types::VpcPeeringConnection> {
         self.vpc_peering_connection.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for AcceptVpcPeeringConnectionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AcceptVpcPeeringConnectionOutput {
     /// Creates a new builder-style object to manufacture [`AcceptVpcPeeringConnectionOutput`](crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnectionOutput).
     pub fn builder() -> crate::operation::accept_vpc_peering_connection::builders::AcceptVpcPeeringConnectionOutputBuilder {
@@ -40,27 +40,28 @@ impl AcceptVpcPeeringConnectionOutputBuilder {
     }
     /// <p>Information about the VPC peering connection.</p>
     pub fn set_vpc_peering_connection(mut self, input: ::std::option::Option<crate::types::VpcPeeringConnection>) -> Self {
-        self.vpc_peering_connection = input;
-        self
+        self.vpc_peering_connection = input; self
     }
     /// <p>Information about the VPC peering connection.</p>
     pub fn get_vpc_peering_connection(&self) -> &::std::option::Option<crate::types::VpcPeeringConnection> {
         &self.vpc_peering_connection
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AcceptVpcPeeringConnectionOutput`](crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnectionOutput).
     pub fn build(self) -> crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnectionOutput {
         crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnectionOutput {
-            vpc_peering_connection: self.vpc_peering_connection,
+            vpc_peering_connection: self.vpc_peering_connection
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

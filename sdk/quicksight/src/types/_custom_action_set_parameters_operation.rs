@@ -3,15 +3,14 @@
 /// <p>The set parameter operation that sets parameters in custom action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomActionSetParametersOperation {
+pub struct CustomActionSetParametersOperation  {
     /// <p>The parameter that determines the value configuration.</p>
-    pub parameter_value_configurations: ::std::vec::Vec<crate::types::SetParameterValueConfiguration>,
+    pub parameter_value_configurations: ::std::vec::Vec::<crate::types::SetParameterValueConfiguration>,
 }
-impl CustomActionSetParametersOperation {
+impl  CustomActionSetParametersOperation  {
     /// <p>The parameter that determines the value configuration.</p>
-    pub fn parameter_value_configurations(&self) -> &[crate::types::SetParameterValueConfiguration] {
-        use std::ops::Deref;
-        self.parameter_value_configurations.deref()
+    pub fn parameter_value_configurations(&self) -> & [crate::types::SetParameterValueConfiguration] {
+        use std::ops::Deref; self.parameter_value_configurations.deref()
     }
 }
 impl CustomActionSetParametersOperation {
@@ -25,7 +24,7 @@ impl CustomActionSetParametersOperation {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomActionSetParametersOperationBuilder {
-    pub(crate) parameter_value_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SetParameterValueConfiguration>>,
+    pub(crate) parameter_value_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::SetParameterValueConfiguration>>,
 }
 impl CustomActionSetParametersOperationBuilder {
     /// Appends an item to `parameter_value_configurations`.
@@ -35,33 +34,31 @@ impl CustomActionSetParametersOperationBuilder {
     /// <p>The parameter that determines the value configuration.</p>
     pub fn parameter_value_configurations(mut self, input: crate::types::SetParameterValueConfiguration) -> Self {
         let mut v = self.parameter_value_configurations.unwrap_or_default();
-        v.push(input);
-        self.parameter_value_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameter_value_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The parameter that determines the value configuration.</p>
-    pub fn set_parameter_value_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SetParameterValueConfiguration>>,
-    ) -> Self {
-        self.parameter_value_configurations = input;
-        self
+    pub fn set_parameter_value_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SetParameterValueConfiguration>>) -> Self {
+        self.parameter_value_configurations = input; self
     }
     /// <p>The parameter that determines the value configuration.</p>
-    pub fn get_parameter_value_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SetParameterValueConfiguration>> {
+    pub fn get_parameter_value_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SetParameterValueConfiguration>> {
         &self.parameter_value_configurations
     }
     /// Consumes the builder and constructs a [`CustomActionSetParametersOperation`](crate::types::CustomActionSetParametersOperation).
     /// This method will fail if any of the following fields are not set:
     /// - [`parameter_value_configurations`](crate::types::builders::CustomActionSetParametersOperationBuilder::parameter_value_configurations)
     pub fn build(self) -> ::std::result::Result<crate::types::CustomActionSetParametersOperation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CustomActionSetParametersOperation {
-            parameter_value_configurations: self.parameter_value_configurations.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "parameter_value_configurations",
-                    "parameter_value_configurations was not specified but it is required when building CustomActionSetParametersOperation",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CustomActionSetParametersOperation {
+                parameter_value_configurations: self.parameter_value_configurations
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("parameter_value_configurations", "parameter_value_configurations was not specified but it is required when building CustomActionSetParametersOperation")
+                    )?
+                ,
+            }
+        )
     }
 }
+

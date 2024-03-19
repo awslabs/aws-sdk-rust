@@ -3,36 +3,32 @@
 /// <p>Specifies a transform that groups rows by chosen fields and computes the aggregated value by specified function.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Aggregate {
+pub struct Aggregate  {
     /// <p>The name of the transform node.</p>
     pub name: ::std::string::String,
     /// <p>Specifies the fields and rows to use as inputs for the aggregate transform.</p>
-    pub inputs: ::std::vec::Vec<::std::string::String>,
+    pub inputs: ::std::vec::Vec::<::std::string::String>,
     /// <p>Specifies the fields to group by.</p>
-    pub groups: ::std::vec::Vec<::std::vec::Vec<::std::string::String>>,
+    pub groups: ::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies the aggregate functions to be performed on specified fields.</p>
-    pub aggs: ::std::vec::Vec<crate::types::AggregateOperation>,
+    pub aggs: ::std::vec::Vec::<crate::types::AggregateOperation>,
 }
-impl Aggregate {
+impl  Aggregate  {
     /// <p>The name of the transform node.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Specifies the fields and rows to use as inputs for the aggregate transform.</p>
-    pub fn inputs(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.inputs.deref()
+    pub fn inputs(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.inputs.deref()
     }
     /// <p>Specifies the fields to group by.</p>
-    pub fn groups(&self) -> &[::std::vec::Vec<::std::string::String>] {
-        use std::ops::Deref;
-        self.groups.deref()
+    pub fn groups(&self) -> & [::std::vec::Vec::<::std::string::String>] {
+        use std::ops::Deref; self.groups.deref()
     }
     /// <p>Specifies the aggregate functions to be performed on specified fields.</p>
-    pub fn aggs(&self) -> &[crate::types::AggregateOperation] {
-        use std::ops::Deref;
-        self.aggs.deref()
+    pub fn aggs(&self) -> & [crate::types::AggregateOperation] {
+        use std::ops::Deref; self.aggs.deref()
     }
 }
 impl Aggregate {
@@ -47,9 +43,9 @@ impl Aggregate {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AggregateBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) groups: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
-    pub(crate) aggs: ::std::option::Option<::std::vec::Vec<crate::types::AggregateOperation>>,
+    pub(crate) inputs: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>>,
+    pub(crate) aggs: ::std::option::Option<::std::vec::Vec::<crate::types::AggregateOperation>>,
 }
 impl AggregateBuilder {
     /// <p>The name of the transform node.</p>
@@ -60,8 +56,7 @@ impl AggregateBuilder {
     }
     /// <p>The name of the transform node.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the transform node.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,17 +69,16 @@ impl AggregateBuilder {
     /// <p>Specifies the fields and rows to use as inputs for the aggregate transform.</p>
     pub fn inputs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
-        v.push(input.into());
-        self.inputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.inputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the fields and rows to use as inputs for the aggregate transform.</p>
-    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inputs = input;
-        self
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.inputs = input; self
     }
     /// <p>Specifies the fields and rows to use as inputs for the aggregate transform.</p>
-    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.inputs
     }
     /// Appends an item to `groups`.
@@ -92,19 +86,18 @@ impl AggregateBuilder {
     /// To override the contents of this collection use [`set_groups`](Self::set_groups).
     ///
     /// <p>Specifies the fields to group by.</p>
-    pub fn groups(mut self, input: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn groups(mut self, input: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut v = self.groups.unwrap_or_default();
-        v.push(input);
-        self.groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the fields to group by.</p>
-    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>) -> Self {
-        self.groups = input;
-        self
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.groups = input; self
     }
     /// <p>Specifies the fields to group by.</p>
-    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>> {
         &self.groups
     }
     /// Appends an item to `aggs`.
@@ -114,17 +107,16 @@ impl AggregateBuilder {
     /// <p>Specifies the aggregate functions to be performed on specified fields.</p>
     pub fn aggs(mut self, input: crate::types::AggregateOperation) -> Self {
         let mut v = self.aggs.unwrap_or_default();
-        v.push(input);
-        self.aggs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.aggs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the aggregate functions to be performed on specified fields.</p>
-    pub fn set_aggs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregateOperation>>) -> Self {
-        self.aggs = input;
-        self
+    pub fn set_aggs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AggregateOperation>>) -> Self {
+        self.aggs = input; self
     }
     /// <p>Specifies the aggregate functions to be performed on specified fields.</p>
-    pub fn get_aggs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregateOperation>> {
+    pub fn get_aggs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AggregateOperation>> {
         &self.aggs
     }
     /// Consumes the builder and constructs a [`Aggregate`](crate::types::Aggregate).
@@ -134,31 +126,30 @@ impl AggregateBuilder {
     /// - [`groups`](crate::types::builders::AggregateBuilder::groups)
     /// - [`aggs`](crate::types::builders::AggregateBuilder::aggs)
     pub fn build(self) -> ::std::result::Result<crate::types::Aggregate, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Aggregate {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building Aggregate",
-                )
-            })?,
-            inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "inputs",
-                    "inputs was not specified but it is required when building Aggregate",
-                )
-            })?,
-            groups: self.groups.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "groups",
-                    "groups was not specified but it is required when building Aggregate",
-                )
-            })?,
-            aggs: self.aggs.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "aggs",
-                    "aggs was not specified but it is required when building Aggregate",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Aggregate {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building Aggregate")
+                    )?
+                ,
+                inputs: self.inputs
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("inputs", "inputs was not specified but it is required when building Aggregate")
+                    )?
+                ,
+                groups: self.groups
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("groups", "groups was not specified but it is required when building Aggregate")
+                    )?
+                ,
+                aggs: self.aggs
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("aggs", "aggs was not specified but it is required when building Aggregate")
+                    )?
+                ,
+            }
+        )
     }
 }
+

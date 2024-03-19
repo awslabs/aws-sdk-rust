@@ -2,21 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAppBlockBuilderAppBlockAssociations`](crate::operation::describe_app_block_builder_app_block_associations::builders::DescribeAppBlockBuilderAppBlockAssociationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_app_block_builder_app_block_associations::builders::DescribeAppBlockBuilderAppBlockAssociationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`app_block_arn(impl Into<String>)`](crate::operation::describe_app_block_builder_app_block_associations::builders::DescribeAppBlockBuilderAppBlockAssociationsFluentBuilder::app_block_arn) / [`set_app_block_arn(Option<String>)`](crate::operation::describe_app_block_builder_app_block_associations::builders::DescribeAppBlockBuilderAppBlockAssociationsFluentBuilder::set_app_block_arn):<br>required: **false**<br><p>The ARN of the app block.</p><br>
     ///   - [`app_block_builder_name(impl Into<String>)`](crate::operation::describe_app_block_builder_app_block_associations::builders::DescribeAppBlockBuilderAppBlockAssociationsFluentBuilder::app_block_builder_name) / [`set_app_block_builder_name(Option<String>)`](crate::operation::describe_app_block_builder_app_block_associations::builders::DescribeAppBlockBuilderAppBlockAssociationsFluentBuilder::set_app_block_builder_name):<br>required: **false**<br><p>The name of the app block builder.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_app_block_builder_app_block_associations::builders::DescribeAppBlockBuilderAppBlockAssociationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_app_block_builder_app_block_associations::builders::DescribeAppBlockBuilderAppBlockAssociationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum size of each page of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_app_block_builder_app_block_associations::builders::DescribeAppBlockBuilderAppBlockAssociationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_app_block_builder_app_block_associations::builders::DescribeAppBlockBuilderAppBlockAssociationsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token used to retrieve the next page of results for this operation.</p><br>
-    /// - On success, responds with [`DescribeAppBlockBuilderAppBlockAssociationsOutput`](crate::operation::describe_app_block_builder_app_block_associations::DescribeAppBlockBuilderAppBlockAssociationsOutput) with field(s):
+                            /// - On success, responds with [`DescribeAppBlockBuilderAppBlockAssociationsOutput`](crate::operation::describe_app_block_builder_app_block_associations::DescribeAppBlockBuilderAppBlockAssociationsOutput) with field(s):
     ///   - [`app_block_builder_app_block_associations(Option<Vec::<AppBlockBuilderAppBlockAssociation>>)`](crate::operation::describe_app_block_builder_app_block_associations::DescribeAppBlockBuilderAppBlockAssociationsOutput::app_block_builder_app_block_associations): <p>This list of app block builders associated with app blocks.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_app_block_builder_app_block_associations::DescribeAppBlockBuilderAppBlockAssociationsOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
-    /// - On failure, responds with [`SdkError<DescribeAppBlockBuilderAppBlockAssociationsError>`](crate::operation::describe_app_block_builder_app_block_associations::DescribeAppBlockBuilderAppBlockAssociationsError)
-    pub fn describe_app_block_builder_app_block_associations(
-        &self,
-    ) -> crate::operation::describe_app_block_builder_app_block_associations::builders::DescribeAppBlockBuilderAppBlockAssociationsFluentBuilder {
-        crate::operation::describe_app_block_builder_app_block_associations::builders::DescribeAppBlockBuilderAppBlockAssociationsFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<DescribeAppBlockBuilderAppBlockAssociationsError>`](crate::operation::describe_app_block_builder_app_block_associations::DescribeAppBlockBuilderAppBlockAssociationsError)
+    pub fn describe_app_block_builder_app_block_associations(&self) -> crate::operation::describe_app_block_builder_app_block_associations::builders::DescribeAppBlockBuilderAppBlockAssociationsFluentBuilder {
+                                crate::operation::describe_app_block_builder_app_block_associations::builders::DescribeAppBlockBuilderAppBlockAssociationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

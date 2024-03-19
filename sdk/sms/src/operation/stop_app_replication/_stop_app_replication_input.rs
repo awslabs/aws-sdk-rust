@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopAppReplicationInput {
+pub struct StopAppReplicationInput  {
     /// <p>The ID of the application.</p>
     pub app_id: ::std::option::Option<::std::string::String>,
 }
-impl StopAppReplicationInput {
+impl  StopAppReplicationInput  {
     /// <p>The ID of the application.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
 }
@@ -33,18 +33,20 @@ impl StopAppReplicationInputBuilder {
     }
     /// <p>The ID of the application.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The ID of the application.</p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_id
     }
     /// Consumes the builder and constructs a [`StopAppReplicationInput`](crate::operation::stop_app_replication::StopAppReplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::stop_app_replication::StopAppReplicationInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::stop_app_replication::StopAppReplicationInput { app_id: self.app_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_app_replication::StopAppReplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_app_replication::StopAppReplicationInput {
+                app_id: self.app_id
+                ,
+            }
+        )
     }
 }
+

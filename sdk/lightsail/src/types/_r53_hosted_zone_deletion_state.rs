@@ -3,7 +3,7 @@
 /// <p>Describes the deletion state of an Amazon Route&nbsp;53 hosted zone for a domain that is being automatically delegated to an Amazon Lightsail DNS zone.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct R53HostedZoneDeletionState {
+pub struct R53HostedZoneDeletionState  {
     /// <p>The status code for the deletion state.</p>
     /// <p>Following are the possible values:</p>
     /// <ul>
@@ -20,7 +20,7 @@ pub struct R53HostedZoneDeletionState {
     /// <p>The message that describes the reason for the status code.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl R53HostedZoneDeletionState {
+impl  R53HostedZoneDeletionState  {
     /// <p>The status code for the deletion state.</p>
     /// <p>Following are the possible values:</p>
     /// <ul>
@@ -33,11 +33,11 @@ impl R53HostedZoneDeletionState {
     /// <li>
     /// <p><code>STARTED</code> - The hosted zone deletion started.</p></li>
     /// </ul>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::R53HostedZoneDeletionStateCode> {
+    pub fn code(&self) -> ::std::option::Option<& crate::types::R53HostedZoneDeletionStateCode> {
         self.code.as_ref()
     }
     /// <p>The message that describes the reason for the status code.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -85,8 +85,7 @@ impl R53HostedZoneDeletionStateBuilder {
     /// <p><code>STARTED</code> - The hosted zone deletion started.</p></li>
     /// </ul>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::R53HostedZoneDeletionStateCode>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The status code for the deletion state.</p>
     /// <p>Following are the possible values:</p>
@@ -110,8 +109,7 @@ impl R53HostedZoneDeletionStateBuilder {
     }
     /// <p>The message that describes the reason for the status code.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The message that describes the reason for the status code.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +118,11 @@ impl R53HostedZoneDeletionStateBuilder {
     /// Consumes the builder and constructs a [`R53HostedZoneDeletionState`](crate::types::R53HostedZoneDeletionState).
     pub fn build(self) -> crate::types::R53HostedZoneDeletionState {
         crate::types::R53HostedZoneDeletionState {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

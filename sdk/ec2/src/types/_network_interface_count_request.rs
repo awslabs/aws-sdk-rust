@@ -3,13 +3,13 @@
 /// <p>The minimum and maximum number of network interfaces.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkInterfaceCountRequest {
+pub struct NetworkInterfaceCountRequest  {
     /// <p>The minimum number of network interfaces. To specify no minimum limit, omit this parameter.</p>
     pub min: ::std::option::Option<i32>,
     /// <p>The maximum number of network interfaces. To specify no maximum limit, omit this parameter.</p>
     pub max: ::std::option::Option<i32>,
 }
-impl NetworkInterfaceCountRequest {
+impl  NetworkInterfaceCountRequest  {
     /// <p>The minimum number of network interfaces. To specify no minimum limit, omit this parameter.</p>
     pub fn min(&self) -> ::std::option::Option<i32> {
         self.min
@@ -41,8 +41,7 @@ impl NetworkInterfaceCountRequestBuilder {
     }
     /// <p>The minimum number of network interfaces. To specify no minimum limit, omit this parameter.</p>
     pub fn set_min(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min = input;
-        self
+        self.min = input; self
     }
     /// <p>The minimum number of network interfaces. To specify no minimum limit, omit this parameter.</p>
     pub fn get_min(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl NetworkInterfaceCountRequestBuilder {
     }
     /// <p>The maximum number of network interfaces. To specify no maximum limit, omit this parameter.</p>
     pub fn set_max(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max = input;
-        self
+        self.max = input; self
     }
     /// <p>The maximum number of network interfaces. To specify no maximum limit, omit this parameter.</p>
     pub fn get_max(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl NetworkInterfaceCountRequestBuilder {
     /// Consumes the builder and constructs a [`NetworkInterfaceCountRequest`](crate::types::NetworkInterfaceCountRequest).
     pub fn build(self) -> crate::types::NetworkInterfaceCountRequest {
         crate::types::NetworkInterfaceCountRequest {
-            min: self.min,
-            max: self.max,
+            min: self.min
+            ,
+            max: self.max
+            ,
         }
     }
 }
+

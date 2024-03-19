@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAppBlockBuilderInput {
+pub struct CreateAppBlockBuilderInput  {
     /// <p>The unique name for the app block builder.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the app block builder.</p>
@@ -14,7 +14,7 @@ pub struct CreateAppBlockBuilderInput {
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:</p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The platform of the app block builder.</p>
     /// <p><code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
     pub platform: ::std::option::Option<crate::types::AppBlockBuilderPlatformType>,
@@ -41,19 +41,19 @@ pub struct CreateAppBlockBuilderInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the app block builder only through the specified endpoints.</p>
-    pub access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
+    pub access_endpoints: ::std::option::Option<::std::vec::Vec::<crate::types::AccessEndpoint>>,
 }
-impl CreateAppBlockBuilderInput {
+impl  CreateAppBlockBuilderInput  {
     /// <p>The unique name for the app block builder.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the app block builder.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The display name of the app block builder.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The tags to associate with the app block builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=.</p>
@@ -61,12 +61,12 @@ impl CreateAppBlockBuilderInput {
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:</p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The platform of the app block builder.</p>
     /// <p><code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
-    pub fn platform(&self) -> ::std::option::Option<&crate::types::AppBlockBuilderPlatformType> {
+    pub fn platform(&self) -> ::std::option::Option<& crate::types::AppBlockBuilderPlatformType> {
         self.platform.as_ref()
     }
     /// <p>The instance type to use when launching the app block builder. The following instance types are available:</p>
@@ -82,12 +82,12 @@ impl CreateAppBlockBuilderInput {
     /// <li>
     /// <p>stream.standard.2xlarge</p></li>
     /// </ul>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The VPC configuration for the app block builder.</p>
     /// <p>App block builders require that you specify at least two subnets in different availability zones.</p>
-    pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
+    pub fn vpc_config(&self) -> ::std::option::Option<& crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
     /// <p>Enables or disables default internet access for the app block builder.</p>
@@ -96,14 +96,15 @@ impl CreateAppBlockBuilderInput {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the app block builder. To assume a role, the app block builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn iam_role_arn(&self) -> ::std::option::Option<& str> {
         self.iam_role_arn.as_deref()
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the app block builder only through the specified endpoints.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_endpoints.is_none()`.
-    pub fn access_endpoints(&self) -> &[crate::types::AccessEndpoint] {
-        self.access_endpoints.as_deref().unwrap_or_default()
+    pub fn access_endpoints(&self) -> & [crate::types::AccessEndpoint] {
+        self.access_endpoints.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateAppBlockBuilderInput {
@@ -120,13 +121,13 @@ pub struct CreateAppBlockBuilderInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) platform: ::std::option::Option<crate::types::AppBlockBuilderPlatformType>,
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     pub(crate) enable_default_internet_access: ::std::option::Option<bool>,
     pub(crate) iam_role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
+    pub(crate) access_endpoints: ::std::option::Option<::std::vec::Vec::<crate::types::AccessEndpoint>>,
 }
 impl CreateAppBlockBuilderInputBuilder {
     /// <p>The unique name for the app block builder.</p>
@@ -137,8 +138,7 @@ impl CreateAppBlockBuilderInputBuilder {
     }
     /// <p>The unique name for the app block builder.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The unique name for the app block builder.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,8 +151,7 @@ impl CreateAppBlockBuilderInputBuilder {
     }
     /// <p>The description of the app block builder.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the app block builder.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,8 +164,7 @@ impl CreateAppBlockBuilderInputBuilder {
     }
     /// <p>The display name of the app block builder.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The display name of the app block builder.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,25 +181,24 @@ impl CreateAppBlockBuilderInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags to associate with the app block builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=.</p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:</p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to associate with the app block builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=.</p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:</p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The platform of the app block builder.</p>
@@ -214,8 +211,7 @@ impl CreateAppBlockBuilderInputBuilder {
     /// <p>The platform of the app block builder.</p>
     /// <p><code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<crate::types::AppBlockBuilderPlatformType>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// <p>The platform of the app block builder.</p>
     /// <p><code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
@@ -254,8 +250,7 @@ impl CreateAppBlockBuilderInputBuilder {
     /// <p>stream.standard.2xlarge</p></li>
     /// </ul>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The instance type to use when launching the app block builder. The following instance types are available:</p>
     /// <ul>
@@ -283,8 +278,7 @@ impl CreateAppBlockBuilderInputBuilder {
     /// <p>The VPC configuration for the app block builder.</p>
     /// <p>App block builders require that you specify at least two subnets in different availability zones.</p>
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
-        self.vpc_config = input;
-        self
+        self.vpc_config = input; self
     }
     /// <p>The VPC configuration for the app block builder.</p>
     /// <p>App block builders require that you specify at least two subnets in different availability zones.</p>
@@ -298,8 +292,7 @@ impl CreateAppBlockBuilderInputBuilder {
     }
     /// <p>Enables or disables default internet access for the app block builder.</p>
     pub fn set_enable_default_internet_access(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_default_internet_access = input;
-        self
+        self.enable_default_internet_access = input; self
     }
     /// <p>Enables or disables default internet access for the app block builder.</p>
     pub fn get_enable_default_internet_access(&self) -> &::std::option::Option<bool> {
@@ -314,8 +307,7 @@ impl CreateAppBlockBuilderInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the app block builder. To assume a role, the app block builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_role_arn = input;
-        self
+        self.iam_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the app block builder. To assume a role, the app block builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
@@ -329,35 +321,44 @@ impl CreateAppBlockBuilderInputBuilder {
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the app block builder only through the specified endpoints.</p>
     pub fn access_endpoints(mut self, input: crate::types::AccessEndpoint) -> Self {
         let mut v = self.access_endpoints.unwrap_or_default();
-        v.push(input);
-        self.access_endpoints = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.access_endpoints = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the app block builder only through the specified endpoints.</p>
-    pub fn set_access_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>) -> Self {
-        self.access_endpoints = input;
-        self
+    pub fn set_access_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AccessEndpoint>>) -> Self {
+        self.access_endpoints = input; self
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the app block builder only through the specified endpoints.</p>
-    pub fn get_access_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
+    pub fn get_access_endpoints(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AccessEndpoint>> {
         &self.access_endpoints
     }
     /// Consumes the builder and constructs a [`CreateAppBlockBuilderInput`](crate::operation::create_app_block_builder::CreateAppBlockBuilderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_app_block_builder::CreateAppBlockBuilderInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_app_block_builder::CreateAppBlockBuilderInput {
-            name: self.name,
-            description: self.description,
-            display_name: self.display_name,
-            tags: self.tags,
-            platform: self.platform,
-            instance_type: self.instance_type,
-            vpc_config: self.vpc_config,
-            enable_default_internet_access: self.enable_default_internet_access,
-            iam_role_arn: self.iam_role_arn,
-            access_endpoints: self.access_endpoints,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_app_block_builder::CreateAppBlockBuilderInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_app_block_builder::CreateAppBlockBuilderInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                display_name: self.display_name
+                ,
+                tags: self.tags
+                ,
+                platform: self.platform
+                ,
+                instance_type: self.instance_type
+                ,
+                vpc_config: self.vpc_config
+                ,
+                enable_default_internet_access: self.enable_default_internet_access
+                ,
+                iam_role_arn: self.iam_role_arn
+                ,
+                access_endpoints: self.access_endpoints
+                ,
+            }
+        )
     }
 }
+

@@ -3,22 +3,23 @@
 /// A request to add VPC interfaces to the flow.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddFlowVpcInterfacesInput {
+pub struct AddFlowVpcInterfacesInput  {
     /// The flow that you want to mutate.
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// A list of VPC interfaces that you want to add.
-    pub vpc_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::VpcInterfaceRequest>>,
+    pub vpc_interfaces: ::std::option::Option<::std::vec::Vec::<crate::types::VpcInterfaceRequest>>,
 }
-impl AddFlowVpcInterfacesInput {
+impl  AddFlowVpcInterfacesInput  {
     /// The flow that you want to mutate.
-    pub fn flow_arn(&self) -> ::std::option::Option<&str> {
+    pub fn flow_arn(&self) -> ::std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// A list of VPC interfaces that you want to add.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_interfaces.is_none()`.
-    pub fn vpc_interfaces(&self) -> &[crate::types::VpcInterfaceRequest] {
-        self.vpc_interfaces.as_deref().unwrap_or_default()
+    pub fn vpc_interfaces(&self) -> & [crate::types::VpcInterfaceRequest] {
+        self.vpc_interfaces.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AddFlowVpcInterfacesInput {
@@ -33,7 +34,7 @@ impl AddFlowVpcInterfacesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddFlowVpcInterfacesInputBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) vpc_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::VpcInterfaceRequest>>,
+    pub(crate) vpc_interfaces: ::std::option::Option<::std::vec::Vec::<crate::types::VpcInterfaceRequest>>,
 }
 impl AddFlowVpcInterfacesInputBuilder {
     /// The flow that you want to mutate.
@@ -44,8 +45,7 @@ impl AddFlowVpcInterfacesInputBuilder {
     }
     /// The flow that you want to mutate.
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flow_arn = input;
-        self
+        self.flow_arn = input; self
     }
     /// The flow that you want to mutate.
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,27 +58,28 @@ impl AddFlowVpcInterfacesInputBuilder {
     /// A list of VPC interfaces that you want to add.
     pub fn vpc_interfaces(mut self, input: crate::types::VpcInterfaceRequest) -> Self {
         let mut v = self.vpc_interfaces.unwrap_or_default();
-        v.push(input);
-        self.vpc_interfaces = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.vpc_interfaces = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of VPC interfaces that you want to add.
-    pub fn set_vpc_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcInterfaceRequest>>) -> Self {
-        self.vpc_interfaces = input;
-        self
+    pub fn set_vpc_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VpcInterfaceRequest>>) -> Self {
+        self.vpc_interfaces = input; self
     }
     /// A list of VPC interfaces that you want to add.
-    pub fn get_vpc_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcInterfaceRequest>> {
+    pub fn get_vpc_interfaces(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VpcInterfaceRequest>> {
         &self.vpc_interfaces
     }
     /// Consumes the builder and constructs a [`AddFlowVpcInterfacesInput`](crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesInput {
-            flow_arn: self.flow_arn,
-            vpc_interfaces: self.vpc_interfaces,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesInput {
+                flow_arn: self.flow_arn
+                ,
+                vpc_interfaces: self.vpc_interfaces
+                ,
+            }
+        )
     }
 }
+

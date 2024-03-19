@@ -3,7 +3,7 @@
 /// <p>Contains information about the authentication config that the connector supports.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AuthenticationConfig {
+pub struct AuthenticationConfig  {
     /// <p>Indicates whether basic authentication is supported by the connector.</p>
     pub is_basic_auth_supported: bool,
     /// <p>Indicates whether API key authentication is supported by the connector</p>
@@ -15,9 +15,9 @@ pub struct AuthenticationConfig {
     /// <p>Contains the default values required for OAuth 2.0 authentication.</p>
     pub o_auth2_defaults: ::std::option::Option<crate::types::OAuth2Defaults>,
     /// <p>Contains information required for custom authentication.</p>
-    pub custom_auth_configs: ::std::option::Option<::std::vec::Vec<crate::types::CustomAuthConfig>>,
+    pub custom_auth_configs: ::std::option::Option<::std::vec::Vec::<crate::types::CustomAuthConfig>>,
 }
-impl AuthenticationConfig {
+impl  AuthenticationConfig  {
     /// <p>Indicates whether basic authentication is supported by the connector.</p>
     pub fn is_basic_auth_supported(&self) -> bool {
         self.is_basic_auth_supported
@@ -35,14 +35,15 @@ impl AuthenticationConfig {
         self.is_custom_auth_supported
     }
     /// <p>Contains the default values required for OAuth 2.0 authentication.</p>
-    pub fn o_auth2_defaults(&self) -> ::std::option::Option<&crate::types::OAuth2Defaults> {
+    pub fn o_auth2_defaults(&self) -> ::std::option::Option<& crate::types::OAuth2Defaults> {
         self.o_auth2_defaults.as_ref()
     }
     /// <p>Contains information required for custom authentication.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_auth_configs.is_none()`.
-    pub fn custom_auth_configs(&self) -> &[crate::types::CustomAuthConfig] {
-        self.custom_auth_configs.as_deref().unwrap_or_default()
+    pub fn custom_auth_configs(&self) -> & [crate::types::CustomAuthConfig] {
+        self.custom_auth_configs.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AuthenticationConfig {
@@ -61,7 +62,7 @@ pub struct AuthenticationConfigBuilder {
     pub(crate) is_o_auth2_supported: ::std::option::Option<bool>,
     pub(crate) is_custom_auth_supported: ::std::option::Option<bool>,
     pub(crate) o_auth2_defaults: ::std::option::Option<crate::types::OAuth2Defaults>,
-    pub(crate) custom_auth_configs: ::std::option::Option<::std::vec::Vec<crate::types::CustomAuthConfig>>,
+    pub(crate) custom_auth_configs: ::std::option::Option<::std::vec::Vec::<crate::types::CustomAuthConfig>>,
 }
 impl AuthenticationConfigBuilder {
     /// <p>Indicates whether basic authentication is supported by the connector.</p>
@@ -71,8 +72,7 @@ impl AuthenticationConfigBuilder {
     }
     /// <p>Indicates whether basic authentication is supported by the connector.</p>
     pub fn set_is_basic_auth_supported(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_basic_auth_supported = input;
-        self
+        self.is_basic_auth_supported = input; self
     }
     /// <p>Indicates whether basic authentication is supported by the connector.</p>
     pub fn get_is_basic_auth_supported(&self) -> &::std::option::Option<bool> {
@@ -85,8 +85,7 @@ impl AuthenticationConfigBuilder {
     }
     /// <p>Indicates whether API key authentication is supported by the connector</p>
     pub fn set_is_api_key_auth_supported(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_api_key_auth_supported = input;
-        self
+        self.is_api_key_auth_supported = input; self
     }
     /// <p>Indicates whether API key authentication is supported by the connector</p>
     pub fn get_is_api_key_auth_supported(&self) -> &::std::option::Option<bool> {
@@ -99,8 +98,7 @@ impl AuthenticationConfigBuilder {
     }
     /// <p>Indicates whether OAuth 2.0 authentication is supported by the connector.</p>
     pub fn set_is_o_auth2_supported(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_o_auth2_supported = input;
-        self
+        self.is_o_auth2_supported = input; self
     }
     /// <p>Indicates whether OAuth 2.0 authentication is supported by the connector.</p>
     pub fn get_is_o_auth2_supported(&self) -> &::std::option::Option<bool> {
@@ -113,8 +111,7 @@ impl AuthenticationConfigBuilder {
     }
     /// <p>Indicates whether custom authentication is supported by the connector</p>
     pub fn set_is_custom_auth_supported(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_custom_auth_supported = input;
-        self
+        self.is_custom_auth_supported = input; self
     }
     /// <p>Indicates whether custom authentication is supported by the connector</p>
     pub fn get_is_custom_auth_supported(&self) -> &::std::option::Option<bool> {
@@ -127,8 +124,7 @@ impl AuthenticationConfigBuilder {
     }
     /// <p>Contains the default values required for OAuth 2.0 authentication.</p>
     pub fn set_o_auth2_defaults(mut self, input: ::std::option::Option<crate::types::OAuth2Defaults>) -> Self {
-        self.o_auth2_defaults = input;
-        self
+        self.o_auth2_defaults = input; self
     }
     /// <p>Contains the default values required for OAuth 2.0 authentication.</p>
     pub fn get_o_auth2_defaults(&self) -> &::std::option::Option<crate::types::OAuth2Defaults> {
@@ -141,28 +137,38 @@ impl AuthenticationConfigBuilder {
     /// <p>Contains information required for custom authentication.</p>
     pub fn custom_auth_configs(mut self, input: crate::types::CustomAuthConfig) -> Self {
         let mut v = self.custom_auth_configs.unwrap_or_default();
-        v.push(input);
-        self.custom_auth_configs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.custom_auth_configs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains information required for custom authentication.</p>
-    pub fn set_custom_auth_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomAuthConfig>>) -> Self {
-        self.custom_auth_configs = input;
-        self
+    pub fn set_custom_auth_configs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CustomAuthConfig>>) -> Self {
+        self.custom_auth_configs = input; self
     }
     /// <p>Contains information required for custom authentication.</p>
-    pub fn get_custom_auth_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomAuthConfig>> {
+    pub fn get_custom_auth_configs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CustomAuthConfig>> {
         &self.custom_auth_configs
     }
     /// Consumes the builder and constructs a [`AuthenticationConfig`](crate::types::AuthenticationConfig).
     pub fn build(self) -> crate::types::AuthenticationConfig {
         crate::types::AuthenticationConfig {
-            is_basic_auth_supported: self.is_basic_auth_supported.unwrap_or_default(),
-            is_api_key_auth_supported: self.is_api_key_auth_supported.unwrap_or_default(),
-            is_o_auth2_supported: self.is_o_auth2_supported.unwrap_or_default(),
-            is_custom_auth_supported: self.is_custom_auth_supported.unwrap_or_default(),
-            o_auth2_defaults: self.o_auth2_defaults,
-            custom_auth_configs: self.custom_auth_configs,
+            is_basic_auth_supported: self.is_basic_auth_supported
+                .unwrap_or_default()
+            ,
+            is_api_key_auth_supported: self.is_api_key_auth_supported
+                .unwrap_or_default()
+            ,
+            is_o_auth2_supported: self.is_o_auth2_supported
+                .unwrap_or_default()
+            ,
+            is_custom_auth_supported: self.is_custom_auth_supported
+                .unwrap_or_default()
+            ,
+            o_auth2_defaults: self.o_auth2_defaults
+            ,
+            custom_auth_configs: self.custom_auth_configs
+            ,
         }
     }
 }
+

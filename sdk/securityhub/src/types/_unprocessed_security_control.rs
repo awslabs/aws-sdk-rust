@@ -3,7 +3,7 @@
 /// <p>Provides details about a security control for which a response couldn't be returned.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnprocessedSecurityControl {
+pub struct UnprocessedSecurityControl  {
     /// <p>The control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) for which a response couldn't be returned.</p>
     pub security_control_id: ::std::option::Option<::std::string::String>,
     /// <p>The error code for the unprocessed security control.</p>
@@ -11,17 +11,17 @@ pub struct UnprocessedSecurityControl {
     /// <p>The reason why the security control was unprocessed.</p>
     pub error_reason: ::std::option::Option<::std::string::String>,
 }
-impl UnprocessedSecurityControl {
+impl  UnprocessedSecurityControl  {
     /// <p>The control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) for which a response couldn't be returned.</p>
-    pub fn security_control_id(&self) -> ::std::option::Option<&str> {
+    pub fn security_control_id(&self) -> ::std::option::Option<& str> {
         self.security_control_id.as_deref()
     }
     /// <p>The error code for the unprocessed security control.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&crate::types::UnprocessedErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<& crate::types::UnprocessedErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The reason why the security control was unprocessed.</p>
-    pub fn error_reason(&self) -> ::std::option::Option<&str> {
+    pub fn error_reason(&self) -> ::std::option::Option<& str> {
         self.error_reason.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl UnprocessedSecurityControlBuilder {
     }
     /// <p>The control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) for which a response couldn't be returned.</p>
     pub fn set_security_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.security_control_id = input;
-        self
+        self.security_control_id = input; self
     }
     /// <p>The control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) for which a response couldn't be returned.</p>
     pub fn get_security_control_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl UnprocessedSecurityControlBuilder {
     }
     /// <p>The error code for the unprocessed security control.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::UnprocessedErrorCode>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code for the unprocessed security control.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::UnprocessedErrorCode> {
@@ -78,8 +76,7 @@ impl UnprocessedSecurityControlBuilder {
     }
     /// <p>The reason why the security control was unprocessed.</p>
     pub fn set_error_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_reason = input;
-        self
+        self.error_reason = input; self
     }
     /// <p>The reason why the security control was unprocessed.</p>
     pub fn get_error_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,9 +85,13 @@ impl UnprocessedSecurityControlBuilder {
     /// Consumes the builder and constructs a [`UnprocessedSecurityControl`](crate::types::UnprocessedSecurityControl).
     pub fn build(self) -> crate::types::UnprocessedSecurityControl {
         crate::types::UnprocessedSecurityControl {
-            security_control_id: self.security_control_id,
-            error_code: self.error_code,
-            error_reason: self.error_reason,
+            security_control_id: self.security_control_id
+            ,
+            error_code: self.error_code
+            ,
+            error_reason: self.error_reason
+            ,
         }
     }
 }
+

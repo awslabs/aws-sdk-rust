@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTrustedTokenIssuerOutput {
+pub struct DescribeTrustedTokenIssuerOutput  {
     /// <p>The ARN of the trusted token issuer configuration.</p>
     pub trusted_token_issuer_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the trusted token issuer configuration.</p>
@@ -13,29 +13,29 @@ pub struct DescribeTrustedTokenIssuerOutput {
     pub trusted_token_issuer_configuration: ::std::option::Option<crate::types::TrustedTokenIssuerConfiguration>,
     _request_id: Option<String>,
 }
-impl DescribeTrustedTokenIssuerOutput {
+impl  DescribeTrustedTokenIssuerOutput  {
     /// <p>The ARN of the trusted token issuer configuration.</p>
-    pub fn trusted_token_issuer_arn(&self) -> ::std::option::Option<&str> {
+    pub fn trusted_token_issuer_arn(&self) -> ::std::option::Option<& str> {
         self.trusted_token_issuer_arn.as_deref()
     }
     /// <p>The name of the trusted token issuer configuration.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of the trusted token issuer.</p>
-    pub fn trusted_token_issuer_type(&self) -> ::std::option::Option<&crate::types::TrustedTokenIssuerType> {
+    pub fn trusted_token_issuer_type(&self) -> ::std::option::Option<& crate::types::TrustedTokenIssuerType> {
         self.trusted_token_issuer_type.as_ref()
     }
     /// <p>A structure the describes the settings that apply of this trusted token issuer.</p>
-    pub fn trusted_token_issuer_configuration(&self) -> ::std::option::Option<&crate::types::TrustedTokenIssuerConfiguration> {
+    pub fn trusted_token_issuer_configuration(&self) -> ::std::option::Option<& crate::types::TrustedTokenIssuerConfiguration> {
         self.trusted_token_issuer_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeTrustedTokenIssuerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeTrustedTokenIssuerOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTrustedTokenIssuerOutput`](crate::operation::describe_trusted_token_issuer::DescribeTrustedTokenIssuerOutput).
     pub fn builder() -> crate::operation::describe_trusted_token_issuer::builders::DescribeTrustedTokenIssuerOutputBuilder {
@@ -61,8 +61,7 @@ impl DescribeTrustedTokenIssuerOutputBuilder {
     }
     /// <p>The ARN of the trusted token issuer configuration.</p>
     pub fn set_trusted_token_issuer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trusted_token_issuer_arn = input;
-        self
+        self.trusted_token_issuer_arn = input; self
     }
     /// <p>The ARN of the trusted token issuer configuration.</p>
     pub fn get_trusted_token_issuer_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl DescribeTrustedTokenIssuerOutputBuilder {
     }
     /// <p>The name of the trusted token issuer configuration.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the trusted token issuer configuration.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl DescribeTrustedTokenIssuerOutputBuilder {
     }
     /// <p>The type of the trusted token issuer.</p>
     pub fn set_trusted_token_issuer_type(mut self, input: ::std::option::Option<crate::types::TrustedTokenIssuerType>) -> Self {
-        self.trusted_token_issuer_type = input;
-        self
+        self.trusted_token_issuer_type = input; self
     }
     /// <p>The type of the trusted token issuer.</p>
     pub fn get_trusted_token_issuer_type(&self) -> &::std::option::Option<crate::types::TrustedTokenIssuerType> {
@@ -103,30 +100,34 @@ impl DescribeTrustedTokenIssuerOutputBuilder {
     }
     /// <p>A structure the describes the settings that apply of this trusted token issuer.</p>
     pub fn set_trusted_token_issuer_configuration(mut self, input: ::std::option::Option<crate::types::TrustedTokenIssuerConfiguration>) -> Self {
-        self.trusted_token_issuer_configuration = input;
-        self
+        self.trusted_token_issuer_configuration = input; self
     }
     /// <p>A structure the describes the settings that apply of this trusted token issuer.</p>
     pub fn get_trusted_token_issuer_configuration(&self) -> &::std::option::Option<crate::types::TrustedTokenIssuerConfiguration> {
         &self.trusted_token_issuer_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeTrustedTokenIssuerOutput`](crate::operation::describe_trusted_token_issuer::DescribeTrustedTokenIssuerOutput).
     pub fn build(self) -> crate::operation::describe_trusted_token_issuer::DescribeTrustedTokenIssuerOutput {
         crate::operation::describe_trusted_token_issuer::DescribeTrustedTokenIssuerOutput {
-            trusted_token_issuer_arn: self.trusted_token_issuer_arn,
-            name: self.name,
-            trusted_token_issuer_type: self.trusted_token_issuer_type,
-            trusted_token_issuer_configuration: self.trusted_token_issuer_configuration,
+            trusted_token_issuer_arn: self.trusted_token_issuer_arn
+            ,
+            name: self.name
+            ,
+            trusted_token_issuer_type: self.trusted_token_issuer_type
+            ,
+            trusted_token_issuer_configuration: self.trusted_token_issuer_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

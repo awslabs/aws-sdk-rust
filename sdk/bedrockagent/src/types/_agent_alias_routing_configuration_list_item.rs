@@ -3,15 +3,14 @@
 /// Details about the routing configuration for an Agent alias.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AgentAliasRoutingConfigurationListItem {
+pub struct AgentAliasRoutingConfigurationListItem  {
     /// Agent Version.
     pub agent_version: ::std::string::String,
 }
-impl AgentAliasRoutingConfigurationListItem {
+impl  AgentAliasRoutingConfigurationListItem  {
     /// Agent Version.
-    pub fn agent_version(&self) -> &str {
-        use std::ops::Deref;
-        self.agent_version.deref()
+    pub fn agent_version(&self) -> & str {
+        use std::ops::Deref; self.agent_version.deref()
     }
 }
 impl AgentAliasRoutingConfigurationListItem {
@@ -36,8 +35,7 @@ impl AgentAliasRoutingConfigurationListItemBuilder {
     }
     /// Agent Version.
     pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_version = input;
-        self
+        self.agent_version = input; self
     }
     /// Agent Version.
     pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -46,16 +44,16 @@ impl AgentAliasRoutingConfigurationListItemBuilder {
     /// Consumes the builder and constructs a [`AgentAliasRoutingConfigurationListItem`](crate::types::AgentAliasRoutingConfigurationListItem).
     /// This method will fail if any of the following fields are not set:
     /// - [`agent_version`](crate::types::builders::AgentAliasRoutingConfigurationListItemBuilder::agent_version)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::AgentAliasRoutingConfigurationListItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AgentAliasRoutingConfigurationListItem {
-            agent_version: self.agent_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "agent_version",
-                    "agent_version was not specified but it is required when building AgentAliasRoutingConfigurationListItem",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::AgentAliasRoutingConfigurationListItem, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::AgentAliasRoutingConfigurationListItem {
+                agent_version: self.agent_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("agent_version", "agent_version was not specified but it is required when building AgentAliasRoutingConfigurationListItem")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -4,7 +4,7 @@
 /// <p>Control insights are grouped by control domain, and ranked by the highest total count of non-compliant evidence.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ControlInsightsMetadataByAssessmentItem {
+pub struct ControlInsightsMetadataByAssessmentItem  {
     /// <p>The name of the assessment control.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the assessment control.</p>
@@ -16,25 +16,25 @@ pub struct ControlInsightsMetadataByAssessmentItem {
     /// <p>The time when the assessment control insights were last updated.</p>
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ControlInsightsMetadataByAssessmentItem {
+impl  ControlInsightsMetadataByAssessmentItem  {
     /// <p>The name of the assessment control.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The unique identifier for the assessment control.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A breakdown of the compliance check status for the evidence that’s associated with the assessment control.</p>
-    pub fn evidence_insights(&self) -> ::std::option::Option<&crate::types::EvidenceInsights> {
+    pub fn evidence_insights(&self) -> ::std::option::Option<& crate::types::EvidenceInsights> {
         self.evidence_insights.as_ref()
     }
     /// <p>The name of the control set that the assessment control belongs to.</p>
-    pub fn control_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn control_set_name(&self) -> ::std::option::Option<& str> {
         self.control_set_name.as_deref()
     }
     /// <p>The time when the assessment control insights were last updated.</p>
-    pub fn last_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
 }
@@ -63,8 +63,7 @@ impl ControlInsightsMetadataByAssessmentItemBuilder {
     }
     /// <p>The name of the assessment control.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the assessment control.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl ControlInsightsMetadataByAssessmentItemBuilder {
     }
     /// <p>The unique identifier for the assessment control.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier for the assessment control.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl ControlInsightsMetadataByAssessmentItemBuilder {
     }
     /// <p>A breakdown of the compliance check status for the evidence that’s associated with the assessment control.</p>
     pub fn set_evidence_insights(mut self, input: ::std::option::Option<crate::types::EvidenceInsights>) -> Self {
-        self.evidence_insights = input;
-        self
+        self.evidence_insights = input; self
     }
     /// <p>A breakdown of the compliance check status for the evidence that’s associated with the assessment control.</p>
     pub fn get_evidence_insights(&self) -> &::std::option::Option<crate::types::EvidenceInsights> {
@@ -105,8 +102,7 @@ impl ControlInsightsMetadataByAssessmentItemBuilder {
     }
     /// <p>The name of the control set that the assessment control belongs to.</p>
     pub fn set_control_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.control_set_name = input;
-        self
+        self.control_set_name = input; self
     }
     /// <p>The name of the control set that the assessment control belongs to.</p>
     pub fn get_control_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +115,7 @@ impl ControlInsightsMetadataByAssessmentItemBuilder {
     }
     /// <p>The time when the assessment control insights were last updated.</p>
     pub fn set_last_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated = input;
-        self
+        self.last_updated = input; self
     }
     /// <p>The time when the assessment control insights were last updated.</p>
     pub fn get_last_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -129,11 +124,17 @@ impl ControlInsightsMetadataByAssessmentItemBuilder {
     /// Consumes the builder and constructs a [`ControlInsightsMetadataByAssessmentItem`](crate::types::ControlInsightsMetadataByAssessmentItem).
     pub fn build(self) -> crate::types::ControlInsightsMetadataByAssessmentItem {
         crate::types::ControlInsightsMetadataByAssessmentItem {
-            name: self.name,
-            id: self.id,
-            evidence_insights: self.evidence_insights,
-            control_set_name: self.control_set_name,
-            last_updated: self.last_updated,
+            name: self.name
+            ,
+            id: self.id
+            ,
+            evidence_insights: self.evidence_insights
+            ,
+            control_set_name: self.control_set_name
+            ,
+            last_updated: self.last_updated
+            ,
         }
     }
 }
+

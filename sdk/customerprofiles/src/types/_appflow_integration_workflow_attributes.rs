@@ -3,7 +3,7 @@
 /// <p>Structure holding all <code>APPFLOW_INTEGRATION</code> specific workflow attributes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AppflowIntegrationWorkflowAttributes {
+pub struct AppflowIntegrationWorkflowAttributes  {
     /// <p>Specifies the source connector type, such as Salesforce, ServiceNow, and Marketo. Indicates source of ingestion.</p>
     pub source_connector_type: crate::types::SourceConnectorType,
     /// <p>The name of the AppFlow connector profile used for ingestion.</p>
@@ -11,18 +11,17 @@ pub struct AppflowIntegrationWorkflowAttributes {
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
-impl AppflowIntegrationWorkflowAttributes {
+impl  AppflowIntegrationWorkflowAttributes  {
     /// <p>Specifies the source connector type, such as Salesforce, ServiceNow, and Marketo. Indicates source of ingestion.</p>
-    pub fn source_connector_type(&self) -> &crate::types::SourceConnectorType {
+    pub fn source_connector_type(&self) -> & crate::types::SourceConnectorType {
         &self.source_connector_type
     }
     /// <p>The name of the AppFlow connector profile used for ingestion.</p>
-    pub fn connector_profile_name(&self) -> &str {
-        use std::ops::Deref;
-        self.connector_profile_name.deref()
+    pub fn connector_profile_name(&self) -> & str {
+        use std::ops::Deref; self.connector_profile_name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -50,8 +49,7 @@ impl AppflowIntegrationWorkflowAttributesBuilder {
     }
     /// <p>Specifies the source connector type, such as Salesforce, ServiceNow, and Marketo. Indicates source of ingestion.</p>
     pub fn set_source_connector_type(mut self, input: ::std::option::Option<crate::types::SourceConnectorType>) -> Self {
-        self.source_connector_type = input;
-        self
+        self.source_connector_type = input; self
     }
     /// <p>Specifies the source connector type, such as Salesforce, ServiceNow, and Marketo. Indicates source of ingestion.</p>
     pub fn get_source_connector_type(&self) -> &::std::option::Option<crate::types::SourceConnectorType> {
@@ -65,8 +63,7 @@ impl AppflowIntegrationWorkflowAttributesBuilder {
     }
     /// <p>The name of the AppFlow connector profile used for ingestion.</p>
     pub fn set_connector_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connector_profile_name = input;
-        self
+        self.connector_profile_name = input; self
     }
     /// <p>The name of the AppFlow connector profile used for ingestion.</p>
     pub fn get_connector_profile_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +76,7 @@ impl AppflowIntegrationWorkflowAttributesBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,23 +86,23 @@ impl AppflowIntegrationWorkflowAttributesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`source_connector_type`](crate::types::builders::AppflowIntegrationWorkflowAttributesBuilder::source_connector_type)
     /// - [`connector_profile_name`](crate::types::builders::AppflowIntegrationWorkflowAttributesBuilder::connector_profile_name)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::AppflowIntegrationWorkflowAttributes, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AppflowIntegrationWorkflowAttributes {
-            source_connector_type: self.source_connector_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_connector_type",
-                    "source_connector_type was not specified but it is required when building AppflowIntegrationWorkflowAttributes",
-                )
-            })?,
-            connector_profile_name: self.connector_profile_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "connector_profile_name",
-                    "connector_profile_name was not specified but it is required when building AppflowIntegrationWorkflowAttributes",
-                )
-            })?,
-            role_arn: self.role_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::AppflowIntegrationWorkflowAttributes, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::AppflowIntegrationWorkflowAttributes {
+                source_connector_type: self.source_connector_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source_connector_type", "source_connector_type was not specified but it is required when building AppflowIntegrationWorkflowAttributes")
+                    )?
+                ,
+                connector_profile_name: self.connector_profile_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("connector_profile_name", "connector_profile_name was not specified but it is required when building AppflowIntegrationWorkflowAttributes")
+                    )?
+                ,
+                role_arn: self.role_arn
+                ,
+            }
+        )
     }
 }
+

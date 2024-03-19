@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetFreeTrialInfoInput {
+pub struct BatchGetFreeTrialInfoInput  {
     /// <p>The account IDs to get free trial status for.</p>
-    pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub account_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl BatchGetFreeTrialInfoInput {
+impl  BatchGetFreeTrialInfoInput  {
     /// <p>The account IDs to get free trial status for.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
-    pub fn account_ids(&self) -> &[::std::string::String] {
-        self.account_ids.as_deref().unwrap_or_default()
+    pub fn account_ids(&self) -> & [::std::string::String] {
+        self.account_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchGetFreeTrialInfoInput {
@@ -25,7 +26,7 @@ impl BatchGetFreeTrialInfoInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetFreeTrialInfoInputBuilder {
-    pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) account_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl BatchGetFreeTrialInfoInputBuilder {
     /// Appends an item to `account_ids`.
@@ -35,28 +36,26 @@ impl BatchGetFreeTrialInfoInputBuilder {
     /// <p>The account IDs to get free trial status for.</p>
     pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
-        v.push(input.into());
-        self.account_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.account_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The account IDs to get free trial status for.</p>
-    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.account_ids = input;
-        self
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.account_ids = input; self
     }
     /// <p>The account IDs to get free trial status for.</p>
-    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.account_ids
     }
     /// Consumes the builder and constructs a [`BatchGetFreeTrialInfoInput`](crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoInput {
-            account_ids: self.account_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoInput {
+                account_ids: self.account_ids
+                ,
+            }
+        )
     }
 }
+

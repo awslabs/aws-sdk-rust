@@ -3,19 +3,19 @@
 /// <p>A distribution Configuration and a list of tags to be associated with the distribution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DistributionConfigWithTags {
+pub struct DistributionConfigWithTags  {
     /// <p>A distribution configuration.</p>
     pub distribution_config: ::std::option::Option<crate::types::DistributionConfig>,
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
     pub tags: ::std::option::Option<crate::types::Tags>,
 }
-impl DistributionConfigWithTags {
+impl  DistributionConfigWithTags  {
     /// <p>A distribution configuration.</p>
-    pub fn distribution_config(&self) -> ::std::option::Option<&crate::types::DistributionConfig> {
+    pub fn distribution_config(&self) -> ::std::option::Option<& crate::types::DistributionConfig> {
         self.distribution_config.as_ref()
     }
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
-    pub fn tags(&self) -> ::std::option::Option<&crate::types::Tags> {
+    pub fn tags(&self) -> ::std::option::Option<& crate::types::Tags> {
         self.tags.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl DistributionConfigWithTagsBuilder {
     }
     /// <p>A distribution configuration.</p>
     pub fn set_distribution_config(mut self, input: ::std::option::Option<crate::types::DistributionConfig>) -> Self {
-        self.distribution_config = input;
-        self
+        self.distribution_config = input; self
     }
     /// <p>A distribution configuration.</p>
     pub fn get_distribution_config(&self) -> &::std::option::Option<crate::types::DistributionConfig> {
@@ -57,8 +56,7 @@ impl DistributionConfigWithTagsBuilder {
     }
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<crate::types::Tags>) -> Self {
-        self.tags = input;
-        self
+        self.tags = input; self
     }
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
     pub fn get_tags(&self) -> &::std::option::Option<crate::types::Tags> {
@@ -67,8 +65,11 @@ impl DistributionConfigWithTagsBuilder {
     /// Consumes the builder and constructs a [`DistributionConfigWithTags`](crate::types::DistributionConfigWithTags).
     pub fn build(self) -> crate::types::DistributionConfigWithTags {
         crate::types::DistributionConfigWithTags {
-            distribution_config: self.distribution_config,
-            tags: self.tags,
+            distribution_config: self.distribution_config
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Summary information for your Amazon Q index.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Index {
+pub struct Index  {
     /// <p>The name of the index.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the index.</p>
@@ -15,25 +15,25 @@ pub struct Index {
     /// <p>The current status of the index. When the status is <code>ACTIVE</code>, the index is ready.</p>
     pub status: ::std::option::Option<crate::types::IndexStatus>,
 }
-impl Index {
+impl  Index  {
     /// <p>The name of the index.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The identifier for the index.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>The Unix timestamp when the index was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix timestamp when the index was last updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The current status of the index. When the status is <code>ACTIVE</code>, the index is ready.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::IndexStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::IndexStatus> {
         self.status.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl IndexBuilder {
     }
     /// <p>The name of the index.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The name of the index.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl IndexBuilder {
     }
     /// <p>The identifier for the index.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>The identifier for the index.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl IndexBuilder {
     }
     /// <p>The Unix timestamp when the index was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The Unix timestamp when the index was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -104,8 +101,7 @@ impl IndexBuilder {
     }
     /// <p>The Unix timestamp when the index was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The Unix timestamp when the index was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -118,8 +114,7 @@ impl IndexBuilder {
     }
     /// <p>The current status of the index. When the status is <code>ACTIVE</code>, the index is ready.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::IndexStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the index. When the status is <code>ACTIVE</code>, the index is ready.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::IndexStatus> {
@@ -128,11 +123,17 @@ impl IndexBuilder {
     /// Consumes the builder and constructs a [`Index`](crate::types::Index).
     pub fn build(self) -> crate::types::Index {
         crate::types::Index {
-            display_name: self.display_name,
-            index_id: self.index_id,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-            status: self.status,
+            display_name: self.display_name
+            ,
+            index_id: self.index_id
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

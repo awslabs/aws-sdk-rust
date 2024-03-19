@@ -3,22 +3,20 @@
 /// <p>Information about the basic authentication credentials used to configure a plugin.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BasicAuthConfiguration {
+pub struct BasicAuthConfiguration  {
     /// <p>The ARN of the Secrets Manager secret that stores the basic authentication credentials used for plugin configuration..</p>
     pub secret_arn: ::std::string::String,
     /// <p>The ARN of an IAM role used by Amazon Q to access the basic authentication credentials stored in a Secrets Manager secret.</p>
     pub role_arn: ::std::string::String,
 }
-impl BasicAuthConfiguration {
+impl  BasicAuthConfiguration  {
     /// <p>The ARN of the Secrets Manager secret that stores the basic authentication credentials used for plugin configuration..</p>
-    pub fn secret_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.secret_arn.deref()
+    pub fn secret_arn(&self) -> & str {
+        use std::ops::Deref; self.secret_arn.deref()
     }
     /// <p>The ARN of an IAM role used by Amazon Q to access the basic authentication credentials stored in a Secrets Manager secret.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
 }
 impl BasicAuthConfiguration {
@@ -44,8 +42,7 @@ impl BasicAuthConfigurationBuilder {
     }
     /// <p>The ARN of the Secrets Manager secret that stores the basic authentication credentials used for plugin configuration..</p>
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_arn = input;
-        self
+        self.secret_arn = input; self
     }
     /// <p>The ARN of the Secrets Manager secret that stores the basic authentication credentials used for plugin configuration..</p>
     pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl BasicAuthConfigurationBuilder {
     }
     /// <p>The ARN of an IAM role used by Amazon Q to access the basic authentication credentials stored in a Secrets Manager secret.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of an IAM role used by Amazon Q to access the basic authentication credentials stored in a Secrets Manager secret.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl BasicAuthConfigurationBuilder {
     /// - [`secret_arn`](crate::types::builders::BasicAuthConfigurationBuilder::secret_arn)
     /// - [`role_arn`](crate::types::builders::BasicAuthConfigurationBuilder::role_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::BasicAuthConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BasicAuthConfiguration {
-            secret_arn: self.secret_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "secret_arn",
-                    "secret_arn was not specified but it is required when building BasicAuthConfiguration",
-                )
-            })?,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building BasicAuthConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BasicAuthConfiguration {
+                secret_arn: self.secret_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("secret_arn", "secret_arn was not specified but it is required when building BasicAuthConfiguration")
+                    )?
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building BasicAuthConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

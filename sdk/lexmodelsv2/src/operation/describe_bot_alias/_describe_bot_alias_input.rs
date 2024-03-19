@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeBotAliasInput {
+pub struct DescribeBotAliasInput  {
     /// <p>The identifier of the bot alias to describe.</p>
     pub bot_alias_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the bot associated with the bot alias to describe.</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeBotAliasInput {
+impl  DescribeBotAliasInput  {
     /// <p>The identifier of the bot alias to describe.</p>
-    pub fn bot_alias_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_alias_id(&self) -> ::std::option::Option<& str> {
         self.bot_alias_id.as_deref()
     }
     /// <p>The identifier of the bot associated with the bot alias to describe.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeBotAliasInputBuilder {
     }
     /// <p>The identifier of the bot alias to describe.</p>
     pub fn set_bot_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_alias_id = input;
-        self
+        self.bot_alias_id = input; self
     }
     /// <p>The identifier of the bot alias to describe.</p>
     pub fn get_bot_alias_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DescribeBotAliasInputBuilder {
     }
     /// <p>The identifier of the bot associated with the bot alias to describe.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The identifier of the bot associated with the bot alias to describe.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.bot_id
     }
     /// Consumes the builder and constructs a [`DescribeBotAliasInput`](crate::operation::describe_bot_alias::DescribeBotAliasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_bot_alias::DescribeBotAliasInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_bot_alias::DescribeBotAliasInput {
-            bot_alias_id: self.bot_alias_id,
-            bot_id: self.bot_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_bot_alias::DescribeBotAliasInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_bot_alias::DescribeBotAliasInput {
+                bot_alias_id: self.bot_alias_id
+                ,
+                bot_id: self.bot_id
+                ,
+            }
+        )
     }
 }
+

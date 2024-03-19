@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetEffectiveLifecyclePolicyInput {
+pub struct BatchGetEffectiveLifecyclePolicyInput  {
     /// <p>The unique identifiers of policy types and resource names.</p>
-    pub resource_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyResourceIdentifier>>,
+    pub resource_identifiers: ::std::option::Option<::std::vec::Vec::<crate::types::LifecyclePolicyResourceIdentifier>>,
 }
-impl BatchGetEffectiveLifecyclePolicyInput {
+impl  BatchGetEffectiveLifecyclePolicyInput  {
     /// <p>The unique identifiers of policy types and resource names.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_identifiers.is_none()`.
-    pub fn resource_identifiers(&self) -> &[crate::types::LifecyclePolicyResourceIdentifier] {
-        self.resource_identifiers.as_deref().unwrap_or_default()
+    pub fn resource_identifiers(&self) -> & [crate::types::LifecyclePolicyResourceIdentifier] {
+        self.resource_identifiers.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchGetEffectiveLifecyclePolicyInput {
@@ -25,7 +26,7 @@ impl BatchGetEffectiveLifecyclePolicyInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetEffectiveLifecyclePolicyInputBuilder {
-    pub(crate) resource_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyResourceIdentifier>>,
+    pub(crate) resource_identifiers: ::std::option::Option<::std::vec::Vec::<crate::types::LifecyclePolicyResourceIdentifier>>,
 }
 impl BatchGetEffectiveLifecyclePolicyInputBuilder {
     /// Appends an item to `resource_identifiers`.
@@ -35,33 +36,26 @@ impl BatchGetEffectiveLifecyclePolicyInputBuilder {
     /// <p>The unique identifiers of policy types and resource names.</p>
     pub fn resource_identifiers(mut self, input: crate::types::LifecyclePolicyResourceIdentifier) -> Self {
         let mut v = self.resource_identifiers.unwrap_or_default();
-        v.push(input);
-        self.resource_identifiers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_identifiers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The unique identifiers of policy types and resource names.</p>
-    pub fn set_resource_identifiers(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyResourceIdentifier>>,
-    ) -> Self {
-        self.resource_identifiers = input;
-        self
+    pub fn set_resource_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LifecyclePolicyResourceIdentifier>>) -> Self {
+        self.resource_identifiers = input; self
     }
     /// <p>The unique identifiers of policy types and resource names.</p>
-    pub fn get_resource_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyResourceIdentifier>> {
+    pub fn get_resource_identifiers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LifecyclePolicyResourceIdentifier>> {
         &self.resource_identifiers
     }
     /// Consumes the builder and constructs a [`BatchGetEffectiveLifecyclePolicyInput`](crate::operation::batch_get_effective_lifecycle_policy::BatchGetEffectiveLifecyclePolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_effective_lifecycle_policy::BatchGetEffectiveLifecyclePolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_effective_lifecycle_policy::BatchGetEffectiveLifecyclePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::batch_get_effective_lifecycle_policy::BatchGetEffectiveLifecyclePolicyInput {
-                resource_identifiers: self.resource_identifiers,
-            },
+                resource_identifiers: self.resource_identifiers
+                ,
+            }
         )
     }
 }
+

@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPhoneNumbersV2`](crate::operation::list_phone_numbers_v2::builders::ListPhoneNumbersV2FluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_phone_numbers_v2::builders::ListPhoneNumbersV2FluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`target_arn(impl Into<String>)`](crate::operation::list_phone_numbers_v2::builders::ListPhoneNumbersV2FluentBuilder::target_arn) / [`set_target_arn(Option<String>)`](crate::operation::list_phone_numbers_v2::builders::ListPhoneNumbersV2FluentBuilder::set_target_arn):<br>required: **false**<br><p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone number inbound traffic is routed through. If both <code>TargetArn</code> and <code>InstanceId</code> input are not provided, this API lists numbers claimed to all the Amazon Connect instances belonging to your account in the same Amazon Web Services Region as the request.</p><br>
     ///   - [`instance_id(impl Into<String>)`](crate::operation::list_phone_numbers_v2::builders::ListPhoneNumbersV2FluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::list_phone_numbers_v2::builders::ListPhoneNumbersV2FluentBuilder::set_instance_id):<br>required: **false**<br><p>The identifier of the Amazon Connect instance that phone numbers are claimed to. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance. If both <code>TargetArn</code> and <code>InstanceId</code> are not provided, this API lists numbers claimed to all the Amazon Connect instances belonging to your account in the same AWS Region as the request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_phone_numbers_v2::builders::ListPhoneNumbersV2FluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_phone_numbers_v2::builders::ListPhoneNumbersV2FluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page.</p><br>
@@ -11,11 +11,12 @@ impl super::Client {
     ///   - [`phone_number_country_codes(PhoneNumberCountryCode)`](crate::operation::list_phone_numbers_v2::builders::ListPhoneNumbersV2FluentBuilder::phone_number_country_codes) / [`set_phone_number_country_codes(Option<Vec::<PhoneNumberCountryCode>>)`](crate::operation::list_phone_numbers_v2::builders::ListPhoneNumbersV2FluentBuilder::set_phone_number_country_codes):<br>required: **false**<br><p>The ISO country code.</p><br>
     ///   - [`phone_number_types(PhoneNumberType)`](crate::operation::list_phone_numbers_v2::builders::ListPhoneNumbersV2FluentBuilder::phone_number_types) / [`set_phone_number_types(Option<Vec::<PhoneNumberType>>)`](crate::operation::list_phone_numbers_v2::builders::ListPhoneNumbersV2FluentBuilder::set_phone_number_types):<br>required: **false**<br><p>The type of phone number.</p><br>
     ///   - [`phone_number_prefix(impl Into<String>)`](crate::operation::list_phone_numbers_v2::builders::ListPhoneNumbersV2FluentBuilder::phone_number_prefix) / [`set_phone_number_prefix(Option<String>)`](crate::operation::list_phone_numbers_v2::builders::ListPhoneNumbersV2FluentBuilder::set_phone_number_prefix):<br>required: **false**<br><p>The prefix of the phone number. If provided, it must contain <code>+</code> as part of the country code.</p><br>
-    /// - On success, responds with [`ListPhoneNumbersV2Output`](crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Output) with field(s):
+                            /// - On success, responds with [`ListPhoneNumbersV2Output`](crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Output) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Output::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     ///   - [`list_phone_numbers_summary_list(Option<Vec::<ListPhoneNumbersSummary>>)`](crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Output::list_phone_numbers_summary_list): <p>Information about phone numbers that have been claimed to your Amazon Connect instances or traffic distribution groups.</p>
-    /// - On failure, responds with [`SdkError<ListPhoneNumbersV2Error>`](crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Error)
+                            /// - On failure, responds with [`SdkError<ListPhoneNumbersV2Error>`](crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Error)
     pub fn list_phone_numbers_v2(&self) -> crate::operation::list_phone_numbers_v2::builders::ListPhoneNumbersV2FluentBuilder {
-        crate::operation::list_phone_numbers_v2::builders::ListPhoneNumbersV2FluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_phone_numbers_v2::builders::ListPhoneNumbersV2FluentBuilder::new(self.handle.clone())
+                            }
 }
+

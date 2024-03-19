@@ -3,7 +3,7 @@
 /// <p>Information about the landing zone.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LandingZoneDetail {
+pub struct LandingZoneDetail  {
     /// <p>The landing zone's current deployed version.</p>
     pub version: ::std::string::String,
     /// <p>The landing zone <code>manifest.yaml</code> text file that specifies the landing zone configurations.</p>
@@ -17,30 +17,29 @@ pub struct LandingZoneDetail {
     /// <p>The drift status of the landing zone.</p>
     pub drift_status: ::std::option::Option<crate::types::LandingZoneDriftStatusSummary>,
 }
-impl LandingZoneDetail {
+impl  LandingZoneDetail  {
     /// <p>The landing zone's current deployed version.</p>
-    pub fn version(&self) -> &str {
-        use std::ops::Deref;
-        self.version.deref()
+    pub fn version(&self) -> & str {
+        use std::ops::Deref; self.version.deref()
     }
     /// <p>The landing zone <code>manifest.yaml</code> text file that specifies the landing zone configurations.</p>
-    pub fn manifest(&self) -> &::aws_smithy_types::Document {
+    pub fn manifest(&self) -> & ::aws_smithy_types::Document {
         &self.manifest
     }
     /// <p>The ARN of the landing zone.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The landing zone deployment status. One of <code>ACTIVE</code>, <code>PROCESSING</code>, <code>FAILED</code>.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::LandingZoneStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::LandingZoneStatus> {
         self.status.as_ref()
     }
     /// <p>The latest available version of the landing zone.</p>
-    pub fn latest_available_version(&self) -> ::std::option::Option<&str> {
+    pub fn latest_available_version(&self) -> ::std::option::Option<& str> {
         self.latest_available_version.as_deref()
     }
     /// <p>The drift status of the landing zone.</p>
-    pub fn drift_status(&self) -> ::std::option::Option<&crate::types::LandingZoneDriftStatusSummary> {
+    pub fn drift_status(&self) -> ::std::option::Option<& crate::types::LandingZoneDriftStatusSummary> {
         self.drift_status.as_ref()
     }
 }
@@ -71,8 +70,7 @@ impl LandingZoneDetailBuilder {
     }
     /// <p>The landing zone's current deployed version.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The landing zone's current deployed version.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +84,7 @@ impl LandingZoneDetailBuilder {
     }
     /// <p>The landing zone <code>manifest.yaml</code> text file that specifies the landing zone configurations.</p>
     pub fn set_manifest(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
-        self.manifest = input;
-        self
+        self.manifest = input; self
     }
     /// <p>The landing zone <code>manifest.yaml</code> text file that specifies the landing zone configurations.</p>
     pub fn get_manifest(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
@@ -100,8 +97,7 @@ impl LandingZoneDetailBuilder {
     }
     /// <p>The ARN of the landing zone.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the landing zone.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +110,7 @@ impl LandingZoneDetailBuilder {
     }
     /// <p>The landing zone deployment status. One of <code>ACTIVE</code>, <code>PROCESSING</code>, <code>FAILED</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::LandingZoneStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The landing zone deployment status. One of <code>ACTIVE</code>, <code>PROCESSING</code>, <code>FAILED</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::LandingZoneStatus> {
@@ -128,8 +123,7 @@ impl LandingZoneDetailBuilder {
     }
     /// <p>The latest available version of the landing zone.</p>
     pub fn set_latest_available_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.latest_available_version = input;
-        self
+        self.latest_available_version = input; self
     }
     /// <p>The latest available version of the landing zone.</p>
     pub fn get_latest_available_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +136,7 @@ impl LandingZoneDetailBuilder {
     }
     /// <p>The drift status of the landing zone.</p>
     pub fn set_drift_status(mut self, input: ::std::option::Option<crate::types::LandingZoneDriftStatusSummary>) -> Self {
-        self.drift_status = input;
-        self
+        self.drift_status = input; self
     }
     /// <p>The drift status of the landing zone.</p>
     pub fn get_drift_status(&self) -> &::std::option::Option<crate::types::LandingZoneDriftStatusSummary> {
@@ -154,23 +147,28 @@ impl LandingZoneDetailBuilder {
     /// - [`version`](crate::types::builders::LandingZoneDetailBuilder::version)
     /// - [`manifest`](crate::types::builders::LandingZoneDetailBuilder::manifest)
     pub fn build(self) -> ::std::result::Result<crate::types::LandingZoneDetail, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LandingZoneDetail {
-            version: self.version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "version",
-                    "version was not specified but it is required when building LandingZoneDetail",
-                )
-            })?,
-            manifest: self.manifest.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "manifest",
-                    "manifest was not specified but it is required when building LandingZoneDetail",
-                )
-            })?,
-            arn: self.arn,
-            status: self.status,
-            latest_available_version: self.latest_available_version,
-            drift_status: self.drift_status,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LandingZoneDetail {
+                version: self.version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("version", "version was not specified but it is required when building LandingZoneDetail")
+                    )?
+                ,
+                manifest: self.manifest
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("manifest", "manifest was not specified but it is required when building LandingZoneDetail")
+                    )?
+                ,
+                arn: self.arn
+                ,
+                status: self.status
+                ,
+                latest_available_version: self.latest_available_version
+                ,
+                drift_status: self.drift_status
+                ,
+            }
+        )
     }
 }
+

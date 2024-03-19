@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateMacieSessionInput {
+pub struct UpdateMacieSessionInput  {
     /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
     pub finding_publishing_frequency: ::std::option::Option<crate::types::FindingPublishingFrequency>,
     /// <p>Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
     pub status: ::std::option::Option<crate::types::MacieStatus>,
 }
-impl UpdateMacieSessionInput {
+impl  UpdateMacieSessionInput  {
     /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
-    pub fn finding_publishing_frequency(&self) -> ::std::option::Option<&crate::types::FindingPublishingFrequency> {
+    pub fn finding_publishing_frequency(&self) -> ::std::option::Option<& crate::types::FindingPublishingFrequency> {
         self.finding_publishing_frequency.as_ref()
     }
     /// <p>Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::MacieStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::MacieStatus> {
         self.status.as_ref()
     }
 }
@@ -40,8 +40,7 @@ impl UpdateMacieSessionInputBuilder {
     }
     /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
     pub fn set_finding_publishing_frequency(mut self, input: ::std::option::Option<crate::types::FindingPublishingFrequency>) -> Self {
-        self.finding_publishing_frequency = input;
-        self
+        self.finding_publishing_frequency = input; self
     }
     /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
     pub fn get_finding_publishing_frequency(&self) -> &::std::option::Option<crate::types::FindingPublishingFrequency> {
@@ -54,21 +53,22 @@ impl UpdateMacieSessionInputBuilder {
     }
     /// <p>Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MacieStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::MacieStatus> {
         &self.status
     }
     /// Consumes the builder and constructs a [`UpdateMacieSessionInput`](crate::operation::update_macie_session::UpdateMacieSessionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_macie_session::UpdateMacieSessionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_macie_session::UpdateMacieSessionInput {
-            finding_publishing_frequency: self.finding_publishing_frequency,
-            status: self.status,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_macie_session::UpdateMacieSessionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_macie_session::UpdateMacieSessionInput {
+                finding_publishing_frequency: self.finding_publishing_frequency
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

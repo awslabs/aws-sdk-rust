@@ -3,7 +3,7 @@
 /// <p>Describes a core network attachment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Attachment {
+pub struct Attachment  {
     /// <p>The ID of a core network.</p>
     pub core_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of a core network.</p>
@@ -25,7 +25,7 @@ pub struct Attachment {
     /// <p>The name of the segment attachment.</p>
     pub segment_name: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with the attachment.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The attachment to move from one segment to another.</p>
     pub proposed_segment_change: ::std::option::Option<crate::types::ProposedSegmentChange>,
     /// <p>The timestamp when the attachment was created.</p>
@@ -33,37 +33,37 @@ pub struct Attachment {
     /// <p>The timestamp when the attachment was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl Attachment {
+impl  Attachment  {
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn core_network_id(&self) -> ::std::option::Option<& str> {
         self.core_network_id.as_deref()
     }
     /// <p>The ARN of a core network.</p>
-    pub fn core_network_arn(&self) -> ::std::option::Option<&str> {
+    pub fn core_network_arn(&self) -> ::std::option::Option<& str> {
         self.core_network_arn.as_deref()
     }
     /// <p>The ID of the attachment.</p>
-    pub fn attachment_id(&self) -> ::std::option::Option<&str> {
+    pub fn attachment_id(&self) -> ::std::option::Option<& str> {
         self.attachment_id.as_deref()
     }
     /// <p>The ID of the attachment account owner.</p>
-    pub fn owner_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_account_id(&self) -> ::std::option::Option<& str> {
         self.owner_account_id.as_deref()
     }
     /// <p>The type of attachment.</p>
-    pub fn attachment_type(&self) -> ::std::option::Option<&crate::types::AttachmentType> {
+    pub fn attachment_type(&self) -> ::std::option::Option<& crate::types::AttachmentType> {
         self.attachment_type.as_ref()
     }
     /// <p>The state of the attachment.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::AttachmentState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::AttachmentState> {
         self.state.as_ref()
     }
     /// <p>The Region where the edge is located.</p>
-    pub fn edge_location(&self) -> ::std::option::Option<&str> {
+    pub fn edge_location(&self) -> ::std::option::Option<& str> {
         self.edge_location.as_deref()
     }
     /// <p>The attachment resource ARN.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The policy rule number associated with the attachment.</p>
@@ -71,25 +71,26 @@ impl Attachment {
         self.attachment_policy_rule_number
     }
     /// <p>The name of the segment attachment.</p>
-    pub fn segment_name(&self) -> ::std::option::Option<&str> {
+    pub fn segment_name(&self) -> ::std::option::Option<& str> {
         self.segment_name.as_deref()
     }
     /// <p>The tags associated with the attachment.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The attachment to move from one segment to another.</p>
-    pub fn proposed_segment_change(&self) -> ::std::option::Option<&crate::types::ProposedSegmentChange> {
+    pub fn proposed_segment_change(&self) -> ::std::option::Option<& crate::types::ProposedSegmentChange> {
         self.proposed_segment_change.as_ref()
     }
     /// <p>The timestamp when the attachment was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp when the attachment was last updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -114,7 +115,7 @@ pub struct AttachmentBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) attachment_policy_rule_number: ::std::option::Option<i32>,
     pub(crate) segment_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) proposed_segment_change: ::std::option::Option<crate::types::ProposedSegmentChange>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -127,8 +128,7 @@ impl AttachmentBuilder {
     }
     /// <p>The ID of a core network.</p>
     pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.core_network_id = input;
-        self
+        self.core_network_id = input; self
     }
     /// <p>The ID of a core network.</p>
     pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +141,7 @@ impl AttachmentBuilder {
     }
     /// <p>The ARN of a core network.</p>
     pub fn set_core_network_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.core_network_arn = input;
-        self
+        self.core_network_arn = input; self
     }
     /// <p>The ARN of a core network.</p>
     pub fn get_core_network_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +154,7 @@ impl AttachmentBuilder {
     }
     /// <p>The ID of the attachment.</p>
     pub fn set_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attachment_id = input;
-        self
+        self.attachment_id = input; self
     }
     /// <p>The ID of the attachment.</p>
     pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,8 +167,7 @@ impl AttachmentBuilder {
     }
     /// <p>The ID of the attachment account owner.</p>
     pub fn set_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_account_id = input;
-        self
+        self.owner_account_id = input; self
     }
     /// <p>The ID of the attachment account owner.</p>
     pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,8 +180,7 @@ impl AttachmentBuilder {
     }
     /// <p>The type of attachment.</p>
     pub fn set_attachment_type(mut self, input: ::std::option::Option<crate::types::AttachmentType>) -> Self {
-        self.attachment_type = input;
-        self
+        self.attachment_type = input; self
     }
     /// <p>The type of attachment.</p>
     pub fn get_attachment_type(&self) -> &::std::option::Option<crate::types::AttachmentType> {
@@ -197,8 +193,7 @@ impl AttachmentBuilder {
     }
     /// <p>The state of the attachment.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::AttachmentState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the attachment.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::AttachmentState> {
@@ -211,8 +206,7 @@ impl AttachmentBuilder {
     }
     /// <p>The Region where the edge is located.</p>
     pub fn set_edge_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.edge_location = input;
-        self
+        self.edge_location = input; self
     }
     /// <p>The Region where the edge is located.</p>
     pub fn get_edge_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -225,8 +219,7 @@ impl AttachmentBuilder {
     }
     /// <p>The attachment resource ARN.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The attachment resource ARN.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -239,8 +232,7 @@ impl AttachmentBuilder {
     }
     /// <p>The policy rule number associated with the attachment.</p>
     pub fn set_attachment_policy_rule_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.attachment_policy_rule_number = input;
-        self
+        self.attachment_policy_rule_number = input; self
     }
     /// <p>The policy rule number associated with the attachment.</p>
     pub fn get_attachment_policy_rule_number(&self) -> &::std::option::Option<i32> {
@@ -253,8 +245,7 @@ impl AttachmentBuilder {
     }
     /// <p>The name of the segment attachment.</p>
     pub fn set_segment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.segment_name = input;
-        self
+        self.segment_name = input; self
     }
     /// <p>The name of the segment attachment.</p>
     pub fn get_segment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -267,17 +258,16 @@ impl AttachmentBuilder {
     /// <p>The tags associated with the attachment.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags associated with the attachment.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags associated with the attachment.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The attachment to move from one segment to another.</p>
@@ -287,8 +277,7 @@ impl AttachmentBuilder {
     }
     /// <p>The attachment to move from one segment to another.</p>
     pub fn set_proposed_segment_change(mut self, input: ::std::option::Option<crate::types::ProposedSegmentChange>) -> Self {
-        self.proposed_segment_change = input;
-        self
+        self.proposed_segment_change = input; self
     }
     /// <p>The attachment to move from one segment to another.</p>
     pub fn get_proposed_segment_change(&self) -> &::std::option::Option<crate::types::ProposedSegmentChange> {
@@ -301,8 +290,7 @@ impl AttachmentBuilder {
     }
     /// <p>The timestamp when the attachment was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp when the attachment was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -315,8 +303,7 @@ impl AttachmentBuilder {
     }
     /// <p>The timestamp when the attachment was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The timestamp when the attachment was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -325,20 +312,35 @@ impl AttachmentBuilder {
     /// Consumes the builder and constructs a [`Attachment`](crate::types::Attachment).
     pub fn build(self) -> crate::types::Attachment {
         crate::types::Attachment {
-            core_network_id: self.core_network_id,
-            core_network_arn: self.core_network_arn,
-            attachment_id: self.attachment_id,
-            owner_account_id: self.owner_account_id,
-            attachment_type: self.attachment_type,
-            state: self.state,
-            edge_location: self.edge_location,
-            resource_arn: self.resource_arn,
-            attachment_policy_rule_number: self.attachment_policy_rule_number,
-            segment_name: self.segment_name,
-            tags: self.tags,
-            proposed_segment_change: self.proposed_segment_change,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
+            core_network_id: self.core_network_id
+            ,
+            core_network_arn: self.core_network_arn
+            ,
+            attachment_id: self.attachment_id
+            ,
+            owner_account_id: self.owner_account_id
+            ,
+            attachment_type: self.attachment_type
+            ,
+            state: self.state
+            ,
+            edge_location: self.edge_location
+            ,
+            resource_arn: self.resource_arn
+            ,
+            attachment_policy_rule_number: self.attachment_policy_rule_number
+            ,
+            segment_name: self.segment_name
+            ,
+            tags: self.tags
+            ,
+            proposed_segment_change: self.proposed_segment_change
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
         }
     }
 }
+

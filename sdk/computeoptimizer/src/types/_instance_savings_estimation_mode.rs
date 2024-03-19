@@ -3,13 +3,13 @@
 /// <p>Describes the savings estimation mode used for calculating savings opportunity for Amazon EC2 instances.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceSavingsEstimationMode {
+pub struct InstanceSavingsEstimationMode  {
     /// <p>Describes the source for calculating the savings opportunity for Amazon EC2 instances.</p>
     pub source: ::std::option::Option<crate::types::InstanceSavingsEstimationModeSource>,
 }
-impl InstanceSavingsEstimationMode {
+impl  InstanceSavingsEstimationMode  {
     /// <p>Describes the source for calculating the savings opportunity for Amazon EC2 instances.</p>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::InstanceSavingsEstimationModeSource> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::InstanceSavingsEstimationModeSource> {
         self.source.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl InstanceSavingsEstimationModeBuilder {
     }
     /// <p>Describes the source for calculating the savings opportunity for Amazon EC2 instances.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::InstanceSavingsEstimationModeSource>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>Describes the source for calculating the savings opportunity for Amazon EC2 instances.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::InstanceSavingsEstimationModeSource> {
@@ -43,6 +42,10 @@ impl InstanceSavingsEstimationModeBuilder {
     }
     /// Consumes the builder and constructs a [`InstanceSavingsEstimationMode`](crate::types::InstanceSavingsEstimationMode).
     pub fn build(self) -> crate::types::InstanceSavingsEstimationMode {
-        crate::types::InstanceSavingsEstimationMode { source: self.source }
+        crate::types::InstanceSavingsEstimationMode {
+            source: self.source
+            ,
+        }
     }
 }
+

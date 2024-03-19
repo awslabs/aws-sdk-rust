@@ -4,13 +4,13 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL-how-it-works.html#ttl-howitworks_enabling">Enabling TTL on tables</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TimeToLive {
+pub struct TimeToLive  {
     /// <p>Shows how to enable custom Time to Live (TTL) settings for the specified table.</p>
     pub status: crate::types::TimeToLiveStatus,
 }
-impl TimeToLive {
+impl  TimeToLive  {
     /// <p>Shows how to enable custom Time to Live (TTL) settings for the specified table.</p>
-    pub fn status(&self) -> &crate::types::TimeToLiveStatus {
+    pub fn status(&self) -> & crate::types::TimeToLiveStatus {
         &self.status
     }
 }
@@ -36,8 +36,7 @@ impl TimeToLiveBuilder {
     }
     /// <p>Shows how to enable custom Time to Live (TTL) settings for the specified table.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TimeToLiveStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Shows how to enable custom Time to Live (TTL) settings for the specified table.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TimeToLiveStatus> {
@@ -47,13 +46,15 @@ impl TimeToLiveBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::TimeToLiveBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::TimeToLive, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TimeToLive {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building TimeToLive",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TimeToLive {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building TimeToLive")
+                    )?
+                ,
+            }
+        )
     }
 }
+

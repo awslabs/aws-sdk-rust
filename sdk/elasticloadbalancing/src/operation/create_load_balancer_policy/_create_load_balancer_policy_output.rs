@@ -3,14 +3,14 @@
 /// <p>Contains the output of CreateLoadBalancerPolicy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateLoadBalancerPolicyOutput {
+pub struct CreateLoadBalancerPolicyOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for CreateLoadBalancerPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateLoadBalancerPolicyOutput {
     /// Creates a new builder-style object to manufacture [`CreateLoadBalancerPolicyOutput`](crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyOutput).
     pub fn builder() -> crate::operation::create_load_balancer_policy::builders::CreateLoadBalancerPolicyOutputBuilder {
@@ -26,14 +26,14 @@ pub struct CreateLoadBalancerPolicyOutputBuilder {
 }
 impl CreateLoadBalancerPolicyOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateLoadBalancerPolicyOutput`](crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyOutput).
     pub fn build(self) -> crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyOutput {
         crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyOutput {
@@ -41,3 +41,4 @@ impl CreateLoadBalancerPolicyOutputBuilder {
         }
     }
 }
+

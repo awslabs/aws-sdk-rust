@@ -3,7 +3,8 @@
 /// Frame Capture Hls Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FrameCaptureHlsSettings {}
+pub struct FrameCaptureHlsSettings  {
+}
 impl FrameCaptureHlsSettings {
     /// Creates a new builder-style object to manufacture [`FrameCaptureHlsSettings`](crate::types::FrameCaptureHlsSettings).
     pub fn builder() -> crate::types::builders::FrameCaptureHlsSettingsBuilder {
@@ -14,10 +15,13 @@ impl FrameCaptureHlsSettings {
 /// A builder for [`FrameCaptureHlsSettings`](crate::types::FrameCaptureHlsSettings).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct FrameCaptureHlsSettingsBuilder {}
+pub struct FrameCaptureHlsSettingsBuilder {
+}
 impl FrameCaptureHlsSettingsBuilder {
     /// Consumes the builder and constructs a [`FrameCaptureHlsSettings`](crate::types::FrameCaptureHlsSettings).
     pub fn build(self) -> crate::types::FrameCaptureHlsSettings {
-        crate::types::FrameCaptureHlsSettings {}
+        crate::types::FrameCaptureHlsSettings {
+        }
     }
 }
+

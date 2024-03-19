@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLatestAssessmentIdInput {}
+pub struct GetLatestAssessmentIdInput  {
+}
 impl GetLatestAssessmentIdInput {
     /// Creates a new builder-style object to manufacture [`GetLatestAssessmentIdInput`](crate::operation::get_latest_assessment_id::GetLatestAssessmentIdInput).
     pub fn builder() -> crate::operation::get_latest_assessment_id::builders::GetLatestAssessmentIdInputBuilder {
@@ -13,13 +14,15 @@ impl GetLatestAssessmentIdInput {
 /// A builder for [`GetLatestAssessmentIdInput`](crate::operation::get_latest_assessment_id::GetLatestAssessmentIdInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetLatestAssessmentIdInputBuilder {}
+pub struct GetLatestAssessmentIdInputBuilder {
+}
 impl GetLatestAssessmentIdInputBuilder {
     /// Consumes the builder and constructs a [`GetLatestAssessmentIdInput`](crate::operation::get_latest_assessment_id::GetLatestAssessmentIdInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_latest_assessment_id::GetLatestAssessmentIdInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_latest_assessment_id::GetLatestAssessmentIdInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_latest_assessment_id::GetLatestAssessmentIdInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_latest_assessment_id::GetLatestAssessmentIdInput {
+            }
+        )
     }
 }
+

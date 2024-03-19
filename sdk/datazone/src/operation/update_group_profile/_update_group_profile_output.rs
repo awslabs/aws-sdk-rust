@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateGroupProfileOutput {
+pub struct UpdateGroupProfileOutput  {
     /// <p>The identifier of the Amazon DataZone domain in which a group profile is updated.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the group profile that is updated.</p>
@@ -13,25 +13,25 @@ pub struct UpdateGroupProfileOutput {
     pub group_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl UpdateGroupProfileOutput {
+impl  UpdateGroupProfileOutput  {
     /// <p>The identifier of the Amazon DataZone domain in which a group profile is updated.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn domain_id(&self) -> ::std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The identifier of the group profile that is updated.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The status of the group profile that is updated.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::GroupProfileStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::GroupProfileStatus> {
         self.status.as_ref()
     }
     /// <p>The name of the group profile that is updated.</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<& str> {
         self.group_name.as_deref()
     }
 }
-impl ::std::fmt::Debug for UpdateGroupProfileOutput {
+impl  ::std::fmt::Debug for UpdateGroupProfileOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateGroupProfileOutput");
         formatter.field("domain_id", &self.domain_id);
@@ -43,10 +43,10 @@ impl ::std::fmt::Debug for UpdateGroupProfileOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateGroupProfileOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateGroupProfileOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGroupProfileOutput`](crate::operation::update_group_profile::UpdateGroupProfileOutput).
     pub fn builder() -> crate::operation::update_group_profile::builders::UpdateGroupProfileOutputBuilder {
@@ -72,8 +72,7 @@ impl UpdateGroupProfileOutputBuilder {
     }
     /// <p>The identifier of the Amazon DataZone domain in which a group profile is updated.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The identifier of the Amazon DataZone domain in which a group profile is updated.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +85,7 @@ impl UpdateGroupProfileOutputBuilder {
     }
     /// <p>The identifier of the group profile that is updated.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the group profile that is updated.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +98,7 @@ impl UpdateGroupProfileOutputBuilder {
     }
     /// <p>The status of the group profile that is updated.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::GroupProfileStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the group profile that is updated.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::GroupProfileStatus> {
@@ -114,29 +111,32 @@ impl UpdateGroupProfileOutputBuilder {
     }
     /// <p>The name of the group profile that is updated.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>The name of the group profile that is updated.</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateGroupProfileOutput`](crate::operation::update_group_profile::UpdateGroupProfileOutput).
     pub fn build(self) -> crate::operation::update_group_profile::UpdateGroupProfileOutput {
         crate::operation::update_group_profile::UpdateGroupProfileOutput {
-            domain_id: self.domain_id,
-            id: self.id,
-            status: self.status,
-            group_name: self.group_name,
+            domain_id: self.domain_id
+            ,
+            id: self.id
+            ,
+            status: self.status
+            ,
+            group_name: self.group_name
+            ,
             _request_id: self._request_id,
         }
     }
@@ -152,3 +152,4 @@ impl ::std::fmt::Debug for UpdateGroupProfileOutputBuilder {
         formatter.finish()
     }
 }
+

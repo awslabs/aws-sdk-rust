@@ -3,20 +3,19 @@
 /// <p>Information about the pricing bundle.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BundleInformation {
+pub struct BundleInformation  {
     /// <p>The bundle names.</p>
-    pub bundle_names: ::std::vec::Vec<::std::string::String>,
+    pub bundle_names: ::std::vec::Vec::<::std::string::String>,
     /// <p>The pricing tier.</p>
     pub pricing_tier: ::std::option::Option<crate::types::PricingTier>,
 }
-impl BundleInformation {
+impl  BundleInformation  {
     /// <p>The bundle names.</p>
-    pub fn bundle_names(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.bundle_names.deref()
+    pub fn bundle_names(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.bundle_names.deref()
     }
     /// <p>The pricing tier.</p>
-    pub fn pricing_tier(&self) -> ::std::option::Option<&crate::types::PricingTier> {
+    pub fn pricing_tier(&self) -> ::std::option::Option<& crate::types::PricingTier> {
         self.pricing_tier.as_ref()
     }
 }
@@ -31,7 +30,7 @@ impl BundleInformation {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BundleInformationBuilder {
-    pub(crate) bundle_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) bundle_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) pricing_tier: ::std::option::Option<crate::types::PricingTier>,
 }
 impl BundleInformationBuilder {
@@ -42,17 +41,16 @@ impl BundleInformationBuilder {
     /// <p>The bundle names.</p>
     pub fn bundle_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.bundle_names.unwrap_or_default();
-        v.push(input.into());
-        self.bundle_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.bundle_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The bundle names.</p>
-    pub fn set_bundle_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.bundle_names = input;
-        self
+    pub fn set_bundle_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.bundle_names = input; self
     }
     /// <p>The bundle names.</p>
-    pub fn get_bundle_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_bundle_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.bundle_names
     }
     /// <p>The pricing tier.</p>
@@ -62,8 +60,7 @@ impl BundleInformationBuilder {
     }
     /// <p>The pricing tier.</p>
     pub fn set_pricing_tier(mut self, input: ::std::option::Option<crate::types::PricingTier>) -> Self {
-        self.pricing_tier = input;
-        self
+        self.pricing_tier = input; self
     }
     /// <p>The pricing tier.</p>
     pub fn get_pricing_tier(&self) -> &::std::option::Option<crate::types::PricingTier> {
@@ -73,14 +70,17 @@ impl BundleInformationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`bundle_names`](crate::types::builders::BundleInformationBuilder::bundle_names)
     pub fn build(self) -> ::std::result::Result<crate::types::BundleInformation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BundleInformation {
-            bundle_names: self.bundle_names.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bundle_names",
-                    "bundle_names was not specified but it is required when building BundleInformation",
-                )
-            })?,
-            pricing_tier: self.pricing_tier,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BundleInformation {
+                bundle_names: self.bundle_names
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bundle_names", "bundle_names was not specified but it is required when building BundleInformation")
+                    )?
+                ,
+                pricing_tier: self.pricing_tier
+                ,
+            }
+        )
     }
 }
+

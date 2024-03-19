@@ -5,56 +5,52 @@ pub use crate::operation::create_dataflow_endpoint_group::_create_dataflow_endpo
 
 impl CreateDataflowEndpointGroupInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_dataflow_endpoint_group();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_dataflow_endpoint_group();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateDataflowEndpointGroup`.
-///
+/// 
 /// <p>Creates a <code>DataflowEndpoint</code> group containing the specified list of <code>DataflowEndpoint</code> objects.</p>
 /// <p>The <code>name</code> field in each endpoint is used in your mission profile <code>DataflowEndpointConfig</code> to specify which endpoints to use during a contact.</p>
 /// <p>When a contact uses multiple <code>DataflowEndpointConfig</code> objects, each <code>Config</code> must match a <code>DataflowEndpoint</code> in the same group.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDataflowEndpointGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_dataflow_endpoint_group::builders::CreateDataflowEndpointGroupInputBuilder,
+                    inner: crate::operation::create_dataflow_endpoint_group::builders::CreateDataflowEndpointGroupInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupOutput,
-        crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupError,
-    > for CreateDataflowEndpointGroupFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupOutput,
-            crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupOutput,
+                    crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupError,
+                > for CreateDataflowEndpointGroupFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupOutput,
+                        crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateDataflowEndpointGroupFluentBuilder {
     /// Creates a new `CreateDataflowEndpointGroup`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl CreateDataflowEndpointGroupFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroup::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroup::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupOutput,
-        crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroup::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroup::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupOutput, crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `endpointDetails`.
     ///
     /// To override the contents of this collection use [`set_endpoint_details`](Self::set_endpoint_details).
@@ -120,12 +107,12 @@ impl CreateDataflowEndpointGroupFluentBuilder {
         self
     }
     /// <p>Endpoint details of each endpoint in the dataflow endpoint group.</p>
-    pub fn set_endpoint_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointDetails>>) -> Self {
+    pub fn set_endpoint_details(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EndpointDetails>>) -> Self {
         self.inner = self.inner.set_endpoint_details(input);
         self
     }
     /// <p>Endpoint details of each endpoint in the dataflow endpoint group.</p>
-    pub fn get_endpoint_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointDetails>> {
+    pub fn get_endpoint_details(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EndpointDetails>> {
         self.inner.get_endpoint_details()
     }
     /// Adds a key-value pair to `tags`.
@@ -138,12 +125,12 @@ impl CreateDataflowEndpointGroupFluentBuilder {
         self
     }
     /// <p>Tags of a dataflow endpoint group.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Tags of a dataflow endpoint group.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>Amount of time, in seconds, before a contact starts that the Ground Station Dataflow Endpoint Group will be in a <code>PREPASS</code> state. A Ground Station Dataflow Endpoint Group State Change event will be emitted when the Dataflow Endpoint Group enters and exits the <code>PREPASS</code> state.</p>
@@ -175,3 +162,4 @@ impl CreateDataflowEndpointGroupFluentBuilder {
         self.inner.get_contact_post_pass_duration_seconds()
     }
 }
+

@@ -3,21 +3,20 @@
 /// <p>A new member that is added to a launch profile.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NewLaunchProfileMember {
+pub struct NewLaunchProfileMember  {
     /// <p>The persona.</p>
     pub persona: crate::types::LaunchProfilePersona,
     /// <p>The principal ID.</p>
     pub principal_id: ::std::string::String,
 }
-impl NewLaunchProfileMember {
+impl  NewLaunchProfileMember  {
     /// <p>The persona.</p>
-    pub fn persona(&self) -> &crate::types::LaunchProfilePersona {
+    pub fn persona(&self) -> & crate::types::LaunchProfilePersona {
         &self.persona
     }
     /// <p>The principal ID.</p>
-    pub fn principal_id(&self) -> &str {
-        use std::ops::Deref;
-        self.principal_id.deref()
+    pub fn principal_id(&self) -> & str {
+        use std::ops::Deref; self.principal_id.deref()
     }
 }
 impl NewLaunchProfileMember {
@@ -43,8 +42,7 @@ impl NewLaunchProfileMemberBuilder {
     }
     /// <p>The persona.</p>
     pub fn set_persona(mut self, input: ::std::option::Option<crate::types::LaunchProfilePersona>) -> Self {
-        self.persona = input;
-        self
+        self.persona = input; self
     }
     /// <p>The persona.</p>
     pub fn get_persona(&self) -> &::std::option::Option<crate::types::LaunchProfilePersona> {
@@ -58,8 +56,7 @@ impl NewLaunchProfileMemberBuilder {
     }
     /// <p>The principal ID.</p>
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal_id = input;
-        self
+        self.principal_id = input; self
     }
     /// <p>The principal ID.</p>
     pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,19 +67,20 @@ impl NewLaunchProfileMemberBuilder {
     /// - [`persona`](crate::types::builders::NewLaunchProfileMemberBuilder::persona)
     /// - [`principal_id`](crate::types::builders::NewLaunchProfileMemberBuilder::principal_id)
     pub fn build(self) -> ::std::result::Result<crate::types::NewLaunchProfileMember, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::NewLaunchProfileMember {
-            persona: self.persona.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "persona",
-                    "persona was not specified but it is required when building NewLaunchProfileMember",
-                )
-            })?,
-            principal_id: self.principal_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "principal_id",
-                    "principal_id was not specified but it is required when building NewLaunchProfileMember",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::NewLaunchProfileMember {
+                persona: self.persona
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("persona", "persona was not specified but it is required when building NewLaunchProfileMember")
+                    )?
+                ,
+                principal_id: self.principal_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("principal_id", "principal_id was not specified but it is required when building NewLaunchProfileMember")
+                    )?
+                ,
+            }
+        )
     }
 }
+

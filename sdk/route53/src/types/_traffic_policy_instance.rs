@@ -3,7 +3,7 @@
 /// <p>A complex type that contains settings for the new traffic policy instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrafficPolicyInstance {
+pub struct TrafficPolicyInstance  {
     /// <p>The ID that Amazon Route 53 assigned to the new traffic policy instance.</p>
     pub id: ::std::string::String,
     /// <p>The ID of the hosted zone that Amazon Route 53 created resource record sets in.</p>
@@ -43,21 +43,18 @@ pub struct TrafficPolicyInstance {
     /// <p>The DNS type that Amazon Route 53 assigned to all of the resource record sets that it created for this traffic policy instance.</p>
     pub traffic_policy_type: crate::types::RrType,
 }
-impl TrafficPolicyInstance {
+impl  TrafficPolicyInstance  {
     /// <p>The ID that Amazon Route 53 assigned to the new traffic policy instance.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The ID of the hosted zone that Amazon Route 53 created resource record sets in.</p>
-    pub fn hosted_zone_id(&self) -> &str {
-        use std::ops::Deref;
-        self.hosted_zone_id.deref()
+    pub fn hosted_zone_id(&self) -> & str {
+        use std::ops::Deref; self.hosted_zone_id.deref()
     }
     /// <p>The DNS name, such as www.example.com, for which Amazon Route 53 responds to queries by using the resource record sets that are associated with this traffic policy instance.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The TTL that Amazon Route 53 assigned to all of the resource record sets that it created in the specified hosted zone.</p>
     pub fn ttl(&self) -> i64 {
@@ -84,26 +81,23 @@ impl TrafficPolicyInstance {
     /// <p>Route 53 wasn't able to create or update the resource record sets. When the value of <code>State</code> is <code>Failed</code>, see <code>Message</code> for an explanation of what caused the request to fail.</p>
     /// </dd>
     /// </dl>
-    pub fn state(&self) -> &str {
-        use std::ops::Deref;
-        self.state.deref()
+    pub fn state(&self) -> & str {
+        use std::ops::Deref; self.state.deref()
     }
     /// <p>If <code>State</code> is <code>Failed</code>, an explanation of the reason for the failure. If <code>State</code> is another value, <code>Message</code> is empty.</p>
-    pub fn message(&self) -> &str {
-        use std::ops::Deref;
-        self.message.deref()
+    pub fn message(&self) -> & str {
+        use std::ops::Deref; self.message.deref()
     }
     /// <p>The ID of the traffic policy that Amazon Route 53 used to create resource record sets in the specified hosted zone.</p>
-    pub fn traffic_policy_id(&self) -> &str {
-        use std::ops::Deref;
-        self.traffic_policy_id.deref()
+    pub fn traffic_policy_id(&self) -> & str {
+        use std::ops::Deref; self.traffic_policy_id.deref()
     }
     /// <p>The version of the traffic policy that Amazon Route 53 used to create resource record sets in the specified hosted zone.</p>
     pub fn traffic_policy_version(&self) -> i32 {
         self.traffic_policy_version
     }
     /// <p>The DNS type that Amazon Route 53 assigned to all of the resource record sets that it created for this traffic policy instance.</p>
-    pub fn traffic_policy_type(&self) -> &crate::types::RrType {
+    pub fn traffic_policy_type(&self) -> & crate::types::RrType {
         &self.traffic_policy_type
     }
 }
@@ -137,8 +131,7 @@ impl TrafficPolicyInstanceBuilder {
     }
     /// <p>The ID that Amazon Route 53 assigned to the new traffic policy instance.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID that Amazon Route 53 assigned to the new traffic policy instance.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +145,7 @@ impl TrafficPolicyInstanceBuilder {
     }
     /// <p>The ID of the hosted zone that Amazon Route 53 created resource record sets in.</p>
     pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hosted_zone_id = input;
-        self
+        self.hosted_zone_id = input; self
     }
     /// <p>The ID of the hosted zone that Amazon Route 53 created resource record sets in.</p>
     pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +159,7 @@ impl TrafficPolicyInstanceBuilder {
     }
     /// <p>The DNS name, such as www.example.com, for which Amazon Route 53 responds to queries by using the resource record sets that are associated with this traffic policy instance.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The DNS name, such as www.example.com, for which Amazon Route 53 responds to queries by using the resource record sets that are associated with this traffic policy instance.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -182,8 +173,7 @@ impl TrafficPolicyInstanceBuilder {
     }
     /// <p>The TTL that Amazon Route 53 assigned to all of the resource record sets that it created in the specified hosted zone.</p>
     pub fn set_ttl(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.ttl = input;
-        self
+        self.ttl = input; self
     }
     /// <p>The TTL that Amazon Route 53 assigned to all of the resource record sets that it created in the specified hosted zone.</p>
     pub fn get_ttl(&self) -> &::std::option::Option<i64> {
@@ -237,8 +227,7 @@ impl TrafficPolicyInstanceBuilder {
     /// </dd>
     /// </dl>
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The value of <code>State</code> is one of the following values:</p>
     /// <dl>
@@ -272,8 +261,7 @@ impl TrafficPolicyInstanceBuilder {
     }
     /// <p>If <code>State</code> is <code>Failed</code>, an explanation of the reason for the failure. If <code>State</code> is another value, <code>Message</code> is empty.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>If <code>State</code> is <code>Failed</code>, an explanation of the reason for the failure. If <code>State</code> is another value, <code>Message</code> is empty.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -287,8 +275,7 @@ impl TrafficPolicyInstanceBuilder {
     }
     /// <p>The ID of the traffic policy that Amazon Route 53 used to create resource record sets in the specified hosted zone.</p>
     pub fn set_traffic_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.traffic_policy_id = input;
-        self
+        self.traffic_policy_id = input; self
     }
     /// <p>The ID of the traffic policy that Amazon Route 53 used to create resource record sets in the specified hosted zone.</p>
     pub fn get_traffic_policy_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -302,8 +289,7 @@ impl TrafficPolicyInstanceBuilder {
     }
     /// <p>The version of the traffic policy that Amazon Route 53 used to create resource record sets in the specified hosted zone.</p>
     pub fn set_traffic_policy_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.traffic_policy_version = input;
-        self
+        self.traffic_policy_version = input; self
     }
     /// <p>The version of the traffic policy that Amazon Route 53 used to create resource record sets in the specified hosted zone.</p>
     pub fn get_traffic_policy_version(&self) -> &::std::option::Option<i32> {
@@ -317,8 +303,7 @@ impl TrafficPolicyInstanceBuilder {
     }
     /// <p>The DNS type that Amazon Route 53 assigned to all of the resource record sets that it created for this traffic policy instance.</p>
     pub fn set_traffic_policy_type(mut self, input: ::std::option::Option<crate::types::RrType>) -> Self {
-        self.traffic_policy_type = input;
-        self
+        self.traffic_policy_type = input; self
     }
     /// <p>The DNS type that Amazon Route 53 assigned to all of the resource record sets that it created for this traffic policy instance.</p>
     pub fn get_traffic_policy_type(&self) -> &::std::option::Option<crate::types::RrType> {
@@ -336,61 +321,55 @@ impl TrafficPolicyInstanceBuilder {
     /// - [`traffic_policy_version`](crate::types::builders::TrafficPolicyInstanceBuilder::traffic_policy_version)
     /// - [`traffic_policy_type`](crate::types::builders::TrafficPolicyInstanceBuilder::traffic_policy_type)
     pub fn build(self) -> ::std::result::Result<crate::types::TrafficPolicyInstance, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TrafficPolicyInstance {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building TrafficPolicyInstance",
-                )
-            })?,
-            hosted_zone_id: self.hosted_zone_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "hosted_zone_id",
-                    "hosted_zone_id was not specified but it is required when building TrafficPolicyInstance",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building TrafficPolicyInstance",
-                )
-            })?,
-            ttl: self.ttl.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ttl",
-                    "ttl was not specified but it is required when building TrafficPolicyInstance",
-                )
-            })?,
-            state: self.state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state",
-                    "state was not specified but it is required when building TrafficPolicyInstance",
-                )
-            })?,
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building TrafficPolicyInstance",
-                )
-            })?,
-            traffic_policy_id: self.traffic_policy_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "traffic_policy_id",
-                    "traffic_policy_id was not specified but it is required when building TrafficPolicyInstance",
-                )
-            })?,
-            traffic_policy_version: self.traffic_policy_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "traffic_policy_version",
-                    "traffic_policy_version was not specified but it is required when building TrafficPolicyInstance",
-                )
-            })?,
-            traffic_policy_type: self.traffic_policy_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "traffic_policy_type",
-                    "traffic_policy_type was not specified but it is required when building TrafficPolicyInstance",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TrafficPolicyInstance {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building TrafficPolicyInstance")
+                    )?
+                ,
+                hosted_zone_id: self.hosted_zone_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("hosted_zone_id", "hosted_zone_id was not specified but it is required when building TrafficPolicyInstance")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building TrafficPolicyInstance")
+                    )?
+                ,
+                ttl: self.ttl
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ttl", "ttl was not specified but it is required when building TrafficPolicyInstance")
+                    )?
+                ,
+                state: self.state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state", "state was not specified but it is required when building TrafficPolicyInstance")
+                    )?
+                ,
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building TrafficPolicyInstance")
+                    )?
+                ,
+                traffic_policy_id: self.traffic_policy_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("traffic_policy_id", "traffic_policy_id was not specified but it is required when building TrafficPolicyInstance")
+                    )?
+                ,
+                traffic_policy_version: self.traffic_policy_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("traffic_policy_version", "traffic_policy_version was not specified but it is required when building TrafficPolicyInstance")
+                    )?
+                ,
+                traffic_policy_type: self.traffic_policy_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("traffic_policy_type", "traffic_policy_type was not specified but it is required when building TrafficPolicyInstance")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -78,3 +78,4 @@ pub mod update_app_authorization;
 
 /// Types for the `UpdateIngestionDestination` operation.
 pub mod update_ingestion_destination;
+

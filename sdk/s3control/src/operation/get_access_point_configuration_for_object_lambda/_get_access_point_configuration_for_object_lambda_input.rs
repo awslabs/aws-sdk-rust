@@ -2,28 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAccessPointConfigurationForObjectLambdaInput {
+pub struct GetAccessPointConfigurationForObjectLambdaInput  {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Object Lambda Access Point you want to return the configuration for.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl GetAccessPointConfigurationForObjectLambdaInput {
+impl  GetAccessPointConfigurationForObjectLambdaInput  {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the Object Lambda Access Point you want to return the configuration for.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl GetAccessPointConfigurationForObjectLambdaInput {
     /// Creates a new builder-style object to manufacture [`GetAccessPointConfigurationForObjectLambdaInput`](crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaInput).
-    pub fn builder(
-    ) -> crate::operation::get_access_point_configuration_for_object_lambda::builders::GetAccessPointConfigurationForObjectLambdaInputBuilder {
-        crate::operation::get_access_point_configuration_for_object_lambda::builders::GetAccessPointConfigurationForObjectLambdaInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_access_point_configuration_for_object_lambda::builders::GetAccessPointConfigurationForObjectLambdaInputBuilder {
+        crate::operation::get_access_point_configuration_for_object_lambda::builders::GetAccessPointConfigurationForObjectLambdaInputBuilder::default()
     }
 }
 
@@ -43,8 +41,7 @@ impl GetAccessPointConfigurationForObjectLambdaInputBuilder {
     }
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,25 +55,22 @@ impl GetAccessPointConfigurationForObjectLambdaInputBuilder {
     }
     /// <p>The name of the Object Lambda Access Point you want to return the configuration for.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Object Lambda Access Point you want to return the configuration for.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetAccessPointConfigurationForObjectLambdaInput`](crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaInput {
-                account_id: self.account_id,
-                name: self.name,
-            },
+                account_id: self.account_id
+                ,
+                name: self.name
+                ,
+            }
         )
     }
 }
+

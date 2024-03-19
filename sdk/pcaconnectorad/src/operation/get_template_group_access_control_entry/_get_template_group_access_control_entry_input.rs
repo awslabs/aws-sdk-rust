@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTemplateGroupAccessControlEntryInput {
+pub struct GetTemplateGroupAccessControlEntryInput  {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
     pub template_arn: ::std::option::Option<::std::string::String>,
     /// <p>Security identifier (SID) of the group object from Active Directory. The SID starts with "S-".</p>
     pub group_security_identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetTemplateGroupAccessControlEntryInput {
+impl  GetTemplateGroupAccessControlEntryInput  {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
-    pub fn template_arn(&self) -> ::std::option::Option<&str> {
+    pub fn template_arn(&self) -> ::std::option::Option<& str> {
         self.template_arn.as_deref()
     }
     /// <p>Security identifier (SID) of the group object from Active Directory. The SID starts with "S-".</p>
-    pub fn group_security_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn group_security_identifier(&self) -> ::std::option::Option<& str> {
         self.group_security_identifier.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetTemplateGroupAccessControlEntryInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
     pub fn set_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_arn = input;
-        self
+        self.template_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
     pub fn get_template_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl GetTemplateGroupAccessControlEntryInputBuilder {
     }
     /// <p>Security identifier (SID) of the group object from Active Directory. The SID starts with "S-".</p>
     pub fn set_group_security_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_security_identifier = input;
-        self
+        self.group_security_identifier = input; self
     }
     /// <p>Security identifier (SID) of the group object from Active Directory. The SID starts with "S-".</p>
     pub fn get_group_security_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_security_identifier
     }
     /// Consumes the builder and constructs a [`GetTemplateGroupAccessControlEntryInput`](crate::operation::get_template_group_access_control_entry::GetTemplateGroupAccessControlEntryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_template_group_access_control_entry::GetTemplateGroupAccessControlEntryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_template_group_access_control_entry::GetTemplateGroupAccessControlEntryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_template_group_access_control_entry::GetTemplateGroupAccessControlEntryInput {
-                template_arn: self.template_arn,
-                group_security_identifier: self.group_security_identifier,
-            },
+                template_arn: self.template_arn
+                ,
+                group_security_identifier: self.group_security_identifier
+                ,
+            }
         )
     }
 }
+

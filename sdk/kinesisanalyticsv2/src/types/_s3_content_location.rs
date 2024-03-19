@@ -3,7 +3,7 @@
 /// <p>For a Managed Service for Apache Flink application provides a description of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3ContentLocation {
+pub struct S3ContentLocation  {
     /// <p>The Amazon Resource Name (ARN) for the S3 bucket containing the application code.</p>
     pub bucket_arn: ::std::string::String,
     /// <p>The file key for the object containing the application code.</p>
@@ -11,19 +11,17 @@ pub struct S3ContentLocation {
     /// <p>The version of the object containing the application code.</p>
     pub object_version: ::std::option::Option<::std::string::String>,
 }
-impl S3ContentLocation {
+impl  S3ContentLocation  {
     /// <p>The Amazon Resource Name (ARN) for the S3 bucket containing the application code.</p>
-    pub fn bucket_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket_arn.deref()
+    pub fn bucket_arn(&self) -> & str {
+        use std::ops::Deref; self.bucket_arn.deref()
     }
     /// <p>The file key for the object containing the application code.</p>
-    pub fn file_key(&self) -> &str {
-        use std::ops::Deref;
-        self.file_key.deref()
+    pub fn file_key(&self) -> & str {
+        use std::ops::Deref; self.file_key.deref()
     }
     /// <p>The version of the object containing the application code.</p>
-    pub fn object_version(&self) -> ::std::option::Option<&str> {
+    pub fn object_version(&self) -> ::std::option::Option<& str> {
         self.object_version.as_deref()
     }
 }
@@ -51,8 +49,7 @@ impl S3ContentLocationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the S3 bucket containing the application code.</p>
     pub fn set_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_arn = input;
-        self
+        self.bucket_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the S3 bucket containing the application code.</p>
     pub fn get_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl S3ContentLocationBuilder {
     }
     /// <p>The file key for the object containing the application code.</p>
     pub fn set_file_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_key = input;
-        self
+        self.file_key = input; self
     }
     /// <p>The file key for the object containing the application code.</p>
     pub fn get_file_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl S3ContentLocationBuilder {
     }
     /// <p>The version of the object containing the application code.</p>
     pub fn set_object_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object_version = input;
-        self
+        self.object_version = input; self
     }
     /// <p>The version of the object containing the application code.</p>
     pub fn get_object_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,20 +87,22 @@ impl S3ContentLocationBuilder {
     /// - [`bucket_arn`](crate::types::builders::S3ContentLocationBuilder::bucket_arn)
     /// - [`file_key`](crate::types::builders::S3ContentLocationBuilder::file_key)
     pub fn build(self) -> ::std::result::Result<crate::types::S3ContentLocation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3ContentLocation {
-            bucket_arn: self.bucket_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket_arn",
-                    "bucket_arn was not specified but it is required when building S3ContentLocation",
-                )
-            })?,
-            file_key: self.file_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "file_key",
-                    "file_key was not specified but it is required when building S3ContentLocation",
-                )
-            })?,
-            object_version: self.object_version,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3ContentLocation {
+                bucket_arn: self.bucket_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket_arn", "bucket_arn was not specified but it is required when building S3ContentLocation")
+                    )?
+                ,
+                file_key: self.file_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("file_key", "file_key was not specified but it is required when building S3ContentLocation")
+                    )?
+                ,
+                object_version: self.object_version
+                ,
+            }
+        )
     }
 }
+

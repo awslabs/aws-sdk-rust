@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutAutoScalingPolicyOutput {
+pub struct PutAutoScalingPolicyOutput  {
     /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
     pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the ID of the instance group to which the scaling policy is applied.</p>
@@ -13,29 +13,29 @@ pub struct PutAutoScalingPolicyOutput {
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl PutAutoScalingPolicyOutput {
+impl  PutAutoScalingPolicyOutput  {
     /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
-    pub fn cluster_id(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_id(&self) -> ::std::option::Option<& str> {
         self.cluster_id.as_deref()
     }
     /// <p>Specifies the ID of the instance group to which the scaling policy is applied.</p>
-    pub fn instance_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_group_id(&self) -> ::std::option::Option<& str> {
         self.instance_group_id.as_deref()
     }
     /// <p>The automatic scaling policy definition.</p>
-    pub fn auto_scaling_policy(&self) -> ::std::option::Option<&crate::types::AutoScalingPolicyDescription> {
+    pub fn auto_scaling_policy(&self) -> ::std::option::Option<& crate::types::AutoScalingPolicyDescription> {
         self.auto_scaling_policy.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> ::std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for PutAutoScalingPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutAutoScalingPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutAutoScalingPolicyOutput`](crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyOutput).
     pub fn builder() -> crate::operation::put_auto_scaling_policy::builders::PutAutoScalingPolicyOutputBuilder {
@@ -61,8 +61,7 @@ impl PutAutoScalingPolicyOutputBuilder {
     }
     /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
     pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_id = input;
-        self
+        self.cluster_id = input; self
     }
     /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
     pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl PutAutoScalingPolicyOutputBuilder {
     }
     /// <p>Specifies the ID of the instance group to which the scaling policy is applied.</p>
     pub fn set_instance_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_group_id = input;
-        self
+        self.instance_group_id = input; self
     }
     /// <p>Specifies the ID of the instance group to which the scaling policy is applied.</p>
     pub fn get_instance_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl PutAutoScalingPolicyOutputBuilder {
     }
     /// <p>The automatic scaling policy definition.</p>
     pub fn set_auto_scaling_policy(mut self, input: ::std::option::Option<crate::types::AutoScalingPolicyDescription>) -> Self {
-        self.auto_scaling_policy = input;
-        self
+        self.auto_scaling_policy = input; self
     }
     /// <p>The automatic scaling policy definition.</p>
     pub fn get_auto_scaling_policy(&self) -> &::std::option::Option<crate::types::AutoScalingPolicyDescription> {
@@ -103,30 +100,34 @@ impl PutAutoScalingPolicyOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutAutoScalingPolicyOutput`](crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyOutput).
     pub fn build(self) -> crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyOutput {
         crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyOutput {
-            cluster_id: self.cluster_id,
-            instance_group_id: self.instance_group_id,
-            auto_scaling_policy: self.auto_scaling_policy,
-            cluster_arn: self.cluster_arn,
+            cluster_id: self.cluster_id
+            ,
+            instance_group_id: self.instance_group_id
+            ,
+            auto_scaling_policy: self.auto_scaling_policy
+            ,
+            cluster_arn: self.cluster_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

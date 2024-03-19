@@ -3,22 +3,22 @@
 /// <p>The structure representing the RemoveNotificationChannelResponse.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveNotificationChannelOutput {
+pub struct RemoveNotificationChannelOutput  {
     /// <p>The new notification configuration for this profiling group.</p>
     pub notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
     _request_id: Option<String>,
 }
-impl RemoveNotificationChannelOutput {
+impl  RemoveNotificationChannelOutput  {
     /// <p>The new notification configuration for this profiling group.</p>
-    pub fn notification_configuration(&self) -> ::std::option::Option<&crate::types::NotificationConfiguration> {
+    pub fn notification_configuration(&self) -> ::std::option::Option<& crate::types::NotificationConfiguration> {
         self.notification_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for RemoveNotificationChannelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RemoveNotificationChannelOutput {
     /// Creates a new builder-style object to manufacture [`RemoveNotificationChannelOutput`](crate::operation::remove_notification_channel::RemoveNotificationChannelOutput).
     pub fn builder() -> crate::operation::remove_notification_channel::builders::RemoveNotificationChannelOutputBuilder {
@@ -41,27 +41,28 @@ impl RemoveNotificationChannelOutputBuilder {
     }
     /// <p>The new notification configuration for this profiling group.</p>
     pub fn set_notification_configuration(mut self, input: ::std::option::Option<crate::types::NotificationConfiguration>) -> Self {
-        self.notification_configuration = input;
-        self
+        self.notification_configuration = input; self
     }
     /// <p>The new notification configuration for this profiling group.</p>
     pub fn get_notification_configuration(&self) -> &::std::option::Option<crate::types::NotificationConfiguration> {
         &self.notification_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RemoveNotificationChannelOutput`](crate::operation::remove_notification_channel::RemoveNotificationChannelOutput).
     pub fn build(self) -> crate::operation::remove_notification_channel::RemoveNotificationChannelOutput {
         crate::operation::remove_notification_channel::RemoveNotificationChannelOutput {
-            notification_configuration: self.notification_configuration,
+            notification_configuration: self.notification_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

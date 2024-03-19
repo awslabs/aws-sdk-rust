@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let clientcompatibilityv3 = unimplemented!();
 /// match clientcompatibilityv3 {
@@ -33,16 +33,14 @@
 /// Specifically, when `clientcompatibilityv3` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ClientCompatibilityV3::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ClientCompatibilityV3 {
     #[allow(missing_docs)] // documentation missing in model
     WindowsServer2008,
@@ -56,76 +54,71 @@ pub enum ClientCompatibilityV3 {
     WindowsServer2016,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ClientCompatibilityV3 {
-    fn from(s: &str) -> Self {
-        match s {
-            "WINDOWS_SERVER_2008" => ClientCompatibilityV3::WindowsServer2008,
-            "WINDOWS_SERVER_2008_R2" => ClientCompatibilityV3::WindowsServer2008R2,
-            "WINDOWS_SERVER_2012" => ClientCompatibilityV3::WindowsServer2012,
-            "WINDOWS_SERVER_2012_R2" => ClientCompatibilityV3::WindowsServer2012R2,
-            "WINDOWS_SERVER_2016" => ClientCompatibilityV3::WindowsServer2016,
-            other => ClientCompatibilityV3::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "WINDOWS_SERVER_2008" => ClientCompatibilityV3::WindowsServer2008,
+"WINDOWS_SERVER_2008_R2" => ClientCompatibilityV3::WindowsServer2008R2,
+"WINDOWS_SERVER_2012" => ClientCompatibilityV3::WindowsServer2012,
+"WINDOWS_SERVER_2012_R2" => ClientCompatibilityV3::WindowsServer2012R2,
+"WINDOWS_SERVER_2016" => ClientCompatibilityV3::WindowsServer2016,
+other => ClientCompatibilityV3::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ClientCompatibilityV3 {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ClientCompatibilityV3::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ClientCompatibilityV3::from(s))
+                    }
+                }
 impl ClientCompatibilityV3 {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ClientCompatibilityV3::WindowsServer2008 => "WINDOWS_SERVER_2008",
-            ClientCompatibilityV3::WindowsServer2008R2 => "WINDOWS_SERVER_2008_R2",
-            ClientCompatibilityV3::WindowsServer2012 => "WINDOWS_SERVER_2012",
-            ClientCompatibilityV3::WindowsServer2012R2 => "WINDOWS_SERVER_2012_R2",
-            ClientCompatibilityV3::WindowsServer2016 => "WINDOWS_SERVER_2016",
-            ClientCompatibilityV3::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "WINDOWS_SERVER_2008",
-            "WINDOWS_SERVER_2008_R2",
-            "WINDOWS_SERVER_2012",
-            "WINDOWS_SERVER_2012_R2",
-            "WINDOWS_SERVER_2016",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ClientCompatibilityV3::WindowsServer2008 => "WINDOWS_SERVER_2008",
+    ClientCompatibilityV3::WindowsServer2008R2 => "WINDOWS_SERVER_2008_R2",
+    ClientCompatibilityV3::WindowsServer2012 => "WINDOWS_SERVER_2012",
+    ClientCompatibilityV3::WindowsServer2012R2 => "WINDOWS_SERVER_2012_R2",
+    ClientCompatibilityV3::WindowsServer2016 => "WINDOWS_SERVER_2016",
+    ClientCompatibilityV3::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["WINDOWS_SERVER_2008", "WINDOWS_SERVER_2008_R2", "WINDOWS_SERVER_2012", "WINDOWS_SERVER_2012_R2", "WINDOWS_SERVER_2016"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ClientCompatibilityV3 {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ClientCompatibilityV3 {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ClientCompatibilityV3 {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ClientCompatibilityV3::WindowsServer2008 => write!(f, "WINDOWS_SERVER_2008"),
-            ClientCompatibilityV3::WindowsServer2008R2 => write!(f, "WINDOWS_SERVER_2008_R2"),
-            ClientCompatibilityV3::WindowsServer2012 => write!(f, "WINDOWS_SERVER_2012"),
-            ClientCompatibilityV3::WindowsServer2012R2 => write!(f, "WINDOWS_SERVER_2012_R2"),
-            ClientCompatibilityV3::WindowsServer2016 => write!(f, "WINDOWS_SERVER_2016"),
-            ClientCompatibilityV3::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ClientCompatibilityV3::WindowsServer2008 => write!(f, "WINDOWS_SERVER_2008"),
+ClientCompatibilityV3::WindowsServer2008R2 => write!(f, "WINDOWS_SERVER_2008_R2"),
+ClientCompatibilityV3::WindowsServer2012 => write!(f, "WINDOWS_SERVER_2012"),
+ClientCompatibilityV3::WindowsServer2012R2 => write!(f, "WINDOWS_SERVER_2012_R2"),
+ClientCompatibilityV3::WindowsServer2016 => write!(f, "WINDOWS_SERVER_2016"),
+ClientCompatibilityV3::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

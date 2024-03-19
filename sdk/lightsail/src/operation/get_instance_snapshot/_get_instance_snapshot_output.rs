@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetInstanceSnapshotOutput {
+pub struct GetInstanceSnapshotOutput  {
     /// <p>An array of key-value pairs containing information about the results of your get instance snapshot request.</p>
     pub instance_snapshot: ::std::option::Option<crate::types::InstanceSnapshot>,
     _request_id: Option<String>,
 }
-impl GetInstanceSnapshotOutput {
+impl  GetInstanceSnapshotOutput  {
     /// <p>An array of key-value pairs containing information about the results of your get instance snapshot request.</p>
-    pub fn instance_snapshot(&self) -> ::std::option::Option<&crate::types::InstanceSnapshot> {
+    pub fn instance_snapshot(&self) -> ::std::option::Option<& crate::types::InstanceSnapshot> {
         self.instance_snapshot.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetInstanceSnapshotOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetInstanceSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`GetInstanceSnapshotOutput`](crate::operation::get_instance_snapshot::GetInstanceSnapshotOutput).
     pub fn builder() -> crate::operation::get_instance_snapshot::builders::GetInstanceSnapshotOutputBuilder {
@@ -40,27 +40,28 @@ impl GetInstanceSnapshotOutputBuilder {
     }
     /// <p>An array of key-value pairs containing information about the results of your get instance snapshot request.</p>
     pub fn set_instance_snapshot(mut self, input: ::std::option::Option<crate::types::InstanceSnapshot>) -> Self {
-        self.instance_snapshot = input;
-        self
+        self.instance_snapshot = input; self
     }
     /// <p>An array of key-value pairs containing information about the results of your get instance snapshot request.</p>
     pub fn get_instance_snapshot(&self) -> &::std::option::Option<crate::types::InstanceSnapshot> {
         &self.instance_snapshot
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetInstanceSnapshotOutput`](crate::operation::get_instance_snapshot::GetInstanceSnapshotOutput).
     pub fn build(self) -> crate::operation::get_instance_snapshot::GetInstanceSnapshotOutput {
         crate::operation::get_instance_snapshot::GetInstanceSnapshotOutput {
-            instance_snapshot: self.instance_snapshot,
+            instance_snapshot: self.instance_snapshot
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

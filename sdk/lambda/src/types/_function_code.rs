@@ -3,7 +3,7 @@
 /// <p>The code for the Lambda function. You can either specify an object in Amazon S3, upload a .zip file archive deployment package directly, or specify the URI of a container image.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct FunctionCode {
+pub struct FunctionCode  {
     /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and CLI clients handle the encoding for you.</p>
     pub zip_file: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account.</p>
@@ -15,29 +15,29 @@ pub struct FunctionCode {
     /// <p>URI of a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a> in the Amazon ECR registry.</p>
     pub image_uri: ::std::option::Option<::std::string::String>,
 }
-impl FunctionCode {
+impl  FunctionCode  {
     /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and CLI clients handle the encoding for you.</p>
-    pub fn zip_file(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn zip_file(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.zip_file.as_ref()
     }
     /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account.</p>
-    pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> ::std::option::Option<& str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The Amazon S3 key of the deployment package.</p>
-    pub fn s3_key(&self) -> ::std::option::Option<&str> {
+    pub fn s3_key(&self) -> ::std::option::Option<& str> {
         self.s3_key.as_deref()
     }
     /// <p>For versioned objects, the version of the deployment package object to use.</p>
-    pub fn s3_object_version(&self) -> ::std::option::Option<&str> {
+    pub fn s3_object_version(&self) -> ::std::option::Option<& str> {
         self.s3_object_version.as_deref()
     }
     /// <p>URI of a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a> in the Amazon ECR registry.</p>
-    pub fn image_uri(&self) -> ::std::option::Option<&str> {
+    pub fn image_uri(&self) -> ::std::option::Option<& str> {
         self.image_uri.as_deref()
     }
 }
-impl ::std::fmt::Debug for FunctionCode {
+impl  ::std::fmt::Debug for FunctionCode  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("FunctionCode");
         formatter.field("zip_file", &"*** Sensitive Data Redacted ***");
@@ -73,8 +73,7 @@ impl FunctionCodeBuilder {
     }
     /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and CLI clients handle the encoding for you.</p>
     pub fn set_zip_file(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.zip_file = input;
-        self
+        self.zip_file = input; self
     }
     /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and CLI clients handle the encoding for you.</p>
     pub fn get_zip_file(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -87,8 +86,7 @@ impl FunctionCodeBuilder {
     }
     /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account.</p>
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket = input;
-        self
+        self.s3_bucket = input; self
     }
     /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account.</p>
     pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +99,7 @@ impl FunctionCodeBuilder {
     }
     /// <p>The Amazon S3 key of the deployment package.</p>
     pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_key = input;
-        self
+        self.s3_key = input; self
     }
     /// <p>The Amazon S3 key of the deployment package.</p>
     pub fn get_s3_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +112,7 @@ impl FunctionCodeBuilder {
     }
     /// <p>For versioned objects, the version of the deployment package object to use.</p>
     pub fn set_s3_object_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_object_version = input;
-        self
+        self.s3_object_version = input; self
     }
     /// <p>For versioned objects, the version of the deployment package object to use.</p>
     pub fn get_s3_object_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +125,7 @@ impl FunctionCodeBuilder {
     }
     /// <p>URI of a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a> in the Amazon ECR registry.</p>
     pub fn set_image_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_uri = input;
-        self
+        self.image_uri = input; self
     }
     /// <p>URI of a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a> in the Amazon ECR registry.</p>
     pub fn get_image_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,11 +134,16 @@ impl FunctionCodeBuilder {
     /// Consumes the builder and constructs a [`FunctionCode`](crate::types::FunctionCode).
     pub fn build(self) -> crate::types::FunctionCode {
         crate::types::FunctionCode {
-            zip_file: self.zip_file,
-            s3_bucket: self.s3_bucket,
-            s3_key: self.s3_key,
-            s3_object_version: self.s3_object_version,
-            image_uri: self.image_uri,
+            zip_file: self.zip_file
+            ,
+            s3_bucket: self.s3_bucket
+            ,
+            s3_key: self.s3_key
+            ,
+            s3_object_version: self.s3_object_version
+            ,
+            image_uri: self.image_uri
+            ,
         }
     }
 }
@@ -158,3 +158,4 @@ impl ::std::fmt::Debug for FunctionCodeBuilder {
         formatter.finish()
     }
 }
+

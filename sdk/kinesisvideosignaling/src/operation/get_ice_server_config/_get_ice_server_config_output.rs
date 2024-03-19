@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetIceServerConfigOutput {
+pub struct GetIceServerConfigOutput  {
     /// <p>The list of ICE server information objects.</p>
-    pub ice_server_list: ::std::option::Option<::std::vec::Vec<crate::types::IceServer>>,
+    pub ice_server_list: ::std::option::Option<::std::vec::Vec::<crate::types::IceServer>>,
     _request_id: Option<String>,
 }
-impl GetIceServerConfigOutput {
+impl  GetIceServerConfigOutput  {
     /// <p>The list of ICE server information objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ice_server_list.is_none()`.
-    pub fn ice_server_list(&self) -> &[crate::types::IceServer] {
-        self.ice_server_list.as_deref().unwrap_or_default()
+    pub fn ice_server_list(&self) -> & [crate::types::IceServer] {
+        self.ice_server_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetIceServerConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetIceServerConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetIceServerConfigOutput`](crate::operation::get_ice_server_config::GetIceServerConfigOutput).
     pub fn builder() -> crate::operation::get_ice_server_config::builders::GetIceServerConfigOutputBuilder {
@@ -31,7 +32,7 @@ impl GetIceServerConfigOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetIceServerConfigOutputBuilder {
-    pub(crate) ice_server_list: ::std::option::Option<::std::vec::Vec<crate::types::IceServer>>,
+    pub(crate) ice_server_list: ::std::option::Option<::std::vec::Vec::<crate::types::IceServer>>,
     _request_id: Option<String>,
 }
 impl GetIceServerConfigOutputBuilder {
@@ -42,33 +43,34 @@ impl GetIceServerConfigOutputBuilder {
     /// <p>The list of ICE server information objects.</p>
     pub fn ice_server_list(mut self, input: crate::types::IceServer) -> Self {
         let mut v = self.ice_server_list.unwrap_or_default();
-        v.push(input);
-        self.ice_server_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ice_server_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of ICE server information objects.</p>
-    pub fn set_ice_server_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IceServer>>) -> Self {
-        self.ice_server_list = input;
-        self
+    pub fn set_ice_server_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IceServer>>) -> Self {
+        self.ice_server_list = input; self
     }
     /// <p>The list of ICE server information objects.</p>
-    pub fn get_ice_server_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IceServer>> {
+    pub fn get_ice_server_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IceServer>> {
         &self.ice_server_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetIceServerConfigOutput`](crate::operation::get_ice_server_config::GetIceServerConfigOutput).
     pub fn build(self) -> crate::operation::get_ice_server_config::GetIceServerConfigOutput {
         crate::operation::get_ice_server_config::GetIceServerConfigOutput {
-            ice_server_list: self.ice_server_list,
+            ice_server_list: self.ice_server_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

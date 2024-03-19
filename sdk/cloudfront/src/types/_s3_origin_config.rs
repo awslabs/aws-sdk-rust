@@ -3,7 +3,7 @@
 /// <p>A complex type that contains information about the Amazon S3 origin. If the origin is a custom origin or an S3 bucket that is configured as a website endpoint, use the <code>CustomOriginConfig</code> element instead.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3OriginConfig {
+pub struct S3OriginConfig  {
     /// <p>The CloudFront origin access identity to associate with the origin. Use an origin access identity to configure the origin so that viewers can <i>only</i> access objects in an Amazon S3 bucket through CloudFront. The format of the value is:</p>
     /// <p>origin-access-identity/cloudfront/<i>ID-of-origin-access-identity</i></p>
     /// <p>where <code> <i>ID-of-origin-access-identity</i> </code> is the value that CloudFront returned in the <code>ID</code> element when you created the origin access identity.</p>
@@ -13,7 +13,7 @@ pub struct S3OriginConfig {
     /// <p>For more information about the origin access identity, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub origin_access_identity: ::std::string::String,
 }
-impl S3OriginConfig {
+impl  S3OriginConfig  {
     /// <p>The CloudFront origin access identity to associate with the origin. Use an origin access identity to configure the origin so that viewers can <i>only</i> access objects in an Amazon S3 bucket through CloudFront. The format of the value is:</p>
     /// <p>origin-access-identity/cloudfront/<i>ID-of-origin-access-identity</i></p>
     /// <p>where <code> <i>ID-of-origin-access-identity</i> </code> is the value that CloudFront returned in the <code>ID</code> element when you created the origin access identity.</p>
@@ -21,9 +21,8 @@ impl S3OriginConfig {
     /// <p>To delete the origin access identity from an existing distribution, update the distribution configuration and include an empty <code>OriginAccessIdentity</code> element.</p>
     /// <p>To replace the origin access identity, update the distribution configuration and specify the new origin access identity.</p>
     /// <p>For more information about the origin access identity, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn origin_access_identity(&self) -> &str {
-        use std::ops::Deref;
-        self.origin_access_identity.deref()
+    pub fn origin_access_identity(&self) -> & str {
+        use std::ops::Deref; self.origin_access_identity.deref()
     }
 }
 impl S3OriginConfig {
@@ -60,8 +59,7 @@ impl S3OriginConfigBuilder {
     /// <p>To replace the origin access identity, update the distribution configuration and specify the new origin access identity.</p>
     /// <p>For more information about the origin access identity, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn set_origin_access_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.origin_access_identity = input;
-        self
+        self.origin_access_identity = input; self
     }
     /// <p>The CloudFront origin access identity to associate with the origin. Use an origin access identity to configure the origin so that viewers can <i>only</i> access objects in an Amazon S3 bucket through CloudFront. The format of the value is:</p>
     /// <p>origin-access-identity/cloudfront/<i>ID-of-origin-access-identity</i></p>
@@ -77,13 +75,15 @@ impl S3OriginConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`origin_access_identity`](crate::types::builders::S3OriginConfigBuilder::origin_access_identity)
     pub fn build(self) -> ::std::result::Result<crate::types::S3OriginConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3OriginConfig {
-            origin_access_identity: self.origin_access_identity.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "origin_access_identity",
-                    "origin_access_identity was not specified but it is required when building S3OriginConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3OriginConfig {
+                origin_access_identity: self.origin_access_identity
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("origin_access_identity", "origin_access_identity was not specified but it is required when building S3OriginConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDataProviderInput {
+pub struct DeleteDataProviderInput  {
     /// <p>The identifier of the data provider to delete.</p>
     pub data_provider_identifier: ::std::option::Option<::std::string::String>,
 }
-impl DeleteDataProviderInput {
+impl  DeleteDataProviderInput  {
     /// <p>The identifier of the data provider to delete.</p>
-    pub fn data_provider_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn data_provider_identifier(&self) -> ::std::option::Option<& str> {
         self.data_provider_identifier.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteDataProviderInputBuilder {
     }
     /// <p>The identifier of the data provider to delete.</p>
     pub fn set_data_provider_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_provider_identifier = input;
-        self
+        self.data_provider_identifier = input; self
     }
     /// <p>The identifier of the data provider to delete.</p>
     pub fn get_data_provider_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_provider_identifier
     }
     /// Consumes the builder and constructs a [`DeleteDataProviderInput`](crate::operation::delete_data_provider::DeleteDataProviderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_data_provider::DeleteDataProviderInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_data_provider::DeleteDataProviderInput {
-            data_provider_identifier: self.data_provider_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_data_provider::DeleteDataProviderInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_data_provider::DeleteDataProviderInput {
+                data_provider_identifier: self.data_provider_identifier
+                ,
+            }
+        )
     }
 }
+

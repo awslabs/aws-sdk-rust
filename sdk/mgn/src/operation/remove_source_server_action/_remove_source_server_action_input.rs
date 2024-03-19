@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveSourceServerActionInput {
+pub struct RemoveSourceServerActionInput  {
     /// <p>Source server ID of the post migration custom action to remove.</p>
     pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>Source server post migration custom action ID to remove.</p>
@@ -10,17 +10,17 @@ pub struct RemoveSourceServerActionInput {
     /// <p>Source server post migration account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl RemoveSourceServerActionInput {
+impl  RemoveSourceServerActionInput  {
     /// <p>Source server ID of the post migration custom action to remove.</p>
-    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_server_id(&self) -> ::std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
     /// <p>Source server post migration custom action ID to remove.</p>
-    pub fn action_id(&self) -> ::std::option::Option<&str> {
+    pub fn action_id(&self) -> ::std::option::Option<& str> {
         self.action_id.as_deref()
     }
     /// <p>Source server post migration account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl RemoveSourceServerActionInputBuilder {
     }
     /// <p>Source server ID of the post migration custom action to remove.</p>
     pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_server_id = input;
-        self
+        self.source_server_id = input; self
     }
     /// <p>Source server ID of the post migration custom action to remove.</p>
     pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl RemoveSourceServerActionInputBuilder {
     }
     /// <p>Source server post migration custom action ID to remove.</p>
     pub fn set_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_id = input;
-        self
+        self.action_id = input; self
     }
     /// <p>Source server post migration custom action ID to remove.</p>
     pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,24 +75,24 @@ impl RemoveSourceServerActionInputBuilder {
     }
     /// <p>Source server post migration account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>Source server post migration account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`RemoveSourceServerActionInput`](crate::operation::remove_source_server_action::RemoveSourceServerActionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_source_server_action::RemoveSourceServerActionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::remove_source_server_action::RemoveSourceServerActionInput {
-            source_server_id: self.source_server_id,
-            action_id: self.action_id,
-            account_id: self.account_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_source_server_action::RemoveSourceServerActionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::remove_source_server_action::RemoveSourceServerActionInput {
+                source_server_id: self.source_server_id
+                ,
+                action_id: self.action_id
+                ,
+                account_id: self.account_id
+                ,
+            }
+        )
     }
 }
+

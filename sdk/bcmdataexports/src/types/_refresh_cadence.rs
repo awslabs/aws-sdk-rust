@@ -3,13 +3,13 @@
 /// <p>The cadence for Amazon Web Services to update the data export in your S3 bucket.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RefreshCadence {
+pub struct RefreshCadence  {
     /// <p>The frequency that data exports are updated. The export refreshes each time the source data updates, up to three times daily.</p>
     pub frequency: crate::types::FrequencyOption,
 }
-impl RefreshCadence {
+impl  RefreshCadence  {
     /// <p>The frequency that data exports are updated. The export refreshes each time the source data updates, up to three times daily.</p>
-    pub fn frequency(&self) -> &crate::types::FrequencyOption {
+    pub fn frequency(&self) -> & crate::types::FrequencyOption {
         &self.frequency
     }
 }
@@ -35,8 +35,7 @@ impl RefreshCadenceBuilder {
     }
     /// <p>The frequency that data exports are updated. The export refreshes each time the source data updates, up to three times daily.</p>
     pub fn set_frequency(mut self, input: ::std::option::Option<crate::types::FrequencyOption>) -> Self {
-        self.frequency = input;
-        self
+        self.frequency = input; self
     }
     /// <p>The frequency that data exports are updated. The export refreshes each time the source data updates, up to three times daily.</p>
     pub fn get_frequency(&self) -> &::std::option::Option<crate::types::FrequencyOption> {
@@ -46,13 +45,15 @@ impl RefreshCadenceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`frequency`](crate::types::builders::RefreshCadenceBuilder::frequency)
     pub fn build(self) -> ::std::result::Result<crate::types::RefreshCadence, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RefreshCadence {
-            frequency: self.frequency.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "frequency",
-                    "frequency was not specified but it is required when building RefreshCadence",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RefreshCadence {
+                frequency: self.frequency
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("frequency", "frequency was not specified but it is required when building RefreshCadence")
+                    )?
+                ,
+            }
+        )
     }
 }
+

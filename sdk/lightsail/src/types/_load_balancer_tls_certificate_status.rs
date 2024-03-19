@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let loadbalancertlscertificatestatus = unimplemented!();
 /// match loadbalancertlscertificatestatus {
@@ -36,16 +36,14 @@
 /// Specifically, when `loadbalancertlscertificatestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LoadBalancerTlsCertificateStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// _Note: `LoadBalancerTlsCertificateStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum LoadBalancerTlsCertificateStatus {
     #[allow(missing_docs)] // documentation missing in model
     Expired,
@@ -65,88 +63,80 @@ pub enum LoadBalancerTlsCertificateStatus {
     ValidationTimedOut,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for LoadBalancerTlsCertificateStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "EXPIRED" => LoadBalancerTlsCertificateStatus::Expired,
-            "FAILED" => LoadBalancerTlsCertificateStatus::Failed,
-            "INACTIVE" => LoadBalancerTlsCertificateStatus::Inactive,
-            "ISSUED" => LoadBalancerTlsCertificateStatus::Issued,
-            "PENDING_VALIDATION" => LoadBalancerTlsCertificateStatus::PendingValidation,
-            "REVOKED" => LoadBalancerTlsCertificateStatus::Revoked,
-            "UNKNOWN" => LoadBalancerTlsCertificateStatus::UnknownValue,
-            "VALIDATION_TIMED_OUT" => LoadBalancerTlsCertificateStatus::ValidationTimedOut,
-            other => LoadBalancerTlsCertificateStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "EXPIRED" => LoadBalancerTlsCertificateStatus::Expired,
+"FAILED" => LoadBalancerTlsCertificateStatus::Failed,
+"INACTIVE" => LoadBalancerTlsCertificateStatus::Inactive,
+"ISSUED" => LoadBalancerTlsCertificateStatus::Issued,
+"PENDING_VALIDATION" => LoadBalancerTlsCertificateStatus::PendingValidation,
+"REVOKED" => LoadBalancerTlsCertificateStatus::Revoked,
+"UNKNOWN" => LoadBalancerTlsCertificateStatus::UnknownValue,
+"VALIDATION_TIMED_OUT" => LoadBalancerTlsCertificateStatus::ValidationTimedOut,
+other => LoadBalancerTlsCertificateStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for LoadBalancerTlsCertificateStatus {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(LoadBalancerTlsCertificateStatus::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(LoadBalancerTlsCertificateStatus::from(s))
+                    }
+                }
 impl LoadBalancerTlsCertificateStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LoadBalancerTlsCertificateStatus::Expired => "EXPIRED",
-            LoadBalancerTlsCertificateStatus::Failed => "FAILED",
-            LoadBalancerTlsCertificateStatus::Inactive => "INACTIVE",
-            LoadBalancerTlsCertificateStatus::Issued => "ISSUED",
-            LoadBalancerTlsCertificateStatus::PendingValidation => "PENDING_VALIDATION",
-            LoadBalancerTlsCertificateStatus::Revoked => "REVOKED",
-            LoadBalancerTlsCertificateStatus::UnknownValue => "UNKNOWN",
-            LoadBalancerTlsCertificateStatus::ValidationTimedOut => "VALIDATION_TIMED_OUT",
-            LoadBalancerTlsCertificateStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "EXPIRED",
-            "FAILED",
-            "INACTIVE",
-            "ISSUED",
-            "PENDING_VALIDATION",
-            "REVOKED",
-            "UNKNOWN",
-            "VALIDATION_TIMED_OUT",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LoadBalancerTlsCertificateStatus::Expired => "EXPIRED",
+    LoadBalancerTlsCertificateStatus::Failed => "FAILED",
+    LoadBalancerTlsCertificateStatus::Inactive => "INACTIVE",
+    LoadBalancerTlsCertificateStatus::Issued => "ISSUED",
+    LoadBalancerTlsCertificateStatus::PendingValidation => "PENDING_VALIDATION",
+    LoadBalancerTlsCertificateStatus::Revoked => "REVOKED",
+    LoadBalancerTlsCertificateStatus::UnknownValue => "UNKNOWN",
+    LoadBalancerTlsCertificateStatus::ValidationTimedOut => "VALIDATION_TIMED_OUT",
+    LoadBalancerTlsCertificateStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["EXPIRED", "FAILED", "INACTIVE", "ISSUED", "PENDING_VALIDATION", "REVOKED", "UNKNOWN", "VALIDATION_TIMED_OUT"]
+                }
+            }
 impl ::std::convert::AsRef<str> for LoadBalancerTlsCertificateStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl LoadBalancerTlsCertificateStatus {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for LoadBalancerTlsCertificateStatus {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            LoadBalancerTlsCertificateStatus::Expired => write!(f, "EXPIRED"),
-            LoadBalancerTlsCertificateStatus::Failed => write!(f, "FAILED"),
-            LoadBalancerTlsCertificateStatus::Inactive => write!(f, "INACTIVE"),
-            LoadBalancerTlsCertificateStatus::Issued => write!(f, "ISSUED"),
-            LoadBalancerTlsCertificateStatus::PendingValidation => write!(f, "PENDING_VALIDATION"),
-            LoadBalancerTlsCertificateStatus::Revoked => write!(f, "REVOKED"),
-            LoadBalancerTlsCertificateStatus::UnknownValue => write!(f, "UNKNOWN"),
-            LoadBalancerTlsCertificateStatus::ValidationTimedOut => write!(f, "VALIDATION_TIMED_OUT"),
-            LoadBalancerTlsCertificateStatus::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                LoadBalancerTlsCertificateStatus::Expired => write!(f, "EXPIRED"),
+LoadBalancerTlsCertificateStatus::Failed => write!(f, "FAILED"),
+LoadBalancerTlsCertificateStatus::Inactive => write!(f, "INACTIVE"),
+LoadBalancerTlsCertificateStatus::Issued => write!(f, "ISSUED"),
+LoadBalancerTlsCertificateStatus::PendingValidation => write!(f, "PENDING_VALIDATION"),
+LoadBalancerTlsCertificateStatus::Revoked => write!(f, "REVOKED"),
+LoadBalancerTlsCertificateStatus::UnknownValue => write!(f, "UNKNOWN"),
+LoadBalancerTlsCertificateStatus::ValidationTimedOut => write!(f, "VALIDATION_TIMED_OUT"),
+LoadBalancerTlsCertificateStatus::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

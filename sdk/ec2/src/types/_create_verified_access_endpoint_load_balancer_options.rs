@@ -3,7 +3,7 @@
 /// <p>Describes the load balancer options when creating an Amazon Web Services Verified Access endpoint using the <code>load-balancer</code> type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateVerifiedAccessEndpointLoadBalancerOptions {
+pub struct CreateVerifiedAccessEndpointLoadBalancerOptions  {
     /// <p>The IP protocol.</p>
     pub protocol: ::std::option::Option<crate::types::VerifiedAccessEndpointProtocol>,
     /// <p>The IP port number.</p>
@@ -11,11 +11,11 @@ pub struct CreateVerifiedAccessEndpointLoadBalancerOptions {
     /// <p>The ARN of the load balancer.</p>
     pub load_balancer_arn: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the subnets.</p>
-    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl CreateVerifiedAccessEndpointLoadBalancerOptions {
+impl  CreateVerifiedAccessEndpointLoadBalancerOptions  {
     /// <p>The IP protocol.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&crate::types::VerifiedAccessEndpointProtocol> {
+    pub fn protocol(&self) -> ::std::option::Option<& crate::types::VerifiedAccessEndpointProtocol> {
         self.protocol.as_ref()
     }
     /// <p>The IP port number.</p>
@@ -23,14 +23,15 @@ impl CreateVerifiedAccessEndpointLoadBalancerOptions {
         self.port
     }
     /// <p>The ARN of the load balancer.</p>
-    pub fn load_balancer_arn(&self) -> ::std::option::Option<&str> {
+    pub fn load_balancer_arn(&self) -> ::std::option::Option<& str> {
         self.load_balancer_arn.as_deref()
     }
     /// <p>The IDs of the subnets.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
-    pub fn subnet_ids(&self) -> &[::std::string::String] {
-        self.subnet_ids.as_deref().unwrap_or_default()
+    pub fn subnet_ids(&self) -> & [::std::string::String] {
+        self.subnet_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateVerifiedAccessEndpointLoadBalancerOptions {
@@ -47,7 +48,7 @@ pub struct CreateVerifiedAccessEndpointLoadBalancerOptionsBuilder {
     pub(crate) protocol: ::std::option::Option<crate::types::VerifiedAccessEndpointProtocol>,
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) load_balancer_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl CreateVerifiedAccessEndpointLoadBalancerOptionsBuilder {
     /// <p>The IP protocol.</p>
@@ -57,8 +58,7 @@ impl CreateVerifiedAccessEndpointLoadBalancerOptionsBuilder {
     }
     /// <p>The IP protocol.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::VerifiedAccessEndpointProtocol>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// <p>The IP protocol.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::VerifiedAccessEndpointProtocol> {
@@ -71,8 +71,7 @@ impl CreateVerifiedAccessEndpointLoadBalancerOptionsBuilder {
     }
     /// <p>The IP port number.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The IP port number.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -85,8 +84,7 @@ impl CreateVerifiedAccessEndpointLoadBalancerOptionsBuilder {
     }
     /// <p>The ARN of the load balancer.</p>
     pub fn set_load_balancer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.load_balancer_arn = input;
-        self
+        self.load_balancer_arn = input; self
     }
     /// <p>The ARN of the load balancer.</p>
     pub fn get_load_balancer_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,26 +97,30 @@ impl CreateVerifiedAccessEndpointLoadBalancerOptionsBuilder {
     /// <p>The IDs of the subnets.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the subnets.</p>
-    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
     /// <p>The IDs of the subnets.</p>
-    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnet_ids
     }
     /// Consumes the builder and constructs a [`CreateVerifiedAccessEndpointLoadBalancerOptions`](crate::types::CreateVerifiedAccessEndpointLoadBalancerOptions).
     pub fn build(self) -> crate::types::CreateVerifiedAccessEndpointLoadBalancerOptions {
         crate::types::CreateVerifiedAccessEndpointLoadBalancerOptions {
-            protocol: self.protocol,
-            port: self.port,
-            load_balancer_arn: self.load_balancer_arn,
-            subnet_ids: self.subnet_ids,
+            protocol: self.protocol
+            ,
+            port: self.port
+            ,
+            load_balancer_arn: self.load_balancer_arn
+            ,
+            subnet_ids: self.subnet_ids
+            ,
         }
     }
 }
+

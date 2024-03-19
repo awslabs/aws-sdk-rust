@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRecordingConfigurationInput {
+pub struct DeleteRecordingConfigurationInput  {
     /// <p>ARN of the recording configuration to be deleted.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteRecordingConfigurationInput {
+impl  DeleteRecordingConfigurationInput  {
     /// <p>ARN of the recording configuration to be deleted.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteRecordingConfigurationInputBuilder {
     }
     /// <p>ARN of the recording configuration to be deleted.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>ARN of the recording configuration to be deleted.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
     /// Consumes the builder and constructs a [`DeleteRecordingConfigurationInput`](crate::operation::delete_recording_configuration::DeleteRecordingConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_recording_configuration::DeleteRecordingConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_recording_configuration::DeleteRecordingConfigurationInput { arn: self.arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_recording_configuration::DeleteRecordingConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_recording_configuration::DeleteRecordingConfigurationInput {
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

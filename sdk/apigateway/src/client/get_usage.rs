@@ -2,22 +2,23 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetUsage`](crate::operation::get_usage::builders::GetUsageFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_usage::builders::GetUsageFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`usage_plan_id(impl Into<String>)`](crate::operation::get_usage::builders::GetUsageFluentBuilder::usage_plan_id) / [`set_usage_plan_id(Option<String>)`](crate::operation::get_usage::builders::GetUsageFluentBuilder::set_usage_plan_id):<br>required: **true**<br><p>The Id of the usage plan associated with the usage data.</p><br>
     ///   - [`key_id(impl Into<String>)`](crate::operation::get_usage::builders::GetUsageFluentBuilder::key_id) / [`set_key_id(Option<String>)`](crate::operation::get_usage::builders::GetUsageFluentBuilder::set_key_id):<br>required: **false**<br><p>The Id of the API key associated with the resultant usage data.</p><br>
     ///   - [`start_date(impl Into<String>)`](crate::operation::get_usage::builders::GetUsageFluentBuilder::start_date) / [`set_start_date(Option<String>)`](crate::operation::get_usage::builders::GetUsageFluentBuilder::set_start_date):<br>required: **true**<br><p>The starting date (e.g., 2016-01-01) of the usage data.</p><br>
     ///   - [`end_date(impl Into<String>)`](crate::operation::get_usage::builders::GetUsageFluentBuilder::end_date) / [`set_end_date(Option<String>)`](crate::operation::get_usage::builders::GetUsageFluentBuilder::set_end_date):<br>required: **true**<br><p>The ending date (e.g., 2016-12-31) of the usage data.</p><br>
     ///   - [`position(impl Into<String>)`](crate::operation::get_usage::builders::GetUsageFluentBuilder::position) / [`set_position(Option<String>)`](crate::operation::get_usage::builders::GetUsageFluentBuilder::set_position):<br>required: **false**<br><p>The current pagination position in the paged result set.</p><br>
     ///   - [`limit(i32)`](crate::operation::get_usage::builders::GetUsageFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::get_usage::builders::GetUsageFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p><br>
-    /// - On success, responds with [`GetUsageOutput`](crate::operation::get_usage::GetUsageOutput) with field(s):
+                            /// - On success, responds with [`GetUsageOutput`](crate::operation::get_usage::GetUsageOutput) with field(s):
     ///   - [`usage_plan_id(Option<String>)`](crate::operation::get_usage::GetUsageOutput::usage_plan_id): <p>The plan Id associated with this usage data.</p>
     ///   - [`start_date(Option<String>)`](crate::operation::get_usage::GetUsageOutput::start_date): <p>The starting date of the usage data.</p>
     ///   - [`end_date(Option<String>)`](crate::operation::get_usage::GetUsageOutput::end_date): <p>The ending date of the usage data.</p>
     ///   - [`items(Option<HashMap::<String, Vec::<Vec::<i64>>>>)`](crate::operation::get_usage::GetUsageOutput::items): <p>The usage data, as daily logs of used and remaining quotas, over the specified time interval indexed over the API keys in a usage plan. For example, <code>{..., "values" : { "{api_key}" : [ [0, 100], [10, 90], [100, 10]]}</code>, where <code>{api_key}</code> stands for an API key value and the daily log entry is of the format <code>[used quota, remaining quota]</code>.</p>
     ///   - [`position(Option<String>)`](crate::operation::get_usage::GetUsageOutput::position): <p>The current pagination position in the paged result set.</p>
-    /// - On failure, responds with [`SdkError<GetUsageError>`](crate::operation::get_usage::GetUsageError)
+                            /// - On failure, responds with [`SdkError<GetUsageError>`](crate::operation::get_usage::GetUsageError)
     pub fn get_usage(&self) -> crate::operation::get_usage::builders::GetUsageFluentBuilder {
-        crate::operation::get_usage::builders::GetUsageFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_usage::builders::GetUsageFluentBuilder::new(self.handle.clone())
+                            }
 }
+

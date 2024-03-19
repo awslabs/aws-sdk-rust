@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateWorkgroupOutput {
+pub struct CreateWorkgroupOutput  {
     /// <p>The created workgroup object.</p>
     pub workgroup: ::std::option::Option<crate::types::Workgroup>,
     _request_id: Option<String>,
 }
-impl CreateWorkgroupOutput {
+impl  CreateWorkgroupOutput  {
     /// <p>The created workgroup object.</p>
-    pub fn workgroup(&self) -> ::std::option::Option<&crate::types::Workgroup> {
+    pub fn workgroup(&self) -> ::std::option::Option<& crate::types::Workgroup> {
         self.workgroup.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateWorkgroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateWorkgroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateWorkgroupOutput`](crate::operation::create_workgroup::CreateWorkgroupOutput).
     pub fn builder() -> crate::operation::create_workgroup::builders::CreateWorkgroupOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateWorkgroupOutputBuilder {
     }
     /// <p>The created workgroup object.</p>
     pub fn set_workgroup(mut self, input: ::std::option::Option<crate::types::Workgroup>) -> Self {
-        self.workgroup = input;
-        self
+        self.workgroup = input; self
     }
     /// <p>The created workgroup object.</p>
     pub fn get_workgroup(&self) -> &::std::option::Option<crate::types::Workgroup> {
         &self.workgroup
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateWorkgroupOutput`](crate::operation::create_workgroup::CreateWorkgroupOutput).
     pub fn build(self) -> crate::operation::create_workgroup::CreateWorkgroupOutput {
         crate::operation::create_workgroup::CreateWorkgroupOutput {
-            workgroup: self.workgroup,
+            workgroup: self.workgroup
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

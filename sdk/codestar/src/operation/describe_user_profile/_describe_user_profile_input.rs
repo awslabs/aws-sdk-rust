@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeUserProfileInput {
+pub struct DescribeUserProfileInput  {
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
     pub user_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeUserProfileInput {
+impl  DescribeUserProfileInput  {
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
-    pub fn user_arn(&self) -> ::std::option::Option<&str> {
+    pub fn user_arn(&self) -> ::std::option::Option<& str> {
         self.user_arn.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl DescribeUserProfileInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
     pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_arn = input;
-        self
+        self.user_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
     pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_arn
     }
     /// Consumes the builder and constructs a [`DescribeUserProfileInput`](crate::operation::describe_user_profile::DescribeUserProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_user_profile::DescribeUserProfileInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_user_profile::DescribeUserProfileInput { user_arn: self.user_arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_user_profile::DescribeUserProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_user_profile::DescribeUserProfileInput {
+                user_arn: self.user_arn
+                ,
+            }
+        )
     }
 }
+

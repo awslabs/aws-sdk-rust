@@ -3,7 +3,7 @@
 /// <p>A set of parameters that allow you to filter out certain results from your returned results.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetectionFilter {
+pub struct DetectionFilter  {
     /// <p>Sets the confidence of word detection. Words with detection confidence below this will be excluded from the result. Values should be between 0 and 100. The default MinConfidence is 80.</p>
     pub min_confidence: ::std::option::Option<f32>,
     /// <p>Sets the minimum height of the word bounding box. Words with bounding box heights lesser than this value will be excluded from the result. Value is relative to the video frame height.</p>
@@ -11,7 +11,7 @@ pub struct DetectionFilter {
     /// <p>Sets the minimum width of the word bounding box. Words with bounding boxes widths lesser than this value will be excluded from the result. Value is relative to the video frame width.</p>
     pub min_bounding_box_width: ::std::option::Option<f32>,
 }
-impl DetectionFilter {
+impl  DetectionFilter  {
     /// <p>Sets the confidence of word detection. Words with detection confidence below this will be excluded from the result. Values should be between 0 and 100. The default MinConfidence is 80.</p>
     pub fn min_confidence(&self) -> ::std::option::Option<f32> {
         self.min_confidence
@@ -48,8 +48,7 @@ impl DetectionFilterBuilder {
     }
     /// <p>Sets the confidence of word detection. Words with detection confidence below this will be excluded from the result. Values should be between 0 and 100. The default MinConfidence is 80.</p>
     pub fn set_min_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.min_confidence = input;
-        self
+        self.min_confidence = input; self
     }
     /// <p>Sets the confidence of word detection. Words with detection confidence below this will be excluded from the result. Values should be between 0 and 100. The default MinConfidence is 80.</p>
     pub fn get_min_confidence(&self) -> &::std::option::Option<f32> {
@@ -62,8 +61,7 @@ impl DetectionFilterBuilder {
     }
     /// <p>Sets the minimum height of the word bounding box. Words with bounding box heights lesser than this value will be excluded from the result. Value is relative to the video frame height.</p>
     pub fn set_min_bounding_box_height(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.min_bounding_box_height = input;
-        self
+        self.min_bounding_box_height = input; self
     }
     /// <p>Sets the minimum height of the word bounding box. Words with bounding box heights lesser than this value will be excluded from the result. Value is relative to the video frame height.</p>
     pub fn get_min_bounding_box_height(&self) -> &::std::option::Option<f32> {
@@ -76,8 +74,7 @@ impl DetectionFilterBuilder {
     }
     /// <p>Sets the minimum width of the word bounding box. Words with bounding boxes widths lesser than this value will be excluded from the result. Value is relative to the video frame width.</p>
     pub fn set_min_bounding_box_width(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.min_bounding_box_width = input;
-        self
+        self.min_bounding_box_width = input; self
     }
     /// <p>Sets the minimum width of the word bounding box. Words with bounding boxes widths lesser than this value will be excluded from the result. Value is relative to the video frame width.</p>
     pub fn get_min_bounding_box_width(&self) -> &::std::option::Option<f32> {
@@ -86,9 +83,13 @@ impl DetectionFilterBuilder {
     /// Consumes the builder and constructs a [`DetectionFilter`](crate::types::DetectionFilter).
     pub fn build(self) -> crate::types::DetectionFilter {
         crate::types::DetectionFilter {
-            min_confidence: self.min_confidence,
-            min_bounding_box_height: self.min_bounding_box_height,
-            min_bounding_box_width: self.min_bounding_box_width,
+            min_confidence: self.min_confidence
+            ,
+            min_bounding_box_height: self.min_bounding_box_height
+            ,
+            min_bounding_box_width: self.min_bounding_box_width
+            ,
         }
     }
 }
+

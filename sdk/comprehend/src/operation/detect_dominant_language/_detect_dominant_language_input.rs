@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DetectDominantLanguageInput {
+pub struct DetectDominantLanguageInput  {
     /// <p>A UTF-8 text string. The string must contain at least 20 characters. The maximum string size is 100 KB.</p>
     pub text: ::std::option::Option<::std::string::String>,
 }
-impl DetectDominantLanguageInput {
+impl  DetectDominantLanguageInput  {
     /// <p>A UTF-8 text string. The string must contain at least 20 characters. The maximum string size is 100 KB.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
 }
-impl ::std::fmt::Debug for DetectDominantLanguageInput {
+impl  ::std::fmt::Debug for DetectDominantLanguageInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DetectDominantLanguageInput");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
@@ -41,21 +41,20 @@ impl DetectDominantLanguageInputBuilder {
     }
     /// <p>A UTF-8 text string. The string must contain at least 20 characters. The maximum string size is 100 KB.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>A UTF-8 text string. The string must contain at least 20 characters. The maximum string size is 100 KB.</p>
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
         &self.text
     }
     /// Consumes the builder and constructs a [`DetectDominantLanguageInput`](crate::operation::detect_dominant_language::DetectDominantLanguageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::detect_dominant_language::DetectDominantLanguageInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::detect_dominant_language::DetectDominantLanguageInput { text: self.text })
+    pub fn build(self) -> ::std::result::Result<crate::operation::detect_dominant_language::DetectDominantLanguageInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::detect_dominant_language::DetectDominantLanguageInput {
+                text: self.text
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for DetectDominantLanguageInputBuilder {
@@ -65,3 +64,4 @@ impl ::std::fmt::Debug for DetectDominantLanguageInputBuilder {
         formatter.finish()
     }
 }
+

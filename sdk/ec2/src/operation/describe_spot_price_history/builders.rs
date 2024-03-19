@@ -5,55 +5,51 @@ pub use crate::operation::describe_spot_price_history::_describe_spot_price_hist
 
 impl DescribeSpotPriceHistoryInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_spot_price_history();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_spot_price_history();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeSpotPriceHistory`.
-///
+/// 
 /// <p>Describes the Spot price history. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot Instance pricing history</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
 /// <p>When you specify a start and end time, the operation returns the prices of the instance types within that time range. It also returns the last price change before the start time, which is the effective price as of the start time.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSpotPriceHistoryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_spot_price_history::builders::DescribeSpotPriceHistoryInputBuilder,
+                    inner: crate::operation::describe_spot_price_history::builders::DescribeSpotPriceHistoryInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryOutput,
-        crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryError,
-    > for DescribeSpotPriceHistoryFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryOutput,
-            crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryOutput,
+                    crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryError,
+                > for DescribeSpotPriceHistoryFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryOutput,
+                        crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeSpotPriceHistoryFluentBuilder {
     /// Creates a new `DescribeSpotPriceHistory`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,59 +58,50 @@ impl DescribeSpotPriceHistoryFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_spot_price_history::DescribeSpotPriceHistory::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_spot_price_history::DescribeSpotPriceHistory::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryOutput,
-        crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_spot_price_history::DescribeSpotPriceHistory::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_spot_price_history::DescribeSpotPriceHistory::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryOutput, crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_spot_price_history::paginator::DescribeSpotPriceHistoryPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::describe_spot_price_history::paginator::DescribeSpotPriceHistoryPaginator {
-        crate::operation::describe_spot_price_history::paginator::DescribeSpotPriceHistoryPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_spot_price_history::paginator::DescribeSpotPriceHistoryPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::describe_spot_price_history::paginator::DescribeSpotPriceHistoryPaginator {
+                                crate::operation::describe_spot_price_history::paginator::DescribeSpotPriceHistoryPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -149,7 +136,7 @@ impl DescribeSpotPriceHistoryFluentBuilder {
     /// <li>
     /// <p><code>timestamp</code> - The time stamp of the Spot price history, in UTC format (for example, <i>ddd MMM dd HH</i>:<i>mm</i>:<i>ss</i> UTC <i>YYYY</i>). You can use wildcards (<code>*</code> and <code>?</code>). Greater than or less than comparison is not supported.</p></li>
     /// </ul>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -166,7 +153,7 @@ impl DescribeSpotPriceHistoryFluentBuilder {
     /// <li>
     /// <p><code>timestamp</code> - The time stamp of the Spot price history, in UTC format (for example, <i>ddd MMM dd HH</i>:<i>mm</i>:<i>ss</i> UTC <i>YYYY</i>). You can use wildcards (<code>*</code> and <code>?</code>). Greater than or less than comparison is not supported.</p></li>
     /// </ul>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         self.inner.get_filters()
     }
     /// <p>Filters the results by the specified Availability Zone.</p>
@@ -221,12 +208,12 @@ impl DescribeSpotPriceHistoryFluentBuilder {
         self
     }
     /// <p>Filters the results by the specified instance types.</p>
-    pub fn set_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceType>>) -> Self {
+    pub fn set_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceType>>) -> Self {
         self.inner = self.inner.set_instance_types(input);
         self
     }
     /// <p>Filters the results by the specified instance types.</p>
-    pub fn get_instance_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceType>> {
+    pub fn get_instance_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InstanceType>> {
         self.inner.get_instance_types()
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
@@ -267,12 +254,12 @@ impl DescribeSpotPriceHistoryFluentBuilder {
         self
     }
     /// <p>Filters the results by the specified basic product descriptions.</p>
-    pub fn set_product_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_product_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_product_descriptions(input);
         self
     }
     /// <p>Filters the results by the specified basic product descriptions.</p>
-    pub fn get_product_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_product_descriptions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_product_descriptions()
     }
     /// <p>The date and time, up to the past 90 days, from which to start retrieving the price history data, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
@@ -290,3 +277,4 @@ impl DescribeSpotPriceHistoryFluentBuilder {
         self.inner.get_start_time()
     }
 }
+

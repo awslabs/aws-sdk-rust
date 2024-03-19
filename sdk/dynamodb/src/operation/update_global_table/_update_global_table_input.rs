@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateGlobalTableInput {
+pub struct UpdateGlobalTableInput  {
     /// <p>The global table name.</p>
     pub global_table_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of Regions that should be added or removed from the global table.</p>
-    pub replica_updates: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaUpdate>>,
+    pub replica_updates: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicaUpdate>>,
 }
-impl UpdateGlobalTableInput {
+impl  UpdateGlobalTableInput  {
     /// <p>The global table name.</p>
-    pub fn global_table_name(&self) -> ::std::option::Option<&str> {
+    pub fn global_table_name(&self) -> ::std::option::Option<& str> {
         self.global_table_name.as_deref()
     }
     /// <p>A list of Regions that should be added or removed from the global table.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replica_updates.is_none()`.
-    pub fn replica_updates(&self) -> &[crate::types::ReplicaUpdate] {
-        self.replica_updates.as_deref().unwrap_or_default()
+    pub fn replica_updates(&self) -> & [crate::types::ReplicaUpdate] {
+        self.replica_updates.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateGlobalTableInput {
@@ -32,7 +33,7 @@ impl UpdateGlobalTableInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGlobalTableInputBuilder {
     pub(crate) global_table_name: ::std::option::Option<::std::string::String>,
-    pub(crate) replica_updates: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaUpdate>>,
+    pub(crate) replica_updates: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicaUpdate>>,
 }
 impl UpdateGlobalTableInputBuilder {
     /// <p>The global table name.</p>
@@ -43,8 +44,7 @@ impl UpdateGlobalTableInputBuilder {
     }
     /// <p>The global table name.</p>
     pub fn set_global_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_table_name = input;
-        self
+        self.global_table_name = input; self
     }
     /// <p>The global table name.</p>
     pub fn get_global_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,26 +57,28 @@ impl UpdateGlobalTableInputBuilder {
     /// <p>A list of Regions that should be added or removed from the global table.</p>
     pub fn replica_updates(mut self, input: crate::types::ReplicaUpdate) -> Self {
         let mut v = self.replica_updates.unwrap_or_default();
-        v.push(input);
-        self.replica_updates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.replica_updates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of Regions that should be added or removed from the global table.</p>
-    pub fn set_replica_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaUpdate>>) -> Self {
-        self.replica_updates = input;
-        self
+    pub fn set_replica_updates(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicaUpdate>>) -> Self {
+        self.replica_updates = input; self
     }
     /// <p>A list of Regions that should be added or removed from the global table.</p>
-    pub fn get_replica_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaUpdate>> {
+    pub fn get_replica_updates(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReplicaUpdate>> {
         &self.replica_updates
     }
     /// Consumes the builder and constructs a [`UpdateGlobalTableInput`](crate::operation::update_global_table::UpdateGlobalTableInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_global_table::UpdateGlobalTableInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_global_table::UpdateGlobalTableInput {
-            global_table_name: self.global_table_name,
-            replica_updates: self.replica_updates,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_global_table::UpdateGlobalTableInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_global_table::UpdateGlobalTableInput {
+                global_table_name: self.global_table_name
+                ,
+                replica_updates: self.replica_updates
+                ,
+            }
+        )
     }
 }
+

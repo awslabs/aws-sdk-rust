@@ -3,7 +3,7 @@
 /// <p>A potential improvement that was found from analyzing the profiling data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Recommendation {
+pub struct Recommendation  {
     /// <p>How many different places in the profile graph triggered a match.</p>
     pub all_matches_count: i32,
     /// <p>How much of the total sample count is potentially affected.</p>
@@ -11,13 +11,13 @@ pub struct Recommendation {
     /// <p>The pattern that analysis recognized in the profile to make this recommendation.</p>
     pub pattern: ::std::option::Option<crate::types::Pattern>,
     /// <p>List of the matches with most impact.</p>
-    pub top_matches: ::std::vec::Vec<crate::types::Match>,
+    pub top_matches: ::std::vec::Vec::<crate::types::Match>,
     /// <p>The start time of the profile that was used by this analysis. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub start_time: ::aws_smithy_types::DateTime,
     /// <p>End time of the profile that was used by this analysis. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub end_time: ::aws_smithy_types::DateTime,
 }
-impl Recommendation {
+impl  Recommendation  {
     /// <p>How many different places in the profile graph triggered a match.</p>
     pub fn all_matches_count(&self) -> i32 {
         self.all_matches_count
@@ -27,20 +27,19 @@ impl Recommendation {
         self.all_matches_sum
     }
     /// <p>The pattern that analysis recognized in the profile to make this recommendation.</p>
-    pub fn pattern(&self) -> ::std::option::Option<&crate::types::Pattern> {
+    pub fn pattern(&self) -> ::std::option::Option<& crate::types::Pattern> {
         self.pattern.as_ref()
     }
     /// <p>List of the matches with most impact.</p>
-    pub fn top_matches(&self) -> &[crate::types::Match] {
-        use std::ops::Deref;
-        self.top_matches.deref()
+    pub fn top_matches(&self) -> & [crate::types::Match] {
+        use std::ops::Deref; self.top_matches.deref()
     }
     /// <p>The start time of the profile that was used by this analysis. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
-    pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn start_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.start_time
     }
     /// <p>End time of the profile that was used by this analysis. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
-    pub fn end_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn end_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.end_time
     }
 }
@@ -58,7 +57,7 @@ pub struct RecommendationBuilder {
     pub(crate) all_matches_count: ::std::option::Option<i32>,
     pub(crate) all_matches_sum: ::std::option::Option<f64>,
     pub(crate) pattern: ::std::option::Option<crate::types::Pattern>,
-    pub(crate) top_matches: ::std::option::Option<::std::vec::Vec<crate::types::Match>>,
+    pub(crate) top_matches: ::std::option::Option<::std::vec::Vec::<crate::types::Match>>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -71,8 +70,7 @@ impl RecommendationBuilder {
     }
     /// <p>How many different places in the profile graph triggered a match.</p>
     pub fn set_all_matches_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.all_matches_count = input;
-        self
+        self.all_matches_count = input; self
     }
     /// <p>How many different places in the profile graph triggered a match.</p>
     pub fn get_all_matches_count(&self) -> &::std::option::Option<i32> {
@@ -86,8 +84,7 @@ impl RecommendationBuilder {
     }
     /// <p>How much of the total sample count is potentially affected.</p>
     pub fn set_all_matches_sum(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.all_matches_sum = input;
-        self
+        self.all_matches_sum = input; self
     }
     /// <p>How much of the total sample count is potentially affected.</p>
     pub fn get_all_matches_sum(&self) -> &::std::option::Option<f64> {
@@ -101,8 +98,7 @@ impl RecommendationBuilder {
     }
     /// <p>The pattern that analysis recognized in the profile to make this recommendation.</p>
     pub fn set_pattern(mut self, input: ::std::option::Option<crate::types::Pattern>) -> Self {
-        self.pattern = input;
-        self
+        self.pattern = input; self
     }
     /// <p>The pattern that analysis recognized in the profile to make this recommendation.</p>
     pub fn get_pattern(&self) -> &::std::option::Option<crate::types::Pattern> {
@@ -115,17 +111,16 @@ impl RecommendationBuilder {
     /// <p>List of the matches with most impact.</p>
     pub fn top_matches(mut self, input: crate::types::Match) -> Self {
         let mut v = self.top_matches.unwrap_or_default();
-        v.push(input);
-        self.top_matches = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.top_matches = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of the matches with most impact.</p>
-    pub fn set_top_matches(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Match>>) -> Self {
-        self.top_matches = input;
-        self
+    pub fn set_top_matches(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Match>>) -> Self {
+        self.top_matches = input; self
     }
     /// <p>List of the matches with most impact.</p>
-    pub fn get_top_matches(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Match>> {
+    pub fn get_top_matches(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Match>> {
         &self.top_matches
     }
     /// <p>The start time of the profile that was used by this analysis. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
@@ -136,8 +131,7 @@ impl RecommendationBuilder {
     }
     /// <p>The start time of the profile that was used by this analysis. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The start time of the profile that was used by this analysis. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -151,8 +145,7 @@ impl RecommendationBuilder {
     }
     /// <p>End time of the profile that was used by this analysis. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>End time of the profile that was used by this analysis. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -166,38 +159,37 @@ impl RecommendationBuilder {
     /// - [`start_time`](crate::types::builders::RecommendationBuilder::start_time)
     /// - [`end_time`](crate::types::builders::RecommendationBuilder::end_time)
     pub fn build(self) -> ::std::result::Result<crate::types::Recommendation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Recommendation {
-            all_matches_count: self.all_matches_count.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "all_matches_count",
-                    "all_matches_count was not specified but it is required when building Recommendation",
-                )
-            })?,
-            all_matches_sum: self.all_matches_sum.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "all_matches_sum",
-                    "all_matches_sum was not specified but it is required when building Recommendation",
-                )
-            })?,
-            pattern: self.pattern,
-            top_matches: self.top_matches.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "top_matches",
-                    "top_matches was not specified but it is required when building Recommendation",
-                )
-            })?,
-            start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start_time",
-                    "start_time was not specified but it is required when building Recommendation",
-                )
-            })?,
-            end_time: self.end_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "end_time",
-                    "end_time was not specified but it is required when building Recommendation",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Recommendation {
+                all_matches_count: self.all_matches_count
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("all_matches_count", "all_matches_count was not specified but it is required when building Recommendation")
+                    )?
+                ,
+                all_matches_sum: self.all_matches_sum
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("all_matches_sum", "all_matches_sum was not specified but it is required when building Recommendation")
+                    )?
+                ,
+                pattern: self.pattern
+                ,
+                top_matches: self.top_matches
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("top_matches", "top_matches was not specified but it is required when building Recommendation")
+                    )?
+                ,
+                start_time: self.start_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start_time", "start_time was not specified but it is required when building Recommendation")
+                    )?
+                ,
+                end_time: self.end_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("end_time", "end_time was not specified but it is required when building Recommendation")
+                    )?
+                ,
+            }
+        )
     }
 }
+

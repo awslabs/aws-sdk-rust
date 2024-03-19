@@ -3,7 +3,7 @@
 /// <p>A response that contains details on the results of a finding aggregation by title.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TitleAggregationResponse {
+pub struct TitleAggregationResponse  {
     /// <p>The title that the findings were aggregated on.</p>
     pub title: ::std::string::String,
     /// <p>The vulnerability ID of the finding.</p>
@@ -13,22 +13,21 @@ pub struct TitleAggregationResponse {
     /// <p>An object that represent the count of matched findings per severity.</p>
     pub severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
 }
-impl TitleAggregationResponse {
+impl  TitleAggregationResponse  {
     /// <p>The title that the findings were aggregated on.</p>
-    pub fn title(&self) -> &str {
-        use std::ops::Deref;
-        self.title.deref()
+    pub fn title(&self) -> & str {
+        use std::ops::Deref; self.title.deref()
     }
     /// <p>The vulnerability ID of the finding.</p>
-    pub fn vulnerability_id(&self) -> ::std::option::Option<&str> {
+    pub fn vulnerability_id(&self) -> ::std::option::Option<& str> {
         self.vulnerability_id.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>An object that represent the count of matched findings per severity.</p>
-    pub fn severity_counts(&self) -> ::std::option::Option<&crate::types::SeverityCounts> {
+    pub fn severity_counts(&self) -> ::std::option::Option<& crate::types::SeverityCounts> {
         self.severity_counts.as_ref()
     }
 }
@@ -57,8 +56,7 @@ impl TitleAggregationResponseBuilder {
     }
     /// <p>The title that the findings were aggregated on.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The title that the findings were aggregated on.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +69,7 @@ impl TitleAggregationResponseBuilder {
     }
     /// <p>The vulnerability ID of the finding.</p>
     pub fn set_vulnerability_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vulnerability_id = input;
-        self
+        self.vulnerability_id = input; self
     }
     /// <p>The vulnerability ID of the finding.</p>
     pub fn get_vulnerability_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +82,7 @@ impl TitleAggregationResponseBuilder {
     }
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +95,7 @@ impl TitleAggregationResponseBuilder {
     }
     /// <p>An object that represent the count of matched findings per severity.</p>
     pub fn set_severity_counts(mut self, input: ::std::option::Option<crate::types::SeverityCounts>) -> Self {
-        self.severity_counts = input;
-        self
+        self.severity_counts = input; self
     }
     /// <p>An object that represent the count of matched findings per severity.</p>
     pub fn get_severity_counts(&self) -> &::std::option::Option<crate::types::SeverityCounts> {
@@ -110,16 +105,21 @@ impl TitleAggregationResponseBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`title`](crate::types::builders::TitleAggregationResponseBuilder::title)
     pub fn build(self) -> ::std::result::Result<crate::types::TitleAggregationResponse, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TitleAggregationResponse {
-            title: self.title.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "title",
-                    "title was not specified but it is required when building TitleAggregationResponse",
-                )
-            })?,
-            vulnerability_id: self.vulnerability_id,
-            account_id: self.account_id,
-            severity_counts: self.severity_counts,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TitleAggregationResponse {
+                title: self.title
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("title", "title was not specified but it is required when building TitleAggregationResponse")
+                    )?
+                ,
+                vulnerability_id: self.vulnerability_id
+                ,
+                account_id: self.account_id
+                ,
+                severity_counts: self.severity_counts
+                ,
+            }
+        )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Provides details about the association between an Security Hub configuration and a target account, organizational unit, or the root. An association can exist between a target and a configuration policy, or between a target and self-managed behavior.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfigurationPolicyAssociation {
+pub struct ConfigurationPolicyAssociation  {
     /// <p>The target account, organizational unit, or the root.</p>
     pub target: ::std::option::Option<crate::types::Target>,
 }
-impl ConfigurationPolicyAssociation {
+impl  ConfigurationPolicyAssociation  {
     /// <p>The target account, organizational unit, or the root.</p>
-    pub fn target(&self) -> ::std::option::Option<&crate::types::Target> {
+    pub fn target(&self) -> ::std::option::Option<& crate::types::Target> {
         self.target.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ConfigurationPolicyAssociationBuilder {
     }
     /// <p>The target account, organizational unit, or the root.</p>
     pub fn set_target(mut self, input: ::std::option::Option<crate::types::Target>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
     }
     /// <p>The target account, organizational unit, or the root.</p>
     pub fn get_target(&self) -> &::std::option::Option<crate::types::Target> {
@@ -43,6 +42,10 @@ impl ConfigurationPolicyAssociationBuilder {
     }
     /// Consumes the builder and constructs a [`ConfigurationPolicyAssociation`](crate::types::ConfigurationPolicyAssociation).
     pub fn build(self) -> crate::types::ConfigurationPolicyAssociation {
-        crate::types::ConfigurationPolicyAssociation { target: self.target }
+        crate::types::ConfigurationPolicyAssociation {
+            target: self.target
+            ,
+        }
     }
 }
+

@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDeviceProfiles`](crate::operation::list_device_profiles::builders::ListDeviceProfilesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_device_profiles::builders::ListDeviceProfilesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_device_profiles::builders::ListDeviceProfilesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_device_profiles::builders::ListDeviceProfilesFluentBuilder::set_next_token):<br>required: **false**<br><p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_device_profiles::builders::ListDeviceProfilesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_device_profiles::builders::ListDeviceProfilesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in this operation.</p><br>
     ///   - [`device_profile_type(DeviceProfileType)`](crate::operation::list_device_profiles::builders::ListDeviceProfilesFluentBuilder::device_profile_type) / [`set_device_profile_type(Option<DeviceProfileType>)`](crate::operation::list_device_profiles::builders::ListDeviceProfilesFluentBuilder::set_device_profile_type):<br>required: **false**<br><p>A filter to list only device profiles that use this type, which can be <code>LoRaWAN</code> or <code>Sidewalk</code>.</p><br>
-    /// - On success, responds with [`ListDeviceProfilesOutput`](crate::operation::list_device_profiles::ListDeviceProfilesOutput) with field(s):
+                            /// - On success, responds with [`ListDeviceProfilesOutput`](crate::operation::list_device_profiles::ListDeviceProfilesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_device_profiles::ListDeviceProfilesOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     ///   - [`device_profile_list(Option<Vec::<DeviceProfile>>)`](crate::operation::list_device_profiles::ListDeviceProfilesOutput::device_profile_list): <p>The list of device profiles.</p>
-    /// - On failure, responds with [`SdkError<ListDeviceProfilesError>`](crate::operation::list_device_profiles::ListDeviceProfilesError)
+                            /// - On failure, responds with [`SdkError<ListDeviceProfilesError>`](crate::operation::list_device_profiles::ListDeviceProfilesError)
     pub fn list_device_profiles(&self) -> crate::operation::list_device_profiles::builders::ListDeviceProfilesFluentBuilder {
-        crate::operation::list_device_profiles::builders::ListDeviceProfilesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_device_profiles::builders::ListDeviceProfilesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

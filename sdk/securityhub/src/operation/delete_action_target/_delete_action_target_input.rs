@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteActionTargetInput {
+pub struct DeleteActionTargetInput  {
     /// <p>The Amazon Resource Name (ARN) of the custom action target to delete.</p>
     pub action_target_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteActionTargetInput {
+impl  DeleteActionTargetInput  {
     /// <p>The Amazon Resource Name (ARN) of the custom action target to delete.</p>
-    pub fn action_target_arn(&self) -> ::std::option::Option<&str> {
+    pub fn action_target_arn(&self) -> ::std::option::Option<& str> {
         self.action_target_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteActionTargetInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the custom action target to delete.</p>
     pub fn set_action_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_target_arn = input;
-        self
+        self.action_target_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the custom action target to delete.</p>
     pub fn get_action_target_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.action_target_arn
     }
     /// Consumes the builder and constructs a [`DeleteActionTargetInput`](crate::operation::delete_action_target::DeleteActionTargetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_action_target::DeleteActionTargetInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_action_target::DeleteActionTargetInput {
-            action_target_arn: self.action_target_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_action_target::DeleteActionTargetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_action_target::DeleteActionTargetInput {
+                action_target_arn: self.action_target_arn
+                ,
+            }
+        )
     }
 }
+

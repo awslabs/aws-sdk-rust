@@ -6,7 +6,7 @@
 /// <p>You can't update an existing delivery. You can only create and delete deliveries.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Delivery {
+pub struct Delivery  {
     /// <p>The unique ID that identifies this delivery in your account.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies this delivery.</p>
@@ -18,31 +18,31 @@ pub struct Delivery {
     /// <p>Displays whether the delivery destination associated with this delivery is CloudWatch Logs, Amazon S3, or Firehose.</p>
     pub delivery_destination_type: ::std::option::Option<crate::types::DeliveryDestinationType>,
     /// <p>The tags that have been assigned to this delivery.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl Delivery {
+impl  Delivery  {
     /// <p>The unique ID that identifies this delivery in your account.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies this delivery.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the delivery source that is associated with this delivery.</p>
-    pub fn delivery_source_name(&self) -> ::std::option::Option<&str> {
+    pub fn delivery_source_name(&self) -> ::std::option::Option<& str> {
         self.delivery_source_name.as_deref()
     }
     /// <p>The ARN of the delivery destination that is associated with this delivery.</p>
-    pub fn delivery_destination_arn(&self) -> ::std::option::Option<&str> {
+    pub fn delivery_destination_arn(&self) -> ::std::option::Option<& str> {
         self.delivery_destination_arn.as_deref()
     }
     /// <p>Displays whether the delivery destination associated with this delivery is CloudWatch Logs, Amazon S3, or Firehose.</p>
-    pub fn delivery_destination_type(&self) -> ::std::option::Option<&crate::types::DeliveryDestinationType> {
+    pub fn delivery_destination_type(&self) -> ::std::option::Option<& crate::types::DeliveryDestinationType> {
         self.delivery_destination_type.as_ref()
     }
     /// <p>The tags that have been assigned to this delivery.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -62,7 +62,7 @@ pub struct DeliveryBuilder {
     pub(crate) delivery_source_name: ::std::option::Option<::std::string::String>,
     pub(crate) delivery_destination_arn: ::std::option::Option<::std::string::String>,
     pub(crate) delivery_destination_type: ::std::option::Option<crate::types::DeliveryDestinationType>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl DeliveryBuilder {
     /// <p>The unique ID that identifies this delivery in your account.</p>
@@ -72,8 +72,7 @@ impl DeliveryBuilder {
     }
     /// <p>The unique ID that identifies this delivery in your account.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique ID that identifies this delivery in your account.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +85,7 @@ impl DeliveryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies this delivery.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies this delivery.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +98,7 @@ impl DeliveryBuilder {
     }
     /// <p>The name of the delivery source that is associated with this delivery.</p>
     pub fn set_delivery_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delivery_source_name = input;
-        self
+        self.delivery_source_name = input; self
     }
     /// <p>The name of the delivery source that is associated with this delivery.</p>
     pub fn get_delivery_source_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +111,7 @@ impl DeliveryBuilder {
     }
     /// <p>The ARN of the delivery destination that is associated with this delivery.</p>
     pub fn set_delivery_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delivery_destination_arn = input;
-        self
+        self.delivery_destination_arn = input; self
     }
     /// <p>The ARN of the delivery destination that is associated with this delivery.</p>
     pub fn get_delivery_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +124,7 @@ impl DeliveryBuilder {
     }
     /// <p>Displays whether the delivery destination associated with this delivery is CloudWatch Logs, Amazon S3, or Firehose.</p>
     pub fn set_delivery_destination_type(mut self, input: ::std::option::Option<crate::types::DeliveryDestinationType>) -> Self {
-        self.delivery_destination_type = input;
-        self
+        self.delivery_destination_type = input; self
     }
     /// <p>Displays whether the delivery destination associated with this delivery is CloudWatch Logs, Amazon S3, or Firehose.</p>
     pub fn get_delivery_destination_type(&self) -> &::std::option::Option<crate::types::DeliveryDestinationType> {
@@ -142,28 +137,34 @@ impl DeliveryBuilder {
     /// <p>The tags that have been assigned to this delivery.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags that have been assigned to this delivery.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags that have been assigned to this delivery.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`Delivery`](crate::types::Delivery).
     pub fn build(self) -> crate::types::Delivery {
         crate::types::Delivery {
-            id: self.id,
-            arn: self.arn,
-            delivery_source_name: self.delivery_source_name,
-            delivery_destination_arn: self.delivery_destination_arn,
-            delivery_destination_type: self.delivery_destination_type,
-            tags: self.tags,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            delivery_source_name: self.delivery_source_name
+            ,
+            delivery_destination_arn: self.delivery_destination_arn
+            ,
+            delivery_destination_type: self.delivery_destination_type
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

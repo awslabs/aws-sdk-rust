@@ -3,7 +3,7 @@
 /// <p>The result of the <code>DescribeSnapshotCopyGrants</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSnapshotCopyGrantsInput {
+pub struct DescribeSnapshotCopyGrantsInput  {
     /// <p>The name of the snapshot copy grant.</p>
     pub snapshot_copy_grant_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p>
@@ -14,13 +14,13 @@ pub struct DescribeSnapshotCopyGrantsInput {
     /// <p>Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter, but not both.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A tag key or keys for which you want to return all matching resources that are associated with the specified key or keys. For example, suppose that you have resources tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with all resources that have either or both of these tag keys associated with them.</p>
-    pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub tag_keys: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A tag value or values for which you want to return all matching resources that are associated with the specified value or values. For example, suppose that you have resources tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with all resources that have either or both of these tag values associated with them.</p>
-    pub tag_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub tag_values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DescribeSnapshotCopyGrantsInput {
+impl  DescribeSnapshotCopyGrantsInput  {
     /// <p>The name of the snapshot copy grant.</p>
-    pub fn snapshot_copy_grant_name(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_copy_grant_name(&self) -> ::std::option::Option<& str> {
         self.snapshot_copy_grant_name.as_deref()
     }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p>
@@ -31,20 +31,22 @@ impl DescribeSnapshotCopyGrantsInput {
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
     /// <p>Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter, but not both.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A tag key or keys for which you want to return all matching resources that are associated with the specified key or keys. For example, suppose that you have resources tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with all resources that have either or both of these tag keys associated with them.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_keys.is_none()`.
-    pub fn tag_keys(&self) -> &[::std::string::String] {
-        self.tag_keys.as_deref().unwrap_or_default()
+    pub fn tag_keys(&self) -> & [::std::string::String] {
+        self.tag_keys.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A tag value or values for which you want to return all matching resources that are associated with the specified value or values. For example, suppose that you have resources tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with all resources that have either or both of these tag values associated with them.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_values.is_none()`.
-    pub fn tag_values(&self) -> &[::std::string::String] {
-        self.tag_values.as_deref().unwrap_or_default()
+    pub fn tag_values(&self) -> & [::std::string::String] {
+        self.tag_values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeSnapshotCopyGrantsInput {
@@ -61,8 +63,8 @@ pub struct DescribeSnapshotCopyGrantsInputBuilder {
     pub(crate) snapshot_copy_grant_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tag_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tag_values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DescribeSnapshotCopyGrantsInputBuilder {
     /// <p>The name of the snapshot copy grant.</p>
@@ -72,8 +74,7 @@ impl DescribeSnapshotCopyGrantsInputBuilder {
     }
     /// <p>The name of the snapshot copy grant.</p>
     pub fn set_snapshot_copy_grant_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_copy_grant_name = input;
-        self
+        self.snapshot_copy_grant_name = input; self
     }
     /// <p>The name of the snapshot copy grant.</p>
     pub fn get_snapshot_copy_grant_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +91,7 @@ impl DescribeSnapshotCopyGrantsInputBuilder {
     /// <p>Default: <code>100</code></p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p>
     /// <p>Default: <code>100</code></p>
@@ -108,8 +108,7 @@ impl DescribeSnapshotCopyGrantsInputBuilder {
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
     /// <p>Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter, but not both.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
     /// <p>Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter, but not both.</p>
@@ -123,17 +122,16 @@ impl DescribeSnapshotCopyGrantsInputBuilder {
     /// <p>A tag key or keys for which you want to return all matching resources that are associated with the specified key or keys. For example, suppose that you have resources tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with all resources that have either or both of these tag keys associated with them.</p>
     pub fn tag_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tag_keys.unwrap_or_default();
-        v.push(input.into());
-        self.tag_keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.tag_keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A tag key or keys for which you want to return all matching resources that are associated with the specified key or keys. For example, suppose that you have resources tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with all resources that have either or both of these tag keys associated with them.</p>
-    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.tag_keys = input;
-        self
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.tag_keys = input; self
     }
     /// <p>A tag key or keys for which you want to return all matching resources that are associated with the specified key or keys. For example, suppose that you have resources tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with all resources that have either or both of these tag keys associated with them.</p>
-    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.tag_keys
     }
     /// Appends an item to `tag_values`.
@@ -143,32 +141,34 @@ impl DescribeSnapshotCopyGrantsInputBuilder {
     /// <p>A tag value or values for which you want to return all matching resources that are associated with the specified value or values. For example, suppose that you have resources tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with all resources that have either or both of these tag values associated with them.</p>
     pub fn tag_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tag_values.unwrap_or_default();
-        v.push(input.into());
-        self.tag_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.tag_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A tag value or values for which you want to return all matching resources that are associated with the specified value or values. For example, suppose that you have resources tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with all resources that have either or both of these tag values associated with them.</p>
-    pub fn set_tag_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.tag_values = input;
-        self
+    pub fn set_tag_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.tag_values = input; self
     }
     /// <p>A tag value or values for which you want to return all matching resources that are associated with the specified value or values. For example, suppose that you have resources tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with all resources that have either or both of these tag values associated with them.</p>
-    pub fn get_tag_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tag_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.tag_values
     }
     /// Consumes the builder and constructs a [`DescribeSnapshotCopyGrantsInput`](crate::operation::describe_snapshot_copy_grants::DescribeSnapshotCopyGrantsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_snapshot_copy_grants::DescribeSnapshotCopyGrantsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_snapshot_copy_grants::DescribeSnapshotCopyGrantsInput {
-            snapshot_copy_grant_name: self.snapshot_copy_grant_name,
-            max_records: self.max_records,
-            marker: self.marker,
-            tag_keys: self.tag_keys,
-            tag_values: self.tag_values,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_snapshot_copy_grants::DescribeSnapshotCopyGrantsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_snapshot_copy_grants::DescribeSnapshotCopyGrantsInput {
+                snapshot_copy_grant_name: self.snapshot_copy_grant_name
+                ,
+                max_records: self.max_records
+                ,
+                marker: self.marker
+                ,
+                tag_keys: self.tag_keys
+                ,
+                tag_values: self.tag_values
+                ,
+            }
+        )
     }
 }
+

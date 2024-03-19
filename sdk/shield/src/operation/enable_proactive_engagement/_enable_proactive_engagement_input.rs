@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableProactiveEngagementInput {}
+pub struct EnableProactiveEngagementInput  {
+}
 impl EnableProactiveEngagementInput {
     /// Creates a new builder-style object to manufacture [`EnableProactiveEngagementInput`](crate::operation::enable_proactive_engagement::EnableProactiveEngagementInput).
     pub fn builder() -> crate::operation::enable_proactive_engagement::builders::EnableProactiveEngagementInputBuilder {
@@ -13,15 +14,15 @@ impl EnableProactiveEngagementInput {
 /// A builder for [`EnableProactiveEngagementInput`](crate::operation::enable_proactive_engagement::EnableProactiveEngagementInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct EnableProactiveEngagementInputBuilder {}
+pub struct EnableProactiveEngagementInputBuilder {
+}
 impl EnableProactiveEngagementInputBuilder {
     /// Consumes the builder and constructs a [`EnableProactiveEngagementInput`](crate::operation::enable_proactive_engagement::EnableProactiveEngagementInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::enable_proactive_engagement::EnableProactiveEngagementInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::enable_proactive_engagement::EnableProactiveEngagementInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_proactive_engagement::EnableProactiveEngagementInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::enable_proactive_engagement::EnableProactiveEngagementInput {
+            }
+        )
     }
 }
+

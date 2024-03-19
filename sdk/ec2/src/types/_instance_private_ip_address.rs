@@ -3,7 +3,7 @@
 /// <p>Describes a private IPv4 address.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstancePrivateIpAddress {
+pub struct InstancePrivateIpAddress  {
     /// <p>The association information for an Elastic IP address for the network interface.</p>
     pub association: ::std::option::Option<crate::types::InstanceNetworkInterfaceAssociation>,
     /// <p>Indicates whether this IPv4 address is the primary private IP address of the network interface.</p>
@@ -13,9 +13,9 @@ pub struct InstancePrivateIpAddress {
     /// <p>The private IPv4 address of the network interface.</p>
     pub private_ip_address: ::std::option::Option<::std::string::String>,
 }
-impl InstancePrivateIpAddress {
+impl  InstancePrivateIpAddress  {
     /// <p>The association information for an Elastic IP address for the network interface.</p>
-    pub fn association(&self) -> ::std::option::Option<&crate::types::InstanceNetworkInterfaceAssociation> {
+    pub fn association(&self) -> ::std::option::Option<& crate::types::InstanceNetworkInterfaceAssociation> {
         self.association.as_ref()
     }
     /// <p>Indicates whether this IPv4 address is the primary private IP address of the network interface.</p>
@@ -23,11 +23,11 @@ impl InstancePrivateIpAddress {
         self.primary
     }
     /// <p>The private IPv4 DNS name.</p>
-    pub fn private_dns_name(&self) -> ::std::option::Option<&str> {
+    pub fn private_dns_name(&self) -> ::std::option::Option<& str> {
         self.private_dns_name.as_deref()
     }
     /// <p>The private IPv4 address of the network interface.</p>
-    pub fn private_ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn private_ip_address(&self) -> ::std::option::Option<& str> {
         self.private_ip_address.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl InstancePrivateIpAddressBuilder {
     }
     /// <p>The association information for an Elastic IP address for the network interface.</p>
     pub fn set_association(mut self, input: ::std::option::Option<crate::types::InstanceNetworkInterfaceAssociation>) -> Self {
-        self.association = input;
-        self
+        self.association = input; self
     }
     /// <p>The association information for an Elastic IP address for the network interface.</p>
     pub fn get_association(&self) -> &::std::option::Option<crate::types::InstanceNetworkInterfaceAssociation> {
@@ -69,8 +68,7 @@ impl InstancePrivateIpAddressBuilder {
     }
     /// <p>Indicates whether this IPv4 address is the primary private IP address of the network interface.</p>
     pub fn set_primary(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.primary = input;
-        self
+        self.primary = input; self
     }
     /// <p>Indicates whether this IPv4 address is the primary private IP address of the network interface.</p>
     pub fn get_primary(&self) -> &::std::option::Option<bool> {
@@ -83,8 +81,7 @@ impl InstancePrivateIpAddressBuilder {
     }
     /// <p>The private IPv4 DNS name.</p>
     pub fn set_private_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.private_dns_name = input;
-        self
+        self.private_dns_name = input; self
     }
     /// <p>The private IPv4 DNS name.</p>
     pub fn get_private_dns_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl InstancePrivateIpAddressBuilder {
     }
     /// <p>The private IPv4 address of the network interface.</p>
     pub fn set_private_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.private_ip_address = input;
-        self
+        self.private_ip_address = input; self
     }
     /// <p>The private IPv4 address of the network interface.</p>
     pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl InstancePrivateIpAddressBuilder {
     /// Consumes the builder and constructs a [`InstancePrivateIpAddress`](crate::types::InstancePrivateIpAddress).
     pub fn build(self) -> crate::types::InstancePrivateIpAddress {
         crate::types::InstancePrivateIpAddress {
-            association: self.association,
-            primary: self.primary,
-            private_dns_name: self.private_dns_name,
-            private_ip_address: self.private_ip_address,
+            association: self.association
+            ,
+            primary: self.primary
+            ,
+            private_dns_name: self.private_dns_name
+            ,
+            private_ip_address: self.private_ip_address
+            ,
         }
     }
 }
+

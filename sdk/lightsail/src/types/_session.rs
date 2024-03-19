@@ -3,7 +3,7 @@
 /// <p>Describes a web-based, remote graphical user interface (GUI), NICE DCV session. The session is used to access a virtual computer’s operating system or application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Session {
+pub struct Session  {
     /// <p>The session name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The session URL.</p>
@@ -11,13 +11,13 @@ pub struct Session {
     /// <p>When true, this Boolean value indicates the primary session for the specified resource.</p>
     pub is_primary: ::std::option::Option<bool>,
 }
-impl Session {
+impl  Session  {
     /// <p>The session name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The session URL.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
     /// <p>When true, this Boolean value indicates the primary session for the specified resource.</p>
@@ -25,7 +25,7 @@ impl Session {
         self.is_primary
     }
 }
-impl ::std::fmt::Debug for Session {
+impl  ::std::fmt::Debug for Session  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Session");
         formatter.field("name", &self.name);
@@ -57,8 +57,7 @@ impl SessionBuilder {
     }
     /// <p>The session name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The session name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl SessionBuilder {
     }
     /// <p>The session URL.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// <p>The session URL.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl SessionBuilder {
     }
     /// <p>When true, this Boolean value indicates the primary session for the specified resource.</p>
     pub fn set_is_primary(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_primary = input;
-        self
+        self.is_primary = input; self
     }
     /// <p>When true, this Boolean value indicates the primary session for the specified resource.</p>
     pub fn get_is_primary(&self) -> &::std::option::Option<bool> {
@@ -95,9 +92,12 @@ impl SessionBuilder {
     /// Consumes the builder and constructs a [`Session`](crate::types::Session).
     pub fn build(self) -> crate::types::Session {
         crate::types::Session {
-            name: self.name,
-            url: self.url,
-            is_primary: self.is_primary,
+            name: self.name
+            ,
+            url: self.url
+            ,
+            is_primary: self.is_primary
+            ,
         }
     }
 }
@@ -110,3 +110,4 @@ impl ::std::fmt::Debug for SessionBuilder {
         formatter.finish()
     }
 }
+

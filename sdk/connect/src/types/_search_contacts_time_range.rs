@@ -3,7 +3,7 @@
 /// <p>A structure of time range that you want to search results.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchContactsTimeRange {
+pub struct SearchContactsTimeRange  {
     /// <p>The type of timestamp to search.</p>
     pub r#type: crate::types::SearchContactsTimeRangeType,
     /// <p>The start time of the time range.</p>
@@ -11,17 +11,17 @@ pub struct SearchContactsTimeRange {
     /// <p>The end time of the time range.</p>
     pub end_time: ::aws_smithy_types::DateTime,
 }
-impl SearchContactsTimeRange {
+impl  SearchContactsTimeRange  {
     /// <p>The type of timestamp to search.</p>
-    pub fn r#type(&self) -> &crate::types::SearchContactsTimeRangeType {
+    pub fn r#type(&self) -> & crate::types::SearchContactsTimeRangeType {
         &self.r#type
     }
     /// <p>The start time of the time range.</p>
-    pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn start_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.start_time
     }
     /// <p>The end time of the time range.</p>
-    pub fn end_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn end_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.end_time
     }
 }
@@ -49,8 +49,7 @@ impl SearchContactsTimeRangeBuilder {
     }
     /// <p>The type of timestamp to search.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SearchContactsTimeRangeType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of timestamp to search.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::SearchContactsTimeRangeType> {
@@ -64,8 +63,7 @@ impl SearchContactsTimeRangeBuilder {
     }
     /// <p>The start time of the time range.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The start time of the time range.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -79,8 +77,7 @@ impl SearchContactsTimeRangeBuilder {
     }
     /// <p>The end time of the time range.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The end time of the time range.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -92,25 +89,25 @@ impl SearchContactsTimeRangeBuilder {
     /// - [`start_time`](crate::types::builders::SearchContactsTimeRangeBuilder::start_time)
     /// - [`end_time`](crate::types::builders::SearchContactsTimeRangeBuilder::end_time)
     pub fn build(self) -> ::std::result::Result<crate::types::SearchContactsTimeRange, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SearchContactsTimeRange {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building SearchContactsTimeRange",
-                )
-            })?,
-            start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start_time",
-                    "start_time was not specified but it is required when building SearchContactsTimeRange",
-                )
-            })?,
-            end_time: self.end_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "end_time",
-                    "end_time was not specified but it is required when building SearchContactsTimeRange",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SearchContactsTimeRange {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building SearchContactsTimeRange")
+                    )?
+                ,
+                start_time: self.start_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start_time", "start_time was not specified but it is required when building SearchContactsTimeRange")
+                    )?
+                ,
+                end_time: self.end_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("end_time", "end_time was not specified but it is required when building SearchContactsTimeRange")
+                    )?
+                ,
+            }
+        )
     }
 }
+

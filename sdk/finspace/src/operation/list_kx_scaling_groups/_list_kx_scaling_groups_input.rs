@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListKxScalingGroupsInput {
+pub struct ListKxScalingGroupsInput  {
     /// <p>A unique identifier for the kdb environment, for which you want to retrieve a list of scaling groups.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in this request.</p>
@@ -10,9 +10,9 @@ pub struct ListKxScalingGroupsInput {
     /// <p>A token that indicates where a results page should begin.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListKxScalingGroupsInput {
+impl  ListKxScalingGroupsInput  {
     /// <p>A unique identifier for the kdb environment, for which you want to retrieve a list of scaling groups.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The maximum number of results to return in this request.</p>
@@ -20,7 +20,7 @@ impl ListKxScalingGroupsInput {
         self.max_results
     }
     /// <p>A token that indicates where a results page should begin.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ListKxScalingGroupsInputBuilder {
     }
     /// <p>A unique identifier for the kdb environment, for which you want to retrieve a list of scaling groups.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>A unique identifier for the kdb environment, for which you want to retrieve a list of scaling groups.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListKxScalingGroupsInputBuilder {
     }
     /// <p>The maximum number of results to return in this request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in this request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -76,22 +74,24 @@ impl ListKxScalingGroupsInputBuilder {
     }
     /// <p>A token that indicates where a results page should begin.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates where a results page should begin.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListKxScalingGroupsInput`](crate::operation::list_kx_scaling_groups::ListKxScalingGroupsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_kx_scaling_groups::ListKxScalingGroupsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_kx_scaling_groups::ListKxScalingGroupsInput {
-            environment_id: self.environment_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_kx_scaling_groups::ListKxScalingGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_kx_scaling_groups::ListKxScalingGroupsInput {
+                environment_id: self.environment_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

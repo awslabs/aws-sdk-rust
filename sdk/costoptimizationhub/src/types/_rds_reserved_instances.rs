@@ -3,19 +3,19 @@
 /// <p>The RDS reserved instances recommendation details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RdsReservedInstances {
+pub struct RdsReservedInstances  {
     /// <p>The RDS reserved instances configuration used for recommendations.</p>
     pub configuration: ::std::option::Option<crate::types::RdsReservedInstancesConfiguration>,
     /// <p>Cost impact of the purchase recommendation.</p>
     pub cost_calculation: ::std::option::Option<crate::types::ReservedInstancesCostCalculation>,
 }
-impl RdsReservedInstances {
+impl  RdsReservedInstances  {
     /// <p>The RDS reserved instances configuration used for recommendations.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::RdsReservedInstancesConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::RdsReservedInstancesConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>Cost impact of the purchase recommendation.</p>
-    pub fn cost_calculation(&self) -> ::std::option::Option<&crate::types::ReservedInstancesCostCalculation> {
+    pub fn cost_calculation(&self) -> ::std::option::Option<& crate::types::ReservedInstancesCostCalculation> {
         self.cost_calculation.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl RdsReservedInstancesBuilder {
     }
     /// <p>The RDS reserved instances configuration used for recommendations.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::RdsReservedInstancesConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>The RDS reserved instances configuration used for recommendations.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::RdsReservedInstancesConfiguration> {
@@ -55,8 +54,7 @@ impl RdsReservedInstancesBuilder {
     }
     /// <p>Cost impact of the purchase recommendation.</p>
     pub fn set_cost_calculation(mut self, input: ::std::option::Option<crate::types::ReservedInstancesCostCalculation>) -> Self {
-        self.cost_calculation = input;
-        self
+        self.cost_calculation = input; self
     }
     /// <p>Cost impact of the purchase recommendation.</p>
     pub fn get_cost_calculation(&self) -> &::std::option::Option<crate::types::ReservedInstancesCostCalculation> {
@@ -65,8 +63,11 @@ impl RdsReservedInstancesBuilder {
     /// Consumes the builder and constructs a [`RdsReservedInstances`](crate::types::RdsReservedInstances).
     pub fn build(self) -> crate::types::RdsReservedInstances {
         crate::types::RdsReservedInstances {
-            configuration: self.configuration,
-            cost_calculation: self.cost_calculation,
+            configuration: self.configuration
+            ,
+            cost_calculation: self.cost_calculation
+            ,
         }
     }
 }
+

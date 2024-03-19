@@ -3,15 +3,15 @@
 /// <p>Specifies the set of parameters needed to perform the dynamic transform.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DynamicTransform {
+pub struct DynamicTransform  {
     /// <p>Specifies the name of the dynamic transform.</p>
     pub name: ::std::string::String,
     /// <p>Specifies the name of the dynamic transform as it appears in the Glue Studio visual editor.</p>
     pub transform_name: ::std::string::String,
     /// <p>Specifies the inputs for the dynamic transform that are required.</p>
-    pub inputs: ::std::vec::Vec<::std::string::String>,
+    pub inputs: ::std::vec::Vec::<::std::string::String>,
     /// <p>Specifies the parameters of the dynamic transform.</p>
-    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::TransformConfigParameter>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec::<crate::types::TransformConfigParameter>>,
     /// <p>Specifies the name of the function of the dynamic transform.</p>
     pub function_name: ::std::string::String,
     /// <p>Specifies the path of the dynamic transform source and config files.</p>
@@ -19,49 +19,46 @@ pub struct DynamicTransform {
     /// <p>This field is not used and will be deprecated in future release.</p>
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the data schema for the dynamic transform.</p>
-    pub output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
+    pub output_schemas: ::std::option::Option<::std::vec::Vec::<crate::types::GlueSchema>>,
 }
-impl DynamicTransform {
+impl  DynamicTransform  {
     /// <p>Specifies the name of the dynamic transform.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Specifies the name of the dynamic transform as it appears in the Glue Studio visual editor.</p>
-    pub fn transform_name(&self) -> &str {
-        use std::ops::Deref;
-        self.transform_name.deref()
+    pub fn transform_name(&self) -> & str {
+        use std::ops::Deref; self.transform_name.deref()
     }
     /// <p>Specifies the inputs for the dynamic transform that are required.</p>
-    pub fn inputs(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.inputs.deref()
+    pub fn inputs(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.inputs.deref()
     }
     /// <p>Specifies the parameters of the dynamic transform.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
-    pub fn parameters(&self) -> &[crate::types::TransformConfigParameter] {
-        self.parameters.as_deref().unwrap_or_default()
+    pub fn parameters(&self) -> & [crate::types::TransformConfigParameter] {
+        self.parameters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the name of the function of the dynamic transform.</p>
-    pub fn function_name(&self) -> &str {
-        use std::ops::Deref;
-        self.function_name.deref()
+    pub fn function_name(&self) -> & str {
+        use std::ops::Deref; self.function_name.deref()
     }
     /// <p>Specifies the path of the dynamic transform source and config files.</p>
-    pub fn path(&self) -> &str {
-        use std::ops::Deref;
-        self.path.deref()
+    pub fn path(&self) -> & str {
+        use std::ops::Deref; self.path.deref()
     }
     /// <p>This field is not used and will be deprecated in future release.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>Specifies the data schema for the dynamic transform.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_schemas.is_none()`.
-    pub fn output_schemas(&self) -> &[crate::types::GlueSchema] {
-        self.output_schemas.as_deref().unwrap_or_default()
+    pub fn output_schemas(&self) -> & [crate::types::GlueSchema] {
+        self.output_schemas.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DynamicTransform {
@@ -77,12 +74,12 @@ impl DynamicTransform {
 pub struct DynamicTransformBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) transform_name: ::std::option::Option<::std::string::String>,
-    pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::TransformConfigParameter>>,
+    pub(crate) inputs: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec::<crate::types::TransformConfigParameter>>,
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
-    pub(crate) output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
+    pub(crate) output_schemas: ::std::option::Option<::std::vec::Vec::<crate::types::GlueSchema>>,
 }
 impl DynamicTransformBuilder {
     /// <p>Specifies the name of the dynamic transform.</p>
@@ -93,8 +90,7 @@ impl DynamicTransformBuilder {
     }
     /// <p>Specifies the name of the dynamic transform.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Specifies the name of the dynamic transform.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +104,7 @@ impl DynamicTransformBuilder {
     }
     /// <p>Specifies the name of the dynamic transform as it appears in the Glue Studio visual editor.</p>
     pub fn set_transform_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transform_name = input;
-        self
+        self.transform_name = input; self
     }
     /// <p>Specifies the name of the dynamic transform as it appears in the Glue Studio visual editor.</p>
     pub fn get_transform_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,17 +117,16 @@ impl DynamicTransformBuilder {
     /// <p>Specifies the inputs for the dynamic transform that are required.</p>
     pub fn inputs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
-        v.push(input.into());
-        self.inputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.inputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the inputs for the dynamic transform that are required.</p>
-    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inputs = input;
-        self
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.inputs = input; self
     }
     /// <p>Specifies the inputs for the dynamic transform that are required.</p>
-    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.inputs
     }
     /// Appends an item to `parameters`.
@@ -142,17 +136,16 @@ impl DynamicTransformBuilder {
     /// <p>Specifies the parameters of the dynamic transform.</p>
     pub fn parameters(mut self, input: crate::types::TransformConfigParameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the parameters of the dynamic transform.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TransformConfigParameter>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TransformConfigParameter>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>Specifies the parameters of the dynamic transform.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TransformConfigParameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TransformConfigParameter>> {
         &self.parameters
     }
     /// <p>Specifies the name of the function of the dynamic transform.</p>
@@ -163,8 +156,7 @@ impl DynamicTransformBuilder {
     }
     /// <p>Specifies the name of the function of the dynamic transform.</p>
     pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_name = input;
-        self
+        self.function_name = input; self
     }
     /// <p>Specifies the name of the function of the dynamic transform.</p>
     pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -178,8 +170,7 @@ impl DynamicTransformBuilder {
     }
     /// <p>Specifies the path of the dynamic transform source and config files.</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>Specifies the path of the dynamic transform source and config files.</p>
     pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -192,8 +183,7 @@ impl DynamicTransformBuilder {
     }
     /// <p>This field is not used and will be deprecated in future release.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>This field is not used and will be deprecated in future release.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -206,17 +196,16 @@ impl DynamicTransformBuilder {
     /// <p>Specifies the data schema for the dynamic transform.</p>
     pub fn output_schemas(mut self, input: crate::types::GlueSchema) -> Self {
         let mut v = self.output_schemas.unwrap_or_default();
-        v.push(input);
-        self.output_schemas = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.output_schemas = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the data schema for the dynamic transform.</p>
-    pub fn set_output_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>) -> Self {
-        self.output_schemas = input;
-        self
+    pub fn set_output_schemas(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GlueSchema>>) -> Self {
+        self.output_schemas = input; self
     }
     /// <p>Specifies the data schema for the dynamic transform.</p>
-    pub fn get_output_schemas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
+    pub fn get_output_schemas(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GlueSchema>> {
         &self.output_schemas
     }
     /// Consumes the builder and constructs a [`DynamicTransform`](crate::types::DynamicTransform).
@@ -227,40 +216,41 @@ impl DynamicTransformBuilder {
     /// - [`function_name`](crate::types::builders::DynamicTransformBuilder::function_name)
     /// - [`path`](crate::types::builders::DynamicTransformBuilder::path)
     pub fn build(self) -> ::std::result::Result<crate::types::DynamicTransform, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DynamicTransform {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building DynamicTransform",
-                )
-            })?,
-            transform_name: self.transform_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "transform_name",
-                    "transform_name was not specified but it is required when building DynamicTransform",
-                )
-            })?,
-            inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "inputs",
-                    "inputs was not specified but it is required when building DynamicTransform",
-                )
-            })?,
-            parameters: self.parameters,
-            function_name: self.function_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "function_name",
-                    "function_name was not specified but it is required when building DynamicTransform",
-                )
-            })?,
-            path: self.path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "path",
-                    "path was not specified but it is required when building DynamicTransform",
-                )
-            })?,
-            version: self.version,
-            output_schemas: self.output_schemas,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DynamicTransform {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building DynamicTransform")
+                    )?
+                ,
+                transform_name: self.transform_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("transform_name", "transform_name was not specified but it is required when building DynamicTransform")
+                    )?
+                ,
+                inputs: self.inputs
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("inputs", "inputs was not specified but it is required when building DynamicTransform")
+                    )?
+                ,
+                parameters: self.parameters
+                ,
+                function_name: self.function_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("function_name", "function_name was not specified but it is required when building DynamicTransform")
+                    )?
+                ,
+                path: self.path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("path", "path was not specified but it is required when building DynamicTransform")
+                    )?
+                ,
+                version: self.version
+                ,
+                output_schemas: self.output_schemas
+                ,
+            }
+        )
     }
 }
+

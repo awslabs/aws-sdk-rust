@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCompilationJobOutput {
+pub struct CreateCompilationJobOutput  {
     /// <p>If the action is successful, the service sends back an HTTP 200 response. Amazon SageMaker returns the following data in JSON format:</p>
     /// <ul>
     /// <li>
@@ -11,21 +11,21 @@ pub struct CreateCompilationJobOutput {
     pub compilation_job_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateCompilationJobOutput {
+impl  CreateCompilationJobOutput  {
     /// <p>If the action is successful, the service sends back an HTTP 200 response. Amazon SageMaker returns the following data in JSON format:</p>
     /// <ul>
     /// <li>
     /// <p><code>CompilationJobArn</code>: The Amazon Resource Name (ARN) of the compiled job.</p></li>
     /// </ul>
-    pub fn compilation_job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn compilation_job_arn(&self) -> ::std::option::Option<& str> {
         self.compilation_job_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateCompilationJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateCompilationJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateCompilationJobOutput`](crate::operation::create_compilation_job::CreateCompilationJobOutput).
     pub fn builder() -> crate::operation::create_compilation_job::builders::CreateCompilationJobOutputBuilder {
@@ -57,8 +57,7 @@ impl CreateCompilationJobOutputBuilder {
     /// <p><code>CompilationJobArn</code>: The Amazon Resource Name (ARN) of the compiled job.</p></li>
     /// </ul>
     pub fn set_compilation_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.compilation_job_arn = input;
-        self
+        self.compilation_job_arn = input; self
     }
     /// <p>If the action is successful, the service sends back an HTTP 200 response. Amazon SageMaker returns the following data in JSON format:</p>
     /// <ul>
@@ -69,19 +68,21 @@ impl CreateCompilationJobOutputBuilder {
         &self.compilation_job_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateCompilationJobOutput`](crate::operation::create_compilation_job::CreateCompilationJobOutput).
     pub fn build(self) -> crate::operation::create_compilation_job::CreateCompilationJobOutput {
         crate::operation::create_compilation_job::CreateCompilationJobOutput {
-            compilation_job_arn: self.compilation_job_arn,
+            compilation_job_arn: self.compilation_job_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

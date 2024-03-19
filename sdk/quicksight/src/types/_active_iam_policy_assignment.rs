@@ -3,19 +3,19 @@
 /// <p>The active Identity and Access Management (IAM) policy assignment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActiveIamPolicyAssignment {
+pub struct ActiveIamPolicyAssignment  {
     /// <p>A name for the IAM policy assignment.</p>
     pub assignment_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub policy_arn: ::std::option::Option<::std::string::String>,
 }
-impl ActiveIamPolicyAssignment {
+impl  ActiveIamPolicyAssignment  {
     /// <p>A name for the IAM policy assignment.</p>
-    pub fn assignment_name(&self) -> ::std::option::Option<&str> {
+    pub fn assignment_name(&self) -> ::std::option::Option<& str> {
         self.assignment_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn policy_arn(&self) -> ::std::option::Option<&str> {
+    pub fn policy_arn(&self) -> ::std::option::Option<& str> {
         self.policy_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ActiveIamPolicyAssignmentBuilder {
     }
     /// <p>A name for the IAM policy assignment.</p>
     pub fn set_assignment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assignment_name = input;
-        self
+        self.assignment_name = input; self
     }
     /// <p>A name for the IAM policy assignment.</p>
     pub fn get_assignment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ActiveIamPolicyAssignmentBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_arn = input;
-        self
+        self.policy_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ActiveIamPolicyAssignmentBuilder {
     /// Consumes the builder and constructs a [`ActiveIamPolicyAssignment`](crate::types::ActiveIamPolicyAssignment).
     pub fn build(self) -> crate::types::ActiveIamPolicyAssignment {
         crate::types::ActiveIamPolicyAssignment {
-            assignment_name: self.assignment_name,
-            policy_arn: self.policy_arn,
+            assignment_name: self.assignment_name
+            ,
+            policy_arn: self.policy_arn
+            ,
         }
     }
 }
+

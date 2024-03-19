@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListFuotaTasks`](crate::operation::list_fuota_tasks::builders::ListFuotaTasksFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_fuota_tasks::builders::ListFuotaTasksFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_fuota_tasks::builders::ListFuotaTasksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_fuota_tasks::builders::ListFuotaTasksFluentBuilder::set_next_token):<br>required: **false**<br><p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_fuota_tasks::builders::ListFuotaTasksFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_fuota_tasks::builders::ListFuotaTasksFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in this operation.</p><br>
-    /// - On success, responds with [`ListFuotaTasksOutput`](crate::operation::list_fuota_tasks::ListFuotaTasksOutput) with field(s):
+                            /// - On success, responds with [`ListFuotaTasksOutput`](crate::operation::list_fuota_tasks::ListFuotaTasksOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_fuota_tasks::ListFuotaTasksOutput::next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     ///   - [`fuota_task_list(Option<Vec::<FuotaTask>>)`](crate::operation::list_fuota_tasks::ListFuotaTasksOutput::fuota_task_list): <p>Lists the FUOTA tasks registered to your AWS account.</p>
-    /// - On failure, responds with [`SdkError<ListFuotaTasksError>`](crate::operation::list_fuota_tasks::ListFuotaTasksError)
+                            /// - On failure, responds with [`SdkError<ListFuotaTasksError>`](crate::operation::list_fuota_tasks::ListFuotaTasksError)
     pub fn list_fuota_tasks(&self) -> crate::operation::list_fuota_tasks::builders::ListFuotaTasksFluentBuilder {
-        crate::operation::list_fuota_tasks::builders::ListFuotaTasksFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_fuota_tasks::builders::ListFuotaTasksFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListWorkflows`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results that can be returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token.</p><br>
     ///   - [`template_id(impl Into<String>)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::template_id) / [`set_template_id(Option<String>)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::set_template_id):<br>required: **false**<br><p>The ID of the template.</p><br>
     ///   - [`ads_application_configuration_name(impl Into<String>)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::ads_application_configuration_name) / [`set_ads_application_configuration_name(Option<String>)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::set_ads_application_configuration_name):<br>required: **false**<br><p>The name of the application configured in Application Discovery Service.</p><br>
     ///   - [`status(MigrationWorkflowStatusEnum)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::status) / [`set_status(Option<MigrationWorkflowStatusEnum>)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::set_status):<br>required: **false**<br><p>The status of the migration workflow.</p><br>
     ///   - [`name(impl Into<String>)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::set_name):<br>required: **false**<br><p>The name of the migration workflow.</p><br>
-    /// - On success, responds with [`ListWorkflowsOutput`](crate::operation::list_workflows::ListWorkflowsOutput) with field(s):
+                            /// - On success, responds with [`ListWorkflowsOutput`](crate::operation::list_workflows::ListWorkflowsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_workflows::ListWorkflowsOutput::next_token): <p>The pagination token.</p>
     ///   - [`migration_workflow_summary(Vec::<MigrationWorkflowSummary>)`](crate::operation::list_workflows::ListWorkflowsOutput::migration_workflow_summary): <p>The summary of the migration workflow.</p>
-    /// - On failure, responds with [`SdkError<ListWorkflowsError>`](crate::operation::list_workflows::ListWorkflowsError)
+                            /// - On failure, responds with [`SdkError<ListWorkflowsError>`](crate::operation::list_workflows::ListWorkflowsError)
     pub fn list_workflows(&self) -> crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder {
-        crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_workflows::builders::ListWorkflowsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

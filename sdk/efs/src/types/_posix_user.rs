@@ -3,15 +3,15 @@
 /// <p>The full POSIX identity, including the user ID, group ID, and any secondary group IDs, on the access point that is used for all file system operations performed by NFS clients using the access point.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PosixUser {
+pub struct PosixUser  {
     /// <p>The POSIX user ID used for all file system operations using this access point.</p>
     pub uid: i64,
     /// <p>The POSIX group ID used for all file system operations using this access point.</p>
     pub gid: i64,
     /// <p>Secondary POSIX group IDs used for all file system operations using this access point.</p>
-    pub secondary_gids: ::std::option::Option<::std::vec::Vec<i64>>,
+    pub secondary_gids: ::std::option::Option<::std::vec::Vec::<i64>>,
 }
-impl PosixUser {
+impl  PosixUser  {
     /// <p>The POSIX user ID used for all file system operations using this access point.</p>
     pub fn uid(&self) -> i64 {
         self.uid
@@ -21,10 +21,11 @@ impl PosixUser {
         self.gid
     }
     /// <p>Secondary POSIX group IDs used for all file system operations using this access point.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_gids.is_none()`.
-    pub fn secondary_gids(&self) -> &[i64] {
-        self.secondary_gids.as_deref().unwrap_or_default()
+    pub fn secondary_gids(&self) -> & [i64] {
+        self.secondary_gids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PosixUser {
@@ -40,7 +41,7 @@ impl PosixUser {
 pub struct PosixUserBuilder {
     pub(crate) uid: ::std::option::Option<i64>,
     pub(crate) gid: ::std::option::Option<i64>,
-    pub(crate) secondary_gids: ::std::option::Option<::std::vec::Vec<i64>>,
+    pub(crate) secondary_gids: ::std::option::Option<::std::vec::Vec::<i64>>,
 }
 impl PosixUserBuilder {
     /// <p>The POSIX user ID used for all file system operations using this access point.</p>
@@ -51,8 +52,7 @@ impl PosixUserBuilder {
     }
     /// <p>The POSIX user ID used for all file system operations using this access point.</p>
     pub fn set_uid(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.uid = input;
-        self
+        self.uid = input; self
     }
     /// <p>The POSIX user ID used for all file system operations using this access point.</p>
     pub fn get_uid(&self) -> &::std::option::Option<i64> {
@@ -66,8 +66,7 @@ impl PosixUserBuilder {
     }
     /// <p>The POSIX group ID used for all file system operations using this access point.</p>
     pub fn set_gid(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.gid = input;
-        self
+        self.gid = input; self
     }
     /// <p>The POSIX group ID used for all file system operations using this access point.</p>
     pub fn get_gid(&self) -> &::std::option::Option<i64> {
@@ -80,17 +79,16 @@ impl PosixUserBuilder {
     /// <p>Secondary POSIX group IDs used for all file system operations using this access point.</p>
     pub fn secondary_gids(mut self, input: i64) -> Self {
         let mut v = self.secondary_gids.unwrap_or_default();
-        v.push(input);
-        self.secondary_gids = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.secondary_gids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Secondary POSIX group IDs used for all file system operations using this access point.</p>
-    pub fn set_secondary_gids(mut self, input: ::std::option::Option<::std::vec::Vec<i64>>) -> Self {
-        self.secondary_gids = input;
-        self
+    pub fn set_secondary_gids(mut self, input: ::std::option::Option<::std::vec::Vec::<i64>>) -> Self {
+        self.secondary_gids = input; self
     }
     /// <p>Secondary POSIX group IDs used for all file system operations using this access point.</p>
-    pub fn get_secondary_gids(&self) -> &::std::option::Option<::std::vec::Vec<i64>> {
+    pub fn get_secondary_gids(&self) -> &::std::option::Option<::std::vec::Vec::<i64>> {
         &self.secondary_gids
     }
     /// Consumes the builder and constructs a [`PosixUser`](crate::types::PosixUser).
@@ -98,20 +96,22 @@ impl PosixUserBuilder {
     /// - [`uid`](crate::types::builders::PosixUserBuilder::uid)
     /// - [`gid`](crate::types::builders::PosixUserBuilder::gid)
     pub fn build(self) -> ::std::result::Result<crate::types::PosixUser, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PosixUser {
-            uid: self.uid.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "uid",
-                    "uid was not specified but it is required when building PosixUser",
-                )
-            })?,
-            gid: self.gid.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "gid",
-                    "gid was not specified but it is required when building PosixUser",
-                )
-            })?,
-            secondary_gids: self.secondary_gids,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PosixUser {
+                uid: self.uid
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("uid", "uid was not specified but it is required when building PosixUser")
+                    )?
+                ,
+                gid: self.gid
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("gid", "gid was not specified but it is required when building PosixUser")
+                    )?
+                ,
+                secondary_gids: self.secondary_gids
+                ,
+            }
+        )
     }
 }
+

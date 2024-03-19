@@ -3,7 +3,7 @@
 /// <p>Provides additional optional settings for your request, including content redaction, automatic language identification; allows you to apply custom language models, custom vocabulary filters, and custom vocabularies.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CallAnalyticsJobSettings {
+pub struct CallAnalyticsJobSettings  {
     /// <p>The name of the custom vocabulary you want to include in your Call Analytics transcription request. Custom vocabulary names are case sensitive.</p>
     pub vocabulary_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the custom vocabulary filter you want to include in your Call Analytics transcription request. Custom vocabulary filter names are case sensitive.</p>
@@ -23,63 +23,62 @@ pub struct CallAnalyticsJobSettings {
     /// <p>Including language options can improve the accuracy of language identification.</p>
     /// <p>For a list of languages supported with Call Analytics, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
     /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
-    pub language_options: ::std::option::Option<::std::vec::Vec<crate::types::LanguageCode>>,
+    pub language_options: ::std::option::Option<::std::vec::Vec::<crate::types::LanguageCode>>,
     /// <p>If using automatic language identification in your request and you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
     /// <p><code>LanguageIdSettings</code> supports two to five language codes. Each language code you include can have an associated custom language model, custom vocabulary, and custom vocabulary filter. The language codes that you specify must match the languages of the associated custom language models, custom vocabularies, and custom vocabulary filters.</p>
     /// <p>It's recommended that you include <code>LanguageOptions</code> when using <code>LanguageIdSettings</code> to ensure that the correct language dialect is identified. For example, if you specify a custom vocabulary that is in <code>en-US</code> but Amazon Transcribe determines that the language spoken in your media is <code>en-AU</code>, your custom vocabulary <i>is not</i> applied to your transcription. If you include <code>LanguageOptions</code> and include <code>en-US</code> as the only English language dialect, your custom vocabulary <i>is</i> applied to your transcription.</p>
     /// <p>If you want to include a custom language model, custom vocabulary, or custom vocabulary filter with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>LanguageModelName</code>, <code>VocabularyName</code>, or <code>VocabularyFilterName</code> sub-parameters.</p>
     /// <p>For a list of languages supported with Call Analytics, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages and language-specific features</a>.</p>
-    pub language_id_settings: ::std::option::Option<::std::collections::HashMap<crate::types::LanguageCode, crate::types::LanguageIdSettings>>,
+    pub language_id_settings: ::std::option::Option<::std::collections::HashMap::<crate::types::LanguageCode, crate::types::LanguageIdSettings>>,
     /// <p>Contains <code>GenerateAbstractiveSummary</code>, which is a required parameter if you want to enable Generative call summarization in your Call Analytics request.</p>
     pub summarization: ::std::option::Option<crate::types::Summarization>,
 }
-impl CallAnalyticsJobSettings {
+impl  CallAnalyticsJobSettings  {
     /// <p>The name of the custom vocabulary you want to include in your Call Analytics transcription request. Custom vocabulary names are case sensitive.</p>
-    pub fn vocabulary_name(&self) -> ::std::option::Option<&str> {
+    pub fn vocabulary_name(&self) -> ::std::option::Option<& str> {
         self.vocabulary_name.as_deref()
     }
     /// <p>The name of the custom vocabulary filter you want to include in your Call Analytics transcription request. Custom vocabulary filter names are case sensitive.</p>
     /// <p>Note that if you include <code>VocabularyFilterName</code> in your request, you must also include <code>VocabularyFilterMethod</code>.</p>
-    pub fn vocabulary_filter_name(&self) -> ::std::option::Option<&str> {
+    pub fn vocabulary_filter_name(&self) -> ::std::option::Option<& str> {
         self.vocabulary_filter_name.as_deref()
     }
     /// <p>Specify how you want your custom vocabulary filter applied to your transcript.</p>
     /// <p>To replace words with <code>***</code>, choose <code>mask</code>.</p>
     /// <p>To delete words, choose <code>remove</code>.</p>
     /// <p>To flag words without changing them, choose <code>tag</code>.</p>
-    pub fn vocabulary_filter_method(&self) -> ::std::option::Option<&crate::types::VocabularyFilterMethod> {
+    pub fn vocabulary_filter_method(&self) -> ::std::option::Option<& crate::types::VocabularyFilterMethod> {
         self.vocabulary_filter_method.as_ref()
     }
     /// <p>The name of the custom language model you want to use when processing your Call Analytics job. Note that custom language model names are case sensitive.</p>
     /// <p>The language of the specified custom language model must match the language code that you specify in your transcription request. If the languages do not match, the custom language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
-    pub fn language_model_name(&self) -> ::std::option::Option<&str> {
+    pub fn language_model_name(&self) -> ::std::option::Option<& str> {
         self.language_model_name.as_deref()
     }
     /// <p>Makes it possible to redact or flag specified personally identifiable information (PII) in your transcript. If you use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>RedactionOutput</code> and <code>RedactionType</code>. You can optionally include <code>PiiEntityTypes</code> to choose which types of PII you want to redact.</p>
-    pub fn content_redaction(&self) -> ::std::option::Option<&crate::types::ContentRedaction> {
+    pub fn content_redaction(&self) -> ::std::option::Option<& crate::types::ContentRedaction> {
         self.content_redaction.as_ref()
     }
     /// <p>You can specify two or more language codes that represent the languages you think may be present in your media. Including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
     /// <p>Including language options can improve the accuracy of language identification.</p>
     /// <p>For a list of languages supported with Call Analytics, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
     /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.language_options.is_none()`.
-    pub fn language_options(&self) -> &[crate::types::LanguageCode] {
-        self.language_options.as_deref().unwrap_or_default()
+    pub fn language_options(&self) -> & [crate::types::LanguageCode] {
+        self.language_options.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If using automatic language identification in your request and you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
     /// <p><code>LanguageIdSettings</code> supports two to five language codes. Each language code you include can have an associated custom language model, custom vocabulary, and custom vocabulary filter. The language codes that you specify must match the languages of the associated custom language models, custom vocabularies, and custom vocabulary filters.</p>
     /// <p>It's recommended that you include <code>LanguageOptions</code> when using <code>LanguageIdSettings</code> to ensure that the correct language dialect is identified. For example, if you specify a custom vocabulary that is in <code>en-US</code> but Amazon Transcribe determines that the language spoken in your media is <code>en-AU</code>, your custom vocabulary <i>is not</i> applied to your transcription. If you include <code>LanguageOptions</code> and include <code>en-US</code> as the only English language dialect, your custom vocabulary <i>is</i> applied to your transcription.</p>
     /// <p>If you want to include a custom language model, custom vocabulary, or custom vocabulary filter with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>LanguageModelName</code>, <code>VocabularyName</code>, or <code>VocabularyFilterName</code> sub-parameters.</p>
     /// <p>For a list of languages supported with Call Analytics, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages and language-specific features</a>.</p>
-    pub fn language_id_settings(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::LanguageCode, crate::types::LanguageIdSettings>> {
+    pub fn language_id_settings(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::LanguageCode, crate::types::LanguageIdSettings>> {
         self.language_id_settings.as_ref()
     }
     /// <p>Contains <code>GenerateAbstractiveSummary</code>, which is a required parameter if you want to enable Generative call summarization in your Call Analytics request.</p>
-    pub fn summarization(&self) -> ::std::option::Option<&crate::types::Summarization> {
+    pub fn summarization(&self) -> ::std::option::Option<& crate::types::Summarization> {
         self.summarization.as_ref()
     }
 }
@@ -99,8 +98,8 @@ pub struct CallAnalyticsJobSettingsBuilder {
     pub(crate) vocabulary_filter_method: ::std::option::Option<crate::types::VocabularyFilterMethod>,
     pub(crate) language_model_name: ::std::option::Option<::std::string::String>,
     pub(crate) content_redaction: ::std::option::Option<crate::types::ContentRedaction>,
-    pub(crate) language_options: ::std::option::Option<::std::vec::Vec<crate::types::LanguageCode>>,
-    pub(crate) language_id_settings: ::std::option::Option<::std::collections::HashMap<crate::types::LanguageCode, crate::types::LanguageIdSettings>>,
+    pub(crate) language_options: ::std::option::Option<::std::vec::Vec::<crate::types::LanguageCode>>,
+    pub(crate) language_id_settings: ::std::option::Option<::std::collections::HashMap::<crate::types::LanguageCode, crate::types::LanguageIdSettings>>,
     pub(crate) summarization: ::std::option::Option<crate::types::Summarization>,
 }
 impl CallAnalyticsJobSettingsBuilder {
@@ -111,8 +110,7 @@ impl CallAnalyticsJobSettingsBuilder {
     }
     /// <p>The name of the custom vocabulary you want to include in your Call Analytics transcription request. Custom vocabulary names are case sensitive.</p>
     pub fn set_vocabulary_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vocabulary_name = input;
-        self
+        self.vocabulary_name = input; self
     }
     /// <p>The name of the custom vocabulary you want to include in your Call Analytics transcription request. Custom vocabulary names are case sensitive.</p>
     pub fn get_vocabulary_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +125,7 @@ impl CallAnalyticsJobSettingsBuilder {
     /// <p>The name of the custom vocabulary filter you want to include in your Call Analytics transcription request. Custom vocabulary filter names are case sensitive.</p>
     /// <p>Note that if you include <code>VocabularyFilterName</code> in your request, you must also include <code>VocabularyFilterMethod</code>.</p>
     pub fn set_vocabulary_filter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vocabulary_filter_name = input;
-        self
+        self.vocabulary_filter_name = input; self
     }
     /// <p>The name of the custom vocabulary filter you want to include in your Call Analytics transcription request. Custom vocabulary filter names are case sensitive.</p>
     /// <p>Note that if you include <code>VocabularyFilterName</code> in your request, you must also include <code>VocabularyFilterMethod</code>.</p>
@@ -148,8 +145,7 @@ impl CallAnalyticsJobSettingsBuilder {
     /// <p>To delete words, choose <code>remove</code>.</p>
     /// <p>To flag words without changing them, choose <code>tag</code>.</p>
     pub fn set_vocabulary_filter_method(mut self, input: ::std::option::Option<crate::types::VocabularyFilterMethod>) -> Self {
-        self.vocabulary_filter_method = input;
-        self
+        self.vocabulary_filter_method = input; self
     }
     /// <p>Specify how you want your custom vocabulary filter applied to your transcript.</p>
     /// <p>To replace words with <code>***</code>, choose <code>mask</code>.</p>
@@ -167,8 +163,7 @@ impl CallAnalyticsJobSettingsBuilder {
     /// <p>The name of the custom language model you want to use when processing your Call Analytics job. Note that custom language model names are case sensitive.</p>
     /// <p>The language of the specified custom language model must match the language code that you specify in your transcription request. If the languages do not match, the custom language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
     pub fn set_language_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.language_model_name = input;
-        self
+        self.language_model_name = input; self
     }
     /// <p>The name of the custom language model you want to use when processing your Call Analytics job. Note that custom language model names are case sensitive.</p>
     /// <p>The language of the specified custom language model must match the language code that you specify in your transcription request. If the languages do not match, the custom language model isn't applied. There are no errors or warnings associated with a language mismatch.</p>
@@ -182,8 +177,7 @@ impl CallAnalyticsJobSettingsBuilder {
     }
     /// <p>Makes it possible to redact or flag specified personally identifiable information (PII) in your transcript. If you use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>RedactionOutput</code> and <code>RedactionType</code>. You can optionally include <code>PiiEntityTypes</code> to choose which types of PII you want to redact.</p>
     pub fn set_content_redaction(mut self, input: ::std::option::Option<crate::types::ContentRedaction>) -> Self {
-        self.content_redaction = input;
-        self
+        self.content_redaction = input; self
     }
     /// <p>Makes it possible to redact or flag specified personally identifiable information (PII) in your transcript. If you use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>RedactionOutput</code> and <code>RedactionType</code>. You can optionally include <code>PiiEntityTypes</code> to choose which types of PII you want to redact.</p>
     pub fn get_content_redaction(&self) -> &::std::option::Option<crate::types::ContentRedaction> {
@@ -199,23 +193,22 @@ impl CallAnalyticsJobSettingsBuilder {
     /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
     pub fn language_options(mut self, input: crate::types::LanguageCode) -> Self {
         let mut v = self.language_options.unwrap_or_default();
-        v.push(input);
-        self.language_options = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.language_options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>You can specify two or more language codes that represent the languages you think may be present in your media. Including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
     /// <p>Including language options can improve the accuracy of language identification.</p>
     /// <p>For a list of languages supported with Call Analytics, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
     /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
-    pub fn set_language_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LanguageCode>>) -> Self {
-        self.language_options = input;
-        self
+    pub fn set_language_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LanguageCode>>) -> Self {
+        self.language_options = input; self
     }
     /// <p>You can specify two or more language codes that represent the languages you think may be present in your media. Including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
     /// <p>Including language options can improve the accuracy of language identification.</p>
     /// <p>For a list of languages supported with Call Analytics, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
     /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
-    pub fn get_language_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LanguageCode>> {
+    pub fn get_language_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LanguageCode>> {
         &self.language_options
     }
     /// Adds a key-value pair to `language_id_settings`.
@@ -229,30 +222,24 @@ impl CallAnalyticsJobSettingsBuilder {
     /// <p>For a list of languages supported with Call Analytics, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages and language-specific features</a>.</p>
     pub fn language_id_settings(mut self, k: crate::types::LanguageCode, v: crate::types::LanguageIdSettings) -> Self {
         let mut hash_map = self.language_id_settings.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.language_id_settings = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.language_id_settings = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>If using automatic language identification in your request and you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
     /// <p><code>LanguageIdSettings</code> supports two to five language codes. Each language code you include can have an associated custom language model, custom vocabulary, and custom vocabulary filter. The language codes that you specify must match the languages of the associated custom language models, custom vocabularies, and custom vocabulary filters.</p>
     /// <p>It's recommended that you include <code>LanguageOptions</code> when using <code>LanguageIdSettings</code> to ensure that the correct language dialect is identified. For example, if you specify a custom vocabulary that is in <code>en-US</code> but Amazon Transcribe determines that the language spoken in your media is <code>en-AU</code>, your custom vocabulary <i>is not</i> applied to your transcription. If you include <code>LanguageOptions</code> and include <code>en-US</code> as the only English language dialect, your custom vocabulary <i>is</i> applied to your transcription.</p>
     /// <p>If you want to include a custom language model, custom vocabulary, or custom vocabulary filter with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>LanguageModelName</code>, <code>VocabularyName</code>, or <code>VocabularyFilterName</code> sub-parameters.</p>
     /// <p>For a list of languages supported with Call Analytics, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages and language-specific features</a>.</p>
-    pub fn set_language_id_settings(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::LanguageCode, crate::types::LanguageIdSettings>>,
-    ) -> Self {
-        self.language_id_settings = input;
-        self
+    pub fn set_language_id_settings(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::LanguageCode, crate::types::LanguageIdSettings>>) -> Self {
+        self.language_id_settings = input; self
     }
     /// <p>If using automatic language identification in your request and you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
     /// <p><code>LanguageIdSettings</code> supports two to five language codes. Each language code you include can have an associated custom language model, custom vocabulary, and custom vocabulary filter. The language codes that you specify must match the languages of the associated custom language models, custom vocabularies, and custom vocabulary filters.</p>
     /// <p>It's recommended that you include <code>LanguageOptions</code> when using <code>LanguageIdSettings</code> to ensure that the correct language dialect is identified. For example, if you specify a custom vocabulary that is in <code>en-US</code> but Amazon Transcribe determines that the language spoken in your media is <code>en-AU</code>, your custom vocabulary <i>is not</i> applied to your transcription. If you include <code>LanguageOptions</code> and include <code>en-US</code> as the only English language dialect, your custom vocabulary <i>is</i> applied to your transcription.</p>
     /// <p>If you want to include a custom language model, custom vocabulary, or custom vocabulary filter with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>LanguageModelName</code>, <code>VocabularyName</code>, or <code>VocabularyFilterName</code> sub-parameters.</p>
     /// <p>For a list of languages supported with Call Analytics, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages and language-specific features</a>.</p>
-    pub fn get_language_id_settings(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::LanguageCode, crate::types::LanguageIdSettings>> {
+    pub fn get_language_id_settings(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::LanguageCode, crate::types::LanguageIdSettings>> {
         &self.language_id_settings
     }
     /// <p>Contains <code>GenerateAbstractiveSummary</code>, which is a required parameter if you want to enable Generative call summarization in your Call Analytics request.</p>
@@ -262,8 +249,7 @@ impl CallAnalyticsJobSettingsBuilder {
     }
     /// <p>Contains <code>GenerateAbstractiveSummary</code>, which is a required parameter if you want to enable Generative call summarization in your Call Analytics request.</p>
     pub fn set_summarization(mut self, input: ::std::option::Option<crate::types::Summarization>) -> Self {
-        self.summarization = input;
-        self
+        self.summarization = input; self
     }
     /// <p>Contains <code>GenerateAbstractiveSummary</code>, which is a required parameter if you want to enable Generative call summarization in your Call Analytics request.</p>
     pub fn get_summarization(&self) -> &::std::option::Option<crate::types::Summarization> {
@@ -272,14 +258,23 @@ impl CallAnalyticsJobSettingsBuilder {
     /// Consumes the builder and constructs a [`CallAnalyticsJobSettings`](crate::types::CallAnalyticsJobSettings).
     pub fn build(self) -> crate::types::CallAnalyticsJobSettings {
         crate::types::CallAnalyticsJobSettings {
-            vocabulary_name: self.vocabulary_name,
-            vocabulary_filter_name: self.vocabulary_filter_name,
-            vocabulary_filter_method: self.vocabulary_filter_method,
-            language_model_name: self.language_model_name,
-            content_redaction: self.content_redaction,
-            language_options: self.language_options,
-            language_id_settings: self.language_id_settings,
-            summarization: self.summarization,
+            vocabulary_name: self.vocabulary_name
+            ,
+            vocabulary_filter_name: self.vocabulary_filter_name
+            ,
+            vocabulary_filter_method: self.vocabulary_filter_method
+            ,
+            language_model_name: self.language_model_name
+            ,
+            content_redaction: self.content_redaction
+            ,
+            language_options: self.language_options
+            ,
+            language_id_settings: self.language_id_settings
+            ,
+            summarization: self.summarization
+            ,
         }
     }
 }
+

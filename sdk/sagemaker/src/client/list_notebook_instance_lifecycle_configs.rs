@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListNotebookInstanceLifecycleConfigs`](crate::operation::list_notebook_instance_lifecycle_configs::builders::ListNotebookInstanceLifecycleConfigsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_notebook_instance_lifecycle_configs::builders::ListNotebookInstanceLifecycleConfigsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_notebook_instance_lifecycle_configs::builders::ListNotebookInstanceLifecycleConfigsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_notebook_instance_lifecycle_configs::builders::ListNotebookInstanceLifecycleConfigsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the result of a <code>ListNotebookInstanceLifecycleConfigs</code> request was truncated, the response includes a <code>NextToken</code>. To get the next set of lifecycle configurations, use the token in the next request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_notebook_instance_lifecycle_configs::builders::ListNotebookInstanceLifecycleConfigsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_notebook_instance_lifecycle_configs::builders::ListNotebookInstanceLifecycleConfigsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of lifecycle configurations to return in the response.</p><br>
     ///   - [`sort_by(NotebookInstanceLifecycleConfigSortKey)`](crate::operation::list_notebook_instance_lifecycle_configs::builders::ListNotebookInstanceLifecycleConfigsFluentBuilder::sort_by) / [`set_sort_by(Option<NotebookInstanceLifecycleConfigSortKey>)`](crate::operation::list_notebook_instance_lifecycle_configs::builders::ListNotebookInstanceLifecycleConfigsFluentBuilder::set_sort_by):<br>required: **false**<br><p>Sorts the list of results. The default is <code>CreationTime</code>.</p><br>
@@ -13,15 +13,12 @@ impl super::Client {
     ///   - [`creation_time_after(DateTime)`](crate::operation::list_notebook_instance_lifecycle_configs::builders::ListNotebookInstanceLifecycleConfigsFluentBuilder::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::operation::list_notebook_instance_lifecycle_configs::builders::ListNotebookInstanceLifecycleConfigsFluentBuilder::set_creation_time_after):<br>required: **false**<br><p>A filter that returns only lifecycle configurations that were created after the specified time (timestamp).</p><br>
     ///   - [`last_modified_time_before(DateTime)`](crate::operation::list_notebook_instance_lifecycle_configs::builders::ListNotebookInstanceLifecycleConfigsFluentBuilder::last_modified_time_before) / [`set_last_modified_time_before(Option<DateTime>)`](crate::operation::list_notebook_instance_lifecycle_configs::builders::ListNotebookInstanceLifecycleConfigsFluentBuilder::set_last_modified_time_before):<br>required: **false**<br><p>A filter that returns only lifecycle configurations that were modified before the specified time (timestamp).</p><br>
     ///   - [`last_modified_time_after(DateTime)`](crate::operation::list_notebook_instance_lifecycle_configs::builders::ListNotebookInstanceLifecycleConfigsFluentBuilder::last_modified_time_after) / [`set_last_modified_time_after(Option<DateTime>)`](crate::operation::list_notebook_instance_lifecycle_configs::builders::ListNotebookInstanceLifecycleConfigsFluentBuilder::set_last_modified_time_after):<br>required: **false**<br><p>A filter that returns only lifecycle configurations that were modified after the specified time (timestamp).</p><br>
-    /// - On success, responds with [`ListNotebookInstanceLifecycleConfigsOutput`](crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsOutput) with field(s):
+                            /// - On success, responds with [`ListNotebookInstanceLifecycleConfigsOutput`](crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To get the next set of lifecycle configurations, use it in the next request.</p>
     ///   - [`notebook_instance_lifecycle_configs(Option<Vec::<NotebookInstanceLifecycleConfigSummary>>)`](crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsOutput::notebook_instance_lifecycle_configs): <p>An array of <code>NotebookInstanceLifecycleConfiguration</code> objects, each listing a lifecycle configuration.</p>
-    /// - On failure, responds with [`SdkError<ListNotebookInstanceLifecycleConfigsError>`](crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsError)
-    pub fn list_notebook_instance_lifecycle_configs(
-        &self,
-    ) -> crate::operation::list_notebook_instance_lifecycle_configs::builders::ListNotebookInstanceLifecycleConfigsFluentBuilder {
-        crate::operation::list_notebook_instance_lifecycle_configs::builders::ListNotebookInstanceLifecycleConfigsFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<ListNotebookInstanceLifecycleConfigsError>`](crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsError)
+    pub fn list_notebook_instance_lifecycle_configs(&self) -> crate::operation::list_notebook_instance_lifecycle_configs::builders::ListNotebookInstanceLifecycleConfigsFluentBuilder {
+                                crate::operation::list_notebook_instance_lifecycle_configs::builders::ListNotebookInstanceLifecycleConfigsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

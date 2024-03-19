@@ -4,48 +4,51 @@
 /// <p>You can use load balancers and target groups in combination. For example, if you have two Classic Load Balancers, and five target groups tied to an Application Load Balancer, you can specify the two Classic Load Balancers in <code>elbInfoList</code>, and the five target groups in <code>targetGroupInfoList</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoadBalancerInfo {
+pub struct LoadBalancerInfo  {
     /// <p>An array that contains information about the load balancers to use for load balancing in a deployment. If you're using Classic Load Balancers, specify those load balancers in this array.</p><note>
     /// <p>You can add up to 10 load balancers to the array.</p>
     /// </note> <note>
     /// <p>If you're using Application Load Balancers or Network Load Balancers, use the <code>targetGroupInfoList</code> array instead of this one.</p>
     /// </note>
-    pub elb_info_list: ::std::option::Option<::std::vec::Vec<crate::types::ElbInfo>>,
+    pub elb_info_list: ::std::option::Option<::std::vec::Vec::<crate::types::ElbInfo>>,
     /// <p>An array that contains information about the target groups to use for load balancing in a deployment. If you're using Application Load Balancers and Network Load Balancers, specify their associated target groups in this array.</p><note>
     /// <p>You can add up to 10 target groups to the array.</p>
     /// </note> <note>
     /// <p>If you're using Classic Load Balancers, use the <code>elbInfoList</code> array instead of this one.</p>
     /// </note>
-    pub target_group_info_list: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupInfo>>,
+    pub target_group_info_list: ::std::option::Option<::std::vec::Vec::<crate::types::TargetGroupInfo>>,
     /// <p>The target group pair information. This is an array of <code>TargeGroupPairInfo</code> objects with a maximum size of one.</p>
-    pub target_group_pair_info_list: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupPairInfo>>,
+    pub target_group_pair_info_list: ::std::option::Option<::std::vec::Vec::<crate::types::TargetGroupPairInfo>>,
 }
-impl LoadBalancerInfo {
+impl  LoadBalancerInfo  {
     /// <p>An array that contains information about the load balancers to use for load balancing in a deployment. If you're using Classic Load Balancers, specify those load balancers in this array.</p><note>
     /// <p>You can add up to 10 load balancers to the array.</p>
     /// </note> <note>
     /// <p>If you're using Application Load Balancers or Network Load Balancers, use the <code>targetGroupInfoList</code> array instead of this one.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elb_info_list.is_none()`.
-    pub fn elb_info_list(&self) -> &[crate::types::ElbInfo] {
-        self.elb_info_list.as_deref().unwrap_or_default()
+    pub fn elb_info_list(&self) -> & [crate::types::ElbInfo] {
+        self.elb_info_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array that contains information about the target groups to use for load balancing in a deployment. If you're using Application Load Balancers and Network Load Balancers, specify their associated target groups in this array.</p><note>
     /// <p>You can add up to 10 target groups to the array.</p>
     /// </note> <note>
     /// <p>If you're using Classic Load Balancers, use the <code>elbInfoList</code> array instead of this one.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_group_info_list.is_none()`.
-    pub fn target_group_info_list(&self) -> &[crate::types::TargetGroupInfo] {
-        self.target_group_info_list.as_deref().unwrap_or_default()
+    pub fn target_group_info_list(&self) -> & [crate::types::TargetGroupInfo] {
+        self.target_group_info_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The target group pair information. This is an array of <code>TargeGroupPairInfo</code> objects with a maximum size of one.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_group_pair_info_list.is_none()`.
-    pub fn target_group_pair_info_list(&self) -> &[crate::types::TargetGroupPairInfo] {
-        self.target_group_pair_info_list.as_deref().unwrap_or_default()
+    pub fn target_group_pair_info_list(&self) -> & [crate::types::TargetGroupPairInfo] {
+        self.target_group_pair_info_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl LoadBalancerInfo {
@@ -59,9 +62,9 @@ impl LoadBalancerInfo {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoadBalancerInfoBuilder {
-    pub(crate) elb_info_list: ::std::option::Option<::std::vec::Vec<crate::types::ElbInfo>>,
-    pub(crate) target_group_info_list: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupInfo>>,
-    pub(crate) target_group_pair_info_list: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupPairInfo>>,
+    pub(crate) elb_info_list: ::std::option::Option<::std::vec::Vec::<crate::types::ElbInfo>>,
+    pub(crate) target_group_info_list: ::std::option::Option<::std::vec::Vec::<crate::types::TargetGroupInfo>>,
+    pub(crate) target_group_pair_info_list: ::std::option::Option<::std::vec::Vec::<crate::types::TargetGroupPairInfo>>,
 }
 impl LoadBalancerInfoBuilder {
     /// Appends an item to `elb_info_list`.
@@ -75,25 +78,24 @@ impl LoadBalancerInfoBuilder {
     /// </note>
     pub fn elb_info_list(mut self, input: crate::types::ElbInfo) -> Self {
         let mut v = self.elb_info_list.unwrap_or_default();
-        v.push(input);
-        self.elb_info_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.elb_info_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array that contains information about the load balancers to use for load balancing in a deployment. If you're using Classic Load Balancers, specify those load balancers in this array.</p><note>
     /// <p>You can add up to 10 load balancers to the array.</p>
     /// </note> <note>
     /// <p>If you're using Application Load Balancers or Network Load Balancers, use the <code>targetGroupInfoList</code> array instead of this one.</p>
     /// </note>
-    pub fn set_elb_info_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ElbInfo>>) -> Self {
-        self.elb_info_list = input;
-        self
+    pub fn set_elb_info_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ElbInfo>>) -> Self {
+        self.elb_info_list = input; self
     }
     /// <p>An array that contains information about the load balancers to use for load balancing in a deployment. If you're using Classic Load Balancers, specify those load balancers in this array.</p><note>
     /// <p>You can add up to 10 load balancers to the array.</p>
     /// </note> <note>
     /// <p>If you're using Application Load Balancers or Network Load Balancers, use the <code>targetGroupInfoList</code> array instead of this one.</p>
     /// </note>
-    pub fn get_elb_info_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ElbInfo>> {
+    pub fn get_elb_info_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ElbInfo>> {
         &self.elb_info_list
     }
     /// Appends an item to `target_group_info_list`.
@@ -107,25 +109,24 @@ impl LoadBalancerInfoBuilder {
     /// </note>
     pub fn target_group_info_list(mut self, input: crate::types::TargetGroupInfo) -> Self {
         let mut v = self.target_group_info_list.unwrap_or_default();
-        v.push(input);
-        self.target_group_info_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.target_group_info_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array that contains information about the target groups to use for load balancing in a deployment. If you're using Application Load Balancers and Network Load Balancers, specify their associated target groups in this array.</p><note>
     /// <p>You can add up to 10 target groups to the array.</p>
     /// </note> <note>
     /// <p>If you're using Classic Load Balancers, use the <code>elbInfoList</code> array instead of this one.</p>
     /// </note>
-    pub fn set_target_group_info_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupInfo>>) -> Self {
-        self.target_group_info_list = input;
-        self
+    pub fn set_target_group_info_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TargetGroupInfo>>) -> Self {
+        self.target_group_info_list = input; self
     }
     /// <p>An array that contains information about the target groups to use for load balancing in a deployment. If you're using Application Load Balancers and Network Load Balancers, specify their associated target groups in this array.</p><note>
     /// <p>You can add up to 10 target groups to the array.</p>
     /// </note> <note>
     /// <p>If you're using Classic Load Balancers, use the <code>elbInfoList</code> array instead of this one.</p>
     /// </note>
-    pub fn get_target_group_info_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetGroupInfo>> {
+    pub fn get_target_group_info_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TargetGroupInfo>> {
         &self.target_group_info_list
     }
     /// Appends an item to `target_group_pair_info_list`.
@@ -135,25 +136,28 @@ impl LoadBalancerInfoBuilder {
     /// <p>The target group pair information. This is an array of <code>TargeGroupPairInfo</code> objects with a maximum size of one.</p>
     pub fn target_group_pair_info_list(mut self, input: crate::types::TargetGroupPairInfo) -> Self {
         let mut v = self.target_group_pair_info_list.unwrap_or_default();
-        v.push(input);
-        self.target_group_pair_info_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.target_group_pair_info_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The target group pair information. This is an array of <code>TargeGroupPairInfo</code> objects with a maximum size of one.</p>
-    pub fn set_target_group_pair_info_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupPairInfo>>) -> Self {
-        self.target_group_pair_info_list = input;
-        self
+    pub fn set_target_group_pair_info_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TargetGroupPairInfo>>) -> Self {
+        self.target_group_pair_info_list = input; self
     }
     /// <p>The target group pair information. This is an array of <code>TargeGroupPairInfo</code> objects with a maximum size of one.</p>
-    pub fn get_target_group_pair_info_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetGroupPairInfo>> {
+    pub fn get_target_group_pair_info_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TargetGroupPairInfo>> {
         &self.target_group_pair_info_list
     }
     /// Consumes the builder and constructs a [`LoadBalancerInfo`](crate::types::LoadBalancerInfo).
     pub fn build(self) -> crate::types::LoadBalancerInfo {
         crate::types::LoadBalancerInfo {
-            elb_info_list: self.elb_info_list,
-            target_group_info_list: self.target_group_info_list,
-            target_group_pair_info_list: self.target_group_pair_info_list,
+            elb_info_list: self.elb_info_list
+            ,
+            target_group_info_list: self.target_group_info_list
+            ,
+            target_group_pair_info_list: self.target_group_pair_info_list
+            ,
         }
     }
 }
+

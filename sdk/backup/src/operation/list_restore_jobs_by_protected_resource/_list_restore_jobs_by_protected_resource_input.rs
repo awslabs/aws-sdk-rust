@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRestoreJobsByProtectedResourceInput {
+pub struct ListRestoreJobsByProtectedResourceInput  {
     /// <p>Returns only restore jobs that match the specified resource Amazon Resource Name (ARN).</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Returns only restore jobs associated with the specified job status.</p>
@@ -16,25 +16,25 @@ pub struct ListRestoreJobsByProtectedResourceInput {
     /// <p>The maximum number of items to be returned.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListRestoreJobsByProtectedResourceInput {
+impl  ListRestoreJobsByProtectedResourceInput  {
     /// <p>Returns only restore jobs that match the specified resource Amazon Resource Name (ARN).</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>Returns only restore jobs associated with the specified job status.</p>
-    pub fn by_status(&self) -> ::std::option::Option<&crate::types::RestoreJobStatus> {
+    pub fn by_status(&self) -> ::std::option::Option<& crate::types::RestoreJobStatus> {
         self.by_status.as_ref()
     }
     /// <p>Returns only restore jobs of recovery points that were created after the specified date.</p>
-    pub fn by_recovery_point_creation_date_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn by_recovery_point_creation_date_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.by_recovery_point_creation_date_after.as_ref()
     }
     /// <p>Returns only restore jobs of recovery points that were created before the specified date.</p>
-    pub fn by_recovery_point_creation_date_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn by_recovery_point_creation_date_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.by_recovery_point_creation_date_before.as_ref()
     }
     /// <p>The next item following a partial list of returned items. For example, if a request ismade to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to be returned.</p>
@@ -69,8 +69,7 @@ impl ListRestoreJobsByProtectedResourceInputBuilder {
     }
     /// <p>Returns only restore jobs that match the specified resource Amazon Resource Name (ARN).</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>Returns only restore jobs that match the specified resource Amazon Resource Name (ARN).</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl ListRestoreJobsByProtectedResourceInputBuilder {
     }
     /// <p>Returns only restore jobs associated with the specified job status.</p>
     pub fn set_by_status(mut self, input: ::std::option::Option<crate::types::RestoreJobStatus>) -> Self {
-        self.by_status = input;
-        self
+        self.by_status = input; self
     }
     /// <p>Returns only restore jobs associated with the specified job status.</p>
     pub fn get_by_status(&self) -> &::std::option::Option<crate::types::RestoreJobStatus> {
@@ -97,8 +95,7 @@ impl ListRestoreJobsByProtectedResourceInputBuilder {
     }
     /// <p>Returns only restore jobs of recovery points that were created after the specified date.</p>
     pub fn set_by_recovery_point_creation_date_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.by_recovery_point_creation_date_after = input;
-        self
+        self.by_recovery_point_creation_date_after = input; self
     }
     /// <p>Returns only restore jobs of recovery points that were created after the specified date.</p>
     pub fn get_by_recovery_point_creation_date_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -111,8 +108,7 @@ impl ListRestoreJobsByProtectedResourceInputBuilder {
     }
     /// <p>Returns only restore jobs of recovery points that were created before the specified date.</p>
     pub fn set_by_recovery_point_creation_date_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.by_recovery_point_creation_date_before = input;
-        self
+        self.by_recovery_point_creation_date_before = input; self
     }
     /// <p>Returns only restore jobs of recovery points that were created before the specified date.</p>
     pub fn get_by_recovery_point_creation_date_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -125,8 +121,7 @@ impl ListRestoreJobsByProtectedResourceInputBuilder {
     }
     /// <p>The next item following a partial list of returned items. For example, if a request ismade to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The next item following a partial list of returned items. For example, if a request ismade to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,29 +134,30 @@ impl ListRestoreJobsByProtectedResourceInputBuilder {
     }
     /// <p>The maximum number of items to be returned.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to be returned.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListRestoreJobsByProtectedResourceInput`](crate::operation::list_restore_jobs_by_protected_resource::ListRestoreJobsByProtectedResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_restore_jobs_by_protected_resource::ListRestoreJobsByProtectedResourceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_restore_jobs_by_protected_resource::ListRestoreJobsByProtectedResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_restore_jobs_by_protected_resource::ListRestoreJobsByProtectedResourceInput {
-                resource_arn: self.resource_arn,
-                by_status: self.by_status,
-                by_recovery_point_creation_date_after: self.by_recovery_point_creation_date_after,
-                by_recovery_point_creation_date_before: self.by_recovery_point_creation_date_before,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                resource_arn: self.resource_arn
+                ,
+                by_status: self.by_status
+                ,
+                by_recovery_point_creation_date_after: self.by_recovery_point_creation_date_after
+                ,
+                by_recovery_point_creation_date_before: self.by_recovery_point_creation_date_before
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

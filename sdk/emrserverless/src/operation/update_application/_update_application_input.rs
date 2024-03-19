@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateApplicationInput {
+pub struct UpdateApplicationInput  {
     /// <p>The ID of the application to update.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The client idempotency token of the application to update. Its value must be unique for each request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The capacity to initialize when the application is updated.</p>
-    pub initial_capacity: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::InitialCapacityConfig>>,
+    pub initial_capacity: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::InitialCapacityConfig>>,
     /// <p>The maximum capacity to allocate when the application is updated. This is cumulative across all workers at any given point in time during the lifespan of the application. No new resources will be created once any one of the defined limits is hit.</p>
     pub maximum_capacity: ::std::option::Option<crate::types::MaximumAllowedResources>,
     /// <p>The configuration for an application to automatically start on job submission.</p>
@@ -22,72 +22,68 @@ pub struct UpdateApplicationInput {
     /// <p>The image configuration to be used for all worker types. You can either set this parameter or <code>imageConfiguration</code> for each worker type in <code>WorkerTypeSpecificationInput</code>.</p>
     pub image_configuration: ::std::option::Option<crate::types::ImageConfigurationInput>,
     /// <p>The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each worker type, or in <code>imageConfiguration</code> for all worker types.</p>
-    pub worker_type_specifications:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecificationInput>>,
+    pub worker_type_specifications: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::WorkerTypeSpecificationInput>>,
     /// <p>The Amazon EMR release label for the application. You can change the release label to use a different release of Amazon EMR.</p>
     pub release_label: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a> specifications to use when updating an application. Each configuration consists of a classification and properties. This configuration is applied across all the job runs submitted under the application.</p>
-    pub runtime_configuration: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
+    pub runtime_configuration: ::std::option::Option<::std::vec::Vec::<crate::types::Configuration>>,
     /// <p>The configuration setting for monitoring.</p>
     pub monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
 }
-impl UpdateApplicationInput {
+impl  UpdateApplicationInput  {
     /// <p>The ID of the application to update.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The client idempotency token of the application to update. Its value must be unique for each request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The capacity to initialize when the application is updated.</p>
-    pub fn initial_capacity(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::InitialCapacityConfig>> {
+    pub fn initial_capacity(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::InitialCapacityConfig>> {
         self.initial_capacity.as_ref()
     }
     /// <p>The maximum capacity to allocate when the application is updated. This is cumulative across all workers at any given point in time during the lifespan of the application. No new resources will be created once any one of the defined limits is hit.</p>
-    pub fn maximum_capacity(&self) -> ::std::option::Option<&crate::types::MaximumAllowedResources> {
+    pub fn maximum_capacity(&self) -> ::std::option::Option<& crate::types::MaximumAllowedResources> {
         self.maximum_capacity.as_ref()
     }
     /// <p>The configuration for an application to automatically start on job submission.</p>
-    pub fn auto_start_configuration(&self) -> ::std::option::Option<&crate::types::AutoStartConfig> {
+    pub fn auto_start_configuration(&self) -> ::std::option::Option<& crate::types::AutoStartConfig> {
         self.auto_start_configuration.as_ref()
     }
     /// <p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>
-    pub fn auto_stop_configuration(&self) -> ::std::option::Option<&crate::types::AutoStopConfig> {
+    pub fn auto_stop_configuration(&self) -> ::std::option::Option<& crate::types::AutoStopConfig> {
         self.auto_stop_configuration.as_ref()
     }
     /// <p>The network configuration for customer VPC connectivity.</p>
-    pub fn network_configuration(&self) -> ::std::option::Option<&crate::types::NetworkConfiguration> {
+    pub fn network_configuration(&self) -> ::std::option::Option<& crate::types::NetworkConfiguration> {
         self.network_configuration.as_ref()
     }
     /// <p>The CPU architecture of an application.</p>
-    pub fn architecture(&self) -> ::std::option::Option<&crate::types::Architecture> {
+    pub fn architecture(&self) -> ::std::option::Option<& crate::types::Architecture> {
         self.architecture.as_ref()
     }
     /// <p>The image configuration to be used for all worker types. You can either set this parameter or <code>imageConfiguration</code> for each worker type in <code>WorkerTypeSpecificationInput</code>.</p>
-    pub fn image_configuration(&self) -> ::std::option::Option<&crate::types::ImageConfigurationInput> {
+    pub fn image_configuration(&self) -> ::std::option::Option<& crate::types::ImageConfigurationInput> {
         self.image_configuration.as_ref()
     }
     /// <p>The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each worker type, or in <code>imageConfiguration</code> for all worker types.</p>
-    pub fn worker_type_specifications(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecificationInput>> {
+    pub fn worker_type_specifications(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::WorkerTypeSpecificationInput>> {
         self.worker_type_specifications.as_ref()
     }
     /// <p>The Amazon EMR release label for the application. You can change the release label to use a different release of Amazon EMR.</p>
-    pub fn release_label(&self) -> ::std::option::Option<&str> {
+    pub fn release_label(&self) -> ::std::option::Option<& str> {
         self.release_label.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a> specifications to use when updating an application. Each configuration consists of a classification and properties. This configuration is applied across all the job runs submitted under the application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.runtime_configuration.is_none()`.
-    pub fn runtime_configuration(&self) -> &[crate::types::Configuration] {
-        self.runtime_configuration.as_deref().unwrap_or_default()
+    pub fn runtime_configuration(&self) -> & [crate::types::Configuration] {
+        self.runtime_configuration.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The configuration setting for monitoring.</p>
-    pub fn monitoring_configuration(&self) -> ::std::option::Option<&crate::types::MonitoringConfiguration> {
+    pub fn monitoring_configuration(&self) -> ::std::option::Option<& crate::types::MonitoringConfiguration> {
         self.monitoring_configuration.as_ref()
     }
 }
@@ -104,17 +100,16 @@ impl UpdateApplicationInput {
 pub struct UpdateApplicationInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) initial_capacity: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::InitialCapacityConfig>>,
+    pub(crate) initial_capacity: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::InitialCapacityConfig>>,
     pub(crate) maximum_capacity: ::std::option::Option<crate::types::MaximumAllowedResources>,
     pub(crate) auto_start_configuration: ::std::option::Option<crate::types::AutoStartConfig>,
     pub(crate) auto_stop_configuration: ::std::option::Option<crate::types::AutoStopConfig>,
     pub(crate) network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     pub(crate) architecture: ::std::option::Option<crate::types::Architecture>,
     pub(crate) image_configuration: ::std::option::Option<crate::types::ImageConfigurationInput>,
-    pub(crate) worker_type_specifications:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecificationInput>>,
+    pub(crate) worker_type_specifications: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::WorkerTypeSpecificationInput>>,
     pub(crate) release_label: ::std::option::Option<::std::string::String>,
-    pub(crate) runtime_configuration: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
+    pub(crate) runtime_configuration: ::std::option::Option<::std::vec::Vec::<crate::types::Configuration>>,
     pub(crate) monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
 }
 impl UpdateApplicationInputBuilder {
@@ -126,8 +121,7 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>The ID of the application to update.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The ID of the application to update.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +135,7 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>The client idempotency token of the application to update. Its value must be unique for each request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The client idempotency token of the application to update. Its value must be unique for each request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,22 +148,16 @@ impl UpdateApplicationInputBuilder {
     /// <p>The capacity to initialize when the application is updated.</p>
     pub fn initial_capacity(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::InitialCapacityConfig) -> Self {
         let mut hash_map = self.initial_capacity.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.initial_capacity = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.initial_capacity = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The capacity to initialize when the application is updated.</p>
-    pub fn set_initial_capacity(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::InitialCapacityConfig>>,
-    ) -> Self {
-        self.initial_capacity = input;
-        self
+    pub fn set_initial_capacity(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::InitialCapacityConfig>>) -> Self {
+        self.initial_capacity = input; self
     }
     /// <p>The capacity to initialize when the application is updated.</p>
-    pub fn get_initial_capacity(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::InitialCapacityConfig>> {
+    pub fn get_initial_capacity(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::InitialCapacityConfig>> {
         &self.initial_capacity
     }
     /// <p>The maximum capacity to allocate when the application is updated. This is cumulative across all workers at any given point in time during the lifespan of the application. No new resources will be created once any one of the defined limits is hit.</p>
@@ -180,8 +167,7 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>The maximum capacity to allocate when the application is updated. This is cumulative across all workers at any given point in time during the lifespan of the application. No new resources will be created once any one of the defined limits is hit.</p>
     pub fn set_maximum_capacity(mut self, input: ::std::option::Option<crate::types::MaximumAllowedResources>) -> Self {
-        self.maximum_capacity = input;
-        self
+        self.maximum_capacity = input; self
     }
     /// <p>The maximum capacity to allocate when the application is updated. This is cumulative across all workers at any given point in time during the lifespan of the application. No new resources will be created once any one of the defined limits is hit.</p>
     pub fn get_maximum_capacity(&self) -> &::std::option::Option<crate::types::MaximumAllowedResources> {
@@ -194,8 +180,7 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>The configuration for an application to automatically start on job submission.</p>
     pub fn set_auto_start_configuration(mut self, input: ::std::option::Option<crate::types::AutoStartConfig>) -> Self {
-        self.auto_start_configuration = input;
-        self
+        self.auto_start_configuration = input; self
     }
     /// <p>The configuration for an application to automatically start on job submission.</p>
     pub fn get_auto_start_configuration(&self) -> &::std::option::Option<crate::types::AutoStartConfig> {
@@ -208,8 +193,7 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>
     pub fn set_auto_stop_configuration(mut self, input: ::std::option::Option<crate::types::AutoStopConfig>) -> Self {
-        self.auto_stop_configuration = input;
-        self
+        self.auto_stop_configuration = input; self
     }
     /// <p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>
     pub fn get_auto_stop_configuration(&self) -> &::std::option::Option<crate::types::AutoStopConfig> {
@@ -222,8 +206,7 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>The network configuration for customer VPC connectivity.</p>
     pub fn set_network_configuration(mut self, input: ::std::option::Option<crate::types::NetworkConfiguration>) -> Self {
-        self.network_configuration = input;
-        self
+        self.network_configuration = input; self
     }
     /// <p>The network configuration for customer VPC connectivity.</p>
     pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
@@ -236,8 +219,7 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>The CPU architecture of an application.</p>
     pub fn set_architecture(mut self, input: ::std::option::Option<crate::types::Architecture>) -> Self {
-        self.architecture = input;
-        self
+        self.architecture = input; self
     }
     /// <p>The CPU architecture of an application.</p>
     pub fn get_architecture(&self) -> &::std::option::Option<crate::types::Architecture> {
@@ -250,8 +232,7 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>The image configuration to be used for all worker types. You can either set this parameter or <code>imageConfiguration</code> for each worker type in <code>WorkerTypeSpecificationInput</code>.</p>
     pub fn set_image_configuration(mut self, input: ::std::option::Option<crate::types::ImageConfigurationInput>) -> Self {
-        self.image_configuration = input;
-        self
+        self.image_configuration = input; self
     }
     /// <p>The image configuration to be used for all worker types. You can either set this parameter or <code>imageConfiguration</code> for each worker type in <code>WorkerTypeSpecificationInput</code>.</p>
     pub fn get_image_configuration(&self) -> &::std::option::Option<crate::types::ImageConfigurationInput> {
@@ -262,28 +243,18 @@ impl UpdateApplicationInputBuilder {
     /// To override the contents of this collection use [`set_worker_type_specifications`](Self::set_worker_type_specifications).
     ///
     /// <p>The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each worker type, or in <code>imageConfiguration</code> for all worker types.</p>
-    pub fn worker_type_specifications(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::WorkerTypeSpecificationInput,
-    ) -> Self {
+    pub fn worker_type_specifications(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::WorkerTypeSpecificationInput) -> Self {
         let mut hash_map = self.worker_type_specifications.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.worker_type_specifications = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.worker_type_specifications = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each worker type, or in <code>imageConfiguration</code> for all worker types.</p>
-    pub fn set_worker_type_specifications(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecificationInput>>,
-    ) -> Self {
-        self.worker_type_specifications = input;
-        self
+    pub fn set_worker_type_specifications(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::WorkerTypeSpecificationInput>>) -> Self {
+        self.worker_type_specifications = input; self
     }
     /// <p>The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each worker type, or in <code>imageConfiguration</code> for all worker types.</p>
-    pub fn get_worker_type_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecificationInput>> {
+    pub fn get_worker_type_specifications(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::WorkerTypeSpecificationInput>> {
         &self.worker_type_specifications
     }
     /// <p>The Amazon EMR release label for the application. You can change the release label to use a different release of Amazon EMR.</p>
@@ -293,8 +264,7 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>The Amazon EMR release label for the application. You can change the release label to use a different release of Amazon EMR.</p>
     pub fn set_release_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.release_label = input;
-        self
+        self.release_label = input; self
     }
     /// <p>The Amazon EMR release label for the application. You can change the release label to use a different release of Amazon EMR.</p>
     pub fn get_release_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -307,17 +277,16 @@ impl UpdateApplicationInputBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a> specifications to use when updating an application. Each configuration consists of a classification and properties. This configuration is applied across all the job runs submitted under the application.</p>
     pub fn runtime_configuration(mut self, input: crate::types::Configuration) -> Self {
         let mut v = self.runtime_configuration.unwrap_or_default();
-        v.push(input);
-        self.runtime_configuration = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.runtime_configuration = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a> specifications to use when updating an application. Each configuration consists of a classification and properties. This configuration is applied across all the job runs submitted under the application.</p>
-    pub fn set_runtime_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>) -> Self {
-        self.runtime_configuration = input;
-        self
+    pub fn set_runtime_configuration(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Configuration>>) -> Self {
+        self.runtime_configuration = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a> specifications to use when updating an application. Each configuration consists of a classification and properties. This configuration is applied across all the job runs submitted under the application.</p>
-    pub fn get_runtime_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
+    pub fn get_runtime_configuration(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Configuration>> {
         &self.runtime_configuration
     }
     /// <p>The configuration setting for monitoring.</p>
@@ -327,31 +296,44 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>The configuration setting for monitoring.</p>
     pub fn set_monitoring_configuration(mut self, input: ::std::option::Option<crate::types::MonitoringConfiguration>) -> Self {
-        self.monitoring_configuration = input;
-        self
+        self.monitoring_configuration = input; self
     }
     /// <p>The configuration setting for monitoring.</p>
     pub fn get_monitoring_configuration(&self) -> &::std::option::Option<crate::types::MonitoringConfiguration> {
         &self.monitoring_configuration
     }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_application::UpdateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_application::UpdateApplicationInput {
-            application_id: self.application_id,
-            client_token: self.client_token,
-            initial_capacity: self.initial_capacity,
-            maximum_capacity: self.maximum_capacity,
-            auto_start_configuration: self.auto_start_configuration,
-            auto_stop_configuration: self.auto_stop_configuration,
-            network_configuration: self.network_configuration,
-            architecture: self.architecture,
-            image_configuration: self.image_configuration,
-            worker_type_specifications: self.worker_type_specifications,
-            release_label: self.release_label,
-            runtime_configuration: self.runtime_configuration,
-            monitoring_configuration: self.monitoring_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_application::UpdateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_application::UpdateApplicationInput {
+                application_id: self.application_id
+                ,
+                client_token: self.client_token
+                ,
+                initial_capacity: self.initial_capacity
+                ,
+                maximum_capacity: self.maximum_capacity
+                ,
+                auto_start_configuration: self.auto_start_configuration
+                ,
+                auto_stop_configuration: self.auto_stop_configuration
+                ,
+                network_configuration: self.network_configuration
+                ,
+                architecture: self.architecture
+                ,
+                image_configuration: self.image_configuration
+                ,
+                worker_type_specifications: self.worker_type_specifications
+                ,
+                release_label: self.release_label
+                ,
+                runtime_configuration: self.runtime_configuration
+                ,
+                monitoring_configuration: self.monitoring_configuration
+                ,
+            }
+        )
     }
 }
+

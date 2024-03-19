@@ -3,13 +3,13 @@
 /// <p>The configuration object for concatenating transcription messages.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TranscriptionMessagesConcatenationConfiguration {
+pub struct TranscriptionMessagesConcatenationConfiguration  {
     /// <p>Enables or disables the configuration object.</p>
     pub state: crate::types::ArtifactsConcatenationState,
 }
-impl TranscriptionMessagesConcatenationConfiguration {
+impl  TranscriptionMessagesConcatenationConfiguration  {
     /// <p>Enables or disables the configuration object.</p>
-    pub fn state(&self) -> &crate::types::ArtifactsConcatenationState {
+    pub fn state(&self) -> & crate::types::ArtifactsConcatenationState {
         &self.state
     }
 }
@@ -35,8 +35,7 @@ impl TranscriptionMessagesConcatenationConfigurationBuilder {
     }
     /// <p>Enables or disables the configuration object.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ArtifactsConcatenationState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Enables or disables the configuration object.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ArtifactsConcatenationState> {
@@ -45,16 +44,16 @@ impl TranscriptionMessagesConcatenationConfigurationBuilder {
     /// Consumes the builder and constructs a [`TranscriptionMessagesConcatenationConfiguration`](crate::types::TranscriptionMessagesConcatenationConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`state`](crate::types::builders::TranscriptionMessagesConcatenationConfigurationBuilder::state)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::TranscriptionMessagesConcatenationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TranscriptionMessagesConcatenationConfiguration {
-            state: self.state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state",
-                    "state was not specified but it is required when building TranscriptionMessagesConcatenationConfiguration",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::TranscriptionMessagesConcatenationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::TranscriptionMessagesConcatenationConfiguration {
+                state: self.state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state", "state was not specified but it is required when building TranscriptionMessagesConcatenationConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

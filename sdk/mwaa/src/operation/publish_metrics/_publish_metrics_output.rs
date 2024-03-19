@@ -3,14 +3,14 @@
 #[deprecated(note = "This type is for internal use and not meant for public use. Data set for this type will be ignored.")]
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PublishMetricsOutput {
+pub struct PublishMetricsOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for PublishMetricsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PublishMetricsOutput {
     /// Creates a new builder-style object to manufacture [`PublishMetricsOutput`](crate::operation::publish_metrics::PublishMetricsOutput).
     pub fn builder() -> crate::operation::publish_metrics::builders::PublishMetricsOutputBuilder {
@@ -26,14 +26,14 @@ pub struct PublishMetricsOutputBuilder {
 }
 impl PublishMetricsOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PublishMetricsOutput`](crate::operation::publish_metrics::PublishMetricsOutput).
     pub fn build(self) -> crate::operation::publish_metrics::PublishMetricsOutput {
         crate::operation::publish_metrics::PublishMetricsOutput {
@@ -41,3 +41,4 @@ impl PublishMetricsOutputBuilder {
         }
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeWorkerConfigurationInput {
+pub struct DescribeWorkerConfigurationInput  {
     /// <p>The Amazon Resource Name (ARN) of the worker configuration that you want to get information about.</p>
     pub worker_configuration_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeWorkerConfigurationInput {
+impl  DescribeWorkerConfigurationInput  {
     /// <p>The Amazon Resource Name (ARN) of the worker configuration that you want to get information about.</p>
-    pub fn worker_configuration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn worker_configuration_arn(&self) -> ::std::option::Option<& str> {
         self.worker_configuration_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeWorkerConfigurationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the worker configuration that you want to get information about.</p>
     pub fn set_worker_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.worker_configuration_arn = input;
-        self
+        self.worker_configuration_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the worker configuration that you want to get information about.</p>
     pub fn get_worker_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.worker_configuration_arn
     }
     /// Consumes the builder and constructs a [`DescribeWorkerConfigurationInput`](crate::operation::describe_worker_configuration::DescribeWorkerConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_worker_configuration::DescribeWorkerConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_worker_configuration::DescribeWorkerConfigurationInput {
-            worker_configuration_arn: self.worker_configuration_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_worker_configuration::DescribeWorkerConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_worker_configuration::DescribeWorkerConfigurationInput {
+                worker_configuration_arn: self.worker_configuration_arn
+                ,
+            }
+        )
     }
 }
+

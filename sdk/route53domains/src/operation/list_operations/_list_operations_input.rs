@@ -3,7 +3,7 @@
 /// <p>The ListOperations request includes the following elements.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListOperationsInput {
+pub struct ListOperationsInput  {
     /// <p>An optional parameter that lets you get information about all the operations that you submitted after a specified date and time. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
     pub submitted_since: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>For an initial request for a list of operations, omit this element. If the number of operations that are not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
@@ -12,21 +12,21 @@ pub struct ListOperationsInput {
     /// <p>Default: 20</p>
     pub max_items: ::std::option::Option<i32>,
     /// <p>The status of the operations.</p>
-    pub status: ::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>>,
+    pub status: ::std::option::Option<::std::vec::Vec::<crate::types::OperationStatus>>,
     /// <p>An arrays of the domains operation types.</p>
-    pub r#type: ::std::option::Option<::std::vec::Vec<crate::types::OperationType>>,
+    pub r#type: ::std::option::Option<::std::vec::Vec::<crate::types::OperationType>>,
     /// <p>The sort type for returned values.</p>
     pub sort_by: ::std::option::Option<crate::types::ListOperationsSortAttributeName>,
     /// <p>The sort order for returned values, either ascending or descending.</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
-impl ListOperationsInput {
+impl  ListOperationsInput  {
     /// <p>An optional parameter that lets you get information about all the operations that you submitted after a specified date and time. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
-    pub fn submitted_since(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn submitted_since(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.submitted_since.as_ref()
     }
     /// <p>For an initial request for a list of operations, omit this element. If the number of operations that are not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Number of domains to be returned.</p>
@@ -35,23 +35,25 @@ impl ListOperationsInput {
         self.max_items
     }
     /// <p>The status of the operations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.status.is_none()`.
-    pub fn status(&self) -> &[crate::types::OperationStatus] {
-        self.status.as_deref().unwrap_or_default()
+    pub fn status(&self) -> & [crate::types::OperationStatus] {
+        self.status.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An arrays of the domains operation types.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.r#type.is_none()`.
-    pub fn r#type(&self) -> &[crate::types::OperationType] {
-        self.r#type.as_deref().unwrap_or_default()
+    pub fn r#type(&self) -> & [crate::types::OperationType] {
+        self.r#type.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The sort type for returned values.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::ListOperationsSortAttributeName> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::ListOperationsSortAttributeName> {
         self.sort_by.as_ref()
     }
     /// <p>The sort order for returned values, either ascending or descending.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
 }
@@ -69,8 +71,8 @@ pub struct ListOperationsInputBuilder {
     pub(crate) submitted_since: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
-    pub(crate) status: ::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>>,
-    pub(crate) r#type: ::std::option::Option<::std::vec::Vec<crate::types::OperationType>>,
+    pub(crate) status: ::std::option::Option<::std::vec::Vec::<crate::types::OperationStatus>>,
+    pub(crate) r#type: ::std::option::Option<::std::vec::Vec::<crate::types::OperationType>>,
     pub(crate) sort_by: ::std::option::Option<crate::types::ListOperationsSortAttributeName>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
@@ -82,8 +84,7 @@ impl ListOperationsInputBuilder {
     }
     /// <p>An optional parameter that lets you get information about all the operations that you submitted after a specified date and time. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
     pub fn set_submitted_since(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.submitted_since = input;
-        self
+        self.submitted_since = input; self
     }
     /// <p>An optional parameter that lets you get information about all the operations that you submitted after a specified date and time. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
     pub fn get_submitted_since(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -96,8 +97,7 @@ impl ListOperationsInputBuilder {
     }
     /// <p>For an initial request for a list of operations, omit this element. If the number of operations that are not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>For an initial request for a list of operations, omit this element. If the number of operations that are not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +112,7 @@ impl ListOperationsInputBuilder {
     /// <p>Number of domains to be returned.</p>
     /// <p>Default: 20</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>Number of domains to be returned.</p>
     /// <p>Default: 20</p>
@@ -127,17 +126,16 @@ impl ListOperationsInputBuilder {
     /// <p>The status of the operations.</p>
     pub fn status(mut self, input: crate::types::OperationStatus) -> Self {
         let mut v = self.status.unwrap_or_default();
-        v.push(input);
-        self.status = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.status = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The status of the operations.</p>
-    pub fn set_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>>) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OperationStatus>>) -> Self {
+        self.status = input; self
     }
     /// <p>The status of the operations.</p>
-    pub fn get_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>> {
+    pub fn get_status(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OperationStatus>> {
         &self.status
     }
     /// Appends an item to `r#type`.
@@ -147,17 +145,16 @@ impl ListOperationsInputBuilder {
     /// <p>An arrays of the domains operation types.</p>
     pub fn r#type(mut self, input: crate::types::OperationType) -> Self {
         let mut v = self.r#type.unwrap_or_default();
-        v.push(input);
-        self.r#type = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.r#type = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An arrays of the domains operation types.</p>
-    pub fn set_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OperationType>>) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OperationType>>) -> Self {
+        self.r#type = input; self
     }
     /// <p>An arrays of the domains operation types.</p>
-    pub fn get_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OperationType>> {
+    pub fn get_type(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OperationType>> {
         &self.r#type
     }
     /// <p>The sort type for returned values.</p>
@@ -167,8 +164,7 @@ impl ListOperationsInputBuilder {
     }
     /// <p>The sort type for returned values.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ListOperationsSortAttributeName>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The sort type for returned values.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ListOperationsSortAttributeName> {
@@ -181,25 +177,32 @@ impl ListOperationsInputBuilder {
     }
     /// <p>The sort order for returned values, either ascending or descending.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The sort order for returned values, either ascending or descending.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
         &self.sort_order
     }
     /// Consumes the builder and constructs a [`ListOperationsInput`](crate::operation::list_operations::ListOperationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_operations::ListOperationsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_operations::ListOperationsInput {
-            submitted_since: self.submitted_since,
-            marker: self.marker,
-            max_items: self.max_items,
-            status: self.status,
-            r#type: self.r#type,
-            sort_by: self.sort_by,
-            sort_order: self.sort_order,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_operations::ListOperationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_operations::ListOperationsInput {
+                submitted_since: self.submitted_since
+                ,
+                marker: self.marker
+                ,
+                max_items: self.max_items
+                ,
+                status: self.status
+                ,
+                r#type: self.r#type
+                ,
+                sort_by: self.sort_by
+                ,
+                sort_order: self.sort_order
+                ,
+            }
+        )
     }
 }
+

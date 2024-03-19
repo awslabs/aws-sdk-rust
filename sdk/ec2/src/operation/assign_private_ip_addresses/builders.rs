@@ -5,23 +5,20 @@ pub use crate::operation::assign_private_ip_addresses::_assign_private_ip_addres
 
 impl AssignPrivateIpAddressesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.assign_private_ip_addresses();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.assign_private_ip_addresses();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `AssignPrivateIpAddresses`.
-///
+/// 
 /// <p>Assigns one or more secondary private IP addresses to the specified network interface.</p>
 /// <p>You can specify one or more specific secondary IP addresses, or you can specify the number of secondary IP addresses to be automatically assigned within the subnet's CIDR block range. The number of secondary IP addresses that you can assign to an instance varies by instance type. For information about instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For more information about Elastic IP addresses, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 /// <p>When you move a secondary private IP address to another network interface, any Elastic IP address that is associated with the IP address is also moved.</p>
@@ -31,33 +28,32 @@ impl AssignPrivateIpAddressesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssignPrivateIpAddressesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::assign_private_ip_addresses::builders::AssignPrivateIpAddressesInputBuilder,
+                    inner: crate::operation::assign_private_ip_addresses::builders::AssignPrivateIpAddressesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesOutput,
-        crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesError,
-    > for AssignPrivateIpAddressesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesOutput,
-            crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesOutput,
+                    crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesError,
+                > for AssignPrivateIpAddressesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesOutput,
+                        crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl AssignPrivateIpAddressesFluentBuilder {
     /// Creates a new `AssignPrivateIpAddresses`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -66,53 +62,44 @@ impl AssignPrivateIpAddressesFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::assign_private_ip_addresses::AssignPrivateIpAddresses::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::assign_private_ip_addresses::AssignPrivateIpAddresses::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesOutput,
-        crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::assign_private_ip_addresses::AssignPrivateIpAddresses::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::assign_private_ip_addresses::AssignPrivateIpAddresses::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesOutput, crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Indicates whether to allow an IP address that is already assigned to another network interface or instance to be reassigned to the specified network interface.</p>
     pub fn allow_reassignment(mut self, input: bool) -> Self {
         self.inner = self.inner.allow_reassignment(input);
@@ -153,13 +140,13 @@ impl AssignPrivateIpAddressesFluentBuilder {
     }
     /// <p>The IP addresses to be assigned as a secondary private IP address to the network interface. You can't specify this parameter when also specifying a number of secondary IP addresses.</p>
     /// <p>If you don't specify an IP address, Amazon EC2 automatically selects an IP address within the subnet range.</p>
-    pub fn set_private_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_private_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_private_ip_addresses(input);
         self
     }
     /// <p>The IP addresses to be assigned as a secondary private IP address to the network interface. You can't specify this parameter when also specifying a number of secondary IP addresses.</p>
     /// <p>If you don't specify an IP address, Amazon EC2 automatically selects an IP address within the subnet range.</p>
-    pub fn get_private_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_private_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_private_ip_addresses()
     }
     /// <p>The number of secondary IP addresses to assign to the network interface. You can't specify this parameter when also specifying private IP addresses.</p>
@@ -186,12 +173,12 @@ impl AssignPrivateIpAddressesFluentBuilder {
         self
     }
     /// <p>One or more IPv4 prefixes assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
-    pub fn set_ipv4_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_ipv4_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_ipv4_prefixes(input);
         self
     }
     /// <p>One or more IPv4 prefixes assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
-    pub fn get_ipv4_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ipv4_prefixes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_ipv4_prefixes()
     }
     /// <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface. You cannot use this option if you use the <code>Ipv4 Prefixes</code> option.</p>
@@ -209,3 +196,4 @@ impl AssignPrivateIpAddressesFluentBuilder {
         self.inner.get_ipv4_prefix_count()
     }
 }
+

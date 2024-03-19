@@ -4,7 +4,7 @@
 /// <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Payload {
+pub struct Payload  {
     /// <p>The content of the payload. You can use a string expression that includes quoted strings (<code>'<string>
     /// '
     /// </string></code>), variables (<code>$variable.<variable-name></variable-name></code>), input values (<code>$input.<input-name>
@@ -15,19 +15,18 @@ pub struct Payload {
     /// <p>The value of the payload type can be either <code>STRING</code> or <code>JSON</code>.</p>
     pub r#type: crate::types::PayloadType,
 }
-impl Payload {
+impl  Payload  {
     /// <p>The content of the payload. You can use a string expression that includes quoted strings (<code>'<string>
     /// '
     /// </string></code>), variables (<code>$variable.<variable-name></variable-name></code>), input values (<code>$input.<input-name>
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>), string concatenations, and quoted strings that contain <code>${}</code> as the content. The recommended maximum size of a content expression is 1 KB.</p>
-    pub fn content_expression(&self) -> &str {
-        use std::ops::Deref;
-        self.content_expression.deref()
+    pub fn content_expression(&self) -> & str {
+        use std::ops::Deref; self.content_expression.deref()
     }
     /// <p>The value of the payload type can be either <code>STRING</code> or <code>JSON</code>.</p>
-    pub fn r#type(&self) -> &crate::types::PayloadType {
+    pub fn r#type(&self) -> & crate::types::PayloadType {
         &self.r#type
     }
 }
@@ -64,8 +63,7 @@ impl PayloadBuilder {
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>), string concatenations, and quoted strings that contain <code>${}</code> as the content. The recommended maximum size of a content expression is 1 KB.</p>
     pub fn set_content_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_expression = input;
-        self
+        self.content_expression = input; self
     }
     /// <p>The content of the payload. You can use a string expression that includes quoted strings (<code>'<string>
     /// '
@@ -84,8 +82,7 @@ impl PayloadBuilder {
     }
     /// <p>The value of the payload type can be either <code>STRING</code> or <code>JSON</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::PayloadType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The value of the payload type can be either <code>STRING</code> or <code>JSON</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::PayloadType> {
@@ -96,19 +93,20 @@ impl PayloadBuilder {
     /// - [`content_expression`](crate::types::builders::PayloadBuilder::content_expression)
     /// - [`r#type`](crate::types::builders::PayloadBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::Payload, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Payload {
-            content_expression: self.content_expression.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "content_expression",
-                    "content_expression was not specified but it is required when building Payload",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building Payload",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Payload {
+                content_expression: self.content_expression
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("content_expression", "content_expression was not specified but it is required when building Payload")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building Payload")
+                    )?
+                ,
+            }
+        )
     }
 }
+

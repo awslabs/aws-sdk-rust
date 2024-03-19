@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateReviewTemplateAnswerInput {
+pub struct UpdateReviewTemplateAnswerInput  {
     /// <p>The review template ARN.</p>
     pub template_arn: ::std::option::Option<::std::string::String>,
     /// <p>The alias of the lens.</p>
@@ -14,9 +14,9 @@ pub struct UpdateReviewTemplateAnswerInput {
     pub question_id: ::std::option::Option<::std::string::String>,
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
-    pub selected_choices: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub selected_choices: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of choices to be updated.</p>
-    pub choice_updates: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ChoiceUpdate>>,
+    pub choice_updates: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ChoiceUpdate>>,
     /// <p>The notes associated with the workload.</p>
     /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub notes: ::std::option::Option<::std::string::String>,
@@ -25,36 +25,37 @@ pub struct UpdateReviewTemplateAnswerInput {
     /// <p>The update reason.</p>
     pub reason: ::std::option::Option<crate::types::AnswerReason>,
 }
-impl UpdateReviewTemplateAnswerInput {
+impl  UpdateReviewTemplateAnswerInput  {
     /// <p>The review template ARN.</p>
-    pub fn template_arn(&self) -> ::std::option::Option<&str> {
+    pub fn template_arn(&self) -> ::std::option::Option<& str> {
         self.template_arn.as_deref()
     }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn lens_alias(&self) -> ::std::option::Option<&str> {
+    pub fn lens_alias(&self) -> ::std::option::Option<& str> {
         self.lens_alias.as_deref()
     }
     /// <p>The ID of the question.</p>
-    pub fn question_id(&self) -> ::std::option::Option<&str> {
+    pub fn question_id(&self) -> ::std::option::Option<& str> {
         self.question_id.as_deref()
     }
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.selected_choices.is_none()`.
-    pub fn selected_choices(&self) -> &[::std::string::String] {
-        self.selected_choices.as_deref().unwrap_or_default()
+    pub fn selected_choices(&self) -> & [::std::string::String] {
+        self.selected_choices.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of choices to be updated.</p>
-    pub fn choice_updates(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ChoiceUpdate>> {
+    pub fn choice_updates(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::ChoiceUpdate>> {
         self.choice_updates.as_ref()
     }
     /// <p>The notes associated with the workload.</p>
     /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
-    pub fn notes(&self) -> ::std::option::Option<&str> {
+    pub fn notes(&self) -> ::std::option::Option<& str> {
         self.notes.as_deref()
     }
     /// <p>Defines whether this question is applicable to a lens review.</p>
@@ -62,7 +63,7 @@ impl UpdateReviewTemplateAnswerInput {
         self.is_applicable
     }
     /// <p>The update reason.</p>
-    pub fn reason(&self) -> ::std::option::Option<&crate::types::AnswerReason> {
+    pub fn reason(&self) -> ::std::option::Option<& crate::types::AnswerReason> {
         self.reason.as_ref()
     }
 }
@@ -80,8 +81,8 @@ pub struct UpdateReviewTemplateAnswerInputBuilder {
     pub(crate) template_arn: ::std::option::Option<::std::string::String>,
     pub(crate) lens_alias: ::std::option::Option<::std::string::String>,
     pub(crate) question_id: ::std::option::Option<::std::string::String>,
-    pub(crate) selected_choices: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) choice_updates: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ChoiceUpdate>>,
+    pub(crate) selected_choices: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) choice_updates: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ChoiceUpdate>>,
     pub(crate) notes: ::std::option::Option<::std::string::String>,
     pub(crate) is_applicable: ::std::option::Option<bool>,
     pub(crate) reason: ::std::option::Option<crate::types::AnswerReason>,
@@ -95,8 +96,7 @@ impl UpdateReviewTemplateAnswerInputBuilder {
     }
     /// <p>The review template ARN.</p>
     pub fn set_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_arn = input;
-        self
+        self.template_arn = input; self
     }
     /// <p>The review template ARN.</p>
     pub fn get_template_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +116,7 @@ impl UpdateReviewTemplateAnswerInputBuilder {
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn set_lens_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lens_alias = input;
-        self
+        self.lens_alias = input; self
     }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
@@ -134,8 +133,7 @@ impl UpdateReviewTemplateAnswerInputBuilder {
     }
     /// <p>The ID of the question.</p>
     pub fn set_question_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.question_id = input;
-        self
+        self.question_id = input; self
     }
     /// <p>The ID of the question.</p>
     pub fn get_question_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,19 +147,18 @@ impl UpdateReviewTemplateAnswerInputBuilder {
     /// <p>The values entered replace the previously selected choices.</p>
     pub fn selected_choices(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.selected_choices.unwrap_or_default();
-        v.push(input.into());
-        self.selected_choices = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.selected_choices = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
-    pub fn set_selected_choices(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.selected_choices = input;
-        self
+    pub fn set_selected_choices(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.selected_choices = input; self
     }
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
-    pub fn get_selected_choices(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_selected_choices(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.selected_choices
     }
     /// Adds a key-value pair to `choice_updates`.
@@ -171,20 +168,16 @@ impl UpdateReviewTemplateAnswerInputBuilder {
     /// <p>A list of choices to be updated.</p>
     pub fn choice_updates(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ChoiceUpdate) -> Self {
         let mut hash_map = self.choice_updates.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.choice_updates = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.choice_updates = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of choices to be updated.</p>
-    pub fn set_choice_updates(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ChoiceUpdate>>,
-    ) -> Self {
-        self.choice_updates = input;
-        self
+    pub fn set_choice_updates(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ChoiceUpdate>>) -> Self {
+        self.choice_updates = input; self
     }
     /// <p>A list of choices to be updated.</p>
-    pub fn get_choice_updates(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ChoiceUpdate>> {
+    pub fn get_choice_updates(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ChoiceUpdate>> {
         &self.choice_updates
     }
     /// <p>The notes associated with the workload.</p>
@@ -196,8 +189,7 @@ impl UpdateReviewTemplateAnswerInputBuilder {
     /// <p>The notes associated with the workload.</p>
     /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn set_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.notes = input;
-        self
+        self.notes = input; self
     }
     /// <p>The notes associated with the workload.</p>
     /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
@@ -211,8 +203,7 @@ impl UpdateReviewTemplateAnswerInputBuilder {
     }
     /// <p>Defines whether this question is applicable to a lens review.</p>
     pub fn set_is_applicable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_applicable = input;
-        self
+        self.is_applicable = input; self
     }
     /// <p>Defines whether this question is applicable to a lens review.</p>
     pub fn get_is_applicable(&self) -> &::std::option::Option<bool> {
@@ -225,29 +216,34 @@ impl UpdateReviewTemplateAnswerInputBuilder {
     }
     /// <p>The update reason.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<crate::types::AnswerReason>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>The update reason.</p>
     pub fn get_reason(&self) -> &::std::option::Option<crate::types::AnswerReason> {
         &self.reason
     }
     /// Consumes the builder and constructs a [`UpdateReviewTemplateAnswerInput`](crate::operation::update_review_template_answer::UpdateReviewTemplateAnswerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_review_template_answer::UpdateReviewTemplateAnswerInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_review_template_answer::UpdateReviewTemplateAnswerInput {
-            template_arn: self.template_arn,
-            lens_alias: self.lens_alias,
-            question_id: self.question_id,
-            selected_choices: self.selected_choices,
-            choice_updates: self.choice_updates,
-            notes: self.notes,
-            is_applicable: self.is_applicable,
-            reason: self.reason,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_review_template_answer::UpdateReviewTemplateAnswerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_review_template_answer::UpdateReviewTemplateAnswerInput {
+                template_arn: self.template_arn
+                ,
+                lens_alias: self.lens_alias
+                ,
+                question_id: self.question_id
+                ,
+                selected_choices: self.selected_choices
+                ,
+                choice_updates: self.choice_updates
+                ,
+                notes: self.notes
+                ,
+                is_applicable: self.is_applicable
+                ,
+                reason: self.reason
+                ,
+            }
+        )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Object that determines whether tracking should be used during a contact executed with this <code>Config</code> in the mission profile.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrackingConfig {
+pub struct TrackingConfig  {
     /// <p>Current setting for autotrack.</p>
     pub autotrack: crate::types::Criticality,
 }
-impl TrackingConfig {
+impl  TrackingConfig  {
     /// <p>Current setting for autotrack.</p>
-    pub fn autotrack(&self) -> &crate::types::Criticality {
+    pub fn autotrack(&self) -> & crate::types::Criticality {
         &self.autotrack
     }
 }
@@ -35,8 +35,7 @@ impl TrackingConfigBuilder {
     }
     /// <p>Current setting for autotrack.</p>
     pub fn set_autotrack(mut self, input: ::std::option::Option<crate::types::Criticality>) -> Self {
-        self.autotrack = input;
-        self
+        self.autotrack = input; self
     }
     /// <p>Current setting for autotrack.</p>
     pub fn get_autotrack(&self) -> &::std::option::Option<crate::types::Criticality> {
@@ -46,13 +45,15 @@ impl TrackingConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`autotrack`](crate::types::builders::TrackingConfigBuilder::autotrack)
     pub fn build(self) -> ::std::result::Result<crate::types::TrackingConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TrackingConfig {
-            autotrack: self.autotrack.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "autotrack",
-                    "autotrack was not specified but it is required when building TrackingConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TrackingConfig {
+                autotrack: self.autotrack
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("autotrack", "autotrack was not specified but it is required when building TrackingConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

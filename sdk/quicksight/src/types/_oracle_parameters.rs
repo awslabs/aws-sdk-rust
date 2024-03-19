@@ -3,7 +3,7 @@
 /// <p>The parameters for Oracle.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OracleParameters {
+pub struct OracleParameters  {
     /// <p>An Oracle host.</p>
     pub host: ::std::string::String,
     /// <p>The port.</p>
@@ -11,20 +11,18 @@ pub struct OracleParameters {
     /// <p>The database.</p>
     pub database: ::std::string::String,
 }
-impl OracleParameters {
+impl  OracleParameters  {
     /// <p>An Oracle host.</p>
-    pub fn host(&self) -> &str {
-        use std::ops::Deref;
-        self.host.deref()
+    pub fn host(&self) -> & str {
+        use std::ops::Deref; self.host.deref()
     }
     /// <p>The port.</p>
     pub fn port(&self) -> i32 {
         self.port
     }
     /// <p>The database.</p>
-    pub fn database(&self) -> &str {
-        use std::ops::Deref;
-        self.database.deref()
+    pub fn database(&self) -> & str {
+        use std::ops::Deref; self.database.deref()
     }
 }
 impl OracleParameters {
@@ -51,8 +49,7 @@ impl OracleParametersBuilder {
     }
     /// <p>An Oracle host.</p>
     pub fn set_host(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host = input;
-        self
+        self.host = input; self
     }
     /// <p>An Oracle host.</p>
     pub fn get_host(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl OracleParametersBuilder {
     }
     /// <p>The port.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -81,8 +77,7 @@ impl OracleParametersBuilder {
     }
     /// <p>The database.</p>
     pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>The database.</p>
     pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,25 +89,25 @@ impl OracleParametersBuilder {
     /// - [`port`](crate::types::builders::OracleParametersBuilder::port)
     /// - [`database`](crate::types::builders::OracleParametersBuilder::database)
     pub fn build(self) -> ::std::result::Result<crate::types::OracleParameters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OracleParameters {
-            host: self.host.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "host",
-                    "host was not specified but it is required when building OracleParameters",
-                )
-            })?,
-            port: self.port.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "port",
-                    "port was not specified but it is required when building OracleParameters",
-                )
-            })?,
-            database: self.database.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "database",
-                    "database was not specified but it is required when building OracleParameters",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OracleParameters {
+                host: self.host
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("host", "host was not specified but it is required when building OracleParameters")
+                    )?
+                ,
+                port: self.port
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("port", "port was not specified but it is required when building OracleParameters")
+                    )?
+                ,
+                database: self.database
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("database", "database was not specified but it is required when building OracleParameters")
+                    )?
+                ,
+            }
+        )
     }
 }
+

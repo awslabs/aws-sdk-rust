@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListFormsOutput {
+pub struct ListFormsOutput  {
     /// <p>The list of forms for the Amplify app.</p>
-    pub entities: ::std::vec::Vec<crate::types::FormSummary>,
+    pub entities: ::std::vec::Vec::<crate::types::FormSummary>,
     /// <p>The pagination token that's included if more results are available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListFormsOutput {
+impl  ListFormsOutput  {
     /// <p>The list of forms for the Amplify app.</p>
-    pub fn entities(&self) -> &[crate::types::FormSummary] {
-        use std::ops::Deref;
-        self.entities.deref()
+    pub fn entities(&self) -> & [crate::types::FormSummary] {
+        use std::ops::Deref; self.entities.deref()
     }
     /// <p>The pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListFormsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListFormsOutput {
     /// Creates a new builder-style object to manufacture [`ListFormsOutput`](crate::operation::list_forms::ListFormsOutput).
     pub fn builder() -> crate::operation::list_forms::builders::ListFormsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListFormsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFormsOutputBuilder {
-    pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::FormSummary>>,
+    pub(crate) entities: ::std::option::Option<::std::vec::Vec::<crate::types::FormSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListFormsOutputBuilder {
     /// <p>The list of forms for the Amplify app.</p>
     pub fn entities(mut self, input: crate::types::FormSummary) -> Self {
         let mut v = self.entities.unwrap_or_default();
-        v.push(input);
-        self.entities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of forms for the Amplify app.</p>
-    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FormSummary>>) -> Self {
-        self.entities = input;
-        self
+    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FormSummary>>) -> Self {
+        self.entities = input; self
     }
     /// <p>The list of forms for the Amplify app.</p>
-    pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FormSummary>> {
+    pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FormSummary>> {
         &self.entities
     }
     /// <p>The pagination token that's included if more results are available.</p>
@@ -68,35 +66,37 @@ impl ListFormsOutputBuilder {
     }
     /// <p>The pagination token that's included if more results are available.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token that's included if more results are available.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListFormsOutput`](crate::operation::list_forms::ListFormsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`entities`](crate::operation::list_forms::builders::ListFormsOutputBuilder::entities)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_forms::ListFormsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_forms::ListFormsOutput {
-            entities: self.entities.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "entities",
-                    "entities was not specified but it is required when building ListFormsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_forms::ListFormsOutput {
+                entities: self.entities
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("entities", "entities was not specified but it is required when building ListFormsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

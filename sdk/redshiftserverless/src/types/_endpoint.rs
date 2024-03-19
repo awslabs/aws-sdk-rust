@@ -3,17 +3,17 @@
 /// <p>The VPC endpoint object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Endpoint {
+pub struct Endpoint  {
     /// <p>The DNS address of the VPC endpoint.</p>
     pub address: ::std::option::Option<::std::string::String>,
     /// <p>The port that Amazon Redshift Serverless listens on.</p>
     pub port: ::std::option::Option<i32>,
     /// <p>An array of <code>VpcEndpoint</code> objects.</p>
-    pub vpc_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>>,
+    pub vpc_endpoints: ::std::option::Option<::std::vec::Vec::<crate::types::VpcEndpoint>>,
 }
-impl Endpoint {
+impl  Endpoint  {
     /// <p>The DNS address of the VPC endpoint.</p>
-    pub fn address(&self) -> ::std::option::Option<&str> {
+    pub fn address(&self) -> ::std::option::Option<& str> {
         self.address.as_deref()
     }
     /// <p>The port that Amazon Redshift Serverless listens on.</p>
@@ -21,10 +21,11 @@ impl Endpoint {
         self.port
     }
     /// <p>An array of <code>VpcEndpoint</code> objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_endpoints.is_none()`.
-    pub fn vpc_endpoints(&self) -> &[crate::types::VpcEndpoint] {
-        self.vpc_endpoints.as_deref().unwrap_or_default()
+    pub fn vpc_endpoints(&self) -> & [crate::types::VpcEndpoint] {
+        self.vpc_endpoints.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Endpoint {
@@ -40,7 +41,7 @@ impl Endpoint {
 pub struct EndpointBuilder {
     pub(crate) address: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,
-    pub(crate) vpc_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>>,
+    pub(crate) vpc_endpoints: ::std::option::Option<::std::vec::Vec::<crate::types::VpcEndpoint>>,
 }
 impl EndpointBuilder {
     /// <p>The DNS address of the VPC endpoint.</p>
@@ -50,8 +51,7 @@ impl EndpointBuilder {
     }
     /// <p>The DNS address of the VPC endpoint.</p>
     pub fn set_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.address = input;
-        self
+        self.address = input; self
     }
     /// <p>The DNS address of the VPC endpoint.</p>
     pub fn get_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl EndpointBuilder {
     }
     /// <p>The port that Amazon Redshift Serverless listens on.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port that Amazon Redshift Serverless listens on.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -78,25 +77,28 @@ impl EndpointBuilder {
     /// <p>An array of <code>VpcEndpoint</code> objects.</p>
     pub fn vpc_endpoints(mut self, input: crate::types::VpcEndpoint) -> Self {
         let mut v = self.vpc_endpoints.unwrap_or_default();
-        v.push(input);
-        self.vpc_endpoints = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.vpc_endpoints = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>VpcEndpoint</code> objects.</p>
-    pub fn set_vpc_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>>) -> Self {
-        self.vpc_endpoints = input;
-        self
+    pub fn set_vpc_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VpcEndpoint>>) -> Self {
+        self.vpc_endpoints = input; self
     }
     /// <p>An array of <code>VpcEndpoint</code> objects.</p>
-    pub fn get_vpc_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>> {
+    pub fn get_vpc_endpoints(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VpcEndpoint>> {
         &self.vpc_endpoints
     }
     /// Consumes the builder and constructs a [`Endpoint`](crate::types::Endpoint).
     pub fn build(self) -> crate::types::Endpoint {
         crate::types::Endpoint {
-            address: self.address,
-            port: self.port,
-            vpc_endpoints: self.vpc_endpoints,
+            address: self.address
+            ,
+            port: self.port
+            ,
+            vpc_endpoints: self.vpc_endpoints
+            ,
         }
     }
 }
+

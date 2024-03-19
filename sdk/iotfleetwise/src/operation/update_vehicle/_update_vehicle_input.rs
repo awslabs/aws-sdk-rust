@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateVehicleInput {
+pub struct UpdateVehicleInput  {
     /// <p>The unique ID of the vehicle to update.</p>
     pub vehicle_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of a vehicle model (model manifest) associated with the vehicle.</p>
@@ -11,32 +11,32 @@ pub struct UpdateVehicleInput {
     pub decoder_manifest_arn: ::std::option::Option<::std::string::String>,
     /// <p>Static information about a vehicle in a key-value pair. For example:</p>
     /// <p><code>"engineType"</code> : <code>"1.3 L R2"</code></p>
-    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The method the specified attributes will update the existing attributes on the vehicle. Use<code>Overwite</code> to replace the vehicle attributes with the specified attributes. Or use <code>Merge</code> to combine all attributes.</p>
     /// <p>This is required if attributes are present in the input.</p>
     pub attribute_update_mode: ::std::option::Option<crate::types::UpdateMode>,
 }
-impl UpdateVehicleInput {
+impl  UpdateVehicleInput  {
     /// <p>The unique ID of the vehicle to update.</p>
-    pub fn vehicle_name(&self) -> ::std::option::Option<&str> {
+    pub fn vehicle_name(&self) -> ::std::option::Option<& str> {
         self.vehicle_name.as_deref()
     }
     /// <p>The ARN of a vehicle model (model manifest) associated with the vehicle.</p>
-    pub fn model_manifest_arn(&self) -> ::std::option::Option<&str> {
+    pub fn model_manifest_arn(&self) -> ::std::option::Option<& str> {
         self.model_manifest_arn.as_deref()
     }
     /// <p>The ARN of the decoder manifest associated with this vehicle.</p>
-    pub fn decoder_manifest_arn(&self) -> ::std::option::Option<&str> {
+    pub fn decoder_manifest_arn(&self) -> ::std::option::Option<& str> {
         self.decoder_manifest_arn.as_deref()
     }
     /// <p>Static information about a vehicle in a key-value pair. For example:</p>
     /// <p><code>"engineType"</code> : <code>"1.3 L R2"</code></p>
-    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>The method the specified attributes will update the existing attributes on the vehicle. Use<code>Overwite</code> to replace the vehicle attributes with the specified attributes. Or use <code>Merge</code> to combine all attributes.</p>
     /// <p>This is required if attributes are present in the input.</p>
-    pub fn attribute_update_mode(&self) -> ::std::option::Option<&crate::types::UpdateMode> {
+    pub fn attribute_update_mode(&self) -> ::std::option::Option<& crate::types::UpdateMode> {
         self.attribute_update_mode.as_ref()
     }
 }
@@ -54,7 +54,7 @@ pub struct UpdateVehicleInputBuilder {
     pub(crate) vehicle_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_manifest_arn: ::std::option::Option<::std::string::String>,
     pub(crate) decoder_manifest_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) attribute_update_mode: ::std::option::Option<crate::types::UpdateMode>,
 }
 impl UpdateVehicleInputBuilder {
@@ -66,8 +66,7 @@ impl UpdateVehicleInputBuilder {
     }
     /// <p>The unique ID of the vehicle to update.</p>
     pub fn set_vehicle_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vehicle_name = input;
-        self
+        self.vehicle_name = input; self
     }
     /// <p>The unique ID of the vehicle to update.</p>
     pub fn get_vehicle_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +79,7 @@ impl UpdateVehicleInputBuilder {
     }
     /// <p>The ARN of a vehicle model (model manifest) associated with the vehicle.</p>
     pub fn set_model_manifest_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_manifest_arn = input;
-        self
+        self.model_manifest_arn = input; self
     }
     /// <p>The ARN of a vehicle model (model manifest) associated with the vehicle.</p>
     pub fn get_model_manifest_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +92,7 @@ impl UpdateVehicleInputBuilder {
     }
     /// <p>The ARN of the decoder manifest associated with this vehicle.</p>
     pub fn set_decoder_manifest_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.decoder_manifest_arn = input;
-        self
+        self.decoder_manifest_arn = input; self
     }
     /// <p>The ARN of the decoder manifest associated with this vehicle.</p>
     pub fn get_decoder_manifest_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,19 +106,18 @@ impl UpdateVehicleInputBuilder {
     /// <p><code>"engineType"</code> : <code>"1.3 L R2"</code></p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Static information about a vehicle in a key-value pair. For example:</p>
     /// <p><code>"engineType"</code> : <code>"1.3 L R2"</code></p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>Static information about a vehicle in a key-value pair. For example:</p>
     /// <p><code>"engineType"</code> : <code>"1.3 L R2"</code></p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// <p>The method the specified attributes will update the existing attributes on the vehicle. Use<code>Overwite</code> to replace the vehicle attributes with the specified attributes. Or use <code>Merge</code> to combine all attributes.</p>
@@ -133,8 +129,7 @@ impl UpdateVehicleInputBuilder {
     /// <p>The method the specified attributes will update the existing attributes on the vehicle. Use<code>Overwite</code> to replace the vehicle attributes with the specified attributes. Or use <code>Merge</code> to combine all attributes.</p>
     /// <p>This is required if attributes are present in the input.</p>
     pub fn set_attribute_update_mode(mut self, input: ::std::option::Option<crate::types::UpdateMode>) -> Self {
-        self.attribute_update_mode = input;
-        self
+        self.attribute_update_mode = input; self
     }
     /// <p>The method the specified attributes will update the existing attributes on the vehicle. Use<code>Overwite</code> to replace the vehicle attributes with the specified attributes. Or use <code>Merge</code> to combine all attributes.</p>
     /// <p>This is required if attributes are present in the input.</p>
@@ -142,15 +137,21 @@ impl UpdateVehicleInputBuilder {
         &self.attribute_update_mode
     }
     /// Consumes the builder and constructs a [`UpdateVehicleInput`](crate::operation::update_vehicle::UpdateVehicleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_vehicle::UpdateVehicleInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_vehicle::UpdateVehicleInput {
-            vehicle_name: self.vehicle_name,
-            model_manifest_arn: self.model_manifest_arn,
-            decoder_manifest_arn: self.decoder_manifest_arn,
-            attributes: self.attributes,
-            attribute_update_mode: self.attribute_update_mode,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_vehicle::UpdateVehicleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_vehicle::UpdateVehicleInput {
+                vehicle_name: self.vehicle_name
+                ,
+                model_manifest_arn: self.model_manifest_arn
+                ,
+                decoder_manifest_arn: self.decoder_manifest_arn
+                ,
+                attributes: self.attributes
+                ,
+                attribute_update_mode: self.attribute_update_mode
+                ,
+            }
+        )
     }
 }
+

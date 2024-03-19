@@ -3,7 +3,7 @@
 /// <p>Information about a compliance item.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ComplianceItemEntry {
+pub struct ComplianceItemEntry  {
     /// <p>The compliance item ID. For example, if the compliance item is a Windows patch, the ID could be the number of the KB article.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the compliance item. For example, if the compliance item is a Windows patch, the title could be the title of the KB article for the patch; for example: Security Update for Active Directory Federation Services.</p>
@@ -13,27 +13,27 @@ pub struct ComplianceItemEntry {
     /// <p>The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.</p>
     pub status: crate::types::ComplianceStatus,
     /// <p>A "Key": "Value" tag combination for the compliance item.</p>
-    pub details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub details: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl ComplianceItemEntry {
+impl  ComplianceItemEntry  {
     /// <p>The compliance item ID. For example, if the compliance item is a Windows patch, the ID could be the number of the KB article.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The title of the compliance item. For example, if the compliance item is a Windows patch, the title could be the title of the KB article for the patch; for example: Security Update for Active Directory Federation Services.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The severity of the compliance status. Severity can be one of the following: Critical, High, Medium, Low, Informational, Unspecified.</p>
-    pub fn severity(&self) -> &crate::types::ComplianceSeverity {
+    pub fn severity(&self) -> & crate::types::ComplianceSeverity {
         &self.severity
     }
     /// <p>The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.</p>
-    pub fn status(&self) -> &crate::types::ComplianceStatus {
+    pub fn status(&self) -> & crate::types::ComplianceStatus {
         &self.status
     }
     /// <p>A "Key": "Value" tag combination for the compliance item.</p>
-    pub fn details(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn details(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.details.as_ref()
     }
 }
@@ -52,7 +52,7 @@ pub struct ComplianceItemEntryBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) severity: ::std::option::Option<crate::types::ComplianceSeverity>,
     pub(crate) status: ::std::option::Option<crate::types::ComplianceStatus>,
-    pub(crate) details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) details: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl ComplianceItemEntryBuilder {
     /// <p>The compliance item ID. For example, if the compliance item is a Windows patch, the ID could be the number of the KB article.</p>
@@ -62,8 +62,7 @@ impl ComplianceItemEntryBuilder {
     }
     /// <p>The compliance item ID. For example, if the compliance item is a Windows patch, the ID could be the number of the KB article.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The compliance item ID. For example, if the compliance item is a Windows patch, the ID could be the number of the KB article.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl ComplianceItemEntryBuilder {
     }
     /// <p>The title of the compliance item. For example, if the compliance item is a Windows patch, the title could be the title of the KB article for the patch; for example: Security Update for Active Directory Federation Services.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The title of the compliance item. For example, if the compliance item is a Windows patch, the title could be the title of the KB article for the patch; for example: Security Update for Active Directory Federation Services.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl ComplianceItemEntryBuilder {
     }
     /// <p>The severity of the compliance status. Severity can be one of the following: Critical, High, Medium, Low, Informational, Unspecified.</p>
     pub fn set_severity(mut self, input: ::std::option::Option<crate::types::ComplianceSeverity>) -> Self {
-        self.severity = input;
-        self
+        self.severity = input; self
     }
     /// <p>The severity of the compliance status. Severity can be one of the following: Critical, High, Medium, Low, Informational, Unspecified.</p>
     pub fn get_severity(&self) -> &::std::option::Option<crate::types::ComplianceSeverity> {
@@ -106,8 +103,7 @@ impl ComplianceItemEntryBuilder {
     }
     /// <p>The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ComplianceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ComplianceStatus> {
@@ -120,17 +116,16 @@ impl ComplianceItemEntryBuilder {
     /// <p>A "Key": "Value" tag combination for the compliance item.</p>
     pub fn details(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.details.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.details = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.details = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A "Key": "Value" tag combination for the compliance item.</p>
-    pub fn set_details(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.details = input;
-        self
+    pub fn set_details(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.details = input; self
     }
     /// <p>A "Key": "Value" tag combination for the compliance item.</p>
-    pub fn get_details(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_details(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.details
     }
     /// Consumes the builder and constructs a [`ComplianceItemEntry`](crate::types::ComplianceItemEntry).
@@ -138,22 +133,26 @@ impl ComplianceItemEntryBuilder {
     /// - [`severity`](crate::types::builders::ComplianceItemEntryBuilder::severity)
     /// - [`status`](crate::types::builders::ComplianceItemEntryBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::ComplianceItemEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ComplianceItemEntry {
-            id: self.id,
-            title: self.title,
-            severity: self.severity.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "severity",
-                    "severity was not specified but it is required when building ComplianceItemEntry",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building ComplianceItemEntry",
-                )
-            })?,
-            details: self.details,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ComplianceItemEntry {
+                id: self.id
+                ,
+                title: self.title
+                ,
+                severity: self.severity
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("severity", "severity was not specified but it is required when building ComplianceItemEntry")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building ComplianceItemEntry")
+                    )?
+                ,
+                details: self.details
+                ,
+            }
+        )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Container for grant information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Grant {
+pub struct Grant  {
     /// <p>The person being granted permissions.</p>
     pub grantee: ::std::option::Option<crate::types::Grantee>,
     /// <p>Specifies the permission given to the grantee.</p>
     pub permission: ::std::option::Option<crate::types::Permission>,
 }
-impl Grant {
+impl  Grant  {
     /// <p>The person being granted permissions.</p>
-    pub fn grantee(&self) -> ::std::option::Option<&crate::types::Grantee> {
+    pub fn grantee(&self) -> ::std::option::Option<& crate::types::Grantee> {
         self.grantee.as_ref()
     }
     /// <p>Specifies the permission given to the grantee.</p>
-    pub fn permission(&self) -> ::std::option::Option<&crate::types::Permission> {
+    pub fn permission(&self) -> ::std::option::Option<& crate::types::Permission> {
         self.permission.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl GrantBuilder {
     }
     /// <p>The person being granted permissions.</p>
     pub fn set_grantee(mut self, input: ::std::option::Option<crate::types::Grantee>) -> Self {
-        self.grantee = input;
-        self
+        self.grantee = input; self
     }
     /// <p>The person being granted permissions.</p>
     pub fn get_grantee(&self) -> &::std::option::Option<crate::types::Grantee> {
@@ -55,8 +54,7 @@ impl GrantBuilder {
     }
     /// <p>Specifies the permission given to the grantee.</p>
     pub fn set_permission(mut self, input: ::std::option::Option<crate::types::Permission>) -> Self {
-        self.permission = input;
-        self
+        self.permission = input; self
     }
     /// <p>Specifies the permission given to the grantee.</p>
     pub fn get_permission(&self) -> &::std::option::Option<crate::types::Permission> {
@@ -65,8 +63,11 @@ impl GrantBuilder {
     /// Consumes the builder and constructs a [`Grant`](crate::types::Grant).
     pub fn build(self) -> crate::types::Grant {
         crate::types::Grant {
-            grantee: self.grantee,
-            permission: self.permission,
+            grantee: self.grantee
+            ,
+            permission: self.permission
+            ,
         }
     }
 }
+

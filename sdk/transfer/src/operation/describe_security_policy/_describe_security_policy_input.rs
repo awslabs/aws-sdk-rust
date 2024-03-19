@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSecurityPolicyInput {
+pub struct DescribeSecurityPolicyInput  {
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
     pub security_policy_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeSecurityPolicyInput {
+impl  DescribeSecurityPolicyInput  {
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
-    pub fn security_policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn security_policy_name(&self) -> ::std::option::Option<& str> {
         self.security_policy_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeSecurityPolicyInputBuilder {
     }
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
     pub fn set_security_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.security_policy_name = input;
-        self
+        self.security_policy_name = input; self
     }
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
     pub fn get_security_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.security_policy_name
     }
     /// Consumes the builder and constructs a [`DescribeSecurityPolicyInput`](crate::operation::describe_security_policy::DescribeSecurityPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_security_policy::DescribeSecurityPolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_security_policy::DescribeSecurityPolicyInput {
-            security_policy_name: self.security_policy_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_security_policy::DescribeSecurityPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_security_policy::DescribeSecurityPolicyInput {
+                security_policy_name: self.security_policy_name
+                ,
+            }
+        )
     }
 }
+

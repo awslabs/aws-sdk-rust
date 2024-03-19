@@ -3,13 +3,13 @@
 /// <p>The field well configuration of a sankey diagram.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SankeyDiagramFieldWells {
+pub struct SankeyDiagramFieldWells  {
     /// <p>The field well configuration of a sankey diagram.</p>
     pub sankey_diagram_aggregated_field_wells: ::std::option::Option<crate::types::SankeyDiagramAggregatedFieldWells>,
 }
-impl SankeyDiagramFieldWells {
+impl  SankeyDiagramFieldWells  {
     /// <p>The field well configuration of a sankey diagram.</p>
-    pub fn sankey_diagram_aggregated_field_wells(&self) -> ::std::option::Option<&crate::types::SankeyDiagramAggregatedFieldWells> {
+    pub fn sankey_diagram_aggregated_field_wells(&self) -> ::std::option::Option<& crate::types::SankeyDiagramAggregatedFieldWells> {
         self.sankey_diagram_aggregated_field_wells.as_ref()
     }
 }
@@ -33,12 +33,8 @@ impl SankeyDiagramFieldWellsBuilder {
         self
     }
     /// <p>The field well configuration of a sankey diagram.</p>
-    pub fn set_sankey_diagram_aggregated_field_wells(
-        mut self,
-        input: ::std::option::Option<crate::types::SankeyDiagramAggregatedFieldWells>,
-    ) -> Self {
-        self.sankey_diagram_aggregated_field_wells = input;
-        self
+    pub fn set_sankey_diagram_aggregated_field_wells(mut self, input: ::std::option::Option<crate::types::SankeyDiagramAggregatedFieldWells>) -> Self {
+        self.sankey_diagram_aggregated_field_wells = input; self
     }
     /// <p>The field well configuration of a sankey diagram.</p>
     pub fn get_sankey_diagram_aggregated_field_wells(&self) -> &::std::option::Option<crate::types::SankeyDiagramAggregatedFieldWells> {
@@ -47,7 +43,9 @@ impl SankeyDiagramFieldWellsBuilder {
     /// Consumes the builder and constructs a [`SankeyDiagramFieldWells`](crate::types::SankeyDiagramFieldWells).
     pub fn build(self) -> crate::types::SankeyDiagramFieldWells {
         crate::types::SankeyDiagramFieldWells {
-            sankey_diagram_aggregated_field_wells: self.sankey_diagram_aggregated_field_wells,
+            sankey_diagram_aggregated_field_wells: self.sankey_diagram_aggregated_field_wells
+            ,
         }
     }
 }
+

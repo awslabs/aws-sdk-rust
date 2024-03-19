@@ -3,7 +3,7 @@
 /// <p>A structure that contains the secret value and other details for a secret.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SecretValueEntry {
+pub struct SecretValueEntry  {
     /// <p>The Amazon Resource Name (ARN) of the secret.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The friendly name of the secret.</p>
@@ -15,43 +15,44 @@ pub struct SecretValueEntry {
     /// <p>The decrypted secret value, if the secret value was originally provided as a string or through the Secrets Manager console.</p>
     pub secret_string: ::std::option::Option<::std::string::String>,
     /// <p>A list of all of the staging labels currently attached to this version of the secret.</p>
-    pub version_stages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub version_stages: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The date the secret was created.</p>
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl SecretValueEntry {
+impl  SecretValueEntry  {
     /// <p>The Amazon Resource Name (ARN) of the secret.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The friendly name of the secret.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The unique version identifier of this version of the secret.</p>
-    pub fn version_id(&self) -> ::std::option::Option<&str> {
+    pub fn version_id(&self) -> ::std::option::Option<& str> {
         self.version_id.as_deref()
     }
     /// <p>The decrypted secret value, if the secret value was originally provided as binary data in the form of a byte array. The parameter represents the binary data as a <a href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a> string.</p>
-    pub fn secret_binary(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn secret_binary(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.secret_binary.as_ref()
     }
     /// <p>The decrypted secret value, if the secret value was originally provided as a string or through the Secrets Manager console.</p>
-    pub fn secret_string(&self) -> ::std::option::Option<&str> {
+    pub fn secret_string(&self) -> ::std::option::Option<& str> {
         self.secret_string.as_deref()
     }
     /// <p>A list of all of the staging labels currently attached to this version of the secret.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.version_stages.is_none()`.
-    pub fn version_stages(&self) -> &[::std::string::String] {
-        self.version_stages.as_deref().unwrap_or_default()
+    pub fn version_stages(&self) -> & [::std::string::String] {
+        self.version_stages.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The date the secret was created.</p>
-    pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
 }
-impl ::std::fmt::Debug for SecretValueEntry {
+impl  ::std::fmt::Debug for SecretValueEntry  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SecretValueEntry");
         formatter.field("arn", &self.arn);
@@ -80,7 +81,7 @@ pub struct SecretValueEntryBuilder {
     pub(crate) version_id: ::std::option::Option<::std::string::String>,
     pub(crate) secret_binary: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) secret_string: ::std::option::Option<::std::string::String>,
-    pub(crate) version_stages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) version_stages: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SecretValueEntryBuilder {
@@ -91,8 +92,7 @@ impl SecretValueEntryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the secret.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the secret.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +105,7 @@ impl SecretValueEntryBuilder {
     }
     /// <p>The friendly name of the secret.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The friendly name of the secret.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +118,7 @@ impl SecretValueEntryBuilder {
     }
     /// <p>The unique version identifier of this version of the secret.</p>
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_id = input;
-        self
+        self.version_id = input; self
     }
     /// <p>The unique version identifier of this version of the secret.</p>
     pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +131,7 @@ impl SecretValueEntryBuilder {
     }
     /// <p>The decrypted secret value, if the secret value was originally provided as binary data in the form of a byte array. The parameter represents the binary data as a <a href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a> string.</p>
     pub fn set_secret_binary(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.secret_binary = input;
-        self
+        self.secret_binary = input; self
     }
     /// <p>The decrypted secret value, if the secret value was originally provided as binary data in the form of a byte array. The parameter represents the binary data as a <a href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a> string.</p>
     pub fn get_secret_binary(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -147,8 +144,7 @@ impl SecretValueEntryBuilder {
     }
     /// <p>The decrypted secret value, if the secret value was originally provided as a string or through the Secrets Manager console.</p>
     pub fn set_secret_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_string = input;
-        self
+        self.secret_string = input; self
     }
     /// <p>The decrypted secret value, if the secret value was originally provided as a string or through the Secrets Manager console.</p>
     pub fn get_secret_string(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,17 +157,16 @@ impl SecretValueEntryBuilder {
     /// <p>A list of all of the staging labels currently attached to this version of the secret.</p>
     pub fn version_stages(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.version_stages.unwrap_or_default();
-        v.push(input.into());
-        self.version_stages = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.version_stages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of all of the staging labels currently attached to this version of the secret.</p>
-    pub fn set_version_stages(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.version_stages = input;
-        self
+    pub fn set_version_stages(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.version_stages = input; self
     }
     /// <p>A list of all of the staging labels currently attached to this version of the secret.</p>
-    pub fn get_version_stages(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_version_stages(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.version_stages
     }
     /// <p>The date the secret was created.</p>
@@ -181,8 +176,7 @@ impl SecretValueEntryBuilder {
     }
     /// <p>The date the secret was created.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>The date the secret was created.</p>
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -191,13 +185,20 @@ impl SecretValueEntryBuilder {
     /// Consumes the builder and constructs a [`SecretValueEntry`](crate::types::SecretValueEntry).
     pub fn build(self) -> crate::types::SecretValueEntry {
         crate::types::SecretValueEntry {
-            arn: self.arn,
-            name: self.name,
-            version_id: self.version_id,
-            secret_binary: self.secret_binary,
-            secret_string: self.secret_string,
-            version_stages: self.version_stages,
-            created_date: self.created_date,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            version_id: self.version_id
+            ,
+            secret_binary: self.secret_binary
+            ,
+            secret_string: self.secret_string
+            ,
+            version_stages: self.version_stages
+            ,
+            created_date: self.created_date
+            ,
         }
     }
 }
@@ -214,3 +215,4 @@ impl ::std::fmt::Debug for SecretValueEntryBuilder {
         formatter.finish()
     }
 }
+

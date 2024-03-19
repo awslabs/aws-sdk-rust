@@ -3,7 +3,7 @@
 /// <p>Represents the settings of a target tracking scaling policy that will be modified.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutoScalingTargetTrackingScalingPolicyConfigurationUpdate {
+pub struct AutoScalingTargetTrackingScalingPolicyConfigurationUpdate  {
     /// <p>Indicates whether scale in by the target tracking policy is disabled. If the value is true, scale in is disabled and the target tracking policy won't remove capacity from the scalable resource. Otherwise, scale in is enabled and the target tracking policy can remove capacity from the scalable resource. The default value is false.</p>
     pub disable_scale_in: ::std::option::Option<bool>,
     /// <p>The amount of time, in seconds, after a scale in activity completes before another scale in activity can start. The cooldown period is used to block subsequent scale in requests until it has expired. You should scale in conservatively to protect your application's availability. However, if another alarm triggers a scale out policy during the cooldown period after a scale-in, application auto scaling scales out your scalable target immediately.</p>
@@ -13,7 +13,7 @@ pub struct AutoScalingTargetTrackingScalingPolicyConfigurationUpdate {
     /// <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2).</p>
     pub target_value: f64,
 }
-impl AutoScalingTargetTrackingScalingPolicyConfigurationUpdate {
+impl  AutoScalingTargetTrackingScalingPolicyConfigurationUpdate  {
     /// <p>Indicates whether scale in by the target tracking policy is disabled. If the value is true, scale in is disabled and the target tracking policy won't remove capacity from the scalable resource. Otherwise, scale in is enabled and the target tracking policy can remove capacity from the scalable resource. The default value is false.</p>
     pub fn disable_scale_in(&self) -> ::std::option::Option<bool> {
         self.disable_scale_in
@@ -55,8 +55,7 @@ impl AutoScalingTargetTrackingScalingPolicyConfigurationUpdateBuilder {
     }
     /// <p>Indicates whether scale in by the target tracking policy is disabled. If the value is true, scale in is disabled and the target tracking policy won't remove capacity from the scalable resource. Otherwise, scale in is enabled and the target tracking policy can remove capacity from the scalable resource. The default value is false.</p>
     pub fn set_disable_scale_in(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.disable_scale_in = input;
-        self
+        self.disable_scale_in = input; self
     }
     /// <p>Indicates whether scale in by the target tracking policy is disabled. If the value is true, scale in is disabled and the target tracking policy won't remove capacity from the scalable resource. Otherwise, scale in is enabled and the target tracking policy can remove capacity from the scalable resource. The default value is false.</p>
     pub fn get_disable_scale_in(&self) -> &::std::option::Option<bool> {
@@ -69,8 +68,7 @@ impl AutoScalingTargetTrackingScalingPolicyConfigurationUpdateBuilder {
     }
     /// <p>The amount of time, in seconds, after a scale in activity completes before another scale in activity can start. The cooldown period is used to block subsequent scale in requests until it has expired. You should scale in conservatively to protect your application's availability. However, if another alarm triggers a scale out policy during the cooldown period after a scale-in, application auto scaling scales out your scalable target immediately.</p>
     pub fn set_scale_in_cooldown(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.scale_in_cooldown = input;
-        self
+        self.scale_in_cooldown = input; self
     }
     /// <p>The amount of time, in seconds, after a scale in activity completes before another scale in activity can start. The cooldown period is used to block subsequent scale in requests until it has expired. You should scale in conservatively to protect your application's availability. However, if another alarm triggers a scale out policy during the cooldown period after a scale-in, application auto scaling scales out your scalable target immediately.</p>
     pub fn get_scale_in_cooldown(&self) -> &::std::option::Option<i32> {
@@ -83,8 +81,7 @@ impl AutoScalingTargetTrackingScalingPolicyConfigurationUpdateBuilder {
     }
     /// <p>The amount of time, in seconds, after a scale out activity completes before another scale out activity can start. While the cooldown period is in effect, the capacity that has been added by the previous scale out event that initiated the cooldown is calculated as part of the desired capacity for the next scale out. You should continuously (but not excessively) scale out.</p>
     pub fn set_scale_out_cooldown(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.scale_out_cooldown = input;
-        self
+        self.scale_out_cooldown = input; self
     }
     /// <p>The amount of time, in seconds, after a scale out activity completes before another scale out activity can start. While the cooldown period is in effect, the capacity that has been added by the previous scale out event that initiated the cooldown is calculated as part of the desired capacity for the next scale out. You should continuously (but not excessively) scale out.</p>
     pub fn get_scale_out_cooldown(&self) -> &::std::option::Option<i32> {
@@ -98,8 +95,7 @@ impl AutoScalingTargetTrackingScalingPolicyConfigurationUpdateBuilder {
     }
     /// <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2).</p>
     pub fn set_target_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.target_value = input;
-        self
+        self.target_value = input; self
     }
     /// <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2).</p>
     pub fn get_target_value(&self) -> &::std::option::Option<f64> {
@@ -108,22 +104,22 @@ impl AutoScalingTargetTrackingScalingPolicyConfigurationUpdateBuilder {
     /// Consumes the builder and constructs a [`AutoScalingTargetTrackingScalingPolicyConfigurationUpdate`](crate::types::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate).
     /// This method will fail if any of the following fields are not set:
     /// - [`target_value`](crate::types::builders::AutoScalingTargetTrackingScalingPolicyConfigurationUpdateBuilder::target_value)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::types::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::types::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate {
-            disable_scale_in: self.disable_scale_in,
-            scale_in_cooldown: self.scale_in_cooldown,
-            scale_out_cooldown: self.scale_out_cooldown,
-            target_value: self.target_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "target_value",
-                    "target_value was not specified but it is required when building AutoScalingTargetTrackingScalingPolicyConfigurationUpdate",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate {
+                disable_scale_in: self.disable_scale_in
+                ,
+                scale_in_cooldown: self.scale_in_cooldown
+                ,
+                scale_out_cooldown: self.scale_out_cooldown
+                ,
+                target_value: self.target_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("target_value", "target_value was not specified but it is required when building AutoScalingTargetTrackingScalingPolicyConfigurationUpdate")
+                    )?
+                ,
+            }
+        )
     }
 }
+

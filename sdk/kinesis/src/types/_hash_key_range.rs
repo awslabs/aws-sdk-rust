@@ -3,22 +3,20 @@
 /// <p>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HashKeyRange {
+pub struct HashKeyRange  {
     /// <p>The starting hash key of the hash key range.</p>
     pub starting_hash_key: ::std::string::String,
     /// <p>The ending hash key of the hash key range.</p>
     pub ending_hash_key: ::std::string::String,
 }
-impl HashKeyRange {
+impl  HashKeyRange  {
     /// <p>The starting hash key of the hash key range.</p>
-    pub fn starting_hash_key(&self) -> &str {
-        use std::ops::Deref;
-        self.starting_hash_key.deref()
+    pub fn starting_hash_key(&self) -> & str {
+        use std::ops::Deref; self.starting_hash_key.deref()
     }
     /// <p>The ending hash key of the hash key range.</p>
-    pub fn ending_hash_key(&self) -> &str {
-        use std::ops::Deref;
-        self.ending_hash_key.deref()
+    pub fn ending_hash_key(&self) -> & str {
+        use std::ops::Deref; self.ending_hash_key.deref()
     }
 }
 impl HashKeyRange {
@@ -44,8 +42,7 @@ impl HashKeyRangeBuilder {
     }
     /// <p>The starting hash key of the hash key range.</p>
     pub fn set_starting_hash_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.starting_hash_key = input;
-        self
+        self.starting_hash_key = input; self
     }
     /// <p>The starting hash key of the hash key range.</p>
     pub fn get_starting_hash_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl HashKeyRangeBuilder {
     }
     /// <p>The ending hash key of the hash key range.</p>
     pub fn set_ending_hash_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ending_hash_key = input;
-        self
+        self.ending_hash_key = input; self
     }
     /// <p>The ending hash key of the hash key range.</p>
     pub fn get_ending_hash_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl HashKeyRangeBuilder {
     /// - [`starting_hash_key`](crate::types::builders::HashKeyRangeBuilder::starting_hash_key)
     /// - [`ending_hash_key`](crate::types::builders::HashKeyRangeBuilder::ending_hash_key)
     pub fn build(self) -> ::std::result::Result<crate::types::HashKeyRange, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::HashKeyRange {
-            starting_hash_key: self.starting_hash_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "starting_hash_key",
-                    "starting_hash_key was not specified but it is required when building HashKeyRange",
-                )
-            })?,
-            ending_hash_key: self.ending_hash_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ending_hash_key",
-                    "ending_hash_key was not specified but it is required when building HashKeyRange",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::HashKeyRange {
+                starting_hash_key: self.starting_hash_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("starting_hash_key", "starting_hash_key was not specified but it is required when building HashKeyRange")
+                    )?
+                ,
+                ending_hash_key: self.ending_hash_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ending_hash_key", "ending_hash_key was not specified but it is required when building HashKeyRange")
+                    )?
+                ,
+            }
+        )
     }
 }
+

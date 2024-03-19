@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTypeOutput {
+pub struct DescribeTypeOutput  {
     /// <p>The Amazon Resource Name (ARN) of the extension.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The kind of extension.</p>
@@ -71,7 +71,7 @@ pub struct DescribeTypeOutput {
     /// <p>Contains logging configuration information for private extensions. This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon Web Services and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
     pub logging_config: ::std::option::Option<crate::types::LoggingConfig>,
     /// <p>For extensions that are modules, the public third-party extensions that must be activated in your account in order for the module itself to be activated.</p>
-    pub required_activated_types: ::std::option::Option<::std::vec::Vec<crate::types::RequiredActivatedType>>,
+    pub required_activated_types: ::std::option::Option<::std::vec::Vec::<crate::types::RequiredActivatedType>>,
     /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to register the extension. This applies only to private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
     /// <p>If the registered extension calls any Amazon Web Services APIs, you must create an <i> <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that includes the necessary permissions to call those Amazon Web Services APIs, and provision that execution role in your account. CloudFormation then assumes that execution role to provide your extension with the appropriate credentials.</p>
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
@@ -122,24 +122,24 @@ pub struct DescribeTypeOutput {
     pub auto_update: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
-impl DescribeTypeOutput {
+impl  DescribeTypeOutput  {
     /// <p>The Amazon Resource Name (ARN) of the extension.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The kind of extension.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::RegistryType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::RegistryType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the extension.</p>
     /// <p>If the extension is a public third-party type you have activated with a type name alias, CloudFormation returns the type name alias. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p>
-    pub fn type_name(&self) -> ::std::option::Option<&str> {
+    pub fn type_name(&self) -> ::std::option::Option<& str> {
         self.type_name.as_deref()
     }
     /// <p>The ID of the default version of the extension. The default version is used when the extension version isn't specified.</p>
     /// <p>This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon Web Services and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
     /// <p>To set the default version of an extension, use <code>SetTypeDefaultVersion</code>.</p>
-    pub fn default_version_id(&self) -> ::std::option::Option<&str> {
+    pub fn default_version_id(&self) -> ::std::option::Option<& str> {
         self.default_version_id.as_deref()
     }
     /// <p>Whether the specified extension version is set as the default version.</p>
@@ -160,21 +160,21 @@ impl DescribeTypeOutput {
     /// <li>
     /// <p><code>NOT_TESTED</code>: Contract tests haven't been performed on the extension.</p></li>
     /// </ul>
-    pub fn type_tests_status(&self) -> ::std::option::Option<&crate::types::TypeTestsStatus> {
+    pub fn type_tests_status(&self) -> ::std::option::Option<& crate::types::TypeTestsStatus> {
         self.type_tests_status.as_ref()
     }
     /// <p>The description of the test status. To return the extension test status of a specific extension version, you must specify <code>VersionId</code>.</p>
     /// <p>This applies only to registered private extension versions. CloudFormation doesn't return this information for public extensions, whether they are activated in your account.</p>
-    pub fn type_tests_status_description(&self) -> ::std::option::Option<&str> {
+    pub fn type_tests_status_description(&self) -> ::std::option::Option<& str> {
         self.type_tests_status_description.as_deref()
     }
     /// <p>The description of the extension.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The schema that defines the extension.</p>
     /// <p>For more information about extension schemas, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource Provider Schema</a> in the <i>CloudFormation CLI User Guide</i>.</p>
-    pub fn schema(&self) -> ::std::option::Option<&str> {
+    pub fn schema(&self) -> ::std::option::Option<& str> {
         self.schema.as_deref()
     }
     /// <p>For resource type extensions, the provisioning behavior of the resource type. CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p>
@@ -195,7 +195,7 @@ impl DescribeTypeOutput {
     /// <p>delete</p></li>
     /// </ul></li>
     /// </ul>
-    pub fn provisioning_type(&self) -> ::std::option::Option<&crate::types::ProvisioningType> {
+    pub fn provisioning_type(&self) -> ::std::option::Option<& crate::types::ProvisioningType> {
         self.provisioning_type.as_ref()
     }
     /// <p>The deprecation status of the extension version.</p>
@@ -207,22 +207,23 @@ impl DescribeTypeOutput {
     /// <p><code>DEPRECATED</code>: The extension has been deactivated or deregistered and can no longer be used in CloudFormation operations.</p></li>
     /// </ul>
     /// <p>For public third-party extensions, CloudFormation returns <code>null</code>.</p>
-    pub fn deprecated_status(&self) -> ::std::option::Option<&crate::types::DeprecatedStatus> {
+    pub fn deprecated_status(&self) -> ::std::option::Option<& crate::types::DeprecatedStatus> {
         self.deprecated_status.as_ref()
     }
     /// <p>Contains logging configuration information for private extensions. This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon Web Services and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-    pub fn logging_config(&self) -> ::std::option::Option<&crate::types::LoggingConfig> {
+    pub fn logging_config(&self) -> ::std::option::Option<& crate::types::LoggingConfig> {
         self.logging_config.as_ref()
     }
     /// <p>For extensions that are modules, the public third-party extensions that must be activated in your account in order for the module itself to be activated.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.required_activated_types.is_none()`.
-    pub fn required_activated_types(&self) -> &[crate::types::RequiredActivatedType] {
-        self.required_activated_types.as_deref().unwrap_or_default()
+    pub fn required_activated_types(&self) -> & [crate::types::RequiredActivatedType] {
+        self.required_activated_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to register the extension. This applies only to private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
     /// <p>If the registered extension calls any Amazon Web Services APIs, you must create an <i> <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that includes the necessary permissions to call those Amazon Web Services APIs, and provision that execution role in your account. CloudFormation then assumes that execution role to provide your extension with the appropriate credentials.</p>
-    pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> ::std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
     /// <p>The scope at which the extension is visible and usable in CloudFormation operations.</p>
@@ -233,15 +234,15 @@ impl DescribeTypeOutput {
     /// <li>
     /// <p><code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon Web Services account.</p></li>
     /// </ul>
-    pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+    pub fn visibility(&self) -> ::std::option::Option<& crate::types::Visibility> {
         self.visibility.as_ref()
     }
     /// <p>The URL of the source code for the extension.</p>
-    pub fn source_url(&self) -> ::std::option::Option<&str> {
+    pub fn source_url(&self) -> ::std::option::Option<& str> {
         self.source_url.as_deref()
     }
     /// <p>The URL of a page providing detailed documentation for this extension.</p>
-    pub fn documentation_url(&self) -> ::std::option::Option<&str> {
+    pub fn documentation_url(&self) -> ::std::option::Option<& str> {
         self.documentation_url.as_deref()
     }
     /// <p>When the specified extension version was registered. This applies only to:</p>
@@ -251,40 +252,40 @@ impl DescribeTypeOutput {
     /// <li>
     /// <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p></li>
     /// </ul>
-    pub fn last_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// <p>When the specified private extension version was registered or activated in your account.</p>
-    pub fn time_created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn time_created(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.time_created.as_ref()
     }
     /// <p>A JSON string that represent the current configuration data for the extension in this account and Region.</p>
     /// <p>To set the configuration data for an extension, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.</p>
-    pub fn configuration_schema(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_schema(&self) -> ::std::option::Option<& str> {
         self.configuration_schema.as_deref()
     }
     /// <p>The publisher ID of the extension publisher.</p>
     /// <p>This applies only to public third-party extensions. For private registered extensions, and extensions provided by Amazon Web Services, CloudFormation returns <code>null</code>.</p>
-    pub fn publisher_id(&self) -> ::std::option::Option<&str> {
+    pub fn publisher_id(&self) -> ::std::option::Option<& str> {
         self.publisher_id.as_deref()
     }
     /// <p>For public extensions that have been activated for this account and Region, the type name of the public extension.</p>
     /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region, CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
-    pub fn original_type_name(&self) -> ::std::option::Option<&str> {
+    pub fn original_type_name(&self) -> ::std::option::Option<& str> {
         self.original_type_name.as_deref()
     }
     /// <p>For public extensions that have been activated for this account and Region, the Amazon Resource Name (ARN) of the public extension.</p>
-    pub fn original_type_arn(&self) -> ::std::option::Option<&str> {
+    pub fn original_type_arn(&self) -> ::std::option::Option<& str> {
         self.original_type_arn.as_deref()
     }
     /// <p>The version number of a public third-party extension.</p>
     /// <p>This applies only if you specify a public extension you have activated in your account, or specify a public extension without specifying a version. For all other extensions, CloudFormation returns <code>null</code>.</p>
-    pub fn public_version_number(&self) -> ::std::option::Option<&str> {
+    pub fn public_version_number(&self) -> ::std::option::Option<& str> {
         self.public_version_number.as_deref()
     }
     /// <p>The latest version of a public extension <i>that is available</i> for use.</p>
     /// <p>This only applies if you specify a public extension, and you don't specify a version. For all other requests, CloudFormation returns <code>null</code>.</p>
-    pub fn latest_public_version(&self) -> ::std::option::Option<&str> {
+    pub fn latest_public_version(&self) -> ::std::option::Option<& str> {
         self.latest_public_version.as_deref()
     }
     /// <p>Whether the extension is activated in the account and Region.</p>
@@ -298,10 +299,10 @@ impl DescribeTypeOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeTypeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeTypeOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTypeOutput`](crate::operation::describe_type::DescribeTypeOutput).
     pub fn builder() -> crate::operation::describe_type::builders::DescribeTypeOutputBuilder {
@@ -325,7 +326,7 @@ pub struct DescribeTypeOutputBuilder {
     pub(crate) provisioning_type: ::std::option::Option<crate::types::ProvisioningType>,
     pub(crate) deprecated_status: ::std::option::Option<crate::types::DeprecatedStatus>,
     pub(crate) logging_config: ::std::option::Option<crate::types::LoggingConfig>,
-    pub(crate) required_activated_types: ::std::option::Option<::std::vec::Vec<crate::types::RequiredActivatedType>>,
+    pub(crate) required_activated_types: ::std::option::Option<::std::vec::Vec::<crate::types::RequiredActivatedType>>,
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
     pub(crate) source_url: ::std::option::Option<::std::string::String>,
@@ -350,8 +351,7 @@ impl DescribeTypeOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the extension.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the extension.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -364,8 +364,7 @@ impl DescribeTypeOutputBuilder {
     }
     /// <p>The kind of extension.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RegistryType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The kind of extension.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::RegistryType> {
@@ -380,8 +379,7 @@ impl DescribeTypeOutputBuilder {
     /// <p>The name of the extension.</p>
     /// <p>If the extension is a public third-party type you have activated with a type name alias, CloudFormation returns the type name alias. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p>
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_name = input;
-        self
+        self.type_name = input; self
     }
     /// <p>The name of the extension.</p>
     /// <p>If the extension is a public third-party type you have activated with a type name alias, CloudFormation returns the type name alias. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p>
@@ -399,8 +397,7 @@ impl DescribeTypeOutputBuilder {
     /// <p>This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon Web Services and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
     /// <p>To set the default version of an extension, use <code>SetTypeDefaultVersion</code>.</p>
     pub fn set_default_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_version_id = input;
-        self
+        self.default_version_id = input; self
     }
     /// <p>The ID of the default version of the extension. The default version is used when the extension version isn't specified.</p>
     /// <p>This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon Web Services and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
@@ -417,8 +414,7 @@ impl DescribeTypeOutputBuilder {
     /// <p>Whether the specified extension version is set as the default version.</p>
     /// <p>This applies only to private extensions you have registered in your account, and extensions published by Amazon Web Services. For public third-party extensions, whether they are activated in your account, CloudFormation returns <code>null</code>.</p>
     pub fn set_is_default_version(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_default_version = input;
-        self
+        self.is_default_version = input; self
     }
     /// <p>Whether the specified extension version is set as the default version.</p>
     /// <p>This applies only to private extensions you have registered in your account, and extensions published by Amazon Web Services. For public third-party extensions, whether they are activated in your account, CloudFormation returns <code>null</code>.</p>
@@ -456,8 +452,7 @@ impl DescribeTypeOutputBuilder {
     /// <p><code>NOT_TESTED</code>: Contract tests haven't been performed on the extension.</p></li>
     /// </ul>
     pub fn set_type_tests_status(mut self, input: ::std::option::Option<crate::types::TypeTestsStatus>) -> Self {
-        self.type_tests_status = input;
-        self
+        self.type_tests_status = input; self
     }
     /// <p>The contract test status of the registered extension version. To return the extension test status of a specific extension version, you must specify <code>VersionId</code>.</p>
     /// <p>This applies only to registered private extension versions. CloudFormation doesn't return this information for public extensions, whether they are activated in your account.</p>
@@ -484,8 +479,7 @@ impl DescribeTypeOutputBuilder {
     /// <p>The description of the test status. To return the extension test status of a specific extension version, you must specify <code>VersionId</code>.</p>
     /// <p>This applies only to registered private extension versions. CloudFormation doesn't return this information for public extensions, whether they are activated in your account.</p>
     pub fn set_type_tests_status_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_tests_status_description = input;
-        self
+        self.type_tests_status_description = input; self
     }
     /// <p>The description of the test status. To return the extension test status of a specific extension version, you must specify <code>VersionId</code>.</p>
     /// <p>This applies only to registered private extension versions. CloudFormation doesn't return this information for public extensions, whether they are activated in your account.</p>
@@ -499,8 +493,7 @@ impl DescribeTypeOutputBuilder {
     }
     /// <p>The description of the extension.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the extension.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -515,8 +508,7 @@ impl DescribeTypeOutputBuilder {
     /// <p>The schema that defines the extension.</p>
     /// <p>For more information about extension schemas, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource Provider Schema</a> in the <i>CloudFormation CLI User Guide</i>.</p>
     pub fn set_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema = input;
-        self
+        self.schema = input; self
     }
     /// <p>The schema that defines the extension.</p>
     /// <p>For more information about extension schemas, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource Provider Schema</a> in the <i>CloudFormation CLI User Guide</i>.</p>
@@ -564,8 +556,7 @@ impl DescribeTypeOutputBuilder {
     /// </ul></li>
     /// </ul>
     pub fn set_provisioning_type(mut self, input: ::std::option::Option<crate::types::ProvisioningType>) -> Self {
-        self.provisioning_type = input;
-        self
+        self.provisioning_type = input; self
     }
     /// <p>For resource type extensions, the provisioning behavior of the resource type. CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p>
     /// <p>Valid values include:</p>
@@ -611,8 +602,7 @@ impl DescribeTypeOutputBuilder {
     /// </ul>
     /// <p>For public third-party extensions, CloudFormation returns <code>null</code>.</p>
     pub fn set_deprecated_status(mut self, input: ::std::option::Option<crate::types::DeprecatedStatus>) -> Self {
-        self.deprecated_status = input;
-        self
+        self.deprecated_status = input; self
     }
     /// <p>The deprecation status of the extension version.</p>
     /// <p>Valid values include:</p>
@@ -633,8 +623,7 @@ impl DescribeTypeOutputBuilder {
     }
     /// <p>Contains logging configuration information for private extensions. This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon Web Services and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
     pub fn set_logging_config(mut self, input: ::std::option::Option<crate::types::LoggingConfig>) -> Self {
-        self.logging_config = input;
-        self
+        self.logging_config = input; self
     }
     /// <p>Contains logging configuration information for private extensions. This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon Web Services and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
     pub fn get_logging_config(&self) -> &::std::option::Option<crate::types::LoggingConfig> {
@@ -647,17 +636,16 @@ impl DescribeTypeOutputBuilder {
     /// <p>For extensions that are modules, the public third-party extensions that must be activated in your account in order for the module itself to be activated.</p>
     pub fn required_activated_types(mut self, input: crate::types::RequiredActivatedType) -> Self {
         let mut v = self.required_activated_types.unwrap_or_default();
-        v.push(input);
-        self.required_activated_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.required_activated_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>For extensions that are modules, the public third-party extensions that must be activated in your account in order for the module itself to be activated.</p>
-    pub fn set_required_activated_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RequiredActivatedType>>) -> Self {
-        self.required_activated_types = input;
-        self
+    pub fn set_required_activated_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RequiredActivatedType>>) -> Self {
+        self.required_activated_types = input; self
     }
     /// <p>For extensions that are modules, the public third-party extensions that must be activated in your account in order for the module itself to be activated.</p>
-    pub fn get_required_activated_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RequiredActivatedType>> {
+    pub fn get_required_activated_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RequiredActivatedType>> {
         &self.required_activated_types
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to register the extension. This applies only to private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
@@ -669,8 +657,7 @@ impl DescribeTypeOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to register the extension. This applies only to private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
     /// <p>If the registered extension calls any Amazon Web Services APIs, you must create an <i> <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that includes the necessary permissions to call those Amazon Web Services APIs, and provision that execution role in your account. CloudFormation then assumes that execution role to provide your extension with the appropriate credentials.</p>
     pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_role_arn = input;
-        self
+        self.execution_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to register the extension. This applies only to private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
     /// <p>If the registered extension calls any Amazon Web Services APIs, you must create an <i> <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that includes the necessary permissions to call those Amazon Web Services APIs, and provision that execution role in your account. CloudFormation then assumes that execution role to provide your extension with the appropriate credentials.</p>
@@ -698,8 +685,7 @@ impl DescribeTypeOutputBuilder {
     /// <p><code>PUBLIC</code>: The extension is publicly visible and usable within any Amazon Web Services account.</p></li>
     /// </ul>
     pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
-        self.visibility = input;
-        self
+        self.visibility = input; self
     }
     /// <p>The scope at which the extension is visible and usable in CloudFormation operations.</p>
     /// <p>Valid values include:</p>
@@ -719,8 +705,7 @@ impl DescribeTypeOutputBuilder {
     }
     /// <p>The URL of the source code for the extension.</p>
     pub fn set_source_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_url = input;
-        self
+        self.source_url = input; self
     }
     /// <p>The URL of the source code for the extension.</p>
     pub fn get_source_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -733,8 +718,7 @@ impl DescribeTypeOutputBuilder {
     }
     /// <p>The URL of a page providing detailed documentation for this extension.</p>
     pub fn set_documentation_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.documentation_url = input;
-        self
+        self.documentation_url = input; self
     }
     /// <p>The URL of a page providing detailed documentation for this extension.</p>
     pub fn get_documentation_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -759,8 +743,7 @@ impl DescribeTypeOutputBuilder {
     /// <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p></li>
     /// </ul>
     pub fn set_last_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated = input;
-        self
+        self.last_updated = input; self
     }
     /// <p>When the specified extension version was registered. This applies only to:</p>
     /// <ul>
@@ -779,8 +762,7 @@ impl DescribeTypeOutputBuilder {
     }
     /// <p>When the specified private extension version was registered or activated in your account.</p>
     pub fn set_time_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.time_created = input;
-        self
+        self.time_created = input; self
     }
     /// <p>When the specified private extension version was registered or activated in your account.</p>
     pub fn get_time_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -795,8 +777,7 @@ impl DescribeTypeOutputBuilder {
     /// <p>A JSON string that represent the current configuration data for the extension in this account and Region.</p>
     /// <p>To set the configuration data for an extension, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_configuration_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_schema = input;
-        self
+        self.configuration_schema = input; self
     }
     /// <p>A JSON string that represent the current configuration data for the extension in this account and Region.</p>
     /// <p>To set the configuration data for an extension, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.</p>
@@ -812,8 +793,7 @@ impl DescribeTypeOutputBuilder {
     /// <p>The publisher ID of the extension publisher.</p>
     /// <p>This applies only to public third-party extensions. For private registered extensions, and extensions provided by Amazon Web Services, CloudFormation returns <code>null</code>.</p>
     pub fn set_publisher_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.publisher_id = input;
-        self
+        self.publisher_id = input; self
     }
     /// <p>The publisher ID of the extension publisher.</p>
     /// <p>This applies only to public third-party extensions. For private registered extensions, and extensions provided by Amazon Web Services, CloudFormation returns <code>null</code>.</p>
@@ -829,8 +809,7 @@ impl DescribeTypeOutputBuilder {
     /// <p>For public extensions that have been activated for this account and Region, the type name of the public extension.</p>
     /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region, CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_original_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.original_type_name = input;
-        self
+        self.original_type_name = input; self
     }
     /// <p>For public extensions that have been activated for this account and Region, the type name of the public extension.</p>
     /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region, CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
@@ -844,8 +823,7 @@ impl DescribeTypeOutputBuilder {
     }
     /// <p>For public extensions that have been activated for this account and Region, the Amazon Resource Name (ARN) of the public extension.</p>
     pub fn set_original_type_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.original_type_arn = input;
-        self
+        self.original_type_arn = input; self
     }
     /// <p>For public extensions that have been activated for this account and Region, the Amazon Resource Name (ARN) of the public extension.</p>
     pub fn get_original_type_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -860,8 +838,7 @@ impl DescribeTypeOutputBuilder {
     /// <p>The version number of a public third-party extension.</p>
     /// <p>This applies only if you specify a public extension you have activated in your account, or specify a public extension without specifying a version. For all other extensions, CloudFormation returns <code>null</code>.</p>
     pub fn set_public_version_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.public_version_number = input;
-        self
+        self.public_version_number = input; self
     }
     /// <p>The version number of a public third-party extension.</p>
     /// <p>This applies only if you specify a public extension you have activated in your account, or specify a public extension without specifying a version. For all other extensions, CloudFormation returns <code>null</code>.</p>
@@ -877,8 +854,7 @@ impl DescribeTypeOutputBuilder {
     /// <p>The latest version of a public extension <i>that is available</i> for use.</p>
     /// <p>This only applies if you specify a public extension, and you don't specify a version. For all other requests, CloudFormation returns <code>null</code>.</p>
     pub fn set_latest_public_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.latest_public_version = input;
-        self
+        self.latest_public_version = input; self
     }
     /// <p>The latest version of a public extension <i>that is available</i> for use.</p>
     /// <p>This only applies if you specify a public extension, and you don't specify a version. For all other requests, CloudFormation returns <code>null</code>.</p>
@@ -894,8 +870,7 @@ impl DescribeTypeOutputBuilder {
     /// <p>Whether the extension is activated in the account and Region.</p>
     /// <p>This only applies to public third-party extensions. For all other extensions, CloudFormation returns <code>null</code>.</p>
     pub fn set_is_activated(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_activated = input;
-        self
+        self.is_activated = input; self
     }
     /// <p>Whether the extension is activated in the account and Region.</p>
     /// <p>This only applies to public third-party extensions. For all other extensions, CloudFormation returns <code>null</code>.</p>
@@ -909,53 +884,80 @@ impl DescribeTypeOutputBuilder {
     }
     /// <p>Whether CloudFormation automatically updates the extension in this account and Region when a new <i>minor</i> version is published by the extension publisher. Major versions released by the publisher must be manually updated. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable">Activating public extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_auto_update(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_update = input;
-        self
+        self.auto_update = input; self
     }
     /// <p>Whether CloudFormation automatically updates the extension in this account and Region when a new <i>minor</i> version is published by the extension publisher. Major versions released by the publisher must be manually updated. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable">Activating public extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn get_auto_update(&self) -> &::std::option::Option<bool> {
         &self.auto_update
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeTypeOutput`](crate::operation::describe_type::DescribeTypeOutput).
     pub fn build(self) -> crate::operation::describe_type::DescribeTypeOutput {
         crate::operation::describe_type::DescribeTypeOutput {
-            arn: self.arn,
-            r#type: self.r#type,
-            type_name: self.type_name,
-            default_version_id: self.default_version_id,
-            is_default_version: self.is_default_version,
-            type_tests_status: self.type_tests_status,
-            type_tests_status_description: self.type_tests_status_description,
-            description: self.description,
-            schema: self.schema,
-            provisioning_type: self.provisioning_type,
-            deprecated_status: self.deprecated_status,
-            logging_config: self.logging_config,
-            required_activated_types: self.required_activated_types,
-            execution_role_arn: self.execution_role_arn,
-            visibility: self.visibility,
-            source_url: self.source_url,
-            documentation_url: self.documentation_url,
-            last_updated: self.last_updated,
-            time_created: self.time_created,
-            configuration_schema: self.configuration_schema,
-            publisher_id: self.publisher_id,
-            original_type_name: self.original_type_name,
-            original_type_arn: self.original_type_arn,
-            public_version_number: self.public_version_number,
-            latest_public_version: self.latest_public_version,
-            is_activated: self.is_activated,
-            auto_update: self.auto_update,
+            arn: self.arn
+            ,
+            r#type: self.r#type
+            ,
+            type_name: self.type_name
+            ,
+            default_version_id: self.default_version_id
+            ,
+            is_default_version: self.is_default_version
+            ,
+            type_tests_status: self.type_tests_status
+            ,
+            type_tests_status_description: self.type_tests_status_description
+            ,
+            description: self.description
+            ,
+            schema: self.schema
+            ,
+            provisioning_type: self.provisioning_type
+            ,
+            deprecated_status: self.deprecated_status
+            ,
+            logging_config: self.logging_config
+            ,
+            required_activated_types: self.required_activated_types
+            ,
+            execution_role_arn: self.execution_role_arn
+            ,
+            visibility: self.visibility
+            ,
+            source_url: self.source_url
+            ,
+            documentation_url: self.documentation_url
+            ,
+            last_updated: self.last_updated
+            ,
+            time_created: self.time_created
+            ,
+            configuration_schema: self.configuration_schema
+            ,
+            publisher_id: self.publisher_id
+            ,
+            original_type_name: self.original_type_name
+            ,
+            original_type_arn: self.original_type_arn
+            ,
+            public_version_number: self.public_version_number
+            ,
+            latest_public_version: self.latest_public_version
+            ,
+            is_activated: self.is_activated
+            ,
+            auto_update: self.auto_update
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

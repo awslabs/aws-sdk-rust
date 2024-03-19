@@ -6,7 +6,7 @@
 /// <p>This configuration is used only for <code>IPSetReferenceStatement</code>. For <code>GeoMatchStatement</code> and <code>RateBasedStatement</code>, use <code>ForwardedIPConfig</code> instead.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IpSetForwardedIpConfig {
+pub struct IpSetForwardedIpConfig  {
     /// <p>The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p><note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
@@ -34,13 +34,12 @@ pub struct IpSetForwardedIpConfig {
     /// </ul>
     pub position: crate::types::ForwardedIpPosition,
 }
-impl IpSetForwardedIpConfig {
+impl  IpSetForwardedIpConfig  {
     /// <p>The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p><note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
-    pub fn header_name(&self) -> &str {
-        use std::ops::Deref;
-        self.header_name.deref()
+    pub fn header_name(&self) -> & str {
+        use std::ops::Deref; self.header_name.deref()
     }
     /// <p>The match status to assign to the web request if the request doesn't have a valid IP address in the specified position.</p><note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
@@ -52,7 +51,7 @@ impl IpSetForwardedIpConfig {
     /// <li>
     /// <p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
     /// </ul>
-    pub fn fallback_behavior(&self) -> &crate::types::FallbackBehavior {
+    pub fn fallback_behavior(&self) -> & crate::types::FallbackBehavior {
         &self.fallback_behavior
     }
     /// <p>The position in the header to search for the IP address. The header can contain IP addresses of the original client and also of proxies. For example, the header value could be <code>10.1.1.1, 127.0.0.0, 10.10.10.10</code> where the first IP address identifies the original client and the rest identify proxies that the request went through.</p>
@@ -65,7 +64,7 @@ impl IpSetForwardedIpConfig {
     /// <li>
     /// <p>ANY - Inspect all IP addresses in the header for a match. If the header contains more than 10 IP addresses, WAF inspects the last 10.</p></li>
     /// </ul>
-    pub fn position(&self) -> &crate::types::ForwardedIpPosition {
+    pub fn position(&self) -> & crate::types::ForwardedIpPosition {
         &self.position
     }
 }
@@ -97,8 +96,7 @@ impl IpSetForwardedIpConfigBuilder {
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
     pub fn set_header_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.header_name = input;
-        self
+        self.header_name = input; self
     }
     /// <p>The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p><note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
@@ -132,8 +130,7 @@ impl IpSetForwardedIpConfigBuilder {
     /// <p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
     /// </ul>
     pub fn set_fallback_behavior(mut self, input: ::std::option::Option<crate::types::FallbackBehavior>) -> Self {
-        self.fallback_behavior = input;
-        self
+        self.fallback_behavior = input; self
     }
     /// <p>The match status to assign to the web request if the request doesn't have a valid IP address in the specified position.</p><note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
@@ -174,8 +171,7 @@ impl IpSetForwardedIpConfigBuilder {
     /// <p>ANY - Inspect all IP addresses in the header for a match. If the header contains more than 10 IP addresses, WAF inspects the last 10.</p></li>
     /// </ul>
     pub fn set_position(mut self, input: ::std::option::Option<crate::types::ForwardedIpPosition>) -> Self {
-        self.position = input;
-        self
+        self.position = input; self
     }
     /// <p>The position in the header to search for the IP address. The header can contain IP addresses of the original client and also of proxies. For example, the header value could be <code>10.1.1.1, 127.0.0.0, 10.10.10.10</code> where the first IP address identifies the original client and the rest identify proxies that the request went through.</p>
     /// <p>The options for this setting are the following:</p>
@@ -196,25 +192,25 @@ impl IpSetForwardedIpConfigBuilder {
     /// - [`fallback_behavior`](crate::types::builders::IpSetForwardedIpConfigBuilder::fallback_behavior)
     /// - [`position`](crate::types::builders::IpSetForwardedIpConfigBuilder::position)
     pub fn build(self) -> ::std::result::Result<crate::types::IpSetForwardedIpConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IpSetForwardedIpConfig {
-            header_name: self.header_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "header_name",
-                    "header_name was not specified but it is required when building IpSetForwardedIpConfig",
-                )
-            })?,
-            fallback_behavior: self.fallback_behavior.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "fallback_behavior",
-                    "fallback_behavior was not specified but it is required when building IpSetForwardedIpConfig",
-                )
-            })?,
-            position: self.position.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "position",
-                    "position was not specified but it is required when building IpSetForwardedIpConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IpSetForwardedIpConfig {
+                header_name: self.header_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("header_name", "header_name was not specified but it is required when building IpSetForwardedIpConfig")
+                    )?
+                ,
+                fallback_behavior: self.fallback_behavior
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("fallback_behavior", "fallback_behavior was not specified but it is required when building IpSetForwardedIpConfig")
+                    )?
+                ,
+                position: self.position
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("position", "position was not specified but it is required when building IpSetForwardedIpConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

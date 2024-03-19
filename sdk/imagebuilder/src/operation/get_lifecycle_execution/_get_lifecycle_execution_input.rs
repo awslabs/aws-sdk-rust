@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLifecycleExecutionInput {
+pub struct GetLifecycleExecutionInput  {
     /// <p>Use the unique identifier for a runtime instance of the lifecycle policy to get runtime details.</p>
     pub lifecycle_execution_id: ::std::option::Option<::std::string::String>,
 }
-impl GetLifecycleExecutionInput {
+impl  GetLifecycleExecutionInput  {
     /// <p>Use the unique identifier for a runtime instance of the lifecycle policy to get runtime details.</p>
-    pub fn lifecycle_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn lifecycle_execution_id(&self) -> ::std::option::Option<& str> {
         self.lifecycle_execution_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetLifecycleExecutionInputBuilder {
     }
     /// <p>Use the unique identifier for a runtime instance of the lifecycle policy to get runtime details.</p>
     pub fn set_lifecycle_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lifecycle_execution_id = input;
-        self
+        self.lifecycle_execution_id = input; self
     }
     /// <p>Use the unique identifier for a runtime instance of the lifecycle policy to get runtime details.</p>
     pub fn get_lifecycle_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.lifecycle_execution_id
     }
     /// Consumes the builder and constructs a [`GetLifecycleExecutionInput`](crate::operation::get_lifecycle_execution::GetLifecycleExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_lifecycle_execution::GetLifecycleExecutionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_lifecycle_execution::GetLifecycleExecutionInput {
-            lifecycle_execution_id: self.lifecycle_execution_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_lifecycle_execution::GetLifecycleExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_lifecycle_execution::GetLifecycleExecutionInput {
+                lifecycle_execution_id: self.lifecycle_execution_id
+                ,
+            }
+        )
     }
 }
+

@@ -16,7 +16,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SourceKeyword {
+pub struct SourceKeyword  {
     /// <p>The input method for the keyword.</p>
     /// <ul>
     /// <li>
@@ -87,7 +87,7 @@ pub struct SourceKeyword {
     /// </important>
     pub keyword_value: ::std::option::Option<::std::string::String>,
 }
-impl SourceKeyword {
+impl  SourceKeyword  {
     /// <p>The input method for the keyword.</p>
     /// <ul>
     /// <li>
@@ -105,7 +105,7 @@ impl SourceKeyword {
     /// <p>When <code>keywordInputType</code> is <code>INPUT_TEXT</code>, text must be entered as manual evidence.</p></li>
     /// </ul></li>
     /// </ul>
-    pub fn keyword_input_type(&self) -> ::std::option::Option<&crate::types::KeywordInputType> {
+    pub fn keyword_input_type(&self) -> ::std::option::Option<& crate::types::KeywordInputType> {
         self.keyword_input_type.as_ref()
     }
     /// <p>The value of the keyword that's used when mapping a control data source. For example, this can be a CloudTrail event name, a rule name for Config, a Security Hub control, or the name of an Amazon Web Services API call.</p>
@@ -158,7 +158,7 @@ impl SourceKeyword {
     /// <p>For CloudTrail: Make sure that the <code>keywordValue</code> is written as <code>serviceprefix_ActionName</code>. For example, <code>cloudtrail_StartLogging</code>. For accuracy, we recommend that you review the Amazon Web Service prefix and action names in the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Service Authorization Reference</a>.</p></li>
     /// </ol>
     /// </important>
-    pub fn keyword_value(&self) -> ::std::option::Option<&str> {
+    pub fn keyword_value(&self) -> ::std::option::Option<& str> {
         self.keyword_value.as_deref()
     }
 }
@@ -216,8 +216,7 @@ impl SourceKeywordBuilder {
     /// </ul></li>
     /// </ul>
     pub fn set_keyword_input_type(mut self, input: ::std::option::Option<crate::types::KeywordInputType>) -> Self {
-        self.keyword_input_type = input;
-        self
+        self.keyword_input_type = input; self
     }
     /// <p>The input method for the keyword.</p>
     /// <ul>
@@ -344,8 +343,7 @@ impl SourceKeywordBuilder {
     /// </ol>
     /// </important>
     pub fn set_keyword_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.keyword_value = input;
-        self
+        self.keyword_value = input; self
     }
     /// <p>The value of the keyword that's used when mapping a control data source. For example, this can be a CloudTrail event name, a rule name for Config, a Security Hub control, or the name of an Amazon Web Services API call.</p>
     /// <p>If you’re mapping a data source to a rule in Config, the <code>keywordValue</code> that you specify depends on the type of rule:</p>
@@ -403,8 +401,11 @@ impl SourceKeywordBuilder {
     /// Consumes the builder and constructs a [`SourceKeyword`](crate::types::SourceKeyword).
     pub fn build(self) -> crate::types::SourceKeyword {
         crate::types::SourceKeyword {
-            keyword_input_type: self.keyword_input_type,
-            keyword_value: self.keyword_value,
+            keyword_input_type: self.keyword_input_type
+            ,
+            keyword_value: self.keyword_value
+            ,
         }
     }
 }
+

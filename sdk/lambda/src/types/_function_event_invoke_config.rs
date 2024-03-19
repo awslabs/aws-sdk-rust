@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FunctionEventInvokeConfig {
+pub struct FunctionEventInvokeConfig  {
     /// <p>The date and time that the configuration was last updated.</p>
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the function.</p>
@@ -25,13 +25,13 @@ pub struct FunctionEventInvokeConfig {
     /// </ul>
     pub destination_config: ::std::option::Option<crate::types::DestinationConfig>,
 }
-impl FunctionEventInvokeConfig {
+impl  FunctionEventInvokeConfig  {
     /// <p>The date and time that the configuration was last updated.</p>
-    pub fn last_modified(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the function.</p>
-    pub fn function_arn(&self) -> ::std::option::Option<&str> {
+    pub fn function_arn(&self) -> ::std::option::Option<& str> {
         self.function_arn.as_deref()
     }
     /// <p>The maximum number of times to retry when the function returns an error.</p>
@@ -54,7 +54,7 @@ impl FunctionEventInvokeConfig {
     /// <li>
     /// <p><b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p></li>
     /// </ul>
-    pub fn destination_config(&self) -> ::std::option::Option<&crate::types::DestinationConfig> {
+    pub fn destination_config(&self) -> ::std::option::Option<& crate::types::DestinationConfig> {
         self.destination_config.as_ref()
     }
 }
@@ -83,8 +83,7 @@ impl FunctionEventInvokeConfigBuilder {
     }
     /// <p>The date and time that the configuration was last updated.</p>
     pub fn set_last_modified(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified = input;
-        self
+        self.last_modified = input; self
     }
     /// <p>The date and time that the configuration was last updated.</p>
     pub fn get_last_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -97,8 +96,7 @@ impl FunctionEventInvokeConfigBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the function.</p>
     pub fn set_function_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_arn = input;
-        self
+        self.function_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the function.</p>
     pub fn get_function_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +109,7 @@ impl FunctionEventInvokeConfigBuilder {
     }
     /// <p>The maximum number of times to retry when the function returns an error.</p>
     pub fn set_maximum_retry_attempts(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum_retry_attempts = input;
-        self
+        self.maximum_retry_attempts = input; self
     }
     /// <p>The maximum number of times to retry when the function returns an error.</p>
     pub fn get_maximum_retry_attempts(&self) -> &::std::option::Option<i32> {
@@ -125,8 +122,7 @@ impl FunctionEventInvokeConfigBuilder {
     }
     /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
     pub fn set_maximum_event_age_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum_event_age_in_seconds = input;
-        self
+        self.maximum_event_age_in_seconds = input; self
     }
     /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
     pub fn get_maximum_event_age_in_seconds(&self) -> &::std::option::Option<i32> {
@@ -161,8 +157,7 @@ impl FunctionEventInvokeConfigBuilder {
     /// <p><b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p></li>
     /// </ul>
     pub fn set_destination_config(mut self, input: ::std::option::Option<crate::types::DestinationConfig>) -> Self {
-        self.destination_config = input;
-        self
+        self.destination_config = input; self
     }
     /// <p>A destination for events after they have been sent to a function for processing.</p>
     /// <p class="title"><b>Destinations</b></p>
@@ -182,11 +177,17 @@ impl FunctionEventInvokeConfigBuilder {
     /// Consumes the builder and constructs a [`FunctionEventInvokeConfig`](crate::types::FunctionEventInvokeConfig).
     pub fn build(self) -> crate::types::FunctionEventInvokeConfig {
         crate::types::FunctionEventInvokeConfig {
-            last_modified: self.last_modified,
-            function_arn: self.function_arn,
-            maximum_retry_attempts: self.maximum_retry_attempts,
-            maximum_event_age_in_seconds: self.maximum_event_age_in_seconds,
-            destination_config: self.destination_config,
+            last_modified: self.last_modified
+            ,
+            function_arn: self.function_arn
+            ,
+            maximum_retry_attempts: self.maximum_retry_attempts
+            ,
+            maximum_event_age_in_seconds: self.maximum_event_age_in_seconds
+            ,
+            destination_config: self.destination_config
+            ,
         }
     }
 }
+

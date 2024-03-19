@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetNetworkAnalyzerConfigurationOutput {
+pub struct GetNetworkAnalyzerConfigurationOutput  {
     /// <p>Trace content for your wireless devices, gateways, and multicast groups.</p>
     pub trace_content: ::std::option::Option<crate::types::TraceContent>,
     /// <p>List of wireless device resources that have been added to the network analyzer configuration.</p>
-    pub wireless_devices: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub wireless_devices: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>List of wireless gateway resources that have been added to the network analyzer configuration.</p>
-    pub wireless_gateways: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub wireless_gateways: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The description of the new resource.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name of the new resource.</p>
@@ -16,50 +16,53 @@ pub struct GetNetworkAnalyzerConfigurationOutput {
     /// <p>Name of the network analyzer configuration.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>List of multicast group resources that have been added to the network analyzer configuration.</p>
-    pub multicast_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub multicast_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl GetNetworkAnalyzerConfigurationOutput {
+impl  GetNetworkAnalyzerConfigurationOutput  {
     /// <p>Trace content for your wireless devices, gateways, and multicast groups.</p>
-    pub fn trace_content(&self) -> ::std::option::Option<&crate::types::TraceContent> {
+    pub fn trace_content(&self) -> ::std::option::Option<& crate::types::TraceContent> {
         self.trace_content.as_ref()
     }
     /// <p>List of wireless device resources that have been added to the network analyzer configuration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.wireless_devices.is_none()`.
-    pub fn wireless_devices(&self) -> &[::std::string::String] {
-        self.wireless_devices.as_deref().unwrap_or_default()
+    pub fn wireless_devices(&self) -> & [::std::string::String] {
+        self.wireless_devices.as_deref()
+        .unwrap_or_default()
     }
     /// <p>List of wireless gateway resources that have been added to the network analyzer configuration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.wireless_gateways.is_none()`.
-    pub fn wireless_gateways(&self) -> &[::std::string::String] {
-        self.wireless_gateways.as_deref().unwrap_or_default()
+    pub fn wireless_gateways(&self) -> & [::std::string::String] {
+        self.wireless_gateways.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The description of the new resource.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name of the new resource.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Name of the network analyzer configuration.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>List of multicast group resources that have been added to the network analyzer configuration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.multicast_groups.is_none()`.
-    pub fn multicast_groups(&self) -> &[::std::string::String] {
-        self.multicast_groups.as_deref().unwrap_or_default()
+    pub fn multicast_groups(&self) -> & [::std::string::String] {
+        self.multicast_groups.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetNetworkAnalyzerConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetNetworkAnalyzerConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetNetworkAnalyzerConfigurationOutput`](crate::operation::get_network_analyzer_configuration::GetNetworkAnalyzerConfigurationOutput).
     pub fn builder() -> crate::operation::get_network_analyzer_configuration::builders::GetNetworkAnalyzerConfigurationOutputBuilder {
@@ -72,12 +75,12 @@ impl GetNetworkAnalyzerConfigurationOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetNetworkAnalyzerConfigurationOutputBuilder {
     pub(crate) trace_content: ::std::option::Option<crate::types::TraceContent>,
-    pub(crate) wireless_devices: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) wireless_gateways: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) wireless_devices: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) wireless_gateways: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) multicast_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) multicast_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetNetworkAnalyzerConfigurationOutputBuilder {
@@ -88,8 +91,7 @@ impl GetNetworkAnalyzerConfigurationOutputBuilder {
     }
     /// <p>Trace content for your wireless devices, gateways, and multicast groups.</p>
     pub fn set_trace_content(mut self, input: ::std::option::Option<crate::types::TraceContent>) -> Self {
-        self.trace_content = input;
-        self
+        self.trace_content = input; self
     }
     /// <p>Trace content for your wireless devices, gateways, and multicast groups.</p>
     pub fn get_trace_content(&self) -> &::std::option::Option<crate::types::TraceContent> {
@@ -102,17 +104,16 @@ impl GetNetworkAnalyzerConfigurationOutputBuilder {
     /// <p>List of wireless device resources that have been added to the network analyzer configuration.</p>
     pub fn wireless_devices(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.wireless_devices.unwrap_or_default();
-        v.push(input.into());
-        self.wireless_devices = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.wireless_devices = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of wireless device resources that have been added to the network analyzer configuration.</p>
-    pub fn set_wireless_devices(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.wireless_devices = input;
-        self
+    pub fn set_wireless_devices(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.wireless_devices = input; self
     }
     /// <p>List of wireless device resources that have been added to the network analyzer configuration.</p>
-    pub fn get_wireless_devices(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_wireless_devices(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.wireless_devices
     }
     /// Appends an item to `wireless_gateways`.
@@ -122,17 +123,16 @@ impl GetNetworkAnalyzerConfigurationOutputBuilder {
     /// <p>List of wireless gateway resources that have been added to the network analyzer configuration.</p>
     pub fn wireless_gateways(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.wireless_gateways.unwrap_or_default();
-        v.push(input.into());
-        self.wireless_gateways = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.wireless_gateways = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of wireless gateway resources that have been added to the network analyzer configuration.</p>
-    pub fn set_wireless_gateways(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.wireless_gateways = input;
-        self
+    pub fn set_wireless_gateways(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.wireless_gateways = input; self
     }
     /// <p>List of wireless gateway resources that have been added to the network analyzer configuration.</p>
-    pub fn get_wireless_gateways(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_wireless_gateways(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.wireless_gateways
     }
     /// <p>The description of the new resource.</p>
@@ -142,8 +142,7 @@ impl GetNetworkAnalyzerConfigurationOutputBuilder {
     }
     /// <p>The description of the new resource.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the new resource.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,8 +155,7 @@ impl GetNetworkAnalyzerConfigurationOutputBuilder {
     }
     /// <p>The Amazon Resource Name of the new resource.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name of the new resource.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,8 +168,7 @@ impl GetNetworkAnalyzerConfigurationOutputBuilder {
     }
     /// <p>Name of the network analyzer configuration.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of the network analyzer configuration.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -184,39 +181,46 @@ impl GetNetworkAnalyzerConfigurationOutputBuilder {
     /// <p>List of multicast group resources that have been added to the network analyzer configuration.</p>
     pub fn multicast_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.multicast_groups.unwrap_or_default();
-        v.push(input.into());
-        self.multicast_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.multicast_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of multicast group resources that have been added to the network analyzer configuration.</p>
-    pub fn set_multicast_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.multicast_groups = input;
-        self
+    pub fn set_multicast_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.multicast_groups = input; self
     }
     /// <p>List of multicast group resources that have been added to the network analyzer configuration.</p>
-    pub fn get_multicast_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_multicast_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.multicast_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetNetworkAnalyzerConfigurationOutput`](crate::operation::get_network_analyzer_configuration::GetNetworkAnalyzerConfigurationOutput).
     pub fn build(self) -> crate::operation::get_network_analyzer_configuration::GetNetworkAnalyzerConfigurationOutput {
         crate::operation::get_network_analyzer_configuration::GetNetworkAnalyzerConfigurationOutput {
-            trace_content: self.trace_content,
-            wireless_devices: self.wireless_devices,
-            wireless_gateways: self.wireless_gateways,
-            description: self.description,
-            arn: self.arn,
-            name: self.name,
-            multicast_groups: self.multicast_groups,
+            trace_content: self.trace_content
+            ,
+            wireless_devices: self.wireless_devices
+            ,
+            wireless_gateways: self.wireless_gateways
+            ,
+            description: self.description
+            ,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            multicast_groups: self.multicast_groups
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

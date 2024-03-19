@@ -3,15 +3,14 @@
 /// <p>Container for <code>TagSet</code> elements.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Tagging {
+pub struct Tagging  {
     /// <p>A collection for a set of tags</p>
-    pub tag_set: ::std::vec::Vec<crate::types::Tag>,
+    pub tag_set: ::std::vec::Vec::<crate::types::Tag>,
 }
-impl Tagging {
+impl  Tagging  {
     /// <p>A collection for a set of tags</p>
-    pub fn tag_set(&self) -> &[crate::types::Tag] {
-        use std::ops::Deref;
-        self.tag_set.deref()
+    pub fn tag_set(&self) -> & [crate::types::Tag] {
+        use std::ops::Deref; self.tag_set.deref()
     }
 }
 impl Tagging {
@@ -25,7 +24,7 @@ impl Tagging {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TaggingBuilder {
-    pub(crate) tag_set: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tag_set: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl TaggingBuilder {
     /// Appends an item to `tag_set`.
@@ -35,30 +34,31 @@ impl TaggingBuilder {
     /// <p>A collection for a set of tags</p>
     pub fn tag_set(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tag_set.unwrap_or_default();
-        v.push(input);
-        self.tag_set = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_set = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A collection for a set of tags</p>
-    pub fn set_tag_set(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tag_set = input;
-        self
+    pub fn set_tag_set(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tag_set = input; self
     }
     /// <p>A collection for a set of tags</p>
-    pub fn get_tag_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tag_set(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tag_set
     }
     /// Consumes the builder and constructs a [`Tagging`](crate::types::Tagging).
     /// This method will fail if any of the following fields are not set:
     /// - [`tag_set`](crate::types::builders::TaggingBuilder::tag_set)
     pub fn build(self) -> ::std::result::Result<crate::types::Tagging, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Tagging {
-            tag_set: self.tag_set.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "tag_set",
-                    "tag_set was not specified but it is required when building Tagging",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Tagging {
+                tag_set: self.tag_set
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("tag_set", "tag_set was not specified but it is required when building Tagging")
+                    )?
+                ,
+            }
+        )
     }
 }
+

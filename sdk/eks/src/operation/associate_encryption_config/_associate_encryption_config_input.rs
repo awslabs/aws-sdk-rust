@@ -2,27 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateEncryptionConfigInput {
+pub struct AssociateEncryptionConfigInput  {
     /// <p>The name of your cluster.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The configuration you are using for encryption.</p>
-    pub encryption_config: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>>,
+    pub encryption_config: ::std::option::Option<::std::vec::Vec::<crate::types::EncryptionConfig>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
-impl AssociateEncryptionConfigInput {
+impl  AssociateEncryptionConfigInput  {
     /// <p>The name of your cluster.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The configuration you are using for encryption.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.encryption_config.is_none()`.
-    pub fn encryption_config(&self) -> &[crate::types::EncryptionConfig] {
-        self.encryption_config.as_deref().unwrap_or_default()
+    pub fn encryption_config(&self) -> & [crate::types::EncryptionConfig] {
+        self.encryption_config.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
 }
@@ -38,7 +39,7 @@ impl AssociateEncryptionConfigInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateEncryptionConfigInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
-    pub(crate) encryption_config: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>>,
+    pub(crate) encryption_config: ::std::option::Option<::std::vec::Vec::<crate::types::EncryptionConfig>>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl AssociateEncryptionConfigInputBuilder {
@@ -50,8 +51,7 @@ impl AssociateEncryptionConfigInputBuilder {
     }
     /// <p>The name of your cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The name of your cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,17 +64,16 @@ impl AssociateEncryptionConfigInputBuilder {
     /// <p>The configuration you are using for encryption.</p>
     pub fn encryption_config(mut self, input: crate::types::EncryptionConfig) -> Self {
         let mut v = self.encryption_config.unwrap_or_default();
-        v.push(input);
-        self.encryption_config = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.encryption_config = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The configuration you are using for encryption.</p>
-    pub fn set_encryption_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>>) -> Self {
-        self.encryption_config = input;
-        self
+    pub fn set_encryption_config(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EncryptionConfig>>) -> Self {
+        self.encryption_config = input; self
     }
     /// <p>The configuration you are using for encryption.</p>
-    pub fn get_encryption_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>> {
+    pub fn get_encryption_config(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EncryptionConfig>> {
         &self.encryption_config
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -84,24 +83,24 @@ impl AssociateEncryptionConfigInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`AssociateEncryptionConfigInput`](crate::operation::associate_encryption_config::AssociateEncryptionConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_encryption_config::AssociateEncryptionConfigInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::associate_encryption_config::AssociateEncryptionConfigInput {
-            cluster_name: self.cluster_name,
-            encryption_config: self.encryption_config,
-            client_request_token: self.client_request_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_encryption_config::AssociateEncryptionConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_encryption_config::AssociateEncryptionConfigInput {
+                cluster_name: self.cluster_name
+                ,
+                encryption_config: self.encryption_config
+                ,
+                client_request_token: self.client_request_token
+                ,
+            }
+        )
     }
 }
+

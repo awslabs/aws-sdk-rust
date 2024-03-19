@@ -3,20 +3,19 @@
 /// <p>The sub groups that belong to a group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MemberGroup {
+pub struct MemberGroup  {
     /// <p>The name of the sub group.</p>
     pub group_name: ::std::string::String,
     /// <p>The type of the sub group.</p>
     pub r#type: ::std::option::Option<crate::types::MembershipType>,
 }
-impl MemberGroup {
+impl  MemberGroup  {
     /// <p>The name of the sub group.</p>
-    pub fn group_name(&self) -> &str {
-        use std::ops::Deref;
-        self.group_name.deref()
+    pub fn group_name(&self) -> & str {
+        use std::ops::Deref; self.group_name.deref()
     }
     /// <p>The type of the sub group.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::MembershipType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::MembershipType> {
         self.r#type.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl MemberGroupBuilder {
     }
     /// <p>The name of the sub group.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>The name of the sub group.</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl MemberGroupBuilder {
     }
     /// <p>The type of the sub group.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::MembershipType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the sub group.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::MembershipType> {
@@ -68,14 +65,17 @@ impl MemberGroupBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`group_name`](crate::types::builders::MemberGroupBuilder::group_name)
     pub fn build(self) -> ::std::result::Result<crate::types::MemberGroup, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MemberGroup {
-            group_name: self.group_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "group_name",
-                    "group_name was not specified but it is required when building MemberGroup",
-                )
-            })?,
-            r#type: self.r#type,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MemberGroup {
+                group_name: self.group_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("group_name", "group_name was not specified but it is required when building MemberGroup")
+                    )?
+                ,
+                r#type: self.r#type
+                ,
+            }
+        )
     }
 }
+

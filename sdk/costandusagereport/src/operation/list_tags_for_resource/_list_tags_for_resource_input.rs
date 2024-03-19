@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTagsForResourceInput {
+pub struct ListTagsForResourceInput  {
     /// <p>The report name of the report definition that tags are to be returned for.</p>
     pub report_name: ::std::option::Option<::std::string::String>,
 }
-impl ListTagsForResourceInput {
+impl  ListTagsForResourceInput  {
     /// <p>The report name of the report definition that tags are to be returned for.</p>
-    pub fn report_name(&self) -> ::std::option::Option<&str> {
+    pub fn report_name(&self) -> ::std::option::Option<& str> {
         self.report_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl ListTagsForResourceInputBuilder {
     }
     /// <p>The report name of the report definition that tags are to be returned for.</p>
     pub fn set_report_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.report_name = input;
-        self
+        self.report_name = input; self
     }
     /// <p>The report name of the report definition that tags are to be returned for.</p>
     pub fn get_report_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.report_name
     }
     /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::operation::list_tags_for_resource::ListTagsForResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_tags_for_resource::ListTagsForResourceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_tags_for_resource::ListTagsForResourceInput {
-            report_name: self.report_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_tags_for_resource::ListTagsForResourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_tags_for_resource::ListTagsForResourceInput {
+                report_name: self.report_name
+                ,
+            }
+        )
     }
 }
+

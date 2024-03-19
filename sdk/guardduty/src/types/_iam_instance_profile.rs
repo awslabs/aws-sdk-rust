@@ -3,19 +3,19 @@
 /// <p>Contains information about the EC2 instance profile.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IamInstanceProfile {
+pub struct IamInstanceProfile  {
     /// <p>The profile ARN of the EC2 instance.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The profile ID of the EC2 instance.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl IamInstanceProfile {
+impl  IamInstanceProfile  {
     /// <p>The profile ARN of the EC2 instance.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The profile ID of the EC2 instance.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl IamInstanceProfileBuilder {
     }
     /// <p>The profile ARN of the EC2 instance.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The profile ARN of the EC2 instance.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl IamInstanceProfileBuilder {
     }
     /// <p>The profile ID of the EC2 instance.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The profile ID of the EC2 instance.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,6 +62,12 @@ impl IamInstanceProfileBuilder {
     }
     /// Consumes the builder and constructs a [`IamInstanceProfile`](crate::types::IamInstanceProfile).
     pub fn build(self) -> crate::types::IamInstanceProfile {
-        crate::types::IamInstanceProfile { arn: self.arn, id: self.id }
+        crate::types::IamInstanceProfile {
+            arn: self.arn
+            ,
+            id: self.id
+            ,
+        }
     }
 }
+

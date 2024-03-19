@@ -30,11 +30,7 @@ impl SearchByAttributeValue {
     /// Tries to convert the enum instance into [`CreatedAt`](crate::types::SearchByAttributeValue::CreatedAt), extracting the inner [`DateTime`](::aws_smithy_types::DateTime).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_created_at(&self) -> ::std::result::Result<&::aws_smithy_types::DateTime, &Self> {
-        if let SearchByAttributeValue::CreatedAt(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let SearchByAttributeValue::CreatedAt(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`CreatedAt`](crate::types::SearchByAttributeValue::CreatedAt).
     pub fn is_created_at(&self) -> bool {
@@ -43,11 +39,7 @@ impl SearchByAttributeValue {
     /// Tries to convert the enum instance into [`DicomAccessionNumber`](crate::types::SearchByAttributeValue::DicomAccessionNumber), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_dicom_accession_number(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let SearchByAttributeValue::DicomAccessionNumber(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let SearchByAttributeValue::DicomAccessionNumber(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`DicomAccessionNumber`](crate::types::SearchByAttributeValue::DicomAccessionNumber).
     pub fn is_dicom_accession_number(&self) -> bool {
@@ -56,11 +48,7 @@ impl SearchByAttributeValue {
     /// Tries to convert the enum instance into [`DicomPatientId`](crate::types::SearchByAttributeValue::DicomPatientId), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_dicom_patient_id(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let SearchByAttributeValue::DicomPatientId(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let SearchByAttributeValue::DicomPatientId(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`DicomPatientId`](crate::types::SearchByAttributeValue::DicomPatientId).
     pub fn is_dicom_patient_id(&self) -> bool {
@@ -69,11 +57,7 @@ impl SearchByAttributeValue {
     /// Tries to convert the enum instance into [`DicomStudyDateAndTime`](crate::types::SearchByAttributeValue::DicomStudyDateAndTime), extracting the inner [`DicomStudyDateAndTime`](crate::types::DicomStudyDateAndTime).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_dicom_study_date_and_time(&self) -> ::std::result::Result<&crate::types::DicomStudyDateAndTime, &Self> {
-        if let SearchByAttributeValue::DicomStudyDateAndTime(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let SearchByAttributeValue::DicomStudyDateAndTime(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`DicomStudyDateAndTime`](crate::types::SearchByAttributeValue::DicomStudyDateAndTime).
     pub fn is_dicom_study_date_and_time(&self) -> bool {
@@ -82,11 +66,7 @@ impl SearchByAttributeValue {
     /// Tries to convert the enum instance into [`DicomStudyId`](crate::types::SearchByAttributeValue::DicomStudyId), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_dicom_study_id(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let SearchByAttributeValue::DicomStudyId(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let SearchByAttributeValue::DicomStudyId(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`DicomStudyId`](crate::types::SearchByAttributeValue::DicomStudyId).
     pub fn is_dicom_study_id(&self) -> bool {
@@ -95,11 +75,7 @@ impl SearchByAttributeValue {
     /// Tries to convert the enum instance into [`DicomStudyInstanceUid`](crate::types::SearchByAttributeValue::DicomStudyInstanceUid), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_dicom_study_instance_uid(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let SearchByAttributeValue::DicomStudyInstanceUid(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let SearchByAttributeValue::DicomStudyInstanceUid(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`DicomStudyInstanceUid`](crate::types::SearchByAttributeValue::DicomStudyInstanceUid).
     pub fn is_dicom_study_instance_uid(&self) -> bool {
@@ -123,3 +99,4 @@ impl ::std::fmt::Debug for SearchByAttributeValue {
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutScalingPolicyInput {
+pub struct PutScalingPolicyInput  {
     /// <p>The name of the scaling policy.</p>
     /// <p>You cannot change the name of a scaling policy, but you can delete the original scaling policy and create a new scaling policy with the same settings and a different name.</p>
     pub policy_name: ::std::option::Option<::std::string::String>,
@@ -109,14 +109,14 @@ pub struct PutScalingPolicyInput {
     /// <p>This parameter is required if you are creating a policy and the policy type is <code>TargetTrackingScaling</code>.</p>
     pub target_tracking_scaling_policy_configuration: ::std::option::Option<crate::types::TargetTrackingScalingPolicyConfiguration>,
 }
-impl PutScalingPolicyInput {
+impl  PutScalingPolicyInput  {
     /// <p>The name of the scaling policy.</p>
     /// <p>You cannot change the name of a scaling policy, but you can delete the original scaling policy and create a new scaling policy with the same settings and a different name.</p>
-    pub fn policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<& str> {
         self.policy_name.as_deref()
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
-    pub fn service_namespace(&self) -> ::std::option::Option<&crate::types::ServiceNamespace> {
+    pub fn service_namespace(&self) -> ::std::option::Option<& crate::types::ServiceNamespace> {
         self.service_namespace.as_ref()
     }
     /// <p>The identifier of the resource associated with the scaling policy. This string consists of the resource type and unique identifier.</p>
@@ -158,7 +158,7 @@ impl PutScalingPolicyInput {
     /// <li>
     /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
     /// </ul>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
@@ -208,7 +208,7 @@ impl PutScalingPolicyInput {
     /// <li>
     /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
     /// </ul>
-    pub fn scalable_dimension(&self) -> ::std::option::Option<&crate::types::ScalableDimension> {
+    pub fn scalable_dimension(&self) -> ::std::option::Option<& crate::types::ScalableDimension> {
         self.scalable_dimension.as_ref()
     }
     /// <p>The scaling policy type. This parameter is required if you are creating a scaling policy.</p>
@@ -216,17 +216,17 @@ impl PutScalingPolicyInput {
     /// <p><code>TargetTrackingScaling</code>—Not supported for Amazon EMR.</p>
     /// <p><code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon MSK, Amazon ElastiCache, or Neptune.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.</p>
-    pub fn policy_type(&self) -> ::std::option::Option<&crate::types::PolicyType> {
+    pub fn policy_type(&self) -> ::std::option::Option<& crate::types::PolicyType> {
         self.policy_type.as_ref()
     }
     /// <p>A step scaling policy.</p>
     /// <p>This parameter is required if you are creating a policy and the policy type is <code>StepScaling</code>.</p>
-    pub fn step_scaling_policy_configuration(&self) -> ::std::option::Option<&crate::types::StepScalingPolicyConfiguration> {
+    pub fn step_scaling_policy_configuration(&self) -> ::std::option::Option<& crate::types::StepScalingPolicyConfiguration> {
         self.step_scaling_policy_configuration.as_ref()
     }
     /// <p>A target tracking scaling policy. Includes support for predefined or customized metrics.</p>
     /// <p>This parameter is required if you are creating a policy and the policy type is <code>TargetTrackingScaling</code>.</p>
-    pub fn target_tracking_scaling_policy_configuration(&self) -> ::std::option::Option<&crate::types::TargetTrackingScalingPolicyConfiguration> {
+    pub fn target_tracking_scaling_policy_configuration(&self) -> ::std::option::Option<& crate::types::TargetTrackingScalingPolicyConfiguration> {
         self.target_tracking_scaling_policy_configuration.as_ref()
     }
 }
@@ -260,8 +260,7 @@ impl PutScalingPolicyInputBuilder {
     /// <p>The name of the scaling policy.</p>
     /// <p>You cannot change the name of a scaling policy, but you can delete the original scaling policy and create a new scaling policy with the same settings and a different name.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// <p>The name of the scaling policy.</p>
     /// <p>You cannot change the name of a scaling policy, but you can delete the original scaling policy and create a new scaling policy with the same settings and a different name.</p>
@@ -276,8 +275,7 @@ impl PutScalingPolicyInputBuilder {
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
     pub fn set_service_namespace(mut self, input: ::std::option::Option<crate::types::ServiceNamespace>) -> Self {
-        self.service_namespace = input;
-        self
+        self.service_namespace = input; self
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
     pub fn get_service_namespace(&self) -> &::std::option::Option<crate::types::ServiceNamespace> {
@@ -367,8 +365,7 @@ impl PutScalingPolicyInputBuilder {
     /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
     /// </ul>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The identifier of the resource associated with the scaling policy. This string consists of the resource type and unique identifier.</p>
     /// <ul>
@@ -512,8 +509,7 @@ impl PutScalingPolicyInputBuilder {
     /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
     /// </ul>
     pub fn set_scalable_dimension(mut self, input: ::std::option::Option<crate::types::ScalableDimension>) -> Self {
-        self.scalable_dimension = input;
-        self
+        self.scalable_dimension = input; self
     }
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
     /// <ul>
@@ -580,8 +576,7 @@ impl PutScalingPolicyInputBuilder {
     /// <p><code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon MSK, Amazon ElastiCache, or Neptune.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.</p>
     pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::PolicyType>) -> Self {
-        self.policy_type = input;
-        self
+        self.policy_type = input; self
     }
     /// <p>The scaling policy type. This parameter is required if you are creating a scaling policy.</p>
     /// <p>The following policy types are supported:</p>
@@ -600,8 +595,7 @@ impl PutScalingPolicyInputBuilder {
     /// <p>A step scaling policy.</p>
     /// <p>This parameter is required if you are creating a policy and the policy type is <code>StepScaling</code>.</p>
     pub fn set_step_scaling_policy_configuration(mut self, input: ::std::option::Option<crate::types::StepScalingPolicyConfiguration>) -> Self {
-        self.step_scaling_policy_configuration = input;
-        self
+        self.step_scaling_policy_configuration = input; self
     }
     /// <p>A step scaling policy.</p>
     /// <p>This parameter is required if you are creating a policy and the policy type is <code>StepScaling</code>.</p>
@@ -616,12 +610,8 @@ impl PutScalingPolicyInputBuilder {
     }
     /// <p>A target tracking scaling policy. Includes support for predefined or customized metrics.</p>
     /// <p>This parameter is required if you are creating a policy and the policy type is <code>TargetTrackingScaling</code>.</p>
-    pub fn set_target_tracking_scaling_policy_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetTrackingScalingPolicyConfiguration>,
-    ) -> Self {
-        self.target_tracking_scaling_policy_configuration = input;
-        self
+    pub fn set_target_tracking_scaling_policy_configuration(mut self, input: ::std::option::Option<crate::types::TargetTrackingScalingPolicyConfiguration>) -> Self {
+        self.target_tracking_scaling_policy_configuration = input; self
     }
     /// <p>A target tracking scaling policy. Includes support for predefined or customized metrics.</p>
     /// <p>This parameter is required if you are creating a policy and the policy type is <code>TargetTrackingScaling</code>.</p>
@@ -629,17 +619,25 @@ impl PutScalingPolicyInputBuilder {
         &self.target_tracking_scaling_policy_configuration
     }
     /// Consumes the builder and constructs a [`PutScalingPolicyInput`](crate::operation::put_scaling_policy::PutScalingPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_scaling_policy::PutScalingPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_scaling_policy::PutScalingPolicyInput {
-            policy_name: self.policy_name,
-            service_namespace: self.service_namespace,
-            resource_id: self.resource_id,
-            scalable_dimension: self.scalable_dimension,
-            policy_type: self.policy_type,
-            step_scaling_policy_configuration: self.step_scaling_policy_configuration,
-            target_tracking_scaling_policy_configuration: self.target_tracking_scaling_policy_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_scaling_policy::PutScalingPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_scaling_policy::PutScalingPolicyInput {
+                policy_name: self.policy_name
+                ,
+                service_namespace: self.service_namespace
+                ,
+                resource_id: self.resource_id
+                ,
+                scalable_dimension: self.scalable_dimension
+                ,
+                policy_type: self.policy_type
+                ,
+                step_scaling_policy_configuration: self.step_scaling_policy_configuration
+                ,
+                target_tracking_scaling_policy_configuration: self.target_tracking_scaling_policy_configuration
+                ,
+            }
+        )
     }
 }
+

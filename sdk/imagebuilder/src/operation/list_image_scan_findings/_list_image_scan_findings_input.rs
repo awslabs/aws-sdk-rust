@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListImageScanFindingsInput {
+pub struct ListImageScanFindingsInput  {
     /// <p>An array of name value pairs that you can use to filter your results. You can use the following filters to streamline results:</p>
     /// <ul>
     /// <li>
@@ -15,13 +15,13 @@ pub struct ListImageScanFindingsInput {
     /// <p><code>severity</code></p></li>
     /// </ul>
     /// <p>If you don't request a filter, then all findings in your account are listed.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::ImageScanFindingsFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::ImageScanFindingsFilter>>,
     /// <p>The maximum items to return in a request.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListImageScanFindingsInput {
+impl  ListImageScanFindingsInput  {
     /// <p>An array of name value pairs that you can use to filter your results. You can use the following filters to streamline results:</p>
     /// <ul>
     /// <li>
@@ -34,17 +34,18 @@ impl ListImageScanFindingsInput {
     /// <p><code>severity</code></p></li>
     /// </ul>
     /// <p>If you don't request a filter, then all findings in your account are listed.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::ImageScanFindingsFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::ImageScanFindingsFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum items to return in a request.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -59,7 +60,7 @@ impl ListImageScanFindingsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImageScanFindingsInputBuilder {
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::ImageScanFindingsFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::ImageScanFindingsFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -82,9 +83,9 @@ impl ListImageScanFindingsInputBuilder {
     /// <p>If you don't request a filter, then all findings in your account are listed.</p>
     pub fn filters(mut self, input: crate::types::ImageScanFindingsFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of name value pairs that you can use to filter your results. You can use the following filters to streamline results:</p>
     /// <ul>
@@ -98,9 +99,8 @@ impl ListImageScanFindingsInputBuilder {
     /// <p><code>severity</code></p></li>
     /// </ul>
     /// <p>If you don't request a filter, then all findings in your account are listed.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageScanFindingsFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ImageScanFindingsFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>An array of name value pairs that you can use to filter your results. You can use the following filters to streamline results:</p>
     /// <ul>
@@ -114,7 +114,7 @@ impl ListImageScanFindingsInputBuilder {
     /// <p><code>severity</code></p></li>
     /// </ul>
     /// <p>If you don't request a filter, then all findings in your account are listed.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageScanFindingsFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ImageScanFindingsFilter>> {
         &self.filters
     }
     /// <p>The maximum items to return in a request.</p>
@@ -124,8 +124,7 @@ impl ListImageScanFindingsInputBuilder {
     }
     /// <p>The maximum items to return in a request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum items to return in a request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -138,22 +137,24 @@ impl ListImageScanFindingsInputBuilder {
     }
     /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListImageScanFindingsInput`](crate::operation::list_image_scan_findings::ListImageScanFindingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_image_scan_findings::ListImageScanFindingsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_image_scan_findings::ListImageScanFindingsInput {
-            filters: self.filters,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_image_scan_findings::ListImageScanFindingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_image_scan_findings::ListImageScanFindingsInput {
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

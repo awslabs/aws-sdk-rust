@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRegexPatternSetsOutput {
+pub struct ListRegexPatternSetsOutput  {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>Array of regex pattern sets. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
-    pub regex_pattern_sets: ::std::option::Option<::std::vec::Vec<crate::types::RegexPatternSetSummary>>,
+    pub regex_pattern_sets: ::std::option::Option<::std::vec::Vec::<crate::types::RegexPatternSetSummary>>,
     _request_id: Option<String>,
 }
-impl ListRegexPatternSetsOutput {
+impl  ListRegexPatternSetsOutput  {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-    pub fn next_marker(&self) -> ::std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>Array of regex pattern sets. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regex_pattern_sets.is_none()`.
-    pub fn regex_pattern_sets(&self) -> &[crate::types::RegexPatternSetSummary] {
-        self.regex_pattern_sets.as_deref().unwrap_or_default()
+    pub fn regex_pattern_sets(&self) -> & [crate::types::RegexPatternSetSummary] {
+        self.regex_pattern_sets.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListRegexPatternSetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListRegexPatternSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListRegexPatternSetsOutput`](crate::operation::list_regex_pattern_sets::ListRegexPatternSetsOutput).
     pub fn builder() -> crate::operation::list_regex_pattern_sets::builders::ListRegexPatternSetsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListRegexPatternSetsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRegexPatternSetsOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
-    pub(crate) regex_pattern_sets: ::std::option::Option<::std::vec::Vec<crate::types::RegexPatternSetSummary>>,
+    pub(crate) regex_pattern_sets: ::std::option::Option<::std::vec::Vec::<crate::types::RegexPatternSetSummary>>,
     _request_id: Option<String>,
 }
 impl ListRegexPatternSetsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListRegexPatternSetsOutputBuilder {
     }
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_marker = input;
-        self
+        self.next_marker = input; self
     }
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListRegexPatternSetsOutputBuilder {
     /// <p>Array of regex pattern sets. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
     pub fn regex_pattern_sets(mut self, input: crate::types::RegexPatternSetSummary) -> Self {
         let mut v = self.regex_pattern_sets.unwrap_or_default();
-        v.push(input);
-        self.regex_pattern_sets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.regex_pattern_sets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Array of regex pattern sets. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
-    pub fn set_regex_pattern_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegexPatternSetSummary>>) -> Self {
-        self.regex_pattern_sets = input;
-        self
+    pub fn set_regex_pattern_sets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RegexPatternSetSummary>>) -> Self {
+        self.regex_pattern_sets = input; self
     }
     /// <p>Array of regex pattern sets. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
-    pub fn get_regex_pattern_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegexPatternSetSummary>> {
+    pub fn get_regex_pattern_sets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RegexPatternSetSummary>> {
         &self.regex_pattern_sets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListRegexPatternSetsOutput`](crate::operation::list_regex_pattern_sets::ListRegexPatternSetsOutput).
     pub fn build(self) -> crate::operation::list_regex_pattern_sets::ListRegexPatternSetsOutput {
         crate::operation::list_regex_pattern_sets::ListRegexPatternSetsOutput {
-            next_marker: self.next_marker,
-            regex_pattern_sets: self.regex_pattern_sets,
+            next_marker: self.next_marker
+            ,
+            regex_pattern_sets: self.regex_pattern_sets
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

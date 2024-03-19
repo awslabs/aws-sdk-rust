@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBaselineOperationInput {
+pub struct GetBaselineOperationInput  {
     /// <p>The operation ID returned from mutating asynchronous APIs (Enable, Disable, Update, Reset).</p>
     pub operation_identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetBaselineOperationInput {
+impl  GetBaselineOperationInput  {
     /// <p>The operation ID returned from mutating asynchronous APIs (Enable, Disable, Update, Reset).</p>
-    pub fn operation_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn operation_identifier(&self) -> ::std::option::Option<& str> {
         self.operation_identifier.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetBaselineOperationInputBuilder {
     }
     /// <p>The operation ID returned from mutating asynchronous APIs (Enable, Disable, Update, Reset).</p>
     pub fn set_operation_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operation_identifier = input;
-        self
+        self.operation_identifier = input; self
     }
     /// <p>The operation ID returned from mutating asynchronous APIs (Enable, Disable, Update, Reset).</p>
     pub fn get_operation_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.operation_identifier
     }
     /// Consumes the builder and constructs a [`GetBaselineOperationInput`](crate::operation::get_baseline_operation::GetBaselineOperationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_baseline_operation::GetBaselineOperationInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_baseline_operation::GetBaselineOperationInput {
-            operation_identifier: self.operation_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_baseline_operation::GetBaselineOperationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_baseline_operation::GetBaselineOperationInput {
+                operation_identifier: self.operation_identifier
+                ,
+            }
+        )
     }
 }
+

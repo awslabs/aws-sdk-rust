@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateRuleVersionInput {
+pub struct UpdateRuleVersionInput  {
     /// <p>The rule to update.</p>
     pub rule: ::std::option::Option<crate::types::Rule>,
     /// <p>The description.</p>
@@ -12,41 +12,43 @@ pub struct UpdateRuleVersionInput {
     /// <p>The language.</p>
     pub language: ::std::option::Option<crate::types::Language>,
     /// <p>The outcomes.</p>
-    pub outcomes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub outcomes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The tags to assign to the rule version.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl UpdateRuleVersionInput {
+impl  UpdateRuleVersionInput  {
     /// <p>The rule to update.</p>
-    pub fn rule(&self) -> ::std::option::Option<&crate::types::Rule> {
+    pub fn rule(&self) -> ::std::option::Option<& crate::types::Rule> {
         self.rule.as_ref()
     }
     /// <p>The description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The rule expression.</p>
-    pub fn expression(&self) -> ::std::option::Option<&str> {
+    pub fn expression(&self) -> ::std::option::Option<& str> {
         self.expression.as_deref()
     }
     /// <p>The language.</p>
-    pub fn language(&self) -> ::std::option::Option<&crate::types::Language> {
+    pub fn language(&self) -> ::std::option::Option<& crate::types::Language> {
         self.language.as_ref()
     }
     /// <p>The outcomes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outcomes.is_none()`.
-    pub fn outcomes(&self) -> &[::std::string::String] {
-        self.outcomes.as_deref().unwrap_or_default()
+    pub fn outcomes(&self) -> & [::std::string::String] {
+        self.outcomes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The tags to assign to the rule version.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for UpdateRuleVersionInput {
+impl  ::std::fmt::Debug for UpdateRuleVersionInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateRuleVersionInput");
         formatter.field("rule", &self.rule);
@@ -73,8 +75,8 @@ pub struct UpdateRuleVersionInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) expression: ::std::option::Option<::std::string::String>,
     pub(crate) language: ::std::option::Option<crate::types::Language>,
-    pub(crate) outcomes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) outcomes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl UpdateRuleVersionInputBuilder {
     /// <p>The rule to update.</p>
@@ -85,8 +87,7 @@ impl UpdateRuleVersionInputBuilder {
     }
     /// <p>The rule to update.</p>
     pub fn set_rule(mut self, input: ::std::option::Option<crate::types::Rule>) -> Self {
-        self.rule = input;
-        self
+        self.rule = input; self
     }
     /// <p>The rule to update.</p>
     pub fn get_rule(&self) -> &::std::option::Option<crate::types::Rule> {
@@ -99,8 +100,7 @@ impl UpdateRuleVersionInputBuilder {
     }
     /// <p>The description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +114,7 @@ impl UpdateRuleVersionInputBuilder {
     }
     /// <p>The rule expression.</p>
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expression = input;
-        self
+        self.expression = input; self
     }
     /// <p>The rule expression.</p>
     pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +128,7 @@ impl UpdateRuleVersionInputBuilder {
     }
     /// <p>The language.</p>
     pub fn set_language(mut self, input: ::std::option::Option<crate::types::Language>) -> Self {
-        self.language = input;
-        self
+        self.language = input; self
     }
     /// <p>The language.</p>
     pub fn get_language(&self) -> &::std::option::Option<crate::types::Language> {
@@ -143,17 +141,16 @@ impl UpdateRuleVersionInputBuilder {
     /// <p>The outcomes.</p>
     pub fn outcomes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.outcomes.unwrap_or_default();
-        v.push(input.into());
-        self.outcomes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.outcomes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The outcomes.</p>
-    pub fn set_outcomes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.outcomes = input;
-        self
+    pub fn set_outcomes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.outcomes = input; self
     }
     /// <p>The outcomes.</p>
-    pub fn get_outcomes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_outcomes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.outcomes
     }
     /// Appends an item to `tags`.
@@ -163,31 +160,36 @@ impl UpdateRuleVersionInputBuilder {
     /// <p>The tags to assign to the rule version.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to assign to the rule version.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to assign to the rule version.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`UpdateRuleVersionInput`](crate::operation::update_rule_version::UpdateRuleVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_rule_version::UpdateRuleVersionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_rule_version::UpdateRuleVersionInput {
-            rule: self.rule,
-            description: self.description,
-            expression: self.expression,
-            language: self.language,
-            outcomes: self.outcomes,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_rule_version::UpdateRuleVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_rule_version::UpdateRuleVersionInput {
+                rule: self.rule
+                ,
+                description: self.description
+                ,
+                expression: self.expression
+                ,
+                language: self.language
+                ,
+                outcomes: self.outcomes
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateRuleVersionInputBuilder {
@@ -202,3 +204,4 @@ impl ::std::fmt::Debug for UpdateRuleVersionInputBuilder {
         formatter.finish()
     }
 }
+

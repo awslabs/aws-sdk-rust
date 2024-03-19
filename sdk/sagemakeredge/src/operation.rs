@@ -9,3 +9,4 @@ pub mod get_device_registration;
 
 /// Types for the `SendHeartbeat` operation.
 pub mod send_heartbeat;
+

@@ -2,27 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListEulaAcceptancesInput {
+pub struct ListEulaAcceptancesInput  {
     /// <p>The list of EULA IDs that have been previously accepted.</p>
-    pub eula_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub eula_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The studio ID.</p>
     pub studio_id: ::std::option::Option<::std::string::String>,
 }
-impl ListEulaAcceptancesInput {
+impl  ListEulaAcceptancesInput  {
     /// <p>The list of EULA IDs that have been previously accepted.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.eula_ids.is_none()`.
-    pub fn eula_ids(&self) -> &[::std::string::String] {
-        self.eula_ids.as_deref().unwrap_or_default()
+    pub fn eula_ids(&self) -> & [::std::string::String] {
+        self.eula_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The studio ID.</p>
-    pub fn studio_id(&self) -> ::std::option::Option<&str> {
+    pub fn studio_id(&self) -> ::std::option::Option<& str> {
         self.studio_id.as_deref()
     }
 }
@@ -37,7 +38,7 @@ impl ListEulaAcceptancesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEulaAcceptancesInputBuilder {
-    pub(crate) eula_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) eula_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) studio_id: ::std::option::Option<::std::string::String>,
 }
@@ -49,17 +50,16 @@ impl ListEulaAcceptancesInputBuilder {
     /// <p>The list of EULA IDs that have been previously accepted.</p>
     pub fn eula_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.eula_ids.unwrap_or_default();
-        v.push(input.into());
-        self.eula_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.eula_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of EULA IDs that have been previously accepted.</p>
-    pub fn set_eula_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.eula_ids = input;
-        self
+    pub fn set_eula_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.eula_ids = input; self
     }
     /// <p>The list of EULA IDs that have been previously accepted.</p>
-    pub fn get_eula_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_eula_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.eula_ids
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -69,8 +69,7 @@ impl ListEulaAcceptancesInputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,22 +83,24 @@ impl ListEulaAcceptancesInputBuilder {
     }
     /// <p>The studio ID.</p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.studio_id = input;
-        self
+        self.studio_id = input; self
     }
     /// <p>The studio ID.</p>
     pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.studio_id
     }
     /// Consumes the builder and constructs a [`ListEulaAcceptancesInput`](crate::operation::list_eula_acceptances::ListEulaAcceptancesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_eula_acceptances::ListEulaAcceptancesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_eula_acceptances::ListEulaAcceptancesInput {
-            eula_ids: self.eula_ids,
-            next_token: self.next_token,
-            studio_id: self.studio_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_eula_acceptances::ListEulaAcceptancesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_eula_acceptances::ListEulaAcceptancesInput {
+                eula_ids: self.eula_ids
+                ,
+                next_token: self.next_token
+                ,
+                studio_id: self.studio_id
+                ,
+            }
+        )
     }
 }
+

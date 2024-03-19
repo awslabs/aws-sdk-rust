@@ -3,31 +3,30 @@
 /// <p>Contains a paginated collection of DomainInfo structures.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDomainsOutput {
+pub struct ListDomainsOutput  {
     /// <p>A list of DomainInfo structures.</p>
-    pub domain_infos: ::std::vec::Vec<crate::types::DomainInfo>,
+    pub domain_infos: ::std::vec::Vec::<crate::types::DomainInfo>,
     /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListDomainsOutput {
+impl  ListDomainsOutput  {
     /// <p>A list of DomainInfo structures.</p>
-    pub fn domain_infos(&self) -> &[crate::types::DomainInfo] {
-        use std::ops::Deref;
-        self.domain_infos.deref()
+    pub fn domain_infos(&self) -> & [crate::types::DomainInfo] {
+        use std::ops::Deref; self.domain_infos.deref()
     }
     /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    pub fn next_page_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_page_token(&self) -> ::std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListDomainsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListDomainsOutput {
     /// Creates a new builder-style object to manufacture [`ListDomainsOutput`](crate::operation::list_domains::ListDomainsOutput).
     pub fn builder() -> crate::operation::list_domains::builders::ListDomainsOutputBuilder {
@@ -39,7 +38,7 @@ impl ListDomainsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDomainsOutputBuilder {
-    pub(crate) domain_infos: ::std::option::Option<::std::vec::Vec<crate::types::DomainInfo>>,
+    pub(crate) domain_infos: ::std::option::Option<::std::vec::Vec::<crate::types::DomainInfo>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,17 +50,16 @@ impl ListDomainsOutputBuilder {
     /// <p>A list of DomainInfo structures.</p>
     pub fn domain_infos(mut self, input: crate::types::DomainInfo) -> Self {
         let mut v = self.domain_infos.unwrap_or_default();
-        v.push(input);
-        self.domain_infos = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.domain_infos = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of DomainInfo structures.</p>
-    pub fn set_domain_infos(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DomainInfo>>) -> Self {
-        self.domain_infos = input;
-        self
+    pub fn set_domain_infos(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DomainInfo>>) -> Self {
+        self.domain_infos = input; self
     }
     /// <p>A list of DomainInfo structures.</p>
-    pub fn get_domain_infos(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainInfo>> {
+    pub fn get_domain_infos(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DomainInfo>> {
         &self.domain_infos
     }
     /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
@@ -73,8 +71,7 @@ impl ListDomainsOutputBuilder {
     /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
     pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_page_token = input;
-        self
+        self.next_page_token = input; self
     }
     /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
@@ -82,27 +79,30 @@ impl ListDomainsOutputBuilder {
         &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListDomainsOutput`](crate::operation::list_domains::ListDomainsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`domain_infos`](crate::operation::list_domains::builders::ListDomainsOutputBuilder::domain_infos)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_domains::ListDomainsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_domains::ListDomainsOutput {
-            domain_infos: self.domain_infos.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain_infos",
-                    "domain_infos was not specified but it is required when building ListDomainsOutput",
-                )
-            })?,
-            next_page_token: self.next_page_token,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_domains::ListDomainsOutput {
+                domain_infos: self.domain_infos
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain_infos", "domain_infos was not specified but it is required when building ListDomainsOutput")
+                    )?
+                ,
+                next_page_token: self.next_page_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

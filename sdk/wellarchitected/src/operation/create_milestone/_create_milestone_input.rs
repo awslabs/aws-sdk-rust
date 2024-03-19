@@ -3,7 +3,7 @@
 /// <p>Input for milestone creation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateMilestoneInput {
+pub struct CreateMilestoneInput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the milestone in a workload.</p>
@@ -15,21 +15,21 @@ pub struct CreateMilestoneInput {
     /// </important>
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateMilestoneInput {
+impl  CreateMilestoneInput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> ::std::option::Option<&str> {
+    pub fn workload_id(&self) -> ::std::option::Option<& str> {
         self.workload_id.as_deref()
     }
     /// <p>The name of the milestone in a workload.</p>
     /// <p>Milestone names must be unique within a workload.</p>
-    pub fn milestone_name(&self) -> ::std::option::Option<&str> {
+    pub fn milestone_name(&self) -> ::std::option::Option<& str> {
         self.milestone_name.as_deref()
     }
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p><important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
 }
@@ -57,8 +57,7 @@ impl CreateMilestoneInputBuilder {
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_id = input;
-        self
+        self.workload_id = input; self
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +73,7 @@ impl CreateMilestoneInputBuilder {
     /// <p>The name of the milestone in a workload.</p>
     /// <p>Milestone names must be unique within a workload.</p>
     pub fn set_milestone_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.milestone_name = input;
-        self
+        self.milestone_name = input; self
     }
     /// <p>The name of the milestone in a workload.</p>
     /// <p>Milestone names must be unique within a workload.</p>
@@ -96,8 +94,7 @@ impl CreateMilestoneInputBuilder {
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p><important>
@@ -107,13 +104,17 @@ impl CreateMilestoneInputBuilder {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`CreateMilestoneInput`](crate::operation::create_milestone::CreateMilestoneInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_milestone::CreateMilestoneInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_milestone::CreateMilestoneInput {
-            workload_id: self.workload_id,
-            milestone_name: self.milestone_name,
-            client_request_token: self.client_request_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_milestone::CreateMilestoneInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_milestone::CreateMilestoneInput {
+                workload_id: self.workload_id
+                ,
+                milestone_name: self.milestone_name
+                ,
+                client_request_token: self.client_request_token
+                ,
+            }
+        )
     }
 }
+

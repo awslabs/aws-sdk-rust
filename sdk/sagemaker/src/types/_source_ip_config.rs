@@ -3,22 +3,23 @@
 /// <p>A list of IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>). Used to create an allow list of IP addresses for a private workforce. Workers will only be able to login to their worker portal from an IP address within this range. By default, a workforce isn't restricted to specific IP addresses.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SourceIpConfig {
+pub struct SourceIpConfig  {
     /// <p>A list of one to ten <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Classless Inter-Domain Routing</a> (CIDR) values.</p>
     /// <p>Maximum: Ten CIDR values</p><note>
     /// <p>The following Length Constraints apply to individual CIDR values in the CIDR value list.</p>
     /// </note>
-    pub cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub cidrs: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl SourceIpConfig {
+impl  SourceIpConfig  {
     /// <p>A list of one to ten <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Classless Inter-Domain Routing</a> (CIDR) values.</p>
     /// <p>Maximum: Ten CIDR values</p><note>
     /// <p>The following Length Constraints apply to individual CIDR values in the CIDR value list.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cidrs.is_none()`.
-    pub fn cidrs(&self) -> &[::std::string::String] {
-        self.cidrs.as_deref().unwrap_or_default()
+    pub fn cidrs(&self) -> & [::std::string::String] {
+        self.cidrs.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SourceIpConfig {
@@ -32,7 +33,7 @@ impl SourceIpConfig {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceIpConfigBuilder {
-    pub(crate) cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) cidrs: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl SourceIpConfigBuilder {
     /// Appends an item to `cidrs`.
@@ -45,27 +46,30 @@ impl SourceIpConfigBuilder {
     /// </note>
     pub fn cidrs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cidrs.unwrap_or_default();
-        v.push(input.into());
-        self.cidrs = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.cidrs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of one to ten <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Classless Inter-Domain Routing</a> (CIDR) values.</p>
     /// <p>Maximum: Ten CIDR values</p><note>
     /// <p>The following Length Constraints apply to individual CIDR values in the CIDR value list.</p>
     /// </note>
-    pub fn set_cidrs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.cidrs = input;
-        self
+    pub fn set_cidrs(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.cidrs = input; self
     }
     /// <p>A list of one to ten <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Classless Inter-Domain Routing</a> (CIDR) values.</p>
     /// <p>Maximum: Ten CIDR values</p><note>
     /// <p>The following Length Constraints apply to individual CIDR values in the CIDR value list.</p>
     /// </note>
-    pub fn get_cidrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cidrs(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.cidrs
     }
     /// Consumes the builder and constructs a [`SourceIpConfig`](crate::types::SourceIpConfig).
     pub fn build(self) -> crate::types::SourceIpConfig {
-        crate::types::SourceIpConfig { cidrs: self.cidrs }
+        crate::types::SourceIpConfig {
+            cidrs: self.cidrs
+            ,
+        }
     }
 }
+

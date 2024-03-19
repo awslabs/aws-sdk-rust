@@ -3,15 +3,14 @@
 /// <p>A target to which an alert is sent when a security profile behavior is violated.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SecurityProfileTarget {
+pub struct SecurityProfileTarget  {
     /// <p>The ARN of the security profile.</p>
     pub arn: ::std::string::String,
 }
-impl SecurityProfileTarget {
+impl  SecurityProfileTarget  {
     /// <p>The ARN of the security profile.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
 }
 impl SecurityProfileTarget {
@@ -36,8 +35,7 @@ impl SecurityProfileTargetBuilder {
     }
     /// <p>The ARN of the security profile.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the security profile.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl SecurityProfileTargetBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::SecurityProfileTargetBuilder::arn)
     pub fn build(self) -> ::std::result::Result<crate::types::SecurityProfileTarget, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SecurityProfileTarget {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building SecurityProfileTarget",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SecurityProfileTarget {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building SecurityProfileTarget")
+                    )?
+                ,
+            }
+        )
     }
 }
+

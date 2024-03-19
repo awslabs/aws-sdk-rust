@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAdapterInput {
+pub struct DeleteAdapterInput  {
     /// <p>A string containing a unique ID for the adapter to be deleted.</p>
     pub adapter_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteAdapterInput {
+impl  DeleteAdapterInput  {
     /// <p>A string containing a unique ID for the adapter to be deleted.</p>
-    pub fn adapter_id(&self) -> ::std::option::Option<&str> {
+    pub fn adapter_id(&self) -> ::std::option::Option<& str> {
         self.adapter_id.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl DeleteAdapterInputBuilder {
     }
     /// <p>A string containing a unique ID for the adapter to be deleted.</p>
     pub fn set_adapter_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.adapter_id = input;
-        self
+        self.adapter_id = input; self
     }
     /// <p>A string containing a unique ID for the adapter to be deleted.</p>
     pub fn get_adapter_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.adapter_id
     }
     /// Consumes the builder and constructs a [`DeleteAdapterInput`](crate::operation::delete_adapter::DeleteAdapterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_adapter::DeleteAdapterInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_adapter::DeleteAdapterInput { adapter_id: self.adapter_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_adapter::DeleteAdapterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_adapter::DeleteAdapterInput {
+                adapter_id: self.adapter_id
+                ,
+            }
+        )
     }
 }
+

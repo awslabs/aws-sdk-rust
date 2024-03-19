@@ -3,24 +3,25 @@
 /// <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTrailsOutput {
+pub struct DescribeTrailsOutput  {
     /// <p>The list of trail objects. Trail objects with string values are only returned if values for the objects exist in a trail's configuration. For example, <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in results if a trail is configured to send SNS notifications. Similarly, <code>KMSKeyId</code> only appears in results if a trail's log files are encrypted with KMS customer managed keys.</p>
-    pub trail_list: ::std::option::Option<::std::vec::Vec<crate::types::Trail>>,
+    pub trail_list: ::std::option::Option<::std::vec::Vec::<crate::types::Trail>>,
     _request_id: Option<String>,
 }
-impl DescribeTrailsOutput {
+impl  DescribeTrailsOutput  {
     /// <p>The list of trail objects. Trail objects with string values are only returned if values for the objects exist in a trail's configuration. For example, <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in results if a trail is configured to send SNS notifications. Similarly, <code>KMSKeyId</code> only appears in results if a trail's log files are encrypted with KMS customer managed keys.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trail_list.is_none()`.
-    pub fn trail_list(&self) -> &[crate::types::Trail] {
-        self.trail_list.as_deref().unwrap_or_default()
+    pub fn trail_list(&self) -> & [crate::types::Trail] {
+        self.trail_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeTrailsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeTrailsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTrailsOutput`](crate::operation::describe_trails::DescribeTrailsOutput).
     pub fn builder() -> crate::operation::describe_trails::builders::DescribeTrailsOutputBuilder {
@@ -32,7 +33,7 @@ impl DescribeTrailsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTrailsOutputBuilder {
-    pub(crate) trail_list: ::std::option::Option<::std::vec::Vec<crate::types::Trail>>,
+    pub(crate) trail_list: ::std::option::Option<::std::vec::Vec::<crate::types::Trail>>,
     _request_id: Option<String>,
 }
 impl DescribeTrailsOutputBuilder {
@@ -43,33 +44,34 @@ impl DescribeTrailsOutputBuilder {
     /// <p>The list of trail objects. Trail objects with string values are only returned if values for the objects exist in a trail's configuration. For example, <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in results if a trail is configured to send SNS notifications. Similarly, <code>KMSKeyId</code> only appears in results if a trail's log files are encrypted with KMS customer managed keys.</p>
     pub fn trail_list(mut self, input: crate::types::Trail) -> Self {
         let mut v = self.trail_list.unwrap_or_default();
-        v.push(input);
-        self.trail_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.trail_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of trail objects. Trail objects with string values are only returned if values for the objects exist in a trail's configuration. For example, <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in results if a trail is configured to send SNS notifications. Similarly, <code>KMSKeyId</code> only appears in results if a trail's log files are encrypted with KMS customer managed keys.</p>
-    pub fn set_trail_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Trail>>) -> Self {
-        self.trail_list = input;
-        self
+    pub fn set_trail_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Trail>>) -> Self {
+        self.trail_list = input; self
     }
     /// <p>The list of trail objects. Trail objects with string values are only returned if values for the objects exist in a trail's configuration. For example, <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in results if a trail is configured to send SNS notifications. Similarly, <code>KMSKeyId</code> only appears in results if a trail's log files are encrypted with KMS customer managed keys.</p>
-    pub fn get_trail_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Trail>> {
+    pub fn get_trail_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Trail>> {
         &self.trail_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeTrailsOutput`](crate::operation::describe_trails::DescribeTrailsOutput).
     pub fn build(self) -> crate::operation::describe_trails::DescribeTrailsOutput {
         crate::operation::describe_trails::DescribeTrailsOutput {
-            trail_list: self.trail_list,
+            trail_list: self.trail_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

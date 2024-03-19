@@ -3,13 +3,13 @@
 /// <p>Cost optimizing aggregates for a Recommendation</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecommendationCostOptimizingAggregates {
+pub struct RecommendationCostOptimizingAggregates  {
     /// <p>The estimated monthly savings</p>
     pub estimated_monthly_savings: f64,
     /// <p>The estimated percently monthly savings</p>
     pub estimated_percent_monthly_savings: f64,
 }
-impl RecommendationCostOptimizingAggregates {
+impl  RecommendationCostOptimizingAggregates  {
     /// <p>The estimated monthly savings</p>
     pub fn estimated_monthly_savings(&self) -> f64 {
         self.estimated_monthly_savings
@@ -42,8 +42,7 @@ impl RecommendationCostOptimizingAggregatesBuilder {
     }
     /// <p>The estimated monthly savings</p>
     pub fn set_estimated_monthly_savings(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.estimated_monthly_savings = input;
-        self
+        self.estimated_monthly_savings = input; self
     }
     /// <p>The estimated monthly savings</p>
     pub fn get_estimated_monthly_savings(&self) -> &::std::option::Option<f64> {
@@ -57,8 +56,7 @@ impl RecommendationCostOptimizingAggregatesBuilder {
     }
     /// <p>The estimated percently monthly savings</p>
     pub fn set_estimated_percent_monthly_savings(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.estimated_percent_monthly_savings = input;
-        self
+        self.estimated_percent_monthly_savings = input; self
     }
     /// <p>The estimated percently monthly savings</p>
     pub fn get_estimated_percent_monthly_savings(&self) -> &::std::option::Option<f64> {
@@ -68,22 +66,21 @@ impl RecommendationCostOptimizingAggregatesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`estimated_monthly_savings`](crate::types::builders::RecommendationCostOptimizingAggregatesBuilder::estimated_monthly_savings)
     /// - [`estimated_percent_monthly_savings`](crate::types::builders::RecommendationCostOptimizingAggregatesBuilder::estimated_percent_monthly_savings)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::RecommendationCostOptimizingAggregates, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RecommendationCostOptimizingAggregates {
-            estimated_monthly_savings: self.estimated_monthly_savings.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "estimated_monthly_savings",
-                    "estimated_monthly_savings was not specified but it is required when building RecommendationCostOptimizingAggregates",
-                )
-            })?,
-            estimated_percent_monthly_savings: self.estimated_percent_monthly_savings.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "estimated_percent_monthly_savings",
-                    "estimated_percent_monthly_savings was not specified but it is required when building RecommendationCostOptimizingAggregates",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::RecommendationCostOptimizingAggregates, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::RecommendationCostOptimizingAggregates {
+                estimated_monthly_savings: self.estimated_monthly_savings
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("estimated_monthly_savings", "estimated_monthly_savings was not specified but it is required when building RecommendationCostOptimizingAggregates")
+                    )?
+                ,
+                estimated_percent_monthly_savings: self.estimated_percent_monthly_savings
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("estimated_percent_monthly_savings", "estimated_percent_monthly_savings was not specified but it is required when building RecommendationCostOptimizingAggregates")
+                    )?
+                ,
+            }
+        )
     }
 }
+

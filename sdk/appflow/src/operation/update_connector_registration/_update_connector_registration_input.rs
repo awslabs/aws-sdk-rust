@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateConnectorRegistrationInput {
+pub struct UpdateConnectorRegistrationInput  {
     /// <p>The name of the connector. The name is unique for each connector registration in your AWS account.</p>
     pub connector_label: ::std::option::Option<::std::string::String>,
     /// <p>A description about the update that you're applying to the connector.</p>
@@ -14,23 +14,23 @@ pub struct UpdateConnectorRegistrationInput {
     /// <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>UpdateConnectorRegistration</code>. The token is active for 8 hours.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl UpdateConnectorRegistrationInput {
+impl  UpdateConnectorRegistrationInput  {
     /// <p>The name of the connector. The name is unique for each connector registration in your AWS account.</p>
-    pub fn connector_label(&self) -> ::std::option::Option<&str> {
+    pub fn connector_label(&self) -> ::std::option::Option<& str> {
         self.connector_label.as_deref()
     }
     /// <p>A description about the update that you're applying to the connector.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Contains information about the configuration of the connector being registered.</p>
-    pub fn connector_provisioning_config(&self) -> ::std::option::Option<&crate::types::ConnectorProvisioningConfig> {
+    pub fn connector_provisioning_config(&self) -> ::std::option::Option<& crate::types::ConnectorProvisioningConfig> {
         self.connector_provisioning_config.as_ref()
     }
     /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>UpdateConnectorRegistration</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>
     /// <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p>
     /// <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>UpdateConnectorRegistration</code>. The token is active for 8 hours.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl UpdateConnectorRegistrationInputBuilder {
     }
     /// <p>The name of the connector. The name is unique for each connector registration in your AWS account.</p>
     pub fn set_connector_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connector_label = input;
-        self
+        self.connector_label = input; self
     }
     /// <p>The name of the connector. The name is unique for each connector registration in your AWS account.</p>
     pub fn get_connector_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +72,7 @@ impl UpdateConnectorRegistrationInputBuilder {
     }
     /// <p>A description about the update that you're applying to the connector.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description about the update that you're applying to the connector.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +85,7 @@ impl UpdateConnectorRegistrationInputBuilder {
     }
     /// <p>Contains information about the configuration of the connector being registered.</p>
     pub fn set_connector_provisioning_config(mut self, input: ::std::option::Option<crate::types::ConnectorProvisioningConfig>) -> Self {
-        self.connector_provisioning_config = input;
-        self
+        self.connector_provisioning_config = input; self
     }
     /// <p>Contains information about the configuration of the connector being registered.</p>
     pub fn get_connector_provisioning_config(&self) -> &::std::option::Option<crate::types::ConnectorProvisioningConfig> {
@@ -105,8 +102,7 @@ impl UpdateConnectorRegistrationInputBuilder {
     /// <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p>
     /// <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>UpdateConnectorRegistration</code>. The token is active for 8 hours.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>UpdateConnectorRegistration</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>
     /// <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p>
@@ -115,17 +111,19 @@ impl UpdateConnectorRegistrationInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateConnectorRegistrationInput`](crate::operation::update_connector_registration::UpdateConnectorRegistrationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_connector_registration::UpdateConnectorRegistrationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_connector_registration::UpdateConnectorRegistrationInput {
-            connector_label: self.connector_label,
-            description: self.description,
-            connector_provisioning_config: self.connector_provisioning_config,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_connector_registration::UpdateConnectorRegistrationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_connector_registration::UpdateConnectorRegistrationInput {
+                connector_label: self.connector_label
+                ,
+                description: self.description
+                ,
+                connector_provisioning_config: self.connector_provisioning_config
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

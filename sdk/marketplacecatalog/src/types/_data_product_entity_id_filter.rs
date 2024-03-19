@@ -3,16 +3,17 @@
 /// <p>Object that allows filtering on entity id of a data product.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataProductEntityIdFilter {
+pub struct DataProductEntityIdFilter  {
     /// <p>A string array of unique entity id values to be filtered on.</p>
-    pub value_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub value_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DataProductEntityIdFilter {
+impl  DataProductEntityIdFilter  {
     /// <p>A string array of unique entity id values to be filtered on.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.value_list.is_none()`.
-    pub fn value_list(&self) -> &[::std::string::String] {
-        self.value_list.as_deref().unwrap_or_default()
+    pub fn value_list(&self) -> & [::std::string::String] {
+        self.value_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DataProductEntityIdFilter {
@@ -26,7 +27,7 @@ impl DataProductEntityIdFilter {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataProductEntityIdFilterBuilder {
-    pub(crate) value_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) value_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DataProductEntityIdFilterBuilder {
     /// Appends an item to `value_list`.
@@ -36,21 +37,24 @@ impl DataProductEntityIdFilterBuilder {
     /// <p>A string array of unique entity id values to be filtered on.</p>
     pub fn value_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.value_list.unwrap_or_default();
-        v.push(input.into());
-        self.value_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.value_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A string array of unique entity id values to be filtered on.</p>
-    pub fn set_value_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.value_list = input;
-        self
+    pub fn set_value_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.value_list = input; self
     }
     /// <p>A string array of unique entity id values to be filtered on.</p>
-    pub fn get_value_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_value_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.value_list
     }
     /// Consumes the builder and constructs a [`DataProductEntityIdFilter`](crate::types::DataProductEntityIdFilter).
     pub fn build(self) -> crate::types::DataProductEntityIdFilter {
-        crate::types::DataProductEntityIdFilter { value_list: self.value_list }
+        crate::types::DataProductEntityIdFilter {
+            value_list: self.value_list
+            ,
+        }
     }
 }
+

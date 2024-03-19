@@ -3,7 +3,7 @@
 /// <p>Parameters that are required to generate or verify Ibm3624 PIN verification PIN.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Ibm3624PinVerification {
+pub struct Ibm3624PinVerification  {
     /// <p>The decimalization table to use for IBM 3624 PIN algorithm. The table is used to convert the algorithm intermediate result from hexadecimal characters to decimal.</p>
     pub decimalization_table: ::std::string::String,
     /// <p>The padding character for validation data.</p>
@@ -13,26 +13,22 @@ pub struct Ibm3624PinVerification {
     /// <p>The PIN offset value.</p>
     pub pin_offset: ::std::string::String,
 }
-impl Ibm3624PinVerification {
+impl  Ibm3624PinVerification  {
     /// <p>The decimalization table to use for IBM 3624 PIN algorithm. The table is used to convert the algorithm intermediate result from hexadecimal characters to decimal.</p>
-    pub fn decimalization_table(&self) -> &str {
-        use std::ops::Deref;
-        self.decimalization_table.deref()
+    pub fn decimalization_table(&self) -> & str {
+        use std::ops::Deref; self.decimalization_table.deref()
     }
     /// <p>The padding character for validation data.</p>
-    pub fn pin_validation_data_pad_character(&self) -> &str {
-        use std::ops::Deref;
-        self.pin_validation_data_pad_character.deref()
+    pub fn pin_validation_data_pad_character(&self) -> & str {
+        use std::ops::Deref; self.pin_validation_data_pad_character.deref()
     }
     /// <p>The unique data for cardholder identification.</p>
-    pub fn pin_validation_data(&self) -> &str {
-        use std::ops::Deref;
-        self.pin_validation_data.deref()
+    pub fn pin_validation_data(&self) -> & str {
+        use std::ops::Deref; self.pin_validation_data.deref()
     }
     /// <p>The PIN offset value.</p>
-    pub fn pin_offset(&self) -> &str {
-        use std::ops::Deref;
-        self.pin_offset.deref()
+    pub fn pin_offset(&self) -> & str {
+        use std::ops::Deref; self.pin_offset.deref()
     }
 }
 impl Ibm3624PinVerification {
@@ -60,8 +56,7 @@ impl Ibm3624PinVerificationBuilder {
     }
     /// <p>The decimalization table to use for IBM 3624 PIN algorithm. The table is used to convert the algorithm intermediate result from hexadecimal characters to decimal.</p>
     pub fn set_decimalization_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.decimalization_table = input;
-        self
+        self.decimalization_table = input; self
     }
     /// <p>The decimalization table to use for IBM 3624 PIN algorithm. The table is used to convert the algorithm intermediate result from hexadecimal characters to decimal.</p>
     pub fn get_decimalization_table(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +70,7 @@ impl Ibm3624PinVerificationBuilder {
     }
     /// <p>The padding character for validation data.</p>
     pub fn set_pin_validation_data_pad_character(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pin_validation_data_pad_character = input;
-        self
+        self.pin_validation_data_pad_character = input; self
     }
     /// <p>The padding character for validation data.</p>
     pub fn get_pin_validation_data_pad_character(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +84,7 @@ impl Ibm3624PinVerificationBuilder {
     }
     /// <p>The unique data for cardholder identification.</p>
     pub fn set_pin_validation_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pin_validation_data = input;
-        self
+        self.pin_validation_data = input; self
     }
     /// <p>The unique data for cardholder identification.</p>
     pub fn get_pin_validation_data(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +98,7 @@ impl Ibm3624PinVerificationBuilder {
     }
     /// <p>The PIN offset value.</p>
     pub fn set_pin_offset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pin_offset = input;
-        self
+        self.pin_offset = input; self
     }
     /// <p>The PIN offset value.</p>
     pub fn get_pin_offset(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,31 +111,30 @@ impl Ibm3624PinVerificationBuilder {
     /// - [`pin_validation_data`](crate::types::builders::Ibm3624PinVerificationBuilder::pin_validation_data)
     /// - [`pin_offset`](crate::types::builders::Ibm3624PinVerificationBuilder::pin_offset)
     pub fn build(self) -> ::std::result::Result<crate::types::Ibm3624PinVerification, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Ibm3624PinVerification {
-            decimalization_table: self.decimalization_table.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "decimalization_table",
-                    "decimalization_table was not specified but it is required when building Ibm3624PinVerification",
-                )
-            })?,
-            pin_validation_data_pad_character: self.pin_validation_data_pad_character.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "pin_validation_data_pad_character",
-                    "pin_validation_data_pad_character was not specified but it is required when building Ibm3624PinVerification",
-                )
-            })?,
-            pin_validation_data: self.pin_validation_data.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "pin_validation_data",
-                    "pin_validation_data was not specified but it is required when building Ibm3624PinVerification",
-                )
-            })?,
-            pin_offset: self.pin_offset.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "pin_offset",
-                    "pin_offset was not specified but it is required when building Ibm3624PinVerification",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Ibm3624PinVerification {
+                decimalization_table: self.decimalization_table
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("decimalization_table", "decimalization_table was not specified but it is required when building Ibm3624PinVerification")
+                    )?
+                ,
+                pin_validation_data_pad_character: self.pin_validation_data_pad_character
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("pin_validation_data_pad_character", "pin_validation_data_pad_character was not specified but it is required when building Ibm3624PinVerification")
+                    )?
+                ,
+                pin_validation_data: self.pin_validation_data
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("pin_validation_data", "pin_validation_data was not specified but it is required when building Ibm3624PinVerification")
+                    )?
+                ,
+                pin_offset: self.pin_offset
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("pin_offset", "pin_offset was not specified but it is required when building Ibm3624PinVerification")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Details about the server in vCenter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VcenterBasedRemoteInfo {
+pub struct VcenterBasedRemoteInfo  {
     /// <p>The time when the remote server based on vCenter was last configured.</p>
     pub vcenter_configuration_time_stamp: ::std::option::Option<::std::string::String>,
     /// <p>The type of the operating system.</p>
     pub os_type: ::std::option::Option<crate::types::OsType>,
 }
-impl VcenterBasedRemoteInfo {
+impl  VcenterBasedRemoteInfo  {
     /// <p>The time when the remote server based on vCenter was last configured.</p>
-    pub fn vcenter_configuration_time_stamp(&self) -> ::std::option::Option<&str> {
+    pub fn vcenter_configuration_time_stamp(&self) -> ::std::option::Option<& str> {
         self.vcenter_configuration_time_stamp.as_deref()
     }
     /// <p>The type of the operating system.</p>
-    pub fn os_type(&self) -> ::std::option::Option<&crate::types::OsType> {
+    pub fn os_type(&self) -> ::std::option::Option<& crate::types::OsType> {
         self.os_type.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl VcenterBasedRemoteInfoBuilder {
     }
     /// <p>The time when the remote server based on vCenter was last configured.</p>
     pub fn set_vcenter_configuration_time_stamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vcenter_configuration_time_stamp = input;
-        self
+        self.vcenter_configuration_time_stamp = input; self
     }
     /// <p>The time when the remote server based on vCenter was last configured.</p>
     pub fn get_vcenter_configuration_time_stamp(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl VcenterBasedRemoteInfoBuilder {
     }
     /// <p>The type of the operating system.</p>
     pub fn set_os_type(mut self, input: ::std::option::Option<crate::types::OsType>) -> Self {
-        self.os_type = input;
-        self
+        self.os_type = input; self
     }
     /// <p>The type of the operating system.</p>
     pub fn get_os_type(&self) -> &::std::option::Option<crate::types::OsType> {
@@ -65,8 +63,11 @@ impl VcenterBasedRemoteInfoBuilder {
     /// Consumes the builder and constructs a [`VcenterBasedRemoteInfo`](crate::types::VcenterBasedRemoteInfo).
     pub fn build(self) -> crate::types::VcenterBasedRemoteInfo {
         crate::types::VcenterBasedRemoteInfo {
-            vcenter_configuration_time_stamp: self.vcenter_configuration_time_stamp,
-            os_type: self.os_type,
+            vcenter_configuration_time_stamp: self.vcenter_configuration_time_stamp
+            ,
+            os_type: self.os_type
+            ,
         }
     }
 }
+

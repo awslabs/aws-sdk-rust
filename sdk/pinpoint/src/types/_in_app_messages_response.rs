@@ -3,16 +3,17 @@
 /// <p>Get in-app messages response object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InAppMessagesResponse {
+pub struct InAppMessagesResponse  {
     /// <p>List of targeted in-app message campaigns.</p>
-    pub in_app_message_campaigns: ::std::option::Option<::std::vec::Vec<crate::types::InAppMessageCampaign>>,
+    pub in_app_message_campaigns: ::std::option::Option<::std::vec::Vec::<crate::types::InAppMessageCampaign>>,
 }
-impl InAppMessagesResponse {
+impl  InAppMessagesResponse  {
     /// <p>List of targeted in-app message campaigns.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.in_app_message_campaigns.is_none()`.
-    pub fn in_app_message_campaigns(&self) -> &[crate::types::InAppMessageCampaign] {
-        self.in_app_message_campaigns.as_deref().unwrap_or_default()
+    pub fn in_app_message_campaigns(&self) -> & [crate::types::InAppMessageCampaign] {
+        self.in_app_message_campaigns.as_deref()
+        .unwrap_or_default()
     }
 }
 impl InAppMessagesResponse {
@@ -26,7 +27,7 @@ impl InAppMessagesResponse {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InAppMessagesResponseBuilder {
-    pub(crate) in_app_message_campaigns: ::std::option::Option<::std::vec::Vec<crate::types::InAppMessageCampaign>>,
+    pub(crate) in_app_message_campaigns: ::std::option::Option<::std::vec::Vec::<crate::types::InAppMessageCampaign>>,
 }
 impl InAppMessagesResponseBuilder {
     /// Appends an item to `in_app_message_campaigns`.
@@ -36,23 +37,24 @@ impl InAppMessagesResponseBuilder {
     /// <p>List of targeted in-app message campaigns.</p>
     pub fn in_app_message_campaigns(mut self, input: crate::types::InAppMessageCampaign) -> Self {
         let mut v = self.in_app_message_campaigns.unwrap_or_default();
-        v.push(input);
-        self.in_app_message_campaigns = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.in_app_message_campaigns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of targeted in-app message campaigns.</p>
-    pub fn set_in_app_message_campaigns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InAppMessageCampaign>>) -> Self {
-        self.in_app_message_campaigns = input;
-        self
+    pub fn set_in_app_message_campaigns(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InAppMessageCampaign>>) -> Self {
+        self.in_app_message_campaigns = input; self
     }
     /// <p>List of targeted in-app message campaigns.</p>
-    pub fn get_in_app_message_campaigns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InAppMessageCampaign>> {
+    pub fn get_in_app_message_campaigns(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InAppMessageCampaign>> {
         &self.in_app_message_campaigns
     }
     /// Consumes the builder and constructs a [`InAppMessagesResponse`](crate::types::InAppMessagesResponse).
     pub fn build(self) -> crate::types::InAppMessagesResponse {
         crate::types::InAppMessagesResponse {
-            in_app_message_campaigns: self.in_app_message_campaigns,
+            in_app_message_campaigns: self.in_app_message_campaigns
+            ,
         }
     }
 }
+

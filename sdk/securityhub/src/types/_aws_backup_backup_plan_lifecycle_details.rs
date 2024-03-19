@@ -3,13 +3,13 @@
 /// <p>Provides lifecycle details for the backup plan. A lifecycle defines when a backup is transitioned to cold storage and when it expires.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsBackupBackupPlanLifecycleDetails {
+pub struct AwsBackupBackupPlanLifecycleDetails  {
     /// <p>Specifies the number of days after creation that a recovery point is deleted. Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>.</p>
     pub delete_after_days: ::std::option::Option<i64>,
     /// <p>Specifies the number of days after creation that a recovery point is moved to cold storage.</p>
     pub move_to_cold_storage_after_days: ::std::option::Option<i64>,
 }
-impl AwsBackupBackupPlanLifecycleDetails {
+impl  AwsBackupBackupPlanLifecycleDetails  {
     /// <p>Specifies the number of days after creation that a recovery point is deleted. Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>.</p>
     pub fn delete_after_days(&self) -> ::std::option::Option<i64> {
         self.delete_after_days
@@ -41,8 +41,7 @@ impl AwsBackupBackupPlanLifecycleDetailsBuilder {
     }
     /// <p>Specifies the number of days after creation that a recovery point is deleted. Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>.</p>
     pub fn set_delete_after_days(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.delete_after_days = input;
-        self
+        self.delete_after_days = input; self
     }
     /// <p>Specifies the number of days after creation that a recovery point is deleted. Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>.</p>
     pub fn get_delete_after_days(&self) -> &::std::option::Option<i64> {
@@ -55,8 +54,7 @@ impl AwsBackupBackupPlanLifecycleDetailsBuilder {
     }
     /// <p>Specifies the number of days after creation that a recovery point is moved to cold storage.</p>
     pub fn set_move_to_cold_storage_after_days(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.move_to_cold_storage_after_days = input;
-        self
+        self.move_to_cold_storage_after_days = input; self
     }
     /// <p>Specifies the number of days after creation that a recovery point is moved to cold storage.</p>
     pub fn get_move_to_cold_storage_after_days(&self) -> &::std::option::Option<i64> {
@@ -65,8 +63,11 @@ impl AwsBackupBackupPlanLifecycleDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsBackupBackupPlanLifecycleDetails`](crate::types::AwsBackupBackupPlanLifecycleDetails).
     pub fn build(self) -> crate::types::AwsBackupBackupPlanLifecycleDetails {
         crate::types::AwsBackupBackupPlanLifecycleDetails {
-            delete_after_days: self.delete_after_days,
-            move_to_cold_storage_after_days: self.move_to_cold_storage_after_days,
+            delete_after_days: self.delete_after_days
+            ,
+            move_to_cold_storage_after_days: self.move_to_cold_storage_after_days
+            ,
         }
     }
 }
+

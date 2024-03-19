@@ -3,7 +3,7 @@
 /// <p>Information about the build environment of the build project.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProjectEnvironment {
+pub struct ProjectEnvironment  {
     /// <p>The type of build environment to use for related builds.</p>
     /// <ul>
     /// <li>
@@ -99,7 +99,7 @@ pub struct ProjectEnvironment {
     /// <p>A ProjectFleet object to use for this build project.</p>
     pub fleet: ::std::option::Option<crate::types::ProjectFleet>,
     /// <p>A set of environment variables to make available to builds for this build project.</p>
-    pub environment_variables: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>,
+    pub environment_variables: ::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentVariable>>,
     /// <p>Enables running the Docker daemon inside a Docker container. Set to true only if the build project is used to build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails. The default setting is <code>false</code>.</p>
     /// <p>You can initialize the Docker daemon during the install phase of your build by adding one of the following sets of commands to the install phase of your buildspec file:</p>
     /// <p>If the operating system's base image is Ubuntu Linux:</p>
@@ -123,7 +123,7 @@ pub struct ProjectEnvironment {
     /// <p>When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you use an CodeBuild curated image, you must use CODEBUILD credentials.</p>
     pub image_pull_credentials_type: ::std::option::Option<crate::types::ImagePullCredentialsType>,
 }
-impl ProjectEnvironment {
+impl  ProjectEnvironment  {
     /// <p>The type of build environment to use for related builds.</p>
     /// <ul>
     /// <li>
@@ -144,7 +144,7 @@ impl ProjectEnvironment {
     /// <p>If you're using compute fleets during project creation, <code>type</code> will be ignored.</p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment compute types</a> in the <i>CodeBuild user guide</i>.</p>
-    pub fn r#type(&self) -> &crate::types::EnvironmentType {
+    pub fn r#type(&self) -> & crate::types::EnvironmentType {
         &self.r#type
     }
     /// <p>The image tag or image digest that identifies the Docker image to use for this build project. Use the following formats:</p>
@@ -172,9 +172,8 @@ impl ProjectEnvironment {
     /// </registry></code>.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-available.html">Docker images provided by CodeBuild</a> in the <i>CodeBuild user guide</i>.</p>
-    pub fn image(&self) -> &str {
-        use std::ops::Deref;
-        self.image.deref()
+    pub fn image(&self) -> & str {
+        use std::ops::Deref; self.image.deref()
     }
     /// <p>Information about the compute resources the build project uses. Available values include:</p>
     /// <ul>
@@ -220,18 +219,19 @@ impl ProjectEnvironment {
     /// <p>If you're using compute fleets during project creation, <code>computeType</code> will be ignored.</p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build Environment Compute Types</a> in the <i>CodeBuild User Guide.</i></p>
-    pub fn compute_type(&self) -> &crate::types::ComputeType {
+    pub fn compute_type(&self) -> & crate::types::ComputeType {
         &self.compute_type
     }
     /// <p>A ProjectFleet object to use for this build project.</p>
-    pub fn fleet(&self) -> ::std::option::Option<&crate::types::ProjectFleet> {
+    pub fn fleet(&self) -> ::std::option::Option<& crate::types::ProjectFleet> {
         self.fleet.as_ref()
     }
     /// <p>A set of environment variables to make available to builds for this build project.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment_variables.is_none()`.
-    pub fn environment_variables(&self) -> &[crate::types::EnvironmentVariable] {
-        self.environment_variables.as_deref().unwrap_or_default()
+    pub fn environment_variables(&self) -> & [crate::types::EnvironmentVariable] {
+        self.environment_variables.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Enables running the Docker daemon inside a Docker container. Set to true only if the build project is used to build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails. The default setting is <code>false</code>.</p>
     /// <p>You can initialize the Docker daemon during the install phase of your build by adding one of the following sets of commands to the install phase of your buildspec file:</p>
@@ -245,11 +245,11 @@ impl ProjectEnvironment {
         self.privileged_mode
     }
     /// <p>The ARN of the Amazon S3 bucket, path prefix, and object key that contains the PEM-encoded certificate for the build project. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a> in the <i>CodeBuild User Guide</i>.</p>
-    pub fn certificate(&self) -> ::std::option::Option<&str> {
+    pub fn certificate(&self) -> ::std::option::Option<& str> {
         self.certificate.as_deref()
     }
     /// <p>The credentials for access to a private registry.</p>
-    pub fn registry_credential(&self) -> ::std::option::Option<&crate::types::RegistryCredential> {
+    pub fn registry_credential(&self) -> ::std::option::Option<& crate::types::RegistryCredential> {
         self.registry_credential.as_ref()
     }
     /// <p>The type of credentials CodeBuild uses to pull images in your build. There are two valid values:</p>
@@ -260,7 +260,7 @@ impl ProjectEnvironment {
     /// <p><code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role.</p></li>
     /// </ul>
     /// <p>When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you use an CodeBuild curated image, you must use CODEBUILD credentials.</p>
-    pub fn image_pull_credentials_type(&self) -> ::std::option::Option<&crate::types::ImagePullCredentialsType> {
+    pub fn image_pull_credentials_type(&self) -> ::std::option::Option<& crate::types::ImagePullCredentialsType> {
         self.image_pull_credentials_type.as_ref()
     }
 }
@@ -279,7 +279,7 @@ pub struct ProjectEnvironmentBuilder {
     pub(crate) image: ::std::option::Option<::std::string::String>,
     pub(crate) compute_type: ::std::option::Option<crate::types::ComputeType>,
     pub(crate) fleet: ::std::option::Option<crate::types::ProjectFleet>,
-    pub(crate) environment_variables: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>,
+    pub(crate) environment_variables: ::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentVariable>>,
     pub(crate) privileged_mode: ::std::option::Option<bool>,
     pub(crate) certificate: ::std::option::Option<::std::string::String>,
     pub(crate) registry_credential: ::std::option::Option<crate::types::RegistryCredential>,
@@ -332,8 +332,7 @@ impl ProjectEnvironmentBuilder {
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment compute types</a> in the <i>CodeBuild user guide</i>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::EnvironmentType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of build environment to use for related builds.</p>
     /// <ul>
@@ -414,8 +413,7 @@ impl ProjectEnvironmentBuilder {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-available.html">Docker images provided by CodeBuild</a> in the <i>CodeBuild user guide</i>.</p>
     pub fn set_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image = input;
-        self
+        self.image = input; self
     }
     /// <p>The image tag or image digest that identifies the Docker image to use for this build project. Use the following formats:</p>
     /// <ul>
@@ -539,8 +537,7 @@ impl ProjectEnvironmentBuilder {
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build Environment Compute Types</a> in the <i>CodeBuild User Guide.</i></p>
     pub fn set_compute_type(mut self, input: ::std::option::Option<crate::types::ComputeType>) -> Self {
-        self.compute_type = input;
-        self
+        self.compute_type = input; self
     }
     /// <p>Information about the compute resources the build project uses. Available values include:</p>
     /// <ul>
@@ -596,8 +593,7 @@ impl ProjectEnvironmentBuilder {
     }
     /// <p>A ProjectFleet object to use for this build project.</p>
     pub fn set_fleet(mut self, input: ::std::option::Option<crate::types::ProjectFleet>) -> Self {
-        self.fleet = input;
-        self
+        self.fleet = input; self
     }
     /// <p>A ProjectFleet object to use for this build project.</p>
     pub fn get_fleet(&self) -> &::std::option::Option<crate::types::ProjectFleet> {
@@ -610,17 +606,16 @@ impl ProjectEnvironmentBuilder {
     /// <p>A set of environment variables to make available to builds for this build project.</p>
     pub fn environment_variables(mut self, input: crate::types::EnvironmentVariable) -> Self {
         let mut v = self.environment_variables.unwrap_or_default();
-        v.push(input);
-        self.environment_variables = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.environment_variables = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A set of environment variables to make available to builds for this build project.</p>
-    pub fn set_environment_variables(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>) -> Self {
-        self.environment_variables = input;
-        self
+    pub fn set_environment_variables(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentVariable>>) -> Self {
+        self.environment_variables = input; self
     }
     /// <p>A set of environment variables to make available to builds for this build project.</p>
-    pub fn get_environment_variables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>> {
+    pub fn get_environment_variables(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentVariable>> {
         &self.environment_variables
     }
     /// <p>Enables running the Docker daemon inside a Docker container. Set to true only if the build project is used to build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails. The default setting is <code>false</code>.</p>
@@ -644,8 +639,7 @@ impl ProjectEnvironmentBuilder {
     /// <p><code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code></p>
     /// <p><code>- timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code></p>
     pub fn set_privileged_mode(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.privileged_mode = input;
-        self
+        self.privileged_mode = input; self
     }
     /// <p>Enables running the Docker daemon inside a Docker container. Set to true only if the build project is used to build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails. The default setting is <code>false</code>.</p>
     /// <p>You can initialize the Docker daemon during the install phase of your build by adding one of the following sets of commands to the install phase of your buildspec file:</p>
@@ -665,8 +659,7 @@ impl ProjectEnvironmentBuilder {
     }
     /// <p>The ARN of the Amazon S3 bucket, path prefix, and object key that contains the PEM-encoded certificate for the build project. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a> in the <i>CodeBuild User Guide</i>.</p>
     pub fn set_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate = input;
-        self
+        self.certificate = input; self
     }
     /// <p>The ARN of the Amazon S3 bucket, path prefix, and object key that contains the PEM-encoded certificate for the build project. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a> in the <i>CodeBuild User Guide</i>.</p>
     pub fn get_certificate(&self) -> &::std::option::Option<::std::string::String> {
@@ -679,8 +672,7 @@ impl ProjectEnvironmentBuilder {
     }
     /// <p>The credentials for access to a private registry.</p>
     pub fn set_registry_credential(mut self, input: ::std::option::Option<crate::types::RegistryCredential>) -> Self {
-        self.registry_credential = input;
-        self
+        self.registry_credential = input; self
     }
     /// <p>The credentials for access to a private registry.</p>
     pub fn get_registry_credential(&self) -> &::std::option::Option<crate::types::RegistryCredential> {
@@ -707,8 +699,7 @@ impl ProjectEnvironmentBuilder {
     /// </ul>
     /// <p>When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you use an CodeBuild curated image, you must use CODEBUILD credentials.</p>
     pub fn set_image_pull_credentials_type(mut self, input: ::std::option::Option<crate::types::ImagePullCredentialsType>) -> Self {
-        self.image_pull_credentials_type = input;
-        self
+        self.image_pull_credentials_type = input; self
     }
     /// <p>The type of credentials CodeBuild uses to pull images in your build. There are two valid values:</p>
     /// <ul>
@@ -727,31 +718,37 @@ impl ProjectEnvironmentBuilder {
     /// - [`image`](crate::types::builders::ProjectEnvironmentBuilder::image)
     /// - [`compute_type`](crate::types::builders::ProjectEnvironmentBuilder::compute_type)
     pub fn build(self) -> ::std::result::Result<crate::types::ProjectEnvironment, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ProjectEnvironment {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building ProjectEnvironment",
-                )
-            })?,
-            image: self.image.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "image",
-                    "image was not specified but it is required when building ProjectEnvironment",
-                )
-            })?,
-            compute_type: self.compute_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "compute_type",
-                    "compute_type was not specified but it is required when building ProjectEnvironment",
-                )
-            })?,
-            fleet: self.fleet,
-            environment_variables: self.environment_variables,
-            privileged_mode: self.privileged_mode,
-            certificate: self.certificate,
-            registry_credential: self.registry_credential,
-            image_pull_credentials_type: self.image_pull_credentials_type,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ProjectEnvironment {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building ProjectEnvironment")
+                    )?
+                ,
+                image: self.image
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("image", "image was not specified but it is required when building ProjectEnvironment")
+                    )?
+                ,
+                compute_type: self.compute_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("compute_type", "compute_type was not specified but it is required when building ProjectEnvironment")
+                    )?
+                ,
+                fleet: self.fleet
+                ,
+                environment_variables: self.environment_variables
+                ,
+                privileged_mode: self.privileged_mode
+                ,
+                certificate: self.certificate
+                ,
+                registry_credential: self.registry_credential
+                ,
+                image_pull_credentials_type: self.image_pull_credentials_type
+                ,
+            }
+        )
     }
 }
+

@@ -3,23 +3,24 @@
 /// <p>Filters the conformance pack by compliance types and Config rule names.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConformancePackComplianceFilters {
+pub struct ConformancePackComplianceFilters  {
     /// <p>Filters the results by Config rule names.</p>
-    pub config_rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub config_rule_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Filters the results by compliance.</p>
     /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
     pub compliance_type: ::std::option::Option<crate::types::ConformancePackComplianceType>,
 }
-impl ConformancePackComplianceFilters {
+impl  ConformancePackComplianceFilters  {
     /// <p>Filters the results by Config rule names.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.config_rule_names.is_none()`.
-    pub fn config_rule_names(&self) -> &[::std::string::String] {
-        self.config_rule_names.as_deref().unwrap_or_default()
+    pub fn config_rule_names(&self) -> & [::std::string::String] {
+        self.config_rule_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Filters the results by compliance.</p>
     /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
-    pub fn compliance_type(&self) -> ::std::option::Option<&crate::types::ConformancePackComplianceType> {
+    pub fn compliance_type(&self) -> ::std::option::Option<& crate::types::ConformancePackComplianceType> {
         self.compliance_type.as_ref()
     }
 }
@@ -34,7 +35,7 @@ impl ConformancePackComplianceFilters {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConformancePackComplianceFiltersBuilder {
-    pub(crate) config_rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) config_rule_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) compliance_type: ::std::option::Option<crate::types::ConformancePackComplianceType>,
 }
 impl ConformancePackComplianceFiltersBuilder {
@@ -45,17 +46,16 @@ impl ConformancePackComplianceFiltersBuilder {
     /// <p>Filters the results by Config rule names.</p>
     pub fn config_rule_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.config_rule_names.unwrap_or_default();
-        v.push(input.into());
-        self.config_rule_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.config_rule_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Filters the results by Config rule names.</p>
-    pub fn set_config_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.config_rule_names = input;
-        self
+    pub fn set_config_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.config_rule_names = input; self
     }
     /// <p>Filters the results by Config rule names.</p>
-    pub fn get_config_rule_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_config_rule_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.config_rule_names
     }
     /// <p>Filters the results by compliance.</p>
@@ -67,8 +67,7 @@ impl ConformancePackComplianceFiltersBuilder {
     /// <p>Filters the results by compliance.</p>
     /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
     pub fn set_compliance_type(mut self, input: ::std::option::Option<crate::types::ConformancePackComplianceType>) -> Self {
-        self.compliance_type = input;
-        self
+        self.compliance_type = input; self
     }
     /// <p>Filters the results by compliance.</p>
     /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
@@ -78,8 +77,11 @@ impl ConformancePackComplianceFiltersBuilder {
     /// Consumes the builder and constructs a [`ConformancePackComplianceFilters`](crate::types::ConformancePackComplianceFilters).
     pub fn build(self) -> crate::types::ConformancePackComplianceFilters {
         crate::types::ConformancePackComplianceFilters {
-            config_rule_names: self.config_rule_names,
-            compliance_type: self.compliance_type,
+            config_rule_names: self.config_rule_names
+            ,
+            compliance_type: self.compliance_type
+            ,
         }
     }
 }
+

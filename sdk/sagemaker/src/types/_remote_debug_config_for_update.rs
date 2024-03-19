@@ -3,11 +3,11 @@
 /// <p>Configuration for remote debugging for the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateTrainingJob.html">UpdateTrainingJob</a> API. To learn more about the remote debugging functionality of SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a training container through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoteDebugConfigForUpdate {
+pub struct RemoteDebugConfigForUpdate  {
     /// <p>If set to True, enables remote debugging.</p>
     pub enable_remote_debug: ::std::option::Option<bool>,
 }
-impl RemoteDebugConfigForUpdate {
+impl  RemoteDebugConfigForUpdate  {
     /// <p>If set to True, enables remote debugging.</p>
     pub fn enable_remote_debug(&self) -> ::std::option::Option<bool> {
         self.enable_remote_debug
@@ -34,8 +34,7 @@ impl RemoteDebugConfigForUpdateBuilder {
     }
     /// <p>If set to True, enables remote debugging.</p>
     pub fn set_enable_remote_debug(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_remote_debug = input;
-        self
+        self.enable_remote_debug = input; self
     }
     /// <p>If set to True, enables remote debugging.</p>
     pub fn get_enable_remote_debug(&self) -> &::std::option::Option<bool> {
@@ -44,7 +43,9 @@ impl RemoteDebugConfigForUpdateBuilder {
     /// Consumes the builder and constructs a [`RemoteDebugConfigForUpdate`](crate::types::RemoteDebugConfigForUpdate).
     pub fn build(self) -> crate::types::RemoteDebugConfigForUpdate {
         crate::types::RemoteDebugConfigForUpdate {
-            enable_remote_debug: self.enable_remote_debug,
+            enable_remote_debug: self.enable_remote_debug
+            ,
         }
     }
 }
+

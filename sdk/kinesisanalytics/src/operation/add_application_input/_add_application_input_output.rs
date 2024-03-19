@@ -3,14 +3,14 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddApplicationInputOutput {
+pub struct AddApplicationInputOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for AddApplicationInputOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AddApplicationInputOutput {
     /// Creates a new builder-style object to manufacture [`AddApplicationInputOutput`](crate::operation::add_application_input::AddApplicationInputOutput).
     pub fn builder() -> crate::operation::add_application_input::builders::AddApplicationInputOutputBuilder {
@@ -26,14 +26,14 @@ pub struct AddApplicationInputOutputBuilder {
 }
 impl AddApplicationInputOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AddApplicationInputOutput`](crate::operation::add_application_input::AddApplicationInputOutput).
     pub fn build(self) -> crate::operation::add_application_input::AddApplicationInputOutput {
         crate::operation::add_application_input::AddApplicationInputOutput {
@@ -41,3 +41,4 @@ impl AddApplicationInputOutputBuilder {
         }
     }
 }
+

@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListFolderMembers`](crate::operation::list_folder_members::builders::ListFolderMembersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_folder_members::builders::ListFolderMembersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`aws_account_id(impl Into<String>)`](crate::operation::list_folder_members::builders::ListFolderMembersFluentBuilder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::operation::list_folder_members::builders::ListFolderMembersFluentBuilder::set_aws_account_id):<br>required: **true**<br><p>The ID for the Amazon Web Services account that contains the folder.</p><br>
     ///   - [`folder_id(impl Into<String>)`](crate::operation::list_folder_members::builders::ListFolderMembersFluentBuilder::folder_id) / [`set_folder_id(Option<String>)`](crate::operation::list_folder_members::builders::ListFolderMembersFluentBuilder::set_folder_id):<br>required: **true**<br><p>The ID of the folder.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_folder_members::builders::ListFolderMembersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_folder_members::builders::ListFolderMembersFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results, or null if there are no more results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_folder_members::builders::ListFolderMembersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_folder_members::builders::ListFolderMembersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to be returned per request.</p><br>
-    /// - On success, responds with [`ListFolderMembersOutput`](crate::operation::list_folder_members::ListFolderMembersOutput) with field(s):
+                            /// - On success, responds with [`ListFolderMembersOutput`](crate::operation::list_folder_members::ListFolderMembersOutput) with field(s):
     ///   - [`status(i32)`](crate::operation::list_folder_members::ListFolderMembersOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`folder_member_list(Option<Vec::<MemberIdArnPair>>)`](crate::operation::list_folder_members::ListFolderMembersOutput::folder_member_list): <p>A structure that contains all of the folder members (dashboards, analyses, and datasets) in the folder.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_folder_members::ListFolderMembersOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::list_folder_members::ListFolderMembersOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
-    /// - On failure, responds with [`SdkError<ListFolderMembersError>`](crate::operation::list_folder_members::ListFolderMembersError)
+                            /// - On failure, responds with [`SdkError<ListFolderMembersError>`](crate::operation::list_folder_members::ListFolderMembersError)
     pub fn list_folder_members(&self) -> crate::operation::list_folder_members::builders::ListFolderMembersFluentBuilder {
-        crate::operation::list_folder_members::builders::ListFolderMembersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_folder_members::builders::ListFolderMembersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

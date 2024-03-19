@@ -3,23 +3,23 @@
 /// <p>The configuration for the email sent when an app user forgets their password.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct EmailSettings {
+pub struct EmailSettings  {
     /// <p>The contents of the email message.</p>
     pub email_message: ::std::option::Option<::std::string::String>,
     /// <p>The contents of the subject line of the email message.</p>
     pub email_subject: ::std::option::Option<::std::string::String>,
 }
-impl EmailSettings {
+impl  EmailSettings  {
     /// <p>The contents of the email message.</p>
-    pub fn email_message(&self) -> ::std::option::Option<&str> {
+    pub fn email_message(&self) -> ::std::option::Option<& str> {
         self.email_message.as_deref()
     }
     /// <p>The contents of the subject line of the email message.</p>
-    pub fn email_subject(&self) -> ::std::option::Option<&str> {
+    pub fn email_subject(&self) -> ::std::option::Option<& str> {
         self.email_subject.as_deref()
     }
 }
-impl ::std::fmt::Debug for EmailSettings {
+impl  ::std::fmt::Debug for EmailSettings  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EmailSettings");
         formatter.field("email_message", &"*** Sensitive Data Redacted ***");
@@ -49,8 +49,7 @@ impl EmailSettingsBuilder {
     }
     /// <p>The contents of the email message.</p>
     pub fn set_email_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email_message = input;
-        self
+        self.email_message = input; self
     }
     /// <p>The contents of the email message.</p>
     pub fn get_email_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl EmailSettingsBuilder {
     }
     /// <p>The contents of the subject line of the email message.</p>
     pub fn set_email_subject(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email_subject = input;
-        self
+        self.email_subject = input; self
     }
     /// <p>The contents of the subject line of the email message.</p>
     pub fn get_email_subject(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +71,10 @@ impl EmailSettingsBuilder {
     /// Consumes the builder and constructs a [`EmailSettings`](crate::types::EmailSettings).
     pub fn build(self) -> crate::types::EmailSettings {
         crate::types::EmailSettings {
-            email_message: self.email_message,
-            email_subject: self.email_subject,
+            email_message: self.email_message
+            ,
+            email_subject: self.email_subject
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for EmailSettingsBuilder {
         formatter.finish()
     }
 }
+

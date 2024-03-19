@@ -3,22 +3,23 @@
 /// <p>A collection of settings that configure the domain's Docker interaction.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DockerSettings {
+pub struct DockerSettings  {
     /// <p>Indicates whether the domain can access Docker.</p>
     pub enable_docker_access: ::std::option::Option<crate::types::FeatureStatus>,
     /// <p>The list of Amazon Web Services accounts that are trusted when the domain is created in VPC-only mode.</p>
-    pub vpc_only_trusted_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub vpc_only_trusted_accounts: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DockerSettings {
+impl  DockerSettings  {
     /// <p>Indicates whether the domain can access Docker.</p>
-    pub fn enable_docker_access(&self) -> ::std::option::Option<&crate::types::FeatureStatus> {
+    pub fn enable_docker_access(&self) -> ::std::option::Option<& crate::types::FeatureStatus> {
         self.enable_docker_access.as_ref()
     }
     /// <p>The list of Amazon Web Services accounts that are trusted when the domain is created in VPC-only mode.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_only_trusted_accounts.is_none()`.
-    pub fn vpc_only_trusted_accounts(&self) -> &[::std::string::String] {
-        self.vpc_only_trusted_accounts.as_deref().unwrap_or_default()
+    pub fn vpc_only_trusted_accounts(&self) -> & [::std::string::String] {
+        self.vpc_only_trusted_accounts.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DockerSettings {
@@ -33,7 +34,7 @@ impl DockerSettings {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DockerSettingsBuilder {
     pub(crate) enable_docker_access: ::std::option::Option<crate::types::FeatureStatus>,
-    pub(crate) vpc_only_trusted_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vpc_only_trusted_accounts: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DockerSettingsBuilder {
     /// <p>Indicates whether the domain can access Docker.</p>
@@ -43,8 +44,7 @@ impl DockerSettingsBuilder {
     }
     /// <p>Indicates whether the domain can access Docker.</p>
     pub fn set_enable_docker_access(mut self, input: ::std::option::Option<crate::types::FeatureStatus>) -> Self {
-        self.enable_docker_access = input;
-        self
+        self.enable_docker_access = input; self
     }
     /// <p>Indicates whether the domain can access Docker.</p>
     pub fn get_enable_docker_access(&self) -> &::std::option::Option<crate::types::FeatureStatus> {
@@ -57,24 +57,26 @@ impl DockerSettingsBuilder {
     /// <p>The list of Amazon Web Services accounts that are trusted when the domain is created in VPC-only mode.</p>
     pub fn vpc_only_trusted_accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_only_trusted_accounts.unwrap_or_default();
-        v.push(input.into());
-        self.vpc_only_trusted_accounts = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.vpc_only_trusted_accounts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of Amazon Web Services accounts that are trusted when the domain is created in VPC-only mode.</p>
-    pub fn set_vpc_only_trusted_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.vpc_only_trusted_accounts = input;
-        self
+    pub fn set_vpc_only_trusted_accounts(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.vpc_only_trusted_accounts = input; self
     }
     /// <p>The list of Amazon Web Services accounts that are trusted when the domain is created in VPC-only mode.</p>
-    pub fn get_vpc_only_trusted_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_only_trusted_accounts(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.vpc_only_trusted_accounts
     }
     /// Consumes the builder and constructs a [`DockerSettings`](crate::types::DockerSettings).
     pub fn build(self) -> crate::types::DockerSettings {
         crate::types::DockerSettings {
-            enable_docker_access: self.enable_docker_access,
-            vpc_only_trusted_accounts: self.vpc_only_trusted_accounts,
+            enable_docker_access: self.enable_docker_access
+            ,
+            vpc_only_trusted_accounts: self.vpc_only_trusted_accounts
+            ,
         }
     }
 }
+

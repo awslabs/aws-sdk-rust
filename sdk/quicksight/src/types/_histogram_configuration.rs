@@ -3,7 +3,7 @@
 /// <p>The configuration for a <code>HistogramVisual</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HistogramConfiguration {
+pub struct HistogramConfiguration  {
     /// <p>The field well configuration of a histogram.</p>
     pub field_wells: ::std::option::Option<crate::types::HistogramFieldWells>,
     /// <p>The options that determine the presentation of the x-axis.</p>
@@ -23,41 +23,41 @@ pub struct HistogramConfiguration {
     /// <p>The general visual interactions setup for a visual.</p>
     pub interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
-impl HistogramConfiguration {
+impl  HistogramConfiguration  {
     /// <p>The field well configuration of a histogram.</p>
-    pub fn field_wells(&self) -> ::std::option::Option<&crate::types::HistogramFieldWells> {
+    pub fn field_wells(&self) -> ::std::option::Option<& crate::types::HistogramFieldWells> {
         self.field_wells.as_ref()
     }
     /// <p>The options that determine the presentation of the x-axis.</p>
-    pub fn x_axis_display_options(&self) -> ::std::option::Option<&crate::types::AxisDisplayOptions> {
+    pub fn x_axis_display_options(&self) -> ::std::option::Option<& crate::types::AxisDisplayOptions> {
         self.x_axis_display_options.as_ref()
     }
     /// <p>The options that determine the presentation of the x-axis label.</p>
-    pub fn x_axis_label_options(&self) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
+    pub fn x_axis_label_options(&self) -> ::std::option::Option<& crate::types::ChartAxisLabelOptions> {
         self.x_axis_label_options.as_ref()
     }
     /// <p>The options that determine the presentation of the y-axis.</p>
-    pub fn y_axis_display_options(&self) -> ::std::option::Option<&crate::types::AxisDisplayOptions> {
+    pub fn y_axis_display_options(&self) -> ::std::option::Option<& crate::types::AxisDisplayOptions> {
         self.y_axis_display_options.as_ref()
     }
     /// <p>The options that determine the presentation of histogram bins.</p>
-    pub fn bin_options(&self) -> ::std::option::Option<&crate::types::HistogramBinOptions> {
+    pub fn bin_options(&self) -> ::std::option::Option<& crate::types::HistogramBinOptions> {
         self.bin_options.as_ref()
     }
     /// <p>The data label configuration of a histogram.</p>
-    pub fn data_labels(&self) -> ::std::option::Option<&crate::types::DataLabelOptions> {
+    pub fn data_labels(&self) -> ::std::option::Option<& crate::types::DataLabelOptions> {
         self.data_labels.as_ref()
     }
     /// <p>The tooltip configuration of a histogram.</p>
-    pub fn tooltip(&self) -> ::std::option::Option<&crate::types::TooltipOptions> {
+    pub fn tooltip(&self) -> ::std::option::Option<& crate::types::TooltipOptions> {
         self.tooltip.as_ref()
     }
     /// <p>The visual palette configuration of a histogram.</p>
-    pub fn visual_palette(&self) -> ::std::option::Option<&crate::types::VisualPalette> {
+    pub fn visual_palette(&self) -> ::std::option::Option<& crate::types::VisualPalette> {
         self.visual_palette.as_ref()
     }
     /// <p>The general visual interactions setup for a visual.</p>
-    pub fn interactions(&self) -> ::std::option::Option<&crate::types::VisualInteractionOptions> {
+    pub fn interactions(&self) -> ::std::option::Option<& crate::types::VisualInteractionOptions> {
         self.interactions.as_ref()
     }
 }
@@ -90,8 +90,7 @@ impl HistogramConfigurationBuilder {
     }
     /// <p>The field well configuration of a histogram.</p>
     pub fn set_field_wells(mut self, input: ::std::option::Option<crate::types::HistogramFieldWells>) -> Self {
-        self.field_wells = input;
-        self
+        self.field_wells = input; self
     }
     /// <p>The field well configuration of a histogram.</p>
     pub fn get_field_wells(&self) -> &::std::option::Option<crate::types::HistogramFieldWells> {
@@ -104,8 +103,7 @@ impl HistogramConfigurationBuilder {
     }
     /// <p>The options that determine the presentation of the x-axis.</p>
     pub fn set_x_axis_display_options(mut self, input: ::std::option::Option<crate::types::AxisDisplayOptions>) -> Self {
-        self.x_axis_display_options = input;
-        self
+        self.x_axis_display_options = input; self
     }
     /// <p>The options that determine the presentation of the x-axis.</p>
     pub fn get_x_axis_display_options(&self) -> &::std::option::Option<crate::types::AxisDisplayOptions> {
@@ -118,8 +116,7 @@ impl HistogramConfigurationBuilder {
     }
     /// <p>The options that determine the presentation of the x-axis label.</p>
     pub fn set_x_axis_label_options(mut self, input: ::std::option::Option<crate::types::ChartAxisLabelOptions>) -> Self {
-        self.x_axis_label_options = input;
-        self
+        self.x_axis_label_options = input; self
     }
     /// <p>The options that determine the presentation of the x-axis label.</p>
     pub fn get_x_axis_label_options(&self) -> &::std::option::Option<crate::types::ChartAxisLabelOptions> {
@@ -132,8 +129,7 @@ impl HistogramConfigurationBuilder {
     }
     /// <p>The options that determine the presentation of the y-axis.</p>
     pub fn set_y_axis_display_options(mut self, input: ::std::option::Option<crate::types::AxisDisplayOptions>) -> Self {
-        self.y_axis_display_options = input;
-        self
+        self.y_axis_display_options = input; self
     }
     /// <p>The options that determine the presentation of the y-axis.</p>
     pub fn get_y_axis_display_options(&self) -> &::std::option::Option<crate::types::AxisDisplayOptions> {
@@ -146,8 +142,7 @@ impl HistogramConfigurationBuilder {
     }
     /// <p>The options that determine the presentation of histogram bins.</p>
     pub fn set_bin_options(mut self, input: ::std::option::Option<crate::types::HistogramBinOptions>) -> Self {
-        self.bin_options = input;
-        self
+        self.bin_options = input; self
     }
     /// <p>The options that determine the presentation of histogram bins.</p>
     pub fn get_bin_options(&self) -> &::std::option::Option<crate::types::HistogramBinOptions> {
@@ -160,8 +155,7 @@ impl HistogramConfigurationBuilder {
     }
     /// <p>The data label configuration of a histogram.</p>
     pub fn set_data_labels(mut self, input: ::std::option::Option<crate::types::DataLabelOptions>) -> Self {
-        self.data_labels = input;
-        self
+        self.data_labels = input; self
     }
     /// <p>The data label configuration of a histogram.</p>
     pub fn get_data_labels(&self) -> &::std::option::Option<crate::types::DataLabelOptions> {
@@ -174,8 +168,7 @@ impl HistogramConfigurationBuilder {
     }
     /// <p>The tooltip configuration of a histogram.</p>
     pub fn set_tooltip(mut self, input: ::std::option::Option<crate::types::TooltipOptions>) -> Self {
-        self.tooltip = input;
-        self
+        self.tooltip = input; self
     }
     /// <p>The tooltip configuration of a histogram.</p>
     pub fn get_tooltip(&self) -> &::std::option::Option<crate::types::TooltipOptions> {
@@ -188,8 +181,7 @@ impl HistogramConfigurationBuilder {
     }
     /// <p>The visual palette configuration of a histogram.</p>
     pub fn set_visual_palette(mut self, input: ::std::option::Option<crate::types::VisualPalette>) -> Self {
-        self.visual_palette = input;
-        self
+        self.visual_palette = input; self
     }
     /// <p>The visual palette configuration of a histogram.</p>
     pub fn get_visual_palette(&self) -> &::std::option::Option<crate::types::VisualPalette> {
@@ -202,8 +194,7 @@ impl HistogramConfigurationBuilder {
     }
     /// <p>The general visual interactions setup for a visual.</p>
     pub fn set_interactions(mut self, input: ::std::option::Option<crate::types::VisualInteractionOptions>) -> Self {
-        self.interactions = input;
-        self
+        self.interactions = input; self
     }
     /// <p>The general visual interactions setup for a visual.</p>
     pub fn get_interactions(&self) -> &::std::option::Option<crate::types::VisualInteractionOptions> {
@@ -212,15 +203,25 @@ impl HistogramConfigurationBuilder {
     /// Consumes the builder and constructs a [`HistogramConfiguration`](crate::types::HistogramConfiguration).
     pub fn build(self) -> crate::types::HistogramConfiguration {
         crate::types::HistogramConfiguration {
-            field_wells: self.field_wells,
-            x_axis_display_options: self.x_axis_display_options,
-            x_axis_label_options: self.x_axis_label_options,
-            y_axis_display_options: self.y_axis_display_options,
-            bin_options: self.bin_options,
-            data_labels: self.data_labels,
-            tooltip: self.tooltip,
-            visual_palette: self.visual_palette,
-            interactions: self.interactions,
+            field_wells: self.field_wells
+            ,
+            x_axis_display_options: self.x_axis_display_options
+            ,
+            x_axis_label_options: self.x_axis_label_options
+            ,
+            y_axis_display_options: self.y_axis_display_options
+            ,
+            bin_options: self.bin_options
+            ,
+            data_labels: self.data_labels
+            ,
+            tooltip: self.tooltip
+            ,
+            visual_palette: self.visual_palette
+            ,
+            interactions: self.interactions
+            ,
         }
     }
 }
+

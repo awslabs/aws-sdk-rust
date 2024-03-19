@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSolutionVersions`](crate::operation::list_solution_versions::builders::ListSolutionVersionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_solution_versions::builders::ListSolutionVersionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`solution_arn(impl Into<String>)`](crate::operation::list_solution_versions::builders::ListSolutionVersionsFluentBuilder::solution_arn) / [`set_solution_arn(Option<String>)`](crate::operation::list_solution_versions::builders::ListSolutionVersionsFluentBuilder::set_solution_arn):<br>required: **false**<br><p>The Amazon Resource Name (ARN) of the solution.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_solution_versions::builders::ListSolutionVersionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_solution_versions::builders::ListSolutionVersionsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token returned from the previous call to <code>ListSolutionVersions</code> for getting the next set of solution versions (if they exist).</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_solution_versions::builders::ListSolutionVersionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_solution_versions::builders::ListSolutionVersionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of solution versions to return.</p><br>
-    /// - On success, responds with [`ListSolutionVersionsOutput`](crate::operation::list_solution_versions::ListSolutionVersionsOutput) with field(s):
+                            /// - On success, responds with [`ListSolutionVersionsOutput`](crate::operation::list_solution_versions::ListSolutionVersionsOutput) with field(s):
     ///   - [`solution_versions(Option<Vec::<SolutionVersionSummary>>)`](crate::operation::list_solution_versions::ListSolutionVersionsOutput::solution_versions): <p>A list of solution versions describing the version properties.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_solution_versions::ListSolutionVersionsOutput::next_token): <p>A token for getting the next set of solution versions (if they exist).</p>
-    /// - On failure, responds with [`SdkError<ListSolutionVersionsError>`](crate::operation::list_solution_versions::ListSolutionVersionsError)
+                            /// - On failure, responds with [`SdkError<ListSolutionVersionsError>`](crate::operation::list_solution_versions::ListSolutionVersionsError)
     pub fn list_solution_versions(&self) -> crate::operation::list_solution_versions::builders::ListSolutionVersionsFluentBuilder {
-        crate::operation::list_solution_versions::builders::ListSolutionVersionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_solution_versions::builders::ListSolutionVersionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

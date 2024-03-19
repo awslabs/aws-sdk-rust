@@ -3,11 +3,11 @@
 /// Output settings. There can be multiple outputs within a group.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Output {
+pub struct Output  {
     /// The names of the AudioDescriptions used as audio sources for this output.
-    pub audio_description_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub audio_description_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// The names of the CaptionDescriptions used as caption sources for this output.
-    pub caption_description_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub caption_description_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// The name used to identify an output.
     pub output_name: ::std::option::Option<::std::string::String>,
     /// Output type-specific settings.
@@ -15,29 +15,31 @@ pub struct Output {
     /// The name of the VideoDescription used as the source for this output.
     pub video_description_name: ::std::option::Option<::std::string::String>,
 }
-impl Output {
+impl  Output  {
     /// The names of the AudioDescriptions used as audio sources for this output.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.audio_description_names.is_none()`.
-    pub fn audio_description_names(&self) -> &[::std::string::String] {
-        self.audio_description_names.as_deref().unwrap_or_default()
+    pub fn audio_description_names(&self) -> & [::std::string::String] {
+        self.audio_description_names.as_deref()
+        .unwrap_or_default()
     }
     /// The names of the CaptionDescriptions used as caption sources for this output.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.caption_description_names.is_none()`.
-    pub fn caption_description_names(&self) -> &[::std::string::String] {
-        self.caption_description_names.as_deref().unwrap_or_default()
+    pub fn caption_description_names(&self) -> & [::std::string::String] {
+        self.caption_description_names.as_deref()
+        .unwrap_or_default()
     }
     /// The name used to identify an output.
-    pub fn output_name(&self) -> ::std::option::Option<&str> {
+    pub fn output_name(&self) -> ::std::option::Option<& str> {
         self.output_name.as_deref()
     }
     /// Output type-specific settings.
-    pub fn output_settings(&self) -> ::std::option::Option<&crate::types::OutputSettings> {
+    pub fn output_settings(&self) -> ::std::option::Option<& crate::types::OutputSettings> {
         self.output_settings.as_ref()
     }
     /// The name of the VideoDescription used as the source for this output.
-    pub fn video_description_name(&self) -> ::std::option::Option<&str> {
+    pub fn video_description_name(&self) -> ::std::option::Option<& str> {
         self.video_description_name.as_deref()
     }
 }
@@ -52,8 +54,8 @@ impl Output {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OutputBuilder {
-    pub(crate) audio_description_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) caption_description_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) audio_description_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) caption_description_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) output_name: ::std::option::Option<::std::string::String>,
     pub(crate) output_settings: ::std::option::Option<crate::types::OutputSettings>,
     pub(crate) video_description_name: ::std::option::Option<::std::string::String>,
@@ -66,17 +68,16 @@ impl OutputBuilder {
     /// The names of the AudioDescriptions used as audio sources for this output.
     pub fn audio_description_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.audio_description_names.unwrap_or_default();
-        v.push(input.into());
-        self.audio_description_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.audio_description_names = ::std::option::Option::Some(v);
+                        self
     }
     /// The names of the AudioDescriptions used as audio sources for this output.
-    pub fn set_audio_description_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.audio_description_names = input;
-        self
+    pub fn set_audio_description_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.audio_description_names = input; self
     }
     /// The names of the AudioDescriptions used as audio sources for this output.
-    pub fn get_audio_description_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_audio_description_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.audio_description_names
     }
     /// Appends an item to `caption_description_names`.
@@ -86,17 +87,16 @@ impl OutputBuilder {
     /// The names of the CaptionDescriptions used as caption sources for this output.
     pub fn caption_description_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.caption_description_names.unwrap_or_default();
-        v.push(input.into());
-        self.caption_description_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.caption_description_names = ::std::option::Option::Some(v);
+                        self
     }
     /// The names of the CaptionDescriptions used as caption sources for this output.
-    pub fn set_caption_description_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.caption_description_names = input;
-        self
+    pub fn set_caption_description_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.caption_description_names = input; self
     }
     /// The names of the CaptionDescriptions used as caption sources for this output.
-    pub fn get_caption_description_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_caption_description_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.caption_description_names
     }
     /// The name used to identify an output.
@@ -106,8 +106,7 @@ impl OutputBuilder {
     }
     /// The name used to identify an output.
     pub fn set_output_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output_name = input;
-        self
+        self.output_name = input; self
     }
     /// The name used to identify an output.
     pub fn get_output_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +120,7 @@ impl OutputBuilder {
     }
     /// Output type-specific settings.
     pub fn set_output_settings(mut self, input: ::std::option::Option<crate::types::OutputSettings>) -> Self {
-        self.output_settings = input;
-        self
+        self.output_settings = input; self
     }
     /// Output type-specific settings.
     pub fn get_output_settings(&self) -> &::std::option::Option<crate::types::OutputSettings> {
@@ -135,8 +133,7 @@ impl OutputBuilder {
     }
     /// The name of the VideoDescription used as the source for this output.
     pub fn set_video_description_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.video_description_name = input;
-        self
+        self.video_description_name = input; self
     }
     /// The name of the VideoDescription used as the source for this output.
     pub fn get_video_description_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,11 +142,17 @@ impl OutputBuilder {
     /// Consumes the builder and constructs a [`Output`](crate::types::Output).
     pub fn build(self) -> crate::types::Output {
         crate::types::Output {
-            audio_description_names: self.audio_description_names,
-            caption_description_names: self.caption_description_names,
-            output_name: self.output_name,
-            output_settings: self.output_settings,
-            video_description_name: self.video_description_name,
+            audio_description_names: self.audio_description_names
+            ,
+            caption_description_names: self.caption_description_names
+            ,
+            output_name: self.output_name
+            ,
+            output_settings: self.output_settings
+            ,
+            video_description_name: self.video_description_name
+            ,
         }
     }
 }
+

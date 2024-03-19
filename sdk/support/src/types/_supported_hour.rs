@@ -3,19 +3,19 @@
 /// <p>Time range object with <code>startTime</code> and <code>endTime</code> range in RFC 3339 format. <code>'HH:mm:ss.SSS'</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SupportedHour {
+pub struct SupportedHour  {
     /// <p>Start Time. RFC 3339 format <code>'HH:mm:ss.SSS'</code>.</p>
     pub start_time: ::std::option::Option<::std::string::String>,
     /// <p>End Time. RFC 3339 format <code>'HH:mm:ss.SSS'</code>.</p>
     pub end_time: ::std::option::Option<::std::string::String>,
 }
-impl SupportedHour {
+impl  SupportedHour  {
     /// <p>Start Time. RFC 3339 format <code>'HH:mm:ss.SSS'</code>.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&str> {
+    pub fn start_time(&self) -> ::std::option::Option<& str> {
         self.start_time.as_deref()
     }
     /// <p>End Time. RFC 3339 format <code>'HH:mm:ss.SSS'</code>.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&str> {
+    pub fn end_time(&self) -> ::std::option::Option<& str> {
         self.end_time.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl SupportedHourBuilder {
     }
     /// <p>Start Time. RFC 3339 format <code>'HH:mm:ss.SSS'</code>.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>Start Time. RFC 3339 format <code>'HH:mm:ss.SSS'</code>.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl SupportedHourBuilder {
     }
     /// <p>End Time. RFC 3339 format <code>'HH:mm:ss.SSS'</code>.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>End Time. RFC 3339 format <code>'HH:mm:ss.SSS'</code>.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl SupportedHourBuilder {
     /// Consumes the builder and constructs a [`SupportedHour`](crate::types::SupportedHour).
     pub fn build(self) -> crate::types::SupportedHour {
         crate::types::SupportedHour {
-            start_time: self.start_time,
-            end_time: self.end_time,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
         }
     }
 }
+

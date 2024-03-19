@@ -3,25 +3,24 @@
 /// <p>Returns a TXT record that you must publish to the DNS server of your domain to complete domain verification with Amazon SES.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VerifyDomainIdentityOutput {
+pub struct VerifyDomainIdentityOutput  {
     /// <p>A TXT record that you must place in the DNS settings of the domain to complete domain verification with Amazon SES.</p>
     /// <p>As Amazon SES searches for the TXT record, the domain's verification status is "Pending". When Amazon SES detects the record, the domain's verification status changes to "Success". If Amazon SES is unable to detect the record within 72 hours, the domain's verification status changes to "Failed." In that case, to verify the domain, you must restart the verification process from the beginning. The domain's verification status also changes to "Success" when it is DKIM verified.</p>
     pub verification_token: ::std::string::String,
     _request_id: Option<String>,
 }
-impl VerifyDomainIdentityOutput {
+impl  VerifyDomainIdentityOutput  {
     /// <p>A TXT record that you must place in the DNS settings of the domain to complete domain verification with Amazon SES.</p>
     /// <p>As Amazon SES searches for the TXT record, the domain's verification status is "Pending". When Amazon SES detects the record, the domain's verification status changes to "Success". If Amazon SES is unable to detect the record within 72 hours, the domain's verification status changes to "Failed." In that case, to verify the domain, you must restart the verification process from the beginning. The domain's verification status also changes to "Success" when it is DKIM verified.</p>
-    pub fn verification_token(&self) -> &str {
-        use std::ops::Deref;
-        self.verification_token.deref()
+    pub fn verification_token(&self) -> & str {
+        use std::ops::Deref; self.verification_token.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for VerifyDomainIdentityOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl VerifyDomainIdentityOutput {
     /// Creates a new builder-style object to manufacture [`VerifyDomainIdentityOutput`](crate::operation::verify_domain_identity::VerifyDomainIdentityOutput).
     pub fn builder() -> crate::operation::verify_domain_identity::builders::VerifyDomainIdentityOutputBuilder {
@@ -47,8 +46,7 @@ impl VerifyDomainIdentityOutputBuilder {
     /// <p>A TXT record that you must place in the DNS settings of the domain to complete domain verification with Amazon SES.</p>
     /// <p>As Amazon SES searches for the TXT record, the domain's verification status is "Pending". When Amazon SES detects the record, the domain's verification status changes to "Success". If Amazon SES is unable to detect the record within 72 hours, the domain's verification status changes to "Failed." In that case, to verify the domain, you must restart the verification process from the beginning. The domain's verification status also changes to "Success" when it is DKIM verified.</p>
     pub fn set_verification_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.verification_token = input;
-        self
+        self.verification_token = input; self
     }
     /// <p>A TXT record that you must place in the DNS settings of the domain to complete domain verification with Amazon SES.</p>
     /// <p>As Amazon SES searches for the TXT record, the domain's verification status is "Pending". When Amazon SES detects the record, the domain's verification status changes to "Success". If Amazon SES is unable to detect the record within 72 hours, the domain's verification status changes to "Failed." In that case, to verify the domain, you must restart the verification process from the beginning. The domain's verification status also changes to "Success" when it is DKIM verified.</p>
@@ -56,29 +54,28 @@ impl VerifyDomainIdentityOutputBuilder {
         &self.verification_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`VerifyDomainIdentityOutput`](crate::operation::verify_domain_identity::VerifyDomainIdentityOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`verification_token`](crate::operation::verify_domain_identity::builders::VerifyDomainIdentityOutputBuilder::verification_token)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::verify_domain_identity::VerifyDomainIdentityOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::verify_domain_identity::VerifyDomainIdentityOutput {
-            verification_token: self.verification_token.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "verification_token",
-                    "verification_token was not specified but it is required when building VerifyDomainIdentityOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::verify_domain_identity::VerifyDomainIdentityOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::verify_domain_identity::VerifyDomainIdentityOutput {
+                verification_token: self.verification_token
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("verification_token", "verification_token was not specified but it is required when building VerifyDomainIdentityOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

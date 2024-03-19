@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetViewInput {
+pub struct BatchGetViewInput  {
     /// <p>A list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource names (ARNs)</a> that identify the views you want details for.</p>
-    pub view_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub view_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl BatchGetViewInput {
+impl  BatchGetViewInput  {
     /// <p>A list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource names (ARNs)</a> that identify the views you want details for.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.view_arns.is_none()`.
-    pub fn view_arns(&self) -> &[::std::string::String] {
-        self.view_arns.as_deref().unwrap_or_default()
+    pub fn view_arns(&self) -> & [::std::string::String] {
+        self.view_arns.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchGetViewInput {
@@ -25,7 +26,7 @@ impl BatchGetViewInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetViewInputBuilder {
-    pub(crate) view_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) view_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl BatchGetViewInputBuilder {
     /// Appends an item to `view_arns`.
@@ -35,23 +36,26 @@ impl BatchGetViewInputBuilder {
     /// <p>A list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource names (ARNs)</a> that identify the views you want details for.</p>
     pub fn view_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.view_arns.unwrap_or_default();
-        v.push(input.into());
-        self.view_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.view_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource names (ARNs)</a> that identify the views you want details for.</p>
-    pub fn set_view_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.view_arns = input;
-        self
+    pub fn set_view_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.view_arns = input; self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource names (ARNs)</a> that identify the views you want details for.</p>
-    pub fn get_view_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_view_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.view_arns
     }
     /// Consumes the builder and constructs a [`BatchGetViewInput`](crate::operation::batch_get_view::BatchGetViewInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_get_view::BatchGetViewInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::batch_get_view::BatchGetViewInput { view_arns: self.view_arns })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_view::BatchGetViewInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_view::BatchGetViewInput {
+                view_arns: self.view_arns
+                ,
+            }
+        )
     }
 }
+

@@ -3,16 +3,17 @@
 /// <p>The filter used to retrieve specific <code>BillingGroupCostReportElements</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBillingGroupCostReportsFilter {
+pub struct ListBillingGroupCostReportsFilter  {
     /// <p>The list of Amazon Resource Names (ARNs) used to filter billing groups to retrieve reports.</p>
-    pub billing_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub billing_group_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ListBillingGroupCostReportsFilter {
+impl  ListBillingGroupCostReportsFilter  {
     /// <p>The list of Amazon Resource Names (ARNs) used to filter billing groups to retrieve reports.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.billing_group_arns.is_none()`.
-    pub fn billing_group_arns(&self) -> &[::std::string::String] {
-        self.billing_group_arns.as_deref().unwrap_or_default()
+    pub fn billing_group_arns(&self) -> & [::std::string::String] {
+        self.billing_group_arns.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ListBillingGroupCostReportsFilter {
@@ -26,7 +27,7 @@ impl ListBillingGroupCostReportsFilter {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBillingGroupCostReportsFilterBuilder {
-    pub(crate) billing_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) billing_group_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ListBillingGroupCostReportsFilterBuilder {
     /// Appends an item to `billing_group_arns`.
@@ -36,23 +37,24 @@ impl ListBillingGroupCostReportsFilterBuilder {
     /// <p>The list of Amazon Resource Names (ARNs) used to filter billing groups to retrieve reports.</p>
     pub fn billing_group_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.billing_group_arns.unwrap_or_default();
-        v.push(input.into());
-        self.billing_group_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.billing_group_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of Amazon Resource Names (ARNs) used to filter billing groups to retrieve reports.</p>
-    pub fn set_billing_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.billing_group_arns = input;
-        self
+    pub fn set_billing_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.billing_group_arns = input; self
     }
     /// <p>The list of Amazon Resource Names (ARNs) used to filter billing groups to retrieve reports.</p>
-    pub fn get_billing_group_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_billing_group_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.billing_group_arns
     }
     /// Consumes the builder and constructs a [`ListBillingGroupCostReportsFilter`](crate::types::ListBillingGroupCostReportsFilter).
     pub fn build(self) -> crate::types::ListBillingGroupCostReportsFilter {
         crate::types::ListBillingGroupCostReportsFilter {
-            billing_group_arns: self.billing_group_arns,
+            billing_group_arns: self.billing_group_arns
+            ,
         }
     }
 }
+

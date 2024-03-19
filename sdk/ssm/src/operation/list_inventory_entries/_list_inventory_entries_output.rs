@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListInventoryEntriesOutput {
+pub struct ListInventoryEntriesOutput  {
     /// <p>The type of inventory item returned by the request.</p>
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The managed node ID targeted by the request to query inventory information.</p>
@@ -12,44 +12,45 @@ pub struct ListInventoryEntriesOutput {
     /// <p>The time that inventory information was collected for the managed nodes.</p>
     pub capture_time: ::std::option::Option<::std::string::String>,
     /// <p>A list of inventory items on the managed nodes.</p>
-    pub entries: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
+    pub entries: ::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, ::std::string::String>>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListInventoryEntriesOutput {
+impl  ListInventoryEntriesOutput  {
     /// <p>The type of inventory item returned by the request.</p>
-    pub fn type_name(&self) -> ::std::option::Option<&str> {
+    pub fn type_name(&self) -> ::std::option::Option<& str> {
         self.type_name.as_deref()
     }
     /// <p>The managed node ID targeted by the request to query inventory information.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The inventory schema version used by the managed nodes.</p>
-    pub fn schema_version(&self) -> ::std::option::Option<&str> {
+    pub fn schema_version(&self) -> ::std::option::Option<& str> {
         self.schema_version.as_deref()
     }
     /// <p>The time that inventory information was collected for the managed nodes.</p>
-    pub fn capture_time(&self) -> ::std::option::Option<&str> {
+    pub fn capture_time(&self) -> ::std::option::Option<& str> {
         self.capture_time.as_deref()
     }
     /// <p>A list of inventory items on the managed nodes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
-    pub fn entries(&self) -> &[::std::collections::HashMap<::std::string::String, ::std::string::String>] {
-        self.entries.as_deref().unwrap_or_default()
+    pub fn entries(&self) -> & [::std::collections::HashMap::<::std::string::String, ::std::string::String>] {
+        self.entries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListInventoryEntriesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListInventoryEntriesOutput {
     /// Creates a new builder-style object to manufacture [`ListInventoryEntriesOutput`](crate::operation::list_inventory_entries::ListInventoryEntriesOutput).
     pub fn builder() -> crate::operation::list_inventory_entries::builders::ListInventoryEntriesOutputBuilder {
@@ -65,7 +66,7 @@ pub struct ListInventoryEntriesOutputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) schema_version: ::std::option::Option<::std::string::String>,
     pub(crate) capture_time: ::std::option::Option<::std::string::String>,
-    pub(crate) entries: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
+    pub(crate) entries: ::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, ::std::string::String>>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -77,8 +78,7 @@ impl ListInventoryEntriesOutputBuilder {
     }
     /// <p>The type of inventory item returned by the request.</p>
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_name = input;
-        self
+        self.type_name = input; self
     }
     /// <p>The type of inventory item returned by the request.</p>
     pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +91,7 @@ impl ListInventoryEntriesOutputBuilder {
     }
     /// <p>The managed node ID targeted by the request to query inventory information.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The managed node ID targeted by the request to query inventory information.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +104,7 @@ impl ListInventoryEntriesOutputBuilder {
     }
     /// <p>The inventory schema version used by the managed nodes.</p>
     pub fn set_schema_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_version = input;
-        self
+        self.schema_version = input; self
     }
     /// <p>The inventory schema version used by the managed nodes.</p>
     pub fn get_schema_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +117,7 @@ impl ListInventoryEntriesOutputBuilder {
     }
     /// <p>The time that inventory information was collected for the managed nodes.</p>
     pub fn set_capture_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.capture_time = input;
-        self
+        self.capture_time = input; self
     }
     /// <p>The time that inventory information was collected for the managed nodes.</p>
     pub fn get_capture_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,22 +128,18 @@ impl ListInventoryEntriesOutputBuilder {
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
     ///
     /// <p>A list of inventory items on the managed nodes.</p>
-    pub fn entries(mut self, input: ::std::collections::HashMap<::std::string::String, ::std::string::String>) -> Self {
+    pub fn entries(mut self, input: ::std::collections::HashMap::<::std::string::String, ::std::string::String>) -> Self {
         let mut v = self.entries.unwrap_or_default();
-        v.push(input);
-        self.entries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of inventory items on the managed nodes.</p>
-    pub fn set_entries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
-    ) -> Self {
-        self.entries = input;
-        self
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, ::std::string::String>>>) -> Self {
+        self.entries = input; self
     }
     /// <p>A list of inventory items on the managed nodes.</p>
-    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, ::std::string::String>>> {
         &self.entries
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -156,32 +149,38 @@ impl ListInventoryEntriesOutputBuilder {
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListInventoryEntriesOutput`](crate::operation::list_inventory_entries::ListInventoryEntriesOutput).
     pub fn build(self) -> crate::operation::list_inventory_entries::ListInventoryEntriesOutput {
         crate::operation::list_inventory_entries::ListInventoryEntriesOutput {
-            type_name: self.type_name,
-            instance_id: self.instance_id,
-            schema_version: self.schema_version,
-            capture_time: self.capture_time,
-            entries: self.entries,
-            next_token: self.next_token,
+            type_name: self.type_name
+            ,
+            instance_id: self.instance_id
+            ,
+            schema_version: self.schema_version
+            ,
+            capture_time: self.capture_time
+            ,
+            entries: self.entries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -4,7 +4,7 @@
 /// <p>For example, an error is returned if you request recommendations for an unsupported Auto Scaling group, or if you request recommendations for an instance of an unsupported instance family.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRecommendationError {
+pub struct GetRecommendationError  {
     /// <p>The ID of the error.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The error code.</p>
@@ -12,17 +12,17 @@ pub struct GetRecommendationError {
     /// <p>The message, or reason, for the error.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl GetRecommendationError {
+impl  GetRecommendationError  {
     /// <p>The ID of the error.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>The error code.</p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>The message, or reason, for the error.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl GetRecommendationErrorBuilder {
     }
     /// <p>The ID of the error.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The ID of the error.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl GetRecommendationErrorBuilder {
     }
     /// <p>The error code.</p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The error code.</p>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +75,7 @@ impl GetRecommendationErrorBuilder {
     }
     /// <p>The message, or reason, for the error.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The message, or reason, for the error.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,9 +84,13 @@ impl GetRecommendationErrorBuilder {
     /// Consumes the builder and constructs a [`GetRecommendationError`](crate::types::GetRecommendationError).
     pub fn build(self) -> crate::types::GetRecommendationError {
         crate::types::GetRecommendationError {
-            identifier: self.identifier,
-            code: self.code,
-            message: self.message,
+            identifier: self.identifier
+            ,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

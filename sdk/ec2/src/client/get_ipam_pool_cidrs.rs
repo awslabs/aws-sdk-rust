@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetIpamPoolCidrs`](crate::operation::get_ipam_pool_cidrs::builders::GetIpamPoolCidrsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_ipam_pool_cidrs::builders::GetIpamPoolCidrsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`dry_run(bool)`](crate::operation::get_ipam_pool_cidrs::builders::GetIpamPoolCidrsFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::get_ipam_pool_cidrs::builders::GetIpamPoolCidrsFluentBuilder::set_dry_run):<br>required: **false**<br><p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p><br>
     ///   - [`ipam_pool_id(impl Into<String>)`](crate::operation::get_ipam_pool_cidrs::builders::GetIpamPoolCidrsFluentBuilder::ipam_pool_id) / [`set_ipam_pool_id(Option<String>)`](crate::operation::get_ipam_pool_cidrs::builders::GetIpamPoolCidrsFluentBuilder::set_ipam_pool_id):<br>required: **true**<br><p>The ID of the IPAM pool you want the CIDR for.</p><br>
     ///   - [`filters(Filter)`](crate::operation::get_ipam_pool_cidrs::builders::GetIpamPoolCidrsFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::get_ipam_pool_cidrs::builders::GetIpamPoolCidrsFluentBuilder::set_filters):<br>required: **false**<br><p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_ipam_pool_cidrs::builders::GetIpamPoolCidrsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_ipam_pool_cidrs::builders::GetIpamPoolCidrsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the request.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_ipam_pool_cidrs::builders::GetIpamPoolCidrsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_ipam_pool_cidrs::builders::GetIpamPoolCidrsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
-    /// - On success, responds with [`GetIpamPoolCidrsOutput`](crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsOutput) with field(s):
+                            /// - On success, responds with [`GetIpamPoolCidrsOutput`](crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsOutput) with field(s):
     ///   - [`ipam_pool_cidrs(Option<Vec::<IpamPoolCidr>>)`](crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsOutput::ipam_pool_cidrs): <p>Information about the CIDRs provisioned to an IPAM pool.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<GetIpamPoolCidrsError>`](crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsError)
+                            /// - On failure, responds with [`SdkError<GetIpamPoolCidrsError>`](crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsError)
     pub fn get_ipam_pool_cidrs(&self) -> crate::operation::get_ipam_pool_cidrs::builders::GetIpamPoolCidrsFluentBuilder {
-        crate::operation::get_ipam_pool_cidrs::builders::GetIpamPoolCidrsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_ipam_pool_cidrs::builders::GetIpamPoolCidrsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

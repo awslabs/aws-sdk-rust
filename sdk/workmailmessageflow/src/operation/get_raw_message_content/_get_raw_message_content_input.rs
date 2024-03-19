@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRawMessageContentInput {
+pub struct GetRawMessageContentInput  {
     /// <p>The identifier of the email message to retrieve.</p>
     pub message_id: ::std::option::Option<::std::string::String>,
 }
-impl GetRawMessageContentInput {
+impl  GetRawMessageContentInput  {
     /// <p>The identifier of the email message to retrieve.</p>
-    pub fn message_id(&self) -> ::std::option::Option<&str> {
+    pub fn message_id(&self) -> ::std::option::Option<& str> {
         self.message_id.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl GetRawMessageContentInputBuilder {
     }
     /// <p>The identifier of the email message to retrieve.</p>
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message_id = input;
-        self
+        self.message_id = input; self
     }
     /// <p>The identifier of the email message to retrieve.</p>
     pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.message_id
     }
     /// Consumes the builder and constructs a [`GetRawMessageContentInput`](crate::operation::get_raw_message_content::GetRawMessageContentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_raw_message_content::GetRawMessageContentInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_raw_message_content::GetRawMessageContentInput { message_id: self.message_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_raw_message_content::GetRawMessageContentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_raw_message_content::GetRawMessageContentInput {
+                message_id: self.message_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBridgesOutput {
+pub struct ListBridgesOutput  {
     /// A list of bridge summaries.
-    pub bridges: ::std::option::Option<::std::vec::Vec<crate::types::ListedBridge>>,
+    pub bridges: ::std::option::Option<::std::vec::Vec::<crate::types::ListedBridge>>,
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListBridges request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListBridges request a second time and specify the NextToken value.
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListBridgesOutput {
+impl  ListBridgesOutput  {
     /// A list of bridge summaries.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bridges.is_none()`.
-    pub fn bridges(&self) -> &[crate::types::ListedBridge] {
-        self.bridges.as_deref().unwrap_or_default()
+    pub fn bridges(&self) -> & [crate::types::ListedBridge] {
+        self.bridges.as_deref()
+        .unwrap_or_default()
     }
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListBridges request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListBridges request a second time and specify the NextToken value.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListBridgesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListBridgesOutput {
     /// Creates a new builder-style object to manufacture [`ListBridgesOutput`](crate::operation::list_bridges::ListBridgesOutput).
     pub fn builder() -> crate::operation::list_bridges::builders::ListBridgesOutputBuilder {
@@ -37,7 +38,7 @@ impl ListBridgesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBridgesOutputBuilder {
-    pub(crate) bridges: ::std::option::Option<::std::vec::Vec<crate::types::ListedBridge>>,
+    pub(crate) bridges: ::std::option::Option<::std::vec::Vec::<crate::types::ListedBridge>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListBridgesOutputBuilder {
     /// A list of bridge summaries.
     pub fn bridges(mut self, input: crate::types::ListedBridge) -> Self {
         let mut v = self.bridges.unwrap_or_default();
-        v.push(input);
-        self.bridges = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.bridges = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of bridge summaries.
-    pub fn set_bridges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListedBridge>>) -> Self {
-        self.bridges = input;
-        self
+    pub fn set_bridges(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ListedBridge>>) -> Self {
+        self.bridges = input; self
     }
     /// A list of bridge summaries.
-    pub fn get_bridges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedBridge>> {
+    pub fn get_bridges(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ListedBridge>> {
         &self.bridges
     }
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListBridges request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListBridges request a second time and specify the NextToken value.
@@ -69,28 +69,30 @@ impl ListBridgesOutputBuilder {
     }
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListBridges request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListBridges request a second time and specify the NextToken value.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListBridges request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListBridges request a second time and specify the NextToken value.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListBridgesOutput`](crate::operation::list_bridges::ListBridgesOutput).
     pub fn build(self) -> crate::operation::list_bridges::ListBridgesOutput {
         crate::operation::list_bridges::ListBridgesOutput {
-            bridges: self.bridges,
-            next_token: self.next_token,
+            bridges: self.bridges
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

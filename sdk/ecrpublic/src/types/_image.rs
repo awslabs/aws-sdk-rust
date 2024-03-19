@@ -3,7 +3,7 @@
 /// <p>An object that represents an Amazon ECR image.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Image {
+pub struct Image  {
     /// <p>The Amazon Web Services account ID that's associated with the registry containing the image.</p>
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository that's associated with the image.</p>
@@ -15,25 +15,25 @@ pub struct Image {
     /// <p>The manifest media type of the image.</p>
     pub image_manifest_media_type: ::std::option::Option<::std::string::String>,
 }
-impl Image {
+impl  Image  {
     /// <p>The Amazon Web Services account ID that's associated with the registry containing the image.</p>
-    pub fn registry_id(&self) -> ::std::option::Option<&str> {
+    pub fn registry_id(&self) -> ::std::option::Option<& str> {
         self.registry_id.as_deref()
     }
     /// <p>The name of the repository that's associated with the image.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>An object that contains the image tag and image digest associated with an image.</p>
-    pub fn image_id(&self) -> ::std::option::Option<&crate::types::ImageIdentifier> {
+    pub fn image_id(&self) -> ::std::option::Option<& crate::types::ImageIdentifier> {
         self.image_id.as_ref()
     }
     /// <p>The image manifest that's associated with the image.</p>
-    pub fn image_manifest(&self) -> ::std::option::Option<&str> {
+    pub fn image_manifest(&self) -> ::std::option::Option<& str> {
         self.image_manifest.as_deref()
     }
     /// <p>The manifest media type of the image.</p>
-    pub fn image_manifest_media_type(&self) -> ::std::option::Option<&str> {
+    pub fn image_manifest_media_type(&self) -> ::std::option::Option<& str> {
         self.image_manifest_media_type.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl ImageBuilder {
     }
     /// <p>The Amazon Web Services account ID that's associated with the registry containing the image.</p>
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
     }
     /// <p>The Amazon Web Services account ID that's associated with the registry containing the image.</p>
     pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl ImageBuilder {
     }
     /// <p>The name of the repository that's associated with the image.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The name of the repository that's associated with the image.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl ImageBuilder {
     }
     /// <p>An object that contains the image tag and image digest associated with an image.</p>
     pub fn set_image_id(mut self, input: ::std::option::Option<crate::types::ImageIdentifier>) -> Self {
-        self.image_id = input;
-        self
+        self.image_id = input; self
     }
     /// <p>An object that contains the image tag and image digest associated with an image.</p>
     pub fn get_image_id(&self) -> &::std::option::Option<crate::types::ImageIdentifier> {
@@ -104,8 +101,7 @@ impl ImageBuilder {
     }
     /// <p>The image manifest that's associated with the image.</p>
     pub fn set_image_manifest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_manifest = input;
-        self
+        self.image_manifest = input; self
     }
     /// <p>The image manifest that's associated with the image.</p>
     pub fn get_image_manifest(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl ImageBuilder {
     }
     /// <p>The manifest media type of the image.</p>
     pub fn set_image_manifest_media_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_manifest_media_type = input;
-        self
+        self.image_manifest_media_type = input; self
     }
     /// <p>The manifest media type of the image.</p>
     pub fn get_image_manifest_media_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,11 +123,17 @@ impl ImageBuilder {
     /// Consumes the builder and constructs a [`Image`](crate::types::Image).
     pub fn build(self) -> crate::types::Image {
         crate::types::Image {
-            registry_id: self.registry_id,
-            repository_name: self.repository_name,
-            image_id: self.image_id,
-            image_manifest: self.image_manifest,
-            image_manifest_media_type: self.image_manifest_media_type,
+            registry_id: self.registry_id
+            ,
+            repository_name: self.repository_name
+            ,
+            image_id: self.image_id
+            ,
+            image_manifest: self.image_manifest
+            ,
+            image_manifest_media_type: self.image_manifest_media_type
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// The metadata of an elementary transport stream.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransportStream {
+pub struct TransportStream  {
     /// The number of channels in the audio stream.
     pub channels: ::std::option::Option<i32>,
     /// The codec used by the stream.
@@ -21,21 +21,21 @@ pub struct TransportStream {
     /// The Stream Type as it is reported in the Program Map Table.
     pub stream_type: ::std::option::Option<::std::string::String>,
 }
-impl TransportStream {
+impl  TransportStream  {
     /// The number of channels in the audio stream.
     pub fn channels(&self) -> ::std::option::Option<i32> {
         self.channels
     }
     /// The codec used by the stream.
-    pub fn codec(&self) -> ::std::option::Option<&str> {
+    pub fn codec(&self) -> ::std::option::Option<& str> {
         self.codec.as_deref()
     }
     /// The frame rate used by the video stream.
-    pub fn frame_rate(&self) -> ::std::option::Option<&str> {
+    pub fn frame_rate(&self) -> ::std::option::Option<& str> {
         self.frame_rate.as_deref()
     }
     /// The frame resolution used by the video stream.
-    pub fn frame_resolution(&self) -> ::std::option::Option<&crate::types::FrameResolution> {
+    pub fn frame_resolution(&self) -> ::std::option::Option<& crate::types::FrameResolution> {
         self.frame_resolution.as_ref()
     }
     /// The Packet ID (PID) as it is reported in the Program Map Table.
@@ -51,7 +51,7 @@ impl TransportStream {
         self.sample_size
     }
     /// The Stream Type as it is reported in the Program Map Table.
-    pub fn stream_type(&self) -> ::std::option::Option<&str> {
+    pub fn stream_type(&self) -> ::std::option::Option<& str> {
         self.stream_type.as_deref()
     }
 }
@@ -83,8 +83,7 @@ impl TransportStreamBuilder {
     }
     /// The number of channels in the audio stream.
     pub fn set_channels(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.channels = input;
-        self
+        self.channels = input; self
     }
     /// The number of channels in the audio stream.
     pub fn get_channels(&self) -> &::std::option::Option<i32> {
@@ -97,8 +96,7 @@ impl TransportStreamBuilder {
     }
     /// The codec used by the stream.
     pub fn set_codec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.codec = input;
-        self
+        self.codec = input; self
     }
     /// The codec used by the stream.
     pub fn get_codec(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +109,7 @@ impl TransportStreamBuilder {
     }
     /// The frame rate used by the video stream.
     pub fn set_frame_rate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.frame_rate = input;
-        self
+        self.frame_rate = input; self
     }
     /// The frame rate used by the video stream.
     pub fn get_frame_rate(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +122,7 @@ impl TransportStreamBuilder {
     }
     /// The frame resolution used by the video stream.
     pub fn set_frame_resolution(mut self, input: ::std::option::Option<crate::types::FrameResolution>) -> Self {
-        self.frame_resolution = input;
-        self
+        self.frame_resolution = input; self
     }
     /// The frame resolution used by the video stream.
     pub fn get_frame_resolution(&self) -> &::std::option::Option<crate::types::FrameResolution> {
@@ -140,8 +136,7 @@ impl TransportStreamBuilder {
     }
     /// The Packet ID (PID) as it is reported in the Program Map Table.
     pub fn set_pid(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.pid = input;
-        self
+        self.pid = input; self
     }
     /// The Packet ID (PID) as it is reported in the Program Map Table.
     pub fn get_pid(&self) -> &::std::option::Option<i32> {
@@ -154,8 +149,7 @@ impl TransportStreamBuilder {
     }
     /// The sample rate used by the audio stream.
     pub fn set_sample_rate(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.sample_rate = input;
-        self
+        self.sample_rate = input; self
     }
     /// The sample rate used by the audio stream.
     pub fn get_sample_rate(&self) -> &::std::option::Option<i32> {
@@ -168,8 +162,7 @@ impl TransportStreamBuilder {
     }
     /// The sample bit size used by the audio stream.
     pub fn set_sample_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.sample_size = input;
-        self
+        self.sample_size = input; self
     }
     /// The sample bit size used by the audio stream.
     pub fn get_sample_size(&self) -> &::std::option::Option<i32> {
@@ -183,8 +176,7 @@ impl TransportStreamBuilder {
     }
     /// The Stream Type as it is reported in the Program Map Table.
     pub fn set_stream_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_type = input;
-        self
+        self.stream_type = input; self
     }
     /// The Stream Type as it is reported in the Program Map Table.
     pub fn get_stream_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -193,14 +185,23 @@ impl TransportStreamBuilder {
     /// Consumes the builder and constructs a [`TransportStream`](crate::types::TransportStream).
     pub fn build(self) -> crate::types::TransportStream {
         crate::types::TransportStream {
-            channels: self.channels,
-            codec: self.codec,
-            frame_rate: self.frame_rate,
-            frame_resolution: self.frame_resolution,
-            pid: self.pid,
-            sample_rate: self.sample_rate,
-            sample_size: self.sample_size,
-            stream_type: self.stream_type,
+            channels: self.channels
+            ,
+            codec: self.codec
+            ,
+            frame_rate: self.frame_rate
+            ,
+            frame_resolution: self.frame_resolution
+            ,
+            pid: self.pid
+            ,
+            sample_rate: self.sample_rate
+            ,
+            sample_size: self.sample_size
+            ,
+            stream_type: self.stream_type
+            ,
         }
     }
 }
+

@@ -3,22 +3,22 @@
 /// <p>Response from CreatePlatformApplication action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePlatformApplicationOutput {
+pub struct CreatePlatformApplicationOutput  {
     /// <p><code>PlatformApplicationArn</code> is returned.</p>
     pub platform_application_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreatePlatformApplicationOutput {
+impl  CreatePlatformApplicationOutput  {
     /// <p><code>PlatformApplicationArn</code> is returned.</p>
-    pub fn platform_application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn platform_application_arn(&self) -> ::std::option::Option<& str> {
         self.platform_application_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreatePlatformApplicationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreatePlatformApplicationOutput {
     /// Creates a new builder-style object to manufacture [`CreatePlatformApplicationOutput`](crate::operation::create_platform_application::CreatePlatformApplicationOutput).
     pub fn builder() -> crate::operation::create_platform_application::builders::CreatePlatformApplicationOutputBuilder {
@@ -41,27 +41,28 @@ impl CreatePlatformApplicationOutputBuilder {
     }
     /// <p><code>PlatformApplicationArn</code> is returned.</p>
     pub fn set_platform_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform_application_arn = input;
-        self
+        self.platform_application_arn = input; self
     }
     /// <p><code>PlatformApplicationArn</code> is returned.</p>
     pub fn get_platform_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.platform_application_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreatePlatformApplicationOutput`](crate::operation::create_platform_application::CreatePlatformApplicationOutput).
     pub fn build(self) -> crate::operation::create_platform_application::CreatePlatformApplicationOutput {
         crate::operation::create_platform_application::CreatePlatformApplicationOutput {
-            platform_application_arn: self.platform_application_arn,
+            platform_application_arn: self.platform_application_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

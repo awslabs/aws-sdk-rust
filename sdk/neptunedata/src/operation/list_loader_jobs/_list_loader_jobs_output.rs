@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLoaderJobsOutput {
+pub struct ListLoaderJobsOutput  {
     /// <p>Returns the status of the job list request.</p>
     pub status: ::std::string::String,
     /// <p>The requested list of job IDs.</p>
     pub payload: ::std::option::Option<crate::types::LoaderIdResult>,
     _request_id: Option<String>,
 }
-impl ListLoaderJobsOutput {
+impl  ListLoaderJobsOutput  {
     /// <p>Returns the status of the job list request.</p>
-    pub fn status(&self) -> &str {
-        use std::ops::Deref;
-        self.status.deref()
+    pub fn status(&self) -> & str {
+        use std::ops::Deref; self.status.deref()
     }
     /// <p>The requested list of job IDs.</p>
-    pub fn payload(&self) -> ::std::option::Option<&crate::types::LoaderIdResult> {
+    pub fn payload(&self) -> ::std::option::Option<& crate::types::LoaderIdResult> {
         self.payload.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListLoaderJobsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListLoaderJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListLoaderJobsOutput`](crate::operation::list_loader_jobs::ListLoaderJobsOutput).
     pub fn builder() -> crate::operation::list_loader_jobs::builders::ListLoaderJobsOutputBuilder {
@@ -49,8 +48,7 @@ impl ListLoaderJobsOutputBuilder {
     }
     /// <p>Returns the status of the job list request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Returns the status of the job list request.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,37 +62,37 @@ impl ListLoaderJobsOutputBuilder {
     }
     /// <p>The requested list of job IDs.</p>
     pub fn set_payload(mut self, input: ::std::option::Option<crate::types::LoaderIdResult>) -> Self {
-        self.payload = input;
-        self
+        self.payload = input; self
     }
     /// <p>The requested list of job IDs.</p>
     pub fn get_payload(&self) -> &::std::option::Option<crate::types::LoaderIdResult> {
         &self.payload
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListLoaderJobsOutput`](crate::operation::list_loader_jobs::ListLoaderJobsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::operation::list_loader_jobs::builders::ListLoaderJobsOutputBuilder::status)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_loader_jobs::ListLoaderJobsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_loader_jobs::ListLoaderJobsOutput {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building ListLoaderJobsOutput",
-                )
-            })?,
-            payload: self.payload,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_loader_jobs::ListLoaderJobsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_loader_jobs::ListLoaderJobsOutput {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building ListLoaderJobsOutput")
+                    )?
+                ,
+                payload: self.payload
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

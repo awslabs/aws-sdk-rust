@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteNetworkProfileInput {
+pub struct DeleteNetworkProfileInput  {
     /// <p>The ARN of the network profile associated with a device.</p>
     pub network_profile_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteNetworkProfileInput {
+impl  DeleteNetworkProfileInput  {
     /// <p>The ARN of the network profile associated with a device.</p>
-    pub fn network_profile_arn(&self) -> ::std::option::Option<&str> {
+    pub fn network_profile_arn(&self) -> ::std::option::Option<& str> {
         self.network_profile_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteNetworkProfileInputBuilder {
     }
     /// <p>The ARN of the network profile associated with a device.</p>
     pub fn set_network_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_profile_arn = input;
-        self
+        self.network_profile_arn = input; self
     }
     /// <p>The ARN of the network profile associated with a device.</p>
     pub fn get_network_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_profile_arn
     }
     /// Consumes the builder and constructs a [`DeleteNetworkProfileInput`](crate::operation::delete_network_profile::DeleteNetworkProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_network_profile::DeleteNetworkProfileInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_network_profile::DeleteNetworkProfileInput {
-            network_profile_arn: self.network_profile_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_network_profile::DeleteNetworkProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_network_profile::DeleteNetworkProfileInput {
+                network_profile_arn: self.network_profile_arn
+                ,
+            }
+        )
     }
 }
+

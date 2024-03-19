@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetIndexOutput {
+pub struct GetIndexOutput  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of the index in this Region. For information about the aggregator index and how it differs from a local index, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html">Turning on cross-Region search by creating an aggregator index</a>.</p>
@@ -11,59 +11,61 @@ pub struct GetIndexOutput {
     pub state: ::std::option::Option<crate::types::IndexState>,
     /// <p>This response value is present only if this index is <code>Type=AGGREGATOR</code>.</p>
     /// <p>A list of the Amazon Web Services Regions that replicate their content to the index in this Region.</p>
-    pub replicating_from: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub replicating_from: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>This response value is present only if this index is <code>Type=LOCAL</code>.</p>
     /// <p>The Amazon Web Services Region that contains the aggregator index, if one exists. If an aggregator index does exist then the Region in which you called this operation replicates its index information to the Region specified in this response value.</p>
-    pub replicating_to: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub replicating_to: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The date and time when the index was originally created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the index was last updated.</p>
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Tag key and value pairs that are attached to the index.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl GetIndexOutput {
+impl  GetIndexOutput  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The type of the index in this Region. For information about the aggregator index and how it differs from a local index, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html">Turning on cross-Region search by creating an aggregator index</a>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::IndexType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::IndexType> {
         self.r#type.as_ref()
     }
     /// <p>The current state of the index in this Amazon Web Services Region.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::IndexState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::IndexState> {
         self.state.as_ref()
     }
     /// <p>This response value is present only if this index is <code>Type=AGGREGATOR</code>.</p>
     /// <p>A list of the Amazon Web Services Regions that replicate their content to the index in this Region.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replicating_from.is_none()`.
-    pub fn replicating_from(&self) -> &[::std::string::String] {
-        self.replicating_from.as_deref().unwrap_or_default()
+    pub fn replicating_from(&self) -> & [::std::string::String] {
+        self.replicating_from.as_deref()
+        .unwrap_or_default()
     }
     /// <p>This response value is present only if this index is <code>Type=LOCAL</code>.</p>
     /// <p>The Amazon Web Services Region that contains the aggregator index, if one exists. If an aggregator index does exist then the Region in which you called this operation replicates its index information to the Region specified in this response value.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replicating_to.is_none()`.
-    pub fn replicating_to(&self) -> &[::std::string::String] {
-        self.replicating_to.as_deref().unwrap_or_default()
+    pub fn replicating_to(&self) -> & [::std::string::String] {
+        self.replicating_to.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The date and time when the index was originally created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The date and time when the index was last updated.</p>
-    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>Tag key and value pairs that are attached to the index.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl ::std::fmt::Debug for GetIndexOutput {
+impl  ::std::fmt::Debug for GetIndexOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetIndexOutput");
         formatter.field("arn", &self.arn);
@@ -79,10 +81,10 @@ impl ::std::fmt::Debug for GetIndexOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetIndexOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetIndexOutput {
     /// Creates a new builder-style object to manufacture [`GetIndexOutput`](crate::operation::get_index::GetIndexOutput).
     pub fn builder() -> crate::operation::get_index::builders::GetIndexOutputBuilder {
@@ -97,11 +99,11 @@ pub struct GetIndexOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::IndexType>,
     pub(crate) state: ::std::option::Option<crate::types::IndexState>,
-    pub(crate) replicating_from: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) replicating_to: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) replicating_from: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) replicating_to: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetIndexOutputBuilder {
@@ -112,8 +114,7 @@ impl GetIndexOutputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +127,7 @@ impl GetIndexOutputBuilder {
     }
     /// <p>The type of the index in this Region. For information about the aggregator index and how it differs from a local index, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html">Turning on cross-Region search by creating an aggregator index</a>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::IndexType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the index in this Region. For information about the aggregator index and how it differs from a local index, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html">Turning on cross-Region search by creating an aggregator index</a>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::IndexType> {
@@ -140,8 +140,7 @@ impl GetIndexOutputBuilder {
     }
     /// <p>The current state of the index in this Amazon Web Services Region.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::IndexState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The current state of the index in this Amazon Web Services Region.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::IndexState> {
@@ -155,19 +154,18 @@ impl GetIndexOutputBuilder {
     /// <p>A list of the Amazon Web Services Regions that replicate their content to the index in this Region.</p>
     pub fn replicating_from(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.replicating_from.unwrap_or_default();
-        v.push(input.into());
-        self.replicating_from = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.replicating_from = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>This response value is present only if this index is <code>Type=AGGREGATOR</code>.</p>
     /// <p>A list of the Amazon Web Services Regions that replicate their content to the index in this Region.</p>
-    pub fn set_replicating_from(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.replicating_from = input;
-        self
+    pub fn set_replicating_from(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.replicating_from = input; self
     }
     /// <p>This response value is present only if this index is <code>Type=AGGREGATOR</code>.</p>
     /// <p>A list of the Amazon Web Services Regions that replicate their content to the index in this Region.</p>
-    pub fn get_replicating_from(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_replicating_from(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.replicating_from
     }
     /// Appends an item to `replicating_to`.
@@ -178,19 +176,18 @@ impl GetIndexOutputBuilder {
     /// <p>The Amazon Web Services Region that contains the aggregator index, if one exists. If an aggregator index does exist then the Region in which you called this operation replicates its index information to the Region specified in this response value.</p>
     pub fn replicating_to(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.replicating_to.unwrap_or_default();
-        v.push(input.into());
-        self.replicating_to = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.replicating_to = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>This response value is present only if this index is <code>Type=LOCAL</code>.</p>
     /// <p>The Amazon Web Services Region that contains the aggregator index, if one exists. If an aggregator index does exist then the Region in which you called this operation replicates its index information to the Region specified in this response value.</p>
-    pub fn set_replicating_to(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.replicating_to = input;
-        self
+    pub fn set_replicating_to(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.replicating_to = input; self
     }
     /// <p>This response value is present only if this index is <code>Type=LOCAL</code>.</p>
     /// <p>The Amazon Web Services Region that contains the aggregator index, if one exists. If an aggregator index does exist then the Region in which you called this operation replicates its index information to the Region specified in this response value.</p>
-    pub fn get_replicating_to(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_replicating_to(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.replicating_to
     }
     /// <p>The date and time when the index was originally created.</p>
@@ -200,8 +197,7 @@ impl GetIndexOutputBuilder {
     }
     /// <p>The date and time when the index was originally created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time when the index was originally created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -214,8 +210,7 @@ impl GetIndexOutputBuilder {
     }
     /// <p>The date and time when the index was last updated.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input;
-        self
+        self.last_updated_at = input; self
     }
     /// <p>The date and time when the index was last updated.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -228,39 +223,46 @@ impl GetIndexOutputBuilder {
     /// <p>Tag key and value pairs that are attached to the index.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Tag key and value pairs that are attached to the index.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tag key and value pairs that are attached to the index.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetIndexOutput`](crate::operation::get_index::GetIndexOutput).
     pub fn build(self) -> crate::operation::get_index::GetIndexOutput {
         crate::operation::get_index::GetIndexOutput {
-            arn: self.arn,
-            r#type: self.r#type,
-            state: self.state,
-            replicating_from: self.replicating_from,
-            replicating_to: self.replicating_to,
-            created_at: self.created_at,
-            last_updated_at: self.last_updated_at,
-            tags: self.tags,
+            arn: self.arn
+            ,
+            r#type: self.r#type
+            ,
+            state: self.state
+            ,
+            replicating_from: self.replicating_from
+            ,
+            replicating_to: self.replicating_to
+            ,
+            created_at: self.created_at
+            ,
+            last_updated_at: self.last_updated_at
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
@@ -280,3 +282,4 @@ impl ::std::fmt::Debug for GetIndexOutputBuilder {
         formatter.finish()
     }
 }
+

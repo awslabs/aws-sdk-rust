@@ -3,19 +3,19 @@
 /// <p>Request of DeleteBudget</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteBudgetInput {
+pub struct DeleteBudgetInput  {
     /// <p>The <code>accountId</code> that is associated with the budget that you want to delete.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the budget that you want to delete.</p>
     pub budget_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteBudgetInput {
+impl  DeleteBudgetInput  {
     /// <p>The <code>accountId</code> that is associated with the budget that you want to delete.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the budget that you want to delete.</p>
-    pub fn budget_name(&self) -> ::std::option::Option<&str> {
+    pub fn budget_name(&self) -> ::std::option::Option<& str> {
         self.budget_name.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DeleteBudgetInputBuilder {
     }
     /// <p>The <code>accountId</code> that is associated with the budget that you want to delete.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The <code>accountId</code> that is associated with the budget that you want to delete.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,20 +56,22 @@ impl DeleteBudgetInputBuilder {
     }
     /// <p>The name of the budget that you want to delete.</p>
     pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.budget_name = input;
-        self
+        self.budget_name = input; self
     }
     /// <p>The name of the budget that you want to delete.</p>
     pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.budget_name
     }
     /// Consumes the builder and constructs a [`DeleteBudgetInput`](crate::operation::delete_budget::DeleteBudgetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_budget::DeleteBudgetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_budget::DeleteBudgetInput {
-            account_id: self.account_id,
-            budget_name: self.budget_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_budget::DeleteBudgetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_budget::DeleteBudgetInput {
+                account_id: self.account_id
+                ,
+                budget_name: self.budget_name
+                ,
+            }
+        )
     }
 }
+

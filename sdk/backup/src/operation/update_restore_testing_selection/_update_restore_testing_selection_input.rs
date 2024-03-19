@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRestoreTestingSelectionInput {
+pub struct UpdateRestoreTestingSelectionInput  {
     /// <p>The restore testing plan name is required to update the indicated testing plan.</p>
     pub restore_testing_plan_name: ::std::option::Option<::std::string::String>,
     /// <p>To update your restore testing selection, you can use either protected resource ARNs or conditions, but not both. That is, if your selection has <code>ProtectedResourceArns</code>, requesting an update with the parameter <code>ProtectedResourceConditions</code> will be unsuccessful.</p>
@@ -10,17 +10,17 @@ pub struct UpdateRestoreTestingSelectionInput {
     /// <p>This is the required restore testing selection name of the restore testing selection you wish to update.</p>
     pub restore_testing_selection_name: ::std::option::Option<::std::string::String>,
 }
-impl UpdateRestoreTestingSelectionInput {
+impl  UpdateRestoreTestingSelectionInput  {
     /// <p>The restore testing plan name is required to update the indicated testing plan.</p>
-    pub fn restore_testing_plan_name(&self) -> ::std::option::Option<&str> {
+    pub fn restore_testing_plan_name(&self) -> ::std::option::Option<& str> {
         self.restore_testing_plan_name.as_deref()
     }
     /// <p>To update your restore testing selection, you can use either protected resource ARNs or conditions, but not both. That is, if your selection has <code>ProtectedResourceArns</code>, requesting an update with the parameter <code>ProtectedResourceConditions</code> will be unsuccessful.</p>
-    pub fn restore_testing_selection(&self) -> ::std::option::Option<&crate::types::RestoreTestingSelectionForUpdate> {
+    pub fn restore_testing_selection(&self) -> ::std::option::Option<& crate::types::RestoreTestingSelectionForUpdate> {
         self.restore_testing_selection.as_ref()
     }
     /// <p>This is the required restore testing selection name of the restore testing selection you wish to update.</p>
-    pub fn restore_testing_selection_name(&self) -> ::std::option::Option<&str> {
+    pub fn restore_testing_selection_name(&self) -> ::std::option::Option<& str> {
         self.restore_testing_selection_name.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateRestoreTestingSelectionInputBuilder {
     }
     /// <p>The restore testing plan name is required to update the indicated testing plan.</p>
     pub fn set_restore_testing_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.restore_testing_plan_name = input;
-        self
+        self.restore_testing_plan_name = input; self
     }
     /// <p>The restore testing plan name is required to update the indicated testing plan.</p>
     pub fn get_restore_testing_plan_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateRestoreTestingSelectionInputBuilder {
     }
     /// <p>To update your restore testing selection, you can use either protected resource ARNs or conditions, but not both. That is, if your selection has <code>ProtectedResourceArns</code>, requesting an update with the parameter <code>ProtectedResourceConditions</code> will be unsuccessful.</p>
     pub fn set_restore_testing_selection(mut self, input: ::std::option::Option<crate::types::RestoreTestingSelectionForUpdate>) -> Self {
-        self.restore_testing_selection = input;
-        self
+        self.restore_testing_selection = input; self
     }
     /// <p>To update your restore testing selection, you can use either protected resource ARNs or conditions, but not both. That is, if your selection has <code>ProtectedResourceArns</code>, requesting an update with the parameter <code>ProtectedResourceConditions</code> will be unsuccessful.</p>
     pub fn get_restore_testing_selection(&self) -> &::std::option::Option<crate::types::RestoreTestingSelectionForUpdate> {
@@ -78,24 +76,24 @@ impl UpdateRestoreTestingSelectionInputBuilder {
     }
     /// <p>This is the required restore testing selection name of the restore testing selection you wish to update.</p>
     pub fn set_restore_testing_selection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.restore_testing_selection_name = input;
-        self
+        self.restore_testing_selection_name = input; self
     }
     /// <p>This is the required restore testing selection name of the restore testing selection you wish to update.</p>
     pub fn get_restore_testing_selection_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.restore_testing_selection_name
     }
     /// Consumes the builder and constructs a [`UpdateRestoreTestingSelectionInput`](crate::operation::update_restore_testing_selection::UpdateRestoreTestingSelectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_restore_testing_selection::UpdateRestoreTestingSelectionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_restore_testing_selection::UpdateRestoreTestingSelectionInput {
-            restore_testing_plan_name: self.restore_testing_plan_name,
-            restore_testing_selection: self.restore_testing_selection,
-            restore_testing_selection_name: self.restore_testing_selection_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_restore_testing_selection::UpdateRestoreTestingSelectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_restore_testing_selection::UpdateRestoreTestingSelectionInput {
+                restore_testing_plan_name: self.restore_testing_plan_name
+                ,
+                restore_testing_selection: self.restore_testing_selection
+                ,
+                restore_testing_selection_name: self.restore_testing_selection_name
+                ,
+            }
+        )
     }
 }
+

@@ -2,26 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterTransitGatewayMulticastGroupMembersOutput {
+pub struct RegisterTransitGatewayMulticastGroupMembersOutput  {
     /// <p>Information about the registered transit gateway multicast group members.</p>
     pub registered_multicast_group_members: ::std::option::Option<crate::types::TransitGatewayMulticastRegisteredGroupMembers>,
     _request_id: Option<String>,
 }
-impl RegisterTransitGatewayMulticastGroupMembersOutput {
+impl  RegisterTransitGatewayMulticastGroupMembersOutput  {
     /// <p>Information about the registered transit gateway multicast group members.</p>
-    pub fn registered_multicast_group_members(&self) -> ::std::option::Option<&crate::types::TransitGatewayMulticastRegisteredGroupMembers> {
+    pub fn registered_multicast_group_members(&self) -> ::std::option::Option<& crate::types::TransitGatewayMulticastRegisteredGroupMembers> {
         self.registered_multicast_group_members.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for RegisterTransitGatewayMulticastGroupMembersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RegisterTransitGatewayMulticastGroupMembersOutput {
     /// Creates a new builder-style object to manufacture [`RegisterTransitGatewayMulticastGroupMembersOutput`](crate::operation::register_transit_gateway_multicast_group_members::RegisterTransitGatewayMulticastGroupMembersOutput).
-    pub fn builder(
-    ) -> crate::operation::register_transit_gateway_multicast_group_members::builders::RegisterTransitGatewayMulticastGroupMembersOutputBuilder {
+    pub fn builder() -> crate::operation::register_transit_gateway_multicast_group_members::builders::RegisterTransitGatewayMulticastGroupMembersOutputBuilder {
         crate::operation::register_transit_gateway_multicast_group_members::builders::RegisterTransitGatewayMulticastGroupMembersOutputBuilder::default()
     }
 }
@@ -40,31 +39,29 @@ impl RegisterTransitGatewayMulticastGroupMembersOutputBuilder {
         self
     }
     /// <p>Information about the registered transit gateway multicast group members.</p>
-    pub fn set_registered_multicast_group_members(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayMulticastRegisteredGroupMembers>,
-    ) -> Self {
-        self.registered_multicast_group_members = input;
-        self
+    pub fn set_registered_multicast_group_members(mut self, input: ::std::option::Option<crate::types::TransitGatewayMulticastRegisteredGroupMembers>) -> Self {
+        self.registered_multicast_group_members = input; self
     }
     /// <p>Information about the registered transit gateway multicast group members.</p>
     pub fn get_registered_multicast_group_members(&self) -> &::std::option::Option<crate::types::TransitGatewayMulticastRegisteredGroupMembers> {
         &self.registered_multicast_group_members
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RegisterTransitGatewayMulticastGroupMembersOutput`](crate::operation::register_transit_gateway_multicast_group_members::RegisterTransitGatewayMulticastGroupMembersOutput).
     pub fn build(self) -> crate::operation::register_transit_gateway_multicast_group_members::RegisterTransitGatewayMulticastGroupMembersOutput {
         crate::operation::register_transit_gateway_multicast_group_members::RegisterTransitGatewayMulticastGroupMembersOutput {
-            registered_multicast_group_members: self.registered_multicast_group_members,
+            registered_multicast_group_members: self.registered_multicast_group_members
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

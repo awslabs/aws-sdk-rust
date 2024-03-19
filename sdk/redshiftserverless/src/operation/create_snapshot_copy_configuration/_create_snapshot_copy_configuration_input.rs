@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSnapshotCopyConfigurationInput {
+pub struct CreateSnapshotCopyConfigurationInput  {
     /// <p>The name of the namespace to copy snapshots from.</p>
     pub namespace_name: ::std::option::Option<::std::string::String>,
     /// <p>The destination Amazon Web Services Region that you want to copy snapshots to.</p>
@@ -12,13 +12,13 @@ pub struct CreateSnapshotCopyConfigurationInput {
     /// <p>The KMS key to use to encrypt your snapshots in the destination Amazon Web Services Region.</p>
     pub destination_kms_key_id: ::std::option::Option<::std::string::String>,
 }
-impl CreateSnapshotCopyConfigurationInput {
+impl  CreateSnapshotCopyConfigurationInput  {
     /// <p>The name of the namespace to copy snapshots from.</p>
-    pub fn namespace_name(&self) -> ::std::option::Option<&str> {
+    pub fn namespace_name(&self) -> ::std::option::Option<& str> {
         self.namespace_name.as_deref()
     }
     /// <p>The destination Amazon Web Services Region that you want to copy snapshots to.</p>
-    pub fn destination_region(&self) -> ::std::option::Option<&str> {
+    pub fn destination_region(&self) -> ::std::option::Option<& str> {
         self.destination_region.as_deref()
     }
     /// <p>The retention period of the snapshots that you copy to the destination Amazon Web Services Region.</p>
@@ -26,7 +26,7 @@ impl CreateSnapshotCopyConfigurationInput {
         self.snapshot_retention_period
     }
     /// <p>The KMS key to use to encrypt your snapshots in the destination Amazon Web Services Region.</p>
-    pub fn destination_kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn destination_kms_key_id(&self) -> ::std::option::Option<& str> {
         self.destination_kms_key_id.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl CreateSnapshotCopyConfigurationInputBuilder {
     }
     /// <p>The name of the namespace to copy snapshots from.</p>
     pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace_name = input;
-        self
+        self.namespace_name = input; self
     }
     /// <p>The name of the namespace to copy snapshots from.</p>
     pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl CreateSnapshotCopyConfigurationInputBuilder {
     }
     /// <p>The destination Amazon Web Services Region that you want to copy snapshots to.</p>
     pub fn set_destination_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_region = input;
-        self
+        self.destination_region = input; self
     }
     /// <p>The destination Amazon Web Services Region that you want to copy snapshots to.</p>
     pub fn get_destination_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl CreateSnapshotCopyConfigurationInputBuilder {
     }
     /// <p>The retention period of the snapshots that you copy to the destination Amazon Web Services Region.</p>
     pub fn set_snapshot_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.snapshot_retention_period = input;
-        self
+        self.snapshot_retention_period = input; self
     }
     /// <p>The retention period of the snapshots that you copy to the destination Amazon Web Services Region.</p>
     pub fn get_snapshot_retention_period(&self) -> &::std::option::Option<i32> {
@@ -98,27 +95,26 @@ impl CreateSnapshotCopyConfigurationInputBuilder {
     }
     /// <p>The KMS key to use to encrypt your snapshots in the destination Amazon Web Services Region.</p>
     pub fn set_destination_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_kms_key_id = input;
-        self
+        self.destination_kms_key_id = input; self
     }
     /// <p>The KMS key to use to encrypt your snapshots in the destination Amazon Web Services Region.</p>
     pub fn get_destination_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_kms_key_id
     }
     /// Consumes the builder and constructs a [`CreateSnapshotCopyConfigurationInput`](crate::operation::create_snapshot_copy_configuration::CreateSnapshotCopyConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_snapshot_copy_configuration::CreateSnapshotCopyConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_snapshot_copy_configuration::CreateSnapshotCopyConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_snapshot_copy_configuration::CreateSnapshotCopyConfigurationInput {
-                namespace_name: self.namespace_name,
-                destination_region: self.destination_region,
-                snapshot_retention_period: self.snapshot_retention_period,
-                destination_kms_key_id: self.destination_kms_key_id,
-            },
+                namespace_name: self.namespace_name
+                ,
+                destination_region: self.destination_region
+                ,
+                snapshot_retention_period: self.snapshot_retention_period
+                ,
+                destination_kms_key_id: self.destination_kms_key_id
+                ,
+            }
         )
     }
 }
+

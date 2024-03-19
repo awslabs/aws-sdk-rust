@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteParameterGroupInput {
+pub struct DeleteParameterGroupInput  {
     /// <p>The name of the parameter group to delete.</p>
     pub parameter_group_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteParameterGroupInput {
+impl  DeleteParameterGroupInput  {
     /// <p>The name of the parameter group to delete.</p>
-    pub fn parameter_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn parameter_group_name(&self) -> ::std::option::Option<& str> {
         self.parameter_group_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteParameterGroupInputBuilder {
     }
     /// <p>The name of the parameter group to delete.</p>
     pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_group_name = input;
-        self
+        self.parameter_group_name = input; self
     }
     /// <p>The name of the parameter group to delete.</p>
     pub fn get_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.parameter_group_name
     }
     /// Consumes the builder and constructs a [`DeleteParameterGroupInput`](crate::operation::delete_parameter_group::DeleteParameterGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_parameter_group::DeleteParameterGroupInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_parameter_group::DeleteParameterGroupInput {
-            parameter_group_name: self.parameter_group_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_parameter_group::DeleteParameterGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_parameter_group::DeleteParameterGroupInput {
+                parameter_group_name: self.parameter_group_name
+                ,
+            }
+        )
     }
 }
+

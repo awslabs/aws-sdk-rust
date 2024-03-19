@@ -3,15 +3,14 @@
 /// <p>The details of a single attribute item specified in the mathematical expression.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttributeItem {
+pub struct AttributeItem  {
     /// <p>The name of an attribute defined in a profile object type.</p>
     pub name: ::std::string::String,
 }
-impl AttributeItem {
+impl  AttributeItem  {
     /// <p>The name of an attribute defined in a profile object type.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
 }
 impl AttributeItem {
@@ -36,8 +35,7 @@ impl AttributeItemBuilder {
     }
     /// <p>The name of an attribute defined in a profile object type.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of an attribute defined in a profile object type.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl AttributeItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::AttributeItemBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::AttributeItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AttributeItem {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building AttributeItem",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AttributeItem {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building AttributeItem")
+                    )?
+                ,
+            }
+        )
     }
 }
+

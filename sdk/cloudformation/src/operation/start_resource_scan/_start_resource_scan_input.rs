@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartResourceScanInput {
+pub struct StartResourceScanInput  {
     /// <p>A unique identifier for this <code>StartResourceScan</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to start a new resource scan.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
-impl StartResourceScanInput {
+impl  StartResourceScanInput  {
     /// <p>A unique identifier for this <code>StartResourceScan</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to start a new resource scan.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
 }
@@ -33,19 +33,20 @@ impl StartResourceScanInputBuilder {
     }
     /// <p>A unique identifier for this <code>StartResourceScan</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to start a new resource scan.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A unique identifier for this <code>StartResourceScan</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to start a new resource scan.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`StartResourceScanInput`](crate::operation::start_resource_scan::StartResourceScanInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_resource_scan::StartResourceScanInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_resource_scan::StartResourceScanInput {
-            client_request_token: self.client_request_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_resource_scan::StartResourceScanInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_resource_scan::StartResourceScanInput {
+                client_request_token: self.client_request_token
+                ,
+            }
+        )
     }
 }
+

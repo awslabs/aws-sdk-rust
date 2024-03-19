@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeployWorkspaceApplicationsInput {
+pub struct DeployWorkspaceApplicationsInput  {
     /// <p>The identifier of the WorkSpace.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the force flag is applied for the specified WorkSpace. When the force flag is enabled, it allows previously failed deployments to be retried.</p>
     pub force: ::std::option::Option<bool>,
 }
-impl DeployWorkspaceApplicationsInput {
+impl  DeployWorkspaceApplicationsInput  {
     /// <p>The identifier of the WorkSpace.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// <p>Indicates whether the force flag is applied for the specified WorkSpace. When the force flag is enabled, it allows previously failed deployments to be retried.</p>
@@ -41,8 +41,7 @@ impl DeployWorkspaceApplicationsInputBuilder {
     }
     /// <p>The identifier of the WorkSpace.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The identifier of the WorkSpace.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,23 +54,22 @@ impl DeployWorkspaceApplicationsInputBuilder {
     }
     /// <p>Indicates whether the force flag is applied for the specified WorkSpace. When the force flag is enabled, it allows previously failed deployments to be retried.</p>
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force = input;
-        self
+        self.force = input; self
     }
     /// <p>Indicates whether the force flag is applied for the specified WorkSpace. When the force flag is enabled, it allows previously failed deployments to be retried.</p>
     pub fn get_force(&self) -> &::std::option::Option<bool> {
         &self.force
     }
     /// Consumes the builder and constructs a [`DeployWorkspaceApplicationsInput`](crate::operation::deploy_workspace_applications::DeployWorkspaceApplicationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::deploy_workspace_applications::DeployWorkspaceApplicationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::deploy_workspace_applications::DeployWorkspaceApplicationsInput {
-            workspace_id: self.workspace_id,
-            force: self.force,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::deploy_workspace_applications::DeployWorkspaceApplicationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::deploy_workspace_applications::DeployWorkspaceApplicationsInput {
+                workspace_id: self.workspace_id
+                ,
+                force: self.force
+                ,
+            }
+        )
     }
 }
+

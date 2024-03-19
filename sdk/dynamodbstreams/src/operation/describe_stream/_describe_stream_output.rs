@@ -3,22 +3,22 @@
 /// <p>Represents the output of a <code>DescribeStream</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeStreamOutput {
+pub struct DescribeStreamOutput  {
     /// <p>A complete description of the stream, including its creation date and time, the DynamoDB table associated with the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream records within the shards.</p>
     pub stream_description: ::std::option::Option<crate::types::StreamDescription>,
     _request_id: Option<String>,
 }
-impl DescribeStreamOutput {
+impl  DescribeStreamOutput  {
     /// <p>A complete description of the stream, including its creation date and time, the DynamoDB table associated with the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream records within the shards.</p>
-    pub fn stream_description(&self) -> ::std::option::Option<&crate::types::StreamDescription> {
+    pub fn stream_description(&self) -> ::std::option::Option<& crate::types::StreamDescription> {
         self.stream_description.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeStreamOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeStreamOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStreamOutput`](crate::operation::describe_stream::DescribeStreamOutput).
     pub fn builder() -> crate::operation::describe_stream::builders::DescribeStreamOutputBuilder {
@@ -41,27 +41,28 @@ impl DescribeStreamOutputBuilder {
     }
     /// <p>A complete description of the stream, including its creation date and time, the DynamoDB table associated with the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream records within the shards.</p>
     pub fn set_stream_description(mut self, input: ::std::option::Option<crate::types::StreamDescription>) -> Self {
-        self.stream_description = input;
-        self
+        self.stream_description = input; self
     }
     /// <p>A complete description of the stream, including its creation date and time, the DynamoDB table associated with the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream records within the shards.</p>
     pub fn get_stream_description(&self) -> &::std::option::Option<crate::types::StreamDescription> {
         &self.stream_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeStreamOutput`](crate::operation::describe_stream::DescribeStreamOutput).
     pub fn build(self) -> crate::operation::describe_stream::DescribeStreamOutput {
         crate::operation::describe_stream::DescribeStreamOutput {
-            stream_description: self.stream_description,
+            stream_description: self.stream_description
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

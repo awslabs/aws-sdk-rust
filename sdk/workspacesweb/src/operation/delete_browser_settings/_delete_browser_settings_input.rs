@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteBrowserSettingsInput {
+pub struct DeleteBrowserSettingsInput  {
     /// <p>The ARN of the browser settings.</p>
     pub browser_settings_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteBrowserSettingsInput {
+impl  DeleteBrowserSettingsInput  {
     /// <p>The ARN of the browser settings.</p>
-    pub fn browser_settings_arn(&self) -> ::std::option::Option<&str> {
+    pub fn browser_settings_arn(&self) -> ::std::option::Option<& str> {
         self.browser_settings_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteBrowserSettingsInputBuilder {
     }
     /// <p>The ARN of the browser settings.</p>
     pub fn set_browser_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.browser_settings_arn = input;
-        self
+        self.browser_settings_arn = input; self
     }
     /// <p>The ARN of the browser settings.</p>
     pub fn get_browser_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.browser_settings_arn
     }
     /// Consumes the builder and constructs a [`DeleteBrowserSettingsInput`](crate::operation::delete_browser_settings::DeleteBrowserSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_browser_settings::DeleteBrowserSettingsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_browser_settings::DeleteBrowserSettingsInput {
-            browser_settings_arn: self.browser_settings_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_browser_settings::DeleteBrowserSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_browser_settings::DeleteBrowserSettingsInput {
+                browser_settings_arn: self.browser_settings_arn
+                ,
+            }
+        )
     }
 }
+

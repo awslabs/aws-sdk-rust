@@ -2,40 +2,40 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFunctionOutput {
+pub struct GetFunctionOutput  {
     /// <p>The configuration of the function or version.</p>
     pub configuration: ::std::option::Option<crate::types::FunctionConfiguration>,
     /// <p>The deployment package of the function or version.</p>
     pub code: ::std::option::Option<crate::types::FunctionCodeLocation>,
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved concurrency</a>.</p>
     pub concurrency: ::std::option::Option<crate::types::Concurrency>,
     _request_id: Option<String>,
 }
-impl GetFunctionOutput {
+impl  GetFunctionOutput  {
     /// <p>The configuration of the function or version.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::FunctionConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::FunctionConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>The deployment package of the function or version.</p>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::FunctionCodeLocation> {
+    pub fn code(&self) -> ::std::option::Option<& crate::types::FunctionCodeLocation> {
         self.code.as_ref()
     }
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved concurrency</a>.</p>
-    pub fn concurrency(&self) -> ::std::option::Option<&crate::types::Concurrency> {
+    pub fn concurrency(&self) -> ::std::option::Option<& crate::types::Concurrency> {
         self.concurrency.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetFunctionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetFunctionOutput {
     /// Creates a new builder-style object to manufacture [`GetFunctionOutput`](crate::operation::get_function::GetFunctionOutput).
     pub fn builder() -> crate::operation::get_function::builders::GetFunctionOutputBuilder {
@@ -49,7 +49,7 @@ impl GetFunctionOutput {
 pub struct GetFunctionOutputBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::FunctionConfiguration>,
     pub(crate) code: ::std::option::Option<crate::types::FunctionCodeLocation>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) concurrency: ::std::option::Option<crate::types::Concurrency>,
     _request_id: Option<String>,
 }
@@ -61,8 +61,7 @@ impl GetFunctionOutputBuilder {
     }
     /// <p>The configuration of the function or version.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::FunctionConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>The configuration of the function or version.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::FunctionConfiguration> {
@@ -75,8 +74,7 @@ impl GetFunctionOutputBuilder {
     }
     /// <p>The deployment package of the function or version.</p>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::FunctionCodeLocation>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The deployment package of the function or version.</p>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::FunctionCodeLocation> {
@@ -89,17 +87,16 @@ impl GetFunctionOutputBuilder {
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved concurrency</a>.</p>
@@ -109,30 +106,34 @@ impl GetFunctionOutputBuilder {
     }
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved concurrency</a>.</p>
     pub fn set_concurrency(mut self, input: ::std::option::Option<crate::types::Concurrency>) -> Self {
-        self.concurrency = input;
-        self
+        self.concurrency = input; self
     }
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved concurrency</a>.</p>
     pub fn get_concurrency(&self) -> &::std::option::Option<crate::types::Concurrency> {
         &self.concurrency
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetFunctionOutput`](crate::operation::get_function::GetFunctionOutput).
     pub fn build(self) -> crate::operation::get_function::GetFunctionOutput {
         crate::operation::get_function::GetFunctionOutput {
-            configuration: self.configuration,
-            code: self.code,
-            tags: self.tags,
-            concurrency: self.concurrency,
+            configuration: self.configuration
+            ,
+            code: self.code
+            ,
+            tags: self.tags
+            ,
+            concurrency: self.concurrency
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

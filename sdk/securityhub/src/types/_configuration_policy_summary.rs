@@ -3,7 +3,7 @@
 /// <p>An object that contains the details of an Security Hub configuration policy that’s returned in a <code>ListConfigurationPolicies</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfigurationPolicySummary {
+pub struct ConfigurationPolicySummary  {
     /// <p>The Amazon Resource Name (ARN) of the configuration policy.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The universally unique identifier (UUID) of the configuration policy.</p>
@@ -17,25 +17,25 @@ pub struct ConfigurationPolicySummary {
     /// <p>Indicates whether the service that the configuration policy applies to is enabled in the policy.</p>
     pub service_enabled: ::std::option::Option<bool>,
 }
-impl ConfigurationPolicySummary {
+impl  ConfigurationPolicySummary  {
     /// <p>The Amazon Resource Name (ARN) of the configuration policy.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The universally unique identifier (UUID) of the configuration policy.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the configuration policy. Alphanumeric characters and the following ASCII characters are permitted: <code>-, ., !, *, /</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the configuration policy.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date and time, in UTC and ISO 8601 format, that the configuration policy was last updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>Indicates whether the service that the configuration policy applies to is enabled in the policy.</p>
@@ -69,8 +69,7 @@ impl ConfigurationPolicySummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the configuration policy.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the configuration policy.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl ConfigurationPolicySummaryBuilder {
     }
     /// <p>The universally unique identifier (UUID) of the configuration policy.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The universally unique identifier (UUID) of the configuration policy.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl ConfigurationPolicySummaryBuilder {
     }
     /// <p>The name of the configuration policy. Alphanumeric characters and the following ASCII characters are permitted: <code>-, ., !, *, /</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the configuration policy. Alphanumeric characters and the following ASCII characters are permitted: <code>-, ., !, *, /</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl ConfigurationPolicySummaryBuilder {
     }
     /// <p>The description of the configuration policy.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the configuration policy.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl ConfigurationPolicySummaryBuilder {
     }
     /// <p>The date and time, in UTC and ISO 8601 format, that the configuration policy was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The date and time, in UTC and ISO 8601 format, that the configuration policy was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -139,8 +134,7 @@ impl ConfigurationPolicySummaryBuilder {
     }
     /// <p>Indicates whether the service that the configuration policy applies to is enabled in the policy.</p>
     pub fn set_service_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.service_enabled = input;
-        self
+        self.service_enabled = input; self
     }
     /// <p>Indicates whether the service that the configuration policy applies to is enabled in the policy.</p>
     pub fn get_service_enabled(&self) -> &::std::option::Option<bool> {
@@ -149,12 +143,19 @@ impl ConfigurationPolicySummaryBuilder {
     /// Consumes the builder and constructs a [`ConfigurationPolicySummary`](crate::types::ConfigurationPolicySummary).
     pub fn build(self) -> crate::types::ConfigurationPolicySummary {
         crate::types::ConfigurationPolicySummary {
-            arn: self.arn,
-            id: self.id,
-            name: self.name,
-            description: self.description,
-            updated_at: self.updated_at,
-            service_enabled: self.service_enabled,
+            arn: self.arn
+            ,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            updated_at: self.updated_at
+            ,
+            service_enabled: self.service_enabled
+            ,
         }
     }
 }
+

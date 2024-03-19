@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDbClusterInput {
+pub struct DeleteDbClusterInput  {
     /// <p>The DB cluster identifier for the DB cluster to be deleted. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -29,14 +29,14 @@ pub struct DeleteDbClusterInput {
     /// </ul>
     pub final_db_snapshot_identifier: ::std::option::Option<::std::string::String>,
 }
-impl DeleteDbClusterInput {
+impl  DeleteDbClusterInput  {
     /// <p>The DB cluster identifier for the DB cluster to be deleted. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
     /// <p>Must match an existing DBClusterIdentifier.</p></li>
     /// </ul>
-    pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>Determines whether a final DB cluster snapshot is created before the DB cluster is deleted. If <code>true</code> is specified, no DB cluster snapshot is created. If <code>false</code> is specified, a DB cluster snapshot is created before the DB cluster is deleted.</p><note>
@@ -58,7 +58,7 @@ impl DeleteDbClusterInput {
     /// <li>
     /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
-    pub fn final_db_snapshot_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn final_db_snapshot_identifier(&self) -> ::std::option::Option<& str> {
         self.final_db_snapshot_identifier.as_deref()
     }
 }
@@ -96,8 +96,7 @@ impl DeleteDbClusterInputBuilder {
     /// <p>Must match an existing DBClusterIdentifier.</p></li>
     /// </ul>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_identifier = input;
-        self
+        self.db_cluster_identifier = input; self
     }
     /// <p>The DB cluster identifier for the DB cluster to be deleted. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -121,8 +120,7 @@ impl DeleteDbClusterInputBuilder {
     /// </note>
     /// <p>Default: <code>false</code></p>
     pub fn set_skip_final_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.skip_final_snapshot = input;
-        self
+        self.skip_final_snapshot = input; self
     }
     /// <p>Determines whether a final DB cluster snapshot is created before the DB cluster is deleted. If <code>true</code> is specified, no DB cluster snapshot is created. If <code>false</code> is specified, a DB cluster snapshot is created before the DB cluster is deleted.</p><note>
     /// <p>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if <code>SkipFinalSnapshot</code> is <code>false</code>.</p>
@@ -160,8 +158,7 @@ impl DeleteDbClusterInputBuilder {
     /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     pub fn set_final_db_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.final_db_snapshot_identifier = input;
-        self
+        self.final_db_snapshot_identifier = input; self
     }
     /// <p>The DB cluster snapshot identifier of the new DB cluster snapshot created when <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p><note>
     /// <p>Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to true results in an error.</p>
@@ -179,13 +176,17 @@ impl DeleteDbClusterInputBuilder {
         &self.final_db_snapshot_identifier
     }
     /// Consumes the builder and constructs a [`DeleteDbClusterInput`](crate::operation::delete_db_cluster::DeleteDbClusterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_db_cluster::DeleteDbClusterInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_db_cluster::DeleteDbClusterInput {
-            db_cluster_identifier: self.db_cluster_identifier,
-            skip_final_snapshot: self.skip_final_snapshot,
-            final_db_snapshot_identifier: self.final_db_snapshot_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_db_cluster::DeleteDbClusterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_db_cluster::DeleteDbClusterInput {
+                db_cluster_identifier: self.db_cluster_identifier
+                ,
+                skip_final_snapshot: self.skip_final_snapshot
+                ,
+                final_db_snapshot_identifier: self.final_db_snapshot_identifier
+                ,
+            }
+        )
     }
 }
+

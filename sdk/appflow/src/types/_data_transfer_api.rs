@@ -3,7 +3,7 @@
 /// <p>The API of the connector application that Amazon AppFlow uses to transfer your data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataTransferApi {
+pub struct DataTransferApi  {
     /// <p>The name of the connector application API.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>You can specify one of the following types:</p>
@@ -29,9 +29,9 @@ pub struct DataTransferApi {
     /// </dl>
     pub r#type: ::std::option::Option<crate::types::DataTransferApiType>,
 }
-impl DataTransferApi {
+impl  DataTransferApi  {
     /// <p>The name of the connector application API.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>You can specify one of the following types:</p>
@@ -55,7 +55,7 @@ impl DataTransferApi {
     /// <p>An asynchronous API. This type of API optimizes a flow for large datasets.</p>
     /// </dd>
     /// </dl>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::DataTransferApiType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::DataTransferApiType> {
         self.r#type.as_ref()
     }
 }
@@ -81,8 +81,7 @@ impl DataTransferApiBuilder {
     }
     /// <p>The name of the connector application API.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the connector application API.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +134,7 @@ impl DataTransferApiBuilder {
     /// </dd>
     /// </dl>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataTransferApiType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>You can specify one of the following types:</p>
     /// <dl>
@@ -165,8 +163,11 @@ impl DataTransferApiBuilder {
     /// Consumes the builder and constructs a [`DataTransferApi`](crate::types::DataTransferApi).
     pub fn build(self) -> crate::types::DataTransferApi {
         crate::types::DataTransferApi {
-            name: self.name,
-            r#type: self.r#type,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

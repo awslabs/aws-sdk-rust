@@ -3,23 +3,23 @@
 /// <p>Contains information about the account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AccountDetail {
+pub struct AccountDetail  {
     /// <p>The member account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The email address of the member account.</p>
     pub email: ::std::option::Option<::std::string::String>,
 }
-impl AccountDetail {
+impl  AccountDetail  {
     /// <p>The member account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The email address of the member account.</p>
-    pub fn email(&self) -> ::std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<& str> {
         self.email.as_deref()
     }
 }
-impl ::std::fmt::Debug for AccountDetail {
+impl  ::std::fmt::Debug for AccountDetail  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AccountDetail");
         formatter.field("account_id", &self.account_id);
@@ -50,8 +50,7 @@ impl AccountDetailBuilder {
     }
     /// <p>The member account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The member account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +64,7 @@ impl AccountDetailBuilder {
     }
     /// <p>The email address of the member account.</p>
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
     }
     /// <p>The email address of the member account.</p>
     pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +73,10 @@ impl AccountDetailBuilder {
     /// Consumes the builder and constructs a [`AccountDetail`](crate::types::AccountDetail).
     pub fn build(self) -> crate::types::AccountDetail {
         crate::types::AccountDetail {
-            account_id: self.account_id,
-            email: self.email,
+            account_id: self.account_id
+            ,
+            email: self.email
+            ,
         }
     }
 }
@@ -88,3 +88,4 @@ impl ::std::fmt::Debug for AccountDetailBuilder {
         formatter.finish()
     }
 }
+

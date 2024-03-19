@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateMapRunInput {
+pub struct UpdateMapRunInput  {
     /// <p>The Amazon Resource Name (ARN) of a Map Run.</p>
     pub map_run_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of child workflow executions that can be specified to run in parallel for the Map Run at the same time.</p>
@@ -12,9 +12,9 @@ pub struct UpdateMapRunInput {
     /// <p>The maximum number of failed items before the Map Run fails.</p>
     pub tolerated_failure_count: ::std::option::Option<i64>,
 }
-impl UpdateMapRunInput {
+impl  UpdateMapRunInput  {
     /// <p>The Amazon Resource Name (ARN) of a Map Run.</p>
-    pub fn map_run_arn(&self) -> ::std::option::Option<&str> {
+    pub fn map_run_arn(&self) -> ::std::option::Option<& str> {
         self.map_run_arn.as_deref()
     }
     /// <p>The maximum number of child workflow executions that can be specified to run in parallel for the Map Run at the same time.</p>
@@ -55,8 +55,7 @@ impl UpdateMapRunInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a Map Run.</p>
     pub fn set_map_run_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.map_run_arn = input;
-        self
+        self.map_run_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of a Map Run.</p>
     pub fn get_map_run_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl UpdateMapRunInputBuilder {
     }
     /// <p>The maximum number of child workflow executions that can be specified to run in parallel for the Map Run at the same time.</p>
     pub fn set_max_concurrency(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_concurrency = input;
-        self
+        self.max_concurrency = input; self
     }
     /// <p>The maximum number of child workflow executions that can be specified to run in parallel for the Map Run at the same time.</p>
     pub fn get_max_concurrency(&self) -> &::std::option::Option<i32> {
@@ -83,8 +81,7 @@ impl UpdateMapRunInputBuilder {
     }
     /// <p>The maximum percentage of failed items before the Map Run fails.</p>
     pub fn set_tolerated_failure_percentage(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.tolerated_failure_percentage = input;
-        self
+        self.tolerated_failure_percentage = input; self
     }
     /// <p>The maximum percentage of failed items before the Map Run fails.</p>
     pub fn get_tolerated_failure_percentage(&self) -> &::std::option::Option<f32> {
@@ -97,22 +94,26 @@ impl UpdateMapRunInputBuilder {
     }
     /// <p>The maximum number of failed items before the Map Run fails.</p>
     pub fn set_tolerated_failure_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.tolerated_failure_count = input;
-        self
+        self.tolerated_failure_count = input; self
     }
     /// <p>The maximum number of failed items before the Map Run fails.</p>
     pub fn get_tolerated_failure_count(&self) -> &::std::option::Option<i64> {
         &self.tolerated_failure_count
     }
     /// Consumes the builder and constructs a [`UpdateMapRunInput`](crate::operation::update_map_run::UpdateMapRunInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_map_run::UpdateMapRunInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_map_run::UpdateMapRunInput {
-            map_run_arn: self.map_run_arn,
-            max_concurrency: self.max_concurrency,
-            tolerated_failure_percentage: self.tolerated_failure_percentage,
-            tolerated_failure_count: self.tolerated_failure_count,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_map_run::UpdateMapRunInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_map_run::UpdateMapRunInput {
+                map_run_arn: self.map_run_arn
+                ,
+                max_concurrency: self.max_concurrency
+                ,
+                tolerated_failure_percentage: self.tolerated_failure_percentage
+                ,
+                tolerated_failure_count: self.tolerated_failure_count
+                ,
+            }
+        )
     }
 }
+

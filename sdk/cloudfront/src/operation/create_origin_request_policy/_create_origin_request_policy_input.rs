@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateOriginRequestPolicyInput {
+pub struct CreateOriginRequestPolicyInput  {
     /// <p>An origin request policy configuration.</p>
     pub origin_request_policy_config: ::std::option::Option<crate::types::OriginRequestPolicyConfig>,
 }
-impl CreateOriginRequestPolicyInput {
+impl  CreateOriginRequestPolicyInput  {
     /// <p>An origin request policy configuration.</p>
-    pub fn origin_request_policy_config(&self) -> ::std::option::Option<&crate::types::OriginRequestPolicyConfig> {
+    pub fn origin_request_policy_config(&self) -> ::std::option::Option<& crate::types::OriginRequestPolicyConfig> {
         self.origin_request_policy_config.as_ref()
     }
 }
@@ -34,22 +34,20 @@ impl CreateOriginRequestPolicyInputBuilder {
     }
     /// <p>An origin request policy configuration.</p>
     pub fn set_origin_request_policy_config(mut self, input: ::std::option::Option<crate::types::OriginRequestPolicyConfig>) -> Self {
-        self.origin_request_policy_config = input;
-        self
+        self.origin_request_policy_config = input; self
     }
     /// <p>An origin request policy configuration.</p>
     pub fn get_origin_request_policy_config(&self) -> &::std::option::Option<crate::types::OriginRequestPolicyConfig> {
         &self.origin_request_policy_config
     }
     /// Consumes the builder and constructs a [`CreateOriginRequestPolicyInput`](crate::operation::create_origin_request_policy::CreateOriginRequestPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_origin_request_policy::CreateOriginRequestPolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_origin_request_policy::CreateOriginRequestPolicyInput {
-            origin_request_policy_config: self.origin_request_policy_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_origin_request_policy::CreateOriginRequestPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_origin_request_policy::CreateOriginRequestPolicyInput {
+                origin_request_policy_config: self.origin_request_policy_config
+                ,
+            }
+        )
     }
 }
+

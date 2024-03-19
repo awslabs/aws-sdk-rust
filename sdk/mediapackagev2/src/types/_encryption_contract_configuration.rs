@@ -3,7 +3,7 @@
 /// <p>Configure one or more content encryption keys for your endpoints that use SPEKE Version 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EncryptionContractConfiguration {
+pub struct EncryptionContractConfiguration  {
     /// <p>A collection of audio encryption presets.</p>
     /// <p>Value description:</p>
     /// <ul>
@@ -45,7 +45,7 @@ pub struct EncryptionContractConfiguration {
     /// </ul>
     pub preset_speke20_video: crate::types::PresetSpeke20Video,
 }
-impl EncryptionContractConfiguration {
+impl  EncryptionContractConfiguration  {
     /// <p>A collection of audio encryption presets.</p>
     /// <p>Value description:</p>
     /// <ul>
@@ -60,7 +60,7 @@ impl EncryptionContractConfiguration {
     /// <li>
     /// <p>UNENCRYPTED - Don't encrypt any of the audio tracks in your stream.</p></li>
     /// </ul>
-    pub fn preset_speke20_audio(&self) -> &crate::types::PresetSpeke20Audio {
+    pub fn preset_speke20_audio(&self) -> & crate::types::PresetSpeke20Audio {
         &self.preset_speke20_audio
     }
     /// <p>A collection of video encryption presets.</p>
@@ -87,7 +87,7 @@ impl EncryptionContractConfiguration {
     /// <li>
     /// <p>UNENCRYPTED - Don't encrypt any of the video tracks in your stream.</p></li>
     /// </ul>
-    pub fn preset_speke20_video(&self) -> &crate::types::PresetSpeke20Video {
+    pub fn preset_speke20_video(&self) -> & crate::types::PresetSpeke20Video {
         &self.preset_speke20_video
     }
 }
@@ -140,8 +140,7 @@ impl EncryptionContractConfigurationBuilder {
     /// <p>UNENCRYPTED - Don't encrypt any of the audio tracks in your stream.</p></li>
     /// </ul>
     pub fn set_preset_speke20_audio(mut self, input: ::std::option::Option<crate::types::PresetSpeke20Audio>) -> Self {
-        self.preset_speke20_audio = input;
-        self
+        self.preset_speke20_audio = input; self
     }
     /// <p>A collection of audio encryption presets.</p>
     /// <p>Value description:</p>
@@ -214,8 +213,7 @@ impl EncryptionContractConfigurationBuilder {
     /// <p>UNENCRYPTED - Don't encrypt any of the video tracks in your stream.</p></li>
     /// </ul>
     pub fn set_preset_speke20_video(mut self, input: ::std::option::Option<crate::types::PresetSpeke20Video>) -> Self {
-        self.preset_speke20_video = input;
-        self
+        self.preset_speke20_video = input; self
     }
     /// <p>A collection of video encryption presets.</p>
     /// <p>Value description:</p>
@@ -249,19 +247,20 @@ impl EncryptionContractConfigurationBuilder {
     /// - [`preset_speke20_audio`](crate::types::builders::EncryptionContractConfigurationBuilder::preset_speke20_audio)
     /// - [`preset_speke20_video`](crate::types::builders::EncryptionContractConfigurationBuilder::preset_speke20_video)
     pub fn build(self) -> ::std::result::Result<crate::types::EncryptionContractConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EncryptionContractConfiguration {
-            preset_speke20_audio: self.preset_speke20_audio.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "preset_speke20_audio",
-                    "preset_speke20_audio was not specified but it is required when building EncryptionContractConfiguration",
-                )
-            })?,
-            preset_speke20_video: self.preset_speke20_video.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "preset_speke20_video",
-                    "preset_speke20_video was not specified but it is required when building EncryptionContractConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EncryptionContractConfiguration {
+                preset_speke20_audio: self.preset_speke20_audio
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("preset_speke20_audio", "preset_speke20_audio was not specified but it is required when building EncryptionContractConfiguration")
+                    )?
+                ,
+                preset_speke20_video: self.preset_speke20_video
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("preset_speke20_video", "preset_speke20_video was not specified but it is required when building EncryptionContractConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

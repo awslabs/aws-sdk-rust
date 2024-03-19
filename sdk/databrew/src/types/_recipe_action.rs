@@ -3,20 +3,19 @@
 /// <p>Represents a transformation and associated parameters that are used to apply a change to a DataBrew dataset. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipe-actions-reference.html">Recipe actions reference</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecipeAction {
+pub struct RecipeAction  {
     /// <p>The name of a valid DataBrew transformation to be performed on the data.</p>
     pub operation: ::std::string::String,
     /// <p>Contextual parameters for the transformation.</p>
-    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl RecipeAction {
+impl  RecipeAction  {
     /// <p>The name of a valid DataBrew transformation to be performed on the data.</p>
-    pub fn operation(&self) -> &str {
-        use std::ops::Deref;
-        self.operation.deref()
+    pub fn operation(&self) -> & str {
+        use std::ops::Deref; self.operation.deref()
     }
     /// <p>Contextual parameters for the transformation.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
 }
@@ -32,7 +31,7 @@ impl RecipeAction {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecipeActionBuilder {
     pub(crate) operation: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl RecipeActionBuilder {
     /// <p>The name of a valid DataBrew transformation to be performed on the data.</p>
@@ -43,8 +42,7 @@ impl RecipeActionBuilder {
     }
     /// <p>The name of a valid DataBrew transformation to be performed on the data.</p>
     pub fn set_operation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operation = input;
-        self
+        self.operation = input; self
     }
     /// <p>The name of a valid DataBrew transformation to be performed on the data.</p>
     pub fn get_operation(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,31 +55,33 @@ impl RecipeActionBuilder {
     /// <p>Contextual parameters for the transformation.</p>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Contextual parameters for the transformation.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>Contextual parameters for the transformation.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`RecipeAction`](crate::types::RecipeAction).
     /// This method will fail if any of the following fields are not set:
     /// - [`operation`](crate::types::builders::RecipeActionBuilder::operation)
     pub fn build(self) -> ::std::result::Result<crate::types::RecipeAction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RecipeAction {
-            operation: self.operation.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "operation",
-                    "operation was not specified but it is required when building RecipeAction",
-                )
-            })?,
-            parameters: self.parameters,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RecipeAction {
+                operation: self.operation
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("operation", "operation was not specified but it is required when building RecipeAction")
+                    )?
+                ,
+                parameters: self.parameters
+                ,
+            }
+        )
     }
 }
+

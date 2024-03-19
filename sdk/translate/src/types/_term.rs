@@ -3,19 +3,19 @@
 /// <p>The term being translated by the custom terminology.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Term {
+pub struct Term  {
     /// <p>The source text of the term being translated by the custom terminology.</p>
     pub source_text: ::std::option::Option<::std::string::String>,
     /// <p>The target text of the term being translated by the custom terminology.</p>
     pub target_text: ::std::option::Option<::std::string::String>,
 }
-impl Term {
+impl  Term  {
     /// <p>The source text of the term being translated by the custom terminology.</p>
-    pub fn source_text(&self) -> ::std::option::Option<&str> {
+    pub fn source_text(&self) -> ::std::option::Option<& str> {
         self.source_text.as_deref()
     }
     /// <p>The target text of the term being translated by the custom terminology.</p>
-    pub fn target_text(&self) -> ::std::option::Option<&str> {
+    pub fn target_text(&self) -> ::std::option::Option<& str> {
         self.target_text.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl TermBuilder {
     }
     /// <p>The source text of the term being translated by the custom terminology.</p>
     pub fn set_source_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_text = input;
-        self
+        self.source_text = input; self
     }
     /// <p>The source text of the term being translated by the custom terminology.</p>
     pub fn get_source_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl TermBuilder {
     }
     /// <p>The target text of the term being translated by the custom terminology.</p>
     pub fn set_target_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_text = input;
-        self
+        self.target_text = input; self
     }
     /// <p>The target text of the term being translated by the custom terminology.</p>
     pub fn get_target_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl TermBuilder {
     /// Consumes the builder and constructs a [`Term`](crate::types::Term).
     pub fn build(self) -> crate::types::Term {
         crate::types::Term {
-            source_text: self.source_text,
-            target_text: self.target_text,
+            source_text: self.source_text
+            ,
+            target_text: self.target_text
+            ,
         }
     }
 }
+

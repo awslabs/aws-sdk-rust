@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let type = unimplemented!();
 /// match type {
@@ -37,16 +37,14 @@
 /// Specifically, when `type` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Type::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum Type {
     #[allow(missing_docs)] // documentation missing in model
     CreateS3DataAccessFromS3Bucket,
@@ -68,92 +66,83 @@ pub enum Type {
     ImportAssetFromSignedUrl,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for Type {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET" => Type::CreateS3DataAccessFromS3Bucket,
-            "EXPORT_ASSETS_TO_S3" => Type::ExportAssetsToS3,
-            "EXPORT_ASSET_TO_SIGNED_URL" => Type::ExportAssetToSignedUrl,
-            "EXPORT_REVISIONS_TO_S3" => Type::ExportRevisionsToS3,
-            "IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY" => Type::ImportAssetsFromLakeFormationTagPolicy,
-            "IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES" => Type::ImportAssetsFromRedshiftDataShares,
-            "IMPORT_ASSETS_FROM_S3" => Type::ImportAssetsFromS3,
-            "IMPORT_ASSET_FROM_API_GATEWAY_API" => Type::ImportAssetFromApiGatewayApi,
-            "IMPORT_ASSET_FROM_SIGNED_URL" => Type::ImportAssetFromSignedUrl,
-            other => Type::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET" => Type::CreateS3DataAccessFromS3Bucket,
+"EXPORT_ASSETS_TO_S3" => Type::ExportAssetsToS3,
+"EXPORT_ASSET_TO_SIGNED_URL" => Type::ExportAssetToSignedUrl,
+"EXPORT_REVISIONS_TO_S3" => Type::ExportRevisionsToS3,
+"IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY" => Type::ImportAssetsFromLakeFormationTagPolicy,
+"IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES" => Type::ImportAssetsFromRedshiftDataShares,
+"IMPORT_ASSETS_FROM_S3" => Type::ImportAssetsFromS3,
+"IMPORT_ASSET_FROM_API_GATEWAY_API" => Type::ImportAssetFromApiGatewayApi,
+"IMPORT_ASSET_FROM_SIGNED_URL" => Type::ImportAssetFromSignedUrl,
+other => Type::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for Type {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(Type::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(Type::from(s))
+                    }
+                }
 impl Type {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Type::CreateS3DataAccessFromS3Bucket => "CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET",
-            Type::ExportAssetsToS3 => "EXPORT_ASSETS_TO_S3",
-            Type::ExportAssetToSignedUrl => "EXPORT_ASSET_TO_SIGNED_URL",
-            Type::ExportRevisionsToS3 => "EXPORT_REVISIONS_TO_S3",
-            Type::ImportAssetsFromLakeFormationTagPolicy => "IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY",
-            Type::ImportAssetsFromRedshiftDataShares => "IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES",
-            Type::ImportAssetsFromS3 => "IMPORT_ASSETS_FROM_S3",
-            Type::ImportAssetFromApiGatewayApi => "IMPORT_ASSET_FROM_API_GATEWAY_API",
-            Type::ImportAssetFromSignedUrl => "IMPORT_ASSET_FROM_SIGNED_URL",
-            Type::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET",
-            "EXPORT_ASSETS_TO_S3",
-            "EXPORT_ASSET_TO_SIGNED_URL",
-            "EXPORT_REVISIONS_TO_S3",
-            "IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY",
-            "IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES",
-            "IMPORT_ASSETS_FROM_S3",
-            "IMPORT_ASSET_FROM_API_GATEWAY_API",
-            "IMPORT_ASSET_FROM_SIGNED_URL",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Type::CreateS3DataAccessFromS3Bucket => "CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET",
+    Type::ExportAssetsToS3 => "EXPORT_ASSETS_TO_S3",
+    Type::ExportAssetToSignedUrl => "EXPORT_ASSET_TO_SIGNED_URL",
+    Type::ExportRevisionsToS3 => "EXPORT_REVISIONS_TO_S3",
+    Type::ImportAssetsFromLakeFormationTagPolicy => "IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY",
+    Type::ImportAssetsFromRedshiftDataShares => "IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES",
+    Type::ImportAssetsFromS3 => "IMPORT_ASSETS_FROM_S3",
+    Type::ImportAssetFromApiGatewayApi => "IMPORT_ASSET_FROM_API_GATEWAY_API",
+    Type::ImportAssetFromSignedUrl => "IMPORT_ASSET_FROM_SIGNED_URL",
+    Type::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET", "EXPORT_ASSETS_TO_S3", "EXPORT_ASSET_TO_SIGNED_URL", "EXPORT_REVISIONS_TO_S3", "IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY", "IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES", "IMPORT_ASSETS_FROM_S3", "IMPORT_ASSET_FROM_API_GATEWAY_API", "IMPORT_ASSET_FROM_SIGNED_URL"]
+                }
+            }
 impl ::std::convert::AsRef<str> for Type {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl Type {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for Type {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            Type::CreateS3DataAccessFromS3Bucket => write!(f, "CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET"),
-            Type::ExportAssetsToS3 => write!(f, "EXPORT_ASSETS_TO_S3"),
-            Type::ExportAssetToSignedUrl => write!(f, "EXPORT_ASSET_TO_SIGNED_URL"),
-            Type::ExportRevisionsToS3 => write!(f, "EXPORT_REVISIONS_TO_S3"),
-            Type::ImportAssetsFromLakeFormationTagPolicy => write!(f, "IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY"),
-            Type::ImportAssetsFromRedshiftDataShares => write!(f, "IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES"),
-            Type::ImportAssetsFromS3 => write!(f, "IMPORT_ASSETS_FROM_S3"),
-            Type::ImportAssetFromApiGatewayApi => write!(f, "IMPORT_ASSET_FROM_API_GATEWAY_API"),
-            Type::ImportAssetFromSignedUrl => write!(f, "IMPORT_ASSET_FROM_SIGNED_URL"),
-            Type::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                Type::CreateS3DataAccessFromS3Bucket => write!(f, "CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET"),
+Type::ExportAssetsToS3 => write!(f, "EXPORT_ASSETS_TO_S3"),
+Type::ExportAssetToSignedUrl => write!(f, "EXPORT_ASSET_TO_SIGNED_URL"),
+Type::ExportRevisionsToS3 => write!(f, "EXPORT_REVISIONS_TO_S3"),
+Type::ImportAssetsFromLakeFormationTagPolicy => write!(f, "IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY"),
+Type::ImportAssetsFromRedshiftDataShares => write!(f, "IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES"),
+Type::ImportAssetsFromS3 => write!(f, "IMPORT_ASSETS_FROM_S3"),
+Type::ImportAssetFromApiGatewayApi => write!(f, "IMPORT_ASSET_FROM_API_GATEWAY_API"),
+Type::ImportAssetFromSignedUrl => write!(f, "IMPORT_ASSET_FROM_SIGNED_URL"),
+Type::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

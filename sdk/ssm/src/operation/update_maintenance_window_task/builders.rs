@@ -5,23 +5,20 @@ pub use crate::operation::update_maintenance_window_task::_update_maintenance_wi
 
 impl UpdateMaintenanceWindowTaskInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_maintenance_window_task();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_maintenance_window_task();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateMaintenanceWindowTask`.
-///
+/// 
 /// <p>Modifies a task assigned to a maintenance window. You can't change the task type, but you can change the following values:</p>
 /// <ul>
 /// <li>
@@ -45,33 +42,32 @@ impl UpdateMaintenanceWindowTaskInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateMaintenanceWindowTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_maintenance_window_task::builders::UpdateMaintenanceWindowTaskInputBuilder,
+                    inner: crate::operation::update_maintenance_window_task::builders::UpdateMaintenanceWindowTaskInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskOutput,
-        crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskError,
-    > for UpdateMaintenanceWindowTaskFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskOutput,
-            crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskOutput,
+                    crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskError,
+                > for UpdateMaintenanceWindowTaskFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskOutput,
+                        crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateMaintenanceWindowTaskFluentBuilder {
     /// Creates a new `UpdateMaintenanceWindowTask`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -80,53 +76,44 @@ impl UpdateMaintenanceWindowTaskFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTask::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTask::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskOutput,
-        crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTask::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTask::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskOutput, crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The maintenance window ID that contains the task to modify.</p>
     pub fn window_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.window_id(input.into());
@@ -169,14 +156,14 @@ impl UpdateMaintenanceWindowTaskFluentBuilder {
     /// <p>The targets (either managed nodes or tags) to modify. Managed nodes are specified using the format <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>. Tags are specified using the format <code> Key=tag_name,Values=tag_value</code>.</p><note>
     /// <p>One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task, targets are optional for other maintenance window task types (Automation, Lambda, and Step Functions). For more information about running tasks that don't specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// </note>
-    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Target>>) -> Self {
         self.inner = self.inner.set_targets(input);
         self
     }
     /// <p>The targets (either managed nodes or tags) to modify. Managed nodes are specified using the format <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>. Tags are specified using the format <code> Key=tag_name,Values=tag_value</code>.</p><note>
     /// <p>One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task, targets are optional for other maintenance window task types (Automation, Lambda, and Step Functions). For more information about running tasks that don't specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// </note>
-    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Target>> {
         self.inner.get_targets()
     }
     /// <p>The task ARN to modify.</p>
@@ -220,11 +207,7 @@ impl UpdateMaintenanceWindowTaskFluentBuilder {
     /// <p>The map has the following format:</p>
     /// <p>Key: string, between 1 and 255 characters</p>
     /// <p>Value: an array of strings, each string is between 1 and 255 characters</p>
-    pub fn task_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::MaintenanceWindowTaskParameterValueExpression,
-    ) -> Self {
+    pub fn task_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::MaintenanceWindowTaskParameterValueExpression) -> Self {
         self.inner = self.inner.task_parameters(k.into(), v);
         self
     }
@@ -234,10 +217,7 @@ impl UpdateMaintenanceWindowTaskFluentBuilder {
     /// <p>The map has the following format:</p>
     /// <p>Key: string, between 1 and 255 characters</p>
     /// <p>Value: an array of strings, each string is between 1 and 255 characters</p>
-    pub fn set_task_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>>,
-    ) -> Self {
+    pub fn set_task_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>>) -> Self {
         self.inner = self.inner.set_task_parameters(input);
         self
     }
@@ -247,9 +227,7 @@ impl UpdateMaintenanceWindowTaskFluentBuilder {
     /// <p>The map has the following format:</p>
     /// <p>Key: string, between 1 and 255 characters</p>
     /// <p>Value: an array of strings, each string is between 1 and 255 characters</p>
-    pub fn get_task_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>> {
+    pub fn get_task_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>> {
         self.inner.get_task_parameters()
     }
     /// <p>The parameters that the task should use during execution. Populate only the fields that match the task type. All other fields should be empty.</p><important>
@@ -462,3 +440,4 @@ impl UpdateMaintenanceWindowTaskFluentBuilder {
         self.inner.get_alarm_configuration()
     }
 }
+

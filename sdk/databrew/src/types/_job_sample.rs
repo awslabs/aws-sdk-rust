@@ -3,7 +3,7 @@
 /// <p>A sample configuration for profile jobs only, which determines the number of rows on which the profile job is run. If a <code>JobSample</code> value isn't provided, the default is used. The default value is CUSTOM_ROWS for the mode parameter and 20,000 for the size parameter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobSample {
+pub struct JobSample  {
     /// <p>A value that determines whether the profile job is run on the entire dataset or a specified number of rows. This value must be one of the following:</p>
     /// <ul>
     /// <li>
@@ -16,7 +16,7 @@ pub struct JobSample {
     /// <p>Long.MAX_VALUE = 9223372036854775807</p>
     pub size: ::std::option::Option<i64>,
 }
-impl JobSample {
+impl  JobSample  {
     /// <p>A value that determines whether the profile job is run on the entire dataset or a specified number of rows. This value must be one of the following:</p>
     /// <ul>
     /// <li>
@@ -24,7 +24,7 @@ impl JobSample {
     /// <li>
     /// <p>CUSTOM_ROWS - The profile job is run on the number of rows specified in the <code>Size</code> parameter.</p></li>
     /// </ul>
-    pub fn mode(&self) -> ::std::option::Option<&crate::types::SampleMode> {
+    pub fn mode(&self) -> ::std::option::Option<& crate::types::SampleMode> {
         self.mode.as_ref()
     }
     /// <p>The <code>Size</code> parameter is only required when the mode is CUSTOM_ROWS. The profile job is run on the specified number of rows. The maximum value for size is Long.MAX_VALUE.</p>
@@ -67,8 +67,7 @@ impl JobSampleBuilder {
     /// <p>CUSTOM_ROWS - The profile job is run on the number of rows specified in the <code>Size</code> parameter.</p></li>
     /// </ul>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::SampleMode>) -> Self {
-        self.mode = input;
-        self
+        self.mode = input; self
     }
     /// <p>A value that determines whether the profile job is run on the entire dataset or a specified number of rows. This value must be one of the following:</p>
     /// <ul>
@@ -89,8 +88,7 @@ impl JobSampleBuilder {
     /// <p>The <code>Size</code> parameter is only required when the mode is CUSTOM_ROWS. The profile job is run on the specified number of rows. The maximum value for size is Long.MAX_VALUE.</p>
     /// <p>Long.MAX_VALUE = 9223372036854775807</p>
     pub fn set_size(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.size = input;
-        self
+        self.size = input; self
     }
     /// <p>The <code>Size</code> parameter is only required when the mode is CUSTOM_ROWS. The profile job is run on the specified number of rows. The maximum value for size is Long.MAX_VALUE.</p>
     /// <p>Long.MAX_VALUE = 9223372036854775807</p>
@@ -100,8 +98,11 @@ impl JobSampleBuilder {
     /// Consumes the builder and constructs a [`JobSample`](crate::types::JobSample).
     pub fn build(self) -> crate::types::JobSample {
         crate::types::JobSample {
-            mode: self.mode,
-            size: self.size,
+            mode: self.mode
+            ,
+            size: self.size
+            ,
         }
     }
 }
+

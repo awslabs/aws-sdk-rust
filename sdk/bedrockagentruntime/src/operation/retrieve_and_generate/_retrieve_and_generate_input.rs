@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct RetrieveAndGenerateInput {
+pub struct RetrieveAndGenerateInput  {
     /// <p>The unique identifier of the session. Reuse the same value to continue the same session with the knowledge base.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains the query made to the knowledge base.</p>
@@ -12,25 +12,25 @@ pub struct RetrieveAndGenerateInput {
     /// <p>Contains details about the session with the knowledge base.</p>
     pub session_configuration: ::std::option::Option<crate::types::RetrieveAndGenerateSessionConfiguration>,
 }
-impl RetrieveAndGenerateInput {
+impl  RetrieveAndGenerateInput  {
     /// <p>The unique identifier of the session. Reuse the same value to continue the same session with the knowledge base.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>Contains the query made to the knowledge base.</p>
-    pub fn input(&self) -> ::std::option::Option<&crate::types::RetrieveAndGenerateInput> {
+    pub fn input(&self) -> ::std::option::Option<& crate::types::RetrieveAndGenerateInput> {
         self.input.as_ref()
     }
     /// <p>Contains details about the resource being queried and the foundation model used for generation.</p>
-    pub fn retrieve_and_generate_configuration(&self) -> ::std::option::Option<&crate::types::RetrieveAndGenerateConfiguration> {
+    pub fn retrieve_and_generate_configuration(&self) -> ::std::option::Option<& crate::types::RetrieveAndGenerateConfiguration> {
         self.retrieve_and_generate_configuration.as_ref()
     }
     /// <p>Contains details about the session with the knowledge base.</p>
-    pub fn session_configuration(&self) -> ::std::option::Option<&crate::types::RetrieveAndGenerateSessionConfiguration> {
+    pub fn session_configuration(&self) -> ::std::option::Option<& crate::types::RetrieveAndGenerateSessionConfiguration> {
         self.session_configuration.as_ref()
     }
 }
-impl ::std::fmt::Debug for RetrieveAndGenerateInput {
+impl  ::std::fmt::Debug for RetrieveAndGenerateInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RetrieveAndGenerateInput");
         formatter.field("session_id", &self.session_id);
@@ -64,8 +64,7 @@ impl RetrieveAndGenerateInputBuilder {
     }
     /// <p>The unique identifier of the session. Reuse the same value to continue the same session with the knowledge base.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>The unique identifier of the session. Reuse the same value to continue the same session with the knowledge base.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl RetrieveAndGenerateInputBuilder {
     }
     /// <p>Contains the query made to the knowledge base.</p>
     pub fn set_input(mut self, input: ::std::option::Option<crate::types::RetrieveAndGenerateInput>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
     }
     /// <p>Contains the query made to the knowledge base.</p>
     pub fn get_input(&self) -> &::std::option::Option<crate::types::RetrieveAndGenerateInput> {
@@ -93,8 +91,7 @@ impl RetrieveAndGenerateInputBuilder {
     }
     /// <p>Contains details about the resource being queried and the foundation model used for generation.</p>
     pub fn set_retrieve_and_generate_configuration(mut self, input: ::std::option::Option<crate::types::RetrieveAndGenerateConfiguration>) -> Self {
-        self.retrieve_and_generate_configuration = input;
-        self
+        self.retrieve_and_generate_configuration = input; self
     }
     /// <p>Contains details about the resource being queried and the foundation model used for generation.</p>
     pub fn get_retrieve_and_generate_configuration(&self) -> &::std::option::Option<crate::types::RetrieveAndGenerateConfiguration> {
@@ -107,24 +104,26 @@ impl RetrieveAndGenerateInputBuilder {
     }
     /// <p>Contains details about the session with the knowledge base.</p>
     pub fn set_session_configuration(mut self, input: ::std::option::Option<crate::types::RetrieveAndGenerateSessionConfiguration>) -> Self {
-        self.session_configuration = input;
-        self
+        self.session_configuration = input; self
     }
     /// <p>Contains details about the session with the knowledge base.</p>
     pub fn get_session_configuration(&self) -> &::std::option::Option<crate::types::RetrieveAndGenerateSessionConfiguration> {
         &self.session_configuration
     }
     /// Consumes the builder and constructs a [`RetrieveAndGenerateInput`](crate::operation::retrieve_and_generate::RetrieveAndGenerateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::retrieve_and_generate::RetrieveAndGenerateInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::retrieve_and_generate::RetrieveAndGenerateInput {
-            session_id: self.session_id,
-            input: self.input,
-            retrieve_and_generate_configuration: self.retrieve_and_generate_configuration,
-            session_configuration: self.session_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::retrieve_and_generate::RetrieveAndGenerateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::retrieve_and_generate::RetrieveAndGenerateInput {
+                session_id: self.session_id
+                ,
+                input: self.input
+                ,
+                retrieve_and_generate_configuration: self.retrieve_and_generate_configuration
+                ,
+                session_configuration: self.session_configuration
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for RetrieveAndGenerateInputBuilder {
@@ -137,3 +136,4 @@ impl ::std::fmt::Debug for RetrieveAndGenerateInputBuilder {
         formatter.finish()
     }
 }
+

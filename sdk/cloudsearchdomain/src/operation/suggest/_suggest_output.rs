@@ -3,28 +3,28 @@
 /// <p>Contains the response to a <code>Suggest</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SuggestOutput {
+pub struct SuggestOutput  {
     /// <p>The status of a <code>SuggestRequest</code>. Contains the resource ID (<code>rid</code>) and how long it took to process the request (<code>timems</code>).</p>
     pub status: ::std::option::Option<crate::types::SuggestStatus>,
     /// <p>Container for the matching search suggestion information.</p>
     pub suggest: ::std::option::Option<crate::types::SuggestModel>,
     _request_id: Option<String>,
 }
-impl SuggestOutput {
+impl  SuggestOutput  {
     /// <p>The status of a <code>SuggestRequest</code>. Contains the resource ID (<code>rid</code>) and how long it took to process the request (<code>timems</code>).</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::SuggestStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::SuggestStatus> {
         self.status.as_ref()
     }
     /// <p>Container for the matching search suggestion information.</p>
-    pub fn suggest(&self) -> ::std::option::Option<&crate::types::SuggestModel> {
+    pub fn suggest(&self) -> ::std::option::Option<& crate::types::SuggestModel> {
         self.suggest.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for SuggestOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SuggestOutput {
     /// Creates a new builder-style object to manufacture [`SuggestOutput`](crate::operation::suggest::SuggestOutput).
     pub fn builder() -> crate::operation::suggest::builders::SuggestOutputBuilder {
@@ -48,8 +48,7 @@ impl SuggestOutputBuilder {
     }
     /// <p>The status of a <code>SuggestRequest</code>. Contains the resource ID (<code>rid</code>) and how long it took to process the request (<code>timems</code>).</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SuggestStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of a <code>SuggestRequest</code>. Contains the resource ID (<code>rid</code>) and how long it took to process the request (<code>timems</code>).</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::SuggestStatus> {
@@ -62,28 +61,30 @@ impl SuggestOutputBuilder {
     }
     /// <p>Container for the matching search suggestion information.</p>
     pub fn set_suggest(mut self, input: ::std::option::Option<crate::types::SuggestModel>) -> Self {
-        self.suggest = input;
-        self
+        self.suggest = input; self
     }
     /// <p>Container for the matching search suggestion information.</p>
     pub fn get_suggest(&self) -> &::std::option::Option<crate::types::SuggestModel> {
         &self.suggest
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SuggestOutput`](crate::operation::suggest::SuggestOutput).
     pub fn build(self) -> crate::operation::suggest::SuggestOutput {
         crate::operation::suggest::SuggestOutput {
-            status: self.status,
-            suggest: self.suggest,
+            status: self.status
+            ,
+            suggest: self.suggest
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

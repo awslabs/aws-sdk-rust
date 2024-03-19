@@ -2,37 +2,39 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeOrganizationResourceCollectionHealthInput {
+pub struct DescribeOrganizationResourceCollectionHealthInput  {
     /// <p>An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks.</p>
     pub organization_resource_collection_type: ::std::option::Option<crate::types::OrganizationResourceCollectionType>,
     /// <p>The ID of the Amazon Web Services account.</p>
-    pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub account_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The ID of the organizational unit.</p>
-    pub organizational_unit_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub organizational_unit_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl DescribeOrganizationResourceCollectionHealthInput {
+impl  DescribeOrganizationResourceCollectionHealthInput  {
     /// <p>An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks.</p>
-    pub fn organization_resource_collection_type(&self) -> ::std::option::Option<&crate::types::OrganizationResourceCollectionType> {
+    pub fn organization_resource_collection_type(&self) -> ::std::option::Option<& crate::types::OrganizationResourceCollectionType> {
         self.organization_resource_collection_type.as_ref()
     }
     /// <p>The ID of the Amazon Web Services account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
-    pub fn account_ids(&self) -> &[::std::string::String] {
-        self.account_ids.as_deref().unwrap_or_default()
+    pub fn account_ids(&self) -> & [::std::string::String] {
+        self.account_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the organizational unit.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organizational_unit_ids.is_none()`.
-    pub fn organizational_unit_ids(&self) -> &[::std::string::String] {
-        self.organizational_unit_ids.as_deref().unwrap_or_default()
+    pub fn organizational_unit_ids(&self) -> & [::std::string::String] {
+        self.organizational_unit_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -42,8 +44,7 @@ impl DescribeOrganizationResourceCollectionHealthInput {
 }
 impl DescribeOrganizationResourceCollectionHealthInput {
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationResourceCollectionHealthInput`](crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthInput).
-    pub fn builder(
-    ) -> crate::operation::describe_organization_resource_collection_health::builders::DescribeOrganizationResourceCollectionHealthInputBuilder {
+    pub fn builder() -> crate::operation::describe_organization_resource_collection_health::builders::DescribeOrganizationResourceCollectionHealthInputBuilder {
         crate::operation::describe_organization_resource_collection_health::builders::DescribeOrganizationResourceCollectionHealthInputBuilder::default()
     }
 }
@@ -53,8 +54,8 @@ impl DescribeOrganizationResourceCollectionHealthInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOrganizationResourceCollectionHealthInputBuilder {
     pub(crate) organization_resource_collection_type: ::std::option::Option<crate::types::OrganizationResourceCollectionType>,
-    pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) organizational_unit_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) account_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) organizational_unit_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -66,12 +67,8 @@ impl DescribeOrganizationResourceCollectionHealthInputBuilder {
         self
     }
     /// <p>An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks.</p>
-    pub fn set_organization_resource_collection_type(
-        mut self,
-        input: ::std::option::Option<crate::types::OrganizationResourceCollectionType>,
-    ) -> Self {
-        self.organization_resource_collection_type = input;
-        self
+    pub fn set_organization_resource_collection_type(mut self, input: ::std::option::Option<crate::types::OrganizationResourceCollectionType>) -> Self {
+        self.organization_resource_collection_type = input; self
     }
     /// <p>An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks.</p>
     pub fn get_organization_resource_collection_type(&self) -> &::std::option::Option<crate::types::OrganizationResourceCollectionType> {
@@ -84,17 +81,16 @@ impl DescribeOrganizationResourceCollectionHealthInputBuilder {
     /// <p>The ID of the Amazon Web Services account.</p>
     pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
-        v.push(input.into());
-        self.account_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.account_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ID of the Amazon Web Services account.</p>
-    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.account_ids = input;
-        self
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.account_ids = input; self
     }
     /// <p>The ID of the Amazon Web Services account.</p>
-    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.account_ids
     }
     /// Appends an item to `organizational_unit_ids`.
@@ -104,17 +100,16 @@ impl DescribeOrganizationResourceCollectionHealthInputBuilder {
     /// <p>The ID of the organizational unit.</p>
     pub fn organizational_unit_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.organizational_unit_ids.unwrap_or_default();
-        v.push(input.into());
-        self.organizational_unit_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.organizational_unit_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ID of the organizational unit.</p>
-    pub fn set_organizational_unit_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.organizational_unit_ids = input;
-        self
+    pub fn set_organizational_unit_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.organizational_unit_ids = input; self
     }
     /// <p>The ID of the organizational unit.</p>
-    pub fn get_organizational_unit_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_organizational_unit_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.organizational_unit_ids
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
@@ -124,8 +119,7 @@ impl DescribeOrganizationResourceCollectionHealthInputBuilder {
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,28 +132,28 @@ impl DescribeOrganizationResourceCollectionHealthInputBuilder {
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeOrganizationResourceCollectionHealthInput`](crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthInput {
-                organization_resource_collection_type: self.organization_resource_collection_type,
-                account_ids: self.account_ids,
-                organizational_unit_ids: self.organizational_unit_ids,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                organization_resource_collection_type: self.organization_resource_collection_type
+                ,
+                account_ids: self.account_ids
+                ,
+                organizational_unit_ids: self.organizational_unit_ids
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

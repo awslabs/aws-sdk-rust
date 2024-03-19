@@ -3,27 +3,26 @@
 /// <p>A single logging filter, used in <code>LoggingFilter</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Filter {
+pub struct Filter  {
     /// <p>How to handle logs that satisfy the filter's conditions and requirement.</p>
     pub behavior: crate::types::FilterBehavior,
     /// <p>Logic to apply to the filtering conditions. You can specify that, in order to satisfy the filter, a log must match all conditions or must match at least one condition.</p>
     pub requirement: crate::types::FilterRequirement,
     /// <p>Match conditions for the filter.</p>
-    pub conditions: ::std::vec::Vec<crate::types::Condition>,
+    pub conditions: ::std::vec::Vec::<crate::types::Condition>,
 }
-impl Filter {
+impl  Filter  {
     /// <p>How to handle logs that satisfy the filter's conditions and requirement.</p>
-    pub fn behavior(&self) -> &crate::types::FilterBehavior {
+    pub fn behavior(&self) -> & crate::types::FilterBehavior {
         &self.behavior
     }
     /// <p>Logic to apply to the filtering conditions. You can specify that, in order to satisfy the filter, a log must match all conditions or must match at least one condition.</p>
-    pub fn requirement(&self) -> &crate::types::FilterRequirement {
+    pub fn requirement(&self) -> & crate::types::FilterRequirement {
         &self.requirement
     }
     /// <p>Match conditions for the filter.</p>
-    pub fn conditions(&self) -> &[crate::types::Condition] {
-        use std::ops::Deref;
-        self.conditions.deref()
+    pub fn conditions(&self) -> & [crate::types::Condition] {
+        use std::ops::Deref; self.conditions.deref()
     }
 }
 impl Filter {
@@ -39,7 +38,7 @@ impl Filter {
 pub struct FilterBuilder {
     pub(crate) behavior: ::std::option::Option<crate::types::FilterBehavior>,
     pub(crate) requirement: ::std::option::Option<crate::types::FilterRequirement>,
-    pub(crate) conditions: ::std::option::Option<::std::vec::Vec<crate::types::Condition>>,
+    pub(crate) conditions: ::std::option::Option<::std::vec::Vec::<crate::types::Condition>>,
 }
 impl FilterBuilder {
     /// <p>How to handle logs that satisfy the filter's conditions and requirement.</p>
@@ -50,8 +49,7 @@ impl FilterBuilder {
     }
     /// <p>How to handle logs that satisfy the filter's conditions and requirement.</p>
     pub fn set_behavior(mut self, input: ::std::option::Option<crate::types::FilterBehavior>) -> Self {
-        self.behavior = input;
-        self
+        self.behavior = input; self
     }
     /// <p>How to handle logs that satisfy the filter's conditions and requirement.</p>
     pub fn get_behavior(&self) -> &::std::option::Option<crate::types::FilterBehavior> {
@@ -65,8 +63,7 @@ impl FilterBuilder {
     }
     /// <p>Logic to apply to the filtering conditions. You can specify that, in order to satisfy the filter, a log must match all conditions or must match at least one condition.</p>
     pub fn set_requirement(mut self, input: ::std::option::Option<crate::types::FilterRequirement>) -> Self {
-        self.requirement = input;
-        self
+        self.requirement = input; self
     }
     /// <p>Logic to apply to the filtering conditions. You can specify that, in order to satisfy the filter, a log must match all conditions or must match at least one condition.</p>
     pub fn get_requirement(&self) -> &::std::option::Option<crate::types::FilterRequirement> {
@@ -79,17 +76,16 @@ impl FilterBuilder {
     /// <p>Match conditions for the filter.</p>
     pub fn conditions(mut self, input: crate::types::Condition) -> Self {
         let mut v = self.conditions.unwrap_or_default();
-        v.push(input);
-        self.conditions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.conditions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Match conditions for the filter.</p>
-    pub fn set_conditions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Condition>>) -> Self {
-        self.conditions = input;
-        self
+    pub fn set_conditions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Condition>>) -> Self {
+        self.conditions = input; self
     }
     /// <p>Match conditions for the filter.</p>
-    pub fn get_conditions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Condition>> {
+    pub fn get_conditions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Condition>> {
         &self.conditions
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
@@ -98,25 +94,25 @@ impl FilterBuilder {
     /// - [`requirement`](crate::types::builders::FilterBuilder::requirement)
     /// - [`conditions`](crate::types::builders::FilterBuilder::conditions)
     pub fn build(self) -> ::std::result::Result<crate::types::Filter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Filter {
-            behavior: self.behavior.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "behavior",
-                    "behavior was not specified but it is required when building Filter",
-                )
-            })?,
-            requirement: self.requirement.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "requirement",
-                    "requirement was not specified but it is required when building Filter",
-                )
-            })?,
-            conditions: self.conditions.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "conditions",
-                    "conditions was not specified but it is required when building Filter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Filter {
+                behavior: self.behavior
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("behavior", "behavior was not specified but it is required when building Filter")
+                    )?
+                ,
+                requirement: self.requirement
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("requirement", "requirement was not specified but it is required when building Filter")
+                    )?
+                ,
+                conditions: self.conditions
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("conditions", "conditions was not specified but it is required when building Filter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateKeyDescriptionInput {
+pub struct UpdateKeyDescriptionInput  {
     /// <p>Updates the description of the specified KMS key.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
@@ -19,7 +19,7 @@ pub struct UpdateKeyDescriptionInput {
     /// </important>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl UpdateKeyDescriptionInput {
+impl  UpdateKeyDescriptionInput  {
     /// <p>Updates the description of the specified KMS key.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
@@ -30,13 +30,13 @@ impl UpdateKeyDescriptionInput {
     /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
-    pub fn key_id(&self) -> ::std::option::Option<&str> {
+    pub fn key_id(&self) -> ::std::option::Option<& str> {
         self.key_id.as_deref()
     }
     /// <p>New description for the KMS key.</p><important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -81,8 +81,7 @@ impl UpdateKeyDescriptionInputBuilder {
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_id = input;
-        self
+        self.key_id = input; self
     }
     /// <p>Updates the description of the specified KMS key.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -109,8 +108,7 @@ impl UpdateKeyDescriptionInputBuilder {
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>New description for the KMS key.</p><important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
@@ -119,13 +117,15 @@ impl UpdateKeyDescriptionInputBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateKeyDescriptionInput`](crate::operation::update_key_description::UpdateKeyDescriptionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_key_description::UpdateKeyDescriptionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_key_description::UpdateKeyDescriptionInput {
-            key_id: self.key_id,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_key_description::UpdateKeyDescriptionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_key_description::UpdateKeyDescriptionInput {
+                key_id: self.key_id
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Details about a file.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FileInformation {
+pub struct FileInformation  {
     /// <p>The file's total parts.</p>
     pub total_parts: ::std::option::Option<i32>,
     /// <p>The file's part size.</p>
@@ -11,7 +11,7 @@ pub struct FileInformation {
     /// <p>The file's content length.</p>
     pub content_length: ::std::option::Option<i64>,
 }
-impl FileInformation {
+impl  FileInformation  {
     /// <p>The file's total parts.</p>
     pub fn total_parts(&self) -> ::std::option::Option<i32> {
         self.total_parts
@@ -48,8 +48,7 @@ impl FileInformationBuilder {
     }
     /// <p>The file's total parts.</p>
     pub fn set_total_parts(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_parts = input;
-        self
+        self.total_parts = input; self
     }
     /// <p>The file's total parts.</p>
     pub fn get_total_parts(&self) -> &::std::option::Option<i32> {
@@ -62,8 +61,7 @@ impl FileInformationBuilder {
     }
     /// <p>The file's part size.</p>
     pub fn set_part_size(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.part_size = input;
-        self
+        self.part_size = input; self
     }
     /// <p>The file's part size.</p>
     pub fn get_part_size(&self) -> &::std::option::Option<i64> {
@@ -76,8 +74,7 @@ impl FileInformationBuilder {
     }
     /// <p>The file's content length.</p>
     pub fn set_content_length(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.content_length = input;
-        self
+        self.content_length = input; self
     }
     /// <p>The file's content length.</p>
     pub fn get_content_length(&self) -> &::std::option::Option<i64> {
@@ -86,9 +83,13 @@ impl FileInformationBuilder {
     /// Consumes the builder and constructs a [`FileInformation`](crate::types::FileInformation).
     pub fn build(self) -> crate::types::FileInformation {
         crate::types::FileInformation {
-            total_parts: self.total_parts,
-            part_size: self.part_size,
-            content_length: self.content_length,
+            total_parts: self.total_parts
+            ,
+            part_size: self.part_size
+            ,
+            content_length: self.content_length
+            ,
         }
     }
 }
+

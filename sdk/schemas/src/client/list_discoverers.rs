@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDiscoverers`](crate::operation::list_discoverers::builders::ListDiscoverersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_discoverers::builders::ListDiscoverersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`discoverer_id_prefix(impl Into<String>)`](crate::operation::list_discoverers::builders::ListDiscoverersFluentBuilder::discoverer_id_prefix) / [`set_discoverer_id_prefix(Option<String>)`](crate::operation::list_discoverers::builders::ListDiscoverersFluentBuilder::set_discoverer_id_prefix):<br>required: **false**<br><p>Specifying this limits the results to only those discoverer IDs that start with the specified prefix.</p><br>
     ///   - [`limit(i32)`](crate::operation::list_discoverers::builders::ListDiscoverersFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::list_discoverers::builders::ListDiscoverersFluentBuilder::set_limit):<br>required: **false**<br>(undocumented)<br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_discoverers::builders::ListDiscoverersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_discoverers::builders::ListDiscoverersFluentBuilder::set_next_token):<br>required: **false**<br><p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p><br>
     ///   - [`source_arn_prefix(impl Into<String>)`](crate::operation::list_discoverers::builders::ListDiscoverersFluentBuilder::source_arn_prefix) / [`set_source_arn_prefix(Option<String>)`](crate::operation::list_discoverers::builders::ListDiscoverersFluentBuilder::set_source_arn_prefix):<br>required: **false**<br><p>Specifying this limits the results to only those ARNs that start with the specified prefix.</p><br>
-    /// - On success, responds with [`ListDiscoverersOutput`](crate::operation::list_discoverers::ListDiscoverersOutput) with field(s):
+                            /// - On success, responds with [`ListDiscoverersOutput`](crate::operation::list_discoverers::ListDiscoverersOutput) with field(s):
     ///   - [`discoverers(Option<Vec::<DiscovererSummary>>)`](crate::operation::list_discoverers::ListDiscoverersOutput::discoverers): <p>An array of DiscovererSummary information.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_discoverers::ListDiscoverersOutput::next_token): <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
-    /// - On failure, responds with [`SdkError<ListDiscoverersError>`](crate::operation::list_discoverers::ListDiscoverersError)
+                            /// - On failure, responds with [`SdkError<ListDiscoverersError>`](crate::operation::list_discoverers::ListDiscoverersError)
     pub fn list_discoverers(&self) -> crate::operation::list_discoverers::builders::ListDiscoverersFluentBuilder {
-        crate::operation::list_discoverers::builders::ListDiscoverersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_discoverers::builders::ListDiscoverersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

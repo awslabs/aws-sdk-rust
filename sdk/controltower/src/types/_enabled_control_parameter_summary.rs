@@ -3,20 +3,19 @@
 /// <p>Returns a summary of information about the parameters of an enabled control.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnabledControlParameterSummary {
+pub struct EnabledControlParameterSummary  {
     /// <p>The key of a key/value pair.</p>
     pub key: ::std::string::String,
     /// <p>The value of a key/value pair.</p>
     pub value: ::aws_smithy_types::Document,
 }
-impl EnabledControlParameterSummary {
+impl  EnabledControlParameterSummary  {
     /// <p>The key of a key/value pair.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>The value of a key/value pair.</p>
-    pub fn value(&self) -> &::aws_smithy_types::Document {
+    pub fn value(&self) -> & ::aws_smithy_types::Document {
         &self.value
     }
 }
@@ -43,8 +42,7 @@ impl EnabledControlParameterSummaryBuilder {
     }
     /// <p>The key of a key/value pair.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The key of a key/value pair.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl EnabledControlParameterSummaryBuilder {
     }
     /// <p>The value of a key/value pair.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of a key/value pair.</p>
     pub fn get_value(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
@@ -70,19 +67,20 @@ impl EnabledControlParameterSummaryBuilder {
     /// - [`key`](crate::types::builders::EnabledControlParameterSummaryBuilder::key)
     /// - [`value`](crate::types::builders::EnabledControlParameterSummaryBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::EnabledControlParameterSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EnabledControlParameterSummary {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building EnabledControlParameterSummary",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building EnabledControlParameterSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EnabledControlParameterSummary {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building EnabledControlParameterSummary")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building EnabledControlParameterSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,22 +3,23 @@
 /// <p>The reference rule that partially matches the <code>ViolationTarget</code> rule and violation reason.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PartialMatch {
+pub struct PartialMatch  {
     /// <p>The reference rule from the primary security group of the Firewall Manager policy.</p>
     pub reference: ::std::option::Option<::std::string::String>,
     /// <p>The violation reason.</p>
-    pub target_violation_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub target_violation_reasons: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl PartialMatch {
+impl  PartialMatch  {
     /// <p>The reference rule from the primary security group of the Firewall Manager policy.</p>
-    pub fn reference(&self) -> ::std::option::Option<&str> {
+    pub fn reference(&self) -> ::std::option::Option<& str> {
         self.reference.as_deref()
     }
     /// <p>The violation reason.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_violation_reasons.is_none()`.
-    pub fn target_violation_reasons(&self) -> &[::std::string::String] {
-        self.target_violation_reasons.as_deref().unwrap_or_default()
+    pub fn target_violation_reasons(&self) -> & [::std::string::String] {
+        self.target_violation_reasons.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PartialMatch {
@@ -33,7 +34,7 @@ impl PartialMatch {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PartialMatchBuilder {
     pub(crate) reference: ::std::option::Option<::std::string::String>,
-    pub(crate) target_violation_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) target_violation_reasons: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl PartialMatchBuilder {
     /// <p>The reference rule from the primary security group of the Firewall Manager policy.</p>
@@ -43,8 +44,7 @@ impl PartialMatchBuilder {
     }
     /// <p>The reference rule from the primary security group of the Firewall Manager policy.</p>
     pub fn set_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reference = input;
-        self
+        self.reference = input; self
     }
     /// <p>The reference rule from the primary security group of the Firewall Manager policy.</p>
     pub fn get_reference(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl PartialMatchBuilder {
     /// <p>The violation reason.</p>
     pub fn target_violation_reasons(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_violation_reasons.unwrap_or_default();
-        v.push(input.into());
-        self.target_violation_reasons = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.target_violation_reasons = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The violation reason.</p>
-    pub fn set_target_violation_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.target_violation_reasons = input;
-        self
+    pub fn set_target_violation_reasons(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.target_violation_reasons = input; self
     }
     /// <p>The violation reason.</p>
-    pub fn get_target_violation_reasons(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_violation_reasons(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.target_violation_reasons
     }
     /// Consumes the builder and constructs a [`PartialMatch`](crate::types::PartialMatch).
     pub fn build(self) -> crate::types::PartialMatch {
         crate::types::PartialMatch {
-            reference: self.reference,
-            target_violation_reasons: self.target_violation_reasons,
+            reference: self.reference
+            ,
+            target_violation_reasons: self.target_violation_reasons
+            ,
         }
     }
 }
+

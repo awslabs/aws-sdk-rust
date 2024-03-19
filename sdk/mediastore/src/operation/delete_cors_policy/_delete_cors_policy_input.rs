@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCorsPolicyInput {
+pub struct DeleteCorsPolicyInput  {
     /// <p>The name of the container to remove the policy from.</p>
     pub container_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteCorsPolicyInput {
+impl  DeleteCorsPolicyInput  {
     /// <p>The name of the container to remove the policy from.</p>
-    pub fn container_name(&self) -> ::std::option::Option<&str> {
+    pub fn container_name(&self) -> ::std::option::Option<& str> {
         self.container_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteCorsPolicyInputBuilder {
     }
     /// <p>The name of the container to remove the policy from.</p>
     pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.container_name = input;
-        self
+        self.container_name = input; self
     }
     /// <p>The name of the container to remove the policy from.</p>
     pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.container_name
     }
     /// Consumes the builder and constructs a [`DeleteCorsPolicyInput`](crate::operation::delete_cors_policy::DeleteCorsPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_cors_policy::DeleteCorsPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_cors_policy::DeleteCorsPolicyInput {
-            container_name: self.container_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_cors_policy::DeleteCorsPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_cors_policy::DeleteCorsPolicyInput {
+                container_name: self.container_name
+                ,
+            }
+        )
     }
 }
+

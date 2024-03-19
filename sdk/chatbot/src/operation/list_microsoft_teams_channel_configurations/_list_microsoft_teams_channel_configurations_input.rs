@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMicrosoftTeamsChannelConfigurationsInput {
+pub struct ListMicrosoftTeamsChannelConfigurationsInput  {
     /// The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.
     pub max_results: ::std::option::Option<i32>,
     /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
@@ -10,17 +10,17 @@ pub struct ListMicrosoftTeamsChannelConfigurationsInput {
     /// The ID of the Microsoft Team authorized with AWS Chatbot. To get the team ID, you must perform the initial authorization flow with Microsoft Teams in the AWS Chatbot console. Then you can copy and paste the team ID from the console. For more details, see steps 1-4 in Get started with Microsoft Teams in the AWS Chatbot Administrator Guide.
     pub team_id: ::std::option::Option<::std::string::String>,
 }
-impl ListMicrosoftTeamsChannelConfigurationsInput {
+impl  ListMicrosoftTeamsChannelConfigurationsInput  {
     /// The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// The ID of the Microsoft Team authorized with AWS Chatbot. To get the team ID, you must perform the initial authorization flow with Microsoft Teams in the AWS Chatbot console. Then you can copy and paste the team ID from the console. For more details, see steps 1-4 in Get started with Microsoft Teams in the AWS Chatbot Administrator Guide.
-    pub fn team_id(&self) -> ::std::option::Option<&str> {
+    pub fn team_id(&self) -> ::std::option::Option<& str> {
         self.team_id.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl ListMicrosoftTeamsChannelConfigurationsInputBuilder {
     }
     /// The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -61,8 +60,7 @@ impl ListMicrosoftTeamsChannelConfigurationsInputBuilder {
     }
     /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,26 +73,24 @@ impl ListMicrosoftTeamsChannelConfigurationsInputBuilder {
     }
     /// The ID of the Microsoft Team authorized with AWS Chatbot. To get the team ID, you must perform the initial authorization flow with Microsoft Teams in the AWS Chatbot console. Then you can copy and paste the team ID from the console. For more details, see steps 1-4 in Get started with Microsoft Teams in the AWS Chatbot Administrator Guide.
     pub fn set_team_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.team_id = input;
-        self
+        self.team_id = input; self
     }
     /// The ID of the Microsoft Team authorized with AWS Chatbot. To get the team ID, you must perform the initial authorization flow with Microsoft Teams in the AWS Chatbot console. Then you can copy and paste the team ID from the console. For more details, see steps 1-4 in Get started with Microsoft Teams in the AWS Chatbot Administrator Guide.
     pub fn get_team_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.team_id
     }
     /// Consumes the builder and constructs a [`ListMicrosoftTeamsChannelConfigurationsInput`](crate::operation::list_microsoft_teams_channel_configurations::ListMicrosoftTeamsChannelConfigurationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_microsoft_teams_channel_configurations::ListMicrosoftTeamsChannelConfigurationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_microsoft_teams_channel_configurations::ListMicrosoftTeamsChannelConfigurationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_microsoft_teams_channel_configurations::ListMicrosoftTeamsChannelConfigurationsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                team_id: self.team_id,
-            },
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                team_id: self.team_id
+                ,
+            }
         )
     }
 }
+

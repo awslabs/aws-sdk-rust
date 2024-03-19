@@ -3,13 +3,13 @@
 /// <p>The configuration of the workgroup, which includes the location in Amazon Simple Storage Service (Amazon S3) where query results are stored, the encryption option, if any, used for query results, whether Amazon CloudWatch metrics are enabled for the workgroup, and the limit for the amount of bytes scanned (cutoff) per query, if it is specified.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsAthenaWorkGroupConfigurationDetails {
+pub struct AwsAthenaWorkGroupConfigurationDetails  {
     /// <p>The location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used for query and calculation results. These are known as client-side settings. If workgroup settings override client-side settings, then the query uses the workgroup settings.</p>
     pub result_configuration: ::std::option::Option<crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationDetails>,
 }
-impl AwsAthenaWorkGroupConfigurationDetails {
+impl  AwsAthenaWorkGroupConfigurationDetails  {
     /// <p>The location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used for query and calculation results. These are known as client-side settings. If workgroup settings override client-side settings, then the query uses the workgroup settings.</p>
-    pub fn result_configuration(&self) -> ::std::option::Option<&crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationDetails> {
+    pub fn result_configuration(&self) -> ::std::option::Option<& crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationDetails> {
         self.result_configuration.as_ref()
     }
 }
@@ -33,12 +33,8 @@ impl AwsAthenaWorkGroupConfigurationDetailsBuilder {
         self
     }
     /// <p>The location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used for query and calculation results. These are known as client-side settings. If workgroup settings override client-side settings, then the query uses the workgroup settings.</p>
-    pub fn set_result_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationDetails>,
-    ) -> Self {
-        self.result_configuration = input;
-        self
+    pub fn set_result_configuration(mut self, input: ::std::option::Option<crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationDetails>) -> Self {
+        self.result_configuration = input; self
     }
     /// <p>The location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used for query and calculation results. These are known as client-side settings. If workgroup settings override client-side settings, then the query uses the workgroup settings.</p>
     pub fn get_result_configuration(&self) -> &::std::option::Option<crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationDetails> {
@@ -47,7 +43,9 @@ impl AwsAthenaWorkGroupConfigurationDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsAthenaWorkGroupConfigurationDetails`](crate::types::AwsAthenaWorkGroupConfigurationDetails).
     pub fn build(self) -> crate::types::AwsAthenaWorkGroupConfigurationDetails {
         crate::types::AwsAthenaWorkGroupConfigurationDetails {
-            result_configuration: self.result_configuration,
+            result_configuration: self.result_configuration
+            ,
         }
     }
 }
+

@@ -5,54 +5,50 @@ pub use crate::operation::describe_capacity_providers::_describe_capacity_provid
 
 impl DescribeCapacityProvidersInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_capacity_providers::DescribeCapacityProvidersOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_capacity_providers::DescribeCapacityProvidersError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_capacity_providers();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_capacity_providers::DescribeCapacityProvidersOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_capacity_providers::DescribeCapacityProvidersError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_capacity_providers();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeCapacityProviders`.
-///
+/// 
 /// <p>Describes one or more of your capacity providers.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeCapacityProvidersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_capacity_providers::builders::DescribeCapacityProvidersInputBuilder,
+                    inner: crate::operation::describe_capacity_providers::builders::DescribeCapacityProvidersInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_capacity_providers::DescribeCapacityProvidersOutput,
-        crate::operation::describe_capacity_providers::DescribeCapacityProvidersError,
-    > for DescribeCapacityProvidersFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_capacity_providers::DescribeCapacityProvidersOutput,
-            crate::operation::describe_capacity_providers::DescribeCapacityProvidersError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_capacity_providers::DescribeCapacityProvidersOutput,
+                    crate::operation::describe_capacity_providers::DescribeCapacityProvidersError,
+                > for DescribeCapacityProvidersFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_capacity_providers::DescribeCapacityProvidersOutput,
+                        crate::operation::describe_capacity_providers::DescribeCapacityProvidersError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeCapacityProvidersFluentBuilder {
     /// Creates a new `DescribeCapacityProviders`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl DescribeCapacityProvidersFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_capacity_providers::DescribeCapacityProvidersOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_capacity_providers::DescribeCapacityProvidersError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_capacity_providers::DescribeCapacityProviders::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_capacity_providers::DescribeCapacityProviders::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_capacity_providers::DescribeCapacityProvidersOutput,
-        crate::operation::describe_capacity_providers::DescribeCapacityProvidersError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_capacity_providers::DescribeCapacityProvidersOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_capacity_providers::DescribeCapacityProvidersError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_capacity_providers::DescribeCapacityProviders::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_capacity_providers::DescribeCapacityProviders::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_capacity_providers::DescribeCapacityProvidersOutput, crate::operation::describe_capacity_providers::DescribeCapacityProvidersError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `capacityProviders`.
     ///
     /// To override the contents of this collection use [`set_capacity_providers`](Self::set_capacity_providers).
@@ -118,12 +105,12 @@ impl DescribeCapacityProvidersFluentBuilder {
         self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of one or more capacity providers. Up to <code>100</code> capacity providers can be described in an action.</p>
-    pub fn set_capacity_providers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_capacity_providers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_capacity_providers(input);
         self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of one or more capacity providers. Up to <code>100</code> capacity providers can be described in an action.</p>
-    pub fn get_capacity_providers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_capacity_providers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_capacity_providers()
     }
     /// Appends an item to `include`.
@@ -136,12 +123,12 @@ impl DescribeCapacityProvidersFluentBuilder {
         self
     }
     /// <p>Specifies whether or not you want to see the resource tags for the capacity provider. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    pub fn set_include(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderField>>) -> Self {
+    pub fn set_include(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CapacityProviderField>>) -> Self {
         self.inner = self.inner.set_include(input);
         self
     }
     /// <p>Specifies whether or not you want to see the resource tags for the capacity provider. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    pub fn get_include(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderField>> {
+    pub fn get_include(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CapacityProviderField>> {
         self.inner.get_include()
     }
     /// <p>The maximum number of account setting results returned by <code>DescribeCapacityProviders</code> in paginated output. When this parameter is used, <code>DescribeCapacityProviders</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeCapacityProviders</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 10. If this parameter is not used, then <code>DescribeCapacityProviders</code> returns up to 10 results and a <code>nextToken</code> value if applicable.</p>
@@ -179,3 +166,4 @@ impl DescribeCapacityProvidersFluentBuilder {
         self.inner.get_next_token()
     }
 }
+

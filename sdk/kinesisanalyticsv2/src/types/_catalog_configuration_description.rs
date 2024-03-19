@@ -3,13 +3,13 @@
 /// <p>The configuration parameters for the default Amazon Glue database. You use this database for Apache Flink SQL queries and table API transforms that you write in a Managed Service for Apache Flink Studio notebook.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CatalogConfigurationDescription {
+pub struct CatalogConfigurationDescription  {
     /// <p>The configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Managed Service for Apache Flink Studio notebook.</p>
     pub glue_data_catalog_configuration_description: ::std::option::Option<crate::types::GlueDataCatalogConfigurationDescription>,
 }
-impl CatalogConfigurationDescription {
+impl  CatalogConfigurationDescription  {
     /// <p>The configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Managed Service for Apache Flink Studio notebook.</p>
-    pub fn glue_data_catalog_configuration_description(&self) -> ::std::option::Option<&crate::types::GlueDataCatalogConfigurationDescription> {
+    pub fn glue_data_catalog_configuration_description(&self) -> ::std::option::Option<& crate::types::GlueDataCatalogConfigurationDescription> {
         self.glue_data_catalog_configuration_description.as_ref()
     }
 }
@@ -34,12 +34,8 @@ impl CatalogConfigurationDescriptionBuilder {
         self
     }
     /// <p>The configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Managed Service for Apache Flink Studio notebook.</p>
-    pub fn set_glue_data_catalog_configuration_description(
-        mut self,
-        input: ::std::option::Option<crate::types::GlueDataCatalogConfigurationDescription>,
-    ) -> Self {
-        self.glue_data_catalog_configuration_description = input;
-        self
+    pub fn set_glue_data_catalog_configuration_description(mut self, input: ::std::option::Option<crate::types::GlueDataCatalogConfigurationDescription>) -> Self {
+        self.glue_data_catalog_configuration_description = input; self
     }
     /// <p>The configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Managed Service for Apache Flink Studio notebook.</p>
     pub fn get_glue_data_catalog_configuration_description(&self) -> &::std::option::Option<crate::types::GlueDataCatalogConfigurationDescription> {
@@ -48,7 +44,9 @@ impl CatalogConfigurationDescriptionBuilder {
     /// Consumes the builder and constructs a [`CatalogConfigurationDescription`](crate::types::CatalogConfigurationDescription).
     pub fn build(self) -> crate::types::CatalogConfigurationDescription {
         crate::types::CatalogConfigurationDescription {
-            glue_data_catalog_configuration_description: self.glue_data_catalog_configuration_description,
+            glue_data_catalog_configuration_description: self.glue_data_catalog_configuration_description
+            ,
         }
     }
 }
+

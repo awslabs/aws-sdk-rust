@@ -3,7 +3,7 @@
 /// <p>The activity that determines the source of the messages to be processed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChannelActivity {
+pub struct ChannelActivity  {
     /// <p>The name of the channel activity.</p>
     pub name: ::std::string::String,
     /// <p>The name of the channel from which the messages are processed.</p>
@@ -11,19 +11,17 @@ pub struct ChannelActivity {
     /// <p>The next activity in the pipeline.</p>
     pub next: ::std::option::Option<::std::string::String>,
 }
-impl ChannelActivity {
+impl  ChannelActivity  {
     /// <p>The name of the channel activity.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The name of the channel from which the messages are processed.</p>
-    pub fn channel_name(&self) -> &str {
-        use std::ops::Deref;
-        self.channel_name.deref()
+    pub fn channel_name(&self) -> & str {
+        use std::ops::Deref; self.channel_name.deref()
     }
     /// <p>The next activity in the pipeline.</p>
-    pub fn next(&self) -> ::std::option::Option<&str> {
+    pub fn next(&self) -> ::std::option::Option<& str> {
         self.next.as_deref()
     }
 }
@@ -51,8 +49,7 @@ impl ChannelActivityBuilder {
     }
     /// <p>The name of the channel activity.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the channel activity.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl ChannelActivityBuilder {
     }
     /// <p>The name of the channel from which the messages are processed.</p>
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_name = input;
-        self
+        self.channel_name = input; self
     }
     /// <p>The name of the channel from which the messages are processed.</p>
     pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl ChannelActivityBuilder {
     }
     /// <p>The next activity in the pipeline.</p>
     pub fn set_next(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next = input;
-        self
+        self.next = input; self
     }
     /// <p>The next activity in the pipeline.</p>
     pub fn get_next(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,20 +87,22 @@ impl ChannelActivityBuilder {
     /// - [`name`](crate::types::builders::ChannelActivityBuilder::name)
     /// - [`channel_name`](crate::types::builders::ChannelActivityBuilder::channel_name)
     pub fn build(self) -> ::std::result::Result<crate::types::ChannelActivity, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ChannelActivity {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ChannelActivity",
-                )
-            })?,
-            channel_name: self.channel_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "channel_name",
-                    "channel_name was not specified but it is required when building ChannelActivity",
-                )
-            })?,
-            next: self.next,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ChannelActivity {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ChannelActivity")
+                    )?
+                ,
+                channel_name: self.channel_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("channel_name", "channel_name was not specified but it is required when building ChannelActivity")
+                    )?
+                ,
+                next: self.next
+                ,
+            }
+        )
     }
 }
+

@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSnapshotsInRecycleBin`](crate::operation::list_snapshots_in_recycle_bin::builders::ListSnapshotsInRecycleBinFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_snapshots_in_recycle_bin::builders::ListSnapshotsInRecycleBinFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_snapshots_in_recycle_bin::builders::ListSnapshotsInRecycleBinFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_snapshots_in_recycle_bin::builders::ListSnapshotsInRecycleBinFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_snapshots_in_recycle_bin::builders::ListSnapshotsInRecycleBinFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_snapshots_in_recycle_bin::builders::ListSnapshotsInRecycleBinFluentBuilder::set_next_token):<br>required: **false**<br><p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p><br>
     ///   - [`snapshot_ids(impl Into<String>)`](crate::operation::list_snapshots_in_recycle_bin::builders::ListSnapshotsInRecycleBinFluentBuilder::snapshot_ids) / [`set_snapshot_ids(Option<Vec::<String>>)`](crate::operation::list_snapshots_in_recycle_bin::builders::ListSnapshotsInRecycleBinFluentBuilder::set_snapshot_ids):<br>required: **false**<br><p>The IDs of the snapshots to list. Omit this parameter to list all of the snapshots that are in the Recycle Bin.</p><br>
     ///   - [`dry_run(bool)`](crate::operation::list_snapshots_in_recycle_bin::builders::ListSnapshotsInRecycleBinFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::list_snapshots_in_recycle_bin::builders::ListSnapshotsInRecycleBinFluentBuilder::set_dry_run):<br>required: **false**<br><p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p><br>
-    /// - On success, responds with [`ListSnapshotsInRecycleBinOutput`](crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinOutput) with field(s):
+                            /// - On success, responds with [`ListSnapshotsInRecycleBinOutput`](crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinOutput) with field(s):
     ///   - [`snapshots(Option<Vec::<SnapshotRecycleBinInfo>>)`](crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinOutput::snapshots): <p>Information about the snapshots.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinOutput::next_token): <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    /// - On failure, responds with [`SdkError<ListSnapshotsInRecycleBinError>`](crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinError)
+                            /// - On failure, responds with [`SdkError<ListSnapshotsInRecycleBinError>`](crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinError)
     pub fn list_snapshots_in_recycle_bin(&self) -> crate::operation::list_snapshots_in_recycle_bin::builders::ListSnapshotsInRecycleBinFluentBuilder {
-        crate::operation::list_snapshots_in_recycle_bin::builders::ListSnapshotsInRecycleBinFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_snapshots_in_recycle_bin::builders::ListSnapshotsInRecycleBinFluentBuilder::new(self.handle.clone())
+                            }
 }
+

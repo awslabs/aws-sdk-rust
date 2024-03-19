@@ -12,3 +12,4 @@ pub use crate::types::_deployment_data_summary::DeploymentDataSummaryBuilder;
 pub use crate::types::_deployment_filter::DeploymentFilterBuilder;
 
 pub use crate::types::_deployment_event_data_summary::DeploymentEventDataSummaryBuilder;
+

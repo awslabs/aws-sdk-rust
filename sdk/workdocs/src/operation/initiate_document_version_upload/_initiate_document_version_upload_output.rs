@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InitiateDocumentVersionUploadOutput {
+pub struct InitiateDocumentVersionUploadOutput  {
     /// <p>The document metadata.</p>
     pub metadata: ::std::option::Option<crate::types::DocumentMetadata>,
     /// <p>The upload metadata.</p>
     pub upload_metadata: ::std::option::Option<crate::types::UploadMetadata>,
     _request_id: Option<String>,
 }
-impl InitiateDocumentVersionUploadOutput {
+impl  InitiateDocumentVersionUploadOutput  {
     /// <p>The document metadata.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&crate::types::DocumentMetadata> {
+    pub fn metadata(&self) -> ::std::option::Option<& crate::types::DocumentMetadata> {
         self.metadata.as_ref()
     }
     /// <p>The upload metadata.</p>
-    pub fn upload_metadata(&self) -> ::std::option::Option<&crate::types::UploadMetadata> {
+    pub fn upload_metadata(&self) -> ::std::option::Option<& crate::types::UploadMetadata> {
         self.upload_metadata.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for InitiateDocumentVersionUploadOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl InitiateDocumentVersionUploadOutput {
     /// Creates a new builder-style object to manufacture [`InitiateDocumentVersionUploadOutput`](crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadOutput).
     pub fn builder() -> crate::operation::initiate_document_version_upload::builders::InitiateDocumentVersionUploadOutputBuilder {
@@ -47,8 +47,7 @@ impl InitiateDocumentVersionUploadOutputBuilder {
     }
     /// <p>The document metadata.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::DocumentMetadata>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// <p>The document metadata.</p>
     pub fn get_metadata(&self) -> &::std::option::Option<crate::types::DocumentMetadata> {
@@ -61,28 +60,30 @@ impl InitiateDocumentVersionUploadOutputBuilder {
     }
     /// <p>The upload metadata.</p>
     pub fn set_upload_metadata(mut self, input: ::std::option::Option<crate::types::UploadMetadata>) -> Self {
-        self.upload_metadata = input;
-        self
+        self.upload_metadata = input; self
     }
     /// <p>The upload metadata.</p>
     pub fn get_upload_metadata(&self) -> &::std::option::Option<crate::types::UploadMetadata> {
         &self.upload_metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`InitiateDocumentVersionUploadOutput`](crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadOutput).
     pub fn build(self) -> crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadOutput {
         crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadOutput {
-            metadata: self.metadata,
-            upload_metadata: self.upload_metadata,
+            metadata: self.metadata
+            ,
+            upload_metadata: self.upload_metadata
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

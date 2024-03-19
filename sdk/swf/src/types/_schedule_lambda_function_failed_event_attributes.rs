@@ -3,7 +3,7 @@
 /// <p>Provides the details of the <code>ScheduleLambdaFunctionFailed</code> event. It isn't set for other event types.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScheduleLambdaFunctionFailedEventAttributes {
+pub struct ScheduleLambdaFunctionFailedEventAttributes  {
     /// <p>The ID provided in the <code>ScheduleLambdaFunction</code> decision that failed.</p>
     pub id: ::std::string::String,
     /// <p>The name of the Lambda function.</p>
@@ -15,21 +15,19 @@ pub struct ScheduleLambdaFunctionFailedEventAttributes {
     /// <p>The ID of the <code>LambdaFunctionCompleted</code> event corresponding to the decision that resulted in scheduling this Lambda task. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     pub decision_task_completed_event_id: i64,
 }
-impl ScheduleLambdaFunctionFailedEventAttributes {
+impl  ScheduleLambdaFunctionFailedEventAttributes  {
     /// <p>The ID provided in the <code>ScheduleLambdaFunction</code> decision that failed.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The name of the Lambda function.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The cause of the failure. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p><note>
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
-    pub fn cause(&self) -> &crate::types::ScheduleLambdaFunctionFailedCause {
+    pub fn cause(&self) -> & crate::types::ScheduleLambdaFunctionFailedCause {
         &self.cause
     }
     /// <p>The ID of the <code>LambdaFunctionCompleted</code> event corresponding to the decision that resulted in scheduling this Lambda task. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
@@ -62,8 +60,7 @@ impl ScheduleLambdaFunctionFailedEventAttributesBuilder {
     }
     /// <p>The ID provided in the <code>ScheduleLambdaFunction</code> decision that failed.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID provided in the <code>ScheduleLambdaFunction</code> decision that failed.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +74,7 @@ impl ScheduleLambdaFunctionFailedEventAttributesBuilder {
     }
     /// <p>The name of the Lambda function.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Lambda function.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +92,7 @@ impl ScheduleLambdaFunctionFailedEventAttributesBuilder {
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
     pub fn set_cause(mut self, input: ::std::option::Option<crate::types::ScheduleLambdaFunctionFailedCause>) -> Self {
-        self.cause = input;
-        self
+        self.cause = input; self
     }
     /// <p>The cause of the failure. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p><note>
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
@@ -113,8 +108,7 @@ impl ScheduleLambdaFunctionFailedEventAttributesBuilder {
     }
     /// <p>The ID of the <code>LambdaFunctionCompleted</code> event corresponding to the decision that resulted in scheduling this Lambda task. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     pub fn set_decision_task_completed_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.decision_task_completed_event_id = input;
-        self
+        self.decision_task_completed_event_id = input; self
     }
     /// <p>The ID of the <code>LambdaFunctionCompleted</code> event corresponding to the decision that resulted in scheduling this Lambda task. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     pub fn get_decision_task_completed_event_id(&self) -> &::std::option::Option<i64> {
@@ -125,29 +119,29 @@ impl ScheduleLambdaFunctionFailedEventAttributesBuilder {
     /// - [`id`](crate::types::builders::ScheduleLambdaFunctionFailedEventAttributesBuilder::id)
     /// - [`name`](crate::types::builders::ScheduleLambdaFunctionFailedEventAttributesBuilder::name)
     /// - [`cause`](crate::types::builders::ScheduleLambdaFunctionFailedEventAttributesBuilder::cause)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::ScheduleLambdaFunctionFailedEventAttributes, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ScheduleLambdaFunctionFailedEventAttributes {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building ScheduleLambdaFunctionFailedEventAttributes",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ScheduleLambdaFunctionFailedEventAttributes",
-                )
-            })?,
-            cause: self.cause.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "cause",
-                    "cause was not specified but it is required when building ScheduleLambdaFunctionFailedEventAttributes",
-                )
-            })?,
-            decision_task_completed_event_id: self.decision_task_completed_event_id.unwrap_or_default(),
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::ScheduleLambdaFunctionFailedEventAttributes, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::ScheduleLambdaFunctionFailedEventAttributes {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building ScheduleLambdaFunctionFailedEventAttributes")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ScheduleLambdaFunctionFailedEventAttributes")
+                    )?
+                ,
+                cause: self.cause
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("cause", "cause was not specified but it is required when building ScheduleLambdaFunctionFailedEventAttributes")
+                    )?
+                ,
+                decision_task_completed_event_id: self.decision_task_completed_event_id
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

@@ -5,54 +5,50 @@ pub use crate::operation::update_vpc_attachment::_update_vpc_attachment_input::U
 
 impl UpdateVpcAttachmentInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_vpc_attachment::UpdateVpcAttachmentOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_vpc_attachment::UpdateVpcAttachmentError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_vpc_attachment();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_vpc_attachment::UpdateVpcAttachmentOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_vpc_attachment::UpdateVpcAttachmentError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_vpc_attachment();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateVpcAttachment`.
-///
+/// 
 /// <p>Updates a VPC attachment.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateVpcAttachmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_vpc_attachment::builders::UpdateVpcAttachmentInputBuilder,
+                    inner: crate::operation::update_vpc_attachment::builders::UpdateVpcAttachmentInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_vpc_attachment::UpdateVpcAttachmentOutput,
-        crate::operation::update_vpc_attachment::UpdateVpcAttachmentError,
-    > for UpdateVpcAttachmentFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_vpc_attachment::UpdateVpcAttachmentOutput,
-            crate::operation::update_vpc_attachment::UpdateVpcAttachmentError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_vpc_attachment::UpdateVpcAttachmentOutput,
+                    crate::operation::update_vpc_attachment::UpdateVpcAttachmentError,
+                > for UpdateVpcAttachmentFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_vpc_attachment::UpdateVpcAttachmentOutput,
+                        crate::operation::update_vpc_attachment::UpdateVpcAttachmentError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateVpcAttachmentFluentBuilder {
     /// Creates a new `UpdateVpcAttachment`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl UpdateVpcAttachmentFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_vpc_attachment::UpdateVpcAttachmentOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_vpc_attachment::UpdateVpcAttachmentError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_vpc_attachment::UpdateVpcAttachment::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_vpc_attachment::UpdateVpcAttachment::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_vpc_attachment::UpdateVpcAttachmentOutput,
-        crate::operation::update_vpc_attachment::UpdateVpcAttachmentError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_vpc_attachment::UpdateVpcAttachmentOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_vpc_attachment::UpdateVpcAttachmentError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_vpc_attachment::UpdateVpcAttachment::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_vpc_attachment::UpdateVpcAttachment::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_vpc_attachment::UpdateVpcAttachmentOutput, crate::operation::update_vpc_attachment::UpdateVpcAttachmentError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID of the attachment.</p>
     pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attachment_id(input.into());
@@ -132,12 +119,12 @@ impl UpdateVpcAttachmentFluentBuilder {
         self
     }
     /// <p>Adds a subnet ARN to the VPC attachment.</p>
-    pub fn set_add_subnet_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_add_subnet_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_add_subnet_arns(input);
         self
     }
     /// <p>Adds a subnet ARN to the VPC attachment.</p>
-    pub fn get_add_subnet_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_add_subnet_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_add_subnet_arns()
     }
     /// Appends an item to `RemoveSubnetArns`.
@@ -150,12 +137,12 @@ impl UpdateVpcAttachmentFluentBuilder {
         self
     }
     /// <p>Removes a subnet ARN from the attachment.</p>
-    pub fn set_remove_subnet_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_remove_subnet_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_remove_subnet_arns(input);
         self
     }
     /// <p>Removes a subnet ARN from the attachment.</p>
-    pub fn get_remove_subnet_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_remove_subnet_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_remove_subnet_arns()
     }
     /// <p>Additional options for updating the VPC attachment.</p>
@@ -173,3 +160,4 @@ impl UpdateVpcAttachmentFluentBuilder {
         self.inner.get_options()
     }
 }
+

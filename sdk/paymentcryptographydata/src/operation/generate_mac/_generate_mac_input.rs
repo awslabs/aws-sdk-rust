@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GenerateMacInput {
+pub struct GenerateMacInput  {
     /// <p>The <code>keyARN</code> of the MAC generation encryption key.</p>
     pub key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The data for which a MAC is under generation. This value must be hexBinary.</p>
@@ -12,17 +12,17 @@ pub struct GenerateMacInput {
     /// <p>The length of a MAC under generation.</p>
     pub mac_length: ::std::option::Option<i32>,
 }
-impl GenerateMacInput {
+impl  GenerateMacInput  {
     /// <p>The <code>keyARN</code> of the MAC generation encryption key.</p>
-    pub fn key_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn key_identifier(&self) -> ::std::option::Option<& str> {
         self.key_identifier.as_deref()
     }
     /// <p>The data for which a MAC is under generation. This value must be hexBinary.</p>
-    pub fn message_data(&self) -> ::std::option::Option<&str> {
+    pub fn message_data(&self) -> ::std::option::Option<& str> {
         self.message_data.as_deref()
     }
     /// <p>The attributes and data values to use for MAC generation within Amazon Web Services Payment Cryptography.</p>
-    pub fn generation_attributes(&self) -> ::std::option::Option<&crate::types::MacAttributes> {
+    pub fn generation_attributes(&self) -> ::std::option::Option<& crate::types::MacAttributes> {
         self.generation_attributes.as_ref()
     }
     /// <p>The length of a MAC under generation.</p>
@@ -30,7 +30,7 @@ impl GenerateMacInput {
         self.mac_length
     }
 }
-impl ::std::fmt::Debug for GenerateMacInput {
+impl  ::std::fmt::Debug for GenerateMacInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GenerateMacInput");
         formatter.field("key_identifier", &self.key_identifier);
@@ -65,8 +65,7 @@ impl GenerateMacInputBuilder {
     }
     /// <p>The <code>keyARN</code> of the MAC generation encryption key.</p>
     pub fn set_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_identifier = input;
-        self
+        self.key_identifier = input; self
     }
     /// <p>The <code>keyARN</code> of the MAC generation encryption key.</p>
     pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +79,7 @@ impl GenerateMacInputBuilder {
     }
     /// <p>The data for which a MAC is under generation. This value must be hexBinary.</p>
     pub fn set_message_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message_data = input;
-        self
+        self.message_data = input; self
     }
     /// <p>The data for which a MAC is under generation. This value must be hexBinary.</p>
     pub fn get_message_data(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +93,7 @@ impl GenerateMacInputBuilder {
     }
     /// <p>The attributes and data values to use for MAC generation within Amazon Web Services Payment Cryptography.</p>
     pub fn set_generation_attributes(mut self, input: ::std::option::Option<crate::types::MacAttributes>) -> Self {
-        self.generation_attributes = input;
-        self
+        self.generation_attributes = input; self
     }
     /// <p>The attributes and data values to use for MAC generation within Amazon Web Services Payment Cryptography.</p>
     pub fn get_generation_attributes(&self) -> &::std::option::Option<crate::types::MacAttributes> {
@@ -109,8 +106,7 @@ impl GenerateMacInputBuilder {
     }
     /// <p>The length of a MAC under generation.</p>
     pub fn set_mac_length(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.mac_length = input;
-        self
+        self.mac_length = input; self
     }
     /// <p>The length of a MAC under generation.</p>
     pub fn get_mac_length(&self) -> &::std::option::Option<i32> {
@@ -118,12 +114,18 @@ impl GenerateMacInputBuilder {
     }
     /// Consumes the builder and constructs a [`GenerateMacInput`](crate::operation::generate_mac::GenerateMacInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::generate_mac::GenerateMacInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::generate_mac::GenerateMacInput {
-            key_identifier: self.key_identifier,
-            message_data: self.message_data,
-            generation_attributes: self.generation_attributes,
-            mac_length: self.mac_length,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::generate_mac::GenerateMacInput {
+                key_identifier: self.key_identifier
+                ,
+                message_data: self.message_data
+                ,
+                generation_attributes: self.generation_attributes
+                ,
+                mac_length: self.mac_length
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for GenerateMacInputBuilder {
@@ -136,3 +138,4 @@ impl ::std::fmt::Debug for GenerateMacInputBuilder {
         formatter.finish()
     }
 }
+

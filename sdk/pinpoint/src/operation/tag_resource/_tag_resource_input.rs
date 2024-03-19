@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TagResourceInput {
+pub struct TagResourceInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
     pub tags_model: ::std::option::Option<crate::types::TagsModel>,
 }
-impl TagResourceInput {
+impl  TagResourceInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
-    pub fn tags_model(&self) -> ::std::option::Option<&crate::types::TagsModel> {
+    pub fn tags_model(&self) -> ::std::option::Option<& crate::types::TagsModel> {
         self.tags_model.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl TagResourceInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl TagResourceInputBuilder {
     }
     /// <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
     pub fn set_tags_model(mut self, input: ::std::option::Option<crate::types::TagsModel>) -> Self {
-        self.tags_model = input;
-        self
+        self.tags_model = input; self
     }
     /// <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
     pub fn get_tags_model(&self) -> &::std::option::Option<crate::types::TagsModel> {
@@ -65,9 +63,14 @@ impl TagResourceInputBuilder {
     }
     /// Consumes the builder and constructs a [`TagResourceInput`](crate::operation::tag_resource::TagResourceInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::tag_resource::TagResourceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::tag_resource::TagResourceInput {
-            resource_arn: self.resource_arn,
-            tags_model: self.tags_model,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::tag_resource::TagResourceInput {
+                resource_arn: self.resource_arn
+                ,
+                tags_model: self.tags_model
+                ,
+            }
+        )
     }
 }
+

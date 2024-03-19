@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetectMetricSetConfigInput {
+pub struct DetectMetricSetConfigInput  {
     /// <p>An anomaly detector ARN.</p>
     pub anomaly_detector_arn: ::std::option::Option<::std::string::String>,
     /// <p>A data source.</p>
     pub auto_detection_metric_source: ::std::option::Option<crate::types::AutoDetectionMetricSource>,
 }
-impl DetectMetricSetConfigInput {
+impl  DetectMetricSetConfigInput  {
     /// <p>An anomaly detector ARN.</p>
-    pub fn anomaly_detector_arn(&self) -> ::std::option::Option<&str> {
+    pub fn anomaly_detector_arn(&self) -> ::std::option::Option<& str> {
         self.anomaly_detector_arn.as_deref()
     }
     /// <p>A data source.</p>
-    pub fn auto_detection_metric_source(&self) -> ::std::option::Option<&crate::types::AutoDetectionMetricSource> {
+    pub fn auto_detection_metric_source(&self) -> ::std::option::Option<& crate::types::AutoDetectionMetricSource> {
         self.auto_detection_metric_source.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl DetectMetricSetConfigInputBuilder {
     }
     /// <p>An anomaly detector ARN.</p>
     pub fn set_anomaly_detector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.anomaly_detector_arn = input;
-        self
+        self.anomaly_detector_arn = input; self
     }
     /// <p>An anomaly detector ARN.</p>
     pub fn get_anomaly_detector_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl DetectMetricSetConfigInputBuilder {
     }
     /// <p>A data source.</p>
     pub fn set_auto_detection_metric_source(mut self, input: ::std::option::Option<crate::types::AutoDetectionMetricSource>) -> Self {
-        self.auto_detection_metric_source = input;
-        self
+        self.auto_detection_metric_source = input; self
     }
     /// <p>A data source.</p>
     pub fn get_auto_detection_metric_source(&self) -> &::std::option::Option<crate::types::AutoDetectionMetricSource> {
         &self.auto_detection_metric_source
     }
     /// Consumes the builder and constructs a [`DetectMetricSetConfigInput`](crate::operation::detect_metric_set_config::DetectMetricSetConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::detect_metric_set_config::DetectMetricSetConfigInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::detect_metric_set_config::DetectMetricSetConfigInput {
-            anomaly_detector_arn: self.anomaly_detector_arn,
-            auto_detection_metric_source: self.auto_detection_metric_source,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::detect_metric_set_config::DetectMetricSetConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::detect_metric_set_config::DetectMetricSetConfigInput {
+                anomaly_detector_arn: self.anomaly_detector_arn
+                ,
+                auto_detection_metric_source: self.auto_detection_metric_source
+                ,
+            }
+        )
     }
 }
+

@@ -2,21 +2,22 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListBotVersionReplicas`](crate::operation::list_bot_version_replicas::builders::ListBotVersionReplicasFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_bot_version_replicas::builders::ListBotVersionReplicasFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`bot_id(impl Into<String>)`](crate::operation::list_bot_version_replicas::builders::ListBotVersionReplicasFluentBuilder::bot_id) / [`set_bot_id(Option<String>)`](crate::operation::list_bot_version_replicas::builders::ListBotVersionReplicasFluentBuilder::set_bot_id):<br>required: **true**<br><p>The request for the unique ID in the list of replicated bots.</p><br>
     ///   - [`replica_region(impl Into<String>)`](crate::operation::list_bot_version_replicas::builders::ListBotVersionReplicasFluentBuilder::replica_region) / [`set_replica_region(Option<String>)`](crate::operation::list_bot_version_replicas::builders::ListBotVersionReplicasFluentBuilder::set_replica_region):<br>required: **true**<br><p>The request for the region used in the list of replicated bots.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_bot_version_replicas::builders::ListBotVersionReplicasFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_bot_version_replicas::builders::ListBotVersionReplicasFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum results given in the list of replicated bots.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_bot_version_replicas::builders::ListBotVersionReplicasFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_bot_version_replicas::builders::ListBotVersionReplicasFluentBuilder::set_next_token):<br>required: **false**<br><p>The next token given in the list of replicated bots.</p><br>
     ///   - [`sort_by(BotVersionReplicaSortBy)`](crate::operation::list_bot_version_replicas::builders::ListBotVersionReplicasFluentBuilder::sort_by) / [`set_sort_by(Option<BotVersionReplicaSortBy>)`](crate::operation::list_bot_version_replicas::builders::ListBotVersionReplicasFluentBuilder::set_sort_by):<br>required: **false**<br><p>The requested sort category for the list of replicated bots.</p><br>
-    /// - On success, responds with [`ListBotVersionReplicasOutput`](crate::operation::list_bot_version_replicas::ListBotVersionReplicasOutput) with field(s):
+                            /// - On success, responds with [`ListBotVersionReplicasOutput`](crate::operation::list_bot_version_replicas::ListBotVersionReplicasOutput) with field(s):
     ///   - [`bot_id(Option<String>)`](crate::operation::list_bot_version_replicas::ListBotVersionReplicasOutput::bot_id): <p>The unique ID of the bots in the list of replicated bots.</p>
     ///   - [`source_region(Option<String>)`](crate::operation::list_bot_version_replicas::ListBotVersionReplicasOutput::source_region): <p>The source region used for the bots in the list of replicated bots.</p>
     ///   - [`replica_region(Option<String>)`](crate::operation::list_bot_version_replicas::ListBotVersionReplicasOutput::replica_region): <p>The region used for the replicated bots in the list of replicated bots.</p>
     ///   - [`bot_version_replica_summaries(Option<Vec::<BotVersionReplicaSummary>>)`](crate::operation::list_bot_version_replicas::ListBotVersionReplicasOutput::bot_version_replica_summaries): <p>The information summary used for the replicated bots in the list of replicated bots.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_bot_version_replicas::ListBotVersionReplicasOutput::next_token): <p>The next token used for the replicated bots in the list of replicated bots.</p>
-    /// - On failure, responds with [`SdkError<ListBotVersionReplicasError>`](crate::operation::list_bot_version_replicas::ListBotVersionReplicasError)
+                            /// - On failure, responds with [`SdkError<ListBotVersionReplicasError>`](crate::operation::list_bot_version_replicas::ListBotVersionReplicasError)
     pub fn list_bot_version_replicas(&self) -> crate::operation::list_bot_version_replicas::builders::ListBotVersionReplicasFluentBuilder {
-        crate::operation::list_bot_version_replicas::builders::ListBotVersionReplicasFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_bot_version_replicas::builders::ListBotVersionReplicasFluentBuilder::new(self.handle.clone())
+                            }
 }
+

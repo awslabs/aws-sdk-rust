@@ -3,7 +3,7 @@
 /// <p>The filter that is applied to the options.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SheetVisualScopingConfiguration {
+pub struct SheetVisualScopingConfiguration  {
     /// <p>The selected sheet that the filter is applied to.</p>
     pub sheet_id: ::std::string::String,
     /// <p>The scope of the applied entities. Choose one of the following options:</p>
@@ -15,13 +15,12 @@ pub struct SheetVisualScopingConfiguration {
     /// </ul>
     pub scope: crate::types::FilterVisualScope,
     /// <p>The selected visuals that the filter is applied to.</p>
-    pub visual_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub visual_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl SheetVisualScopingConfiguration {
+impl  SheetVisualScopingConfiguration  {
     /// <p>The selected sheet that the filter is applied to.</p>
-    pub fn sheet_id(&self) -> &str {
-        use std::ops::Deref;
-        self.sheet_id.deref()
+    pub fn sheet_id(&self) -> & str {
+        use std::ops::Deref; self.sheet_id.deref()
     }
     /// <p>The scope of the applied entities. Choose one of the following options:</p>
     /// <ul>
@@ -30,14 +29,15 @@ impl SheetVisualScopingConfiguration {
     /// <li>
     /// <p><code>SELECTED_VISUALS</code></p></li>
     /// </ul>
-    pub fn scope(&self) -> &crate::types::FilterVisualScope {
+    pub fn scope(&self) -> & crate::types::FilterVisualScope {
         &self.scope
     }
     /// <p>The selected visuals that the filter is applied to.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.visual_ids.is_none()`.
-    pub fn visual_ids(&self) -> &[::std::string::String] {
-        self.visual_ids.as_deref().unwrap_or_default()
+    pub fn visual_ids(&self) -> & [::std::string::String] {
+        self.visual_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SheetVisualScopingConfiguration {
@@ -53,7 +53,7 @@ impl SheetVisualScopingConfiguration {
 pub struct SheetVisualScopingConfigurationBuilder {
     pub(crate) sheet_id: ::std::option::Option<::std::string::String>,
     pub(crate) scope: ::std::option::Option<crate::types::FilterVisualScope>,
-    pub(crate) visual_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) visual_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl SheetVisualScopingConfigurationBuilder {
     /// <p>The selected sheet that the filter is applied to.</p>
@@ -64,8 +64,7 @@ impl SheetVisualScopingConfigurationBuilder {
     }
     /// <p>The selected sheet that the filter is applied to.</p>
     pub fn set_sheet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sheet_id = input;
-        self
+        self.sheet_id = input; self
     }
     /// <p>The selected sheet that the filter is applied to.</p>
     pub fn get_sheet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl SheetVisualScopingConfigurationBuilder {
     /// <p><code>SELECTED_VISUALS</code></p></li>
     /// </ul>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::FilterVisualScope>) -> Self {
-        self.scope = input;
-        self
+        self.scope = input; self
     }
     /// <p>The scope of the applied entities. Choose one of the following options:</p>
     /// <ul>
@@ -111,17 +109,16 @@ impl SheetVisualScopingConfigurationBuilder {
     /// <p>The selected visuals that the filter is applied to.</p>
     pub fn visual_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.visual_ids.unwrap_or_default();
-        v.push(input.into());
-        self.visual_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.visual_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The selected visuals that the filter is applied to.</p>
-    pub fn set_visual_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.visual_ids = input;
-        self
+    pub fn set_visual_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.visual_ids = input; self
     }
     /// <p>The selected visuals that the filter is applied to.</p>
-    pub fn get_visual_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_visual_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.visual_ids
     }
     /// Consumes the builder and constructs a [`SheetVisualScopingConfiguration`](crate::types::SheetVisualScopingConfiguration).
@@ -129,20 +126,22 @@ impl SheetVisualScopingConfigurationBuilder {
     /// - [`sheet_id`](crate::types::builders::SheetVisualScopingConfigurationBuilder::sheet_id)
     /// - [`scope`](crate::types::builders::SheetVisualScopingConfigurationBuilder::scope)
     pub fn build(self) -> ::std::result::Result<crate::types::SheetVisualScopingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SheetVisualScopingConfiguration {
-            sheet_id: self.sheet_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sheet_id",
-                    "sheet_id was not specified but it is required when building SheetVisualScopingConfiguration",
-                )
-            })?,
-            scope: self.scope.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "scope",
-                    "scope was not specified but it is required when building SheetVisualScopingConfiguration",
-                )
-            })?,
-            visual_ids: self.visual_ids,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SheetVisualScopingConfiguration {
+                sheet_id: self.sheet_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sheet_id", "sheet_id was not specified but it is required when building SheetVisualScopingConfiguration")
+                    )?
+                ,
+                scope: self.scope
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("scope", "scope was not specified but it is required when building SheetVisualScopingConfiguration")
+                    )?
+                ,
+                visual_ids: self.visual_ids
+                ,
+            }
+        )
     }
 }
+

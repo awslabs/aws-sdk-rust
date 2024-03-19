@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateIdentityPropagationConfigInput {
+pub struct UpdateIdentityPropagationConfigInput  {
     /// <p>The ID of the Amazon Web Services account that contains the identity propagation configuration that you want to update.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Web Services service that contains the authorized targets that you want to add or update.</p>
     pub service: ::std::option::Option<crate::types::ServiceType>,
     /// <p>Specifies a list of application ARNs that represent the authorized targets for a service.</p>
-    pub authorized_targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub authorized_targets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl UpdateIdentityPropagationConfigInput {
+impl  UpdateIdentityPropagationConfigInput  {
     /// <p>The ID of the Amazon Web Services account that contains the identity propagation configuration that you want to update.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The name of the Amazon Web Services service that contains the authorized targets that you want to add or update.</p>
-    pub fn service(&self) -> ::std::option::Option<&crate::types::ServiceType> {
+    pub fn service(&self) -> ::std::option::Option<& crate::types::ServiceType> {
         self.service.as_ref()
     }
     /// <p>Specifies a list of application ARNs that represent the authorized targets for a service.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.authorized_targets.is_none()`.
-    pub fn authorized_targets(&self) -> &[::std::string::String] {
-        self.authorized_targets.as_deref().unwrap_or_default()
+    pub fn authorized_targets(&self) -> & [::std::string::String] {
+        self.authorized_targets.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateIdentityPropagationConfigInput {
@@ -39,7 +40,7 @@ impl UpdateIdentityPropagationConfigInput {
 pub struct UpdateIdentityPropagationConfigInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) service: ::std::option::Option<crate::types::ServiceType>,
-    pub(crate) authorized_targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) authorized_targets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl UpdateIdentityPropagationConfigInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the identity propagation configuration that you want to update.</p>
@@ -50,8 +51,7 @@ impl UpdateIdentityPropagationConfigInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that contains the identity propagation configuration that you want to update.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that contains the identity propagation configuration that you want to update.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +65,7 @@ impl UpdateIdentityPropagationConfigInputBuilder {
     }
     /// <p>The name of the Amazon Web Services service that contains the authorized targets that you want to add or update.</p>
     pub fn set_service(mut self, input: ::std::option::Option<crate::types::ServiceType>) -> Self {
-        self.service = input;
-        self
+        self.service = input; self
     }
     /// <p>The name of the Amazon Web Services service that contains the authorized targets that you want to add or update.</p>
     pub fn get_service(&self) -> &::std::option::Option<crate::types::ServiceType> {
@@ -79,32 +78,30 @@ impl UpdateIdentityPropagationConfigInputBuilder {
     /// <p>Specifies a list of application ARNs that represent the authorized targets for a service.</p>
     pub fn authorized_targets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.authorized_targets.unwrap_or_default();
-        v.push(input.into());
-        self.authorized_targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.authorized_targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies a list of application ARNs that represent the authorized targets for a service.</p>
-    pub fn set_authorized_targets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.authorized_targets = input;
-        self
+    pub fn set_authorized_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.authorized_targets = input; self
     }
     /// <p>Specifies a list of application ARNs that represent the authorized targets for a service.</p>
-    pub fn get_authorized_targets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_authorized_targets(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.authorized_targets
     }
     /// Consumes the builder and constructs a [`UpdateIdentityPropagationConfigInput`](crate::operation::update_identity_propagation_config::UpdateIdentityPropagationConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_identity_propagation_config::UpdateIdentityPropagationConfigInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_identity_propagation_config::UpdateIdentityPropagationConfigInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_identity_propagation_config::UpdateIdentityPropagationConfigInput {
-                aws_account_id: self.aws_account_id,
-                service: self.service,
-                authorized_targets: self.authorized_targets,
-            },
+                aws_account_id: self.aws_account_id
+                ,
+                service: self.service
+                ,
+                authorized_targets: self.authorized_targets
+                ,
+            }
         )
     }
 }
+

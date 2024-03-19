@@ -3,22 +3,22 @@
 /// <p>Represents the result of a get suite request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSuiteOutput {
+pub struct GetSuiteOutput  {
     /// <p>A collection of one or more tests.</p>
     pub suite: ::std::option::Option<crate::types::Suite>,
     _request_id: Option<String>,
 }
-impl GetSuiteOutput {
+impl  GetSuiteOutput  {
     /// <p>A collection of one or more tests.</p>
-    pub fn suite(&self) -> ::std::option::Option<&crate::types::Suite> {
+    pub fn suite(&self) -> ::std::option::Option<& crate::types::Suite> {
         self.suite.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetSuiteOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSuiteOutput {
     /// Creates a new builder-style object to manufacture [`GetSuiteOutput`](crate::operation::get_suite::GetSuiteOutput).
     pub fn builder() -> crate::operation::get_suite::builders::GetSuiteOutputBuilder {
@@ -41,27 +41,28 @@ impl GetSuiteOutputBuilder {
     }
     /// <p>A collection of one or more tests.</p>
     pub fn set_suite(mut self, input: ::std::option::Option<crate::types::Suite>) -> Self {
-        self.suite = input;
-        self
+        self.suite = input; self
     }
     /// <p>A collection of one or more tests.</p>
     pub fn get_suite(&self) -> &::std::option::Option<crate::types::Suite> {
         &self.suite
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSuiteOutput`](crate::operation::get_suite::GetSuiteOutput).
     pub fn build(self) -> crate::operation::get_suite::GetSuiteOutput {
         crate::operation::get_suite::GetSuiteOutput {
-            suite: self.suite,
+            suite: self.suite
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

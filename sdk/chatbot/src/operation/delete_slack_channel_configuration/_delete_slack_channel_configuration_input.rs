@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSlackChannelConfigurationInput {
+pub struct DeleteSlackChannelConfigurationInput  {
     /// The ARN of the SlackChannelConfiguration to delete.
     pub chat_configuration_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteSlackChannelConfigurationInput {
+impl  DeleteSlackChannelConfigurationInput  {
     /// The ARN of the SlackChannelConfiguration to delete.
-    pub fn chat_configuration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn chat_configuration_arn(&self) -> ::std::option::Option<& str> {
         self.chat_configuration_arn.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl DeleteSlackChannelConfigurationInputBuilder {
     }
     /// The ARN of the SlackChannelConfiguration to delete.
     pub fn set_chat_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.chat_configuration_arn = input;
-        self
+        self.chat_configuration_arn = input; self
     }
     /// The ARN of the SlackChannelConfiguration to delete.
     pub fn get_chat_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.chat_configuration_arn
     }
     /// Consumes the builder and constructs a [`DeleteSlackChannelConfigurationInput`](crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationInput {
-                chat_configuration_arn: self.chat_configuration_arn,
-            },
+                chat_configuration_arn: self.chat_configuration_arn
+                ,
+            }
         )
     }
 }
+

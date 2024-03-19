@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetVoiceChannelOutput {
+pub struct GetVoiceChannelOutput  {
     /// <p>Provides information about the status and settings of the voice channel for an application.</p>
     pub voice_channel_response: ::std::option::Option<crate::types::VoiceChannelResponse>,
     _request_id: Option<String>,
 }
-impl GetVoiceChannelOutput {
+impl  GetVoiceChannelOutput  {
     /// <p>Provides information about the status and settings of the voice channel for an application.</p>
-    pub fn voice_channel_response(&self) -> ::std::option::Option<&crate::types::VoiceChannelResponse> {
+    pub fn voice_channel_response(&self) -> ::std::option::Option<& crate::types::VoiceChannelResponse> {
         self.voice_channel_response.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetVoiceChannelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetVoiceChannelOutput {
     /// Creates a new builder-style object to manufacture [`GetVoiceChannelOutput`](crate::operation::get_voice_channel::GetVoiceChannelOutput).
     pub fn builder() -> crate::operation::get_voice_channel::builders::GetVoiceChannelOutputBuilder {
@@ -41,27 +41,28 @@ impl GetVoiceChannelOutputBuilder {
     }
     /// <p>Provides information about the status and settings of the voice channel for an application.</p>
     pub fn set_voice_channel_response(mut self, input: ::std::option::Option<crate::types::VoiceChannelResponse>) -> Self {
-        self.voice_channel_response = input;
-        self
+        self.voice_channel_response = input; self
     }
     /// <p>Provides information about the status and settings of the voice channel for an application.</p>
     pub fn get_voice_channel_response(&self) -> &::std::option::Option<crate::types::VoiceChannelResponse> {
         &self.voice_channel_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetVoiceChannelOutput`](crate::operation::get_voice_channel::GetVoiceChannelOutput).
     pub fn build(self) -> crate::operation::get_voice_channel::GetVoiceChannelOutput {
         crate::operation::get_voice_channel::GetVoiceChannelOutput {
-            voice_channel_response: self.voice_channel_response,
+            voice_channel_response: self.voice_channel_response
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -4,13 +4,13 @@
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BoxPlotFieldWells {
+pub struct BoxPlotFieldWells  {
     /// <p>The aggregated field wells of a box plot.</p>
     pub box_plot_aggregated_field_wells: ::std::option::Option<crate::types::BoxPlotAggregatedFieldWells>,
 }
-impl BoxPlotFieldWells {
+impl  BoxPlotFieldWells  {
     /// <p>The aggregated field wells of a box plot.</p>
-    pub fn box_plot_aggregated_field_wells(&self) -> ::std::option::Option<&crate::types::BoxPlotAggregatedFieldWells> {
+    pub fn box_plot_aggregated_field_wells(&self) -> ::std::option::Option<& crate::types::BoxPlotAggregatedFieldWells> {
         self.box_plot_aggregated_field_wells.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl BoxPlotFieldWellsBuilder {
     }
     /// <p>The aggregated field wells of a box plot.</p>
     pub fn set_box_plot_aggregated_field_wells(mut self, input: ::std::option::Option<crate::types::BoxPlotAggregatedFieldWells>) -> Self {
-        self.box_plot_aggregated_field_wells = input;
-        self
+        self.box_plot_aggregated_field_wells = input; self
     }
     /// <p>The aggregated field wells of a box plot.</p>
     pub fn get_box_plot_aggregated_field_wells(&self) -> &::std::option::Option<crate::types::BoxPlotAggregatedFieldWells> {
@@ -45,7 +44,9 @@ impl BoxPlotFieldWellsBuilder {
     /// Consumes the builder and constructs a [`BoxPlotFieldWells`](crate::types::BoxPlotFieldWells).
     pub fn build(self) -> crate::types::BoxPlotFieldWells {
         crate::types::BoxPlotFieldWells {
-            box_plot_aggregated_field_wells: self.box_plot_aggregated_field_wells,
+            box_plot_aggregated_field_wells: self.box_plot_aggregated_field_wells
+            ,
         }
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDbProxyInput {
+pub struct CreateDbProxyInput  {
     /// <p>The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services account in the specified Amazon Web Services Region. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
     pub db_proxy_name: ::std::option::Option<::std::string::String>,
     /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. For Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases, specify <code>MYSQL</code>. For Aurora PostgreSQL and RDS for PostgreSQL databases, specify <code>POSTGRESQL</code>. For RDS for Microsoft SQL Server, specify <code>SQLSERVER</code>.</p>
     pub engine_family: ::std::option::Option<crate::types::EngineFamily>,
     /// <p>The authorization mechanism that the proxy uses.</p>
-    pub auth: ::std::option::Option<::std::vec::Vec<crate::types::UserAuthConfig>>,
+    pub auth: ::std::option::Option<::std::vec::Vec::<crate::types::UserAuthConfig>>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web Services Secrets Manager.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>One or more VPC subnet IDs to associate with the new proxy.</p>
-    pub vpc_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub vpc_subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>One or more VPC security group IDs to associate with the new proxy.</p>
-    pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy.</p>
     pub require_tls: ::std::option::Option<bool>,
     /// <p>The number of seconds that a connection to the proxy can be inactive before the proxy disconnects it. You can set this value higher or lower than the connection timeout limit for the associated database.</p>
@@ -22,38 +22,41 @@ pub struct CreateDbProxyInput {
     /// <p>Specifies whether the proxy includes detailed information about SQL statements in its logs. This information helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive information that appears in the logs.</p>
     pub debug_logging: ::std::option::Option<bool>,
     /// <p>An optional set of key-value pairs to associate arbitrary data of your choosing with the proxy.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateDbProxyInput {
+impl  CreateDbProxyInput  {
     /// <p>The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services account in the specified Amazon Web Services Region. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
-    pub fn db_proxy_name(&self) -> ::std::option::Option<&str> {
+    pub fn db_proxy_name(&self) -> ::std::option::Option<& str> {
         self.db_proxy_name.as_deref()
     }
     /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. For Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases, specify <code>MYSQL</code>. For Aurora PostgreSQL and RDS for PostgreSQL databases, specify <code>POSTGRESQL</code>. For RDS for Microsoft SQL Server, specify <code>SQLSERVER</code>.</p>
-    pub fn engine_family(&self) -> ::std::option::Option<&crate::types::EngineFamily> {
+    pub fn engine_family(&self) -> ::std::option::Option<& crate::types::EngineFamily> {
         self.engine_family.as_ref()
     }
     /// <p>The authorization mechanism that the proxy uses.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auth.is_none()`.
-    pub fn auth(&self) -> &[crate::types::UserAuthConfig] {
-        self.auth.as_deref().unwrap_or_default()
+    pub fn auth(&self) -> & [crate::types::UserAuthConfig] {
+        self.auth.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web Services Secrets Manager.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>One or more VPC subnet IDs to associate with the new proxy.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_subnet_ids.is_none()`.
-    pub fn vpc_subnet_ids(&self) -> &[::std::string::String] {
-        self.vpc_subnet_ids.as_deref().unwrap_or_default()
+    pub fn vpc_subnet_ids(&self) -> & [::std::string::String] {
+        self.vpc_subnet_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>One or more VPC security group IDs to associate with the new proxy.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
-    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
-        self.vpc_security_group_ids.as_deref().unwrap_or_default()
+    pub fn vpc_security_group_ids(&self) -> & [::std::string::String] {
+        self.vpc_security_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy.</p>
     pub fn require_tls(&self) -> ::std::option::Option<bool> {
@@ -68,10 +71,11 @@ impl CreateDbProxyInput {
         self.debug_logging
     }
     /// <p>An optional set of key-value pairs to associate arbitrary data of your choosing with the proxy.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateDbProxyInput {
@@ -87,14 +91,14 @@ impl CreateDbProxyInput {
 pub struct CreateDbProxyInputBuilder {
     pub(crate) db_proxy_name: ::std::option::Option<::std::string::String>,
     pub(crate) engine_family: ::std::option::Option<crate::types::EngineFamily>,
-    pub(crate) auth: ::std::option::Option<::std::vec::Vec<crate::types::UserAuthConfig>>,
+    pub(crate) auth: ::std::option::Option<::std::vec::Vec::<crate::types::UserAuthConfig>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) vpc_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vpc_subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) require_tls: ::std::option::Option<bool>,
     pub(crate) idle_client_timeout: ::std::option::Option<i32>,
     pub(crate) debug_logging: ::std::option::Option<bool>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateDbProxyInputBuilder {
     /// <p>The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services account in the specified Amazon Web Services Region. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
@@ -105,8 +109,7 @@ impl CreateDbProxyInputBuilder {
     }
     /// <p>The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services account in the specified Amazon Web Services Region. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
     pub fn set_db_proxy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_proxy_name = input;
-        self
+        self.db_proxy_name = input; self
     }
     /// <p>The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services account in the specified Amazon Web Services Region. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
     pub fn get_db_proxy_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +123,7 @@ impl CreateDbProxyInputBuilder {
     }
     /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. For Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases, specify <code>MYSQL</code>. For Aurora PostgreSQL and RDS for PostgreSQL databases, specify <code>POSTGRESQL</code>. For RDS for Microsoft SQL Server, specify <code>SQLSERVER</code>.</p>
     pub fn set_engine_family(mut self, input: ::std::option::Option<crate::types::EngineFamily>) -> Self {
-        self.engine_family = input;
-        self
+        self.engine_family = input; self
     }
     /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. For Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases, specify <code>MYSQL</code>. For Aurora PostgreSQL and RDS for PostgreSQL databases, specify <code>POSTGRESQL</code>. For RDS for Microsoft SQL Server, specify <code>SQLSERVER</code>.</p>
     pub fn get_engine_family(&self) -> &::std::option::Option<crate::types::EngineFamily> {
@@ -134,17 +136,16 @@ impl CreateDbProxyInputBuilder {
     /// <p>The authorization mechanism that the proxy uses.</p>
     pub fn auth(mut self, input: crate::types::UserAuthConfig) -> Self {
         let mut v = self.auth.unwrap_or_default();
-        v.push(input);
-        self.auth = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.auth = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The authorization mechanism that the proxy uses.</p>
-    pub fn set_auth(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserAuthConfig>>) -> Self {
-        self.auth = input;
-        self
+    pub fn set_auth(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UserAuthConfig>>) -> Self {
+        self.auth = input; self
     }
     /// <p>The authorization mechanism that the proxy uses.</p>
-    pub fn get_auth(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserAuthConfig>> {
+    pub fn get_auth(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UserAuthConfig>> {
         &self.auth
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web Services Secrets Manager.</p>
@@ -155,8 +156,7 @@ impl CreateDbProxyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web Services Secrets Manager.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web Services Secrets Manager.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,17 +169,16 @@ impl CreateDbProxyInputBuilder {
     /// <p>One or more VPC subnet IDs to associate with the new proxy.</p>
     pub fn vpc_subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.vpc_subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.vpc_subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more VPC subnet IDs to associate with the new proxy.</p>
-    pub fn set_vpc_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.vpc_subnet_ids = input;
-        self
+    pub fn set_vpc_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.vpc_subnet_ids = input; self
     }
     /// <p>One or more VPC subnet IDs to associate with the new proxy.</p>
-    pub fn get_vpc_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.vpc_subnet_ids
     }
     /// Appends an item to `vpc_security_group_ids`.
@@ -189,17 +188,16 @@ impl CreateDbProxyInputBuilder {
     /// <p>One or more VPC security group IDs to associate with the new proxy.</p>
     pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.vpc_security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.vpc_security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more VPC security group IDs to associate with the new proxy.</p>
-    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.vpc_security_group_ids = input;
-        self
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.vpc_security_group_ids = input; self
     }
     /// <p>One or more VPC security group IDs to associate with the new proxy.</p>
-    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.vpc_security_group_ids
     }
     /// <p>Specifies whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy.</p>
@@ -209,8 +207,7 @@ impl CreateDbProxyInputBuilder {
     }
     /// <p>Specifies whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy.</p>
     pub fn set_require_tls(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.require_tls = input;
-        self
+        self.require_tls = input; self
     }
     /// <p>Specifies whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy.</p>
     pub fn get_require_tls(&self) -> &::std::option::Option<bool> {
@@ -223,8 +220,7 @@ impl CreateDbProxyInputBuilder {
     }
     /// <p>The number of seconds that a connection to the proxy can be inactive before the proxy disconnects it. You can set this value higher or lower than the connection timeout limit for the associated database.</p>
     pub fn set_idle_client_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.idle_client_timeout = input;
-        self
+        self.idle_client_timeout = input; self
     }
     /// <p>The number of seconds that a connection to the proxy can be inactive before the proxy disconnects it. You can set this value higher or lower than the connection timeout limit for the associated database.</p>
     pub fn get_idle_client_timeout(&self) -> &::std::option::Option<i32> {
@@ -237,8 +233,7 @@ impl CreateDbProxyInputBuilder {
     }
     /// <p>Specifies whether the proxy includes detailed information about SQL statements in its logs. This information helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive information that appears in the logs.</p>
     pub fn set_debug_logging(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.debug_logging = input;
-        self
+        self.debug_logging = input; self
     }
     /// <p>Specifies whether the proxy includes detailed information about SQL statements in its logs. This information helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive information that appears in the logs.</p>
     pub fn get_debug_logging(&self) -> &::std::option::Option<bool> {
@@ -251,34 +246,44 @@ impl CreateDbProxyInputBuilder {
     /// <p>An optional set of key-value pairs to associate arbitrary data of your choosing with the proxy.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An optional set of key-value pairs to associate arbitrary data of your choosing with the proxy.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An optional set of key-value pairs to associate arbitrary data of your choosing with the proxy.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDbProxyInput`](crate::operation::create_db_proxy::CreateDbProxyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_db_proxy::CreateDbProxyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_db_proxy::CreateDbProxyInput {
-            db_proxy_name: self.db_proxy_name,
-            engine_family: self.engine_family,
-            auth: self.auth,
-            role_arn: self.role_arn,
-            vpc_subnet_ids: self.vpc_subnet_ids,
-            vpc_security_group_ids: self.vpc_security_group_ids,
-            require_tls: self.require_tls,
-            idle_client_timeout: self.idle_client_timeout,
-            debug_logging: self.debug_logging,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_db_proxy::CreateDbProxyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_db_proxy::CreateDbProxyInput {
+                db_proxy_name: self.db_proxy_name
+                ,
+                engine_family: self.engine_family
+                ,
+                auth: self.auth
+                ,
+                role_arn: self.role_arn
+                ,
+                vpc_subnet_ids: self.vpc_subnet_ids
+                ,
+                vpc_security_group_ids: self.vpc_security_group_ids
+                ,
+                require_tls: self.require_tls
+                ,
+                idle_client_timeout: self.idle_client_timeout
+                ,
+                debug_logging: self.debug_logging
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

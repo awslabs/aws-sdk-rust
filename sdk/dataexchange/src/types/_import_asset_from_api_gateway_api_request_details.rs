@@ -3,7 +3,7 @@
 /// <p>The request details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportAssetFromApiGatewayApiRequestDetails {
+pub struct ImportAssetFromApiGatewayApiRequestDetails  {
     /// <p>The API description. Markdown supported.</p>
     pub api_description: ::std::option::Option<::std::string::String>,
     /// <p>The API Gateway API ID.</p>
@@ -23,48 +23,42 @@ pub struct ImportAssetFromApiGatewayApiRequestDetails {
     /// <p>The API stage.</p>
     pub stage: ::std::string::String,
 }
-impl ImportAssetFromApiGatewayApiRequestDetails {
+impl  ImportAssetFromApiGatewayApiRequestDetails  {
     /// <p>The API description. Markdown supported.</p>
-    pub fn api_description(&self) -> ::std::option::Option<&str> {
+    pub fn api_description(&self) -> ::std::option::Option<& str> {
         self.api_description.as_deref()
     }
     /// <p>The API Gateway API ID.</p>
-    pub fn api_id(&self) -> &str {
-        use std::ops::Deref;
-        self.api_id.deref()
+    pub fn api_id(&self) -> & str {
+        use std::ops::Deref; self.api_id.deref()
     }
     /// <p>The API Gateway API key.</p>
-    pub fn api_key(&self) -> ::std::option::Option<&str> {
+    pub fn api_key(&self) -> ::std::option::Option<& str> {
         self.api_key.as_deref()
     }
     /// <p>The API name.</p>
-    pub fn api_name(&self) -> &str {
-        use std::ops::Deref;
-        self.api_name.deref()
+    pub fn api_name(&self) -> & str {
+        use std::ops::Deref; self.api_name.deref()
     }
     /// <p>The Base64-encoded MD5 hash of the OpenAPI 3.0 JSON API specification file. It is used to ensure the integrity of the file.</p>
-    pub fn api_specification_md5_hash(&self) -> &str {
-        use std::ops::Deref;
-        self.api_specification_md5_hash.deref()
+    pub fn api_specification_md5_hash(&self) -> & str {
+        use std::ops::Deref; self.api_specification_md5_hash.deref()
     }
     /// <p>The data set ID.</p>
-    pub fn data_set_id(&self) -> &str {
-        use std::ops::Deref;
-        self.data_set_id.deref()
+    pub fn data_set_id(&self) -> & str {
+        use std::ops::Deref; self.data_set_id.deref()
     }
     /// <p>The protocol type.</p>
-    pub fn protocol_type(&self) -> &crate::types::ProtocolType {
+    pub fn protocol_type(&self) -> & crate::types::ProtocolType {
         &self.protocol_type
     }
     /// <p>The revision ID.</p>
-    pub fn revision_id(&self) -> &str {
-        use std::ops::Deref;
-        self.revision_id.deref()
+    pub fn revision_id(&self) -> & str {
+        use std::ops::Deref; self.revision_id.deref()
     }
     /// <p>The API stage.</p>
-    pub fn stage(&self) -> &str {
-        use std::ops::Deref;
-        self.stage.deref()
+    pub fn stage(&self) -> & str {
+        use std::ops::Deref; self.stage.deref()
     }
 }
 impl ImportAssetFromApiGatewayApiRequestDetails {
@@ -96,8 +90,7 @@ impl ImportAssetFromApiGatewayApiRequestDetailsBuilder {
     }
     /// <p>The API description. Markdown supported.</p>
     pub fn set_api_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_description = input;
-        self
+        self.api_description = input; self
     }
     /// <p>The API description. Markdown supported.</p>
     pub fn get_api_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +104,7 @@ impl ImportAssetFromApiGatewayApiRequestDetailsBuilder {
     }
     /// <p>The API Gateway API ID.</p>
     pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_id = input;
-        self
+        self.api_id = input; self
     }
     /// <p>The API Gateway API ID.</p>
     pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +117,7 @@ impl ImportAssetFromApiGatewayApiRequestDetailsBuilder {
     }
     /// <p>The API Gateway API key.</p>
     pub fn set_api_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_key = input;
-        self
+        self.api_key = input; self
     }
     /// <p>The API Gateway API key.</p>
     pub fn get_api_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +131,7 @@ impl ImportAssetFromApiGatewayApiRequestDetailsBuilder {
     }
     /// <p>The API name.</p>
     pub fn set_api_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_name = input;
-        self
+        self.api_name = input; self
     }
     /// <p>The API name.</p>
     pub fn get_api_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +145,7 @@ impl ImportAssetFromApiGatewayApiRequestDetailsBuilder {
     }
     /// <p>The Base64-encoded MD5 hash of the OpenAPI 3.0 JSON API specification file. It is used to ensure the integrity of the file.</p>
     pub fn set_api_specification_md5_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_specification_md5_hash = input;
-        self
+        self.api_specification_md5_hash = input; self
     }
     /// <p>The Base64-encoded MD5 hash of the OpenAPI 3.0 JSON API specification file. It is used to ensure the integrity of the file.</p>
     pub fn get_api_specification_md5_hash(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,8 +159,7 @@ impl ImportAssetFromApiGatewayApiRequestDetailsBuilder {
     }
     /// <p>The data set ID.</p>
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_id = input;
-        self
+        self.data_set_id = input; self
     }
     /// <p>The data set ID.</p>
     pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -185,8 +173,7 @@ impl ImportAssetFromApiGatewayApiRequestDetailsBuilder {
     }
     /// <p>The protocol type.</p>
     pub fn set_protocol_type(mut self, input: ::std::option::Option<crate::types::ProtocolType>) -> Self {
-        self.protocol_type = input;
-        self
+        self.protocol_type = input; self
     }
     /// <p>The protocol type.</p>
     pub fn get_protocol_type(&self) -> &::std::option::Option<crate::types::ProtocolType> {
@@ -200,8 +187,7 @@ impl ImportAssetFromApiGatewayApiRequestDetailsBuilder {
     }
     /// <p>The revision ID.</p>
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
     }
     /// <p>The revision ID.</p>
     pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -215,8 +201,7 @@ impl ImportAssetFromApiGatewayApiRequestDetailsBuilder {
     }
     /// <p>The API stage.</p>
     pub fn set_stage(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stage = input;
-        self
+        self.stage = input; self
     }
     /// <p>The API stage.</p>
     pub fn get_stage(&self) -> &::std::option::Option<::std::string::String> {
@@ -231,54 +216,50 @@ impl ImportAssetFromApiGatewayApiRequestDetailsBuilder {
     /// - [`protocol_type`](crate::types::builders::ImportAssetFromApiGatewayApiRequestDetailsBuilder::protocol_type)
     /// - [`revision_id`](crate::types::builders::ImportAssetFromApiGatewayApiRequestDetailsBuilder::revision_id)
     /// - [`stage`](crate::types::builders::ImportAssetFromApiGatewayApiRequestDetailsBuilder::stage)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::ImportAssetFromApiGatewayApiRequestDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ImportAssetFromApiGatewayApiRequestDetails {
-            api_description: self.api_description,
-            api_id: self.api_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "api_id",
-                    "api_id was not specified but it is required when building ImportAssetFromApiGatewayApiRequestDetails",
-                )
-            })?,
-            api_key: self.api_key,
-            api_name: self.api_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "api_name",
-                    "api_name was not specified but it is required when building ImportAssetFromApiGatewayApiRequestDetails",
-                )
-            })?,
-            api_specification_md5_hash: self.api_specification_md5_hash.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "api_specification_md5_hash",
-                    "api_specification_md5_hash was not specified but it is required when building ImportAssetFromApiGatewayApiRequestDetails",
-                )
-            })?,
-            data_set_id: self.data_set_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_set_id",
-                    "data_set_id was not specified but it is required when building ImportAssetFromApiGatewayApiRequestDetails",
-                )
-            })?,
-            protocol_type: self.protocol_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "protocol_type",
-                    "protocol_type was not specified but it is required when building ImportAssetFromApiGatewayApiRequestDetails",
-                )
-            })?,
-            revision_id: self.revision_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "revision_id",
-                    "revision_id was not specified but it is required when building ImportAssetFromApiGatewayApiRequestDetails",
-                )
-            })?,
-            stage: self.stage.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "stage",
-                    "stage was not specified but it is required when building ImportAssetFromApiGatewayApiRequestDetails",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::ImportAssetFromApiGatewayApiRequestDetails, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::ImportAssetFromApiGatewayApiRequestDetails {
+                api_description: self.api_description
+                ,
+                api_id: self.api_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("api_id", "api_id was not specified but it is required when building ImportAssetFromApiGatewayApiRequestDetails")
+                    )?
+                ,
+                api_key: self.api_key
+                ,
+                api_name: self.api_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("api_name", "api_name was not specified but it is required when building ImportAssetFromApiGatewayApiRequestDetails")
+                    )?
+                ,
+                api_specification_md5_hash: self.api_specification_md5_hash
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("api_specification_md5_hash", "api_specification_md5_hash was not specified but it is required when building ImportAssetFromApiGatewayApiRequestDetails")
+                    )?
+                ,
+                data_set_id: self.data_set_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_set_id", "data_set_id was not specified but it is required when building ImportAssetFromApiGatewayApiRequestDetails")
+                    )?
+                ,
+                protocol_type: self.protocol_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("protocol_type", "protocol_type was not specified but it is required when building ImportAssetFromApiGatewayApiRequestDetails")
+                    )?
+                ,
+                revision_id: self.revision_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("revision_id", "revision_id was not specified but it is required when building ImportAssetFromApiGatewayApiRequestDetails")
+                    )?
+                ,
+                stage: self.stage
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("stage", "stage was not specified but it is required when building ImportAssetFromApiGatewayApiRequestDetails")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The configuration details of an environment blueprint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnvironmentBlueprintConfigurationItem {
+pub struct EnvironmentBlueprintConfigurationItem  {
     /// <p>The identifier of the Amazon DataZone domain in which an environment blueprint exists.</p>
     pub domain_id: ::std::string::String,
     /// <p>The identifier of the environment blueprint.</p>
@@ -13,55 +13,48 @@ pub struct EnvironmentBlueprintConfigurationItem {
     /// <p>The ARN of the manage access role specified in the environment blueprint configuration.</p>
     pub manage_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The enabled Amazon Web Services Regions specified in a blueprint configuration.</p>
-    pub enabled_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub enabled_regions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The regional parameters of the environment blueprint.</p>
-    pub regional_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    >,
+    pub regional_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, ::std::string::String>>>,
     /// <p>The timestamp of when an environment blueprint was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the environment blueprint was updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl EnvironmentBlueprintConfigurationItem {
+impl  EnvironmentBlueprintConfigurationItem  {
     /// <p>The identifier of the Amazon DataZone domain in which an environment blueprint exists.</p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> & str {
+        use std::ops::Deref; self.domain_id.deref()
     }
     /// <p>The identifier of the environment blueprint.</p>
-    pub fn environment_blueprint_id(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_blueprint_id.deref()
+    pub fn environment_blueprint_id(&self) -> & str {
+        use std::ops::Deref; self.environment_blueprint_id.deref()
     }
     /// <p>The ARN of the provisioning role specified in the environment blueprint configuration.</p>
-    pub fn provisioning_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn provisioning_role_arn(&self) -> ::std::option::Option<& str> {
         self.provisioning_role_arn.as_deref()
     }
     /// <p>The ARN of the manage access role specified in the environment blueprint configuration.</p>
-    pub fn manage_access_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn manage_access_role_arn(&self) -> ::std::option::Option<& str> {
         self.manage_access_role_arn.as_deref()
     }
     /// <p>The enabled Amazon Web Services Regions specified in a blueprint configuration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enabled_regions.is_none()`.
-    pub fn enabled_regions(&self) -> &[::std::string::String] {
-        self.enabled_regions.as_deref().unwrap_or_default()
+    pub fn enabled_regions(&self) -> & [::std::string::String] {
+        self.enabled_regions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The regional parameters of the environment blueprint.</p>
-    pub fn regional_parameters(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    > {
+    pub fn regional_parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, ::std::string::String>>> {
         self.regional_parameters.as_ref()
     }
     /// <p>The timestamp of when an environment blueprint was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp of when the environment blueprint was updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -80,10 +73,8 @@ pub struct EnvironmentBlueprintConfigurationItemBuilder {
     pub(crate) environment_blueprint_id: ::std::option::Option<::std::string::String>,
     pub(crate) provisioning_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) manage_access_role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) enabled_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) regional_parameters: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    >,
+    pub(crate) enabled_regions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) regional_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, ::std::string::String>>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -96,8 +87,7 @@ impl EnvironmentBlueprintConfigurationItemBuilder {
     }
     /// <p>The identifier of the Amazon DataZone domain in which an environment blueprint exists.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The identifier of the Amazon DataZone domain in which an environment blueprint exists.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +101,7 @@ impl EnvironmentBlueprintConfigurationItemBuilder {
     }
     /// <p>The identifier of the environment blueprint.</p>
     pub fn set_environment_blueprint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_blueprint_id = input;
-        self
+        self.environment_blueprint_id = input; self
     }
     /// <p>The identifier of the environment blueprint.</p>
     pub fn get_environment_blueprint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +114,7 @@ impl EnvironmentBlueprintConfigurationItemBuilder {
     }
     /// <p>The ARN of the provisioning role specified in the environment blueprint configuration.</p>
     pub fn set_provisioning_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provisioning_role_arn = input;
-        self
+        self.provisioning_role_arn = input; self
     }
     /// <p>The ARN of the provisioning role specified in the environment blueprint configuration.</p>
     pub fn get_provisioning_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +127,7 @@ impl EnvironmentBlueprintConfigurationItemBuilder {
     }
     /// <p>The ARN of the manage access role specified in the environment blueprint configuration.</p>
     pub fn set_manage_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.manage_access_role_arn = input;
-        self
+        self.manage_access_role_arn = input; self
     }
     /// <p>The ARN of the manage access role specified in the environment blueprint configuration.</p>
     pub fn get_manage_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,17 +140,16 @@ impl EnvironmentBlueprintConfigurationItemBuilder {
     /// <p>The enabled Amazon Web Services Regions specified in a blueprint configuration.</p>
     pub fn enabled_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.enabled_regions.unwrap_or_default();
-        v.push(input.into());
-        self.enabled_regions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.enabled_regions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The enabled Amazon Web Services Regions specified in a blueprint configuration.</p>
-    pub fn set_enabled_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.enabled_regions = input;
-        self
+    pub fn set_enabled_regions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.enabled_regions = input; self
     }
     /// <p>The enabled Amazon Web Services Regions specified in a blueprint configuration.</p>
-    pub fn get_enabled_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_enabled_regions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.enabled_regions
     }
     /// Adds a key-value pair to `regional_parameters`.
@@ -171,32 +157,18 @@ impl EnvironmentBlueprintConfigurationItemBuilder {
     /// To override the contents of this collection use [`set_regional_parameters`](Self::set_regional_parameters).
     ///
     /// <p>The regional parameters of the environment blueprint.</p>
-    pub fn regional_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    ) -> Self {
+    pub fn regional_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::collections::HashMap::<::std::string::String, ::std::string::String>) -> Self {
         let mut hash_map = self.regional_parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.regional_parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.regional_parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The regional parameters of the environment blueprint.</p>
-    pub fn set_regional_parameters(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-        >,
-    ) -> Self {
-        self.regional_parameters = input;
-        self
+    pub fn set_regional_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, ::std::string::String>>>) -> Self {
+        self.regional_parameters = input; self
     }
     /// <p>The regional parameters of the environment blueprint.</p>
-    pub fn get_regional_parameters(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    > {
+    pub fn get_regional_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, ::std::string::String>>> {
         &self.regional_parameters
     }
     /// <p>The timestamp of when an environment blueprint was created.</p>
@@ -206,8 +178,7 @@ impl EnvironmentBlueprintConfigurationItemBuilder {
     }
     /// <p>The timestamp of when an environment blueprint was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp of when an environment blueprint was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -220,8 +191,7 @@ impl EnvironmentBlueprintConfigurationItemBuilder {
     }
     /// <p>The timestamp of when the environment blueprint was updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The timestamp of when the environment blueprint was updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -231,28 +201,33 @@ impl EnvironmentBlueprintConfigurationItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`domain_id`](crate::types::builders::EnvironmentBlueprintConfigurationItemBuilder::domain_id)
     /// - [`environment_blueprint_id`](crate::types::builders::EnvironmentBlueprintConfigurationItemBuilder::environment_blueprint_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::EnvironmentBlueprintConfigurationItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EnvironmentBlueprintConfigurationItem {
-            domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain_id",
-                    "domain_id was not specified but it is required when building EnvironmentBlueprintConfigurationItem",
-                )
-            })?,
-            environment_blueprint_id: self.environment_blueprint_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "environment_blueprint_id",
-                    "environment_blueprint_id was not specified but it is required when building EnvironmentBlueprintConfigurationItem",
-                )
-            })?,
-            provisioning_role_arn: self.provisioning_role_arn,
-            manage_access_role_arn: self.manage_access_role_arn,
-            enabled_regions: self.enabled_regions,
-            regional_parameters: self.regional_parameters,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::EnvironmentBlueprintConfigurationItem, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::EnvironmentBlueprintConfigurationItem {
+                domain_id: self.domain_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain_id", "domain_id was not specified but it is required when building EnvironmentBlueprintConfigurationItem")
+                    )?
+                ,
+                environment_blueprint_id: self.environment_blueprint_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("environment_blueprint_id", "environment_blueprint_id was not specified but it is required when building EnvironmentBlueprintConfigurationItem")
+                    )?
+                ,
+                provisioning_role_arn: self.provisioning_role_arn
+                ,
+                manage_access_role_arn: self.manage_access_role_arn
+                ,
+                enabled_regions: self.enabled_regions
+                ,
+                regional_parameters: self.regional_parameters
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
+            }
+        )
     }
 }
+

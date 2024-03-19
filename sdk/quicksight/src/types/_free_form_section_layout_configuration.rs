@@ -3,15 +3,14 @@
 /// <p>The free-form layout configuration of a section.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FreeFormSectionLayoutConfiguration {
+pub struct FreeFormSectionLayoutConfiguration  {
     /// <p>The elements that are included in the free-form layout.</p>
-    pub elements: ::std::vec::Vec<crate::types::FreeFormLayoutElement>,
+    pub elements: ::std::vec::Vec::<crate::types::FreeFormLayoutElement>,
 }
-impl FreeFormSectionLayoutConfiguration {
+impl  FreeFormSectionLayoutConfiguration  {
     /// <p>The elements that are included in the free-form layout.</p>
-    pub fn elements(&self) -> &[crate::types::FreeFormLayoutElement] {
-        use std::ops::Deref;
-        self.elements.deref()
+    pub fn elements(&self) -> & [crate::types::FreeFormLayoutElement] {
+        use std::ops::Deref; self.elements.deref()
     }
 }
 impl FreeFormSectionLayoutConfiguration {
@@ -25,7 +24,7 @@ impl FreeFormSectionLayoutConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FreeFormSectionLayoutConfigurationBuilder {
-    pub(crate) elements: ::std::option::Option<::std::vec::Vec<crate::types::FreeFormLayoutElement>>,
+    pub(crate) elements: ::std::option::Option<::std::vec::Vec::<crate::types::FreeFormLayoutElement>>,
 }
 impl FreeFormSectionLayoutConfigurationBuilder {
     /// Appends an item to `elements`.
@@ -35,30 +34,31 @@ impl FreeFormSectionLayoutConfigurationBuilder {
     /// <p>The elements that are included in the free-form layout.</p>
     pub fn elements(mut self, input: crate::types::FreeFormLayoutElement) -> Self {
         let mut v = self.elements.unwrap_or_default();
-        v.push(input);
-        self.elements = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.elements = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The elements that are included in the free-form layout.</p>
-    pub fn set_elements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FreeFormLayoutElement>>) -> Self {
-        self.elements = input;
-        self
+    pub fn set_elements(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FreeFormLayoutElement>>) -> Self {
+        self.elements = input; self
     }
     /// <p>The elements that are included in the free-form layout.</p>
-    pub fn get_elements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FreeFormLayoutElement>> {
+    pub fn get_elements(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FreeFormLayoutElement>> {
         &self.elements
     }
     /// Consumes the builder and constructs a [`FreeFormSectionLayoutConfiguration`](crate::types::FreeFormSectionLayoutConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`elements`](crate::types::builders::FreeFormSectionLayoutConfigurationBuilder::elements)
     pub fn build(self) -> ::std::result::Result<crate::types::FreeFormSectionLayoutConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FreeFormSectionLayoutConfiguration {
-            elements: self.elements.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "elements",
-                    "elements was not specified but it is required when building FreeFormSectionLayoutConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FreeFormSectionLayoutConfiguration {
+                elements: self.elements
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("elements", "elements was not specified but it is required when building FreeFormSectionLayoutConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

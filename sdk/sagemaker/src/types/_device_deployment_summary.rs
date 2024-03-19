@@ -3,7 +3,7 @@
 /// <p>Contains information summarizing device details and deployment status.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeviceDeploymentSummary {
+pub struct DeviceDeploymentSummary  {
     /// <p>The ARN of the edge deployment plan.</p>
     pub edge_deployment_plan_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the edge deployment plan.</p>
@@ -27,49 +27,49 @@ pub struct DeviceDeploymentSummary {
     /// <p>The time when the deployment on the device started.</p>
     pub deployment_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl DeviceDeploymentSummary {
+impl  DeviceDeploymentSummary  {
     /// <p>The ARN of the edge deployment plan.</p>
-    pub fn edge_deployment_plan_arn(&self) -> ::std::option::Option<&str> {
+    pub fn edge_deployment_plan_arn(&self) -> ::std::option::Option<& str> {
         self.edge_deployment_plan_arn.as_deref()
     }
     /// <p>The name of the edge deployment plan.</p>
-    pub fn edge_deployment_plan_name(&self) -> ::std::option::Option<&str> {
+    pub fn edge_deployment_plan_name(&self) -> ::std::option::Option<& str> {
         self.edge_deployment_plan_name.as_deref()
     }
     /// <p>The name of the stage in the edge deployment plan.</p>
-    pub fn stage_name(&self) -> ::std::option::Option<&str> {
+    pub fn stage_name(&self) -> ::std::option::Option<& str> {
         self.stage_name.as_deref()
     }
     /// <p>The name of the deployed stage.</p>
-    pub fn deployed_stage_name(&self) -> ::std::option::Option<&str> {
+    pub fn deployed_stage_name(&self) -> ::std::option::Option<& str> {
         self.deployed_stage_name.as_deref()
     }
     /// <p>The name of the fleet to which the device belongs to.</p>
-    pub fn device_fleet_name(&self) -> ::std::option::Option<&str> {
+    pub fn device_fleet_name(&self) -> ::std::option::Option<& str> {
         self.device_fleet_name.as_deref()
     }
     /// <p>The name of the device.</p>
-    pub fn device_name(&self) -> ::std::option::Option<&str> {
+    pub fn device_name(&self) -> ::std::option::Option<& str> {
         self.device_name.as_deref()
     }
     /// <p>The ARN of the device.</p>
-    pub fn device_arn(&self) -> ::std::option::Option<&str> {
+    pub fn device_arn(&self) -> ::std::option::Option<& str> {
         self.device_arn.as_deref()
     }
     /// <p>The deployment status of the device.</p>
-    pub fn device_deployment_status(&self) -> ::std::option::Option<&crate::types::DeviceDeploymentStatus> {
+    pub fn device_deployment_status(&self) -> ::std::option::Option<& crate::types::DeviceDeploymentStatus> {
         self.device_deployment_status.as_ref()
     }
     /// <p>The detailed error message for the deployoment status result.</p>
-    pub fn device_deployment_status_message(&self) -> ::std::option::Option<&str> {
+    pub fn device_deployment_status_message(&self) -> ::std::option::Option<& str> {
         self.device_deployment_status_message.as_deref()
     }
     /// <p>The description of the device.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The time when the deployment on the device started.</p>
-    pub fn deployment_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn deployment_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.deployment_start_time.as_ref()
     }
 }
@@ -105,8 +105,7 @@ impl DeviceDeploymentSummaryBuilder {
     }
     /// <p>The ARN of the edge deployment plan.</p>
     pub fn set_edge_deployment_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.edge_deployment_plan_arn = input;
-        self
+        self.edge_deployment_plan_arn = input; self
     }
     /// <p>The ARN of the edge deployment plan.</p>
     pub fn get_edge_deployment_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +119,7 @@ impl DeviceDeploymentSummaryBuilder {
     }
     /// <p>The name of the edge deployment plan.</p>
     pub fn set_edge_deployment_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.edge_deployment_plan_name = input;
-        self
+        self.edge_deployment_plan_name = input; self
     }
     /// <p>The name of the edge deployment plan.</p>
     pub fn get_edge_deployment_plan_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +133,7 @@ impl DeviceDeploymentSummaryBuilder {
     }
     /// <p>The name of the stage in the edge deployment plan.</p>
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stage_name = input;
-        self
+        self.stage_name = input; self
     }
     /// <p>The name of the stage in the edge deployment plan.</p>
     pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +146,7 @@ impl DeviceDeploymentSummaryBuilder {
     }
     /// <p>The name of the deployed stage.</p>
     pub fn set_deployed_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployed_stage_name = input;
-        self
+        self.deployed_stage_name = input; self
     }
     /// <p>The name of the deployed stage.</p>
     pub fn get_deployed_stage_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,8 +159,7 @@ impl DeviceDeploymentSummaryBuilder {
     }
     /// <p>The name of the fleet to which the device belongs to.</p>
     pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_fleet_name = input;
-        self
+        self.device_fleet_name = input; self
     }
     /// <p>The name of the fleet to which the device belongs to.</p>
     pub fn get_device_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -178,8 +173,7 @@ impl DeviceDeploymentSummaryBuilder {
     }
     /// <p>The name of the device.</p>
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_name = input;
-        self
+        self.device_name = input; self
     }
     /// <p>The name of the device.</p>
     pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -193,8 +187,7 @@ impl DeviceDeploymentSummaryBuilder {
     }
     /// <p>The ARN of the device.</p>
     pub fn set_device_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_arn = input;
-        self
+        self.device_arn = input; self
     }
     /// <p>The ARN of the device.</p>
     pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -207,8 +200,7 @@ impl DeviceDeploymentSummaryBuilder {
     }
     /// <p>The deployment status of the device.</p>
     pub fn set_device_deployment_status(mut self, input: ::std::option::Option<crate::types::DeviceDeploymentStatus>) -> Self {
-        self.device_deployment_status = input;
-        self
+        self.device_deployment_status = input; self
     }
     /// <p>The deployment status of the device.</p>
     pub fn get_device_deployment_status(&self) -> &::std::option::Option<crate::types::DeviceDeploymentStatus> {
@@ -221,8 +213,7 @@ impl DeviceDeploymentSummaryBuilder {
     }
     /// <p>The detailed error message for the deployoment status result.</p>
     pub fn set_device_deployment_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_deployment_status_message = input;
-        self
+        self.device_deployment_status_message = input; self
     }
     /// <p>The detailed error message for the deployoment status result.</p>
     pub fn get_device_deployment_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -235,8 +226,7 @@ impl DeviceDeploymentSummaryBuilder {
     }
     /// <p>The description of the device.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the device.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -249,8 +239,7 @@ impl DeviceDeploymentSummaryBuilder {
     }
     /// <p>The time when the deployment on the device started.</p>
     pub fn set_deployment_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.deployment_start_time = input;
-        self
+        self.deployment_start_time = input; self
     }
     /// <p>The time when the deployment on the device started.</p>
     pub fn get_deployment_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -259,17 +248,29 @@ impl DeviceDeploymentSummaryBuilder {
     /// Consumes the builder and constructs a [`DeviceDeploymentSummary`](crate::types::DeviceDeploymentSummary).
     pub fn build(self) -> crate::types::DeviceDeploymentSummary {
         crate::types::DeviceDeploymentSummary {
-            edge_deployment_plan_arn: self.edge_deployment_plan_arn,
-            edge_deployment_plan_name: self.edge_deployment_plan_name,
-            stage_name: self.stage_name,
-            deployed_stage_name: self.deployed_stage_name,
-            device_fleet_name: self.device_fleet_name,
-            device_name: self.device_name,
-            device_arn: self.device_arn,
-            device_deployment_status: self.device_deployment_status,
-            device_deployment_status_message: self.device_deployment_status_message,
-            description: self.description,
-            deployment_start_time: self.deployment_start_time,
+            edge_deployment_plan_arn: self.edge_deployment_plan_arn
+            ,
+            edge_deployment_plan_name: self.edge_deployment_plan_name
+            ,
+            stage_name: self.stage_name
+            ,
+            deployed_stage_name: self.deployed_stage_name
+            ,
+            device_fleet_name: self.device_fleet_name
+            ,
+            device_name: self.device_name
+            ,
+            device_arn: self.device_arn
+            ,
+            device_deployment_status: self.device_deployment_status
+            ,
+            device_deployment_status_message: self.device_deployment_status_message
+            ,
+            description: self.description
+            ,
+            deployment_start_time: self.deployment_start_time
+            ,
         }
     }
 }
+

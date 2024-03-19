@@ -3,19 +3,19 @@
 /// <p>Details about the account that was not processed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Result {
+pub struct Result  {
     /// <p>An Amazon Web Services account ID of the account that was not processed.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The reason that the account was not processed.</p>
     pub processing_result: ::std::option::Option<::std::string::String>,
 }
-impl Result {
+impl  Result  {
     /// <p>An Amazon Web Services account ID of the account that was not processed.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The reason that the account was not processed.</p>
-    pub fn processing_result(&self) -> ::std::option::Option<&str> {
+    pub fn processing_result(&self) -> ::std::option::Option<& str> {
         self.processing_result.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ResultBuilder {
     }
     /// <p>An Amazon Web Services account ID of the account that was not processed.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>An Amazon Web Services account ID of the account that was not processed.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ResultBuilder {
     }
     /// <p>The reason that the account was not processed.</p>
     pub fn set_processing_result(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.processing_result = input;
-        self
+        self.processing_result = input; self
     }
     /// <p>The reason that the account was not processed.</p>
     pub fn get_processing_result(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ResultBuilder {
     /// Consumes the builder and constructs a [`Result`](crate::types::Result).
     pub fn build(self) -> crate::types::Result {
         crate::types::Result {
-            account_id: self.account_id,
-            processing_result: self.processing_result,
+            account_id: self.account_id
+            ,
+            processing_result: self.processing_result
+            ,
         }
     }
 }
+

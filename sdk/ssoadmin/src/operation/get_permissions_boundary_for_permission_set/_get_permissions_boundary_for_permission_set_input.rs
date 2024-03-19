@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPermissionsBoundaryForPermissionSetInput {
+pub struct GetPermissionsBoundaryForPermissionSetInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
     pub instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the <code>PermissionSet</code>.</p>
     pub permission_set_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetPermissionsBoundaryForPermissionSetInput {
+impl  GetPermissionsBoundaryForPermissionSetInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
-    pub fn instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn instance_arn(&self) -> ::std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The ARN of the <code>PermissionSet</code>.</p>
-    pub fn permission_set_arn(&self) -> ::std::option::Option<&str> {
+    pub fn permission_set_arn(&self) -> ::std::option::Option<& str> {
         self.permission_set_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetPermissionsBoundaryForPermissionSetInputBuilder {
     }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
     pub fn set_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_arn = input;
-        self
+        self.instance_arn = input; self
     }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
     pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl GetPermissionsBoundaryForPermissionSetInputBuilder {
     }
     /// <p>The ARN of the <code>PermissionSet</code>.</p>
     pub fn set_permission_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.permission_set_arn = input;
-        self
+        self.permission_set_arn = input; self
     }
     /// <p>The ARN of the <code>PermissionSet</code>.</p>
     pub fn get_permission_set_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.permission_set_arn
     }
     /// Consumes the builder and constructs a [`GetPermissionsBoundaryForPermissionSetInput`](crate::operation::get_permissions_boundary_for_permission_set::GetPermissionsBoundaryForPermissionSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_permissions_boundary_for_permission_set::GetPermissionsBoundaryForPermissionSetInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_permissions_boundary_for_permission_set::GetPermissionsBoundaryForPermissionSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_permissions_boundary_for_permission_set::GetPermissionsBoundaryForPermissionSetInput {
-                instance_arn: self.instance_arn,
-                permission_set_arn: self.permission_set_arn,
-            },
+                instance_arn: self.instance_arn
+                ,
+                permission_set_arn: self.permission_set_arn
+                ,
+            }
         )
     }
 }
+

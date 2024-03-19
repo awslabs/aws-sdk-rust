@@ -3,7 +3,7 @@
 /// <p>The event sent from your client application to Amazon Lex V2 with text input from the user.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct TextInputEvent {
+pub struct TextInputEvent  {
     /// <p>The text from the user. Amazon Lex V2 processes this as a complete statement.</p>
     pub text: ::std::string::String,
     /// <p>A unique identifier that your application assigns to the event. You can use this to identify events in logs.</p>
@@ -11,14 +11,13 @@ pub struct TextInputEvent {
     /// <p>A timestamp set by the client of the date and time that the event was sent to Amazon Lex V2.</p>
     pub client_timestamp_millis: i64,
 }
-impl TextInputEvent {
+impl  TextInputEvent  {
     /// <p>The text from the user. Amazon Lex V2 processes this as a complete statement.</p>
-    pub fn text(&self) -> &str {
-        use std::ops::Deref;
-        self.text.deref()
+    pub fn text(&self) -> & str {
+        use std::ops::Deref; self.text.deref()
     }
     /// <p>A unique identifier that your application assigns to the event. You can use this to identify events in logs.</p>
-    pub fn event_id(&self) -> ::std::option::Option<&str> {
+    pub fn event_id(&self) -> ::std::option::Option<& str> {
         self.event_id.as_deref()
     }
     /// <p>A timestamp set by the client of the date and time that the event was sent to Amazon Lex V2.</p>
@@ -26,7 +25,7 @@ impl TextInputEvent {
         self.client_timestamp_millis
     }
 }
-impl ::std::fmt::Debug for TextInputEvent {
+impl  ::std::fmt::Debug for TextInputEvent  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TextInputEvent");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
@@ -59,8 +58,7 @@ impl TextInputEventBuilder {
     }
     /// <p>The text from the user. Amazon Lex V2 processes this as a complete statement.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>The text from the user. Amazon Lex V2 processes this as a complete statement.</p>
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +71,7 @@ impl TextInputEventBuilder {
     }
     /// <p>A unique identifier that your application assigns to the event. You can use this to identify events in logs.</p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_id = input;
-        self
+        self.event_id = input; self
     }
     /// <p>A unique identifier that your application assigns to the event. You can use this to identify events in logs.</p>
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +84,7 @@ impl TextInputEventBuilder {
     }
     /// <p>A timestamp set by the client of the date and time that the event was sent to Amazon Lex V2.</p>
     pub fn set_client_timestamp_millis(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.client_timestamp_millis = input;
-        self
+        self.client_timestamp_millis = input; self
     }
     /// <p>A timestamp set by the client of the date and time that the event was sent to Amazon Lex V2.</p>
     pub fn get_client_timestamp_millis(&self) -> &::std::option::Option<i64> {
@@ -98,16 +94,20 @@ impl TextInputEventBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`text`](crate::types::builders::TextInputEventBuilder::text)
     pub fn build(self) -> ::std::result::Result<crate::types::TextInputEvent, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TextInputEvent {
-            text: self.text.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "text",
-                    "text was not specified but it is required when building TextInputEvent",
-                )
-            })?,
-            event_id: self.event_id,
-            client_timestamp_millis: self.client_timestamp_millis.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::TextInputEvent {
+                text: self.text
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("text", "text was not specified but it is required when building TextInputEvent")
+                    )?
+                ,
+                event_id: self.event_id
+                ,
+                client_timestamp_millis: self.client_timestamp_millis
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for TextInputEventBuilder {
@@ -119,3 +119,4 @@ impl ::std::fmt::Debug for TextInputEventBuilder {
         formatter.finish()
     }
 }
+

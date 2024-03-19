@@ -3,50 +3,53 @@
 /// <p>A <code>GetMetricData</code> call returns an array of <code>MetricDataResult</code> structures. Each of these structures includes the data points for that metric, along with the timestamps of those data points and other identifying information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetricDataResult {
+pub struct MetricDataResult  {
     /// <p>The short name you specified to represent this metric.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The human-readable label associated with the data.</p>
     pub label: ::std::option::Option<::std::string::String>,
     /// <p>The timestamps for the data points, formatted in Unix timestamp format. The number of timestamps always matches the number of values and the value for Timestamps[x] is Values[x].</p>
-    pub timestamps: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
+    pub timestamps: ::std::option::Option<::std::vec::Vec::<::aws_smithy_types::DateTime>>,
     /// <p>The data points for the metric corresponding to <code>Timestamps</code>. The number of values always matches the number of timestamps and the timestamp for Values[x] is Timestamps[x].</p>
-    pub values: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<f64>>,
     /// <p>The status of the returned data. <code>Complete</code> indicates that all data points in the requested time range were returned. <code>PartialData</code> means that an incomplete set of data points were returned. You can use the <code>NextToken</code> value that was returned and repeat your request to get more data points. <code>NextToken</code> is not returned if you are performing a math expression. <code>InternalError</code> indicates that an error occurred. Retry your request using <code>NextToken</code>, if present.</p>
     pub status_code: ::std::option::Option<crate::types::StatusCode>,
     /// <p>A list of messages with additional information about the data returned.</p>
-    pub messages: ::std::option::Option<::std::vec::Vec<crate::types::MessageData>>,
+    pub messages: ::std::option::Option<::std::vec::Vec::<crate::types::MessageData>>,
 }
-impl MetricDataResult {
+impl  MetricDataResult  {
     /// <p>The short name you specified to represent this metric.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The human-readable label associated with the data.</p>
-    pub fn label(&self) -> ::std::option::Option<&str> {
+    pub fn label(&self) -> ::std::option::Option<& str> {
         self.label.as_deref()
     }
     /// <p>The timestamps for the data points, formatted in Unix timestamp format. The number of timestamps always matches the number of values and the value for Timestamps[x] is Values[x].</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.timestamps.is_none()`.
-    pub fn timestamps(&self) -> &[::aws_smithy_types::DateTime] {
-        self.timestamps.as_deref().unwrap_or_default()
+    pub fn timestamps(&self) -> & [::aws_smithy_types::DateTime] {
+        self.timestamps.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The data points for the metric corresponding to <code>Timestamps</code>. The number of values always matches the number of timestamps and the timestamp for Values[x] is Timestamps[x].</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[f64] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [f64] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The status of the returned data. <code>Complete</code> indicates that all data points in the requested time range were returned. <code>PartialData</code> means that an incomplete set of data points were returned. You can use the <code>NextToken</code> value that was returned and repeat your request to get more data points. <code>NextToken</code> is not returned if you are performing a math expression. <code>InternalError</code> indicates that an error occurred. Retry your request using <code>NextToken</code>, if present.</p>
-    pub fn status_code(&self) -> ::std::option::Option<&crate::types::StatusCode> {
+    pub fn status_code(&self) -> ::std::option::Option<& crate::types::StatusCode> {
         self.status_code.as_ref()
     }
     /// <p>A list of messages with additional information about the data returned.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.messages.is_none()`.
-    pub fn messages(&self) -> &[crate::types::MessageData] {
-        self.messages.as_deref().unwrap_or_default()
+    pub fn messages(&self) -> & [crate::types::MessageData] {
+        self.messages.as_deref()
+        .unwrap_or_default()
     }
 }
 impl MetricDataResult {
@@ -62,10 +65,10 @@ impl MetricDataResult {
 pub struct MetricDataResultBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) label: ::std::option::Option<::std::string::String>,
-    pub(crate) timestamps: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub(crate) timestamps: ::std::option::Option<::std::vec::Vec::<::aws_smithy_types::DateTime>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<f64>>,
     pub(crate) status_code: ::std::option::Option<crate::types::StatusCode>,
-    pub(crate) messages: ::std::option::Option<::std::vec::Vec<crate::types::MessageData>>,
+    pub(crate) messages: ::std::option::Option<::std::vec::Vec::<crate::types::MessageData>>,
 }
 impl MetricDataResultBuilder {
     /// <p>The short name you specified to represent this metric.</p>
@@ -75,8 +78,7 @@ impl MetricDataResultBuilder {
     }
     /// <p>The short name you specified to represent this metric.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The short name you specified to represent this metric.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +91,7 @@ impl MetricDataResultBuilder {
     }
     /// <p>The human-readable label associated with the data.</p>
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label = input;
-        self
+        self.label = input; self
     }
     /// <p>The human-readable label associated with the data.</p>
     pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,17 +104,16 @@ impl MetricDataResultBuilder {
     /// <p>The timestamps for the data points, formatted in Unix timestamp format. The number of timestamps always matches the number of values and the value for Timestamps[x] is Values[x].</p>
     pub fn timestamps(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         let mut v = self.timestamps.unwrap_or_default();
-        v.push(input);
-        self.timestamps = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.timestamps = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The timestamps for the data points, formatted in Unix timestamp format. The number of timestamps always matches the number of values and the value for Timestamps[x] is Values[x].</p>
-    pub fn set_timestamps(mut self, input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>) -> Self {
-        self.timestamps = input;
-        self
+    pub fn set_timestamps(mut self, input: ::std::option::Option<::std::vec::Vec::<::aws_smithy_types::DateTime>>) -> Self {
+        self.timestamps = input; self
     }
     /// <p>The timestamps for the data points, formatted in Unix timestamp format. The number of timestamps always matches the number of values and the value for Timestamps[x] is Values[x].</p>
-    pub fn get_timestamps(&self) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
+    pub fn get_timestamps(&self) -> &::std::option::Option<::std::vec::Vec::<::aws_smithy_types::DateTime>> {
         &self.timestamps
     }
     /// Appends an item to `values`.
@@ -123,17 +123,16 @@ impl MetricDataResultBuilder {
     /// <p>The data points for the metric corresponding to <code>Timestamps</code>. The number of values always matches the number of timestamps and the timestamp for Values[x] is Timestamps[x].</p>
     pub fn values(mut self, input: f64) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input);
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The data points for the metric corresponding to <code>Timestamps</code>. The number of values always matches the number of timestamps and the timestamp for Values[x] is Timestamps[x].</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<f64>>) -> Self {
+        self.values = input; self
     }
     /// <p>The data points for the metric corresponding to <code>Timestamps</code>. The number of values always matches the number of timestamps and the timestamp for Values[x] is Timestamps[x].</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<f64>> {
         &self.values
     }
     /// <p>The status of the returned data. <code>Complete</code> indicates that all data points in the requested time range were returned. <code>PartialData</code> means that an incomplete set of data points were returned. You can use the <code>NextToken</code> value that was returned and repeat your request to get more data points. <code>NextToken</code> is not returned if you are performing a math expression. <code>InternalError</code> indicates that an error occurred. Retry your request using <code>NextToken</code>, if present.</p>
@@ -143,8 +142,7 @@ impl MetricDataResultBuilder {
     }
     /// <p>The status of the returned data. <code>Complete</code> indicates that all data points in the requested time range were returned. <code>PartialData</code> means that an incomplete set of data points were returned. You can use the <code>NextToken</code> value that was returned and repeat your request to get more data points. <code>NextToken</code> is not returned if you are performing a math expression. <code>InternalError</code> indicates that an error occurred. Retry your request using <code>NextToken</code>, if present.</p>
     pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::StatusCode>) -> Self {
-        self.status_code = input;
-        self
+        self.status_code = input; self
     }
     /// <p>The status of the returned data. <code>Complete</code> indicates that all data points in the requested time range were returned. <code>PartialData</code> means that an incomplete set of data points were returned. You can use the <code>NextToken</code> value that was returned and repeat your request to get more data points. <code>NextToken</code> is not returned if you are performing a math expression. <code>InternalError</code> indicates that an error occurred. Retry your request using <code>NextToken</code>, if present.</p>
     pub fn get_status_code(&self) -> &::std::option::Option<crate::types::StatusCode> {
@@ -157,28 +155,34 @@ impl MetricDataResultBuilder {
     /// <p>A list of messages with additional information about the data returned.</p>
     pub fn messages(mut self, input: crate::types::MessageData) -> Self {
         let mut v = self.messages.unwrap_or_default();
-        v.push(input);
-        self.messages = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.messages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of messages with additional information about the data returned.</p>
-    pub fn set_messages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MessageData>>) -> Self {
-        self.messages = input;
-        self
+    pub fn set_messages(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MessageData>>) -> Self {
+        self.messages = input; self
     }
     /// <p>A list of messages with additional information about the data returned.</p>
-    pub fn get_messages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageData>> {
+    pub fn get_messages(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MessageData>> {
         &self.messages
     }
     /// Consumes the builder and constructs a [`MetricDataResult`](crate::types::MetricDataResult).
     pub fn build(self) -> crate::types::MetricDataResult {
         crate::types::MetricDataResult {
-            id: self.id,
-            label: self.label,
-            timestamps: self.timestamps,
-            values: self.values,
-            status_code: self.status_code,
-            messages: self.messages,
+            id: self.id
+            ,
+            label: self.label
+            ,
+            timestamps: self.timestamps
+            ,
+            values: self.values
+            ,
+            status_code: self.status_code
+            ,
+            messages: self.messages
+            ,
         }
     }
 }
+

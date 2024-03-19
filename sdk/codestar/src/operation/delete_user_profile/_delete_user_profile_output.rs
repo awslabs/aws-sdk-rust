@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteUserProfileOutput {
+pub struct DeleteUserProfileOutput  {
     /// <p>The Amazon Resource Name (ARN) of the user deleted from AWS CodeStar.</p>
     pub user_arn: ::std::string::String,
     _request_id: Option<String>,
 }
-impl DeleteUserProfileOutput {
+impl  DeleteUserProfileOutput  {
     /// <p>The Amazon Resource Name (ARN) of the user deleted from AWS CodeStar.</p>
-    pub fn user_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.user_arn.deref()
+    pub fn user_arn(&self) -> & str {
+        use std::ops::Deref; self.user_arn.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteUserProfileOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteUserProfileOutput {
     /// Creates a new builder-style object to manufacture [`DeleteUserProfileOutput`](crate::operation::delete_user_profile::DeleteUserProfileOutput).
     pub fn builder() -> crate::operation::delete_user_profile::builders::DeleteUserProfileOutputBuilder {
@@ -42,36 +41,35 @@ impl DeleteUserProfileOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the user deleted from AWS CodeStar.</p>
     pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_arn = input;
-        self
+        self.user_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the user deleted from AWS CodeStar.</p>
     pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteUserProfileOutput`](crate::operation::delete_user_profile::DeleteUserProfileOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`user_arn`](crate::operation::delete_user_profile::builders::DeleteUserProfileOutputBuilder::user_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_user_profile::DeleteUserProfileOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_user_profile::DeleteUserProfileOutput {
-            user_arn: self.user_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user_arn",
-                    "user_arn was not specified but it is required when building DeleteUserProfileOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_user_profile::DeleteUserProfileOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_user_profile::DeleteUserProfileOutput {
+                user_arn: self.user_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user_arn", "user_arn was not specified but it is required when building DeleteUserProfileOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

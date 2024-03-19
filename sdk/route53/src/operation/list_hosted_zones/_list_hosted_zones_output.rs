@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListHostedZonesOutput {
+pub struct ListHostedZonesOutput  {
     /// <p>A complex type that contains general information about the hosted zone.</p>
-    pub hosted_zones: ::std::vec::Vec<crate::types::HostedZone>,
+    pub hosted_zones: ::std::vec::Vec::<crate::types::HostedZone>,
     /// <p>For the second and subsequent calls to <code>ListHostedZones</code>, <code>Marker</code> is the value that you specified for the <code>marker</code> parameter in the request that produced the current response.</p>
     pub marker: ::std::string::String,
     /// <p>A flag indicating whether there are more hosted zones to be listed. If the response was truncated, you can get more hosted zones by submitting another <code>ListHostedZones</code> request and specifying the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
@@ -16,16 +16,14 @@ pub struct ListHostedZonesOutput {
     pub max_items: i32,
     _request_id: Option<String>,
 }
-impl ListHostedZonesOutput {
+impl  ListHostedZonesOutput  {
     /// <p>A complex type that contains general information about the hosted zone.</p>
-    pub fn hosted_zones(&self) -> &[crate::types::HostedZone] {
-        use std::ops::Deref;
-        self.hosted_zones.deref()
+    pub fn hosted_zones(&self) -> & [crate::types::HostedZone] {
+        use std::ops::Deref; self.hosted_zones.deref()
     }
     /// <p>For the second and subsequent calls to <code>ListHostedZones</code>, <code>Marker</code> is the value that you specified for the <code>marker</code> parameter in the request that produced the current response.</p>
-    pub fn marker(&self) -> &str {
-        use std::ops::Deref;
-        self.marker.deref()
+    pub fn marker(&self) -> & str {
+        use std::ops::Deref; self.marker.deref()
     }
     /// <p>A flag indicating whether there are more hosted zones to be listed. If the response was truncated, you can get more hosted zones by submitting another <code>ListHostedZones</code> request and specifying the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
     pub fn is_truncated(&self) -> bool {
@@ -33,7 +31,7 @@ impl ListHostedZonesOutput {
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the first hosted zone in the next group of hosted zones. Submit another <code>ListHostedZones</code> request, and specify the value of <code>NextMarker</code> from the response in the <code>marker</code> parameter.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
-    pub fn next_marker(&self) -> ::std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListHostedZones</code> that produced the current response.</p>
@@ -42,10 +40,10 @@ impl ListHostedZonesOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for ListHostedZonesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListHostedZonesOutput {
     /// Creates a new builder-style object to manufacture [`ListHostedZonesOutput`](crate::operation::list_hosted_zones::ListHostedZonesOutput).
     pub fn builder() -> crate::operation::list_hosted_zones::builders::ListHostedZonesOutputBuilder {
@@ -57,7 +55,7 @@ impl ListHostedZonesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHostedZonesOutputBuilder {
-    pub(crate) hosted_zones: ::std::option::Option<::std::vec::Vec<crate::types::HostedZone>>,
+    pub(crate) hosted_zones: ::std::option::Option<::std::vec::Vec::<crate::types::HostedZone>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) is_truncated: ::std::option::Option<bool>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
@@ -72,17 +70,16 @@ impl ListHostedZonesOutputBuilder {
     /// <p>A complex type that contains general information about the hosted zone.</p>
     pub fn hosted_zones(mut self, input: crate::types::HostedZone) -> Self {
         let mut v = self.hosted_zones.unwrap_or_default();
-        v.push(input);
-        self.hosted_zones = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.hosted_zones = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A complex type that contains general information about the hosted zone.</p>
-    pub fn set_hosted_zones(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HostedZone>>) -> Self {
-        self.hosted_zones = input;
-        self
+    pub fn set_hosted_zones(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::HostedZone>>) -> Self {
+        self.hosted_zones = input; self
     }
     /// <p>A complex type that contains general information about the hosted zone.</p>
-    pub fn get_hosted_zones(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HostedZone>> {
+    pub fn get_hosted_zones(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::HostedZone>> {
         &self.hosted_zones
     }
     /// <p>For the second and subsequent calls to <code>ListHostedZones</code>, <code>Marker</code> is the value that you specified for the <code>marker</code> parameter in the request that produced the current response.</p>
@@ -93,8 +90,7 @@ impl ListHostedZonesOutputBuilder {
     }
     /// <p>For the second and subsequent calls to <code>ListHostedZones</code>, <code>Marker</code> is the value that you specified for the <code>marker</code> parameter in the request that produced the current response.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>For the second and subsequent calls to <code>ListHostedZones</code>, <code>Marker</code> is the value that you specified for the <code>marker</code> parameter in the request that produced the current response.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +104,7 @@ impl ListHostedZonesOutputBuilder {
     }
     /// <p>A flag indicating whether there are more hosted zones to be listed. If the response was truncated, you can get more hosted zones by submitting another <code>ListHostedZones</code> request and specifying the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
     pub fn set_is_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_truncated = input;
-        self
+        self.is_truncated = input; self
     }
     /// <p>A flag indicating whether there are more hosted zones to be listed. If the response was truncated, you can get more hosted zones by submitting another <code>ListHostedZones</code> request and specifying the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
     pub fn get_is_truncated(&self) -> &::std::option::Option<bool> {
@@ -124,8 +119,7 @@ impl ListHostedZonesOutputBuilder {
     /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the first hosted zone in the next group of hosted zones. Submit another <code>ListHostedZones</code> request, and specify the value of <code>NextMarker</code> from the response in the <code>marker</code> parameter.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_marker = input;
-        self
+        self.next_marker = input; self
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the first hosted zone in the next group of hosted zones. Submit another <code>ListHostedZones</code> request, and specify the value of <code>NextMarker</code> from the response in the <code>marker</code> parameter.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
@@ -140,52 +134,52 @@ impl ListHostedZonesOutputBuilder {
     }
     /// <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListHostedZones</code> that produced the current response.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListHostedZones</code> that produced the current response.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
         &self.max_items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListHostedZonesOutput`](crate::operation::list_hosted_zones::ListHostedZonesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`hosted_zones`](crate::operation::list_hosted_zones::builders::ListHostedZonesOutputBuilder::hosted_zones)
     /// - [`marker`](crate::operation::list_hosted_zones::builders::ListHostedZonesOutputBuilder::marker)
     /// - [`max_items`](crate::operation::list_hosted_zones::builders::ListHostedZonesOutputBuilder::max_items)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_hosted_zones::ListHostedZonesOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_hosted_zones::ListHostedZonesOutput {
-            hosted_zones: self.hosted_zones.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "hosted_zones",
-                    "hosted_zones was not specified but it is required when building ListHostedZonesOutput",
-                )
-            })?,
-            marker: self.marker.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "marker",
-                    "marker was not specified but it is required when building ListHostedZonesOutput",
-                )
-            })?,
-            is_truncated: self.is_truncated.unwrap_or_default(),
-            next_marker: self.next_marker,
-            max_items: self.max_items.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "max_items",
-                    "max_items was not specified but it is required when building ListHostedZonesOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_hosted_zones::ListHostedZonesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_hosted_zones::ListHostedZonesOutput {
+                hosted_zones: self.hosted_zones
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("hosted_zones", "hosted_zones was not specified but it is required when building ListHostedZonesOutput")
+                    )?
+                ,
+                marker: self.marker
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("marker", "marker was not specified but it is required when building ListHostedZonesOutput")
+                    )?
+                ,
+                is_truncated: self.is_truncated
+                    .unwrap_or_default()
+                ,
+                next_marker: self.next_marker
+                ,
+                max_items: self.max_items
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("max_items", "max_items was not specified but it is required when building ListHostedZonesOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

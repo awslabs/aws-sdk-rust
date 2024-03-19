@@ -3,19 +3,19 @@
 /// Specifies a raw data source location to ingest.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataSourceConfiguration {
+pub struct DataSourceConfiguration  {
     /// The type of the data source location.
     pub r#type: crate::types::DataSourceType,
     /// Configures an S3 data source location.
     pub s3_configuration: ::std::option::Option<crate::types::S3DataSourceConfiguration>,
 }
-impl DataSourceConfiguration {
+impl  DataSourceConfiguration  {
     /// The type of the data source location.
-    pub fn r#type(&self) -> &crate::types::DataSourceType {
+    pub fn r#type(&self) -> & crate::types::DataSourceType {
         &self.r#type
     }
     /// Configures an S3 data source location.
-    pub fn s3_configuration(&self) -> ::std::option::Option<&crate::types::S3DataSourceConfiguration> {
+    pub fn s3_configuration(&self) -> ::std::option::Option<& crate::types::S3DataSourceConfiguration> {
         self.s3_configuration.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl DataSourceConfigurationBuilder {
     }
     /// The type of the data source location.
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataSourceType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// The type of the data source location.
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DataSourceType> {
@@ -56,8 +55,7 @@ impl DataSourceConfigurationBuilder {
     }
     /// Configures an S3 data source location.
     pub fn set_s3_configuration(mut self, input: ::std::option::Option<crate::types::S3DataSourceConfiguration>) -> Self {
-        self.s3_configuration = input;
-        self
+        self.s3_configuration = input; self
     }
     /// Configures an S3 data source location.
     pub fn get_s3_configuration(&self) -> &::std::option::Option<crate::types::S3DataSourceConfiguration> {
@@ -67,14 +65,17 @@ impl DataSourceConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::DataSourceConfigurationBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::DataSourceConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DataSourceConfiguration {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building DataSourceConfiguration",
-                )
-            })?,
-            s3_configuration: self.s3_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DataSourceConfiguration {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building DataSourceConfiguration")
+                    )?
+                ,
+                s3_configuration: self.s3_configuration
+                ,
+            }
+        )
     }
 }
+

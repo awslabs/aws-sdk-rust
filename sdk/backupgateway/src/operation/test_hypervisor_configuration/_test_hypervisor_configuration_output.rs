@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestHypervisorConfigurationOutput {
+pub struct TestHypervisorConfigurationOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for TestHypervisorConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl TestHypervisorConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`TestHypervisorConfigurationOutput`](crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationOutput).
     pub fn builder() -> crate::operation::test_hypervisor_configuration::builders::TestHypervisorConfigurationOutputBuilder {
@@ -25,14 +25,14 @@ pub struct TestHypervisorConfigurationOutputBuilder {
 }
 impl TestHypervisorConfigurationOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`TestHypervisorConfigurationOutput`](crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationOutput).
     pub fn build(self) -> crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationOutput {
         crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationOutput {
@@ -40,3 +40,4 @@ impl TestHypervisorConfigurationOutputBuilder {
         }
     }
 }
+

@@ -2,31 +2,32 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct StartTestInput {
+pub struct StartTestInput  {
     /// <p>Start Test for Source Server IDs.</p>
-    pub source_server_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub source_server_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Start Test by Tags.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Start Test for Account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl StartTestInput {
+impl  StartTestInput  {
     /// <p>Start Test for Source Server IDs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_server_ids.is_none()`.
-    pub fn source_server_ids(&self) -> &[::std::string::String] {
-        self.source_server_ids.as_deref().unwrap_or_default()
+    pub fn source_server_ids(&self) -> & [::std::string::String] {
+        self.source_server_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Start Test by Tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Start Test for Account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for StartTestInput {
+impl  ::std::fmt::Debug for StartTestInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StartTestInput");
         formatter.field("source_server_ids", &self.source_server_ids);
@@ -46,8 +47,8 @@ impl StartTestInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct StartTestInputBuilder {
-    pub(crate) source_server_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) source_server_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl StartTestInputBuilder {
@@ -58,17 +59,16 @@ impl StartTestInputBuilder {
     /// <p>Start Test for Source Server IDs.</p>
     pub fn source_server_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.source_server_ids.unwrap_or_default();
-        v.push(input.into());
-        self.source_server_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.source_server_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Start Test for Source Server IDs.</p>
-    pub fn set_source_server_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.source_server_ids = input;
-        self
+    pub fn set_source_server_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.source_server_ids = input; self
     }
     /// <p>Start Test for Source Server IDs.</p>
-    pub fn get_source_server_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_source_server_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.source_server_ids
     }
     /// Adds a key-value pair to `tags`.
@@ -78,17 +78,16 @@ impl StartTestInputBuilder {
     /// <p>Start Test by Tags.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Start Test by Tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Start Test by Tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Start Test for Account ID.</p>
@@ -98,8 +97,7 @@ impl StartTestInputBuilder {
     }
     /// <p>Start Test for Account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>Start Test for Account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,11 +105,16 @@ impl StartTestInputBuilder {
     }
     /// Consumes the builder and constructs a [`StartTestInput`](crate::operation::start_test::StartTestInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::start_test::StartTestInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_test::StartTestInput {
-            source_server_ids: self.source_server_ids,
-            tags: self.tags,
-            account_id: self.account_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::start_test::StartTestInput {
+                source_server_ids: self.source_server_ids
+                ,
+                tags: self.tags
+                ,
+                account_id: self.account_id
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for StartTestInputBuilder {
@@ -123,3 +126,4 @@ impl ::std::fmt::Debug for StartTestInputBuilder {
         formatter.finish()
     }
 }
+

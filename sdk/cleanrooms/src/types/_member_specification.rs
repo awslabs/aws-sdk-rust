@@ -3,36 +3,33 @@
 /// <p>Basic metadata used to construct a new member.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MemberSpecification {
+pub struct MemberSpecification  {
     /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
     pub account_id: ::std::string::String,
     /// <p>The abilities granted to the collaboration member.</p>
-    pub member_abilities: ::std::vec::Vec<crate::types::MemberAbility>,
+    pub member_abilities: ::std::vec::Vec::<crate::types::MemberAbility>,
     /// <p>The member's display name.</p>
     pub display_name: ::std::string::String,
     /// <p>The collaboration member's payment responsibilities set by the collaboration creator.</p>
     /// <p>If the collaboration creator hasn't speciﬁed anyone as the member paying for query compute costs, then the member who can query is the default payer.</p>
     pub payment_configuration: ::std::option::Option<crate::types::PaymentConfiguration>,
 }
-impl MemberSpecification {
+impl  MemberSpecification  {
     /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
-    pub fn account_id(&self) -> &str {
-        use std::ops::Deref;
-        self.account_id.deref()
+    pub fn account_id(&self) -> & str {
+        use std::ops::Deref; self.account_id.deref()
     }
     /// <p>The abilities granted to the collaboration member.</p>
-    pub fn member_abilities(&self) -> &[crate::types::MemberAbility] {
-        use std::ops::Deref;
-        self.member_abilities.deref()
+    pub fn member_abilities(&self) -> & [crate::types::MemberAbility] {
+        use std::ops::Deref; self.member_abilities.deref()
     }
     /// <p>The member's display name.</p>
-    pub fn display_name(&self) -> &str {
-        use std::ops::Deref;
-        self.display_name.deref()
+    pub fn display_name(&self) -> & str {
+        use std::ops::Deref; self.display_name.deref()
     }
     /// <p>The collaboration member's payment responsibilities set by the collaboration creator.</p>
     /// <p>If the collaboration creator hasn't speciﬁed anyone as the member paying for query compute costs, then the member who can query is the default payer.</p>
-    pub fn payment_configuration(&self) -> ::std::option::Option<&crate::types::PaymentConfiguration> {
+    pub fn payment_configuration(&self) -> ::std::option::Option<& crate::types::PaymentConfiguration> {
         self.payment_configuration.as_ref()
     }
 }
@@ -48,7 +45,7 @@ impl MemberSpecification {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MemberSpecificationBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
-    pub(crate) member_abilities: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>,
+    pub(crate) member_abilities: ::std::option::Option<::std::vec::Vec::<crate::types::MemberAbility>>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) payment_configuration: ::std::option::Option<crate::types::PaymentConfiguration>,
 }
@@ -61,8 +58,7 @@ impl MemberSpecificationBuilder {
     }
     /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,17 +71,16 @@ impl MemberSpecificationBuilder {
     /// <p>The abilities granted to the collaboration member.</p>
     pub fn member_abilities(mut self, input: crate::types::MemberAbility) -> Self {
         let mut v = self.member_abilities.unwrap_or_default();
-        v.push(input);
-        self.member_abilities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.member_abilities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The abilities granted to the collaboration member.</p>
-    pub fn set_member_abilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>) -> Self {
-        self.member_abilities = input;
-        self
+    pub fn set_member_abilities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MemberAbility>>) -> Self {
+        self.member_abilities = input; self
     }
     /// <p>The abilities granted to the collaboration member.</p>
-    pub fn get_member_abilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>> {
+    pub fn get_member_abilities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MemberAbility>> {
         &self.member_abilities
     }
     /// <p>The member's display name.</p>
@@ -96,8 +91,7 @@ impl MemberSpecificationBuilder {
     }
     /// <p>The member's display name.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The member's display name.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +106,7 @@ impl MemberSpecificationBuilder {
     /// <p>The collaboration member's payment responsibilities set by the collaboration creator.</p>
     /// <p>If the collaboration creator hasn't speciﬁed anyone as the member paying for query compute costs, then the member who can query is the default payer.</p>
     pub fn set_payment_configuration(mut self, input: ::std::option::Option<crate::types::PaymentConfiguration>) -> Self {
-        self.payment_configuration = input;
-        self
+        self.payment_configuration = input; self
     }
     /// <p>The collaboration member's payment responsibilities set by the collaboration creator.</p>
     /// <p>If the collaboration creator hasn't speciﬁed anyone as the member paying for query compute costs, then the member who can query is the default payer.</p>
@@ -126,26 +119,27 @@ impl MemberSpecificationBuilder {
     /// - [`member_abilities`](crate::types::builders::MemberSpecificationBuilder::member_abilities)
     /// - [`display_name`](crate::types::builders::MemberSpecificationBuilder::display_name)
     pub fn build(self) -> ::std::result::Result<crate::types::MemberSpecification, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MemberSpecification {
-            account_id: self.account_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "account_id",
-                    "account_id was not specified but it is required when building MemberSpecification",
-                )
-            })?,
-            member_abilities: self.member_abilities.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "member_abilities",
-                    "member_abilities was not specified but it is required when building MemberSpecification",
-                )
-            })?,
-            display_name: self.display_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "display_name",
-                    "display_name was not specified but it is required when building MemberSpecification",
-                )
-            })?,
-            payment_configuration: self.payment_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MemberSpecification {
+                account_id: self.account_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("account_id", "account_id was not specified but it is required when building MemberSpecification")
+                    )?
+                ,
+                member_abilities: self.member_abilities
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("member_abilities", "member_abilities was not specified but it is required when building MemberSpecification")
+                    )?
+                ,
+                display_name: self.display_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("display_name", "display_name was not specified but it is required when building MemberSpecification")
+                    )?
+                ,
+                payment_configuration: self.payment_configuration
+                ,
+            }
+        )
     }
 }
+

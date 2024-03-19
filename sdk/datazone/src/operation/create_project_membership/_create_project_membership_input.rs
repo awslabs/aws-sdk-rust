@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateProjectMembershipInput {
+pub struct CreateProjectMembershipInput  {
     /// <p>The ID of the Amazon DataZone domain in which project membership is created.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the project for which this project membership was created.</p>
@@ -12,21 +12,21 @@ pub struct CreateProjectMembershipInput {
     /// <p>The designation of the project membership.</p>
     pub designation: ::std::option::Option<crate::types::UserDesignation>,
 }
-impl CreateProjectMembershipInput {
+impl  CreateProjectMembershipInput  {
     /// <p>The ID of the Amazon DataZone domain in which project membership is created.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The ID of the project for which this project membership was created.</p>
-    pub fn project_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn project_identifier(&self) -> ::std::option::Option<& str> {
         self.project_identifier.as_deref()
     }
     /// <p>The project member whose project membership was created.</p>
-    pub fn member(&self) -> ::std::option::Option<&crate::types::Member> {
+    pub fn member(&self) -> ::std::option::Option<& crate::types::Member> {
         self.member.as_ref()
     }
     /// <p>The designation of the project membership.</p>
-    pub fn designation(&self) -> ::std::option::Option<&crate::types::UserDesignation> {
+    pub fn designation(&self) -> ::std::option::Option<& crate::types::UserDesignation> {
         self.designation.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl CreateProjectMembershipInputBuilder {
     }
     /// <p>The ID of the Amazon DataZone domain in which project membership is created.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The ID of the Amazon DataZone domain in which project membership is created.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl CreateProjectMembershipInputBuilder {
     }
     /// <p>The ID of the project for which this project membership was created.</p>
     pub fn set_project_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_identifier = input;
-        self
+        self.project_identifier = input; self
     }
     /// <p>The ID of the project for which this project membership was created.</p>
     pub fn get_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl CreateProjectMembershipInputBuilder {
     }
     /// <p>The project member whose project membership was created.</p>
     pub fn set_member(mut self, input: ::std::option::Option<crate::types::Member>) -> Self {
-        self.member = input;
-        self
+        self.member = input; self
     }
     /// <p>The project member whose project membership was created.</p>
     pub fn get_member(&self) -> &::std::option::Option<crate::types::Member> {
@@ -100,25 +97,26 @@ impl CreateProjectMembershipInputBuilder {
     }
     /// <p>The designation of the project membership.</p>
     pub fn set_designation(mut self, input: ::std::option::Option<crate::types::UserDesignation>) -> Self {
-        self.designation = input;
-        self
+        self.designation = input; self
     }
     /// <p>The designation of the project membership.</p>
     pub fn get_designation(&self) -> &::std::option::Option<crate::types::UserDesignation> {
         &self.designation
     }
     /// Consumes the builder and constructs a [`CreateProjectMembershipInput`](crate::operation::create_project_membership::CreateProjectMembershipInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_project_membership::CreateProjectMembershipInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_project_membership::CreateProjectMembershipInput {
-            domain_identifier: self.domain_identifier,
-            project_identifier: self.project_identifier,
-            member: self.member,
-            designation: self.designation,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_project_membership::CreateProjectMembershipInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_project_membership::CreateProjectMembershipInput {
+                domain_identifier: self.domain_identifier
+                ,
+                project_identifier: self.project_identifier
+                ,
+                member: self.member
+                ,
+                designation: self.designation
+                ,
+            }
+        )
     }
 }
+

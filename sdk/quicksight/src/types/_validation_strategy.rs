@@ -3,13 +3,13 @@
 /// <p>The option to relax the validation that is required to create and update analyses, dashboards, and templates with definition objects. When you set this value to <code>LENIENT</code>, validation is skipped for specific errors.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ValidationStrategy {
+pub struct ValidationStrategy  {
     /// <p>The mode of validation for the asset to be created or updated. When you set this value to <code>STRICT</code>, strict validation for every error is enforced. When you set this value to <code>LENIENT</code>, validation is skipped for specific UI errors.</p>
     pub mode: crate::types::ValidationStrategyMode,
 }
-impl ValidationStrategy {
+impl  ValidationStrategy  {
     /// <p>The mode of validation for the asset to be created or updated. When you set this value to <code>STRICT</code>, strict validation for every error is enforced. When you set this value to <code>LENIENT</code>, validation is skipped for specific UI errors.</p>
-    pub fn mode(&self) -> &crate::types::ValidationStrategyMode {
+    pub fn mode(&self) -> & crate::types::ValidationStrategyMode {
         &self.mode
     }
 }
@@ -35,8 +35,7 @@ impl ValidationStrategyBuilder {
     }
     /// <p>The mode of validation for the asset to be created or updated. When you set this value to <code>STRICT</code>, strict validation for every error is enforced. When you set this value to <code>LENIENT</code>, validation is skipped for specific UI errors.</p>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::ValidationStrategyMode>) -> Self {
-        self.mode = input;
-        self
+        self.mode = input; self
     }
     /// <p>The mode of validation for the asset to be created or updated. When you set this value to <code>STRICT</code>, strict validation for every error is enforced. When you set this value to <code>LENIENT</code>, validation is skipped for specific UI errors.</p>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::ValidationStrategyMode> {
@@ -46,13 +45,15 @@ impl ValidationStrategyBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`mode`](crate::types::builders::ValidationStrategyBuilder::mode)
     pub fn build(self) -> ::std::result::Result<crate::types::ValidationStrategy, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ValidationStrategy {
-            mode: self.mode.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "mode",
-                    "mode was not specified but it is required when building ValidationStrategy",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ValidationStrategy {
+                mode: self.mode
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("mode", "mode was not specified but it is required when building ValidationStrategy")
+                    )?
+                ,
+            }
+        )
     }
 }
+

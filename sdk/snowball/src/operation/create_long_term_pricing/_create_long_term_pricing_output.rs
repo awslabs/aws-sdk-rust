@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateLongTermPricingOutput {
+pub struct CreateLongTermPricingOutput  {
     /// <p>The ID of the long-term pricing type for the device.</p>
     pub long_term_pricing_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateLongTermPricingOutput {
+impl  CreateLongTermPricingOutput  {
     /// <p>The ID of the long-term pricing type for the device.</p>
-    pub fn long_term_pricing_id(&self) -> ::std::option::Option<&str> {
+    pub fn long_term_pricing_id(&self) -> ::std::option::Option<& str> {
         self.long_term_pricing_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateLongTermPricingOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateLongTermPricingOutput {
     /// Creates a new builder-style object to manufacture [`CreateLongTermPricingOutput`](crate::operation::create_long_term_pricing::CreateLongTermPricingOutput).
     pub fn builder() -> crate::operation::create_long_term_pricing::builders::CreateLongTermPricingOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateLongTermPricingOutputBuilder {
     }
     /// <p>The ID of the long-term pricing type for the device.</p>
     pub fn set_long_term_pricing_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.long_term_pricing_id = input;
-        self
+        self.long_term_pricing_id = input; self
     }
     /// <p>The ID of the long-term pricing type for the device.</p>
     pub fn get_long_term_pricing_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.long_term_pricing_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateLongTermPricingOutput`](crate::operation::create_long_term_pricing::CreateLongTermPricingOutput).
     pub fn build(self) -> crate::operation::create_long_term_pricing::CreateLongTermPricingOutput {
         crate::operation::create_long_term_pricing::CreateLongTermPricingOutput {
-            long_term_pricing_id: self.long_term_pricing_id,
+            long_term_pricing_id: self.long_term_pricing_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

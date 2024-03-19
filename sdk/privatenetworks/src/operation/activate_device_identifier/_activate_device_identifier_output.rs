@@ -2,24 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ActivateDeviceIdentifierOutput {
+pub struct ActivateDeviceIdentifierOutput  {
     /// <p>Information about the device identifier.</p>
     pub device_identifier: ::std::option::Option<crate::types::DeviceIdentifier>,
     /// <p>The tags on the device identifier.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl ActivateDeviceIdentifierOutput {
+impl  ActivateDeviceIdentifierOutput  {
     /// <p>Information about the device identifier.</p>
-    pub fn device_identifier(&self) -> ::std::option::Option<&crate::types::DeviceIdentifier> {
+    pub fn device_identifier(&self) -> ::std::option::Option<& crate::types::DeviceIdentifier> {
         self.device_identifier.as_ref()
     }
     /// <p>The tags on the device identifier.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl ::std::fmt::Debug for ActivateDeviceIdentifierOutput {
+impl  ::std::fmt::Debug for ActivateDeviceIdentifierOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ActivateDeviceIdentifierOutput");
         formatter.field("device_identifier", &self.device_identifier);
@@ -29,10 +29,10 @@ impl ::std::fmt::Debug for ActivateDeviceIdentifierOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for ActivateDeviceIdentifierOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ActivateDeviceIdentifierOutput {
     /// Creates a new builder-style object to manufacture [`ActivateDeviceIdentifierOutput`](crate::operation::activate_device_identifier::ActivateDeviceIdentifierOutput).
     pub fn builder() -> crate::operation::activate_device_identifier::builders::ActivateDeviceIdentifierOutputBuilder {
@@ -45,7 +45,7 @@ impl ActivateDeviceIdentifierOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ActivateDeviceIdentifierOutputBuilder {
     pub(crate) device_identifier: ::std::option::Option<crate::types::DeviceIdentifier>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl ActivateDeviceIdentifierOutputBuilder {
@@ -57,8 +57,7 @@ impl ActivateDeviceIdentifierOutputBuilder {
     }
     /// <p>Information about the device identifier.</p>
     pub fn set_device_identifier(mut self, input: ::std::option::Option<crate::types::DeviceIdentifier>) -> Self {
-        self.device_identifier = input;
-        self
+        self.device_identifier = input; self
     }
     /// <p>Information about the device identifier.</p>
     pub fn get_device_identifier(&self) -> &::std::option::Option<crate::types::DeviceIdentifier> {
@@ -71,33 +70,34 @@ impl ActivateDeviceIdentifierOutputBuilder {
     /// <p>The tags on the device identifier.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags on the device identifier.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags on the device identifier.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ActivateDeviceIdentifierOutput`](crate::operation::activate_device_identifier::ActivateDeviceIdentifierOutput).
     pub fn build(self) -> crate::operation::activate_device_identifier::ActivateDeviceIdentifierOutput {
         crate::operation::activate_device_identifier::ActivateDeviceIdentifierOutput {
-            device_identifier: self.device_identifier,
-            tags: self.tags,
+            device_identifier: self.device_identifier
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
@@ -111,3 +111,4 @@ impl ::std::fmt::Debug for ActivateDeviceIdentifierOutputBuilder {
         formatter.finish()
     }
 }
+

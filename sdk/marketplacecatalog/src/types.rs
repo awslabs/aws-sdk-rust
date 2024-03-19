@@ -396,3 +396,4 @@ pub mod builders;
 
 /// Error types that AWS Marketplace Catalog Service can respond with.
 pub mod error;
+

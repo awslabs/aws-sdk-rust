@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDatastoreInput {
+pub struct GetDatastoreInput  {
     /// <p>The data store identifier.</p>
     pub datastore_id: ::std::option::Option<::std::string::String>,
 }
-impl GetDatastoreInput {
+impl  GetDatastoreInput  {
     /// <p>The data store identifier.</p>
-    pub fn datastore_id(&self) -> ::std::option::Option<&str> {
+    pub fn datastore_id(&self) -> ::std::option::Option<& str> {
         self.datastore_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetDatastoreInputBuilder {
     }
     /// <p>The data store identifier.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.datastore_id = input;
-        self
+        self.datastore_id = input; self
     }
     /// <p>The data store identifier.</p>
     pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.datastore_id
     }
     /// Consumes the builder and constructs a [`GetDatastoreInput`](crate::operation::get_datastore::GetDatastoreInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_datastore::GetDatastoreInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_datastore::GetDatastoreInput {
-            datastore_id: self.datastore_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_datastore::GetDatastoreInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_datastore::GetDatastoreInput {
+                datastore_id: self.datastore_id
+                ,
+            }
+        )
     }
 }
+

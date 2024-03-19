@@ -3,19 +3,19 @@
 /// <p>Contains details on the time range used to filter findings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DateFilter {
+pub struct DateFilter  {
     /// <p>A timestamp representing the start of the time period filtered on.</p>
     pub start_inclusive: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp representing the end of the time period filtered on.</p>
     pub end_inclusive: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl DateFilter {
+impl  DateFilter  {
     /// <p>A timestamp representing the start of the time period filtered on.</p>
-    pub fn start_inclusive(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_inclusive(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_inclusive.as_ref()
     }
     /// <p>A timestamp representing the end of the time period filtered on.</p>
-    pub fn end_inclusive(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_inclusive(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_inclusive.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl DateFilterBuilder {
     }
     /// <p>A timestamp representing the start of the time period filtered on.</p>
     pub fn set_start_inclusive(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_inclusive = input;
-        self
+        self.start_inclusive = input; self
     }
     /// <p>A timestamp representing the start of the time period filtered on.</p>
     pub fn get_start_inclusive(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -55,8 +54,7 @@ impl DateFilterBuilder {
     }
     /// <p>A timestamp representing the end of the time period filtered on.</p>
     pub fn set_end_inclusive(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_inclusive = input;
-        self
+        self.end_inclusive = input; self
     }
     /// <p>A timestamp representing the end of the time period filtered on.</p>
     pub fn get_end_inclusive(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -65,8 +63,11 @@ impl DateFilterBuilder {
     /// Consumes the builder and constructs a [`DateFilter`](crate::types::DateFilter).
     pub fn build(self) -> crate::types::DateFilter {
         crate::types::DateFilter {
-            start_inclusive: self.start_inclusive,
-            end_inclusive: self.end_inclusive,
+            start_inclusive: self.start_inclusive
+            ,
+            end_inclusive: self.end_inclusive
+            ,
         }
     }
 }
+

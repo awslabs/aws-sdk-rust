@@ -3,13 +3,13 @@
 /// <p>Describes a pause cluster operation. For example, a scheduled action to run the <code>PauseCluster</code> API operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PauseClusterInput {
+pub struct PauseClusterInput  {
     /// <p>The identifier of the cluster to be paused.</p>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
 }
-impl PauseClusterInput {
+impl  PauseClusterInput  {
     /// <p>The identifier of the cluster to be paused.</p>
-    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
 }
@@ -35,19 +35,20 @@ impl PauseClusterInputBuilder {
     }
     /// <p>The identifier of the cluster to be paused.</p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_identifier = input;
-        self
+        self.cluster_identifier = input; self
     }
     /// <p>The identifier of the cluster to be paused.</p>
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_identifier
     }
     /// Consumes the builder and constructs a [`PauseClusterInput`](crate::operation::pause_cluster::PauseClusterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::pause_cluster::PauseClusterInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::pause_cluster::PauseClusterInput {
-            cluster_identifier: self.cluster_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::pause_cluster::PauseClusterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::pause_cluster::PauseClusterInput {
+                cluster_identifier: self.cluster_identifier
+                ,
+            }
+        )
     }
 }
+

@@ -21,11 +21,7 @@ impl ReferenceItem {
     /// Tries to convert the enum instance into [`ReferenceArn`](crate::types::ReferenceItem::ReferenceArn), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_reference_arn(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let ReferenceItem::ReferenceArn(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ReferenceItem::ReferenceArn(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ReferenceArn`](crate::types::ReferenceItem::ReferenceArn).
     pub fn is_reference_arn(&self) -> bool {
@@ -36,3 +32,4 @@ impl ReferenceItem {
         matches!(self, Self::Unknown)
     }
 }
+

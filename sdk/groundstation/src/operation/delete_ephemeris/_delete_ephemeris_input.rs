@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteEphemerisInput {
+pub struct DeleteEphemerisInput  {
     /// <p>The AWS Ground Station ephemeris ID.</p>
     pub ephemeris_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteEphemerisInput {
+impl  DeleteEphemerisInput  {
     /// <p>The AWS Ground Station ephemeris ID.</p>
-    pub fn ephemeris_id(&self) -> ::std::option::Option<&str> {
+    pub fn ephemeris_id(&self) -> ::std::option::Option<& str> {
         self.ephemeris_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteEphemerisInputBuilder {
     }
     /// <p>The AWS Ground Station ephemeris ID.</p>
     pub fn set_ephemeris_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ephemeris_id = input;
-        self
+        self.ephemeris_id = input; self
     }
     /// <p>The AWS Ground Station ephemeris ID.</p>
     pub fn get_ephemeris_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ephemeris_id
     }
     /// Consumes the builder and constructs a [`DeleteEphemerisInput`](crate::operation::delete_ephemeris::DeleteEphemerisInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_ephemeris::DeleteEphemerisInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_ephemeris::DeleteEphemerisInput {
-            ephemeris_id: self.ephemeris_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_ephemeris::DeleteEphemerisInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_ephemeris::DeleteEphemerisInput {
+                ephemeris_id: self.ephemeris_id
+                ,
+            }
+        )
     }
 }
+

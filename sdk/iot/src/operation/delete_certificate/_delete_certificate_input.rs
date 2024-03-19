@@ -3,15 +3,15 @@
 /// <p>The input for the DeleteCertificate operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCertificateInput {
+pub struct DeleteCertificateInput  {
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.</p>
     pub force_delete: ::std::option::Option<bool>,
 }
-impl DeleteCertificateInput {
+impl  DeleteCertificateInput  {
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
-    pub fn certificate_id(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_id(&self) -> ::std::option::Option<& str> {
         self.certificate_id.as_deref()
     }
     /// <p>Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.</p>
@@ -42,8 +42,7 @@ impl DeleteCertificateInputBuilder {
     }
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_id = input;
-        self
+        self.certificate_id = input; self
     }
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DeleteCertificateInputBuilder {
     }
     /// <p>Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.</p>
     pub fn set_force_delete(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force_delete = input;
-        self
+        self.force_delete = input; self
     }
     /// <p>Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.</p>
     pub fn get_force_delete(&self) -> &::std::option::Option<bool> {
         &self.force_delete
     }
     /// Consumes the builder and constructs a [`DeleteCertificateInput`](crate::operation::delete_certificate::DeleteCertificateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_certificate::DeleteCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_certificate::DeleteCertificateInput {
-            certificate_id: self.certificate_id,
-            force_delete: self.force_delete,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_certificate::DeleteCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_certificate::DeleteCertificateInput {
+                certificate_id: self.certificate_id
+                ,
+                force_delete: self.force_delete
+                ,
+            }
+        )
     }
 }
+

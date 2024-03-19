@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListBridges`](crate::operation::list_bridges::builders::ListBridgesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_bridges::builders::ListBridgesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filter_arn(impl Into<String>)`](crate::operation::list_bridges::builders::ListBridgesFluentBuilder::filter_arn) / [`set_filter_arn(Option<String>)`](crate::operation::list_bridges::builders::ListBridgesFluentBuilder::set_filter_arn):<br>required: **false**<br>Filter the list results to display only the bridges associated with the selected Amazon Resource Name (ARN).<br>
     ///   - [`max_results(i32)`](crate::operation::list_bridges::builders::ListBridgesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_bridges::builders::ListBridgesFluentBuilder::set_max_results):<br>required: **false**<br>The maximum number of results to return per API request. For example, you submit a ListBridges request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.<br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_bridges::builders::ListBridgesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_bridges::builders::ListBridgesFluentBuilder::set_next_token):<br>required: **false**<br>The token that identifies which batch of results that you want to see. For example, you submit a ListBridges request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListBridges request a second time and specify the NextToken value.<br>
-    /// - On success, responds with [`ListBridgesOutput`](crate::operation::list_bridges::ListBridgesOutput) with field(s):
+                            /// - On success, responds with [`ListBridgesOutput`](crate::operation::list_bridges::ListBridgesOutput) with field(s):
     ///   - [`bridges(Option<Vec::<ListedBridge>>)`](crate::operation::list_bridges::ListBridgesOutput::bridges): A list of bridge summaries.
     ///   - [`next_token(Option<String>)`](crate::operation::list_bridges::ListBridgesOutput::next_token): The token that identifies which batch of results that you want to see. For example, you submit a ListBridges request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListBridges request a second time and specify the NextToken value.
-    /// - On failure, responds with [`SdkError<ListBridgesError>`](crate::operation::list_bridges::ListBridgesError)
+                            /// - On failure, responds with [`SdkError<ListBridgesError>`](crate::operation::list_bridges::ListBridgesError)
     pub fn list_bridges(&self) -> crate::operation::list_bridges::builders::ListBridgesFluentBuilder {
-        crate::operation::list_bridges::builders::ListBridgesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_bridges::builders::ListBridgesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

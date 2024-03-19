@@ -3,7 +3,7 @@
 /// <p>The operations performed by AWS Systems Manager for SAP.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Operation {
+pub struct Operation  {
     /// <p>The ID of the operation.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the operation.</p>
@@ -13,7 +13,7 @@ pub struct Operation {
     /// <p>The status message of the operation.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The properties of the operation.</p>
-    pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
+    pub properties: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>>,
     /// <p>The resource type of the operation.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The resource ID of the operation.</p>
@@ -27,51 +27,49 @@ pub struct Operation {
     /// <p>The time at which the operation was last updated.</p>
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl Operation {
+impl  Operation  {
     /// <p>The ID of the operation.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The type of the operation.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The status of the operation.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::OperationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::OperationStatus> {
         self.status.as_ref()
     }
     /// <p>The status message of the operation.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The properties of the operation.</p>
-    pub fn properties(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {
+    pub fn properties(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>> {
         self.properties.as_ref()
     }
     /// <p>The resource type of the operation.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The resource ID of the operation.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the operation.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The start time of the operation.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time of the operation.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The time at which the operation was last updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
 }
@@ -90,7 +88,7 @@ pub struct OperationBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::OperationStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
-    pub(crate) properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
+    pub(crate) properties: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
@@ -106,8 +104,7 @@ impl OperationBuilder {
     }
     /// <p>The ID of the operation.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the operation.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +117,7 @@ impl OperationBuilder {
     }
     /// <p>The type of the operation.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the operation.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +130,7 @@ impl OperationBuilder {
     }
     /// <p>The status of the operation.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OperationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the operation.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::OperationStatus> {
@@ -148,8 +143,7 @@ impl OperationBuilder {
     }
     /// <p>The status message of the operation.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The status message of the operation.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,22 +156,16 @@ impl OperationBuilder {
     /// <p>The properties of the operation.</p>
     pub fn properties(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::option::Option<::std::string::String>) -> Self {
         let mut hash_map = self.properties.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.properties = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.properties = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The properties of the operation.</p>
-    pub fn set_properties(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
-    ) -> Self {
-        self.properties = input;
-        self
+    pub fn set_properties(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>>) -> Self {
+        self.properties = input; self
     }
     /// <p>The properties of the operation.</p>
-    pub fn get_properties(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {
+    pub fn get_properties(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>> {
         &self.properties
     }
     /// <p>The resource type of the operation.</p>
@@ -187,8 +175,7 @@ impl OperationBuilder {
     }
     /// <p>The resource type of the operation.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type of the operation.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -201,8 +188,7 @@ impl OperationBuilder {
     }
     /// <p>The resource ID of the operation.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The resource ID of the operation.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -215,8 +201,7 @@ impl OperationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the operation.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the operation.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -229,8 +214,7 @@ impl OperationBuilder {
     }
     /// <p>The start time of the operation.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The start time of the operation.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -243,8 +227,7 @@ impl OperationBuilder {
     }
     /// <p>The end time of the operation.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The end time of the operation.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -257,8 +240,7 @@ impl OperationBuilder {
     }
     /// <p>The time at which the operation was last updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The time at which the operation was last updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -267,17 +249,29 @@ impl OperationBuilder {
     /// Consumes the builder and constructs a [`Operation`](crate::types::Operation).
     pub fn build(self) -> crate::types::Operation {
         crate::types::Operation {
-            id: self.id,
-            r#type: self.r#type,
-            status: self.status,
-            status_message: self.status_message,
-            properties: self.properties,
-            resource_type: self.resource_type,
-            resource_id: self.resource_id,
-            resource_arn: self.resource_arn,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            last_updated_time: self.last_updated_time,
+            id: self.id
+            ,
+            r#type: self.r#type
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
+            properties: self.properties
+            ,
+            resource_type: self.resource_type
+            ,
+            resource_id: self.resource_id
+            ,
+            resource_arn: self.resource_arn
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
+            last_updated_time: self.last_updated_time
+            ,
         }
     }
 }
+

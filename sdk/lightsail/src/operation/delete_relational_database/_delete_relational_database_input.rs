@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRelationalDatabaseInput {
+pub struct DeleteRelationalDatabaseInput  {
     /// <p>The name of the database that you are deleting.</p>
     pub relational_database_name: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether a final database snapshot is created before your database is deleted. If <code>true</code> is specified, no database snapshot is created. If <code>false</code> is specified, a database snapshot is created before your database is deleted.</p>
@@ -21,9 +21,9 @@ pub struct DeleteRelationalDatabaseInput {
     /// </ul>
     pub final_relational_database_snapshot_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteRelationalDatabaseInput {
+impl  DeleteRelationalDatabaseInput  {
     /// <p>The name of the database that you are deleting.</p>
-    pub fn relational_database_name(&self) -> ::std::option::Option<&str> {
+    pub fn relational_database_name(&self) -> ::std::option::Option<& str> {
         self.relational_database_name.as_deref()
     }
     /// <p>Determines whether a final database snapshot is created before your database is deleted. If <code>true</code> is specified, no database snapshot is created. If <code>false</code> is specified, a database snapshot is created before your database is deleted.</p>
@@ -42,7 +42,7 @@ impl DeleteRelationalDatabaseInput {
     /// <li>
     /// <p>The first and last character must be a letter or number.</p></li>
     /// </ul>
-    pub fn final_relational_database_snapshot_name(&self) -> ::std::option::Option<&str> {
+    pub fn final_relational_database_snapshot_name(&self) -> ::std::option::Option<& str> {
         self.final_relational_database_snapshot_name.as_deref()
     }
 }
@@ -70,8 +70,7 @@ impl DeleteRelationalDatabaseInputBuilder {
     }
     /// <p>The name of the database that you are deleting.</p>
     pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.relational_database_name = input;
-        self
+        self.relational_database_name = input; self
     }
     /// <p>The name of the database that you are deleting.</p>
     pub fn get_relational_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +87,7 @@ impl DeleteRelationalDatabaseInputBuilder {
     /// <p>You must specify the <code>final relational database snapshot name</code> parameter if the <code>skip final snapshot</code> parameter is <code>false</code>.</p>
     /// <p>Default: <code>false</code></p>
     pub fn set_skip_final_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.skip_final_snapshot = input;
-        self
+        self.skip_final_snapshot = input; self
     }
     /// <p>Determines whether a final database snapshot is created before your database is deleted. If <code>true</code> is specified, no database snapshot is created. If <code>false</code> is specified, a database snapshot is created before your database is deleted.</p>
     /// <p>You must specify the <code>final relational database snapshot name</code> parameter if the <code>skip final snapshot</code> parameter is <code>false</code>.</p>
@@ -122,8 +120,7 @@ impl DeleteRelationalDatabaseInputBuilder {
     /// <p>The first and last character must be a letter or number.</p></li>
     /// </ul>
     pub fn set_final_relational_database_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.final_relational_database_snapshot_name = input;
-        self
+        self.final_relational_database_snapshot_name = input; self
     }
     /// <p>The name of the database snapshot created if <code>skip final snapshot</code> is <code>false</code>, which is the default value for that parameter.</p><note>
     /// <p>Specifying this parameter and also specifying the <code>skip final snapshot</code> parameter to <code>true</code> results in an error.</p>
@@ -139,16 +136,17 @@ impl DeleteRelationalDatabaseInputBuilder {
         &self.final_relational_database_snapshot_name
     }
     /// Consumes the builder and constructs a [`DeleteRelationalDatabaseInput`](crate::operation::delete_relational_database::DeleteRelationalDatabaseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_relational_database::DeleteRelationalDatabaseInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_relational_database::DeleteRelationalDatabaseInput {
-            relational_database_name: self.relational_database_name,
-            skip_final_snapshot: self.skip_final_snapshot,
-            final_relational_database_snapshot_name: self.final_relational_database_snapshot_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_relational_database::DeleteRelationalDatabaseInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_relational_database::DeleteRelationalDatabaseInput {
+                relational_database_name: self.relational_database_name
+                ,
+                skip_final_snapshot: self.skip_final_snapshot
+                ,
+                final_relational_database_snapshot_name: self.final_relational_database_snapshot_name
+                ,
+            }
+        )
     }
 }
+

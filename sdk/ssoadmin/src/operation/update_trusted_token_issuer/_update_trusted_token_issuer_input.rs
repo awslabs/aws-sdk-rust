@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateTrustedTokenIssuerInput {
+pub struct UpdateTrustedTokenIssuerInput  {
     /// <p>Specifies the ARN of the trusted token issuer configuration that you want to update.</p>
     pub trusted_token_issuer_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the updated name to be applied to the trusted token issuer configuration.</p>
@@ -10,17 +10,17 @@ pub struct UpdateTrustedTokenIssuerInput {
     /// <p>Specifies a structure with settings to apply to the specified trusted token issuer. The settings that you can provide are determined by the type of the trusted token issuer that you are updating.</p>
     pub trusted_token_issuer_configuration: ::std::option::Option<crate::types::TrustedTokenIssuerUpdateConfiguration>,
 }
-impl UpdateTrustedTokenIssuerInput {
+impl  UpdateTrustedTokenIssuerInput  {
     /// <p>Specifies the ARN of the trusted token issuer configuration that you want to update.</p>
-    pub fn trusted_token_issuer_arn(&self) -> ::std::option::Option<&str> {
+    pub fn trusted_token_issuer_arn(&self) -> ::std::option::Option<& str> {
         self.trusted_token_issuer_arn.as_deref()
     }
     /// <p>Specifies the updated name to be applied to the trusted token issuer configuration.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies a structure with settings to apply to the specified trusted token issuer. The settings that you can provide are determined by the type of the trusted token issuer that you are updating.</p>
-    pub fn trusted_token_issuer_configuration(&self) -> ::std::option::Option<&crate::types::TrustedTokenIssuerUpdateConfiguration> {
+    pub fn trusted_token_issuer_configuration(&self) -> ::std::option::Option<& crate::types::TrustedTokenIssuerUpdateConfiguration> {
         self.trusted_token_issuer_configuration.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateTrustedTokenIssuerInputBuilder {
     }
     /// <p>Specifies the ARN of the trusted token issuer configuration that you want to update.</p>
     pub fn set_trusted_token_issuer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trusted_token_issuer_arn = input;
-        self
+        self.trusted_token_issuer_arn = input; self
     }
     /// <p>Specifies the ARN of the trusted token issuer configuration that you want to update.</p>
     pub fn get_trusted_token_issuer_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UpdateTrustedTokenIssuerInputBuilder {
     }
     /// <p>Specifies the updated name to be applied to the trusted token issuer configuration.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Specifies the updated name to be applied to the trusted token issuer configuration.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,28 +73,25 @@ impl UpdateTrustedTokenIssuerInputBuilder {
         self
     }
     /// <p>Specifies a structure with settings to apply to the specified trusted token issuer. The settings that you can provide are determined by the type of the trusted token issuer that you are updating.</p>
-    pub fn set_trusted_token_issuer_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::TrustedTokenIssuerUpdateConfiguration>,
-    ) -> Self {
-        self.trusted_token_issuer_configuration = input;
-        self
+    pub fn set_trusted_token_issuer_configuration(mut self, input: ::std::option::Option<crate::types::TrustedTokenIssuerUpdateConfiguration>) -> Self {
+        self.trusted_token_issuer_configuration = input; self
     }
     /// <p>Specifies a structure with settings to apply to the specified trusted token issuer. The settings that you can provide are determined by the type of the trusted token issuer that you are updating.</p>
     pub fn get_trusted_token_issuer_configuration(&self) -> &::std::option::Option<crate::types::TrustedTokenIssuerUpdateConfiguration> {
         &self.trusted_token_issuer_configuration
     }
     /// Consumes the builder and constructs a [`UpdateTrustedTokenIssuerInput`](crate::operation::update_trusted_token_issuer::UpdateTrustedTokenIssuerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_trusted_token_issuer::UpdateTrustedTokenIssuerInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_trusted_token_issuer::UpdateTrustedTokenIssuerInput {
-            trusted_token_issuer_arn: self.trusted_token_issuer_arn,
-            name: self.name,
-            trusted_token_issuer_configuration: self.trusted_token_issuer_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_trusted_token_issuer::UpdateTrustedTokenIssuerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_trusted_token_issuer::UpdateTrustedTokenIssuerInput {
+                trusted_token_issuer_arn: self.trusted_token_issuer_arn
+                ,
+                name: self.name
+                ,
+                trusted_token_issuer_configuration: self.trusted_token_issuer_configuration
+                ,
+            }
+        )
     }
 }
+

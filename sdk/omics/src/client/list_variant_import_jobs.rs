@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListVariantImportJobs`](crate::operation::list_variant_import_jobs::builders::ListVariantImportJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_variant_import_jobs::builders::ListVariantImportJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_variant_import_jobs::builders::ListVariantImportJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_variant_import_jobs::builders::ListVariantImportJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of import jobs to return in one page of results.</p><br>
     ///   - [`ids(impl Into<String>)`](crate::operation::list_variant_import_jobs::builders::ListVariantImportJobsFluentBuilder::ids) / [`set_ids(Option<Vec::<String>>)`](crate::operation::list_variant_import_jobs::builders::ListVariantImportJobsFluentBuilder::set_ids):<br>required: **false**<br><p>A list of job IDs.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_variant_import_jobs::builders::ListVariantImportJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_variant_import_jobs::builders::ListVariantImportJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>Specify the pagination token from a previous request to retrieve the next page of results.</p><br>
     ///   - [`filter(ListVariantImportJobsFilter)`](crate::operation::list_variant_import_jobs::builders::ListVariantImportJobsFluentBuilder::filter) / [`set_filter(Option<ListVariantImportJobsFilter>)`](crate::operation::list_variant_import_jobs::builders::ListVariantImportJobsFluentBuilder::set_filter):<br>required: **false**<br><p>A filter to apply to the list.</p><br>
-    /// - On success, responds with [`ListVariantImportJobsOutput`](crate::operation::list_variant_import_jobs::ListVariantImportJobsOutput) with field(s):
+                            /// - On success, responds with [`ListVariantImportJobsOutput`](crate::operation::list_variant_import_jobs::ListVariantImportJobsOutput) with field(s):
     ///   - [`variant_import_jobs(Option<Vec::<VariantImportJobItem>>)`](crate::operation::list_variant_import_jobs::ListVariantImportJobsOutput::variant_import_jobs): <p>A list of jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_variant_import_jobs::ListVariantImportJobsOutput::next_token): <p>A pagination token that's included if more results are available.</p>
-    /// - On failure, responds with [`SdkError<ListVariantImportJobsError>`](crate::operation::list_variant_import_jobs::ListVariantImportJobsError)
+                            /// - On failure, responds with [`SdkError<ListVariantImportJobsError>`](crate::operation::list_variant_import_jobs::ListVariantImportJobsError)
     pub fn list_variant_import_jobs(&self) -> crate::operation::list_variant_import_jobs::builders::ListVariantImportJobsFluentBuilder {
-        crate::operation::list_variant_import_jobs::builders::ListVariantImportJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_variant_import_jobs::builders::ListVariantImportJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,22 +3,20 @@
 /// <p>The templated target type for the EventBridge <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html"> <code>PutEvents</code> </a> API operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EventBridgeParameters {
+pub struct EventBridgeParameters  {
     /// <p>A free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.</p>
     pub detail_type: ::std::string::String,
     /// <p>The source of the event.</p>
     pub source: ::std::string::String,
 }
-impl EventBridgeParameters {
+impl  EventBridgeParameters  {
     /// <p>A free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.</p>
-    pub fn detail_type(&self) -> &str {
-        use std::ops::Deref;
-        self.detail_type.deref()
+    pub fn detail_type(&self) -> & str {
+        use std::ops::Deref; self.detail_type.deref()
     }
     /// <p>The source of the event.</p>
-    pub fn source(&self) -> &str {
-        use std::ops::Deref;
-        self.source.deref()
+    pub fn source(&self) -> & str {
+        use std::ops::Deref; self.source.deref()
     }
 }
 impl EventBridgeParameters {
@@ -44,8 +42,7 @@ impl EventBridgeParametersBuilder {
     }
     /// <p>A free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.</p>
     pub fn set_detail_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detail_type = input;
-        self
+        self.detail_type = input; self
     }
     /// <p>A free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.</p>
     pub fn get_detail_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl EventBridgeParametersBuilder {
     }
     /// <p>The source of the event.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The source of the event.</p>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl EventBridgeParametersBuilder {
     /// - [`detail_type`](crate::types::builders::EventBridgeParametersBuilder::detail_type)
     /// - [`source`](crate::types::builders::EventBridgeParametersBuilder::source)
     pub fn build(self) -> ::std::result::Result<crate::types::EventBridgeParameters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EventBridgeParameters {
-            detail_type: self.detail_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "detail_type",
-                    "detail_type was not specified but it is required when building EventBridgeParameters",
-                )
-            })?,
-            source: self.source.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source",
-                    "source was not specified but it is required when building EventBridgeParameters",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EventBridgeParameters {
+                detail_type: self.detail_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("detail_type", "detail_type was not specified but it is required when building EventBridgeParameters")
+                    )?
+                ,
+                source: self.source
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source", "source was not specified but it is required when building EventBridgeParameters")
+                    )?
+                ,
+            }
+        )
     }
 }
+

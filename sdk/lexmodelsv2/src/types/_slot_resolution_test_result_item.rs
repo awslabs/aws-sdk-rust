@@ -3,20 +3,19 @@
 /// <p>Information about the success and failure rate of slot resolution in the results of a test execution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SlotResolutionTestResultItem {
+pub struct SlotResolutionTestResultItem  {
     /// <p>The name of the slot.</p>
     pub slot_name: ::std::string::String,
     /// <p>A result for slot resolution in the results of a test execution.</p>
     pub result_counts: ::std::option::Option<crate::types::SlotResolutionTestResultItemCounts>,
 }
-impl SlotResolutionTestResultItem {
+impl  SlotResolutionTestResultItem  {
     /// <p>The name of the slot.</p>
-    pub fn slot_name(&self) -> &str {
-        use std::ops::Deref;
-        self.slot_name.deref()
+    pub fn slot_name(&self) -> & str {
+        use std::ops::Deref; self.slot_name.deref()
     }
     /// <p>A result for slot resolution in the results of a test execution.</p>
-    pub fn result_counts(&self) -> ::std::option::Option<&crate::types::SlotResolutionTestResultItemCounts> {
+    pub fn result_counts(&self) -> ::std::option::Option<& crate::types::SlotResolutionTestResultItemCounts> {
         self.result_counts.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl SlotResolutionTestResultItemBuilder {
     }
     /// <p>The name of the slot.</p>
     pub fn set_slot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.slot_name = input;
-        self
+        self.slot_name = input; self
     }
     /// <p>The name of the slot.</p>
     pub fn get_slot_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl SlotResolutionTestResultItemBuilder {
     }
     /// <p>A result for slot resolution in the results of a test execution.</p>
     pub fn set_result_counts(mut self, input: ::std::option::Option<crate::types::SlotResolutionTestResultItemCounts>) -> Self {
-        self.result_counts = input;
-        self
+        self.result_counts = input; self
     }
     /// <p>A result for slot resolution in the results of a test execution.</p>
     pub fn get_result_counts(&self) -> &::std::option::Option<crate::types::SlotResolutionTestResultItemCounts> {
@@ -69,14 +66,17 @@ impl SlotResolutionTestResultItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`slot_name`](crate::types::builders::SlotResolutionTestResultItemBuilder::slot_name)
     pub fn build(self) -> ::std::result::Result<crate::types::SlotResolutionTestResultItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SlotResolutionTestResultItem {
-            slot_name: self.slot_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "slot_name",
-                    "slot_name was not specified but it is required when building SlotResolutionTestResultItem",
-                )
-            })?,
-            result_counts: self.result_counts,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SlotResolutionTestResultItem {
+                slot_name: self.slot_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("slot_name", "slot_name was not specified but it is required when building SlotResolutionTestResultItem")
+                    )?
+                ,
+                result_counts: self.result_counts
+                ,
+            }
+        )
     }
 }
+

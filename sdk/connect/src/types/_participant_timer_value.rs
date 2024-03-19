@@ -23,11 +23,7 @@ impl ParticipantTimerValue {
     /// Tries to convert the enum instance into [`ParticipantTimerAction`](crate::types::ParticipantTimerValue::ParticipantTimerAction), extracting the inner [`ParticipantTimerAction`](crate::types::ParticipantTimerAction).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_participant_timer_action(&self) -> ::std::result::Result<&crate::types::ParticipantTimerAction, &Self> {
-        if let ParticipantTimerValue::ParticipantTimerAction(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ParticipantTimerValue::ParticipantTimerAction(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ParticipantTimerAction`](crate::types::ParticipantTimerValue::ParticipantTimerAction).
     pub fn is_participant_timer_action(&self) -> bool {
@@ -36,11 +32,7 @@ impl ParticipantTimerValue {
     /// Tries to convert the enum instance into [`ParticipantTimerDurationInMinutes`](crate::types::ParticipantTimerValue::ParticipantTimerDurationInMinutes), extracting the inner [`i32`](i32).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_participant_timer_duration_in_minutes(&self) -> ::std::result::Result<&i32, &Self> {
-        if let ParticipantTimerValue::ParticipantTimerDurationInMinutes(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ParticipantTimerValue::ParticipantTimerDurationInMinutes(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ParticipantTimerDurationInMinutes`](crate::types::ParticipantTimerValue::ParticipantTimerDurationInMinutes).
     pub fn is_participant_timer_duration_in_minutes(&self) -> bool {
@@ -51,3 +43,4 @@ impl ParticipantTimerValue {
         matches!(self, Self::Unknown)
     }
 }
+

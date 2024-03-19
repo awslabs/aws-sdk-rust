@@ -3,13 +3,13 @@
 /// <p>Deletes a package from OpenSearch Service. The package can't be associated with any OpenSearch Service domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePackageInput {
+pub struct DeletePackageInput  {
     /// <p>The internal ID of the package you want to delete. Use <code>DescribePackages</code> to find this value.</p>
     pub package_id: ::std::option::Option<::std::string::String>,
 }
-impl DeletePackageInput {
+impl  DeletePackageInput  {
     /// <p>The internal ID of the package you want to delete. Use <code>DescribePackages</code> to find this value.</p>
-    pub fn package_id(&self) -> ::std::option::Option<&str> {
+    pub fn package_id(&self) -> ::std::option::Option<& str> {
         self.package_id.as_deref()
     }
 }
@@ -35,17 +35,20 @@ impl DeletePackageInputBuilder {
     }
     /// <p>The internal ID of the package you want to delete. Use <code>DescribePackages</code> to find this value.</p>
     pub fn set_package_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_id = input;
-        self
+        self.package_id = input; self
     }
     /// <p>The internal ID of the package you want to delete. Use <code>DescribePackages</code> to find this value.</p>
     pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.package_id
     }
     /// Consumes the builder and constructs a [`DeletePackageInput`](crate::operation::delete_package::DeletePackageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_package::DeletePackageInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_package::DeletePackageInput { package_id: self.package_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_package::DeletePackageInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_package::DeletePackageInput {
+                package_id: self.package_id
+                ,
+            }
+        )
     }
 }
+

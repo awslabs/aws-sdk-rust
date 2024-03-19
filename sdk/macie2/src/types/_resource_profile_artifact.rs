@@ -3,7 +3,7 @@
 /// <p>Provides information about an S3 object that Amazon Macie selected for analysis while performing automated sensitive data discovery for an S3 bucket, and the status and results of the analysis. This information is available only if automated sensitive data discovery is currently enabled for your account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceProfileArtifact {
+pub struct ResourceProfileArtifact  {
     /// <p>The Amazon Resource Name (ARN) of the object.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the analysis. Possible values are:</p>
@@ -19,9 +19,9 @@ pub struct ResourceProfileArtifact {
     /// <p>Specifies whether Amazon Macie found sensitive data in the object.</p>
     pub sensitive: ::std::option::Option<bool>,
 }
-impl ResourceProfileArtifact {
+impl  ResourceProfileArtifact  {
     /// <p>The Amazon Resource Name (ARN) of the object.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The status of the analysis. Possible values are:</p>
@@ -33,7 +33,7 @@ impl ResourceProfileArtifact {
     /// <li>
     /// <p>SKIPPED - Macie wasn't able to analyze the object. For example, the object is a malformed file.</p></li>
     /// </ul>
-    pub fn classification_result_status(&self) -> ::std::option::Option<&str> {
+    pub fn classification_result_status(&self) -> ::std::option::Option<& str> {
         self.classification_result_status.as_deref()
     }
     /// <p>Specifies whether Amazon Macie found sensitive data in the object.</p>
@@ -65,8 +65,7 @@ impl ResourceProfileArtifactBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the object.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the object.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +95,7 @@ impl ResourceProfileArtifactBuilder {
     /// <p>SKIPPED - Macie wasn't able to analyze the object. For example, the object is a malformed file.</p></li>
     /// </ul>
     pub fn set_classification_result_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.classification_result_status = input;
-        self
+        self.classification_result_status = input; self
     }
     /// <p>The status of the analysis. Possible values are:</p>
     /// <ul>
@@ -118,8 +116,7 @@ impl ResourceProfileArtifactBuilder {
     }
     /// <p>Specifies whether Amazon Macie found sensitive data in the object.</p>
     pub fn set_sensitive(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.sensitive = input;
-        self
+        self.sensitive = input; self
     }
     /// <p>Specifies whether Amazon Macie found sensitive data in the object.</p>
     pub fn get_sensitive(&self) -> &::std::option::Option<bool> {
@@ -128,9 +125,13 @@ impl ResourceProfileArtifactBuilder {
     /// Consumes the builder and constructs a [`ResourceProfileArtifact`](crate::types::ResourceProfileArtifact).
     pub fn build(self) -> crate::types::ResourceProfileArtifact {
         crate::types::ResourceProfileArtifact {
-            arn: self.arn,
-            classification_result_status: self.classification_result_status,
-            sensitive: self.sensitive,
+            arn: self.arn
+            ,
+            classification_result_status: self.classification_result_status
+            ,
+            sensitive: self.sensitive
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSecurityConfigInput {
+pub struct CreateSecurityConfigInput  {
     /// <p>The type of security configuration.</p>
     pub r#type: ::std::option::Option<crate::types::SecurityConfigType>,
     /// <p>The name of the security configuration.</p>
@@ -14,25 +14,25 @@ pub struct CreateSecurityConfigInput {
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateSecurityConfigInput {
+impl  CreateSecurityConfigInput  {
     /// <p>The type of security configuration.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SecurityConfigType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::SecurityConfigType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the security configuration.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the security configuration.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Describes SAML options in in the form of a key-value map. This field is required if you specify <code>saml</code> for the <code>type</code> parameter.</p>
-    pub fn saml_options(&self) -> ::std::option::Option<&crate::types::SamlConfigOptions> {
+    pub fn saml_options(&self) -> ::std::option::Option<& crate::types::SamlConfigOptions> {
         self.saml_options.as_ref()
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl CreateSecurityConfigInputBuilder {
     }
     /// <p>The type of security configuration.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SecurityConfigType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of security configuration.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::SecurityConfigType> {
@@ -77,8 +76,7 @@ impl CreateSecurityConfigInputBuilder {
     }
     /// <p>The name of the security configuration.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the security configuration.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl CreateSecurityConfigInputBuilder {
     }
     /// <p>A description of the security configuration.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the security configuration.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +102,7 @@ impl CreateSecurityConfigInputBuilder {
     }
     /// <p>Describes SAML options in in the form of a key-value map. This field is required if you specify <code>saml</code> for the <code>type</code> parameter.</p>
     pub fn set_saml_options(mut self, input: ::std::option::Option<crate::types::SamlConfigOptions>) -> Self {
-        self.saml_options = input;
-        self
+        self.saml_options = input; self
     }
     /// <p>Describes SAML options in in the form of a key-value map. This field is required if you specify <code>saml</code> for the <code>type</code> parameter.</p>
     pub fn get_saml_options(&self) -> &::std::option::Option<crate::types::SamlConfigOptions> {
@@ -119,24 +115,28 @@ impl CreateSecurityConfigInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateSecurityConfigInput`](crate::operation::create_security_config::CreateSecurityConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_security_config::CreateSecurityConfigInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_security_config::CreateSecurityConfigInput {
-            r#type: self.r#type,
-            name: self.name,
-            description: self.description,
-            saml_options: self.saml_options,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_security_config::CreateSecurityConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_security_config::CreateSecurityConfigInput {
+                r#type: self.r#type
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                saml_options: self.saml_options
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

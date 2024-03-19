@@ -3,15 +3,14 @@
 /// <p>The replication configuration for a registry.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReplicationConfiguration {
+pub struct ReplicationConfiguration  {
     /// <p>An array of objects representing the replication destinations and repository filters for a replication configuration.</p>
-    pub rules: ::std::vec::Vec<crate::types::ReplicationRule>,
+    pub rules: ::std::vec::Vec::<crate::types::ReplicationRule>,
 }
-impl ReplicationConfiguration {
+impl  ReplicationConfiguration  {
     /// <p>An array of objects representing the replication destinations and repository filters for a replication configuration.</p>
-    pub fn rules(&self) -> &[crate::types::ReplicationRule] {
-        use std::ops::Deref;
-        self.rules.deref()
+    pub fn rules(&self) -> & [crate::types::ReplicationRule] {
+        use std::ops::Deref; self.rules.deref()
     }
 }
 impl ReplicationConfiguration {
@@ -25,7 +24,7 @@ impl ReplicationConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplicationConfigurationBuilder {
-    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationRule>>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicationRule>>,
 }
 impl ReplicationConfigurationBuilder {
     /// Appends an item to `rules`.
@@ -35,30 +34,31 @@ impl ReplicationConfigurationBuilder {
     /// <p>An array of objects representing the replication destinations and repository filters for a replication configuration.</p>
     pub fn rules(mut self, input: crate::types::ReplicationRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
-        v.push(input);
-        self.rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects representing the replication destinations and repository filters for a replication configuration.</p>
-    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationRule>>) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicationRule>>) -> Self {
+        self.rules = input; self
     }
     /// <p>An array of objects representing the replication destinations and repository filters for a replication configuration.</p>
-    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationRule>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReplicationRule>> {
         &self.rules
     }
     /// Consumes the builder and constructs a [`ReplicationConfiguration`](crate::types::ReplicationConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`rules`](crate::types::builders::ReplicationConfigurationBuilder::rules)
     pub fn build(self) -> ::std::result::Result<crate::types::ReplicationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ReplicationConfiguration {
-            rules: self.rules.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rules",
-                    "rules was not specified but it is required when building ReplicationConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ReplicationConfiguration {
+                rules: self.rules
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rules", "rules was not specified but it is required when building ReplicationConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

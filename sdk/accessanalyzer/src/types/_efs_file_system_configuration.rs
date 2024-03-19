@@ -11,13 +11,13 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EfsFileSystemConfiguration {
+pub struct EfsFileSystemConfiguration  {
     /// <p>The JSON policy definition to apply to the Amazon EFS file system. For more information on the elements that make up a file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">Amazon EFS Resource-based policies</a>.</p>
     pub file_system_policy: ::std::option::Option<::std::string::String>,
 }
-impl EfsFileSystemConfiguration {
+impl  EfsFileSystemConfiguration  {
     /// <p>The JSON policy definition to apply to the Amazon EFS file system. For more information on the elements that make up a file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">Amazon EFS Resource-based policies</a>.</p>
-    pub fn file_system_policy(&self) -> ::std::option::Option<&str> {
+    pub fn file_system_policy(&self) -> ::std::option::Option<& str> {
         self.file_system_policy.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl EfsFileSystemConfigurationBuilder {
     }
     /// <p>The JSON policy definition to apply to the Amazon EFS file system. For more information on the elements that make up a file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">Amazon EFS Resource-based policies</a>.</p>
     pub fn set_file_system_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_system_policy = input;
-        self
+        self.file_system_policy = input; self
     }
     /// <p>The JSON policy definition to apply to the Amazon EFS file system. For more information on the elements that make up a file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">Amazon EFS Resource-based policies</a>.</p>
     pub fn get_file_system_policy(&self) -> &::std::option::Option<::std::string::String> {
@@ -52,7 +51,9 @@ impl EfsFileSystemConfigurationBuilder {
     /// Consumes the builder and constructs a [`EfsFileSystemConfiguration`](crate::types::EfsFileSystemConfiguration).
     pub fn build(self) -> crate::types::EfsFileSystemConfiguration {
         crate::types::EfsFileSystemConfiguration {
-            file_system_policy: self.file_system_policy,
+            file_system_policy: self.file_system_policy
+            ,
         }
     }
 }
+

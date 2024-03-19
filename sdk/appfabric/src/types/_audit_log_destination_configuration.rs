@@ -3,13 +3,13 @@
 /// <p>Contains information about an audit log destination configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AuditLogDestinationConfiguration {
+pub struct AuditLogDestinationConfiguration  {
     /// <p>Contains information about an audit log destination.</p>
     pub destination: ::std::option::Option<crate::types::Destination>,
 }
-impl AuditLogDestinationConfiguration {
+impl  AuditLogDestinationConfiguration  {
     /// <p>Contains information about an audit log destination.</p>
-    pub fn destination(&self) -> ::std::option::Option<&crate::types::Destination> {
+    pub fn destination(&self) -> ::std::option::Option<& crate::types::Destination> {
         self.destination.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl AuditLogDestinationConfigurationBuilder {
     }
     /// <p>Contains information about an audit log destination.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<crate::types::Destination>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>Contains information about an audit log destination.</p>
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::Destination> {
@@ -45,7 +44,9 @@ impl AuditLogDestinationConfigurationBuilder {
     /// Consumes the builder and constructs a [`AuditLogDestinationConfiguration`](crate::types::AuditLogDestinationConfiguration).
     pub fn build(self) -> crate::types::AuditLogDestinationConfiguration {
         crate::types::AuditLogDestinationConfiguration {
-            destination: self.destination,
+            destination: self.destination
+            ,
         }
     }
 }
+

@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutImageRecipePolicyOutput {
+pub struct PutImageRecipePolicyOutput  {
     /// <p>The request ID that uniquely identifies this request.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the image recipe that this policy was applied to.</p>
     pub image_recipe_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl PutImageRecipePolicyOutput {
+impl  PutImageRecipePolicyOutput  {
     /// <p>The request ID that uniquely identifies this request.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the image recipe that this policy was applied to.</p>
-    pub fn image_recipe_arn(&self) -> ::std::option::Option<&str> {
+    pub fn image_recipe_arn(&self) -> ::std::option::Option<& str> {
         self.image_recipe_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for PutImageRecipePolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutImageRecipePolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutImageRecipePolicyOutput`](crate::operation::put_image_recipe_policy::PutImageRecipePolicyOutput).
     pub fn builder() -> crate::operation::put_image_recipe_policy::builders::PutImageRecipePolicyOutputBuilder {
@@ -47,8 +47,7 @@ impl PutImageRecipePolicyOutputBuilder {
     }
     /// <p>The request ID that uniquely identifies this request.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The request ID that uniquely identifies this request.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl PutImageRecipePolicyOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the image recipe that this policy was applied to.</p>
     pub fn set_image_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_recipe_arn = input;
-        self
+        self.image_recipe_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the image recipe that this policy was applied to.</p>
     pub fn get_image_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_recipe_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutImageRecipePolicyOutput`](crate::operation::put_image_recipe_policy::PutImageRecipePolicyOutput).
     pub fn build(self) -> crate::operation::put_image_recipe_policy::PutImageRecipePolicyOutput {
         crate::operation::put_image_recipe_policy::PutImageRecipePolicyOutput {
-            request_id: self.request_id,
-            image_recipe_arn: self.image_recipe_arn,
+            request_id: self.request_id
+            ,
+            image_recipe_arn: self.image_recipe_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,25 +3,23 @@
 /// <p>Contains authorization request information, which is required for Amazon Web Services AppFabric to get the OAuth2 access token for an application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AuthRequest {
+pub struct AuthRequest  {
     /// <p>The redirect URL that is specified in the AuthURL and the application client.</p>
     pub redirect_uri: ::std::string::String,
     /// <p>The authorization code returned by the application after permission is granted in the application OAuth page (after clicking on the AuthURL).</p>
     pub code: ::std::string::String,
 }
-impl AuthRequest {
+impl  AuthRequest  {
     /// <p>The redirect URL that is specified in the AuthURL and the application client.</p>
-    pub fn redirect_uri(&self) -> &str {
-        use std::ops::Deref;
-        self.redirect_uri.deref()
+    pub fn redirect_uri(&self) -> & str {
+        use std::ops::Deref; self.redirect_uri.deref()
     }
     /// <p>The authorization code returned by the application after permission is granted in the application OAuth page (after clicking on the AuthURL).</p>
-    pub fn code(&self) -> &str {
-        use std::ops::Deref;
-        self.code.deref()
+    pub fn code(&self) -> & str {
+        use std::ops::Deref; self.code.deref()
     }
 }
-impl ::std::fmt::Debug for AuthRequest {
+impl  ::std::fmt::Debug for AuthRequest  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AuthRequest");
         formatter.field("redirect_uri", &self.redirect_uri);
@@ -52,8 +50,7 @@ impl AuthRequestBuilder {
     }
     /// <p>The redirect URL that is specified in the AuthURL and the application client.</p>
     pub fn set_redirect_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.redirect_uri = input;
-        self
+        self.redirect_uri = input; self
     }
     /// <p>The redirect URL that is specified in the AuthURL and the application client.</p>
     pub fn get_redirect_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +64,7 @@ impl AuthRequestBuilder {
     }
     /// <p>The authorization code returned by the application after permission is granted in the application OAuth page (after clicking on the AuthURL).</p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The authorization code returned by the application after permission is granted in the application OAuth page (after clicking on the AuthURL).</p>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,20 +75,20 @@ impl AuthRequestBuilder {
     /// - [`redirect_uri`](crate::types::builders::AuthRequestBuilder::redirect_uri)
     /// - [`code`](crate::types::builders::AuthRequestBuilder::code)
     pub fn build(self) -> ::std::result::Result<crate::types::AuthRequest, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AuthRequest {
-            redirect_uri: self.redirect_uri.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "redirect_uri",
-                    "redirect_uri was not specified but it is required when building AuthRequest",
-                )
-            })?,
-            code: self.code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "code",
-                    "code was not specified but it is required when building AuthRequest",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AuthRequest {
+                redirect_uri: self.redirect_uri
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("redirect_uri", "redirect_uri was not specified but it is required when building AuthRequest")
+                    )?
+                ,
+                code: self.code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("code", "code was not specified but it is required when building AuthRequest")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for AuthRequestBuilder {
@@ -103,3 +99,4 @@ impl ::std::fmt::Debug for AuthRequestBuilder {
         formatter.finish()
     }
 }
+

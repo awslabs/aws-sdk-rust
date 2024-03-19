@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InferRxNormInput {
+pub struct InferRxNormInput  {
     /// <p>The input text used for analysis.</p>
     pub text: ::std::option::Option<::std::string::String>,
 }
-impl InferRxNormInput {
+impl  InferRxNormInput  {
     /// <p>The input text used for analysis.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl InferRxNormInputBuilder {
     }
     /// <p>The input text used for analysis.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>The input text used for analysis.</p>
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl InferRxNormInputBuilder {
     }
     /// Consumes the builder and constructs a [`InferRxNormInput`](crate::operation::infer_rx_norm::InferRxNormInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::infer_rx_norm::InferRxNormInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::infer_rx_norm::InferRxNormInput { text: self.text })
+        ::std::result::Result::Ok(
+            crate::operation::infer_rx_norm::InferRxNormInput {
+                text: self.text
+                ,
+            }
+        )
     }
 }
+

@@ -4,19 +4,19 @@
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AxisDataOptions {
+pub struct AxisDataOptions  {
     /// <p>The options for an axis with a numeric field.</p>
     pub numeric_axis_options: ::std::option::Option<crate::types::NumericAxisOptions>,
     /// <p>The options for an axis with a date field.</p>
     pub date_axis_options: ::std::option::Option<crate::types::DateAxisOptions>,
 }
-impl AxisDataOptions {
+impl  AxisDataOptions  {
     /// <p>The options for an axis with a numeric field.</p>
-    pub fn numeric_axis_options(&self) -> ::std::option::Option<&crate::types::NumericAxisOptions> {
+    pub fn numeric_axis_options(&self) -> ::std::option::Option<& crate::types::NumericAxisOptions> {
         self.numeric_axis_options.as_ref()
     }
     /// <p>The options for an axis with a date field.</p>
-    pub fn date_axis_options(&self) -> ::std::option::Option<&crate::types::DateAxisOptions> {
+    pub fn date_axis_options(&self) -> ::std::option::Option<& crate::types::DateAxisOptions> {
         self.date_axis_options.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl AxisDataOptionsBuilder {
     }
     /// <p>The options for an axis with a numeric field.</p>
     pub fn set_numeric_axis_options(mut self, input: ::std::option::Option<crate::types::NumericAxisOptions>) -> Self {
-        self.numeric_axis_options = input;
-        self
+        self.numeric_axis_options = input; self
     }
     /// <p>The options for an axis with a numeric field.</p>
     pub fn get_numeric_axis_options(&self) -> &::std::option::Option<crate::types::NumericAxisOptions> {
@@ -56,8 +55,7 @@ impl AxisDataOptionsBuilder {
     }
     /// <p>The options for an axis with a date field.</p>
     pub fn set_date_axis_options(mut self, input: ::std::option::Option<crate::types::DateAxisOptions>) -> Self {
-        self.date_axis_options = input;
-        self
+        self.date_axis_options = input; self
     }
     /// <p>The options for an axis with a date field.</p>
     pub fn get_date_axis_options(&self) -> &::std::option::Option<crate::types::DateAxisOptions> {
@@ -66,8 +64,11 @@ impl AxisDataOptionsBuilder {
     /// Consumes the builder and constructs a [`AxisDataOptions`](crate::types::AxisDataOptions).
     pub fn build(self) -> crate::types::AxisDataOptions {
         crate::types::AxisDataOptions {
-            numeric_axis_options: self.numeric_axis_options,
-            date_axis_options: self.date_axis_options,
+            numeric_axis_options: self.numeric_axis_options
+            ,
+            date_axis_options: self.date_axis_options
+            ,
         }
     }
 }
+

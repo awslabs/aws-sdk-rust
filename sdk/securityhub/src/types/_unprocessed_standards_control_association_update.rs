@@ -3,7 +3,7 @@
 /// <p>Provides details about which control's enablement status could not be updated in a specified standard when calling the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html">BatchUpdateStandardsControlAssociations</a> API. This parameter also provides details about why the request was unprocessed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnprocessedStandardsControlAssociationUpdate {
+pub struct UnprocessedStandardsControlAssociationUpdate  {
     /// <p>An array of control and standard associations for which an update failed when calling <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html">BatchUpdateStandardsControlAssociations</a>.</p>
     pub standards_control_association_update: ::std::option::Option<crate::types::StandardsControlAssociationUpdate>,
     /// <p>The error code for the unprocessed update of the control's enablement status in the specified standard.</p>
@@ -11,17 +11,17 @@ pub struct UnprocessedStandardsControlAssociationUpdate {
     /// <p>The reason why a control's enablement status in the specified standard couldn't be updated.</p>
     pub error_reason: ::std::option::Option<::std::string::String>,
 }
-impl UnprocessedStandardsControlAssociationUpdate {
+impl  UnprocessedStandardsControlAssociationUpdate  {
     /// <p>An array of control and standard associations for which an update failed when calling <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html">BatchUpdateStandardsControlAssociations</a>.</p>
-    pub fn standards_control_association_update(&self) -> ::std::option::Option<&crate::types::StandardsControlAssociationUpdate> {
+    pub fn standards_control_association_update(&self) -> ::std::option::Option<& crate::types::StandardsControlAssociationUpdate> {
         self.standards_control_association_update.as_ref()
     }
     /// <p>The error code for the unprocessed update of the control's enablement status in the specified standard.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&crate::types::UnprocessedErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<& crate::types::UnprocessedErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The reason why a control's enablement status in the specified standard couldn't be updated.</p>
-    pub fn error_reason(&self) -> ::std::option::Option<&str> {
+    pub fn error_reason(&self) -> ::std::option::Option<& str> {
         self.error_reason.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl UnprocessedStandardsControlAssociationUpdateBuilder {
     }
     /// <p>An array of control and standard associations for which an update failed when calling <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html">BatchUpdateStandardsControlAssociations</a>.</p>
     pub fn set_standards_control_association_update(mut self, input: ::std::option::Option<crate::types::StandardsControlAssociationUpdate>) -> Self {
-        self.standards_control_association_update = input;
-        self
+        self.standards_control_association_update = input; self
     }
     /// <p>An array of control and standard associations for which an update failed when calling <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html">BatchUpdateStandardsControlAssociations</a>.</p>
     pub fn get_standards_control_association_update(&self) -> &::std::option::Option<crate::types::StandardsControlAssociationUpdate> {
@@ -64,8 +63,7 @@ impl UnprocessedStandardsControlAssociationUpdateBuilder {
     }
     /// <p>The error code for the unprocessed update of the control's enablement status in the specified standard.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::UnprocessedErrorCode>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code for the unprocessed update of the control's enablement status in the specified standard.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::UnprocessedErrorCode> {
@@ -78,8 +76,7 @@ impl UnprocessedStandardsControlAssociationUpdateBuilder {
     }
     /// <p>The reason why a control's enablement status in the specified standard couldn't be updated.</p>
     pub fn set_error_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_reason = input;
-        self
+        self.error_reason = input; self
     }
     /// <p>The reason why a control's enablement status in the specified standard couldn't be updated.</p>
     pub fn get_error_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,9 +85,13 @@ impl UnprocessedStandardsControlAssociationUpdateBuilder {
     /// Consumes the builder and constructs a [`UnprocessedStandardsControlAssociationUpdate`](crate::types::UnprocessedStandardsControlAssociationUpdate).
     pub fn build(self) -> crate::types::UnprocessedStandardsControlAssociationUpdate {
         crate::types::UnprocessedStandardsControlAssociationUpdate {
-            standards_control_association_update: self.standards_control_association_update,
-            error_code: self.error_code,
-            error_reason: self.error_reason,
+            standards_control_association_update: self.standards_control_association_update
+            ,
+            error_code: self.error_code
+            ,
+            error_reason: self.error_reason
+            ,
         }
     }
 }
+

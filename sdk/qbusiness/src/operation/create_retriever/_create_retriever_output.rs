@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRetrieverOutput {
+pub struct CreateRetrieverOutput  {
     /// <p>The identifier of the retriever you are using.</p>
     pub retriever_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role associated with a retriever.</p>
     pub retriever_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateRetrieverOutput {
+impl  CreateRetrieverOutput  {
     /// <p>The identifier of the retriever you are using.</p>
-    pub fn retriever_id(&self) -> ::std::option::Option<&str> {
+    pub fn retriever_id(&self) -> ::std::option::Option<& str> {
         self.retriever_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role associated with a retriever.</p>
-    pub fn retriever_arn(&self) -> ::std::option::Option<&str> {
+    pub fn retriever_arn(&self) -> ::std::option::Option<& str> {
         self.retriever_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateRetrieverOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateRetrieverOutput {
     /// Creates a new builder-style object to manufacture [`CreateRetrieverOutput`](crate::operation::create_retriever::CreateRetrieverOutput).
     pub fn builder() -> crate::operation::create_retriever::builders::CreateRetrieverOutputBuilder {
@@ -47,8 +47,7 @@ impl CreateRetrieverOutputBuilder {
     }
     /// <p>The identifier of the retriever you are using.</p>
     pub fn set_retriever_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.retriever_id = input;
-        self
+        self.retriever_id = input; self
     }
     /// <p>The identifier of the retriever you are using.</p>
     pub fn get_retriever_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl CreateRetrieverOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role associated with a retriever.</p>
     pub fn set_retriever_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.retriever_arn = input;
-        self
+        self.retriever_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role associated with a retriever.</p>
     pub fn get_retriever_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.retriever_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateRetrieverOutput`](crate::operation::create_retriever::CreateRetrieverOutput).
     pub fn build(self) -> crate::operation::create_retriever::CreateRetrieverOutput {
         crate::operation::create_retriever::CreateRetrieverOutput {
-            retriever_id: self.retriever_id,
-            retriever_arn: self.retriever_arn,
+            retriever_id: self.retriever_id
+            ,
+            retriever_arn: self.retriever_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>An object that represents a type of connection pool.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VirtualNodeHttpConnectionPool {
+pub struct VirtualNodeHttpConnectionPool  {
     /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
     pub max_connections: i32,
     /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to upstream cluster.</p>
     pub max_pending_requests: ::std::option::Option<i32>,
 }
-impl VirtualNodeHttpConnectionPool {
+impl  VirtualNodeHttpConnectionPool  {
     /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
     pub fn max_connections(&self) -> i32 {
         self.max_connections
@@ -42,8 +42,7 @@ impl VirtualNodeHttpConnectionPoolBuilder {
     }
     /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
     pub fn set_max_connections(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_connections = input;
-        self
+        self.max_connections = input; self
     }
     /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
     pub fn get_max_connections(&self) -> &::std::option::Option<i32> {
@@ -56,8 +55,7 @@ impl VirtualNodeHttpConnectionPoolBuilder {
     }
     /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to upstream cluster.</p>
     pub fn set_max_pending_requests(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_pending_requests = input;
-        self
+        self.max_pending_requests = input; self
     }
     /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to upstream cluster.</p>
     pub fn get_max_pending_requests(&self) -> &::std::option::Option<i32> {
@@ -67,14 +65,17 @@ impl VirtualNodeHttpConnectionPoolBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`max_connections`](crate::types::builders::VirtualNodeHttpConnectionPoolBuilder::max_connections)
     pub fn build(self) -> ::std::result::Result<crate::types::VirtualNodeHttpConnectionPool, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VirtualNodeHttpConnectionPool {
-            max_connections: self.max_connections.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "max_connections",
-                    "max_connections was not specified but it is required when building VirtualNodeHttpConnectionPool",
-                )
-            })?,
-            max_pending_requests: self.max_pending_requests,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VirtualNodeHttpConnectionPool {
+                max_connections: self.max_connections
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("max_connections", "max_connections was not specified but it is required when building VirtualNodeHttpConnectionPool")
+                    )?
+                ,
+                max_pending_requests: self.max_pending_requests
+                ,
+            }
+        )
     }
 }
+

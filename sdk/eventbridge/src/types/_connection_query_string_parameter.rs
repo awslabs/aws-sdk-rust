@@ -3,7 +3,7 @@
 /// <p>Additional query string parameter for the connection. You can include up to 100 additional query string parameters per request. Each additional parameter counts towards the event payload size, which cannot exceed 64 KB.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ConnectionQueryStringParameter {
+pub struct ConnectionQueryStringParameter  {
     /// <p>The key for a query string parameter.</p>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value associated with the key for the query string parameter.</p>
@@ -11,13 +11,13 @@ pub struct ConnectionQueryStringParameter {
     /// <p>Specifies whether the value is secret.</p>
     pub is_value_secret: bool,
 }
-impl ConnectionQueryStringParameter {
+impl  ConnectionQueryStringParameter  {
     /// <p>The key for a query string parameter.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value associated with the key for the query string parameter.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>Specifies whether the value is secret.</p>
@@ -25,7 +25,7 @@ impl ConnectionQueryStringParameter {
         self.is_value_secret
     }
 }
-impl ::std::fmt::Debug for ConnectionQueryStringParameter {
+impl  ::std::fmt::Debug for ConnectionQueryStringParameter  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ConnectionQueryStringParameter");
         formatter.field("key", &self.key);
@@ -57,8 +57,7 @@ impl ConnectionQueryStringParameterBuilder {
     }
     /// <p>The key for a query string parameter.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The key for a query string parameter.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl ConnectionQueryStringParameterBuilder {
     }
     /// <p>The value associated with the key for the query string parameter.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value associated with the key for the query string parameter.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl ConnectionQueryStringParameterBuilder {
     }
     /// <p>Specifies whether the value is secret.</p>
     pub fn set_is_value_secret(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_value_secret = input;
-        self
+        self.is_value_secret = input; self
     }
     /// <p>Specifies whether the value is secret.</p>
     pub fn get_is_value_secret(&self) -> &::std::option::Option<bool> {
@@ -95,9 +92,13 @@ impl ConnectionQueryStringParameterBuilder {
     /// Consumes the builder and constructs a [`ConnectionQueryStringParameter`](crate::types::ConnectionQueryStringParameter).
     pub fn build(self) -> crate::types::ConnectionQueryStringParameter {
         crate::types::ConnectionQueryStringParameter {
-            key: self.key,
-            value: self.value,
-            is_value_secret: self.is_value_secret.unwrap_or_default(),
+            key: self.key
+            ,
+            value: self.value
+            ,
+            is_value_secret: self.is_value_secret
+                .unwrap_or_default()
+            ,
         }
     }
 }
@@ -110,3 +111,4 @@ impl ::std::fmt::Debug for ConnectionQueryStringParameterBuilder {
         formatter.finish()
     }
 }
+

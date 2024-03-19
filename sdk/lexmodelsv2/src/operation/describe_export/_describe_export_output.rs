@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeExportOutput {
+pub struct DescribeExportOutput  {
     /// <p>The unique identifier of the described export.</p>
     pub export_id: ::std::option::Option<::std::string::String>,
     /// <p>The bot, bot ID, and optional locale ID of the exported bot or bot locale.</p>
@@ -12,7 +12,7 @@ pub struct DescribeExportOutput {
     /// <p>The status of the export. When the status is <code>Complete</code> the export archive file is available for download.</p>
     pub export_status: ::std::option::Option<crate::types::ExportStatus>,
     /// <p>If the <code>exportStatus</code> is failed, contains one or more reasons why the export could not be completed.</p>
-    pub failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub failure_reasons: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A pre-signed S3 URL that points to the bot or bot locale archive. The URL is only available for 5 minutes after calling the <code>DescribeExport</code> operation.</p>
     pub download_url: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the export was created.</p>
@@ -21,47 +21,48 @@ pub struct DescribeExportOutput {
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl DescribeExportOutput {
+impl  DescribeExportOutput  {
     /// <p>The unique identifier of the described export.</p>
-    pub fn export_id(&self) -> ::std::option::Option<&str> {
+    pub fn export_id(&self) -> ::std::option::Option<& str> {
         self.export_id.as_deref()
     }
     /// <p>The bot, bot ID, and optional locale ID of the exported bot or bot locale.</p>
-    pub fn resource_specification(&self) -> ::std::option::Option<&crate::types::ExportResourceSpecification> {
+    pub fn resource_specification(&self) -> ::std::option::Option<& crate::types::ExportResourceSpecification> {
         self.resource_specification.as_ref()
     }
     /// <p>The file format used in the files that describe the resource.</p>
-    pub fn file_format(&self) -> ::std::option::Option<&crate::types::ImportExportFileFormat> {
+    pub fn file_format(&self) -> ::std::option::Option<& crate::types::ImportExportFileFormat> {
         self.file_format.as_ref()
     }
     /// <p>The status of the export. When the status is <code>Complete</code> the export archive file is available for download.</p>
-    pub fn export_status(&self) -> ::std::option::Option<&crate::types::ExportStatus> {
+    pub fn export_status(&self) -> ::std::option::Option<& crate::types::ExportStatus> {
         self.export_status.as_ref()
     }
     /// <p>If the <code>exportStatus</code> is failed, contains one or more reasons why the export could not be completed.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failure_reasons.is_none()`.
-    pub fn failure_reasons(&self) -> &[::std::string::String] {
-        self.failure_reasons.as_deref().unwrap_or_default()
+    pub fn failure_reasons(&self) -> & [::std::string::String] {
+        self.failure_reasons.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A pre-signed S3 URL that points to the bot or bot locale archive. The URL is only available for 5 minutes after calling the <code>DescribeExport</code> operation.</p>
-    pub fn download_url(&self) -> ::std::option::Option<&str> {
+    pub fn download_url(&self) -> ::std::option::Option<& str> {
         self.download_url.as_deref()
     }
     /// <p>The date and time that the export was created.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The last date and time that the export was updated.</p>
-    pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeExportOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeExportOutput {
     /// Creates a new builder-style object to manufacture [`DescribeExportOutput`](crate::operation::describe_export::DescribeExportOutput).
     pub fn builder() -> crate::operation::describe_export::builders::DescribeExportOutputBuilder {
@@ -77,7 +78,7 @@ pub struct DescribeExportOutputBuilder {
     pub(crate) resource_specification: ::std::option::Option<crate::types::ExportResourceSpecification>,
     pub(crate) file_format: ::std::option::Option<crate::types::ImportExportFileFormat>,
     pub(crate) export_status: ::std::option::Option<crate::types::ExportStatus>,
-    pub(crate) failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) failure_reasons: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) download_url: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -91,8 +92,7 @@ impl DescribeExportOutputBuilder {
     }
     /// <p>The unique identifier of the described export.</p>
     pub fn set_export_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.export_id = input;
-        self
+        self.export_id = input; self
     }
     /// <p>The unique identifier of the described export.</p>
     pub fn get_export_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +105,7 @@ impl DescribeExportOutputBuilder {
     }
     /// <p>The bot, bot ID, and optional locale ID of the exported bot or bot locale.</p>
     pub fn set_resource_specification(mut self, input: ::std::option::Option<crate::types::ExportResourceSpecification>) -> Self {
-        self.resource_specification = input;
-        self
+        self.resource_specification = input; self
     }
     /// <p>The bot, bot ID, and optional locale ID of the exported bot or bot locale.</p>
     pub fn get_resource_specification(&self) -> &::std::option::Option<crate::types::ExportResourceSpecification> {
@@ -119,8 +118,7 @@ impl DescribeExportOutputBuilder {
     }
     /// <p>The file format used in the files that describe the resource.</p>
     pub fn set_file_format(mut self, input: ::std::option::Option<crate::types::ImportExportFileFormat>) -> Self {
-        self.file_format = input;
-        self
+        self.file_format = input; self
     }
     /// <p>The file format used in the files that describe the resource.</p>
     pub fn get_file_format(&self) -> &::std::option::Option<crate::types::ImportExportFileFormat> {
@@ -133,8 +131,7 @@ impl DescribeExportOutputBuilder {
     }
     /// <p>The status of the export. When the status is <code>Complete</code> the export archive file is available for download.</p>
     pub fn set_export_status(mut self, input: ::std::option::Option<crate::types::ExportStatus>) -> Self {
-        self.export_status = input;
-        self
+        self.export_status = input; self
     }
     /// <p>The status of the export. When the status is <code>Complete</code> the export archive file is available for download.</p>
     pub fn get_export_status(&self) -> &::std::option::Option<crate::types::ExportStatus> {
@@ -147,17 +144,16 @@ impl DescribeExportOutputBuilder {
     /// <p>If the <code>exportStatus</code> is failed, contains one or more reasons why the export could not be completed.</p>
     pub fn failure_reasons(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.failure_reasons.unwrap_or_default();
-        v.push(input.into());
-        self.failure_reasons = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.failure_reasons = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>If the <code>exportStatus</code> is failed, contains one or more reasons why the export could not be completed.</p>
-    pub fn set_failure_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.failure_reasons = input;
-        self
+    pub fn set_failure_reasons(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.failure_reasons = input; self
     }
     /// <p>If the <code>exportStatus</code> is failed, contains one or more reasons why the export could not be completed.</p>
-    pub fn get_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.failure_reasons
     }
     /// <p>A pre-signed S3 URL that points to the bot or bot locale archive. The URL is only available for 5 minutes after calling the <code>DescribeExport</code> operation.</p>
@@ -167,8 +163,7 @@ impl DescribeExportOutputBuilder {
     }
     /// <p>A pre-signed S3 URL that points to the bot or bot locale archive. The URL is only available for 5 minutes after calling the <code>DescribeExport</code> operation.</p>
     pub fn set_download_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.download_url = input;
-        self
+        self.download_url = input; self
     }
     /// <p>A pre-signed S3 URL that points to the bot or bot locale archive. The URL is only available for 5 minutes after calling the <code>DescribeExport</code> operation.</p>
     pub fn get_download_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +176,7 @@ impl DescribeExportOutputBuilder {
     }
     /// <p>The date and time that the export was created.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>The date and time that the export was created.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -195,34 +189,42 @@ impl DescribeExportOutputBuilder {
     }
     /// <p>The last date and time that the export was updated.</p>
     pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date_time = input;
-        self
+        self.last_updated_date_time = input; self
     }
     /// <p>The last date and time that the export was updated.</p>
     pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeExportOutput`](crate::operation::describe_export::DescribeExportOutput).
     pub fn build(self) -> crate::operation::describe_export::DescribeExportOutput {
         crate::operation::describe_export::DescribeExportOutput {
-            export_id: self.export_id,
-            resource_specification: self.resource_specification,
-            file_format: self.file_format,
-            export_status: self.export_status,
-            failure_reasons: self.failure_reasons,
-            download_url: self.download_url,
-            creation_date_time: self.creation_date_time,
-            last_updated_date_time: self.last_updated_date_time,
+            export_id: self.export_id
+            ,
+            resource_specification: self.resource_specification
+            ,
+            file_format: self.file_format
+            ,
+            export_status: self.export_status
+            ,
+            failure_reasons: self.failure_reasons
+            ,
+            download_url: self.download_url
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            last_updated_date_time: self.last_updated_date_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

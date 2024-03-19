@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutMetricAlarmInput {
+pub struct PutMetricAlarmInput  {
     /// <p>The name for the alarm. This name must be unique within the Region.</p>
     /// <p>The name must contain only UTF-8 characters, and can't contain ASCII control characters</p>
     pub alarm_name: ::std::option::Option<::std::string::String>,
@@ -47,7 +47,7 @@ pub struct PutMetricAlarmInput {
     /// <li>
     /// <p><code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code></p></li>
     /// </ul>
-    pub ok_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub ok_actions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN). Valid values:</p>
     /// <p><b>EC2 actions:</b></p>
     /// <ul>
@@ -85,7 +85,7 @@ pub struct PutMetricAlarmInput {
     /// <li>
     /// <p><code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code></p></li>
     /// </ul>
-    pub alarm_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub alarm_actions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN). Valid values:</p>
     /// <p><b>EC2 actions:</b></p>
     /// <ul>
@@ -123,7 +123,7 @@ pub struct PutMetricAlarmInput {
     /// <li>
     /// <p><code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code></p></li>
     /// </ul>
-    pub insufficient_data_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub insufficient_data_actions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The name for the metric associated with the alarm. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p>
     /// <p>If you are creating an alarm based on a math expression, you cannot specify this parameter, or any of the <code>Namespace</code>, <code>Dimensions</code>, <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters. Instead, you specify all this information in the <code>Metrics</code> array.</p>
     pub metric_name: ::std::option::Option<::std::string::String>,
@@ -160,7 +160,7 @@ pub struct PutMetricAlarmInput {
     /// <p>For more information about these extended statistics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">CloudWatch statistics definitions</a>.</p>
     pub extended_statistic: ::std::option::Option<::std::string::String>,
     /// <p>The dimensions for the metric specified in <code>MetricName</code>.</p>
-    pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
+    pub dimensions: ::std::option::Option<::std::vec::Vec::<crate::types::Dimension>>,
     /// <p>The length, in seconds, used each time the metric specified in <code>MetricName</code> is evaluated. Valid values are 10, 30, and any multiple of 60.</p>
     /// <p><code>Period</code> is required for alarms based on static thresholds. If you are creating an alarm based on a metric math expression, you specify the period for each metric within the objects in the <code>Metrics</code> array.</p>
     /// <p>Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In this case, it does not receive data for the attempts that do not correspond to a one-minute data resolution, and the alarm might often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution alarm, which has a higher charge than other alarms. For more information about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p>
@@ -194,24 +194,24 @@ pub struct PutMetricAlarmInput {
     /// <p>Each item in the <code>Metrics</code> array either retrieves a metric or performs a math expression.</p>
     /// <p>One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this expression by setting <code>ReturnData</code> to true for this object in the array. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
     /// <p>If you use the <code>Metrics</code> parameter, you cannot include the <code>Namespace</code>, <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, you retrieve the metrics you are using in your math expression as part of the <code>Metrics</code> array.</p>
-    pub metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>>,
+    pub metrics: ::std::option::Option<::std::vec::Vec::<crate::types::MetricDataQuery>>,
     /// <p>A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm. To be able to associate tags with the alarm when you create the alarm, you must have the <code>cloudwatch:TagResource</code> permission.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>If you are using this operation to update an existing alarm, any tags you specify in this parameter are ignored. To change the tags of an existing alarm, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>If this is an alarm based on an anomaly detection model, make this value match the ID of the <code>ANOMALY_DETECTION_BAND</code> function.</p>
     /// <p>For an example of how to use this parameter, see the <b>Anomaly Detection Model Alarm</b> example on this page.</p>
     /// <p>If your alarm uses this parameter, it cannot have Auto Scaling actions.</p>
     pub threshold_metric_id: ::std::option::Option<::std::string::String>,
 }
-impl PutMetricAlarmInput {
+impl  PutMetricAlarmInput  {
     /// <p>The name for the alarm. This name must be unique within the Region.</p>
     /// <p>The name must contain only UTF-8 characters, and can't contain ASCII control characters</p>
-    pub fn alarm_name(&self) -> ::std::option::Option<&str> {
+    pub fn alarm_name(&self) -> ::std::option::Option<& str> {
         self.alarm_name.as_deref()
     }
     /// <p>The description for the alarm.</p>
-    pub fn alarm_description(&self) -> ::std::option::Option<&str> {
+    pub fn alarm_description(&self) -> ::std::option::Option<& str> {
         self.alarm_description.as_deref()
     }
     /// <p>Indicates whether actions should be executed during any changes to the alarm state. The default is <code>TRUE</code>.</p>
@@ -255,10 +255,11 @@ impl PutMetricAlarmInput {
     /// <li>
     /// <p><code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code></p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ok_actions.is_none()`.
-    pub fn ok_actions(&self) -> &[::std::string::String] {
-        self.ok_actions.as_deref().unwrap_or_default()
+    pub fn ok_actions(&self) -> & [::std::string::String] {
+        self.ok_actions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN). Valid values:</p>
     /// <p><b>EC2 actions:</b></p>
@@ -297,10 +298,11 @@ impl PutMetricAlarmInput {
     /// <li>
     /// <p><code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code></p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alarm_actions.is_none()`.
-    pub fn alarm_actions(&self) -> &[::std::string::String] {
-        self.alarm_actions.as_deref().unwrap_or_default()
+    pub fn alarm_actions(&self) -> & [::std::string::String] {
+        self.alarm_actions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN). Valid values:</p>
     /// <p><b>EC2 actions:</b></p>
@@ -339,22 +341,23 @@ impl PutMetricAlarmInput {
     /// <li>
     /// <p><code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code></p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.insufficient_data_actions.is_none()`.
-    pub fn insufficient_data_actions(&self) -> &[::std::string::String] {
-        self.insufficient_data_actions.as_deref().unwrap_or_default()
+    pub fn insufficient_data_actions(&self) -> & [::std::string::String] {
+        self.insufficient_data_actions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name for the metric associated with the alarm. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p>
     /// <p>If you are creating an alarm based on a math expression, you cannot specify this parameter, or any of the <code>Namespace</code>, <code>Dimensions</code>, <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters. Instead, you specify all this information in the <code>Metrics</code> array.</p>
-    pub fn metric_name(&self) -> ::std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The namespace for the metric associated specified in <code>MetricName</code>.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The statistic for the metric specified in <code>MetricName</code>, other than percentile. For percentile statistics, use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
-    pub fn statistic(&self) -> ::std::option::Option<&crate::types::Statistic> {
+    pub fn statistic(&self) -> ::std::option::Option<& crate::types::Statistic> {
         self.statistic.as_ref()
     }
     /// <p>The extended statistic for the metric specified in <code>MetricName</code>. When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either <code>Statistic</code> or <code>ExtendedStatistic</code> but not both.</p>
@@ -384,14 +387,15 @@ impl PutMetricAlarmInput {
     /// <p><code>WM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.</p></li>
     /// </ul>
     /// <p>For more information about these extended statistics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">CloudWatch statistics definitions</a>.</p>
-    pub fn extended_statistic(&self) -> ::std::option::Option<&str> {
+    pub fn extended_statistic(&self) -> ::std::option::Option<& str> {
         self.extended_statistic.as_deref()
     }
     /// <p>The dimensions for the metric specified in <code>MetricName</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimensions.is_none()`.
-    pub fn dimensions(&self) -> &[crate::types::Dimension] {
-        self.dimensions.as_deref().unwrap_or_default()
+    pub fn dimensions(&self) -> & [crate::types::Dimension] {
+        self.dimensions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The length, in seconds, used each time the metric specified in <code>MetricName</code> is evaluated. Valid values are 10, 30, and any multiple of 60.</p>
     /// <p><code>Period</code> is required for alarms based on static thresholds. If you are creating an alarm based on a metric math expression, you specify the period for each metric within the objects in the <code>Metrics</code> array.</p>
@@ -404,7 +408,7 @@ impl PutMetricAlarmInput {
     /// <p>If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for the metric and attempts to evaluate the alarm. Usually, metrics are published with only one unit, so the alarm works as intended.</p>
     /// <p>However, if the metric is published with multiple types of units and you don't specify a unit, the alarm's behavior is not defined and it behaves unpredictably.</p>
     /// <p>We recommend omitting <code>Unit</code> so that you don't inadvertently specify an incorrect unit that is not published for this metric. Doing so causes the alarm to be stuck in the <code>INSUFFICIENT DATA</code> state.</p>
-    pub fn unit(&self) -> ::std::option::Option<&crate::types::StandardUnit> {
+    pub fn unit(&self) -> ::std::option::Option<& crate::types::StandardUnit> {
         self.unit.as_ref()
     }
     /// <p>The number of periods over which data is compared to the specified threshold. If you are setting an alarm that requires that a number of consecutive data points be breaching to trigger the alarm, this value specifies that number. If you are setting an "M out of N" alarm, this value is the N.</p>
@@ -423,42 +427,44 @@ impl PutMetricAlarmInput {
     }
     /// <p>The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand.</p>
     /// <p>The values <code>LessThanLowerOrGreaterThanUpperThreshold</code>, <code>LessThanLowerThreshold</code>, and <code>GreaterThanUpperThreshold</code> are used only for alarms based on anomaly detection models.</p>
-    pub fn comparison_operator(&self) -> ::std::option::Option<&crate::types::ComparisonOperator> {
+    pub fn comparison_operator(&self) -> ::std::option::Option<& crate::types::ComparisonOperator> {
         self.comparison_operator.as_ref()
     }
     /// <p>Sets how this alarm is to handle missing data points. If <code>TreatMissingData</code> is omitted, the default behavior of <code>missing</code> is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring How CloudWatch Alarms Treats Missing Data</a>.</p>
     /// <p>Valid Values: <code>breaching | notBreaching | ignore | missing</code></p><note>
     /// <p>Alarms that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always <code>ignore</code> missing data even if you choose a different option for <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has missing data, alarms that evaluate that metric remain in their current state.</p>
     /// </note>
-    pub fn treat_missing_data(&self) -> ::std::option::Option<&str> {
+    pub fn treat_missing_data(&self) -> ::std::option::Option<& str> {
         self.treat_missing_data.as_deref()
     }
     /// <p>Used only for alarms based on percentiles. If you specify <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If you specify <code>evaluate</code> or omit this parameter, the alarm is always evaluated and possibly changes state no matter how many data points are available. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based CloudWatch Alarms and Low Data Samples</a>.</p>
     /// <p>Valid Values: <code>evaluate | ignore</code></p>
-    pub fn evaluate_low_sample_count_percentile(&self) -> ::std::option::Option<&str> {
+    pub fn evaluate_low_sample_count_percentile(&self) -> ::std::option::Option<& str> {
         self.evaluate_low_sample_count_percentile.as_deref()
     }
     /// <p>An array of <code>MetricDataQuery</code> structures that enable you to create an alarm based on the result of a metric math expression. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p>
     /// <p>Each item in the <code>Metrics</code> array either retrieves a metric or performs a math expression.</p>
     /// <p>One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this expression by setting <code>ReturnData</code> to true for this object in the array. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
     /// <p>If you use the <code>Metrics</code> parameter, you cannot include the <code>Namespace</code>, <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, you retrieve the metrics you are using in your math expression as part of the <code>Metrics</code> array.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
-    pub fn metrics(&self) -> &[crate::types::MetricDataQuery] {
-        self.metrics.as_deref().unwrap_or_default()
+    pub fn metrics(&self) -> & [crate::types::MetricDataQuery] {
+        self.metrics.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm. To be able to associate tags with the alarm when you create the alarm, you must have the <code>cloudwatch:TagResource</code> permission.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>If you are using this operation to update an existing alarm, any tags you specify in this parameter are ignored. To change the tags of an existing alarm, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If this is an alarm based on an anomaly detection model, make this value match the ID of the <code>ANOMALY_DETECTION_BAND</code> function.</p>
     /// <p>For an example of how to use this parameter, see the <b>Anomaly Detection Model Alarm</b> example on this page.</p>
     /// <p>If your alarm uses this parameter, it cannot have Auto Scaling actions.</p>
-    pub fn threshold_metric_id(&self) -> ::std::option::Option<&str> {
+    pub fn threshold_metric_id(&self) -> ::std::option::Option<& str> {
         self.threshold_metric_id.as_deref()
     }
 }
@@ -476,14 +482,14 @@ pub struct PutMetricAlarmInputBuilder {
     pub(crate) alarm_name: ::std::option::Option<::std::string::String>,
     pub(crate) alarm_description: ::std::option::Option<::std::string::String>,
     pub(crate) actions_enabled: ::std::option::Option<bool>,
-    pub(crate) ok_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) alarm_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) insufficient_data_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ok_actions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) alarm_actions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) insufficient_data_actions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) statistic: ::std::option::Option<crate::types::Statistic>,
     pub(crate) extended_statistic: ::std::option::Option<::std::string::String>,
-    pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
+    pub(crate) dimensions: ::std::option::Option<::std::vec::Vec::<crate::types::Dimension>>,
     pub(crate) period: ::std::option::Option<i32>,
     pub(crate) unit: ::std::option::Option<crate::types::StandardUnit>,
     pub(crate) evaluation_periods: ::std::option::Option<i32>,
@@ -492,8 +498,8 @@ pub struct PutMetricAlarmInputBuilder {
     pub(crate) comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
     pub(crate) treat_missing_data: ::std::option::Option<::std::string::String>,
     pub(crate) evaluate_low_sample_count_percentile: ::std::option::Option<::std::string::String>,
-    pub(crate) metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) metrics: ::std::option::Option<::std::vec::Vec::<crate::types::MetricDataQuery>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) threshold_metric_id: ::std::option::Option<::std::string::String>,
 }
 impl PutMetricAlarmInputBuilder {
@@ -507,8 +513,7 @@ impl PutMetricAlarmInputBuilder {
     /// <p>The name for the alarm. This name must be unique within the Region.</p>
     /// <p>The name must contain only UTF-8 characters, and can't contain ASCII control characters</p>
     pub fn set_alarm_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alarm_name = input;
-        self
+        self.alarm_name = input; self
     }
     /// <p>The name for the alarm. This name must be unique within the Region.</p>
     /// <p>The name must contain only UTF-8 characters, and can't contain ASCII control characters</p>
@@ -522,8 +527,7 @@ impl PutMetricAlarmInputBuilder {
     }
     /// <p>The description for the alarm.</p>
     pub fn set_alarm_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alarm_description = input;
-        self
+        self.alarm_description = input; self
     }
     /// <p>The description for the alarm.</p>
     pub fn get_alarm_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -536,8 +540,7 @@ impl PutMetricAlarmInputBuilder {
     }
     /// <p>Indicates whether actions should be executed during any changes to the alarm state. The default is <code>TRUE</code>.</p>
     pub fn set_actions_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.actions_enabled = input;
-        self
+        self.actions_enabled = input; self
     }
     /// <p>Indicates whether actions should be executed during any changes to the alarm state. The default is <code>TRUE</code>.</p>
     pub fn get_actions_enabled(&self) -> &::std::option::Option<bool> {
@@ -586,9 +589,9 @@ impl PutMetricAlarmInputBuilder {
     /// </ul>
     pub fn ok_actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ok_actions.unwrap_or_default();
-        v.push(input.into());
-        self.ok_actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.ok_actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN). Valid values:</p>
     /// <p><b>EC2 actions:</b></p>
@@ -627,9 +630,8 @@ impl PutMetricAlarmInputBuilder {
     /// <li>
     /// <p><code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code></p></li>
     /// </ul>
-    pub fn set_ok_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.ok_actions = input;
-        self
+    pub fn set_ok_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.ok_actions = input; self
     }
     /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN). Valid values:</p>
     /// <p><b>EC2 actions:</b></p>
@@ -668,7 +670,7 @@ impl PutMetricAlarmInputBuilder {
     /// <li>
     /// <p><code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code></p></li>
     /// </ul>
-    pub fn get_ok_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ok_actions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.ok_actions
     }
     /// Appends an item to `alarm_actions`.
@@ -714,9 +716,9 @@ impl PutMetricAlarmInputBuilder {
     /// </ul>
     pub fn alarm_actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.alarm_actions.unwrap_or_default();
-        v.push(input.into());
-        self.alarm_actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.alarm_actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN). Valid values:</p>
     /// <p><b>EC2 actions:</b></p>
@@ -755,9 +757,8 @@ impl PutMetricAlarmInputBuilder {
     /// <li>
     /// <p><code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code></p></li>
     /// </ul>
-    pub fn set_alarm_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.alarm_actions = input;
-        self
+    pub fn set_alarm_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.alarm_actions = input; self
     }
     /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN). Valid values:</p>
     /// <p><b>EC2 actions:</b></p>
@@ -796,7 +797,7 @@ impl PutMetricAlarmInputBuilder {
     /// <li>
     /// <p><code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code></p></li>
     /// </ul>
-    pub fn get_alarm_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_alarm_actions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.alarm_actions
     }
     /// Appends an item to `insufficient_data_actions`.
@@ -842,9 +843,9 @@ impl PutMetricAlarmInputBuilder {
     /// </ul>
     pub fn insufficient_data_actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.insufficient_data_actions.unwrap_or_default();
-        v.push(input.into());
-        self.insufficient_data_actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.insufficient_data_actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN). Valid values:</p>
     /// <p><b>EC2 actions:</b></p>
@@ -883,9 +884,8 @@ impl PutMetricAlarmInputBuilder {
     /// <li>
     /// <p><code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code></p></li>
     /// </ul>
-    pub fn set_insufficient_data_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.insufficient_data_actions = input;
-        self
+    pub fn set_insufficient_data_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.insufficient_data_actions = input; self
     }
     /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN). Valid values:</p>
     /// <p><b>EC2 actions:</b></p>
@@ -924,7 +924,7 @@ impl PutMetricAlarmInputBuilder {
     /// <li>
     /// <p><code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code></p></li>
     /// </ul>
-    pub fn get_insufficient_data_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_insufficient_data_actions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.insufficient_data_actions
     }
     /// <p>The name for the metric associated with the alarm. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p>
@@ -936,8 +936,7 @@ impl PutMetricAlarmInputBuilder {
     /// <p>The name for the metric associated with the alarm. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p>
     /// <p>If you are creating an alarm based on a math expression, you cannot specify this parameter, or any of the <code>Namespace</code>, <code>Dimensions</code>, <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters. Instead, you specify all this information in the <code>Metrics</code> array.</p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// <p>The name for the metric associated with the alarm. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p>
     /// <p>If you are creating an alarm based on a math expression, you cannot specify this parameter, or any of the <code>Namespace</code>, <code>Dimensions</code>, <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters. Instead, you specify all this information in the <code>Metrics</code> array.</p>
@@ -951,8 +950,7 @@ impl PutMetricAlarmInputBuilder {
     }
     /// <p>The namespace for the metric associated specified in <code>MetricName</code>.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The namespace for the metric associated specified in <code>MetricName</code>.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
@@ -965,8 +963,7 @@ impl PutMetricAlarmInputBuilder {
     }
     /// <p>The statistic for the metric specified in <code>MetricName</code>, other than percentile. For percentile statistics, use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
     pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::Statistic>) -> Self {
-        self.statistic = input;
-        self
+        self.statistic = input; self
     }
     /// <p>The statistic for the metric specified in <code>MetricName</code>, other than percentile. For percentile statistics, use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
     pub fn get_statistic(&self) -> &::std::option::Option<crate::types::Statistic> {
@@ -1031,8 +1028,7 @@ impl PutMetricAlarmInputBuilder {
     /// </ul>
     /// <p>For more information about these extended statistics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">CloudWatch statistics definitions</a>.</p>
     pub fn set_extended_statistic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.extended_statistic = input;
-        self
+        self.extended_statistic = input; self
     }
     /// <p>The extended statistic for the metric specified in <code>MetricName</code>. When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either <code>Statistic</code> or <code>ExtendedStatistic</code> but not both.</p>
     /// <p>If you specify <code>ExtendedStatistic</code>, the following are valid values:</p>
@@ -1071,17 +1067,16 @@ impl PutMetricAlarmInputBuilder {
     /// <p>The dimensions for the metric specified in <code>MetricName</code>.</p>
     pub fn dimensions(mut self, input: crate::types::Dimension) -> Self {
         let mut v = self.dimensions.unwrap_or_default();
-        v.push(input);
-        self.dimensions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.dimensions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The dimensions for the metric specified in <code>MetricName</code>.</p>
-    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>) -> Self {
-        self.dimensions = input;
-        self
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Dimension>>) -> Self {
+        self.dimensions = input; self
     }
     /// <p>The dimensions for the metric specified in <code>MetricName</code>.</p>
-    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Dimension>> {
         &self.dimensions
     }
     /// <p>The length, in seconds, used each time the metric specified in <code>MetricName</code> is evaluated. Valid values are 10, 30, and any multiple of 60.</p>
@@ -1097,8 +1092,7 @@ impl PutMetricAlarmInputBuilder {
     /// <p>Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In this case, it does not receive data for the attempts that do not correspond to a one-minute data resolution, and the alarm might often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution alarm, which has a higher charge than other alarms. For more information about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p>
     /// <p>An alarm's total current evaluation period can be no longer than one day, so <code>Period</code> multiplied by <code>EvaluationPeriods</code> cannot be more than 86,400 seconds.</p>
     pub fn set_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.period = input;
-        self
+        self.period = input; self
     }
     /// <p>The length, in seconds, used each time the metric specified in <code>MetricName</code> is evaluated. Valid values are 10, 30, and any multiple of 60.</p>
     /// <p><code>Period</code> is required for alarms based on static thresholds. If you are creating an alarm based on a metric math expression, you specify the period for each metric within the objects in the <code>Metrics</code> array.</p>
@@ -1120,8 +1114,7 @@ impl PutMetricAlarmInputBuilder {
     /// <p>However, if the metric is published with multiple types of units and you don't specify a unit, the alarm's behavior is not defined and it behaves unpredictably.</p>
     /// <p>We recommend omitting <code>Unit</code> so that you don't inadvertently specify an incorrect unit that is not published for this metric. Doing so causes the alarm to be stuck in the <code>INSUFFICIENT DATA</code> state.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::StandardUnit>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// <p>The unit of measure for the statistic. For example, the units for the Amazon EC2 NetworkIn metric are Bytes because NetworkIn tracks the number of bytes that an instance receives on all network interfaces. You can also specify a unit when you create a custom metric. Units help provide conceptual meaning to your data. Metric data points that specify a unit of measure, such as Percent, are aggregated separately. If you are creating an alarm based on a metric math expression, you can specify the unit for each metric (if needed) within the objects in the <code>Metrics</code> array.</p>
     /// <p>If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for the metric and attempts to evaluate the alarm. Usually, metrics are published with only one unit, so the alarm works as intended.</p>
@@ -1140,8 +1133,7 @@ impl PutMetricAlarmInputBuilder {
     /// <p>The number of periods over which data is compared to the specified threshold. If you are setting an alarm that requires that a number of consecutive data points be breaching to trigger the alarm, this value specifies that number. If you are setting an "M out of N" alarm, this value is the N.</p>
     /// <p>An alarm's total current evaluation period can be no longer than one day, so this number multiplied by <code>Period</code> cannot be more than 86,400 seconds.</p>
     pub fn set_evaluation_periods(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.evaluation_periods = input;
-        self
+        self.evaluation_periods = input; self
     }
     /// <p>The number of periods over which data is compared to the specified threshold. If you are setting an alarm that requires that a number of consecutive data points be breaching to trigger the alarm, this value specifies that number. If you are setting an "M out of N" alarm, this value is the N.</p>
     /// <p>An alarm's total current evaluation period can be no longer than one day, so this number multiplied by <code>Period</code> cannot be more than 86,400 seconds.</p>
@@ -1155,8 +1147,7 @@ impl PutMetricAlarmInputBuilder {
     }
     /// <p>The number of data points that must be breaching to trigger the alarm. This is used only if you are setting an "M out of N" alarm. In that case, this value is the M. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation">Evaluating an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
     pub fn set_datapoints_to_alarm(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.datapoints_to_alarm = input;
-        self
+        self.datapoints_to_alarm = input; self
     }
     /// <p>The number of data points that must be breaching to trigger the alarm. This is used only if you are setting an "M out of N" alarm. In that case, this value is the M. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation">Evaluating an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
     pub fn get_datapoints_to_alarm(&self) -> &::std::option::Option<i32> {
@@ -1171,8 +1162,7 @@ impl PutMetricAlarmInputBuilder {
     /// <p>The value against which the specified statistic is compared.</p>
     /// <p>This parameter is required for alarms based on static thresholds, but should not be used for alarms based on anomaly detection models.</p>
     pub fn set_threshold(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.threshold = input;
-        self
+        self.threshold = input; self
     }
     /// <p>The value against which the specified statistic is compared.</p>
     /// <p>This parameter is required for alarms based on static thresholds, but should not be used for alarms based on anomaly detection models.</p>
@@ -1189,8 +1179,7 @@ impl PutMetricAlarmInputBuilder {
     /// <p>The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand.</p>
     /// <p>The values <code>LessThanLowerOrGreaterThanUpperThreshold</code>, <code>LessThanLowerThreshold</code>, and <code>GreaterThanUpperThreshold</code> are used only for alarms based on anomaly detection models.</p>
     pub fn set_comparison_operator(mut self, input: ::std::option::Option<crate::types::ComparisonOperator>) -> Self {
-        self.comparison_operator = input;
-        self
+        self.comparison_operator = input; self
     }
     /// <p>The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand.</p>
     /// <p>The values <code>LessThanLowerOrGreaterThanUpperThreshold</code>, <code>LessThanLowerThreshold</code>, and <code>GreaterThanUpperThreshold</code> are used only for alarms based on anomaly detection models.</p>
@@ -1210,8 +1199,7 @@ impl PutMetricAlarmInputBuilder {
     /// <p>Alarms that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always <code>ignore</code> missing data even if you choose a different option for <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has missing data, alarms that evaluate that metric remain in their current state.</p>
     /// </note>
     pub fn set_treat_missing_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.treat_missing_data = input;
-        self
+        self.treat_missing_data = input; self
     }
     /// <p>Sets how this alarm is to handle missing data points. If <code>TreatMissingData</code> is omitted, the default behavior of <code>missing</code> is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring How CloudWatch Alarms Treats Missing Data</a>.</p>
     /// <p>Valid Values: <code>breaching | notBreaching | ignore | missing</code></p><note>
@@ -1229,8 +1217,7 @@ impl PutMetricAlarmInputBuilder {
     /// <p>Used only for alarms based on percentiles. If you specify <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If you specify <code>evaluate</code> or omit this parameter, the alarm is always evaluated and possibly changes state no matter how many data points are available. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based CloudWatch Alarms and Low Data Samples</a>.</p>
     /// <p>Valid Values: <code>evaluate | ignore</code></p>
     pub fn set_evaluate_low_sample_count_percentile(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.evaluate_low_sample_count_percentile = input;
-        self
+        self.evaluate_low_sample_count_percentile = input; self
     }
     /// <p>Used only for alarms based on percentiles. If you specify <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If you specify <code>evaluate</code> or omit this parameter, the alarm is always evaluated and possibly changes state no matter how many data points are available. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based CloudWatch Alarms and Low Data Samples</a>.</p>
     /// <p>Valid Values: <code>evaluate | ignore</code></p>
@@ -1247,23 +1234,22 @@ impl PutMetricAlarmInputBuilder {
     /// <p>If you use the <code>Metrics</code> parameter, you cannot include the <code>Namespace</code>, <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, you retrieve the metrics you are using in your math expression as part of the <code>Metrics</code> array.</p>
     pub fn metrics(mut self, input: crate::types::MetricDataQuery) -> Self {
         let mut v = self.metrics.unwrap_or_default();
-        v.push(input);
-        self.metrics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.metrics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>MetricDataQuery</code> structures that enable you to create an alarm based on the result of a metric math expression. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p>
     /// <p>Each item in the <code>Metrics</code> array either retrieves a metric or performs a math expression.</p>
     /// <p>One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this expression by setting <code>ReturnData</code> to true for this object in the array. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
     /// <p>If you use the <code>Metrics</code> parameter, you cannot include the <code>Namespace</code>, <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, you retrieve the metrics you are using in your math expression as part of the <code>Metrics</code> array.</p>
-    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>>) -> Self {
-        self.metrics = input;
-        self
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MetricDataQuery>>) -> Self {
+        self.metrics = input; self
     }
     /// <p>An array of <code>MetricDataQuery</code> structures that enable you to create an alarm based on the result of a metric math expression. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p>
     /// <p>Each item in the <code>Metrics</code> array either retrieves a metric or performs a math expression.</p>
     /// <p>One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this expression by setting <code>ReturnData</code> to true for this object in the array. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
     /// <p>If you use the <code>Metrics</code> parameter, you cannot include the <code>Namespace</code>, <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, you retrieve the metrics you are using in your math expression as part of the <code>Metrics</code> array.</p>
-    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>> {
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MetricDataQuery>> {
         &self.metrics
     }
     /// Appends an item to `tags`.
@@ -1275,21 +1261,20 @@ impl PutMetricAlarmInputBuilder {
     /// <p>If you are using this operation to update an existing alarm, any tags you specify in this parameter are ignored. To change the tags of an existing alarm, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm. To be able to associate tags with the alarm when you create the alarm, you must have the <code>cloudwatch:TagResource</code> permission.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>If you are using this operation to update an existing alarm, any tags you specify in this parameter are ignored. To change the tags of an existing alarm, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm. To be able to associate tags with the alarm when you create the alarm, you must have the <code>cloudwatch:TagResource</code> permission.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>If you are using this operation to update an existing alarm, any tags you specify in this parameter are ignored. To change the tags of an existing alarm, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>If this is an alarm based on an anomaly detection model, make this value match the ID of the <code>ANOMALY_DETECTION_BAND</code> function.</p>
@@ -1303,8 +1288,7 @@ impl PutMetricAlarmInputBuilder {
     /// <p>For an example of how to use this parameter, see the <b>Anomaly Detection Model Alarm</b> example on this page.</p>
     /// <p>If your alarm uses this parameter, it cannot have Auto Scaling actions.</p>
     pub fn set_threshold_metric_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.threshold_metric_id = input;
-        self
+        self.threshold_metric_id = input; self
     }
     /// <p>If this is an alarm based on an anomaly detection model, make this value match the ID of the <code>ANOMALY_DETECTION_BAND</code> function.</p>
     /// <p>For an example of how to use this parameter, see the <b>Anomaly Detection Model Alarm</b> example on this page.</p>
@@ -1313,32 +1297,55 @@ impl PutMetricAlarmInputBuilder {
         &self.threshold_metric_id
     }
     /// Consumes the builder and constructs a [`PutMetricAlarmInput`](crate::operation::put_metric_alarm::PutMetricAlarmInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_metric_alarm::PutMetricAlarmInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_metric_alarm::PutMetricAlarmInput {
-            alarm_name: self.alarm_name,
-            alarm_description: self.alarm_description,
-            actions_enabled: self.actions_enabled,
-            ok_actions: self.ok_actions,
-            alarm_actions: self.alarm_actions,
-            insufficient_data_actions: self.insufficient_data_actions,
-            metric_name: self.metric_name,
-            namespace: self.namespace,
-            statistic: self.statistic,
-            extended_statistic: self.extended_statistic,
-            dimensions: self.dimensions,
-            period: self.period,
-            unit: self.unit,
-            evaluation_periods: self.evaluation_periods,
-            datapoints_to_alarm: self.datapoints_to_alarm,
-            threshold: self.threshold,
-            comparison_operator: self.comparison_operator,
-            treat_missing_data: self.treat_missing_data,
-            evaluate_low_sample_count_percentile: self.evaluate_low_sample_count_percentile,
-            metrics: self.metrics,
-            tags: self.tags,
-            threshold_metric_id: self.threshold_metric_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_metric_alarm::PutMetricAlarmInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_metric_alarm::PutMetricAlarmInput {
+                alarm_name: self.alarm_name
+                ,
+                alarm_description: self.alarm_description
+                ,
+                actions_enabled: self.actions_enabled
+                ,
+                ok_actions: self.ok_actions
+                ,
+                alarm_actions: self.alarm_actions
+                ,
+                insufficient_data_actions: self.insufficient_data_actions
+                ,
+                metric_name: self.metric_name
+                ,
+                namespace: self.namespace
+                ,
+                statistic: self.statistic
+                ,
+                extended_statistic: self.extended_statistic
+                ,
+                dimensions: self.dimensions
+                ,
+                period: self.period
+                ,
+                unit: self.unit
+                ,
+                evaluation_periods: self.evaluation_periods
+                ,
+                datapoints_to_alarm: self.datapoints_to_alarm
+                ,
+                threshold: self.threshold
+                ,
+                comparison_operator: self.comparison_operator
+                ,
+                treat_missing_data: self.treat_missing_data
+                ,
+                evaluate_low_sample_count_percentile: self.evaluate_low_sample_count_percentile
+                ,
+                metrics: self.metrics
+                ,
+                tags: self.tags
+                ,
+                threshold_metric_id: self.threshold_metric_id
+                ,
+            }
+        )
     }
 }
+

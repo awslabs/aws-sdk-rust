@@ -3,7 +3,7 @@
 /// <p>Details describing an incident record.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IncidentRecordSummary {
+pub struct IncidentRecordSummary  {
     /// <p>The Amazon Resource Name (ARN) of the incident.</p>
     pub arn: ::std::string::String,
     /// <p>The title of the incident. This value is either provided by the response plan or overwritten on creation.</p>
@@ -19,19 +19,17 @@ pub struct IncidentRecordSummary {
     /// <p>What caused Incident Manager to create the incident.</p>
     pub incident_record_source: ::std::option::Option<crate::types::IncidentRecordSource>,
 }
-impl IncidentRecordSummary {
+impl  IncidentRecordSummary  {
     /// <p>The Amazon Resource Name (ARN) of the incident.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The title of the incident. This value is either provided by the response plan or overwritten on creation.</p>
-    pub fn title(&self) -> &str {
-        use std::ops::Deref;
-        self.title.deref()
+    pub fn title(&self) -> & str {
+        use std::ops::Deref; self.title.deref()
     }
     /// <p>The current status of the incident.</p>
-    pub fn status(&self) -> &crate::types::IncidentRecordStatus {
+    pub fn status(&self) -> & crate::types::IncidentRecordStatus {
         &self.status
     }
     /// <p>Defines the impact to customers and applications.</p>
@@ -39,15 +37,15 @@ impl IncidentRecordSummary {
         self.impact
     }
     /// <p>The timestamp for when the incident was created.</p>
-    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_time
     }
     /// <p>The timestamp for when the incident was resolved.</p>
-    pub fn resolved_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn resolved_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.resolved_time.as_ref()
     }
     /// <p>What caused Incident Manager to create the incident.</p>
-    pub fn incident_record_source(&self) -> ::std::option::Option<&crate::types::IncidentRecordSource> {
+    pub fn incident_record_source(&self) -> ::std::option::Option<& crate::types::IncidentRecordSource> {
         self.incident_record_source.as_ref()
     }
 }
@@ -79,8 +77,7 @@ impl IncidentRecordSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the incident.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the incident.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +91,7 @@ impl IncidentRecordSummaryBuilder {
     }
     /// <p>The title of the incident. This value is either provided by the response plan or overwritten on creation.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The title of the incident. This value is either provided by the response plan or overwritten on creation.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +105,7 @@ impl IncidentRecordSummaryBuilder {
     }
     /// <p>The current status of the incident.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::IncidentRecordStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the incident.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::IncidentRecordStatus> {
@@ -124,8 +119,7 @@ impl IncidentRecordSummaryBuilder {
     }
     /// <p>Defines the impact to customers and applications.</p>
     pub fn set_impact(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.impact = input;
-        self
+        self.impact = input; self
     }
     /// <p>Defines the impact to customers and applications.</p>
     pub fn get_impact(&self) -> &::std::option::Option<i32> {
@@ -139,8 +133,7 @@ impl IncidentRecordSummaryBuilder {
     }
     /// <p>The timestamp for when the incident was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The timestamp for when the incident was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -153,8 +146,7 @@ impl IncidentRecordSummaryBuilder {
     }
     /// <p>The timestamp for when the incident was resolved.</p>
     pub fn set_resolved_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.resolved_time = input;
-        self
+        self.resolved_time = input; self
     }
     /// <p>The timestamp for when the incident was resolved.</p>
     pub fn get_resolved_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -168,8 +160,7 @@ impl IncidentRecordSummaryBuilder {
     }
     /// <p>What caused Incident Manager to create the incident.</p>
     pub fn set_incident_record_source(mut self, input: ::std::option::Option<crate::types::IncidentRecordSource>) -> Self {
-        self.incident_record_source = input;
-        self
+        self.incident_record_source = input; self
     }
     /// <p>What caused Incident Manager to create the incident.</p>
     pub fn get_incident_record_source(&self) -> &::std::option::Option<crate::types::IncidentRecordSource> {
@@ -183,39 +174,39 @@ impl IncidentRecordSummaryBuilder {
     /// - [`impact`](crate::types::builders::IncidentRecordSummaryBuilder::impact)
     /// - [`creation_time`](crate::types::builders::IncidentRecordSummaryBuilder::creation_time)
     pub fn build(self) -> ::std::result::Result<crate::types::IncidentRecordSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IncidentRecordSummary {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building IncidentRecordSummary",
-                )
-            })?,
-            title: self.title.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "title",
-                    "title was not specified but it is required when building IncidentRecordSummary",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building IncidentRecordSummary",
-                )
-            })?,
-            impact: self.impact.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "impact",
-                    "impact was not specified but it is required when building IncidentRecordSummary",
-                )
-            })?,
-            creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_time",
-                    "creation_time was not specified but it is required when building IncidentRecordSummary",
-                )
-            })?,
-            resolved_time: self.resolved_time,
-            incident_record_source: self.incident_record_source,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IncidentRecordSummary {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building IncidentRecordSummary")
+                    )?
+                ,
+                title: self.title
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("title", "title was not specified but it is required when building IncidentRecordSummary")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building IncidentRecordSummary")
+                    )?
+                ,
+                impact: self.impact
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("impact", "impact was not specified but it is required when building IncidentRecordSummary")
+                    )?
+                ,
+                creation_time: self.creation_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_time", "creation_time was not specified but it is required when building IncidentRecordSummary")
+                    )?
+                ,
+                resolved_time: self.resolved_time
+                ,
+                incident_record_source: self.incident_record_source
+                ,
+            }
+        )
     }
 }
+

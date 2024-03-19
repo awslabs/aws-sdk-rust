@@ -3,21 +3,21 @@
 /// <p>Options for a domain's <a href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_OffPeakWindow.html">off-peak window</a>, during which OpenSearch Service can perform mandatory configuration changes on the domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OffPeakWindowOptions {
+pub struct OffPeakWindowOptions  {
     /// <p>Whether to enable an off-peak window.</p>
     /// <p>This option is only available when modifying a domain created prior to February 16, 2023, not when creating a new domain. All domains created after this date have the off-peak window enabled by default. You can't disable the off-peak window after it's enabled for a domain.</p>
     pub enabled: ::std::option::Option<bool>,
     /// <p>Off-peak window settings for the domain.</p>
     pub off_peak_window: ::std::option::Option<crate::types::OffPeakWindow>,
 }
-impl OffPeakWindowOptions {
+impl  OffPeakWindowOptions  {
     /// <p>Whether to enable an off-peak window.</p>
     /// <p>This option is only available when modifying a domain created prior to February 16, 2023, not when creating a new domain. All domains created after this date have the off-peak window enabled by default. You can't disable the off-peak window after it's enabled for a domain.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>Off-peak window settings for the domain.</p>
-    pub fn off_peak_window(&self) -> ::std::option::Option<&crate::types::OffPeakWindow> {
+    pub fn off_peak_window(&self) -> ::std::option::Option<& crate::types::OffPeakWindow> {
         self.off_peak_window.as_ref()
     }
 }
@@ -45,8 +45,7 @@ impl OffPeakWindowOptionsBuilder {
     /// <p>Whether to enable an off-peak window.</p>
     /// <p>This option is only available when modifying a domain created prior to February 16, 2023, not when creating a new domain. All domains created after this date have the off-peak window enabled by default. You can't disable the off-peak window after it's enabled for a domain.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Whether to enable an off-peak window.</p>
     /// <p>This option is only available when modifying a domain created prior to February 16, 2023, not when creating a new domain. All domains created after this date have the off-peak window enabled by default. You can't disable the off-peak window after it's enabled for a domain.</p>
@@ -60,8 +59,7 @@ impl OffPeakWindowOptionsBuilder {
     }
     /// <p>Off-peak window settings for the domain.</p>
     pub fn set_off_peak_window(mut self, input: ::std::option::Option<crate::types::OffPeakWindow>) -> Self {
-        self.off_peak_window = input;
-        self
+        self.off_peak_window = input; self
     }
     /// <p>Off-peak window settings for the domain.</p>
     pub fn get_off_peak_window(&self) -> &::std::option::Option<crate::types::OffPeakWindow> {
@@ -70,8 +68,11 @@ impl OffPeakWindowOptionsBuilder {
     /// Consumes the builder and constructs a [`OffPeakWindowOptions`](crate::types::OffPeakWindowOptions).
     pub fn build(self) -> crate::types::OffPeakWindowOptions {
         crate::types::OffPeakWindowOptions {
-            enabled: self.enabled,
-            off_peak_window: self.off_peak_window,
+            enabled: self.enabled
+            ,
+            off_peak_window: self.off_peak_window
+            ,
         }
     }
 }
+

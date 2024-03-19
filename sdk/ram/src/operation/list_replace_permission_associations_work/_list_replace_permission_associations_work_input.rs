@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListReplacePermissionAssociationsWorkInput {
+pub struct ListReplacePermissionAssociationsWorkInput  {
     /// <p>A list of IDs. These values come from the <code>id</code>field of the <code>replacePermissionAssociationsWork</code>structure returned by the <code>ReplacePermissionAssociations</code> operation.</p>
-    pub work_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub work_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies that you want to see only the details about requests with a status that matches this value.</p>
     pub status: ::std::option::Option<crate::types::ReplacePermissionAssociationsWorkStatus>,
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
@@ -12,19 +12,20 @@ pub struct ListReplacePermissionAssociationsWorkInput {
     /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListReplacePermissionAssociationsWorkInput {
+impl  ListReplacePermissionAssociationsWorkInput  {
     /// <p>A list of IDs. These values come from the <code>id</code>field of the <code>replacePermissionAssociationsWork</code>structure returned by the <code>ReplacePermissionAssociations</code> operation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.work_ids.is_none()`.
-    pub fn work_ids(&self) -> &[::std::string::String] {
-        self.work_ids.as_deref().unwrap_or_default()
+    pub fn work_ids(&self) -> & [::std::string::String] {
+        self.work_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies that you want to see only the details about requests with a status that matches this value.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ReplacePermissionAssociationsWorkStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ReplacePermissionAssociationsWorkStatus> {
         self.status.as_ref()
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
@@ -43,7 +44,7 @@ impl ListReplacePermissionAssociationsWorkInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReplacePermissionAssociationsWorkInputBuilder {
-    pub(crate) work_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) work_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) status: ::std::option::Option<crate::types::ReplacePermissionAssociationsWorkStatus>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -56,17 +57,16 @@ impl ListReplacePermissionAssociationsWorkInputBuilder {
     /// <p>A list of IDs. These values come from the <code>id</code>field of the <code>replacePermissionAssociationsWork</code>structure returned by the <code>ReplacePermissionAssociations</code> operation.</p>
     pub fn work_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.work_ids.unwrap_or_default();
-        v.push(input.into());
-        self.work_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.work_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of IDs. These values come from the <code>id</code>field of the <code>replacePermissionAssociationsWork</code>structure returned by the <code>ReplacePermissionAssociations</code> operation.</p>
-    pub fn set_work_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.work_ids = input;
-        self
+    pub fn set_work_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.work_ids = input; self
     }
     /// <p>A list of IDs. These values come from the <code>id</code>field of the <code>replacePermissionAssociationsWork</code>structure returned by the <code>ReplacePermissionAssociations</code> operation.</p>
-    pub fn get_work_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_work_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.work_ids
     }
     /// <p>Specifies that you want to see only the details about requests with a status that matches this value.</p>
@@ -76,8 +76,7 @@ impl ListReplacePermissionAssociationsWorkInputBuilder {
     }
     /// <p>Specifies that you want to see only the details about requests with a status that matches this value.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReplacePermissionAssociationsWorkStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Specifies that you want to see only the details about requests with a status that matches this value.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ReplacePermissionAssociationsWorkStatus> {
@@ -90,8 +89,7 @@ impl ListReplacePermissionAssociationsWorkInputBuilder {
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,27 +102,26 @@ impl ListReplacePermissionAssociationsWorkInputBuilder {
     }
     /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListReplacePermissionAssociationsWorkInput`](crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkInput {
-                work_ids: self.work_ids,
-                status: self.status,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                work_ids: self.work_ids
+                ,
+                status: self.status
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

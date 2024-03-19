@@ -3,7 +3,7 @@
 /// <p>The prediction results from a call to <code>DetectAnomalies</code>. <code>DetectAnomalyResult</code> includes classification information for the prediction (<code>IsAnomalous</code> and <code>Confidence</code>). If the model you use is an image segementation model, <code>DetectAnomalyResult</code> also includes segmentation information (<code>Anomalies</code> and <code>AnomalyMask</code>). Classification information is calculated separately from segmentation information and you shouldn't assume a relationship between them.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetectAnomalyResult {
+pub struct DetectAnomalyResult  {
     /// <p>The source of the image that was analyzed. <code>direct</code> means that the images was supplied from the local computer. No other values are supported.</p>
     pub source: ::std::option::Option<crate::types::ImageSource>,
     /// <p>True if Amazon Lookout for Vision classifies the image as containing an anomaly, otherwise false.</p>
@@ -14,14 +14,14 @@ pub struct DetectAnomalyResult {
     /// <p>If the list has one entry ('background'), no anomalies were found on the image.</p>
     /// <p></p>
     /// <p>An image classification model doesn't return an <code>Anomalies</code> list.</p>
-    pub anomalies: ::std::option::Option<::std::vec::Vec<crate::types::Anomaly>>,
+    pub anomalies: ::std::option::Option<::std::vec::Vec::<crate::types::Anomaly>>,
     /// <p>If the model is an image segmentation model, <code>AnomalyMask</code> contains pixel masks that covers all anomaly types found on the image. Each anomaly type has a different mask color. To map a color to an anomaly type, see the <code>color</code> field of the <code>PixelAnomaly</code> object.</p>
     /// <p>An image classification model doesn't return an <code>Anomalies</code> list.</p>
     pub anomaly_mask: ::std::option::Option<::aws_smithy_types::Blob>,
 }
-impl DetectAnomalyResult {
+impl  DetectAnomalyResult  {
     /// <p>The source of the image that was analyzed. <code>direct</code> means that the images was supplied from the local computer. No other values are supported.</p>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::ImageSource> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::ImageSource> {
         self.source.as_ref()
     }
     /// <p>True if Amazon Lookout for Vision classifies the image as containing an anomaly, otherwise false.</p>
@@ -36,14 +36,15 @@ impl DetectAnomalyResult {
     /// <p>If the list has one entry ('background'), no anomalies were found on the image.</p>
     /// <p></p>
     /// <p>An image classification model doesn't return an <code>Anomalies</code> list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.anomalies.is_none()`.
-    pub fn anomalies(&self) -> &[crate::types::Anomaly] {
-        self.anomalies.as_deref().unwrap_or_default()
+    pub fn anomalies(&self) -> & [crate::types::Anomaly] {
+        self.anomalies.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If the model is an image segmentation model, <code>AnomalyMask</code> contains pixel masks that covers all anomaly types found on the image. Each anomaly type has a different mask color. To map a color to an anomaly type, see the <code>color</code> field of the <code>PixelAnomaly</code> object.</p>
     /// <p>An image classification model doesn't return an <code>Anomalies</code> list.</p>
-    pub fn anomaly_mask(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn anomaly_mask(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.anomaly_mask.as_ref()
     }
 }
@@ -61,7 +62,7 @@ pub struct DetectAnomalyResultBuilder {
     pub(crate) source: ::std::option::Option<crate::types::ImageSource>,
     pub(crate) is_anomalous: ::std::option::Option<bool>,
     pub(crate) confidence: ::std::option::Option<f32>,
-    pub(crate) anomalies: ::std::option::Option<::std::vec::Vec<crate::types::Anomaly>>,
+    pub(crate) anomalies: ::std::option::Option<::std::vec::Vec::<crate::types::Anomaly>>,
     pub(crate) anomaly_mask: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl DetectAnomalyResultBuilder {
@@ -72,8 +73,7 @@ impl DetectAnomalyResultBuilder {
     }
     /// <p>The source of the image that was analyzed. <code>direct</code> means that the images was supplied from the local computer. No other values are supported.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::ImageSource>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The source of the image that was analyzed. <code>direct</code> means that the images was supplied from the local computer. No other values are supported.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::ImageSource> {
@@ -86,8 +86,7 @@ impl DetectAnomalyResultBuilder {
     }
     /// <p>True if Amazon Lookout for Vision classifies the image as containing an anomaly, otherwise false.</p>
     pub fn set_is_anomalous(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_anomalous = input;
-        self
+        self.is_anomalous = input; self
     }
     /// <p>True if Amazon Lookout for Vision classifies the image as containing an anomaly, otherwise false.</p>
     pub fn get_is_anomalous(&self) -> &::std::option::Option<bool> {
@@ -100,8 +99,7 @@ impl DetectAnomalyResultBuilder {
     }
     /// <p>The confidence that Lookout for Vision has in the accuracy of the classification in <code>IsAnomalous</code>.</p>
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.confidence = input;
-        self
+        self.confidence = input; self
     }
     /// <p>The confidence that Lookout for Vision has in the accuracy of the classification in <code>IsAnomalous</code>.</p>
     pub fn get_confidence(&self) -> &::std::option::Option<f32> {
@@ -117,23 +115,22 @@ impl DetectAnomalyResultBuilder {
     /// <p>An image classification model doesn't return an <code>Anomalies</code> list.</p>
     pub fn anomalies(mut self, input: crate::types::Anomaly) -> Self {
         let mut v = self.anomalies.unwrap_or_default();
-        v.push(input);
-        self.anomalies = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.anomalies = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>If the model is an image segmentation model, <code>Anomalies</code> contains a list of anomaly types found in the image. There is one entry for each type of anomaly found (even if multiple instances of an anomaly type exist on the image). The first element in the list is always an anomaly type representing the image background ('background') and shouldn't be considered an anomaly. Amazon Lookout for Vision automatically add the background anomaly type to the response, and you don't need to declare a background anomaly type in your dataset.</p>
     /// <p>If the list has one entry ('background'), no anomalies were found on the image.</p>
     /// <p></p>
     /// <p>An image classification model doesn't return an <code>Anomalies</code> list.</p>
-    pub fn set_anomalies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Anomaly>>) -> Self {
-        self.anomalies = input;
-        self
+    pub fn set_anomalies(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Anomaly>>) -> Self {
+        self.anomalies = input; self
     }
     /// <p>If the model is an image segmentation model, <code>Anomalies</code> contains a list of anomaly types found in the image. There is one entry for each type of anomaly found (even if multiple instances of an anomaly type exist on the image). The first element in the list is always an anomaly type representing the image background ('background') and shouldn't be considered an anomaly. Amazon Lookout for Vision automatically add the background anomaly type to the response, and you don't need to declare a background anomaly type in your dataset.</p>
     /// <p>If the list has one entry ('background'), no anomalies were found on the image.</p>
     /// <p></p>
     /// <p>An image classification model doesn't return an <code>Anomalies</code> list.</p>
-    pub fn get_anomalies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Anomaly>> {
+    pub fn get_anomalies(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Anomaly>> {
         &self.anomalies
     }
     /// <p>If the model is an image segmentation model, <code>AnomalyMask</code> contains pixel masks that covers all anomaly types found on the image. Each anomaly type has a different mask color. To map a color to an anomaly type, see the <code>color</code> field of the <code>PixelAnomaly</code> object.</p>
@@ -145,8 +142,7 @@ impl DetectAnomalyResultBuilder {
     /// <p>If the model is an image segmentation model, <code>AnomalyMask</code> contains pixel masks that covers all anomaly types found on the image. Each anomaly type has a different mask color. To map a color to an anomaly type, see the <code>color</code> field of the <code>PixelAnomaly</code> object.</p>
     /// <p>An image classification model doesn't return an <code>Anomalies</code> list.</p>
     pub fn set_anomaly_mask(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.anomaly_mask = input;
-        self
+        self.anomaly_mask = input; self
     }
     /// <p>If the model is an image segmentation model, <code>AnomalyMask</code> contains pixel masks that covers all anomaly types found on the image. Each anomaly type has a different mask color. To map a color to an anomaly type, see the <code>color</code> field of the <code>PixelAnomaly</code> object.</p>
     /// <p>An image classification model doesn't return an <code>Anomalies</code> list.</p>
@@ -156,11 +152,17 @@ impl DetectAnomalyResultBuilder {
     /// Consumes the builder and constructs a [`DetectAnomalyResult`](crate::types::DetectAnomalyResult).
     pub fn build(self) -> crate::types::DetectAnomalyResult {
         crate::types::DetectAnomalyResult {
-            source: self.source,
-            is_anomalous: self.is_anomalous,
-            confidence: self.confidence,
-            anomalies: self.anomalies,
-            anomaly_mask: self.anomaly_mask,
+            source: self.source
+            ,
+            is_anomalous: self.is_anomalous
+            ,
+            confidence: self.confidence
+            ,
+            anomalies: self.anomalies
+            ,
+            anomaly_mask: self.anomaly_mask
+            ,
         }
     }
 }
+

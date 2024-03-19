@@ -3,25 +3,25 @@
 /// <p>Provides face metadata for target image faces that are analyzed by <code>CompareFaces</code> and <code>RecognizeCelebrities</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ComparedFace {
+pub struct ComparedFace  {
     /// <p>Bounding box of the face.</p>
     pub bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     /// <p>Level of confidence that what the bounding box contains is a face.</p>
     pub confidence: ::std::option::Option<f32>,
     /// <p>An array of facial landmarks.</p>
-    pub landmarks: ::std::option::Option<::std::vec::Vec<crate::types::Landmark>>,
+    pub landmarks: ::std::option::Option<::std::vec::Vec::<crate::types::Landmark>>,
     /// <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>
     pub pose: ::std::option::Option<crate::types::Pose>,
     /// <p>Identifies face image brightness and sharpness.</p>
     pub quality: ::std::option::Option<crate::types::ImageQuality>,
     /// <p>The emotions that appear to be expressed on the face, and the confidence level in the determination. Valid values include "Happy", "Sad", "Angry", "Confused", "Disgusted", "Surprised", "Calm", "Unknown", and "Fear".</p>
-    pub emotions: ::std::option::Option<::std::vec::Vec<crate::types::Emotion>>,
+    pub emotions: ::std::option::Option<::std::vec::Vec::<crate::types::Emotion>>,
     /// <p>Indicates whether or not the face is smiling, and the confidence level in the determination.</p>
     pub smile: ::std::option::Option<crate::types::Smile>,
 }
-impl ComparedFace {
+impl  ComparedFace  {
     /// <p>Bounding box of the face.</p>
-    pub fn bounding_box(&self) -> ::std::option::Option<&crate::types::BoundingBox> {
+    pub fn bounding_box(&self) -> ::std::option::Option<& crate::types::BoundingBox> {
         self.bounding_box.as_ref()
     }
     /// <p>Level of confidence that what the bounding box contains is a face.</p>
@@ -29,27 +29,29 @@ impl ComparedFace {
         self.confidence
     }
     /// <p>An array of facial landmarks.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.landmarks.is_none()`.
-    pub fn landmarks(&self) -> &[crate::types::Landmark] {
-        self.landmarks.as_deref().unwrap_or_default()
+    pub fn landmarks(&self) -> & [crate::types::Landmark] {
+        self.landmarks.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>
-    pub fn pose(&self) -> ::std::option::Option<&crate::types::Pose> {
+    pub fn pose(&self) -> ::std::option::Option<& crate::types::Pose> {
         self.pose.as_ref()
     }
     /// <p>Identifies face image brightness and sharpness.</p>
-    pub fn quality(&self) -> ::std::option::Option<&crate::types::ImageQuality> {
+    pub fn quality(&self) -> ::std::option::Option<& crate::types::ImageQuality> {
         self.quality.as_ref()
     }
     /// <p>The emotions that appear to be expressed on the face, and the confidence level in the determination. Valid values include "Happy", "Sad", "Angry", "Confused", "Disgusted", "Surprised", "Calm", "Unknown", and "Fear".</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.emotions.is_none()`.
-    pub fn emotions(&self) -> &[crate::types::Emotion] {
-        self.emotions.as_deref().unwrap_or_default()
+    pub fn emotions(&self) -> & [crate::types::Emotion] {
+        self.emotions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether or not the face is smiling, and the confidence level in the determination.</p>
-    pub fn smile(&self) -> ::std::option::Option<&crate::types::Smile> {
+    pub fn smile(&self) -> ::std::option::Option<& crate::types::Smile> {
         self.smile.as_ref()
     }
 }
@@ -66,10 +68,10 @@ impl ComparedFace {
 pub struct ComparedFaceBuilder {
     pub(crate) bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     pub(crate) confidence: ::std::option::Option<f32>,
-    pub(crate) landmarks: ::std::option::Option<::std::vec::Vec<crate::types::Landmark>>,
+    pub(crate) landmarks: ::std::option::Option<::std::vec::Vec::<crate::types::Landmark>>,
     pub(crate) pose: ::std::option::Option<crate::types::Pose>,
     pub(crate) quality: ::std::option::Option<crate::types::ImageQuality>,
-    pub(crate) emotions: ::std::option::Option<::std::vec::Vec<crate::types::Emotion>>,
+    pub(crate) emotions: ::std::option::Option<::std::vec::Vec::<crate::types::Emotion>>,
     pub(crate) smile: ::std::option::Option<crate::types::Smile>,
 }
 impl ComparedFaceBuilder {
@@ -80,8 +82,7 @@ impl ComparedFaceBuilder {
     }
     /// <p>Bounding box of the face.</p>
     pub fn set_bounding_box(mut self, input: ::std::option::Option<crate::types::BoundingBox>) -> Self {
-        self.bounding_box = input;
-        self
+        self.bounding_box = input; self
     }
     /// <p>Bounding box of the face.</p>
     pub fn get_bounding_box(&self) -> &::std::option::Option<crate::types::BoundingBox> {
@@ -94,8 +95,7 @@ impl ComparedFaceBuilder {
     }
     /// <p>Level of confidence that what the bounding box contains is a face.</p>
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.confidence = input;
-        self
+        self.confidence = input; self
     }
     /// <p>Level of confidence that what the bounding box contains is a face.</p>
     pub fn get_confidence(&self) -> &::std::option::Option<f32> {
@@ -108,17 +108,16 @@ impl ComparedFaceBuilder {
     /// <p>An array of facial landmarks.</p>
     pub fn landmarks(mut self, input: crate::types::Landmark) -> Self {
         let mut v = self.landmarks.unwrap_or_default();
-        v.push(input);
-        self.landmarks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.landmarks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of facial landmarks.</p>
-    pub fn set_landmarks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Landmark>>) -> Self {
-        self.landmarks = input;
-        self
+    pub fn set_landmarks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Landmark>>) -> Self {
+        self.landmarks = input; self
     }
     /// <p>An array of facial landmarks.</p>
-    pub fn get_landmarks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Landmark>> {
+    pub fn get_landmarks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Landmark>> {
         &self.landmarks
     }
     /// <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>
@@ -128,8 +127,7 @@ impl ComparedFaceBuilder {
     }
     /// <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>
     pub fn set_pose(mut self, input: ::std::option::Option<crate::types::Pose>) -> Self {
-        self.pose = input;
-        self
+        self.pose = input; self
     }
     /// <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>
     pub fn get_pose(&self) -> &::std::option::Option<crate::types::Pose> {
@@ -142,8 +140,7 @@ impl ComparedFaceBuilder {
     }
     /// <p>Identifies face image brightness and sharpness.</p>
     pub fn set_quality(mut self, input: ::std::option::Option<crate::types::ImageQuality>) -> Self {
-        self.quality = input;
-        self
+        self.quality = input; self
     }
     /// <p>Identifies face image brightness and sharpness.</p>
     pub fn get_quality(&self) -> &::std::option::Option<crate::types::ImageQuality> {
@@ -156,17 +153,16 @@ impl ComparedFaceBuilder {
     /// <p>The emotions that appear to be expressed on the face, and the confidence level in the determination. Valid values include "Happy", "Sad", "Angry", "Confused", "Disgusted", "Surprised", "Calm", "Unknown", and "Fear".</p>
     pub fn emotions(mut self, input: crate::types::Emotion) -> Self {
         let mut v = self.emotions.unwrap_or_default();
-        v.push(input);
-        self.emotions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.emotions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The emotions that appear to be expressed on the face, and the confidence level in the determination. Valid values include "Happy", "Sad", "Angry", "Confused", "Disgusted", "Surprised", "Calm", "Unknown", and "Fear".</p>
-    pub fn set_emotions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Emotion>>) -> Self {
-        self.emotions = input;
-        self
+    pub fn set_emotions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Emotion>>) -> Self {
+        self.emotions = input; self
     }
     /// <p>The emotions that appear to be expressed on the face, and the confidence level in the determination. Valid values include "Happy", "Sad", "Angry", "Confused", "Disgusted", "Surprised", "Calm", "Unknown", and "Fear".</p>
-    pub fn get_emotions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Emotion>> {
+    pub fn get_emotions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Emotion>> {
         &self.emotions
     }
     /// <p>Indicates whether or not the face is smiling, and the confidence level in the determination.</p>
@@ -176,8 +172,7 @@ impl ComparedFaceBuilder {
     }
     /// <p>Indicates whether or not the face is smiling, and the confidence level in the determination.</p>
     pub fn set_smile(mut self, input: ::std::option::Option<crate::types::Smile>) -> Self {
-        self.smile = input;
-        self
+        self.smile = input; self
     }
     /// <p>Indicates whether or not the face is smiling, and the confidence level in the determination.</p>
     pub fn get_smile(&self) -> &::std::option::Option<crate::types::Smile> {
@@ -186,13 +181,21 @@ impl ComparedFaceBuilder {
     /// Consumes the builder and constructs a [`ComparedFace`](crate::types::ComparedFace).
     pub fn build(self) -> crate::types::ComparedFace {
         crate::types::ComparedFace {
-            bounding_box: self.bounding_box,
-            confidence: self.confidence,
-            landmarks: self.landmarks,
-            pose: self.pose,
-            quality: self.quality,
-            emotions: self.emotions,
-            smile: self.smile,
+            bounding_box: self.bounding_box
+            ,
+            confidence: self.confidence
+            ,
+            landmarks: self.landmarks
+            ,
+            pose: self.pose
+            ,
+            quality: self.quality
+            ,
+            emotions: self.emotions
+            ,
+            smile: self.smile
+            ,
         }
     }
 }
+

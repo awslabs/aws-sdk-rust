@@ -3,7 +3,7 @@
 /// <p>A set of featured results that are displayed at the top of your search results. Featured results are placed above all other results for certain queries. If there's an exact match of a query, then one or more specific documents are featured in the search results.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FeaturedResultsSet {
+pub struct FeaturedResultsSet  {
     /// <p>The identifier of the set of featured results.</p>
     pub featured_results_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The name for the set of featured results.</p>
@@ -14,47 +14,49 @@ pub struct FeaturedResultsSet {
     pub status: ::std::option::Option<crate::types::FeaturedResultsSetStatus>,
     /// <p>The list of queries for featuring results.</p>
     /// <p>Specific queries are mapped to specific documents for featuring in the results. If a query contains an exact match, then one or more specific documents are featured in the results. The exact match applies to the full query. For example, if you only specify 'Kendra', queries such as 'How does kendra semantically rank results?' will not render the featured results. Featured results are designed for specific queries, rather than queries that are too broad in scope.</p>
-    pub query_texts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub query_texts: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The list of document IDs for the documents you want to feature at the top of the search results page. You can use the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Query.html">Query</a> API to search for specific documents with their document IDs included in the result items, or you can use the console.</p>
     /// <p>You can add up to four featured documents. You can request to increase this limit by contacting <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
     /// <p>Specific queries are mapped to specific documents for featuring in the results. If a query contains an exact match, then one or more specific documents are featured in the results. The exact match applies to the full query. For example, if you only specify 'Kendra', queries such as 'How does kendra semantically rank results?' will not render the featured results. Featured results are designed for specific queries, rather than queries that are too broad in scope.</p>
-    pub featured_documents: ::std::option::Option<::std::vec::Vec<crate::types::FeaturedDocument>>,
+    pub featured_documents: ::std::option::Option<::std::vec::Vec::<crate::types::FeaturedDocument>>,
     /// <p>The Unix timestamp when the set of featured results was last updated.</p>
     pub last_updated_timestamp: ::std::option::Option<i64>,
     /// <p>The Unix timestamp when the set of featured results was created.</p>
     pub creation_timestamp: ::std::option::Option<i64>,
 }
-impl FeaturedResultsSet {
+impl  FeaturedResultsSet  {
     /// <p>The identifier of the set of featured results.</p>
-    pub fn featured_results_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn featured_results_set_id(&self) -> ::std::option::Option<& str> {
         self.featured_results_set_id.as_deref()
     }
     /// <p>The name for the set of featured results.</p>
-    pub fn featured_results_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn featured_results_set_name(&self) -> ::std::option::Option<& str> {
         self.featured_results_set_name.as_deref()
     }
     /// <p>The description for the set of featured results.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The current status of the set of featured results. When the value is <code>ACTIVE</code>, featured results are ready for use. You can still configure your settings before setting the status to <code>ACTIVE</code>. You can set the status to <code>ACTIVE</code> or <code>INACTIVE</code> using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateFeaturedResultsSet.html">UpdateFeaturedResultsSet</a> API. The queries you specify for featured results must be unique per featured results set for each index, whether the status is <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::FeaturedResultsSetStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::FeaturedResultsSetStatus> {
         self.status.as_ref()
     }
     /// <p>The list of queries for featuring results.</p>
     /// <p>Specific queries are mapped to specific documents for featuring in the results. If a query contains an exact match, then one or more specific documents are featured in the results. The exact match applies to the full query. For example, if you only specify 'Kendra', queries such as 'How does kendra semantically rank results?' will not render the featured results. Featured results are designed for specific queries, rather than queries that are too broad in scope.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.query_texts.is_none()`.
-    pub fn query_texts(&self) -> &[::std::string::String] {
-        self.query_texts.as_deref().unwrap_or_default()
+    pub fn query_texts(&self) -> & [::std::string::String] {
+        self.query_texts.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The list of document IDs for the documents you want to feature at the top of the search results page. You can use the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Query.html">Query</a> API to search for specific documents with their document IDs included in the result items, or you can use the console.</p>
     /// <p>You can add up to four featured documents. You can request to increase this limit by contacting <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
     /// <p>Specific queries are mapped to specific documents for featuring in the results. If a query contains an exact match, then one or more specific documents are featured in the results. The exact match applies to the full query. For example, if you only specify 'Kendra', queries such as 'How does kendra semantically rank results?' will not render the featured results. Featured results are designed for specific queries, rather than queries that are too broad in scope.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.featured_documents.is_none()`.
-    pub fn featured_documents(&self) -> &[crate::types::FeaturedDocument] {
-        self.featured_documents.as_deref().unwrap_or_default()
+    pub fn featured_documents(&self) -> & [crate::types::FeaturedDocument] {
+        self.featured_documents.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Unix timestamp when the set of featured results was last updated.</p>
     pub fn last_updated_timestamp(&self) -> ::std::option::Option<i64> {
@@ -80,8 +82,8 @@ pub struct FeaturedResultsSetBuilder {
     pub(crate) featured_results_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::FeaturedResultsSetStatus>,
-    pub(crate) query_texts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) featured_documents: ::std::option::Option<::std::vec::Vec<crate::types::FeaturedDocument>>,
+    pub(crate) query_texts: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) featured_documents: ::std::option::Option<::std::vec::Vec::<crate::types::FeaturedDocument>>,
     pub(crate) last_updated_timestamp: ::std::option::Option<i64>,
     pub(crate) creation_timestamp: ::std::option::Option<i64>,
 }
@@ -93,8 +95,7 @@ impl FeaturedResultsSetBuilder {
     }
     /// <p>The identifier of the set of featured results.</p>
     pub fn set_featured_results_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.featured_results_set_id = input;
-        self
+        self.featured_results_set_id = input; self
     }
     /// <p>The identifier of the set of featured results.</p>
     pub fn get_featured_results_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +108,7 @@ impl FeaturedResultsSetBuilder {
     }
     /// <p>The name for the set of featured results.</p>
     pub fn set_featured_results_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.featured_results_set_name = input;
-        self
+        self.featured_results_set_name = input; self
     }
     /// <p>The name for the set of featured results.</p>
     pub fn get_featured_results_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +121,7 @@ impl FeaturedResultsSetBuilder {
     }
     /// <p>The description for the set of featured results.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description for the set of featured results.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +134,7 @@ impl FeaturedResultsSetBuilder {
     }
     /// <p>The current status of the set of featured results. When the value is <code>ACTIVE</code>, featured results are ready for use. You can still configure your settings before setting the status to <code>ACTIVE</code>. You can set the status to <code>ACTIVE</code> or <code>INACTIVE</code> using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateFeaturedResultsSet.html">UpdateFeaturedResultsSet</a> API. The queries you specify for featured results must be unique per featured results set for each index, whether the status is <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FeaturedResultsSetStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the set of featured results. When the value is <code>ACTIVE</code>, featured results are ready for use. You can still configure your settings before setting the status to <code>ACTIVE</code>. You can set the status to <code>ACTIVE</code> or <code>INACTIVE</code> using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateFeaturedResultsSet.html">UpdateFeaturedResultsSet</a> API. The queries you specify for featured results must be unique per featured results set for each index, whether the status is <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FeaturedResultsSetStatus> {
@@ -150,19 +148,18 @@ impl FeaturedResultsSetBuilder {
     /// <p>Specific queries are mapped to specific documents for featuring in the results. If a query contains an exact match, then one or more specific documents are featured in the results. The exact match applies to the full query. For example, if you only specify 'Kendra', queries such as 'How does kendra semantically rank results?' will not render the featured results. Featured results are designed for specific queries, rather than queries that are too broad in scope.</p>
     pub fn query_texts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.query_texts.unwrap_or_default();
-        v.push(input.into());
-        self.query_texts = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.query_texts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of queries for featuring results.</p>
     /// <p>Specific queries are mapped to specific documents for featuring in the results. If a query contains an exact match, then one or more specific documents are featured in the results. The exact match applies to the full query. For example, if you only specify 'Kendra', queries such as 'How does kendra semantically rank results?' will not render the featured results. Featured results are designed for specific queries, rather than queries that are too broad in scope.</p>
-    pub fn set_query_texts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.query_texts = input;
-        self
+    pub fn set_query_texts(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.query_texts = input; self
     }
     /// <p>The list of queries for featuring results.</p>
     /// <p>Specific queries are mapped to specific documents for featuring in the results. If a query contains an exact match, then one or more specific documents are featured in the results. The exact match applies to the full query. For example, if you only specify 'Kendra', queries such as 'How does kendra semantically rank results?' will not render the featured results. Featured results are designed for specific queries, rather than queries that are too broad in scope.</p>
-    pub fn get_query_texts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_query_texts(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.query_texts
     }
     /// Appends an item to `featured_documents`.
@@ -174,21 +171,20 @@ impl FeaturedResultsSetBuilder {
     /// <p>Specific queries are mapped to specific documents for featuring in the results. If a query contains an exact match, then one or more specific documents are featured in the results. The exact match applies to the full query. For example, if you only specify 'Kendra', queries such as 'How does kendra semantically rank results?' will not render the featured results. Featured results are designed for specific queries, rather than queries that are too broad in scope.</p>
     pub fn featured_documents(mut self, input: crate::types::FeaturedDocument) -> Self {
         let mut v = self.featured_documents.unwrap_or_default();
-        v.push(input);
-        self.featured_documents = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.featured_documents = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of document IDs for the documents you want to feature at the top of the search results page. You can use the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Query.html">Query</a> API to search for specific documents with their document IDs included in the result items, or you can use the console.</p>
     /// <p>You can add up to four featured documents. You can request to increase this limit by contacting <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
     /// <p>Specific queries are mapped to specific documents for featuring in the results. If a query contains an exact match, then one or more specific documents are featured in the results. The exact match applies to the full query. For example, if you only specify 'Kendra', queries such as 'How does kendra semantically rank results?' will not render the featured results. Featured results are designed for specific queries, rather than queries that are too broad in scope.</p>
-    pub fn set_featured_documents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeaturedDocument>>) -> Self {
-        self.featured_documents = input;
-        self
+    pub fn set_featured_documents(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FeaturedDocument>>) -> Self {
+        self.featured_documents = input; self
     }
     /// <p>The list of document IDs for the documents you want to feature at the top of the search results page. You can use the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Query.html">Query</a> API to search for specific documents with their document IDs included in the result items, or you can use the console.</p>
     /// <p>You can add up to four featured documents. You can request to increase this limit by contacting <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
     /// <p>Specific queries are mapped to specific documents for featuring in the results. If a query contains an exact match, then one or more specific documents are featured in the results. The exact match applies to the full query. For example, if you only specify 'Kendra', queries such as 'How does kendra semantically rank results?' will not render the featured results. Featured results are designed for specific queries, rather than queries that are too broad in scope.</p>
-    pub fn get_featured_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeaturedDocument>> {
+    pub fn get_featured_documents(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FeaturedDocument>> {
         &self.featured_documents
     }
     /// <p>The Unix timestamp when the set of featured results was last updated.</p>
@@ -198,8 +194,7 @@ impl FeaturedResultsSetBuilder {
     }
     /// <p>The Unix timestamp when the set of featured results was last updated.</p>
     pub fn set_last_updated_timestamp(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.last_updated_timestamp = input;
-        self
+        self.last_updated_timestamp = input; self
     }
     /// <p>The Unix timestamp when the set of featured results was last updated.</p>
     pub fn get_last_updated_timestamp(&self) -> &::std::option::Option<i64> {
@@ -212,8 +207,7 @@ impl FeaturedResultsSetBuilder {
     }
     /// <p>The Unix timestamp when the set of featured results was created.</p>
     pub fn set_creation_timestamp(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.creation_timestamp = input;
-        self
+        self.creation_timestamp = input; self
     }
     /// <p>The Unix timestamp when the set of featured results was created.</p>
     pub fn get_creation_timestamp(&self) -> &::std::option::Option<i64> {
@@ -222,14 +216,23 @@ impl FeaturedResultsSetBuilder {
     /// Consumes the builder and constructs a [`FeaturedResultsSet`](crate::types::FeaturedResultsSet).
     pub fn build(self) -> crate::types::FeaturedResultsSet {
         crate::types::FeaturedResultsSet {
-            featured_results_set_id: self.featured_results_set_id,
-            featured_results_set_name: self.featured_results_set_name,
-            description: self.description,
-            status: self.status,
-            query_texts: self.query_texts,
-            featured_documents: self.featured_documents,
-            last_updated_timestamp: self.last_updated_timestamp,
-            creation_timestamp: self.creation_timestamp,
+            featured_results_set_id: self.featured_results_set_id
+            ,
+            featured_results_set_name: self.featured_results_set_name
+            ,
+            description: self.description
+            ,
+            status: self.status
+            ,
+            query_texts: self.query_texts
+            ,
+            featured_documents: self.featured_documents
+            ,
+            last_updated_timestamp: self.last_updated_timestamp
+            ,
+            creation_timestamp: self.creation_timestamp
+            ,
         }
     }
 }
+

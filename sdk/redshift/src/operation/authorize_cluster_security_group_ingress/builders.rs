@@ -5,23 +5,20 @@ pub use crate::operation::authorize_cluster_security_group_ingress::_authorize_c
 
 impl AuthorizeClusterSecurityGroupIngressInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.authorize_cluster_security_group_ingress();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.authorize_cluster_security_group_ingress();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `AuthorizeClusterSecurityGroupIngress`.
-///
+/// 
 /// <p>Adds an inbound (ingress) rule to an Amazon Redshift security group. Depending on whether the application accessing your cluster is running on the Internet or an Amazon EC2 instance, you can authorize inbound access to either a Classless Interdomain Routing (CIDR)/Internet Protocol (IP) range or to an Amazon EC2 security group. You can add as many as 20 ingress rules to an Amazon Redshift security group.</p>
 /// <p>If you authorize access to an Amazon EC2 security group, specify <i>EC2SecurityGroupName</i> and <i>EC2SecurityGroupOwnerId</i>. The Amazon EC2 security group and Amazon Redshift cluster must be in the same Amazon Web Services Region.</p>
 /// <p>If you authorize access to a CIDR/IP address range, specify <i>CIDRIP</i>. For an overview of CIDR blocks, see the Wikipedia article on <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
@@ -29,91 +26,78 @@ impl AuthorizeClusterSecurityGroupIngressInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AuthorizeClusterSecurityGroupIngressFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::authorize_cluster_security_group_ingress::builders::AuthorizeClusterSecurityGroupIngressInputBuilder,
+                    inner: crate::operation::authorize_cluster_security_group_ingress::builders::AuthorizeClusterSecurityGroupIngressInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressOutput,
-        crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressError,
-    > for AuthorizeClusterSecurityGroupIngressFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressOutput,
-            crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressOutput,
+                    crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressError,
+                > for AuthorizeClusterSecurityGroupIngressFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressOutput,
+                        crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl AuthorizeClusterSecurityGroupIngressFluentBuilder {
     /// Creates a new `AuthorizeClusterSecurityGroupIngress`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
     /// Access the AuthorizeClusterSecurityGroupIngress as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::authorize_cluster_security_group_ingress::builders::AuthorizeClusterSecurityGroupIngressInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::authorize_cluster_security_group_ingress::builders::AuthorizeClusterSecurityGroupIngressInputBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins =
-            crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngress::operation_runtime_plugins(
-                self.handle.runtime_plugins.clone(),
-                &self.handle.conf,
-                self.config_override,
-            );
-        crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngress::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressOutput,
-        crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngress::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngress::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressOutput, crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the security group to which the ingress rule is added.</p>
     pub fn cluster_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_security_group_name(input.into());
@@ -174,3 +158,4 @@ impl AuthorizeClusterSecurityGroupIngressFluentBuilder {
         self.inner.get_ec2_security_group_owner_id()
     }
 }
+

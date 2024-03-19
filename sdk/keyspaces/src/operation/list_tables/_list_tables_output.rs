@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTablesOutput {
+pub struct ListTablesOutput  {
     /// <p>A token to specify where to start paginating. This is the <code>NextToken</code> from a previously truncated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of tables.</p>
-    pub tables: ::std::option::Option<::std::vec::Vec<crate::types::TableSummary>>,
+    pub tables: ::std::option::Option<::std::vec::Vec::<crate::types::TableSummary>>,
     _request_id: Option<String>,
 }
-impl ListTablesOutput {
+impl  ListTablesOutput  {
     /// <p>A token to specify where to start paginating. This is the <code>NextToken</code> from a previously truncated response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of tables.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tables.is_none()`.
-    pub fn tables(&self) -> &[crate::types::TableSummary] {
-        self.tables.as_deref().unwrap_or_default()
+    pub fn tables(&self) -> & [crate::types::TableSummary] {
+        self.tables.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListTablesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListTablesOutput {
     /// Creates a new builder-style object to manufacture [`ListTablesOutput`](crate::operation::list_tables::ListTablesOutput).
     pub fn builder() -> crate::operation::list_tables::builders::ListTablesOutputBuilder {
@@ -38,7 +39,7 @@ impl ListTablesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTablesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tables: ::std::option::Option<::std::vec::Vec<crate::types::TableSummary>>,
+    pub(crate) tables: ::std::option::Option<::std::vec::Vec::<crate::types::TableSummary>>,
     _request_id: Option<String>,
 }
 impl ListTablesOutputBuilder {
@@ -49,8 +50,7 @@ impl ListTablesOutputBuilder {
     }
     /// <p>A token to specify where to start paginating. This is the <code>NextToken</code> from a previously truncated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token to specify where to start paginating. This is the <code>NextToken</code> from a previously truncated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListTablesOutputBuilder {
     /// <p>A list of tables.</p>
     pub fn tables(mut self, input: crate::types::TableSummary) -> Self {
         let mut v = self.tables.unwrap_or_default();
-        v.push(input);
-        self.tables = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tables = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tables.</p>
-    pub fn set_tables(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableSummary>>) -> Self {
-        self.tables = input;
-        self
+    pub fn set_tables(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TableSummary>>) -> Self {
+        self.tables = input; self
     }
     /// <p>A list of tables.</p>
-    pub fn get_tables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableSummary>> {
+    pub fn get_tables(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TableSummary>> {
         &self.tables
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListTablesOutput`](crate::operation::list_tables::ListTablesOutput).
     pub fn build(self) -> crate::operation::list_tables::ListTablesOutput {
         crate::operation::list_tables::ListTablesOutput {
-            next_token: self.next_token,
-            tables: self.tables,
+            next_token: self.next_token
+            ,
+            tables: self.tables
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

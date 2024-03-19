@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAlarmsForMetricOutput {
+pub struct DescribeAlarmsForMetricOutput  {
     /// <p>The information for each alarm with the specified metric.</p>
-    pub metric_alarms: ::std::option::Option<::std::vec::Vec<crate::types::MetricAlarm>>,
+    pub metric_alarms: ::std::option::Option<::std::vec::Vec::<crate::types::MetricAlarm>>,
     _request_id: Option<String>,
 }
-impl DescribeAlarmsForMetricOutput {
+impl  DescribeAlarmsForMetricOutput  {
     /// <p>The information for each alarm with the specified metric.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_alarms.is_none()`.
-    pub fn metric_alarms(&self) -> &[crate::types::MetricAlarm] {
-        self.metric_alarms.as_deref().unwrap_or_default()
+    pub fn metric_alarms(&self) -> & [crate::types::MetricAlarm] {
+        self.metric_alarms.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAlarmsForMetricOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAlarmsForMetricOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAlarmsForMetricOutput`](crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricOutput).
     pub fn builder() -> crate::operation::describe_alarms_for_metric::builders::DescribeAlarmsForMetricOutputBuilder {
@@ -31,7 +32,7 @@ impl DescribeAlarmsForMetricOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAlarmsForMetricOutputBuilder {
-    pub(crate) metric_alarms: ::std::option::Option<::std::vec::Vec<crate::types::MetricAlarm>>,
+    pub(crate) metric_alarms: ::std::option::Option<::std::vec::Vec::<crate::types::MetricAlarm>>,
     _request_id: Option<String>,
 }
 impl DescribeAlarmsForMetricOutputBuilder {
@@ -42,33 +43,34 @@ impl DescribeAlarmsForMetricOutputBuilder {
     /// <p>The information for each alarm with the specified metric.</p>
     pub fn metric_alarms(mut self, input: crate::types::MetricAlarm) -> Self {
         let mut v = self.metric_alarms.unwrap_or_default();
-        v.push(input);
-        self.metric_alarms = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.metric_alarms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The information for each alarm with the specified metric.</p>
-    pub fn set_metric_alarms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricAlarm>>) -> Self {
-        self.metric_alarms = input;
-        self
+    pub fn set_metric_alarms(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MetricAlarm>>) -> Self {
+        self.metric_alarms = input; self
     }
     /// <p>The information for each alarm with the specified metric.</p>
-    pub fn get_metric_alarms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricAlarm>> {
+    pub fn get_metric_alarms(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MetricAlarm>> {
         &self.metric_alarms
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAlarmsForMetricOutput`](crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricOutput).
     pub fn build(self) -> crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricOutput {
         crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricOutput {
-            metric_alarms: self.metric_alarms,
+            metric_alarms: self.metric_alarms
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

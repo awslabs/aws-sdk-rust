@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDescribeModelPackageInput {
+pub struct BatchDescribeModelPackageInput  {
     /// <p>The list of Amazon Resource Name (ARN) of the model package groups.</p>
-    pub model_package_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub model_package_arn_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl BatchDescribeModelPackageInput {
+impl  BatchDescribeModelPackageInput  {
     /// <p>The list of Amazon Resource Name (ARN) of the model package groups.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.model_package_arn_list.is_none()`.
-    pub fn model_package_arn_list(&self) -> &[::std::string::String] {
-        self.model_package_arn_list.as_deref().unwrap_or_default()
+    pub fn model_package_arn_list(&self) -> & [::std::string::String] {
+        self.model_package_arn_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchDescribeModelPackageInput {
@@ -25,7 +26,7 @@ impl BatchDescribeModelPackageInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDescribeModelPackageInputBuilder {
-    pub(crate) model_package_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) model_package_arn_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl BatchDescribeModelPackageInputBuilder {
     /// Appends an item to `model_package_arn_list`.
@@ -35,28 +36,26 @@ impl BatchDescribeModelPackageInputBuilder {
     /// <p>The list of Amazon Resource Name (ARN) of the model package groups.</p>
     pub fn model_package_arn_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.model_package_arn_list.unwrap_or_default();
-        v.push(input.into());
-        self.model_package_arn_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.model_package_arn_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of Amazon Resource Name (ARN) of the model package groups.</p>
-    pub fn set_model_package_arn_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.model_package_arn_list = input;
-        self
+    pub fn set_model_package_arn_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.model_package_arn_list = input; self
     }
     /// <p>The list of Amazon Resource Name (ARN) of the model package groups.</p>
-    pub fn get_model_package_arn_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_model_package_arn_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.model_package_arn_list
     }
     /// Consumes the builder and constructs a [`BatchDescribeModelPackageInput`](crate::operation::batch_describe_model_package::BatchDescribeModelPackageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_describe_model_package::BatchDescribeModelPackageInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_describe_model_package::BatchDescribeModelPackageInput {
-            model_package_arn_list: self.model_package_arn_list,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_describe_model_package::BatchDescribeModelPackageInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_describe_model_package::BatchDescribeModelPackageInput {
+                model_package_arn_list: self.model_package_arn_list
+                ,
+            }
+        )
     }
 }
+

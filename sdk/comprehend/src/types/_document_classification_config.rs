@@ -3,22 +3,23 @@
 /// <p>Configuration required for a document classification model.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DocumentClassificationConfig {
+pub struct DocumentClassificationConfig  {
     /// <p>Classification mode indicates whether the documents are <code>MULTI_CLASS</code> or <code>MULTI_LABEL</code>.</p>
     pub mode: crate::types::DocumentClassifierMode,
     /// <p>One or more labels to associate with the custom classifier.</p>
-    pub labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub labels: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DocumentClassificationConfig {
+impl  DocumentClassificationConfig  {
     /// <p>Classification mode indicates whether the documents are <code>MULTI_CLASS</code> or <code>MULTI_LABEL</code>.</p>
-    pub fn mode(&self) -> &crate::types::DocumentClassifierMode {
+    pub fn mode(&self) -> & crate::types::DocumentClassifierMode {
         &self.mode
     }
     /// <p>One or more labels to associate with the custom classifier.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labels.is_none()`.
-    pub fn labels(&self) -> &[::std::string::String] {
-        self.labels.as_deref().unwrap_or_default()
+    pub fn labels(&self) -> & [::std::string::String] {
+        self.labels.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DocumentClassificationConfig {
@@ -33,7 +34,7 @@ impl DocumentClassificationConfig {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DocumentClassificationConfigBuilder {
     pub(crate) mode: ::std::option::Option<crate::types::DocumentClassifierMode>,
-    pub(crate) labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) labels: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DocumentClassificationConfigBuilder {
     /// <p>Classification mode indicates whether the documents are <code>MULTI_CLASS</code> or <code>MULTI_LABEL</code>.</p>
@@ -44,8 +45,7 @@ impl DocumentClassificationConfigBuilder {
     }
     /// <p>Classification mode indicates whether the documents are <code>MULTI_CLASS</code> or <code>MULTI_LABEL</code>.</p>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::DocumentClassifierMode>) -> Self {
-        self.mode = input;
-        self
+        self.mode = input; self
     }
     /// <p>Classification mode indicates whether the documents are <code>MULTI_CLASS</code> or <code>MULTI_LABEL</code>.</p>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::DocumentClassifierMode> {
@@ -58,31 +58,33 @@ impl DocumentClassificationConfigBuilder {
     /// <p>One or more labels to associate with the custom classifier.</p>
     pub fn labels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.labels.unwrap_or_default();
-        v.push(input.into());
-        self.labels = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.labels = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more labels to associate with the custom classifier.</p>
-    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.labels = input;
-        self
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.labels = input; self
     }
     /// <p>One or more labels to associate with the custom classifier.</p>
-    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.labels
     }
     /// Consumes the builder and constructs a [`DocumentClassificationConfig`](crate::types::DocumentClassificationConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`mode`](crate::types::builders::DocumentClassificationConfigBuilder::mode)
     pub fn build(self) -> ::std::result::Result<crate::types::DocumentClassificationConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DocumentClassificationConfig {
-            mode: self.mode.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "mode",
-                    "mode was not specified but it is required when building DocumentClassificationConfig",
-                )
-            })?,
-            labels: self.labels,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DocumentClassificationConfig {
+                mode: self.mode
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("mode", "mode was not specified but it is required when building DocumentClassificationConfig")
+                    )?
+                ,
+                labels: self.labels
+                ,
+            }
+        )
     }
 }
+

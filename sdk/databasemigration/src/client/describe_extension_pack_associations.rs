@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeExtensionPackAssociations`](crate::operation::describe_extension_pack_associations::builders::DescribeExtensionPackAssociationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_extension_pack_associations::builders::DescribeExtensionPackAssociationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`migration_project_identifier(impl Into<String>)`](crate::operation::describe_extension_pack_associations::builders::DescribeExtensionPackAssociationsFluentBuilder::migration_project_identifier) / [`set_migration_project_identifier(Option<String>)`](crate::operation::describe_extension_pack_associations::builders::DescribeExtensionPackAssociationsFluentBuilder::set_migration_project_identifier):<br>required: **true**<br><p>The name or Amazon Resource Name (ARN) for the migration project.</p><br>
     ///   - [`filters(Filter)`](crate::operation::describe_extension_pack_associations::builders::DescribeExtensionPackAssociationsFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::describe_extension_pack_associations::builders::DescribeExtensionPackAssociationsFluentBuilder::set_filters):<br>required: **false**<br><p>Filters applied to the extension pack associations described in the form of key-value pairs.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::describe_extension_pack_associations::builders::DescribeExtensionPackAssociationsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_extension_pack_associations::builders::DescribeExtensionPackAssociationsFluentBuilder::set_marker):<br>required: **false**<br><p>Specifies the unique pagination token that makes it possible to display the next page of results. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p> <p>If <code>Marker</code> is returned by a previous response, there are more results available. The value of <code>Marker</code> is a unique pagination token for each page. To retrieve the next page, make the call again using the returned token and keeping all other arguments unchanged.</p><br>
     ///   - [`max_records(i32)`](crate::operation::describe_extension_pack_associations::builders::DescribeExtensionPackAssociationsFluentBuilder::max_records) / [`set_max_records(Option<i32>)`](crate::operation::describe_extension_pack_associations::builders::DescribeExtensionPackAssociationsFluentBuilder::set_max_records):<br>required: **false**<br><p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, DMS includes a pagination token in the response so that you can retrieve the remaining results.</p><br>
-    /// - On success, responds with [`DescribeExtensionPackAssociationsOutput`](crate::operation::describe_extension_pack_associations::DescribeExtensionPackAssociationsOutput) with field(s):
+                            /// - On success, responds with [`DescribeExtensionPackAssociationsOutput`](crate::operation::describe_extension_pack_associations::DescribeExtensionPackAssociationsOutput) with field(s):
     ///   - [`marker(Option<String>)`](crate::operation::describe_extension_pack_associations::DescribeExtensionPackAssociationsOutput::marker): <p>Specifies the unique pagination token that makes it possible to display the next page of results. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p> <p>If <code>Marker</code> is returned by a previous response, there are more results available. The value of <code>Marker</code> is a unique pagination token for each page. To retrieve the next page, make the call again using the returned token and keeping all other arguments unchanged.</p>
     ///   - [`requests(Option<Vec::<SchemaConversionRequest>>)`](crate::operation::describe_extension_pack_associations::DescribeExtensionPackAssociationsOutput::requests): <p>A paginated list of extension pack associations for the specified migration project.</p>
-    /// - On failure, responds with [`SdkError<DescribeExtensionPackAssociationsError>`](crate::operation::describe_extension_pack_associations::DescribeExtensionPackAssociationsError)
-    pub fn describe_extension_pack_associations(
-        &self,
-    ) -> crate::operation::describe_extension_pack_associations::builders::DescribeExtensionPackAssociationsFluentBuilder {
-        crate::operation::describe_extension_pack_associations::builders::DescribeExtensionPackAssociationsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeExtensionPackAssociationsError>`](crate::operation::describe_extension_pack_associations::DescribeExtensionPackAssociationsError)
+    pub fn describe_extension_pack_associations(&self) -> crate::operation::describe_extension_pack_associations::builders::DescribeExtensionPackAssociationsFluentBuilder {
+                                crate::operation::describe_extension_pack_associations::builders::DescribeExtensionPackAssociationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

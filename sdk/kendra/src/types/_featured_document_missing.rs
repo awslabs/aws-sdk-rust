@@ -3,13 +3,13 @@
 /// <p>A document ID doesn't exist but you have specified as a featured document. Amazon Kendra cannot feature the document if it doesn't exist in the index. You can check the status of a document and its ID or check for documents with status errors using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchGetDocumentStatus.html">BatchGetDocumentStatus</a> API.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FeaturedDocumentMissing {
+pub struct FeaturedDocumentMissing  {
     /// <p>The identifier of the document that doesn't exist but you have specified as a featured document.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl FeaturedDocumentMissing {
+impl  FeaturedDocumentMissing  {
     /// <p>The identifier of the document that doesn't exist but you have specified as a featured document.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl FeaturedDocumentMissingBuilder {
     }
     /// <p>The identifier of the document that doesn't exist but you have specified as a featured document.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the document that doesn't exist but you have specified as a featured document.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl FeaturedDocumentMissingBuilder {
     }
     /// Consumes the builder and constructs a [`FeaturedDocumentMissing`](crate::types::FeaturedDocumentMissing).
     pub fn build(self) -> crate::types::FeaturedDocumentMissing {
-        crate::types::FeaturedDocumentMissing { id: self.id }
+        crate::types::FeaturedDocumentMissing {
+            id: self.id
+            ,
+        }
     }
 }
+

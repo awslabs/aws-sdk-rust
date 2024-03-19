@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteModelManifestInput {
+pub struct DeleteModelManifestInput  {
     /// <p>The name of the model manifest to delete.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteModelManifestInput {
+impl  DeleteModelManifestInput  {
     /// <p>The name of the model manifest to delete.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl DeleteModelManifestInputBuilder {
     }
     /// <p>The name of the model manifest to delete.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the model manifest to delete.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     /// Consumes the builder and constructs a [`DeleteModelManifestInput`](crate::operation::delete_model_manifest::DeleteModelManifestInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_model_manifest::DeleteModelManifestInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_model_manifest::DeleteModelManifestInput { name: self.name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_model_manifest::DeleteModelManifestInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_model_manifest::DeleteModelManifestInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

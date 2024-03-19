@@ -3,7 +3,7 @@
 /// <p>Contains information about a default vocabulary.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DefaultVocabulary {
+pub struct DefaultVocabulary  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::string::String,
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a></p>
@@ -13,25 +13,22 @@ pub struct DefaultVocabulary {
     /// <p>A unique name of the custom vocabulary.</p>
     pub vocabulary_name: ::std::string::String,
 }
-impl DefaultVocabulary {
+impl  DefaultVocabulary  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> &str {
-        use std::ops::Deref;
-        self.instance_id.deref()
+    pub fn instance_id(&self) -> & str {
+        use std::ops::Deref; self.instance_id.deref()
     }
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a></p>
-    pub fn language_code(&self) -> &crate::types::VocabularyLanguageCode {
+    pub fn language_code(&self) -> & crate::types::VocabularyLanguageCode {
         &self.language_code
     }
     /// <p>The identifier of the custom vocabulary.</p>
-    pub fn vocabulary_id(&self) -> &str {
-        use std::ops::Deref;
-        self.vocabulary_id.deref()
+    pub fn vocabulary_id(&self) -> & str {
+        use std::ops::Deref; self.vocabulary_id.deref()
     }
     /// <p>A unique name of the custom vocabulary.</p>
-    pub fn vocabulary_name(&self) -> &str {
-        use std::ops::Deref;
-        self.vocabulary_name.deref()
+    pub fn vocabulary_name(&self) -> & str {
+        use std::ops::Deref; self.vocabulary_name.deref()
     }
 }
 impl DefaultVocabulary {
@@ -59,8 +56,7 @@ impl DefaultVocabularyBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +70,7 @@ impl DefaultVocabularyBuilder {
     }
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a></p>
     pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::VocabularyLanguageCode>) -> Self {
-        self.language_code = input;
-        self
+        self.language_code = input; self
     }
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a></p>
     pub fn get_language_code(&self) -> &::std::option::Option<crate::types::VocabularyLanguageCode> {
@@ -89,8 +84,7 @@ impl DefaultVocabularyBuilder {
     }
     /// <p>The identifier of the custom vocabulary.</p>
     pub fn set_vocabulary_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vocabulary_id = input;
-        self
+        self.vocabulary_id = input; self
     }
     /// <p>The identifier of the custom vocabulary.</p>
     pub fn get_vocabulary_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +98,7 @@ impl DefaultVocabularyBuilder {
     }
     /// <p>A unique name of the custom vocabulary.</p>
     pub fn set_vocabulary_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vocabulary_name = input;
-        self
+        self.vocabulary_name = input; self
     }
     /// <p>A unique name of the custom vocabulary.</p>
     pub fn get_vocabulary_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,31 +111,30 @@ impl DefaultVocabularyBuilder {
     /// - [`vocabulary_id`](crate::types::builders::DefaultVocabularyBuilder::vocabulary_id)
     /// - [`vocabulary_name`](crate::types::builders::DefaultVocabularyBuilder::vocabulary_name)
     pub fn build(self) -> ::std::result::Result<crate::types::DefaultVocabulary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DefaultVocabulary {
-            instance_id: self.instance_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "instance_id",
-                    "instance_id was not specified but it is required when building DefaultVocabulary",
-                )
-            })?,
-            language_code: self.language_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "language_code",
-                    "language_code was not specified but it is required when building DefaultVocabulary",
-                )
-            })?,
-            vocabulary_id: self.vocabulary_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vocabulary_id",
-                    "vocabulary_id was not specified but it is required when building DefaultVocabulary",
-                )
-            })?,
-            vocabulary_name: self.vocabulary_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vocabulary_name",
-                    "vocabulary_name was not specified but it is required when building DefaultVocabulary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DefaultVocabulary {
+                instance_id: self.instance_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("instance_id", "instance_id was not specified but it is required when building DefaultVocabulary")
+                    )?
+                ,
+                language_code: self.language_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("language_code", "language_code was not specified but it is required when building DefaultVocabulary")
+                    )?
+                ,
+                vocabulary_id: self.vocabulary_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vocabulary_id", "vocabulary_id was not specified but it is required when building DefaultVocabulary")
+                    )?
+                ,
+                vocabulary_name: self.vocabulary_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vocabulary_name", "vocabulary_name was not specified but it is required when building DefaultVocabulary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

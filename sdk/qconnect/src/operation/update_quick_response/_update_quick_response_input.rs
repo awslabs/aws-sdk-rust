@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateQuickResponseInput {
+pub struct UpdateQuickResponseInput  {
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the quick response.</p>
@@ -34,25 +34,25 @@ pub struct UpdateQuickResponseInput {
     /// <p>Whether the quick response is active.</p>
     pub is_active: ::std::option::Option<bool>,
     /// <p>The Amazon Connect contact channels this quick response applies to. The supported contact channel types include <code>Chat</code>.</p>
-    pub channels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub channels: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code></p>
     pub language: ::std::option::Option<::std::string::String>,
 }
-impl UpdateQuickResponseInput {
+impl  UpdateQuickResponseInput  {
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
+    pub fn knowledge_base_id(&self) -> ::std::option::Option<& str> {
         self.knowledge_base_id.as_deref()
     }
     /// <p>The identifier of the quick response.</p>
-    pub fn quick_response_id(&self) -> ::std::option::Option<&str> {
+    pub fn quick_response_id(&self) -> ::std::option::Option<& str> {
         self.quick_response_id.as_deref()
     }
     /// <p>The name of the quick response.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The updated content of the quick response.</p>
-    pub fn content(&self) -> ::std::option::Option<&crate::types::QuickResponseDataProvider> {
+    pub fn content(&self) -> ::std::option::Option<& crate::types::QuickResponseDataProvider> {
         self.content.as_ref()
     }
     /// <p>The media type of the quick response content.</p>
@@ -62,11 +62,11 @@ impl UpdateQuickResponseInput {
     /// <li>
     /// <p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p></li>
     /// </ul>
-    pub fn content_type(&self) -> ::std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>The updated grouping configuration of the quick response.</p>
-    pub fn grouping_configuration(&self) -> ::std::option::Option<&crate::types::GroupingConfiguration> {
+    pub fn grouping_configuration(&self) -> ::std::option::Option<& crate::types::GroupingConfiguration> {
         self.grouping_configuration.as_ref()
     }
     /// <p>Whether to remove the grouping configuration of the quick response.</p>
@@ -74,7 +74,7 @@ impl UpdateQuickResponseInput {
         self.remove_grouping_configuration
     }
     /// <p>The updated description of the quick response.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Whether to remove the description from the quick response.</p>
@@ -82,7 +82,7 @@ impl UpdateQuickResponseInput {
         self.remove_description
     }
     /// <p>The shortcut key of the quick response. The value should be unique across the knowledge base.</p>
-    pub fn shortcut_key(&self) -> ::std::option::Option<&str> {
+    pub fn shortcut_key(&self) -> ::std::option::Option<& str> {
         self.shortcut_key.as_deref()
     }
     /// <p>Whether to remove the shortcut key of the quick response.</p>
@@ -94,13 +94,14 @@ impl UpdateQuickResponseInput {
         self.is_active
     }
     /// <p>The Amazon Connect contact channels this quick response applies to. The supported contact channel types include <code>Chat</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channels.is_none()`.
-    pub fn channels(&self) -> &[::std::string::String] {
-        self.channels.as_deref().unwrap_or_default()
+    pub fn channels(&self) -> & [::std::string::String] {
+        self.channels.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code></p>
-    pub fn language(&self) -> ::std::option::Option<&str> {
+    pub fn language(&self) -> ::std::option::Option<& str> {
         self.language.as_deref()
     }
 }
@@ -127,7 +128,7 @@ pub struct UpdateQuickResponseInputBuilder {
     pub(crate) shortcut_key: ::std::option::Option<::std::string::String>,
     pub(crate) remove_shortcut_key: ::std::option::Option<bool>,
     pub(crate) is_active: ::std::option::Option<bool>,
-    pub(crate) channels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) channels: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) language: ::std::option::Option<::std::string::String>,
 }
 impl UpdateQuickResponseInputBuilder {
@@ -139,8 +140,7 @@ impl UpdateQuickResponseInputBuilder {
     }
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.knowledge_base_id = input;
-        self
+        self.knowledge_base_id = input; self
     }
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Amazon Q Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,8 +154,7 @@ impl UpdateQuickResponseInputBuilder {
     }
     /// <p>The identifier of the quick response.</p>
     pub fn set_quick_response_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.quick_response_id = input;
-        self
+        self.quick_response_id = input; self
     }
     /// <p>The identifier of the quick response.</p>
     pub fn get_quick_response_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -168,8 +167,7 @@ impl UpdateQuickResponseInputBuilder {
     }
     /// <p>The name of the quick response.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the quick response.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -182,8 +180,7 @@ impl UpdateQuickResponseInputBuilder {
     }
     /// <p>The updated content of the quick response.</p>
     pub fn set_content(mut self, input: ::std::option::Option<crate::types::QuickResponseDataProvider>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>The updated content of the quick response.</p>
     pub fn get_content(&self) -> &::std::option::Option<crate::types::QuickResponseDataProvider> {
@@ -208,8 +205,7 @@ impl UpdateQuickResponseInputBuilder {
     /// <p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p></li>
     /// </ul>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>The media type of the quick response content.</p>
     /// <ul>
@@ -228,8 +224,7 @@ impl UpdateQuickResponseInputBuilder {
     }
     /// <p>The updated grouping configuration of the quick response.</p>
     pub fn set_grouping_configuration(mut self, input: ::std::option::Option<crate::types::GroupingConfiguration>) -> Self {
-        self.grouping_configuration = input;
-        self
+        self.grouping_configuration = input; self
     }
     /// <p>The updated grouping configuration of the quick response.</p>
     pub fn get_grouping_configuration(&self) -> &::std::option::Option<crate::types::GroupingConfiguration> {
@@ -242,8 +237,7 @@ impl UpdateQuickResponseInputBuilder {
     }
     /// <p>Whether to remove the grouping configuration of the quick response.</p>
     pub fn set_remove_grouping_configuration(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.remove_grouping_configuration = input;
-        self
+        self.remove_grouping_configuration = input; self
     }
     /// <p>Whether to remove the grouping configuration of the quick response.</p>
     pub fn get_remove_grouping_configuration(&self) -> &::std::option::Option<bool> {
@@ -256,8 +250,7 @@ impl UpdateQuickResponseInputBuilder {
     }
     /// <p>The updated description of the quick response.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The updated description of the quick response.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -270,8 +263,7 @@ impl UpdateQuickResponseInputBuilder {
     }
     /// <p>Whether to remove the description from the quick response.</p>
     pub fn set_remove_description(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.remove_description = input;
-        self
+        self.remove_description = input; self
     }
     /// <p>Whether to remove the description from the quick response.</p>
     pub fn get_remove_description(&self) -> &::std::option::Option<bool> {
@@ -284,8 +276,7 @@ impl UpdateQuickResponseInputBuilder {
     }
     /// <p>The shortcut key of the quick response. The value should be unique across the knowledge base.</p>
     pub fn set_shortcut_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.shortcut_key = input;
-        self
+        self.shortcut_key = input; self
     }
     /// <p>The shortcut key of the quick response. The value should be unique across the knowledge base.</p>
     pub fn get_shortcut_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -298,8 +289,7 @@ impl UpdateQuickResponseInputBuilder {
     }
     /// <p>Whether to remove the shortcut key of the quick response.</p>
     pub fn set_remove_shortcut_key(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.remove_shortcut_key = input;
-        self
+        self.remove_shortcut_key = input; self
     }
     /// <p>Whether to remove the shortcut key of the quick response.</p>
     pub fn get_remove_shortcut_key(&self) -> &::std::option::Option<bool> {
@@ -312,8 +302,7 @@ impl UpdateQuickResponseInputBuilder {
     }
     /// <p>Whether the quick response is active.</p>
     pub fn set_is_active(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_active = input;
-        self
+        self.is_active = input; self
     }
     /// <p>Whether the quick response is active.</p>
     pub fn get_is_active(&self) -> &::std::option::Option<bool> {
@@ -326,17 +315,16 @@ impl UpdateQuickResponseInputBuilder {
     /// <p>The Amazon Connect contact channels this quick response applies to. The supported contact channel types include <code>Chat</code>.</p>
     pub fn channels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.channels.unwrap_or_default();
-        v.push(input.into());
-        self.channels = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.channels = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Connect contact channels this quick response applies to. The supported contact channel types include <code>Chat</code>.</p>
-    pub fn set_channels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.channels = input;
-        self
+    pub fn set_channels(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.channels = input; self
     }
     /// <p>The Amazon Connect contact channels this quick response applies to. The supported contact channel types include <code>Chat</code>.</p>
-    pub fn get_channels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_channels(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.channels
     }
     /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code></p>
@@ -346,33 +334,46 @@ impl UpdateQuickResponseInputBuilder {
     }
     /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code></p>
     pub fn set_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.language = input;
-        self
+        self.language = input; self
     }
     /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code></p>
     pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
         &self.language
     }
     /// Consumes the builder and constructs a [`UpdateQuickResponseInput`](crate::operation::update_quick_response::UpdateQuickResponseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_quick_response::UpdateQuickResponseInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_quick_response::UpdateQuickResponseInput {
-            knowledge_base_id: self.knowledge_base_id,
-            quick_response_id: self.quick_response_id,
-            name: self.name,
-            content: self.content,
-            content_type: self.content_type,
-            grouping_configuration: self.grouping_configuration,
-            remove_grouping_configuration: self.remove_grouping_configuration,
-            description: self.description,
-            remove_description: self.remove_description,
-            shortcut_key: self.shortcut_key,
-            remove_shortcut_key: self.remove_shortcut_key,
-            is_active: self.is_active,
-            channels: self.channels,
-            language: self.language,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_quick_response::UpdateQuickResponseInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_quick_response::UpdateQuickResponseInput {
+                knowledge_base_id: self.knowledge_base_id
+                ,
+                quick_response_id: self.quick_response_id
+                ,
+                name: self.name
+                ,
+                content: self.content
+                ,
+                content_type: self.content_type
+                ,
+                grouping_configuration: self.grouping_configuration
+                ,
+                remove_grouping_configuration: self.remove_grouping_configuration
+                ,
+                description: self.description
+                ,
+                remove_description: self.remove_description
+                ,
+                shortcut_key: self.shortcut_key
+                ,
+                remove_shortcut_key: self.remove_shortcut_key
+                ,
+                is_active: self.is_active
+                ,
+                channels: self.channels
+                ,
+                language: self.language
+                ,
+            }
+        )
     }
 }
+

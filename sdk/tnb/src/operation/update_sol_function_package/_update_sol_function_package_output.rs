@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSolFunctionPackageOutput {
+pub struct UpdateSolFunctionPackageOutput  {
     /// <p>Operational state of the function package.</p>
     pub operational_state: crate::types::OperationalState,
     _request_id: Option<String>,
 }
-impl UpdateSolFunctionPackageOutput {
+impl  UpdateSolFunctionPackageOutput  {
     /// <p>Operational state of the function package.</p>
-    pub fn operational_state(&self) -> &crate::types::OperationalState {
+    pub fn operational_state(&self) -> & crate::types::OperationalState {
         &self.operational_state
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateSolFunctionPackageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateSolFunctionPackageOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSolFunctionPackageOutput`](crate::operation::update_sol_function_package::UpdateSolFunctionPackageOutput).
     pub fn builder() -> crate::operation::update_sol_function_package::builders::UpdateSolFunctionPackageOutputBuilder {
@@ -41,39 +41,35 @@ impl UpdateSolFunctionPackageOutputBuilder {
     }
     /// <p>Operational state of the function package.</p>
     pub fn set_operational_state(mut self, input: ::std::option::Option<crate::types::OperationalState>) -> Self {
-        self.operational_state = input;
-        self
+        self.operational_state = input; self
     }
     /// <p>Operational state of the function package.</p>
     pub fn get_operational_state(&self) -> &::std::option::Option<crate::types::OperationalState> {
         &self.operational_state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateSolFunctionPackageOutput`](crate::operation::update_sol_function_package::UpdateSolFunctionPackageOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`operational_state`](crate::operation::update_sol_function_package::builders::UpdateSolFunctionPackageOutputBuilder::operational_state)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_sol_function_package::UpdateSolFunctionPackageOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_sol_function_package::UpdateSolFunctionPackageOutput {
-            operational_state: self.operational_state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "operational_state",
-                    "operational_state was not specified but it is required when building UpdateSolFunctionPackageOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_sol_function_package::UpdateSolFunctionPackageOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_sol_function_package::UpdateSolFunctionPackageOutput {
+                operational_state: self.operational_state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("operational_state", "operational_state was not specified but it is required when building UpdateSolFunctionPackageOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

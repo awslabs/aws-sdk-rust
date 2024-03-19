@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
-pub struct GetImageSetMetadataOutput {
+pub struct GetImageSetMetadataOutput  {
     /// <p>The blob containing the aggregated metadata information for the image set.</p>
     pub image_set_metadata_blob: ::aws_smithy_types::byte_stream::ByteStream,
     /// <p>The format in which the study metadata is returned to the customer. Default is <code>text/plain</code>.</p>
@@ -11,25 +11,25 @@ pub struct GetImageSetMetadataOutput {
     pub content_encoding: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetImageSetMetadataOutput {
+impl  GetImageSetMetadataOutput  {
     /// <p>The blob containing the aggregated metadata information for the image set.</p>
-    pub fn image_set_metadata_blob(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
+    pub fn image_set_metadata_blob(&self) -> & ::aws_smithy_types::byte_stream::ByteStream {
         &self.image_set_metadata_blob
     }
     /// <p>The format in which the study metadata is returned to the customer. Default is <code>text/plain</code>.</p>
-    pub fn content_type(&self) -> ::std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>The compression format in which image set metadata attributes are returned.</p>
-    pub fn content_encoding(&self) -> ::std::option::Option<&str> {
+    pub fn content_encoding(&self) -> ::std::option::Option<& str> {
         self.content_encoding.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetImageSetMetadataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetImageSetMetadataOutput {
     /// Creates a new builder-style object to manufacture [`GetImageSetMetadataOutput`](crate::operation::get_image_set_metadata::GetImageSetMetadataOutput).
     pub fn builder() -> crate::operation::get_image_set_metadata::builders::GetImageSetMetadataOutputBuilder {
@@ -55,8 +55,7 @@ impl GetImageSetMetadataOutputBuilder {
     }
     /// <p>The blob containing the aggregated metadata information for the image set.</p>
     pub fn set_image_set_metadata_blob(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
-        self.image_set_metadata_blob = input;
-        self
+        self.image_set_metadata_blob = input; self
     }
     /// <p>The blob containing the aggregated metadata information for the image set.</p>
     pub fn get_image_set_metadata_blob(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
@@ -69,8 +68,7 @@ impl GetImageSetMetadataOutputBuilder {
     }
     /// <p>The format in which the study metadata is returned to the customer. Default is <code>text/plain</code>.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>The format in which the study metadata is returned to the customer. Default is <code>text/plain</code>.</p>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,29 +81,33 @@ impl GetImageSetMetadataOutputBuilder {
     }
     /// <p>The compression format in which image set metadata attributes are returned.</p>
     pub fn set_content_encoding(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_encoding = input;
-        self
+        self.content_encoding = input; self
     }
     /// <p>The compression format in which image set metadata attributes are returned.</p>
     pub fn get_content_encoding(&self) -> &::std::option::Option<::std::string::String> {
         &self.content_encoding
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetImageSetMetadataOutput`](crate::operation::get_image_set_metadata::GetImageSetMetadataOutput).
     pub fn build(self) -> crate::operation::get_image_set_metadata::GetImageSetMetadataOutput {
         crate::operation::get_image_set_metadata::GetImageSetMetadataOutput {
-            image_set_metadata_blob: self.image_set_metadata_blob.unwrap_or_default(),
-            content_type: self.content_type,
-            content_encoding: self.content_encoding,
+            image_set_metadata_blob: self.image_set_metadata_blob
+                .unwrap_or_default()
+            ,
+            content_type: self.content_type
+            ,
+            content_encoding: self.content_encoding
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

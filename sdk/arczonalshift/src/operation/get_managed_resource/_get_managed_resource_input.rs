@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetManagedResourceInput {
+pub struct GetManagedResourceInput  {
     /// <p>The identifier for the resource to shift away traffic for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     /// <p>At this time, supported resources are Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
     pub resource_identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetManagedResourceInput {
+impl  GetManagedResourceInput  {
     /// <p>The identifier for the resource to shift away traffic for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     /// <p>At this time, supported resources are Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
-    pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn resource_identifier(&self) -> ::std::option::Option<& str> {
         self.resource_identifier.as_deref()
     }
 }
@@ -38,8 +38,7 @@ impl GetManagedResourceInputBuilder {
     /// <p>The identifier for the resource to shift away traffic for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     /// <p>At this time, supported resources are Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
     pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_identifier = input;
-        self
+        self.resource_identifier = input; self
     }
     /// <p>The identifier for the resource to shift away traffic for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     /// <p>At this time, supported resources are Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
@@ -47,12 +46,13 @@ impl GetManagedResourceInputBuilder {
         &self.resource_identifier
     }
     /// Consumes the builder and constructs a [`GetManagedResourceInput`](crate::operation::get_managed_resource::GetManagedResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_managed_resource::GetManagedResourceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_managed_resource::GetManagedResourceInput {
-            resource_identifier: self.resource_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_managed_resource::GetManagedResourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_managed_resource::GetManagedResourceInput {
+                resource_identifier: self.resource_identifier
+                ,
+            }
+        )
     }
 }
+

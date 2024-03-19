@@ -3,23 +3,23 @@
 /// <p>Configuration details of the component.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ComponentConfiguration {
+pub struct ComponentConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
     pub component_arn: ::std::string::String,
     /// <p>A group of parameter settings that Image Builder uses to configure the component for a specific recipe.</p>
-    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::ComponentParameter>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec::<crate::types::ComponentParameter>>,
 }
-impl ComponentConfiguration {
+impl  ComponentConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
-    pub fn component_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.component_arn.deref()
+    pub fn component_arn(&self) -> & str {
+        use std::ops::Deref; self.component_arn.deref()
     }
     /// <p>A group of parameter settings that Image Builder uses to configure the component for a specific recipe.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
-    pub fn parameters(&self) -> &[crate::types::ComponentParameter] {
-        self.parameters.as_deref().unwrap_or_default()
+    pub fn parameters(&self) -> & [crate::types::ComponentParameter] {
+        self.parameters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ComponentConfiguration {
@@ -34,7 +34,7 @@ impl ComponentConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ComponentConfigurationBuilder {
     pub(crate) component_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::ComponentParameter>>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec::<crate::types::ComponentParameter>>,
 }
 impl ComponentConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
@@ -45,8 +45,7 @@ impl ComponentConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
     pub fn set_component_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_arn = input;
-        self
+        self.component_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
     pub fn get_component_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,31 +58,33 @@ impl ComponentConfigurationBuilder {
     /// <p>A group of parameter settings that Image Builder uses to configure the component for a specific recipe.</p>
     pub fn parameters(mut self, input: crate::types::ComponentParameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A group of parameter settings that Image Builder uses to configure the component for a specific recipe.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentParameter>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ComponentParameter>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>A group of parameter settings that Image Builder uses to configure the component for a specific recipe.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentParameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ComponentParameter>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`ComponentConfiguration`](crate::types::ComponentConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`component_arn`](crate::types::builders::ComponentConfigurationBuilder::component_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::ComponentConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ComponentConfiguration {
-            component_arn: self.component_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "component_arn",
-                    "component_arn was not specified but it is required when building ComponentConfiguration",
-                )
-            })?,
-            parameters: self.parameters,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ComponentConfiguration {
+                component_arn: self.component_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("component_arn", "component_arn was not specified but it is required when building ComponentConfiguration")
+                    )?
+                ,
+                parameters: self.parameters
+                ,
+            }
+        )
     }
 }
+

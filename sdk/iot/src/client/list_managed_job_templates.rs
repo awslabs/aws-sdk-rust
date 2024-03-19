@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListManagedJobTemplates`](crate::operation::list_managed_job_templates::builders::ListManagedJobTemplatesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_managed_job_templates::builders::ListManagedJobTemplatesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`template_name(impl Into<String>)`](crate::operation::list_managed_job_templates::builders::ListManagedJobTemplatesFluentBuilder::template_name) / [`set_template_name(Option<String>)`](crate::operation::list_managed_job_templates::builders::ListManagedJobTemplatesFluentBuilder::set_template_name):<br>required: **false**<br><p>An optional parameter for template name. If specified, only the versions of the managed job templates that have the specified template name will be returned.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_managed_job_templates::builders::ListManagedJobTemplatesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_managed_job_templates::builders::ListManagedJobTemplatesFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of entries that can be returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_managed_job_templates::builders::ListManagedJobTemplatesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_managed_job_templates::builders::ListManagedJobTemplatesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to retrieve the next set of results.</p><br>
-    /// - On success, responds with [`ListManagedJobTemplatesOutput`](crate::operation::list_managed_job_templates::ListManagedJobTemplatesOutput) with field(s):
+                            /// - On success, responds with [`ListManagedJobTemplatesOutput`](crate::operation::list_managed_job_templates::ListManagedJobTemplatesOutput) with field(s):
     ///   - [`managed_job_templates(Option<Vec::<ManagedJobTemplateSummary>>)`](crate::operation::list_managed_job_templates::ListManagedJobTemplatesOutput::managed_job_templates): <p>A list of managed job templates that are returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_managed_job_templates::ListManagedJobTemplatesOutput::next_token): <p>The token to retrieve the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListManagedJobTemplatesError>`](crate::operation::list_managed_job_templates::ListManagedJobTemplatesError)
+                            /// - On failure, responds with [`SdkError<ListManagedJobTemplatesError>`](crate::operation::list_managed_job_templates::ListManagedJobTemplatesError)
     pub fn list_managed_job_templates(&self) -> crate::operation::list_managed_job_templates::builders::ListManagedJobTemplatesFluentBuilder {
-        crate::operation::list_managed_job_templates::builders::ListManagedJobTemplatesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_managed_job_templates::builders::ListManagedJobTemplatesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

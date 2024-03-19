@@ -3,7 +3,7 @@
 /// <p>Information about an environment member for an Cloud9 development environment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnvironmentMember {
+pub struct EnvironmentMember  {
     /// <p>The type of environment member permissions associated with this environment member. Available values include:</p>
     /// <ul>
     /// <li>
@@ -23,7 +23,7 @@ pub struct EnvironmentMember {
     /// <p>The time, expressed in epoch time format, when the environment member last opened the environment.</p>
     pub last_access: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl EnvironmentMember {
+impl  EnvironmentMember  {
     /// <p>The type of environment member permissions associated with this environment member. Available values include:</p>
     /// <ul>
     /// <li>
@@ -33,26 +33,23 @@ impl EnvironmentMember {
     /// <li>
     /// <p><code>read-write</code>: Has read-write access to the environment.</p></li>
     /// </ul>
-    pub fn permissions(&self) -> &crate::types::Permissions {
+    pub fn permissions(&self) -> & crate::types::Permissions {
         &self.permissions
     }
     /// <p>The user ID in Identity and Access Management (IAM) of the environment member.</p>
-    pub fn user_id(&self) -> &str {
-        use std::ops::Deref;
-        self.user_id.deref()
+    pub fn user_id(&self) -> & str {
+        use std::ops::Deref; self.user_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the environment member.</p>
-    pub fn user_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.user_arn.deref()
+    pub fn user_arn(&self) -> & str {
+        use std::ops::Deref; self.user_arn.deref()
     }
     /// <p>The ID of the environment for the environment member.</p>
-    pub fn environment_id(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_id.deref()
+    pub fn environment_id(&self) -> & str {
+        use std::ops::Deref; self.environment_id.deref()
     }
     /// <p>The time, expressed in epoch time format, when the environment member last opened the environment.</p>
-    pub fn last_access(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_access(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_access.as_ref()
     }
 }
@@ -98,8 +95,7 @@ impl EnvironmentMemberBuilder {
     /// <p><code>read-write</code>: Has read-write access to the environment.</p></li>
     /// </ul>
     pub fn set_permissions(mut self, input: ::std::option::Option<crate::types::Permissions>) -> Self {
-        self.permissions = input;
-        self
+        self.permissions = input; self
     }
     /// <p>The type of environment member permissions associated with this environment member. Available values include:</p>
     /// <ul>
@@ -121,8 +117,7 @@ impl EnvironmentMemberBuilder {
     }
     /// <p>The user ID in Identity and Access Management (IAM) of the environment member.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The user ID in Identity and Access Management (IAM) of the environment member.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +131,7 @@ impl EnvironmentMemberBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the environment member.</p>
     pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_arn = input;
-        self
+        self.user_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the environment member.</p>
     pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,8 +145,7 @@ impl EnvironmentMemberBuilder {
     }
     /// <p>The ID of the environment for the environment member.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>The ID of the environment for the environment member.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,8 +158,7 @@ impl EnvironmentMemberBuilder {
     }
     /// <p>The time, expressed in epoch time format, when the environment member last opened the environment.</p>
     pub fn set_last_access(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_access = input;
-        self
+        self.last_access = input; self
     }
     /// <p>The time, expressed in epoch time format, when the environment member last opened the environment.</p>
     pub fn get_last_access(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -179,32 +171,32 @@ impl EnvironmentMemberBuilder {
     /// - [`user_arn`](crate::types::builders::EnvironmentMemberBuilder::user_arn)
     /// - [`environment_id`](crate::types::builders::EnvironmentMemberBuilder::environment_id)
     pub fn build(self) -> ::std::result::Result<crate::types::EnvironmentMember, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EnvironmentMember {
-            permissions: self.permissions.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "permissions",
-                    "permissions was not specified but it is required when building EnvironmentMember",
-                )
-            })?,
-            user_id: self.user_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user_id",
-                    "user_id was not specified but it is required when building EnvironmentMember",
-                )
-            })?,
-            user_arn: self.user_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user_arn",
-                    "user_arn was not specified but it is required when building EnvironmentMember",
-                )
-            })?,
-            environment_id: self.environment_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "environment_id",
-                    "environment_id was not specified but it is required when building EnvironmentMember",
-                )
-            })?,
-            last_access: self.last_access,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EnvironmentMember {
+                permissions: self.permissions
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("permissions", "permissions was not specified but it is required when building EnvironmentMember")
+                    )?
+                ,
+                user_id: self.user_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user_id", "user_id was not specified but it is required when building EnvironmentMember")
+                    )?
+                ,
+                user_arn: self.user_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user_arn", "user_arn was not specified but it is required when building EnvironmentMember")
+                    )?
+                ,
+                environment_id: self.environment_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("environment_id", "environment_id was not specified but it is required when building EnvironmentMember")
+                    )?
+                ,
+                last_access: self.last_access
+                ,
+            }
+        )
     }
 }
+

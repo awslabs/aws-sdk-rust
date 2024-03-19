@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEmergencyContactSettingsOutput {
+pub struct DescribeEmergencyContactSettingsOutput  {
     /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.</p>
-    pub emergency_contact_list: ::std::option::Option<::std::vec::Vec<crate::types::EmergencyContact>>,
+    pub emergency_contact_list: ::std::option::Option<::std::vec::Vec::<crate::types::EmergencyContact>>,
     _request_id: Option<String>,
 }
-impl DescribeEmergencyContactSettingsOutput {
+impl  DescribeEmergencyContactSettingsOutput  {
     /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.emergency_contact_list.is_none()`.
-    pub fn emergency_contact_list(&self) -> &[crate::types::EmergencyContact] {
-        self.emergency_contact_list.as_deref().unwrap_or_default()
+    pub fn emergency_contact_list(&self) -> & [crate::types::EmergencyContact] {
+        self.emergency_contact_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeEmergencyContactSettingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeEmergencyContactSettingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEmergencyContactSettingsOutput`](crate::operation::describe_emergency_contact_settings::DescribeEmergencyContactSettingsOutput).
     pub fn builder() -> crate::operation::describe_emergency_contact_settings::builders::DescribeEmergencyContactSettingsOutputBuilder {
@@ -31,7 +32,7 @@ impl DescribeEmergencyContactSettingsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEmergencyContactSettingsOutputBuilder {
-    pub(crate) emergency_contact_list: ::std::option::Option<::std::vec::Vec<crate::types::EmergencyContact>>,
+    pub(crate) emergency_contact_list: ::std::option::Option<::std::vec::Vec::<crate::types::EmergencyContact>>,
     _request_id: Option<String>,
 }
 impl DescribeEmergencyContactSettingsOutputBuilder {
@@ -42,33 +43,34 @@ impl DescribeEmergencyContactSettingsOutputBuilder {
     /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.</p>
     pub fn emergency_contact_list(mut self, input: crate::types::EmergencyContact) -> Self {
         let mut v = self.emergency_contact_list.unwrap_or_default();
-        v.push(input);
-        self.emergency_contact_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.emergency_contact_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.</p>
-    pub fn set_emergency_contact_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EmergencyContact>>) -> Self {
-        self.emergency_contact_list = input;
-        self
+    pub fn set_emergency_contact_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EmergencyContact>>) -> Self {
+        self.emergency_contact_list = input; self
     }
     /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.</p>
-    pub fn get_emergency_contact_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EmergencyContact>> {
+    pub fn get_emergency_contact_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EmergencyContact>> {
         &self.emergency_contact_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeEmergencyContactSettingsOutput`](crate::operation::describe_emergency_contact_settings::DescribeEmergencyContactSettingsOutput).
     pub fn build(self) -> crate::operation::describe_emergency_contact_settings::DescribeEmergencyContactSettingsOutput {
         crate::operation::describe_emergency_contact_settings::DescribeEmergencyContactSettingsOutput {
-            emergency_contact_list: self.emergency_contact_list,
+            emergency_contact_list: self.emergency_contact_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

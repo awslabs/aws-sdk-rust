@@ -3,7 +3,7 @@
 /// <p>Structure that describes scheduled query.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ScheduledQueryDescription {
+pub struct ScheduledQueryDescription  {
     /// <p>Scheduled query ARN.</p>
     pub arn: ::std::string::String,
     /// <p>Name of the scheduled query.</p>
@@ -33,76 +33,74 @@ pub struct ScheduledQueryDescription {
     /// <p>Runtime summary for the last scheduled query run.</p>
     pub last_run_summary: ::std::option::Option<crate::types::ScheduledQueryRunSummary>,
     /// <p>Runtime summary for the last five failed scheduled query runs.</p>
-    pub recently_failed_runs: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledQueryRunSummary>>,
+    pub recently_failed_runs: ::std::option::Option<::std::vec::Vec::<crate::types::ScheduledQueryRunSummary>>,
 }
-impl ScheduledQueryDescription {
+impl  ScheduledQueryDescription  {
     /// <p>Scheduled query ARN.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>Name of the scheduled query.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The query to be run.</p>
-    pub fn query_string(&self) -> &str {
-        use std::ops::Deref;
-        self.query_string.deref()
+    pub fn query_string(&self) -> & str {
+        use std::ops::Deref; self.query_string.deref()
     }
     /// <p>Creation time of the scheduled query.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>State of the scheduled query.</p>
-    pub fn state(&self) -> &crate::types::ScheduledQueryState {
+    pub fn state(&self) -> & crate::types::ScheduledQueryState {
         &self.state
     }
     /// <p>Last time the query was run.</p>
-    pub fn previous_invocation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn previous_invocation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.previous_invocation_time.as_ref()
     }
     /// <p>The next time the scheduled query is scheduled to run.</p>
-    pub fn next_invocation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn next_invocation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.next_invocation_time.as_ref()
     }
     /// <p>Schedule configuration.</p>
-    pub fn schedule_configuration(&self) -> ::std::option::Option<&crate::types::ScheduleConfiguration> {
+    pub fn schedule_configuration(&self) -> ::std::option::Option<& crate::types::ScheduleConfiguration> {
         self.schedule_configuration.as_ref()
     }
     /// <p>Notification configuration.</p>
-    pub fn notification_configuration(&self) -> ::std::option::Option<&crate::types::NotificationConfiguration> {
+    pub fn notification_configuration(&self) -> ::std::option::Option<& crate::types::NotificationConfiguration> {
         self.notification_configuration.as_ref()
     }
     /// <p>Scheduled query target store configuration.</p>
-    pub fn target_configuration(&self) -> ::std::option::Option<&crate::types::TargetConfiguration> {
+    pub fn target_configuration(&self) -> ::std::option::Option<& crate::types::TargetConfiguration> {
         self.target_configuration.as_ref()
     }
     /// <p>IAM role that Timestream uses to run the schedule query.</p>
-    pub fn scheduled_query_execution_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn scheduled_query_execution_role_arn(&self) -> ::std::option::Option<& str> {
         self.scheduled_query_execution_role_arn.as_deref()
     }
     /// <p>A customer provided KMS key used to encrypt the scheduled query resource.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Error-reporting configuration for the scheduled query.</p>
-    pub fn error_report_configuration(&self) -> ::std::option::Option<&crate::types::ErrorReportConfiguration> {
+    pub fn error_report_configuration(&self) -> ::std::option::Option<& crate::types::ErrorReportConfiguration> {
         self.error_report_configuration.as_ref()
     }
     /// <p>Runtime summary for the last scheduled query run.</p>
-    pub fn last_run_summary(&self) -> ::std::option::Option<&crate::types::ScheduledQueryRunSummary> {
+    pub fn last_run_summary(&self) -> ::std::option::Option<& crate::types::ScheduledQueryRunSummary> {
         self.last_run_summary.as_ref()
     }
     /// <p>Runtime summary for the last five failed scheduled query runs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recently_failed_runs.is_none()`.
-    pub fn recently_failed_runs(&self) -> &[crate::types::ScheduledQueryRunSummary] {
-        self.recently_failed_runs.as_deref().unwrap_or_default()
+    pub fn recently_failed_runs(&self) -> & [crate::types::ScheduledQueryRunSummary] {
+        self.recently_failed_runs.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for ScheduledQueryDescription {
+impl  ::std::fmt::Debug for ScheduledQueryDescription  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ScheduledQueryDescription");
         formatter.field("arn", &self.arn);
@@ -148,7 +146,7 @@ pub struct ScheduledQueryDescriptionBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) error_report_configuration: ::std::option::Option<crate::types::ErrorReportConfiguration>,
     pub(crate) last_run_summary: ::std::option::Option<crate::types::ScheduledQueryRunSummary>,
-    pub(crate) recently_failed_runs: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledQueryRunSummary>>,
+    pub(crate) recently_failed_runs: ::std::option::Option<::std::vec::Vec::<crate::types::ScheduledQueryRunSummary>>,
 }
 impl ScheduledQueryDescriptionBuilder {
     /// <p>Scheduled query ARN.</p>
@@ -159,8 +157,7 @@ impl ScheduledQueryDescriptionBuilder {
     }
     /// <p>Scheduled query ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>Scheduled query ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +171,7 @@ impl ScheduledQueryDescriptionBuilder {
     }
     /// <p>Name of the scheduled query.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of the scheduled query.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -189,8 +185,7 @@ impl ScheduledQueryDescriptionBuilder {
     }
     /// <p>The query to be run.</p>
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_string = input;
-        self
+        self.query_string = input; self
     }
     /// <p>The query to be run.</p>
     pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
@@ -203,8 +198,7 @@ impl ScheduledQueryDescriptionBuilder {
     }
     /// <p>Creation time of the scheduled query.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>Creation time of the scheduled query.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -218,8 +212,7 @@ impl ScheduledQueryDescriptionBuilder {
     }
     /// <p>State of the scheduled query.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ScheduledQueryState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>State of the scheduled query.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ScheduledQueryState> {
@@ -232,8 +225,7 @@ impl ScheduledQueryDescriptionBuilder {
     }
     /// <p>Last time the query was run.</p>
     pub fn set_previous_invocation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.previous_invocation_time = input;
-        self
+        self.previous_invocation_time = input; self
     }
     /// <p>Last time the query was run.</p>
     pub fn get_previous_invocation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -246,8 +238,7 @@ impl ScheduledQueryDescriptionBuilder {
     }
     /// <p>The next time the scheduled query is scheduled to run.</p>
     pub fn set_next_invocation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.next_invocation_time = input;
-        self
+        self.next_invocation_time = input; self
     }
     /// <p>The next time the scheduled query is scheduled to run.</p>
     pub fn get_next_invocation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -261,8 +252,7 @@ impl ScheduledQueryDescriptionBuilder {
     }
     /// <p>Schedule configuration.</p>
     pub fn set_schedule_configuration(mut self, input: ::std::option::Option<crate::types::ScheduleConfiguration>) -> Self {
-        self.schedule_configuration = input;
-        self
+        self.schedule_configuration = input; self
     }
     /// <p>Schedule configuration.</p>
     pub fn get_schedule_configuration(&self) -> &::std::option::Option<crate::types::ScheduleConfiguration> {
@@ -276,8 +266,7 @@ impl ScheduledQueryDescriptionBuilder {
     }
     /// <p>Notification configuration.</p>
     pub fn set_notification_configuration(mut self, input: ::std::option::Option<crate::types::NotificationConfiguration>) -> Self {
-        self.notification_configuration = input;
-        self
+        self.notification_configuration = input; self
     }
     /// <p>Notification configuration.</p>
     pub fn get_notification_configuration(&self) -> &::std::option::Option<crate::types::NotificationConfiguration> {
@@ -290,8 +279,7 @@ impl ScheduledQueryDescriptionBuilder {
     }
     /// <p>Scheduled query target store configuration.</p>
     pub fn set_target_configuration(mut self, input: ::std::option::Option<crate::types::TargetConfiguration>) -> Self {
-        self.target_configuration = input;
-        self
+        self.target_configuration = input; self
     }
     /// <p>Scheduled query target store configuration.</p>
     pub fn get_target_configuration(&self) -> &::std::option::Option<crate::types::TargetConfiguration> {
@@ -304,8 +292,7 @@ impl ScheduledQueryDescriptionBuilder {
     }
     /// <p>IAM role that Timestream uses to run the schedule query.</p>
     pub fn set_scheduled_query_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scheduled_query_execution_role_arn = input;
-        self
+        self.scheduled_query_execution_role_arn = input; self
     }
     /// <p>IAM role that Timestream uses to run the schedule query.</p>
     pub fn get_scheduled_query_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -318,8 +305,7 @@ impl ScheduledQueryDescriptionBuilder {
     }
     /// <p>A customer provided KMS key used to encrypt the scheduled query resource.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>A customer provided KMS key used to encrypt the scheduled query resource.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -332,8 +318,7 @@ impl ScheduledQueryDescriptionBuilder {
     }
     /// <p>Error-reporting configuration for the scheduled query.</p>
     pub fn set_error_report_configuration(mut self, input: ::std::option::Option<crate::types::ErrorReportConfiguration>) -> Self {
-        self.error_report_configuration = input;
-        self
+        self.error_report_configuration = input; self
     }
     /// <p>Error-reporting configuration for the scheduled query.</p>
     pub fn get_error_report_configuration(&self) -> &::std::option::Option<crate::types::ErrorReportConfiguration> {
@@ -346,8 +331,7 @@ impl ScheduledQueryDescriptionBuilder {
     }
     /// <p>Runtime summary for the last scheduled query run.</p>
     pub fn set_last_run_summary(mut self, input: ::std::option::Option<crate::types::ScheduledQueryRunSummary>) -> Self {
-        self.last_run_summary = input;
-        self
+        self.last_run_summary = input; self
     }
     /// <p>Runtime summary for the last scheduled query run.</p>
     pub fn get_last_run_summary(&self) -> &::std::option::Option<crate::types::ScheduledQueryRunSummary> {
@@ -360,17 +344,16 @@ impl ScheduledQueryDescriptionBuilder {
     /// <p>Runtime summary for the last five failed scheduled query runs.</p>
     pub fn recently_failed_runs(mut self, input: crate::types::ScheduledQueryRunSummary) -> Self {
         let mut v = self.recently_failed_runs.unwrap_or_default();
-        v.push(input);
-        self.recently_failed_runs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.recently_failed_runs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Runtime summary for the last five failed scheduled query runs.</p>
-    pub fn set_recently_failed_runs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledQueryRunSummary>>) -> Self {
-        self.recently_failed_runs = input;
-        self
+    pub fn set_recently_failed_runs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ScheduledQueryRunSummary>>) -> Self {
+        self.recently_failed_runs = input; self
     }
     /// <p>Runtime summary for the last five failed scheduled query runs.</p>
-    pub fn get_recently_failed_runs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledQueryRunSummary>> {
+    pub fn get_recently_failed_runs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ScheduledQueryRunSummary>> {
         &self.recently_failed_runs
     }
     /// Consumes the builder and constructs a [`ScheduledQueryDescription`](crate::types::ScheduledQueryDescription).
@@ -380,43 +363,52 @@ impl ScheduledQueryDescriptionBuilder {
     /// - [`query_string`](crate::types::builders::ScheduledQueryDescriptionBuilder::query_string)
     /// - [`state`](crate::types::builders::ScheduledQueryDescriptionBuilder::state)
     pub fn build(self) -> ::std::result::Result<crate::types::ScheduledQueryDescription, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ScheduledQueryDescription {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building ScheduledQueryDescription",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ScheduledQueryDescription",
-                )
-            })?,
-            query_string: self.query_string.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "query_string",
-                    "query_string was not specified but it is required when building ScheduledQueryDescription",
-                )
-            })?,
-            creation_time: self.creation_time,
-            state: self.state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state",
-                    "state was not specified but it is required when building ScheduledQueryDescription",
-                )
-            })?,
-            previous_invocation_time: self.previous_invocation_time,
-            next_invocation_time: self.next_invocation_time,
-            schedule_configuration: self.schedule_configuration,
-            notification_configuration: self.notification_configuration,
-            target_configuration: self.target_configuration,
-            scheduled_query_execution_role_arn: self.scheduled_query_execution_role_arn,
-            kms_key_id: self.kms_key_id,
-            error_report_configuration: self.error_report_configuration,
-            last_run_summary: self.last_run_summary,
-            recently_failed_runs: self.recently_failed_runs,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ScheduledQueryDescription {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building ScheduledQueryDescription")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ScheduledQueryDescription")
+                    )?
+                ,
+                query_string: self.query_string
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("query_string", "query_string was not specified but it is required when building ScheduledQueryDescription")
+                    )?
+                ,
+                creation_time: self.creation_time
+                ,
+                state: self.state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state", "state was not specified but it is required when building ScheduledQueryDescription")
+                    )?
+                ,
+                previous_invocation_time: self.previous_invocation_time
+                ,
+                next_invocation_time: self.next_invocation_time
+                ,
+                schedule_configuration: self.schedule_configuration
+                ,
+                notification_configuration: self.notification_configuration
+                ,
+                target_configuration: self.target_configuration
+                ,
+                scheduled_query_execution_role_arn: self.scheduled_query_execution_role_arn
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                error_report_configuration: self.error_report_configuration
+                ,
+                last_run_summary: self.last_run_summary
+                ,
+                recently_failed_runs: self.recently_failed_runs
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ScheduledQueryDescriptionBuilder {
@@ -440,3 +432,4 @@ impl ::std::fmt::Debug for ScheduledQueryDescriptionBuilder {
         formatter.finish()
     }
 }
+

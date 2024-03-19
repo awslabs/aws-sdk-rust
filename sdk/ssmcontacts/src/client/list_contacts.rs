@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListContacts`](crate::operation::list_contacts::builders::ListContactsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_contacts::builders::ListContactsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_contacts::builders::ListContactsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_contacts::builders::ListContactsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token to continue to the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_contacts::builders::ListContactsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_contacts::builders::ListContactsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of contacts and escalation plans per page of results.</p><br>
     ///   - [`alias_prefix(impl Into<String>)`](crate::operation::list_contacts::builders::ListContactsFluentBuilder::alias_prefix) / [`set_alias_prefix(Option<String>)`](crate::operation::list_contacts::builders::ListContactsFluentBuilder::set_alias_prefix):<br>required: **false**<br><p>Used to list only contacts who's aliases start with the specified prefix.</p><br>
     ///   - [`r#type(ContactType)`](crate::operation::list_contacts::builders::ListContactsFluentBuilder::type) / [`set_type(Option<ContactType>)`](crate::operation::list_contacts::builders::ListContactsFluentBuilder::set_type):<br>required: **false**<br><p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p><br>
-    /// - On success, responds with [`ListContactsOutput`](crate::operation::list_contacts::ListContactsOutput) with field(s):
+                            /// - On success, responds with [`ListContactsOutput`](crate::operation::list_contacts::ListContactsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_contacts::ListContactsOutput::next_token): <p>The pagination token to continue to the next page of results.</p>
     ///   - [`contacts(Option<Vec::<Contact>>)`](crate::operation::list_contacts::ListContactsOutput::contacts): <p>A list of the contacts and escalation plans in your Incident Manager account.</p>
-    /// - On failure, responds with [`SdkError<ListContactsError>`](crate::operation::list_contacts::ListContactsError)
+                            /// - On failure, responds with [`SdkError<ListContactsError>`](crate::operation::list_contacts::ListContactsError)
     pub fn list_contacts(&self) -> crate::operation::list_contacts::builders::ListContactsFluentBuilder {
-        crate::operation::list_contacts::builders::ListContactsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_contacts::builders::ListContactsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

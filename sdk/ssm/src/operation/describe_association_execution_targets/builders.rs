@@ -5,54 +5,50 @@ pub use crate::operation::describe_association_execution_targets::_describe_asso
 
 impl DescribeAssociationExecutionTargetsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_association_execution_targets();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_association_execution_targets();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeAssociationExecutionTargets`.
-///
+/// 
 /// <p>Views information about a specific execution of a specific association.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAssociationExecutionTargetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_association_execution_targets::builders::DescribeAssociationExecutionTargetsInputBuilder,
+                    inner: crate::operation::describe_association_execution_targets::builders::DescribeAssociationExecutionTargetsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsOutput,
-        crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsError,
-    > for DescribeAssociationExecutionTargetsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsOutput,
-            crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsOutput,
+                    crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsError,
+                > for DescribeAssociationExecutionTargetsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsOutput,
+                        crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeAssociationExecutionTargetsFluentBuilder {
     /// Creates a new `DescribeAssociationExecutionTargets`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,63 +57,50 @@ impl DescribeAssociationExecutionTargetsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins =
-            crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargets::operation_runtime_plugins(
-                self.handle.runtime_plugins.clone(),
-                &self.handle.conf,
-                self.config_override,
-            );
-        crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargets::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsOutput,
-        crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargets::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargets::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsOutput, crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_association_execution_targets::paginator::DescribeAssociationExecutionTargetsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::describe_association_execution_targets::paginator::DescribeAssociationExecutionTargetsPaginator {
-        crate::operation::describe_association_execution_targets::paginator::DescribeAssociationExecutionTargetsPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_association_execution_targets::paginator::DescribeAssociationExecutionTargetsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::describe_association_execution_targets::paginator::DescribeAssociationExecutionTargetsPaginator {
+                                crate::operation::describe_association_execution_targets::paginator::DescribeAssociationExecutionTargetsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The association ID that includes the execution for which you want to view details.</p>
     pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.association_id(input.into());
@@ -162,7 +145,7 @@ impl DescribeAssociationExecutionTargetsFluentBuilder {
     /// <p>Status (EQUAL)</p>
     /// <p>ResourceId (EQUAL)</p>
     /// <p>ResourceType (EQUAL)</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociationExecutionTargetsFilter>>) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssociationExecutionTargetsFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -170,7 +153,7 @@ impl DescribeAssociationExecutionTargetsFluentBuilder {
     /// <p>Status (EQUAL)</p>
     /// <p>ResourceId (EQUAL)</p>
     /// <p>ResourceType (EQUAL)</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationExecutionTargetsFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssociationExecutionTargetsFilter>> {
         self.inner.get_filters()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -202,3 +185,4 @@ impl DescribeAssociationExecutionTargetsFluentBuilder {
         self.inner.get_next_token()
     }
 }
+

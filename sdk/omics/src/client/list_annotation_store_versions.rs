@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAnnotationStoreVersions`](crate::operation::list_annotation_store_versions::builders::ListAnnotationStoreVersionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_annotation_store_versions::builders::ListAnnotationStoreVersionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::operation::list_annotation_store_versions::builders::ListAnnotationStoreVersionsFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::list_annotation_store_versions::builders::ListAnnotationStoreVersionsFluentBuilder::set_name):<br>required: **true**<br><p>The name of an annotation store.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_annotation_store_versions::builders::ListAnnotationStoreVersionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_annotation_store_versions::builders::ListAnnotationStoreVersionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of annotation store versions to return in one page of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_annotation_store_versions::builders::ListAnnotationStoreVersionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_annotation_store_versions::builders::ListAnnotationStoreVersionsFluentBuilder::set_next_token):<br>required: **false**<br><p>Specifies the pagination token from a previous request to retrieve the next page of results.</p><br>
     ///   - [`filter(ListAnnotationStoreVersionsFilter)`](crate::operation::list_annotation_store_versions::builders::ListAnnotationStoreVersionsFluentBuilder::filter) / [`set_filter(Option<ListAnnotationStoreVersionsFilter>)`](crate::operation::list_annotation_store_versions::builders::ListAnnotationStoreVersionsFluentBuilder::set_filter):<br>required: **false**<br><p>A filter to apply to the list of annotation store versions.</p><br>
-    /// - On success, responds with [`ListAnnotationStoreVersionsOutput`](crate::operation::list_annotation_store_versions::ListAnnotationStoreVersionsOutput) with field(s):
+                            /// - On success, responds with [`ListAnnotationStoreVersionsOutput`](crate::operation::list_annotation_store_versions::ListAnnotationStoreVersionsOutput) with field(s):
     ///   - [`annotation_store_versions(Option<Vec::<AnnotationStoreVersionItem>>)`](crate::operation::list_annotation_store_versions::ListAnnotationStoreVersionsOutput::annotation_store_versions): <p>Lists all versions of an annotation store.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_annotation_store_versions::ListAnnotationStoreVersionsOutput::next_token): <p>Specifies the pagination token from a previous request to retrieve the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListAnnotationStoreVersionsError>`](crate::operation::list_annotation_store_versions::ListAnnotationStoreVersionsError)
-    pub fn list_annotation_store_versions(
-        &self,
-    ) -> crate::operation::list_annotation_store_versions::builders::ListAnnotationStoreVersionsFluentBuilder {
-        crate::operation::list_annotation_store_versions::builders::ListAnnotationStoreVersionsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListAnnotationStoreVersionsError>`](crate::operation::list_annotation_store_versions::ListAnnotationStoreVersionsError)
+    pub fn list_annotation_store_versions(&self) -> crate::operation::list_annotation_store_versions::builders::ListAnnotationStoreVersionsFluentBuilder {
+                                crate::operation::list_annotation_store_versions::builders::ListAnnotationStoreVersionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

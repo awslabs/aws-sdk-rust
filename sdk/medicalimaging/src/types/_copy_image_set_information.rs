@@ -3,19 +3,19 @@
 /// <p>Copy image set information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CopyImageSetInformation {
+pub struct CopyImageSetInformation  {
     /// <p>The source image set.</p>
     pub source_image_set: ::std::option::Option<crate::types::CopySourceImageSetInformation>,
     /// <p>The destination image set.</p>
     pub destination_image_set: ::std::option::Option<crate::types::CopyDestinationImageSet>,
 }
-impl CopyImageSetInformation {
+impl  CopyImageSetInformation  {
     /// <p>The source image set.</p>
-    pub fn source_image_set(&self) -> ::std::option::Option<&crate::types::CopySourceImageSetInformation> {
+    pub fn source_image_set(&self) -> ::std::option::Option<& crate::types::CopySourceImageSetInformation> {
         self.source_image_set.as_ref()
     }
     /// <p>The destination image set.</p>
-    pub fn destination_image_set(&self) -> ::std::option::Option<&crate::types::CopyDestinationImageSet> {
+    pub fn destination_image_set(&self) -> ::std::option::Option<& crate::types::CopyDestinationImageSet> {
         self.destination_image_set.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl CopyImageSetInformationBuilder {
     }
     /// <p>The source image set.</p>
     pub fn set_source_image_set(mut self, input: ::std::option::Option<crate::types::CopySourceImageSetInformation>) -> Self {
-        self.source_image_set = input;
-        self
+        self.source_image_set = input; self
     }
     /// <p>The source image set.</p>
     pub fn get_source_image_set(&self) -> &::std::option::Option<crate::types::CopySourceImageSetInformation> {
@@ -56,8 +55,7 @@ impl CopyImageSetInformationBuilder {
     }
     /// <p>The destination image set.</p>
     pub fn set_destination_image_set(mut self, input: ::std::option::Option<crate::types::CopyDestinationImageSet>) -> Self {
-        self.destination_image_set = input;
-        self
+        self.destination_image_set = input; self
     }
     /// <p>The destination image set.</p>
     pub fn get_destination_image_set(&self) -> &::std::option::Option<crate::types::CopyDestinationImageSet> {
@@ -66,8 +64,11 @@ impl CopyImageSetInformationBuilder {
     /// Consumes the builder and constructs a [`CopyImageSetInformation`](crate::types::CopyImageSetInformation).
     pub fn build(self) -> crate::types::CopyImageSetInformation {
         crate::types::CopyImageSetInformation {
-            source_image_set: self.source_image_set,
-            destination_image_set: self.destination_image_set,
+            source_image_set: self.source_image_set
+            ,
+            destination_image_set: self.destination_image_set
+            ,
         }
     }
 }
+

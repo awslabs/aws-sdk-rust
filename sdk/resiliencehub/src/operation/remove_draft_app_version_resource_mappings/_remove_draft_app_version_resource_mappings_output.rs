@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveDraftAppVersionResourceMappingsOutput {
+pub struct RemoveDraftAppVersionResourceMappingsOutput  {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the application.</p>
     pub app_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl RemoveDraftAppVersionResourceMappingsOutput {
+impl  RemoveDraftAppVersionResourceMappingsOutput  {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> ::std::option::Option<&str> {
+    pub fn app_arn(&self) -> ::std::option::Option<& str> {
         self.app_arn.as_deref()
     }
     /// <p>The version of the application.</p>
-    pub fn app_version(&self) -> ::std::option::Option<&str> {
+    pub fn app_version(&self) -> ::std::option::Option<& str> {
         self.app_version.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for RemoveDraftAppVersionResourceMappingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RemoveDraftAppVersionResourceMappingsOutput {
     /// Creates a new builder-style object to manufacture [`RemoveDraftAppVersionResourceMappingsOutput`](crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsOutput).
     pub fn builder() -> crate::operation::remove_draft_app_version_resource_mappings::builders::RemoveDraftAppVersionResourceMappingsOutputBuilder {
@@ -47,8 +47,7 @@ impl RemoveDraftAppVersionResourceMappingsOutputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_arn = input;
-        self
+        self.app_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl RemoveDraftAppVersionResourceMappingsOutputBuilder {
     }
     /// <p>The version of the application.</p>
     pub fn set_app_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_version = input;
-        self
+        self.app_version = input; self
     }
     /// <p>The version of the application.</p>
     pub fn get_app_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RemoveDraftAppVersionResourceMappingsOutput`](crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsOutput).
     pub fn build(self) -> crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsOutput {
         crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsOutput {
-            app_arn: self.app_arn,
-            app_version: self.app_version,
+            app_arn: self.app_arn
+            ,
+            app_version: self.app_version
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

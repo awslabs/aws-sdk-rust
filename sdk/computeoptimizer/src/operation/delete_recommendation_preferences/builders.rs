@@ -5,55 +5,51 @@ pub use crate::operation::delete_recommendation_preferences::_delete_recommendat
 
 impl DeleteRecommendationPreferencesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.delete_recommendation_preferences();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.delete_recommendation_preferences();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DeleteRecommendationPreferences`.
-///
+/// 
 /// <p>Deletes a recommendation preference, such as enhanced infrastructure metrics.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteRecommendationPreferencesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::delete_recommendation_preferences::builders::DeleteRecommendationPreferencesInputBuilder,
+                    inner: crate::operation::delete_recommendation_preferences::builders::DeleteRecommendationPreferencesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesOutput,
-        crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesError,
-    > for DeleteRecommendationPreferencesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesOutput,
-            crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesOutput,
+                    crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesError,
+                > for DeleteRecommendationPreferencesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesOutput,
+                        crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DeleteRecommendationPreferencesFluentBuilder {
     /// Creates a new `DeleteRecommendationPreferences`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl DeleteRecommendationPreferencesFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferences::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferences::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesOutput,
-        crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferences::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferences::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesOutput, crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The target resource type of the recommendation preference to delete.</p>
     /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p><note>
     /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>
@@ -159,15 +146,13 @@ impl DeleteRecommendationPreferencesFluentBuilder {
         self
     }
     /// <p>The name of the recommendation preference to delete.</p>
-    pub fn set_recommendation_preference_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationPreferenceName>>,
-    ) -> Self {
+    pub fn set_recommendation_preference_names(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RecommendationPreferenceName>>) -> Self {
         self.inner = self.inner.set_recommendation_preference_names(input);
         self
     }
     /// <p>The name of the recommendation preference to delete.</p>
-    pub fn get_recommendation_preference_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationPreferenceName>> {
+    pub fn get_recommendation_preference_names(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RecommendationPreferenceName>> {
         self.inner.get_recommendation_preference_names()
     }
 }
+

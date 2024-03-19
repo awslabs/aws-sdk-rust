@@ -3,7 +3,7 @@
 /// <p>Each entry contains a Storage Lens group that exists in the specified home Region.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListStorageLensGroupEntry {
+pub struct ListStorageLensGroupEntry  {
     /// <p>Contains the name of the Storage Lens group that exists in the specified home Region.</p>
     pub name: ::std::string::String,
     /// <p>Contains the Amazon Resource Name (ARN) of the Storage Lens group. This property is read-only.</p>
@@ -11,21 +11,18 @@ pub struct ListStorageLensGroupEntry {
     /// <p>Contains the Amazon Web Services Region where the Storage Lens group was created.</p>
     pub home_region: ::std::string::String,
 }
-impl ListStorageLensGroupEntry {
+impl  ListStorageLensGroupEntry  {
     /// <p>Contains the name of the Storage Lens group that exists in the specified home Region.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Contains the Amazon Resource Name (ARN) of the Storage Lens group. This property is read-only.</p>
-    pub fn storage_lens_group_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.storage_lens_group_arn.deref()
+    pub fn storage_lens_group_arn(&self) -> & str {
+        use std::ops::Deref; self.storage_lens_group_arn.deref()
     }
     /// <p>Contains the Amazon Web Services Region where the Storage Lens group was created.</p>
-    pub fn home_region(&self) -> &str {
-        use std::ops::Deref;
-        self.home_region.deref()
+    pub fn home_region(&self) -> & str {
+        use std::ops::Deref; self.home_region.deref()
     }
 }
 impl ListStorageLensGroupEntry {
@@ -52,8 +49,7 @@ impl ListStorageLensGroupEntryBuilder {
     }
     /// <p>Contains the name of the Storage Lens group that exists in the specified home Region.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Contains the name of the Storage Lens group that exists in the specified home Region.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +63,7 @@ impl ListStorageLensGroupEntryBuilder {
     }
     /// <p>Contains the Amazon Resource Name (ARN) of the Storage Lens group. This property is read-only.</p>
     pub fn set_storage_lens_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.storage_lens_group_arn = input;
-        self
+        self.storage_lens_group_arn = input; self
     }
     /// <p>Contains the Amazon Resource Name (ARN) of the Storage Lens group. This property is read-only.</p>
     pub fn get_storage_lens_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +77,7 @@ impl ListStorageLensGroupEntryBuilder {
     }
     /// <p>Contains the Amazon Web Services Region where the Storage Lens group was created.</p>
     pub fn set_home_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.home_region = input;
-        self
+        self.home_region = input; self
     }
     /// <p>Contains the Amazon Web Services Region where the Storage Lens group was created.</p>
     pub fn get_home_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,25 +89,25 @@ impl ListStorageLensGroupEntryBuilder {
     /// - [`storage_lens_group_arn`](crate::types::builders::ListStorageLensGroupEntryBuilder::storage_lens_group_arn)
     /// - [`home_region`](crate::types::builders::ListStorageLensGroupEntryBuilder::home_region)
     pub fn build(self) -> ::std::result::Result<crate::types::ListStorageLensGroupEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ListStorageLensGroupEntry {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ListStorageLensGroupEntry",
-                )
-            })?,
-            storage_lens_group_arn: self.storage_lens_group_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "storage_lens_group_arn",
-                    "storage_lens_group_arn was not specified but it is required when building ListStorageLensGroupEntry",
-                )
-            })?,
-            home_region: self.home_region.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "home_region",
-                    "home_region was not specified but it is required when building ListStorageLensGroupEntry",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ListStorageLensGroupEntry {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ListStorageLensGroupEntry")
+                    )?
+                ,
+                storage_lens_group_arn: self.storage_lens_group_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("storage_lens_group_arn", "storage_lens_group_arn was not specified but it is required when building ListStorageLensGroupEntry")
+                    )?
+                ,
+                home_region: self.home_region
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("home_region", "home_region was not specified but it is required when building ListStorageLensGroupEntry")
+                    )?
+                ,
+            }
+        )
     }
 }
+

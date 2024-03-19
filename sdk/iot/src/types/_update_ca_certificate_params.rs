@@ -3,13 +3,13 @@
 /// <p>Parameters to define a mitigation action that changes the state of the CA certificate to inactive.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateCaCertificateParams {
+pub struct UpdateCaCertificateParams  {
     /// <p>The action that you want to apply to the CA certificate. The only supported value is <code>DEACTIVATE</code>.</p>
     pub action: crate::types::CaCertificateUpdateAction,
 }
-impl UpdateCaCertificateParams {
+impl  UpdateCaCertificateParams  {
     /// <p>The action that you want to apply to the CA certificate. The only supported value is <code>DEACTIVATE</code>.</p>
-    pub fn action(&self) -> &crate::types::CaCertificateUpdateAction {
+    pub fn action(&self) -> & crate::types::CaCertificateUpdateAction {
         &self.action
     }
 }
@@ -35,8 +35,7 @@ impl UpdateCaCertificateParamsBuilder {
     }
     /// <p>The action that you want to apply to the CA certificate. The only supported value is <code>DEACTIVATE</code>.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::CaCertificateUpdateAction>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>The action that you want to apply to the CA certificate. The only supported value is <code>DEACTIVATE</code>.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::CaCertificateUpdateAction> {
@@ -46,13 +45,15 @@ impl UpdateCaCertificateParamsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`action`](crate::types::builders::UpdateCaCertificateParamsBuilder::action)
     pub fn build(self) -> ::std::result::Result<crate::types::UpdateCaCertificateParams, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UpdateCaCertificateParams {
-            action: self.action.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "action",
-                    "action was not specified but it is required when building UpdateCaCertificateParams",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UpdateCaCertificateParams {
+                action: self.action
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("action", "action was not specified but it is required when building UpdateCaCertificateParams")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSinks`](crate::operation::list_sinks::builders::ListSinksFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_sinks::builders::ListSinksFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_sinks::builders::ListSinksFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_sinks::builders::ListSinksFluentBuilder::set_max_results):<br>required: **false**<br><p>Limits the number of returned links to the specified number.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_sinks::builders::ListSinksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_sinks::builders::ListSinksFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of items to return. You received this token from a previous call.</p><br>
-    /// - On success, responds with [`ListSinksOutput`](crate::operation::list_sinks::ListSinksOutput) with field(s):
+                            /// - On success, responds with [`ListSinksOutput`](crate::operation::list_sinks::ListSinksOutput) with field(s):
     ///   - [`items(Vec::<ListSinksItem>)`](crate::operation::list_sinks::ListSinksOutput::items): <p>An array of structures that contain the information about the returned sinks.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_sinks::ListSinksOutput::next_token): <p>The token to use when requesting the next set of sinks.</p>
-    /// - On failure, responds with [`SdkError<ListSinksError>`](crate::operation::list_sinks::ListSinksError)
+                            /// - On failure, responds with [`SdkError<ListSinksError>`](crate::operation::list_sinks::ListSinksError)
     pub fn list_sinks(&self) -> crate::operation::list_sinks::builders::ListSinksFluentBuilder {
-        crate::operation::list_sinks::builders::ListSinksFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_sinks::builders::ListSinksFluentBuilder::new(self.handle.clone())
+                            }
 }
+

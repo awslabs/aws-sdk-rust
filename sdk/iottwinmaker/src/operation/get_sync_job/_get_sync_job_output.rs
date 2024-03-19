@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSyncJobOutput {
+pub struct GetSyncJobOutput  {
     /// <p>The sync job ARN.</p>
     pub arn: ::std::string::String,
     /// <p>The ID of the workspace that contains the sync job.</p>
@@ -21,47 +21,43 @@ pub struct GetSyncJobOutput {
     pub update_date_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
-impl GetSyncJobOutput {
+impl  GetSyncJobOutput  {
     /// <p>The sync job ARN.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The ID of the workspace that contains the sync job.</p>
-    pub fn workspace_id(&self) -> &str {
-        use std::ops::Deref;
-        self.workspace_id.deref()
+    pub fn workspace_id(&self) -> & str {
+        use std::ops::Deref; self.workspace_id.deref()
     }
     /// <p>The sync soucre.</p><note>
     /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
     /// </note>
-    pub fn sync_source(&self) -> &str {
-        use std::ops::Deref;
-        self.sync_source.deref()
+    pub fn sync_source(&self) -> & str {
+        use std::ops::Deref; self.sync_source.deref()
     }
     /// <p>The sync IAM role.</p>
-    pub fn sync_role(&self) -> &str {
-        use std::ops::Deref;
-        self.sync_role.deref()
+    pub fn sync_role(&self) -> & str {
+        use std::ops::Deref; self.sync_role.deref()
     }
     /// <p>The SyncJob response status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::SyncJobStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::SyncJobStatus> {
         self.status.as_ref()
     }
     /// <p>The creation date and time.</p>
-    pub fn creation_date_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_date_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_date_time
     }
     /// <p>The update date and time.</p>
-    pub fn update_date_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_date_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_date_time
     }
 }
 impl ::aws_types::request_id::RequestId for GetSyncJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSyncJobOutput {
     /// Creates a new builder-style object to manufacture [`GetSyncJobOutput`](crate::operation::get_sync_job::GetSyncJobOutput).
     pub fn builder() -> crate::operation::get_sync_job::builders::GetSyncJobOutputBuilder {
@@ -91,8 +87,7 @@ impl GetSyncJobOutputBuilder {
     }
     /// <p>The sync job ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The sync job ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +101,7 @@ impl GetSyncJobOutputBuilder {
     }
     /// <p>The ID of the workspace that contains the sync job.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The ID of the workspace that contains the sync job.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +119,7 @@ impl GetSyncJobOutputBuilder {
     /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
     /// </note>
     pub fn set_sync_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sync_source = input;
-        self
+        self.sync_source = input; self
     }
     /// <p>The sync soucre.</p><note>
     /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
@@ -142,8 +135,7 @@ impl GetSyncJobOutputBuilder {
     }
     /// <p>The sync IAM role.</p>
     pub fn set_sync_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sync_role = input;
-        self
+        self.sync_role = input; self
     }
     /// <p>The sync IAM role.</p>
     pub fn get_sync_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,8 +149,7 @@ impl GetSyncJobOutputBuilder {
     }
     /// <p>The SyncJob response status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SyncJobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The SyncJob response status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::SyncJobStatus> {
@@ -172,8 +163,7 @@ impl GetSyncJobOutputBuilder {
     }
     /// <p>The creation date and time.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>The creation date and time.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -187,22 +177,21 @@ impl GetSyncJobOutputBuilder {
     }
     /// <p>The update date and time.</p>
     pub fn set_update_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_date_time = input;
-        self
+        self.update_date_time = input; self
     }
     /// <p>The update date and time.</p>
     pub fn get_update_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.update_date_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSyncJobOutput`](crate::operation::get_sync_job::GetSyncJobOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::operation::get_sync_job::builders::GetSyncJobOutputBuilder::arn)
@@ -212,45 +201,43 @@ impl GetSyncJobOutputBuilder {
     /// - [`creation_date_time`](crate::operation::get_sync_job::builders::GetSyncJobOutputBuilder::creation_date_time)
     /// - [`update_date_time`](crate::operation::get_sync_job::builders::GetSyncJobOutputBuilder::update_date_time)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_sync_job::GetSyncJobOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_sync_job::GetSyncJobOutput {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building GetSyncJobOutput",
-                )
-            })?,
-            workspace_id: self.workspace_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "workspace_id",
-                    "workspace_id was not specified but it is required when building GetSyncJobOutput",
-                )
-            })?,
-            sync_source: self.sync_source.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sync_source",
-                    "sync_source was not specified but it is required when building GetSyncJobOutput",
-                )
-            })?,
-            sync_role: self.sync_role.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sync_role",
-                    "sync_role was not specified but it is required when building GetSyncJobOutput",
-                )
-            })?,
-            status: self.status,
-            creation_date_time: self.creation_date_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_date_time",
-                    "creation_date_time was not specified but it is required when building GetSyncJobOutput",
-                )
-            })?,
-            update_date_time: self.update_date_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_date_time",
-                    "update_date_time was not specified but it is required when building GetSyncJobOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_sync_job::GetSyncJobOutput {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building GetSyncJobOutput")
+                    )?
+                ,
+                workspace_id: self.workspace_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("workspace_id", "workspace_id was not specified but it is required when building GetSyncJobOutput")
+                    )?
+                ,
+                sync_source: self.sync_source
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sync_source", "sync_source was not specified but it is required when building GetSyncJobOutput")
+                    )?
+                ,
+                sync_role: self.sync_role
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sync_role", "sync_role was not specified but it is required when building GetSyncJobOutput")
+                    )?
+                ,
+                status: self.status
+                ,
+                creation_date_time: self.creation_date_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_date_time", "creation_date_time was not specified but it is required when building GetSyncJobOutput")
+                    )?
+                ,
+                update_date_time: self.update_date_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_date_time", "update_date_time was not specified but it is required when building GetSyncJobOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

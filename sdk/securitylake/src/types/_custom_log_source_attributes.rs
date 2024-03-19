@@ -3,7 +3,7 @@
 /// <p>The attributes of a third-party custom source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomLogSourceAttributes {
+pub struct CustomLogSourceAttributes  {
     /// <p>The ARN of the Glue crawler.</p>
     pub crawler_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Glue database where results are written, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
@@ -11,17 +11,17 @@ pub struct CustomLogSourceAttributes {
     /// <p>The ARN of the Glue table.</p>
     pub table_arn: ::std::option::Option<::std::string::String>,
 }
-impl CustomLogSourceAttributes {
+impl  CustomLogSourceAttributes  {
     /// <p>The ARN of the Glue crawler.</p>
-    pub fn crawler_arn(&self) -> ::std::option::Option<&str> {
+    pub fn crawler_arn(&self) -> ::std::option::Option<& str> {
         self.crawler_arn.as_deref()
     }
     /// <p>The ARN of the Glue database where results are written, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
-    pub fn database_arn(&self) -> ::std::option::Option<&str> {
+    pub fn database_arn(&self) -> ::std::option::Option<& str> {
         self.database_arn.as_deref()
     }
     /// <p>The ARN of the Glue table.</p>
-    pub fn table_arn(&self) -> ::std::option::Option<&str> {
+    pub fn table_arn(&self) -> ::std::option::Option<& str> {
         self.table_arn.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl CustomLogSourceAttributesBuilder {
     }
     /// <p>The ARN of the Glue crawler.</p>
     pub fn set_crawler_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.crawler_arn = input;
-        self
+        self.crawler_arn = input; self
     }
     /// <p>The ARN of the Glue crawler.</p>
     pub fn get_crawler_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl CustomLogSourceAttributesBuilder {
     }
     /// <p>The ARN of the Glue database where results are written, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
     pub fn set_database_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_arn = input;
-        self
+        self.database_arn = input; self
     }
     /// <p>The ARN of the Glue database where results are written, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
     pub fn get_database_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl CustomLogSourceAttributesBuilder {
     }
     /// <p>The ARN of the Glue table.</p>
     pub fn set_table_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_arn = input;
-        self
+        self.table_arn = input; self
     }
     /// <p>The ARN of the Glue table.</p>
     pub fn get_table_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl CustomLogSourceAttributesBuilder {
     /// Consumes the builder and constructs a [`CustomLogSourceAttributes`](crate::types::CustomLogSourceAttributes).
     pub fn build(self) -> crate::types::CustomLogSourceAttributes {
         crate::types::CustomLogSourceAttributes {
-            crawler_arn: self.crawler_arn,
-            database_arn: self.database_arn,
-            table_arn: self.table_arn,
+            crawler_arn: self.crawler_arn
+            ,
+            database_arn: self.database_arn
+            ,
+            table_arn: self.table_arn
+            ,
         }
     }
 }
+

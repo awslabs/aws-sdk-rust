@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListUpdates`](crate::operation::list_updates::builders::ListUpdatesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_updates::builders::ListUpdatesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::operation::list_updates::builders::ListUpdatesFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::list_updates::builders::ListUpdatesFluentBuilder::set_name):<br>required: **true**<br><p>The name of the Amazon EKS cluster to list updates for.</p><br>
     ///   - [`nodegroup_name(impl Into<String>)`](crate::operation::list_updates::builders::ListUpdatesFluentBuilder::nodegroup_name) / [`set_nodegroup_name(Option<String>)`](crate::operation::list_updates::builders::ListUpdatesFluentBuilder::set_nodegroup_name):<br>required: **false**<br><p>The name of the Amazon EKS managed node group to list updates for.</p><br>
     ///   - [`addon_name(impl Into<String>)`](crate::operation::list_updates::builders::ListUpdatesFluentBuilder::addon_name) / [`set_addon_name(Option<String>)`](crate::operation::list_updates::builders::ListUpdatesFluentBuilder::set_addon_name):<br>required: **false**<br><p>The names of the installed add-ons that have available updates.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_updates::builders::ListUpdatesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_updates::builders::ListUpdatesFluentBuilder::set_next_token):<br>required: **false**<br><p>The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p><note>  <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p> </note><br>
     ///   - [`max_results(i32)`](crate::operation::list_updates::builders::ListUpdatesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_updates::builders::ListUpdatesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results, returned in paginated output. You receive <code>maxResults</code> in a single page, along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, 100 results and a <code>nextToken</code> value, if applicable, are returned.</p><br>
-    /// - On success, responds with [`ListUpdatesOutput`](crate::operation::list_updates::ListUpdatesOutput) with field(s):
+                            /// - On success, responds with [`ListUpdatesOutput`](crate::operation::list_updates::ListUpdatesOutput) with field(s):
     ///   - [`update_ids(Option<Vec::<String>>)`](crate::operation::list_updates::ListUpdatesOutput::update_ids): <p>A list of all the updates for the specified cluster and Region.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_updates::ListUpdatesOutput::next_token): <p>The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p><note>  <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p> </note>
-    /// - On failure, responds with [`SdkError<ListUpdatesError>`](crate::operation::list_updates::ListUpdatesError)
+                            /// - On failure, responds with [`SdkError<ListUpdatesError>`](crate::operation::list_updates::ListUpdatesError)
     pub fn list_updates(&self) -> crate::operation::list_updates::builders::ListUpdatesFluentBuilder {
-        crate::operation::list_updates::builders::ListUpdatesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_updates::builders::ListUpdatesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

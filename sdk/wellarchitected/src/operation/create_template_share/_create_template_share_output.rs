@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTemplateShareOutput {
+pub struct CreateTemplateShareOutput  {
     /// <p>The review template ARN.</p>
     pub template_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID associated with the share.</p>
     pub share_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateTemplateShareOutput {
+impl  CreateTemplateShareOutput  {
     /// <p>The review template ARN.</p>
-    pub fn template_arn(&self) -> ::std::option::Option<&str> {
+    pub fn template_arn(&self) -> ::std::option::Option<& str> {
         self.template_arn.as_deref()
     }
     /// <p>The ID associated with the share.</p>
-    pub fn share_id(&self) -> ::std::option::Option<&str> {
+    pub fn share_id(&self) -> ::std::option::Option<& str> {
         self.share_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateTemplateShareOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateTemplateShareOutput {
     /// Creates a new builder-style object to manufacture [`CreateTemplateShareOutput`](crate::operation::create_template_share::CreateTemplateShareOutput).
     pub fn builder() -> crate::operation::create_template_share::builders::CreateTemplateShareOutputBuilder {
@@ -47,8 +47,7 @@ impl CreateTemplateShareOutputBuilder {
     }
     /// <p>The review template ARN.</p>
     pub fn set_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_arn = input;
-        self
+        self.template_arn = input; self
     }
     /// <p>The review template ARN.</p>
     pub fn get_template_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl CreateTemplateShareOutputBuilder {
     }
     /// <p>The ID associated with the share.</p>
     pub fn set_share_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.share_id = input;
-        self
+        self.share_id = input; self
     }
     /// <p>The ID associated with the share.</p>
     pub fn get_share_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.share_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateTemplateShareOutput`](crate::operation::create_template_share::CreateTemplateShareOutput).
     pub fn build(self) -> crate::operation::create_template_share::CreateTemplateShareOutput {
         crate::operation::create_template_share::CreateTemplateShareOutput {
-            template_arn: self.template_arn,
-            share_id: self.share_id,
+            template_arn: self.template_arn
+            ,
+            share_id: self.share_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

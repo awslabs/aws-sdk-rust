@@ -3,11 +3,11 @@
 /// <p>Specifies how to group results by document attribute value, and how to display them collapsed/expanded under a designated primary document for each group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CollapseConfiguration {
+pub struct CollapseConfiguration  {
     /// <p>The document attribute used to group search results. You can use any attribute that has the <code>Sortable</code> flag set to true. You can also sort by any of the following built-in attributes:"_category","_created_at", "_last_updated_at", "_version", "_view_count".</p>
     pub document_attribute_key: ::std::string::String,
     /// <p>A prioritized list of document attributes/fields that determine the primary document among those in a collapsed group.</p>
-    pub sorting_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SortingConfiguration>>,
+    pub sorting_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::SortingConfiguration>>,
     /// <p>Specifies the behavior for documents without a value for the collapse attribute.</p>
     /// <p>Amazon Kendra offers three customization options:</p>
     /// <ul>
@@ -24,17 +24,17 @@ pub struct CollapseConfiguration {
     /// <p>Provides configuration information to customize expansion options for a collapsed group.</p>
     pub expand_configuration: ::std::option::Option<crate::types::ExpandConfiguration>,
 }
-impl CollapseConfiguration {
+impl  CollapseConfiguration  {
     /// <p>The document attribute used to group search results. You can use any attribute that has the <code>Sortable</code> flag set to true. You can also sort by any of the following built-in attributes:"_category","_created_at", "_last_updated_at", "_version", "_view_count".</p>
-    pub fn document_attribute_key(&self) -> &str {
-        use std::ops::Deref;
-        self.document_attribute_key.deref()
+    pub fn document_attribute_key(&self) -> & str {
+        use std::ops::Deref; self.document_attribute_key.deref()
     }
     /// <p>A prioritized list of document attributes/fields that determine the primary document among those in a collapsed group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sorting_configurations.is_none()`.
-    pub fn sorting_configurations(&self) -> &[crate::types::SortingConfiguration] {
-        self.sorting_configurations.as_deref().unwrap_or_default()
+    pub fn sorting_configurations(&self) -> & [crate::types::SortingConfiguration] {
+        self.sorting_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the behavior for documents without a value for the collapse attribute.</p>
     /// <p>Amazon Kendra offers three customization options:</p>
@@ -46,7 +46,7 @@ impl CollapseConfiguration {
     /// <li>
     /// <p>Choose to <code>EXPAND</code> each document with a null or missing value into a group of its own.</p></li>
     /// </ul>
-    pub fn missing_attribute_key_strategy(&self) -> ::std::option::Option<&crate::types::MissingAttributeKeyStrategy> {
+    pub fn missing_attribute_key_strategy(&self) -> ::std::option::Option<& crate::types::MissingAttributeKeyStrategy> {
         self.missing_attribute_key_strategy.as_ref()
     }
     /// <p>Specifies whether to expand the collapsed results.</p>
@@ -54,7 +54,7 @@ impl CollapseConfiguration {
         self.expand
     }
     /// <p>Provides configuration information to customize expansion options for a collapsed group.</p>
-    pub fn expand_configuration(&self) -> ::std::option::Option<&crate::types::ExpandConfiguration> {
+    pub fn expand_configuration(&self) -> ::std::option::Option<& crate::types::ExpandConfiguration> {
         self.expand_configuration.as_ref()
     }
 }
@@ -70,7 +70,7 @@ impl CollapseConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CollapseConfigurationBuilder {
     pub(crate) document_attribute_key: ::std::option::Option<::std::string::String>,
-    pub(crate) sorting_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SortingConfiguration>>,
+    pub(crate) sorting_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::SortingConfiguration>>,
     pub(crate) missing_attribute_key_strategy: ::std::option::Option<crate::types::MissingAttributeKeyStrategy>,
     pub(crate) expand: ::std::option::Option<bool>,
     pub(crate) expand_configuration: ::std::option::Option<crate::types::ExpandConfiguration>,
@@ -84,8 +84,7 @@ impl CollapseConfigurationBuilder {
     }
     /// <p>The document attribute used to group search results. You can use any attribute that has the <code>Sortable</code> flag set to true. You can also sort by any of the following built-in attributes:"_category","_created_at", "_last_updated_at", "_version", "_view_count".</p>
     pub fn set_document_attribute_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_attribute_key = input;
-        self
+        self.document_attribute_key = input; self
     }
     /// <p>The document attribute used to group search results. You can use any attribute that has the <code>Sortable</code> flag set to true. You can also sort by any of the following built-in attributes:"_category","_created_at", "_last_updated_at", "_version", "_view_count".</p>
     pub fn get_document_attribute_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,17 +97,16 @@ impl CollapseConfigurationBuilder {
     /// <p>A prioritized list of document attributes/fields that determine the primary document among those in a collapsed group.</p>
     pub fn sorting_configurations(mut self, input: crate::types::SortingConfiguration) -> Self {
         let mut v = self.sorting_configurations.unwrap_or_default();
-        v.push(input);
-        self.sorting_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sorting_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A prioritized list of document attributes/fields that determine the primary document among those in a collapsed group.</p>
-    pub fn set_sorting_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SortingConfiguration>>) -> Self {
-        self.sorting_configurations = input;
-        self
+    pub fn set_sorting_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SortingConfiguration>>) -> Self {
+        self.sorting_configurations = input; self
     }
     /// <p>A prioritized list of document attributes/fields that determine the primary document among those in a collapsed group.</p>
-    pub fn get_sorting_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SortingConfiguration>> {
+    pub fn get_sorting_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SortingConfiguration>> {
         &self.sorting_configurations
     }
     /// <p>Specifies the behavior for documents without a value for the collapse attribute.</p>
@@ -136,8 +134,7 @@ impl CollapseConfigurationBuilder {
     /// <p>Choose to <code>EXPAND</code> each document with a null or missing value into a group of its own.</p></li>
     /// </ul>
     pub fn set_missing_attribute_key_strategy(mut self, input: ::std::option::Option<crate::types::MissingAttributeKeyStrategy>) -> Self {
-        self.missing_attribute_key_strategy = input;
-        self
+        self.missing_attribute_key_strategy = input; self
     }
     /// <p>Specifies the behavior for documents without a value for the collapse attribute.</p>
     /// <p>Amazon Kendra offers three customization options:</p>
@@ -159,8 +156,7 @@ impl CollapseConfigurationBuilder {
     }
     /// <p>Specifies whether to expand the collapsed results.</p>
     pub fn set_expand(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.expand = input;
-        self
+        self.expand = input; self
     }
     /// <p>Specifies whether to expand the collapsed results.</p>
     pub fn get_expand(&self) -> &::std::option::Option<bool> {
@@ -173,8 +169,7 @@ impl CollapseConfigurationBuilder {
     }
     /// <p>Provides configuration information to customize expansion options for a collapsed group.</p>
     pub fn set_expand_configuration(mut self, input: ::std::option::Option<crate::types::ExpandConfiguration>) -> Self {
-        self.expand_configuration = input;
-        self
+        self.expand_configuration = input; self
     }
     /// <p>Provides configuration information to customize expansion options for a collapsed group.</p>
     pub fn get_expand_configuration(&self) -> &::std::option::Option<crate::types::ExpandConfiguration> {
@@ -184,17 +179,24 @@ impl CollapseConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`document_attribute_key`](crate::types::builders::CollapseConfigurationBuilder::document_attribute_key)
     pub fn build(self) -> ::std::result::Result<crate::types::CollapseConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CollapseConfiguration {
-            document_attribute_key: self.document_attribute_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "document_attribute_key",
-                    "document_attribute_key was not specified but it is required when building CollapseConfiguration",
-                )
-            })?,
-            sorting_configurations: self.sorting_configurations,
-            missing_attribute_key_strategy: self.missing_attribute_key_strategy,
-            expand: self.expand.unwrap_or_default(),
-            expand_configuration: self.expand_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CollapseConfiguration {
+                document_attribute_key: self.document_attribute_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("document_attribute_key", "document_attribute_key was not specified but it is required when building CollapseConfiguration")
+                    )?
+                ,
+                sorting_configurations: self.sorting_configurations
+                ,
+                missing_attribute_key_strategy: self.missing_attribute_key_strategy
+                ,
+                expand: self.expand
+                    .unwrap_or_default()
+                ,
+                expand_configuration: self.expand_configuration
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains metadata about a CloudFront function.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FunctionMetadata {
+pub struct FunctionMetadata  {
     /// <p>The Amazon Resource Name (ARN) of the function. The ARN uniquely identifies the function.</p>
     pub function_arn: ::std::string::String,
     /// <p>The stage that the function is in, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
@@ -15,24 +15,23 @@ pub struct FunctionMetadata {
     /// <p>The date and time when the function was most recently updated.</p>
     pub last_modified_time: ::aws_smithy_types::DateTime,
 }
-impl FunctionMetadata {
+impl  FunctionMetadata  {
     /// <p>The Amazon Resource Name (ARN) of the function. The ARN uniquely identifies the function.</p>
-    pub fn function_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.function_arn.deref()
+    pub fn function_arn(&self) -> & str {
+        use std::ops::Deref; self.function_arn.deref()
     }
     /// <p>The stage that the function is in, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     /// <p>When a function is in the <code>DEVELOPMENT</code> stage, you can test the function with <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.</p>
     /// <p>When a function is in the <code>LIVE</code> stage, you can attach the function to a distribution's cache behavior, using the function's ARN.</p>
-    pub fn stage(&self) -> ::std::option::Option<&crate::types::FunctionStage> {
+    pub fn stage(&self) -> ::std::option::Option<& crate::types::FunctionStage> {
         self.stage.as_ref()
     }
     /// <p>The date and time when the function was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The date and time when the function was most recently updated.</p>
-    pub fn last_modified_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_modified_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_modified_time
     }
 }
@@ -61,8 +60,7 @@ impl FunctionMetadataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the function. The ARN uniquely identifies the function.</p>
     pub fn set_function_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_arn = input;
-        self
+        self.function_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the function. The ARN uniquely identifies the function.</p>
     pub fn get_function_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +77,7 @@ impl FunctionMetadataBuilder {
     /// <p>When a function is in the <code>DEVELOPMENT</code> stage, you can test the function with <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.</p>
     /// <p>When a function is in the <code>LIVE</code> stage, you can attach the function to a distribution's cache behavior, using the function's ARN.</p>
     pub fn set_stage(mut self, input: ::std::option::Option<crate::types::FunctionStage>) -> Self {
-        self.stage = input;
-        self
+        self.stage = input; self
     }
     /// <p>The stage that the function is in, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     /// <p>When a function is in the <code>DEVELOPMENT</code> stage, you can test the function with <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.</p>
@@ -95,8 +92,7 @@ impl FunctionMetadataBuilder {
     }
     /// <p>The date and time when the function was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The date and time when the function was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -110,8 +106,7 @@ impl FunctionMetadataBuilder {
     }
     /// <p>The date and time when the function was most recently updated.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The date and time when the function was most recently updated.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -122,21 +117,24 @@ impl FunctionMetadataBuilder {
     /// - [`function_arn`](crate::types::builders::FunctionMetadataBuilder::function_arn)
     /// - [`last_modified_time`](crate::types::builders::FunctionMetadataBuilder::last_modified_time)
     pub fn build(self) -> ::std::result::Result<crate::types::FunctionMetadata, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FunctionMetadata {
-            function_arn: self.function_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "function_arn",
-                    "function_arn was not specified but it is required when building FunctionMetadata",
-                )
-            })?,
-            stage: self.stage,
-            created_time: self.created_time,
-            last_modified_time: self.last_modified_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_modified_time",
-                    "last_modified_time was not specified but it is required when building FunctionMetadata",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FunctionMetadata {
+                function_arn: self.function_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("function_arn", "function_arn was not specified but it is required when building FunctionMetadata")
+                    )?
+                ,
+                stage: self.stage
+                ,
+                created_time: self.created_time
+                ,
+                last_modified_time: self.last_modified_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_modified_time", "last_modified_time was not specified but it is required when building FunctionMetadata")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// A pricing agreement for a discounted rate for a specific outbound bandwidth that your MediaConnect account will use each month over a specific time period. The discounted rate in the reservation applies to outbound bandwidth for all flows from your account until your account reaches the amount of bandwidth in your reservation. If you use more outbound bandwidth than the agreed upon amount in a single month, the overage is charged at the on-demand rate.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Reservation {
+pub struct Reservation  {
     /// The type of currency that is used for billing. The currencyCode used for your reservation is US dollars.
     pub currency_code: ::std::option::Option<::std::string::String>,
     /// The length of time that this reservation is active. MediaConnect defines this value in the offering.
@@ -31,9 +31,9 @@ pub struct Reservation {
     /// The day and time that the reservation becomes active. You set this value when you purchase the offering.
     pub start: ::std::option::Option<::std::string::String>,
 }
-impl Reservation {
+impl  Reservation  {
     /// The type of currency that is used for billing. The currencyCode used for your reservation is US dollars.
-    pub fn currency_code(&self) -> ::std::option::Option<&str> {
+    pub fn currency_code(&self) -> ::std::option::Option<& str> {
         self.currency_code.as_deref()
     }
     /// The length of time that this reservation is active. MediaConnect defines this value in the offering.
@@ -41,47 +41,47 @@ impl Reservation {
         self.duration
     }
     /// The unit of measurement for the duration of the reservation. MediaConnect defines this value in the offering.
-    pub fn duration_units(&self) -> ::std::option::Option<&crate::types::DurationUnits> {
+    pub fn duration_units(&self) -> ::std::option::Option<& crate::types::DurationUnits> {
         self.duration_units.as_ref()
     }
     /// The day and time that this reservation expires. This value is calculated based on the start date and time that you set and the offering's duration.
-    pub fn end(&self) -> ::std::option::Option<&str> {
+    pub fn end(&self) -> ::std::option::Option<& str> {
         self.end.as_deref()
     }
     /// The Amazon Resource Name (ARN) that MediaConnect assigns to the offering.
-    pub fn offering_arn(&self) -> ::std::option::Option<&str> {
+    pub fn offering_arn(&self) -> ::std::option::Option<& str> {
         self.offering_arn.as_deref()
     }
     /// A description of the offering. MediaConnect defines this value in the offering.
-    pub fn offering_description(&self) -> ::std::option::Option<&str> {
+    pub fn offering_description(&self) -> ::std::option::Option<& str> {
         self.offering_description.as_deref()
     }
     /// The cost of a single unit. This value, in combination with priceUnits, makes up the rate. MediaConnect defines this value in the offering.
-    pub fn price_per_unit(&self) -> ::std::option::Option<&str> {
+    pub fn price_per_unit(&self) -> ::std::option::Option<& str> {
         self.price_per_unit.as_deref()
     }
     /// The unit of measurement that is used for billing. This value, in combination with pricePerUnit, makes up the rate. MediaConnect defines this value in the offering.
-    pub fn price_units(&self) -> ::std::option::Option<&crate::types::PriceUnits> {
+    pub fn price_units(&self) -> ::std::option::Option<& crate::types::PriceUnits> {
         self.price_units.as_ref()
     }
     /// The Amazon Resource Name (ARN) that MediaConnect assigns to the reservation when you purchase an offering.
-    pub fn reservation_arn(&self) -> ::std::option::Option<&str> {
+    pub fn reservation_arn(&self) -> ::std::option::Option<& str> {
         self.reservation_arn.as_deref()
     }
     /// The name that you assigned to the reservation when you purchased the offering.
-    pub fn reservation_name(&self) -> ::std::option::Option<&str> {
+    pub fn reservation_name(&self) -> ::std::option::Option<& str> {
         self.reservation_name.as_deref()
     }
     /// The status of your reservation.
-    pub fn reservation_state(&self) -> ::std::option::Option<&crate::types::ReservationState> {
+    pub fn reservation_state(&self) -> ::std::option::Option<& crate::types::ReservationState> {
         self.reservation_state.as_ref()
     }
     /// A definition of the amount of outbound bandwidth that you would be reserving if you purchase the offering. MediaConnect defines the values that make up the resourceSpecification in the offering.
-    pub fn resource_specification(&self) -> ::std::option::Option<&crate::types::ResourceSpecification> {
+    pub fn resource_specification(&self) -> ::std::option::Option<& crate::types::ResourceSpecification> {
         self.resource_specification.as_ref()
     }
     /// The day and time that the reservation becomes active. You set this value when you purchase the offering.
-    pub fn start(&self) -> ::std::option::Option<&str> {
+    pub fn start(&self) -> ::std::option::Option<& str> {
         self.start.as_deref()
     }
 }
@@ -119,8 +119,7 @@ impl ReservationBuilder {
     }
     /// The type of currency that is used for billing. The currencyCode used for your reservation is US dollars.
     pub fn set_currency_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.currency_code = input;
-        self
+        self.currency_code = input; self
     }
     /// The type of currency that is used for billing. The currencyCode used for your reservation is US dollars.
     pub fn get_currency_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +133,7 @@ impl ReservationBuilder {
     }
     /// The length of time that this reservation is active. MediaConnect defines this value in the offering.
     pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration = input;
-        self
+        self.duration = input; self
     }
     /// The length of time that this reservation is active. MediaConnect defines this value in the offering.
     pub fn get_duration(&self) -> &::std::option::Option<i32> {
@@ -149,8 +147,7 @@ impl ReservationBuilder {
     }
     /// The unit of measurement for the duration of the reservation. MediaConnect defines this value in the offering.
     pub fn set_duration_units(mut self, input: ::std::option::Option<crate::types::DurationUnits>) -> Self {
-        self.duration_units = input;
-        self
+        self.duration_units = input; self
     }
     /// The unit of measurement for the duration of the reservation. MediaConnect defines this value in the offering.
     pub fn get_duration_units(&self) -> &::std::option::Option<crate::types::DurationUnits> {
@@ -164,8 +161,7 @@ impl ReservationBuilder {
     }
     /// The day and time that this reservation expires. This value is calculated based on the start date and time that you set and the offering's duration.
     pub fn set_end(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.end = input;
-        self
+        self.end = input; self
     }
     /// The day and time that this reservation expires. This value is calculated based on the start date and time that you set and the offering's duration.
     pub fn get_end(&self) -> &::std::option::Option<::std::string::String> {
@@ -179,8 +175,7 @@ impl ReservationBuilder {
     }
     /// The Amazon Resource Name (ARN) that MediaConnect assigns to the offering.
     pub fn set_offering_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.offering_arn = input;
-        self
+        self.offering_arn = input; self
     }
     /// The Amazon Resource Name (ARN) that MediaConnect assigns to the offering.
     pub fn get_offering_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,8 +189,7 @@ impl ReservationBuilder {
     }
     /// A description of the offering. MediaConnect defines this value in the offering.
     pub fn set_offering_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.offering_description = input;
-        self
+        self.offering_description = input; self
     }
     /// A description of the offering. MediaConnect defines this value in the offering.
     pub fn get_offering_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -209,8 +203,7 @@ impl ReservationBuilder {
     }
     /// The cost of a single unit. This value, in combination with priceUnits, makes up the rate. MediaConnect defines this value in the offering.
     pub fn set_price_per_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.price_per_unit = input;
-        self
+        self.price_per_unit = input; self
     }
     /// The cost of a single unit. This value, in combination with priceUnits, makes up the rate. MediaConnect defines this value in the offering.
     pub fn get_price_per_unit(&self) -> &::std::option::Option<::std::string::String> {
@@ -224,8 +217,7 @@ impl ReservationBuilder {
     }
     /// The unit of measurement that is used for billing. This value, in combination with pricePerUnit, makes up the rate. MediaConnect defines this value in the offering.
     pub fn set_price_units(mut self, input: ::std::option::Option<crate::types::PriceUnits>) -> Self {
-        self.price_units = input;
-        self
+        self.price_units = input; self
     }
     /// The unit of measurement that is used for billing. This value, in combination with pricePerUnit, makes up the rate. MediaConnect defines this value in the offering.
     pub fn get_price_units(&self) -> &::std::option::Option<crate::types::PriceUnits> {
@@ -239,8 +231,7 @@ impl ReservationBuilder {
     }
     /// The Amazon Resource Name (ARN) that MediaConnect assigns to the reservation when you purchase an offering.
     pub fn set_reservation_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reservation_arn = input;
-        self
+        self.reservation_arn = input; self
     }
     /// The Amazon Resource Name (ARN) that MediaConnect assigns to the reservation when you purchase an offering.
     pub fn get_reservation_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -254,8 +245,7 @@ impl ReservationBuilder {
     }
     /// The name that you assigned to the reservation when you purchased the offering.
     pub fn set_reservation_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reservation_name = input;
-        self
+        self.reservation_name = input; self
     }
     /// The name that you assigned to the reservation when you purchased the offering.
     pub fn get_reservation_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -269,8 +259,7 @@ impl ReservationBuilder {
     }
     /// The status of your reservation.
     pub fn set_reservation_state(mut self, input: ::std::option::Option<crate::types::ReservationState>) -> Self {
-        self.reservation_state = input;
-        self
+        self.reservation_state = input; self
     }
     /// The status of your reservation.
     pub fn get_reservation_state(&self) -> &::std::option::Option<crate::types::ReservationState> {
@@ -284,8 +273,7 @@ impl ReservationBuilder {
     }
     /// A definition of the amount of outbound bandwidth that you would be reserving if you purchase the offering. MediaConnect defines the values that make up the resourceSpecification in the offering.
     pub fn set_resource_specification(mut self, input: ::std::option::Option<crate::types::ResourceSpecification>) -> Self {
-        self.resource_specification = input;
-        self
+        self.resource_specification = input; self
     }
     /// A definition of the amount of outbound bandwidth that you would be reserving if you purchase the offering. MediaConnect defines the values that make up the resourceSpecification in the offering.
     pub fn get_resource_specification(&self) -> &::std::option::Option<crate::types::ResourceSpecification> {
@@ -299,8 +287,7 @@ impl ReservationBuilder {
     }
     /// The day and time that the reservation becomes active. You set this value when you purchase the offering.
     pub fn set_start(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start = input;
-        self
+        self.start = input; self
     }
     /// The day and time that the reservation becomes active. You set this value when you purchase the offering.
     pub fn get_start(&self) -> &::std::option::Option<::std::string::String> {
@@ -309,19 +296,33 @@ impl ReservationBuilder {
     /// Consumes the builder and constructs a [`Reservation`](crate::types::Reservation).
     pub fn build(self) -> crate::types::Reservation {
         crate::types::Reservation {
-            currency_code: self.currency_code,
-            duration: self.duration,
-            duration_units: self.duration_units,
-            end: self.end,
-            offering_arn: self.offering_arn,
-            offering_description: self.offering_description,
-            price_per_unit: self.price_per_unit,
-            price_units: self.price_units,
-            reservation_arn: self.reservation_arn,
-            reservation_name: self.reservation_name,
-            reservation_state: self.reservation_state,
-            resource_specification: self.resource_specification,
-            start: self.start,
+            currency_code: self.currency_code
+            ,
+            duration: self.duration
+            ,
+            duration_units: self.duration_units
+            ,
+            end: self.end
+            ,
+            offering_arn: self.offering_arn
+            ,
+            offering_description: self.offering_description
+            ,
+            price_per_unit: self.price_per_unit
+            ,
+            price_units: self.price_units
+            ,
+            reservation_arn: self.reservation_arn
+            ,
+            reservation_name: self.reservation_name
+            ,
+            reservation_state: self.reservation_state
+            ,
+            resource_specification: self.resource_specification
+            ,
+            start: self.start
+            ,
         }
     }
 }
+

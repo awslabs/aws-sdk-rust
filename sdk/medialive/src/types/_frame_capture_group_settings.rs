@@ -3,19 +3,19 @@
 /// Frame Capture Group Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FrameCaptureGroupSettings {
+pub struct FrameCaptureGroupSettings  {
     /// The destination for the frame capture files. Either the URI for an Amazon S3 bucket and object, plus a file name prefix (for example, s3ssl://sportsDelivery/highlights/20180820/curling-) or the URI for a MediaStore container, plus a file name prefix (for example, mediastoressl://sportsDelivery/20180820/curling-). The final file names consist of the prefix from the destination field (for example, "curling-") + name modifier + the counter (5 digits, starting from 00001) + extension (which is always .jpg). For example, curling-low.00001.jpg
     pub destination: ::std::option::Option<crate::types::OutputLocationRef>,
     /// Parameters that control interactions with the CDN.
     pub frame_capture_cdn_settings: ::std::option::Option<crate::types::FrameCaptureCdnSettings>,
 }
-impl FrameCaptureGroupSettings {
+impl  FrameCaptureGroupSettings  {
     /// The destination for the frame capture files. Either the URI for an Amazon S3 bucket and object, plus a file name prefix (for example, s3ssl://sportsDelivery/highlights/20180820/curling-) or the URI for a MediaStore container, plus a file name prefix (for example, mediastoressl://sportsDelivery/20180820/curling-). The final file names consist of the prefix from the destination field (for example, "curling-") + name modifier + the counter (5 digits, starting from 00001) + extension (which is always .jpg). For example, curling-low.00001.jpg
-    pub fn destination(&self) -> ::std::option::Option<&crate::types::OutputLocationRef> {
+    pub fn destination(&self) -> ::std::option::Option<& crate::types::OutputLocationRef> {
         self.destination.as_ref()
     }
     /// Parameters that control interactions with the CDN.
-    pub fn frame_capture_cdn_settings(&self) -> ::std::option::Option<&crate::types::FrameCaptureCdnSettings> {
+    pub fn frame_capture_cdn_settings(&self) -> ::std::option::Option<& crate::types::FrameCaptureCdnSettings> {
         self.frame_capture_cdn_settings.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl FrameCaptureGroupSettingsBuilder {
     }
     /// The destination for the frame capture files. Either the URI for an Amazon S3 bucket and object, plus a file name prefix (for example, s3ssl://sportsDelivery/highlights/20180820/curling-) or the URI for a MediaStore container, plus a file name prefix (for example, mediastoressl://sportsDelivery/20180820/curling-). The final file names consist of the prefix from the destination field (for example, "curling-") + name modifier + the counter (5 digits, starting from 00001) + extension (which is always .jpg). For example, curling-low.00001.jpg
     pub fn set_destination(mut self, input: ::std::option::Option<crate::types::OutputLocationRef>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// The destination for the frame capture files. Either the URI for an Amazon S3 bucket and object, plus a file name prefix (for example, s3ssl://sportsDelivery/highlights/20180820/curling-) or the URI for a MediaStore container, plus a file name prefix (for example, mediastoressl://sportsDelivery/20180820/curling-). The final file names consist of the prefix from the destination field (for example, "curling-") + name modifier + the counter (5 digits, starting from 00001) + extension (which is always .jpg). For example, curling-low.00001.jpg
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::OutputLocationRef> {
@@ -56,8 +55,7 @@ impl FrameCaptureGroupSettingsBuilder {
     }
     /// Parameters that control interactions with the CDN.
     pub fn set_frame_capture_cdn_settings(mut self, input: ::std::option::Option<crate::types::FrameCaptureCdnSettings>) -> Self {
-        self.frame_capture_cdn_settings = input;
-        self
+        self.frame_capture_cdn_settings = input; self
     }
     /// Parameters that control interactions with the CDN.
     pub fn get_frame_capture_cdn_settings(&self) -> &::std::option::Option<crate::types::FrameCaptureCdnSettings> {
@@ -66,8 +64,11 @@ impl FrameCaptureGroupSettingsBuilder {
     /// Consumes the builder and constructs a [`FrameCaptureGroupSettings`](crate::types::FrameCaptureGroupSettings).
     pub fn build(self) -> crate::types::FrameCaptureGroupSettings {
         crate::types::FrameCaptureGroupSettings {
-            destination: self.destination,
-            frame_capture_cdn_settings: self.frame_capture_cdn_settings,
+            destination: self.destination
+            ,
+            frame_capture_cdn_settings: self.frame_capture_cdn_settings
+            ,
         }
     }
 }
+

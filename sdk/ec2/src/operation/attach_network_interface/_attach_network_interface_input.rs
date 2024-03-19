@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for AttachNetworkInterface.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttachNetworkInterfaceInput {
+pub struct AttachNetworkInterfaceInput  {
     /// <p>The index of the device for the network interface attachment.</p>
     pub device_index: ::std::option::Option<i32>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -17,7 +17,7 @@ pub struct AttachNetworkInterfaceInput {
     /// <p>Configures ENA Express for the network interface that this action attaches to the instance.</p>
     pub ena_srd_specification: ::std::option::Option<crate::types::EnaSrdSpecification>,
 }
-impl AttachNetworkInterfaceInput {
+impl  AttachNetworkInterfaceInput  {
     /// <p>The index of the device for the network interface attachment.</p>
     pub fn device_index(&self) -> ::std::option::Option<i32> {
         self.device_index
@@ -27,11 +27,11 @@ impl AttachNetworkInterfaceInput {
         self.dry_run
     }
     /// <p>The ID of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> ::std::option::Option<& str> {
         self.network_interface_id.as_deref()
     }
     /// <p>The index of the network card. Some instance types support multiple network cards. The primary network interface must be assigned to network card index 0. The default is network card index 0.</p>
@@ -39,7 +39,7 @@ impl AttachNetworkInterfaceInput {
         self.network_card_index
     }
     /// <p>Configures ENA Express for the network interface that this action attaches to the instance.</p>
-    pub fn ena_srd_specification(&self) -> ::std::option::Option<&crate::types::EnaSrdSpecification> {
+    pub fn ena_srd_specification(&self) -> ::std::option::Option<& crate::types::EnaSrdSpecification> {
         self.ena_srd_specification.as_ref()
     }
 }
@@ -70,8 +70,7 @@ impl AttachNetworkInterfaceInputBuilder {
     }
     /// <p>The index of the device for the network interface attachment.</p>
     pub fn set_device_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.device_index = input;
-        self
+        self.device_index = input; self
     }
     /// <p>The index of the device for the network interface attachment.</p>
     pub fn get_device_index(&self) -> &::std::option::Option<i32> {
@@ -84,8 +83,7 @@ impl AttachNetworkInterfaceInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -99,8 +97,7 @@ impl AttachNetworkInterfaceInputBuilder {
     }
     /// <p>The ID of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +111,7 @@ impl AttachNetworkInterfaceInputBuilder {
     }
     /// <p>The ID of the network interface.</p>
     pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_interface_id = input;
-        self
+        self.network_interface_id = input; self
     }
     /// <p>The ID of the network interface.</p>
     pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +124,7 @@ impl AttachNetworkInterfaceInputBuilder {
     }
     /// <p>The index of the network card. Some instance types support multiple network cards. The primary network interface must be assigned to network card index 0. The default is network card index 0.</p>
     pub fn set_network_card_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.network_card_index = input;
-        self
+        self.network_card_index = input; self
     }
     /// <p>The index of the network card. Some instance types support multiple network cards. The primary network interface must be assigned to network card index 0. The default is network card index 0.</p>
     pub fn get_network_card_index(&self) -> &::std::option::Option<i32> {
@@ -142,27 +137,30 @@ impl AttachNetworkInterfaceInputBuilder {
     }
     /// <p>Configures ENA Express for the network interface that this action attaches to the instance.</p>
     pub fn set_ena_srd_specification(mut self, input: ::std::option::Option<crate::types::EnaSrdSpecification>) -> Self {
-        self.ena_srd_specification = input;
-        self
+        self.ena_srd_specification = input; self
     }
     /// <p>Configures ENA Express for the network interface that this action attaches to the instance.</p>
     pub fn get_ena_srd_specification(&self) -> &::std::option::Option<crate::types::EnaSrdSpecification> {
         &self.ena_srd_specification
     }
     /// Consumes the builder and constructs a [`AttachNetworkInterfaceInput`](crate::operation::attach_network_interface::AttachNetworkInterfaceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::attach_network_interface::AttachNetworkInterfaceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::attach_network_interface::AttachNetworkInterfaceInput {
-            device_index: self.device_index,
-            dry_run: self.dry_run,
-            instance_id: self.instance_id,
-            network_interface_id: self.network_interface_id,
-            network_card_index: self.network_card_index,
-            ena_srd_specification: self.ena_srd_specification,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::attach_network_interface::AttachNetworkInterfaceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::attach_network_interface::AttachNetworkInterfaceInput {
+                device_index: self.device_index
+                ,
+                dry_run: self.dry_run
+                ,
+                instance_id: self.instance_id
+                ,
+                network_interface_id: self.network_interface_id
+                ,
+                network_card_index: self.network_card_index
+                ,
+                ena_srd_specification: self.ena_srd_specification
+                ,
+            }
+        )
     }
 }
+

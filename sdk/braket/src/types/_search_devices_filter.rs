@@ -3,22 +3,20 @@
 /// <p>The filter to use for searching devices.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchDevicesFilter {
+pub struct SearchDevicesFilter  {
     /// <p>The name to use to filter results.</p>
     pub name: ::std::string::String,
     /// <p>The values to use to filter results.</p>
-    pub values: ::std::vec::Vec<::std::string::String>,
+    pub values: ::std::vec::Vec::<::std::string::String>,
 }
-impl SearchDevicesFilter {
+impl  SearchDevicesFilter  {
     /// <p>The name to use to filter results.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The values to use to filter results.</p>
-    pub fn values(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.values.deref()
+    pub fn values(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.values.deref()
     }
 }
 impl SearchDevicesFilter {
@@ -33,7 +31,7 @@ impl SearchDevicesFilter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchDevicesFilterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl SearchDevicesFilterBuilder {
     /// <p>The name to use to filter results.</p>
@@ -44,8 +42,7 @@ impl SearchDevicesFilterBuilder {
     }
     /// <p>The name to use to filter results.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name to use to filter results.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,17 +55,16 @@ impl SearchDevicesFilterBuilder {
     /// <p>The values to use to filter results.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The values to use to filter results.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The values to use to filter results.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`SearchDevicesFilter`](crate::types::SearchDevicesFilter).
@@ -76,19 +72,20 @@ impl SearchDevicesFilterBuilder {
     /// - [`name`](crate::types::builders::SearchDevicesFilterBuilder::name)
     /// - [`values`](crate::types::builders::SearchDevicesFilterBuilder::values)
     pub fn build(self) -> ::std::result::Result<crate::types::SearchDevicesFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SearchDevicesFilter {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building SearchDevicesFilter",
-                )
-            })?,
-            values: self.values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "values",
-                    "values was not specified but it is required when building SearchDevicesFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SearchDevicesFilter {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building SearchDevicesFilter")
+                    )?
+                ,
+                values: self.values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("values", "values was not specified but it is required when building SearchDevicesFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

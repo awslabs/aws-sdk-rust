@@ -3,7 +3,7 @@
 /// <p>Provides the task status showing a running total of the total number of files to be processed, the number successfully processed, and the number of files the task failed to process.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataRepositoryTaskStatus {
+pub struct DataRepositoryTaskStatus  {
     /// <p>The total number of files that the task will process. While a task is executing, the sum of <code>SucceededCount</code> plus <code>FailedCount</code> may not equal <code>TotalCount</code>. When the task is complete, <code>TotalCount</code> equals the sum of <code>SucceededCount</code> plus <code>FailedCount</code>.</p>
     pub total_count: ::std::option::Option<i64>,
     /// <p>A running total of the number of files that the task has successfully processed.</p>
@@ -15,7 +15,7 @@ pub struct DataRepositoryTaskStatus {
     /// <p>The total amount of data, in GiB, released by an Amazon File Cache AUTO_RELEASE_DATA task that automatically releases files from the cache.</p>
     pub released_capacity: ::std::option::Option<i64>,
 }
-impl DataRepositoryTaskStatus {
+impl  DataRepositoryTaskStatus  {
     /// <p>The total number of files that the task will process. While a task is executing, the sum of <code>SucceededCount</code> plus <code>FailedCount</code> may not equal <code>TotalCount</code>. When the task is complete, <code>TotalCount</code> equals the sum of <code>SucceededCount</code> plus <code>FailedCount</code>.</p>
     pub fn total_count(&self) -> ::std::option::Option<i64> {
         self.total_count
@@ -29,7 +29,7 @@ impl DataRepositoryTaskStatus {
         self.failed_count
     }
     /// <p>The time at which the task status was last updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The total amount of data, in GiB, released by an Amazon File Cache AUTO_RELEASE_DATA task that automatically releases files from the cache.</p>
@@ -62,8 +62,7 @@ impl DataRepositoryTaskStatusBuilder {
     }
     /// <p>The total number of files that the task will process. While a task is executing, the sum of <code>SucceededCount</code> plus <code>FailedCount</code> may not equal <code>TotalCount</code>. When the task is complete, <code>TotalCount</code> equals the sum of <code>SucceededCount</code> plus <code>FailedCount</code>.</p>
     pub fn set_total_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total_count = input;
-        self
+        self.total_count = input; self
     }
     /// <p>The total number of files that the task will process. While a task is executing, the sum of <code>SucceededCount</code> plus <code>FailedCount</code> may not equal <code>TotalCount</code>. When the task is complete, <code>TotalCount</code> equals the sum of <code>SucceededCount</code> plus <code>FailedCount</code>.</p>
     pub fn get_total_count(&self) -> &::std::option::Option<i64> {
@@ -76,8 +75,7 @@ impl DataRepositoryTaskStatusBuilder {
     }
     /// <p>A running total of the number of files that the task has successfully processed.</p>
     pub fn set_succeeded_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.succeeded_count = input;
-        self
+        self.succeeded_count = input; self
     }
     /// <p>A running total of the number of files that the task has successfully processed.</p>
     pub fn get_succeeded_count(&self) -> &::std::option::Option<i64> {
@@ -90,8 +88,7 @@ impl DataRepositoryTaskStatusBuilder {
     }
     /// <p>A running total of the number of files that the task failed to process.</p>
     pub fn set_failed_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.failed_count = input;
-        self
+        self.failed_count = input; self
     }
     /// <p>A running total of the number of files that the task failed to process.</p>
     pub fn get_failed_count(&self) -> &::std::option::Option<i64> {
@@ -104,8 +101,7 @@ impl DataRepositoryTaskStatusBuilder {
     }
     /// <p>The time at which the task status was last updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The time at which the task status was last updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -118,8 +114,7 @@ impl DataRepositoryTaskStatusBuilder {
     }
     /// <p>The total amount of data, in GiB, released by an Amazon File Cache AUTO_RELEASE_DATA task that automatically releases files from the cache.</p>
     pub fn set_released_capacity(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.released_capacity = input;
-        self
+        self.released_capacity = input; self
     }
     /// <p>The total amount of data, in GiB, released by an Amazon File Cache AUTO_RELEASE_DATA task that automatically releases files from the cache.</p>
     pub fn get_released_capacity(&self) -> &::std::option::Option<i64> {
@@ -128,11 +123,17 @@ impl DataRepositoryTaskStatusBuilder {
     /// Consumes the builder and constructs a [`DataRepositoryTaskStatus`](crate::types::DataRepositoryTaskStatus).
     pub fn build(self) -> crate::types::DataRepositoryTaskStatus {
         crate::types::DataRepositoryTaskStatus {
-            total_count: self.total_count,
-            succeeded_count: self.succeeded_count,
-            failed_count: self.failed_count,
-            last_updated_time: self.last_updated_time,
-            released_capacity: self.released_capacity,
+            total_count: self.total_count
+            ,
+            succeeded_count: self.succeeded_count
+            ,
+            failed_count: self.failed_count
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            released_capacity: self.released_capacity
+            ,
         }
     }
 }
+

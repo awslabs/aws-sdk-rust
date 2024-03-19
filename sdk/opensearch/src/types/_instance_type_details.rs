@@ -3,7 +3,7 @@
 /// <p>Lists all instance types and available features for a given OpenSearch or Elasticsearch version.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceTypeDetails {
+pub struct InstanceTypeDetails  {
     /// <p>The instance type.</p>
     pub instance_type: ::std::option::Option<crate::types::OpenSearchPartitionInstanceType>,
     /// <p>Whether encryption at rest and node-to-node encryption are supported for the instance type.</p>
@@ -17,13 +17,13 @@ pub struct InstanceTypeDetails {
     /// <p>Whether UltraWarm is supported for the instance type.</p>
     pub warm_enabled: ::std::option::Option<bool>,
     /// <p>Whether the instance acts as a data node, a dedicated master node, or an UltraWarm node.</p>
-    pub instance_role: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub instance_role: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The supported Availability Zones for the instance type.</p>
-    pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub availability_zones: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl InstanceTypeDetails {
+impl  InstanceTypeDetails  {
     /// <p>The instance type.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::OpenSearchPartitionInstanceType> {
+    pub fn instance_type(&self) -> ::std::option::Option<& crate::types::OpenSearchPartitionInstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>Whether encryption at rest and node-to-node encryption are supported for the instance type.</p>
@@ -47,16 +47,18 @@ impl InstanceTypeDetails {
         self.warm_enabled
     }
     /// <p>Whether the instance acts as a data node, a dedicated master node, or an UltraWarm node.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_role.is_none()`.
-    pub fn instance_role(&self) -> &[::std::string::String] {
-        self.instance_role.as_deref().unwrap_or_default()
+    pub fn instance_role(&self) -> & [::std::string::String] {
+        self.instance_role.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The supported Availability Zones for the instance type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
-    pub fn availability_zones(&self) -> &[::std::string::String] {
-        self.availability_zones.as_deref().unwrap_or_default()
+    pub fn availability_zones(&self) -> & [::std::string::String] {
+        self.availability_zones.as_deref()
+        .unwrap_or_default()
     }
 }
 impl InstanceTypeDetails {
@@ -76,8 +78,8 @@ pub struct InstanceTypeDetailsBuilder {
     pub(crate) app_logs_enabled: ::std::option::Option<bool>,
     pub(crate) advanced_security_enabled: ::std::option::Option<bool>,
     pub(crate) warm_enabled: ::std::option::Option<bool>,
-    pub(crate) instance_role: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) instance_role: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl InstanceTypeDetailsBuilder {
     /// <p>The instance type.</p>
@@ -87,8 +89,7 @@ impl InstanceTypeDetailsBuilder {
     }
     /// <p>The instance type.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::OpenSearchPartitionInstanceType>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The instance type.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::OpenSearchPartitionInstanceType> {
@@ -101,8 +102,7 @@ impl InstanceTypeDetailsBuilder {
     }
     /// <p>Whether encryption at rest and node-to-node encryption are supported for the instance type.</p>
     pub fn set_encryption_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.encryption_enabled = input;
-        self
+        self.encryption_enabled = input; self
     }
     /// <p>Whether encryption at rest and node-to-node encryption are supported for the instance type.</p>
     pub fn get_encryption_enabled(&self) -> &::std::option::Option<bool> {
@@ -115,8 +115,7 @@ impl InstanceTypeDetailsBuilder {
     }
     /// <p>Whether Amazon Cognito access is supported for the instance type.</p>
     pub fn set_cognito_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.cognito_enabled = input;
-        self
+        self.cognito_enabled = input; self
     }
     /// <p>Whether Amazon Cognito access is supported for the instance type.</p>
     pub fn get_cognito_enabled(&self) -> &::std::option::Option<bool> {
@@ -129,8 +128,7 @@ impl InstanceTypeDetailsBuilder {
     }
     /// <p>Whether logging is supported for the instance type.</p>
     pub fn set_app_logs_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.app_logs_enabled = input;
-        self
+        self.app_logs_enabled = input; self
     }
     /// <p>Whether logging is supported for the instance type.</p>
     pub fn get_app_logs_enabled(&self) -> &::std::option::Option<bool> {
@@ -143,8 +141,7 @@ impl InstanceTypeDetailsBuilder {
     }
     /// <p>Whether fine-grained access control is supported for the instance type.</p>
     pub fn set_advanced_security_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.advanced_security_enabled = input;
-        self
+        self.advanced_security_enabled = input; self
     }
     /// <p>Whether fine-grained access control is supported for the instance type.</p>
     pub fn get_advanced_security_enabled(&self) -> &::std::option::Option<bool> {
@@ -157,8 +154,7 @@ impl InstanceTypeDetailsBuilder {
     }
     /// <p>Whether UltraWarm is supported for the instance type.</p>
     pub fn set_warm_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.warm_enabled = input;
-        self
+        self.warm_enabled = input; self
     }
     /// <p>Whether UltraWarm is supported for the instance type.</p>
     pub fn get_warm_enabled(&self) -> &::std::option::Option<bool> {
@@ -171,17 +167,16 @@ impl InstanceTypeDetailsBuilder {
     /// <p>Whether the instance acts as a data node, a dedicated master node, or an UltraWarm node.</p>
     pub fn instance_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_role.unwrap_or_default();
-        v.push(input.into());
-        self.instance_role = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.instance_role = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Whether the instance acts as a data node, a dedicated master node, or an UltraWarm node.</p>
-    pub fn set_instance_role(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.instance_role = input;
-        self
+    pub fn set_instance_role(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.instance_role = input; self
     }
     /// <p>Whether the instance acts as a data node, a dedicated master node, or an UltraWarm node.</p>
-    pub fn get_instance_role(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_role(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.instance_role
     }
     /// Appends an item to `availability_zones`.
@@ -191,30 +186,38 @@ impl InstanceTypeDetailsBuilder {
     /// <p>The supported Availability Zones for the instance type.</p>
     pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
-        v.push(input.into());
-        self.availability_zones = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.availability_zones = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The supported Availability Zones for the instance type.</p>
-    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.availability_zones = input;
-        self
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.availability_zones = input; self
     }
     /// <p>The supported Availability Zones for the instance type.</p>
-    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.availability_zones
     }
     /// Consumes the builder and constructs a [`InstanceTypeDetails`](crate::types::InstanceTypeDetails).
     pub fn build(self) -> crate::types::InstanceTypeDetails {
         crate::types::InstanceTypeDetails {
-            instance_type: self.instance_type,
-            encryption_enabled: self.encryption_enabled,
-            cognito_enabled: self.cognito_enabled,
-            app_logs_enabled: self.app_logs_enabled,
-            advanced_security_enabled: self.advanced_security_enabled,
-            warm_enabled: self.warm_enabled,
-            instance_role: self.instance_role,
-            availability_zones: self.availability_zones,
+            instance_type: self.instance_type
+            ,
+            encryption_enabled: self.encryption_enabled
+            ,
+            cognito_enabled: self.cognito_enabled
+            ,
+            app_logs_enabled: self.app_logs_enabled
+            ,
+            advanced_security_enabled: self.advanced_security_enabled
+            ,
+            warm_enabled: self.warm_enabled
+            ,
+            instance_role: self.instance_role
+            ,
+            availability_zones: self.availability_zones
+            ,
         }
     }
 }
+

@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeVpcEndpointsOutput {
+pub struct DescribeVpcEndpointsOutput  {
     /// <p>Information about the endpoints.</p>
-    pub vpc_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>>,
+    pub vpc_endpoints: ::std::option::Option<::std::vec::Vec::<crate::types::VpcEndpoint>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeVpcEndpointsOutput {
+impl  DescribeVpcEndpointsOutput  {
     /// <p>Information about the endpoints.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_endpoints.is_none()`.
-    pub fn vpc_endpoints(&self) -> &[crate::types::VpcEndpoint] {
-        self.vpc_endpoints.as_deref().unwrap_or_default()
+    pub fn vpc_endpoints(&self) -> & [crate::types::VpcEndpoint] {
+        self.vpc_endpoints.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeVpcEndpointsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeVpcEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcEndpointsOutput`](crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsOutput).
     pub fn builder() -> crate::operation::describe_vpc_endpoints::builders::DescribeVpcEndpointsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeVpcEndpointsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVpcEndpointsOutputBuilder {
-    pub(crate) vpc_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>>,
+    pub(crate) vpc_endpoints: ::std::option::Option<::std::vec::Vec::<crate::types::VpcEndpoint>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeVpcEndpointsOutputBuilder {
     /// <p>Information about the endpoints.</p>
     pub fn vpc_endpoints(mut self, input: crate::types::VpcEndpoint) -> Self {
         let mut v = self.vpc_endpoints.unwrap_or_default();
-        v.push(input);
-        self.vpc_endpoints = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.vpc_endpoints = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the endpoints.</p>
-    pub fn set_vpc_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>>) -> Self {
-        self.vpc_endpoints = input;
-        self
+    pub fn set_vpc_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VpcEndpoint>>) -> Self {
+        self.vpc_endpoints = input; self
     }
     /// <p>Information about the endpoints.</p>
-    pub fn get_vpc_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>> {
+    pub fn get_vpc_endpoints(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VpcEndpoint>> {
         &self.vpc_endpoints
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -69,28 +69,30 @@ impl DescribeVpcEndpointsOutputBuilder {
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeVpcEndpointsOutput`](crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsOutput).
     pub fn build(self) -> crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsOutput {
         crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsOutput {
-            vpc_endpoints: self.vpc_endpoints,
-            next_token: self.next_token,
+            vpc_endpoints: self.vpc_endpoints
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

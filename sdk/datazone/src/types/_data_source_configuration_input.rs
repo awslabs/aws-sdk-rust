@@ -22,11 +22,7 @@ impl DataSourceConfigurationInput {
     /// Tries to convert the enum instance into [`GlueRunConfiguration`](crate::types::DataSourceConfigurationInput::GlueRunConfiguration), extracting the inner [`GlueRunConfigurationInput`](crate::types::GlueRunConfigurationInput).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_glue_run_configuration(&self) -> ::std::result::Result<&crate::types::GlueRunConfigurationInput, &Self> {
-        if let DataSourceConfigurationInput::GlueRunConfiguration(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DataSourceConfigurationInput::GlueRunConfiguration(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`GlueRunConfiguration`](crate::types::DataSourceConfigurationInput::GlueRunConfiguration).
     pub fn is_glue_run_configuration(&self) -> bool {
@@ -35,11 +31,7 @@ impl DataSourceConfigurationInput {
     /// Tries to convert the enum instance into [`RedshiftRunConfiguration`](crate::types::DataSourceConfigurationInput::RedshiftRunConfiguration), extracting the inner [`RedshiftRunConfigurationInput`](crate::types::RedshiftRunConfigurationInput).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_redshift_run_configuration(&self) -> ::std::result::Result<&crate::types::RedshiftRunConfigurationInput, &Self> {
-        if let DataSourceConfigurationInput::RedshiftRunConfiguration(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DataSourceConfigurationInput::RedshiftRunConfiguration(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`RedshiftRunConfiguration`](crate::types::DataSourceConfigurationInput::RedshiftRunConfiguration).
     pub fn is_redshift_run_configuration(&self) -> bool {
@@ -50,3 +42,4 @@ impl DataSourceConfigurationInput {
         matches!(self, Self::Unknown)
     }
 }
+

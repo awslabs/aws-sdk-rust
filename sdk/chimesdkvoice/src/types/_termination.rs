@@ -3,45 +3,47 @@
 /// <p>Termination settings enable SIP hosts to make outbound calls using an Amazon Chime SDK Voice Connector.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Termination {
+pub struct Termination  {
     /// <p>The limit on calls per second. Max value based on account service quota. Default value of 1.</p>
     pub cps_limit: ::std::option::Option<i32>,
     /// <p>The default outbound calling number.</p>
     pub default_phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The countries to which calls are allowed, in ISO 3166-1 alpha-2 format. Required.</p>
-    pub calling_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub calling_regions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The IP addresses allowed to make calls, in CIDR format.</p>
-    pub cidr_allowed_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub cidr_allowed_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>When termination is disabled, outbound calls cannot be made.</p>
     pub disabled: ::std::option::Option<bool>,
 }
-impl Termination {
+impl  Termination  {
     /// <p>The limit on calls per second. Max value based on account service quota. Default value of 1.</p>
     pub fn cps_limit(&self) -> ::std::option::Option<i32> {
         self.cps_limit
     }
     /// <p>The default outbound calling number.</p>
-    pub fn default_phone_number(&self) -> ::std::option::Option<&str> {
+    pub fn default_phone_number(&self) -> ::std::option::Option<& str> {
         self.default_phone_number.as_deref()
     }
     /// <p>The countries to which calls are allowed, in ISO 3166-1 alpha-2 format. Required.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.calling_regions.is_none()`.
-    pub fn calling_regions(&self) -> &[::std::string::String] {
-        self.calling_regions.as_deref().unwrap_or_default()
+    pub fn calling_regions(&self) -> & [::std::string::String] {
+        self.calling_regions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The IP addresses allowed to make calls, in CIDR format.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cidr_allowed_list.is_none()`.
-    pub fn cidr_allowed_list(&self) -> &[::std::string::String] {
-        self.cidr_allowed_list.as_deref().unwrap_or_default()
+    pub fn cidr_allowed_list(&self) -> & [::std::string::String] {
+        self.cidr_allowed_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>When termination is disabled, outbound calls cannot be made.</p>
     pub fn disabled(&self) -> ::std::option::Option<bool> {
         self.disabled
     }
 }
-impl ::std::fmt::Debug for Termination {
+impl  ::std::fmt::Debug for Termination  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Termination");
         formatter.field("cps_limit", &self.cps_limit);
@@ -65,8 +67,8 @@ impl Termination {
 pub struct TerminationBuilder {
     pub(crate) cps_limit: ::std::option::Option<i32>,
     pub(crate) default_phone_number: ::std::option::Option<::std::string::String>,
-    pub(crate) calling_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) cidr_allowed_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) calling_regions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) cidr_allowed_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) disabled: ::std::option::Option<bool>,
 }
 impl TerminationBuilder {
@@ -77,8 +79,7 @@ impl TerminationBuilder {
     }
     /// <p>The limit on calls per second. Max value based on account service quota. Default value of 1.</p>
     pub fn set_cps_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.cps_limit = input;
-        self
+        self.cps_limit = input; self
     }
     /// <p>The limit on calls per second. Max value based on account service quota. Default value of 1.</p>
     pub fn get_cps_limit(&self) -> &::std::option::Option<i32> {
@@ -91,8 +92,7 @@ impl TerminationBuilder {
     }
     /// <p>The default outbound calling number.</p>
     pub fn set_default_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_phone_number = input;
-        self
+        self.default_phone_number = input; self
     }
     /// <p>The default outbound calling number.</p>
     pub fn get_default_phone_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,17 +105,16 @@ impl TerminationBuilder {
     /// <p>The countries to which calls are allowed, in ISO 3166-1 alpha-2 format. Required.</p>
     pub fn calling_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.calling_regions.unwrap_or_default();
-        v.push(input.into());
-        self.calling_regions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.calling_regions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The countries to which calls are allowed, in ISO 3166-1 alpha-2 format. Required.</p>
-    pub fn set_calling_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.calling_regions = input;
-        self
+    pub fn set_calling_regions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.calling_regions = input; self
     }
     /// <p>The countries to which calls are allowed, in ISO 3166-1 alpha-2 format. Required.</p>
-    pub fn get_calling_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_calling_regions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.calling_regions
     }
     /// Appends an item to `cidr_allowed_list`.
@@ -125,17 +124,16 @@ impl TerminationBuilder {
     /// <p>The IP addresses allowed to make calls, in CIDR format.</p>
     pub fn cidr_allowed_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cidr_allowed_list.unwrap_or_default();
-        v.push(input.into());
-        self.cidr_allowed_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.cidr_allowed_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IP addresses allowed to make calls, in CIDR format.</p>
-    pub fn set_cidr_allowed_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.cidr_allowed_list = input;
-        self
+    pub fn set_cidr_allowed_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.cidr_allowed_list = input; self
     }
     /// <p>The IP addresses allowed to make calls, in CIDR format.</p>
-    pub fn get_cidr_allowed_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cidr_allowed_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.cidr_allowed_list
     }
     /// <p>When termination is disabled, outbound calls cannot be made.</p>
@@ -145,8 +143,7 @@ impl TerminationBuilder {
     }
     /// <p>When termination is disabled, outbound calls cannot be made.</p>
     pub fn set_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.disabled = input;
-        self
+        self.disabled = input; self
     }
     /// <p>When termination is disabled, outbound calls cannot be made.</p>
     pub fn get_disabled(&self) -> &::std::option::Option<bool> {
@@ -155,11 +152,16 @@ impl TerminationBuilder {
     /// Consumes the builder and constructs a [`Termination`](crate::types::Termination).
     pub fn build(self) -> crate::types::Termination {
         crate::types::Termination {
-            cps_limit: self.cps_limit,
-            default_phone_number: self.default_phone_number,
-            calling_regions: self.calling_regions,
-            cidr_allowed_list: self.cidr_allowed_list,
-            disabled: self.disabled,
+            cps_limit: self.cps_limit
+            ,
+            default_phone_number: self.default_phone_number
+            ,
+            calling_regions: self.calling_regions
+            ,
+            cidr_allowed_list: self.cidr_allowed_list
+            ,
+            disabled: self.disabled
+            ,
         }
     }
 }
@@ -174,3 +176,4 @@ impl ::std::fmt::Debug for TerminationBuilder {
         formatter.finish()
     }
 }
+

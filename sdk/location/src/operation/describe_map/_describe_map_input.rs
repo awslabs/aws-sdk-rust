@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeMapInput {
+pub struct DescribeMapInput  {
     /// <p>The name of the map resource.</p>
     pub map_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeMapInput {
+impl  DescribeMapInput  {
     /// <p>The name of the map resource.</p>
-    pub fn map_name(&self) -> ::std::option::Option<&str> {
+    pub fn map_name(&self) -> ::std::option::Option<& str> {
         self.map_name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl DescribeMapInputBuilder {
     }
     /// <p>The name of the map resource.</p>
     pub fn set_map_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.map_name = input;
-        self
+        self.map_name = input; self
     }
     /// <p>The name of the map resource.</p>
     pub fn get_map_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl DescribeMapInputBuilder {
     }
     /// Consumes the builder and constructs a [`DescribeMapInput`](crate::operation::describe_map::DescribeMapInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_map::DescribeMapInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_map::DescribeMapInput { map_name: self.map_name })
+        ::std::result::Result::Ok(
+            crate::operation::describe_map::DescribeMapInput {
+                map_name: self.map_name
+                ,
+            }
+        )
     }
 }
+

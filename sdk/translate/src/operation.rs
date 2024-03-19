@@ -57,3 +57,4 @@ pub mod untag_resource;
 
 /// Types for the `UpdateParallelData` operation.
 pub mod update_parallel_data;
+

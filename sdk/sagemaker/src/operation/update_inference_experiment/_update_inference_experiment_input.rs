@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateInferenceExperimentInput {
+pub struct UpdateInferenceExperimentInput  {
     /// <p>The name of the inference experiment to be updated.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The duration for which the inference experiment will run. If the status of the inference experiment is <code>Created</code>, then you can update both the start and end dates. If the status of the inference experiment is <code>Running</code>, then you can update only the end date.</p>
@@ -10,37 +10,38 @@ pub struct UpdateInferenceExperimentInput {
     /// <p>The description of the inference experiment.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>ModelVariantConfig</code> objects. There is one for each variant, whose infrastructure configuration you want to update.</p>
-    pub model_variants: ::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfig>>,
+    pub model_variants: ::std::option::Option<::std::vec::Vec::<crate::types::ModelVariantConfig>>,
     /// <p>The Amazon S3 location and configuration for storing inference request and response data.</p>
     pub data_storage_config: ::std::option::Option<crate::types::InferenceExperimentDataStorageConfig>,
     /// <p>The configuration of <code>ShadowMode</code> inference experiment type. Use this field to specify a production variant which takes all the inference requests, and a shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant also specify the percentage of requests that Amazon SageMaker replicates.</p>
     pub shadow_mode_config: ::std::option::Option<crate::types::ShadowModeConfig>,
 }
-impl UpdateInferenceExperimentInput {
+impl  UpdateInferenceExperimentInput  {
     /// <p>The name of the inference experiment to be updated.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The duration for which the inference experiment will run. If the status of the inference experiment is <code>Created</code>, then you can update both the start and end dates. If the status of the inference experiment is <code>Running</code>, then you can update only the end date.</p>
-    pub fn schedule(&self) -> ::std::option::Option<&crate::types::InferenceExperimentSchedule> {
+    pub fn schedule(&self) -> ::std::option::Option<& crate::types::InferenceExperimentSchedule> {
         self.schedule.as_ref()
     }
     /// <p>The description of the inference experiment.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An array of <code>ModelVariantConfig</code> objects. There is one for each variant, whose infrastructure configuration you want to update.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.model_variants.is_none()`.
-    pub fn model_variants(&self) -> &[crate::types::ModelVariantConfig] {
-        self.model_variants.as_deref().unwrap_or_default()
+    pub fn model_variants(&self) -> & [crate::types::ModelVariantConfig] {
+        self.model_variants.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon S3 location and configuration for storing inference request and response data.</p>
-    pub fn data_storage_config(&self) -> ::std::option::Option<&crate::types::InferenceExperimentDataStorageConfig> {
+    pub fn data_storage_config(&self) -> ::std::option::Option<& crate::types::InferenceExperimentDataStorageConfig> {
         self.data_storage_config.as_ref()
     }
     /// <p>The configuration of <code>ShadowMode</code> inference experiment type. Use this field to specify a production variant which takes all the inference requests, and a shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant also specify the percentage of requests that Amazon SageMaker replicates.</p>
-    pub fn shadow_mode_config(&self) -> ::std::option::Option<&crate::types::ShadowModeConfig> {
+    pub fn shadow_mode_config(&self) -> ::std::option::Option<& crate::types::ShadowModeConfig> {
         self.shadow_mode_config.as_ref()
     }
 }
@@ -58,7 +59,7 @@ pub struct UpdateInferenceExperimentInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) schedule: ::std::option::Option<crate::types::InferenceExperimentSchedule>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) model_variants: ::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfig>>,
+    pub(crate) model_variants: ::std::option::Option<::std::vec::Vec::<crate::types::ModelVariantConfig>>,
     pub(crate) data_storage_config: ::std::option::Option<crate::types::InferenceExperimentDataStorageConfig>,
     pub(crate) shadow_mode_config: ::std::option::Option<crate::types::ShadowModeConfig>,
 }
@@ -71,8 +72,7 @@ impl UpdateInferenceExperimentInputBuilder {
     }
     /// <p>The name of the inference experiment to be updated.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the inference experiment to be updated.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +85,7 @@ impl UpdateInferenceExperimentInputBuilder {
     }
     /// <p>The duration for which the inference experiment will run. If the status of the inference experiment is <code>Created</code>, then you can update both the start and end dates. If the status of the inference experiment is <code>Running</code>, then you can update only the end date.</p>
     pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::InferenceExperimentSchedule>) -> Self {
-        self.schedule = input;
-        self
+        self.schedule = input; self
     }
     /// <p>The duration for which the inference experiment will run. If the status of the inference experiment is <code>Created</code>, then you can update both the start and end dates. If the status of the inference experiment is <code>Running</code>, then you can update only the end date.</p>
     pub fn get_schedule(&self) -> &::std::option::Option<crate::types::InferenceExperimentSchedule> {
@@ -99,8 +98,7 @@ impl UpdateInferenceExperimentInputBuilder {
     }
     /// <p>The description of the inference experiment.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the inference experiment.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,17 +111,16 @@ impl UpdateInferenceExperimentInputBuilder {
     /// <p>An array of <code>ModelVariantConfig</code> objects. There is one for each variant, whose infrastructure configuration you want to update.</p>
     pub fn model_variants(mut self, input: crate::types::ModelVariantConfig) -> Self {
         let mut v = self.model_variants.unwrap_or_default();
-        v.push(input);
-        self.model_variants = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.model_variants = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>ModelVariantConfig</code> objects. There is one for each variant, whose infrastructure configuration you want to update.</p>
-    pub fn set_model_variants(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfig>>) -> Self {
-        self.model_variants = input;
-        self
+    pub fn set_model_variants(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ModelVariantConfig>>) -> Self {
+        self.model_variants = input; self
     }
     /// <p>An array of <code>ModelVariantConfig</code> objects. There is one for each variant, whose infrastructure configuration you want to update.</p>
-    pub fn get_model_variants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfig>> {
+    pub fn get_model_variants(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ModelVariantConfig>> {
         &self.model_variants
     }
     /// <p>The Amazon S3 location and configuration for storing inference request and response data.</p>
@@ -133,8 +130,7 @@ impl UpdateInferenceExperimentInputBuilder {
     }
     /// <p>The Amazon S3 location and configuration for storing inference request and response data.</p>
     pub fn set_data_storage_config(mut self, input: ::std::option::Option<crate::types::InferenceExperimentDataStorageConfig>) -> Self {
-        self.data_storage_config = input;
-        self
+        self.data_storage_config = input; self
     }
     /// <p>The Amazon S3 location and configuration for storing inference request and response data.</p>
     pub fn get_data_storage_config(&self) -> &::std::option::Option<crate::types::InferenceExperimentDataStorageConfig> {
@@ -147,27 +143,30 @@ impl UpdateInferenceExperimentInputBuilder {
     }
     /// <p>The configuration of <code>ShadowMode</code> inference experiment type. Use this field to specify a production variant which takes all the inference requests, and a shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant also specify the percentage of requests that Amazon SageMaker replicates.</p>
     pub fn set_shadow_mode_config(mut self, input: ::std::option::Option<crate::types::ShadowModeConfig>) -> Self {
-        self.shadow_mode_config = input;
-        self
+        self.shadow_mode_config = input; self
     }
     /// <p>The configuration of <code>ShadowMode</code> inference experiment type. Use this field to specify a production variant which takes all the inference requests, and a shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant also specify the percentage of requests that Amazon SageMaker replicates.</p>
     pub fn get_shadow_mode_config(&self) -> &::std::option::Option<crate::types::ShadowModeConfig> {
         &self.shadow_mode_config
     }
     /// Consumes the builder and constructs a [`UpdateInferenceExperimentInput`](crate::operation::update_inference_experiment::UpdateInferenceExperimentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_inference_experiment::UpdateInferenceExperimentInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_inference_experiment::UpdateInferenceExperimentInput {
-            name: self.name,
-            schedule: self.schedule,
-            description: self.description,
-            model_variants: self.model_variants,
-            data_storage_config: self.data_storage_config,
-            shadow_mode_config: self.shadow_mode_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_inference_experiment::UpdateInferenceExperimentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_inference_experiment::UpdateInferenceExperimentInput {
+                name: self.name
+                ,
+                schedule: self.schedule
+                ,
+                description: self.description
+                ,
+                model_variants: self.model_variants
+                ,
+                data_storage_config: self.data_storage_config
+                ,
+                shadow_mode_config: self.shadow_mode_config
+                ,
+            }
+        )
     }
 }
+

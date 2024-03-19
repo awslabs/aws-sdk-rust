@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteEarthObservationJobInput {
+pub struct DeleteEarthObservationJobInput  {
     /// <p>The Amazon Resource Name (ARN) of the Earth Observation job being deleted.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteEarthObservationJobInput {
+impl  DeleteEarthObservationJobInput  {
     /// <p>The Amazon Resource Name (ARN) of the Earth Observation job being deleted.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteEarthObservationJobInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Earth Observation job being deleted.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Earth Observation job being deleted.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
     /// Consumes the builder and constructs a [`DeleteEarthObservationJobInput`](crate::operation::delete_earth_observation_job::DeleteEarthObservationJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_earth_observation_job::DeleteEarthObservationJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_earth_observation_job::DeleteEarthObservationJobInput { arn: self.arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_earth_observation_job::DeleteEarthObservationJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_earth_observation_job::DeleteEarthObservationJobInput {
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

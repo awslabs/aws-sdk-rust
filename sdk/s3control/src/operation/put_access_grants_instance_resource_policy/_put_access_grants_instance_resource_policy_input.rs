@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutAccessGrantsInstanceResourcePolicyInput {
+pub struct PutAccessGrantsInstanceResourcePolicyInput  {
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource policy of the S3 Access Grants instance that you are updating.</p>
@@ -10,17 +10,17 @@ pub struct PutAccessGrantsInstanceResourcePolicyInput {
     /// <p>The Organization of the resource policy of the S3 Access Grants instance.</p>
     pub organization: ::std::option::Option<::std::string::String>,
 }
-impl PutAccessGrantsInstanceResourcePolicyInput {
+impl  PutAccessGrantsInstanceResourcePolicyInput  {
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The resource policy of the S3 Access Grants instance that you are updating.</p>
-    pub fn policy(&self) -> ::std::option::Option<&str> {
+    pub fn policy(&self) -> ::std::option::Option<& str> {
         self.policy.as_deref()
     }
     /// <p>The Organization of the resource policy of the S3 Access Grants instance.</p>
-    pub fn organization(&self) -> ::std::option::Option<&str> {
+    pub fn organization(&self) -> ::std::option::Option<& str> {
         self.organization.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl PutAccessGrantsInstanceResourcePolicyInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl PutAccessGrantsInstanceResourcePolicyInputBuilder {
     }
     /// <p>The resource policy of the S3 Access Grants instance that you are updating.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>The resource policy of the S3 Access Grants instance that you are updating.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,26 +75,24 @@ impl PutAccessGrantsInstanceResourcePolicyInputBuilder {
     }
     /// <p>The Organization of the resource policy of the S3 Access Grants instance.</p>
     pub fn set_organization(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization = input;
-        self
+        self.organization = input; self
     }
     /// <p>The Organization of the resource policy of the S3 Access Grants instance.</p>
     pub fn get_organization(&self) -> &::std::option::Option<::std::string::String> {
         &self.organization
     }
     /// Consumes the builder and constructs a [`PutAccessGrantsInstanceResourcePolicyInput`](crate::operation::put_access_grants_instance_resource_policy::PutAccessGrantsInstanceResourcePolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_access_grants_instance_resource_policy::PutAccessGrantsInstanceResourcePolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_access_grants_instance_resource_policy::PutAccessGrantsInstanceResourcePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_access_grants_instance_resource_policy::PutAccessGrantsInstanceResourcePolicyInput {
-                account_id: self.account_id,
-                policy: self.policy,
-                organization: self.organization,
-            },
+                account_id: self.account_id
+                ,
+                policy: self.policy
+                ,
+                organization: self.organization
+                ,
+            }
         )
     }
 }
+

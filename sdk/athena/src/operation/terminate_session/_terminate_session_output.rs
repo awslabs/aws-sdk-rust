@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TerminateSessionOutput {
+pub struct TerminateSessionOutput  {
     /// <p>The state of the session. A description of each state follows.</p>
     /// <p><code>CREATING</code> - The session is being started, including acquiring resources.</p>
     /// <p><code>CREATED</code> - The session has been started.</p>
@@ -15,7 +15,7 @@ pub struct TerminateSessionOutput {
     pub state: ::std::option::Option<crate::types::SessionState>,
     _request_id: Option<String>,
 }
-impl TerminateSessionOutput {
+impl  TerminateSessionOutput  {
     /// <p>The state of the session. A description of each state follows.</p>
     /// <p><code>CREATING</code> - The session is being started, including acquiring resources.</p>
     /// <p><code>CREATED</code> - The session has been started.</p>
@@ -25,15 +25,15 @@ impl TerminateSessionOutput {
     /// <p><code>TERMINATED</code> - The session and its resources are no longer running.</p>
     /// <p><code>DEGRADED</code> - The session has no healthy coordinators.</p>
     /// <p><code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::SessionState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::SessionState> {
         self.state.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for TerminateSessionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl TerminateSessionOutput {
     /// Creates a new builder-style object to manufacture [`TerminateSessionOutput`](crate::operation::terminate_session::TerminateSessionOutput).
     pub fn builder() -> crate::operation::terminate_session::builders::TerminateSessionOutputBuilder {
@@ -72,8 +72,7 @@ impl TerminateSessionOutputBuilder {
     /// <p><code>DEGRADED</code> - The session has no healthy coordinators.</p>
     /// <p><code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::SessionState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the session. A description of each state follows.</p>
     /// <p><code>CREATING</code> - The session is being started, including acquiring resources.</p>
@@ -88,19 +87,21 @@ impl TerminateSessionOutputBuilder {
         &self.state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`TerminateSessionOutput`](crate::operation::terminate_session::TerminateSessionOutput).
     pub fn build(self) -> crate::operation::terminate_session::TerminateSessionOutput {
         crate::operation::terminate_session::TerminateSessionOutput {
-            state: self.state,
+            state: self.state
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

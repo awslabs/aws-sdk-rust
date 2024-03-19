@@ -3,11 +3,11 @@
 /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JmxExporterInfo {
+pub struct JmxExporterInfo  {
     /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
     pub enabled_in_broker: ::std::option::Option<bool>,
 }
-impl JmxExporterInfo {
+impl  JmxExporterInfo  {
     /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
     pub fn enabled_in_broker(&self) -> ::std::option::Option<bool> {
         self.enabled_in_broker
@@ -35,8 +35,7 @@ impl JmxExporterInfoBuilder {
     }
     /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
     pub fn set_enabled_in_broker(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled_in_broker = input;
-        self
+        self.enabled_in_broker = input; self
     }
     /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
     pub fn get_enabled_in_broker(&self) -> &::std::option::Option<bool> {
@@ -45,7 +44,9 @@ impl JmxExporterInfoBuilder {
     /// Consumes the builder and constructs a [`JmxExporterInfo`](crate::types::JmxExporterInfo).
     pub fn build(self) -> crate::types::JmxExporterInfo {
         crate::types::JmxExporterInfo {
-            enabled_in_broker: self.enabled_in_broker,
+            enabled_in_broker: self.enabled_in_broker
+            ,
         }
     }
 }
+

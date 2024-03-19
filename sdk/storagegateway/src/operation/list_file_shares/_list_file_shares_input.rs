@@ -3,7 +3,7 @@
 /// <p>ListFileShareInput</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListFileSharesInput {
+pub struct ListFileSharesInput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway whose file shares you want to list. If this field is not present, all file shares under your account are listed.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of file shares to return in the response. The value must be an integer with a value greater than zero. Optional.</p>
@@ -11,9 +11,9 @@ pub struct ListFileSharesInput {
     /// <p>Opaque pagination token returned from a previous ListFileShares operation. If present, <code>Marker</code> specifies where to continue the list from after a previous call to ListFileShares. Optional.</p>
     pub marker: ::std::option::Option<::std::string::String>,
 }
-impl ListFileSharesInput {
+impl  ListFileSharesInput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway whose file shares you want to list. If this field is not present, all file shares under your account are listed.</p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     /// <p>The maximum number of file shares to return in the response. The value must be an integer with a value greater than zero. Optional.</p>
@@ -21,7 +21,7 @@ impl ListFileSharesInput {
         self.limit
     }
     /// <p>Opaque pagination token returned from a previous ListFileShares operation. If present, <code>Marker</code> specifies where to continue the list from after a previous call to ListFileShares. Optional.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ListFileSharesInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway whose file shares you want to list. If this field is not present, all file shares under your account are listed.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway whose file shares you want to list. If this field is not present, all file shares under your account are listed.</p>
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListFileSharesInputBuilder {
     }
     /// <p>The maximum number of file shares to return in the response. The value must be an integer with a value greater than zero. Optional.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of file shares to return in the response. The value must be an integer with a value greater than zero. Optional.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
@@ -76,21 +74,24 @@ impl ListFileSharesInputBuilder {
     }
     /// <p>Opaque pagination token returned from a previous ListFileShares operation. If present, <code>Marker</code> specifies where to continue the list from after a previous call to ListFileShares. Optional.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>Opaque pagination token returned from a previous ListFileShares operation. If present, <code>Marker</code> specifies where to continue the list from after a previous call to ListFileShares. Optional.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     /// Consumes the builder and constructs a [`ListFileSharesInput`](crate::operation::list_file_shares::ListFileSharesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_file_shares::ListFileSharesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_file_shares::ListFileSharesInput {
-            gateway_arn: self.gateway_arn,
-            limit: self.limit,
-            marker: self.marker,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_file_shares::ListFileSharesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_file_shares::ListFileSharesInput {
+                gateway_arn: self.gateway_arn
+                ,
+                limit: self.limit
+                ,
+                marker: self.marker
+                ,
+            }
+        )
     }
 }
+

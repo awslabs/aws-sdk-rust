@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateLaunchConfigurationTemplateInput {
+pub struct UpdateLaunchConfigurationTemplateInput  {
     /// <p>Launch Configuration Template ID.</p>
     pub launch_configuration_template_id: ::std::option::Option<::std::string::String>,
     /// <p>Launch disposition.</p>
@@ -22,17 +22,17 @@ pub struct UpdateLaunchConfigurationTemplateInput {
     /// <p>DRS will set the 'launch into instance ID' of any source server when performing a drill, recovery or failback to the previous region or availability zone, using the instance ID of the source instance.</p>
     pub launch_into_source_instance: ::std::option::Option<bool>,
 }
-impl UpdateLaunchConfigurationTemplateInput {
+impl  UpdateLaunchConfigurationTemplateInput  {
     /// <p>Launch Configuration Template ID.</p>
-    pub fn launch_configuration_template_id(&self) -> ::std::option::Option<&str> {
+    pub fn launch_configuration_template_id(&self) -> ::std::option::Option<& str> {
         self.launch_configuration_template_id.as_deref()
     }
     /// <p>Launch disposition.</p>
-    pub fn launch_disposition(&self) -> ::std::option::Option<&crate::types::LaunchDisposition> {
+    pub fn launch_disposition(&self) -> ::std::option::Option<& crate::types::LaunchDisposition> {
         self.launch_disposition.as_ref()
     }
     /// <p>Target instance type right-sizing method.</p>
-    pub fn target_instance_type_right_sizing_method(&self) -> ::std::option::Option<&crate::types::TargetInstanceTypeRightSizingMethod> {
+    pub fn target_instance_type_right_sizing_method(&self) -> ::std::option::Option<& crate::types::TargetInstanceTypeRightSizingMethod> {
         self.target_instance_type_right_sizing_method.as_ref()
     }
     /// <p>Copy private IP.</p>
@@ -44,11 +44,11 @@ impl UpdateLaunchConfigurationTemplateInput {
         self.copy_tags
     }
     /// <p>Licensing.</p>
-    pub fn licensing(&self) -> ::std::option::Option<&crate::types::Licensing> {
+    pub fn licensing(&self) -> ::std::option::Option<& crate::types::Licensing> {
         self.licensing.as_ref()
     }
     /// <p>S3 bucket ARN to export Source Network templates.</p>
-    pub fn export_bucket_arn(&self) -> ::std::option::Option<&str> {
+    pub fn export_bucket_arn(&self) -> ::std::option::Option<& str> {
         self.export_bucket_arn.as_deref()
     }
     /// <p>Whether we want to activate post-launch actions.</p>
@@ -90,8 +90,7 @@ impl UpdateLaunchConfigurationTemplateInputBuilder {
     }
     /// <p>Launch Configuration Template ID.</p>
     pub fn set_launch_configuration_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.launch_configuration_template_id = input;
-        self
+        self.launch_configuration_template_id = input; self
     }
     /// <p>Launch Configuration Template ID.</p>
     pub fn get_launch_configuration_template_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl UpdateLaunchConfigurationTemplateInputBuilder {
     }
     /// <p>Launch disposition.</p>
     pub fn set_launch_disposition(mut self, input: ::std::option::Option<crate::types::LaunchDisposition>) -> Self {
-        self.launch_disposition = input;
-        self
+        self.launch_disposition = input; self
     }
     /// <p>Launch disposition.</p>
     pub fn get_launch_disposition(&self) -> &::std::option::Option<crate::types::LaunchDisposition> {
@@ -117,12 +115,8 @@ impl UpdateLaunchConfigurationTemplateInputBuilder {
         self
     }
     /// <p>Target instance type right-sizing method.</p>
-    pub fn set_target_instance_type_right_sizing_method(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>,
-    ) -> Self {
-        self.target_instance_type_right_sizing_method = input;
-        self
+    pub fn set_target_instance_type_right_sizing_method(mut self, input: ::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>) -> Self {
+        self.target_instance_type_right_sizing_method = input; self
     }
     /// <p>Target instance type right-sizing method.</p>
     pub fn get_target_instance_type_right_sizing_method(&self) -> &::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod> {
@@ -135,8 +129,7 @@ impl UpdateLaunchConfigurationTemplateInputBuilder {
     }
     /// <p>Copy private IP.</p>
     pub fn set_copy_private_ip(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.copy_private_ip = input;
-        self
+        self.copy_private_ip = input; self
     }
     /// <p>Copy private IP.</p>
     pub fn get_copy_private_ip(&self) -> &::std::option::Option<bool> {
@@ -149,8 +142,7 @@ impl UpdateLaunchConfigurationTemplateInputBuilder {
     }
     /// <p>Copy tags.</p>
     pub fn set_copy_tags(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.copy_tags = input;
-        self
+        self.copy_tags = input; self
     }
     /// <p>Copy tags.</p>
     pub fn get_copy_tags(&self) -> &::std::option::Option<bool> {
@@ -163,8 +155,7 @@ impl UpdateLaunchConfigurationTemplateInputBuilder {
     }
     /// <p>Licensing.</p>
     pub fn set_licensing(mut self, input: ::std::option::Option<crate::types::Licensing>) -> Self {
-        self.licensing = input;
-        self
+        self.licensing = input; self
     }
     /// <p>Licensing.</p>
     pub fn get_licensing(&self) -> &::std::option::Option<crate::types::Licensing> {
@@ -177,8 +168,7 @@ impl UpdateLaunchConfigurationTemplateInputBuilder {
     }
     /// <p>S3 bucket ARN to export Source Network templates.</p>
     pub fn set_export_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.export_bucket_arn = input;
-        self
+        self.export_bucket_arn = input; self
     }
     /// <p>S3 bucket ARN to export Source Network templates.</p>
     pub fn get_export_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -191,8 +181,7 @@ impl UpdateLaunchConfigurationTemplateInputBuilder {
     }
     /// <p>Whether we want to activate post-launch actions.</p>
     pub fn set_post_launch_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.post_launch_enabled = input;
-        self
+        self.post_launch_enabled = input; self
     }
     /// <p>Whether we want to activate post-launch actions.</p>
     pub fn get_post_launch_enabled(&self) -> &::std::option::Option<bool> {
@@ -205,32 +194,36 @@ impl UpdateLaunchConfigurationTemplateInputBuilder {
     }
     /// <p>DRS will set the 'launch into instance ID' of any source server when performing a drill, recovery or failback to the previous region or availability zone, using the instance ID of the source instance.</p>
     pub fn set_launch_into_source_instance(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.launch_into_source_instance = input;
-        self
+        self.launch_into_source_instance = input; self
     }
     /// <p>DRS will set the 'launch into instance ID' of any source server when performing a drill, recovery or failback to the previous region or availability zone, using the instance ID of the source instance.</p>
     pub fn get_launch_into_source_instance(&self) -> &::std::option::Option<bool> {
         &self.launch_into_source_instance
     }
     /// Consumes the builder and constructs a [`UpdateLaunchConfigurationTemplateInput`](crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateInput {
-                launch_configuration_template_id: self.launch_configuration_template_id,
-                launch_disposition: self.launch_disposition,
-                target_instance_type_right_sizing_method: self.target_instance_type_right_sizing_method,
-                copy_private_ip: self.copy_private_ip,
-                copy_tags: self.copy_tags,
-                licensing: self.licensing,
-                export_bucket_arn: self.export_bucket_arn,
-                post_launch_enabled: self.post_launch_enabled,
-                launch_into_source_instance: self.launch_into_source_instance,
-            },
+                launch_configuration_template_id: self.launch_configuration_template_id
+                ,
+                launch_disposition: self.launch_disposition
+                ,
+                target_instance_type_right_sizing_method: self.target_instance_type_right_sizing_method
+                ,
+                copy_private_ip: self.copy_private_ip
+                ,
+                copy_tags: self.copy_tags
+                ,
+                licensing: self.licensing
+                ,
+                export_bucket_arn: self.export_bucket_arn
+                ,
+                post_launch_enabled: self.post_launch_enabled
+                ,
+                launch_into_source_instance: self.launch_into_source_instance
+                ,
+            }
         )
     }
 }
+

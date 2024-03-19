@@ -3,13 +3,13 @@
 /// <p>This action deletes a health check.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteHealthCheckInput {
+pub struct DeleteHealthCheckInput  {
     /// <p>The ID of the health check that you want to delete.</p>
     pub health_check_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteHealthCheckInput {
+impl  DeleteHealthCheckInput  {
     /// <p>The ID of the health check that you want to delete.</p>
-    pub fn health_check_id(&self) -> ::std::option::Option<&str> {
+    pub fn health_check_id(&self) -> ::std::option::Option<& str> {
         self.health_check_id.as_deref()
     }
 }
@@ -35,19 +35,20 @@ impl DeleteHealthCheckInputBuilder {
     }
     /// <p>The ID of the health check that you want to delete.</p>
     pub fn set_health_check_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.health_check_id = input;
-        self
+        self.health_check_id = input; self
     }
     /// <p>The ID of the health check that you want to delete.</p>
     pub fn get_health_check_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.health_check_id
     }
     /// Consumes the builder and constructs a [`DeleteHealthCheckInput`](crate::operation::delete_health_check::DeleteHealthCheckInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_health_check::DeleteHealthCheckInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_health_check::DeleteHealthCheckInput {
-            health_check_id: self.health_check_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_health_check::DeleteHealthCheckInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_health_check::DeleteHealthCheckInput {
+                health_check_id: self.health_check_id
+                ,
+            }
+        )
     }
 }
+

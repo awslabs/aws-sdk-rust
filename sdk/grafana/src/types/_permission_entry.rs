@@ -3,19 +3,19 @@
 /// <p>A structure containing the identity of one user or group and the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role that they have.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PermissionEntry {
+pub struct PermissionEntry  {
     /// <p>A structure with the ID of the user or group with this role.</p>
     pub user: ::std::option::Option<crate::types::User>,
     /// <p>Specifies whether the user or group has the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role.</p>
     pub role: crate::types::Role,
 }
-impl PermissionEntry {
+impl  PermissionEntry  {
     /// <p>A structure with the ID of the user or group with this role.</p>
-    pub fn user(&self) -> ::std::option::Option<&crate::types::User> {
+    pub fn user(&self) -> ::std::option::Option<& crate::types::User> {
         self.user.as_ref()
     }
     /// <p>Specifies whether the user or group has the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role.</p>
-    pub fn role(&self) -> &crate::types::Role {
+    pub fn role(&self) -> & crate::types::Role {
         &self.role
     }
 }
@@ -42,8 +42,7 @@ impl PermissionEntryBuilder {
     }
     /// <p>A structure with the ID of the user or group with this role.</p>
     pub fn set_user(mut self, input: ::std::option::Option<crate::types::User>) -> Self {
-        self.user = input;
-        self
+        self.user = input; self
     }
     /// <p>A structure with the ID of the user or group with this role.</p>
     pub fn get_user(&self) -> &::std::option::Option<crate::types::User> {
@@ -57,8 +56,7 @@ impl PermissionEntryBuilder {
     }
     /// <p>Specifies whether the user or group has the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role.</p>
     pub fn set_role(mut self, input: ::std::option::Option<crate::types::Role>) -> Self {
-        self.role = input;
-        self
+        self.role = input; self
     }
     /// <p>Specifies whether the user or group has the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role.</p>
     pub fn get_role(&self) -> &::std::option::Option<crate::types::Role> {
@@ -68,14 +66,17 @@ impl PermissionEntryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`role`](crate::types::builders::PermissionEntryBuilder::role)
     pub fn build(self) -> ::std::result::Result<crate::types::PermissionEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PermissionEntry {
-            user: self.user,
-            role: self.role.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role",
-                    "role was not specified but it is required when building PermissionEntry",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PermissionEntry {
+                user: self.user
+                ,
+                role: self.role
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role", "role was not specified but it is required when building PermissionEntry")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,24 +3,22 @@
 /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KinesisStreamConfig {
+pub struct KinesisStreamConfig  {
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFront can use to send real-time log data to your Kinesis data stream.</p>
     /// <p>For more information the IAM role, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-iam-role">Real-time log configuration IAM role</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub role_arn: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream where you are sending real-time log data.</p>
     pub stream_arn: ::std::string::String,
 }
-impl KinesisStreamConfig {
+impl  KinesisStreamConfig  {
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFront can use to send real-time log data to your Kinesis data stream.</p>
     /// <p>For more information the IAM role, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-iam-role">Real-time log configuration IAM role</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream where you are sending real-time log data.</p>
-    pub fn stream_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.stream_arn.deref()
+    pub fn stream_arn(&self) -> & str {
+        use std::ops::Deref; self.stream_arn.deref()
     }
 }
 impl KinesisStreamConfig {
@@ -48,8 +46,7 @@ impl KinesisStreamConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFront can use to send real-time log data to your Kinesis data stream.</p>
     /// <p>For more information the IAM role, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-iam-role">Real-time log configuration IAM role</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFront can use to send real-time log data to your Kinesis data stream.</p>
     /// <p>For more information the IAM role, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-iam-role">Real-time log configuration IAM role</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -64,8 +61,7 @@ impl KinesisStreamConfigBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream where you are sending real-time log data.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream where you are sending real-time log data.</p>
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,19 +72,20 @@ impl KinesisStreamConfigBuilder {
     /// - [`role_arn`](crate::types::builders::KinesisStreamConfigBuilder::role_arn)
     /// - [`stream_arn`](crate::types::builders::KinesisStreamConfigBuilder::stream_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::KinesisStreamConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KinesisStreamConfig {
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building KinesisStreamConfig",
-                )
-            })?,
-            stream_arn: self.stream_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "stream_arn",
-                    "stream_arn was not specified but it is required when building KinesisStreamConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KinesisStreamConfig {
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building KinesisStreamConfig")
+                    )?
+                ,
+                stream_arn: self.stream_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("stream_arn", "stream_arn was not specified but it is required when building KinesisStreamConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

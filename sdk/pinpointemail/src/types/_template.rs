@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Template {
+pub struct Template  {
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
     pub template_arn: ::std::option::Option<::std::string::String>,
     /// <p>An object that defines the values to use for message variables in the template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the value to use for that variable.</p>
     pub template_data: ::std::option::Option<::std::string::String>,
 }
-impl Template {
+impl  Template  {
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
-    pub fn template_arn(&self) -> ::std::option::Option<&str> {
+    pub fn template_arn(&self) -> ::std::option::Option<& str> {
         self.template_arn.as_deref()
     }
     /// <p>An object that defines the values to use for message variables in the template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the value to use for that variable.</p>
-    pub fn template_data(&self) -> ::std::option::Option<&str> {
+    pub fn template_data(&self) -> ::std::option::Option<& str> {
         self.template_data.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl TemplateBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
     pub fn set_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_arn = input;
-        self
+        self.template_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
     pub fn get_template_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,8 +53,7 @@ impl TemplateBuilder {
     }
     /// <p>An object that defines the values to use for message variables in the template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the value to use for that variable.</p>
     pub fn set_template_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_data = input;
-        self
+        self.template_data = input; self
     }
     /// <p>An object that defines the values to use for message variables in the template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the value to use for that variable.</p>
     pub fn get_template_data(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,11 @@ impl TemplateBuilder {
     /// Consumes the builder and constructs a [`Template`](crate::types::Template).
     pub fn build(self) -> crate::types::Template {
         crate::types::Template {
-            template_arn: self.template_arn,
-            template_data: self.template_data,
+            template_arn: self.template_arn
+            ,
+            template_data: self.template_data
+            ,
         }
     }
 }
+

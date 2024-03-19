@@ -3,7 +3,7 @@
 /// <p>Describes the basic information about a theme.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ThemeSummary {
+pub struct ThemeSummary  {
     /// <p>The unique ID for the app associated with the theme summary.</p>
     pub app_id: ::std::string::String,
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
@@ -13,26 +13,22 @@ pub struct ThemeSummary {
     /// <p>The name of the theme.</p>
     pub name: ::std::string::String,
 }
-impl ThemeSummary {
+impl  ThemeSummary  {
     /// <p>The unique ID for the app associated with the theme summary.</p>
-    pub fn app_id(&self) -> &str {
-        use std::ops::Deref;
-        self.app_id.deref()
+    pub fn app_id(&self) -> & str {
+        use std::ops::Deref; self.app_id.deref()
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
-    pub fn environment_name(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_name.deref()
+    pub fn environment_name(&self) -> & str {
+        use std::ops::Deref; self.environment_name.deref()
     }
     /// <p>The ID of the theme.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The name of the theme.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
 }
 impl ThemeSummary {
@@ -60,8 +56,7 @@ impl ThemeSummaryBuilder {
     }
     /// <p>The unique ID for the app associated with the theme summary.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The unique ID for the app associated with the theme summary.</p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +70,7 @@ impl ThemeSummaryBuilder {
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
     pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_name = input;
-        self
+        self.environment_name = input; self
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
     pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +84,7 @@ impl ThemeSummaryBuilder {
     }
     /// <p>The ID of the theme.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the theme.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +98,7 @@ impl ThemeSummaryBuilder {
     }
     /// <p>The name of the theme.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the theme.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,31 +111,30 @@ impl ThemeSummaryBuilder {
     /// - [`id`](crate::types::builders::ThemeSummaryBuilder::id)
     /// - [`name`](crate::types::builders::ThemeSummaryBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::ThemeSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ThemeSummary {
-            app_id: self.app_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "app_id",
-                    "app_id was not specified but it is required when building ThemeSummary",
-                )
-            })?,
-            environment_name: self.environment_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "environment_name",
-                    "environment_name was not specified but it is required when building ThemeSummary",
-                )
-            })?,
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building ThemeSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ThemeSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ThemeSummary {
+                app_id: self.app_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("app_id", "app_id was not specified but it is required when building ThemeSummary")
+                    )?
+                ,
+                environment_name: self.environment_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("environment_name", "environment_name was not specified but it is required when building ThemeSummary")
+                    )?
+                ,
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building ThemeSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ThemeSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFieldLevelEncryptionConfigInput {
+pub struct GetFieldLevelEncryptionConfigInput  {
     /// <p>Request the ID for the field-level encryption configuration information.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl GetFieldLevelEncryptionConfigInput {
+impl  GetFieldLevelEncryptionConfigInput  {
     /// <p>Request the ID for the field-level encryption configuration information.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetFieldLevelEncryptionConfigInputBuilder {
     }
     /// <p>Request the ID for the field-level encryption configuration information.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Request the ID for the field-level encryption configuration information.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetFieldLevelEncryptionConfigInput`](crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigInput { id: self.id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

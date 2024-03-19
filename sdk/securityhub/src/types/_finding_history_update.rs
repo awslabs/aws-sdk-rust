@@ -3,7 +3,7 @@
 /// <p>An array of objects that provides details about a change to a finding, including the Amazon Web Services Security Finding Format (ASFF) field that changed, the value of the field before the change, and the value of the field after the change.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FindingHistoryUpdate {
+pub struct FindingHistoryUpdate  {
     /// <p>The ASFF field that changed during the finding change event.</p>
     pub updated_field: ::std::option::Option<::std::string::String>,
     /// <p>The value of the ASFF field before the finding change event.</p>
@@ -11,17 +11,17 @@ pub struct FindingHistoryUpdate {
     /// <p>The value of the ASFF field after the finding change event. To preserve storage and readability, Security Hub omits this value if <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_FindingHistoryRecord.html"> <code>FindingHistoryRecord</code> </a> exceeds database limits.</p>
     pub new_value: ::std::option::Option<::std::string::String>,
 }
-impl FindingHistoryUpdate {
+impl  FindingHistoryUpdate  {
     /// <p>The ASFF field that changed during the finding change event.</p>
-    pub fn updated_field(&self) -> ::std::option::Option<&str> {
+    pub fn updated_field(&self) -> ::std::option::Option<& str> {
         self.updated_field.as_deref()
     }
     /// <p>The value of the ASFF field before the finding change event.</p>
-    pub fn old_value(&self) -> ::std::option::Option<&str> {
+    pub fn old_value(&self) -> ::std::option::Option<& str> {
         self.old_value.as_deref()
     }
     /// <p>The value of the ASFF field after the finding change event. To preserve storage and readability, Security Hub omits this value if <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_FindingHistoryRecord.html"> <code>FindingHistoryRecord</code> </a> exceeds database limits.</p>
-    pub fn new_value(&self) -> ::std::option::Option<&str> {
+    pub fn new_value(&self) -> ::std::option::Option<& str> {
         self.new_value.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl FindingHistoryUpdateBuilder {
     }
     /// <p>The ASFF field that changed during the finding change event.</p>
     pub fn set_updated_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.updated_field = input;
-        self
+        self.updated_field = input; self
     }
     /// <p>The ASFF field that changed during the finding change event.</p>
     pub fn get_updated_field(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl FindingHistoryUpdateBuilder {
     }
     /// <p>The value of the ASFF field before the finding change event.</p>
     pub fn set_old_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.old_value = input;
-        self
+        self.old_value = input; self
     }
     /// <p>The value of the ASFF field before the finding change event.</p>
     pub fn get_old_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl FindingHistoryUpdateBuilder {
     }
     /// <p>The value of the ASFF field after the finding change event. To preserve storage and readability, Security Hub omits this value if <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_FindingHistoryRecord.html"> <code>FindingHistoryRecord</code> </a> exceeds database limits.</p>
     pub fn set_new_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.new_value = input;
-        self
+        self.new_value = input; self
     }
     /// <p>The value of the ASFF field after the finding change event. To preserve storage and readability, Security Hub omits this value if <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_FindingHistoryRecord.html"> <code>FindingHistoryRecord</code> </a> exceeds database limits.</p>
     pub fn get_new_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl FindingHistoryUpdateBuilder {
     /// Consumes the builder and constructs a [`FindingHistoryUpdate`](crate::types::FindingHistoryUpdate).
     pub fn build(self) -> crate::types::FindingHistoryUpdate {
         crate::types::FindingHistoryUpdate {
-            updated_field: self.updated_field,
-            old_value: self.old_value,
-            new_value: self.new_value,
+            updated_field: self.updated_field
+            ,
+            old_value: self.old_value
+            ,
+            new_value: self.new_value
+            ,
         }
     }
 }
+

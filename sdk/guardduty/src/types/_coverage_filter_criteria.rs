@@ -3,16 +3,17 @@
 /// <p>Represents the criteria used in the filter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CoverageFilterCriteria {
+pub struct CoverageFilterCriteria  {
     /// <p>Represents a condition that when matched will be added to the response of the operation.</p>
-    pub filter_criterion: ::std::option::Option<::std::vec::Vec<crate::types::CoverageFilterCriterion>>,
+    pub filter_criterion: ::std::option::Option<::std::vec::Vec::<crate::types::CoverageFilterCriterion>>,
 }
-impl CoverageFilterCriteria {
+impl  CoverageFilterCriteria  {
     /// <p>Represents a condition that when matched will be added to the response of the operation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_criterion.is_none()`.
-    pub fn filter_criterion(&self) -> &[crate::types::CoverageFilterCriterion] {
-        self.filter_criterion.as_deref().unwrap_or_default()
+    pub fn filter_criterion(&self) -> & [crate::types::CoverageFilterCriterion] {
+        self.filter_criterion.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CoverageFilterCriteria {
@@ -26,7 +27,7 @@ impl CoverageFilterCriteria {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CoverageFilterCriteriaBuilder {
-    pub(crate) filter_criterion: ::std::option::Option<::std::vec::Vec<crate::types::CoverageFilterCriterion>>,
+    pub(crate) filter_criterion: ::std::option::Option<::std::vec::Vec::<crate::types::CoverageFilterCriterion>>,
 }
 impl CoverageFilterCriteriaBuilder {
     /// Appends an item to `filter_criterion`.
@@ -36,23 +37,24 @@ impl CoverageFilterCriteriaBuilder {
     /// <p>Represents a condition that when matched will be added to the response of the operation.</p>
     pub fn filter_criterion(mut self, input: crate::types::CoverageFilterCriterion) -> Self {
         let mut v = self.filter_criterion.unwrap_or_default();
-        v.push(input);
-        self.filter_criterion = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filter_criterion = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Represents a condition that when matched will be added to the response of the operation.</p>
-    pub fn set_filter_criterion(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageFilterCriterion>>) -> Self {
-        self.filter_criterion = input;
-        self
+    pub fn set_filter_criterion(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CoverageFilterCriterion>>) -> Self {
+        self.filter_criterion = input; self
     }
     /// <p>Represents a condition that when matched will be added to the response of the operation.</p>
-    pub fn get_filter_criterion(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageFilterCriterion>> {
+    pub fn get_filter_criterion(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CoverageFilterCriterion>> {
         &self.filter_criterion
     }
     /// Consumes the builder and constructs a [`CoverageFilterCriteria`](crate::types::CoverageFilterCriteria).
     pub fn build(self) -> crate::types::CoverageFilterCriteria {
         crate::types::CoverageFilterCriteria {
-            filter_criterion: self.filter_criterion,
+            filter_criterion: self.filter_criterion
+            ,
         }
     }
 }
+

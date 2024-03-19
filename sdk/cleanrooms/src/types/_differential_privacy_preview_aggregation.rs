@@ -3,15 +3,15 @@
 /// <p>Provides an estimate of the number of aggregation functions that the member who can query can run given the epsilon and noise parameters.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DifferentialPrivacyPreviewAggregation {
+pub struct DifferentialPrivacyPreviewAggregation  {
     /// <p>The type of aggregation function.</p>
     pub r#type: crate::types::DifferentialPrivacyAggregationType,
     /// <p>The maximum number of aggregations that the member who can query can run given the epsilon and noise parameters.</p>
     pub max_count: i32,
 }
-impl DifferentialPrivacyPreviewAggregation {
+impl  DifferentialPrivacyPreviewAggregation  {
     /// <p>The type of aggregation function.</p>
-    pub fn r#type(&self) -> &crate::types::DifferentialPrivacyAggregationType {
+    pub fn r#type(&self) -> & crate::types::DifferentialPrivacyAggregationType {
         &self.r#type
     }
     /// <p>The maximum number of aggregations that the member who can query can run given the epsilon and noise parameters.</p>
@@ -42,8 +42,7 @@ impl DifferentialPrivacyPreviewAggregationBuilder {
     }
     /// <p>The type of aggregation function.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DifferentialPrivacyAggregationType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of aggregation function.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DifferentialPrivacyAggregationType> {
@@ -57,8 +56,7 @@ impl DifferentialPrivacyPreviewAggregationBuilder {
     }
     /// <p>The maximum number of aggregations that the member who can query can run given the epsilon and noise parameters.</p>
     pub fn set_max_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_count = input;
-        self
+        self.max_count = input; self
     }
     /// <p>The maximum number of aggregations that the member who can query can run given the epsilon and noise parameters.</p>
     pub fn get_max_count(&self) -> &::std::option::Option<i32> {
@@ -68,22 +66,21 @@ impl DifferentialPrivacyPreviewAggregationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::DifferentialPrivacyPreviewAggregationBuilder::r#type)
     /// - [`max_count`](crate::types::builders::DifferentialPrivacyPreviewAggregationBuilder::max_count)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::DifferentialPrivacyPreviewAggregation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DifferentialPrivacyPreviewAggregation {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building DifferentialPrivacyPreviewAggregation",
-                )
-            })?,
-            max_count: self.max_count.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "max_count",
-                    "max_count was not specified but it is required when building DifferentialPrivacyPreviewAggregation",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::DifferentialPrivacyPreviewAggregation, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::DifferentialPrivacyPreviewAggregation {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building DifferentialPrivacyPreviewAggregation")
+                    )?
+                ,
+                max_count: self.max_count
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("max_count", "max_count was not specified but it is required when building DifferentialPrivacyPreviewAggregation")
+                    )?
+                ,
+            }
+        )
     }
 }
+

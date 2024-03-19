@@ -3,15 +3,15 @@
 /// <p>An object that contains the resource type and the number of resources.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceCount {
+pub struct ResourceCount  {
     /// <p>The resource type (for example, <code>"AWS::EC2::Instance"</code>).</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The number of resources.</p>
     pub count: i64,
 }
-impl ResourceCount {
+impl  ResourceCount  {
     /// <p>The resource type (for example, <code>"AWS::EC2::Instance"</code>).</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The number of resources.</p>
@@ -41,8 +41,7 @@ impl ResourceCountBuilder {
     }
     /// <p>The resource type (for example, <code>"AWS::EC2::Instance"</code>).</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type (for example, <code>"AWS::EC2::Instance"</code>).</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -55,8 +54,7 @@ impl ResourceCountBuilder {
     }
     /// <p>The number of resources.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>The number of resources.</p>
     pub fn get_count(&self) -> &::std::option::Option<i64> {
@@ -65,8 +63,12 @@ impl ResourceCountBuilder {
     /// Consumes the builder and constructs a [`ResourceCount`](crate::types::ResourceCount).
     pub fn build(self) -> crate::types::ResourceCount {
         crate::types::ResourceCount {
-            resource_type: self.resource_type,
-            count: self.count.unwrap_or_default(),
+            resource_type: self.resource_type
+            ,
+            count: self.count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

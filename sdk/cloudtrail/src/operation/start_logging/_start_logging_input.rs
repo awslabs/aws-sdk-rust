@@ -3,15 +3,15 @@
 /// <p>The request to CloudTrail to start logging Amazon Web Services API calls for an account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartLoggingInput {
+pub struct StartLoggingInput  {
     /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs Amazon Web Services API calls. The following is the format of a trail ARN.</p>
     /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl StartLoggingInput {
+impl  StartLoggingInput  {
     /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs Amazon Web Services API calls. The following is the format of a trail ARN.</p>
     /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -39,8 +39,7 @@ impl StartLoggingInputBuilder {
     /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs Amazon Web Services API calls. The following is the format of a trail ARN.</p>
     /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs Amazon Web Services API calls. The following is the format of a trail ARN.</p>
     /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
@@ -48,9 +47,13 @@ impl StartLoggingInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`StartLoggingInput`](crate::operation::start_logging::StartLoggingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_logging::StartLoggingInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_logging::StartLoggingInput { name: self.name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_logging::StartLoggingInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_logging::StartLoggingInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

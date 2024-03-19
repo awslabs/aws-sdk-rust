@@ -3,7 +3,7 @@
 /// <p>An object that determines whether any cookies in viewer requests (and if so, which cookies) are included in the cache key and in requests that CloudFront sends to the origin.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CachePolicyCookiesConfig {
+pub struct CachePolicyCookiesConfig  {
     /// <p>Determines whether any cookies in viewer requests are included in the cache key and in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
     /// <li>
@@ -19,7 +19,7 @@ pub struct CachePolicyCookiesConfig {
     /// <p>Contains a list of cookie names.</p>
     pub cookies: ::std::option::Option<crate::types::CookieNames>,
 }
-impl CachePolicyCookiesConfig {
+impl  CachePolicyCookiesConfig  {
     /// <p>Determines whether any cookies in viewer requests are included in the cache key and in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
     /// <li>
@@ -31,11 +31,11 @@ impl CachePolicyCookiesConfig {
     /// <li>
     /// <p><code>all</code> – All cookies in viewer requests are included in the cache key and in requests that CloudFront sends to the origin.</p></li>
     /// </ul>
-    pub fn cookie_behavior(&self) -> &crate::types::CachePolicyCookieBehavior {
+    pub fn cookie_behavior(&self) -> & crate::types::CachePolicyCookieBehavior {
         &self.cookie_behavior
     }
     /// <p>Contains a list of cookie names.</p>
-    pub fn cookies(&self) -> ::std::option::Option<&crate::types::CookieNames> {
+    pub fn cookies(&self) -> ::std::option::Option<& crate::types::CookieNames> {
         self.cookies.as_ref()
     }
 }
@@ -82,8 +82,7 @@ impl CachePolicyCookiesConfigBuilder {
     /// <p><code>all</code> – All cookies in viewer requests are included in the cache key and in requests that CloudFront sends to the origin.</p></li>
     /// </ul>
     pub fn set_cookie_behavior(mut self, input: ::std::option::Option<crate::types::CachePolicyCookieBehavior>) -> Self {
-        self.cookie_behavior = input;
-        self
+        self.cookie_behavior = input; self
     }
     /// <p>Determines whether any cookies in viewer requests are included in the cache key and in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
@@ -106,8 +105,7 @@ impl CachePolicyCookiesConfigBuilder {
     }
     /// <p>Contains a list of cookie names.</p>
     pub fn set_cookies(mut self, input: ::std::option::Option<crate::types::CookieNames>) -> Self {
-        self.cookies = input;
-        self
+        self.cookies = input; self
     }
     /// <p>Contains a list of cookie names.</p>
     pub fn get_cookies(&self) -> &::std::option::Option<crate::types::CookieNames> {
@@ -117,14 +115,17 @@ impl CachePolicyCookiesConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`cookie_behavior`](crate::types::builders::CachePolicyCookiesConfigBuilder::cookie_behavior)
     pub fn build(self) -> ::std::result::Result<crate::types::CachePolicyCookiesConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CachePolicyCookiesConfig {
-            cookie_behavior: self.cookie_behavior.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "cookie_behavior",
-                    "cookie_behavior was not specified but it is required when building CachePolicyCookiesConfig",
-                )
-            })?,
-            cookies: self.cookies,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CachePolicyCookiesConfig {
+                cookie_behavior: self.cookie_behavior
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("cookie_behavior", "cookie_behavior was not specified but it is required when building CachePolicyCookiesConfig")
+                    )?
+                ,
+                cookies: self.cookies
+                ,
+            }
+        )
     }
 }
+

@@ -39,3 +39,4 @@ pub mod untag_resource;
 
 /// Types for the `UpdateScheduledQuery` operation.
 pub mod update_scheduled_query;
+

@@ -3,13 +3,13 @@
 /// <p>Join resource type event configuration object for enabling or disabling topic.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JoinResourceTypeEventConfiguration {
+pub struct JoinResourceTypeEventConfiguration  {
     /// <p>Join resource type event configuration object for enabling or disabling LoRaWAN related event topics.</p>
     pub lo_ra_wan: ::std::option::Option<crate::types::LoRaWanJoinResourceTypeEventConfiguration>,
 }
-impl JoinResourceTypeEventConfiguration {
+impl  JoinResourceTypeEventConfiguration  {
     /// <p>Join resource type event configuration object for enabling or disabling LoRaWAN related event topics.</p>
-    pub fn lo_ra_wan(&self) -> ::std::option::Option<&crate::types::LoRaWanJoinResourceTypeEventConfiguration> {
+    pub fn lo_ra_wan(&self) -> ::std::option::Option<& crate::types::LoRaWanJoinResourceTypeEventConfiguration> {
         self.lo_ra_wan.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl JoinResourceTypeEventConfigurationBuilder {
     }
     /// <p>Join resource type event configuration object for enabling or disabling LoRaWAN related event topics.</p>
     pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanJoinResourceTypeEventConfiguration>) -> Self {
-        self.lo_ra_wan = input;
-        self
+        self.lo_ra_wan = input; self
     }
     /// <p>Join resource type event configuration object for enabling or disabling LoRaWAN related event topics.</p>
     pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanJoinResourceTypeEventConfiguration> {
@@ -43,6 +42,10 @@ impl JoinResourceTypeEventConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`JoinResourceTypeEventConfiguration`](crate::types::JoinResourceTypeEventConfiguration).
     pub fn build(self) -> crate::types::JoinResourceTypeEventConfiguration {
-        crate::types::JoinResourceTypeEventConfiguration { lo_ra_wan: self.lo_ra_wan }
+        crate::types::JoinResourceTypeEventConfiguration {
+            lo_ra_wan: self.lo_ra_wan
+            ,
+        }
     }
 }
+

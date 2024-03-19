@@ -3,17 +3,17 @@
 /// <p>Information about the overall results for a test execution result.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OverallTestResultItem {
+pub struct OverallTestResultItem  {
     /// <p>Indicates whether the conversation contains multiple turns or not.</p>
     pub multi_turn_conversation: bool,
     /// <p>The total number of overall results in the result of the test execution.</p>
     pub total_result_count: i32,
     /// <p>The number of speech transcription results in the overall test.</p>
-    pub speech_transcription_result_counts: ::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>,
+    pub speech_transcription_result_counts: ::std::option::Option<::std::collections::HashMap::<crate::types::TestResultMatchStatus, i32>>,
     /// <p>The number of results that succeeded.</p>
-    pub end_to_end_result_counts: ::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>,
+    pub end_to_end_result_counts: ::std::collections::HashMap::<crate::types::TestResultMatchStatus, i32>,
 }
-impl OverallTestResultItem {
+impl  OverallTestResultItem  {
     /// <p>Indicates whether the conversation contains multiple turns or not.</p>
     pub fn multi_turn_conversation(&self) -> bool {
         self.multi_turn_conversation
@@ -23,13 +23,11 @@ impl OverallTestResultItem {
         self.total_result_count
     }
     /// <p>The number of speech transcription results in the overall test.</p>
-    pub fn speech_transcription_result_counts(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>> {
+    pub fn speech_transcription_result_counts(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::TestResultMatchStatus, i32>> {
         self.speech_transcription_result_counts.as_ref()
     }
     /// <p>The number of results that succeeded.</p>
-    pub fn end_to_end_result_counts(&self) -> &::std::collections::HashMap<crate::types::TestResultMatchStatus, i32> {
+    pub fn end_to_end_result_counts(&self) -> & ::std::collections::HashMap::<crate::types::TestResultMatchStatus, i32> {
         &self.end_to_end_result_counts
     }
 }
@@ -46,8 +44,8 @@ impl OverallTestResultItem {
 pub struct OverallTestResultItemBuilder {
     pub(crate) multi_turn_conversation: ::std::option::Option<bool>,
     pub(crate) total_result_count: ::std::option::Option<i32>,
-    pub(crate) speech_transcription_result_counts: ::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>,
-    pub(crate) end_to_end_result_counts: ::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>,
+    pub(crate) speech_transcription_result_counts: ::std::option::Option<::std::collections::HashMap::<crate::types::TestResultMatchStatus, i32>>,
+    pub(crate) end_to_end_result_counts: ::std::option::Option<::std::collections::HashMap::<crate::types::TestResultMatchStatus, i32>>,
 }
 impl OverallTestResultItemBuilder {
     /// <p>Indicates whether the conversation contains multiple turns or not.</p>
@@ -58,8 +56,7 @@ impl OverallTestResultItemBuilder {
     }
     /// <p>Indicates whether the conversation contains multiple turns or not.</p>
     pub fn set_multi_turn_conversation(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.multi_turn_conversation = input;
-        self
+        self.multi_turn_conversation = input; self
     }
     /// <p>Indicates whether the conversation contains multiple turns or not.</p>
     pub fn get_multi_turn_conversation(&self) -> &::std::option::Option<bool> {
@@ -73,8 +70,7 @@ impl OverallTestResultItemBuilder {
     }
     /// <p>The total number of overall results in the result of the test execution.</p>
     pub fn set_total_result_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_result_count = input;
-        self
+        self.total_result_count = input; self
     }
     /// <p>The total number of overall results in the result of the test execution.</p>
     pub fn get_total_result_count(&self) -> &::std::option::Option<i32> {
@@ -87,22 +83,16 @@ impl OverallTestResultItemBuilder {
     /// <p>The number of speech transcription results in the overall test.</p>
     pub fn speech_transcription_result_counts(mut self, k: crate::types::TestResultMatchStatus, v: i32) -> Self {
         let mut hash_map = self.speech_transcription_result_counts.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.speech_transcription_result_counts = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.speech_transcription_result_counts = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The number of speech transcription results in the overall test.</p>
-    pub fn set_speech_transcription_result_counts(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>,
-    ) -> Self {
-        self.speech_transcription_result_counts = input;
-        self
+    pub fn set_speech_transcription_result_counts(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::TestResultMatchStatus, i32>>) -> Self {
+        self.speech_transcription_result_counts = input; self
     }
     /// <p>The number of speech transcription results in the overall test.</p>
-    pub fn get_speech_transcription_result_counts(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>> {
+    pub fn get_speech_transcription_result_counts(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::TestResultMatchStatus, i32>> {
         &self.speech_transcription_result_counts
     }
     /// Adds a key-value pair to `end_to_end_result_counts`.
@@ -112,20 +102,16 @@ impl OverallTestResultItemBuilder {
     /// <p>The number of results that succeeded.</p>
     pub fn end_to_end_result_counts(mut self, k: crate::types::TestResultMatchStatus, v: i32) -> Self {
         let mut hash_map = self.end_to_end_result_counts.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.end_to_end_result_counts = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.end_to_end_result_counts = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The number of results that succeeded.</p>
-    pub fn set_end_to_end_result_counts(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>,
-    ) -> Self {
-        self.end_to_end_result_counts = input;
-        self
+    pub fn set_end_to_end_result_counts(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::TestResultMatchStatus, i32>>) -> Self {
+        self.end_to_end_result_counts = input; self
     }
     /// <p>The number of results that succeeded.</p>
-    pub fn get_end_to_end_result_counts(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>> {
+    pub fn get_end_to_end_result_counts(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::TestResultMatchStatus, i32>> {
         &self.end_to_end_result_counts
     }
     /// Consumes the builder and constructs a [`OverallTestResultItem`](crate::types::OverallTestResultItem).
@@ -133,21 +119,25 @@ impl OverallTestResultItemBuilder {
     /// - [`total_result_count`](crate::types::builders::OverallTestResultItemBuilder::total_result_count)
     /// - [`end_to_end_result_counts`](crate::types::builders::OverallTestResultItemBuilder::end_to_end_result_counts)
     pub fn build(self) -> ::std::result::Result<crate::types::OverallTestResultItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OverallTestResultItem {
-            multi_turn_conversation: self.multi_turn_conversation.unwrap_or_default(),
-            total_result_count: self.total_result_count.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "total_result_count",
-                    "total_result_count was not specified but it is required when building OverallTestResultItem",
-                )
-            })?,
-            speech_transcription_result_counts: self.speech_transcription_result_counts,
-            end_to_end_result_counts: self.end_to_end_result_counts.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "end_to_end_result_counts",
-                    "end_to_end_result_counts was not specified but it is required when building OverallTestResultItem",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OverallTestResultItem {
+                multi_turn_conversation: self.multi_turn_conversation
+                    .unwrap_or_default()
+                ,
+                total_result_count: self.total_result_count
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("total_result_count", "total_result_count was not specified but it is required when building OverallTestResultItem")
+                    )?
+                ,
+                speech_transcription_result_counts: self.speech_transcription_result_counts
+                ,
+                end_to_end_result_counts: self.end_to_end_result_counts
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("end_to_end_result_counts", "end_to_end_result_counts was not specified but it is required when building OverallTestResultItem")
+                    )?
+                ,
+            }
+        )
     }
 }
+

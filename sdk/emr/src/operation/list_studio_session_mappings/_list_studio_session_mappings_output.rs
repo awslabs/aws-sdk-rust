@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListStudioSessionMappingsOutput {
+pub struct ListStudioSessionMappingsOutput  {
     /// <p>A list of session mapping summary objects. Each object includes session mapping details such as creation time, identity type (user or group), and Amazon EMR Studio ID.</p>
-    pub session_mappings: ::std::option::Option<::std::vec::Vec<crate::types::SessionMappingSummary>>,
+    pub session_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::SessionMappingSummary>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListStudioSessionMappingsOutput {
+impl  ListStudioSessionMappingsOutput  {
     /// <p>A list of session mapping summary objects. Each object includes session mapping details such as creation time, identity type (user or group), and Amazon EMR Studio ID.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.session_mappings.is_none()`.
-    pub fn session_mappings(&self) -> &[crate::types::SessionMappingSummary] {
-        self.session_mappings.as_deref().unwrap_or_default()
+    pub fn session_mappings(&self) -> & [crate::types::SessionMappingSummary] {
+        self.session_mappings.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListStudioSessionMappingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListStudioSessionMappingsOutput {
     /// Creates a new builder-style object to manufacture [`ListStudioSessionMappingsOutput`](crate::operation::list_studio_session_mappings::ListStudioSessionMappingsOutput).
     pub fn builder() -> crate::operation::list_studio_session_mappings::builders::ListStudioSessionMappingsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListStudioSessionMappingsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStudioSessionMappingsOutputBuilder {
-    pub(crate) session_mappings: ::std::option::Option<::std::vec::Vec<crate::types::SessionMappingSummary>>,
+    pub(crate) session_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::SessionMappingSummary>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListStudioSessionMappingsOutputBuilder {
     /// <p>A list of session mapping summary objects. Each object includes session mapping details such as creation time, identity type (user or group), and Amazon EMR Studio ID.</p>
     pub fn session_mappings(mut self, input: crate::types::SessionMappingSummary) -> Self {
         let mut v = self.session_mappings.unwrap_or_default();
-        v.push(input);
-        self.session_mappings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.session_mappings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of session mapping summary objects. Each object includes session mapping details such as creation time, identity type (user or group), and Amazon EMR Studio ID.</p>
-    pub fn set_session_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SessionMappingSummary>>) -> Self {
-        self.session_mappings = input;
-        self
+    pub fn set_session_mappings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SessionMappingSummary>>) -> Self {
+        self.session_mappings = input; self
     }
     /// <p>A list of session mapping summary objects. Each object includes session mapping details such as creation time, identity type (user or group), and Amazon EMR Studio ID.</p>
-    pub fn get_session_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SessionMappingSummary>> {
+    pub fn get_session_mappings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SessionMappingSummary>> {
         &self.session_mappings
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -69,28 +69,30 @@ impl ListStudioSessionMappingsOutputBuilder {
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListStudioSessionMappingsOutput`](crate::operation::list_studio_session_mappings::ListStudioSessionMappingsOutput).
     pub fn build(self) -> crate::operation::list_studio_session_mappings::ListStudioSessionMappingsOutput {
         crate::operation::list_studio_session_mappings::ListStudioSessionMappingsOutput {
-            session_mappings: self.session_mappings,
-            marker: self.marker,
+            session_mappings: self.session_mappings
+            ,
+            marker: self.marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

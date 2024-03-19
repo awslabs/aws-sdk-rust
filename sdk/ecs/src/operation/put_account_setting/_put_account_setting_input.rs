@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutAccountSettingInput {
+pub struct PutAccountSettingInput  {
     /// <p>The Amazon ECS account setting name to modify.</p>
     /// <p>The following are the valid values for the account setting name.</p>
     /// <ul>
@@ -45,7 +45,7 @@ pub struct PutAccountSettingInput {
     /// </note>
     pub principal_arn: ::std::option::Option<::std::string::String>,
 }
-impl PutAccountSettingInput {
+impl  PutAccountSettingInput  {
     /// <p>The Amazon ECS account setting name to modify.</p>
     /// <p>The following are the valid values for the account setting name.</p>
     /// <ul>
@@ -70,7 +70,7 @@ impl PutAccountSettingInput {
     /// <li>
     /// <p><code>guardDutyActivate</code> - The <code>guardDutyActivate</code> parameter is read-only in Amazon ECS and indicates whether Amazon ECS Runtime Monitoring is enabled or disabled by your security administrator in your Amazon ECS account. Amazon GuardDuty controls this account setting on your behalf. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-guard-duty-integration.html">Protecting Amazon ECS workloads with Amazon ECS Runtime Monitoring</a>.</p></li>
     /// </ul>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::SettingName> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::SettingName> {
         self.name.as_ref()
     }
     /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and <code>off</code>.</p>
@@ -83,14 +83,14 @@ impl PutAccountSettingInput {
     /// <li>
     /// <p><code>14</code> - Amazon Web Services sends the notification, and waits 14 calendar days to retire the tasks.</p></li>
     /// </ul>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p><note>
     /// <p>You must use the root user when you set the Fargate wait time (<code>fargateTaskRetirementWaitPeriod</code>).</p>
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
     /// </note>
-    pub fn principal_arn(&self) -> ::std::option::Option<&str> {
+    pub fn principal_arn(&self) -> ::std::option::Option<& str> {
         self.principal_arn.as_deref()
     }
 }
@@ -164,8 +164,7 @@ impl PutAccountSettingInputBuilder {
     /// <p><code>guardDutyActivate</code> - The <code>guardDutyActivate</code> parameter is read-only in Amazon ECS and indicates whether Amazon ECS Runtime Monitoring is enabled or disabled by your security administrator in your Amazon ECS account. Amazon GuardDuty controls this account setting on your behalf. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-guard-duty-integration.html">Protecting Amazon ECS workloads with Amazon ECS Runtime Monitoring</a>.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::SettingName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The Amazon ECS account setting name to modify.</p>
     /// <p>The following are the valid values for the account setting name.</p>
@@ -220,8 +219,7 @@ impl PutAccountSettingInputBuilder {
     /// <p><code>14</code> - Amazon Web Services sends the notification, and waits 14 calendar days to retire the tasks.</p></li>
     /// </ul>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and <code>off</code>.</p>
     /// <p>When you specify <code>fargateTaskRetirementWaitPeriod</code> for the <code>name</code>, the following are the valid values:</p>
@@ -249,8 +247,7 @@ impl PutAccountSettingInputBuilder {
     /// <p>Federated users assume the account setting of the root user and can't have explicit account settings set for them.</p>
     /// </note>
     pub fn set_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal_arn = input;
-        self
+        self.principal_arn = input; self
     }
     /// <p>The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p><note>
     /// <p>You must use the root user when you set the Fargate wait time (<code>fargateTaskRetirementWaitPeriod</code>).</p>
@@ -260,13 +257,17 @@ impl PutAccountSettingInputBuilder {
         &self.principal_arn
     }
     /// Consumes the builder and constructs a [`PutAccountSettingInput`](crate::operation::put_account_setting::PutAccountSettingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_account_setting::PutAccountSettingInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_account_setting::PutAccountSettingInput {
-            name: self.name,
-            value: self.value,
-            principal_arn: self.principal_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_account_setting::PutAccountSettingInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_account_setting::PutAccountSettingInput {
+                name: self.name
+                ,
+                value: self.value
+                ,
+                principal_arn: self.principal_arn
+                ,
+            }
+        )
     }
 }
+

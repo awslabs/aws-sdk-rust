@@ -5,54 +5,50 @@ pub use crate::operation::run_pipeline_activity::_run_pipeline_activity_input::R
 
 impl RunPipelineActivityInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::run_pipeline_activity::RunPipelineActivityOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::run_pipeline_activity::RunPipelineActivityError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.run_pipeline_activity();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::run_pipeline_activity::RunPipelineActivityOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::run_pipeline_activity::RunPipelineActivityError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.run_pipeline_activity();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `RunPipelineActivity`.
-///
+/// 
 /// <p>Simulates the results of running a pipeline activity on a message payload.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RunPipelineActivityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::run_pipeline_activity::builders::RunPipelineActivityInputBuilder,
+                    inner: crate::operation::run_pipeline_activity::builders::RunPipelineActivityInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::run_pipeline_activity::RunPipelineActivityOutput,
-        crate::operation::run_pipeline_activity::RunPipelineActivityError,
-    > for RunPipelineActivityFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::run_pipeline_activity::RunPipelineActivityOutput,
-            crate::operation::run_pipeline_activity::RunPipelineActivityError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::run_pipeline_activity::RunPipelineActivityOutput,
+                    crate::operation::run_pipeline_activity::RunPipelineActivityError,
+                > for RunPipelineActivityFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::run_pipeline_activity::RunPipelineActivityOutput,
+                        crate::operation::run_pipeline_activity::RunPipelineActivityError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl RunPipelineActivityFluentBuilder {
     /// Creates a new `RunPipelineActivity`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl RunPipelineActivityFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::run_pipeline_activity::RunPipelineActivityOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::run_pipeline_activity::RunPipelineActivityError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::run_pipeline_activity::RunPipelineActivity::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::run_pipeline_activity::RunPipelineActivity::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::run_pipeline_activity::RunPipelineActivityOutput,
-        crate::operation::run_pipeline_activity::RunPipelineActivityError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::run_pipeline_activity::RunPipelineActivityOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::run_pipeline_activity::RunPipelineActivityError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::run_pipeline_activity::RunPipelineActivity::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::run_pipeline_activity::RunPipelineActivity::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::run_pipeline_activity::RunPipelineActivityOutput, crate::operation::run_pipeline_activity::RunPipelineActivityError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The pipeline activity that is run. This must not be a channel activity or a data store activity because these activities are used in a pipeline only to load the original message and to store the (possibly) transformed message. If a Lambda activity is specified, only short-running Lambda functions (those with a timeout of less than 30 seconds or less) can be used.</p>
     pub fn pipeline_activity(mut self, input: crate::types::PipelineActivity) -> Self {
         self.inner = self.inner.pipeline_activity(input);
@@ -132,12 +119,13 @@ impl RunPipelineActivityFluentBuilder {
         self
     }
     /// <p>The sample message payloads on which the pipeline activity is run.</p>
-    pub fn set_payloads(mut self, input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>) -> Self {
+    pub fn set_payloads(mut self, input: ::std::option::Option<::std::vec::Vec::<::aws_smithy_types::Blob>>) -> Self {
         self.inner = self.inner.set_payloads(input);
         self
     }
     /// <p>The sample message payloads on which the pipeline activity is run.</p>
-    pub fn get_payloads(&self) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>> {
+    pub fn get_payloads(&self) -> &::std::option::Option<::std::vec::Vec::<::aws_smithy_types::Blob>> {
         self.inner.get_payloads()
     }
 }
+

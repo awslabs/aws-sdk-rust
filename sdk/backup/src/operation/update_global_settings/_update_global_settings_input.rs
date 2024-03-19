@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateGlobalSettingsInput {
+pub struct UpdateGlobalSettingsInput  {
     /// <p>A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example: <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false --region us-west-2</code>.</p>
-    pub global_settings: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub global_settings: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl UpdateGlobalSettingsInput {
+impl  UpdateGlobalSettingsInput  {
     /// <p>A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example: <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false --region us-west-2</code>.</p>
-    pub fn global_settings(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn global_settings(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.global_settings.as_ref()
     }
 }
@@ -23,7 +23,7 @@ impl UpdateGlobalSettingsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateGlobalSettingsInputBuilder {
-    pub(crate) global_settings: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) global_settings: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl UpdateGlobalSettingsInputBuilder {
     /// Adds a key-value pair to `global_settings`.
@@ -31,35 +31,28 @@ impl UpdateGlobalSettingsInputBuilder {
     /// To override the contents of this collection use [`set_global_settings`](Self::set_global_settings).
     ///
     /// <p>A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example: <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false --region us-west-2</code>.</p>
-    pub fn global_settings(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn global_settings(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.global_settings.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.global_settings = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.global_settings = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example: <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false --region us-west-2</code>.</p>
-    pub fn set_global_settings(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.global_settings = input;
-        self
+    pub fn set_global_settings(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.global_settings = input; self
     }
     /// <p>A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example: <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false --region us-west-2</code>.</p>
-    pub fn get_global_settings(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_global_settings(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.global_settings
     }
     /// Consumes the builder and constructs a [`UpdateGlobalSettingsInput`](crate::operation::update_global_settings::UpdateGlobalSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_global_settings::UpdateGlobalSettingsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_global_settings::UpdateGlobalSettingsInput {
-            global_settings: self.global_settings,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_global_settings::UpdateGlobalSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_global_settings::UpdateGlobalSettingsInput {
+                global_settings: self.global_settings
+                ,
+            }
+        )
     }
 }
+

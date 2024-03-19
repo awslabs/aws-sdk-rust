@@ -6,3 +6,4 @@ pub use crate::types::_assumed_role_user::AssumedRoleUserBuilder;
 pub use crate::types::_pod_identity_association::PodIdentityAssociationBuilder;
 
 pub use crate::types::_subject::SubjectBuilder;
+

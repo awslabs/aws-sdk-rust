@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetJobInput {
+pub struct GetJobInput  {
     /// <p>The ARN of the job to retrieve.</p>
     pub job_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of attributes to return information for.</p>
-    pub additional_attribute_names: ::std::option::Option<::std::vec::Vec<crate::types::HybridJobAdditionalAttributeName>>,
+    pub additional_attribute_names: ::std::option::Option<::std::vec::Vec::<crate::types::HybridJobAdditionalAttributeName>>,
 }
-impl GetJobInput {
+impl  GetJobInput  {
     /// <p>The ARN of the job to retrieve.</p>
-    pub fn job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn job_arn(&self) -> ::std::option::Option<& str> {
         self.job_arn.as_deref()
     }
     /// <p>A list of attributes to return information for.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_attribute_names.is_none()`.
-    pub fn additional_attribute_names(&self) -> &[crate::types::HybridJobAdditionalAttributeName] {
-        self.additional_attribute_names.as_deref().unwrap_or_default()
+    pub fn additional_attribute_names(&self) -> & [crate::types::HybridJobAdditionalAttributeName] {
+        self.additional_attribute_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl GetJobInput {
@@ -32,7 +33,7 @@ impl GetJobInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetJobInputBuilder {
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) additional_attribute_names: ::std::option::Option<::std::vec::Vec<crate::types::HybridJobAdditionalAttributeName>>,
+    pub(crate) additional_attribute_names: ::std::option::Option<::std::vec::Vec::<crate::types::HybridJobAdditionalAttributeName>>,
 }
 impl GetJobInputBuilder {
     /// <p>The ARN of the job to retrieve.</p>
@@ -43,8 +44,7 @@ impl GetJobInputBuilder {
     }
     /// <p>The ARN of the job to retrieve.</p>
     pub fn set_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_arn = input;
-        self
+        self.job_arn = input; self
     }
     /// <p>The ARN of the job to retrieve.</p>
     pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,27 +57,28 @@ impl GetJobInputBuilder {
     /// <p>A list of attributes to return information for.</p>
     pub fn additional_attribute_names(mut self, input: crate::types::HybridJobAdditionalAttributeName) -> Self {
         let mut v = self.additional_attribute_names.unwrap_or_default();
-        v.push(input);
-        self.additional_attribute_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.additional_attribute_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of attributes to return information for.</p>
-    pub fn set_additional_attribute_names(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HybridJobAdditionalAttributeName>>,
-    ) -> Self {
-        self.additional_attribute_names = input;
-        self
+    pub fn set_additional_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::HybridJobAdditionalAttributeName>>) -> Self {
+        self.additional_attribute_names = input; self
     }
     /// <p>A list of attributes to return information for.</p>
-    pub fn get_additional_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HybridJobAdditionalAttributeName>> {
+    pub fn get_additional_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::HybridJobAdditionalAttributeName>> {
         &self.additional_attribute_names
     }
     /// Consumes the builder and constructs a [`GetJobInput`](crate::operation::get_job::GetJobInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_job::GetJobInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_job::GetJobInput {
-            job_arn: self.job_arn,
-            additional_attribute_names: self.additional_attribute_names,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_job::GetJobInput {
+                job_arn: self.job_arn
+                ,
+                additional_attribute_names: self.additional_attribute_names
+                ,
+            }
+        )
     }
 }
+

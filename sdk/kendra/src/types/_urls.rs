@@ -5,7 +5,7 @@
 /// <p><i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own web pages, or web pages that you have authorization to index.</i></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Urls {
+pub struct Urls  {
     /// <p>Configuration of the seed or starting point URLs of the websites you want to crawl.</p>
     /// <p>You can choose to crawl only the website host names, or the website host names with subdomains, or the website host names with subdomains and other domains that the web pages link to.</p>
     /// <p>You can list up to 100 seed URLs.</p>
@@ -14,16 +14,16 @@ pub struct Urls {
     /// <p>Only URLs belonging to the same website host names are crawled. You can list up to three sitemap URLs.</p>
     pub site_maps_configuration: ::std::option::Option<crate::types::SiteMapsConfiguration>,
 }
-impl Urls {
+impl  Urls  {
     /// <p>Configuration of the seed or starting point URLs of the websites you want to crawl.</p>
     /// <p>You can choose to crawl only the website host names, or the website host names with subdomains, or the website host names with subdomains and other domains that the web pages link to.</p>
     /// <p>You can list up to 100 seed URLs.</p>
-    pub fn seed_url_configuration(&self) -> ::std::option::Option<&crate::types::SeedUrlConfiguration> {
+    pub fn seed_url_configuration(&self) -> ::std::option::Option<& crate::types::SeedUrlConfiguration> {
         self.seed_url_configuration.as_ref()
     }
     /// <p>Configuration of the sitemap URLs of the websites you want to crawl.</p>
     /// <p>Only URLs belonging to the same website host names are crawled. You can list up to three sitemap URLs.</p>
-    pub fn site_maps_configuration(&self) -> ::std::option::Option<&crate::types::SiteMapsConfiguration> {
+    pub fn site_maps_configuration(&self) -> ::std::option::Option<& crate::types::SiteMapsConfiguration> {
         self.site_maps_configuration.as_ref()
     }
 }
@@ -53,8 +53,7 @@ impl UrlsBuilder {
     /// <p>You can choose to crawl only the website host names, or the website host names with subdomains, or the website host names with subdomains and other domains that the web pages link to.</p>
     /// <p>You can list up to 100 seed URLs.</p>
     pub fn set_seed_url_configuration(mut self, input: ::std::option::Option<crate::types::SeedUrlConfiguration>) -> Self {
-        self.seed_url_configuration = input;
-        self
+        self.seed_url_configuration = input; self
     }
     /// <p>Configuration of the seed or starting point URLs of the websites you want to crawl.</p>
     /// <p>You can choose to crawl only the website host names, or the website host names with subdomains, or the website host names with subdomains and other domains that the web pages link to.</p>
@@ -71,8 +70,7 @@ impl UrlsBuilder {
     /// <p>Configuration of the sitemap URLs of the websites you want to crawl.</p>
     /// <p>Only URLs belonging to the same website host names are crawled. You can list up to three sitemap URLs.</p>
     pub fn set_site_maps_configuration(mut self, input: ::std::option::Option<crate::types::SiteMapsConfiguration>) -> Self {
-        self.site_maps_configuration = input;
-        self
+        self.site_maps_configuration = input; self
     }
     /// <p>Configuration of the sitemap URLs of the websites you want to crawl.</p>
     /// <p>Only URLs belonging to the same website host names are crawled. You can list up to three sitemap URLs.</p>
@@ -82,8 +80,11 @@ impl UrlsBuilder {
     /// Consumes the builder and constructs a [`Urls`](crate::types::Urls).
     pub fn build(self) -> crate::types::Urls {
         crate::types::Urls {
-            seed_url_configuration: self.seed_url_configuration,
-            site_maps_configuration: self.site_maps_configuration,
+            seed_url_configuration: self.seed_url_configuration
+            ,
+            site_maps_configuration: self.site_maps_configuration
+            ,
         }
     }
 }
+

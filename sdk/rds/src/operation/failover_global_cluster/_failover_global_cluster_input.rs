@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FailoverGlobalClusterInput {
+pub struct FailoverGlobalClusterInput  {
     /// <p>The identifier of the global database cluster (Aurora global database) this operation should apply to. The identifier is the unique key assigned by the user when the Aurora global database is created. In other words, it's the name of the Aurora global database.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -28,18 +28,18 @@ pub struct FailoverGlobalClusterInput {
     /// </ul>
     pub switchover: ::std::option::Option<bool>,
 }
-impl FailoverGlobalClusterInput {
+impl  FailoverGlobalClusterInput  {
     /// <p>The identifier of the global database cluster (Aurora global database) this operation should apply to. The identifier is the unique key assigned by the user when the Aurora global database is created. In other words, it's the name of the Aurora global database.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
     /// <p>Must match the identifier of an existing global database cluster.</p></li>
     /// </ul>
-    pub fn global_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn global_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.global_cluster_identifier.as_deref()
     }
     /// <p>The identifier of the secondary Aurora DB cluster that you want to promote to the primary for the global database cluster. Use the Amazon Resource Name (ARN) for the identifier so that Aurora can locate the cluster in its Amazon Web Services Region.</p>
-    pub fn target_db_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn target_db_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.target_db_cluster_identifier.as_deref()
     }
     /// <p>Specifies whether to allow data loss for this global database cluster operation. Allowing data loss triggers a global failover operation.</p>
@@ -97,8 +97,7 @@ impl FailoverGlobalClusterInputBuilder {
     /// <p>Must match the identifier of an existing global database cluster.</p></li>
     /// </ul>
     pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_cluster_identifier = input;
-        self
+        self.global_cluster_identifier = input; self
     }
     /// <p>The identifier of the global database cluster (Aurora global database) this operation should apply to. The identifier is the unique key assigned by the user when the Aurora global database is created. In other words, it's the name of the Aurora global database.</p>
     /// <p>Constraints:</p>
@@ -117,8 +116,7 @@ impl FailoverGlobalClusterInputBuilder {
     }
     /// <p>The identifier of the secondary Aurora DB cluster that you want to promote to the primary for the global database cluster. Use the Amazon Resource Name (ARN) for the identifier so that Aurora can locate the cluster in its Amazon Web Services Region.</p>
     pub fn set_target_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_db_cluster_identifier = input;
-        self
+        self.target_db_cluster_identifier = input; self
     }
     /// <p>The identifier of the secondary Aurora DB cluster that you want to promote to the primary for the global database cluster. Use the Amazon Resource Name (ARN) for the identifier so that Aurora can locate the cluster in its Amazon Web Services Region.</p>
     pub fn get_target_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +141,7 @@ impl FailoverGlobalClusterInputBuilder {
     /// <p>Can't be specified together with the <code>Switchover</code> parameter.</p></li>
     /// </ul>
     pub fn set_allow_data_loss(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_data_loss = input;
-        self
+        self.allow_data_loss = input; self
     }
     /// <p>Specifies whether to allow data loss for this global database cluster operation. Allowing data loss triggers a global failover operation.</p>
     /// <p>If you don't specify <code>AllowDataLoss</code>, the global database cluster operation defaults to a switchover.</p>
@@ -173,8 +170,7 @@ impl FailoverGlobalClusterInputBuilder {
     /// <p>Can't be specified together with the <code>AllowDataLoss</code> parameter.</p></li>
     /// </ul>
     pub fn set_switchover(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.switchover = input;
-        self
+        self.switchover = input; self
     }
     /// <p>Specifies whether to switch over this global database cluster.</p>
     /// <p>Constraints:</p>
@@ -186,15 +182,19 @@ impl FailoverGlobalClusterInputBuilder {
         &self.switchover
     }
     /// Consumes the builder and constructs a [`FailoverGlobalClusterInput`](crate::operation::failover_global_cluster::FailoverGlobalClusterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::failover_global_cluster::FailoverGlobalClusterInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::failover_global_cluster::FailoverGlobalClusterInput {
-            global_cluster_identifier: self.global_cluster_identifier,
-            target_db_cluster_identifier: self.target_db_cluster_identifier,
-            allow_data_loss: self.allow_data_loss,
-            switchover: self.switchover,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::failover_global_cluster::FailoverGlobalClusterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::failover_global_cluster::FailoverGlobalClusterInput {
+                global_cluster_identifier: self.global_cluster_identifier
+                ,
+                target_db_cluster_identifier: self.target_db_cluster_identifier
+                ,
+                allow_data_loss: self.allow_data_loss
+                ,
+                switchover: self.switchover
+                ,
+            }
+        )
     }
 }
+

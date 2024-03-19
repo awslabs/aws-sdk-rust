@@ -3,13 +3,13 @@
 /// <p>Notification configuration for a scheduled query. A notification is sent by Timestream when a scheduled query is created, its state is updated or when it is deleted.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NotificationConfiguration {
+pub struct NotificationConfiguration  {
     /// <p>Details on SNS configuration.</p>
     pub sns_configuration: ::std::option::Option<crate::types::SnsConfiguration>,
 }
-impl NotificationConfiguration {
+impl  NotificationConfiguration  {
     /// <p>Details on SNS configuration.</p>
-    pub fn sns_configuration(&self) -> ::std::option::Option<&crate::types::SnsConfiguration> {
+    pub fn sns_configuration(&self) -> ::std::option::Option<& crate::types::SnsConfiguration> {
         self.sns_configuration.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl NotificationConfigurationBuilder {
     }
     /// <p>Details on SNS configuration.</p>
     pub fn set_sns_configuration(mut self, input: ::std::option::Option<crate::types::SnsConfiguration>) -> Self {
-        self.sns_configuration = input;
-        self
+        self.sns_configuration = input; self
     }
     /// <p>Details on SNS configuration.</p>
     pub fn get_sns_configuration(&self) -> &::std::option::Option<crate::types::SnsConfiguration> {
@@ -45,7 +44,9 @@ impl NotificationConfigurationBuilder {
     /// Consumes the builder and constructs a [`NotificationConfiguration`](crate::types::NotificationConfiguration).
     pub fn build(self) -> crate::types::NotificationConfiguration {
         crate::types::NotificationConfiguration {
-            sns_configuration: self.sns_configuration,
+            sns_configuration: self.sns_configuration
+            ,
         }
     }
 }
+

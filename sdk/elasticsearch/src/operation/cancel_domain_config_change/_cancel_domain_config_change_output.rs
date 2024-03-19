@@ -3,38 +3,40 @@
 /// <p>Contains the details of the cancelled domain config change.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelDomainConfigChangeOutput {
+pub struct CancelDomainConfigChangeOutput  {
     /// <p>Whether or not the request was a dry run. If <b>True</b>, the changes were not actually cancelled.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The unique identifiers of the changes that were cancelled.</p>
-    pub cancelled_change_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub cancelled_change_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The domain change properties that were cancelled.</p>
-    pub cancelled_change_properties: ::std::option::Option<::std::vec::Vec<crate::types::CancelledChangeProperty>>,
+    pub cancelled_change_properties: ::std::option::Option<::std::vec::Vec::<crate::types::CancelledChangeProperty>>,
     _request_id: Option<String>,
 }
-impl CancelDomainConfigChangeOutput {
+impl  CancelDomainConfigChangeOutput  {
     /// <p>Whether or not the request was a dry run. If <b>True</b>, the changes were not actually cancelled.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The unique identifiers of the changes that were cancelled.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cancelled_change_ids.is_none()`.
-    pub fn cancelled_change_ids(&self) -> &[::std::string::String] {
-        self.cancelled_change_ids.as_deref().unwrap_or_default()
+    pub fn cancelled_change_ids(&self) -> & [::std::string::String] {
+        self.cancelled_change_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The domain change properties that were cancelled.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cancelled_change_properties.is_none()`.
-    pub fn cancelled_change_properties(&self) -> &[crate::types::CancelledChangeProperty] {
-        self.cancelled_change_properties.as_deref().unwrap_or_default()
+    pub fn cancelled_change_properties(&self) -> & [crate::types::CancelledChangeProperty] {
+        self.cancelled_change_properties.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for CancelDomainConfigChangeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CancelDomainConfigChangeOutput {
     /// Creates a new builder-style object to manufacture [`CancelDomainConfigChangeOutput`](crate::operation::cancel_domain_config_change::CancelDomainConfigChangeOutput).
     pub fn builder() -> crate::operation::cancel_domain_config_change::builders::CancelDomainConfigChangeOutputBuilder {
@@ -47,8 +49,8 @@ impl CancelDomainConfigChangeOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelDomainConfigChangeOutputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) cancelled_change_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) cancelled_change_properties: ::std::option::Option<::std::vec::Vec<crate::types::CancelledChangeProperty>>,
+    pub(crate) cancelled_change_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) cancelled_change_properties: ::std::option::Option<::std::vec::Vec::<crate::types::CancelledChangeProperty>>,
     _request_id: Option<String>,
 }
 impl CancelDomainConfigChangeOutputBuilder {
@@ -59,8 +61,7 @@ impl CancelDomainConfigChangeOutputBuilder {
     }
     /// <p>Whether or not the request was a dry run. If <b>True</b>, the changes were not actually cancelled.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Whether or not the request was a dry run. If <b>True</b>, the changes were not actually cancelled.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -73,17 +74,16 @@ impl CancelDomainConfigChangeOutputBuilder {
     /// <p>The unique identifiers of the changes that were cancelled.</p>
     pub fn cancelled_change_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cancelled_change_ids.unwrap_or_default();
-        v.push(input.into());
-        self.cancelled_change_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.cancelled_change_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The unique identifiers of the changes that were cancelled.</p>
-    pub fn set_cancelled_change_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.cancelled_change_ids = input;
-        self
+    pub fn set_cancelled_change_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.cancelled_change_ids = input; self
     }
     /// <p>The unique identifiers of the changes that were cancelled.</p>
-    pub fn get_cancelled_change_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cancelled_change_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.cancelled_change_ids
     }
     /// Appends an item to `cancelled_change_properties`.
@@ -93,35 +93,38 @@ impl CancelDomainConfigChangeOutputBuilder {
     /// <p>The domain change properties that were cancelled.</p>
     pub fn cancelled_change_properties(mut self, input: crate::types::CancelledChangeProperty) -> Self {
         let mut v = self.cancelled_change_properties.unwrap_or_default();
-        v.push(input);
-        self.cancelled_change_properties = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cancelled_change_properties = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The domain change properties that were cancelled.</p>
-    pub fn set_cancelled_change_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CancelledChangeProperty>>) -> Self {
-        self.cancelled_change_properties = input;
-        self
+    pub fn set_cancelled_change_properties(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CancelledChangeProperty>>) -> Self {
+        self.cancelled_change_properties = input; self
     }
     /// <p>The domain change properties that were cancelled.</p>
-    pub fn get_cancelled_change_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CancelledChangeProperty>> {
+    pub fn get_cancelled_change_properties(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CancelledChangeProperty>> {
         &self.cancelled_change_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CancelDomainConfigChangeOutput`](crate::operation::cancel_domain_config_change::CancelDomainConfigChangeOutput).
     pub fn build(self) -> crate::operation::cancel_domain_config_change::CancelDomainConfigChangeOutput {
         crate::operation::cancel_domain_config_change::CancelDomainConfigChangeOutput {
-            dry_run: self.dry_run,
-            cancelled_change_ids: self.cancelled_change_ids,
-            cancelled_change_properties: self.cancelled_change_properties,
+            dry_run: self.dry_run
+            ,
+            cancelled_change_ids: self.cancelled_change_ids
+            ,
+            cancelled_change_properties: self.cancelled_change_properties
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

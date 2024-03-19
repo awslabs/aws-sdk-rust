@@ -3,7 +3,7 @@
 /// <p>The total options for a pivot table visual.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PivotTableTotalOptions {
+pub struct PivotTableTotalOptions  {
     /// <p>The row subtotal options.</p>
     pub row_subtotal_options: ::std::option::Option<crate::types::SubtotalOptions>,
     /// <p>The column subtotal options.</p>
@@ -13,21 +13,21 @@ pub struct PivotTableTotalOptions {
     /// <p>The column total options.</p>
     pub column_total_options: ::std::option::Option<crate::types::PivotTotalOptions>,
 }
-impl PivotTableTotalOptions {
+impl  PivotTableTotalOptions  {
     /// <p>The row subtotal options.</p>
-    pub fn row_subtotal_options(&self) -> ::std::option::Option<&crate::types::SubtotalOptions> {
+    pub fn row_subtotal_options(&self) -> ::std::option::Option<& crate::types::SubtotalOptions> {
         self.row_subtotal_options.as_ref()
     }
     /// <p>The column subtotal options.</p>
-    pub fn column_subtotal_options(&self) -> ::std::option::Option<&crate::types::SubtotalOptions> {
+    pub fn column_subtotal_options(&self) -> ::std::option::Option<& crate::types::SubtotalOptions> {
         self.column_subtotal_options.as_ref()
     }
     /// <p>The row total options.</p>
-    pub fn row_total_options(&self) -> ::std::option::Option<&crate::types::PivotTotalOptions> {
+    pub fn row_total_options(&self) -> ::std::option::Option<& crate::types::PivotTotalOptions> {
         self.row_total_options.as_ref()
     }
     /// <p>The column total options.</p>
-    pub fn column_total_options(&self) -> ::std::option::Option<&crate::types::PivotTotalOptions> {
+    pub fn column_total_options(&self) -> ::std::option::Option<& crate::types::PivotTotalOptions> {
         self.column_total_options.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl PivotTableTotalOptionsBuilder {
     }
     /// <p>The row subtotal options.</p>
     pub fn set_row_subtotal_options(mut self, input: ::std::option::Option<crate::types::SubtotalOptions>) -> Self {
-        self.row_subtotal_options = input;
-        self
+        self.row_subtotal_options = input; self
     }
     /// <p>The row subtotal options.</p>
     pub fn get_row_subtotal_options(&self) -> &::std::option::Option<crate::types::SubtotalOptions> {
@@ -69,8 +68,7 @@ impl PivotTableTotalOptionsBuilder {
     }
     /// <p>The column subtotal options.</p>
     pub fn set_column_subtotal_options(mut self, input: ::std::option::Option<crate::types::SubtotalOptions>) -> Self {
-        self.column_subtotal_options = input;
-        self
+        self.column_subtotal_options = input; self
     }
     /// <p>The column subtotal options.</p>
     pub fn get_column_subtotal_options(&self) -> &::std::option::Option<crate::types::SubtotalOptions> {
@@ -83,8 +81,7 @@ impl PivotTableTotalOptionsBuilder {
     }
     /// <p>The row total options.</p>
     pub fn set_row_total_options(mut self, input: ::std::option::Option<crate::types::PivotTotalOptions>) -> Self {
-        self.row_total_options = input;
-        self
+        self.row_total_options = input; self
     }
     /// <p>The row total options.</p>
     pub fn get_row_total_options(&self) -> &::std::option::Option<crate::types::PivotTotalOptions> {
@@ -97,8 +94,7 @@ impl PivotTableTotalOptionsBuilder {
     }
     /// <p>The column total options.</p>
     pub fn set_column_total_options(mut self, input: ::std::option::Option<crate::types::PivotTotalOptions>) -> Self {
-        self.column_total_options = input;
-        self
+        self.column_total_options = input; self
     }
     /// <p>The column total options.</p>
     pub fn get_column_total_options(&self) -> &::std::option::Option<crate::types::PivotTotalOptions> {
@@ -107,10 +103,15 @@ impl PivotTableTotalOptionsBuilder {
     /// Consumes the builder and constructs a [`PivotTableTotalOptions`](crate::types::PivotTableTotalOptions).
     pub fn build(self) -> crate::types::PivotTableTotalOptions {
         crate::types::PivotTableTotalOptions {
-            row_subtotal_options: self.row_subtotal_options,
-            column_subtotal_options: self.column_subtotal_options,
-            row_total_options: self.row_total_options,
-            column_total_options: self.column_total_options,
+            row_subtotal_options: self.row_subtotal_options
+            ,
+            column_subtotal_options: self.column_subtotal_options
+            ,
+            row_total_options: self.row_total_options
+            ,
+            column_total_options: self.column_total_options
+            ,
         }
     }
 }
+

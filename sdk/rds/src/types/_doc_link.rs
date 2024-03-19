@@ -3,19 +3,19 @@
 /// <p>A link to documentation that provides additional information for a recommendation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DocLink {
+pub struct DocLink  {
     /// <p>The text with the link to documentation for the recommendation.</p>
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>The URL for the documentation for the recommendation.</p>
     pub url: ::std::option::Option<::std::string::String>,
 }
-impl DocLink {
+impl  DocLink  {
     /// <p>The text with the link to documentation for the recommendation.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
     /// <p>The URL for the documentation for the recommendation.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DocLinkBuilder {
     }
     /// <p>The text with the link to documentation for the recommendation.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>The text with the link to documentation for the recommendation.</p>
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl DocLinkBuilder {
     }
     /// <p>The URL for the documentation for the recommendation.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// <p>The URL for the documentation for the recommendation.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl DocLinkBuilder {
     /// Consumes the builder and constructs a [`DocLink`](crate::types::DocLink).
     pub fn build(self) -> crate::types::DocLink {
         crate::types::DocLink {
-            text: self.text,
-            url: self.url,
+            text: self.text
+            ,
+            url: self.url
+            ,
         }
     }
 }
+

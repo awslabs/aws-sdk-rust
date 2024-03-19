@@ -3,7 +3,7 @@
 /// <p>Describes a command request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Command {
+pub struct Command  {
     /// <p>A unique identifier for this command.</p>
     pub command_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the document requested for execution.</p>
@@ -15,11 +15,11 @@ pub struct Command {
     /// <p>If a command expires, it changes status to <code>DeliveryTimedOut</code> for all invocations that have the status <code>InProgress</code>, <code>Pending</code>, or <code>Delayed</code>. <code>ExpiresAfter</code> is calculated based on the total timeout for the overall command. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html?icmpid=docs_ec2_console#monitor-about-status-timeouts">Understanding command timeout values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub expires_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The parameter values to be inserted in the document when running the command.</p>
-    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
     /// <p>The managed node IDs against which this command was requested.</p>
-    pub instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub instance_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>An array of search criteria that targets managed nodes using a Key,Value combination that you specify. Targets is required if you don't provide one or more managed node IDs in the call.</p>
-    pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
+    pub targets: ::std::option::Option<::std::vec::Vec::<crate::types::Target>>,
     /// <p>The date and time the command was requested.</p>
     pub requested_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the command.</p>
@@ -77,51 +77,53 @@ pub struct Command {
     /// <p>The details for the CloudWatch alarm applied to your command.</p>
     pub alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
     /// <p>The CloudWatch alarm that was invoked by the command.</p>
-    pub triggered_alarms: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
+    pub triggered_alarms: ::std::option::Option<::std::vec::Vec::<crate::types::AlarmStateInformation>>,
 }
-impl Command {
+impl  Command  {
     /// <p>A unique identifier for this command.</p>
-    pub fn command_id(&self) -> ::std::option::Option<&str> {
+    pub fn command_id(&self) -> ::std::option::Option<& str> {
         self.command_id.as_deref()
     }
     /// <p>The name of the document requested for execution.</p>
-    pub fn document_name(&self) -> ::std::option::Option<&str> {
+    pub fn document_name(&self) -> ::std::option::Option<& str> {
         self.document_name.as_deref()
     }
     /// <p>The Systems Manager document (SSM document) version.</p>
-    pub fn document_version(&self) -> ::std::option::Option<&str> {
+    pub fn document_version(&self) -> ::std::option::Option<& str> {
         self.document_version.as_deref()
     }
     /// <p>User-specified information about the command, such as a brief description of what the command should do.</p>
-    pub fn comment(&self) -> ::std::option::Option<&str> {
+    pub fn comment(&self) -> ::std::option::Option<& str> {
         self.comment.as_deref()
     }
     /// <p>If a command expires, it changes status to <code>DeliveryTimedOut</code> for all invocations that have the status <code>InProgress</code>, <code>Pending</code>, or <code>Delayed</code>. <code>ExpiresAfter</code> is calculated based on the total timeout for the overall command. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html?icmpid=docs_ec2_console#monitor-about-status-timeouts">Understanding command timeout values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn expires_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn expires_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.expires_after.as_ref()
     }
     /// <p>The parameter values to be inserted in the document when running the command.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         self.parameters.as_ref()
     }
     /// <p>The managed node IDs against which this command was requested.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_ids.is_none()`.
-    pub fn instance_ids(&self) -> &[::std::string::String] {
-        self.instance_ids.as_deref().unwrap_or_default()
+    pub fn instance_ids(&self) -> & [::std::string::String] {
+        self.instance_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of search criteria that targets managed nodes using a Key,Value combination that you specify. Targets is required if you don't provide one or more managed node IDs in the call.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
-    pub fn targets(&self) -> &[crate::types::Target] {
-        self.targets.as_deref().unwrap_or_default()
+    pub fn targets(&self) -> & [crate::types::Target] {
+        self.targets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The date and time the command was requested.</p>
-    pub fn requested_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn requested_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.requested_date_time.as_ref()
     }
     /// <p>The status of the command.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::CommandStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::CommandStatus> {
         self.status.as_ref()
     }
     /// <p>A detailed status of the command execution. <code>StatusDetails</code> includes more information than <code>Status</code> because it includes states resulting from error and concurrency control parameters. <code>StatusDetails</code> can show different results than Status. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. StatusDetails can be one of the following values:</p>
@@ -147,27 +149,27 @@ impl Command {
     /// <li>
     /// <p>Delayed: The system attempted to send the command to the managed node but wasn't successful. The system retries again.</p></li>
     /// </ul>
-    pub fn status_details(&self) -> ::std::option::Option<&str> {
+    pub fn status_details(&self) -> ::std::option::Option<& str> {
         self.status_details.as_deref()
     }
     /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager automatically determines the Amazon Web Services Region of the S3 bucket.</p>
-    pub fn output_s3_region(&self) -> ::std::option::Option<&str> {
+    pub fn output_s3_region(&self) -> ::std::option::Option<& str> {
         self.output_s3_region.as_deref()
     }
     /// <p>The S3 bucket where the responses to the command executions should be stored. This was requested when issuing the command.</p>
-    pub fn output_s3_bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn output_s3_bucket_name(&self) -> ::std::option::Option<& str> {
         self.output_s3_bucket_name.as_deref()
     }
     /// <p>The S3 directory path inside the bucket where the responses to the command executions should be stored. This was requested when issuing the command.</p>
-    pub fn output_s3_key_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn output_s3_key_prefix(&self) -> ::std::option::Option<& str> {
         self.output_s3_key_prefix.as_deref()
     }
     /// <p>The maximum number of managed nodes that are allowed to run the command at the same time. You can specify a number of managed nodes, such as 10, or a percentage of nodes, such as 10%. The default value is 50. For more information about how to use <code>MaxConcurrency</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon Web Services Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn max_concurrency(&self) -> ::std::option::Option<&str> {
+    pub fn max_concurrency(&self) -> ::std::option::Option<& str> {
         self.max_concurrency.as_deref()
     }
     /// <p>The maximum number of errors allowed before the system stops sending the command to additional targets. You can specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is <code>0</code>. For more information about how to use <code>MaxErrors</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon Web Services Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn max_errors(&self) -> ::std::option::Option<&str> {
+    pub fn max_errors(&self) -> ::std::option::Option<& str> {
         self.max_errors.as_deref()
     }
     /// <p>The number of targets for the command.</p>
@@ -187,15 +189,15 @@ impl Command {
         self.delivery_timed_out_count
     }
     /// <p>The Identity and Access Management (IAM) service role that Run Command, a capability of Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes.</p>
-    pub fn service_role(&self) -> ::std::option::Option<&str> {
+    pub fn service_role(&self) -> ::std::option::Option<& str> {
         self.service_role.as_deref()
     }
     /// <p>Configurations for sending notifications about command status changes.</p>
-    pub fn notification_config(&self) -> ::std::option::Option<&crate::types::NotificationConfig> {
+    pub fn notification_config(&self) -> ::std::option::Option<& crate::types::NotificationConfig> {
         self.notification_config.as_ref()
     }
     /// <p>Amazon CloudWatch Logs information where you want Amazon Web Services Systems Manager to send the command output.</p>
-    pub fn cloud_watch_output_config(&self) -> ::std::option::Option<&crate::types::CloudWatchOutputConfig> {
+    pub fn cloud_watch_output_config(&self) -> ::std::option::Option<& crate::types::CloudWatchOutputConfig> {
         self.cloud_watch_output_config.as_ref()
     }
     /// <p>The <code>TimeoutSeconds</code> value specified for a command.</p>
@@ -203,17 +205,18 @@ impl Command {
         self.timeout_seconds
     }
     /// <p>The details for the CloudWatch alarm applied to your command.</p>
-    pub fn alarm_configuration(&self) -> ::std::option::Option<&crate::types::AlarmConfiguration> {
+    pub fn alarm_configuration(&self) -> ::std::option::Option<& crate::types::AlarmConfiguration> {
         self.alarm_configuration.as_ref()
     }
     /// <p>The CloudWatch alarm that was invoked by the command.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.triggered_alarms.is_none()`.
-    pub fn triggered_alarms(&self) -> &[crate::types::AlarmStateInformation] {
-        self.triggered_alarms.as_deref().unwrap_or_default()
+    pub fn triggered_alarms(&self) -> & [crate::types::AlarmStateInformation] {
+        self.triggered_alarms.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for Command {
+impl  ::std::fmt::Debug for Command  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Command");
         formatter.field("command_id", &self.command_id);
@@ -261,9 +264,9 @@ pub struct CommandBuilder {
     pub(crate) document_version: ::std::option::Option<::std::string::String>,
     pub(crate) comment: ::std::option::Option<::std::string::String>,
     pub(crate) expires_after: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
-    pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
+    pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) targets: ::std::option::Option<::std::vec::Vec::<crate::types::Target>>,
     pub(crate) requested_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::CommandStatus>,
     pub(crate) status_details: ::std::option::Option<::std::string::String>,
@@ -281,7 +284,7 @@ pub struct CommandBuilder {
     pub(crate) cloud_watch_output_config: ::std::option::Option<crate::types::CloudWatchOutputConfig>,
     pub(crate) timeout_seconds: ::std::option::Option<i32>,
     pub(crate) alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
-    pub(crate) triggered_alarms: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
+    pub(crate) triggered_alarms: ::std::option::Option<::std::vec::Vec::<crate::types::AlarmStateInformation>>,
 }
 impl CommandBuilder {
     /// <p>A unique identifier for this command.</p>
@@ -291,8 +294,7 @@ impl CommandBuilder {
     }
     /// <p>A unique identifier for this command.</p>
     pub fn set_command_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.command_id = input;
-        self
+        self.command_id = input; self
     }
     /// <p>A unique identifier for this command.</p>
     pub fn get_command_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -305,8 +307,7 @@ impl CommandBuilder {
     }
     /// <p>The name of the document requested for execution.</p>
     pub fn set_document_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_name = input;
-        self
+        self.document_name = input; self
     }
     /// <p>The name of the document requested for execution.</p>
     pub fn get_document_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -319,8 +320,7 @@ impl CommandBuilder {
     }
     /// <p>The Systems Manager document (SSM document) version.</p>
     pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_version = input;
-        self
+        self.document_version = input; self
     }
     /// <p>The Systems Manager document (SSM document) version.</p>
     pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -333,8 +333,7 @@ impl CommandBuilder {
     }
     /// <p>User-specified information about the command, such as a brief description of what the command should do.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// <p>User-specified information about the command, such as a brief description of what the command should do.</p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
@@ -347,8 +346,7 @@ impl CommandBuilder {
     }
     /// <p>If a command expires, it changes status to <code>DeliveryTimedOut</code> for all invocations that have the status <code>InProgress</code>, <code>Pending</code>, or <code>Delayed</code>. <code>ExpiresAfter</code> is calculated based on the total timeout for the overall command. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html?icmpid=docs_ec2_console#monitor-about-status-timeouts">Understanding command timeout values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_expires_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.expires_after = input;
-        self
+        self.expires_after = input; self
     }
     /// <p>If a command expires, it changes status to <code>DeliveryTimedOut</code> for all invocations that have the status <code>InProgress</code>, <code>Pending</code>, or <code>Delayed</code>. <code>ExpiresAfter</code> is calculated based on the total timeout for the overall command. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html?icmpid=docs_ec2_console#monitor-about-status-timeouts">Understanding command timeout values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn get_expires_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -359,24 +357,18 @@ impl CommandBuilder {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>The parameter values to be inserted in the document when running the command.</p>
-    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The parameter values to be inserted in the document when running the command.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>The parameter values to be inserted in the document when running the command.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         &self.parameters
     }
     /// Appends an item to `instance_ids`.
@@ -386,17 +378,16 @@ impl CommandBuilder {
     /// <p>The managed node IDs against which this command was requested.</p>
     pub fn instance_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_ids.unwrap_or_default();
-        v.push(input.into());
-        self.instance_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.instance_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The managed node IDs against which this command was requested.</p>
-    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.instance_ids = input;
-        self
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.instance_ids = input; self
     }
     /// <p>The managed node IDs against which this command was requested.</p>
-    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.instance_ids
     }
     /// Appends an item to `targets`.
@@ -406,17 +397,16 @@ impl CommandBuilder {
     /// <p>An array of search criteria that targets managed nodes using a Key,Value combination that you specify. Targets is required if you don't provide one or more managed node IDs in the call.</p>
     pub fn targets(mut self, input: crate::types::Target) -> Self {
         let mut v = self.targets.unwrap_or_default();
-        v.push(input);
-        self.targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of search criteria that targets managed nodes using a Key,Value combination that you specify. Targets is required if you don't provide one or more managed node IDs in the call.</p>
-    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
-        self.targets = input;
-        self
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Target>>) -> Self {
+        self.targets = input; self
     }
     /// <p>An array of search criteria that targets managed nodes using a Key,Value combination that you specify. Targets is required if you don't provide one or more managed node IDs in the call.</p>
-    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Target>> {
         &self.targets
     }
     /// <p>The date and time the command was requested.</p>
@@ -426,8 +416,7 @@ impl CommandBuilder {
     }
     /// <p>The date and time the command was requested.</p>
     pub fn set_requested_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.requested_date_time = input;
-        self
+        self.requested_date_time = input; self
     }
     /// <p>The date and time the command was requested.</p>
     pub fn get_requested_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -440,8 +429,7 @@ impl CommandBuilder {
     }
     /// <p>The status of the command.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::CommandStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the command.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::CommandStatus> {
@@ -498,8 +486,7 @@ impl CommandBuilder {
     /// <p>Delayed: The system attempted to send the command to the managed node but wasn't successful. The system retries again.</p></li>
     /// </ul>
     pub fn set_status_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_details = input;
-        self
+        self.status_details = input; self
     }
     /// <p>A detailed status of the command execution. <code>StatusDetails</code> includes more information than <code>Status</code> because it includes states resulting from error and concurrency control parameters. <code>StatusDetails</code> can show different results than Status. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. StatusDetails can be one of the following values:</p>
     /// <ul>
@@ -534,8 +521,7 @@ impl CommandBuilder {
     }
     /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager automatically determines the Amazon Web Services Region of the S3 bucket.</p>
     pub fn set_output_s3_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output_s3_region = input;
-        self
+        self.output_s3_region = input; self
     }
     /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager automatically determines the Amazon Web Services Region of the S3 bucket.</p>
     pub fn get_output_s3_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -548,8 +534,7 @@ impl CommandBuilder {
     }
     /// <p>The S3 bucket where the responses to the command executions should be stored. This was requested when issuing the command.</p>
     pub fn set_output_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output_s3_bucket_name = input;
-        self
+        self.output_s3_bucket_name = input; self
     }
     /// <p>The S3 bucket where the responses to the command executions should be stored. This was requested when issuing the command.</p>
     pub fn get_output_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -562,8 +547,7 @@ impl CommandBuilder {
     }
     /// <p>The S3 directory path inside the bucket where the responses to the command executions should be stored. This was requested when issuing the command.</p>
     pub fn set_output_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output_s3_key_prefix = input;
-        self
+        self.output_s3_key_prefix = input; self
     }
     /// <p>The S3 directory path inside the bucket where the responses to the command executions should be stored. This was requested when issuing the command.</p>
     pub fn get_output_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -576,8 +560,7 @@ impl CommandBuilder {
     }
     /// <p>The maximum number of managed nodes that are allowed to run the command at the same time. You can specify a number of managed nodes, such as 10, or a percentage of nodes, such as 10%. The default value is 50. For more information about how to use <code>MaxConcurrency</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon Web Services Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_max_concurrency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.max_concurrency = input;
-        self
+        self.max_concurrency = input; self
     }
     /// <p>The maximum number of managed nodes that are allowed to run the command at the same time. You can specify a number of managed nodes, such as 10, or a percentage of nodes, such as 10%. The default value is 50. For more information about how to use <code>MaxConcurrency</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon Web Services Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn get_max_concurrency(&self) -> &::std::option::Option<::std::string::String> {
@@ -590,8 +573,7 @@ impl CommandBuilder {
     }
     /// <p>The maximum number of errors allowed before the system stops sending the command to additional targets. You can specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is <code>0</code>. For more information about how to use <code>MaxErrors</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon Web Services Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_max_errors(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.max_errors = input;
-        self
+        self.max_errors = input; self
     }
     /// <p>The maximum number of errors allowed before the system stops sending the command to additional targets. You can specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is <code>0</code>. For more information about how to use <code>MaxErrors</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon Web Services Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn get_max_errors(&self) -> &::std::option::Option<::std::string::String> {
@@ -604,8 +586,7 @@ impl CommandBuilder {
     }
     /// <p>The number of targets for the command.</p>
     pub fn set_target_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.target_count = input;
-        self
+        self.target_count = input; self
     }
     /// <p>The number of targets for the command.</p>
     pub fn get_target_count(&self) -> &::std::option::Option<i32> {
@@ -618,8 +599,7 @@ impl CommandBuilder {
     }
     /// <p>The number of targets for which the command invocation reached a terminal state. Terminal states include the following: Success, Failed, Execution Timed Out, Delivery Timed Out, Cancelled, Terminated, or Undeliverable.</p>
     pub fn set_completed_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.completed_count = input;
-        self
+        self.completed_count = input; self
     }
     /// <p>The number of targets for which the command invocation reached a terminal state. Terminal states include the following: Success, Failed, Execution Timed Out, Delivery Timed Out, Cancelled, Terminated, or Undeliverable.</p>
     pub fn get_completed_count(&self) -> &::std::option::Option<i32> {
@@ -632,8 +612,7 @@ impl CommandBuilder {
     }
     /// <p>The number of targets for which the status is Failed or Execution Timed Out.</p>
     pub fn set_error_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.error_count = input;
-        self
+        self.error_count = input; self
     }
     /// <p>The number of targets for which the status is Failed or Execution Timed Out.</p>
     pub fn get_error_count(&self) -> &::std::option::Option<i32> {
@@ -646,8 +625,7 @@ impl CommandBuilder {
     }
     /// <p>The number of targets for which the status is Delivery Timed Out.</p>
     pub fn set_delivery_timed_out_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.delivery_timed_out_count = input;
-        self
+        self.delivery_timed_out_count = input; self
     }
     /// <p>The number of targets for which the status is Delivery Timed Out.</p>
     pub fn get_delivery_timed_out_count(&self) -> &::std::option::Option<i32> {
@@ -660,8 +638,7 @@ impl CommandBuilder {
     }
     /// <p>The Identity and Access Management (IAM) service role that Run Command, a capability of Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes.</p>
     pub fn set_service_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_role = input;
-        self
+        self.service_role = input; self
     }
     /// <p>The Identity and Access Management (IAM) service role that Run Command, a capability of Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes.</p>
     pub fn get_service_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -674,8 +651,7 @@ impl CommandBuilder {
     }
     /// <p>Configurations for sending notifications about command status changes.</p>
     pub fn set_notification_config(mut self, input: ::std::option::Option<crate::types::NotificationConfig>) -> Self {
-        self.notification_config = input;
-        self
+        self.notification_config = input; self
     }
     /// <p>Configurations for sending notifications about command status changes.</p>
     pub fn get_notification_config(&self) -> &::std::option::Option<crate::types::NotificationConfig> {
@@ -688,8 +664,7 @@ impl CommandBuilder {
     }
     /// <p>Amazon CloudWatch Logs information where you want Amazon Web Services Systems Manager to send the command output.</p>
     pub fn set_cloud_watch_output_config(mut self, input: ::std::option::Option<crate::types::CloudWatchOutputConfig>) -> Self {
-        self.cloud_watch_output_config = input;
-        self
+        self.cloud_watch_output_config = input; self
     }
     /// <p>Amazon CloudWatch Logs information where you want Amazon Web Services Systems Manager to send the command output.</p>
     pub fn get_cloud_watch_output_config(&self) -> &::std::option::Option<crate::types::CloudWatchOutputConfig> {
@@ -702,8 +677,7 @@ impl CommandBuilder {
     }
     /// <p>The <code>TimeoutSeconds</code> value specified for a command.</p>
     pub fn set_timeout_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.timeout_seconds = input;
-        self
+        self.timeout_seconds = input; self
     }
     /// <p>The <code>TimeoutSeconds</code> value specified for a command.</p>
     pub fn get_timeout_seconds(&self) -> &::std::option::Option<i32> {
@@ -716,8 +690,7 @@ impl CommandBuilder {
     }
     /// <p>The details for the CloudWatch alarm applied to your command.</p>
     pub fn set_alarm_configuration(mut self, input: ::std::option::Option<crate::types::AlarmConfiguration>) -> Self {
-        self.alarm_configuration = input;
-        self
+        self.alarm_configuration = input; self
     }
     /// <p>The details for the CloudWatch alarm applied to your command.</p>
     pub fn get_alarm_configuration(&self) -> &::std::option::Option<crate::types::AlarmConfiguration> {
@@ -730,48 +703,77 @@ impl CommandBuilder {
     /// <p>The CloudWatch alarm that was invoked by the command.</p>
     pub fn triggered_alarms(mut self, input: crate::types::AlarmStateInformation) -> Self {
         let mut v = self.triggered_alarms.unwrap_or_default();
-        v.push(input);
-        self.triggered_alarms = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.triggered_alarms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The CloudWatch alarm that was invoked by the command.</p>
-    pub fn set_triggered_alarms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>) -> Self {
-        self.triggered_alarms = input;
-        self
+    pub fn set_triggered_alarms(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AlarmStateInformation>>) -> Self {
+        self.triggered_alarms = input; self
     }
     /// <p>The CloudWatch alarm that was invoked by the command.</p>
-    pub fn get_triggered_alarms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>> {
+    pub fn get_triggered_alarms(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AlarmStateInformation>> {
         &self.triggered_alarms
     }
     /// Consumes the builder and constructs a [`Command`](crate::types::Command).
     pub fn build(self) -> crate::types::Command {
         crate::types::Command {
-            command_id: self.command_id,
-            document_name: self.document_name,
-            document_version: self.document_version,
-            comment: self.comment,
-            expires_after: self.expires_after,
-            parameters: self.parameters,
-            instance_ids: self.instance_ids,
-            targets: self.targets,
-            requested_date_time: self.requested_date_time,
-            status: self.status,
-            status_details: self.status_details,
-            output_s3_region: self.output_s3_region,
-            output_s3_bucket_name: self.output_s3_bucket_name,
-            output_s3_key_prefix: self.output_s3_key_prefix,
-            max_concurrency: self.max_concurrency,
-            max_errors: self.max_errors,
-            target_count: self.target_count.unwrap_or_default(),
-            completed_count: self.completed_count.unwrap_or_default(),
-            error_count: self.error_count.unwrap_or_default(),
-            delivery_timed_out_count: self.delivery_timed_out_count.unwrap_or_default(),
-            service_role: self.service_role,
-            notification_config: self.notification_config,
-            cloud_watch_output_config: self.cloud_watch_output_config,
-            timeout_seconds: self.timeout_seconds,
-            alarm_configuration: self.alarm_configuration,
-            triggered_alarms: self.triggered_alarms,
+            command_id: self.command_id
+            ,
+            document_name: self.document_name
+            ,
+            document_version: self.document_version
+            ,
+            comment: self.comment
+            ,
+            expires_after: self.expires_after
+            ,
+            parameters: self.parameters
+            ,
+            instance_ids: self.instance_ids
+            ,
+            targets: self.targets
+            ,
+            requested_date_time: self.requested_date_time
+            ,
+            status: self.status
+            ,
+            status_details: self.status_details
+            ,
+            output_s3_region: self.output_s3_region
+            ,
+            output_s3_bucket_name: self.output_s3_bucket_name
+            ,
+            output_s3_key_prefix: self.output_s3_key_prefix
+            ,
+            max_concurrency: self.max_concurrency
+            ,
+            max_errors: self.max_errors
+            ,
+            target_count: self.target_count
+                .unwrap_or_default()
+            ,
+            completed_count: self.completed_count
+                .unwrap_or_default()
+            ,
+            error_count: self.error_count
+                .unwrap_or_default()
+            ,
+            delivery_timed_out_count: self.delivery_timed_out_count
+                .unwrap_or_default()
+            ,
+            service_role: self.service_role
+            ,
+            notification_config: self.notification_config
+            ,
+            cloud_watch_output_config: self.cloud_watch_output_config
+            ,
+            timeout_seconds: self.timeout_seconds
+            ,
+            alarm_configuration: self.alarm_configuration
+            ,
+            triggered_alarms: self.triggered_alarms
+            ,
         }
     }
 }
@@ -807,3 +809,4 @@ impl ::std::fmt::Debug for CommandBuilder {
         formatter.finish()
     }
 }
+

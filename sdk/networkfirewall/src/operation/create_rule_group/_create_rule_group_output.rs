@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRuleGroupOutput {
+pub struct CreateRuleGroupOutput  {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request.</p>
     /// <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token.</p>
     pub update_token: ::std::string::String,
@@ -10,23 +10,22 @@ pub struct CreateRuleGroupOutput {
     pub rule_group_response: ::std::option::Option<crate::types::RuleGroupResponse>,
     _request_id: Option<String>,
 }
-impl CreateRuleGroupOutput {
+impl  CreateRuleGroupOutput  {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request.</p>
     /// <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token.</p>
-    pub fn update_token(&self) -> &str {
-        use std::ops::Deref;
-        self.update_token.deref()
+    pub fn update_token(&self) -> & str {
+        use std::ops::Deref; self.update_token.deref()
     }
     /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>.</p>
-    pub fn rule_group_response(&self) -> ::std::option::Option<&crate::types::RuleGroupResponse> {
+    pub fn rule_group_response(&self) -> ::std::option::Option<& crate::types::RuleGroupResponse> {
         self.rule_group_response.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateRuleGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateRuleGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateRuleGroupOutput`](crate::operation::create_rule_group::CreateRuleGroupOutput).
     pub fn builder() -> crate::operation::create_rule_group::builders::CreateRuleGroupOutputBuilder {
@@ -53,8 +52,7 @@ impl CreateRuleGroupOutputBuilder {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request.</p>
     /// <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token.</p>
     pub fn set_update_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.update_token = input;
-        self
+        self.update_token = input; self
     }
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request.</p>
     /// <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token.</p>
@@ -69,37 +67,37 @@ impl CreateRuleGroupOutputBuilder {
     }
     /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>.</p>
     pub fn set_rule_group_response(mut self, input: ::std::option::Option<crate::types::RuleGroupResponse>) -> Self {
-        self.rule_group_response = input;
-        self
+        self.rule_group_response = input; self
     }
     /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>.</p>
     pub fn get_rule_group_response(&self) -> &::std::option::Option<crate::types::RuleGroupResponse> {
         &self.rule_group_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateRuleGroupOutput`](crate::operation::create_rule_group::CreateRuleGroupOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`update_token`](crate::operation::create_rule_group::builders::CreateRuleGroupOutputBuilder::update_token)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_rule_group::CreateRuleGroupOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_rule_group::CreateRuleGroupOutput {
-            update_token: self.update_token.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_token",
-                    "update_token was not specified but it is required when building CreateRuleGroupOutput",
-                )
-            })?,
-            rule_group_response: self.rule_group_response,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_rule_group::CreateRuleGroupOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_rule_group::CreateRuleGroupOutput {
+                update_token: self.update_token
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_token", "update_token was not specified but it is required when building CreateRuleGroupOutput")
+                    )?
+                ,
+                rule_group_response: self.rule_group_response
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

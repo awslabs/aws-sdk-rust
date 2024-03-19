@@ -4,15 +4,15 @@
 /// <p>A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutSolNetworkPackageContentMetadata {
+pub struct PutSolNetworkPackageContentMetadata  {
     /// <p>Metadata for network package artifacts.</p>
     /// <p>Artifacts are the contents of the package descriptor file and the state of the package.</p>
     pub nsd: ::std::option::Option<crate::types::NetworkArtifactMeta>,
 }
-impl PutSolNetworkPackageContentMetadata {
+impl  PutSolNetworkPackageContentMetadata  {
     /// <p>Metadata for network package artifacts.</p>
     /// <p>Artifacts are the contents of the package descriptor file and the state of the package.</p>
-    pub fn nsd(&self) -> ::std::option::Option<&crate::types::NetworkArtifactMeta> {
+    pub fn nsd(&self) -> ::std::option::Option<& crate::types::NetworkArtifactMeta> {
         self.nsd.as_ref()
     }
 }
@@ -39,8 +39,7 @@ impl PutSolNetworkPackageContentMetadataBuilder {
     /// <p>Metadata for network package artifacts.</p>
     /// <p>Artifacts are the contents of the package descriptor file and the state of the package.</p>
     pub fn set_nsd(mut self, input: ::std::option::Option<crate::types::NetworkArtifactMeta>) -> Self {
-        self.nsd = input;
-        self
+        self.nsd = input; self
     }
     /// <p>Metadata for network package artifacts.</p>
     /// <p>Artifacts are the contents of the package descriptor file and the state of the package.</p>
@@ -49,6 +48,10 @@ impl PutSolNetworkPackageContentMetadataBuilder {
     }
     /// Consumes the builder and constructs a [`PutSolNetworkPackageContentMetadata`](crate::types::PutSolNetworkPackageContentMetadata).
     pub fn build(self) -> crate::types::PutSolNetworkPackageContentMetadata {
-        crate::types::PutSolNetworkPackageContentMetadata { nsd: self.nsd }
+        crate::types::PutSolNetworkPackageContentMetadata {
+            nsd: self.nsd
+            ,
+        }
     }
 }
+

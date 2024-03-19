@@ -3,19 +3,19 @@
 /// <p>Contains details on the time range used to filter data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DateFilter {
+pub struct DateFilter  {
     /// <p>A timestamp representing the start of the time period from when data is filtered, including the start date.</p>
     pub start_inclusive: ::aws_smithy_types::DateTime,
     /// <p>A timestamp representing the end date of the time period until when data is filtered, including the end date.</p>
     pub end_inclusive: ::aws_smithy_types::DateTime,
 }
-impl DateFilter {
+impl  DateFilter  {
     /// <p>A timestamp representing the start of the time period from when data is filtered, including the start date.</p>
-    pub fn start_inclusive(&self) -> &::aws_smithy_types::DateTime {
+    pub fn start_inclusive(&self) -> & ::aws_smithy_types::DateTime {
         &self.start_inclusive
     }
     /// <p>A timestamp representing the end date of the time period until when data is filtered, including the end date.</p>
-    pub fn end_inclusive(&self) -> &::aws_smithy_types::DateTime {
+    pub fn end_inclusive(&self) -> & ::aws_smithy_types::DateTime {
         &self.end_inclusive
     }
 }
@@ -42,8 +42,7 @@ impl DateFilterBuilder {
     }
     /// <p>A timestamp representing the start of the time period from when data is filtered, including the start date.</p>
     pub fn set_start_inclusive(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_inclusive = input;
-        self
+        self.start_inclusive = input; self
     }
     /// <p>A timestamp representing the start of the time period from when data is filtered, including the start date.</p>
     pub fn get_start_inclusive(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -57,8 +56,7 @@ impl DateFilterBuilder {
     }
     /// <p>A timestamp representing the end date of the time period until when data is filtered, including the end date.</p>
     pub fn set_end_inclusive(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_inclusive = input;
-        self
+        self.end_inclusive = input; self
     }
     /// <p>A timestamp representing the end date of the time period until when data is filtered, including the end date.</p>
     pub fn get_end_inclusive(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -69,19 +67,20 @@ impl DateFilterBuilder {
     /// - [`start_inclusive`](crate::types::builders::DateFilterBuilder::start_inclusive)
     /// - [`end_inclusive`](crate::types::builders::DateFilterBuilder::end_inclusive)
     pub fn build(self) -> ::std::result::Result<crate::types::DateFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DateFilter {
-            start_inclusive: self.start_inclusive.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start_inclusive",
-                    "start_inclusive was not specified but it is required when building DateFilter",
-                )
-            })?,
-            end_inclusive: self.end_inclusive.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "end_inclusive",
-                    "end_inclusive was not specified but it is required when building DateFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DateFilter {
+                start_inclusive: self.start_inclusive
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start_inclusive", "start_inclusive was not specified but it is required when building DateFilter")
+                    )?
+                ,
+                end_inclusive: self.end_inclusive
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("end_inclusive", "end_inclusive was not specified but it is required when building DateFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

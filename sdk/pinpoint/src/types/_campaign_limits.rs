@@ -3,7 +3,7 @@
 /// <p>For a campaign, specifies limits on the messages that the campaign can send. For an application, specifies the default limits for messages that campaigns in the application can send.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CampaignLimits {
+pub struct CampaignLimits  {
     /// <p>The maximum number of messages that a campaign can send to a single endpoint during a 24-hour period. For an application, this value specifies the default limit for the number of messages that campaigns and journeys can send to a single endpoint during a 24-hour period. The maximum value is 100.</p>
     pub daily: ::std::option::Option<i32>,
     /// <p>The maximum amount of time, in seconds, that a campaign can attempt to deliver a message after the scheduled start time for the campaign. The minimum value is 60 seconds.</p>
@@ -15,7 +15,7 @@ pub struct CampaignLimits {
     /// <p>The maximum total number of messages that the campaign can send per user session.</p>
     pub session: ::std::option::Option<i32>,
 }
-impl CampaignLimits {
+impl  CampaignLimits  {
     /// <p>The maximum number of messages that a campaign can send to a single endpoint during a 24-hour period. For an application, this value specifies the default limit for the number of messages that campaigns and journeys can send to a single endpoint during a 24-hour period. The maximum value is 100.</p>
     pub fn daily(&self) -> ::std::option::Option<i32> {
         self.daily
@@ -62,8 +62,7 @@ impl CampaignLimitsBuilder {
     }
     /// <p>The maximum number of messages that a campaign can send to a single endpoint during a 24-hour period. For an application, this value specifies the default limit for the number of messages that campaigns and journeys can send to a single endpoint during a 24-hour period. The maximum value is 100.</p>
     pub fn set_daily(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.daily = input;
-        self
+        self.daily = input; self
     }
     /// <p>The maximum number of messages that a campaign can send to a single endpoint during a 24-hour period. For an application, this value specifies the default limit for the number of messages that campaigns and journeys can send to a single endpoint during a 24-hour period. The maximum value is 100.</p>
     pub fn get_daily(&self) -> &::std::option::Option<i32> {
@@ -76,8 +75,7 @@ impl CampaignLimitsBuilder {
     }
     /// <p>The maximum amount of time, in seconds, that a campaign can attempt to deliver a message after the scheduled start time for the campaign. The minimum value is 60 seconds.</p>
     pub fn set_maximum_duration(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum_duration = input;
-        self
+        self.maximum_duration = input; self
     }
     /// <p>The maximum amount of time, in seconds, that a campaign can attempt to deliver a message after the scheduled start time for the campaign. The minimum value is 60 seconds.</p>
     pub fn get_maximum_duration(&self) -> &::std::option::Option<i32> {
@@ -90,8 +88,7 @@ impl CampaignLimitsBuilder {
     }
     /// <p>The maximum number of messages that a campaign can send each second. For an application, this value specifies the default limit for the number of messages that campaigns can send each second. The minimum value is 1. The maximum value is 20,000.</p>
     pub fn set_messages_per_second(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.messages_per_second = input;
-        self
+        self.messages_per_second = input; self
     }
     /// <p>The maximum number of messages that a campaign can send each second. For an application, this value specifies the default limit for the number of messages that campaigns can send each second. The minimum value is 1. The maximum value is 20,000.</p>
     pub fn get_messages_per_second(&self) -> &::std::option::Option<i32> {
@@ -104,8 +101,7 @@ impl CampaignLimitsBuilder {
     }
     /// <p>The maximum number of messages that a campaign can send to a single endpoint during the course of the campaign. If a campaign recurs, this setting applies to all runs of the campaign. The maximum value is 100.</p>
     pub fn set_total(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total = input;
-        self
+        self.total = input; self
     }
     /// <p>The maximum number of messages that a campaign can send to a single endpoint during the course of the campaign. If a campaign recurs, this setting applies to all runs of the campaign. The maximum value is 100.</p>
     pub fn get_total(&self) -> &::std::option::Option<i32> {
@@ -118,8 +114,7 @@ impl CampaignLimitsBuilder {
     }
     /// <p>The maximum total number of messages that the campaign can send per user session.</p>
     pub fn set_session(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.session = input;
-        self
+        self.session = input; self
     }
     /// <p>The maximum total number of messages that the campaign can send per user session.</p>
     pub fn get_session(&self) -> &::std::option::Option<i32> {
@@ -128,11 +123,17 @@ impl CampaignLimitsBuilder {
     /// Consumes the builder and constructs a [`CampaignLimits`](crate::types::CampaignLimits).
     pub fn build(self) -> crate::types::CampaignLimits {
         crate::types::CampaignLimits {
-            daily: self.daily,
-            maximum_duration: self.maximum_duration,
-            messages_per_second: self.messages_per_second,
-            total: self.total,
-            session: self.session,
+            daily: self.daily
+            ,
+            maximum_duration: self.maximum_duration
+            ,
+            messages_per_second: self.messages_per_second
+            ,
+            total: self.total
+            ,
+            session: self.session
+            ,
         }
     }
 }
+

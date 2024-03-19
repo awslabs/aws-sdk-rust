@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let applaunchconfigurationstatus = unimplemented!();
 /// match applaunchconfigurationstatus {
@@ -30,16 +30,14 @@
 /// Specifically, when `applaunchconfigurationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AppLaunchConfigurationStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum AppLaunchConfigurationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Configured,
@@ -47,61 +45,62 @@ pub enum AppLaunchConfigurationStatus {
     NotConfigured,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for AppLaunchConfigurationStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CONFIGURED" => AppLaunchConfigurationStatus::Configured,
-            "NOT_CONFIGURED" => AppLaunchConfigurationStatus::NotConfigured,
-            other => AppLaunchConfigurationStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "CONFIGURED" => AppLaunchConfigurationStatus::Configured,
+"NOT_CONFIGURED" => AppLaunchConfigurationStatus::NotConfigured,
+other => AppLaunchConfigurationStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for AppLaunchConfigurationStatus {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(AppLaunchConfigurationStatus::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(AppLaunchConfigurationStatus::from(s))
+                    }
+                }
 impl AppLaunchConfigurationStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AppLaunchConfigurationStatus::Configured => "CONFIGURED",
-            AppLaunchConfigurationStatus::NotConfigured => "NOT_CONFIGURED",
-            AppLaunchConfigurationStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["CONFIGURED", "NOT_CONFIGURED"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AppLaunchConfigurationStatus::Configured => "CONFIGURED",
+    AppLaunchConfigurationStatus::NotConfigured => "NOT_CONFIGURED",
+    AppLaunchConfigurationStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CONFIGURED", "NOT_CONFIGURED"]
+                }
+            }
 impl ::std::convert::AsRef<str> for AppLaunchConfigurationStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl AppLaunchConfigurationStatus {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for AppLaunchConfigurationStatus {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            AppLaunchConfigurationStatus::Configured => write!(f, "CONFIGURED"),
-            AppLaunchConfigurationStatus::NotConfigured => write!(f, "NOT_CONFIGURED"),
-            AppLaunchConfigurationStatus::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                AppLaunchConfigurationStatus::Configured => write!(f, "CONFIGURED"),
+AppLaunchConfigurationStatus::NotConfigured => write!(f, "NOT_CONFIGURED"),
+AppLaunchConfigurationStatus::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

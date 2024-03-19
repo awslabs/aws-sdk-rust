@@ -3,19 +3,19 @@
 /// <p>Describes a WorkSpace modification.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModificationState {
+pub struct ModificationState  {
     /// <p>The resource.</p>
     pub resource: ::std::option::Option<crate::types::ModificationResourceEnum>,
     /// <p>The modification state.</p>
     pub state: ::std::option::Option<crate::types::ModificationStateEnum>,
 }
-impl ModificationState {
+impl  ModificationState  {
     /// <p>The resource.</p>
-    pub fn resource(&self) -> ::std::option::Option<&crate::types::ModificationResourceEnum> {
+    pub fn resource(&self) -> ::std::option::Option<& crate::types::ModificationResourceEnum> {
         self.resource.as_ref()
     }
     /// <p>The modification state.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ModificationStateEnum> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ModificationStateEnum> {
         self.state.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ModificationStateBuilder {
     }
     /// <p>The resource.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<crate::types::ModificationResourceEnum>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
     }
     /// <p>The resource.</p>
     pub fn get_resource(&self) -> &::std::option::Option<crate::types::ModificationResourceEnum> {
@@ -55,8 +54,7 @@ impl ModificationStateBuilder {
     }
     /// <p>The modification state.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ModificationStateEnum>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The modification state.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ModificationStateEnum> {
@@ -65,8 +63,11 @@ impl ModificationStateBuilder {
     /// Consumes the builder and constructs a [`ModificationState`](crate::types::ModificationState).
     pub fn build(self) -> crate::types::ModificationState {
         crate::types::ModificationState {
-            resource: self.resource,
-            state: self.state,
+            resource: self.resource
+            ,
+            state: self.state
+            ,
         }
     }
 }
+

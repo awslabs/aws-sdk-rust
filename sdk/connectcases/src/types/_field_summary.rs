@@ -3,7 +3,7 @@
 /// <p>Object for the summarized details of the field.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FieldSummary {
+pub struct FieldSummary  {
     /// <p>The unique identifier of a field.</p>
     pub field_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the field.</p>
@@ -15,28 +15,25 @@ pub struct FieldSummary {
     /// <p>The namespace of a field.</p>
     pub namespace: crate::types::FieldNamespace,
 }
-impl FieldSummary {
+impl  FieldSummary  {
     /// <p>The unique identifier of a field.</p>
-    pub fn field_id(&self) -> &str {
-        use std::ops::Deref;
-        self.field_id.deref()
+    pub fn field_id(&self) -> & str {
+        use std::ops::Deref; self.field_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the field.</p>
-    pub fn field_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.field_arn.deref()
+    pub fn field_arn(&self) -> & str {
+        use std::ops::Deref; self.field_arn.deref()
     }
     /// <p>Name of the field.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The type of a field.</p>
-    pub fn r#type(&self) -> &crate::types::FieldType {
+    pub fn r#type(&self) -> & crate::types::FieldType {
         &self.r#type
     }
     /// <p>The namespace of a field.</p>
-    pub fn namespace(&self) -> &crate::types::FieldNamespace {
+    pub fn namespace(&self) -> & crate::types::FieldNamespace {
         &self.namespace
     }
 }
@@ -66,8 +63,7 @@ impl FieldSummaryBuilder {
     }
     /// <p>The unique identifier of a field.</p>
     pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_id = input;
-        self
+        self.field_id = input; self
     }
     /// <p>The unique identifier of a field.</p>
     pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl FieldSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the field.</p>
     pub fn set_field_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_arn = input;
-        self
+        self.field_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the field.</p>
     pub fn get_field_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +91,7 @@ impl FieldSummaryBuilder {
     }
     /// <p>Name of the field.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of the field.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +105,7 @@ impl FieldSummaryBuilder {
     }
     /// <p>The type of a field.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::FieldType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of a field.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::FieldType> {
@@ -126,8 +119,7 @@ impl FieldSummaryBuilder {
     }
     /// <p>The namespace of a field.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<crate::types::FieldNamespace>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The namespace of a field.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<crate::types::FieldNamespace> {
@@ -141,37 +133,35 @@ impl FieldSummaryBuilder {
     /// - [`r#type`](crate::types::builders::FieldSummaryBuilder::r#type)
     /// - [`namespace`](crate::types::builders::FieldSummaryBuilder::namespace)
     pub fn build(self) -> ::std::result::Result<crate::types::FieldSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FieldSummary {
-            field_id: self.field_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "field_id",
-                    "field_id was not specified but it is required when building FieldSummary",
-                )
-            })?,
-            field_arn: self.field_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "field_arn",
-                    "field_arn was not specified but it is required when building FieldSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building FieldSummary",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building FieldSummary",
-                )
-            })?,
-            namespace: self.namespace.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "namespace",
-                    "namespace was not specified but it is required when building FieldSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FieldSummary {
+                field_id: self.field_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("field_id", "field_id was not specified but it is required when building FieldSummary")
+                    )?
+                ,
+                field_arn: self.field_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("field_arn", "field_arn was not specified but it is required when building FieldSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building FieldSummary")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building FieldSummary")
+                    )?
+                ,
+                namespace: self.namespace
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("namespace", "namespace was not specified but it is required when building FieldSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

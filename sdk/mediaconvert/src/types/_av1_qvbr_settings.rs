@@ -3,13 +3,13 @@
 /// Settings for quality-defined variable bitrate encoding with the AV1 codec. Use these settings only when you set QVBR for Rate control mode.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Av1QvbrSettings {
+pub struct Av1QvbrSettings  {
     /// Use this setting only when you set Rate control mode to QVBR. Specify the target quality level for this output. MediaConvert determines the right number of bits to use for each part of the video to maintain the video quality that you specify. When you keep the default value, AUTO, MediaConvert picks a quality level for you, based on characteristics of your input video. If you prefer to specify a quality level, specify a number from 1 through 10. Use higher numbers for greater quality. Level 10 results in nearly lossless compression. The quality level for most broadcast-quality transcodes is between 6 and 9. Optionally, to specify a value between whole numbers, also provide a value for the setting qvbrQualityLevelFineTune. For example, if you want your QVBR quality level to be 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
     pub qvbr_quality_level: ::std::option::Option<i32>,
     /// Optional. Specify a value here to set the QVBR quality to a level that is between whole numbers. For example, if you want your QVBR quality level to be 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33. MediaConvert rounds your QVBR quality level to the nearest third of a whole number. For example, if you set qvbrQualityLevel to 7 and you set qvbrQualityLevelFineTune to .25, your actual QVBR quality level is 7.33.
     pub qvbr_quality_level_fine_tune: ::std::option::Option<f64>,
 }
-impl Av1QvbrSettings {
+impl  Av1QvbrSettings  {
     /// Use this setting only when you set Rate control mode to QVBR. Specify the target quality level for this output. MediaConvert determines the right number of bits to use for each part of the video to maintain the video quality that you specify. When you keep the default value, AUTO, MediaConvert picks a quality level for you, based on characteristics of your input video. If you prefer to specify a quality level, specify a number from 1 through 10. Use higher numbers for greater quality. Level 10 results in nearly lossless compression. The quality level for most broadcast-quality transcodes is between 6 and 9. Optionally, to specify a value between whole numbers, also provide a value for the setting qvbrQualityLevelFineTune. For example, if you want your QVBR quality level to be 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
     pub fn qvbr_quality_level(&self) -> ::std::option::Option<i32> {
         self.qvbr_quality_level
@@ -41,8 +41,7 @@ impl Av1QvbrSettingsBuilder {
     }
     /// Use this setting only when you set Rate control mode to QVBR. Specify the target quality level for this output. MediaConvert determines the right number of bits to use for each part of the video to maintain the video quality that you specify. When you keep the default value, AUTO, MediaConvert picks a quality level for you, based on characteristics of your input video. If you prefer to specify a quality level, specify a number from 1 through 10. Use higher numbers for greater quality. Level 10 results in nearly lossless compression. The quality level for most broadcast-quality transcodes is between 6 and 9. Optionally, to specify a value between whole numbers, also provide a value for the setting qvbrQualityLevelFineTune. For example, if you want your QVBR quality level to be 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
     pub fn set_qvbr_quality_level(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.qvbr_quality_level = input;
-        self
+        self.qvbr_quality_level = input; self
     }
     /// Use this setting only when you set Rate control mode to QVBR. Specify the target quality level for this output. MediaConvert determines the right number of bits to use for each part of the video to maintain the video quality that you specify. When you keep the default value, AUTO, MediaConvert picks a quality level for you, based on characteristics of your input video. If you prefer to specify a quality level, specify a number from 1 through 10. Use higher numbers for greater quality. Level 10 results in nearly lossless compression. The quality level for most broadcast-quality transcodes is between 6 and 9. Optionally, to specify a value between whole numbers, also provide a value for the setting qvbrQualityLevelFineTune. For example, if you want your QVBR quality level to be 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
     pub fn get_qvbr_quality_level(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl Av1QvbrSettingsBuilder {
     }
     /// Optional. Specify a value here to set the QVBR quality to a level that is between whole numbers. For example, if you want your QVBR quality level to be 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33. MediaConvert rounds your QVBR quality level to the nearest third of a whole number. For example, if you set qvbrQualityLevel to 7 and you set qvbrQualityLevelFineTune to .25, your actual QVBR quality level is 7.33.
     pub fn set_qvbr_quality_level_fine_tune(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.qvbr_quality_level_fine_tune = input;
-        self
+        self.qvbr_quality_level_fine_tune = input; self
     }
     /// Optional. Specify a value here to set the QVBR quality to a level that is between whole numbers. For example, if you want your QVBR quality level to be 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33. MediaConvert rounds your QVBR quality level to the nearest third of a whole number. For example, if you set qvbrQualityLevel to 7 and you set qvbrQualityLevelFineTune to .25, your actual QVBR quality level is 7.33.
     pub fn get_qvbr_quality_level_fine_tune(&self) -> &::std::option::Option<f64> {
@@ -65,8 +63,11 @@ impl Av1QvbrSettingsBuilder {
     /// Consumes the builder and constructs a [`Av1QvbrSettings`](crate::types::Av1QvbrSettings).
     pub fn build(self) -> crate::types::Av1QvbrSettings {
         crate::types::Av1QvbrSettings {
-            qvbr_quality_level: self.qvbr_quality_level,
-            qvbr_quality_level_fine_tune: self.qvbr_quality_level_fine_tune,
+            qvbr_quality_level: self.qvbr_quality_level
+            ,
+            qvbr_quality_level_fine_tune: self.qvbr_quality_level_fine_tune
+            ,
         }
     }
 }
+

@@ -3,21 +3,20 @@
 /// <p>Configure the list of audience output sizes that can be created. A request to <code>StartAudienceGenerationJob</code> that uses this configured audience model must have an <code>audienceSize</code> selected from this list. You can use the <code>ABSOLUTE</code> <code>AudienceSize</code> to configure out audience sizes using the count of identifiers in the output. You can use the <code>Percentage</code> <code>AudienceSize</code> to configure sizes in the range 1-100 percent.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AudienceSizeConfig {
+pub struct AudienceSizeConfig  {
     /// <p>Whether the audience output sizes are defined as an absolute number or a percentage.</p>
     pub audience_size_type: crate::types::AudienceSizeType,
     /// <p>An array of the different audience output sizes.</p>
-    pub audience_size_bins: ::std::vec::Vec<i32>,
+    pub audience_size_bins: ::std::vec::Vec::<i32>,
 }
-impl AudienceSizeConfig {
+impl  AudienceSizeConfig  {
     /// <p>Whether the audience output sizes are defined as an absolute number or a percentage.</p>
-    pub fn audience_size_type(&self) -> &crate::types::AudienceSizeType {
+    pub fn audience_size_type(&self) -> & crate::types::AudienceSizeType {
         &self.audience_size_type
     }
     /// <p>An array of the different audience output sizes.</p>
-    pub fn audience_size_bins(&self) -> &[i32] {
-        use std::ops::Deref;
-        self.audience_size_bins.deref()
+    pub fn audience_size_bins(&self) -> & [i32] {
+        use std::ops::Deref; self.audience_size_bins.deref()
     }
 }
 impl AudienceSizeConfig {
@@ -32,7 +31,7 @@ impl AudienceSizeConfig {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AudienceSizeConfigBuilder {
     pub(crate) audience_size_type: ::std::option::Option<crate::types::AudienceSizeType>,
-    pub(crate) audience_size_bins: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub(crate) audience_size_bins: ::std::option::Option<::std::vec::Vec::<i32>>,
 }
 impl AudienceSizeConfigBuilder {
     /// <p>Whether the audience output sizes are defined as an absolute number or a percentage.</p>
@@ -43,8 +42,7 @@ impl AudienceSizeConfigBuilder {
     }
     /// <p>Whether the audience output sizes are defined as an absolute number or a percentage.</p>
     pub fn set_audience_size_type(mut self, input: ::std::option::Option<crate::types::AudienceSizeType>) -> Self {
-        self.audience_size_type = input;
-        self
+        self.audience_size_type = input; self
     }
     /// <p>Whether the audience output sizes are defined as an absolute number or a percentage.</p>
     pub fn get_audience_size_type(&self) -> &::std::option::Option<crate::types::AudienceSizeType> {
@@ -57,17 +55,16 @@ impl AudienceSizeConfigBuilder {
     /// <p>An array of the different audience output sizes.</p>
     pub fn audience_size_bins(mut self, input: i32) -> Self {
         let mut v = self.audience_size_bins.unwrap_or_default();
-        v.push(input);
-        self.audience_size_bins = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.audience_size_bins = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of the different audience output sizes.</p>
-    pub fn set_audience_size_bins(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
-        self.audience_size_bins = input;
-        self
+    pub fn set_audience_size_bins(mut self, input: ::std::option::Option<::std::vec::Vec::<i32>>) -> Self {
+        self.audience_size_bins = input; self
     }
     /// <p>An array of the different audience output sizes.</p>
-    pub fn get_audience_size_bins(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+    pub fn get_audience_size_bins(&self) -> &::std::option::Option<::std::vec::Vec::<i32>> {
         &self.audience_size_bins
     }
     /// Consumes the builder and constructs a [`AudienceSizeConfig`](crate::types::AudienceSizeConfig).
@@ -75,19 +72,20 @@ impl AudienceSizeConfigBuilder {
     /// - [`audience_size_type`](crate::types::builders::AudienceSizeConfigBuilder::audience_size_type)
     /// - [`audience_size_bins`](crate::types::builders::AudienceSizeConfigBuilder::audience_size_bins)
     pub fn build(self) -> ::std::result::Result<crate::types::AudienceSizeConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AudienceSizeConfig {
-            audience_size_type: self.audience_size_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "audience_size_type",
-                    "audience_size_type was not specified but it is required when building AudienceSizeConfig",
-                )
-            })?,
-            audience_size_bins: self.audience_size_bins.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "audience_size_bins",
-                    "audience_size_bins was not specified but it is required when building AudienceSizeConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AudienceSizeConfig {
+                audience_size_type: self.audience_size_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("audience_size_type", "audience_size_type was not specified but it is required when building AudienceSizeConfig")
+                    )?
+                ,
+                audience_size_bins: self.audience_size_bins
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("audience_size_bins", "audience_size_bins was not specified but it is required when building AudienceSizeConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

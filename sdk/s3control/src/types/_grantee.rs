@@ -3,7 +3,7 @@
 /// <p>The user, group, or role to which you are granting access. You can grant access to an IAM user or role. If you have added your corporate directory to Amazon Web Services IAM Identity Center and associated your Identity Center instance with your S3 Access Grants instance, the grantee can also be a corporate directory user or group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Grantee {
+pub struct Grantee  {
     /// <p>The type of the grantee to which access has been granted. It can be one of the following values:</p>
     /// <ul>
     /// <li>
@@ -17,7 +17,7 @@ pub struct Grantee {
     /// <p>The unique identifier of the <code>Grantee</code>. If the grantee type is <code>IAM</code>, the identifier is the IAM Amazon Resource Name (ARN) of the user or role. If the grantee type is a directory user or group, the identifier is 128-bit universally unique identifier (UUID) in the format <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>. You can obtain this UUID from your Amazon Web Services IAM Identity Center instance.</p>
     pub grantee_identifier: ::std::option::Option<::std::string::String>,
 }
-impl Grantee {
+impl  Grantee  {
     /// <p>The type of the grantee to which access has been granted. It can be one of the following values:</p>
     /// <ul>
     /// <li>
@@ -27,11 +27,11 @@ impl Grantee {
     /// <li>
     /// <p><code>DIRECTORY_GROUP</code> - Your corporate directory group. You can use this option if you have added your corporate identity directory to IAM Identity Center and associated the IAM Identity Center instance with your S3 Access Grants instance.</p></li>
     /// </ul>
-    pub fn grantee_type(&self) -> ::std::option::Option<&crate::types::GranteeType> {
+    pub fn grantee_type(&self) -> ::std::option::Option<& crate::types::GranteeType> {
         self.grantee_type.as_ref()
     }
     /// <p>The unique identifier of the <code>Grantee</code>. If the grantee type is <code>IAM</code>, the identifier is the IAM Amazon Resource Name (ARN) of the user or role. If the grantee type is a directory user or group, the identifier is 128-bit universally unique identifier (UUID) in the format <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>. You can obtain this UUID from your Amazon Web Services IAM Identity Center instance.</p>
-    pub fn grantee_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn grantee_identifier(&self) -> ::std::option::Option<& str> {
         self.grantee_identifier.as_deref()
     }
 }
@@ -73,8 +73,7 @@ impl GranteeBuilder {
     /// <p><code>DIRECTORY_GROUP</code> - Your corporate directory group. You can use this option if you have added your corporate identity directory to IAM Identity Center and associated the IAM Identity Center instance with your S3 Access Grants instance.</p></li>
     /// </ul>
     pub fn set_grantee_type(mut self, input: ::std::option::Option<crate::types::GranteeType>) -> Self {
-        self.grantee_type = input;
-        self
+        self.grantee_type = input; self
     }
     /// <p>The type of the grantee to which access has been granted. It can be one of the following values:</p>
     /// <ul>
@@ -95,8 +94,7 @@ impl GranteeBuilder {
     }
     /// <p>The unique identifier of the <code>Grantee</code>. If the grantee type is <code>IAM</code>, the identifier is the IAM Amazon Resource Name (ARN) of the user or role. If the grantee type is a directory user or group, the identifier is 128-bit universally unique identifier (UUID) in the format <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>. You can obtain this UUID from your Amazon Web Services IAM Identity Center instance.</p>
     pub fn set_grantee_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.grantee_identifier = input;
-        self
+        self.grantee_identifier = input; self
     }
     /// <p>The unique identifier of the <code>Grantee</code>. If the grantee type is <code>IAM</code>, the identifier is the IAM Amazon Resource Name (ARN) of the user or role. If the grantee type is a directory user or group, the identifier is 128-bit universally unique identifier (UUID) in the format <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>. You can obtain this UUID from your Amazon Web Services IAM Identity Center instance.</p>
     pub fn get_grantee_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +103,11 @@ impl GranteeBuilder {
     /// Consumes the builder and constructs a [`Grantee`](crate::types::Grantee).
     pub fn build(self) -> crate::types::Grantee {
         crate::types::Grantee {
-            grantee_type: self.grantee_type,
-            grantee_identifier: self.grantee_identifier,
+            grantee_type: self.grantee_type
+            ,
+            grantee_identifier: self.grantee_identifier
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Details about the response of the operation to create an S3 data access from an S3 bucket.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateS3DataAccessFromS3BucketResponseDetails {
+pub struct CreateS3DataAccessFromS3BucketResponseDetails  {
     /// <p>Details about the asset source from an Amazon S3 bucket.</p>
     pub asset_source: ::std::option::Option<crate::types::S3DataAccessAssetSourceEntry>,
     /// <p>The unique identifier for this data set.</p>
@@ -11,20 +11,18 @@ pub struct CreateS3DataAccessFromS3BucketResponseDetails {
     /// <p>The unique identifier for the revision.</p>
     pub revision_id: ::std::string::String,
 }
-impl CreateS3DataAccessFromS3BucketResponseDetails {
+impl  CreateS3DataAccessFromS3BucketResponseDetails  {
     /// <p>Details about the asset source from an Amazon S3 bucket.</p>
-    pub fn asset_source(&self) -> ::std::option::Option<&crate::types::S3DataAccessAssetSourceEntry> {
+    pub fn asset_source(&self) -> ::std::option::Option<& crate::types::S3DataAccessAssetSourceEntry> {
         self.asset_source.as_ref()
     }
     /// <p>The unique identifier for this data set.</p>
-    pub fn data_set_id(&self) -> &str {
-        use std::ops::Deref;
-        self.data_set_id.deref()
+    pub fn data_set_id(&self) -> & str {
+        use std::ops::Deref; self.data_set_id.deref()
     }
     /// <p>The unique identifier for the revision.</p>
-    pub fn revision_id(&self) -> &str {
-        use std::ops::Deref;
-        self.revision_id.deref()
+    pub fn revision_id(&self) -> & str {
+        use std::ops::Deref; self.revision_id.deref()
     }
 }
 impl CreateS3DataAccessFromS3BucketResponseDetails {
@@ -51,8 +49,7 @@ impl CreateS3DataAccessFromS3BucketResponseDetailsBuilder {
     }
     /// <p>Details about the asset source from an Amazon S3 bucket.</p>
     pub fn set_asset_source(mut self, input: ::std::option::Option<crate::types::S3DataAccessAssetSourceEntry>) -> Self {
-        self.asset_source = input;
-        self
+        self.asset_source = input; self
     }
     /// <p>Details about the asset source from an Amazon S3 bucket.</p>
     pub fn get_asset_source(&self) -> &::std::option::Option<crate::types::S3DataAccessAssetSourceEntry> {
@@ -66,8 +63,7 @@ impl CreateS3DataAccessFromS3BucketResponseDetailsBuilder {
     }
     /// <p>The unique identifier for this data set.</p>
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_id = input;
-        self
+        self.data_set_id = input; self
     }
     /// <p>The unique identifier for this data set.</p>
     pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl CreateS3DataAccessFromS3BucketResponseDetailsBuilder {
     }
     /// <p>The unique identifier for the revision.</p>
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
     }
     /// <p>The unique identifier for the revision.</p>
     pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,23 +87,23 @@ impl CreateS3DataAccessFromS3BucketResponseDetailsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`data_set_id`](crate::types::builders::CreateS3DataAccessFromS3BucketResponseDetailsBuilder::data_set_id)
     /// - [`revision_id`](crate::types::builders::CreateS3DataAccessFromS3BucketResponseDetailsBuilder::revision_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::CreateS3DataAccessFromS3BucketResponseDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CreateS3DataAccessFromS3BucketResponseDetails {
-            asset_source: self.asset_source,
-            data_set_id: self.data_set_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_set_id",
-                    "data_set_id was not specified but it is required when building CreateS3DataAccessFromS3BucketResponseDetails",
-                )
-            })?,
-            revision_id: self.revision_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "revision_id",
-                    "revision_id was not specified but it is required when building CreateS3DataAccessFromS3BucketResponseDetails",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::CreateS3DataAccessFromS3BucketResponseDetails, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::CreateS3DataAccessFromS3BucketResponseDetails {
+                asset_source: self.asset_source
+                ,
+                data_set_id: self.data_set_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_set_id", "data_set_id was not specified but it is required when building CreateS3DataAccessFromS3BucketResponseDetails")
+                    )?
+                ,
+                revision_id: self.revision_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("revision_id", "revision_id was not specified but it is required when building CreateS3DataAccessFromS3BucketResponseDetails")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCollectorsOutput {
+pub struct ListCollectorsOutput  {
     /// <p>The list of all the installed collectors.</p>
-    pub collectors: ::std::option::Option<::std::vec::Vec<crate::types::Collector>>,
+    pub collectors: ::std::option::Option<::std::vec::Vec::<crate::types::Collector>>,
     /// <p>The token you use to retrieve the next set of results, or null if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListCollectorsOutput {
+impl  ListCollectorsOutput  {
     /// <p>The list of all the installed collectors.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.collectors.is_none()`.
-    pub fn collectors(&self) -> &[crate::types::Collector] {
-        self.collectors.as_deref().unwrap_or_default()
+    pub fn collectors(&self) -> & [crate::types::Collector] {
+        self.collectors.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token you use to retrieve the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListCollectorsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListCollectorsOutput {
     /// Creates a new builder-style object to manufacture [`ListCollectorsOutput`](crate::operation::list_collectors::ListCollectorsOutput).
     pub fn builder() -> crate::operation::list_collectors::builders::ListCollectorsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListCollectorsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCollectorsOutputBuilder {
-    pub(crate) collectors: ::std::option::Option<::std::vec::Vec<crate::types::Collector>>,
+    pub(crate) collectors: ::std::option::Option<::std::vec::Vec::<crate::types::Collector>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListCollectorsOutputBuilder {
     /// <p>The list of all the installed collectors.</p>
     pub fn collectors(mut self, input: crate::types::Collector) -> Self {
         let mut v = self.collectors.unwrap_or_default();
-        v.push(input);
-        self.collectors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.collectors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of all the installed collectors.</p>
-    pub fn set_collectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Collector>>) -> Self {
-        self.collectors = input;
-        self
+    pub fn set_collectors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Collector>>) -> Self {
+        self.collectors = input; self
     }
     /// <p>The list of all the installed collectors.</p>
-    pub fn get_collectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Collector>> {
+    pub fn get_collectors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Collector>> {
         &self.collectors
     }
     /// <p>The token you use to retrieve the next set of results, or null if there are no more results.</p>
@@ -69,28 +69,30 @@ impl ListCollectorsOutputBuilder {
     }
     /// <p>The token you use to retrieve the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token you use to retrieve the next set of results, or null if there are no more results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListCollectorsOutput`](crate::operation::list_collectors::ListCollectorsOutput).
     pub fn build(self) -> crate::operation::list_collectors::ListCollectorsOutput {
         crate::operation::list_collectors::ListCollectorsOutput {
-            collectors: self.collectors,
-            next_token: self.next_token,
+            collectors: self.collectors
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

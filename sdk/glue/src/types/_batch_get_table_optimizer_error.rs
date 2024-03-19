@@ -3,7 +3,7 @@
 /// <p>Contains details on one of the errors in the error list returned by the <code>BatchGetTableOptimizer</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetTableOptimizerError {
+pub struct BatchGetTableOptimizerError  {
     /// <p>An <code>ErrorDetail</code> object containing code and message details about the error.</p>
     pub error: ::std::option::Option<crate::types::ErrorDetail>,
     /// <p>The Catalog ID of the table.</p>
@@ -15,25 +15,25 @@ pub struct BatchGetTableOptimizerError {
     /// <p>The type of table optimizer.</p>
     pub r#type: ::std::option::Option<crate::types::TableOptimizerType>,
 }
-impl BatchGetTableOptimizerError {
+impl  BatchGetTableOptimizerError  {
     /// <p>An <code>ErrorDetail</code> object containing code and message details about the error.</p>
-    pub fn error(&self) -> ::std::option::Option<&crate::types::ErrorDetail> {
+    pub fn error(&self) -> ::std::option::Option<& crate::types::ErrorDetail> {
         self.error.as_ref()
     }
     /// <p>The Catalog ID of the table.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the database in the catalog in which the table resides.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the table.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The type of table optimizer.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::TableOptimizerType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::TableOptimizerType> {
         self.r#type.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl BatchGetTableOptimizerErrorBuilder {
     }
     /// <p>An <code>ErrorDetail</code> object containing code and message details about the error.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ErrorDetail>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>An <code>ErrorDetail</code> object containing code and message details about the error.</p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::ErrorDetail> {
@@ -76,8 +75,7 @@ impl BatchGetTableOptimizerErrorBuilder {
     }
     /// <p>The Catalog ID of the table.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The Catalog ID of the table.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl BatchGetTableOptimizerErrorBuilder {
     }
     /// <p>The name of the database in the catalog in which the table resides.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the database in the catalog in which the table resides.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl BatchGetTableOptimizerErrorBuilder {
     }
     /// <p>The name of the table.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the table.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl BatchGetTableOptimizerErrorBuilder {
     }
     /// <p>The type of table optimizer.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TableOptimizerType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of table optimizer.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::TableOptimizerType> {
@@ -128,11 +123,17 @@ impl BatchGetTableOptimizerErrorBuilder {
     /// Consumes the builder and constructs a [`BatchGetTableOptimizerError`](crate::types::BatchGetTableOptimizerError).
     pub fn build(self) -> crate::types::BatchGetTableOptimizerError {
         crate::types::BatchGetTableOptimizerError {
-            error: self.error,
-            catalog_id: self.catalog_id,
-            database_name: self.database_name,
-            table_name: self.table_name,
-            r#type: self.r#type,
+            error: self.error
+            ,
+            catalog_id: self.catalog_id
+            ,
+            database_name: self.database_name
+            ,
+            table_name: self.table_name
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

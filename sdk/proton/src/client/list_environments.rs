@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListEnvironments`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates the location of the next environment in the array of environments, after the list of environments that was previously requested.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of environments to list.</p><br>
     ///   - [`environment_templates(EnvironmentTemplateFilter)`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::environment_templates) / [`set_environment_templates(Option<Vec::<EnvironmentTemplateFilter>>)`](crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::set_environment_templates):<br>required: **false**<br><p>An array of the versions of the environment template.</p><br>
-    /// - On success, responds with [`ListEnvironmentsOutput`](crate::operation::list_environments::ListEnvironmentsOutput) with field(s):
+                            /// - On success, responds with [`ListEnvironmentsOutput`](crate::operation::list_environments::ListEnvironmentsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_environments::ListEnvironmentsOutput::next_token): <p>A token that indicates the location of the next environment in the array of environments, after the current requested list of environments.</p>
     ///   - [`environments(Vec::<EnvironmentSummary>)`](crate::operation::list_environments::ListEnvironmentsOutput::environments): <p>An array of environment detail data summaries.</p>
-    /// - On failure, responds with [`SdkError<ListEnvironmentsError>`](crate::operation::list_environments::ListEnvironmentsError)
+                            /// - On failure, responds with [`SdkError<ListEnvironmentsError>`](crate::operation::list_environments::ListEnvironmentsError)
     pub fn list_environments(&self) -> crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder {
-        crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_environments::builders::ListEnvironmentsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

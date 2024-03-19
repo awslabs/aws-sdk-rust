@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTargets`](crate::operation::list_targets::builders::ListTargetsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_targets::builders::ListTargetsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filters(ListTargetsFilter)`](crate::operation::list_targets::builders::ListTargetsFluentBuilder::filters) / [`set_filters(Option<Vec::<ListTargetsFilter>>)`](crate::operation::list_targets::builders::ListTargetsFluentBuilder::set_filters):<br>required: **false**<br><p>The filters to use to return information by service or resource type. Valid filters include target type, target address, and target status.</p><note>  <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p> </note><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_targets::builders::ListTargetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_targets::builders::ListTargetsFluentBuilder::set_next_token):<br>required: **false**<br><p>An enumeration token that, when provided in a request, returns the next batch of the results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_targets::builders::ListTargetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_targets::builders::ListTargetsFluentBuilder::set_max_results):<br>required: **false**<br><p>A non-negative integer used to limit the number of returned results. The maximum number of results that can be returned is 100.</p><br>
-    /// - On success, responds with [`ListTargetsOutput`](crate::operation::list_targets::ListTargetsOutput) with field(s):
+                            /// - On success, responds with [`ListTargetsOutput`](crate::operation::list_targets::ListTargetsOutput) with field(s):
     ///   - [`targets(Option<Vec::<TargetSummary>>)`](crate::operation::list_targets::ListTargetsOutput::targets): <p>The list of notification rule targets.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_targets::ListTargetsOutput::next_token): <p>An enumeration token that can be used in a request to return the next batch of results.</p>
-    /// - On failure, responds with [`SdkError<ListTargetsError>`](crate::operation::list_targets::ListTargetsError)
+                            /// - On failure, responds with [`SdkError<ListTargetsError>`](crate::operation::list_targets::ListTargetsError)
     pub fn list_targets(&self) -> crate::operation::list_targets::builders::ListTargetsFluentBuilder {
-        crate::operation::list_targets::builders::ListTargetsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_targets::builders::ListTargetsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

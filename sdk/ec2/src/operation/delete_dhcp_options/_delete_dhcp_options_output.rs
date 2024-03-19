@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDhcpOptionsOutput {
+pub struct DeleteDhcpOptionsOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for DeleteDhcpOptionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteDhcpOptionsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDhcpOptionsOutput`](crate::operation::delete_dhcp_options::DeleteDhcpOptionsOutput).
     pub fn builder() -> crate::operation::delete_dhcp_options::builders::DeleteDhcpOptionsOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DeleteDhcpOptionsOutputBuilder {
 }
 impl DeleteDhcpOptionsOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteDhcpOptionsOutput`](crate::operation::delete_dhcp_options::DeleteDhcpOptionsOutput).
     pub fn build(self) -> crate::operation::delete_dhcp_options::DeleteDhcpOptionsOutput {
         crate::operation::delete_dhcp_options::DeleteDhcpOptionsOutput {
@@ -40,3 +40,4 @@ impl DeleteDhcpOptionsOutputBuilder {
         }
     }
 }
+

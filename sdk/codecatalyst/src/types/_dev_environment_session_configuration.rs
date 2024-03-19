@@ -3,19 +3,19 @@
 /// <p>Information about the configuration of a Dev Environment session.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DevEnvironmentSessionConfiguration {
+pub struct DevEnvironmentSessionConfiguration  {
     /// <p>The type of the session.</p>
     pub session_type: crate::types::DevEnvironmentSessionType,
     /// <p>Information about optional commands that will be run on the Dev Environment when the SSH session begins.</p>
     pub execute_command_session_configuration: ::std::option::Option<crate::types::ExecuteCommandSessionConfiguration>,
 }
-impl DevEnvironmentSessionConfiguration {
+impl  DevEnvironmentSessionConfiguration  {
     /// <p>The type of the session.</p>
-    pub fn session_type(&self) -> &crate::types::DevEnvironmentSessionType {
+    pub fn session_type(&self) -> & crate::types::DevEnvironmentSessionType {
         &self.session_type
     }
     /// <p>Information about optional commands that will be run on the Dev Environment when the SSH session begins.</p>
-    pub fn execute_command_session_configuration(&self) -> ::std::option::Option<&crate::types::ExecuteCommandSessionConfiguration> {
+    pub fn execute_command_session_configuration(&self) -> ::std::option::Option<& crate::types::ExecuteCommandSessionConfiguration> {
         self.execute_command_session_configuration.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl DevEnvironmentSessionConfigurationBuilder {
     }
     /// <p>The type of the session.</p>
     pub fn set_session_type(mut self, input: ::std::option::Option<crate::types::DevEnvironmentSessionType>) -> Self {
-        self.session_type = input;
-        self
+        self.session_type = input; self
     }
     /// <p>The type of the session.</p>
     pub fn get_session_type(&self) -> &::std::option::Option<crate::types::DevEnvironmentSessionType> {
@@ -55,12 +54,8 @@ impl DevEnvironmentSessionConfigurationBuilder {
         self
     }
     /// <p>Information about optional commands that will be run on the Dev Environment when the SSH session begins.</p>
-    pub fn set_execute_command_session_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ExecuteCommandSessionConfiguration>,
-    ) -> Self {
-        self.execute_command_session_configuration = input;
-        self
+    pub fn set_execute_command_session_configuration(mut self, input: ::std::option::Option<crate::types::ExecuteCommandSessionConfiguration>) -> Self {
+        self.execute_command_session_configuration = input; self
     }
     /// <p>Information about optional commands that will be run on the Dev Environment when the SSH session begins.</p>
     pub fn get_execute_command_session_configuration(&self) -> &::std::option::Option<crate::types::ExecuteCommandSessionConfiguration> {
@@ -70,14 +65,17 @@ impl DevEnvironmentSessionConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`session_type`](crate::types::builders::DevEnvironmentSessionConfigurationBuilder::session_type)
     pub fn build(self) -> ::std::result::Result<crate::types::DevEnvironmentSessionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DevEnvironmentSessionConfiguration {
-            session_type: self.session_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "session_type",
-                    "session_type was not specified but it is required when building DevEnvironmentSessionConfiguration",
-                )
-            })?,
-            execute_command_session_configuration: self.execute_command_session_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DevEnvironmentSessionConfiguration {
+                session_type: self.session_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("session_type", "session_type was not specified but it is required when building DevEnvironmentSessionConfiguration")
+                    )?
+                ,
+                execute_command_session_configuration: self.execute_command_session_configuration
+                ,
+            }
+        )
     }
 }
+

@@ -10,7 +10,7 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CapacitySpecificationSummary {
+pub struct CapacitySpecificationSummary  {
     /// <p>The read/write throughput capacity mode for a table. The options are:</p>
     /// <ul>
     /// <li>
@@ -28,7 +28,7 @@ pub struct CapacitySpecificationSummary {
     /// <p>The timestamp of the last operation that changed the provisioned throughput capacity of a table.</p>
     pub last_update_to_pay_per_request_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl CapacitySpecificationSummary {
+impl  CapacitySpecificationSummary  {
     /// <p>The read/write throughput capacity mode for a table. The options are:</p>
     /// <ul>
     /// <li>
@@ -38,7 +38,7 @@ impl CapacitySpecificationSummary {
     /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn throughput_mode(&self) -> &crate::types::ThroughputMode {
+    pub fn throughput_mode(&self) -> & crate::types::ThroughputMode {
         &self.throughput_mode
     }
     /// <p>The throughput capacity specified for <code>read</code> operations defined in <code>read capacity units</code> <code>(RCUs)</code>.</p>
@@ -50,7 +50,7 @@ impl CapacitySpecificationSummary {
         self.write_capacity_units
     }
     /// <p>The timestamp of the last operation that changed the provisioned throughput capacity of a table.</p>
-    pub fn last_update_to_pay_per_request_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_update_to_pay_per_request_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_update_to_pay_per_request_timestamp.as_ref()
     }
 }
@@ -95,8 +95,7 @@ impl CapacitySpecificationSummaryBuilder {
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn set_throughput_mode(mut self, input: ::std::option::Option<crate::types::ThroughputMode>) -> Self {
-        self.throughput_mode = input;
-        self
+        self.throughput_mode = input; self
     }
     /// <p>The read/write throughput capacity mode for a table. The options are:</p>
     /// <ul>
@@ -117,8 +116,7 @@ impl CapacitySpecificationSummaryBuilder {
     }
     /// <p>The throughput capacity specified for <code>read</code> operations defined in <code>read capacity units</code> <code>(RCUs)</code>.</p>
     pub fn set_read_capacity_units(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.read_capacity_units = input;
-        self
+        self.read_capacity_units = input; self
     }
     /// <p>The throughput capacity specified for <code>read</code> operations defined in <code>read capacity units</code> <code>(RCUs)</code>.</p>
     pub fn get_read_capacity_units(&self) -> &::std::option::Option<i64> {
@@ -131,8 +129,7 @@ impl CapacitySpecificationSummaryBuilder {
     }
     /// <p>The throughput capacity specified for <code>write</code> operations defined in <code>write capacity units</code> <code>(WCUs)</code>.</p>
     pub fn set_write_capacity_units(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.write_capacity_units = input;
-        self
+        self.write_capacity_units = input; self
     }
     /// <p>The throughput capacity specified for <code>write</code> operations defined in <code>write capacity units</code> <code>(WCUs)</code>.</p>
     pub fn get_write_capacity_units(&self) -> &::std::option::Option<i64> {
@@ -145,8 +142,7 @@ impl CapacitySpecificationSummaryBuilder {
     }
     /// <p>The timestamp of the last operation that changed the provisioned throughput capacity of a table.</p>
     pub fn set_last_update_to_pay_per_request_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_update_to_pay_per_request_timestamp = input;
-        self
+        self.last_update_to_pay_per_request_timestamp = input; self
     }
     /// <p>The timestamp of the last operation that changed the provisioned throughput capacity of a table.</p>
     pub fn get_last_update_to_pay_per_request_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -156,16 +152,21 @@ impl CapacitySpecificationSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`throughput_mode`](crate::types::builders::CapacitySpecificationSummaryBuilder::throughput_mode)
     pub fn build(self) -> ::std::result::Result<crate::types::CapacitySpecificationSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CapacitySpecificationSummary {
-            throughput_mode: self.throughput_mode.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "throughput_mode",
-                    "throughput_mode was not specified but it is required when building CapacitySpecificationSummary",
-                )
-            })?,
-            read_capacity_units: self.read_capacity_units,
-            write_capacity_units: self.write_capacity_units,
-            last_update_to_pay_per_request_timestamp: self.last_update_to_pay_per_request_timestamp,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CapacitySpecificationSummary {
+                throughput_mode: self.throughput_mode
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("throughput_mode", "throughput_mode was not specified but it is required when building CapacitySpecificationSummary")
+                    )?
+                ,
+                read_capacity_units: self.read_capacity_units
+                ,
+                write_capacity_units: self.write_capacity_units
+                ,
+                last_update_to_pay_per_request_timestamp: self.last_update_to_pay_per_request_timestamp
+                ,
+            }
+        )
     }
 }
+

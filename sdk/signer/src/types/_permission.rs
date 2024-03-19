@@ -3,7 +3,7 @@
 /// <p>A cross-account permission for a signing profile.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Permission {
+pub struct Permission  {
     /// <p>An AWS Signer action permitted as part of cross-account permissions.</p>
     pub action: ::std::option::Option<::std::string::String>,
     /// <p>The AWS principal that has been granted a cross-account permission.</p>
@@ -13,21 +13,21 @@ pub struct Permission {
     /// <p>The signing profile version that a permission applies to.</p>
     pub profile_version: ::std::option::Option<::std::string::String>,
 }
-impl Permission {
+impl  Permission  {
     /// <p>An AWS Signer action permitted as part of cross-account permissions.</p>
-    pub fn action(&self) -> ::std::option::Option<&str> {
+    pub fn action(&self) -> ::std::option::Option<& str> {
         self.action.as_deref()
     }
     /// <p>The AWS principal that has been granted a cross-account permission.</p>
-    pub fn principal(&self) -> ::std::option::Option<&str> {
+    pub fn principal(&self) -> ::std::option::Option<& str> {
         self.principal.as_deref()
     }
     /// <p>A unique identifier for a cross-account permission statement.</p>
-    pub fn statement_id(&self) -> ::std::option::Option<&str> {
+    pub fn statement_id(&self) -> ::std::option::Option<& str> {
         self.statement_id.as_deref()
     }
     /// <p>The signing profile version that a permission applies to.</p>
-    pub fn profile_version(&self) -> ::std::option::Option<&str> {
+    pub fn profile_version(&self) -> ::std::option::Option<& str> {
         self.profile_version.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl PermissionBuilder {
     }
     /// <p>An AWS Signer action permitted as part of cross-account permissions.</p>
     pub fn set_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>An AWS Signer action permitted as part of cross-account permissions.</p>
     pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl PermissionBuilder {
     }
     /// <p>The AWS principal that has been granted a cross-account permission.</p>
     pub fn set_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal = input;
-        self
+        self.principal = input; self
     }
     /// <p>The AWS principal that has been granted a cross-account permission.</p>
     pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl PermissionBuilder {
     }
     /// <p>A unique identifier for a cross-account permission statement.</p>
     pub fn set_statement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.statement_id = input;
-        self
+        self.statement_id = input; self
     }
     /// <p>A unique identifier for a cross-account permission statement.</p>
     pub fn get_statement_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl PermissionBuilder {
     }
     /// <p>The signing profile version that a permission applies to.</p>
     pub fn set_profile_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_version = input;
-        self
+        self.profile_version = input; self
     }
     /// <p>The signing profile version that a permission applies to.</p>
     pub fn get_profile_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl PermissionBuilder {
     /// Consumes the builder and constructs a [`Permission`](crate::types::Permission).
     pub fn build(self) -> crate::types::Permission {
         crate::types::Permission {
-            action: self.action,
-            principal: self.principal,
-            statement_id: self.statement_id,
-            profile_version: self.profile_version,
+            action: self.action
+            ,
+            principal: self.principal
+            ,
+            statement_id: self.statement_id
+            ,
+            profile_version: self.profile_version
+            ,
         }
     }
 }
+

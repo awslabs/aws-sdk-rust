@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListServersInput {
+pub struct ListServersInput  {
     /// <p>Criteria for filtering servers.</p>
     pub server_criteria: ::std::option::Option<crate::types::ServerCriteria>,
     /// <p>Specifies the filter value, which is based on the type of server criteria. For example, if <code>serverCriteria</code> is <code>OS_NAME</code>, and the <code>filterValue</code> is equal to <code>WindowsServer</code>, then <code>ListServers</code> returns all of the servers matching the OS name <code>WindowsServer</code>.</p>
@@ -10,33 +10,34 @@ pub struct ListServersInput {
     /// <p>Specifies whether to sort by ascending (<code>ASC</code>) or descending (<code>DESC</code>) order.</p>
     pub sort: ::std::option::Option<crate::types::SortOrder>,
     /// <p>Specifies the group ID to filter on.</p>
-    pub group_id_filter: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,
+    pub group_id_filter: ::std::option::Option<::std::vec::Vec::<crate::types::Group>>,
     /// <p>The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to include in the response. The maximum value is 100.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListServersInput {
+impl  ListServersInput  {
     /// <p>Criteria for filtering servers.</p>
-    pub fn server_criteria(&self) -> ::std::option::Option<&crate::types::ServerCriteria> {
+    pub fn server_criteria(&self) -> ::std::option::Option<& crate::types::ServerCriteria> {
         self.server_criteria.as_ref()
     }
     /// <p>Specifies the filter value, which is based on the type of server criteria. For example, if <code>serverCriteria</code> is <code>OS_NAME</code>, and the <code>filterValue</code> is equal to <code>WindowsServer</code>, then <code>ListServers</code> returns all of the servers matching the OS name <code>WindowsServer</code>.</p>
-    pub fn filter_value(&self) -> ::std::option::Option<&str> {
+    pub fn filter_value(&self) -> ::std::option::Option<& str> {
         self.filter_value.as_deref()
     }
     /// <p>Specifies whether to sort by ascending (<code>ASC</code>) or descending (<code>DESC</code>) order.</p>
-    pub fn sort(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort.as_ref()
     }
     /// <p>Specifies the group ID to filter on.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_id_filter.is_none()`.
-    pub fn group_id_filter(&self) -> &[crate::types::Group] {
-        self.group_id_filter.as_deref().unwrap_or_default()
+    pub fn group_id_filter(&self) -> & [crate::types::Group] {
+        self.group_id_filter.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to include in the response. The maximum value is 100.</p>
@@ -58,7 +59,7 @@ pub struct ListServersInputBuilder {
     pub(crate) server_criteria: ::std::option::Option<crate::types::ServerCriteria>,
     pub(crate) filter_value: ::std::option::Option<::std::string::String>,
     pub(crate) sort: ::std::option::Option<crate::types::SortOrder>,
-    pub(crate) group_id_filter: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,
+    pub(crate) group_id_filter: ::std::option::Option<::std::vec::Vec::<crate::types::Group>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -70,8 +71,7 @@ impl ListServersInputBuilder {
     }
     /// <p>Criteria for filtering servers.</p>
     pub fn set_server_criteria(mut self, input: ::std::option::Option<crate::types::ServerCriteria>) -> Self {
-        self.server_criteria = input;
-        self
+        self.server_criteria = input; self
     }
     /// <p>Criteria for filtering servers.</p>
     pub fn get_server_criteria(&self) -> &::std::option::Option<crate::types::ServerCriteria> {
@@ -84,8 +84,7 @@ impl ListServersInputBuilder {
     }
     /// <p>Specifies the filter value, which is based on the type of server criteria. For example, if <code>serverCriteria</code> is <code>OS_NAME</code>, and the <code>filterValue</code> is equal to <code>WindowsServer</code>, then <code>ListServers</code> returns all of the servers matching the OS name <code>WindowsServer</code>.</p>
     pub fn set_filter_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.filter_value = input;
-        self
+        self.filter_value = input; self
     }
     /// <p>Specifies the filter value, which is based on the type of server criteria. For example, if <code>serverCriteria</code> is <code>OS_NAME</code>, and the <code>filterValue</code> is equal to <code>WindowsServer</code>, then <code>ListServers</code> returns all of the servers matching the OS name <code>WindowsServer</code>.</p>
     pub fn get_filter_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +97,7 @@ impl ListServersInputBuilder {
     }
     /// <p>Specifies whether to sort by ascending (<code>ASC</code>) or descending (<code>DESC</code>) order.</p>
     pub fn set_sort(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort = input;
-        self
+        self.sort = input; self
     }
     /// <p>Specifies whether to sort by ascending (<code>ASC</code>) or descending (<code>DESC</code>) order.</p>
     pub fn get_sort(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -112,17 +110,16 @@ impl ListServersInputBuilder {
     /// <p>Specifies the group ID to filter on.</p>
     pub fn group_id_filter(mut self, input: crate::types::Group) -> Self {
         let mut v = self.group_id_filter.unwrap_or_default();
-        v.push(input);
-        self.group_id_filter = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.group_id_filter = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the group ID to filter on.</p>
-    pub fn set_group_id_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Group>>) -> Self {
-        self.group_id_filter = input;
-        self
+    pub fn set_group_id_filter(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Group>>) -> Self {
+        self.group_id_filter = input; self
     }
     /// <p>Specifies the group ID to filter on.</p>
-    pub fn get_group_id_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Group>> {
+    pub fn get_group_id_filter(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Group>> {
         &self.group_id_filter
     }
     /// <p>The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10.</p>
@@ -132,8 +129,7 @@ impl ListServersInputBuilder {
     }
     /// <p>The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +142,7 @@ impl ListServersInputBuilder {
     }
     /// <p>The maximum number of items to include in the response. The maximum value is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to include in the response. The maximum value is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -155,13 +150,22 @@ impl ListServersInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListServersInput`](crate::operation::list_servers::ListServersInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_servers::ListServersInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_servers::ListServersInput {
-            server_criteria: self.server_criteria,
-            filter_value: self.filter_value,
-            sort: self.sort,
-            group_id_filter: self.group_id_filter,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_servers::ListServersInput {
+                server_criteria: self.server_criteria
+                ,
+                filter_value: self.filter_value
+                ,
+                sort: self.sort
+                ,
+                group_id_filter: self.group_id_filter
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

@@ -3,36 +3,37 @@
 /// <p>Output of a list milestones call.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMilestonesOutput {
+pub struct ListMilestonesOutput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of milestone summaries.</p>
-    pub milestone_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MilestoneSummary>>,
+    pub milestone_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::MilestoneSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListMilestonesOutput {
+impl  ListMilestonesOutput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> ::std::option::Option<&str> {
+    pub fn workload_id(&self) -> ::std::option::Option<& str> {
         self.workload_id.as_deref()
     }
     /// <p>A list of milestone summaries.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.milestone_summaries.is_none()`.
-    pub fn milestone_summaries(&self) -> &[crate::types::MilestoneSummary] {
-        self.milestone_summaries.as_deref().unwrap_or_default()
+    pub fn milestone_summaries(&self) -> & [crate::types::MilestoneSummary] {
+        self.milestone_summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListMilestonesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListMilestonesOutput {
     /// Creates a new builder-style object to manufacture [`ListMilestonesOutput`](crate::operation::list_milestones::ListMilestonesOutput).
     pub fn builder() -> crate::operation::list_milestones::builders::ListMilestonesOutputBuilder {
@@ -45,7 +46,7 @@ impl ListMilestonesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMilestonesOutputBuilder {
     pub(crate) workload_id: ::std::option::Option<::std::string::String>,
-    pub(crate) milestone_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MilestoneSummary>>,
+    pub(crate) milestone_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::MilestoneSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,8 +58,7 @@ impl ListMilestonesOutputBuilder {
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_id = input;
-        self
+        self.workload_id = input; self
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,17 +71,16 @@ impl ListMilestonesOutputBuilder {
     /// <p>A list of milestone summaries.</p>
     pub fn milestone_summaries(mut self, input: crate::types::MilestoneSummary) -> Self {
         let mut v = self.milestone_summaries.unwrap_or_default();
-        v.push(input);
-        self.milestone_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.milestone_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of milestone summaries.</p>
-    pub fn set_milestone_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MilestoneSummary>>) -> Self {
-        self.milestone_summaries = input;
-        self
+    pub fn set_milestone_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MilestoneSummary>>) -> Self {
+        self.milestone_summaries = input; self
     }
     /// <p>A list of milestone summaries.</p>
-    pub fn get_milestone_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MilestoneSummary>> {
+    pub fn get_milestone_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MilestoneSummary>> {
         &self.milestone_summaries
     }
     /// <p>The token to use to retrieve the next set of results.</p>
@@ -91,29 +90,32 @@ impl ListMilestonesOutputBuilder {
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListMilestonesOutput`](crate::operation::list_milestones::ListMilestonesOutput).
     pub fn build(self) -> crate::operation::list_milestones::ListMilestonesOutput {
         crate::operation::list_milestones::ListMilestonesOutput {
-            workload_id: self.workload_id,
-            milestone_summaries: self.milestone_summaries,
-            next_token: self.next_token,
+            workload_id: self.workload_id
+            ,
+            milestone_summaries: self.milestone_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

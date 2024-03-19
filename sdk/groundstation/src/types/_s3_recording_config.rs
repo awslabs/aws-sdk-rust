@@ -3,7 +3,7 @@
 /// <p>Information about an S3 recording <code>Config</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3RecordingConfig {
+pub struct S3RecordingConfig  {
     /// <p>ARN of the bucket to record to.</p>
     pub bucket_arn: ::std::string::String,
     /// <p>ARN of the role Ground Station assumes to write data to the bucket.</p>
@@ -11,19 +11,17 @@ pub struct S3RecordingConfig {
     /// <p>S3 Key prefix to prefice data files.</p>
     pub prefix: ::std::option::Option<::std::string::String>,
 }
-impl S3RecordingConfig {
+impl  S3RecordingConfig  {
     /// <p>ARN of the bucket to record to.</p>
-    pub fn bucket_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket_arn.deref()
+    pub fn bucket_arn(&self) -> & str {
+        use std::ops::Deref; self.bucket_arn.deref()
     }
     /// <p>ARN of the role Ground Station assumes to write data to the bucket.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
     /// <p>S3 Key prefix to prefice data files.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
 }
@@ -51,8 +49,7 @@ impl S3RecordingConfigBuilder {
     }
     /// <p>ARN of the bucket to record to.</p>
     pub fn set_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_arn = input;
-        self
+        self.bucket_arn = input; self
     }
     /// <p>ARN of the bucket to record to.</p>
     pub fn get_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl S3RecordingConfigBuilder {
     }
     /// <p>ARN of the role Ground Station assumes to write data to the bucket.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>ARN of the role Ground Station assumes to write data to the bucket.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl S3RecordingConfigBuilder {
     }
     /// <p>S3 Key prefix to prefice data files.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>S3 Key prefix to prefice data files.</p>
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,20 +87,22 @@ impl S3RecordingConfigBuilder {
     /// - [`bucket_arn`](crate::types::builders::S3RecordingConfigBuilder::bucket_arn)
     /// - [`role_arn`](crate::types::builders::S3RecordingConfigBuilder::role_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::S3RecordingConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3RecordingConfig {
-            bucket_arn: self.bucket_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket_arn",
-                    "bucket_arn was not specified but it is required when building S3RecordingConfig",
-                )
-            })?,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building S3RecordingConfig",
-                )
-            })?,
-            prefix: self.prefix,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3RecordingConfig {
+                bucket_arn: self.bucket_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket_arn", "bucket_arn was not specified but it is required when building S3RecordingConfig")
+                    )?
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building S3RecordingConfig")
+                    )?
+                ,
+                prefix: self.prefix
+                ,
+            }
+        )
     }
 }
+

@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListFlowsOutput {
+pub struct ListFlowsOutput  {
     /// A list of flow summaries.
-    pub flows: ::std::option::Option<::std::vec::Vec<crate::types::ListedFlow>>,
+    pub flows: ::std::option::Option<::std::vec::Vec::<crate::types::ListedFlow>>,
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListFlowsOutput {
+impl  ListFlowsOutput  {
     /// A list of flow summaries.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.flows.is_none()`.
-    pub fn flows(&self) -> &[crate::types::ListedFlow] {
-        self.flows.as_deref().unwrap_or_default()
+    pub fn flows(&self) -> & [crate::types::ListedFlow] {
+        self.flows.as_deref()
+        .unwrap_or_default()
     }
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListFlowsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListFlowsOutput {
     /// Creates a new builder-style object to manufacture [`ListFlowsOutput`](crate::operation::list_flows::ListFlowsOutput).
     pub fn builder() -> crate::operation::list_flows::builders::ListFlowsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListFlowsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFlowsOutputBuilder {
-    pub(crate) flows: ::std::option::Option<::std::vec::Vec<crate::types::ListedFlow>>,
+    pub(crate) flows: ::std::option::Option<::std::vec::Vec::<crate::types::ListedFlow>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListFlowsOutputBuilder {
     /// A list of flow summaries.
     pub fn flows(mut self, input: crate::types::ListedFlow) -> Self {
         let mut v = self.flows.unwrap_or_default();
-        v.push(input);
-        self.flows = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.flows = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of flow summaries.
-    pub fn set_flows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListedFlow>>) -> Self {
-        self.flows = input;
-        self
+    pub fn set_flows(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ListedFlow>>) -> Self {
+        self.flows = input; self
     }
     /// A list of flow summaries.
-    pub fn get_flows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedFlow>> {
+    pub fn get_flows(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ListedFlow>> {
         &self.flows
     }
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.
@@ -69,28 +69,30 @@ impl ListFlowsOutputBuilder {
     }
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListFlowsOutput`](crate::operation::list_flows::ListFlowsOutput).
     pub fn build(self) -> crate::operation::list_flows::ListFlowsOutput {
         crate::operation::list_flows::ListFlowsOutput {
-            flows: self.flows,
-            next_token: self.next_token,
+            flows: self.flows
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

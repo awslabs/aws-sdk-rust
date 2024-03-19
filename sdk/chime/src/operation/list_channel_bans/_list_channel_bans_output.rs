@@ -2,32 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ListChannelBansOutput {
+pub struct ListChannelBansOutput  {
     /// <p>The ARN of the channel.</p>
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The token passed by previous API calls until all requested bans are returned.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The information for each requested ban.</p>
-    pub channel_bans: ::std::option::Option<::std::vec::Vec<crate::types::ChannelBanSummary>>,
+    pub channel_bans: ::std::option::Option<::std::vec::Vec::<crate::types::ChannelBanSummary>>,
     _request_id: Option<String>,
 }
-impl ListChannelBansOutput {
+impl  ListChannelBansOutput  {
     /// <p>The ARN of the channel.</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn channel_arn(&self) -> ::std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>The token passed by previous API calls until all requested bans are returned.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The information for each requested ban.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channel_bans.is_none()`.
-    pub fn channel_bans(&self) -> &[crate::types::ChannelBanSummary] {
-        self.channel_bans.as_deref().unwrap_or_default()
+    pub fn channel_bans(&self) -> & [crate::types::ChannelBanSummary] {
+        self.channel_bans.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for ListChannelBansOutput {
+impl  ::std::fmt::Debug for ListChannelBansOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ListChannelBansOutput");
         formatter.field("channel_arn", &self.channel_arn);
@@ -38,10 +39,10 @@ impl ::std::fmt::Debug for ListChannelBansOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for ListChannelBansOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListChannelBansOutput {
     /// Creates a new builder-style object to manufacture [`ListChannelBansOutput`](crate::operation::list_channel_bans::ListChannelBansOutput).
     pub fn builder() -> crate::operation::list_channel_bans::builders::ListChannelBansOutputBuilder {
@@ -55,7 +56,7 @@ impl ListChannelBansOutput {
 pub struct ListChannelBansOutputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) channel_bans: ::std::option::Option<::std::vec::Vec<crate::types::ChannelBanSummary>>,
+    pub(crate) channel_bans: ::std::option::Option<::std::vec::Vec::<crate::types::ChannelBanSummary>>,
     _request_id: Option<String>,
 }
 impl ListChannelBansOutputBuilder {
@@ -66,8 +67,7 @@ impl ListChannelBansOutputBuilder {
     }
     /// <p>The ARN of the channel.</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// <p>The ARN of the channel.</p>
     pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +80,7 @@ impl ListChannelBansOutputBuilder {
     }
     /// <p>The token passed by previous API calls until all requested bans are returned.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token passed by previous API calls until all requested bans are returned.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,34 +93,36 @@ impl ListChannelBansOutputBuilder {
     /// <p>The information for each requested ban.</p>
     pub fn channel_bans(mut self, input: crate::types::ChannelBanSummary) -> Self {
         let mut v = self.channel_bans.unwrap_or_default();
-        v.push(input);
-        self.channel_bans = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.channel_bans = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The information for each requested ban.</p>
-    pub fn set_channel_bans(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelBanSummary>>) -> Self {
-        self.channel_bans = input;
-        self
+    pub fn set_channel_bans(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ChannelBanSummary>>) -> Self {
+        self.channel_bans = input; self
     }
     /// <p>The information for each requested ban.</p>
-    pub fn get_channel_bans(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelBanSummary>> {
+    pub fn get_channel_bans(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ChannelBanSummary>> {
         &self.channel_bans
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListChannelBansOutput`](crate::operation::list_channel_bans::ListChannelBansOutput).
     pub fn build(self) -> crate::operation::list_channel_bans::ListChannelBansOutput {
         crate::operation::list_channel_bans::ListChannelBansOutput {
-            channel_arn: self.channel_arn,
-            next_token: self.next_token,
-            channel_bans: self.channel_bans,
+            channel_arn: self.channel_arn
+            ,
+            next_token: self.next_token
+            ,
+            channel_bans: self.channel_bans
+            ,
             _request_id: self._request_id,
         }
     }
@@ -136,3 +137,4 @@ impl ::std::fmt::Debug for ListChannelBansOutputBuilder {
         formatter.finish()
     }
 }
+

@@ -3,47 +3,49 @@
 /// <p>Information about the container that a data quality monitoring job runs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataQualityAppSpecification {
+pub struct DataQualityAppSpecification  {
     /// <p>The container image that the data quality monitoring job runs.</p>
     pub image_uri: ::std::option::Option<::std::string::String>,
     /// <p>The entrypoint for a container used to run a monitoring job.</p>
-    pub container_entrypoint: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub container_entrypoint: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The arguments to send to the container that the monitoring job runs.</p>
-    pub container_arguments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub container_arguments: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>An Amazon S3 URI to a script that is called per row prior to running analysis. It can base64 decode the payload and convert it into a flattened JSON so that the built-in container can use the converted data. Applicable only for the built-in (first party) containers.</p>
     pub record_preprocessor_source_uri: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon S3 URI to a script that is called after analysis has been performed. Applicable only for the built-in (first party) containers.</p>
     pub post_analytics_processor_source_uri: ::std::option::Option<::std::string::String>,
     /// <p>Sets the environment variables in the container that the monitoring job runs.</p>
-    pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub environment: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl DataQualityAppSpecification {
+impl  DataQualityAppSpecification  {
     /// <p>The container image that the data quality monitoring job runs.</p>
-    pub fn image_uri(&self) -> ::std::option::Option<&str> {
+    pub fn image_uri(&self) -> ::std::option::Option<& str> {
         self.image_uri.as_deref()
     }
     /// <p>The entrypoint for a container used to run a monitoring job.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_entrypoint.is_none()`.
-    pub fn container_entrypoint(&self) -> &[::std::string::String] {
-        self.container_entrypoint.as_deref().unwrap_or_default()
+    pub fn container_entrypoint(&self) -> & [::std::string::String] {
+        self.container_entrypoint.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The arguments to send to the container that the monitoring job runs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_arguments.is_none()`.
-    pub fn container_arguments(&self) -> &[::std::string::String] {
-        self.container_arguments.as_deref().unwrap_or_default()
+    pub fn container_arguments(&self) -> & [::std::string::String] {
+        self.container_arguments.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An Amazon S3 URI to a script that is called per row prior to running analysis. It can base64 decode the payload and convert it into a flattened JSON so that the built-in container can use the converted data. Applicable only for the built-in (first party) containers.</p>
-    pub fn record_preprocessor_source_uri(&self) -> ::std::option::Option<&str> {
+    pub fn record_preprocessor_source_uri(&self) -> ::std::option::Option<& str> {
         self.record_preprocessor_source_uri.as_deref()
     }
     /// <p>An Amazon S3 URI to a script that is called after analysis has been performed. Applicable only for the built-in (first party) containers.</p>
-    pub fn post_analytics_processor_source_uri(&self) -> ::std::option::Option<&str> {
+    pub fn post_analytics_processor_source_uri(&self) -> ::std::option::Option<& str> {
         self.post_analytics_processor_source_uri.as_deref()
     }
     /// <p>Sets the environment variables in the container that the monitoring job runs.</p>
-    pub fn environment(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn environment(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.environment.as_ref()
     }
 }
@@ -59,11 +61,11 @@ impl DataQualityAppSpecification {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataQualityAppSpecificationBuilder {
     pub(crate) image_uri: ::std::option::Option<::std::string::String>,
-    pub(crate) container_entrypoint: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) container_arguments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) container_entrypoint: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) container_arguments: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) record_preprocessor_source_uri: ::std::option::Option<::std::string::String>,
     pub(crate) post_analytics_processor_source_uri: ::std::option::Option<::std::string::String>,
-    pub(crate) environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) environment: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl DataQualityAppSpecificationBuilder {
     /// <p>The container image that the data quality monitoring job runs.</p>
@@ -74,8 +76,7 @@ impl DataQualityAppSpecificationBuilder {
     }
     /// <p>The container image that the data quality monitoring job runs.</p>
     pub fn set_image_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_uri = input;
-        self
+        self.image_uri = input; self
     }
     /// <p>The container image that the data quality monitoring job runs.</p>
     pub fn get_image_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,17 +89,16 @@ impl DataQualityAppSpecificationBuilder {
     /// <p>The entrypoint for a container used to run a monitoring job.</p>
     pub fn container_entrypoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.container_entrypoint.unwrap_or_default();
-        v.push(input.into());
-        self.container_entrypoint = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.container_entrypoint = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The entrypoint for a container used to run a monitoring job.</p>
-    pub fn set_container_entrypoint(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.container_entrypoint = input;
-        self
+    pub fn set_container_entrypoint(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.container_entrypoint = input; self
     }
     /// <p>The entrypoint for a container used to run a monitoring job.</p>
-    pub fn get_container_entrypoint(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_container_entrypoint(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.container_entrypoint
     }
     /// Appends an item to `container_arguments`.
@@ -108,17 +108,16 @@ impl DataQualityAppSpecificationBuilder {
     /// <p>The arguments to send to the container that the monitoring job runs.</p>
     pub fn container_arguments(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.container_arguments.unwrap_or_default();
-        v.push(input.into());
-        self.container_arguments = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.container_arguments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The arguments to send to the container that the monitoring job runs.</p>
-    pub fn set_container_arguments(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.container_arguments = input;
-        self
+    pub fn set_container_arguments(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.container_arguments = input; self
     }
     /// <p>The arguments to send to the container that the monitoring job runs.</p>
-    pub fn get_container_arguments(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_container_arguments(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.container_arguments
     }
     /// <p>An Amazon S3 URI to a script that is called per row prior to running analysis. It can base64 decode the payload and convert it into a flattened JSON so that the built-in container can use the converted data. Applicable only for the built-in (first party) containers.</p>
@@ -128,8 +127,7 @@ impl DataQualityAppSpecificationBuilder {
     }
     /// <p>An Amazon S3 URI to a script that is called per row prior to running analysis. It can base64 decode the payload and convert it into a flattened JSON so that the built-in container can use the converted data. Applicable only for the built-in (first party) containers.</p>
     pub fn set_record_preprocessor_source_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.record_preprocessor_source_uri = input;
-        self
+        self.record_preprocessor_source_uri = input; self
     }
     /// <p>An Amazon S3 URI to a script that is called per row prior to running analysis. It can base64 decode the payload and convert it into a flattened JSON so that the built-in container can use the converted data. Applicable only for the built-in (first party) containers.</p>
     pub fn get_record_preprocessor_source_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +140,7 @@ impl DataQualityAppSpecificationBuilder {
     }
     /// <p>An Amazon S3 URI to a script that is called after analysis has been performed. Applicable only for the built-in (first party) containers.</p>
     pub fn set_post_analytics_processor_source_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.post_analytics_processor_source_uri = input;
-        self
+        self.post_analytics_processor_source_uri = input; self
     }
     /// <p>An Amazon S3 URI to a script that is called after analysis has been performed. Applicable only for the built-in (first party) containers.</p>
     pub fn get_post_analytics_processor_source_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,31 +153,34 @@ impl DataQualityAppSpecificationBuilder {
     /// <p>Sets the environment variables in the container that the monitoring job runs.</p>
     pub fn environment(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.environment.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.environment = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.environment = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Sets the environment variables in the container that the monitoring job runs.</p>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.environment = input;
-        self
+    pub fn set_environment(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.environment = input; self
     }
     /// <p>Sets the environment variables in the container that the monitoring job runs.</p>
-    pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.environment
     }
     /// Consumes the builder and constructs a [`DataQualityAppSpecification`](crate::types::DataQualityAppSpecification).
     pub fn build(self) -> crate::types::DataQualityAppSpecification {
         crate::types::DataQualityAppSpecification {
-            image_uri: self.image_uri,
-            container_entrypoint: self.container_entrypoint,
-            container_arguments: self.container_arguments,
-            record_preprocessor_source_uri: self.record_preprocessor_source_uri,
-            post_analytics_processor_source_uri: self.post_analytics_processor_source_uri,
-            environment: self.environment,
+            image_uri: self.image_uri
+            ,
+            container_entrypoint: self.container_entrypoint
+            ,
+            container_arguments: self.container_arguments
+            ,
+            record_preprocessor_source_uri: self.record_preprocessor_source_uri
+            ,
+            post_analytics_processor_source_uri: self.post_analytics_processor_source_uri
+            ,
+            environment: self.environment
+            ,
         }
     }
 }
+

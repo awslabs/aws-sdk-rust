@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAccessKeyInput {
+pub struct UpdateAccessKeyInput  {
     /// <p>The name of the user whose key you want to update.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub user_name: ::std::option::Option<::std::string::String>,
@@ -12,19 +12,19 @@ pub struct UpdateAccessKeyInput {
     /// <p>The status you want to assign to the secret access key. <code>Active</code> means that the key can be used for programmatic calls to Amazon Web Services, while <code>Inactive</code> means that the key cannot be used.</p>
     pub status: ::std::option::Option<crate::types::StatusType>,
 }
-impl UpdateAccessKeyInput {
+impl  UpdateAccessKeyInput  {
     /// <p>The name of the user whose key you want to update.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>The access key ID of the secret access key you want to update.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
-    pub fn access_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn access_key_id(&self) -> ::std::option::Option<& str> {
         self.access_key_id.as_deref()
     }
     /// <p>The status you want to assign to the secret access key. <code>Active</code> means that the key can be used for programmatic calls to Amazon Web Services, while <code>Inactive</code> means that the key cannot be used.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::StatusType> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::StatusType> {
         self.status.as_ref()
     }
 }
@@ -53,8 +53,7 @@ impl UpdateAccessKeyInputBuilder {
     /// <p>The name of the user whose key you want to update.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>The name of the user whose key you want to update.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
@@ -71,8 +70,7 @@ impl UpdateAccessKeyInputBuilder {
     /// <p>The access key ID of the secret access key you want to update.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
     pub fn set_access_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_key_id = input;
-        self
+        self.access_key_id = input; self
     }
     /// <p>The access key ID of the secret access key you want to update.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
@@ -87,21 +85,24 @@ impl UpdateAccessKeyInputBuilder {
     }
     /// <p>The status you want to assign to the secret access key. <code>Active</code> means that the key can be used for programmatic calls to Amazon Web Services, while <code>Inactive</code> means that the key cannot be used.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StatusType>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status you want to assign to the secret access key. <code>Active</code> means that the key can be used for programmatic calls to Amazon Web Services, while <code>Inactive</code> means that the key cannot be used.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::StatusType> {
         &self.status
     }
     /// Consumes the builder and constructs a [`UpdateAccessKeyInput`](crate::operation::update_access_key::UpdateAccessKeyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_access_key::UpdateAccessKeyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_access_key::UpdateAccessKeyInput {
-            user_name: self.user_name,
-            access_key_id: self.access_key_id,
-            status: self.status,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_access_key::UpdateAccessKeyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_access_key::UpdateAccessKeyInput {
+                user_name: self.user_name
+                ,
+                access_key_id: self.access_key_id
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

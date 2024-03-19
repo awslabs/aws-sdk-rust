@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddTrustStoreRevocationsInput {
+pub struct AddTrustStoreRevocationsInput  {
     /// <p>The Amazon Resource Name (ARN) of the trust store.</p>
     pub trust_store_arn: ::std::option::Option<::std::string::String>,
     /// <p>The revocation file to add.</p>
-    pub revocation_contents: ::std::option::Option<::std::vec::Vec<crate::types::RevocationContent>>,
+    pub revocation_contents: ::std::option::Option<::std::vec::Vec::<crate::types::RevocationContent>>,
 }
-impl AddTrustStoreRevocationsInput {
+impl  AddTrustStoreRevocationsInput  {
     /// <p>The Amazon Resource Name (ARN) of the trust store.</p>
-    pub fn trust_store_arn(&self) -> ::std::option::Option<&str> {
+    pub fn trust_store_arn(&self) -> ::std::option::Option<& str> {
         self.trust_store_arn.as_deref()
     }
     /// <p>The revocation file to add.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.revocation_contents.is_none()`.
-    pub fn revocation_contents(&self) -> &[crate::types::RevocationContent] {
-        self.revocation_contents.as_deref().unwrap_or_default()
+    pub fn revocation_contents(&self) -> & [crate::types::RevocationContent] {
+        self.revocation_contents.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AddTrustStoreRevocationsInput {
@@ -32,7 +33,7 @@ impl AddTrustStoreRevocationsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddTrustStoreRevocationsInputBuilder {
     pub(crate) trust_store_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) revocation_contents: ::std::option::Option<::std::vec::Vec<crate::types::RevocationContent>>,
+    pub(crate) revocation_contents: ::std::option::Option<::std::vec::Vec::<crate::types::RevocationContent>>,
 }
 impl AddTrustStoreRevocationsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the trust store.</p>
@@ -43,8 +44,7 @@ impl AddTrustStoreRevocationsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the trust store.</p>
     pub fn set_trust_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trust_store_arn = input;
-        self
+        self.trust_store_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the trust store.</p>
     pub fn get_trust_store_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,29 +57,28 @@ impl AddTrustStoreRevocationsInputBuilder {
     /// <p>The revocation file to add.</p>
     pub fn revocation_contents(mut self, input: crate::types::RevocationContent) -> Self {
         let mut v = self.revocation_contents.unwrap_or_default();
-        v.push(input);
-        self.revocation_contents = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.revocation_contents = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The revocation file to add.</p>
-    pub fn set_revocation_contents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RevocationContent>>) -> Self {
-        self.revocation_contents = input;
-        self
+    pub fn set_revocation_contents(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RevocationContent>>) -> Self {
+        self.revocation_contents = input; self
     }
     /// <p>The revocation file to add.</p>
-    pub fn get_revocation_contents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RevocationContent>> {
+    pub fn get_revocation_contents(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RevocationContent>> {
         &self.revocation_contents
     }
     /// Consumes the builder and constructs a [`AddTrustStoreRevocationsInput`](crate::operation::add_trust_store_revocations::AddTrustStoreRevocationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::add_trust_store_revocations::AddTrustStoreRevocationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::add_trust_store_revocations::AddTrustStoreRevocationsInput {
-            trust_store_arn: self.trust_store_arn,
-            revocation_contents: self.revocation_contents,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_trust_store_revocations::AddTrustStoreRevocationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::add_trust_store_revocations::AddTrustStoreRevocationsInput {
+                trust_store_arn: self.trust_store_arn
+                ,
+                revocation_contents: self.revocation_contents
+                ,
+            }
+        )
     }
 }
+

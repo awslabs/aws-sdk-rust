@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteProvisionedProductPlanInput {
+pub struct DeleteProvisionedProductPlanInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -16,7 +16,7 @@ pub struct DeleteProvisionedProductPlanInput {
     /// <p>If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
     pub ignore_errors: ::std::option::Option<bool>,
 }
-impl DeleteProvisionedProductPlanInput {
+impl  DeleteProvisionedProductPlanInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -24,11 +24,11 @@ impl DeleteProvisionedProductPlanInput {
     /// <li>
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
-    pub fn accept_language(&self) -> ::std::option::Option<&str> {
+    pub fn accept_language(&self) -> ::std::option::Option<& str> {
         self.accept_language.as_deref()
     }
     /// <p>The plan identifier.</p>
-    pub fn plan_id(&self) -> ::std::option::Option<&str> {
+    pub fn plan_id(&self) -> ::std::option::Option<& str> {
         self.plan_id.as_deref()
     }
     /// <p>If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
@@ -71,8 +71,7 @@ impl DeleteProvisionedProductPlanInputBuilder {
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accept_language = input;
-        self
+        self.accept_language = input; self
     }
     /// <p>The language code.</p>
     /// <ul>
@@ -92,8 +91,7 @@ impl DeleteProvisionedProductPlanInputBuilder {
     }
     /// <p>The plan identifier.</p>
     pub fn set_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.plan_id = input;
-        self
+        self.plan_id = input; self
     }
     /// <p>The plan identifier.</p>
     pub fn get_plan_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,24 +104,24 @@ impl DeleteProvisionedProductPlanInputBuilder {
     }
     /// <p>If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
     pub fn set_ignore_errors(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ignore_errors = input;
-        self
+        self.ignore_errors = input; self
     }
     /// <p>If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
     pub fn get_ignore_errors(&self) -> &::std::option::Option<bool> {
         &self.ignore_errors
     }
     /// Consumes the builder and constructs a [`DeleteProvisionedProductPlanInput`](crate::operation::delete_provisioned_product_plan::DeleteProvisionedProductPlanInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_provisioned_product_plan::DeleteProvisionedProductPlanInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_provisioned_product_plan::DeleteProvisionedProductPlanInput {
-            accept_language: self.accept_language,
-            plan_id: self.plan_id,
-            ignore_errors: self.ignore_errors,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_provisioned_product_plan::DeleteProvisionedProductPlanInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_provisioned_product_plan::DeleteProvisionedProductPlanInput {
+                accept_language: self.accept_language
+                ,
+                plan_id: self.plan_id
+                ,
+                ignore_errors: self.ignore_errors
+                ,
+            }
+        )
     }
 }
+

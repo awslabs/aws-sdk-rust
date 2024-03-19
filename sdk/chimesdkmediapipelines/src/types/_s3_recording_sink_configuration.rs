@@ -3,23 +3,23 @@
 /// <p>The structure that holds the settings for transmitting media to the Amazon S3 bucket. These values are used as defaults if <code>S3RecordingSinkRuntimeConfiguration</code> is not specified.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct S3RecordingSinkConfiguration {
+pub struct S3RecordingSinkConfiguration  {
     /// <p>The default URI of the Amazon S3 bucket used as the recording sink.</p>
     pub destination: ::std::option::Option<::std::string::String>,
     /// <p>The default file format for the media files sent to the Amazon S3 bucket.</p>
     pub recording_file_format: ::std::option::Option<crate::types::RecordingFileFormat>,
 }
-impl S3RecordingSinkConfiguration {
+impl  S3RecordingSinkConfiguration  {
     /// <p>The default URI of the Amazon S3 bucket used as the recording sink.</p>
-    pub fn destination(&self) -> ::std::option::Option<&str> {
+    pub fn destination(&self) -> ::std::option::Option<& str> {
         self.destination.as_deref()
     }
     /// <p>The default file format for the media files sent to the Amazon S3 bucket.</p>
-    pub fn recording_file_format(&self) -> ::std::option::Option<&crate::types::RecordingFileFormat> {
+    pub fn recording_file_format(&self) -> ::std::option::Option<& crate::types::RecordingFileFormat> {
         self.recording_file_format.as_ref()
     }
 }
-impl ::std::fmt::Debug for S3RecordingSinkConfiguration {
+impl  ::std::fmt::Debug for S3RecordingSinkConfiguration  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("S3RecordingSinkConfiguration");
         formatter.field("destination", &"*** Sensitive Data Redacted ***");
@@ -49,8 +49,7 @@ impl S3RecordingSinkConfigurationBuilder {
     }
     /// <p>The default URI of the Amazon S3 bucket used as the recording sink.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>The default URI of the Amazon S3 bucket used as the recording sink.</p>
     pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl S3RecordingSinkConfigurationBuilder {
     }
     /// <p>The default file format for the media files sent to the Amazon S3 bucket.</p>
     pub fn set_recording_file_format(mut self, input: ::std::option::Option<crate::types::RecordingFileFormat>) -> Self {
-        self.recording_file_format = input;
-        self
+        self.recording_file_format = input; self
     }
     /// <p>The default file format for the media files sent to the Amazon S3 bucket.</p>
     pub fn get_recording_file_format(&self) -> &::std::option::Option<crate::types::RecordingFileFormat> {
@@ -73,8 +71,10 @@ impl S3RecordingSinkConfigurationBuilder {
     /// Consumes the builder and constructs a [`S3RecordingSinkConfiguration`](crate::types::S3RecordingSinkConfiguration).
     pub fn build(self) -> crate::types::S3RecordingSinkConfiguration {
         crate::types::S3RecordingSinkConfiguration {
-            destination: self.destination,
-            recording_file_format: self.recording_file_format,
+            destination: self.destination
+            ,
+            recording_file_format: self.recording_file_format
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for S3RecordingSinkConfigurationBuilder {
         formatter.finish()
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPositionEstimateOutput {
+pub struct GetPositionEstimateOutput  {
     /// <p>The position information of the resource, displayed as a JSON payload. The payload is of type blob and uses the <a href="https://geojson.org/">GeoJSON</a> format, which a format that's used to encode geographic data structures. A sample payload contains the timestamp information, the WGS84 coordinates of the location, and the accuracy and confidence level. For more information and examples, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/location-resolve-console.html">Resolve device location (console)</a>.</p>
     pub geo_json_payload: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,
 }
-impl GetPositionEstimateOutput {
+impl  GetPositionEstimateOutput  {
     /// <p>The position information of the resource, displayed as a JSON payload. The payload is of type blob and uses the <a href="https://geojson.org/">GeoJSON</a> format, which a format that's used to encode geographic data structures. A sample payload contains the timestamp information, the WGS84 coordinates of the location, and the accuracy and confidence level. For more information and examples, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/location-resolve-console.html">Resolve device location (console)</a>.</p>
-    pub fn geo_json_payload(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn geo_json_payload(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.geo_json_payload.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetPositionEstimateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetPositionEstimateOutput {
     /// Creates a new builder-style object to manufacture [`GetPositionEstimateOutput`](crate::operation::get_position_estimate::GetPositionEstimateOutput).
     pub fn builder() -> crate::operation::get_position_estimate::builders::GetPositionEstimateOutputBuilder {
@@ -40,27 +40,28 @@ impl GetPositionEstimateOutputBuilder {
     }
     /// <p>The position information of the resource, displayed as a JSON payload. The payload is of type blob and uses the <a href="https://geojson.org/">GeoJSON</a> format, which a format that's used to encode geographic data structures. A sample payload contains the timestamp information, the WGS84 coordinates of the location, and the accuracy and confidence level. For more information and examples, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/location-resolve-console.html">Resolve device location (console)</a>.</p>
     pub fn set_geo_json_payload(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.geo_json_payload = input;
-        self
+        self.geo_json_payload = input; self
     }
     /// <p>The position information of the resource, displayed as a JSON payload. The payload is of type blob and uses the <a href="https://geojson.org/">GeoJSON</a> format, which a format that's used to encode geographic data structures. A sample payload contains the timestamp information, the WGS84 coordinates of the location, and the accuracy and confidence level. For more information and examples, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/location-resolve-console.html">Resolve device location (console)</a>.</p>
     pub fn get_geo_json_payload(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.geo_json_payload
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetPositionEstimateOutput`](crate::operation::get_position_estimate::GetPositionEstimateOutput).
     pub fn build(self) -> crate::operation::get_position_estimate::GetPositionEstimateOutput {
         crate::operation::get_position_estimate::GetPositionEstimateOutput {
-            geo_json_payload: self.geo_json_payload,
+            geo_json_payload: self.geo_json_payload
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

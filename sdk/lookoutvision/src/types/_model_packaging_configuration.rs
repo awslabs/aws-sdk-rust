@@ -3,13 +3,13 @@
 /// <p>Configuration information for a Amazon Lookout for Vision model packaging job. For more information, see <code>StartModelPackagingJob</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModelPackagingConfiguration {
+pub struct ModelPackagingConfiguration  {
     /// <p>Configuration information for the AWS IoT Greengrass component in a model packaging job.</p>
     pub greengrass: ::std::option::Option<crate::types::GreengrassConfiguration>,
 }
-impl ModelPackagingConfiguration {
+impl  ModelPackagingConfiguration  {
     /// <p>Configuration information for the AWS IoT Greengrass component in a model packaging job.</p>
-    pub fn greengrass(&self) -> ::std::option::Option<&crate::types::GreengrassConfiguration> {
+    pub fn greengrass(&self) -> ::std::option::Option<& crate::types::GreengrassConfiguration> {
         self.greengrass.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl ModelPackagingConfigurationBuilder {
     }
     /// <p>Configuration information for the AWS IoT Greengrass component in a model packaging job.</p>
     pub fn set_greengrass(mut self, input: ::std::option::Option<crate::types::GreengrassConfiguration>) -> Self {
-        self.greengrass = input;
-        self
+        self.greengrass = input; self
     }
     /// <p>Configuration information for the AWS IoT Greengrass component in a model packaging job.</p>
     pub fn get_greengrass(&self) -> &::std::option::Option<crate::types::GreengrassConfiguration> {
@@ -44,6 +43,10 @@ impl ModelPackagingConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`ModelPackagingConfiguration`](crate::types::ModelPackagingConfiguration).
     pub fn build(self) -> crate::types::ModelPackagingConfiguration {
-        crate::types::ModelPackagingConfiguration { greengrass: self.greengrass }
+        crate::types::ModelPackagingConfiguration {
+            greengrass: self.greengrass
+            ,
+        }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestAlarmInput {
+pub struct TestAlarmInput  {
     /// <p>The name of the alarm to test.</p>
     pub alarm_name: ::std::option::Option<::std::string::String>,
     /// <p>The alarm state to test.</p>
@@ -17,9 +17,9 @@ pub struct TestAlarmInput {
     /// </ul>
     pub state: ::std::option::Option<crate::types::AlarmState>,
 }
-impl TestAlarmInput {
+impl  TestAlarmInput  {
     /// <p>The name of the alarm to test.</p>
-    pub fn alarm_name(&self) -> ::std::option::Option<&str> {
+    pub fn alarm_name(&self) -> ::std::option::Option<& str> {
         self.alarm_name.as_deref()
     }
     /// <p>The alarm state to test.</p>
@@ -32,7 +32,7 @@ impl TestAlarmInput {
     /// <li>
     /// <p><code>OK</code> - The metric is within the defined threshold.</p></li>
     /// </ul>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::AlarmState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::AlarmState> {
         self.state.as_ref()
     }
 }
@@ -59,8 +59,7 @@ impl TestAlarmInputBuilder {
     }
     /// <p>The name of the alarm to test.</p>
     pub fn set_alarm_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alarm_name = input;
-        self
+        self.alarm_name = input; self
     }
     /// <p>The name of the alarm to test.</p>
     pub fn get_alarm_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +91,7 @@ impl TestAlarmInputBuilder {
     /// <p><code>OK</code> - The metric is within the defined threshold.</p></li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::AlarmState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The alarm state to test.</p>
     /// <p>An alarm has the following possible states that can be tested:</p>
@@ -110,9 +108,14 @@ impl TestAlarmInputBuilder {
     }
     /// Consumes the builder and constructs a [`TestAlarmInput`](crate::operation::test_alarm::TestAlarmInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::test_alarm::TestAlarmInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::test_alarm::TestAlarmInput {
-            alarm_name: self.alarm_name,
-            state: self.state,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::test_alarm::TestAlarmInput {
+                alarm_name: self.alarm_name
+                ,
+                state: self.state
+                ,
+            }
+        )
     }
 }
+

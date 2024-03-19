@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTrustAnchors`](crate::operation::list_trust_anchors::builders::ListTrustAnchorsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_trust_anchors::builders::ListTrustAnchorsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_trust_anchors::builders::ListTrustAnchorsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_trust_anchors::builders::ListTrustAnchorsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p><br>
     ///   - [`page_size(i32)`](crate::operation::list_trust_anchors::builders::ListTrustAnchorsFluentBuilder::page_size) / [`set_page_size(Option<i32>)`](crate::operation::list_trust_anchors::builders::ListTrustAnchorsFluentBuilder::set_page_size):<br>required: **false**<br><p>The number of resources in the paginated list.</p><br>
-    /// - On success, responds with [`ListTrustAnchorsOutput`](crate::operation::list_trust_anchors::ListTrustAnchorsOutput) with field(s):
+                            /// - On success, responds with [`ListTrustAnchorsOutput`](crate::operation::list_trust_anchors::ListTrustAnchorsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_trust_anchors::ListTrustAnchorsOutput::next_token): <p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p>
     ///   - [`trust_anchors(Option<Vec::<TrustAnchorDetail>>)`](crate::operation::list_trust_anchors::ListTrustAnchorsOutput::trust_anchors): <p>A list of trust anchors.</p>
-    /// - On failure, responds with [`SdkError<ListTrustAnchorsError>`](crate::operation::list_trust_anchors::ListTrustAnchorsError)
+                            /// - On failure, responds with [`SdkError<ListTrustAnchorsError>`](crate::operation::list_trust_anchors::ListTrustAnchorsError)
     pub fn list_trust_anchors(&self) -> crate::operation::list_trust_anchors::builders::ListTrustAnchorsFluentBuilder {
-        crate::operation::list_trust_anchors::builders::ListTrustAnchorsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_trust_anchors::builders::ListTrustAnchorsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

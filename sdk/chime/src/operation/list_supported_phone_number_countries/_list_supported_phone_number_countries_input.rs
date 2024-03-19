@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSupportedPhoneNumberCountriesInput {
+pub struct ListSupportedPhoneNumberCountriesInput  {
     /// <p>The phone number product type.</p>
     pub product_type: ::std::option::Option<crate::types::PhoneNumberProductType>,
 }
-impl ListSupportedPhoneNumberCountriesInput {
+impl  ListSupportedPhoneNumberCountriesInput  {
     /// <p>The phone number product type.</p>
-    pub fn product_type(&self) -> ::std::option::Option<&crate::types::PhoneNumberProductType> {
+    pub fn product_type(&self) -> ::std::option::Option<& crate::types::PhoneNumberProductType> {
         self.product_type.as_ref()
     }
 }
@@ -34,24 +34,20 @@ impl ListSupportedPhoneNumberCountriesInputBuilder {
     }
     /// <p>The phone number product type.</p>
     pub fn set_product_type(mut self, input: ::std::option::Option<crate::types::PhoneNumberProductType>) -> Self {
-        self.product_type = input;
-        self
+        self.product_type = input; self
     }
     /// <p>The phone number product type.</p>
     pub fn get_product_type(&self) -> &::std::option::Option<crate::types::PhoneNumberProductType> {
         &self.product_type
     }
     /// Consumes the builder and constructs a [`ListSupportedPhoneNumberCountriesInput`](crate::operation::list_supported_phone_number_countries::ListSupportedPhoneNumberCountriesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_supported_phone_number_countries::ListSupportedPhoneNumberCountriesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_supported_phone_number_countries::ListSupportedPhoneNumberCountriesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_supported_phone_number_countries::ListSupportedPhoneNumberCountriesInput {
-                product_type: self.product_type,
-            },
+                product_type: self.product_type
+                ,
+            }
         )
     }
 }
+

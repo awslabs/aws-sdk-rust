@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListEksAnywhereSubscriptionsOutput {
+pub struct ListEksAnywhereSubscriptionsOutput  {
     /// <p>A list of all subscription objects in the region, filtered by includeStatus and paginated by nextToken and maxResults.</p>
-    pub subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::EksAnywhereSubscription>>,
+    pub subscriptions: ::std::option::Option<::std::vec::Vec::<crate::types::EksAnywhereSubscription>>,
     /// <p>The nextToken value to include in a future ListEksAnywhereSubscriptions request. When the results of a ListEksAnywhereSubscriptions request exceed maxResults, you can use this value to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListEksAnywhereSubscriptionsOutput {
+impl  ListEksAnywhereSubscriptionsOutput  {
     /// <p>A list of all subscription objects in the region, filtered by includeStatus and paginated by nextToken and maxResults.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscriptions.is_none()`.
-    pub fn subscriptions(&self) -> &[crate::types::EksAnywhereSubscription] {
-        self.subscriptions.as_deref().unwrap_or_default()
+    pub fn subscriptions(&self) -> & [crate::types::EksAnywhereSubscription] {
+        self.subscriptions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The nextToken value to include in a future ListEksAnywhereSubscriptions request. When the results of a ListEksAnywhereSubscriptions request exceed maxResults, you can use this value to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListEksAnywhereSubscriptionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListEksAnywhereSubscriptionsOutput {
     /// Creates a new builder-style object to manufacture [`ListEksAnywhereSubscriptionsOutput`](crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsOutput).
     pub fn builder() -> crate::operation::list_eks_anywhere_subscriptions::builders::ListEksAnywhereSubscriptionsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListEksAnywhereSubscriptionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEksAnywhereSubscriptionsOutputBuilder {
-    pub(crate) subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::EksAnywhereSubscription>>,
+    pub(crate) subscriptions: ::std::option::Option<::std::vec::Vec::<crate::types::EksAnywhereSubscription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListEksAnywhereSubscriptionsOutputBuilder {
     /// <p>A list of all subscription objects in the region, filtered by includeStatus and paginated by nextToken and maxResults.</p>
     pub fn subscriptions(mut self, input: crate::types::EksAnywhereSubscription) -> Self {
         let mut v = self.subscriptions.unwrap_or_default();
-        v.push(input);
-        self.subscriptions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.subscriptions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of all subscription objects in the region, filtered by includeStatus and paginated by nextToken and maxResults.</p>
-    pub fn set_subscriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EksAnywhereSubscription>>) -> Self {
-        self.subscriptions = input;
-        self
+    pub fn set_subscriptions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EksAnywhereSubscription>>) -> Self {
+        self.subscriptions = input; self
     }
     /// <p>A list of all subscription objects in the region, filtered by includeStatus and paginated by nextToken and maxResults.</p>
-    pub fn get_subscriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EksAnywhereSubscription>> {
+    pub fn get_subscriptions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EksAnywhereSubscription>> {
         &self.subscriptions
     }
     /// <p>The nextToken value to include in a future ListEksAnywhereSubscriptions request. When the results of a ListEksAnywhereSubscriptions request exceed maxResults, you can use this value to retrieve the next page of results. This value is null when there are no more results to return.</p>
@@ -69,28 +69,30 @@ impl ListEksAnywhereSubscriptionsOutputBuilder {
     }
     /// <p>The nextToken value to include in a future ListEksAnywhereSubscriptions request. When the results of a ListEksAnywhereSubscriptions request exceed maxResults, you can use this value to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The nextToken value to include in a future ListEksAnywhereSubscriptions request. When the results of a ListEksAnywhereSubscriptions request exceed maxResults, you can use this value to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListEksAnywhereSubscriptionsOutput`](crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsOutput).
     pub fn build(self) -> crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsOutput {
         crate::operation::list_eks_anywhere_subscriptions::ListEksAnywhereSubscriptionsOutput {
-            subscriptions: self.subscriptions,
-            next_token: self.next_token,
+            subscriptions: self.subscriptions
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

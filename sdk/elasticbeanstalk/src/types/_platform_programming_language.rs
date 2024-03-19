@@ -3,19 +3,19 @@
 /// <p>A programming language supported by the platform.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PlatformProgrammingLanguage {
+pub struct PlatformProgrammingLanguage  {
     /// <p>The name of the programming language.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the programming language.</p>
     pub version: ::std::option::Option<::std::string::String>,
 }
-impl PlatformProgrammingLanguage {
+impl  PlatformProgrammingLanguage  {
     /// <p>The name of the programming language.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the programming language.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl PlatformProgrammingLanguageBuilder {
     }
     /// <p>The name of the programming language.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the programming language.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl PlatformProgrammingLanguageBuilder {
     }
     /// <p>The version of the programming language.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of the programming language.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl PlatformProgrammingLanguageBuilder {
     /// Consumes the builder and constructs a [`PlatformProgrammingLanguage`](crate::types::PlatformProgrammingLanguage).
     pub fn build(self) -> crate::types::PlatformProgrammingLanguage {
         crate::types::PlatformProgrammingLanguage {
-            name: self.name,
-            version: self.version,
+            name: self.name
+            ,
+            version: self.version
+            ,
         }
     }
 }
+

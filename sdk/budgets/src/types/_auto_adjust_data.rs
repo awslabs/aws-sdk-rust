@@ -3,7 +3,7 @@
 /// <p>The parameters that determine the budget amount for an auto-adjusting budget.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutoAdjustData {
+pub struct AutoAdjustData  {
     /// <p>The string that defines whether your budget auto-adjusts based on historical or forecasted data.</p>
     pub auto_adjust_type: crate::types::AutoAdjustType,
     /// <p>The parameters that define or describe the historical data that your auto-adjusting budget is based on.</p>
@@ -11,17 +11,17 @@ pub struct AutoAdjustData {
     /// <p>The last time that your budget was auto-adjusted.</p>
     pub last_auto_adjust_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl AutoAdjustData {
+impl  AutoAdjustData  {
     /// <p>The string that defines whether your budget auto-adjusts based on historical or forecasted data.</p>
-    pub fn auto_adjust_type(&self) -> &crate::types::AutoAdjustType {
+    pub fn auto_adjust_type(&self) -> & crate::types::AutoAdjustType {
         &self.auto_adjust_type
     }
     /// <p>The parameters that define or describe the historical data that your auto-adjusting budget is based on.</p>
-    pub fn historical_options(&self) -> ::std::option::Option<&crate::types::HistoricalOptions> {
+    pub fn historical_options(&self) -> ::std::option::Option<& crate::types::HistoricalOptions> {
         self.historical_options.as_ref()
     }
     /// <p>The last time that your budget was auto-adjusted.</p>
-    pub fn last_auto_adjust_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_auto_adjust_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_auto_adjust_time.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl AutoAdjustDataBuilder {
     }
     /// <p>The string that defines whether your budget auto-adjusts based on historical or forecasted data.</p>
     pub fn set_auto_adjust_type(mut self, input: ::std::option::Option<crate::types::AutoAdjustType>) -> Self {
-        self.auto_adjust_type = input;
-        self
+        self.auto_adjust_type = input; self
     }
     /// <p>The string that defines whether your budget auto-adjusts based on historical or forecasted data.</p>
     pub fn get_auto_adjust_type(&self) -> &::std::option::Option<crate::types::AutoAdjustType> {
@@ -63,8 +62,7 @@ impl AutoAdjustDataBuilder {
     }
     /// <p>The parameters that define or describe the historical data that your auto-adjusting budget is based on.</p>
     pub fn set_historical_options(mut self, input: ::std::option::Option<crate::types::HistoricalOptions>) -> Self {
-        self.historical_options = input;
-        self
+        self.historical_options = input; self
     }
     /// <p>The parameters that define or describe the historical data that your auto-adjusting budget is based on.</p>
     pub fn get_historical_options(&self) -> &::std::option::Option<crate::types::HistoricalOptions> {
@@ -77,8 +75,7 @@ impl AutoAdjustDataBuilder {
     }
     /// <p>The last time that your budget was auto-adjusted.</p>
     pub fn set_last_auto_adjust_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_auto_adjust_time = input;
-        self
+        self.last_auto_adjust_time = input; self
     }
     /// <p>The last time that your budget was auto-adjusted.</p>
     pub fn get_last_auto_adjust_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -88,15 +85,19 @@ impl AutoAdjustDataBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`auto_adjust_type`](crate::types::builders::AutoAdjustDataBuilder::auto_adjust_type)
     pub fn build(self) -> ::std::result::Result<crate::types::AutoAdjustData, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AutoAdjustData {
-            auto_adjust_type: self.auto_adjust_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "auto_adjust_type",
-                    "auto_adjust_type was not specified but it is required when building AutoAdjustData",
-                )
-            })?,
-            historical_options: self.historical_options,
-            last_auto_adjust_time: self.last_auto_adjust_time,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AutoAdjustData {
+                auto_adjust_type: self.auto_adjust_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("auto_adjust_type", "auto_adjust_type was not specified but it is required when building AutoAdjustData")
+                    )?
+                ,
+                historical_options: self.historical_options
+                ,
+                last_auto_adjust_time: self.last_auto_adjust_time
+                ,
+            }
+        )
     }
 }
+

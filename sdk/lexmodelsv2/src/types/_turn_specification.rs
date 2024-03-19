@@ -3,19 +3,19 @@
 /// <p>Contains information about the messages in the turn.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TurnSpecification {
+pub struct TurnSpecification  {
     /// <p>Contains information about the agent messages in the turn.</p>
     pub agent_turn: ::std::option::Option<crate::types::AgentTurnSpecification>,
     /// <p>Contains information about the user messages in the turn.</p>
     pub user_turn: ::std::option::Option<crate::types::UserTurnSpecification>,
 }
-impl TurnSpecification {
+impl  TurnSpecification  {
     /// <p>Contains information about the agent messages in the turn.</p>
-    pub fn agent_turn(&self) -> ::std::option::Option<&crate::types::AgentTurnSpecification> {
+    pub fn agent_turn(&self) -> ::std::option::Option<& crate::types::AgentTurnSpecification> {
         self.agent_turn.as_ref()
     }
     /// <p>Contains information about the user messages in the turn.</p>
-    pub fn user_turn(&self) -> ::std::option::Option<&crate::types::UserTurnSpecification> {
+    pub fn user_turn(&self) -> ::std::option::Option<& crate::types::UserTurnSpecification> {
         self.user_turn.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl TurnSpecificationBuilder {
     }
     /// <p>Contains information about the agent messages in the turn.</p>
     pub fn set_agent_turn(mut self, input: ::std::option::Option<crate::types::AgentTurnSpecification>) -> Self {
-        self.agent_turn = input;
-        self
+        self.agent_turn = input; self
     }
     /// <p>Contains information about the agent messages in the turn.</p>
     pub fn get_agent_turn(&self) -> &::std::option::Option<crate::types::AgentTurnSpecification> {
@@ -55,8 +54,7 @@ impl TurnSpecificationBuilder {
     }
     /// <p>Contains information about the user messages in the turn.</p>
     pub fn set_user_turn(mut self, input: ::std::option::Option<crate::types::UserTurnSpecification>) -> Self {
-        self.user_turn = input;
-        self
+        self.user_turn = input; self
     }
     /// <p>Contains information about the user messages in the turn.</p>
     pub fn get_user_turn(&self) -> &::std::option::Option<crate::types::UserTurnSpecification> {
@@ -65,8 +63,11 @@ impl TurnSpecificationBuilder {
     /// Consumes the builder and constructs a [`TurnSpecification`](crate::types::TurnSpecification).
     pub fn build(self) -> crate::types::TurnSpecification {
         crate::types::TurnSpecification {
-            agent_turn: self.agent_turn,
-            user_turn: self.user_turn,
+            agent_turn: self.agent_turn
+            ,
+            user_turn: self.user_turn
+            ,
         }
     }
 }
+

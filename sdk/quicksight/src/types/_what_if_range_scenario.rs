@@ -3,7 +3,7 @@
 /// <p>Provides the forecast to meet the target for a particular date range.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WhatIfRangeScenario {
+pub struct WhatIfRangeScenario  {
     /// <p>The start date in the date range that you need the forecast results for.</p>
     pub start_date: ::aws_smithy_types::DateTime,
     /// <p>The end date in the date range that you need the forecast results for.</p>
@@ -11,13 +11,13 @@ pub struct WhatIfRangeScenario {
     /// <p>The target value that you want to meet for the provided date range.</p>
     pub value: f64,
 }
-impl WhatIfRangeScenario {
+impl  WhatIfRangeScenario  {
     /// <p>The start date in the date range that you need the forecast results for.</p>
-    pub fn start_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn start_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.start_date
     }
     /// <p>The end date in the date range that you need the forecast results for.</p>
-    pub fn end_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn end_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.end_date
     }
     /// <p>The target value that you want to meet for the provided date range.</p>
@@ -49,8 +49,7 @@ impl WhatIfRangeScenarioBuilder {
     }
     /// <p>The start date in the date range that you need the forecast results for.</p>
     pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_date = input;
-        self
+        self.start_date = input; self
     }
     /// <p>The start date in the date range that you need the forecast results for.</p>
     pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -64,8 +63,7 @@ impl WhatIfRangeScenarioBuilder {
     }
     /// <p>The end date in the date range that you need the forecast results for.</p>
     pub fn set_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_date = input;
-        self
+        self.end_date = input; self
     }
     /// <p>The end date in the date range that you need the forecast results for.</p>
     pub fn get_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -79,8 +77,7 @@ impl WhatIfRangeScenarioBuilder {
     }
     /// <p>The target value that you want to meet for the provided date range.</p>
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The target value that you want to meet for the provided date range.</p>
     pub fn get_value(&self) -> &::std::option::Option<f64> {
@@ -91,20 +88,23 @@ impl WhatIfRangeScenarioBuilder {
     /// - [`start_date`](crate::types::builders::WhatIfRangeScenarioBuilder::start_date)
     /// - [`end_date`](crate::types::builders::WhatIfRangeScenarioBuilder::end_date)
     pub fn build(self) -> ::std::result::Result<crate::types::WhatIfRangeScenario, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::WhatIfRangeScenario {
-            start_date: self.start_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start_date",
-                    "start_date was not specified but it is required when building WhatIfRangeScenario",
-                )
-            })?,
-            end_date: self.end_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "end_date",
-                    "end_date was not specified but it is required when building WhatIfRangeScenario",
-                )
-            })?,
-            value: self.value.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::WhatIfRangeScenario {
+                start_date: self.start_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start_date", "start_date was not specified but it is required when building WhatIfRangeScenario")
+                    )?
+                ,
+                end_date: self.end_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("end_date", "end_date was not specified but it is required when building WhatIfRangeScenario")
+                    )?
+                ,
+                value: self.value
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

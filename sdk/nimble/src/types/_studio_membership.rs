@@ -5,7 +5,7 @@
 /// <p>When you add a user to studio membership with the ADMIN persona, upon logging in to the Nimble Studio portal, they are granted permissions specified by the Studio's Admin IAM role.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StudioMembership {
+pub struct StudioMembership  {
     /// <p>The ID of the identity store.</p>
     pub identity_store_id: ::std::option::Option<::std::string::String>,
     /// <p>The persona.</p>
@@ -15,21 +15,21 @@ pub struct StudioMembership {
     /// <p>The Active Directory Security Identifier for this user, if available.</p>
     pub sid: ::std::option::Option<::std::string::String>,
 }
-impl StudioMembership {
+impl  StudioMembership  {
     /// <p>The ID of the identity store.</p>
-    pub fn identity_store_id(&self) -> ::std::option::Option<&str> {
+    pub fn identity_store_id(&self) -> ::std::option::Option<& str> {
         self.identity_store_id.as_deref()
     }
     /// <p>The persona.</p>
-    pub fn persona(&self) -> ::std::option::Option<&crate::types::StudioPersona> {
+    pub fn persona(&self) -> ::std::option::Option<& crate::types::StudioPersona> {
         self.persona.as_ref()
     }
     /// <p>The principal ID.</p>
-    pub fn principal_id(&self) -> ::std::option::Option<&str> {
+    pub fn principal_id(&self) -> ::std::option::Option<& str> {
         self.principal_id.as_deref()
     }
     /// <p>The Active Directory Security Identifier for this user, if available.</p>
-    pub fn sid(&self) -> ::std::option::Option<&str> {
+    pub fn sid(&self) -> ::std::option::Option<& str> {
         self.sid.as_deref()
     }
 }
@@ -57,8 +57,7 @@ impl StudioMembershipBuilder {
     }
     /// <p>The ID of the identity store.</p>
     pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_store_id = input;
-        self
+        self.identity_store_id = input; self
     }
     /// <p>The ID of the identity store.</p>
     pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl StudioMembershipBuilder {
     }
     /// <p>The persona.</p>
     pub fn set_persona(mut self, input: ::std::option::Option<crate::types::StudioPersona>) -> Self {
-        self.persona = input;
-        self
+        self.persona = input; self
     }
     /// <p>The persona.</p>
     pub fn get_persona(&self) -> &::std::option::Option<crate::types::StudioPersona> {
@@ -85,8 +83,7 @@ impl StudioMembershipBuilder {
     }
     /// <p>The principal ID.</p>
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal_id = input;
-        self
+        self.principal_id = input; self
     }
     /// <p>The principal ID.</p>
     pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +96,7 @@ impl StudioMembershipBuilder {
     }
     /// <p>The Active Directory Security Identifier for this user, if available.</p>
     pub fn set_sid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sid = input;
-        self
+        self.sid = input; self
     }
     /// <p>The Active Directory Security Identifier for this user, if available.</p>
     pub fn get_sid(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,10 +105,15 @@ impl StudioMembershipBuilder {
     /// Consumes the builder and constructs a [`StudioMembership`](crate::types::StudioMembership).
     pub fn build(self) -> crate::types::StudioMembership {
         crate::types::StudioMembership {
-            identity_store_id: self.identity_store_id,
-            persona: self.persona,
-            principal_id: self.principal_id,
-            sid: self.sid,
+            identity_store_id: self.identity_store_id
+            ,
+            persona: self.persona
+            ,
+            principal_id: self.principal_id
+            ,
+            sid: self.sid
+            ,
         }
     }
 }
+

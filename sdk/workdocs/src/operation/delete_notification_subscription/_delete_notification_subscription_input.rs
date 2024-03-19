@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteNotificationSubscriptionInput {
+pub struct DeleteNotificationSubscriptionInput  {
     /// <p>The ID of the subscription.</p>
     pub subscription_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the organization.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteNotificationSubscriptionInput {
+impl  DeleteNotificationSubscriptionInput  {
     /// <p>The ID of the subscription.</p>
-    pub fn subscription_id(&self) -> ::std::option::Option<&str> {
+    pub fn subscription_id(&self) -> ::std::option::Option<& str> {
         self.subscription_id.as_deref()
     }
     /// <p>The ID of the organization.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteNotificationSubscriptionInputBuilder {
     }
     /// <p>The ID of the subscription.</p>
     pub fn set_subscription_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subscription_id = input;
-        self
+        self.subscription_id = input; self
     }
     /// <p>The ID of the subscription.</p>
     pub fn get_subscription_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DeleteNotificationSubscriptionInputBuilder {
     }
     /// <p>The ID of the organization.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The ID of the organization.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.organization_id
     }
     /// Consumes the builder and constructs a [`DeleteNotificationSubscriptionInput`](crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionInput {
-            subscription_id: self.subscription_id,
-            organization_id: self.organization_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionInput {
+                subscription_id: self.subscription_id
+                ,
+                organization_id: self.organization_id
+                ,
+            }
+        )
     }
 }
+

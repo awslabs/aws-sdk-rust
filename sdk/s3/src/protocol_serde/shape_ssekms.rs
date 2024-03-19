@@ -21,21 +21,19 @@ pub fn de_ssekms(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resul
             _ => {}
         }
     }
-    Ok(crate::serde_util::ssekms_correct_errors(builder)
-        .build()
-        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
+    Ok(crate::serde_util::ssekms_correct_errors(builder).build().map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }
 
-pub fn ser_ssekms(
-    input: &crate::types::Ssekms,
-    writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+pub fn ser_ssekms(input: &crate::types::Ssekms, writer: ::aws_smithy_xml::encode::ElWriter) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    {
+     {
         let mut inner_writer = scope.start_el("KeyId").finish();
-        inner_writer.data(input.key_id.as_str());
+        inner_writer.data(
+            input.key_id.as_str()
+        );
     }
     scope.finish();
     Ok(())
 }
+

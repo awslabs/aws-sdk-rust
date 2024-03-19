@@ -3,7 +3,7 @@
 /// <p>Permissions designate which private CA actions can be performed by an Amazon Web Services service or entity. In order for ACM to automatically renew private certificates, you must give the ACM service principal all available permissions (<code>IssueCertificate</code>, <code>GetCertificate</code>, and <code>ListPermissions</code>). Permissions can be assigned with the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreatePermission.html">CreatePermission</a> action, removed with the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_DeletePermission.html">DeletePermission</a> action, and listed with the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListPermissions.html">ListPermissions</a> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Permission {
+pub struct Permission  {
     /// <p>The Amazon Resource Number (ARN) of the private CA from which the permission was issued.</p>
     pub certificate_authority_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the permission was created.</p>
@@ -13,35 +13,36 @@ pub struct Permission {
     /// <p>The ID of the account that assigned the permission.</p>
     pub source_account: ::std::option::Option<::std::string::String>,
     /// <p>The private CA actions that can be performed by the designated Amazon Web Services service.</p>
-    pub actions: ::std::option::Option<::std::vec::Vec<crate::types::ActionType>>,
+    pub actions: ::std::option::Option<::std::vec::Vec::<crate::types::ActionType>>,
     /// <p>The name of the policy that is associated with the permission.</p>
     pub policy: ::std::option::Option<::std::string::String>,
 }
-impl Permission {
+impl  Permission  {
     /// <p>The Amazon Resource Number (ARN) of the private CA from which the permission was issued.</p>
-    pub fn certificate_authority_arn(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_authority_arn(&self) -> ::std::option::Option<& str> {
         self.certificate_authority_arn.as_deref()
     }
     /// <p>The time at which the permission was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Amazon Web Services service or entity that holds the permission. At this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
-    pub fn principal(&self) -> ::std::option::Option<&str> {
+    pub fn principal(&self) -> ::std::option::Option<& str> {
         self.principal.as_deref()
     }
     /// <p>The ID of the account that assigned the permission.</p>
-    pub fn source_account(&self) -> ::std::option::Option<&str> {
+    pub fn source_account(&self) -> ::std::option::Option<& str> {
         self.source_account.as_deref()
     }
     /// <p>The private CA actions that can be performed by the designated Amazon Web Services service.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
-    pub fn actions(&self) -> &[crate::types::ActionType] {
-        self.actions.as_deref().unwrap_or_default()
+    pub fn actions(&self) -> & [crate::types::ActionType] {
+        self.actions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the policy that is associated with the permission.</p>
-    pub fn policy(&self) -> ::std::option::Option<&str> {
+    pub fn policy(&self) -> ::std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
@@ -60,7 +61,7 @@ pub struct PermissionBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) principal: ::std::option::Option<::std::string::String>,
     pub(crate) source_account: ::std::option::Option<::std::string::String>,
-    pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::ActionType>>,
+    pub(crate) actions: ::std::option::Option<::std::vec::Vec::<crate::types::ActionType>>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,
 }
 impl PermissionBuilder {
@@ -71,8 +72,7 @@ impl PermissionBuilder {
     }
     /// <p>The Amazon Resource Number (ARN) of the private CA from which the permission was issued.</p>
     pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_authority_arn = input;
-        self
+        self.certificate_authority_arn = input; self
     }
     /// <p>The Amazon Resource Number (ARN) of the private CA from which the permission was issued.</p>
     pub fn get_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +85,7 @@ impl PermissionBuilder {
     }
     /// <p>The time at which the permission was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time at which the permission was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -99,8 +98,7 @@ impl PermissionBuilder {
     }
     /// <p>The Amazon Web Services service or entity that holds the permission. At this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
     pub fn set_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal = input;
-        self
+        self.principal = input; self
     }
     /// <p>The Amazon Web Services service or entity that holds the permission. At this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
     pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +111,7 @@ impl PermissionBuilder {
     }
     /// <p>The ID of the account that assigned the permission.</p>
     pub fn set_source_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_account = input;
-        self
+        self.source_account = input; self
     }
     /// <p>The ID of the account that assigned the permission.</p>
     pub fn get_source_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,17 +124,16 @@ impl PermissionBuilder {
     /// <p>The private CA actions that can be performed by the designated Amazon Web Services service.</p>
     pub fn actions(mut self, input: crate::types::ActionType) -> Self {
         let mut v = self.actions.unwrap_or_default();
-        v.push(input);
-        self.actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The private CA actions that can be performed by the designated Amazon Web Services service.</p>
-    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActionType>>) -> Self {
-        self.actions = input;
-        self
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ActionType>>) -> Self {
+        self.actions = input; self
     }
     /// <p>The private CA actions that can be performed by the designated Amazon Web Services service.</p>
-    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionType>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ActionType>> {
         &self.actions
     }
     /// <p>The name of the policy that is associated with the permission.</p>
@@ -147,8 +143,7 @@ impl PermissionBuilder {
     }
     /// <p>The name of the policy that is associated with the permission.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>The name of the policy that is associated with the permission.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,12 +152,19 @@ impl PermissionBuilder {
     /// Consumes the builder and constructs a [`Permission`](crate::types::Permission).
     pub fn build(self) -> crate::types::Permission {
         crate::types::Permission {
-            certificate_authority_arn: self.certificate_authority_arn,
-            created_at: self.created_at,
-            principal: self.principal,
-            source_account: self.source_account,
-            actions: self.actions,
-            policy: self.policy,
+            certificate_authority_arn: self.certificate_authority_arn
+            ,
+            created_at: self.created_at
+            ,
+            principal: self.principal
+            ,
+            source_account: self.source_account
+            ,
+            actions: self.actions
+            ,
+            policy: self.policy
+            ,
         }
     }
 }
+

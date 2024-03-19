@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTimeBasedAutoScalingInput {
+pub struct DescribeTimeBasedAutoScalingInput  {
     /// <p>An array of instance IDs.</p>
-    pub instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub instance_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DescribeTimeBasedAutoScalingInput {
+impl  DescribeTimeBasedAutoScalingInput  {
     /// <p>An array of instance IDs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_ids.is_none()`.
-    pub fn instance_ids(&self) -> &[::std::string::String] {
-        self.instance_ids.as_deref().unwrap_or_default()
+    pub fn instance_ids(&self) -> & [::std::string::String] {
+        self.instance_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeTimeBasedAutoScalingInput {
@@ -25,7 +26,7 @@ impl DescribeTimeBasedAutoScalingInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTimeBasedAutoScalingInputBuilder {
-    pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DescribeTimeBasedAutoScalingInputBuilder {
     /// Appends an item to `instance_ids`.
@@ -35,28 +36,26 @@ impl DescribeTimeBasedAutoScalingInputBuilder {
     /// <p>An array of instance IDs.</p>
     pub fn instance_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_ids.unwrap_or_default();
-        v.push(input.into());
-        self.instance_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.instance_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of instance IDs.</p>
-    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.instance_ids = input;
-        self
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.instance_ids = input; self
     }
     /// <p>An array of instance IDs.</p>
-    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.instance_ids
     }
     /// Consumes the builder and constructs a [`DescribeTimeBasedAutoScalingInput`](crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingInput {
-            instance_ids: self.instance_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingInput {
+                instance_ids: self.instance_ids
+                ,
+            }
+        )
     }
 }
+

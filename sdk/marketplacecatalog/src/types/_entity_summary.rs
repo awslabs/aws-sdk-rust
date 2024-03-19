@@ -3,7 +3,7 @@
 /// <p>This object is a container for common summary information about the entity. The summary doesn't contain the whole entity structure, but it does contain information common across all entities.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EntitySummary {
+pub struct EntitySummary  {
     /// <p>The name for the entity. This value is not unique. It is defined by the seller.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the entity.</p>
@@ -29,53 +29,53 @@ pub struct EntitySummary {
     /// <p>An object that contains summary information about the Resale Authorization.</p>
     pub resale_authorization_summary: ::std::option::Option<crate::types::ResaleAuthorizationSummary>,
 }
-impl EntitySummary {
+impl  EntitySummary  {
     /// <p>The name for the entity. This value is not unique. It is defined by the seller.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of the entity.</p>
-    pub fn entity_type(&self) -> ::std::option::Option<&str> {
+    pub fn entity_type(&self) -> ::std::option::Option<& str> {
         self.entity_type.as_deref()
     }
     /// <p>The unique identifier for the entity.</p>
-    pub fn entity_id(&self) -> ::std::option::Option<&str> {
+    pub fn entity_id(&self) -> ::std::option::Option<& str> {
         self.entity_id.as_deref()
     }
     /// <p>The ARN associated with the unique identifier for the entity.</p>
-    pub fn entity_arn(&self) -> ::std::option::Option<&str> {
+    pub fn entity_arn(&self) -> ::std::option::Option<& str> {
         self.entity_arn.as_deref()
     }
     /// <p>The last time the entity was published, using ISO 8601 format (2018-02-27T13:45:22Z).</p>
-    pub fn last_modified_date(&self) -> ::std::option::Option<&str> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<& str> {
         self.last_modified_date.as_deref()
     }
     /// <p>The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the entity was published and then unpublished and only existing buyers can view it).</p>
-    pub fn visibility(&self) -> ::std::option::Option<&str> {
+    pub fn visibility(&self) -> ::std::option::Option<& str> {
         self.visibility.as_deref()
     }
     /// <p>An object that contains summary information about the AMI product.</p>
-    pub fn ami_product_summary(&self) -> ::std::option::Option<&crate::types::AmiProductSummary> {
+    pub fn ami_product_summary(&self) -> ::std::option::Option<& crate::types::AmiProductSummary> {
         self.ami_product_summary.as_ref()
     }
     /// <p>An object that contains summary information about the container product.</p>
-    pub fn container_product_summary(&self) -> ::std::option::Option<&crate::types::ContainerProductSummary> {
+    pub fn container_product_summary(&self) -> ::std::option::Option<& crate::types::ContainerProductSummary> {
         self.container_product_summary.as_ref()
     }
     /// <p>An object that contains summary information about the data product.</p>
-    pub fn data_product_summary(&self) -> ::std::option::Option<&crate::types::DataProductSummary> {
+    pub fn data_product_summary(&self) -> ::std::option::Option<& crate::types::DataProductSummary> {
         self.data_product_summary.as_ref()
     }
     /// <p>An object that contains summary information about the SaaS product.</p>
-    pub fn saa_s_product_summary(&self) -> ::std::option::Option<&crate::types::SaaSProductSummary> {
+    pub fn saa_s_product_summary(&self) -> ::std::option::Option<& crate::types::SaaSProductSummary> {
         self.saa_s_product_summary.as_ref()
     }
     /// <p>An object that contains summary information about the offer.</p>
-    pub fn offer_summary(&self) -> ::std::option::Option<&crate::types::OfferSummary> {
+    pub fn offer_summary(&self) -> ::std::option::Option<& crate::types::OfferSummary> {
         self.offer_summary.as_ref()
     }
     /// <p>An object that contains summary information about the Resale Authorization.</p>
-    pub fn resale_authorization_summary(&self) -> ::std::option::Option<&crate::types::ResaleAuthorizationSummary> {
+    pub fn resale_authorization_summary(&self) -> ::std::option::Option<& crate::types::ResaleAuthorizationSummary> {
         self.resale_authorization_summary.as_ref()
     }
 }
@@ -111,8 +111,7 @@ impl EntitySummaryBuilder {
     }
     /// <p>The name for the entity. This value is not unique. It is defined by the seller.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name for the entity. This value is not unique. It is defined by the seller.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +124,7 @@ impl EntitySummaryBuilder {
     }
     /// <p>The type of the entity.</p>
     pub fn set_entity_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_type = input;
-        self
+        self.entity_type = input; self
     }
     /// <p>The type of the entity.</p>
     pub fn get_entity_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +137,7 @@ impl EntitySummaryBuilder {
     }
     /// <p>The unique identifier for the entity.</p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>The unique identifier for the entity.</p>
     pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +150,7 @@ impl EntitySummaryBuilder {
     }
     /// <p>The ARN associated with the unique identifier for the entity.</p>
     pub fn set_entity_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_arn = input;
-        self
+        self.entity_arn = input; self
     }
     /// <p>The ARN associated with the unique identifier for the entity.</p>
     pub fn get_entity_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +163,7 @@ impl EntitySummaryBuilder {
     }
     /// <p>The last time the entity was published, using ISO 8601 format (2018-02-27T13:45:22Z).</p>
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_modified_date = input;
-        self
+        self.last_modified_date = input; self
     }
     /// <p>The last time the entity was published, using ISO 8601 format (2018-02-27T13:45:22Z).</p>
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +176,7 @@ impl EntitySummaryBuilder {
     }
     /// <p>The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the entity was published and then unpublished and only existing buyers can view it).</p>
     pub fn set_visibility(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.visibility = input;
-        self
+        self.visibility = input; self
     }
     /// <p>The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the entity was published and then unpublished and only existing buyers can view it).</p>
     pub fn get_visibility(&self) -> &::std::option::Option<::std::string::String> {
@@ -195,8 +189,7 @@ impl EntitySummaryBuilder {
     }
     /// <p>An object that contains summary information about the AMI product.</p>
     pub fn set_ami_product_summary(mut self, input: ::std::option::Option<crate::types::AmiProductSummary>) -> Self {
-        self.ami_product_summary = input;
-        self
+        self.ami_product_summary = input; self
     }
     /// <p>An object that contains summary information about the AMI product.</p>
     pub fn get_ami_product_summary(&self) -> &::std::option::Option<crate::types::AmiProductSummary> {
@@ -209,8 +202,7 @@ impl EntitySummaryBuilder {
     }
     /// <p>An object that contains summary information about the container product.</p>
     pub fn set_container_product_summary(mut self, input: ::std::option::Option<crate::types::ContainerProductSummary>) -> Self {
-        self.container_product_summary = input;
-        self
+        self.container_product_summary = input; self
     }
     /// <p>An object that contains summary information about the container product.</p>
     pub fn get_container_product_summary(&self) -> &::std::option::Option<crate::types::ContainerProductSummary> {
@@ -223,8 +215,7 @@ impl EntitySummaryBuilder {
     }
     /// <p>An object that contains summary information about the data product.</p>
     pub fn set_data_product_summary(mut self, input: ::std::option::Option<crate::types::DataProductSummary>) -> Self {
-        self.data_product_summary = input;
-        self
+        self.data_product_summary = input; self
     }
     /// <p>An object that contains summary information about the data product.</p>
     pub fn get_data_product_summary(&self) -> &::std::option::Option<crate::types::DataProductSummary> {
@@ -237,8 +228,7 @@ impl EntitySummaryBuilder {
     }
     /// <p>An object that contains summary information about the SaaS product.</p>
     pub fn set_saa_s_product_summary(mut self, input: ::std::option::Option<crate::types::SaaSProductSummary>) -> Self {
-        self.saa_s_product_summary = input;
-        self
+        self.saa_s_product_summary = input; self
     }
     /// <p>An object that contains summary information about the SaaS product.</p>
     pub fn get_saa_s_product_summary(&self) -> &::std::option::Option<crate::types::SaaSProductSummary> {
@@ -251,8 +241,7 @@ impl EntitySummaryBuilder {
     }
     /// <p>An object that contains summary information about the offer.</p>
     pub fn set_offer_summary(mut self, input: ::std::option::Option<crate::types::OfferSummary>) -> Self {
-        self.offer_summary = input;
-        self
+        self.offer_summary = input; self
     }
     /// <p>An object that contains summary information about the offer.</p>
     pub fn get_offer_summary(&self) -> &::std::option::Option<crate::types::OfferSummary> {
@@ -265,8 +254,7 @@ impl EntitySummaryBuilder {
     }
     /// <p>An object that contains summary information about the Resale Authorization.</p>
     pub fn set_resale_authorization_summary(mut self, input: ::std::option::Option<crate::types::ResaleAuthorizationSummary>) -> Self {
-        self.resale_authorization_summary = input;
-        self
+        self.resale_authorization_summary = input; self
     }
     /// <p>An object that contains summary information about the Resale Authorization.</p>
     pub fn get_resale_authorization_summary(&self) -> &::std::option::Option<crate::types::ResaleAuthorizationSummary> {
@@ -275,18 +263,31 @@ impl EntitySummaryBuilder {
     /// Consumes the builder and constructs a [`EntitySummary`](crate::types::EntitySummary).
     pub fn build(self) -> crate::types::EntitySummary {
         crate::types::EntitySummary {
-            name: self.name,
-            entity_type: self.entity_type,
-            entity_id: self.entity_id,
-            entity_arn: self.entity_arn,
-            last_modified_date: self.last_modified_date,
-            visibility: self.visibility,
-            ami_product_summary: self.ami_product_summary,
-            container_product_summary: self.container_product_summary,
-            data_product_summary: self.data_product_summary,
-            saa_s_product_summary: self.saa_s_product_summary,
-            offer_summary: self.offer_summary,
-            resale_authorization_summary: self.resale_authorization_summary,
+            name: self.name
+            ,
+            entity_type: self.entity_type
+            ,
+            entity_id: self.entity_id
+            ,
+            entity_arn: self.entity_arn
+            ,
+            last_modified_date: self.last_modified_date
+            ,
+            visibility: self.visibility
+            ,
+            ami_product_summary: self.ami_product_summary
+            ,
+            container_product_summary: self.container_product_summary
+            ,
+            data_product_summary: self.data_product_summary
+            ,
+            saa_s_product_summary: self.saa_s_product_summary
+            ,
+            offer_summary: self.offer_summary
+            ,
+            resale_authorization_summary: self.resale_authorization_summary
+            ,
         }
     }
 }
+

@@ -3,22 +3,20 @@
 /// <p>A setting that enables metrics at the object level. Each rule contains an object group and an object group name. If the policy includes the MetricPolicyRules parameter, you must include at least one rule. Each metric policy can include up to five rules by default. You can also <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas">request a quota increase</a> to allow up to 300 rules per policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetricPolicyRule {
+pub struct MetricPolicyRule  {
     /// <p>A path or file name that defines which objects to include in the group. Wildcards (*) are acceptable.</p>
     pub object_group: ::std::string::String,
     /// <p>A name that allows you to refer to the object group.</p>
     pub object_group_name: ::std::string::String,
 }
-impl MetricPolicyRule {
+impl  MetricPolicyRule  {
     /// <p>A path or file name that defines which objects to include in the group. Wildcards (*) are acceptable.</p>
-    pub fn object_group(&self) -> &str {
-        use std::ops::Deref;
-        self.object_group.deref()
+    pub fn object_group(&self) -> & str {
+        use std::ops::Deref; self.object_group.deref()
     }
     /// <p>A name that allows you to refer to the object group.</p>
-    pub fn object_group_name(&self) -> &str {
-        use std::ops::Deref;
-        self.object_group_name.deref()
+    pub fn object_group_name(&self) -> & str {
+        use std::ops::Deref; self.object_group_name.deref()
     }
 }
 impl MetricPolicyRule {
@@ -44,8 +42,7 @@ impl MetricPolicyRuleBuilder {
     }
     /// <p>A path or file name that defines which objects to include in the group. Wildcards (*) are acceptable.</p>
     pub fn set_object_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object_group = input;
-        self
+        self.object_group = input; self
     }
     /// <p>A path or file name that defines which objects to include in the group. Wildcards (*) are acceptable.</p>
     pub fn get_object_group(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl MetricPolicyRuleBuilder {
     }
     /// <p>A name that allows you to refer to the object group.</p>
     pub fn set_object_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object_group_name = input;
-        self
+        self.object_group_name = input; self
     }
     /// <p>A name that allows you to refer to the object group.</p>
     pub fn get_object_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl MetricPolicyRuleBuilder {
     /// - [`object_group`](crate::types::builders::MetricPolicyRuleBuilder::object_group)
     /// - [`object_group_name`](crate::types::builders::MetricPolicyRuleBuilder::object_group_name)
     pub fn build(self) -> ::std::result::Result<crate::types::MetricPolicyRule, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MetricPolicyRule {
-            object_group: self.object_group.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "object_group",
-                    "object_group was not specified but it is required when building MetricPolicyRule",
-                )
-            })?,
-            object_group_name: self.object_group_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "object_group_name",
-                    "object_group_name was not specified but it is required when building MetricPolicyRule",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MetricPolicyRule {
+                object_group: self.object_group
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("object_group", "object_group was not specified but it is required when building MetricPolicyRule")
+                    )?
+                ,
+                object_group_name: self.object_group_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("object_group_name", "object_group_name was not specified but it is required when building MetricPolicyRule")
+                    )?
+                ,
+            }
+        )
     }
 }
+

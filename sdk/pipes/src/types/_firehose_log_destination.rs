@@ -3,13 +3,13 @@
 /// <p>The Amazon Kinesis Data Firehose logging configuration settings for the pipe.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FirehoseLogDestination {
+pub struct FirehoseLogDestination  {
     /// <p>The Amazon Resource Name (ARN) of the Kinesis Data Firehose delivery stream to which EventBridge delivers the pipe log records.</p>
     pub delivery_stream_arn: ::std::option::Option<::std::string::String>,
 }
-impl FirehoseLogDestination {
+impl  FirehoseLogDestination  {
     /// <p>The Amazon Resource Name (ARN) of the Kinesis Data Firehose delivery stream to which EventBridge delivers the pipe log records.</p>
-    pub fn delivery_stream_arn(&self) -> ::std::option::Option<&str> {
+    pub fn delivery_stream_arn(&self) -> ::std::option::Option<& str> {
         self.delivery_stream_arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl FirehoseLogDestinationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Kinesis Data Firehose delivery stream to which EventBridge delivers the pipe log records.</p>
     pub fn set_delivery_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delivery_stream_arn = input;
-        self
+        self.delivery_stream_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Kinesis Data Firehose delivery stream to which EventBridge delivers the pipe log records.</p>
     pub fn get_delivery_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl FirehoseLogDestinationBuilder {
     /// Consumes the builder and constructs a [`FirehoseLogDestination`](crate::types::FirehoseLogDestination).
     pub fn build(self) -> crate::types::FirehoseLogDestination {
         crate::types::FirehoseLogDestination {
-            delivery_stream_arn: self.delivery_stream_arn,
+            delivery_stream_arn: self.delivery_stream_arn
+            ,
         }
     }
 }
+

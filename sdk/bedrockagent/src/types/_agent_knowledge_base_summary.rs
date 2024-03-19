@@ -3,7 +3,7 @@
 /// Agent Knowledge Base Summary
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AgentKnowledgeBaseSummary {
+pub struct AgentKnowledgeBaseSummary  {
     /// Identifier for a resource.
     pub knowledge_base_id: ::std::string::String,
     /// Description of the Resource.
@@ -13,22 +13,21 @@ pub struct AgentKnowledgeBaseSummary {
     /// Time Stamp.
     pub updated_at: ::aws_smithy_types::DateTime,
 }
-impl AgentKnowledgeBaseSummary {
+impl  AgentKnowledgeBaseSummary  {
     /// Identifier for a resource.
-    pub fn knowledge_base_id(&self) -> &str {
-        use std::ops::Deref;
-        self.knowledge_base_id.deref()
+    pub fn knowledge_base_id(&self) -> & str {
+        use std::ops::Deref; self.knowledge_base_id.deref()
     }
     /// Description of the Resource.
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// State of the knowledge base; whether it is enabled or disabled
-    pub fn knowledge_base_state(&self) -> &crate::types::KnowledgeBaseState {
+    pub fn knowledge_base_state(&self) -> & crate::types::KnowledgeBaseState {
         &self.knowledge_base_state
     }
     /// Time Stamp.
-    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.updated_at
     }
 }
@@ -57,8 +56,7 @@ impl AgentKnowledgeBaseSummaryBuilder {
     }
     /// Identifier for a resource.
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.knowledge_base_id = input;
-        self
+        self.knowledge_base_id = input; self
     }
     /// Identifier for a resource.
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +69,7 @@ impl AgentKnowledgeBaseSummaryBuilder {
     }
     /// Description of the Resource.
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Description of the Resource.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +83,7 @@ impl AgentKnowledgeBaseSummaryBuilder {
     }
     /// State of the knowledge base; whether it is enabled or disabled
     pub fn set_knowledge_base_state(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseState>) -> Self {
-        self.knowledge_base_state = input;
-        self
+        self.knowledge_base_state = input; self
     }
     /// State of the knowledge base; whether it is enabled or disabled
     pub fn get_knowledge_base_state(&self) -> &::std::option::Option<crate::types::KnowledgeBaseState> {
@@ -101,8 +97,7 @@ impl AgentKnowledgeBaseSummaryBuilder {
     }
     /// Time Stamp.
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// Time Stamp.
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -114,26 +109,27 @@ impl AgentKnowledgeBaseSummaryBuilder {
     /// - [`knowledge_base_state`](crate::types::builders::AgentKnowledgeBaseSummaryBuilder::knowledge_base_state)
     /// - [`updated_at`](crate::types::builders::AgentKnowledgeBaseSummaryBuilder::updated_at)
     pub fn build(self) -> ::std::result::Result<crate::types::AgentKnowledgeBaseSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AgentKnowledgeBaseSummary {
-            knowledge_base_id: self.knowledge_base_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "knowledge_base_id",
-                    "knowledge_base_id was not specified but it is required when building AgentKnowledgeBaseSummary",
-                )
-            })?,
-            description: self.description,
-            knowledge_base_state: self.knowledge_base_state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "knowledge_base_state",
-                    "knowledge_base_state was not specified but it is required when building AgentKnowledgeBaseSummary",
-                )
-            })?,
-            updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "updated_at",
-                    "updated_at was not specified but it is required when building AgentKnowledgeBaseSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AgentKnowledgeBaseSummary {
+                knowledge_base_id: self.knowledge_base_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("knowledge_base_id", "knowledge_base_id was not specified but it is required when building AgentKnowledgeBaseSummary")
+                    )?
+                ,
+                description: self.description
+                ,
+                knowledge_base_state: self.knowledge_base_state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("knowledge_base_state", "knowledge_base_state was not specified but it is required when building AgentKnowledgeBaseSummary")
+                    )?
+                ,
+                updated_at: self.updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("updated_at", "updated_at was not specified but it is required when building AgentKnowledgeBaseSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,30 +3,32 @@
 /// <p>Limits for a given instance type and for each of its roles.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Limits {
+pub struct Limits  {
     /// <p>Storage-related attributes that are available for a given instance type.</p>
-    pub storage_types: ::std::option::Option<::std::vec::Vec<crate::types::StorageType>>,
+    pub storage_types: ::std::option::Option<::std::vec::Vec::<crate::types::StorageType>>,
     /// <p>The limits for a given instance type.</p>
     pub instance_limits: ::std::option::Option<crate::types::InstanceLimits>,
     /// <p>List of additional limits that are specific to a given instance type for each of its instance roles.</p>
-    pub additional_limits: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalLimit>>,
+    pub additional_limits: ::std::option::Option<::std::vec::Vec::<crate::types::AdditionalLimit>>,
 }
-impl Limits {
+impl  Limits  {
     /// <p>Storage-related attributes that are available for a given instance type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.storage_types.is_none()`.
-    pub fn storage_types(&self) -> &[crate::types::StorageType] {
-        self.storage_types.as_deref().unwrap_or_default()
+    pub fn storage_types(&self) -> & [crate::types::StorageType] {
+        self.storage_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The limits for a given instance type.</p>
-    pub fn instance_limits(&self) -> ::std::option::Option<&crate::types::InstanceLimits> {
+    pub fn instance_limits(&self) -> ::std::option::Option<& crate::types::InstanceLimits> {
         self.instance_limits.as_ref()
     }
     /// <p>List of additional limits that are specific to a given instance type for each of its instance roles.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_limits.is_none()`.
-    pub fn additional_limits(&self) -> &[crate::types::AdditionalLimit] {
-        self.additional_limits.as_deref().unwrap_or_default()
+    pub fn additional_limits(&self) -> & [crate::types::AdditionalLimit] {
+        self.additional_limits.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Limits {
@@ -40,9 +42,9 @@ impl Limits {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LimitsBuilder {
-    pub(crate) storage_types: ::std::option::Option<::std::vec::Vec<crate::types::StorageType>>,
+    pub(crate) storage_types: ::std::option::Option<::std::vec::Vec::<crate::types::StorageType>>,
     pub(crate) instance_limits: ::std::option::Option<crate::types::InstanceLimits>,
-    pub(crate) additional_limits: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalLimit>>,
+    pub(crate) additional_limits: ::std::option::Option<::std::vec::Vec::<crate::types::AdditionalLimit>>,
 }
 impl LimitsBuilder {
     /// Appends an item to `storage_types`.
@@ -52,17 +54,16 @@ impl LimitsBuilder {
     /// <p>Storage-related attributes that are available for a given instance type.</p>
     pub fn storage_types(mut self, input: crate::types::StorageType) -> Self {
         let mut v = self.storage_types.unwrap_or_default();
-        v.push(input);
-        self.storage_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.storage_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Storage-related attributes that are available for a given instance type.</p>
-    pub fn set_storage_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StorageType>>) -> Self {
-        self.storage_types = input;
-        self
+    pub fn set_storage_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StorageType>>) -> Self {
+        self.storage_types = input; self
     }
     /// <p>Storage-related attributes that are available for a given instance type.</p>
-    pub fn get_storage_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageType>> {
+    pub fn get_storage_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StorageType>> {
         &self.storage_types
     }
     /// <p>The limits for a given instance type.</p>
@@ -72,8 +73,7 @@ impl LimitsBuilder {
     }
     /// <p>The limits for a given instance type.</p>
     pub fn set_instance_limits(mut self, input: ::std::option::Option<crate::types::InstanceLimits>) -> Self {
-        self.instance_limits = input;
-        self
+        self.instance_limits = input; self
     }
     /// <p>The limits for a given instance type.</p>
     pub fn get_instance_limits(&self) -> &::std::option::Option<crate::types::InstanceLimits> {
@@ -86,25 +86,28 @@ impl LimitsBuilder {
     /// <p>List of additional limits that are specific to a given instance type for each of its instance roles.</p>
     pub fn additional_limits(mut self, input: crate::types::AdditionalLimit) -> Self {
         let mut v = self.additional_limits.unwrap_or_default();
-        v.push(input);
-        self.additional_limits = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.additional_limits = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of additional limits that are specific to a given instance type for each of its instance roles.</p>
-    pub fn set_additional_limits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalLimit>>) -> Self {
-        self.additional_limits = input;
-        self
+    pub fn set_additional_limits(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AdditionalLimit>>) -> Self {
+        self.additional_limits = input; self
     }
     /// <p>List of additional limits that are specific to a given instance type for each of its instance roles.</p>
-    pub fn get_additional_limits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalLimit>> {
+    pub fn get_additional_limits(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AdditionalLimit>> {
         &self.additional_limits
     }
     /// Consumes the builder and constructs a [`Limits`](crate::types::Limits).
     pub fn build(self) -> crate::types::Limits {
         crate::types::Limits {
-            storage_types: self.storage_types,
-            instance_limits: self.instance_limits,
-            additional_limits: self.additional_limits,
+            storage_types: self.storage_types
+            ,
+            instance_limits: self.instance_limits
+            ,
+            additional_limits: self.additional_limits
+            ,
         }
     }
 }
+

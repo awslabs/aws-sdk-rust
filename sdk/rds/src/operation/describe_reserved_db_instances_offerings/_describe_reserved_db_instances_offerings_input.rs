@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeReservedDbInstancesOfferingsInput {
+pub struct DescribeReservedDbInstancesOfferingsInput  {
     /// <p>The offering identifier filter value. Specify this parameter to show only the available offering that matches the specified reservation identifier.</p>
     /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code></p>
     pub reserved_db_instances_offering_id: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ pub struct DescribeReservedDbInstancesOfferingsInput {
     /// <p>Specifies whether to show only those reservations that support Multi-AZ.</p>
     pub multi_az: ::std::option::Option<bool>,
     /// <p>This parameter isn't currently supported.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     /// <p>The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
@@ -30,30 +30,30 @@ pub struct DescribeReservedDbInstancesOfferingsInput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
 }
-impl DescribeReservedDbInstancesOfferingsInput {
+impl  DescribeReservedDbInstancesOfferingsInput  {
     /// <p>The offering identifier filter value. Specify this parameter to show only the available offering that matches the specified reservation identifier.</p>
     /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code></p>
-    pub fn reserved_db_instances_offering_id(&self) -> ::std::option::Option<&str> {
+    pub fn reserved_db_instances_offering_id(&self) -> ::std::option::Option<& str> {
         self.reserved_db_instances_offering_id.as_deref()
     }
     /// <p>The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.</p>
-    pub fn db_instance_class(&self) -> ::std::option::Option<&str> {
+    pub fn db_instance_class(&self) -> ::std::option::Option<& str> {
         self.db_instance_class.as_deref()
     }
     /// <p>Duration filter value, specified in years or seconds. Specify this parameter to show only reservations for this duration.</p>
     /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code></p>
-    pub fn duration(&self) -> ::std::option::Option<&str> {
+    pub fn duration(&self) -> ::std::option::Option<& str> {
         self.duration.as_deref()
     }
     /// <p>Product description filter value. Specify this parameter to show only the available offerings that contain the specified product description.</p><note>
     /// <p>The results show offerings that partially match the filter value.</p>
     /// </note>
-    pub fn product_description(&self) -> ::std::option::Option<&str> {
+    pub fn product_description(&self) -> ::std::option::Option<& str> {
         self.product_description.as_deref()
     }
     /// <p>The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type.</p>
     /// <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code></p>
-    pub fn offering_type(&self) -> ::std::option::Option<&str> {
+    pub fn offering_type(&self) -> ::std::option::Option<& str> {
         self.offering_type.as_deref()
     }
     /// <p>Specifies whether to show only those reservations that support Multi-AZ.</p>
@@ -61,10 +61,11 @@ impl DescribeReservedDbInstancesOfferingsInput {
         self.multi_az
     }
     /// <p>This parameter isn't currently supported.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
@@ -73,7 +74,7 @@ impl DescribeReservedDbInstancesOfferingsInput {
         self.max_records
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
@@ -94,7 +95,7 @@ pub struct DescribeReservedDbInstancesOfferingsInputBuilder {
     pub(crate) product_description: ::std::option::Option<::std::string::String>,
     pub(crate) offering_type: ::std::option::Option<::std::string::String>,
     pub(crate) multi_az: ::std::option::Option<bool>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     pub(crate) max_records: ::std::option::Option<i32>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
 }
@@ -108,8 +109,7 @@ impl DescribeReservedDbInstancesOfferingsInputBuilder {
     /// <p>The offering identifier filter value. Specify this parameter to show only the available offering that matches the specified reservation identifier.</p>
     /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code></p>
     pub fn set_reserved_db_instances_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reserved_db_instances_offering_id = input;
-        self
+        self.reserved_db_instances_offering_id = input; self
     }
     /// <p>The offering identifier filter value. Specify this parameter to show only the available offering that matches the specified reservation identifier.</p>
     /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code></p>
@@ -123,8 +123,7 @@ impl DescribeReservedDbInstancesOfferingsInputBuilder {
     }
     /// <p>The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.</p>
     pub fn set_db_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_instance_class = input;
-        self
+        self.db_instance_class = input; self
     }
     /// <p>The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.</p>
     pub fn get_db_instance_class(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +138,7 @@ impl DescribeReservedDbInstancesOfferingsInputBuilder {
     /// <p>Duration filter value, specified in years or seconds. Specify this parameter to show only reservations for this duration.</p>
     /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code></p>
     pub fn set_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.duration = input;
-        self
+        self.duration = input; self
     }
     /// <p>Duration filter value, specified in years or seconds. Specify this parameter to show only reservations for this duration.</p>
     /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code></p>
@@ -158,8 +156,7 @@ impl DescribeReservedDbInstancesOfferingsInputBuilder {
     /// <p>The results show offerings that partially match the filter value.</p>
     /// </note>
     pub fn set_product_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_description = input;
-        self
+        self.product_description = input; self
     }
     /// <p>Product description filter value. Specify this parameter to show only the available offerings that contain the specified product description.</p><note>
     /// <p>The results show offerings that partially match the filter value.</p>
@@ -176,8 +173,7 @@ impl DescribeReservedDbInstancesOfferingsInputBuilder {
     /// <p>The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type.</p>
     /// <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code></p>
     pub fn set_offering_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.offering_type = input;
-        self
+        self.offering_type = input; self
     }
     /// <p>The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type.</p>
     /// <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code></p>
@@ -191,8 +187,7 @@ impl DescribeReservedDbInstancesOfferingsInputBuilder {
     }
     /// <p>Specifies whether to show only those reservations that support Multi-AZ.</p>
     pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.multi_az = input;
-        self
+        self.multi_az = input; self
     }
     /// <p>Specifies whether to show only those reservations that support Multi-AZ.</p>
     pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
@@ -205,17 +200,16 @@ impl DescribeReservedDbInstancesOfferingsInputBuilder {
     /// <p>This parameter isn't currently supported.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>This parameter isn't currently supported.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>This parameter isn't currently supported.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// <p>The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
@@ -229,8 +223,7 @@ impl DescribeReservedDbInstancesOfferingsInputBuilder {
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
@@ -245,32 +238,36 @@ impl DescribeReservedDbInstancesOfferingsInputBuilder {
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeReservedDbInstancesOfferingsInput`](crate::operation::describe_reserved_db_instances_offerings::DescribeReservedDbInstancesOfferingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_reserved_db_instances_offerings::DescribeReservedDbInstancesOfferingsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_reserved_db_instances_offerings::DescribeReservedDbInstancesOfferingsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_reserved_db_instances_offerings::DescribeReservedDbInstancesOfferingsInput {
-                reserved_db_instances_offering_id: self.reserved_db_instances_offering_id,
-                db_instance_class: self.db_instance_class,
-                duration: self.duration,
-                product_description: self.product_description,
-                offering_type: self.offering_type,
-                multi_az: self.multi_az,
-                filters: self.filters,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
+                reserved_db_instances_offering_id: self.reserved_db_instances_offering_id
+                ,
+                db_instance_class: self.db_instance_class
+                ,
+                duration: self.duration
+                ,
+                product_description: self.product_description
+                ,
+                offering_type: self.offering_type
+                ,
+                multi_az: self.multi_az
+                ,
+                filters: self.filters
+                ,
+                max_records: self.max_records
+                ,
+                marker: self.marker
+                ,
+            }
         )
     }
 }
+

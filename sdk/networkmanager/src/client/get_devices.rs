@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetDevices`](crate::operation::get_devices::builders::GetDevicesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_devices::builders::GetDevicesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`global_network_id(impl Into<String>)`](crate::operation::get_devices::builders::GetDevicesFluentBuilder::global_network_id) / [`set_global_network_id(Option<String>)`](crate::operation::get_devices::builders::GetDevicesFluentBuilder::set_global_network_id):<br>required: **true**<br><p>The ID of the global network.</p><br>
     ///   - [`device_ids(impl Into<String>)`](crate::operation::get_devices::builders::GetDevicesFluentBuilder::device_ids) / [`set_device_ids(Option<Vec::<String>>)`](crate::operation::get_devices::builders::GetDevicesFluentBuilder::set_device_ids):<br>required: **false**<br><p>One or more device IDs. The maximum is 10.</p><br>
     ///   - [`site_id(impl Into<String>)`](crate::operation::get_devices::builders::GetDevicesFluentBuilder::site_id) / [`set_site_id(Option<String>)`](crate::operation::get_devices::builders::GetDevicesFluentBuilder::set_site_id):<br>required: **false**<br><p>The ID of the site.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_devices::builders::GetDevicesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_devices::builders::GetDevicesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_devices::builders::GetDevicesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_devices::builders::GetDevicesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
-    /// - On success, responds with [`GetDevicesOutput`](crate::operation::get_devices::GetDevicesOutput) with field(s):
+                            /// - On success, responds with [`GetDevicesOutput`](crate::operation::get_devices::GetDevicesOutput) with field(s):
     ///   - [`devices(Option<Vec::<Device>>)`](crate::operation::get_devices::GetDevicesOutput::devices): <p>The devices.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_devices::GetDevicesOutput::next_token): <p>The token for the next page of results.</p>
-    /// - On failure, responds with [`SdkError<GetDevicesError>`](crate::operation::get_devices::GetDevicesError)
+                            /// - On failure, responds with [`SdkError<GetDevicesError>`](crate::operation::get_devices::GetDevicesError)
     pub fn get_devices(&self) -> crate::operation::get_devices::builders::GetDevicesFluentBuilder {
-        crate::operation::get_devices::builders::GetDevicesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_devices::builders::GetDevicesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

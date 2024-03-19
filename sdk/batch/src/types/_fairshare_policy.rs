@@ -3,7 +3,7 @@
 /// <p>The fair share policy for a scheduling policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FairsharePolicy {
+pub struct FairsharePolicy  {
     /// <p>The amount of time (in seconds) to use to calculate a fair share percentage for each fair share identifier in use. A value of zero (0) indicates that only current usage is measured. The decay allows for more recently run jobs to have more weight than jobs that ran earlier. The maximum supported value is 604800 (1 week).</p>
     pub share_decay_seconds: ::std::option::Option<i32>,
     /// <p>A value used to reserve some of the available maximum vCPU for fair share identifiers that aren't already used.</p>
@@ -12,9 +12,9 @@ pub struct FairsharePolicy {
     /// <p>The minimum value is 0 and the maximum value is 99.</p>
     pub compute_reservation: ::std::option::Option<i32>,
     /// <p>An array of <code>SharedIdentifier</code> objects that contain the weights for the fair share identifiers for the fair share policy. Fair share identifiers that aren't included have a default weight of <code>1.0</code>.</p>
-    pub share_distribution: ::std::option::Option<::std::vec::Vec<crate::types::ShareAttributes>>,
+    pub share_distribution: ::std::option::Option<::std::vec::Vec::<crate::types::ShareAttributes>>,
 }
-impl FairsharePolicy {
+impl  FairsharePolicy  {
     /// <p>The amount of time (in seconds) to use to calculate a fair share percentage for each fair share identifier in use. A value of zero (0) indicates that only current usage is measured. The decay allows for more recently run jobs to have more weight than jobs that ran earlier. The maximum supported value is 604800 (1 week).</p>
     pub fn share_decay_seconds(&self) -> ::std::option::Option<i32> {
         self.share_decay_seconds
@@ -27,10 +27,11 @@ impl FairsharePolicy {
         self.compute_reservation
     }
     /// <p>An array of <code>SharedIdentifier</code> objects that contain the weights for the fair share identifiers for the fair share policy. Fair share identifiers that aren't included have a default weight of <code>1.0</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.share_distribution.is_none()`.
-    pub fn share_distribution(&self) -> &[crate::types::ShareAttributes] {
-        self.share_distribution.as_deref().unwrap_or_default()
+    pub fn share_distribution(&self) -> & [crate::types::ShareAttributes] {
+        self.share_distribution.as_deref()
+        .unwrap_or_default()
     }
 }
 impl FairsharePolicy {
@@ -46,7 +47,7 @@ impl FairsharePolicy {
 pub struct FairsharePolicyBuilder {
     pub(crate) share_decay_seconds: ::std::option::Option<i32>,
     pub(crate) compute_reservation: ::std::option::Option<i32>,
-    pub(crate) share_distribution: ::std::option::Option<::std::vec::Vec<crate::types::ShareAttributes>>,
+    pub(crate) share_distribution: ::std::option::Option<::std::vec::Vec::<crate::types::ShareAttributes>>,
 }
 impl FairsharePolicyBuilder {
     /// <p>The amount of time (in seconds) to use to calculate a fair share percentage for each fair share identifier in use. A value of zero (0) indicates that only current usage is measured. The decay allows for more recently run jobs to have more weight than jobs that ran earlier. The maximum supported value is 604800 (1 week).</p>
@@ -56,8 +57,7 @@ impl FairsharePolicyBuilder {
     }
     /// <p>The amount of time (in seconds) to use to calculate a fair share percentage for each fair share identifier in use. A value of zero (0) indicates that only current usage is measured. The decay allows for more recently run jobs to have more weight than jobs that ran earlier. The maximum supported value is 604800 (1 week).</p>
     pub fn set_share_decay_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.share_decay_seconds = input;
-        self
+        self.share_decay_seconds = input; self
     }
     /// <p>The amount of time (in seconds) to use to calculate a fair share percentage for each fair share identifier in use. A value of zero (0) indicates that only current usage is measured. The decay allows for more recently run jobs to have more weight than jobs that ran earlier. The maximum supported value is 604800 (1 week).</p>
     pub fn get_share_decay_seconds(&self) -> &::std::option::Option<i32> {
@@ -76,8 +76,7 @@ impl FairsharePolicyBuilder {
     /// <p>For example, a <code>computeReservation</code> value of 50 indicates that Batch reserves 50% of the maximum available vCPU if there's only one fair share identifier. It reserves 25% if there are two fair share identifiers. It reserves 12.5% if there are three fair share identifiers. A <code>computeReservation</code> value of 25 indicates that Batch should reserve 25% of the maximum available vCPU if there's only one fair share identifier, 6.25% if there are two fair share identifiers, and 1.56% if there are three fair share identifiers.</p>
     /// <p>The minimum value is 0 and the maximum value is 99.</p>
     pub fn set_compute_reservation(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.compute_reservation = input;
-        self
+        self.compute_reservation = input; self
     }
     /// <p>A value used to reserve some of the available maximum vCPU for fair share identifiers that aren't already used.</p>
     /// <p>The reserved ratio is <code>(<i>computeReservation</i>/100)^<i>ActiveFairShares</i> </code> where <code> <i>ActiveFairShares</i> </code> is the number of active fair share identifiers.</p>
@@ -93,25 +92,28 @@ impl FairsharePolicyBuilder {
     /// <p>An array of <code>SharedIdentifier</code> objects that contain the weights for the fair share identifiers for the fair share policy. Fair share identifiers that aren't included have a default weight of <code>1.0</code>.</p>
     pub fn share_distribution(mut self, input: crate::types::ShareAttributes) -> Self {
         let mut v = self.share_distribution.unwrap_or_default();
-        v.push(input);
-        self.share_distribution = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.share_distribution = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>SharedIdentifier</code> objects that contain the weights for the fair share identifiers for the fair share policy. Fair share identifiers that aren't included have a default weight of <code>1.0</code>.</p>
-    pub fn set_share_distribution(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ShareAttributes>>) -> Self {
-        self.share_distribution = input;
-        self
+    pub fn set_share_distribution(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ShareAttributes>>) -> Self {
+        self.share_distribution = input; self
     }
     /// <p>An array of <code>SharedIdentifier</code> objects that contain the weights for the fair share identifiers for the fair share policy. Fair share identifiers that aren't included have a default weight of <code>1.0</code>.</p>
-    pub fn get_share_distribution(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ShareAttributes>> {
+    pub fn get_share_distribution(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ShareAttributes>> {
         &self.share_distribution
     }
     /// Consumes the builder and constructs a [`FairsharePolicy`](crate::types::FairsharePolicy).
     pub fn build(self) -> crate::types::FairsharePolicy {
         crate::types::FairsharePolicy {
-            share_decay_seconds: self.share_decay_seconds,
-            compute_reservation: self.compute_reservation,
-            share_distribution: self.share_distribution,
+            share_decay_seconds: self.share_decay_seconds
+            ,
+            compute_reservation: self.compute_reservation
+            ,
+            share_distribution: self.share_distribution
+            ,
         }
     }
 }
+

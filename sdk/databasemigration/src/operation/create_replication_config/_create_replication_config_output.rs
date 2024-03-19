@@ -3,22 +3,22 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateReplicationConfigOutput {
+pub struct CreateReplicationConfigOutput  {
     /// <p>Configuration parameters returned from the DMS Serverless replication after it is created.</p>
     pub replication_config: ::std::option::Option<crate::types::ReplicationConfig>,
     _request_id: Option<String>,
 }
-impl CreateReplicationConfigOutput {
+impl  CreateReplicationConfigOutput  {
     /// <p>Configuration parameters returned from the DMS Serverless replication after it is created.</p>
-    pub fn replication_config(&self) -> ::std::option::Option<&crate::types::ReplicationConfig> {
+    pub fn replication_config(&self) -> ::std::option::Option<& crate::types::ReplicationConfig> {
         self.replication_config.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateReplicationConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateReplicationConfigOutput {
     /// Creates a new builder-style object to manufacture [`CreateReplicationConfigOutput`](crate::operation::create_replication_config::CreateReplicationConfigOutput).
     pub fn builder() -> crate::operation::create_replication_config::builders::CreateReplicationConfigOutputBuilder {
@@ -41,27 +41,28 @@ impl CreateReplicationConfigOutputBuilder {
     }
     /// <p>Configuration parameters returned from the DMS Serverless replication after it is created.</p>
     pub fn set_replication_config(mut self, input: ::std::option::Option<crate::types::ReplicationConfig>) -> Self {
-        self.replication_config = input;
-        self
+        self.replication_config = input; self
     }
     /// <p>Configuration parameters returned from the DMS Serverless replication after it is created.</p>
     pub fn get_replication_config(&self) -> &::std::option::Option<crate::types::ReplicationConfig> {
         &self.replication_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateReplicationConfigOutput`](crate::operation::create_replication_config::CreateReplicationConfigOutput).
     pub fn build(self) -> crate::operation::create_replication_config::CreateReplicationConfigOutput {
         crate::operation::create_replication_config::CreateReplicationConfigOutput {
-            replication_config: self.replication_config,
+            replication_config: self.replication_config
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

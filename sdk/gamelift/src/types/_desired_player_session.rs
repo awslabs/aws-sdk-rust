@@ -3,23 +3,23 @@
 /// <p>Player information for use when creating player sessions using a game session placement request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DesiredPlayerSession {
+pub struct DesiredPlayerSession  {
     /// <p>A unique identifier for a player to associate with the player session.</p>
     pub player_id: ::std::option::Option<::std::string::String>,
     /// <p>Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game.</p>
     pub player_data: ::std::option::Option<::std::string::String>,
 }
-impl DesiredPlayerSession {
+impl  DesiredPlayerSession  {
     /// <p>A unique identifier for a player to associate with the player session.</p>
-    pub fn player_id(&self) -> ::std::option::Option<&str> {
+    pub fn player_id(&self) -> ::std::option::Option<& str> {
         self.player_id.as_deref()
     }
     /// <p>Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game.</p>
-    pub fn player_data(&self) -> ::std::option::Option<&str> {
+    pub fn player_data(&self) -> ::std::option::Option<& str> {
         self.player_data.as_deref()
     }
 }
-impl ::std::fmt::Debug for DesiredPlayerSession {
+impl  ::std::fmt::Debug for DesiredPlayerSession  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DesiredPlayerSession");
         formatter.field("player_id", &"*** Sensitive Data Redacted ***");
@@ -49,8 +49,7 @@ impl DesiredPlayerSessionBuilder {
     }
     /// <p>A unique identifier for a player to associate with the player session.</p>
     pub fn set_player_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.player_id = input;
-        self
+        self.player_id = input; self
     }
     /// <p>A unique identifier for a player to associate with the player session.</p>
     pub fn get_player_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DesiredPlayerSessionBuilder {
     }
     /// <p>Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game.</p>
     pub fn set_player_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.player_data = input;
-        self
+        self.player_data = input; self
     }
     /// <p>Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game.</p>
     pub fn get_player_data(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +71,10 @@ impl DesiredPlayerSessionBuilder {
     /// Consumes the builder and constructs a [`DesiredPlayerSession`](crate::types::DesiredPlayerSession).
     pub fn build(self) -> crate::types::DesiredPlayerSession {
         crate::types::DesiredPlayerSession {
-            player_id: self.player_id,
-            player_data: self.player_data,
+            player_id: self.player_id
+            ,
+            player_data: self.player_data
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for DesiredPlayerSessionBuilder {
         formatter.finish()
     }
 }
+

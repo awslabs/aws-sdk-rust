@@ -3,7 +3,7 @@
 /// <p>Specifies the configuration for experiment logging.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateExperimentTemplateLogConfigurationInput {
+pub struct CreateExperimentTemplateLogConfigurationInput  {
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
     pub cloud_watch_logs_configuration: ::std::option::Option<crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput>,
     /// <p>The configuration for experiment logging to Amazon S3.</p>
@@ -11,13 +11,13 @@ pub struct CreateExperimentTemplateLogConfigurationInput {
     /// <p>The schema version.</p>
     pub log_schema_version: i32,
 }
-impl CreateExperimentTemplateLogConfigurationInput {
+impl  CreateExperimentTemplateLogConfigurationInput  {
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
-    pub fn cloud_watch_logs_configuration(&self) -> ::std::option::Option<&crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput> {
+    pub fn cloud_watch_logs_configuration(&self) -> ::std::option::Option<& crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput> {
         self.cloud_watch_logs_configuration.as_ref()
     }
     /// <p>The configuration for experiment logging to Amazon S3.</p>
-    pub fn s3_configuration(&self) -> ::std::option::Option<&crate::types::ExperimentTemplateS3LogConfigurationInput> {
+    pub fn s3_configuration(&self) -> ::std::option::Option<& crate::types::ExperimentTemplateS3LogConfigurationInput> {
         self.s3_configuration.as_ref()
     }
     /// <p>The schema version.</p>
@@ -47,12 +47,8 @@ impl CreateExperimentTemplateLogConfigurationInputBuilder {
         self
     }
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
-    pub fn set_cloud_watch_logs_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput>,
-    ) -> Self {
-        self.cloud_watch_logs_configuration = input;
-        self
+    pub fn set_cloud_watch_logs_configuration(mut self, input: ::std::option::Option<crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput>) -> Self {
+        self.cloud_watch_logs_configuration = input; self
     }
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
     pub fn get_cloud_watch_logs_configuration(&self) -> &::std::option::Option<crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput> {
@@ -65,8 +61,7 @@ impl CreateExperimentTemplateLogConfigurationInputBuilder {
     }
     /// <p>The configuration for experiment logging to Amazon S3.</p>
     pub fn set_s3_configuration(mut self, input: ::std::option::Option<crate::types::ExperimentTemplateS3LogConfigurationInput>) -> Self {
-        self.s3_configuration = input;
-        self
+        self.s3_configuration = input; self
     }
     /// <p>The configuration for experiment logging to Amazon S3.</p>
     pub fn get_s3_configuration(&self) -> &::std::option::Option<crate::types::ExperimentTemplateS3LogConfigurationInput> {
@@ -80,8 +75,7 @@ impl CreateExperimentTemplateLogConfigurationInputBuilder {
     }
     /// <p>The schema version.</p>
     pub fn set_log_schema_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.log_schema_version = input;
-        self
+        self.log_schema_version = input; self
     }
     /// <p>The schema version.</p>
     pub fn get_log_schema_version(&self) -> &::std::option::Option<i32> {
@@ -90,18 +84,20 @@ impl CreateExperimentTemplateLogConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`CreateExperimentTemplateLogConfigurationInput`](crate::types::CreateExperimentTemplateLogConfigurationInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`log_schema_version`](crate::types::builders::CreateExperimentTemplateLogConfigurationInputBuilder::log_schema_version)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::CreateExperimentTemplateLogConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CreateExperimentTemplateLogConfigurationInput {
-            cloud_watch_logs_configuration: self.cloud_watch_logs_configuration,
-            s3_configuration: self.s3_configuration,
-            log_schema_version: self.log_schema_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "log_schema_version",
-                    "log_schema_version was not specified but it is required when building CreateExperimentTemplateLogConfigurationInput",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::CreateExperimentTemplateLogConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::CreateExperimentTemplateLogConfigurationInput {
+                cloud_watch_logs_configuration: self.cloud_watch_logs_configuration
+                ,
+                s3_configuration: self.s3_configuration
+                ,
+                log_schema_version: self.log_schema_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("log_schema_version", "log_schema_version was not specified but it is required when building CreateExperimentTemplateLogConfigurationInput")
+                    )?
+                ,
+            }
+        )
     }
 }
+

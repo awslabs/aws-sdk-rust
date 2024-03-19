@@ -3,7 +3,7 @@
 /// <p>A specific property that is impacted by a warning.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WarningProperty {
+pub struct WarningProperty  {
     /// <p>The path of the property. For example, if this is for the <code>S3Bucket</code> member of the <code>Code</code> property, the property path would be <code>Code/S3Bucket</code>.</p>
     pub property_path: ::std::option::Option<::std::string::String>,
     /// <p>If <code>true</code>, the specified property is required.</p>
@@ -11,9 +11,9 @@ pub struct WarningProperty {
     /// <p>The description of the property from the resource provider schema.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl WarningProperty {
+impl  WarningProperty  {
     /// <p>The path of the property. For example, if this is for the <code>S3Bucket</code> member of the <code>Code</code> property, the property path would be <code>Code/S3Bucket</code>.</p>
-    pub fn property_path(&self) -> ::std::option::Option<&str> {
+    pub fn property_path(&self) -> ::std::option::Option<& str> {
         self.property_path.as_deref()
     }
     /// <p>If <code>true</code>, the specified property is required.</p>
@@ -21,7 +21,7 @@ impl WarningProperty {
         self.required
     }
     /// <p>The description of the property from the resource provider schema.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl WarningPropertyBuilder {
     }
     /// <p>The path of the property. For example, if this is for the <code>S3Bucket</code> member of the <code>Code</code> property, the property path would be <code>Code/S3Bucket</code>.</p>
     pub fn set_property_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.property_path = input;
-        self
+        self.property_path = input; self
     }
     /// <p>The path of the property. For example, if this is for the <code>S3Bucket</code> member of the <code>Code</code> property, the property path would be <code>Code/S3Bucket</code>.</p>
     pub fn get_property_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl WarningPropertyBuilder {
     }
     /// <p>If <code>true</code>, the specified property is required.</p>
     pub fn set_required(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.required = input;
-        self
+        self.required = input; self
     }
     /// <p>If <code>true</code>, the specified property is required.</p>
     pub fn get_required(&self) -> &::std::option::Option<bool> {
@@ -76,8 +74,7 @@ impl WarningPropertyBuilder {
     }
     /// <p>The description of the property from the resource provider schema.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the property from the resource provider schema.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl WarningPropertyBuilder {
     /// Consumes the builder and constructs a [`WarningProperty`](crate::types::WarningProperty).
     pub fn build(self) -> crate::types::WarningProperty {
         crate::types::WarningProperty {
-            property_path: self.property_path,
-            required: self.required,
-            description: self.description,
+            property_path: self.property_path
+            ,
+            required: self.required
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

@@ -3,20 +3,19 @@
 /// <p>The Locale data structure represents a geographical region or location.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Locale {
+pub struct Locale  {
     /// <p>The country of the locale. Must be a valid ISO 3166 country code. For example, the code US refers to the United States of America.</p>
     pub country: ::std::string::String,
     /// <p>The state or subdivision of the locale. A valid ISO 3166-2 subdivision code. For example, the code WA refers to the state of Washington.</p>
     pub subdivision: ::std::option::Option<::std::string::String>,
 }
-impl Locale {
+impl  Locale  {
     /// <p>The country of the locale. Must be a valid ISO 3166 country code. For example, the code US refers to the United States of America.</p>
-    pub fn country(&self) -> &str {
-        use std::ops::Deref;
-        self.country.deref()
+    pub fn country(&self) -> & str {
+        use std::ops::Deref; self.country.deref()
     }
     /// <p>The state or subdivision of the locale. A valid ISO 3166-2 subdivision code. For example, the code WA refers to the state of Washington.</p>
-    pub fn subdivision(&self) -> ::std::option::Option<&str> {
+    pub fn subdivision(&self) -> ::std::option::Option<& str> {
         self.subdivision.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl LocaleBuilder {
     }
     /// <p>The country of the locale. Must be a valid ISO 3166 country code. For example, the code US refers to the United States of America.</p>
     pub fn set_country(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.country = input;
-        self
+        self.country = input; self
     }
     /// <p>The country of the locale. Must be a valid ISO 3166 country code. For example, the code US refers to the United States of America.</p>
     pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl LocaleBuilder {
     }
     /// <p>The state or subdivision of the locale. A valid ISO 3166-2 subdivision code. For example, the code WA refers to the state of Washington.</p>
     pub fn set_subdivision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subdivision = input;
-        self
+        self.subdivision = input; self
     }
     /// <p>The state or subdivision of the locale. A valid ISO 3166-2 subdivision code. For example, the code WA refers to the state of Washington.</p>
     pub fn get_subdivision(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl LocaleBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`country`](crate::types::builders::LocaleBuilder::country)
     pub fn build(self) -> ::std::result::Result<crate::types::Locale, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Locale {
-            country: self.country.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "country",
-                    "country was not specified but it is required when building Locale",
-                )
-            })?,
-            subdivision: self.subdivision,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Locale {
+                country: self.country
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("country", "country was not specified but it is required when building Locale")
+                    )?
+                ,
+                subdivision: self.subdivision
+                ,
+            }
+        )
     }
 }
+

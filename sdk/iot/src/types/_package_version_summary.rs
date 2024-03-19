@@ -3,7 +3,7 @@
 /// <p>A summary of information about a package version.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PackageVersionSummary {
+pub struct PackageVersionSummary  {
     /// <p>The name of the associated software package.</p>
     pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the target package version.</p>
@@ -15,25 +15,25 @@ pub struct PackageVersionSummary {
     /// <p>The date that the package version was last updated.</p>
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl PackageVersionSummary {
+impl  PackageVersionSummary  {
     /// <p>The name of the associated software package.</p>
-    pub fn package_name(&self) -> ::std::option::Option<&str> {
+    pub fn package_name(&self) -> ::std::option::Option<& str> {
         self.package_name.as_deref()
     }
     /// <p>The name of the target package version.</p>
-    pub fn version_name(&self) -> ::std::option::Option<&str> {
+    pub fn version_name(&self) -> ::std::option::Option<& str> {
         self.version_name.as_deref()
     }
     /// <p>The status of the package version. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::PackageVersionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::PackageVersionStatus> {
         self.status.as_ref()
     }
     /// <p>The date that the package version was created.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date that the package version was last updated.</p>
-    pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl PackageVersionSummaryBuilder {
     }
     /// <p>The name of the associated software package.</p>
     pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_name = input;
-        self
+        self.package_name = input; self
     }
     /// <p>The name of the associated software package.</p>
     pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl PackageVersionSummaryBuilder {
     }
     /// <p>The name of the target package version.</p>
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_name = input;
-        self
+        self.version_name = input; self
     }
     /// <p>The name of the target package version.</p>
     pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl PackageVersionSummaryBuilder {
     }
     /// <p>The status of the package version. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::PackageVersionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the package version. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PackageVersionStatus> {
@@ -104,8 +101,7 @@ impl PackageVersionSummaryBuilder {
     }
     /// <p>The date that the package version was created.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The date that the package version was created.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -118,8 +114,7 @@ impl PackageVersionSummaryBuilder {
     }
     /// <p>The date that the package version was last updated.</p>
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_date = input;
-        self
+        self.last_modified_date = input; self
     }
     /// <p>The date that the package version was last updated.</p>
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -128,11 +123,17 @@ impl PackageVersionSummaryBuilder {
     /// Consumes the builder and constructs a [`PackageVersionSummary`](crate::types::PackageVersionSummary).
     pub fn build(self) -> crate::types::PackageVersionSummary {
         crate::types::PackageVersionSummary {
-            package_name: self.package_name,
-            version_name: self.version_name,
-            status: self.status,
-            creation_date: self.creation_date,
-            last_modified_date: self.last_modified_date,
+            package_name: self.package_name
+            ,
+            version_name: self.version_name
+            ,
+            status: self.status
+            ,
+            creation_date: self.creation_date
+            ,
+            last_modified_date: self.last_modified_date
+            ,
         }
     }
 }
+

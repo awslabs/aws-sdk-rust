@@ -3,22 +3,23 @@
 /// <p>A query with suggested spell corrections.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SpellCorrectedQuery {
+pub struct SpellCorrectedQuery  {
     /// <p>The query with the suggested spell corrections.</p>
     pub suggested_query_text: ::std::option::Option<::std::string::String>,
     /// <p>The corrected misspelled word or words in a query.</p>
-    pub corrections: ::std::option::Option<::std::vec::Vec<crate::types::Correction>>,
+    pub corrections: ::std::option::Option<::std::vec::Vec::<crate::types::Correction>>,
 }
-impl SpellCorrectedQuery {
+impl  SpellCorrectedQuery  {
     /// <p>The query with the suggested spell corrections.</p>
-    pub fn suggested_query_text(&self) -> ::std::option::Option<&str> {
+    pub fn suggested_query_text(&self) -> ::std::option::Option<& str> {
         self.suggested_query_text.as_deref()
     }
     /// <p>The corrected misspelled word or words in a query.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.corrections.is_none()`.
-    pub fn corrections(&self) -> &[crate::types::Correction] {
-        self.corrections.as_deref().unwrap_or_default()
+    pub fn corrections(&self) -> & [crate::types::Correction] {
+        self.corrections.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SpellCorrectedQuery {
@@ -33,7 +34,7 @@ impl SpellCorrectedQuery {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SpellCorrectedQueryBuilder {
     pub(crate) suggested_query_text: ::std::option::Option<::std::string::String>,
-    pub(crate) corrections: ::std::option::Option<::std::vec::Vec<crate::types::Correction>>,
+    pub(crate) corrections: ::std::option::Option<::std::vec::Vec::<crate::types::Correction>>,
 }
 impl SpellCorrectedQueryBuilder {
     /// <p>The query with the suggested spell corrections.</p>
@@ -43,8 +44,7 @@ impl SpellCorrectedQueryBuilder {
     }
     /// <p>The query with the suggested spell corrections.</p>
     pub fn set_suggested_query_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.suggested_query_text = input;
-        self
+        self.suggested_query_text = input; self
     }
     /// <p>The query with the suggested spell corrections.</p>
     pub fn get_suggested_query_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl SpellCorrectedQueryBuilder {
     /// <p>The corrected misspelled word or words in a query.</p>
     pub fn corrections(mut self, input: crate::types::Correction) -> Self {
         let mut v = self.corrections.unwrap_or_default();
-        v.push(input);
-        self.corrections = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.corrections = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The corrected misspelled word or words in a query.</p>
-    pub fn set_corrections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Correction>>) -> Self {
-        self.corrections = input;
-        self
+    pub fn set_corrections(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Correction>>) -> Self {
+        self.corrections = input; self
     }
     /// <p>The corrected misspelled word or words in a query.</p>
-    pub fn get_corrections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Correction>> {
+    pub fn get_corrections(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Correction>> {
         &self.corrections
     }
     /// Consumes the builder and constructs a [`SpellCorrectedQuery`](crate::types::SpellCorrectedQuery).
     pub fn build(self) -> crate::types::SpellCorrectedQuery {
         crate::types::SpellCorrectedQuery {
-            suggested_query_text: self.suggested_query_text,
-            corrections: self.corrections,
+            suggested_query_text: self.suggested_query_text
+            ,
+            corrections: self.corrections
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeOpsItemsInput {
+pub struct DescribeOpsItemsInput  {
     /// <p>One or more filters to limit the response.</p>
     /// <ul>
     /// <li>
@@ -50,13 +50,13 @@ pub struct DescribeOpsItemsInput {
     /// </ul>
     /// <p>*The Equals operator for Title matches the first 100 characters. If you specify more than 100 characters, they system returns an error that the filter value exceeds the length limit.</p>
     /// <p>**If you filter the response by using the OperationalData operator, specify a key-value pair by using the following JSON format: {"key":"key_name","value":"a_value"}</p>
-    pub ops_item_filters: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemFilter>>,
+    pub ops_item_filters: ::std::option::Option<::std::vec::Vec::<crate::types::OpsItemFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeOpsItemsInput {
+impl  DescribeOpsItemsInput  {
     /// <p>One or more filters to limit the response.</p>
     /// <ul>
     /// <li>
@@ -104,17 +104,18 @@ impl DescribeOpsItemsInput {
     /// </ul>
     /// <p>*The Equals operator for Title matches the first 100 characters. If you specify more than 100 characters, they system returns an error that the filter value exceeds the length limit.</p>
     /// <p>**If you filter the response by using the OperationalData operator, specify a key-value pair by using the following JSON format: {"key":"key_name","value":"a_value"}</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ops_item_filters.is_none()`.
-    pub fn ops_item_filters(&self) -> &[crate::types::OpsItemFilter] {
-        self.ops_item_filters.as_deref().unwrap_or_default()
+    pub fn ops_item_filters(&self) -> & [crate::types::OpsItemFilter] {
+        self.ops_item_filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -129,7 +130,7 @@ impl DescribeOpsItemsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOpsItemsInputBuilder {
-    pub(crate) ops_item_filters: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemFilter>>,
+    pub(crate) ops_item_filters: ::std::option::Option<::std::vec::Vec::<crate::types::OpsItemFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -187,9 +188,9 @@ impl DescribeOpsItemsInputBuilder {
     /// <p>**If you filter the response by using the OperationalData operator, specify a key-value pair by using the following JSON format: {"key":"key_name","value":"a_value"}</p>
     pub fn ops_item_filters(mut self, input: crate::types::OpsItemFilter) -> Self {
         let mut v = self.ops_item_filters.unwrap_or_default();
-        v.push(input);
-        self.ops_item_filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ops_item_filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more filters to limit the response.</p>
     /// <ul>
@@ -238,9 +239,8 @@ impl DescribeOpsItemsInputBuilder {
     /// </ul>
     /// <p>*The Equals operator for Title matches the first 100 characters. If you specify more than 100 characters, they system returns an error that the filter value exceeds the length limit.</p>
     /// <p>**If you filter the response by using the OperationalData operator, specify a key-value pair by using the following JSON format: {"key":"key_name","value":"a_value"}</p>
-    pub fn set_ops_item_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemFilter>>) -> Self {
-        self.ops_item_filters = input;
-        self
+    pub fn set_ops_item_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OpsItemFilter>>) -> Self {
+        self.ops_item_filters = input; self
     }
     /// <p>One or more filters to limit the response.</p>
     /// <ul>
@@ -289,7 +289,7 @@ impl DescribeOpsItemsInputBuilder {
     /// </ul>
     /// <p>*The Equals operator for Title matches the first 100 characters. If you specify more than 100 characters, they system returns an error that the filter value exceeds the length limit.</p>
     /// <p>**If you filter the response by using the OperationalData operator, specify a key-value pair by using the following JSON format: {"key":"key_name","value":"a_value"}</p>
-    pub fn get_ops_item_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsItemFilter>> {
+    pub fn get_ops_item_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OpsItemFilter>> {
         &self.ops_item_filters
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -299,8 +299,7 @@ impl DescribeOpsItemsInputBuilder {
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -313,21 +312,24 @@ impl DescribeOpsItemsInputBuilder {
     }
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeOpsItemsInput`](crate::operation::describe_ops_items::DescribeOpsItemsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_ops_items::DescribeOpsItemsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_ops_items::DescribeOpsItemsInput {
-            ops_item_filters: self.ops_item_filters,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_ops_items::DescribeOpsItemsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_ops_items::DescribeOpsItemsInput {
+                ops_item_filters: self.ops_item_filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The response from the server for a registration request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SignUpOutput {
+pub struct SignUpOutput  {
     /// <p>A response from the server indicating that a user registration has been confirmed.</p>
     pub user_confirmed: bool,
     /// <p>The code delivery details returned by the server response to the user registration request.</p>
@@ -12,26 +12,25 @@ pub struct SignUpOutput {
     pub user_sub: ::std::string::String,
     _request_id: Option<String>,
 }
-impl SignUpOutput {
+impl  SignUpOutput  {
     /// <p>A response from the server indicating that a user registration has been confirmed.</p>
     pub fn user_confirmed(&self) -> bool {
         self.user_confirmed
     }
     /// <p>The code delivery details returned by the server response to the user registration request.</p>
-    pub fn code_delivery_details(&self) -> ::std::option::Option<&crate::types::CodeDeliveryDetailsType> {
+    pub fn code_delivery_details(&self) -> ::std::option::Option<& crate::types::CodeDeliveryDetailsType> {
         self.code_delivery_details.as_ref()
     }
     /// <p>The UUID of the authenticated user. This isn't the same as <code>username</code>.</p>
-    pub fn user_sub(&self) -> &str {
-        use std::ops::Deref;
-        self.user_sub.deref()
+    pub fn user_sub(&self) -> & str {
+        use std::ops::Deref; self.user_sub.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for SignUpOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SignUpOutput {
     /// Creates a new builder-style object to manufacture [`SignUpOutput`](crate::operation::sign_up::SignUpOutput).
     pub fn builder() -> crate::operation::sign_up::builders::SignUpOutputBuilder {
@@ -57,8 +56,7 @@ impl SignUpOutputBuilder {
     }
     /// <p>A response from the server indicating that a user registration has been confirmed.</p>
     pub fn set_user_confirmed(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.user_confirmed = input;
-        self
+        self.user_confirmed = input; self
     }
     /// <p>A response from the server indicating that a user registration has been confirmed.</p>
     pub fn get_user_confirmed(&self) -> &::std::option::Option<bool> {
@@ -71,8 +69,7 @@ impl SignUpOutputBuilder {
     }
     /// <p>The code delivery details returned by the server response to the user registration request.</p>
     pub fn set_code_delivery_details(mut self, input: ::std::option::Option<crate::types::CodeDeliveryDetailsType>) -> Self {
-        self.code_delivery_details = input;
-        self
+        self.code_delivery_details = input; self
     }
     /// <p>The code delivery details returned by the server response to the user registration request.</p>
     pub fn get_code_delivery_details(&self) -> &::std::option::Option<crate::types::CodeDeliveryDetailsType> {
@@ -86,36 +83,40 @@ impl SignUpOutputBuilder {
     }
     /// <p>The UUID of the authenticated user. This isn't the same as <code>username</code>.</p>
     pub fn set_user_sub(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_sub = input;
-        self
+        self.user_sub = input; self
     }
     /// <p>The UUID of the authenticated user. This isn't the same as <code>username</code>.</p>
     pub fn get_user_sub(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_sub
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SignUpOutput`](crate::operation::sign_up::SignUpOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`user_sub`](crate::operation::sign_up::builders::SignUpOutputBuilder::user_sub)
     pub fn build(self) -> ::std::result::Result<crate::operation::sign_up::SignUpOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::sign_up::SignUpOutput {
-            user_confirmed: self.user_confirmed.unwrap_or_default(),
-            code_delivery_details: self.code_delivery_details,
-            user_sub: self.user_sub.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user_sub",
-                    "user_sub was not specified but it is required when building SignUpOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::sign_up::SignUpOutput {
+                user_confirmed: self.user_confirmed
+                    .unwrap_or_default()
+                ,
+                code_delivery_details: self.code_delivery_details
+                ,
+                user_sub: self.user_sub
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user_sub", "user_sub was not specified but it is required when building SignUpOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

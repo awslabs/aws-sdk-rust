@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSensitiveDataOccurrencesAvailabilityOutput {
+pub struct GetSensitiveDataOccurrencesAvailabilityOutput  {
     /// <p>Specifies whether occurrences of sensitive data can be retrieved for the finding. Possible values are: AVAILABLE, the sensitive data can be retrieved; and, UNAVAILABLE, the sensitive data can't be retrieved. If this value is UNAVAILABLE, the reasons array indicates why the data can't be retrieved.</p>
     pub code: ::std::option::Option<crate::types::AvailabilityCode>,
     /// <p>Specifies why occurrences of sensitive data can't be retrieved for the finding. Possible values are:</p>
@@ -31,12 +31,12 @@ pub struct GetSensitiveDataOccurrencesAvailabilityOutput {
     /// <p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a file or storage format that Macie doesn't support for retrieving occurrences of sensitive data.</p></li>
     /// </ul>
     /// <p>This value is null if sensitive data can be retrieved for the finding.</p>
-    pub reasons: ::std::option::Option<::std::vec::Vec<crate::types::UnavailabilityReasonCode>>,
+    pub reasons: ::std::option::Option<::std::vec::Vec::<crate::types::UnavailabilityReasonCode>>,
     _request_id: Option<String>,
 }
-impl GetSensitiveDataOccurrencesAvailabilityOutput {
+impl  GetSensitiveDataOccurrencesAvailabilityOutput  {
     /// <p>Specifies whether occurrences of sensitive data can be retrieved for the finding. Possible values are: AVAILABLE, the sensitive data can be retrieved; and, UNAVAILABLE, the sensitive data can't be retrieved. If this value is UNAVAILABLE, the reasons array indicates why the data can't be retrieved.</p>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::AvailabilityCode> {
+    pub fn code(&self) -> ::std::option::Option<& crate::types::AvailabilityCode> {
         self.code.as_ref()
     }
     /// <p>Specifies why occurrences of sensitive data can't be retrieved for the finding. Possible values are:</p>
@@ -65,21 +65,21 @@ impl GetSensitiveDataOccurrencesAvailabilityOutput {
     /// <p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a file or storage format that Macie doesn't support for retrieving occurrences of sensitive data.</p></li>
     /// </ul>
     /// <p>This value is null if sensitive data can be retrieved for the finding.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reasons.is_none()`.
-    pub fn reasons(&self) -> &[crate::types::UnavailabilityReasonCode] {
-        self.reasons.as_deref().unwrap_or_default()
+    pub fn reasons(&self) -> & [crate::types::UnavailabilityReasonCode] {
+        self.reasons.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetSensitiveDataOccurrencesAvailabilityOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSensitiveDataOccurrencesAvailabilityOutput {
     /// Creates a new builder-style object to manufacture [`GetSensitiveDataOccurrencesAvailabilityOutput`](crate::operation::get_sensitive_data_occurrences_availability::GetSensitiveDataOccurrencesAvailabilityOutput).
-    pub fn builder() -> crate::operation::get_sensitive_data_occurrences_availability::builders::GetSensitiveDataOccurrencesAvailabilityOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_sensitive_data_occurrences_availability::builders::GetSensitiveDataOccurrencesAvailabilityOutputBuilder {
         crate::operation::get_sensitive_data_occurrences_availability::builders::GetSensitiveDataOccurrencesAvailabilityOutputBuilder::default()
     }
 }
@@ -89,7 +89,7 @@ impl GetSensitiveDataOccurrencesAvailabilityOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSensitiveDataOccurrencesAvailabilityOutputBuilder {
     pub(crate) code: ::std::option::Option<crate::types::AvailabilityCode>,
-    pub(crate) reasons: ::std::option::Option<::std::vec::Vec<crate::types::UnavailabilityReasonCode>>,
+    pub(crate) reasons: ::std::option::Option<::std::vec::Vec::<crate::types::UnavailabilityReasonCode>>,
     _request_id: Option<String>,
 }
 impl GetSensitiveDataOccurrencesAvailabilityOutputBuilder {
@@ -100,8 +100,7 @@ impl GetSensitiveDataOccurrencesAvailabilityOutputBuilder {
     }
     /// <p>Specifies whether occurrences of sensitive data can be retrieved for the finding. Possible values are: AVAILABLE, the sensitive data can be retrieved; and, UNAVAILABLE, the sensitive data can't be retrieved. If this value is UNAVAILABLE, the reasons array indicates why the data can't be retrieved.</p>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::AvailabilityCode>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>Specifies whether occurrences of sensitive data can be retrieved for the finding. Possible values are: AVAILABLE, the sensitive data can be retrieved; and, UNAVAILABLE, the sensitive data can't be retrieved. If this value is UNAVAILABLE, the reasons array indicates why the data can't be retrieved.</p>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::AvailabilityCode> {
@@ -139,9 +138,9 @@ impl GetSensitiveDataOccurrencesAvailabilityOutputBuilder {
     /// <p>This value is null if sensitive data can be retrieved for the finding.</p>
     pub fn reasons(mut self, input: crate::types::UnavailabilityReasonCode) -> Self {
         let mut v = self.reasons.unwrap_or_default();
-        v.push(input);
-        self.reasons = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.reasons = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies why occurrences of sensitive data can't be retrieved for the finding. Possible values are:</p>
     /// <ul>
@@ -169,9 +168,8 @@ impl GetSensitiveDataOccurrencesAvailabilityOutputBuilder {
     /// <p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a file or storage format that Macie doesn't support for retrieving occurrences of sensitive data.</p></li>
     /// </ul>
     /// <p>This value is null if sensitive data can be retrieved for the finding.</p>
-    pub fn set_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UnavailabilityReasonCode>>) -> Self {
-        self.reasons = input;
-        self
+    pub fn set_reasons(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UnavailabilityReasonCode>>) -> Self {
+        self.reasons = input; self
     }
     /// <p>Specifies why occurrences of sensitive data can't be retrieved for the finding. Possible values are:</p>
     /// <ul>
@@ -199,24 +197,27 @@ impl GetSensitiveDataOccurrencesAvailabilityOutputBuilder {
     /// <p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a file or storage format that Macie doesn't support for retrieving occurrences of sensitive data.</p></li>
     /// </ul>
     /// <p>This value is null if sensitive data can be retrieved for the finding.</p>
-    pub fn get_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnavailabilityReasonCode>> {
+    pub fn get_reasons(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UnavailabilityReasonCode>> {
         &self.reasons
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSensitiveDataOccurrencesAvailabilityOutput`](crate::operation::get_sensitive_data_occurrences_availability::GetSensitiveDataOccurrencesAvailabilityOutput).
     pub fn build(self) -> crate::operation::get_sensitive_data_occurrences_availability::GetSensitiveDataOccurrencesAvailabilityOutput {
         crate::operation::get_sensitive_data_occurrences_availability::GetSensitiveDataOccurrencesAvailabilityOutput {
-            code: self.code,
-            reasons: self.reasons,
+            code: self.code
+            ,
+            reasons: self.reasons
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

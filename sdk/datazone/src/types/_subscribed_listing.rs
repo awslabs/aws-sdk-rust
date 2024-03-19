@@ -3,7 +3,7 @@
 /// <p>The details of the published asset for which the subscription grant is created.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SubscribedListing {
+pub struct SubscribedListing  {
     /// <p>The identifier of the published asset for which the subscription grant is created.</p>
     pub id: ::std::string::String,
     /// <p>The revision of the published asset for which the subscription grant is created.</p>
@@ -19,41 +19,37 @@ pub struct SubscribedListing {
     /// <p>The name of the project that owns the published asset for which the subscription grant is created.</p>
     pub owner_project_name: ::std::option::Option<::std::string::String>,
 }
-impl SubscribedListing {
+impl  SubscribedListing  {
     /// <p>The identifier of the published asset for which the subscription grant is created.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The revision of the published asset for which the subscription grant is created.</p>
-    pub fn revision(&self) -> ::std::option::Option<&str> {
+    pub fn revision(&self) -> ::std::option::Option<& str> {
         self.revision.as_deref()
     }
     /// <p>The name of the published asset for which the subscription grant is created.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The description of the published asset for which the subscription grant is created.</p>
-    pub fn description(&self) -> &str {
-        use std::ops::Deref;
-        self.description.deref()
+    pub fn description(&self) -> & str {
+        use std::ops::Deref; self.description.deref()
     }
     /// <p>The published asset for which the subscription grant is created.</p>
-    pub fn item(&self) -> ::std::option::Option<&crate::types::SubscribedListingItem> {
+    pub fn item(&self) -> ::std::option::Option<& crate::types::SubscribedListingItem> {
         self.item.as_ref()
     }
     /// <p>The identifier of the project of the published asset for which the subscription grant is created.</p>
-    pub fn owner_project_id(&self) -> &str {
-        use std::ops::Deref;
-        self.owner_project_id.deref()
+    pub fn owner_project_id(&self) -> & str {
+        use std::ops::Deref; self.owner_project_id.deref()
     }
     /// <p>The name of the project that owns the published asset for which the subscription grant is created.</p>
-    pub fn owner_project_name(&self) -> ::std::option::Option<&str> {
+    pub fn owner_project_name(&self) -> ::std::option::Option<& str> {
         self.owner_project_name.as_deref()
     }
 }
-impl ::std::fmt::Debug for SubscribedListing {
+impl  ::std::fmt::Debug for SubscribedListing  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SubscribedListing");
         formatter.field("id", &self.id);
@@ -94,8 +90,7 @@ impl SubscribedListingBuilder {
     }
     /// <p>The identifier of the published asset for which the subscription grant is created.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the published asset for which the subscription grant is created.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +103,7 @@ impl SubscribedListingBuilder {
     }
     /// <p>The revision of the published asset for which the subscription grant is created.</p>
     pub fn set_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision = input;
-        self
+        self.revision = input; self
     }
     /// <p>The revision of the published asset for which the subscription grant is created.</p>
     pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +117,7 @@ impl SubscribedListingBuilder {
     }
     /// <p>The name of the published asset for which the subscription grant is created.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the published asset for which the subscription grant is created.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +131,7 @@ impl SubscribedListingBuilder {
     }
     /// <p>The description of the published asset for which the subscription grant is created.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the published asset for which the subscription grant is created.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +145,7 @@ impl SubscribedListingBuilder {
     }
     /// <p>The published asset for which the subscription grant is created.</p>
     pub fn set_item(mut self, input: ::std::option::Option<crate::types::SubscribedListingItem>) -> Self {
-        self.item = input;
-        self
+        self.item = input; self
     }
     /// <p>The published asset for which the subscription grant is created.</p>
     pub fn get_item(&self) -> &::std::option::Option<crate::types::SubscribedListingItem> {
@@ -168,8 +159,7 @@ impl SubscribedListingBuilder {
     }
     /// <p>The identifier of the project of the published asset for which the subscription grant is created.</p>
     pub fn set_owner_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_project_id = input;
-        self
+        self.owner_project_id = input; self
     }
     /// <p>The identifier of the project of the published asset for which the subscription grant is created.</p>
     pub fn get_owner_project_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -182,8 +172,7 @@ impl SubscribedListingBuilder {
     }
     /// <p>The name of the project that owns the published asset for which the subscription grant is created.</p>
     pub fn set_owner_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_project_name = input;
-        self
+        self.owner_project_name = input; self
     }
     /// <p>The name of the project that owns the published asset for which the subscription grant is created.</p>
     pub fn get_owner_project_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -196,35 +185,36 @@ impl SubscribedListingBuilder {
     /// - [`description`](crate::types::builders::SubscribedListingBuilder::description)
     /// - [`owner_project_id`](crate::types::builders::SubscribedListingBuilder::owner_project_id)
     pub fn build(self) -> ::std::result::Result<crate::types::SubscribedListing, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SubscribedListing {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building SubscribedListing",
-                )
-            })?,
-            revision: self.revision,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building SubscribedListing",
-                )
-            })?,
-            description: self.description.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "description",
-                    "description was not specified but it is required when building SubscribedListing",
-                )
-            })?,
-            item: self.item,
-            owner_project_id: self.owner_project_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "owner_project_id",
-                    "owner_project_id was not specified but it is required when building SubscribedListing",
-                )
-            })?,
-            owner_project_name: self.owner_project_name,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SubscribedListing {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building SubscribedListing")
+                    )?
+                ,
+                revision: self.revision
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building SubscribedListing")
+                    )?
+                ,
+                description: self.description
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("description", "description was not specified but it is required when building SubscribedListing")
+                    )?
+                ,
+                item: self.item
+                ,
+                owner_project_id: self.owner_project_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("owner_project_id", "owner_project_id was not specified but it is required when building SubscribedListing")
+                    )?
+                ,
+                owner_project_name: self.owner_project_name
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for SubscribedListingBuilder {
@@ -240,3 +230,4 @@ impl ::std::fmt::Debug for SubscribedListingBuilder {
         formatter.finish()
     }
 }
+

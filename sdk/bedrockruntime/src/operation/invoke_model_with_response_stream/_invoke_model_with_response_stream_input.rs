@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct InvokeModelWithResponseStreamInput {
+pub struct InvokeModelWithResponseStreamInput  {
     /// <p>Inference input in the format specified by the content-type. To see the format and content of this field for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>.</p>
     pub body: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The MIME type of the input data in the request. The default value is <code>application/json</code>.</p>
@@ -12,25 +12,25 @@ pub struct InvokeModelWithResponseStreamInput {
     /// <p>Id of the model to invoke using the streaming request.</p>
     pub model_id: ::std::option::Option<::std::string::String>,
 }
-impl InvokeModelWithResponseStreamInput {
+impl  InvokeModelWithResponseStreamInput  {
     /// <p>Inference input in the format specified by the content-type. To see the format and content of this field for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>.</p>
-    pub fn body(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn body(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.body.as_ref()
     }
     /// <p>The MIME type of the input data in the request. The default value is <code>application/json</code>.</p>
-    pub fn content_type(&self) -> ::std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>The desired MIME type of the inference body in the response. The default value is <code>application/json</code>.</p>
-    pub fn accept(&self) -> ::std::option::Option<&str> {
+    pub fn accept(&self) -> ::std::option::Option<& str> {
         self.accept.as_deref()
     }
     /// <p>Id of the model to invoke using the streaming request.</p>
-    pub fn model_id(&self) -> ::std::option::Option<&str> {
+    pub fn model_id(&self) -> ::std::option::Option<& str> {
         self.model_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for InvokeModelWithResponseStreamInput {
+impl  ::std::fmt::Debug for InvokeModelWithResponseStreamInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("InvokeModelWithResponseStreamInput");
         formatter.field("body", &"*** Sensitive Data Redacted ***");
@@ -65,8 +65,7 @@ impl InvokeModelWithResponseStreamInputBuilder {
     }
     /// <p>Inference input in the format specified by the content-type. To see the format and content of this field for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>.</p>
     pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.body = input;
-        self
+        self.body = input; self
     }
     /// <p>Inference input in the format specified by the content-type. To see the format and content of this field for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>.</p>
     pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -79,8 +78,7 @@ impl InvokeModelWithResponseStreamInputBuilder {
     }
     /// <p>The MIME type of the input data in the request. The default value is <code>application/json</code>.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>The MIME type of the input data in the request. The default value is <code>application/json</code>.</p>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +91,7 @@ impl InvokeModelWithResponseStreamInputBuilder {
     }
     /// <p>The desired MIME type of the inference body in the response. The default value is <code>application/json</code>.</p>
     pub fn set_accept(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accept = input;
-        self
+        self.accept = input; self
     }
     /// <p>The desired MIME type of the inference body in the response. The default value is <code>application/json</code>.</p>
     pub fn get_accept(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,26 +105,26 @@ impl InvokeModelWithResponseStreamInputBuilder {
     }
     /// <p>Id of the model to invoke using the streaming request.</p>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_id = input;
-        self
+        self.model_id = input; self
     }
     /// <p>Id of the model to invoke using the streaming request.</p>
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_id
     }
     /// Consumes the builder and constructs a [`InvokeModelWithResponseStreamInput`](crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamInput {
-            body: self.body,
-            content_type: self.content_type,
-            accept: self.accept,
-            model_id: self.model_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamInput {
+                body: self.body
+                ,
+                content_type: self.content_type
+                ,
+                accept: self.accept
+                ,
+                model_id: self.model_id
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for InvokeModelWithResponseStreamInputBuilder {
@@ -140,3 +137,4 @@ impl ::std::fmt::Debug for InvokeModelWithResponseStreamInputBuilder {
         formatter.finish()
     }
 }
+

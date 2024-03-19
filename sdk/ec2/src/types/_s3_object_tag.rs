@@ -3,7 +3,7 @@
 /// <p>The tags to apply to the AMI object that will be stored in the Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-tagging.html">Categorizing your storage using tags</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3ObjectTag {
+pub struct S3ObjectTag  {
     /// <p>The key of the tag.</p>
     /// <p>Constraints: Tag keys are case-sensitive and can be up to 128 Unicode characters in length. May not begin with <code>aws</code>:.</p>
     pub key: ::std::option::Option<::std::string::String>,
@@ -11,15 +11,15 @@ pub struct S3ObjectTag {
     /// <p>Constraints: Tag values are case-sensitive and can be up to 256 Unicode characters in length.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl S3ObjectTag {
+impl  S3ObjectTag  {
     /// <p>The key of the tag.</p>
     /// <p>Constraints: Tag keys are case-sensitive and can be up to 128 Unicode characters in length. May not begin with <code>aws</code>:.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value of the tag.</p>
     /// <p>Constraints: Tag values are case-sensitive and can be up to 256 Unicode characters in length.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl S3ObjectTagBuilder {
     /// <p>The key of the tag.</p>
     /// <p>Constraints: Tag keys are case-sensitive and can be up to 128 Unicode characters in length. May not begin with <code>aws</code>:.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The key of the tag.</p>
     /// <p>Constraints: Tag keys are case-sensitive and can be up to 128 Unicode characters in length. May not begin with <code>aws</code>:.</p>
@@ -64,8 +63,7 @@ impl S3ObjectTagBuilder {
     /// <p>The value of the tag.</p>
     /// <p>Constraints: Tag values are case-sensitive and can be up to 256 Unicode characters in length.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the tag.</p>
     /// <p>Constraints: Tag values are case-sensitive and can be up to 256 Unicode characters in length.</p>
@@ -75,8 +73,11 @@ impl S3ObjectTagBuilder {
     /// Consumes the builder and constructs a [`S3ObjectTag`](crate::types::S3ObjectTag).
     pub fn build(self) -> crate::types::S3ObjectTag {
         crate::types::S3ObjectTag {
-            key: self.key,
-            value: self.value,
+            key: self.key
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

@@ -3,11 +3,11 @@
 /// <p>A list of filter configurations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FilterListConfiguration {
+pub struct FilterListConfiguration  {
     /// <p>The match operator that is used to determine if a filter should be applied.</p>
     pub match_operator: crate::types::CategoryFilterMatchOperator,
     /// <p>The list of category values for the filter.</p>
-    pub category_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub category_values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Select all of the values. Null is not the assigned value of select all.</p>
     /// <ul>
     /// <li>
@@ -25,23 +25,24 @@ pub struct FilterListConfiguration {
     /// </ul>
     pub null_option: ::std::option::Option<crate::types::FilterNullOption>,
 }
-impl FilterListConfiguration {
+impl  FilterListConfiguration  {
     /// <p>The match operator that is used to determine if a filter should be applied.</p>
-    pub fn match_operator(&self) -> &crate::types::CategoryFilterMatchOperator {
+    pub fn match_operator(&self) -> & crate::types::CategoryFilterMatchOperator {
         &self.match_operator
     }
     /// <p>The list of category values for the filter.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.category_values.is_none()`.
-    pub fn category_values(&self) -> &[::std::string::String] {
-        self.category_values.as_deref().unwrap_or_default()
+    pub fn category_values(&self) -> & [::std::string::String] {
+        self.category_values.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Select all of the values. Null is not the assigned value of select all.</p>
     /// <ul>
     /// <li>
     /// <p><code>FILTER_ALL_VALUES</code></p></li>
     /// </ul>
-    pub fn select_all_options(&self) -> ::std::option::Option<&crate::types::CategoryFilterSelectAllOptions> {
+    pub fn select_all_options(&self) -> ::std::option::Option<& crate::types::CategoryFilterSelectAllOptions> {
         self.select_all_options.as_ref()
     }
     /// <p>This option determines how null values should be treated when filtering data.</p>
@@ -53,7 +54,7 @@ impl FilterListConfiguration {
     /// <li>
     /// <p><code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p></li>
     /// </ul>
-    pub fn null_option(&self) -> ::std::option::Option<&crate::types::FilterNullOption> {
+    pub fn null_option(&self) -> ::std::option::Option<& crate::types::FilterNullOption> {
         self.null_option.as_ref()
     }
 }
@@ -69,7 +70,7 @@ impl FilterListConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterListConfigurationBuilder {
     pub(crate) match_operator: ::std::option::Option<crate::types::CategoryFilterMatchOperator>,
-    pub(crate) category_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) category_values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) select_all_options: ::std::option::Option<crate::types::CategoryFilterSelectAllOptions>,
     pub(crate) null_option: ::std::option::Option<crate::types::FilterNullOption>,
 }
@@ -82,8 +83,7 @@ impl FilterListConfigurationBuilder {
     }
     /// <p>The match operator that is used to determine if a filter should be applied.</p>
     pub fn set_match_operator(mut self, input: ::std::option::Option<crate::types::CategoryFilterMatchOperator>) -> Self {
-        self.match_operator = input;
-        self
+        self.match_operator = input; self
     }
     /// <p>The match operator that is used to determine if a filter should be applied.</p>
     pub fn get_match_operator(&self) -> &::std::option::Option<crate::types::CategoryFilterMatchOperator> {
@@ -96,17 +96,16 @@ impl FilterListConfigurationBuilder {
     /// <p>The list of category values for the filter.</p>
     pub fn category_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.category_values.unwrap_or_default();
-        v.push(input.into());
-        self.category_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.category_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of category values for the filter.</p>
-    pub fn set_category_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.category_values = input;
-        self
+    pub fn set_category_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.category_values = input; self
     }
     /// <p>The list of category values for the filter.</p>
-    pub fn get_category_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_category_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.category_values
     }
     /// <p>Select all of the values. Null is not the assigned value of select all.</p>
@@ -124,8 +123,7 @@ impl FilterListConfigurationBuilder {
     /// <p><code>FILTER_ALL_VALUES</code></p></li>
     /// </ul>
     pub fn set_select_all_options(mut self, input: ::std::option::Option<crate::types::CategoryFilterSelectAllOptions>) -> Self {
-        self.select_all_options = input;
-        self
+        self.select_all_options = input; self
     }
     /// <p>Select all of the values. Null is not the assigned value of select all.</p>
     /// <ul>
@@ -158,8 +156,7 @@ impl FilterListConfigurationBuilder {
     /// <p><code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p></li>
     /// </ul>
     pub fn set_null_option(mut self, input: ::std::option::Option<crate::types::FilterNullOption>) -> Self {
-        self.null_option = input;
-        self
+        self.null_option = input; self
     }
     /// <p>This option determines how null values should be treated when filtering data.</p>
     /// <ul>
@@ -177,16 +174,21 @@ impl FilterListConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`match_operator`](crate::types::builders::FilterListConfigurationBuilder::match_operator)
     pub fn build(self) -> ::std::result::Result<crate::types::FilterListConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FilterListConfiguration {
-            match_operator: self.match_operator.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "match_operator",
-                    "match_operator was not specified but it is required when building FilterListConfiguration",
-                )
-            })?,
-            category_values: self.category_values,
-            select_all_options: self.select_all_options,
-            null_option: self.null_option,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FilterListConfiguration {
+                match_operator: self.match_operator
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("match_operator", "match_operator was not specified but it is required when building FilterListConfiguration")
+                    )?
+                ,
+                category_values: self.category_values
+                ,
+                select_all_options: self.select_all_options
+                ,
+                null_option: self.null_option
+                ,
+            }
+        )
     }
 }
+

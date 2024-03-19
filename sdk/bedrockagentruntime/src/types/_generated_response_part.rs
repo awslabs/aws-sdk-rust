@@ -3,17 +3,17 @@
 /// <p>Contains metadata about a part of the generated response that is accompanied by a citation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GeneratedResponsePart {
+pub struct GeneratedResponsePart  {
     /// <p>Contains metadata about a textual part of the generated response that is accompanied by a citation.</p>
     pub text_response_part: ::std::option::Option<crate::types::TextResponsePart>,
 }
-impl GeneratedResponsePart {
+impl  GeneratedResponsePart  {
     /// <p>Contains metadata about a textual part of the generated response that is accompanied by a citation.</p>
-    pub fn text_response_part(&self) -> ::std::option::Option<&crate::types::TextResponsePart> {
+    pub fn text_response_part(&self) -> ::std::option::Option<& crate::types::TextResponsePart> {
         self.text_response_part.as_ref()
     }
 }
-impl ::std::fmt::Debug for GeneratedResponsePart {
+impl  ::std::fmt::Debug for GeneratedResponsePart  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GeneratedResponsePart");
         formatter.field("text_response_part", &"*** Sensitive Data Redacted ***");
@@ -41,8 +41,7 @@ impl GeneratedResponsePartBuilder {
     }
     /// <p>Contains metadata about a textual part of the generated response that is accompanied by a citation.</p>
     pub fn set_text_response_part(mut self, input: ::std::option::Option<crate::types::TextResponsePart>) -> Self {
-        self.text_response_part = input;
-        self
+        self.text_response_part = input; self
     }
     /// <p>Contains metadata about a textual part of the generated response that is accompanied by a citation.</p>
     pub fn get_text_response_part(&self) -> &::std::option::Option<crate::types::TextResponsePart> {
@@ -51,7 +50,8 @@ impl GeneratedResponsePartBuilder {
     /// Consumes the builder and constructs a [`GeneratedResponsePart`](crate::types::GeneratedResponsePart).
     pub fn build(self) -> crate::types::GeneratedResponsePart {
         crate::types::GeneratedResponsePart {
-            text_response_part: self.text_response_part,
+            text_response_part: self.text_response_part
+            ,
         }
     }
 }
@@ -62,3 +62,4 @@ impl ::std::fmt::Debug for GeneratedResponsePartBuilder {
         formatter.finish()
     }
 }
+

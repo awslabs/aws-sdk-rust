@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CopyFpgaImageOutput {
+pub struct CopyFpgaImageOutput  {
     /// <p>The ID of the new AFI.</p>
     pub fpga_image_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CopyFpgaImageOutput {
+impl  CopyFpgaImageOutput  {
     /// <p>The ID of the new AFI.</p>
-    pub fn fpga_image_id(&self) -> ::std::option::Option<&str> {
+    pub fn fpga_image_id(&self) -> ::std::option::Option<& str> {
         self.fpga_image_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CopyFpgaImageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CopyFpgaImageOutput {
     /// Creates a new builder-style object to manufacture [`CopyFpgaImageOutput`](crate::operation::copy_fpga_image::CopyFpgaImageOutput).
     pub fn builder() -> crate::operation::copy_fpga_image::builders::CopyFpgaImageOutputBuilder {
@@ -40,27 +40,28 @@ impl CopyFpgaImageOutputBuilder {
     }
     /// <p>The ID of the new AFI.</p>
     pub fn set_fpga_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fpga_image_id = input;
-        self
+        self.fpga_image_id = input; self
     }
     /// <p>The ID of the new AFI.</p>
     pub fn get_fpga_image_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.fpga_image_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CopyFpgaImageOutput`](crate::operation::copy_fpga_image::CopyFpgaImageOutput).
     pub fn build(self) -> crate::operation::copy_fpga_image::CopyFpgaImageOutput {
         crate::operation::copy_fpga_image::CopyFpgaImageOutput {
-            fpga_image_id: self.fpga_image_id,
+            fpga_image_id: self.fpga_image_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

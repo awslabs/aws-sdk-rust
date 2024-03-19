@@ -3,40 +3,42 @@
 /// <p>The metadata that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DimensionValues {
+pub struct DimensionValues  {
     /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones.</p>
     /// <p>Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
     /// <p><code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
     /// <p><code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">AnomalySubscriptions</a>.</p>
     pub key: ::std::option::Option<crate::types::Dimension>,
     /// <p>The metadata values that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The match options that you can use to filter your results.</p>
     /// <p><code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly Subscriptions. Refer to the documentation for each specific API to see what is supported.</p>
     /// <p>The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
-    pub match_options: ::std::option::Option<::std::vec::Vec<crate::types::MatchOption>>,
+    pub match_options: ::std::option::Option<::std::vec::Vec::<crate::types::MatchOption>>,
 }
-impl DimensionValues {
+impl  DimensionValues  {
     /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones.</p>
     /// <p>Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
     /// <p><code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
     /// <p><code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">AnomalySubscriptions</a>.</p>
-    pub fn key(&self) -> ::std::option::Option<&crate::types::Dimension> {
+    pub fn key(&self) -> ::std::option::Option<& crate::types::Dimension> {
         self.key.as_ref()
     }
     /// <p>The metadata values that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[::std::string::String] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [::std::string::String] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The match options that you can use to filter your results.</p>
     /// <p><code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly Subscriptions. Refer to the documentation for each specific API to see what is supported.</p>
     /// <p>The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.match_options.is_none()`.
-    pub fn match_options(&self) -> &[crate::types::MatchOption] {
-        self.match_options.as_deref().unwrap_or_default()
+    pub fn match_options(&self) -> & [crate::types::MatchOption] {
+        self.match_options.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DimensionValues {
@@ -51,8 +53,8 @@ impl DimensionValues {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DimensionValuesBuilder {
     pub(crate) key: ::std::option::Option<crate::types::Dimension>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) match_options: ::std::option::Option<::std::vec::Vec<crate::types::MatchOption>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) match_options: ::std::option::Option<::std::vec::Vec::<crate::types::MatchOption>>,
 }
 impl DimensionValuesBuilder {
     /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones.</p>
@@ -68,8 +70,7 @@ impl DimensionValuesBuilder {
     /// <p><code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
     /// <p><code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">AnomalySubscriptions</a>.</p>
     pub fn set_key(mut self, input: ::std::option::Option<crate::types::Dimension>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones.</p>
     /// <p>Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
@@ -85,17 +86,16 @@ impl DimensionValuesBuilder {
     /// <p>The metadata values that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The metadata values that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The metadata values that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Appends an item to `match_options`.
@@ -107,29 +107,32 @@ impl DimensionValuesBuilder {
     /// <p>The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
     pub fn match_options(mut self, input: crate::types::MatchOption) -> Self {
         let mut v = self.match_options.unwrap_or_default();
-        v.push(input);
-        self.match_options = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.match_options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The match options that you can use to filter your results.</p>
     /// <p><code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly Subscriptions. Refer to the documentation for each specific API to see what is supported.</p>
     /// <p>The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
-    pub fn set_match_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MatchOption>>) -> Self {
-        self.match_options = input;
-        self
+    pub fn set_match_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MatchOption>>) -> Self {
+        self.match_options = input; self
     }
     /// <p>The match options that you can use to filter your results.</p>
     /// <p><code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly Subscriptions. Refer to the documentation for each specific API to see what is supported.</p>
     /// <p>The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
-    pub fn get_match_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchOption>> {
+    pub fn get_match_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MatchOption>> {
         &self.match_options
     }
     /// Consumes the builder and constructs a [`DimensionValues`](crate::types::DimensionValues).
     pub fn build(self) -> crate::types::DimensionValues {
         crate::types::DimensionValues {
-            key: self.key,
-            values: self.values,
-            match_options: self.match_options,
+            key: self.key
+            ,
+            values: self.values
+            ,
+            match_options: self.match_options
+            ,
         }
     }
 }
+

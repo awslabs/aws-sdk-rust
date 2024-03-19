@@ -3,22 +3,23 @@
 /// <p>Provides details about a collapsed group of search results.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CollapsedResultDetail {
+pub struct CollapsedResultDetail  {
     /// <p>The value of the document attribute that results are collapsed on.</p>
     pub document_attribute: ::std::option::Option<crate::types::DocumentAttribute>,
     /// <p>A list of results in the collapsed group.</p>
-    pub expanded_results: ::std::option::Option<::std::vec::Vec<crate::types::ExpandedResultItem>>,
+    pub expanded_results: ::std::option::Option<::std::vec::Vec::<crate::types::ExpandedResultItem>>,
 }
-impl CollapsedResultDetail {
+impl  CollapsedResultDetail  {
     /// <p>The value of the document attribute that results are collapsed on.</p>
-    pub fn document_attribute(&self) -> ::std::option::Option<&crate::types::DocumentAttribute> {
+    pub fn document_attribute(&self) -> ::std::option::Option<& crate::types::DocumentAttribute> {
         self.document_attribute.as_ref()
     }
     /// <p>A list of results in the collapsed group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.expanded_results.is_none()`.
-    pub fn expanded_results(&self) -> &[crate::types::ExpandedResultItem] {
-        self.expanded_results.as_deref().unwrap_or_default()
+    pub fn expanded_results(&self) -> & [crate::types::ExpandedResultItem] {
+        self.expanded_results.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CollapsedResultDetail {
@@ -33,7 +34,7 @@ impl CollapsedResultDetail {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CollapsedResultDetailBuilder {
     pub(crate) document_attribute: ::std::option::Option<crate::types::DocumentAttribute>,
-    pub(crate) expanded_results: ::std::option::Option<::std::vec::Vec<crate::types::ExpandedResultItem>>,
+    pub(crate) expanded_results: ::std::option::Option<::std::vec::Vec::<crate::types::ExpandedResultItem>>,
 }
 impl CollapsedResultDetailBuilder {
     /// <p>The value of the document attribute that results are collapsed on.</p>
@@ -44,8 +45,7 @@ impl CollapsedResultDetailBuilder {
     }
     /// <p>The value of the document attribute that results are collapsed on.</p>
     pub fn set_document_attribute(mut self, input: ::std::option::Option<crate::types::DocumentAttribute>) -> Self {
-        self.document_attribute = input;
-        self
+        self.document_attribute = input; self
     }
     /// <p>The value of the document attribute that results are collapsed on.</p>
     pub fn get_document_attribute(&self) -> &::std::option::Option<crate::types::DocumentAttribute> {
@@ -58,24 +58,26 @@ impl CollapsedResultDetailBuilder {
     /// <p>A list of results in the collapsed group.</p>
     pub fn expanded_results(mut self, input: crate::types::ExpandedResultItem) -> Self {
         let mut v = self.expanded_results.unwrap_or_default();
-        v.push(input);
-        self.expanded_results = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.expanded_results = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of results in the collapsed group.</p>
-    pub fn set_expanded_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExpandedResultItem>>) -> Self {
-        self.expanded_results = input;
-        self
+    pub fn set_expanded_results(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ExpandedResultItem>>) -> Self {
+        self.expanded_results = input; self
     }
     /// <p>A list of results in the collapsed group.</p>
-    pub fn get_expanded_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExpandedResultItem>> {
+    pub fn get_expanded_results(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ExpandedResultItem>> {
         &self.expanded_results
     }
     /// Consumes the builder and constructs a [`CollapsedResultDetail`](crate::types::CollapsedResultDetail).
     pub fn build(self) -> crate::types::CollapsedResultDetail {
         crate::types::CollapsedResultDetail {
-            document_attribute: self.document_attribute,
-            expanded_results: self.expanded_results,
+            document_attribute: self.document_attribute
+            ,
+            expanded_results: self.expanded_results
+            ,
         }
     }
 }
+

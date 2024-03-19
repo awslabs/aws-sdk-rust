@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMonitorsInput {
+pub struct ListMonitorsInput  {
     /// <p>The token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -11,9 +11,9 @@ pub struct ListMonitorsInput {
     /// <p>The list of all monitors and their states.</p>
     pub state: ::std::option::Option<::std::string::String>,
 }
-impl ListMonitorsInput {
+impl  ListMonitorsInput  {
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -22,7 +22,7 @@ impl ListMonitorsInput {
         self.max_results
     }
     /// <p>The list of all monitors and their states.</p>
-    pub fn state(&self) -> ::std::option::Option<&str> {
+    pub fn state(&self) -> ::std::option::Option<& str> {
         self.state.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl ListMonitorsInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +64,7 @@ impl ListMonitorsInputBuilder {
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
@@ -80,21 +78,24 @@ impl ListMonitorsInputBuilder {
     }
     /// <p>The list of all monitors and their states.</p>
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The list of all monitors and their states.</p>
     pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
         &self.state
     }
     /// Consumes the builder and constructs a [`ListMonitorsInput`](crate::operation::list_monitors::ListMonitorsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_monitors::ListMonitorsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_monitors::ListMonitorsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            state: self.state,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_monitors::ListMonitorsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_monitors::ListMonitorsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                state: self.state
+                ,
+            }
+        )
     }
 }
+

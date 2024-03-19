@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetObjectMetadataInput {
+pub struct GetObjectMetadataInput  {
     /// Backup job id for the in-progress backup.
     pub storage_job_id: ::std::option::Option<::std::string::String>,
     /// Object token.
     pub object_token: ::std::option::Option<::std::string::String>,
 }
-impl GetObjectMetadataInput {
+impl  GetObjectMetadataInput  {
     /// Backup job id for the in-progress backup.
-    pub fn storage_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn storage_job_id(&self) -> ::std::option::Option<& str> {
         self.storage_job_id.as_deref()
     }
     /// Object token.
-    pub fn object_token(&self) -> ::std::option::Option<&str> {
+    pub fn object_token(&self) -> ::std::option::Option<& str> {
         self.object_token.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetObjectMetadataInputBuilder {
     }
     /// Backup job id for the in-progress backup.
     pub fn set_storage_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.storage_job_id = input;
-        self
+        self.storage_job_id = input; self
     }
     /// Backup job id for the in-progress backup.
     pub fn get_storage_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl GetObjectMetadataInputBuilder {
     }
     /// Object token.
     pub fn set_object_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object_token = input;
-        self
+        self.object_token = input; self
     }
     /// Object token.
     pub fn get_object_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.object_token
     }
     /// Consumes the builder and constructs a [`GetObjectMetadataInput`](crate::operation::get_object_metadata::GetObjectMetadataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_object_metadata::GetObjectMetadataInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_object_metadata::GetObjectMetadataInput {
-            storage_job_id: self.storage_job_id,
-            object_token: self.object_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_object_metadata::GetObjectMetadataInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_object_metadata::GetObjectMetadataInput {
+                storage_job_id: self.storage_job_id
+                ,
+                object_token: self.object_token
+                ,
+            }
+        )
     }
 }
+

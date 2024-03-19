@@ -3,7 +3,7 @@
 /// <p>Provides information about the way an organization is configured in Security Hub.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OrganizationConfiguration {
+pub struct OrganizationConfiguration  {
     /// <p>Indicates whether the organization uses local or central configuration.</p>
     /// <p>If you use local configuration, the Security Hub delegated administrator can set <code>AutoEnable</code> to <code>true</code> and <code>AutoEnableStandards</code> to <code>DEFAULT</code>. This automatically enables Security Hub and default security standards in new organization accounts. These new account settings must be set separately in each Amazon Web Services Region, and settings may be different in each Region.</p>
     /// <p>If you use central configuration, the delegated administrator can create configuration policies. Configuration policies can be used to configure Security Hub, security standards, and security controls in multiple accounts and Regions. If you want new organization accounts to use a specific configuration, you can create a configuration policy and associate it with the root or specific organizational units (OUs). New accounts will inherit the policy from the root or their assigned OU.</p>
@@ -13,19 +13,19 @@ pub struct OrganizationConfiguration {
     /// <p>Provides an explanation if the value of <code>Status</code> is equal to <code>FAILED</code> when <code>ConfigurationType</code> is equal to <code>CENTRAL</code>.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
 }
-impl OrganizationConfiguration {
+impl  OrganizationConfiguration  {
     /// <p>Indicates whether the organization uses local or central configuration.</p>
     /// <p>If you use local configuration, the Security Hub delegated administrator can set <code>AutoEnable</code> to <code>true</code> and <code>AutoEnableStandards</code> to <code>DEFAULT</code>. This automatically enables Security Hub and default security standards in new organization accounts. These new account settings must be set separately in each Amazon Web Services Region, and settings may be different in each Region.</p>
     /// <p>If you use central configuration, the delegated administrator can create configuration policies. Configuration policies can be used to configure Security Hub, security standards, and security controls in multiple accounts and Regions. If you want new organization accounts to use a specific configuration, you can create a configuration policy and associate it with the root or specific organizational units (OUs). New accounts will inherit the policy from the root or their assigned OU.</p>
-    pub fn configuration_type(&self) -> ::std::option::Option<&crate::types::OrganizationConfigurationConfigurationType> {
+    pub fn configuration_type(&self) -> ::std::option::Option<& crate::types::OrganizationConfigurationConfigurationType> {
         self.configuration_type.as_ref()
     }
     /// <p>Describes whether central configuration could be enabled as the <code>ConfigurationType</code> for the organization. If your <code>ConfigurationType</code> is local configuration, then the value of <code>Status</code> is always <code>ENABLED</code>.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::OrganizationConfigurationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::OrganizationConfigurationStatus> {
         self.status.as_ref()
     }
     /// <p>Provides an explanation if the value of <code>Status</code> is equal to <code>FAILED</code> when <code>ConfigurationType</code> is equal to <code>CENTRAL</code>.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
 }
@@ -56,8 +56,7 @@ impl OrganizationConfigurationBuilder {
     /// <p>If you use local configuration, the Security Hub delegated administrator can set <code>AutoEnable</code> to <code>true</code> and <code>AutoEnableStandards</code> to <code>DEFAULT</code>. This automatically enables Security Hub and default security standards in new organization accounts. These new account settings must be set separately in each Amazon Web Services Region, and settings may be different in each Region.</p>
     /// <p>If you use central configuration, the delegated administrator can create configuration policies. Configuration policies can be used to configure Security Hub, security standards, and security controls in multiple accounts and Regions. If you want new organization accounts to use a specific configuration, you can create a configuration policy and associate it with the root or specific organizational units (OUs). New accounts will inherit the policy from the root or their assigned OU.</p>
     pub fn set_configuration_type(mut self, input: ::std::option::Option<crate::types::OrganizationConfigurationConfigurationType>) -> Self {
-        self.configuration_type = input;
-        self
+        self.configuration_type = input; self
     }
     /// <p>Indicates whether the organization uses local or central configuration.</p>
     /// <p>If you use local configuration, the Security Hub delegated administrator can set <code>AutoEnable</code> to <code>true</code> and <code>AutoEnableStandards</code> to <code>DEFAULT</code>. This automatically enables Security Hub and default security standards in new organization accounts. These new account settings must be set separately in each Amazon Web Services Region, and settings may be different in each Region.</p>
@@ -72,8 +71,7 @@ impl OrganizationConfigurationBuilder {
     }
     /// <p>Describes whether central configuration could be enabled as the <code>ConfigurationType</code> for the organization. If your <code>ConfigurationType</code> is local configuration, then the value of <code>Status</code> is always <code>ENABLED</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OrganizationConfigurationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Describes whether central configuration could be enabled as the <code>ConfigurationType</code> for the organization. If your <code>ConfigurationType</code> is local configuration, then the value of <code>Status</code> is always <code>ENABLED</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::OrganizationConfigurationStatus> {
@@ -86,8 +84,7 @@ impl OrganizationConfigurationBuilder {
     }
     /// <p>Provides an explanation if the value of <code>Status</code> is equal to <code>FAILED</code> when <code>ConfigurationType</code> is equal to <code>CENTRAL</code>.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>Provides an explanation if the value of <code>Status</code> is equal to <code>FAILED</code> when <code>ConfigurationType</code> is equal to <code>CENTRAL</code>.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,9 +93,13 @@ impl OrganizationConfigurationBuilder {
     /// Consumes the builder and constructs a [`OrganizationConfiguration`](crate::types::OrganizationConfiguration).
     pub fn build(self) -> crate::types::OrganizationConfiguration {
         crate::types::OrganizationConfiguration {
-            configuration_type: self.configuration_type,
-            status: self.status,
-            status_message: self.status_message,
+            configuration_type: self.configuration_type
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
         }
     }
 }
+

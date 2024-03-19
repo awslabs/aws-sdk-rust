@@ -3,13 +3,13 @@
 /// <p>The configuration for the allowed capabilities for participants present over the call.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ParticipantCapabilities {
+pub struct ParticipantCapabilities  {
     /// <p>The configuration having the video sharing capabilities for participants over the call.</p>
     pub video: ::std::option::Option<crate::types::VideoCapability>,
 }
-impl ParticipantCapabilities {
+impl  ParticipantCapabilities  {
     /// <p>The configuration having the video sharing capabilities for participants over the call.</p>
-    pub fn video(&self) -> ::std::option::Option<&crate::types::VideoCapability> {
+    pub fn video(&self) -> ::std::option::Option<& crate::types::VideoCapability> {
         self.video.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ParticipantCapabilitiesBuilder {
     }
     /// <p>The configuration having the video sharing capabilities for participants over the call.</p>
     pub fn set_video(mut self, input: ::std::option::Option<crate::types::VideoCapability>) -> Self {
-        self.video = input;
-        self
+        self.video = input; self
     }
     /// <p>The configuration having the video sharing capabilities for participants over the call.</p>
     pub fn get_video(&self) -> &::std::option::Option<crate::types::VideoCapability> {
@@ -43,6 +42,10 @@ impl ParticipantCapabilitiesBuilder {
     }
     /// Consumes the builder and constructs a [`ParticipantCapabilities`](crate::types::ParticipantCapabilities).
     pub fn build(self) -> crate::types::ParticipantCapabilities {
-        crate::types::ParticipantCapabilities { video: self.video }
+        crate::types::ParticipantCapabilities {
+            video: self.video
+            ,
+        }
     }
 }
+

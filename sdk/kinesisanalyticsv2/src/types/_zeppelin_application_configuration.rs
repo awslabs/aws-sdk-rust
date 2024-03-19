@@ -3,7 +3,7 @@
 /// <p>The configuration of a Managed Service for Apache Flink Studio notebook.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ZeppelinApplicationConfiguration {
+pub struct ZeppelinApplicationConfiguration  {
     /// <p>The monitoring configuration of a Managed Service for Apache Flink Studio notebook.</p>
     pub monitoring_configuration: ::std::option::Option<crate::types::ZeppelinMonitoringConfiguration>,
     /// <p>The Amazon Glue Data Catalog that you use in queries in a Managed Service for Apache Flink Studio notebook.</p>
@@ -11,26 +11,27 @@ pub struct ZeppelinApplicationConfiguration {
     /// <p>The information required to deploy a Managed Service for Apache Flink Studio notebook as an application with durable state.</p>
     pub deploy_as_application_configuration: ::std::option::Option<crate::types::DeployAsApplicationConfiguration>,
     /// <p>Custom artifacts are dependency JARs and user-defined functions (UDF).</p>
-    pub custom_artifacts_configuration: ::std::option::Option<::std::vec::Vec<crate::types::CustomArtifactConfiguration>>,
+    pub custom_artifacts_configuration: ::std::option::Option<::std::vec::Vec::<crate::types::CustomArtifactConfiguration>>,
 }
-impl ZeppelinApplicationConfiguration {
+impl  ZeppelinApplicationConfiguration  {
     /// <p>The monitoring configuration of a Managed Service for Apache Flink Studio notebook.</p>
-    pub fn monitoring_configuration(&self) -> ::std::option::Option<&crate::types::ZeppelinMonitoringConfiguration> {
+    pub fn monitoring_configuration(&self) -> ::std::option::Option<& crate::types::ZeppelinMonitoringConfiguration> {
         self.monitoring_configuration.as_ref()
     }
     /// <p>The Amazon Glue Data Catalog that you use in queries in a Managed Service for Apache Flink Studio notebook.</p>
-    pub fn catalog_configuration(&self) -> ::std::option::Option<&crate::types::CatalogConfiguration> {
+    pub fn catalog_configuration(&self) -> ::std::option::Option<& crate::types::CatalogConfiguration> {
         self.catalog_configuration.as_ref()
     }
     /// <p>The information required to deploy a Managed Service for Apache Flink Studio notebook as an application with durable state.</p>
-    pub fn deploy_as_application_configuration(&self) -> ::std::option::Option<&crate::types::DeployAsApplicationConfiguration> {
+    pub fn deploy_as_application_configuration(&self) -> ::std::option::Option<& crate::types::DeployAsApplicationConfiguration> {
         self.deploy_as_application_configuration.as_ref()
     }
     /// <p>Custom artifacts are dependency JARs and user-defined functions (UDF).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_artifacts_configuration.is_none()`.
-    pub fn custom_artifacts_configuration(&self) -> &[crate::types::CustomArtifactConfiguration] {
-        self.custom_artifacts_configuration.as_deref().unwrap_or_default()
+    pub fn custom_artifacts_configuration(&self) -> & [crate::types::CustomArtifactConfiguration] {
+        self.custom_artifacts_configuration.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ZeppelinApplicationConfiguration {
@@ -47,7 +48,7 @@ pub struct ZeppelinApplicationConfigurationBuilder {
     pub(crate) monitoring_configuration: ::std::option::Option<crate::types::ZeppelinMonitoringConfiguration>,
     pub(crate) catalog_configuration: ::std::option::Option<crate::types::CatalogConfiguration>,
     pub(crate) deploy_as_application_configuration: ::std::option::Option<crate::types::DeployAsApplicationConfiguration>,
-    pub(crate) custom_artifacts_configuration: ::std::option::Option<::std::vec::Vec<crate::types::CustomArtifactConfiguration>>,
+    pub(crate) custom_artifacts_configuration: ::std::option::Option<::std::vec::Vec::<crate::types::CustomArtifactConfiguration>>,
 }
 impl ZeppelinApplicationConfigurationBuilder {
     /// <p>The monitoring configuration of a Managed Service for Apache Flink Studio notebook.</p>
@@ -57,8 +58,7 @@ impl ZeppelinApplicationConfigurationBuilder {
     }
     /// <p>The monitoring configuration of a Managed Service for Apache Flink Studio notebook.</p>
     pub fn set_monitoring_configuration(mut self, input: ::std::option::Option<crate::types::ZeppelinMonitoringConfiguration>) -> Self {
-        self.monitoring_configuration = input;
-        self
+        self.monitoring_configuration = input; self
     }
     /// <p>The monitoring configuration of a Managed Service for Apache Flink Studio notebook.</p>
     pub fn get_monitoring_configuration(&self) -> &::std::option::Option<crate::types::ZeppelinMonitoringConfiguration> {
@@ -71,8 +71,7 @@ impl ZeppelinApplicationConfigurationBuilder {
     }
     /// <p>The Amazon Glue Data Catalog that you use in queries in a Managed Service for Apache Flink Studio notebook.</p>
     pub fn set_catalog_configuration(mut self, input: ::std::option::Option<crate::types::CatalogConfiguration>) -> Self {
-        self.catalog_configuration = input;
-        self
+        self.catalog_configuration = input; self
     }
     /// <p>The Amazon Glue Data Catalog that you use in queries in a Managed Service for Apache Flink Studio notebook.</p>
     pub fn get_catalog_configuration(&self) -> &::std::option::Option<crate::types::CatalogConfiguration> {
@@ -85,8 +84,7 @@ impl ZeppelinApplicationConfigurationBuilder {
     }
     /// <p>The information required to deploy a Managed Service for Apache Flink Studio notebook as an application with durable state.</p>
     pub fn set_deploy_as_application_configuration(mut self, input: ::std::option::Option<crate::types::DeployAsApplicationConfiguration>) -> Self {
-        self.deploy_as_application_configuration = input;
-        self
+        self.deploy_as_application_configuration = input; self
     }
     /// <p>The information required to deploy a Managed Service for Apache Flink Studio notebook as an application with durable state.</p>
     pub fn get_deploy_as_application_configuration(&self) -> &::std::option::Option<crate::types::DeployAsApplicationConfiguration> {
@@ -99,29 +97,30 @@ impl ZeppelinApplicationConfigurationBuilder {
     /// <p>Custom artifacts are dependency JARs and user-defined functions (UDF).</p>
     pub fn custom_artifacts_configuration(mut self, input: crate::types::CustomArtifactConfiguration) -> Self {
         let mut v = self.custom_artifacts_configuration.unwrap_or_default();
-        v.push(input);
-        self.custom_artifacts_configuration = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.custom_artifacts_configuration = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Custom artifacts are dependency JARs and user-defined functions (UDF).</p>
-    pub fn set_custom_artifacts_configuration(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomArtifactConfiguration>>,
-    ) -> Self {
-        self.custom_artifacts_configuration = input;
-        self
+    pub fn set_custom_artifacts_configuration(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CustomArtifactConfiguration>>) -> Self {
+        self.custom_artifacts_configuration = input; self
     }
     /// <p>Custom artifacts are dependency JARs and user-defined functions (UDF).</p>
-    pub fn get_custom_artifacts_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomArtifactConfiguration>> {
+    pub fn get_custom_artifacts_configuration(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CustomArtifactConfiguration>> {
         &self.custom_artifacts_configuration
     }
     /// Consumes the builder and constructs a [`ZeppelinApplicationConfiguration`](crate::types::ZeppelinApplicationConfiguration).
     pub fn build(self) -> crate::types::ZeppelinApplicationConfiguration {
         crate::types::ZeppelinApplicationConfiguration {
-            monitoring_configuration: self.monitoring_configuration,
-            catalog_configuration: self.catalog_configuration,
-            deploy_as_application_configuration: self.deploy_as_application_configuration,
-            custom_artifacts_configuration: self.custom_artifacts_configuration,
+            monitoring_configuration: self.monitoring_configuration
+            ,
+            catalog_configuration: self.catalog_configuration
+            ,
+            deploy_as_application_configuration: self.deploy_as_application_configuration
+            ,
+            custom_artifacts_configuration: self.custom_artifacts_configuration
+            ,
         }
     }
 }
+

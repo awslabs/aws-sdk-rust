@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateProblemInput {
+pub struct UpdateProblemInput  {
     /// <p>The ID of the problem.</p>
     pub problem_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the problem. Arguments can be passed for only problems that show a status of <code>RECOVERING</code>.</p>
@@ -10,17 +10,17 @@ pub struct UpdateProblemInput {
     /// <p>The visibility of a problem. When you pass a value of <code>IGNORED</code>, the problem is removed from the default view, and all notifications for the problem are suspended. When <code>VISIBLE</code> is passed, the <code>IGNORED</code> action is reversed.</p>
     pub visibility: ::std::option::Option<crate::types::Visibility>,
 }
-impl UpdateProblemInput {
+impl  UpdateProblemInput  {
     /// <p>The ID of the problem.</p>
-    pub fn problem_id(&self) -> ::std::option::Option<&str> {
+    pub fn problem_id(&self) -> ::std::option::Option<& str> {
         self.problem_id.as_deref()
     }
     /// <p>The status of the problem. Arguments can be passed for only problems that show a status of <code>RECOVERING</code>.</p>
-    pub fn update_status(&self) -> ::std::option::Option<&crate::types::UpdateStatus> {
+    pub fn update_status(&self) -> ::std::option::Option<& crate::types::UpdateStatus> {
         self.update_status.as_ref()
     }
     /// <p>The visibility of a problem. When you pass a value of <code>IGNORED</code>, the problem is removed from the default view, and all notifications for the problem are suspended. When <code>VISIBLE</code> is passed, the <code>IGNORED</code> action is reversed.</p>
-    pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+    pub fn visibility(&self) -> ::std::option::Option<& crate::types::Visibility> {
         self.visibility.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateProblemInputBuilder {
     }
     /// <p>The ID of the problem.</p>
     pub fn set_problem_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.problem_id = input;
-        self
+        self.problem_id = input; self
     }
     /// <p>The ID of the problem.</p>
     pub fn get_problem_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UpdateProblemInputBuilder {
     }
     /// <p>The status of the problem. Arguments can be passed for only problems that show a status of <code>RECOVERING</code>.</p>
     pub fn set_update_status(mut self, input: ::std::option::Option<crate::types::UpdateStatus>) -> Self {
-        self.update_status = input;
-        self
+        self.update_status = input; self
     }
     /// <p>The status of the problem. Arguments can be passed for only problems that show a status of <code>RECOVERING</code>.</p>
     pub fn get_update_status(&self) -> &::std::option::Option<crate::types::UpdateStatus> {
@@ -76,21 +74,24 @@ impl UpdateProblemInputBuilder {
     }
     /// <p>The visibility of a problem. When you pass a value of <code>IGNORED</code>, the problem is removed from the default view, and all notifications for the problem are suspended. When <code>VISIBLE</code> is passed, the <code>IGNORED</code> action is reversed.</p>
     pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
-        self.visibility = input;
-        self
+        self.visibility = input; self
     }
     /// <p>The visibility of a problem. When you pass a value of <code>IGNORED</code>, the problem is removed from the default view, and all notifications for the problem are suspended. When <code>VISIBLE</code> is passed, the <code>IGNORED</code> action is reversed.</p>
     pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
         &self.visibility
     }
     /// Consumes the builder and constructs a [`UpdateProblemInput`](crate::operation::update_problem::UpdateProblemInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_problem::UpdateProblemInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_problem::UpdateProblemInput {
-            problem_id: self.problem_id,
-            update_status: self.update_status,
-            visibility: self.visibility,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_problem::UpdateProblemInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_problem::UpdateProblemInput {
+                problem_id: self.problem_id
+                ,
+                update_status: self.update_status
+                ,
+                visibility: self.visibility
+                ,
+            }
+        )
     }
 }
+

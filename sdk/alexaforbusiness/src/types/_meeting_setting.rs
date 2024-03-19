@@ -11,13 +11,13 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MeetingSetting {
+pub struct MeetingSetting  {
     /// <p>The values that indicate whether the pin is always required.</p>
     pub require_pin: crate::types::RequirePin,
 }
-impl MeetingSetting {
+impl  MeetingSetting  {
     /// <p>The values that indicate whether the pin is always required.</p>
-    pub fn require_pin(&self) -> &crate::types::RequirePin {
+    pub fn require_pin(&self) -> & crate::types::RequirePin {
         &self.require_pin
     }
 }
@@ -43,8 +43,7 @@ impl MeetingSettingBuilder {
     }
     /// <p>The values that indicate whether the pin is always required.</p>
     pub fn set_require_pin(mut self, input: ::std::option::Option<crate::types::RequirePin>) -> Self {
-        self.require_pin = input;
-        self
+        self.require_pin = input; self
     }
     /// <p>The values that indicate whether the pin is always required.</p>
     pub fn get_require_pin(&self) -> &::std::option::Option<crate::types::RequirePin> {
@@ -54,13 +53,15 @@ impl MeetingSettingBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`require_pin`](crate::types::builders::MeetingSettingBuilder::require_pin)
     pub fn build(self) -> ::std::result::Result<crate::types::MeetingSetting, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MeetingSetting {
-            require_pin: self.require_pin.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "require_pin",
-                    "require_pin was not specified but it is required when building MeetingSetting",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MeetingSetting {
+                require_pin: self.require_pin
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("require_pin", "require_pin was not specified but it is required when building MeetingSetting")
+                    )?
+                ,
+            }
+        )
     }
 }
+

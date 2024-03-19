@@ -3,7 +3,7 @@
 /// <p>Details about the reservations that Amazon Web Services recommends that you purchase.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceDetails {
+pub struct InstanceDetails  {
     /// <p>The Amazon EC2 reservations that Amazon Web Services recommends that you purchase.</p>
     pub ec2_instance_details: ::std::option::Option<crate::types::Ec2InstanceDetails>,
     /// <p>The Amazon RDS reservations that Amazon Web Services recommends that you purchase.</p>
@@ -17,29 +17,29 @@ pub struct InstanceDetails {
     /// <p>The MemoryDB reservations that Amazon Web Services recommends that you purchase.</p>
     pub memory_db_instance_details: ::std::option::Option<crate::types::MemoryDbInstanceDetails>,
 }
-impl InstanceDetails {
+impl  InstanceDetails  {
     /// <p>The Amazon EC2 reservations that Amazon Web Services recommends that you purchase.</p>
-    pub fn ec2_instance_details(&self) -> ::std::option::Option<&crate::types::Ec2InstanceDetails> {
+    pub fn ec2_instance_details(&self) -> ::std::option::Option<& crate::types::Ec2InstanceDetails> {
         self.ec2_instance_details.as_ref()
     }
     /// <p>The Amazon RDS reservations that Amazon Web Services recommends that you purchase.</p>
-    pub fn rds_instance_details(&self) -> ::std::option::Option<&crate::types::RdsInstanceDetails> {
+    pub fn rds_instance_details(&self) -> ::std::option::Option<& crate::types::RdsInstanceDetails> {
         self.rds_instance_details.as_ref()
     }
     /// <p>The Amazon Redshift reservations that Amazon Web Services recommends that you purchase.</p>
-    pub fn redshift_instance_details(&self) -> ::std::option::Option<&crate::types::RedshiftInstanceDetails> {
+    pub fn redshift_instance_details(&self) -> ::std::option::Option<& crate::types::RedshiftInstanceDetails> {
         self.redshift_instance_details.as_ref()
     }
     /// <p>The ElastiCache reservations that Amazon Web Services recommends that you purchase.</p>
-    pub fn elasti_cache_instance_details(&self) -> ::std::option::Option<&crate::types::ElastiCacheInstanceDetails> {
+    pub fn elasti_cache_instance_details(&self) -> ::std::option::Option<& crate::types::ElastiCacheInstanceDetails> {
         self.elasti_cache_instance_details.as_ref()
     }
     /// <p>The Amazon OpenSearch Service reservations that Amazon Web Services recommends that you purchase.</p>
-    pub fn es_instance_details(&self) -> ::std::option::Option<&crate::types::EsInstanceDetails> {
+    pub fn es_instance_details(&self) -> ::std::option::Option<& crate::types::EsInstanceDetails> {
         self.es_instance_details.as_ref()
     }
     /// <p>The MemoryDB reservations that Amazon Web Services recommends that you purchase.</p>
-    pub fn memory_db_instance_details(&self) -> ::std::option::Option<&crate::types::MemoryDbInstanceDetails> {
+    pub fn memory_db_instance_details(&self) -> ::std::option::Option<& crate::types::MemoryDbInstanceDetails> {
         self.memory_db_instance_details.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl InstanceDetailsBuilder {
     }
     /// <p>The Amazon EC2 reservations that Amazon Web Services recommends that you purchase.</p>
     pub fn set_ec2_instance_details(mut self, input: ::std::option::Option<crate::types::Ec2InstanceDetails>) -> Self {
-        self.ec2_instance_details = input;
-        self
+        self.ec2_instance_details = input; self
     }
     /// <p>The Amazon EC2 reservations that Amazon Web Services recommends that you purchase.</p>
     pub fn get_ec2_instance_details(&self) -> &::std::option::Option<crate::types::Ec2InstanceDetails> {
@@ -83,8 +82,7 @@ impl InstanceDetailsBuilder {
     }
     /// <p>The Amazon RDS reservations that Amazon Web Services recommends that you purchase.</p>
     pub fn set_rds_instance_details(mut self, input: ::std::option::Option<crate::types::RdsInstanceDetails>) -> Self {
-        self.rds_instance_details = input;
-        self
+        self.rds_instance_details = input; self
     }
     /// <p>The Amazon RDS reservations that Amazon Web Services recommends that you purchase.</p>
     pub fn get_rds_instance_details(&self) -> &::std::option::Option<crate::types::RdsInstanceDetails> {
@@ -97,8 +95,7 @@ impl InstanceDetailsBuilder {
     }
     /// <p>The Amazon Redshift reservations that Amazon Web Services recommends that you purchase.</p>
     pub fn set_redshift_instance_details(mut self, input: ::std::option::Option<crate::types::RedshiftInstanceDetails>) -> Self {
-        self.redshift_instance_details = input;
-        self
+        self.redshift_instance_details = input; self
     }
     /// <p>The Amazon Redshift reservations that Amazon Web Services recommends that you purchase.</p>
     pub fn get_redshift_instance_details(&self) -> &::std::option::Option<crate::types::RedshiftInstanceDetails> {
@@ -111,8 +108,7 @@ impl InstanceDetailsBuilder {
     }
     /// <p>The ElastiCache reservations that Amazon Web Services recommends that you purchase.</p>
     pub fn set_elasti_cache_instance_details(mut self, input: ::std::option::Option<crate::types::ElastiCacheInstanceDetails>) -> Self {
-        self.elasti_cache_instance_details = input;
-        self
+        self.elasti_cache_instance_details = input; self
     }
     /// <p>The ElastiCache reservations that Amazon Web Services recommends that you purchase.</p>
     pub fn get_elasti_cache_instance_details(&self) -> &::std::option::Option<crate::types::ElastiCacheInstanceDetails> {
@@ -125,8 +121,7 @@ impl InstanceDetailsBuilder {
     }
     /// <p>The Amazon OpenSearch Service reservations that Amazon Web Services recommends that you purchase.</p>
     pub fn set_es_instance_details(mut self, input: ::std::option::Option<crate::types::EsInstanceDetails>) -> Self {
-        self.es_instance_details = input;
-        self
+        self.es_instance_details = input; self
     }
     /// <p>The Amazon OpenSearch Service reservations that Amazon Web Services recommends that you purchase.</p>
     pub fn get_es_instance_details(&self) -> &::std::option::Option<crate::types::EsInstanceDetails> {
@@ -139,8 +134,7 @@ impl InstanceDetailsBuilder {
     }
     /// <p>The MemoryDB reservations that Amazon Web Services recommends that you purchase.</p>
     pub fn set_memory_db_instance_details(mut self, input: ::std::option::Option<crate::types::MemoryDbInstanceDetails>) -> Self {
-        self.memory_db_instance_details = input;
-        self
+        self.memory_db_instance_details = input; self
     }
     /// <p>The MemoryDB reservations that Amazon Web Services recommends that you purchase.</p>
     pub fn get_memory_db_instance_details(&self) -> &::std::option::Option<crate::types::MemoryDbInstanceDetails> {
@@ -149,12 +143,19 @@ impl InstanceDetailsBuilder {
     /// Consumes the builder and constructs a [`InstanceDetails`](crate::types::InstanceDetails).
     pub fn build(self) -> crate::types::InstanceDetails {
         crate::types::InstanceDetails {
-            ec2_instance_details: self.ec2_instance_details,
-            rds_instance_details: self.rds_instance_details,
-            redshift_instance_details: self.redshift_instance_details,
-            elasti_cache_instance_details: self.elasti_cache_instance_details,
-            es_instance_details: self.es_instance_details,
-            memory_db_instance_details: self.memory_db_instance_details,
+            ec2_instance_details: self.ec2_instance_details
+            ,
+            rds_instance_details: self.rds_instance_details
+            ,
+            redshift_instance_details: self.redshift_instance_details
+            ,
+            elasti_cache_instance_details: self.elasti_cache_instance_details
+            ,
+            es_instance_details: self.es_instance_details
+            ,
+            memory_db_instance_details: self.memory_db_instance_details
+            ,
         }
     }
 }
+

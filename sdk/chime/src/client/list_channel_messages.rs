@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListChannelMessages`](crate::operation::list_channel_messages::builders::ListChannelMessagesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_channel_messages::builders::ListChannelMessagesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`channel_arn(impl Into<String>)`](crate::operation::list_channel_messages::builders::ListChannelMessagesFluentBuilder::channel_arn) / [`set_channel_arn(Option<String>)`](crate::operation::list_channel_messages::builders::ListChannelMessagesFluentBuilder::set_channel_arn):<br>required: **true**<br><p>The ARN of the channel.</p><br>
     ///   - [`sort_order(SortOrder)`](crate::operation::list_channel_messages::builders::ListChannelMessagesFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_channel_messages::builders::ListChannelMessagesFluentBuilder::set_sort_order):<br>required: **false**<br><p>The order in which you want messages sorted. Default is Descending, based on time created.</p><br>
     ///   - [`not_before(DateTime)`](crate::operation::list_channel_messages::builders::ListChannelMessagesFluentBuilder::not_before) / [`set_not_before(Option<DateTime>)`](crate::operation::list_channel_messages::builders::ListChannelMessagesFluentBuilder::set_not_before):<br>required: **false**<br><p>The initial or starting time stamp for your requested messages.</p><br>
@@ -11,13 +11,14 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_channel_messages::builders::ListChannelMessagesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_channel_messages::builders::ListChannelMessagesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of messages that you want returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_channel_messages::builders::ListChannelMessagesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_channel_messages::builders::ListChannelMessagesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token passed by previous API calls until all requested messages are returned.</p><br>
     ///   - [`chime_bearer(impl Into<String>)`](crate::operation::list_channel_messages::builders::ListChannelMessagesFluentBuilder::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::operation::list_channel_messages::builders::ListChannelMessagesFluentBuilder::set_chime_bearer):<br>required: **false**<br><p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p><br>
-    /// - On success, responds with [`ListChannelMessagesOutput`](crate::operation::list_channel_messages::ListChannelMessagesOutput) with field(s):
+                            /// - On success, responds with [`ListChannelMessagesOutput`](crate::operation::list_channel_messages::ListChannelMessagesOutput) with field(s):
     ///   - [`channel_arn(Option<String>)`](crate::operation::list_channel_messages::ListChannelMessagesOutput::channel_arn): <p>The ARN of the channel containing the requested messages.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_channel_messages::ListChannelMessagesOutput::next_token): <p>The token passed by previous API calls until all requested messages are returned.</p>
     ///   - [`channel_messages(Option<Vec::<ChannelMessageSummary>>)`](crate::operation::list_channel_messages::ListChannelMessagesOutput::channel_messages): <p>The information about, and content of, each requested message.</p>
-    /// - On failure, responds with [`SdkError<ListChannelMessagesError>`](crate::operation::list_channel_messages::ListChannelMessagesError)
+                            /// - On failure, responds with [`SdkError<ListChannelMessagesError>`](crate::operation::list_channel_messages::ListChannelMessagesError)
     #[deprecated(note = "Replaced by ListChannelMessages in the Amazon Chime SDK Messaging Namespace")]
     pub fn list_channel_messages(&self) -> crate::operation::list_channel_messages::builders::ListChannelMessagesFluentBuilder {
-        crate::operation::list_channel_messages::builders::ListChannelMessagesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_channel_messages::builders::ListChannelMessagesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

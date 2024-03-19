@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSubscriberNotificationOutput {
+pub struct CreateSubscriberNotificationOutput  {
     /// <p>The subscriber endpoint to which exception messages are posted.</p>
     pub subscriber_endpoint: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateSubscriberNotificationOutput {
+impl  CreateSubscriberNotificationOutput  {
     /// <p>The subscriber endpoint to which exception messages are posted.</p>
-    pub fn subscriber_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn subscriber_endpoint(&self) -> ::std::option::Option<& str> {
         self.subscriber_endpoint.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateSubscriberNotificationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateSubscriberNotificationOutput {
     /// Creates a new builder-style object to manufacture [`CreateSubscriberNotificationOutput`](crate::operation::create_subscriber_notification::CreateSubscriberNotificationOutput).
     pub fn builder() -> crate::operation::create_subscriber_notification::builders::CreateSubscriberNotificationOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateSubscriberNotificationOutputBuilder {
     }
     /// <p>The subscriber endpoint to which exception messages are posted.</p>
     pub fn set_subscriber_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subscriber_endpoint = input;
-        self
+        self.subscriber_endpoint = input; self
     }
     /// <p>The subscriber endpoint to which exception messages are posted.</p>
     pub fn get_subscriber_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.subscriber_endpoint
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateSubscriberNotificationOutput`](crate::operation::create_subscriber_notification::CreateSubscriberNotificationOutput).
     pub fn build(self) -> crate::operation::create_subscriber_notification::CreateSubscriberNotificationOutput {
         crate::operation::create_subscriber_notification::CreateSubscriberNotificationOutput {
-            subscriber_endpoint: self.subscriber_endpoint,
+            subscriber_endpoint: self.subscriber_endpoint
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

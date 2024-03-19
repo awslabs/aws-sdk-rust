@@ -3,7 +3,7 @@
 /// <p>A list of Amazon DocumentDB elastic clusters.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClusterInList {
+pub struct ClusterInList  {
     /// <p>The name of the elastic cluster.</p>
     pub cluster_name: ::std::string::String,
     /// <p>The ARN identifier of the elastic cluster.</p>
@@ -11,19 +11,17 @@ pub struct ClusterInList {
     /// <p>The status of the elastic cluster.</p>
     pub status: crate::types::Status,
 }
-impl ClusterInList {
+impl  ClusterInList  {
     /// <p>The name of the elastic cluster.</p>
-    pub fn cluster_name(&self) -> &str {
-        use std::ops::Deref;
-        self.cluster_name.deref()
+    pub fn cluster_name(&self) -> & str {
+        use std::ops::Deref; self.cluster_name.deref()
     }
     /// <p>The ARN identifier of the elastic cluster.</p>
-    pub fn cluster_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.cluster_arn.deref()
+    pub fn cluster_arn(&self) -> & str {
+        use std::ops::Deref; self.cluster_arn.deref()
     }
     /// <p>The status of the elastic cluster.</p>
-    pub fn status(&self) -> &crate::types::Status {
+    pub fn status(&self) -> & crate::types::Status {
         &self.status
     }
 }
@@ -51,8 +49,7 @@ impl ClusterInListBuilder {
     }
     /// <p>The name of the elastic cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The name of the elastic cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl ClusterInListBuilder {
     }
     /// <p>The ARN identifier of the elastic cluster.</p>
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
     }
     /// <p>The ARN identifier of the elastic cluster.</p>
     pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl ClusterInListBuilder {
     }
     /// <p>The status of the elastic cluster.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the elastic cluster.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
@@ -94,25 +89,25 @@ impl ClusterInListBuilder {
     /// - [`cluster_arn`](crate::types::builders::ClusterInListBuilder::cluster_arn)
     /// - [`status`](crate::types::builders::ClusterInListBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::ClusterInList, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ClusterInList {
-            cluster_name: self.cluster_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "cluster_name",
-                    "cluster_name was not specified but it is required when building ClusterInList",
-                )
-            })?,
-            cluster_arn: self.cluster_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "cluster_arn",
-                    "cluster_arn was not specified but it is required when building ClusterInList",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building ClusterInList",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ClusterInList {
+                cluster_name: self.cluster_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("cluster_name", "cluster_name was not specified but it is required when building ClusterInList")
+                    )?
+                ,
+                cluster_arn: self.cluster_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("cluster_arn", "cluster_arn was not specified but it is required when building ClusterInList")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building ClusterInList")
+                    )?
+                ,
+            }
+        )
     }
 }
+

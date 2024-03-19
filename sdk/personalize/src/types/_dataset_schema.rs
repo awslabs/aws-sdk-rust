@@ -3,7 +3,7 @@
 /// <p>Describes the schema for a dataset. For more information on schemas, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSchema.html">CreateSchema</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatasetSchema {
+pub struct DatasetSchema  {
     /// <p>The name of the schema.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
@@ -17,29 +17,29 @@ pub struct DatasetSchema {
     /// <p>The domain of a schema that you created for a dataset in a Domain dataset group.</p>
     pub domain: ::std::option::Option<crate::types::Domain>,
 }
-impl DatasetSchema {
+impl  DatasetSchema  {
     /// <p>The name of the schema.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
-    pub fn schema_arn(&self) -> ::std::option::Option<&str> {
+    pub fn schema_arn(&self) -> ::std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
     /// <p>The schema.</p>
-    pub fn schema(&self) -> ::std::option::Option<&str> {
+    pub fn schema(&self) -> ::std::option::Option<& str> {
         self.schema.as_deref()
     }
     /// <p>The date and time (in Unix time) that the schema was created.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the schema was last updated.</p>
-    pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>The domain of a schema that you created for a dataset in a Domain dataset group.</p>
-    pub fn domain(&self) -> ::std::option::Option<&crate::types::Domain> {
+    pub fn domain(&self) -> ::std::option::Option<& crate::types::Domain> {
         self.domain.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl DatasetSchemaBuilder {
     }
     /// <p>The name of the schema.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the schema.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl DatasetSchemaBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
     pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_arn = input;
-        self
+        self.schema_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
     pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl DatasetSchemaBuilder {
     }
     /// <p>The schema.</p>
     pub fn set_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema = input;
-        self
+        self.schema = input; self
     }
     /// <p>The schema.</p>
     pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl DatasetSchemaBuilder {
     }
     /// <p>The date and time (in Unix time) that the schema was created.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>The date and time (in Unix time) that the schema was created.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -125,8 +121,7 @@ impl DatasetSchemaBuilder {
     }
     /// <p>The date and time (in Unix time) that the schema was last updated.</p>
     pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date_time = input;
-        self
+        self.last_updated_date_time = input; self
     }
     /// <p>The date and time (in Unix time) that the schema was last updated.</p>
     pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -139,8 +134,7 @@ impl DatasetSchemaBuilder {
     }
     /// <p>The domain of a schema that you created for a dataset in a Domain dataset group.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<crate::types::Domain>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The domain of a schema that you created for a dataset in a Domain dataset group.</p>
     pub fn get_domain(&self) -> &::std::option::Option<crate::types::Domain> {
@@ -149,12 +143,19 @@ impl DatasetSchemaBuilder {
     /// Consumes the builder and constructs a [`DatasetSchema`](crate::types::DatasetSchema).
     pub fn build(self) -> crate::types::DatasetSchema {
         crate::types::DatasetSchema {
-            name: self.name,
-            schema_arn: self.schema_arn,
-            schema: self.schema,
-            creation_date_time: self.creation_date_time,
-            last_updated_date_time: self.last_updated_date_time,
-            domain: self.domain,
+            name: self.name
+            ,
+            schema_arn: self.schema_arn
+            ,
+            schema: self.schema
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            last_updated_date_time: self.last_updated_date_time
+            ,
+            domain: self.domain
+            ,
         }
     }
 }
+

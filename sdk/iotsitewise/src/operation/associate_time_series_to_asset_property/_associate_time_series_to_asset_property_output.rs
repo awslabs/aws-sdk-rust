@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateTimeSeriesToAssetPropertyOutput {
+pub struct AssociateTimeSeriesToAssetPropertyOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for AssociateTimeSeriesToAssetPropertyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AssociateTimeSeriesToAssetPropertyOutput {
     /// Creates a new builder-style object to manufacture [`AssociateTimeSeriesToAssetPropertyOutput`](crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyOutput).
     pub fn builder() -> crate::operation::associate_time_series_to_asset_property::builders::AssociateTimeSeriesToAssetPropertyOutputBuilder {
@@ -25,14 +25,14 @@ pub struct AssociateTimeSeriesToAssetPropertyOutputBuilder {
 }
 impl AssociateTimeSeriesToAssetPropertyOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AssociateTimeSeriesToAssetPropertyOutput`](crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyOutput).
     pub fn build(self) -> crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyOutput {
         crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyOutput {
@@ -40,3 +40,4 @@ impl AssociateTimeSeriesToAssetPropertyOutputBuilder {
         }
     }
 }
+

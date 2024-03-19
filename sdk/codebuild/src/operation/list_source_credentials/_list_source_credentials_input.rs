@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSourceCredentialsInput {}
+pub struct ListSourceCredentialsInput  {
+}
 impl ListSourceCredentialsInput {
     /// Creates a new builder-style object to manufacture [`ListSourceCredentialsInput`](crate::operation::list_source_credentials::ListSourceCredentialsInput).
     pub fn builder() -> crate::operation::list_source_credentials::builders::ListSourceCredentialsInputBuilder {
@@ -13,13 +14,15 @@ impl ListSourceCredentialsInput {
 /// A builder for [`ListSourceCredentialsInput`](crate::operation::list_source_credentials::ListSourceCredentialsInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct ListSourceCredentialsInputBuilder {}
+pub struct ListSourceCredentialsInputBuilder {
+}
 impl ListSourceCredentialsInputBuilder {
     /// Consumes the builder and constructs a [`ListSourceCredentialsInput`](crate::operation::list_source_credentials::ListSourceCredentialsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_source_credentials::ListSourceCredentialsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_source_credentials::ListSourceCredentialsInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_source_credentials::ListSourceCredentialsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_source_credentials::ListSourceCredentialsInput {
+            }
+        )
     }
 }
+

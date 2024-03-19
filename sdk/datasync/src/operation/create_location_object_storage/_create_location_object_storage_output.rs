@@ -3,22 +3,22 @@
 /// <p>CreateLocationObjectStorageResponse</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateLocationObjectStorageOutput {
+pub struct CreateLocationObjectStorageOutput  {
     /// <p>Specifies the ARN of the object storage system location that you create.</p>
     pub location_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateLocationObjectStorageOutput {
+impl  CreateLocationObjectStorageOutput  {
     /// <p>Specifies the ARN of the object storage system location that you create.</p>
-    pub fn location_arn(&self) -> ::std::option::Option<&str> {
+    pub fn location_arn(&self) -> ::std::option::Option<& str> {
         self.location_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateLocationObjectStorageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateLocationObjectStorageOutput {
     /// Creates a new builder-style object to manufacture [`CreateLocationObjectStorageOutput`](crate::operation::create_location_object_storage::CreateLocationObjectStorageOutput).
     pub fn builder() -> crate::operation::create_location_object_storage::builders::CreateLocationObjectStorageOutputBuilder {
@@ -41,27 +41,28 @@ impl CreateLocationObjectStorageOutputBuilder {
     }
     /// <p>Specifies the ARN of the object storage system location that you create.</p>
     pub fn set_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location_arn = input;
-        self
+        self.location_arn = input; self
     }
     /// <p>Specifies the ARN of the object storage system location that you create.</p>
     pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.location_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateLocationObjectStorageOutput`](crate::operation::create_location_object_storage::CreateLocationObjectStorageOutput).
     pub fn build(self) -> crate::operation::create_location_object_storage::CreateLocationObjectStorageOutput {
         crate::operation::create_location_object_storage::CreateLocationObjectStorageOutput {
-            location_arn: self.location_arn,
+            location_arn: self.location_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

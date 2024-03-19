@@ -3,22 +3,22 @@
 /// <p>The result of an <code>AddDataSource</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddDataSourceOutput {
+pub struct AddDataSourceOutput  {
     /// <p>A message associated with creation of the data source.</p>
     pub message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl AddDataSourceOutput {
+impl  AddDataSourceOutput  {
     /// <p>A message associated with creation of the data source.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for AddDataSourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AddDataSourceOutput {
     /// Creates a new builder-style object to manufacture [`AddDataSourceOutput`](crate::operation::add_data_source::AddDataSourceOutput).
     pub fn builder() -> crate::operation::add_data_source::builders::AddDataSourceOutputBuilder {
@@ -41,27 +41,28 @@ impl AddDataSourceOutputBuilder {
     }
     /// <p>A message associated with creation of the data source.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>A message associated with creation of the data source.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AddDataSourceOutput`](crate::operation::add_data_source::AddDataSourceOutput).
     pub fn build(self) -> crate::operation::add_data_source::AddDataSourceOutput {
         crate::operation::add_data_source::AddDataSourceOutput {
-            message: self.message,
+            message: self.message
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

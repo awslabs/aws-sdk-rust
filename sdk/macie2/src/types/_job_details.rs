@@ -3,7 +3,7 @@
 /// <p>Specifies whether any one-time or recurring classification jobs are configured to analyze data in an S3 bucket, and, if so, the details of the job that ran most recently.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobDetails {
+pub struct JobDetails  {
     /// <p>Specifies whether any one-time or recurring jobs are configured to analyze data in the bucket. Possible values are:</p>
     /// <ul>
     /// <li>
@@ -31,7 +31,7 @@ pub struct JobDetails {
     /// <p>This value is typically null if the value for the isDefinedInJob property is FALSE or UNKNOWN.</p>
     pub last_job_run_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl JobDetails {
+impl  JobDetails  {
     /// <p>Specifies whether any one-time or recurring jobs are configured to analyze data in the bucket. Possible values are:</p>
     /// <ul>
     /// <li>
@@ -41,7 +41,7 @@ impl JobDetails {
     /// <li>
     /// <p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.</p></li>
     /// </ul>
-    pub fn is_defined_in_job(&self) -> ::std::option::Option<&crate::types::IsDefinedInJob> {
+    pub fn is_defined_in_job(&self) -> ::std::option::Option<& crate::types::IsDefinedInJob> {
         self.is_defined_in_job.as_ref()
     }
     /// <p>Specifies whether any recurring jobs are configured to analyze data in the bucket. Possible values are:</p>
@@ -53,17 +53,17 @@ impl JobDetails {
     /// <li>
     /// <p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.</p></li>
     /// </ul>
-    pub fn is_monitored_by_job(&self) -> ::std::option::Option<&crate::types::IsMonitoredByJob> {
+    pub fn is_monitored_by_job(&self) -> ::std::option::Option<& crate::types::IsMonitoredByJob> {
         self.is_monitored_by_job.as_ref()
     }
     /// <p>The unique identifier for the job that ran most recently and is configured to analyze data in the bucket, either the latest run of a recurring job or the only run of a one-time job.</p>
     /// <p>This value is typically null if the value for the isDefinedInJob property is FALSE or UNKNOWN.</p>
-    pub fn last_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn last_job_id(&self) -> ::std::option::Option<& str> {
         self.last_job_id.as_deref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job (lastJobId) started. If the job is a recurring job, this value indicates when the most recent run started.</p>
     /// <p>This value is typically null if the value for the isDefinedInJob property is FALSE or UNKNOWN.</p>
-    pub fn last_job_run_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_job_run_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_job_run_time.as_ref()
     }
 }
@@ -107,8 +107,7 @@ impl JobDetailsBuilder {
     /// <p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.</p></li>
     /// </ul>
     pub fn set_is_defined_in_job(mut self, input: ::std::option::Option<crate::types::IsDefinedInJob>) -> Self {
-        self.is_defined_in_job = input;
-        self
+        self.is_defined_in_job = input; self
     }
     /// <p>Specifies whether any one-time or recurring jobs are configured to analyze data in the bucket. Possible values are:</p>
     /// <ul>
@@ -145,8 +144,7 @@ impl JobDetailsBuilder {
     /// <p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.</p></li>
     /// </ul>
     pub fn set_is_monitored_by_job(mut self, input: ::std::option::Option<crate::types::IsMonitoredByJob>) -> Self {
-        self.is_monitored_by_job = input;
-        self
+        self.is_monitored_by_job = input; self
     }
     /// <p>Specifies whether any recurring jobs are configured to analyze data in the bucket. Possible values are:</p>
     /// <ul>
@@ -169,8 +167,7 @@ impl JobDetailsBuilder {
     /// <p>The unique identifier for the job that ran most recently and is configured to analyze data in the bucket, either the latest run of a recurring job or the only run of a one-time job.</p>
     /// <p>This value is typically null if the value for the isDefinedInJob property is FALSE or UNKNOWN.</p>
     pub fn set_last_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_job_id = input;
-        self
+        self.last_job_id = input; self
     }
     /// <p>The unique identifier for the job that ran most recently and is configured to analyze data in the bucket, either the latest run of a recurring job or the only run of a one-time job.</p>
     /// <p>This value is typically null if the value for the isDefinedInJob property is FALSE or UNKNOWN.</p>
@@ -186,8 +183,7 @@ impl JobDetailsBuilder {
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job (lastJobId) started. If the job is a recurring job, this value indicates when the most recent run started.</p>
     /// <p>This value is typically null if the value for the isDefinedInJob property is FALSE or UNKNOWN.</p>
     pub fn set_last_job_run_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_job_run_time = input;
-        self
+        self.last_job_run_time = input; self
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job (lastJobId) started. If the job is a recurring job, this value indicates when the most recent run started.</p>
     /// <p>This value is typically null if the value for the isDefinedInJob property is FALSE or UNKNOWN.</p>
@@ -197,10 +193,15 @@ impl JobDetailsBuilder {
     /// Consumes the builder and constructs a [`JobDetails`](crate::types::JobDetails).
     pub fn build(self) -> crate::types::JobDetails {
         crate::types::JobDetails {
-            is_defined_in_job: self.is_defined_in_job,
-            is_monitored_by_job: self.is_monitored_by_job,
-            last_job_id: self.last_job_id,
-            last_job_run_time: self.last_job_run_time,
+            is_defined_in_job: self.is_defined_in_job
+            ,
+            is_monitored_by_job: self.is_monitored_by_job
+            ,
+            last_job_id: self.last_job_id
+            ,
+            last_job_run_time: self.last_job_run_time
+            ,
         }
     }
 }
+

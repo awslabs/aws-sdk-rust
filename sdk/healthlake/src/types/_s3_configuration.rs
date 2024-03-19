@@ -3,22 +3,20 @@
 /// <p>The configuration of the S3 bucket for either an import or export job. This includes assigning permissions for access.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3Configuration {
+pub struct S3Configuration  {
     /// <p>The S3Uri is the user specified S3 location of the FHIR data to be imported into AWS HealthLake.</p>
     pub s3_uri: ::std::string::String,
     /// <p>The KMS key ID used to access the S3 bucket.</p>
     pub kms_key_id: ::std::string::String,
 }
-impl S3Configuration {
+impl  S3Configuration  {
     /// <p>The S3Uri is the user specified S3 location of the FHIR data to be imported into AWS HealthLake.</p>
-    pub fn s3_uri(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_uri.deref()
+    pub fn s3_uri(&self) -> & str {
+        use std::ops::Deref; self.s3_uri.deref()
     }
     /// <p>The KMS key ID used to access the S3 bucket.</p>
-    pub fn kms_key_id(&self) -> &str {
-        use std::ops::Deref;
-        self.kms_key_id.deref()
+    pub fn kms_key_id(&self) -> & str {
+        use std::ops::Deref; self.kms_key_id.deref()
     }
 }
 impl S3Configuration {
@@ -44,8 +42,7 @@ impl S3ConfigurationBuilder {
     }
     /// <p>The S3Uri is the user specified S3 location of the FHIR data to be imported into AWS HealthLake.</p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
     }
     /// <p>The S3Uri is the user specified S3 location of the FHIR data to be imported into AWS HealthLake.</p>
     pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl S3ConfigurationBuilder {
     }
     /// <p>The KMS key ID used to access the S3 bucket.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The KMS key ID used to access the S3 bucket.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl S3ConfigurationBuilder {
     /// - [`s3_uri`](crate::types::builders::S3ConfigurationBuilder::s3_uri)
     /// - [`kms_key_id`](crate::types::builders::S3ConfigurationBuilder::kms_key_id)
     pub fn build(self) -> ::std::result::Result<crate::types::S3Configuration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3Configuration {
-            s3_uri: self.s3_uri.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_uri",
-                    "s3_uri was not specified but it is required when building S3Configuration",
-                )
-            })?,
-            kms_key_id: self.kms_key_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "kms_key_id",
-                    "kms_key_id was not specified but it is required when building S3Configuration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3Configuration {
+                s3_uri: self.s3_uri
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_uri", "s3_uri was not specified but it is required when building S3Configuration")
+                    )?
+                ,
+                kms_key_id: self.kms_key_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("kms_key_id", "kms_key_id was not specified but it is required when building S3Configuration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

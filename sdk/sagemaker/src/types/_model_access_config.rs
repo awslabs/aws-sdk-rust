@@ -9,11 +9,11 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModelAccessConfig {
+pub struct ModelAccessConfig  {
     /// <p>Specifies agreement to the model end-user license agreement (EULA). The <code>AcceptEula</code> value must be explicitly defined as <code>True</code> in order to accept the EULA that this model requires. You are responsible for reviewing and complying with any applicable license terms and making sure they are acceptable for your use case before downloading or using a model.</p>
     pub accept_eula: ::std::option::Option<bool>,
 }
-impl ModelAccessConfig {
+impl  ModelAccessConfig  {
     /// <p>Specifies agreement to the model end-user license agreement (EULA). The <code>AcceptEula</code> value must be explicitly defined as <code>True</code> in order to accept the EULA that this model requires. You are responsible for reviewing and complying with any applicable license terms and making sure they are acceptable for your use case before downloading or using a model.</p>
     pub fn accept_eula(&self) -> ::std::option::Option<bool> {
         self.accept_eula
@@ -41,8 +41,7 @@ impl ModelAccessConfigBuilder {
     }
     /// <p>Specifies agreement to the model end-user license agreement (EULA). The <code>AcceptEula</code> value must be explicitly defined as <code>True</code> in order to accept the EULA that this model requires. You are responsible for reviewing and complying with any applicable license terms and making sure they are acceptable for your use case before downloading or using a model.</p>
     pub fn set_accept_eula(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.accept_eula = input;
-        self
+        self.accept_eula = input; self
     }
     /// <p>Specifies agreement to the model end-user license agreement (EULA). The <code>AcceptEula</code> value must be explicitly defined as <code>True</code> in order to accept the EULA that this model requires. You are responsible for reviewing and complying with any applicable license terms and making sure they are acceptable for your use case before downloading or using a model.</p>
     pub fn get_accept_eula(&self) -> &::std::option::Option<bool> {
@@ -51,7 +50,9 @@ impl ModelAccessConfigBuilder {
     /// Consumes the builder and constructs a [`ModelAccessConfig`](crate::types::ModelAccessConfig).
     pub fn build(self) -> crate::types::ModelAccessConfig {
         crate::types::ModelAccessConfig {
-            accept_eula: self.accept_eula,
+            accept_eula: self.accept_eula
+            ,
         }
     }
 }
+

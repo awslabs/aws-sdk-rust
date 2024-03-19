@@ -2,32 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetLifecyclePolicyOutput {
+pub struct BatchGetLifecyclePolicyOutput  {
     /// <p>A list of lifecycle policies matched to the input policy name and policy type.</p>
-    pub lifecycle_policy_details: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyDetail>>,
+    pub lifecycle_policy_details: ::std::option::Option<::std::vec::Vec::<crate::types::LifecyclePolicyDetail>>,
     /// <p>A list of lifecycle policy names and policy types for which retrieval failed.</p>
-    pub lifecycle_policy_error_details: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyErrorDetail>>,
+    pub lifecycle_policy_error_details: ::std::option::Option<::std::vec::Vec::<crate::types::LifecyclePolicyErrorDetail>>,
     _request_id: Option<String>,
 }
-impl BatchGetLifecyclePolicyOutput {
+impl  BatchGetLifecyclePolicyOutput  {
     /// <p>A list of lifecycle policies matched to the input policy name and policy type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lifecycle_policy_details.is_none()`.
-    pub fn lifecycle_policy_details(&self) -> &[crate::types::LifecyclePolicyDetail] {
-        self.lifecycle_policy_details.as_deref().unwrap_or_default()
+    pub fn lifecycle_policy_details(&self) -> & [crate::types::LifecyclePolicyDetail] {
+        self.lifecycle_policy_details.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of lifecycle policy names and policy types for which retrieval failed.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lifecycle_policy_error_details.is_none()`.
-    pub fn lifecycle_policy_error_details(&self) -> &[crate::types::LifecyclePolicyErrorDetail] {
-        self.lifecycle_policy_error_details.as_deref().unwrap_or_default()
+    pub fn lifecycle_policy_error_details(&self) -> & [crate::types::LifecyclePolicyErrorDetail] {
+        self.lifecycle_policy_error_details.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchGetLifecyclePolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchGetLifecyclePolicyOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetLifecyclePolicyOutput`](crate::operation::batch_get_lifecycle_policy::BatchGetLifecyclePolicyOutput).
     pub fn builder() -> crate::operation::batch_get_lifecycle_policy::builders::BatchGetLifecyclePolicyOutputBuilder {
@@ -39,8 +41,8 @@ impl BatchGetLifecyclePolicyOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetLifecyclePolicyOutputBuilder {
-    pub(crate) lifecycle_policy_details: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyDetail>>,
-    pub(crate) lifecycle_policy_error_details: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyErrorDetail>>,
+    pub(crate) lifecycle_policy_details: ::std::option::Option<::std::vec::Vec::<crate::types::LifecyclePolicyDetail>>,
+    pub(crate) lifecycle_policy_error_details: ::std::option::Option<::std::vec::Vec::<crate::types::LifecyclePolicyErrorDetail>>,
     _request_id: Option<String>,
 }
 impl BatchGetLifecyclePolicyOutputBuilder {
@@ -51,17 +53,16 @@ impl BatchGetLifecyclePolicyOutputBuilder {
     /// <p>A list of lifecycle policies matched to the input policy name and policy type.</p>
     pub fn lifecycle_policy_details(mut self, input: crate::types::LifecyclePolicyDetail) -> Self {
         let mut v = self.lifecycle_policy_details.unwrap_or_default();
-        v.push(input);
-        self.lifecycle_policy_details = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.lifecycle_policy_details = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of lifecycle policies matched to the input policy name and policy type.</p>
-    pub fn set_lifecycle_policy_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyDetail>>) -> Self {
-        self.lifecycle_policy_details = input;
-        self
+    pub fn set_lifecycle_policy_details(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LifecyclePolicyDetail>>) -> Self {
+        self.lifecycle_policy_details = input; self
     }
     /// <p>A list of lifecycle policies matched to the input policy name and policy type.</p>
-    pub fn get_lifecycle_policy_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyDetail>> {
+    pub fn get_lifecycle_policy_details(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LifecyclePolicyDetail>> {
         &self.lifecycle_policy_details
     }
     /// Appends an item to `lifecycle_policy_error_details`.
@@ -71,37 +72,36 @@ impl BatchGetLifecyclePolicyOutputBuilder {
     /// <p>A list of lifecycle policy names and policy types for which retrieval failed.</p>
     pub fn lifecycle_policy_error_details(mut self, input: crate::types::LifecyclePolicyErrorDetail) -> Self {
         let mut v = self.lifecycle_policy_error_details.unwrap_or_default();
-        v.push(input);
-        self.lifecycle_policy_error_details = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.lifecycle_policy_error_details = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of lifecycle policy names and policy types for which retrieval failed.</p>
-    pub fn set_lifecycle_policy_error_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyErrorDetail>>,
-    ) -> Self {
-        self.lifecycle_policy_error_details = input;
-        self
+    pub fn set_lifecycle_policy_error_details(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LifecyclePolicyErrorDetail>>) -> Self {
+        self.lifecycle_policy_error_details = input; self
     }
     /// <p>A list of lifecycle policy names and policy types for which retrieval failed.</p>
-    pub fn get_lifecycle_policy_error_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyErrorDetail>> {
+    pub fn get_lifecycle_policy_error_details(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LifecyclePolicyErrorDetail>> {
         &self.lifecycle_policy_error_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchGetLifecyclePolicyOutput`](crate::operation::batch_get_lifecycle_policy::BatchGetLifecyclePolicyOutput).
     pub fn build(self) -> crate::operation::batch_get_lifecycle_policy::BatchGetLifecyclePolicyOutput {
         crate::operation::batch_get_lifecycle_policy::BatchGetLifecyclePolicyOutput {
-            lifecycle_policy_details: self.lifecycle_policy_details,
-            lifecycle_policy_error_details: self.lifecycle_policy_error_details,
+            lifecycle_policy_details: self.lifecycle_policy_details
+            ,
+            lifecycle_policy_error_details: self.lifecycle_policy_error_details
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

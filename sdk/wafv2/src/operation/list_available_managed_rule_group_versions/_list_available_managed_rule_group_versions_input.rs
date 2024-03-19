@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAvailableManagedRuleGroupVersionsInput {
+pub struct ListAvailableManagedRuleGroupVersionsInput  {
     /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule group.</p>
     pub vendor_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
@@ -21,13 +21,13 @@ pub struct ListAvailableManagedRuleGroupVersionsInput {
     /// <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     pub limit: ::std::option::Option<i32>,
 }
-impl ListAvailableManagedRuleGroupVersionsInput {
+impl  ListAvailableManagedRuleGroupVersionsInput  {
     /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule group.</p>
-    pub fn vendor_name(&self) -> ::std::option::Option<&str> {
+    pub fn vendor_name(&self) -> ::std::option::Option<& str> {
         self.vendor_name.as_deref()
     }
     /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
@@ -38,11 +38,11 @@ impl ListAvailableManagedRuleGroupVersionsInput {
     /// <li>
     /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
     /// </ul>
-    pub fn scope(&self) -> ::std::option::Option<&crate::types::Scope> {
+    pub fn scope(&self) -> ::std::option::Option<& crate::types::Scope> {
         self.scope.as_ref()
     }
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-    pub fn next_marker(&self) -> ::std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
@@ -76,8 +76,7 @@ impl ListAvailableManagedRuleGroupVersionsInputBuilder {
     }
     /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule group.</p>
     pub fn set_vendor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vendor_name = input;
-        self
+        self.vendor_name = input; self
     }
     /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule group.</p>
     pub fn get_vendor_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl ListAvailableManagedRuleGroupVersionsInputBuilder {
     }
     /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +118,7 @@ impl ListAvailableManagedRuleGroupVersionsInputBuilder {
     /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
     /// </ul>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
-        self.scope = input;
-        self
+        self.scope = input; self
     }
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
@@ -141,8 +138,7 @@ impl ListAvailableManagedRuleGroupVersionsInputBuilder {
     }
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_marker = input;
-        self
+        self.next_marker = input; self
     }
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,28 +151,28 @@ impl ListAvailableManagedRuleGroupVersionsInputBuilder {
     }
     /// <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }
     /// Consumes the builder and constructs a [`ListAvailableManagedRuleGroupVersionsInput`](crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsInput {
-                vendor_name: self.vendor_name,
-                name: self.name,
-                scope: self.scope,
-                next_marker: self.next_marker,
-                limit: self.limit,
-            },
+                vendor_name: self.vendor_name
+                ,
+                name: self.name
+                ,
+                scope: self.scope
+                ,
+                next_marker: self.next_marker
+                ,
+                limit: self.limit
+                ,
+            }
         )
     }
 }
+

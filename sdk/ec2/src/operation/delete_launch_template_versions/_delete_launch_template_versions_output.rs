@@ -2,34 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteLaunchTemplateVersionsOutput {
+pub struct DeleteLaunchTemplateVersionsOutput  {
     /// <p>Information about the launch template versions that were successfully deleted.</p>
-    pub successfully_deleted_launch_template_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeleteLaunchTemplateVersionsResponseSuccessItem>>,
+    pub successfully_deleted_launch_template_versions: ::std::option::Option<::std::vec::Vec::<crate::types::DeleteLaunchTemplateVersionsResponseSuccessItem>>,
     /// <p>Information about the launch template versions that could not be deleted.</p>
-    pub unsuccessfully_deleted_launch_template_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeleteLaunchTemplateVersionsResponseErrorItem>>,
+    pub unsuccessfully_deleted_launch_template_versions: ::std::option::Option<::std::vec::Vec::<crate::types::DeleteLaunchTemplateVersionsResponseErrorItem>>,
     _request_id: Option<String>,
 }
-impl DeleteLaunchTemplateVersionsOutput {
+impl  DeleteLaunchTemplateVersionsOutput  {
     /// <p>Information about the launch template versions that were successfully deleted.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.successfully_deleted_launch_template_versions.is_none()`.
-    pub fn successfully_deleted_launch_template_versions(&self) -> &[crate::types::DeleteLaunchTemplateVersionsResponseSuccessItem] {
-        self.successfully_deleted_launch_template_versions.as_deref().unwrap_or_default()
+    pub fn successfully_deleted_launch_template_versions(&self) -> & [crate::types::DeleteLaunchTemplateVersionsResponseSuccessItem] {
+        self.successfully_deleted_launch_template_versions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Information about the launch template versions that could not be deleted.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unsuccessfully_deleted_launch_template_versions.is_none()`.
-    pub fn unsuccessfully_deleted_launch_template_versions(&self) -> &[crate::types::DeleteLaunchTemplateVersionsResponseErrorItem] {
-        self.unsuccessfully_deleted_launch_template_versions.as_deref().unwrap_or_default()
+    pub fn unsuccessfully_deleted_launch_template_versions(&self) -> & [crate::types::DeleteLaunchTemplateVersionsResponseErrorItem] {
+        self.unsuccessfully_deleted_launch_template_versions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteLaunchTemplateVersionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteLaunchTemplateVersionsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLaunchTemplateVersionsOutput`](crate::operation::delete_launch_template_versions::DeleteLaunchTemplateVersionsOutput).
     pub fn builder() -> crate::operation::delete_launch_template_versions::builders::DeleteLaunchTemplateVersionsOutputBuilder {
@@ -41,10 +41,8 @@ impl DeleteLaunchTemplateVersionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteLaunchTemplateVersionsOutputBuilder {
-    pub(crate) successfully_deleted_launch_template_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeleteLaunchTemplateVersionsResponseSuccessItem>>,
-    pub(crate) unsuccessfully_deleted_launch_template_versions:
-        ::std::option::Option<::std::vec::Vec<crate::types::DeleteLaunchTemplateVersionsResponseErrorItem>>,
+    pub(crate) successfully_deleted_launch_template_versions: ::std::option::Option<::std::vec::Vec::<crate::types::DeleteLaunchTemplateVersionsResponseSuccessItem>>,
+    pub(crate) unsuccessfully_deleted_launch_template_versions: ::std::option::Option<::std::vec::Vec::<crate::types::DeleteLaunchTemplateVersionsResponseErrorItem>>,
     _request_id: Option<String>,
 }
 impl DeleteLaunchTemplateVersionsOutputBuilder {
@@ -55,22 +53,16 @@ impl DeleteLaunchTemplateVersionsOutputBuilder {
     /// <p>Information about the launch template versions that were successfully deleted.</p>
     pub fn successfully_deleted_launch_template_versions(mut self, input: crate::types::DeleteLaunchTemplateVersionsResponseSuccessItem) -> Self {
         let mut v = self.successfully_deleted_launch_template_versions.unwrap_or_default();
-        v.push(input);
-        self.successfully_deleted_launch_template_versions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.successfully_deleted_launch_template_versions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the launch template versions that were successfully deleted.</p>
-    pub fn set_successfully_deleted_launch_template_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteLaunchTemplateVersionsResponseSuccessItem>>,
-    ) -> Self {
-        self.successfully_deleted_launch_template_versions = input;
-        self
+    pub fn set_successfully_deleted_launch_template_versions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DeleteLaunchTemplateVersionsResponseSuccessItem>>) -> Self {
+        self.successfully_deleted_launch_template_versions = input; self
     }
     /// <p>Information about the launch template versions that were successfully deleted.</p>
-    pub fn get_successfully_deleted_launch_template_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteLaunchTemplateVersionsResponseSuccessItem>> {
+    pub fn get_successfully_deleted_launch_template_versions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DeleteLaunchTemplateVersionsResponseSuccessItem>> {
         &self.successfully_deleted_launch_template_versions
     }
     /// Appends an item to `unsuccessfully_deleted_launch_template_versions`.
@@ -80,39 +72,36 @@ impl DeleteLaunchTemplateVersionsOutputBuilder {
     /// <p>Information about the launch template versions that could not be deleted.</p>
     pub fn unsuccessfully_deleted_launch_template_versions(mut self, input: crate::types::DeleteLaunchTemplateVersionsResponseErrorItem) -> Self {
         let mut v = self.unsuccessfully_deleted_launch_template_versions.unwrap_or_default();
-        v.push(input);
-        self.unsuccessfully_deleted_launch_template_versions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.unsuccessfully_deleted_launch_template_versions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the launch template versions that could not be deleted.</p>
-    pub fn set_unsuccessfully_deleted_launch_template_versions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteLaunchTemplateVersionsResponseErrorItem>>,
-    ) -> Self {
-        self.unsuccessfully_deleted_launch_template_versions = input;
-        self
+    pub fn set_unsuccessfully_deleted_launch_template_versions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DeleteLaunchTemplateVersionsResponseErrorItem>>) -> Self {
+        self.unsuccessfully_deleted_launch_template_versions = input; self
     }
     /// <p>Information about the launch template versions that could not be deleted.</p>
-    pub fn get_unsuccessfully_deleted_launch_template_versions(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteLaunchTemplateVersionsResponseErrorItem>> {
+    pub fn get_unsuccessfully_deleted_launch_template_versions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DeleteLaunchTemplateVersionsResponseErrorItem>> {
         &self.unsuccessfully_deleted_launch_template_versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteLaunchTemplateVersionsOutput`](crate::operation::delete_launch_template_versions::DeleteLaunchTemplateVersionsOutput).
     pub fn build(self) -> crate::operation::delete_launch_template_versions::DeleteLaunchTemplateVersionsOutput {
         crate::operation::delete_launch_template_versions::DeleteLaunchTemplateVersionsOutput {
-            successfully_deleted_launch_template_versions: self.successfully_deleted_launch_template_versions,
-            unsuccessfully_deleted_launch_template_versions: self.unsuccessfully_deleted_launch_template_versions,
+            successfully_deleted_launch_template_versions: self.successfully_deleted_launch_template_versions
+            ,
+            unsuccessfully_deleted_launch_template_versions: self.unsuccessfully_deleted_launch_template_versions
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -4,13 +4,13 @@
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomActionNavigationOperation {
+pub struct CustomActionNavigationOperation  {
     /// <p>The configuration that chooses the navigation target.</p>
     pub local_navigation_configuration: ::std::option::Option<crate::types::LocalNavigationConfiguration>,
 }
-impl CustomActionNavigationOperation {
+impl  CustomActionNavigationOperation  {
     /// <p>The configuration that chooses the navigation target.</p>
-    pub fn local_navigation_configuration(&self) -> ::std::option::Option<&crate::types::LocalNavigationConfiguration> {
+    pub fn local_navigation_configuration(&self) -> ::std::option::Option<& crate::types::LocalNavigationConfiguration> {
         self.local_navigation_configuration.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl CustomActionNavigationOperationBuilder {
     }
     /// <p>The configuration that chooses the navigation target.</p>
     pub fn set_local_navigation_configuration(mut self, input: ::std::option::Option<crate::types::LocalNavigationConfiguration>) -> Self {
-        self.local_navigation_configuration = input;
-        self
+        self.local_navigation_configuration = input; self
     }
     /// <p>The configuration that chooses the navigation target.</p>
     pub fn get_local_navigation_configuration(&self) -> &::std::option::Option<crate::types::LocalNavigationConfiguration> {
@@ -45,7 +44,9 @@ impl CustomActionNavigationOperationBuilder {
     /// Consumes the builder and constructs a [`CustomActionNavigationOperation`](crate::types::CustomActionNavigationOperation).
     pub fn build(self) -> crate::types::CustomActionNavigationOperation {
         crate::types::CustomActionNavigationOperation {
-            local_navigation_configuration: self.local_navigation_configuration,
+            local_navigation_configuration: self.local_navigation_configuration
+            ,
         }
     }
 }
+

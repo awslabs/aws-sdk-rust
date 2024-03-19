@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateReplicationConfigurationInput {
+pub struct UpdateReplicationConfigurationInput  {
     /// <p>Update replication configuration Source Server ID request.</p>
     pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>Update replication configuration name request.</p>
@@ -12,7 +12,7 @@ pub struct UpdateReplicationConfigurationInput {
     /// <p>Update replication configuration associate default Application Migration Service Security group request.</p>
     pub associate_default_security_group: ::std::option::Option<bool>,
     /// <p>Update replication configuration Replication Server Security Groups IDs request.</p>
-    pub replication_servers_security_groups_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub replication_servers_security_groups_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Update replication configuration Replication Server instance type request.</p>
     pub replication_server_instance_type: ::std::option::Option<::std::string::String>,
     /// <p>Update replication configuration use dedicated Replication Server request.</p>
@@ -20,7 +20,7 @@ pub struct UpdateReplicationConfigurationInput {
     /// <p>Update replication configuration use default large Staging Disk type request.</p>
     pub default_large_staging_disk_type: ::std::option::Option<crate::types::ReplicationConfigurationDefaultLargeStagingDiskType>,
     /// <p>Update replication configuration replicated disks request.</p>
-    pub replicated_disks: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfigurationReplicatedDisk>>,
+    pub replicated_disks: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicationConfigurationReplicatedDisk>>,
     /// <p>Update replication configuration EBS encryption request.</p>
     pub ebs_encryption: ::std::option::Option<crate::types::ReplicationConfigurationEbsEncryption>,
     /// <p>Update replication configuration EBS encryption key ARN request.</p>
@@ -32,23 +32,23 @@ pub struct UpdateReplicationConfigurationInput {
     /// <p>Update replication configuration create Public IP request.</p>
     pub create_public_ip: ::std::option::Option<bool>,
     /// <p>Update replication configuration Staging Area Tags request.</p>
-    pub staging_area_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub staging_area_tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Update replication configuration use Fips Endpoint.</p>
     pub use_fips_endpoint: ::std::option::Option<bool>,
     /// <p>Update replication configuration Account ID request.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl UpdateReplicationConfigurationInput {
+impl  UpdateReplicationConfigurationInput  {
     /// <p>Update replication configuration Source Server ID request.</p>
-    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_server_id(&self) -> ::std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
     /// <p>Update replication configuration name request.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Update replication configuration Staging Area subnet request.</p>
-    pub fn staging_area_subnet_id(&self) -> ::std::option::Option<&str> {
+    pub fn staging_area_subnet_id(&self) -> ::std::option::Option<& str> {
         self.staging_area_subnet_id.as_deref()
     }
     /// <p>Update replication configuration associate default Application Migration Service Security group request.</p>
@@ -56,13 +56,14 @@ impl UpdateReplicationConfigurationInput {
         self.associate_default_security_group
     }
     /// <p>Update replication configuration Replication Server Security Groups IDs request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_servers_security_groups_ids.is_none()`.
-    pub fn replication_servers_security_groups_ids(&self) -> &[::std::string::String] {
-        self.replication_servers_security_groups_ids.as_deref().unwrap_or_default()
+    pub fn replication_servers_security_groups_ids(&self) -> & [::std::string::String] {
+        self.replication_servers_security_groups_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Update replication configuration Replication Server instance type request.</p>
-    pub fn replication_server_instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn replication_server_instance_type(&self) -> ::std::option::Option<& str> {
         self.replication_server_instance_type.as_deref()
     }
     /// <p>Update replication configuration use dedicated Replication Server request.</p>
@@ -70,21 +71,22 @@ impl UpdateReplicationConfigurationInput {
         self.use_dedicated_replication_server
     }
     /// <p>Update replication configuration use default large Staging Disk type request.</p>
-    pub fn default_large_staging_disk_type(&self) -> ::std::option::Option<&crate::types::ReplicationConfigurationDefaultLargeStagingDiskType> {
+    pub fn default_large_staging_disk_type(&self) -> ::std::option::Option<& crate::types::ReplicationConfigurationDefaultLargeStagingDiskType> {
         self.default_large_staging_disk_type.as_ref()
     }
     /// <p>Update replication configuration replicated disks request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replicated_disks.is_none()`.
-    pub fn replicated_disks(&self) -> &[crate::types::ReplicationConfigurationReplicatedDisk] {
-        self.replicated_disks.as_deref().unwrap_or_default()
+    pub fn replicated_disks(&self) -> & [crate::types::ReplicationConfigurationReplicatedDisk] {
+        self.replicated_disks.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Update replication configuration EBS encryption request.</p>
-    pub fn ebs_encryption(&self) -> ::std::option::Option<&crate::types::ReplicationConfigurationEbsEncryption> {
+    pub fn ebs_encryption(&self) -> ::std::option::Option<& crate::types::ReplicationConfigurationEbsEncryption> {
         self.ebs_encryption.as_ref()
     }
     /// <p>Update replication configuration EBS encryption key ARN request.</p>
-    pub fn ebs_encryption_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn ebs_encryption_key_arn(&self) -> ::std::option::Option<& str> {
         self.ebs_encryption_key_arn.as_deref()
     }
     /// <p>Update replication configuration bandwidth throttling request.</p>
@@ -92,7 +94,7 @@ impl UpdateReplicationConfigurationInput {
         self.bandwidth_throttling
     }
     /// <p>Update replication configuration data plane routing request.</p>
-    pub fn data_plane_routing(&self) -> ::std::option::Option<&crate::types::ReplicationConfigurationDataPlaneRouting> {
+    pub fn data_plane_routing(&self) -> ::std::option::Option<& crate::types::ReplicationConfigurationDataPlaneRouting> {
         self.data_plane_routing.as_ref()
     }
     /// <p>Update replication configuration create Public IP request.</p>
@@ -100,7 +102,7 @@ impl UpdateReplicationConfigurationInput {
         self.create_public_ip
     }
     /// <p>Update replication configuration Staging Area Tags request.</p>
-    pub fn staging_area_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn staging_area_tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.staging_area_tags.as_ref()
     }
     /// <p>Update replication configuration use Fips Endpoint.</p>
@@ -108,11 +110,11 @@ impl UpdateReplicationConfigurationInput {
         self.use_fips_endpoint
     }
     /// <p>Update replication configuration Account ID request.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for UpdateReplicationConfigurationInput {
+impl  ::std::fmt::Debug for UpdateReplicationConfigurationInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateReplicationConfigurationInput");
         formatter.field("source_server_id", &self.source_server_id);
@@ -150,17 +152,17 @@ pub struct UpdateReplicationConfigurationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) staging_area_subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) associate_default_security_group: ::std::option::Option<bool>,
-    pub(crate) replication_servers_security_groups_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) replication_servers_security_groups_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) replication_server_instance_type: ::std::option::Option<::std::string::String>,
     pub(crate) use_dedicated_replication_server: ::std::option::Option<bool>,
     pub(crate) default_large_staging_disk_type: ::std::option::Option<crate::types::ReplicationConfigurationDefaultLargeStagingDiskType>,
-    pub(crate) replicated_disks: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfigurationReplicatedDisk>>,
+    pub(crate) replicated_disks: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicationConfigurationReplicatedDisk>>,
     pub(crate) ebs_encryption: ::std::option::Option<crate::types::ReplicationConfigurationEbsEncryption>,
     pub(crate) ebs_encryption_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) bandwidth_throttling: ::std::option::Option<i64>,
     pub(crate) data_plane_routing: ::std::option::Option<crate::types::ReplicationConfigurationDataPlaneRouting>,
     pub(crate) create_public_ip: ::std::option::Option<bool>,
-    pub(crate) staging_area_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) staging_area_tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) use_fips_endpoint: ::std::option::Option<bool>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
@@ -173,8 +175,7 @@ impl UpdateReplicationConfigurationInputBuilder {
     }
     /// <p>Update replication configuration Source Server ID request.</p>
     pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_server_id = input;
-        self
+        self.source_server_id = input; self
     }
     /// <p>Update replication configuration Source Server ID request.</p>
     pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -187,8 +188,7 @@ impl UpdateReplicationConfigurationInputBuilder {
     }
     /// <p>Update replication configuration name request.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Update replication configuration name request.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -201,8 +201,7 @@ impl UpdateReplicationConfigurationInputBuilder {
     }
     /// <p>Update replication configuration Staging Area subnet request.</p>
     pub fn set_staging_area_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.staging_area_subnet_id = input;
-        self
+        self.staging_area_subnet_id = input; self
     }
     /// <p>Update replication configuration Staging Area subnet request.</p>
     pub fn get_staging_area_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -215,8 +214,7 @@ impl UpdateReplicationConfigurationInputBuilder {
     }
     /// <p>Update replication configuration associate default Application Migration Service Security group request.</p>
     pub fn set_associate_default_security_group(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.associate_default_security_group = input;
-        self
+        self.associate_default_security_group = input; self
     }
     /// <p>Update replication configuration associate default Application Migration Service Security group request.</p>
     pub fn get_associate_default_security_group(&self) -> &::std::option::Option<bool> {
@@ -229,17 +227,16 @@ impl UpdateReplicationConfigurationInputBuilder {
     /// <p>Update replication configuration Replication Server Security Groups IDs request.</p>
     pub fn replication_servers_security_groups_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.replication_servers_security_groups_ids.unwrap_or_default();
-        v.push(input.into());
-        self.replication_servers_security_groups_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.replication_servers_security_groups_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Update replication configuration Replication Server Security Groups IDs request.</p>
-    pub fn set_replication_servers_security_groups_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.replication_servers_security_groups_ids = input;
-        self
+    pub fn set_replication_servers_security_groups_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.replication_servers_security_groups_ids = input; self
     }
     /// <p>Update replication configuration Replication Server Security Groups IDs request.</p>
-    pub fn get_replication_servers_security_groups_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_replication_servers_security_groups_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.replication_servers_security_groups_ids
     }
     /// <p>Update replication configuration Replication Server instance type request.</p>
@@ -249,8 +246,7 @@ impl UpdateReplicationConfigurationInputBuilder {
     }
     /// <p>Update replication configuration Replication Server instance type request.</p>
     pub fn set_replication_server_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_server_instance_type = input;
-        self
+        self.replication_server_instance_type = input; self
     }
     /// <p>Update replication configuration Replication Server instance type request.</p>
     pub fn get_replication_server_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -263,8 +259,7 @@ impl UpdateReplicationConfigurationInputBuilder {
     }
     /// <p>Update replication configuration use dedicated Replication Server request.</p>
     pub fn set_use_dedicated_replication_server(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.use_dedicated_replication_server = input;
-        self
+        self.use_dedicated_replication_server = input; self
     }
     /// <p>Update replication configuration use dedicated Replication Server request.</p>
     pub fn get_use_dedicated_replication_server(&self) -> &::std::option::Option<bool> {
@@ -276,12 +271,8 @@ impl UpdateReplicationConfigurationInputBuilder {
         self
     }
     /// <p>Update replication configuration use default large Staging Disk type request.</p>
-    pub fn set_default_large_staging_disk_type(
-        mut self,
-        input: ::std::option::Option<crate::types::ReplicationConfigurationDefaultLargeStagingDiskType>,
-    ) -> Self {
-        self.default_large_staging_disk_type = input;
-        self
+    pub fn set_default_large_staging_disk_type(mut self, input: ::std::option::Option<crate::types::ReplicationConfigurationDefaultLargeStagingDiskType>) -> Self {
+        self.default_large_staging_disk_type = input; self
     }
     /// <p>Update replication configuration use default large Staging Disk type request.</p>
     pub fn get_default_large_staging_disk_type(&self) -> &::std::option::Option<crate::types::ReplicationConfigurationDefaultLargeStagingDiskType> {
@@ -294,20 +285,16 @@ impl UpdateReplicationConfigurationInputBuilder {
     /// <p>Update replication configuration replicated disks request.</p>
     pub fn replicated_disks(mut self, input: crate::types::ReplicationConfigurationReplicatedDisk) -> Self {
         let mut v = self.replicated_disks.unwrap_or_default();
-        v.push(input);
-        self.replicated_disks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.replicated_disks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Update replication configuration replicated disks request.</p>
-    pub fn set_replicated_disks(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfigurationReplicatedDisk>>,
-    ) -> Self {
-        self.replicated_disks = input;
-        self
+    pub fn set_replicated_disks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicationConfigurationReplicatedDisk>>) -> Self {
+        self.replicated_disks = input; self
     }
     /// <p>Update replication configuration replicated disks request.</p>
-    pub fn get_replicated_disks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfigurationReplicatedDisk>> {
+    pub fn get_replicated_disks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReplicationConfigurationReplicatedDisk>> {
         &self.replicated_disks
     }
     /// <p>Update replication configuration EBS encryption request.</p>
@@ -317,8 +304,7 @@ impl UpdateReplicationConfigurationInputBuilder {
     }
     /// <p>Update replication configuration EBS encryption request.</p>
     pub fn set_ebs_encryption(mut self, input: ::std::option::Option<crate::types::ReplicationConfigurationEbsEncryption>) -> Self {
-        self.ebs_encryption = input;
-        self
+        self.ebs_encryption = input; self
     }
     /// <p>Update replication configuration EBS encryption request.</p>
     pub fn get_ebs_encryption(&self) -> &::std::option::Option<crate::types::ReplicationConfigurationEbsEncryption> {
@@ -331,8 +317,7 @@ impl UpdateReplicationConfigurationInputBuilder {
     }
     /// <p>Update replication configuration EBS encryption key ARN request.</p>
     pub fn set_ebs_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ebs_encryption_key_arn = input;
-        self
+        self.ebs_encryption_key_arn = input; self
     }
     /// <p>Update replication configuration EBS encryption key ARN request.</p>
     pub fn get_ebs_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -345,8 +330,7 @@ impl UpdateReplicationConfigurationInputBuilder {
     }
     /// <p>Update replication configuration bandwidth throttling request.</p>
     pub fn set_bandwidth_throttling(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.bandwidth_throttling = input;
-        self
+        self.bandwidth_throttling = input; self
     }
     /// <p>Update replication configuration bandwidth throttling request.</p>
     pub fn get_bandwidth_throttling(&self) -> &::std::option::Option<i64> {
@@ -359,8 +343,7 @@ impl UpdateReplicationConfigurationInputBuilder {
     }
     /// <p>Update replication configuration data plane routing request.</p>
     pub fn set_data_plane_routing(mut self, input: ::std::option::Option<crate::types::ReplicationConfigurationDataPlaneRouting>) -> Self {
-        self.data_plane_routing = input;
-        self
+        self.data_plane_routing = input; self
     }
     /// <p>Update replication configuration data plane routing request.</p>
     pub fn get_data_plane_routing(&self) -> &::std::option::Option<crate::types::ReplicationConfigurationDataPlaneRouting> {
@@ -373,8 +356,7 @@ impl UpdateReplicationConfigurationInputBuilder {
     }
     /// <p>Update replication configuration create Public IP request.</p>
     pub fn set_create_public_ip(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.create_public_ip = input;
-        self
+        self.create_public_ip = input; self
     }
     /// <p>Update replication configuration create Public IP request.</p>
     pub fn get_create_public_ip(&self) -> &::std::option::Option<bool> {
@@ -385,26 +367,18 @@ impl UpdateReplicationConfigurationInputBuilder {
     /// To override the contents of this collection use [`set_staging_area_tags`](Self::set_staging_area_tags).
     ///
     /// <p>Update replication configuration Staging Area Tags request.</p>
-    pub fn staging_area_tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn staging_area_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.staging_area_tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.staging_area_tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.staging_area_tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Update replication configuration Staging Area Tags request.</p>
-    pub fn set_staging_area_tags(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.staging_area_tags = input;
-        self
+    pub fn set_staging_area_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.staging_area_tags = input; self
     }
     /// <p>Update replication configuration Staging Area Tags request.</p>
-    pub fn get_staging_area_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_staging_area_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.staging_area_tags
     }
     /// <p>Update replication configuration use Fips Endpoint.</p>
@@ -414,8 +388,7 @@ impl UpdateReplicationConfigurationInputBuilder {
     }
     /// <p>Update replication configuration use Fips Endpoint.</p>
     pub fn set_use_fips_endpoint(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.use_fips_endpoint = input;
-        self
+        self.use_fips_endpoint = input; self
     }
     /// <p>Update replication configuration use Fips Endpoint.</p>
     pub fn get_use_fips_endpoint(&self) -> &::std::option::Option<bool> {
@@ -428,39 +401,52 @@ impl UpdateReplicationConfigurationInputBuilder {
     }
     /// <p>Update replication configuration Account ID request.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>Update replication configuration Account ID request.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`UpdateReplicationConfigurationInput`](crate::operation::update_replication_configuration::UpdateReplicationConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_replication_configuration::UpdateReplicationConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_replication_configuration::UpdateReplicationConfigurationInput {
-            source_server_id: self.source_server_id,
-            name: self.name,
-            staging_area_subnet_id: self.staging_area_subnet_id,
-            associate_default_security_group: self.associate_default_security_group,
-            replication_servers_security_groups_ids: self.replication_servers_security_groups_ids,
-            replication_server_instance_type: self.replication_server_instance_type,
-            use_dedicated_replication_server: self.use_dedicated_replication_server,
-            default_large_staging_disk_type: self.default_large_staging_disk_type,
-            replicated_disks: self.replicated_disks,
-            ebs_encryption: self.ebs_encryption,
-            ebs_encryption_key_arn: self.ebs_encryption_key_arn,
-            bandwidth_throttling: self.bandwidth_throttling,
-            data_plane_routing: self.data_plane_routing,
-            create_public_ip: self.create_public_ip,
-            staging_area_tags: self.staging_area_tags,
-            use_fips_endpoint: self.use_fips_endpoint,
-            account_id: self.account_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_replication_configuration::UpdateReplicationConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_replication_configuration::UpdateReplicationConfigurationInput {
+                source_server_id: self.source_server_id
+                ,
+                name: self.name
+                ,
+                staging_area_subnet_id: self.staging_area_subnet_id
+                ,
+                associate_default_security_group: self.associate_default_security_group
+                ,
+                replication_servers_security_groups_ids: self.replication_servers_security_groups_ids
+                ,
+                replication_server_instance_type: self.replication_server_instance_type
+                ,
+                use_dedicated_replication_server: self.use_dedicated_replication_server
+                ,
+                default_large_staging_disk_type: self.default_large_staging_disk_type
+                ,
+                replicated_disks: self.replicated_disks
+                ,
+                ebs_encryption: self.ebs_encryption
+                ,
+                ebs_encryption_key_arn: self.ebs_encryption_key_arn
+                ,
+                bandwidth_throttling: self.bandwidth_throttling
+                ,
+                data_plane_routing: self.data_plane_routing
+                ,
+                create_public_ip: self.create_public_ip
+                ,
+                staging_area_tags: self.staging_area_tags
+                ,
+                use_fips_endpoint: self.use_fips_endpoint
+                ,
+                account_id: self.account_id
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateReplicationConfigurationInputBuilder {
@@ -486,3 +472,4 @@ impl ::std::fmt::Debug for UpdateReplicationConfigurationInputBuilder {
         formatter.finish()
     }
 }
+

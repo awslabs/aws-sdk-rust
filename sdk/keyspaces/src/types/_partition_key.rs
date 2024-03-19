@@ -3,15 +3,14 @@
 /// <p>The partition key portion of the primary key is required and determines how Amazon Keyspaces stores the data. The partition key can be a single column, or it can be a compound value composed of two or more columns.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PartitionKey {
+pub struct PartitionKey  {
     /// <p>The name(s) of the partition key column(s).</p>
     pub name: ::std::string::String,
 }
-impl PartitionKey {
+impl  PartitionKey  {
     /// <p>The name(s) of the partition key column(s).</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
 }
 impl PartitionKey {
@@ -36,8 +35,7 @@ impl PartitionKeyBuilder {
     }
     /// <p>The name(s) of the partition key column(s).</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name(s) of the partition key column(s).</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl PartitionKeyBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::PartitionKeyBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::PartitionKey, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PartitionKey {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building PartitionKey",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PartitionKey {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building PartitionKey")
+                    )?
+                ,
+            }
+        )
     }
 }
+

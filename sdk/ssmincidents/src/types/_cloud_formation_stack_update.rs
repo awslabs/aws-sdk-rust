@@ -3,7 +3,7 @@
 /// <p>Information about an CloudFormation stack creation or update that occurred around the time of an incident and could be a potential cause of the incident.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CloudFormationStackUpdate {
+pub struct CloudFormationStackUpdate  {
     /// <p>The timestamp for when the CloudFormation stack creation or update began.</p>
     pub start_time: ::aws_smithy_types::DateTime,
     /// <p>The timestamp for when the CloudFormation stack creation or update ended. Not reported for deployments that are still in progress.</p>
@@ -11,19 +11,18 @@ pub struct CloudFormationStackUpdate {
     /// <p>The Amazon Resource Name (ARN) of the CloudFormation stack involved in the update.</p>
     pub stack_arn: ::std::string::String,
 }
-impl CloudFormationStackUpdate {
+impl  CloudFormationStackUpdate  {
     /// <p>The timestamp for when the CloudFormation stack creation or update began.</p>
-    pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn start_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.start_time
     }
     /// <p>The timestamp for when the CloudFormation stack creation or update ended. Not reported for deployments that are still in progress.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudFormation stack involved in the update.</p>
-    pub fn stack_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.stack_arn.deref()
+    pub fn stack_arn(&self) -> & str {
+        use std::ops::Deref; self.stack_arn.deref()
     }
 }
 impl CloudFormationStackUpdate {
@@ -50,8 +49,7 @@ impl CloudFormationStackUpdateBuilder {
     }
     /// <p>The timestamp for when the CloudFormation stack creation or update began.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The timestamp for when the CloudFormation stack creation or update began.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -64,8 +62,7 @@ impl CloudFormationStackUpdateBuilder {
     }
     /// <p>The timestamp for when the CloudFormation stack creation or update ended. Not reported for deployments that are still in progress.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The timestamp for when the CloudFormation stack creation or update ended. Not reported for deployments that are still in progress.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -79,8 +76,7 @@ impl CloudFormationStackUpdateBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudFormation stack involved in the update.</p>
     pub fn set_stack_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_arn = input;
-        self
+        self.stack_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudFormation stack involved in the update.</p>
     pub fn get_stack_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,20 +87,22 @@ impl CloudFormationStackUpdateBuilder {
     /// - [`start_time`](crate::types::builders::CloudFormationStackUpdateBuilder::start_time)
     /// - [`stack_arn`](crate::types::builders::CloudFormationStackUpdateBuilder::stack_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::CloudFormationStackUpdate, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CloudFormationStackUpdate {
-            start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start_time",
-                    "start_time was not specified but it is required when building CloudFormationStackUpdate",
-                )
-            })?,
-            end_time: self.end_time,
-            stack_arn: self.stack_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "stack_arn",
-                    "stack_arn was not specified but it is required when building CloudFormationStackUpdate",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CloudFormationStackUpdate {
+                start_time: self.start_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start_time", "start_time was not specified but it is required when building CloudFormationStackUpdate")
+                    )?
+                ,
+                end_time: self.end_time
+                ,
+                stack_arn: self.stack_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("stack_arn", "stack_arn was not specified but it is required when building CloudFormationStackUpdate")
+                    )?
+                ,
+            }
+        )
     }
 }
+

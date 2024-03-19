@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateBillingGroupInput {
+pub struct CreateBillingGroupInput  {
     /// <p>The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The billing group name. The names must be unique.</p>
@@ -16,39 +16,39 @@ pub struct CreateBillingGroupInput {
     /// <p>The description of the billing group.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A map that contains tag keys and tag values that are attached to a billing group. This feature isn't available during the beta.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateBillingGroupInput {
+impl  CreateBillingGroupInput  {
     /// <p>The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The billing group name. The names must be unique.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated billing family.</p>
-    pub fn account_grouping(&self) -> ::std::option::Option<&crate::types::AccountGrouping> {
+    pub fn account_grouping(&self) -> ::std::option::Option<& crate::types::AccountGrouping> {
         self.account_grouping.as_ref()
     }
     /// <p>The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group.</p>
-    pub fn computation_preference(&self) -> ::std::option::Option<&crate::types::ComputationPreference> {
+    pub fn computation_preference(&self) -> ::std::option::Option<& crate::types::ComputationPreference> {
         self.computation_preference.as_ref()
     }
     /// <p>The account ID that serves as the main account in a billing group.</p>
-    pub fn primary_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn primary_account_id(&self) -> ::std::option::Option<& str> {
         self.primary_account_id.as_deref()
     }
     /// <p>The description of the billing group.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A map that contains tag keys and tag values that are attached to a billing group. This feature isn't available during the beta.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl ::std::fmt::Debug for CreateBillingGroupInput {
+impl  ::std::fmt::Debug for CreateBillingGroupInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBillingGroupInput");
         formatter.field("client_token", &self.client_token);
@@ -78,7 +78,7 @@ pub struct CreateBillingGroupInputBuilder {
     pub(crate) computation_preference: ::std::option::Option<crate::types::ComputationPreference>,
     pub(crate) primary_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateBillingGroupInputBuilder {
     /// <p>The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update.</p>
@@ -88,8 +88,7 @@ impl CreateBillingGroupInputBuilder {
     }
     /// <p>The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl CreateBillingGroupInputBuilder {
     }
     /// <p>The billing group name. The names must be unique.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The billing group name. The names must be unique.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +116,7 @@ impl CreateBillingGroupInputBuilder {
     }
     /// <p>The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated billing family.</p>
     pub fn set_account_grouping(mut self, input: ::std::option::Option<crate::types::AccountGrouping>) -> Self {
-        self.account_grouping = input;
-        self
+        self.account_grouping = input; self
     }
     /// <p>The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated billing family.</p>
     pub fn get_account_grouping(&self) -> &::std::option::Option<crate::types::AccountGrouping> {
@@ -133,8 +130,7 @@ impl CreateBillingGroupInputBuilder {
     }
     /// <p>The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group.</p>
     pub fn set_computation_preference(mut self, input: ::std::option::Option<crate::types::ComputationPreference>) -> Self {
-        self.computation_preference = input;
-        self
+        self.computation_preference = input; self
     }
     /// <p>The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group.</p>
     pub fn get_computation_preference(&self) -> &::std::option::Option<crate::types::ComputationPreference> {
@@ -147,8 +143,7 @@ impl CreateBillingGroupInputBuilder {
     }
     /// <p>The account ID that serves as the main account in a billing group.</p>
     pub fn set_primary_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.primary_account_id = input;
-        self
+        self.primary_account_id = input; self
     }
     /// <p>The account ID that serves as the main account in a billing group.</p>
     pub fn get_primary_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,8 +156,7 @@ impl CreateBillingGroupInputBuilder {
     }
     /// <p>The description of the billing group.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the billing group.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,33 +169,38 @@ impl CreateBillingGroupInputBuilder {
     /// <p>A map that contains tag keys and tag values that are attached to a billing group. This feature isn't available during the beta.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map that contains tag keys and tag values that are attached to a billing group. This feature isn't available during the beta.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A map that contains tag keys and tag values that are attached to a billing group. This feature isn't available during the beta.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateBillingGroupInput`](crate::operation::create_billing_group::CreateBillingGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_billing_group::CreateBillingGroupInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_billing_group::CreateBillingGroupInput {
-            client_token: self.client_token,
-            name: self.name,
-            account_grouping: self.account_grouping,
-            computation_preference: self.computation_preference,
-            primary_account_id: self.primary_account_id,
-            description: self.description,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_billing_group::CreateBillingGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_billing_group::CreateBillingGroupInput {
+                client_token: self.client_token
+                ,
+                name: self.name
+                ,
+                account_grouping: self.account_grouping
+                ,
+                computation_preference: self.computation_preference
+                ,
+                primary_account_id: self.primary_account_id
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateBillingGroupInputBuilder {
@@ -217,3 +216,4 @@ impl ::std::fmt::Debug for CreateBillingGroupInputBuilder {
         formatter.finish()
     }
 }
+

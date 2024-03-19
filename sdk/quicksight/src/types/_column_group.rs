@@ -3,13 +3,13 @@
 /// <p>Groupings of columns that work together in certain Amazon QuickSight features. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ColumnGroup {
+pub struct ColumnGroup  {
     /// <p>Geospatial column group that denotes a hierarchy.</p>
     pub geo_spatial_column_group: ::std::option::Option<crate::types::GeoSpatialColumnGroup>,
 }
-impl ColumnGroup {
+impl  ColumnGroup  {
     /// <p>Geospatial column group that denotes a hierarchy.</p>
-    pub fn geo_spatial_column_group(&self) -> ::std::option::Option<&crate::types::GeoSpatialColumnGroup> {
+    pub fn geo_spatial_column_group(&self) -> ::std::option::Option<& crate::types::GeoSpatialColumnGroup> {
         self.geo_spatial_column_group.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ColumnGroupBuilder {
     }
     /// <p>Geospatial column group that denotes a hierarchy.</p>
     pub fn set_geo_spatial_column_group(mut self, input: ::std::option::Option<crate::types::GeoSpatialColumnGroup>) -> Self {
-        self.geo_spatial_column_group = input;
-        self
+        self.geo_spatial_column_group = input; self
     }
     /// <p>Geospatial column group that denotes a hierarchy.</p>
     pub fn get_geo_spatial_column_group(&self) -> &::std::option::Option<crate::types::GeoSpatialColumnGroup> {
@@ -44,7 +43,9 @@ impl ColumnGroupBuilder {
     /// Consumes the builder and constructs a [`ColumnGroup`](crate::types::ColumnGroup).
     pub fn build(self) -> crate::types::ColumnGroup {
         crate::types::ColumnGroup {
-            geo_spatial_column_group: self.geo_spatial_column_group,
+            geo_spatial_column_group: self.geo_spatial_column_group
+            ,
         }
     }
 }
+

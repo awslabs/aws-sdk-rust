@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPhoneNumbersV2Input {
+pub struct ListPhoneNumbersV2Input  {
     /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone number inbound traffic is routed through. If both <code>TargetArn</code> and <code>InstanceId</code> input are not provided, this API lists numbers claimed to all the Amazon Connect instances belonging to your account in the same Amazon Web Services Region as the request.</p>
     pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Connect instance that phone numbers are claimed to. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance. If both <code>TargetArn</code> and <code>InstanceId</code> are not provided, this API lists numbers claimed to all the Amazon Connect instances belonging to your account in the same AWS Region as the request.</p>
@@ -12,19 +12,19 @@ pub struct ListPhoneNumbersV2Input {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The ISO country code.</p>
-    pub phone_number_country_codes: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberCountryCode>>,
+    pub phone_number_country_codes: ::std::option::Option<::std::vec::Vec::<crate::types::PhoneNumberCountryCode>>,
     /// <p>The type of phone number.</p>
-    pub phone_number_types: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>>,
+    pub phone_number_types: ::std::option::Option<::std::vec::Vec::<crate::types::PhoneNumberType>>,
     /// <p>The prefix of the phone number. If provided, it must contain <code>+</code> as part of the country code.</p>
     pub phone_number_prefix: ::std::option::Option<::std::string::String>,
 }
-impl ListPhoneNumbersV2Input {
+impl  ListPhoneNumbersV2Input  {
     /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone number inbound traffic is routed through. If both <code>TargetArn</code> and <code>InstanceId</code> input are not provided, this API lists numbers claimed to all the Amazon Connect instances belonging to your account in the same Amazon Web Services Region as the request.</p>
-    pub fn target_arn(&self) -> ::std::option::Option<&str> {
+    pub fn target_arn(&self) -> ::std::option::Option<& str> {
         self.target_arn.as_deref()
     }
     /// <p>The identifier of the Amazon Connect instance that phone numbers are claimed to. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance. If both <code>TargetArn</code> and <code>InstanceId</code> are not provided, this API lists numbers claimed to all the Amazon Connect instances belonging to your account in the same AWS Region as the request.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The maximum number of results to return per page.</p>
@@ -32,23 +32,25 @@ impl ListPhoneNumbersV2Input {
         self.max_results
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The ISO country code.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phone_number_country_codes.is_none()`.
-    pub fn phone_number_country_codes(&self) -> &[crate::types::PhoneNumberCountryCode] {
-        self.phone_number_country_codes.as_deref().unwrap_or_default()
+    pub fn phone_number_country_codes(&self) -> & [crate::types::PhoneNumberCountryCode] {
+        self.phone_number_country_codes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The type of phone number.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phone_number_types.is_none()`.
-    pub fn phone_number_types(&self) -> &[crate::types::PhoneNumberType] {
-        self.phone_number_types.as_deref().unwrap_or_default()
+    pub fn phone_number_types(&self) -> & [crate::types::PhoneNumberType] {
+        self.phone_number_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The prefix of the phone number. If provided, it must contain <code>+</code> as part of the country code.</p>
-    pub fn phone_number_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn phone_number_prefix(&self) -> ::std::option::Option<& str> {
         self.phone_number_prefix.as_deref()
     }
 }
@@ -67,8 +69,8 @@ pub struct ListPhoneNumbersV2InputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) phone_number_country_codes: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberCountryCode>>,
-    pub(crate) phone_number_types: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>>,
+    pub(crate) phone_number_country_codes: ::std::option::Option<::std::vec::Vec::<crate::types::PhoneNumberCountryCode>>,
+    pub(crate) phone_number_types: ::std::option::Option<::std::vec::Vec::<crate::types::PhoneNumberType>>,
     pub(crate) phone_number_prefix: ::std::option::Option<::std::string::String>,
 }
 impl ListPhoneNumbersV2InputBuilder {
@@ -79,8 +81,7 @@ impl ListPhoneNumbersV2InputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone number inbound traffic is routed through. If both <code>TargetArn</code> and <code>InstanceId</code> input are not provided, this API lists numbers claimed to all the Amazon Connect instances belonging to your account in the same Amazon Web Services Region as the request.</p>
     pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_arn = input;
-        self
+        self.target_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone number inbound traffic is routed through. If both <code>TargetArn</code> and <code>InstanceId</code> input are not provided, this API lists numbers claimed to all the Amazon Connect instances belonging to your account in the same Amazon Web Services Region as the request.</p>
     pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +94,7 @@ impl ListPhoneNumbersV2InputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance that phone numbers are claimed to. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance. If both <code>TargetArn</code> and <code>InstanceId</code> are not provided, this API lists numbers claimed to all the Amazon Connect instances belonging to your account in the same AWS Region as the request.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance that phone numbers are claimed to. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance. If both <code>TargetArn</code> and <code>InstanceId</code> are not provided, this API lists numbers claimed to all the Amazon Connect instances belonging to your account in the same AWS Region as the request.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +107,7 @@ impl ListPhoneNumbersV2InputBuilder {
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -121,8 +120,7 @@ impl ListPhoneNumbersV2InputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,17 +133,16 @@ impl ListPhoneNumbersV2InputBuilder {
     /// <p>The ISO country code.</p>
     pub fn phone_number_country_codes(mut self, input: crate::types::PhoneNumberCountryCode) -> Self {
         let mut v = self.phone_number_country_codes.unwrap_or_default();
-        v.push(input);
-        self.phone_number_country_codes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.phone_number_country_codes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ISO country code.</p>
-    pub fn set_phone_number_country_codes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberCountryCode>>) -> Self {
-        self.phone_number_country_codes = input;
-        self
+    pub fn set_phone_number_country_codes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PhoneNumberCountryCode>>) -> Self {
+        self.phone_number_country_codes = input; self
     }
     /// <p>The ISO country code.</p>
-    pub fn get_phone_number_country_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberCountryCode>> {
+    pub fn get_phone_number_country_codes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PhoneNumberCountryCode>> {
         &self.phone_number_country_codes
     }
     /// Appends an item to `phone_number_types`.
@@ -155,17 +152,16 @@ impl ListPhoneNumbersV2InputBuilder {
     /// <p>The type of phone number.</p>
     pub fn phone_number_types(mut self, input: crate::types::PhoneNumberType) -> Self {
         let mut v = self.phone_number_types.unwrap_or_default();
-        v.push(input);
-        self.phone_number_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.phone_number_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The type of phone number.</p>
-    pub fn set_phone_number_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>>) -> Self {
-        self.phone_number_types = input;
-        self
+    pub fn set_phone_number_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PhoneNumberType>>) -> Self {
+        self.phone_number_types = input; self
     }
     /// <p>The type of phone number.</p>
-    pub fn get_phone_number_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>> {
+    pub fn get_phone_number_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PhoneNumberType>> {
         &self.phone_number_types
     }
     /// <p>The prefix of the phone number. If provided, it must contain <code>+</code> as part of the country code.</p>
@@ -175,26 +171,32 @@ impl ListPhoneNumbersV2InputBuilder {
     }
     /// <p>The prefix of the phone number. If provided, it must contain <code>+</code> as part of the country code.</p>
     pub fn set_phone_number_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone_number_prefix = input;
-        self
+        self.phone_number_prefix = input; self
     }
     /// <p>The prefix of the phone number. If provided, it must contain <code>+</code> as part of the country code.</p>
     pub fn get_phone_number_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.phone_number_prefix
     }
     /// Consumes the builder and constructs a [`ListPhoneNumbersV2Input`](crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Input).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Input, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Input {
-            target_arn: self.target_arn,
-            instance_id: self.instance_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            phone_number_country_codes: self.phone_number_country_codes,
-            phone_number_types: self.phone_number_types,
-            phone_number_prefix: self.phone_number_prefix,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Input, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Input {
+                target_arn: self.target_arn
+                ,
+                instance_id: self.instance_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                phone_number_country_codes: self.phone_number_country_codes
+                ,
+                phone_number_types: self.phone_number_types
+                ,
+                phone_number_prefix: self.phone_number_prefix
+                ,
+            }
+        )
     }
 }
+

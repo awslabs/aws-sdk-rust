@@ -3,13 +3,13 @@
 /// Use automated encoding to have MediaConvert choose your encoding settings for you, based on characteristics of your input video.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutomatedEncodingSettings {
+pub struct AutomatedEncodingSettings  {
     /// Use automated ABR to have MediaConvert set up the renditions in your ABR package for you automatically, based on characteristics of your input video. This feature optimizes video quality while minimizing the overall size of your ABR package.
     pub abr_settings: ::std::option::Option<crate::types::AutomatedAbrSettings>,
 }
-impl AutomatedEncodingSettings {
+impl  AutomatedEncodingSettings  {
     /// Use automated ABR to have MediaConvert set up the renditions in your ABR package for you automatically, based on characteristics of your input video. This feature optimizes video quality while minimizing the overall size of your ABR package.
-    pub fn abr_settings(&self) -> ::std::option::Option<&crate::types::AutomatedAbrSettings> {
+    pub fn abr_settings(&self) -> ::std::option::Option<& crate::types::AutomatedAbrSettings> {
         self.abr_settings.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl AutomatedEncodingSettingsBuilder {
     }
     /// Use automated ABR to have MediaConvert set up the renditions in your ABR package for you automatically, based on characteristics of your input video. This feature optimizes video quality while minimizing the overall size of your ABR package.
     pub fn set_abr_settings(mut self, input: ::std::option::Option<crate::types::AutomatedAbrSettings>) -> Self {
-        self.abr_settings = input;
-        self
+        self.abr_settings = input; self
     }
     /// Use automated ABR to have MediaConvert set up the renditions in your ABR package for you automatically, based on characteristics of your input video. This feature optimizes video quality while minimizing the overall size of your ABR package.
     pub fn get_abr_settings(&self) -> &::std::option::Option<crate::types::AutomatedAbrSettings> {
@@ -44,7 +43,9 @@ impl AutomatedEncodingSettingsBuilder {
     /// Consumes the builder and constructs a [`AutomatedEncodingSettings`](crate::types::AutomatedEncodingSettings).
     pub fn build(self) -> crate::types::AutomatedEncodingSettings {
         crate::types::AutomatedEncodingSettings {
-            abr_settings: self.abr_settings,
+            abr_settings: self.abr_settings
+            ,
         }
     }
 }
+

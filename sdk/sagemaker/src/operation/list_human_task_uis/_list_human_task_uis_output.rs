@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListHumanTaskUisOutput {
+pub struct ListHumanTaskUisOutput  {
     /// <p>An array of objects describing the human task user interfaces.</p>
-    pub human_task_ui_summaries: ::std::option::Option<::std::vec::Vec<crate::types::HumanTaskUiSummary>>,
+    pub human_task_ui_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::HumanTaskUiSummary>>,
     /// <p>A token to resume pagination.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListHumanTaskUisOutput {
+impl  ListHumanTaskUisOutput  {
     /// <p>An array of objects describing the human task user interfaces.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.human_task_ui_summaries.is_none()`.
-    pub fn human_task_ui_summaries(&self) -> &[crate::types::HumanTaskUiSummary] {
-        self.human_task_ui_summaries.as_deref().unwrap_or_default()
+    pub fn human_task_ui_summaries(&self) -> & [crate::types::HumanTaskUiSummary] {
+        self.human_task_ui_summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token to resume pagination.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListHumanTaskUisOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListHumanTaskUisOutput {
     /// Creates a new builder-style object to manufacture [`ListHumanTaskUisOutput`](crate::operation::list_human_task_uis::ListHumanTaskUisOutput).
     pub fn builder() -> crate::operation::list_human_task_uis::builders::ListHumanTaskUisOutputBuilder {
@@ -37,7 +38,7 @@ impl ListHumanTaskUisOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListHumanTaskUisOutputBuilder {
-    pub(crate) human_task_ui_summaries: ::std::option::Option<::std::vec::Vec<crate::types::HumanTaskUiSummary>>,
+    pub(crate) human_task_ui_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::HumanTaskUiSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListHumanTaskUisOutputBuilder {
     /// <p>An array of objects describing the human task user interfaces.</p>
     pub fn human_task_ui_summaries(mut self, input: crate::types::HumanTaskUiSummary) -> Self {
         let mut v = self.human_task_ui_summaries.unwrap_or_default();
-        v.push(input);
-        self.human_task_ui_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.human_task_ui_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects describing the human task user interfaces.</p>
-    pub fn set_human_task_ui_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HumanTaskUiSummary>>) -> Self {
-        self.human_task_ui_summaries = input;
-        self
+    pub fn set_human_task_ui_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::HumanTaskUiSummary>>) -> Self {
+        self.human_task_ui_summaries = input; self
     }
     /// <p>An array of objects describing the human task user interfaces.</p>
-    pub fn get_human_task_ui_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HumanTaskUiSummary>> {
+    pub fn get_human_task_ui_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::HumanTaskUiSummary>> {
         &self.human_task_ui_summaries
     }
     /// <p>A token to resume pagination.</p>
@@ -69,28 +69,30 @@ impl ListHumanTaskUisOutputBuilder {
     }
     /// <p>A token to resume pagination.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token to resume pagination.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListHumanTaskUisOutput`](crate::operation::list_human_task_uis::ListHumanTaskUisOutput).
     pub fn build(self) -> crate::operation::list_human_task_uis::ListHumanTaskUisOutput {
         crate::operation::list_human_task_uis::ListHumanTaskUisOutput {
-            human_task_ui_summaries: self.human_task_ui_summaries,
-            next_token: self.next_token,
+            human_task_ui_summaries: self.human_task_ui_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

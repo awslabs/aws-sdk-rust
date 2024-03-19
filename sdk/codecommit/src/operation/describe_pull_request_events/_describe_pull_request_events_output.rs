@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribePullRequestEventsOutput {
+pub struct DescribePullRequestEventsOutput  {
     /// <p>Information about the pull request events.</p>
-    pub pull_request_events: ::std::vec::Vec<crate::types::PullRequestEvent>,
+    pub pull_request_events: ::std::vec::Vec::<crate::types::PullRequestEvent>,
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribePullRequestEventsOutput {
+impl  DescribePullRequestEventsOutput  {
     /// <p>Information about the pull request events.</p>
-    pub fn pull_request_events(&self) -> &[crate::types::PullRequestEvent] {
-        use std::ops::Deref;
-        self.pull_request_events.deref()
+    pub fn pull_request_events(&self) -> & [crate::types::PullRequestEvent] {
+        use std::ops::Deref; self.pull_request_events.deref()
     }
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribePullRequestEventsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribePullRequestEventsOutput {
     /// Creates a new builder-style object to manufacture [`DescribePullRequestEventsOutput`](crate::operation::describe_pull_request_events::DescribePullRequestEventsOutput).
     pub fn builder() -> crate::operation::describe_pull_request_events::builders::DescribePullRequestEventsOutputBuilder {
@@ -36,7 +35,7 @@ impl DescribePullRequestEventsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePullRequestEventsOutputBuilder {
-    pub(crate) pull_request_events: ::std::option::Option<::std::vec::Vec<crate::types::PullRequestEvent>>,
+    pub(crate) pull_request_events: ::std::option::Option<::std::vec::Vec::<crate::types::PullRequestEvent>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl DescribePullRequestEventsOutputBuilder {
     /// <p>Information about the pull request events.</p>
     pub fn pull_request_events(mut self, input: crate::types::PullRequestEvent) -> Self {
         let mut v = self.pull_request_events.unwrap_or_default();
-        v.push(input);
-        self.pull_request_events = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.pull_request_events = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the pull request events.</p>
-    pub fn set_pull_request_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PullRequestEvent>>) -> Self {
-        self.pull_request_events = input;
-        self
+    pub fn set_pull_request_events(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PullRequestEvent>>) -> Self {
+        self.pull_request_events = input; self
     }
     /// <p>Information about the pull request events.</p>
-    pub fn get_pull_request_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PullRequestEvent>> {
+    pub fn get_pull_request_events(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PullRequestEvent>> {
         &self.pull_request_events
     }
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
@@ -68,40 +66,37 @@ impl DescribePullRequestEventsOutputBuilder {
     }
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribePullRequestEventsOutput`](crate::operation::describe_pull_request_events::DescribePullRequestEventsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`pull_request_events`](crate::operation::describe_pull_request_events::builders::DescribePullRequestEventsOutputBuilder::pull_request_events)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_pull_request_events::DescribePullRequestEventsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_pull_request_events::DescribePullRequestEventsOutput {
-            pull_request_events: self.pull_request_events.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "pull_request_events",
-                    "pull_request_events was not specified but it is required when building DescribePullRequestEventsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_pull_request_events::DescribePullRequestEventsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_pull_request_events::DescribePullRequestEventsOutput {
+                pull_request_events: self.pull_request_events
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("pull_request_events", "pull_request_events was not specified but it is required when building DescribePullRequestEventsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

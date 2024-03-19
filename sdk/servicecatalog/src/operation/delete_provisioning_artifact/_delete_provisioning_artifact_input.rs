@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteProvisioningArtifactInput {
+pub struct DeleteProvisioningArtifactInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -16,7 +16,7 @@ pub struct DeleteProvisioningArtifactInput {
     /// <p>The identifier of the provisioning artifact.</p>
     pub provisioning_artifact_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteProvisioningArtifactInput {
+impl  DeleteProvisioningArtifactInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -24,15 +24,15 @@ impl DeleteProvisioningArtifactInput {
     /// <li>
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
-    pub fn accept_language(&self) -> ::std::option::Option<&str> {
+    pub fn accept_language(&self) -> ::std::option::Option<& str> {
         self.accept_language.as_deref()
     }
     /// <p>The product identifier.</p>
-    pub fn product_id(&self) -> ::std::option::Option<&str> {
+    pub fn product_id(&self) -> ::std::option::Option<& str> {
         self.product_id.as_deref()
     }
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn provisioning_artifact_id(&self) -> ::std::option::Option<&str> {
+    pub fn provisioning_artifact_id(&self) -> ::std::option::Option<& str> {
         self.provisioning_artifact_id.as_deref()
     }
 }
@@ -71,8 +71,7 @@ impl DeleteProvisioningArtifactInputBuilder {
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accept_language = input;
-        self
+        self.accept_language = input; self
     }
     /// <p>The language code.</p>
     /// <ul>
@@ -92,8 +91,7 @@ impl DeleteProvisioningArtifactInputBuilder {
     }
     /// <p>The product identifier.</p>
     pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_id = input;
-        self
+        self.product_id = input; self
     }
     /// <p>The product identifier.</p>
     pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,24 +105,24 @@ impl DeleteProvisioningArtifactInputBuilder {
     }
     /// <p>The identifier of the provisioning artifact.</p>
     pub fn set_provisioning_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provisioning_artifact_id = input;
-        self
+        self.provisioning_artifact_id = input; self
     }
     /// <p>The identifier of the provisioning artifact.</p>
     pub fn get_provisioning_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.provisioning_artifact_id
     }
     /// Consumes the builder and constructs a [`DeleteProvisioningArtifactInput`](crate::operation::delete_provisioning_artifact::DeleteProvisioningArtifactInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_provisioning_artifact::DeleteProvisioningArtifactInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_provisioning_artifact::DeleteProvisioningArtifactInput {
-            accept_language: self.accept_language,
-            product_id: self.product_id,
-            provisioning_artifact_id: self.provisioning_artifact_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_provisioning_artifact::DeleteProvisioningArtifactInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_provisioning_artifact::DeleteProvisioningArtifactInput {
+                accept_language: self.accept_language
+                ,
+                product_id: self.product_id
+                ,
+                provisioning_artifact_id: self.provisioning_artifact_id
+                ,
+            }
+        )
     }
 }
+

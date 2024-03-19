@@ -2,42 +2,40 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAggregateConformancePackComplianceSummaryOutput {
+pub struct GetAggregateConformancePackComplianceSummaryOutput  {
     /// <p>Returns a list of <code>AggregateConformancePackComplianceSummary</code> object.</p>
-    pub aggregate_conformance_pack_compliance_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::AggregateConformancePackComplianceSummary>>,
+    pub aggregate_conformance_pack_compliance_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::AggregateConformancePackComplianceSummary>>,
     /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
     pub group_by_key: ::std::option::Option<::std::string::String>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetAggregateConformancePackComplianceSummaryOutput {
+impl  GetAggregateConformancePackComplianceSummaryOutput  {
     /// <p>Returns a list of <code>AggregateConformancePackComplianceSummary</code> object.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aggregate_conformance_pack_compliance_summaries.is_none()`.
-    pub fn aggregate_conformance_pack_compliance_summaries(&self) -> &[crate::types::AggregateConformancePackComplianceSummary] {
-        self.aggregate_conformance_pack_compliance_summaries.as_deref().unwrap_or_default()
+    pub fn aggregate_conformance_pack_compliance_summaries(&self) -> & [crate::types::AggregateConformancePackComplianceSummary] {
+        self.aggregate_conformance_pack_compliance_summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
-    pub fn group_by_key(&self) -> ::std::option::Option<&str> {
+    pub fn group_by_key(&self) -> ::std::option::Option<& str> {
         self.group_by_key.as_deref()
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetAggregateConformancePackComplianceSummaryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetAggregateConformancePackComplianceSummaryOutput {
     /// Creates a new builder-style object to manufacture [`GetAggregateConformancePackComplianceSummaryOutput`](crate::operation::get_aggregate_conformance_pack_compliance_summary::GetAggregateConformancePackComplianceSummaryOutput).
-    pub fn builder(
-    ) -> crate::operation::get_aggregate_conformance_pack_compliance_summary::builders::GetAggregateConformancePackComplianceSummaryOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_aggregate_conformance_pack_compliance_summary::builders::GetAggregateConformancePackComplianceSummaryOutputBuilder {
         crate::operation::get_aggregate_conformance_pack_compliance_summary::builders::GetAggregateConformancePackComplianceSummaryOutputBuilder::default()
     }
 }
@@ -46,8 +44,7 @@ impl GetAggregateConformancePackComplianceSummaryOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAggregateConformancePackComplianceSummaryOutputBuilder {
-    pub(crate) aggregate_conformance_pack_compliance_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::AggregateConformancePackComplianceSummary>>,
+    pub(crate) aggregate_conformance_pack_compliance_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::AggregateConformancePackComplianceSummary>>,
     pub(crate) group_by_key: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -60,22 +57,16 @@ impl GetAggregateConformancePackComplianceSummaryOutputBuilder {
     /// <p>Returns a list of <code>AggregateConformancePackComplianceSummary</code> object.</p>
     pub fn aggregate_conformance_pack_compliance_summaries(mut self, input: crate::types::AggregateConformancePackComplianceSummary) -> Self {
         let mut v = self.aggregate_conformance_pack_compliance_summaries.unwrap_or_default();
-        v.push(input);
-        self.aggregate_conformance_pack_compliance_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.aggregate_conformance_pack_compliance_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Returns a list of <code>AggregateConformancePackComplianceSummary</code> object.</p>
-    pub fn set_aggregate_conformance_pack_compliance_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AggregateConformancePackComplianceSummary>>,
-    ) -> Self {
-        self.aggregate_conformance_pack_compliance_summaries = input;
-        self
+    pub fn set_aggregate_conformance_pack_compliance_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AggregateConformancePackComplianceSummary>>) -> Self {
+        self.aggregate_conformance_pack_compliance_summaries = input; self
     }
     /// <p>Returns a list of <code>AggregateConformancePackComplianceSummary</code> object.</p>
-    pub fn get_aggregate_conformance_pack_compliance_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregateConformancePackComplianceSummary>> {
+    pub fn get_aggregate_conformance_pack_compliance_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AggregateConformancePackComplianceSummary>> {
         &self.aggregate_conformance_pack_compliance_summaries
     }
     /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
@@ -85,8 +76,7 @@ impl GetAggregateConformancePackComplianceSummaryOutputBuilder {
     }
     /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
     pub fn set_group_by_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_by_key = input;
-        self
+        self.group_by_key = input; self
     }
     /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
     pub fn get_group_by_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,29 +89,32 @@ impl GetAggregateConformancePackComplianceSummaryOutputBuilder {
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetAggregateConformancePackComplianceSummaryOutput`](crate::operation::get_aggregate_conformance_pack_compliance_summary::GetAggregateConformancePackComplianceSummaryOutput).
     pub fn build(self) -> crate::operation::get_aggregate_conformance_pack_compliance_summary::GetAggregateConformancePackComplianceSummaryOutput {
         crate::operation::get_aggregate_conformance_pack_compliance_summary::GetAggregateConformancePackComplianceSummaryOutput {
-            aggregate_conformance_pack_compliance_summaries: self.aggregate_conformance_pack_compliance_summaries,
-            group_by_key: self.group_by_key,
-            next_token: self.next_token,
+            aggregate_conformance_pack_compliance_summaries: self.aggregate_conformance_pack_compliance_summaries
+            ,
+            group_by_key: self.group_by_key
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

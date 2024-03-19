@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportFirewallDomainsInput {
+pub struct ImportFirewallDomainsInput  {
     /// <p>The ID of the domain list that you want to modify with the import operation.</p>
     pub firewall_domain_list_id: ::std::option::Option<::std::string::String>,
     /// <p>What you want DNS Firewall to do with the domains that are listed in the file. This must be set to <code>REPLACE</code>, which updates the domain list to exactly match the list in the file.</p>
@@ -11,18 +11,18 @@ pub struct ImportFirewallDomainsInput {
     /// <p>The file must be in an S3 bucket that's in the same Region as your DNS Firewall. The file must be a text file and must contain a single domain per line.</p>
     pub domain_file_url: ::std::option::Option<::std::string::String>,
 }
-impl ImportFirewallDomainsInput {
+impl  ImportFirewallDomainsInput  {
     /// <p>The ID of the domain list that you want to modify with the import operation.</p>
-    pub fn firewall_domain_list_id(&self) -> ::std::option::Option<&str> {
+    pub fn firewall_domain_list_id(&self) -> ::std::option::Option<& str> {
         self.firewall_domain_list_id.as_deref()
     }
     /// <p>What you want DNS Firewall to do with the domains that are listed in the file. This must be set to <code>REPLACE</code>, which updates the domain list to exactly match the list in the file.</p>
-    pub fn operation(&self) -> ::std::option::Option<&crate::types::FirewallDomainImportOperation> {
+    pub fn operation(&self) -> ::std::option::Option<& crate::types::FirewallDomainImportOperation> {
         self.operation.as_ref()
     }
     /// <p>The fully qualified URL or URI of the file stored in Amazon Simple Storage Service (Amazon S3) that contains the list of domains to import.</p>
     /// <p>The file must be in an S3 bucket that's in the same Region as your DNS Firewall. The file must be a text file and must contain a single domain per line.</p>
-    pub fn domain_file_url(&self) -> ::std::option::Option<&str> {
+    pub fn domain_file_url(&self) -> ::std::option::Option<& str> {
         self.domain_file_url.as_deref()
     }
 }
@@ -50,8 +50,7 @@ impl ImportFirewallDomainsInputBuilder {
     }
     /// <p>The ID of the domain list that you want to modify with the import operation.</p>
     pub fn set_firewall_domain_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.firewall_domain_list_id = input;
-        self
+        self.firewall_domain_list_id = input; self
     }
     /// <p>The ID of the domain list that you want to modify with the import operation.</p>
     pub fn get_firewall_domain_list_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +64,7 @@ impl ImportFirewallDomainsInputBuilder {
     }
     /// <p>What you want DNS Firewall to do with the domains that are listed in the file. This must be set to <code>REPLACE</code>, which updates the domain list to exactly match the list in the file.</p>
     pub fn set_operation(mut self, input: ::std::option::Option<crate::types::FirewallDomainImportOperation>) -> Self {
-        self.operation = input;
-        self
+        self.operation = input; self
     }
     /// <p>What you want DNS Firewall to do with the domains that are listed in the file. This must be set to <code>REPLACE</code>, which updates the domain list to exactly match the list in the file.</p>
     pub fn get_operation(&self) -> &::std::option::Option<crate::types::FirewallDomainImportOperation> {
@@ -82,8 +80,7 @@ impl ImportFirewallDomainsInputBuilder {
     /// <p>The fully qualified URL or URI of the file stored in Amazon Simple Storage Service (Amazon S3) that contains the list of domains to import.</p>
     /// <p>The file must be in an S3 bucket that's in the same Region as your DNS Firewall. The file must be a text file and must contain a single domain per line.</p>
     pub fn set_domain_file_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_file_url = input;
-        self
+        self.domain_file_url = input; self
     }
     /// <p>The fully qualified URL or URI of the file stored in Amazon Simple Storage Service (Amazon S3) that contains the list of domains to import.</p>
     /// <p>The file must be in an S3 bucket that's in the same Region as your DNS Firewall. The file must be a text file and must contain a single domain per line.</p>
@@ -91,14 +88,17 @@ impl ImportFirewallDomainsInputBuilder {
         &self.domain_file_url
     }
     /// Consumes the builder and constructs a [`ImportFirewallDomainsInput`](crate::operation::import_firewall_domains::ImportFirewallDomainsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::import_firewall_domains::ImportFirewallDomainsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::import_firewall_domains::ImportFirewallDomainsInput {
-            firewall_domain_list_id: self.firewall_domain_list_id,
-            operation: self.operation,
-            domain_file_url: self.domain_file_url,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::import_firewall_domains::ImportFirewallDomainsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::import_firewall_domains::ImportFirewallDomainsInput {
+                firewall_domain_list_id: self.firewall_domain_list_id
+                ,
+                operation: self.operation
+                ,
+                domain_file_url: self.domain_file_url
+                ,
+            }
+        )
     }
 }
+

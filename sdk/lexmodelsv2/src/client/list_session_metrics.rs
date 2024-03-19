@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSessionMetrics`](crate::operation::list_session_metrics::builders::ListSessionMetricsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_session_metrics::builders::ListSessionMetricsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`bot_id(impl Into<String>)`](crate::operation::list_session_metrics::builders::ListSessionMetricsFluentBuilder::bot_id) / [`set_bot_id(Option<String>)`](crate::operation::list_session_metrics::builders::ListSessionMetricsFluentBuilder::set_bot_id):<br>required: **true**<br><p>The identifier for the bot for which you want to retrieve session metrics.</p><br>
     ///   - [`start_date_time(DateTime)`](crate::operation::list_session_metrics::builders::ListSessionMetricsFluentBuilder::start_date_time) / [`set_start_date_time(Option<DateTime>)`](crate::operation::list_session_metrics::builders::ListSessionMetricsFluentBuilder::set_start_date_time):<br>required: **true**<br><p>The date and time that marks the beginning of the range of time for which you want to see session metrics.</p><br>
     ///   - [`end_date_time(DateTime)`](crate::operation::list_session_metrics::builders::ListSessionMetricsFluentBuilder::end_date_time) / [`set_end_date_time(Option<DateTime>)`](crate::operation::list_session_metrics::builders::ListSessionMetricsFluentBuilder::set_end_date_time):<br>required: **true**<br><p>The date and time that marks the end of the range of time for which you want to see session metrics.</p><br>
@@ -13,12 +13,13 @@ impl super::Client {
     ///   - [`filters(AnalyticsSessionFilter)`](crate::operation::list_session_metrics::builders::ListSessionMetricsFluentBuilder::filters) / [`set_filters(Option<Vec::<AnalyticsSessionFilter>>)`](crate::operation::list_session_metrics::builders::ListSessionMetricsFluentBuilder::set_filters):<br>required: **false**<br><p>A list of objects, each of which describes a condition by which you want to filter the results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_session_metrics::builders::ListSessionMetricsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_session_metrics::builders::ListSessionMetricsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_session_metrics::builders::ListSessionMetricsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_session_metrics::builders::ListSessionMetricsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the response from the ListSessionMetrics operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p> <p>Use the returned token in the nextToken parameter of a ListSessionMetrics request to return the next page of results. For a complete set of results, call the ListSessionMetrics operation until the nextToken returned in the response is null.</p><br>
-    /// - On success, responds with [`ListSessionMetricsOutput`](crate::operation::list_session_metrics::ListSessionMetricsOutput) with field(s):
+                            /// - On success, responds with [`ListSessionMetricsOutput`](crate::operation::list_session_metrics::ListSessionMetricsOutput) with field(s):
     ///   - [`bot_id(Option<String>)`](crate::operation::list_session_metrics::ListSessionMetricsOutput::bot_id): <p>The identifier for the bot for which you retrieved session metrics.</p>
     ///   - [`results(Option<Vec::<AnalyticsSessionResult>>)`](crate::operation::list_session_metrics::ListSessionMetricsOutput::results): <p>The results for the session metrics.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_session_metrics::ListSessionMetricsOutput::next_token): <p>If the response from the ListSessionMetrics operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p> <p>Use the returned token in the nextToken parameter of a ListSessionMetrics request to return the next page of results. For a complete set of results, call the ListSessionMetrics operation until the nextToken returned in the response is null.</p>
-    /// - On failure, responds with [`SdkError<ListSessionMetricsError>`](crate::operation::list_session_metrics::ListSessionMetricsError)
+                            /// - On failure, responds with [`SdkError<ListSessionMetricsError>`](crate::operation::list_session_metrics::ListSessionMetricsError)
     pub fn list_session_metrics(&self) -> crate::operation::list_session_metrics::builders::ListSessionMetricsFluentBuilder {
-        crate::operation::list_session_metrics::builders::ListSessionMetricsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_session_metrics::builders::ListSessionMetricsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

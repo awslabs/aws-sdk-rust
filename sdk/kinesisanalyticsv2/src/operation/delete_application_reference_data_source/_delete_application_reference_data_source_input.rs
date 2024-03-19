@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteApplicationReferenceDataSourceInput {
+pub struct DeleteApplicationReferenceDataSourceInput  {
     /// <p>The name of an existing application.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The current application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
@@ -10,9 +10,9 @@ pub struct DeleteApplicationReferenceDataSourceInput {
     /// <p>The ID of the reference data source. When you add a reference data source to your application using the <code>AddApplicationReferenceDataSource</code>, Kinesis Data Analytics assigns an ID. You can use the <code>DescribeApplication</code> operation to get the reference ID.</p>
     pub reference_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteApplicationReferenceDataSourceInput {
+impl  DeleteApplicationReferenceDataSourceInput  {
     /// <p>The name of an existing application.</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>The current application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
@@ -20,7 +20,7 @@ impl DeleteApplicationReferenceDataSourceInput {
         self.current_application_version_id
     }
     /// <p>The ID of the reference data source. When you add a reference data source to your application using the <code>AddApplicationReferenceDataSource</code>, Kinesis Data Analytics assigns an ID. You can use the <code>DescribeApplication</code> operation to get the reference ID.</p>
-    pub fn reference_id(&self) -> ::std::option::Option<&str> {
+    pub fn reference_id(&self) -> ::std::option::Option<& str> {
         self.reference_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DeleteApplicationReferenceDataSourceInputBuilder {
     }
     /// <p>The name of an existing application.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The name of an existing application.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DeleteApplicationReferenceDataSourceInputBuilder {
     }
     /// <p>The current application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
     pub fn set_current_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.current_application_version_id = input;
-        self
+        self.current_application_version_id = input; self
     }
     /// <p>The current application version. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
     pub fn get_current_application_version_id(&self) -> &::std::option::Option<i64> {
@@ -78,26 +76,24 @@ impl DeleteApplicationReferenceDataSourceInputBuilder {
     }
     /// <p>The ID of the reference data source. When you add a reference data source to your application using the <code>AddApplicationReferenceDataSource</code>, Kinesis Data Analytics assigns an ID. You can use the <code>DescribeApplication</code> operation to get the reference ID.</p>
     pub fn set_reference_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reference_id = input;
-        self
+        self.reference_id = input; self
     }
     /// <p>The ID of the reference data source. When you add a reference data source to your application using the <code>AddApplicationReferenceDataSource</code>, Kinesis Data Analytics assigns an ID. You can use the <code>DescribeApplication</code> operation to get the reference ID.</p>
     pub fn get_reference_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.reference_id
     }
     /// Consumes the builder and constructs a [`DeleteApplicationReferenceDataSourceInput`](crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceInput {
-                application_name: self.application_name,
-                current_application_version_id: self.current_application_version_id,
-                reference_id: self.reference_id,
-            },
+                application_name: self.application_name
+                ,
+                current_application_version_id: self.current_application_version_id
+                ,
+                reference_id: self.reference_id
+                ,
+            }
         )
     }
 }
+

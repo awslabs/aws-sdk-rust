@@ -26,11 +26,7 @@ impl ItemValue {
     /// Tries to convert the enum instance into [`Arn`](crate::types::ItemValue::Arn), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_arn(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let ItemValue::Arn(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ItemValue::Arn(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Arn`](crate::types::ItemValue::Arn).
     pub fn is_arn(&self) -> bool {
@@ -39,11 +35,7 @@ impl ItemValue {
     /// Tries to convert the enum instance into [`MetricDefinition`](crate::types::ItemValue::MetricDefinition), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_metric_definition(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let ItemValue::MetricDefinition(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ItemValue::MetricDefinition(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`MetricDefinition`](crate::types::ItemValue::MetricDefinition).
     pub fn is_metric_definition(&self) -> bool {
@@ -52,11 +44,7 @@ impl ItemValue {
     /// Tries to convert the enum instance into [`PagerDutyIncidentDetail`](crate::types::ItemValue::PagerDutyIncidentDetail), extracting the inner [`PagerDutyIncidentDetail`](crate::types::PagerDutyIncidentDetail).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_pager_duty_incident_detail(&self) -> ::std::result::Result<&crate::types::PagerDutyIncidentDetail, &Self> {
-        if let ItemValue::PagerDutyIncidentDetail(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ItemValue::PagerDutyIncidentDetail(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`PagerDutyIncidentDetail`](crate::types::ItemValue::PagerDutyIncidentDetail).
     pub fn is_pager_duty_incident_detail(&self) -> bool {
@@ -65,11 +53,7 @@ impl ItemValue {
     /// Tries to convert the enum instance into [`Url`](crate::types::ItemValue::Url), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_url(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let ItemValue::Url(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ItemValue::Url(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Url`](crate::types::ItemValue::Url).
     pub fn is_url(&self) -> bool {
@@ -80,3 +64,4 @@ impl ItemValue {
         matches!(self, Self::Unknown)
     }
 }
+

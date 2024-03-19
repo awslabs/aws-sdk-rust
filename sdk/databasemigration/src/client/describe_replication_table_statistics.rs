@@ -2,20 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeReplicationTableStatistics`](crate::operation::describe_replication_table_statistics::builders::DescribeReplicationTableStatisticsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_replication_table_statistics::builders::DescribeReplicationTableStatisticsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`replication_config_arn(impl Into<String>)`](crate::operation::describe_replication_table_statistics::builders::DescribeReplicationTableStatisticsFluentBuilder::replication_config_arn) / [`set_replication_config_arn(Option<String>)`](crate::operation::describe_replication_table_statistics::builders::DescribeReplicationTableStatisticsFluentBuilder::set_replication_config_arn):<br>required: **true**<br><p>The replication config to describe.</p><br>
     ///   - [`max_records(i32)`](crate::operation::describe_replication_table_statistics::builders::DescribeReplicationTableStatisticsFluentBuilder::max_records) / [`set_max_records(Option<i32>)`](crate::operation::describe_replication_table_statistics::builders::DescribeReplicationTableStatisticsFluentBuilder::set_max_records):<br>required: **false**<br><p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::describe_replication_table_statistics::builders::DescribeReplicationTableStatisticsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_replication_table_statistics::builders::DescribeReplicationTableStatisticsFluentBuilder::set_marker):<br>required: **false**<br><p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p><br>
     ///   - [`filters(Filter)`](crate::operation::describe_replication_table_statistics::builders::DescribeReplicationTableStatisticsFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::describe_replication_table_statistics::builders::DescribeReplicationTableStatisticsFluentBuilder::set_filters):<br>required: **false**<br><p>Filters applied to the replication table statistics.</p><br>
-    /// - On success, responds with [`DescribeReplicationTableStatisticsOutput`](crate::operation::describe_replication_table_statistics::DescribeReplicationTableStatisticsOutput) with field(s):
+                            /// - On success, responds with [`DescribeReplicationTableStatisticsOutput`](crate::operation::describe_replication_table_statistics::DescribeReplicationTableStatisticsOutput) with field(s):
     ///   - [`replication_config_arn(Option<String>)`](crate::operation::describe_replication_table_statistics::DescribeReplicationTableStatisticsOutput::replication_config_arn): <p>The Amazon Resource Name of the replication config.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_replication_table_statistics::DescribeReplicationTableStatisticsOutput::marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     ///   - [`replication_table_statistics(Option<Vec::<TableStatistics>>)`](crate::operation::describe_replication_table_statistics::DescribeReplicationTableStatisticsOutput::replication_table_statistics): <p>Returns table statistics on the replication, including table name, rows inserted, rows updated, and rows deleted.</p>
-    /// - On failure, responds with [`SdkError<DescribeReplicationTableStatisticsError>`](crate::operation::describe_replication_table_statistics::DescribeReplicationTableStatisticsError)
-    pub fn describe_replication_table_statistics(
-        &self,
-    ) -> crate::operation::describe_replication_table_statistics::builders::DescribeReplicationTableStatisticsFluentBuilder {
-        crate::operation::describe_replication_table_statistics::builders::DescribeReplicationTableStatisticsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeReplicationTableStatisticsError>`](crate::operation::describe_replication_table_statistics::DescribeReplicationTableStatisticsError)
+    pub fn describe_replication_table_statistics(&self) -> crate::operation::describe_replication_table_statistics::builders::DescribeReplicationTableStatisticsFluentBuilder {
+                                crate::operation::describe_replication_table_statistics::builders::DescribeReplicationTableStatisticsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

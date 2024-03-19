@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPolicies`](crate::operation::list_policies::builders::ListPoliciesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_policies::builders::ListPoliciesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_policies::builders::ListPoliciesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_policies::builders::ListPoliciesFluentBuilder::set_next_token):<br>required: **false**<br><p>If you specify a value for <code>MaxResults</code> and you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicySummary</code> objects. For the second and subsequent <code>ListPolicies</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicySummary</code> objects.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_policies::builders::ListPoliciesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_policies::builders::ListPoliciesFluentBuilder::set_max_results):<br>required: **false**<br><p>Specifies the number of <code>PolicySummary</code> objects that you want Firewall Manager to return for this request. If you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicySummary</code> objects.</p><br>
-    /// - On success, responds with [`ListPoliciesOutput`](crate::operation::list_policies::ListPoliciesOutput) with field(s):
+                            /// - On success, responds with [`ListPoliciesOutput`](crate::operation::list_policies::ListPoliciesOutput) with field(s):
     ///   - [`policy_list(Option<Vec::<PolicySummary>>)`](crate::operation::list_policies::ListPoliciesOutput::policy_list): <p>An array of <code>PolicySummary</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_policies::ListPoliciesOutput::next_token): <p>If you have more <code>PolicySummary</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicySummary</code> objects, submit another <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
-    /// - On failure, responds with [`SdkError<ListPoliciesError>`](crate::operation::list_policies::ListPoliciesError)
+                            /// - On failure, responds with [`SdkError<ListPoliciesError>`](crate::operation::list_policies::ListPoliciesError)
     pub fn list_policies(&self) -> crate::operation::list_policies::builders::ListPoliciesFluentBuilder {
-        crate::operation::list_policies::builders::ListPoliciesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_policies::builders::ListPoliciesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

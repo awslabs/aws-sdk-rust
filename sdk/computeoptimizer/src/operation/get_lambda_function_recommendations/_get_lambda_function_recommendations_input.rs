@@ -2,46 +2,49 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLambdaFunctionRecommendationsInput {
+pub struct GetLambdaFunctionRecommendationsInput  {
     /// <p>The Amazon Resource Name (ARN) of the functions for which to return recommendations.</p>
     /// <p>You can specify a qualified or unqualified ARN. If you specify an unqualified ARN without a function version suffix, Compute Optimizer will return recommendations for the latest (<code>$LATEST</code>) version of the function. If you specify a qualified ARN with a version suffix, Compute Optimizer will return recommendations for the specified function version. For more information about using function versions, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">Using versions</a> in the <i>Lambda Developer Guide</i>.</p>
-    pub function_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub function_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The ID of the Amazon Web Services account for which to return function recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return function recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub account_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>An array of objects to specify a filter that returns a more specific list of function recommendations.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionRecommendationFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::LambdaFunctionRecommendationFilter>>,
     /// <p>The token to advance to the next page of function recommendations.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of function recommendations to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl GetLambdaFunctionRecommendationsInput {
+impl  GetLambdaFunctionRecommendationsInput  {
     /// <p>The Amazon Resource Name (ARN) of the functions for which to return recommendations.</p>
     /// <p>You can specify a qualified or unqualified ARN. If you specify an unqualified ARN without a function version suffix, Compute Optimizer will return recommendations for the latest (<code>$LATEST</code>) version of the function. If you specify a qualified ARN with a version suffix, Compute Optimizer will return recommendations for the specified function version. For more information about using function versions, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">Using versions</a> in the <i>Lambda Developer Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.function_arns.is_none()`.
-    pub fn function_arns(&self) -> &[::std::string::String] {
-        self.function_arns.as_deref().unwrap_or_default()
+    pub fn function_arns(&self) -> & [::std::string::String] {
+        self.function_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the Amazon Web Services account for which to return function recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return function recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
-    pub fn account_ids(&self) -> &[::std::string::String] {
-        self.account_ids.as_deref().unwrap_or_default()
+    pub fn account_ids(&self) -> & [::std::string::String] {
+        self.account_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of objects to specify a filter that returns a more specific list of function recommendations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::LambdaFunctionRecommendationFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::LambdaFunctionRecommendationFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to advance to the next page of function recommendations.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of function recommendations to return with a single request.</p>
@@ -61,9 +64,9 @@ impl GetLambdaFunctionRecommendationsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLambdaFunctionRecommendationsInputBuilder {
-    pub(crate) function_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionRecommendationFilter>>,
+    pub(crate) function_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) account_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::LambdaFunctionRecommendationFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -76,19 +79,18 @@ impl GetLambdaFunctionRecommendationsInputBuilder {
     /// <p>You can specify a qualified or unqualified ARN. If you specify an unqualified ARN without a function version suffix, Compute Optimizer will return recommendations for the latest (<code>$LATEST</code>) version of the function. If you specify a qualified ARN with a version suffix, Compute Optimizer will return recommendations for the specified function version. For more information about using function versions, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">Using versions</a> in the <i>Lambda Developer Guide</i>.</p>
     pub fn function_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.function_arns.unwrap_or_default();
-        v.push(input.into());
-        self.function_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.function_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Resource Name (ARN) of the functions for which to return recommendations.</p>
     /// <p>You can specify a qualified or unqualified ARN. If you specify an unqualified ARN without a function version suffix, Compute Optimizer will return recommendations for the latest (<code>$LATEST</code>) version of the function. If you specify a qualified ARN with a version suffix, Compute Optimizer will return recommendations for the specified function version. For more information about using function versions, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">Using versions</a> in the <i>Lambda Developer Guide</i>.</p>
-    pub fn set_function_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.function_arns = input;
-        self
+    pub fn set_function_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.function_arns = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the functions for which to return recommendations.</p>
     /// <p>You can specify a qualified or unqualified ARN. If you specify an unqualified ARN without a function version suffix, Compute Optimizer will return recommendations for the latest (<code>$LATEST</code>) version of the function. If you specify a qualified ARN with a version suffix, Compute Optimizer will return recommendations for the specified function version. For more information about using function versions, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">Using versions</a> in the <i>Lambda Developer Guide</i>.</p>
-    pub fn get_function_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_function_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.function_arns
     }
     /// Appends an item to `account_ids`.
@@ -100,21 +102,20 @@ impl GetLambdaFunctionRecommendationsInputBuilder {
     /// <p>Only one account ID can be specified per request.</p>
     pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
-        v.push(input.into());
-        self.account_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.account_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ID of the Amazon Web Services account for which to return function recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return function recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.account_ids = input;
-        self
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.account_ids = input; self
     }
     /// <p>The ID of the Amazon Web Services account for which to return function recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return function recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.account_ids
     }
     /// Appends an item to `filters`.
@@ -124,17 +125,16 @@ impl GetLambdaFunctionRecommendationsInputBuilder {
     /// <p>An array of objects to specify a filter that returns a more specific list of function recommendations.</p>
     pub fn filters(mut self, input: crate::types::LambdaFunctionRecommendationFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects to specify a filter that returns a more specific list of function recommendations.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionRecommendationFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LambdaFunctionRecommendationFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>An array of objects to specify a filter that returns a more specific list of function recommendations.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionRecommendationFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LambdaFunctionRecommendationFilter>> {
         &self.filters
     }
     /// <p>The token to advance to the next page of function recommendations.</p>
@@ -144,8 +144,7 @@ impl GetLambdaFunctionRecommendationsInputBuilder {
     }
     /// <p>The token to advance to the next page of function recommendations.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to advance to the next page of function recommendations.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +159,7 @@ impl GetLambdaFunctionRecommendationsInputBuilder {
     /// <p>The maximum number of function recommendations to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of function recommendations to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
@@ -169,20 +167,21 @@ impl GetLambdaFunctionRecommendationsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetLambdaFunctionRecommendationsInput`](crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsInput {
-                function_arns: self.function_arns,
-                account_ids: self.account_ids,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                function_arns: self.function_arns
+                ,
+                account_ids: self.account_ids
+                ,
+                filters: self.filters
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

@@ -2,32 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAllowedNodeTypeUpdatesOutput {
+pub struct ListAllowedNodeTypeUpdatesOutput  {
     /// <p>A list node types which you can use to scale up your cluster.</p>
-    pub scale_up_node_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub scale_up_node_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list node types which you can use to scale down your cluster.</p>
-    pub scale_down_node_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub scale_down_node_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl ListAllowedNodeTypeUpdatesOutput {
+impl  ListAllowedNodeTypeUpdatesOutput  {
     /// <p>A list node types which you can use to scale up your cluster.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scale_up_node_types.is_none()`.
-    pub fn scale_up_node_types(&self) -> &[::std::string::String] {
-        self.scale_up_node_types.as_deref().unwrap_or_default()
+    pub fn scale_up_node_types(&self) -> & [::std::string::String] {
+        self.scale_up_node_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list node types which you can use to scale down your cluster.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scale_down_node_types.is_none()`.
-    pub fn scale_down_node_types(&self) -> &[::std::string::String] {
-        self.scale_down_node_types.as_deref().unwrap_or_default()
+    pub fn scale_down_node_types(&self) -> & [::std::string::String] {
+        self.scale_down_node_types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAllowedNodeTypeUpdatesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAllowedNodeTypeUpdatesOutput {
     /// Creates a new builder-style object to manufacture [`ListAllowedNodeTypeUpdatesOutput`](crate::operation::list_allowed_node_type_updates::ListAllowedNodeTypeUpdatesOutput).
     pub fn builder() -> crate::operation::list_allowed_node_type_updates::builders::ListAllowedNodeTypeUpdatesOutputBuilder {
@@ -39,8 +41,8 @@ impl ListAllowedNodeTypeUpdatesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAllowedNodeTypeUpdatesOutputBuilder {
-    pub(crate) scale_up_node_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) scale_down_node_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) scale_up_node_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) scale_down_node_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl ListAllowedNodeTypeUpdatesOutputBuilder {
@@ -51,17 +53,16 @@ impl ListAllowedNodeTypeUpdatesOutputBuilder {
     /// <p>A list node types which you can use to scale up your cluster.</p>
     pub fn scale_up_node_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.scale_up_node_types.unwrap_or_default();
-        v.push(input.into());
-        self.scale_up_node_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.scale_up_node_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list node types which you can use to scale up your cluster.</p>
-    pub fn set_scale_up_node_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.scale_up_node_types = input;
-        self
+    pub fn set_scale_up_node_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.scale_up_node_types = input; self
     }
     /// <p>A list node types which you can use to scale up your cluster.</p>
-    pub fn get_scale_up_node_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_scale_up_node_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.scale_up_node_types
     }
     /// Appends an item to `scale_down_node_types`.
@@ -71,34 +72,36 @@ impl ListAllowedNodeTypeUpdatesOutputBuilder {
     /// <p>A list node types which you can use to scale down your cluster.</p>
     pub fn scale_down_node_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.scale_down_node_types.unwrap_or_default();
-        v.push(input.into());
-        self.scale_down_node_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.scale_down_node_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list node types which you can use to scale down your cluster.</p>
-    pub fn set_scale_down_node_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.scale_down_node_types = input;
-        self
+    pub fn set_scale_down_node_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.scale_down_node_types = input; self
     }
     /// <p>A list node types which you can use to scale down your cluster.</p>
-    pub fn get_scale_down_node_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_scale_down_node_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.scale_down_node_types
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAllowedNodeTypeUpdatesOutput`](crate::operation::list_allowed_node_type_updates::ListAllowedNodeTypeUpdatesOutput).
     pub fn build(self) -> crate::operation::list_allowed_node_type_updates::ListAllowedNodeTypeUpdatesOutput {
         crate::operation::list_allowed_node_type_updates::ListAllowedNodeTypeUpdatesOutput {
-            scale_up_node_types: self.scale_up_node_types,
-            scale_down_node_types: self.scale_down_node_types,
+            scale_up_node_types: self.scale_up_node_types
+            ,
+            scale_down_node_types: self.scale_down_node_types
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

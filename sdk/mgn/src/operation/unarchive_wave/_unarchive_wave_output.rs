@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UnarchiveWaveOutput {
+pub struct UnarchiveWaveOutput  {
     /// <p>Wave ID.</p>
     pub wave_id: ::std::option::Option<::std::string::String>,
     /// <p>Wave ARN.</p>
@@ -20,24 +20,24 @@ pub struct UnarchiveWaveOutput {
     /// <p>Wave last modified dateTime.</p>
     pub last_modified_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Wave tags.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl UnarchiveWaveOutput {
+impl  UnarchiveWaveOutput  {
     /// <p>Wave ID.</p>
-    pub fn wave_id(&self) -> ::std::option::Option<&str> {
+    pub fn wave_id(&self) -> ::std::option::Option<& str> {
         self.wave_id.as_deref()
     }
     /// <p>Wave ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Wave name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Wave description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Wave archival status.</p>
@@ -45,23 +45,23 @@ impl UnarchiveWaveOutput {
         self.is_archived
     }
     /// <p>Wave aggregated status.</p>
-    pub fn wave_aggregated_status(&self) -> ::std::option::Option<&crate::types::WaveAggregatedStatus> {
+    pub fn wave_aggregated_status(&self) -> ::std::option::Option<& crate::types::WaveAggregatedStatus> {
         self.wave_aggregated_status.as_ref()
     }
     /// <p>Wave creation dateTime.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&str> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& str> {
         self.creation_date_time.as_deref()
     }
     /// <p>Wave last modified dateTime.</p>
-    pub fn last_modified_date_time(&self) -> ::std::option::Option<&str> {
+    pub fn last_modified_date_time(&self) -> ::std::option::Option<& str> {
         self.last_modified_date_time.as_deref()
     }
     /// <p>Wave tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl ::std::fmt::Debug for UnarchiveWaveOutput {
+impl  ::std::fmt::Debug for UnarchiveWaveOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UnarchiveWaveOutput");
         formatter.field("wave_id", &self.wave_id);
@@ -78,10 +78,10 @@ impl ::std::fmt::Debug for UnarchiveWaveOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for UnarchiveWaveOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UnarchiveWaveOutput {
     /// Creates a new builder-style object to manufacture [`UnarchiveWaveOutput`](crate::operation::unarchive_wave::UnarchiveWaveOutput).
     pub fn builder() -> crate::operation::unarchive_wave::builders::UnarchiveWaveOutputBuilder {
@@ -101,7 +101,7 @@ pub struct UnarchiveWaveOutputBuilder {
     pub(crate) wave_aggregated_status: ::std::option::Option<crate::types::WaveAggregatedStatus>,
     pub(crate) creation_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified_date_time: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl UnarchiveWaveOutputBuilder {
@@ -112,8 +112,7 @@ impl UnarchiveWaveOutputBuilder {
     }
     /// <p>Wave ID.</p>
     pub fn set_wave_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.wave_id = input;
-        self
+        self.wave_id = input; self
     }
     /// <p>Wave ID.</p>
     pub fn get_wave_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +125,7 @@ impl UnarchiveWaveOutputBuilder {
     }
     /// <p>Wave ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>Wave ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +138,7 @@ impl UnarchiveWaveOutputBuilder {
     }
     /// <p>Wave name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Wave name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,8 +151,7 @@ impl UnarchiveWaveOutputBuilder {
     }
     /// <p>Wave description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Wave description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -168,8 +164,7 @@ impl UnarchiveWaveOutputBuilder {
     }
     /// <p>Wave archival status.</p>
     pub fn set_is_archived(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_archived = input;
-        self
+        self.is_archived = input; self
     }
     /// <p>Wave archival status.</p>
     pub fn get_is_archived(&self) -> &::std::option::Option<bool> {
@@ -182,8 +177,7 @@ impl UnarchiveWaveOutputBuilder {
     }
     /// <p>Wave aggregated status.</p>
     pub fn set_wave_aggregated_status(mut self, input: ::std::option::Option<crate::types::WaveAggregatedStatus>) -> Self {
-        self.wave_aggregated_status = input;
-        self
+        self.wave_aggregated_status = input; self
     }
     /// <p>Wave aggregated status.</p>
     pub fn get_wave_aggregated_status(&self) -> &::std::option::Option<crate::types::WaveAggregatedStatus> {
@@ -196,8 +190,7 @@ impl UnarchiveWaveOutputBuilder {
     }
     /// <p>Wave creation dateTime.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>Wave creation dateTime.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -210,8 +203,7 @@ impl UnarchiveWaveOutputBuilder {
     }
     /// <p>Wave last modified dateTime.</p>
     pub fn set_last_modified_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_modified_date_time = input;
-        self
+        self.last_modified_date_time = input; self
     }
     /// <p>Wave last modified dateTime.</p>
     pub fn get_last_modified_date_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -224,40 +216,48 @@ impl UnarchiveWaveOutputBuilder {
     /// <p>Wave tags.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Wave tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Wave tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UnarchiveWaveOutput`](crate::operation::unarchive_wave::UnarchiveWaveOutput).
     pub fn build(self) -> crate::operation::unarchive_wave::UnarchiveWaveOutput {
         crate::operation::unarchive_wave::UnarchiveWaveOutput {
-            wave_id: self.wave_id,
-            arn: self.arn,
-            name: self.name,
-            description: self.description,
-            is_archived: self.is_archived,
-            wave_aggregated_status: self.wave_aggregated_status,
-            creation_date_time: self.creation_date_time,
-            last_modified_date_time: self.last_modified_date_time,
-            tags: self.tags,
+            wave_id: self.wave_id
+            ,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            is_archived: self.is_archived
+            ,
+            wave_aggregated_status: self.wave_aggregated_status
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            last_modified_date_time: self.last_modified_date_time
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
@@ -278,3 +278,4 @@ impl ::std::fmt::Debug for UnarchiveWaveOutputBuilder {
         formatter.finish()
     }
 }
+

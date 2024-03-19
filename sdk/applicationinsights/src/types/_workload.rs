@@ -3,7 +3,7 @@
 /// <p>Describes the workloads on a component.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Workload {
+pub struct Workload  {
     /// <p>The ID of the workload.</p>
     pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the component.</p>
@@ -15,25 +15,25 @@ pub struct Workload {
     /// <p>If logging is supported for the resource type, shows whether the component has configured logs to be monitored.</p>
     pub workload_remarks: ::std::option::Option<::std::string::String>,
 }
-impl Workload {
+impl  Workload  {
     /// <p>The ID of the workload.</p>
-    pub fn workload_id(&self) -> ::std::option::Option<&str> {
+    pub fn workload_id(&self) -> ::std::option::Option<& str> {
         self.workload_id.as_deref()
     }
     /// <p>The name of the component.</p>
-    pub fn component_name(&self) -> ::std::option::Option<&str> {
+    pub fn component_name(&self) -> ::std::option::Option<& str> {
         self.component_name.as_deref()
     }
     /// <p>The name of the workload.</p>
-    pub fn workload_name(&self) -> ::std::option::Option<&str> {
+    pub fn workload_name(&self) -> ::std::option::Option<& str> {
         self.workload_name.as_deref()
     }
     /// <p>The tier of the workload.</p>
-    pub fn tier(&self) -> ::std::option::Option<&crate::types::Tier> {
+    pub fn tier(&self) -> ::std::option::Option<& crate::types::Tier> {
         self.tier.as_ref()
     }
     /// <p>If logging is supported for the resource type, shows whether the component has configured logs to be monitored.</p>
-    pub fn workload_remarks(&self) -> ::std::option::Option<&str> {
+    pub fn workload_remarks(&self) -> ::std::option::Option<& str> {
         self.workload_remarks.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl WorkloadBuilder {
     }
     /// <p>The ID of the workload.</p>
     pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_id = input;
-        self
+        self.workload_id = input; self
     }
     /// <p>The ID of the workload.</p>
     pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl WorkloadBuilder {
     }
     /// <p>The name of the component.</p>
     pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_name = input;
-        self
+        self.component_name = input; self
     }
     /// <p>The name of the component.</p>
     pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl WorkloadBuilder {
     }
     /// <p>The name of the workload.</p>
     pub fn set_workload_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_name = input;
-        self
+        self.workload_name = input; self
     }
     /// <p>The name of the workload.</p>
     pub fn get_workload_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl WorkloadBuilder {
     }
     /// <p>The tier of the workload.</p>
     pub fn set_tier(mut self, input: ::std::option::Option<crate::types::Tier>) -> Self {
-        self.tier = input;
-        self
+        self.tier = input; self
     }
     /// <p>The tier of the workload.</p>
     pub fn get_tier(&self) -> &::std::option::Option<crate::types::Tier> {
@@ -118,8 +114,7 @@ impl WorkloadBuilder {
     }
     /// <p>If logging is supported for the resource type, shows whether the component has configured logs to be monitored.</p>
     pub fn set_workload_remarks(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_remarks = input;
-        self
+        self.workload_remarks = input; self
     }
     /// <p>If logging is supported for the resource type, shows whether the component has configured logs to be monitored.</p>
     pub fn get_workload_remarks(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,11 +123,17 @@ impl WorkloadBuilder {
     /// Consumes the builder and constructs a [`Workload`](crate::types::Workload).
     pub fn build(self) -> crate::types::Workload {
         crate::types::Workload {
-            workload_id: self.workload_id,
-            component_name: self.component_name,
-            workload_name: self.workload_name,
-            tier: self.tier,
-            workload_remarks: self.workload_remarks,
+            workload_id: self.workload_id
+            ,
+            component_name: self.component_name
+            ,
+            workload_name: self.workload_name
+            ,
+            tier: self.tier
+            ,
+            workload_remarks: self.workload_remarks
+            ,
         }
     }
 }
+

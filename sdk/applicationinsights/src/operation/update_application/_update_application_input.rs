@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateApplicationInput {
+pub struct UpdateApplicationInput  {
     /// <p>The name of the resource group.</p>
     pub resource_group_name: ::std::option::Option<::std::string::String>,
     /// <p>When set to <code>true</code>, creates opsItems for any problems detected on an application.</p>
@@ -18,9 +18,9 @@ pub struct UpdateApplicationInput {
     /// <p>If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.</p>
     pub attach_missing_permission: ::std::option::Option<bool>,
 }
-impl UpdateApplicationInput {
+impl  UpdateApplicationInput  {
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_group_name(&self) -> ::std::option::Option<& str> {
         self.resource_group_name.as_deref()
     }
     /// <p>When set to <code>true</code>, creates opsItems for any problems detected on an application.</p>
@@ -32,7 +32,7 @@ impl UpdateApplicationInput {
         self.cwe_monitor_enabled
     }
     /// <p>The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
-    pub fn ops_item_sns_topic_arn(&self) -> ::std::option::Option<&str> {
+    pub fn ops_item_sns_topic_arn(&self) -> ::std::option::Option<& str> {
         self.ops_item_sns_topic_arn.as_deref()
     }
     /// <p>Disassociates the SNS topic from the opsItem created for detected problems.</p>
@@ -76,8 +76,7 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>The name of the resource group.</p>
     pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_group_name = input;
-        self
+        self.resource_group_name = input; self
     }
     /// <p>The name of the resource group.</p>
     pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>When set to <code>true</code>, creates opsItems for any problems detected on an application.</p>
     pub fn set_ops_center_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ops_center_enabled = input;
-        self
+        self.ops_center_enabled = input; self
     }
     /// <p>When set to <code>true</code>, creates opsItems for any problems detected on an application.</p>
     pub fn get_ops_center_enabled(&self) -> &::std::option::Option<bool> {
@@ -104,8 +102,7 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.</p>
     pub fn set_cwe_monitor_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.cwe_monitor_enabled = input;
-        self
+        self.cwe_monitor_enabled = input; self
     }
     /// <p>Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.</p>
     pub fn get_cwe_monitor_enabled(&self) -> &::std::option::Option<bool> {
@@ -118,8 +115,7 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
     pub fn set_ops_item_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ops_item_sns_topic_arn = input;
-        self
+        self.ops_item_sns_topic_arn = input; self
     }
     /// <p>The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive notifications for updates to the opsItem.</p>
     pub fn get_ops_item_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>Disassociates the SNS topic from the opsItem created for detected problems.</p>
     pub fn set_remove_sns_topic(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.remove_sns_topic = input;
-        self
+        self.remove_sns_topic = input; self
     }
     /// <p>Disassociates the SNS topic from the opsItem created for detected problems.</p>
     pub fn get_remove_sns_topic(&self) -> &::std::option::Option<bool> {
@@ -146,8 +141,7 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>Turns auto-configuration on or off.</p>
     pub fn set_auto_config_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_config_enabled = input;
-        self
+        self.auto_config_enabled = input; self
     }
     /// <p>Turns auto-configuration on or off.</p>
     pub fn get_auto_config_enabled(&self) -> &::std::option::Option<bool> {
@@ -160,25 +154,32 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.</p>
     pub fn set_attach_missing_permission(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.attach_missing_permission = input;
-        self
+        self.attach_missing_permission = input; self
     }
     /// <p>If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.</p>
     pub fn get_attach_missing_permission(&self) -> &::std::option::Option<bool> {
         &self.attach_missing_permission
     }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_application::UpdateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_application::UpdateApplicationInput {
-            resource_group_name: self.resource_group_name,
-            ops_center_enabled: self.ops_center_enabled,
-            cwe_monitor_enabled: self.cwe_monitor_enabled,
-            ops_item_sns_topic_arn: self.ops_item_sns_topic_arn,
-            remove_sns_topic: self.remove_sns_topic,
-            auto_config_enabled: self.auto_config_enabled,
-            attach_missing_permission: self.attach_missing_permission,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_application::UpdateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_application::UpdateApplicationInput {
+                resource_group_name: self.resource_group_name
+                ,
+                ops_center_enabled: self.ops_center_enabled
+                ,
+                cwe_monitor_enabled: self.cwe_monitor_enabled
+                ,
+                ops_item_sns_topic_arn: self.ops_item_sns_topic_arn
+                ,
+                remove_sns_topic: self.remove_sns_topic
+                ,
+                auto_config_enabled: self.auto_config_enabled
+                ,
+                attach_missing_permission: self.attach_missing_permission
+                ,
+            }
+        )
     }
 }
+

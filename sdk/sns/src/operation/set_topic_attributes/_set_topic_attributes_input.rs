@@ -3,7 +3,7 @@
 /// <p>Input for SetTopicAttributes action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetTopicAttributesInput {
+pub struct SetTopicAttributesInput  {
     /// <p>The ARN of the topic to modify.</p>
     pub topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>A map of attributes with their corresponding values.</p>
@@ -74,11 +74,11 @@ pub struct SetTopicAttributesInput {
     /// </ul></li>
     /// </ul><note>
     /// <p>The <endpoint>
-    /// SuccessFeedbackRoleArn and
+    /// SuccessFeedbackRoleArn and 
     /// <endpoint>
-    /// FailureFeedbackRoleArn attributes are used to give Amazon SNS write access to use CloudWatch Logs on your behalf. The
+    /// FailureFeedbackRoleArn attributes are used to give Amazon SNS write access to use CloudWatch Logs on your behalf. The 
     /// <endpoint>
-    /// SuccessFeedbackSampleRate attribute is for specifying the sample rate percentage (0-100) of successfully delivered messages. After you configure the
+    /// SuccessFeedbackSampleRate attribute is for specifying the sample rate percentage (0-100) of successfully delivered messages. After you configure the 
     /// <endpoint>
     /// FailureFeedbackRoleArn attribute, then all failed message deliveries generate CloudWatch Logs.
     /// </endpoint>
@@ -109,9 +109,9 @@ pub struct SetTopicAttributesInput {
     /// <p>The new value for the attribute.</p>
     pub attribute_value: ::std::option::Option<::std::string::String>,
 }
-impl SetTopicAttributesInput {
+impl  SetTopicAttributesInput  {
     /// <p>The ARN of the topic to modify.</p>
-    pub fn topic_arn(&self) -> ::std::option::Option<&str> {
+    pub fn topic_arn(&self) -> ::std::option::Option<& str> {
         self.topic_arn.as_deref()
     }
     /// <p>A map of attributes with their corresponding values.</p>
@@ -182,11 +182,11 @@ impl SetTopicAttributesInput {
     /// </ul></li>
     /// </ul><note>
     /// <p>The <endpoint>
-    /// SuccessFeedbackRoleArn and
+    /// SuccessFeedbackRoleArn and 
     /// <endpoint>
-    /// FailureFeedbackRoleArn attributes are used to give Amazon SNS write access to use CloudWatch Logs on your behalf. The
+    /// FailureFeedbackRoleArn attributes are used to give Amazon SNS write access to use CloudWatch Logs on your behalf. The 
     /// <endpoint>
-    /// SuccessFeedbackSampleRate attribute is for specifying the sample rate percentage (0-100) of successfully delivered messages. After you configure the
+    /// SuccessFeedbackSampleRate attribute is for specifying the sample rate percentage (0-100) of successfully delivered messages. After you configure the 
     /// <endpoint>
     /// FailureFeedbackRoleArn attribute, then all failed message deliveries generate CloudWatch Logs.
     /// </endpoint>
@@ -213,11 +213,11 @@ impl SetTopicAttributesInput {
     /// <p>(Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.</p></li>
     /// </ul></li>
     /// </ul>
-    pub fn attribute_name(&self) -> ::std::option::Option<&str> {
+    pub fn attribute_name(&self) -> ::std::option::Option<& str> {
         self.attribute_name.as_deref()
     }
     /// <p>The new value for the attribute.</p>
-    pub fn attribute_value(&self) -> ::std::option::Option<&str> {
+    pub fn attribute_value(&self) -> ::std::option::Option<& str> {
         self.attribute_value.as_deref()
     }
 }
@@ -245,8 +245,7 @@ impl SetTopicAttributesInputBuilder {
     }
     /// <p>The ARN of the topic to modify.</p>
     pub fn set_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_arn = input;
-        self
+        self.topic_arn = input; self
     }
     /// <p>The ARN of the topic to modify.</p>
     pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -320,11 +319,11 @@ impl SetTopicAttributesInputBuilder {
     /// </ul></li>
     /// </ul><note>
     /// <p>The <endpoint>
-    /// SuccessFeedbackRoleArn and
+    /// SuccessFeedbackRoleArn and 
     /// <endpoint>
-    /// FailureFeedbackRoleArn attributes are used to give Amazon SNS write access to use CloudWatch Logs on your behalf. The
+    /// FailureFeedbackRoleArn attributes are used to give Amazon SNS write access to use CloudWatch Logs on your behalf. The 
     /// <endpoint>
-    /// SuccessFeedbackSampleRate attribute is for specifying the sample rate percentage (0-100) of successfully delivered messages. After you configure the
+    /// SuccessFeedbackSampleRate attribute is for specifying the sample rate percentage (0-100) of successfully delivered messages. After you configure the 
     /// <endpoint>
     /// FailureFeedbackRoleArn attribute, then all failed message deliveries generate CloudWatch Logs.
     /// </endpoint>
@@ -424,11 +423,11 @@ impl SetTopicAttributesInputBuilder {
     /// </ul></li>
     /// </ul><note>
     /// <p>The <endpoint>
-    /// SuccessFeedbackRoleArn and
+    /// SuccessFeedbackRoleArn and 
     /// <endpoint>
-    /// FailureFeedbackRoleArn attributes are used to give Amazon SNS write access to use CloudWatch Logs on your behalf. The
+    /// FailureFeedbackRoleArn attributes are used to give Amazon SNS write access to use CloudWatch Logs on your behalf. The 
     /// <endpoint>
-    /// SuccessFeedbackSampleRate attribute is for specifying the sample rate percentage (0-100) of successfully delivered messages. After you configure the
+    /// SuccessFeedbackSampleRate attribute is for specifying the sample rate percentage (0-100) of successfully delivered messages. After you configure the 
     /// <endpoint>
     /// FailureFeedbackRoleArn attribute, then all failed message deliveries generate CloudWatch Logs.
     /// </endpoint>
@@ -456,8 +455,7 @@ impl SetTopicAttributesInputBuilder {
     /// </ul></li>
     /// </ul>
     pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attribute_name = input;
-        self
+        self.attribute_name = input; self
     }
     /// <p>A map of attributes with their corresponding values.</p>
     /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>SetTopicAttributes</code> action uses:</p>
@@ -527,11 +525,11 @@ impl SetTopicAttributesInputBuilder {
     /// </ul></li>
     /// </ul><note>
     /// <p>The <endpoint>
-    /// SuccessFeedbackRoleArn and
+    /// SuccessFeedbackRoleArn and 
     /// <endpoint>
-    /// FailureFeedbackRoleArn attributes are used to give Amazon SNS write access to use CloudWatch Logs on your behalf. The
+    /// FailureFeedbackRoleArn attributes are used to give Amazon SNS write access to use CloudWatch Logs on your behalf. The 
     /// <endpoint>
-    /// SuccessFeedbackSampleRate attribute is for specifying the sample rate percentage (0-100) of successfully delivered messages. After you configure the
+    /// SuccessFeedbackSampleRate attribute is for specifying the sample rate percentage (0-100) of successfully delivered messages. After you configure the 
     /// <endpoint>
     /// FailureFeedbackRoleArn attribute, then all failed message deliveries generate CloudWatch Logs.
     /// </endpoint>
@@ -568,22 +566,24 @@ impl SetTopicAttributesInputBuilder {
     }
     /// <p>The new value for the attribute.</p>
     pub fn set_attribute_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attribute_value = input;
-        self
+        self.attribute_value = input; self
     }
     /// <p>The new value for the attribute.</p>
     pub fn get_attribute_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.attribute_value
     }
     /// Consumes the builder and constructs a [`SetTopicAttributesInput`](crate::operation::set_topic_attributes::SetTopicAttributesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::set_topic_attributes::SetTopicAttributesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::set_topic_attributes::SetTopicAttributesInput {
-            topic_arn: self.topic_arn,
-            attribute_name: self.attribute_name,
-            attribute_value: self.attribute_value,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_topic_attributes::SetTopicAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::set_topic_attributes::SetTopicAttributesInput {
+                topic_arn: self.topic_arn
+                ,
+                attribute_name: self.attribute_name
+                ,
+                attribute_value: self.attribute_value
+                ,
+            }
+        )
     }
 }
+

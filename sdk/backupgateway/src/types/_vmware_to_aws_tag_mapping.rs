@@ -3,7 +3,7 @@
 /// <p>This displays the mapping of on-premises VMware tags to the corresponding Amazon Web Services tags.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VmwareToAwsTagMapping {
+pub struct VmwareToAwsTagMapping  {
     /// <p>The is the category of VMware.</p>
     pub vmware_category: ::std::string::String,
     /// <p>This is the user-defined name of a VMware tag.</p>
@@ -13,26 +13,22 @@ pub struct VmwareToAwsTagMapping {
     /// <p>The value part of the Amazon Web Services tag's key-value pair.</p>
     pub aws_tag_value: ::std::string::String,
 }
-impl VmwareToAwsTagMapping {
+impl  VmwareToAwsTagMapping  {
     /// <p>The is the category of VMware.</p>
-    pub fn vmware_category(&self) -> &str {
-        use std::ops::Deref;
-        self.vmware_category.deref()
+    pub fn vmware_category(&self) -> & str {
+        use std::ops::Deref; self.vmware_category.deref()
     }
     /// <p>This is the user-defined name of a VMware tag.</p>
-    pub fn vmware_tag_name(&self) -> &str {
-        use std::ops::Deref;
-        self.vmware_tag_name.deref()
+    pub fn vmware_tag_name(&self) -> & str {
+        use std::ops::Deref; self.vmware_tag_name.deref()
     }
     /// <p>The key part of the Amazon Web Services tag's key-value pair.</p>
-    pub fn aws_tag_key(&self) -> &str {
-        use std::ops::Deref;
-        self.aws_tag_key.deref()
+    pub fn aws_tag_key(&self) -> & str {
+        use std::ops::Deref; self.aws_tag_key.deref()
     }
     /// <p>The value part of the Amazon Web Services tag's key-value pair.</p>
-    pub fn aws_tag_value(&self) -> &str {
-        use std::ops::Deref;
-        self.aws_tag_value.deref()
+    pub fn aws_tag_value(&self) -> & str {
+        use std::ops::Deref; self.aws_tag_value.deref()
     }
 }
 impl VmwareToAwsTagMapping {
@@ -60,8 +56,7 @@ impl VmwareToAwsTagMappingBuilder {
     }
     /// <p>The is the category of VMware.</p>
     pub fn set_vmware_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vmware_category = input;
-        self
+        self.vmware_category = input; self
     }
     /// <p>The is the category of VMware.</p>
     pub fn get_vmware_category(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +70,7 @@ impl VmwareToAwsTagMappingBuilder {
     }
     /// <p>This is the user-defined name of a VMware tag.</p>
     pub fn set_vmware_tag_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vmware_tag_name = input;
-        self
+        self.vmware_tag_name = input; self
     }
     /// <p>This is the user-defined name of a VMware tag.</p>
     pub fn get_vmware_tag_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +84,7 @@ impl VmwareToAwsTagMappingBuilder {
     }
     /// <p>The key part of the Amazon Web Services tag's key-value pair.</p>
     pub fn set_aws_tag_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_tag_key = input;
-        self
+        self.aws_tag_key = input; self
     }
     /// <p>The key part of the Amazon Web Services tag's key-value pair.</p>
     pub fn get_aws_tag_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +98,7 @@ impl VmwareToAwsTagMappingBuilder {
     }
     /// <p>The value part of the Amazon Web Services tag's key-value pair.</p>
     pub fn set_aws_tag_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_tag_value = input;
-        self
+        self.aws_tag_value = input; self
     }
     /// <p>The value part of the Amazon Web Services tag's key-value pair.</p>
     pub fn get_aws_tag_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,31 +111,30 @@ impl VmwareToAwsTagMappingBuilder {
     /// - [`aws_tag_key`](crate::types::builders::VmwareToAwsTagMappingBuilder::aws_tag_key)
     /// - [`aws_tag_value`](crate::types::builders::VmwareToAwsTagMappingBuilder::aws_tag_value)
     pub fn build(self) -> ::std::result::Result<crate::types::VmwareToAwsTagMapping, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VmwareToAwsTagMapping {
-            vmware_category: self.vmware_category.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vmware_category",
-                    "vmware_category was not specified but it is required when building VmwareToAwsTagMapping",
-                )
-            })?,
-            vmware_tag_name: self.vmware_tag_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vmware_tag_name",
-                    "vmware_tag_name was not specified but it is required when building VmwareToAwsTagMapping",
-                )
-            })?,
-            aws_tag_key: self.aws_tag_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "aws_tag_key",
-                    "aws_tag_key was not specified but it is required when building VmwareToAwsTagMapping",
-                )
-            })?,
-            aws_tag_value: self.aws_tag_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "aws_tag_value",
-                    "aws_tag_value was not specified but it is required when building VmwareToAwsTagMapping",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VmwareToAwsTagMapping {
+                vmware_category: self.vmware_category
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vmware_category", "vmware_category was not specified but it is required when building VmwareToAwsTagMapping")
+                    )?
+                ,
+                vmware_tag_name: self.vmware_tag_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vmware_tag_name", "vmware_tag_name was not specified but it is required when building VmwareToAwsTagMapping")
+                    )?
+                ,
+                aws_tag_key: self.aws_tag_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("aws_tag_key", "aws_tag_key was not specified but it is required when building VmwareToAwsTagMapping")
+                    )?
+                ,
+                aws_tag_value: self.aws_tag_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("aws_tag_value", "aws_tag_value was not specified but it is required when building VmwareToAwsTagMapping")
+                    )?
+                ,
+            }
+        )
     }
 }
+

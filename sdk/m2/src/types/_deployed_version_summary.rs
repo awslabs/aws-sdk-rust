@@ -3,7 +3,7 @@
 /// <p>Contains a summary of a deployed application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeployedVersionSummary {
+pub struct DeployedVersionSummary  {
     /// <p>The version of the deployed application.</p>
     pub application_version: i32,
     /// <p>The status of the deployment.</p>
@@ -11,17 +11,17 @@ pub struct DeployedVersionSummary {
     /// <p>The reason for the reported status.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
 }
-impl DeployedVersionSummary {
+impl  DeployedVersionSummary  {
     /// <p>The version of the deployed application.</p>
     pub fn application_version(&self) -> i32 {
         self.application_version
     }
     /// <p>The status of the deployment.</p>
-    pub fn status(&self) -> &crate::types::DeploymentLifecycle {
+    pub fn status(&self) -> & crate::types::DeploymentLifecycle {
         &self.status
     }
     /// <p>The reason for the reported status.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl DeployedVersionSummaryBuilder {
     }
     /// <p>The version of the deployed application.</p>
     pub fn set_application_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.application_version = input;
-        self
+        self.application_version = input; self
     }
     /// <p>The version of the deployed application.</p>
     pub fn get_application_version(&self) -> &::std::option::Option<i32> {
@@ -64,8 +63,7 @@ impl DeployedVersionSummaryBuilder {
     }
     /// <p>The status of the deployment.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DeploymentLifecycle>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the deployment.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DeploymentLifecycle> {
@@ -78,8 +76,7 @@ impl DeployedVersionSummaryBuilder {
     }
     /// <p>The reason for the reported status.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>The reason for the reported status.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,20 +87,22 @@ impl DeployedVersionSummaryBuilder {
     /// - [`application_version`](crate::types::builders::DeployedVersionSummaryBuilder::application_version)
     /// - [`status`](crate::types::builders::DeployedVersionSummaryBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::DeployedVersionSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DeployedVersionSummary {
-            application_version: self.application_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application_version",
-                    "application_version was not specified but it is required when building DeployedVersionSummary",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building DeployedVersionSummary",
-                )
-            })?,
-            status_reason: self.status_reason,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DeployedVersionSummary {
+                application_version: self.application_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_version", "application_version was not specified but it is required when building DeployedVersionSummary")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building DeployedVersionSummary")
+                    )?
+                ,
+                status_reason: self.status_reason
+                ,
+            }
+        )
     }
 }
+

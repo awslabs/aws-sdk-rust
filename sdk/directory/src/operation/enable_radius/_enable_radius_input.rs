@@ -3,19 +3,19 @@
 /// <p>Contains the inputs for the <code>EnableRadius</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableRadiusInput {
+pub struct EnableRadiusInput  {
     /// <p>The identifier of the directory for which to enable MFA.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
     pub radius_settings: ::std::option::Option<crate::types::RadiusSettings>,
 }
-impl EnableRadiusInput {
+impl  EnableRadiusInput  {
     /// <p>The identifier of the directory for which to enable MFA.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
-    pub fn radius_settings(&self) -> ::std::option::Option<&crate::types::RadiusSettings> {
+    pub fn radius_settings(&self) -> ::std::option::Option<& crate::types::RadiusSettings> {
         self.radius_settings.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl EnableRadiusInputBuilder {
     }
     /// <p>The identifier of the directory for which to enable MFA.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>The identifier of the directory for which to enable MFA.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,20 +56,22 @@ impl EnableRadiusInputBuilder {
     }
     /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
     pub fn set_radius_settings(mut self, input: ::std::option::Option<crate::types::RadiusSettings>) -> Self {
-        self.radius_settings = input;
-        self
+        self.radius_settings = input; self
     }
     /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
     pub fn get_radius_settings(&self) -> &::std::option::Option<crate::types::RadiusSettings> {
         &self.radius_settings
     }
     /// Consumes the builder and constructs a [`EnableRadiusInput`](crate::operation::enable_radius::EnableRadiusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::enable_radius::EnableRadiusInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::enable_radius::EnableRadiusInput {
-            directory_id: self.directory_id,
-            radius_settings: self.radius_settings,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_radius::EnableRadiusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::enable_radius::EnableRadiusInput {
+                directory_id: self.directory_id
+                ,
+                radius_settings: self.radius_settings
+                ,
+            }
+        )
     }
 }
+

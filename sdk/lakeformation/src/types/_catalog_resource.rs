@@ -3,7 +3,8 @@
 /// <p>A structure for the catalog object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CatalogResource {}
+pub struct CatalogResource  {
+}
 impl CatalogResource {
     /// Creates a new builder-style object to manufacture [`CatalogResource`](crate::types::CatalogResource).
     pub fn builder() -> crate::types::builders::CatalogResourceBuilder {
@@ -14,10 +15,13 @@ impl CatalogResource {
 /// A builder for [`CatalogResource`](crate::types::CatalogResource).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct CatalogResourceBuilder {}
+pub struct CatalogResourceBuilder {
+}
 impl CatalogResourceBuilder {
     /// Consumes the builder and constructs a [`CatalogResource`](crate::types::CatalogResource).
     pub fn build(self) -> crate::types::CatalogResource {
-        crate::types::CatalogResource {}
+        crate::types::CatalogResource {
+        }
     }
 }
+

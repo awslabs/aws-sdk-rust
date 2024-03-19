@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetV2LoggingLevelInput {
+pub struct SetV2LoggingLevelInput  {
     /// <p>The log target.</p>
     pub log_target: ::std::option::Option<crate::types::LogTarget>,
     /// <p>The log level.</p>
     pub log_level: ::std::option::Option<crate::types::LogLevel>,
 }
-impl SetV2LoggingLevelInput {
+impl  SetV2LoggingLevelInput  {
     /// <p>The log target.</p>
-    pub fn log_target(&self) -> ::std::option::Option<&crate::types::LogTarget> {
+    pub fn log_target(&self) -> ::std::option::Option<& crate::types::LogTarget> {
         self.log_target.as_ref()
     }
     /// <p>The log level.</p>
-    pub fn log_level(&self) -> ::std::option::Option<&crate::types::LogLevel> {
+    pub fn log_level(&self) -> ::std::option::Option<& crate::types::LogLevel> {
         self.log_level.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl SetV2LoggingLevelInputBuilder {
     }
     /// <p>The log target.</p>
     pub fn set_log_target(mut self, input: ::std::option::Option<crate::types::LogTarget>) -> Self {
-        self.log_target = input;
-        self
+        self.log_target = input; self
     }
     /// <p>The log target.</p>
     pub fn get_log_target(&self) -> &::std::option::Option<crate::types::LogTarget> {
@@ -56,20 +55,22 @@ impl SetV2LoggingLevelInputBuilder {
     }
     /// <p>The log level.</p>
     pub fn set_log_level(mut self, input: ::std::option::Option<crate::types::LogLevel>) -> Self {
-        self.log_level = input;
-        self
+        self.log_level = input; self
     }
     /// <p>The log level.</p>
     pub fn get_log_level(&self) -> &::std::option::Option<crate::types::LogLevel> {
         &self.log_level
     }
     /// Consumes the builder and constructs a [`SetV2LoggingLevelInput`](crate::operation::set_v2_logging_level::SetV2LoggingLevelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::set_v2_logging_level::SetV2LoggingLevelInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::set_v2_logging_level::SetV2LoggingLevelInput {
-            log_target: self.log_target,
-            log_level: self.log_level,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_v2_logging_level::SetV2LoggingLevelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::set_v2_logging_level::SetV2LoggingLevelInput {
+                log_target: self.log_target
+                ,
+                log_level: self.log_level
+                ,
+            }
+        )
     }
 }
+

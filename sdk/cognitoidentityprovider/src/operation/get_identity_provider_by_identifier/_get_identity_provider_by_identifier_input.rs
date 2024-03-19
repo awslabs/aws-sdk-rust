@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetIdentityProviderByIdentifierInput {
+pub struct GetIdentityProviderByIdentifierInput  {
     /// <p>The user pool ID.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The IdP identifier.</p>
     pub idp_identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetIdentityProviderByIdentifierInput {
+impl  GetIdentityProviderByIdentifierInput  {
     /// <p>The user pool ID.</p>
-    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The IdP identifier.</p>
-    pub fn idp_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn idp_identifier(&self) -> ::std::option::Option<& str> {
         self.idp_identifier.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetIdentityProviderByIdentifierInputBuilder {
     }
     /// <p>The user pool ID.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The user pool ID.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl GetIdentityProviderByIdentifierInputBuilder {
     }
     /// <p>The IdP identifier.</p>
     pub fn set_idp_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.idp_identifier = input;
-        self
+        self.idp_identifier = input; self
     }
     /// <p>The IdP identifier.</p>
     pub fn get_idp_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.idp_identifier
     }
     /// Consumes the builder and constructs a [`GetIdentityProviderByIdentifierInput`](crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierInput {
-                user_pool_id: self.user_pool_id,
-                idp_identifier: self.idp_identifier,
-            },
+                user_pool_id: self.user_pool_id
+                ,
+                idp_identifier: self.idp_identifier
+                ,
+            }
         )
     }
 }
+

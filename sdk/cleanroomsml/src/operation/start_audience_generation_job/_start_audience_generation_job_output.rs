@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartAudienceGenerationJobOutput {
+pub struct StartAudienceGenerationJobOutput  {
     /// <p>The Amazon Resource Name (ARN) of the audience generation job.</p>
     pub audience_generation_job_arn: ::std::string::String,
     _request_id: Option<String>,
 }
-impl StartAudienceGenerationJobOutput {
+impl  StartAudienceGenerationJobOutput  {
     /// <p>The Amazon Resource Name (ARN) of the audience generation job.</p>
-    pub fn audience_generation_job_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.audience_generation_job_arn.deref()
+    pub fn audience_generation_job_arn(&self) -> & str {
+        use std::ops::Deref; self.audience_generation_job_arn.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartAudienceGenerationJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartAudienceGenerationJobOutput {
     /// Creates a new builder-style object to manufacture [`StartAudienceGenerationJobOutput`](crate::operation::start_audience_generation_job::StartAudienceGenerationJobOutput).
     pub fn builder() -> crate::operation::start_audience_generation_job::builders::StartAudienceGenerationJobOutputBuilder {
@@ -42,39 +41,35 @@ impl StartAudienceGenerationJobOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the audience generation job.</p>
     pub fn set_audience_generation_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.audience_generation_job_arn = input;
-        self
+        self.audience_generation_job_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the audience generation job.</p>
     pub fn get_audience_generation_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.audience_generation_job_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartAudienceGenerationJobOutput`](crate::operation::start_audience_generation_job::StartAudienceGenerationJobOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`audience_generation_job_arn`](crate::operation::start_audience_generation_job::builders::StartAudienceGenerationJobOutputBuilder::audience_generation_job_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_audience_generation_job::StartAudienceGenerationJobOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_audience_generation_job::StartAudienceGenerationJobOutput {
-            audience_generation_job_arn: self.audience_generation_job_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "audience_generation_job_arn",
-                    "audience_generation_job_arn was not specified but it is required when building StartAudienceGenerationJobOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_audience_generation_job::StartAudienceGenerationJobOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_audience_generation_job::StartAudienceGenerationJobOutput {
+                audience_generation_job_arn: self.audience_generation_job_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("audience_generation_job_arn", "audience_generation_job_arn was not specified but it is required when building StartAudienceGenerationJobOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes updates to the checkpointing parameters for a Managed Service for Apache Flink application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CheckpointConfigurationUpdate {
+pub struct CheckpointConfigurationUpdate  {
     /// <p>Describes updates to whether the application uses the default checkpointing behavior of Managed Service for Apache Flink. You must set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.</p><note>
     /// <p>If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they are set to other values using APIs or application code:</p>
     /// <ul>
@@ -29,7 +29,7 @@ pub struct CheckpointConfigurationUpdate {
     /// </note>
     pub min_pause_between_checkpoints_update: ::std::option::Option<i64>,
 }
-impl CheckpointConfigurationUpdate {
+impl  CheckpointConfigurationUpdate  {
     /// <p>Describes updates to whether the application uses the default checkpointing behavior of Managed Service for Apache Flink. You must set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.</p><note>
     /// <p>If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they are set to other values using APIs or application code:</p>
     /// <ul>
@@ -41,7 +41,7 @@ impl CheckpointConfigurationUpdate {
     /// <p><b>MinPauseBetweenCheckpoints:</b> 5000</p></li>
     /// </ul>
     /// </note>
-    pub fn configuration_type_update(&self) -> ::std::option::Option<&crate::types::ConfigurationType> {
+    pub fn configuration_type_update(&self) -> ::std::option::Option<& crate::types::ConfigurationType> {
         self.configuration_type_update.as_ref()
     }
     /// <p>Describes updates to whether checkpointing is enabled for an application.</p><note>
@@ -107,8 +107,7 @@ impl CheckpointConfigurationUpdateBuilder {
     /// </ul>
     /// </note>
     pub fn set_configuration_type_update(mut self, input: ::std::option::Option<crate::types::ConfigurationType>) -> Self {
-        self.configuration_type_update = input;
-        self
+        self.configuration_type_update = input; self
     }
     /// <p>Describes updates to whether the application uses the default checkpointing behavior of Managed Service for Apache Flink. You must set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.</p><note>
     /// <p>If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they are set to other values using APIs or application code:</p>
@@ -135,8 +134,7 @@ impl CheckpointConfigurationUpdateBuilder {
     /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another value using this API or in application code.</p>
     /// </note>
     pub fn set_checkpointing_enabled_update(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.checkpointing_enabled_update = input;
-        self
+        self.checkpointing_enabled_update = input; self
     }
     /// <p>Describes updates to whether checkpointing is enabled for an application.</p><note>
     /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another value using this API or in application code.</p>
@@ -155,8 +153,7 @@ impl CheckpointConfigurationUpdateBuilder {
     /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>CheckpointInterval</code> value of 60000, even if this value is set to another value using this API or in application code.</p>
     /// </note>
     pub fn set_checkpoint_interval_update(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.checkpoint_interval_update = input;
-        self
+        self.checkpoint_interval_update = input; self
     }
     /// <p>Describes updates to the interval in milliseconds between checkpoint operations.</p><note>
     /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>CheckpointInterval</code> value of 60000, even if this value is set to another value using this API or in application code.</p>
@@ -175,8 +172,7 @@ impl CheckpointConfigurationUpdateBuilder {
     /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>MinPauseBetweenCheckpoints</code> value of 5000, even if this value is set using this API or in application code.</p>
     /// </note>
     pub fn set_min_pause_between_checkpoints_update(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.min_pause_between_checkpoints_update = input;
-        self
+        self.min_pause_between_checkpoints_update = input; self
     }
     /// <p>Describes updates to the minimum time in milliseconds after a checkpoint operation completes that a new checkpoint operation can start.</p><note>
     /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>MinPauseBetweenCheckpoints</code> value of 5000, even if this value is set using this API or in application code.</p>
@@ -187,10 +183,15 @@ impl CheckpointConfigurationUpdateBuilder {
     /// Consumes the builder and constructs a [`CheckpointConfigurationUpdate`](crate::types::CheckpointConfigurationUpdate).
     pub fn build(self) -> crate::types::CheckpointConfigurationUpdate {
         crate::types::CheckpointConfigurationUpdate {
-            configuration_type_update: self.configuration_type_update,
-            checkpointing_enabled_update: self.checkpointing_enabled_update,
-            checkpoint_interval_update: self.checkpoint_interval_update,
-            min_pause_between_checkpoints_update: self.min_pause_between_checkpoints_update,
+            configuration_type_update: self.configuration_type_update
+            ,
+            checkpointing_enabled_update: self.checkpointing_enabled_update
+            ,
+            checkpoint_interval_update: self.checkpoint_interval_update
+            ,
+            min_pause_between_checkpoints_update: self.min_pause_between_checkpoints_update
+            ,
         }
     }
 }
+

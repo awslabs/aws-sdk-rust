@@ -21,11 +21,7 @@ impl MemberId {
     /// Tries to convert the enum instance into [`UserId`](crate::types::MemberId::UserId), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_user_id(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let MemberId::UserId(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let MemberId::UserId(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`UserId`](crate::types::MemberId::UserId).
     pub fn is_user_id(&self) -> bool {
@@ -36,3 +32,4 @@ impl MemberId {
         matches!(self, Self::Unknown)
     }
 }
+

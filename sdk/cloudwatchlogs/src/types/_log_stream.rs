@@ -3,7 +3,7 @@
 /// <p>Represents a log stream, which is a sequence of log events from a single emitter of logs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LogStream {
+pub struct LogStream  {
     /// <p>The name of the log stream.</p>
     pub log_stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The creation time of the stream, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
@@ -22,14 +22,12 @@ pub struct LogStream {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of bytes stored.</p>
     /// <p><b>Important:</b> As of June 17, 2019, this parameter is no longer supported for log streams, and is always reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is not affected.</p>
-    #[deprecated(
-        note = "Starting on June 17, 2019, this parameter will be deprecated for log streams, and will be reported as zero. This change applies only to log streams. The storedBytes parameter for log groups is not affected."
-    )]
+    #[deprecated(note = "Starting on June 17, 2019, this parameter will be deprecated for log streams, and will be reported as zero. This change applies only to log streams. The storedBytes parameter for log groups is not affected.")]
     pub stored_bytes: ::std::option::Option<i64>,
 }
-impl LogStream {
+impl  LogStream  {
     /// <p>The name of the log stream.</p>
-    pub fn log_stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn log_stream_name(&self) -> ::std::option::Option<& str> {
         self.log_stream_name.as_deref()
     }
     /// <p>The creation time of the stream, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
@@ -51,18 +49,16 @@ impl LogStream {
     /// <p>The sequence token.</p><important>
     /// <p>The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are always accepted regardless of receiving an invalid sequence token. You don't need to obtain <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code> action.</p>
     /// </important>
-    pub fn upload_sequence_token(&self) -> ::std::option::Option<&str> {
+    pub fn upload_sequence_token(&self) -> ::std::option::Option<& str> {
         self.upload_sequence_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the log stream.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The number of bytes stored.</p>
     /// <p><b>Important:</b> As of June 17, 2019, this parameter is no longer supported for log streams, and is always reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is not affected.</p>
-    #[deprecated(
-        note = "Starting on June 17, 2019, this parameter will be deprecated for log streams, and will be reported as zero. This change applies only to log streams. The storedBytes parameter for log groups is not affected."
-    )]
+    #[deprecated(note = "Starting on June 17, 2019, this parameter will be deprecated for log streams, and will be reported as zero. This change applies only to log streams. The storedBytes parameter for log groups is not affected.")]
     pub fn stored_bytes(&self) -> ::std::option::Option<i64> {
         self.stored_bytes
     }
@@ -95,8 +91,7 @@ impl LogStreamBuilder {
     }
     /// <p>The name of the log stream.</p>
     pub fn set_log_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_stream_name = input;
-        self
+        self.log_stream_name = input; self
     }
     /// <p>The name of the log stream.</p>
     pub fn get_log_stream_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +104,7 @@ impl LogStreamBuilder {
     }
     /// <p>The creation time of the stream, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The creation time of the stream, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<i64> {
@@ -123,8 +117,7 @@ impl LogStreamBuilder {
     }
     /// <p>The time of the first event, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn set_first_event_timestamp(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.first_event_timestamp = input;
-        self
+        self.first_event_timestamp = input; self
     }
     /// <p>The time of the first event, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn get_first_event_timestamp(&self) -> &::std::option::Option<i64> {
@@ -137,8 +130,7 @@ impl LogStreamBuilder {
     }
     /// <p>The time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. The <code>lastEventTime</code> value updates on an eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare situations might take longer.</p>
     pub fn set_last_event_timestamp(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.last_event_timestamp = input;
-        self
+        self.last_event_timestamp = input; self
     }
     /// <p>The time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. The <code>lastEventTime</code> value updates on an eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare situations might take longer.</p>
     pub fn get_last_event_timestamp(&self) -> &::std::option::Option<i64> {
@@ -151,8 +143,7 @@ impl LogStreamBuilder {
     }
     /// <p>The ingestion time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code> The <code>lastIngestionTime</code> value updates on an eventual consistency basis. It typically updates in less than an hour after ingestion, but in rare situations might take longer.</p>
     pub fn set_last_ingestion_time(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.last_ingestion_time = input;
-        self
+        self.last_ingestion_time = input; self
     }
     /// <p>The ingestion time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code> The <code>lastIngestionTime</code> value updates on an eventual consistency basis. It typically updates in less than an hour after ingestion, but in rare situations might take longer.</p>
     pub fn get_last_ingestion_time(&self) -> &::std::option::Option<i64> {
@@ -169,8 +160,7 @@ impl LogStreamBuilder {
     /// <p>The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are always accepted regardless of receiving an invalid sequence token. You don't need to obtain <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code> action.</p>
     /// </important>
     pub fn set_upload_sequence_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.upload_sequence_token = input;
-        self
+        self.upload_sequence_token = input; self
     }
     /// <p>The sequence token.</p><important>
     /// <p>The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are always accepted regardless of receiving an invalid sequence token. You don't need to obtain <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code> action.</p>
@@ -185,8 +175,7 @@ impl LogStreamBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the log stream.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the log stream.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,41 +183,43 @@ impl LogStreamBuilder {
     }
     /// <p>The number of bytes stored.</p>
     /// <p><b>Important:</b> As of June 17, 2019, this parameter is no longer supported for log streams, and is always reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is not affected.</p>
-    #[deprecated(
-        note = "Starting on June 17, 2019, this parameter will be deprecated for log streams, and will be reported as zero. This change applies only to log streams. The storedBytes parameter for log groups is not affected."
-    )]
+    #[deprecated(note = "Starting on June 17, 2019, this parameter will be deprecated for log streams, and will be reported as zero. This change applies only to log streams. The storedBytes parameter for log groups is not affected.")]
     pub fn stored_bytes(mut self, input: i64) -> Self {
         self.stored_bytes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of bytes stored.</p>
     /// <p><b>Important:</b> As of June 17, 2019, this parameter is no longer supported for log streams, and is always reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is not affected.</p>
-    #[deprecated(
-        note = "Starting on June 17, 2019, this parameter will be deprecated for log streams, and will be reported as zero. This change applies only to log streams. The storedBytes parameter for log groups is not affected."
-    )]
+    #[deprecated(note = "Starting on June 17, 2019, this parameter will be deprecated for log streams, and will be reported as zero. This change applies only to log streams. The storedBytes parameter for log groups is not affected.")]
     pub fn set_stored_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.stored_bytes = input;
-        self
+        self.stored_bytes = input; self
     }
     /// <p>The number of bytes stored.</p>
     /// <p><b>Important:</b> As of June 17, 2019, this parameter is no longer supported for log streams, and is always reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is not affected.</p>
-    #[deprecated(
-        note = "Starting on June 17, 2019, this parameter will be deprecated for log streams, and will be reported as zero. This change applies only to log streams. The storedBytes parameter for log groups is not affected."
-    )]
+    #[deprecated(note = "Starting on June 17, 2019, this parameter will be deprecated for log streams, and will be reported as zero. This change applies only to log streams. The storedBytes parameter for log groups is not affected.")]
     pub fn get_stored_bytes(&self) -> &::std::option::Option<i64> {
         &self.stored_bytes
     }
     /// Consumes the builder and constructs a [`LogStream`](crate::types::LogStream).
     pub fn build(self) -> crate::types::LogStream {
         crate::types::LogStream {
-            log_stream_name: self.log_stream_name,
-            creation_time: self.creation_time,
-            first_event_timestamp: self.first_event_timestamp,
-            last_event_timestamp: self.last_event_timestamp,
-            last_ingestion_time: self.last_ingestion_time,
-            upload_sequence_token: self.upload_sequence_token,
-            arn: self.arn,
-            stored_bytes: self.stored_bytes,
+            log_stream_name: self.log_stream_name
+            ,
+            creation_time: self.creation_time
+            ,
+            first_event_timestamp: self.first_event_timestamp
+            ,
+            last_event_timestamp: self.last_event_timestamp
+            ,
+            last_ingestion_time: self.last_ingestion_time
+            ,
+            upload_sequence_token: self.upload_sequence_token
+            ,
+            arn: self.arn
+            ,
+            stored_bytes: self.stored_bytes
+            ,
         }
     }
 }
+

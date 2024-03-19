@@ -3,19 +3,19 @@
 /// <p>Represents status information for a VPC peering connection. Status codes and messages are provided from EC2 (see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpcPeeringConnectionStateReason.html">VpcPeeringConnectionStateReason</a>). Connection status information is also communicated as a fleet event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VpcPeeringConnectionStatus {
+pub struct VpcPeeringConnectionStatus  {
     /// <p>Code indicating the status of a VPC peering connection.</p>
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>Additional messaging associated with the connection status.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl VpcPeeringConnectionStatus {
+impl  VpcPeeringConnectionStatus  {
     /// <p>Code indicating the status of a VPC peering connection.</p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>Additional messaging associated with the connection status.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl VpcPeeringConnectionStatusBuilder {
     }
     /// <p>Code indicating the status of a VPC peering connection.</p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>Code indicating the status of a VPC peering connection.</p>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl VpcPeeringConnectionStatusBuilder {
     }
     /// <p>Additional messaging associated with the connection status.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Additional messaging associated with the connection status.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl VpcPeeringConnectionStatusBuilder {
     /// Consumes the builder and constructs a [`VpcPeeringConnectionStatus`](crate::types::VpcPeeringConnectionStatus).
     pub fn build(self) -> crate::types::VpcPeeringConnectionStatus {
         crate::types::VpcPeeringConnectionStatus {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

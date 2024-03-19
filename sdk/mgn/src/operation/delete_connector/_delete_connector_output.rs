@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteConnectorOutput {
+pub struct DeleteConnectorOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for DeleteConnectorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteConnectorOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConnectorOutput`](crate::operation::delete_connector::DeleteConnectorOutput).
     pub fn builder() -> crate::operation::delete_connector::builders::DeleteConnectorOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DeleteConnectorOutputBuilder {
 }
 impl DeleteConnectorOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteConnectorOutput`](crate::operation::delete_connector::DeleteConnectorOutput).
     pub fn build(self) -> crate::operation::delete_connector::DeleteConnectorOutput {
         crate::operation::delete_connector::DeleteConnectorOutput {
@@ -40,3 +40,4 @@ impl DeleteConnectorOutputBuilder {
         }
     }
 }
+

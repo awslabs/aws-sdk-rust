@@ -75,3 +75,4 @@ pub mod untag_resource;
 
 /// Types for the `UpdateConfiguredAudienceModel` operation.
 pub mod update_configured_audience_model;
+

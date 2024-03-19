@@ -21,13 +21,13 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RawMessageContent {
+pub struct RawMessageContent  {
     /// <p>The S3 reference of an email message.</p>
     pub s3_reference: ::std::option::Option<crate::types::S3Reference>,
 }
-impl RawMessageContent {
+impl  RawMessageContent  {
     /// <p>The S3 reference of an email message.</p>
-    pub fn s3_reference(&self) -> ::std::option::Option<&crate::types::S3Reference> {
+    pub fn s3_reference(&self) -> ::std::option::Option<& crate::types::S3Reference> {
         self.s3_reference.as_ref()
     }
 }
@@ -53,8 +53,7 @@ impl RawMessageContentBuilder {
     }
     /// <p>The S3 reference of an email message.</p>
     pub fn set_s3_reference(mut self, input: ::std::option::Option<crate::types::S3Reference>) -> Self {
-        self.s3_reference = input;
-        self
+        self.s3_reference = input; self
     }
     /// <p>The S3 reference of an email message.</p>
     pub fn get_s3_reference(&self) -> &::std::option::Option<crate::types::S3Reference> {
@@ -63,7 +62,9 @@ impl RawMessageContentBuilder {
     /// Consumes the builder and constructs a [`RawMessageContent`](crate::types::RawMessageContent).
     pub fn build(self) -> crate::types::RawMessageContent {
         crate::types::RawMessageContent {
-            s3_reference: self.s3_reference,
+            s3_reference: self.s3_reference
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Provides details about a CloudTrail trail.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsCloudTrailTrailDetails {
+pub struct AwsCloudTrailTrailDetails  {
     /// <p>The ARN of the log group that CloudTrail logs are delivered to.</p>
     pub cloud_watch_logs_log_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the role that the CloudWatch Events endpoint assumes when it writes to the log group.</p>
@@ -35,13 +35,13 @@ pub struct AwsCloudTrailTrailDetails {
     /// <p>The ARN of the trail.</p>
     pub trail_arn: ::std::option::Option<::std::string::String>,
 }
-impl AwsCloudTrailTrailDetails {
+impl  AwsCloudTrailTrailDetails  {
     /// <p>The ARN of the log group that CloudTrail logs are delivered to.</p>
-    pub fn cloud_watch_logs_log_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cloud_watch_logs_log_group_arn(&self) -> ::std::option::Option<& str> {
         self.cloud_watch_logs_log_group_arn.as_deref()
     }
     /// <p>The ARN of the role that the CloudWatch Events endpoint assumes when it writes to the log group.</p>
-    pub fn cloud_watch_logs_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cloud_watch_logs_role_arn(&self) -> ::std::option::Option<& str> {
         self.cloud_watch_logs_role_arn.as_deref()
     }
     /// <p>Indicates whether the trail has custom event selectors.</p>
@@ -49,7 +49,7 @@ impl AwsCloudTrailTrailDetails {
         self.has_custom_event_selectors
     }
     /// <p>The Region where the trail was created.</p>
-    pub fn home_region(&self) -> ::std::option::Option<&str> {
+    pub fn home_region(&self) -> ::std::option::Option<& str> {
         self.home_region.as_deref()
     }
     /// <p>Indicates whether the trail publishes events from global services such as IAM to the log files.</p>
@@ -65,7 +65,7 @@ impl AwsCloudTrailTrailDetails {
         self.is_organization_trail
     }
     /// <p>The KMS key ID to use to encrypt the logs.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Indicates whether CloudTrail log file validation is enabled.</p>
@@ -73,27 +73,27 @@ impl AwsCloudTrailTrailDetails {
         self.log_file_validation_enabled
     }
     /// <p>The name of the trail.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the S3 bucket where the log files are published.</p>
-    pub fn s3_bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> ::std::option::Option<& str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>The S3 key prefix. The key prefix is added after the name of the S3 bucket where the log files are published.</p>
-    pub fn s3_key_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn s3_key_prefix(&self) -> ::std::option::Option<& str> {
         self.s3_key_prefix.as_deref()
     }
     /// <p>The ARN of the SNS topic that is used for notifications of log file delivery.</p>
-    pub fn sns_topic_arn(&self) -> ::std::option::Option<&str> {
+    pub fn sns_topic_arn(&self) -> ::std::option::Option<& str> {
         self.sns_topic_arn.as_deref()
     }
     /// <p>The name of the SNS topic that is used for notifications of log file delivery.</p>
-    pub fn sns_topic_name(&self) -> ::std::option::Option<&str> {
+    pub fn sns_topic_name(&self) -> ::std::option::Option<& str> {
         self.sns_topic_name.as_deref()
     }
     /// <p>The ARN of the trail.</p>
-    pub fn trail_arn(&self) -> ::std::option::Option<&str> {
+    pub fn trail_arn(&self) -> ::std::option::Option<& str> {
         self.trail_arn.as_deref()
     }
 }
@@ -132,8 +132,7 @@ impl AwsCloudTrailTrailDetailsBuilder {
     }
     /// <p>The ARN of the log group that CloudTrail logs are delivered to.</p>
     pub fn set_cloud_watch_logs_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cloud_watch_logs_log_group_arn = input;
-        self
+        self.cloud_watch_logs_log_group_arn = input; self
     }
     /// <p>The ARN of the log group that CloudTrail logs are delivered to.</p>
     pub fn get_cloud_watch_logs_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +145,7 @@ impl AwsCloudTrailTrailDetailsBuilder {
     }
     /// <p>The ARN of the role that the CloudWatch Events endpoint assumes when it writes to the log group.</p>
     pub fn set_cloud_watch_logs_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cloud_watch_logs_role_arn = input;
-        self
+        self.cloud_watch_logs_role_arn = input; self
     }
     /// <p>The ARN of the role that the CloudWatch Events endpoint assumes when it writes to the log group.</p>
     pub fn get_cloud_watch_logs_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +158,7 @@ impl AwsCloudTrailTrailDetailsBuilder {
     }
     /// <p>Indicates whether the trail has custom event selectors.</p>
     pub fn set_has_custom_event_selectors(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.has_custom_event_selectors = input;
-        self
+        self.has_custom_event_selectors = input; self
     }
     /// <p>Indicates whether the trail has custom event selectors.</p>
     pub fn get_has_custom_event_selectors(&self) -> &::std::option::Option<bool> {
@@ -174,8 +171,7 @@ impl AwsCloudTrailTrailDetailsBuilder {
     }
     /// <p>The Region where the trail was created.</p>
     pub fn set_home_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.home_region = input;
-        self
+        self.home_region = input; self
     }
     /// <p>The Region where the trail was created.</p>
     pub fn get_home_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +184,7 @@ impl AwsCloudTrailTrailDetailsBuilder {
     }
     /// <p>Indicates whether the trail publishes events from global services such as IAM to the log files.</p>
     pub fn set_include_global_service_events(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_global_service_events = input;
-        self
+        self.include_global_service_events = input; self
     }
     /// <p>Indicates whether the trail publishes events from global services such as IAM to the log files.</p>
     pub fn get_include_global_service_events(&self) -> &::std::option::Option<bool> {
@@ -202,8 +197,7 @@ impl AwsCloudTrailTrailDetailsBuilder {
     }
     /// <p>Indicates whether the trail applies only to the current Region or to all Regions.</p>
     pub fn set_is_multi_region_trail(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_multi_region_trail = input;
-        self
+        self.is_multi_region_trail = input; self
     }
     /// <p>Indicates whether the trail applies only to the current Region or to all Regions.</p>
     pub fn get_is_multi_region_trail(&self) -> &::std::option::Option<bool> {
@@ -216,8 +210,7 @@ impl AwsCloudTrailTrailDetailsBuilder {
     }
     /// <p>Whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account.</p>
     pub fn set_is_organization_trail(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_organization_trail = input;
-        self
+        self.is_organization_trail = input; self
     }
     /// <p>Whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account.</p>
     pub fn get_is_organization_trail(&self) -> &::std::option::Option<bool> {
@@ -230,8 +223,7 @@ impl AwsCloudTrailTrailDetailsBuilder {
     }
     /// <p>The KMS key ID to use to encrypt the logs.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The KMS key ID to use to encrypt the logs.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -244,8 +236,7 @@ impl AwsCloudTrailTrailDetailsBuilder {
     }
     /// <p>Indicates whether CloudTrail log file validation is enabled.</p>
     pub fn set_log_file_validation_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.log_file_validation_enabled = input;
-        self
+        self.log_file_validation_enabled = input; self
     }
     /// <p>Indicates whether CloudTrail log file validation is enabled.</p>
     pub fn get_log_file_validation_enabled(&self) -> &::std::option::Option<bool> {
@@ -258,8 +249,7 @@ impl AwsCloudTrailTrailDetailsBuilder {
     }
     /// <p>The name of the trail.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the trail.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -272,8 +262,7 @@ impl AwsCloudTrailTrailDetailsBuilder {
     }
     /// <p>The name of the S3 bucket where the log files are published.</p>
     pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket_name = input;
-        self
+        self.s3_bucket_name = input; self
     }
     /// <p>The name of the S3 bucket where the log files are published.</p>
     pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -286,8 +275,7 @@ impl AwsCloudTrailTrailDetailsBuilder {
     }
     /// <p>The S3 key prefix. The key prefix is added after the name of the S3 bucket where the log files are published.</p>
     pub fn set_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_key_prefix = input;
-        self
+        self.s3_key_prefix = input; self
     }
     /// <p>The S3 key prefix. The key prefix is added after the name of the S3 bucket where the log files are published.</p>
     pub fn get_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -300,8 +288,7 @@ impl AwsCloudTrailTrailDetailsBuilder {
     }
     /// <p>The ARN of the SNS topic that is used for notifications of log file delivery.</p>
     pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sns_topic_arn = input;
-        self
+        self.sns_topic_arn = input; self
     }
     /// <p>The ARN of the SNS topic that is used for notifications of log file delivery.</p>
     pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -314,8 +301,7 @@ impl AwsCloudTrailTrailDetailsBuilder {
     }
     /// <p>The name of the SNS topic that is used for notifications of log file delivery.</p>
     pub fn set_sns_topic_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sns_topic_name = input;
-        self
+        self.sns_topic_name = input; self
     }
     /// <p>The name of the SNS topic that is used for notifications of log file delivery.</p>
     pub fn get_sns_topic_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -328,8 +314,7 @@ impl AwsCloudTrailTrailDetailsBuilder {
     }
     /// <p>The ARN of the trail.</p>
     pub fn set_trail_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trail_arn = input;
-        self
+        self.trail_arn = input; self
     }
     /// <p>The ARN of the trail.</p>
     pub fn get_trail_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -338,21 +323,37 @@ impl AwsCloudTrailTrailDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsCloudTrailTrailDetails`](crate::types::AwsCloudTrailTrailDetails).
     pub fn build(self) -> crate::types::AwsCloudTrailTrailDetails {
         crate::types::AwsCloudTrailTrailDetails {
-            cloud_watch_logs_log_group_arn: self.cloud_watch_logs_log_group_arn,
-            cloud_watch_logs_role_arn: self.cloud_watch_logs_role_arn,
-            has_custom_event_selectors: self.has_custom_event_selectors,
-            home_region: self.home_region,
-            include_global_service_events: self.include_global_service_events,
-            is_multi_region_trail: self.is_multi_region_trail,
-            is_organization_trail: self.is_organization_trail,
-            kms_key_id: self.kms_key_id,
-            log_file_validation_enabled: self.log_file_validation_enabled,
-            name: self.name,
-            s3_bucket_name: self.s3_bucket_name,
-            s3_key_prefix: self.s3_key_prefix,
-            sns_topic_arn: self.sns_topic_arn,
-            sns_topic_name: self.sns_topic_name,
-            trail_arn: self.trail_arn,
+            cloud_watch_logs_log_group_arn: self.cloud_watch_logs_log_group_arn
+            ,
+            cloud_watch_logs_role_arn: self.cloud_watch_logs_role_arn
+            ,
+            has_custom_event_selectors: self.has_custom_event_selectors
+            ,
+            home_region: self.home_region
+            ,
+            include_global_service_events: self.include_global_service_events
+            ,
+            is_multi_region_trail: self.is_multi_region_trail
+            ,
+            is_organization_trail: self.is_organization_trail
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            log_file_validation_enabled: self.log_file_validation_enabled
+            ,
+            name: self.name
+            ,
+            s3_bucket_name: self.s3_bucket_name
+            ,
+            s3_key_prefix: self.s3_key_prefix
+            ,
+            sns_topic_arn: self.sns_topic_arn
+            ,
+            sns_topic_name: self.sns_topic_name
+            ,
+            trail_arn: self.trail_arn
+            ,
         }
     }
 }
+

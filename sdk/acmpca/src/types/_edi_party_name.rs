@@ -3,20 +3,19 @@
 /// <p>Describes an Electronic Data Interchange (EDI) entity as described in as defined in <a href="https://datatracker.ietf.org/doc/html/rfc5280">Subject Alternative Name</a> in RFC 5280.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EdiPartyName {
+pub struct EdiPartyName  {
     /// <p>Specifies the party name.</p>
     pub party_name: ::std::string::String,
     /// <p>Specifies the name assigner.</p>
     pub name_assigner: ::std::option::Option<::std::string::String>,
 }
-impl EdiPartyName {
+impl  EdiPartyName  {
     /// <p>Specifies the party name.</p>
-    pub fn party_name(&self) -> &str {
-        use std::ops::Deref;
-        self.party_name.deref()
+    pub fn party_name(&self) -> & str {
+        use std::ops::Deref; self.party_name.deref()
     }
     /// <p>Specifies the name assigner.</p>
-    pub fn name_assigner(&self) -> ::std::option::Option<&str> {
+    pub fn name_assigner(&self) -> ::std::option::Option<& str> {
         self.name_assigner.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl EdiPartyNameBuilder {
     }
     /// <p>Specifies the party name.</p>
     pub fn set_party_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.party_name = input;
-        self
+        self.party_name = input; self
     }
     /// <p>Specifies the party name.</p>
     pub fn get_party_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl EdiPartyNameBuilder {
     }
     /// <p>Specifies the name assigner.</p>
     pub fn set_name_assigner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name_assigner = input;
-        self
+        self.name_assigner = input; self
     }
     /// <p>Specifies the name assigner.</p>
     pub fn get_name_assigner(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl EdiPartyNameBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`party_name`](crate::types::builders::EdiPartyNameBuilder::party_name)
     pub fn build(self) -> ::std::result::Result<crate::types::EdiPartyName, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EdiPartyName {
-            party_name: self.party_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "party_name",
-                    "party_name was not specified but it is required when building EdiPartyName",
-                )
-            })?,
-            name_assigner: self.name_assigner,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EdiPartyName {
+                party_name: self.party_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("party_name", "party_name was not specified but it is required when building EdiPartyName")
+                    )?
+                ,
+                name_assigner: self.name_assigner
+                ,
+            }
+        )
     }
 }
+

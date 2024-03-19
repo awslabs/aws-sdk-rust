@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`SearchGroupProfiles`](crate::operation::search_group_profiles::builders::SearchGroupProfilesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::search_group_profiles::builders::SearchGroupProfilesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`domain_identifier(impl Into<String>)`](crate::operation::search_group_profiles::builders::SearchGroupProfilesFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::search_group_profiles::builders::SearchGroupProfilesFluentBuilder::set_domain_identifier):<br>required: **true**<br><p>The identifier of the Amazon DataZone domain in which you want to search group profiles.</p><br>
     ///   - [`group_type(GroupSearchType)`](crate::operation::search_group_profiles::builders::SearchGroupProfilesFluentBuilder::group_type) / [`set_group_type(Option<GroupSearchType>)`](crate::operation::search_group_profiles::builders::SearchGroupProfilesFluentBuilder::set_group_type):<br>required: **true**<br><p>The group type for which to search.</p><br>
     ///   - [`search_text(impl Into<String>)`](crate::operation::search_group_profiles::builders::SearchGroupProfilesFluentBuilder::search_text) / [`set_search_text(Option<String>)`](crate::operation::search_group_profiles::builders::SearchGroupProfilesFluentBuilder::set_search_text):<br>required: **false**<br><p>Specifies the text for which to search.</p><br>
     ///   - [`max_results(i32)`](crate::operation::search_group_profiles::builders::SearchGroupProfilesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::search_group_profiles::builders::SearchGroupProfilesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call to <code>SearchGroupProfiles</code>. When the number of results to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>SearchGroupProfiles</code> to list the next set of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::search_group_profiles::builders::SearchGroupProfilesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::search_group_profiles::builders::SearchGroupProfilesFluentBuilder::set_next_token):<br>required: **false**<br><p>When the number of results is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of results, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>SearchGroupProfiles</code> to list the next set of results.</p><br>
-    /// - On success, responds with [`SearchGroupProfilesOutput`](crate::operation::search_group_profiles::SearchGroupProfilesOutput) with field(s):
+                            /// - On success, responds with [`SearchGroupProfilesOutput`](crate::operation::search_group_profiles::SearchGroupProfilesOutput) with field(s):
     ///   - [`items(Option<Vec::<GroupProfileSummary>>)`](crate::operation::search_group_profiles::SearchGroupProfilesOutput::items): <p>The results of the <code>SearchGroupProfiles</code> action.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_group_profiles::SearchGroupProfilesOutput::next_token): <p>When the number of results is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of results, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>SearchGroupProfiles</code> to list the next set of results.</p>
-    /// - On failure, responds with [`SdkError<SearchGroupProfilesError>`](crate::operation::search_group_profiles::SearchGroupProfilesError)
+                            /// - On failure, responds with [`SdkError<SearchGroupProfilesError>`](crate::operation::search_group_profiles::SearchGroupProfilesError)
     pub fn search_group_profiles(&self) -> crate::operation::search_group_profiles::builders::SearchGroupProfilesFluentBuilder {
-        crate::operation::search_group_profiles::builders::SearchGroupProfilesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::search_group_profiles::builders::SearchGroupProfilesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

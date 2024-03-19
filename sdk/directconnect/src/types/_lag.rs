@@ -3,7 +3,7 @@
 /// <p>Information about a link aggregation group (LAG).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Lag {
+pub struct Lag  {
     /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps.</p>
     pub connections_bandwidth: ::std::option::Option<::std::string::String>,
     /// <p>The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.</p>
@@ -45,7 +45,7 @@ pub struct Lag {
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub aws_logical_device_id: ::std::option::Option<::std::string::String>,
     /// <p>The connections bundled by the LAG.</p>
-    pub connections: ::std::option::Option<::std::vec::Vec<crate::types::Connection>>,
+    pub connections: ::std::option::Option<::std::vec::Vec::<crate::types::Connection>>,
     /// <p>Indicates whether the LAG can host other connections.</p>
     pub allows_hosted_connections: bool,
     /// <p>Indicates whether jumbo frames are supported.</p>
@@ -53,7 +53,7 @@ pub struct Lag {
     /// <p>Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
     pub has_logical_redundancy: ::std::option::Option<crate::types::HasLogicalRedundancy>,
     /// <p>The tags associated with the LAG.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The name of the service provider associated with the LAG.</p>
     pub provider_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the LAG supports MAC Security (MACsec).</p>
@@ -62,11 +62,11 @@ pub struct Lag {
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
     pub encryption_mode: ::std::option::Option<::std::string::String>,
     /// <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
-    pub mac_sec_keys: ::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>>,
+    pub mac_sec_keys: ::std::option::Option<::std::vec::Vec::<crate::types::MacSecKey>>,
 }
-impl Lag {
+impl  Lag  {
     /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps.</p>
-    pub fn connections_bandwidth(&self) -> ::std::option::Option<&str> {
+    pub fn connections_bandwidth(&self) -> ::std::option::Option<& str> {
         self.connections_bandwidth.as_deref()
     }
     /// <p>The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.</p>
@@ -74,15 +74,15 @@ impl Lag {
         self.number_of_connections
     }
     /// <p>The ID of the LAG.</p>
-    pub fn lag_id(&self) -> ::std::option::Option<&str> {
+    pub fn lag_id(&self) -> ::std::option::Option<& str> {
         self.lag_id.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the LAG.</p>
-    pub fn owner_account(&self) -> ::std::option::Option<&str> {
+    pub fn owner_account(&self) -> ::std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>The name of the LAG.</p>
-    pub fn lag_name(&self) -> ::std::option::Option<&str> {
+    pub fn lag_name(&self) -> ::std::option::Option<& str> {
         self.lag_name.as_deref()
     }
     /// <p>The state of the LAG. The following are the possible values:</p>
@@ -102,15 +102,15 @@ impl Lag {
     /// <li>
     /// <p><code>unknown</code>: The state of the LAG is not available.</p></li>
     /// </ul>
-    pub fn lag_state(&self) -> ::std::option::Option<&crate::types::LagState> {
+    pub fn lag_state(&self) -> ::std::option::Option<& crate::types::LagState> {
         self.lag_state.as_ref()
     }
     /// <p>The location of the LAG.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The Amazon Web Services Region where the connection is located.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The minimum number of physical dedicated connections that must be operational for the LAG itself to be operational.</p>
@@ -118,22 +118,23 @@ impl Lag {
         self.minimum_links
     }
     /// <p>The Direct Connect endpoint that hosts the LAG.</p>
-    pub fn aws_device(&self) -> ::std::option::Option<&str> {
+    pub fn aws_device(&self) -> ::std::option::Option<& str> {
         self.aws_device.as_deref()
     }
     /// <p>The Direct Connect endpoint that hosts the LAG.</p>
-    pub fn aws_device_v2(&self) -> ::std::option::Option<&str> {
+    pub fn aws_device_v2(&self) -> ::std::option::Option<& str> {
         self.aws_device_v2.as_deref()
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    pub fn aws_logical_device_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_logical_device_id(&self) -> ::std::option::Option<& str> {
         self.aws_logical_device_id.as_deref()
     }
     /// <p>The connections bundled by the LAG.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connections.is_none()`.
-    pub fn connections(&self) -> &[crate::types::Connection] {
-        self.connections.as_deref().unwrap_or_default()
+    pub fn connections(&self) -> & [crate::types::Connection] {
+        self.connections.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether the LAG can host other connections.</p>
     pub fn allows_hosted_connections(&self) -> bool {
@@ -144,17 +145,18 @@ impl Lag {
         self.jumbo_frame_capable
     }
     /// <p>Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
-    pub fn has_logical_redundancy(&self) -> ::std::option::Option<&crate::types::HasLogicalRedundancy> {
+    pub fn has_logical_redundancy(&self) -> ::std::option::Option<& crate::types::HasLogicalRedundancy> {
         self.has_logical_redundancy.as_ref()
     }
     /// <p>The tags associated with the LAG.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the service provider associated with the LAG.</p>
-    pub fn provider_name(&self) -> ::std::option::Option<&str> {
+    pub fn provider_name(&self) -> ::std::option::Option<& str> {
         self.provider_name.as_deref()
     }
     /// <p>Indicates whether the LAG supports MAC Security (MACsec).</p>
@@ -163,14 +165,15 @@ impl Lag {
     }
     /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-    pub fn encryption_mode(&self) -> ::std::option::Option<&str> {
+    pub fn encryption_mode(&self) -> ::std::option::Option<& str> {
         self.encryption_mode.as_deref()
     }
     /// <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mac_sec_keys.is_none()`.
-    pub fn mac_sec_keys(&self) -> &[crate::types::MacSecKey] {
-        self.mac_sec_keys.as_deref().unwrap_or_default()
+    pub fn mac_sec_keys(&self) -> & [crate::types::MacSecKey] {
+        self.mac_sec_keys.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Lag {
@@ -196,15 +199,15 @@ pub struct LagBuilder {
     pub(crate) aws_device: ::std::option::Option<::std::string::String>,
     pub(crate) aws_device_v2: ::std::option::Option<::std::string::String>,
     pub(crate) aws_logical_device_id: ::std::option::Option<::std::string::String>,
-    pub(crate) connections: ::std::option::Option<::std::vec::Vec<crate::types::Connection>>,
+    pub(crate) connections: ::std::option::Option<::std::vec::Vec::<crate::types::Connection>>,
     pub(crate) allows_hosted_connections: ::std::option::Option<bool>,
     pub(crate) jumbo_frame_capable: ::std::option::Option<bool>,
     pub(crate) has_logical_redundancy: ::std::option::Option<crate::types::HasLogicalRedundancy>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) provider_name: ::std::option::Option<::std::string::String>,
     pub(crate) mac_sec_capable: ::std::option::Option<bool>,
     pub(crate) encryption_mode: ::std::option::Option<::std::string::String>,
-    pub(crate) mac_sec_keys: ::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>>,
+    pub(crate) mac_sec_keys: ::std::option::Option<::std::vec::Vec::<crate::types::MacSecKey>>,
 }
 impl LagBuilder {
     /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps.</p>
@@ -214,8 +217,7 @@ impl LagBuilder {
     }
     /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps.</p>
     pub fn set_connections_bandwidth(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connections_bandwidth = input;
-        self
+        self.connections_bandwidth = input; self
     }
     /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps.</p>
     pub fn get_connections_bandwidth(&self) -> &::std::option::Option<::std::string::String> {
@@ -228,8 +230,7 @@ impl LagBuilder {
     }
     /// <p>The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.</p>
     pub fn set_number_of_connections(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_connections = input;
-        self
+        self.number_of_connections = input; self
     }
     /// <p>The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.</p>
     pub fn get_number_of_connections(&self) -> &::std::option::Option<i32> {
@@ -242,8 +243,7 @@ impl LagBuilder {
     }
     /// <p>The ID of the LAG.</p>
     pub fn set_lag_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lag_id = input;
-        self
+        self.lag_id = input; self
     }
     /// <p>The ID of the LAG.</p>
     pub fn get_lag_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -256,8 +256,7 @@ impl LagBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that owns the LAG.</p>
     pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_account = input;
-        self
+        self.owner_account = input; self
     }
     /// <p>The ID of the Amazon Web Services account that owns the LAG.</p>
     pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -270,8 +269,7 @@ impl LagBuilder {
     }
     /// <p>The name of the LAG.</p>
     pub fn set_lag_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lag_name = input;
-        self
+        self.lag_name = input; self
     }
     /// <p>The name of the LAG.</p>
     pub fn get_lag_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -316,8 +314,7 @@ impl LagBuilder {
     /// <p><code>unknown</code>: The state of the LAG is not available.</p></li>
     /// </ul>
     pub fn set_lag_state(mut self, input: ::std::option::Option<crate::types::LagState>) -> Self {
-        self.lag_state = input;
-        self
+        self.lag_state = input; self
     }
     /// <p>The state of the LAG. The following are the possible values:</p>
     /// <ul>
@@ -346,8 +343,7 @@ impl LagBuilder {
     }
     /// <p>The location of the LAG.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The location of the LAG.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -360,8 +356,7 @@ impl LagBuilder {
     }
     /// <p>The Amazon Web Services Region where the connection is located.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Amazon Web Services Region where the connection is located.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -374,8 +369,7 @@ impl LagBuilder {
     }
     /// <p>The minimum number of physical dedicated connections that must be operational for the LAG itself to be operational.</p>
     pub fn set_minimum_links(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.minimum_links = input;
-        self
+        self.minimum_links = input; self
     }
     /// <p>The minimum number of physical dedicated connections that must be operational for the LAG itself to be operational.</p>
     pub fn get_minimum_links(&self) -> &::std::option::Option<i32> {
@@ -388,8 +382,7 @@ impl LagBuilder {
     }
     /// <p>The Direct Connect endpoint that hosts the LAG.</p>
     pub fn set_aws_device(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_device = input;
-        self
+        self.aws_device = input; self
     }
     /// <p>The Direct Connect endpoint that hosts the LAG.</p>
     pub fn get_aws_device(&self) -> &::std::option::Option<::std::string::String> {
@@ -402,8 +395,7 @@ impl LagBuilder {
     }
     /// <p>The Direct Connect endpoint that hosts the LAG.</p>
     pub fn set_aws_device_v2(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_device_v2 = input;
-        self
+        self.aws_device_v2 = input; self
     }
     /// <p>The Direct Connect endpoint that hosts the LAG.</p>
     pub fn get_aws_device_v2(&self) -> &::std::option::Option<::std::string::String> {
@@ -416,8 +408,7 @@ impl LagBuilder {
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub fn set_aws_logical_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_logical_device_id = input;
-        self
+        self.aws_logical_device_id = input; self
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub fn get_aws_logical_device_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -430,17 +421,16 @@ impl LagBuilder {
     /// <p>The connections bundled by the LAG.</p>
     pub fn connections(mut self, input: crate::types::Connection) -> Self {
         let mut v = self.connections.unwrap_or_default();
-        v.push(input);
-        self.connections = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.connections = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The connections bundled by the LAG.</p>
-    pub fn set_connections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Connection>>) -> Self {
-        self.connections = input;
-        self
+    pub fn set_connections(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Connection>>) -> Self {
+        self.connections = input; self
     }
     /// <p>The connections bundled by the LAG.</p>
-    pub fn get_connections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Connection>> {
+    pub fn get_connections(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Connection>> {
         &self.connections
     }
     /// <p>Indicates whether the LAG can host other connections.</p>
@@ -450,8 +440,7 @@ impl LagBuilder {
     }
     /// <p>Indicates whether the LAG can host other connections.</p>
     pub fn set_allows_hosted_connections(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allows_hosted_connections = input;
-        self
+        self.allows_hosted_connections = input; self
     }
     /// <p>Indicates whether the LAG can host other connections.</p>
     pub fn get_allows_hosted_connections(&self) -> &::std::option::Option<bool> {
@@ -464,8 +453,7 @@ impl LagBuilder {
     }
     /// <p>Indicates whether jumbo frames are supported.</p>
     pub fn set_jumbo_frame_capable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.jumbo_frame_capable = input;
-        self
+        self.jumbo_frame_capable = input; self
     }
     /// <p>Indicates whether jumbo frames are supported.</p>
     pub fn get_jumbo_frame_capable(&self) -> &::std::option::Option<bool> {
@@ -478,8 +466,7 @@ impl LagBuilder {
     }
     /// <p>Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
     pub fn set_has_logical_redundancy(mut self, input: ::std::option::Option<crate::types::HasLogicalRedundancy>) -> Self {
-        self.has_logical_redundancy = input;
-        self
+        self.has_logical_redundancy = input; self
     }
     /// <p>Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
     pub fn get_has_logical_redundancy(&self) -> &::std::option::Option<crate::types::HasLogicalRedundancy> {
@@ -492,17 +479,16 @@ impl LagBuilder {
     /// <p>The tags associated with the LAG.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags associated with the LAG.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags associated with the LAG.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The name of the service provider associated with the LAG.</p>
@@ -512,8 +498,7 @@ impl LagBuilder {
     }
     /// <p>The name of the service provider associated with the LAG.</p>
     pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider_name = input;
-        self
+        self.provider_name = input; self
     }
     /// <p>The name of the service provider associated with the LAG.</p>
     pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -526,8 +511,7 @@ impl LagBuilder {
     }
     /// <p>Indicates whether the LAG supports MAC Security (MACsec).</p>
     pub fn set_mac_sec_capable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.mac_sec_capable = input;
-        self
+        self.mac_sec_capable = input; self
     }
     /// <p>Indicates whether the LAG supports MAC Security (MACsec).</p>
     pub fn get_mac_sec_capable(&self) -> &::std::option::Option<bool> {
@@ -542,8 +526,7 @@ impl LagBuilder {
     /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
     pub fn set_encryption_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.encryption_mode = input;
-        self
+        self.encryption_mode = input; self
     }
     /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
@@ -557,43 +540,67 @@ impl LagBuilder {
     /// <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
     pub fn mac_sec_keys(mut self, input: crate::types::MacSecKey) -> Self {
         let mut v = self.mac_sec_keys.unwrap_or_default();
-        v.push(input);
-        self.mac_sec_keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.mac_sec_keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
-    pub fn set_mac_sec_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>>) -> Self {
-        self.mac_sec_keys = input;
-        self
+    pub fn set_mac_sec_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MacSecKey>>) -> Self {
+        self.mac_sec_keys = input; self
     }
     /// <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
-    pub fn get_mac_sec_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>> {
+    pub fn get_mac_sec_keys(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MacSecKey>> {
         &self.mac_sec_keys
     }
     /// Consumes the builder and constructs a [`Lag`](crate::types::Lag).
     pub fn build(self) -> crate::types::Lag {
         crate::types::Lag {
-            connections_bandwidth: self.connections_bandwidth,
-            number_of_connections: self.number_of_connections.unwrap_or_default(),
-            lag_id: self.lag_id,
-            owner_account: self.owner_account,
-            lag_name: self.lag_name,
-            lag_state: self.lag_state,
-            location: self.location,
-            region: self.region,
-            minimum_links: self.minimum_links.unwrap_or_default(),
-            aws_device: self.aws_device,
-            aws_device_v2: self.aws_device_v2,
-            aws_logical_device_id: self.aws_logical_device_id,
-            connections: self.connections,
-            allows_hosted_connections: self.allows_hosted_connections.unwrap_or_default(),
-            jumbo_frame_capable: self.jumbo_frame_capable,
-            has_logical_redundancy: self.has_logical_redundancy,
-            tags: self.tags,
-            provider_name: self.provider_name,
-            mac_sec_capable: self.mac_sec_capable,
-            encryption_mode: self.encryption_mode,
-            mac_sec_keys: self.mac_sec_keys,
+            connections_bandwidth: self.connections_bandwidth
+            ,
+            number_of_connections: self.number_of_connections
+                .unwrap_or_default()
+            ,
+            lag_id: self.lag_id
+            ,
+            owner_account: self.owner_account
+            ,
+            lag_name: self.lag_name
+            ,
+            lag_state: self.lag_state
+            ,
+            location: self.location
+            ,
+            region: self.region
+            ,
+            minimum_links: self.minimum_links
+                .unwrap_or_default()
+            ,
+            aws_device: self.aws_device
+            ,
+            aws_device_v2: self.aws_device_v2
+            ,
+            aws_logical_device_id: self.aws_logical_device_id
+            ,
+            connections: self.connections
+            ,
+            allows_hosted_connections: self.allows_hosted_connections
+                .unwrap_or_default()
+            ,
+            jumbo_frame_capable: self.jumbo_frame_capable
+            ,
+            has_logical_redundancy: self.has_logical_redundancy
+            ,
+            tags: self.tags
+            ,
+            provider_name: self.provider_name
+            ,
+            mac_sec_capable: self.mac_sec_capable
+            ,
+            encryption_mode: self.encryption_mode
+            ,
+            mac_sec_keys: self.mac_sec_keys
+            ,
         }
     }
 }
+

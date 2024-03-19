@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateInvestigationStateInput {
+pub struct UpdateInvestigationStateInput  {
     /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub graph_arn: ::std::option::Option<::std::string::String>,
     /// <p>The investigation ID of the investigation report.</p>
@@ -10,17 +10,17 @@ pub struct UpdateInvestigationStateInput {
     /// <p>The current state of the investigation. An archived investigation indicates you have completed reviewing the investigation.</p>
     pub state: ::std::option::Option<crate::types::State>,
 }
-impl UpdateInvestigationStateInput {
+impl  UpdateInvestigationStateInput  {
     /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
-    pub fn graph_arn(&self) -> ::std::option::Option<&str> {
+    pub fn graph_arn(&self) -> ::std::option::Option<& str> {
         self.graph_arn.as_deref()
     }
     /// <p>The investigation ID of the investigation report.</p>
-    pub fn investigation_id(&self) -> ::std::option::Option<&str> {
+    pub fn investigation_id(&self) -> ::std::option::Option<& str> {
         self.investigation_id.as_deref()
     }
     /// <p>The current state of the investigation. An archived investigation indicates you have completed reviewing the investigation.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::State> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::State> {
         self.state.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateInvestigationStateInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub fn set_graph_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.graph_arn = input;
-        self
+        self.graph_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub fn get_graph_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateInvestigationStateInputBuilder {
     }
     /// <p>The investigation ID of the investigation report.</p>
     pub fn set_investigation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.investigation_id = input;
-        self
+        self.investigation_id = input; self
     }
     /// <p>The investigation ID of the investigation report.</p>
     pub fn get_investigation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl UpdateInvestigationStateInputBuilder {
     }
     /// <p>The current state of the investigation. An archived investigation indicates you have completed reviewing the investigation.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::State>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The current state of the investigation. An archived investigation indicates you have completed reviewing the investigation.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::State> {
         &self.state
     }
     /// Consumes the builder and constructs a [`UpdateInvestigationStateInput`](crate::operation::update_investigation_state::UpdateInvestigationStateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_investigation_state::UpdateInvestigationStateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_investigation_state::UpdateInvestigationStateInput {
-            graph_arn: self.graph_arn,
-            investigation_id: self.investigation_id,
-            state: self.state,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_investigation_state::UpdateInvestigationStateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_investigation_state::UpdateInvestigationStateInput {
+                graph_arn: self.graph_arn
+                ,
+                investigation_id: self.investigation_id
+                ,
+                state: self.state
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SelectAggregateResourceConfigInput {
+pub struct SelectAggregateResourceConfigInput  {
     /// <p>The SQL query SELECT command.</p>
     pub expression: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configuration aggregator.</p>
@@ -14,13 +14,13 @@ pub struct SelectAggregateResourceConfigInput {
     /// <p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl SelectAggregateResourceConfigInput {
+impl  SelectAggregateResourceConfigInput  {
     /// <p>The SQL query SELECT command.</p>
-    pub fn expression(&self) -> ::std::option::Option<&str> {
+    pub fn expression(&self) -> ::std::option::Option<& str> {
         self.expression.as_deref()
     }
     /// <p>The name of the configuration aggregator.</p>
-    pub fn configuration_aggregator_name(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_aggregator_name(&self) -> ::std::option::Option<& str> {
         self.configuration_aggregator_name.as_deref()
     }
     /// <p>The maximum number of query results returned on each page.</p>
@@ -32,7 +32,7 @@ impl SelectAggregateResourceConfigInput {
         self.max_results
     }
     /// <p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl SelectAggregateResourceConfigInputBuilder {
     }
     /// <p>The SQL query SELECT command.</p>
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expression = input;
-        self
+        self.expression = input; self
     }
     /// <p>The SQL query SELECT command.</p>
     pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl SelectAggregateResourceConfigInputBuilder {
     }
     /// <p>The name of the configuration aggregator.</p>
     pub fn set_configuration_aggregator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_aggregator_name = input;
-        self
+        self.configuration_aggregator_name = input; self
     }
     /// <p>The name of the configuration aggregator.</p>
     pub fn get_configuration_aggregator_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl SelectAggregateResourceConfigInputBuilder {
     }
     /// <p>The maximum number of query results returned on each page.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of query results returned on each page.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
@@ -105,8 +102,7 @@ impl SelectAggregateResourceConfigInputBuilder {
     }
     /// <p>The maximum number of query results returned on each page. Config also allows the Limit request parameter.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of query results returned on each page. Config also allows the Limit request parameter.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -119,26 +115,28 @@ impl SelectAggregateResourceConfigInputBuilder {
     }
     /// <p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`SelectAggregateResourceConfigInput`](crate::operation::select_aggregate_resource_config::SelectAggregateResourceConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::select_aggregate_resource_config::SelectAggregateResourceConfigInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::select_aggregate_resource_config::SelectAggregateResourceConfigInput {
-            expression: self.expression,
-            configuration_aggregator_name: self.configuration_aggregator_name,
-            limit: self.limit,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::select_aggregate_resource_config::SelectAggregateResourceConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::select_aggregate_resource_config::SelectAggregateResourceConfigInput {
+                expression: self.expression
+                ,
+                configuration_aggregator_name: self.configuration_aggregator_name
+                ,
+                limit: self.limit
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListUserHierarchyGroups`](crate::operation::list_user_hierarchy_groups::builders::ListUserHierarchyGroupsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_user_hierarchy_groups::builders::ListUserHierarchyGroupsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::operation::list_user_hierarchy_groups::builders::ListUserHierarchyGroupsFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::list_user_hierarchy_groups::builders::ListUserHierarchyGroupsFluentBuilder::set_instance_id):<br>required: **true**<br><p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_user_hierarchy_groups::builders::ListUserHierarchyGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_user_hierarchy_groups::builders::ListUserHierarchyGroupsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_user_hierarchy_groups::builders::ListUserHierarchyGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_user_hierarchy_groups::builders::ListUserHierarchyGroupsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page. The default MaxResult size is 100.</p><br>
-    /// - On success, responds with [`ListUserHierarchyGroupsOutput`](crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsOutput) with field(s):
+                            /// - On success, responds with [`ListUserHierarchyGroupsOutput`](crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsOutput) with field(s):
     ///   - [`user_hierarchy_group_summary_list(Option<Vec::<HierarchyGroupSummary>>)`](crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsOutput::user_hierarchy_group_summary_list): <p>Information about the hierarchy groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListUserHierarchyGroupsError>`](crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsError)
+                            /// - On failure, responds with [`SdkError<ListUserHierarchyGroupsError>`](crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsError)
     pub fn list_user_hierarchy_groups(&self) -> crate::operation::list_user_hierarchy_groups::builders::ListUserHierarchyGroupsFluentBuilder {
-        crate::operation::list_user_hierarchy_groups::builders::ListUserHierarchyGroupsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_user_hierarchy_groups::builders::ListUserHierarchyGroupsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -22,11 +22,7 @@ impl SourceData {
     /// Tries to convert the enum instance into [`AcmPcaArn`](crate::types::SourceData::AcmPcaArn), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_acm_pca_arn(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let SourceData::AcmPcaArn(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let SourceData::AcmPcaArn(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`AcmPcaArn`](crate::types::SourceData::AcmPcaArn).
     pub fn is_acm_pca_arn(&self) -> bool {
@@ -35,11 +31,7 @@ impl SourceData {
     /// Tries to convert the enum instance into [`X509CertificateData`](crate::types::SourceData::X509CertificateData), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_x509_certificate_data(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let SourceData::X509CertificateData(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let SourceData::X509CertificateData(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`X509CertificateData`](crate::types::SourceData::X509CertificateData).
     pub fn is_x509_certificate_data(&self) -> bool {
@@ -50,3 +42,4 @@ impl SourceData {
         matches!(self, Self::Unknown)
     }
 }
+

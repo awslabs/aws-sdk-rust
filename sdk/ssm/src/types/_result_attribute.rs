@@ -3,15 +3,14 @@
 /// <p>The inventory item result attribute.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResultAttribute {
+pub struct ResultAttribute  {
     /// <p>Name of the inventory item type. Valid value: <code>AWS:InstanceInformation</code>. Default Value: <code>AWS:InstanceInformation</code>.</p>
     pub type_name: ::std::string::String,
 }
-impl ResultAttribute {
+impl  ResultAttribute  {
     /// <p>Name of the inventory item type. Valid value: <code>AWS:InstanceInformation</code>. Default Value: <code>AWS:InstanceInformation</code>.</p>
-    pub fn type_name(&self) -> &str {
-        use std::ops::Deref;
-        self.type_name.deref()
+    pub fn type_name(&self) -> & str {
+        use std::ops::Deref; self.type_name.deref()
     }
 }
 impl ResultAttribute {
@@ -36,8 +35,7 @@ impl ResultAttributeBuilder {
     }
     /// <p>Name of the inventory item type. Valid value: <code>AWS:InstanceInformation</code>. Default Value: <code>AWS:InstanceInformation</code>.</p>
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_name = input;
-        self
+        self.type_name = input; self
     }
     /// <p>Name of the inventory item type. Valid value: <code>AWS:InstanceInformation</code>. Default Value: <code>AWS:InstanceInformation</code>.</p>
     pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl ResultAttributeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`type_name`](crate::types::builders::ResultAttributeBuilder::type_name)
     pub fn build(self) -> ::std::result::Result<crate::types::ResultAttribute, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResultAttribute {
-            type_name: self.type_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "type_name",
-                    "type_name was not specified but it is required when building ResultAttribute",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResultAttribute {
+                type_name: self.type_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("type_name", "type_name was not specified but it is required when building ResultAttribute")
+                    )?
+                ,
+            }
+        )
     }
 }
+

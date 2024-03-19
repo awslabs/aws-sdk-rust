@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSolNetworkInstanceInput {
+pub struct DeleteSolNetworkInstanceInput  {
     /// <p>Network instance ID.</p>
     pub ns_instance_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteSolNetworkInstanceInput {
+impl  DeleteSolNetworkInstanceInput  {
     /// <p>Network instance ID.</p>
-    pub fn ns_instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn ns_instance_id(&self) -> ::std::option::Option<& str> {
         self.ns_instance_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteSolNetworkInstanceInputBuilder {
     }
     /// <p>Network instance ID.</p>
     pub fn set_ns_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ns_instance_id = input;
-        self
+        self.ns_instance_id = input; self
     }
     /// <p>Network instance ID.</p>
     pub fn get_ns_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ns_instance_id
     }
     /// Consumes the builder and constructs a [`DeleteSolNetworkInstanceInput`](crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceInput {
-            ns_instance_id: self.ns_instance_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceInput {
+                ns_instance_id: self.ns_instance_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Describes dynamic routing for the transit gateway peering attachment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransitGatewayPeeringAttachmentOptions {
+pub struct TransitGatewayPeeringAttachmentOptions  {
     /// <p>Describes whether dynamic routing is enabled or disabled for the transit gateway peering attachment.</p>
     pub dynamic_routing: ::std::option::Option<crate::types::DynamicRoutingValue>,
 }
-impl TransitGatewayPeeringAttachmentOptions {
+impl  TransitGatewayPeeringAttachmentOptions  {
     /// <p>Describes whether dynamic routing is enabled or disabled for the transit gateway peering attachment.</p>
-    pub fn dynamic_routing(&self) -> ::std::option::Option<&crate::types::DynamicRoutingValue> {
+    pub fn dynamic_routing(&self) -> ::std::option::Option<& crate::types::DynamicRoutingValue> {
         self.dynamic_routing.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl TransitGatewayPeeringAttachmentOptionsBuilder {
     }
     /// <p>Describes whether dynamic routing is enabled or disabled for the transit gateway peering attachment.</p>
     pub fn set_dynamic_routing(mut self, input: ::std::option::Option<crate::types::DynamicRoutingValue>) -> Self {
-        self.dynamic_routing = input;
-        self
+        self.dynamic_routing = input; self
     }
     /// <p>Describes whether dynamic routing is enabled or disabled for the transit gateway peering attachment.</p>
     pub fn get_dynamic_routing(&self) -> &::std::option::Option<crate::types::DynamicRoutingValue> {
@@ -44,7 +43,9 @@ impl TransitGatewayPeeringAttachmentOptionsBuilder {
     /// Consumes the builder and constructs a [`TransitGatewayPeeringAttachmentOptions`](crate::types::TransitGatewayPeeringAttachmentOptions).
     pub fn build(self) -> crate::types::TransitGatewayPeeringAttachmentOptions {
         crate::types::TransitGatewayPeeringAttachmentOptions {
-            dynamic_routing: self.dynamic_routing,
+            dynamic_routing: self.dynamic_routing
+            ,
         }
     }
 }
+

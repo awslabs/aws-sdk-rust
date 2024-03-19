@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDrtAccessOutput {
+pub struct DescribeDrtAccessOutput  {
     /// <p>The Amazon Resource Name (ARN) of the role the SRT used to access your Amazon Web Services account.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of Amazon S3 buckets accessed by the SRT.</p>
-    pub log_bucket_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub log_bucket_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl DescribeDrtAccessOutput {
+impl  DescribeDrtAccessOutput  {
     /// <p>The Amazon Resource Name (ARN) of the role the SRT used to access your Amazon Web Services account.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The list of Amazon S3 buckets accessed by the SRT.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_bucket_list.is_none()`.
-    pub fn log_bucket_list(&self) -> &[::std::string::String] {
-        self.log_bucket_list.as_deref().unwrap_or_default()
+    pub fn log_bucket_list(&self) -> & [::std::string::String] {
+        self.log_bucket_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeDrtAccessOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeDrtAccessOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDrtAccessOutput`](crate::operation::describe_drt_access::DescribeDrtAccessOutput).
     pub fn builder() -> crate::operation::describe_drt_access::builders::DescribeDrtAccessOutputBuilder {
@@ -38,7 +39,7 @@ impl DescribeDrtAccessOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDrtAccessOutputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) log_bucket_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) log_bucket_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeDrtAccessOutputBuilder {
@@ -49,8 +50,7 @@ impl DescribeDrtAccessOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the role the SRT used to access your Amazon Web Services account.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the role the SRT used to access your Amazon Web Services account.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl DescribeDrtAccessOutputBuilder {
     /// <p>The list of Amazon S3 buckets accessed by the SRT.</p>
     pub fn log_bucket_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.log_bucket_list.unwrap_or_default();
-        v.push(input.into());
-        self.log_bucket_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.log_bucket_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of Amazon S3 buckets accessed by the SRT.</p>
-    pub fn set_log_bucket_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.log_bucket_list = input;
-        self
+    pub fn set_log_bucket_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.log_bucket_list = input; self
     }
     /// <p>The list of Amazon S3 buckets accessed by the SRT.</p>
-    pub fn get_log_bucket_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_log_bucket_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.log_bucket_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeDrtAccessOutput`](crate::operation::describe_drt_access::DescribeDrtAccessOutput).
     pub fn build(self) -> crate::operation::describe_drt_access::DescribeDrtAccessOutput {
         crate::operation::describe_drt_access::DescribeDrtAccessOutput {
-            role_arn: self.role_arn,
-            log_bucket_list: self.log_bucket_list,
+            role_arn: self.role_arn
+            ,
+            log_bucket_list: self.log_bucket_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

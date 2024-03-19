@@ -3,27 +3,26 @@
 /// <p>A representation of the line item filter for your custom line item. You can use line item filters to include or exclude specific resource values from the billing group's total cost. For example, if you create a custom line item and you want to filter out a value, such as Savings Plan discounts, you can update <code>LineItemFilter</code> to exclude it.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LineItemFilter {
+pub struct LineItemFilter  {
     /// <p>The attribute of the line item filter. This specifies what attribute that you can filter on.</p>
     pub attribute: crate::types::LineItemFilterAttributeName,
     /// <p>The match criteria of the line item filter. This parameter specifies whether not to include the resource value from the billing group total cost.</p>
     pub match_option: crate::types::MatchOption,
     /// <p>The values of the line item filter. This specifies the values to filter on. Currently, you can only exclude Savings Plan discounts.</p>
-    pub values: ::std::vec::Vec<crate::types::LineItemFilterValue>,
+    pub values: ::std::vec::Vec::<crate::types::LineItemFilterValue>,
 }
-impl LineItemFilter {
+impl  LineItemFilter  {
     /// <p>The attribute of the line item filter. This specifies what attribute that you can filter on.</p>
-    pub fn attribute(&self) -> &crate::types::LineItemFilterAttributeName {
+    pub fn attribute(&self) -> & crate::types::LineItemFilterAttributeName {
         &self.attribute
     }
     /// <p>The match criteria of the line item filter. This parameter specifies whether not to include the resource value from the billing group total cost.</p>
-    pub fn match_option(&self) -> &crate::types::MatchOption {
+    pub fn match_option(&self) -> & crate::types::MatchOption {
         &self.match_option
     }
     /// <p>The values of the line item filter. This specifies the values to filter on. Currently, you can only exclude Savings Plan discounts.</p>
-    pub fn values(&self) -> &[crate::types::LineItemFilterValue] {
-        use std::ops::Deref;
-        self.values.deref()
+    pub fn values(&self) -> & [crate::types::LineItemFilterValue] {
+        use std::ops::Deref; self.values.deref()
     }
 }
 impl LineItemFilter {
@@ -39,7 +38,7 @@ impl LineItemFilter {
 pub struct LineItemFilterBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::LineItemFilterAttributeName>,
     pub(crate) match_option: ::std::option::Option<crate::types::MatchOption>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::LineItemFilterValue>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<crate::types::LineItemFilterValue>>,
 }
 impl LineItemFilterBuilder {
     /// <p>The attribute of the line item filter. This specifies what attribute that you can filter on.</p>
@@ -50,8 +49,7 @@ impl LineItemFilterBuilder {
     }
     /// <p>The attribute of the line item filter. This specifies what attribute that you can filter on.</p>
     pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::LineItemFilterAttributeName>) -> Self {
-        self.attribute = input;
-        self
+        self.attribute = input; self
     }
     /// <p>The attribute of the line item filter. This specifies what attribute that you can filter on.</p>
     pub fn get_attribute(&self) -> &::std::option::Option<crate::types::LineItemFilterAttributeName> {
@@ -65,8 +63,7 @@ impl LineItemFilterBuilder {
     }
     /// <p>The match criteria of the line item filter. This parameter specifies whether not to include the resource value from the billing group total cost.</p>
     pub fn set_match_option(mut self, input: ::std::option::Option<crate::types::MatchOption>) -> Self {
-        self.match_option = input;
-        self
+        self.match_option = input; self
     }
     /// <p>The match criteria of the line item filter. This parameter specifies whether not to include the resource value from the billing group total cost.</p>
     pub fn get_match_option(&self) -> &::std::option::Option<crate::types::MatchOption> {
@@ -79,17 +76,16 @@ impl LineItemFilterBuilder {
     /// <p>The values of the line item filter. This specifies the values to filter on. Currently, you can only exclude Savings Plan discounts.</p>
     pub fn values(mut self, input: crate::types::LineItemFilterValue) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input);
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The values of the line item filter. This specifies the values to filter on. Currently, you can only exclude Savings Plan discounts.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LineItemFilterValue>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LineItemFilterValue>>) -> Self {
+        self.values = input; self
     }
     /// <p>The values of the line item filter. This specifies the values to filter on. Currently, you can only exclude Savings Plan discounts.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LineItemFilterValue>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LineItemFilterValue>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`LineItemFilter`](crate::types::LineItemFilter).
@@ -98,25 +94,25 @@ impl LineItemFilterBuilder {
     /// - [`match_option`](crate::types::builders::LineItemFilterBuilder::match_option)
     /// - [`values`](crate::types::builders::LineItemFilterBuilder::values)
     pub fn build(self) -> ::std::result::Result<crate::types::LineItemFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LineItemFilter {
-            attribute: self.attribute.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attribute",
-                    "attribute was not specified but it is required when building LineItemFilter",
-                )
-            })?,
-            match_option: self.match_option.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "match_option",
-                    "match_option was not specified but it is required when building LineItemFilter",
-                )
-            })?,
-            values: self.values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "values",
-                    "values was not specified but it is required when building LineItemFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LineItemFilter {
+                attribute: self.attribute
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attribute", "attribute was not specified but it is required when building LineItemFilter")
+                    )?
+                ,
+                match_option: self.match_option
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("match_option", "match_option was not specified but it is required when building LineItemFilter")
+                    )?
+                ,
+                values: self.values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("values", "values was not specified but it is required when building LineItemFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

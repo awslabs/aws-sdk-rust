@@ -3,7 +3,7 @@
 /// DescribeProvisionedProductAPI input structure. AcceptLanguage - [Optional] The language code for localization. Id - [Optional] The provisioned product identifier. Name - [Optional] Another provisioned product identifier. Customers must provide either Id or Name.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeProvisionedProductInput {
+pub struct DescribeProvisionedProductInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -19,7 +19,7 @@ pub struct DescribeProvisionedProductInput {
     /// <p>If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code> will occur.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeProvisionedProductInput {
+impl  DescribeProvisionedProductInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -27,17 +27,17 @@ impl DescribeProvisionedProductInput {
     /// <li>
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
-    pub fn accept_language(&self) -> ::std::option::Option<&str> {
+    pub fn accept_language(&self) -> ::std::option::Option<& str> {
         self.accept_language.as_deref()
     }
     /// <p>The provisioned product identifier. You must provide the name or ID, but not both.</p>
     /// <p>If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code> will occur.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the provisioned product. You must provide the name or ID, but not both.</p>
     /// <p>If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code> will occur.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -76,8 +76,7 @@ impl DescribeProvisionedProductInputBuilder {
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accept_language = input;
-        self
+        self.accept_language = input; self
     }
     /// <p>The language code.</p>
     /// <ul>
@@ -98,8 +97,7 @@ impl DescribeProvisionedProductInputBuilder {
     /// <p>The provisioned product identifier. You must provide the name or ID, but not both.</p>
     /// <p>If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code> will occur.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The provisioned product identifier. You must provide the name or ID, but not both.</p>
     /// <p>If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code> will occur.</p>
@@ -115,8 +113,7 @@ impl DescribeProvisionedProductInputBuilder {
     /// <p>The name of the provisioned product. You must provide the name or ID, but not both.</p>
     /// <p>If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code> will occur.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the provisioned product. You must provide the name or ID, but not both.</p>
     /// <p>If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code> will occur.</p>
@@ -124,16 +121,17 @@ impl DescribeProvisionedProductInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`DescribeProvisionedProductInput`](crate::operation::describe_provisioned_product::DescribeProvisionedProductInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_provisioned_product::DescribeProvisionedProductInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_provisioned_product::DescribeProvisionedProductInput {
-            accept_language: self.accept_language,
-            id: self.id,
-            name: self.name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_provisioned_product::DescribeProvisionedProductInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_provisioned_product::DescribeProvisionedProductInput {
+                accept_language: self.accept_language
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

@@ -3,20 +3,19 @@
 /// <p>A Region that supports a Multi-Region Access Point as well as the associated bucket for the Region.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Region {
+pub struct Region  {
     /// <p>The name of the associated bucket for the Region.</p>
     pub bucket: ::std::string::String,
     /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket that's associated with this Multi-Region Access Point.</p>
     pub bucket_account_id: ::std::option::Option<::std::string::String>,
 }
-impl Region {
+impl  Region  {
     /// <p>The name of the associated bucket for the Region.</p>
-    pub fn bucket(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket.deref()
+    pub fn bucket(&self) -> & str {
+        use std::ops::Deref; self.bucket.deref()
     }
     /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket that's associated with this Multi-Region Access Point.</p>
-    pub fn bucket_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_account_id(&self) -> ::std::option::Option<& str> {
         self.bucket_account_id.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl RegionBuilder {
     }
     /// <p>The name of the associated bucket for the Region.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The name of the associated bucket for the Region.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl RegionBuilder {
     }
     /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket that's associated with this Multi-Region Access Point.</p>
     pub fn set_bucket_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_account_id = input;
-        self
+        self.bucket_account_id = input; self
     }
     /// <p>The Amazon Web Services account ID that owns the Amazon S3 bucket that's associated with this Multi-Region Access Point.</p>
     pub fn get_bucket_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl RegionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`bucket`](crate::types::builders::RegionBuilder::bucket)
     pub fn build(self) -> ::std::result::Result<crate::types::Region, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Region {
-            bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket",
-                    "bucket was not specified but it is required when building Region",
-                )
-            })?,
-            bucket_account_id: self.bucket_account_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Region {
+                bucket: self.bucket
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket", "bucket was not specified but it is required when building Region")
+                    )?
+                ,
+                bucket_account_id: self.bucket_account_id
+                ,
+            }
+        )
     }
 }
+

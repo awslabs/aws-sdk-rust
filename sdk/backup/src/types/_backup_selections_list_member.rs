@@ -3,7 +3,7 @@
 /// <p>Contains metadata about a <code>BackupSelection</code> object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BackupSelectionsListMember {
+pub struct BackupSelectionsListMember  {
     /// <p>Uniquely identifies a request to assign a set of resources to a backup plan.</p>
     pub selection_id: ::std::option::Option<::std::string::String>,
     /// <p>The display name of a resource selection document.</p>
@@ -18,30 +18,30 @@ pub struct BackupSelectionsListMember {
     /// <p>Specifies the IAM role Amazon Resource Name (ARN) to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
 }
-impl BackupSelectionsListMember {
+impl  BackupSelectionsListMember  {
     /// <p>Uniquely identifies a request to assign a set of resources to a backup plan.</p>
-    pub fn selection_id(&self) -> ::std::option::Option<&str> {
+    pub fn selection_id(&self) -> ::std::option::Option<& str> {
         self.selection_id.as_deref()
     }
     /// <p>The display name of a resource selection document.</p>
-    pub fn selection_name(&self) -> ::std::option::Option<&str> {
+    pub fn selection_name(&self) -> ::std::option::Option<& str> {
         self.selection_name.as_deref()
     }
     /// <p>Uniquely identifies a backup plan.</p>
-    pub fn backup_plan_id(&self) -> ::std::option::Option<&str> {
+    pub fn backup_plan_id(&self) -> ::std::option::Option<& str> {
         self.backup_plan_id.as_deref()
     }
     /// <p>The date and time a backup plan is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional.</p>
     /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
-    pub fn creator_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn creator_request_id(&self) -> ::std::option::Option<& str> {
         self.creator_request_id.as_deref()
     }
     /// <p>Specifies the IAM role Amazon Resource Name (ARN) to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
-    pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn iam_role_arn(&self) -> ::std::option::Option<& str> {
         self.iam_role_arn.as_deref()
     }
 }
@@ -71,8 +71,7 @@ impl BackupSelectionsListMemberBuilder {
     }
     /// <p>Uniquely identifies a request to assign a set of resources to a backup plan.</p>
     pub fn set_selection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.selection_id = input;
-        self
+        self.selection_id = input; self
     }
     /// <p>Uniquely identifies a request to assign a set of resources to a backup plan.</p>
     pub fn get_selection_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +84,7 @@ impl BackupSelectionsListMemberBuilder {
     }
     /// <p>The display name of a resource selection document.</p>
     pub fn set_selection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.selection_name = input;
-        self
+        self.selection_name = input; self
     }
     /// <p>The display name of a resource selection document.</p>
     pub fn get_selection_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +97,7 @@ impl BackupSelectionsListMemberBuilder {
     }
     /// <p>Uniquely identifies a backup plan.</p>
     pub fn set_backup_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_plan_id = input;
-        self
+        self.backup_plan_id = input; self
     }
     /// <p>Uniquely identifies a backup plan.</p>
     pub fn get_backup_plan_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +110,7 @@ impl BackupSelectionsListMemberBuilder {
     }
     /// <p>The date and time a backup plan is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The date and time a backup plan is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -129,8 +125,7 @@ impl BackupSelectionsListMemberBuilder {
     /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional.</p>
     /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creator_request_id = input;
-        self
+        self.creator_request_id = input; self
     }
     /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional.</p>
     /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
@@ -144,8 +139,7 @@ impl BackupSelectionsListMemberBuilder {
     }
     /// <p>Specifies the IAM role Amazon Resource Name (ARN) to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_role_arn = input;
-        self
+        self.iam_role_arn = input; self
     }
     /// <p>Specifies the IAM role Amazon Resource Name (ARN) to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,12 +148,19 @@ impl BackupSelectionsListMemberBuilder {
     /// Consumes the builder and constructs a [`BackupSelectionsListMember`](crate::types::BackupSelectionsListMember).
     pub fn build(self) -> crate::types::BackupSelectionsListMember {
         crate::types::BackupSelectionsListMember {
-            selection_id: self.selection_id,
-            selection_name: self.selection_name,
-            backup_plan_id: self.backup_plan_id,
-            creation_date: self.creation_date,
-            creator_request_id: self.creator_request_id,
-            iam_role_arn: self.iam_role_arn,
+            selection_id: self.selection_id
+            ,
+            selection_name: self.selection_name
+            ,
+            backup_plan_id: self.backup_plan_id
+            ,
+            creation_date: self.creation_date
+            ,
+            creator_request_id: self.creator_request_id
+            ,
+            iam_role_arn: self.iam_role_arn
+            ,
         }
     }
 }
+

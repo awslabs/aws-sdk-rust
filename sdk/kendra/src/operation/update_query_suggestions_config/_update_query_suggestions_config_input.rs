@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateQuerySuggestionsConfigInput {
+pub struct UpdateQuerySuggestionsConfigInput  {
     /// <p>The identifier of the index with query suggestions you want to update.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>Set the mode to <code>ENABLED</code> or <code>LEARN_ONLY</code>.</p>
@@ -29,15 +29,15 @@ pub struct UpdateQuerySuggestionsConfigInput {
     /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
     pub attribute_suggestions_config: ::std::option::Option<crate::types::AttributeSuggestionsUpdateConfig>,
 }
-impl UpdateQuerySuggestionsConfigInput {
+impl  UpdateQuerySuggestionsConfigInput  {
     /// <p>The identifier of the index with query suggestions you want to update.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>Set the mode to <code>ENABLED</code> or <code>LEARN_ONLY</code>.</p>
     /// <p>By default, Amazon Kendra enables query suggestions. <code>LEARN_ONLY</code> mode allows you to turn off query suggestions. You can to update this at any time.</p>
     /// <p>In <code>LEARN_ONLY</code> mode, Amazon Kendra continues to learn from new queries to keep suggestions up to date for when you are ready to switch to ENABLED mode again.</p>
-    pub fn mode(&self) -> ::std::option::Option<&crate::types::Mode> {
+    pub fn mode(&self) -> ::std::option::Option<& crate::types::Mode> {
         self.mode.as_ref()
     }
     /// <p>How recent your queries are in your query log time window.</p>
@@ -66,7 +66,7 @@ impl UpdateQuerySuggestionsConfigInput {
         self.minimum_query_count
     }
     /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
-    pub fn attribute_suggestions_config(&self) -> ::std::option::Option<&crate::types::AttributeSuggestionsUpdateConfig> {
+    pub fn attribute_suggestions_config(&self) -> ::std::option::Option<& crate::types::AttributeSuggestionsUpdateConfig> {
         self.attribute_suggestions_config.as_ref()
     }
 }
@@ -98,8 +98,7 @@ impl UpdateQuerySuggestionsConfigInputBuilder {
     }
     /// <p>The identifier of the index with query suggestions you want to update.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>The identifier of the index with query suggestions you want to update.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +115,7 @@ impl UpdateQuerySuggestionsConfigInputBuilder {
     /// <p>By default, Amazon Kendra enables query suggestions. <code>LEARN_ONLY</code> mode allows you to turn off query suggestions. You can to update this at any time.</p>
     /// <p>In <code>LEARN_ONLY</code> mode, Amazon Kendra continues to learn from new queries to keep suggestions up to date for when you are ready to switch to ENABLED mode again.</p>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::Mode>) -> Self {
-        self.mode = input;
-        self
+        self.mode = input; self
     }
     /// <p>Set the mode to <code>ENABLED</code> or <code>LEARN_ONLY</code>.</p>
     /// <p>By default, Amazon Kendra enables query suggestions. <code>LEARN_ONLY</code> mode allows you to turn off query suggestions. You can to update this at any time.</p>
@@ -136,8 +134,7 @@ impl UpdateQuerySuggestionsConfigInputBuilder {
     /// <p>The time window is the number of days from current day to past days.</p>
     /// <p>By default, Amazon Kendra sets this to 180.</p>
     pub fn set_query_log_look_back_window_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.query_log_look_back_window_in_days = input;
-        self
+        self.query_log_look_back_window_in_days = input; self
     }
     /// <p>How recent your queries are in your query log time window.</p>
     /// <p>The time window is the number of days from current day to past days.</p>
@@ -158,8 +155,7 @@ impl UpdateQuerySuggestionsConfigInputBuilder {
     /// <p>If you set to <code>FALSE</code>, Amazon Kendra only considers queries searched at least <code>MinimumQueryCount</code> times across <code>MinimumNumberOfQueryingUsers</code> unique users for suggestions.</p>
     /// <p>If you set to <code>TRUE</code>, Amazon Kendra ignores all user information and learns from all queries.</p>
     pub fn set_include_queries_without_user_information(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_queries_without_user_information = input;
-        self
+        self.include_queries_without_user_information = input; self
     }
     /// <p><code>TRUE</code> to include queries without user information (i.e. all queries, irrespective of the user), otherwise <code>FALSE</code> to only include queries with user information.</p>
     /// <p>If you pass user information to Amazon Kendra along with the queries, you can set this flag to <code>FALSE</code> and instruct Amazon Kendra to only consider queries with user information.</p>
@@ -179,8 +175,7 @@ impl UpdateQuerySuggestionsConfigInputBuilder {
     /// <p>Increasing this number might decrease the number of suggestions. However, this ensures a query is searched by many users and is truly popular to suggest to users.</p>
     /// <p>How you tune this setting depends on your specific needs.</p>
     pub fn set_minimum_number_of_querying_users(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.minimum_number_of_querying_users = input;
-        self
+        self.minimum_number_of_querying_users = input; self
     }
     /// <p>The minimum number of unique users who must search a query in order for the query to be eligible to suggest to your users.</p>
     /// <p>Increasing this number might decrease the number of suggestions. However, this ensures a query is searched by many users and is truly popular to suggest to users.</p>
@@ -199,8 +194,7 @@ impl UpdateQuerySuggestionsConfigInputBuilder {
     /// <p>Decreasing this number increases the number of suggestions. However, this affects the quality of suggestions as it sets a low bar for a query to be considered popular to suggest to users.</p>
     /// <p>How you tune this setting depends on your specific needs.</p>
     pub fn set_minimum_query_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.minimum_query_count = input;
-        self
+        self.minimum_query_count = input; self
     }
     /// <p>The the minimum number of times a query must be searched in order to be eligible to suggest to your users.</p>
     /// <p>Decreasing this number increases the number of suggestions. However, this affects the quality of suggestions as it sets a low bar for a query to be considered popular to suggest to users.</p>
@@ -215,28 +209,32 @@ impl UpdateQuerySuggestionsConfigInputBuilder {
     }
     /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
     pub fn set_attribute_suggestions_config(mut self, input: ::std::option::Option<crate::types::AttributeSuggestionsUpdateConfig>) -> Self {
-        self.attribute_suggestions_config = input;
-        self
+        self.attribute_suggestions_config = input; self
     }
     /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
     pub fn get_attribute_suggestions_config(&self) -> &::std::option::Option<crate::types::AttributeSuggestionsUpdateConfig> {
         &self.attribute_suggestions_config
     }
     /// Consumes the builder and constructs a [`UpdateQuerySuggestionsConfigInput`](crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigInput {
-            index_id: self.index_id,
-            mode: self.mode,
-            query_log_look_back_window_in_days: self.query_log_look_back_window_in_days,
-            include_queries_without_user_information: self.include_queries_without_user_information,
-            minimum_number_of_querying_users: self.minimum_number_of_querying_users,
-            minimum_query_count: self.minimum_query_count,
-            attribute_suggestions_config: self.attribute_suggestions_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigInput {
+                index_id: self.index_id
+                ,
+                mode: self.mode
+                ,
+                query_log_look_back_window_in_days: self.query_log_look_back_window_in_days
+                ,
+                include_queries_without_user_information: self.include_queries_without_user_information
+                ,
+                minimum_number_of_querying_users: self.minimum_number_of_querying_users
+                ,
+                minimum_query_count: self.minimum_query_count
+                ,
+                attribute_suggestions_config: self.attribute_suggestions_config
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Provides details about the <code>DecisionTaskScheduled</code> event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DecisionTaskScheduledEventAttributes {
+pub struct DecisionTaskScheduledEventAttributes  {
     /// <p>The name of the task list in which the decision task was scheduled.</p>
     pub task_list: ::std::option::Option<crate::types::TaskList>,
     /// <p>A task priority that, if set, specifies the priority for this decision task. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
@@ -15,23 +15,23 @@ pub struct DecisionTaskScheduledEventAttributes {
     /// <p>The maximum amount of time the decision task can wait to be assigned to a worker.</p>
     pub schedule_to_start_timeout: ::std::option::Option<::std::string::String>,
 }
-impl DecisionTaskScheduledEventAttributes {
+impl  DecisionTaskScheduledEventAttributes  {
     /// <p>The name of the task list in which the decision task was scheduled.</p>
-    pub fn task_list(&self) -> ::std::option::Option<&crate::types::TaskList> {
+    pub fn task_list(&self) -> ::std::option::Option<& crate::types::TaskList> {
         self.task_list.as_ref()
     }
     /// <p>A task priority that, if set, specifies the priority for this decision task. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    pub fn task_priority(&self) -> ::std::option::Option<&str> {
+    pub fn task_priority(&self) -> ::std::option::Option<& str> {
         self.task_priority.as_deref()
     }
     /// <p>The maximum duration for this decision task. The task is considered timed out if it doesn't completed within this duration.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    pub fn start_to_close_timeout(&self) -> ::std::option::Option<&str> {
+    pub fn start_to_close_timeout(&self) -> ::std::option::Option<& str> {
         self.start_to_close_timeout.as_deref()
     }
     /// <p>The maximum amount of time the decision task can wait to be assigned to a worker.</p>
-    pub fn schedule_to_start_timeout(&self) -> ::std::option::Option<&str> {
+    pub fn schedule_to_start_timeout(&self) -> ::std::option::Option<& str> {
         self.schedule_to_start_timeout.as_deref()
     }
 }
@@ -60,8 +60,7 @@ impl DecisionTaskScheduledEventAttributesBuilder {
     }
     /// <p>The name of the task list in which the decision task was scheduled.</p>
     pub fn set_task_list(mut self, input: ::std::option::Option<crate::types::TaskList>) -> Self {
-        self.task_list = input;
-        self
+        self.task_list = input; self
     }
     /// <p>The name of the task list in which the decision task was scheduled.</p>
     pub fn get_task_list(&self) -> &::std::option::Option<crate::types::TaskList> {
@@ -76,8 +75,7 @@ impl DecisionTaskScheduledEventAttributesBuilder {
     /// <p>A task priority that, if set, specifies the priority for this decision task. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     pub fn set_task_priority(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_priority = input;
-        self
+        self.task_priority = input; self
     }
     /// <p>A task priority that, if set, specifies the priority for this decision task. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
@@ -93,8 +91,7 @@ impl DecisionTaskScheduledEventAttributesBuilder {
     /// <p>The maximum duration for this decision task. The task is considered timed out if it doesn't completed within this duration.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
     pub fn set_start_to_close_timeout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start_to_close_timeout = input;
-        self
+        self.start_to_close_timeout = input; self
     }
     /// <p>The maximum duration for this decision task. The task is considered timed out if it doesn't completed within this duration.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
@@ -108,8 +105,7 @@ impl DecisionTaskScheduledEventAttributesBuilder {
     }
     /// <p>The maximum amount of time the decision task can wait to be assigned to a worker.</p>
     pub fn set_schedule_to_start_timeout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schedule_to_start_timeout = input;
-        self
+        self.schedule_to_start_timeout = input; self
     }
     /// <p>The maximum amount of time the decision task can wait to be assigned to a worker.</p>
     pub fn get_schedule_to_start_timeout(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,10 +114,15 @@ impl DecisionTaskScheduledEventAttributesBuilder {
     /// Consumes the builder and constructs a [`DecisionTaskScheduledEventAttributes`](crate::types::DecisionTaskScheduledEventAttributes).
     pub fn build(self) -> crate::types::DecisionTaskScheduledEventAttributes {
         crate::types::DecisionTaskScheduledEventAttributes {
-            task_list: self.task_list,
-            task_priority: self.task_priority,
-            start_to_close_timeout: self.start_to_close_timeout,
-            schedule_to_start_timeout: self.schedule_to_start_timeout,
+            task_list: self.task_list
+            ,
+            task_priority: self.task_priority
+            ,
+            start_to_close_timeout: self.start_to_close_timeout
+            ,
+            schedule_to_start_timeout: self.schedule_to_start_timeout
+            ,
         }
     }
 }
+

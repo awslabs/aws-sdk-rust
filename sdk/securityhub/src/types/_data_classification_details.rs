@@ -3,19 +3,19 @@
 /// <p>Provides details about sensitive data that was detected on a resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataClassificationDetails {
+pub struct DataClassificationDetails  {
     /// <p>The path to the folder or file that contains the sensitive data.</p>
     pub detailed_results_location: ::std::option::Option<::std::string::String>,
     /// <p>The details about the sensitive data that was detected on the resource.</p>
     pub result: ::std::option::Option<crate::types::ClassificationResult>,
 }
-impl DataClassificationDetails {
+impl  DataClassificationDetails  {
     /// <p>The path to the folder or file that contains the sensitive data.</p>
-    pub fn detailed_results_location(&self) -> ::std::option::Option<&str> {
+    pub fn detailed_results_location(&self) -> ::std::option::Option<& str> {
         self.detailed_results_location.as_deref()
     }
     /// <p>The details about the sensitive data that was detected on the resource.</p>
-    pub fn result(&self) -> ::std::option::Option<&crate::types::ClassificationResult> {
+    pub fn result(&self) -> ::std::option::Option<& crate::types::ClassificationResult> {
         self.result.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl DataClassificationDetailsBuilder {
     }
     /// <p>The path to the folder or file that contains the sensitive data.</p>
     pub fn set_detailed_results_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detailed_results_location = input;
-        self
+        self.detailed_results_location = input; self
     }
     /// <p>The path to the folder or file that contains the sensitive data.</p>
     pub fn get_detailed_results_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl DataClassificationDetailsBuilder {
     }
     /// <p>The details about the sensitive data that was detected on the resource.</p>
     pub fn set_result(mut self, input: ::std::option::Option<crate::types::ClassificationResult>) -> Self {
-        self.result = input;
-        self
+        self.result = input; self
     }
     /// <p>The details about the sensitive data that was detected on the resource.</p>
     pub fn get_result(&self) -> &::std::option::Option<crate::types::ClassificationResult> {
@@ -65,8 +63,11 @@ impl DataClassificationDetailsBuilder {
     /// Consumes the builder and constructs a [`DataClassificationDetails`](crate::types::DataClassificationDetails).
     pub fn build(self) -> crate::types::DataClassificationDetails {
         crate::types::DataClassificationDetails {
-            detailed_results_location: self.detailed_results_location,
-            result: self.result,
+            detailed_results_location: self.detailed_results_location
+            ,
+            result: self.result
+            ,
         }
     }
 }
+

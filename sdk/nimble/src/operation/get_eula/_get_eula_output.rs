@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEulaOutput {
+pub struct GetEulaOutput  {
     /// <p>The EULA.</p>
     pub eula: ::std::option::Option<crate::types::Eula>,
     _request_id: Option<String>,
 }
-impl GetEulaOutput {
+impl  GetEulaOutput  {
     /// <p>The EULA.</p>
-    pub fn eula(&self) -> ::std::option::Option<&crate::types::Eula> {
+    pub fn eula(&self) -> ::std::option::Option<& crate::types::Eula> {
         self.eula.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetEulaOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetEulaOutput {
     /// Creates a new builder-style object to manufacture [`GetEulaOutput`](crate::operation::get_eula::GetEulaOutput).
     pub fn builder() -> crate::operation::get_eula::builders::GetEulaOutputBuilder {
@@ -40,27 +40,28 @@ impl GetEulaOutputBuilder {
     }
     /// <p>The EULA.</p>
     pub fn set_eula(mut self, input: ::std::option::Option<crate::types::Eula>) -> Self {
-        self.eula = input;
-        self
+        self.eula = input; self
     }
     /// <p>The EULA.</p>
     pub fn get_eula(&self) -> &::std::option::Option<crate::types::Eula> {
         &self.eula
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetEulaOutput`](crate::operation::get_eula::GetEulaOutput).
     pub fn build(self) -> crate::operation::get_eula::GetEulaOutput {
         crate::operation::get_eula::GetEulaOutput {
-            eula: self.eula,
+            eula: self.eula
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,22 +3,23 @@
 /// Pipelines to restart.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RestartChannelPipelinesInput {
+pub struct RestartChannelPipelinesInput  {
     /// ID of channel
     pub channel_id: ::std::option::Option<::std::string::String>,
     /// An array of pipelines to restart in this channel. Format PIPELINE_0 or PIPELINE_1.
-    pub pipeline_ids: ::std::option::Option<::std::vec::Vec<crate::types::ChannelPipelineIdToRestart>>,
+    pub pipeline_ids: ::std::option::Option<::std::vec::Vec::<crate::types::ChannelPipelineIdToRestart>>,
 }
-impl RestartChannelPipelinesInput {
+impl  RestartChannelPipelinesInput  {
     /// ID of channel
-    pub fn channel_id(&self) -> ::std::option::Option<&str> {
+    pub fn channel_id(&self) -> ::std::option::Option<& str> {
         self.channel_id.as_deref()
     }
     /// An array of pipelines to restart in this channel. Format PIPELINE_0 or PIPELINE_1.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pipeline_ids.is_none()`.
-    pub fn pipeline_ids(&self) -> &[crate::types::ChannelPipelineIdToRestart] {
-        self.pipeline_ids.as_deref().unwrap_or_default()
+    pub fn pipeline_ids(&self) -> & [crate::types::ChannelPipelineIdToRestart] {
+        self.pipeline_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RestartChannelPipelinesInput {
@@ -33,7 +34,7 @@ impl RestartChannelPipelinesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestartChannelPipelinesInputBuilder {
     pub(crate) channel_id: ::std::option::Option<::std::string::String>,
-    pub(crate) pipeline_ids: ::std::option::Option<::std::vec::Vec<crate::types::ChannelPipelineIdToRestart>>,
+    pub(crate) pipeline_ids: ::std::option::Option<::std::vec::Vec::<crate::types::ChannelPipelineIdToRestart>>,
 }
 impl RestartChannelPipelinesInputBuilder {
     /// ID of channel
@@ -44,8 +45,7 @@ impl RestartChannelPipelinesInputBuilder {
     }
     /// ID of channel
     pub fn set_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_id = input;
-        self
+        self.channel_id = input; self
     }
     /// ID of channel
     pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,29 +58,28 @@ impl RestartChannelPipelinesInputBuilder {
     /// An array of pipelines to restart in this channel. Format PIPELINE_0 or PIPELINE_1.
     pub fn pipeline_ids(mut self, input: crate::types::ChannelPipelineIdToRestart) -> Self {
         let mut v = self.pipeline_ids.unwrap_or_default();
-        v.push(input);
-        self.pipeline_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.pipeline_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// An array of pipelines to restart in this channel. Format PIPELINE_0 or PIPELINE_1.
-    pub fn set_pipeline_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelPipelineIdToRestart>>) -> Self {
-        self.pipeline_ids = input;
-        self
+    pub fn set_pipeline_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ChannelPipelineIdToRestart>>) -> Self {
+        self.pipeline_ids = input; self
     }
     /// An array of pipelines to restart in this channel. Format PIPELINE_0 or PIPELINE_1.
-    pub fn get_pipeline_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelPipelineIdToRestart>> {
+    pub fn get_pipeline_ids(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ChannelPipelineIdToRestart>> {
         &self.pipeline_ids
     }
     /// Consumes the builder and constructs a [`RestartChannelPipelinesInput`](crate::operation::restart_channel_pipelines::RestartChannelPipelinesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::restart_channel_pipelines::RestartChannelPipelinesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::restart_channel_pipelines::RestartChannelPipelinesInput {
-            channel_id: self.channel_id,
-            pipeline_ids: self.pipeline_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::restart_channel_pipelines::RestartChannelPipelinesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::restart_channel_pipelines::RestartChannelPipelinesInput {
+                channel_id: self.channel_id
+                ,
+                pipeline_ids: self.pipeline_ids
+                ,
+            }
+        )
     }
 }
+

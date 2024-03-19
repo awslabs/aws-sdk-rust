@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDistributionsInput {
+pub struct GetDistributionsInput  {
     /// <p>The name of the distribution for which to return information.</p>
     /// <p>When omitted, the response includes all of your distributions in the Amazon Web Services Region where the request is made.</p>
     pub distribution_name: ::std::option::Option<::std::string::String>,
@@ -10,15 +10,15 @@ pub struct GetDistributionsInput {
     /// <p>To get a page token, perform an initial <code>GetDistributions</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub page_token: ::std::option::Option<::std::string::String>,
 }
-impl GetDistributionsInput {
+impl  GetDistributionsInput  {
     /// <p>The name of the distribution for which to return information.</p>
     /// <p>When omitted, the response includes all of your distributions in the Amazon Web Services Region where the request is made.</p>
-    pub fn distribution_name(&self) -> ::std::option::Option<&str> {
+    pub fn distribution_name(&self) -> ::std::option::Option<& str> {
         self.distribution_name.as_deref()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetDistributions</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
-    pub fn page_token(&self) -> ::std::option::Option<&str> {
+    pub fn page_token(&self) -> ::std::option::Option<& str> {
         self.page_token.as_deref()
     }
 }
@@ -46,8 +46,7 @@ impl GetDistributionsInputBuilder {
     /// <p>The name of the distribution for which to return information.</p>
     /// <p>When omitted, the response includes all of your distributions in the Amazon Web Services Region where the request is made.</p>
     pub fn set_distribution_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.distribution_name = input;
-        self
+        self.distribution_name = input; self
     }
     /// <p>The name of the distribution for which to return information.</p>
     /// <p>When omitted, the response includes all of your distributions in the Amazon Web Services Region where the request is made.</p>
@@ -63,8 +62,7 @@ impl GetDistributionsInputBuilder {
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetDistributions</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.page_token = input;
-        self
+        self.page_token = input; self
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetDistributions</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
@@ -72,12 +70,15 @@ impl GetDistributionsInputBuilder {
         &self.page_token
     }
     /// Consumes the builder and constructs a [`GetDistributionsInput`](crate::operation::get_distributions::GetDistributionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_distributions::GetDistributionsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_distributions::GetDistributionsInput {
-            distribution_name: self.distribution_name,
-            page_token: self.page_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_distributions::GetDistributionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_distributions::GetDistributionsInput {
+                distribution_name: self.distribution_name
+                ,
+                page_token: self.page_token
+                ,
+            }
+        )
     }
 }
+

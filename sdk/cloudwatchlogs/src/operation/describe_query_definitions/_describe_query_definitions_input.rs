@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeQueryDefinitionsInput {
+pub struct DescribeQueryDefinitionsInput  {
     /// <p>Use this parameter to filter your results to only the query definitions that have names that start with the prefix you specify.</p>
     pub query_definition_name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>Limits the number of returned query definitions to the specified number.</p>
@@ -10,9 +10,9 @@ pub struct DescribeQueryDefinitionsInput {
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeQueryDefinitionsInput {
+impl  DescribeQueryDefinitionsInput  {
     /// <p>Use this parameter to filter your results to only the query definitions that have names that start with the prefix you specify.</p>
-    pub fn query_definition_name_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn query_definition_name_prefix(&self) -> ::std::option::Option<& str> {
         self.query_definition_name_prefix.as_deref()
     }
     /// <p>Limits the number of returned query definitions to the specified number.</p>
@@ -20,7 +20,7 @@ impl DescribeQueryDefinitionsInput {
         self.max_results
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl DescribeQueryDefinitionsInputBuilder {
     }
     /// <p>Use this parameter to filter your results to only the query definitions that have names that start with the prefix you specify.</p>
     pub fn set_query_definition_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_definition_name_prefix = input;
-        self
+        self.query_definition_name_prefix = input; self
     }
     /// <p>Use this parameter to filter your results to only the query definitions that have names that start with the prefix you specify.</p>
     pub fn get_query_definition_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl DescribeQueryDefinitionsInputBuilder {
     }
     /// <p>Limits the number of returned query definitions to the specified number.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Limits the number of returned query definitions to the specified number.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -75,24 +73,24 @@ impl DescribeQueryDefinitionsInputBuilder {
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeQueryDefinitionsInput`](crate::operation::describe_query_definitions::DescribeQueryDefinitionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_query_definitions::DescribeQueryDefinitionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_query_definitions::DescribeQueryDefinitionsInput {
-            query_definition_name_prefix: self.query_definition_name_prefix,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_query_definitions::DescribeQueryDefinitionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_query_definitions::DescribeQueryDefinitionsInput {
+                query_definition_name_prefix: self.query_definition_name_prefix
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

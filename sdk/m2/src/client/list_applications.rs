@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListApplications`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token to control the number of applications displayed in the list.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of applications to return.</p><br>
     ///   - [`names(impl Into<String>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::names) / [`set_names(Option<Vec::<String>>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::set_names):<br>required: **false**<br><p>The names of the applications.</p><br>
     ///   - [`environment_id(impl Into<String>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::environment_id) / [`set_environment_id(Option<String>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::set_environment_id):<br>required: **false**<br><p>The unique identifier of the runtime environment where the applications are deployed.</p><br>
-    /// - On success, responds with [`ListApplicationsOutput`](crate::operation::list_applications::ListApplicationsOutput) with field(s):
+                            /// - On success, responds with [`ListApplicationsOutput`](crate::operation::list_applications::ListApplicationsOutput) with field(s):
     ///   - [`applications(Vec::<ApplicationSummary>)`](crate::operation::list_applications::ListApplicationsOutput::applications): <p>Returns a list of summary details for all the applications in a runtime environment.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_applications::ListApplicationsOutput::next_token): <p>A pagination token that's returned when the response doesn't contain all applications.</p>
-    /// - On failure, responds with [`SdkError<ListApplicationsError>`](crate::operation::list_applications::ListApplicationsError)
+                            /// - On failure, responds with [`SdkError<ListApplicationsError>`](crate::operation::list_applications::ListApplicationsError)
     pub fn list_applications(&self) -> crate::operation::list_applications::builders::ListApplicationsFluentBuilder {
-        crate::operation::list_applications::builders::ListApplicationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_applications::builders::ListApplicationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

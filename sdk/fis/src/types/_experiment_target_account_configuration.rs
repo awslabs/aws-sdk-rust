@@ -3,7 +3,7 @@
 /// <p>Describes a target account configuration for an experiment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExperimentTargetAccountConfiguration {
+pub struct ExperimentTargetAccountConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of an IAM role for the target account.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the target account.</p>
@@ -11,17 +11,17 @@ pub struct ExperimentTargetAccountConfiguration {
     /// <p>The description of the target account.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl ExperimentTargetAccountConfiguration {
+impl  ExperimentTargetAccountConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of an IAM role for the target account.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the target account.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The description of the target account.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ExperimentTargetAccountConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role for the target account.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role for the target account.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ExperimentTargetAccountConfigurationBuilder {
     }
     /// <p>The Amazon Web Services account ID of the target account.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID of the target account.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl ExperimentTargetAccountConfigurationBuilder {
     }
     /// <p>The description of the target account.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the target account.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl ExperimentTargetAccountConfigurationBuilder {
     /// Consumes the builder and constructs a [`ExperimentTargetAccountConfiguration`](crate::types::ExperimentTargetAccountConfiguration).
     pub fn build(self) -> crate::types::ExperimentTargetAccountConfiguration {
         crate::types::ExperimentTargetAccountConfiguration {
-            role_arn: self.role_arn,
-            account_id: self.account_id,
-            description: self.description,
+            role_arn: self.role_arn
+            ,
+            account_id: self.account_id
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

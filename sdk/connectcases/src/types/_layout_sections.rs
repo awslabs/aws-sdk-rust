@@ -3,16 +3,17 @@
 /// <p>Ordered list containing different kinds of sections that can be added. A LayoutSections object can only contain one section.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LayoutSections {
+pub struct LayoutSections  {
     /// <p>Ordered list containing different kinds of sections that can be added.</p>
-    pub sections: ::std::option::Option<::std::vec::Vec<crate::types::Section>>,
+    pub sections: ::std::option::Option<::std::vec::Vec::<crate::types::Section>>,
 }
-impl LayoutSections {
+impl  LayoutSections  {
     /// <p>Ordered list containing different kinds of sections that can be added.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sections.is_none()`.
-    pub fn sections(&self) -> &[crate::types::Section] {
-        self.sections.as_deref().unwrap_or_default()
+    pub fn sections(&self) -> & [crate::types::Section] {
+        self.sections.as_deref()
+        .unwrap_or_default()
     }
 }
 impl LayoutSections {
@@ -26,7 +27,7 @@ impl LayoutSections {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LayoutSectionsBuilder {
-    pub(crate) sections: ::std::option::Option<::std::vec::Vec<crate::types::Section>>,
+    pub(crate) sections: ::std::option::Option<::std::vec::Vec::<crate::types::Section>>,
 }
 impl LayoutSectionsBuilder {
     /// Appends an item to `sections`.
@@ -36,21 +37,24 @@ impl LayoutSectionsBuilder {
     /// <p>Ordered list containing different kinds of sections that can be added.</p>
     pub fn sections(mut self, input: crate::types::Section) -> Self {
         let mut v = self.sections.unwrap_or_default();
-        v.push(input);
-        self.sections = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sections = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Ordered list containing different kinds of sections that can be added.</p>
-    pub fn set_sections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Section>>) -> Self {
-        self.sections = input;
-        self
+    pub fn set_sections(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Section>>) -> Self {
+        self.sections = input; self
     }
     /// <p>Ordered list containing different kinds of sections that can be added.</p>
-    pub fn get_sections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Section>> {
+    pub fn get_sections(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Section>> {
         &self.sections
     }
     /// Consumes the builder and constructs a [`LayoutSections`](crate::types::LayoutSections).
     pub fn build(self) -> crate::types::LayoutSections {
-        crate::types::LayoutSections { sections: self.sections }
+        crate::types::LayoutSections {
+            sections: self.sections
+            ,
+        }
     }
 }
+

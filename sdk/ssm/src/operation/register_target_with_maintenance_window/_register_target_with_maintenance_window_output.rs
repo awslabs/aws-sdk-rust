@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterTargetWithMaintenanceWindowOutput {
+pub struct RegisterTargetWithMaintenanceWindowOutput  {
     /// <p>The ID of the target definition in this maintenance window.</p>
     pub window_target_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl RegisterTargetWithMaintenanceWindowOutput {
+impl  RegisterTargetWithMaintenanceWindowOutput  {
     /// <p>The ID of the target definition in this maintenance window.</p>
-    pub fn window_target_id(&self) -> ::std::option::Option<&str> {
+    pub fn window_target_id(&self) -> ::std::option::Option<& str> {
         self.window_target_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for RegisterTargetWithMaintenanceWindowOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RegisterTargetWithMaintenanceWindowOutput {
     /// Creates a new builder-style object to manufacture [`RegisterTargetWithMaintenanceWindowOutput`](crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowOutput).
     pub fn builder() -> crate::operation::register_target_with_maintenance_window::builders::RegisterTargetWithMaintenanceWindowOutputBuilder {
@@ -40,27 +40,28 @@ impl RegisterTargetWithMaintenanceWindowOutputBuilder {
     }
     /// <p>The ID of the target definition in this maintenance window.</p>
     pub fn set_window_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.window_target_id = input;
-        self
+        self.window_target_id = input; self
     }
     /// <p>The ID of the target definition in this maintenance window.</p>
     pub fn get_window_target_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.window_target_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RegisterTargetWithMaintenanceWindowOutput`](crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowOutput).
     pub fn build(self) -> crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowOutput {
         crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowOutput {
-            window_target_id: self.window_target_id,
+            window_target_id: self.window_target_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCommentsForPullRequestInput {
+pub struct GetCommentsForPullRequestInput  {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
     pub pull_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository that contains the pull request. Requirement is conditional: <code>repositoryName</code> must be specified when <code>beforeCommitId</code> and <code>afterCommitId</code> are included.</p>
@@ -16,25 +16,25 @@ pub struct GetCommentsForPullRequestInput {
     /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments. You can return up to 500 comments with a single request.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl GetCommentsForPullRequestInput {
+impl  GetCommentsForPullRequestInput  {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn pull_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn pull_request_id(&self) -> ::std::option::Option<& str> {
         self.pull_request_id.as_deref()
     }
     /// <p>The name of the repository that contains the pull request. Requirement is conditional: <code>repositoryName</code> must be specified when <code>beforeCommitId</code> and <code>afterCommitId</code> are included.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created. Requirement is conditional: <code>beforeCommitId</code> must be specified when <code>repositoryName</code> is included.</p>
-    pub fn before_commit_id(&self) -> ::std::option::Option<&str> {
+    pub fn before_commit_id(&self) -> ::std::option::Option<& str> {
         self.before_commit_id.as_deref()
     }
     /// <p>The full commit ID of the commit in the source branch that was the tip of the branch at the time the comment was made. Requirement is conditional: <code>afterCommitId</code> must be specified when <code>repositoryName</code> is included.</p>
-    pub fn after_commit_id(&self) -> ::std::option::Option<&str> {
+    pub fn after_commit_id(&self) -> ::std::option::Option<& str> {
         self.after_commit_id.as_deref()
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments. You can return up to 500 comments with a single request.</p>
@@ -69,8 +69,7 @@ impl GetCommentsForPullRequestInputBuilder {
     }
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
     pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pull_request_id = input;
-        self
+        self.pull_request_id = input; self
     }
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
     pub fn get_pull_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl GetCommentsForPullRequestInputBuilder {
     }
     /// <p>The name of the repository that contains the pull request. Requirement is conditional: <code>repositoryName</code> must be specified when <code>beforeCommitId</code> and <code>afterCommitId</code> are included.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The name of the repository that contains the pull request. Requirement is conditional: <code>repositoryName</code> must be specified when <code>beforeCommitId</code> and <code>afterCommitId</code> are included.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl GetCommentsForPullRequestInputBuilder {
     }
     /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created. Requirement is conditional: <code>beforeCommitId</code> must be specified when <code>repositoryName</code> is included.</p>
     pub fn set_before_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.before_commit_id = input;
-        self
+        self.before_commit_id = input; self
     }
     /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created. Requirement is conditional: <code>beforeCommitId</code> must be specified when <code>repositoryName</code> is included.</p>
     pub fn get_before_commit_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl GetCommentsForPullRequestInputBuilder {
     }
     /// <p>The full commit ID of the commit in the source branch that was the tip of the branch at the time the comment was made. Requirement is conditional: <code>afterCommitId</code> must be specified when <code>repositoryName</code> is included.</p>
     pub fn set_after_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.after_commit_id = input;
-        self
+        self.after_commit_id = input; self
     }
     /// <p>The full commit ID of the commit in the source branch that was the tip of the branch at the time the comment was made. Requirement is conditional: <code>afterCommitId</code> must be specified when <code>repositoryName</code> is included.</p>
     pub fn get_after_commit_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl GetCommentsForPullRequestInputBuilder {
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,27 +134,30 @@ impl GetCommentsForPullRequestInputBuilder {
     }
     /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments. You can return up to 500 comments with a single request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments. You can return up to 500 comments with a single request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetCommentsForPullRequestInput`](crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestInput {
-            pull_request_id: self.pull_request_id,
-            repository_name: self.repository_name,
-            before_commit_id: self.before_commit_id,
-            after_commit_id: self.after_commit_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestInput {
+                pull_request_id: self.pull_request_id
+                ,
+                repository_name: self.repository_name
+                ,
+                before_commit_id: self.before_commit_id
+                ,
+                after_commit_id: self.after_commit_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

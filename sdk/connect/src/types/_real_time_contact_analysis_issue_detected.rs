@@ -3,15 +3,14 @@
 /// <p>Potential issues that are detected based on an artificial intelligence analysis of each turn in the conversation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RealTimeContactAnalysisIssueDetected {
+pub struct RealTimeContactAnalysisIssueDetected  {
     /// <p>List of the transcript items (segments) that are associated with a given issue.</p>
-    pub transcript_items: ::std::vec::Vec<crate::types::RealTimeContactAnalysisTranscriptItemWithContent>,
+    pub transcript_items: ::std::vec::Vec::<crate::types::RealTimeContactAnalysisTranscriptItemWithContent>,
 }
-impl RealTimeContactAnalysisIssueDetected {
+impl  RealTimeContactAnalysisIssueDetected  {
     /// <p>List of the transcript items (segments) that are associated with a given issue.</p>
-    pub fn transcript_items(&self) -> &[crate::types::RealTimeContactAnalysisTranscriptItemWithContent] {
-        use std::ops::Deref;
-        self.transcript_items.deref()
+    pub fn transcript_items(&self) -> & [crate::types::RealTimeContactAnalysisTranscriptItemWithContent] {
+        use std::ops::Deref; self.transcript_items.deref()
     }
 }
 impl RealTimeContactAnalysisIssueDetected {
@@ -25,7 +24,7 @@ impl RealTimeContactAnalysisIssueDetected {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RealTimeContactAnalysisIssueDetectedBuilder {
-    pub(crate) transcript_items: ::std::option::Option<::std::vec::Vec<crate::types::RealTimeContactAnalysisTranscriptItemWithContent>>,
+    pub(crate) transcript_items: ::std::option::Option<::std::vec::Vec::<crate::types::RealTimeContactAnalysisTranscriptItemWithContent>>,
 }
 impl RealTimeContactAnalysisIssueDetectedBuilder {
     /// Appends an item to `transcript_items`.
@@ -35,35 +34,31 @@ impl RealTimeContactAnalysisIssueDetectedBuilder {
     /// <p>List of the transcript items (segments) that are associated with a given issue.</p>
     pub fn transcript_items(mut self, input: crate::types::RealTimeContactAnalysisTranscriptItemWithContent) -> Self {
         let mut v = self.transcript_items.unwrap_or_default();
-        v.push(input);
-        self.transcript_items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.transcript_items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of the transcript items (segments) that are associated with a given issue.</p>
-    pub fn set_transcript_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RealTimeContactAnalysisTranscriptItemWithContent>>,
-    ) -> Self {
-        self.transcript_items = input;
-        self
+    pub fn set_transcript_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RealTimeContactAnalysisTranscriptItemWithContent>>) -> Self {
+        self.transcript_items = input; self
     }
     /// <p>List of the transcript items (segments) that are associated with a given issue.</p>
-    pub fn get_transcript_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RealTimeContactAnalysisTranscriptItemWithContent>> {
+    pub fn get_transcript_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RealTimeContactAnalysisTranscriptItemWithContent>> {
         &self.transcript_items
     }
     /// Consumes the builder and constructs a [`RealTimeContactAnalysisIssueDetected`](crate::types::RealTimeContactAnalysisIssueDetected).
     /// This method will fail if any of the following fields are not set:
     /// - [`transcript_items`](crate::types::builders::RealTimeContactAnalysisIssueDetectedBuilder::transcript_items)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::RealTimeContactAnalysisIssueDetected, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RealTimeContactAnalysisIssueDetected {
-            transcript_items: self.transcript_items.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "transcript_items",
-                    "transcript_items was not specified but it is required when building RealTimeContactAnalysisIssueDetected",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::RealTimeContactAnalysisIssueDetected, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::RealTimeContactAnalysisIssueDetected {
+                transcript_items: self.transcript_items
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("transcript_items", "transcript_items was not specified but it is required when building RealTimeContactAnalysisIssueDetected")
+                    )?
+                ,
+            }
+        )
     }
 }
+

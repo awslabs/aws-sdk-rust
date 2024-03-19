@@ -3,22 +3,23 @@
 /// <p>Contains the application runtime IDs and their supported DPU sizes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationDpuSizes {
+pub struct ApplicationDpuSizes  {
     /// <p>The name of the supported application runtime (for example, <code>Athena notebook version 1</code>).</p>
     pub application_runtime_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of the supported DPU sizes that the application runtime supports.</p>
-    pub supported_dpu_sizes: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub supported_dpu_sizes: ::std::option::Option<::std::vec::Vec::<i32>>,
 }
-impl ApplicationDpuSizes {
+impl  ApplicationDpuSizes  {
     /// <p>The name of the supported application runtime (for example, <code>Athena notebook version 1</code>).</p>
-    pub fn application_runtime_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_runtime_id(&self) -> ::std::option::Option<& str> {
         self.application_runtime_id.as_deref()
     }
     /// <p>A list of the supported DPU sizes that the application runtime supports.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_dpu_sizes.is_none()`.
-    pub fn supported_dpu_sizes(&self) -> &[i32] {
-        self.supported_dpu_sizes.as_deref().unwrap_or_default()
+    pub fn supported_dpu_sizes(&self) -> & [i32] {
+        self.supported_dpu_sizes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ApplicationDpuSizes {
@@ -33,7 +34,7 @@ impl ApplicationDpuSizes {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationDpuSizesBuilder {
     pub(crate) application_runtime_id: ::std::option::Option<::std::string::String>,
-    pub(crate) supported_dpu_sizes: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub(crate) supported_dpu_sizes: ::std::option::Option<::std::vec::Vec::<i32>>,
 }
 impl ApplicationDpuSizesBuilder {
     /// <p>The name of the supported application runtime (for example, <code>Athena notebook version 1</code>).</p>
@@ -43,8 +44,7 @@ impl ApplicationDpuSizesBuilder {
     }
     /// <p>The name of the supported application runtime (for example, <code>Athena notebook version 1</code>).</p>
     pub fn set_application_runtime_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_runtime_id = input;
-        self
+        self.application_runtime_id = input; self
     }
     /// <p>The name of the supported application runtime (for example, <code>Athena notebook version 1</code>).</p>
     pub fn get_application_runtime_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl ApplicationDpuSizesBuilder {
     /// <p>A list of the supported DPU sizes that the application runtime supports.</p>
     pub fn supported_dpu_sizes(mut self, input: i32) -> Self {
         let mut v = self.supported_dpu_sizes.unwrap_or_default();
-        v.push(input);
-        self.supported_dpu_sizes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_dpu_sizes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the supported DPU sizes that the application runtime supports.</p>
-    pub fn set_supported_dpu_sizes(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
-        self.supported_dpu_sizes = input;
-        self
+    pub fn set_supported_dpu_sizes(mut self, input: ::std::option::Option<::std::vec::Vec::<i32>>) -> Self {
+        self.supported_dpu_sizes = input; self
     }
     /// <p>A list of the supported DPU sizes that the application runtime supports.</p>
-    pub fn get_supported_dpu_sizes(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+    pub fn get_supported_dpu_sizes(&self) -> &::std::option::Option<::std::vec::Vec::<i32>> {
         &self.supported_dpu_sizes
     }
     /// Consumes the builder and constructs a [`ApplicationDpuSizes`](crate::types::ApplicationDpuSizes).
     pub fn build(self) -> crate::types::ApplicationDpuSizes {
         crate::types::ApplicationDpuSizes {
-            application_runtime_id: self.application_runtime_id,
-            supported_dpu_sizes: self.supported_dpu_sizes,
+            application_runtime_id: self.application_runtime_id
+            ,
+            supported_dpu_sizes: self.supported_dpu_sizes
+            ,
         }
     }
 }
+

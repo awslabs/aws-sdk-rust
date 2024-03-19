@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListExports`](crate::operation::list_exports::builders::ListExportsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_exports::builders::ListExportsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`table_arn(impl Into<String>)`](crate::operation::list_exports::builders::ListExportsFluentBuilder::table_arn) / [`set_table_arn(Option<String>)`](crate::operation::list_exports::builders::ListExportsFluentBuilder::set_table_arn):<br>required: **false**<br><p>The Amazon Resource Name (ARN) associated with the exported table.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_exports::builders::ListExportsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_exports::builders::ListExportsFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results to return per page.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_exports::builders::ListExportsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_exports::builders::ListExportsFluentBuilder::set_next_token):<br>required: **false**<br><p>An optional string that, if supplied, must be copied from the output of a previous call to <code>ListExports</code>. When provided in this manner, the API fetches the next page of results.</p><br>
-    /// - On success, responds with [`ListExportsOutput`](crate::operation::list_exports::ListExportsOutput) with field(s):
+                            /// - On success, responds with [`ListExportsOutput`](crate::operation::list_exports::ListExportsOutput) with field(s):
     ///   - [`export_summaries(Option<Vec::<ExportSummary>>)`](crate::operation::list_exports::ListExportsOutput::export_summaries): <p>A list of <code>ExportSummary</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_exports::ListExportsOutput::next_token): <p>If this value is returned, there are additional results to be displayed. To retrieve them, call <code>ListExports</code> again, with <code>NextToken</code> set to this value.</p>
-    /// - On failure, responds with [`SdkError<ListExportsError>`](crate::operation::list_exports::ListExportsError)
+                            /// - On failure, responds with [`SdkError<ListExportsError>`](crate::operation::list_exports::ListExportsError)
     pub fn list_exports(&self) -> crate::operation::list_exports::builders::ListExportsFluentBuilder {
-        crate::operation::list_exports::builders::ListExportsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_exports::builders::ListExportsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,23 +3,23 @@
 /// <p>The metadata for a service, such as the service code and available attribute names.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Service {
+pub struct Service  {
     /// <p>The code for the Amazon Web Services service.</p>
     pub service_code: ::std::string::String,
     /// <p>The attributes that are available for this service.</p>
-    pub attribute_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub attribute_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl Service {
+impl  Service  {
     /// <p>The code for the Amazon Web Services service.</p>
-    pub fn service_code(&self) -> &str {
-        use std::ops::Deref;
-        self.service_code.deref()
+    pub fn service_code(&self) -> & str {
+        use std::ops::Deref; self.service_code.deref()
     }
     /// <p>The attributes that are available for this service.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_names.is_none()`.
-    pub fn attribute_names(&self) -> &[::std::string::String] {
-        self.attribute_names.as_deref().unwrap_or_default()
+    pub fn attribute_names(&self) -> & [::std::string::String] {
+        self.attribute_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Service {
@@ -34,7 +34,7 @@ impl Service {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ServiceBuilder {
     pub(crate) service_code: ::std::option::Option<::std::string::String>,
-    pub(crate) attribute_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) attribute_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ServiceBuilder {
     /// <p>The code for the Amazon Web Services service.</p>
@@ -45,8 +45,7 @@ impl ServiceBuilder {
     }
     /// <p>The code for the Amazon Web Services service.</p>
     pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_code = input;
-        self
+        self.service_code = input; self
     }
     /// <p>The code for the Amazon Web Services service.</p>
     pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,31 +58,33 @@ impl ServiceBuilder {
     /// <p>The attributes that are available for this service.</p>
     pub fn attribute_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.attribute_names.unwrap_or_default();
-        v.push(input.into());
-        self.attribute_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.attribute_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The attributes that are available for this service.</p>
-    pub fn set_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.attribute_names = input;
-        self
+    pub fn set_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.attribute_names = input; self
     }
     /// <p>The attributes that are available for this service.</p>
-    pub fn get_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.attribute_names
     }
     /// Consumes the builder and constructs a [`Service`](crate::types::Service).
     /// This method will fail if any of the following fields are not set:
     /// - [`service_code`](crate::types::builders::ServiceBuilder::service_code)
     pub fn build(self) -> ::std::result::Result<crate::types::Service, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Service {
-            service_code: self.service_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "service_code",
-                    "service_code was not specified but it is required when building Service",
-                )
-            })?,
-            attribute_names: self.attribute_names,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Service {
+                service_code: self.service_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("service_code", "service_code was not specified but it is required when building Service")
+                    )?
+                ,
+                attribute_names: self.attribute_names
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPermissionSetsProvisionedToAccountInput {
+pub struct ListPermissionSetsProvisionedToAccountInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Web Services account from which to list the assignments.</p>
@@ -14,17 +14,17 @@ pub struct ListPermissionSetsProvisionedToAccountInput {
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListPermissionSetsProvisionedToAccountInput {
+impl  ListPermissionSetsProvisionedToAccountInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn instance_arn(&self) -> ::std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The identifier of the Amazon Web Services account from which to list the assignments.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The status object for the permission set provisioning operation.</p>
-    pub fn provisioning_status(&self) -> ::std::option::Option<&crate::types::ProvisioningStatus> {
+    pub fn provisioning_status(&self) -> ::std::option::Option<& crate::types::ProvisioningStatus> {
         self.provisioning_status.as_ref()
     }
     /// <p>The maximum number of results to display for the assignment.</p>
@@ -32,7 +32,7 @@ impl ListPermissionSetsProvisionedToAccountInput {
         self.max_results
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl ListPermissionSetsProvisionedToAccountInputBuilder {
     }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_arn = input;
-        self
+        self.instance_arn = input; self
     }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl ListPermissionSetsProvisionedToAccountInputBuilder {
     }
     /// <p>The identifier of the Amazon Web Services account from which to list the assignments.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The identifier of the Amazon Web Services account from which to list the assignments.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl ListPermissionSetsProvisionedToAccountInputBuilder {
     }
     /// <p>The status object for the permission set provisioning operation.</p>
     pub fn set_provisioning_status(mut self, input: ::std::option::Option<crate::types::ProvisioningStatus>) -> Self {
-        self.provisioning_status = input;
-        self
+        self.provisioning_status = input; self
     }
     /// <p>The status object for the permission set provisioning operation.</p>
     pub fn get_provisioning_status(&self) -> &::std::option::Option<crate::types::ProvisioningStatus> {
@@ -105,8 +102,7 @@ impl ListPermissionSetsProvisionedToAccountInputBuilder {
     }
     /// <p>The maximum number of results to display for the assignment.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to display for the assignment.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -119,28 +115,28 @@ impl ListPermissionSetsProvisionedToAccountInputBuilder {
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListPermissionSetsProvisionedToAccountInput`](crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountInput {
-                instance_arn: self.instance_arn,
-                account_id: self.account_id,
-                provisioning_status: self.provisioning_status,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                instance_arn: self.instance_arn
+                ,
+                account_id: self.account_id
+                ,
+                provisioning_status: self.provisioning_status
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

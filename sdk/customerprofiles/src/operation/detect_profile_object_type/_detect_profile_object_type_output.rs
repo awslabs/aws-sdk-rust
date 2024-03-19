@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetectProfileObjectTypeOutput {
+pub struct DetectProfileObjectTypeOutput  {
     /// <p>Detected <code>ProfileObjectType</code> mappings from given objects. A maximum of one mapping is supported.</p>
-    pub detected_profile_object_types: ::std::option::Option<::std::vec::Vec<crate::types::DetectedProfileObjectType>>,
+    pub detected_profile_object_types: ::std::option::Option<::std::vec::Vec::<crate::types::DetectedProfileObjectType>>,
     _request_id: Option<String>,
 }
-impl DetectProfileObjectTypeOutput {
+impl  DetectProfileObjectTypeOutput  {
     /// <p>Detected <code>ProfileObjectType</code> mappings from given objects. A maximum of one mapping is supported.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.detected_profile_object_types.is_none()`.
-    pub fn detected_profile_object_types(&self) -> &[crate::types::DetectedProfileObjectType] {
-        self.detected_profile_object_types.as_deref().unwrap_or_default()
+    pub fn detected_profile_object_types(&self) -> & [crate::types::DetectedProfileObjectType] {
+        self.detected_profile_object_types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DetectProfileObjectTypeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DetectProfileObjectTypeOutput {
     /// Creates a new builder-style object to manufacture [`DetectProfileObjectTypeOutput`](crate::operation::detect_profile_object_type::DetectProfileObjectTypeOutput).
     pub fn builder() -> crate::operation::detect_profile_object_type::builders::DetectProfileObjectTypeOutputBuilder {
@@ -31,7 +32,7 @@ impl DetectProfileObjectTypeOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectProfileObjectTypeOutputBuilder {
-    pub(crate) detected_profile_object_types: ::std::option::Option<::std::vec::Vec<crate::types::DetectedProfileObjectType>>,
+    pub(crate) detected_profile_object_types: ::std::option::Option<::std::vec::Vec::<crate::types::DetectedProfileObjectType>>,
     _request_id: Option<String>,
 }
 impl DetectProfileObjectTypeOutputBuilder {
@@ -42,36 +43,34 @@ impl DetectProfileObjectTypeOutputBuilder {
     /// <p>Detected <code>ProfileObjectType</code> mappings from given objects. A maximum of one mapping is supported.</p>
     pub fn detected_profile_object_types(mut self, input: crate::types::DetectedProfileObjectType) -> Self {
         let mut v = self.detected_profile_object_types.unwrap_or_default();
-        v.push(input);
-        self.detected_profile_object_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.detected_profile_object_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Detected <code>ProfileObjectType</code> mappings from given objects. A maximum of one mapping is supported.</p>
-    pub fn set_detected_profile_object_types(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DetectedProfileObjectType>>,
-    ) -> Self {
-        self.detected_profile_object_types = input;
-        self
+    pub fn set_detected_profile_object_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DetectedProfileObjectType>>) -> Self {
+        self.detected_profile_object_types = input; self
     }
     /// <p>Detected <code>ProfileObjectType</code> mappings from given objects. A maximum of one mapping is supported.</p>
-    pub fn get_detected_profile_object_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DetectedProfileObjectType>> {
+    pub fn get_detected_profile_object_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DetectedProfileObjectType>> {
         &self.detected_profile_object_types
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DetectProfileObjectTypeOutput`](crate::operation::detect_profile_object_type::DetectProfileObjectTypeOutput).
     pub fn build(self) -> crate::operation::detect_profile_object_type::DetectProfileObjectTypeOutput {
         crate::operation::detect_profile_object_type::DetectProfileObjectTypeOutput {
-            detected_profile_object_types: self.detected_profile_object_types,
+            detected_profile_object_types: self.detected_profile_object_types
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

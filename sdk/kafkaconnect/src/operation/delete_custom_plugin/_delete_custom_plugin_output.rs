@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCustomPluginOutput {
+pub struct DeleteCustomPluginOutput  {
     /// <p>The Amazon Resource Name (ARN) of the custom plugin that you requested to delete.</p>
     pub custom_plugin_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the custom plugin.</p>
     pub custom_plugin_state: ::std::option::Option<crate::types::CustomPluginState>,
     _request_id: Option<String>,
 }
-impl DeleteCustomPluginOutput {
+impl  DeleteCustomPluginOutput  {
     /// <p>The Amazon Resource Name (ARN) of the custom plugin that you requested to delete.</p>
-    pub fn custom_plugin_arn(&self) -> ::std::option::Option<&str> {
+    pub fn custom_plugin_arn(&self) -> ::std::option::Option<& str> {
         self.custom_plugin_arn.as_deref()
     }
     /// <p>The state of the custom plugin.</p>
-    pub fn custom_plugin_state(&self) -> ::std::option::Option<&crate::types::CustomPluginState> {
+    pub fn custom_plugin_state(&self) -> ::std::option::Option<& crate::types::CustomPluginState> {
         self.custom_plugin_state.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteCustomPluginOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteCustomPluginOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomPluginOutput`](crate::operation::delete_custom_plugin::DeleteCustomPluginOutput).
     pub fn builder() -> crate::operation::delete_custom_plugin::builders::DeleteCustomPluginOutputBuilder {
@@ -47,8 +47,7 @@ impl DeleteCustomPluginOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the custom plugin that you requested to delete.</p>
     pub fn set_custom_plugin_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_plugin_arn = input;
-        self
+        self.custom_plugin_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the custom plugin that you requested to delete.</p>
     pub fn get_custom_plugin_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl DeleteCustomPluginOutputBuilder {
     }
     /// <p>The state of the custom plugin.</p>
     pub fn set_custom_plugin_state(mut self, input: ::std::option::Option<crate::types::CustomPluginState>) -> Self {
-        self.custom_plugin_state = input;
-        self
+        self.custom_plugin_state = input; self
     }
     /// <p>The state of the custom plugin.</p>
     pub fn get_custom_plugin_state(&self) -> &::std::option::Option<crate::types::CustomPluginState> {
         &self.custom_plugin_state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteCustomPluginOutput`](crate::operation::delete_custom_plugin::DeleteCustomPluginOutput).
     pub fn build(self) -> crate::operation::delete_custom_plugin::DeleteCustomPluginOutput {
         crate::operation::delete_custom_plugin::DeleteCustomPluginOutput {
-            custom_plugin_arn: self.custom_plugin_arn,
-            custom_plugin_state: self.custom_plugin_state,
+            custom_plugin_arn: self.custom_plugin_arn
+            ,
+            custom_plugin_state: self.custom_plugin_state
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

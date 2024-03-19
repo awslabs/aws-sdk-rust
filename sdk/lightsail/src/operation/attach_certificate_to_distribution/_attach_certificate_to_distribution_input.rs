@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttachCertificateToDistributionInput {
+pub struct AttachCertificateToDistributionInput  {
     /// <p>The name of the distribution that the certificate will be attached to.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
     pub distribution_name: ::std::option::Option<::std::string::String>,
@@ -13,10 +13,10 @@ pub struct AttachCertificateToDistributionInput {
     /// </note>
     pub certificate_name: ::std::option::Option<::std::string::String>,
 }
-impl AttachCertificateToDistributionInput {
+impl  AttachCertificateToDistributionInput  {
     /// <p>The name of the distribution that the certificate will be attached to.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
-    pub fn distribution_name(&self) -> ::std::option::Option<&str> {
+    pub fn distribution_name(&self) -> ::std::option::Option<& str> {
         self.distribution_name.as_deref()
     }
     /// <p>The name of the certificate to attach to a distribution.</p>
@@ -24,7 +24,7 @@ impl AttachCertificateToDistributionInput {
     /// <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you can specify.</p><note>
     /// <p>This is the name of the certificate resource type and is used only to reference the certificate in other API actions. It can be different than the domain name of the certificate. For example, your certificate name might be <code>WordPress-Blog-Certificate</code> and the domain name of the certificate might be <code>example.com</code>.</p>
     /// </note>
-    pub fn certificate_name(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_name(&self) -> ::std::option::Option<& str> {
         self.certificate_name.as_deref()
     }
 }
@@ -53,8 +53,7 @@ impl AttachCertificateToDistributionInputBuilder {
     /// <p>The name of the distribution that the certificate will be attached to.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
     pub fn set_distribution_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.distribution_name = input;
-        self
+        self.distribution_name = input; self
     }
     /// <p>The name of the distribution that the certificate will be attached to.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
@@ -77,8 +76,7 @@ impl AttachCertificateToDistributionInputBuilder {
     /// <p>This is the name of the certificate resource type and is used only to reference the certificate in other API actions. It can be different than the domain name of the certificate. For example, your certificate name might be <code>WordPress-Blog-Certificate</code> and the domain name of the certificate might be <code>example.com</code>.</p>
     /// </note>
     pub fn set_certificate_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_name = input;
-        self
+        self.certificate_name = input; self
     }
     /// <p>The name of the certificate to attach to a distribution.</p>
     /// <p>Only certificates with a status of <code>ISSUED</code> can be attached to a distribution.</p>
@@ -89,17 +87,15 @@ impl AttachCertificateToDistributionInputBuilder {
         &self.certificate_name
     }
     /// Consumes the builder and constructs a [`AttachCertificateToDistributionInput`](crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionInput {
-                distribution_name: self.distribution_name,
-                certificate_name: self.certificate_name,
-            },
+                distribution_name: self.distribution_name
+                ,
+                certificate_name: self.certificate_name
+                ,
+            }
         )
     }
 }
+

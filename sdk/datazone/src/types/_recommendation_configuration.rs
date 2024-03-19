@@ -3,11 +3,11 @@
 /// <p>The recommendation to be updated as part of the <code>UpdateDataSource</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecommendationConfiguration {
+pub struct RecommendationConfiguration  {
     /// <p>Specifies whether automatic business name generation is to be enabled or not as part of the recommendation configuration.</p>
     pub enable_business_name_generation: ::std::option::Option<bool>,
 }
-impl RecommendationConfiguration {
+impl  RecommendationConfiguration  {
     /// <p>Specifies whether automatic business name generation is to be enabled or not as part of the recommendation configuration.</p>
     pub fn enable_business_name_generation(&self) -> ::std::option::Option<bool> {
         self.enable_business_name_generation
@@ -34,8 +34,7 @@ impl RecommendationConfigurationBuilder {
     }
     /// <p>Specifies whether automatic business name generation is to be enabled or not as part of the recommendation configuration.</p>
     pub fn set_enable_business_name_generation(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_business_name_generation = input;
-        self
+        self.enable_business_name_generation = input; self
     }
     /// <p>Specifies whether automatic business name generation is to be enabled or not as part of the recommendation configuration.</p>
     pub fn get_enable_business_name_generation(&self) -> &::std::option::Option<bool> {
@@ -44,7 +43,9 @@ impl RecommendationConfigurationBuilder {
     /// Consumes the builder and constructs a [`RecommendationConfiguration`](crate::types::RecommendationConfiguration).
     pub fn build(self) -> crate::types::RecommendationConfiguration {
         crate::types::RecommendationConfiguration {
-            enable_business_name_generation: self.enable_business_name_generation,
+            enable_business_name_generation: self.enable_business_name_generation
+            ,
         }
     }
 }
+

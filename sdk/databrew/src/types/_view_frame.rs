@@ -3,13 +3,13 @@
 /// <p>Represents the data being transformed during an action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ViewFrame {
+pub struct ViewFrame  {
     /// <p>The starting index for the range of columns to return in the view frame.</p>
     pub start_column_index: i32,
     /// <p>The number of columns to include in the view frame, beginning with the <code>StartColumnIndex</code> value and ignoring any columns in the <code>HiddenColumns</code> list.</p>
     pub column_range: ::std::option::Option<i32>,
     /// <p>A list of columns to hide in the view frame.</p>
-    pub hidden_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub hidden_columns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The starting index for the range of rows to return in the view frame.</p>
     pub start_row_index: ::std::option::Option<i32>,
     /// <p>The number of rows to include in the view frame, beginning with the <code>StartRowIndex</code> value.</p>
@@ -17,7 +17,7 @@ pub struct ViewFrame {
     /// <p>Controls if analytics computation is enabled or disabled. Enabled by default.</p>
     pub analytics: ::std::option::Option<crate::types::AnalyticsMode>,
 }
-impl ViewFrame {
+impl  ViewFrame  {
     /// <p>The starting index for the range of columns to return in the view frame.</p>
     pub fn start_column_index(&self) -> i32 {
         self.start_column_index
@@ -27,10 +27,11 @@ impl ViewFrame {
         self.column_range
     }
     /// <p>A list of columns to hide in the view frame.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hidden_columns.is_none()`.
-    pub fn hidden_columns(&self) -> &[::std::string::String] {
-        self.hidden_columns.as_deref().unwrap_or_default()
+    pub fn hidden_columns(&self) -> & [::std::string::String] {
+        self.hidden_columns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The starting index for the range of rows to return in the view frame.</p>
     pub fn start_row_index(&self) -> ::std::option::Option<i32> {
@@ -41,7 +42,7 @@ impl ViewFrame {
         self.row_range
     }
     /// <p>Controls if analytics computation is enabled or disabled. Enabled by default.</p>
-    pub fn analytics(&self) -> ::std::option::Option<&crate::types::AnalyticsMode> {
+    pub fn analytics(&self) -> ::std::option::Option<& crate::types::AnalyticsMode> {
         self.analytics.as_ref()
     }
 }
@@ -58,7 +59,7 @@ impl ViewFrame {
 pub struct ViewFrameBuilder {
     pub(crate) start_column_index: ::std::option::Option<i32>,
     pub(crate) column_range: ::std::option::Option<i32>,
-    pub(crate) hidden_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) hidden_columns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) start_row_index: ::std::option::Option<i32>,
     pub(crate) row_range: ::std::option::Option<i32>,
     pub(crate) analytics: ::std::option::Option<crate::types::AnalyticsMode>,
@@ -72,8 +73,7 @@ impl ViewFrameBuilder {
     }
     /// <p>The starting index for the range of columns to return in the view frame.</p>
     pub fn set_start_column_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.start_column_index = input;
-        self
+        self.start_column_index = input; self
     }
     /// <p>The starting index for the range of columns to return in the view frame.</p>
     pub fn get_start_column_index(&self) -> &::std::option::Option<i32> {
@@ -86,8 +86,7 @@ impl ViewFrameBuilder {
     }
     /// <p>The number of columns to include in the view frame, beginning with the <code>StartColumnIndex</code> value and ignoring any columns in the <code>HiddenColumns</code> list.</p>
     pub fn set_column_range(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.column_range = input;
-        self
+        self.column_range = input; self
     }
     /// <p>The number of columns to include in the view frame, beginning with the <code>StartColumnIndex</code> value and ignoring any columns in the <code>HiddenColumns</code> list.</p>
     pub fn get_column_range(&self) -> &::std::option::Option<i32> {
@@ -100,17 +99,16 @@ impl ViewFrameBuilder {
     /// <p>A list of columns to hide in the view frame.</p>
     pub fn hidden_columns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.hidden_columns.unwrap_or_default();
-        v.push(input.into());
-        self.hidden_columns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.hidden_columns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of columns to hide in the view frame.</p>
-    pub fn set_hidden_columns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.hidden_columns = input;
-        self
+    pub fn set_hidden_columns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.hidden_columns = input; self
     }
     /// <p>A list of columns to hide in the view frame.</p>
-    pub fn get_hidden_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_hidden_columns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.hidden_columns
     }
     /// <p>The starting index for the range of rows to return in the view frame.</p>
@@ -120,8 +118,7 @@ impl ViewFrameBuilder {
     }
     /// <p>The starting index for the range of rows to return in the view frame.</p>
     pub fn set_start_row_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.start_row_index = input;
-        self
+        self.start_row_index = input; self
     }
     /// <p>The starting index for the range of rows to return in the view frame.</p>
     pub fn get_start_row_index(&self) -> &::std::option::Option<i32> {
@@ -134,8 +131,7 @@ impl ViewFrameBuilder {
     }
     /// <p>The number of rows to include in the view frame, beginning with the <code>StartRowIndex</code> value.</p>
     pub fn set_row_range(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.row_range = input;
-        self
+        self.row_range = input; self
     }
     /// <p>The number of rows to include in the view frame, beginning with the <code>StartRowIndex</code> value.</p>
     pub fn get_row_range(&self) -> &::std::option::Option<i32> {
@@ -148,8 +144,7 @@ impl ViewFrameBuilder {
     }
     /// <p>Controls if analytics computation is enabled or disabled. Enabled by default.</p>
     pub fn set_analytics(mut self, input: ::std::option::Option<crate::types::AnalyticsMode>) -> Self {
-        self.analytics = input;
-        self
+        self.analytics = input; self
     }
     /// <p>Controls if analytics computation is enabled or disabled. Enabled by default.</p>
     pub fn get_analytics(&self) -> &::std::option::Option<crate::types::AnalyticsMode> {
@@ -159,18 +154,25 @@ impl ViewFrameBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`start_column_index`](crate::types::builders::ViewFrameBuilder::start_column_index)
     pub fn build(self) -> ::std::result::Result<crate::types::ViewFrame, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ViewFrame {
-            start_column_index: self.start_column_index.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start_column_index",
-                    "start_column_index was not specified but it is required when building ViewFrame",
-                )
-            })?,
-            column_range: self.column_range,
-            hidden_columns: self.hidden_columns,
-            start_row_index: self.start_row_index,
-            row_range: self.row_range,
-            analytics: self.analytics,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ViewFrame {
+                start_column_index: self.start_column_index
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start_column_index", "start_column_index was not specified but it is required when building ViewFrame")
+                    )?
+                ,
+                column_range: self.column_range
+                ,
+                hidden_columns: self.hidden_columns
+                ,
+                start_row_index: self.start_row_index
+                ,
+                row_range: self.row_range
+                ,
+                analytics: self.analytics
+                ,
+            }
+        )
     }
 }
+

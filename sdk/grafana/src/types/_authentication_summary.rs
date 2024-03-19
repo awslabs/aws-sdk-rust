@@ -3,20 +3,19 @@
 /// <p>A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication, and whether that authentication is fully configured.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AuthenticationSummary {
+pub struct AuthenticationSummary  {
     /// <p>Specifies whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.</p>
-    pub providers: ::std::vec::Vec<crate::types::AuthenticationProviderTypes>,
+    pub providers: ::std::vec::Vec::<crate::types::AuthenticationProviderTypes>,
     /// <p>Specifies whether the workplace's user authentication method is fully configured.</p>
     pub saml_configuration_status: ::std::option::Option<crate::types::SamlConfigurationStatus>,
 }
-impl AuthenticationSummary {
+impl  AuthenticationSummary  {
     /// <p>Specifies whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.</p>
-    pub fn providers(&self) -> &[crate::types::AuthenticationProviderTypes] {
-        use std::ops::Deref;
-        self.providers.deref()
+    pub fn providers(&self) -> & [crate::types::AuthenticationProviderTypes] {
+        use std::ops::Deref; self.providers.deref()
     }
     /// <p>Specifies whether the workplace's user authentication method is fully configured.</p>
-    pub fn saml_configuration_status(&self) -> ::std::option::Option<&crate::types::SamlConfigurationStatus> {
+    pub fn saml_configuration_status(&self) -> ::std::option::Option<& crate::types::SamlConfigurationStatus> {
         self.saml_configuration_status.as_ref()
     }
 }
@@ -31,7 +30,7 @@ impl AuthenticationSummary {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthenticationSummaryBuilder {
-    pub(crate) providers: ::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProviderTypes>>,
+    pub(crate) providers: ::std::option::Option<::std::vec::Vec::<crate::types::AuthenticationProviderTypes>>,
     pub(crate) saml_configuration_status: ::std::option::Option<crate::types::SamlConfigurationStatus>,
 }
 impl AuthenticationSummaryBuilder {
@@ -42,17 +41,16 @@ impl AuthenticationSummaryBuilder {
     /// <p>Specifies whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.</p>
     pub fn providers(mut self, input: crate::types::AuthenticationProviderTypes) -> Self {
         let mut v = self.providers.unwrap_or_default();
-        v.push(input);
-        self.providers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.providers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.</p>
-    pub fn set_providers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProviderTypes>>) -> Self {
-        self.providers = input;
-        self
+    pub fn set_providers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AuthenticationProviderTypes>>) -> Self {
+        self.providers = input; self
     }
     /// <p>Specifies whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.</p>
-    pub fn get_providers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProviderTypes>> {
+    pub fn get_providers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AuthenticationProviderTypes>> {
         &self.providers
     }
     /// <p>Specifies whether the workplace's user authentication method is fully configured.</p>
@@ -62,8 +60,7 @@ impl AuthenticationSummaryBuilder {
     }
     /// <p>Specifies whether the workplace's user authentication method is fully configured.</p>
     pub fn set_saml_configuration_status(mut self, input: ::std::option::Option<crate::types::SamlConfigurationStatus>) -> Self {
-        self.saml_configuration_status = input;
-        self
+        self.saml_configuration_status = input; self
     }
     /// <p>Specifies whether the workplace's user authentication method is fully configured.</p>
     pub fn get_saml_configuration_status(&self) -> &::std::option::Option<crate::types::SamlConfigurationStatus> {
@@ -73,14 +70,17 @@ impl AuthenticationSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`providers`](crate::types::builders::AuthenticationSummaryBuilder::providers)
     pub fn build(self) -> ::std::result::Result<crate::types::AuthenticationSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AuthenticationSummary {
-            providers: self.providers.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "providers",
-                    "providers was not specified but it is required when building AuthenticationSummary",
-                )
-            })?,
-            saml_configuration_status: self.saml_configuration_status,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AuthenticationSummary {
+                providers: self.providers
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("providers", "providers was not specified but it is required when building AuthenticationSummary")
+                    )?
+                ,
+                saml_configuration_status: self.saml_configuration_status
+                ,
+            }
+        )
     }
 }
+

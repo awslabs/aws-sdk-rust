@@ -3,7 +3,7 @@
 /// <p>The message in the downlink queue.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DownlinkQueueMessage {
+pub struct DownlinkQueueMessage  {
     /// <p>The message ID assigned by IoT Wireless to each downlink message, which helps identify the message.</p>
     pub message_id: ::std::option::Option<::std::string::String>,
     /// <p>The transmit mode to use for sending data to the wireless device. This can be <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).</p>
@@ -13,9 +13,9 @@ pub struct DownlinkQueueMessage {
     /// <p>LoRaWAN router info.</p>
     pub lo_ra_wan: ::std::option::Option<crate::types::LoRaWanSendDataToDevice>,
 }
-impl DownlinkQueueMessage {
+impl  DownlinkQueueMessage  {
     /// <p>The message ID assigned by IoT Wireless to each downlink message, which helps identify the message.</p>
-    pub fn message_id(&self) -> ::std::option::Option<&str> {
+    pub fn message_id(&self) -> ::std::option::Option<& str> {
         self.message_id.as_deref()
     }
     /// <p>The transmit mode to use for sending data to the wireless device. This can be <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).</p>
@@ -23,11 +23,11 @@ impl DownlinkQueueMessage {
         self.transmit_mode
     }
     /// <p>The time at which Iot Wireless received the downlink message.</p>
-    pub fn received_at(&self) -> ::std::option::Option<&str> {
+    pub fn received_at(&self) -> ::std::option::Option<& str> {
         self.received_at.as_deref()
     }
     /// <p>LoRaWAN router info.</p>
-    pub fn lo_ra_wan(&self) -> ::std::option::Option<&crate::types::LoRaWanSendDataToDevice> {
+    pub fn lo_ra_wan(&self) -> ::std::option::Option<& crate::types::LoRaWanSendDataToDevice> {
         self.lo_ra_wan.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl DownlinkQueueMessageBuilder {
     }
     /// <p>The message ID assigned by IoT Wireless to each downlink message, which helps identify the message.</p>
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message_id = input;
-        self
+        self.message_id = input; self
     }
     /// <p>The message ID assigned by IoT Wireless to each downlink message, which helps identify the message.</p>
     pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl DownlinkQueueMessageBuilder {
     }
     /// <p>The transmit mode to use for sending data to the wireless device. This can be <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).</p>
     pub fn set_transmit_mode(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.transmit_mode = input;
-        self
+        self.transmit_mode = input; self
     }
     /// <p>The transmit mode to use for sending data to the wireless device. This can be <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).</p>
     pub fn get_transmit_mode(&self) -> &::std::option::Option<i32> {
@@ -83,8 +81,7 @@ impl DownlinkQueueMessageBuilder {
     }
     /// <p>The time at which Iot Wireless received the downlink message.</p>
     pub fn set_received_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.received_at = input;
-        self
+        self.received_at = input; self
     }
     /// <p>The time at which Iot Wireless received the downlink message.</p>
     pub fn get_received_at(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl DownlinkQueueMessageBuilder {
     }
     /// <p>LoRaWAN router info.</p>
     pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanSendDataToDevice>) -> Self {
-        self.lo_ra_wan = input;
-        self
+        self.lo_ra_wan = input; self
     }
     /// <p>LoRaWAN router info.</p>
     pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanSendDataToDevice> {
@@ -107,10 +103,15 @@ impl DownlinkQueueMessageBuilder {
     /// Consumes the builder and constructs a [`DownlinkQueueMessage`](crate::types::DownlinkQueueMessage).
     pub fn build(self) -> crate::types::DownlinkQueueMessage {
         crate::types::DownlinkQueueMessage {
-            message_id: self.message_id,
-            transmit_mode: self.transmit_mode,
-            received_at: self.received_at,
-            lo_ra_wan: self.lo_ra_wan,
+            message_id: self.message_id
+            ,
+            transmit_mode: self.transmit_mode
+            ,
+            received_at: self.received_at
+            ,
+            lo_ra_wan: self.lo_ra_wan
+            ,
         }
     }
 }
+

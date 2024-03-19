@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetTraceSummaries`](crate::operation::get_trace_summaries::builders::GetTraceSummariesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_trace_summaries::builders::GetTraceSummariesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`start_time(DateTime)`](crate::operation::get_trace_summaries::builders::GetTraceSummariesFluentBuilder::start_time) / [`set_start_time(Option<DateTime>)`](crate::operation::get_trace_summaries::builders::GetTraceSummariesFluentBuilder::set_start_time):<br>required: **true**<br><p>The start of the time frame for which to retrieve traces.</p><br>
     ///   - [`end_time(DateTime)`](crate::operation::get_trace_summaries::builders::GetTraceSummariesFluentBuilder::end_time) / [`set_end_time(Option<DateTime>)`](crate::operation::get_trace_summaries::builders::GetTraceSummariesFluentBuilder::set_end_time):<br>required: **true**<br><p>The end of the time frame for which to retrieve traces.</p><br>
     ///   - [`time_range_type(TimeRangeType)`](crate::operation::get_trace_summaries::builders::GetTraceSummariesFluentBuilder::time_range_type) / [`set_time_range_type(Option<TimeRangeType>)`](crate::operation::get_trace_summaries::builders::GetTraceSummariesFluentBuilder::set_time_range_type):<br>required: **false**<br><p>A parameter to indicate whether to query trace summaries by TraceId, Event (trace update time), or Service (segment end time).</p><br>
@@ -11,13 +11,14 @@ impl super::Client {
     ///   - [`sampling_strategy(SamplingStrategy)`](crate::operation::get_trace_summaries::builders::GetTraceSummariesFluentBuilder::sampling_strategy) / [`set_sampling_strategy(Option<SamplingStrategy>)`](crate::operation::get_trace_summaries::builders::GetTraceSummariesFluentBuilder::set_sampling_strategy):<br>required: **false**<br><p>A parameter to indicate whether to enable sampling on trace summaries. Input parameters are Name and Value.</p><br>
     ///   - [`filter_expression(impl Into<String>)`](crate::operation::get_trace_summaries::builders::GetTraceSummariesFluentBuilder::filter_expression) / [`set_filter_expression(Option<String>)`](crate::operation::get_trace_summaries::builders::GetTraceSummariesFluentBuilder::set_filter_expression):<br>required: **false**<br><p>Specify a filter expression to retrieve trace summaries for services or requests that meet certain requirements.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_trace_summaries::builders::GetTraceSummariesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_trace_summaries::builders::GetTraceSummariesFluentBuilder::set_next_token):<br>required: **false**<br><p>Specify the pagination token returned by a previous request to retrieve the next page of results.</p><br>
-    /// - On success, responds with [`GetTraceSummariesOutput`](crate::operation::get_trace_summaries::GetTraceSummariesOutput) with field(s):
+                            /// - On success, responds with [`GetTraceSummariesOutput`](crate::operation::get_trace_summaries::GetTraceSummariesOutput) with field(s):
     ///   - [`trace_summaries(Option<Vec::<TraceSummary>>)`](crate::operation::get_trace_summaries::GetTraceSummariesOutput::trace_summaries): <p>Trace IDs and annotations for traces that were found in the specified time frame.</p>
     ///   - [`approximate_time(Option<DateTime>)`](crate::operation::get_trace_summaries::GetTraceSummariesOutput::approximate_time): <p>The start time of this page of results.</p>
     ///   - [`traces_processed_count(Option<i64>)`](crate::operation::get_trace_summaries::GetTraceSummariesOutput::traces_processed_count): <p>The total number of traces processed, including traces that did not match the specified filter expression.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_trace_summaries::GetTraceSummariesOutput::next_token): <p>If the requested time frame contained more than one page of results, you can use this token to retrieve the next page. The first page contains the most recent results, closest to the end of the time frame.</p>
-    /// - On failure, responds with [`SdkError<GetTraceSummariesError>`](crate::operation::get_trace_summaries::GetTraceSummariesError)
+                            /// - On failure, responds with [`SdkError<GetTraceSummariesError>`](crate::operation::get_trace_summaries::GetTraceSummariesError)
     pub fn get_trace_summaries(&self) -> crate::operation::get_trace_summaries::builders::GetTraceSummariesFluentBuilder {
-        crate::operation::get_trace_summaries::builders::GetTraceSummariesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_trace_summaries::builders::GetTraceSummariesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

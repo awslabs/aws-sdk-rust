@@ -3,7 +3,7 @@
 /// <p>The parameters that are required to connect to a Starburst data source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StarburstParameters {
+pub struct StarburstParameters  {
     /// <p>The host name of the Starburst data source.</p>
     pub host: ::std::string::String,
     /// <p>The port for the Starburst data source.</p>
@@ -13,23 +13,21 @@ pub struct StarburstParameters {
     /// <p>The product type for the Starburst data source.</p>
     pub product_type: ::std::option::Option<crate::types::StarburstProductType>,
 }
-impl StarburstParameters {
+impl  StarburstParameters  {
     /// <p>The host name of the Starburst data source.</p>
-    pub fn host(&self) -> &str {
-        use std::ops::Deref;
-        self.host.deref()
+    pub fn host(&self) -> & str {
+        use std::ops::Deref; self.host.deref()
     }
     /// <p>The port for the Starburst data source.</p>
     pub fn port(&self) -> i32 {
         self.port
     }
     /// <p>The catalog name for the Starburst data source.</p>
-    pub fn catalog(&self) -> &str {
-        use std::ops::Deref;
-        self.catalog.deref()
+    pub fn catalog(&self) -> & str {
+        use std::ops::Deref; self.catalog.deref()
     }
     /// <p>The product type for the Starburst data source.</p>
-    pub fn product_type(&self) -> ::std::option::Option<&crate::types::StarburstProductType> {
+    pub fn product_type(&self) -> ::std::option::Option<& crate::types::StarburstProductType> {
         self.product_type.as_ref()
     }
 }
@@ -58,8 +56,7 @@ impl StarburstParametersBuilder {
     }
     /// <p>The host name of the Starburst data source.</p>
     pub fn set_host(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host = input;
-        self
+        self.host = input; self
     }
     /// <p>The host name of the Starburst data source.</p>
     pub fn get_host(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +70,7 @@ impl StarburstParametersBuilder {
     }
     /// <p>The port for the Starburst data source.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port for the Starburst data source.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -88,8 +84,7 @@ impl StarburstParametersBuilder {
     }
     /// <p>The catalog name for the Starburst data source.</p>
     pub fn set_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog = input;
-        self
+        self.catalog = input; self
     }
     /// <p>The catalog name for the Starburst data source.</p>
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +97,7 @@ impl StarburstParametersBuilder {
     }
     /// <p>The product type for the Starburst data source.</p>
     pub fn set_product_type(mut self, input: ::std::option::Option<crate::types::StarburstProductType>) -> Self {
-        self.product_type = input;
-        self
+        self.product_type = input; self
     }
     /// <p>The product type for the Starburst data source.</p>
     pub fn get_product_type(&self) -> &::std::option::Option<crate::types::StarburstProductType> {
@@ -115,26 +109,27 @@ impl StarburstParametersBuilder {
     /// - [`port`](crate::types::builders::StarburstParametersBuilder::port)
     /// - [`catalog`](crate::types::builders::StarburstParametersBuilder::catalog)
     pub fn build(self) -> ::std::result::Result<crate::types::StarburstParameters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StarburstParameters {
-            host: self.host.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "host",
-                    "host was not specified but it is required when building StarburstParameters",
-                )
-            })?,
-            port: self.port.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "port",
-                    "port was not specified but it is required when building StarburstParameters",
-                )
-            })?,
-            catalog: self.catalog.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "catalog",
-                    "catalog was not specified but it is required when building StarburstParameters",
-                )
-            })?,
-            product_type: self.product_type,
-        })
+        ::std::result::Result::Ok(
+            crate::types::StarburstParameters {
+                host: self.host
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("host", "host was not specified but it is required when building StarburstParameters")
+                    )?
+                ,
+                port: self.port
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("port", "port was not specified but it is required when building StarburstParameters")
+                    )?
+                ,
+                catalog: self.catalog
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("catalog", "catalog was not specified but it is required when building StarburstParameters")
+                    )?
+                ,
+                product_type: self.product_type
+                ,
+            }
+        )
     }
 }
+

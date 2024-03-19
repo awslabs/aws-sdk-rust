@@ -3,19 +3,19 @@
 /// <p>Object specifying the ingest configuration set up by the broadcaster, usually in an encoder.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IngestConfiguration {
+pub struct IngestConfiguration  {
     /// <p>Encoder settings for video.</p>
     pub video: ::std::option::Option<crate::types::VideoConfiguration>,
     /// <p>Encoder settings for audio.</p>
     pub audio: ::std::option::Option<crate::types::AudioConfiguration>,
 }
-impl IngestConfiguration {
+impl  IngestConfiguration  {
     /// <p>Encoder settings for video.</p>
-    pub fn video(&self) -> ::std::option::Option<&crate::types::VideoConfiguration> {
+    pub fn video(&self) -> ::std::option::Option<& crate::types::VideoConfiguration> {
         self.video.as_ref()
     }
     /// <p>Encoder settings for audio.</p>
-    pub fn audio(&self) -> ::std::option::Option<&crate::types::AudioConfiguration> {
+    pub fn audio(&self) -> ::std::option::Option<& crate::types::AudioConfiguration> {
         self.audio.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl IngestConfigurationBuilder {
     }
     /// <p>Encoder settings for video.</p>
     pub fn set_video(mut self, input: ::std::option::Option<crate::types::VideoConfiguration>) -> Self {
-        self.video = input;
-        self
+        self.video = input; self
     }
     /// <p>Encoder settings for video.</p>
     pub fn get_video(&self) -> &::std::option::Option<crate::types::VideoConfiguration> {
@@ -55,8 +54,7 @@ impl IngestConfigurationBuilder {
     }
     /// <p>Encoder settings for audio.</p>
     pub fn set_audio(mut self, input: ::std::option::Option<crate::types::AudioConfiguration>) -> Self {
-        self.audio = input;
-        self
+        self.audio = input; self
     }
     /// <p>Encoder settings for audio.</p>
     pub fn get_audio(&self) -> &::std::option::Option<crate::types::AudioConfiguration> {
@@ -65,8 +63,11 @@ impl IngestConfigurationBuilder {
     /// Consumes the builder and constructs a [`IngestConfiguration`](crate::types::IngestConfiguration).
     pub fn build(self) -> crate::types::IngestConfiguration {
         crate::types::IngestConfiguration {
-            video: self.video,
-            audio: self.audio,
+            video: self.video
+            ,
+            audio: self.audio
+            ,
         }
     }
 }
+

@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListServiceNetworksOutput {
+pub struct ListServiceNetworksOutput  {
     /// <p>Information about the service networks.</p>
-    pub items: ::std::vec::Vec<crate::types::ServiceNetworkSummary>,
+    pub items: ::std::vec::Vec::<crate::types::ServiceNetworkSummary>,
     /// <p>If there are additional results, a pagination token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListServiceNetworksOutput {
+impl  ListServiceNetworksOutput  {
     /// <p>Information about the service networks.</p>
-    pub fn items(&self) -> &[crate::types::ServiceNetworkSummary] {
-        use std::ops::Deref;
-        self.items.deref()
+    pub fn items(&self) -> & [crate::types::ServiceNetworkSummary] {
+        use std::ops::Deref; self.items.deref()
     }
     /// <p>If there are additional results, a pagination token for the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListServiceNetworksOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListServiceNetworksOutput {
     /// Creates a new builder-style object to manufacture [`ListServiceNetworksOutput`](crate::operation::list_service_networks::ListServiceNetworksOutput).
     pub fn builder() -> crate::operation::list_service_networks::builders::ListServiceNetworksOutputBuilder {
@@ -36,7 +35,7 @@ impl ListServiceNetworksOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServiceNetworksOutputBuilder {
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ServiceNetworkSummary>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceNetworkSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListServiceNetworksOutputBuilder {
     /// <p>Information about the service networks.</p>
     pub fn items(mut self, input: crate::types::ServiceNetworkSummary) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the service networks.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceNetworkSummary>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceNetworkSummary>>) -> Self {
+        self.items = input; self
     }
     /// <p>Information about the service networks.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceNetworkSummary>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ServiceNetworkSummary>> {
         &self.items
     }
     /// <p>If there are additional results, a pagination token for the next page of results.</p>
@@ -68,38 +66,37 @@ impl ListServiceNetworksOutputBuilder {
     }
     /// <p>If there are additional results, a pagination token for the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If there are additional results, a pagination token for the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListServiceNetworksOutput`](crate::operation::list_service_networks::ListServiceNetworksOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`items`](crate::operation::list_service_networks::builders::ListServiceNetworksOutputBuilder::items)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_service_networks::ListServiceNetworksOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_service_networks::ListServiceNetworksOutput {
-            items: self.items.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "items",
-                    "items was not specified but it is required when building ListServiceNetworksOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_service_networks::ListServiceNetworksOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_service_networks::ListServiceNetworksOutput {
+                items: self.items
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("items", "items was not specified but it is required when building ListServiceNetworksOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -21,11 +21,7 @@ impl VersionOptions {
     /// Tries to convert the enum instance into [`TsvVersionOptions`](crate::types::VersionOptions::TsvVersionOptions), extracting the inner [`TsvVersionOptions`](crate::types::TsvVersionOptions).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_tsv_version_options(&self) -> ::std::result::Result<&crate::types::TsvVersionOptions, &Self> {
-        if let VersionOptions::TsvVersionOptions(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let VersionOptions::TsvVersionOptions(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`TsvVersionOptions`](crate::types::VersionOptions::TsvVersionOptions).
     pub fn is_tsv_version_options(&self) -> bool {
@@ -36,3 +32,4 @@ impl VersionOptions {
         matches!(self, Self::Unknown)
     }
 }
+

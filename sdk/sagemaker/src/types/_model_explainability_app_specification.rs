@@ -3,25 +3,25 @@
 /// <p>Docker container image configuration object for the model explainability job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModelExplainabilityAppSpecification {
+pub struct ModelExplainabilityAppSpecification  {
     /// <p>The container image to be run by the model explainability job.</p>
     pub image_uri: ::std::option::Option<::std::string::String>,
     /// <p>JSON formatted Amazon S3 file that defines explainability parameters. For more information on this JSON configuration file, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-model-explainability-parameters.html">Configure model explainability parameters</a>.</p>
     pub config_uri: ::std::option::Option<::std::string::String>,
     /// <p>Sets the environment variables in the Docker container.</p>
-    pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub environment: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl ModelExplainabilityAppSpecification {
+impl  ModelExplainabilityAppSpecification  {
     /// <p>The container image to be run by the model explainability job.</p>
-    pub fn image_uri(&self) -> ::std::option::Option<&str> {
+    pub fn image_uri(&self) -> ::std::option::Option<& str> {
         self.image_uri.as_deref()
     }
     /// <p>JSON formatted Amazon S3 file that defines explainability parameters. For more information on this JSON configuration file, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-model-explainability-parameters.html">Configure model explainability parameters</a>.</p>
-    pub fn config_uri(&self) -> ::std::option::Option<&str> {
+    pub fn config_uri(&self) -> ::std::option::Option<& str> {
         self.config_uri.as_deref()
     }
     /// <p>Sets the environment variables in the Docker container.</p>
-    pub fn environment(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn environment(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.environment.as_ref()
     }
 }
@@ -38,7 +38,7 @@ impl ModelExplainabilityAppSpecification {
 pub struct ModelExplainabilityAppSpecificationBuilder {
     pub(crate) image_uri: ::std::option::Option<::std::string::String>,
     pub(crate) config_uri: ::std::option::Option<::std::string::String>,
-    pub(crate) environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) environment: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl ModelExplainabilityAppSpecificationBuilder {
     /// <p>The container image to be run by the model explainability job.</p>
@@ -49,8 +49,7 @@ impl ModelExplainabilityAppSpecificationBuilder {
     }
     /// <p>The container image to be run by the model explainability job.</p>
     pub fn set_image_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_uri = input;
-        self
+        self.image_uri = input; self
     }
     /// <p>The container image to be run by the model explainability job.</p>
     pub fn get_image_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl ModelExplainabilityAppSpecificationBuilder {
     }
     /// <p>JSON formatted Amazon S3 file that defines explainability parameters. For more information on this JSON configuration file, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-model-explainability-parameters.html">Configure model explainability parameters</a>.</p>
     pub fn set_config_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.config_uri = input;
-        self
+        self.config_uri = input; self
     }
     /// <p>JSON formatted Amazon S3 file that defines explainability parameters. For more information on this JSON configuration file, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-model-explainability-parameters.html">Configure model explainability parameters</a>.</p>
     pub fn get_config_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,28 +76,28 @@ impl ModelExplainabilityAppSpecificationBuilder {
     /// <p>Sets the environment variables in the Docker container.</p>
     pub fn environment(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.environment.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.environment = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.environment = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Sets the environment variables in the Docker container.</p>
-    pub fn set_environment(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.environment = input;
-        self
+    pub fn set_environment(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.environment = input; self
     }
     /// <p>Sets the environment variables in the Docker container.</p>
-    pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.environment
     }
     /// Consumes the builder and constructs a [`ModelExplainabilityAppSpecification`](crate::types::ModelExplainabilityAppSpecification).
     pub fn build(self) -> crate::types::ModelExplainabilityAppSpecification {
         crate::types::ModelExplainabilityAppSpecification {
-            image_uri: self.image_uri,
-            config_uri: self.config_uri,
-            environment: self.environment,
+            image_uri: self.image_uri
+            ,
+            config_uri: self.config_uri
+            ,
+            environment: self.environment
+            ,
         }
     }
 }
+

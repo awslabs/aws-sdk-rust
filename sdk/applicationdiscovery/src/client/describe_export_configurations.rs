@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeExportConfigurations`](crate::operation::describe_export_configurations::builders::DescribeExportConfigurationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_export_configurations::builders::DescribeExportConfigurationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`export_ids(impl Into<String>)`](crate::operation::describe_export_configurations::builders::DescribeExportConfigurationsFluentBuilder::export_ids) / [`set_export_ids(Option<Vec::<String>>)`](crate::operation::describe_export_configurations::builders::DescribeExportConfigurationsFluentBuilder::set_export_ids):<br>required: **false**<br><p>A list of continuous export IDs to search for.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_export_configurations::builders::DescribeExportConfigurationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_export_configurations::builders::DescribeExportConfigurationsFluentBuilder::set_max_results):<br>required: **false**<br><p>A number between 1 and 100 specifying the maximum number of continuous export descriptions returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_export_configurations::builders::DescribeExportConfigurationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_export_configurations::builders::DescribeExportConfigurationsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token from the previous call to describe-export-tasks.</p><br>
-    /// - On success, responds with [`DescribeExportConfigurationsOutput`](crate::operation::describe_export_configurations::DescribeExportConfigurationsOutput) with field(s):
+                            /// - On success, responds with [`DescribeExportConfigurationsOutput`](crate::operation::describe_export_configurations::DescribeExportConfigurationsOutput) with field(s):
     ///   - [`exports_info(Option<Vec::<ExportInfo>>)`](crate::operation::describe_export_configurations::DescribeExportConfigurationsOutput::exports_info): <p></p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_export_configurations::DescribeExportConfigurationsOutput::next_token): <p>The token from the previous call to describe-export-tasks.</p>
-    /// - On failure, responds with [`SdkError<DescribeExportConfigurationsError>`](crate::operation::describe_export_configurations::DescribeExportConfigurationsError)
+                            /// - On failure, responds with [`SdkError<DescribeExportConfigurationsError>`](crate::operation::describe_export_configurations::DescribeExportConfigurationsError)
     #[deprecated]
-    pub fn describe_export_configurations(
-        &self,
-    ) -> crate::operation::describe_export_configurations::builders::DescribeExportConfigurationsFluentBuilder {
-        crate::operation::describe_export_configurations::builders::DescribeExportConfigurationsFluentBuilder::new(self.handle.clone())
-    }
+    pub fn describe_export_configurations(&self) -> crate::operation::describe_export_configurations::builders::DescribeExportConfigurationsFluentBuilder {
+                                crate::operation::describe_export_configurations::builders::DescribeExportConfigurationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

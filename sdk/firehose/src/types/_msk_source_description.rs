@@ -3,7 +3,7 @@
 /// <p>Details about the Amazon MSK cluster used as the source for a Firehose delivery stream.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MskSourceDescription {
+pub struct MskSourceDescription  {
     /// <p>The ARN of the Amazon MSK cluster.</p>
     pub msk_cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The topic name within the Amazon MSK cluster.</p>
@@ -13,21 +13,21 @@ pub struct MskSourceDescription {
     /// <p>Firehose starts retrieving records from the topic within the Amazon MSK cluster starting with this timestamp.</p>
     pub delivery_start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl MskSourceDescription {
+impl  MskSourceDescription  {
     /// <p>The ARN of the Amazon MSK cluster.</p>
-    pub fn msk_cluster_arn(&self) -> ::std::option::Option<&str> {
+    pub fn msk_cluster_arn(&self) -> ::std::option::Option<& str> {
         self.msk_cluster_arn.as_deref()
     }
     /// <p>The topic name within the Amazon MSK cluster.</p>
-    pub fn topic_name(&self) -> ::std::option::Option<&str> {
+    pub fn topic_name(&self) -> ::std::option::Option<& str> {
         self.topic_name.as_deref()
     }
     /// <p>The authentication configuration of the Amazon MSK cluster.</p>
-    pub fn authentication_configuration(&self) -> ::std::option::Option<&crate::types::AuthenticationConfiguration> {
+    pub fn authentication_configuration(&self) -> ::std::option::Option<& crate::types::AuthenticationConfiguration> {
         self.authentication_configuration.as_ref()
     }
     /// <p>Firehose starts retrieving records from the topic within the Amazon MSK cluster starting with this timestamp.</p>
-    pub fn delivery_start_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn delivery_start_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.delivery_start_timestamp.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl MskSourceDescriptionBuilder {
     }
     /// <p>The ARN of the Amazon MSK cluster.</p>
     pub fn set_msk_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.msk_cluster_arn = input;
-        self
+        self.msk_cluster_arn = input; self
     }
     /// <p>The ARN of the Amazon MSK cluster.</p>
     pub fn get_msk_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl MskSourceDescriptionBuilder {
     }
     /// <p>The topic name within the Amazon MSK cluster.</p>
     pub fn set_topic_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_name = input;
-        self
+        self.topic_name = input; self
     }
     /// <p>The topic name within the Amazon MSK cluster.</p>
     pub fn get_topic_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl MskSourceDescriptionBuilder {
     }
     /// <p>The authentication configuration of the Amazon MSK cluster.</p>
     pub fn set_authentication_configuration(mut self, input: ::std::option::Option<crate::types::AuthenticationConfiguration>) -> Self {
-        self.authentication_configuration = input;
-        self
+        self.authentication_configuration = input; self
     }
     /// <p>The authentication configuration of the Amazon MSK cluster.</p>
     pub fn get_authentication_configuration(&self) -> &::std::option::Option<crate::types::AuthenticationConfiguration> {
@@ -97,8 +94,7 @@ impl MskSourceDescriptionBuilder {
     }
     /// <p>Firehose starts retrieving records from the topic within the Amazon MSK cluster starting with this timestamp.</p>
     pub fn set_delivery_start_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.delivery_start_timestamp = input;
-        self
+        self.delivery_start_timestamp = input; self
     }
     /// <p>Firehose starts retrieving records from the topic within the Amazon MSK cluster starting with this timestamp.</p>
     pub fn get_delivery_start_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -107,10 +103,15 @@ impl MskSourceDescriptionBuilder {
     /// Consumes the builder and constructs a [`MskSourceDescription`](crate::types::MskSourceDescription).
     pub fn build(self) -> crate::types::MskSourceDescription {
         crate::types::MskSourceDescription {
-            msk_cluster_arn: self.msk_cluster_arn,
-            topic_name: self.topic_name,
-            authentication_configuration: self.authentication_configuration,
-            delivery_start_timestamp: self.delivery_start_timestamp,
+            msk_cluster_arn: self.msk_cluster_arn
+            ,
+            topic_name: self.topic_name
+            ,
+            authentication_configuration: self.authentication_configuration
+            ,
+            delivery_start_timestamp: self.delivery_start_timestamp
+            ,
         }
     }
 }
+

@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListChannelModerators`](crate::operation::list_channel_moderators::builders::ListChannelModeratorsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_channel_moderators::builders::ListChannelModeratorsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`channel_arn(impl Into<String>)`](crate::operation::list_channel_moderators::builders::ListChannelModeratorsFluentBuilder::channel_arn) / [`set_channel_arn(Option<String>)`](crate::operation::list_channel_moderators::builders::ListChannelModeratorsFluentBuilder::set_channel_arn):<br>required: **true**<br><p>The ARN of the channel.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_channel_moderators::builders::ListChannelModeratorsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_channel_moderators::builders::ListChannelModeratorsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of moderators that you want returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_channel_moderators::builders::ListChannelModeratorsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_channel_moderators::builders::ListChannelModeratorsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token passed by previous API calls until all requested moderators are returned.</p><br>
     ///   - [`chime_bearer(impl Into<String>)`](crate::operation::list_channel_moderators::builders::ListChannelModeratorsFluentBuilder::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::operation::list_channel_moderators::builders::ListChannelModeratorsFluentBuilder::set_chime_bearer):<br>required: **false**<br><p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p><br>
-    /// - On success, responds with [`ListChannelModeratorsOutput`](crate::operation::list_channel_moderators::ListChannelModeratorsOutput) with field(s):
+                            /// - On success, responds with [`ListChannelModeratorsOutput`](crate::operation::list_channel_moderators::ListChannelModeratorsOutput) with field(s):
     ///   - [`channel_arn(Option<String>)`](crate::operation::list_channel_moderators::ListChannelModeratorsOutput::channel_arn): <p>The ARN of the channel.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_channel_moderators::ListChannelModeratorsOutput::next_token): <p>The token passed by previous API calls until all requested moderators are returned.</p>
     ///   - [`channel_moderators(Option<Vec::<ChannelModeratorSummary>>)`](crate::operation::list_channel_moderators::ListChannelModeratorsOutput::channel_moderators): <p>The information about and names of each moderator.</p>
-    /// - On failure, responds with [`SdkError<ListChannelModeratorsError>`](crate::operation::list_channel_moderators::ListChannelModeratorsError)
+                            /// - On failure, responds with [`SdkError<ListChannelModeratorsError>`](crate::operation::list_channel_moderators::ListChannelModeratorsError)
     #[deprecated(note = "Replaced by ListChannelModerators in the Amazon Chime SDK Messaging Namespace")]
     pub fn list_channel_moderators(&self) -> crate::operation::list_channel_moderators::builders::ListChannelModeratorsFluentBuilder {
-        crate::operation::list_channel_moderators::builders::ListChannelModeratorsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_channel_moderators::builders::ListChannelModeratorsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

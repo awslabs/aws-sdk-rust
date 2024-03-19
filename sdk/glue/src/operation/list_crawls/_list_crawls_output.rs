@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCrawlsOutput {
+pub struct ListCrawlsOutput  {
     /// <p>A list of <code>CrawlerHistory</code> objects representing the crawl runs that meet your criteria.</p>
-    pub crawls: ::std::option::Option<::std::vec::Vec<crate::types::CrawlerHistory>>,
+    pub crawls: ::std::option::Option<::std::vec::Vec::<crate::types::CrawlerHistory>>,
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListCrawlsOutput {
+impl  ListCrawlsOutput  {
     /// <p>A list of <code>CrawlerHistory</code> objects representing the crawl runs that meet your criteria.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.crawls.is_none()`.
-    pub fn crawls(&self) -> &[crate::types::CrawlerHistory] {
-        self.crawls.as_deref().unwrap_or_default()
+    pub fn crawls(&self) -> & [crate::types::CrawlerHistory] {
+        self.crawls.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListCrawlsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListCrawlsOutput {
     /// Creates a new builder-style object to manufacture [`ListCrawlsOutput`](crate::operation::list_crawls::ListCrawlsOutput).
     pub fn builder() -> crate::operation::list_crawls::builders::ListCrawlsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListCrawlsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCrawlsOutputBuilder {
-    pub(crate) crawls: ::std::option::Option<::std::vec::Vec<crate::types::CrawlerHistory>>,
+    pub(crate) crawls: ::std::option::Option<::std::vec::Vec::<crate::types::CrawlerHistory>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListCrawlsOutputBuilder {
     /// <p>A list of <code>CrawlerHistory</code> objects representing the crawl runs that meet your criteria.</p>
     pub fn crawls(mut self, input: crate::types::CrawlerHistory) -> Self {
         let mut v = self.crawls.unwrap_or_default();
-        v.push(input);
-        self.crawls = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.crawls = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>CrawlerHistory</code> objects representing the crawl runs that meet your criteria.</p>
-    pub fn set_crawls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CrawlerHistory>>) -> Self {
-        self.crawls = input;
-        self
+    pub fn set_crawls(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CrawlerHistory>>) -> Self {
+        self.crawls = input; self
     }
     /// <p>A list of <code>CrawlerHistory</code> objects representing the crawl runs that meet your criteria.</p>
-    pub fn get_crawls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CrawlerHistory>> {
+    pub fn get_crawls(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CrawlerHistory>> {
         &self.crawls
     }
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
@@ -69,28 +69,30 @@ impl ListCrawlsOutputBuilder {
     }
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListCrawlsOutput`](crate::operation::list_crawls::ListCrawlsOutput).
     pub fn build(self) -> crate::operation::list_crawls::ListCrawlsOutput {
         crate::operation::list_crawls::ListCrawlsOutput {
-            crawls: self.crawls,
-            next_token: self.next_token,
+            crawls: self.crawls
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

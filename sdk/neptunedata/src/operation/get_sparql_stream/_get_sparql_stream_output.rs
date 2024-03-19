@@ -2,24 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSparqlStreamOutput {
+pub struct GetSparqlStreamOutput  {
     /// <p>Sequence identifier of the last change in the stream response.</p>
     /// <p>An event ID is composed of two fields: a <code>commitNum</code>, which identifies a transaction that changed the graph, and an <code>opNum</code>, which identifies a specific operation within that transaction:</p>
-    pub last_event_id: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    pub last_event_id: ::std::collections::HashMap::<::std::string::String, ::std::string::String>,
     /// <p>The time at which the commit for the transaction was requested, in milliseconds from the Unix epoch.</p>
     pub last_trx_timestamp_in_millis: i64,
     /// <p>Serialization format for the change records being returned. Currently, the only supported value is <code>NQUADS</code>.</p>
     pub format: ::std::string::String,
     /// <p>An array of serialized change-log stream records included in the response.</p>
-    pub records: ::std::vec::Vec<crate::types::SparqlRecord>,
+    pub records: ::std::vec::Vec::<crate::types::SparqlRecord>,
     /// <p>The total number of records in the response.</p>
     pub total_records: i32,
     _request_id: Option<String>,
 }
-impl GetSparqlStreamOutput {
+impl  GetSparqlStreamOutput  {
     /// <p>Sequence identifier of the last change in the stream response.</p>
     /// <p>An event ID is composed of two fields: a <code>commitNum</code>, which identifies a transaction that changed the graph, and an <code>opNum</code>, which identifies a specific operation within that transaction:</p>
-    pub fn last_event_id(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+    pub fn last_event_id(&self) -> & ::std::collections::HashMap::<::std::string::String, ::std::string::String> {
         &self.last_event_id
     }
     /// <p>The time at which the commit for the transaction was requested, in milliseconds from the Unix epoch.</p>
@@ -27,14 +27,12 @@ impl GetSparqlStreamOutput {
         self.last_trx_timestamp_in_millis
     }
     /// <p>Serialization format for the change records being returned. Currently, the only supported value is <code>NQUADS</code>.</p>
-    pub fn format(&self) -> &str {
-        use std::ops::Deref;
-        self.format.deref()
+    pub fn format(&self) -> & str {
+        use std::ops::Deref; self.format.deref()
     }
     /// <p>An array of serialized change-log stream records included in the response.</p>
-    pub fn records(&self) -> &[crate::types::SparqlRecord] {
-        use std::ops::Deref;
-        self.records.deref()
+    pub fn records(&self) -> & [crate::types::SparqlRecord] {
+        use std::ops::Deref; self.records.deref()
     }
     /// <p>The total number of records in the response.</p>
     pub fn total_records(&self) -> i32 {
@@ -42,10 +40,10 @@ impl GetSparqlStreamOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetSparqlStreamOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSparqlStreamOutput {
     /// Creates a new builder-style object to manufacture [`GetSparqlStreamOutput`](crate::operation::get_sparql_stream::GetSparqlStreamOutput).
     pub fn builder() -> crate::operation::get_sparql_stream::builders::GetSparqlStreamOutputBuilder {
@@ -57,10 +55,10 @@ impl GetSparqlStreamOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSparqlStreamOutputBuilder {
-    pub(crate) last_event_id: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) last_event_id: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) last_trx_timestamp_in_millis: ::std::option::Option<i64>,
     pub(crate) format: ::std::option::Option<::std::string::String>,
-    pub(crate) records: ::std::option::Option<::std::vec::Vec<crate::types::SparqlRecord>>,
+    pub(crate) records: ::std::option::Option<::std::vec::Vec::<crate::types::SparqlRecord>>,
     pub(crate) total_records: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
@@ -73,22 +71,18 @@ impl GetSparqlStreamOutputBuilder {
     /// <p>An event ID is composed of two fields: a <code>commitNum</code>, which identifies a transaction that changed the graph, and an <code>opNum</code>, which identifies a specific operation within that transaction:</p>
     pub fn last_event_id(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.last_event_id.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.last_event_id = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.last_event_id = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Sequence identifier of the last change in the stream response.</p>
     /// <p>An event ID is composed of two fields: a <code>commitNum</code>, which identifies a transaction that changed the graph, and an <code>opNum</code>, which identifies a specific operation within that transaction:</p>
-    pub fn set_last_event_id(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.last_event_id = input;
-        self
+    pub fn set_last_event_id(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.last_event_id = input; self
     }
     /// <p>Sequence identifier of the last change in the stream response.</p>
     /// <p>An event ID is composed of two fields: a <code>commitNum</code>, which identifies a transaction that changed the graph, and an <code>opNum</code>, which identifies a specific operation within that transaction:</p>
-    pub fn get_last_event_id(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_last_event_id(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.last_event_id
     }
     /// <p>The time at which the commit for the transaction was requested, in milliseconds from the Unix epoch.</p>
@@ -99,8 +93,7 @@ impl GetSparqlStreamOutputBuilder {
     }
     /// <p>The time at which the commit for the transaction was requested, in milliseconds from the Unix epoch.</p>
     pub fn set_last_trx_timestamp_in_millis(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.last_trx_timestamp_in_millis = input;
-        self
+        self.last_trx_timestamp_in_millis = input; self
     }
     /// <p>The time at which the commit for the transaction was requested, in milliseconds from the Unix epoch.</p>
     pub fn get_last_trx_timestamp_in_millis(&self) -> &::std::option::Option<i64> {
@@ -114,8 +107,7 @@ impl GetSparqlStreamOutputBuilder {
     }
     /// <p>Serialization format for the change records being returned. Currently, the only supported value is <code>NQUADS</code>.</p>
     pub fn set_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>Serialization format for the change records being returned. Currently, the only supported value is <code>NQUADS</code>.</p>
     pub fn get_format(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,17 +120,16 @@ impl GetSparqlStreamOutputBuilder {
     /// <p>An array of serialized change-log stream records included in the response.</p>
     pub fn records(mut self, input: crate::types::SparqlRecord) -> Self {
         let mut v = self.records.unwrap_or_default();
-        v.push(input);
-        self.records = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.records = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of serialized change-log stream records included in the response.</p>
-    pub fn set_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SparqlRecord>>) -> Self {
-        self.records = input;
-        self
+    pub fn set_records(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SparqlRecord>>) -> Self {
+        self.records = input; self
     }
     /// <p>An array of serialized change-log stream records included in the response.</p>
-    pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SparqlRecord>> {
+    pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SparqlRecord>> {
         &self.records
     }
     /// <p>The total number of records in the response.</p>
@@ -149,22 +140,21 @@ impl GetSparqlStreamOutputBuilder {
     }
     /// <p>The total number of records in the response.</p>
     pub fn set_total_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_records = input;
-        self
+        self.total_records = input; self
     }
     /// <p>The total number of records in the response.</p>
     pub fn get_total_records(&self) -> &::std::option::Option<i32> {
         &self.total_records
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSparqlStreamOutput`](crate::operation::get_sparql_stream::GetSparqlStreamOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`last_event_id`](crate::operation::get_sparql_stream::builders::GetSparqlStreamOutputBuilder::last_event_id)
@@ -172,41 +162,37 @@ impl GetSparqlStreamOutputBuilder {
     /// - [`format`](crate::operation::get_sparql_stream::builders::GetSparqlStreamOutputBuilder::format)
     /// - [`records`](crate::operation::get_sparql_stream::builders::GetSparqlStreamOutputBuilder::records)
     /// - [`total_records`](crate::operation::get_sparql_stream::builders::GetSparqlStreamOutputBuilder::total_records)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_sparql_stream::GetSparqlStreamOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_sparql_stream::GetSparqlStreamOutput {
-            last_event_id: self.last_event_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_event_id",
-                    "last_event_id was not specified but it is required when building GetSparqlStreamOutput",
-                )
-            })?,
-            last_trx_timestamp_in_millis: self.last_trx_timestamp_in_millis.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_trx_timestamp_in_millis",
-                    "last_trx_timestamp_in_millis was not specified but it is required when building GetSparqlStreamOutput",
-                )
-            })?,
-            format: self.format.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "format",
-                    "format was not specified but it is required when building GetSparqlStreamOutput",
-                )
-            })?,
-            records: self.records.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "records",
-                    "records was not specified but it is required when building GetSparqlStreamOutput",
-                )
-            })?,
-            total_records: self.total_records.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "total_records",
-                    "total_records was not specified but it is required when building GetSparqlStreamOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_sparql_stream::GetSparqlStreamOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_sparql_stream::GetSparqlStreamOutput {
+                last_event_id: self.last_event_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_event_id", "last_event_id was not specified but it is required when building GetSparqlStreamOutput")
+                    )?
+                ,
+                last_trx_timestamp_in_millis: self.last_trx_timestamp_in_millis
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_trx_timestamp_in_millis", "last_trx_timestamp_in_millis was not specified but it is required when building GetSparqlStreamOutput")
+                    )?
+                ,
+                format: self.format
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("format", "format was not specified but it is required when building GetSparqlStreamOutput")
+                    )?
+                ,
+                records: self.records
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("records", "records was not specified but it is required when building GetSparqlStreamOutput")
+                    )?
+                ,
+                total_records: self.total_records
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("total_records", "total_records was not specified but it is required when building GetSparqlStreamOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

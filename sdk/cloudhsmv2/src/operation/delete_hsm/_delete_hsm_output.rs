@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteHsmOutput {
+pub struct DeleteHsmOutput  {
     /// <p>The identifier (ID) of the HSM that was deleted.</p>
     pub hsm_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DeleteHsmOutput {
+impl  DeleteHsmOutput  {
     /// <p>The identifier (ID) of the HSM that was deleted.</p>
-    pub fn hsm_id(&self) -> ::std::option::Option<&str> {
+    pub fn hsm_id(&self) -> ::std::option::Option<& str> {
         self.hsm_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteHsmOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteHsmOutput {
     /// Creates a new builder-style object to manufacture [`DeleteHsmOutput`](crate::operation::delete_hsm::DeleteHsmOutput).
     pub fn builder() -> crate::operation::delete_hsm::builders::DeleteHsmOutputBuilder {
@@ -40,27 +40,28 @@ impl DeleteHsmOutputBuilder {
     }
     /// <p>The identifier (ID) of the HSM that was deleted.</p>
     pub fn set_hsm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hsm_id = input;
-        self
+        self.hsm_id = input; self
     }
     /// <p>The identifier (ID) of the HSM that was deleted.</p>
     pub fn get_hsm_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.hsm_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteHsmOutput`](crate::operation::delete_hsm::DeleteHsmOutput).
     pub fn build(self) -> crate::operation::delete_hsm::DeleteHsmOutput {
         crate::operation::delete_hsm::DeleteHsmOutput {
-            hsm_id: self.hsm_id,
+            hsm_id: self.hsm_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

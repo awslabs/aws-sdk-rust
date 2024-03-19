@@ -2,25 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutWorkflowRunPropertiesInput {
+pub struct PutWorkflowRunPropertiesInput  {
     /// <p>Name of the workflow which was run.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the workflow run for which the run properties should be updated.</p>
     pub run_id: ::std::option::Option<::std::string::String>,
     /// <p>The properties to put for the specified run.</p>
-    pub run_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub run_properties: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl PutWorkflowRunPropertiesInput {
+impl  PutWorkflowRunPropertiesInput  {
     /// <p>Name of the workflow which was run.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the workflow run for which the run properties should be updated.</p>
-    pub fn run_id(&self) -> ::std::option::Option<&str> {
+    pub fn run_id(&self) -> ::std::option::Option<& str> {
         self.run_id.as_deref()
     }
     /// <p>The properties to put for the specified run.</p>
-    pub fn run_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn run_properties(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.run_properties.as_ref()
     }
 }
@@ -37,7 +37,7 @@ impl PutWorkflowRunPropertiesInput {
 pub struct PutWorkflowRunPropertiesInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) run_id: ::std::option::Option<::std::string::String>,
-    pub(crate) run_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) run_properties: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl PutWorkflowRunPropertiesInputBuilder {
     /// <p>Name of the workflow which was run.</p>
@@ -48,8 +48,7 @@ impl PutWorkflowRunPropertiesInputBuilder {
     }
     /// <p>Name of the workflow which was run.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of the workflow which was run.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl PutWorkflowRunPropertiesInputBuilder {
     }
     /// <p>The ID of the workflow run for which the run properties should be updated.</p>
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.run_id = input;
-        self
+        self.run_id = input; self
     }
     /// <p>The ID of the workflow run for which the run properties should be updated.</p>
     pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,39 +73,32 @@ impl PutWorkflowRunPropertiesInputBuilder {
     /// To override the contents of this collection use [`set_run_properties`](Self::set_run_properties).
     ///
     /// <p>The properties to put for the specified run.</p>
-    pub fn run_properties(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn run_properties(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.run_properties.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.run_properties = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.run_properties = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The properties to put for the specified run.</p>
-    pub fn set_run_properties(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.run_properties = input;
-        self
+    pub fn set_run_properties(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.run_properties = input; self
     }
     /// <p>The properties to put for the specified run.</p>
-    pub fn get_run_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_run_properties(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.run_properties
     }
     /// Consumes the builder and constructs a [`PutWorkflowRunPropertiesInput`](crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesInput {
-            name: self.name,
-            run_id: self.run_id,
-            run_properties: self.run_properties,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesInput {
+                name: self.name
+                ,
+                run_id: self.run_id
+                ,
+                run_properties: self.run_properties
+                ,
+            }
+        )
     }
 }
+

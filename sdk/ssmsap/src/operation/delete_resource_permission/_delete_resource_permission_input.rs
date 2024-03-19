@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteResourcePermissionInput {
+pub struct DeleteResourcePermissionInput  {
     /// <p>Delete or restore the permissions on the target database.</p>
     pub action_type: ::std::option::Option<crate::types::PermissionActionType>,
     /// <p>The Amazon Resource Name (ARN) of the source resource.</p>
@@ -10,17 +10,17 @@ pub struct DeleteResourcePermissionInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteResourcePermissionInput {
+impl  DeleteResourcePermissionInput  {
     /// <p>Delete or restore the permissions on the target database.</p>
-    pub fn action_type(&self) -> ::std::option::Option<&crate::types::PermissionActionType> {
+    pub fn action_type(&self) -> ::std::option::Option<& crate::types::PermissionActionType> {
         self.action_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the source resource.</p>
-    pub fn source_resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_resource_arn(&self) -> ::std::option::Option<& str> {
         self.source_resource_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl DeleteResourcePermissionInputBuilder {
     }
     /// <p>Delete or restore the permissions on the target database.</p>
     pub fn set_action_type(mut self, input: ::std::option::Option<crate::types::PermissionActionType>) -> Self {
-        self.action_type = input;
-        self
+        self.action_type = input; self
     }
     /// <p>Delete or restore the permissions on the target database.</p>
     pub fn get_action_type(&self) -> &::std::option::Option<crate::types::PermissionActionType> {
@@ -61,8 +60,7 @@ impl DeleteResourcePermissionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the source resource.</p>
     pub fn set_source_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_resource_arn = input;
-        self
+        self.source_resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the source resource.</p>
     pub fn get_source_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,24 +74,24 @@ impl DeleteResourcePermissionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
     /// Consumes the builder and constructs a [`DeleteResourcePermissionInput`](crate::operation::delete_resource_permission::DeleteResourcePermissionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_resource_permission::DeleteResourcePermissionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_resource_permission::DeleteResourcePermissionInput {
-            action_type: self.action_type,
-            source_resource_arn: self.source_resource_arn,
-            resource_arn: self.resource_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_resource_permission::DeleteResourcePermissionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_resource_permission::DeleteResourcePermissionInput {
+                action_type: self.action_type
+                ,
+                source_resource_arn: self.source_resource_arn
+                ,
+                resource_arn: self.resource_arn
+                ,
+            }
+        )
     }
 }
+

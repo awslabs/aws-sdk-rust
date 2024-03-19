@@ -3,13 +3,13 @@
 /// <p>The target of a message, a sender, a user, or a bot. Only the target and the sender can view targeted messages. Only users who can see targeted messages can take actions on them. However, administrators can delete targeted messages that they can’t see.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Target {
+pub struct Target  {
     /// <p>The ARN of the target channel member.</p>
     pub member_arn: ::std::option::Option<::std::string::String>,
 }
-impl Target {
+impl  Target  {
     /// <p>The ARN of the target channel member.</p>
-    pub fn member_arn(&self) -> ::std::option::Option<&str> {
+    pub fn member_arn(&self) -> ::std::option::Option<& str> {
         self.member_arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl TargetBuilder {
     }
     /// <p>The ARN of the target channel member.</p>
     pub fn set_member_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.member_arn = input;
-        self
+        self.member_arn = input; self
     }
     /// <p>The ARN of the target channel member.</p>
     pub fn get_member_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl TargetBuilder {
     }
     /// Consumes the builder and constructs a [`Target`](crate::types::Target).
     pub fn build(self) -> crate::types::Target {
-        crate::types::Target { member_arn: self.member_arn }
+        crate::types::Target {
+            member_arn: self.member_arn
+            ,
+        }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>CreateLocationObjectStorageRequest</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateLocationObjectStorageInput {
+pub struct CreateLocationObjectStorageInput  {
     /// <p>Specifies the domain name or IP address of the object storage server. A DataSync agent uses this hostname to mount the object storage server in a network.</p>
     pub server_hostname: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
@@ -19,9 +19,9 @@ pub struct CreateLocationObjectStorageInput {
     /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p>
     pub secret_key: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.</p>
-    pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub agent_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies the key-value pair that represents a tag that you want to add to the resource. Tags can help you manage, filter, and search for your resources. We recommend creating a name tag for your location.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::TagListEntry>>,
     /// <p>Specifies a file with the certificates that are used to sign the object storage server's certificate (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The file you specify must include the following:</p>
     /// <ul>
     /// <li>
@@ -37,9 +37,9 @@ pub struct CreateLocationObjectStorageInput {
     /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
     pub server_certificate: ::std::option::Option<::aws_smithy_types::Blob>,
 }
-impl CreateLocationObjectStorageInput {
+impl  CreateLocationObjectStorageInput  {
     /// <p>Specifies the domain name or IP address of the object storage server. A DataSync agent uses this hostname to mount the object storage server in a network.</p>
-    pub fn server_hostname(&self) -> ::std::option::Option<&str> {
+    pub fn server_hostname(&self) -> ::std::option::Option<& str> {
         self.server_hostname.as_deref()
     }
     /// <p>Specifies the port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
@@ -47,36 +47,38 @@ impl CreateLocationObjectStorageInput {
         self.server_port
     }
     /// <p>Specifies the protocol that your object storage server uses to communicate.</p>
-    pub fn server_protocol(&self) -> ::std::option::Option<&crate::types::ObjectStorageServerProtocol> {
+    pub fn server_protocol(&self) -> ::std::option::Option<& crate::types::ObjectStorageServerProtocol> {
         self.server_protocol.as_ref()
     }
     /// <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix.</p>
-    pub fn subdirectory(&self) -> ::std::option::Option<&str> {
+    pub fn subdirectory(&self) -> ::std::option::Option<& str> {
         self.subdirectory.as_deref()
     }
     /// <p>Specifies the name of the object storage bucket involved in the transfer.</p>
-    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_name(&self) -> ::std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p>Specifies the access key (for example, a user name) if credentials are required to authenticate with the object storage server.</p>
-    pub fn access_key(&self) -> ::std::option::Option<&str> {
+    pub fn access_key(&self) -> ::std::option::Option<& str> {
         self.access_key.as_deref()
     }
     /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p>
-    pub fn secret_key(&self) -> ::std::option::Option<&str> {
+    pub fn secret_key(&self) -> ::std::option::Option<& str> {
         self.secret_key.as_deref()
     }
     /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_arns.is_none()`.
-    pub fn agent_arns(&self) -> &[::std::string::String] {
-        self.agent_arns.as_deref().unwrap_or_default()
+    pub fn agent_arns(&self) -> & [::std::string::String] {
+        self.agent_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the key-value pair that represents a tag that you want to add to the resource. Tags can help you manage, filter, and search for your resources. We recommend creating a name tag for your location.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::TagListEntry] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::TagListEntry] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies a file with the certificates that are used to sign the object storage server's certificate (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The file you specify must include the following:</p>
     /// <ul>
@@ -91,11 +93,11 @@ impl CreateLocationObjectStorageInput {
     /// </ul>
     /// <p>The file can be up to 32768 bytes (before base64 encoding).</p>
     /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
-    pub fn server_certificate(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn server_certificate(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.server_certificate.as_ref()
     }
 }
-impl ::std::fmt::Debug for CreateLocationObjectStorageInput {
+impl  ::std::fmt::Debug for CreateLocationObjectStorageInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLocationObjectStorageInput");
         formatter.field("server_hostname", &self.server_hostname);
@@ -129,8 +131,8 @@ pub struct CreateLocationObjectStorageInputBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) access_key: ::std::option::Option<::std::string::String>,
     pub(crate) secret_key: ::std::option::Option<::std::string::String>,
-    pub(crate) agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
+    pub(crate) agent_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::TagListEntry>>,
     pub(crate) server_certificate: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl CreateLocationObjectStorageInputBuilder {
@@ -142,8 +144,7 @@ impl CreateLocationObjectStorageInputBuilder {
     }
     /// <p>Specifies the domain name or IP address of the object storage server. A DataSync agent uses this hostname to mount the object storage server in a network.</p>
     pub fn set_server_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_hostname = input;
-        self
+        self.server_hostname = input; self
     }
     /// <p>Specifies the domain name or IP address of the object storage server. A DataSync agent uses this hostname to mount the object storage server in a network.</p>
     pub fn get_server_hostname(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,8 +157,7 @@ impl CreateLocationObjectStorageInputBuilder {
     }
     /// <p>Specifies the port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
     pub fn set_server_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.server_port = input;
-        self
+        self.server_port = input; self
     }
     /// <p>Specifies the port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
     pub fn get_server_port(&self) -> &::std::option::Option<i32> {
@@ -170,8 +170,7 @@ impl CreateLocationObjectStorageInputBuilder {
     }
     /// <p>Specifies the protocol that your object storage server uses to communicate.</p>
     pub fn set_server_protocol(mut self, input: ::std::option::Option<crate::types::ObjectStorageServerProtocol>) -> Self {
-        self.server_protocol = input;
-        self
+        self.server_protocol = input; self
     }
     /// <p>Specifies the protocol that your object storage server uses to communicate.</p>
     pub fn get_server_protocol(&self) -> &::std::option::Option<crate::types::ObjectStorageServerProtocol> {
@@ -184,8 +183,7 @@ impl CreateLocationObjectStorageInputBuilder {
     }
     /// <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix.</p>
     pub fn set_subdirectory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subdirectory = input;
-        self
+        self.subdirectory = input; self
     }
     /// <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix.</p>
     pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
@@ -199,8 +197,7 @@ impl CreateLocationObjectStorageInputBuilder {
     }
     /// <p>Specifies the name of the object storage bucket involved in the transfer.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>Specifies the name of the object storage bucket involved in the transfer.</p>
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -213,8 +210,7 @@ impl CreateLocationObjectStorageInputBuilder {
     }
     /// <p>Specifies the access key (for example, a user name) if credentials are required to authenticate with the object storage server.</p>
     pub fn set_access_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_key = input;
-        self
+        self.access_key = input; self
     }
     /// <p>Specifies the access key (for example, a user name) if credentials are required to authenticate with the object storage server.</p>
     pub fn get_access_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -227,8 +223,7 @@ impl CreateLocationObjectStorageInputBuilder {
     }
     /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p>
     pub fn set_secret_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_key = input;
-        self
+        self.secret_key = input; self
     }
     /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p>
     pub fn get_secret_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -241,17 +236,16 @@ impl CreateLocationObjectStorageInputBuilder {
     /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.</p>
     pub fn agent_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.agent_arns.unwrap_or_default();
-        v.push(input.into());
-        self.agent_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.agent_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.</p>
-    pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.agent_arns = input;
-        self
+    pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.agent_arns = input; self
     }
     /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.</p>
-    pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.agent_arns
     }
     /// Appends an item to `tags`.
@@ -261,17 +255,16 @@ impl CreateLocationObjectStorageInputBuilder {
     /// <p>Specifies the key-value pair that represents a tag that you want to add to the resource. Tags can help you manage, filter, and search for your resources. We recommend creating a name tag for your location.</p>
     pub fn tags(mut self, input: crate::types::TagListEntry) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the key-value pair that represents a tag that you want to add to the resource. Tags can help you manage, filter, and search for your resources. We recommend creating a name tag for your location.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagListEntry>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Specifies the key-value pair that represents a tag that you want to add to the resource. Tags can help you manage, filter, and search for your resources. We recommend creating a name tag for your location.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagListEntry>> {
         &self.tags
     }
     /// <p>Specifies a file with the certificates that are used to sign the object storage server's certificate (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The file you specify must include the following:</p>
@@ -305,8 +298,7 @@ impl CreateLocationObjectStorageInputBuilder {
     /// <p>The file can be up to 32768 bytes (before base64 encoding).</p>
     /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
     pub fn set_server_certificate(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.server_certificate = input;
-        self
+        self.server_certificate = input; self
     }
     /// <p>Specifies a file with the certificates that are used to sign the object storage server's certificate (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The file you specify must include the following:</p>
     /// <ul>
@@ -325,24 +317,31 @@ impl CreateLocationObjectStorageInputBuilder {
         &self.server_certificate
     }
     /// Consumes the builder and constructs a [`CreateLocationObjectStorageInput`](crate::operation::create_location_object_storage::CreateLocationObjectStorageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_location_object_storage::CreateLocationObjectStorageInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_location_object_storage::CreateLocationObjectStorageInput {
-            server_hostname: self.server_hostname,
-            server_port: self.server_port,
-            server_protocol: self.server_protocol,
-            subdirectory: self.subdirectory,
-            bucket_name: self.bucket_name,
-            access_key: self.access_key,
-            secret_key: self.secret_key,
-            agent_arns: self.agent_arns,
-            tags: self.tags,
-            server_certificate: self.server_certificate,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_location_object_storage::CreateLocationObjectStorageInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_location_object_storage::CreateLocationObjectStorageInput {
+                server_hostname: self.server_hostname
+                ,
+                server_port: self.server_port
+                ,
+                server_protocol: self.server_protocol
+                ,
+                subdirectory: self.subdirectory
+                ,
+                bucket_name: self.bucket_name
+                ,
+                access_key: self.access_key
+                ,
+                secret_key: self.secret_key
+                ,
+                agent_arns: self.agent_arns
+                ,
+                tags: self.tags
+                ,
+                server_certificate: self.server_certificate
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateLocationObjectStorageInputBuilder {
@@ -361,3 +360,4 @@ impl ::std::fmt::Debug for CreateLocationObjectStorageInputBuilder {
         formatter.finish()
     }
 }
+

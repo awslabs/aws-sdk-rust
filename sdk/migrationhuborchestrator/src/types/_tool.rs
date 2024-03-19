@@ -3,19 +3,19 @@
 /// <p>List of AWS services utilized in a migration workflow.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Tool {
+pub struct Tool  {
     /// <p>The name of an AWS service.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The URL of an AWS service.</p>
     pub url: ::std::option::Option<::std::string::String>,
 }
-impl Tool {
+impl  Tool  {
     /// <p>The name of an AWS service.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The URL of an AWS service.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ToolBuilder {
     }
     /// <p>The name of an AWS service.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of an AWS service.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ToolBuilder {
     }
     /// <p>The URL of an AWS service.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// <p>The URL of an AWS service.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ToolBuilder {
     /// Consumes the builder and constructs a [`Tool`](crate::types::Tool).
     pub fn build(self) -> crate::types::Tool {
         crate::types::Tool {
-            name: self.name,
-            url: self.url,
+            name: self.name
+            ,
+            url: self.url
+            ,
         }
     }
 }
+

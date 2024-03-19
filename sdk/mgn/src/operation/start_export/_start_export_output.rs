@@ -3,22 +3,22 @@
 /// <p>Start export response.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartExportOutput {
+pub struct StartExportOutput  {
     /// <p>Start export response export task.</p>
     pub export_task: ::std::option::Option<crate::types::ExportTask>,
     _request_id: Option<String>,
 }
-impl StartExportOutput {
+impl  StartExportOutput  {
     /// <p>Start export response export task.</p>
-    pub fn export_task(&self) -> ::std::option::Option<&crate::types::ExportTask> {
+    pub fn export_task(&self) -> ::std::option::Option<& crate::types::ExportTask> {
         self.export_task.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartExportOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartExportOutput {
     /// Creates a new builder-style object to manufacture [`StartExportOutput`](crate::operation::start_export::StartExportOutput).
     pub fn builder() -> crate::operation::start_export::builders::StartExportOutputBuilder {
@@ -41,27 +41,28 @@ impl StartExportOutputBuilder {
     }
     /// <p>Start export response export task.</p>
     pub fn set_export_task(mut self, input: ::std::option::Option<crate::types::ExportTask>) -> Self {
-        self.export_task = input;
-        self
+        self.export_task = input; self
     }
     /// <p>Start export response export task.</p>
     pub fn get_export_task(&self) -> &::std::option::Option<crate::types::ExportTask> {
         &self.export_task
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartExportOutput`](crate::operation::start_export::StartExportOutput).
     pub fn build(self) -> crate::operation::start_export::StartExportOutput {
         crate::operation::start_export::StartExportOutput {
-            export_task: self.export_task,
+            export_task: self.export_task
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>A processor feature.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsRdsDbProcessorFeature {
+pub struct AwsRdsDbProcessorFeature  {
     /// <p>The name of the processor feature. Valid values are <code>coreCount</code> or <code>threadsPerCore</code>.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the processor feature.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl AwsRdsDbProcessorFeature {
+impl  AwsRdsDbProcessorFeature  {
     /// <p>The name of the processor feature. Valid values are <code>coreCount</code> or <code>threadsPerCore</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The value of the processor feature.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AwsRdsDbProcessorFeatureBuilder {
     }
     /// <p>The name of the processor feature. Valid values are <code>coreCount</code> or <code>threadsPerCore</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the processor feature. Valid values are <code>coreCount</code> or <code>threadsPerCore</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AwsRdsDbProcessorFeatureBuilder {
     }
     /// <p>The value of the processor feature.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the processor feature.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AwsRdsDbProcessorFeatureBuilder {
     /// Consumes the builder and constructs a [`AwsRdsDbProcessorFeature`](crate::types::AwsRdsDbProcessorFeature).
     pub fn build(self) -> crate::types::AwsRdsDbProcessorFeature {
         crate::types::AwsRdsDbProcessorFeature {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

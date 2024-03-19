@@ -3,7 +3,7 @@
 /// <p>Segment containing list of attachments.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RealTimeContactAnalysisSegmentAttachments {
+pub struct RealTimeContactAnalysisSegmentAttachments  {
     /// <p>The identifier of the segment.</p>
     pub id: ::std::string::String,
     /// <p>The identifier of the participant.</p>
@@ -13,36 +13,33 @@ pub struct RealTimeContactAnalysisSegmentAttachments {
     /// <p>The display name of the participant. Can be redacted.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>List of objects describing an individual attachment.</p>
-    pub attachments: ::std::vec::Vec<crate::types::RealTimeContactAnalysisAttachment>,
+    pub attachments: ::std::vec::Vec::<crate::types::RealTimeContactAnalysisAttachment>,
     /// <p>Field describing the time of the event. It can have different representations of time.</p>
     pub time: ::std::option::Option<crate::types::RealTimeContactAnalysisTimeData>,
 }
-impl RealTimeContactAnalysisSegmentAttachments {
+impl  RealTimeContactAnalysisSegmentAttachments  {
     /// <p>The identifier of the segment.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The identifier of the participant.</p>
-    pub fn participant_id(&self) -> &str {
-        use std::ops::Deref;
-        self.participant_id.deref()
+    pub fn participant_id(&self) -> & str {
+        use std::ops::Deref; self.participant_id.deref()
     }
     /// <p>The role of the participant. For example, is it a customer, agent, or system.</p>
-    pub fn participant_role(&self) -> &crate::types::ParticipantRole {
+    pub fn participant_role(&self) -> & crate::types::ParticipantRole {
         &self.participant_role
     }
     /// <p>The display name of the participant. Can be redacted.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>List of objects describing an individual attachment.</p>
-    pub fn attachments(&self) -> &[crate::types::RealTimeContactAnalysisAttachment] {
-        use std::ops::Deref;
-        self.attachments.deref()
+    pub fn attachments(&self) -> & [crate::types::RealTimeContactAnalysisAttachment] {
+        use std::ops::Deref; self.attachments.deref()
     }
     /// <p>Field describing the time of the event. It can have different representations of time.</p>
-    pub fn time(&self) -> ::std::option::Option<&crate::types::RealTimeContactAnalysisTimeData> {
+    pub fn time(&self) -> ::std::option::Option<& crate::types::RealTimeContactAnalysisTimeData> {
         self.time.as_ref()
     }
 }
@@ -61,7 +58,7 @@ pub struct RealTimeContactAnalysisSegmentAttachmentsBuilder {
     pub(crate) participant_id: ::std::option::Option<::std::string::String>,
     pub(crate) participant_role: ::std::option::Option<crate::types::ParticipantRole>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
-    pub(crate) attachments: ::std::option::Option<::std::vec::Vec<crate::types::RealTimeContactAnalysisAttachment>>,
+    pub(crate) attachments: ::std::option::Option<::std::vec::Vec::<crate::types::RealTimeContactAnalysisAttachment>>,
     pub(crate) time: ::std::option::Option<crate::types::RealTimeContactAnalysisTimeData>,
 }
 impl RealTimeContactAnalysisSegmentAttachmentsBuilder {
@@ -73,8 +70,7 @@ impl RealTimeContactAnalysisSegmentAttachmentsBuilder {
     }
     /// <p>The identifier of the segment.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the segment.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +84,7 @@ impl RealTimeContactAnalysisSegmentAttachmentsBuilder {
     }
     /// <p>The identifier of the participant.</p>
     pub fn set_participant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.participant_id = input;
-        self
+        self.participant_id = input; self
     }
     /// <p>The identifier of the participant.</p>
     pub fn get_participant_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +98,7 @@ impl RealTimeContactAnalysisSegmentAttachmentsBuilder {
     }
     /// <p>The role of the participant. For example, is it a customer, agent, or system.</p>
     pub fn set_participant_role(mut self, input: ::std::option::Option<crate::types::ParticipantRole>) -> Self {
-        self.participant_role = input;
-        self
+        self.participant_role = input; self
     }
     /// <p>The role of the participant. For example, is it a customer, agent, or system.</p>
     pub fn get_participant_role(&self) -> &::std::option::Option<crate::types::ParticipantRole> {
@@ -117,8 +111,7 @@ impl RealTimeContactAnalysisSegmentAttachmentsBuilder {
     }
     /// <p>The display name of the participant. Can be redacted.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The display name of the participant. Can be redacted.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,17 +124,16 @@ impl RealTimeContactAnalysisSegmentAttachmentsBuilder {
     /// <p>List of objects describing an individual attachment.</p>
     pub fn attachments(mut self, input: crate::types::RealTimeContactAnalysisAttachment) -> Self {
         let mut v = self.attachments.unwrap_or_default();
-        v.push(input);
-        self.attachments = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attachments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of objects describing an individual attachment.</p>
-    pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RealTimeContactAnalysisAttachment>>) -> Self {
-        self.attachments = input;
-        self
+    pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RealTimeContactAnalysisAttachment>>) -> Self {
+        self.attachments = input; self
     }
     /// <p>List of objects describing an individual attachment.</p>
-    pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RealTimeContactAnalysisAttachment>> {
+    pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RealTimeContactAnalysisAttachment>> {
         &self.attachments
     }
     /// <p>Field describing the time of the event. It can have different representations of time.</p>
@@ -152,8 +144,7 @@ impl RealTimeContactAnalysisSegmentAttachmentsBuilder {
     }
     /// <p>Field describing the time of the event. It can have different representations of time.</p>
     pub fn set_time(mut self, input: ::std::option::Option<crate::types::RealTimeContactAnalysisTimeData>) -> Self {
-        self.time = input;
-        self
+        self.time = input; self
     }
     /// <p>Field describing the time of the event. It can have different representations of time.</p>
     pub fn get_time(&self) -> &::std::option::Option<crate::types::RealTimeContactAnalysisTimeData> {
@@ -165,36 +156,35 @@ impl RealTimeContactAnalysisSegmentAttachmentsBuilder {
     /// - [`participant_id`](crate::types::builders::RealTimeContactAnalysisSegmentAttachmentsBuilder::participant_id)
     /// - [`participant_role`](crate::types::builders::RealTimeContactAnalysisSegmentAttachmentsBuilder::participant_role)
     /// - [`attachments`](crate::types::builders::RealTimeContactAnalysisSegmentAttachmentsBuilder::attachments)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::RealTimeContactAnalysisSegmentAttachments, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RealTimeContactAnalysisSegmentAttachments {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building RealTimeContactAnalysisSegmentAttachments",
-                )
-            })?,
-            participant_id: self.participant_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "participant_id",
-                    "participant_id was not specified but it is required when building RealTimeContactAnalysisSegmentAttachments",
-                )
-            })?,
-            participant_role: self.participant_role.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "participant_role",
-                    "participant_role was not specified but it is required when building RealTimeContactAnalysisSegmentAttachments",
-                )
-            })?,
-            display_name: self.display_name,
-            attachments: self.attachments.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attachments",
-                    "attachments was not specified but it is required when building RealTimeContactAnalysisSegmentAttachments",
-                )
-            })?,
-            time: self.time,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::RealTimeContactAnalysisSegmentAttachments, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::RealTimeContactAnalysisSegmentAttachments {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building RealTimeContactAnalysisSegmentAttachments")
+                    )?
+                ,
+                participant_id: self.participant_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("participant_id", "participant_id was not specified but it is required when building RealTimeContactAnalysisSegmentAttachments")
+                    )?
+                ,
+                participant_role: self.participant_role
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("participant_role", "participant_role was not specified but it is required when building RealTimeContactAnalysisSegmentAttachments")
+                    )?
+                ,
+                display_name: self.display_name
+                ,
+                attachments: self.attachments
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attachments", "attachments was not specified but it is required when building RealTimeContactAnalysisSegmentAttachments")
+                    )?
+                ,
+                time: self.time
+                ,
+            }
+        )
     }
 }
+

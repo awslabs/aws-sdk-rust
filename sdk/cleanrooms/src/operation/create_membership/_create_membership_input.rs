@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateMembershipInput {
+pub struct CreateMembershipInput  {
     /// <p>The unique ID for the associated collaboration.</p>
     pub collaboration_identifier: ::std::option::Option<::std::string::String>,
     /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
     pub query_log_status: ::std::option::Option<crate::types::MembershipQueryLogStatus>,
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
     pub default_result_configuration: ::std::option::Option<crate::types::MembershipProtectedQueryResultConfiguration>,
     /// <p>The payment responsibilities accepted by the collaboration member.</p>
@@ -16,27 +16,27 @@ pub struct CreateMembershipInput {
     /// <p>Required if the collaboration member doesn't have the member ability to run queries but is configured as a payer by the collaboration creator.</p>
     pub payment_configuration: ::std::option::Option<crate::types::MembershipPaymentConfiguration>,
 }
-impl CreateMembershipInput {
+impl  CreateMembershipInput  {
     /// <p>The unique ID for the associated collaboration.</p>
-    pub fn collaboration_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn collaboration_identifier(&self) -> ::std::option::Option<& str> {
         self.collaboration_identifier.as_deref()
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
-    pub fn query_log_status(&self) -> ::std::option::Option<&crate::types::MembershipQueryLogStatus> {
+    pub fn query_log_status(&self) -> ::std::option::Option<& crate::types::MembershipQueryLogStatus> {
         self.query_log_status.as_ref()
     }
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
-    pub fn default_result_configuration(&self) -> ::std::option::Option<&crate::types::MembershipProtectedQueryResultConfiguration> {
+    pub fn default_result_configuration(&self) -> ::std::option::Option<& crate::types::MembershipProtectedQueryResultConfiguration> {
         self.default_result_configuration.as_ref()
     }
     /// <p>The payment responsibilities accepted by the collaboration member.</p>
     /// <p>Not required if the collaboration member has the member ability to run queries.</p>
     /// <p>Required if the collaboration member doesn't have the member ability to run queries but is configured as a payer by the collaboration creator.</p>
-    pub fn payment_configuration(&self) -> ::std::option::Option<&crate::types::MembershipPaymentConfiguration> {
+    pub fn payment_configuration(&self) -> ::std::option::Option<& crate::types::MembershipPaymentConfiguration> {
         self.payment_configuration.as_ref()
     }
 }
@@ -53,7 +53,7 @@ impl CreateMembershipInput {
 pub struct CreateMembershipInputBuilder {
     pub(crate) collaboration_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) query_log_status: ::std::option::Option<crate::types::MembershipQueryLogStatus>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) default_result_configuration: ::std::option::Option<crate::types::MembershipProtectedQueryResultConfiguration>,
     pub(crate) payment_configuration: ::std::option::Option<crate::types::MembershipPaymentConfiguration>,
 }
@@ -66,8 +66,7 @@ impl CreateMembershipInputBuilder {
     }
     /// <p>The unique ID for the associated collaboration.</p>
     pub fn set_collaboration_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collaboration_identifier = input;
-        self
+        self.collaboration_identifier = input; self
     }
     /// <p>The unique ID for the associated collaboration.</p>
     pub fn get_collaboration_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +80,7 @@ impl CreateMembershipInputBuilder {
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
     pub fn set_query_log_status(mut self, input: ::std::option::Option<crate::types::MembershipQueryLogStatus>) -> Self {
-        self.query_log_status = input;
-        self
+        self.query_log_status = input; self
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
     pub fn get_query_log_status(&self) -> &::std::option::Option<crate::types::MembershipQueryLogStatus> {
@@ -95,17 +93,16 @@ impl CreateMembershipInputBuilder {
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
@@ -114,12 +111,8 @@ impl CreateMembershipInputBuilder {
         self
     }
     /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
-    pub fn set_default_result_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::MembershipProtectedQueryResultConfiguration>,
-    ) -> Self {
-        self.default_result_configuration = input;
-        self
+    pub fn set_default_result_configuration(mut self, input: ::std::option::Option<crate::types::MembershipProtectedQueryResultConfiguration>) -> Self {
+        self.default_result_configuration = input; self
     }
     /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
     pub fn get_default_result_configuration(&self) -> &::std::option::Option<crate::types::MembershipProtectedQueryResultConfiguration> {
@@ -136,8 +129,7 @@ impl CreateMembershipInputBuilder {
     /// <p>Not required if the collaboration member has the member ability to run queries.</p>
     /// <p>Required if the collaboration member doesn't have the member ability to run queries but is configured as a payer by the collaboration creator.</p>
     pub fn set_payment_configuration(mut self, input: ::std::option::Option<crate::types::MembershipPaymentConfiguration>) -> Self {
-        self.payment_configuration = input;
-        self
+        self.payment_configuration = input; self
     }
     /// <p>The payment responsibilities accepted by the collaboration member.</p>
     /// <p>Not required if the collaboration member has the member ability to run queries.</p>
@@ -146,15 +138,21 @@ impl CreateMembershipInputBuilder {
         &self.payment_configuration
     }
     /// Consumes the builder and constructs a [`CreateMembershipInput`](crate::operation::create_membership::CreateMembershipInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_membership::CreateMembershipInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_membership::CreateMembershipInput {
-            collaboration_identifier: self.collaboration_identifier,
-            query_log_status: self.query_log_status,
-            tags: self.tags,
-            default_result_configuration: self.default_result_configuration,
-            payment_configuration: self.payment_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_membership::CreateMembershipInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_membership::CreateMembershipInput {
+                collaboration_identifier: self.collaboration_identifier
+                ,
+                query_log_status: self.query_log_status
+                ,
+                tags: self.tags
+                ,
+                default_result_configuration: self.default_result_configuration
+                ,
+                payment_configuration: self.payment_configuration
+                ,
+            }
+        )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteContactInput {
+pub struct DeleteContactInput  {
     /// <p>The ARN of the contact to delete.</p>
     pub contact_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteContactInput {
+impl  DeleteContactInput  {
     /// <p>The ARN of the contact to delete.</p>
-    pub fn contact_arn(&self) -> ::std::option::Option<&str> {
+    pub fn contact_arn(&self) -> ::std::option::Option<& str> {
         self.contact_arn.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteContactInputBuilder {
     }
     /// <p>The ARN of the contact to delete.</p>
     pub fn set_contact_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_arn = input;
-        self
+        self.contact_arn = input; self
     }
     /// <p>The ARN of the contact to delete.</p>
     pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_arn
     }
     /// Consumes the builder and constructs a [`DeleteContactInput`](crate::operation::delete_contact::DeleteContactInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_contact::DeleteContactInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_contact::DeleteContactInput {
-            contact_arn: self.contact_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_contact::DeleteContactInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_contact::DeleteContactInput {
+                contact_arn: self.contact_arn
+                ,
+            }
+        )
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteQuickResponseInput {
+pub struct DeleteQuickResponseInput  {
     /// <p>The knowledge base from which the quick response is deleted. The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it.</p>
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the quick response to delete.</p>
     pub quick_response_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteQuickResponseInput {
+impl  DeleteQuickResponseInput  {
     /// <p>The knowledge base from which the quick response is deleted. The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it.</p>
-    pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
+    pub fn knowledge_base_id(&self) -> ::std::option::Option<& str> {
         self.knowledge_base_id.as_deref()
     }
     /// <p>The identifier of the quick response to delete.</p>
-    pub fn quick_response_id(&self) -> ::std::option::Option<&str> {
+    pub fn quick_response_id(&self) -> ::std::option::Option<& str> {
         self.quick_response_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteQuickResponseInputBuilder {
     }
     /// <p>The knowledge base from which the quick response is deleted. The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.knowledge_base_id = input;
-        self
+        self.knowledge_base_id = input; self
     }
     /// <p>The knowledge base from which the quick response is deleted. The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl DeleteQuickResponseInputBuilder {
     }
     /// <p>The identifier of the quick response to delete.</p>
     pub fn set_quick_response_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.quick_response_id = input;
-        self
+        self.quick_response_id = input; self
     }
     /// <p>The identifier of the quick response to delete.</p>
     pub fn get_quick_response_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.quick_response_id
     }
     /// Consumes the builder and constructs a [`DeleteQuickResponseInput`](crate::operation::delete_quick_response::DeleteQuickResponseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_quick_response::DeleteQuickResponseInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_quick_response::DeleteQuickResponseInput {
-            knowledge_base_id: self.knowledge_base_id,
-            quick_response_id: self.quick_response_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_quick_response::DeleteQuickResponseInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_quick_response::DeleteQuickResponseInput {
+                knowledge_base_id: self.knowledge_base_id
+                ,
+                quick_response_id: self.quick_response_id
+                ,
+            }
+        )
     }
 }
+

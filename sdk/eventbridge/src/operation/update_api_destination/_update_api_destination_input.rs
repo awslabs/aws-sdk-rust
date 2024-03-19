@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateApiDestinationInput {
+pub struct UpdateApiDestinationInput  {
     /// <p>The name of the API destination to update.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the API destination to update.</p>
@@ -16,25 +16,25 @@ pub struct UpdateApiDestinationInput {
     /// <p>The maximum number of invocations per second to send to the API destination.</p>
     pub invocation_rate_limit_per_second: ::std::option::Option<i32>,
 }
-impl UpdateApiDestinationInput {
+impl  UpdateApiDestinationInput  {
     /// <p>The name of the API destination to update.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the API destination to update.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the connection to use for the API destination.</p>
-    pub fn connection_arn(&self) -> ::std::option::Option<&str> {
+    pub fn connection_arn(&self) -> ::std::option::Option<& str> {
         self.connection_arn.as_deref()
     }
     /// <p>The URL to the endpoint to use for the API destination.</p>
-    pub fn invocation_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn invocation_endpoint(&self) -> ::std::option::Option<& str> {
         self.invocation_endpoint.as_deref()
     }
     /// <p>The method to use for the API destination.</p>
-    pub fn http_method(&self) -> ::std::option::Option<&crate::types::ApiDestinationHttpMethod> {
+    pub fn http_method(&self) -> ::std::option::Option<& crate::types::ApiDestinationHttpMethod> {
         self.http_method.as_ref()
     }
     /// <p>The maximum number of invocations per second to send to the API destination.</p>
@@ -69,8 +69,7 @@ impl UpdateApiDestinationInputBuilder {
     }
     /// <p>The name of the API destination to update.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the API destination to update.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl UpdateApiDestinationInputBuilder {
     }
     /// <p>The name of the API destination to update.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The name of the API destination to update.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl UpdateApiDestinationInputBuilder {
     }
     /// <p>The ARN of the connection to use for the API destination.</p>
     pub fn set_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_arn = input;
-        self
+        self.connection_arn = input; self
     }
     /// <p>The ARN of the connection to use for the API destination.</p>
     pub fn get_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl UpdateApiDestinationInputBuilder {
     }
     /// <p>The URL to the endpoint to use for the API destination.</p>
     pub fn set_invocation_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.invocation_endpoint = input;
-        self
+        self.invocation_endpoint = input; self
     }
     /// <p>The URL to the endpoint to use for the API destination.</p>
     pub fn get_invocation_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl UpdateApiDestinationInputBuilder {
     }
     /// <p>The method to use for the API destination.</p>
     pub fn set_http_method(mut self, input: ::std::option::Option<crate::types::ApiDestinationHttpMethod>) -> Self {
-        self.http_method = input;
-        self
+        self.http_method = input; self
     }
     /// <p>The method to use for the API destination.</p>
     pub fn get_http_method(&self) -> &::std::option::Option<crate::types::ApiDestinationHttpMethod> {
@@ -139,25 +134,30 @@ impl UpdateApiDestinationInputBuilder {
     }
     /// <p>The maximum number of invocations per second to send to the API destination.</p>
     pub fn set_invocation_rate_limit_per_second(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.invocation_rate_limit_per_second = input;
-        self
+        self.invocation_rate_limit_per_second = input; self
     }
     /// <p>The maximum number of invocations per second to send to the API destination.</p>
     pub fn get_invocation_rate_limit_per_second(&self) -> &::std::option::Option<i32> {
         &self.invocation_rate_limit_per_second
     }
     /// Consumes the builder and constructs a [`UpdateApiDestinationInput`](crate::operation::update_api_destination::UpdateApiDestinationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_api_destination::UpdateApiDestinationInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_api_destination::UpdateApiDestinationInput {
-            name: self.name,
-            description: self.description,
-            connection_arn: self.connection_arn,
-            invocation_endpoint: self.invocation_endpoint,
-            http_method: self.http_method,
-            invocation_rate_limit_per_second: self.invocation_rate_limit_per_second,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_api_destination::UpdateApiDestinationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_api_destination::UpdateApiDestinationInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                connection_arn: self.connection_arn
+                ,
+                invocation_endpoint: self.invocation_endpoint
+                ,
+                http_method: self.http_method
+                ,
+                invocation_rate_limit_per_second: self.invocation_rate_limit_per_second
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes the S3 data source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransformS3DataSource {
+pub struct TransformS3DataSource  {
     /// <p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. Amazon SageMaker uses all objects with the specified key name prefix for batch transform.</p>
     /// <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want Amazon SageMaker to use for batch transform.</p>
     /// <p>The following values are compatible: <code>ManifestFile</code>, <code>S3Prefix</code></p>
@@ -31,12 +31,12 @@ pub struct TransformS3DataSource {
     /// </ul>
     pub s3_uri: ::std::option::Option<::std::string::String>,
 }
-impl TransformS3DataSource {
+impl  TransformS3DataSource  {
     /// <p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. Amazon SageMaker uses all objects with the specified key name prefix for batch transform.</p>
     /// <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want Amazon SageMaker to use for batch transform.</p>
     /// <p>The following values are compatible: <code>ManifestFile</code>, <code>S3Prefix</code></p>
     /// <p>The following value is not compatible: <code>AugmentedManifestFile</code></p>
-    pub fn s3_data_type(&self) -> ::std::option::Option<&crate::types::S3DataType> {
+    pub fn s3_data_type(&self) -> ::std::option::Option<& crate::types::S3DataType> {
         self.s3_data_type.as_ref()
     }
     /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest. For example:</p>
@@ -59,7 +59,7 @@ impl TransformS3DataSource {
     /// <p><code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code></p>
     /// <p>The complete set of <code>S3Uris</code> in this manifest constitutes the input data for the channel for this datasource. The object that each <code>S3Uris</code> points to must be readable by the IAM role that Amazon SageMaker uses to perform tasks on your behalf.</p></li>
     /// </ul>
-    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn s3_uri(&self) -> ::std::option::Option<& str> {
         self.s3_uri.as_deref()
     }
 }
@@ -92,8 +92,7 @@ impl TransformS3DataSourceBuilder {
     /// <p>The following values are compatible: <code>ManifestFile</code>, <code>S3Prefix</code></p>
     /// <p>The following value is not compatible: <code>AugmentedManifestFile</code></p>
     pub fn set_s3_data_type(mut self, input: ::std::option::Option<crate::types::S3DataType>) -> Self {
-        self.s3_data_type = input;
-        self
+        self.s3_data_type = input; self
     }
     /// <p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. Amazon SageMaker uses all objects with the specified key name prefix for batch transform.</p>
     /// <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file containing a list of object keys that you want Amazon SageMaker to use for batch transform.</p>
@@ -148,8 +147,7 @@ impl TransformS3DataSourceBuilder {
     /// <p>The complete set of <code>S3Uris</code> in this manifest constitutes the input data for the channel for this datasource. The object that each <code>S3Uris</code> points to must be readable by the IAM role that Amazon SageMaker uses to perform tasks on your behalf.</p></li>
     /// </ul>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
     }
     /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest. For example:</p>
     /// <ul>
@@ -177,8 +175,11 @@ impl TransformS3DataSourceBuilder {
     /// Consumes the builder and constructs a [`TransformS3DataSource`](crate::types::TransformS3DataSource).
     pub fn build(self) -> crate::types::TransformS3DataSource {
         crate::types::TransformS3DataSource {
-            s3_data_type: self.s3_data_type,
-            s3_uri: self.s3_uri,
+            s3_data_type: self.s3_data_type
+            ,
+            s3_uri: self.s3_uri
+            ,
         }
     }
 }
+

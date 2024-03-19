@@ -3,17 +3,17 @@
 /// <p>Contains the parameters for SetLoadBalancerPoliciesForBackendServer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetLoadBalancerPoliciesForBackendServerInput {
+pub struct SetLoadBalancerPoliciesForBackendServerInput  {
     /// <p>The name of the load balancer.</p>
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The port number associated with the EC2 instance.</p>
     pub instance_port: ::std::option::Option<i32>,
     /// <p>The names of the policies. If the list is empty, then all current polices are removed from the EC2 instance.</p>
-    pub policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub policy_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl SetLoadBalancerPoliciesForBackendServerInput {
+impl  SetLoadBalancerPoliciesForBackendServerInput  {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> ::std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> ::std::option::Option<& str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The port number associated with the EC2 instance.</p>
@@ -21,16 +21,16 @@ impl SetLoadBalancerPoliciesForBackendServerInput {
         self.instance_port
     }
     /// <p>The names of the policies. If the list is empty, then all current polices are removed from the EC2 instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_names.is_none()`.
-    pub fn policy_names(&self) -> &[::std::string::String] {
-        self.policy_names.as_deref().unwrap_or_default()
+    pub fn policy_names(&self) -> & [::std::string::String] {
+        self.policy_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SetLoadBalancerPoliciesForBackendServerInput {
     /// Creates a new builder-style object to manufacture [`SetLoadBalancerPoliciesForBackendServerInput`](crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerInput).
-    pub fn builder() -> crate::operation::set_load_balancer_policies_for_backend_server::builders::SetLoadBalancerPoliciesForBackendServerInputBuilder
-    {
+    pub fn builder() -> crate::operation::set_load_balancer_policies_for_backend_server::builders::SetLoadBalancerPoliciesForBackendServerInputBuilder {
         crate::operation::set_load_balancer_policies_for_backend_server::builders::SetLoadBalancerPoliciesForBackendServerInputBuilder::default()
     }
 }
@@ -41,7 +41,7 @@ impl SetLoadBalancerPoliciesForBackendServerInput {
 pub struct SetLoadBalancerPoliciesForBackendServerInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_port: ::std::option::Option<i32>,
-    pub(crate) policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) policy_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl SetLoadBalancerPoliciesForBackendServerInputBuilder {
     /// <p>The name of the load balancer.</p>
@@ -52,8 +52,7 @@ impl SetLoadBalancerPoliciesForBackendServerInputBuilder {
     }
     /// <p>The name of the load balancer.</p>
     pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.load_balancer_name = input;
-        self
+        self.load_balancer_name = input; self
     }
     /// <p>The name of the load balancer.</p>
     pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +66,7 @@ impl SetLoadBalancerPoliciesForBackendServerInputBuilder {
     }
     /// <p>The port number associated with the EC2 instance.</p>
     pub fn set_instance_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.instance_port = input;
-        self
+        self.instance_port = input; self
     }
     /// <p>The port number associated with the EC2 instance.</p>
     pub fn get_instance_port(&self) -> &::std::option::Option<i32> {
@@ -81,32 +79,30 @@ impl SetLoadBalancerPoliciesForBackendServerInputBuilder {
     /// <p>The names of the policies. If the list is empty, then all current polices are removed from the EC2 instance.</p>
     pub fn policy_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.policy_names.unwrap_or_default();
-        v.push(input.into());
-        self.policy_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.policy_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of the policies. If the list is empty, then all current polices are removed from the EC2 instance.</p>
-    pub fn set_policy_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.policy_names = input;
-        self
+    pub fn set_policy_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.policy_names = input; self
     }
     /// <p>The names of the policies. If the list is empty, then all current polices are removed from the EC2 instance.</p>
-    pub fn get_policy_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_policy_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.policy_names
     }
     /// Consumes the builder and constructs a [`SetLoadBalancerPoliciesForBackendServerInput`](crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerInput {
-                load_balancer_name: self.load_balancer_name,
-                instance_port: self.instance_port,
-                policy_names: self.policy_names,
-            },
+                load_balancer_name: self.load_balancer_name
+                ,
+                instance_port: self.instance_port
+                ,
+                policy_names: self.policy_names
+                ,
+            }
         )
     }
 }
+

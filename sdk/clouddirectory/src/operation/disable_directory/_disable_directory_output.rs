@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisableDirectoryOutput {
+pub struct DisableDirectoryOutput  {
     /// <p>The ARN of the directory that has been disabled.</p>
     pub directory_arn: ::std::string::String,
     _request_id: Option<String>,
 }
-impl DisableDirectoryOutput {
+impl  DisableDirectoryOutput  {
     /// <p>The ARN of the directory that has been disabled.</p>
-    pub fn directory_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.directory_arn.deref()
+    pub fn directory_arn(&self) -> & str {
+        use std::ops::Deref; self.directory_arn.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DisableDirectoryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DisableDirectoryOutput {
     /// Creates a new builder-style object to manufacture [`DisableDirectoryOutput`](crate::operation::disable_directory::DisableDirectoryOutput).
     pub fn builder() -> crate::operation::disable_directory::builders::DisableDirectoryOutputBuilder {
@@ -42,36 +41,35 @@ impl DisableDirectoryOutputBuilder {
     }
     /// <p>The ARN of the directory that has been disabled.</p>
     pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_arn = input;
-        self
+        self.directory_arn = input; self
     }
     /// <p>The ARN of the directory that has been disabled.</p>
     pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.directory_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DisableDirectoryOutput`](crate::operation::disable_directory::DisableDirectoryOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`directory_arn`](crate::operation::disable_directory::builders::DisableDirectoryOutputBuilder::directory_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::disable_directory::DisableDirectoryOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::disable_directory::DisableDirectoryOutput {
-            directory_arn: self.directory_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "directory_arn",
-                    "directory_arn was not specified but it is required when building DisableDirectoryOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disable_directory::DisableDirectoryOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disable_directory::DisableDirectoryOutput {
+                directory_arn: self.directory_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("directory_arn", "directory_arn was not specified but it is required when building DisableDirectoryOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>UpdateTaskResponse</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateTaskInput {
+pub struct UpdateTaskInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource name of the task to update.</p>
     pub task_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
     /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
     pub options: ::std::option::Option<crate::types::Options>,
     /// <p>Specifies a list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub excludes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
+    pub excludes: ::std::option::Option<::std::vec::Vec::<crate::types::FilterRule>>,
     /// <p>Specifies a schedule used to periodically transfer files from a source to a destination location. You can configure your task to execute hourly, daily, weekly or on specific days of the week. You control when in the day or hour you want the task to execute. The time you specify is UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
     pub schedule: ::std::option::Option<crate::types::TaskSchedule>,
     /// <p>The name of the task to update.</p>
@@ -18,7 +18,7 @@ pub struct UpdateTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch log group.</p>
     pub cloud_watch_log_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub includes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
+    pub includes: ::std::option::Option<::std::vec::Vec::<crate::types::FilterRule>>,
     /// <p>Configures a manifest, which is a list of files or objects that you want DataSync to transfer. For more information and configuration examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
     /// <p>When using this parameter, your caller identity (the IAM role that you're using DataSync with) must have the <code>iam:PassRole</code> permission. The <a href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a> policy includes this permission.</p>
     /// <p>To remove a manifest configuration, specify this parameter as empty.</p>
@@ -28,50 +28,52 @@ pub struct UpdateTaskInput {
     /// <p>To remove a task report configuration, specify this parameter as empty.</p>
     pub task_report_config: ::std::option::Option<crate::types::TaskReportConfig>,
 }
-impl UpdateTaskInput {
+impl  UpdateTaskInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource name of the task to update.</p>
-    pub fn task_arn(&self) -> ::std::option::Option<&str> {
+    pub fn task_arn(&self) -> ::std::option::Option<& str> {
         self.task_arn.as_deref()
     }
     /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
     /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
-    pub fn options(&self) -> ::std::option::Option<&crate::types::Options> {
+    pub fn options(&self) -> ::std::option::Option<& crate::types::Options> {
         self.options.as_ref()
     }
     /// <p>Specifies a list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excludes.is_none()`.
-    pub fn excludes(&self) -> &[crate::types::FilterRule] {
-        self.excludes.as_deref().unwrap_or_default()
+    pub fn excludes(&self) -> & [crate::types::FilterRule] {
+        self.excludes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies a schedule used to periodically transfer files from a source to a destination location. You can configure your task to execute hourly, daily, weekly or on specific days of the week. You control when in the day or hour you want the task to execute. The time you specify is UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
-    pub fn schedule(&self) -> ::std::option::Option<&crate::types::TaskSchedule> {
+    pub fn schedule(&self) -> ::std::option::Option<& crate::types::TaskSchedule> {
         self.schedule.as_ref()
     }
     /// <p>The name of the task to update.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch log group.</p>
-    pub fn cloud_watch_log_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cloud_watch_log_group_arn(&self) -> ::std::option::Option<& str> {
         self.cloud_watch_log_group_arn.as_deref()
     }
     /// <p>Specifies a list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.includes.is_none()`.
-    pub fn includes(&self) -> &[crate::types::FilterRule] {
-        self.includes.as_deref().unwrap_or_default()
+    pub fn includes(&self) -> & [crate::types::FilterRule] {
+        self.includes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Configures a manifest, which is a list of files or objects that you want DataSync to transfer. For more information and configuration examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
     /// <p>When using this parameter, your caller identity (the IAM role that you're using DataSync with) must have the <code>iam:PassRole</code> permission. The <a href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a> policy includes this permission.</p>
     /// <p>To remove a manifest configuration, specify this parameter as empty.</p>
-    pub fn manifest_config(&self) -> ::std::option::Option<&crate::types::ManifestConfig> {
+    pub fn manifest_config(&self) -> ::std::option::Option<& crate::types::ManifestConfig> {
         self.manifest_config.as_ref()
     }
     /// <p>Specifies how you want to configure a task report, which provides detailed information about your DataSync transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring your DataSync transfers with task reports</a>.</p>
     /// <p>When using this parameter, your caller identity (the IAM role that you're using DataSync with) must have the <code>iam:PassRole</code> permission. The <a href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a> policy includes this permission.</p>
     /// <p>To remove a task report configuration, specify this parameter as empty.</p>
-    pub fn task_report_config(&self) -> ::std::option::Option<&crate::types::TaskReportConfig> {
+    pub fn task_report_config(&self) -> ::std::option::Option<& crate::types::TaskReportConfig> {
         self.task_report_config.as_ref()
     }
 }
@@ -88,11 +90,11 @@ impl UpdateTaskInput {
 pub struct UpdateTaskInputBuilder {
     pub(crate) task_arn: ::std::option::Option<::std::string::String>,
     pub(crate) options: ::std::option::Option<crate::types::Options>,
-    pub(crate) excludes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
+    pub(crate) excludes: ::std::option::Option<::std::vec::Vec::<crate::types::FilterRule>>,
     pub(crate) schedule: ::std::option::Option<crate::types::TaskSchedule>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) cloud_watch_log_group_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) includes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
+    pub(crate) includes: ::std::option::Option<::std::vec::Vec::<crate::types::FilterRule>>,
     pub(crate) manifest_config: ::std::option::Option<crate::types::ManifestConfig>,
     pub(crate) task_report_config: ::std::option::Option<crate::types::TaskReportConfig>,
 }
@@ -105,8 +107,7 @@ impl UpdateTaskInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource name of the task to update.</p>
     pub fn set_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_arn = input;
-        self
+        self.task_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource name of the task to update.</p>
     pub fn get_task_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +122,7 @@ impl UpdateTaskInputBuilder {
     /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
     /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::Options>) -> Self {
-        self.options = input;
-        self
+        self.options = input; self
     }
     /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
     /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
@@ -136,17 +136,16 @@ impl UpdateTaskInputBuilder {
     /// <p>Specifies a list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     pub fn excludes(mut self, input: crate::types::FilterRule) -> Self {
         let mut v = self.excludes.unwrap_or_default();
-        v.push(input);
-        self.excludes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.excludes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies a list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub fn set_excludes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>) -> Self {
-        self.excludes = input;
-        self
+    pub fn set_excludes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FilterRule>>) -> Self {
+        self.excludes = input; self
     }
     /// <p>Specifies a list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub fn get_excludes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
+    pub fn get_excludes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FilterRule>> {
         &self.excludes
     }
     /// <p>Specifies a schedule used to periodically transfer files from a source to a destination location. You can configure your task to execute hourly, daily, weekly or on specific days of the week. You control when in the day or hour you want the task to execute. The time you specify is UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
@@ -156,8 +155,7 @@ impl UpdateTaskInputBuilder {
     }
     /// <p>Specifies a schedule used to periodically transfer files from a source to a destination location. You can configure your task to execute hourly, daily, weekly or on specific days of the week. You control when in the day or hour you want the task to execute. The time you specify is UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
     pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::TaskSchedule>) -> Self {
-        self.schedule = input;
-        self
+        self.schedule = input; self
     }
     /// <p>Specifies a schedule used to periodically transfer files from a source to a destination location. You can configure your task to execute hourly, daily, weekly or on specific days of the week. You control when in the day or hour you want the task to execute. The time you specify is UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
     pub fn get_schedule(&self) -> &::std::option::Option<crate::types::TaskSchedule> {
@@ -170,8 +168,7 @@ impl UpdateTaskInputBuilder {
     }
     /// <p>The name of the task to update.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the task to update.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -184,8 +181,7 @@ impl UpdateTaskInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch log group.</p>
     pub fn set_cloud_watch_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cloud_watch_log_group_arn = input;
-        self
+        self.cloud_watch_log_group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch log group.</p>
     pub fn get_cloud_watch_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -198,17 +194,16 @@ impl UpdateTaskInputBuilder {
     /// <p>Specifies a list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     pub fn includes(mut self, input: crate::types::FilterRule) -> Self {
         let mut v = self.includes.unwrap_or_default();
-        v.push(input);
-        self.includes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.includes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies a list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub fn set_includes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>) -> Self {
-        self.includes = input;
-        self
+    pub fn set_includes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FilterRule>>) -> Self {
+        self.includes = input; self
     }
     /// <p>Specifies a list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub fn get_includes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
+    pub fn get_includes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FilterRule>> {
         &self.includes
     }
     /// <p>Configures a manifest, which is a list of files or objects that you want DataSync to transfer. For more information and configuration examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
@@ -222,8 +217,7 @@ impl UpdateTaskInputBuilder {
     /// <p>When using this parameter, your caller identity (the IAM role that you're using DataSync with) must have the <code>iam:PassRole</code> permission. The <a href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a> policy includes this permission.</p>
     /// <p>To remove a manifest configuration, specify this parameter as empty.</p>
     pub fn set_manifest_config(mut self, input: ::std::option::Option<crate::types::ManifestConfig>) -> Self {
-        self.manifest_config = input;
-        self
+        self.manifest_config = input; self
     }
     /// <p>Configures a manifest, which is a list of files or objects that you want DataSync to transfer. For more information and configuration examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
     /// <p>When using this parameter, your caller identity (the IAM role that you're using DataSync with) must have the <code>iam:PassRole</code> permission. The <a href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a> policy includes this permission.</p>
@@ -242,8 +236,7 @@ impl UpdateTaskInputBuilder {
     /// <p>When using this parameter, your caller identity (the IAM role that you're using DataSync with) must have the <code>iam:PassRole</code> permission. The <a href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a> policy includes this permission.</p>
     /// <p>To remove a task report configuration, specify this parameter as empty.</p>
     pub fn set_task_report_config(mut self, input: ::std::option::Option<crate::types::TaskReportConfig>) -> Self {
-        self.task_report_config = input;
-        self
+        self.task_report_config = input; self
     }
     /// <p>Specifies how you want to configure a task report, which provides detailed information about your DataSync transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring your DataSync transfers with task reports</a>.</p>
     /// <p>When using this parameter, your caller identity (the IAM role that you're using DataSync with) must have the <code>iam:PassRole</code> permission. The <a href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a> policy includes this permission.</p>
@@ -253,16 +246,28 @@ impl UpdateTaskInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateTaskInput`](crate::operation::update_task::UpdateTaskInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_task::UpdateTaskInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_task::UpdateTaskInput {
-            task_arn: self.task_arn,
-            options: self.options,
-            excludes: self.excludes,
-            schedule: self.schedule,
-            name: self.name,
-            cloud_watch_log_group_arn: self.cloud_watch_log_group_arn,
-            includes: self.includes,
-            manifest_config: self.manifest_config,
-            task_report_config: self.task_report_config,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_task::UpdateTaskInput {
+                task_arn: self.task_arn
+                ,
+                options: self.options
+                ,
+                excludes: self.excludes
+                ,
+                schedule: self.schedule
+                ,
+                name: self.name
+                ,
+                cloud_watch_log_group_arn: self.cloud_watch_log_group_arn
+                ,
+                includes: self.includes
+                ,
+                manifest_config: self.manifest_config
+                ,
+                task_report_config: self.task_report_config
+                ,
+            }
+        )
     }
 }
+

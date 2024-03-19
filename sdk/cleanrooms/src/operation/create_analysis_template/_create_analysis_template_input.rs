@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateAnalysisTemplateInput {
+pub struct CreateAnalysisTemplateInput  {
     /// <p>The description of the analysis template.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for a membership resource.</p>
@@ -14,43 +14,44 @@ pub struct CreateAnalysisTemplateInput {
     /// <p>The information in the analysis template. Currently supports <code>text</code>, the query text for the analysis template.</p>
     pub source: ::std::option::Option<crate::types::AnalysisSource>,
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The parameters of the analysis template.</p>
-    pub analysis_parameters: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisParameter>>,
+    pub analysis_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::AnalysisParameter>>,
 }
-impl CreateAnalysisTemplateInput {
+impl  CreateAnalysisTemplateInput  {
     /// <p>The description of the analysis template.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The identifier for a membership resource.</p>
-    pub fn membership_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn membership_identifier(&self) -> ::std::option::Option<& str> {
         self.membership_identifier.as_deref()
     }
     /// <p>The name of the analysis template.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The format of the analysis template.</p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::AnalysisFormat> {
+    pub fn format(&self) -> ::std::option::Option<& crate::types::AnalysisFormat> {
         self.format.as_ref()
     }
     /// <p>The information in the analysis template. Currently supports <code>text</code>, the query text for the analysis template.</p>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::AnalysisSource> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::AnalysisSource> {
         self.source.as_ref()
     }
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The parameters of the analysis template.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.analysis_parameters.is_none()`.
-    pub fn analysis_parameters(&self) -> &[crate::types::AnalysisParameter] {
-        self.analysis_parameters.as_deref().unwrap_or_default()
+    pub fn analysis_parameters(&self) -> & [crate::types::AnalysisParameter] {
+        self.analysis_parameters.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for CreateAnalysisTemplateInput {
+impl  ::std::fmt::Debug for CreateAnalysisTemplateInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAnalysisTemplateInput");
         formatter.field("description", &self.description);
@@ -79,8 +80,8 @@ pub struct CreateAnalysisTemplateInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) format: ::std::option::Option<crate::types::AnalysisFormat>,
     pub(crate) source: ::std::option::Option<crate::types::AnalysisSource>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) analysis_parameters: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisParameter>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) analysis_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::AnalysisParameter>>,
 }
 impl CreateAnalysisTemplateInputBuilder {
     /// <p>The description of the analysis template.</p>
@@ -90,8 +91,7 @@ impl CreateAnalysisTemplateInputBuilder {
     }
     /// <p>The description of the analysis template.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the analysis template.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +105,7 @@ impl CreateAnalysisTemplateInputBuilder {
     }
     /// <p>The identifier for a membership resource.</p>
     pub fn set_membership_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.membership_identifier = input;
-        self
+        self.membership_identifier = input; self
     }
     /// <p>The identifier for a membership resource.</p>
     pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +119,7 @@ impl CreateAnalysisTemplateInputBuilder {
     }
     /// <p>The name of the analysis template.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the analysis template.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +133,7 @@ impl CreateAnalysisTemplateInputBuilder {
     }
     /// <p>The format of the analysis template.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::AnalysisFormat>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>The format of the analysis template.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::AnalysisFormat> {
@@ -150,8 +147,7 @@ impl CreateAnalysisTemplateInputBuilder {
     }
     /// <p>The information in the analysis template. Currently supports <code>text</code>, the query text for the analysis template.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::AnalysisSource>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The information in the analysis template. Currently supports <code>text</code>, the query text for the analysis template.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::AnalysisSource> {
@@ -164,17 +160,16 @@ impl CreateAnalysisTemplateInputBuilder {
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Appends an item to `analysis_parameters`.
@@ -184,35 +179,38 @@ impl CreateAnalysisTemplateInputBuilder {
     /// <p>The parameters of the analysis template.</p>
     pub fn analysis_parameters(mut self, input: crate::types::AnalysisParameter) -> Self {
         let mut v = self.analysis_parameters.unwrap_or_default();
-        v.push(input);
-        self.analysis_parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.analysis_parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The parameters of the analysis template.</p>
-    pub fn set_analysis_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisParameter>>) -> Self {
-        self.analysis_parameters = input;
-        self
+    pub fn set_analysis_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AnalysisParameter>>) -> Self {
+        self.analysis_parameters = input; self
     }
     /// <p>The parameters of the analysis template.</p>
-    pub fn get_analysis_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisParameter>> {
+    pub fn get_analysis_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AnalysisParameter>> {
         &self.analysis_parameters
     }
     /// Consumes the builder and constructs a [`CreateAnalysisTemplateInput`](crate::operation::create_analysis_template::CreateAnalysisTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_analysis_template::CreateAnalysisTemplateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_analysis_template::CreateAnalysisTemplateInput {
-            description: self.description,
-            membership_identifier: self.membership_identifier,
-            name: self.name,
-            format: self.format,
-            source: self.source,
-            tags: self.tags,
-            analysis_parameters: self.analysis_parameters,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_analysis_template::CreateAnalysisTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_analysis_template::CreateAnalysisTemplateInput {
+                description: self.description
+                ,
+                membership_identifier: self.membership_identifier
+                ,
+                name: self.name
+                ,
+                format: self.format
+                ,
+                source: self.source
+                ,
+                tags: self.tags
+                ,
+                analysis_parameters: self.analysis_parameters
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateAnalysisTemplateInputBuilder {
@@ -228,3 +226,4 @@ impl ::std::fmt::Debug for CreateAnalysisTemplateInputBuilder {
         formatter.finish()
     }
 }
+

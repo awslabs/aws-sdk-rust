@@ -3,7 +3,7 @@
 /// <p>Provides information about a specific security standard.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Standard {
+pub struct Standard  {
     /// <p>The ARN of a standard.</p>
     pub standards_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the standard.</p>
@@ -16,17 +16,17 @@ pub struct Standard {
     /// <p>Provides details about the management of a standard.</p>
     pub standards_managed_by: ::std::option::Option<crate::types::StandardsManagedBy>,
 }
-impl Standard {
+impl  Standard  {
     /// <p>The ARN of a standard.</p>
-    pub fn standards_arn(&self) -> ::std::option::Option<&str> {
+    pub fn standards_arn(&self) -> ::std::option::Option<& str> {
         self.standards_arn.as_deref()
     }
     /// <p>The name of the standard.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the standard.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Whether the standard is enabled by default. When Security Hub is enabled from the console, if a standard is enabled by default, the check box for that standard is selected by default.</p>
@@ -35,7 +35,7 @@ impl Standard {
         self.enabled_by_default
     }
     /// <p>Provides details about the management of a standard.</p>
-    pub fn standards_managed_by(&self) -> ::std::option::Option<&crate::types::StandardsManagedBy> {
+    pub fn standards_managed_by(&self) -> ::std::option::Option<& crate::types::StandardsManagedBy> {
         self.standards_managed_by.as_ref()
     }
 }
@@ -64,8 +64,7 @@ impl StandardBuilder {
     }
     /// <p>The ARN of a standard.</p>
     pub fn set_standards_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.standards_arn = input;
-        self
+        self.standards_arn = input; self
     }
     /// <p>The ARN of a standard.</p>
     pub fn get_standards_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +77,7 @@ impl StandardBuilder {
     }
     /// <p>The name of the standard.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the standard.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +90,7 @@ impl StandardBuilder {
     }
     /// <p>A description of the standard.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the standard.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +105,7 @@ impl StandardBuilder {
     /// <p>Whether the standard is enabled by default. When Security Hub is enabled from the console, if a standard is enabled by default, the check box for that standard is selected by default.</p>
     /// <p>When Security Hub is enabled using the <code>EnableSecurityHub</code> API operation, the standard is enabled by default unless <code>EnableDefaultStandards</code> is set to <code>false</code>.</p>
     pub fn set_enabled_by_default(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled_by_default = input;
-        self
+        self.enabled_by_default = input; self
     }
     /// <p>Whether the standard is enabled by default. When Security Hub is enabled from the console, if a standard is enabled by default, the check box for that standard is selected by default.</p>
     /// <p>When Security Hub is enabled using the <code>EnableSecurityHub</code> API operation, the standard is enabled by default unless <code>EnableDefaultStandards</code> is set to <code>false</code>.</p>
@@ -123,8 +119,7 @@ impl StandardBuilder {
     }
     /// <p>Provides details about the management of a standard.</p>
     pub fn set_standards_managed_by(mut self, input: ::std::option::Option<crate::types::StandardsManagedBy>) -> Self {
-        self.standards_managed_by = input;
-        self
+        self.standards_managed_by = input; self
     }
     /// <p>Provides details about the management of a standard.</p>
     pub fn get_standards_managed_by(&self) -> &::std::option::Option<crate::types::StandardsManagedBy> {
@@ -133,11 +128,17 @@ impl StandardBuilder {
     /// Consumes the builder and constructs a [`Standard`](crate::types::Standard).
     pub fn build(self) -> crate::types::Standard {
         crate::types::Standard {
-            standards_arn: self.standards_arn,
-            name: self.name,
-            description: self.description,
-            enabled_by_default: self.enabled_by_default,
-            standards_managed_by: self.standards_managed_by,
+            standards_arn: self.standards_arn
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            enabled_by_default: self.enabled_by_default
+            ,
+            standards_managed_by: self.standards_managed_by
+            ,
         }
     }
 }
+

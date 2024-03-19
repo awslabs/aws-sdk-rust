@@ -3,7 +3,7 @@
 /// <p>Defines an approval rule for a patch baseline.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PatchRule {
+pub struct PatchRule  {
     /// <p>The patch filter group that defines the criteria for the rule.</p>
     pub patch_filter_group: ::std::option::Option<crate::types::PatchFilterGroup>,
     /// <p>A compliance severity level for all approved patches in a patch baseline.</p>
@@ -16,13 +16,13 @@ pub struct PatchRule {
     /// <p>For managed nodes identified by the approval rule filters, enables a patch baseline to apply non-security updates available in the specified repository. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
     pub enable_non_security: ::std::option::Option<bool>,
 }
-impl PatchRule {
+impl  PatchRule  {
     /// <p>The patch filter group that defines the criteria for the rule.</p>
-    pub fn patch_filter_group(&self) -> ::std::option::Option<&crate::types::PatchFilterGroup> {
+    pub fn patch_filter_group(&self) -> ::std::option::Option<& crate::types::PatchFilterGroup> {
         self.patch_filter_group.as_ref()
     }
     /// <p>A compliance severity level for all approved patches in a patch baseline.</p>
-    pub fn compliance_level(&self) -> ::std::option::Option<&crate::types::PatchComplianceLevel> {
+    pub fn compliance_level(&self) -> ::std::option::Option<& crate::types::PatchComplianceLevel> {
         self.compliance_level.as_ref()
     }
     /// <p>The number of days after the release date of each patch matched by the rule that the patch is marked as approved in the patch baseline. For example, a value of <code>7</code> means that patches are approved seven days after they are released. Not supported on Debian Server or Ubuntu Server.</p>
@@ -31,7 +31,7 @@ impl PatchRule {
     }
     /// <p>The cutoff date for auto approval of released patches. Any patches released on or before this date are installed automatically. Not supported on Debian Server or Ubuntu Server.</p>
     /// <p>Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.</p>
-    pub fn approve_until_date(&self) -> ::std::option::Option<&str> {
+    pub fn approve_until_date(&self) -> ::std::option::Option<& str> {
         self.approve_until_date.as_deref()
     }
     /// <p>For managed nodes identified by the approval rule filters, enables a patch baseline to apply non-security updates available in the specified repository. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
@@ -65,8 +65,7 @@ impl PatchRuleBuilder {
     }
     /// <p>The patch filter group that defines the criteria for the rule.</p>
     pub fn set_patch_filter_group(mut self, input: ::std::option::Option<crate::types::PatchFilterGroup>) -> Self {
-        self.patch_filter_group = input;
-        self
+        self.patch_filter_group = input; self
     }
     /// <p>The patch filter group that defines the criteria for the rule.</p>
     pub fn get_patch_filter_group(&self) -> &::std::option::Option<crate::types::PatchFilterGroup> {
@@ -79,8 +78,7 @@ impl PatchRuleBuilder {
     }
     /// <p>A compliance severity level for all approved patches in a patch baseline.</p>
     pub fn set_compliance_level(mut self, input: ::std::option::Option<crate::types::PatchComplianceLevel>) -> Self {
-        self.compliance_level = input;
-        self
+        self.compliance_level = input; self
     }
     /// <p>A compliance severity level for all approved patches in a patch baseline.</p>
     pub fn get_compliance_level(&self) -> &::std::option::Option<crate::types::PatchComplianceLevel> {
@@ -93,8 +91,7 @@ impl PatchRuleBuilder {
     }
     /// <p>The number of days after the release date of each patch matched by the rule that the patch is marked as approved in the patch baseline. For example, a value of <code>7</code> means that patches are approved seven days after they are released. Not supported on Debian Server or Ubuntu Server.</p>
     pub fn set_approve_after_days(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.approve_after_days = input;
-        self
+        self.approve_after_days = input; self
     }
     /// <p>The number of days after the release date of each patch matched by the rule that the patch is marked as approved in the patch baseline. For example, a value of <code>7</code> means that patches are approved seven days after they are released. Not supported on Debian Server or Ubuntu Server.</p>
     pub fn get_approve_after_days(&self) -> &::std::option::Option<i32> {
@@ -109,8 +106,7 @@ impl PatchRuleBuilder {
     /// <p>The cutoff date for auto approval of released patches. Any patches released on or before this date are installed automatically. Not supported on Debian Server or Ubuntu Server.</p>
     /// <p>Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.</p>
     pub fn set_approve_until_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.approve_until_date = input;
-        self
+        self.approve_until_date = input; self
     }
     /// <p>The cutoff date for auto approval of released patches. Any patches released on or before this date are installed automatically. Not supported on Debian Server or Ubuntu Server.</p>
     /// <p>Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.</p>
@@ -124,8 +120,7 @@ impl PatchRuleBuilder {
     }
     /// <p>For managed nodes identified by the approval rule filters, enables a patch baseline to apply non-security updates available in the specified repository. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
     pub fn set_enable_non_security(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_non_security = input;
-        self
+        self.enable_non_security = input; self
     }
     /// <p>For managed nodes identified by the approval rule filters, enables a patch baseline to apply non-security updates available in the specified repository. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
     pub fn get_enable_non_security(&self) -> &::std::option::Option<bool> {
@@ -134,11 +129,17 @@ impl PatchRuleBuilder {
     /// Consumes the builder and constructs a [`PatchRule`](crate::types::PatchRule).
     pub fn build(self) -> crate::types::PatchRule {
         crate::types::PatchRule {
-            patch_filter_group: self.patch_filter_group,
-            compliance_level: self.compliance_level,
-            approve_after_days: self.approve_after_days,
-            approve_until_date: self.approve_until_date,
-            enable_non_security: self.enable_non_security,
+            patch_filter_group: self.patch_filter_group
+            ,
+            compliance_level: self.compliance_level
+            ,
+            approve_after_days: self.approve_after_days
+            ,
+            approve_until_date: self.approve_until_date
+            ,
+            enable_non_security: self.enable_non_security
+            ,
         }
     }
 }
+

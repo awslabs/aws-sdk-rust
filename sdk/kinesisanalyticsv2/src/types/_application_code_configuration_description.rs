@@ -3,19 +3,19 @@
 /// <p>Describes code configuration for an application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationCodeConfigurationDescription {
+pub struct ApplicationCodeConfigurationDescription  {
     /// <p>Specifies whether the code content is in text or zip format.</p>
     pub code_content_type: crate::types::CodeContentType,
     /// <p>Describes details about the location and format of the application code.</p>
     pub code_content_description: ::std::option::Option<crate::types::CodeContentDescription>,
 }
-impl ApplicationCodeConfigurationDescription {
+impl  ApplicationCodeConfigurationDescription  {
     /// <p>Specifies whether the code content is in text or zip format.</p>
-    pub fn code_content_type(&self) -> &crate::types::CodeContentType {
+    pub fn code_content_type(&self) -> & crate::types::CodeContentType {
         &self.code_content_type
     }
     /// <p>Describes details about the location and format of the application code.</p>
-    pub fn code_content_description(&self) -> ::std::option::Option<&crate::types::CodeContentDescription> {
+    pub fn code_content_description(&self) -> ::std::option::Option<& crate::types::CodeContentDescription> {
         self.code_content_description.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl ApplicationCodeConfigurationDescriptionBuilder {
     }
     /// <p>Specifies whether the code content is in text or zip format.</p>
     pub fn set_code_content_type(mut self, input: ::std::option::Option<crate::types::CodeContentType>) -> Self {
-        self.code_content_type = input;
-        self
+        self.code_content_type = input; self
     }
     /// <p>Specifies whether the code content is in text or zip format.</p>
     pub fn get_code_content_type(&self) -> &::std::option::Option<crate::types::CodeContentType> {
@@ -56,8 +55,7 @@ impl ApplicationCodeConfigurationDescriptionBuilder {
     }
     /// <p>Describes details about the location and format of the application code.</p>
     pub fn set_code_content_description(mut self, input: ::std::option::Option<crate::types::CodeContentDescription>) -> Self {
-        self.code_content_description = input;
-        self
+        self.code_content_description = input; self
     }
     /// <p>Describes details about the location and format of the application code.</p>
     pub fn get_code_content_description(&self) -> &::std::option::Option<crate::types::CodeContentDescription> {
@@ -66,17 +64,18 @@ impl ApplicationCodeConfigurationDescriptionBuilder {
     /// Consumes the builder and constructs a [`ApplicationCodeConfigurationDescription`](crate::types::ApplicationCodeConfigurationDescription).
     /// This method will fail if any of the following fields are not set:
     /// - [`code_content_type`](crate::types::builders::ApplicationCodeConfigurationDescriptionBuilder::code_content_type)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::ApplicationCodeConfigurationDescription, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ApplicationCodeConfigurationDescription {
-            code_content_type: self.code_content_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "code_content_type",
-                    "code_content_type was not specified but it is required when building ApplicationCodeConfigurationDescription",
-                )
-            })?,
-            code_content_description: self.code_content_description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::ApplicationCodeConfigurationDescription, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::ApplicationCodeConfigurationDescription {
+                code_content_type: self.code_content_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("code_content_type", "code_content_type was not specified but it is required when building ApplicationCodeConfigurationDescription")
+                    )?
+                ,
+                code_content_description: self.code_content_description
+                ,
+            }
+        )
     }
 }
+

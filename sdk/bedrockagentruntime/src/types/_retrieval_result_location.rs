@@ -3,23 +3,23 @@
 /// <p>Contains information about the location of the data source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct RetrievalResultLocation {
+pub struct RetrievalResultLocation  {
     /// <p>The type of the location of the data source.</p>
     pub r#type: crate::types::RetrievalResultLocationType,
     /// <p>Contains the S3 location of the data source.</p>
     pub s3_location: ::std::option::Option<crate::types::RetrievalResultS3Location>,
 }
-impl RetrievalResultLocation {
+impl  RetrievalResultLocation  {
     /// <p>The type of the location of the data source.</p>
-    pub fn r#type(&self) -> &crate::types::RetrievalResultLocationType {
+    pub fn r#type(&self) -> & crate::types::RetrievalResultLocationType {
         &self.r#type
     }
     /// <p>Contains the S3 location of the data source.</p>
-    pub fn s3_location(&self) -> ::std::option::Option<&crate::types::RetrievalResultS3Location> {
+    pub fn s3_location(&self) -> ::std::option::Option<& crate::types::RetrievalResultS3Location> {
         self.s3_location.as_ref()
     }
 }
-impl ::std::fmt::Debug for RetrievalResultLocation {
+impl  ::std::fmt::Debug for RetrievalResultLocation  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RetrievalResultLocation");
         formatter.field("r#type", &"*** Sensitive Data Redacted ***");
@@ -50,8 +50,7 @@ impl RetrievalResultLocationBuilder {
     }
     /// <p>The type of the location of the data source.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RetrievalResultLocationType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the location of the data source.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::RetrievalResultLocationType> {
@@ -64,8 +63,7 @@ impl RetrievalResultLocationBuilder {
     }
     /// <p>Contains the S3 location of the data source.</p>
     pub fn set_s3_location(mut self, input: ::std::option::Option<crate::types::RetrievalResultS3Location>) -> Self {
-        self.s3_location = input;
-        self
+        self.s3_location = input; self
     }
     /// <p>Contains the S3 location of the data source.</p>
     pub fn get_s3_location(&self) -> &::std::option::Option<crate::types::RetrievalResultS3Location> {
@@ -75,15 +73,17 @@ impl RetrievalResultLocationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::RetrievalResultLocationBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::RetrievalResultLocation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RetrievalResultLocation {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building RetrievalResultLocation",
-                )
-            })?,
-            s3_location: self.s3_location,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RetrievalResultLocation {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building RetrievalResultLocation")
+                    )?
+                ,
+                s3_location: self.s3_location
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for RetrievalResultLocationBuilder {
@@ -94,3 +94,4 @@ impl ::std::fmt::Debug for RetrievalResultLocationBuilder {
         formatter.finish()
     }
 }
+

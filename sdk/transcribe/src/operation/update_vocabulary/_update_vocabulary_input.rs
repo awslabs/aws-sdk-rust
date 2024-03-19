@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateVocabularyInput {
+pub struct UpdateVocabularyInput  {
     /// <p>The name of the custom vocabulary you want to update. Custom vocabulary names are case sensitive.</p>
     pub vocabulary_name: ::std::option::Option<::std::string::String>,
     /// <p>The language code that represents the language of the entries in the custom vocabulary you want to update. Each custom vocabulary must contain terms in only one language.</p>
@@ -12,7 +12,7 @@ pub struct UpdateVocabularyInput {
     /// <p>Use this parameter if you want to update your custom vocabulary by including all desired terms, as comma-separated values, within your request. The other option for updating your custom vocabulary is to save your entries in a text file and upload them to an Amazon S3 bucket, then specify the location of your file using the <code>VocabularyFileUri</code> parameter.</p>
     /// <p>Note that if you include <code>Phrases</code> in your request, you cannot use <code>VocabularyFileUri</code>; you must choose one or the other.</p>
     /// <p>Each language has a character set that contains all allowed characters for that specific language. If you use unsupported characters, your custom vocabulary filter request fails. Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a> to get the character set for your language.</p>
-    pub phrases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub phrases: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The Amazon S3 location of the text file that contains your custom vocabulary. The URI must be located in the same Amazon Web Services Region as the resource you're calling.</p>
     /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code></p>
     /// <p>Note that if you include <code>VocabularyFileUri</code> in your request, you cannot use the <code>Phrases</code> flag; you must choose one or the other.</p>
@@ -22,35 +22,36 @@ pub struct UpdateVocabularyInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
 }
-impl UpdateVocabularyInput {
+impl  UpdateVocabularyInput  {
     /// <p>The name of the custom vocabulary you want to update. Custom vocabulary names are case sensitive.</p>
-    pub fn vocabulary_name(&self) -> ::std::option::Option<&str> {
+    pub fn vocabulary_name(&self) -> ::std::option::Option<& str> {
         self.vocabulary_name.as_deref()
     }
     /// <p>The language code that represents the language of the entries in the custom vocabulary you want to update. Each custom vocabulary must contain terms in only one language.</p>
     /// <p>A custom vocabulary can only be used to transcribe files in the same language as the custom vocabulary. For example, if you create a custom vocabulary using US English (<code>en-US</code>), you can only apply this custom vocabulary to files that contain English audio.</p>
     /// <p>For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
-    pub fn language_code(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
+    pub fn language_code(&self) -> ::std::option::Option<& crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
     /// <p>Use this parameter if you want to update your custom vocabulary by including all desired terms, as comma-separated values, within your request. The other option for updating your custom vocabulary is to save your entries in a text file and upload them to an Amazon S3 bucket, then specify the location of your file using the <code>VocabularyFileUri</code> parameter.</p>
     /// <p>Note that if you include <code>Phrases</code> in your request, you cannot use <code>VocabularyFileUri</code>; you must choose one or the other.</p>
     /// <p>Each language has a character set that contains all allowed characters for that specific language. If you use unsupported characters, your custom vocabulary filter request fails. Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a> to get the character set for your language.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phrases.is_none()`.
-    pub fn phrases(&self) -> &[::std::string::String] {
-        self.phrases.as_deref().unwrap_or_default()
+    pub fn phrases(&self) -> & [::std::string::String] {
+        self.phrases.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon S3 location of the text file that contains your custom vocabulary. The URI must be located in the same Amazon Web Services Region as the resource you're calling.</p>
     /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code></p>
     /// <p>Note that if you include <code>VocabularyFileUri</code> in your request, you cannot use the <code>Phrases</code> flag; you must choose one or the other.</p>
-    pub fn vocabulary_file_uri(&self) -> ::std::option::Option<&str> {
+    pub fn vocabulary_file_uri(&self) -> ::std::option::Option<& str> {
         self.vocabulary_file_uri.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files (in this case, your custom vocabulary). If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
     /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
-    pub fn data_access_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn data_access_role_arn(&self) -> ::std::option::Option<& str> {
         self.data_access_role_arn.as_deref()
     }
 }
@@ -67,7 +68,7 @@ impl UpdateVocabularyInput {
 pub struct UpdateVocabularyInputBuilder {
     pub(crate) vocabulary_name: ::std::option::Option<::std::string::String>,
     pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,
-    pub(crate) phrases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) phrases: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) vocabulary_file_uri: ::std::option::Option<::std::string::String>,
     pub(crate) data_access_role_arn: ::std::option::Option<::std::string::String>,
 }
@@ -80,8 +81,7 @@ impl UpdateVocabularyInputBuilder {
     }
     /// <p>The name of the custom vocabulary you want to update. Custom vocabulary names are case sensitive.</p>
     pub fn set_vocabulary_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vocabulary_name = input;
-        self
+        self.vocabulary_name = input; self
     }
     /// <p>The name of the custom vocabulary you want to update. Custom vocabulary names are case sensitive.</p>
     pub fn get_vocabulary_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +99,7 @@ impl UpdateVocabularyInputBuilder {
     /// <p>A custom vocabulary can only be used to transcribe files in the same language as the custom vocabulary. For example, if you create a custom vocabulary using US English (<code>en-US</code>), you can only apply this custom vocabulary to files that contain English audio.</p>
     /// <p>For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
     pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
-        self.language_code = input;
-        self
+        self.language_code = input; self
     }
     /// <p>The language code that represents the language of the entries in the custom vocabulary you want to update. Each custom vocabulary must contain terms in only one language.</p>
     /// <p>A custom vocabulary can only be used to transcribe files in the same language as the custom vocabulary. For example, if you create a custom vocabulary using US English (<code>en-US</code>), you can only apply this custom vocabulary to files that contain English audio.</p>
@@ -117,21 +116,20 @@ impl UpdateVocabularyInputBuilder {
     /// <p>Each language has a character set that contains all allowed characters for that specific language. If you use unsupported characters, your custom vocabulary filter request fails. Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a> to get the character set for your language.</p>
     pub fn phrases(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.phrases.unwrap_or_default();
-        v.push(input.into());
-        self.phrases = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.phrases = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Use this parameter if you want to update your custom vocabulary by including all desired terms, as comma-separated values, within your request. The other option for updating your custom vocabulary is to save your entries in a text file and upload them to an Amazon S3 bucket, then specify the location of your file using the <code>VocabularyFileUri</code> parameter.</p>
     /// <p>Note that if you include <code>Phrases</code> in your request, you cannot use <code>VocabularyFileUri</code>; you must choose one or the other.</p>
     /// <p>Each language has a character set that contains all allowed characters for that specific language. If you use unsupported characters, your custom vocabulary filter request fails. Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a> to get the character set for your language.</p>
-    pub fn set_phrases(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.phrases = input;
-        self
+    pub fn set_phrases(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.phrases = input; self
     }
     /// <p>Use this parameter if you want to update your custom vocabulary by including all desired terms, as comma-separated values, within your request. The other option for updating your custom vocabulary is to save your entries in a text file and upload them to an Amazon S3 bucket, then specify the location of your file using the <code>VocabularyFileUri</code> parameter.</p>
     /// <p>Note that if you include <code>Phrases</code> in your request, you cannot use <code>VocabularyFileUri</code>; you must choose one or the other.</p>
     /// <p>Each language has a character set that contains all allowed characters for that specific language. If you use unsupported characters, your custom vocabulary filter request fails. Refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a> to get the character set for your language.</p>
-    pub fn get_phrases(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_phrases(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.phrases
     }
     /// <p>The Amazon S3 location of the text file that contains your custom vocabulary. The URI must be located in the same Amazon Web Services Region as the resource you're calling.</p>
@@ -145,8 +143,7 @@ impl UpdateVocabularyInputBuilder {
     /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code></p>
     /// <p>Note that if you include <code>VocabularyFileUri</code> in your request, you cannot use the <code>Phrases</code> flag; you must choose one or the other.</p>
     pub fn set_vocabulary_file_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vocabulary_file_uri = input;
-        self
+        self.vocabulary_file_uri = input; self
     }
     /// <p>The Amazon S3 location of the text file that contains your custom vocabulary. The URI must be located in the same Amazon Web Services Region as the resource you're calling.</p>
     /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code></p>
@@ -165,8 +162,7 @@ impl UpdateVocabularyInputBuilder {
     /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
     pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_access_role_arn = input;
-        self
+        self.data_access_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files (in this case, your custom vocabulary). If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
     /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
@@ -175,15 +171,21 @@ impl UpdateVocabularyInputBuilder {
         &self.data_access_role_arn
     }
     /// Consumes the builder and constructs a [`UpdateVocabularyInput`](crate::operation::update_vocabulary::UpdateVocabularyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_vocabulary::UpdateVocabularyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_vocabulary::UpdateVocabularyInput {
-            vocabulary_name: self.vocabulary_name,
-            language_code: self.language_code,
-            phrases: self.phrases,
-            vocabulary_file_uri: self.vocabulary_file_uri,
-            data_access_role_arn: self.data_access_role_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_vocabulary::UpdateVocabularyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_vocabulary::UpdateVocabularyInput {
+                vocabulary_name: self.vocabulary_name
+                ,
+                language_code: self.language_code
+                ,
+                phrases: self.phrases
+                ,
+                vocabulary_file_uri: self.vocabulary_file_uri
+                ,
+                data_access_role_arn: self.data_access_role_arn
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Identifies an Amazon Web Services resource and indicates whether it complies with the Config rule that it was evaluated against.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Evaluation {
+pub struct Evaluation  {
     /// <p>The type of Amazon Web Services resource that was evaluated.</p>
     pub compliance_resource_type: ::std::string::String,
     /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
@@ -17,29 +17,27 @@ pub struct Evaluation {
     /// <p>The time of the event in Config that triggered the evaluation. For event-based evaluations, the time indicates when Config created the configuration item that triggered the evaluation. For periodic evaluations, the time indicates when Config triggered the evaluation at the frequency that you specified (for example, every 24 hours).</p>
     pub ordering_timestamp: ::aws_smithy_types::DateTime,
 }
-impl Evaluation {
+impl  Evaluation  {
     /// <p>The type of Amazon Web Services resource that was evaluated.</p>
-    pub fn compliance_resource_type(&self) -> &str {
-        use std::ops::Deref;
-        self.compliance_resource_type.deref()
+    pub fn compliance_resource_type(&self) -> & str {
+        use std::ops::Deref; self.compliance_resource_type.deref()
     }
     /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
-    pub fn compliance_resource_id(&self) -> &str {
-        use std::ops::Deref;
-        self.compliance_resource_id.deref()
+    pub fn compliance_resource_id(&self) -> & str {
+        use std::ops::Deref; self.compliance_resource_id.deref()
     }
     /// <p>Indicates whether the Amazon Web Services resource complies with the Config rule that it was evaluated against.</p>
     /// <p>For the <code>Evaluation</code> data type, Config supports only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code> values. Config does not support the <code>INSUFFICIENT_DATA</code> value for this data type.</p>
     /// <p>Similarly, Config does not accept <code>INSUFFICIENT_DATA</code> as the value for <code>ComplianceType</code> from a <code>PutEvaluations</code> request. For example, an Lambda function for a custom Config rule cannot pass an <code>INSUFFICIENT_DATA</code> value to Config.</p>
-    pub fn compliance_type(&self) -> &crate::types::ComplianceType {
+    pub fn compliance_type(&self) -> & crate::types::ComplianceType {
         &self.compliance_type
     }
     /// <p>Supplementary information about how the evaluation determined the compliance.</p>
-    pub fn annotation(&self) -> ::std::option::Option<&str> {
+    pub fn annotation(&self) -> ::std::option::Option<& str> {
         self.annotation.as_deref()
     }
     /// <p>The time of the event in Config that triggered the evaluation. For event-based evaluations, the time indicates when Config created the configuration item that triggered the evaluation. For periodic evaluations, the time indicates when Config triggered the evaluation at the frequency that you specified (for example, every 24 hours).</p>
-    pub fn ordering_timestamp(&self) -> &::aws_smithy_types::DateTime {
+    pub fn ordering_timestamp(&self) -> & ::aws_smithy_types::DateTime {
         &self.ordering_timestamp
     }
 }
@@ -69,8 +67,7 @@ impl EvaluationBuilder {
     }
     /// <p>The type of Amazon Web Services resource that was evaluated.</p>
     pub fn set_compliance_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.compliance_resource_type = input;
-        self
+        self.compliance_resource_type = input; self
     }
     /// <p>The type of Amazon Web Services resource that was evaluated.</p>
     pub fn get_compliance_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +81,7 @@ impl EvaluationBuilder {
     }
     /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
     pub fn set_compliance_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.compliance_resource_id = input;
-        self
+        self.compliance_resource_id = input; self
     }
     /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
     pub fn get_compliance_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +99,7 @@ impl EvaluationBuilder {
     /// <p>For the <code>Evaluation</code> data type, Config supports only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code> values. Config does not support the <code>INSUFFICIENT_DATA</code> value for this data type.</p>
     /// <p>Similarly, Config does not accept <code>INSUFFICIENT_DATA</code> as the value for <code>ComplianceType</code> from a <code>PutEvaluations</code> request. For example, an Lambda function for a custom Config rule cannot pass an <code>INSUFFICIENT_DATA</code> value to Config.</p>
     pub fn set_compliance_type(mut self, input: ::std::option::Option<crate::types::ComplianceType>) -> Self {
-        self.compliance_type = input;
-        self
+        self.compliance_type = input; self
     }
     /// <p>Indicates whether the Amazon Web Services resource complies with the Config rule that it was evaluated against.</p>
     /// <p>For the <code>Evaluation</code> data type, Config supports only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code> values. Config does not support the <code>INSUFFICIENT_DATA</code> value for this data type.</p>
@@ -119,8 +114,7 @@ impl EvaluationBuilder {
     }
     /// <p>Supplementary information about how the evaluation determined the compliance.</p>
     pub fn set_annotation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.annotation = input;
-        self
+        self.annotation = input; self
     }
     /// <p>Supplementary information about how the evaluation determined the compliance.</p>
     pub fn get_annotation(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +128,7 @@ impl EvaluationBuilder {
     }
     /// <p>The time of the event in Config that triggered the evaluation. For event-based evaluations, the time indicates when Config created the configuration item that triggered the evaluation. For periodic evaluations, the time indicates when Config triggered the evaluation at the frequency that you specified (for example, every 24 hours).</p>
     pub fn set_ordering_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.ordering_timestamp = input;
-        self
+        self.ordering_timestamp = input; self
     }
     /// <p>The time of the event in Config that triggered the evaluation. For event-based evaluations, the time indicates when Config created the configuration item that triggered the evaluation. For periodic evaluations, the time indicates when Config triggered the evaluation at the frequency that you specified (for example, every 24 hours).</p>
     pub fn get_ordering_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -148,32 +141,32 @@ impl EvaluationBuilder {
     /// - [`compliance_type`](crate::types::builders::EvaluationBuilder::compliance_type)
     /// - [`ordering_timestamp`](crate::types::builders::EvaluationBuilder::ordering_timestamp)
     pub fn build(self) -> ::std::result::Result<crate::types::Evaluation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Evaluation {
-            compliance_resource_type: self.compliance_resource_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "compliance_resource_type",
-                    "compliance_resource_type was not specified but it is required when building Evaluation",
-                )
-            })?,
-            compliance_resource_id: self.compliance_resource_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "compliance_resource_id",
-                    "compliance_resource_id was not specified but it is required when building Evaluation",
-                )
-            })?,
-            compliance_type: self.compliance_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "compliance_type",
-                    "compliance_type was not specified but it is required when building Evaluation",
-                )
-            })?,
-            annotation: self.annotation,
-            ordering_timestamp: self.ordering_timestamp.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ordering_timestamp",
-                    "ordering_timestamp was not specified but it is required when building Evaluation",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Evaluation {
+                compliance_resource_type: self.compliance_resource_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("compliance_resource_type", "compliance_resource_type was not specified but it is required when building Evaluation")
+                    )?
+                ,
+                compliance_resource_id: self.compliance_resource_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("compliance_resource_id", "compliance_resource_id was not specified but it is required when building Evaluation")
+                    )?
+                ,
+                compliance_type: self.compliance_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("compliance_type", "compliance_type was not specified but it is required when building Evaluation")
+                    )?
+                ,
+                annotation: self.annotation
+                ,
+                ordering_timestamp: self.ordering_timestamp
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ordering_timestamp", "ordering_timestamp was not specified but it is required when building Evaluation")
+                    )?
+                ,
+            }
+        )
     }
 }
+

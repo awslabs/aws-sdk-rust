@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeSessions`](crate::operation::describe_sessions::builders::DescribeSessionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_sessions::builders::DescribeSessionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`state(SessionState)`](crate::operation::describe_sessions::builders::DescribeSessionsFluentBuilder::state) / [`set_state(Option<SessionState>)`](crate::operation::describe_sessions::builders::DescribeSessionsFluentBuilder::set_state):<br>required: **true**<br><p>The session status to retrieve a list of sessions for. For example, "Active".</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_sessions::builders::DescribeSessionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_sessions::builders::DescribeSessionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_sessions::builders::DescribeSessionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_sessions::builders::DescribeSessionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of items to return. (You received this token from a previous call.)</p><br>
     ///   - [`filters(SessionFilter)`](crate::operation::describe_sessions::builders::DescribeSessionsFluentBuilder::filters) / [`set_filters(Option<Vec::<SessionFilter>>)`](crate::operation::describe_sessions::builders::DescribeSessionsFluentBuilder::set_filters):<br>required: **false**<br><p>One or more filters to limit the type of sessions returned by the request.</p><br>
-    /// - On success, responds with [`DescribeSessionsOutput`](crate::operation::describe_sessions::DescribeSessionsOutput) with field(s):
+                            /// - On success, responds with [`DescribeSessionsOutput`](crate::operation::describe_sessions::DescribeSessionsOutput) with field(s):
     ///   - [`sessions(Option<Vec::<Session>>)`](crate::operation::describe_sessions::DescribeSessionsOutput::sessions): <p>A list of sessions meeting the request parameters.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_sessions::DescribeSessionsOutput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    /// - On failure, responds with [`SdkError<DescribeSessionsError>`](crate::operation::describe_sessions::DescribeSessionsError)
+                            /// - On failure, responds with [`SdkError<DescribeSessionsError>`](crate::operation::describe_sessions::DescribeSessionsError)
     pub fn describe_sessions(&self) -> crate::operation::describe_sessions::builders::DescribeSessionsFluentBuilder {
-        crate::operation::describe_sessions::builders::DescribeSessionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_sessions::builders::DescribeSessionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

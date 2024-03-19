@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAlgorithmOutput {
+pub struct DescribeAlgorithmOutput  {
     /// <p>A listing of the properties of the algorithm.</p>
     pub algorithm: ::std::option::Option<crate::types::Algorithm>,
     _request_id: Option<String>,
 }
-impl DescribeAlgorithmOutput {
+impl  DescribeAlgorithmOutput  {
     /// <p>A listing of the properties of the algorithm.</p>
-    pub fn algorithm(&self) -> ::std::option::Option<&crate::types::Algorithm> {
+    pub fn algorithm(&self) -> ::std::option::Option<& crate::types::Algorithm> {
         self.algorithm.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAlgorithmOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAlgorithmOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAlgorithmOutput`](crate::operation::describe_algorithm::DescribeAlgorithmOutput).
     pub fn builder() -> crate::operation::describe_algorithm::builders::DescribeAlgorithmOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeAlgorithmOutputBuilder {
     }
     /// <p>A listing of the properties of the algorithm.</p>
     pub fn set_algorithm(mut self, input: ::std::option::Option<crate::types::Algorithm>) -> Self {
-        self.algorithm = input;
-        self
+        self.algorithm = input; self
     }
     /// <p>A listing of the properties of the algorithm.</p>
     pub fn get_algorithm(&self) -> &::std::option::Option<crate::types::Algorithm> {
         &self.algorithm
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAlgorithmOutput`](crate::operation::describe_algorithm::DescribeAlgorithmOutput).
     pub fn build(self) -> crate::operation::describe_algorithm::DescribeAlgorithmOutput {
         crate::operation::describe_algorithm::DescribeAlgorithmOutput {
-            algorithm: self.algorithm,
+            algorithm: self.algorithm
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

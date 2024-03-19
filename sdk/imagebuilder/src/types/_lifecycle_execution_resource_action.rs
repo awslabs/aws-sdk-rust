@@ -3,19 +3,19 @@
 /// <p>The lifecycle policy action that was identified for the impacted resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LifecycleExecutionResourceAction {
+pub struct LifecycleExecutionResourceAction  {
     /// <p>The name of the resource that was identified for a lifecycle policy action.</p>
     pub name: ::std::option::Option<crate::types::LifecycleExecutionResourceActionName>,
     /// <p>The reason why the lifecycle policy action is taken.</p>
     pub reason: ::std::option::Option<::std::string::String>,
 }
-impl LifecycleExecutionResourceAction {
+impl  LifecycleExecutionResourceAction  {
     /// <p>The name of the resource that was identified for a lifecycle policy action.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::LifecycleExecutionResourceActionName> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::LifecycleExecutionResourceActionName> {
         self.name.as_ref()
     }
     /// <p>The reason why the lifecycle policy action is taken.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl LifecycleExecutionResourceActionBuilder {
     }
     /// <p>The name of the resource that was identified for a lifecycle policy action.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::LifecycleExecutionResourceActionName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the resource that was identified for a lifecycle policy action.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::LifecycleExecutionResourceActionName> {
@@ -55,8 +54,7 @@ impl LifecycleExecutionResourceActionBuilder {
     }
     /// <p>The reason why the lifecycle policy action is taken.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>The reason why the lifecycle policy action is taken.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl LifecycleExecutionResourceActionBuilder {
     /// Consumes the builder and constructs a [`LifecycleExecutionResourceAction`](crate::types::LifecycleExecutionResourceAction).
     pub fn build(self) -> crate::types::LifecycleExecutionResourceAction {
         crate::types::LifecycleExecutionResourceAction {
-            name: self.name,
-            reason: self.reason,
+            name: self.name
+            ,
+            reason: self.reason
+            ,
         }
     }
 }
+

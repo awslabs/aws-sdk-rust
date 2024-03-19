@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDbParameterGroupInput {
+pub struct GetDbParameterGroupInput  {
     /// <p>The id of the DB parameter group.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetDbParameterGroupInput {
+impl  GetDbParameterGroupInput  {
     /// <p>The id of the DB parameter group.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl GetDbParameterGroupInputBuilder {
     }
     /// <p>The id of the DB parameter group.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The id of the DB parameter group.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`GetDbParameterGroupInput`](crate::operation::get_db_parameter_group::GetDbParameterGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_db_parameter_group::GetDbParameterGroupInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_db_parameter_group::GetDbParameterGroupInput { identifier: self.identifier })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_db_parameter_group::GetDbParameterGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_db_parameter_group::GetDbParameterGroupInput {
+                identifier: self.identifier
+                ,
+            }
+        )
     }
 }
+

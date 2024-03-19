@@ -3,7 +3,7 @@
 /// <p>Configuration for monitoring constraints and monitoring statistics. These baseline resources are compared against the results of the current job from the series of jobs scheduled to collect data periodically.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataQualityBaselineConfig {
+pub struct DataQualityBaselineConfig  {
     /// <p>The name of the job that performs baselining for the data quality monitoring job.</p>
     pub baselining_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The constraints resource for a monitoring job.</p>
@@ -11,17 +11,17 @@ pub struct DataQualityBaselineConfig {
     /// <p>The statistics resource for a monitoring job.</p>
     pub statistics_resource: ::std::option::Option<crate::types::MonitoringStatisticsResource>,
 }
-impl DataQualityBaselineConfig {
+impl  DataQualityBaselineConfig  {
     /// <p>The name of the job that performs baselining for the data quality monitoring job.</p>
-    pub fn baselining_job_name(&self) -> ::std::option::Option<&str> {
+    pub fn baselining_job_name(&self) -> ::std::option::Option<& str> {
         self.baselining_job_name.as_deref()
     }
     /// <p>The constraints resource for a monitoring job.</p>
-    pub fn constraints_resource(&self) -> ::std::option::Option<&crate::types::MonitoringConstraintsResource> {
+    pub fn constraints_resource(&self) -> ::std::option::Option<& crate::types::MonitoringConstraintsResource> {
         self.constraints_resource.as_ref()
     }
     /// <p>The statistics resource for a monitoring job.</p>
-    pub fn statistics_resource(&self) -> ::std::option::Option<&crate::types::MonitoringStatisticsResource> {
+    pub fn statistics_resource(&self) -> ::std::option::Option<& crate::types::MonitoringStatisticsResource> {
         self.statistics_resource.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl DataQualityBaselineConfigBuilder {
     }
     /// <p>The name of the job that performs baselining for the data quality monitoring job.</p>
     pub fn set_baselining_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.baselining_job_name = input;
-        self
+        self.baselining_job_name = input; self
     }
     /// <p>The name of the job that performs baselining for the data quality monitoring job.</p>
     pub fn get_baselining_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl DataQualityBaselineConfigBuilder {
     }
     /// <p>The constraints resource for a monitoring job.</p>
     pub fn set_constraints_resource(mut self, input: ::std::option::Option<crate::types::MonitoringConstraintsResource>) -> Self {
-        self.constraints_resource = input;
-        self
+        self.constraints_resource = input; self
     }
     /// <p>The constraints resource for a monitoring job.</p>
     pub fn get_constraints_resource(&self) -> &::std::option::Option<crate::types::MonitoringConstraintsResource> {
@@ -76,8 +74,7 @@ impl DataQualityBaselineConfigBuilder {
     }
     /// <p>The statistics resource for a monitoring job.</p>
     pub fn set_statistics_resource(mut self, input: ::std::option::Option<crate::types::MonitoringStatisticsResource>) -> Self {
-        self.statistics_resource = input;
-        self
+        self.statistics_resource = input; self
     }
     /// <p>The statistics resource for a monitoring job.</p>
     pub fn get_statistics_resource(&self) -> &::std::option::Option<crate::types::MonitoringStatisticsResource> {
@@ -86,9 +83,13 @@ impl DataQualityBaselineConfigBuilder {
     /// Consumes the builder and constructs a [`DataQualityBaselineConfig`](crate::types::DataQualityBaselineConfig).
     pub fn build(self) -> crate::types::DataQualityBaselineConfig {
         crate::types::DataQualityBaselineConfig {
-            baselining_job_name: self.baselining_job_name,
-            constraints_resource: self.constraints_resource,
-            statistics_resource: self.statistics_resource,
+            baselining_job_name: self.baselining_job_name
+            ,
+            constraints_resource: self.constraints_resource
+            ,
+            statistics_resource: self.statistics_resource
+            ,
         }
     }
 }
+

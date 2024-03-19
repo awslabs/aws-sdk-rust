@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateStateMachineInput {
+pub struct UpdateStateMachineInput  {
     /// <p>The Amazon Resource Name (ARN) of the state machine.</p>
     pub state_machine_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
@@ -19,25 +19,25 @@ pub struct UpdateStateMachineInput {
     /// <p>You can only specify the <code>versionDescription</code> parameter if you've set <code>publish</code> to <code>true</code>.</p>
     pub version_description: ::std::option::Option<::std::string::String>,
 }
-impl UpdateStateMachineInput {
+impl  UpdateStateMachineInput  {
     /// <p>The Amazon Resource Name (ARN) of the state machine.</p>
-    pub fn state_machine_arn(&self) -> ::std::option::Option<&str> {
+    pub fn state_machine_arn(&self) -> ::std::option::Option<& str> {
         self.state_machine_arn.as_deref()
     }
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
-    pub fn definition(&self) -> ::std::option::Option<&str> {
+    pub fn definition(&self) -> ::std::option::Option<& str> {
         self.definition.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role of the state machine.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>Use the <code>LoggingConfiguration</code> data type to set CloudWatch Logs options.</p>
-    pub fn logging_configuration(&self) -> ::std::option::Option<&crate::types::LoggingConfiguration> {
+    pub fn logging_configuration(&self) -> ::std::option::Option<& crate::types::LoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
-    pub fn tracing_configuration(&self) -> ::std::option::Option<&crate::types::TracingConfiguration> {
+    pub fn tracing_configuration(&self) -> ::std::option::Option<& crate::types::TracingConfiguration> {
         self.tracing_configuration.as_ref()
     }
     /// <p>Specifies whether the state machine version is published. The default is <code>false</code>. To publish a version after updating the state machine, set <code>publish</code> to <code>true</code>.</p>
@@ -46,11 +46,11 @@ impl UpdateStateMachineInput {
     }
     /// <p>An optional description of the state machine version to publish.</p>
     /// <p>You can only specify the <code>versionDescription</code> parameter if you've set <code>publish</code> to <code>true</code>.</p>
-    pub fn version_description(&self) -> ::std::option::Option<&str> {
+    pub fn version_description(&self) -> ::std::option::Option<& str> {
         self.version_description.as_deref()
     }
 }
-impl ::std::fmt::Debug for UpdateStateMachineInput {
+impl  ::std::fmt::Debug for UpdateStateMachineInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateStateMachineInput");
         formatter.field("state_machine_arn", &self.state_machine_arn);
@@ -91,8 +91,7 @@ impl UpdateStateMachineInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine.</p>
     pub fn set_state_machine_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_machine_arn = input;
-        self
+        self.state_machine_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine.</p>
     pub fn get_state_machine_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +104,7 @@ impl UpdateStateMachineInputBuilder {
     }
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
     pub fn set_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.definition = input;
-        self
+        self.definition = input; self
     }
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
     pub fn get_definition(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +117,7 @@ impl UpdateStateMachineInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role of the state machine.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role of the state machine.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +130,7 @@ impl UpdateStateMachineInputBuilder {
     }
     /// <p>Use the <code>LoggingConfiguration</code> data type to set CloudWatch Logs options.</p>
     pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::LoggingConfiguration>) -> Self {
-        self.logging_configuration = input;
-        self
+        self.logging_configuration = input; self
     }
     /// <p>Use the <code>LoggingConfiguration</code> data type to set CloudWatch Logs options.</p>
     pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::LoggingConfiguration> {
@@ -147,8 +143,7 @@ impl UpdateStateMachineInputBuilder {
     }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
     pub fn set_tracing_configuration(mut self, input: ::std::option::Option<crate::types::TracingConfiguration>) -> Self {
-        self.tracing_configuration = input;
-        self
+        self.tracing_configuration = input; self
     }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
     pub fn get_tracing_configuration(&self) -> &::std::option::Option<crate::types::TracingConfiguration> {
@@ -161,8 +156,7 @@ impl UpdateStateMachineInputBuilder {
     }
     /// <p>Specifies whether the state machine version is published. The default is <code>false</code>. To publish a version after updating the state machine, set <code>publish</code> to <code>true</code>.</p>
     pub fn set_publish(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.publish = input;
-        self
+        self.publish = input; self
     }
     /// <p>Specifies whether the state machine version is published. The default is <code>false</code>. To publish a version after updating the state machine, set <code>publish</code> to <code>true</code>.</p>
     pub fn get_publish(&self) -> &::std::option::Option<bool> {
@@ -177,8 +171,7 @@ impl UpdateStateMachineInputBuilder {
     /// <p>An optional description of the state machine version to publish.</p>
     /// <p>You can only specify the <code>versionDescription</code> parameter if you've set <code>publish</code> to <code>true</code>.</p>
     pub fn set_version_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_description = input;
-        self
+        self.version_description = input; self
     }
     /// <p>An optional description of the state machine version to publish.</p>
     /// <p>You can only specify the <code>versionDescription</code> parameter if you've set <code>publish</code> to <code>true</code>.</p>
@@ -186,19 +179,25 @@ impl UpdateStateMachineInputBuilder {
         &self.version_description
     }
     /// Consumes the builder and constructs a [`UpdateStateMachineInput`](crate::operation::update_state_machine::UpdateStateMachineInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_state_machine::UpdateStateMachineInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_state_machine::UpdateStateMachineInput {
-            state_machine_arn: self.state_machine_arn,
-            definition: self.definition,
-            role_arn: self.role_arn,
-            logging_configuration: self.logging_configuration,
-            tracing_configuration: self.tracing_configuration,
-            publish: self.publish,
-            version_description: self.version_description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_state_machine::UpdateStateMachineInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_state_machine::UpdateStateMachineInput {
+                state_machine_arn: self.state_machine_arn
+                ,
+                definition: self.definition
+                ,
+                role_arn: self.role_arn
+                ,
+                logging_configuration: self.logging_configuration
+                ,
+                tracing_configuration: self.tracing_configuration
+                ,
+                publish: self.publish
+                ,
+                version_description: self.version_description
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateStateMachineInputBuilder {
@@ -214,3 +213,4 @@ impl ::std::fmt::Debug for UpdateStateMachineInputBuilder {
         formatter.finish()
     }
 }
+

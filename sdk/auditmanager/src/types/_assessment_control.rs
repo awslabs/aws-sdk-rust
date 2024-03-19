@@ -3,7 +3,7 @@
 /// <p>The control entity that represents a standard control or a custom control in an Audit Manager assessment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssessmentControl {
+pub struct AssessmentControl  {
     /// <p>The identifier for the control.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the control.</p>
@@ -15,46 +15,48 @@ pub struct AssessmentControl {
     /// <p>The response of the control.</p>
     pub response: ::std::option::Option<crate::types::ControlResponse>,
     /// <p>The list of comments that's attached to the control.</p>
-    pub comments: ::std::option::Option<::std::vec::Vec<crate::types::ControlComment>>,
+    pub comments: ::std::option::Option<::std::vec::Vec::<crate::types::ControlComment>>,
     /// <p>The list of data sources for the evidence.</p>
-    pub evidence_sources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub evidence_sources: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The amount of evidence that's collected for the control.</p>
     pub evidence_count: i32,
     /// <p>The amount of evidence in the assessment report.</p>
     pub assessment_report_evidence_count: i32,
 }
-impl AssessmentControl {
+impl  AssessmentControl  {
     /// <p>The identifier for the control.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the control.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the control.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The status of the control.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ControlStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ControlStatus> {
         self.status.as_ref()
     }
     /// <p>The response of the control.</p>
-    pub fn response(&self) -> ::std::option::Option<&crate::types::ControlResponse> {
+    pub fn response(&self) -> ::std::option::Option<& crate::types::ControlResponse> {
         self.response.as_ref()
     }
     /// <p>The list of comments that's attached to the control.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.comments.is_none()`.
-    pub fn comments(&self) -> &[crate::types::ControlComment] {
-        self.comments.as_deref().unwrap_or_default()
+    pub fn comments(&self) -> & [crate::types::ControlComment] {
+        self.comments.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The list of data sources for the evidence.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.evidence_sources.is_none()`.
-    pub fn evidence_sources(&self) -> &[::std::string::String] {
-        self.evidence_sources.as_deref().unwrap_or_default()
+    pub fn evidence_sources(&self) -> & [::std::string::String] {
+        self.evidence_sources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The amount of evidence that's collected for the control.</p>
     pub fn evidence_count(&self) -> i32 {
@@ -81,8 +83,8 @@ pub struct AssessmentControlBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ControlStatus>,
     pub(crate) response: ::std::option::Option<crate::types::ControlResponse>,
-    pub(crate) comments: ::std::option::Option<::std::vec::Vec<crate::types::ControlComment>>,
-    pub(crate) evidence_sources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) comments: ::std::option::Option<::std::vec::Vec::<crate::types::ControlComment>>,
+    pub(crate) evidence_sources: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) evidence_count: ::std::option::Option<i32>,
     pub(crate) assessment_report_evidence_count: ::std::option::Option<i32>,
 }
@@ -94,8 +96,7 @@ impl AssessmentControlBuilder {
     }
     /// <p>The identifier for the control.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier for the control.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +109,7 @@ impl AssessmentControlBuilder {
     }
     /// <p>The name of the control.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the control.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +122,7 @@ impl AssessmentControlBuilder {
     }
     /// <p>The description of the control.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the control.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +135,7 @@ impl AssessmentControlBuilder {
     }
     /// <p>The status of the control.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ControlStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the control.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ControlStatus> {
@@ -150,8 +148,7 @@ impl AssessmentControlBuilder {
     }
     /// <p>The response of the control.</p>
     pub fn set_response(mut self, input: ::std::option::Option<crate::types::ControlResponse>) -> Self {
-        self.response = input;
-        self
+        self.response = input; self
     }
     /// <p>The response of the control.</p>
     pub fn get_response(&self) -> &::std::option::Option<crate::types::ControlResponse> {
@@ -164,17 +161,16 @@ impl AssessmentControlBuilder {
     /// <p>The list of comments that's attached to the control.</p>
     pub fn comments(mut self, input: crate::types::ControlComment) -> Self {
         let mut v = self.comments.unwrap_or_default();
-        v.push(input);
-        self.comments = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.comments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of comments that's attached to the control.</p>
-    pub fn set_comments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ControlComment>>) -> Self {
-        self.comments = input;
-        self
+    pub fn set_comments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ControlComment>>) -> Self {
+        self.comments = input; self
     }
     /// <p>The list of comments that's attached to the control.</p>
-    pub fn get_comments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ControlComment>> {
+    pub fn get_comments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ControlComment>> {
         &self.comments
     }
     /// Appends an item to `evidence_sources`.
@@ -184,17 +180,16 @@ impl AssessmentControlBuilder {
     /// <p>The list of data sources for the evidence.</p>
     pub fn evidence_sources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.evidence_sources.unwrap_or_default();
-        v.push(input.into());
-        self.evidence_sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.evidence_sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of data sources for the evidence.</p>
-    pub fn set_evidence_sources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.evidence_sources = input;
-        self
+    pub fn set_evidence_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.evidence_sources = input; self
     }
     /// <p>The list of data sources for the evidence.</p>
-    pub fn get_evidence_sources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_evidence_sources(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.evidence_sources
     }
     /// <p>The amount of evidence that's collected for the control.</p>
@@ -204,8 +199,7 @@ impl AssessmentControlBuilder {
     }
     /// <p>The amount of evidence that's collected for the control.</p>
     pub fn set_evidence_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.evidence_count = input;
-        self
+        self.evidence_count = input; self
     }
     /// <p>The amount of evidence that's collected for the control.</p>
     pub fn get_evidence_count(&self) -> &::std::option::Option<i32> {
@@ -218,8 +212,7 @@ impl AssessmentControlBuilder {
     }
     /// <p>The amount of evidence in the assessment report.</p>
     pub fn set_assessment_report_evidence_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.assessment_report_evidence_count = input;
-        self
+        self.assessment_report_evidence_count = input; self
     }
     /// <p>The amount of evidence in the assessment report.</p>
     pub fn get_assessment_report_evidence_count(&self) -> &::std::option::Option<i32> {
@@ -228,15 +221,27 @@ impl AssessmentControlBuilder {
     /// Consumes the builder and constructs a [`AssessmentControl`](crate::types::AssessmentControl).
     pub fn build(self) -> crate::types::AssessmentControl {
         crate::types::AssessmentControl {
-            id: self.id,
-            name: self.name,
-            description: self.description,
-            status: self.status,
-            response: self.response,
-            comments: self.comments,
-            evidence_sources: self.evidence_sources,
-            evidence_count: self.evidence_count.unwrap_or_default(),
-            assessment_report_evidence_count: self.assessment_report_evidence_count.unwrap_or_default(),
+            id: self.id
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            status: self.status
+            ,
+            response: self.response
+            ,
+            comments: self.comments
+            ,
+            evidence_sources: self.evidence_sources
+            ,
+            evidence_count: self.evidence_count
+                .unwrap_or_default()
+            ,
+            assessment_report_evidence_count: self.assessment_report_evidence_count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

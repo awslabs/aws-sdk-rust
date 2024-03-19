@@ -3,16 +3,17 @@
 /// <p>A set of criteria that CloudFormation uses to validate parameter values. Although other constraints might be defined in the stack template, CloudFormation returns only the <code>AllowedValues</code> property.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ParameterConstraints {
+pub struct ParameterConstraints  {
     /// <p>A list of values that are permitted for a parameter.</p>
-    pub allowed_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub allowed_values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ParameterConstraints {
+impl  ParameterConstraints  {
     /// <p>A list of values that are permitted for a parameter.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_values.is_none()`.
-    pub fn allowed_values(&self) -> &[::std::string::String] {
-        self.allowed_values.as_deref().unwrap_or_default()
+    pub fn allowed_values(&self) -> & [::std::string::String] {
+        self.allowed_values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ParameterConstraints {
@@ -26,7 +27,7 @@ impl ParameterConstraints {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParameterConstraintsBuilder {
-    pub(crate) allowed_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) allowed_values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ParameterConstraintsBuilder {
     /// Appends an item to `allowed_values`.
@@ -36,23 +37,24 @@ impl ParameterConstraintsBuilder {
     /// <p>A list of values that are permitted for a parameter.</p>
     pub fn allowed_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allowed_values.unwrap_or_default();
-        v.push(input.into());
-        self.allowed_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.allowed_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of values that are permitted for a parameter.</p>
-    pub fn set_allowed_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.allowed_values = input;
-        self
+    pub fn set_allowed_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.allowed_values = input; self
     }
     /// <p>A list of values that are permitted for a parameter.</p>
-    pub fn get_allowed_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allowed_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.allowed_values
     }
     /// Consumes the builder and constructs a [`ParameterConstraints`](crate::types::ParameterConstraints).
     pub fn build(self) -> crate::types::ParameterConstraints {
         crate::types::ParameterConstraints {
-            allowed_values: self.allowed_values,
+            allowed_values: self.allowed_values
+            ,
         }
     }
 }
+

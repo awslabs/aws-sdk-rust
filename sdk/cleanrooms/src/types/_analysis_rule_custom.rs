@@ -3,28 +3,28 @@
 /// <p>A type of analysis rule that enables the table owner to approve custom SQL queries on their configured tables. It supports differential privacy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalysisRuleCustom {
+pub struct AnalysisRuleCustom  {
     /// <p>The analysis templates that are allowed by the custom analysis rule.</p>
-    pub allowed_analyses: ::std::vec::Vec<::std::string::String>,
+    pub allowed_analyses: ::std::vec::Vec::<::std::string::String>,
     /// <p>The Amazon Web Services accounts that are allowed to query by the custom analysis rule. Required when <code>allowedAnalyses</code> is <code>ANY_QUERY</code>.</p>
-    pub allowed_analysis_providers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub allowed_analysis_providers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The differential privacy configuration.</p>
     pub differential_privacy: ::std::option::Option<crate::types::DifferentialPrivacyConfiguration>,
 }
-impl AnalysisRuleCustom {
+impl  AnalysisRuleCustom  {
     /// <p>The analysis templates that are allowed by the custom analysis rule.</p>
-    pub fn allowed_analyses(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.allowed_analyses.deref()
+    pub fn allowed_analyses(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.allowed_analyses.deref()
     }
     /// <p>The Amazon Web Services accounts that are allowed to query by the custom analysis rule. Required when <code>allowedAnalyses</code> is <code>ANY_QUERY</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_analysis_providers.is_none()`.
-    pub fn allowed_analysis_providers(&self) -> &[::std::string::String] {
-        self.allowed_analysis_providers.as_deref().unwrap_or_default()
+    pub fn allowed_analysis_providers(&self) -> & [::std::string::String] {
+        self.allowed_analysis_providers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The differential privacy configuration.</p>
-    pub fn differential_privacy(&self) -> ::std::option::Option<&crate::types::DifferentialPrivacyConfiguration> {
+    pub fn differential_privacy(&self) -> ::std::option::Option<& crate::types::DifferentialPrivacyConfiguration> {
         self.differential_privacy.as_ref()
     }
 }
@@ -39,8 +39,8 @@ impl AnalysisRuleCustom {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalysisRuleCustomBuilder {
-    pub(crate) allowed_analyses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) allowed_analysis_providers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) allowed_analyses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) allowed_analysis_providers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) differential_privacy: ::std::option::Option<crate::types::DifferentialPrivacyConfiguration>,
 }
 impl AnalysisRuleCustomBuilder {
@@ -51,17 +51,16 @@ impl AnalysisRuleCustomBuilder {
     /// <p>The analysis templates that are allowed by the custom analysis rule.</p>
     pub fn allowed_analyses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allowed_analyses.unwrap_or_default();
-        v.push(input.into());
-        self.allowed_analyses = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.allowed_analyses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The analysis templates that are allowed by the custom analysis rule.</p>
-    pub fn set_allowed_analyses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.allowed_analyses = input;
-        self
+    pub fn set_allowed_analyses(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.allowed_analyses = input; self
     }
     /// <p>The analysis templates that are allowed by the custom analysis rule.</p>
-    pub fn get_allowed_analyses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allowed_analyses(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.allowed_analyses
     }
     /// Appends an item to `allowed_analysis_providers`.
@@ -71,17 +70,16 @@ impl AnalysisRuleCustomBuilder {
     /// <p>The Amazon Web Services accounts that are allowed to query by the custom analysis rule. Required when <code>allowedAnalyses</code> is <code>ANY_QUERY</code>.</p>
     pub fn allowed_analysis_providers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allowed_analysis_providers.unwrap_or_default();
-        v.push(input.into());
-        self.allowed_analysis_providers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.allowed_analysis_providers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Web Services accounts that are allowed to query by the custom analysis rule. Required when <code>allowedAnalyses</code> is <code>ANY_QUERY</code>.</p>
-    pub fn set_allowed_analysis_providers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.allowed_analysis_providers = input;
-        self
+    pub fn set_allowed_analysis_providers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.allowed_analysis_providers = input; self
     }
     /// <p>The Amazon Web Services accounts that are allowed to query by the custom analysis rule. Required when <code>allowedAnalyses</code> is <code>ANY_QUERY</code>.</p>
-    pub fn get_allowed_analysis_providers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allowed_analysis_providers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.allowed_analysis_providers
     }
     /// <p>The differential privacy configuration.</p>
@@ -91,8 +89,7 @@ impl AnalysisRuleCustomBuilder {
     }
     /// <p>The differential privacy configuration.</p>
     pub fn set_differential_privacy(mut self, input: ::std::option::Option<crate::types::DifferentialPrivacyConfiguration>) -> Self {
-        self.differential_privacy = input;
-        self
+        self.differential_privacy = input; self
     }
     /// <p>The differential privacy configuration.</p>
     pub fn get_differential_privacy(&self) -> &::std::option::Option<crate::types::DifferentialPrivacyConfiguration> {
@@ -102,15 +99,19 @@ impl AnalysisRuleCustomBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`allowed_analyses`](crate::types::builders::AnalysisRuleCustomBuilder::allowed_analyses)
     pub fn build(self) -> ::std::result::Result<crate::types::AnalysisRuleCustom, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AnalysisRuleCustom {
-            allowed_analyses: self.allowed_analyses.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "allowed_analyses",
-                    "allowed_analyses was not specified but it is required when building AnalysisRuleCustom",
-                )
-            })?,
-            allowed_analysis_providers: self.allowed_analysis_providers,
-            differential_privacy: self.differential_privacy,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AnalysisRuleCustom {
+                allowed_analyses: self.allowed_analyses
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("allowed_analyses", "allowed_analyses was not specified but it is required when building AnalysisRuleCustom")
+                    )?
+                ,
+                allowed_analysis_providers: self.allowed_analysis_providers
+                ,
+                differential_privacy: self.differential_privacy
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Returns the result of the route calculation. Metadata includes legs and route summary.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CalculateRouteOutput {
+pub struct CalculateRouteOutput  {
     /// <p>Contains details about each path between a pair of positions included along a route such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number of legs returned corresponds to one fewer than the total number of positions in the request.</p>
     /// <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>:</p>
     /// <ul>
@@ -19,12 +19,12 @@ pub struct CalculateRouteOutput {
     /// <li>
     /// <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p></li>
     /// </ul>
-    pub legs: ::std::vec::Vec<crate::types::Leg>,
+    pub legs: ::std::vec::Vec::<crate::types::Leg>,
     /// <p>Contains information about the whole route, such as: <code>RouteBBox</code>, <code>DataSource</code>, <code>Distance</code>, <code>DistanceUnit</code>, and <code>DurationSeconds</code>.</p>
     pub summary: ::std::option::Option<crate::types::CalculateRouteSummary>,
     _request_id: Option<String>,
 }
-impl CalculateRouteOutput {
+impl  CalculateRouteOutput  {
     /// <p>Contains details about each path between a pair of positions included along a route such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number of legs returned corresponds to one fewer than the total number of positions in the request.</p>
     /// <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>:</p>
     /// <ul>
@@ -40,20 +40,19 @@ impl CalculateRouteOutput {
     /// <li>
     /// <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p></li>
     /// </ul>
-    pub fn legs(&self) -> &[crate::types::Leg] {
-        use std::ops::Deref;
-        self.legs.deref()
+    pub fn legs(&self) -> & [crate::types::Leg] {
+        use std::ops::Deref; self.legs.deref()
     }
     /// <p>Contains information about the whole route, such as: <code>RouteBBox</code>, <code>DataSource</code>, <code>Distance</code>, <code>DistanceUnit</code>, and <code>DurationSeconds</code>.</p>
-    pub fn summary(&self) -> ::std::option::Option<&crate::types::CalculateRouteSummary> {
+    pub fn summary(&self) -> ::std::option::Option<& crate::types::CalculateRouteSummary> {
         self.summary.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CalculateRouteOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CalculateRouteOutput {
     /// Creates a new builder-style object to manufacture [`CalculateRouteOutput`](crate::operation::calculate_route::CalculateRouteOutput).
     pub fn builder() -> crate::operation::calculate_route::builders::CalculateRouteOutputBuilder {
@@ -65,7 +64,7 @@ impl CalculateRouteOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CalculateRouteOutputBuilder {
-    pub(crate) legs: ::std::option::Option<::std::vec::Vec<crate::types::Leg>>,
+    pub(crate) legs: ::std::option::Option<::std::vec::Vec::<crate::types::Leg>>,
     pub(crate) summary: ::std::option::Option<crate::types::CalculateRouteSummary>,
     _request_id: Option<String>,
 }
@@ -91,9 +90,9 @@ impl CalculateRouteOutputBuilder {
     /// </ul>
     pub fn legs(mut self, input: crate::types::Leg) -> Self {
         let mut v = self.legs.unwrap_or_default();
-        v.push(input);
-        self.legs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.legs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains details about each path between a pair of positions included along a route such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number of legs returned corresponds to one fewer than the total number of positions in the request.</p>
     /// <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>:</p>
@@ -110,9 +109,8 @@ impl CalculateRouteOutputBuilder {
     /// <li>
     /// <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p></li>
     /// </ul>
-    pub fn set_legs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Leg>>) -> Self {
-        self.legs = input;
-        self
+    pub fn set_legs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Leg>>) -> Self {
+        self.legs = input; self
     }
     /// <p>Contains details about each path between a pair of positions included along a route such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number of legs returned corresponds to one fewer than the total number of positions in the request.</p>
     /// <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>:</p>
@@ -129,7 +127,7 @@ impl CalculateRouteOutputBuilder {
     /// <li>
     /// <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p></li>
     /// </ul>
-    pub fn get_legs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Leg>> {
+    pub fn get_legs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Leg>> {
         &self.legs
     }
     /// <p>Contains information about the whole route, such as: <code>RouteBBox</code>, <code>DataSource</code>, <code>Distance</code>, <code>DistanceUnit</code>, and <code>DurationSeconds</code>.</p>
@@ -140,37 +138,37 @@ impl CalculateRouteOutputBuilder {
     }
     /// <p>Contains information about the whole route, such as: <code>RouteBBox</code>, <code>DataSource</code>, <code>Distance</code>, <code>DistanceUnit</code>, and <code>DurationSeconds</code>.</p>
     pub fn set_summary(mut self, input: ::std::option::Option<crate::types::CalculateRouteSummary>) -> Self {
-        self.summary = input;
-        self
+        self.summary = input; self
     }
     /// <p>Contains information about the whole route, such as: <code>RouteBBox</code>, <code>DataSource</code>, <code>Distance</code>, <code>DistanceUnit</code>, and <code>DurationSeconds</code>.</p>
     pub fn get_summary(&self) -> &::std::option::Option<crate::types::CalculateRouteSummary> {
         &self.summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CalculateRouteOutput`](crate::operation::calculate_route::CalculateRouteOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`legs`](crate::operation::calculate_route::builders::CalculateRouteOutputBuilder::legs)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::calculate_route::CalculateRouteOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::calculate_route::CalculateRouteOutput {
-            legs: self.legs.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "legs",
-                    "legs was not specified but it is required when building CalculateRouteOutput",
-                )
-            })?,
-            summary: self.summary,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::calculate_route::CalculateRouteOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::calculate_route::CalculateRouteOutput {
+                legs: self.legs
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("legs", "legs was not specified but it is required when building CalculateRouteOutput")
+                    )?
+                ,
+                summary: self.summary
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

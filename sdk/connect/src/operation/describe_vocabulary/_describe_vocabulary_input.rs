@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeVocabularyInput {
+pub struct DescribeVocabularyInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the custom vocabulary.</p>
     pub vocabulary_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeVocabularyInput {
+impl  DescribeVocabularyInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier of the custom vocabulary.</p>
-    pub fn vocabulary_id(&self) -> ::std::option::Option<&str> {
+    pub fn vocabulary_id(&self) -> ::std::option::Option<& str> {
         self.vocabulary_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeVocabularyInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DescribeVocabularyInputBuilder {
     }
     /// <p>The identifier of the custom vocabulary.</p>
     pub fn set_vocabulary_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vocabulary_id = input;
-        self
+        self.vocabulary_id = input; self
     }
     /// <p>The identifier of the custom vocabulary.</p>
     pub fn get_vocabulary_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vocabulary_id
     }
     /// Consumes the builder and constructs a [`DescribeVocabularyInput`](crate::operation::describe_vocabulary::DescribeVocabularyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_vocabulary::DescribeVocabularyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_vocabulary::DescribeVocabularyInput {
-            instance_id: self.instance_id,
-            vocabulary_id: self.vocabulary_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_vocabulary::DescribeVocabularyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_vocabulary::DescribeVocabularyInput {
+                instance_id: self.instance_id
+                ,
+                vocabulary_id: self.vocabulary_id
+                ,
+            }
+        )
     }
 }
+

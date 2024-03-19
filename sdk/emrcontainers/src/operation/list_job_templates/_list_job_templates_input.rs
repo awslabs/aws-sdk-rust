@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListJobTemplatesInput {
+pub struct ListJobTemplatesInput  {
     /// <p>The date and time after which the job templates were created.</p>
     pub created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time before which the job templates were created.</p>
@@ -12,13 +12,13 @@ pub struct ListJobTemplatesInput {
     /// <p>The token for the next set of job templates to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListJobTemplatesInput {
+impl  ListJobTemplatesInput  {
     /// <p>The date and time after which the job templates were created.</p>
-    pub fn created_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_after.as_ref()
     }
     /// <p>The date and time before which the job templates were created.</p>
-    pub fn created_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_before.as_ref()
     }
     /// <p>The maximum number of job templates that can be listed.</p>
@@ -26,7 +26,7 @@ impl ListJobTemplatesInput {
         self.max_results
     }
     /// <p>The token for the next set of job templates to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -54,8 +54,7 @@ impl ListJobTemplatesInputBuilder {
     }
     /// <p>The date and time after which the job templates were created.</p>
     pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_after = input;
-        self
+        self.created_after = input; self
     }
     /// <p>The date and time after which the job templates were created.</p>
     pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -68,8 +67,7 @@ impl ListJobTemplatesInputBuilder {
     }
     /// <p>The date and time before which the job templates were created.</p>
     pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_before = input;
-        self
+        self.created_before = input; self
     }
     /// <p>The date and time before which the job templates were created.</p>
     pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -82,8 +80,7 @@ impl ListJobTemplatesInputBuilder {
     }
     /// <p>The maximum number of job templates that can be listed.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of job templates that can be listed.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -96,22 +93,26 @@ impl ListJobTemplatesInputBuilder {
     }
     /// <p>The token for the next set of job templates to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of job templates to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListJobTemplatesInput`](crate::operation::list_job_templates::ListJobTemplatesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_job_templates::ListJobTemplatesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_job_templates::ListJobTemplatesInput {
-            created_after: self.created_after,
-            created_before: self.created_before,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_job_templates::ListJobTemplatesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_job_templates::ListJobTemplatesInput {
+                created_after: self.created_after
+                ,
+                created_before: self.created_before
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

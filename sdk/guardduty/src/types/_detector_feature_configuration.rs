@@ -4,28 +4,29 @@
 /// <p>Specifying both EKS Runtime Monitoring (<code>EKS_RUNTIME_MONITORING</code>) and Runtime Monitoring (<code>RUNTIME_MONITORING</code>) will cause an error. You can add only one of these two features because Runtime Monitoring already includes the threat detection for Amazon EKS resources. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html">Runtime Monitoring</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetectorFeatureConfiguration {
+pub struct DetectorFeatureConfiguration  {
     /// <p>The name of the feature.</p>
     pub name: ::std::option::Option<crate::types::DetectorFeature>,
     /// <p>The status of the feature.</p>
     pub status: ::std::option::Option<crate::types::FeatureStatus>,
     /// <p>Additional configuration for a resource.</p>
-    pub additional_configuration: ::std::option::Option<::std::vec::Vec<crate::types::DetectorAdditionalConfiguration>>,
+    pub additional_configuration: ::std::option::Option<::std::vec::Vec::<crate::types::DetectorAdditionalConfiguration>>,
 }
-impl DetectorFeatureConfiguration {
+impl  DetectorFeatureConfiguration  {
     /// <p>The name of the feature.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::DetectorFeature> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::DetectorFeature> {
         self.name.as_ref()
     }
     /// <p>The status of the feature.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::FeatureStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::FeatureStatus> {
         self.status.as_ref()
     }
     /// <p>Additional configuration for a resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_configuration.is_none()`.
-    pub fn additional_configuration(&self) -> &[crate::types::DetectorAdditionalConfiguration] {
-        self.additional_configuration.as_deref().unwrap_or_default()
+    pub fn additional_configuration(&self) -> & [crate::types::DetectorAdditionalConfiguration] {
+        self.additional_configuration.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DetectorFeatureConfiguration {
@@ -41,7 +42,7 @@ impl DetectorFeatureConfiguration {
 pub struct DetectorFeatureConfigurationBuilder {
     pub(crate) name: ::std::option::Option<crate::types::DetectorFeature>,
     pub(crate) status: ::std::option::Option<crate::types::FeatureStatus>,
-    pub(crate) additional_configuration: ::std::option::Option<::std::vec::Vec<crate::types::DetectorAdditionalConfiguration>>,
+    pub(crate) additional_configuration: ::std::option::Option<::std::vec::Vec::<crate::types::DetectorAdditionalConfiguration>>,
 }
 impl DetectorFeatureConfigurationBuilder {
     /// <p>The name of the feature.</p>
@@ -51,8 +52,7 @@ impl DetectorFeatureConfigurationBuilder {
     }
     /// <p>The name of the feature.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::DetectorFeature>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the feature.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::DetectorFeature> {
@@ -65,8 +65,7 @@ impl DetectorFeatureConfigurationBuilder {
     }
     /// <p>The status of the feature.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FeatureStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the feature.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FeatureStatus> {
@@ -79,28 +78,28 @@ impl DetectorFeatureConfigurationBuilder {
     /// <p>Additional configuration for a resource.</p>
     pub fn additional_configuration(mut self, input: crate::types::DetectorAdditionalConfiguration) -> Self {
         let mut v = self.additional_configuration.unwrap_or_default();
-        v.push(input);
-        self.additional_configuration = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.additional_configuration = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Additional configuration for a resource.</p>
-    pub fn set_additional_configuration(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DetectorAdditionalConfiguration>>,
-    ) -> Self {
-        self.additional_configuration = input;
-        self
+    pub fn set_additional_configuration(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DetectorAdditionalConfiguration>>) -> Self {
+        self.additional_configuration = input; self
     }
     /// <p>Additional configuration for a resource.</p>
-    pub fn get_additional_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DetectorAdditionalConfiguration>> {
+    pub fn get_additional_configuration(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DetectorAdditionalConfiguration>> {
         &self.additional_configuration
     }
     /// Consumes the builder and constructs a [`DetectorFeatureConfiguration`](crate::types::DetectorFeatureConfiguration).
     pub fn build(self) -> crate::types::DetectorFeatureConfiguration {
         crate::types::DetectorFeatureConfiguration {
-            name: self.name,
-            status: self.status,
-            additional_configuration: self.additional_configuration,
+            name: self.name
+            ,
+            status: self.status
+            ,
+            additional_configuration: self.additional_configuration
+            ,
         }
     }
 }
+

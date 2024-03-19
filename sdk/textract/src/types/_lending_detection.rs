@@ -3,7 +3,7 @@
 /// <p>The results extracted for a lending document.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LendingDetection {
+pub struct LendingDetection  {
     /// <p>The text extracted for a detected value in a lending document.</p>
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>The selection status of a selection element, such as an option button or check box.</p>
@@ -13,17 +13,17 @@ pub struct LendingDetection {
     /// <p>The confidence level for the text of a detected value in a lending document.</p>
     pub confidence: ::std::option::Option<f32>,
 }
-impl LendingDetection {
+impl  LendingDetection  {
     /// <p>The text extracted for a detected value in a lending document.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
     /// <p>The selection status of a selection element, such as an option button or check box.</p>
-    pub fn selection_status(&self) -> ::std::option::Option<&crate::types::SelectionStatus> {
+    pub fn selection_status(&self) -> ::std::option::Option<& crate::types::SelectionStatus> {
         self.selection_status.as_ref()
     }
     /// <p>Information about where the following items are located on a document page: detected page, text, key-value pairs, tables, table cells, and selection elements.</p>
-    pub fn geometry(&self) -> ::std::option::Option<&crate::types::Geometry> {
+    pub fn geometry(&self) -> ::std::option::Option<& crate::types::Geometry> {
         self.geometry.as_ref()
     }
     /// <p>The confidence level for the text of a detected value in a lending document.</p>
@@ -55,8 +55,7 @@ impl LendingDetectionBuilder {
     }
     /// <p>The text extracted for a detected value in a lending document.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>The text extracted for a detected value in a lending document.</p>
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl LendingDetectionBuilder {
     }
     /// <p>The selection status of a selection element, such as an option button or check box.</p>
     pub fn set_selection_status(mut self, input: ::std::option::Option<crate::types::SelectionStatus>) -> Self {
-        self.selection_status = input;
-        self
+        self.selection_status = input; self
     }
     /// <p>The selection status of a selection element, such as an option button or check box.</p>
     pub fn get_selection_status(&self) -> &::std::option::Option<crate::types::SelectionStatus> {
@@ -83,8 +81,7 @@ impl LendingDetectionBuilder {
     }
     /// <p>Information about where the following items are located on a document page: detected page, text, key-value pairs, tables, table cells, and selection elements.</p>
     pub fn set_geometry(mut self, input: ::std::option::Option<crate::types::Geometry>) -> Self {
-        self.geometry = input;
-        self
+        self.geometry = input; self
     }
     /// <p>Information about where the following items are located on a document page: detected page, text, key-value pairs, tables, table cells, and selection elements.</p>
     pub fn get_geometry(&self) -> &::std::option::Option<crate::types::Geometry> {
@@ -97,8 +94,7 @@ impl LendingDetectionBuilder {
     }
     /// <p>The confidence level for the text of a detected value in a lending document.</p>
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.confidence = input;
-        self
+        self.confidence = input; self
     }
     /// <p>The confidence level for the text of a detected value in a lending document.</p>
     pub fn get_confidence(&self) -> &::std::option::Option<f32> {
@@ -107,10 +103,15 @@ impl LendingDetectionBuilder {
     /// Consumes the builder and constructs a [`LendingDetection`](crate::types::LendingDetection).
     pub fn build(self) -> crate::types::LendingDetection {
         crate::types::LendingDetection {
-            text: self.text,
-            selection_status: self.selection_status,
-            geometry: self.geometry,
-            confidence: self.confidence,
+            text: self.text
+            ,
+            selection_status: self.selection_status
+            ,
+            geometry: self.geometry
+            ,
+            confidence: self.confidence
+            ,
         }
     }
 }
+

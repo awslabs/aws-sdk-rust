@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRecipeInput {
+pub struct UpdateRecipeInput  {
     /// <p>A description of the recipe.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the recipe to be updated.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
-    pub steps: ::std::option::Option<::std::vec::Vec<crate::types::RecipeStep>>,
+    pub steps: ::std::option::Option<::std::vec::Vec::<crate::types::RecipeStep>>,
 }
-impl UpdateRecipeInput {
+impl  UpdateRecipeInput  {
     /// <p>A description of the recipe.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name of the recipe to be updated.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.steps.is_none()`.
-    pub fn steps(&self) -> &[crate::types::RecipeStep] {
-        self.steps.as_deref().unwrap_or_default()
+    pub fn steps(&self) -> & [crate::types::RecipeStep] {
+        self.steps.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateRecipeInput {
@@ -39,7 +40,7 @@ impl UpdateRecipeInput {
 pub struct UpdateRecipeInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) steps: ::std::option::Option<::std::vec::Vec<crate::types::RecipeStep>>,
+    pub(crate) steps: ::std::option::Option<::std::vec::Vec::<crate::types::RecipeStep>>,
 }
 impl UpdateRecipeInputBuilder {
     /// <p>A description of the recipe.</p>
@@ -49,8 +50,7 @@ impl UpdateRecipeInputBuilder {
     }
     /// <p>A description of the recipe.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the recipe.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl UpdateRecipeInputBuilder {
     }
     /// <p>The name of the recipe to be updated.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the recipe to be updated.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,27 +77,30 @@ impl UpdateRecipeInputBuilder {
     /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
     pub fn steps(mut self, input: crate::types::RecipeStep) -> Self {
         let mut v = self.steps.unwrap_or_default();
-        v.push(input);
-        self.steps = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.steps = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
-    pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecipeStep>>) -> Self {
-        self.steps = input;
-        self
+    pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RecipeStep>>) -> Self {
+        self.steps = input; self
     }
     /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
-    pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecipeStep>> {
+    pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RecipeStep>> {
         &self.steps
     }
     /// Consumes the builder and constructs a [`UpdateRecipeInput`](crate::operation::update_recipe::UpdateRecipeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_recipe::UpdateRecipeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_recipe::UpdateRecipeInput {
-            description: self.description,
-            name: self.name,
-            steps: self.steps,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_recipe::UpdateRecipeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_recipe::UpdateRecipeInput {
+                description: self.description
+                ,
+                name: self.name
+                ,
+                steps: self.steps
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateConferenceProviderInput {
+pub struct UpdateConferenceProviderInput  {
     /// <p>The ARN of the conference provider.</p>
     pub conference_provider_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of the conference provider.</p>
@@ -14,25 +14,25 @@ pub struct UpdateConferenceProviderInput {
     /// <p>The meeting settings for the conference provider.</p>
     pub meeting_setting: ::std::option::Option<crate::types::MeetingSetting>,
 }
-impl UpdateConferenceProviderInput {
+impl  UpdateConferenceProviderInput  {
     /// <p>The ARN of the conference provider.</p>
-    pub fn conference_provider_arn(&self) -> ::std::option::Option<&str> {
+    pub fn conference_provider_arn(&self) -> ::std::option::Option<& str> {
         self.conference_provider_arn.as_deref()
     }
     /// <p>The type of the conference provider.</p>
-    pub fn conference_provider_type(&self) -> ::std::option::Option<&crate::types::ConferenceProviderType> {
+    pub fn conference_provider_type(&self) -> ::std::option::Option<& crate::types::ConferenceProviderType> {
         self.conference_provider_type.as_ref()
     }
     /// <p>The IP endpoint and protocol for calling.</p>
-    pub fn ip_dial_in(&self) -> ::std::option::Option<&crate::types::IpDialIn> {
+    pub fn ip_dial_in(&self) -> ::std::option::Option<& crate::types::IpDialIn> {
         self.ip_dial_in.as_ref()
     }
     /// <p>The information for PSTN conferencing.</p>
-    pub fn pstn_dial_in(&self) -> ::std::option::Option<&crate::types::PstnDialIn> {
+    pub fn pstn_dial_in(&self) -> ::std::option::Option<& crate::types::PstnDialIn> {
         self.pstn_dial_in.as_ref()
     }
     /// <p>The meeting settings for the conference provider.</p>
-    pub fn meeting_setting(&self) -> ::std::option::Option<&crate::types::MeetingSetting> {
+    pub fn meeting_setting(&self) -> ::std::option::Option<& crate::types::MeetingSetting> {
         self.meeting_setting.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl UpdateConferenceProviderInputBuilder {
     }
     /// <p>The ARN of the conference provider.</p>
     pub fn set_conference_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.conference_provider_arn = input;
-        self
+        self.conference_provider_arn = input; self
     }
     /// <p>The ARN of the conference provider.</p>
     pub fn get_conference_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl UpdateConferenceProviderInputBuilder {
     }
     /// <p>The type of the conference provider.</p>
     pub fn set_conference_provider_type(mut self, input: ::std::option::Option<crate::types::ConferenceProviderType>) -> Self {
-        self.conference_provider_type = input;
-        self
+        self.conference_provider_type = input; self
     }
     /// <p>The type of the conference provider.</p>
     pub fn get_conference_provider_type(&self) -> &::std::option::Option<crate::types::ConferenceProviderType> {
@@ -91,8 +89,7 @@ impl UpdateConferenceProviderInputBuilder {
     }
     /// <p>The IP endpoint and protocol for calling.</p>
     pub fn set_ip_dial_in(mut self, input: ::std::option::Option<crate::types::IpDialIn>) -> Self {
-        self.ip_dial_in = input;
-        self
+        self.ip_dial_in = input; self
     }
     /// <p>The IP endpoint and protocol for calling.</p>
     pub fn get_ip_dial_in(&self) -> &::std::option::Option<crate::types::IpDialIn> {
@@ -105,8 +102,7 @@ impl UpdateConferenceProviderInputBuilder {
     }
     /// <p>The information for PSTN conferencing.</p>
     pub fn set_pstn_dial_in(mut self, input: ::std::option::Option<crate::types::PstnDialIn>) -> Self {
-        self.pstn_dial_in = input;
-        self
+        self.pstn_dial_in = input; self
     }
     /// <p>The information for PSTN conferencing.</p>
     pub fn get_pstn_dial_in(&self) -> &::std::option::Option<crate::types::PstnDialIn> {
@@ -120,26 +116,28 @@ impl UpdateConferenceProviderInputBuilder {
     }
     /// <p>The meeting settings for the conference provider.</p>
     pub fn set_meeting_setting(mut self, input: ::std::option::Option<crate::types::MeetingSetting>) -> Self {
-        self.meeting_setting = input;
-        self
+        self.meeting_setting = input; self
     }
     /// <p>The meeting settings for the conference provider.</p>
     pub fn get_meeting_setting(&self) -> &::std::option::Option<crate::types::MeetingSetting> {
         &self.meeting_setting
     }
     /// Consumes the builder and constructs a [`UpdateConferenceProviderInput`](crate::operation::update_conference_provider::UpdateConferenceProviderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_conference_provider::UpdateConferenceProviderInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_conference_provider::UpdateConferenceProviderInput {
-            conference_provider_arn: self.conference_provider_arn,
-            conference_provider_type: self.conference_provider_type,
-            ip_dial_in: self.ip_dial_in,
-            pstn_dial_in: self.pstn_dial_in,
-            meeting_setting: self.meeting_setting,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_conference_provider::UpdateConferenceProviderInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_conference_provider::UpdateConferenceProviderInput {
+                conference_provider_arn: self.conference_provider_arn
+                ,
+                conference_provider_type: self.conference_provider_type
+                ,
+                ip_dial_in: self.ip_dial_in
+                ,
+                pstn_dial_in: self.pstn_dial_in
+                ,
+                meeting_setting: self.meeting_setting
+                ,
+            }
+        )
     }
 }
+

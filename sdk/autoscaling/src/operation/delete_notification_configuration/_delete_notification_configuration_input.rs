@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteNotificationConfigurationInput {
+pub struct DeleteNotificationConfigurationInput  {
     /// <p>The name of the Auto Scaling group.</p>
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
     pub topic_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteNotificationConfigurationInput {
+impl  DeleteNotificationConfigurationInput  {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<& str> {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
-    pub fn topic_arn(&self) -> ::std::option::Option<&str> {
+    pub fn topic_arn(&self) -> ::std::option::Option<& str> {
         self.topic_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteNotificationConfigurationInputBuilder {
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auto_scaling_group_name = input;
-        self
+        self.auto_scaling_group_name = input; self
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl DeleteNotificationConfigurationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
     pub fn set_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_arn = input;
-        self
+        self.topic_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
     pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.topic_arn
     }
     /// Consumes the builder and constructs a [`DeleteNotificationConfigurationInput`](crate::operation::delete_notification_configuration::DeleteNotificationConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_notification_configuration::DeleteNotificationConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_notification_configuration::DeleteNotificationConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_notification_configuration::DeleteNotificationConfigurationInput {
-                auto_scaling_group_name: self.auto_scaling_group_name,
-                topic_arn: self.topic_arn,
-            },
+                auto_scaling_group_name: self.auto_scaling_group_name
+                ,
+                topic_arn: self.topic_arn
+                ,
+            }
         )
     }
 }
+

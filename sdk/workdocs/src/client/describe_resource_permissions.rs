@@ -2,20 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeResourcePermissions`](crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`authentication_token(impl Into<String>)`](crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsFluentBuilder::authentication_token) / [`set_authentication_token(Option<String>)`](crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsFluentBuilder::set_authentication_token):<br>required: **false**<br><p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p><br>
     ///   - [`resource_id(impl Into<String>)`](crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsFluentBuilder::set_resource_id):<br>required: **true**<br><p>The ID of the resource.</p><br>
     ///   - [`principal_id(impl Into<String>)`](crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsFluentBuilder::principal_id) / [`set_principal_id(Option<String>)`](crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsFluentBuilder::set_principal_id):<br>required: **false**<br><p>The ID of the principal to filter permissions by.</p><br>
     ///   - [`limit(i32)`](crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of items to return with this call.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsFluentBuilder::set_marker):<br>required: **false**<br><p>The marker for the next set of results. (You received this marker from a previous call)</p><br>
-    /// - On success, responds with [`DescribeResourcePermissionsOutput`](crate::operation::describe_resource_permissions::DescribeResourcePermissionsOutput) with field(s):
+                            /// - On success, responds with [`DescribeResourcePermissionsOutput`](crate::operation::describe_resource_permissions::DescribeResourcePermissionsOutput) with field(s):
     ///   - [`principals(Option<Vec::<Principal>>)`](crate::operation::describe_resource_permissions::DescribeResourcePermissionsOutput::principals): <p>The principals.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_resource_permissions::DescribeResourcePermissionsOutput::marker): <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    /// - On failure, responds with [`SdkError<DescribeResourcePermissionsError>`](crate::operation::describe_resource_permissions::DescribeResourcePermissionsError)
-    pub fn describe_resource_permissions(
-        &self,
-    ) -> crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsFluentBuilder {
-        crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeResourcePermissionsError>`](crate::operation::describe_resource_permissions::DescribeResourcePermissionsError)
+    pub fn describe_resource_permissions(&self) -> crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsFluentBuilder {
+                                crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

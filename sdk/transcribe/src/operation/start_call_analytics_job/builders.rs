@@ -5,23 +5,20 @@ pub use crate::operation::start_call_analytics_job::_start_call_analytics_job_in
 
 impl StartCallAnalyticsJobInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::start_call_analytics_job::StartCallAnalyticsJobOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_call_analytics_job::StartCallAnalyticsJobError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.start_call_analytics_job();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::start_call_analytics_job::StartCallAnalyticsJobOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::start_call_analytics_job::StartCallAnalyticsJobError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.start_call_analytics_job();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `StartCallAnalyticsJob`.
-///
+/// 
 /// <p>Transcribes the audio from a customer service call and applies any additional Request Parameters you choose to include in your request.</p>
 /// <p>In addition to many standard transcription features, Call Analytics provides you with call characteristics, call summarization, speaker sentiment, and optional redaction of your text transcript and your audio file. You can also apply custom categories to flag specified conditions. To learn more about these features and insights, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics.html">Analyzing call center audio with Call Analytics</a>.</p>
 /// <p>If you want to apply categories to your Call Analytics job, you must create them before submitting your job request. Categories cannot be retroactively applied to a job. To create a new category, use the operation. To learn more about Call Analytics categories, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html">Creating categories for post-call transcriptions</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html">Creating categories for real-time transcriptions</a>.</p>
@@ -43,33 +40,32 @@ impl StartCallAnalyticsJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartCallAnalyticsJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::start_call_analytics_job::builders::StartCallAnalyticsJobInputBuilder,
+                    inner: crate::operation::start_call_analytics_job::builders::StartCallAnalyticsJobInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::start_call_analytics_job::StartCallAnalyticsJobOutput,
-        crate::operation::start_call_analytics_job::StartCallAnalyticsJobError,
-    > for StartCallAnalyticsJobFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::start_call_analytics_job::StartCallAnalyticsJobOutput,
-            crate::operation::start_call_analytics_job::StartCallAnalyticsJobError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::start_call_analytics_job::StartCallAnalyticsJobOutput,
+                    crate::operation::start_call_analytics_job::StartCallAnalyticsJobError,
+                > for StartCallAnalyticsJobFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::start_call_analytics_job::StartCallAnalyticsJobOutput,
+                        crate::operation::start_call_analytics_job::StartCallAnalyticsJobError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl StartCallAnalyticsJobFluentBuilder {
     /// Creates a new `StartCallAnalyticsJob`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -78,53 +74,44 @@ impl StartCallAnalyticsJobFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_call_analytics_job::StartCallAnalyticsJobOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_call_analytics_job::StartCallAnalyticsJobError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::start_call_analytics_job::StartCallAnalyticsJob::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::start_call_analytics_job::StartCallAnalyticsJob::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::start_call_analytics_job::StartCallAnalyticsJobOutput,
-        crate::operation::start_call_analytics_job::StartCallAnalyticsJobError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::start_call_analytics_job::StartCallAnalyticsJobOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_call_analytics_job::StartCallAnalyticsJobError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::start_call_analytics_job::StartCallAnalyticsJob::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::start_call_analytics_job::StartCallAnalyticsJob::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::start_call_analytics_job::StartCallAnalyticsJobOutput, crate::operation::start_call_analytics_job::StartCallAnalyticsJobError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>A unique name, chosen by you, for your Call Analytics job.</p>
     /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new job with the same name as an existing job, you get a <code>ConflictException</code> error.</p>
     pub fn call_analytics_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -324,12 +311,13 @@ impl StartCallAnalyticsJobFluentBuilder {
         self
     }
     /// <p>Makes it possible to specify which speaker is on which channel. For example, if your agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).</p>
-    pub fn set_channel_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>) -> Self {
+    pub fn set_channel_definitions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ChannelDefinition>>) -> Self {
         self.inner = self.inner.set_channel_definitions(input);
         self
     }
     /// <p>Makes it possible to specify which speaker is on which channel. For example, if your agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).</p>
-    pub fn get_channel_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>> {
+    pub fn get_channel_definitions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ChannelDefinition>> {
         self.inner.get_channel_definitions()
     }
 }
+

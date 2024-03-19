@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetKxUserInput {
+pub struct GetKxUserInput  {
     /// <p>A unique identifier for the user.</p>
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the kdb environment.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
 }
-impl GetKxUserInput {
+impl  GetKxUserInput  {
     /// <p>A unique identifier for the user.</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetKxUserInputBuilder {
     }
     /// <p>A unique identifier for the user.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>A unique identifier for the user.</p>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl GetKxUserInputBuilder {
     }
     /// <p>A unique identifier for the kdb environment.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>A unique identifier for the kdb environment.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,9 +63,14 @@ impl GetKxUserInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetKxUserInput`](crate::operation::get_kx_user::GetKxUserInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_kx_user::GetKxUserInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_kx_user::GetKxUserInput {
-            user_name: self.user_name,
-            environment_id: self.environment_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_kx_user::GetKxUserInput {
+                user_name: self.user_name
+                ,
+                environment_id: self.environment_id
+                ,
+            }
+        )
     }
 }
+

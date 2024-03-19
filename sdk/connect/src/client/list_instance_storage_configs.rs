@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListInstanceStorageConfigs`](crate::operation::list_instance_storage_configs::builders::ListInstanceStorageConfigsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_instance_storage_configs::builders::ListInstanceStorageConfigsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::operation::list_instance_storage_configs::builders::ListInstanceStorageConfigsFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::list_instance_storage_configs::builders::ListInstanceStorageConfigsFluentBuilder::set_instance_id):<br>required: **true**<br><p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p><br>
     ///   - [`resource_type(InstanceStorageResourceType)`](crate::operation::list_instance_storage_configs::builders::ListInstanceStorageConfigsFluentBuilder::resource_type) / [`set_resource_type(Option<InstanceStorageResourceType>)`](crate::operation::list_instance_storage_configs::builders::ListInstanceStorageConfigsFluentBuilder::set_resource_type):<br>required: **true**<br><p>A valid resource type.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_instance_storage_configs::builders::ListInstanceStorageConfigsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_instance_storage_configs::builders::ListInstanceStorageConfigsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_instance_storage_configs::builders::ListInstanceStorageConfigsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_instance_storage_configs::builders::ListInstanceStorageConfigsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page.</p><br>
-    /// - On success, responds with [`ListInstanceStorageConfigsOutput`](crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsOutput) with field(s):
+                            /// - On success, responds with [`ListInstanceStorageConfigsOutput`](crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsOutput) with field(s):
     ///   - [`storage_configs(Option<Vec::<InstanceStorageConfig>>)`](crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsOutput::storage_configs): <p>A valid storage type.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListInstanceStorageConfigsError>`](crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsError)
-    pub fn list_instance_storage_configs(
-        &self,
-    ) -> crate::operation::list_instance_storage_configs::builders::ListInstanceStorageConfigsFluentBuilder {
-        crate::operation::list_instance_storage_configs::builders::ListInstanceStorageConfigsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListInstanceStorageConfigsError>`](crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsError)
+    pub fn list_instance_storage_configs(&self) -> crate::operation::list_instance_storage_configs::builders::ListInstanceStorageConfigsFluentBuilder {
+                                crate::operation::list_instance_storage_configs::builders::ListInstanceStorageConfigsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

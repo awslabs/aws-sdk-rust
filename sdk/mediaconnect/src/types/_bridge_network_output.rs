@@ -3,7 +3,7 @@
 /// The output of the bridge. A network output is delivered to your premises.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BridgeNetworkOutput {
+pub struct BridgeNetworkOutput  {
     /// The network output IP Address.
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// The network output name.
@@ -17,17 +17,17 @@ pub struct BridgeNetworkOutput {
     /// The network output TTL.
     pub ttl: ::std::option::Option<i32>,
 }
-impl BridgeNetworkOutput {
+impl  BridgeNetworkOutput  {
     /// The network output IP Address.
-    pub fn ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn ip_address(&self) -> ::std::option::Option<& str> {
         self.ip_address.as_deref()
     }
     /// The network output name.
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// The network output's gateway network name.
-    pub fn network_name(&self) -> ::std::option::Option<&str> {
+    pub fn network_name(&self) -> ::std::option::Option<& str> {
         self.network_name.as_deref()
     }
     /// The network output port.
@@ -35,7 +35,7 @@ impl BridgeNetworkOutput {
         self.port
     }
     /// The network output protocol.
-    pub fn protocol(&self) -> ::std::option::Option<&crate::types::Protocol> {
+    pub fn protocol(&self) -> ::std::option::Option<& crate::types::Protocol> {
         self.protocol.as_ref()
     }
     /// The network output TTL.
@@ -70,8 +70,7 @@ impl BridgeNetworkOutputBuilder {
     }
     /// The network output IP Address.
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
     }
     /// The network output IP Address.
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +84,7 @@ impl BridgeNetworkOutputBuilder {
     }
     /// The network output name.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// The network output name.
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +98,7 @@ impl BridgeNetworkOutputBuilder {
     }
     /// The network output's gateway network name.
     pub fn set_network_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_name = input;
-        self
+        self.network_name = input; self
     }
     /// The network output's gateway network name.
     pub fn get_network_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +112,7 @@ impl BridgeNetworkOutputBuilder {
     }
     /// The network output port.
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// The network output port.
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -130,8 +126,7 @@ impl BridgeNetworkOutputBuilder {
     }
     /// The network output protocol.
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::Protocol>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// The network output protocol.
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::Protocol> {
@@ -145,8 +140,7 @@ impl BridgeNetworkOutputBuilder {
     }
     /// The network output TTL.
     pub fn set_ttl(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.ttl = input;
-        self
+        self.ttl = input; self
     }
     /// The network output TTL.
     pub fn get_ttl(&self) -> &::std::option::Option<i32> {
@@ -155,12 +149,19 @@ impl BridgeNetworkOutputBuilder {
     /// Consumes the builder and constructs a [`BridgeNetworkOutput`](crate::types::BridgeNetworkOutput).
     pub fn build(self) -> crate::types::BridgeNetworkOutput {
         crate::types::BridgeNetworkOutput {
-            ip_address: self.ip_address,
-            name: self.name,
-            network_name: self.network_name,
-            port: self.port,
-            protocol: self.protocol,
-            ttl: self.ttl,
+            ip_address: self.ip_address
+            ,
+            name: self.name
+            ,
+            network_name: self.network_name
+            ,
+            port: self.port
+            ,
+            protocol: self.protocol
+            ,
+            ttl: self.ttl
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateProvisioningArtifactOutput {
+pub struct CreateProvisioningArtifactOutput  {
     /// <p>Information about the provisioning artifact.</p>
     pub provisioning_artifact_detail: ::std::option::Option<crate::types::ProvisioningArtifactDetail>,
     /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
@@ -11,14 +11,14 @@ pub struct CreateProvisioningArtifactOutput {
     /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
     /// <p><code>ImportFromPhysicalId</code></p>
     /// <p>Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.</p>
-    pub info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub info: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The status of the current request.</p>
     pub status: ::std::option::Option<crate::types::Status>,
     _request_id: Option<String>,
 }
-impl CreateProvisioningArtifactOutput {
+impl  CreateProvisioningArtifactOutput  {
     /// <p>Information about the provisioning artifact.</p>
-    pub fn provisioning_artifact_detail(&self) -> ::std::option::Option<&crate::types::ProvisioningArtifactDetail> {
+    pub fn provisioning_artifact_detail(&self) -> ::std::option::Option<& crate::types::ProvisioningArtifactDetail> {
         self.provisioning_artifact_detail.as_ref()
     }
     /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
@@ -27,19 +27,19 @@ impl CreateProvisioningArtifactOutput {
     /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
     /// <p><code>ImportFromPhysicalId</code></p>
     /// <p>Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.</p>
-    pub fn info(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn info(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.info.as_ref()
     }
     /// <p>The status of the current request.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::Status> {
         self.status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateProvisioningArtifactOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateProvisioningArtifactOutput {
     /// Creates a new builder-style object to manufacture [`CreateProvisioningArtifactOutput`](crate::operation::create_provisioning_artifact::CreateProvisioningArtifactOutput).
     pub fn builder() -> crate::operation::create_provisioning_artifact::builders::CreateProvisioningArtifactOutputBuilder {
@@ -52,7 +52,7 @@ impl CreateProvisioningArtifactOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateProvisioningArtifactOutputBuilder {
     pub(crate) provisioning_artifact_detail: ::std::option::Option<crate::types::ProvisioningArtifactDetail>,
-    pub(crate) info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) info: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) status: ::std::option::Option<crate::types::Status>,
     _request_id: Option<String>,
 }
@@ -64,8 +64,7 @@ impl CreateProvisioningArtifactOutputBuilder {
     }
     /// <p>Information about the provisioning artifact.</p>
     pub fn set_provisioning_artifact_detail(mut self, input: ::std::option::Option<crate::types::ProvisioningArtifactDetail>) -> Self {
-        self.provisioning_artifact_detail = input;
-        self
+        self.provisioning_artifact_detail = input; self
     }
     /// <p>Information about the provisioning artifact.</p>
     pub fn get_provisioning_artifact_detail(&self) -> &::std::option::Option<crate::types::ProvisioningArtifactDetail> {
@@ -83,9 +82,9 @@ impl CreateProvisioningArtifactOutputBuilder {
     /// <p>Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.</p>
     pub fn info(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.info.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.info = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.info = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
     /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
@@ -93,9 +92,8 @@ impl CreateProvisioningArtifactOutputBuilder {
     /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
     /// <p><code>ImportFromPhysicalId</code></p>
     /// <p>Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.</p>
-    pub fn set_info(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.info = input;
-        self
+    pub fn set_info(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.info = input; self
     }
     /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
     /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
@@ -103,7 +101,7 @@ impl CreateProvisioningArtifactOutputBuilder {
     /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
     /// <p><code>ImportFromPhysicalId</code></p>
     /// <p>Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.</p>
-    pub fn get_info(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_info(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.info
     }
     /// <p>The status of the current request.</p>
@@ -113,29 +111,32 @@ impl CreateProvisioningArtifactOutputBuilder {
     }
     /// <p>The status of the current request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the current request.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateProvisioningArtifactOutput`](crate::operation::create_provisioning_artifact::CreateProvisioningArtifactOutput).
     pub fn build(self) -> crate::operation::create_provisioning_artifact::CreateProvisioningArtifactOutput {
         crate::operation::create_provisioning_artifact::CreateProvisioningArtifactOutput {
-            provisioning_artifact_detail: self.provisioning_artifact_detail,
-            info: self.info,
-            status: self.status,
+            provisioning_artifact_detail: self.provisioning_artifact_detail
+            ,
+            info: self.info
+            ,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

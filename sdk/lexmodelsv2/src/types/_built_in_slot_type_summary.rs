@@ -3,19 +3,19 @@
 /// <p>Provides summary information about a built-in slot type for the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBuiltInSlotTypes.html"> ListBuiltInSlotTypes </a> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BuiltInSlotTypeSummary {
+pub struct BuiltInSlotTypeSummary  {
     /// <p>The signature of the built-in slot type. Use this to specify the parent slot type of a derived slot type.</p>
     pub slot_type_signature: ::std::option::Option<::std::string::String>,
     /// <p>The description of the built-in slot type.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl BuiltInSlotTypeSummary {
+impl  BuiltInSlotTypeSummary  {
     /// <p>The signature of the built-in slot type. Use this to specify the parent slot type of a derived slot type.</p>
-    pub fn slot_type_signature(&self) -> ::std::option::Option<&str> {
+    pub fn slot_type_signature(&self) -> ::std::option::Option<& str> {
         self.slot_type_signature.as_deref()
     }
     /// <p>The description of the built-in slot type.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl BuiltInSlotTypeSummaryBuilder {
     }
     /// <p>The signature of the built-in slot type. Use this to specify the parent slot type of a derived slot type.</p>
     pub fn set_slot_type_signature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.slot_type_signature = input;
-        self
+        self.slot_type_signature = input; self
     }
     /// <p>The signature of the built-in slot type. Use this to specify the parent slot type of a derived slot type.</p>
     pub fn get_slot_type_signature(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl BuiltInSlotTypeSummaryBuilder {
     }
     /// <p>The description of the built-in slot type.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the built-in slot type.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl BuiltInSlotTypeSummaryBuilder {
     /// Consumes the builder and constructs a [`BuiltInSlotTypeSummary`](crate::types::BuiltInSlotTypeSummary).
     pub fn build(self) -> crate::types::BuiltInSlotTypeSummary {
         crate::types::BuiltInSlotTypeSummary {
-            slot_type_signature: self.slot_type_signature,
-            description: self.description,
+            slot_type_signature: self.slot_type_signature
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

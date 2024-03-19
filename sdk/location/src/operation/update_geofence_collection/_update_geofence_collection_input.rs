@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateGeofenceCollectionInput {
+pub struct UpdateGeofenceCollectionInput  {
     /// <p>The name of the geofence collection to update.</p>
     pub collection_name: ::std::option::Option<::std::string::String>,
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
@@ -14,23 +14,23 @@ pub struct UpdateGeofenceCollectionInput {
     /// <p>Updates the description for the geofence collection.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl UpdateGeofenceCollectionInput {
+impl  UpdateGeofenceCollectionInput  {
     /// <p>The name of the geofence collection to update.</p>
-    pub fn collection_name(&self) -> ::std::option::Option<&str> {
+    pub fn collection_name(&self) -> ::std::option::Option<& str> {
         self.collection_name.as_deref()
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
-    pub fn pricing_plan(&self) -> ::std::option::Option<&crate::types::PricingPlan> {
+    pub fn pricing_plan(&self) -> ::std::option::Option<& crate::types::PricingPlan> {
         self.pricing_plan.as_ref()
     }
     /// <p>This parameter is no longer used.</p>
     #[deprecated(note = "Deprecated. No longer allowed.", since = "2022-02-01")]
-    pub fn pricing_plan_data_source(&self) -> ::std::option::Option<&str> {
+    pub fn pricing_plan_data_source(&self) -> ::std::option::Option<& str> {
         self.pricing_plan_data_source.as_deref()
     }
     /// <p>Updates the description for the geofence collection.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl UpdateGeofenceCollectionInputBuilder {
     }
     /// <p>The name of the geofence collection to update.</p>
     pub fn set_collection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collection_name = input;
-        self
+        self.collection_name = input; self
     }
     /// <p>The name of the geofence collection to update.</p>
     pub fn get_collection_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl UpdateGeofenceCollectionInputBuilder {
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
     pub fn set_pricing_plan(mut self, input: ::std::option::Option<crate::types::PricingPlan>) -> Self {
-        self.pricing_plan = input;
-        self
+        self.pricing_plan = input; self
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
@@ -92,8 +90,7 @@ impl UpdateGeofenceCollectionInputBuilder {
     /// <p>This parameter is no longer used.</p>
     #[deprecated(note = "Deprecated. No longer allowed.", since = "2022-02-01")]
     pub fn set_pricing_plan_data_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pricing_plan_data_source = input;
-        self
+        self.pricing_plan_data_source = input; self
     }
     /// <p>This parameter is no longer used.</p>
     #[deprecated(note = "Deprecated. No longer allowed.", since = "2022-02-01")]
@@ -107,25 +104,26 @@ impl UpdateGeofenceCollectionInputBuilder {
     }
     /// <p>Updates the description for the geofence collection.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Updates the description for the geofence collection.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateGeofenceCollectionInput`](crate::operation::update_geofence_collection::UpdateGeofenceCollectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_geofence_collection::UpdateGeofenceCollectionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_geofence_collection::UpdateGeofenceCollectionInput {
-            collection_name: self.collection_name,
-            pricing_plan: self.pricing_plan,
-            pricing_plan_data_source: self.pricing_plan_data_source,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_geofence_collection::UpdateGeofenceCollectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_geofence_collection::UpdateGeofenceCollectionInput {
+                collection_name: self.collection_name
+                ,
+                pricing_plan: self.pricing_plan
+                ,
+                pricing_plan_data_source: self.pricing_plan_data_source
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

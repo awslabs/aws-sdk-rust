@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RequestCertificateInput {
+pub struct RequestCertificateInput  {
     /// <p>Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.</p>
     /// <p>In compliance with <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>, the length of the domain name (technically, the Common Name) that you provide cannot exceed 64 octets (characters), including periods. To add a longer domain name, specify it in the Subject Alternative Name field, which supports names up to 253 octets in length.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
@@ -18,30 +18,30 @@ pub struct RequestCertificateInput {
     /// <li>
     /// <p><code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the DNS name (63+1+63+1+63+1+62) exceeds 253 octets.</p></li>
     /// </ul>
-    pub subject_alternative_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subject_alternative_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Customer chosen string that can be used to distinguish between calls to <code>RequestCertificate</code>. Idempotency tokens time out after one hour. Therefore, if you call <code>RequestCertificate</code> multiple times with the same idempotency token within one hour, ACM recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency token for each call, ACM recognizes that you are requesting multiple certificates.</p>
     pub idempotency_token: ::std::option::Option<::std::string::String>,
     /// <p>The domain name that you want ACM to use to send you emails so that you can validate domain ownership.</p>
-    pub domain_validation_options: ::std::option::Option<::std::vec::Vec<crate::types::DomainValidationOption>>,
+    pub domain_validation_options: ::std::option::Option<::std::vec::Vec::<crate::types::DomainValidationOption>>,
     /// <p>Currently, you can use this parameter to specify whether to add the certificate to a certificate transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting Out of Certificate Transparency Logging</a>.</p>
     pub options: ::std::option::Option<crate::types::CertificateOptions>,
     /// <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt to issue a public certificate. For more information about private CAs, see the <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaWelcome.html">Amazon Web Services Private Certificate Authority</a> user guide. The ARN must have the following form:</p>
     /// <p><code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code></p>
     pub certificate_authority_arn: ::std::option::Option<::std::string::String>,
     /// <p>One or more resource tags to associate with the certificate.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Specifies the algorithm of the public and private key pair that your certificate uses to encrypt data. RSA is the default key algorithm for ACM certificates. Elliptic Curve Digital Signature Algorithm (ECDSA) keys are smaller, offering security comparable to RSA keys but with greater computing efficiency. However, ECDSA is not supported by all network clients. Some AWS services may require RSA keys, or only support ECDSA keys of a particular size, while others allow the use of either RSA and ECDSA keys to ensure that compatibility is not broken. Check the requirements for the AWS service where you plan to deploy your certificate.</p>
     /// <p>Default: RSA_2048</p>
     pub key_algorithm: ::std::option::Option<crate::types::KeyAlgorithm>,
 }
-impl RequestCertificateInput {
+impl  RequestCertificateInput  {
     /// <p>Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.</p>
     /// <p>In compliance with <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>, the length of the domain name (technically, the Common Name) that you provide cannot exceed 64 octets (characters), including periods. To add a longer domain name, specify it in the Subject Alternative Name field, which supports names up to 253 octets in length.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The method you want to use if you are requesting a public certificate to validate that you own or control domain. You can <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate with DNS</a> or <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate with email</a>. We recommend that you use DNS validation.</p>
-    pub fn validation_method(&self) -> ::std::option::Option<&crate::types::ValidationMethod> {
+    pub fn validation_method(&self) -> ::std::option::Option<& crate::types::ValidationMethod> {
         self.validation_method.as_ref()
     }
     /// <p>Additional FQDNs to be included in the Subject Alternative Name extension of the ACM certificate. For example, add the name www.example.net to a certificate for which the <code>DomainName</code> field is www.example.com if users can reach your site by using either name. The maximum number of domain names that you can add to an ACM certificate is 100. However, the initial quota is 10 domain names. If you need more than 10 names, you must request a quota increase. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Quotas</a>.</p>
@@ -54,39 +54,42 @@ impl RequestCertificateInput {
     /// <li>
     /// <p><code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the DNS name (63+1+63+1+63+1+62) exceeds 253 octets.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subject_alternative_names.is_none()`.
-    pub fn subject_alternative_names(&self) -> &[::std::string::String] {
-        self.subject_alternative_names.as_deref().unwrap_or_default()
+    pub fn subject_alternative_names(&self) -> & [::std::string::String] {
+        self.subject_alternative_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Customer chosen string that can be used to distinguish between calls to <code>RequestCertificate</code>. Idempotency tokens time out after one hour. Therefore, if you call <code>RequestCertificate</code> multiple times with the same idempotency token within one hour, ACM recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency token for each call, ACM recognizes that you are requesting multiple certificates.</p>
-    pub fn idempotency_token(&self) -> ::std::option::Option<&str> {
+    pub fn idempotency_token(&self) -> ::std::option::Option<& str> {
         self.idempotency_token.as_deref()
     }
     /// <p>The domain name that you want ACM to use to send you emails so that you can validate domain ownership.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_validation_options.is_none()`.
-    pub fn domain_validation_options(&self) -> &[crate::types::DomainValidationOption] {
-        self.domain_validation_options.as_deref().unwrap_or_default()
+    pub fn domain_validation_options(&self) -> & [crate::types::DomainValidationOption] {
+        self.domain_validation_options.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Currently, you can use this parameter to specify whether to add the certificate to a certificate transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting Out of Certificate Transparency Logging</a>.</p>
-    pub fn options(&self) -> ::std::option::Option<&crate::types::CertificateOptions> {
+    pub fn options(&self) -> ::std::option::Option<& crate::types::CertificateOptions> {
         self.options.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt to issue a public certificate. For more information about private CAs, see the <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaWelcome.html">Amazon Web Services Private Certificate Authority</a> user guide. The ARN must have the following form:</p>
     /// <p><code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code></p>
-    pub fn certificate_authority_arn(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_authority_arn(&self) -> ::std::option::Option<& str> {
         self.certificate_authority_arn.as_deref()
     }
     /// <p>One or more resource tags to associate with the certificate.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the algorithm of the public and private key pair that your certificate uses to encrypt data. RSA is the default key algorithm for ACM certificates. Elliptic Curve Digital Signature Algorithm (ECDSA) keys are smaller, offering security comparable to RSA keys but with greater computing efficiency. However, ECDSA is not supported by all network clients. Some AWS services may require RSA keys, or only support ECDSA keys of a particular size, while others allow the use of either RSA and ECDSA keys to ensure that compatibility is not broken. Check the requirements for the AWS service where you plan to deploy your certificate.</p>
     /// <p>Default: RSA_2048</p>
-    pub fn key_algorithm(&self) -> ::std::option::Option<&crate::types::KeyAlgorithm> {
+    pub fn key_algorithm(&self) -> ::std::option::Option<& crate::types::KeyAlgorithm> {
         self.key_algorithm.as_ref()
     }
 }
@@ -103,12 +106,12 @@ impl RequestCertificateInput {
 pub struct RequestCertificateInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) validation_method: ::std::option::Option<crate::types::ValidationMethod>,
-    pub(crate) subject_alternative_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subject_alternative_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) idempotency_token: ::std::option::Option<::std::string::String>,
-    pub(crate) domain_validation_options: ::std::option::Option<::std::vec::Vec<crate::types::DomainValidationOption>>,
+    pub(crate) domain_validation_options: ::std::option::Option<::std::vec::Vec::<crate::types::DomainValidationOption>>,
     pub(crate) options: ::std::option::Option<crate::types::CertificateOptions>,
     pub(crate) certificate_authority_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) key_algorithm: ::std::option::Option<crate::types::KeyAlgorithm>,
 }
 impl RequestCertificateInputBuilder {
@@ -122,8 +125,7 @@ impl RequestCertificateInputBuilder {
     /// <p>Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.</p>
     /// <p>In compliance with <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>, the length of the domain name (technically, the Common Name) that you provide cannot exceed 64 octets (characters), including periods. To add a longer domain name, specify it in the Subject Alternative Name field, which supports names up to 253 octets in length.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.</p>
     /// <p>In compliance with <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>, the length of the domain name (technically, the Common Name) that you provide cannot exceed 64 octets (characters), including periods. To add a longer domain name, specify it in the Subject Alternative Name field, which supports names up to 253 octets in length.</p>
@@ -137,8 +139,7 @@ impl RequestCertificateInputBuilder {
     }
     /// <p>The method you want to use if you are requesting a public certificate to validate that you own or control domain. You can <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate with DNS</a> or <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate with email</a>. We recommend that you use DNS validation.</p>
     pub fn set_validation_method(mut self, input: ::std::option::Option<crate::types::ValidationMethod>) -> Self {
-        self.validation_method = input;
-        self
+        self.validation_method = input; self
     }
     /// <p>The method you want to use if you are requesting a public certificate to validate that you own or control domain. You can <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate with DNS</a> or <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate with email</a>. We recommend that you use DNS validation.</p>
     pub fn get_validation_method(&self) -> &::std::option::Option<crate::types::ValidationMethod> {
@@ -160,9 +161,9 @@ impl RequestCertificateInputBuilder {
     /// </ul>
     pub fn subject_alternative_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subject_alternative_names.unwrap_or_default();
-        v.push(input.into());
-        self.subject_alternative_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subject_alternative_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Additional FQDNs to be included in the Subject Alternative Name extension of the ACM certificate. For example, add the name www.example.net to a certificate for which the <code>DomainName</code> field is www.example.com if users can reach your site by using either name. The maximum number of domain names that you can add to an ACM certificate is 100. However, the initial quota is 10 domain names. If you need more than 10 names, you must request a quota increase. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Quotas</a>.</p>
     /// <p>The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple labels separated by periods. No label can be longer than 63 octets. Consider the following examples:</p>
@@ -174,9 +175,8 @@ impl RequestCertificateInputBuilder {
     /// <li>
     /// <p><code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the DNS name (63+1+63+1+63+1+62) exceeds 253 octets.</p></li>
     /// </ul>
-    pub fn set_subject_alternative_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subject_alternative_names = input;
-        self
+    pub fn set_subject_alternative_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subject_alternative_names = input; self
     }
     /// <p>Additional FQDNs to be included in the Subject Alternative Name extension of the ACM certificate. For example, add the name www.example.net to a certificate for which the <code>DomainName</code> field is www.example.com if users can reach your site by using either name. The maximum number of domain names that you can add to an ACM certificate is 100. However, the initial quota is 10 domain names. If you need more than 10 names, you must request a quota increase. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Quotas</a>.</p>
     /// <p>The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple labels separated by periods. No label can be longer than 63 octets. Consider the following examples:</p>
@@ -188,7 +188,7 @@ impl RequestCertificateInputBuilder {
     /// <li>
     /// <p><code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the DNS name (63+1+63+1+63+1+62) exceeds 253 octets.</p></li>
     /// </ul>
-    pub fn get_subject_alternative_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subject_alternative_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subject_alternative_names
     }
     /// <p>Customer chosen string that can be used to distinguish between calls to <code>RequestCertificate</code>. Idempotency tokens time out after one hour. Therefore, if you call <code>RequestCertificate</code> multiple times with the same idempotency token within one hour, ACM recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency token for each call, ACM recognizes that you are requesting multiple certificates.</p>
@@ -198,8 +198,7 @@ impl RequestCertificateInputBuilder {
     }
     /// <p>Customer chosen string that can be used to distinguish between calls to <code>RequestCertificate</code>. Idempotency tokens time out after one hour. Therefore, if you call <code>RequestCertificate</code> multiple times with the same idempotency token within one hour, ACM recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency token for each call, ACM recognizes that you are requesting multiple certificates.</p>
     pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.idempotency_token = input;
-        self
+        self.idempotency_token = input; self
     }
     /// <p>Customer chosen string that can be used to distinguish between calls to <code>RequestCertificate</code>. Idempotency tokens time out after one hour. Therefore, if you call <code>RequestCertificate</code> multiple times with the same idempotency token within one hour, ACM recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency token for each call, ACM recognizes that you are requesting multiple certificates.</p>
     pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -212,17 +211,16 @@ impl RequestCertificateInputBuilder {
     /// <p>The domain name that you want ACM to use to send you emails so that you can validate domain ownership.</p>
     pub fn domain_validation_options(mut self, input: crate::types::DomainValidationOption) -> Self {
         let mut v = self.domain_validation_options.unwrap_or_default();
-        v.push(input);
-        self.domain_validation_options = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.domain_validation_options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The domain name that you want ACM to use to send you emails so that you can validate domain ownership.</p>
-    pub fn set_domain_validation_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DomainValidationOption>>) -> Self {
-        self.domain_validation_options = input;
-        self
+    pub fn set_domain_validation_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DomainValidationOption>>) -> Self {
+        self.domain_validation_options = input; self
     }
     /// <p>The domain name that you want ACM to use to send you emails so that you can validate domain ownership.</p>
-    pub fn get_domain_validation_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainValidationOption>> {
+    pub fn get_domain_validation_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DomainValidationOption>> {
         &self.domain_validation_options
     }
     /// <p>Currently, you can use this parameter to specify whether to add the certificate to a certificate transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting Out of Certificate Transparency Logging</a>.</p>
@@ -232,8 +230,7 @@ impl RequestCertificateInputBuilder {
     }
     /// <p>Currently, you can use this parameter to specify whether to add the certificate to a certificate transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting Out of Certificate Transparency Logging</a>.</p>
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::CertificateOptions>) -> Self {
-        self.options = input;
-        self
+        self.options = input; self
     }
     /// <p>Currently, you can use this parameter to specify whether to add the certificate to a certificate transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting Out of Certificate Transparency Logging</a>.</p>
     pub fn get_options(&self) -> &::std::option::Option<crate::types::CertificateOptions> {
@@ -248,8 +245,7 @@ impl RequestCertificateInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt to issue a public certificate. For more information about private CAs, see the <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaWelcome.html">Amazon Web Services Private Certificate Authority</a> user guide. The ARN must have the following form:</p>
     /// <p><code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code></p>
     pub fn set_certificate_authority_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_authority_arn = input;
-        self
+        self.certificate_authority_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt to issue a public certificate. For more information about private CAs, see the <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaWelcome.html">Amazon Web Services Private Certificate Authority</a> user guide. The ARN must have the following form:</p>
     /// <p><code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code></p>
@@ -263,17 +259,16 @@ impl RequestCertificateInputBuilder {
     /// <p>One or more resource tags to associate with the certificate.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more resource tags to associate with the certificate.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>One or more resource tags to associate with the certificate.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>Specifies the algorithm of the public and private key pair that your certificate uses to encrypt data. RSA is the default key algorithm for ACM certificates. Elliptic Curve Digital Signature Algorithm (ECDSA) keys are smaller, offering security comparable to RSA keys but with greater computing efficiency. However, ECDSA is not supported by all network clients. Some AWS services may require RSA keys, or only support ECDSA keys of a particular size, while others allow the use of either RSA and ECDSA keys to ensure that compatibility is not broken. Check the requirements for the AWS service where you plan to deploy your certificate.</p>
@@ -285,8 +280,7 @@ impl RequestCertificateInputBuilder {
     /// <p>Specifies the algorithm of the public and private key pair that your certificate uses to encrypt data. RSA is the default key algorithm for ACM certificates. Elliptic Curve Digital Signature Algorithm (ECDSA) keys are smaller, offering security comparable to RSA keys but with greater computing efficiency. However, ECDSA is not supported by all network clients. Some AWS services may require RSA keys, or only support ECDSA keys of a particular size, while others allow the use of either RSA and ECDSA keys to ensure that compatibility is not broken. Check the requirements for the AWS service where you plan to deploy your certificate.</p>
     /// <p>Default: RSA_2048</p>
     pub fn set_key_algorithm(mut self, input: ::std::option::Option<crate::types::KeyAlgorithm>) -> Self {
-        self.key_algorithm = input;
-        self
+        self.key_algorithm = input; self
     }
     /// <p>Specifies the algorithm of the public and private key pair that your certificate uses to encrypt data. RSA is the default key algorithm for ACM certificates. Elliptic Curve Digital Signature Algorithm (ECDSA) keys are smaller, offering security comparable to RSA keys but with greater computing efficiency. However, ECDSA is not supported by all network clients. Some AWS services may require RSA keys, or only support ECDSA keys of a particular size, while others allow the use of either RSA and ECDSA keys to ensure that compatibility is not broken. Check the requirements for the AWS service where you plan to deploy your certificate.</p>
     /// <p>Default: RSA_2048</p>
@@ -294,19 +288,29 @@ impl RequestCertificateInputBuilder {
         &self.key_algorithm
     }
     /// Consumes the builder and constructs a [`RequestCertificateInput`](crate::operation::request_certificate::RequestCertificateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::request_certificate::RequestCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::request_certificate::RequestCertificateInput {
-            domain_name: self.domain_name,
-            validation_method: self.validation_method,
-            subject_alternative_names: self.subject_alternative_names,
-            idempotency_token: self.idempotency_token,
-            domain_validation_options: self.domain_validation_options,
-            options: self.options,
-            certificate_authority_arn: self.certificate_authority_arn,
-            tags: self.tags,
-            key_algorithm: self.key_algorithm,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::request_certificate::RequestCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::request_certificate::RequestCertificateInput {
+                domain_name: self.domain_name
+                ,
+                validation_method: self.validation_method
+                ,
+                subject_alternative_names: self.subject_alternative_names
+                ,
+                idempotency_token: self.idempotency_token
+                ,
+                domain_validation_options: self.domain_validation_options
+                ,
+                options: self.options
+                ,
+                certificate_authority_arn: self.certificate_authority_arn
+                ,
+                tags: self.tags
+                ,
+                key_algorithm: self.key_algorithm
+                ,
+            }
+        )
     }
 }
+

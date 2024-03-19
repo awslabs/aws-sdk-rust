@@ -3,22 +3,23 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyMountTargetSecurityGroupsInput {
+pub struct ModifyMountTargetSecurityGroupsInput  {
     /// <p>The ID of the mount target whose security groups you want to modify.</p>
     pub mount_target_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of up to five VPC security group IDs.</p>
-    pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ModifyMountTargetSecurityGroupsInput {
+impl  ModifyMountTargetSecurityGroupsInput  {
     /// <p>The ID of the mount target whose security groups you want to modify.</p>
-    pub fn mount_target_id(&self) -> ::std::option::Option<&str> {
+    pub fn mount_target_id(&self) -> ::std::option::Option<& str> {
         self.mount_target_id.as_deref()
     }
     /// <p>An array of up to five VPC security group IDs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
-    pub fn security_groups(&self) -> &[::std::string::String] {
-        self.security_groups.as_deref().unwrap_or_default()
+    pub fn security_groups(&self) -> & [::std::string::String] {
+        self.security_groups.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ModifyMountTargetSecurityGroupsInput {
@@ -33,7 +34,7 @@ impl ModifyMountTargetSecurityGroupsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyMountTargetSecurityGroupsInputBuilder {
     pub(crate) mount_target_id: ::std::option::Option<::std::string::String>,
-    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ModifyMountTargetSecurityGroupsInputBuilder {
     /// <p>The ID of the mount target whose security groups you want to modify.</p>
@@ -44,8 +45,7 @@ impl ModifyMountTargetSecurityGroupsInputBuilder {
     }
     /// <p>The ID of the mount target whose security groups you want to modify.</p>
     pub fn set_mount_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mount_target_id = input;
-        self
+        self.mount_target_id = input; self
     }
     /// <p>The ID of the mount target whose security groups you want to modify.</p>
     pub fn get_mount_target_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,31 +58,28 @@ impl ModifyMountTargetSecurityGroupsInputBuilder {
     /// <p>An array of up to five VPC security group IDs.</p>
     pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
-        v.push(input.into());
-        self.security_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of up to five VPC security group IDs.</p>
-    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_groups = input;
-        self
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_groups = input; self
     }
     /// <p>An array of up to five VPC security group IDs.</p>
-    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_groups
     }
     /// Consumes the builder and constructs a [`ModifyMountTargetSecurityGroupsInput`](crate::operation::modify_mount_target_security_groups::ModifyMountTargetSecurityGroupsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_mount_target_security_groups::ModifyMountTargetSecurityGroupsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_mount_target_security_groups::ModifyMountTargetSecurityGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::modify_mount_target_security_groups::ModifyMountTargetSecurityGroupsInput {
-                mount_target_id: self.mount_target_id,
-                security_groups: self.security_groups,
-            },
+                mount_target_id: self.mount_target_id
+                ,
+                security_groups: self.security_groups
+                ,
+            }
         )
     }
 }
+

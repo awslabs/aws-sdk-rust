@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMulticastGroupsByFuotaTaskOutput {
+pub struct ListMulticastGroupsByFuotaTaskOutput  {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>List of multicast groups associated with a FUOTA task.</p>
-    pub multicast_group_list: ::std::option::Option<::std::vec::Vec<crate::types::MulticastGroupByFuotaTask>>,
+    pub multicast_group_list: ::std::option::Option<::std::vec::Vec::<crate::types::MulticastGroupByFuotaTask>>,
     _request_id: Option<String>,
 }
-impl ListMulticastGroupsByFuotaTaskOutput {
+impl  ListMulticastGroupsByFuotaTaskOutput  {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>List of multicast groups associated with a FUOTA task.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.multicast_group_list.is_none()`.
-    pub fn multicast_group_list(&self) -> &[crate::types::MulticastGroupByFuotaTask] {
-        self.multicast_group_list.as_deref().unwrap_or_default()
+    pub fn multicast_group_list(&self) -> & [crate::types::MulticastGroupByFuotaTask] {
+        self.multicast_group_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListMulticastGroupsByFuotaTaskOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListMulticastGroupsByFuotaTaskOutput {
     /// Creates a new builder-style object to manufacture [`ListMulticastGroupsByFuotaTaskOutput`](crate::operation::list_multicast_groups_by_fuota_task::ListMulticastGroupsByFuotaTaskOutput).
     pub fn builder() -> crate::operation::list_multicast_groups_by_fuota_task::builders::ListMulticastGroupsByFuotaTaskOutputBuilder {
@@ -38,7 +39,7 @@ impl ListMulticastGroupsByFuotaTaskOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMulticastGroupsByFuotaTaskOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) multicast_group_list: ::std::option::Option<::std::vec::Vec<crate::types::MulticastGroupByFuotaTask>>,
+    pub(crate) multicast_group_list: ::std::option::Option<::std::vec::Vec::<crate::types::MulticastGroupByFuotaTask>>,
     _request_id: Option<String>,
 }
 impl ListMulticastGroupsByFuotaTaskOutputBuilder {
@@ -49,8 +50,7 @@ impl ListMulticastGroupsByFuotaTaskOutputBuilder {
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListMulticastGroupsByFuotaTaskOutputBuilder {
     /// <p>List of multicast groups associated with a FUOTA task.</p>
     pub fn multicast_group_list(mut self, input: crate::types::MulticastGroupByFuotaTask) -> Self {
         let mut v = self.multicast_group_list.unwrap_or_default();
-        v.push(input);
-        self.multicast_group_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.multicast_group_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of multicast groups associated with a FUOTA task.</p>
-    pub fn set_multicast_group_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MulticastGroupByFuotaTask>>) -> Self {
-        self.multicast_group_list = input;
-        self
+    pub fn set_multicast_group_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MulticastGroupByFuotaTask>>) -> Self {
+        self.multicast_group_list = input; self
     }
     /// <p>List of multicast groups associated with a FUOTA task.</p>
-    pub fn get_multicast_group_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MulticastGroupByFuotaTask>> {
+    pub fn get_multicast_group_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MulticastGroupByFuotaTask>> {
         &self.multicast_group_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListMulticastGroupsByFuotaTaskOutput`](crate::operation::list_multicast_groups_by_fuota_task::ListMulticastGroupsByFuotaTaskOutput).
     pub fn build(self) -> crate::operation::list_multicast_groups_by_fuota_task::ListMulticastGroupsByFuotaTaskOutput {
         crate::operation::list_multicast_groups_by_fuota_task::ListMulticastGroupsByFuotaTaskOutput {
-            next_token: self.next_token,
-            multicast_group_list: self.multicast_group_list,
+            next_token: self.next_token
+            ,
+            multicast_group_list: self.multicast_group_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

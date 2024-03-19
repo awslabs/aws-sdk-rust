@@ -3,7 +3,7 @@
 /// <p>Input to list lenses.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLensesInput {
+pub struct ListLensesInput  {
     /// <p>The token to use to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return for this request.</p>
@@ -15,9 +15,9 @@ pub struct ListLensesInput {
     /// <p>The full name of the lens.</p>
     pub lens_name: ::std::option::Option<::std::string::String>,
 }
-impl ListLensesInput {
+impl  ListLensesInput  {
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return for this request.</p>
@@ -25,15 +25,15 @@ impl ListLensesInput {
         self.max_results
     }
     /// <p>The type of lenses to be returned.</p>
-    pub fn lens_type(&self) -> ::std::option::Option<&crate::types::LensType> {
+    pub fn lens_type(&self) -> ::std::option::Option<& crate::types::LensType> {
         self.lens_type.as_ref()
     }
     /// <p>The status of lenses to be returned.</p>
-    pub fn lens_status(&self) -> ::std::option::Option<&crate::types::LensStatusType> {
+    pub fn lens_status(&self) -> ::std::option::Option<& crate::types::LensStatusType> {
         self.lens_status.as_ref()
     }
     /// <p>The full name of the lens.</p>
-    pub fn lens_name(&self) -> ::std::option::Option<&str> {
+    pub fn lens_name(&self) -> ::std::option::Option<& str> {
         self.lens_name.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl ListLensesInputBuilder {
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl ListLensesInputBuilder {
     }
     /// <p>The maximum number of results to return for this request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return for this request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -90,8 +88,7 @@ impl ListLensesInputBuilder {
     }
     /// <p>The type of lenses to be returned.</p>
     pub fn set_lens_type(mut self, input: ::std::option::Option<crate::types::LensType>) -> Self {
-        self.lens_type = input;
-        self
+        self.lens_type = input; self
     }
     /// <p>The type of lenses to be returned.</p>
     pub fn get_lens_type(&self) -> &::std::option::Option<crate::types::LensType> {
@@ -104,8 +101,7 @@ impl ListLensesInputBuilder {
     }
     /// <p>The status of lenses to be returned.</p>
     pub fn set_lens_status(mut self, input: ::std::option::Option<crate::types::LensStatusType>) -> Self {
-        self.lens_status = input;
-        self
+        self.lens_status = input; self
     }
     /// <p>The status of lenses to be returned.</p>
     pub fn get_lens_status(&self) -> &::std::option::Option<crate::types::LensStatusType> {
@@ -118,8 +114,7 @@ impl ListLensesInputBuilder {
     }
     /// <p>The full name of the lens.</p>
     pub fn set_lens_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lens_name = input;
-        self
+        self.lens_name = input; self
     }
     /// <p>The full name of the lens.</p>
     pub fn get_lens_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,12 +122,20 @@ impl ListLensesInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListLensesInput`](crate::operation::list_lenses::ListLensesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_lenses::ListLensesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_lenses::ListLensesInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            lens_type: self.lens_type,
-            lens_status: self.lens_status,
-            lens_name: self.lens_name,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_lenses::ListLensesInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                lens_type: self.lens_type
+                ,
+                lens_status: self.lens_status
+                ,
+                lens_name: self.lens_name
+                ,
+            }
+        )
     }
 }
+

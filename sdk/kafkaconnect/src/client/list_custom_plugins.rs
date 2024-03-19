@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCustomPlugins`](crate::operation::list_custom_plugins::builders::ListCustomPluginsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_custom_plugins::builders::ListCustomPluginsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_custom_plugins::builders::ListCustomPluginsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_custom_plugins::builders::ListCustomPluginsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of custom plugins to list in one response.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_custom_plugins::builders::ListCustomPluginsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_custom_plugins::builders::ListCustomPluginsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the response of a ListCustomPlugins operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p><br>
     ///   - [`name_prefix(impl Into<String>)`](crate::operation::list_custom_plugins::builders::ListCustomPluginsFluentBuilder::name_prefix) / [`set_name_prefix(Option<String>)`](crate::operation::list_custom_plugins::builders::ListCustomPluginsFluentBuilder::set_name_prefix):<br>required: **false**<br><p>Lists custom plugin names that start with the specified text string.</p><br>
-    /// - On success, responds with [`ListCustomPluginsOutput`](crate::operation::list_custom_plugins::ListCustomPluginsOutput) with field(s):
+                            /// - On success, responds with [`ListCustomPluginsOutput`](crate::operation::list_custom_plugins::ListCustomPluginsOutput) with field(s):
     ///   - [`custom_plugins(Option<Vec::<CustomPluginSummary>>)`](crate::operation::list_custom_plugins::ListCustomPluginsOutput::custom_plugins): <p>An array of custom plugin descriptions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_custom_plugins::ListCustomPluginsOutput::next_token): <p>If the response of a ListCustomPlugins operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
-    /// - On failure, responds with [`SdkError<ListCustomPluginsError>`](crate::operation::list_custom_plugins::ListCustomPluginsError)
+                            /// - On failure, responds with [`SdkError<ListCustomPluginsError>`](crate::operation::list_custom_plugins::ListCustomPluginsError)
     pub fn list_custom_plugins(&self) -> crate::operation::list_custom_plugins::builders::ListCustomPluginsFluentBuilder {
-        crate::operation::list_custom_plugins::builders::ListCustomPluginsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_custom_plugins::builders::ListCustomPluginsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

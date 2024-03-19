@@ -3,7 +3,7 @@
 /// <p>The Key Value Store list.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KeyValueStoreList {
+pub struct KeyValueStoreList  {
     /// <p>The next marker associated with the Key Value Store list.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items in the Key Value Store list.</p>
@@ -11,11 +11,11 @@ pub struct KeyValueStoreList {
     /// <p>The quantity of the Key Value Store list.</p>
     pub quantity: i32,
     /// <p>The items of the Key Value Store list.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::KeyValueStore>>,
+    pub items: ::std::option::Option<::std::vec::Vec::<crate::types::KeyValueStore>>,
 }
-impl KeyValueStoreList {
+impl  KeyValueStoreList  {
     /// <p>The next marker associated with the Key Value Store list.</p>
-    pub fn next_marker(&self) -> ::std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>The maximum number of items in the Key Value Store list.</p>
@@ -27,10 +27,11 @@ impl KeyValueStoreList {
         self.quantity
     }
     /// <p>The items of the Key Value Store list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
-    pub fn items(&self) -> &[crate::types::KeyValueStore] {
-        self.items.as_deref().unwrap_or_default()
+    pub fn items(&self) -> & [crate::types::KeyValueStore] {
+        self.items.as_deref()
+        .unwrap_or_default()
     }
 }
 impl KeyValueStoreList {
@@ -47,7 +48,7 @@ pub struct KeyValueStoreListBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
     pub(crate) quantity: ::std::option::Option<i32>,
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::KeyValueStore>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::KeyValueStore>>,
 }
 impl KeyValueStoreListBuilder {
     /// <p>The next marker associated with the Key Value Store list.</p>
@@ -57,8 +58,7 @@ impl KeyValueStoreListBuilder {
     }
     /// <p>The next marker associated with the Key Value Store list.</p>
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_marker = input;
-        self
+        self.next_marker = input; self
     }
     /// <p>The next marker associated with the Key Value Store list.</p>
     pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +72,7 @@ impl KeyValueStoreListBuilder {
     }
     /// <p>The maximum number of items in the Key Value Store list.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>The maximum number of items in the Key Value Store list.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
@@ -87,8 +86,7 @@ impl KeyValueStoreListBuilder {
     }
     /// <p>The quantity of the Key Value Store list.</p>
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.quantity = input;
-        self
+        self.quantity = input; self
     }
     /// <p>The quantity of the Key Value Store list.</p>
     pub fn get_quantity(&self) -> &::std::option::Option<i32> {
@@ -101,17 +99,16 @@ impl KeyValueStoreListBuilder {
     /// <p>The items of the Key Value Store list.</p>
     pub fn items(mut self, input: crate::types::KeyValueStore) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The items of the Key Value Store list.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyValueStore>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KeyValueStore>>) -> Self {
+        self.items = input; self
     }
     /// <p>The items of the Key Value Store list.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyValueStore>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KeyValueStore>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`KeyValueStoreList`](crate::types::KeyValueStoreList).
@@ -119,21 +116,24 @@ impl KeyValueStoreListBuilder {
     /// - [`max_items`](crate::types::builders::KeyValueStoreListBuilder::max_items)
     /// - [`quantity`](crate::types::builders::KeyValueStoreListBuilder::quantity)
     pub fn build(self) -> ::std::result::Result<crate::types::KeyValueStoreList, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KeyValueStoreList {
-            next_marker: self.next_marker,
-            max_items: self.max_items.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "max_items",
-                    "max_items was not specified but it is required when building KeyValueStoreList",
-                )
-            })?,
-            quantity: self.quantity.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "quantity",
-                    "quantity was not specified but it is required when building KeyValueStoreList",
-                )
-            })?,
-            items: self.items,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KeyValueStoreList {
+                next_marker: self.next_marker
+                ,
+                max_items: self.max_items
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("max_items", "max_items was not specified but it is required when building KeyValueStoreList")
+                    )?
+                ,
+                quantity: self.quantity
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("quantity", "quantity was not specified but it is required when building KeyValueStoreList")
+                    )?
+                ,
+                items: self.items
+                ,
+            }
+        )
     }
 }
+

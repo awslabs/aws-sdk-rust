@@ -4,7 +4,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InterMetricImpactDetails {
+pub struct InterMetricImpactDetails  {
     /// <p>The name of the measure.</p>
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the anomaly group.</p>
@@ -14,17 +14,17 @@ pub struct InterMetricImpactDetails {
     /// <p>For potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), the percentage contribution the measure has in causing the anomalies.</p>
     pub contribution_percentage: ::std::option::Option<f64>,
 }
-impl InterMetricImpactDetails {
+impl  InterMetricImpactDetails  {
     /// <p>The name of the measure.</p>
-    pub fn metric_name(&self) -> ::std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The ID of the anomaly group.</p>
-    pub fn anomaly_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn anomaly_group_id(&self) -> ::std::option::Option<& str> {
         self.anomaly_group_id.as_deref()
     }
     /// <p>Whether a measure is a potential cause of the anomaly group (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), or whether the measure is impacted by the anomaly group (<code>EFFECT_OF_INPUT_ANOMALY_GROUP</code>).</p>
-    pub fn relationship_type(&self) -> ::std::option::Option<&crate::types::RelationshipType> {
+    pub fn relationship_type(&self) -> ::std::option::Option<& crate::types::RelationshipType> {
         self.relationship_type.as_ref()
     }
     /// <p>For potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), the percentage contribution the measure has in causing the anomalies.</p>
@@ -56,8 +56,7 @@ impl InterMetricImpactDetailsBuilder {
     }
     /// <p>The name of the measure.</p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// <p>The name of the measure.</p>
     pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl InterMetricImpactDetailsBuilder {
     }
     /// <p>The ID of the anomaly group.</p>
     pub fn set_anomaly_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.anomaly_group_id = input;
-        self
+        self.anomaly_group_id = input; self
     }
     /// <p>The ID of the anomaly group.</p>
     pub fn get_anomaly_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl InterMetricImpactDetailsBuilder {
     }
     /// <p>Whether a measure is a potential cause of the anomaly group (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), or whether the measure is impacted by the anomaly group (<code>EFFECT_OF_INPUT_ANOMALY_GROUP</code>).</p>
     pub fn set_relationship_type(mut self, input: ::std::option::Option<crate::types::RelationshipType>) -> Self {
-        self.relationship_type = input;
-        self
+        self.relationship_type = input; self
     }
     /// <p>Whether a measure is a potential cause of the anomaly group (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), or whether the measure is impacted by the anomaly group (<code>EFFECT_OF_INPUT_ANOMALY_GROUP</code>).</p>
     pub fn get_relationship_type(&self) -> &::std::option::Option<crate::types::RelationshipType> {
@@ -98,8 +95,7 @@ impl InterMetricImpactDetailsBuilder {
     }
     /// <p>For potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), the percentage contribution the measure has in causing the anomalies.</p>
     pub fn set_contribution_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.contribution_percentage = input;
-        self
+        self.contribution_percentage = input; self
     }
     /// <p>For potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), the percentage contribution the measure has in causing the anomalies.</p>
     pub fn get_contribution_percentage(&self) -> &::std::option::Option<f64> {
@@ -108,10 +104,15 @@ impl InterMetricImpactDetailsBuilder {
     /// Consumes the builder and constructs a [`InterMetricImpactDetails`](crate::types::InterMetricImpactDetails).
     pub fn build(self) -> crate::types::InterMetricImpactDetails {
         crate::types::InterMetricImpactDetails {
-            metric_name: self.metric_name,
-            anomaly_group_id: self.anomaly_group_id,
-            relationship_type: self.relationship_type,
-            contribution_percentage: self.contribution_percentage,
+            metric_name: self.metric_name
+            ,
+            anomaly_group_id: self.anomaly_group_id
+            ,
+            relationship_type: self.relationship_type
+            ,
+            contribution_percentage: self.contribution_percentage
+            ,
         }
     }
 }
+

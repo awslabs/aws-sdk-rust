@@ -3,22 +3,23 @@
 /// <p>Represents the input of a test repository triggers operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestRepositoryTriggersInput {
+pub struct TestRepositoryTriggersInput  {
     /// <p>The name of the repository in which to test the triggers.</p>
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of triggers to test.</p>
-    pub triggers: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryTrigger>>,
+    pub triggers: ::std::option::Option<::std::vec::Vec::<crate::types::RepositoryTrigger>>,
 }
-impl TestRepositoryTriggersInput {
+impl  TestRepositoryTriggersInput  {
     /// <p>The name of the repository in which to test the triggers.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The list of triggers to test.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.triggers.is_none()`.
-    pub fn triggers(&self) -> &[crate::types::RepositoryTrigger] {
-        self.triggers.as_deref().unwrap_or_default()
+    pub fn triggers(&self) -> & [crate::types::RepositoryTrigger] {
+        self.triggers.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TestRepositoryTriggersInput {
@@ -33,7 +34,7 @@ impl TestRepositoryTriggersInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestRepositoryTriggersInputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
-    pub(crate) triggers: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryTrigger>>,
+    pub(crate) triggers: ::std::option::Option<::std::vec::Vec::<crate::types::RepositoryTrigger>>,
 }
 impl TestRepositoryTriggersInputBuilder {
     /// <p>The name of the repository in which to test the triggers.</p>
@@ -44,8 +45,7 @@ impl TestRepositoryTriggersInputBuilder {
     }
     /// <p>The name of the repository in which to test the triggers.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The name of the repository in which to test the triggers.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,29 +58,28 @@ impl TestRepositoryTriggersInputBuilder {
     /// <p>The list of triggers to test.</p>
     pub fn triggers(mut self, input: crate::types::RepositoryTrigger) -> Self {
         let mut v = self.triggers.unwrap_or_default();
-        v.push(input);
-        self.triggers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.triggers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of triggers to test.</p>
-    pub fn set_triggers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryTrigger>>) -> Self {
-        self.triggers = input;
-        self
+    pub fn set_triggers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RepositoryTrigger>>) -> Self {
+        self.triggers = input; self
     }
     /// <p>The list of triggers to test.</p>
-    pub fn get_triggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryTrigger>> {
+    pub fn get_triggers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RepositoryTrigger>> {
         &self.triggers
     }
     /// Consumes the builder and constructs a [`TestRepositoryTriggersInput`](crate::operation::test_repository_triggers::TestRepositoryTriggersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::test_repository_triggers::TestRepositoryTriggersInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::test_repository_triggers::TestRepositoryTriggersInput {
-            repository_name: self.repository_name,
-            triggers: self.triggers,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::test_repository_triggers::TestRepositoryTriggersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::test_repository_triggers::TestRepositoryTriggersInput {
+                repository_name: self.repository_name
+                ,
+                triggers: self.triggers
+                ,
+            }
+        )
     }
 }
+

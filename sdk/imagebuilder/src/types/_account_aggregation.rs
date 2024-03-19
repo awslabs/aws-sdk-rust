@@ -3,19 +3,19 @@
 /// <p>Contains counts of vulnerability findings from image scans that run when you create new Image Builder images, or build new versions of existing images. The vulnerability counts are grouped by severity level. The counts are aggregated across resources to create the final tally for the account that owns them.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccountAggregation {
+pub struct AccountAggregation  {
     /// <p>Identifies the account that owns the aggregated resource findings.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Counts by severity level for medium severity and higher level findings, plus a total for all of the findings.</p>
     pub severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
 }
-impl AccountAggregation {
+impl  AccountAggregation  {
     /// <p>Identifies the account that owns the aggregated resource findings.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>Counts by severity level for medium severity and higher level findings, plus a total for all of the findings.</p>
-    pub fn severity_counts(&self) -> ::std::option::Option<&crate::types::SeverityCounts> {
+    pub fn severity_counts(&self) -> ::std::option::Option<& crate::types::SeverityCounts> {
         self.severity_counts.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl AccountAggregationBuilder {
     }
     /// <p>Identifies the account that owns the aggregated resource findings.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>Identifies the account that owns the aggregated resource findings.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AccountAggregationBuilder {
     }
     /// <p>Counts by severity level for medium severity and higher level findings, plus a total for all of the findings.</p>
     pub fn set_severity_counts(mut self, input: ::std::option::Option<crate::types::SeverityCounts>) -> Self {
-        self.severity_counts = input;
-        self
+        self.severity_counts = input; self
     }
     /// <p>Counts by severity level for medium severity and higher level findings, plus a total for all of the findings.</p>
     pub fn get_severity_counts(&self) -> &::std::option::Option<crate::types::SeverityCounts> {
@@ -65,8 +63,11 @@ impl AccountAggregationBuilder {
     /// Consumes the builder and constructs a [`AccountAggregation`](crate::types::AccountAggregation).
     pub fn build(self) -> crate::types::AccountAggregation {
         crate::types::AccountAggregation {
-            account_id: self.account_id,
-            severity_counts: self.severity_counts,
+            account_id: self.account_id
+            ,
+            severity_counts: self.severity_counts
+            ,
         }
     }
 }
+

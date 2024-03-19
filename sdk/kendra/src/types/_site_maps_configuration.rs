@@ -4,17 +4,16 @@
 /// <p><i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own web pages, or web pages that you have authorization to index.</i></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SiteMapsConfiguration {
+pub struct SiteMapsConfiguration  {
     /// <p>The list of sitemap URLs of the websites you want to crawl.</p>
     /// <p>The list can include a maximum of three sitemap URLs.</p>
-    pub site_maps: ::std::vec::Vec<::std::string::String>,
+    pub site_maps: ::std::vec::Vec::<::std::string::String>,
 }
-impl SiteMapsConfiguration {
+impl  SiteMapsConfiguration  {
     /// <p>The list of sitemap URLs of the websites you want to crawl.</p>
     /// <p>The list can include a maximum of three sitemap URLs.</p>
-    pub fn site_maps(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.site_maps.deref()
+    pub fn site_maps(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.site_maps.deref()
     }
 }
 impl SiteMapsConfiguration {
@@ -28,7 +27,7 @@ impl SiteMapsConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SiteMapsConfigurationBuilder {
-    pub(crate) site_maps: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) site_maps: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl SiteMapsConfigurationBuilder {
     /// Appends an item to `site_maps`.
@@ -39,32 +38,33 @@ impl SiteMapsConfigurationBuilder {
     /// <p>The list can include a maximum of three sitemap URLs.</p>
     pub fn site_maps(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.site_maps.unwrap_or_default();
-        v.push(input.into());
-        self.site_maps = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.site_maps = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of sitemap URLs of the websites you want to crawl.</p>
     /// <p>The list can include a maximum of three sitemap URLs.</p>
-    pub fn set_site_maps(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.site_maps = input;
-        self
+    pub fn set_site_maps(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.site_maps = input; self
     }
     /// <p>The list of sitemap URLs of the websites you want to crawl.</p>
     /// <p>The list can include a maximum of three sitemap URLs.</p>
-    pub fn get_site_maps(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_site_maps(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.site_maps
     }
     /// Consumes the builder and constructs a [`SiteMapsConfiguration`](crate::types::SiteMapsConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`site_maps`](crate::types::builders::SiteMapsConfigurationBuilder::site_maps)
     pub fn build(self) -> ::std::result::Result<crate::types::SiteMapsConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SiteMapsConfiguration {
-            site_maps: self.site_maps.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "site_maps",
-                    "site_maps was not specified but it is required when building SiteMapsConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SiteMapsConfiguration {
+                site_maps: self.site_maps
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("site_maps", "site_maps was not specified but it is required when building SiteMapsConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,22 +3,23 @@
 /// <p>The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDetectKeyPhrasesItemResult {
+pub struct BatchDetectKeyPhrasesItemResult  {
     /// <p>The zero-based index of the document in the input list.</p>
     pub index: ::std::option::Option<i32>,
     /// <p>One or more <code>KeyPhrase</code> objects, one for each key phrase detected in the document.</p>
-    pub key_phrases: ::std::option::Option<::std::vec::Vec<crate::types::KeyPhrase>>,
+    pub key_phrases: ::std::option::Option<::std::vec::Vec::<crate::types::KeyPhrase>>,
 }
-impl BatchDetectKeyPhrasesItemResult {
+impl  BatchDetectKeyPhrasesItemResult  {
     /// <p>The zero-based index of the document in the input list.</p>
     pub fn index(&self) -> ::std::option::Option<i32> {
         self.index
     }
     /// <p>One or more <code>KeyPhrase</code> objects, one for each key phrase detected in the document.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.key_phrases.is_none()`.
-    pub fn key_phrases(&self) -> &[crate::types::KeyPhrase] {
-        self.key_phrases.as_deref().unwrap_or_default()
+    pub fn key_phrases(&self) -> & [crate::types::KeyPhrase] {
+        self.key_phrases.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchDetectKeyPhrasesItemResult {
@@ -33,7 +34,7 @@ impl BatchDetectKeyPhrasesItemResult {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDetectKeyPhrasesItemResultBuilder {
     pub(crate) index: ::std::option::Option<i32>,
-    pub(crate) key_phrases: ::std::option::Option<::std::vec::Vec<crate::types::KeyPhrase>>,
+    pub(crate) key_phrases: ::std::option::Option<::std::vec::Vec::<crate::types::KeyPhrase>>,
 }
 impl BatchDetectKeyPhrasesItemResultBuilder {
     /// <p>The zero-based index of the document in the input list.</p>
@@ -43,8 +44,7 @@ impl BatchDetectKeyPhrasesItemResultBuilder {
     }
     /// <p>The zero-based index of the document in the input list.</p>
     pub fn set_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.index = input;
-        self
+        self.index = input; self
     }
     /// <p>The zero-based index of the document in the input list.</p>
     pub fn get_index(&self) -> &::std::option::Option<i32> {
@@ -57,24 +57,26 @@ impl BatchDetectKeyPhrasesItemResultBuilder {
     /// <p>One or more <code>KeyPhrase</code> objects, one for each key phrase detected in the document.</p>
     pub fn key_phrases(mut self, input: crate::types::KeyPhrase) -> Self {
         let mut v = self.key_phrases.unwrap_or_default();
-        v.push(input);
-        self.key_phrases = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.key_phrases = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more <code>KeyPhrase</code> objects, one for each key phrase detected in the document.</p>
-    pub fn set_key_phrases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyPhrase>>) -> Self {
-        self.key_phrases = input;
-        self
+    pub fn set_key_phrases(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KeyPhrase>>) -> Self {
+        self.key_phrases = input; self
     }
     /// <p>One or more <code>KeyPhrase</code> objects, one for each key phrase detected in the document.</p>
-    pub fn get_key_phrases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyPhrase>> {
+    pub fn get_key_phrases(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KeyPhrase>> {
         &self.key_phrases
     }
     /// Consumes the builder and constructs a [`BatchDetectKeyPhrasesItemResult`](crate::types::BatchDetectKeyPhrasesItemResult).
     pub fn build(self) -> crate::types::BatchDetectKeyPhrasesItemResult {
         crate::types::BatchDetectKeyPhrasesItemResult {
-            index: self.index,
-            key_phrases: self.key_phrases,
+            index: self.index
+            ,
+            key_phrases: self.key_phrases
+            ,
         }
     }
 }
+

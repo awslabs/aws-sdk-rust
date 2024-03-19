@@ -3,7 +3,7 @@
 /// <p>The summary of the Savings Plans recommendation generation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GenerationSummary {
+pub struct GenerationSummary  {
     /// <p>Indicates the ID for this specific recommendation.</p>
     pub recommendation_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the recommendation generation succeeded, is processing, or failed.</p>
@@ -15,25 +15,25 @@ pub struct GenerationSummary {
     /// <p>Indicates the estimated time for when the recommendation generation will complete.</p>
     pub estimated_completion_time: ::std::option::Option<::std::string::String>,
 }
-impl GenerationSummary {
+impl  GenerationSummary  {
     /// <p>Indicates the ID for this specific recommendation.</p>
-    pub fn recommendation_id(&self) -> ::std::option::Option<&str> {
+    pub fn recommendation_id(&self) -> ::std::option::Option<& str> {
         self.recommendation_id.as_deref()
     }
     /// <p>Indicates whether the recommendation generation succeeded, is processing, or failed.</p>
-    pub fn generation_status(&self) -> ::std::option::Option<&crate::types::GenerationStatus> {
+    pub fn generation_status(&self) -> ::std::option::Option<& crate::types::GenerationStatus> {
         self.generation_status.as_ref()
     }
     /// <p>Indicates the start time of the recommendation generation.</p>
-    pub fn generation_started_time(&self) -> ::std::option::Option<&str> {
+    pub fn generation_started_time(&self) -> ::std::option::Option<& str> {
         self.generation_started_time.as_deref()
     }
     /// <p>Indicates the completion time of the recommendation generation.</p>
-    pub fn generation_completion_time(&self) -> ::std::option::Option<&str> {
+    pub fn generation_completion_time(&self) -> ::std::option::Option<& str> {
         self.generation_completion_time.as_deref()
     }
     /// <p>Indicates the estimated time for when the recommendation generation will complete.</p>
-    pub fn estimated_completion_time(&self) -> ::std::option::Option<&str> {
+    pub fn estimated_completion_time(&self) -> ::std::option::Option<& str> {
         self.estimated_completion_time.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl GenerationSummaryBuilder {
     }
     /// <p>Indicates the ID for this specific recommendation.</p>
     pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommendation_id = input;
-        self
+        self.recommendation_id = input; self
     }
     /// <p>Indicates the ID for this specific recommendation.</p>
     pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl GenerationSummaryBuilder {
     }
     /// <p>Indicates whether the recommendation generation succeeded, is processing, or failed.</p>
     pub fn set_generation_status(mut self, input: ::std::option::Option<crate::types::GenerationStatus>) -> Self {
-        self.generation_status = input;
-        self
+        self.generation_status = input; self
     }
     /// <p>Indicates whether the recommendation generation succeeded, is processing, or failed.</p>
     pub fn get_generation_status(&self) -> &::std::option::Option<crate::types::GenerationStatus> {
@@ -90,8 +88,7 @@ impl GenerationSummaryBuilder {
     }
     /// <p>Indicates the start time of the recommendation generation.</p>
     pub fn set_generation_started_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.generation_started_time = input;
-        self
+        self.generation_started_time = input; self
     }
     /// <p>Indicates the start time of the recommendation generation.</p>
     pub fn get_generation_started_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl GenerationSummaryBuilder {
     }
     /// <p>Indicates the completion time of the recommendation generation.</p>
     pub fn set_generation_completion_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.generation_completion_time = input;
-        self
+        self.generation_completion_time = input; self
     }
     /// <p>Indicates the completion time of the recommendation generation.</p>
     pub fn get_generation_completion_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl GenerationSummaryBuilder {
     }
     /// <p>Indicates the estimated time for when the recommendation generation will complete.</p>
     pub fn set_estimated_completion_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.estimated_completion_time = input;
-        self
+        self.estimated_completion_time = input; self
     }
     /// <p>Indicates the estimated time for when the recommendation generation will complete.</p>
     pub fn get_estimated_completion_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,11 +123,17 @@ impl GenerationSummaryBuilder {
     /// Consumes the builder and constructs a [`GenerationSummary`](crate::types::GenerationSummary).
     pub fn build(self) -> crate::types::GenerationSummary {
         crate::types::GenerationSummary {
-            recommendation_id: self.recommendation_id,
-            generation_status: self.generation_status,
-            generation_started_time: self.generation_started_time,
-            generation_completion_time: self.generation_completion_time,
-            estimated_completion_time: self.estimated_completion_time,
+            recommendation_id: self.recommendation_id
+            ,
+            generation_status: self.generation_status
+            ,
+            generation_started_time: self.generation_started_time
+            ,
+            generation_completion_time: self.generation_completion_time
+            ,
+            estimated_completion_time: self.estimated_completion_time
+            ,
         }
     }
 }
+

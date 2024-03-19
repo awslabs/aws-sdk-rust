@@ -3,7 +3,7 @@
 /// <p>This structure contains information about one audience <i>segment</i>. You can use segments in your experiments and launches to narrow the user sessions used for experiment or launch to only the user sessions that match one or more criteria.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Segment {
+pub struct Segment  {
     /// <p>The ARN of the segment.</p>
     pub arn: ::std::string::String,
     /// <p>The name of the segment.</p>
@@ -21,34 +21,31 @@ pub struct Segment {
     /// <p>The number of launches that this segment is used in. This count includes all current launches, not just those that are currently running.</p>
     pub launch_count: ::std::option::Option<i64>,
     /// <p>The list of tag keys and values associated with this launch.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl Segment {
+impl  Segment  {
     /// <p>The ARN of the segment.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The name of the segment.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The pattern that defines the attributes to use to evalute whether a user session will be in the segment. For more information about the pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Segment rule pattern syntax</a>.</p>
-    pub fn pattern(&self) -> &str {
-        use std::ops::Deref;
-        self.pattern.deref()
+    pub fn pattern(&self) -> & str {
+        use std::ops::Deref; self.pattern.deref()
     }
     /// <p>The date and time that this segment was created.</p>
-    pub fn created_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_time
     }
     /// <p>The date and time that this segment was most recently updated.</p>
-    pub fn last_updated_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_updated_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_updated_time
     }
     /// <p>The customer-created description for this segment.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The number of experiments that this segment is used in. This count includes all current experiments, not just those that are currently running.</p>
@@ -60,7 +57,7 @@ impl Segment {
         self.launch_count
     }
     /// <p>The list of tag keys and values associated with this launch.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -83,7 +80,7 @@ pub struct SegmentBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) experiment_count: ::std::option::Option<i64>,
     pub(crate) launch_count: ::std::option::Option<i64>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl SegmentBuilder {
     /// <p>The ARN of the segment.</p>
@@ -94,8 +91,7 @@ impl SegmentBuilder {
     }
     /// <p>The ARN of the segment.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the segment.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +105,7 @@ impl SegmentBuilder {
     }
     /// <p>The name of the segment.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the segment.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +119,7 @@ impl SegmentBuilder {
     }
     /// <p>The pattern that defines the attributes to use to evalute whether a user session will be in the segment. For more information about the pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Segment rule pattern syntax</a>.</p>
     pub fn set_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pattern = input;
-        self
+        self.pattern = input; self
     }
     /// <p>The pattern that defines the attributes to use to evalute whether a user session will be in the segment. For more information about the pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Segment rule pattern syntax</a>.</p>
     pub fn get_pattern(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +133,7 @@ impl SegmentBuilder {
     }
     /// <p>The date and time that this segment was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The date and time that this segment was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -154,8 +147,7 @@ impl SegmentBuilder {
     }
     /// <p>The date and time that this segment was most recently updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The date and time that this segment was most recently updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -168,8 +160,7 @@ impl SegmentBuilder {
     }
     /// <p>The customer-created description for this segment.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The customer-created description for this segment.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -182,8 +173,7 @@ impl SegmentBuilder {
     }
     /// <p>The number of experiments that this segment is used in. This count includes all current experiments, not just those that are currently running.</p>
     pub fn set_experiment_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.experiment_count = input;
-        self
+        self.experiment_count = input; self
     }
     /// <p>The number of experiments that this segment is used in. This count includes all current experiments, not just those that are currently running.</p>
     pub fn get_experiment_count(&self) -> &::std::option::Option<i64> {
@@ -196,8 +186,7 @@ impl SegmentBuilder {
     }
     /// <p>The number of launches that this segment is used in. This count includes all current launches, not just those that are currently running.</p>
     pub fn set_launch_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.launch_count = input;
-        self
+        self.launch_count = input; self
     }
     /// <p>The number of launches that this segment is used in. This count includes all current launches, not just those that are currently running.</p>
     pub fn get_launch_count(&self) -> &::std::option::Option<i64> {
@@ -210,17 +199,16 @@ impl SegmentBuilder {
     /// <p>The list of tag keys and values associated with this launch.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The list of tag keys and values associated with this launch.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The list of tag keys and values associated with this launch.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`Segment`](crate::types::Segment).
@@ -231,41 +219,43 @@ impl SegmentBuilder {
     /// - [`created_time`](crate::types::builders::SegmentBuilder::created_time)
     /// - [`last_updated_time`](crate::types::builders::SegmentBuilder::last_updated_time)
     pub fn build(self) -> ::std::result::Result<crate::types::Segment, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Segment {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building Segment",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building Segment",
-                )
-            })?,
-            pattern: self.pattern.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "pattern",
-                    "pattern was not specified but it is required when building Segment",
-                )
-            })?,
-            created_time: self.created_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_time",
-                    "created_time was not specified but it is required when building Segment",
-                )
-            })?,
-            last_updated_time: self.last_updated_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_updated_time",
-                    "last_updated_time was not specified but it is required when building Segment",
-                )
-            })?,
-            description: self.description,
-            experiment_count: self.experiment_count,
-            launch_count: self.launch_count,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Segment {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building Segment")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building Segment")
+                    )?
+                ,
+                pattern: self.pattern
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("pattern", "pattern was not specified but it is required when building Segment")
+                    )?
+                ,
+                created_time: self.created_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_time", "created_time was not specified but it is required when building Segment")
+                    )?
+                ,
+                last_updated_time: self.last_updated_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_updated_time", "last_updated_time was not specified but it is required when building Segment")
+                    )?
+                ,
+                description: self.description
+                ,
+                experiment_count: self.experiment_count
+                ,
+                launch_count: self.launch_count
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

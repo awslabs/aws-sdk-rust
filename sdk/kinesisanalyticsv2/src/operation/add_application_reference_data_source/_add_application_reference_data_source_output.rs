@@ -2,18 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddApplicationReferenceDataSourceOutput {
+pub struct AddApplicationReferenceDataSourceOutput  {
     /// <p>The application Amazon Resource Name (ARN).</p>
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.</p>
     pub application_version_id: ::std::option::Option<i64>,
     /// <p>Describes reference data sources configured for the application.</p>
-    pub reference_data_source_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceDescription>>,
+    pub reference_data_source_descriptions: ::std::option::Option<::std::vec::Vec::<crate::types::ReferenceDataSourceDescription>>,
     _request_id: Option<String>,
 }
-impl AddApplicationReferenceDataSourceOutput {
+impl  AddApplicationReferenceDataSourceOutput  {
     /// <p>The application Amazon Resource Name (ARN).</p>
-    pub fn application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn application_arn(&self) -> ::std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.</p>
@@ -21,17 +21,18 @@ impl AddApplicationReferenceDataSourceOutput {
         self.application_version_id
     }
     /// <p>Describes reference data sources configured for the application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reference_data_source_descriptions.is_none()`.
-    pub fn reference_data_source_descriptions(&self) -> &[crate::types::ReferenceDataSourceDescription] {
-        self.reference_data_source_descriptions.as_deref().unwrap_or_default()
+    pub fn reference_data_source_descriptions(&self) -> & [crate::types::ReferenceDataSourceDescription] {
+        self.reference_data_source_descriptions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for AddApplicationReferenceDataSourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AddApplicationReferenceDataSourceOutput {
     /// Creates a new builder-style object to manufacture [`AddApplicationReferenceDataSourceOutput`](crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceOutput).
     pub fn builder() -> crate::operation::add_application_reference_data_source::builders::AddApplicationReferenceDataSourceOutputBuilder {
@@ -45,7 +46,7 @@ impl AddApplicationReferenceDataSourceOutput {
 pub struct AddApplicationReferenceDataSourceOutputBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) application_version_id: ::std::option::Option<i64>,
-    pub(crate) reference_data_source_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceDescription>>,
+    pub(crate) reference_data_source_descriptions: ::std::option::Option<::std::vec::Vec::<crate::types::ReferenceDataSourceDescription>>,
     _request_id: Option<String>,
 }
 impl AddApplicationReferenceDataSourceOutputBuilder {
@@ -56,8 +57,7 @@ impl AddApplicationReferenceDataSourceOutputBuilder {
     }
     /// <p>The application Amazon Resource Name (ARN).</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_arn = input;
-        self
+        self.application_arn = input; self
     }
     /// <p>The application Amazon Resource Name (ARN).</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +70,7 @@ impl AddApplicationReferenceDataSourceOutputBuilder {
     }
     /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.</p>
     pub fn set_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.application_version_id = input;
-        self
+        self.application_version_id = input; self
     }
     /// <p>The updated application version ID. Kinesis Data Analytics increments this ID when the application is updated.</p>
     pub fn get_application_version_id(&self) -> &::std::option::Option<i64> {
@@ -84,38 +83,38 @@ impl AddApplicationReferenceDataSourceOutputBuilder {
     /// <p>Describes reference data sources configured for the application.</p>
     pub fn reference_data_source_descriptions(mut self, input: crate::types::ReferenceDataSourceDescription) -> Self {
         let mut v = self.reference_data_source_descriptions.unwrap_or_default();
-        v.push(input);
-        self.reference_data_source_descriptions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.reference_data_source_descriptions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Describes reference data sources configured for the application.</p>
-    pub fn set_reference_data_source_descriptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceDescription>>,
-    ) -> Self {
-        self.reference_data_source_descriptions = input;
-        self
+    pub fn set_reference_data_source_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReferenceDataSourceDescription>>) -> Self {
+        self.reference_data_source_descriptions = input; self
     }
     /// <p>Describes reference data sources configured for the application.</p>
-    pub fn get_reference_data_source_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSourceDescription>> {
+    pub fn get_reference_data_source_descriptions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReferenceDataSourceDescription>> {
         &self.reference_data_source_descriptions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AddApplicationReferenceDataSourceOutput`](crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceOutput).
     pub fn build(self) -> crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceOutput {
         crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceOutput {
-            application_arn: self.application_arn,
-            application_version_id: self.application_version_id,
-            reference_data_source_descriptions: self.reference_data_source_descriptions,
+            application_arn: self.application_arn
+            ,
+            application_version_id: self.application_version_id
+            ,
+            reference_data_source_descriptions: self.reference_data_source_descriptions
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

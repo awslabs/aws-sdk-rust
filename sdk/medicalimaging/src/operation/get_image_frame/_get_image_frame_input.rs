@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetImageFrameInput {
+pub struct GetImageFrameInput  {
     /// <p>The data store identifier.</p>
     pub datastore_id: ::std::option::Option<::std::string::String>,
     /// <p>The image set identifier.</p>
@@ -10,17 +10,17 @@ pub struct GetImageFrameInput {
     /// <p>Information about the image frame (pixel data) identifier.</p>
     pub image_frame_information: ::std::option::Option<crate::types::ImageFrameInformation>,
 }
-impl GetImageFrameInput {
+impl  GetImageFrameInput  {
     /// <p>The data store identifier.</p>
-    pub fn datastore_id(&self) -> ::std::option::Option<&str> {
+    pub fn datastore_id(&self) -> ::std::option::Option<& str> {
         self.datastore_id.as_deref()
     }
     /// <p>The image set identifier.</p>
-    pub fn image_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn image_set_id(&self) -> ::std::option::Option<& str> {
         self.image_set_id.as_deref()
     }
     /// <p>Information about the image frame (pixel data) identifier.</p>
-    pub fn image_frame_information(&self) -> ::std::option::Option<&crate::types::ImageFrameInformation> {
+    pub fn image_frame_information(&self) -> ::std::option::Option<& crate::types::ImageFrameInformation> {
         self.image_frame_information.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl GetImageFrameInputBuilder {
     }
     /// <p>The data store identifier.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.datastore_id = input;
-        self
+        self.datastore_id = input; self
     }
     /// <p>The data store identifier.</p>
     pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl GetImageFrameInputBuilder {
     }
     /// <p>The image set identifier.</p>
     pub fn set_image_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_set_id = input;
-        self
+        self.image_set_id = input; self
     }
     /// <p>The image set identifier.</p>
     pub fn get_image_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,21 +76,24 @@ impl GetImageFrameInputBuilder {
     }
     /// <p>Information about the image frame (pixel data) identifier.</p>
     pub fn set_image_frame_information(mut self, input: ::std::option::Option<crate::types::ImageFrameInformation>) -> Self {
-        self.image_frame_information = input;
-        self
+        self.image_frame_information = input; self
     }
     /// <p>Information about the image frame (pixel data) identifier.</p>
     pub fn get_image_frame_information(&self) -> &::std::option::Option<crate::types::ImageFrameInformation> {
         &self.image_frame_information
     }
     /// Consumes the builder and constructs a [`GetImageFrameInput`](crate::operation::get_image_frame::GetImageFrameInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_image_frame::GetImageFrameInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_image_frame::GetImageFrameInput {
-            datastore_id: self.datastore_id,
-            image_set_id: self.image_set_id,
-            image_frame_information: self.image_frame_information,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_image_frame::GetImageFrameInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_image_frame::GetImageFrameInput {
+                datastore_id: self.datastore_id
+                ,
+                image_set_id: self.image_set_id
+                ,
+                image_frame_information: self.image_frame_information
+                ,
+            }
+        )
     }
 }
+

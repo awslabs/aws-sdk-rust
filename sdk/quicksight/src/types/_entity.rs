@@ -3,13 +3,13 @@
 /// <p>An object, structure, or sub-structure of an analysis, template, or dashboard.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Entity {
+pub struct Entity  {
     /// <p>The hierarchical path of the entity within the analysis, template, or dashboard definition tree.</p>
     pub path: ::std::option::Option<::std::string::String>,
 }
-impl Entity {
+impl  Entity  {
     /// <p>The hierarchical path of the entity within the analysis, template, or dashboard definition tree.</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<& str> {
         self.path.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl EntityBuilder {
     }
     /// <p>The hierarchical path of the entity within the analysis, template, or dashboard definition tree.</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>The hierarchical path of the entity within the analysis, template, or dashboard definition tree.</p>
     pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl EntityBuilder {
     }
     /// Consumes the builder and constructs a [`Entity`](crate::types::Entity).
     pub fn build(self) -> crate::types::Entity {
-        crate::types::Entity { path: self.path }
+        crate::types::Entity {
+            path: self.path
+            ,
+        }
     }
 }
+

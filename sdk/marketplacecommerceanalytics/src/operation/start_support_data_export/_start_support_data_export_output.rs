@@ -4,22 +4,22 @@
 #[deprecated(note = "This target has been deprecated. As of December 2022 Product Support Connection is no longer supported.")]
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartSupportDataExportOutput {
+pub struct StartSupportDataExportOutput  {
     /// <i>This target has been deprecated.</i> A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can be used to correlate a request with notifications from the SNS topic.
     pub data_set_request_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl StartSupportDataExportOutput {
+impl  StartSupportDataExportOutput  {
     /// <i>This target has been deprecated.</i> A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can be used to correlate a request with notifications from the SNS topic.
-    pub fn data_set_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_set_request_id(&self) -> ::std::option::Option<& str> {
         self.data_set_request_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartSupportDataExportOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartSupportDataExportOutput {
     /// Creates a new builder-style object to manufacture [`StartSupportDataExportOutput`](crate::operation::start_support_data_export::StartSupportDataExportOutput).
     pub fn builder() -> crate::operation::start_support_data_export::builders::StartSupportDataExportOutputBuilder {
@@ -42,27 +42,28 @@ impl StartSupportDataExportOutputBuilder {
     }
     /// <i>This target has been deprecated.</i> A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can be used to correlate a request with notifications from the SNS topic.
     pub fn set_data_set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_request_id = input;
-        self
+        self.data_set_request_id = input; self
     }
     /// <i>This target has been deprecated.</i> A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can be used to correlate a request with notifications from the SNS topic.
     pub fn get_data_set_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_set_request_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartSupportDataExportOutput`](crate::operation::start_support_data_export::StartSupportDataExportOutput).
     pub fn build(self) -> crate::operation::start_support_data_export::StartSupportDataExportOutput {
         crate::operation::start_support_data_export::StartSupportDataExportOutput {
-            data_set_request_id: self.data_set_request_id,
+            data_set_request_id: self.data_set_request_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

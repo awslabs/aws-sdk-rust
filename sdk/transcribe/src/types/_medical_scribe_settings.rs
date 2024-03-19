@@ -3,7 +3,7 @@
 /// <p>Makes it possible to control how your Medical Scribe job is processed using a <code>MedicalScribeSettings</code> object. Specify <code>ChannelIdentification</code> if <code>ChannelDefinitions</code> are set. Enabled <code>ShowSpeakerLabels</code> if <code>ChannelIdentification</code> and <code>ChannelDefinitions</code> are not set. One and only one of <code>ChannelIdentification</code> and <code>ShowSpeakerLabels</code> must be set. If <code>ShowSpeakerLabels</code> is set, <code>MaxSpeakerLabels</code> must also be set. Use <code>Settings</code> to specify a vocabulary or vocabulary filter or both using <code>VocabularyName</code>, <code>VocabularyFilterName</code>. <code>VocabularyFilterMethod</code> must be specified if <code>VocabularyFilterName</code> is set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MedicalScribeSettings {
+pub struct MedicalScribeSettings  {
     /// <p>Enables speaker partitioning (diarization) in your Medical Scribe output. Speaker partitioning labels the speech from individual speakers in your media file.</p>
     /// <p>If you enable <code>ShowSpeakerLabels</code> in your request, you must also include <code>MaxSpeakerLabels</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.</p>
@@ -27,7 +27,7 @@ pub struct MedicalScribeSettings {
     /// <p>To flag words without changing them, choose <code>tag</code>.</p>
     pub vocabulary_filter_method: ::std::option::Option<crate::types::VocabularyFilterMethod>,
 }
-impl MedicalScribeSettings {
+impl  MedicalScribeSettings  {
     /// <p>Enables speaker partitioning (diarization) in your Medical Scribe output. Speaker partitioning labels the speech from individual speakers in your media file.</p>
     /// <p>If you enable <code>ShowSpeakerLabels</code> in your request, you must also include <code>MaxSpeakerLabels</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.</p>
@@ -47,19 +47,19 @@ impl MedicalScribeSettings {
         self.channel_identification
     }
     /// <p>The name of the custom vocabulary you want to include in your Medical Scribe request. Custom vocabulary names are case sensitive.</p>
-    pub fn vocabulary_name(&self) -> ::std::option::Option<&str> {
+    pub fn vocabulary_name(&self) -> ::std::option::Option<& str> {
         self.vocabulary_name.as_deref()
     }
     /// <p>The name of the custom vocabulary filter you want to include in your Medical Scribe request. Custom vocabulary filter names are case sensitive.</p>
     /// <p>Note that if you include <code>VocabularyFilterName</code> in your request, you must also include <code>VocabularyFilterMethod</code>.</p>
-    pub fn vocabulary_filter_name(&self) -> ::std::option::Option<&str> {
+    pub fn vocabulary_filter_name(&self) -> ::std::option::Option<& str> {
         self.vocabulary_filter_name.as_deref()
     }
     /// <p>Specify how you want your custom vocabulary filter applied to your transcript.</p>
     /// <p>To replace words with <code>***</code>, choose <code>mask</code>.</p>
     /// <p>To delete words, choose <code>remove</code>.</p>
     /// <p>To flag words without changing them, choose <code>tag</code>.</p>
-    pub fn vocabulary_filter_method(&self) -> ::std::option::Option<&crate::types::VocabularyFilterMethod> {
+    pub fn vocabulary_filter_method(&self) -> ::std::option::Option<& crate::types::VocabularyFilterMethod> {
         self.vocabulary_filter_method.as_ref()
     }
 }
@@ -93,8 +93,7 @@ impl MedicalScribeSettingsBuilder {
     /// <p>If you enable <code>ShowSpeakerLabels</code> in your request, you must also include <code>MaxSpeakerLabels</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.</p>
     pub fn set_show_speaker_labels(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.show_speaker_labels = input;
-        self
+        self.show_speaker_labels = input; self
     }
     /// <p>Enables speaker partitioning (diarization) in your Medical Scribe output. Speaker partitioning labels the speech from individual speakers in your media file.</p>
     /// <p>If you enable <code>ShowSpeakerLabels</code> in your request, you must also include <code>MaxSpeakerLabels</code>.</p>
@@ -113,8 +112,7 @@ impl MedicalScribeSettingsBuilder {
     /// <p>Note that if your media contains more speakers than the specified number, multiple speakers are treated as a single speaker.</p>
     /// <p>If you specify the <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code> field to true.</p>
     pub fn set_max_speaker_labels(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_speaker_labels = input;
-        self
+        self.max_speaker_labels = input; self
     }
     /// <p>Specify the maximum number of speakers you want to partition in your media.</p>
     /// <p>Note that if your media contains more speakers than the specified number, multiple speakers are treated as a single speaker.</p>
@@ -133,8 +131,7 @@ impl MedicalScribeSettingsBuilder {
     /// <p>Channel identification transcribes the audio on each channel independently, then appends the output for each channel into one transcript.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing multi-channel audio</a>.</p>
     pub fn set_channel_identification(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.channel_identification = input;
-        self
+        self.channel_identification = input; self
     }
     /// <p>Enables channel identification in multi-channel audio.</p>
     /// <p>Channel identification transcribes the audio on each channel independently, then appends the output for each channel into one transcript.</p>
@@ -149,8 +146,7 @@ impl MedicalScribeSettingsBuilder {
     }
     /// <p>The name of the custom vocabulary you want to include in your Medical Scribe request. Custom vocabulary names are case sensitive.</p>
     pub fn set_vocabulary_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vocabulary_name = input;
-        self
+        self.vocabulary_name = input; self
     }
     /// <p>The name of the custom vocabulary you want to include in your Medical Scribe request. Custom vocabulary names are case sensitive.</p>
     pub fn get_vocabulary_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,8 +161,7 @@ impl MedicalScribeSettingsBuilder {
     /// <p>The name of the custom vocabulary filter you want to include in your Medical Scribe request. Custom vocabulary filter names are case sensitive.</p>
     /// <p>Note that if you include <code>VocabularyFilterName</code> in your request, you must also include <code>VocabularyFilterMethod</code>.</p>
     pub fn set_vocabulary_filter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vocabulary_filter_name = input;
-        self
+        self.vocabulary_filter_name = input; self
     }
     /// <p>The name of the custom vocabulary filter you want to include in your Medical Scribe request. Custom vocabulary filter names are case sensitive.</p>
     /// <p>Note that if you include <code>VocabularyFilterName</code> in your request, you must also include <code>VocabularyFilterMethod</code>.</p>
@@ -186,8 +181,7 @@ impl MedicalScribeSettingsBuilder {
     /// <p>To delete words, choose <code>remove</code>.</p>
     /// <p>To flag words without changing them, choose <code>tag</code>.</p>
     pub fn set_vocabulary_filter_method(mut self, input: ::std::option::Option<crate::types::VocabularyFilterMethod>) -> Self {
-        self.vocabulary_filter_method = input;
-        self
+        self.vocabulary_filter_method = input; self
     }
     /// <p>Specify how you want your custom vocabulary filter applied to your transcript.</p>
     /// <p>To replace words with <code>***</code>, choose <code>mask</code>.</p>
@@ -199,12 +193,19 @@ impl MedicalScribeSettingsBuilder {
     /// Consumes the builder and constructs a [`MedicalScribeSettings`](crate::types::MedicalScribeSettings).
     pub fn build(self) -> crate::types::MedicalScribeSettings {
         crate::types::MedicalScribeSettings {
-            show_speaker_labels: self.show_speaker_labels,
-            max_speaker_labels: self.max_speaker_labels,
-            channel_identification: self.channel_identification,
-            vocabulary_name: self.vocabulary_name,
-            vocabulary_filter_name: self.vocabulary_filter_name,
-            vocabulary_filter_method: self.vocabulary_filter_method,
+            show_speaker_labels: self.show_speaker_labels
+            ,
+            max_speaker_labels: self.max_speaker_labels
+            ,
+            channel_identification: self.channel_identification
+            ,
+            vocabulary_name: self.vocabulary_name
+            ,
+            vocabulary_filter_name: self.vocabulary_filter_name
+            ,
+            vocabulary_filter_method: self.vocabulary_filter_method
+            ,
         }
     }
 }
+

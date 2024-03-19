@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let buildbatchphasetype = unimplemented!();
 /// match buildbatchphasetype {
@@ -35,16 +35,14 @@
 /// Specifically, when `buildbatchphasetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BuildBatchPhaseType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum BuildBatchPhaseType {
     #[allow(missing_docs)] // documentation missing in model
     CombineArtifacts,
@@ -62,84 +60,77 @@ pub enum BuildBatchPhaseType {
     Succeeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for BuildBatchPhaseType {
-    fn from(s: &str) -> Self {
-        match s {
-            "COMBINE_ARTIFACTS" => BuildBatchPhaseType::CombineArtifacts,
-            "DOWNLOAD_BATCHSPEC" => BuildBatchPhaseType::DownloadBatchspec,
-            "FAILED" => BuildBatchPhaseType::Failed,
-            "IN_PROGRESS" => BuildBatchPhaseType::InProgress,
-            "STOPPED" => BuildBatchPhaseType::Stopped,
-            "SUBMITTED" => BuildBatchPhaseType::Submitted,
-            "SUCCEEDED" => BuildBatchPhaseType::Succeeded,
-            other => BuildBatchPhaseType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "COMBINE_ARTIFACTS" => BuildBatchPhaseType::CombineArtifacts,
+"DOWNLOAD_BATCHSPEC" => BuildBatchPhaseType::DownloadBatchspec,
+"FAILED" => BuildBatchPhaseType::Failed,
+"IN_PROGRESS" => BuildBatchPhaseType::InProgress,
+"STOPPED" => BuildBatchPhaseType::Stopped,
+"SUBMITTED" => BuildBatchPhaseType::Submitted,
+"SUCCEEDED" => BuildBatchPhaseType::Succeeded,
+other => BuildBatchPhaseType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for BuildBatchPhaseType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(BuildBatchPhaseType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(BuildBatchPhaseType::from(s))
+                    }
+                }
 impl BuildBatchPhaseType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            BuildBatchPhaseType::CombineArtifacts => "COMBINE_ARTIFACTS",
-            BuildBatchPhaseType::DownloadBatchspec => "DOWNLOAD_BATCHSPEC",
-            BuildBatchPhaseType::Failed => "FAILED",
-            BuildBatchPhaseType::InProgress => "IN_PROGRESS",
-            BuildBatchPhaseType::Stopped => "STOPPED",
-            BuildBatchPhaseType::Submitted => "SUBMITTED",
-            BuildBatchPhaseType::Succeeded => "SUCCEEDED",
-            BuildBatchPhaseType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "COMBINE_ARTIFACTS",
-            "DOWNLOAD_BATCHSPEC",
-            "FAILED",
-            "IN_PROGRESS",
-            "STOPPED",
-            "SUBMITTED",
-            "SUCCEEDED",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    BuildBatchPhaseType::CombineArtifacts => "COMBINE_ARTIFACTS",
+    BuildBatchPhaseType::DownloadBatchspec => "DOWNLOAD_BATCHSPEC",
+    BuildBatchPhaseType::Failed => "FAILED",
+    BuildBatchPhaseType::InProgress => "IN_PROGRESS",
+    BuildBatchPhaseType::Stopped => "STOPPED",
+    BuildBatchPhaseType::Submitted => "SUBMITTED",
+    BuildBatchPhaseType::Succeeded => "SUCCEEDED",
+    BuildBatchPhaseType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["COMBINE_ARTIFACTS", "DOWNLOAD_BATCHSPEC", "FAILED", "IN_PROGRESS", "STOPPED", "SUBMITTED", "SUCCEEDED"]
+                }
+            }
 impl ::std::convert::AsRef<str> for BuildBatchPhaseType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl BuildBatchPhaseType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for BuildBatchPhaseType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            BuildBatchPhaseType::CombineArtifacts => write!(f, "COMBINE_ARTIFACTS"),
-            BuildBatchPhaseType::DownloadBatchspec => write!(f, "DOWNLOAD_BATCHSPEC"),
-            BuildBatchPhaseType::Failed => write!(f, "FAILED"),
-            BuildBatchPhaseType::InProgress => write!(f, "IN_PROGRESS"),
-            BuildBatchPhaseType::Stopped => write!(f, "STOPPED"),
-            BuildBatchPhaseType::Submitted => write!(f, "SUBMITTED"),
-            BuildBatchPhaseType::Succeeded => write!(f, "SUCCEEDED"),
-            BuildBatchPhaseType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                BuildBatchPhaseType::CombineArtifacts => write!(f, "COMBINE_ARTIFACTS"),
+BuildBatchPhaseType::DownloadBatchspec => write!(f, "DOWNLOAD_BATCHSPEC"),
+BuildBatchPhaseType::Failed => write!(f, "FAILED"),
+BuildBatchPhaseType::InProgress => write!(f, "IN_PROGRESS"),
+BuildBatchPhaseType::Stopped => write!(f, "STOPPED"),
+BuildBatchPhaseType::Submitted => write!(f, "SUBMITTED"),
+BuildBatchPhaseType::Succeeded => write!(f, "SUCCEEDED"),
+BuildBatchPhaseType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

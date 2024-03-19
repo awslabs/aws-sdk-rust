@@ -3,7 +3,7 @@
 /// <p>Provides options for deleting an archive from an Amazon S3 Glacier vault.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteArchiveInput {
+pub struct DeleteArchiveInput  {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the vault.</p>
@@ -11,25 +11,25 @@ pub struct DeleteArchiveInput {
     /// <p>The ID of the archive to delete.</p>
     pub archive_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteArchiveInput {
+impl  DeleteArchiveInput  {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> ::std::option::Option<&str> {
+    pub fn vault_name(&self) -> ::std::option::Option<& str> {
         self.vault_name.as_deref()
     }
     /// <p>The ID of the archive to delete.</p>
-    pub fn archive_id(&self) -> ::std::option::Option<&str> {
+    pub fn archive_id(&self) -> ::std::option::Option<& str> {
         self.archive_id.as_deref()
     }
 }
 impl crate::glacier_interceptors::GlacierAccountId for DeleteArchiveInput {
-    fn account_id_mut(&mut self) -> &mut Option<String> {
-        &mut self.account_id
-    }
-}
+                        fn account_id_mut(&mut self) -> &mut Option<String> {
+                            &mut self.account_id
+                        }
+                    }
 impl DeleteArchiveInput {
     /// Creates a new builder-style object to manufacture [`DeleteArchiveInput`](crate::operation::delete_archive::DeleteArchiveInput).
     pub fn builder() -> crate::operation::delete_archive::builders::DeleteArchiveInputBuilder {
@@ -54,8 +54,7 @@ impl DeleteArchiveInputBuilder {
     }
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl DeleteArchiveInputBuilder {
     }
     /// <p>The name of the vault.</p>
     pub fn set_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vault_name = input;
-        self
+        self.vault_name = input; self
     }
     /// <p>The name of the vault.</p>
     pub fn get_vault_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,21 +82,24 @@ impl DeleteArchiveInputBuilder {
     }
     /// <p>The ID of the archive to delete.</p>
     pub fn set_archive_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.archive_id = input;
-        self
+        self.archive_id = input; self
     }
     /// <p>The ID of the archive to delete.</p>
     pub fn get_archive_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.archive_id
     }
     /// Consumes the builder and constructs a [`DeleteArchiveInput`](crate::operation::delete_archive::DeleteArchiveInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_archive::DeleteArchiveInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_archive::DeleteArchiveInput {
-            account_id: self.account_id,
-            vault_name: self.vault_name,
-            archive_id: self.archive_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_archive::DeleteArchiveInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_archive::DeleteArchiveInput {
+                account_id: self.account_id
+                ,
+                vault_name: self.vault_name
+                ,
+                archive_id: self.archive_id
+                ,
+            }
+        )
     }
 }
+

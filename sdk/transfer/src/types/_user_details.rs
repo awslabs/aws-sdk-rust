@@ -3,7 +3,7 @@
 /// <p>Specifies the user name, server ID, and session ID for a workflow.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserDetails {
+pub struct UserDetails  {
     /// <p>A unique string that identifies a Transfer Family user associated with a server.</p>
     pub user_name: ::std::string::String,
     /// <p>The system-assigned unique identifier for a Transfer server instance.</p>
@@ -11,19 +11,17 @@ pub struct UserDetails {
     /// <p>The system-assigned unique identifier for a session that corresponds to the workflow.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
 }
-impl UserDetails {
+impl  UserDetails  {
     /// <p>A unique string that identifies a Transfer Family user associated with a server.</p>
-    pub fn user_name(&self) -> &str {
-        use std::ops::Deref;
-        self.user_name.deref()
+    pub fn user_name(&self) -> & str {
+        use std::ops::Deref; self.user_name.deref()
     }
     /// <p>The system-assigned unique identifier for a Transfer server instance.</p>
-    pub fn server_id(&self) -> &str {
-        use std::ops::Deref;
-        self.server_id.deref()
+    pub fn server_id(&self) -> & str {
+        use std::ops::Deref; self.server_id.deref()
     }
     /// <p>The system-assigned unique identifier for a session that corresponds to the workflow.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<& str> {
         self.session_id.as_deref()
     }
 }
@@ -51,8 +49,7 @@ impl UserDetailsBuilder {
     }
     /// <p>A unique string that identifies a Transfer Family user associated with a server.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>A unique string that identifies a Transfer Family user associated with a server.</p>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl UserDetailsBuilder {
     }
     /// <p>The system-assigned unique identifier for a Transfer server instance.</p>
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_id = input;
-        self
+        self.server_id = input; self
     }
     /// <p>The system-assigned unique identifier for a Transfer server instance.</p>
     pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl UserDetailsBuilder {
     }
     /// <p>The system-assigned unique identifier for a session that corresponds to the workflow.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>The system-assigned unique identifier for a session that corresponds to the workflow.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,20 +87,22 @@ impl UserDetailsBuilder {
     /// - [`user_name`](crate::types::builders::UserDetailsBuilder::user_name)
     /// - [`server_id`](crate::types::builders::UserDetailsBuilder::server_id)
     pub fn build(self) -> ::std::result::Result<crate::types::UserDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UserDetails {
-            user_name: self.user_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user_name",
-                    "user_name was not specified but it is required when building UserDetails",
-                )
-            })?,
-            server_id: self.server_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "server_id",
-                    "server_id was not specified but it is required when building UserDetails",
-                )
-            })?,
-            session_id: self.session_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UserDetails {
+                user_name: self.user_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user_name", "user_name was not specified but it is required when building UserDetails")
+                    )?
+                ,
+                server_id: self.server_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("server_id", "server_id was not specified but it is required when building UserDetails")
+                    )?
+                ,
+                session_id: self.session_id
+                ,
+            }
+        )
     }
 }
+

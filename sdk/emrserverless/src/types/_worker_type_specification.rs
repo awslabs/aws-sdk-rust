@@ -3,13 +3,13 @@
 /// <p>The specifications for a worker type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkerTypeSpecification {
+pub struct WorkerTypeSpecification  {
     /// <p>The image configuration for a worker type.</p>
     pub image_configuration: ::std::option::Option<crate::types::ImageConfiguration>,
 }
-impl WorkerTypeSpecification {
+impl  WorkerTypeSpecification  {
     /// <p>The image configuration for a worker type.</p>
-    pub fn image_configuration(&self) -> ::std::option::Option<&crate::types::ImageConfiguration> {
+    pub fn image_configuration(&self) -> ::std::option::Option<& crate::types::ImageConfiguration> {
         self.image_configuration.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl WorkerTypeSpecificationBuilder {
     }
     /// <p>The image configuration for a worker type.</p>
     pub fn set_image_configuration(mut self, input: ::std::option::Option<crate::types::ImageConfiguration>) -> Self {
-        self.image_configuration = input;
-        self
+        self.image_configuration = input; self
     }
     /// <p>The image configuration for a worker type.</p>
     pub fn get_image_configuration(&self) -> &::std::option::Option<crate::types::ImageConfiguration> {
@@ -44,7 +43,9 @@ impl WorkerTypeSpecificationBuilder {
     /// Consumes the builder and constructs a [`WorkerTypeSpecification`](crate::types::WorkerTypeSpecification).
     pub fn build(self) -> crate::types::WorkerTypeSpecification {
         crate::types::WorkerTypeSpecification {
-            image_configuration: self.image_configuration,
+            image_configuration: self.image_configuration
+            ,
         }
     }
 }
+

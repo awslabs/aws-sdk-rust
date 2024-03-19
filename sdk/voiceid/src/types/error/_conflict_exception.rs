@@ -3,7 +3,7 @@
 /// <p>The request failed due to a conflict. Check the <code>ConflictType</code> and error message for more details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConflictException {
+pub struct ConflictException  {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The type of conflict which caused a ConflictException. Possible types and the corresponding error messages are as follows:</p>
@@ -24,7 +24,7 @@ pub struct ConflictException {
     pub conflict_type: ::std::option::Option<crate::types::ConflictType>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl ConflictException {
+impl  ConflictException  {
     /// <p>The type of conflict which caused a ConflictException. Possible types and the corresponding error messages are as follows:</p>
     /// <ul>
     /// <li>
@@ -40,21 +40,19 @@ impl ConflictException {
     /// <li>
     /// <p><code>CONCURRENT_CHANGES</code>: The request could not be processed as the resource was modified by another request during execution.</p></li>
     /// </ul>
-    pub fn conflict_type(&self) -> ::std::option::Option<&crate::types::ConflictType> {
+    pub fn conflict_type(&self) -> ::std::option::Option<& crate::types::ConflictType> {
         self.conflict_type.as_ref()
     }
 }
 impl ConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ConflictException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -69,9 +67,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::ConflictExcepti
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ConflictException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl ConflictException {
     /// Creates a new builder-style object to manufacture [`ConflictException`](crate::types::error::ConflictException).
@@ -96,8 +92,7 @@ impl ConflictExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +133,7 @@ impl ConflictExceptionBuilder {
     /// <p><code>CONCURRENT_CHANGES</code>: The request could not be processed as the resource was modified by another request during execution.</p></li>
     /// </ul>
     pub fn set_conflict_type(mut self, input: ::std::option::Option<crate::types::ConflictType>) -> Self {
-        self.conflict_type = input;
-        self
+        self.conflict_type = input; self
     }
     /// <p>The type of conflict which caused a ConflictException. Possible types and the corresponding error messages are as follows:</p>
     /// <ul>
@@ -160,22 +154,25 @@ impl ConflictExceptionBuilder {
         &self.conflict_type
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`ConflictException`](crate::types::error::ConflictException).
     pub fn build(self) -> crate::types::error::ConflictException {
         crate::types::error::ConflictException {
-            message: self.message,
-            conflict_type: self.conflict_type,
+            message: self.message
+            ,
+            conflict_type: self.conflict_type
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

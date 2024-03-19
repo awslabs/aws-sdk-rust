@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListHyperParameterTuningJobs`](crate::operation::list_hyper_parameter_tuning_jobs::builders::ListHyperParameterTuningJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_hyper_parameter_tuning_jobs::builders::ListHyperParameterTuningJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_hyper_parameter_tuning_jobs::builders::ListHyperParameterTuningJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_hyper_parameter_tuning_jobs::builders::ListHyperParameterTuningJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the result of the previous <code>ListHyperParameterTuningJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of tuning jobs, use the token in the next request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_hyper_parameter_tuning_jobs::builders::ListHyperParameterTuningJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_hyper_parameter_tuning_jobs::builders::ListHyperParameterTuningJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of tuning jobs to return. The default value is 10.</p><br>
     ///   - [`sort_by(HyperParameterTuningJobSortByOptions)`](crate::operation::list_hyper_parameter_tuning_jobs::builders::ListHyperParameterTuningJobsFluentBuilder::sort_by) / [`set_sort_by(Option<HyperParameterTuningJobSortByOptions>)`](crate::operation::list_hyper_parameter_tuning_jobs::builders::ListHyperParameterTuningJobsFluentBuilder::set_sort_by):<br>required: **false**<br><p>The field to sort results by. The default is <code>Name</code>.</p><br>
@@ -14,13 +14,12 @@ impl super::Client {
     ///   - [`last_modified_time_after(DateTime)`](crate::operation::list_hyper_parameter_tuning_jobs::builders::ListHyperParameterTuningJobsFluentBuilder::last_modified_time_after) / [`set_last_modified_time_after(Option<DateTime>)`](crate::operation::list_hyper_parameter_tuning_jobs::builders::ListHyperParameterTuningJobsFluentBuilder::set_last_modified_time_after):<br>required: **false**<br><p>A filter that returns only tuning jobs that were modified after the specified time.</p><br>
     ///   - [`last_modified_time_before(DateTime)`](crate::operation::list_hyper_parameter_tuning_jobs::builders::ListHyperParameterTuningJobsFluentBuilder::last_modified_time_before) / [`set_last_modified_time_before(Option<DateTime>)`](crate::operation::list_hyper_parameter_tuning_jobs::builders::ListHyperParameterTuningJobsFluentBuilder::set_last_modified_time_before):<br>required: **false**<br><p>A filter that returns only tuning jobs that were modified before the specified time.</p><br>
     ///   - [`status_equals(HyperParameterTuningJobStatus)`](crate::operation::list_hyper_parameter_tuning_jobs::builders::ListHyperParameterTuningJobsFluentBuilder::status_equals) / [`set_status_equals(Option<HyperParameterTuningJobStatus>)`](crate::operation::list_hyper_parameter_tuning_jobs::builders::ListHyperParameterTuningJobsFluentBuilder::set_status_equals):<br>required: **false**<br><p>A filter that returns only tuning jobs with the specified status.</p><br>
-    /// - On success, responds with [`ListHyperParameterTuningJobsOutput`](crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsOutput) with field(s):
+                            /// - On success, responds with [`ListHyperParameterTuningJobsOutput`](crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsOutput) with field(s):
     ///   - [`hyper_parameter_tuning_job_summaries(Option<Vec::<HyperParameterTuningJobSummary>>)`](crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsOutput::hyper_parameter_tuning_job_summaries): <p>A list of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobSummary.html">HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the <code>ListHyperParameterTuningJobs</code> request returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsOutput::next_token): <p>If the result of this <code>ListHyperParameterTuningJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of tuning jobs, use the token in the next request.</p>
-    /// - On failure, responds with [`SdkError<ListHyperParameterTuningJobsError>`](crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsError)
-    pub fn list_hyper_parameter_tuning_jobs(
-        &self,
-    ) -> crate::operation::list_hyper_parameter_tuning_jobs::builders::ListHyperParameterTuningJobsFluentBuilder {
-        crate::operation::list_hyper_parameter_tuning_jobs::builders::ListHyperParameterTuningJobsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListHyperParameterTuningJobsError>`](crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsError)
+    pub fn list_hyper_parameter_tuning_jobs(&self) -> crate::operation::list_hyper_parameter_tuning_jobs::builders::ListHyperParameterTuningJobsFluentBuilder {
+                                crate::operation::list_hyper_parameter_tuning_jobs::builders::ListHyperParameterTuningJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListEffectiveDeployments`](crate::operation::list_effective_deployments::builders::ListEffectiveDeploymentsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_effective_deployments::builders::ListEffectiveDeploymentsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`core_device_thing_name(impl Into<String>)`](crate::operation::list_effective_deployments::builders::ListEffectiveDeploymentsFluentBuilder::core_device_thing_name) / [`set_core_device_thing_name(Option<String>)`](crate::operation::list_effective_deployments::builders::ListEffectiveDeploymentsFluentBuilder::set_core_device_thing_name):<br>required: **true**<br><p>The name of the core device. This is also the name of the IoT thing.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_effective_deployments::builders::ListEffectiveDeploymentsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_effective_deployments::builders::ListEffectiveDeploymentsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to be returned per paginated request.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_effective_deployments::builders::ListEffectiveDeploymentsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_effective_deployments::builders::ListEffectiveDeploymentsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to be used for the next set of paginated results.</p><br>
-    /// - On success, responds with [`ListEffectiveDeploymentsOutput`](crate::operation::list_effective_deployments::ListEffectiveDeploymentsOutput) with field(s):
+                            /// - On success, responds with [`ListEffectiveDeploymentsOutput`](crate::operation::list_effective_deployments::ListEffectiveDeploymentsOutput) with field(s):
     ///   - [`effective_deployments(Option<Vec::<EffectiveDeployment>>)`](crate::operation::list_effective_deployments::ListEffectiveDeploymentsOutput::effective_deployments): <p>A list that summarizes each deployment on the core device.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_effective_deployments::ListEffectiveDeploymentsOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<ListEffectiveDeploymentsError>`](crate::operation::list_effective_deployments::ListEffectiveDeploymentsError)
+                            /// - On failure, responds with [`SdkError<ListEffectiveDeploymentsError>`](crate::operation::list_effective_deployments::ListEffectiveDeploymentsError)
     pub fn list_effective_deployments(&self) -> crate::operation::list_effective_deployments::builders::ListEffectiveDeploymentsFluentBuilder {
-        crate::operation::list_effective_deployments::builders::ListEffectiveDeploymentsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_effective_deployments::builders::ListEffectiveDeploymentsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

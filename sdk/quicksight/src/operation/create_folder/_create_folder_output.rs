@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateFolderOutput {
+pub struct CreateFolderOutput  {
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
     /// <p>The Amazon Resource Name (ARN) for the newly created folder.</p>
@@ -13,29 +13,29 @@ pub struct CreateFolderOutput {
     pub request_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateFolderOutput {
+impl  CreateFolderOutput  {
     /// <p>The HTTP status of the request.</p>
     pub fn status(&self) -> i32 {
         self.status
     }
     /// <p>The Amazon Resource Name (ARN) for the newly created folder.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The folder ID for the newly created folder.</p>
-    pub fn folder_id(&self) -> ::std::option::Option<&str> {
+    pub fn folder_id(&self) -> ::std::option::Option<& str> {
         self.folder_id.as_deref()
     }
     /// <p>The request ID for the newly created folder.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateFolderOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateFolderOutput {
     /// Creates a new builder-style object to manufacture [`CreateFolderOutput`](crate::operation::create_folder::CreateFolderOutput).
     pub fn builder() -> crate::operation::create_folder::builders::CreateFolderOutputBuilder {
@@ -61,8 +61,7 @@ impl CreateFolderOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn get_status(&self) -> &::std::option::Option<i32> {
@@ -75,8 +74,7 @@ impl CreateFolderOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the newly created folder.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the newly created folder.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl CreateFolderOutputBuilder {
     }
     /// <p>The folder ID for the newly created folder.</p>
     pub fn set_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.folder_id = input;
-        self
+        self.folder_id = input; self
     }
     /// <p>The folder ID for the newly created folder.</p>
     pub fn get_folder_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,30 +100,35 @@ impl CreateFolderOutputBuilder {
     }
     /// <p>The request ID for the newly created folder.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The request ID for the newly created folder.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateFolderOutput`](crate::operation::create_folder::CreateFolderOutput).
     pub fn build(self) -> crate::operation::create_folder::CreateFolderOutput {
         crate::operation::create_folder::CreateFolderOutput {
-            status: self.status.unwrap_or_default(),
-            arn: self.arn,
-            folder_id: self.folder_id,
-            request_id: self.request_id,
+            status: self.status
+                .unwrap_or_default()
+            ,
+            arn: self.arn
+            ,
+            folder_id: self.folder_id
+            ,
+            request_id: self.request_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

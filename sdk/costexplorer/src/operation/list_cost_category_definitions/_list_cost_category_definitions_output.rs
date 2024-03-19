@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCostCategoryDefinitionsOutput {
+pub struct ListCostCategoryDefinitionsOutput  {
     /// <p>A reference to a Cost Category that contains enough information to identify the Cost Category.</p>
-    pub cost_category_references: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryReference>>,
+    pub cost_category_references: ::std::option::Option<::std::vec::Vec::<crate::types::CostCategoryReference>>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListCostCategoryDefinitionsOutput {
+impl  ListCostCategoryDefinitionsOutput  {
     /// <p>A reference to a Cost Category that contains enough information to identify the Cost Category.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cost_category_references.is_none()`.
-    pub fn cost_category_references(&self) -> &[crate::types::CostCategoryReference] {
-        self.cost_category_references.as_deref().unwrap_or_default()
+    pub fn cost_category_references(&self) -> & [crate::types::CostCategoryReference] {
+        self.cost_category_references.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListCostCategoryDefinitionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListCostCategoryDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`ListCostCategoryDefinitionsOutput`](crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsOutput).
     pub fn builder() -> crate::operation::list_cost_category_definitions::builders::ListCostCategoryDefinitionsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListCostCategoryDefinitionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCostCategoryDefinitionsOutputBuilder {
-    pub(crate) cost_category_references: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryReference>>,
+    pub(crate) cost_category_references: ::std::option::Option<::std::vec::Vec::<crate::types::CostCategoryReference>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListCostCategoryDefinitionsOutputBuilder {
     /// <p>A reference to a Cost Category that contains enough information to identify the Cost Category.</p>
     pub fn cost_category_references(mut self, input: crate::types::CostCategoryReference) -> Self {
         let mut v = self.cost_category_references.unwrap_or_default();
-        v.push(input);
-        self.cost_category_references = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cost_category_references = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A reference to a Cost Category that contains enough information to identify the Cost Category.</p>
-    pub fn set_cost_category_references(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryReference>>) -> Self {
-        self.cost_category_references = input;
-        self
+    pub fn set_cost_category_references(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CostCategoryReference>>) -> Self {
+        self.cost_category_references = input; self
     }
     /// <p>A reference to a Cost Category that contains enough information to identify the Cost Category.</p>
-    pub fn get_cost_category_references(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CostCategoryReference>> {
+    pub fn get_cost_category_references(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CostCategoryReference>> {
         &self.cost_category_references
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -69,28 +69,30 @@ impl ListCostCategoryDefinitionsOutputBuilder {
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListCostCategoryDefinitionsOutput`](crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsOutput).
     pub fn build(self) -> crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsOutput {
         crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsOutput {
-            cost_category_references: self.cost_category_references,
-            next_token: self.next_token,
+            cost_category_references: self.cost_category_references
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

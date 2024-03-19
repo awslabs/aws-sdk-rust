@@ -4,22 +4,23 @@
 /// <p>This data type is used as a response element in the <code>GetServiceLinkedRoleDeletionStatus</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RoleUsageType {
+pub struct RoleUsageType  {
     /// <p>The name of the Region where the service-linked role is being used.</p>
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource that is using the service-linked role.</p>
-    pub resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resources: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl RoleUsageType {
+impl  RoleUsageType  {
     /// <p>The name of the Region where the service-linked role is being used.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The name of the resource that is using the service-linked role.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
-    pub fn resources(&self) -> &[::std::string::String] {
-        self.resources.as_deref().unwrap_or_default()
+    pub fn resources(&self) -> & [::std::string::String] {
+        self.resources.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RoleUsageType {
@@ -34,7 +35,7 @@ impl RoleUsageType {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RoleUsageTypeBuilder {
     pub(crate) region: ::std::option::Option<::std::string::String>,
-    pub(crate) resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) resources: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl RoleUsageTypeBuilder {
     /// <p>The name of the Region where the service-linked role is being used.</p>
@@ -44,8 +45,7 @@ impl RoleUsageTypeBuilder {
     }
     /// <p>The name of the Region where the service-linked role is being used.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The name of the Region where the service-linked role is being used.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,24 +58,26 @@ impl RoleUsageTypeBuilder {
     /// <p>The name of the resource that is using the service-linked role.</p>
     pub fn resources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resources.unwrap_or_default();
-        v.push(input.into());
-        self.resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The name of the resource that is using the service-linked role.</p>
-    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.resources = input;
-        self
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.resources = input; self
     }
     /// <p>The name of the resource that is using the service-linked role.</p>
-    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.resources
     }
     /// Consumes the builder and constructs a [`RoleUsageType`](crate::types::RoleUsageType).
     pub fn build(self) -> crate::types::RoleUsageType {
         crate::types::RoleUsageType {
-            region: self.region,
-            resources: self.resources,
+            region: self.region
+            ,
+            resources: self.resources
+            ,
         }
     }
 }
+

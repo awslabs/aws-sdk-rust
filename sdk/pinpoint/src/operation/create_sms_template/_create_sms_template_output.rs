@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSmsTemplateOutput {
+pub struct CreateSmsTemplateOutput  {
     /// <p>Provides information about a request to create a message template.</p>
     pub create_template_message_body: ::std::option::Option<crate::types::CreateTemplateMessageBody>,
     _request_id: Option<String>,
 }
-impl CreateSmsTemplateOutput {
+impl  CreateSmsTemplateOutput  {
     /// <p>Provides information about a request to create a message template.</p>
-    pub fn create_template_message_body(&self) -> ::std::option::Option<&crate::types::CreateTemplateMessageBody> {
+    pub fn create_template_message_body(&self) -> ::std::option::Option<& crate::types::CreateTemplateMessageBody> {
         self.create_template_message_body.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateSmsTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateSmsTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateSmsTemplateOutput`](crate::operation::create_sms_template::CreateSmsTemplateOutput).
     pub fn builder() -> crate::operation::create_sms_template::builders::CreateSmsTemplateOutputBuilder {
@@ -41,27 +41,28 @@ impl CreateSmsTemplateOutputBuilder {
     }
     /// <p>Provides information about a request to create a message template.</p>
     pub fn set_create_template_message_body(mut self, input: ::std::option::Option<crate::types::CreateTemplateMessageBody>) -> Self {
-        self.create_template_message_body = input;
-        self
+        self.create_template_message_body = input; self
     }
     /// <p>Provides information about a request to create a message template.</p>
     pub fn get_create_template_message_body(&self) -> &::std::option::Option<crate::types::CreateTemplateMessageBody> {
         &self.create_template_message_body
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateSmsTemplateOutput`](crate::operation::create_sms_template::CreateSmsTemplateOutput).
     pub fn build(self) -> crate::operation::create_sms_template::CreateSmsTemplateOutput {
         crate::operation::create_sms_template::CreateSmsTemplateOutput {
-            create_template_message_body: self.create_template_message_body,
+            create_template_message_body: self.create_template_message_body
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

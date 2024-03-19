@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListChangedBlocksInput {
+pub struct ListChangedBlocksInput  {
     /// <p>The ID of the first snapshot to use for the comparison.</p><important>
     /// <p>The <code>FirstSnapshotID</code> parameter must be specified with a <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
     /// </important>
@@ -23,22 +23,22 @@ pub struct ListChangedBlocksInput {
     /// <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
     pub starting_block_index: ::std::option::Option<i32>,
 }
-impl ListChangedBlocksInput {
+impl  ListChangedBlocksInput  {
     /// <p>The ID of the first snapshot to use for the comparison.</p><important>
     /// <p>The <code>FirstSnapshotID</code> parameter must be specified with a <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
     /// </important>
-    pub fn first_snapshot_id(&self) -> ::std::option::Option<&str> {
+    pub fn first_snapshot_id(&self) -> ::std::option::Option<& str> {
         self.first_snapshot_id.as_deref()
     }
     /// <p>The ID of the second snapshot to use for the comparison.</p><important>
     /// <p>The <code>SecondSnapshotId</code> parameter must be specified with a <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
     /// </important>
-    pub fn second_snapshot_id(&self) -> ::std::option::Option<&str> {
+    pub fn second_snapshot_id(&self) -> ::std::option::Option<& str> {
         self.second_snapshot_id.as_deref()
     }
     /// <p>The token to request the next page of results.</p>
     /// <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of blocks to be returned by the request.</p>
@@ -83,8 +83,7 @@ impl ListChangedBlocksInputBuilder {
     /// <p>The <code>FirstSnapshotID</code> parameter must be specified with a <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
     /// </important>
     pub fn set_first_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.first_snapshot_id = input;
-        self
+        self.first_snapshot_id = input; self
     }
     /// <p>The ID of the first snapshot to use for the comparison.</p><important>
     /// <p>The <code>FirstSnapshotID</code> parameter must be specified with a <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
@@ -104,8 +103,7 @@ impl ListChangedBlocksInputBuilder {
     /// <p>The <code>SecondSnapshotId</code> parameter must be specified with a <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
     /// </important>
     pub fn set_second_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.second_snapshot_id = input;
-        self
+        self.second_snapshot_id = input; self
     }
     /// <p>The ID of the second snapshot to use for the comparison.</p><important>
     /// <p>The <code>SecondSnapshotId</code> parameter must be specified with a <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
@@ -122,8 +120,7 @@ impl ListChangedBlocksInputBuilder {
     /// <p>The token to request the next page of results.</p>
     /// <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to request the next page of results.</p>
     /// <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
@@ -141,8 +138,7 @@ impl ListChangedBlocksInputBuilder {
     /// <p>Even if additional blocks can be retrieved from the snapshot, the request can return less blocks than <b>MaxResults</b> or an empty array of blocks.</p>
     /// <p>To retrieve the next set of blocks from the snapshot, make another request with the returned <b>NextToken</b> value. The value of <b>NextToken</b> is <code>null</code> when there are no more blocks to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of blocks to be returned by the request.</p>
     /// <p>Even if additional blocks can be retrieved from the snapshot, the request can return less blocks than <b>MaxResults</b> or an empty array of blocks.</p>
@@ -161,8 +157,7 @@ impl ListChangedBlocksInputBuilder {
     /// <p>The list in the response will start from this block index or the next valid block index in the snapshots.</p>
     /// <p>If you specify <b>NextToken</b>, then <b>StartingBlockIndex</b> is ignored.</p>
     pub fn set_starting_block_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.starting_block_index = input;
-        self
+        self.starting_block_index = input; self
     }
     /// <p>The block index from which the comparison should start.</p>
     /// <p>The list in the response will start from this block index or the next valid block index in the snapshots.</p>
@@ -171,15 +166,21 @@ impl ListChangedBlocksInputBuilder {
         &self.starting_block_index
     }
     /// Consumes the builder and constructs a [`ListChangedBlocksInput`](crate::operation::list_changed_blocks::ListChangedBlocksInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_changed_blocks::ListChangedBlocksInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_changed_blocks::ListChangedBlocksInput {
-            first_snapshot_id: self.first_snapshot_id,
-            second_snapshot_id: self.second_snapshot_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            starting_block_index: self.starting_block_index,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_changed_blocks::ListChangedBlocksInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_changed_blocks::ListChangedBlocksInput {
+                first_snapshot_id: self.first_snapshot_id
+                ,
+                second_snapshot_id: self.second_snapshot_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                starting_block_index: self.starting_block_index
+                ,
+            }
+        )
     }
 }
+

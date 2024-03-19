@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAssetModelCompositeModelOutput {
+pub struct DeleteAssetModelCompositeModelOutput  {
     /// <p>Contains current status information for an asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and model states</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub asset_model_status: ::std::option::Option<crate::types::AssetModelStatus>,
     _request_id: Option<String>,
 }
-impl DeleteAssetModelCompositeModelOutput {
+impl  DeleteAssetModelCompositeModelOutput  {
     /// <p>Contains current status information for an asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and model states</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn asset_model_status(&self) -> ::std::option::Option<&crate::types::AssetModelStatus> {
+    pub fn asset_model_status(&self) -> ::std::option::Option<& crate::types::AssetModelStatus> {
         self.asset_model_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteAssetModelCompositeModelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteAssetModelCompositeModelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAssetModelCompositeModelOutput`](crate::operation::delete_asset_model_composite_model::DeleteAssetModelCompositeModelOutput).
     pub fn builder() -> crate::operation::delete_asset_model_composite_model::builders::DeleteAssetModelCompositeModelOutputBuilder {
@@ -41,27 +41,28 @@ impl DeleteAssetModelCompositeModelOutputBuilder {
     }
     /// <p>Contains current status information for an asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and model states</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_asset_model_status(mut self, input: ::std::option::Option<crate::types::AssetModelStatus>) -> Self {
-        self.asset_model_status = input;
-        self
+        self.asset_model_status = input; self
     }
     /// <p>Contains current status information for an asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and model states</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn get_asset_model_status(&self) -> &::std::option::Option<crate::types::AssetModelStatus> {
         &self.asset_model_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteAssetModelCompositeModelOutput`](crate::operation::delete_asset_model_composite_model::DeleteAssetModelCompositeModelOutput).
     pub fn build(self) -> crate::operation::delete_asset_model_composite_model::DeleteAssetModelCompositeModelOutput {
         crate::operation::delete_asset_model_composite_model::DeleteAssetModelCompositeModelOutput {
-            asset_model_status: self.asset_model_status,
+            asset_model_status: self.asset_model_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRegistrationAttachmentOutput {
+pub struct CreateRegistrationAttachmentOutput  {
     /// <p>The Amazon Resource Name (ARN) for the registration attachment.</p>
     pub registration_attachment_arn: ::std::string::String,
     /// <p>The unique identifier for the registration attachment.</p>
@@ -20,21 +20,19 @@ pub struct CreateRegistrationAttachmentOutput {
     /// </ul>
     pub attachment_status: crate::types::AttachmentStatus,
     /// <p>An array of tags (key and value pairs) to associate with the registration attachment.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The time when the registration attachment was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub created_timestamp: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
-impl CreateRegistrationAttachmentOutput {
+impl  CreateRegistrationAttachmentOutput  {
     /// <p>The Amazon Resource Name (ARN) for the registration attachment.</p>
-    pub fn registration_attachment_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.registration_attachment_arn.deref()
+    pub fn registration_attachment_arn(&self) -> & str {
+        use std::ops::Deref; self.registration_attachment_arn.deref()
     }
     /// <p>The unique identifier for the registration attachment.</p>
-    pub fn registration_attachment_id(&self) -> &str {
-        use std::ops::Deref;
-        self.registration_attachment_id.deref()
+    pub fn registration_attachment_id(&self) -> & str {
+        use std::ops::Deref; self.registration_attachment_id.deref()
     }
     /// <p>The status of the registration attachment.</p>
     /// <ul>
@@ -47,25 +45,26 @@ impl CreateRegistrationAttachmentOutput {
     /// <li>
     /// <p><code>DELETED</code> The attachment has been deleted..</p></li>
     /// </ul>
-    pub fn attachment_status(&self) -> &crate::types::AttachmentStatus {
+    pub fn attachment_status(&self) -> & crate::types::AttachmentStatus {
         &self.attachment_status
     }
     /// <p>An array of tags (key and value pairs) to associate with the registration attachment.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The time when the registration attachment was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn created_timestamp(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_timestamp(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_timestamp
     }
 }
 impl ::aws_types::request_id::RequestId for CreateRegistrationAttachmentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateRegistrationAttachmentOutput {
     /// Creates a new builder-style object to manufacture [`CreateRegistrationAttachmentOutput`](crate::operation::create_registration_attachment::CreateRegistrationAttachmentOutput).
     pub fn builder() -> crate::operation::create_registration_attachment::builders::CreateRegistrationAttachmentOutputBuilder {
@@ -80,7 +79,7 @@ pub struct CreateRegistrationAttachmentOutputBuilder {
     pub(crate) registration_attachment_arn: ::std::option::Option<::std::string::String>,
     pub(crate) registration_attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) attachment_status: ::std::option::Option<crate::types::AttachmentStatus>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
@@ -93,8 +92,7 @@ impl CreateRegistrationAttachmentOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the registration attachment.</p>
     pub fn set_registration_attachment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registration_attachment_arn = input;
-        self
+        self.registration_attachment_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the registration attachment.</p>
     pub fn get_registration_attachment_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +106,7 @@ impl CreateRegistrationAttachmentOutputBuilder {
     }
     /// <p>The unique identifier for the registration attachment.</p>
     pub fn set_registration_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registration_attachment_id = input;
-        self
+        self.registration_attachment_id = input; self
     }
     /// <p>The unique identifier for the registration attachment.</p>
     pub fn get_registration_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +140,7 @@ impl CreateRegistrationAttachmentOutputBuilder {
     /// <p><code>DELETED</code> The attachment has been deleted..</p></li>
     /// </ul>
     pub fn set_attachment_status(mut self, input: ::std::option::Option<crate::types::AttachmentStatus>) -> Self {
-        self.attachment_status = input;
-        self
+        self.attachment_status = input; self
     }
     /// <p>The status of the registration attachment.</p>
     /// <ul>
@@ -167,17 +163,16 @@ impl CreateRegistrationAttachmentOutputBuilder {
     /// <p>An array of tags (key and value pairs) to associate with the registration attachment.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of tags (key and value pairs) to associate with the registration attachment.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An array of tags (key and value pairs) to associate with the registration attachment.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The time when the registration attachment was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
@@ -188,61 +183,55 @@ impl CreateRegistrationAttachmentOutputBuilder {
     }
     /// <p>The time when the registration attachment was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input;
-        self
+        self.created_timestamp = input; self
     }
     /// <p>The time when the registration attachment was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateRegistrationAttachmentOutput`](crate::operation::create_registration_attachment::CreateRegistrationAttachmentOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`registration_attachment_arn`](crate::operation::create_registration_attachment::builders::CreateRegistrationAttachmentOutputBuilder::registration_attachment_arn)
     /// - [`registration_attachment_id`](crate::operation::create_registration_attachment::builders::CreateRegistrationAttachmentOutputBuilder::registration_attachment_id)
     /// - [`attachment_status`](crate::operation::create_registration_attachment::builders::CreateRegistrationAttachmentOutputBuilder::attachment_status)
     /// - [`created_timestamp`](crate::operation::create_registration_attachment::builders::CreateRegistrationAttachmentOutputBuilder::created_timestamp)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_registration_attachment::CreateRegistrationAttachmentOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_registration_attachment::CreateRegistrationAttachmentOutput {
-            registration_attachment_arn: self.registration_attachment_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "registration_attachment_arn",
-                    "registration_attachment_arn was not specified but it is required when building CreateRegistrationAttachmentOutput",
-                )
-            })?,
-            registration_attachment_id: self.registration_attachment_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "registration_attachment_id",
-                    "registration_attachment_id was not specified but it is required when building CreateRegistrationAttachmentOutput",
-                )
-            })?,
-            attachment_status: self.attachment_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attachment_status",
-                    "attachment_status was not specified but it is required when building CreateRegistrationAttachmentOutput",
-                )
-            })?,
-            tags: self.tags,
-            created_timestamp: self.created_timestamp.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_timestamp",
-                    "created_timestamp was not specified but it is required when building CreateRegistrationAttachmentOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_registration_attachment::CreateRegistrationAttachmentOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_registration_attachment::CreateRegistrationAttachmentOutput {
+                registration_attachment_arn: self.registration_attachment_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("registration_attachment_arn", "registration_attachment_arn was not specified but it is required when building CreateRegistrationAttachmentOutput")
+                    )?
+                ,
+                registration_attachment_id: self.registration_attachment_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("registration_attachment_id", "registration_attachment_id was not specified but it is required when building CreateRegistrationAttachmentOutput")
+                    )?
+                ,
+                attachment_status: self.attachment_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attachment_status", "attachment_status was not specified but it is required when building CreateRegistrationAttachmentOutput")
+                    )?
+                ,
+                tags: self.tags
+                ,
+                created_timestamp: self.created_timestamp
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_timestamp", "created_timestamp was not specified but it is required when building CreateRegistrationAttachmentOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -2,39 +2,40 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTaskInput {
+pub struct CreateTaskInput  {
     /// <p>A list of managed device IDs.</p>
-    pub targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub targets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The task to be performed. Only one task is executed on a device at a time.</p>
     pub command: ::std::option::Option<crate::types::Command>,
     /// <p>A description of the task and its targets.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>A token ensuring that the action is called only once with the specified details.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateTaskInput {
+impl  CreateTaskInput  {
     /// <p>A list of managed device IDs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
-    pub fn targets(&self) -> &[::std::string::String] {
-        self.targets.as_deref().unwrap_or_default()
+    pub fn targets(&self) -> & [::std::string::String] {
+        self.targets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The task to be performed. Only one task is executed on a device at a time.</p>
-    pub fn command(&self) -> ::std::option::Option<&crate::types::Command> {
+    pub fn command(&self) -> ::std::option::Option<& crate::types::Command> {
         self.command.as_ref()
     }
     /// <p>A description of the task and its targets.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A token ensuring that the action is called only once with the specified details.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -49,10 +50,10 @@ impl CreateTaskInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateTaskInputBuilder {
-    pub(crate) targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) targets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) command: ::std::option::Option<crate::types::Command>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateTaskInputBuilder {
@@ -63,17 +64,16 @@ impl CreateTaskInputBuilder {
     /// <p>A list of managed device IDs.</p>
     pub fn targets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.targets.unwrap_or_default();
-        v.push(input.into());
-        self.targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of managed device IDs.</p>
-    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.targets = input;
-        self
+    pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.targets = input; self
     }
     /// <p>A list of managed device IDs.</p>
-    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.targets
     }
     /// <p>The task to be performed. Only one task is executed on a device at a time.</p>
@@ -84,8 +84,7 @@ impl CreateTaskInputBuilder {
     }
     /// <p>The task to be performed. Only one task is executed on a device at a time.</p>
     pub fn set_command(mut self, input: ::std::option::Option<crate::types::Command>) -> Self {
-        self.command = input;
-        self
+        self.command = input; self
     }
     /// <p>The task to be performed. Only one task is executed on a device at a time.</p>
     pub fn get_command(&self) -> &::std::option::Option<crate::types::Command> {
@@ -98,8 +97,7 @@ impl CreateTaskInputBuilder {
     }
     /// <p>A description of the task and its targets.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the task and its targets.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,17 +110,16 @@ impl CreateTaskInputBuilder {
     /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>A token ensuring that the action is called only once with the specified details.</p>
@@ -132,8 +129,7 @@ impl CreateTaskInputBuilder {
     }
     /// <p>A token ensuring that the action is called only once with the specified details.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A token ensuring that the action is called only once with the specified details.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,12 +137,20 @@ impl CreateTaskInputBuilder {
     }
     /// Consumes the builder and constructs a [`CreateTaskInput`](crate::operation::create_task::CreateTaskInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_task::CreateTaskInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_task::CreateTaskInput {
-            targets: self.targets,
-            command: self.command,
-            description: self.description,
-            tags: self.tags,
-            client_token: self.client_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_task::CreateTaskInput {
+                targets: self.targets
+                ,
+                command: self.command
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

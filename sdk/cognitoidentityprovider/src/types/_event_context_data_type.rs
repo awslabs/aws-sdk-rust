@@ -3,7 +3,7 @@
 /// <p>Specifies the user context data captured at the time of an event request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EventContextDataType {
+pub struct EventContextDataType  {
     /// <p>The source IP address of your user's device.</p>
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The user's device name.</p>
@@ -15,25 +15,25 @@ pub struct EventContextDataType {
     /// <p>The user's country.</p>
     pub country: ::std::option::Option<::std::string::String>,
 }
-impl EventContextDataType {
+impl  EventContextDataType  {
     /// <p>The source IP address of your user's device.</p>
-    pub fn ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn ip_address(&self) -> ::std::option::Option<& str> {
         self.ip_address.as_deref()
     }
     /// <p>The user's device name.</p>
-    pub fn device_name(&self) -> ::std::option::Option<&str> {
+    pub fn device_name(&self) -> ::std::option::Option<& str> {
         self.device_name.as_deref()
     }
     /// <p>The user's time zone.</p>
-    pub fn timezone(&self) -> ::std::option::Option<&str> {
+    pub fn timezone(&self) -> ::std::option::Option<& str> {
         self.timezone.as_deref()
     }
     /// <p>The user's city.</p>
-    pub fn city(&self) -> ::std::option::Option<&str> {
+    pub fn city(&self) -> ::std::option::Option<& str> {
         self.city.as_deref()
     }
     /// <p>The user's country.</p>
-    pub fn country(&self) -> ::std::option::Option<&str> {
+    pub fn country(&self) -> ::std::option::Option<& str> {
         self.country.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl EventContextDataTypeBuilder {
     }
     /// <p>The source IP address of your user's device.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
     }
     /// <p>The source IP address of your user's device.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl EventContextDataTypeBuilder {
     }
     /// <p>The user's device name.</p>
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_name = input;
-        self
+        self.device_name = input; self
     }
     /// <p>The user's device name.</p>
     pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl EventContextDataTypeBuilder {
     }
     /// <p>The user's time zone.</p>
     pub fn set_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.timezone = input;
-        self
+        self.timezone = input; self
     }
     /// <p>The user's time zone.</p>
     pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl EventContextDataTypeBuilder {
     }
     /// <p>The user's city.</p>
     pub fn set_city(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.city = input;
-        self
+        self.city = input; self
     }
     /// <p>The user's city.</p>
     pub fn get_city(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl EventContextDataTypeBuilder {
     }
     /// <p>The user's country.</p>
     pub fn set_country(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.country = input;
-        self
+        self.country = input; self
     }
     /// <p>The user's country.</p>
     pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,11 +123,17 @@ impl EventContextDataTypeBuilder {
     /// Consumes the builder and constructs a [`EventContextDataType`](crate::types::EventContextDataType).
     pub fn build(self) -> crate::types::EventContextDataType {
         crate::types::EventContextDataType {
-            ip_address: self.ip_address,
-            device_name: self.device_name,
-            timezone: self.timezone,
-            city: self.city,
-            country: self.country,
+            ip_address: self.ip_address
+            ,
+            device_name: self.device_name
+            ,
+            timezone: self.timezone
+            ,
+            city: self.city
+            ,
+            country: self.country
+            ,
         }
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let clusterstatus = unimplemented!();
 /// match clusterstatus {
@@ -35,16 +35,14 @@
 /// Specifically, when `clusterstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ClusterStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ClusterStatus {
     #[allow(missing_docs)] // documentation missing in model
     Creating,
@@ -62,76 +60,77 @@ pub enum ClusterStatus {
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ClusterStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Creating" => ClusterStatus::Creating,
-            "Deleting" => ClusterStatus::Deleting,
-            "Failed" => ClusterStatus::Failed,
-            "InService" => ClusterStatus::Inservice,
-            "RollingBack" => ClusterStatus::Rollingback,
-            "SystemUpdating" => ClusterStatus::Systemupdating,
-            "Updating" => ClusterStatus::Updating,
-            other => ClusterStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "Creating" => ClusterStatus::Creating,
+"Deleting" => ClusterStatus::Deleting,
+"Failed" => ClusterStatus::Failed,
+"InService" => ClusterStatus::Inservice,
+"RollingBack" => ClusterStatus::Rollingback,
+"SystemUpdating" => ClusterStatus::Systemupdating,
+"Updating" => ClusterStatus::Updating,
+other => ClusterStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ClusterStatus {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ClusterStatus::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ClusterStatus::from(s))
+                    }
+                }
 impl ClusterStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ClusterStatus::Creating => "Creating",
-            ClusterStatus::Deleting => "Deleting",
-            ClusterStatus::Failed => "Failed",
-            ClusterStatus::Inservice => "InService",
-            ClusterStatus::Rollingback => "RollingBack",
-            ClusterStatus::Systemupdating => "SystemUpdating",
-            ClusterStatus::Updating => "Updating",
-            ClusterStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["Creating", "Deleting", "Failed", "InService", "RollingBack", "SystemUpdating", "Updating"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ClusterStatus::Creating => "Creating",
+    ClusterStatus::Deleting => "Deleting",
+    ClusterStatus::Failed => "Failed",
+    ClusterStatus::Inservice => "InService",
+    ClusterStatus::Rollingback => "RollingBack",
+    ClusterStatus::Systemupdating => "SystemUpdating",
+    ClusterStatus::Updating => "Updating",
+    ClusterStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Creating", "Deleting", "Failed", "InService", "RollingBack", "SystemUpdating", "Updating"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ClusterStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ClusterStatus {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ClusterStatus {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ClusterStatus::Creating => write!(f, "Creating"),
-            ClusterStatus::Deleting => write!(f, "Deleting"),
-            ClusterStatus::Failed => write!(f, "Failed"),
-            ClusterStatus::Inservice => write!(f, "InService"),
-            ClusterStatus::Rollingback => write!(f, "RollingBack"),
-            ClusterStatus::Systemupdating => write!(f, "SystemUpdating"),
-            ClusterStatus::Updating => write!(f, "Updating"),
-            ClusterStatus::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ClusterStatus::Creating => write!(f, "Creating"),
+ClusterStatus::Deleting => write!(f, "Deleting"),
+ClusterStatus::Failed => write!(f, "Failed"),
+ClusterStatus::Inservice => write!(f, "InService"),
+ClusterStatus::Rollingback => write!(f, "RollingBack"),
+ClusterStatus::Systemupdating => write!(f, "SystemUpdating"),
+ClusterStatus::Updating => write!(f, "Updating"),
+ClusterStatus::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

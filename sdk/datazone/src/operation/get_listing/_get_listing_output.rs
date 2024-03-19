@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetListingOutput {
+pub struct GetListingOutput  {
     /// <p></p>
     pub domain_id: ::std::string::String,
     /// <p></p>
@@ -27,56 +27,53 @@ pub struct GetListingOutput {
     pub status: ::std::option::Option<crate::types::ListingStatus>,
     _request_id: Option<String>,
 }
-impl GetListingOutput {
+impl  GetListingOutput  {
     /// <p></p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> & str {
+        use std::ops::Deref; self.domain_id.deref()
     }
     /// <p></p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p></p>
-    pub fn listing_revision(&self) -> &str {
-        use std::ops::Deref;
-        self.listing_revision.deref()
+    pub fn listing_revision(&self) -> & str {
+        use std::ops::Deref; self.listing_revision.deref()
     }
     /// <p></p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp of when the listing was updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The Amazon DataZone user who created the listing.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&str> {
+    pub fn created_by(&self) -> ::std::option::Option<& str> {
         self.created_by.as_deref()
     }
     /// <p>The Amazon DataZone user who updated the listing.</p>
-    pub fn updated_by(&self) -> ::std::option::Option<&str> {
+    pub fn updated_by(&self) -> ::std::option::Option<& str> {
         self.updated_by.as_deref()
     }
     /// <p></p>
-    pub fn item(&self) -> ::std::option::Option<&crate::types::ListingItem> {
+    pub fn item(&self) -> ::std::option::Option<& crate::types::ListingItem> {
         self.item.as_ref()
     }
     /// <p></p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p></p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p></p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ListingStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ListingStatus> {
         self.status.as_ref()
     }
 }
-impl ::std::fmt::Debug for GetListingOutput {
+impl  ::std::fmt::Debug for GetListingOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetListingOutput");
         formatter.field("domain_id", &self.domain_id);
@@ -95,10 +92,10 @@ impl ::std::fmt::Debug for GetListingOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetListingOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetListingOutput {
     /// Creates a new builder-style object to manufacture [`GetListingOutput`](crate::operation::get_listing::GetListingOutput).
     pub fn builder() -> crate::operation::get_listing::builders::GetListingOutputBuilder {
@@ -132,8 +129,7 @@ impl GetListingOutputBuilder {
     }
     /// <p></p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p></p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +143,7 @@ impl GetListingOutputBuilder {
     }
     /// <p></p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p></p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,8 +157,7 @@ impl GetListingOutputBuilder {
     }
     /// <p></p>
     pub fn set_listing_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.listing_revision = input;
-        self
+        self.listing_revision = input; self
     }
     /// <p></p>
     pub fn get_listing_revision(&self) -> &::std::option::Option<::std::string::String> {
@@ -176,8 +170,7 @@ impl GetListingOutputBuilder {
     }
     /// <p></p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p></p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -190,8 +183,7 @@ impl GetListingOutputBuilder {
     }
     /// <p>The timestamp of when the listing was updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The timestamp of when the listing was updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -204,8 +196,7 @@ impl GetListingOutputBuilder {
     }
     /// <p>The Amazon DataZone user who created the listing.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>The Amazon DataZone user who created the listing.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -218,8 +209,7 @@ impl GetListingOutputBuilder {
     }
     /// <p>The Amazon DataZone user who updated the listing.</p>
     pub fn set_updated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.updated_by = input;
-        self
+        self.updated_by = input; self
     }
     /// <p>The Amazon DataZone user who updated the listing.</p>
     pub fn get_updated_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -232,8 +222,7 @@ impl GetListingOutputBuilder {
     }
     /// <p></p>
     pub fn set_item(mut self, input: ::std::option::Option<crate::types::ListingItem>) -> Self {
-        self.item = input;
-        self
+        self.item = input; self
     }
     /// <p></p>
     pub fn get_item(&self) -> &::std::option::Option<crate::types::ListingItem> {
@@ -246,8 +235,7 @@ impl GetListingOutputBuilder {
     }
     /// <p></p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p></p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -260,8 +248,7 @@ impl GetListingOutputBuilder {
     }
     /// <p></p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p></p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -274,57 +261,63 @@ impl GetListingOutputBuilder {
     }
     /// <p></p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ListingStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p></p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ListingStatus> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetListingOutput`](crate::operation::get_listing::GetListingOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`domain_id`](crate::operation::get_listing::builders::GetListingOutputBuilder::domain_id)
     /// - [`id`](crate::operation::get_listing::builders::GetListingOutputBuilder::id)
     /// - [`listing_revision`](crate::operation::get_listing::builders::GetListingOutputBuilder::listing_revision)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_listing::GetListingOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_listing::GetListingOutput {
-            domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain_id",
-                    "domain_id was not specified but it is required when building GetListingOutput",
-                )
-            })?,
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building GetListingOutput",
-                )
-            })?,
-            listing_revision: self.listing_revision.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "listing_revision",
-                    "listing_revision was not specified but it is required when building GetListingOutput",
-                )
-            })?,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-            created_by: self.created_by,
-            updated_by: self.updated_by,
-            item: self.item,
-            name: self.name,
-            description: self.description,
-            status: self.status,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_listing::GetListingOutput {
+                domain_id: self.domain_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain_id", "domain_id was not specified but it is required when building GetListingOutput")
+                    )?
+                ,
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building GetListingOutput")
+                    )?
+                ,
+                listing_revision: self.listing_revision
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("listing_revision", "listing_revision was not specified but it is required when building GetListingOutput")
+                    )?
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
+                created_by: self.created_by
+                ,
+                updated_by: self.updated_by
+                ,
+                item: self.item
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                status: self.status
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for GetListingOutputBuilder {
@@ -345,3 +338,4 @@ impl ::std::fmt::Debug for GetListingOutputBuilder {
         formatter.finish()
     }
 }
+

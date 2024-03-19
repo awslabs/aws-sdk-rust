@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDataQualityRulesetInput {
+pub struct GetDataQualityRulesetInput  {
     /// <p>The name of the ruleset.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl GetDataQualityRulesetInput {
+impl  GetDataQualityRulesetInput  {
     /// <p>The name of the ruleset.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl GetDataQualityRulesetInputBuilder {
     }
     /// <p>The name of the ruleset.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the ruleset.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetDataQualityRulesetInput`](crate::operation::get_data_quality_ruleset::GetDataQualityRulesetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_data_quality_ruleset::GetDataQualityRulesetInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_data_quality_ruleset::GetDataQualityRulesetInput { name: self.name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_data_quality_ruleset::GetDataQualityRulesetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_data_quality_ruleset::GetDataQualityRulesetInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

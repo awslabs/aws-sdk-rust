@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSchemaAsJsonInput {
+pub struct GetSchemaAsJsonInput  {
     /// <p>The ARN of the schema to retrieve.</p>
     pub schema_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetSchemaAsJsonInput {
+impl  GetSchemaAsJsonInput  {
     /// <p>The ARN of the schema to retrieve.</p>
-    pub fn schema_arn(&self) -> ::std::option::Option<&str> {
+    pub fn schema_arn(&self) -> ::std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl GetSchemaAsJsonInputBuilder {
     }
     /// <p>The ARN of the schema to retrieve.</p>
     pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_arn = input;
-        self
+        self.schema_arn = input; self
     }
     /// <p>The ARN of the schema to retrieve.</p>
     pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.schema_arn
     }
     /// Consumes the builder and constructs a [`GetSchemaAsJsonInput`](crate::operation::get_schema_as_json::GetSchemaAsJsonInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_schema_as_json::GetSchemaAsJsonInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_schema_as_json::GetSchemaAsJsonInput { schema_arn: self.schema_arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_schema_as_json::GetSchemaAsJsonInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_schema_as_json::GetSchemaAsJsonInput {
+                schema_arn: self.schema_arn
+                ,
+            }
+        )
     }
 }
+

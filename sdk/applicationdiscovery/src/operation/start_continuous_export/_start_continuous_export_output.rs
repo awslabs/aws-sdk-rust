@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartContinuousExportOutput {
+pub struct StartContinuousExportOutput  {
     /// <p>The unique ID assigned to this export.</p>
     pub export_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the s3 bucket where the export data parquet files are stored.</p>
@@ -16,24 +16,24 @@ pub struct StartContinuousExportOutput {
     /// <li>
     /// <p><code>databaseName</code> - the name of the Glue database used to store the schema.</p></li>
     /// </ul>
-    pub schema_storage_config: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub schema_storage_config: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl StartContinuousExportOutput {
+impl  StartContinuousExportOutput  {
     /// <p>The unique ID assigned to this export.</p>
-    pub fn export_id(&self) -> ::std::option::Option<&str> {
+    pub fn export_id(&self) -> ::std::option::Option<& str> {
         self.export_id.as_deref()
     }
     /// <p>The name of the s3 bucket where the export data parquet files are stored.</p>
-    pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> ::std::option::Option<& str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The timestamp representing when the continuous export was started.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The type of data collector used to gather this data (currently only offered for AGENT).</p>
-    pub fn data_source(&self) -> ::std::option::Option<&crate::types::DataSource> {
+    pub fn data_source(&self) -> ::std::option::Option<& crate::types::DataSource> {
         self.data_source.as_ref()
     }
     /// <p>A dictionary which describes how the data is stored.</p>
@@ -41,15 +41,15 @@ impl StartContinuousExportOutput {
     /// <li>
     /// <p><code>databaseName</code> - the name of the Glue database used to store the schema.</p></li>
     /// </ul>
-    pub fn schema_storage_config(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn schema_storage_config(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.schema_storage_config.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartContinuousExportOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartContinuousExportOutput {
     /// Creates a new builder-style object to manufacture [`StartContinuousExportOutput`](crate::operation::start_continuous_export::StartContinuousExportOutput).
     pub fn builder() -> crate::operation::start_continuous_export::builders::StartContinuousExportOutputBuilder {
@@ -65,7 +65,7 @@ pub struct StartContinuousExportOutputBuilder {
     pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) data_source: ::std::option::Option<crate::types::DataSource>,
-    pub(crate) schema_storage_config: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) schema_storage_config: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl StartContinuousExportOutputBuilder {
@@ -76,8 +76,7 @@ impl StartContinuousExportOutputBuilder {
     }
     /// <p>The unique ID assigned to this export.</p>
     pub fn set_export_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.export_id = input;
-        self
+        self.export_id = input; self
     }
     /// <p>The unique ID assigned to this export.</p>
     pub fn get_export_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl StartContinuousExportOutputBuilder {
     }
     /// <p>The name of the s3 bucket where the export data parquet files are stored.</p>
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket = input;
-        self
+        self.s3_bucket = input; self
     }
     /// <p>The name of the s3 bucket where the export data parquet files are stored.</p>
     pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl StartContinuousExportOutputBuilder {
     }
     /// <p>The timestamp representing when the continuous export was started.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The timestamp representing when the continuous export was started.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -118,8 +115,7 @@ impl StartContinuousExportOutputBuilder {
     }
     /// <p>The type of data collector used to gather this data (currently only offered for AGENT).</p>
     pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::DataSource>) -> Self {
-        self.data_source = input;
-        self
+        self.data_source = input; self
     }
     /// <p>The type of data collector used to gather this data (currently only offered for AGENT).</p>
     pub fn get_data_source(&self) -> &::std::option::Option<crate::types::DataSource> {
@@ -134,54 +130,52 @@ impl StartContinuousExportOutputBuilder {
     /// <li>
     /// <p><code>databaseName</code> - the name of the Glue database used to store the schema.</p></li>
     /// </ul>
-    pub fn schema_storage_config(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_storage_config(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.schema_storage_config.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.schema_storage_config = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.schema_storage_config = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A dictionary which describes how the data is stored.</p>
     /// <ul>
     /// <li>
     /// <p><code>databaseName</code> - the name of the Glue database used to store the schema.</p></li>
     /// </ul>
-    pub fn set_schema_storage_config(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.schema_storage_config = input;
-        self
+    pub fn set_schema_storage_config(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.schema_storage_config = input; self
     }
     /// <p>A dictionary which describes how the data is stored.</p>
     /// <ul>
     /// <li>
     /// <p><code>databaseName</code> - the name of the Glue database used to store the schema.</p></li>
     /// </ul>
-    pub fn get_schema_storage_config(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_schema_storage_config(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.schema_storage_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartContinuousExportOutput`](crate::operation::start_continuous_export::StartContinuousExportOutput).
     pub fn build(self) -> crate::operation::start_continuous_export::StartContinuousExportOutput {
         crate::operation::start_continuous_export::StartContinuousExportOutput {
-            export_id: self.export_id,
-            s3_bucket: self.s3_bucket,
-            start_time: self.start_time,
-            data_source: self.data_source,
-            schema_storage_config: self.schema_storage_config,
+            export_id: self.export_id
+            ,
+            s3_bucket: self.s3_bucket
+            ,
+            start_time: self.start_time
+            ,
+            data_source: self.data_source
+            ,
+            schema_storage_config: self.schema_storage_config
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

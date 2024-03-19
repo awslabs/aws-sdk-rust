@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopDevEnvironmentSessionOutput {
+pub struct StopDevEnvironmentSessionOutput  {
     /// <p>The name of the space.</p>
     pub space_name: ::std::string::String,
     /// <p>The name of the project in the space.</p>
@@ -13,33 +13,29 @@ pub struct StopDevEnvironmentSessionOutput {
     pub session_id: ::std::string::String,
     _request_id: Option<String>,
 }
-impl StopDevEnvironmentSessionOutput {
+impl  StopDevEnvironmentSessionOutput  {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> &str {
-        use std::ops::Deref;
-        self.space_name.deref()
+    pub fn space_name(&self) -> & str {
+        use std::ops::Deref; self.space_name.deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> &str {
-        use std::ops::Deref;
-        self.project_name.deref()
+    pub fn project_name(&self) -> & str {
+        use std::ops::Deref; self.project_name.deref()
     }
     /// <p>The system-generated unique ID of the Dev Environment.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The system-generated unique ID of the Dev Environment session.</p>
-    pub fn session_id(&self) -> &str {
-        use std::ops::Deref;
-        self.session_id.deref()
+    pub fn session_id(&self) -> & str {
+        use std::ops::Deref; self.session_id.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StopDevEnvironmentSessionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StopDevEnvironmentSessionOutput {
     /// Creates a new builder-style object to manufacture [`StopDevEnvironmentSessionOutput`](crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionOutput).
     pub fn builder() -> crate::operation::stop_dev_environment_session::builders::StopDevEnvironmentSessionOutputBuilder {
@@ -66,8 +62,7 @@ impl StopDevEnvironmentSessionOutputBuilder {
     }
     /// <p>The name of the space.</p>
     pub fn set_space_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.space_name = input;
-        self
+        self.space_name = input; self
     }
     /// <p>The name of the space.</p>
     pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +76,7 @@ impl StopDevEnvironmentSessionOutputBuilder {
     }
     /// <p>The name of the project in the space.</p>
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
     }
     /// <p>The name of the project in the space.</p>
     pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +90,7 @@ impl StopDevEnvironmentSessionOutputBuilder {
     }
     /// <p>The system-generated unique ID of the Dev Environment.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The system-generated unique ID of the Dev Environment.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,60 +104,53 @@ impl StopDevEnvironmentSessionOutputBuilder {
     }
     /// <p>The system-generated unique ID of the Dev Environment session.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>The system-generated unique ID of the Dev Environment session.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StopDevEnvironmentSessionOutput`](crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`space_name`](crate::operation::stop_dev_environment_session::builders::StopDevEnvironmentSessionOutputBuilder::space_name)
     /// - [`project_name`](crate::operation::stop_dev_environment_session::builders::StopDevEnvironmentSessionOutputBuilder::project_name)
     /// - [`id`](crate::operation::stop_dev_environment_session::builders::StopDevEnvironmentSessionOutputBuilder::id)
     /// - [`session_id`](crate::operation::stop_dev_environment_session::builders::StopDevEnvironmentSessionOutputBuilder::session_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionOutput {
-            space_name: self.space_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "space_name",
-                    "space_name was not specified but it is required when building StopDevEnvironmentSessionOutput",
-                )
-            })?,
-            project_name: self.project_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "project_name",
-                    "project_name was not specified but it is required when building StopDevEnvironmentSessionOutput",
-                )
-            })?,
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building StopDevEnvironmentSessionOutput",
-                )
-            })?,
-            session_id: self.session_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "session_id",
-                    "session_id was not specified but it is required when building StopDevEnvironmentSessionOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionOutput {
+                space_name: self.space_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("space_name", "space_name was not specified but it is required when building StopDevEnvironmentSessionOutput")
+                    )?
+                ,
+                project_name: self.project_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("project_name", "project_name was not specified but it is required when building StopDevEnvironmentSessionOutput")
+                    )?
+                ,
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building StopDevEnvironmentSessionOutput")
+                    )?
+                ,
+                session_id: self.session_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("session_id", "session_id was not specified but it is required when building StopDevEnvironmentSessionOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

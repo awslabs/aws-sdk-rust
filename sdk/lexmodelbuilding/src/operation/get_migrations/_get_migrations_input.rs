@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMigrationsInput {
+pub struct GetMigrationsInput  {
     /// <p>The field to sort the list of migrations by. You can sort by the Amazon Lex V1 bot name or the date and time that the migration was started.</p>
     pub sort_by_attribute: ::std::option::Option<crate::types::MigrationSortAttribute>,
     /// <p>The order so sort the list.</p>
@@ -16,21 +16,21 @@ pub struct GetMigrationsInput {
     /// <p>A pagination token that fetches the next page of migrations. If the response to this operation is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of migrations, specify the pagination token in the request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl GetMigrationsInput {
+impl  GetMigrationsInput  {
     /// <p>The field to sort the list of migrations by. You can sort by the Amazon Lex V1 bot name or the date and time that the migration was started.</p>
-    pub fn sort_by_attribute(&self) -> ::std::option::Option<&crate::types::MigrationSortAttribute> {
+    pub fn sort_by_attribute(&self) -> ::std::option::Option<& crate::types::MigrationSortAttribute> {
         self.sort_by_attribute.as_ref()
     }
     /// <p>The order so sort the list.</p>
-    pub fn sort_by_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_by_order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort_by_order.as_ref()
     }
     /// <p>Filters the list to contain only bots whose name contains the specified string. The string is matched anywhere in bot name.</p>
-    pub fn v1_bot_name_contains(&self) -> ::std::option::Option<&str> {
+    pub fn v1_bot_name_contains(&self) -> ::std::option::Option<& str> {
         self.v1_bot_name_contains.as_deref()
     }
     /// <p>Filters the list to contain only migrations in the specified state.</p>
-    pub fn migration_status_equals(&self) -> ::std::option::Option<&crate::types::MigrationStatus> {
+    pub fn migration_status_equals(&self) -> ::std::option::Option<& crate::types::MigrationStatus> {
         self.migration_status_equals.as_ref()
     }
     /// <p>The maximum number of migrations to return in the response. The default is 10.</p>
@@ -38,7 +38,7 @@ impl GetMigrationsInput {
         self.max_results
     }
     /// <p>A pagination token that fetches the next page of migrations. If the response to this operation is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of migrations, specify the pagination token in the request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -68,8 +68,7 @@ impl GetMigrationsInputBuilder {
     }
     /// <p>The field to sort the list of migrations by. You can sort by the Amazon Lex V1 bot name or the date and time that the migration was started.</p>
     pub fn set_sort_by_attribute(mut self, input: ::std::option::Option<crate::types::MigrationSortAttribute>) -> Self {
-        self.sort_by_attribute = input;
-        self
+        self.sort_by_attribute = input; self
     }
     /// <p>The field to sort the list of migrations by. You can sort by the Amazon Lex V1 bot name or the date and time that the migration was started.</p>
     pub fn get_sort_by_attribute(&self) -> &::std::option::Option<crate::types::MigrationSortAttribute> {
@@ -82,8 +81,7 @@ impl GetMigrationsInputBuilder {
     }
     /// <p>The order so sort the list.</p>
     pub fn set_sort_by_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_by_order = input;
-        self
+        self.sort_by_order = input; self
     }
     /// <p>The order so sort the list.</p>
     pub fn get_sort_by_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -96,8 +94,7 @@ impl GetMigrationsInputBuilder {
     }
     /// <p>Filters the list to contain only bots whose name contains the specified string. The string is matched anywhere in bot name.</p>
     pub fn set_v1_bot_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.v1_bot_name_contains = input;
-        self
+        self.v1_bot_name_contains = input; self
     }
     /// <p>Filters the list to contain only bots whose name contains the specified string. The string is matched anywhere in bot name.</p>
     pub fn get_v1_bot_name_contains(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +107,7 @@ impl GetMigrationsInputBuilder {
     }
     /// <p>Filters the list to contain only migrations in the specified state.</p>
     pub fn set_migration_status_equals(mut self, input: ::std::option::Option<crate::types::MigrationStatus>) -> Self {
-        self.migration_status_equals = input;
-        self
+        self.migration_status_equals = input; self
     }
     /// <p>Filters the list to contain only migrations in the specified state.</p>
     pub fn get_migration_status_equals(&self) -> &::std::option::Option<crate::types::MigrationStatus> {
@@ -124,8 +120,7 @@ impl GetMigrationsInputBuilder {
     }
     /// <p>The maximum number of migrations to return in the response. The default is 10.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of migrations to return in the response. The default is 10.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -138,24 +133,30 @@ impl GetMigrationsInputBuilder {
     }
     /// <p>A pagination token that fetches the next page of migrations. If the response to this operation is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of migrations, specify the pagination token in the request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token that fetches the next page of migrations. If the response to this operation is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of migrations, specify the pagination token in the request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetMigrationsInput`](crate::operation::get_migrations::GetMigrationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_migrations::GetMigrationsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_migrations::GetMigrationsInput {
-            sort_by_attribute: self.sort_by_attribute,
-            sort_by_order: self.sort_by_order,
-            v1_bot_name_contains: self.v1_bot_name_contains,
-            migration_status_equals: self.migration_status_equals,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_migrations::GetMigrationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_migrations::GetMigrationsInput {
+                sort_by_attribute: self.sort_by_attribute
+                ,
+                sort_by_order: self.sort_by_order
+                ,
+                v1_bot_name_contains: self.v1_bot_name_contains
+                ,
+                migration_status_equals: self.migration_status_equals
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

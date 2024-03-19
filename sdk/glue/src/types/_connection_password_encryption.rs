@@ -5,7 +5,7 @@
 /// <p>This encryption requires that you set KMS key permissions to enable or restrict access on the password key according to your security requirements. For example, you might want only administrators to have decrypt permission on the password key.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConnectionPasswordEncryption {
+pub struct ConnectionPasswordEncryption  {
     /// <p>When the <code>ReturnConnectionPasswordEncrypted</code> flag is set to "true", passwords remain encrypted in the responses of <code>GetConnection</code> and <code>GetConnections</code>. This encryption takes effect independently from catalog encryption.</p>
     pub return_connection_password_encrypted: bool,
     /// <p>An KMS key that is used to encrypt the connection password.</p>
@@ -13,7 +13,7 @@ pub struct ConnectionPasswordEncryption {
     /// <p>You can set the decrypt permission to enable or restrict access on the password key according to your security requirements.</p>
     pub aws_kms_key_id: ::std::option::Option<::std::string::String>,
 }
-impl ConnectionPasswordEncryption {
+impl  ConnectionPasswordEncryption  {
     /// <p>When the <code>ReturnConnectionPasswordEncrypted</code> flag is set to "true", passwords remain encrypted in the responses of <code>GetConnection</code> and <code>GetConnections</code>. This encryption takes effect independently from catalog encryption.</p>
     pub fn return_connection_password_encrypted(&self) -> bool {
         self.return_connection_password_encrypted
@@ -21,7 +21,7 @@ impl ConnectionPasswordEncryption {
     /// <p>An KMS key that is used to encrypt the connection password.</p>
     /// <p>If connection password protection is enabled, the caller of <code>CreateConnection</code> and <code>UpdateConnection</code> needs at least <code>kms:Encrypt</code> permission on the specified KMS key, to encrypt passwords before storing them in the Data Catalog.</p>
     /// <p>You can set the decrypt permission to enable or restrict access on the password key according to your security requirements.</p>
-    pub fn aws_kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_kms_key_id(&self) -> ::std::option::Option<& str> {
         self.aws_kms_key_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ConnectionPasswordEncryptionBuilder {
     }
     /// <p>When the <code>ReturnConnectionPasswordEncrypted</code> flag is set to "true", passwords remain encrypted in the responses of <code>GetConnection</code> and <code>GetConnections</code>. This encryption takes effect independently from catalog encryption.</p>
     pub fn set_return_connection_password_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.return_connection_password_encrypted = input;
-        self
+        self.return_connection_password_encrypted = input; self
     }
     /// <p>When the <code>ReturnConnectionPasswordEncrypted</code> flag is set to "true", passwords remain encrypted in the responses of <code>GetConnection</code> and <code>GetConnections</code>. This encryption takes effect independently from catalog encryption.</p>
     pub fn get_return_connection_password_encrypted(&self) -> &::std::option::Option<bool> {
@@ -66,8 +65,7 @@ impl ConnectionPasswordEncryptionBuilder {
     /// <p>If connection password protection is enabled, the caller of <code>CreateConnection</code> and <code>UpdateConnection</code> needs at least <code>kms:Encrypt</code> permission on the specified KMS key, to encrypt passwords before storing them in the Data Catalog.</p>
     /// <p>You can set the decrypt permission to enable or restrict access on the password key according to your security requirements.</p>
     pub fn set_aws_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_kms_key_id = input;
-        self
+        self.aws_kms_key_id = input; self
     }
     /// <p>An KMS key that is used to encrypt the connection password.</p>
     /// <p>If connection password protection is enabled, the caller of <code>CreateConnection</code> and <code>UpdateConnection</code> needs at least <code>kms:Encrypt</code> permission on the specified KMS key, to encrypt passwords before storing them in the Data Catalog.</p>
@@ -78,8 +76,12 @@ impl ConnectionPasswordEncryptionBuilder {
     /// Consumes the builder and constructs a [`ConnectionPasswordEncryption`](crate::types::ConnectionPasswordEncryption).
     pub fn build(self) -> crate::types::ConnectionPasswordEncryption {
         crate::types::ConnectionPasswordEncryption {
-            return_connection_password_encrypted: self.return_connection_password_encrypted.unwrap_or_default(),
-            aws_kms_key_id: self.aws_kms_key_id,
+            return_connection_password_encrypted: self.return_connection_password_encrypted
+                .unwrap_or_default()
+            ,
+            aws_kms_key_id: self.aws_kms_key_id
+            ,
         }
     }
 }
+

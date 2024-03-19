@@ -5,112 +5,96 @@ pub use crate::operation::put_lifecycle_event_hook_execution_status::_put_lifecy
 
 impl PutLifecycleEventHookExecutionStatusInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.put_lifecycle_event_hook_execution_status();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.put_lifecycle_event_hook_execution_status();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `PutLifecycleEventHookExecutionStatus`.
-///
+/// 
 /// <p>Sets the result of a Lambda validation function. The function validates lifecycle hooks during a deployment that uses the Lambda or Amazon ECS compute platform. For Lambda deployments, the available lifecycle hooks are <code>BeforeAllowTraffic</code> and <code>AfterAllowTraffic</code>. For Amazon ECS deployments, the available lifecycle hooks are <code>BeforeInstall</code>, <code>AfterInstall</code>, <code>AfterAllowTestTraffic</code>, <code>BeforeAllowTraffic</code>, and <code>AfterAllowTraffic</code>. Lambda validation functions return <code>Succeeded</code> or <code>Failed</code>. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-lambda">AppSpec 'hooks' Section for an Lambda Deployment </a> and <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-ecs">AppSpec 'hooks' Section for an Amazon ECS Deployment</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutLifecycleEventHookExecutionStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_lifecycle_event_hook_execution_status::builders::PutLifecycleEventHookExecutionStatusInputBuilder,
+                    inner: crate::operation::put_lifecycle_event_hook_execution_status::builders::PutLifecycleEventHookExecutionStatusInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusOutput,
-        crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusError,
-    > for PutLifecycleEventHookExecutionStatusFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusOutput,
-            crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusOutput,
+                    crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusError,
+                > for PutLifecycleEventHookExecutionStatusFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusOutput,
+                        crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl PutLifecycleEventHookExecutionStatusFluentBuilder {
     /// Creates a new `PutLifecycleEventHookExecutionStatus`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
     /// Access the PutLifecycleEventHookExecutionStatus as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::put_lifecycle_event_hook_execution_status::builders::PutLifecycleEventHookExecutionStatusInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::put_lifecycle_event_hook_execution_status::builders::PutLifecycleEventHookExecutionStatusInputBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins =
-            crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatus::operation_runtime_plugins(
-                self.handle.runtime_plugins.clone(),
-                &self.handle.conf,
-                self.config_override,
-            );
-        crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatus::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusOutput,
-        crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatus::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatus::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusOutput, crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The unique ID of a deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event.</p>
     pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_id(input.into());
@@ -154,3 +138,4 @@ impl PutLifecycleEventHookExecutionStatusFluentBuilder {
         self.inner.get_status()
     }
 }
+

@@ -3,28 +3,26 @@
 /// <p>Contains the specifications for the filters to use for your request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DimensionValues {
+pub struct DimensionValues  {
     /// <p>The name of the dimension that you want to filter on.</p>
     pub key: crate::types::Dimension,
     /// <p>The metadata values you can specify to filter upon, so that the results all match at least one of the specified values.</p>
-    pub values: ::std::vec::Vec<::std::string::String>,
+    pub values: ::std::vec::Vec::<::std::string::String>,
     /// <p>The match options that you can use to filter your results. You can specify only one of these values in the array.</p>
-    pub match_options: ::std::vec::Vec<crate::types::MatchOption>,
+    pub match_options: ::std::vec::Vec::<crate::types::MatchOption>,
 }
-impl DimensionValues {
+impl  DimensionValues  {
     /// <p>The name of the dimension that you want to filter on.</p>
-    pub fn key(&self) -> &crate::types::Dimension {
+    pub fn key(&self) -> & crate::types::Dimension {
         &self.key
     }
     /// <p>The metadata values you can specify to filter upon, so that the results all match at least one of the specified values.</p>
-    pub fn values(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.values.deref()
+    pub fn values(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.values.deref()
     }
     /// <p>The match options that you can use to filter your results. You can specify only one of these values in the array.</p>
-    pub fn match_options(&self) -> &[crate::types::MatchOption] {
-        use std::ops::Deref;
-        self.match_options.deref()
+    pub fn match_options(&self) -> & [crate::types::MatchOption] {
+        use std::ops::Deref; self.match_options.deref()
     }
 }
 impl DimensionValues {
@@ -39,8 +37,8 @@ impl DimensionValues {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DimensionValuesBuilder {
     pub(crate) key: ::std::option::Option<crate::types::Dimension>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) match_options: ::std::option::Option<::std::vec::Vec<crate::types::MatchOption>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) match_options: ::std::option::Option<::std::vec::Vec::<crate::types::MatchOption>>,
 }
 impl DimensionValuesBuilder {
     /// <p>The name of the dimension that you want to filter on.</p>
@@ -51,8 +49,7 @@ impl DimensionValuesBuilder {
     }
     /// <p>The name of the dimension that you want to filter on.</p>
     pub fn set_key(mut self, input: ::std::option::Option<crate::types::Dimension>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The name of the dimension that you want to filter on.</p>
     pub fn get_key(&self) -> &::std::option::Option<crate::types::Dimension> {
@@ -65,17 +62,16 @@ impl DimensionValuesBuilder {
     /// <p>The metadata values you can specify to filter upon, so that the results all match at least one of the specified values.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The metadata values you can specify to filter upon, so that the results all match at least one of the specified values.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The metadata values you can specify to filter upon, so that the results all match at least one of the specified values.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Appends an item to `match_options`.
@@ -85,17 +81,16 @@ impl DimensionValuesBuilder {
     /// <p>The match options that you can use to filter your results. You can specify only one of these values in the array.</p>
     pub fn match_options(mut self, input: crate::types::MatchOption) -> Self {
         let mut v = self.match_options.unwrap_or_default();
-        v.push(input);
-        self.match_options = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.match_options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The match options that you can use to filter your results. You can specify only one of these values in the array.</p>
-    pub fn set_match_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MatchOption>>) -> Self {
-        self.match_options = input;
-        self
+    pub fn set_match_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MatchOption>>) -> Self {
+        self.match_options = input; self
     }
     /// <p>The match options that you can use to filter your results. You can specify only one of these values in the array.</p>
-    pub fn get_match_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchOption>> {
+    pub fn get_match_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MatchOption>> {
         &self.match_options
     }
     /// Consumes the builder and constructs a [`DimensionValues`](crate::types::DimensionValues).
@@ -104,25 +99,25 @@ impl DimensionValuesBuilder {
     /// - [`values`](crate::types::builders::DimensionValuesBuilder::values)
     /// - [`match_options`](crate::types::builders::DimensionValuesBuilder::match_options)
     pub fn build(self) -> ::std::result::Result<crate::types::DimensionValues, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DimensionValues {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building DimensionValues",
-                )
-            })?,
-            values: self.values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "values",
-                    "values was not specified but it is required when building DimensionValues",
-                )
-            })?,
-            match_options: self.match_options.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "match_options",
-                    "match_options was not specified but it is required when building DimensionValues",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DimensionValues {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building DimensionValues")
+                    )?
+                ,
+                values: self.values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("values", "values was not specified but it is required when building DimensionValues")
+                    )?
+                ,
+                match_options: self.match_options
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("match_options", "match_options was not specified but it is required when building DimensionValues")
+                    )?
+                ,
+            }
+        )
     }
 }
+

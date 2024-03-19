@@ -3,7 +3,7 @@
 /// <p>The request parameters are invalid.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ValidationException {
+pub struct ValidationException  {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The error code associated with the validation failure.</p>
@@ -12,27 +12,25 @@ pub struct ValidationException {
     pub error_code_reason: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl ValidationException {
+impl  ValidationException  {
     /// <p>The error code associated with the validation failure.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&crate::types::ErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<& crate::types::ErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>An explanation of why validation failed.</p>
-    pub fn error_code_reason(&self) -> ::std::option::Option<&str> {
+    pub fn error_code_reason(&self) -> ::std::option::Option<& str> {
         self.error_code_reason.as_deref()
     }
 }
 impl ValidationException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ValidationException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -47,9 +45,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::ValidationExcep
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ValidationException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl ValidationException {
     /// Creates a new builder-style object to manufacture [`ValidationException`](crate::types::error::ValidationException).
@@ -75,8 +71,7 @@ impl ValidationExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +84,7 @@ impl ValidationExceptionBuilder {
     }
     /// <p>The error code associated with the validation failure.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code associated with the validation failure.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
@@ -103,31 +97,34 @@ impl ValidationExceptionBuilder {
     }
     /// <p>An explanation of why validation failed.</p>
     pub fn set_error_code_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code_reason = input;
-        self
+        self.error_code_reason = input; self
     }
     /// <p>An explanation of why validation failed.</p>
     pub fn get_error_code_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.error_code_reason
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`ValidationException`](crate::types::error::ValidationException).
     pub fn build(self) -> crate::types::error::ValidationException {
         crate::types::error::ValidationException {
-            message: self.message,
-            error_code: self.error_code,
-            error_code_reason: self.error_code_reason,
+            message: self.message
+            ,
+            error_code: self.error_code
+            ,
+            error_code_reason: self.error_code_reason
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

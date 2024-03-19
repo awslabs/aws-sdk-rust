@@ -3,7 +3,7 @@
 /// <p>The details of the Auto Scaling group for the capacity provider.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutoScalingGroupProvider {
+pub struct AutoScalingGroupProvider  {
     /// <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the Auto Scaling group name.</p>
     pub auto_scaling_group_arn: ::std::string::String,
     /// <p>The managed scaling settings for the Auto Scaling group capacity provider.</p>
@@ -17,14 +17,13 @@ pub struct AutoScalingGroupProvider {
     /// <p>The managed draining option for the Auto Scaling group capacity provider. When you enable this, Amazon ECS manages and gracefully drains the EC2 container instances that are in the Auto Scaling group capacity provider.</p>
     pub managed_draining: ::std::option::Option<crate::types::ManagedDraining>,
 }
-impl AutoScalingGroupProvider {
+impl  AutoScalingGroupProvider  {
     /// <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the Auto Scaling group name.</p>
-    pub fn auto_scaling_group_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.auto_scaling_group_arn.deref()
+    pub fn auto_scaling_group_arn(&self) -> & str {
+        use std::ops::Deref; self.auto_scaling_group_arn.deref()
     }
     /// <p>The managed scaling settings for the Auto Scaling group capacity provider.</p>
-    pub fn managed_scaling(&self) -> ::std::option::Option<&crate::types::ManagedScaling> {
+    pub fn managed_scaling(&self) -> ::std::option::Option<& crate::types::ManagedScaling> {
         self.managed_scaling.as_ref()
     }
     /// <p>The managed termination protection setting to use for the Auto Scaling group capacity provider. This determines whether the Auto Scaling group has managed termination protection. The default is off.</p><important>
@@ -32,11 +31,11 @@ impl AutoScalingGroupProvider {
     /// </important>
     /// <p>When managed termination protection is on, Amazon ECS prevents the Amazon EC2 instances in an Auto Scaling group that contain tasks from being terminated during a scale-in action. The Auto Scaling group and each instance in the Auto Scaling group must have instance protection from scale-in actions on as well. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance Protection</a> in the <i>Auto Scaling User Guide</i>.</p>
     /// <p>When managed termination protection is off, your Amazon EC2 instances aren't protected from termination when the Auto Scaling group scales in.</p>
-    pub fn managed_termination_protection(&self) -> ::std::option::Option<&crate::types::ManagedTerminationProtection> {
+    pub fn managed_termination_protection(&self) -> ::std::option::Option<& crate::types::ManagedTerminationProtection> {
         self.managed_termination_protection.as_ref()
     }
     /// <p>The managed draining option for the Auto Scaling group capacity provider. When you enable this, Amazon ECS manages and gracefully drains the EC2 container instances that are in the Auto Scaling group capacity provider.</p>
-    pub fn managed_draining(&self) -> ::std::option::Option<&crate::types::ManagedDraining> {
+    pub fn managed_draining(&self) -> ::std::option::Option<& crate::types::ManagedDraining> {
         self.managed_draining.as_ref()
     }
 }
@@ -65,8 +64,7 @@ impl AutoScalingGroupProviderBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the Auto Scaling group name.</p>
     pub fn set_auto_scaling_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auto_scaling_group_arn = input;
-        self
+        self.auto_scaling_group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the Auto Scaling group name.</p>
     pub fn get_auto_scaling_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +77,7 @@ impl AutoScalingGroupProviderBuilder {
     }
     /// <p>The managed scaling settings for the Auto Scaling group capacity provider.</p>
     pub fn set_managed_scaling(mut self, input: ::std::option::Option<crate::types::ManagedScaling>) -> Self {
-        self.managed_scaling = input;
-        self
+        self.managed_scaling = input; self
     }
     /// <p>The managed scaling settings for the Auto Scaling group capacity provider.</p>
     pub fn get_managed_scaling(&self) -> &::std::option::Option<crate::types::ManagedScaling> {
@@ -101,8 +98,7 @@ impl AutoScalingGroupProviderBuilder {
     /// <p>When managed termination protection is on, Amazon ECS prevents the Amazon EC2 instances in an Auto Scaling group that contain tasks from being terminated during a scale-in action. The Auto Scaling group and each instance in the Auto Scaling group must have instance protection from scale-in actions on as well. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance Protection</a> in the <i>Auto Scaling User Guide</i>.</p>
     /// <p>When managed termination protection is off, your Amazon EC2 instances aren't protected from termination when the Auto Scaling group scales in.</p>
     pub fn set_managed_termination_protection(mut self, input: ::std::option::Option<crate::types::ManagedTerminationProtection>) -> Self {
-        self.managed_termination_protection = input;
-        self
+        self.managed_termination_protection = input; self
     }
     /// <p>The managed termination protection setting to use for the Auto Scaling group capacity provider. This determines whether the Auto Scaling group has managed termination protection. The default is off.</p><important>
     /// <p>When using managed termination protection, managed scaling must also be used otherwise managed termination protection doesn't work.</p>
@@ -119,8 +115,7 @@ impl AutoScalingGroupProviderBuilder {
     }
     /// <p>The managed draining option for the Auto Scaling group capacity provider. When you enable this, Amazon ECS manages and gracefully drains the EC2 container instances that are in the Auto Scaling group capacity provider.</p>
     pub fn set_managed_draining(mut self, input: ::std::option::Option<crate::types::ManagedDraining>) -> Self {
-        self.managed_draining = input;
-        self
+        self.managed_draining = input; self
     }
     /// <p>The managed draining option for the Auto Scaling group capacity provider. When you enable this, Amazon ECS manages and gracefully drains the EC2 container instances that are in the Auto Scaling group capacity provider.</p>
     pub fn get_managed_draining(&self) -> &::std::option::Option<crate::types::ManagedDraining> {
@@ -130,16 +125,21 @@ impl AutoScalingGroupProviderBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`auto_scaling_group_arn`](crate::types::builders::AutoScalingGroupProviderBuilder::auto_scaling_group_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::AutoScalingGroupProvider, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AutoScalingGroupProvider {
-            auto_scaling_group_arn: self.auto_scaling_group_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "auto_scaling_group_arn",
-                    "auto_scaling_group_arn was not specified but it is required when building AutoScalingGroupProvider",
-                )
-            })?,
-            managed_scaling: self.managed_scaling,
-            managed_termination_protection: self.managed_termination_protection,
-            managed_draining: self.managed_draining,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AutoScalingGroupProvider {
+                auto_scaling_group_arn: self.auto_scaling_group_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("auto_scaling_group_arn", "auto_scaling_group_arn was not specified but it is required when building AutoScalingGroupProvider")
+                    )?
+                ,
+                managed_scaling: self.managed_scaling
+                ,
+                managed_termination_protection: self.managed_termination_protection
+                ,
+                managed_draining: self.managed_draining
+                ,
+            }
+        )
     }
 }
+

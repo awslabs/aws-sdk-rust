@@ -5,23 +5,20 @@ pub use crate::operation::meter_usage::_meter_usage_input::MeterUsageInputBuilde
 
 impl MeterUsageInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::meter_usage::MeterUsageOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::meter_usage::MeterUsageError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.meter_usage();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::meter_usage::MeterUsageOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::meter_usage::MeterUsageError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.meter_usage();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `MeterUsage`.
-///
+/// 
 /// <p>API to emit metering records. For identical requests, the API is idempotent. It simply returns the metering record ID.</p>
 /// <p><code>MeterUsage</code> is authenticated on the buyer's AWS account using credentials from the EC2 instance, ECS task, or EKS pod.</p>
 /// <p><code>MeterUsage</code> can optionally include multiple usage allocations, to provide customers with usage data split into buckets by tags that you define (or allow the customer to define).</p>
@@ -29,33 +26,32 @@ impl MeterUsageInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct MeterUsageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::meter_usage::builders::MeterUsageInputBuilder,
+                    inner: crate::operation::meter_usage::builders::MeterUsageInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::meter_usage::MeterUsageOutput,
-        crate::operation::meter_usage::MeterUsageError,
-    > for MeterUsageFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::meter_usage::MeterUsageOutput,
-            crate::operation::meter_usage::MeterUsageError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::meter_usage::MeterUsageOutput,
+                    crate::operation::meter_usage::MeterUsageError,
+                > for MeterUsageFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::meter_usage::MeterUsageOutput,
+                        crate::operation::meter_usage::MeterUsageError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl MeterUsageFluentBuilder {
     /// Creates a new `MeterUsage`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,53 +60,44 @@ impl MeterUsageFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::meter_usage::MeterUsageOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::meter_usage::MeterUsageError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::meter_usage::MeterUsage::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::meter_usage::MeterUsage::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::meter_usage::MeterUsageOutput,
-        crate::operation::meter_usage::MeterUsageError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::meter_usage::MeterUsageOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::meter_usage::MeterUsageError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::meter_usage::MeterUsage::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::meter_usage::MeterUsage::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::meter_usage::MeterUsageOutput, crate::operation::meter_usage::MeterUsageError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
     pub fn product_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.product_code(input.into());
@@ -193,13 +180,14 @@ impl MeterUsageFluentBuilder {
     }
     /// <p>The set of <code>UsageAllocations</code> to submit.</p>
     /// <p>The sum of all <code>UsageAllocation</code> quantities must equal the <code>UsageQuantity</code> of the <code>MeterUsage</code> request, and each <code>UsageAllocation</code> must have a unique set of tags (include no tags).</p>
-    pub fn set_usage_allocations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UsageAllocation>>) -> Self {
+    pub fn set_usage_allocations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UsageAllocation>>) -> Self {
         self.inner = self.inner.set_usage_allocations(input);
         self
     }
     /// <p>The set of <code>UsageAllocations</code> to submit.</p>
     /// <p>The sum of all <code>UsageAllocation</code> quantities must equal the <code>UsageQuantity</code> of the <code>MeterUsage</code> request, and each <code>UsageAllocation</code> must have a unique set of tags (include no tags).</p>
-    pub fn get_usage_allocations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageAllocation>> {
+    pub fn get_usage_allocations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UsageAllocation>> {
         self.inner.get_usage_allocations()
     }
 }
+

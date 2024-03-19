@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLimitsInput {}
+pub struct DescribeLimitsInput  {
+}
 impl DescribeLimitsInput {
     /// Creates a new builder-style object to manufacture [`DescribeLimitsInput`](crate::operation::describe_limits::DescribeLimitsInput).
     pub fn builder() -> crate::operation::describe_limits::builders::DescribeLimitsInputBuilder {
@@ -13,12 +14,15 @@ impl DescribeLimitsInput {
 /// A builder for [`DescribeLimitsInput`](crate::operation::describe_limits::DescribeLimitsInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct DescribeLimitsInputBuilder {}
+pub struct DescribeLimitsInputBuilder {
+}
 impl DescribeLimitsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLimitsInput`](crate::operation::describe_limits::DescribeLimitsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_limits::DescribeLimitsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_limits::DescribeLimitsInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_limits::DescribeLimitsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_limits::DescribeLimitsInput {
+            }
+        )
     }
 }
+

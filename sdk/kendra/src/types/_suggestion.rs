@@ -3,30 +3,31 @@
 /// <p>A single query suggestion.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Suggestion {
+pub struct Suggestion  {
     /// <p>The UUID (universally unique identifier) of a single query suggestion.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The value for the UUID (universally unique identifier) of a single query suggestion.</p>
     /// <p>The value is the text string of a suggestion.</p>
     pub value: ::std::option::Option<crate::types::SuggestionValue>,
     /// <p>The list of document IDs and their fields/attributes that are used for a single query suggestion, if document fields set to use for query suggestions.</p>
-    pub source_documents: ::std::option::Option<::std::vec::Vec<crate::types::SourceDocument>>,
+    pub source_documents: ::std::option::Option<::std::vec::Vec::<crate::types::SourceDocument>>,
 }
-impl Suggestion {
+impl  Suggestion  {
     /// <p>The UUID (universally unique identifier) of a single query suggestion.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The value for the UUID (universally unique identifier) of a single query suggestion.</p>
     /// <p>The value is the text string of a suggestion.</p>
-    pub fn value(&self) -> ::std::option::Option<&crate::types::SuggestionValue> {
+    pub fn value(&self) -> ::std::option::Option<& crate::types::SuggestionValue> {
         self.value.as_ref()
     }
     /// <p>The list of document IDs and their fields/attributes that are used for a single query suggestion, if document fields set to use for query suggestions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_documents.is_none()`.
-    pub fn source_documents(&self) -> &[crate::types::SourceDocument] {
-        self.source_documents.as_deref().unwrap_or_default()
+    pub fn source_documents(&self) -> & [crate::types::SourceDocument] {
+        self.source_documents.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Suggestion {
@@ -42,7 +43,7 @@ impl Suggestion {
 pub struct SuggestionBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<crate::types::SuggestionValue>,
-    pub(crate) source_documents: ::std::option::Option<::std::vec::Vec<crate::types::SourceDocument>>,
+    pub(crate) source_documents: ::std::option::Option<::std::vec::Vec::<crate::types::SourceDocument>>,
 }
 impl SuggestionBuilder {
     /// <p>The UUID (universally unique identifier) of a single query suggestion.</p>
@@ -52,8 +53,7 @@ impl SuggestionBuilder {
     }
     /// <p>The UUID (universally unique identifier) of a single query suggestion.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The UUID (universally unique identifier) of a single query suggestion.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +68,7 @@ impl SuggestionBuilder {
     /// <p>The value for the UUID (universally unique identifier) of a single query suggestion.</p>
     /// <p>The value is the text string of a suggestion.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::SuggestionValue>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value for the UUID (universally unique identifier) of a single query suggestion.</p>
     /// <p>The value is the text string of a suggestion.</p>
@@ -83,25 +82,28 @@ impl SuggestionBuilder {
     /// <p>The list of document IDs and their fields/attributes that are used for a single query suggestion, if document fields set to use for query suggestions.</p>
     pub fn source_documents(mut self, input: crate::types::SourceDocument) -> Self {
         let mut v = self.source_documents.unwrap_or_default();
-        v.push(input);
-        self.source_documents = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.source_documents = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of document IDs and their fields/attributes that are used for a single query suggestion, if document fields set to use for query suggestions.</p>
-    pub fn set_source_documents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SourceDocument>>) -> Self {
-        self.source_documents = input;
-        self
+    pub fn set_source_documents(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SourceDocument>>) -> Self {
+        self.source_documents = input; self
     }
     /// <p>The list of document IDs and their fields/attributes that are used for a single query suggestion, if document fields set to use for query suggestions.</p>
-    pub fn get_source_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceDocument>> {
+    pub fn get_source_documents(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SourceDocument>> {
         &self.source_documents
     }
     /// Consumes the builder and constructs a [`Suggestion`](crate::types::Suggestion).
     pub fn build(self) -> crate::types::Suggestion {
         crate::types::Suggestion {
-            id: self.id,
-            value: self.value,
-            source_documents: self.source_documents,
+            id: self.id
+            ,
+            value: self.value
+            ,
+            source_documents: self.source_documents
+            ,
         }
     }
 }
+

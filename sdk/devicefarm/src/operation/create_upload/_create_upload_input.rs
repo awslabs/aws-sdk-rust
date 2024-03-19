@@ -3,7 +3,7 @@
 /// <p>Represents a request to the create upload operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateUploadInput {
+pub struct CreateUploadInput  {
     /// <p>The ARN of the project for the upload.</p>
     pub project_arn: ::std::option::Option<::std::string::String>,
     /// <p>The upload's file name. The name should not contain any forward slashes (<code>/</code>). If you are uploading an iOS app, the file name must end with the <code>.ipa</code> extension. If you are uploading an Android app, the file name must end with the <code>.apk</code> extension. For all others, the file name must end with the <code>.zip</code> file extension.</p>
@@ -81,13 +81,13 @@ pub struct CreateUploadInput {
     /// <p>The upload's content type (for example, <code>application/octet-stream</code>).</p>
     pub content_type: ::std::option::Option<::std::string::String>,
 }
-impl CreateUploadInput {
+impl  CreateUploadInput  {
     /// <p>The ARN of the project for the upload.</p>
-    pub fn project_arn(&self) -> ::std::option::Option<&str> {
+    pub fn project_arn(&self) -> ::std::option::Option<& str> {
         self.project_arn.as_deref()
     }
     /// <p>The upload's file name. The name should not contain any forward slashes (<code>/</code>). If you are uploading an iOS app, the file name must end with the <code>.ipa</code> extension. If you are uploading an Android app, the file name must end with the <code>.apk</code> extension. For all others, the file name must end with the <code>.zip</code> file extension.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The upload's upload type.</p>
@@ -159,11 +159,11 @@ impl CreateUploadInput {
     /// <p>XCTEST_UI_TEST_SPEC</p></li>
     /// </ul>
     /// <p>If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an <code>ArgumentException</code> error.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::UploadType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::UploadType> {
         self.r#type.as_ref()
     }
     /// <p>The upload's content type (for example, <code>application/octet-stream</code>).</p>
-    pub fn content_type(&self) -> ::std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<& str> {
         self.content_type.as_deref()
     }
 }
@@ -192,8 +192,7 @@ impl CreateUploadInputBuilder {
     }
     /// <p>The ARN of the project for the upload.</p>
     pub fn set_project_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_arn = input;
-        self
+        self.project_arn = input; self
     }
     /// <p>The ARN of the project for the upload.</p>
     pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -207,8 +206,7 @@ impl CreateUploadInputBuilder {
     }
     /// <p>The upload's file name. The name should not contain any forward slashes (<code>/</code>). If you are uploading an iOS app, the file name must end with the <code>.ipa</code> extension. If you are uploading an Android app, the file name must end with the <code>.apk</code> extension. For all others, the file name must end with the <code>.zip</code> file extension.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The upload's file name. The name should not contain any forward slashes (<code>/</code>). If you are uploading an iOS app, the file name must end with the <code>.ipa</code> extension. If you are uploading an Android app, the file name must end with the <code>.apk</code> extension. For all others, the file name must end with the <code>.zip</code> file extension.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -358,8 +356,7 @@ impl CreateUploadInputBuilder {
     /// </ul>
     /// <p>If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an <code>ArgumentException</code> error.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::UploadType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The upload's upload type.</p>
     /// <p>Must be one of the following values:</p>
@@ -440,22 +437,26 @@ impl CreateUploadInputBuilder {
     }
     /// <p>The upload's content type (for example, <code>application/octet-stream</code>).</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>The upload's content type (for example, <code>application/octet-stream</code>).</p>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.content_type
     }
     /// Consumes the builder and constructs a [`CreateUploadInput`](crate::operation::create_upload::CreateUploadInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_upload::CreateUploadInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_upload::CreateUploadInput {
-            project_arn: self.project_arn,
-            name: self.name,
-            r#type: self.r#type,
-            content_type: self.content_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_upload::CreateUploadInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_upload::CreateUploadInput {
+                project_arn: self.project_arn
+                ,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                content_type: self.content_type
+                ,
+            }
+        )
     }
 }
+

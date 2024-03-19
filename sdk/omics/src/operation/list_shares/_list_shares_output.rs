@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSharesOutput {
+pub struct ListSharesOutput  {
     /// <p>The shares available and their meta details.</p>
-    pub shares: ::std::vec::Vec<crate::types::ShareDetails>,
+    pub shares: ::std::vec::Vec::<crate::types::ShareDetails>,
     /// <p>Next token returned in the response of a previous ListSharesResponse call. Used to get the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListSharesOutput {
+impl  ListSharesOutput  {
     /// <p>The shares available and their meta details.</p>
-    pub fn shares(&self) -> &[crate::types::ShareDetails] {
-        use std::ops::Deref;
-        self.shares.deref()
+    pub fn shares(&self) -> & [crate::types::ShareDetails] {
+        use std::ops::Deref; self.shares.deref()
     }
     /// <p>Next token returned in the response of a previous ListSharesResponse call. Used to get the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListSharesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListSharesOutput {
     /// Creates a new builder-style object to manufacture [`ListSharesOutput`](crate::operation::list_shares::ListSharesOutput).
     pub fn builder() -> crate::operation::list_shares::builders::ListSharesOutputBuilder {
@@ -36,7 +35,7 @@ impl ListSharesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSharesOutputBuilder {
-    pub(crate) shares: ::std::option::Option<::std::vec::Vec<crate::types::ShareDetails>>,
+    pub(crate) shares: ::std::option::Option<::std::vec::Vec::<crate::types::ShareDetails>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListSharesOutputBuilder {
     /// <p>The shares available and their meta details.</p>
     pub fn shares(mut self, input: crate::types::ShareDetails) -> Self {
         let mut v = self.shares.unwrap_or_default();
-        v.push(input);
-        self.shares = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.shares = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The shares available and their meta details.</p>
-    pub fn set_shares(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ShareDetails>>) -> Self {
-        self.shares = input;
-        self
+    pub fn set_shares(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ShareDetails>>) -> Self {
+        self.shares = input; self
     }
     /// <p>The shares available and their meta details.</p>
-    pub fn get_shares(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ShareDetails>> {
+    pub fn get_shares(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ShareDetails>> {
         &self.shares
     }
     /// <p>Next token returned in the response of a previous ListSharesResponse call. Used to get the next page of results.</p>
@@ -68,35 +66,37 @@ impl ListSharesOutputBuilder {
     }
     /// <p>Next token returned in the response of a previous ListSharesResponse call. Used to get the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Next token returned in the response of a previous ListSharesResponse call. Used to get the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListSharesOutput`](crate::operation::list_shares::ListSharesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`shares`](crate::operation::list_shares::builders::ListSharesOutputBuilder::shares)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_shares::ListSharesOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_shares::ListSharesOutput {
-            shares: self.shares.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "shares",
-                    "shares was not specified but it is required when building ListSharesOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_shares::ListSharesOutput {
+                shares: self.shares
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("shares", "shares was not specified but it is required when building ListSharesOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

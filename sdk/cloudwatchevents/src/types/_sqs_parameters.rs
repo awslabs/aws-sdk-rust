@@ -3,13 +3,13 @@
 /// <p>This structure includes the custom parameter to be used when the target is an SQS FIFO queue.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SqsParameters {
+pub struct SqsParameters  {
     /// <p>The FIFO message group ID to use as the target.</p>
     pub message_group_id: ::std::option::Option<::std::string::String>,
 }
-impl SqsParameters {
+impl  SqsParameters  {
     /// <p>The FIFO message group ID to use as the target.</p>
-    pub fn message_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn message_group_id(&self) -> ::std::option::Option<& str> {
         self.message_group_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl SqsParametersBuilder {
     }
     /// <p>The FIFO message group ID to use as the target.</p>
     pub fn set_message_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message_group_id = input;
-        self
+        self.message_group_id = input; self
     }
     /// <p>The FIFO message group ID to use as the target.</p>
     pub fn get_message_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl SqsParametersBuilder {
     /// Consumes the builder and constructs a [`SqsParameters`](crate::types::SqsParameters).
     pub fn build(self) -> crate::types::SqsParameters {
         crate::types::SqsParameters {
-            message_group_id: self.message_group_id,
+            message_group_id: self.message_group_id
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes a field in a generic data schema.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CodegenGenericDataField {
+pub struct CodegenGenericDataField  {
     /// <p>The data type for the generic data field.</p>
     pub data_type: crate::types::CodegenGenericDataFieldDataType,
     /// <p>The value of the data type for the generic data field.</p>
@@ -17,15 +17,14 @@ pub struct CodegenGenericDataField {
     /// <p>The relationship of the generic data schema.</p>
     pub relationship: ::std::option::Option<crate::types::CodegenGenericDataRelationshipType>,
 }
-impl CodegenGenericDataField {
+impl  CodegenGenericDataField  {
     /// <p>The data type for the generic data field.</p>
-    pub fn data_type(&self) -> &crate::types::CodegenGenericDataFieldDataType {
+    pub fn data_type(&self) -> & crate::types::CodegenGenericDataFieldDataType {
         &self.data_type
     }
     /// <p>The value of the data type for the generic data field.</p>
-    pub fn data_type_value(&self) -> &str {
-        use std::ops::Deref;
-        self.data_type_value.deref()
+    pub fn data_type_value(&self) -> & str {
+        use std::ops::Deref; self.data_type_value.deref()
     }
     /// <p>Specifies whether the generic data field is required.</p>
     pub fn required(&self) -> bool {
@@ -40,7 +39,7 @@ impl CodegenGenericDataField {
         self.is_array
     }
     /// <p>The relationship of the generic data schema.</p>
-    pub fn relationship(&self) -> ::std::option::Option<&crate::types::CodegenGenericDataRelationshipType> {
+    pub fn relationship(&self) -> ::std::option::Option<& crate::types::CodegenGenericDataRelationshipType> {
         self.relationship.as_ref()
     }
 }
@@ -71,8 +70,7 @@ impl CodegenGenericDataFieldBuilder {
     }
     /// <p>The data type for the generic data field.</p>
     pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::CodegenGenericDataFieldDataType>) -> Self {
-        self.data_type = input;
-        self
+        self.data_type = input; self
     }
     /// <p>The data type for the generic data field.</p>
     pub fn get_data_type(&self) -> &::std::option::Option<crate::types::CodegenGenericDataFieldDataType> {
@@ -86,8 +84,7 @@ impl CodegenGenericDataFieldBuilder {
     }
     /// <p>The value of the data type for the generic data field.</p>
     pub fn set_data_type_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_type_value = input;
-        self
+        self.data_type_value = input; self
     }
     /// <p>The value of the data type for the generic data field.</p>
     pub fn get_data_type_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +98,7 @@ impl CodegenGenericDataFieldBuilder {
     }
     /// <p>Specifies whether the generic data field is required.</p>
     pub fn set_required(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.required = input;
-        self
+        self.required = input; self
     }
     /// <p>Specifies whether the generic data field is required.</p>
     pub fn get_required(&self) -> &::std::option::Option<bool> {
@@ -116,8 +112,7 @@ impl CodegenGenericDataFieldBuilder {
     }
     /// <p>Specifies whether the generic data field is read-only.</p>
     pub fn set_read_only(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.read_only = input;
-        self
+        self.read_only = input; self
     }
     /// <p>Specifies whether the generic data field is read-only.</p>
     pub fn get_read_only(&self) -> &::std::option::Option<bool> {
@@ -131,8 +126,7 @@ impl CodegenGenericDataFieldBuilder {
     }
     /// <p>Specifies whether the generic data field is an array.</p>
     pub fn set_is_array(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_array = input;
-        self
+        self.is_array = input; self
     }
     /// <p>Specifies whether the generic data field is an array.</p>
     pub fn get_is_array(&self) -> &::std::option::Option<bool> {
@@ -145,8 +139,7 @@ impl CodegenGenericDataFieldBuilder {
     }
     /// <p>The relationship of the generic data schema.</p>
     pub fn set_relationship(mut self, input: ::std::option::Option<crate::types::CodegenGenericDataRelationshipType>) -> Self {
-        self.relationship = input;
-        self
+        self.relationship = input; self
     }
     /// <p>The relationship of the generic data schema.</p>
     pub fn get_relationship(&self) -> &::std::option::Option<crate::types::CodegenGenericDataRelationshipType> {
@@ -160,38 +153,37 @@ impl CodegenGenericDataFieldBuilder {
     /// - [`read_only`](crate::types::builders::CodegenGenericDataFieldBuilder::read_only)
     /// - [`is_array`](crate::types::builders::CodegenGenericDataFieldBuilder::is_array)
     pub fn build(self) -> ::std::result::Result<crate::types::CodegenGenericDataField, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CodegenGenericDataField {
-            data_type: self.data_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_type",
-                    "data_type was not specified but it is required when building CodegenGenericDataField",
-                )
-            })?,
-            data_type_value: self.data_type_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_type_value",
-                    "data_type_value was not specified but it is required when building CodegenGenericDataField",
-                )
-            })?,
-            required: self.required.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "required",
-                    "required was not specified but it is required when building CodegenGenericDataField",
-                )
-            })?,
-            read_only: self.read_only.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "read_only",
-                    "read_only was not specified but it is required when building CodegenGenericDataField",
-                )
-            })?,
-            is_array: self.is_array.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "is_array",
-                    "is_array was not specified but it is required when building CodegenGenericDataField",
-                )
-            })?,
-            relationship: self.relationship,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CodegenGenericDataField {
+                data_type: self.data_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_type", "data_type was not specified but it is required when building CodegenGenericDataField")
+                    )?
+                ,
+                data_type_value: self.data_type_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_type_value", "data_type_value was not specified but it is required when building CodegenGenericDataField")
+                    )?
+                ,
+                required: self.required
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("required", "required was not specified but it is required when building CodegenGenericDataField")
+                    )?
+                ,
+                read_only: self.read_only
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("read_only", "read_only was not specified but it is required when building CodegenGenericDataField")
+                    )?
+                ,
+                is_array: self.is_array
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("is_array", "is_array was not specified but it is required when building CodegenGenericDataField")
+                    )?
+                ,
+                relationship: self.relationship
+                ,
+            }
+        )
     }
 }
+

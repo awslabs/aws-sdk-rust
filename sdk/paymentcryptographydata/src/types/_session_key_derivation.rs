@@ -28,11 +28,7 @@ impl SessionKeyDerivation {
     /// Tries to convert the enum instance into [`Amex`](crate::types::SessionKeyDerivation::Amex), extracting the inner [`SessionKeyAmex`](crate::types::SessionKeyAmex).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_amex(&self) -> ::std::result::Result<&crate::types::SessionKeyAmex, &Self> {
-        if let SessionKeyDerivation::Amex(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let SessionKeyDerivation::Amex(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Amex`](crate::types::SessionKeyDerivation::Amex).
     pub fn is_amex(&self) -> bool {
@@ -41,11 +37,7 @@ impl SessionKeyDerivation {
     /// Tries to convert the enum instance into [`Emv2000`](crate::types::SessionKeyDerivation::Emv2000), extracting the inner [`SessionKeyEmv2000`](crate::types::SessionKeyEmv2000).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_emv2000(&self) -> ::std::result::Result<&crate::types::SessionKeyEmv2000, &Self> {
-        if let SessionKeyDerivation::Emv2000(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let SessionKeyDerivation::Emv2000(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Emv2000`](crate::types::SessionKeyDerivation::Emv2000).
     pub fn is_emv2000(&self) -> bool {
@@ -54,11 +46,7 @@ impl SessionKeyDerivation {
     /// Tries to convert the enum instance into [`EmvCommon`](crate::types::SessionKeyDerivation::EmvCommon), extracting the inner [`SessionKeyEmvCommon`](crate::types::SessionKeyEmvCommon).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_emv_common(&self) -> ::std::result::Result<&crate::types::SessionKeyEmvCommon, &Self> {
-        if let SessionKeyDerivation::EmvCommon(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let SessionKeyDerivation::EmvCommon(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`EmvCommon`](crate::types::SessionKeyDerivation::EmvCommon).
     pub fn is_emv_common(&self) -> bool {
@@ -67,11 +55,7 @@ impl SessionKeyDerivation {
     /// Tries to convert the enum instance into [`Mastercard`](crate::types::SessionKeyDerivation::Mastercard), extracting the inner [`SessionKeyMastercard`](crate::types::SessionKeyMastercard).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_mastercard(&self) -> ::std::result::Result<&crate::types::SessionKeyMastercard, &Self> {
-        if let SessionKeyDerivation::Mastercard(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let SessionKeyDerivation::Mastercard(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Mastercard`](crate::types::SessionKeyDerivation::Mastercard).
     pub fn is_mastercard(&self) -> bool {
@@ -80,11 +64,7 @@ impl SessionKeyDerivation {
     /// Tries to convert the enum instance into [`Visa`](crate::types::SessionKeyDerivation::Visa), extracting the inner [`SessionKeyVisa`](crate::types::SessionKeyVisa).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_visa(&self) -> ::std::result::Result<&crate::types::SessionKeyVisa, &Self> {
-        if let SessionKeyDerivation::Visa(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let SessionKeyDerivation::Visa(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Visa`](crate::types::SessionKeyDerivation::Visa).
     pub fn is_visa(&self) -> bool {
@@ -95,3 +75,4 @@ impl SessionKeyDerivation {
         matches!(self, Self::Unknown)
     }
 }
+

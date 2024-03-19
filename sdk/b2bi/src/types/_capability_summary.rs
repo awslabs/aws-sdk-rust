@@ -3,7 +3,7 @@
 /// <p>Returns the capability summary details. A trading capability contains the information required to transform incoming EDI documents into JSON or XML outputs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CapabilitySummary {
+pub struct CapabilitySummary  {
     /// <p>Returns a system-assigned unique identifier for the capability.</p>
     pub capability_id: ::std::string::String,
     /// <p>The display name of the capability.</p>
@@ -15,27 +15,25 @@ pub struct CapabilitySummary {
     /// <p>Returns a timestamp that identifies the most recent date and time that the capability was modified.</p>
     pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl CapabilitySummary {
+impl  CapabilitySummary  {
     /// <p>Returns a system-assigned unique identifier for the capability.</p>
-    pub fn capability_id(&self) -> &str {
-        use std::ops::Deref;
-        self.capability_id.deref()
+    pub fn capability_id(&self) -> & str {
+        use std::ops::Deref; self.capability_id.deref()
     }
     /// <p>The display name of the capability.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Returns the type of the capability. Currently, only <code>edi</code> is supported.</p>
-    pub fn r#type(&self) -> &crate::types::CapabilityType {
+    pub fn r#type(&self) -> & crate::types::CapabilityType {
         &self.r#type
     }
     /// <p>Returns a timestamp for creation date and time of the capability.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>Returns a timestamp that identifies the most recent date and time that the capability was modified.</p>
-    pub fn modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn modified_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
 }
@@ -65,8 +63,7 @@ impl CapabilitySummaryBuilder {
     }
     /// <p>Returns a system-assigned unique identifier for the capability.</p>
     pub fn set_capability_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.capability_id = input;
-        self
+        self.capability_id = input; self
     }
     /// <p>Returns a system-assigned unique identifier for the capability.</p>
     pub fn get_capability_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +77,7 @@ impl CapabilitySummaryBuilder {
     }
     /// <p>The display name of the capability.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The display name of the capability.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +91,7 @@ impl CapabilitySummaryBuilder {
     }
     /// <p>Returns the type of the capability. Currently, only <code>edi</code> is supported.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::CapabilityType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Returns the type of the capability. Currently, only <code>edi</code> is supported.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::CapabilityType> {
@@ -110,8 +105,7 @@ impl CapabilitySummaryBuilder {
     }
     /// <p>Returns a timestamp for creation date and time of the capability.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>Returns a timestamp for creation date and time of the capability.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -124,8 +118,7 @@ impl CapabilitySummaryBuilder {
     }
     /// <p>Returns a timestamp that identifies the most recent date and time that the capability was modified.</p>
     pub fn set_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.modified_at = input;
-        self
+        self.modified_at = input; self
     }
     /// <p>Returns a timestamp that identifies the most recent date and time that the capability was modified.</p>
     pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -138,32 +131,32 @@ impl CapabilitySummaryBuilder {
     /// - [`r#type`](crate::types::builders::CapabilitySummaryBuilder::r#type)
     /// - [`created_at`](crate::types::builders::CapabilitySummaryBuilder::created_at)
     pub fn build(self) -> ::std::result::Result<crate::types::CapabilitySummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CapabilitySummary {
-            capability_id: self.capability_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "capability_id",
-                    "capability_id was not specified but it is required when building CapabilitySummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CapabilitySummary",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building CapabilitySummary",
-                )
-            })?,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building CapabilitySummary",
-                )
-            })?,
-            modified_at: self.modified_at,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CapabilitySummary {
+                capability_id: self.capability_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("capability_id", "capability_id was not specified but it is required when building CapabilitySummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building CapabilitySummary")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building CapabilitySummary")
+                    )?
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building CapabilitySummary")
+                    )?
+                ,
+                modified_at: self.modified_at
+                ,
+            }
+        )
     }
 }
+

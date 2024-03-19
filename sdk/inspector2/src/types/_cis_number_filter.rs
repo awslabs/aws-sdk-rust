@@ -3,13 +3,13 @@
 /// <p>The CIS number filter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CisNumberFilter {
+pub struct CisNumberFilter  {
     /// <p>The CIS number filter's upper inclusive.</p>
     pub upper_inclusive: ::std::option::Option<i32>,
     /// <p>The CIS number filter's lower inclusive.</p>
     pub lower_inclusive: ::std::option::Option<i32>,
 }
-impl CisNumberFilter {
+impl  CisNumberFilter  {
     /// <p>The CIS number filter's upper inclusive.</p>
     pub fn upper_inclusive(&self) -> ::std::option::Option<i32> {
         self.upper_inclusive
@@ -41,8 +41,7 @@ impl CisNumberFilterBuilder {
     }
     /// <p>The CIS number filter's upper inclusive.</p>
     pub fn set_upper_inclusive(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.upper_inclusive = input;
-        self
+        self.upper_inclusive = input; self
     }
     /// <p>The CIS number filter's upper inclusive.</p>
     pub fn get_upper_inclusive(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl CisNumberFilterBuilder {
     }
     /// <p>The CIS number filter's lower inclusive.</p>
     pub fn set_lower_inclusive(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.lower_inclusive = input;
-        self
+        self.lower_inclusive = input; self
     }
     /// <p>The CIS number filter's lower inclusive.</p>
     pub fn get_lower_inclusive(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl CisNumberFilterBuilder {
     /// Consumes the builder and constructs a [`CisNumberFilter`](crate::types::CisNumberFilter).
     pub fn build(self) -> crate::types::CisNumberFilter {
         crate::types::CisNumberFilter {
-            upper_inclusive: self.upper_inclusive,
-            lower_inclusive: self.lower_inclusive,
+            upper_inclusive: self.upper_inclusive
+            ,
+            lower_inclusive: self.lower_inclusive
+            ,
         }
     }
 }
+

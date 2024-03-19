@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMetricStreamOutput {
+pub struct GetMetricStreamOutput  {
     /// <p>The ARN of the metric stream.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the metric stream.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>If this array of metric namespaces is present, then these namespaces are the only metric namespaces that are streamed by this metric stream.</p>
-    pub include_filters: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamFilter>>,
+    pub include_filters: ::std::option::Option<::std::vec::Vec::<crate::types::MetricStreamFilter>>,
     /// <p>If this array of metric namespaces is present, then these namespaces are the only metric namespaces that are not streamed by this metric stream. In this case, all other metric namespaces in the account are streamed by this metric stream.</p>
-    pub exclude_filters: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamFilter>>,
+    pub exclude_filters: ::std::option::Option<::std::vec::Vec::<crate::types::MetricStreamFilter>>,
     /// <p>The ARN of the Amazon Kinesis Data Firehose delivery stream that is used by this metric stream.</p>
     pub firehose_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role that is used by this metric stream.</p>
@@ -24,61 +24,64 @@ pub struct GetMetricStreamOutput {
     /// <p>The output format for the stream. Valid values are <code>json</code>, <code>opentelemetry1.0</code>, and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">Metric streams output formats</a>.</p>
     pub output_format: ::std::option::Option<crate::types::MetricStreamOutputFormat>,
     /// <p>Each entry in this array displays information about one or more metrics that include additional statistics in the metric stream. For more information about the additional statistics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>.</p>
-    pub statistics_configurations: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamStatisticsConfiguration>>,
+    pub statistics_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::MetricStreamStatisticsConfiguration>>,
     /// <p>If this is <code>true</code> and this metric stream is in a monitoring account, then the stream includes metrics from source accounts that the monitoring account is linked to.</p>
     pub include_linked_accounts_metrics: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
-impl GetMetricStreamOutput {
+impl  GetMetricStreamOutput  {
     /// <p>The ARN of the metric stream.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the metric stream.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>If this array of metric namespaces is present, then these namespaces are the only metric namespaces that are streamed by this metric stream.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.include_filters.is_none()`.
-    pub fn include_filters(&self) -> &[crate::types::MetricStreamFilter] {
-        self.include_filters.as_deref().unwrap_or_default()
+    pub fn include_filters(&self) -> & [crate::types::MetricStreamFilter] {
+        self.include_filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If this array of metric namespaces is present, then these namespaces are the only metric namespaces that are not streamed by this metric stream. In this case, all other metric namespaces in the account are streamed by this metric stream.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclude_filters.is_none()`.
-    pub fn exclude_filters(&self) -> &[crate::types::MetricStreamFilter] {
-        self.exclude_filters.as_deref().unwrap_or_default()
+    pub fn exclude_filters(&self) -> & [crate::types::MetricStreamFilter] {
+        self.exclude_filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ARN of the Amazon Kinesis Data Firehose delivery stream that is used by this metric stream.</p>
-    pub fn firehose_arn(&self) -> ::std::option::Option<&str> {
+    pub fn firehose_arn(&self) -> ::std::option::Option<& str> {
         self.firehose_arn.as_deref()
     }
     /// <p>The ARN of the IAM role that is used by this metric stream.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The state of the metric stream. The possible values are <code>running</code> and <code>stopped</code>.</p>
-    pub fn state(&self) -> ::std::option::Option<&str> {
+    pub fn state(&self) -> ::std::option::Option<& str> {
         self.state.as_deref()
     }
     /// <p>The date that the metric stream was created.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date of the most recent update to the metric stream's configuration.</p>
-    pub fn last_update_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_update_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
     }
     /// <p>The output format for the stream. Valid values are <code>json</code>, <code>opentelemetry1.0</code>, and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">Metric streams output formats</a>.</p>
-    pub fn output_format(&self) -> ::std::option::Option<&crate::types::MetricStreamOutputFormat> {
+    pub fn output_format(&self) -> ::std::option::Option<& crate::types::MetricStreamOutputFormat> {
         self.output_format.as_ref()
     }
     /// <p>Each entry in this array displays information about one or more metrics that include additional statistics in the metric stream. For more information about the additional statistics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.statistics_configurations.is_none()`.
-    pub fn statistics_configurations(&self) -> &[crate::types::MetricStreamStatisticsConfiguration] {
-        self.statistics_configurations.as_deref().unwrap_or_default()
+    pub fn statistics_configurations(&self) -> & [crate::types::MetricStreamStatisticsConfiguration] {
+        self.statistics_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If this is <code>true</code> and this metric stream is in a monitoring account, then the stream includes metrics from source accounts that the monitoring account is linked to.</p>
     pub fn include_linked_accounts_metrics(&self) -> ::std::option::Option<bool> {
@@ -86,10 +89,10 @@ impl GetMetricStreamOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetMetricStreamOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetMetricStreamOutput {
     /// Creates a new builder-style object to manufacture [`GetMetricStreamOutput`](crate::operation::get_metric_stream::GetMetricStreamOutput).
     pub fn builder() -> crate::operation::get_metric_stream::builders::GetMetricStreamOutputBuilder {
@@ -103,15 +106,15 @@ impl GetMetricStreamOutput {
 pub struct GetMetricStreamOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) include_filters: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamFilter>>,
-    pub(crate) exclude_filters: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamFilter>>,
+    pub(crate) include_filters: ::std::option::Option<::std::vec::Vec::<crate::types::MetricStreamFilter>>,
+    pub(crate) exclude_filters: ::std::option::Option<::std::vec::Vec::<crate::types::MetricStreamFilter>>,
     pub(crate) firehose_arn: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) output_format: ::std::option::Option<crate::types::MetricStreamOutputFormat>,
-    pub(crate) statistics_configurations: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamStatisticsConfiguration>>,
+    pub(crate) statistics_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::MetricStreamStatisticsConfiguration>>,
     pub(crate) include_linked_accounts_metrics: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
@@ -123,8 +126,7 @@ impl GetMetricStreamOutputBuilder {
     }
     /// <p>The ARN of the metric stream.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the metric stream.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,8 +139,7 @@ impl GetMetricStreamOutputBuilder {
     }
     /// <p>The name of the metric stream.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the metric stream.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,17 +152,16 @@ impl GetMetricStreamOutputBuilder {
     /// <p>If this array of metric namespaces is present, then these namespaces are the only metric namespaces that are streamed by this metric stream.</p>
     pub fn include_filters(mut self, input: crate::types::MetricStreamFilter) -> Self {
         let mut v = self.include_filters.unwrap_or_default();
-        v.push(input);
-        self.include_filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.include_filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>If this array of metric namespaces is present, then these namespaces are the only metric namespaces that are streamed by this metric stream.</p>
-    pub fn set_include_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamFilter>>) -> Self {
-        self.include_filters = input;
-        self
+    pub fn set_include_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MetricStreamFilter>>) -> Self {
+        self.include_filters = input; self
     }
     /// <p>If this array of metric namespaces is present, then these namespaces are the only metric namespaces that are streamed by this metric stream.</p>
-    pub fn get_include_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStreamFilter>> {
+    pub fn get_include_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MetricStreamFilter>> {
         &self.include_filters
     }
     /// Appends an item to `exclude_filters`.
@@ -171,17 +171,16 @@ impl GetMetricStreamOutputBuilder {
     /// <p>If this array of metric namespaces is present, then these namespaces are the only metric namespaces that are not streamed by this metric stream. In this case, all other metric namespaces in the account are streamed by this metric stream.</p>
     pub fn exclude_filters(mut self, input: crate::types::MetricStreamFilter) -> Self {
         let mut v = self.exclude_filters.unwrap_or_default();
-        v.push(input);
-        self.exclude_filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.exclude_filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>If this array of metric namespaces is present, then these namespaces are the only metric namespaces that are not streamed by this metric stream. In this case, all other metric namespaces in the account are streamed by this metric stream.</p>
-    pub fn set_exclude_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamFilter>>) -> Self {
-        self.exclude_filters = input;
-        self
+    pub fn set_exclude_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MetricStreamFilter>>) -> Self {
+        self.exclude_filters = input; self
     }
     /// <p>If this array of metric namespaces is present, then these namespaces are the only metric namespaces that are not streamed by this metric stream. In this case, all other metric namespaces in the account are streamed by this metric stream.</p>
-    pub fn get_exclude_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStreamFilter>> {
+    pub fn get_exclude_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MetricStreamFilter>> {
         &self.exclude_filters
     }
     /// <p>The ARN of the Amazon Kinesis Data Firehose delivery stream that is used by this metric stream.</p>
@@ -191,8 +190,7 @@ impl GetMetricStreamOutputBuilder {
     }
     /// <p>The ARN of the Amazon Kinesis Data Firehose delivery stream that is used by this metric stream.</p>
     pub fn set_firehose_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.firehose_arn = input;
-        self
+        self.firehose_arn = input; self
     }
     /// <p>The ARN of the Amazon Kinesis Data Firehose delivery stream that is used by this metric stream.</p>
     pub fn get_firehose_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -205,8 +203,7 @@ impl GetMetricStreamOutputBuilder {
     }
     /// <p>The ARN of the IAM role that is used by this metric stream.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the IAM role that is used by this metric stream.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -219,8 +216,7 @@ impl GetMetricStreamOutputBuilder {
     }
     /// <p>The state of the metric stream. The possible values are <code>running</code> and <code>stopped</code>.</p>
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the metric stream. The possible values are <code>running</code> and <code>stopped</code>.</p>
     pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
@@ -233,8 +229,7 @@ impl GetMetricStreamOutputBuilder {
     }
     /// <p>The date that the metric stream was created.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The date that the metric stream was created.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -247,8 +242,7 @@ impl GetMetricStreamOutputBuilder {
     }
     /// <p>The date of the most recent update to the metric stream's configuration.</p>
     pub fn set_last_update_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_update_date = input;
-        self
+        self.last_update_date = input; self
     }
     /// <p>The date of the most recent update to the metric stream's configuration.</p>
     pub fn get_last_update_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -261,8 +255,7 @@ impl GetMetricStreamOutputBuilder {
     }
     /// <p>The output format for the stream. Valid values are <code>json</code>, <code>opentelemetry1.0</code>, and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">Metric streams output formats</a>.</p>
     pub fn set_output_format(mut self, input: ::std::option::Option<crate::types::MetricStreamOutputFormat>) -> Self {
-        self.output_format = input;
-        self
+        self.output_format = input; self
     }
     /// <p>The output format for the stream. Valid values are <code>json</code>, <code>opentelemetry1.0</code>, and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">Metric streams output formats</a>.</p>
     pub fn get_output_format(&self) -> &::std::option::Option<crate::types::MetricStreamOutputFormat> {
@@ -275,20 +268,16 @@ impl GetMetricStreamOutputBuilder {
     /// <p>Each entry in this array displays information about one or more metrics that include additional statistics in the metric stream. For more information about the additional statistics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>.</p>
     pub fn statistics_configurations(mut self, input: crate::types::MetricStreamStatisticsConfiguration) -> Self {
         let mut v = self.statistics_configurations.unwrap_or_default();
-        v.push(input);
-        self.statistics_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.statistics_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Each entry in this array displays information about one or more metrics that include additional statistics in the metric stream. For more information about the additional statistics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>.</p>
-    pub fn set_statistics_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamStatisticsConfiguration>>,
-    ) -> Self {
-        self.statistics_configurations = input;
-        self
+    pub fn set_statistics_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MetricStreamStatisticsConfiguration>>) -> Self {
+        self.statistics_configurations = input; self
     }
     /// <p>Each entry in this array displays information about one or more metrics that include additional statistics in the metric stream. For more information about the additional statistics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>.</p>
-    pub fn get_statistics_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStreamStatisticsConfiguration>> {
+    pub fn get_statistics_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MetricStreamStatisticsConfiguration>> {
         &self.statistics_configurations
     }
     /// <p>If this is <code>true</code> and this metric stream is in a monitoring account, then the stream includes metrics from source accounts that the monitoring account is linked to.</p>
@@ -298,38 +287,50 @@ impl GetMetricStreamOutputBuilder {
     }
     /// <p>If this is <code>true</code> and this metric stream is in a monitoring account, then the stream includes metrics from source accounts that the monitoring account is linked to.</p>
     pub fn set_include_linked_accounts_metrics(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_linked_accounts_metrics = input;
-        self
+        self.include_linked_accounts_metrics = input; self
     }
     /// <p>If this is <code>true</code> and this metric stream is in a monitoring account, then the stream includes metrics from source accounts that the monitoring account is linked to.</p>
     pub fn get_include_linked_accounts_metrics(&self) -> &::std::option::Option<bool> {
         &self.include_linked_accounts_metrics
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetMetricStreamOutput`](crate::operation::get_metric_stream::GetMetricStreamOutput).
     pub fn build(self) -> crate::operation::get_metric_stream::GetMetricStreamOutput {
         crate::operation::get_metric_stream::GetMetricStreamOutput {
-            arn: self.arn,
-            name: self.name,
-            include_filters: self.include_filters,
-            exclude_filters: self.exclude_filters,
-            firehose_arn: self.firehose_arn,
-            role_arn: self.role_arn,
-            state: self.state,
-            creation_date: self.creation_date,
-            last_update_date: self.last_update_date,
-            output_format: self.output_format,
-            statistics_configurations: self.statistics_configurations,
-            include_linked_accounts_metrics: self.include_linked_accounts_metrics,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            include_filters: self.include_filters
+            ,
+            exclude_filters: self.exclude_filters
+            ,
+            firehose_arn: self.firehose_arn
+            ,
+            role_arn: self.role_arn
+            ,
+            state: self.state
+            ,
+            creation_date: self.creation_date
+            ,
+            last_update_date: self.last_update_date
+            ,
+            output_format: self.output_format
+            ,
+            statistics_configurations: self.statistics_configurations
+            ,
+            include_linked_accounts_metrics: self.include_linked_accounts_metrics
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSpeechSynthesisTasksOutput {
+pub struct ListSpeechSynthesisTasksOutput  {
     /// <p>An opaque pagination token returned from the previous List operation in this request. If present, this indicates where to continue the listing.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>List of SynthesisTask objects that provides information from the specified task in the list request, including output format, creation time, task status, and so on.</p>
-    pub synthesis_tasks: ::std::option::Option<::std::vec::Vec<crate::types::SynthesisTask>>,
+    pub synthesis_tasks: ::std::option::Option<::std::vec::Vec::<crate::types::SynthesisTask>>,
     _request_id: Option<String>,
 }
-impl ListSpeechSynthesisTasksOutput {
+impl  ListSpeechSynthesisTasksOutput  {
     /// <p>An opaque pagination token returned from the previous List operation in this request. If present, this indicates where to continue the listing.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>List of SynthesisTask objects that provides information from the specified task in the list request, including output format, creation time, task status, and so on.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.synthesis_tasks.is_none()`.
-    pub fn synthesis_tasks(&self) -> &[crate::types::SynthesisTask] {
-        self.synthesis_tasks.as_deref().unwrap_or_default()
+    pub fn synthesis_tasks(&self) -> & [crate::types::SynthesisTask] {
+        self.synthesis_tasks.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListSpeechSynthesisTasksOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListSpeechSynthesisTasksOutput {
     /// Creates a new builder-style object to manufacture [`ListSpeechSynthesisTasksOutput`](crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksOutput).
     pub fn builder() -> crate::operation::list_speech_synthesis_tasks::builders::ListSpeechSynthesisTasksOutputBuilder {
@@ -38,7 +39,7 @@ impl ListSpeechSynthesisTasksOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSpeechSynthesisTasksOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) synthesis_tasks: ::std::option::Option<::std::vec::Vec<crate::types::SynthesisTask>>,
+    pub(crate) synthesis_tasks: ::std::option::Option<::std::vec::Vec::<crate::types::SynthesisTask>>,
     _request_id: Option<String>,
 }
 impl ListSpeechSynthesisTasksOutputBuilder {
@@ -49,8 +50,7 @@ impl ListSpeechSynthesisTasksOutputBuilder {
     }
     /// <p>An opaque pagination token returned from the previous List operation in this request. If present, this indicates where to continue the listing.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An opaque pagination token returned from the previous List operation in this request. If present, this indicates where to continue the listing.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListSpeechSynthesisTasksOutputBuilder {
     /// <p>List of SynthesisTask objects that provides information from the specified task in the list request, including output format, creation time, task status, and so on.</p>
     pub fn synthesis_tasks(mut self, input: crate::types::SynthesisTask) -> Self {
         let mut v = self.synthesis_tasks.unwrap_or_default();
-        v.push(input);
-        self.synthesis_tasks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.synthesis_tasks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of SynthesisTask objects that provides information from the specified task in the list request, including output format, creation time, task status, and so on.</p>
-    pub fn set_synthesis_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SynthesisTask>>) -> Self {
-        self.synthesis_tasks = input;
-        self
+    pub fn set_synthesis_tasks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SynthesisTask>>) -> Self {
+        self.synthesis_tasks = input; self
     }
     /// <p>List of SynthesisTask objects that provides information from the specified task in the list request, including output format, creation time, task status, and so on.</p>
-    pub fn get_synthesis_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SynthesisTask>> {
+    pub fn get_synthesis_tasks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SynthesisTask>> {
         &self.synthesis_tasks
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListSpeechSynthesisTasksOutput`](crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksOutput).
     pub fn build(self) -> crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksOutput {
         crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksOutput {
-            next_token: self.next_token,
-            synthesis_tasks: self.synthesis_tasks,
+            next_token: self.next_token
+            ,
+            synthesis_tasks: self.synthesis_tasks
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

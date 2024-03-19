@@ -3,28 +3,26 @@
 /// <p>Geospatial column group that denotes a hierarchy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GeoSpatialColumnGroup {
+pub struct GeoSpatialColumnGroup  {
     /// <p>A display name for the hierarchy.</p>
     pub name: ::std::string::String,
     /// <p>Country code.</p>
     pub country_code: ::std::option::Option<crate::types::GeoSpatialCountryCode>,
     /// <p>Columns in this hierarchy.</p>
-    pub columns: ::std::vec::Vec<::std::string::String>,
+    pub columns: ::std::vec::Vec::<::std::string::String>,
 }
-impl GeoSpatialColumnGroup {
+impl  GeoSpatialColumnGroup  {
     /// <p>A display name for the hierarchy.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Country code.</p>
-    pub fn country_code(&self) -> ::std::option::Option<&crate::types::GeoSpatialCountryCode> {
+    pub fn country_code(&self) -> ::std::option::Option<& crate::types::GeoSpatialCountryCode> {
         self.country_code.as_ref()
     }
     /// <p>Columns in this hierarchy.</p>
-    pub fn columns(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.columns.deref()
+    pub fn columns(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.columns.deref()
     }
 }
 impl GeoSpatialColumnGroup {
@@ -40,7 +38,7 @@ impl GeoSpatialColumnGroup {
 pub struct GeoSpatialColumnGroupBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) country_code: ::std::option::Option<crate::types::GeoSpatialCountryCode>,
-    pub(crate) columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) columns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl GeoSpatialColumnGroupBuilder {
     /// <p>A display name for the hierarchy.</p>
@@ -51,8 +49,7 @@ impl GeoSpatialColumnGroupBuilder {
     }
     /// <p>A display name for the hierarchy.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A display name for the hierarchy.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +62,7 @@ impl GeoSpatialColumnGroupBuilder {
     }
     /// <p>Country code.</p>
     pub fn set_country_code(mut self, input: ::std::option::Option<crate::types::GeoSpatialCountryCode>) -> Self {
-        self.country_code = input;
-        self
+        self.country_code = input; self
     }
     /// <p>Country code.</p>
     pub fn get_country_code(&self) -> &::std::option::Option<crate::types::GeoSpatialCountryCode> {
@@ -79,17 +75,16 @@ impl GeoSpatialColumnGroupBuilder {
     /// <p>Columns in this hierarchy.</p>
     pub fn columns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.columns.unwrap_or_default();
-        v.push(input.into());
-        self.columns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.columns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Columns in this hierarchy.</p>
-    pub fn set_columns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.columns = input;
-        self
+    pub fn set_columns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.columns = input; self
     }
     /// <p>Columns in this hierarchy.</p>
-    pub fn get_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_columns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.columns
     }
     /// Consumes the builder and constructs a [`GeoSpatialColumnGroup`](crate::types::GeoSpatialColumnGroup).
@@ -97,20 +92,22 @@ impl GeoSpatialColumnGroupBuilder {
     /// - [`name`](crate::types::builders::GeoSpatialColumnGroupBuilder::name)
     /// - [`columns`](crate::types::builders::GeoSpatialColumnGroupBuilder::columns)
     pub fn build(self) -> ::std::result::Result<crate::types::GeoSpatialColumnGroup, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GeoSpatialColumnGroup {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building GeoSpatialColumnGroup",
-                )
-            })?,
-            country_code: self.country_code,
-            columns: self.columns.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "columns",
-                    "columns was not specified but it is required when building GeoSpatialColumnGroup",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GeoSpatialColumnGroup {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building GeoSpatialColumnGroup")
+                    )?
+                ,
+                country_code: self.country_code
+                ,
+                columns: self.columns
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("columns", "columns was not specified but it is required when building GeoSpatialColumnGroup")
+                    )?
+                ,
+            }
+        )
     }
 }
+

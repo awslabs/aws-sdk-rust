@@ -2,34 +2,35 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetKeyPairsOutput {
+pub struct GetKeyPairsOutput  {
     /// <p>An array of key-value pairs containing information about the key pairs.</p>
-    pub key_pairs: ::std::option::Option<::std::vec::Vec<crate::types::KeyPair>>,
+    pub key_pairs: ::std::option::Option<::std::vec::Vec::<crate::types::KeyPair>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetKeyPairs</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetKeyPairsOutput {
+impl  GetKeyPairsOutput  {
     /// <p>An array of key-value pairs containing information about the key pairs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.key_pairs.is_none()`.
-    pub fn key_pairs(&self) -> &[crate::types::KeyPair] {
-        self.key_pairs.as_deref().unwrap_or_default()
+    pub fn key_pairs(&self) -> & [crate::types::KeyPair] {
+        self.key_pairs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetKeyPairs</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_page_token(&self) -> ::std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetKeyPairsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetKeyPairsOutput {
     /// Creates a new builder-style object to manufacture [`GetKeyPairsOutput`](crate::operation::get_key_pairs::GetKeyPairsOutput).
     pub fn builder() -> crate::operation::get_key_pairs::builders::GetKeyPairsOutputBuilder {
@@ -41,7 +42,7 @@ impl GetKeyPairsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetKeyPairsOutputBuilder {
-    pub(crate) key_pairs: ::std::option::Option<::std::vec::Vec<crate::types::KeyPair>>,
+    pub(crate) key_pairs: ::std::option::Option<::std::vec::Vec::<crate::types::KeyPair>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,17 +54,16 @@ impl GetKeyPairsOutputBuilder {
     /// <p>An array of key-value pairs containing information about the key pairs.</p>
     pub fn key_pairs(mut self, input: crate::types::KeyPair) -> Self {
         let mut v = self.key_pairs.unwrap_or_default();
-        v.push(input);
-        self.key_pairs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.key_pairs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of key-value pairs containing information about the key pairs.</p>
-    pub fn set_key_pairs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyPair>>) -> Self {
-        self.key_pairs = input;
-        self
+    pub fn set_key_pairs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KeyPair>>) -> Self {
+        self.key_pairs = input; self
     }
     /// <p>An array of key-value pairs containing information about the key pairs.</p>
-    pub fn get_key_pairs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyPair>> {
+    pub fn get_key_pairs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KeyPair>> {
         &self.key_pairs
     }
     /// <p>The token to advance to the next page of results from your request.</p>
@@ -77,8 +77,7 @@ impl GetKeyPairsOutputBuilder {
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetKeyPairs</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_page_token = input;
-        self
+        self.next_page_token = input; self
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
@@ -87,20 +86,23 @@ impl GetKeyPairsOutputBuilder {
         &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetKeyPairsOutput`](crate::operation::get_key_pairs::GetKeyPairsOutput).
     pub fn build(self) -> crate::operation::get_key_pairs::GetKeyPairsOutput {
         crate::operation::get_key_pairs::GetKeyPairsOutput {
-            key_pairs: self.key_pairs,
-            next_page_token: self.next_page_token,
+            key_pairs: self.key_pairs
+            ,
+            next_page_token: self.next_page_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

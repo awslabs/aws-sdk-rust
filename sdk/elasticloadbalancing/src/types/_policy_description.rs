@@ -3,28 +3,29 @@
 /// <p>Information about a policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PolicyDescription {
+pub struct PolicyDescription  {
     /// <p>The name of the policy.</p>
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the policy type.</p>
     pub policy_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The policy attributes.</p>
-    pub policy_attribute_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::PolicyAttributeDescription>>,
+    pub policy_attribute_descriptions: ::std::option::Option<::std::vec::Vec::<crate::types::PolicyAttributeDescription>>,
 }
-impl PolicyDescription {
+impl  PolicyDescription  {
     /// <p>The name of the policy.</p>
-    pub fn policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<& str> {
         self.policy_name.as_deref()
     }
     /// <p>The name of the policy type.</p>
-    pub fn policy_type_name(&self) -> ::std::option::Option<&str> {
+    pub fn policy_type_name(&self) -> ::std::option::Option<& str> {
         self.policy_type_name.as_deref()
     }
     /// <p>The policy attributes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_attribute_descriptions.is_none()`.
-    pub fn policy_attribute_descriptions(&self) -> &[crate::types::PolicyAttributeDescription] {
-        self.policy_attribute_descriptions.as_deref().unwrap_or_default()
+    pub fn policy_attribute_descriptions(&self) -> & [crate::types::PolicyAttributeDescription] {
+        self.policy_attribute_descriptions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PolicyDescription {
@@ -40,7 +41,7 @@ impl PolicyDescription {
 pub struct PolicyDescriptionBuilder {
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_type_name: ::std::option::Option<::std::string::String>,
-    pub(crate) policy_attribute_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::PolicyAttributeDescription>>,
+    pub(crate) policy_attribute_descriptions: ::std::option::Option<::std::vec::Vec::<crate::types::PolicyAttributeDescription>>,
 }
 impl PolicyDescriptionBuilder {
     /// <p>The name of the policy.</p>
@@ -50,8 +51,7 @@ impl PolicyDescriptionBuilder {
     }
     /// <p>The name of the policy.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// <p>The name of the policy.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl PolicyDescriptionBuilder {
     }
     /// <p>The name of the policy type.</p>
     pub fn set_policy_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_type_name = input;
-        self
+        self.policy_type_name = input; self
     }
     /// <p>The name of the policy type.</p>
     pub fn get_policy_type_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,28 +77,28 @@ impl PolicyDescriptionBuilder {
     /// <p>The policy attributes.</p>
     pub fn policy_attribute_descriptions(mut self, input: crate::types::PolicyAttributeDescription) -> Self {
         let mut v = self.policy_attribute_descriptions.unwrap_or_default();
-        v.push(input);
-        self.policy_attribute_descriptions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.policy_attribute_descriptions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The policy attributes.</p>
-    pub fn set_policy_attribute_descriptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyAttributeDescription>>,
-    ) -> Self {
-        self.policy_attribute_descriptions = input;
-        self
+    pub fn set_policy_attribute_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PolicyAttributeDescription>>) -> Self {
+        self.policy_attribute_descriptions = input; self
     }
     /// <p>The policy attributes.</p>
-    pub fn get_policy_attribute_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyAttributeDescription>> {
+    pub fn get_policy_attribute_descriptions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PolicyAttributeDescription>> {
         &self.policy_attribute_descriptions
     }
     /// Consumes the builder and constructs a [`PolicyDescription`](crate::types::PolicyDescription).
     pub fn build(self) -> crate::types::PolicyDescription {
         crate::types::PolicyDescription {
-            policy_name: self.policy_name,
-            policy_type_name: self.policy_type_name,
-            policy_attribute_descriptions: self.policy_attribute_descriptions,
+            policy_name: self.policy_name
+            ,
+            policy_type_name: self.policy_type_name
+            ,
+            policy_attribute_descriptions: self.policy_attribute_descriptions
+            ,
         }
     }
 }
+

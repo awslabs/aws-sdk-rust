@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DecreaseReplicationFactorInput {
+pub struct DecreaseReplicationFactorInput  {
     /// <p>The name of the DAX cluster from which you want to remove nodes.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The new number of nodes for the DAX cluster.</p>
     pub new_replication_factor: ::std::option::Option<i32>,
     /// <p>The Availability Zone(s) from which to remove nodes.</p>
-    pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub availability_zones: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The unique identifiers of the nodes to be removed from the cluster.</p>
-    pub node_ids_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub node_ids_to_remove: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DecreaseReplicationFactorInput {
+impl  DecreaseReplicationFactorInput  {
     /// <p>The name of the DAX cluster from which you want to remove nodes.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The new number of nodes for the DAX cluster.</p>
@@ -22,16 +22,18 @@ impl DecreaseReplicationFactorInput {
         self.new_replication_factor
     }
     /// <p>The Availability Zone(s) from which to remove nodes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
-    pub fn availability_zones(&self) -> &[::std::string::String] {
-        self.availability_zones.as_deref().unwrap_or_default()
+    pub fn availability_zones(&self) -> & [::std::string::String] {
+        self.availability_zones.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The unique identifiers of the nodes to be removed from the cluster.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_ids_to_remove.is_none()`.
-    pub fn node_ids_to_remove(&self) -> &[::std::string::String] {
-        self.node_ids_to_remove.as_deref().unwrap_or_default()
+    pub fn node_ids_to_remove(&self) -> & [::std::string::String] {
+        self.node_ids_to_remove.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DecreaseReplicationFactorInput {
@@ -47,8 +49,8 @@ impl DecreaseReplicationFactorInput {
 pub struct DecreaseReplicationFactorInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) new_replication_factor: ::std::option::Option<i32>,
-    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) node_ids_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) node_ids_to_remove: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DecreaseReplicationFactorInputBuilder {
     /// <p>The name of the DAX cluster from which you want to remove nodes.</p>
@@ -59,8 +61,7 @@ impl DecreaseReplicationFactorInputBuilder {
     }
     /// <p>The name of the DAX cluster from which you want to remove nodes.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The name of the DAX cluster from which you want to remove nodes.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +75,7 @@ impl DecreaseReplicationFactorInputBuilder {
     }
     /// <p>The new number of nodes for the DAX cluster.</p>
     pub fn set_new_replication_factor(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.new_replication_factor = input;
-        self
+        self.new_replication_factor = input; self
     }
     /// <p>The new number of nodes for the DAX cluster.</p>
     pub fn get_new_replication_factor(&self) -> &::std::option::Option<i32> {
@@ -88,17 +88,16 @@ impl DecreaseReplicationFactorInputBuilder {
     /// <p>The Availability Zone(s) from which to remove nodes.</p>
     pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
-        v.push(input.into());
-        self.availability_zones = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.availability_zones = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Availability Zone(s) from which to remove nodes.</p>
-    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.availability_zones = input;
-        self
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.availability_zones = input; self
     }
     /// <p>The Availability Zone(s) from which to remove nodes.</p>
-    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.availability_zones
     }
     /// Appends an item to `node_ids_to_remove`.
@@ -108,31 +107,32 @@ impl DecreaseReplicationFactorInputBuilder {
     /// <p>The unique identifiers of the nodes to be removed from the cluster.</p>
     pub fn node_ids_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.node_ids_to_remove.unwrap_or_default();
-        v.push(input.into());
-        self.node_ids_to_remove = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.node_ids_to_remove = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The unique identifiers of the nodes to be removed from the cluster.</p>
-    pub fn set_node_ids_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.node_ids_to_remove = input;
-        self
+    pub fn set_node_ids_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.node_ids_to_remove = input; self
     }
     /// <p>The unique identifiers of the nodes to be removed from the cluster.</p>
-    pub fn get_node_ids_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_node_ids_to_remove(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.node_ids_to_remove
     }
     /// Consumes the builder and constructs a [`DecreaseReplicationFactorInput`](crate::operation::decrease_replication_factor::DecreaseReplicationFactorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::decrease_replication_factor::DecreaseReplicationFactorInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::decrease_replication_factor::DecreaseReplicationFactorInput {
-            cluster_name: self.cluster_name,
-            new_replication_factor: self.new_replication_factor,
-            availability_zones: self.availability_zones,
-            node_ids_to_remove: self.node_ids_to_remove,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::decrease_replication_factor::DecreaseReplicationFactorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::decrease_replication_factor::DecreaseReplicationFactorInput {
+                cluster_name: self.cluster_name
+                ,
+                new_replication_factor: self.new_replication_factor
+                ,
+                availability_zones: self.availability_zones
+                ,
+                node_ids_to_remove: self.node_ids_to_remove
+                ,
+            }
+        )
     }
 }
+

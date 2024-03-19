@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListInstances`](crate::operation::list_instances::builders::ListInstancesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_instances::builders::ListInstancesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`cluster_id(impl Into<String>)`](crate::operation::list_instances::builders::ListInstancesFluentBuilder::cluster_id) / [`set_cluster_id(Option<String>)`](crate::operation::list_instances::builders::ListInstancesFluentBuilder::set_cluster_id):<br>required: **true**<br><p>The identifier of the cluster for which to list the instances.</p><br>
     ///   - [`instance_group_id(impl Into<String>)`](crate::operation::list_instances::builders::ListInstancesFluentBuilder::instance_group_id) / [`set_instance_group_id(Option<String>)`](crate::operation::list_instances::builders::ListInstancesFluentBuilder::set_instance_group_id):<br>required: **false**<br><p>The identifier of the instance group for which to list the instances.</p><br>
     ///   - [`instance_group_types(InstanceGroupType)`](crate::operation::list_instances::builders::ListInstancesFluentBuilder::instance_group_types) / [`set_instance_group_types(Option<Vec::<InstanceGroupType>>)`](crate::operation::list_instances::builders::ListInstancesFluentBuilder::set_instance_group_types):<br>required: **false**<br><p>The type of instance group for which to list the instances.</p><br>
@@ -11,11 +11,12 @@ impl super::Client {
     ///   - [`instance_fleet_type(InstanceFleetType)`](crate::operation::list_instances::builders::ListInstancesFluentBuilder::instance_fleet_type) / [`set_instance_fleet_type(Option<InstanceFleetType>)`](crate::operation::list_instances::builders::ListInstancesFluentBuilder::set_instance_fleet_type):<br>required: **false**<br><p>The node type of the instance fleet. For example MASTER, CORE, or TASK.</p><br>
     ///   - [`instance_states(InstanceState)`](crate::operation::list_instances::builders::ListInstancesFluentBuilder::instance_states) / [`set_instance_states(Option<Vec::<InstanceState>>)`](crate::operation::list_instances::builders::ListInstancesFluentBuilder::set_instance_states):<br>required: **false**<br><p>A list of instance states that will filter the instances returned with this request.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::list_instances::builders::ListInstancesFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::list_instances::builders::ListInstancesFluentBuilder::set_marker):<br>required: **false**<br><p>The pagination token that indicates the next set of results to retrieve.</p><br>
-    /// - On success, responds with [`ListInstancesOutput`](crate::operation::list_instances::ListInstancesOutput) with field(s):
+                            /// - On success, responds with [`ListInstancesOutput`](crate::operation::list_instances::ListInstancesOutput) with field(s):
     ///   - [`instances(Option<Vec::<Instance>>)`](crate::operation::list_instances::ListInstancesOutput::instances): <p>The list of instances for the cluster and given filters.</p>
     ///   - [`marker(Option<String>)`](crate::operation::list_instances::ListInstancesOutput::marker): <p>The pagination token that indicates the next set of results to retrieve.</p>
-    /// - On failure, responds with [`SdkError<ListInstancesError>`](crate::operation::list_instances::ListInstancesError)
+                            /// - On failure, responds with [`SdkError<ListInstancesError>`](crate::operation::list_instances::ListInstancesError)
     pub fn list_instances(&self) -> crate::operation::list_instances::builders::ListInstancesFluentBuilder {
-        crate::operation::list_instances::builders::ListInstancesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_instances::builders::ListInstancesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

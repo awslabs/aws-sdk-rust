@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateConfigurationPolicyInput {
+pub struct UpdateConfigurationPolicyInput  {
     /// <p>The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configuration policy. Alphanumeric characters and the following ASCII characters are permitted: <code>-, ., !, *, /</code>.</p>
@@ -15,26 +15,26 @@ pub struct UpdateConfigurationPolicyInput {
     /// <p>When updating a configuration policy, provide a complete list of standards that you want to enable and a complete list of controls that you want to enable or disable. The updated configuration replaces the current configuration.</p>
     pub configuration_policy: ::std::option::Option<crate::types::Policy>,
 }
-impl UpdateConfigurationPolicyInput {
+impl  UpdateConfigurationPolicyInput  {
     /// <p>The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>The name of the configuration policy. Alphanumeric characters and the following ASCII characters are permitted: <code>-, ., !, *, /</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the configuration policy.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The reason for updating the configuration policy.</p>
-    pub fn updated_reason(&self) -> ::std::option::Option<&str> {
+    pub fn updated_reason(&self) -> ::std::option::Option<& str> {
         self.updated_reason.as_deref()
     }
     /// <p>An object that defines how Security Hub is configured. It includes whether Security Hub is enabled or disabled, a list of enabled security standards, a list of enabled or disabled security controls, and a list of custom parameter values for specified controls. If you provide a list of security controls that are enabled in the configuration policy, Security Hub disables all other controls (including newly released controls). If you provide a list of security controls that are disabled in the configuration policy, Security Hub enables all other controls (including newly released controls).</p>
     /// <p>When updating a configuration policy, provide a complete list of standards that you want to enable and a complete list of controls that you want to enable or disable. The updated configuration replaces the current configuration.</p>
-    pub fn configuration_policy(&self) -> ::std::option::Option<&crate::types::Policy> {
+    pub fn configuration_policy(&self) -> ::std::option::Option<& crate::types::Policy> {
         self.configuration_policy.as_ref()
     }
 }
@@ -64,8 +64,7 @@ impl UpdateConfigurationPolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +77,7 @@ impl UpdateConfigurationPolicyInputBuilder {
     }
     /// <p>The name of the configuration policy. Alphanumeric characters and the following ASCII characters are permitted: <code>-, ., !, *, /</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the configuration policy. Alphanumeric characters and the following ASCII characters are permitted: <code>-, ., !, *, /</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +90,7 @@ impl UpdateConfigurationPolicyInputBuilder {
     }
     /// <p>The description of the configuration policy.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the configuration policy.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +103,7 @@ impl UpdateConfigurationPolicyInputBuilder {
     }
     /// <p>The reason for updating the configuration policy.</p>
     pub fn set_updated_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.updated_reason = input;
-        self
+        self.updated_reason = input; self
     }
     /// <p>The reason for updating the configuration policy.</p>
     pub fn get_updated_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +118,7 @@ impl UpdateConfigurationPolicyInputBuilder {
     /// <p>An object that defines how Security Hub is configured. It includes whether Security Hub is enabled or disabled, a list of enabled security standards, a list of enabled or disabled security controls, and a list of custom parameter values for specified controls. If you provide a list of security controls that are enabled in the configuration policy, Security Hub disables all other controls (including newly released controls). If you provide a list of security controls that are disabled in the configuration policy, Security Hub enables all other controls (including newly released controls).</p>
     /// <p>When updating a configuration policy, provide a complete list of standards that you want to enable and a complete list of controls that you want to enable or disable. The updated configuration replaces the current configuration.</p>
     pub fn set_configuration_policy(mut self, input: ::std::option::Option<crate::types::Policy>) -> Self {
-        self.configuration_policy = input;
-        self
+        self.configuration_policy = input; self
     }
     /// <p>An object that defines how Security Hub is configured. It includes whether Security Hub is enabled or disabled, a list of enabled security standards, a list of enabled or disabled security controls, and a list of custom parameter values for specified controls. If you provide a list of security controls that are enabled in the configuration policy, Security Hub disables all other controls (including newly released controls). If you provide a list of security controls that are disabled in the configuration policy, Security Hub enables all other controls (including newly released controls).</p>
     /// <p>When updating a configuration policy, provide a complete list of standards that you want to enable and a complete list of controls that you want to enable or disable. The updated configuration replaces the current configuration.</p>
@@ -131,18 +126,21 @@ impl UpdateConfigurationPolicyInputBuilder {
         &self.configuration_policy
     }
     /// Consumes the builder and constructs a [`UpdateConfigurationPolicyInput`](crate::operation::update_configuration_policy::UpdateConfigurationPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_configuration_policy::UpdateConfigurationPolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_configuration_policy::UpdateConfigurationPolicyInput {
-            identifier: self.identifier,
-            name: self.name,
-            description: self.description,
-            updated_reason: self.updated_reason,
-            configuration_policy: self.configuration_policy,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_configuration_policy::UpdateConfigurationPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_configuration_policy::UpdateConfigurationPolicyInput {
+                identifier: self.identifier
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                updated_reason: self.updated_reason
+                ,
+                configuration_policy: self.configuration_policy
+                ,
+            }
+        )
     }
 }
+

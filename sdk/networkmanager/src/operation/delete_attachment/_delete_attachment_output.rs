@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAttachmentOutput {
+pub struct DeleteAttachmentOutput  {
     /// <p>Information about the deleted attachment.</p>
     pub attachment: ::std::option::Option<crate::types::Attachment>,
     _request_id: Option<String>,
 }
-impl DeleteAttachmentOutput {
+impl  DeleteAttachmentOutput  {
     /// <p>Information about the deleted attachment.</p>
-    pub fn attachment(&self) -> ::std::option::Option<&crate::types::Attachment> {
+    pub fn attachment(&self) -> ::std::option::Option<& crate::types::Attachment> {
         self.attachment.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteAttachmentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteAttachmentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAttachmentOutput`](crate::operation::delete_attachment::DeleteAttachmentOutput).
     pub fn builder() -> crate::operation::delete_attachment::builders::DeleteAttachmentOutputBuilder {
@@ -40,27 +40,28 @@ impl DeleteAttachmentOutputBuilder {
     }
     /// <p>Information about the deleted attachment.</p>
     pub fn set_attachment(mut self, input: ::std::option::Option<crate::types::Attachment>) -> Self {
-        self.attachment = input;
-        self
+        self.attachment = input; self
     }
     /// <p>Information about the deleted attachment.</p>
     pub fn get_attachment(&self) -> &::std::option::Option<crate::types::Attachment> {
         &self.attachment
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteAttachmentOutput`](crate::operation::delete_attachment::DeleteAttachmentOutput).
     pub fn build(self) -> crate::operation::delete_attachment::DeleteAttachmentOutput {
         crate::operation::delete_attachment::DeleteAttachmentOutput {
-            attachment: self.attachment,
+            attachment: self.attachment
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

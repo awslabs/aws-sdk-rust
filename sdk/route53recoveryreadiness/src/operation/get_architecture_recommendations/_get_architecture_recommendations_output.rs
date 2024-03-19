@@ -2,36 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetArchitectureRecommendationsOutput {
+pub struct GetArchitectureRecommendationsOutput  {
     /// <p>The time that a recovery group was last assessed for recommendations, in UTC ISO-8601 format.</p>
     pub last_audit_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of the recommendations for the customer's application.</p>
-    pub recommendations: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
+    pub recommendations: ::std::option::Option<::std::vec::Vec::<crate::types::Recommendation>>,
     _request_id: Option<String>,
 }
-impl GetArchitectureRecommendationsOutput {
+impl  GetArchitectureRecommendationsOutput  {
     /// <p>The time that a recovery group was last assessed for recommendations, in UTC ISO-8601 format.</p>
-    pub fn last_audit_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_audit_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_audit_timestamp.as_ref()
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of the recommendations for the customer's application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommendations.is_none()`.
-    pub fn recommendations(&self) -> &[crate::types::Recommendation] {
-        self.recommendations.as_deref().unwrap_or_default()
+    pub fn recommendations(&self) -> & [crate::types::Recommendation] {
+        self.recommendations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetArchitectureRecommendationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetArchitectureRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`GetArchitectureRecommendationsOutput`](crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsOutput).
     pub fn builder() -> crate::operation::get_architecture_recommendations::builders::GetArchitectureRecommendationsOutputBuilder {
@@ -45,7 +46,7 @@ impl GetArchitectureRecommendationsOutput {
 pub struct GetArchitectureRecommendationsOutputBuilder {
     pub(crate) last_audit_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) recommendations: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
+    pub(crate) recommendations: ::std::option::Option<::std::vec::Vec::<crate::types::Recommendation>>,
     _request_id: Option<String>,
 }
 impl GetArchitectureRecommendationsOutputBuilder {
@@ -56,8 +57,7 @@ impl GetArchitectureRecommendationsOutputBuilder {
     }
     /// <p>The time that a recovery group was last assessed for recommendations, in UTC ISO-8601 format.</p>
     pub fn set_last_audit_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_audit_timestamp = input;
-        self
+        self.last_audit_timestamp = input; self
     }
     /// <p>The time that a recovery group was last assessed for recommendations, in UTC ISO-8601 format.</p>
     pub fn get_last_audit_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -70,8 +70,7 @@ impl GetArchitectureRecommendationsOutputBuilder {
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,35 +83,38 @@ impl GetArchitectureRecommendationsOutputBuilder {
     /// <p>A list of the recommendations for the customer's application.</p>
     pub fn recommendations(mut self, input: crate::types::Recommendation) -> Self {
         let mut v = self.recommendations.unwrap_or_default();
-        v.push(input);
-        self.recommendations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.recommendations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the recommendations for the customer's application.</p>
-    pub fn set_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>) -> Self {
-        self.recommendations = input;
-        self
+    pub fn set_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Recommendation>>) -> Self {
+        self.recommendations = input; self
     }
     /// <p>A list of the recommendations for the customer's application.</p>
-    pub fn get_recommendations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Recommendation>> {
+    pub fn get_recommendations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Recommendation>> {
         &self.recommendations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetArchitectureRecommendationsOutput`](crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsOutput).
     pub fn build(self) -> crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsOutput {
         crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsOutput {
-            last_audit_timestamp: self.last_audit_timestamp,
-            next_token: self.next_token,
-            recommendations: self.recommendations,
+            last_audit_timestamp: self.last_audit_timestamp
+            ,
+            next_token: self.next_token
+            ,
+            recommendations: self.recommendations
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListClusterOperationsV2`](crate::operation::list_cluster_operations_v2::builders::ListClusterOperationsV2FluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_cluster_operations_v2::builders::ListClusterOperationsV2FluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`cluster_arn(impl Into<String>)`](crate::operation::list_cluster_operations_v2::builders::ListClusterOperationsV2FluentBuilder::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::operation::list_cluster_operations_v2::builders::ListClusterOperationsV2FluentBuilder::set_cluster_arn):<br>required: **true**<br>The arn of the cluster whose operations are being requested.<br>
     ///   - [`max_results(i32)`](crate::operation::list_cluster_operations_v2::builders::ListClusterOperationsV2FluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_cluster_operations_v2::builders::ListClusterOperationsV2FluentBuilder::set_max_results):<br>required: **false**<br>The maxResults of the query.<br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_cluster_operations_v2::builders::ListClusterOperationsV2FluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_cluster_operations_v2::builders::ListClusterOperationsV2FluentBuilder::set_next_token):<br>required: **false**<br>The nextToken of the query.<br>
-    /// - On success, responds with [`ListClusterOperationsV2Output`](crate::operation::list_cluster_operations_v2::ListClusterOperationsV2Output) with field(s):
+                            /// - On success, responds with [`ListClusterOperationsV2Output`](crate::operation::list_cluster_operations_v2::ListClusterOperationsV2Output) with field(s):
     ///   - [`cluster_operation_info_list(Option<Vec::<ClusterOperationV2Summary>>)`](crate::operation::list_cluster_operations_v2::ListClusterOperationsV2Output::cluster_operation_info_list): <p>An array of cluster operation information objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_cluster_operations_v2::ListClusterOperationsV2Output::next_token): <p>If the response of ListClusterOperationsV2 is truncated, it returns a NextToken in the response. This NextToken should be sent in the subsequent request to ListClusterOperationsV2.</p>
-    /// - On failure, responds with [`SdkError<ListClusterOperationsV2Error>`](crate::operation::list_cluster_operations_v2::ListClusterOperationsV2Error)
+                            /// - On failure, responds with [`SdkError<ListClusterOperationsV2Error>`](crate::operation::list_cluster_operations_v2::ListClusterOperationsV2Error)
     pub fn list_cluster_operations_v2(&self) -> crate::operation::list_cluster_operations_v2::builders::ListClusterOperationsV2FluentBuilder {
-        crate::operation::list_cluster_operations_v2::builders::ListClusterOperationsV2FluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_cluster_operations_v2::builders::ListClusterOperationsV2FluentBuilder::new(self.handle.clone())
+                            }
 }
+

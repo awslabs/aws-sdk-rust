@@ -5,112 +5,96 @@ pub use crate::operation::update_firewall_encryption_configuration::_update_fire
 
 impl UpdateFirewallEncryptionConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_firewall_encryption_configuration();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_firewall_encryption_configuration();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateFirewallEncryptionConfiguration`.
-///
+/// 
 /// <p>A complex type that contains settings for encryption of your firewall resources.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFirewallEncryptionConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_firewall_encryption_configuration::builders::UpdateFirewallEncryptionConfigurationInputBuilder,
+                    inner: crate::operation::update_firewall_encryption_configuration::builders::UpdateFirewallEncryptionConfigurationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationOutput,
-        crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationError,
-    > for UpdateFirewallEncryptionConfigurationFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationOutput,
-            crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationOutput,
+                    crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationError,
+                > for UpdateFirewallEncryptionConfigurationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationOutput,
+                        crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateFirewallEncryptionConfigurationFluentBuilder {
     /// Creates a new `UpdateFirewallEncryptionConfiguration`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
     /// Access the UpdateFirewallEncryptionConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::update_firewall_encryption_configuration::builders::UpdateFirewallEncryptionConfigurationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::update_firewall_encryption_configuration::builders::UpdateFirewallEncryptionConfigurationInputBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins =
-            crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfiguration::operation_runtime_plugins(
-                self.handle.runtime_plugins.clone(),
-                &self.handle.conf,
-                self.config_override,
-            );
-        crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfiguration::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationOutput,
-        crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfiguration::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfiguration::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationOutput, crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request.</p>
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token.</p>
@@ -174,3 +158,4 @@ impl UpdateFirewallEncryptionConfigurationFluentBuilder {
         self.inner.get_encryption_configuration()
     }
 }
+

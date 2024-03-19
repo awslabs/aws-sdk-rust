@@ -3,19 +3,19 @@
 /// <p>An array of analysis level configurations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetOptions {
+pub struct AssetOptions  {
     /// <p>Determines the timezone for the analysis.</p>
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>Determines the week start day for an analysis.</p>
     pub week_start: ::std::option::Option<crate::types::DayOfTheWeek>,
 }
-impl AssetOptions {
+impl  AssetOptions  {
     /// <p>Determines the timezone for the analysis.</p>
-    pub fn timezone(&self) -> ::std::option::Option<&str> {
+    pub fn timezone(&self) -> ::std::option::Option<& str> {
         self.timezone.as_deref()
     }
     /// <p>Determines the week start day for an analysis.</p>
-    pub fn week_start(&self) -> ::std::option::Option<&crate::types::DayOfTheWeek> {
+    pub fn week_start(&self) -> ::std::option::Option<& crate::types::DayOfTheWeek> {
         self.week_start.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl AssetOptionsBuilder {
     }
     /// <p>Determines the timezone for the analysis.</p>
     pub fn set_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.timezone = input;
-        self
+        self.timezone = input; self
     }
     /// <p>Determines the timezone for the analysis.</p>
     pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AssetOptionsBuilder {
     }
     /// <p>Determines the week start day for an analysis.</p>
     pub fn set_week_start(mut self, input: ::std::option::Option<crate::types::DayOfTheWeek>) -> Self {
-        self.week_start = input;
-        self
+        self.week_start = input; self
     }
     /// <p>Determines the week start day for an analysis.</p>
     pub fn get_week_start(&self) -> &::std::option::Option<crate::types::DayOfTheWeek> {
@@ -65,8 +63,11 @@ impl AssetOptionsBuilder {
     /// Consumes the builder and constructs a [`AssetOptions`](crate::types::AssetOptions).
     pub fn build(self) -> crate::types::AssetOptions {
         crate::types::AssetOptions {
-            timezone: self.timezone,
-            week_start: self.week_start,
+            timezone: self.timezone
+            ,
+            week_start: self.week_start
+            ,
         }
     }
 }
+

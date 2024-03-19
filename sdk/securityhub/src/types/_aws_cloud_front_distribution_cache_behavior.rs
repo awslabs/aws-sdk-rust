@@ -3,7 +3,7 @@
 /// <p>Information about a cache behavior for the distribution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsCloudFrontDistributionCacheBehavior {
+pub struct AwsCloudFrontDistributionCacheBehavior  {
     /// <p>The protocol that viewers can use to access the files in an origin. You can specify the following options:</p>
     /// <ul>
     /// <li>
@@ -15,7 +15,7 @@ pub struct AwsCloudFrontDistributionCacheBehavior {
     /// </ul>
     pub viewer_protocol_policy: ::std::option::Option<::std::string::String>,
 }
-impl AwsCloudFrontDistributionCacheBehavior {
+impl  AwsCloudFrontDistributionCacheBehavior  {
     /// <p>The protocol that viewers can use to access the files in an origin. You can specify the following options:</p>
     /// <ul>
     /// <li>
@@ -25,7 +25,7 @@ impl AwsCloudFrontDistributionCacheBehavior {
     /// <li>
     /// <p><code>https-only</code> - CloudFront responds to HTTP request with an HTTP status code of 403 (Forbidden).</p></li>
     /// </ul>
-    pub fn viewer_protocol_policy(&self) -> ::std::option::Option<&str> {
+    pub fn viewer_protocol_policy(&self) -> ::std::option::Option<& str> {
         self.viewer_protocol_policy.as_deref()
     }
 }
@@ -66,8 +66,7 @@ impl AwsCloudFrontDistributionCacheBehaviorBuilder {
     /// <p><code>https-only</code> - CloudFront responds to HTTP request with an HTTP status code of 403 (Forbidden).</p></li>
     /// </ul>
     pub fn set_viewer_protocol_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.viewer_protocol_policy = input;
-        self
+        self.viewer_protocol_policy = input; self
     }
     /// <p>The protocol that viewers can use to access the files in an origin. You can specify the following options:</p>
     /// <ul>
@@ -84,7 +83,9 @@ impl AwsCloudFrontDistributionCacheBehaviorBuilder {
     /// Consumes the builder and constructs a [`AwsCloudFrontDistributionCacheBehavior`](crate::types::AwsCloudFrontDistributionCacheBehavior).
     pub fn build(self) -> crate::types::AwsCloudFrontDistributionCacheBehavior {
         crate::types::AwsCloudFrontDistributionCacheBehavior {
-            viewer_protocol_policy: self.viewer_protocol_policy,
+            viewer_protocol_policy: self.viewer_protocol_policy
+            ,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Defines limits on how the term can be configured by acceptors.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Constraints {
+pub struct Constraints  {
     /// <p>Determines if buyers are allowed to select multiple dimensions in the rate card. The possible values are <code>Allowed</code> and <code>Disallowed</code>. The default value is <code>Allowed</code>.</p>
     pub multiple_dimension_selection: ::std::option::Option<::std::string::String>,
     /// <p>Determines if acceptors are allowed to configure quantity for each dimension in rate card. The possible values are <code>Allowed</code> and <code>Disallowed</code>. The default value is <code>Allowed</code>.</p>
     pub quantity_configuration: ::std::option::Option<::std::string::String>,
 }
-impl Constraints {
+impl  Constraints  {
     /// <p>Determines if buyers are allowed to select multiple dimensions in the rate card. The possible values are <code>Allowed</code> and <code>Disallowed</code>. The default value is <code>Allowed</code>.</p>
-    pub fn multiple_dimension_selection(&self) -> ::std::option::Option<&str> {
+    pub fn multiple_dimension_selection(&self) -> ::std::option::Option<& str> {
         self.multiple_dimension_selection.as_deref()
     }
     /// <p>Determines if acceptors are allowed to configure quantity for each dimension in rate card. The possible values are <code>Allowed</code> and <code>Disallowed</code>. The default value is <code>Allowed</code>.</p>
-    pub fn quantity_configuration(&self) -> ::std::option::Option<&str> {
+    pub fn quantity_configuration(&self) -> ::std::option::Option<& str> {
         self.quantity_configuration.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ConstraintsBuilder {
     }
     /// <p>Determines if buyers are allowed to select multiple dimensions in the rate card. The possible values are <code>Allowed</code> and <code>Disallowed</code>. The default value is <code>Allowed</code>.</p>
     pub fn set_multiple_dimension_selection(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.multiple_dimension_selection = input;
-        self
+        self.multiple_dimension_selection = input; self
     }
     /// <p>Determines if buyers are allowed to select multiple dimensions in the rate card. The possible values are <code>Allowed</code> and <code>Disallowed</code>. The default value is <code>Allowed</code>.</p>
     pub fn get_multiple_dimension_selection(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ConstraintsBuilder {
     }
     /// <p>Determines if acceptors are allowed to configure quantity for each dimension in rate card. The possible values are <code>Allowed</code> and <code>Disallowed</code>. The default value is <code>Allowed</code>.</p>
     pub fn set_quantity_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.quantity_configuration = input;
-        self
+        self.quantity_configuration = input; self
     }
     /// <p>Determines if acceptors are allowed to configure quantity for each dimension in rate card. The possible values are <code>Allowed</code> and <code>Disallowed</code>. The default value is <code>Allowed</code>.</p>
     pub fn get_quantity_configuration(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ConstraintsBuilder {
     /// Consumes the builder and constructs a [`Constraints`](crate::types::Constraints).
     pub fn build(self) -> crate::types::Constraints {
         crate::types::Constraints {
-            multiple_dimension_selection: self.multiple_dimension_selection,
-            quantity_configuration: self.quantity_configuration,
+            multiple_dimension_selection: self.multiple_dimension_selection
+            ,
+            quantity_configuration: self.quantity_configuration
+            ,
         }
     }
 }
+

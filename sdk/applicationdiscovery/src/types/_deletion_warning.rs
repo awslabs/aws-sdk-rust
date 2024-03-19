@@ -3,7 +3,7 @@
 /// <p>A configuration ID paired with a warning message.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletionWarning {
+pub struct DeletionWarning  {
     /// <p>The unique identifier of the configuration that produced a warning.</p>
     pub configuration_id: ::std::option::Option<::std::string::String>,
     /// <p>The integer warning code associated with the warning message.</p>
@@ -11,9 +11,9 @@ pub struct DeletionWarning {
     /// <p>A descriptive message of the warning the associated configuration ID produced.</p>
     pub warning_text: ::std::option::Option<::std::string::String>,
 }
-impl DeletionWarning {
+impl  DeletionWarning  {
     /// <p>The unique identifier of the configuration that produced a warning.</p>
-    pub fn configuration_id(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_id(&self) -> ::std::option::Option<& str> {
         self.configuration_id.as_deref()
     }
     /// <p>The integer warning code associated with the warning message.</p>
@@ -21,7 +21,7 @@ impl DeletionWarning {
         self.warning_code
     }
     /// <p>A descriptive message of the warning the associated configuration ID produced.</p>
-    pub fn warning_text(&self) -> ::std::option::Option<&str> {
+    pub fn warning_text(&self) -> ::std::option::Option<& str> {
         self.warning_text.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DeletionWarningBuilder {
     }
     /// <p>The unique identifier of the configuration that produced a warning.</p>
     pub fn set_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_id = input;
-        self
+        self.configuration_id = input; self
     }
     /// <p>The unique identifier of the configuration that produced a warning.</p>
     pub fn get_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl DeletionWarningBuilder {
     }
     /// <p>The integer warning code associated with the warning message.</p>
     pub fn set_warning_code(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.warning_code = input;
-        self
+        self.warning_code = input; self
     }
     /// <p>The integer warning code associated with the warning message.</p>
     pub fn get_warning_code(&self) -> &::std::option::Option<i32> {
@@ -76,8 +74,7 @@ impl DeletionWarningBuilder {
     }
     /// <p>A descriptive message of the warning the associated configuration ID produced.</p>
     pub fn set_warning_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.warning_text = input;
-        self
+        self.warning_text = input; self
     }
     /// <p>A descriptive message of the warning the associated configuration ID produced.</p>
     pub fn get_warning_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,14 @@ impl DeletionWarningBuilder {
     /// Consumes the builder and constructs a [`DeletionWarning`](crate::types::DeletionWarning).
     pub fn build(self) -> crate::types::DeletionWarning {
         crate::types::DeletionWarning {
-            configuration_id: self.configuration_id,
-            warning_code: self.warning_code.unwrap_or_default(),
-            warning_text: self.warning_text,
+            configuration_id: self.configuration_id
+            ,
+            warning_code: self.warning_code
+                .unwrap_or_default()
+            ,
+            warning_text: self.warning_text
+            ,
         }
     }
 }
+

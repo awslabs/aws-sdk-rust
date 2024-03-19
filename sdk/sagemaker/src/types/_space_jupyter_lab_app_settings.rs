@@ -3,22 +3,23 @@
 /// <p>The settings for the JupyterLab application within a space.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SpaceJupyterLabAppSettings {
+pub struct SpaceJupyterLabAppSettings  {
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
     pub default_resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
     /// <p>A list of Git repositories that SageMaker automatically displays to users for cloning in the JupyterLab application.</p>
-    pub code_repositories: ::std::option::Option<::std::vec::Vec<crate::types::CodeRepository>>,
+    pub code_repositories: ::std::option::Option<::std::vec::Vec::<crate::types::CodeRepository>>,
 }
-impl SpaceJupyterLabAppSettings {
+impl  SpaceJupyterLabAppSettings  {
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
-    pub fn default_resource_spec(&self) -> ::std::option::Option<&crate::types::ResourceSpec> {
+    pub fn default_resource_spec(&self) -> ::std::option::Option<& crate::types::ResourceSpec> {
         self.default_resource_spec.as_ref()
     }
     /// <p>A list of Git repositories that SageMaker automatically displays to users for cloning in the JupyterLab application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.code_repositories.is_none()`.
-    pub fn code_repositories(&self) -> &[crate::types::CodeRepository] {
-        self.code_repositories.as_deref().unwrap_or_default()
+    pub fn code_repositories(&self) -> & [crate::types::CodeRepository] {
+        self.code_repositories.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SpaceJupyterLabAppSettings {
@@ -33,7 +34,7 @@ impl SpaceJupyterLabAppSettings {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SpaceJupyterLabAppSettingsBuilder {
     pub(crate) default_resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
-    pub(crate) code_repositories: ::std::option::Option<::std::vec::Vec<crate::types::CodeRepository>>,
+    pub(crate) code_repositories: ::std::option::Option<::std::vec::Vec::<crate::types::CodeRepository>>,
 }
 impl SpaceJupyterLabAppSettingsBuilder {
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
@@ -43,8 +44,7 @@ impl SpaceJupyterLabAppSettingsBuilder {
     }
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
     pub fn set_default_resource_spec(mut self, input: ::std::option::Option<crate::types::ResourceSpec>) -> Self {
-        self.default_resource_spec = input;
-        self
+        self.default_resource_spec = input; self
     }
     /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
     pub fn get_default_resource_spec(&self) -> &::std::option::Option<crate::types::ResourceSpec> {
@@ -57,24 +57,26 @@ impl SpaceJupyterLabAppSettingsBuilder {
     /// <p>A list of Git repositories that SageMaker automatically displays to users for cloning in the JupyterLab application.</p>
     pub fn code_repositories(mut self, input: crate::types::CodeRepository) -> Self {
         let mut v = self.code_repositories.unwrap_or_default();
-        v.push(input);
-        self.code_repositories = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.code_repositories = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of Git repositories that SageMaker automatically displays to users for cloning in the JupyterLab application.</p>
-    pub fn set_code_repositories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CodeRepository>>) -> Self {
-        self.code_repositories = input;
-        self
+    pub fn set_code_repositories(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CodeRepository>>) -> Self {
+        self.code_repositories = input; self
     }
     /// <p>A list of Git repositories that SageMaker automatically displays to users for cloning in the JupyterLab application.</p>
-    pub fn get_code_repositories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeRepository>> {
+    pub fn get_code_repositories(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CodeRepository>> {
         &self.code_repositories
     }
     /// Consumes the builder and constructs a [`SpaceJupyterLabAppSettings`](crate::types::SpaceJupyterLabAppSettings).
     pub fn build(self) -> crate::types::SpaceJupyterLabAppSettings {
         crate::types::SpaceJupyterLabAppSettings {
-            default_resource_spec: self.default_resource_spec,
-            code_repositories: self.code_repositories,
+            default_resource_spec: self.default_resource_spec
+            ,
+            code_repositories: self.code_repositories
+            ,
         }
     }
 }
+

@@ -9,13 +9,13 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LabelSummary {
+pub struct LabelSummary  {
     /// <p>An individual label specification.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl LabelSummary {
+impl  LabelSummary  {
     /// <p>An individual label specification.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl LabelSummaryBuilder {
     }
     /// <p>An individual label specification.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>An individual label specification.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -49,6 +48,10 @@ impl LabelSummaryBuilder {
     }
     /// Consumes the builder and constructs a [`LabelSummary`](crate::types::LabelSummary).
     pub fn build(self) -> crate::types::LabelSummary {
-        crate::types::LabelSummary { name: self.name }
+        crate::types::LabelSummary {
+            name: self.name
+            ,
+        }
     }
 }
+

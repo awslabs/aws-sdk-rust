@@ -2,31 +2,32 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AcceptMatchInput {
+pub struct AcceptMatchInput  {
     /// <p>A unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>; otherwise this request will fail.</p>
     pub ticket_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for a player delivering the response. This parameter can include one or multiple player IDs.</p>
-    pub player_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub player_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Player response to the proposed match.</p>
     pub acceptance_type: ::std::option::Option<crate::types::AcceptanceType>,
 }
-impl AcceptMatchInput {
+impl  AcceptMatchInput  {
     /// <p>A unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>; otherwise this request will fail.</p>
-    pub fn ticket_id(&self) -> ::std::option::Option<&str> {
+    pub fn ticket_id(&self) -> ::std::option::Option<& str> {
         self.ticket_id.as_deref()
     }
     /// <p>A unique identifier for a player delivering the response. This parameter can include one or multiple player IDs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.player_ids.is_none()`.
-    pub fn player_ids(&self) -> &[::std::string::String] {
-        self.player_ids.as_deref().unwrap_or_default()
+    pub fn player_ids(&self) -> & [::std::string::String] {
+        self.player_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Player response to the proposed match.</p>
-    pub fn acceptance_type(&self) -> ::std::option::Option<&crate::types::AcceptanceType> {
+    pub fn acceptance_type(&self) -> ::std::option::Option<& crate::types::AcceptanceType> {
         self.acceptance_type.as_ref()
     }
 }
-impl ::std::fmt::Debug for AcceptMatchInput {
+impl  ::std::fmt::Debug for AcceptMatchInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AcceptMatchInput");
         formatter.field("ticket_id", &self.ticket_id);
@@ -47,7 +48,7 @@ impl AcceptMatchInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AcceptMatchInputBuilder {
     pub(crate) ticket_id: ::std::option::Option<::std::string::String>,
-    pub(crate) player_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) player_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) acceptance_type: ::std::option::Option<crate::types::AcceptanceType>,
 }
 impl AcceptMatchInputBuilder {
@@ -59,8 +60,7 @@ impl AcceptMatchInputBuilder {
     }
     /// <p>A unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>; otherwise this request will fail.</p>
     pub fn set_ticket_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ticket_id = input;
-        self
+        self.ticket_id = input; self
     }
     /// <p>A unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>; otherwise this request will fail.</p>
     pub fn get_ticket_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,17 +73,16 @@ impl AcceptMatchInputBuilder {
     /// <p>A unique identifier for a player delivering the response. This parameter can include one or multiple player IDs.</p>
     pub fn player_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.player_ids.unwrap_or_default();
-        v.push(input.into());
-        self.player_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.player_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A unique identifier for a player delivering the response. This parameter can include one or multiple player IDs.</p>
-    pub fn set_player_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.player_ids = input;
-        self
+    pub fn set_player_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.player_ids = input; self
     }
     /// <p>A unique identifier for a player delivering the response. This parameter can include one or multiple player IDs.</p>
-    pub fn get_player_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_player_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.player_ids
     }
     /// <p>Player response to the proposed match.</p>
@@ -94,8 +93,7 @@ impl AcceptMatchInputBuilder {
     }
     /// <p>Player response to the proposed match.</p>
     pub fn set_acceptance_type(mut self, input: ::std::option::Option<crate::types::AcceptanceType>) -> Self {
-        self.acceptance_type = input;
-        self
+        self.acceptance_type = input; self
     }
     /// <p>Player response to the proposed match.</p>
     pub fn get_acceptance_type(&self) -> &::std::option::Option<crate::types::AcceptanceType> {
@@ -103,11 +101,16 @@ impl AcceptMatchInputBuilder {
     }
     /// Consumes the builder and constructs a [`AcceptMatchInput`](crate::operation::accept_match::AcceptMatchInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::accept_match::AcceptMatchInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::accept_match::AcceptMatchInput {
-            ticket_id: self.ticket_id,
-            player_ids: self.player_ids,
-            acceptance_type: self.acceptance_type,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::accept_match::AcceptMatchInput {
+                ticket_id: self.ticket_id
+                ,
+                player_ids: self.player_ids
+                ,
+                acceptance_type: self.acceptance_type
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for AcceptMatchInputBuilder {
@@ -119,3 +122,4 @@ impl ::std::fmt::Debug for AcceptMatchInputBuilder {
         formatter.finish()
     }
 }
+

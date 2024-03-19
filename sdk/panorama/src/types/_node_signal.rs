@@ -3,20 +3,19 @@
 /// <p>A signal to a camera node to start or stop processing video.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NodeSignal {
+pub struct NodeSignal  {
     /// <p>The camera node's name, from the application manifest.</p>
     pub node_instance_id: ::std::string::String,
     /// <p>The signal value.</p>
     pub signal: crate::types::NodeSignalValue,
 }
-impl NodeSignal {
+impl  NodeSignal  {
     /// <p>The camera node's name, from the application manifest.</p>
-    pub fn node_instance_id(&self) -> &str {
-        use std::ops::Deref;
-        self.node_instance_id.deref()
+    pub fn node_instance_id(&self) -> & str {
+        use std::ops::Deref; self.node_instance_id.deref()
     }
     /// <p>The signal value.</p>
-    pub fn signal(&self) -> &crate::types::NodeSignalValue {
+    pub fn signal(&self) -> & crate::types::NodeSignalValue {
         &self.signal
     }
 }
@@ -43,8 +42,7 @@ impl NodeSignalBuilder {
     }
     /// <p>The camera node's name, from the application manifest.</p>
     pub fn set_node_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.node_instance_id = input;
-        self
+        self.node_instance_id = input; self
     }
     /// <p>The camera node's name, from the application manifest.</p>
     pub fn get_node_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl NodeSignalBuilder {
     }
     /// <p>The signal value.</p>
     pub fn set_signal(mut self, input: ::std::option::Option<crate::types::NodeSignalValue>) -> Self {
-        self.signal = input;
-        self
+        self.signal = input; self
     }
     /// <p>The signal value.</p>
     pub fn get_signal(&self) -> &::std::option::Option<crate::types::NodeSignalValue> {
@@ -70,19 +67,20 @@ impl NodeSignalBuilder {
     /// - [`node_instance_id`](crate::types::builders::NodeSignalBuilder::node_instance_id)
     /// - [`signal`](crate::types::builders::NodeSignalBuilder::signal)
     pub fn build(self) -> ::std::result::Result<crate::types::NodeSignal, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::NodeSignal {
-            node_instance_id: self.node_instance_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "node_instance_id",
-                    "node_instance_id was not specified but it is required when building NodeSignal",
-                )
-            })?,
-            signal: self.signal.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "signal",
-                    "signal was not specified but it is required when building NodeSignal",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::NodeSignal {
+                node_instance_id: self.node_instance_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("node_instance_id", "node_instance_id was not specified but it is required when building NodeSignal")
+                    )?
+                ,
+                signal: self.signal
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("signal", "signal was not specified but it is required when building NodeSignal")
+                    )?
+                ,
+            }
+        )
     }
 }
+

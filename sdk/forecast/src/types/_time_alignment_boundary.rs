@@ -4,7 +4,7 @@
 /// <p>For more information about aggregation, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html">Data Aggregation for Different Forecast Frequencies</a>. For more information setting a custom time boundary, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#specifying-time-boundary">Specifying a Time Boundary</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TimeAlignmentBoundary {
+pub struct TimeAlignmentBoundary  {
     /// <p>The month to use for time alignment during aggregation. The month must be in uppercase.</p>
     pub month: ::std::option::Option<crate::types::Month>,
     /// <p>The day of the month to use for time alignment during aggregation.</p>
@@ -14,9 +14,9 @@ pub struct TimeAlignmentBoundary {
     /// <p>The hour of day to use for time alignment during aggregation.</p>
     pub hour: ::std::option::Option<i32>,
 }
-impl TimeAlignmentBoundary {
+impl  TimeAlignmentBoundary  {
     /// <p>The month to use for time alignment during aggregation. The month must be in uppercase.</p>
-    pub fn month(&self) -> ::std::option::Option<&crate::types::Month> {
+    pub fn month(&self) -> ::std::option::Option<& crate::types::Month> {
         self.month.as_ref()
     }
     /// <p>The day of the month to use for time alignment during aggregation.</p>
@@ -24,7 +24,7 @@ impl TimeAlignmentBoundary {
         self.day_of_month
     }
     /// <p>The day of week to use for time alignment during aggregation. The day must be in uppercase.</p>
-    pub fn day_of_week(&self) -> ::std::option::Option<&crate::types::DayOfWeek> {
+    pub fn day_of_week(&self) -> ::std::option::Option<& crate::types::DayOfWeek> {
         self.day_of_week.as_ref()
     }
     /// <p>The hour of day to use for time alignment during aggregation.</p>
@@ -56,8 +56,7 @@ impl TimeAlignmentBoundaryBuilder {
     }
     /// <p>The month to use for time alignment during aggregation. The month must be in uppercase.</p>
     pub fn set_month(mut self, input: ::std::option::Option<crate::types::Month>) -> Self {
-        self.month = input;
-        self
+        self.month = input; self
     }
     /// <p>The month to use for time alignment during aggregation. The month must be in uppercase.</p>
     pub fn get_month(&self) -> &::std::option::Option<crate::types::Month> {
@@ -70,8 +69,7 @@ impl TimeAlignmentBoundaryBuilder {
     }
     /// <p>The day of the month to use for time alignment during aggregation.</p>
     pub fn set_day_of_month(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.day_of_month = input;
-        self
+        self.day_of_month = input; self
     }
     /// <p>The day of the month to use for time alignment during aggregation.</p>
     pub fn get_day_of_month(&self) -> &::std::option::Option<i32> {
@@ -84,8 +82,7 @@ impl TimeAlignmentBoundaryBuilder {
     }
     /// <p>The day of week to use for time alignment during aggregation. The day must be in uppercase.</p>
     pub fn set_day_of_week(mut self, input: ::std::option::Option<crate::types::DayOfWeek>) -> Self {
-        self.day_of_week = input;
-        self
+        self.day_of_week = input; self
     }
     /// <p>The day of week to use for time alignment during aggregation. The day must be in uppercase.</p>
     pub fn get_day_of_week(&self) -> &::std::option::Option<crate::types::DayOfWeek> {
@@ -98,8 +95,7 @@ impl TimeAlignmentBoundaryBuilder {
     }
     /// <p>The hour of day to use for time alignment during aggregation.</p>
     pub fn set_hour(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.hour = input;
-        self
+        self.hour = input; self
     }
     /// <p>The hour of day to use for time alignment during aggregation.</p>
     pub fn get_hour(&self) -> &::std::option::Option<i32> {
@@ -108,10 +104,15 @@ impl TimeAlignmentBoundaryBuilder {
     /// Consumes the builder and constructs a [`TimeAlignmentBoundary`](crate::types::TimeAlignmentBoundary).
     pub fn build(self) -> crate::types::TimeAlignmentBoundary {
         crate::types::TimeAlignmentBoundary {
-            month: self.month,
-            day_of_month: self.day_of_month,
-            day_of_week: self.day_of_week,
-            hour: self.hour,
+            month: self.month
+            ,
+            day_of_month: self.day_of_month
+            ,
+            day_of_week: self.day_of_week
+            ,
+            hour: self.hour
+            ,
         }
     }
 }
+

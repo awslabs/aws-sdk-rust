@@ -3,13 +3,13 @@
 /// <p>Specifies the configuration used when importing incremental records from the source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IncrementalPullConfig {
+pub struct IncrementalPullConfig  {
     /// <p>A field that specifies the date time or timestamp field as the criteria to use when importing incremental records from the source.</p>
     pub datetime_type_field_name: ::std::option::Option<::std::string::String>,
 }
-impl IncrementalPullConfig {
+impl  IncrementalPullConfig  {
     /// <p>A field that specifies the date time or timestamp field as the criteria to use when importing incremental records from the source.</p>
-    pub fn datetime_type_field_name(&self) -> ::std::option::Option<&str> {
+    pub fn datetime_type_field_name(&self) -> ::std::option::Option<& str> {
         self.datetime_type_field_name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl IncrementalPullConfigBuilder {
     }
     /// <p>A field that specifies the date time or timestamp field as the criteria to use when importing incremental records from the source.</p>
     pub fn set_datetime_type_field_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.datetime_type_field_name = input;
-        self
+        self.datetime_type_field_name = input; self
     }
     /// <p>A field that specifies the date time or timestamp field as the criteria to use when importing incremental records from the source.</p>
     pub fn get_datetime_type_field_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl IncrementalPullConfigBuilder {
     /// Consumes the builder and constructs a [`IncrementalPullConfig`](crate::types::IncrementalPullConfig).
     pub fn build(self) -> crate::types::IncrementalPullConfig {
         crate::types::IncrementalPullConfig {
-            datetime_type_field_name: self.datetime_type_field_name,
+            datetime_type_field_name: self.datetime_type_field_name
+            ,
         }
     }
 }
+

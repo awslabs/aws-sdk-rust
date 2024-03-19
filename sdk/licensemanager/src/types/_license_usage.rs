@@ -3,16 +3,17 @@
 /// <p>Describes the entitlement usage associated with a license.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LicenseUsage {
+pub struct LicenseUsage  {
     /// <p>License entitlement usages.</p>
-    pub entitlement_usages: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementUsage>>,
+    pub entitlement_usages: ::std::option::Option<::std::vec::Vec::<crate::types::EntitlementUsage>>,
 }
-impl LicenseUsage {
+impl  LicenseUsage  {
     /// <p>License entitlement usages.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entitlement_usages.is_none()`.
-    pub fn entitlement_usages(&self) -> &[crate::types::EntitlementUsage] {
-        self.entitlement_usages.as_deref().unwrap_or_default()
+    pub fn entitlement_usages(&self) -> & [crate::types::EntitlementUsage] {
+        self.entitlement_usages.as_deref()
+        .unwrap_or_default()
     }
 }
 impl LicenseUsage {
@@ -26,7 +27,7 @@ impl LicenseUsage {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LicenseUsageBuilder {
-    pub(crate) entitlement_usages: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementUsage>>,
+    pub(crate) entitlement_usages: ::std::option::Option<::std::vec::Vec::<crate::types::EntitlementUsage>>,
 }
 impl LicenseUsageBuilder {
     /// Appends an item to `entitlement_usages`.
@@ -36,23 +37,24 @@ impl LicenseUsageBuilder {
     /// <p>License entitlement usages.</p>
     pub fn entitlement_usages(mut self, input: crate::types::EntitlementUsage) -> Self {
         let mut v = self.entitlement_usages.unwrap_or_default();
-        v.push(input);
-        self.entitlement_usages = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entitlement_usages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>License entitlement usages.</p>
-    pub fn set_entitlement_usages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementUsage>>) -> Self {
-        self.entitlement_usages = input;
-        self
+    pub fn set_entitlement_usages(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EntitlementUsage>>) -> Self {
+        self.entitlement_usages = input; self
     }
     /// <p>License entitlement usages.</p>
-    pub fn get_entitlement_usages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitlementUsage>> {
+    pub fn get_entitlement_usages(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EntitlementUsage>> {
         &self.entitlement_usages
     }
     /// Consumes the builder and constructs a [`LicenseUsage`](crate::types::LicenseUsage).
     pub fn build(self) -> crate::types::LicenseUsage {
         crate::types::LicenseUsage {
-            entitlement_usages: self.entitlement_usages,
+            entitlement_usages: self.entitlement_usages
+            ,
         }
     }
 }
+

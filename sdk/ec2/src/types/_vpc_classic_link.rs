@@ -6,27 +6,28 @@
 /// <p>Describes whether a VPC is enabled for ClassicLink.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VpcClassicLink {
+pub struct VpcClassicLink  {
     /// <p>Indicates whether the VPC is enabled for ClassicLink.</p>
     pub classic_link_enabled: ::std::option::Option<bool>,
     /// <p>Any tags assigned to the VPC.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The ID of the VPC.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
 }
-impl VpcClassicLink {
+impl  VpcClassicLink  {
     /// <p>Indicates whether the VPC is enabled for ClassicLink.</p>
     pub fn classic_link_enabled(&self) -> ::std::option::Option<bool> {
         self.classic_link_enabled
     }
     /// <p>Any tags assigned to the VPC.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
 }
@@ -42,7 +43,7 @@ impl VpcClassicLink {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcClassicLinkBuilder {
     pub(crate) classic_link_enabled: ::std::option::Option<bool>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl VpcClassicLinkBuilder {
@@ -53,8 +54,7 @@ impl VpcClassicLinkBuilder {
     }
     /// <p>Indicates whether the VPC is enabled for ClassicLink.</p>
     pub fn set_classic_link_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.classic_link_enabled = input;
-        self
+        self.classic_link_enabled = input; self
     }
     /// <p>Indicates whether the VPC is enabled for ClassicLink.</p>
     pub fn get_classic_link_enabled(&self) -> &::std::option::Option<bool> {
@@ -67,17 +67,16 @@ impl VpcClassicLinkBuilder {
     /// <p>Any tags assigned to the VPC.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Any tags assigned to the VPC.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Any tags assigned to the VPC.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The ID of the VPC.</p>
@@ -87,8 +86,7 @@ impl VpcClassicLinkBuilder {
     }
     /// <p>The ID of the VPC.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The ID of the VPC.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,9 +95,13 @@ impl VpcClassicLinkBuilder {
     /// Consumes the builder and constructs a [`VpcClassicLink`](crate::types::VpcClassicLink).
     pub fn build(self) -> crate::types::VpcClassicLink {
         crate::types::VpcClassicLink {
-            classic_link_enabled: self.classic_link_enabled,
-            tags: self.tags,
-            vpc_id: self.vpc_id,
+            classic_link_enabled: self.classic_link_enabled
+            ,
+            tags: self.tags
+            ,
+            vpc_id: self.vpc_id
+            ,
         }
     }
 }
+

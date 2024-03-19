@@ -3,7 +3,7 @@
 /// <p>Describes an update to a dataset.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatasetUpdateSummary {
+pub struct DatasetUpdateSummary  {
     /// <p>The Amazon Resource Name (ARN) of the schema that replaced the previous schema of the dataset.</p>
     pub schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the dataset update.</p>
@@ -15,25 +15,25 @@ pub struct DatasetUpdateSummary {
     /// <p>The last update date and time (in Unix time) of the dataset.</p>
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl DatasetUpdateSummary {
+impl  DatasetUpdateSummary  {
     /// <p>The Amazon Resource Name (ARN) of the schema that replaced the previous schema of the dataset.</p>
-    pub fn schema_arn(&self) -> ::std::option::Option<&str> {
+    pub fn schema_arn(&self) -> ::std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
     /// <p>The status of the dataset update.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>If updating a dataset fails, provides the reason why.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The creation date and time (in Unix time) of the dataset update.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The last update date and time (in Unix time) of the dataset.</p>
-    pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl DatasetUpdateSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the schema that replaced the previous schema of the dataset.</p>
     pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_arn = input;
-        self
+        self.schema_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the schema that replaced the previous schema of the dataset.</p>
     pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl DatasetUpdateSummaryBuilder {
     }
     /// <p>The status of the dataset update.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the dataset update.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl DatasetUpdateSummaryBuilder {
     }
     /// <p>If updating a dataset fails, provides the reason why.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>If updating a dataset fails, provides the reason why.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl DatasetUpdateSummaryBuilder {
     }
     /// <p>The creation date and time (in Unix time) of the dataset update.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>The creation date and time (in Unix time) of the dataset update.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -118,8 +114,7 @@ impl DatasetUpdateSummaryBuilder {
     }
     /// <p>The last update date and time (in Unix time) of the dataset.</p>
     pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date_time = input;
-        self
+        self.last_updated_date_time = input; self
     }
     /// <p>The last update date and time (in Unix time) of the dataset.</p>
     pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -128,11 +123,17 @@ impl DatasetUpdateSummaryBuilder {
     /// Consumes the builder and constructs a [`DatasetUpdateSummary`](crate::types::DatasetUpdateSummary).
     pub fn build(self) -> crate::types::DatasetUpdateSummary {
         crate::types::DatasetUpdateSummary {
-            schema_arn: self.schema_arn,
-            status: self.status,
-            failure_reason: self.failure_reason,
-            creation_date_time: self.creation_date_time,
-            last_updated_date_time: self.last_updated_date_time,
+            schema_arn: self.schema_arn
+            ,
+            status: self.status
+            ,
+            failure_reason: self.failure_reason
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            last_updated_date_time: self.last_updated_date_time
+            ,
         }
     }
 }
+

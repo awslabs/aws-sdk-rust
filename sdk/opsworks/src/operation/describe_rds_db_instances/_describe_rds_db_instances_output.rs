@@ -3,24 +3,25 @@
 /// <p>Contains the response to a <code>DescribeRdsDbInstances</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRdsDbInstancesOutput {
+pub struct DescribeRdsDbInstancesOutput  {
     /// <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
-    pub rds_db_instances: ::std::option::Option<::std::vec::Vec<crate::types::RdsDbInstance>>,
+    pub rds_db_instances: ::std::option::Option<::std::vec::Vec::<crate::types::RdsDbInstance>>,
     _request_id: Option<String>,
 }
-impl DescribeRdsDbInstancesOutput {
+impl  DescribeRdsDbInstancesOutput  {
     /// <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rds_db_instances.is_none()`.
-    pub fn rds_db_instances(&self) -> &[crate::types::RdsDbInstance] {
-        self.rds_db_instances.as_deref().unwrap_or_default()
+    pub fn rds_db_instances(&self) -> & [crate::types::RdsDbInstance] {
+        self.rds_db_instances.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeRdsDbInstancesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeRdsDbInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRdsDbInstancesOutput`](crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesOutput).
     pub fn builder() -> crate::operation::describe_rds_db_instances::builders::DescribeRdsDbInstancesOutputBuilder {
@@ -32,7 +33,7 @@ impl DescribeRdsDbInstancesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRdsDbInstancesOutputBuilder {
-    pub(crate) rds_db_instances: ::std::option::Option<::std::vec::Vec<crate::types::RdsDbInstance>>,
+    pub(crate) rds_db_instances: ::std::option::Option<::std::vec::Vec::<crate::types::RdsDbInstance>>,
     _request_id: Option<String>,
 }
 impl DescribeRdsDbInstancesOutputBuilder {
@@ -43,33 +44,34 @@ impl DescribeRdsDbInstancesOutputBuilder {
     /// <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
     pub fn rds_db_instances(mut self, input: crate::types::RdsDbInstance) -> Self {
         let mut v = self.rds_db_instances.unwrap_or_default();
-        v.push(input);
-        self.rds_db_instances = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rds_db_instances = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
-    pub fn set_rds_db_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RdsDbInstance>>) -> Self {
-        self.rds_db_instances = input;
-        self
+    pub fn set_rds_db_instances(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RdsDbInstance>>) -> Self {
+        self.rds_db_instances = input; self
     }
     /// <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
-    pub fn get_rds_db_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RdsDbInstance>> {
+    pub fn get_rds_db_instances(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RdsDbInstance>> {
         &self.rds_db_instances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeRdsDbInstancesOutput`](crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesOutput).
     pub fn build(self) -> crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesOutput {
         crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesOutput {
-            rds_db_instances: self.rds_db_instances,
+            rds_db_instances: self.rds_db_instances
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

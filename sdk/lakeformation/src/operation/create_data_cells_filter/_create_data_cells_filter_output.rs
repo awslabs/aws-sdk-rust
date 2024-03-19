@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDataCellsFilterOutput {
+pub struct CreateDataCellsFilterOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for CreateDataCellsFilterOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateDataCellsFilterOutput {
     /// Creates a new builder-style object to manufacture [`CreateDataCellsFilterOutput`](crate::operation::create_data_cells_filter::CreateDataCellsFilterOutput).
     pub fn builder() -> crate::operation::create_data_cells_filter::builders::CreateDataCellsFilterOutputBuilder {
@@ -25,14 +25,14 @@ pub struct CreateDataCellsFilterOutputBuilder {
 }
 impl CreateDataCellsFilterOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateDataCellsFilterOutput`](crate::operation::create_data_cells_filter::CreateDataCellsFilterOutput).
     pub fn build(self) -> crate::operation::create_data_cells_filter::CreateDataCellsFilterOutput {
         crate::operation::create_data_cells_filter::CreateDataCellsFilterOutput {
@@ -40,3 +40,4 @@ impl CreateDataCellsFilterOutputBuilder {
         }
     }
 }
+

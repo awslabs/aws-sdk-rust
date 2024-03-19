@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDeleteDevicePositionHistoryInput {
+pub struct BatchDeleteDevicePositionHistoryInput  {
     /// <p>The name of the tracker resource to delete the device position history from.</p>
     pub tracker_name: ::std::option::Option<::std::string::String>,
     /// <p>Devices whose position history you want to delete.</p>
@@ -10,11 +10,11 @@ pub struct BatchDeleteDevicePositionHistoryInput {
     /// <li>
     /// <p>For example, for two devices: <code>“DeviceIds” : [DeviceId1,DeviceId2]</code></p></li>
     /// </ul>
-    pub device_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub device_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl BatchDeleteDevicePositionHistoryInput {
+impl  BatchDeleteDevicePositionHistoryInput  {
     /// <p>The name of the tracker resource to delete the device position history from.</p>
-    pub fn tracker_name(&self) -> ::std::option::Option<&str> {
+    pub fn tracker_name(&self) -> ::std::option::Option<& str> {
         self.tracker_name.as_deref()
     }
     /// <p>Devices whose position history you want to delete.</p>
@@ -22,10 +22,11 @@ impl BatchDeleteDevicePositionHistoryInput {
     /// <li>
     /// <p>For example, for two devices: <code>“DeviceIds” : [DeviceId1,DeviceId2]</code></p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_ids.is_none()`.
-    pub fn device_ids(&self) -> &[::std::string::String] {
-        self.device_ids.as_deref().unwrap_or_default()
+    pub fn device_ids(&self) -> & [::std::string::String] {
+        self.device_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchDeleteDevicePositionHistoryInput {
@@ -40,7 +41,7 @@ impl BatchDeleteDevicePositionHistoryInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteDevicePositionHistoryInputBuilder {
     pub(crate) tracker_name: ::std::option::Option<::std::string::String>,
-    pub(crate) device_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) device_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl BatchDeleteDevicePositionHistoryInputBuilder {
     /// <p>The name of the tracker resource to delete the device position history from.</p>
@@ -51,8 +52,7 @@ impl BatchDeleteDevicePositionHistoryInputBuilder {
     }
     /// <p>The name of the tracker resource to delete the device position history from.</p>
     pub fn set_tracker_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tracker_name = input;
-        self
+        self.tracker_name = input; self
     }
     /// <p>The name of the tracker resource to delete the device position history from.</p>
     pub fn get_tracker_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,39 +69,36 @@ impl BatchDeleteDevicePositionHistoryInputBuilder {
     /// </ul>
     pub fn device_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.device_ids.unwrap_or_default();
-        v.push(input.into());
-        self.device_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.device_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Devices whose position history you want to delete.</p>
     /// <ul>
     /// <li>
     /// <p>For example, for two devices: <code>“DeviceIds” : [DeviceId1,DeviceId2]</code></p></li>
     /// </ul>
-    pub fn set_device_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.device_ids = input;
-        self
+    pub fn set_device_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.device_ids = input; self
     }
     /// <p>Devices whose position history you want to delete.</p>
     /// <ul>
     /// <li>
     /// <p>For example, for two devices: <code>“DeviceIds” : [DeviceId1,DeviceId2]</code></p></li>
     /// </ul>
-    pub fn get_device_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_device_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.device_ids
     }
     /// Consumes the builder and constructs a [`BatchDeleteDevicePositionHistoryInput`](crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryInput {
-                tracker_name: self.tracker_name,
-                device_ids: self.device_ids,
-            },
+                tracker_name: self.tracker_name
+                ,
+                device_ids: self.device_ids
+                ,
+            }
         )
     }
 }
+

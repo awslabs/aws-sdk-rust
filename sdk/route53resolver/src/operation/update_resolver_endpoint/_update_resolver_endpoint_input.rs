@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateResolverEndpointInput {
+pub struct UpdateResolverEndpointInput  {
     /// <p>The ID of the Resolver endpoint that you want to update.</p>
     pub resolver_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Resolver endpoint that you want to update.</p>
@@ -11,7 +11,7 @@ pub struct UpdateResolverEndpointInput {
     /// <p>Updating to <code>IPV6</code> type isn't currently supported.</p>
     pub resolver_endpoint_type: ::std::option::Option<crate::types::ResolverEndpointType>,
     /// <p>Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't specify an IPv6 address, one will be automatically chosen from your subnet.</p>
-    pub update_ip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::UpdateIpAddress>>,
+    pub update_ip_addresses: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateIpAddress>>,
     /// <p>The protocols you want to use for the endpoint. DoH-FIPS is applicable for inbound endpoints only.</p>
     /// <p>For an inbound endpoint you can apply the protocols as follows:</p>
     /// <ul>
@@ -41,27 +41,28 @@ pub struct UpdateResolverEndpointInput {
     /// </ul><important>
     /// <p>You can't change the protocol of an inbound endpoint directly from only Do53 to only DoH, or DoH-FIPS. This is to prevent a sudden disruption to incoming traffic that relies on Do53. To change the protocol from Do53 to DoH, or DoH-FIPS, you must first enable both Do53 and DoH, or Do53 and DoH-FIPS, to make sure that all incoming traffic has transferred to using the DoH protocol, or DoH-FIPS, and then remove the Do53.</p>
     /// </important>
-    pub protocols: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
+    pub protocols: ::std::option::Option<::std::vec::Vec::<crate::types::Protocol>>,
 }
-impl UpdateResolverEndpointInput {
+impl  UpdateResolverEndpointInput  {
     /// <p>The ID of the Resolver endpoint that you want to update.</p>
-    pub fn resolver_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn resolver_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.resolver_endpoint_id.as_deref()
     }
     /// <p>The name of the Resolver endpoint that you want to update.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries.</p>
     /// <p>Updating to <code>IPV6</code> type isn't currently supported.</p>
-    pub fn resolver_endpoint_type(&self) -> ::std::option::Option<&crate::types::ResolverEndpointType> {
+    pub fn resolver_endpoint_type(&self) -> ::std::option::Option<& crate::types::ResolverEndpointType> {
         self.resolver_endpoint_type.as_ref()
     }
     /// <p>Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't specify an IPv6 address, one will be automatically chosen from your subnet.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.update_ip_addresses.is_none()`.
-    pub fn update_ip_addresses(&self) -> &[crate::types::UpdateIpAddress] {
-        self.update_ip_addresses.as_deref().unwrap_or_default()
+    pub fn update_ip_addresses(&self) -> & [crate::types::UpdateIpAddress] {
+        self.update_ip_addresses.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The protocols you want to use for the endpoint. DoH-FIPS is applicable for inbound endpoints only.</p>
     /// <p>For an inbound endpoint you can apply the protocols as follows:</p>
@@ -92,10 +93,11 @@ impl UpdateResolverEndpointInput {
     /// </ul><important>
     /// <p>You can't change the protocol of an inbound endpoint directly from only Do53 to only DoH, or DoH-FIPS. This is to prevent a sudden disruption to incoming traffic that relies on Do53. To change the protocol from Do53 to DoH, or DoH-FIPS, you must first enable both Do53 and DoH, or Do53 and DoH-FIPS, to make sure that all incoming traffic has transferred to using the DoH protocol, or DoH-FIPS, and then remove the Do53.</p>
     /// </important>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protocols.is_none()`.
-    pub fn protocols(&self) -> &[crate::types::Protocol] {
-        self.protocols.as_deref().unwrap_or_default()
+    pub fn protocols(&self) -> & [crate::types::Protocol] {
+        self.protocols.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateResolverEndpointInput {
@@ -112,8 +114,8 @@ pub struct UpdateResolverEndpointInputBuilder {
     pub(crate) resolver_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) resolver_endpoint_type: ::std::option::Option<crate::types::ResolverEndpointType>,
-    pub(crate) update_ip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::UpdateIpAddress>>,
-    pub(crate) protocols: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
+    pub(crate) update_ip_addresses: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateIpAddress>>,
+    pub(crate) protocols: ::std::option::Option<::std::vec::Vec::<crate::types::Protocol>>,
 }
 impl UpdateResolverEndpointInputBuilder {
     /// <p>The ID of the Resolver endpoint that you want to update.</p>
@@ -124,8 +126,7 @@ impl UpdateResolverEndpointInputBuilder {
     }
     /// <p>The ID of the Resolver endpoint that you want to update.</p>
     pub fn set_resolver_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resolver_endpoint_id = input;
-        self
+        self.resolver_endpoint_id = input; self
     }
     /// <p>The ID of the Resolver endpoint that you want to update.</p>
     pub fn get_resolver_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +139,7 @@ impl UpdateResolverEndpointInputBuilder {
     }
     /// <p>The name of the Resolver endpoint that you want to update.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Resolver endpoint that you want to update.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,8 +154,7 @@ impl UpdateResolverEndpointInputBuilder {
     /// <p>Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries.</p>
     /// <p>Updating to <code>IPV6</code> type isn't currently supported.</p>
     pub fn set_resolver_endpoint_type(mut self, input: ::std::option::Option<crate::types::ResolverEndpointType>) -> Self {
-        self.resolver_endpoint_type = input;
-        self
+        self.resolver_endpoint_type = input; self
     }
     /// <p>Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries.</p>
     /// <p>Updating to <code>IPV6</code> type isn't currently supported.</p>
@@ -169,17 +168,16 @@ impl UpdateResolverEndpointInputBuilder {
     /// <p>Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't specify an IPv6 address, one will be automatically chosen from your subnet.</p>
     pub fn update_ip_addresses(mut self, input: crate::types::UpdateIpAddress) -> Self {
         let mut v = self.update_ip_addresses.unwrap_or_default();
-        v.push(input);
-        self.update_ip_addresses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.update_ip_addresses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't specify an IPv6 address, one will be automatically chosen from your subnet.</p>
-    pub fn set_update_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateIpAddress>>) -> Self {
-        self.update_ip_addresses = input;
-        self
+    pub fn set_update_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateIpAddress>>) -> Self {
+        self.update_ip_addresses = input; self
     }
     /// <p>Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't specify an IPv6 address, one will be automatically chosen from your subnet.</p>
-    pub fn get_update_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateIpAddress>> {
+    pub fn get_update_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UpdateIpAddress>> {
         &self.update_ip_addresses
     }
     /// Appends an item to `protocols`.
@@ -217,9 +215,9 @@ impl UpdateResolverEndpointInputBuilder {
     /// </important>
     pub fn protocols(mut self, input: crate::types::Protocol) -> Self {
         let mut v = self.protocols.unwrap_or_default();
-        v.push(input);
-        self.protocols = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.protocols = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The protocols you want to use for the endpoint. DoH-FIPS is applicable for inbound endpoints only.</p>
     /// <p>For an inbound endpoint you can apply the protocols as follows:</p>
@@ -250,9 +248,8 @@ impl UpdateResolverEndpointInputBuilder {
     /// </ul><important>
     /// <p>You can't change the protocol of an inbound endpoint directly from only Do53 to only DoH, or DoH-FIPS. This is to prevent a sudden disruption to incoming traffic that relies on Do53. To change the protocol from Do53 to DoH, or DoH-FIPS, you must first enable both Do53 and DoH, or Do53 and DoH-FIPS, to make sure that all incoming traffic has transferred to using the DoH protocol, or DoH-FIPS, and then remove the Do53.</p>
     /// </important>
-    pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>) -> Self {
-        self.protocols = input;
-        self
+    pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Protocol>>) -> Self {
+        self.protocols = input; self
     }
     /// <p>The protocols you want to use for the endpoint. DoH-FIPS is applicable for inbound endpoints only.</p>
     /// <p>For an inbound endpoint you can apply the protocols as follows:</p>
@@ -283,22 +280,25 @@ impl UpdateResolverEndpointInputBuilder {
     /// </ul><important>
     /// <p>You can't change the protocol of an inbound endpoint directly from only Do53 to only DoH, or DoH-FIPS. This is to prevent a sudden disruption to incoming traffic that relies on Do53. To change the protocol from Do53 to DoH, or DoH-FIPS, you must first enable both Do53 and DoH, or Do53 and DoH-FIPS, to make sure that all incoming traffic has transferred to using the DoH protocol, or DoH-FIPS, and then remove the Do53.</p>
     /// </important>
-    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Protocol>> {
+    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Protocol>> {
         &self.protocols
     }
     /// Consumes the builder and constructs a [`UpdateResolverEndpointInput`](crate::operation::update_resolver_endpoint::UpdateResolverEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_resolver_endpoint::UpdateResolverEndpointInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_resolver_endpoint::UpdateResolverEndpointInput {
-            resolver_endpoint_id: self.resolver_endpoint_id,
-            name: self.name,
-            resolver_endpoint_type: self.resolver_endpoint_type,
-            update_ip_addresses: self.update_ip_addresses,
-            protocols: self.protocols,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_resolver_endpoint::UpdateResolverEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_resolver_endpoint::UpdateResolverEndpointInput {
+                resolver_endpoint_id: self.resolver_endpoint_id
+                ,
+                name: self.name
+                ,
+                resolver_endpoint_type: self.resolver_endpoint_type
+                ,
+                update_ip_addresses: self.update_ip_addresses
+                ,
+                protocols: self.protocols
+                ,
+            }
+        )
     }
 }
+

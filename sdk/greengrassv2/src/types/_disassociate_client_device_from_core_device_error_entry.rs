@@ -3,7 +3,7 @@
 /// <p>Contains an error that occurs from a request to disassociate a client device from a core device. The <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_BatchDisassociateClientDeviceWithCoreDevice.html">BatchDisassociateClientDeviceWithCoreDevice</a> operation returns a list of these errors.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateClientDeviceFromCoreDeviceErrorEntry {
+pub struct DisassociateClientDeviceFromCoreDeviceErrorEntry  {
     /// <p>The name of the IoT thing whose disassociate request failed.</p>
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The error code for the request.</p>
@@ -11,17 +11,17 @@ pub struct DisassociateClientDeviceFromCoreDeviceErrorEntry {
     /// <p>A message that provides additional information about the error.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl DisassociateClientDeviceFromCoreDeviceErrorEntry {
+impl  DisassociateClientDeviceFromCoreDeviceErrorEntry  {
     /// <p>The name of the IoT thing whose disassociate request failed.</p>
-    pub fn thing_name(&self) -> ::std::option::Option<&str> {
+    pub fn thing_name(&self) -> ::std::option::Option<& str> {
         self.thing_name.as_deref()
     }
     /// <p>The error code for the request.</p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>A message that provides additional information about the error.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DisassociateClientDeviceFromCoreDeviceErrorEntryBuilder {
     }
     /// <p>The name of the IoT thing whose disassociate request failed.</p>
     pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_name = input;
-        self
+        self.thing_name = input; self
     }
     /// <p>The name of the IoT thing whose disassociate request failed.</p>
     pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl DisassociateClientDeviceFromCoreDeviceErrorEntryBuilder {
     }
     /// <p>The error code for the request.</p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The error code for the request.</p>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl DisassociateClientDeviceFromCoreDeviceErrorEntryBuilder {
     }
     /// <p>A message that provides additional information about the error.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>A message that provides additional information about the error.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl DisassociateClientDeviceFromCoreDeviceErrorEntryBuilder {
     /// Consumes the builder and constructs a [`DisassociateClientDeviceFromCoreDeviceErrorEntry`](crate::types::DisassociateClientDeviceFromCoreDeviceErrorEntry).
     pub fn build(self) -> crate::types::DisassociateClientDeviceFromCoreDeviceErrorEntry {
         crate::types::DisassociateClientDeviceFromCoreDeviceErrorEntry {
-            thing_name: self.thing_name,
-            code: self.code,
-            message: self.message,
+            thing_name: self.thing_name
+            ,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveRegionsFromReplicationInput {
+pub struct RemoveRegionsFromReplicationInput  {
     /// <p>The ARN or name of the secret.</p>
     pub secret_id: ::std::option::Option<::std::string::String>,
     /// <p>The Regions of the replicas to remove.</p>
-    pub remove_replica_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub remove_replica_regions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl RemoveRegionsFromReplicationInput {
+impl  RemoveRegionsFromReplicationInput  {
     /// <p>The ARN or name of the secret.</p>
-    pub fn secret_id(&self) -> ::std::option::Option<&str> {
+    pub fn secret_id(&self) -> ::std::option::Option<& str> {
         self.secret_id.as_deref()
     }
     /// <p>The Regions of the replicas to remove.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.remove_replica_regions.is_none()`.
-    pub fn remove_replica_regions(&self) -> &[::std::string::String] {
-        self.remove_replica_regions.as_deref().unwrap_or_default()
+    pub fn remove_replica_regions(&self) -> & [::std::string::String] {
+        self.remove_replica_regions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RemoveRegionsFromReplicationInput {
@@ -32,7 +33,7 @@ impl RemoveRegionsFromReplicationInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RemoveRegionsFromReplicationInputBuilder {
     pub(crate) secret_id: ::std::option::Option<::std::string::String>,
-    pub(crate) remove_replica_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) remove_replica_regions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl RemoveRegionsFromReplicationInputBuilder {
     /// <p>The ARN or name of the secret.</p>
@@ -43,8 +44,7 @@ impl RemoveRegionsFromReplicationInputBuilder {
     }
     /// <p>The ARN or name of the secret.</p>
     pub fn set_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_id = input;
-        self
+        self.secret_id = input; self
     }
     /// <p>The ARN or name of the secret.</p>
     pub fn get_secret_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,29 +57,28 @@ impl RemoveRegionsFromReplicationInputBuilder {
     /// <p>The Regions of the replicas to remove.</p>
     pub fn remove_replica_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.remove_replica_regions.unwrap_or_default();
-        v.push(input.into());
-        self.remove_replica_regions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.remove_replica_regions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Regions of the replicas to remove.</p>
-    pub fn set_remove_replica_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.remove_replica_regions = input;
-        self
+    pub fn set_remove_replica_regions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.remove_replica_regions = input; self
     }
     /// <p>The Regions of the replicas to remove.</p>
-    pub fn get_remove_replica_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_remove_replica_regions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.remove_replica_regions
     }
     /// Consumes the builder and constructs a [`RemoveRegionsFromReplicationInput`](crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationInput {
-            secret_id: self.secret_id,
-            remove_replica_regions: self.remove_replica_regions,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationInput {
+                secret_id: self.secret_id
+                ,
+                remove_replica_regions: self.remove_replica_regions
+                ,
+            }
+        )
     }
 }
+

@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListVectorEnrichmentJobs`](crate::operation::list_vector_enrichment_jobs::builders::ListVectorEnrichmentJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_vector_enrichment_jobs::builders::ListVectorEnrichmentJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`status_equals(impl Into<String>)`](crate::operation::list_vector_enrichment_jobs::builders::ListVectorEnrichmentJobsFluentBuilder::status_equals) / [`set_status_equals(Option<String>)`](crate::operation::list_vector_enrichment_jobs::builders::ListVectorEnrichmentJobsFluentBuilder::set_status_equals):<br>required: **false**<br><p>A filter that retrieves only jobs with a specific status.</p><br>
     ///   - [`sort_order(SortOrder)`](crate::operation::list_vector_enrichment_jobs::builders::ListVectorEnrichmentJobsFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_vector_enrichment_jobs::builders::ListVectorEnrichmentJobsFluentBuilder::set_sort_order):<br>required: **false**<br><p>An optional value that specifies whether you want the results sorted in <code>Ascending</code> or <code>Descending</code> order.</p><br>
     ///   - [`sort_by(impl Into<String>)`](crate::operation::list_vector_enrichment_jobs::builders::ListVectorEnrichmentJobsFluentBuilder::sort_by) / [`set_sort_by(Option<String>)`](crate::operation::list_vector_enrichment_jobs::builders::ListVectorEnrichmentJobsFluentBuilder::set_sort_by):<br>required: **false**<br><p>The parameter by which to sort the results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_vector_enrichment_jobs::builders::ListVectorEnrichmentJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_vector_enrichment_jobs::builders::ListVectorEnrichmentJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_vector_enrichment_jobs::builders::ListVectorEnrichmentJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_vector_enrichment_jobs::builders::ListVectorEnrichmentJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return.</p><br>
-    /// - On success, responds with [`ListVectorEnrichmentJobsOutput`](crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsOutput) with field(s):
+                            /// - On success, responds with [`ListVectorEnrichmentJobsOutput`](crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsOutput) with field(s):
     ///   - [`vector_enrichment_job_summaries(Vec::<ListVectorEnrichmentJobOutputConfig>)`](crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsOutput::vector_enrichment_job_summaries): <p>Contains summary information about the Vector Enrichment jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsOutput::next_token): <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListVectorEnrichmentJobsError>`](crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsError)
+                            /// - On failure, responds with [`SdkError<ListVectorEnrichmentJobsError>`](crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsError)
     pub fn list_vector_enrichment_jobs(&self) -> crate::operation::list_vector_enrichment_jobs::builders::ListVectorEnrichmentJobsFluentBuilder {
-        crate::operation::list_vector_enrichment_jobs::builders::ListVectorEnrichmentJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_vector_enrichment_jobs::builders::ListVectorEnrichmentJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

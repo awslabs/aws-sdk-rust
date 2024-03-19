@@ -3,13 +3,13 @@
 /// <p>Contains the S3 location of the data source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RetrievalResultS3Location {
+pub struct RetrievalResultS3Location  {
     /// <p>The S3 URI of the data source.</p>
     pub uri: ::std::option::Option<::std::string::String>,
 }
-impl RetrievalResultS3Location {
+impl  RetrievalResultS3Location  {
     /// <p>The S3 URI of the data source.</p>
-    pub fn uri(&self) -> ::std::option::Option<&str> {
+    pub fn uri(&self) -> ::std::option::Option<& str> {
         self.uri.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl RetrievalResultS3LocationBuilder {
     }
     /// <p>The S3 URI of the data source.</p>
     pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.uri = input;
-        self
+        self.uri = input; self
     }
     /// <p>The S3 URI of the data source.</p>
     pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl RetrievalResultS3LocationBuilder {
     }
     /// Consumes the builder and constructs a [`RetrievalResultS3Location`](crate::types::RetrievalResultS3Location).
     pub fn build(self) -> crate::types::RetrievalResultS3Location {
-        crate::types::RetrievalResultS3Location { uri: self.uri }
+        crate::types::RetrievalResultS3Location {
+            uri: self.uri
+            ,
+        }
     }
 }
+

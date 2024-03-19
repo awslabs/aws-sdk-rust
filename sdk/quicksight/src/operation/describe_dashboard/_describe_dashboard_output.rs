@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDashboardOutput {
+pub struct DescribeDashboardOutput  {
     /// <p>Information about the dashboard.</p>
     pub dashboard: ::std::option::Option<crate::types::Dashboard>,
     /// <p>The HTTP status of this request.</p>
@@ -11,9 +11,9 @@ pub struct DescribeDashboardOutput {
     pub request_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeDashboardOutput {
+impl  DescribeDashboardOutput  {
     /// <p>Information about the dashboard.</p>
-    pub fn dashboard(&self) -> ::std::option::Option<&crate::types::Dashboard> {
+    pub fn dashboard(&self) -> ::std::option::Option<& crate::types::Dashboard> {
         self.dashboard.as_ref()
     }
     /// <p>The HTTP status of this request.</p>
@@ -21,15 +21,15 @@ impl DescribeDashboardOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeDashboardOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeDashboardOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDashboardOutput`](crate::operation::describe_dashboard::DescribeDashboardOutput).
     pub fn builder() -> crate::operation::describe_dashboard::builders::DescribeDashboardOutputBuilder {
@@ -54,8 +54,7 @@ impl DescribeDashboardOutputBuilder {
     }
     /// <p>Information about the dashboard.</p>
     pub fn set_dashboard(mut self, input: ::std::option::Option<crate::types::Dashboard>) -> Self {
-        self.dashboard = input;
-        self
+        self.dashboard = input; self
     }
     /// <p>Information about the dashboard.</p>
     pub fn get_dashboard(&self) -> &::std::option::Option<crate::types::Dashboard> {
@@ -68,8 +67,7 @@ impl DescribeDashboardOutputBuilder {
     }
     /// <p>The HTTP status of this request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The HTTP status of this request.</p>
     pub fn get_status(&self) -> &::std::option::Option<i32> {
@@ -82,29 +80,33 @@ impl DescribeDashboardOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeDashboardOutput`](crate::operation::describe_dashboard::DescribeDashboardOutput).
     pub fn build(self) -> crate::operation::describe_dashboard::DescribeDashboardOutput {
         crate::operation::describe_dashboard::DescribeDashboardOutput {
-            dashboard: self.dashboard,
-            status: self.status.unwrap_or_default(),
-            request_id: self.request_id,
+            dashboard: self.dashboard
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
+            request_id: self.request_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

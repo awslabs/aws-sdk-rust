@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDeviceFleetInput {
+pub struct UpdateDeviceFleetInput  {
     /// <p>The name of the fleet.</p>
     pub device_fleet_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
@@ -15,21 +15,21 @@ pub struct UpdateDeviceFleetInput {
     /// <p>For example, if your device fleet is called "demo-fleet", the name of the role alias will be "SageMakerEdge-demo-fleet".</p>
     pub enable_iot_role_alias: ::std::option::Option<bool>,
 }
-impl UpdateDeviceFleetInput {
+impl  UpdateDeviceFleetInput  {
     /// <p>The name of the fleet.</p>
-    pub fn device_fleet_name(&self) -> ::std::option::Option<&str> {
+    pub fn device_fleet_name(&self) -> ::std::option::Option<& str> {
         self.device_fleet_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>Description of the fleet.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Output configuration for storing sample data collected by the fleet.</p>
-    pub fn output_config(&self) -> ::std::option::Option<&crate::types::EdgeOutputConfig> {
+    pub fn output_config(&self) -> ::std::option::Option<& crate::types::EdgeOutputConfig> {
         self.output_config.as_ref()
     }
     /// <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the role alias generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>
@@ -64,8 +64,7 @@ impl UpdateDeviceFleetInputBuilder {
     }
     /// <p>The name of the fleet.</p>
     pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_fleet_name = input;
-        self
+        self.device_fleet_name = input; self
     }
     /// <p>The name of the fleet.</p>
     pub fn get_device_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +77,7 @@ impl UpdateDeviceFleetInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +90,7 @@ impl UpdateDeviceFleetInputBuilder {
     }
     /// <p>Description of the fleet.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Description of the fleet.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +104,7 @@ impl UpdateDeviceFleetInputBuilder {
     }
     /// <p>Output configuration for storing sample data collected by the fleet.</p>
     pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::EdgeOutputConfig>) -> Self {
-        self.output_config = input;
-        self
+        self.output_config = input; self
     }
     /// <p>Output configuration for storing sample data collected by the fleet.</p>
     pub fn get_output_config(&self) -> &::std::option::Option<crate::types::EdgeOutputConfig> {
@@ -123,8 +119,7 @@ impl UpdateDeviceFleetInputBuilder {
     /// <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the role alias generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>
     /// <p>For example, if your device fleet is called "demo-fleet", the name of the role alias will be "SageMakerEdge-demo-fleet".</p>
     pub fn set_enable_iot_role_alias(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_iot_role_alias = input;
-        self
+        self.enable_iot_role_alias = input; self
     }
     /// <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the role alias generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>
     /// <p>For example, if your device fleet is called "demo-fleet", the name of the role alias will be "SageMakerEdge-demo-fleet".</p>
@@ -132,15 +127,21 @@ impl UpdateDeviceFleetInputBuilder {
         &self.enable_iot_role_alias
     }
     /// Consumes the builder and constructs a [`UpdateDeviceFleetInput`](crate::operation::update_device_fleet::UpdateDeviceFleetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_device_fleet::UpdateDeviceFleetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_device_fleet::UpdateDeviceFleetInput {
-            device_fleet_name: self.device_fleet_name,
-            role_arn: self.role_arn,
-            description: self.description,
-            output_config: self.output_config,
-            enable_iot_role_alias: self.enable_iot_role_alias,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_device_fleet::UpdateDeviceFleetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_device_fleet::UpdateDeviceFleetInput {
+                device_fleet_name: self.device_fleet_name
+                ,
+                role_arn: self.role_arn
+                ,
+                description: self.description
+                ,
+                output_config: self.output_config
+                ,
+                enable_iot_role_alias: self.enable_iot_role_alias
+                ,
+            }
+        )
     }
 }
+

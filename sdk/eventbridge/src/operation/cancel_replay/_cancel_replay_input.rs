@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelReplayInput {
+pub struct CancelReplayInput  {
     /// <p>The name of the replay to cancel.</p>
     pub replay_name: ::std::option::Option<::std::string::String>,
 }
-impl CancelReplayInput {
+impl  CancelReplayInput  {
     /// <p>The name of the replay to cancel.</p>
-    pub fn replay_name(&self) -> ::std::option::Option<&str> {
+    pub fn replay_name(&self) -> ::std::option::Option<& str> {
         self.replay_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl CancelReplayInputBuilder {
     }
     /// <p>The name of the replay to cancel.</p>
     pub fn set_replay_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replay_name = input;
-        self
+        self.replay_name = input; self
     }
     /// <p>The name of the replay to cancel.</p>
     pub fn get_replay_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.replay_name
     }
     /// Consumes the builder and constructs a [`CancelReplayInput`](crate::operation::cancel_replay::CancelReplayInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::cancel_replay::CancelReplayInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::cancel_replay::CancelReplayInput {
-            replay_name: self.replay_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_replay::CancelReplayInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_replay::CancelReplayInput {
+                replay_name: self.replay_name
+                ,
+            }
+        )
     }
 }
+

@@ -3,16 +3,17 @@
 /// <p>Resource launch actions filter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LaunchActionsRequestFilters {
+pub struct LaunchActionsRequestFilters  {
     /// <p>Launch actions Ids.</p>
-    pub action_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub action_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl LaunchActionsRequestFilters {
+impl  LaunchActionsRequestFilters  {
     /// <p>Launch actions Ids.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.action_ids.is_none()`.
-    pub fn action_ids(&self) -> &[::std::string::String] {
-        self.action_ids.as_deref().unwrap_or_default()
+    pub fn action_ids(&self) -> & [::std::string::String] {
+        self.action_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl LaunchActionsRequestFilters {
@@ -26,7 +27,7 @@ impl LaunchActionsRequestFilters {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LaunchActionsRequestFiltersBuilder {
-    pub(crate) action_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) action_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl LaunchActionsRequestFiltersBuilder {
     /// Appends an item to `action_ids`.
@@ -36,21 +37,24 @@ impl LaunchActionsRequestFiltersBuilder {
     /// <p>Launch actions Ids.</p>
     pub fn action_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.action_ids.unwrap_or_default();
-        v.push(input.into());
-        self.action_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.action_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Launch actions Ids.</p>
-    pub fn set_action_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.action_ids = input;
-        self
+    pub fn set_action_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.action_ids = input; self
     }
     /// <p>Launch actions Ids.</p>
-    pub fn get_action_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_action_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.action_ids
     }
     /// Consumes the builder and constructs a [`LaunchActionsRequestFilters`](crate::types::LaunchActionsRequestFilters).
     pub fn build(self) -> crate::types::LaunchActionsRequestFilters {
-        crate::types::LaunchActionsRequestFilters { action_ids: self.action_ids }
+        crate::types::LaunchActionsRequestFilters {
+            action_ids: self.action_ids
+            ,
+        }
     }
 }
+

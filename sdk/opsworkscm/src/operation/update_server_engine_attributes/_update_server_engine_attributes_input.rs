@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateServerEngineAttributesInput {
+pub struct UpdateServerEngineAttributesInput  {
     /// <p>The name of the server to update.</p>
     pub server_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the engine attribute to update.</p>
@@ -10,17 +10,17 @@ pub struct UpdateServerEngineAttributesInput {
     /// <p>The value to set for the attribute.</p>
     pub attribute_value: ::std::option::Option<::std::string::String>,
 }
-impl UpdateServerEngineAttributesInput {
+impl  UpdateServerEngineAttributesInput  {
     /// <p>The name of the server to update.</p>
-    pub fn server_name(&self) -> ::std::option::Option<&str> {
+    pub fn server_name(&self) -> ::std::option::Option<& str> {
         self.server_name.as_deref()
     }
     /// <p>The name of the engine attribute to update.</p>
-    pub fn attribute_name(&self) -> ::std::option::Option<&str> {
+    pub fn attribute_name(&self) -> ::std::option::Option<& str> {
         self.attribute_name.as_deref()
     }
     /// <p>The value to set for the attribute.</p>
-    pub fn attribute_value(&self) -> ::std::option::Option<&str> {
+    pub fn attribute_value(&self) -> ::std::option::Option<& str> {
         self.attribute_value.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateServerEngineAttributesInputBuilder {
     }
     /// <p>The name of the server to update.</p>
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_name = input;
-        self
+        self.server_name = input; self
     }
     /// <p>The name of the server to update.</p>
     pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateServerEngineAttributesInputBuilder {
     }
     /// <p>The name of the engine attribute to update.</p>
     pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attribute_name = input;
-        self
+        self.attribute_name = input; self
     }
     /// <p>The name of the engine attribute to update.</p>
     pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,24 +75,24 @@ impl UpdateServerEngineAttributesInputBuilder {
     }
     /// <p>The value to set for the attribute.</p>
     pub fn set_attribute_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attribute_value = input;
-        self
+        self.attribute_value = input; self
     }
     /// <p>The value to set for the attribute.</p>
     pub fn get_attribute_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.attribute_value
     }
     /// Consumes the builder and constructs a [`UpdateServerEngineAttributesInput`](crate::operation::update_server_engine_attributes::UpdateServerEngineAttributesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_server_engine_attributes::UpdateServerEngineAttributesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_server_engine_attributes::UpdateServerEngineAttributesInput {
-            server_name: self.server_name,
-            attribute_name: self.attribute_name,
-            attribute_value: self.attribute_value,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_server_engine_attributes::UpdateServerEngineAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_server_engine_attributes::UpdateServerEngineAttributesInput {
+                server_name: self.server_name
+                ,
+                attribute_name: self.attribute_name
+                ,
+                attribute_value: self.attribute_value
+                ,
+            }
+        )
     }
 }
+

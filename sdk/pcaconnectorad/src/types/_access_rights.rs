@@ -3,19 +3,19 @@
 /// <p>Allow or deny permissions for an Active Directory group to enroll or autoenroll certificates for a template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccessRights {
+pub struct AccessRights  {
     /// <p>Allow or deny an Active Directory group from enrolling certificates issued against a template.</p>
     pub enroll: ::std::option::Option<crate::types::AccessRight>,
     /// <p>Allow or deny an Active Directory group from autoenrolling certificates issued against a template. The Active Directory group must be allowed to enroll to allow autoenrollment</p>
     pub auto_enroll: ::std::option::Option<crate::types::AccessRight>,
 }
-impl AccessRights {
+impl  AccessRights  {
     /// <p>Allow or deny an Active Directory group from enrolling certificates issued against a template.</p>
-    pub fn enroll(&self) -> ::std::option::Option<&crate::types::AccessRight> {
+    pub fn enroll(&self) -> ::std::option::Option<& crate::types::AccessRight> {
         self.enroll.as_ref()
     }
     /// <p>Allow or deny an Active Directory group from autoenrolling certificates issued against a template. The Active Directory group must be allowed to enroll to allow autoenrollment</p>
-    pub fn auto_enroll(&self) -> ::std::option::Option<&crate::types::AccessRight> {
+    pub fn auto_enroll(&self) -> ::std::option::Option<& crate::types::AccessRight> {
         self.auto_enroll.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl AccessRightsBuilder {
     }
     /// <p>Allow or deny an Active Directory group from enrolling certificates issued against a template.</p>
     pub fn set_enroll(mut self, input: ::std::option::Option<crate::types::AccessRight>) -> Self {
-        self.enroll = input;
-        self
+        self.enroll = input; self
     }
     /// <p>Allow or deny an Active Directory group from enrolling certificates issued against a template.</p>
     pub fn get_enroll(&self) -> &::std::option::Option<crate::types::AccessRight> {
@@ -55,8 +54,7 @@ impl AccessRightsBuilder {
     }
     /// <p>Allow or deny an Active Directory group from autoenrolling certificates issued against a template. The Active Directory group must be allowed to enroll to allow autoenrollment</p>
     pub fn set_auto_enroll(mut self, input: ::std::option::Option<crate::types::AccessRight>) -> Self {
-        self.auto_enroll = input;
-        self
+        self.auto_enroll = input; self
     }
     /// <p>Allow or deny an Active Directory group from autoenrolling certificates issued against a template. The Active Directory group must be allowed to enroll to allow autoenrollment</p>
     pub fn get_auto_enroll(&self) -> &::std::option::Option<crate::types::AccessRight> {
@@ -65,8 +63,11 @@ impl AccessRightsBuilder {
     /// Consumes the builder and constructs a [`AccessRights`](crate::types::AccessRights).
     pub fn build(self) -> crate::types::AccessRights {
         crate::types::AccessRights {
-            enroll: self.enroll,
-            auto_enroll: self.auto_enroll,
+            enroll: self.enroll
+            ,
+            auto_enroll: self.auto_enroll
+            ,
         }
     }
 }
+

@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeEcsClusters`](crate::operation::describe_ecs_clusters::builders::DescribeEcsClustersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_ecs_clusters::builders::DescribeEcsClustersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`ecs_cluster_arns(impl Into<String>)`](crate::operation::describe_ecs_clusters::builders::DescribeEcsClustersFluentBuilder::ecs_cluster_arns) / [`set_ecs_cluster_arns(Option<Vec::<String>>)`](crate::operation::describe_ecs_clusters::builders::DescribeEcsClustersFluentBuilder::set_ecs_cluster_arns):<br>required: **false**<br><p>A list of ARNs, one for each cluster to be described.</p><br>
     ///   - [`stack_id(impl Into<String>)`](crate::operation::describe_ecs_clusters::builders::DescribeEcsClustersFluentBuilder::stack_id) / [`set_stack_id(Option<String>)`](crate::operation::describe_ecs_clusters::builders::DescribeEcsClustersFluentBuilder::set_stack_id):<br>required: **false**<br><p>A stack ID. <code>DescribeEcsClusters</code> returns a description of the cluster that is registered with the stack.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_ecs_clusters::builders::DescribeEcsClustersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_ecs_clusters::builders::DescribeEcsClustersFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous paginated request did not return all of the remaining results, the response object's<code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>DescribeEcsClusters</code> again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_ecs_clusters::builders::DescribeEcsClustersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_ecs_clusters::builders::DescribeEcsClustersFluentBuilder::set_max_results):<br>required: **false**<br><p>To receive a paginated response, use this parameter to specify the maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p><br>
-    /// - On success, responds with [`DescribeEcsClustersOutput`](crate::operation::describe_ecs_clusters::DescribeEcsClustersOutput) with field(s):
+                            /// - On success, responds with [`DescribeEcsClustersOutput`](crate::operation::describe_ecs_clusters::DescribeEcsClustersOutput) with field(s):
     ///   - [`ecs_clusters(Option<Vec::<EcsCluster>>)`](crate::operation::describe_ecs_clusters::DescribeEcsClustersOutput::ecs_clusters): <p>A list of <code>EcsCluster</code> objects containing the cluster descriptions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_ecs_clusters::DescribeEcsClustersOutput::next_token): <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that you can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of results. If the previous paginated request returned all of the remaining results, this parameter is set to <code>null</code>.</p>
-    /// - On failure, responds with [`SdkError<DescribeEcsClustersError>`](crate::operation::describe_ecs_clusters::DescribeEcsClustersError)
+                            /// - On failure, responds with [`SdkError<DescribeEcsClustersError>`](crate::operation::describe_ecs_clusters::DescribeEcsClustersError)
     pub fn describe_ecs_clusters(&self) -> crate::operation::describe_ecs_clusters::builders::DescribeEcsClustersFluentBuilder {
-        crate::operation::describe_ecs_clusters::builders::DescribeEcsClustersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_ecs_clusters::builders::DescribeEcsClustersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

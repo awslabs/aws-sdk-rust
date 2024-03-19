@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteMlEndpointInput {
+pub struct DeleteMlEndpointInput  {
     /// <p>The unique identifier of the inference endpoint.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of an IAM role providing Neptune access to SageMaker and Amazon S3 resources. This must be listed in your DB cluster parameter group or an error will be thrown.</p>
@@ -10,13 +10,13 @@ pub struct DeleteMlEndpointInput {
     /// <p>If this flag is set to <code>TRUE</code>, all Neptune ML S3 artifacts should be deleted when the job is stopped. The default is <code>FALSE</code>.</p>
     pub clean: ::std::option::Option<bool>,
 }
-impl DeleteMlEndpointInput {
+impl  DeleteMlEndpointInput  {
     /// <p>The unique identifier of the inference endpoint.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ARN of an IAM role providing Neptune access to SageMaker and Amazon S3 resources. This must be listed in your DB cluster parameter group or an error will be thrown.</p>
-    pub fn neptune_iam_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn neptune_iam_role_arn(&self) -> ::std::option::Option<& str> {
         self.neptune_iam_role_arn.as_deref()
     }
     /// <p>If this flag is set to <code>TRUE</code>, all Neptune ML S3 artifacts should be deleted when the job is stopped. The default is <code>FALSE</code>.</p>
@@ -48,8 +48,7 @@ impl DeleteMlEndpointInputBuilder {
     }
     /// <p>The unique identifier of the inference endpoint.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier of the inference endpoint.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl DeleteMlEndpointInputBuilder {
     }
     /// <p>The ARN of an IAM role providing Neptune access to SageMaker and Amazon S3 resources. This must be listed in your DB cluster parameter group or an error will be thrown.</p>
     pub fn set_neptune_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.neptune_iam_role_arn = input;
-        self
+        self.neptune_iam_role_arn = input; self
     }
     /// <p>The ARN of an IAM role providing Neptune access to SageMaker and Amazon S3 resources. This must be listed in your DB cluster parameter group or an error will be thrown.</p>
     pub fn get_neptune_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,21 +74,24 @@ impl DeleteMlEndpointInputBuilder {
     }
     /// <p>If this flag is set to <code>TRUE</code>, all Neptune ML S3 artifacts should be deleted when the job is stopped. The default is <code>FALSE</code>.</p>
     pub fn set_clean(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.clean = input;
-        self
+        self.clean = input; self
     }
     /// <p>If this flag is set to <code>TRUE</code>, all Neptune ML S3 artifacts should be deleted when the job is stopped. The default is <code>FALSE</code>.</p>
     pub fn get_clean(&self) -> &::std::option::Option<bool> {
         &self.clean
     }
     /// Consumes the builder and constructs a [`DeleteMlEndpointInput`](crate::operation::delete_ml_endpoint::DeleteMlEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_ml_endpoint::DeleteMlEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_ml_endpoint::DeleteMlEndpointInput {
-            id: self.id,
-            neptune_iam_role_arn: self.neptune_iam_role_arn,
-            clean: self.clean,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_ml_endpoint::DeleteMlEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_ml_endpoint::DeleteMlEndpointInput {
+                id: self.id
+                ,
+                neptune_iam_role_arn: self.neptune_iam_role_arn
+                ,
+                clean: self.clean
+                ,
+            }
+        )
     }
 }
+

@@ -3,21 +3,22 @@
 /// <p>Specifies the settings that define the relationships between segment groups for a segment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SegmentGroupList {
+pub struct SegmentGroupList  {
     /// <p>An array that defines the set of segment criteria to evaluate when handling segment groups for the segment.</p>
-    pub groups: ::std::option::Option<::std::vec::Vec<crate::types::SegmentGroup>>,
+    pub groups: ::std::option::Option<::std::vec::Vec::<crate::types::SegmentGroup>>,
     /// <p>Specifies how to handle multiple segment groups for the segment. For example, if the segment includes three segment groups, whether the resulting segment includes endpoints that match all, any, or none of the segment groups.</p>
     pub include: ::std::option::Option<crate::types::Include>,
 }
-impl SegmentGroupList {
+impl  SegmentGroupList  {
     /// <p>An array that defines the set of segment criteria to evaluate when handling segment groups for the segment.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
-    pub fn groups(&self) -> &[crate::types::SegmentGroup] {
-        self.groups.as_deref().unwrap_or_default()
+    pub fn groups(&self) -> & [crate::types::SegmentGroup] {
+        self.groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies how to handle multiple segment groups for the segment. For example, if the segment includes three segment groups, whether the resulting segment includes endpoints that match all, any, or none of the segment groups.</p>
-    pub fn include(&self) -> ::std::option::Option<&crate::types::Include> {
+    pub fn include(&self) -> ::std::option::Option<& crate::types::Include> {
         self.include.as_ref()
     }
 }
@@ -32,7 +33,7 @@ impl SegmentGroupList {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SegmentGroupListBuilder {
-    pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::SegmentGroup>>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec::<crate::types::SegmentGroup>>,
     pub(crate) include: ::std::option::Option<crate::types::Include>,
 }
 impl SegmentGroupListBuilder {
@@ -43,17 +44,16 @@ impl SegmentGroupListBuilder {
     /// <p>An array that defines the set of segment criteria to evaluate when handling segment groups for the segment.</p>
     pub fn groups(mut self, input: crate::types::SegmentGroup) -> Self {
         let mut v = self.groups.unwrap_or_default();
-        v.push(input);
-        self.groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array that defines the set of segment criteria to evaluate when handling segment groups for the segment.</p>
-    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SegmentGroup>>) -> Self {
-        self.groups = input;
-        self
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SegmentGroup>>) -> Self {
+        self.groups = input; self
     }
     /// <p>An array that defines the set of segment criteria to evaluate when handling segment groups for the segment.</p>
-    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SegmentGroup>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SegmentGroup>> {
         &self.groups
     }
     /// <p>Specifies how to handle multiple segment groups for the segment. For example, if the segment includes three segment groups, whether the resulting segment includes endpoints that match all, any, or none of the segment groups.</p>
@@ -63,8 +63,7 @@ impl SegmentGroupListBuilder {
     }
     /// <p>Specifies how to handle multiple segment groups for the segment. For example, if the segment includes three segment groups, whether the resulting segment includes endpoints that match all, any, or none of the segment groups.</p>
     pub fn set_include(mut self, input: ::std::option::Option<crate::types::Include>) -> Self {
-        self.include = input;
-        self
+        self.include = input; self
     }
     /// <p>Specifies how to handle multiple segment groups for the segment. For example, if the segment includes three segment groups, whether the resulting segment includes endpoints that match all, any, or none of the segment groups.</p>
     pub fn get_include(&self) -> &::std::option::Option<crate::types::Include> {
@@ -73,8 +72,11 @@ impl SegmentGroupListBuilder {
     /// Consumes the builder and constructs a [`SegmentGroupList`](crate::types::SegmentGroupList).
     pub fn build(self) -> crate::types::SegmentGroupList {
         crate::types::SegmentGroupList {
-            groups: self.groups,
-            include: self.include,
+            groups: self.groups
+            ,
+            include: self.include
+            ,
         }
     }
 }
+

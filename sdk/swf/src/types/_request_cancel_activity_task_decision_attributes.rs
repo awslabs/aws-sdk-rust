@@ -14,15 +14,14 @@
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RequestCancelActivityTaskDecisionAttributes {
+pub struct RequestCancelActivityTaskDecisionAttributes  {
     /// <p>The <code>activityId</code> of the activity task to be canceled.</p>
     pub activity_id: ::std::string::String,
 }
-impl RequestCancelActivityTaskDecisionAttributes {
+impl  RequestCancelActivityTaskDecisionAttributes  {
     /// <p>The <code>activityId</code> of the activity task to be canceled.</p>
-    pub fn activity_id(&self) -> &str {
-        use std::ops::Deref;
-        self.activity_id.deref()
+    pub fn activity_id(&self) -> & str {
+        use std::ops::Deref; self.activity_id.deref()
     }
 }
 impl RequestCancelActivityTaskDecisionAttributes {
@@ -47,8 +46,7 @@ impl RequestCancelActivityTaskDecisionAttributesBuilder {
     }
     /// <p>The <code>activityId</code> of the activity task to be canceled.</p>
     pub fn set_activity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.activity_id = input;
-        self
+        self.activity_id = input; self
     }
     /// <p>The <code>activityId</code> of the activity task to be canceled.</p>
     pub fn get_activity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,16 +55,16 @@ impl RequestCancelActivityTaskDecisionAttributesBuilder {
     /// Consumes the builder and constructs a [`RequestCancelActivityTaskDecisionAttributes`](crate::types::RequestCancelActivityTaskDecisionAttributes).
     /// This method will fail if any of the following fields are not set:
     /// - [`activity_id`](crate::types::builders::RequestCancelActivityTaskDecisionAttributesBuilder::activity_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::RequestCancelActivityTaskDecisionAttributes, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RequestCancelActivityTaskDecisionAttributes {
-            activity_id: self.activity_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "activity_id",
-                    "activity_id was not specified but it is required when building RequestCancelActivityTaskDecisionAttributes",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::RequestCancelActivityTaskDecisionAttributes, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::RequestCancelActivityTaskDecisionAttributes {
+                activity_id: self.activity_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("activity_id", "activity_id was not specified but it is required when building RequestCancelActivityTaskDecisionAttributes")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Contains information about a key group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KeyGroupSummary {
+pub struct KeyGroupSummary  {
     /// <p>A key group.</p>
     pub key_group: ::std::option::Option<crate::types::KeyGroup>,
 }
-impl KeyGroupSummary {
+impl  KeyGroupSummary  {
     /// <p>A key group.</p>
-    pub fn key_group(&self) -> ::std::option::Option<&crate::types::KeyGroup> {
+    pub fn key_group(&self) -> ::std::option::Option<& crate::types::KeyGroup> {
         self.key_group.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl KeyGroupSummaryBuilder {
     }
     /// <p>A key group.</p>
     pub fn set_key_group(mut self, input: ::std::option::Option<crate::types::KeyGroup>) -> Self {
-        self.key_group = input;
-        self
+        self.key_group = input; self
     }
     /// <p>A key group.</p>
     pub fn get_key_group(&self) -> &::std::option::Option<crate::types::KeyGroup> {
@@ -44,6 +43,10 @@ impl KeyGroupSummaryBuilder {
     }
     /// Consumes the builder and constructs a [`KeyGroupSummary`](crate::types::KeyGroupSummary).
     pub fn build(self) -> crate::types::KeyGroupSummary {
-        crate::types::KeyGroupSummary { key_group: self.key_group }
+        crate::types::KeyGroupSummary {
+            key_group: self.key_group
+            ,
+        }
     }
 }
+

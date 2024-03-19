@@ -2,26 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListExperimentTargetAccountConfigurationsInput {
+pub struct ListExperimentTargetAccountConfigurationsInput  {
     /// <p>The ID of the experiment.</p>
     pub experiment_id: ::std::option::Option<::std::string::String>,
     /// <p>The token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListExperimentTargetAccountConfigurationsInput {
+impl  ListExperimentTargetAccountConfigurationsInput  {
     /// <p>The ID of the experiment.</p>
-    pub fn experiment_id(&self) -> ::std::option::Option<&str> {
+    pub fn experiment_id(&self) -> ::std::option::Option<& str> {
         self.experiment_id.as_deref()
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListExperimentTargetAccountConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListExperimentTargetAccountConfigurationsInput`](crate::operation::list_experiment_target_account_configurations::ListExperimentTargetAccountConfigurationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_experiment_target_account_configurations::builders::ListExperimentTargetAccountConfigurationsInputBuilder {
+    pub fn builder() -> crate::operation::list_experiment_target_account_configurations::builders::ListExperimentTargetAccountConfigurationsInputBuilder {
         crate::operation::list_experiment_target_account_configurations::builders::ListExperimentTargetAccountConfigurationsInputBuilder::default()
     }
 }
@@ -42,8 +41,7 @@ impl ListExperimentTargetAccountConfigurationsInputBuilder {
     }
     /// <p>The ID of the experiment.</p>
     pub fn set_experiment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.experiment_id = input;
-        self
+        self.experiment_id = input; self
     }
     /// <p>The ID of the experiment.</p>
     pub fn get_experiment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +54,22 @@ impl ListExperimentTargetAccountConfigurationsInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListExperimentTargetAccountConfigurationsInput`](crate::operation::list_experiment_target_account_configurations::ListExperimentTargetAccountConfigurationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_experiment_target_account_configurations::ListExperimentTargetAccountConfigurationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_experiment_target_account_configurations::ListExperimentTargetAccountConfigurationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_experiment_target_account_configurations::ListExperimentTargetAccountConfigurationsInput {
-                experiment_id: self.experiment_id,
-                next_token: self.next_token,
-            },
+                experiment_id: self.experiment_id
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

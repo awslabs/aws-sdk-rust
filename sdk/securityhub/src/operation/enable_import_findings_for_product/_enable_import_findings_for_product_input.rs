@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableImportFindingsForProductInput {
+pub struct EnableImportFindingsForProductInput  {
     /// <p>The ARN of the product to enable the integration for.</p>
     pub product_arn: ::std::option::Option<::std::string::String>,
 }
-impl EnableImportFindingsForProductInput {
+impl  EnableImportFindingsForProductInput  {
     /// <p>The ARN of the product to enable the integration for.</p>
-    pub fn product_arn(&self) -> ::std::option::Option<&str> {
+    pub fn product_arn(&self) -> ::std::option::Option<& str> {
         self.product_arn.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl EnableImportFindingsForProductInputBuilder {
     }
     /// <p>The ARN of the product to enable the integration for.</p>
     pub fn set_product_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_arn = input;
-        self
+        self.product_arn = input; self
     }
     /// <p>The ARN of the product to enable the integration for.</p>
     pub fn get_product_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.product_arn
     }
     /// Consumes the builder and constructs a [`EnableImportFindingsForProductInput`](crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductInput {
-                product_arn: self.product_arn,
-            },
+                product_arn: self.product_arn
+                ,
+            }
         )
     }
 }
+

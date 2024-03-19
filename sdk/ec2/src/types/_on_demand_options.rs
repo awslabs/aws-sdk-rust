@@ -3,7 +3,7 @@
 /// <p>Describes the configuration of On-Demand Instances in an EC2 Fleet.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OnDemandOptions {
+pub struct OnDemandOptions  {
     /// <p>The strategy that determines the order of the launch template overrides to use in fulfilling On-Demand capacity.</p>
     /// <p><code>lowest-price</code> - EC2 Fleet uses price to determine the order, launching the lowest price first.</p>
     /// <p><code>prioritized</code> - EC2 Fleet uses the priority that you assigned to each launch template override, launching the highest priority first.</p>
@@ -27,17 +27,17 @@ pub struct OnDemandOptions {
     /// </note>
     pub max_total_price: ::std::option::Option<::std::string::String>,
 }
-impl OnDemandOptions {
+impl  OnDemandOptions  {
     /// <p>The strategy that determines the order of the launch template overrides to use in fulfilling On-Demand capacity.</p>
     /// <p><code>lowest-price</code> - EC2 Fleet uses price to determine the order, launching the lowest price first.</p>
     /// <p><code>prioritized</code> - EC2 Fleet uses the priority that you assigned to each launch template override, launching the highest priority first.</p>
     /// <p>Default: <code>lowest-price</code></p>
-    pub fn allocation_strategy(&self) -> ::std::option::Option<&crate::types::FleetOnDemandAllocationStrategy> {
+    pub fn allocation_strategy(&self) -> ::std::option::Option<& crate::types::FleetOnDemandAllocationStrategy> {
         self.allocation_strategy.as_ref()
     }
     /// <p>The strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
-    pub fn capacity_reservation_options(&self) -> ::std::option::Option<&crate::types::CapacityReservationOptions> {
+    pub fn capacity_reservation_options(&self) -> ::std::option::Option<& crate::types::CapacityReservationOptions> {
         self.capacity_reservation_options.as_ref()
     }
     /// <p>Indicates that the fleet uses a single instance type to launch all On-Demand Instances in the fleet.</p>
@@ -59,7 +59,7 @@ impl OnDemandOptions {
     /// <p>The maximum amount per hour for On-Demand Instances that you're willing to pay.</p><note>
     /// <p>If your fleet includes T instances that are configured as <code>unlimited</code>, and if their average CPU usage exceeds the baseline utilization, you will incur a charge for surplus credits. The <code>maxTotalPrice</code> does not account for surplus credits, and, if you use surplus credits, your final cost might be higher than what you specified for <code>maxTotalPrice</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus credits can incur charges</a> in the <i>EC2 User Guide</i>.</p>
     /// </note>
-    pub fn max_total_price(&self) -> ::std::option::Option<&str> {
+    pub fn max_total_price(&self) -> ::std::option::Option<& str> {
         self.max_total_price.as_deref()
     }
 }
@@ -95,8 +95,7 @@ impl OnDemandOptionsBuilder {
     /// <p><code>prioritized</code> - EC2 Fleet uses the priority that you assigned to each launch template override, launching the highest priority first.</p>
     /// <p>Default: <code>lowest-price</code></p>
     pub fn set_allocation_strategy(mut self, input: ::std::option::Option<crate::types::FleetOnDemandAllocationStrategy>) -> Self {
-        self.allocation_strategy = input;
-        self
+        self.allocation_strategy = input; self
     }
     /// <p>The strategy that determines the order of the launch template overrides to use in fulfilling On-Demand capacity.</p>
     /// <p><code>lowest-price</code> - EC2 Fleet uses price to determine the order, launching the lowest price first.</p>
@@ -114,8 +113,7 @@ impl OnDemandOptionsBuilder {
     /// <p>The strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
     pub fn set_capacity_reservation_options(mut self, input: ::std::option::Option<crate::types::CapacityReservationOptions>) -> Self {
-        self.capacity_reservation_options = input;
-        self
+        self.capacity_reservation_options = input; self
     }
     /// <p>The strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
@@ -131,8 +129,7 @@ impl OnDemandOptionsBuilder {
     /// <p>Indicates that the fleet uses a single instance type to launch all On-Demand Instances in the fleet.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
     pub fn set_single_instance_type(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.single_instance_type = input;
-        self
+        self.single_instance_type = input; self
     }
     /// <p>Indicates that the fleet uses a single instance type to launch all On-Demand Instances in the fleet.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
@@ -148,8 +145,7 @@ impl OnDemandOptionsBuilder {
     /// <p>Indicates that the fleet launches all On-Demand Instances into a single Availability Zone.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
     pub fn set_single_availability_zone(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.single_availability_zone = input;
-        self
+        self.single_availability_zone = input; self
     }
     /// <p>Indicates that the fleet launches all On-Demand Instances into a single Availability Zone.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
@@ -167,8 +163,7 @@ impl OnDemandOptionsBuilder {
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
     /// <p>At least one of the following must be specified: <code>SingleAvailabilityZone</code> | <code>SingleInstanceType</code></p>
     pub fn set_min_target_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_target_capacity = input;
-        self
+        self.min_target_capacity = input; self
     }
     /// <p>The minimum target capacity for On-Demand Instances in the fleet. If the minimum target capacity is not reached, the fleet launches no instances.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
@@ -187,8 +182,7 @@ impl OnDemandOptionsBuilder {
     /// <p>If your fleet includes T instances that are configured as <code>unlimited</code>, and if their average CPU usage exceeds the baseline utilization, you will incur a charge for surplus credits. The <code>maxTotalPrice</code> does not account for surplus credits, and, if you use surplus credits, your final cost might be higher than what you specified for <code>maxTotalPrice</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus credits can incur charges</a> in the <i>EC2 User Guide</i>.</p>
     /// </note>
     pub fn set_max_total_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.max_total_price = input;
-        self
+        self.max_total_price = input; self
     }
     /// <p>The maximum amount per hour for On-Demand Instances that you're willing to pay.</p><note>
     /// <p>If your fleet includes T instances that are configured as <code>unlimited</code>, and if their average CPU usage exceeds the baseline utilization, you will incur a charge for surplus credits. The <code>maxTotalPrice</code> does not account for surplus credits, and, if you use surplus credits, your final cost might be higher than what you specified for <code>maxTotalPrice</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus credits can incur charges</a> in the <i>EC2 User Guide</i>.</p>
@@ -199,12 +193,19 @@ impl OnDemandOptionsBuilder {
     /// Consumes the builder and constructs a [`OnDemandOptions`](crate::types::OnDemandOptions).
     pub fn build(self) -> crate::types::OnDemandOptions {
         crate::types::OnDemandOptions {
-            allocation_strategy: self.allocation_strategy,
-            capacity_reservation_options: self.capacity_reservation_options,
-            single_instance_type: self.single_instance_type,
-            single_availability_zone: self.single_availability_zone,
-            min_target_capacity: self.min_target_capacity,
-            max_total_price: self.max_total_price,
+            allocation_strategy: self.allocation_strategy
+            ,
+            capacity_reservation_options: self.capacity_reservation_options
+            ,
+            single_instance_type: self.single_instance_type
+            ,
+            single_availability_zone: self.single_availability_zone
+            ,
+            min_target_capacity: self.min_target_capacity
+            ,
+            max_total_price: self.max_total_price
+            ,
         }
     }
 }
+

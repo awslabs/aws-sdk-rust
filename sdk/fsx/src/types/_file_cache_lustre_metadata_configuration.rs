@@ -3,11 +3,11 @@
 /// <p>The configuration for a Lustre MDT (Metadata Target) storage volume. The metadata on Amazon File Cache is managed by a Lustre Metadata Server (MDS) while the actual metadata is persisted on an MDT.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FileCacheLustreMetadataConfiguration {
+pub struct FileCacheLustreMetadataConfiguration  {
     /// <p>The storage capacity of the Lustre MDT (Metadata Target) storage volume in gibibytes (GiB). The only supported value is <code>2400</code> GiB.</p>
     pub storage_capacity: ::std::option::Option<i32>,
 }
-impl FileCacheLustreMetadataConfiguration {
+impl  FileCacheLustreMetadataConfiguration  {
     /// <p>The storage capacity of the Lustre MDT (Metadata Target) storage volume in gibibytes (GiB). The only supported value is <code>2400</code> GiB.</p>
     pub fn storage_capacity(&self) -> ::std::option::Option<i32> {
         self.storage_capacity
@@ -35,8 +35,7 @@ impl FileCacheLustreMetadataConfigurationBuilder {
     }
     /// <p>The storage capacity of the Lustre MDT (Metadata Target) storage volume in gibibytes (GiB). The only supported value is <code>2400</code> GiB.</p>
     pub fn set_storage_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.storage_capacity = input;
-        self
+        self.storage_capacity = input; self
     }
     /// <p>The storage capacity of the Lustre MDT (Metadata Target) storage volume in gibibytes (GiB). The only supported value is <code>2400</code> GiB.</p>
     pub fn get_storage_capacity(&self) -> &::std::option::Option<i32> {
@@ -45,7 +44,9 @@ impl FileCacheLustreMetadataConfigurationBuilder {
     /// Consumes the builder and constructs a [`FileCacheLustreMetadataConfiguration`](crate::types::FileCacheLustreMetadataConfiguration).
     pub fn build(self) -> crate::types::FileCacheLustreMetadataConfiguration {
         crate::types::FileCacheLustreMetadataConfiguration {
-            storage_capacity: self.storage_capacity,
+            storage_capacity: self.storage_capacity
+            ,
         }
     }
 }
+

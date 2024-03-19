@@ -3,7 +3,7 @@
 /// <p>The configuration of a header or footer section.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HeaderFooterSectionConfiguration {
+pub struct HeaderFooterSectionConfiguration  {
     /// <p>The unique identifier of the header or footer section.</p>
     pub section_id: ::std::string::String,
     /// <p>The layout configuration of the header or footer section.</p>
@@ -11,18 +11,17 @@ pub struct HeaderFooterSectionConfiguration {
     /// <p>The style options of a header or footer section.</p>
     pub style: ::std::option::Option<crate::types::SectionStyle>,
 }
-impl HeaderFooterSectionConfiguration {
+impl  HeaderFooterSectionConfiguration  {
     /// <p>The unique identifier of the header or footer section.</p>
-    pub fn section_id(&self) -> &str {
-        use std::ops::Deref;
-        self.section_id.deref()
+    pub fn section_id(&self) -> & str {
+        use std::ops::Deref; self.section_id.deref()
     }
     /// <p>The layout configuration of the header or footer section.</p>
-    pub fn layout(&self) -> ::std::option::Option<&crate::types::SectionLayoutConfiguration> {
+    pub fn layout(&self) -> ::std::option::Option<& crate::types::SectionLayoutConfiguration> {
         self.layout.as_ref()
     }
     /// <p>The style options of a header or footer section.</p>
-    pub fn style(&self) -> ::std::option::Option<&crate::types::SectionStyle> {
+    pub fn style(&self) -> ::std::option::Option<& crate::types::SectionStyle> {
         self.style.as_ref()
     }
 }
@@ -50,8 +49,7 @@ impl HeaderFooterSectionConfigurationBuilder {
     }
     /// <p>The unique identifier of the header or footer section.</p>
     pub fn set_section_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.section_id = input;
-        self
+        self.section_id = input; self
     }
     /// <p>The unique identifier of the header or footer section.</p>
     pub fn get_section_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl HeaderFooterSectionConfigurationBuilder {
     }
     /// <p>The layout configuration of the header or footer section.</p>
     pub fn set_layout(mut self, input: ::std::option::Option<crate::types::SectionLayoutConfiguration>) -> Self {
-        self.layout = input;
-        self
+        self.layout = input; self
     }
     /// <p>The layout configuration of the header or footer section.</p>
     pub fn get_layout(&self) -> &::std::option::Option<crate::types::SectionLayoutConfiguration> {
@@ -79,8 +76,7 @@ impl HeaderFooterSectionConfigurationBuilder {
     }
     /// <p>The style options of a header or footer section.</p>
     pub fn set_style(mut self, input: ::std::option::Option<crate::types::SectionStyle>) -> Self {
-        self.style = input;
-        self
+        self.style = input; self
     }
     /// <p>The style options of a header or footer section.</p>
     pub fn get_style(&self) -> &::std::option::Option<crate::types::SectionStyle> {
@@ -90,15 +86,19 @@ impl HeaderFooterSectionConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`section_id`](crate::types::builders::HeaderFooterSectionConfigurationBuilder::section_id)
     pub fn build(self) -> ::std::result::Result<crate::types::HeaderFooterSectionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::HeaderFooterSectionConfiguration {
-            section_id: self.section_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "section_id",
-                    "section_id was not specified but it is required when building HeaderFooterSectionConfiguration",
-                )
-            })?,
-            layout: self.layout,
-            style: self.style,
-        })
+        ::std::result::Result::Ok(
+            crate::types::HeaderFooterSectionConfiguration {
+                section_id: self.section_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("section_id", "section_id was not specified but it is required when building HeaderFooterSectionConfiguration")
+                    )?
+                ,
+                layout: self.layout
+                ,
+                style: self.style
+                ,
+            }
+        )
     }
 }
+

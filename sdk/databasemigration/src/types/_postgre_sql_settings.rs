@@ -3,7 +3,7 @@
 /// <p>Provides information that defines a PostgreSQL endpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct PostgreSqlSettings {
+pub struct PostgreSqlSettings  {
     /// <p>For use with change data capture (CDC) only, this attribute has DMS bypass foreign keys and user triggers to reduce the time it takes to bulk load data.</p>
     /// <p>Example: <code>afterConnectScript=SET session_replication_role='replica'</code></p>
     pub after_connect_script: ::std::option::Option<::std::string::String>,
@@ -65,10 +65,10 @@ pub struct PostgreSqlSettings {
     /// <p>The Babelfish for Aurora PostgreSQL database name for the endpoint.</p>
     pub babelfish_database_name: ::std::option::Option<::std::string::String>,
 }
-impl PostgreSqlSettings {
+impl  PostgreSqlSettings  {
     /// <p>For use with change data capture (CDC) only, this attribute has DMS bypass foreign keys and user triggers to reduce the time it takes to bulk load data.</p>
     /// <p>Example: <code>afterConnectScript=SET session_replication_role='replica'</code></p>
-    pub fn after_connect_script(&self) -> ::std::option::Option<&str> {
+    pub fn after_connect_script(&self) -> ::std::option::Option<& str> {
         self.after_connect_script.as_deref()
     }
     /// <p>To capture DDL events, DMS creates various artifacts in the PostgreSQL database when the task starts. You can later remove these artifacts.</p>
@@ -82,12 +82,12 @@ impl PostgreSqlSettings {
         self.max_file_size
     }
     /// <p>Database name for the endpoint.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The schema in which the operational DDL database artifacts are created.</p>
     /// <p>Example: <code>ddlArtifactsSchema=xyzddlschema;</code></p>
-    pub fn ddl_artifacts_schema(&self) -> ::std::option::Option<&str> {
+    pub fn ddl_artifacts_schema(&self) -> ::std::option::Option<& str> {
         self.ddl_artifacts_schema.as_deref()
     }
     /// <p>Sets the client statement timeout for the PostgreSQL instance, in seconds. The default value is 60 seconds.</p>
@@ -105,7 +105,7 @@ impl PostgreSqlSettings {
         self.heartbeat_enable
     }
     /// <p>Sets the schema in which the heartbeat artifacts are created.</p>
-    pub fn heartbeat_schema(&self) -> ::std::option::Option<&str> {
+    pub fn heartbeat_schema(&self) -> ::std::option::Option<& str> {
         self.heartbeat_schema.as_deref()
     }
     /// <p>Sets the WAL heartbeat frequency (in minutes).</p>
@@ -113,7 +113,7 @@ impl PostgreSqlSettings {
         self.heartbeat_frequency
     }
     /// <p>Endpoint connection password.</p>
-    pub fn password(&self) -> ::std::option::Option<&str> {
+    pub fn password(&self) -> ::std::option::Option<& str> {
         self.password.as_deref()
     }
     /// <p>Endpoint TCP port. The default is 5432.</p>
@@ -123,31 +123,31 @@ impl PostgreSqlSettings {
     /// <p>The host name of the endpoint database.</p>
     /// <p>For an Amazon RDS PostgreSQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
     /// <p>For an Aurora PostgreSQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html">DescribeDBClusters</a>, in the <code>Endpoint</code> field.</p>
-    pub fn server_name(&self) -> ::std::option::Option<&str> {
+    pub fn server_name(&self) -> ::std::option::Option<& str> {
         self.server_name.as_deref()
     }
     /// <p>Endpoint connection user name.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>Sets the name of a previously created logical replication slot for a change data capture (CDC) load of the PostgreSQL source instance.</p>
     /// <p>When used with the <code>CdcStartPosition</code> request parameter for the DMS API , this attribute also makes it possible to use native CDC start points. DMS verifies that the specified logical replication slot exists before starting the CDC load task. It also verifies that the task was created with a valid setting of <code>CdcStartPosition</code>. If the specified slot doesn't exist or the task doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an error.</p>
     /// <p>For more information about setting the <code>CdcStartPosition</code> request parameter, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining a CDC native start point</a> in the <i>Database Migration Service User Guide</i>. For more information about using <code>CdcStartPosition</code>, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>, <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>, and <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">ModifyReplicationTask</a>.</p>
-    pub fn slot_name(&self) -> ::std::option::Option<&str> {
+    pub fn slot_name(&self) -> ::std::option::Option<& str> {
         self.slot_name.as_deref()
     }
     /// <p>Specifies the plugin to use to create a replication slot.</p>
-    pub fn plugin_name(&self) -> ::std::option::Option<&crate::types::PluginNameValue> {
+    pub fn plugin_name(&self) -> ::std::option::Option<& crate::types::PluginNameValue> {
         self.plugin_name.as_ref()
     }
     /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the PostgreSQL endpoint.</p><note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
-    pub fn secrets_manager_access_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn secrets_manager_access_role_arn(&self) -> ::std::option::Option<& str> {
         self.secrets_manager_access_role_arn.as_deref()
     }
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the PostgreSQL endpoint connection details.</p>
-    pub fn secrets_manager_secret_id(&self) -> ::std::option::Option<&str> {
+    pub fn secrets_manager_secret_id(&self) -> ::std::option::Option<& str> {
         self.secrets_manager_secret_id.as_deref()
     }
     /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during migration. The default value is <code>true</code>.</p>
@@ -163,19 +163,19 @@ impl PostgreSqlSettings {
         self.map_jsonb_as_clob
     }
     /// <p>When true, DMS migrates LONG values as VARCHAR.</p>
-    pub fn map_long_varchar_as(&self) -> ::std::option::Option<&crate::types::LongVarcharMappingType> {
+    pub fn map_long_varchar_as(&self) -> ::std::option::Option<& crate::types::LongVarcharMappingType> {
         self.map_long_varchar_as.as_ref()
     }
     /// <p>Specifies the default behavior of the replication's handling of PostgreSQL- compatible endpoints that require some additional configuration, such as Babelfish endpoints.</p>
-    pub fn database_mode(&self) -> ::std::option::Option<&crate::types::DatabaseMode> {
+    pub fn database_mode(&self) -> ::std::option::Option<& crate::types::DatabaseMode> {
         self.database_mode.as_ref()
     }
     /// <p>The Babelfish for Aurora PostgreSQL database name for the endpoint.</p>
-    pub fn babelfish_database_name(&self) -> ::std::option::Option<&str> {
+    pub fn babelfish_database_name(&self) -> ::std::option::Option<& str> {
         self.babelfish_database_name.as_deref()
     }
 }
-impl ::std::fmt::Debug for PostgreSqlSettings {
+impl  ::std::fmt::Debug for PostgreSqlSettings  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PostgreSqlSettings");
         formatter.field("after_connect_script", &self.after_connect_script);
@@ -251,8 +251,7 @@ impl PostgreSqlSettingsBuilder {
     /// <p>For use with change data capture (CDC) only, this attribute has DMS bypass foreign keys and user triggers to reduce the time it takes to bulk load data.</p>
     /// <p>Example: <code>afterConnectScript=SET session_replication_role='replica'</code></p>
     pub fn set_after_connect_script(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.after_connect_script = input;
-        self
+        self.after_connect_script = input; self
     }
     /// <p>For use with change data capture (CDC) only, this attribute has DMS bypass foreign keys and user triggers to reduce the time it takes to bulk load data.</p>
     /// <p>Example: <code>afterConnectScript=SET session_replication_role='replica'</code></p>
@@ -268,8 +267,7 @@ impl PostgreSqlSettingsBuilder {
     /// <p>To capture DDL events, DMS creates various artifacts in the PostgreSQL database when the task starts. You can later remove these artifacts.</p>
     /// <p>If this value is set to <code>N</code>, you don't have to create tables or triggers on the source database.</p>
     pub fn set_capture_ddls(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.capture_ddls = input;
-        self
+        self.capture_ddls = input; self
     }
     /// <p>To capture DDL events, DMS creates various artifacts in the PostgreSQL database when the task starts. You can later remove these artifacts.</p>
     /// <p>If this value is set to <code>N</code>, you don't have to create tables or triggers on the source database.</p>
@@ -285,8 +283,7 @@ impl PostgreSqlSettingsBuilder {
     /// <p>Specifies the maximum size (in KB) of any .csv file used to transfer data to PostgreSQL.</p>
     /// <p>Example: <code>maxFileSize=512</code></p>
     pub fn set_max_file_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_file_size = input;
-        self
+        self.max_file_size = input; self
     }
     /// <p>Specifies the maximum size (in KB) of any .csv file used to transfer data to PostgreSQL.</p>
     /// <p>Example: <code>maxFileSize=512</code></p>
@@ -300,8 +297,7 @@ impl PostgreSqlSettingsBuilder {
     }
     /// <p>Database name for the endpoint.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>Database name for the endpoint.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -316,8 +312,7 @@ impl PostgreSqlSettingsBuilder {
     /// <p>The schema in which the operational DDL database artifacts are created.</p>
     /// <p>Example: <code>ddlArtifactsSchema=xyzddlschema;</code></p>
     pub fn set_ddl_artifacts_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ddl_artifacts_schema = input;
-        self
+        self.ddl_artifacts_schema = input; self
     }
     /// <p>The schema in which the operational DDL database artifacts are created.</p>
     /// <p>Example: <code>ddlArtifactsSchema=xyzddlschema;</code></p>
@@ -333,8 +328,7 @@ impl PostgreSqlSettingsBuilder {
     /// <p>Sets the client statement timeout for the PostgreSQL instance, in seconds. The default value is 60 seconds.</p>
     /// <p>Example: <code>executeTimeout=100;</code></p>
     pub fn set_execute_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.execute_timeout = input;
-        self
+        self.execute_timeout = input; self
     }
     /// <p>Sets the client statement timeout for the PostgreSQL instance, in seconds. The default value is 60 seconds.</p>
     /// <p>Example: <code>executeTimeout=100;</code></p>
@@ -350,8 +344,7 @@ impl PostgreSqlSettingsBuilder {
     /// <p>When set to <code>true</code>, this value causes a task to fail if the actual size of a LOB column is greater than the specified <code>LobMaxSize</code>.</p>
     /// <p>If task is set to Limited LOB mode and this option is set to true, the task fails instead of truncating the LOB data.</p>
     pub fn set_fail_tasks_on_lob_truncation(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.fail_tasks_on_lob_truncation = input;
-        self
+        self.fail_tasks_on_lob_truncation = input; self
     }
     /// <p>When set to <code>true</code>, this value causes a task to fail if the actual size of a LOB column is greater than the specified <code>LobMaxSize</code>.</p>
     /// <p>If task is set to Limited LOB mode and this option is set to true, the task fails instead of truncating the LOB data.</p>
@@ -365,8 +358,7 @@ impl PostgreSqlSettingsBuilder {
     }
     /// <p>The write-ahead log (WAL) heartbeat feature mimics a dummy transaction. By doing this, it prevents idle logical replication slots from holding onto old WAL logs, which can result in storage full situations on the source. This heartbeat keeps <code>restart_lsn</code> moving and prevents storage full scenarios.</p>
     pub fn set_heartbeat_enable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.heartbeat_enable = input;
-        self
+        self.heartbeat_enable = input; self
     }
     /// <p>The write-ahead log (WAL) heartbeat feature mimics a dummy transaction. By doing this, it prevents idle logical replication slots from holding onto old WAL logs, which can result in storage full situations on the source. This heartbeat keeps <code>restart_lsn</code> moving and prevents storage full scenarios.</p>
     pub fn get_heartbeat_enable(&self) -> &::std::option::Option<bool> {
@@ -379,8 +371,7 @@ impl PostgreSqlSettingsBuilder {
     }
     /// <p>Sets the schema in which the heartbeat artifacts are created.</p>
     pub fn set_heartbeat_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.heartbeat_schema = input;
-        self
+        self.heartbeat_schema = input; self
     }
     /// <p>Sets the schema in which the heartbeat artifacts are created.</p>
     pub fn get_heartbeat_schema(&self) -> &::std::option::Option<::std::string::String> {
@@ -393,8 +384,7 @@ impl PostgreSqlSettingsBuilder {
     }
     /// <p>Sets the WAL heartbeat frequency (in minutes).</p>
     pub fn set_heartbeat_frequency(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.heartbeat_frequency = input;
-        self
+        self.heartbeat_frequency = input; self
     }
     /// <p>Sets the WAL heartbeat frequency (in minutes).</p>
     pub fn get_heartbeat_frequency(&self) -> &::std::option::Option<i32> {
@@ -407,8 +397,7 @@ impl PostgreSqlSettingsBuilder {
     }
     /// <p>Endpoint connection password.</p>
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// <p>Endpoint connection password.</p>
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -421,8 +410,7 @@ impl PostgreSqlSettingsBuilder {
     }
     /// <p>Endpoint TCP port. The default is 5432.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>Endpoint TCP port. The default is 5432.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -439,8 +427,7 @@ impl PostgreSqlSettingsBuilder {
     /// <p>For an Amazon RDS PostgreSQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
     /// <p>For an Aurora PostgreSQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html">DescribeDBClusters</a>, in the <code>Endpoint</code> field.</p>
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_name = input;
-        self
+        self.server_name = input; self
     }
     /// <p>The host name of the endpoint database.</p>
     /// <p>For an Amazon RDS PostgreSQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
@@ -455,8 +442,7 @@ impl PostgreSqlSettingsBuilder {
     }
     /// <p>Endpoint connection user name.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>Endpoint connection user name.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -473,8 +459,7 @@ impl PostgreSqlSettingsBuilder {
     /// <p>When used with the <code>CdcStartPosition</code> request parameter for the DMS API , this attribute also makes it possible to use native CDC start points. DMS verifies that the specified logical replication slot exists before starting the CDC load task. It also verifies that the task was created with a valid setting of <code>CdcStartPosition</code>. If the specified slot doesn't exist or the task doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an error.</p>
     /// <p>For more information about setting the <code>CdcStartPosition</code> request parameter, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining a CDC native start point</a> in the <i>Database Migration Service User Guide</i>. For more information about using <code>CdcStartPosition</code>, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>, <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>, and <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">ModifyReplicationTask</a>.</p>
     pub fn set_slot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.slot_name = input;
-        self
+        self.slot_name = input; self
     }
     /// <p>Sets the name of a previously created logical replication slot for a change data capture (CDC) load of the PostgreSQL source instance.</p>
     /// <p>When used with the <code>CdcStartPosition</code> request parameter for the DMS API , this attribute also makes it possible to use native CDC start points. DMS verifies that the specified logical replication slot exists before starting the CDC load task. It also verifies that the task was created with a valid setting of <code>CdcStartPosition</code>. If the specified slot doesn't exist or the task doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an error.</p>
@@ -489,8 +474,7 @@ impl PostgreSqlSettingsBuilder {
     }
     /// <p>Specifies the plugin to use to create a replication slot.</p>
     pub fn set_plugin_name(mut self, input: ::std::option::Option<crate::types::PluginNameValue>) -> Self {
-        self.plugin_name = input;
-        self
+        self.plugin_name = input; self
     }
     /// <p>Specifies the plugin to use to create a replication slot.</p>
     pub fn get_plugin_name(&self) -> &::std::option::Option<crate::types::PluginNameValue> {
@@ -507,8 +491,7 @@ impl PostgreSqlSettingsBuilder {
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
     pub fn set_secrets_manager_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secrets_manager_access_role_arn = input;
-        self
+        self.secrets_manager_access_role_arn = input; self
     }
     /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the PostgreSQL endpoint.</p><note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
@@ -523,8 +506,7 @@ impl PostgreSqlSettingsBuilder {
     }
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the PostgreSQL endpoint connection details.</p>
     pub fn set_secrets_manager_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secrets_manager_secret_id = input;
-        self
+        self.secrets_manager_secret_id = input; self
     }
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the PostgreSQL endpoint connection details.</p>
     pub fn get_secrets_manager_secret_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -537,8 +519,7 @@ impl PostgreSqlSettingsBuilder {
     }
     /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during migration. The default value is <code>true</code>.</p>
     pub fn set_trim_space_in_char(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.trim_space_in_char = input;
-        self
+        self.trim_space_in_char = input; self
     }
     /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during migration. The default value is <code>true</code>.</p>
     pub fn get_trim_space_in_char(&self) -> &::std::option::Option<bool> {
@@ -551,8 +532,7 @@ impl PostgreSqlSettingsBuilder {
     }
     /// <p>When true, lets PostgreSQL migrate the boolean type as boolean. By default, PostgreSQL migrates booleans as <code>varchar(5)</code>. You must set this setting on both the source and target endpoints for it to take effect.</p>
     pub fn set_map_boolean_as_boolean(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.map_boolean_as_boolean = input;
-        self
+        self.map_boolean_as_boolean = input; self
     }
     /// <p>When true, lets PostgreSQL migrate the boolean type as boolean. By default, PostgreSQL migrates booleans as <code>varchar(5)</code>. You must set this setting on both the source and target endpoints for it to take effect.</p>
     pub fn get_map_boolean_as_boolean(&self) -> &::std::option::Option<bool> {
@@ -565,8 +545,7 @@ impl PostgreSqlSettingsBuilder {
     }
     /// <p>When true, DMS migrates JSONB values as CLOB.</p>
     pub fn set_map_jsonb_as_clob(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.map_jsonb_as_clob = input;
-        self
+        self.map_jsonb_as_clob = input; self
     }
     /// <p>When true, DMS migrates JSONB values as CLOB.</p>
     pub fn get_map_jsonb_as_clob(&self) -> &::std::option::Option<bool> {
@@ -579,8 +558,7 @@ impl PostgreSqlSettingsBuilder {
     }
     /// <p>When true, DMS migrates LONG values as VARCHAR.</p>
     pub fn set_map_long_varchar_as(mut self, input: ::std::option::Option<crate::types::LongVarcharMappingType>) -> Self {
-        self.map_long_varchar_as = input;
-        self
+        self.map_long_varchar_as = input; self
     }
     /// <p>When true, DMS migrates LONG values as VARCHAR.</p>
     pub fn get_map_long_varchar_as(&self) -> &::std::option::Option<crate::types::LongVarcharMappingType> {
@@ -593,8 +571,7 @@ impl PostgreSqlSettingsBuilder {
     }
     /// <p>Specifies the default behavior of the replication's handling of PostgreSQL- compatible endpoints that require some additional configuration, such as Babelfish endpoints.</p>
     pub fn set_database_mode(mut self, input: ::std::option::Option<crate::types::DatabaseMode>) -> Self {
-        self.database_mode = input;
-        self
+        self.database_mode = input; self
     }
     /// <p>Specifies the default behavior of the replication's handling of PostgreSQL- compatible endpoints that require some additional configuration, such as Babelfish endpoints.</p>
     pub fn get_database_mode(&self) -> &::std::option::Option<crate::types::DatabaseMode> {
@@ -607,8 +584,7 @@ impl PostgreSqlSettingsBuilder {
     }
     /// <p>The Babelfish for Aurora PostgreSQL database name for the endpoint.</p>
     pub fn set_babelfish_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.babelfish_database_name = input;
-        self
+        self.babelfish_database_name = input; self
     }
     /// <p>The Babelfish for Aurora PostgreSQL database name for the endpoint.</p>
     pub fn get_babelfish_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -617,30 +593,54 @@ impl PostgreSqlSettingsBuilder {
     /// Consumes the builder and constructs a [`PostgreSqlSettings`](crate::types::PostgreSqlSettings).
     pub fn build(self) -> crate::types::PostgreSqlSettings {
         crate::types::PostgreSqlSettings {
-            after_connect_script: self.after_connect_script,
-            capture_ddls: self.capture_ddls,
-            max_file_size: self.max_file_size,
-            database_name: self.database_name,
-            ddl_artifacts_schema: self.ddl_artifacts_schema,
-            execute_timeout: self.execute_timeout,
-            fail_tasks_on_lob_truncation: self.fail_tasks_on_lob_truncation,
-            heartbeat_enable: self.heartbeat_enable,
-            heartbeat_schema: self.heartbeat_schema,
-            heartbeat_frequency: self.heartbeat_frequency,
-            password: self.password,
-            port: self.port,
-            server_name: self.server_name,
-            username: self.username,
-            slot_name: self.slot_name,
-            plugin_name: self.plugin_name,
-            secrets_manager_access_role_arn: self.secrets_manager_access_role_arn,
-            secrets_manager_secret_id: self.secrets_manager_secret_id,
-            trim_space_in_char: self.trim_space_in_char,
-            map_boolean_as_boolean: self.map_boolean_as_boolean,
-            map_jsonb_as_clob: self.map_jsonb_as_clob,
-            map_long_varchar_as: self.map_long_varchar_as,
-            database_mode: self.database_mode,
-            babelfish_database_name: self.babelfish_database_name,
+            after_connect_script: self.after_connect_script
+            ,
+            capture_ddls: self.capture_ddls
+            ,
+            max_file_size: self.max_file_size
+            ,
+            database_name: self.database_name
+            ,
+            ddl_artifacts_schema: self.ddl_artifacts_schema
+            ,
+            execute_timeout: self.execute_timeout
+            ,
+            fail_tasks_on_lob_truncation: self.fail_tasks_on_lob_truncation
+            ,
+            heartbeat_enable: self.heartbeat_enable
+            ,
+            heartbeat_schema: self.heartbeat_schema
+            ,
+            heartbeat_frequency: self.heartbeat_frequency
+            ,
+            password: self.password
+            ,
+            port: self.port
+            ,
+            server_name: self.server_name
+            ,
+            username: self.username
+            ,
+            slot_name: self.slot_name
+            ,
+            plugin_name: self.plugin_name
+            ,
+            secrets_manager_access_role_arn: self.secrets_manager_access_role_arn
+            ,
+            secrets_manager_secret_id: self.secrets_manager_secret_id
+            ,
+            trim_space_in_char: self.trim_space_in_char
+            ,
+            map_boolean_as_boolean: self.map_boolean_as_boolean
+            ,
+            map_jsonb_as_clob: self.map_jsonb_as_clob
+            ,
+            map_long_varchar_as: self.map_long_varchar_as
+            ,
+            database_mode: self.database_mode
+            ,
+            babelfish_database_name: self.babelfish_database_name
+            ,
         }
     }
 }
@@ -674,3 +674,4 @@ impl ::std::fmt::Debug for PostgreSqlSettingsBuilder {
         formatter.finish()
     }
 }
+

@@ -3,24 +3,26 @@
 /// <p>A rule defined to grant access on one or more restricted columns. Each dataset can have multiple rules. To create a restricted column, you add it to one or more rules. Each rule must contain at least one column and at least one user or group. To be able to see a restricted column, a user or group needs to be added to a rule for that column.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ColumnLevelPermissionRule {
+pub struct ColumnLevelPermissionRule  {
     /// <p>An array of Amazon Resource Names (ARNs) for Amazon QuickSight users or groups.</p>
-    pub principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub principals: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>An array of column names.</p>
-    pub column_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub column_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ColumnLevelPermissionRule {
+impl  ColumnLevelPermissionRule  {
     /// <p>An array of Amazon Resource Names (ARNs) for Amazon QuickSight users or groups.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.principals.is_none()`.
-    pub fn principals(&self) -> &[::std::string::String] {
-        self.principals.as_deref().unwrap_or_default()
+    pub fn principals(&self) -> & [::std::string::String] {
+        self.principals.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of column names.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_names.is_none()`.
-    pub fn column_names(&self) -> &[::std::string::String] {
-        self.column_names.as_deref().unwrap_or_default()
+    pub fn column_names(&self) -> & [::std::string::String] {
+        self.column_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ColumnLevelPermissionRule {
@@ -34,8 +36,8 @@ impl ColumnLevelPermissionRule {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ColumnLevelPermissionRuleBuilder {
-    pub(crate) principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) column_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) principals: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) column_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ColumnLevelPermissionRuleBuilder {
     /// Appends an item to `principals`.
@@ -45,17 +47,16 @@ impl ColumnLevelPermissionRuleBuilder {
     /// <p>An array of Amazon Resource Names (ARNs) for Amazon QuickSight users or groups.</p>
     pub fn principals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.principals.unwrap_or_default();
-        v.push(input.into());
-        self.principals = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.principals = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of Amazon Resource Names (ARNs) for Amazon QuickSight users or groups.</p>
-    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.principals = input;
-        self
+    pub fn set_principals(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.principals = input; self
     }
     /// <p>An array of Amazon Resource Names (ARNs) for Amazon QuickSight users or groups.</p>
-    pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.principals
     }
     /// Appends an item to `column_names`.
@@ -65,24 +66,26 @@ impl ColumnLevelPermissionRuleBuilder {
     /// <p>An array of column names.</p>
     pub fn column_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.column_names.unwrap_or_default();
-        v.push(input.into());
-        self.column_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.column_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of column names.</p>
-    pub fn set_column_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.column_names = input;
-        self
+    pub fn set_column_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.column_names = input; self
     }
     /// <p>An array of column names.</p>
-    pub fn get_column_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_column_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.column_names
     }
     /// Consumes the builder and constructs a [`ColumnLevelPermissionRule`](crate::types::ColumnLevelPermissionRule).
     pub fn build(self) -> crate::types::ColumnLevelPermissionRule {
         crate::types::ColumnLevelPermissionRule {
-            principals: self.principals,
-            column_names: self.column_names,
+            principals: self.principals
+            ,
+            column_names: self.column_names
+            ,
         }
     }
 }
+

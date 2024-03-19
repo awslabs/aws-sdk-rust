@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecuteQueryInput {
+pub struct ExecuteQueryInput  {
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub graph_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The query string to be executed.</p>
@@ -10,7 +10,7 @@ pub struct ExecuteQueryInput {
     /// <p>The query language the query is written in. Currently only openCypher is supported.</p>
     pub language: ::std::option::Option<crate::types::QueryLanguage>,
     /// <p>The data parameters the query can use in JSON format. For example: {"name": "john", "age": 20}. (optional)</p>
-    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
+    pub parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::aws_smithy_types::Document>>,
     /// <p>Query plan cache is a feature that saves the query plan and reuses it on successive executions of the same query. This reduces query latency, and works for both <code>READ</code> and <code>UPDATE</code> queries. The plan cache is an LRU cache with a 5 minute TTL and a capacity of 1000.</p>
     pub plan_cache: ::std::option::Option<crate::types::PlanCacheType>,
     /// <p>The explain mode parameter returns a query explain instead of the actual query results. A query explain can be used to gather insights about the query execution such as planning decisions, time spent on each operator, solutions flowing etc.</p>
@@ -18,29 +18,29 @@ pub struct ExecuteQueryInput {
     /// <p>Specifies the query timeout duration, in milliseconds. (optional)</p>
     pub query_timeout_milliseconds: ::std::option::Option<i32>,
 }
-impl ExecuteQueryInput {
+impl  ExecuteQueryInput  {
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
-    pub fn graph_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn graph_identifier(&self) -> ::std::option::Option<& str> {
         self.graph_identifier.as_deref()
     }
     /// <p>The query string to be executed.</p>
-    pub fn query_string(&self) -> ::std::option::Option<&str> {
+    pub fn query_string(&self) -> ::std::option::Option<& str> {
         self.query_string.as_deref()
     }
     /// <p>The query language the query is written in. Currently only openCypher is supported.</p>
-    pub fn language(&self) -> ::std::option::Option<&crate::types::QueryLanguage> {
+    pub fn language(&self) -> ::std::option::Option<& crate::types::QueryLanguage> {
         self.language.as_ref()
     }
     /// <p>The data parameters the query can use in JSON format. For example: {"name": "john", "age": 20}. (optional)</p>
-    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>> {
+    pub fn parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::aws_smithy_types::Document>> {
         self.parameters.as_ref()
     }
     /// <p>Query plan cache is a feature that saves the query plan and reuses it on successive executions of the same query. This reduces query latency, and works for both <code>READ</code> and <code>UPDATE</code> queries. The plan cache is an LRU cache with a 5 minute TTL and a capacity of 1000.</p>
-    pub fn plan_cache(&self) -> ::std::option::Option<&crate::types::PlanCacheType> {
+    pub fn plan_cache(&self) -> ::std::option::Option<& crate::types::PlanCacheType> {
         self.plan_cache.as_ref()
     }
     /// <p>The explain mode parameter returns a query explain instead of the actual query results. A query explain can be used to gather insights about the query execution such as planning decisions, time spent on each operator, solutions flowing etc.</p>
-    pub fn explain_mode(&self) -> ::std::option::Option<&crate::types::ExplainMode> {
+    pub fn explain_mode(&self) -> ::std::option::Option<& crate::types::ExplainMode> {
         self.explain_mode.as_ref()
     }
     /// <p>Specifies the query timeout duration, in milliseconds. (optional)</p>
@@ -62,7 +62,7 @@ pub struct ExecuteQueryInputBuilder {
     pub(crate) graph_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) query_string: ::std::option::Option<::std::string::String>,
     pub(crate) language: ::std::option::Option<crate::types::QueryLanguage>,
-    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::aws_smithy_types::Document>>,
     pub(crate) plan_cache: ::std::option::Option<crate::types::PlanCacheType>,
     pub(crate) explain_mode: ::std::option::Option<crate::types::ExplainMode>,
     pub(crate) query_timeout_milliseconds: ::std::option::Option<i32>,
@@ -76,8 +76,7 @@ impl ExecuteQueryInputBuilder {
     }
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub fn set_graph_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.graph_identifier = input;
-        self
+        self.graph_identifier = input; self
     }
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub fn get_graph_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl ExecuteQueryInputBuilder {
     }
     /// <p>The query string to be executed.</p>
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_string = input;
-        self
+        self.query_string = input; self
     }
     /// <p>The query string to be executed.</p>
     pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +104,7 @@ impl ExecuteQueryInputBuilder {
     }
     /// <p>The query language the query is written in. Currently only openCypher is supported.</p>
     pub fn set_language(mut self, input: ::std::option::Option<crate::types::QueryLanguage>) -> Self {
-        self.language = input;
-        self
+        self.language = input; self
     }
     /// <p>The query language the query is written in. Currently only openCypher is supported.</p>
     pub fn get_language(&self) -> &::std::option::Option<crate::types::QueryLanguage> {
@@ -120,20 +117,16 @@ impl ExecuteQueryInputBuilder {
     /// <p>The data parameters the query can use in JSON format. For example: {"name": "john", "age": 20}. (optional)</p>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::aws_smithy_types::Document) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The data parameters the query can use in JSON format. For example: {"name": "john", "age": 20}. (optional)</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
-    ) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::aws_smithy_types::Document>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>The data parameters the query can use in JSON format. For example: {"name": "john", "age": 20}. (optional)</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::aws_smithy_types::Document>> {
         &self.parameters
     }
     /// <p>Query plan cache is a feature that saves the query plan and reuses it on successive executions of the same query. This reduces query latency, and works for both <code>READ</code> and <code>UPDATE</code> queries. The plan cache is an LRU cache with a 5 minute TTL and a capacity of 1000.</p>
@@ -143,8 +136,7 @@ impl ExecuteQueryInputBuilder {
     }
     /// <p>Query plan cache is a feature that saves the query plan and reuses it on successive executions of the same query. This reduces query latency, and works for both <code>READ</code> and <code>UPDATE</code> queries. The plan cache is an LRU cache with a 5 minute TTL and a capacity of 1000.</p>
     pub fn set_plan_cache(mut self, input: ::std::option::Option<crate::types::PlanCacheType>) -> Self {
-        self.plan_cache = input;
-        self
+        self.plan_cache = input; self
     }
     /// <p>Query plan cache is a feature that saves the query plan and reuses it on successive executions of the same query. This reduces query latency, and works for both <code>READ</code> and <code>UPDATE</code> queries. The plan cache is an LRU cache with a 5 minute TTL and a capacity of 1000.</p>
     pub fn get_plan_cache(&self) -> &::std::option::Option<crate::types::PlanCacheType> {
@@ -157,8 +149,7 @@ impl ExecuteQueryInputBuilder {
     }
     /// <p>The explain mode parameter returns a query explain instead of the actual query results. A query explain can be used to gather insights about the query execution such as planning decisions, time spent on each operator, solutions flowing etc.</p>
     pub fn set_explain_mode(mut self, input: ::std::option::Option<crate::types::ExplainMode>) -> Self {
-        self.explain_mode = input;
-        self
+        self.explain_mode = input; self
     }
     /// <p>The explain mode parameter returns a query explain instead of the actual query results. A query explain can be used to gather insights about the query execution such as planning decisions, time spent on each operator, solutions flowing etc.</p>
     pub fn get_explain_mode(&self) -> &::std::option::Option<crate::types::ExplainMode> {
@@ -171,25 +162,32 @@ impl ExecuteQueryInputBuilder {
     }
     /// <p>Specifies the query timeout duration, in milliseconds. (optional)</p>
     pub fn set_query_timeout_milliseconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.query_timeout_milliseconds = input;
-        self
+        self.query_timeout_milliseconds = input; self
     }
     /// <p>Specifies the query timeout duration, in milliseconds. (optional)</p>
     pub fn get_query_timeout_milliseconds(&self) -> &::std::option::Option<i32> {
         &self.query_timeout_milliseconds
     }
     /// Consumes the builder and constructs a [`ExecuteQueryInput`](crate::operation::execute_query::ExecuteQueryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::execute_query::ExecuteQueryInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::execute_query::ExecuteQueryInput {
-            graph_identifier: self.graph_identifier,
-            query_string: self.query_string,
-            language: self.language,
-            parameters: self.parameters,
-            plan_cache: self.plan_cache,
-            explain_mode: self.explain_mode,
-            query_timeout_milliseconds: self.query_timeout_milliseconds,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::execute_query::ExecuteQueryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::execute_query::ExecuteQueryInput {
+                graph_identifier: self.graph_identifier
+                ,
+                query_string: self.query_string
+                ,
+                language: self.language
+                ,
+                parameters: self.parameters
+                ,
+                plan_cache: self.plan_cache
+                ,
+                explain_mode: self.explain_mode
+                ,
+                query_timeout_milliseconds: self.query_timeout_milliseconds
+                ,
+            }
+        )
     }
 }
+

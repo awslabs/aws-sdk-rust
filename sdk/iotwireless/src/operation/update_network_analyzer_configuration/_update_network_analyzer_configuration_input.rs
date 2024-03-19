@@ -2,74 +2,80 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateNetworkAnalyzerConfigurationInput {
+pub struct UpdateNetworkAnalyzerConfigurationInput  {
     /// <p>Name of the network analyzer configuration.</p>
     pub configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>Trace content for your wireless devices, gateways, and multicast groups.</p>
     pub trace_content: ::std::option::Option<crate::types::TraceContent>,
     /// <p>Wireless device resources to add to the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resource to add in the input array.</p>
-    pub wireless_devices_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub wireless_devices_to_add: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Wireless device resources to remove from the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resources to remove in the input array.</p>
-    pub wireless_devices_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub wireless_devices_to_remove: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Wireless gateway resources to add to the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resource to add in the input array.</p>
-    pub wireless_gateways_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub wireless_gateways_to_add: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Wireless gateway resources to remove from the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resources to remove in the input array.</p>
-    pub wireless_gateways_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub wireless_gateways_to_remove: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The description of the new resource.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Multicast group resources to add to the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resource to add in the input array.</p>
-    pub multicast_groups_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub multicast_groups_to_add: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Multicast group resources to remove from the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resources to remove in the input array.</p>
-    pub multicast_groups_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub multicast_groups_to_remove: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl UpdateNetworkAnalyzerConfigurationInput {
+impl  UpdateNetworkAnalyzerConfigurationInput  {
     /// <p>Name of the network analyzer configuration.</p>
-    pub fn configuration_name(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_name(&self) -> ::std::option::Option<& str> {
         self.configuration_name.as_deref()
     }
     /// <p>Trace content for your wireless devices, gateways, and multicast groups.</p>
-    pub fn trace_content(&self) -> ::std::option::Option<&crate::types::TraceContent> {
+    pub fn trace_content(&self) -> ::std::option::Option<& crate::types::TraceContent> {
         self.trace_content.as_ref()
     }
     /// <p>Wireless device resources to add to the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resource to add in the input array.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.wireless_devices_to_add.is_none()`.
-    pub fn wireless_devices_to_add(&self) -> &[::std::string::String] {
-        self.wireless_devices_to_add.as_deref().unwrap_or_default()
+    pub fn wireless_devices_to_add(&self) -> & [::std::string::String] {
+        self.wireless_devices_to_add.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Wireless device resources to remove from the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resources to remove in the input array.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.wireless_devices_to_remove.is_none()`.
-    pub fn wireless_devices_to_remove(&self) -> &[::std::string::String] {
-        self.wireless_devices_to_remove.as_deref().unwrap_or_default()
+    pub fn wireless_devices_to_remove(&self) -> & [::std::string::String] {
+        self.wireless_devices_to_remove.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Wireless gateway resources to add to the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resource to add in the input array.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.wireless_gateways_to_add.is_none()`.
-    pub fn wireless_gateways_to_add(&self) -> &[::std::string::String] {
-        self.wireless_gateways_to_add.as_deref().unwrap_or_default()
+    pub fn wireless_gateways_to_add(&self) -> & [::std::string::String] {
+        self.wireless_gateways_to_add.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Wireless gateway resources to remove from the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resources to remove in the input array.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.wireless_gateways_to_remove.is_none()`.
-    pub fn wireless_gateways_to_remove(&self) -> &[::std::string::String] {
-        self.wireless_gateways_to_remove.as_deref().unwrap_or_default()
+    pub fn wireless_gateways_to_remove(&self) -> & [::std::string::String] {
+        self.wireless_gateways_to_remove.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The description of the new resource.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Multicast group resources to add to the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resource to add in the input array.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.multicast_groups_to_add.is_none()`.
-    pub fn multicast_groups_to_add(&self) -> &[::std::string::String] {
-        self.multicast_groups_to_add.as_deref().unwrap_or_default()
+    pub fn multicast_groups_to_add(&self) -> & [::std::string::String] {
+        self.multicast_groups_to_add.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Multicast group resources to remove from the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resources to remove in the input array.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.multicast_groups_to_remove.is_none()`.
-    pub fn multicast_groups_to_remove(&self) -> &[::std::string::String] {
-        self.multicast_groups_to_remove.as_deref().unwrap_or_default()
+    pub fn multicast_groups_to_remove(&self) -> & [::std::string::String] {
+        self.multicast_groups_to_remove.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateNetworkAnalyzerConfigurationInput {
@@ -85,13 +91,13 @@ impl UpdateNetworkAnalyzerConfigurationInput {
 pub struct UpdateNetworkAnalyzerConfigurationInputBuilder {
     pub(crate) configuration_name: ::std::option::Option<::std::string::String>,
     pub(crate) trace_content: ::std::option::Option<crate::types::TraceContent>,
-    pub(crate) wireless_devices_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) wireless_devices_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) wireless_gateways_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) wireless_gateways_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) wireless_devices_to_add: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) wireless_devices_to_remove: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) wireless_gateways_to_add: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) wireless_gateways_to_remove: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) multicast_groups_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) multicast_groups_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) multicast_groups_to_add: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) multicast_groups_to_remove: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl UpdateNetworkAnalyzerConfigurationInputBuilder {
     /// <p>Name of the network analyzer configuration.</p>
@@ -102,8 +108,7 @@ impl UpdateNetworkAnalyzerConfigurationInputBuilder {
     }
     /// <p>Name of the network analyzer configuration.</p>
     pub fn set_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_name = input;
-        self
+        self.configuration_name = input; self
     }
     /// <p>Name of the network analyzer configuration.</p>
     pub fn get_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +121,7 @@ impl UpdateNetworkAnalyzerConfigurationInputBuilder {
     }
     /// <p>Trace content for your wireless devices, gateways, and multicast groups.</p>
     pub fn set_trace_content(mut self, input: ::std::option::Option<crate::types::TraceContent>) -> Self {
-        self.trace_content = input;
-        self
+        self.trace_content = input; self
     }
     /// <p>Trace content for your wireless devices, gateways, and multicast groups.</p>
     pub fn get_trace_content(&self) -> &::std::option::Option<crate::types::TraceContent> {
@@ -130,17 +134,16 @@ impl UpdateNetworkAnalyzerConfigurationInputBuilder {
     /// <p>Wireless device resources to add to the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resource to add in the input array.</p>
     pub fn wireless_devices_to_add(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.wireless_devices_to_add.unwrap_or_default();
-        v.push(input.into());
-        self.wireless_devices_to_add = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.wireless_devices_to_add = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Wireless device resources to add to the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resource to add in the input array.</p>
-    pub fn set_wireless_devices_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.wireless_devices_to_add = input;
-        self
+    pub fn set_wireless_devices_to_add(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.wireless_devices_to_add = input; self
     }
     /// <p>Wireless device resources to add to the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resource to add in the input array.</p>
-    pub fn get_wireless_devices_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_wireless_devices_to_add(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.wireless_devices_to_add
     }
     /// Appends an item to `wireless_devices_to_remove`.
@@ -150,17 +153,16 @@ impl UpdateNetworkAnalyzerConfigurationInputBuilder {
     /// <p>Wireless device resources to remove from the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resources to remove in the input array.</p>
     pub fn wireless_devices_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.wireless_devices_to_remove.unwrap_or_default();
-        v.push(input.into());
-        self.wireless_devices_to_remove = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.wireless_devices_to_remove = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Wireless device resources to remove from the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resources to remove in the input array.</p>
-    pub fn set_wireless_devices_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.wireless_devices_to_remove = input;
-        self
+    pub fn set_wireless_devices_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.wireless_devices_to_remove = input; self
     }
     /// <p>Wireless device resources to remove from the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resources to remove in the input array.</p>
-    pub fn get_wireless_devices_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_wireless_devices_to_remove(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.wireless_devices_to_remove
     }
     /// Appends an item to `wireless_gateways_to_add`.
@@ -170,17 +172,16 @@ impl UpdateNetworkAnalyzerConfigurationInputBuilder {
     /// <p>Wireless gateway resources to add to the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resource to add in the input array.</p>
     pub fn wireless_gateways_to_add(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.wireless_gateways_to_add.unwrap_or_default();
-        v.push(input.into());
-        self.wireless_gateways_to_add = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.wireless_gateways_to_add = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Wireless gateway resources to add to the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resource to add in the input array.</p>
-    pub fn set_wireless_gateways_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.wireless_gateways_to_add = input;
-        self
+    pub fn set_wireless_gateways_to_add(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.wireless_gateways_to_add = input; self
     }
     /// <p>Wireless gateway resources to add to the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resource to add in the input array.</p>
-    pub fn get_wireless_gateways_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_wireless_gateways_to_add(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.wireless_gateways_to_add
     }
     /// Appends an item to `wireless_gateways_to_remove`.
@@ -190,17 +191,16 @@ impl UpdateNetworkAnalyzerConfigurationInputBuilder {
     /// <p>Wireless gateway resources to remove from the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resources to remove in the input array.</p>
     pub fn wireless_gateways_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.wireless_gateways_to_remove.unwrap_or_default();
-        v.push(input.into());
-        self.wireless_gateways_to_remove = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.wireless_gateways_to_remove = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Wireless gateway resources to remove from the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resources to remove in the input array.</p>
-    pub fn set_wireless_gateways_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.wireless_gateways_to_remove = input;
-        self
+    pub fn set_wireless_gateways_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.wireless_gateways_to_remove = input; self
     }
     /// <p>Wireless gateway resources to remove from the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resources to remove in the input array.</p>
-    pub fn get_wireless_gateways_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_wireless_gateways_to_remove(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.wireless_gateways_to_remove
     }
     /// <p>The description of the new resource.</p>
@@ -210,8 +210,7 @@ impl UpdateNetworkAnalyzerConfigurationInputBuilder {
     }
     /// <p>The description of the new resource.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the new resource.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -224,17 +223,16 @@ impl UpdateNetworkAnalyzerConfigurationInputBuilder {
     /// <p>Multicast group resources to add to the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resource to add in the input array.</p>
     pub fn multicast_groups_to_add(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.multicast_groups_to_add.unwrap_or_default();
-        v.push(input.into());
-        self.multicast_groups_to_add = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.multicast_groups_to_add = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Multicast group resources to add to the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resource to add in the input array.</p>
-    pub fn set_multicast_groups_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.multicast_groups_to_add = input;
-        self
+    pub fn set_multicast_groups_to_add(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.multicast_groups_to_add = input; self
     }
     /// <p>Multicast group resources to add to the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resource to add in the input array.</p>
-    pub fn get_multicast_groups_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_multicast_groups_to_add(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.multicast_groups_to_add
     }
     /// Appends an item to `multicast_groups_to_remove`.
@@ -244,38 +242,42 @@ impl UpdateNetworkAnalyzerConfigurationInputBuilder {
     /// <p>Multicast group resources to remove from the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resources to remove in the input array.</p>
     pub fn multicast_groups_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.multicast_groups_to_remove.unwrap_or_default();
-        v.push(input.into());
-        self.multicast_groups_to_remove = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.multicast_groups_to_remove = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Multicast group resources to remove from the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resources to remove in the input array.</p>
-    pub fn set_multicast_groups_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.multicast_groups_to_remove = input;
-        self
+    pub fn set_multicast_groups_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.multicast_groups_to_remove = input; self
     }
     /// <p>Multicast group resources to remove from the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resources to remove in the input array.</p>
-    pub fn get_multicast_groups_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_multicast_groups_to_remove(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.multicast_groups_to_remove
     }
     /// Consumes the builder and constructs a [`UpdateNetworkAnalyzerConfigurationInput`](crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationInput {
-                configuration_name: self.configuration_name,
-                trace_content: self.trace_content,
-                wireless_devices_to_add: self.wireless_devices_to_add,
-                wireless_devices_to_remove: self.wireless_devices_to_remove,
-                wireless_gateways_to_add: self.wireless_gateways_to_add,
-                wireless_gateways_to_remove: self.wireless_gateways_to_remove,
-                description: self.description,
-                multicast_groups_to_add: self.multicast_groups_to_add,
-                multicast_groups_to_remove: self.multicast_groups_to_remove,
-            },
+                configuration_name: self.configuration_name
+                ,
+                trace_content: self.trace_content
+                ,
+                wireless_devices_to_add: self.wireless_devices_to_add
+                ,
+                wireless_devices_to_remove: self.wireless_devices_to_remove
+                ,
+                wireless_gateways_to_add: self.wireless_gateways_to_add
+                ,
+                wireless_gateways_to_remove: self.wireless_gateways_to_remove
+                ,
+                description: self.description
+                ,
+                multicast_groups_to_add: self.multicast_groups_to_add
+                ,
+                multicast_groups_to_remove: self.multicast_groups_to_remove
+                ,
+            }
         )
     }
 }
+

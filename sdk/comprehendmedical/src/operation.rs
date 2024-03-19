@@ -78,3 +78,4 @@ pub mod stop_rx_norm_inference_job;
 
 /// Types for the `StopSNOMEDCTInferenceJob` operation.
 pub mod stop_snomedct_inference_job;
+

@@ -3,19 +3,19 @@
 /// <p>The exception associated with a root cause.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RootCauseException {
+pub struct RootCauseException  {
     /// <p>The name of the exception.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The message of the exception.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl RootCauseException {
+impl  RootCauseException  {
     /// <p>The name of the exception.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The message of the exception.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl RootCauseExceptionBuilder {
     }
     /// <p>The name of the exception.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the exception.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl RootCauseExceptionBuilder {
     }
     /// <p>The message of the exception.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The message of the exception.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl RootCauseExceptionBuilder {
     /// Consumes the builder and constructs a [`RootCauseException`](crate::types::RootCauseException).
     pub fn build(self) -> crate::types::RootCauseException {
         crate::types::RootCauseException {
-            name: self.name,
-            message: self.message,
+            name: self.name
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

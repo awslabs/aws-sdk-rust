@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteJobInput {
+pub struct DeleteJobInput  {
     /// <p>The name of the job definition to delete.</p>
     pub job_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteJobInput {
+impl  DeleteJobInput  {
     /// <p>The name of the job definition to delete.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl DeleteJobInputBuilder {
     }
     /// <p>The name of the job definition to delete.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// <p>The name of the job definition to delete.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl DeleteJobInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteJobInput`](crate::operation::delete_job::DeleteJobInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_job::DeleteJobInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_job::DeleteJobInput { job_name: self.job_name })
+        ::std::result::Result::Ok(
+            crate::operation::delete_job::DeleteJobInput {
+                job_name: self.job_name
+                ,
+            }
+        )
     }
 }
+

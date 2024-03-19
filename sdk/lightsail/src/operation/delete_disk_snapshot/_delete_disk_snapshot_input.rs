@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDiskSnapshotInput {
+pub struct DeleteDiskSnapshotInput  {
     /// <p>The name of the disk snapshot you want to delete (<code>my-disk-snapshot</code>).</p>
     pub disk_snapshot_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteDiskSnapshotInput {
+impl  DeleteDiskSnapshotInput  {
     /// <p>The name of the disk snapshot you want to delete (<code>my-disk-snapshot</code>).</p>
-    pub fn disk_snapshot_name(&self) -> ::std::option::Option<&str> {
+    pub fn disk_snapshot_name(&self) -> ::std::option::Option<& str> {
         self.disk_snapshot_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteDiskSnapshotInputBuilder {
     }
     /// <p>The name of the disk snapshot you want to delete (<code>my-disk-snapshot</code>).</p>
     pub fn set_disk_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.disk_snapshot_name = input;
-        self
+        self.disk_snapshot_name = input; self
     }
     /// <p>The name of the disk snapshot you want to delete (<code>my-disk-snapshot</code>).</p>
     pub fn get_disk_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.disk_snapshot_name
     }
     /// Consumes the builder and constructs a [`DeleteDiskSnapshotInput`](crate::operation::delete_disk_snapshot::DeleteDiskSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_disk_snapshot::DeleteDiskSnapshotInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_disk_snapshot::DeleteDiskSnapshotInput {
-            disk_snapshot_name: self.disk_snapshot_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_disk_snapshot::DeleteDiskSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_disk_snapshot::DeleteDiskSnapshotInput {
+                disk_snapshot_name: self.disk_snapshot_name
+                ,
+            }
+        )
     }
 }
+

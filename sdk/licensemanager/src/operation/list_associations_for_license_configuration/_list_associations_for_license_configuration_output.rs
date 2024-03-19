@@ -2,34 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAssociationsForLicenseConfigurationOutput {
+pub struct ListAssociationsForLicenseConfigurationOutput  {
     /// <p>Information about the associations for the license configuration.</p>
-    pub license_configuration_associations: ::std::option::Option<::std::vec::Vec<crate::types::LicenseConfigurationAssociation>>,
+    pub license_configuration_associations: ::std::option::Option<::std::vec::Vec::<crate::types::LicenseConfigurationAssociation>>,
     /// <p>Token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListAssociationsForLicenseConfigurationOutput {
+impl  ListAssociationsForLicenseConfigurationOutput  {
     /// <p>Information about the associations for the license configuration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.license_configuration_associations.is_none()`.
-    pub fn license_configuration_associations(&self) -> &[crate::types::LicenseConfigurationAssociation] {
-        self.license_configuration_associations.as_deref().unwrap_or_default()
+    pub fn license_configuration_associations(&self) -> & [crate::types::LicenseConfigurationAssociation] {
+        self.license_configuration_associations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAssociationsForLicenseConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAssociationsForLicenseConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`ListAssociationsForLicenseConfigurationOutput`](crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationOutput).
-    pub fn builder() -> crate::operation::list_associations_for_license_configuration::builders::ListAssociationsForLicenseConfigurationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_associations_for_license_configuration::builders::ListAssociationsForLicenseConfigurationOutputBuilder {
         crate::operation::list_associations_for_license_configuration::builders::ListAssociationsForLicenseConfigurationOutputBuilder::default()
     }
 }
@@ -38,7 +38,7 @@ impl ListAssociationsForLicenseConfigurationOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssociationsForLicenseConfigurationOutputBuilder {
-    pub(crate) license_configuration_associations: ::std::option::Option<::std::vec::Vec<crate::types::LicenseConfigurationAssociation>>,
+    pub(crate) license_configuration_associations: ::std::option::Option<::std::vec::Vec::<crate::types::LicenseConfigurationAssociation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,20 +50,16 @@ impl ListAssociationsForLicenseConfigurationOutputBuilder {
     /// <p>Information about the associations for the license configuration.</p>
     pub fn license_configuration_associations(mut self, input: crate::types::LicenseConfigurationAssociation) -> Self {
         let mut v = self.license_configuration_associations.unwrap_or_default();
-        v.push(input);
-        self.license_configuration_associations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.license_configuration_associations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the associations for the license configuration.</p>
-    pub fn set_license_configuration_associations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LicenseConfigurationAssociation>>,
-    ) -> Self {
-        self.license_configuration_associations = input;
-        self
+    pub fn set_license_configuration_associations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LicenseConfigurationAssociation>>) -> Self {
+        self.license_configuration_associations = input; self
     }
     /// <p>Information about the associations for the license configuration.</p>
-    pub fn get_license_configuration_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseConfigurationAssociation>> {
+    pub fn get_license_configuration_associations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LicenseConfigurationAssociation>> {
         &self.license_configuration_associations
     }
     /// <p>Token for the next set of results.</p>
@@ -73,28 +69,30 @@ impl ListAssociationsForLicenseConfigurationOutputBuilder {
     }
     /// <p>Token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Token for the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAssociationsForLicenseConfigurationOutput`](crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationOutput).
     pub fn build(self) -> crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationOutput {
         crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationOutput {
-            license_configuration_associations: self.license_configuration_associations,
-            next_token: self.next_token,
+            license_configuration_associations: self.license_configuration_associations
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

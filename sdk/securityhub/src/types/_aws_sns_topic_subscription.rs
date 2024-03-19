@@ -3,19 +3,19 @@
 /// <p>A wrapper type for the attributes of an Amazon SNS subscription.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsSnsTopicSubscription {
+pub struct AwsSnsTopicSubscription  {
     /// <p>The subscription's endpoint (format depends on the protocol).</p>
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The subscription's protocol.</p>
     pub protocol: ::std::option::Option<::std::string::String>,
 }
-impl AwsSnsTopicSubscription {
+impl  AwsSnsTopicSubscription  {
     /// <p>The subscription's endpoint (format depends on the protocol).</p>
-    pub fn endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint(&self) -> ::std::option::Option<& str> {
         self.endpoint.as_deref()
     }
     /// <p>The subscription's protocol.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&str> {
+    pub fn protocol(&self) -> ::std::option::Option<& str> {
         self.protocol.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AwsSnsTopicSubscriptionBuilder {
     }
     /// <p>The subscription's endpoint (format depends on the protocol).</p>
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint = input;
-        self
+        self.endpoint = input; self
     }
     /// <p>The subscription's endpoint (format depends on the protocol).</p>
     pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AwsSnsTopicSubscriptionBuilder {
     }
     /// <p>The subscription's protocol.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// <p>The subscription's protocol.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AwsSnsTopicSubscriptionBuilder {
     /// Consumes the builder and constructs a [`AwsSnsTopicSubscription`](crate::types::AwsSnsTopicSubscription).
     pub fn build(self) -> crate::types::AwsSnsTopicSubscription {
         crate::types::AwsSnsTopicSubscription {
-            endpoint: self.endpoint,
-            protocol: self.protocol,
+            endpoint: self.endpoint
+            ,
+            protocol: self.protocol
+            ,
         }
     }
 }
+

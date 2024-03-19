@@ -3,7 +3,7 @@
 /// <p>DataQualitySummary gives aggregated statistics over all the sensors about a completed ingestion job. It primarily gives more information about statistics over different incorrect data like MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, DuplicateTimeStamps.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataQualitySummary {
+pub struct DataQualitySummary  {
     /// <p>Parameter that gives information about insufficient data for sensors in the dataset. This includes information about those sensors that have complete data missing and those with a short date range.</p>
     pub insufficient_sensor_data: ::std::option::Option<crate::types::InsufficientSensorData>,
     /// <p>Parameter that gives information about data that is missing over all the sensors in the input data.</p>
@@ -15,25 +15,25 @@ pub struct DataQualitySummary {
     /// <p>Parameter that gives information about duplicate timestamps in the input data.</p>
     pub duplicate_timestamps: ::std::option::Option<crate::types::DuplicateTimestamps>,
 }
-impl DataQualitySummary {
+impl  DataQualitySummary  {
     /// <p>Parameter that gives information about insufficient data for sensors in the dataset. This includes information about those sensors that have complete data missing and those with a short date range.</p>
-    pub fn insufficient_sensor_data(&self) -> ::std::option::Option<&crate::types::InsufficientSensorData> {
+    pub fn insufficient_sensor_data(&self) -> ::std::option::Option<& crate::types::InsufficientSensorData> {
         self.insufficient_sensor_data.as_ref()
     }
     /// <p>Parameter that gives information about data that is missing over all the sensors in the input data.</p>
-    pub fn missing_sensor_data(&self) -> ::std::option::Option<&crate::types::MissingSensorData> {
+    pub fn missing_sensor_data(&self) -> ::std::option::Option<& crate::types::MissingSensorData> {
         self.missing_sensor_data.as_ref()
     }
     /// <p>Parameter that gives information about data that is invalid over all the sensors in the input data.</p>
-    pub fn invalid_sensor_data(&self) -> ::std::option::Option<&crate::types::InvalidSensorData> {
+    pub fn invalid_sensor_data(&self) -> ::std::option::Option<& crate::types::InvalidSensorData> {
         self.invalid_sensor_data.as_ref()
     }
     /// <p>Parameter that gives information about unsupported timestamps in the input data.</p>
-    pub fn unsupported_timestamps(&self) -> ::std::option::Option<&crate::types::UnsupportedTimestamps> {
+    pub fn unsupported_timestamps(&self) -> ::std::option::Option<& crate::types::UnsupportedTimestamps> {
         self.unsupported_timestamps.as_ref()
     }
     /// <p>Parameter that gives information about duplicate timestamps in the input data.</p>
-    pub fn duplicate_timestamps(&self) -> ::std::option::Option<&crate::types::DuplicateTimestamps> {
+    pub fn duplicate_timestamps(&self) -> ::std::option::Option<& crate::types::DuplicateTimestamps> {
         self.duplicate_timestamps.as_ref()
     }
 }
@@ -63,8 +63,7 @@ impl DataQualitySummaryBuilder {
     }
     /// <p>Parameter that gives information about insufficient data for sensors in the dataset. This includes information about those sensors that have complete data missing and those with a short date range.</p>
     pub fn set_insufficient_sensor_data(mut self, input: ::std::option::Option<crate::types::InsufficientSensorData>) -> Self {
-        self.insufficient_sensor_data = input;
-        self
+        self.insufficient_sensor_data = input; self
     }
     /// <p>Parameter that gives information about insufficient data for sensors in the dataset. This includes information about those sensors that have complete data missing and those with a short date range.</p>
     pub fn get_insufficient_sensor_data(&self) -> &::std::option::Option<crate::types::InsufficientSensorData> {
@@ -78,8 +77,7 @@ impl DataQualitySummaryBuilder {
     }
     /// <p>Parameter that gives information about data that is missing over all the sensors in the input data.</p>
     pub fn set_missing_sensor_data(mut self, input: ::std::option::Option<crate::types::MissingSensorData>) -> Self {
-        self.missing_sensor_data = input;
-        self
+        self.missing_sensor_data = input; self
     }
     /// <p>Parameter that gives information about data that is missing over all the sensors in the input data.</p>
     pub fn get_missing_sensor_data(&self) -> &::std::option::Option<crate::types::MissingSensorData> {
@@ -93,8 +91,7 @@ impl DataQualitySummaryBuilder {
     }
     /// <p>Parameter that gives information about data that is invalid over all the sensors in the input data.</p>
     pub fn set_invalid_sensor_data(mut self, input: ::std::option::Option<crate::types::InvalidSensorData>) -> Self {
-        self.invalid_sensor_data = input;
-        self
+        self.invalid_sensor_data = input; self
     }
     /// <p>Parameter that gives information about data that is invalid over all the sensors in the input data.</p>
     pub fn get_invalid_sensor_data(&self) -> &::std::option::Option<crate::types::InvalidSensorData> {
@@ -108,8 +105,7 @@ impl DataQualitySummaryBuilder {
     }
     /// <p>Parameter that gives information about unsupported timestamps in the input data.</p>
     pub fn set_unsupported_timestamps(mut self, input: ::std::option::Option<crate::types::UnsupportedTimestamps>) -> Self {
-        self.unsupported_timestamps = input;
-        self
+        self.unsupported_timestamps = input; self
     }
     /// <p>Parameter that gives information about unsupported timestamps in the input data.</p>
     pub fn get_unsupported_timestamps(&self) -> &::std::option::Option<crate::types::UnsupportedTimestamps> {
@@ -123,8 +119,7 @@ impl DataQualitySummaryBuilder {
     }
     /// <p>Parameter that gives information about duplicate timestamps in the input data.</p>
     pub fn set_duplicate_timestamps(mut self, input: ::std::option::Option<crate::types::DuplicateTimestamps>) -> Self {
-        self.duplicate_timestamps = input;
-        self
+        self.duplicate_timestamps = input; self
     }
     /// <p>Parameter that gives information about duplicate timestamps in the input data.</p>
     pub fn get_duplicate_timestamps(&self) -> &::std::option::Option<crate::types::DuplicateTimestamps> {
@@ -133,11 +128,17 @@ impl DataQualitySummaryBuilder {
     /// Consumes the builder and constructs a [`DataQualitySummary`](crate::types::DataQualitySummary).
     pub fn build(self) -> crate::types::DataQualitySummary {
         crate::types::DataQualitySummary {
-            insufficient_sensor_data: self.insufficient_sensor_data,
-            missing_sensor_data: self.missing_sensor_data,
-            invalid_sensor_data: self.invalid_sensor_data,
-            unsupported_timestamps: self.unsupported_timestamps,
-            duplicate_timestamps: self.duplicate_timestamps,
+            insufficient_sensor_data: self.insufficient_sensor_data
+            ,
+            missing_sensor_data: self.missing_sensor_data
+            ,
+            invalid_sensor_data: self.invalid_sensor_data
+            ,
+            unsupported_timestamps: self.unsupported_timestamps
+            ,
+            duplicate_timestamps: self.duplicate_timestamps
+            ,
         }
     }
 }
+

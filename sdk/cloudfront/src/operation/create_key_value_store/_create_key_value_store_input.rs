@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateKeyValueStoreInput {
+pub struct CreateKeyValueStoreInput  {
     /// <p>The name of the Key Value Store. The maximum length of the name is 32 characters.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The comment of the Key Value Store.</p>
@@ -10,17 +10,17 @@ pub struct CreateKeyValueStoreInput {
     /// <p>The S3 bucket that provides the source for the import. The source must be in a valid JSON format.</p>
     pub import_source: ::std::option::Option<crate::types::ImportSource>,
 }
-impl CreateKeyValueStoreInput {
+impl  CreateKeyValueStoreInput  {
     /// <p>The name of the Key Value Store. The maximum length of the name is 32 characters.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The comment of the Key Value Store.</p>
-    pub fn comment(&self) -> ::std::option::Option<&str> {
+    pub fn comment(&self) -> ::std::option::Option<& str> {
         self.comment.as_deref()
     }
     /// <p>The S3 bucket that provides the source for the import. The source must be in a valid JSON format.</p>
-    pub fn import_source(&self) -> ::std::option::Option<&crate::types::ImportSource> {
+    pub fn import_source(&self) -> ::std::option::Option<& crate::types::ImportSource> {
         self.import_source.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl CreateKeyValueStoreInputBuilder {
     }
     /// <p>The name of the Key Value Store. The maximum length of the name is 32 characters.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Key Value Store. The maximum length of the name is 32 characters.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl CreateKeyValueStoreInputBuilder {
     }
     /// <p>The comment of the Key Value Store.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// <p>The comment of the Key Value Store.</p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,22 +74,24 @@ impl CreateKeyValueStoreInputBuilder {
     }
     /// <p>The S3 bucket that provides the source for the import. The source must be in a valid JSON format.</p>
     pub fn set_import_source(mut self, input: ::std::option::Option<crate::types::ImportSource>) -> Self {
-        self.import_source = input;
-        self
+        self.import_source = input; self
     }
     /// <p>The S3 bucket that provides the source for the import. The source must be in a valid JSON format.</p>
     pub fn get_import_source(&self) -> &::std::option::Option<crate::types::ImportSource> {
         &self.import_source
     }
     /// Consumes the builder and constructs a [`CreateKeyValueStoreInput`](crate::operation::create_key_value_store::CreateKeyValueStoreInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_key_value_store::CreateKeyValueStoreInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_key_value_store::CreateKeyValueStoreInput {
-            name: self.name,
-            comment: self.comment,
-            import_source: self.import_source,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_key_value_store::CreateKeyValueStoreInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_key_value_store::CreateKeyValueStoreInput {
+                name: self.name
+                ,
+                comment: self.comment
+                ,
+                import_source: self.import_source
+                ,
+            }
+        )
     }
 }
+

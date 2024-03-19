@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateAccessGrantsIdentityCenterInput {
+pub struct AssociateAccessGrantsIdentityCenterInput  {
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services IAM Identity Center instance that you are associating with your S3 Access Grants instance. An IAM Identity Center instance is your corporate identity directory that you added to the IAM Identity Center. You can use the <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListInstances.html">ListInstances</a> API operation to retrieve a list of your Identity Center instances and their ARNs.</p>
     pub identity_center_arn: ::std::option::Option<::std::string::String>,
 }
-impl AssociateAccessGrantsIdentityCenterInput {
+impl  AssociateAccessGrantsIdentityCenterInput  {
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services IAM Identity Center instance that you are associating with your S3 Access Grants instance. An IAM Identity Center instance is your corporate identity directory that you added to the IAM Identity Center. You can use the <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListInstances.html">ListInstances</a> API operation to retrieve a list of your Identity Center instances and their ARNs.</p>
-    pub fn identity_center_arn(&self) -> ::std::option::Option<&str> {
+    pub fn identity_center_arn(&self) -> ::std::option::Option<& str> {
         self.identity_center_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AssociateAccessGrantsIdentityCenterInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl AssociateAccessGrantsIdentityCenterInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services IAM Identity Center instance that you are associating with your S3 Access Grants instance. An IAM Identity Center instance is your corporate identity directory that you added to the IAM Identity Center. You can use the <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListInstances.html">ListInstances</a> API operation to retrieve a list of your Identity Center instances and their ARNs.</p>
     pub fn set_identity_center_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_center_arn = input;
-        self
+        self.identity_center_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services IAM Identity Center instance that you are associating with your S3 Access Grants instance. An IAM Identity Center instance is your corporate identity directory that you added to the IAM Identity Center. You can use the <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ListInstances.html">ListInstances</a> API operation to retrieve a list of your Identity Center instances and their ARNs.</p>
     pub fn get_identity_center_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_center_arn
     }
     /// Consumes the builder and constructs a [`AssociateAccessGrantsIdentityCenterInput`](crate::operation::associate_access_grants_identity_center::AssociateAccessGrantsIdentityCenterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_access_grants_identity_center::AssociateAccessGrantsIdentityCenterInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_access_grants_identity_center::AssociateAccessGrantsIdentityCenterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::associate_access_grants_identity_center::AssociateAccessGrantsIdentityCenterInput {
-                account_id: self.account_id,
-                identity_center_arn: self.identity_center_arn,
-            },
+                account_id: self.account_id
+                ,
+                identity_center_arn: self.identity_center_arn
+                ,
+            }
         )
     }
 }
+

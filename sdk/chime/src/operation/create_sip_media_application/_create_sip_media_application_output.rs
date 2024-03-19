@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSipMediaApplicationOutput {
+pub struct CreateSipMediaApplicationOutput  {
     /// <p>The SIP media application details.</p>
     pub sip_media_application: ::std::option::Option<crate::types::SipMediaApplication>,
     _request_id: Option<String>,
 }
-impl CreateSipMediaApplicationOutput {
+impl  CreateSipMediaApplicationOutput  {
     /// <p>The SIP media application details.</p>
-    pub fn sip_media_application(&self) -> ::std::option::Option<&crate::types::SipMediaApplication> {
+    pub fn sip_media_application(&self) -> ::std::option::Option<& crate::types::SipMediaApplication> {
         self.sip_media_application.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateSipMediaApplicationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateSipMediaApplicationOutput {
     /// Creates a new builder-style object to manufacture [`CreateSipMediaApplicationOutput`](crate::operation::create_sip_media_application::CreateSipMediaApplicationOutput).
     pub fn builder() -> crate::operation::create_sip_media_application::builders::CreateSipMediaApplicationOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateSipMediaApplicationOutputBuilder {
     }
     /// <p>The SIP media application details.</p>
     pub fn set_sip_media_application(mut self, input: ::std::option::Option<crate::types::SipMediaApplication>) -> Self {
-        self.sip_media_application = input;
-        self
+        self.sip_media_application = input; self
     }
     /// <p>The SIP media application details.</p>
     pub fn get_sip_media_application(&self) -> &::std::option::Option<crate::types::SipMediaApplication> {
         &self.sip_media_application
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateSipMediaApplicationOutput`](crate::operation::create_sip_media_application::CreateSipMediaApplicationOutput).
     pub fn build(self) -> crate::operation::create_sip_media_application::CreateSipMediaApplicationOutput {
         crate::operation::create_sip_media_application::CreateSipMediaApplicationOutput {
-            sip_media_application: self.sip_media_application,
+            sip_media_application: self.sip_media_application
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

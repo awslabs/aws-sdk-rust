@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for SetLoadBalancerListenerSSLCertificate.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetLoadBalancerListenerSslCertificateInput {
+pub struct SetLoadBalancerListenerSslCertificateInput  {
     /// <p>The name of the load balancer.</p>
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The port that uses the specified SSL certificate.</p>
@@ -11,9 +11,9 @@ pub struct SetLoadBalancerListenerSslCertificateInput {
     /// <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
     pub ssl_certificate_id: ::std::option::Option<::std::string::String>,
 }
-impl SetLoadBalancerListenerSslCertificateInput {
+impl  SetLoadBalancerListenerSslCertificateInput  {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> ::std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> ::std::option::Option<& str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The port that uses the specified SSL certificate.</p>
@@ -21,7 +21,7 @@ impl SetLoadBalancerListenerSslCertificateInput {
         self.load_balancer_port
     }
     /// <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
-    pub fn ssl_certificate_id(&self) -> ::std::option::Option<&str> {
+    pub fn ssl_certificate_id(&self) -> ::std::option::Option<& str> {
         self.ssl_certificate_id.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl SetLoadBalancerListenerSslCertificateInputBuilder {
     }
     /// <p>The name of the load balancer.</p>
     pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.load_balancer_name = input;
-        self
+        self.load_balancer_name = input; self
     }
     /// <p>The name of the load balancer.</p>
     pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl SetLoadBalancerListenerSslCertificateInputBuilder {
     }
     /// <p>The port that uses the specified SSL certificate.</p>
     pub fn set_load_balancer_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.load_balancer_port = input;
-        self
+        self.load_balancer_port = input; self
     }
     /// <p>The port that uses the specified SSL certificate.</p>
     pub fn get_load_balancer_port(&self) -> &::std::option::Option<i32> {
@@ -79,26 +77,24 @@ impl SetLoadBalancerListenerSslCertificateInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
     pub fn set_ssl_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ssl_certificate_id = input;
-        self
+        self.ssl_certificate_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
     pub fn get_ssl_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ssl_certificate_id
     }
     /// Consumes the builder and constructs a [`SetLoadBalancerListenerSslCertificateInput`](crate::operation::set_load_balancer_listener_ssl_certificate::SetLoadBalancerListenerSslCertificateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::set_load_balancer_listener_ssl_certificate::SetLoadBalancerListenerSslCertificateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_load_balancer_listener_ssl_certificate::SetLoadBalancerListenerSslCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::set_load_balancer_listener_ssl_certificate::SetLoadBalancerListenerSslCertificateInput {
-                load_balancer_name: self.load_balancer_name,
-                load_balancer_port: self.load_balancer_port,
-                ssl_certificate_id: self.ssl_certificate_id,
-            },
+                load_balancer_name: self.load_balancer_name
+                ,
+                load_balancer_port: self.load_balancer_port
+                ,
+                ssl_certificate_id: self.ssl_certificate_id
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteInventoryOutput {
+pub struct DeleteInventoryOutput  {
     /// <p>Every <code>DeleteInventory</code> operation is assigned a unique ID. This option returns a unique ID. You can use this ID to query the status of a delete operation. This option is useful for ensuring that a delete operation has completed before you begin other operations.</p>
     pub deletion_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the inventory data type specified in the request.</p>
@@ -11,25 +11,25 @@ pub struct DeleteInventoryOutput {
     pub deletion_summary: ::std::option::Option<crate::types::InventoryDeletionSummary>,
     _request_id: Option<String>,
 }
-impl DeleteInventoryOutput {
+impl  DeleteInventoryOutput  {
     /// <p>Every <code>DeleteInventory</code> operation is assigned a unique ID. This option returns a unique ID. You can use this ID to query the status of a delete operation. This option is useful for ensuring that a delete operation has completed before you begin other operations.</p>
-    pub fn deletion_id(&self) -> ::std::option::Option<&str> {
+    pub fn deletion_id(&self) -> ::std::option::Option<& str> {
         self.deletion_id.as_deref()
     }
     /// <p>The name of the inventory data type specified in the request.</p>
-    pub fn type_name(&self) -> ::std::option::Option<&str> {
+    pub fn type_name(&self) -> ::std::option::Option<& str> {
         self.type_name.as_deref()
     }
     /// <p>A summary of the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete-summary">Understanding the delete inventory summary</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn deletion_summary(&self) -> ::std::option::Option<&crate::types::InventoryDeletionSummary> {
+    pub fn deletion_summary(&self) -> ::std::option::Option<& crate::types::InventoryDeletionSummary> {
         self.deletion_summary.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteInventoryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteInventoryOutput {
     /// Creates a new builder-style object to manufacture [`DeleteInventoryOutput`](crate::operation::delete_inventory::DeleteInventoryOutput).
     pub fn builder() -> crate::operation::delete_inventory::builders::DeleteInventoryOutputBuilder {
@@ -54,8 +54,7 @@ impl DeleteInventoryOutputBuilder {
     }
     /// <p>Every <code>DeleteInventory</code> operation is assigned a unique ID. This option returns a unique ID. You can use this ID to query the status of a delete operation. This option is useful for ensuring that a delete operation has completed before you begin other operations.</p>
     pub fn set_deletion_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deletion_id = input;
-        self
+        self.deletion_id = input; self
     }
     /// <p>Every <code>DeleteInventory</code> operation is assigned a unique ID. This option returns a unique ID. You can use this ID to query the status of a delete operation. This option is useful for ensuring that a delete operation has completed before you begin other operations.</p>
     pub fn get_deletion_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl DeleteInventoryOutputBuilder {
     }
     /// <p>The name of the inventory data type specified in the request.</p>
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_name = input;
-        self
+        self.type_name = input; self
     }
     /// <p>The name of the inventory data type specified in the request.</p>
     pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl DeleteInventoryOutputBuilder {
     }
     /// <p>A summary of the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete-summary">Understanding the delete inventory summary</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_deletion_summary(mut self, input: ::std::option::Option<crate::types::InventoryDeletionSummary>) -> Self {
-        self.deletion_summary = input;
-        self
+        self.deletion_summary = input; self
     }
     /// <p>A summary of the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete-summary">Understanding the delete inventory summary</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn get_deletion_summary(&self) -> &::std::option::Option<crate::types::InventoryDeletionSummary> {
         &self.deletion_summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteInventoryOutput`](crate::operation::delete_inventory::DeleteInventoryOutput).
     pub fn build(self) -> crate::operation::delete_inventory::DeleteInventoryOutput {
         crate::operation::delete_inventory::DeleteInventoryOutput {
-            deletion_id: self.deletion_id,
-            type_name: self.type_name,
-            deletion_summary: self.deletion_summary,
+            deletion_id: self.deletion_id
+            ,
+            type_name: self.type_name
+            ,
+            deletion_summary: self.deletion_summary
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

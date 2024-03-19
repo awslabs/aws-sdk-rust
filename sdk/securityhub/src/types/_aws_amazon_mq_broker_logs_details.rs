@@ -3,7 +3,7 @@
 /// <p>Provides information about logs to be activated for the specified broker.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsAmazonMqBrokerLogsDetails {
+pub struct AwsAmazonMqBrokerLogsDetails  {
     /// <p>Activates audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Doesn't apply to RabbitMQ brokers.</p>
     pub audit: ::std::option::Option<bool>,
     /// <p>Activates general logging.</p>
@@ -15,7 +15,7 @@ pub struct AwsAmazonMqBrokerLogsDetails {
     /// <p>The list of information about logs that are to be turned on for the specified broker.</p>
     pub pending: ::std::option::Option<crate::types::AwsAmazonMqBrokerLogsPendingDetails>,
 }
-impl AwsAmazonMqBrokerLogsDetails {
+impl  AwsAmazonMqBrokerLogsDetails  {
     /// <p>Activates audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Doesn't apply to RabbitMQ brokers.</p>
     pub fn audit(&self) -> ::std::option::Option<bool> {
         self.audit
@@ -25,15 +25,15 @@ impl AwsAmazonMqBrokerLogsDetails {
         self.general
     }
     /// <p>The location of the CloudWatch Logs log group where audit logs are sent.</p>
-    pub fn audit_log_group(&self) -> ::std::option::Option<&str> {
+    pub fn audit_log_group(&self) -> ::std::option::Option<& str> {
         self.audit_log_group.as_deref()
     }
     /// <p>The location of the CloudWatch Logs log group where general logs are sent.</p>
-    pub fn general_log_group(&self) -> ::std::option::Option<&str> {
+    pub fn general_log_group(&self) -> ::std::option::Option<& str> {
         self.general_log_group.as_deref()
     }
     /// <p>The list of information about logs that are to be turned on for the specified broker.</p>
-    pub fn pending(&self) -> ::std::option::Option<&crate::types::AwsAmazonMqBrokerLogsPendingDetails> {
+    pub fn pending(&self) -> ::std::option::Option<& crate::types::AwsAmazonMqBrokerLogsPendingDetails> {
         self.pending.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl AwsAmazonMqBrokerLogsDetailsBuilder {
     }
     /// <p>Activates audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Doesn't apply to RabbitMQ brokers.</p>
     pub fn set_audit(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.audit = input;
-        self
+        self.audit = input; self
     }
     /// <p>Activates audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Doesn't apply to RabbitMQ brokers.</p>
     pub fn get_audit(&self) -> &::std::option::Option<bool> {
@@ -76,8 +75,7 @@ impl AwsAmazonMqBrokerLogsDetailsBuilder {
     }
     /// <p>Activates general logging.</p>
     pub fn set_general(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.general = input;
-        self
+        self.general = input; self
     }
     /// <p>Activates general logging.</p>
     pub fn get_general(&self) -> &::std::option::Option<bool> {
@@ -90,8 +88,7 @@ impl AwsAmazonMqBrokerLogsDetailsBuilder {
     }
     /// <p>The location of the CloudWatch Logs log group where audit logs are sent.</p>
     pub fn set_audit_log_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.audit_log_group = input;
-        self
+        self.audit_log_group = input; self
     }
     /// <p>The location of the CloudWatch Logs log group where audit logs are sent.</p>
     pub fn get_audit_log_group(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl AwsAmazonMqBrokerLogsDetailsBuilder {
     }
     /// <p>The location of the CloudWatch Logs log group where general logs are sent.</p>
     pub fn set_general_log_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.general_log_group = input;
-        self
+        self.general_log_group = input; self
     }
     /// <p>The location of the CloudWatch Logs log group where general logs are sent.</p>
     pub fn get_general_log_group(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl AwsAmazonMqBrokerLogsDetailsBuilder {
     }
     /// <p>The list of information about logs that are to be turned on for the specified broker.</p>
     pub fn set_pending(mut self, input: ::std::option::Option<crate::types::AwsAmazonMqBrokerLogsPendingDetails>) -> Self {
-        self.pending = input;
-        self
+        self.pending = input; self
     }
     /// <p>The list of information about logs that are to be turned on for the specified broker.</p>
     pub fn get_pending(&self) -> &::std::option::Option<crate::types::AwsAmazonMqBrokerLogsPendingDetails> {
@@ -128,11 +123,17 @@ impl AwsAmazonMqBrokerLogsDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsAmazonMqBrokerLogsDetails`](crate::types::AwsAmazonMqBrokerLogsDetails).
     pub fn build(self) -> crate::types::AwsAmazonMqBrokerLogsDetails {
         crate::types::AwsAmazonMqBrokerLogsDetails {
-            audit: self.audit,
-            general: self.general,
-            audit_log_group: self.audit_log_group,
-            general_log_group: self.general_log_group,
-            pending: self.pending,
+            audit: self.audit
+            ,
+            general: self.general
+            ,
+            audit_log_group: self.audit_log_group
+            ,
+            general_log_group: self.general_log_group
+            ,
+            pending: self.pending
+            ,
         }
     }
 }
+

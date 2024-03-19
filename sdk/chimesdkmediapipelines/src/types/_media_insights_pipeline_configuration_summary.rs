@@ -3,7 +3,7 @@
 /// <p>A summary of the media insights pipeline configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct MediaInsightsPipelineConfigurationSummary {
+pub struct MediaInsightsPipelineConfigurationSummary  {
     /// <p>The name of the media insights pipeline configuration.</p>
     pub media_insights_pipeline_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the media insights pipeline configuration.</p>
@@ -11,27 +11,24 @@ pub struct MediaInsightsPipelineConfigurationSummary {
     /// <p>The ARN of the media insights pipeline configuration.</p>
     pub media_insights_pipeline_configuration_arn: ::std::option::Option<::std::string::String>,
 }
-impl MediaInsightsPipelineConfigurationSummary {
+impl  MediaInsightsPipelineConfigurationSummary  {
     /// <p>The name of the media insights pipeline configuration.</p>
-    pub fn media_insights_pipeline_configuration_name(&self) -> ::std::option::Option<&str> {
+    pub fn media_insights_pipeline_configuration_name(&self) -> ::std::option::Option<& str> {
         self.media_insights_pipeline_configuration_name.as_deref()
     }
     /// <p>The ID of the media insights pipeline configuration.</p>
-    pub fn media_insights_pipeline_configuration_id(&self) -> ::std::option::Option<&str> {
+    pub fn media_insights_pipeline_configuration_id(&self) -> ::std::option::Option<& str> {
         self.media_insights_pipeline_configuration_id.as_deref()
     }
     /// <p>The ARN of the media insights pipeline configuration.</p>
-    pub fn media_insights_pipeline_configuration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn media_insights_pipeline_configuration_arn(&self) -> ::std::option::Option<& str> {
         self.media_insights_pipeline_configuration_arn.as_deref()
     }
 }
-impl ::std::fmt::Debug for MediaInsightsPipelineConfigurationSummary {
+impl  ::std::fmt::Debug for MediaInsightsPipelineConfigurationSummary  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MediaInsightsPipelineConfigurationSummary");
-        formatter.field(
-            "media_insights_pipeline_configuration_name",
-            &self.media_insights_pipeline_configuration_name,
-        );
+        formatter.field("media_insights_pipeline_configuration_name", &self.media_insights_pipeline_configuration_name);
         formatter.field("media_insights_pipeline_configuration_id", &self.media_insights_pipeline_configuration_id);
         formatter.field("media_insights_pipeline_configuration_arn", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -60,8 +57,7 @@ impl MediaInsightsPipelineConfigurationSummaryBuilder {
     }
     /// <p>The name of the media insights pipeline configuration.</p>
     pub fn set_media_insights_pipeline_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.media_insights_pipeline_configuration_name = input;
-        self
+        self.media_insights_pipeline_configuration_name = input; self
     }
     /// <p>The name of the media insights pipeline configuration.</p>
     pub fn get_media_insights_pipeline_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +70,7 @@ impl MediaInsightsPipelineConfigurationSummaryBuilder {
     }
     /// <p>The ID of the media insights pipeline configuration.</p>
     pub fn set_media_insights_pipeline_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.media_insights_pipeline_configuration_id = input;
-        self
+        self.media_insights_pipeline_configuration_id = input; self
     }
     /// <p>The ID of the media insights pipeline configuration.</p>
     pub fn get_media_insights_pipeline_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +83,7 @@ impl MediaInsightsPipelineConfigurationSummaryBuilder {
     }
     /// <p>The ARN of the media insights pipeline configuration.</p>
     pub fn set_media_insights_pipeline_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.media_insights_pipeline_configuration_arn = input;
-        self
+        self.media_insights_pipeline_configuration_arn = input; self
     }
     /// <p>The ARN of the media insights pipeline configuration.</p>
     pub fn get_media_insights_pipeline_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,21 +92,22 @@ impl MediaInsightsPipelineConfigurationSummaryBuilder {
     /// Consumes the builder and constructs a [`MediaInsightsPipelineConfigurationSummary`](crate::types::MediaInsightsPipelineConfigurationSummary).
     pub fn build(self) -> crate::types::MediaInsightsPipelineConfigurationSummary {
         crate::types::MediaInsightsPipelineConfigurationSummary {
-            media_insights_pipeline_configuration_name: self.media_insights_pipeline_configuration_name,
-            media_insights_pipeline_configuration_id: self.media_insights_pipeline_configuration_id,
-            media_insights_pipeline_configuration_arn: self.media_insights_pipeline_configuration_arn,
+            media_insights_pipeline_configuration_name: self.media_insights_pipeline_configuration_name
+            ,
+            media_insights_pipeline_configuration_id: self.media_insights_pipeline_configuration_id
+            ,
+            media_insights_pipeline_configuration_arn: self.media_insights_pipeline_configuration_arn
+            ,
         }
     }
 }
 impl ::std::fmt::Debug for MediaInsightsPipelineConfigurationSummaryBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MediaInsightsPipelineConfigurationSummaryBuilder");
-        formatter.field(
-            "media_insights_pipeline_configuration_name",
-            &self.media_insights_pipeline_configuration_name,
-        );
+        formatter.field("media_insights_pipeline_configuration_name", &self.media_insights_pipeline_configuration_name);
         formatter.field("media_insights_pipeline_configuration_id", &self.media_insights_pipeline_configuration_id);
         formatter.field("media_insights_pipeline_configuration_arn", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
+

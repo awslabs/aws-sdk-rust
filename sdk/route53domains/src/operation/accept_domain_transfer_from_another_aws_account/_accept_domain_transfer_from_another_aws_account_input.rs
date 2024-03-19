@@ -3,23 +3,23 @@
 /// <p>The AcceptDomainTransferFromAnotherAwsAccount request includes the following elements.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AcceptDomainTransferFromAnotherAwsAccountInput {
+pub struct AcceptDomainTransferFromAnotherAwsAccountInput  {
     /// <p>The name of the domain that was specified when another Amazon Web Services account submitted a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The password that was returned by the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request.</p>
     pub password: ::std::option::Option<::std::string::String>,
 }
-impl AcceptDomainTransferFromAnotherAwsAccountInput {
+impl  AcceptDomainTransferFromAnotherAwsAccountInput  {
     /// <p>The name of the domain that was specified when another Amazon Web Services account submitted a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The password that was returned by the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request.</p>
-    pub fn password(&self) -> ::std::option::Option<&str> {
+    pub fn password(&self) -> ::std::option::Option<& str> {
         self.password.as_deref()
     }
 }
-impl ::std::fmt::Debug for AcceptDomainTransferFromAnotherAwsAccountInput {
+impl  ::std::fmt::Debug for AcceptDomainTransferFromAnotherAwsAccountInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AcceptDomainTransferFromAnotherAwsAccountInput");
         formatter.field("domain_name", &self.domain_name);
@@ -29,8 +29,7 @@ impl ::std::fmt::Debug for AcceptDomainTransferFromAnotherAwsAccountInput {
 }
 impl AcceptDomainTransferFromAnotherAwsAccountInput {
     /// Creates a new builder-style object to manufacture [`AcceptDomainTransferFromAnotherAwsAccountInput`](crate::operation::accept_domain_transfer_from_another_aws_account::AcceptDomainTransferFromAnotherAwsAccountInput).
-    pub fn builder(
-    ) -> crate::operation::accept_domain_transfer_from_another_aws_account::builders::AcceptDomainTransferFromAnotherAwsAccountInputBuilder {
+    pub fn builder() -> crate::operation::accept_domain_transfer_from_another_aws_account::builders::AcceptDomainTransferFromAnotherAwsAccountInputBuilder {
         crate::operation::accept_domain_transfer_from_another_aws_account::builders::AcceptDomainTransferFromAnotherAwsAccountInputBuilder::default()
     }
 }
@@ -51,8 +50,7 @@ impl AcceptDomainTransferFromAnotherAwsAccountInputBuilder {
     }
     /// <p>The name of the domain that was specified when another Amazon Web Services account submitted a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The name of the domain that was specified when another Amazon Web Services account submitted a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,25 +64,21 @@ impl AcceptDomainTransferFromAnotherAwsAccountInputBuilder {
     }
     /// <p>The password that was returned by the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request.</p>
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// <p>The password that was returned by the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request.</p>
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.password
     }
     /// Consumes the builder and constructs a [`AcceptDomainTransferFromAnotherAwsAccountInput`](crate::operation::accept_domain_transfer_from_another_aws_account::AcceptDomainTransferFromAnotherAwsAccountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::accept_domain_transfer_from_another_aws_account::AcceptDomainTransferFromAnotherAwsAccountInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::accept_domain_transfer_from_another_aws_account::AcceptDomainTransferFromAnotherAwsAccountInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::accept_domain_transfer_from_another_aws_account::AcceptDomainTransferFromAnotherAwsAccountInput {
-                domain_name: self.domain_name,
-                password: self.password,
-            },
+                domain_name: self.domain_name
+                ,
+                password: self.password
+                ,
+            }
         )
     }
 }
@@ -96,3 +90,4 @@ impl ::std::fmt::Debug for AcceptDomainTransferFromAnotherAwsAccountInputBuilder
         formatter.finish()
     }
 }
+

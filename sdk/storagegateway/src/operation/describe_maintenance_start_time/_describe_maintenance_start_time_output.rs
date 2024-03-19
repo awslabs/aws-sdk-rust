@@ -15,7 +15,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeMaintenanceStartTimeOutput {
+pub struct DescribeMaintenanceStartTimeOutput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone of the gateway.</p>
@@ -30,9 +30,9 @@ pub struct DescribeMaintenanceStartTimeOutput {
     pub timezone: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeMaintenanceStartTimeOutput {
+impl  DescribeMaintenanceStartTimeOutput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     /// <p>The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone of the gateway.</p>
@@ -52,15 +52,15 @@ impl DescribeMaintenanceStartTimeOutput {
         self.day_of_month
     }
     /// <p>A value that indicates the time zone that is set for the gateway. The start time and day of week specified should be in the time zone of the gateway.</p>
-    pub fn timezone(&self) -> ::std::option::Option<&str> {
+    pub fn timezone(&self) -> ::std::option::Option<& str> {
         self.timezone.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeMaintenanceStartTimeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeMaintenanceStartTimeOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMaintenanceStartTimeOutput`](crate::operation::describe_maintenance_start_time::DescribeMaintenanceStartTimeOutput).
     pub fn builder() -> crate::operation::describe_maintenance_start_time::builders::DescribeMaintenanceStartTimeOutputBuilder {
@@ -88,8 +88,7 @@ impl DescribeMaintenanceStartTimeOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +101,7 @@ impl DescribeMaintenanceStartTimeOutputBuilder {
     }
     /// <p>The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone of the gateway.</p>
     pub fn set_hour_of_day(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.hour_of_day = input;
-        self
+        self.hour_of_day = input; self
     }
     /// <p>The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone of the gateway.</p>
     pub fn get_hour_of_day(&self) -> &::std::option::Option<i32> {
@@ -116,8 +114,7 @@ impl DescribeMaintenanceStartTimeOutputBuilder {
     }
     /// <p>The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (0 to 59). The minute of the hour is in the time zone of the gateway.</p>
     pub fn set_minute_of_hour(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.minute_of_hour = input;
-        self
+        self.minute_of_hour = input; self
     }
     /// <p>The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (0 to 59). The minute of the hour is in the time zone of the gateway.</p>
     pub fn get_minute_of_hour(&self) -> &::std::option::Option<i32> {
@@ -130,8 +127,7 @@ impl DescribeMaintenanceStartTimeOutputBuilder {
     }
     /// <p>An ordinal number between 0 and 6 that represents the day of the week, where 0 represents Sunday and 6 represents Saturday. The day of week is in the time zone of the gateway.</p>
     pub fn set_day_of_week(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.day_of_week = input;
-        self
+        self.day_of_week = input; self
     }
     /// <p>An ordinal number between 0 and 6 that represents the day of the week, where 0 represents Sunday and 6 represents Saturday. The day of week is in the time zone of the gateway.</p>
     pub fn get_day_of_week(&self) -> &::std::option::Option<i32> {
@@ -144,8 +140,7 @@ impl DescribeMaintenanceStartTimeOutputBuilder {
     }
     /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month and 28 represents the last day of the month.</p>
     pub fn set_day_of_month(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.day_of_month = input;
-        self
+        self.day_of_month = input; self
     }
     /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month and 28 represents the last day of the month.</p>
     pub fn get_day_of_month(&self) -> &::std::option::Option<i32> {
@@ -158,32 +153,38 @@ impl DescribeMaintenanceStartTimeOutputBuilder {
     }
     /// <p>A value that indicates the time zone that is set for the gateway. The start time and day of week specified should be in the time zone of the gateway.</p>
     pub fn set_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.timezone = input;
-        self
+        self.timezone = input; self
     }
     /// <p>A value that indicates the time zone that is set for the gateway. The start time and day of week specified should be in the time zone of the gateway.</p>
     pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
         &self.timezone
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeMaintenanceStartTimeOutput`](crate::operation::describe_maintenance_start_time::DescribeMaintenanceStartTimeOutput).
     pub fn build(self) -> crate::operation::describe_maintenance_start_time::DescribeMaintenanceStartTimeOutput {
         crate::operation::describe_maintenance_start_time::DescribeMaintenanceStartTimeOutput {
-            gateway_arn: self.gateway_arn,
-            hour_of_day: self.hour_of_day,
-            minute_of_hour: self.minute_of_hour,
-            day_of_week: self.day_of_week,
-            day_of_month: self.day_of_month,
-            timezone: self.timezone,
+            gateway_arn: self.gateway_arn
+            ,
+            hour_of_day: self.hour_of_day
+            ,
+            minute_of_hour: self.minute_of_hour
+            ,
+            day_of_week: self.day_of_week
+            ,
+            day_of_month: self.day_of_month
+            ,
+            timezone: self.timezone
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

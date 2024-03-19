@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateMlModelInput {
+pub struct CreateMlModelInput  {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
     pub ml_model_id: ::std::option::Option<::std::string::String>,
     /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
@@ -35,7 +35,7 @@ pub struct CreateMlModelInput {
     /// <p><code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p>
     /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p></li>
     /// </ul>
-    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The <code>DataSource</code> that points to the training data.</p>
     pub training_data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>The data recipe for creating the <code>MLModel</code>. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
@@ -43,13 +43,13 @@ pub struct CreateMlModelInput {
     /// <p>The Amazon Simple Storage Service (Amazon S3) location and file name that contains the <code>MLModel</code> recipe. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
     pub recipe_uri: ::std::option::Option<::std::string::String>,
 }
-impl CreateMlModelInput {
+impl  CreateMlModelInput  {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
-    pub fn ml_model_id(&self) -> ::std::option::Option<&str> {
+    pub fn ml_model_id(&self) -> ::std::option::Option<& str> {
         self.ml_model_id.as_deref()
     }
     /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
-    pub fn ml_model_name(&self) -> ::std::option::Option<&str> {
+    pub fn ml_model_name(&self) -> ::std::option::Option<& str> {
         self.ml_model_name.as_deref()
     }
     /// <p>The category of supervised learning that this <code>MLModel</code> will address. Choose from the following types:</p>
@@ -62,7 +62,7 @@ impl CreateMlModelInput {
     /// <p>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</p></li>
     /// </ul>
     /// <p>For more information, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
-    pub fn ml_model_type(&self) -> ::std::option::Option<&crate::types::MlModelType> {
+    pub fn ml_model_type(&self) -> ::std::option::Option<& crate::types::MlModelType> {
         self.ml_model_type.as_ref()
     }
     /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as a map of key-value pairs.</p>
@@ -82,19 +82,19 @@ impl CreateMlModelInput {
     /// <p><code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p>
     /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p></li>
     /// </ul>
-    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
     /// <p>The <code>DataSource</code> that points to the training data.</p>
-    pub fn training_data_source_id(&self) -> ::std::option::Option<&str> {
+    pub fn training_data_source_id(&self) -> ::std::option::Option<& str> {
         self.training_data_source_id.as_deref()
     }
     /// <p>The data recipe for creating the <code>MLModel</code>. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
-    pub fn recipe(&self) -> ::std::option::Option<&str> {
+    pub fn recipe(&self) -> ::std::option::Option<& str> {
         self.recipe.as_deref()
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) location and file name that contains the <code>MLModel</code> recipe. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
-    pub fn recipe_uri(&self) -> ::std::option::Option<&str> {
+    pub fn recipe_uri(&self) -> ::std::option::Option<& str> {
         self.recipe_uri.as_deref()
     }
 }
@@ -112,7 +112,7 @@ pub struct CreateMlModelInputBuilder {
     pub(crate) ml_model_id: ::std::option::Option<::std::string::String>,
     pub(crate) ml_model_name: ::std::option::Option<::std::string::String>,
     pub(crate) ml_model_type: ::std::option::Option<crate::types::MlModelType>,
-    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) training_data_source_id: ::std::option::Option<::std::string::String>,
     pub(crate) recipe: ::std::option::Option<::std::string::String>,
     pub(crate) recipe_uri: ::std::option::Option<::std::string::String>,
@@ -126,8 +126,7 @@ impl CreateMlModelInputBuilder {
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
     pub fn set_ml_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ml_model_id = input;
-        self
+        self.ml_model_id = input; self
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
     pub fn get_ml_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +139,7 @@ impl CreateMlModelInputBuilder {
     }
     /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
     pub fn set_ml_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ml_model_name = input;
-        self
+        self.ml_model_name = input; self
     }
     /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
     pub fn get_ml_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,8 +171,7 @@ impl CreateMlModelInputBuilder {
     /// </ul>
     /// <p>For more information, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
     pub fn set_ml_model_type(mut self, input: ::std::option::Option<crate::types::MlModelType>) -> Self {
-        self.ml_model_type = input;
-        self
+        self.ml_model_type = input; self
     }
     /// <p>The category of supervised learning that this <code>MLModel</code> will address. Choose from the following types:</p>
     /// <ul>
@@ -212,9 +209,9 @@ impl CreateMlModelInputBuilder {
     /// </ul>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as a map of key-value pairs.</p>
     /// <p>The following is the current set of training parameters:</p>
@@ -233,9 +230,8 @@ impl CreateMlModelInputBuilder {
     /// <p><code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p>
     /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p></li>
     /// </ul>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as a map of key-value pairs.</p>
     /// <p>The following is the current set of training parameters:</p>
@@ -254,7 +250,7 @@ impl CreateMlModelInputBuilder {
     /// <p><code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p>
     /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p></li>
     /// </ul>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
     /// <p>The <code>DataSource</code> that points to the training data.</p>
@@ -265,8 +261,7 @@ impl CreateMlModelInputBuilder {
     }
     /// <p>The <code>DataSource</code> that points to the training data.</p>
     pub fn set_training_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.training_data_source_id = input;
-        self
+        self.training_data_source_id = input; self
     }
     /// <p>The <code>DataSource</code> that points to the training data.</p>
     pub fn get_training_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -279,8 +274,7 @@ impl CreateMlModelInputBuilder {
     }
     /// <p>The data recipe for creating the <code>MLModel</code>. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
     pub fn set_recipe(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recipe = input;
-        self
+        self.recipe = input; self
     }
     /// <p>The data recipe for creating the <code>MLModel</code>. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
     pub fn get_recipe(&self) -> &::std::option::Option<::std::string::String> {
@@ -293,25 +287,32 @@ impl CreateMlModelInputBuilder {
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) location and file name that contains the <code>MLModel</code> recipe. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
     pub fn set_recipe_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recipe_uri = input;
-        self
+        self.recipe_uri = input; self
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) location and file name that contains the <code>MLModel</code> recipe. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
     pub fn get_recipe_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.recipe_uri
     }
     /// Consumes the builder and constructs a [`CreateMlModelInput`](crate::operation::create_ml_model::CreateMlModelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_ml_model::CreateMlModelInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_ml_model::CreateMlModelInput {
-            ml_model_id: self.ml_model_id,
-            ml_model_name: self.ml_model_name,
-            ml_model_type: self.ml_model_type,
-            parameters: self.parameters,
-            training_data_source_id: self.training_data_source_id,
-            recipe: self.recipe,
-            recipe_uri: self.recipe_uri,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_ml_model::CreateMlModelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_ml_model::CreateMlModelInput {
+                ml_model_id: self.ml_model_id
+                ,
+                ml_model_name: self.ml_model_name
+                ,
+                ml_model_type: self.ml_model_type
+                ,
+                parameters: self.parameters
+                ,
+                training_data_source_id: self.training_data_source_id
+                ,
+                recipe: self.recipe
+                ,
+                recipe_uri: self.recipe_uri
+                ,
+            }
+        )
     }
 }
+

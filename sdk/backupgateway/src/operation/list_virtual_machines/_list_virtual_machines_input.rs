@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListVirtualMachinesInput {
+pub struct ListVirtualMachinesInput  {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor connected to your virtual machine.</p>
     pub hypervisor_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of virtual machines to list.</p>
@@ -10,9 +10,9 @@ pub struct ListVirtualMachinesInput {
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListVirtualMachinesInput {
+impl  ListVirtualMachinesInput  {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor connected to your virtual machine.</p>
-    pub fn hypervisor_arn(&self) -> ::std::option::Option<&str> {
+    pub fn hypervisor_arn(&self) -> ::std::option::Option<& str> {
         self.hypervisor_arn.as_deref()
     }
     /// <p>The maximum number of virtual machines to list.</p>
@@ -20,7 +20,7 @@ impl ListVirtualMachinesInput {
         self.max_results
     }
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl ListVirtualMachinesInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor connected to your virtual machine.</p>
     pub fn set_hypervisor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hypervisor_arn = input;
-        self
+        self.hypervisor_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor connected to your virtual machine.</p>
     pub fn get_hypervisor_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl ListVirtualMachinesInputBuilder {
     }
     /// <p>The maximum number of virtual machines to list.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of virtual machines to list.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -75,22 +73,24 @@ impl ListVirtualMachinesInputBuilder {
     }
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListVirtualMachinesInput`](crate::operation::list_virtual_machines::ListVirtualMachinesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_virtual_machines::ListVirtualMachinesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_virtual_machines::ListVirtualMachinesInput {
-            hypervisor_arn: self.hypervisor_arn,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_virtual_machines::ListVirtualMachinesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_virtual_machines::ListVirtualMachinesInput {
+                hypervisor_arn: self.hypervisor_arn
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

@@ -4,13 +4,13 @@
 /// <p>An array of <code>Point</code> objects makes up a <code>Polygon</code>. A <code>Polygon</code> is returned by <code>DetectText</code> and by <code>DetectCustomLabels</code> <code>Polygon</code> represents a fine-grained polygon around a detected item. For more information, see Geometry in the Amazon Rekognition Developer Guide.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Point {
+pub struct Point  {
     /// <p>The value of the X coordinate for a point on a <code>Polygon</code>.</p>
     pub x: ::std::option::Option<f32>,
     /// <p>The value of the Y coordinate for a point on a <code>Polygon</code>.</p>
     pub y: ::std::option::Option<f32>,
 }
-impl Point {
+impl  Point  {
     /// <p>The value of the X coordinate for a point on a <code>Polygon</code>.</p>
     pub fn x(&self) -> ::std::option::Option<f32> {
         self.x
@@ -42,8 +42,7 @@ impl PointBuilder {
     }
     /// <p>The value of the X coordinate for a point on a <code>Polygon</code>.</p>
     pub fn set_x(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.x = input;
-        self
+        self.x = input; self
     }
     /// <p>The value of the X coordinate for a point on a <code>Polygon</code>.</p>
     pub fn get_x(&self) -> &::std::option::Option<f32> {
@@ -56,8 +55,7 @@ impl PointBuilder {
     }
     /// <p>The value of the Y coordinate for a point on a <code>Polygon</code>.</p>
     pub fn set_y(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.y = input;
-        self
+        self.y = input; self
     }
     /// <p>The value of the Y coordinate for a point on a <code>Polygon</code>.</p>
     pub fn get_y(&self) -> &::std::option::Option<f32> {
@@ -65,6 +63,12 @@ impl PointBuilder {
     }
     /// Consumes the builder and constructs a [`Point`](crate::types::Point).
     pub fn build(self) -> crate::types::Point {
-        crate::types::Point { x: self.x, y: self.y }
+        crate::types::Point {
+            x: self.x
+            ,
+            y: self.y
+            ,
+        }
     }
 }
+

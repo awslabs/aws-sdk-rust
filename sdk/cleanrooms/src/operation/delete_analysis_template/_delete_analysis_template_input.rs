@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAnalysisTemplateInput {
+pub struct DeleteAnalysisTemplateInput  {
     /// <p>The identifier for a membership resource.</p>
     pub membership_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the analysis template resource.</p>
     pub analysis_template_identifier: ::std::option::Option<::std::string::String>,
 }
-impl DeleteAnalysisTemplateInput {
+impl  DeleteAnalysisTemplateInput  {
     /// <p>The identifier for a membership resource.</p>
-    pub fn membership_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn membership_identifier(&self) -> ::std::option::Option<& str> {
         self.membership_identifier.as_deref()
     }
     /// <p>The identifier for the analysis template resource.</p>
-    pub fn analysis_template_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn analysis_template_identifier(&self) -> ::std::option::Option<& str> {
         self.analysis_template_identifier.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteAnalysisTemplateInputBuilder {
     }
     /// <p>The identifier for a membership resource.</p>
     pub fn set_membership_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.membership_identifier = input;
-        self
+        self.membership_identifier = input; self
     }
     /// <p>The identifier for a membership resource.</p>
     pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DeleteAnalysisTemplateInputBuilder {
     }
     /// <p>The identifier for the analysis template resource.</p>
     pub fn set_analysis_template_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.analysis_template_identifier = input;
-        self
+        self.analysis_template_identifier = input; self
     }
     /// <p>The identifier for the analysis template resource.</p>
     pub fn get_analysis_template_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.analysis_template_identifier
     }
     /// Consumes the builder and constructs a [`DeleteAnalysisTemplateInput`](crate::operation::delete_analysis_template::DeleteAnalysisTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_analysis_template::DeleteAnalysisTemplateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_analysis_template::DeleteAnalysisTemplateInput {
-            membership_identifier: self.membership_identifier,
-            analysis_template_identifier: self.analysis_template_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_analysis_template::DeleteAnalysisTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_analysis_template::DeleteAnalysisTemplateInput {
+                membership_identifier: self.membership_identifier
+                ,
+                analysis_template_identifier: self.analysis_template_identifier
+                ,
+            }
+        )
     }
 }
+

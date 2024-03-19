@@ -3,13 +3,13 @@
 /// <p>Represents a set of options that define the structure of comma-separated (CSV) job output.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OutputFormatOptions {
+pub struct OutputFormatOptions  {
     /// <p>Represents a set of options that define the structure of comma-separated value (CSV) job output.</p>
     pub csv: ::std::option::Option<crate::types::CsvOutputOptions>,
 }
-impl OutputFormatOptions {
+impl  OutputFormatOptions  {
     /// <p>Represents a set of options that define the structure of comma-separated value (CSV) job output.</p>
-    pub fn csv(&self) -> ::std::option::Option<&crate::types::CsvOutputOptions> {
+    pub fn csv(&self) -> ::std::option::Option<& crate::types::CsvOutputOptions> {
         self.csv.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl OutputFormatOptionsBuilder {
     }
     /// <p>Represents a set of options that define the structure of comma-separated value (CSV) job output.</p>
     pub fn set_csv(mut self, input: ::std::option::Option<crate::types::CsvOutputOptions>) -> Self {
-        self.csv = input;
-        self
+        self.csv = input; self
     }
     /// <p>Represents a set of options that define the structure of comma-separated value (CSV) job output.</p>
     pub fn get_csv(&self) -> &::std::option::Option<crate::types::CsvOutputOptions> {
@@ -43,6 +42,10 @@ impl OutputFormatOptionsBuilder {
     }
     /// Consumes the builder and constructs a [`OutputFormatOptions`](crate::types::OutputFormatOptions).
     pub fn build(self) -> crate::types::OutputFormatOptions {
-        crate::types::OutputFormatOptions { csv: self.csv }
+        crate::types::OutputFormatOptions {
+            csv: self.csv
+            ,
+        }
     }
 }
+

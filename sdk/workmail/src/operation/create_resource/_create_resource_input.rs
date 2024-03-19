@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateResourceInput {
+pub struct CreateResourceInput  {
     /// <p>The identifier associated with the organization for which the resource is created.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the new resource.</p>
@@ -14,21 +14,21 @@ pub struct CreateResourceInput {
     /// <p>If this parameter is enabled, the resource will be hidden from the address book.</p>
     pub hidden_from_global_address_list: ::std::option::Option<bool>,
 }
-impl CreateResourceInput {
+impl  CreateResourceInput  {
     /// <p>The identifier associated with the organization for which the resource is created.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The name of the new resource.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of the new resource. The available types are <code>equipment</code> and <code>room</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.r#type.as_ref()
     }
     /// <p>Resource description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>If this parameter is enabled, the resource will be hidden from the address book.</p>
@@ -62,8 +62,7 @@ impl CreateResourceInputBuilder {
     }
     /// <p>The identifier associated with the organization for which the resource is created.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The identifier associated with the organization for which the resource is created.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl CreateResourceInputBuilder {
     }
     /// <p>The name of the new resource.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the new resource.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +90,7 @@ impl CreateResourceInputBuilder {
     }
     /// <p>The type of the new resource. The available types are <code>equipment</code> and <code>room</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the new resource. The available types are <code>equipment</code> and <code>room</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -106,8 +103,7 @@ impl CreateResourceInputBuilder {
     }
     /// <p>Resource description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Resource description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,23 +116,28 @@ impl CreateResourceInputBuilder {
     }
     /// <p>If this parameter is enabled, the resource will be hidden from the address book.</p>
     pub fn set_hidden_from_global_address_list(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.hidden_from_global_address_list = input;
-        self
+        self.hidden_from_global_address_list = input; self
     }
     /// <p>If this parameter is enabled, the resource will be hidden from the address book.</p>
     pub fn get_hidden_from_global_address_list(&self) -> &::std::option::Option<bool> {
         &self.hidden_from_global_address_list
     }
     /// Consumes the builder and constructs a [`CreateResourceInput`](crate::operation::create_resource::CreateResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_resource::CreateResourceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_resource::CreateResourceInput {
-            organization_id: self.organization_id,
-            name: self.name,
-            r#type: self.r#type,
-            description: self.description,
-            hidden_from_global_address_list: self.hidden_from_global_address_list,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_resource::CreateResourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_resource::CreateResourceInput {
+                organization_id: self.organization_id
+                ,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                description: self.description
+                ,
+                hidden_from_global_address_list: self.hidden_from_global_address_list
+                ,
+            }
+        )
     }
 }
+

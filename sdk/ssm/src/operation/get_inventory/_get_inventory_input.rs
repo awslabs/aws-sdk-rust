@@ -2,39 +2,42 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetInventoryInput {
+pub struct GetInventoryInput  {
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::InventoryFilter>>,
     /// <p>Returns counts of inventory types based on one or more expressions. For example, if you aggregate by using an expression that uses the <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of how many Windows and Linux managed nodes exist in your inventoried fleet.</p>
-    pub aggregators: ::std::option::Option<::std::vec::Vec<crate::types::InventoryAggregator>>,
+    pub aggregators: ::std::option::Option<::std::vec::Vec::<crate::types::InventoryAggregator>>,
     /// <p>The list of inventory item types to return.</p>
-    pub result_attributes: ::std::option::Option<::std::vec::Vec<crate::types::ResultAttribute>>,
+    pub result_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::ResultAttribute>>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl GetInventoryInput {
+impl  GetInventoryInput  {
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::InventoryFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::InventoryFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Returns counts of inventory types based on one or more expressions. For example, if you aggregate by using an expression that uses the <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of how many Windows and Linux managed nodes exist in your inventoried fleet.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aggregators.is_none()`.
-    pub fn aggregators(&self) -> &[crate::types::InventoryAggregator] {
-        self.aggregators.as_deref().unwrap_or_default()
+    pub fn aggregators(&self) -> & [crate::types::InventoryAggregator] {
+        self.aggregators.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The list of inventory item types to return.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.result_attributes.is_none()`.
-    pub fn result_attributes(&self) -> &[crate::types::ResultAttribute] {
-        self.result_attributes.as_deref().unwrap_or_default()
+    pub fn result_attributes(&self) -> & [crate::types::ResultAttribute] {
+        self.result_attributes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -53,9 +56,9 @@ impl GetInventoryInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInventoryInputBuilder {
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>>,
-    pub(crate) aggregators: ::std::option::Option<::std::vec::Vec<crate::types::InventoryAggregator>>,
-    pub(crate) result_attributes: ::std::option::Option<::std::vec::Vec<crate::types::ResultAttribute>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::InventoryFilter>>,
+    pub(crate) aggregators: ::std::option::Option<::std::vec::Vec::<crate::types::InventoryAggregator>>,
+    pub(crate) result_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::ResultAttribute>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -67,17 +70,16 @@ impl GetInventoryInputBuilder {
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
     pub fn filters(mut self, input: crate::types::InventoryFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InventoryFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InventoryFilter>> {
         &self.filters
     }
     /// Appends an item to `aggregators`.
@@ -87,17 +89,16 @@ impl GetInventoryInputBuilder {
     /// <p>Returns counts of inventory types based on one or more expressions. For example, if you aggregate by using an expression that uses the <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of how many Windows and Linux managed nodes exist in your inventoried fleet.</p>
     pub fn aggregators(mut self, input: crate::types::InventoryAggregator) -> Self {
         let mut v = self.aggregators.unwrap_or_default();
-        v.push(input);
-        self.aggregators = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.aggregators = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Returns counts of inventory types based on one or more expressions. For example, if you aggregate by using an expression that uses the <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of how many Windows and Linux managed nodes exist in your inventoried fleet.</p>
-    pub fn set_aggregators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryAggregator>>) -> Self {
-        self.aggregators = input;
-        self
+    pub fn set_aggregators(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InventoryAggregator>>) -> Self {
+        self.aggregators = input; self
     }
     /// <p>Returns counts of inventory types based on one or more expressions. For example, if you aggregate by using an expression that uses the <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of how many Windows and Linux managed nodes exist in your inventoried fleet.</p>
-    pub fn get_aggregators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryAggregator>> {
+    pub fn get_aggregators(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InventoryAggregator>> {
         &self.aggregators
     }
     /// Appends an item to `result_attributes`.
@@ -107,17 +108,16 @@ impl GetInventoryInputBuilder {
     /// <p>The list of inventory item types to return.</p>
     pub fn result_attributes(mut self, input: crate::types::ResultAttribute) -> Self {
         let mut v = self.result_attributes.unwrap_or_default();
-        v.push(input);
-        self.result_attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.result_attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of inventory item types to return.</p>
-    pub fn set_result_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResultAttribute>>) -> Self {
-        self.result_attributes = input;
-        self
+    pub fn set_result_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResultAttribute>>) -> Self {
+        self.result_attributes = input; self
     }
     /// <p>The list of inventory item types to return.</p>
-    pub fn get_result_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResultAttribute>> {
+    pub fn get_result_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResultAttribute>> {
         &self.result_attributes
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -127,8 +127,7 @@ impl GetInventoryInputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,23 +140,28 @@ impl GetInventoryInputBuilder {
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetInventoryInput`](crate::operation::get_inventory::GetInventoryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_inventory::GetInventoryInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_inventory::GetInventoryInput {
-            filters: self.filters,
-            aggregators: self.aggregators,
-            result_attributes: self.result_attributes,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_inventory::GetInventoryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_inventory::GetInventoryInput {
+                filters: self.filters
+                ,
+                aggregators: self.aggregators
+                ,
+                result_attributes: self.result_attributes
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

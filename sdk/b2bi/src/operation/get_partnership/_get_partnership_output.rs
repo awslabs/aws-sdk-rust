@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetPartnershipOutput {
+pub struct GetPartnershipOutput  {
     /// <p>Returns the unique, system-generated identifier for the profile connected to this partnership.</p>
     pub profile_id: ::std::string::String,
     /// <p>Returns the unique, system-generated identifier for a partnership.</p>
@@ -16,7 +16,7 @@ pub struct GetPartnershipOutput {
     /// <p>Returns the phone number associated with the partnership.</p>
     pub phone: ::std::option::Option<::std::string::String>,
     /// <p>Returns one or more capabilities associated with this partnership.</p>
-    pub capabilities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub capabilities: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Returns the unique identifier for the partner for this partnership.</p>
     pub trading_partner_id: ::std::option::Option<::std::string::String>,
     /// <p>Returns a timestamp for creation date and time of the partnership.</p>
@@ -25,54 +25,52 @@ pub struct GetPartnershipOutput {
     pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl GetPartnershipOutput {
+impl  GetPartnershipOutput  {
     /// <p>Returns the unique, system-generated identifier for the profile connected to this partnership.</p>
-    pub fn profile_id(&self) -> &str {
-        use std::ops::Deref;
-        self.profile_id.deref()
+    pub fn profile_id(&self) -> & str {
+        use std::ops::Deref; self.profile_id.deref()
     }
     /// <p>Returns the unique, system-generated identifier for a partnership.</p>
-    pub fn partnership_id(&self) -> &str {
-        use std::ops::Deref;
-        self.partnership_id.deref()
+    pub fn partnership_id(&self) -> & str {
+        use std::ops::Deref; self.partnership_id.deref()
     }
     /// <p>Returns an Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a capability, partnership, profile, or transformer.</p>
-    pub fn partnership_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.partnership_arn.deref()
+    pub fn partnership_arn(&self) -> & str {
+        use std::ops::Deref; self.partnership_arn.deref()
     }
     /// <p>Returns the display name of the partnership</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Returns the email address associated with this trading partner.</p>
-    pub fn email(&self) -> ::std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>Returns the phone number associated with the partnership.</p>
-    pub fn phone(&self) -> ::std::option::Option<&str> {
+    pub fn phone(&self) -> ::std::option::Option<& str> {
         self.phone.as_deref()
     }
     /// <p>Returns one or more capabilities associated with this partnership.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capabilities.is_none()`.
-    pub fn capabilities(&self) -> &[::std::string::String] {
-        self.capabilities.as_deref().unwrap_or_default()
+    pub fn capabilities(&self) -> & [::std::string::String] {
+        self.capabilities.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Returns the unique identifier for the partner for this partnership.</p>
-    pub fn trading_partner_id(&self) -> ::std::option::Option<&str> {
+    pub fn trading_partner_id(&self) -> ::std::option::Option<& str> {
         self.trading_partner_id.as_deref()
     }
     /// <p>Returns a timestamp for creation date and time of the partnership.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>Returns a timestamp that identifies the most recent date and time that the partnership was modified.</p>
-    pub fn modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn modified_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
 }
-impl ::std::fmt::Debug for GetPartnershipOutput {
+impl  ::std::fmt::Debug for GetPartnershipOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetPartnershipOutput");
         formatter.field("profile_id", &self.profile_id);
@@ -90,10 +88,10 @@ impl ::std::fmt::Debug for GetPartnershipOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetPartnershipOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetPartnershipOutput {
     /// Creates a new builder-style object to manufacture [`GetPartnershipOutput`](crate::operation::get_partnership::GetPartnershipOutput).
     pub fn builder() -> crate::operation::get_partnership::builders::GetPartnershipOutputBuilder {
@@ -111,7 +109,7 @@ pub struct GetPartnershipOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) email: ::std::option::Option<::std::string::String>,
     pub(crate) phone: ::std::option::Option<::std::string::String>,
-    pub(crate) capabilities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) capabilities: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) trading_partner_id: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -126,8 +124,7 @@ impl GetPartnershipOutputBuilder {
     }
     /// <p>Returns the unique, system-generated identifier for the profile connected to this partnership.</p>
     pub fn set_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_id = input;
-        self
+        self.profile_id = input; self
     }
     /// <p>Returns the unique, system-generated identifier for the profile connected to this partnership.</p>
     pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +138,7 @@ impl GetPartnershipOutputBuilder {
     }
     /// <p>Returns the unique, system-generated identifier for a partnership.</p>
     pub fn set_partnership_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.partnership_id = input;
-        self
+        self.partnership_id = input; self
     }
     /// <p>Returns the unique, system-generated identifier for a partnership.</p>
     pub fn get_partnership_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,8 +152,7 @@ impl GetPartnershipOutputBuilder {
     }
     /// <p>Returns an Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a capability, partnership, profile, or transformer.</p>
     pub fn set_partnership_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.partnership_arn = input;
-        self
+        self.partnership_arn = input; self
     }
     /// <p>Returns an Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a capability, partnership, profile, or transformer.</p>
     pub fn get_partnership_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,8 +165,7 @@ impl GetPartnershipOutputBuilder {
     }
     /// <p>Returns the display name of the partnership</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Returns the display name of the partnership</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -184,8 +178,7 @@ impl GetPartnershipOutputBuilder {
     }
     /// <p>Returns the email address associated with this trading partner.</p>
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
     }
     /// <p>Returns the email address associated with this trading partner.</p>
     pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -198,8 +191,7 @@ impl GetPartnershipOutputBuilder {
     }
     /// <p>Returns the phone number associated with the partnership.</p>
     pub fn set_phone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone = input;
-        self
+        self.phone = input; self
     }
     /// <p>Returns the phone number associated with the partnership.</p>
     pub fn get_phone(&self) -> &::std::option::Option<::std::string::String> {
@@ -212,17 +204,16 @@ impl GetPartnershipOutputBuilder {
     /// <p>Returns one or more capabilities associated with this partnership.</p>
     pub fn capabilities(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.capabilities.unwrap_or_default();
-        v.push(input.into());
-        self.capabilities = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.capabilities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Returns one or more capabilities associated with this partnership.</p>
-    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.capabilities = input;
-        self
+    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.capabilities = input; self
     }
     /// <p>Returns one or more capabilities associated with this partnership.</p>
-    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.capabilities
     }
     /// <p>Returns the unique identifier for the partner for this partnership.</p>
@@ -232,8 +223,7 @@ impl GetPartnershipOutputBuilder {
     }
     /// <p>Returns the unique identifier for the partner for this partnership.</p>
     pub fn set_trading_partner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trading_partner_id = input;
-        self
+        self.trading_partner_id = input; self
     }
     /// <p>Returns the unique identifier for the partner for this partnership.</p>
     pub fn get_trading_partner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -247,8 +237,7 @@ impl GetPartnershipOutputBuilder {
     }
     /// <p>Returns a timestamp for creation date and time of the partnership.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>Returns a timestamp for creation date and time of the partnership.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -261,64 +250,65 @@ impl GetPartnershipOutputBuilder {
     }
     /// <p>Returns a timestamp that identifies the most recent date and time that the partnership was modified.</p>
     pub fn set_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.modified_at = input;
-        self
+        self.modified_at = input; self
     }
     /// <p>Returns a timestamp that identifies the most recent date and time that the partnership was modified.</p>
     pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.modified_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetPartnershipOutput`](crate::operation::get_partnership::GetPartnershipOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`profile_id`](crate::operation::get_partnership::builders::GetPartnershipOutputBuilder::profile_id)
     /// - [`partnership_id`](crate::operation::get_partnership::builders::GetPartnershipOutputBuilder::partnership_id)
     /// - [`partnership_arn`](crate::operation::get_partnership::builders::GetPartnershipOutputBuilder::partnership_arn)
     /// - [`created_at`](crate::operation::get_partnership::builders::GetPartnershipOutputBuilder::created_at)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_partnership::GetPartnershipOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_partnership::GetPartnershipOutput {
-            profile_id: self.profile_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "profile_id",
-                    "profile_id was not specified but it is required when building GetPartnershipOutput",
-                )
-            })?,
-            partnership_id: self.partnership_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "partnership_id",
-                    "partnership_id was not specified but it is required when building GetPartnershipOutput",
-                )
-            })?,
-            partnership_arn: self.partnership_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "partnership_arn",
-                    "partnership_arn was not specified but it is required when building GetPartnershipOutput",
-                )
-            })?,
-            name: self.name,
-            email: self.email,
-            phone: self.phone,
-            capabilities: self.capabilities,
-            trading_partner_id: self.trading_partner_id,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building GetPartnershipOutput",
-                )
-            })?,
-            modified_at: self.modified_at,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_partnership::GetPartnershipOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_partnership::GetPartnershipOutput {
+                profile_id: self.profile_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("profile_id", "profile_id was not specified but it is required when building GetPartnershipOutput")
+                    )?
+                ,
+                partnership_id: self.partnership_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("partnership_id", "partnership_id was not specified but it is required when building GetPartnershipOutput")
+                    )?
+                ,
+                partnership_arn: self.partnership_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("partnership_arn", "partnership_arn was not specified but it is required when building GetPartnershipOutput")
+                    )?
+                ,
+                name: self.name
+                ,
+                email: self.email
+                ,
+                phone: self.phone
+                ,
+                capabilities: self.capabilities
+                ,
+                trading_partner_id: self.trading_partner_id
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building GetPartnershipOutput")
+                    )?
+                ,
+                modified_at: self.modified_at
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for GetPartnershipOutputBuilder {
@@ -338,3 +328,4 @@ impl ::std::fmt::Debug for GetPartnershipOutputBuilder {
         formatter.finish()
     }
 }
+

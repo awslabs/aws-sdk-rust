@@ -3,7 +3,7 @@
 /// <p>Determines if a Lambda function should be invoked for a specific intent.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FulfillmentCodeHookSettings {
+pub struct FulfillmentCodeHookSettings  {
     /// <p>Indicates whether a Lambda function should be invoked to fulfill a specific intent.</p>
     pub enabled: bool,
     /// <p>Provides settings for messages sent to the user for after the Lambda fulfillment function completes. Post-fulfillment messages can be sent for both streaming and non-streaming conversations.</p>
@@ -13,17 +13,17 @@ pub struct FulfillmentCodeHookSettings {
     /// <p>Determines whether the fulfillment code hook is used. When <code>active</code> is false, the code hook doesn't run.</p>
     pub active: ::std::option::Option<bool>,
 }
-impl FulfillmentCodeHookSettings {
+impl  FulfillmentCodeHookSettings  {
     /// <p>Indicates whether a Lambda function should be invoked to fulfill a specific intent.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
     /// <p>Provides settings for messages sent to the user for after the Lambda fulfillment function completes. Post-fulfillment messages can be sent for both streaming and non-streaming conversations.</p>
-    pub fn post_fulfillment_status_specification(&self) -> ::std::option::Option<&crate::types::PostFulfillmentStatusSpecification> {
+    pub fn post_fulfillment_status_specification(&self) -> ::std::option::Option<& crate::types::PostFulfillmentStatusSpecification> {
         self.post_fulfillment_status_specification.as_ref()
     }
     /// <p>Provides settings for update messages sent to the user for long-running Lambda fulfillment functions. Fulfillment updates can be used only with streaming conversations.</p>
-    pub fn fulfillment_updates_specification(&self) -> ::std::option::Option<&crate::types::FulfillmentUpdatesSpecification> {
+    pub fn fulfillment_updates_specification(&self) -> ::std::option::Option<& crate::types::FulfillmentUpdatesSpecification> {
         self.fulfillment_updates_specification.as_ref()
     }
     /// <p>Determines whether the fulfillment code hook is used. When <code>active</code> is false, the code hook doesn't run.</p>
@@ -56,8 +56,7 @@ impl FulfillmentCodeHookSettingsBuilder {
     }
     /// <p>Indicates whether a Lambda function should be invoked to fulfill a specific intent.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Indicates whether a Lambda function should be invoked to fulfill a specific intent.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -69,12 +68,8 @@ impl FulfillmentCodeHookSettingsBuilder {
         self
     }
     /// <p>Provides settings for messages sent to the user for after the Lambda fulfillment function completes. Post-fulfillment messages can be sent for both streaming and non-streaming conversations.</p>
-    pub fn set_post_fulfillment_status_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::PostFulfillmentStatusSpecification>,
-    ) -> Self {
-        self.post_fulfillment_status_specification = input;
-        self
+    pub fn set_post_fulfillment_status_specification(mut self, input: ::std::option::Option<crate::types::PostFulfillmentStatusSpecification>) -> Self {
+        self.post_fulfillment_status_specification = input; self
     }
     /// <p>Provides settings for messages sent to the user for after the Lambda fulfillment function completes. Post-fulfillment messages can be sent for both streaming and non-streaming conversations.</p>
     pub fn get_post_fulfillment_status_specification(&self) -> &::std::option::Option<crate::types::PostFulfillmentStatusSpecification> {
@@ -87,8 +82,7 @@ impl FulfillmentCodeHookSettingsBuilder {
     }
     /// <p>Provides settings for update messages sent to the user for long-running Lambda fulfillment functions. Fulfillment updates can be used only with streaming conversations.</p>
     pub fn set_fulfillment_updates_specification(mut self, input: ::std::option::Option<crate::types::FulfillmentUpdatesSpecification>) -> Self {
-        self.fulfillment_updates_specification = input;
-        self
+        self.fulfillment_updates_specification = input; self
     }
     /// <p>Provides settings for update messages sent to the user for long-running Lambda fulfillment functions. Fulfillment updates can be used only with streaming conversations.</p>
     pub fn get_fulfillment_updates_specification(&self) -> &::std::option::Option<crate::types::FulfillmentUpdatesSpecification> {
@@ -101,8 +95,7 @@ impl FulfillmentCodeHookSettingsBuilder {
     }
     /// <p>Determines whether the fulfillment code hook is used. When <code>active</code> is false, the code hook doesn't run.</p>
     pub fn set_active(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.active = input;
-        self
+        self.active = input; self
     }
     /// <p>Determines whether the fulfillment code hook is used. When <code>active</code> is false, the code hook doesn't run.</p>
     pub fn get_active(&self) -> &::std::option::Option<bool> {
@@ -111,10 +104,16 @@ impl FulfillmentCodeHookSettingsBuilder {
     /// Consumes the builder and constructs a [`FulfillmentCodeHookSettings`](crate::types::FulfillmentCodeHookSettings).
     pub fn build(self) -> crate::types::FulfillmentCodeHookSettings {
         crate::types::FulfillmentCodeHookSettings {
-            enabled: self.enabled.unwrap_or_default(),
-            post_fulfillment_status_specification: self.post_fulfillment_status_specification,
-            fulfillment_updates_specification: self.fulfillment_updates_specification,
-            active: self.active,
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
+            post_fulfillment_status_specification: self.post_fulfillment_status_specification
+            ,
+            fulfillment_updates_specification: self.fulfillment_updates_specification
+            ,
+            active: self.active
+            ,
         }
     }
 }
+

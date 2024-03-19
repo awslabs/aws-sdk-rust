@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFlywheelIterationInput {
+pub struct DescribeFlywheelIterationInput  {
     /// <p></p>
     pub flywheel_arn: ::std::option::Option<::std::string::String>,
     /// <p></p>
     pub flywheel_iteration_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeFlywheelIterationInput {
+impl  DescribeFlywheelIterationInput  {
     /// <p></p>
-    pub fn flywheel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn flywheel_arn(&self) -> ::std::option::Option<& str> {
         self.flywheel_arn.as_deref()
     }
     /// <p></p>
-    pub fn flywheel_iteration_id(&self) -> ::std::option::Option<&str> {
+    pub fn flywheel_iteration_id(&self) -> ::std::option::Option<& str> {
         self.flywheel_iteration_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeFlywheelIterationInputBuilder {
     }
     /// <p></p>
     pub fn set_flywheel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flywheel_arn = input;
-        self
+        self.flywheel_arn = input; self
     }
     /// <p></p>
     pub fn get_flywheel_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DescribeFlywheelIterationInputBuilder {
     }
     /// <p></p>
     pub fn set_flywheel_iteration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flywheel_iteration_id = input;
-        self
+        self.flywheel_iteration_id = input; self
     }
     /// <p></p>
     pub fn get_flywheel_iteration_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.flywheel_iteration_id
     }
     /// Consumes the builder and constructs a [`DescribeFlywheelIterationInput`](crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationInput {
-            flywheel_arn: self.flywheel_arn,
-            flywheel_iteration_id: self.flywheel_iteration_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationInput {
+                flywheel_arn: self.flywheel_arn
+                ,
+                flywheel_iteration_id: self.flywheel_iteration_id
+                ,
+            }
+        )
     }
 }
+

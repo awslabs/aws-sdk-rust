@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCollaborationAnalysisTemplateOutput {
+pub struct GetCollaborationAnalysisTemplateOutput  {
     /// <p>The analysis template within a collaboration.</p>
     pub collaboration_analysis_template: ::std::option::Option<crate::types::CollaborationAnalysisTemplate>,
     _request_id: Option<String>,
 }
-impl GetCollaborationAnalysisTemplateOutput {
+impl  GetCollaborationAnalysisTemplateOutput  {
     /// <p>The analysis template within a collaboration.</p>
-    pub fn collaboration_analysis_template(&self) -> ::std::option::Option<&crate::types::CollaborationAnalysisTemplate> {
+    pub fn collaboration_analysis_template(&self) -> ::std::option::Option<& crate::types::CollaborationAnalysisTemplate> {
         self.collaboration_analysis_template.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetCollaborationAnalysisTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetCollaborationAnalysisTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetCollaborationAnalysisTemplateOutput`](crate::operation::get_collaboration_analysis_template::GetCollaborationAnalysisTemplateOutput).
     pub fn builder() -> crate::operation::get_collaboration_analysis_template::builders::GetCollaborationAnalysisTemplateOutputBuilder {
@@ -41,27 +41,28 @@ impl GetCollaborationAnalysisTemplateOutputBuilder {
     }
     /// <p>The analysis template within a collaboration.</p>
     pub fn set_collaboration_analysis_template(mut self, input: ::std::option::Option<crate::types::CollaborationAnalysisTemplate>) -> Self {
-        self.collaboration_analysis_template = input;
-        self
+        self.collaboration_analysis_template = input; self
     }
     /// <p>The analysis template within a collaboration.</p>
     pub fn get_collaboration_analysis_template(&self) -> &::std::option::Option<crate::types::CollaborationAnalysisTemplate> {
         &self.collaboration_analysis_template
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetCollaborationAnalysisTemplateOutput`](crate::operation::get_collaboration_analysis_template::GetCollaborationAnalysisTemplateOutput).
     pub fn build(self) -> crate::operation::get_collaboration_analysis_template::GetCollaborationAnalysisTemplateOutput {
         crate::operation::get_collaboration_analysis_template::GetCollaborationAnalysisTemplateOutput {
-            collaboration_analysis_template: self.collaboration_analysis_template,
+            collaboration_analysis_template: self.collaboration_analysis_template
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

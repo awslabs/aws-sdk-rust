@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteUserDefinedFunctionInput {
+pub struct DeleteUserDefinedFunctionInput  {
     /// <p>The ID of the Data Catalog where the function to be deleted is located. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the catalog database where the function is located.</p>
@@ -10,17 +10,17 @@ pub struct DeleteUserDefinedFunctionInput {
     /// <p>The name of the function definition to be deleted.</p>
     pub function_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteUserDefinedFunctionInput {
+impl  DeleteUserDefinedFunctionInput  {
     /// <p>The ID of the Data Catalog where the function to be deleted is located. If none is supplied, the Amazon Web Services account ID is used by default.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the catalog database where the function is located.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the function definition to be deleted.</p>
-    pub fn function_name(&self) -> ::std::option::Option<&str> {
+    pub fn function_name(&self) -> ::std::option::Option<& str> {
         self.function_name.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl DeleteUserDefinedFunctionInputBuilder {
     }
     /// <p>The ID of the Data Catalog where the function to be deleted is located. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The ID of the Data Catalog where the function to be deleted is located. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl DeleteUserDefinedFunctionInputBuilder {
     }
     /// <p>The name of the catalog database where the function is located.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the catalog database where the function is located.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,24 +75,24 @@ impl DeleteUserDefinedFunctionInputBuilder {
     }
     /// <p>The name of the function definition to be deleted.</p>
     pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_name = input;
-        self
+        self.function_name = input; self
     }
     /// <p>The name of the function definition to be deleted.</p>
     pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.function_name
     }
     /// Consumes the builder and constructs a [`DeleteUserDefinedFunctionInput`](crate::operation::delete_user_defined_function::DeleteUserDefinedFunctionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_user_defined_function::DeleteUserDefinedFunctionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_user_defined_function::DeleteUserDefinedFunctionInput {
-            catalog_id: self.catalog_id,
-            database_name: self.database_name,
-            function_name: self.function_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_user_defined_function::DeleteUserDefinedFunctionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_user_defined_function::DeleteUserDefinedFunctionInput {
+                catalog_id: self.catalog_id
+                ,
+                database_name: self.database_name
+                ,
+                function_name: self.function_name
+                ,
+            }
+        )
     }
 }
+

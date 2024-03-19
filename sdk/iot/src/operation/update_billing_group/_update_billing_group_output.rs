@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateBillingGroupOutput {
+pub struct UpdateBillingGroupOutput  {
     /// <p>The latest version of the billing group.</p>
     pub version: i64,
     _request_id: Option<String>,
 }
-impl UpdateBillingGroupOutput {
+impl  UpdateBillingGroupOutput  {
     /// <p>The latest version of the billing group.</p>
     pub fn version(&self) -> i64 {
         self.version
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateBillingGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateBillingGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBillingGroupOutput`](crate::operation::update_billing_group::UpdateBillingGroupOutput).
     pub fn builder() -> crate::operation::update_billing_group::builders::UpdateBillingGroupOutputBuilder {
@@ -40,27 +40,29 @@ impl UpdateBillingGroupOutputBuilder {
     }
     /// <p>The latest version of the billing group.</p>
     pub fn set_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The latest version of the billing group.</p>
     pub fn get_version(&self) -> &::std::option::Option<i64> {
         &self.version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateBillingGroupOutput`](crate::operation::update_billing_group::UpdateBillingGroupOutput).
     pub fn build(self) -> crate::operation::update_billing_group::UpdateBillingGroupOutput {
         crate::operation::update_billing_group::UpdateBillingGroupOutput {
-            version: self.version.unwrap_or_default(),
+            version: self.version
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

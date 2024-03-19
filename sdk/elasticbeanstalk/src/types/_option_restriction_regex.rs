@@ -3,19 +3,19 @@
 /// <p>A regular expression representing a restriction on a string configuration option value.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OptionRestrictionRegex {
+pub struct OptionRestrictionRegex  {
     /// <p>The regular expression pattern that a string configuration option value with this restriction must match.</p>
     pub pattern: ::std::option::Option<::std::string::String>,
     /// <p>A unique name representing this regular expression.</p>
     pub label: ::std::option::Option<::std::string::String>,
 }
-impl OptionRestrictionRegex {
+impl  OptionRestrictionRegex  {
     /// <p>The regular expression pattern that a string configuration option value with this restriction must match.</p>
-    pub fn pattern(&self) -> ::std::option::Option<&str> {
+    pub fn pattern(&self) -> ::std::option::Option<& str> {
         self.pattern.as_deref()
     }
     /// <p>A unique name representing this regular expression.</p>
-    pub fn label(&self) -> ::std::option::Option<&str> {
+    pub fn label(&self) -> ::std::option::Option<& str> {
         self.label.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl OptionRestrictionRegexBuilder {
     }
     /// <p>The regular expression pattern that a string configuration option value with this restriction must match.</p>
     pub fn set_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pattern = input;
-        self
+        self.pattern = input; self
     }
     /// <p>The regular expression pattern that a string configuration option value with this restriction must match.</p>
     pub fn get_pattern(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl OptionRestrictionRegexBuilder {
     }
     /// <p>A unique name representing this regular expression.</p>
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label = input;
-        self
+        self.label = input; self
     }
     /// <p>A unique name representing this regular expression.</p>
     pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl OptionRestrictionRegexBuilder {
     /// Consumes the builder and constructs a [`OptionRestrictionRegex`](crate::types::OptionRestrictionRegex).
     pub fn build(self) -> crate::types::OptionRestrictionRegex {
         crate::types::OptionRestrictionRegex {
-            pattern: self.pattern,
-            label: self.label,
+            pattern: self.pattern
+            ,
+            label: self.label
+            ,
         }
     }
 }
+

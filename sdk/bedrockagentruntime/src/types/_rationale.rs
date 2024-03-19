@@ -3,23 +3,23 @@
 /// <p>Contains the reasoning, based on the input, that the agent uses to justify carrying out an action group or getting information from a knowledge base.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Rationale {
+pub struct Rationale  {
     /// <p>The unique identifier of the trace step.</p>
     pub trace_id: ::std::option::Option<::std::string::String>,
     /// <p>The reasoning or thought process of the agent, based on the input.</p>
     pub text: ::std::option::Option<::std::string::String>,
 }
-impl Rationale {
+impl  Rationale  {
     /// <p>The unique identifier of the trace step.</p>
-    pub fn trace_id(&self) -> ::std::option::Option<&str> {
+    pub fn trace_id(&self) -> ::std::option::Option<& str> {
         self.trace_id.as_deref()
     }
     /// <p>The reasoning or thought process of the agent, based on the input.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
 }
-impl ::std::fmt::Debug for Rationale {
+impl  ::std::fmt::Debug for Rationale  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Rationale");
         formatter.field("trace_id", &"*** Sensitive Data Redacted ***");
@@ -49,8 +49,7 @@ impl RationaleBuilder {
     }
     /// <p>The unique identifier of the trace step.</p>
     pub fn set_trace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trace_id = input;
-        self
+        self.trace_id = input; self
     }
     /// <p>The unique identifier of the trace step.</p>
     pub fn get_trace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl RationaleBuilder {
     }
     /// <p>The reasoning or thought process of the agent, based on the input.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>The reasoning or thought process of the agent, based on the input.</p>
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +71,10 @@ impl RationaleBuilder {
     /// Consumes the builder and constructs a [`Rationale`](crate::types::Rationale).
     pub fn build(self) -> crate::types::Rationale {
         crate::types::Rationale {
-            trace_id: self.trace_id,
-            text: self.text,
+            trace_id: self.trace_id
+            ,
+            text: self.text
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for RationaleBuilder {
         formatter.finish()
     }
 }
+

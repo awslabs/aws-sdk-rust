@@ -3,7 +3,7 @@
 /// <p>Contains information about a Security Hub insight.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Insight {
+pub struct Insight  {
     /// <p>The ARN of a Security Hub insight.</p>
     pub insight_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of a Security Hub insight.</p>
@@ -13,21 +13,21 @@ pub struct Insight {
     /// <p>The grouping attribute for the insight's findings. Indicates how to group the matching findings, and identifies the type of item that the insight applies to. For example, if an insight is grouped by resource identifier, then the insight produces a list of resource identifiers.</p>
     pub group_by_attribute: ::std::option::Option<::std::string::String>,
 }
-impl Insight {
+impl  Insight  {
     /// <p>The ARN of a Security Hub insight.</p>
-    pub fn insight_arn(&self) -> ::std::option::Option<&str> {
+    pub fn insight_arn(&self) -> ::std::option::Option<& str> {
         self.insight_arn.as_deref()
     }
     /// <p>The name of a Security Hub insight.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>One or more attributes used to filter the findings included in the insight. The insight only includes findings that match the criteria defined in the filters.</p>
-    pub fn filters(&self) -> ::std::option::Option<&crate::types::AwsSecurityFindingFilters> {
+    pub fn filters(&self) -> ::std::option::Option<& crate::types::AwsSecurityFindingFilters> {
         self.filters.as_ref()
     }
     /// <p>The grouping attribute for the insight's findings. Indicates how to group the matching findings, and identifies the type of item that the insight applies to. For example, if an insight is grouped by resource identifier, then the insight produces a list of resource identifiers.</p>
-    pub fn group_by_attribute(&self) -> ::std::option::Option<&str> {
+    pub fn group_by_attribute(&self) -> ::std::option::Option<& str> {
         self.group_by_attribute.as_deref()
     }
 }
@@ -56,8 +56,7 @@ impl InsightBuilder {
     }
     /// <p>The ARN of a Security Hub insight.</p>
     pub fn set_insight_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.insight_arn = input;
-        self
+        self.insight_arn = input; self
     }
     /// <p>The ARN of a Security Hub insight.</p>
     pub fn get_insight_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl InsightBuilder {
     }
     /// <p>The name of a Security Hub insight.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of a Security Hub insight.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +84,7 @@ impl InsightBuilder {
     }
     /// <p>One or more attributes used to filter the findings included in the insight. The insight only includes findings that match the criteria defined in the filters.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::AwsSecurityFindingFilters>) -> Self {
-        self.filters = input;
-        self
+        self.filters = input; self
     }
     /// <p>One or more attributes used to filter the findings included in the insight. The insight only includes findings that match the criteria defined in the filters.</p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::AwsSecurityFindingFilters> {
@@ -101,8 +98,7 @@ impl InsightBuilder {
     }
     /// <p>The grouping attribute for the insight's findings. Indicates how to group the matching findings, and identifies the type of item that the insight applies to. For example, if an insight is grouped by resource identifier, then the insight produces a list of resource identifiers.</p>
     pub fn set_group_by_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_by_attribute = input;
-        self
+        self.group_by_attribute = input; self
     }
     /// <p>The grouping attribute for the insight's findings. Indicates how to group the matching findings, and identifies the type of item that the insight applies to. For example, if an insight is grouped by resource identifier, then the insight produces a list of resource identifiers.</p>
     pub fn get_group_by_attribute(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,10 +107,15 @@ impl InsightBuilder {
     /// Consumes the builder and constructs a [`Insight`](crate::types::Insight).
     pub fn build(self) -> crate::types::Insight {
         crate::types::Insight {
-            insight_arn: self.insight_arn,
-            name: self.name,
-            filters: self.filters,
-            group_by_attribute: self.group_by_attribute,
+            insight_arn: self.insight_arn
+            ,
+            name: self.name
+            ,
+            filters: self.filters
+            ,
+            group_by_attribute: self.group_by_attribute
+            ,
         }
     }
 }
+

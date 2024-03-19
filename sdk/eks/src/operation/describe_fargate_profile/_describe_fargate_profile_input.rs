@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFargateProfileInput {
+pub struct DescribeFargateProfileInput  {
     /// <p>The name of your cluster.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Fargate profile to describe.</p>
     pub fargate_profile_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeFargateProfileInput {
+impl  DescribeFargateProfileInput  {
     /// <p>The name of your cluster.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The name of the Fargate profile to describe.</p>
-    pub fn fargate_profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn fargate_profile_name(&self) -> ::std::option::Option<& str> {
         self.fargate_profile_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeFargateProfileInputBuilder {
     }
     /// <p>The name of your cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The name of your cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DescribeFargateProfileInputBuilder {
     }
     /// <p>The name of the Fargate profile to describe.</p>
     pub fn set_fargate_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fargate_profile_name = input;
-        self
+        self.fargate_profile_name = input; self
     }
     /// <p>The name of the Fargate profile to describe.</p>
     pub fn get_fargate_profile_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.fargate_profile_name
     }
     /// Consumes the builder and constructs a [`DescribeFargateProfileInput`](crate::operation::describe_fargate_profile::DescribeFargateProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_fargate_profile::DescribeFargateProfileInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_fargate_profile::DescribeFargateProfileInput {
-            cluster_name: self.cluster_name,
-            fargate_profile_name: self.fargate_profile_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_fargate_profile::DescribeFargateProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_fargate_profile::DescribeFargateProfileInput {
+                cluster_name: self.cluster_name
+                ,
+                fargate_profile_name: self.fargate_profile_name
+                ,
+            }
+        )
     }
 }
+

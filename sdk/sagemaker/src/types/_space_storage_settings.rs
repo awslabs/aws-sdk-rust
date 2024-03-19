@@ -3,13 +3,13 @@
 /// <p>The storage settings for a private space.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SpaceStorageSettings {
+pub struct SpaceStorageSettings  {
     /// <p>A collection of EBS storage settings for a private space.</p>
     pub ebs_storage_settings: ::std::option::Option<crate::types::EbsStorageSettings>,
 }
-impl SpaceStorageSettings {
+impl  SpaceStorageSettings  {
     /// <p>A collection of EBS storage settings for a private space.</p>
-    pub fn ebs_storage_settings(&self) -> ::std::option::Option<&crate::types::EbsStorageSettings> {
+    pub fn ebs_storage_settings(&self) -> ::std::option::Option<& crate::types::EbsStorageSettings> {
         self.ebs_storage_settings.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl SpaceStorageSettingsBuilder {
     }
     /// <p>A collection of EBS storage settings for a private space.</p>
     pub fn set_ebs_storage_settings(mut self, input: ::std::option::Option<crate::types::EbsStorageSettings>) -> Self {
-        self.ebs_storage_settings = input;
-        self
+        self.ebs_storage_settings = input; self
     }
     /// <p>A collection of EBS storage settings for a private space.</p>
     pub fn get_ebs_storage_settings(&self) -> &::std::option::Option<crate::types::EbsStorageSettings> {
@@ -44,7 +43,9 @@ impl SpaceStorageSettingsBuilder {
     /// Consumes the builder and constructs a [`SpaceStorageSettings`](crate::types::SpaceStorageSettings).
     pub fn build(self) -> crate::types::SpaceStorageSettings {
         crate::types::SpaceStorageSettings {
-            ebs_storage_settings: self.ebs_storage_settings,
+            ebs_storage_settings: self.ebs_storage_settings
+            ,
         }
     }
 }
+

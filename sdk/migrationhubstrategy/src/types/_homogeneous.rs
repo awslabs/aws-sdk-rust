@@ -3,16 +3,17 @@
 /// <p>The object containing details about homogeneous database preferences.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Homogeneous {
+pub struct Homogeneous  {
     /// <p>The target database engine for homogeneous database migration preferences.</p>
-    pub target_database_engine: ::std::option::Option<::std::vec::Vec<crate::types::HomogeneousTargetDatabaseEngine>>,
+    pub target_database_engine: ::std::option::Option<::std::vec::Vec::<crate::types::HomogeneousTargetDatabaseEngine>>,
 }
-impl Homogeneous {
+impl  Homogeneous  {
     /// <p>The target database engine for homogeneous database migration preferences.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_database_engine.is_none()`.
-    pub fn target_database_engine(&self) -> &[crate::types::HomogeneousTargetDatabaseEngine] {
-        self.target_database_engine.as_deref().unwrap_or_default()
+    pub fn target_database_engine(&self) -> & [crate::types::HomogeneousTargetDatabaseEngine] {
+        self.target_database_engine.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Homogeneous {
@@ -26,7 +27,7 @@ impl Homogeneous {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HomogeneousBuilder {
-    pub(crate) target_database_engine: ::std::option::Option<::std::vec::Vec<crate::types::HomogeneousTargetDatabaseEngine>>,
+    pub(crate) target_database_engine: ::std::option::Option<::std::vec::Vec::<crate::types::HomogeneousTargetDatabaseEngine>>,
 }
 impl HomogeneousBuilder {
     /// Appends an item to `target_database_engine`.
@@ -36,26 +37,24 @@ impl HomogeneousBuilder {
     /// <p>The target database engine for homogeneous database migration preferences.</p>
     pub fn target_database_engine(mut self, input: crate::types::HomogeneousTargetDatabaseEngine) -> Self {
         let mut v = self.target_database_engine.unwrap_or_default();
-        v.push(input);
-        self.target_database_engine = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.target_database_engine = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The target database engine for homogeneous database migration preferences.</p>
-    pub fn set_target_database_engine(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HomogeneousTargetDatabaseEngine>>,
-    ) -> Self {
-        self.target_database_engine = input;
-        self
+    pub fn set_target_database_engine(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::HomogeneousTargetDatabaseEngine>>) -> Self {
+        self.target_database_engine = input; self
     }
     /// <p>The target database engine for homogeneous database migration preferences.</p>
-    pub fn get_target_database_engine(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HomogeneousTargetDatabaseEngine>> {
+    pub fn get_target_database_engine(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::HomogeneousTargetDatabaseEngine>> {
         &self.target_database_engine
     }
     /// Consumes the builder and constructs a [`Homogeneous`](crate::types::Homogeneous).
     pub fn build(self) -> crate::types::Homogeneous {
         crate::types::Homogeneous {
-            target_database_engine: self.target_database_engine,
+            target_database_engine: self.target_database_engine
+            ,
         }
     }
 }
+

@@ -5,54 +5,50 @@ pub use crate::operation::list_batch_job_executions::_list_batch_job_executions_
 
 impl ListBatchJobExecutionsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::list_batch_job_executions::ListBatchJobExecutionsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_batch_job_executions::ListBatchJobExecutionsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.list_batch_job_executions();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::list_batch_job_executions::ListBatchJobExecutionsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::list_batch_job_executions::ListBatchJobExecutionsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.list_batch_job_executions();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ListBatchJobExecutions`.
-///
+/// 
 /// <p>Lists historical, current, and scheduled batch job executions for a specific application.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListBatchJobExecutionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsInputBuilder,
+                    inner: crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::list_batch_job_executions::ListBatchJobExecutionsOutput,
-        crate::operation::list_batch_job_executions::ListBatchJobExecutionsError,
-    > for ListBatchJobExecutionsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::list_batch_job_executions::ListBatchJobExecutionsOutput,
-            crate::operation::list_batch_job_executions::ListBatchJobExecutionsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::list_batch_job_executions::ListBatchJobExecutionsOutput,
+                    crate::operation::list_batch_job_executions::ListBatchJobExecutionsError,
+                > for ListBatchJobExecutionsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::list_batch_job_executions::ListBatchJobExecutionsOutput,
+                        crate::operation::list_batch_job_executions::ListBatchJobExecutionsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ListBatchJobExecutionsFluentBuilder {
     /// Creates a new `ListBatchJobExecutions`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,59 +57,50 @@ impl ListBatchJobExecutionsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_batch_job_executions::ListBatchJobExecutionsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_batch_job_executions::ListBatchJobExecutionsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::list_batch_job_executions::ListBatchJobExecutions::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::list_batch_job_executions::ListBatchJobExecutions::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::list_batch_job_executions::ListBatchJobExecutionsOutput,
-        crate::operation::list_batch_job_executions::ListBatchJobExecutionsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::list_batch_job_executions::ListBatchJobExecutionsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_batch_job_executions::ListBatchJobExecutionsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::list_batch_job_executions::ListBatchJobExecutions::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::list_batch_job_executions::ListBatchJobExecutions::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::list_batch_job_executions::ListBatchJobExecutionsOutput, crate::operation::list_batch_job_executions::ListBatchJobExecutionsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_batch_job_executions::paginator::ListBatchJobExecutionsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::list_batch_job_executions::paginator::ListBatchJobExecutionsPaginator {
-        crate::operation::list_batch_job_executions::paginator::ListBatchJobExecutionsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_batch_job_executions::paginator::ListBatchJobExecutionsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::list_batch_job_executions::paginator::ListBatchJobExecutionsPaginator {
+                                crate::operation::list_batch_job_executions::paginator::ListBatchJobExecutionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A pagination token to control the number of batch job executions displayed in the list.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -166,12 +153,12 @@ impl ListBatchJobExecutionsFluentBuilder {
         self
     }
     /// <p>The unique identifier of each batch job execution.</p>
-    pub fn set_execution_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_execution_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_execution_ids(input);
         self
     }
     /// <p>The unique identifier of each batch job execution.</p>
-    pub fn get_execution_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_execution_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_execution_ids()
     }
     /// <p>The name of each batch job execution.</p>
@@ -231,3 +218,4 @@ impl ListBatchJobExecutionsFluentBuilder {
         self.inner.get_started_before()
     }
 }
+

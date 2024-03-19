@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetClipInput {
+pub struct GetClipInput  {
     /// <p>The name of the stream for which to retrieve the media clip.</p>
     /// <p>You must specify either the StreamName or the StreamARN.</p>
     pub stream_name: ::std::option::Option<::std::string::String>,
@@ -12,19 +12,19 @@ pub struct GetClipInput {
     /// <p>The time range of the requested clip and the source of the timestamps.</p>
     pub clip_fragment_selector: ::std::option::Option<crate::types::ClipFragmentSelector>,
 }
-impl GetClipInput {
+impl  GetClipInput  {
     /// <p>The name of the stream for which to retrieve the media clip.</p>
     /// <p>You must specify either the StreamName or the StreamARN.</p>
-    pub fn stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn stream_name(&self) -> ::std::option::Option<& str> {
         self.stream_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the media clip.</p>
     /// <p>You must specify either the StreamName or the StreamARN.</p>
-    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
     /// <p>The time range of the requested clip and the source of the timestamps.</p>
-    pub fn clip_fragment_selector(&self) -> ::std::option::Option<&crate::types::ClipFragmentSelector> {
+    pub fn clip_fragment_selector(&self) -> ::std::option::Option<& crate::types::ClipFragmentSelector> {
         self.clip_fragment_selector.as_ref()
     }
 }
@@ -53,8 +53,7 @@ impl GetClipInputBuilder {
     /// <p>The name of the stream for which to retrieve the media clip.</p>
     /// <p>You must specify either the StreamName or the StreamARN.</p>
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_name = input;
-        self
+        self.stream_name = input; self
     }
     /// <p>The name of the stream for which to retrieve the media clip.</p>
     /// <p>You must specify either the StreamName or the StreamARN.</p>
@@ -70,8 +69,7 @@ impl GetClipInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the media clip.</p>
     /// <p>You must specify either the StreamName or the StreamARN.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the media clip.</p>
     /// <p>You must specify either the StreamName or the StreamARN.</p>
@@ -86,8 +84,7 @@ impl GetClipInputBuilder {
     }
     /// <p>The time range of the requested clip and the source of the timestamps.</p>
     pub fn set_clip_fragment_selector(mut self, input: ::std::option::Option<crate::types::ClipFragmentSelector>) -> Self {
-        self.clip_fragment_selector = input;
-        self
+        self.clip_fragment_selector = input; self
     }
     /// <p>The time range of the requested clip and the source of the timestamps.</p>
     pub fn get_clip_fragment_selector(&self) -> &::std::option::Option<crate::types::ClipFragmentSelector> {
@@ -95,10 +92,16 @@ impl GetClipInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetClipInput`](crate::operation::get_clip::GetClipInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_clip::GetClipInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_clip::GetClipInput {
-            stream_name: self.stream_name,
-            stream_arn: self.stream_arn,
-            clip_fragment_selector: self.clip_fragment_selector,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_clip::GetClipInput {
+                stream_name: self.stream_name
+                ,
+                stream_arn: self.stream_arn
+                ,
+                clip_fragment_selector: self.clip_fragment_selector
+                ,
+            }
+        )
     }
 }
+

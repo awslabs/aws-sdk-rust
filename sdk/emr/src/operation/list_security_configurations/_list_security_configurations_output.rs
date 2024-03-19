@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSecurityConfigurationsOutput {
+pub struct ListSecurityConfigurationsOutput  {
     /// <p>The creation date and time, and name, of each security configuration.</p>
-    pub security_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SecurityConfigurationSummary>>,
+    pub security_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::SecurityConfigurationSummary>>,
     /// <p>A pagination token that indicates the next set of results to retrieve. Include the marker in the next ListSecurityConfiguration call to retrieve the next page of results, if required.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListSecurityConfigurationsOutput {
+impl  ListSecurityConfigurationsOutput  {
     /// <p>The creation date and time, and name, of each security configuration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_configurations.is_none()`.
-    pub fn security_configurations(&self) -> &[crate::types::SecurityConfigurationSummary] {
-        self.security_configurations.as_deref().unwrap_or_default()
+    pub fn security_configurations(&self) -> & [crate::types::SecurityConfigurationSummary] {
+        self.security_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A pagination token that indicates the next set of results to retrieve. Include the marker in the next ListSecurityConfiguration call to retrieve the next page of results, if required.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListSecurityConfigurationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListSecurityConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListSecurityConfigurationsOutput`](crate::operation::list_security_configurations::ListSecurityConfigurationsOutput).
     pub fn builder() -> crate::operation::list_security_configurations::builders::ListSecurityConfigurationsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListSecurityConfigurationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSecurityConfigurationsOutputBuilder {
-    pub(crate) security_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SecurityConfigurationSummary>>,
+    pub(crate) security_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::SecurityConfigurationSummary>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListSecurityConfigurationsOutputBuilder {
     /// <p>The creation date and time, and name, of each security configuration.</p>
     pub fn security_configurations(mut self, input: crate::types::SecurityConfigurationSummary) -> Self {
         let mut v = self.security_configurations.unwrap_or_default();
-        v.push(input);
-        self.security_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.security_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The creation date and time, and name, of each security configuration.</p>
-    pub fn set_security_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityConfigurationSummary>>) -> Self {
-        self.security_configurations = input;
-        self
+    pub fn set_security_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SecurityConfigurationSummary>>) -> Self {
+        self.security_configurations = input; self
     }
     /// <p>The creation date and time, and name, of each security configuration.</p>
-    pub fn get_security_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityConfigurationSummary>> {
+    pub fn get_security_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SecurityConfigurationSummary>> {
         &self.security_configurations
     }
     /// <p>A pagination token that indicates the next set of results to retrieve. Include the marker in the next ListSecurityConfiguration call to retrieve the next page of results, if required.</p>
@@ -69,28 +69,30 @@ impl ListSecurityConfigurationsOutputBuilder {
     }
     /// <p>A pagination token that indicates the next set of results to retrieve. Include the marker in the next ListSecurityConfiguration call to retrieve the next page of results, if required.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>A pagination token that indicates the next set of results to retrieve. Include the marker in the next ListSecurityConfiguration call to retrieve the next page of results, if required.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListSecurityConfigurationsOutput`](crate::operation::list_security_configurations::ListSecurityConfigurationsOutput).
     pub fn build(self) -> crate::operation::list_security_configurations::ListSecurityConfigurationsOutput {
         crate::operation::list_security_configurations::ListSecurityConfigurationsOutput {
-            security_configurations: self.security_configurations,
-            marker: self.marker,
+            security_configurations: self.security_configurations
+            ,
+            marker: self.marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

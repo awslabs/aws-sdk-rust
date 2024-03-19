@@ -54,7 +54,7 @@ pub enum Error {
     &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
      \
     See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-Error) for what information is available for the error.")]
-    Unhandled(crate::error::sealed_unhandled::Unhandled),
+    Unhandled(crate::error::sealed_unhandled::Unhandled)
 }
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -81,64 +81,58 @@ impl ::std::fmt::Display for Error {
             Error::TooManyPoliciesException(inner) => inner.fmt(f),
             Error::TooManyTagsException(inner) => inner.fmt(f),
             Error::UnsupportedProtocolException(inner) => inner.fmt(f),
-            Error::Unhandled(_) => {
-                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
-                    write!(f, "unhandled error ({code})")
-                } else {
-                    f.write_str("unhandled error")
-                }
-            }
+            Error::Unhandled(_) => if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                                        write!(f, "unhandled error ({code})")
+                                    } else {
+                                        f.write_str("unhandled error")
+                                    }
         }
     }
 }
 impl From<::aws_smithy_types::error::operation::BuildError> for Error {
-    fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
-        Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source: value.into(),
-            meta: ::std::default::Default::default(),
-        })
-    }
-}
+                fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
+                    Error::Unhandled(crate::error::sealed_unhandled::Unhandled { source: value.into(), meta: ::std::default::Default::default() })
+                }
+            }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
-    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
-        match self {
-            Self::AccessPointNotFoundException(inner) => inner.meta(),
-            Self::CertificateNotFoundException(inner) => inner.meta(),
-            Self::DependencyThrottleException(inner) => inner.meta(),
-            Self::DuplicateAccessPointNameException(inner) => inner.meta(),
-            Self::DuplicateListenerException(inner) => inner.meta(),
-            Self::DuplicatePolicyNameException(inner) => inner.meta(),
-            Self::DuplicateTagKeysException(inner) => inner.meta(),
-            Self::InvalidConfigurationRequestException(inner) => inner.meta(),
-            Self::InvalidEndPointException(inner) => inner.meta(),
-            Self::InvalidSchemeException(inner) => inner.meta(),
-            Self::InvalidSecurityGroupException(inner) => inner.meta(),
-            Self::InvalidSubnetException(inner) => inner.meta(),
-            Self::ListenerNotFoundException(inner) => inner.meta(),
-            Self::LoadBalancerAttributeNotFoundException(inner) => inner.meta(),
-            Self::OperationNotPermittedException(inner) => inner.meta(),
-            Self::PolicyNotFoundException(inner) => inner.meta(),
-            Self::PolicyTypeNotFoundException(inner) => inner.meta(),
-            Self::SubnetNotFoundException(inner) => inner.meta(),
-            Self::TooManyAccessPointsException(inner) => inner.meta(),
-            Self::TooManyPoliciesException(inner) => inner.meta(),
-            Self::TooManyTagsException(inner) => inner.meta(),
-            Self::UnsupportedProtocolException(inner) => inner.meta(),
-            Self::Unhandled(inner) => &inner.meta,
-        }
-    }
-}
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_tags::AddTagsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+                fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+                    match self {
+                        Self::AccessPointNotFoundException(inner) => inner.meta(),
+Self::CertificateNotFoundException(inner) => inner.meta(),
+Self::DependencyThrottleException(inner) => inner.meta(),
+Self::DuplicateAccessPointNameException(inner) => inner.meta(),
+Self::DuplicateListenerException(inner) => inner.meta(),
+Self::DuplicatePolicyNameException(inner) => inner.meta(),
+Self::DuplicateTagKeysException(inner) => inner.meta(),
+Self::InvalidConfigurationRequestException(inner) => inner.meta(),
+Self::InvalidEndPointException(inner) => inner.meta(),
+Self::InvalidSchemeException(inner) => inner.meta(),
+Self::InvalidSecurityGroupException(inner) => inner.meta(),
+Self::InvalidSubnetException(inner) => inner.meta(),
+Self::ListenerNotFoundException(inner) => inner.meta(),
+Self::LoadBalancerAttributeNotFoundException(inner) => inner.meta(),
+Self::OperationNotPermittedException(inner) => inner.meta(),
+Self::PolicyNotFoundException(inner) => inner.meta(),
+Self::PolicyTypeNotFoundException(inner) => inner.meta(),
+Self::SubnetNotFoundException(inner) => inner.meta(),
+Self::TooManyAccessPointsException(inner) => inner.meta(),
+Self::TooManyPoliciesException(inner) => inner.meta(),
+Self::TooManyTagsException(inner) => inner.meta(),
+Self::UnsupportedProtocolException(inner) => inner.meta(),
+                        Self::Unhandled(inner) => &inner.meta,
+                    }
+                }
+            }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_tags::AddTagsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_tags::AddTagsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -152,28 +146,16 @@ impl From<crate::operation::add_tags::AddTagsError> for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -187,300 +169,191 @@ impl From<crate::operation::apply_security_groups_to_load_balancer::ApplySecurit
         }
     }
 }
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError> for Error {
     fn from(err: crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError) -> Self {
         match err {
-            crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError::AccessPointNotFoundException(inner) => {
-                Error::AccessPointNotFoundException(inner)
-            }
-            crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError::InvalidConfigurationRequestException(inner) => {
-                Error::InvalidConfigurationRequestException(inner)
-            }
-            crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError::InvalidSubnetException(inner) => {
-                Error::InvalidSubnetException(inner)
-            }
-            crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError::SubnetNotFoundException(inner) => {
-                Error::SubnetNotFoundException(inner)
-            }
+            crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
+            crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
+            crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError::InvalidSubnetException(inner) => Error::InvalidSubnetException(inner),
+            crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError::SubnetNotFoundException(inner) => Error::SubnetNotFoundException(inner),
             crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::configure_health_check::ConfigureHealthCheckError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::configure_health_check::ConfigureHealthCheckError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::configure_health_check::ConfigureHealthCheckError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::configure_health_check::ConfigureHealthCheckError> for Error {
     fn from(err: crate::operation::configure_health_check::ConfigureHealthCheckError) -> Self {
         match err {
-            crate::operation::configure_health_check::ConfigureHealthCheckError::AccessPointNotFoundException(inner) => {
-                Error::AccessPointNotFoundException(inner)
-            }
+            crate::operation::configure_health_check::ConfigureHealthCheckError::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
             crate::operation::configure_health_check::ConfigureHealthCheckError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyError> for Error {
     fn from(err: crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyError) -> Self {
         match err {
-            crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyError::AccessPointNotFoundException(inner) => {
-                Error::AccessPointNotFoundException(inner)
-            }
-            crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyError::DuplicatePolicyNameException(inner) => {
-                Error::DuplicatePolicyNameException(inner)
-            }
-            crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyError::InvalidConfigurationRequestException(
-                inner,
-            ) => Error::InvalidConfigurationRequestException(inner),
-            crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyError::TooManyPoliciesException(inner) => {
-                Error::TooManyPoliciesException(inner)
-            }
+            crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyError::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
+            crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyError::DuplicatePolicyNameException(inner) => Error::DuplicatePolicyNameException(inner),
+            crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyError::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
+            crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyError::TooManyPoliciesException(inner) => Error::TooManyPoliciesException(inner),
             crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_lb_cookie_stickiness_policy::CreateLBCookieStickinessPolicyError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_lb_cookie_stickiness_policy::CreateLBCookieStickinessPolicyError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_lb_cookie_stickiness_policy::CreateLBCookieStickinessPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_lb_cookie_stickiness_policy::CreateLBCookieStickinessPolicyError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::create_lb_cookie_stickiness_policy::CreateLBCookieStickinessPolicyError> for Error {
     fn from(err: crate::operation::create_lb_cookie_stickiness_policy::CreateLBCookieStickinessPolicyError) -> Self {
         match err {
-            crate::operation::create_lb_cookie_stickiness_policy::CreateLBCookieStickinessPolicyError::AccessPointNotFoundException(inner) => {
-                Error::AccessPointNotFoundException(inner)
-            }
-            crate::operation::create_lb_cookie_stickiness_policy::CreateLBCookieStickinessPolicyError::DuplicatePolicyNameException(inner) => {
-                Error::DuplicatePolicyNameException(inner)
-            }
-            crate::operation::create_lb_cookie_stickiness_policy::CreateLBCookieStickinessPolicyError::InvalidConfigurationRequestException(
-                inner,
-            ) => Error::InvalidConfigurationRequestException(inner),
-            crate::operation::create_lb_cookie_stickiness_policy::CreateLBCookieStickinessPolicyError::TooManyPoliciesException(inner) => {
-                Error::TooManyPoliciesException(inner)
-            }
+            crate::operation::create_lb_cookie_stickiness_policy::CreateLBCookieStickinessPolicyError::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
+            crate::operation::create_lb_cookie_stickiness_policy::CreateLBCookieStickinessPolicyError::DuplicatePolicyNameException(inner) => Error::DuplicatePolicyNameException(inner),
+            crate::operation::create_lb_cookie_stickiness_policy::CreateLBCookieStickinessPolicyError::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
+            crate::operation::create_lb_cookie_stickiness_policy::CreateLBCookieStickinessPolicyError::TooManyPoliciesException(inner) => Error::TooManyPoliciesException(inner),
             crate::operation::create_lb_cookie_stickiness_policy::CreateLBCookieStickinessPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_load_balancer::CreateLoadBalancerError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_load_balancer::CreateLoadBalancerError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_load_balancer::CreateLoadBalancerError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::create_load_balancer::CreateLoadBalancerError> for Error {
     fn from(err: crate::operation::create_load_balancer::CreateLoadBalancerError) -> Self {
         match err {
-            crate::operation::create_load_balancer::CreateLoadBalancerError::CertificateNotFoundException(inner) => {
-                Error::CertificateNotFoundException(inner)
-            }
-            crate::operation::create_load_balancer::CreateLoadBalancerError::DuplicateAccessPointNameException(inner) => {
-                Error::DuplicateAccessPointNameException(inner)
-            }
-            crate::operation::create_load_balancer::CreateLoadBalancerError::DuplicateTagKeysException(inner) => {
-                Error::DuplicateTagKeysException(inner)
-            }
-            crate::operation::create_load_balancer::CreateLoadBalancerError::InvalidConfigurationRequestException(inner) => {
-                Error::InvalidConfigurationRequestException(inner)
-            }
+            crate::operation::create_load_balancer::CreateLoadBalancerError::CertificateNotFoundException(inner) => Error::CertificateNotFoundException(inner),
+            crate::operation::create_load_balancer::CreateLoadBalancerError::DuplicateAccessPointNameException(inner) => Error::DuplicateAccessPointNameException(inner),
+            crate::operation::create_load_balancer::CreateLoadBalancerError::DuplicateTagKeysException(inner) => Error::DuplicateTagKeysException(inner),
+            crate::operation::create_load_balancer::CreateLoadBalancerError::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
             crate::operation::create_load_balancer::CreateLoadBalancerError::InvalidSchemeException(inner) => Error::InvalidSchemeException(inner),
-            crate::operation::create_load_balancer::CreateLoadBalancerError::InvalidSecurityGroupException(inner) => {
-                Error::InvalidSecurityGroupException(inner)
-            }
+            crate::operation::create_load_balancer::CreateLoadBalancerError::InvalidSecurityGroupException(inner) => Error::InvalidSecurityGroupException(inner),
             crate::operation::create_load_balancer::CreateLoadBalancerError::InvalidSubnetException(inner) => Error::InvalidSubnetException(inner),
-            crate::operation::create_load_balancer::CreateLoadBalancerError::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
+            crate::operation::create_load_balancer::CreateLoadBalancerError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
             crate::operation::create_load_balancer::CreateLoadBalancerError::SubnetNotFoundException(inner) => Error::SubnetNotFoundException(inner),
-            crate::operation::create_load_balancer::CreateLoadBalancerError::TooManyAccessPointsException(inner) => {
-                Error::TooManyAccessPointsException(inner)
-            }
+            crate::operation::create_load_balancer::CreateLoadBalancerError::TooManyAccessPointsException(inner) => Error::TooManyAccessPointsException(inner),
             crate::operation::create_load_balancer::CreateLoadBalancerError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
-            crate::operation::create_load_balancer::CreateLoadBalancerError::UnsupportedProtocolException(inner) => {
-                Error::UnsupportedProtocolException(inner)
-            }
+            crate::operation::create_load_balancer::CreateLoadBalancerError::UnsupportedProtocolException(inner) => Error::UnsupportedProtocolException(inner),
             crate::operation::create_load_balancer::CreateLoadBalancerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersError> for Error {
     fn from(err: crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersError) -> Self {
         match err {
-            crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersError::AccessPointNotFoundException(inner) => {
-                Error::AccessPointNotFoundException(inner)
-            }
-            crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersError::CertificateNotFoundException(inner) => {
-                Error::CertificateNotFoundException(inner)
-            }
-            crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersError::DuplicateListenerException(inner) => {
-                Error::DuplicateListenerException(inner)
-            }
-            crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersError::InvalidConfigurationRequestException(inner) => {
-                Error::InvalidConfigurationRequestException(inner)
-            }
-            crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersError::UnsupportedProtocolException(inner) => {
-                Error::UnsupportedProtocolException(inner)
-            }
+            crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersError::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
+            crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersError::CertificateNotFoundException(inner) => Error::CertificateNotFoundException(inner),
+            crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersError::DuplicateListenerException(inner) => Error::DuplicateListenerException(inner),
+            crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersError::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
+            crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersError::UnsupportedProtocolException(inner) => Error::UnsupportedProtocolException(inner),
             crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError> for Error {
     fn from(err: crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError) -> Self {
         match err {
-            crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError::AccessPointNotFoundException(inner) => {
-                Error::AccessPointNotFoundException(inner)
-            }
-            crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError::DuplicatePolicyNameException(inner) => {
-                Error::DuplicatePolicyNameException(inner)
-            }
-            crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError::InvalidConfigurationRequestException(inner) => {
-                Error::InvalidConfigurationRequestException(inner)
-            }
-            crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError::PolicyTypeNotFoundException(inner) => {
-                Error::PolicyTypeNotFoundException(inner)
-            }
-            crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError::TooManyPoliciesException(inner) => {
-                Error::TooManyPoliciesException(inner)
-            }
+            crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
+            crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError::DuplicatePolicyNameException(inner) => Error::DuplicatePolicyNameException(inner),
+            crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
+            crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError::PolicyTypeNotFoundException(inner) => Error::PolicyTypeNotFoundException(inner),
+            crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError::TooManyPoliciesException(inner) => Error::TooManyPoliciesException(inner),
             crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_load_balancer::DeleteLoadBalancerError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_load_balancer::DeleteLoadBalancerError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_load_balancer::DeleteLoadBalancerError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -491,120 +364,81 @@ impl From<crate::operation::delete_load_balancer::DeleteLoadBalancerError> for E
         }
     }
 }
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersError> for Error {
     fn from(err: crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersError) -> Self {
         match err {
-            crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersError::AccessPointNotFoundException(inner) => {
-                Error::AccessPointNotFoundException(inner)
-            }
+            crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersError::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
             crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyError> for Error {
     fn from(err: crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyError) -> Self {
         match err {
-            crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyError::AccessPointNotFoundException(inner) => {
-                Error::AccessPointNotFoundException(inner)
-            }
-            crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyError::InvalidConfigurationRequestException(inner) => {
-                Error::InvalidConfigurationRequestException(inner)
-            }
+            crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyError::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
+            crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyError::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
             crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::deregister_instances_from_load_balancer::DeregisterInstancesFromLoadBalancerError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::deregister_instances_from_load_balancer::DeregisterInstancesFromLoadBalancerError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::deregister_instances_from_load_balancer::DeregisterInstancesFromLoadBalancerError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::deregister_instances_from_load_balancer::DeregisterInstancesFromLoadBalancerError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::deregister_instances_from_load_balancer::DeregisterInstancesFromLoadBalancerError> for Error {
     fn from(err: crate::operation::deregister_instances_from_load_balancer::DeregisterInstancesFromLoadBalancerError) -> Self {
         match err {
-            crate::operation::deregister_instances_from_load_balancer::DeregisterInstancesFromLoadBalancerError::AccessPointNotFoundException(
-                inner,
-            ) => Error::AccessPointNotFoundException(inner),
-            crate::operation::deregister_instances_from_load_balancer::DeregisterInstancesFromLoadBalancerError::InvalidEndPointException(inner) => {
-                Error::InvalidEndPointException(inner)
-            }
-            crate::operation::deregister_instances_from_load_balancer::DeregisterInstancesFromLoadBalancerError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::deregister_instances_from_load_balancer::DeregisterInstancesFromLoadBalancerError::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
+            crate::operation::deregister_instances_from_load_balancer::DeregisterInstancesFromLoadBalancerError::InvalidEndPointException(inner) => Error::InvalidEndPointException(inner),
+            crate::operation::deregister_instances_from_load_balancer::DeregisterInstancesFromLoadBalancerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_account_limits::DescribeAccountLimitsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_account_limits::DescribeAccountLimitsError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_account_limits::DescribeAccountLimitsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_account_limits::DescribeAccountLimitsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -615,182 +449,125 @@ impl From<crate::operation::describe_account_limits::DescribeAccountLimitsError>
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_instance_health::DescribeInstanceHealthError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_instance_health::DescribeInstanceHealthError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_instance_health::DescribeInstanceHealthError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_instance_health::DescribeInstanceHealthError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::describe_instance_health::DescribeInstanceHealthError> for Error {
     fn from(err: crate::operation::describe_instance_health::DescribeInstanceHealthError) -> Self {
         match err {
-            crate::operation::describe_instance_health::DescribeInstanceHealthError::AccessPointNotFoundException(inner) => {
-                Error::AccessPointNotFoundException(inner)
-            }
-            crate::operation::describe_instance_health::DescribeInstanceHealthError::InvalidEndPointException(inner) => {
-                Error::InvalidEndPointException(inner)
-            }
+            crate::operation::describe_instance_health::DescribeInstanceHealthError::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
+            crate::operation::describe_instance_health::DescribeInstanceHealthError::InvalidEndPointException(inner) => Error::InvalidEndPointException(inner),
             crate::operation::describe_instance_health::DescribeInstanceHealthError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesError> for Error {
     fn from(err: crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesError) -> Self {
         match err {
-            crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesError::AccessPointNotFoundException(inner) => {
-                Error::AccessPointNotFoundException(inner)
-            }
-            crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesError::LoadBalancerAttributeNotFoundException(
-                inner,
-            ) => Error::LoadBalancerAttributeNotFoundException(inner),
+            crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesError::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
+            crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesError::LoadBalancerAttributeNotFoundException(inner) => Error::LoadBalancerAttributeNotFoundException(inner),
             crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesError> for Error {
     fn from(err: crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesError) -> Self {
         match err {
-            crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesError::AccessPointNotFoundException(inner) => {
-                Error::AccessPointNotFoundException(inner)
-            }
-            crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesError::PolicyNotFoundException(inner) => {
-                Error::PolicyNotFoundException(inner)
-            }
+            crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesError::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
+            crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesError::PolicyNotFoundException(inner) => Error::PolicyNotFoundException(inner),
             crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesError> for Error {
     fn from(err: crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesError) -> Self {
         match err {
-            crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesError::PolicyTypeNotFoundException(inner) => {
-                Error::PolicyTypeNotFoundException(inner)
-            }
+            crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesError::PolicyTypeNotFoundException(inner) => Error::PolicyTypeNotFoundException(inner),
             crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_load_balancers::DescribeLoadBalancersError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_load_balancers::DescribeLoadBalancersError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_load_balancers::DescribeLoadBalancersError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_load_balancers::DescribeLoadBalancersError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::describe_load_balancers::DescribeLoadBalancersError> for Error {
     fn from(err: crate::operation::describe_load_balancers::DescribeLoadBalancersError) -> Self {
         match err {
-            crate::operation::describe_load_balancers::DescribeLoadBalancersError::AccessPointNotFoundException(inner) => {
-                Error::AccessPointNotFoundException(inner)
-            }
-            crate::operation::describe_load_balancers::DescribeLoadBalancersError::DependencyThrottleException(inner) => {
-                Error::DependencyThrottleException(inner)
-            }
+            crate::operation::describe_load_balancers::DescribeLoadBalancersError::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
+            crate::operation::describe_load_balancers::DescribeLoadBalancersError::DependencyThrottleException(inner) => Error::DependencyThrottleException(inner),
             crate::operation::describe_load_balancers::DescribeLoadBalancersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_tags::DescribeTagsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_tags::DescribeTagsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_tags::DescribeTagsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -802,66 +579,38 @@ impl From<crate::operation::describe_tags::DescribeTagsError> for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::detach_load_balancer_from_subnets::DetachLoadBalancerFromSubnetsError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::detach_load_balancer_from_subnets::DetachLoadBalancerFromSubnetsError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::detach_load_balancer_from_subnets::DetachLoadBalancerFromSubnetsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::detach_load_balancer_from_subnets::DetachLoadBalancerFromSubnetsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::detach_load_balancer_from_subnets::DetachLoadBalancerFromSubnetsError> for Error {
     fn from(err: crate::operation::detach_load_balancer_from_subnets::DetachLoadBalancerFromSubnetsError) -> Self {
         match err {
-            crate::operation::detach_load_balancer_from_subnets::DetachLoadBalancerFromSubnetsError::AccessPointNotFoundException(inner) => {
-                Error::AccessPointNotFoundException(inner)
-            }
-            crate::operation::detach_load_balancer_from_subnets::DetachLoadBalancerFromSubnetsError::InvalidConfigurationRequestException(inner) => {
-                Error::InvalidConfigurationRequestException(inner)
-            }
+            crate::operation::detach_load_balancer_from_subnets::DetachLoadBalancerFromSubnetsError::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
+            crate::operation::detach_load_balancer_from_subnets::DetachLoadBalancerFromSubnetsError::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
             crate::operation::detach_load_balancer_from_subnets::DetachLoadBalancerFromSubnetsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::disable_availability_zones_for_load_balancer::DisableAvailabilityZonesForLoadBalancerError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::disable_availability_zones_for_load_balancer::DisableAvailabilityZonesForLoadBalancerError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disable_availability_zones_for_load_balancer::DisableAvailabilityZonesForLoadBalancerError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disable_availability_zones_for_load_balancer::DisableAvailabilityZonesForLoadBalancerError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -874,28 +623,16 @@ impl From<crate::operation::disable_availability_zones_for_load_balancer::Disabl
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::enable_availability_zones_for_load_balancer::EnableAvailabilityZonesForLoadBalancerError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::enable_availability_zones_for_load_balancer::EnableAvailabilityZonesForLoadBalancerError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::enable_availability_zones_for_load_balancer::EnableAvailabilityZonesForLoadBalancerError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::enable_availability_zones_for_load_balancer::EnableAvailabilityZonesForLoadBalancerError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -907,94 +644,61 @@ impl From<crate::operation::enable_availability_zones_for_load_balancer::EnableA
         }
     }
 }
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError> for Error {
     fn from(err: crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError) -> Self {
         match err {
-            crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError::AccessPointNotFoundException(inner) => {
-                Error::AccessPointNotFoundException(inner)
-            }
-            crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError::InvalidConfigurationRequestException(inner) => {
-                Error::InvalidConfigurationRequestException(inner)
-            }
-            crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError::LoadBalancerAttributeNotFoundException(inner) => {
-                Error::LoadBalancerAttributeNotFoundException(inner)
-            }
+            crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
+            crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
+            crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError::LoadBalancerAttributeNotFoundException(inner) => Error::LoadBalancerAttributeNotFoundException(inner),
             crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::register_instances_with_load_balancer::RegisterInstancesWithLoadBalancerError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::register_instances_with_load_balancer::RegisterInstancesWithLoadBalancerError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::register_instances_with_load_balancer::RegisterInstancesWithLoadBalancerError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::register_instances_with_load_balancer::RegisterInstancesWithLoadBalancerError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::register_instances_with_load_balancer::RegisterInstancesWithLoadBalancerError> for Error {
     fn from(err: crate::operation::register_instances_with_load_balancer::RegisterInstancesWithLoadBalancerError) -> Self {
         match err {
-            crate::operation::register_instances_with_load_balancer::RegisterInstancesWithLoadBalancerError::AccessPointNotFoundException(inner) => {
-                Error::AccessPointNotFoundException(inner)
-            }
-            crate::operation::register_instances_with_load_balancer::RegisterInstancesWithLoadBalancerError::InvalidEndPointException(inner) => {
-                Error::InvalidEndPointException(inner)
-            }
-            crate::operation::register_instances_with_load_balancer::RegisterInstancesWithLoadBalancerError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::register_instances_with_load_balancer::RegisterInstancesWithLoadBalancerError::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
+            crate::operation::register_instances_with_load_balancer::RegisterInstancesWithLoadBalancerError::InvalidEndPointException(inner) => Error::InvalidEndPointException(inner),
+            crate::operation::register_instances_with_load_balancer::RegisterInstancesWithLoadBalancerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::remove_tags::RemoveTagsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::remove_tags::RemoveTagsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::remove_tags::RemoveTagsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1006,28 +710,16 @@ impl From<crate::operation::remove_tags::RemoveTagsError> for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::set_load_balancer_listener_ssl_certificate::SetLoadBalancerListenerSSLCertificateError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::set_load_balancer_listener_ssl_certificate::SetLoadBalancerListenerSSLCertificateError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::set_load_balancer_listener_ssl_certificate::SetLoadBalancerListenerSSLCertificateError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::set_load_balancer_listener_ssl_certificate::SetLoadBalancerListenerSSLCertificateError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1043,28 +735,16 @@ impl From<crate::operation::set_load_balancer_listener_ssl_certificate::SetLoadB
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1078,28 +758,16 @@ impl From<crate::operation::set_load_balancer_policies_for_backend_server::SetLo
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::set_load_balancer_policies_of_listener::SetLoadBalancerPoliciesOfListenerError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::set_load_balancer_policies_of_listener::SetLoadBalancerPoliciesOfListenerError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::set_load_balancer_policies_of_listener::SetLoadBalancerPoliciesOfListenerError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::set_load_balancer_policies_of_listener::SetLoadBalancerPoliciesOfListenerError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -1139,7 +807,7 @@ impl ::std::error::Error for Error {
             Error::TooManyPoliciesException(inner) => inner.source(),
             Error::TooManyTagsException(inner) => inner.source(),
             Error::UnsupportedProtocolException(inner) => inner.source(),
-            Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
+            Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source)
         }
     }
 }
@@ -1172,3 +840,4 @@ impl ::aws_types::request_id::RequestId for Error {
         }
     }
 }
+

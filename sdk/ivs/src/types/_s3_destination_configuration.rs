@@ -3,15 +3,14 @@
 /// <p>A complex type that describes an S3 location where recorded videos will be stored.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3DestinationConfiguration {
+pub struct S3DestinationConfiguration  {
     /// <p>Location (S3 bucket name) where recorded videos will be stored.</p>
     pub bucket_name: ::std::string::String,
 }
-impl S3DestinationConfiguration {
+impl  S3DestinationConfiguration  {
     /// <p>Location (S3 bucket name) where recorded videos will be stored.</p>
-    pub fn bucket_name(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket_name.deref()
+    pub fn bucket_name(&self) -> & str {
+        use std::ops::Deref; self.bucket_name.deref()
     }
 }
 impl S3DestinationConfiguration {
@@ -36,8 +35,7 @@ impl S3DestinationConfigurationBuilder {
     }
     /// <p>Location (S3 bucket name) where recorded videos will be stored.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>Location (S3 bucket name) where recorded videos will be stored.</p>
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl S3DestinationConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`bucket_name`](crate::types::builders::S3DestinationConfigurationBuilder::bucket_name)
     pub fn build(self) -> ::std::result::Result<crate::types::S3DestinationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3DestinationConfiguration {
-            bucket_name: self.bucket_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket_name",
-                    "bucket_name was not specified but it is required when building S3DestinationConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3DestinationConfiguration {
+                bucket_name: self.bucket_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket_name", "bucket_name was not specified but it is required when building S3DestinationConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

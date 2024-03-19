@@ -3,22 +3,20 @@
 /// <p>Contains information about a parameter object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ParameterObject {
+pub struct ParameterObject  {
     /// <p>The ID of the parameter object.</p>
     pub id: ::std::string::String,
     /// <p>The attributes of the parameter object.</p>
-    pub attributes: ::std::vec::Vec<crate::types::ParameterAttribute>,
+    pub attributes: ::std::vec::Vec::<crate::types::ParameterAttribute>,
 }
-impl ParameterObject {
+impl  ParameterObject  {
     /// <p>The ID of the parameter object.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The attributes of the parameter object.</p>
-    pub fn attributes(&self) -> &[crate::types::ParameterAttribute] {
-        use std::ops::Deref;
-        self.attributes.deref()
+    pub fn attributes(&self) -> & [crate::types::ParameterAttribute] {
+        use std::ops::Deref; self.attributes.deref()
     }
 }
 impl ParameterObject {
@@ -33,7 +31,7 @@ impl ParameterObject {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParameterObjectBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::ParameterAttribute>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec::<crate::types::ParameterAttribute>>,
 }
 impl ParameterObjectBuilder {
     /// <p>The ID of the parameter object.</p>
@@ -44,8 +42,7 @@ impl ParameterObjectBuilder {
     }
     /// <p>The ID of the parameter object.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the parameter object.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,17 +55,16 @@ impl ParameterObjectBuilder {
     /// <p>The attributes of the parameter object.</p>
     pub fn attributes(mut self, input: crate::types::ParameterAttribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The attributes of the parameter object.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterAttribute>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ParameterAttribute>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>The attributes of the parameter object.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterAttribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ParameterAttribute>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`ParameterObject`](crate::types::ParameterObject).
@@ -76,19 +72,20 @@ impl ParameterObjectBuilder {
     /// - [`id`](crate::types::builders::ParameterObjectBuilder::id)
     /// - [`attributes`](crate::types::builders::ParameterObjectBuilder::attributes)
     pub fn build(self) -> ::std::result::Result<crate::types::ParameterObject, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ParameterObject {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building ParameterObject",
-                )
-            })?,
-            attributes: self.attributes.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attributes",
-                    "attributes was not specified but it is required when building ParameterObject",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ParameterObject {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building ParameterObject")
+                    )?
+                ,
+                attributes: self.attributes
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attributes", "attributes was not specified but it is required when building ParameterObject")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let migrationerrortype = unimplemented!();
 /// match migrationerrortype {
@@ -35,16 +35,14 @@
 /// Specifically, when `migrationerrortype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MigrationErrorType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum MigrationErrorType {
     #[allow(missing_docs)] // documentation missing in model
     EntityNotFound,
@@ -62,84 +60,77 @@ pub enum MigrationErrorType {
     S3InternalError,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for MigrationErrorType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ENTITY_NOT_FOUND" => MigrationErrorType::EntityNotFound,
-            "ENTITY_NOT_SUPPORTED" => MigrationErrorType::EntityNotSupported,
-            "S3_BUCKET_INVALID_REGION" => MigrationErrorType::S3BucketInvalidRegion,
-            "S3_BUCKET_NOT_ACCESSIBLE" => MigrationErrorType::S3BucketNotAccessible,
-            "S3_BUCKET_NOT_FOUND" => MigrationErrorType::S3BucketNotFound,
-            "S3_BUCKET_NO_PERMISSION" => MigrationErrorType::S3BucketNoPermission,
-            "S3_INTERNAL_ERROR" => MigrationErrorType::S3InternalError,
-            other => MigrationErrorType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ENTITY_NOT_FOUND" => MigrationErrorType::EntityNotFound,
+"ENTITY_NOT_SUPPORTED" => MigrationErrorType::EntityNotSupported,
+"S3_BUCKET_INVALID_REGION" => MigrationErrorType::S3BucketInvalidRegion,
+"S3_BUCKET_NOT_ACCESSIBLE" => MigrationErrorType::S3BucketNotAccessible,
+"S3_BUCKET_NOT_FOUND" => MigrationErrorType::S3BucketNotFound,
+"S3_BUCKET_NO_PERMISSION" => MigrationErrorType::S3BucketNoPermission,
+"S3_INTERNAL_ERROR" => MigrationErrorType::S3InternalError,
+other => MigrationErrorType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for MigrationErrorType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(MigrationErrorType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(MigrationErrorType::from(s))
+                    }
+                }
 impl MigrationErrorType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MigrationErrorType::EntityNotFound => "ENTITY_NOT_FOUND",
-            MigrationErrorType::EntityNotSupported => "ENTITY_NOT_SUPPORTED",
-            MigrationErrorType::S3BucketInvalidRegion => "S3_BUCKET_INVALID_REGION",
-            MigrationErrorType::S3BucketNotAccessible => "S3_BUCKET_NOT_ACCESSIBLE",
-            MigrationErrorType::S3BucketNotFound => "S3_BUCKET_NOT_FOUND",
-            MigrationErrorType::S3BucketNoPermission => "S3_BUCKET_NO_PERMISSION",
-            MigrationErrorType::S3InternalError => "S3_INTERNAL_ERROR",
-            MigrationErrorType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ENTITY_NOT_FOUND",
-            "ENTITY_NOT_SUPPORTED",
-            "S3_BUCKET_INVALID_REGION",
-            "S3_BUCKET_NOT_ACCESSIBLE",
-            "S3_BUCKET_NOT_FOUND",
-            "S3_BUCKET_NO_PERMISSION",
-            "S3_INTERNAL_ERROR",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MigrationErrorType::EntityNotFound => "ENTITY_NOT_FOUND",
+    MigrationErrorType::EntityNotSupported => "ENTITY_NOT_SUPPORTED",
+    MigrationErrorType::S3BucketInvalidRegion => "S3_BUCKET_INVALID_REGION",
+    MigrationErrorType::S3BucketNotAccessible => "S3_BUCKET_NOT_ACCESSIBLE",
+    MigrationErrorType::S3BucketNotFound => "S3_BUCKET_NOT_FOUND",
+    MigrationErrorType::S3BucketNoPermission => "S3_BUCKET_NO_PERMISSION",
+    MigrationErrorType::S3InternalError => "S3_INTERNAL_ERROR",
+    MigrationErrorType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ENTITY_NOT_FOUND", "ENTITY_NOT_SUPPORTED", "S3_BUCKET_INVALID_REGION", "S3_BUCKET_NOT_ACCESSIBLE", "S3_BUCKET_NOT_FOUND", "S3_BUCKET_NO_PERMISSION", "S3_INTERNAL_ERROR"]
+                }
+            }
 impl ::std::convert::AsRef<str> for MigrationErrorType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl MigrationErrorType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for MigrationErrorType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            MigrationErrorType::EntityNotFound => write!(f, "ENTITY_NOT_FOUND"),
-            MigrationErrorType::EntityNotSupported => write!(f, "ENTITY_NOT_SUPPORTED"),
-            MigrationErrorType::S3BucketInvalidRegion => write!(f, "S3_BUCKET_INVALID_REGION"),
-            MigrationErrorType::S3BucketNotAccessible => write!(f, "S3_BUCKET_NOT_ACCESSIBLE"),
-            MigrationErrorType::S3BucketNotFound => write!(f, "S3_BUCKET_NOT_FOUND"),
-            MigrationErrorType::S3BucketNoPermission => write!(f, "S3_BUCKET_NO_PERMISSION"),
-            MigrationErrorType::S3InternalError => write!(f, "S3_INTERNAL_ERROR"),
-            MigrationErrorType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                MigrationErrorType::EntityNotFound => write!(f, "ENTITY_NOT_FOUND"),
+MigrationErrorType::EntityNotSupported => write!(f, "ENTITY_NOT_SUPPORTED"),
+MigrationErrorType::S3BucketInvalidRegion => write!(f, "S3_BUCKET_INVALID_REGION"),
+MigrationErrorType::S3BucketNotAccessible => write!(f, "S3_BUCKET_NOT_ACCESSIBLE"),
+MigrationErrorType::S3BucketNotFound => write!(f, "S3_BUCKET_NOT_FOUND"),
+MigrationErrorType::S3BucketNoPermission => write!(f, "S3_BUCKET_NO_PERMISSION"),
+MigrationErrorType::S3InternalError => write!(f, "S3_INTERNAL_ERROR"),
+MigrationErrorType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

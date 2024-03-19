@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListComponents`](crate::operation::list_components::builders::ListComponentsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_components::builders::ListComponentsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`scope(ComponentVisibilityScope)`](crate::operation::list_components::builders::ListComponentsFluentBuilder::scope) / [`set_scope(Option<ComponentVisibilityScope>)`](crate::operation::list_components::builders::ListComponentsFluentBuilder::set_scope):<br>required: **false**<br><p>The scope of the components to list.</p> <p>Default: <code>PRIVATE</code></p><br>
     ///   - [`max_results(i32)`](crate::operation::list_components::builders::ListComponentsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_components::builders::ListComponentsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to be returned per paginated request.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_components::builders::ListComponentsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_components::builders::ListComponentsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to be used for the next set of paginated results.</p><br>
-    /// - On success, responds with [`ListComponentsOutput`](crate::operation::list_components::ListComponentsOutput) with field(s):
+                            /// - On success, responds with [`ListComponentsOutput`](crate::operation::list_components::ListComponentsOutput) with field(s):
     ///   - [`components(Option<Vec::<Component>>)`](crate::operation::list_components::ListComponentsOutput::components): <p>A list that summarizes each component.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_components::ListComponentsOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<ListComponentsError>`](crate::operation::list_components::ListComponentsError)
+                            /// - On failure, responds with [`SdkError<ListComponentsError>`](crate::operation::list_components::ListComponentsError)
     pub fn list_components(&self) -> crate::operation::list_components::builders::ListComponentsFluentBuilder {
-        crate::operation::list_components::builders::ListComponentsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_components::builders::ListComponentsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

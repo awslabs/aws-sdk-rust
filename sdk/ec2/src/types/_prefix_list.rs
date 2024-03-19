@@ -3,27 +3,28 @@
 /// <p>Describes prefixes for Amazon Web Services services.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PrefixList {
+pub struct PrefixList  {
     /// <p>The IP address range of the Amazon Web Service.</p>
-    pub cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub cidrs: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The ID of the prefix.</p>
     pub prefix_list_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the prefix.</p>
     pub prefix_list_name: ::std::option::Option<::std::string::String>,
 }
-impl PrefixList {
+impl  PrefixList  {
     /// <p>The IP address range of the Amazon Web Service.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cidrs.is_none()`.
-    pub fn cidrs(&self) -> &[::std::string::String] {
-        self.cidrs.as_deref().unwrap_or_default()
+    pub fn cidrs(&self) -> & [::std::string::String] {
+        self.cidrs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the prefix.</p>
-    pub fn prefix_list_id(&self) -> ::std::option::Option<&str> {
+    pub fn prefix_list_id(&self) -> ::std::option::Option<& str> {
         self.prefix_list_id.as_deref()
     }
     /// <p>The name of the prefix.</p>
-    pub fn prefix_list_name(&self) -> ::std::option::Option<&str> {
+    pub fn prefix_list_name(&self) -> ::std::option::Option<& str> {
         self.prefix_list_name.as_deref()
     }
 }
@@ -38,7 +39,7 @@ impl PrefixList {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PrefixListBuilder {
-    pub(crate) cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) cidrs: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) prefix_list_id: ::std::option::Option<::std::string::String>,
     pub(crate) prefix_list_name: ::std::option::Option<::std::string::String>,
 }
@@ -50,17 +51,16 @@ impl PrefixListBuilder {
     /// <p>The IP address range of the Amazon Web Service.</p>
     pub fn cidrs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cidrs.unwrap_or_default();
-        v.push(input.into());
-        self.cidrs = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.cidrs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IP address range of the Amazon Web Service.</p>
-    pub fn set_cidrs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.cidrs = input;
-        self
+    pub fn set_cidrs(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.cidrs = input; self
     }
     /// <p>The IP address range of the Amazon Web Service.</p>
-    pub fn get_cidrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cidrs(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.cidrs
     }
     /// <p>The ID of the prefix.</p>
@@ -70,8 +70,7 @@ impl PrefixListBuilder {
     }
     /// <p>The ID of the prefix.</p>
     pub fn set_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix_list_id = input;
-        self
+        self.prefix_list_id = input; self
     }
     /// <p>The ID of the prefix.</p>
     pub fn get_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl PrefixListBuilder {
     }
     /// <p>The name of the prefix.</p>
     pub fn set_prefix_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix_list_name = input;
-        self
+        self.prefix_list_name = input; self
     }
     /// <p>The name of the prefix.</p>
     pub fn get_prefix_list_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,9 +92,13 @@ impl PrefixListBuilder {
     /// Consumes the builder and constructs a [`PrefixList`](crate::types::PrefixList).
     pub fn build(self) -> crate::types::PrefixList {
         crate::types::PrefixList {
-            cidrs: self.cidrs,
-            prefix_list_id: self.prefix_list_id,
-            prefix_list_name: self.prefix_list_name,
+            cidrs: self.cidrs
+            ,
+            prefix_list_id: self.prefix_list_id
+            ,
+            prefix_list_name: self.prefix_list_name
+            ,
         }
     }
 }
+

@@ -4,11 +4,11 @@
 /// <p>No logic is applied to these ad markers. For example, if <code>EXT-X-CUE-OUT</code> has a value of <code>60</code>, but no ads are filled for that ad break, MediaTailor will not set the value to <code>0</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AdMarkerPassthrough {
+pub struct AdMarkerPassthrough  {
     /// <p>Enables ad marker passthrough for your configuration.</p>
     pub enabled: bool,
 }
-impl AdMarkerPassthrough {
+impl  AdMarkerPassthrough  {
     /// <p>Enables ad marker passthrough for your configuration.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
@@ -35,8 +35,7 @@ impl AdMarkerPassthroughBuilder {
     }
     /// <p>Enables ad marker passthrough for your configuration.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Enables ad marker passthrough for your configuration.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -45,7 +44,10 @@ impl AdMarkerPassthroughBuilder {
     /// Consumes the builder and constructs a [`AdMarkerPassthrough`](crate::types::AdMarkerPassthrough).
     pub fn build(self) -> crate::types::AdMarkerPassthrough {
         crate::types::AdMarkerPassthrough {
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

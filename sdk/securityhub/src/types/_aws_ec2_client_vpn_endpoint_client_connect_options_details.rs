@@ -3,7 +3,7 @@
 /// <p>The options for managing connection authorization for new client connections.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2ClientVpnEndpointClientConnectOptionsDetails {
+pub struct AwsEc2ClientVpnEndpointClientConnectOptionsDetails  {
     /// <p>Indicates whether client connect options are enabled.</p>
     pub enabled: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the Lambda function used for connection authorization.</p>
@@ -11,17 +11,17 @@ pub struct AwsEc2ClientVpnEndpointClientConnectOptionsDetails {
     /// <p>The status of any updates to the client connect options.</p>
     pub status: ::std::option::Option<crate::types::AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails>,
 }
-impl AwsEc2ClientVpnEndpointClientConnectOptionsDetails {
+impl  AwsEc2ClientVpnEndpointClientConnectOptionsDetails  {
     /// <p>Indicates whether client connect options are enabled.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function used for connection authorization.</p>
-    pub fn lambda_function_arn(&self) -> ::std::option::Option<&str> {
+    pub fn lambda_function_arn(&self) -> ::std::option::Option<& str> {
         self.lambda_function_arn.as_deref()
     }
     /// <p>The status of any updates to the client connect options.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails> {
         self.status.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl AwsEc2ClientVpnEndpointClientConnectOptionsDetailsBuilder {
     }
     /// <p>Indicates whether client connect options are enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Indicates whether client connect options are enabled.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -62,8 +61,7 @@ impl AwsEc2ClientVpnEndpointClientConnectOptionsDetailsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function used for connection authorization.</p>
     pub fn set_lambda_function_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lambda_function_arn = input;
-        self
+        self.lambda_function_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function used for connection authorization.</p>
     pub fn get_lambda_function_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl AwsEc2ClientVpnEndpointClientConnectOptionsDetailsBuilder {
     }
     /// <p>The status of any updates to the client connect options.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of any updates to the client connect options.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails> {
@@ -86,9 +83,13 @@ impl AwsEc2ClientVpnEndpointClientConnectOptionsDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEc2ClientVpnEndpointClientConnectOptionsDetails`](crate::types::AwsEc2ClientVpnEndpointClientConnectOptionsDetails).
     pub fn build(self) -> crate::types::AwsEc2ClientVpnEndpointClientConnectOptionsDetails {
         crate::types::AwsEc2ClientVpnEndpointClientConnectOptionsDetails {
-            enabled: self.enabled,
-            lambda_function_arn: self.lambda_function_arn,
-            status: self.status,
+            enabled: self.enabled
+            ,
+            lambda_function_arn: self.lambda_function_arn
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

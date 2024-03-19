@@ -5,55 +5,51 @@ pub use crate::operation::associate_encryption_config::_associate_encryption_con
 
 impl AssociateEncryptionConfigInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::associate_encryption_config::AssociateEncryptionConfigOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::associate_encryption_config::AssociateEncryptionConfigError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.associate_encryption_config();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::associate_encryption_config::AssociateEncryptionConfigOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::associate_encryption_config::AssociateEncryptionConfigError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.associate_encryption_config();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `AssociateEncryptionConfig`.
-///
+/// 
 /// <p>Associates an encryption configuration to an existing cluster.</p>
 /// <p>Use this API to enable encryption on existing clusters that don't already have encryption enabled. This allows you to implement a defense-in-depth security strategy without migrating applications to new Amazon EKS clusters.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateEncryptionConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::associate_encryption_config::builders::AssociateEncryptionConfigInputBuilder,
+                    inner: crate::operation::associate_encryption_config::builders::AssociateEncryptionConfigInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::associate_encryption_config::AssociateEncryptionConfigOutput,
-        crate::operation::associate_encryption_config::AssociateEncryptionConfigError,
-    > for AssociateEncryptionConfigFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::associate_encryption_config::AssociateEncryptionConfigOutput,
-            crate::operation::associate_encryption_config::AssociateEncryptionConfigError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::associate_encryption_config::AssociateEncryptionConfigOutput,
+                    crate::operation::associate_encryption_config::AssociateEncryptionConfigError,
+                > for AssociateEncryptionConfigFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::associate_encryption_config::AssociateEncryptionConfigOutput,
+                        crate::operation::associate_encryption_config::AssociateEncryptionConfigError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl AssociateEncryptionConfigFluentBuilder {
     /// Creates a new `AssociateEncryptionConfig`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl AssociateEncryptionConfigFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_encryption_config::AssociateEncryptionConfigOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::associate_encryption_config::AssociateEncryptionConfigError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::associate_encryption_config::AssociateEncryptionConfig::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::associate_encryption_config::AssociateEncryptionConfig::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::associate_encryption_config::AssociateEncryptionConfigOutput,
-        crate::operation::associate_encryption_config::AssociateEncryptionConfigError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::associate_encryption_config::AssociateEncryptionConfigOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_encryption_config::AssociateEncryptionConfigError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::associate_encryption_config::AssociateEncryptionConfig::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::associate_encryption_config::AssociateEncryptionConfig::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::associate_encryption_config::AssociateEncryptionConfigOutput, crate::operation::associate_encryption_config::AssociateEncryptionConfigError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of your cluster.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_name(input.into());
@@ -133,12 +120,12 @@ impl AssociateEncryptionConfigFluentBuilder {
         self
     }
     /// <p>The configuration you are using for encryption.</p>
-    pub fn set_encryption_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>>) -> Self {
+    pub fn set_encryption_config(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EncryptionConfig>>) -> Self {
         self.inner = self.inner.set_encryption_config(input);
         self
     }
     /// <p>The configuration you are using for encryption.</p>
-    pub fn get_encryption_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>> {
+    pub fn get_encryption_config(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EncryptionConfig>> {
         self.inner.get_encryption_config()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -156,3 +143,4 @@ impl AssociateEncryptionConfigFluentBuilder {
         self.inner.get_client_request_token()
     }
 }
+

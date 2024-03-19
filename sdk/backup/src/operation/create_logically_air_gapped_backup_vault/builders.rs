@@ -5,23 +5,20 @@ pub use crate::operation::create_logically_air_gapped_backup_vault::_create_logi
 
 impl CreateLogicallyAirGappedBackupVaultInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_logically_air_gapped_backup_vault();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_logically_air_gapped_backup_vault();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateLogicallyAirGappedBackupVault`.
-///
+/// 
 /// <p>This request creates a logical container to where backups may be copied.</p>
 /// <p>This request includes a name, the Region, the maximum number of retention days, the minimum number of retention days, and optionally can include tags and a creator request ID.</p><note>
 /// <p>Do not include sensitive data, such as passport numbers, in the name of a backup vault.</p>
@@ -29,33 +26,32 @@ impl CreateLogicallyAirGappedBackupVaultInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLogicallyAirGappedBackupVaultFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_logically_air_gapped_backup_vault::builders::CreateLogicallyAirGappedBackupVaultInputBuilder,
+                    inner: crate::operation::create_logically_air_gapped_backup_vault::builders::CreateLogicallyAirGappedBackupVaultInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultOutput,
-        crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultError,
-    > for CreateLogicallyAirGappedBackupVaultFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultOutput,
-            crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultOutput,
+                    crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultError,
+                > for CreateLogicallyAirGappedBackupVaultFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultOutput,
+                        crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateLogicallyAirGappedBackupVaultFluentBuilder {
     /// Creates a new `CreateLogicallyAirGappedBackupVault`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,54 +60,44 @@ impl CreateLogicallyAirGappedBackupVaultFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins =
-            crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVault::operation_runtime_plugins(
-                self.handle.runtime_plugins.clone(),
-                &self.handle.conf,
-                self.config_override,
-            );
-        crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVault::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultOutput,
-        crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVault::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVault::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultOutput, crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>This is the name of the vault that is being created.</p>
     pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_vault_name(input.into());
@@ -131,24 +117,17 @@ impl CreateLogicallyAirGappedBackupVaultFluentBuilder {
     /// To override the contents of this collection use [`set_backup_vault_tags`](Self::set_backup_vault_tags).
     ///
     /// <p>These are the tags that will be included in the newly-created vault.</p>
-    pub fn backup_vault_tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_vault_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_vault_tags(k.into(), v.into());
         self
     }
     /// <p>These are the tags that will be included in the newly-created vault.</p>
-    pub fn set_backup_vault_tags(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
+    pub fn set_backup_vault_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_backup_vault_tags(input);
         self
     }
     /// <p>These are the tags that will be included in the newly-created vault.</p>
-    pub fn get_backup_vault_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_backup_vault_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_backup_vault_tags()
     }
     /// <p>This is the ID of the creation request.</p>
@@ -203,3 +182,4 @@ impl CreateLogicallyAirGappedBackupVaultFluentBuilder {
         self.inner.get_max_retention_days()
     }
 }
+

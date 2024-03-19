@@ -3,20 +3,19 @@
 /// <p>A CloudFront origin access control, including its unique identifier.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OriginAccessControl {
+pub struct OriginAccessControl  {
     /// <p>The unique identifier of the origin access control.</p>
     pub id: ::std::string::String,
     /// <p>The origin access control.</p>
     pub origin_access_control_config: ::std::option::Option<crate::types::OriginAccessControlConfig>,
 }
-impl OriginAccessControl {
+impl  OriginAccessControl  {
     /// <p>The unique identifier of the origin access control.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The origin access control.</p>
-    pub fn origin_access_control_config(&self) -> ::std::option::Option<&crate::types::OriginAccessControlConfig> {
+    pub fn origin_access_control_config(&self) -> ::std::option::Option<& crate::types::OriginAccessControlConfig> {
         self.origin_access_control_config.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl OriginAccessControlBuilder {
     }
     /// <p>The unique identifier of the origin access control.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier of the origin access control.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl OriginAccessControlBuilder {
     }
     /// <p>The origin access control.</p>
     pub fn set_origin_access_control_config(mut self, input: ::std::option::Option<crate::types::OriginAccessControlConfig>) -> Self {
-        self.origin_access_control_config = input;
-        self
+        self.origin_access_control_config = input; self
     }
     /// <p>The origin access control.</p>
     pub fn get_origin_access_control_config(&self) -> &::std::option::Option<crate::types::OriginAccessControlConfig> {
@@ -68,14 +65,17 @@ impl OriginAccessControlBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::OriginAccessControlBuilder::id)
     pub fn build(self) -> ::std::result::Result<crate::types::OriginAccessControl, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OriginAccessControl {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building OriginAccessControl",
-                )
-            })?,
-            origin_access_control_config: self.origin_access_control_config,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OriginAccessControl {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building OriginAccessControl")
+                    )?
+                ,
+                origin_access_control_config: self.origin_access_control_config
+                ,
+            }
+        )
     }
 }
+

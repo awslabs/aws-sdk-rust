@@ -2,39 +2,40 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRobotApplicationInput {
+pub struct CreateRobotApplicationInput  {
     /// <p>The name of the robot application.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The sources of the robot application.</p>
-    pub sources: ::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>>,
+    pub sources: ::std::option::Option<::std::vec::Vec::<crate::types::SourceConfig>>,
     /// <p>The robot software suite (ROS distribuition) used by the robot application.</p>
     pub robot_software_suite: ::std::option::Option<crate::types::RobotSoftwareSuite>,
     /// <p>A map that contains tag keys and tag values that are attached to the robot application.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The object that contains that URI of the Docker image that you use for your robot application.</p>
     pub environment: ::std::option::Option<crate::types::Environment>,
 }
-impl CreateRobotApplicationInput {
+impl  CreateRobotApplicationInput  {
     /// <p>The name of the robot application.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The sources of the robot application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
-    pub fn sources(&self) -> &[crate::types::SourceConfig] {
-        self.sources.as_deref().unwrap_or_default()
+    pub fn sources(&self) -> & [crate::types::SourceConfig] {
+        self.sources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The robot software suite (ROS distribuition) used by the robot application.</p>
-    pub fn robot_software_suite(&self) -> ::std::option::Option<&crate::types::RobotSoftwareSuite> {
+    pub fn robot_software_suite(&self) -> ::std::option::Option<& crate::types::RobotSoftwareSuite> {
         self.robot_software_suite.as_ref()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the robot application.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The object that contains that URI of the Docker image that you use for your robot application.</p>
-    pub fn environment(&self) -> ::std::option::Option<&crate::types::Environment> {
+    pub fn environment(&self) -> ::std::option::Option<& crate::types::Environment> {
         self.environment.as_ref()
     }
 }
@@ -50,9 +51,9 @@ impl CreateRobotApplicationInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRobotApplicationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>>,
+    pub(crate) sources: ::std::option::Option<::std::vec::Vec::<crate::types::SourceConfig>>,
     pub(crate) robot_software_suite: ::std::option::Option<crate::types::RobotSoftwareSuite>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) environment: ::std::option::Option<crate::types::Environment>,
 }
 impl CreateRobotApplicationInputBuilder {
@@ -64,8 +65,7 @@ impl CreateRobotApplicationInputBuilder {
     }
     /// <p>The name of the robot application.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the robot application.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,17 +78,16 @@ impl CreateRobotApplicationInputBuilder {
     /// <p>The sources of the robot application.</p>
     pub fn sources(mut self, input: crate::types::SourceConfig) -> Self {
         let mut v = self.sources.unwrap_or_default();
-        v.push(input);
-        self.sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The sources of the robot application.</p>
-    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>>) -> Self {
-        self.sources = input;
-        self
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SourceConfig>>) -> Self {
+        self.sources = input; self
     }
     /// <p>The sources of the robot application.</p>
-    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SourceConfig>> {
         &self.sources
     }
     /// <p>The robot software suite (ROS distribuition) used by the robot application.</p>
@@ -99,8 +98,7 @@ impl CreateRobotApplicationInputBuilder {
     }
     /// <p>The robot software suite (ROS distribuition) used by the robot application.</p>
     pub fn set_robot_software_suite(mut self, input: ::std::option::Option<crate::types::RobotSoftwareSuite>) -> Self {
-        self.robot_software_suite = input;
-        self
+        self.robot_software_suite = input; self
     }
     /// <p>The robot software suite (ROS distribuition) used by the robot application.</p>
     pub fn get_robot_software_suite(&self) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
@@ -113,17 +111,16 @@ impl CreateRobotApplicationInputBuilder {
     /// <p>A map that contains tag keys and tag values that are attached to the robot application.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the robot application.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the robot application.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The object that contains that URI of the Docker image that you use for your robot application.</p>
@@ -133,26 +130,28 @@ impl CreateRobotApplicationInputBuilder {
     }
     /// <p>The object that contains that URI of the Docker image that you use for your robot application.</p>
     pub fn set_environment(mut self, input: ::std::option::Option<crate::types::Environment>) -> Self {
-        self.environment = input;
-        self
+        self.environment = input; self
     }
     /// <p>The object that contains that URI of the Docker image that you use for your robot application.</p>
     pub fn get_environment(&self) -> &::std::option::Option<crate::types::Environment> {
         &self.environment
     }
     /// Consumes the builder and constructs a [`CreateRobotApplicationInput`](crate::operation::create_robot_application::CreateRobotApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_robot_application::CreateRobotApplicationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_robot_application::CreateRobotApplicationInput {
-            name: self.name,
-            sources: self.sources,
-            robot_software_suite: self.robot_software_suite,
-            tags: self.tags,
-            environment: self.environment,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_robot_application::CreateRobotApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_robot_application::CreateRobotApplicationInput {
+                name: self.name
+                ,
+                sources: self.sources
+                ,
+                robot_software_suite: self.robot_software_suite
+                ,
+                tags: self.tags
+                ,
+                environment: self.environment
+                ,
+            }
+        )
     }
 }
+

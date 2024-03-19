@@ -2,33 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct RetrieveAndGenerateOutput {
+pub struct RetrieveAndGenerateOutput  {
     /// <p>The unique identifier of the session. Reuse the same value to continue the same session with the knowledge base.</p>
     pub session_id: ::std::string::String,
     /// <p>Contains the response generated from querying the knowledge base.</p>
     pub output: ::std::option::Option<crate::types::RetrieveAndGenerateOutput>,
     /// <p>A list of segments of the generated response that are based on sources in the knowledge base, alongside information about the sources.</p>
-    pub citations: ::std::option::Option<::std::vec::Vec<crate::types::Citation>>,
+    pub citations: ::std::option::Option<::std::vec::Vec::<crate::types::Citation>>,
     _request_id: Option<String>,
 }
-impl RetrieveAndGenerateOutput {
+impl  RetrieveAndGenerateOutput  {
     /// <p>The unique identifier of the session. Reuse the same value to continue the same session with the knowledge base.</p>
-    pub fn session_id(&self) -> &str {
-        use std::ops::Deref;
-        self.session_id.deref()
+    pub fn session_id(&self) -> & str {
+        use std::ops::Deref; self.session_id.deref()
     }
     /// <p>Contains the response generated from querying the knowledge base.</p>
-    pub fn output(&self) -> ::std::option::Option<&crate::types::RetrieveAndGenerateOutput> {
+    pub fn output(&self) -> ::std::option::Option<& crate::types::RetrieveAndGenerateOutput> {
         self.output.as_ref()
     }
     /// <p>A list of segments of the generated response that are based on sources in the knowledge base, alongside information about the sources.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.citations.is_none()`.
-    pub fn citations(&self) -> &[crate::types::Citation] {
-        self.citations.as_deref().unwrap_or_default()
+    pub fn citations(&self) -> & [crate::types::Citation] {
+        self.citations.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for RetrieveAndGenerateOutput {
+impl  ::std::fmt::Debug for RetrieveAndGenerateOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RetrieveAndGenerateOutput");
         formatter.field("session_id", &self.session_id);
@@ -39,10 +39,10 @@ impl ::std::fmt::Debug for RetrieveAndGenerateOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for RetrieveAndGenerateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RetrieveAndGenerateOutput {
     /// Creates a new builder-style object to manufacture [`RetrieveAndGenerateOutput`](crate::operation::retrieve_and_generate::RetrieveAndGenerateOutput).
     pub fn builder() -> crate::operation::retrieve_and_generate::builders::RetrieveAndGenerateOutputBuilder {
@@ -56,7 +56,7 @@ impl RetrieveAndGenerateOutput {
 pub struct RetrieveAndGenerateOutputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) output: ::std::option::Option<crate::types::RetrieveAndGenerateOutput>,
-    pub(crate) citations: ::std::option::Option<::std::vec::Vec<crate::types::Citation>>,
+    pub(crate) citations: ::std::option::Option<::std::vec::Vec::<crate::types::Citation>>,
     _request_id: Option<String>,
 }
 impl RetrieveAndGenerateOutputBuilder {
@@ -68,8 +68,7 @@ impl RetrieveAndGenerateOutputBuilder {
     }
     /// <p>The unique identifier of the session. Reuse the same value to continue the same session with the knowledge base.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>The unique identifier of the session. Reuse the same value to continue the same session with the knowledge base.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl RetrieveAndGenerateOutputBuilder {
     }
     /// <p>Contains the response generated from querying the knowledge base.</p>
     pub fn set_output(mut self, input: ::std::option::Option<crate::types::RetrieveAndGenerateOutput>) -> Self {
-        self.output = input;
-        self
+        self.output = input; self
     }
     /// <p>Contains the response generated from querying the knowledge base.</p>
     pub fn get_output(&self) -> &::std::option::Option<crate::types::RetrieveAndGenerateOutput> {
@@ -97,46 +95,45 @@ impl RetrieveAndGenerateOutputBuilder {
     /// <p>A list of segments of the generated response that are based on sources in the knowledge base, alongside information about the sources.</p>
     pub fn citations(mut self, input: crate::types::Citation) -> Self {
         let mut v = self.citations.unwrap_or_default();
-        v.push(input);
-        self.citations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.citations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of segments of the generated response that are based on sources in the knowledge base, alongside information about the sources.</p>
-    pub fn set_citations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Citation>>) -> Self {
-        self.citations = input;
-        self
+    pub fn set_citations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Citation>>) -> Self {
+        self.citations = input; self
     }
     /// <p>A list of segments of the generated response that are based on sources in the knowledge base, alongside information about the sources.</p>
-    pub fn get_citations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Citation>> {
+    pub fn get_citations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Citation>> {
         &self.citations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RetrieveAndGenerateOutput`](crate::operation::retrieve_and_generate::RetrieveAndGenerateOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`session_id`](crate::operation::retrieve_and_generate::builders::RetrieveAndGenerateOutputBuilder::session_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::retrieve_and_generate::RetrieveAndGenerateOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::retrieve_and_generate::RetrieveAndGenerateOutput {
-            session_id: self.session_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "session_id",
-                    "session_id was not specified but it is required when building RetrieveAndGenerateOutput",
-                )
-            })?,
-            output: self.output,
-            citations: self.citations,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::retrieve_and_generate::RetrieveAndGenerateOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::retrieve_and_generate::RetrieveAndGenerateOutput {
+                session_id: self.session_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("session_id", "session_id was not specified but it is required when building RetrieveAndGenerateOutput")
+                    )?
+                ,
+                output: self.output
+                ,
+                citations: self.citations
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for RetrieveAndGenerateOutputBuilder {
@@ -149,3 +146,4 @@ impl ::std::fmt::Debug for RetrieveAndGenerateOutputBuilder {
         formatter.finish()
     }
 }
+

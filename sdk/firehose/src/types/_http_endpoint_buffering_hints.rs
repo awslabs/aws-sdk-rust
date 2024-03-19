@@ -3,14 +3,14 @@
 /// <p>Describes the buffering options that can be applied before data is delivered to the HTTP endpoint destination. Firehose treats these options as hints, and it might choose to use more optimal values. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must also provide a value for the other.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HttpEndpointBufferingHints {
+pub struct HttpEndpointBufferingHints  {
     /// <p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 5.</p>
     /// <p>We recommend setting this parameter to a value greater than the amount of data you typically ingest into the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, the value should be 10 MB or higher.</p>
     pub size_in_mbs: ::std::option::Option<i32>,
     /// <p>Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The default value is 300 (5 minutes).</p>
     pub interval_in_seconds: ::std::option::Option<i32>,
 }
-impl HttpEndpointBufferingHints {
+impl  HttpEndpointBufferingHints  {
     /// <p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 5.</p>
     /// <p>We recommend setting this parameter to a value greater than the amount of data you typically ingest into the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, the value should be 10 MB or higher.</p>
     pub fn size_in_mbs(&self) -> ::std::option::Option<i32> {
@@ -45,8 +45,7 @@ impl HttpEndpointBufferingHintsBuilder {
     /// <p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 5.</p>
     /// <p>We recommend setting this parameter to a value greater than the amount of data you typically ingest into the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, the value should be 10 MB or higher.</p>
     pub fn set_size_in_mbs(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.size_in_mbs = input;
-        self
+        self.size_in_mbs = input; self
     }
     /// <p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 5.</p>
     /// <p>We recommend setting this parameter to a value greater than the amount of data you typically ingest into the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, the value should be 10 MB or higher.</p>
@@ -60,8 +59,7 @@ impl HttpEndpointBufferingHintsBuilder {
     }
     /// <p>Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The default value is 300 (5 minutes).</p>
     pub fn set_interval_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.interval_in_seconds = input;
-        self
+        self.interval_in_seconds = input; self
     }
     /// <p>Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The default value is 300 (5 minutes).</p>
     pub fn get_interval_in_seconds(&self) -> &::std::option::Option<i32> {
@@ -70,8 +68,11 @@ impl HttpEndpointBufferingHintsBuilder {
     /// Consumes the builder and constructs a [`HttpEndpointBufferingHints`](crate::types::HttpEndpointBufferingHints).
     pub fn build(self) -> crate::types::HttpEndpointBufferingHints {
         crate::types::HttpEndpointBufferingHints {
-            size_in_mbs: self.size_in_mbs,
-            interval_in_seconds: self.interval_in_seconds,
+            size_in_mbs: self.size_in_mbs
+            ,
+            interval_in_seconds: self.interval_in_seconds
+            ,
         }
     }
 }
+

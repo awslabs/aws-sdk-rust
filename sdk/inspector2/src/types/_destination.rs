@@ -3,7 +3,7 @@
 /// <p>Contains details of the Amazon S3 bucket and KMS key used to export findings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Destination {
+pub struct Destination  {
     /// <p>The name of the Amazon S3 bucket to export findings to.</p>
     pub bucket_name: ::std::string::String,
     /// <p>The prefix that the findings will be written under.</p>
@@ -11,20 +11,18 @@ pub struct Destination {
     /// <p>The ARN of the KMS key used to encrypt data when exporting findings.</p>
     pub kms_key_arn: ::std::string::String,
 }
-impl Destination {
+impl  Destination  {
     /// <p>The name of the Amazon S3 bucket to export findings to.</p>
-    pub fn bucket_name(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket_name.deref()
+    pub fn bucket_name(&self) -> & str {
+        use std::ops::Deref; self.bucket_name.deref()
     }
     /// <p>The prefix that the findings will be written under.</p>
-    pub fn key_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn key_prefix(&self) -> ::std::option::Option<& str> {
         self.key_prefix.as_deref()
     }
     /// <p>The ARN of the KMS key used to encrypt data when exporting findings.</p>
-    pub fn kms_key_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.kms_key_arn.deref()
+    pub fn kms_key_arn(&self) -> & str {
+        use std::ops::Deref; self.kms_key_arn.deref()
     }
 }
 impl Destination {
@@ -51,8 +49,7 @@ impl DestinationBuilder {
     }
     /// <p>The name of the Amazon S3 bucket to export findings to.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>The name of the Amazon S3 bucket to export findings to.</p>
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +62,7 @@ impl DestinationBuilder {
     }
     /// <p>The prefix that the findings will be written under.</p>
     pub fn set_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_prefix = input;
-        self
+        self.key_prefix = input; self
     }
     /// <p>The prefix that the findings will be written under.</p>
     pub fn get_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl DestinationBuilder {
     }
     /// <p>The ARN of the KMS key used to encrypt data when exporting findings.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
     }
     /// <p>The ARN of the KMS key used to encrypt data when exporting findings.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,20 +87,22 @@ impl DestinationBuilder {
     /// - [`bucket_name`](crate::types::builders::DestinationBuilder::bucket_name)
     /// - [`kms_key_arn`](crate::types::builders::DestinationBuilder::kms_key_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::Destination, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Destination {
-            bucket_name: self.bucket_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket_name",
-                    "bucket_name was not specified but it is required when building Destination",
-                )
-            })?,
-            key_prefix: self.key_prefix,
-            kms_key_arn: self.kms_key_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "kms_key_arn",
-                    "kms_key_arn was not specified but it is required when building Destination",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Destination {
+                bucket_name: self.bucket_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket_name", "bucket_name was not specified but it is required when building Destination")
+                    )?
+                ,
+                key_prefix: self.key_prefix
+                ,
+                kms_key_arn: self.kms_key_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("kms_key_arn", "kms_key_arn was not specified but it is required when building Destination")
+                    )?
+                ,
+            }
+        )
     }
 }
+

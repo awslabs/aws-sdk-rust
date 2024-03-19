@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAppBlockOutput {
+pub struct CreateAppBlockOutput  {
     /// <p>The app block.</p>
     pub app_block: ::std::option::Option<crate::types::AppBlock>,
     _request_id: Option<String>,
 }
-impl CreateAppBlockOutput {
+impl  CreateAppBlockOutput  {
     /// <p>The app block.</p>
-    pub fn app_block(&self) -> ::std::option::Option<&crate::types::AppBlock> {
+    pub fn app_block(&self) -> ::std::option::Option<& crate::types::AppBlock> {
         self.app_block.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateAppBlockOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateAppBlockOutput {
     /// Creates a new builder-style object to manufacture [`CreateAppBlockOutput`](crate::operation::create_app_block::CreateAppBlockOutput).
     pub fn builder() -> crate::operation::create_app_block::builders::CreateAppBlockOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateAppBlockOutputBuilder {
     }
     /// <p>The app block.</p>
     pub fn set_app_block(mut self, input: ::std::option::Option<crate::types::AppBlock>) -> Self {
-        self.app_block = input;
-        self
+        self.app_block = input; self
     }
     /// <p>The app block.</p>
     pub fn get_app_block(&self) -> &::std::option::Option<crate::types::AppBlock> {
         &self.app_block
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateAppBlockOutput`](crate::operation::create_app_block::CreateAppBlockOutput).
     pub fn build(self) -> crate::operation::create_app_block::CreateAppBlockOutput {
         crate::operation::create_app_block::CreateAppBlockOutput {
-            app_block: self.app_block,
+            app_block: self.app_block
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

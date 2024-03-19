@@ -3,23 +3,23 @@
 /// <p>Describes the resource path.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ResourcePathComponent {
+pub struct ResourcePathComponent  {
     /// <p>The ID of the resource path.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource path.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl ResourcePathComponent {
+impl  ResourcePathComponent  {
     /// <p>The ID of the resource path.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the resource path.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
-impl ::std::fmt::Debug for ResourcePathComponent {
+impl  ::std::fmt::Debug for ResourcePathComponent  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ResourcePathComponent");
         formatter.field("id", &self.id);
@@ -49,8 +49,7 @@ impl ResourcePathComponentBuilder {
     }
     /// <p>The ID of the resource path.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the resource path.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl ResourcePathComponentBuilder {
     }
     /// <p>The name of the resource path.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the resource path.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +71,10 @@ impl ResourcePathComponentBuilder {
     /// Consumes the builder and constructs a [`ResourcePathComponent`](crate::types::ResourcePathComponent).
     pub fn build(self) -> crate::types::ResourcePathComponent {
         crate::types::ResourcePathComponent {
-            id: self.id,
-            name: self.name,
+            id: self.id
+            ,
+            name: self.name
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for ResourcePathComponentBuilder {
         formatter.finish()
     }
 }
+

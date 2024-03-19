@@ -3,19 +3,19 @@
 /// <p>Contains metadata about a content moderation request, including the SortBy and AggregateBy options.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetContentModerationRequestMetadata {
+pub struct GetContentModerationRequestMetadata  {
     /// <p>The sorting method chosen for a GetContentModeration request.</p>
     pub sort_by: ::std::option::Option<crate::types::ContentModerationSortBy>,
     /// <p>The aggregation method chosen for a GetContentModeration request.</p>
     pub aggregate_by: ::std::option::Option<crate::types::ContentModerationAggregateBy>,
 }
-impl GetContentModerationRequestMetadata {
+impl  GetContentModerationRequestMetadata  {
     /// <p>The sorting method chosen for a GetContentModeration request.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::ContentModerationSortBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::ContentModerationSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>The aggregation method chosen for a GetContentModeration request.</p>
-    pub fn aggregate_by(&self) -> ::std::option::Option<&crate::types::ContentModerationAggregateBy> {
+    pub fn aggregate_by(&self) -> ::std::option::Option<& crate::types::ContentModerationAggregateBy> {
         self.aggregate_by.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl GetContentModerationRequestMetadataBuilder {
     }
     /// <p>The sorting method chosen for a GetContentModeration request.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ContentModerationSortBy>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The sorting method chosen for a GetContentModeration request.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ContentModerationSortBy> {
@@ -55,8 +54,7 @@ impl GetContentModerationRequestMetadataBuilder {
     }
     /// <p>The aggregation method chosen for a GetContentModeration request.</p>
     pub fn set_aggregate_by(mut self, input: ::std::option::Option<crate::types::ContentModerationAggregateBy>) -> Self {
-        self.aggregate_by = input;
-        self
+        self.aggregate_by = input; self
     }
     /// <p>The aggregation method chosen for a GetContentModeration request.</p>
     pub fn get_aggregate_by(&self) -> &::std::option::Option<crate::types::ContentModerationAggregateBy> {
@@ -65,8 +63,11 @@ impl GetContentModerationRequestMetadataBuilder {
     /// Consumes the builder and constructs a [`GetContentModerationRequestMetadata`](crate::types::GetContentModerationRequestMetadata).
     pub fn build(self) -> crate::types::GetContentModerationRequestMetadata {
         crate::types::GetContentModerationRequestMetadata {
-            sort_by: self.sort_by,
-            aggregate_by: self.aggregate_by,
+            sort_by: self.sort_by
+            ,
+            aggregate_by: self.aggregate_by
+            ,
         }
     }
 }
+

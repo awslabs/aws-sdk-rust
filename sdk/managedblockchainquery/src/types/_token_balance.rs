@@ -3,7 +3,7 @@
 /// <p>The balance of the token.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TokenBalance {
+pub struct TokenBalance  {
     /// <p>The container for the identifier of the owner.</p>
     pub owner_identifier: ::std::option::Option<crate::types::OwnerIdentifier>,
     /// <p>The identifier for the token, including the unique token ID and its blockchain network.</p>
@@ -17,28 +17,27 @@ pub struct TokenBalance {
     /// <p>The <code>Timestamp</code> of the last transaction at which the balance for the token in the wallet was updated.</p>
     pub last_updated_time: ::std::option::Option<crate::types::BlockchainInstant>,
 }
-impl TokenBalance {
+impl  TokenBalance  {
     /// <p>The container for the identifier of the owner.</p>
-    pub fn owner_identifier(&self) -> ::std::option::Option<&crate::types::OwnerIdentifier> {
+    pub fn owner_identifier(&self) -> ::std::option::Option<& crate::types::OwnerIdentifier> {
         self.owner_identifier.as_ref()
     }
     /// <p>The identifier for the token, including the unique token ID and its blockchain network.</p>
-    pub fn token_identifier(&self) -> ::std::option::Option<&crate::types::TokenIdentifier> {
+    pub fn token_identifier(&self) -> ::std::option::Option<& crate::types::TokenIdentifier> {
         self.token_identifier.as_ref()
     }
     /// <p>The container of the token balance.</p>
-    pub fn balance(&self) -> &str {
-        use std::ops::Deref;
-        self.balance.deref()
+    pub fn balance(&self) -> & str {
+        use std::ops::Deref; self.balance.deref()
     }
     /// <p>The time for when the TokenBalance is requested or the current time if a time is not provided in the request.</p><note>
     /// <p>This time will only be recorded up to the second.</p>
     /// </note>
-    pub fn at_blockchain_instant(&self) -> ::std::option::Option<&crate::types::BlockchainInstant> {
+    pub fn at_blockchain_instant(&self) -> ::std::option::Option<& crate::types::BlockchainInstant> {
         self.at_blockchain_instant.as_ref()
     }
     /// <p>The <code>Timestamp</code> of the last transaction at which the balance for the token in the wallet was updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&crate::types::BlockchainInstant> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& crate::types::BlockchainInstant> {
         self.last_updated_time.as_ref()
     }
 }
@@ -67,8 +66,7 @@ impl TokenBalanceBuilder {
     }
     /// <p>The container for the identifier of the owner.</p>
     pub fn set_owner_identifier(mut self, input: ::std::option::Option<crate::types::OwnerIdentifier>) -> Self {
-        self.owner_identifier = input;
-        self
+        self.owner_identifier = input; self
     }
     /// <p>The container for the identifier of the owner.</p>
     pub fn get_owner_identifier(&self) -> &::std::option::Option<crate::types::OwnerIdentifier> {
@@ -81,8 +79,7 @@ impl TokenBalanceBuilder {
     }
     /// <p>The identifier for the token, including the unique token ID and its blockchain network.</p>
     pub fn set_token_identifier(mut self, input: ::std::option::Option<crate::types::TokenIdentifier>) -> Self {
-        self.token_identifier = input;
-        self
+        self.token_identifier = input; self
     }
     /// <p>The identifier for the token, including the unique token ID and its blockchain network.</p>
     pub fn get_token_identifier(&self) -> &::std::option::Option<crate::types::TokenIdentifier> {
@@ -96,8 +93,7 @@ impl TokenBalanceBuilder {
     }
     /// <p>The container of the token balance.</p>
     pub fn set_balance(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.balance = input;
-        self
+        self.balance = input; self
     }
     /// <p>The container of the token balance.</p>
     pub fn get_balance(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +111,7 @@ impl TokenBalanceBuilder {
     /// <p>This time will only be recorded up to the second.</p>
     /// </note>
     pub fn set_at_blockchain_instant(mut self, input: ::std::option::Option<crate::types::BlockchainInstant>) -> Self {
-        self.at_blockchain_instant = input;
-        self
+        self.at_blockchain_instant = input; self
     }
     /// <p>The time for when the TokenBalance is requested or the current time if a time is not provided in the request.</p><note>
     /// <p>This time will only be recorded up to the second.</p>
@@ -131,8 +126,7 @@ impl TokenBalanceBuilder {
     }
     /// <p>The <code>Timestamp</code> of the last transaction at which the balance for the token in the wallet was updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<crate::types::BlockchainInstant>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The <code>Timestamp</code> of the last transaction at which the balance for the token in the wallet was updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<crate::types::BlockchainInstant> {
@@ -142,17 +136,23 @@ impl TokenBalanceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`balance`](crate::types::builders::TokenBalanceBuilder::balance)
     pub fn build(self) -> ::std::result::Result<crate::types::TokenBalance, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TokenBalance {
-            owner_identifier: self.owner_identifier,
-            token_identifier: self.token_identifier,
-            balance: self.balance.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "balance",
-                    "balance was not specified but it is required when building TokenBalance",
-                )
-            })?,
-            at_blockchain_instant: self.at_blockchain_instant,
-            last_updated_time: self.last_updated_time,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TokenBalance {
+                owner_identifier: self.owner_identifier
+                ,
+                token_identifier: self.token_identifier
+                ,
+                balance: self.balance
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("balance", "balance was not specified but it is required when building TokenBalance")
+                    )?
+                ,
+                at_blockchain_instant: self.at_blockchain_instant
+                ,
+                last_updated_time: self.last_updated_time
+                ,
+            }
+        )
     }
 }
+

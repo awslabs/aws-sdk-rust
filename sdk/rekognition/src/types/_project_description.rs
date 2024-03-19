@@ -3,7 +3,7 @@
 /// <p>A description of an Amazon Rekognition Custom Labels project. For more information, see <code>DescribeProjects</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProjectDescription {
+pub struct ProjectDescription  {
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
     pub project_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp for the date and time that the project was created.</p>
@@ -11,37 +11,38 @@ pub struct ProjectDescription {
     /// <p>The current status of the project.</p>
     pub status: ::std::option::Option<crate::types::ProjectStatus>,
     /// <p>Information about the training and test datasets in the project.</p>
-    pub datasets: ::std::option::Option<::std::vec::Vec<crate::types::DatasetMetadata>>,
+    pub datasets: ::std::option::Option<::std::vec::Vec::<crate::types::DatasetMetadata>>,
     /// <p>Specifies the project that is being customized.</p>
     pub feature: ::std::option::Option<crate::types::CustomizationFeature>,
     /// <p>Indicates whether automatic retraining will be attempted for the versions of the project. Applies only to adapters.</p>
     pub auto_update: ::std::option::Option<crate::types::ProjectAutoUpdate>,
 }
-impl ProjectDescription {
+impl  ProjectDescription  {
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
-    pub fn project_arn(&self) -> ::std::option::Option<&str> {
+    pub fn project_arn(&self) -> ::std::option::Option<& str> {
         self.project_arn.as_deref()
     }
     /// <p>The Unix timestamp for the date and time that the project was created.</p>
-    pub fn creation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p>The current status of the project.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ProjectStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ProjectStatus> {
         self.status.as_ref()
     }
     /// <p>Information about the training and test datasets in the project.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.datasets.is_none()`.
-    pub fn datasets(&self) -> &[crate::types::DatasetMetadata] {
-        self.datasets.as_deref().unwrap_or_default()
+    pub fn datasets(&self) -> & [crate::types::DatasetMetadata] {
+        self.datasets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the project that is being customized.</p>
-    pub fn feature(&self) -> ::std::option::Option<&crate::types::CustomizationFeature> {
+    pub fn feature(&self) -> ::std::option::Option<& crate::types::CustomizationFeature> {
         self.feature.as_ref()
     }
     /// <p>Indicates whether automatic retraining will be attempted for the versions of the project. Applies only to adapters.</p>
-    pub fn auto_update(&self) -> ::std::option::Option<&crate::types::ProjectAutoUpdate> {
+    pub fn auto_update(&self) -> ::std::option::Option<& crate::types::ProjectAutoUpdate> {
         self.auto_update.as_ref()
     }
 }
@@ -59,7 +60,7 @@ pub struct ProjectDescriptionBuilder {
     pub(crate) project_arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::ProjectStatus>,
-    pub(crate) datasets: ::std::option::Option<::std::vec::Vec<crate::types::DatasetMetadata>>,
+    pub(crate) datasets: ::std::option::Option<::std::vec::Vec::<crate::types::DatasetMetadata>>,
     pub(crate) feature: ::std::option::Option<crate::types::CustomizationFeature>,
     pub(crate) auto_update: ::std::option::Option<crate::types::ProjectAutoUpdate>,
 }
@@ -71,8 +72,7 @@ impl ProjectDescriptionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
     pub fn set_project_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_arn = input;
-        self
+        self.project_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
     pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +85,7 @@ impl ProjectDescriptionBuilder {
     }
     /// <p>The Unix timestamp for the date and time that the project was created.</p>
     pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_timestamp = input;
-        self
+        self.creation_timestamp = input; self
     }
     /// <p>The Unix timestamp for the date and time that the project was created.</p>
     pub fn get_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -99,8 +98,7 @@ impl ProjectDescriptionBuilder {
     }
     /// <p>The current status of the project.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ProjectStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the project.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ProjectStatus> {
@@ -113,17 +111,16 @@ impl ProjectDescriptionBuilder {
     /// <p>Information about the training and test datasets in the project.</p>
     pub fn datasets(mut self, input: crate::types::DatasetMetadata) -> Self {
         let mut v = self.datasets.unwrap_or_default();
-        v.push(input);
-        self.datasets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.datasets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the training and test datasets in the project.</p>
-    pub fn set_datasets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetMetadata>>) -> Self {
-        self.datasets = input;
-        self
+    pub fn set_datasets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DatasetMetadata>>) -> Self {
+        self.datasets = input; self
     }
     /// <p>Information about the training and test datasets in the project.</p>
-    pub fn get_datasets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetMetadata>> {
+    pub fn get_datasets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DatasetMetadata>> {
         &self.datasets
     }
     /// <p>Specifies the project that is being customized.</p>
@@ -133,8 +130,7 @@ impl ProjectDescriptionBuilder {
     }
     /// <p>Specifies the project that is being customized.</p>
     pub fn set_feature(mut self, input: ::std::option::Option<crate::types::CustomizationFeature>) -> Self {
-        self.feature = input;
-        self
+        self.feature = input; self
     }
     /// <p>Specifies the project that is being customized.</p>
     pub fn get_feature(&self) -> &::std::option::Option<crate::types::CustomizationFeature> {
@@ -147,8 +143,7 @@ impl ProjectDescriptionBuilder {
     }
     /// <p>Indicates whether automatic retraining will be attempted for the versions of the project. Applies only to adapters.</p>
     pub fn set_auto_update(mut self, input: ::std::option::Option<crate::types::ProjectAutoUpdate>) -> Self {
-        self.auto_update = input;
-        self
+        self.auto_update = input; self
     }
     /// <p>Indicates whether automatic retraining will be attempted for the versions of the project. Applies only to adapters.</p>
     pub fn get_auto_update(&self) -> &::std::option::Option<crate::types::ProjectAutoUpdate> {
@@ -157,12 +152,19 @@ impl ProjectDescriptionBuilder {
     /// Consumes the builder and constructs a [`ProjectDescription`](crate::types::ProjectDescription).
     pub fn build(self) -> crate::types::ProjectDescription {
         crate::types::ProjectDescription {
-            project_arn: self.project_arn,
-            creation_timestamp: self.creation_timestamp,
-            status: self.status,
-            datasets: self.datasets,
-            feature: self.feature,
-            auto_update: self.auto_update,
+            project_arn: self.project_arn
+            ,
+            creation_timestamp: self.creation_timestamp
+            ,
+            status: self.status
+            ,
+            datasets: self.datasets
+            ,
+            feature: self.feature
+            ,
+            auto_update: self.auto_update
+            ,
         }
     }
 }
+

@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeConnectorEntityOutput {
+pub struct DescribeConnectorEntityOutput  {
     /// <p>Describes the fields for that connector entity. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on.</p>
-    pub connector_entity_fields: ::std::vec::Vec<crate::types::ConnectorEntityField>,
+    pub connector_entity_fields: ::std::vec::Vec::<crate::types::ConnectorEntityField>,
     _request_id: Option<String>,
 }
-impl DescribeConnectorEntityOutput {
+impl  DescribeConnectorEntityOutput  {
     /// <p>Describes the fields for that connector entity. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on.</p>
-    pub fn connector_entity_fields(&self) -> &[crate::types::ConnectorEntityField] {
-        use std::ops::Deref;
-        self.connector_entity_fields.deref()
+    pub fn connector_entity_fields(&self) -> & [crate::types::ConnectorEntityField] {
+        use std::ops::Deref; self.connector_entity_fields.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeConnectorEntityOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeConnectorEntityOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectorEntityOutput`](crate::operation::describe_connector_entity::DescribeConnectorEntityOutput).
     pub fn builder() -> crate::operation::describe_connector_entity::builders::DescribeConnectorEntityOutputBuilder {
@@ -30,7 +29,7 @@ impl DescribeConnectorEntityOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeConnectorEntityOutputBuilder {
-    pub(crate) connector_entity_fields: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorEntityField>>,
+    pub(crate) connector_entity_fields: ::std::option::Option<::std::vec::Vec::<crate::types::ConnectorEntityField>>,
     _request_id: Option<String>,
 }
 impl DescribeConnectorEntityOutputBuilder {
@@ -41,45 +40,41 @@ impl DescribeConnectorEntityOutputBuilder {
     /// <p>Describes the fields for that connector entity. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on.</p>
     pub fn connector_entity_fields(mut self, input: crate::types::ConnectorEntityField) -> Self {
         let mut v = self.connector_entity_fields.unwrap_or_default();
-        v.push(input);
-        self.connector_entity_fields = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.connector_entity_fields = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Describes the fields for that connector entity. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on.</p>
-    pub fn set_connector_entity_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorEntityField>>) -> Self {
-        self.connector_entity_fields = input;
-        self
+    pub fn set_connector_entity_fields(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ConnectorEntityField>>) -> Self {
+        self.connector_entity_fields = input; self
     }
     /// <p>Describes the fields for that connector entity. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on.</p>
-    pub fn get_connector_entity_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectorEntityField>> {
+    pub fn get_connector_entity_fields(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ConnectorEntityField>> {
         &self.connector_entity_fields
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeConnectorEntityOutput`](crate::operation::describe_connector_entity::DescribeConnectorEntityOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`connector_entity_fields`](crate::operation::describe_connector_entity::builders::DescribeConnectorEntityOutputBuilder::connector_entity_fields)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_connector_entity::DescribeConnectorEntityOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_connector_entity::DescribeConnectorEntityOutput {
-            connector_entity_fields: self.connector_entity_fields.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "connector_entity_fields",
-                    "connector_entity_fields was not specified but it is required when building DescribeConnectorEntityOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_connector_entity::DescribeConnectorEntityOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_connector_entity::DescribeConnectorEntityOutput {
+                connector_entity_fields: self.connector_entity_fields
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("connector_entity_fields", "connector_entity_fields was not specified but it is required when building DescribeConnectorEntityOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

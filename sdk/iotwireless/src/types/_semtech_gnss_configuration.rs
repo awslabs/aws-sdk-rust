@@ -3,19 +3,19 @@
 /// <p>Information about the Semtech GNSS solver configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SemtechGnssConfiguration {
+pub struct SemtechGnssConfiguration  {
     /// <p>The status indicating whether the solver is enabled.</p>
     pub status: crate::types::PositionConfigurationStatus,
     /// <p>Whether forward error correction is enabled.</p>
     pub fec: crate::types::PositionConfigurationFec,
 }
-impl SemtechGnssConfiguration {
+impl  SemtechGnssConfiguration  {
     /// <p>The status indicating whether the solver is enabled.</p>
-    pub fn status(&self) -> &crate::types::PositionConfigurationStatus {
+    pub fn status(&self) -> & crate::types::PositionConfigurationStatus {
         &self.status
     }
     /// <p>Whether forward error correction is enabled.</p>
-    pub fn fec(&self) -> &crate::types::PositionConfigurationFec {
+    pub fn fec(&self) -> & crate::types::PositionConfigurationFec {
         &self.fec
     }
 }
@@ -42,8 +42,7 @@ impl SemtechGnssConfigurationBuilder {
     }
     /// <p>The status indicating whether the solver is enabled.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::PositionConfigurationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status indicating whether the solver is enabled.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PositionConfigurationStatus> {
@@ -57,8 +56,7 @@ impl SemtechGnssConfigurationBuilder {
     }
     /// <p>Whether forward error correction is enabled.</p>
     pub fn set_fec(mut self, input: ::std::option::Option<crate::types::PositionConfigurationFec>) -> Self {
-        self.fec = input;
-        self
+        self.fec = input; self
     }
     /// <p>Whether forward error correction is enabled.</p>
     pub fn get_fec(&self) -> &::std::option::Option<crate::types::PositionConfigurationFec> {
@@ -69,19 +67,20 @@ impl SemtechGnssConfigurationBuilder {
     /// - [`status`](crate::types::builders::SemtechGnssConfigurationBuilder::status)
     /// - [`fec`](crate::types::builders::SemtechGnssConfigurationBuilder::fec)
     pub fn build(self) -> ::std::result::Result<crate::types::SemtechGnssConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SemtechGnssConfiguration {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building SemtechGnssConfiguration",
-                )
-            })?,
-            fec: self.fec.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "fec",
-                    "fec was not specified but it is required when building SemtechGnssConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SemtechGnssConfiguration {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building SemtechGnssConfiguration")
+                    )?
+                ,
+                fec: self.fec
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("fec", "fec was not specified but it is required when building SemtechGnssConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

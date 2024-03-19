@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListUserProfilesOutput {
+pub struct ListUserProfilesOutput  {
     /// <p>All the user profiles configured in AWS CodeStar for an AWS account.</p>
-    pub user_profiles: ::std::vec::Vec<crate::types::UserProfileSummary>,
+    pub user_profiles: ::std::vec::Vec::<crate::types::UserProfileSummary>,
     /// <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListUserProfilesOutput {
+impl  ListUserProfilesOutput  {
     /// <p>All the user profiles configured in AWS CodeStar for an AWS account.</p>
-    pub fn user_profiles(&self) -> &[crate::types::UserProfileSummary] {
-        use std::ops::Deref;
-        self.user_profiles.deref()
+    pub fn user_profiles(&self) -> & [crate::types::UserProfileSummary] {
+        use std::ops::Deref; self.user_profiles.deref()
     }
     /// <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListUserProfilesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListUserProfilesOutput {
     /// Creates a new builder-style object to manufacture [`ListUserProfilesOutput`](crate::operation::list_user_profiles::ListUserProfilesOutput).
     pub fn builder() -> crate::operation::list_user_profiles::builders::ListUserProfilesOutputBuilder {
@@ -36,7 +35,7 @@ impl ListUserProfilesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListUserProfilesOutputBuilder {
-    pub(crate) user_profiles: ::std::option::Option<::std::vec::Vec<crate::types::UserProfileSummary>>,
+    pub(crate) user_profiles: ::std::option::Option<::std::vec::Vec::<crate::types::UserProfileSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListUserProfilesOutputBuilder {
     /// <p>All the user profiles configured in AWS CodeStar for an AWS account.</p>
     pub fn user_profiles(mut self, input: crate::types::UserProfileSummary) -> Self {
         let mut v = self.user_profiles.unwrap_or_default();
-        v.push(input);
-        self.user_profiles = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.user_profiles = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>All the user profiles configured in AWS CodeStar for an AWS account.</p>
-    pub fn set_user_profiles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserProfileSummary>>) -> Self {
-        self.user_profiles = input;
-        self
+    pub fn set_user_profiles(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UserProfileSummary>>) -> Self {
+        self.user_profiles = input; self
     }
     /// <p>All the user profiles configured in AWS CodeStar for an AWS account.</p>
-    pub fn get_user_profiles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserProfileSummary>> {
+    pub fn get_user_profiles(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UserProfileSummary>> {
         &self.user_profiles
     }
     /// <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
@@ -68,37 +66,37 @@ impl ListUserProfilesOutputBuilder {
     }
     /// <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListUserProfilesOutput`](crate::operation::list_user_profiles::ListUserProfilesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`user_profiles`](crate::operation::list_user_profiles::builders::ListUserProfilesOutputBuilder::user_profiles)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_user_profiles::ListUserProfilesOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_user_profiles::ListUserProfilesOutput {
-            user_profiles: self.user_profiles.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user_profiles",
-                    "user_profiles was not specified but it is required when building ListUserProfilesOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_user_profiles::ListUserProfilesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_user_profiles::ListUserProfilesOutput {
+                user_profiles: self.user_profiles
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user_profiles", "user_profiles was not specified but it is required when building ListUserProfilesOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes a core network.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CoreNetwork {
+pub struct CoreNetwork  {
     /// <p>The ID of the global network that your core network is a part of.</p>
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a core network.</p>
@@ -17,54 +17,57 @@ pub struct CoreNetwork {
     /// <p>The current state of a core network.</p>
     pub state: ::std::option::Option<crate::types::CoreNetworkState>,
     /// <p>The segments within a core network.</p>
-    pub segments: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkSegment>>,
+    pub segments: ::std::option::Option<::std::vec::Vec::<crate::types::CoreNetworkSegment>>,
     /// <p>The edges within a core network.</p>
-    pub edges: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkEdge>>,
+    pub edges: ::std::option::Option<::std::vec::Vec::<crate::types::CoreNetworkEdge>>,
     /// <p>The list of key-value tags associated with a core network.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CoreNetwork {
+impl  CoreNetwork  {
     /// <p>The ID of the global network that your core network is a part of.</p>
-    pub fn global_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn global_network_id(&self) -> ::std::option::Option<& str> {
         self.global_network_id.as_deref()
     }
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn core_network_id(&self) -> ::std::option::Option<& str> {
         self.core_network_id.as_deref()
     }
     /// <p>The ARN of a core network.</p>
-    pub fn core_network_arn(&self) -> ::std::option::Option<&str> {
+    pub fn core_network_arn(&self) -> ::std::option::Option<& str> {
         self.core_network_arn.as_deref()
     }
     /// <p>The description of a core network.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The timestamp when a core network was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The current state of a core network.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::CoreNetworkState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::CoreNetworkState> {
         self.state.as_ref()
     }
     /// <p>The segments within a core network.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.segments.is_none()`.
-    pub fn segments(&self) -> &[crate::types::CoreNetworkSegment] {
-        self.segments.as_deref().unwrap_or_default()
+    pub fn segments(&self) -> & [crate::types::CoreNetworkSegment] {
+        self.segments.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The edges within a core network.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.edges.is_none()`.
-    pub fn edges(&self) -> &[crate::types::CoreNetworkEdge] {
-        self.edges.as_deref().unwrap_or_default()
+    pub fn edges(&self) -> & [crate::types::CoreNetworkEdge] {
+        self.edges.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The list of key-value tags associated with a core network.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CoreNetwork {
@@ -84,9 +87,9 @@ pub struct CoreNetworkBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) state: ::std::option::Option<crate::types::CoreNetworkState>,
-    pub(crate) segments: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkSegment>>,
-    pub(crate) edges: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkEdge>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) segments: ::std::option::Option<::std::vec::Vec::<crate::types::CoreNetworkSegment>>,
+    pub(crate) edges: ::std::option::Option<::std::vec::Vec::<crate::types::CoreNetworkEdge>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CoreNetworkBuilder {
     /// <p>The ID of the global network that your core network is a part of.</p>
@@ -96,8 +99,7 @@ impl CoreNetworkBuilder {
     }
     /// <p>The ID of the global network that your core network is a part of.</p>
     pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_network_id = input;
-        self
+        self.global_network_id = input; self
     }
     /// <p>The ID of the global network that your core network is a part of.</p>
     pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +112,7 @@ impl CoreNetworkBuilder {
     }
     /// <p>The ID of a core network.</p>
     pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.core_network_id = input;
-        self
+        self.core_network_id = input; self
     }
     /// <p>The ID of a core network.</p>
     pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +125,7 @@ impl CoreNetworkBuilder {
     }
     /// <p>The ARN of a core network.</p>
     pub fn set_core_network_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.core_network_arn = input;
-        self
+        self.core_network_arn = input; self
     }
     /// <p>The ARN of a core network.</p>
     pub fn get_core_network_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +138,7 @@ impl CoreNetworkBuilder {
     }
     /// <p>The description of a core network.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of a core network.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +151,7 @@ impl CoreNetworkBuilder {
     }
     /// <p>The timestamp when a core network was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp when a core network was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -166,8 +164,7 @@ impl CoreNetworkBuilder {
     }
     /// <p>The current state of a core network.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::CoreNetworkState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The current state of a core network.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::CoreNetworkState> {
@@ -180,17 +177,16 @@ impl CoreNetworkBuilder {
     /// <p>The segments within a core network.</p>
     pub fn segments(mut self, input: crate::types::CoreNetworkSegment) -> Self {
         let mut v = self.segments.unwrap_or_default();
-        v.push(input);
-        self.segments = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.segments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The segments within a core network.</p>
-    pub fn set_segments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkSegment>>) -> Self {
-        self.segments = input;
-        self
+    pub fn set_segments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CoreNetworkSegment>>) -> Self {
+        self.segments = input; self
     }
     /// <p>The segments within a core network.</p>
-    pub fn get_segments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkSegment>> {
+    pub fn get_segments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CoreNetworkSegment>> {
         &self.segments
     }
     /// Appends an item to `edges`.
@@ -200,17 +196,16 @@ impl CoreNetworkBuilder {
     /// <p>The edges within a core network.</p>
     pub fn edges(mut self, input: crate::types::CoreNetworkEdge) -> Self {
         let mut v = self.edges.unwrap_or_default();
-        v.push(input);
-        self.edges = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.edges = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The edges within a core network.</p>
-    pub fn set_edges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkEdge>>) -> Self {
-        self.edges = input;
-        self
+    pub fn set_edges(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CoreNetworkEdge>>) -> Self {
+        self.edges = input; self
     }
     /// <p>The edges within a core network.</p>
-    pub fn get_edges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkEdge>> {
+    pub fn get_edges(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CoreNetworkEdge>> {
         &self.edges
     }
     /// Appends an item to `tags`.
@@ -220,31 +215,40 @@ impl CoreNetworkBuilder {
     /// <p>The list of key-value tags associated with a core network.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of key-value tags associated with a core network.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The list of key-value tags associated with a core network.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CoreNetwork`](crate::types::CoreNetwork).
     pub fn build(self) -> crate::types::CoreNetwork {
         crate::types::CoreNetwork {
-            global_network_id: self.global_network_id,
-            core_network_id: self.core_network_id,
-            core_network_arn: self.core_network_arn,
-            description: self.description,
-            created_at: self.created_at,
-            state: self.state,
-            segments: self.segments,
-            edges: self.edges,
-            tags: self.tags,
+            global_network_id: self.global_network_id
+            ,
+            core_network_id: self.core_network_id
+            ,
+            core_network_arn: self.core_network_arn
+            ,
+            description: self.description
+            ,
+            created_at: self.created_at
+            ,
+            state: self.state
+            ,
+            segments: self.segments
+            ,
+            edges: self.edges
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

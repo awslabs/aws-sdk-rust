@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateApplicationInput {
+pub struct UpdateApplicationInput  {
     /// <p>The identifier of the Amazon Q application.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>A name for the Amazon Q application.</p>
@@ -14,25 +14,25 @@ pub struct UpdateApplicationInput {
     /// <p>An option to allow end users to upload files directly during chat.</p>
     pub attachments_configuration: ::std::option::Option<crate::types::AttachmentsConfiguration>,
 }
-impl UpdateApplicationInput {
+impl  UpdateApplicationInput  {
     /// <p>The identifier of the Amazon Q application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>A name for the Amazon Q application.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>A description for the Amazon Q application.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An Amazon Web Services Identity and Access Management (IAM) role that gives Amazon Q permission to access Amazon CloudWatch logs and metrics.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>An option to allow end users to upload files directly during chat.</p>
-    pub fn attachments_configuration(&self) -> ::std::option::Option<&crate::types::AttachmentsConfiguration> {
+    pub fn attachments_configuration(&self) -> ::std::option::Option<& crate::types::AttachmentsConfiguration> {
         self.attachments_configuration.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>The identifier of the Amazon Q application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier of the Amazon Q application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>A name for the Amazon Q application.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>A name for the Amazon Q application.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>A description for the Amazon Q application.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description for the Amazon Q application.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>An Amazon Web Services Identity and Access Management (IAM) role that gives Amazon Q permission to access Amazon CloudWatch logs and metrics.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>An Amazon Web Services Identity and Access Management (IAM) role that gives Amazon Q permission to access Amazon CloudWatch logs and metrics.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,23 +114,28 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>An option to allow end users to upload files directly during chat.</p>
     pub fn set_attachments_configuration(mut self, input: ::std::option::Option<crate::types::AttachmentsConfiguration>) -> Self {
-        self.attachments_configuration = input;
-        self
+        self.attachments_configuration = input; self
     }
     /// <p>An option to allow end users to upload files directly during chat.</p>
     pub fn get_attachments_configuration(&self) -> &::std::option::Option<crate::types::AttachmentsConfiguration> {
         &self.attachments_configuration
     }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_application::UpdateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_application::UpdateApplicationInput {
-            application_id: self.application_id,
-            display_name: self.display_name,
-            description: self.description,
-            role_arn: self.role_arn,
-            attachments_configuration: self.attachments_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_application::UpdateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_application::UpdateApplicationInput {
+                application_id: self.application_id
+                ,
+                display_name: self.display_name
+                ,
+                description: self.description
+                ,
+                role_arn: self.role_arn
+                ,
+                attachments_configuration: self.attachments_configuration
+                ,
+            }
+        )
     }
 }
+

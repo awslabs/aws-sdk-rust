@@ -4,7 +4,7 @@
 /// <p>Also used to describe the format of the reference data source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecordColumn {
+pub struct RecordColumn  {
     /// <p>Name of the column created in the in-application input stream or reference table.</p>
     pub name: ::std::string::String,
     /// <p>Reference to the data element in the streaming input or the reference data source. This element is required if the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_RecordFormat.html#analytics-Type-RecordFormat-RecordFormatTypel">RecordFormatType</a> is <code>JSON</code>.</p>
@@ -12,20 +12,18 @@ pub struct RecordColumn {
     /// <p>Type of column created in the in-application input stream or reference table.</p>
     pub sql_type: ::std::string::String,
 }
-impl RecordColumn {
+impl  RecordColumn  {
     /// <p>Name of the column created in the in-application input stream or reference table.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Reference to the data element in the streaming input or the reference data source. This element is required if the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_RecordFormat.html#analytics-Type-RecordFormat-RecordFormatTypel">RecordFormatType</a> is <code>JSON</code>.</p>
-    pub fn mapping(&self) -> ::std::option::Option<&str> {
+    pub fn mapping(&self) -> ::std::option::Option<& str> {
         self.mapping.as_deref()
     }
     /// <p>Type of column created in the in-application input stream or reference table.</p>
-    pub fn sql_type(&self) -> &str {
-        use std::ops::Deref;
-        self.sql_type.deref()
+    pub fn sql_type(&self) -> & str {
+        use std::ops::Deref; self.sql_type.deref()
     }
 }
 impl RecordColumn {
@@ -52,8 +50,7 @@ impl RecordColumnBuilder {
     }
     /// <p>Name of the column created in the in-application input stream or reference table.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of the column created in the in-application input stream or reference table.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl RecordColumnBuilder {
     }
     /// <p>Reference to the data element in the streaming input or the reference data source. This element is required if the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_RecordFormat.html#analytics-Type-RecordFormat-RecordFormatTypel">RecordFormatType</a> is <code>JSON</code>.</p>
     pub fn set_mapping(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mapping = input;
-        self
+        self.mapping = input; self
     }
     /// <p>Reference to the data element in the streaming input or the reference data source. This element is required if the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_RecordFormat.html#analytics-Type-RecordFormat-RecordFormatTypel">RecordFormatType</a> is <code>JSON</code>.</p>
     pub fn get_mapping(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl RecordColumnBuilder {
     }
     /// <p>Type of column created in the in-application input stream or reference table.</p>
     pub fn set_sql_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sql_type = input;
-        self
+        self.sql_type = input; self
     }
     /// <p>Type of column created in the in-application input stream or reference table.</p>
     pub fn get_sql_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,20 +88,22 @@ impl RecordColumnBuilder {
     /// - [`name`](crate::types::builders::RecordColumnBuilder::name)
     /// - [`sql_type`](crate::types::builders::RecordColumnBuilder::sql_type)
     pub fn build(self) -> ::std::result::Result<crate::types::RecordColumn, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RecordColumn {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building RecordColumn",
-                )
-            })?,
-            mapping: self.mapping,
-            sql_type: self.sql_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sql_type",
-                    "sql_type was not specified but it is required when building RecordColumn",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RecordColumn {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building RecordColumn")
+                    )?
+                ,
+                mapping: self.mapping
+                ,
+                sql_type: self.sql_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sql_type", "sql_type was not specified but it is required when building RecordColumn")
+                    )?
+                ,
+            }
+        )
     }
 }
+

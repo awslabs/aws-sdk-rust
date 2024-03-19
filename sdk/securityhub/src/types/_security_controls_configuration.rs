@@ -3,32 +3,35 @@
 /// <p>An object that defines which security controls are enabled in an Security Hub configuration policy. The enablement status of a control is aligned across all of the enabled standards in an account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SecurityControlsConfiguration {
+pub struct SecurityControlsConfiguration  {
     /// <p>A list of security controls that are enabled in the configuration policy. Security Hub disables all other controls (including newly released controls) other than the listed controls.</p>
-    pub enabled_security_control_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub enabled_security_control_identifiers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of security controls that are disabled in the configuration policy. Security Hub enables all other controls (including newly released controls) other than the listed controls.</p>
-    pub disabled_security_control_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub disabled_security_control_identifiers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of security controls and control parameter values that are included in a configuration policy.</p>
-    pub security_control_custom_parameters: ::std::option::Option<::std::vec::Vec<crate::types::SecurityControlCustomParameter>>,
+    pub security_control_custom_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::SecurityControlCustomParameter>>,
 }
-impl SecurityControlsConfiguration {
+impl  SecurityControlsConfiguration  {
     /// <p>A list of security controls that are enabled in the configuration policy. Security Hub disables all other controls (including newly released controls) other than the listed controls.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enabled_security_control_identifiers.is_none()`.
-    pub fn enabled_security_control_identifiers(&self) -> &[::std::string::String] {
-        self.enabled_security_control_identifiers.as_deref().unwrap_or_default()
+    pub fn enabled_security_control_identifiers(&self) -> & [::std::string::String] {
+        self.enabled_security_control_identifiers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of security controls that are disabled in the configuration policy. Security Hub enables all other controls (including newly released controls) other than the listed controls.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.disabled_security_control_identifiers.is_none()`.
-    pub fn disabled_security_control_identifiers(&self) -> &[::std::string::String] {
-        self.disabled_security_control_identifiers.as_deref().unwrap_or_default()
+    pub fn disabled_security_control_identifiers(&self) -> & [::std::string::String] {
+        self.disabled_security_control_identifiers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of security controls and control parameter values that are included in a configuration policy.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_control_custom_parameters.is_none()`.
-    pub fn security_control_custom_parameters(&self) -> &[crate::types::SecurityControlCustomParameter] {
-        self.security_control_custom_parameters.as_deref().unwrap_or_default()
+    pub fn security_control_custom_parameters(&self) -> & [crate::types::SecurityControlCustomParameter] {
+        self.security_control_custom_parameters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SecurityControlsConfiguration {
@@ -42,9 +45,9 @@ impl SecurityControlsConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SecurityControlsConfigurationBuilder {
-    pub(crate) enabled_security_control_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) disabled_security_control_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) security_control_custom_parameters: ::std::option::Option<::std::vec::Vec<crate::types::SecurityControlCustomParameter>>,
+    pub(crate) enabled_security_control_identifiers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) disabled_security_control_identifiers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) security_control_custom_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::SecurityControlCustomParameter>>,
 }
 impl SecurityControlsConfigurationBuilder {
     /// Appends an item to `enabled_security_control_identifiers`.
@@ -54,17 +57,16 @@ impl SecurityControlsConfigurationBuilder {
     /// <p>A list of security controls that are enabled in the configuration policy. Security Hub disables all other controls (including newly released controls) other than the listed controls.</p>
     pub fn enabled_security_control_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.enabled_security_control_identifiers.unwrap_or_default();
-        v.push(input.into());
-        self.enabled_security_control_identifiers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.enabled_security_control_identifiers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of security controls that are enabled in the configuration policy. Security Hub disables all other controls (including newly released controls) other than the listed controls.</p>
-    pub fn set_enabled_security_control_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.enabled_security_control_identifiers = input;
-        self
+    pub fn set_enabled_security_control_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.enabled_security_control_identifiers = input; self
     }
     /// <p>A list of security controls that are enabled in the configuration policy. Security Hub disables all other controls (including newly released controls) other than the listed controls.</p>
-    pub fn get_enabled_security_control_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_enabled_security_control_identifiers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.enabled_security_control_identifiers
     }
     /// Appends an item to `disabled_security_control_identifiers`.
@@ -74,17 +76,16 @@ impl SecurityControlsConfigurationBuilder {
     /// <p>A list of security controls that are disabled in the configuration policy. Security Hub enables all other controls (including newly released controls) other than the listed controls.</p>
     pub fn disabled_security_control_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.disabled_security_control_identifiers.unwrap_or_default();
-        v.push(input.into());
-        self.disabled_security_control_identifiers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.disabled_security_control_identifiers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of security controls that are disabled in the configuration policy. Security Hub enables all other controls (including newly released controls) other than the listed controls.</p>
-    pub fn set_disabled_security_control_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.disabled_security_control_identifiers = input;
-        self
+    pub fn set_disabled_security_control_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.disabled_security_control_identifiers = input; self
     }
     /// <p>A list of security controls that are disabled in the configuration policy. Security Hub enables all other controls (including newly released controls) other than the listed controls.</p>
-    pub fn get_disabled_security_control_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_disabled_security_control_identifiers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.disabled_security_control_identifiers
     }
     /// Appends an item to `security_control_custom_parameters`.
@@ -94,28 +95,28 @@ impl SecurityControlsConfigurationBuilder {
     /// <p>A list of security controls and control parameter values that are included in a configuration policy.</p>
     pub fn security_control_custom_parameters(mut self, input: crate::types::SecurityControlCustomParameter) -> Self {
         let mut v = self.security_control_custom_parameters.unwrap_or_default();
-        v.push(input);
-        self.security_control_custom_parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.security_control_custom_parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of security controls and control parameter values that are included in a configuration policy.</p>
-    pub fn set_security_control_custom_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityControlCustomParameter>>,
-    ) -> Self {
-        self.security_control_custom_parameters = input;
-        self
+    pub fn set_security_control_custom_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SecurityControlCustomParameter>>) -> Self {
+        self.security_control_custom_parameters = input; self
     }
     /// <p>A list of security controls and control parameter values that are included in a configuration policy.</p>
-    pub fn get_security_control_custom_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityControlCustomParameter>> {
+    pub fn get_security_control_custom_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SecurityControlCustomParameter>> {
         &self.security_control_custom_parameters
     }
     /// Consumes the builder and constructs a [`SecurityControlsConfiguration`](crate::types::SecurityControlsConfiguration).
     pub fn build(self) -> crate::types::SecurityControlsConfiguration {
         crate::types::SecurityControlsConfiguration {
-            enabled_security_control_identifiers: self.enabled_security_control_identifiers,
-            disabled_security_control_identifiers: self.disabled_security_control_identifiers,
-            security_control_custom_parameters: self.security_control_custom_parameters,
+            enabled_security_control_identifiers: self.enabled_security_control_identifiers
+            ,
+            disabled_security_control_identifiers: self.disabled_security_control_identifiers
+            ,
+            security_control_custom_parameters: self.security_control_custom_parameters
+            ,
         }
     }
 }
+

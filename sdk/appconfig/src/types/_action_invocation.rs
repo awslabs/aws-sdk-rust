@@ -3,7 +3,7 @@
 /// <p>An extension that was invoked as part of a deployment event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActionInvocation {
+pub struct ActionInvocation  {
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
     pub extension_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the action.</p>
@@ -19,33 +19,33 @@ pub struct ActionInvocation {
     /// <p>A system-generated ID for this invocation.</p>
     pub invocation_id: ::std::option::Option<::std::string::String>,
 }
-impl ActionInvocation {
+impl  ActionInvocation  {
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
-    pub fn extension_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn extension_identifier(&self) -> ::std::option::Option<& str> {
         self.extension_identifier.as_deref()
     }
     /// <p>The name of the action.</p>
-    pub fn action_name(&self) -> ::std::option::Option<&str> {
+    pub fn action_name(&self) -> ::std::option::Option<& str> {
         self.action_name.as_deref()
     }
     /// <p>The extension URI associated to the action point in the extension definition. The URI can be an Amazon Resource Name (ARN) for one of the following: an Lambda function, an Amazon Simple Queue Service queue, an Amazon Simple Notification Service topic, or the Amazon EventBridge default event bus.</p>
-    pub fn uri(&self) -> ::std::option::Option<&str> {
+    pub fn uri(&self) -> ::std::option::Option<& str> {
         self.uri.as_deref()
     }
     /// <p>An Amazon Resource Name (ARN) for an Identity and Access Management assume role.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The error message when an extension invocation fails.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>The error code when an extension invocation fails.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>A system-generated ID for this invocation.</p>
-    pub fn invocation_id(&self) -> ::std::option::Option<&str> {
+    pub fn invocation_id(&self) -> ::std::option::Option<& str> {
         self.invocation_id.as_deref()
     }
 }
@@ -76,8 +76,7 @@ impl ActionInvocationBuilder {
     }
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
     pub fn set_extension_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.extension_identifier = input;
-        self
+        self.extension_identifier = input; self
     }
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
     pub fn get_extension_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl ActionInvocationBuilder {
     }
     /// <p>The name of the action.</p>
     pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_name = input;
-        self
+        self.action_name = input; self
     }
     /// <p>The name of the action.</p>
     pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl ActionInvocationBuilder {
     }
     /// <p>The extension URI associated to the action point in the extension definition. The URI can be an Amazon Resource Name (ARN) for one of the following: an Lambda function, an Amazon Simple Queue Service queue, an Amazon Simple Notification Service topic, or the Amazon EventBridge default event bus.</p>
     pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.uri = input;
-        self
+        self.uri = input; self
     }
     /// <p>The extension URI associated to the action point in the extension definition. The URI can be an Amazon Resource Name (ARN) for one of the following: an Lambda function, an Amazon Simple Queue Service queue, an Amazon Simple Notification Service topic, or the Amazon EventBridge default event bus.</p>
     pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl ActionInvocationBuilder {
     }
     /// <p>An Amazon Resource Name (ARN) for an Identity and Access Management assume role.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>An Amazon Resource Name (ARN) for an Identity and Access Management assume role.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl ActionInvocationBuilder {
     }
     /// <p>The error message when an extension invocation fails.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The error message when an extension invocation fails.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +141,7 @@ impl ActionInvocationBuilder {
     }
     /// <p>The error code when an extension invocation fails.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code when an extension invocation fails.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +154,7 @@ impl ActionInvocationBuilder {
     }
     /// <p>A system-generated ID for this invocation.</p>
     pub fn set_invocation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.invocation_id = input;
-        self
+        self.invocation_id = input; self
     }
     /// <p>A system-generated ID for this invocation.</p>
     pub fn get_invocation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,13 +163,21 @@ impl ActionInvocationBuilder {
     /// Consumes the builder and constructs a [`ActionInvocation`](crate::types::ActionInvocation).
     pub fn build(self) -> crate::types::ActionInvocation {
         crate::types::ActionInvocation {
-            extension_identifier: self.extension_identifier,
-            action_name: self.action_name,
-            uri: self.uri,
-            role_arn: self.role_arn,
-            error_message: self.error_message,
-            error_code: self.error_code,
-            invocation_id: self.invocation_id,
+            extension_identifier: self.extension_identifier
+            ,
+            action_name: self.action_name
+            ,
+            uri: self.uri
+            ,
+            role_arn: self.role_arn
+            ,
+            error_message: self.error_message
+            ,
+            error_code: self.error_code
+            ,
+            invocation_id: self.invocation_id
+            ,
         }
     }
 }
+

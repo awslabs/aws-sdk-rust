@@ -3,15 +3,14 @@
 /// <p>The parameters for IoT Analytics.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsIotAnalyticsParameters {
+pub struct AwsIotAnalyticsParameters  {
     /// <p>Dataset name.</p>
     pub data_set_name: ::std::string::String,
 }
-impl AwsIotAnalyticsParameters {
+impl  AwsIotAnalyticsParameters  {
     /// <p>Dataset name.</p>
-    pub fn data_set_name(&self) -> &str {
-        use std::ops::Deref;
-        self.data_set_name.deref()
+    pub fn data_set_name(&self) -> & str {
+        use std::ops::Deref; self.data_set_name.deref()
     }
 }
 impl AwsIotAnalyticsParameters {
@@ -36,8 +35,7 @@ impl AwsIotAnalyticsParametersBuilder {
     }
     /// <p>Dataset name.</p>
     pub fn set_data_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_name = input;
-        self
+        self.data_set_name = input; self
     }
     /// <p>Dataset name.</p>
     pub fn get_data_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl AwsIotAnalyticsParametersBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`data_set_name`](crate::types::builders::AwsIotAnalyticsParametersBuilder::data_set_name)
     pub fn build(self) -> ::std::result::Result<crate::types::AwsIotAnalyticsParameters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AwsIotAnalyticsParameters {
-            data_set_name: self.data_set_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_set_name",
-                    "data_set_name was not specified but it is required when building AwsIotAnalyticsParameters",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AwsIotAnalyticsParameters {
+                data_set_name: self.data_set_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_set_name", "data_set_name was not specified but it is required when building AwsIotAnalyticsParameters")
+                    )?
+                ,
+            }
+        )
     }
 }
+

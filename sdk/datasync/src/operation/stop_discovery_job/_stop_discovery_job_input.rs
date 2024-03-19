@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopDiscoveryJobInput {
+pub struct StopDiscoveryJobInput  {
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to stop.</p>
     pub discovery_job_arn: ::std::option::Option<::std::string::String>,
 }
-impl StopDiscoveryJobInput {
+impl  StopDiscoveryJobInput  {
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to stop.</p>
-    pub fn discovery_job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn discovery_job_arn(&self) -> ::std::option::Option<& str> {
         self.discovery_job_arn.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl StopDiscoveryJobInputBuilder {
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to stop.</p>
     pub fn set_discovery_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.discovery_job_arn = input;
-        self
+        self.discovery_job_arn = input; self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to stop.</p>
     pub fn get_discovery_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.discovery_job_arn
     }
     /// Consumes the builder and constructs a [`StopDiscoveryJobInput`](crate::operation::stop_discovery_job::StopDiscoveryJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::stop_discovery_job::StopDiscoveryJobInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::stop_discovery_job::StopDiscoveryJobInput {
-            discovery_job_arn: self.discovery_job_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_discovery_job::StopDiscoveryJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_discovery_job::StopDiscoveryJobInput {
+                discovery_job_arn: self.discovery_job_arn
+                ,
+            }
+        )
     }
 }
+

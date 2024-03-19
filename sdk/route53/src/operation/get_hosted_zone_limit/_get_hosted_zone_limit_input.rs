@@ -3,7 +3,7 @@
 /// <p>A complex type that contains information about the request to create a hosted zone.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetHostedZoneLimitInput {
+pub struct GetHostedZoneLimitInput  {
     /// <p>The limit that you want to get. Valid values include the following:</p>
     /// <ul>
     /// <li>
@@ -15,7 +15,7 @@ pub struct GetHostedZoneLimitInput {
     /// <p>The ID of the hosted zone that you want to get a limit for.</p>
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
 }
-impl GetHostedZoneLimitInput {
+impl  GetHostedZoneLimitInput  {
     /// <p>The limit that you want to get. Valid values include the following:</p>
     /// <ul>
     /// <li>
@@ -23,11 +23,11 @@ impl GetHostedZoneLimitInput {
     /// <li>
     /// <p><b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified private hosted zone.</p></li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::HostedZoneLimitType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::HostedZoneLimitType> {
         self.r#type.as_ref()
     }
     /// <p>The ID of the hosted zone that you want to get a limit for.</p>
-    pub fn hosted_zone_id(&self) -> ::std::option::Option<&str> {
+    pub fn hosted_zone_id(&self) -> ::std::option::Option<& str> {
         self.hosted_zone_id.as_deref()
     }
 }
@@ -66,8 +66,7 @@ impl GetHostedZoneLimitInputBuilder {
     /// <p><b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified private hosted zone.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::HostedZoneLimitType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The limit that you want to get. Valid values include the following:</p>
     /// <ul>
@@ -87,21 +86,22 @@ impl GetHostedZoneLimitInputBuilder {
     }
     /// <p>The ID of the hosted zone that you want to get a limit for.</p>
     pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hosted_zone_id = input;
-        self
+        self.hosted_zone_id = input; self
     }
     /// <p>The ID of the hosted zone that you want to get a limit for.</p>
     pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.hosted_zone_id
     }
     /// Consumes the builder and constructs a [`GetHostedZoneLimitInput`](crate::operation::get_hosted_zone_limit::GetHostedZoneLimitInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_hosted_zone_limit::GetHostedZoneLimitInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_hosted_zone_limit::GetHostedZoneLimitInput {
-            r#type: self.r#type,
-            hosted_zone_id: self.hosted_zone_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_hosted_zone_limit::GetHostedZoneLimitInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_hosted_zone_limit::GetHostedZoneLimitInput {
+                r#type: self.r#type
+                ,
+                hosted_zone_id: self.hosted_zone_id
+                ,
+            }
+        )
     }
 }
+

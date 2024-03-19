@@ -3,7 +3,7 @@
 /// <p>Represents a client certificate used to configure client-side SSL authentication while sending requests to the integration endpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClientCertificate {
+pub struct ClientCertificate  {
     /// <p>The identifier of the client certificate.</p>
     pub client_certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the client certificate.</p>
@@ -15,31 +15,31 @@ pub struct ClientCertificate {
     /// <p>The timestamp when the client certificate will expire.</p>
     pub expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl ClientCertificate {
+impl  ClientCertificate  {
     /// <p>The identifier of the client certificate.</p>
-    pub fn client_certificate_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_certificate_id(&self) -> ::std::option::Option<& str> {
         self.client_certificate_id.as_deref()
     }
     /// <p>The description of the client certificate.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The PEM-encoded public key of the client certificate, which can be used to configure certificate authentication in the integration endpoint .</p>
-    pub fn pem_encoded_certificate(&self) -> ::std::option::Option<&str> {
+    pub fn pem_encoded_certificate(&self) -> ::std::option::Option<& str> {
         self.pem_encoded_certificate.as_deref()
     }
     /// <p>The timestamp when the client certificate was created.</p>
-    pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The timestamp when the client certificate will expire.</p>
-    pub fn expiration_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn expiration_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -59,7 +59,7 @@ pub struct ClientCertificateBuilder {
     pub(crate) pem_encoded_certificate: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl ClientCertificateBuilder {
     /// <p>The identifier of the client certificate.</p>
@@ -69,8 +69,7 @@ impl ClientCertificateBuilder {
     }
     /// <p>The identifier of the client certificate.</p>
     pub fn set_client_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_certificate_id = input;
-        self
+        self.client_certificate_id = input; self
     }
     /// <p>The identifier of the client certificate.</p>
     pub fn get_client_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl ClientCertificateBuilder {
     }
     /// <p>The description of the client certificate.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the client certificate.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl ClientCertificateBuilder {
     }
     /// <p>The PEM-encoded public key of the client certificate, which can be used to configure certificate authentication in the integration endpoint .</p>
     pub fn set_pem_encoded_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pem_encoded_certificate = input;
-        self
+        self.pem_encoded_certificate = input; self
     }
     /// <p>The PEM-encoded public key of the client certificate, which can be used to configure certificate authentication in the integration endpoint .</p>
     pub fn get_pem_encoded_certificate(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl ClientCertificateBuilder {
     }
     /// <p>The timestamp when the client certificate was created.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>The timestamp when the client certificate was created.</p>
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -125,8 +121,7 @@ impl ClientCertificateBuilder {
     }
     /// <p>The timestamp when the client certificate will expire.</p>
     pub fn set_expiration_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.expiration_date = input;
-        self
+        self.expiration_date = input; self
     }
     /// <p>The timestamp when the client certificate will expire.</p>
     pub fn get_expiration_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -139,28 +134,34 @@ impl ClientCertificateBuilder {
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ClientCertificate`](crate::types::ClientCertificate).
     pub fn build(self) -> crate::types::ClientCertificate {
         crate::types::ClientCertificate {
-            client_certificate_id: self.client_certificate_id,
-            description: self.description,
-            pem_encoded_certificate: self.pem_encoded_certificate,
-            created_date: self.created_date,
-            expiration_date: self.expiration_date,
-            tags: self.tags,
+            client_certificate_id: self.client_certificate_id
+            ,
+            description: self.description
+            ,
+            pem_encoded_certificate: self.pem_encoded_certificate
+            ,
+            created_date: self.created_date
+            ,
+            expiration_date: self.expiration_date
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

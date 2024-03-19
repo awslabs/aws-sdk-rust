@@ -3,7 +3,7 @@
 /// <p>Contains the bucket name, file format, bucket owner (optional), and prefix (optional) where inventory results are published.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InventoryS3BucketDestination {
+pub struct InventoryS3BucketDestination  {
     /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the owner is not validated before exporting data.</p><note>
     /// <p>Although this value is optional, we strongly recommend that you set it to help prevent problems if the destination bucket ownership changes.</p>
     /// </note>
@@ -17,28 +17,27 @@ pub struct InventoryS3BucketDestination {
     /// <p>Contains the type of server-side encryption used to encrypt the inventory results.</p>
     pub encryption: ::std::option::Option<crate::types::InventoryEncryption>,
 }
-impl InventoryS3BucketDestination {
+impl  InventoryS3BucketDestination  {
     /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the owner is not validated before exporting data.</p><note>
     /// <p>Although this value is optional, we strongly recommend that you set it to help prevent problems if the destination bucket ownership changes.</p>
     /// </note>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the bucket where inventory results will be published.</p>
-    pub fn bucket(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket.deref()
+    pub fn bucket(&self) -> & str {
+        use std::ops::Deref; self.bucket.deref()
     }
     /// <p>Specifies the output format of the inventory results.</p>
-    pub fn format(&self) -> &crate::types::InventoryFormat {
+    pub fn format(&self) -> & crate::types::InventoryFormat {
         &self.format
     }
     /// <p>The prefix that is prepended to all inventory results.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>Contains the type of server-side encryption used to encrypt the inventory results.</p>
-    pub fn encryption(&self) -> ::std::option::Option<&crate::types::InventoryEncryption> {
+    pub fn encryption(&self) -> ::std::option::Option<& crate::types::InventoryEncryption> {
         self.encryption.as_ref()
     }
 }
@@ -71,8 +70,7 @@ impl InventoryS3BucketDestinationBuilder {
     /// <p>Although this value is optional, we strongly recommend that you set it to help prevent problems if the destination bucket ownership changes.</p>
     /// </note>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the owner is not validated before exporting data.</p><note>
     /// <p>Although this value is optional, we strongly recommend that you set it to help prevent problems if the destination bucket ownership changes.</p>
@@ -88,8 +86,7 @@ impl InventoryS3BucketDestinationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the bucket where inventory results will be published.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the bucket where inventory results will be published.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +100,7 @@ impl InventoryS3BucketDestinationBuilder {
     }
     /// <p>Specifies the output format of the inventory results.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::InventoryFormat>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>Specifies the output format of the inventory results.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::InventoryFormat> {
@@ -117,8 +113,7 @@ impl InventoryS3BucketDestinationBuilder {
     }
     /// <p>The prefix that is prepended to all inventory results.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>The prefix that is prepended to all inventory results.</p>
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +126,7 @@ impl InventoryS3BucketDestinationBuilder {
     }
     /// <p>Contains the type of server-side encryption used to encrypt the inventory results.</p>
     pub fn set_encryption(mut self, input: ::std::option::Option<crate::types::InventoryEncryption>) -> Self {
-        self.encryption = input;
-        self
+        self.encryption = input; self
     }
     /// <p>Contains the type of server-side encryption used to encrypt the inventory results.</p>
     pub fn get_encryption(&self) -> &::std::option::Option<crate::types::InventoryEncryption> {
@@ -143,22 +137,26 @@ impl InventoryS3BucketDestinationBuilder {
     /// - [`bucket`](crate::types::builders::InventoryS3BucketDestinationBuilder::bucket)
     /// - [`format`](crate::types::builders::InventoryS3BucketDestinationBuilder::format)
     pub fn build(self) -> ::std::result::Result<crate::types::InventoryS3BucketDestination, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::InventoryS3BucketDestination {
-            account_id: self.account_id,
-            bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket",
-                    "bucket was not specified but it is required when building InventoryS3BucketDestination",
-                )
-            })?,
-            format: self.format.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "format",
-                    "format was not specified but it is required when building InventoryS3BucketDestination",
-                )
-            })?,
-            prefix: self.prefix,
-            encryption: self.encryption,
-        })
+        ::std::result::Result::Ok(
+            crate::types::InventoryS3BucketDestination {
+                account_id: self.account_id
+                ,
+                bucket: self.bucket
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket", "bucket was not specified but it is required when building InventoryS3BucketDestination")
+                    )?
+                ,
+                format: self.format
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("format", "format was not specified but it is required when building InventoryS3BucketDestination")
+                    )?
+                ,
+                prefix: self.prefix
+                ,
+                encryption: self.encryption
+                ,
+            }
+        )
     }
 }
+

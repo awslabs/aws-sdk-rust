@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSolNetworkInstanceInput {
+pub struct GetSolNetworkInstanceInput  {
     /// <p>ID of the network instance.</p>
     pub ns_instance_id: ::std::option::Option<::std::string::String>,
 }
-impl GetSolNetworkInstanceInput {
+impl  GetSolNetworkInstanceInput  {
     /// <p>ID of the network instance.</p>
-    pub fn ns_instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn ns_instance_id(&self) -> ::std::option::Option<& str> {
         self.ns_instance_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetSolNetworkInstanceInputBuilder {
     }
     /// <p>ID of the network instance.</p>
     pub fn set_ns_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ns_instance_id = input;
-        self
+        self.ns_instance_id = input; self
     }
     /// <p>ID of the network instance.</p>
     pub fn get_ns_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ns_instance_id
     }
     /// Consumes the builder and constructs a [`GetSolNetworkInstanceInput`](crate::operation::get_sol_network_instance::GetSolNetworkInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_sol_network_instance::GetSolNetworkInstanceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_sol_network_instance::GetSolNetworkInstanceInput {
-            ns_instance_id: self.ns_instance_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_sol_network_instance::GetSolNetworkInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_sol_network_instance::GetSolNetworkInstanceInput {
+                ns_instance_id: self.ns_instance_id
+                ,
+            }
+        )
     }
 }
+

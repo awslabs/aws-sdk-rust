@@ -3,29 +3,29 @@
 /// <p>Contains <code>ProfileObjectType</code> mapping information from the model.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DetectedProfileObjectType {
+pub struct DetectedProfileObjectType  {
     /// <p>The format of <code>sourceLastUpdatedTimestamp</code> that was detected in fields.</p>
     pub source_last_updated_timestamp_format: ::std::option::Option<::std::string::String>,
     /// <p>A map of the name and the <code>ObjectType</code> field.</p>
-    pub fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>>,
+    pub fields: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ObjectTypeField>>,
     /// <p>A list of unique keys that can be used to map data to a profile.</p>
-    pub keys: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ObjectTypeKey>>>,
+    pub keys: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::ObjectTypeKey>>>,
 }
-impl DetectedProfileObjectType {
+impl  DetectedProfileObjectType  {
     /// <p>The format of <code>sourceLastUpdatedTimestamp</code> that was detected in fields.</p>
-    pub fn source_last_updated_timestamp_format(&self) -> ::std::option::Option<&str> {
+    pub fn source_last_updated_timestamp_format(&self) -> ::std::option::Option<& str> {
         self.source_last_updated_timestamp_format.as_deref()
     }
     /// <p>A map of the name and the <code>ObjectType</code> field.</p>
-    pub fn fields(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>> {
+    pub fn fields(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::ObjectTypeField>> {
         self.fields.as_ref()
     }
     /// <p>A list of unique keys that can be used to map data to a profile.</p>
-    pub fn keys(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ObjectTypeKey>>> {
+    pub fn keys(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::ObjectTypeKey>>> {
         self.keys.as_ref()
     }
 }
-impl ::std::fmt::Debug for DetectedProfileObjectType {
+impl  ::std::fmt::Debug for DetectedProfileObjectType  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DetectedProfileObjectType");
         formatter.field("source_last_updated_timestamp_format", &self.source_last_updated_timestamp_format);
@@ -46,8 +46,8 @@ impl DetectedProfileObjectType {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct DetectedProfileObjectTypeBuilder {
     pub(crate) source_last_updated_timestamp_format: ::std::option::Option<::std::string::String>,
-    pub(crate) fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>>,
-    pub(crate) keys: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ObjectTypeKey>>>,
+    pub(crate) fields: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ObjectTypeField>>,
+    pub(crate) keys: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::ObjectTypeKey>>>,
 }
 impl DetectedProfileObjectTypeBuilder {
     /// <p>The format of <code>sourceLastUpdatedTimestamp</code> that was detected in fields.</p>
@@ -57,8 +57,7 @@ impl DetectedProfileObjectTypeBuilder {
     }
     /// <p>The format of <code>sourceLastUpdatedTimestamp</code> that was detected in fields.</p>
     pub fn set_source_last_updated_timestamp_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_last_updated_timestamp_format = input;
-        self
+        self.source_last_updated_timestamp_format = input; self
     }
     /// <p>The format of <code>sourceLastUpdatedTimestamp</code> that was detected in fields.</p>
     pub fn get_source_last_updated_timestamp_format(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,20 +70,16 @@ impl DetectedProfileObjectTypeBuilder {
     /// <p>A map of the name and the <code>ObjectType</code> field.</p>
     pub fn fields(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ObjectTypeField) -> Self {
         let mut hash_map = self.fields.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.fields = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.fields = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of the name and the <code>ObjectType</code> field.</p>
-    pub fn set_fields(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>>,
-    ) -> Self {
-        self.fields = input;
-        self
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ObjectTypeField>>) -> Self {
+        self.fields = input; self
     }
     /// <p>A map of the name and the <code>ObjectType</code> field.</p>
-    pub fn get_fields(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>> {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ObjectTypeField>> {
         &self.fields
     }
     /// Adds a key-value pair to `keys`.
@@ -92,32 +87,29 @@ impl DetectedProfileObjectTypeBuilder {
     /// To override the contents of this collection use [`set_keys`](Self::set_keys).
     ///
     /// <p>A list of unique keys that can be used to map data to a profile.</p>
-    pub fn keys(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<crate::types::ObjectTypeKey>) -> Self {
+    pub fn keys(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec::<crate::types::ObjectTypeKey>) -> Self {
         let mut hash_map = self.keys.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.keys = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.keys = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of unique keys that can be used to map data to a profile.</p>
-    pub fn set_keys(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ObjectTypeKey>>>,
-    ) -> Self {
-        self.keys = input;
-        self
+    pub fn set_keys(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::ObjectTypeKey>>>) -> Self {
+        self.keys = input; self
     }
     /// <p>A list of unique keys that can be used to map data to a profile.</p>
-    pub fn get_keys(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ObjectTypeKey>>> {
+    pub fn get_keys(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::ObjectTypeKey>>> {
         &self.keys
     }
     /// Consumes the builder and constructs a [`DetectedProfileObjectType`](crate::types::DetectedProfileObjectType).
     pub fn build(self) -> crate::types::DetectedProfileObjectType {
         crate::types::DetectedProfileObjectType {
-            source_last_updated_timestamp_format: self.source_last_updated_timestamp_format,
-            fields: self.fields,
-            keys: self.keys,
+            source_last_updated_timestamp_format: self.source_last_updated_timestamp_format
+            ,
+            fields: self.fields
+            ,
+            keys: self.keys
+            ,
         }
     }
 }
@@ -130,3 +122,4 @@ impl ::std::fmt::Debug for DetectedProfileObjectTypeBuilder {
         formatter.finish()
     }
 }
+

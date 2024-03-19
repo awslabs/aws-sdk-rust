@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteModelInvocationLoggingConfigurationInput {}
+pub struct DeleteModelInvocationLoggingConfigurationInput  {
+}
 impl DeleteModelInvocationLoggingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteModelInvocationLoggingConfigurationInput`](crate::operation::delete_model_invocation_logging_configuration::DeleteModelInvocationLoggingConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::delete_model_invocation_logging_configuration::builders::DeleteModelInvocationLoggingConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::delete_model_invocation_logging_configuration::builders::DeleteModelInvocationLoggingConfigurationInputBuilder {
         crate::operation::delete_model_invocation_logging_configuration::builders::DeleteModelInvocationLoggingConfigurationInputBuilder::default()
     }
 }
@@ -14,15 +14,15 @@ impl DeleteModelInvocationLoggingConfigurationInput {
 /// A builder for [`DeleteModelInvocationLoggingConfigurationInput`](crate::operation::delete_model_invocation_logging_configuration::DeleteModelInvocationLoggingConfigurationInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct DeleteModelInvocationLoggingConfigurationInputBuilder {}
+pub struct DeleteModelInvocationLoggingConfigurationInputBuilder {
+}
 impl DeleteModelInvocationLoggingConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteModelInvocationLoggingConfigurationInput`](crate::operation::delete_model_invocation_logging_configuration::DeleteModelInvocationLoggingConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_model_invocation_logging_configuration::DeleteModelInvocationLoggingConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_model_invocation_logging_configuration::DeleteModelInvocationLoggingConfigurationInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_model_invocation_logging_configuration::DeleteModelInvocationLoggingConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_model_invocation_logging_configuration::DeleteModelInvocationLoggingConfigurationInput {
+            }
+        )
     }
 }
+

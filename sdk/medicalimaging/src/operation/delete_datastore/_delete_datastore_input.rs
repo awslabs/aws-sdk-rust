@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDatastoreInput {
+pub struct DeleteDatastoreInput  {
     /// <p>The data store identifier.</p>
     pub datastore_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteDatastoreInput {
+impl  DeleteDatastoreInput  {
     /// <p>The data store identifier.</p>
-    pub fn datastore_id(&self) -> ::std::option::Option<&str> {
+    pub fn datastore_id(&self) -> ::std::option::Option<& str> {
         self.datastore_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteDatastoreInputBuilder {
     }
     /// <p>The data store identifier.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.datastore_id = input;
-        self
+        self.datastore_id = input; self
     }
     /// <p>The data store identifier.</p>
     pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.datastore_id
     }
     /// Consumes the builder and constructs a [`DeleteDatastoreInput`](crate::operation::delete_datastore::DeleteDatastoreInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_datastore::DeleteDatastoreInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_datastore::DeleteDatastoreInput {
-            datastore_id: self.datastore_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_datastore::DeleteDatastoreInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_datastore::DeleteDatastoreInput {
+                datastore_id: self.datastore_id
+                ,
+            }
+        )
     }
 }
+

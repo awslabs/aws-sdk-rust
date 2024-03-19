@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDeviceFleets`](crate::operation::list_device_fleets::builders::ListDeviceFleetsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_device_fleets::builders::ListDeviceFleetsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_device_fleets::builders::ListDeviceFleetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_device_fleets::builders::ListDeviceFleetsFluentBuilder::set_next_token):<br>required: **false**<br><p>The response from the last list when returning a list large enough to need tokening.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_device_fleets::builders::ListDeviceFleetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_device_fleets::builders::ListDeviceFleetsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to select.</p><br>
     ///   - [`creation_time_after(DateTime)`](crate::operation::list_device_fleets::builders::ListDeviceFleetsFluentBuilder::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::operation::list_device_fleets::builders::ListDeviceFleetsFluentBuilder::set_creation_time_after):<br>required: **false**<br><p>Filter fleets where packaging job was created after specified time.</p><br>
@@ -13,11 +13,12 @@ impl super::Client {
     ///   - [`name_contains(impl Into<String>)`](crate::operation::list_device_fleets::builders::ListDeviceFleetsFluentBuilder::name_contains) / [`set_name_contains(Option<String>)`](crate::operation::list_device_fleets::builders::ListDeviceFleetsFluentBuilder::set_name_contains):<br>required: **false**<br><p>Filter for fleets containing this name in their fleet device name.</p><br>
     ///   - [`sort_by(ListDeviceFleetsSortBy)`](crate::operation::list_device_fleets::builders::ListDeviceFleetsFluentBuilder::sort_by) / [`set_sort_by(Option<ListDeviceFleetsSortBy>)`](crate::operation::list_device_fleets::builders::ListDeviceFleetsFluentBuilder::set_sort_by):<br>required: **false**<br><p>The column to sort by.</p><br>
     ///   - [`sort_order(SortOrder)`](crate::operation::list_device_fleets::builders::ListDeviceFleetsFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_device_fleets::builders::ListDeviceFleetsFluentBuilder::set_sort_order):<br>required: **false**<br><p>What direction to sort in.</p><br>
-    /// - On success, responds with [`ListDeviceFleetsOutput`](crate::operation::list_device_fleets::ListDeviceFleetsOutput) with field(s):
+                            /// - On success, responds with [`ListDeviceFleetsOutput`](crate::operation::list_device_fleets::ListDeviceFleetsOutput) with field(s):
     ///   - [`device_fleet_summaries(Option<Vec::<DeviceFleetSummary>>)`](crate::operation::list_device_fleets::ListDeviceFleetsOutput::device_fleet_summaries): <p>Summary of the device fleet.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_device_fleets::ListDeviceFleetsOutput::next_token): <p>The response from the last list when returning a list large enough to need tokening.</p>
-    /// - On failure, responds with [`SdkError<ListDeviceFleetsError>`](crate::operation::list_device_fleets::ListDeviceFleetsError)
+                            /// - On failure, responds with [`SdkError<ListDeviceFleetsError>`](crate::operation::list_device_fleets::ListDeviceFleetsError)
     pub fn list_device_fleets(&self) -> crate::operation::list_device_fleets::builders::ListDeviceFleetsFluentBuilder {
-        crate::operation::list_device_fleets::builders::ListDeviceFleetsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_device_fleets::builders::ListDeviceFleetsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

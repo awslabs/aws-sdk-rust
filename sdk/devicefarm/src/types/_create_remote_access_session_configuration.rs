@@ -3,22 +3,23 @@
 /// <p>Configuration settings for a remote access session, including billing method.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRemoteAccessSessionConfiguration {
+pub struct CreateRemoteAccessSessionConfiguration  {
     /// <p>The billing method for the remote access session.</p>
     pub billing_method: ::std::option::Option<crate::types::BillingMethod>,
     /// <p>An array of ARNs included in the VPC endpoint configuration.</p>
-    pub vpce_configuration_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub vpce_configuration_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl CreateRemoteAccessSessionConfiguration {
+impl  CreateRemoteAccessSessionConfiguration  {
     /// <p>The billing method for the remote access session.</p>
-    pub fn billing_method(&self) -> ::std::option::Option<&crate::types::BillingMethod> {
+    pub fn billing_method(&self) -> ::std::option::Option<& crate::types::BillingMethod> {
         self.billing_method.as_ref()
     }
     /// <p>An array of ARNs included in the VPC endpoint configuration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpce_configuration_arns.is_none()`.
-    pub fn vpce_configuration_arns(&self) -> &[::std::string::String] {
-        self.vpce_configuration_arns.as_deref().unwrap_or_default()
+    pub fn vpce_configuration_arns(&self) -> & [::std::string::String] {
+        self.vpce_configuration_arns.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateRemoteAccessSessionConfiguration {
@@ -33,7 +34,7 @@ impl CreateRemoteAccessSessionConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRemoteAccessSessionConfigurationBuilder {
     pub(crate) billing_method: ::std::option::Option<crate::types::BillingMethod>,
-    pub(crate) vpce_configuration_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vpce_configuration_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl CreateRemoteAccessSessionConfigurationBuilder {
     /// <p>The billing method for the remote access session.</p>
@@ -43,8 +44,7 @@ impl CreateRemoteAccessSessionConfigurationBuilder {
     }
     /// <p>The billing method for the remote access session.</p>
     pub fn set_billing_method(mut self, input: ::std::option::Option<crate::types::BillingMethod>) -> Self {
-        self.billing_method = input;
-        self
+        self.billing_method = input; self
     }
     /// <p>The billing method for the remote access session.</p>
     pub fn get_billing_method(&self) -> &::std::option::Option<crate::types::BillingMethod> {
@@ -57,24 +57,26 @@ impl CreateRemoteAccessSessionConfigurationBuilder {
     /// <p>An array of ARNs included in the VPC endpoint configuration.</p>
     pub fn vpce_configuration_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpce_configuration_arns.unwrap_or_default();
-        v.push(input.into());
-        self.vpce_configuration_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.vpce_configuration_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of ARNs included in the VPC endpoint configuration.</p>
-    pub fn set_vpce_configuration_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.vpce_configuration_arns = input;
-        self
+    pub fn set_vpce_configuration_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.vpce_configuration_arns = input; self
     }
     /// <p>An array of ARNs included in the VPC endpoint configuration.</p>
-    pub fn get_vpce_configuration_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpce_configuration_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.vpce_configuration_arns
     }
     /// Consumes the builder and constructs a [`CreateRemoteAccessSessionConfiguration`](crate::types::CreateRemoteAccessSessionConfiguration).
     pub fn build(self) -> crate::types::CreateRemoteAccessSessionConfiguration {
         crate::types::CreateRemoteAccessSessionConfiguration {
-            billing_method: self.billing_method,
-            vpce_configuration_arns: self.vpce_configuration_arns,
+            billing_method: self.billing_method
+            ,
+            vpce_configuration_arns: self.vpce_configuration_arns
+            ,
         }
     }
 }
+

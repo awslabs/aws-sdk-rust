@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ProtectedQueryOutput {
     /// <p>The list of member Amazon Web Services account(s) that received the results of the query.</p>
-    MemberList(::std::vec::Vec<crate::types::ProtectedQuerySingleMemberOutput>),
+    MemberList(::std::vec::Vec::<crate::types::ProtectedQuerySingleMemberOutput>),
     /// <p>If present, the output for a protected query with an `S3` output type.</p>
     S3(crate::types::ProtectedQueryS3Output),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -21,12 +21,8 @@ pub enum ProtectedQueryOutput {
 impl ProtectedQueryOutput {
     /// Tries to convert the enum instance into [`MemberList`](crate::types::ProtectedQueryOutput::MemberList), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_member_list(&self) -> ::std::result::Result<&::std::vec::Vec<crate::types::ProtectedQuerySingleMemberOutput>, &Self> {
-        if let ProtectedQueryOutput::MemberList(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+    pub fn as_member_list(&self) -> ::std::result::Result<&::std::vec::Vec::<crate::types::ProtectedQuerySingleMemberOutput>, &Self> {
+        if let ProtectedQueryOutput::MemberList(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`MemberList`](crate::types::ProtectedQueryOutput::MemberList).
     pub fn is_member_list(&self) -> bool {
@@ -35,11 +31,7 @@ impl ProtectedQueryOutput {
     /// Tries to convert the enum instance into [`S3`](crate::types::ProtectedQueryOutput::S3), extracting the inner [`ProtectedQueryS3Output`](crate::types::ProtectedQueryS3Output).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3(&self) -> ::std::result::Result<&crate::types::ProtectedQueryS3Output, &Self> {
-        if let ProtectedQueryOutput::S3(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ProtectedQueryOutput::S3(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`S3`](crate::types::ProtectedQueryOutput::S3).
     pub fn is_s3(&self) -> bool {
@@ -50,3 +42,4 @@ impl ProtectedQueryOutput {
         matches!(self, Self::Unknown)
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Information about output answers for a contact evaluation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EvaluationAnswerOutput {
+pub struct EvaluationAnswerOutput  {
     /// <p>The value for an answer in a contact evaluation.</p>
     pub value: ::std::option::Option<crate::types::EvaluationAnswerData>,
     /// <p>The system suggested value for an answer in a contact evaluation.</p>
     pub system_suggested_value: ::std::option::Option<crate::types::EvaluationAnswerData>,
 }
-impl EvaluationAnswerOutput {
+impl  EvaluationAnswerOutput  {
     /// <p>The value for an answer in a contact evaluation.</p>
-    pub fn value(&self) -> ::std::option::Option<&crate::types::EvaluationAnswerData> {
+    pub fn value(&self) -> ::std::option::Option<& crate::types::EvaluationAnswerData> {
         self.value.as_ref()
     }
     /// <p>The system suggested value for an answer in a contact evaluation.</p>
-    pub fn system_suggested_value(&self) -> ::std::option::Option<&crate::types::EvaluationAnswerData> {
+    pub fn system_suggested_value(&self) -> ::std::option::Option<& crate::types::EvaluationAnswerData> {
         self.system_suggested_value.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl EvaluationAnswerOutputBuilder {
     }
     /// <p>The value for an answer in a contact evaluation.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::EvaluationAnswerData>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value for an answer in a contact evaluation.</p>
     pub fn get_value(&self) -> &::std::option::Option<crate::types::EvaluationAnswerData> {
@@ -55,8 +54,7 @@ impl EvaluationAnswerOutputBuilder {
     }
     /// <p>The system suggested value for an answer in a contact evaluation.</p>
     pub fn set_system_suggested_value(mut self, input: ::std::option::Option<crate::types::EvaluationAnswerData>) -> Self {
-        self.system_suggested_value = input;
-        self
+        self.system_suggested_value = input; self
     }
     /// <p>The system suggested value for an answer in a contact evaluation.</p>
     pub fn get_system_suggested_value(&self) -> &::std::option::Option<crate::types::EvaluationAnswerData> {
@@ -65,8 +63,11 @@ impl EvaluationAnswerOutputBuilder {
     /// Consumes the builder and constructs a [`EvaluationAnswerOutput`](crate::types::EvaluationAnswerOutput).
     pub fn build(self) -> crate::types::EvaluationAnswerOutput {
         crate::types::EvaluationAnswerOutput {
-            value: self.value,
-            system_suggested_value: self.system_suggested_value,
+            value: self.value
+            ,
+            system_suggested_value: self.system_suggested_value
+            ,
         }
     }
 }
+

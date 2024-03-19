@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRestoreJobInput {
+pub struct DescribeRestoreJobInput  {
     /// <p>Uniquely identifies the job that restores a recovery point.</p>
     pub restore_job_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeRestoreJobInput {
+impl  DescribeRestoreJobInput  {
     /// <p>Uniquely identifies the job that restores a recovery point.</p>
-    pub fn restore_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn restore_job_id(&self) -> ::std::option::Option<& str> {
         self.restore_job_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DescribeRestoreJobInputBuilder {
     }
     /// <p>Uniquely identifies the job that restores a recovery point.</p>
     pub fn set_restore_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.restore_job_id = input;
-        self
+        self.restore_job_id = input; self
     }
     /// <p>Uniquely identifies the job that restores a recovery point.</p>
     pub fn get_restore_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.restore_job_id
     }
     /// Consumes the builder and constructs a [`DescribeRestoreJobInput`](crate::operation::describe_restore_job::DescribeRestoreJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_restore_job::DescribeRestoreJobInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_restore_job::DescribeRestoreJobInput {
-            restore_job_id: self.restore_job_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_restore_job::DescribeRestoreJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_restore_job::DescribeRestoreJobInput {
+                restore_job_id: self.restore_job_id
+                ,
+            }
+        )
     }
 }
+

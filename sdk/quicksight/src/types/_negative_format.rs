@@ -3,19 +3,19 @@
 /// <p>A structure that represents a negative format.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NegativeFormat {
+pub struct NegativeFormat  {
     /// <p>The prefix for a negative format.</p>
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>The suffix for a negative format.</p>
     pub suffix: ::std::option::Option<::std::string::String>,
 }
-impl NegativeFormat {
+impl  NegativeFormat  {
     /// <p>The prefix for a negative format.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>The suffix for a negative format.</p>
-    pub fn suffix(&self) -> ::std::option::Option<&str> {
+    pub fn suffix(&self) -> ::std::option::Option<& str> {
         self.suffix.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl NegativeFormatBuilder {
     }
     /// <p>The prefix for a negative format.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>The prefix for a negative format.</p>
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl NegativeFormatBuilder {
     }
     /// <p>The suffix for a negative format.</p>
     pub fn set_suffix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.suffix = input;
-        self
+        self.suffix = input; self
     }
     /// <p>The suffix for a negative format.</p>
     pub fn get_suffix(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl NegativeFormatBuilder {
     /// Consumes the builder and constructs a [`NegativeFormat`](crate::types::NegativeFormat).
     pub fn build(self) -> crate::types::NegativeFormat {
         crate::types::NegativeFormat {
-            prefix: self.prefix,
-            suffix: self.suffix,
+            prefix: self.prefix
+            ,
+            suffix: self.suffix
+            ,
         }
     }
 }
+

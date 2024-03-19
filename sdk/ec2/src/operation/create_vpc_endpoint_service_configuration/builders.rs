@@ -5,23 +5,20 @@ pub use crate::operation::create_vpc_endpoint_service_configuration::_create_vpc
 
 impl CreateVpcEndpointServiceConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_vpc_endpoint_service_configuration();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_vpc_endpoint_service_configuration();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateVpcEndpointServiceConfiguration`.
-///
+/// 
 /// <p>Creates a VPC endpoint service to which service consumers (Amazon Web Services accounts, users, and IAM roles) can connect.</p>
 /// <p>Before you create an endpoint service, you must create one of the following for your service:</p>
 /// <ul>
@@ -35,91 +32,78 @@ impl CreateVpcEndpointServiceConfigurationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateVpcEndpointServiceConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_vpc_endpoint_service_configuration::builders::CreateVpcEndpointServiceConfigurationInputBuilder,
+                    inner: crate::operation::create_vpc_endpoint_service_configuration::builders::CreateVpcEndpointServiceConfigurationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationOutput,
-        crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationError,
-    > for CreateVpcEndpointServiceConfigurationFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationOutput,
-            crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationOutput,
+                    crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationError,
+                > for CreateVpcEndpointServiceConfigurationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationOutput,
+                        crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateVpcEndpointServiceConfigurationFluentBuilder {
     /// Creates a new `CreateVpcEndpointServiceConfiguration`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
     /// Access the CreateVpcEndpointServiceConfiguration as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::create_vpc_endpoint_service_configuration::builders::CreateVpcEndpointServiceConfigurationInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::create_vpc_endpoint_service_configuration::builders::CreateVpcEndpointServiceConfigurationInputBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins =
-            crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfiguration::operation_runtime_plugins(
-                self.handle.runtime_plugins.clone(),
-                &self.handle.conf,
-                self.config_override,
-            );
-        crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfiguration::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationOutput,
-        crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfiguration::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfiguration::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationOutput, crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -172,12 +156,12 @@ impl CreateVpcEndpointServiceConfigurationFluentBuilder {
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the Network Load Balancers.</p>
-    pub fn set_network_load_balancer_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_network_load_balancer_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_network_load_balancer_arns(input);
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the Network Load Balancers.</p>
-    pub fn get_network_load_balancer_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_network_load_balancer_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_network_load_balancer_arns()
     }
     /// Appends an item to `GatewayLoadBalancerArns`.
@@ -190,12 +174,12 @@ impl CreateVpcEndpointServiceConfigurationFluentBuilder {
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers.</p>
-    pub fn set_gateway_load_balancer_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_gateway_load_balancer_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_gateway_load_balancer_arns(input);
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers.</p>
-    pub fn get_gateway_load_balancer_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_gateway_load_balancer_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_gateway_load_balancer_arns()
     }
     /// Appends an item to `SupportedIpAddressTypes`.
@@ -208,12 +192,12 @@ impl CreateVpcEndpointServiceConfigurationFluentBuilder {
         self
     }
     /// <p>The supported IP address types. The possible values are <code>ipv4</code> and <code>ipv6</code>.</p>
-    pub fn set_supported_ip_address_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_supported_ip_address_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_supported_ip_address_types(input);
         self
     }
     /// <p>The supported IP address types. The possible values are <code>ipv4</code> and <code>ipv6</code>.</p>
-    pub fn get_supported_ip_address_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supported_ip_address_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_supported_ip_address_types()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
@@ -240,12 +224,13 @@ impl CreateVpcEndpointServiceConfigurationFluentBuilder {
         self
     }
     /// <p>The tags to associate with the service.</p>
-    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The tags to associate with the service.</p>
-    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
 }
+

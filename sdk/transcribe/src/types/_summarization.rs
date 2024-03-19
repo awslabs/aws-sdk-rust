@@ -3,13 +3,13 @@
 /// <p>Contains <code>GenerateAbstractiveSummary</code>, which is a required parameter if you want to enable Generative call summarization in your Call Analytics request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Summarization {
+pub struct Summarization  {
     /// <p>Enables Generative call summarization in your Call Analytics request</p>
     /// <p>Generative call summarization provides a summary of the transcript including important components discussed in the conversation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-enable-summarization.html">Enabling generative call summarization</a>.</p>
     pub generate_abstractive_summary: bool,
 }
-impl Summarization {
+impl  Summarization  {
     /// <p>Enables Generative call summarization in your Call Analytics request</p>
     /// <p>Generative call summarization provides a summary of the transcript including important components discussed in the conversation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-enable-summarization.html">Enabling generative call summarization</a>.</p>
@@ -43,8 +43,7 @@ impl SummarizationBuilder {
     /// <p>Generative call summarization provides a summary of the transcript including important components discussed in the conversation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-enable-summarization.html">Enabling generative call summarization</a>.</p>
     pub fn set_generate_abstractive_summary(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.generate_abstractive_summary = input;
-        self
+        self.generate_abstractive_summary = input; self
     }
     /// <p>Enables Generative call summarization in your Call Analytics request</p>
     /// <p>Generative call summarization provides a summary of the transcript including important components discussed in the conversation.</p>
@@ -56,13 +55,15 @@ impl SummarizationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`generate_abstractive_summary`](crate::types::builders::SummarizationBuilder::generate_abstractive_summary)
     pub fn build(self) -> ::std::result::Result<crate::types::Summarization, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Summarization {
-            generate_abstractive_summary: self.generate_abstractive_summary.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "generate_abstractive_summary",
-                    "generate_abstractive_summary was not specified but it is required when building Summarization",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Summarization {
+                generate_abstractive_summary: self.generate_abstractive_summary
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("generate_abstractive_summary", "generate_abstractive_summary was not specified but it is required when building Summarization")
+                    )?
+                ,
+            }
+        )
     }
 }
+

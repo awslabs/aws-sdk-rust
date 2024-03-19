@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let acceleratorname = unimplemented!();
 /// match acceleratorname {
@@ -40,16 +40,14 @@
 /// Specifically, when `acceleratorname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AcceleratorName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum AcceleratorName {
     #[allow(missing_docs)] // documentation missing in model
     A100,
@@ -77,104 +75,92 @@ pub enum AcceleratorName {
     Vu9P,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for AcceleratorName {
-    fn from(s: &str) -> Self {
-        match s {
-            "a100" => AcceleratorName::A100,
-            "a10g" => AcceleratorName::A10G,
-            "h100" => AcceleratorName::H100,
-            "inferentia" => AcceleratorName::Inferentia,
-            "k520" => AcceleratorName::K520,
-            "k80" => AcceleratorName::K80,
-            "m60" => AcceleratorName::M60,
-            "radeon-pro-v520" => AcceleratorName::RadeonProV520,
-            "t4" => AcceleratorName::T4,
-            "t4g" => AcceleratorName::T4G,
-            "v100" => AcceleratorName::V100,
-            "vu9p" => AcceleratorName::Vu9P,
-            other => AcceleratorName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "a100" => AcceleratorName::A100,
+"a10g" => AcceleratorName::A10G,
+"h100" => AcceleratorName::H100,
+"inferentia" => AcceleratorName::Inferentia,
+"k520" => AcceleratorName::K520,
+"k80" => AcceleratorName::K80,
+"m60" => AcceleratorName::M60,
+"radeon-pro-v520" => AcceleratorName::RadeonProV520,
+"t4" => AcceleratorName::T4,
+"t4g" => AcceleratorName::T4G,
+"v100" => AcceleratorName::V100,
+"vu9p" => AcceleratorName::Vu9P,
+other => AcceleratorName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for AcceleratorName {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(AcceleratorName::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(AcceleratorName::from(s))
+                    }
+                }
 impl AcceleratorName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AcceleratorName::A100 => "a100",
-            AcceleratorName::A10G => "a10g",
-            AcceleratorName::H100 => "h100",
-            AcceleratorName::Inferentia => "inferentia",
-            AcceleratorName::K520 => "k520",
-            AcceleratorName::K80 => "k80",
-            AcceleratorName::M60 => "m60",
-            AcceleratorName::RadeonProV520 => "radeon-pro-v520",
-            AcceleratorName::T4 => "t4",
-            AcceleratorName::T4G => "t4g",
-            AcceleratorName::V100 => "v100",
-            AcceleratorName::Vu9P => "vu9p",
-            AcceleratorName::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "a100",
-            "a10g",
-            "h100",
-            "inferentia",
-            "k520",
-            "k80",
-            "m60",
-            "radeon-pro-v520",
-            "t4",
-            "t4g",
-            "v100",
-            "vu9p",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AcceleratorName::A100 => "a100",
+    AcceleratorName::A10G => "a10g",
+    AcceleratorName::H100 => "h100",
+    AcceleratorName::Inferentia => "inferentia",
+    AcceleratorName::K520 => "k520",
+    AcceleratorName::K80 => "k80",
+    AcceleratorName::M60 => "m60",
+    AcceleratorName::RadeonProV520 => "radeon-pro-v520",
+    AcceleratorName::T4 => "t4",
+    AcceleratorName::T4G => "t4g",
+    AcceleratorName::V100 => "v100",
+    AcceleratorName::Vu9P => "vu9p",
+    AcceleratorName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["a100", "a10g", "h100", "inferentia", "k520", "k80", "m60", "radeon-pro-v520", "t4", "t4g", "v100", "vu9p"]
+                }
+            }
 impl ::std::convert::AsRef<str> for AcceleratorName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl AcceleratorName {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for AcceleratorName {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            AcceleratorName::A100 => write!(f, "a100"),
-            AcceleratorName::A10G => write!(f, "a10g"),
-            AcceleratorName::H100 => write!(f, "h100"),
-            AcceleratorName::Inferentia => write!(f, "inferentia"),
-            AcceleratorName::K520 => write!(f, "k520"),
-            AcceleratorName::K80 => write!(f, "k80"),
-            AcceleratorName::M60 => write!(f, "m60"),
-            AcceleratorName::RadeonProV520 => write!(f, "radeon-pro-v520"),
-            AcceleratorName::T4 => write!(f, "t4"),
-            AcceleratorName::T4G => write!(f, "t4g"),
-            AcceleratorName::V100 => write!(f, "v100"),
-            AcceleratorName::Vu9P => write!(f, "vu9p"),
-            AcceleratorName::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                AcceleratorName::A100 => write!(f, "a100"),
+AcceleratorName::A10G => write!(f, "a10g"),
+AcceleratorName::H100 => write!(f, "h100"),
+AcceleratorName::Inferentia => write!(f, "inferentia"),
+AcceleratorName::K520 => write!(f, "k520"),
+AcceleratorName::K80 => write!(f, "k80"),
+AcceleratorName::M60 => write!(f, "m60"),
+AcceleratorName::RadeonProV520 => write!(f, "radeon-pro-v520"),
+AcceleratorName::T4 => write!(f, "t4"),
+AcceleratorName::T4G => write!(f, "t4g"),
+AcceleratorName::V100 => write!(f, "v100"),
+AcceleratorName::Vu9P => write!(f, "vu9p"),
+AcceleratorName::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

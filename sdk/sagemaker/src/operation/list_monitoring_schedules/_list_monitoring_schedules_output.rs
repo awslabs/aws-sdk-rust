@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMonitoringSchedulesOutput {
+pub struct ListMonitoringSchedulesOutput  {
     /// <p>A JSON array in which each element is a summary for a monitoring schedule.</p>
-    pub monitoring_schedule_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringScheduleSummary>>,
+    pub monitoring_schedule_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::MonitoringScheduleSummary>>,
     /// <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListMonitoringSchedulesOutput {
+impl  ListMonitoringSchedulesOutput  {
     /// <p>A JSON array in which each element is a summary for a monitoring schedule.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.monitoring_schedule_summaries.is_none()`.
-    pub fn monitoring_schedule_summaries(&self) -> &[crate::types::MonitoringScheduleSummary] {
-        self.monitoring_schedule_summaries.as_deref().unwrap_or_default()
+    pub fn monitoring_schedule_summaries(&self) -> & [crate::types::MonitoringScheduleSummary] {
+        self.monitoring_schedule_summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListMonitoringSchedulesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListMonitoringSchedulesOutput {
     /// Creates a new builder-style object to manufacture [`ListMonitoringSchedulesOutput`](crate::operation::list_monitoring_schedules::ListMonitoringSchedulesOutput).
     pub fn builder() -> crate::operation::list_monitoring_schedules::builders::ListMonitoringSchedulesOutputBuilder {
@@ -37,7 +38,7 @@ impl ListMonitoringSchedulesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMonitoringSchedulesOutputBuilder {
-    pub(crate) monitoring_schedule_summaries: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringScheduleSummary>>,
+    pub(crate) monitoring_schedule_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::MonitoringScheduleSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,20 +50,16 @@ impl ListMonitoringSchedulesOutputBuilder {
     /// <p>A JSON array in which each element is a summary for a monitoring schedule.</p>
     pub fn monitoring_schedule_summaries(mut self, input: crate::types::MonitoringScheduleSummary) -> Self {
         let mut v = self.monitoring_schedule_summaries.unwrap_or_default();
-        v.push(input);
-        self.monitoring_schedule_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.monitoring_schedule_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A JSON array in which each element is a summary for a monitoring schedule.</p>
-    pub fn set_monitoring_schedule_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringScheduleSummary>>,
-    ) -> Self {
-        self.monitoring_schedule_summaries = input;
-        self
+    pub fn set_monitoring_schedule_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MonitoringScheduleSummary>>) -> Self {
+        self.monitoring_schedule_summaries = input; self
     }
     /// <p>A JSON array in which each element is a summary for a monitoring schedule.</p>
-    pub fn get_monitoring_schedule_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitoringScheduleSummary>> {
+    pub fn get_monitoring_schedule_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MonitoringScheduleSummary>> {
         &self.monitoring_schedule_summaries
     }
     /// <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
@@ -72,28 +69,30 @@ impl ListMonitoringSchedulesOutputBuilder {
     }
     /// <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListMonitoringSchedulesOutput`](crate::operation::list_monitoring_schedules::ListMonitoringSchedulesOutput).
     pub fn build(self) -> crate::operation::list_monitoring_schedules::ListMonitoringSchedulesOutput {
         crate::operation::list_monitoring_schedules::ListMonitoringSchedulesOutput {
-            monitoring_schedule_summaries: self.monitoring_schedule_summaries,
-            next_token: self.next_token,
+            monitoring_schedule_summaries: self.monitoring_schedule_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

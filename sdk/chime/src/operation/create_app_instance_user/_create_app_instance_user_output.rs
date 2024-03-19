@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAppInstanceUserOutput {
+pub struct CreateAppInstanceUserOutput  {
     /// <p>The user's ARN.</p>
     pub app_instance_user_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateAppInstanceUserOutput {
+impl  CreateAppInstanceUserOutput  {
     /// <p>The user's ARN.</p>
-    pub fn app_instance_user_arn(&self) -> ::std::option::Option<&str> {
+    pub fn app_instance_user_arn(&self) -> ::std::option::Option<& str> {
         self.app_instance_user_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateAppInstanceUserOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateAppInstanceUserOutput {
     /// Creates a new builder-style object to manufacture [`CreateAppInstanceUserOutput`](crate::operation::create_app_instance_user::CreateAppInstanceUserOutput).
     pub fn builder() -> crate::operation::create_app_instance_user::builders::CreateAppInstanceUserOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateAppInstanceUserOutputBuilder {
     }
     /// <p>The user's ARN.</p>
     pub fn set_app_instance_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_instance_user_arn = input;
-        self
+        self.app_instance_user_arn = input; self
     }
     /// <p>The user's ARN.</p>
     pub fn get_app_instance_user_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_instance_user_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateAppInstanceUserOutput`](crate::operation::create_app_instance_user::CreateAppInstanceUserOutput).
     pub fn build(self) -> crate::operation::create_app_instance_user::CreateAppInstanceUserOutput {
         crate::operation::create_app_instance_user::CreateAppInstanceUserOutput {
-            app_instance_user_arn: self.app_instance_user_arn,
+            app_instance_user_arn: self.app_instance_user_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

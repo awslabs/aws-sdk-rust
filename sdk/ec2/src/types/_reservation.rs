@@ -3,11 +3,11 @@
 /// <p>Describes a launch request for one or more instances, and includes owner, requester, and security group information that applies to all instances in the launch request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Reservation {
+pub struct Reservation  {
     /// <p>Not supported.</p>
-    pub groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
+    pub groups: ::std::option::Option<::std::vec::Vec::<crate::types::GroupIdentifier>>,
     /// <p>The instances.</p>
-    pub instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
+    pub instances: ::std::option::Option<::std::vec::Vec::<crate::types::Instance>>,
     /// <p>The ID of the Amazon Web Services account that owns the reservation.</p>
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the requester that launched the instances on your behalf (for example, Amazon Web Services Management Console or Auto Scaling).</p>
@@ -15,29 +15,31 @@ pub struct Reservation {
     /// <p>The ID of the reservation.</p>
     pub reservation_id: ::std::option::Option<::std::string::String>,
 }
-impl Reservation {
+impl  Reservation  {
     /// <p>Not supported.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
-    pub fn groups(&self) -> &[crate::types::GroupIdentifier] {
-        self.groups.as_deref().unwrap_or_default()
+    pub fn groups(&self) -> & [crate::types::GroupIdentifier] {
+        self.groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The instances.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances.is_none()`.
-    pub fn instances(&self) -> &[crate::types::Instance] {
-        self.instances.as_deref().unwrap_or_default()
+    pub fn instances(&self) -> & [crate::types::Instance] {
+        self.instances.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the Amazon Web Services account that owns the reservation.</p>
-    pub fn owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>The ID of the requester that launched the instances on your behalf (for example, Amazon Web Services Management Console or Auto Scaling).</p>
-    pub fn requester_id(&self) -> ::std::option::Option<&str> {
+    pub fn requester_id(&self) -> ::std::option::Option<& str> {
         self.requester_id.as_deref()
     }
     /// <p>The ID of the reservation.</p>
-    pub fn reservation_id(&self) -> ::std::option::Option<&str> {
+    pub fn reservation_id(&self) -> ::std::option::Option<& str> {
         self.reservation_id.as_deref()
     }
 }
@@ -52,8 +54,8 @@ impl Reservation {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReservationBuilder {
-    pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
-    pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec::<crate::types::GroupIdentifier>>,
+    pub(crate) instances: ::std::option::Option<::std::vec::Vec::<crate::types::Instance>>,
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) requester_id: ::std::option::Option<::std::string::String>,
     pub(crate) reservation_id: ::std::option::Option<::std::string::String>,
@@ -66,17 +68,16 @@ impl ReservationBuilder {
     /// <p>Not supported.</p>
     pub fn groups(mut self, input: crate::types::GroupIdentifier) -> Self {
         let mut v = self.groups.unwrap_or_default();
-        v.push(input);
-        self.groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Not supported.</p>
-    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>) -> Self {
-        self.groups = input;
-        self
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GroupIdentifier>>) -> Self {
+        self.groups = input; self
     }
     /// <p>Not supported.</p>
-    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GroupIdentifier>> {
         &self.groups
     }
     /// Appends an item to `instances`.
@@ -86,17 +87,16 @@ impl ReservationBuilder {
     /// <p>The instances.</p>
     pub fn instances(mut self, input: crate::types::Instance) -> Self {
         let mut v = self.instances.unwrap_or_default();
-        v.push(input);
-        self.instances = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.instances = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The instances.</p>
-    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>) -> Self {
-        self.instances = input;
-        self
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Instance>>) -> Self {
+        self.instances = input; self
     }
     /// <p>The instances.</p>
-    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Instance>> {
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Instance>> {
         &self.instances
     }
     /// <p>The ID of the Amazon Web Services account that owns the reservation.</p>
@@ -106,8 +106,7 @@ impl ReservationBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that owns the reservation.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that owns the reservation.</p>
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +119,7 @@ impl ReservationBuilder {
     }
     /// <p>The ID of the requester that launched the instances on your behalf (for example, Amazon Web Services Management Console or Auto Scaling).</p>
     pub fn set_requester_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.requester_id = input;
-        self
+        self.requester_id = input; self
     }
     /// <p>The ID of the requester that launched the instances on your behalf (for example, Amazon Web Services Management Console or Auto Scaling).</p>
     pub fn get_requester_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +132,7 @@ impl ReservationBuilder {
     }
     /// <p>The ID of the reservation.</p>
     pub fn set_reservation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reservation_id = input;
-        self
+        self.reservation_id = input; self
     }
     /// <p>The ID of the reservation.</p>
     pub fn get_reservation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,11 +141,17 @@ impl ReservationBuilder {
     /// Consumes the builder and constructs a [`Reservation`](crate::types::Reservation).
     pub fn build(self) -> crate::types::Reservation {
         crate::types::Reservation {
-            groups: self.groups,
-            instances: self.instances,
-            owner_id: self.owner_id,
-            requester_id: self.requester_id,
-            reservation_id: self.reservation_id,
+            groups: self.groups
+            ,
+            instances: self.instances
+            ,
+            owner_id: self.owner_id
+            ,
+            requester_id: self.requester_id
+            ,
+            reservation_id: self.reservation_id
+            ,
         }
     }
 }
+

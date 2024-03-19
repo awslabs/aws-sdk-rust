@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActivateEventSourceInput {
+pub struct ActivateEventSourceInput  {
     /// <p>The name of the partner event source to activate.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl ActivateEventSourceInput {
+impl  ActivateEventSourceInput  {
     /// <p>The name of the partner event source to activate.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl ActivateEventSourceInputBuilder {
     }
     /// <p>The name of the partner event source to activate.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the partner event source to activate.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     /// Consumes the builder and constructs a [`ActivateEventSourceInput`](crate::operation::activate_event_source::ActivateEventSourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::activate_event_source::ActivateEventSourceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::activate_event_source::ActivateEventSourceInput { name: self.name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::activate_event_source::ActivateEventSourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::activate_event_source::ActivateEventSourceInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

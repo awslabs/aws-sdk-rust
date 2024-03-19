@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDataSetImportTaskOutput {
+pub struct GetDataSetImportTaskOutput  {
     /// <p>The task identifier.</p>
     pub task_id: ::std::string::String,
     /// <p>The status of the task.</p>
@@ -11,26 +11,25 @@ pub struct GetDataSetImportTaskOutput {
     pub summary: ::std::option::Option<crate::types::DataSetImportSummary>,
     _request_id: Option<String>,
 }
-impl GetDataSetImportTaskOutput {
+impl  GetDataSetImportTaskOutput  {
     /// <p>The task identifier.</p>
-    pub fn task_id(&self) -> &str {
-        use std::ops::Deref;
-        self.task_id.deref()
+    pub fn task_id(&self) -> & str {
+        use std::ops::Deref; self.task_id.deref()
     }
     /// <p>The status of the task.</p>
-    pub fn status(&self) -> &crate::types::DataSetTaskLifecycle {
+    pub fn status(&self) -> & crate::types::DataSetTaskLifecycle {
         &self.status
     }
     /// <p>A summary of the status of the task.</p>
-    pub fn summary(&self) -> ::std::option::Option<&crate::types::DataSetImportSummary> {
+    pub fn summary(&self) -> ::std::option::Option<& crate::types::DataSetImportSummary> {
         self.summary.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDataSetImportTaskOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDataSetImportTaskOutput {
     /// Creates a new builder-style object to manufacture [`GetDataSetImportTaskOutput`](crate::operation::get_data_set_import_task::GetDataSetImportTaskOutput).
     pub fn builder() -> crate::operation::get_data_set_import_task::builders::GetDataSetImportTaskOutputBuilder {
@@ -56,8 +55,7 @@ impl GetDataSetImportTaskOutputBuilder {
     }
     /// <p>The task identifier.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>The task identifier.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +69,7 @@ impl GetDataSetImportTaskOutputBuilder {
     }
     /// <p>The status of the task.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataSetTaskLifecycle>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the task.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DataSetTaskLifecycle> {
@@ -85,45 +82,43 @@ impl GetDataSetImportTaskOutputBuilder {
     }
     /// <p>A summary of the status of the task.</p>
     pub fn set_summary(mut self, input: ::std::option::Option<crate::types::DataSetImportSummary>) -> Self {
-        self.summary = input;
-        self
+        self.summary = input; self
     }
     /// <p>A summary of the status of the task.</p>
     pub fn get_summary(&self) -> &::std::option::Option<crate::types::DataSetImportSummary> {
         &self.summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDataSetImportTaskOutput`](crate::operation::get_data_set_import_task::GetDataSetImportTaskOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`task_id`](crate::operation::get_data_set_import_task::builders::GetDataSetImportTaskOutputBuilder::task_id)
     /// - [`status`](crate::operation::get_data_set_import_task::builders::GetDataSetImportTaskOutputBuilder::status)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_data_set_import_task::GetDataSetImportTaskOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_data_set_import_task::GetDataSetImportTaskOutput {
-            task_id: self.task_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "task_id",
-                    "task_id was not specified but it is required when building GetDataSetImportTaskOutput",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building GetDataSetImportTaskOutput",
-                )
-            })?,
-            summary: self.summary,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_data_set_import_task::GetDataSetImportTaskOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_data_set_import_task::GetDataSetImportTaskOutput {
+                task_id: self.task_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("task_id", "task_id was not specified but it is required when building GetDataSetImportTaskOutput")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building GetDataSetImportTaskOutput")
+                    )?
+                ,
+                summary: self.summary
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

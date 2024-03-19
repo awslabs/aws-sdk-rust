@@ -4,7 +4,7 @@
 /// <p>This data type is used as a response element in the <code>DescribeOrderableDBInstanceOptions</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OrderableDbInstanceOption {
+pub struct OrderableDbInstanceOption  {
     /// <p>The engine type of a DB instance.</p>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The engine version of a DB instance.</p>
@@ -14,7 +14,7 @@ pub struct OrderableDbInstanceOption {
     /// <p>The license model for a DB instance.</p>
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>A list of Availability Zones for a DB instance.</p>
-    pub availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
+    pub availability_zones: ::std::option::Option<::std::vec::Vec::<crate::types::AvailabilityZone>>,
     /// <p>Indicates whether a DB instance is Multi-AZ capable.</p>
     pub multi_az_capable: ::std::option::Option<bool>,
     /// <p>Indicates whether a DB instance can have a Read Replica.</p>
@@ -48,28 +48,29 @@ pub struct OrderableDbInstanceOption {
     /// <p>A value that indicates whether you can use Neptune global databases with a specific combination of other DB engine attributes.</p>
     pub supports_global_databases: ::std::option::Option<bool>,
 }
-impl OrderableDbInstanceOption {
+impl  OrderableDbInstanceOption  {
     /// <p>The engine type of a DB instance.</p>
-    pub fn engine(&self) -> ::std::option::Option<&str> {
+    pub fn engine(&self) -> ::std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The engine version of a DB instance.</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>The DB instance class for a DB instance.</p>
-    pub fn db_instance_class(&self) -> ::std::option::Option<&str> {
+    pub fn db_instance_class(&self) -> ::std::option::Option<& str> {
         self.db_instance_class.as_deref()
     }
     /// <p>The license model for a DB instance.</p>
-    pub fn license_model(&self) -> ::std::option::Option<&str> {
+    pub fn license_model(&self) -> ::std::option::Option<& str> {
         self.license_model.as_deref()
     }
     /// <p>A list of Availability Zones for a DB instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
-    pub fn availability_zones(&self) -> &[crate::types::AvailabilityZone] {
-        self.availability_zones.as_deref().unwrap_or_default()
+    pub fn availability_zones(&self) -> & [crate::types::AvailabilityZone] {
+        self.availability_zones.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether a DB instance is Multi-AZ capable.</p>
     pub fn multi_az_capable(&self) -> ::std::option::Option<bool> {
@@ -88,7 +89,7 @@ impl OrderableDbInstanceOption {
         self.supports_storage_encryption
     }
     /// <p>Indicates the storage type for a DB instance.</p>
-    pub fn storage_type(&self) -> ::std::option::Option<&str> {
+    pub fn storage_type(&self) -> ::std::option::Option<& str> {
         self.storage_type.as_deref()
     }
     /// <p>Indicates whether a DB instance supports provisioned IOPS.</p>
@@ -151,7 +152,7 @@ pub struct OrderableDbInstanceOptionBuilder {
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) db_instance_class: ::std::option::Option<::std::string::String>,
     pub(crate) license_model: ::std::option::Option<::std::string::String>,
-    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
+    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec::<crate::types::AvailabilityZone>>,
     pub(crate) multi_az_capable: ::std::option::Option<bool>,
     pub(crate) read_replica_capable: ::std::option::Option<bool>,
     pub(crate) vpc: ::std::option::Option<bool>,
@@ -177,8 +178,7 @@ impl OrderableDbInstanceOptionBuilder {
     }
     /// <p>The engine type of a DB instance.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine = input;
-        self
+        self.engine = input; self
     }
     /// <p>The engine type of a DB instance.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
@@ -191,8 +191,7 @@ impl OrderableDbInstanceOptionBuilder {
     }
     /// <p>The engine version of a DB instance.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The engine version of a DB instance.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -205,8 +204,7 @@ impl OrderableDbInstanceOptionBuilder {
     }
     /// <p>The DB instance class for a DB instance.</p>
     pub fn set_db_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_instance_class = input;
-        self
+        self.db_instance_class = input; self
     }
     /// <p>The DB instance class for a DB instance.</p>
     pub fn get_db_instance_class(&self) -> &::std::option::Option<::std::string::String> {
@@ -219,8 +217,7 @@ impl OrderableDbInstanceOptionBuilder {
     }
     /// <p>The license model for a DB instance.</p>
     pub fn set_license_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.license_model = input;
-        self
+        self.license_model = input; self
     }
     /// <p>The license model for a DB instance.</p>
     pub fn get_license_model(&self) -> &::std::option::Option<::std::string::String> {
@@ -233,17 +230,16 @@ impl OrderableDbInstanceOptionBuilder {
     /// <p>A list of Availability Zones for a DB instance.</p>
     pub fn availability_zones(mut self, input: crate::types::AvailabilityZone) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
-        v.push(input);
-        self.availability_zones = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.availability_zones = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of Availability Zones for a DB instance.</p>
-    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>) -> Self {
-        self.availability_zones = input;
-        self
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AvailabilityZone>>) -> Self {
+        self.availability_zones = input; self
     }
     /// <p>A list of Availability Zones for a DB instance.</p>
-    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AvailabilityZone>> {
         &self.availability_zones
     }
     /// <p>Indicates whether a DB instance is Multi-AZ capable.</p>
@@ -253,8 +249,7 @@ impl OrderableDbInstanceOptionBuilder {
     }
     /// <p>Indicates whether a DB instance is Multi-AZ capable.</p>
     pub fn set_multi_az_capable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.multi_az_capable = input;
-        self
+        self.multi_az_capable = input; self
     }
     /// <p>Indicates whether a DB instance is Multi-AZ capable.</p>
     pub fn get_multi_az_capable(&self) -> &::std::option::Option<bool> {
@@ -267,8 +262,7 @@ impl OrderableDbInstanceOptionBuilder {
     }
     /// <p>Indicates whether a DB instance can have a Read Replica.</p>
     pub fn set_read_replica_capable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.read_replica_capable = input;
-        self
+        self.read_replica_capable = input; self
     }
     /// <p>Indicates whether a DB instance can have a Read Replica.</p>
     pub fn get_read_replica_capable(&self) -> &::std::option::Option<bool> {
@@ -281,8 +275,7 @@ impl OrderableDbInstanceOptionBuilder {
     }
     /// <p>Indicates whether a DB instance is in a VPC.</p>
     pub fn set_vpc(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.vpc = input;
-        self
+        self.vpc = input; self
     }
     /// <p>Indicates whether a DB instance is in a VPC.</p>
     pub fn get_vpc(&self) -> &::std::option::Option<bool> {
@@ -295,8 +288,7 @@ impl OrderableDbInstanceOptionBuilder {
     }
     /// <p>Indicates whether a DB instance supports encrypted storage.</p>
     pub fn set_supports_storage_encryption(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.supports_storage_encryption = input;
-        self
+        self.supports_storage_encryption = input; self
     }
     /// <p>Indicates whether a DB instance supports encrypted storage.</p>
     pub fn get_supports_storage_encryption(&self) -> &::std::option::Option<bool> {
@@ -309,8 +301,7 @@ impl OrderableDbInstanceOptionBuilder {
     }
     /// <p>Indicates the storage type for a DB instance.</p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.storage_type = input;
-        self
+        self.storage_type = input; self
     }
     /// <p>Indicates the storage type for a DB instance.</p>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -323,8 +314,7 @@ impl OrderableDbInstanceOptionBuilder {
     }
     /// <p>Indicates whether a DB instance supports provisioned IOPS.</p>
     pub fn set_supports_iops(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.supports_iops = input;
-        self
+        self.supports_iops = input; self
     }
     /// <p>Indicates whether a DB instance supports provisioned IOPS.</p>
     pub fn get_supports_iops(&self) -> &::std::option::Option<bool> {
@@ -337,8 +327,7 @@ impl OrderableDbInstanceOptionBuilder {
     }
     /// <p>Indicates whether a DB instance supports Enhanced Monitoring at intervals from 1 to 60 seconds.</p>
     pub fn set_supports_enhanced_monitoring(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.supports_enhanced_monitoring = input;
-        self
+        self.supports_enhanced_monitoring = input; self
     }
     /// <p>Indicates whether a DB instance supports Enhanced Monitoring at intervals from 1 to 60 seconds.</p>
     pub fn get_supports_enhanced_monitoring(&self) -> &::std::option::Option<bool> {
@@ -351,8 +340,7 @@ impl OrderableDbInstanceOptionBuilder {
     }
     /// <p>Indicates whether a DB instance supports IAM database authentication.</p>
     pub fn set_supports_iam_database_authentication(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.supports_iam_database_authentication = input;
-        self
+        self.supports_iam_database_authentication = input; self
     }
     /// <p>Indicates whether a DB instance supports IAM database authentication.</p>
     pub fn get_supports_iam_database_authentication(&self) -> &::std::option::Option<bool> {
@@ -365,8 +353,7 @@ impl OrderableDbInstanceOptionBuilder {
     }
     /// <p><i>(Not supported by Neptune)</i></p>
     pub fn set_supports_performance_insights(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.supports_performance_insights = input;
-        self
+        self.supports_performance_insights = input; self
     }
     /// <p><i>(Not supported by Neptune)</i></p>
     pub fn get_supports_performance_insights(&self) -> &::std::option::Option<bool> {
@@ -379,8 +366,7 @@ impl OrderableDbInstanceOptionBuilder {
     }
     /// <p>Minimum storage size for a DB instance.</p>
     pub fn set_min_storage_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_storage_size = input;
-        self
+        self.min_storage_size = input; self
     }
     /// <p>Minimum storage size for a DB instance.</p>
     pub fn get_min_storage_size(&self) -> &::std::option::Option<i32> {
@@ -393,8 +379,7 @@ impl OrderableDbInstanceOptionBuilder {
     }
     /// <p>Maximum storage size for a DB instance.</p>
     pub fn set_max_storage_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_storage_size = input;
-        self
+        self.max_storage_size = input; self
     }
     /// <p>Maximum storage size for a DB instance.</p>
     pub fn get_max_storage_size(&self) -> &::std::option::Option<i32> {
@@ -407,8 +392,7 @@ impl OrderableDbInstanceOptionBuilder {
     }
     /// <p>Minimum total provisioned IOPS for a DB instance.</p>
     pub fn set_min_iops_per_db_instance(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_iops_per_db_instance = input;
-        self
+        self.min_iops_per_db_instance = input; self
     }
     /// <p>Minimum total provisioned IOPS for a DB instance.</p>
     pub fn get_min_iops_per_db_instance(&self) -> &::std::option::Option<i32> {
@@ -421,8 +405,7 @@ impl OrderableDbInstanceOptionBuilder {
     }
     /// <p>Maximum total provisioned IOPS for a DB instance.</p>
     pub fn set_max_iops_per_db_instance(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_iops_per_db_instance = input;
-        self
+        self.max_iops_per_db_instance = input; self
     }
     /// <p>Maximum total provisioned IOPS for a DB instance.</p>
     pub fn get_max_iops_per_db_instance(&self) -> &::std::option::Option<i32> {
@@ -435,8 +418,7 @@ impl OrderableDbInstanceOptionBuilder {
     }
     /// <p>Minimum provisioned IOPS per GiB for a DB instance.</p>
     pub fn set_min_iops_per_gib(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.min_iops_per_gib = input;
-        self
+        self.min_iops_per_gib = input; self
     }
     /// <p>Minimum provisioned IOPS per GiB for a DB instance.</p>
     pub fn get_min_iops_per_gib(&self) -> &::std::option::Option<f64> {
@@ -449,8 +431,7 @@ impl OrderableDbInstanceOptionBuilder {
     }
     /// <p>Maximum provisioned IOPS per GiB for a DB instance.</p>
     pub fn set_max_iops_per_gib(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.max_iops_per_gib = input;
-        self
+        self.max_iops_per_gib = input; self
     }
     /// <p>Maximum provisioned IOPS per GiB for a DB instance.</p>
     pub fn get_max_iops_per_gib(&self) -> &::std::option::Option<f64> {
@@ -463,8 +444,7 @@ impl OrderableDbInstanceOptionBuilder {
     }
     /// <p>A value that indicates whether you can use Neptune global databases with a specific combination of other DB engine attributes.</p>
     pub fn set_supports_global_databases(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.supports_global_databases = input;
-        self
+        self.supports_global_databases = input; self
     }
     /// <p>A value that indicates whether you can use Neptune global databases with a specific combination of other DB engine attributes.</p>
     pub fn get_supports_global_databases(&self) -> &::std::option::Option<bool> {
@@ -473,27 +453,49 @@ impl OrderableDbInstanceOptionBuilder {
     /// Consumes the builder and constructs a [`OrderableDbInstanceOption`](crate::types::OrderableDbInstanceOption).
     pub fn build(self) -> crate::types::OrderableDbInstanceOption {
         crate::types::OrderableDbInstanceOption {
-            engine: self.engine,
-            engine_version: self.engine_version,
-            db_instance_class: self.db_instance_class,
-            license_model: self.license_model,
-            availability_zones: self.availability_zones,
-            multi_az_capable: self.multi_az_capable,
-            read_replica_capable: self.read_replica_capable,
-            vpc: self.vpc,
-            supports_storage_encryption: self.supports_storage_encryption,
-            storage_type: self.storage_type,
-            supports_iops: self.supports_iops,
-            supports_enhanced_monitoring: self.supports_enhanced_monitoring,
-            supports_iam_database_authentication: self.supports_iam_database_authentication,
-            supports_performance_insights: self.supports_performance_insights,
-            min_storage_size: self.min_storage_size,
-            max_storage_size: self.max_storage_size,
-            min_iops_per_db_instance: self.min_iops_per_db_instance,
-            max_iops_per_db_instance: self.max_iops_per_db_instance,
-            min_iops_per_gib: self.min_iops_per_gib,
-            max_iops_per_gib: self.max_iops_per_gib,
-            supports_global_databases: self.supports_global_databases,
+            engine: self.engine
+            ,
+            engine_version: self.engine_version
+            ,
+            db_instance_class: self.db_instance_class
+            ,
+            license_model: self.license_model
+            ,
+            availability_zones: self.availability_zones
+            ,
+            multi_az_capable: self.multi_az_capable
+            ,
+            read_replica_capable: self.read_replica_capable
+            ,
+            vpc: self.vpc
+            ,
+            supports_storage_encryption: self.supports_storage_encryption
+            ,
+            storage_type: self.storage_type
+            ,
+            supports_iops: self.supports_iops
+            ,
+            supports_enhanced_monitoring: self.supports_enhanced_monitoring
+            ,
+            supports_iam_database_authentication: self.supports_iam_database_authentication
+            ,
+            supports_performance_insights: self.supports_performance_insights
+            ,
+            min_storage_size: self.min_storage_size
+            ,
+            max_storage_size: self.max_storage_size
+            ,
+            min_iops_per_db_instance: self.min_iops_per_db_instance
+            ,
+            max_iops_per_db_instance: self.max_iops_per_db_instance
+            ,
+            min_iops_per_gib: self.min_iops_per_gib
+            ,
+            max_iops_per_gib: self.max_iops_per_gib
+            ,
+            supports_global_databases: self.supports_global_databases
+            ,
         }
     }
 }
+

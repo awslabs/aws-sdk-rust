@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCustomLogSourceInput {
+pub struct CreateCustomLogSourceInput  {
     /// <p>Specify the name for a third-party custom source. This must be a Regionally unique value.</p>
     pub source_name: ::std::option::Option<::std::string::String>,
     /// <p>Specify the source version for the third-party custom source, to limit log collection to a specific version of custom data source.</p>
@@ -68,17 +68,17 @@ pub struct CreateCustomLogSourceInput {
     /// <li>
     /// <p><code>CLOUD_API</code></p></li>
     /// </ul>
-    pub event_classes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub event_classes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The configuration for the third-party custom source.</p>
     pub configuration: ::std::option::Option<crate::types::CustomLogSourceConfiguration>,
 }
-impl CreateCustomLogSourceInput {
+impl  CreateCustomLogSourceInput  {
     /// <p>Specify the name for a third-party custom source. This must be a Regionally unique value.</p>
-    pub fn source_name(&self) -> ::std::option::Option<&str> {
+    pub fn source_name(&self) -> ::std::option::Option<& str> {
         self.source_name.as_deref()
     }
     /// <p>Specify the source version for the third-party custom source, to limit log collection to a specific version of custom data source.</p>
-    pub fn source_version(&self) -> ::std::option::Option<&str> {
+    pub fn source_version(&self) -> ::std::option::Option<& str> {
         self.source_version.as_deref()
     }
     /// <p>The Open Cybersecurity Schema Framework (OCSF) event classes which describes the type of data that the custom source will send to Security Lake. The supported event classes are:</p>
@@ -142,13 +142,14 @@ impl CreateCustomLogSourceInput {
     /// <li>
     /// <p><code>CLOUD_API</code></p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_classes.is_none()`.
-    pub fn event_classes(&self) -> &[::std::string::String] {
-        self.event_classes.as_deref().unwrap_or_default()
+    pub fn event_classes(&self) -> & [::std::string::String] {
+        self.event_classes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The configuration for the third-party custom source.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::CustomLogSourceConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::CustomLogSourceConfiguration> {
         self.configuration.as_ref()
     }
 }
@@ -165,7 +166,7 @@ impl CreateCustomLogSourceInput {
 pub struct CreateCustomLogSourceInputBuilder {
     pub(crate) source_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_version: ::std::option::Option<::std::string::String>,
-    pub(crate) event_classes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) event_classes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) configuration: ::std::option::Option<crate::types::CustomLogSourceConfiguration>,
 }
 impl CreateCustomLogSourceInputBuilder {
@@ -177,8 +178,7 @@ impl CreateCustomLogSourceInputBuilder {
     }
     /// <p>Specify the name for a third-party custom source. This must be a Regionally unique value.</p>
     pub fn set_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_name = input;
-        self
+        self.source_name = input; self
     }
     /// <p>Specify the name for a third-party custom source. This must be a Regionally unique value.</p>
     pub fn get_source_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -191,8 +191,7 @@ impl CreateCustomLogSourceInputBuilder {
     }
     /// <p>Specify the source version for the third-party custom source, to limit log collection to a specific version of custom data source.</p>
     pub fn set_source_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_version = input;
-        self
+        self.source_version = input; self
     }
     /// <p>Specify the source version for the third-party custom source, to limit log collection to a specific version of custom data source.</p>
     pub fn get_source_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -265,9 +264,9 @@ impl CreateCustomLogSourceInputBuilder {
     /// </ul>
     pub fn event_classes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.event_classes.unwrap_or_default();
-        v.push(input.into());
-        self.event_classes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.event_classes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Open Cybersecurity Schema Framework (OCSF) event classes which describes the type of data that the custom source will send to Security Lake. The supported event classes are:</p>
     /// <ul>
@@ -330,9 +329,8 @@ impl CreateCustomLogSourceInputBuilder {
     /// <li>
     /// <p><code>CLOUD_API</code></p></li>
     /// </ul>
-    pub fn set_event_classes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.event_classes = input;
-        self
+    pub fn set_event_classes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.event_classes = input; self
     }
     /// <p>The Open Cybersecurity Schema Framework (OCSF) event classes which describes the type of data that the custom source will send to Security Lake. The supported event classes are:</p>
     /// <ul>
@@ -395,7 +393,7 @@ impl CreateCustomLogSourceInputBuilder {
     /// <li>
     /// <p><code>CLOUD_API</code></p></li>
     /// </ul>
-    pub fn get_event_classes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_event_classes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.event_classes
     }
     /// <p>The configuration for the third-party custom source.</p>
@@ -406,23 +404,26 @@ impl CreateCustomLogSourceInputBuilder {
     }
     /// <p>The configuration for the third-party custom source.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::CustomLogSourceConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>The configuration for the third-party custom source.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::CustomLogSourceConfiguration> {
         &self.configuration
     }
     /// Consumes the builder and constructs a [`CreateCustomLogSourceInput`](crate::operation::create_custom_log_source::CreateCustomLogSourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_custom_log_source::CreateCustomLogSourceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_custom_log_source::CreateCustomLogSourceInput {
-            source_name: self.source_name,
-            source_version: self.source_version,
-            event_classes: self.event_classes,
-            configuration: self.configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_custom_log_source::CreateCustomLogSourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_custom_log_source::CreateCustomLogSourceInput {
+                source_name: self.source_name
+                ,
+                source_version: self.source_version
+                ,
+                event_classes: self.event_classes
+                ,
+                configuration: self.configuration
+                ,
+            }
+        )
     }
 }
+

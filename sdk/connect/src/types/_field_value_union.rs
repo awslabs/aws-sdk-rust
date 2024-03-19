@@ -3,7 +3,7 @@
 /// <p>Object to store union of Field values.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FieldValueUnion {
+pub struct FieldValueUnion  {
     /// <p>A Boolean number value type.</p>
     pub boolean_value: bool,
     /// <p>a Double number value type.</p>
@@ -13,7 +13,7 @@ pub struct FieldValueUnion {
     /// <p>String value type.</p>
     pub string_value: ::std::option::Option<::std::string::String>,
 }
-impl FieldValueUnion {
+impl  FieldValueUnion  {
     /// <p>A Boolean number value type.</p>
     pub fn boolean_value(&self) -> bool {
         self.boolean_value
@@ -23,11 +23,11 @@ impl FieldValueUnion {
         self.double_value
     }
     /// <p>An empty value.</p>
-    pub fn empty_value(&self) -> ::std::option::Option<&crate::types::EmptyFieldValue> {
+    pub fn empty_value(&self) -> ::std::option::Option<& crate::types::EmptyFieldValue> {
         self.empty_value.as_ref()
     }
     /// <p>String value type.</p>
-    pub fn string_value(&self) -> ::std::option::Option<&str> {
+    pub fn string_value(&self) -> ::std::option::Option<& str> {
         self.string_value.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl FieldValueUnionBuilder {
     }
     /// <p>A Boolean number value type.</p>
     pub fn set_boolean_value(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.boolean_value = input;
-        self
+        self.boolean_value = input; self
     }
     /// <p>A Boolean number value type.</p>
     pub fn get_boolean_value(&self) -> &::std::option::Option<bool> {
@@ -69,8 +68,7 @@ impl FieldValueUnionBuilder {
     }
     /// <p>a Double number value type.</p>
     pub fn set_double_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.double_value = input;
-        self
+        self.double_value = input; self
     }
     /// <p>a Double number value type.</p>
     pub fn get_double_value(&self) -> &::std::option::Option<f64> {
@@ -83,8 +81,7 @@ impl FieldValueUnionBuilder {
     }
     /// <p>An empty value.</p>
     pub fn set_empty_value(mut self, input: ::std::option::Option<crate::types::EmptyFieldValue>) -> Self {
-        self.empty_value = input;
-        self
+        self.empty_value = input; self
     }
     /// <p>An empty value.</p>
     pub fn get_empty_value(&self) -> &::std::option::Option<crate::types::EmptyFieldValue> {
@@ -97,8 +94,7 @@ impl FieldValueUnionBuilder {
     }
     /// <p>String value type.</p>
     pub fn set_string_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.string_value = input;
-        self
+        self.string_value = input; self
     }
     /// <p>String value type.</p>
     pub fn get_string_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,16 @@ impl FieldValueUnionBuilder {
     /// Consumes the builder and constructs a [`FieldValueUnion`](crate::types::FieldValueUnion).
     pub fn build(self) -> crate::types::FieldValueUnion {
         crate::types::FieldValueUnion {
-            boolean_value: self.boolean_value.unwrap_or_default(),
-            double_value: self.double_value,
-            empty_value: self.empty_value,
-            string_value: self.string_value,
+            boolean_value: self.boolean_value
+                .unwrap_or_default()
+            ,
+            double_value: self.double_value
+            ,
+            empty_value: self.empty_value
+            ,
+            string_value: self.string_value
+            ,
         }
     }
 }
+

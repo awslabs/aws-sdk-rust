@@ -22,11 +22,7 @@ impl DataDestinationConfig {
     /// Tries to convert the enum instance into [`S3Config`](crate::types::DataDestinationConfig::S3Config), extracting the inner [`S3Config`](crate::types::S3Config).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3_config(&self) -> ::std::result::Result<&crate::types::S3Config, &Self> {
-        if let DataDestinationConfig::S3Config(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DataDestinationConfig::S3Config(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`S3Config`](crate::types::DataDestinationConfig::S3Config).
     pub fn is_s3_config(&self) -> bool {
@@ -35,11 +31,7 @@ impl DataDestinationConfig {
     /// Tries to convert the enum instance into [`TimestreamConfig`](crate::types::DataDestinationConfig::TimestreamConfig), extracting the inner [`TimestreamConfig`](crate::types::TimestreamConfig).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_timestream_config(&self) -> ::std::result::Result<&crate::types::TimestreamConfig, &Self> {
-        if let DataDestinationConfig::TimestreamConfig(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DataDestinationConfig::TimestreamConfig(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`TimestreamConfig`](crate::types::DataDestinationConfig::TimestreamConfig).
     pub fn is_timestream_config(&self) -> bool {
@@ -50,3 +42,4 @@ impl DataDestinationConfig {
         matches!(self, Self::Unknown)
     }
 }
+

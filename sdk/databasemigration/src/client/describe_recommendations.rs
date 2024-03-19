@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeRecommendations`](crate::operation::describe_recommendations::builders::DescribeRecommendationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_recommendations::builders::DescribeRecommendationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filters(Filter)`](crate::operation::describe_recommendations::builders::DescribeRecommendationsFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::describe_recommendations::builders::DescribeRecommendationsFluentBuilder::set_filters):<br>required: **false**<br><p>Filters applied to the target engine recommendations described in the form of key-value pairs.</p><br>
     ///   - [`max_records(i32)`](crate::operation::describe_recommendations::builders::DescribeRecommendationsFluentBuilder::max_records) / [`set_max_records(Option<i32>)`](crate::operation::describe_recommendations::builders::DescribeRecommendationsFluentBuilder::set_max_records):<br>required: **false**<br><p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, Fleet Advisor includes a pagination token in the response so that you can retrieve the remaining results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_recommendations::builders::DescribeRecommendationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_recommendations::builders::DescribeRecommendationsFluentBuilder::set_next_token):<br>required: **false**<br><p>Specifies the unique pagination token that makes it possible to display the next page of results. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p> <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p><br>
-    /// - On success, responds with [`DescribeRecommendationsOutput`](crate::operation::describe_recommendations::DescribeRecommendationsOutput) with field(s):
+                            /// - On success, responds with [`DescribeRecommendationsOutput`](crate::operation::describe_recommendations::DescribeRecommendationsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::describe_recommendations::DescribeRecommendationsOutput::next_token): <p>The unique pagination token returned for you to pass to a subsequent request. Fleet Advisor returns this token when the number of records in the response is greater than the <code>MaxRecords</code> value. To retrieve the next page, make the call again using the returned token and keeping all other arguments unchanged.</p>
     ///   - [`recommendations(Option<Vec::<Recommendation>>)`](crate::operation::describe_recommendations::DescribeRecommendationsOutput::recommendations): <p>The list of recommendations of target engines that Fleet Advisor created for the source database.</p>
-    /// - On failure, responds with [`SdkError<DescribeRecommendationsError>`](crate::operation::describe_recommendations::DescribeRecommendationsError)
+                            /// - On failure, responds with [`SdkError<DescribeRecommendationsError>`](crate::operation::describe_recommendations::DescribeRecommendationsError)
     pub fn describe_recommendations(&self) -> crate::operation::describe_recommendations::builders::DescribeRecommendationsFluentBuilder {
-        crate::operation::describe_recommendations::builders::DescribeRecommendationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_recommendations::builders::DescribeRecommendationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

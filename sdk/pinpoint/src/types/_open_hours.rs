@@ -3,43 +3,37 @@
 /// <p>Specifies the times when message are allowed to be sent to endpoints.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OpenHours {
+pub struct OpenHours  {
     /// <p>Specifies the schedule settings for the email channel.</p>
-    pub email: ::std::option::Option<::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::OpenHoursRule>>>,
+    pub email: ::std::option::Option<::std::collections::HashMap::<crate::types::DayOfWeek, ::std::vec::Vec::<crate::types::OpenHoursRule>>>,
     /// <p>Specifies the schedule settings for the SMS channel.</p>
-    pub sms: ::std::option::Option<::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::OpenHoursRule>>>,
+    pub sms: ::std::option::Option<::std::collections::HashMap::<crate::types::DayOfWeek, ::std::vec::Vec::<crate::types::OpenHoursRule>>>,
     /// <p>Specifies the schedule settings for the push channel.</p>
-    pub push: ::std::option::Option<::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::OpenHoursRule>>>,
+    pub push: ::std::option::Option<::std::collections::HashMap::<crate::types::DayOfWeek, ::std::vec::Vec::<crate::types::OpenHoursRule>>>,
     /// <p>Specifies the schedule settings for the voice channel.</p>
-    pub voice: ::std::option::Option<::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::OpenHoursRule>>>,
+    pub voice: ::std::option::Option<::std::collections::HashMap::<crate::types::DayOfWeek, ::std::vec::Vec::<crate::types::OpenHoursRule>>>,
     /// <p>Specifies the schedule settings for the custom channel.</p>
-    pub custom: ::std::option::Option<::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::OpenHoursRule>>>,
+    pub custom: ::std::option::Option<::std::collections::HashMap::<crate::types::DayOfWeek, ::std::vec::Vec::<crate::types::OpenHoursRule>>>,
 }
-impl OpenHours {
+impl  OpenHours  {
     /// <p>Specifies the schedule settings for the email channel.</p>
-    pub fn email(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::OpenHoursRule>>> {
+    pub fn email(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::DayOfWeek, ::std::vec::Vec::<crate::types::OpenHoursRule>>> {
         self.email.as_ref()
     }
     /// <p>Specifies the schedule settings for the SMS channel.</p>
-    pub fn sms(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::OpenHoursRule>>> {
+    pub fn sms(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::DayOfWeek, ::std::vec::Vec::<crate::types::OpenHoursRule>>> {
         self.sms.as_ref()
     }
     /// <p>Specifies the schedule settings for the push channel.</p>
-    pub fn push(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::OpenHoursRule>>> {
+    pub fn push(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::DayOfWeek, ::std::vec::Vec::<crate::types::OpenHoursRule>>> {
         self.push.as_ref()
     }
     /// <p>Specifies the schedule settings for the voice channel.</p>
-    pub fn voice(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::OpenHoursRule>>> {
+    pub fn voice(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::DayOfWeek, ::std::vec::Vec::<crate::types::OpenHoursRule>>> {
         self.voice.as_ref()
     }
     /// <p>Specifies the schedule settings for the custom channel.</p>
-    pub fn custom(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::OpenHoursRule>>> {
+    pub fn custom(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::DayOfWeek, ::std::vec::Vec::<crate::types::OpenHoursRule>>> {
         self.custom.as_ref()
     }
 }
@@ -54,11 +48,11 @@ impl OpenHours {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OpenHoursBuilder {
-    pub(crate) email: ::std::option::Option<::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::OpenHoursRule>>>,
-    pub(crate) sms: ::std::option::Option<::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::OpenHoursRule>>>,
-    pub(crate) push: ::std::option::Option<::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::OpenHoursRule>>>,
-    pub(crate) voice: ::std::option::Option<::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::OpenHoursRule>>>,
-    pub(crate) custom: ::std::option::Option<::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::OpenHoursRule>>>,
+    pub(crate) email: ::std::option::Option<::std::collections::HashMap::<crate::types::DayOfWeek, ::std::vec::Vec::<crate::types::OpenHoursRule>>>,
+    pub(crate) sms: ::std::option::Option<::std::collections::HashMap::<crate::types::DayOfWeek, ::std::vec::Vec::<crate::types::OpenHoursRule>>>,
+    pub(crate) push: ::std::option::Option<::std::collections::HashMap::<crate::types::DayOfWeek, ::std::vec::Vec::<crate::types::OpenHoursRule>>>,
+    pub(crate) voice: ::std::option::Option<::std::collections::HashMap::<crate::types::DayOfWeek, ::std::vec::Vec::<crate::types::OpenHoursRule>>>,
+    pub(crate) custom: ::std::option::Option<::std::collections::HashMap::<crate::types::DayOfWeek, ::std::vec::Vec::<crate::types::OpenHoursRule>>>,
 }
 impl OpenHoursBuilder {
     /// Adds a key-value pair to `email`.
@@ -66,24 +60,18 @@ impl OpenHoursBuilder {
     /// To override the contents of this collection use [`set_email`](Self::set_email).
     ///
     /// <p>Specifies the schedule settings for the email channel.</p>
-    pub fn email(mut self, k: crate::types::DayOfWeek, v: ::std::vec::Vec<crate::types::OpenHoursRule>) -> Self {
+    pub fn email(mut self, k: crate::types::DayOfWeek, v: ::std::vec::Vec::<crate::types::OpenHoursRule>) -> Self {
         let mut hash_map = self.email.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.email = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.email = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Specifies the schedule settings for the email channel.</p>
-    pub fn set_email(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::OpenHoursRule>>>,
-    ) -> Self {
-        self.email = input;
-        self
+    pub fn set_email(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::DayOfWeek, ::std::vec::Vec::<crate::types::OpenHoursRule>>>) -> Self {
+        self.email = input; self
     }
     /// <p>Specifies the schedule settings for the email channel.</p>
-    pub fn get_email(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::OpenHoursRule>>> {
+    pub fn get_email(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::DayOfWeek, ::std::vec::Vec::<crate::types::OpenHoursRule>>> {
         &self.email
     }
     /// Adds a key-value pair to `sms`.
@@ -91,24 +79,18 @@ impl OpenHoursBuilder {
     /// To override the contents of this collection use [`set_sms`](Self::set_sms).
     ///
     /// <p>Specifies the schedule settings for the SMS channel.</p>
-    pub fn sms(mut self, k: crate::types::DayOfWeek, v: ::std::vec::Vec<crate::types::OpenHoursRule>) -> Self {
+    pub fn sms(mut self, k: crate::types::DayOfWeek, v: ::std::vec::Vec::<crate::types::OpenHoursRule>) -> Self {
         let mut hash_map = self.sms.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.sms = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.sms = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Specifies the schedule settings for the SMS channel.</p>
-    pub fn set_sms(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::OpenHoursRule>>>,
-    ) -> Self {
-        self.sms = input;
-        self
+    pub fn set_sms(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::DayOfWeek, ::std::vec::Vec::<crate::types::OpenHoursRule>>>) -> Self {
+        self.sms = input; self
     }
     /// <p>Specifies the schedule settings for the SMS channel.</p>
-    pub fn get_sms(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::OpenHoursRule>>> {
+    pub fn get_sms(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::DayOfWeek, ::std::vec::Vec::<crate::types::OpenHoursRule>>> {
         &self.sms
     }
     /// Adds a key-value pair to `push`.
@@ -116,24 +98,18 @@ impl OpenHoursBuilder {
     /// To override the contents of this collection use [`set_push`](Self::set_push).
     ///
     /// <p>Specifies the schedule settings for the push channel.</p>
-    pub fn push(mut self, k: crate::types::DayOfWeek, v: ::std::vec::Vec<crate::types::OpenHoursRule>) -> Self {
+    pub fn push(mut self, k: crate::types::DayOfWeek, v: ::std::vec::Vec::<crate::types::OpenHoursRule>) -> Self {
         let mut hash_map = self.push.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.push = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.push = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Specifies the schedule settings for the push channel.</p>
-    pub fn set_push(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::OpenHoursRule>>>,
-    ) -> Self {
-        self.push = input;
-        self
+    pub fn set_push(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::DayOfWeek, ::std::vec::Vec::<crate::types::OpenHoursRule>>>) -> Self {
+        self.push = input; self
     }
     /// <p>Specifies the schedule settings for the push channel.</p>
-    pub fn get_push(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::OpenHoursRule>>> {
+    pub fn get_push(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::DayOfWeek, ::std::vec::Vec::<crate::types::OpenHoursRule>>> {
         &self.push
     }
     /// Adds a key-value pair to `voice`.
@@ -141,24 +117,18 @@ impl OpenHoursBuilder {
     /// To override the contents of this collection use [`set_voice`](Self::set_voice).
     ///
     /// <p>Specifies the schedule settings for the voice channel.</p>
-    pub fn voice(mut self, k: crate::types::DayOfWeek, v: ::std::vec::Vec<crate::types::OpenHoursRule>) -> Self {
+    pub fn voice(mut self, k: crate::types::DayOfWeek, v: ::std::vec::Vec::<crate::types::OpenHoursRule>) -> Self {
         let mut hash_map = self.voice.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.voice = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.voice = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Specifies the schedule settings for the voice channel.</p>
-    pub fn set_voice(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::OpenHoursRule>>>,
-    ) -> Self {
-        self.voice = input;
-        self
+    pub fn set_voice(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::DayOfWeek, ::std::vec::Vec::<crate::types::OpenHoursRule>>>) -> Self {
+        self.voice = input; self
     }
     /// <p>Specifies the schedule settings for the voice channel.</p>
-    pub fn get_voice(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::OpenHoursRule>>> {
+    pub fn get_voice(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::DayOfWeek, ::std::vec::Vec::<crate::types::OpenHoursRule>>> {
         &self.voice
     }
     /// Adds a key-value pair to `custom`.
@@ -166,34 +136,34 @@ impl OpenHoursBuilder {
     /// To override the contents of this collection use [`set_custom`](Self::set_custom).
     ///
     /// <p>Specifies the schedule settings for the custom channel.</p>
-    pub fn custom(mut self, k: crate::types::DayOfWeek, v: ::std::vec::Vec<crate::types::OpenHoursRule>) -> Self {
+    pub fn custom(mut self, k: crate::types::DayOfWeek, v: ::std::vec::Vec::<crate::types::OpenHoursRule>) -> Self {
         let mut hash_map = self.custom.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.custom = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.custom = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Specifies the schedule settings for the custom channel.</p>
-    pub fn set_custom(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::OpenHoursRule>>>,
-    ) -> Self {
-        self.custom = input;
-        self
+    pub fn set_custom(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::DayOfWeek, ::std::vec::Vec::<crate::types::OpenHoursRule>>>) -> Self {
+        self.custom = input; self
     }
     /// <p>Specifies the schedule settings for the custom channel.</p>
-    pub fn get_custom(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::DayOfWeek, ::std::vec::Vec<crate::types::OpenHoursRule>>> {
+    pub fn get_custom(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::DayOfWeek, ::std::vec::Vec::<crate::types::OpenHoursRule>>> {
         &self.custom
     }
     /// Consumes the builder and constructs a [`OpenHours`](crate::types::OpenHours).
     pub fn build(self) -> crate::types::OpenHours {
         crate::types::OpenHours {
-            email: self.email,
-            sms: self.sms,
-            push: self.push,
-            voice: self.voice,
-            custom: self.custom,
+            email: self.email
+            ,
+            sms: self.sms
+            ,
+            push: self.push
+            ,
+            voice: self.voice
+            ,
+            custom: self.custom
+            ,
         }
     }
 }
+

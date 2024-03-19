@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPodIdentityAssociationsInput {
+pub struct ListPodIdentityAssociationsInput  {
     /// <p>The name of the cluster that the associations are in.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Kubernetes namespace inside the cluster that the associations are in.</p>
@@ -16,17 +16,17 @@ pub struct ListPodIdentityAssociationsInput {
     /// </note>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListPodIdentityAssociationsInput {
+impl  ListPodIdentityAssociationsInput  {
     /// <p>The name of the cluster that the associations are in.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The name of the Kubernetes namespace inside the cluster that the associations are in.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the Kubernetes service account that the associations use.</p>
-    pub fn service_account(&self) -> ::std::option::Option<&str> {
+    pub fn service_account(&self) -> ::std::option::Option<& str> {
         self.service_account.as_deref()
     }
     /// <p>The maximum number of EKS Pod Identity association results returned by <code>ListPodIdentityAssociations</code> in paginated output. When you use this parameter, <code>ListPodIdentityAssociations</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListPodIdentityAssociations</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListPodIdentityAssociations</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
@@ -36,7 +36,7 @@ impl ListPodIdentityAssociationsInput {
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListUpdates</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p><note>
     /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -66,8 +66,7 @@ impl ListPodIdentityAssociationsInputBuilder {
     }
     /// <p>The name of the cluster that the associations are in.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The name of the cluster that the associations are in.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +79,7 @@ impl ListPodIdentityAssociationsInputBuilder {
     }
     /// <p>The name of the Kubernetes namespace inside the cluster that the associations are in.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The name of the Kubernetes namespace inside the cluster that the associations are in.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +92,7 @@ impl ListPodIdentityAssociationsInputBuilder {
     }
     /// <p>The name of the Kubernetes service account that the associations use.</p>
     pub fn set_service_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_account = input;
-        self
+        self.service_account = input; self
     }
     /// <p>The name of the Kubernetes service account that the associations use.</p>
     pub fn get_service_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +105,7 @@ impl ListPodIdentityAssociationsInputBuilder {
     }
     /// <p>The maximum number of EKS Pod Identity association results returned by <code>ListPodIdentityAssociations</code> in paginated output. When you use this parameter, <code>ListPodIdentityAssociations</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListPodIdentityAssociations</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListPodIdentityAssociations</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of EKS Pod Identity association results returned by <code>ListPodIdentityAssociations</code> in paginated output. When you use this parameter, <code>ListPodIdentityAssociations</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListPodIdentityAssociations</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListPodIdentityAssociations</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -126,8 +122,7 @@ impl ListPodIdentityAssociationsInputBuilder {
     /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListUpdates</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p><note>
     /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -136,18 +131,21 @@ impl ListPodIdentityAssociationsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListPodIdentityAssociationsInput`](crate::operation::list_pod_identity_associations::ListPodIdentityAssociationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_pod_identity_associations::ListPodIdentityAssociationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_pod_identity_associations::ListPodIdentityAssociationsInput {
-            cluster_name: self.cluster_name,
-            namespace: self.namespace,
-            service_account: self.service_account,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_pod_identity_associations::ListPodIdentityAssociationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_pod_identity_associations::ListPodIdentityAssociationsInput {
+                cluster_name: self.cluster_name
+                ,
+                namespace: self.namespace
+                ,
+                service_account: self.service_account
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

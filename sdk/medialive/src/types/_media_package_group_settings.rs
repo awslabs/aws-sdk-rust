@@ -3,13 +3,13 @@
 /// Media Package Group Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MediaPackageGroupSettings {
+pub struct MediaPackageGroupSettings  {
     /// MediaPackage channel destination.
     pub destination: ::std::option::Option<crate::types::OutputLocationRef>,
 }
-impl MediaPackageGroupSettings {
+impl  MediaPackageGroupSettings  {
     /// MediaPackage channel destination.
-    pub fn destination(&self) -> ::std::option::Option<&crate::types::OutputLocationRef> {
+    pub fn destination(&self) -> ::std::option::Option<& crate::types::OutputLocationRef> {
         self.destination.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl MediaPackageGroupSettingsBuilder {
     }
     /// MediaPackage channel destination.
     pub fn set_destination(mut self, input: ::std::option::Option<crate::types::OutputLocationRef>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// MediaPackage channel destination.
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::OutputLocationRef> {
@@ -45,7 +44,9 @@ impl MediaPackageGroupSettingsBuilder {
     /// Consumes the builder and constructs a [`MediaPackageGroupSettings`](crate::types::MediaPackageGroupSettings).
     pub fn build(self) -> crate::types::MediaPackageGroupSettings {
         crate::types::MediaPackageGroupSettings {
-            destination: self.destination,
+            destination: self.destination
+            ,
         }
     }
 }
+

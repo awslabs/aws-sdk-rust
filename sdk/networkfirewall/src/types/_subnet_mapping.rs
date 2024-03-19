@@ -3,20 +3,19 @@
 /// <p>The ID for a subnet that you want to associate with the firewall. This is used with <code>CreateFirewall</code> and <code>AssociateSubnets</code>. Network Firewall creates an instance of the associated firewall in each subnet that you specify, to filter traffic in the subnet's Availability Zone.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SubnetMapping {
+pub struct SubnetMapping  {
     /// <p>The unique identifier for the subnet.</p>
     pub subnet_id: ::std::string::String,
     /// <p>The subnet's IP address type. You can't change the IP address type after you create the subnet.</p>
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
 }
-impl SubnetMapping {
+impl  SubnetMapping  {
     /// <p>The unique identifier for the subnet.</p>
-    pub fn subnet_id(&self) -> &str {
-        use std::ops::Deref;
-        self.subnet_id.deref()
+    pub fn subnet_id(&self) -> & str {
+        use std::ops::Deref; self.subnet_id.deref()
     }
     /// <p>The subnet's IP address type. You can't change the IP address type after you create the subnet.</p>
-    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
+    pub fn ip_address_type(&self) -> ::std::option::Option<& crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl SubnetMappingBuilder {
     }
     /// <p>The unique identifier for the subnet.</p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
     }
     /// <p>The unique identifier for the subnet.</p>
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl SubnetMappingBuilder {
     }
     /// <p>The subnet's IP address type. You can't change the IP address type after you create the subnet.</p>
     pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
-        self.ip_address_type = input;
-        self
+        self.ip_address_type = input; self
     }
     /// <p>The subnet's IP address type. You can't change the IP address type after you create the subnet.</p>
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
@@ -68,14 +65,17 @@ impl SubnetMappingBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`subnet_id`](crate::types::builders::SubnetMappingBuilder::subnet_id)
     pub fn build(self) -> ::std::result::Result<crate::types::SubnetMapping, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SubnetMapping {
-            subnet_id: self.subnet_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "subnet_id",
-                    "subnet_id was not specified but it is required when building SubnetMapping",
-                )
-            })?,
-            ip_address_type: self.ip_address_type,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SubnetMapping {
+                subnet_id: self.subnet_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("subnet_id", "subnet_id was not specified but it is required when building SubnetMapping")
+                    )?
+                ,
+                ip_address_type: self.ip_address_type
+                ,
+            }
+        )
     }
 }
+

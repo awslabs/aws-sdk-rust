@@ -3,19 +3,19 @@
 /// <p>Destination for scheduled query.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TimestreamDestination {
+pub struct TimestreamDestination  {
     /// <p>Timestream database name.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>Timestream table name.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
 }
-impl TimestreamDestination {
+impl  TimestreamDestination  {
     /// <p>Timestream database name.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>Timestream table name.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl TimestreamDestinationBuilder {
     }
     /// <p>Timestream database name.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>Timestream database name.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl TimestreamDestinationBuilder {
     }
     /// <p>Timestream table name.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>Timestream table name.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl TimestreamDestinationBuilder {
     /// Consumes the builder and constructs a [`TimestreamDestination`](crate::types::TimestreamDestination).
     pub fn build(self) -> crate::types::TimestreamDestination {
         crate::types::TimestreamDestination {
-            database_name: self.database_name,
-            table_name: self.table_name,
+            database_name: self.database_name
+            ,
+            table_name: self.table_name
+            ,
         }
     }
 }
+

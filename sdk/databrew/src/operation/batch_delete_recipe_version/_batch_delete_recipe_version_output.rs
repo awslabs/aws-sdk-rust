@@ -2,31 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDeleteRecipeVersionOutput {
+pub struct BatchDeleteRecipeVersionOutput  {
     /// <p>The name of the recipe that was modified.</p>
     pub name: ::std::string::String,
     /// <p>Errors, if any, that occurred while attempting to delete the recipe versions.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::RecipeVersionErrorDetail>>,
+    pub errors: ::std::option::Option<::std::vec::Vec::<crate::types::RecipeVersionErrorDetail>>,
     _request_id: Option<String>,
 }
-impl BatchDeleteRecipeVersionOutput {
+impl  BatchDeleteRecipeVersionOutput  {
     /// <p>The name of the recipe that was modified.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Errors, if any, that occurred while attempting to delete the recipe versions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
-    pub fn errors(&self) -> &[crate::types::RecipeVersionErrorDetail] {
-        self.errors.as_deref().unwrap_or_default()
+    pub fn errors(&self) -> & [crate::types::RecipeVersionErrorDetail] {
+        self.errors.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchDeleteRecipeVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchDeleteRecipeVersionOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteRecipeVersionOutput`](crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionOutput).
     pub fn builder() -> crate::operation::batch_delete_recipe_version::builders::BatchDeleteRecipeVersionOutputBuilder {
@@ -39,7 +39,7 @@ impl BatchDeleteRecipeVersionOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteRecipeVersionOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::RecipeVersionErrorDetail>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::RecipeVersionErrorDetail>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteRecipeVersionOutputBuilder {
@@ -51,8 +51,7 @@ impl BatchDeleteRecipeVersionOutputBuilder {
     }
     /// <p>The name of the recipe that was modified.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the recipe that was modified.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,46 +64,43 @@ impl BatchDeleteRecipeVersionOutputBuilder {
     /// <p>Errors, if any, that occurred while attempting to delete the recipe versions.</p>
     pub fn errors(mut self, input: crate::types::RecipeVersionErrorDetail) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Errors, if any, that occurred while attempting to delete the recipe versions.</p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecipeVersionErrorDetail>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RecipeVersionErrorDetail>>) -> Self {
+        self.errors = input; self
     }
     /// <p>Errors, if any, that occurred while attempting to delete the recipe versions.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecipeVersionErrorDetail>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RecipeVersionErrorDetail>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchDeleteRecipeVersionOutput`](crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::operation::batch_delete_recipe_version::builders::BatchDeleteRecipeVersionOutputBuilder::name)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionOutput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building BatchDeleteRecipeVersionOutput",
-                )
-            })?,
-            errors: self.errors,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionOutput {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building BatchDeleteRecipeVersionOutput")
+                    )?
+                ,
+                errors: self.errors
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

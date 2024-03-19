@@ -3,7 +3,7 @@
 /// <p>This contains metadata about a restore testing plan.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RestoreTestingPlanForCreate {
+pub struct RestoreTestingPlanForCreate  {
     /// <p>Required: Algorithm; Required: Recovery point types; IncludeVaults (one or more). Optional: SelectionWindowDays ('30' if not specified); ExcludeVaults (list of selectors), defaults to empty list if not listed.</p>
     pub recovery_point_selection: ::std::option::Option<crate::types::RestoreTestingRecoveryPointSelection>,
     /// <p>The RestoreTestingPlanName is a unique string that is the name of the restore testing plan. This cannot be changed after creation, and it must consist of only alphanumeric characters and underscores.</p>
@@ -16,23 +16,21 @@ pub struct RestoreTestingPlanForCreate {
     /// <p>A value in hours after a restore test is scheduled before a job will be canceled if it doesn't start successfully. This value is optional. If this value is included, this parameter has a maximum value of 168 hours (one week).</p>
     pub start_window_hours: i32,
 }
-impl RestoreTestingPlanForCreate {
+impl  RestoreTestingPlanForCreate  {
     /// <p>Required: Algorithm; Required: Recovery point types; IncludeVaults (one or more). Optional: SelectionWindowDays ('30' if not specified); ExcludeVaults (list of selectors), defaults to empty list if not listed.</p>
-    pub fn recovery_point_selection(&self) -> ::std::option::Option<&crate::types::RestoreTestingRecoveryPointSelection> {
+    pub fn recovery_point_selection(&self) -> ::std::option::Option<& crate::types::RestoreTestingRecoveryPointSelection> {
         self.recovery_point_selection.as_ref()
     }
     /// <p>The RestoreTestingPlanName is a unique string that is the name of the restore testing plan. This cannot be changed after creation, and it must consist of only alphanumeric characters and underscores.</p>
-    pub fn restore_testing_plan_name(&self) -> &str {
-        use std::ops::Deref;
-        self.restore_testing_plan_name.deref()
+    pub fn restore_testing_plan_name(&self) -> & str {
+        use std::ops::Deref; self.restore_testing_plan_name.deref()
     }
     /// <p>A CRON expression in specified timezone when a restore testing plan is executed.</p>
-    pub fn schedule_expression(&self) -> &str {
-        use std::ops::Deref;
-        self.schedule_expression.deref()
+    pub fn schedule_expression(&self) -> & str {
+        use std::ops::Deref; self.schedule_expression.deref()
     }
     /// <p>Optional. This is the timezone in which the schedule expression is set. By default, ScheduleExpressions are in UTC. You can modify this to a specified timezone.</p>
-    pub fn schedule_expression_timezone(&self) -> ::std::option::Option<&str> {
+    pub fn schedule_expression_timezone(&self) -> ::std::option::Option<& str> {
         self.schedule_expression_timezone.as_deref()
     }
     /// <p>Defaults to 24 hours.</p>
@@ -67,8 +65,7 @@ impl RestoreTestingPlanForCreateBuilder {
     }
     /// <p>Required: Algorithm; Required: Recovery point types; IncludeVaults (one or more). Optional: SelectionWindowDays ('30' if not specified); ExcludeVaults (list of selectors), defaults to empty list if not listed.</p>
     pub fn set_recovery_point_selection(mut self, input: ::std::option::Option<crate::types::RestoreTestingRecoveryPointSelection>) -> Self {
-        self.recovery_point_selection = input;
-        self
+        self.recovery_point_selection = input; self
     }
     /// <p>Required: Algorithm; Required: Recovery point types; IncludeVaults (one or more). Optional: SelectionWindowDays ('30' if not specified); ExcludeVaults (list of selectors), defaults to empty list if not listed.</p>
     pub fn get_recovery_point_selection(&self) -> &::std::option::Option<crate::types::RestoreTestingRecoveryPointSelection> {
@@ -82,8 +79,7 @@ impl RestoreTestingPlanForCreateBuilder {
     }
     /// <p>The RestoreTestingPlanName is a unique string that is the name of the restore testing plan. This cannot be changed after creation, and it must consist of only alphanumeric characters and underscores.</p>
     pub fn set_restore_testing_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.restore_testing_plan_name = input;
-        self
+        self.restore_testing_plan_name = input; self
     }
     /// <p>The RestoreTestingPlanName is a unique string that is the name of the restore testing plan. This cannot be changed after creation, and it must consist of only alphanumeric characters and underscores.</p>
     pub fn get_restore_testing_plan_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +93,7 @@ impl RestoreTestingPlanForCreateBuilder {
     }
     /// <p>A CRON expression in specified timezone when a restore testing plan is executed.</p>
     pub fn set_schedule_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schedule_expression = input;
-        self
+        self.schedule_expression = input; self
     }
     /// <p>A CRON expression in specified timezone when a restore testing plan is executed.</p>
     pub fn get_schedule_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +106,7 @@ impl RestoreTestingPlanForCreateBuilder {
     }
     /// <p>Optional. This is the timezone in which the schedule expression is set. By default, ScheduleExpressions are in UTC. You can modify this to a specified timezone.</p>
     pub fn set_schedule_expression_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schedule_expression_timezone = input;
-        self
+        self.schedule_expression_timezone = input; self
     }
     /// <p>Optional. This is the timezone in which the schedule expression is set. By default, ScheduleExpressions are in UTC. You can modify this to a specified timezone.</p>
     pub fn get_schedule_expression_timezone(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +121,7 @@ impl RestoreTestingPlanForCreateBuilder {
     /// <p>Defaults to 24 hours.</p>
     /// <p>A value in hours after a restore test is scheduled before a job will be canceled if it doesn't start successfully. This value is optional. If this value is included, this parameter has a maximum value of 168 hours (one week).</p>
     pub fn set_start_window_hours(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.start_window_hours = input;
-        self
+        self.start_window_hours = input; self
     }
     /// <p>Defaults to 24 hours.</p>
     /// <p>A value in hours after a restore test is scheduled before a job will be canceled if it doesn't start successfully. This value is optional. If this value is included, this parameter has a maximum value of 168 hours (one week).</p>
@@ -140,22 +133,27 @@ impl RestoreTestingPlanForCreateBuilder {
     /// - [`restore_testing_plan_name`](crate::types::builders::RestoreTestingPlanForCreateBuilder::restore_testing_plan_name)
     /// - [`schedule_expression`](crate::types::builders::RestoreTestingPlanForCreateBuilder::schedule_expression)
     pub fn build(self) -> ::std::result::Result<crate::types::RestoreTestingPlanForCreate, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RestoreTestingPlanForCreate {
-            recovery_point_selection: self.recovery_point_selection,
-            restore_testing_plan_name: self.restore_testing_plan_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "restore_testing_plan_name",
-                    "restore_testing_plan_name was not specified but it is required when building RestoreTestingPlanForCreate",
-                )
-            })?,
-            schedule_expression: self.schedule_expression.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "schedule_expression",
-                    "schedule_expression was not specified but it is required when building RestoreTestingPlanForCreate",
-                )
-            })?,
-            schedule_expression_timezone: self.schedule_expression_timezone,
-            start_window_hours: self.start_window_hours.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::RestoreTestingPlanForCreate {
+                recovery_point_selection: self.recovery_point_selection
+                ,
+                restore_testing_plan_name: self.restore_testing_plan_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("restore_testing_plan_name", "restore_testing_plan_name was not specified but it is required when building RestoreTestingPlanForCreate")
+                    )?
+                ,
+                schedule_expression: self.schedule_expression
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("schedule_expression", "schedule_expression was not specified but it is required when building RestoreTestingPlanForCreate")
+                    )?
+                ,
+                schedule_expression_timezone: self.schedule_expression_timezone
+                ,
+                start_window_hours: self.start_window_hours
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

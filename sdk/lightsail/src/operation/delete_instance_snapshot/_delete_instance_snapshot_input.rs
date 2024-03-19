@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteInstanceSnapshotInput {
+pub struct DeleteInstanceSnapshotInput  {
     /// <p>The name of the snapshot to delete.</p>
     pub instance_snapshot_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteInstanceSnapshotInput {
+impl  DeleteInstanceSnapshotInput  {
     /// <p>The name of the snapshot to delete.</p>
-    pub fn instance_snapshot_name(&self) -> ::std::option::Option<&str> {
+    pub fn instance_snapshot_name(&self) -> ::std::option::Option<& str> {
         self.instance_snapshot_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteInstanceSnapshotInputBuilder {
     }
     /// <p>The name of the snapshot to delete.</p>
     pub fn set_instance_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_snapshot_name = input;
-        self
+        self.instance_snapshot_name = input; self
     }
     /// <p>The name of the snapshot to delete.</p>
     pub fn get_instance_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_snapshot_name
     }
     /// Consumes the builder and constructs a [`DeleteInstanceSnapshotInput`](crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotInput {
-            instance_snapshot_name: self.instance_snapshot_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotInput {
+                instance_snapshot_name: self.instance_snapshot_name
+                ,
+            }
+        )
     }
 }
+

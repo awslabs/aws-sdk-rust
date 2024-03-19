@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRecommendationsInput {
+pub struct ListRecommendationsInput  {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
@@ -24,9 +24,9 @@ pub struct ListRecommendationsInput {
     /// <p>Before the last update of the Recommendation</p>
     pub before_last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ListRecommendationsInput {
+impl  ListRecommendationsInput  {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per page.</p>
@@ -34,35 +34,35 @@ impl ListRecommendationsInput {
         self.max_results
     }
     /// <p>The type of the Recommendation</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::RecommendationType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::RecommendationType> {
         self.r#type.as_ref()
     }
     /// <p>The status of the Recommendation</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::RecommendationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::RecommendationStatus> {
         self.status.as_ref()
     }
     /// <p>The pillar of the Recommendation</p>
-    pub fn pillar(&self) -> ::std::option::Option<&crate::types::RecommendationPillar> {
+    pub fn pillar(&self) -> ::std::option::Option<& crate::types::RecommendationPillar> {
         self.pillar.as_ref()
     }
     /// <p>The aws service associated with the Recommendation</p>
-    pub fn aws_service(&self) -> ::std::option::Option<&str> {
+    pub fn aws_service(&self) -> ::std::option::Option<& str> {
         self.aws_service.as_deref()
     }
     /// <p>The source of the Recommendation</p>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::RecommendationSource> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::RecommendationSource> {
         self.source.as_ref()
     }
     /// <p>The check identifier of the Recommendation</p>
-    pub fn check_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn check_identifier(&self) -> ::std::option::Option<& str> {
         self.check_identifier.as_deref()
     }
     /// <p>After the last update of the Recommendation</p>
-    pub fn after_last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn after_last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.after_last_updated_at.as_ref()
     }
     /// <p>Before the last update of the Recommendation</p>
-    pub fn before_last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn before_last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.before_last_updated_at.as_ref()
     }
 }
@@ -96,8 +96,7 @@ impl ListRecommendationsInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +109,7 @@ impl ListRecommendationsInputBuilder {
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -124,8 +122,7 @@ impl ListRecommendationsInputBuilder {
     }
     /// <p>The type of the Recommendation</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RecommendationType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the Recommendation</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::RecommendationType> {
@@ -138,8 +135,7 @@ impl ListRecommendationsInputBuilder {
     }
     /// <p>The status of the Recommendation</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RecommendationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the Recommendation</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RecommendationStatus> {
@@ -152,8 +148,7 @@ impl ListRecommendationsInputBuilder {
     }
     /// <p>The pillar of the Recommendation</p>
     pub fn set_pillar(mut self, input: ::std::option::Option<crate::types::RecommendationPillar>) -> Self {
-        self.pillar = input;
-        self
+        self.pillar = input; self
     }
     /// <p>The pillar of the Recommendation</p>
     pub fn get_pillar(&self) -> &::std::option::Option<crate::types::RecommendationPillar> {
@@ -166,8 +161,7 @@ impl ListRecommendationsInputBuilder {
     }
     /// <p>The aws service associated with the Recommendation</p>
     pub fn set_aws_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_service = input;
-        self
+        self.aws_service = input; self
     }
     /// <p>The aws service associated with the Recommendation</p>
     pub fn get_aws_service(&self) -> &::std::option::Option<::std::string::String> {
@@ -180,8 +174,7 @@ impl ListRecommendationsInputBuilder {
     }
     /// <p>The source of the Recommendation</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::RecommendationSource>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The source of the Recommendation</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::RecommendationSource> {
@@ -194,8 +187,7 @@ impl ListRecommendationsInputBuilder {
     }
     /// <p>The check identifier of the Recommendation</p>
     pub fn set_check_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.check_identifier = input;
-        self
+        self.check_identifier = input; self
     }
     /// <p>The check identifier of the Recommendation</p>
     pub fn get_check_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -208,8 +200,7 @@ impl ListRecommendationsInputBuilder {
     }
     /// <p>After the last update of the Recommendation</p>
     pub fn set_after_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.after_last_updated_at = input;
-        self
+        self.after_last_updated_at = input; self
     }
     /// <p>After the last update of the Recommendation</p>
     pub fn get_after_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -222,29 +213,38 @@ impl ListRecommendationsInputBuilder {
     }
     /// <p>Before the last update of the Recommendation</p>
     pub fn set_before_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.before_last_updated_at = input;
-        self
+        self.before_last_updated_at = input; self
     }
     /// <p>Before the last update of the Recommendation</p>
     pub fn get_before_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.before_last_updated_at
     }
     /// Consumes the builder and constructs a [`ListRecommendationsInput`](crate::operation::list_recommendations::ListRecommendationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_recommendations::ListRecommendationsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_recommendations::ListRecommendationsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            r#type: self.r#type,
-            status: self.status,
-            pillar: self.pillar,
-            aws_service: self.aws_service,
-            source: self.source,
-            check_identifier: self.check_identifier,
-            after_last_updated_at: self.after_last_updated_at,
-            before_last_updated_at: self.before_last_updated_at,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_recommendations::ListRecommendationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_recommendations::ListRecommendationsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                r#type: self.r#type
+                ,
+                status: self.status
+                ,
+                pillar: self.pillar
+                ,
+                aws_service: self.aws_service
+                ,
+                source: self.source
+                ,
+                check_identifier: self.check_identifier
+                ,
+                after_last_updated_at: self.after_last_updated_at
+                ,
+                before_last_updated_at: self.before_last_updated_at
+                ,
+            }
+        )
     }
 }
+

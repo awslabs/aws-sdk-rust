@@ -3,15 +3,14 @@
 /// <p>The Terraform s3 state file you need to import.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TerraformSource {
+pub struct TerraformSource  {
     /// <p>The URL of the Terraform s3 state file you need to import.</p>
     pub s3_state_file_url: ::std::string::String,
 }
-impl TerraformSource {
+impl  TerraformSource  {
     /// <p>The URL of the Terraform s3 state file you need to import.</p>
-    pub fn s3_state_file_url(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_state_file_url.deref()
+    pub fn s3_state_file_url(&self) -> & str {
+        use std::ops::Deref; self.s3_state_file_url.deref()
     }
 }
 impl TerraformSource {
@@ -36,8 +35,7 @@ impl TerraformSourceBuilder {
     }
     /// <p>The URL of the Terraform s3 state file you need to import.</p>
     pub fn set_s3_state_file_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_state_file_url = input;
-        self
+        self.s3_state_file_url = input; self
     }
     /// <p>The URL of the Terraform s3 state file you need to import.</p>
     pub fn get_s3_state_file_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl TerraformSourceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`s3_state_file_url`](crate::types::builders::TerraformSourceBuilder::s3_state_file_url)
     pub fn build(self) -> ::std::result::Result<crate::types::TerraformSource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TerraformSource {
-            s3_state_file_url: self.s3_state_file_url.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_state_file_url",
-                    "s3_state_file_url was not specified but it is required when building TerraformSource",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TerraformSource {
+                s3_state_file_url: self.s3_state_file_url
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_state_file_url", "s3_state_file_url was not specified but it is required when building TerraformSource")
+                    )?
+                ,
+            }
+        )
     }
 }
+

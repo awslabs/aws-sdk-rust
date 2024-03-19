@@ -3,15 +3,14 @@
 /// <p>The Key Value Store association.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KeyValueStoreAssociation {
+pub struct KeyValueStoreAssociation  {
     /// <p>The Amazon Resource Name (ARN) of the Key Value Store association.</p>
     pub key_value_store_arn: ::std::string::String,
 }
-impl KeyValueStoreAssociation {
+impl  KeyValueStoreAssociation  {
     /// <p>The Amazon Resource Name (ARN) of the Key Value Store association.</p>
-    pub fn key_value_store_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.key_value_store_arn.deref()
+    pub fn key_value_store_arn(&self) -> & str {
+        use std::ops::Deref; self.key_value_store_arn.deref()
     }
 }
 impl KeyValueStoreAssociation {
@@ -36,8 +35,7 @@ impl KeyValueStoreAssociationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Value Store association.</p>
     pub fn set_key_value_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_value_store_arn = input;
-        self
+        self.key_value_store_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Value Store association.</p>
     pub fn get_key_value_store_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl KeyValueStoreAssociationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`key_value_store_arn`](crate::types::builders::KeyValueStoreAssociationBuilder::key_value_store_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::KeyValueStoreAssociation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KeyValueStoreAssociation {
-            key_value_store_arn: self.key_value_store_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key_value_store_arn",
-                    "key_value_store_arn was not specified but it is required when building KeyValueStoreAssociation",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KeyValueStoreAssociation {
+                key_value_store_arn: self.key_value_store_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key_value_store_arn", "key_value_store_arn was not specified but it is required when building KeyValueStoreAssociation")
+                    )?
+                ,
+            }
+        )
     }
 }
+

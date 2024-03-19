@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResetResourceLogLevelOutput {
+pub struct ResetResourceLogLevelOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for ResetResourceLogLevelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ResetResourceLogLevelOutput {
     /// Creates a new builder-style object to manufacture [`ResetResourceLogLevelOutput`](crate::operation::reset_resource_log_level::ResetResourceLogLevelOutput).
     pub fn builder() -> crate::operation::reset_resource_log_level::builders::ResetResourceLogLevelOutputBuilder {
@@ -25,14 +25,14 @@ pub struct ResetResourceLogLevelOutputBuilder {
 }
 impl ResetResourceLogLevelOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ResetResourceLogLevelOutput`](crate::operation::reset_resource_log_level::ResetResourceLogLevelOutput).
     pub fn build(self) -> crate::operation::reset_resource_log_level::ResetResourceLogLevelOutput {
         crate::operation::reset_resource_log_level::ResetResourceLogLevelOutput {
@@ -40,3 +40,4 @@ impl ResetResourceLogLevelOutputBuilder {
         }
     }
 }
+

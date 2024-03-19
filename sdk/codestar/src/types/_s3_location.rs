@@ -3,19 +3,19 @@
 /// <p>The Amazon S3 location where the source code files provided with the project request are stored.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3Location {
+pub struct S3Location  {
     /// <p>The Amazon S3 bucket name where the source code files provided with the project request are stored.</p>
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 object key where the source code files provided with the project request are stored.</p>
     pub bucket_key: ::std::option::Option<::std::string::String>,
 }
-impl S3Location {
+impl  S3Location  {
     /// <p>The Amazon S3 bucket name where the source code files provided with the project request are stored.</p>
-    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_name(&self) -> ::std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p>The Amazon S3 object key where the source code files provided with the project request are stored.</p>
-    pub fn bucket_key(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_key(&self) -> ::std::option::Option<& str> {
         self.bucket_key.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl S3LocationBuilder {
     }
     /// <p>The Amazon S3 bucket name where the source code files provided with the project request are stored.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>The Amazon S3 bucket name where the source code files provided with the project request are stored.</p>
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl S3LocationBuilder {
     }
     /// <p>The Amazon S3 object key where the source code files provided with the project request are stored.</p>
     pub fn set_bucket_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_key = input;
-        self
+        self.bucket_key = input; self
     }
     /// <p>The Amazon S3 object key where the source code files provided with the project request are stored.</p>
     pub fn get_bucket_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl S3LocationBuilder {
     /// Consumes the builder and constructs a [`S3Location`](crate::types::S3Location).
     pub fn build(self) -> crate::types::S3Location {
         crate::types::S3Location {
-            bucket_name: self.bucket_name,
-            bucket_key: self.bucket_key,
+            bucket_name: self.bucket_name
+            ,
+            bucket_key: self.bucket_key
+            ,
         }
     }
 }
+

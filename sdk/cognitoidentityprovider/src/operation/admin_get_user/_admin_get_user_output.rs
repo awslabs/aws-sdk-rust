@@ -3,11 +3,11 @@
 /// <p>Represents the response from the server from the request to get the specified user as an administrator.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AdminGetUserOutput {
+pub struct AdminGetUserOutput  {
     /// <p>The username of the user that you requested.</p>
     pub username: ::std::string::String,
     /// <p>An array of name-value pairs representing user attributes.</p>
-    pub user_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>,
+    pub user_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeType>>,
     /// <p>The date the user was created.</p>
     pub user_create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
@@ -29,31 +29,31 @@ pub struct AdminGetUserOutput {
     /// </ul>
     pub user_status: ::std::option::Option<crate::types::UserStatusType>,
     /// <p><i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
-    pub mfa_options: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>,
+    pub mfa_options: ::std::option::Option<::std::vec::Vec::<crate::types::MfaOptionType>>,
     /// <p>The user's preferred MFA setting.</p>
     pub preferred_mfa_setting: ::std::option::Option<::std::string::String>,
     /// <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
-    pub user_mfa_setting_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub user_mfa_setting_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl AdminGetUserOutput {
+impl  AdminGetUserOutput  {
     /// <p>The username of the user that you requested.</p>
-    pub fn username(&self) -> &str {
-        use std::ops::Deref;
-        self.username.deref()
+    pub fn username(&self) -> & str {
+        use std::ops::Deref; self.username.deref()
     }
     /// <p>An array of name-value pairs representing user attributes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_attributes.is_none()`.
-    pub fn user_attributes(&self) -> &[crate::types::AttributeType] {
-        self.user_attributes.as_deref().unwrap_or_default()
+    pub fn user_attributes(&self) -> & [crate::types::AttributeType] {
+        self.user_attributes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The date the user was created.</p>
-    pub fn user_create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn user_create_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.user_create_date.as_ref()
     }
     /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
-    pub fn user_last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn user_last_modified_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.user_last_modified_date.as_ref()
     }
     /// <p>Indicates that the status is <code>enabled</code>.</p>
@@ -73,27 +73,29 @@ impl AdminGetUserOutput {
     /// <li>
     /// <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else.</p></li>
     /// </ul>
-    pub fn user_status(&self) -> ::std::option::Option<&crate::types::UserStatusType> {
+    pub fn user_status(&self) -> ::std::option::Option<& crate::types::UserStatusType> {
         self.user_status.as_ref()
     }
     /// <p><i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mfa_options.is_none()`.
-    pub fn mfa_options(&self) -> &[crate::types::MfaOptionType] {
-        self.mfa_options.as_deref().unwrap_or_default()
+    pub fn mfa_options(&self) -> & [crate::types::MfaOptionType] {
+        self.mfa_options.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The user's preferred MFA setting.</p>
-    pub fn preferred_mfa_setting(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_mfa_setting(&self) -> ::std::option::Option<& str> {
         self.preferred_mfa_setting.as_deref()
     }
     /// <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_mfa_setting_list.is_none()`.
-    pub fn user_mfa_setting_list(&self) -> &[::std::string::String] {
-        self.user_mfa_setting_list.as_deref().unwrap_or_default()
+    pub fn user_mfa_setting_list(&self) -> & [::std::string::String] {
+        self.user_mfa_setting_list.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for AdminGetUserOutput {
+impl  ::std::fmt::Debug for AdminGetUserOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AdminGetUserOutput");
         formatter.field("username", &"*** Sensitive Data Redacted ***");
@@ -110,10 +112,10 @@ impl ::std::fmt::Debug for AdminGetUserOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for AdminGetUserOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AdminGetUserOutput {
     /// Creates a new builder-style object to manufacture [`AdminGetUserOutput`](crate::operation::admin_get_user::AdminGetUserOutput).
     pub fn builder() -> crate::operation::admin_get_user::builders::AdminGetUserOutputBuilder {
@@ -126,14 +128,14 @@ impl AdminGetUserOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AdminGetUserOutputBuilder {
     pub(crate) username: ::std::option::Option<::std::string::String>,
-    pub(crate) user_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>,
+    pub(crate) user_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeType>>,
     pub(crate) user_create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) user_last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) user_status: ::std::option::Option<crate::types::UserStatusType>,
-    pub(crate) mfa_options: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>,
+    pub(crate) mfa_options: ::std::option::Option<::std::vec::Vec::<crate::types::MfaOptionType>>,
     pub(crate) preferred_mfa_setting: ::std::option::Option<::std::string::String>,
-    pub(crate) user_mfa_setting_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) user_mfa_setting_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl AdminGetUserOutputBuilder {
@@ -145,8 +147,7 @@ impl AdminGetUserOutputBuilder {
     }
     /// <p>The username of the user that you requested.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The username of the user that you requested.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,17 +160,16 @@ impl AdminGetUserOutputBuilder {
     /// <p>An array of name-value pairs representing user attributes.</p>
     pub fn user_attributes(mut self, input: crate::types::AttributeType) -> Self {
         let mut v = self.user_attributes.unwrap_or_default();
-        v.push(input);
-        self.user_attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.user_attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of name-value pairs representing user attributes.</p>
-    pub fn set_user_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>) -> Self {
-        self.user_attributes = input;
-        self
+    pub fn set_user_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeType>>) -> Self {
+        self.user_attributes = input; self
     }
     /// <p>An array of name-value pairs representing user attributes.</p>
-    pub fn get_user_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeType>> {
+    pub fn get_user_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AttributeType>> {
         &self.user_attributes
     }
     /// <p>The date the user was created.</p>
@@ -179,8 +179,7 @@ impl AdminGetUserOutputBuilder {
     }
     /// <p>The date the user was created.</p>
     pub fn set_user_create_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.user_create_date = input;
-        self
+        self.user_create_date = input; self
     }
     /// <p>The date the user was created.</p>
     pub fn get_user_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -193,8 +192,7 @@ impl AdminGetUserOutputBuilder {
     }
     /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub fn set_user_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.user_last_modified_date = input;
-        self
+        self.user_last_modified_date = input; self
     }
     /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub fn get_user_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -207,8 +205,7 @@ impl AdminGetUserOutputBuilder {
     }
     /// <p>Indicates that the status is <code>enabled</code>.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Indicates that the status is <code>enabled</code>.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -245,8 +242,7 @@ impl AdminGetUserOutputBuilder {
     /// <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else.</p></li>
     /// </ul>
     pub fn set_user_status(mut self, input: ::std::option::Option<crate::types::UserStatusType>) -> Self {
-        self.user_status = input;
-        self
+        self.user_status = input; self
     }
     /// <p>The user status. Can be one of the following:</p>
     /// <ul>
@@ -271,17 +267,16 @@ impl AdminGetUserOutputBuilder {
     /// <p><i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
     pub fn mfa_options(mut self, input: crate::types::MfaOptionType) -> Self {
         let mut v = self.mfa_options.unwrap_or_default();
-        v.push(input);
-        self.mfa_options = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.mfa_options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p><i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
-    pub fn set_mfa_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>) -> Self {
-        self.mfa_options = input;
-        self
+    pub fn set_mfa_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MfaOptionType>>) -> Self {
+        self.mfa_options = input; self
     }
     /// <p><i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
-    pub fn get_mfa_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>> {
+    pub fn get_mfa_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MfaOptionType>> {
         &self.mfa_options
     }
     /// <p>The user's preferred MFA setting.</p>
@@ -291,8 +286,7 @@ impl AdminGetUserOutputBuilder {
     }
     /// <p>The user's preferred MFA setting.</p>
     pub fn set_preferred_mfa_setting(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_mfa_setting = input;
-        self
+        self.preferred_mfa_setting = input; self
     }
     /// <p>The user's preferred MFA setting.</p>
     pub fn get_preferred_mfa_setting(&self) -> &::std::option::Option<::std::string::String> {
@@ -305,51 +299,58 @@ impl AdminGetUserOutputBuilder {
     /// <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
     pub fn user_mfa_setting_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.user_mfa_setting_list.unwrap_or_default();
-        v.push(input.into());
-        self.user_mfa_setting_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.user_mfa_setting_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
-    pub fn set_user_mfa_setting_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.user_mfa_setting_list = input;
-        self
+    pub fn set_user_mfa_setting_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.user_mfa_setting_list = input; self
     }
     /// <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
-    pub fn get_user_mfa_setting_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_user_mfa_setting_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.user_mfa_setting_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AdminGetUserOutput`](crate::operation::admin_get_user::AdminGetUserOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`username`](crate::operation::admin_get_user::builders::AdminGetUserOutputBuilder::username)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::admin_get_user::AdminGetUserOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::admin_get_user::AdminGetUserOutput {
-            username: self.username.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "username",
-                    "username was not specified but it is required when building AdminGetUserOutput",
-                )
-            })?,
-            user_attributes: self.user_attributes,
-            user_create_date: self.user_create_date,
-            user_last_modified_date: self.user_last_modified_date,
-            enabled: self.enabled.unwrap_or_default(),
-            user_status: self.user_status,
-            mfa_options: self.mfa_options,
-            preferred_mfa_setting: self.preferred_mfa_setting,
-            user_mfa_setting_list: self.user_mfa_setting_list,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::admin_get_user::AdminGetUserOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::admin_get_user::AdminGetUserOutput {
+                username: self.username
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("username", "username was not specified but it is required when building AdminGetUserOutput")
+                    )?
+                ,
+                user_attributes: self.user_attributes
+                ,
+                user_create_date: self.user_create_date
+                ,
+                user_last_modified_date: self.user_last_modified_date
+                ,
+                enabled: self.enabled
+                    .unwrap_or_default()
+                ,
+                user_status: self.user_status
+                ,
+                mfa_options: self.mfa_options
+                ,
+                preferred_mfa_setting: self.preferred_mfa_setting
+                ,
+                user_mfa_setting_list: self.user_mfa_setting_list
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for AdminGetUserOutputBuilder {
@@ -368,3 +369,4 @@ impl ::std::fmt::Debug for AdminGetUserOutputBuilder {
         formatter.finish()
     }
 }
+

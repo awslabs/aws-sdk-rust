@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeExperimentOutput {
+pub struct DescribeExperimentOutput  {
     /// <p>The name of the experiment.</p>
     pub experiment_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the experiment.</p>
@@ -23,49 +23,49 @@ pub struct DescribeExperimentOutput {
     pub last_modified_by: ::std::option::Option<crate::types::UserContext>,
     _request_id: Option<String>,
 }
-impl DescribeExperimentOutput {
+impl  DescribeExperimentOutput  {
     /// <p>The name of the experiment.</p>
-    pub fn experiment_name(&self) -> ::std::option::Option<&str> {
+    pub fn experiment_name(&self) -> ::std::option::Option<& str> {
         self.experiment_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the experiment.</p>
-    pub fn experiment_arn(&self) -> ::std::option::Option<&str> {
+    pub fn experiment_arn(&self) -> ::std::option::Option<& str> {
         self.experiment_arn.as_deref()
     }
     /// <p>The name of the experiment as displayed. If <code>DisplayName</code> isn't specified, <code>ExperimentName</code> is displayed.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the source and, optionally, the type.</p>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::ExperimentSource> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::ExperimentSource> {
         self.source.as_ref()
     }
     /// <p>The description of the experiment.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>When the experiment was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Who created the experiment.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
+    pub fn created_by(&self) -> ::std::option::Option<& crate::types::UserContext> {
         self.created_by.as_ref()
     }
     /// <p>When the experiment was last modified.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>Who last modified the experiment.</p>
-    pub fn last_modified_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
+    pub fn last_modified_by(&self) -> ::std::option::Option<& crate::types::UserContext> {
         self.last_modified_by.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeExperimentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeExperimentOutput {
     /// Creates a new builder-style object to manufacture [`DescribeExperimentOutput`](crate::operation::describe_experiment::DescribeExperimentOutput).
     pub fn builder() -> crate::operation::describe_experiment::builders::DescribeExperimentOutputBuilder {
@@ -96,8 +96,7 @@ impl DescribeExperimentOutputBuilder {
     }
     /// <p>The name of the experiment.</p>
     pub fn set_experiment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.experiment_name = input;
-        self
+        self.experiment_name = input; self
     }
     /// <p>The name of the experiment.</p>
     pub fn get_experiment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +109,7 @@ impl DescribeExperimentOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the experiment.</p>
     pub fn set_experiment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.experiment_arn = input;
-        self
+        self.experiment_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the experiment.</p>
     pub fn get_experiment_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +122,7 @@ impl DescribeExperimentOutputBuilder {
     }
     /// <p>The name of the experiment as displayed. If <code>DisplayName</code> isn't specified, <code>ExperimentName</code> is displayed.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The name of the experiment as displayed. If <code>DisplayName</code> isn't specified, <code>ExperimentName</code> is displayed.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +135,7 @@ impl DescribeExperimentOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the source and, optionally, the type.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::ExperimentSource>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the source and, optionally, the type.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::ExperimentSource> {
@@ -152,8 +148,7 @@ impl DescribeExperimentOutputBuilder {
     }
     /// <p>The description of the experiment.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the experiment.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +161,7 @@ impl DescribeExperimentOutputBuilder {
     }
     /// <p>When the experiment was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>When the experiment was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -180,8 +174,7 @@ impl DescribeExperimentOutputBuilder {
     }
     /// <p>Who created the experiment.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>Who created the experiment.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<crate::types::UserContext> {
@@ -194,8 +187,7 @@ impl DescribeExperimentOutputBuilder {
     }
     /// <p>When the experiment was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>When the experiment was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -208,35 +200,44 @@ impl DescribeExperimentOutputBuilder {
     }
     /// <p>Who last modified the experiment.</p>
     pub fn set_last_modified_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
-        self.last_modified_by = input;
-        self
+        self.last_modified_by = input; self
     }
     /// <p>Who last modified the experiment.</p>
     pub fn get_last_modified_by(&self) -> &::std::option::Option<crate::types::UserContext> {
         &self.last_modified_by
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeExperimentOutput`](crate::operation::describe_experiment::DescribeExperimentOutput).
     pub fn build(self) -> crate::operation::describe_experiment::DescribeExperimentOutput {
         crate::operation::describe_experiment::DescribeExperimentOutput {
-            experiment_name: self.experiment_name,
-            experiment_arn: self.experiment_arn,
-            display_name: self.display_name,
-            source: self.source,
-            description: self.description,
-            creation_time: self.creation_time,
-            created_by: self.created_by,
-            last_modified_time: self.last_modified_time,
-            last_modified_by: self.last_modified_by,
+            experiment_name: self.experiment_name
+            ,
+            experiment_arn: self.experiment_arn
+            ,
+            display_name: self.display_name
+            ,
+            source: self.source
+            ,
+            description: self.description
+            ,
+            creation_time: self.creation_time
+            ,
+            created_by: self.created_by
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            last_modified_by: self.last_modified_by
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

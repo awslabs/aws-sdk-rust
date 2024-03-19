@@ -21,11 +21,7 @@ impl RecommendationTriggerData {
     /// Tries to convert the enum instance into [`Query`](crate::types::RecommendationTriggerData::Query), extracting the inner [`QueryRecommendationTriggerData`](crate::types::QueryRecommendationTriggerData).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_query(&self) -> ::std::result::Result<&crate::types::QueryRecommendationTriggerData, &Self> {
-        if let RecommendationTriggerData::Query(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let RecommendationTriggerData::Query(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Query`](crate::types::RecommendationTriggerData::Query).
     pub fn is_query(&self) -> bool {
@@ -36,3 +32,4 @@ impl RecommendationTriggerData {
         matches!(self, Self::Unknown)
     }
 }
+

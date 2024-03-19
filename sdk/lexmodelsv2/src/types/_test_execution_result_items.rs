@@ -3,7 +3,7 @@
 /// <p>Contains the results of the test execution, grouped by type of results. See <a href="https://docs.aws.amazon.com/lexv2/latest/dg/test-results-details-test-set.html">Test result details"&gt;Test results details</a> for details about different types of results.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestExecutionResultItems {
+pub struct TestExecutionResultItems  {
     /// <p>Overall results for the test execution, including the breakdown of conversations and single-input utterances.</p>
     pub overall_test_results: ::std::option::Option<crate::types::OverallTestResults>,
     /// <p>Results related to conversations in the test set, including metrics about success and failure of conversations and intent and slot failures.</p>
@@ -15,25 +15,25 @@ pub struct TestExecutionResultItems {
     /// <p>Results related to utterances in the test set.</p>
     pub utterance_level_test_results: ::std::option::Option<crate::types::UtteranceLevelTestResults>,
 }
-impl TestExecutionResultItems {
+impl  TestExecutionResultItems  {
     /// <p>Overall results for the test execution, including the breakdown of conversations and single-input utterances.</p>
-    pub fn overall_test_results(&self) -> ::std::option::Option<&crate::types::OverallTestResults> {
+    pub fn overall_test_results(&self) -> ::std::option::Option<& crate::types::OverallTestResults> {
         self.overall_test_results.as_ref()
     }
     /// <p>Results related to conversations in the test set, including metrics about success and failure of conversations and intent and slot failures.</p>
-    pub fn conversation_level_test_results(&self) -> ::std::option::Option<&crate::types::ConversationLevelTestResults> {
+    pub fn conversation_level_test_results(&self) -> ::std::option::Option<& crate::types::ConversationLevelTestResults> {
         self.conversation_level_test_results.as_ref()
     }
     /// <p>Intent recognition results aggregated by intent name. The aggregated results contain success and failure rates of intent recognition, speech transcriptions, and end-to-end conversations.</p>
-    pub fn intent_classification_test_results(&self) -> ::std::option::Option<&crate::types::IntentClassificationTestResults> {
+    pub fn intent_classification_test_results(&self) -> ::std::option::Option<& crate::types::IntentClassificationTestResults> {
         self.intent_classification_test_results.as_ref()
     }
     /// <p>Slot resolution results aggregated by intent and slot name. The aggregated results contain success and failure rates of slot resolution, speech transcriptions, and end-to-end conversations</p>
-    pub fn intent_level_slot_resolution_test_results(&self) -> ::std::option::Option<&crate::types::IntentLevelSlotResolutionTestResults> {
+    pub fn intent_level_slot_resolution_test_results(&self) -> ::std::option::Option<& crate::types::IntentLevelSlotResolutionTestResults> {
         self.intent_level_slot_resolution_test_results.as_ref()
     }
     /// <p>Results related to utterances in the test set.</p>
-    pub fn utterance_level_test_results(&self) -> ::std::option::Option<&crate::types::UtteranceLevelTestResults> {
+    pub fn utterance_level_test_results(&self) -> ::std::option::Option<& crate::types::UtteranceLevelTestResults> {
         self.utterance_level_test_results.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl TestExecutionResultItemsBuilder {
     }
     /// <p>Overall results for the test execution, including the breakdown of conversations and single-input utterances.</p>
     pub fn set_overall_test_results(mut self, input: ::std::option::Option<crate::types::OverallTestResults>) -> Self {
-        self.overall_test_results = input;
-        self
+        self.overall_test_results = input; self
     }
     /// <p>Overall results for the test execution, including the breakdown of conversations and single-input utterances.</p>
     pub fn get_overall_test_results(&self) -> &::std::option::Option<crate::types::OverallTestResults> {
@@ -76,8 +75,7 @@ impl TestExecutionResultItemsBuilder {
     }
     /// <p>Results related to conversations in the test set, including metrics about success and failure of conversations and intent and slot failures.</p>
     pub fn set_conversation_level_test_results(mut self, input: ::std::option::Option<crate::types::ConversationLevelTestResults>) -> Self {
-        self.conversation_level_test_results = input;
-        self
+        self.conversation_level_test_results = input; self
     }
     /// <p>Results related to conversations in the test set, including metrics about success and failure of conversations and intent and slot failures.</p>
     pub fn get_conversation_level_test_results(&self) -> &::std::option::Option<crate::types::ConversationLevelTestResults> {
@@ -90,8 +88,7 @@ impl TestExecutionResultItemsBuilder {
     }
     /// <p>Intent recognition results aggregated by intent name. The aggregated results contain success and failure rates of intent recognition, speech transcriptions, and end-to-end conversations.</p>
     pub fn set_intent_classification_test_results(mut self, input: ::std::option::Option<crate::types::IntentClassificationTestResults>) -> Self {
-        self.intent_classification_test_results = input;
-        self
+        self.intent_classification_test_results = input; self
     }
     /// <p>Intent recognition results aggregated by intent name. The aggregated results contain success and failure rates of intent recognition, speech transcriptions, and end-to-end conversations.</p>
     pub fn get_intent_classification_test_results(&self) -> &::std::option::Option<crate::types::IntentClassificationTestResults> {
@@ -103,12 +100,8 @@ impl TestExecutionResultItemsBuilder {
         self
     }
     /// <p>Slot resolution results aggregated by intent and slot name. The aggregated results contain success and failure rates of slot resolution, speech transcriptions, and end-to-end conversations</p>
-    pub fn set_intent_level_slot_resolution_test_results(
-        mut self,
-        input: ::std::option::Option<crate::types::IntentLevelSlotResolutionTestResults>,
-    ) -> Self {
-        self.intent_level_slot_resolution_test_results = input;
-        self
+    pub fn set_intent_level_slot_resolution_test_results(mut self, input: ::std::option::Option<crate::types::IntentLevelSlotResolutionTestResults>) -> Self {
+        self.intent_level_slot_resolution_test_results = input; self
     }
     /// <p>Slot resolution results aggregated by intent and slot name. The aggregated results contain success and failure rates of slot resolution, speech transcriptions, and end-to-end conversations</p>
     pub fn get_intent_level_slot_resolution_test_results(&self) -> &::std::option::Option<crate::types::IntentLevelSlotResolutionTestResults> {
@@ -121,8 +114,7 @@ impl TestExecutionResultItemsBuilder {
     }
     /// <p>Results related to utterances in the test set.</p>
     pub fn set_utterance_level_test_results(mut self, input: ::std::option::Option<crate::types::UtteranceLevelTestResults>) -> Self {
-        self.utterance_level_test_results = input;
-        self
+        self.utterance_level_test_results = input; self
     }
     /// <p>Results related to utterances in the test set.</p>
     pub fn get_utterance_level_test_results(&self) -> &::std::option::Option<crate::types::UtteranceLevelTestResults> {
@@ -131,11 +123,17 @@ impl TestExecutionResultItemsBuilder {
     /// Consumes the builder and constructs a [`TestExecutionResultItems`](crate::types::TestExecutionResultItems).
     pub fn build(self) -> crate::types::TestExecutionResultItems {
         crate::types::TestExecutionResultItems {
-            overall_test_results: self.overall_test_results,
-            conversation_level_test_results: self.conversation_level_test_results,
-            intent_classification_test_results: self.intent_classification_test_results,
-            intent_level_slot_resolution_test_results: self.intent_level_slot_resolution_test_results,
-            utterance_level_test_results: self.utterance_level_test_results,
+            overall_test_results: self.overall_test_results
+            ,
+            conversation_level_test_results: self.conversation_level_test_results
+            ,
+            intent_classification_test_results: self.intent_classification_test_results
+            ,
+            intent_level_slot_resolution_test_results: self.intent_level_slot_resolution_test_results
+            ,
+            utterance_level_test_results: self.utterance_level_test_results
+            ,
         }
     }
 }
+

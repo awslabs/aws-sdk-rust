@@ -3,7 +3,7 @@
 /// <p>A paginated call to retrieve a list of summary reports of actual Amazon Web Services charges and the calculated Amazon Web Services charges, broken down by attributes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BillingGroupCostReportResultElement {
+pub struct BillingGroupCostReportResultElement  {
     /// <p>The Amazon Resource Number (ARN) that uniquely identifies the billing group.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The actual Amazon Web Services charges for the billing group.</p>
@@ -17,38 +17,39 @@ pub struct BillingGroupCostReportResultElement {
     /// <p>The displayed currency.</p>
     pub currency: ::std::option::Option<::std::string::String>,
     /// <p>The list of key-value pairs that represent the attributes by which the <code>BillingGroupCostReportResults</code> are grouped. For example, if you want the Amazon S3 service-level breakdown of a billing group for November 2023, the attributes list will contain a key-value pair of <code>"PRODUCT_NAME"</code> and <code>"S3"</code> and a key-value pair of <code>"BILLING_PERIOD"</code> and <code>"Nov 2023"</code>.</p>
-    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
+    pub attributes: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>,
 }
-impl BillingGroupCostReportResultElement {
+impl  BillingGroupCostReportResultElement  {
     /// <p>The Amazon Resource Number (ARN) that uniquely identifies the billing group.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The actual Amazon Web Services charges for the billing group.</p>
-    pub fn aws_cost(&self) -> ::std::option::Option<&str> {
+    pub fn aws_cost(&self) -> ::std::option::Option<& str> {
         self.aws_cost.as_deref()
     }
     /// <p>The hypothetical Amazon Web Services charges based on the associated pricing plan of a billing group.</p>
-    pub fn proforma_cost(&self) -> ::std::option::Option<&str> {
+    pub fn proforma_cost(&self) -> ::std::option::Option<& str> {
         self.proforma_cost.as_deref()
     }
     /// <p>The billing group margin.</p>
-    pub fn margin(&self) -> ::std::option::Option<&str> {
+    pub fn margin(&self) -> ::std::option::Option<& str> {
         self.margin.as_deref()
     }
     /// <p>The percentage of the billing group margin.</p>
-    pub fn margin_percentage(&self) -> ::std::option::Option<&str> {
+    pub fn margin_percentage(&self) -> ::std::option::Option<& str> {
         self.margin_percentage.as_deref()
     }
     /// <p>The displayed currency.</p>
-    pub fn currency(&self) -> ::std::option::Option<&str> {
+    pub fn currency(&self) -> ::std::option::Option<& str> {
         self.currency.as_deref()
     }
     /// <p>The list of key-value pairs that represent the attributes by which the <code>BillingGroupCostReportResults</code> are grouped. For example, if you want the Amazon S3 service-level breakdown of a billing group for November 2023, the attributes list will contain a key-value pair of <code>"PRODUCT_NAME"</code> and <code>"S3"</code> and a key-value pair of <code>"BILLING_PERIOD"</code> and <code>"Nov 2023"</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
-    pub fn attributes(&self) -> &[crate::types::Attribute] {
-        self.attributes.as_deref().unwrap_or_default()
+    pub fn attributes(&self) -> & [crate::types::Attribute] {
+        self.attributes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BillingGroupCostReportResultElement {
@@ -68,7 +69,7 @@ pub struct BillingGroupCostReportResultElementBuilder {
     pub(crate) margin: ::std::option::Option<::std::string::String>,
     pub(crate) margin_percentage: ::std::option::Option<::std::string::String>,
     pub(crate) currency: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>,
 }
 impl BillingGroupCostReportResultElementBuilder {
     /// <p>The Amazon Resource Number (ARN) that uniquely identifies the billing group.</p>
@@ -78,8 +79,7 @@ impl BillingGroupCostReportResultElementBuilder {
     }
     /// <p>The Amazon Resource Number (ARN) that uniquely identifies the billing group.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Number (ARN) that uniquely identifies the billing group.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +92,7 @@ impl BillingGroupCostReportResultElementBuilder {
     }
     /// <p>The actual Amazon Web Services charges for the billing group.</p>
     pub fn set_aws_cost(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_cost = input;
-        self
+        self.aws_cost = input; self
     }
     /// <p>The actual Amazon Web Services charges for the billing group.</p>
     pub fn get_aws_cost(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +105,7 @@ impl BillingGroupCostReportResultElementBuilder {
     }
     /// <p>The hypothetical Amazon Web Services charges based on the associated pricing plan of a billing group.</p>
     pub fn set_proforma_cost(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.proforma_cost = input;
-        self
+        self.proforma_cost = input; self
     }
     /// <p>The hypothetical Amazon Web Services charges based on the associated pricing plan of a billing group.</p>
     pub fn get_proforma_cost(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +118,7 @@ impl BillingGroupCostReportResultElementBuilder {
     }
     /// <p>The billing group margin.</p>
     pub fn set_margin(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.margin = input;
-        self
+        self.margin = input; self
     }
     /// <p>The billing group margin.</p>
     pub fn get_margin(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +131,7 @@ impl BillingGroupCostReportResultElementBuilder {
     }
     /// <p>The percentage of the billing group margin.</p>
     pub fn set_margin_percentage(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.margin_percentage = input;
-        self
+        self.margin_percentage = input; self
     }
     /// <p>The percentage of the billing group margin.</p>
     pub fn get_margin_percentage(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +144,7 @@ impl BillingGroupCostReportResultElementBuilder {
     }
     /// <p>The displayed currency.</p>
     pub fn set_currency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.currency = input;
-        self
+        self.currency = input; self
     }
     /// <p>The displayed currency.</p>
     pub fn get_currency(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,29 +157,36 @@ impl BillingGroupCostReportResultElementBuilder {
     /// <p>The list of key-value pairs that represent the attributes by which the <code>BillingGroupCostReportResults</code> are grouped. For example, if you want the Amazon S3 service-level breakdown of a billing group for November 2023, the attributes list will contain a key-value pair of <code>"PRODUCT_NAME"</code> and <code>"S3"</code> and a key-value pair of <code>"BILLING_PERIOD"</code> and <code>"Nov 2023"</code>.</p>
     pub fn attributes(mut self, input: crate::types::Attribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of key-value pairs that represent the attributes by which the <code>BillingGroupCostReportResults</code> are grouped. For example, if you want the Amazon S3 service-level breakdown of a billing group for November 2023, the attributes list will contain a key-value pair of <code>"PRODUCT_NAME"</code> and <code>"S3"</code> and a key-value pair of <code>"BILLING_PERIOD"</code> and <code>"Nov 2023"</code>.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>The list of key-value pairs that represent the attributes by which the <code>BillingGroupCostReportResults</code> are grouped. For example, if you want the Amazon S3 service-level breakdown of a billing group for November 2023, the attributes list will contain a key-value pair of <code>"PRODUCT_NAME"</code> and <code>"S3"</code> and a key-value pair of <code>"BILLING_PERIOD"</code> and <code>"Nov 2023"</code>.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Attribute>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`BillingGroupCostReportResultElement`](crate::types::BillingGroupCostReportResultElement).
     pub fn build(self) -> crate::types::BillingGroupCostReportResultElement {
         crate::types::BillingGroupCostReportResultElement {
-            arn: self.arn,
-            aws_cost: self.aws_cost,
-            proforma_cost: self.proforma_cost,
-            margin: self.margin,
-            margin_percentage: self.margin_percentage,
-            currency: self.currency,
-            attributes: self.attributes,
+            arn: self.arn
+            ,
+            aws_cost: self.aws_cost
+            ,
+            proforma_cost: self.proforma_cost
+            ,
+            margin: self.margin
+            ,
+            margin_percentage: self.margin_percentage
+            ,
+            currency: self.currency
+            ,
+            attributes: self.attributes
+            ,
         }
     }
 }
+

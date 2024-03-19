@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSupportedLanguagesOutput {
+pub struct DescribeSupportedLanguagesOutput  {
     /// <p>A JSON-formatted array that contains the available ISO 639-1 language codes.</p>
-    pub supported_languages: ::std::option::Option<::std::vec::Vec<crate::types::SupportedLanguage>>,
+    pub supported_languages: ::std::option::Option<::std::vec::Vec::<crate::types::SupportedLanguage>>,
     _request_id: Option<String>,
 }
-impl DescribeSupportedLanguagesOutput {
+impl  DescribeSupportedLanguagesOutput  {
     /// <p>A JSON-formatted array that contains the available ISO 639-1 language codes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_languages.is_none()`.
-    pub fn supported_languages(&self) -> &[crate::types::SupportedLanguage] {
-        self.supported_languages.as_deref().unwrap_or_default()
+    pub fn supported_languages(&self) -> & [crate::types::SupportedLanguage] {
+        self.supported_languages.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeSupportedLanguagesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeSupportedLanguagesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSupportedLanguagesOutput`](crate::operation::describe_supported_languages::DescribeSupportedLanguagesOutput).
     pub fn builder() -> crate::operation::describe_supported_languages::builders::DescribeSupportedLanguagesOutputBuilder {
@@ -31,7 +32,7 @@ impl DescribeSupportedLanguagesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSupportedLanguagesOutputBuilder {
-    pub(crate) supported_languages: ::std::option::Option<::std::vec::Vec<crate::types::SupportedLanguage>>,
+    pub(crate) supported_languages: ::std::option::Option<::std::vec::Vec::<crate::types::SupportedLanguage>>,
     _request_id: Option<String>,
 }
 impl DescribeSupportedLanguagesOutputBuilder {
@@ -42,33 +43,34 @@ impl DescribeSupportedLanguagesOutputBuilder {
     /// <p>A JSON-formatted array that contains the available ISO 639-1 language codes.</p>
     pub fn supported_languages(mut self, input: crate::types::SupportedLanguage) -> Self {
         let mut v = self.supported_languages.unwrap_or_default();
-        v.push(input);
-        self.supported_languages = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_languages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A JSON-formatted array that contains the available ISO 639-1 language codes.</p>
-    pub fn set_supported_languages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SupportedLanguage>>) -> Self {
-        self.supported_languages = input;
-        self
+    pub fn set_supported_languages(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SupportedLanguage>>) -> Self {
+        self.supported_languages = input; self
     }
     /// <p>A JSON-formatted array that contains the available ISO 639-1 language codes.</p>
-    pub fn get_supported_languages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedLanguage>> {
+    pub fn get_supported_languages(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SupportedLanguage>> {
         &self.supported_languages
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeSupportedLanguagesOutput`](crate::operation::describe_supported_languages::DescribeSupportedLanguagesOutput).
     pub fn build(self) -> crate::operation::describe_supported_languages::DescribeSupportedLanguagesOutput {
         crate::operation::describe_supported_languages::DescribeSupportedLanguagesOutput {
-            supported_languages: self.supported_languages,
+            supported_languages: self.supported_languages
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

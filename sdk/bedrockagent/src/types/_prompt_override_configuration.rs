@@ -3,24 +3,23 @@
 /// Configuration for prompt override.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct PromptOverrideConfiguration {
+pub struct PromptOverrideConfiguration  {
     /// List of BasePromptConfiguration
-    pub prompt_configurations: ::std::vec::Vec<crate::types::PromptConfiguration>,
+    pub prompt_configurations: ::std::vec::Vec::<crate::types::PromptConfiguration>,
     /// ARN of a Lambda.
     pub override_lambda: ::std::option::Option<::std::string::String>,
 }
-impl PromptOverrideConfiguration {
+impl  PromptOverrideConfiguration  {
     /// List of BasePromptConfiguration
-    pub fn prompt_configurations(&self) -> &[crate::types::PromptConfiguration] {
-        use std::ops::Deref;
-        self.prompt_configurations.deref()
+    pub fn prompt_configurations(&self) -> & [crate::types::PromptConfiguration] {
+        use std::ops::Deref; self.prompt_configurations.deref()
     }
     /// ARN of a Lambda.
-    pub fn override_lambda(&self) -> ::std::option::Option<&str> {
+    pub fn override_lambda(&self) -> ::std::option::Option<& str> {
         self.override_lambda.as_deref()
     }
 }
-impl ::std::fmt::Debug for PromptOverrideConfiguration {
+impl  ::std::fmt::Debug for PromptOverrideConfiguration  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PromptOverrideConfiguration");
         formatter.field("prompt_configurations", &"*** Sensitive Data Redacted ***");
@@ -39,7 +38,7 @@ impl PromptOverrideConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct PromptOverrideConfigurationBuilder {
-    pub(crate) prompt_configurations: ::std::option::Option<::std::vec::Vec<crate::types::PromptConfiguration>>,
+    pub(crate) prompt_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::PromptConfiguration>>,
     pub(crate) override_lambda: ::std::option::Option<::std::string::String>,
 }
 impl PromptOverrideConfigurationBuilder {
@@ -50,17 +49,16 @@ impl PromptOverrideConfigurationBuilder {
     /// List of BasePromptConfiguration
     pub fn prompt_configurations(mut self, input: crate::types::PromptConfiguration) -> Self {
         let mut v = self.prompt_configurations.unwrap_or_default();
-        v.push(input);
-        self.prompt_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.prompt_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// List of BasePromptConfiguration
-    pub fn set_prompt_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PromptConfiguration>>) -> Self {
-        self.prompt_configurations = input;
-        self
+    pub fn set_prompt_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PromptConfiguration>>) -> Self {
+        self.prompt_configurations = input; self
     }
     /// List of BasePromptConfiguration
-    pub fn get_prompt_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PromptConfiguration>> {
+    pub fn get_prompt_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PromptConfiguration>> {
         &self.prompt_configurations
     }
     /// ARN of a Lambda.
@@ -70,8 +68,7 @@ impl PromptOverrideConfigurationBuilder {
     }
     /// ARN of a Lambda.
     pub fn set_override_lambda(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.override_lambda = input;
-        self
+        self.override_lambda = input; self
     }
     /// ARN of a Lambda.
     pub fn get_override_lambda(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,15 +78,17 @@ impl PromptOverrideConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`prompt_configurations`](crate::types::builders::PromptOverrideConfigurationBuilder::prompt_configurations)
     pub fn build(self) -> ::std::result::Result<crate::types::PromptOverrideConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PromptOverrideConfiguration {
-            prompt_configurations: self.prompt_configurations.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "prompt_configurations",
-                    "prompt_configurations was not specified but it is required when building PromptOverrideConfiguration",
-                )
-            })?,
-            override_lambda: self.override_lambda,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PromptOverrideConfiguration {
+                prompt_configurations: self.prompt_configurations
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("prompt_configurations", "prompt_configurations was not specified but it is required when building PromptOverrideConfiguration")
+                    )?
+                ,
+                override_lambda: self.override_lambda
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for PromptOverrideConfigurationBuilder {
@@ -100,3 +99,4 @@ impl ::std::fmt::Debug for PromptOverrideConfigurationBuilder {
         formatter.finish()
     }
 }
+

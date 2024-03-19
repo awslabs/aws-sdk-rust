@@ -3,23 +3,22 @@
 /// <p>A complex type that contains the <code>CheckerIpRanges</code> element.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCheckerIpRangesOutput {
+pub struct GetCheckerIpRangesOutput  {
     /// <p>A complex type that contains sorted list of IP ranges in CIDR format for Amazon Route 53 health checkers.</p>
-    pub checker_ip_ranges: ::std::vec::Vec<::std::string::String>,
+    pub checker_ip_ranges: ::std::vec::Vec::<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetCheckerIpRangesOutput {
+impl  GetCheckerIpRangesOutput  {
     /// <p>A complex type that contains sorted list of IP ranges in CIDR format for Amazon Route 53 health checkers.</p>
-    pub fn checker_ip_ranges(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.checker_ip_ranges.deref()
+    pub fn checker_ip_ranges(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.checker_ip_ranges.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetCheckerIpRangesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetCheckerIpRangesOutput {
     /// Creates a new builder-style object to manufacture [`GetCheckerIpRangesOutput`](crate::operation::get_checker_ip_ranges::GetCheckerIpRangesOutput).
     pub fn builder() -> crate::operation::get_checker_ip_ranges::builders::GetCheckerIpRangesOutputBuilder {
@@ -31,7 +30,7 @@ impl GetCheckerIpRangesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCheckerIpRangesOutputBuilder {
-    pub(crate) checker_ip_ranges: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) checker_ip_ranges: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetCheckerIpRangesOutputBuilder {
@@ -42,43 +41,41 @@ impl GetCheckerIpRangesOutputBuilder {
     /// <p>A complex type that contains sorted list of IP ranges in CIDR format for Amazon Route 53 health checkers.</p>
     pub fn checker_ip_ranges(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.checker_ip_ranges.unwrap_or_default();
-        v.push(input.into());
-        self.checker_ip_ranges = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.checker_ip_ranges = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A complex type that contains sorted list of IP ranges in CIDR format for Amazon Route 53 health checkers.</p>
-    pub fn set_checker_ip_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.checker_ip_ranges = input;
-        self
+    pub fn set_checker_ip_ranges(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.checker_ip_ranges = input; self
     }
     /// <p>A complex type that contains sorted list of IP ranges in CIDR format for Amazon Route 53 health checkers.</p>
-    pub fn get_checker_ip_ranges(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_checker_ip_ranges(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.checker_ip_ranges
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetCheckerIpRangesOutput`](crate::operation::get_checker_ip_ranges::GetCheckerIpRangesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`checker_ip_ranges`](crate::operation::get_checker_ip_ranges::builders::GetCheckerIpRangesOutputBuilder::checker_ip_ranges)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_checker_ip_ranges::GetCheckerIpRangesOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_checker_ip_ranges::GetCheckerIpRangesOutput {
-            checker_ip_ranges: self.checker_ip_ranges.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "checker_ip_ranges",
-                    "checker_ip_ranges was not specified but it is required when building GetCheckerIpRangesOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_checker_ip_ranges::GetCheckerIpRangesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_checker_ip_ranges::GetCheckerIpRangesOutput {
+                checker_ip_ranges: self.checker_ip_ranges
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("checker_ip_ranges", "checker_ip_ranges was not specified but it is required when building GetCheckerIpRangesOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

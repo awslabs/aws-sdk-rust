@@ -2,10 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct StartWebRtcContactInput {
+pub struct StartWebRtcContactInput  {
     /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, -, and _ characters.</p>
-    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     /// <p>The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -21,52 +21,52 @@ pub struct StartWebRtcContactInput {
     /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the contact starting.</p>
     pub related_contact_id: ::std::option::Option<::std::string::String>,
     /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks can have the following reference types at the time of creation: <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code> | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type during task creation.</p>
-    pub references: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>>,
+    pub references: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Reference>>,
     /// <p>A description of the task that is shown to an agent in the Contact Control Panel (CCP).</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl StartWebRtcContactInput {
+impl  StartWebRtcContactInput  {
     /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, -, and _ characters.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     /// <p>The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The identifier of the flow for the call. To see the ContactFlowId in the Amazon Connect admin website, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold:</p>
     /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b></p>
-    pub fn contact_flow_id(&self) -> ::std::option::Option<&str> {
+    pub fn contact_flow_id(&self) -> ::std::option::Option<& str> {
         self.contact_flow_id.as_deref()
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>Information about the video sharing capabilities of the participants (customer, agent).</p>
-    pub fn allowed_capabilities(&self) -> ::std::option::Option<&crate::types::AllowedCapabilities> {
+    pub fn allowed_capabilities(&self) -> ::std::option::Option<& crate::types::AllowedCapabilities> {
         self.allowed_capabilities.as_ref()
     }
     /// <p>The customer's details.</p>
-    pub fn participant_details(&self) -> ::std::option::Option<&crate::types::ParticipantDetails> {
+    pub fn participant_details(&self) -> ::std::option::Option<& crate::types::ParticipantDetails> {
         self.participant_details.as_ref()
     }
     /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the contact starting.</p>
-    pub fn related_contact_id(&self) -> ::std::option::Option<&str> {
+    pub fn related_contact_id(&self) -> ::std::option::Option<& str> {
         self.related_contact_id.as_deref()
     }
     /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks can have the following reference types at the time of creation: <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code> | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type during task creation.</p>
-    pub fn references(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Reference>> {
+    pub fn references(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::Reference>> {
         self.references.as_ref()
     }
     /// <p>A description of the task that is shown to an agent in the Contact Control Panel (CCP).</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
-impl ::std::fmt::Debug for StartWebRtcContactInput {
+impl  ::std::fmt::Debug for StartWebRtcContactInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StartWebRtcContactInput");
         formatter.field("attributes", &self.attributes);
@@ -92,14 +92,14 @@ impl StartWebRtcContactInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct StartWebRtcContactInputBuilder {
-    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) contact_flow_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) allowed_capabilities: ::std::option::Option<crate::types::AllowedCapabilities>,
     pub(crate) participant_details: ::std::option::Option<crate::types::ParticipantDetails>,
     pub(crate) related_contact_id: ::std::option::Option<::std::string::String>,
-    pub(crate) references: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>>,
+    pub(crate) references: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Reference>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl StartWebRtcContactInputBuilder {
@@ -111,19 +111,18 @@ impl StartWebRtcContactInputBuilder {
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, -, and _ characters.</p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, -, and _ characters.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, -, and _ characters.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
@@ -135,8 +134,7 @@ impl StartWebRtcContactInputBuilder {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     /// <p>The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     /// <p>The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned.</p>
@@ -153,8 +151,7 @@ impl StartWebRtcContactInputBuilder {
     /// <p>The identifier of the flow for the call. To see the ContactFlowId in the Amazon Connect admin website, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold:</p>
     /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b></p>
     pub fn set_contact_flow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_flow_id = input;
-        self
+        self.contact_flow_id = input; self
     }
     /// <p>The identifier of the flow for the call. To see the ContactFlowId in the Amazon Connect admin website, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold:</p>
     /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b></p>
@@ -169,8 +166,7 @@ impl StartWebRtcContactInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,8 +179,7 @@ impl StartWebRtcContactInputBuilder {
     }
     /// <p>Information about the video sharing capabilities of the participants (customer, agent).</p>
     pub fn set_allowed_capabilities(mut self, input: ::std::option::Option<crate::types::AllowedCapabilities>) -> Self {
-        self.allowed_capabilities = input;
-        self
+        self.allowed_capabilities = input; self
     }
     /// <p>Information about the video sharing capabilities of the participants (customer, agent).</p>
     pub fn get_allowed_capabilities(&self) -> &::std::option::Option<crate::types::AllowedCapabilities> {
@@ -198,8 +193,7 @@ impl StartWebRtcContactInputBuilder {
     }
     /// <p>The customer's details.</p>
     pub fn set_participant_details(mut self, input: ::std::option::Option<crate::types::ParticipantDetails>) -> Self {
-        self.participant_details = input;
-        self
+        self.participant_details = input; self
     }
     /// <p>The customer's details.</p>
     pub fn get_participant_details(&self) -> &::std::option::Option<crate::types::ParticipantDetails> {
@@ -212,8 +206,7 @@ impl StartWebRtcContactInputBuilder {
     }
     /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the contact starting.</p>
     pub fn set_related_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.related_contact_id = input;
-        self
+        self.related_contact_id = input; self
     }
     /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the contact starting.</p>
     pub fn get_related_contact_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -226,20 +219,16 @@ impl StartWebRtcContactInputBuilder {
     /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks can have the following reference types at the time of creation: <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code> | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type during task creation.</p>
     pub fn references(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Reference) -> Self {
         let mut hash_map = self.references.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.references = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.references = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks can have the following reference types at the time of creation: <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code> | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type during task creation.</p>
-    pub fn set_references(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>>,
-    ) -> Self {
-        self.references = input;
-        self
+    pub fn set_references(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Reference>>) -> Self {
+        self.references = input; self
     }
     /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks can have the following reference types at the time of creation: <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code> | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type during task creation.</p>
-    pub fn get_references(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>> {
+    pub fn get_references(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Reference>> {
         &self.references
     }
     /// <p>A description of the task that is shown to an agent in the Contact Control Panel (CCP).</p>
@@ -249,29 +238,36 @@ impl StartWebRtcContactInputBuilder {
     }
     /// <p>A description of the task that is shown to an agent in the Contact Control Panel (CCP).</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the task that is shown to an agent in the Contact Control Panel (CCP).</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`StartWebRtcContactInput`](crate::operation::start_web_rtc_contact::StartWebRtcContactInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_web_rtc_contact::StartWebRtcContactInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_web_rtc_contact::StartWebRtcContactInput {
-            attributes: self.attributes,
-            client_token: self.client_token,
-            contact_flow_id: self.contact_flow_id,
-            instance_id: self.instance_id,
-            allowed_capabilities: self.allowed_capabilities,
-            participant_details: self.participant_details,
-            related_contact_id: self.related_contact_id,
-            references: self.references,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_web_rtc_contact::StartWebRtcContactInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_web_rtc_contact::StartWebRtcContactInput {
+                attributes: self.attributes
+                ,
+                client_token: self.client_token
+                ,
+                contact_flow_id: self.contact_flow_id
+                ,
+                instance_id: self.instance_id
+                ,
+                allowed_capabilities: self.allowed_capabilities
+                ,
+                participant_details: self.participant_details
+                ,
+                related_contact_id: self.related_contact_id
+                ,
+                references: self.references
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for StartWebRtcContactInputBuilder {
@@ -289,3 +285,4 @@ impl ::std::fmt::Debug for StartWebRtcContactInputBuilder {
         formatter.finish()
     }
 }
+

@@ -3,16 +3,17 @@
 /// <p>Rules for retrieving content from data sources connected to a Amazon Q application for a specific topic control configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContentRetrievalRule {
+pub struct ContentRetrievalRule  {
     /// <p>Specifies data sources in a Amazon Q application to use for content generation.</p>
-    pub eligible_data_sources: ::std::option::Option<::std::vec::Vec<crate::types::EligibleDataSource>>,
+    pub eligible_data_sources: ::std::option::Option<::std::vec::Vec::<crate::types::EligibleDataSource>>,
 }
-impl ContentRetrievalRule {
+impl  ContentRetrievalRule  {
     /// <p>Specifies data sources in a Amazon Q application to use for content generation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.eligible_data_sources.is_none()`.
-    pub fn eligible_data_sources(&self) -> &[crate::types::EligibleDataSource] {
-        self.eligible_data_sources.as_deref().unwrap_or_default()
+    pub fn eligible_data_sources(&self) -> & [crate::types::EligibleDataSource] {
+        self.eligible_data_sources.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ContentRetrievalRule {
@@ -26,7 +27,7 @@ impl ContentRetrievalRule {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContentRetrievalRuleBuilder {
-    pub(crate) eligible_data_sources: ::std::option::Option<::std::vec::Vec<crate::types::EligibleDataSource>>,
+    pub(crate) eligible_data_sources: ::std::option::Option<::std::vec::Vec::<crate::types::EligibleDataSource>>,
 }
 impl ContentRetrievalRuleBuilder {
     /// Appends an item to `eligible_data_sources`.
@@ -36,23 +37,24 @@ impl ContentRetrievalRuleBuilder {
     /// <p>Specifies data sources in a Amazon Q application to use for content generation.</p>
     pub fn eligible_data_sources(mut self, input: crate::types::EligibleDataSource) -> Self {
         let mut v = self.eligible_data_sources.unwrap_or_default();
-        v.push(input);
-        self.eligible_data_sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.eligible_data_sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies data sources in a Amazon Q application to use for content generation.</p>
-    pub fn set_eligible_data_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EligibleDataSource>>) -> Self {
-        self.eligible_data_sources = input;
-        self
+    pub fn set_eligible_data_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EligibleDataSource>>) -> Self {
+        self.eligible_data_sources = input; self
     }
     /// <p>Specifies data sources in a Amazon Q application to use for content generation.</p>
-    pub fn get_eligible_data_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EligibleDataSource>> {
+    pub fn get_eligible_data_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EligibleDataSource>> {
         &self.eligible_data_sources
     }
     /// Consumes the builder and constructs a [`ContentRetrievalRule`](crate::types::ContentRetrievalRule).
     pub fn build(self) -> crate::types::ContentRetrievalRule {
         crate::types::ContentRetrievalRule {
-            eligible_data_sources: self.eligible_data_sources,
+            eligible_data_sources: self.eligible_data_sources
+            ,
         }
     }
 }
+

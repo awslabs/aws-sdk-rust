@@ -21,11 +21,7 @@ impl Policy {
     /// Tries to convert the enum instance into [`SecurityHub`](crate::types::Policy::SecurityHub), extracting the inner [`SecurityHubPolicy`](crate::types::SecurityHubPolicy).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_security_hub(&self) -> ::std::result::Result<&crate::types::SecurityHubPolicy, &Self> {
-        if let Policy::SecurityHub(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Policy::SecurityHub(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`SecurityHub`](crate::types::Policy::SecurityHub).
     pub fn is_security_hub(&self) -> bool {
@@ -36,3 +32,4 @@ impl Policy {
         matches!(self, Self::Unknown)
     }
 }
+

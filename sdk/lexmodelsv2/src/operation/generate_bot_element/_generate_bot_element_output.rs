@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GenerateBotElementOutput {
+pub struct GenerateBotElementOutput  {
     /// <p>The unique bot Id for the bot which received the response.</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique bot version for the bot which received the response.</p>
@@ -12,38 +12,39 @@ pub struct GenerateBotElementOutput {
     /// <p>The unique intent Id for the bot which received the response.</p>
     pub intent_id: ::std::option::Option<::std::string::String>,
     /// <p>The sample utterances for the bot which received the response.</p>
-    pub sample_utterances: ::std::option::Option<::std::vec::Vec<crate::types::SampleUtterance>>,
+    pub sample_utterances: ::std::option::Option<::std::vec::Vec::<crate::types::SampleUtterance>>,
     _request_id: Option<String>,
 }
-impl GenerateBotElementOutput {
+impl  GenerateBotElementOutput  {
     /// <p>The unique bot Id for the bot which received the response.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The unique bot version for the bot which received the response.</p>
-    pub fn bot_version(&self) -> ::std::option::Option<&str> {
+    pub fn bot_version(&self) -> ::std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The unique locale Id for the bot which received the response.</p>
-    pub fn locale_id(&self) -> ::std::option::Option<&str> {
+    pub fn locale_id(&self) -> ::std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>The unique intent Id for the bot which received the response.</p>
-    pub fn intent_id(&self) -> ::std::option::Option<&str> {
+    pub fn intent_id(&self) -> ::std::option::Option<& str> {
         self.intent_id.as_deref()
     }
     /// <p>The sample utterances for the bot which received the response.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sample_utterances.is_none()`.
-    pub fn sample_utterances(&self) -> &[crate::types::SampleUtterance] {
-        self.sample_utterances.as_deref().unwrap_or_default()
+    pub fn sample_utterances(&self) -> & [crate::types::SampleUtterance] {
+        self.sample_utterances.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GenerateBotElementOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GenerateBotElementOutput {
     /// Creates a new builder-style object to manufacture [`GenerateBotElementOutput`](crate::operation::generate_bot_element::GenerateBotElementOutput).
     pub fn builder() -> crate::operation::generate_bot_element::builders::GenerateBotElementOutputBuilder {
@@ -59,7 +60,7 @@ pub struct GenerateBotElementOutputBuilder {
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
     pub(crate) locale_id: ::std::option::Option<::std::string::String>,
     pub(crate) intent_id: ::std::option::Option<::std::string::String>,
-    pub(crate) sample_utterances: ::std::option::Option<::std::vec::Vec<crate::types::SampleUtterance>>,
+    pub(crate) sample_utterances: ::std::option::Option<::std::vec::Vec::<crate::types::SampleUtterance>>,
     _request_id: Option<String>,
 }
 impl GenerateBotElementOutputBuilder {
@@ -70,8 +71,7 @@ impl GenerateBotElementOutputBuilder {
     }
     /// <p>The unique bot Id for the bot which received the response.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The unique bot Id for the bot which received the response.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +84,7 @@ impl GenerateBotElementOutputBuilder {
     }
     /// <p>The unique bot version for the bot which received the response.</p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The unique bot version for the bot which received the response.</p>
     pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +97,7 @@ impl GenerateBotElementOutputBuilder {
     }
     /// <p>The unique locale Id for the bot which received the response.</p>
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
     }
     /// <p>The unique locale Id for the bot which received the response.</p>
     pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +110,7 @@ impl GenerateBotElementOutputBuilder {
     }
     /// <p>The unique intent Id for the bot which received the response.</p>
     pub fn set_intent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.intent_id = input;
-        self
+        self.intent_id = input; self
     }
     /// <p>The unique intent Id for the bot which received the response.</p>
     pub fn get_intent_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,37 +123,42 @@ impl GenerateBotElementOutputBuilder {
     /// <p>The sample utterances for the bot which received the response.</p>
     pub fn sample_utterances(mut self, input: crate::types::SampleUtterance) -> Self {
         let mut v = self.sample_utterances.unwrap_or_default();
-        v.push(input);
-        self.sample_utterances = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sample_utterances = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The sample utterances for the bot which received the response.</p>
-    pub fn set_sample_utterances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SampleUtterance>>) -> Self {
-        self.sample_utterances = input;
-        self
+    pub fn set_sample_utterances(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SampleUtterance>>) -> Self {
+        self.sample_utterances = input; self
     }
     /// <p>The sample utterances for the bot which received the response.</p>
-    pub fn get_sample_utterances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SampleUtterance>> {
+    pub fn get_sample_utterances(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SampleUtterance>> {
         &self.sample_utterances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GenerateBotElementOutput`](crate::operation::generate_bot_element::GenerateBotElementOutput).
     pub fn build(self) -> crate::operation::generate_bot_element::GenerateBotElementOutput {
         crate::operation::generate_bot_element::GenerateBotElementOutput {
-            bot_id: self.bot_id,
-            bot_version: self.bot_version,
-            locale_id: self.locale_id,
-            intent_id: self.intent_id,
-            sample_utterances: self.sample_utterances,
+            bot_id: self.bot_id
+            ,
+            bot_version: self.bot_version
+            ,
+            locale_id: self.locale_id
+            ,
+            intent_id: self.intent_id
+            ,
+            sample_utterances: self.sample_utterances
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

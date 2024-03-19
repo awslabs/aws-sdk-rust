@@ -3,7 +3,7 @@
 /// <p>A complex type that contains information about a tag that you want to add or edit for the specified health check or hosted zone.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The value of <code>Key</code> depends on the operation that you want to perform:</p>
     /// <ul>
     /// <li>
@@ -25,7 +25,7 @@ pub struct Tag {
     /// </ul>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl Tag {
+impl  Tag  {
     /// <p>The value of <code>Key</code> depends on the operation that you want to perform:</p>
     /// <ul>
     /// <li>
@@ -37,7 +37,7 @@ impl Tag {
     /// <li>
     /// <p><b>Give a name to a health check</b>: Edit the default <code>Name</code> tag. In the Amazon Route 53 console, the list of your health checks includes a <b>Name</b> column that lets you see the name that you've given to each health check.</p></li>
     /// </ul>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value of <code>Value</code> depends on the operation that you want to perform:</p>
@@ -47,7 +47,7 @@ impl Tag {
     /// <li>
     /// <p><b>Edit a tag</b>: <code>Value</code> is the new value that you want to assign the tag.</p></li>
     /// </ul>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -93,8 +93,7 @@ impl TagBuilder {
     /// <p><b>Give a name to a health check</b>: Edit the default <code>Name</code> tag. In the Amazon Route 53 console, the list of your health checks includes a <b>Name</b> column that lets you see the name that you've given to each health check.</p></li>
     /// </ul>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The value of <code>Key</code> depends on the operation that you want to perform:</p>
     /// <ul>
@@ -129,8 +128,7 @@ impl TagBuilder {
     /// <p><b>Edit a tag</b>: <code>Value</code> is the new value that you want to assign the tag.</p></li>
     /// </ul>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of <code>Value</code> depends on the operation that you want to perform:</p>
     /// <ul>
@@ -145,8 +143,11 @@ impl TagBuilder {
     /// Consumes the builder and constructs a [`Tag`](crate::types::Tag).
     pub fn build(self) -> crate::types::Tag {
         crate::types::Tag {
-            key: self.key,
-            value: self.value,
+            key: self.key
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

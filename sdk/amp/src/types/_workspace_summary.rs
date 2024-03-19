@@ -3,7 +3,7 @@
 /// <p>The information about one Amazon Managed Service for Prometheus workspace in your account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkspaceSummary {
+pub struct WorkspaceSummary  {
     /// <p>The unique ID for the workspace.</p>
     pub workspace_id: ::std::string::String,
     /// <p>The alias that is assigned to this workspace to help identify it. It may not be unique.</p>
@@ -15,39 +15,37 @@ pub struct WorkspaceSummary {
     /// <p>The date and time that the workspace was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The list of tag keys and values that are associated with the workspace.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>(optional) If the workspace was created with a customer managed KMS key, the ARN for the key used.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
-impl WorkspaceSummary {
+impl  WorkspaceSummary  {
     /// <p>The unique ID for the workspace.</p>
-    pub fn workspace_id(&self) -> &str {
-        use std::ops::Deref;
-        self.workspace_id.deref()
+    pub fn workspace_id(&self) -> & str {
+        use std::ops::Deref; self.workspace_id.deref()
     }
     /// <p>The alias that is assigned to this workspace to help identify it. It may not be unique.</p>
-    pub fn alias(&self) -> ::std::option::Option<&str> {
+    pub fn alias(&self) -> ::std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// <p>The ARN of the workspace.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The current status of the workspace.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::WorkspaceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::WorkspaceStatus> {
         self.status.as_ref()
     }
     /// <p>The date and time that the workspace was created.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The list of tag keys and values that are associated with the workspace.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>(optional) If the workspace was created with a customer managed KMS key, the ARN for the key used.</p>
-    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
 }
@@ -67,7 +65,7 @@ pub struct WorkspaceSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::WorkspaceStatus>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl WorkspaceSummaryBuilder {
@@ -79,8 +77,7 @@ impl WorkspaceSummaryBuilder {
     }
     /// <p>The unique ID for the workspace.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The unique ID for the workspace.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +90,7 @@ impl WorkspaceSummaryBuilder {
     }
     /// <p>The alias that is assigned to this workspace to help identify it. It may not be unique.</p>
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias = input;
-        self
+        self.alias = input; self
     }
     /// <p>The alias that is assigned to this workspace to help identify it. It may not be unique.</p>
     pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +104,7 @@ impl WorkspaceSummaryBuilder {
     }
     /// <p>The ARN of the workspace.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the workspace.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +118,7 @@ impl WorkspaceSummaryBuilder {
     }
     /// <p>The current status of the workspace.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::WorkspaceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the workspace.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::WorkspaceStatus> {
@@ -138,8 +132,7 @@ impl WorkspaceSummaryBuilder {
     }
     /// <p>The date and time that the workspace was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time that the workspace was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -152,17 +145,16 @@ impl WorkspaceSummaryBuilder {
     /// <p>The list of tag keys and values that are associated with the workspace.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The list of tag keys and values that are associated with the workspace.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The list of tag keys and values that are associated with the workspace.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>(optional) If the workspace was created with a customer managed KMS key, the ARN for the key used.</p>
@@ -172,8 +164,7 @@ impl WorkspaceSummaryBuilder {
     }
     /// <p>(optional) If the workspace was created with a customer managed KMS key, the ARN for the key used.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
     }
     /// <p>(optional) If the workspace was created with a customer managed KMS key, the ARN for the key used.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -185,29 +176,33 @@ impl WorkspaceSummaryBuilder {
     /// - [`arn`](crate::types::builders::WorkspaceSummaryBuilder::arn)
     /// - [`created_at`](crate::types::builders::WorkspaceSummaryBuilder::created_at)
     pub fn build(self) -> ::std::result::Result<crate::types::WorkspaceSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::WorkspaceSummary {
-            workspace_id: self.workspace_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "workspace_id",
-                    "workspace_id was not specified but it is required when building WorkspaceSummary",
-                )
-            })?,
-            alias: self.alias,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building WorkspaceSummary",
-                )
-            })?,
-            status: self.status,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building WorkspaceSummary",
-                )
-            })?,
-            tags: self.tags,
-            kms_key_arn: self.kms_key_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::types::WorkspaceSummary {
+                workspace_id: self.workspace_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("workspace_id", "workspace_id was not specified but it is required when building WorkspaceSummary")
+                    )?
+                ,
+                alias: self.alias
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building WorkspaceSummary")
+                    )?
+                ,
+                status: self.status
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building WorkspaceSummary")
+                    )?
+                ,
+                tags: self.tags
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
+            }
+        )
     }
 }
+

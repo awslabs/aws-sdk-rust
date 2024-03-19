@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSubscriptionGrantStatusInput {
+pub struct UpdateSubscriptionGrantStatusInput  {
     /// <p>The identifier of the Amazon DataZone domain in which a subscription grant status is to be updated.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the subscription grant the status of which is to be updated.</p>
@@ -16,29 +16,29 @@ pub struct UpdateSubscriptionGrantStatusInput {
     /// <p>The target name to be updated as part of the <code>UpdateSubscriptionGrantStatus</code> action.</p>
     pub target_name: ::std::option::Option<::std::string::String>,
 }
-impl UpdateSubscriptionGrantStatusInput {
+impl  UpdateSubscriptionGrantStatusInput  {
     /// <p>The identifier of the Amazon DataZone domain in which a subscription grant status is to be updated.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The identifier of the subscription grant the status of which is to be updated.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>The identifier of the asset the subscription grant status of which is to be updated.</p>
-    pub fn asset_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn asset_identifier(&self) -> ::std::option::Option<& str> {
         self.asset_identifier.as_deref()
     }
     /// <p>The status to be updated as part of the <code>UpdateSubscriptionGrantStatus</code> action.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::SubscriptionGrantStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::SubscriptionGrantStatus> {
         self.status.as_ref()
     }
     /// <p>Specifies the error message that is returned if the operation cannot be successfully completed.</p>
-    pub fn failure_cause(&self) -> ::std::option::Option<&crate::types::FailureCause> {
+    pub fn failure_cause(&self) -> ::std::option::Option<& crate::types::FailureCause> {
         self.failure_cause.as_ref()
     }
     /// <p>The target name to be updated as part of the <code>UpdateSubscriptionGrantStatus</code> action.</p>
-    pub fn target_name(&self) -> ::std::option::Option<&str> {
+    pub fn target_name(&self) -> ::std::option::Option<& str> {
         self.target_name.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl UpdateSubscriptionGrantStatusInputBuilder {
     }
     /// <p>The identifier of the Amazon DataZone domain in which a subscription grant status is to be updated.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The identifier of the Amazon DataZone domain in which a subscription grant status is to be updated.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl UpdateSubscriptionGrantStatusInputBuilder {
     }
     /// <p>The identifier of the subscription grant the status of which is to be updated.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The identifier of the subscription grant the status of which is to be updated.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +97,7 @@ impl UpdateSubscriptionGrantStatusInputBuilder {
     }
     /// <p>The identifier of the asset the subscription grant status of which is to be updated.</p>
     pub fn set_asset_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_identifier = input;
-        self
+        self.asset_identifier = input; self
     }
     /// <p>The identifier of the asset the subscription grant status of which is to be updated.</p>
     pub fn get_asset_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +111,7 @@ impl UpdateSubscriptionGrantStatusInputBuilder {
     }
     /// <p>The status to be updated as part of the <code>UpdateSubscriptionGrantStatus</code> action.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SubscriptionGrantStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status to be updated as part of the <code>UpdateSubscriptionGrantStatus</code> action.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::SubscriptionGrantStatus> {
@@ -128,8 +124,7 @@ impl UpdateSubscriptionGrantStatusInputBuilder {
     }
     /// <p>Specifies the error message that is returned if the operation cannot be successfully completed.</p>
     pub fn set_failure_cause(mut self, input: ::std::option::Option<crate::types::FailureCause>) -> Self {
-        self.failure_cause = input;
-        self
+        self.failure_cause = input; self
     }
     /// <p>Specifies the error message that is returned if the operation cannot be successfully completed.</p>
     pub fn get_failure_cause(&self) -> &::std::option::Option<crate::types::FailureCause> {
@@ -142,27 +137,30 @@ impl UpdateSubscriptionGrantStatusInputBuilder {
     }
     /// <p>The target name to be updated as part of the <code>UpdateSubscriptionGrantStatus</code> action.</p>
     pub fn set_target_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_name = input;
-        self
+        self.target_name = input; self
     }
     /// <p>The target name to be updated as part of the <code>UpdateSubscriptionGrantStatus</code> action.</p>
     pub fn get_target_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_name
     }
     /// Consumes the builder and constructs a [`UpdateSubscriptionGrantStatusInput`](crate::operation::update_subscription_grant_status::UpdateSubscriptionGrantStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_subscription_grant_status::UpdateSubscriptionGrantStatusInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_subscription_grant_status::UpdateSubscriptionGrantStatusInput {
-            domain_identifier: self.domain_identifier,
-            identifier: self.identifier,
-            asset_identifier: self.asset_identifier,
-            status: self.status,
-            failure_cause: self.failure_cause,
-            target_name: self.target_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_subscription_grant_status::UpdateSubscriptionGrantStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_subscription_grant_status::UpdateSubscriptionGrantStatusInput {
+                domain_identifier: self.domain_identifier
+                ,
+                identifier: self.identifier
+                ,
+                asset_identifier: self.asset_identifier
+                ,
+                status: self.status
+                ,
+                failure_cause: self.failure_cause
+                ,
+                target_name: self.target_name
+                ,
+            }
+        )
     }
 }
+

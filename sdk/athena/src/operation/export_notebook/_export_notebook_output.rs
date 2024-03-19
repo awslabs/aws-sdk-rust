@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportNotebookOutput {
+pub struct ExportNotebookOutput  {
     /// <p>The notebook metadata, including notebook ID, notebook name, and workgroup name.</p>
     pub notebook_metadata: ::std::option::Option<crate::types::NotebookMetadata>,
     /// <p>The content of the exported notebook.</p>
     pub payload: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ExportNotebookOutput {
+impl  ExportNotebookOutput  {
     /// <p>The notebook metadata, including notebook ID, notebook name, and workgroup name.</p>
-    pub fn notebook_metadata(&self) -> ::std::option::Option<&crate::types::NotebookMetadata> {
+    pub fn notebook_metadata(&self) -> ::std::option::Option<& crate::types::NotebookMetadata> {
         self.notebook_metadata.as_ref()
     }
     /// <p>The content of the exported notebook.</p>
-    pub fn payload(&self) -> ::std::option::Option<&str> {
+    pub fn payload(&self) -> ::std::option::Option<& str> {
         self.payload.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ExportNotebookOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ExportNotebookOutput {
     /// Creates a new builder-style object to manufacture [`ExportNotebookOutput`](crate::operation::export_notebook::ExportNotebookOutput).
     pub fn builder() -> crate::operation::export_notebook::builders::ExportNotebookOutputBuilder {
@@ -47,8 +47,7 @@ impl ExportNotebookOutputBuilder {
     }
     /// <p>The notebook metadata, including notebook ID, notebook name, and workgroup name.</p>
     pub fn set_notebook_metadata(mut self, input: ::std::option::Option<crate::types::NotebookMetadata>) -> Self {
-        self.notebook_metadata = input;
-        self
+        self.notebook_metadata = input; self
     }
     /// <p>The notebook metadata, including notebook ID, notebook name, and workgroup name.</p>
     pub fn get_notebook_metadata(&self) -> &::std::option::Option<crate::types::NotebookMetadata> {
@@ -61,28 +60,30 @@ impl ExportNotebookOutputBuilder {
     }
     /// <p>The content of the exported notebook.</p>
     pub fn set_payload(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.payload = input;
-        self
+        self.payload = input; self
     }
     /// <p>The content of the exported notebook.</p>
     pub fn get_payload(&self) -> &::std::option::Option<::std::string::String> {
         &self.payload
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ExportNotebookOutput`](crate::operation::export_notebook::ExportNotebookOutput).
     pub fn build(self) -> crate::operation::export_notebook::ExportNotebookOutput {
         crate::operation::export_notebook::ExportNotebookOutput {
-            notebook_metadata: self.notebook_metadata,
-            payload: self.payload,
+            notebook_metadata: self.notebook_metadata
+            ,
+            payload: self.payload
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

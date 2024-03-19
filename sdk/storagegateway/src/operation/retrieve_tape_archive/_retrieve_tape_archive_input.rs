@@ -3,21 +3,21 @@
 /// <p>RetrieveTapeArchiveInput</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RetrieveTapeArchiveInput {
+pub struct RetrieveTapeArchiveInput  {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape you want to retrieve from the virtual tape shelf (VTS).</p>
     pub tape_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the gateway you want to retrieve the virtual tape to. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     /// <p>You retrieve archived virtual tapes to only one gateway and the gateway must be a tape gateway.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
 }
-impl RetrieveTapeArchiveInput {
+impl  RetrieveTapeArchiveInput  {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape you want to retrieve from the virtual tape shelf (VTS).</p>
-    pub fn tape_arn(&self) -> ::std::option::Option<&str> {
+    pub fn tape_arn(&self) -> ::std::option::Option<& str> {
         self.tape_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway you want to retrieve the virtual tape to. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     /// <p>You retrieve archived virtual tapes to only one gateway and the gateway must be a tape gateway.</p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
 }
@@ -44,8 +44,7 @@ impl RetrieveTapeArchiveInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the virtual tape you want to retrieve from the virtual tape shelf (VTS).</p>
     pub fn set_tape_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tape_arn = input;
-        self
+        self.tape_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the virtual tape you want to retrieve from the virtual tape shelf (VTS).</p>
     pub fn get_tape_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl RetrieveTapeArchiveInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the gateway you want to retrieve the virtual tape to. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     /// <p>You retrieve archived virtual tapes to only one gateway and the gateway must be a tape gateway.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway you want to retrieve the virtual tape to. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     /// <p>You retrieve archived virtual tapes to only one gateway and the gateway must be a tape gateway.</p>
@@ -70,13 +68,15 @@ impl RetrieveTapeArchiveInputBuilder {
         &self.gateway_arn
     }
     /// Consumes the builder and constructs a [`RetrieveTapeArchiveInput`](crate::operation::retrieve_tape_archive::RetrieveTapeArchiveInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::retrieve_tape_archive::RetrieveTapeArchiveInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::retrieve_tape_archive::RetrieveTapeArchiveInput {
-            tape_arn: self.tape_arn,
-            gateway_arn: self.gateway_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::retrieve_tape_archive::RetrieveTapeArchiveInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::retrieve_tape_archive::RetrieveTapeArchiveInput {
+                tape_arn: self.tape_arn
+                ,
+                gateway_arn: self.gateway_arn
+                ,
+            }
+        )
     }
 }
+

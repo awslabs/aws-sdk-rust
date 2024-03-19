@@ -3,7 +3,7 @@
 /// <p>This structure contains information about one Evidently feature in your account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Feature {
+pub struct Feature  {
     /// <p>The ARN of the feature.</p>
     pub arn: ::std::string::String,
     /// <p>The name of the feature.</p>
@@ -23,82 +23,80 @@ pub struct Feature {
     /// <p>Defines the type of value used to define the different feature variations. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-variationtypes.html">Variation types</a></p>
     pub value_type: crate::types::VariationValueType,
     /// <p>An array of structures that contain the configuration of the feature's different variations.</p>
-    pub variations: ::std::vec::Vec<crate::types::Variation>,
+    pub variations: ::std::vec::Vec::<crate::types::Variation>,
     /// <p>The name of the variation that is used as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
     /// <p>This variation must also be listed in the <code>variations</code> structure.</p>
     /// <p>If you omit <code>defaultVariation</code>, the first variation listed in the <code>variations</code> structure is used as the default variation.</p>
     pub default_variation: ::std::option::Option<::std::string::String>,
     /// <p>An array of structures that define the evaluation rules for the feature.</p>
-    pub evaluation_rules: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationRule>>,
+    pub evaluation_rules: ::std::option::Option<::std::vec::Vec::<crate::types::EvaluationRule>>,
     /// <p>The list of tag keys and values associated with this feature.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>A set of key-value pairs that specify users who should always be served a specific variation of a feature. Each key specifies a user using their user ID, account ID, or some other identifier. The value specifies the name of the variation that the user is to be served.</p>
     /// <p>For the override to be successful, the value of the key must match the <code>entityId</code> used in the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation.</p>
-    pub entity_overrides: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub entity_overrides: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl Feature {
+impl  Feature  {
     /// <p>The ARN of the feature.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The name of the feature.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The name or ARN of the project that contains the feature.</p>
-    pub fn project(&self) -> ::std::option::Option<&str> {
+    pub fn project(&self) -> ::std::option::Option<& str> {
         self.project.as_deref()
     }
     /// <p>The current state of the feature.</p>
-    pub fn status(&self) -> &crate::types::FeatureStatus {
+    pub fn status(&self) -> & crate::types::FeatureStatus {
         &self.status
     }
     /// <p>The date and time that the feature is created.</p>
-    pub fn created_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_time
     }
     /// <p>The date and time that the feature was most recently updated.</p>
-    pub fn last_updated_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_updated_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_updated_time
     }
     /// <p>The description of the feature.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>If this value is <code>ALL_RULES</code>, the traffic allocation specified by any ongoing launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>, the default variation is being served to all users.</p>
-    pub fn evaluation_strategy(&self) -> &crate::types::FeatureEvaluationStrategy {
+    pub fn evaluation_strategy(&self) -> & crate::types::FeatureEvaluationStrategy {
         &self.evaluation_strategy
     }
     /// <p>Defines the type of value used to define the different feature variations. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-variationtypes.html">Variation types</a></p>
-    pub fn value_type(&self) -> &crate::types::VariationValueType {
+    pub fn value_type(&self) -> & crate::types::VariationValueType {
         &self.value_type
     }
     /// <p>An array of structures that contain the configuration of the feature's different variations.</p>
-    pub fn variations(&self) -> &[crate::types::Variation] {
-        use std::ops::Deref;
-        self.variations.deref()
+    pub fn variations(&self) -> & [crate::types::Variation] {
+        use std::ops::Deref; self.variations.deref()
     }
     /// <p>The name of the variation that is used as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
     /// <p>This variation must also be listed in the <code>variations</code> structure.</p>
     /// <p>If you omit <code>defaultVariation</code>, the first variation listed in the <code>variations</code> structure is used as the default variation.</p>
-    pub fn default_variation(&self) -> ::std::option::Option<&str> {
+    pub fn default_variation(&self) -> ::std::option::Option<& str> {
         self.default_variation.as_deref()
     }
     /// <p>An array of structures that define the evaluation rules for the feature.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.evaluation_rules.is_none()`.
-    pub fn evaluation_rules(&self) -> &[crate::types::EvaluationRule] {
-        self.evaluation_rules.as_deref().unwrap_or_default()
+    pub fn evaluation_rules(&self) -> & [crate::types::EvaluationRule] {
+        self.evaluation_rules.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The list of tag keys and values associated with this feature.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A set of key-value pairs that specify users who should always be served a specific variation of a feature. Each key specifies a user using their user ID, account ID, or some other identifier. The value specifies the name of the variation that the user is to be served.</p>
     /// <p>For the override to be successful, the value of the key must match the <code>entityId</code> used in the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation.</p>
-    pub fn entity_overrides(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn entity_overrides(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.entity_overrides.as_ref()
     }
 }
@@ -122,11 +120,11 @@ pub struct FeatureBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_strategy: ::std::option::Option<crate::types::FeatureEvaluationStrategy>,
     pub(crate) value_type: ::std::option::Option<crate::types::VariationValueType>,
-    pub(crate) variations: ::std::option::Option<::std::vec::Vec<crate::types::Variation>>,
+    pub(crate) variations: ::std::option::Option<::std::vec::Vec::<crate::types::Variation>>,
     pub(crate) default_variation: ::std::option::Option<::std::string::String>,
-    pub(crate) evaluation_rules: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationRule>>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) entity_overrides: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) evaluation_rules: ::std::option::Option<::std::vec::Vec::<crate::types::EvaluationRule>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) entity_overrides: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl FeatureBuilder {
     /// <p>The ARN of the feature.</p>
@@ -137,8 +135,7 @@ impl FeatureBuilder {
     }
     /// <p>The ARN of the feature.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the feature.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +149,7 @@ impl FeatureBuilder {
     }
     /// <p>The name of the feature.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the feature.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +162,7 @@ impl FeatureBuilder {
     }
     /// <p>The name or ARN of the project that contains the feature.</p>
     pub fn set_project(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project = input;
-        self
+        self.project = input; self
     }
     /// <p>The name or ARN of the project that contains the feature.</p>
     pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +176,7 @@ impl FeatureBuilder {
     }
     /// <p>The current state of the feature.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FeatureStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current state of the feature.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FeatureStatus> {
@@ -196,8 +190,7 @@ impl FeatureBuilder {
     }
     /// <p>The date and time that the feature is created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The date and time that the feature is created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -211,8 +204,7 @@ impl FeatureBuilder {
     }
     /// <p>The date and time that the feature was most recently updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The date and time that the feature was most recently updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -225,8 +217,7 @@ impl FeatureBuilder {
     }
     /// <p>The description of the feature.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the feature.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -240,8 +231,7 @@ impl FeatureBuilder {
     }
     /// <p>If this value is <code>ALL_RULES</code>, the traffic allocation specified by any ongoing launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>, the default variation is being served to all users.</p>
     pub fn set_evaluation_strategy(mut self, input: ::std::option::Option<crate::types::FeatureEvaluationStrategy>) -> Self {
-        self.evaluation_strategy = input;
-        self
+        self.evaluation_strategy = input; self
     }
     /// <p>If this value is <code>ALL_RULES</code>, the traffic allocation specified by any ongoing launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>, the default variation is being served to all users.</p>
     pub fn get_evaluation_strategy(&self) -> &::std::option::Option<crate::types::FeatureEvaluationStrategy> {
@@ -255,8 +245,7 @@ impl FeatureBuilder {
     }
     /// <p>Defines the type of value used to define the different feature variations. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-variationtypes.html">Variation types</a></p>
     pub fn set_value_type(mut self, input: ::std::option::Option<crate::types::VariationValueType>) -> Self {
-        self.value_type = input;
-        self
+        self.value_type = input; self
     }
     /// <p>Defines the type of value used to define the different feature variations. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-variationtypes.html">Variation types</a></p>
     pub fn get_value_type(&self) -> &::std::option::Option<crate::types::VariationValueType> {
@@ -269,17 +258,16 @@ impl FeatureBuilder {
     /// <p>An array of structures that contain the configuration of the feature's different variations.</p>
     pub fn variations(mut self, input: crate::types::Variation) -> Self {
         let mut v = self.variations.unwrap_or_default();
-        v.push(input);
-        self.variations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.variations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of structures that contain the configuration of the feature's different variations.</p>
-    pub fn set_variations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Variation>>) -> Self {
-        self.variations = input;
-        self
+    pub fn set_variations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Variation>>) -> Self {
+        self.variations = input; self
     }
     /// <p>An array of structures that contain the configuration of the feature's different variations.</p>
-    pub fn get_variations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Variation>> {
+    pub fn get_variations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Variation>> {
         &self.variations
     }
     /// <p>The name of the variation that is used as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
@@ -293,8 +281,7 @@ impl FeatureBuilder {
     /// <p>This variation must also be listed in the <code>variations</code> structure.</p>
     /// <p>If you omit <code>defaultVariation</code>, the first variation listed in the <code>variations</code> structure is used as the default variation.</p>
     pub fn set_default_variation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_variation = input;
-        self
+        self.default_variation = input; self
     }
     /// <p>The name of the variation that is used as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
     /// <p>This variation must also be listed in the <code>variations</code> structure.</p>
@@ -309,17 +296,16 @@ impl FeatureBuilder {
     /// <p>An array of structures that define the evaluation rules for the feature.</p>
     pub fn evaluation_rules(mut self, input: crate::types::EvaluationRule) -> Self {
         let mut v = self.evaluation_rules.unwrap_or_default();
-        v.push(input);
-        self.evaluation_rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.evaluation_rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of structures that define the evaluation rules for the feature.</p>
-    pub fn set_evaluation_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationRule>>) -> Self {
-        self.evaluation_rules = input;
-        self
+    pub fn set_evaluation_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EvaluationRule>>) -> Self {
+        self.evaluation_rules = input; self
     }
     /// <p>An array of structures that define the evaluation rules for the feature.</p>
-    pub fn get_evaluation_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationRule>> {
+    pub fn get_evaluation_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EvaluationRule>> {
         &self.evaluation_rules
     }
     /// Adds a key-value pair to `tags`.
@@ -329,17 +315,16 @@ impl FeatureBuilder {
     /// <p>The list of tag keys and values associated with this feature.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The list of tag keys and values associated with this feature.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The list of tag keys and values associated with this feature.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Adds a key-value pair to `entity_overrides`.
@@ -348,28 +333,20 @@ impl FeatureBuilder {
     ///
     /// <p>A set of key-value pairs that specify users who should always be served a specific variation of a feature. Each key specifies a user using their user ID, account ID, or some other identifier. The value specifies the name of the variation that the user is to be served.</p>
     /// <p>For the override to be successful, the value of the key must match the <code>entityId</code> used in the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation.</p>
-    pub fn entity_overrides(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn entity_overrides(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.entity_overrides.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.entity_overrides = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.entity_overrides = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A set of key-value pairs that specify users who should always be served a specific variation of a feature. Each key specifies a user using their user ID, account ID, or some other identifier. The value specifies the name of the variation that the user is to be served.</p>
     /// <p>For the override to be successful, the value of the key must match the <code>entityId</code> used in the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation.</p>
-    pub fn set_entity_overrides(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.entity_overrides = input;
-        self
+    pub fn set_entity_overrides(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.entity_overrides = input; self
     }
     /// <p>A set of key-value pairs that specify users who should always be served a specific variation of a feature. Each key specifies a user using their user ID, account ID, or some other identifier. The value specifies the name of the variation that the user is to be served.</p>
     /// <p>For the override to be successful, the value of the key must match the <code>entityId</code> used in the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation.</p>
-    pub fn get_entity_overrides(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_entity_overrides(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.entity_overrides
     }
     /// Consumes the builder and constructs a [`Feature`](crate::types::Feature).
@@ -383,61 +360,62 @@ impl FeatureBuilder {
     /// - [`value_type`](crate::types::builders::FeatureBuilder::value_type)
     /// - [`variations`](crate::types::builders::FeatureBuilder::variations)
     pub fn build(self) -> ::std::result::Result<crate::types::Feature, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Feature {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building Feature",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building Feature",
-                )
-            })?,
-            project: self.project,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building Feature",
-                )
-            })?,
-            created_time: self.created_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_time",
-                    "created_time was not specified but it is required when building Feature",
-                )
-            })?,
-            last_updated_time: self.last_updated_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_updated_time",
-                    "last_updated_time was not specified but it is required when building Feature",
-                )
-            })?,
-            description: self.description,
-            evaluation_strategy: self.evaluation_strategy.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "evaluation_strategy",
-                    "evaluation_strategy was not specified but it is required when building Feature",
-                )
-            })?,
-            value_type: self.value_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value_type",
-                    "value_type was not specified but it is required when building Feature",
-                )
-            })?,
-            variations: self.variations.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "variations",
-                    "variations was not specified but it is required when building Feature",
-                )
-            })?,
-            default_variation: self.default_variation,
-            evaluation_rules: self.evaluation_rules,
-            tags: self.tags,
-            entity_overrides: self.entity_overrides,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Feature {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building Feature")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building Feature")
+                    )?
+                ,
+                project: self.project
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building Feature")
+                    )?
+                ,
+                created_time: self.created_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_time", "created_time was not specified but it is required when building Feature")
+                    )?
+                ,
+                last_updated_time: self.last_updated_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_updated_time", "last_updated_time was not specified but it is required when building Feature")
+                    )?
+                ,
+                description: self.description
+                ,
+                evaluation_strategy: self.evaluation_strategy
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("evaluation_strategy", "evaluation_strategy was not specified but it is required when building Feature")
+                    )?
+                ,
+                value_type: self.value_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value_type", "value_type was not specified but it is required when building Feature")
+                    )?
+                ,
+                variations: self.variations
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("variations", "variations was not specified but it is required when building Feature")
+                    )?
+                ,
+                default_variation: self.default_variation
+                ,
+                evaluation_rules: self.evaluation_rules
+                ,
+                tags: self.tags
+                ,
+                entity_overrides: self.entity_overrides
+                ,
+            }
+        )
     }
 }
+

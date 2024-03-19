@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCustomLineItemInput {
+pub struct DeleteCustomLineItemInput  {
     /// <p>The ARN of the custom line item to be deleted.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The billing period range in which the custom line item request will be applied.</p>
     pub billing_period_range: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>,
 }
-impl DeleteCustomLineItemInput {
+impl  DeleteCustomLineItemInput  {
     /// <p>The ARN of the custom line item to be deleted.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The billing period range in which the custom line item request will be applied.</p>
-    pub fn billing_period_range(&self) -> ::std::option::Option<&crate::types::CustomLineItemBillingPeriodRange> {
+    pub fn billing_period_range(&self) -> ::std::option::Option<& crate::types::CustomLineItemBillingPeriodRange> {
         self.billing_period_range.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteCustomLineItemInputBuilder {
     }
     /// <p>The ARN of the custom line item to be deleted.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the custom line item to be deleted.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,21 +54,22 @@ impl DeleteCustomLineItemInputBuilder {
     }
     /// <p>The billing period range in which the custom line item request will be applied.</p>
     pub fn set_billing_period_range(mut self, input: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>) -> Self {
-        self.billing_period_range = input;
-        self
+        self.billing_period_range = input; self
     }
     /// <p>The billing period range in which the custom line item request will be applied.</p>
     pub fn get_billing_period_range(&self) -> &::std::option::Option<crate::types::CustomLineItemBillingPeriodRange> {
         &self.billing_period_range
     }
     /// Consumes the builder and constructs a [`DeleteCustomLineItemInput`](crate::operation::delete_custom_line_item::DeleteCustomLineItemInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_custom_line_item::DeleteCustomLineItemInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_custom_line_item::DeleteCustomLineItemInput {
-            arn: self.arn,
-            billing_period_range: self.billing_period_range,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_custom_line_item::DeleteCustomLineItemInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_custom_line_item::DeleteCustomLineItemInput {
+                arn: self.arn
+                ,
+                billing_period_range: self.billing_period_range
+                ,
+            }
+        )
     }
 }
+

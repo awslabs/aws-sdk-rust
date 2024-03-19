@@ -3,7 +3,7 @@
 /// <p>The summarized description of the insight.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InsightSummary {
+pub struct InsightSummary  {
     /// <p>The ID of the insight.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the insight.</p>
@@ -21,37 +21,37 @@ pub struct InsightSummary {
     /// <p>An object containing more detail on the status of the insight.</p>
     pub insight_status: ::std::option::Option<crate::types::InsightStatus>,
 }
-impl InsightSummary {
+impl  InsightSummary  {
     /// <p>The ID of the insight.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the insight.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The category of the insight.</p>
-    pub fn category(&self) -> ::std::option::Option<&crate::types::Category> {
+    pub fn category(&self) -> ::std::option::Option<& crate::types::Category> {
         self.category.as_ref()
     }
     /// <p>The Kubernetes minor version associated with an insight if applicable.</p>
-    pub fn kubernetes_version(&self) -> ::std::option::Option<&str> {
+    pub fn kubernetes_version(&self) -> ::std::option::Option<& str> {
         self.kubernetes_version.as_deref()
     }
     /// <p>The time Amazon EKS last successfully completed a refresh of this insight check on the cluster.</p>
-    pub fn last_refresh_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_refresh_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_refresh_time.as_ref()
     }
     /// <p>The time the status of the insight last changed.</p>
-    pub fn last_transition_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_transition_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_transition_time.as_ref()
     }
     /// <p>The description of the insight which includes alert criteria, remediation recommendation, and additional resources (contains Markdown).</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An object containing more detail on the status of the insight.</p>
-    pub fn insight_status(&self) -> ::std::option::Option<&crate::types::InsightStatus> {
+    pub fn insight_status(&self) -> ::std::option::Option<& crate::types::InsightStatus> {
         self.insight_status.as_ref()
     }
 }
@@ -83,8 +83,7 @@ impl InsightSummaryBuilder {
     }
     /// <p>The ID of the insight.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the insight.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl InsightSummaryBuilder {
     }
     /// <p>The name of the insight.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the insight.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +109,7 @@ impl InsightSummaryBuilder {
     }
     /// <p>The category of the insight.</p>
     pub fn set_category(mut self, input: ::std::option::Option<crate::types::Category>) -> Self {
-        self.category = input;
-        self
+        self.category = input; self
     }
     /// <p>The category of the insight.</p>
     pub fn get_category(&self) -> &::std::option::Option<crate::types::Category> {
@@ -125,8 +122,7 @@ impl InsightSummaryBuilder {
     }
     /// <p>The Kubernetes minor version associated with an insight if applicable.</p>
     pub fn set_kubernetes_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kubernetes_version = input;
-        self
+        self.kubernetes_version = input; self
     }
     /// <p>The Kubernetes minor version associated with an insight if applicable.</p>
     pub fn get_kubernetes_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +135,7 @@ impl InsightSummaryBuilder {
     }
     /// <p>The time Amazon EKS last successfully completed a refresh of this insight check on the cluster.</p>
     pub fn set_last_refresh_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_refresh_time = input;
-        self
+        self.last_refresh_time = input; self
     }
     /// <p>The time Amazon EKS last successfully completed a refresh of this insight check on the cluster.</p>
     pub fn get_last_refresh_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -153,8 +148,7 @@ impl InsightSummaryBuilder {
     }
     /// <p>The time the status of the insight last changed.</p>
     pub fn set_last_transition_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_transition_time = input;
-        self
+        self.last_transition_time = input; self
     }
     /// <p>The time the status of the insight last changed.</p>
     pub fn get_last_transition_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -167,8 +161,7 @@ impl InsightSummaryBuilder {
     }
     /// <p>The description of the insight which includes alert criteria, remediation recommendation, and additional resources (contains Markdown).</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the insight which includes alert criteria, remediation recommendation, and additional resources (contains Markdown).</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +174,7 @@ impl InsightSummaryBuilder {
     }
     /// <p>An object containing more detail on the status of the insight.</p>
     pub fn set_insight_status(mut self, input: ::std::option::Option<crate::types::InsightStatus>) -> Self {
-        self.insight_status = input;
-        self
+        self.insight_status = input; self
     }
     /// <p>An object containing more detail on the status of the insight.</p>
     pub fn get_insight_status(&self) -> &::std::option::Option<crate::types::InsightStatus> {
@@ -191,14 +183,23 @@ impl InsightSummaryBuilder {
     /// Consumes the builder and constructs a [`InsightSummary`](crate::types::InsightSummary).
     pub fn build(self) -> crate::types::InsightSummary {
         crate::types::InsightSummary {
-            id: self.id,
-            name: self.name,
-            category: self.category,
-            kubernetes_version: self.kubernetes_version,
-            last_refresh_time: self.last_refresh_time,
-            last_transition_time: self.last_transition_time,
-            description: self.description,
-            insight_status: self.insight_status,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            category: self.category
+            ,
+            kubernetes_version: self.kubernetes_version
+            ,
+            last_refresh_time: self.last_refresh_time
+            ,
+            last_transition_time: self.last_transition_time
+            ,
+            description: self.description
+            ,
+            insight_status: self.insight_status
+            ,
         }
     }
 }
+

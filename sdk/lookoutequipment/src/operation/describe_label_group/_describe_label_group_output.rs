@@ -2,48 +2,49 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLabelGroupOutput {
+pub struct DescribeLabelGroupOutput  {
     /// <p>The name of the label group.</p>
     pub label_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the label group.</p>
     pub label_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>Codes indicating the type of anomaly associated with the labels in the lagbel group.</p>
-    pub fault_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub fault_codes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The time at which the label group was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the label group was updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl DescribeLabelGroupOutput {
+impl  DescribeLabelGroupOutput  {
     /// <p>The name of the label group.</p>
-    pub fn label_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn label_group_name(&self) -> ::std::option::Option<& str> {
         self.label_group_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the label group.</p>
-    pub fn label_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn label_group_arn(&self) -> ::std::option::Option<& str> {
         self.label_group_arn.as_deref()
     }
     /// <p>Codes indicating the type of anomaly associated with the labels in the lagbel group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fault_codes.is_none()`.
-    pub fn fault_codes(&self) -> &[::std::string::String] {
-        self.fault_codes.as_deref().unwrap_or_default()
+    pub fn fault_codes(&self) -> & [::std::string::String] {
+        self.fault_codes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The time at which the label group was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time at which the label group was updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeLabelGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeLabelGroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLabelGroupOutput`](crate::operation::describe_label_group::DescribeLabelGroupOutput).
     pub fn builder() -> crate::operation::describe_label_group::builders::DescribeLabelGroupOutputBuilder {
@@ -57,7 +58,7 @@ impl DescribeLabelGroupOutput {
 pub struct DescribeLabelGroupOutputBuilder {
     pub(crate) label_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) label_group_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) fault_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) fault_codes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -70,8 +71,7 @@ impl DescribeLabelGroupOutputBuilder {
     }
     /// <p>The name of the label group.</p>
     pub fn set_label_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label_group_name = input;
-        self
+        self.label_group_name = input; self
     }
     /// <p>The name of the label group.</p>
     pub fn get_label_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +84,7 @@ impl DescribeLabelGroupOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the label group.</p>
     pub fn set_label_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label_group_arn = input;
-        self
+        self.label_group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the label group.</p>
     pub fn get_label_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,17 +97,16 @@ impl DescribeLabelGroupOutputBuilder {
     /// <p>Codes indicating the type of anomaly associated with the labels in the lagbel group.</p>
     pub fn fault_codes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.fault_codes.unwrap_or_default();
-        v.push(input.into());
-        self.fault_codes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.fault_codes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Codes indicating the type of anomaly associated with the labels in the lagbel group.</p>
-    pub fn set_fault_codes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.fault_codes = input;
-        self
+    pub fn set_fault_codes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.fault_codes = input; self
     }
     /// <p>Codes indicating the type of anomaly associated with the labels in the lagbel group.</p>
-    pub fn get_fault_codes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_fault_codes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.fault_codes
     }
     /// <p>The time at which the label group was created.</p>
@@ -118,8 +116,7 @@ impl DescribeLabelGroupOutputBuilder {
     }
     /// <p>The time at which the label group was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time at which the label group was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -132,31 +129,36 @@ impl DescribeLabelGroupOutputBuilder {
     }
     /// <p>The time at which the label group was updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The time at which the label group was updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeLabelGroupOutput`](crate::operation::describe_label_group::DescribeLabelGroupOutput).
     pub fn build(self) -> crate::operation::describe_label_group::DescribeLabelGroupOutput {
         crate::operation::describe_label_group::DescribeLabelGroupOutput {
-            label_group_name: self.label_group_name,
-            label_group_arn: self.label_group_arn,
-            fault_codes: self.fault_codes,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
+            label_group_name: self.label_group_name
+            ,
+            label_group_arn: self.label_group_arn
+            ,
+            fault_codes: self.fault_codes
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

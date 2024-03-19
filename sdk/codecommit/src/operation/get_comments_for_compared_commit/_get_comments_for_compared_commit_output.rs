@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCommentsForComparedCommitOutput {
+pub struct GetCommentsForComparedCommitOutput  {
     /// <p>A list of comment objects on the compared commit.</p>
-    pub comments_for_compared_commit_data: ::std::option::Option<::std::vec::Vec<crate::types::CommentsForComparedCommit>>,
+    pub comments_for_compared_commit_data: ::std::option::Option<::std::vec::Vec::<crate::types::CommentsForComparedCommit>>,
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetCommentsForComparedCommitOutput {
+impl  GetCommentsForComparedCommitOutput  {
     /// <p>A list of comment objects on the compared commit.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.comments_for_compared_commit_data.is_none()`.
-    pub fn comments_for_compared_commit_data(&self) -> &[crate::types::CommentsForComparedCommit] {
-        self.comments_for_compared_commit_data.as_deref().unwrap_or_default()
+    pub fn comments_for_compared_commit_data(&self) -> & [crate::types::CommentsForComparedCommit] {
+        self.comments_for_compared_commit_data.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetCommentsForComparedCommitOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetCommentsForComparedCommitOutput {
     /// Creates a new builder-style object to manufacture [`GetCommentsForComparedCommitOutput`](crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitOutput).
     pub fn builder() -> crate::operation::get_comments_for_compared_commit::builders::GetCommentsForComparedCommitOutputBuilder {
@@ -37,7 +38,7 @@ impl GetCommentsForComparedCommitOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCommentsForComparedCommitOutputBuilder {
-    pub(crate) comments_for_compared_commit_data: ::std::option::Option<::std::vec::Vec<crate::types::CommentsForComparedCommit>>,
+    pub(crate) comments_for_compared_commit_data: ::std::option::Option<::std::vec::Vec::<crate::types::CommentsForComparedCommit>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,20 +50,16 @@ impl GetCommentsForComparedCommitOutputBuilder {
     /// <p>A list of comment objects on the compared commit.</p>
     pub fn comments_for_compared_commit_data(mut self, input: crate::types::CommentsForComparedCommit) -> Self {
         let mut v = self.comments_for_compared_commit_data.unwrap_or_default();
-        v.push(input);
-        self.comments_for_compared_commit_data = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.comments_for_compared_commit_data = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of comment objects on the compared commit.</p>
-    pub fn set_comments_for_compared_commit_data(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CommentsForComparedCommit>>,
-    ) -> Self {
-        self.comments_for_compared_commit_data = input;
-        self
+    pub fn set_comments_for_compared_commit_data(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CommentsForComparedCommit>>) -> Self {
+        self.comments_for_compared_commit_data = input; self
     }
     /// <p>A list of comment objects on the compared commit.</p>
-    pub fn get_comments_for_compared_commit_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CommentsForComparedCommit>> {
+    pub fn get_comments_for_compared_commit_data(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CommentsForComparedCommit>> {
         &self.comments_for_compared_commit_data
     }
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
@@ -72,28 +69,30 @@ impl GetCommentsForComparedCommitOutputBuilder {
     }
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetCommentsForComparedCommitOutput`](crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitOutput).
     pub fn build(self) -> crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitOutput {
         crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitOutput {
-            comments_for_compared_commit_data: self.comments_for_compared_commit_data,
-            next_token: self.next_token,
+            comments_for_compared_commit_data: self.comments_for_compared_commit_data
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Provides the configuration information for a web proxy to connect to website hosts.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProxyConfiguration {
+pub struct ProxyConfiguration  {
     /// <p>The name of the website host you want to connect to via a web proxy server.</p>
     /// <p>For example, the host name of https://a.example.com/page1.html is "a.example.com".</p>
     pub host: ::std::string::String,
@@ -14,12 +14,11 @@ pub struct ProxyConfiguration {
     /// <p>The credentials are optional. You use a secret if web proxy credentials are required to connect to a website host. Amazon Kendra currently support basic authentication to connect to a web proxy server. The secret stores your credentials.</p>
     pub credentials: ::std::option::Option<::std::string::String>,
 }
-impl ProxyConfiguration {
+impl  ProxyConfiguration  {
     /// <p>The name of the website host you want to connect to via a web proxy server.</p>
     /// <p>For example, the host name of https://a.example.com/page1.html is "a.example.com".</p>
-    pub fn host(&self) -> &str {
-        use std::ops::Deref;
-        self.host.deref()
+    pub fn host(&self) -> & str {
+        use std::ops::Deref; self.host.deref()
     }
     /// <p>The port number of the website host you want to connect to via a web proxy server.</p>
     /// <p>For example, the port for https://a.example.com/page1.html is 443, the standard port for HTTPS.</p>
@@ -28,7 +27,7 @@ impl ProxyConfiguration {
     }
     /// <p>Your secret ARN, which you can create in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a></p>
     /// <p>The credentials are optional. You use a secret if web proxy credentials are required to connect to a website host. Amazon Kendra currently support basic authentication to connect to a web proxy server. The secret stores your credentials.</p>
-    pub fn credentials(&self) -> ::std::option::Option<&str> {
+    pub fn credentials(&self) -> ::std::option::Option<& str> {
         self.credentials.as_deref()
     }
 }
@@ -58,8 +57,7 @@ impl ProxyConfigurationBuilder {
     /// <p>The name of the website host you want to connect to via a web proxy server.</p>
     /// <p>For example, the host name of https://a.example.com/page1.html is "a.example.com".</p>
     pub fn set_host(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host = input;
-        self
+        self.host = input; self
     }
     /// <p>The name of the website host you want to connect to via a web proxy server.</p>
     /// <p>For example, the host name of https://a.example.com/page1.html is "a.example.com".</p>
@@ -76,8 +74,7 @@ impl ProxyConfigurationBuilder {
     /// <p>The port number of the website host you want to connect to via a web proxy server.</p>
     /// <p>For example, the port for https://a.example.com/page1.html is 443, the standard port for HTTPS.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port number of the website host you want to connect to via a web proxy server.</p>
     /// <p>For example, the port for https://a.example.com/page1.html is 443, the standard port for HTTPS.</p>
@@ -93,8 +90,7 @@ impl ProxyConfigurationBuilder {
     /// <p>Your secret ARN, which you can create in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a></p>
     /// <p>The credentials are optional. You use a secret if web proxy credentials are required to connect to a website host. Amazon Kendra currently support basic authentication to connect to a web proxy server. The secret stores your credentials.</p>
     pub fn set_credentials(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.credentials = input;
-        self
+        self.credentials = input; self
     }
     /// <p>Your secret ARN, which you can create in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets Manager</a></p>
     /// <p>The credentials are optional. You use a secret if web proxy credentials are required to connect to a website host. Amazon Kendra currently support basic authentication to connect to a web proxy server. The secret stores your credentials.</p>
@@ -106,20 +102,22 @@ impl ProxyConfigurationBuilder {
     /// - [`host`](crate::types::builders::ProxyConfigurationBuilder::host)
     /// - [`port`](crate::types::builders::ProxyConfigurationBuilder::port)
     pub fn build(self) -> ::std::result::Result<crate::types::ProxyConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ProxyConfiguration {
-            host: self.host.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "host",
-                    "host was not specified but it is required when building ProxyConfiguration",
-                )
-            })?,
-            port: self.port.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "port",
-                    "port was not specified but it is required when building ProxyConfiguration",
-                )
-            })?,
-            credentials: self.credentials,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ProxyConfiguration {
+                host: self.host
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("host", "host was not specified but it is required when building ProxyConfiguration")
+                    )?
+                ,
+                port: self.port
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("port", "port was not specified but it is required when building ProxyConfiguration")
+                    )?
+                ,
+                credentials: self.credentials
+                ,
+            }
+        )
     }
 }
+

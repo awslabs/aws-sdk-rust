@@ -3,7 +3,7 @@
 /// <p>Describes a custom rewrite or redirect rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomRule {
+pub struct CustomRule  {
     /// <p>The source pattern for a URL rewrite or redirect rule.</p>
     pub source: ::std::string::String,
     /// <p>The target pattern for a URL rewrite or redirect rule.</p>
@@ -45,16 +45,14 @@ pub struct CustomRule {
     /// <p>The condition for a URL rewrite or redirect rule, such as a country code.</p>
     pub condition: ::std::option::Option<::std::string::String>,
 }
-impl CustomRule {
+impl  CustomRule  {
     /// <p>The source pattern for a URL rewrite or redirect rule.</p>
-    pub fn source(&self) -> &str {
-        use std::ops::Deref;
-        self.source.deref()
+    pub fn source(&self) -> & str {
+        use std::ops::Deref; self.source.deref()
     }
     /// <p>The target pattern for a URL rewrite or redirect rule.</p>
-    pub fn target(&self) -> &str {
-        use std::ops::Deref;
-        self.target.deref()
+    pub fn target(&self) -> & str {
+        use std::ops::Deref; self.target.deref()
     }
     /// <p>The status code for a URL rewrite or redirect rule.</p>
     /// <dl>
@@ -89,11 +87,11 @@ impl CustomRule {
     /// <p>Represents a 404 rewrite rule.</p>
     /// </dd>
     /// </dl>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The condition for a URL rewrite or redirect rule, such as a country code.</p>
-    pub fn condition(&self) -> ::std::option::Option<&str> {
+    pub fn condition(&self) -> ::std::option::Option<& str> {
         self.condition.as_deref()
     }
 }
@@ -122,8 +120,7 @@ impl CustomRuleBuilder {
     }
     /// <p>The source pattern for a URL rewrite or redirect rule.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The source pattern for a URL rewrite or redirect rule.</p>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,8 +134,7 @@ impl CustomRuleBuilder {
     }
     /// <p>The target pattern for a URL rewrite or redirect rule.</p>
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
     }
     /// <p>The target pattern for a URL rewrite or redirect rule.</p>
     pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
@@ -215,8 +211,7 @@ impl CustomRuleBuilder {
     /// </dd>
     /// </dl>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status code for a URL rewrite or redirect rule.</p>
     /// <dl>
@@ -261,8 +256,7 @@ impl CustomRuleBuilder {
     }
     /// <p>The condition for a URL rewrite or redirect rule, such as a country code.</p>
     pub fn set_condition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.condition = input;
-        self
+        self.condition = input; self
     }
     /// <p>The condition for a URL rewrite or redirect rule, such as a country code.</p>
     pub fn get_condition(&self) -> &::std::option::Option<::std::string::String> {
@@ -273,21 +267,24 @@ impl CustomRuleBuilder {
     /// - [`source`](crate::types::builders::CustomRuleBuilder::source)
     /// - [`target`](crate::types::builders::CustomRuleBuilder::target)
     pub fn build(self) -> ::std::result::Result<crate::types::CustomRule, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CustomRule {
-            source: self.source.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source",
-                    "source was not specified but it is required when building CustomRule",
-                )
-            })?,
-            target: self.target.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "target",
-                    "target was not specified but it is required when building CustomRule",
-                )
-            })?,
-            status: self.status,
-            condition: self.condition,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CustomRule {
+                source: self.source
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source", "source was not specified but it is required when building CustomRule")
+                    )?
+                ,
+                target: self.target
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("target", "target was not specified but it is required when building CustomRule")
+                    )?
+                ,
+                status: self.status
+                ,
+                condition: self.condition
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateProjectInput {
+pub struct UpdateProjectInput  {
     /// <p>The ID of the project you want to update.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project you want to update.</p>
@@ -10,21 +10,21 @@ pub struct UpdateProjectInput {
     /// <p>The description of the project, if any.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl UpdateProjectInput {
+impl  UpdateProjectInput  {
     /// <p>The ID of the project you want to update.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the project you want to update.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the project, if any.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
-impl ::std::fmt::Debug for UpdateProjectInput {
+impl  ::std::fmt::Debug for UpdateProjectInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateProjectInput");
         formatter.field("id", &self.id);
@@ -57,8 +57,7 @@ impl UpdateProjectInputBuilder {
     }
     /// <p>The ID of the project you want to update.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the project you want to update.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl UpdateProjectInputBuilder {
     }
     /// <p>The name of the project you want to update.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the project you want to update.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,22 +83,24 @@ impl UpdateProjectInputBuilder {
     }
     /// <p>The description of the project, if any.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the project, if any.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateProjectInput`](crate::operation::update_project::UpdateProjectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_project::UpdateProjectInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_project::UpdateProjectInput {
-            id: self.id,
-            name: self.name,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_project::UpdateProjectInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_project::UpdateProjectInput {
+                id: self.id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateProjectInputBuilder {
@@ -112,3 +112,4 @@ impl ::std::fmt::Debug for UpdateProjectInputBuilder {
         formatter.finish()
     }
 }
+

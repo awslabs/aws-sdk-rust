@@ -4,20 +4,19 @@
 /// <p>By default, the text must be 7-bit ASCII, due to the constraints of the SMTP protocol. If the text must contain any other characters, then you must also specify a character set. Examples include UTF-8, ISO-8859-1, and Shift_JIS.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Content {
+pub struct Content  {
     /// <p>The textual data of the content.</p>
     pub data: ::std::string::String,
     /// <p>The character set of the content.</p>
     pub charset: ::std::option::Option<::std::string::String>,
 }
-impl Content {
+impl  Content  {
     /// <p>The textual data of the content.</p>
-    pub fn data(&self) -> &str {
-        use std::ops::Deref;
-        self.data.deref()
+    pub fn data(&self) -> & str {
+        use std::ops::Deref; self.data.deref()
     }
     /// <p>The character set of the content.</p>
-    pub fn charset(&self) -> ::std::option::Option<&str> {
+    pub fn charset(&self) -> ::std::option::Option<& str> {
         self.charset.as_deref()
     }
 }
@@ -44,8 +43,7 @@ impl ContentBuilder {
     }
     /// <p>The textual data of the content.</p>
     pub fn set_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
     }
     /// <p>The textual data of the content.</p>
     pub fn get_data(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl ContentBuilder {
     }
     /// <p>The character set of the content.</p>
     pub fn set_charset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.charset = input;
-        self
+        self.charset = input; self
     }
     /// <p>The character set of the content.</p>
     pub fn get_charset(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,14 +66,17 @@ impl ContentBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`data`](crate::types::builders::ContentBuilder::data)
     pub fn build(self) -> ::std::result::Result<crate::types::Content, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Content {
-            data: self.data.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data",
-                    "data was not specified but it is required when building Content",
-                )
-            })?,
-            charset: self.charset,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Content {
+                data: self.data
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data", "data was not specified but it is required when building Content")
+                    )?
+                ,
+                charset: self.charset
+                ,
+            }
+        )
     }
 }
+

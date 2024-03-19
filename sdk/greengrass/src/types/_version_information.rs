@@ -3,7 +3,7 @@
 /// Information about a version.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VersionInformation {
+pub struct VersionInformation  {
     /// The ARN of the version.
     pub arn: ::std::option::Option<::std::string::String>,
     /// The time, in milliseconds since the epoch, when the version was created.
@@ -13,21 +13,21 @@ pub struct VersionInformation {
     /// The ID of the version.
     pub version: ::std::option::Option<::std::string::String>,
 }
-impl VersionInformation {
+impl  VersionInformation  {
     /// The ARN of the version.
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the version was created.
-    pub fn creation_timestamp(&self) -> ::std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> ::std::option::Option<& str> {
         self.creation_timestamp.as_deref()
     }
     /// The ID of the parent definition that the version is associated with.
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The ID of the version.
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl VersionInformationBuilder {
     }
     /// The ARN of the version.
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// The ARN of the version.
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl VersionInformationBuilder {
     }
     /// The time, in milliseconds since the epoch, when the version was created.
     pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creation_timestamp = input;
-        self
+        self.creation_timestamp = input; self
     }
     /// The time, in milliseconds since the epoch, when the version was created.
     pub fn get_creation_timestamp(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl VersionInformationBuilder {
     }
     /// The ID of the parent definition that the version is associated with.
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// The ID of the parent definition that the version is associated with.
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl VersionInformationBuilder {
     }
     /// The ID of the version.
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// The ID of the version.
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl VersionInformationBuilder {
     /// Consumes the builder and constructs a [`VersionInformation`](crate::types::VersionInformation).
     pub fn build(self) -> crate::types::VersionInformation {
         crate::types::VersionInformation {
-            arn: self.arn,
-            creation_timestamp: self.creation_timestamp,
-            id: self.id,
-            version: self.version,
+            arn: self.arn
+            ,
+            creation_timestamp: self.creation_timestamp
+            ,
+            id: self.id
+            ,
+            version: self.version
+            ,
         }
     }
 }
+

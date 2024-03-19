@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListConfigurationProfiles`](crate::operation::list_configuration_profiles::builders::ListConfigurationProfilesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_configuration_profiles::builders::ListConfigurationProfilesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`application_id(impl Into<String>)`](crate::operation::list_configuration_profiles::builders::ListConfigurationProfilesFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::list_configuration_profiles::builders::ListConfigurationProfilesFluentBuilder::set_application_id):<br>required: **true**<br><p>The application ID.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_configuration_profiles::builders::ListConfigurationProfilesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_configuration_profiles::builders::ListConfigurationProfilesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_configuration_profiles::builders::ListConfigurationProfilesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_configuration_profiles::builders::ListConfigurationProfilesFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to start the list. Use this token to get the next set of results.</p><br>
     ///   - [`r#type(impl Into<String>)`](crate::operation::list_configuration_profiles::builders::ListConfigurationProfilesFluentBuilder::type) / [`set_type(Option<String>)`](crate::operation::list_configuration_profiles::builders::ListConfigurationProfilesFluentBuilder::set_type):<br>required: **false**<br><p>A filter based on the type of configurations that the configuration profile contains. A configuration can be a feature flag or a freeform configuration.</p><br>
-    /// - On success, responds with [`ListConfigurationProfilesOutput`](crate::operation::list_configuration_profiles::ListConfigurationProfilesOutput) with field(s):
+                            /// - On success, responds with [`ListConfigurationProfilesOutput`](crate::operation::list_configuration_profiles::ListConfigurationProfilesOutput) with field(s):
     ///   - [`items(Option<Vec::<ConfigurationProfileSummary>>)`](crate::operation::list_configuration_profiles::ListConfigurationProfilesOutput::items): <p>The elements from this collection.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_configuration_profiles::ListConfigurationProfilesOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListConfigurationProfilesError>`](crate::operation::list_configuration_profiles::ListConfigurationProfilesError)
+                            /// - On failure, responds with [`SdkError<ListConfigurationProfilesError>`](crate::operation::list_configuration_profiles::ListConfigurationProfilesError)
     pub fn list_configuration_profiles(&self) -> crate::operation::list_configuration_profiles::builders::ListConfigurationProfilesFluentBuilder {
-        crate::operation::list_configuration_profiles::builders::ListConfigurationProfilesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_configuration_profiles::builders::ListConfigurationProfilesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

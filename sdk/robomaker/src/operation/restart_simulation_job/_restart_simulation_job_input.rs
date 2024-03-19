@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RestartSimulationJobInput {
+pub struct RestartSimulationJobInput  {
     /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
     pub job: ::std::option::Option<::std::string::String>,
 }
-impl RestartSimulationJobInput {
+impl  RestartSimulationJobInput  {
     /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
-    pub fn job(&self) -> ::std::option::Option<&str> {
+    pub fn job(&self) -> ::std::option::Option<& str> {
         self.job.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl RestartSimulationJobInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
     pub fn set_job(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job = input;
-        self
+        self.job = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
     pub fn get_job(&self) -> &::std::option::Option<::std::string::String> {
         &self.job
     }
     /// Consumes the builder and constructs a [`RestartSimulationJobInput`](crate::operation::restart_simulation_job::RestartSimulationJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::restart_simulation_job::RestartSimulationJobInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::restart_simulation_job::RestartSimulationJobInput { job: self.job })
+    pub fn build(self) -> ::std::result::Result<crate::operation::restart_simulation_job::RestartSimulationJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::restart_simulation_job::RestartSimulationJobInput {
+                job: self.job
+                ,
+            }
+        )
     }
 }
+

@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListReferencesOutput {
+pub struct ListReferencesOutput  {
     /// <p>A pagination token that's included if more results are available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of references.</p>
-    pub references: ::std::vec::Vec<crate::types::ReferenceListItem>,
+    pub references: ::std::vec::Vec::<crate::types::ReferenceListItem>,
     _request_id: Option<String>,
 }
-impl ListReferencesOutput {
+impl  ListReferencesOutput  {
     /// <p>A pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of references.</p>
-    pub fn references(&self) -> &[crate::types::ReferenceListItem] {
-        use std::ops::Deref;
-        self.references.deref()
+    pub fn references(&self) -> & [crate::types::ReferenceListItem] {
+        use std::ops::Deref; self.references.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListReferencesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListReferencesOutput {
     /// Creates a new builder-style object to manufacture [`ListReferencesOutput`](crate::operation::list_references::ListReferencesOutput).
     pub fn builder() -> crate::operation::list_references::builders::ListReferencesOutputBuilder {
@@ -37,7 +36,7 @@ impl ListReferencesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReferencesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) references: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceListItem>>,
+    pub(crate) references: ::std::option::Option<::std::vec::Vec::<crate::types::ReferenceListItem>>,
     _request_id: Option<String>,
 }
 impl ListReferencesOutputBuilder {
@@ -48,8 +47,7 @@ impl ListReferencesOutputBuilder {
     }
     /// <p>A pagination token that's included if more results are available.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token that's included if more results are available.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,43 +60,43 @@ impl ListReferencesOutputBuilder {
     /// <p>A list of references.</p>
     pub fn references(mut self, input: crate::types::ReferenceListItem) -> Self {
         let mut v = self.references.unwrap_or_default();
-        v.push(input);
-        self.references = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.references = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of references.</p>
-    pub fn set_references(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceListItem>>) -> Self {
-        self.references = input;
-        self
+    pub fn set_references(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReferenceListItem>>) -> Self {
+        self.references = input; self
     }
     /// <p>A list of references.</p>
-    pub fn get_references(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReferenceListItem>> {
+    pub fn get_references(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReferenceListItem>> {
         &self.references
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListReferencesOutput`](crate::operation::list_references::ListReferencesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`references`](crate::operation::list_references::builders::ListReferencesOutputBuilder::references)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_references::ListReferencesOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_references::ListReferencesOutput {
-            next_token: self.next_token,
-            references: self.references.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "references",
-                    "references was not specified but it is required when building ListReferencesOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_references::ListReferencesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_references::ListReferencesOutput {
+                next_token: self.next_token
+                ,
+                references: self.references
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("references", "references was not specified but it is required when building ListReferencesOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

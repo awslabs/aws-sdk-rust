@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteMedicalVocabularyOutput {
+pub struct DeleteMedicalVocabularyOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for DeleteMedicalVocabularyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteMedicalVocabularyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMedicalVocabularyOutput`](crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyOutput).
     pub fn builder() -> crate::operation::delete_medical_vocabulary::builders::DeleteMedicalVocabularyOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DeleteMedicalVocabularyOutputBuilder {
 }
 impl DeleteMedicalVocabularyOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteMedicalVocabularyOutput`](crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyOutput).
     pub fn build(self) -> crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyOutput {
         crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyOutput {
@@ -40,3 +40,4 @@ impl DeleteMedicalVocabularyOutputBuilder {
         }
     }
 }
+

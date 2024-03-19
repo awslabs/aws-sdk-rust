@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAdministratorAccountInput {
+pub struct GetAdministratorAccountInput  {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
 }
-impl GetAdministratorAccountInput {
+impl  GetAdministratorAccountInput  {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
-    pub fn detector_id(&self) -> ::std::option::Option<&str> {
+    pub fn detector_id(&self) -> ::std::option::Option<& str> {
         self.detector_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetAdministratorAccountInputBuilder {
     }
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
     }
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.detector_id
     }
     /// Consumes the builder and constructs a [`GetAdministratorAccountInput`](crate::operation::get_administrator_account::GetAdministratorAccountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_administrator_account::GetAdministratorAccountInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_administrator_account::GetAdministratorAccountInput {
-            detector_id: self.detector_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_administrator_account::GetAdministratorAccountInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_administrator_account::GetAdministratorAccountInput {
+                detector_id: self.detector_id
+                ,
+            }
+        )
     }
 }
+

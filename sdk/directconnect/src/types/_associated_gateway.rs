@@ -3,7 +3,7 @@
 /// <p>Information about the associated gateway.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociatedGateway {
+pub struct AssociatedGateway  {
     /// <p>The ID of the associated gateway.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The type of associated gateway.</p>
@@ -13,21 +13,21 @@ pub struct AssociatedGateway {
     /// <p>The Region where the associated gateway is located.</p>
     pub region: ::std::option::Option<::std::string::String>,
 }
-impl AssociatedGateway {
+impl  AssociatedGateway  {
     /// <p>The ID of the associated gateway.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The type of associated gateway.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::GatewayType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::GatewayType> {
         self.r#type.as_ref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the associated virtual private gateway or transit gateway.</p>
-    pub fn owner_account(&self) -> ::std::option::Option<&str> {
+    pub fn owner_account(&self) -> ::std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>The Region where the associated gateway is located.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl AssociatedGatewayBuilder {
     }
     /// <p>The ID of the associated gateway.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the associated gateway.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl AssociatedGatewayBuilder {
     }
     /// <p>The type of associated gateway.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::GatewayType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of associated gateway.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::GatewayType> {
@@ -83,8 +81,7 @@ impl AssociatedGatewayBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that owns the associated virtual private gateway or transit gateway.</p>
     pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_account = input;
-        self
+        self.owner_account = input; self
     }
     /// <p>The ID of the Amazon Web Services account that owns the associated virtual private gateway or transit gateway.</p>
     pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl AssociatedGatewayBuilder {
     }
     /// <p>The Region where the associated gateway is located.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Region where the associated gateway is located.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl AssociatedGatewayBuilder {
     /// Consumes the builder and constructs a [`AssociatedGateway`](crate::types::AssociatedGateway).
     pub fn build(self) -> crate::types::AssociatedGateway {
         crate::types::AssociatedGateway {
-            id: self.id,
-            r#type: self.r#type,
-            owner_account: self.owner_account,
-            region: self.region,
+            id: self.id
+            ,
+            r#type: self.r#type
+            ,
+            owner_account: self.owner_account
+            ,
+            region: self.region
+            ,
         }
     }
 }
+

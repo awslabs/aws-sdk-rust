@@ -4,7 +4,7 @@
 /// <p>To return this information about all the network interfaces specified in a decoder manifest, use the API operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkInterface {
+pub struct NetworkInterface  {
     /// <p>The ID of the network interface.</p>
     pub interface_id: ::std::string::String,
     /// <p>The network protocol for the vehicle. For example, <code>CAN_SIGNAL</code> specifies a protocol that defines how data is communicated between electronic control units (ECUs). <code>OBD_SIGNAL</code> specifies a protocol that defines how self-diagnostic data is communicated between ECUs.</p>
@@ -16,26 +16,25 @@ pub struct NetworkInterface {
     /// <p>The vehicle middleware defined as a type of network interface. Examples of vehicle middleware include <code>ROS2</code> and <code>SOME/IP</code>.</p>
     pub vehicle_middleware: ::std::option::Option<crate::types::VehicleMiddleware>,
 }
-impl NetworkInterface {
+impl  NetworkInterface  {
     /// <p>The ID of the network interface.</p>
-    pub fn interface_id(&self) -> &str {
-        use std::ops::Deref;
-        self.interface_id.deref()
+    pub fn interface_id(&self) -> & str {
+        use std::ops::Deref; self.interface_id.deref()
     }
     /// <p>The network protocol for the vehicle. For example, <code>CAN_SIGNAL</code> specifies a protocol that defines how data is communicated between electronic control units (ECUs). <code>OBD_SIGNAL</code> specifies a protocol that defines how self-diagnostic data is communicated between ECUs.</p>
-    pub fn r#type(&self) -> &crate::types::NetworkInterfaceType {
+    pub fn r#type(&self) -> & crate::types::NetworkInterfaceType {
         &self.r#type
     }
     /// <p>Information about a network interface specified by the Controller Area Network (CAN) protocol.</p>
-    pub fn can_interface(&self) -> ::std::option::Option<&crate::types::CanInterface> {
+    pub fn can_interface(&self) -> ::std::option::Option<& crate::types::CanInterface> {
         self.can_interface.as_ref()
     }
     /// <p>Information about a network interface specified by the On-board diagnostic (OBD) II protocol.</p>
-    pub fn obd_interface(&self) -> ::std::option::Option<&crate::types::ObdInterface> {
+    pub fn obd_interface(&self) -> ::std::option::Option<& crate::types::ObdInterface> {
         self.obd_interface.as_ref()
     }
     /// <p>The vehicle middleware defined as a type of network interface. Examples of vehicle middleware include <code>ROS2</code> and <code>SOME/IP</code>.</p>
-    pub fn vehicle_middleware(&self) -> ::std::option::Option<&crate::types::VehicleMiddleware> {
+    pub fn vehicle_middleware(&self) -> ::std::option::Option<& crate::types::VehicleMiddleware> {
         self.vehicle_middleware.as_ref()
     }
 }
@@ -65,8 +64,7 @@ impl NetworkInterfaceBuilder {
     }
     /// <p>The ID of the network interface.</p>
     pub fn set_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.interface_id = input;
-        self
+        self.interface_id = input; self
     }
     /// <p>The ID of the network interface.</p>
     pub fn get_interface_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +78,7 @@ impl NetworkInterfaceBuilder {
     }
     /// <p>The network protocol for the vehicle. For example, <code>CAN_SIGNAL</code> specifies a protocol that defines how data is communicated between electronic control units (ECUs). <code>OBD_SIGNAL</code> specifies a protocol that defines how self-diagnostic data is communicated between ECUs.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::NetworkInterfaceType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The network protocol for the vehicle. For example, <code>CAN_SIGNAL</code> specifies a protocol that defines how data is communicated between electronic control units (ECUs). <code>OBD_SIGNAL</code> specifies a protocol that defines how self-diagnostic data is communicated between ECUs.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::NetworkInterfaceType> {
@@ -94,8 +91,7 @@ impl NetworkInterfaceBuilder {
     }
     /// <p>Information about a network interface specified by the Controller Area Network (CAN) protocol.</p>
     pub fn set_can_interface(mut self, input: ::std::option::Option<crate::types::CanInterface>) -> Self {
-        self.can_interface = input;
-        self
+        self.can_interface = input; self
     }
     /// <p>Information about a network interface specified by the Controller Area Network (CAN) protocol.</p>
     pub fn get_can_interface(&self) -> &::std::option::Option<crate::types::CanInterface> {
@@ -108,8 +104,7 @@ impl NetworkInterfaceBuilder {
     }
     /// <p>Information about a network interface specified by the On-board diagnostic (OBD) II protocol.</p>
     pub fn set_obd_interface(mut self, input: ::std::option::Option<crate::types::ObdInterface>) -> Self {
-        self.obd_interface = input;
-        self
+        self.obd_interface = input; self
     }
     /// <p>Information about a network interface specified by the On-board diagnostic (OBD) II protocol.</p>
     pub fn get_obd_interface(&self) -> &::std::option::Option<crate::types::ObdInterface> {
@@ -122,8 +117,7 @@ impl NetworkInterfaceBuilder {
     }
     /// <p>The vehicle middleware defined as a type of network interface. Examples of vehicle middleware include <code>ROS2</code> and <code>SOME/IP</code>.</p>
     pub fn set_vehicle_middleware(mut self, input: ::std::option::Option<crate::types::VehicleMiddleware>) -> Self {
-        self.vehicle_middleware = input;
-        self
+        self.vehicle_middleware = input; self
     }
     /// <p>The vehicle middleware defined as a type of network interface. Examples of vehicle middleware include <code>ROS2</code> and <code>SOME/IP</code>.</p>
     pub fn get_vehicle_middleware(&self) -> &::std::option::Option<crate::types::VehicleMiddleware> {
@@ -134,22 +128,26 @@ impl NetworkInterfaceBuilder {
     /// - [`interface_id`](crate::types::builders::NetworkInterfaceBuilder::interface_id)
     /// - [`r#type`](crate::types::builders::NetworkInterfaceBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::NetworkInterface, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::NetworkInterface {
-            interface_id: self.interface_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "interface_id",
-                    "interface_id was not specified but it is required when building NetworkInterface",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building NetworkInterface",
-                )
-            })?,
-            can_interface: self.can_interface,
-            obd_interface: self.obd_interface,
-            vehicle_middleware: self.vehicle_middleware,
-        })
+        ::std::result::Result::Ok(
+            crate::types::NetworkInterface {
+                interface_id: self.interface_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("interface_id", "interface_id was not specified but it is required when building NetworkInterface")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building NetworkInterface")
+                    )?
+                ,
+                can_interface: self.can_interface
+                ,
+                obd_interface: self.obd_interface
+                ,
+                vehicle_middleware: self.vehicle_middleware
+                ,
+            }
+        )
     }
 }
+

@@ -2,47 +2,49 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateVpcAttachmentInput {
+pub struct CreateVpcAttachmentInput  {
     /// <p>The ID of a core network for the VPC attachment.</p>
     pub core_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the VPC.</p>
     pub vpc_arn: ::std::option::Option<::std::string::String>,
     /// <p>The subnet ARN of the VPC attachment.</p>
-    pub subnet_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Options for the VPC attachment.</p>
     pub options: ::std::option::Option<crate::types::VpcOptions>,
     /// <p>The key-value tags associated with the request.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The client token associated with the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateVpcAttachmentInput {
+impl  CreateVpcAttachmentInput  {
     /// <p>The ID of a core network for the VPC attachment.</p>
-    pub fn core_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn core_network_id(&self) -> ::std::option::Option<& str> {
         self.core_network_id.as_deref()
     }
     /// <p>The ARN of the VPC.</p>
-    pub fn vpc_arn(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_arn(&self) -> ::std::option::Option<& str> {
         self.vpc_arn.as_deref()
     }
     /// <p>The subnet ARN of the VPC attachment.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_arns.is_none()`.
-    pub fn subnet_arns(&self) -> &[::std::string::String] {
-        self.subnet_arns.as_deref().unwrap_or_default()
+    pub fn subnet_arns(&self) -> & [::std::string::String] {
+        self.subnet_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Options for the VPC attachment.</p>
-    pub fn options(&self) -> ::std::option::Option<&crate::types::VpcOptions> {
+    pub fn options(&self) -> ::std::option::Option<& crate::types::VpcOptions> {
         self.options.as_ref()
     }
     /// <p>The key-value tags associated with the request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The client token associated with the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -59,9 +61,9 @@ impl CreateVpcAttachmentInput {
 pub struct CreateVpcAttachmentInputBuilder {
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) subnet_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subnet_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) options: ::std::option::Option<crate::types::VpcOptions>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateVpcAttachmentInputBuilder {
@@ -73,8 +75,7 @@ impl CreateVpcAttachmentInputBuilder {
     }
     /// <p>The ID of a core network for the VPC attachment.</p>
     pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.core_network_id = input;
-        self
+        self.core_network_id = input; self
     }
     /// <p>The ID of a core network for the VPC attachment.</p>
     pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +89,7 @@ impl CreateVpcAttachmentInputBuilder {
     }
     /// <p>The ARN of the VPC.</p>
     pub fn set_vpc_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_arn = input;
-        self
+        self.vpc_arn = input; self
     }
     /// <p>The ARN of the VPC.</p>
     pub fn get_vpc_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,17 +102,16 @@ impl CreateVpcAttachmentInputBuilder {
     /// <p>The subnet ARN of the VPC attachment.</p>
     pub fn subnet_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_arns.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The subnet ARN of the VPC attachment.</p>
-    pub fn set_subnet_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnet_arns = input;
-        self
+    pub fn set_subnet_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnet_arns = input; self
     }
     /// <p>The subnet ARN of the VPC attachment.</p>
-    pub fn get_subnet_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnet_arns
     }
     /// <p>Options for the VPC attachment.</p>
@@ -122,8 +121,7 @@ impl CreateVpcAttachmentInputBuilder {
     }
     /// <p>Options for the VPC attachment.</p>
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::VpcOptions>) -> Self {
-        self.options = input;
-        self
+        self.options = input; self
     }
     /// <p>Options for the VPC attachment.</p>
     pub fn get_options(&self) -> &::std::option::Option<crate::types::VpcOptions> {
@@ -136,17 +134,16 @@ impl CreateVpcAttachmentInputBuilder {
     /// <p>The key-value tags associated with the request.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The key-value tags associated with the request.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The key-value tags associated with the request.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The client token associated with the request.</p>
@@ -156,25 +153,30 @@ impl CreateVpcAttachmentInputBuilder {
     }
     /// <p>The client token associated with the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The client token associated with the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateVpcAttachmentInput`](crate::operation::create_vpc_attachment::CreateVpcAttachmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_vpc_attachment::CreateVpcAttachmentInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_vpc_attachment::CreateVpcAttachmentInput {
-            core_network_id: self.core_network_id,
-            vpc_arn: self.vpc_arn,
-            subnet_arns: self.subnet_arns,
-            options: self.options,
-            tags: self.tags,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_vpc_attachment::CreateVpcAttachmentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_vpc_attachment::CreateVpcAttachmentInput {
+                core_network_id: self.core_network_id
+                ,
+                vpc_arn: self.vpc_arn
+                ,
+                subnet_arns: self.subnet_arns
+                ,
+                options: self.options
+                ,
+                tags: self.tags
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetIdMappingWorkflowInput {
+pub struct GetIdMappingWorkflowInput  {
     /// <p>The name of the workflow.</p>
     pub workflow_name: ::std::option::Option<::std::string::String>,
 }
-impl GetIdMappingWorkflowInput {
+impl  GetIdMappingWorkflowInput  {
     /// <p>The name of the workflow.</p>
-    pub fn workflow_name(&self) -> ::std::option::Option<&str> {
+    pub fn workflow_name(&self) -> ::std::option::Option<& str> {
         self.workflow_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetIdMappingWorkflowInputBuilder {
     }
     /// <p>The name of the workflow.</p>
     pub fn set_workflow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_name = input;
-        self
+        self.workflow_name = input; self
     }
     /// <p>The name of the workflow.</p>
     pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_name
     }
     /// Consumes the builder and constructs a [`GetIdMappingWorkflowInput`](crate::operation::get_id_mapping_workflow::GetIdMappingWorkflowInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_id_mapping_workflow::GetIdMappingWorkflowInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_id_mapping_workflow::GetIdMappingWorkflowInput {
-            workflow_name: self.workflow_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_id_mapping_workflow::GetIdMappingWorkflowInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_id_mapping_workflow::GetIdMappingWorkflowInput {
+                workflow_name: self.workflow_name
+                ,
+            }
+        )
     }
 }
+

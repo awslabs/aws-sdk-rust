@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAccessPreviewFindings`](crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`access_preview_id(impl Into<String>)`](crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsFluentBuilder::access_preview_id) / [`set_access_preview_id(Option<String>)`](crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsFluentBuilder::set_access_preview_id):<br>required: **true**<br><p>The unique ID for the access preview.</p><br>
     ///   - [`analyzer_arn(impl Into<String>)`](crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsFluentBuilder::analyzer_arn) / [`set_analyzer_arn(Option<String>)`](crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsFluentBuilder::set_analyzer_arn):<br>required: **true**<br><p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access.</p><br>
     ///   - [`filter(impl Into<String>, Criterion)`](crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsFluentBuilder::filter) / [`set_filter(Option<HashMap::<String, Criterion>>)`](crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsFluentBuilder::set_filter):<br>required: **false**<br><p>Criteria to filter the returned findings.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token used for pagination of results returned.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the response.</p><br>
-    /// - On success, responds with [`ListAccessPreviewFindingsOutput`](crate::operation::list_access_preview_findings::ListAccessPreviewFindingsOutput) with field(s):
+                            /// - On success, responds with [`ListAccessPreviewFindingsOutput`](crate::operation::list_access_preview_findings::ListAccessPreviewFindingsOutput) with field(s):
     ///   - [`findings(Vec::<AccessPreviewFinding>)`](crate::operation::list_access_preview_findings::ListAccessPreviewFindingsOutput::findings): <p>A list of access preview findings that match the specified filter criteria.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_access_preview_findings::ListAccessPreviewFindingsOutput::next_token): <p>A token used for pagination of results returned.</p>
-    /// - On failure, responds with [`SdkError<ListAccessPreviewFindingsError>`](crate::operation::list_access_preview_findings::ListAccessPreviewFindingsError)
+                            /// - On failure, responds with [`SdkError<ListAccessPreviewFindingsError>`](crate::operation::list_access_preview_findings::ListAccessPreviewFindingsError)
     pub fn list_access_preview_findings(&self) -> crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsFluentBuilder {
-        crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

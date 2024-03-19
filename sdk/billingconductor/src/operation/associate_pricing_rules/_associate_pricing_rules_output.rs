@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociatePricingRulesOutput {
+pub struct AssociatePricingRulesOutput  {
     /// <p>The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated with.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl AssociatePricingRulesOutput {
+impl  AssociatePricingRulesOutput  {
     /// <p>The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated with.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for AssociatePricingRulesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AssociatePricingRulesOutput {
     /// Creates a new builder-style object to manufacture [`AssociatePricingRulesOutput`](crate::operation::associate_pricing_rules::AssociatePricingRulesOutput).
     pub fn builder() -> crate::operation::associate_pricing_rules::builders::AssociatePricingRulesOutputBuilder {
@@ -40,27 +40,28 @@ impl AssociatePricingRulesOutputBuilder {
     }
     /// <p>The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated with.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated with.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AssociatePricingRulesOutput`](crate::operation::associate_pricing_rules::AssociatePricingRulesOutput).
     pub fn build(self) -> crate::operation::associate_pricing_rules::AssociatePricingRulesOutput {
         crate::operation::associate_pricing_rules::AssociatePricingRulesOutput {
-            arn: self.arn,
+            arn: self.arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

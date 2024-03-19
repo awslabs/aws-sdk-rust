@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateJobOutput {
+pub struct CreateJobOutput  {
     /// <p>The ARN for the job.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the job was created, in ISO 8601 format.</p>
@@ -10,7 +10,7 @@ pub struct CreateJobOutput {
     /// <p>Details about the job.</p>
     pub details: ::std::option::Option<crate::types::ResponseDetails>,
     /// <p>The errors associated with jobs.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::JobError>>,
+    pub errors: ::std::option::Option<::std::vec::Vec::<crate::types::JobError>>,
     /// <p>The unique identifier for the job.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the job.</p>
@@ -21,47 +21,48 @@ pub struct CreateJobOutput {
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl CreateJobOutput {
+impl  CreateJobOutput  {
     /// <p>The ARN for the job.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The date and time that the job was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Details about the job.</p>
-    pub fn details(&self) -> ::std::option::Option<&crate::types::ResponseDetails> {
+    pub fn details(&self) -> ::std::option::Option<& crate::types::ResponseDetails> {
         self.details.as_ref()
     }
     /// <p>The errors associated with jobs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
-    pub fn errors(&self) -> &[crate::types::JobError] {
-        self.errors.as_deref().unwrap_or_default()
+    pub fn errors(&self) -> & [crate::types::JobError] {
+        self.errors.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The unique identifier for the job.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The state of the job.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::State> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::State> {
         self.state.as_ref()
     }
     /// <p>The job type.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::Type> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::Type> {
         self.r#type.as_ref()
     }
     /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateJobOutput`](crate::operation::create_job::CreateJobOutput).
     pub fn builder() -> crate::operation::create_job::builders::CreateJobOutputBuilder {
@@ -76,7 +77,7 @@ pub struct CreateJobOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) details: ::std::option::Option<crate::types::ResponseDetails>,
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::JobError>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::JobError>>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::State>,
     pub(crate) r#type: ::std::option::Option<crate::types::Type>,
@@ -91,8 +92,7 @@ impl CreateJobOutputBuilder {
     }
     /// <p>The ARN for the job.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN for the job.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +105,7 @@ impl CreateJobOutputBuilder {
     }
     /// <p>The date and time that the job was created, in ISO 8601 format.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time that the job was created, in ISO 8601 format.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -119,8 +118,7 @@ impl CreateJobOutputBuilder {
     }
     /// <p>Details about the job.</p>
     pub fn set_details(mut self, input: ::std::option::Option<crate::types::ResponseDetails>) -> Self {
-        self.details = input;
-        self
+        self.details = input; self
     }
     /// <p>Details about the job.</p>
     pub fn get_details(&self) -> &::std::option::Option<crate::types::ResponseDetails> {
@@ -133,17 +131,16 @@ impl CreateJobOutputBuilder {
     /// <p>The errors associated with jobs.</p>
     pub fn errors(mut self, input: crate::types::JobError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The errors associated with jobs.</p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobError>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::JobError>>) -> Self {
+        self.errors = input; self
     }
     /// <p>The errors associated with jobs.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::JobError>> {
         &self.errors
     }
     /// <p>The unique identifier for the job.</p>
@@ -153,8 +150,7 @@ impl CreateJobOutputBuilder {
     }
     /// <p>The unique identifier for the job.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier for the job.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +163,7 @@ impl CreateJobOutputBuilder {
     }
     /// <p>The state of the job.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::State>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the job.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::State> {
@@ -181,8 +176,7 @@ impl CreateJobOutputBuilder {
     }
     /// <p>The job type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The job type.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
@@ -195,34 +189,42 @@ impl CreateJobOutputBuilder {
     }
     /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateJobOutput`](crate::operation::create_job::CreateJobOutput).
     pub fn build(self) -> crate::operation::create_job::CreateJobOutput {
         crate::operation::create_job::CreateJobOutput {
-            arn: self.arn,
-            created_at: self.created_at,
-            details: self.details,
-            errors: self.errors,
-            id: self.id,
-            state: self.state,
-            r#type: self.r#type,
-            updated_at: self.updated_at,
+            arn: self.arn
+            ,
+            created_at: self.created_at
+            ,
+            details: self.details
+            ,
+            errors: self.errors
+            ,
+            id: self.id
+            ,
+            state: self.state
+            ,
+            r#type: self.r#type
+            ,
+            updated_at: self.updated_at
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

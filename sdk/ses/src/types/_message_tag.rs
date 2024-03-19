@@ -4,7 +4,7 @@
 /// <p>Message tags, which you use with configuration sets, enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MessageTag {
+pub struct MessageTag  {
     /// <p>The name of the tag. The name must meet the following requirements:</p>
     /// <ul>
     /// <li>
@@ -22,7 +22,7 @@ pub struct MessageTag {
     /// </ul>
     pub value: ::std::string::String,
 }
-impl MessageTag {
+impl  MessageTag  {
     /// <p>The name of the tag. The name must meet the following requirements:</p>
     /// <ul>
     /// <li>
@@ -30,9 +30,8 @@ impl MessageTag {
     /// <li>
     /// <p>Contain 256 characters or fewer.</p></li>
     /// </ul>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The value of the tag. The value must meet the following requirements:</p>
     /// <ul>
@@ -41,9 +40,8 @@ impl MessageTag {
     /// <li>
     /// <p>Contain 256 characters or fewer.</p></li>
     /// </ul>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl MessageTag {
@@ -81,8 +79,7 @@ impl MessageTagBuilder {
     /// <p>Contain 256 characters or fewer.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the tag. The name must meet the following requirements:</p>
     /// <ul>
@@ -114,8 +111,7 @@ impl MessageTagBuilder {
     /// <p>Contain 256 characters or fewer.</p></li>
     /// </ul>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the tag. The value must meet the following requirements:</p>
     /// <ul>
@@ -132,19 +128,20 @@ impl MessageTagBuilder {
     /// - [`name`](crate::types::builders::MessageTagBuilder::name)
     /// - [`value`](crate::types::builders::MessageTagBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::MessageTag, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MessageTag {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building MessageTag",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building MessageTag",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MessageTag {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building MessageTag")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building MessageTag")
+                    )?
+                ,
+            }
+        )
     }
 }
+

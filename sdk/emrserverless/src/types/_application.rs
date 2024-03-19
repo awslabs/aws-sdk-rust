@@ -3,7 +3,7 @@
 /// <p>Information about an application. Amazon EMR Serverless uses applications to run jobs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Application {
+pub struct Application  {
     /// <p>The ID of the application.</p>
     pub application_id: ::std::string::String,
     /// <p>The name of the application.</p>
@@ -19,7 +19,7 @@ pub struct Application {
     /// <p>The state details of the application.</p>
     pub state_details: ::std::option::Option<::std::string::String>,
     /// <p>The initial capacity of the application.</p>
-    pub initial_capacity: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::InitialCapacityConfig>>,
+    pub initial_capacity: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::InitialCapacityConfig>>,
     /// <p>The maximum capacity of the application. This is cumulative across all workers at any given point in time during the lifespan of the application is created. No new resources will be created once any one of the defined limits is hit.</p>
     pub maximum_capacity: ::std::option::Option<crate::types::MaximumAllowedResources>,
     /// <p>The date and time when the application run was created.</p>
@@ -27,7 +27,7 @@ pub struct Application {
     /// <p>The date and time when the application run was last updated.</p>
     pub updated_at: ::aws_smithy_types::DateTime,
     /// <p>The tags assigned to the application.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The configuration for an application to automatically start on job submission.</p>
     pub auto_start_configuration: ::std::option::Option<crate::types::AutoStartConfig>,
     /// <p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>
@@ -39,101 +39,94 @@ pub struct Application {
     /// <p>The image configuration applied to all worker types.</p>
     pub image_configuration: ::std::option::Option<crate::types::ImageConfiguration>,
     /// <p>The specification applied to each worker type.</p>
-    pub worker_type_specifications: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecification>>,
+    pub worker_type_specifications: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::WorkerTypeSpecification>>,
     /// <p>The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a> specifications of an application. Each configuration consists of a classification and properties. You use this parameter when creating or updating an application. To see the runtimeConfiguration object of an application, run the <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetApplication.html">GetApplication</a> API operation.</p>
-    pub runtime_configuration: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
+    pub runtime_configuration: ::std::option::Option<::std::vec::Vec::<crate::types::Configuration>>,
     /// <p>The configuration setting for monitoring.</p>
     pub monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
 }
-impl Application {
+impl  Application  {
     /// <p>The ID of the application.</p>
-    pub fn application_id(&self) -> &str {
-        use std::ops::Deref;
-        self.application_id.deref()
+    pub fn application_id(&self) -> & str {
+        use std::ops::Deref; self.application_id.deref()
     }
     /// <p>The name of the application.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the application.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The Amazon EMR release associated with the application.</p>
-    pub fn release_label(&self) -> &str {
-        use std::ops::Deref;
-        self.release_label.deref()
+    pub fn release_label(&self) -> & str {
+        use std::ops::Deref; self.release_label.deref()
     }
     /// <p>The type of application, such as Spark or Hive.</p>
-    pub fn r#type(&self) -> &str {
-        use std::ops::Deref;
-        self.r#type.deref()
+    pub fn r#type(&self) -> & str {
+        use std::ops::Deref; self.r#type.deref()
     }
     /// <p>The state of the application.</p>
-    pub fn state(&self) -> &crate::types::ApplicationState {
+    pub fn state(&self) -> & crate::types::ApplicationState {
         &self.state
     }
     /// <p>The state details of the application.</p>
-    pub fn state_details(&self) -> ::std::option::Option<&str> {
+    pub fn state_details(&self) -> ::std::option::Option<& str> {
         self.state_details.as_deref()
     }
     /// <p>The initial capacity of the application.</p>
-    pub fn initial_capacity(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::InitialCapacityConfig>> {
+    pub fn initial_capacity(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::InitialCapacityConfig>> {
         self.initial_capacity.as_ref()
     }
     /// <p>The maximum capacity of the application. This is cumulative across all workers at any given point in time during the lifespan of the application is created. No new resources will be created once any one of the defined limits is hit.</p>
-    pub fn maximum_capacity(&self) -> ::std::option::Option<&crate::types::MaximumAllowedResources> {
+    pub fn maximum_capacity(&self) -> ::std::option::Option<& crate::types::MaximumAllowedResources> {
         self.maximum_capacity.as_ref()
     }
     /// <p>The date and time when the application run was created.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The date and time when the application run was last updated.</p>
-    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.updated_at
     }
     /// <p>The tags assigned to the application.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The configuration for an application to automatically start on job submission.</p>
-    pub fn auto_start_configuration(&self) -> ::std::option::Option<&crate::types::AutoStartConfig> {
+    pub fn auto_start_configuration(&self) -> ::std::option::Option<& crate::types::AutoStartConfig> {
         self.auto_start_configuration.as_ref()
     }
     /// <p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>
-    pub fn auto_stop_configuration(&self) -> ::std::option::Option<&crate::types::AutoStopConfig> {
+    pub fn auto_stop_configuration(&self) -> ::std::option::Option<& crate::types::AutoStopConfig> {
         self.auto_stop_configuration.as_ref()
     }
     /// <p>The network configuration for customer VPC connectivity for the application.</p>
-    pub fn network_configuration(&self) -> ::std::option::Option<&crate::types::NetworkConfiguration> {
+    pub fn network_configuration(&self) -> ::std::option::Option<& crate::types::NetworkConfiguration> {
         self.network_configuration.as_ref()
     }
     /// <p>The CPU architecture of an application.</p>
-    pub fn architecture(&self) -> ::std::option::Option<&crate::types::Architecture> {
+    pub fn architecture(&self) -> ::std::option::Option<& crate::types::Architecture> {
         self.architecture.as_ref()
     }
     /// <p>The image configuration applied to all worker types.</p>
-    pub fn image_configuration(&self) -> ::std::option::Option<&crate::types::ImageConfiguration> {
+    pub fn image_configuration(&self) -> ::std::option::Option<& crate::types::ImageConfiguration> {
         self.image_configuration.as_ref()
     }
     /// <p>The specification applied to each worker type.</p>
-    pub fn worker_type_specifications(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecification>> {
+    pub fn worker_type_specifications(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::WorkerTypeSpecification>> {
         self.worker_type_specifications.as_ref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a> specifications of an application. Each configuration consists of a classification and properties. You use this parameter when creating or updating an application. To see the runtimeConfiguration object of an application, run the <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetApplication.html">GetApplication</a> API operation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.runtime_configuration.is_none()`.
-    pub fn runtime_configuration(&self) -> &[crate::types::Configuration] {
-        self.runtime_configuration.as_deref().unwrap_or_default()
+    pub fn runtime_configuration(&self) -> & [crate::types::Configuration] {
+        self.runtime_configuration.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The configuration setting for monitoring.</p>
-    pub fn monitoring_configuration(&self) -> ::std::option::Option<&crate::types::MonitoringConfiguration> {
+    pub fn monitoring_configuration(&self) -> ::std::option::Option<& crate::types::MonitoringConfiguration> {
         self.monitoring_configuration.as_ref()
     }
 }
@@ -155,19 +148,18 @@ pub struct ApplicationBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ApplicationState>,
     pub(crate) state_details: ::std::option::Option<::std::string::String>,
-    pub(crate) initial_capacity: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::InitialCapacityConfig>>,
+    pub(crate) initial_capacity: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::InitialCapacityConfig>>,
     pub(crate) maximum_capacity: ::std::option::Option<crate::types::MaximumAllowedResources>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) auto_start_configuration: ::std::option::Option<crate::types::AutoStartConfig>,
     pub(crate) auto_stop_configuration: ::std::option::Option<crate::types::AutoStopConfig>,
     pub(crate) network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     pub(crate) architecture: ::std::option::Option<crate::types::Architecture>,
     pub(crate) image_configuration: ::std::option::Option<crate::types::ImageConfiguration>,
-    pub(crate) worker_type_specifications:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecification>>,
-    pub(crate) runtime_configuration: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
+    pub(crate) worker_type_specifications: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::WorkerTypeSpecification>>,
+    pub(crate) runtime_configuration: ::std::option::Option<::std::vec::Vec::<crate::types::Configuration>>,
     pub(crate) monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
 }
 impl ApplicationBuilder {
@@ -179,8 +171,7 @@ impl ApplicationBuilder {
     }
     /// <p>The ID of the application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The ID of the application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -193,8 +184,7 @@ impl ApplicationBuilder {
     }
     /// <p>The name of the application.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the application.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -208,8 +198,7 @@ impl ApplicationBuilder {
     }
     /// <p>The ARN of the application.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the application.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -223,8 +212,7 @@ impl ApplicationBuilder {
     }
     /// <p>The Amazon EMR release associated with the application.</p>
     pub fn set_release_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.release_label = input;
-        self
+        self.release_label = input; self
     }
     /// <p>The Amazon EMR release associated with the application.</p>
     pub fn get_release_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -238,8 +226,7 @@ impl ApplicationBuilder {
     }
     /// <p>The type of application, such as Spark or Hive.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of application, such as Spark or Hive.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -253,8 +240,7 @@ impl ApplicationBuilder {
     }
     /// <p>The state of the application.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ApplicationState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the application.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ApplicationState> {
@@ -267,8 +253,7 @@ impl ApplicationBuilder {
     }
     /// <p>The state details of the application.</p>
     pub fn set_state_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_details = input;
-        self
+        self.state_details = input; self
     }
     /// <p>The state details of the application.</p>
     pub fn get_state_details(&self) -> &::std::option::Option<::std::string::String> {
@@ -281,22 +266,16 @@ impl ApplicationBuilder {
     /// <p>The initial capacity of the application.</p>
     pub fn initial_capacity(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::InitialCapacityConfig) -> Self {
         let mut hash_map = self.initial_capacity.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.initial_capacity = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.initial_capacity = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The initial capacity of the application.</p>
-    pub fn set_initial_capacity(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::InitialCapacityConfig>>,
-    ) -> Self {
-        self.initial_capacity = input;
-        self
+    pub fn set_initial_capacity(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::InitialCapacityConfig>>) -> Self {
+        self.initial_capacity = input; self
     }
     /// <p>The initial capacity of the application.</p>
-    pub fn get_initial_capacity(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::InitialCapacityConfig>> {
+    pub fn get_initial_capacity(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::InitialCapacityConfig>> {
         &self.initial_capacity
     }
     /// <p>The maximum capacity of the application. This is cumulative across all workers at any given point in time during the lifespan of the application is created. No new resources will be created once any one of the defined limits is hit.</p>
@@ -306,8 +285,7 @@ impl ApplicationBuilder {
     }
     /// <p>The maximum capacity of the application. This is cumulative across all workers at any given point in time during the lifespan of the application is created. No new resources will be created once any one of the defined limits is hit.</p>
     pub fn set_maximum_capacity(mut self, input: ::std::option::Option<crate::types::MaximumAllowedResources>) -> Self {
-        self.maximum_capacity = input;
-        self
+        self.maximum_capacity = input; self
     }
     /// <p>The maximum capacity of the application. This is cumulative across all workers at any given point in time during the lifespan of the application is created. No new resources will be created once any one of the defined limits is hit.</p>
     pub fn get_maximum_capacity(&self) -> &::std::option::Option<crate::types::MaximumAllowedResources> {
@@ -321,8 +299,7 @@ impl ApplicationBuilder {
     }
     /// <p>The date and time when the application run was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time when the application run was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -336,8 +313,7 @@ impl ApplicationBuilder {
     }
     /// <p>The date and time when the application run was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The date and time when the application run was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -350,17 +326,16 @@ impl ApplicationBuilder {
     /// <p>The tags assigned to the application.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags assigned to the application.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags assigned to the application.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The configuration for an application to automatically start on job submission.</p>
@@ -370,8 +345,7 @@ impl ApplicationBuilder {
     }
     /// <p>The configuration for an application to automatically start on job submission.</p>
     pub fn set_auto_start_configuration(mut self, input: ::std::option::Option<crate::types::AutoStartConfig>) -> Self {
-        self.auto_start_configuration = input;
-        self
+        self.auto_start_configuration = input; self
     }
     /// <p>The configuration for an application to automatically start on job submission.</p>
     pub fn get_auto_start_configuration(&self) -> &::std::option::Option<crate::types::AutoStartConfig> {
@@ -384,8 +358,7 @@ impl ApplicationBuilder {
     }
     /// <p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>
     pub fn set_auto_stop_configuration(mut self, input: ::std::option::Option<crate::types::AutoStopConfig>) -> Self {
-        self.auto_stop_configuration = input;
-        self
+        self.auto_stop_configuration = input; self
     }
     /// <p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>
     pub fn get_auto_stop_configuration(&self) -> &::std::option::Option<crate::types::AutoStopConfig> {
@@ -398,8 +371,7 @@ impl ApplicationBuilder {
     }
     /// <p>The network configuration for customer VPC connectivity for the application.</p>
     pub fn set_network_configuration(mut self, input: ::std::option::Option<crate::types::NetworkConfiguration>) -> Self {
-        self.network_configuration = input;
-        self
+        self.network_configuration = input; self
     }
     /// <p>The network configuration for customer VPC connectivity for the application.</p>
     pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
@@ -412,8 +384,7 @@ impl ApplicationBuilder {
     }
     /// <p>The CPU architecture of an application.</p>
     pub fn set_architecture(mut self, input: ::std::option::Option<crate::types::Architecture>) -> Self {
-        self.architecture = input;
-        self
+        self.architecture = input; self
     }
     /// <p>The CPU architecture of an application.</p>
     pub fn get_architecture(&self) -> &::std::option::Option<crate::types::Architecture> {
@@ -426,8 +397,7 @@ impl ApplicationBuilder {
     }
     /// <p>The image configuration applied to all worker types.</p>
     pub fn set_image_configuration(mut self, input: ::std::option::Option<crate::types::ImageConfiguration>) -> Self {
-        self.image_configuration = input;
-        self
+        self.image_configuration = input; self
     }
     /// <p>The image configuration applied to all worker types.</p>
     pub fn get_image_configuration(&self) -> &::std::option::Option<crate::types::ImageConfiguration> {
@@ -438,28 +408,18 @@ impl ApplicationBuilder {
     /// To override the contents of this collection use [`set_worker_type_specifications`](Self::set_worker_type_specifications).
     ///
     /// <p>The specification applied to each worker type.</p>
-    pub fn worker_type_specifications(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::WorkerTypeSpecification,
-    ) -> Self {
+    pub fn worker_type_specifications(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::WorkerTypeSpecification) -> Self {
         let mut hash_map = self.worker_type_specifications.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.worker_type_specifications = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.worker_type_specifications = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The specification applied to each worker type.</p>
-    pub fn set_worker_type_specifications(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecification>>,
-    ) -> Self {
-        self.worker_type_specifications = input;
-        self
+    pub fn set_worker_type_specifications(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::WorkerTypeSpecification>>) -> Self {
+        self.worker_type_specifications = input; self
     }
     /// <p>The specification applied to each worker type.</p>
-    pub fn get_worker_type_specifications(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecification>> {
+    pub fn get_worker_type_specifications(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::WorkerTypeSpecification>> {
         &self.worker_type_specifications
     }
     /// Appends an item to `runtime_configuration`.
@@ -469,17 +429,16 @@ impl ApplicationBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a> specifications of an application. Each configuration consists of a classification and properties. You use this parameter when creating or updating an application. To see the runtimeConfiguration object of an application, run the <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetApplication.html">GetApplication</a> API operation.</p>
     pub fn runtime_configuration(mut self, input: crate::types::Configuration) -> Self {
         let mut v = self.runtime_configuration.unwrap_or_default();
-        v.push(input);
-        self.runtime_configuration = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.runtime_configuration = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a> specifications of an application. Each configuration consists of a classification and properties. You use this parameter when creating or updating an application. To see the runtimeConfiguration object of an application, run the <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetApplication.html">GetApplication</a> API operation.</p>
-    pub fn set_runtime_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>) -> Self {
-        self.runtime_configuration = input;
-        self
+    pub fn set_runtime_configuration(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Configuration>>) -> Self {
+        self.runtime_configuration = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a> specifications of an application. Each configuration consists of a classification and properties. You use this parameter when creating or updating an application. To see the runtimeConfiguration object of an application, run the <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetApplication.html">GetApplication</a> API operation.</p>
-    pub fn get_runtime_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
+    pub fn get_runtime_configuration(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Configuration>> {
         &self.runtime_configuration
     }
     /// <p>The configuration setting for monitoring.</p>
@@ -489,8 +448,7 @@ impl ApplicationBuilder {
     }
     /// <p>The configuration setting for monitoring.</p>
     pub fn set_monitoring_configuration(mut self, input: ::std::option::Option<crate::types::MonitoringConfiguration>) -> Self {
-        self.monitoring_configuration = input;
-        self
+        self.monitoring_configuration = input; self
     }
     /// <p>The configuration setting for monitoring.</p>
     pub fn get_monitoring_configuration(&self) -> &::std::option::Option<crate::types::MonitoringConfiguration> {
@@ -506,62 +464,71 @@ impl ApplicationBuilder {
     /// - [`created_at`](crate::types::builders::ApplicationBuilder::created_at)
     /// - [`updated_at`](crate::types::builders::ApplicationBuilder::updated_at)
     pub fn build(self) -> ::std::result::Result<crate::types::Application, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Application {
-            application_id: self.application_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application_id",
-                    "application_id was not specified but it is required when building Application",
-                )
-            })?,
-            name: self.name,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building Application",
-                )
-            })?,
-            release_label: self.release_label.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "release_label",
-                    "release_label was not specified but it is required when building Application",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building Application",
-                )
-            })?,
-            state: self.state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state",
-                    "state was not specified but it is required when building Application",
-                )
-            })?,
-            state_details: self.state_details,
-            initial_capacity: self.initial_capacity,
-            maximum_capacity: self.maximum_capacity,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building Application",
-                )
-            })?,
-            updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "updated_at",
-                    "updated_at was not specified but it is required when building Application",
-                )
-            })?,
-            tags: self.tags,
-            auto_start_configuration: self.auto_start_configuration,
-            auto_stop_configuration: self.auto_stop_configuration,
-            network_configuration: self.network_configuration,
-            architecture: self.architecture,
-            image_configuration: self.image_configuration,
-            worker_type_specifications: self.worker_type_specifications,
-            runtime_configuration: self.runtime_configuration,
-            monitoring_configuration: self.monitoring_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Application {
+                application_id: self.application_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_id", "application_id was not specified but it is required when building Application")
+                    )?
+                ,
+                name: self.name
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building Application")
+                    )?
+                ,
+                release_label: self.release_label
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("release_label", "release_label was not specified but it is required when building Application")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building Application")
+                    )?
+                ,
+                state: self.state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state", "state was not specified but it is required when building Application")
+                    )?
+                ,
+                state_details: self.state_details
+                ,
+                initial_capacity: self.initial_capacity
+                ,
+                maximum_capacity: self.maximum_capacity
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building Application")
+                    )?
+                ,
+                updated_at: self.updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("updated_at", "updated_at was not specified but it is required when building Application")
+                    )?
+                ,
+                tags: self.tags
+                ,
+                auto_start_configuration: self.auto_start_configuration
+                ,
+                auto_stop_configuration: self.auto_stop_configuration
+                ,
+                network_configuration: self.network_configuration
+                ,
+                architecture: self.architecture
+                ,
+                image_configuration: self.image_configuration
+                ,
+                worker_type_specifications: self.worker_type_specifications
+                ,
+                runtime_configuration: self.runtime_configuration
+                ,
+                monitoring_configuration: self.monitoring_configuration
+                ,
+            }
+        )
     }
 }
+

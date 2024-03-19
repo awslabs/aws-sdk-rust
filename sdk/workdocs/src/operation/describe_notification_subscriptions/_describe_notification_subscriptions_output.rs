@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeNotificationSubscriptionsOutput {
+pub struct DescribeNotificationSubscriptionsOutput  {
     /// <p>The subscriptions.</p>
-    pub subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>,
+    pub subscriptions: ::std::option::Option<::std::vec::Vec::<crate::types::Subscription>>,
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeNotificationSubscriptionsOutput {
+impl  DescribeNotificationSubscriptionsOutput  {
     /// <p>The subscriptions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscriptions.is_none()`.
-    pub fn subscriptions(&self) -> &[crate::types::Subscription] {
-        self.subscriptions.as_deref().unwrap_or_default()
+    pub fn subscriptions(&self) -> & [crate::types::Subscription] {
+        self.subscriptions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeNotificationSubscriptionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeNotificationSubscriptionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeNotificationSubscriptionsOutput`](crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsOutput).
     pub fn builder() -> crate::operation::describe_notification_subscriptions::builders::DescribeNotificationSubscriptionsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeNotificationSubscriptionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeNotificationSubscriptionsOutputBuilder {
-    pub(crate) subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>,
+    pub(crate) subscriptions: ::std::option::Option<::std::vec::Vec::<crate::types::Subscription>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeNotificationSubscriptionsOutputBuilder {
     /// <p>The subscriptions.</p>
     pub fn subscriptions(mut self, input: crate::types::Subscription) -> Self {
         let mut v = self.subscriptions.unwrap_or_default();
-        v.push(input);
-        self.subscriptions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.subscriptions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The subscriptions.</p>
-    pub fn set_subscriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>) -> Self {
-        self.subscriptions = input;
-        self
+    pub fn set_subscriptions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Subscription>>) -> Self {
+        self.subscriptions = input; self
     }
     /// <p>The subscriptions.</p>
-    pub fn get_subscriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscription>> {
+    pub fn get_subscriptions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Subscription>> {
         &self.subscriptions
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
@@ -69,28 +69,30 @@ impl DescribeNotificationSubscriptionsOutputBuilder {
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeNotificationSubscriptionsOutput`](crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsOutput).
     pub fn build(self) -> crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsOutput {
         crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsOutput {
-            subscriptions: self.subscriptions,
-            marker: self.marker,
+            subscriptions: self.subscriptions
+            ,
+            marker: self.marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

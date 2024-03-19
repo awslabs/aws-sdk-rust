@@ -3,7 +3,7 @@
 /// <p>Incident Manager engaging a contact's contact channel.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Page {
+pub struct Page  {
     /// <p>The Amazon Resource Name (ARN) of the page to the contact channel.</p>
     pub page_arn: ::std::string::String,
     /// <p>The ARN of the engagement that this page is part of.</p>
@@ -21,41 +21,37 @@ pub struct Page {
     /// <p>The time that the contact channel acknowledged engagement.</p>
     pub read_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl Page {
+impl  Page  {
     /// <p>The Amazon Resource Name (ARN) of the page to the contact channel.</p>
-    pub fn page_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.page_arn.deref()
+    pub fn page_arn(&self) -> & str {
+        use std::ops::Deref; self.page_arn.deref()
     }
     /// <p>The ARN of the engagement that this page is part of.</p>
-    pub fn engagement_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.engagement_arn.deref()
+    pub fn engagement_arn(&self) -> & str {
+        use std::ops::Deref; self.engagement_arn.deref()
     }
     /// <p>The ARN of the contact that Incident Manager is engaging.</p>
-    pub fn contact_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.contact_arn.deref()
+    pub fn contact_arn(&self) -> & str {
+        use std::ops::Deref; self.contact_arn.deref()
     }
     /// <p>The user that started the engagement.</p>
-    pub fn sender(&self) -> &str {
-        use std::ops::Deref;
-        self.sender.deref()
+    pub fn sender(&self) -> & str {
+        use std::ops::Deref; self.sender.deref()
     }
     /// <p>The ARN of the incident that's engaging the contact channel.</p>
-    pub fn incident_id(&self) -> ::std::option::Option<&str> {
+    pub fn incident_id(&self) -> ::std::option::Option<& str> {
         self.incident_id.as_deref()
     }
     /// <p>The time that Incident Manager engaged the contact channel.</p>
-    pub fn sent_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn sent_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.sent_time.as_ref()
     }
     /// <p>The time the message was delivered to the contact channel.</p>
-    pub fn delivery_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn delivery_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.delivery_time.as_ref()
     }
     /// <p>The time that the contact channel acknowledged engagement.</p>
-    pub fn read_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn read_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.read_time.as_ref()
     }
 }
@@ -88,8 +84,7 @@ impl PageBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the page to the contact channel.</p>
     pub fn set_page_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.page_arn = input;
-        self
+        self.page_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the page to the contact channel.</p>
     pub fn get_page_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +98,7 @@ impl PageBuilder {
     }
     /// <p>The ARN of the engagement that this page is part of.</p>
     pub fn set_engagement_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engagement_arn = input;
-        self
+        self.engagement_arn = input; self
     }
     /// <p>The ARN of the engagement that this page is part of.</p>
     pub fn get_engagement_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +112,7 @@ impl PageBuilder {
     }
     /// <p>The ARN of the contact that Incident Manager is engaging.</p>
     pub fn set_contact_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_arn = input;
-        self
+        self.contact_arn = input; self
     }
     /// <p>The ARN of the contact that Incident Manager is engaging.</p>
     pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +126,7 @@ impl PageBuilder {
     }
     /// <p>The user that started the engagement.</p>
     pub fn set_sender(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sender = input;
-        self
+        self.sender = input; self
     }
     /// <p>The user that started the engagement.</p>
     pub fn get_sender(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +139,7 @@ impl PageBuilder {
     }
     /// <p>The ARN of the incident that's engaging the contact channel.</p>
     pub fn set_incident_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.incident_id = input;
-        self
+        self.incident_id = input; self
     }
     /// <p>The ARN of the incident that's engaging the contact channel.</p>
     pub fn get_incident_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,8 +152,7 @@ impl PageBuilder {
     }
     /// <p>The time that Incident Manager engaged the contact channel.</p>
     pub fn set_sent_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.sent_time = input;
-        self
+        self.sent_time = input; self
     }
     /// <p>The time that Incident Manager engaged the contact channel.</p>
     pub fn get_sent_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -175,8 +165,7 @@ impl PageBuilder {
     }
     /// <p>The time the message was delivered to the contact channel.</p>
     pub fn set_delivery_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.delivery_time = input;
-        self
+        self.delivery_time = input; self
     }
     /// <p>The time the message was delivered to the contact channel.</p>
     pub fn get_delivery_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -189,8 +178,7 @@ impl PageBuilder {
     }
     /// <p>The time that the contact channel acknowledged engagement.</p>
     pub fn set_read_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.read_time = input;
-        self
+        self.read_time = input; self
     }
     /// <p>The time that the contact channel acknowledged engagement.</p>
     pub fn get_read_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -203,35 +191,38 @@ impl PageBuilder {
     /// - [`contact_arn`](crate::types::builders::PageBuilder::contact_arn)
     /// - [`sender`](crate::types::builders::PageBuilder::sender)
     pub fn build(self) -> ::std::result::Result<crate::types::Page, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Page {
-            page_arn: self.page_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "page_arn",
-                    "page_arn was not specified but it is required when building Page",
-                )
-            })?,
-            engagement_arn: self.engagement_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "engagement_arn",
-                    "engagement_arn was not specified but it is required when building Page",
-                )
-            })?,
-            contact_arn: self.contact_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "contact_arn",
-                    "contact_arn was not specified but it is required when building Page",
-                )
-            })?,
-            sender: self.sender.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sender",
-                    "sender was not specified but it is required when building Page",
-                )
-            })?,
-            incident_id: self.incident_id,
-            sent_time: self.sent_time,
-            delivery_time: self.delivery_time,
-            read_time: self.read_time,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Page {
+                page_arn: self.page_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("page_arn", "page_arn was not specified but it is required when building Page")
+                    )?
+                ,
+                engagement_arn: self.engagement_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("engagement_arn", "engagement_arn was not specified but it is required when building Page")
+                    )?
+                ,
+                contact_arn: self.contact_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("contact_arn", "contact_arn was not specified but it is required when building Page")
+                    )?
+                ,
+                sender: self.sender
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sender", "sender was not specified but it is required when building Page")
+                    )?
+                ,
+                incident_id: self.incident_id
+                ,
+                sent_time: self.sent_time
+                ,
+                delivery_time: self.delivery_time
+                ,
+                read_time: self.read_time
+                ,
+            }
+        )
     }
 }
+

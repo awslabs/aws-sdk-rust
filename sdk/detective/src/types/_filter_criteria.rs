@@ -3,7 +3,7 @@
 /// <p>Details on the criteria used to define the filter for investigation results.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FilterCriteria {
+pub struct FilterCriteria  {
     /// <p>Filter the investigation results based on the severity.</p>
     pub severity: ::std::option::Option<crate::types::StringFilter>,
     /// <p>Filter the investigation results based on the status.</p>
@@ -15,25 +15,25 @@ pub struct FilterCriteria {
     /// <p>Filter the investigation results based on when the investigation was created.</p>
     pub created_time: ::std::option::Option<crate::types::DateFilter>,
 }
-impl FilterCriteria {
+impl  FilterCriteria  {
     /// <p>Filter the investigation results based on the severity.</p>
-    pub fn severity(&self) -> ::std::option::Option<&crate::types::StringFilter> {
+    pub fn severity(&self) -> ::std::option::Option<& crate::types::StringFilter> {
         self.severity.as_ref()
     }
     /// <p>Filter the investigation results based on the status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::StringFilter> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::StringFilter> {
         self.status.as_ref()
     }
     /// <p>Filter the investigation results based on the state.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::StringFilter> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::StringFilter> {
         self.state.as_ref()
     }
     /// <p>Filter the investigation results based on the Amazon Resource Name (ARN) of the entity.</p>
-    pub fn entity_arn(&self) -> ::std::option::Option<&crate::types::StringFilter> {
+    pub fn entity_arn(&self) -> ::std::option::Option<& crate::types::StringFilter> {
         self.entity_arn.as_ref()
     }
     /// <p>Filter the investigation results based on when the investigation was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&crate::types::DateFilter> {
+    pub fn created_time(&self) -> ::std::option::Option<& crate::types::DateFilter> {
         self.created_time.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl FilterCriteriaBuilder {
     }
     /// <p>Filter the investigation results based on the severity.</p>
     pub fn set_severity(mut self, input: ::std::option::Option<crate::types::StringFilter>) -> Self {
-        self.severity = input;
-        self
+        self.severity = input; self
     }
     /// <p>Filter the investigation results based on the severity.</p>
     pub fn get_severity(&self) -> &::std::option::Option<crate::types::StringFilter> {
@@ -76,8 +75,7 @@ impl FilterCriteriaBuilder {
     }
     /// <p>Filter the investigation results based on the status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StringFilter>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Filter the investigation results based on the status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::StringFilter> {
@@ -90,8 +88,7 @@ impl FilterCriteriaBuilder {
     }
     /// <p>Filter the investigation results based on the state.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::StringFilter>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Filter the investigation results based on the state.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::StringFilter> {
@@ -104,8 +101,7 @@ impl FilterCriteriaBuilder {
     }
     /// <p>Filter the investigation results based on the Amazon Resource Name (ARN) of the entity.</p>
     pub fn set_entity_arn(mut self, input: ::std::option::Option<crate::types::StringFilter>) -> Self {
-        self.entity_arn = input;
-        self
+        self.entity_arn = input; self
     }
     /// <p>Filter the investigation results based on the Amazon Resource Name (ARN) of the entity.</p>
     pub fn get_entity_arn(&self) -> &::std::option::Option<crate::types::StringFilter> {
@@ -118,8 +114,7 @@ impl FilterCriteriaBuilder {
     }
     /// <p>Filter the investigation results based on when the investigation was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<crate::types::DateFilter>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>Filter the investigation results based on when the investigation was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<crate::types::DateFilter> {
@@ -128,11 +123,17 @@ impl FilterCriteriaBuilder {
     /// Consumes the builder and constructs a [`FilterCriteria`](crate::types::FilterCriteria).
     pub fn build(self) -> crate::types::FilterCriteria {
         crate::types::FilterCriteria {
-            severity: self.severity,
-            status: self.status,
-            state: self.state,
-            entity_arn: self.entity_arn,
-            created_time: self.created_time,
+            severity: self.severity
+            ,
+            status: self.status
+            ,
+            state: self.state
+            ,
+            entity_arn: self.entity_arn
+            ,
+            created_time: self.created_time
+            ,
         }
     }
 }
+

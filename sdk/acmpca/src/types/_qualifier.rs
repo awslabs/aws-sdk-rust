@@ -3,15 +3,14 @@
 /// <p>Defines a <code>PolicyInformation</code> qualifier. Amazon Web Services Private CA supports the <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.4">certification practice statement (CPS) qualifier</a> defined in RFC 5280.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Qualifier {
+pub struct Qualifier  {
     /// <p>Contains a pointer to a certification practice statement (CPS) published by the CA.</p>
     pub cps_uri: ::std::string::String,
 }
-impl Qualifier {
+impl  Qualifier  {
     /// <p>Contains a pointer to a certification practice statement (CPS) published by the CA.</p>
-    pub fn cps_uri(&self) -> &str {
-        use std::ops::Deref;
-        self.cps_uri.deref()
+    pub fn cps_uri(&self) -> & str {
+        use std::ops::Deref; self.cps_uri.deref()
     }
 }
 impl Qualifier {
@@ -36,8 +35,7 @@ impl QualifierBuilder {
     }
     /// <p>Contains a pointer to a certification practice statement (CPS) published by the CA.</p>
     pub fn set_cps_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cps_uri = input;
-        self
+        self.cps_uri = input; self
     }
     /// <p>Contains a pointer to a certification practice statement (CPS) published by the CA.</p>
     pub fn get_cps_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl QualifierBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`cps_uri`](crate::types::builders::QualifierBuilder::cps_uri)
     pub fn build(self) -> ::std::result::Result<crate::types::Qualifier, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Qualifier {
-            cps_uri: self.cps_uri.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "cps_uri",
-                    "cps_uri was not specified but it is required when building Qualifier",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Qualifier {
+                cps_uri: self.cps_uri
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("cps_uri", "cps_uri was not specified but it is required when building Qualifier")
+                    )?
+                ,
+            }
+        )
     }
 }
+

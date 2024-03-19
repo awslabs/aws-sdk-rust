@@ -39,3 +39,4 @@ pub mod untag_resource;
 
 /// Types for the `UpdateNotificationRule` operation.
 pub mod update_notification_rule;
+

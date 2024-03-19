@@ -3,7 +3,7 @@
 /// <p>Information about the state of the domain relative to the latest service software.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsElasticsearchDomainServiceSoftwareOptions {
+pub struct AwsElasticsearchDomainServiceSoftwareOptions  {
     /// <p>The epoch time when the deployment window closes for required updates. After this time, Amazon OpenSearch Service schedules the software upgrade automatically.</p>
     pub automated_update_date: ::std::option::Option<::std::string::String>,
     /// <p>Whether a request to update the domain can be canceled.</p>
@@ -31,9 +31,9 @@ pub struct AwsElasticsearchDomainServiceSoftwareOptions {
     /// </ul>
     pub update_status: ::std::option::Option<::std::string::String>,
 }
-impl AwsElasticsearchDomainServiceSoftwareOptions {
+impl  AwsElasticsearchDomainServiceSoftwareOptions  {
     /// <p>The epoch time when the deployment window closes for required updates. After this time, Amazon OpenSearch Service schedules the software upgrade automatically.</p>
-    pub fn automated_update_date(&self) -> ::std::option::Option<&str> {
+    pub fn automated_update_date(&self) -> ::std::option::Option<& str> {
         self.automated_update_date.as_deref()
     }
     /// <p>Whether a request to update the domain can be canceled.</p>
@@ -41,15 +41,15 @@ impl AwsElasticsearchDomainServiceSoftwareOptions {
         self.cancellable
     }
     /// <p>The version of the service software that is currently installed on the domain.</p>
-    pub fn current_version(&self) -> ::std::option::Option<&str> {
+    pub fn current_version(&self) -> ::std::option::Option<& str> {
         self.current_version.as_deref()
     }
     /// <p>A more detailed description of the service software status.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The most recent version of the service software.</p>
-    pub fn new_version(&self) -> ::std::option::Option<&str> {
+    pub fn new_version(&self) -> ::std::option::Option<& str> {
         self.new_version.as_deref()
     }
     /// <p>Whether a service software update is available for the domain.</p>
@@ -69,7 +69,7 @@ impl AwsElasticsearchDomainServiceSoftwareOptions {
     /// <li>
     /// <p><code>PENDING_UPDATE</code></p></li>
     /// </ul>
-    pub fn update_status(&self) -> ::std::option::Option<&str> {
+    pub fn update_status(&self) -> ::std::option::Option<& str> {
         self.update_status.as_deref()
     }
 }
@@ -100,8 +100,7 @@ impl AwsElasticsearchDomainServiceSoftwareOptionsBuilder {
     }
     /// <p>The epoch time when the deployment window closes for required updates. After this time, Amazon OpenSearch Service schedules the software upgrade automatically.</p>
     pub fn set_automated_update_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.automated_update_date = input;
-        self
+        self.automated_update_date = input; self
     }
     /// <p>The epoch time when the deployment window closes for required updates. After this time, Amazon OpenSearch Service schedules the software upgrade automatically.</p>
     pub fn get_automated_update_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +113,7 @@ impl AwsElasticsearchDomainServiceSoftwareOptionsBuilder {
     }
     /// <p>Whether a request to update the domain can be canceled.</p>
     pub fn set_cancellable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.cancellable = input;
-        self
+        self.cancellable = input; self
     }
     /// <p>Whether a request to update the domain can be canceled.</p>
     pub fn get_cancellable(&self) -> &::std::option::Option<bool> {
@@ -128,8 +126,7 @@ impl AwsElasticsearchDomainServiceSoftwareOptionsBuilder {
     }
     /// <p>The version of the service software that is currently installed on the domain.</p>
     pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.current_version = input;
-        self
+        self.current_version = input; self
     }
     /// <p>The version of the service software that is currently installed on the domain.</p>
     pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +139,7 @@ impl AwsElasticsearchDomainServiceSoftwareOptionsBuilder {
     }
     /// <p>A more detailed description of the service software status.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A more detailed description of the service software status.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,8 +152,7 @@ impl AwsElasticsearchDomainServiceSoftwareOptionsBuilder {
     }
     /// <p>The most recent version of the service software.</p>
     pub fn set_new_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.new_version = input;
-        self
+        self.new_version = input; self
     }
     /// <p>The most recent version of the service software.</p>
     pub fn get_new_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,8 +165,7 @@ impl AwsElasticsearchDomainServiceSoftwareOptionsBuilder {
     }
     /// <p>Whether a service software update is available for the domain.</p>
     pub fn set_update_available(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.update_available = input;
-        self
+        self.update_available = input; self
     }
     /// <p>Whether a service software update is available for the domain.</p>
     pub fn get_update_available(&self) -> &::std::option::Option<bool> {
@@ -208,8 +202,7 @@ impl AwsElasticsearchDomainServiceSoftwareOptionsBuilder {
     /// <p><code>PENDING_UPDATE</code></p></li>
     /// </ul>
     pub fn set_update_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.update_status = input;
-        self
+        self.update_status = input; self
     }
     /// <p>The status of the service software update. Valid values are as follows:</p>
     /// <ul>
@@ -230,13 +223,21 @@ impl AwsElasticsearchDomainServiceSoftwareOptionsBuilder {
     /// Consumes the builder and constructs a [`AwsElasticsearchDomainServiceSoftwareOptions`](crate::types::AwsElasticsearchDomainServiceSoftwareOptions).
     pub fn build(self) -> crate::types::AwsElasticsearchDomainServiceSoftwareOptions {
         crate::types::AwsElasticsearchDomainServiceSoftwareOptions {
-            automated_update_date: self.automated_update_date,
-            cancellable: self.cancellable,
-            current_version: self.current_version,
-            description: self.description,
-            new_version: self.new_version,
-            update_available: self.update_available,
-            update_status: self.update_status,
+            automated_update_date: self.automated_update_date
+            ,
+            cancellable: self.cancellable
+            ,
+            current_version: self.current_version
+            ,
+            description: self.description
+            ,
+            new_version: self.new_version
+            ,
+            update_available: self.update_available
+            ,
+            update_status: self.update_status
+            ,
         }
     }
 }
+

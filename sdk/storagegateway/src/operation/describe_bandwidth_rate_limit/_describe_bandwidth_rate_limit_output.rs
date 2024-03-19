@@ -3,7 +3,7 @@
 /// <p>A JSON object containing the following fields:</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeBandwidthRateLimitOutput {
+pub struct DescribeBandwidthRateLimitOutput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The average upload bandwidth rate limit in bits per second. This field does not appear in the response if the upload rate limit is not set.</p>
@@ -12,9 +12,9 @@ pub struct DescribeBandwidthRateLimitOutput {
     pub average_download_rate_limit_in_bits_per_sec: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
-impl DescribeBandwidthRateLimitOutput {
+impl  DescribeBandwidthRateLimitOutput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     /// <p>The average upload bandwidth rate limit in bits per second. This field does not appear in the response if the upload rate limit is not set.</p>
@@ -27,10 +27,10 @@ impl DescribeBandwidthRateLimitOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeBandwidthRateLimitOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeBandwidthRateLimitOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBandwidthRateLimitOutput`](crate::operation::describe_bandwidth_rate_limit::DescribeBandwidthRateLimitOutput).
     pub fn builder() -> crate::operation::describe_bandwidth_rate_limit::builders::DescribeBandwidthRateLimitOutputBuilder {
@@ -55,8 +55,7 @@ impl DescribeBandwidthRateLimitOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl DescribeBandwidthRateLimitOutputBuilder {
     }
     /// <p>The average upload bandwidth rate limit in bits per second. This field does not appear in the response if the upload rate limit is not set.</p>
     pub fn set_average_upload_rate_limit_in_bits_per_sec(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.average_upload_rate_limit_in_bits_per_sec = input;
-        self
+        self.average_upload_rate_limit_in_bits_per_sec = input; self
     }
     /// <p>The average upload bandwidth rate limit in bits per second. This field does not appear in the response if the upload rate limit is not set.</p>
     pub fn get_average_upload_rate_limit_in_bits_per_sec(&self) -> &::std::option::Option<i64> {
@@ -83,29 +81,32 @@ impl DescribeBandwidthRateLimitOutputBuilder {
     }
     /// <p>The average download bandwidth rate limit in bits per second. This field does not appear in the response if the download rate limit is not set.</p>
     pub fn set_average_download_rate_limit_in_bits_per_sec(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.average_download_rate_limit_in_bits_per_sec = input;
-        self
+        self.average_download_rate_limit_in_bits_per_sec = input; self
     }
     /// <p>The average download bandwidth rate limit in bits per second. This field does not appear in the response if the download rate limit is not set.</p>
     pub fn get_average_download_rate_limit_in_bits_per_sec(&self) -> &::std::option::Option<i64> {
         &self.average_download_rate_limit_in_bits_per_sec
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeBandwidthRateLimitOutput`](crate::operation::describe_bandwidth_rate_limit::DescribeBandwidthRateLimitOutput).
     pub fn build(self) -> crate::operation::describe_bandwidth_rate_limit::DescribeBandwidthRateLimitOutput {
         crate::operation::describe_bandwidth_rate_limit::DescribeBandwidthRateLimitOutput {
-            gateway_arn: self.gateway_arn,
-            average_upload_rate_limit_in_bits_per_sec: self.average_upload_rate_limit_in_bits_per_sec,
-            average_download_rate_limit_in_bits_per_sec: self.average_download_rate_limit_in_bits_per_sec,
+            gateway_arn: self.gateway_arn
+            ,
+            average_upload_rate_limit_in_bits_per_sec: self.average_upload_rate_limit_in_bits_per_sec
+            ,
+            average_download_rate_limit_in_bits_per_sec: self.average_download_rate_limit_in_bits_per_sec
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

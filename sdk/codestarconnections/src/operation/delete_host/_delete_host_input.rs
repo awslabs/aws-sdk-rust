@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteHostInput {
+pub struct DeleteHostInput  {
     /// <p>The Amazon Resource Name (ARN) of the host to be deleted.</p>
     pub host_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteHostInput {
+impl  DeleteHostInput  {
     /// <p>The Amazon Resource Name (ARN) of the host to be deleted.</p>
-    pub fn host_arn(&self) -> ::std::option::Option<&str> {
+    pub fn host_arn(&self) -> ::std::option::Option<& str> {
         self.host_arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl DeleteHostInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the host to be deleted.</p>
     pub fn set_host_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_arn = input;
-        self
+        self.host_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the host to be deleted.</p>
     pub fn get_host_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl DeleteHostInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteHostInput`](crate::operation::delete_host::DeleteHostInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_host::DeleteHostInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_host::DeleteHostInput { host_arn: self.host_arn })
+        ::std::result::Result::Ok(
+            crate::operation::delete_host::DeleteHostInput {
+                host_arn: self.host_arn
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListWebExperiencesInput {
+pub struct ListWebExperiencesInput  {
     /// <p>The identifier of the Amazon Q application linked to the listed web experiences.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q conversations.</p>
@@ -10,13 +10,13 @@ pub struct ListWebExperiencesInput {
     /// <p>The maximum number of Amazon Q Web Experiences to return.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListWebExperiencesInput {
+impl  ListWebExperiencesInput  {
     /// <p>The identifier of the Amazon Q application linked to the listed web experiences.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q conversations.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of Amazon Q Web Experiences to return.</p>
@@ -48,8 +48,7 @@ impl ListWebExperiencesInputBuilder {
     }
     /// <p>The identifier of the Amazon Q application linked to the listed web experiences.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier of the Amazon Q application linked to the listed web experiences.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListWebExperiencesInputBuilder {
     }
     /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q conversations.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q conversations.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,22 +74,24 @@ impl ListWebExperiencesInputBuilder {
     }
     /// <p>The maximum number of Amazon Q Web Experiences to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of Amazon Q Web Experiences to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListWebExperiencesInput`](crate::operation::list_web_experiences::ListWebExperiencesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_web_experiences::ListWebExperiencesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_web_experiences::ListWebExperiencesInput {
-            application_id: self.application_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_web_experiences::ListWebExperiencesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_web_experiences::ListWebExperiencesInput {
+                application_id: self.application_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

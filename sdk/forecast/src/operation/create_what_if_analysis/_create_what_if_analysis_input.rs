@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateWhatIfAnalysisInput {
+pub struct CreateWhatIfAnalysisInput  {
     /// <p>The name of the what-if analysis. Each name must be unique.</p>
     pub what_if_analysis_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the baseline forecast.</p>
@@ -19,15 +19,15 @@ pub struct CreateWhatIfAnalysisInput {
     /// </ul>
     pub time_series_selector: ::std::option::Option<crate::types::TimeSeriesSelector>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateWhatIfAnalysisInput {
+impl  CreateWhatIfAnalysisInput  {
     /// <p>The name of the what-if analysis. Each name must be unique.</p>
-    pub fn what_if_analysis_name(&self) -> ::std::option::Option<&str> {
+    pub fn what_if_analysis_name(&self) -> ::std::option::Option<& str> {
         self.what_if_analysis_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the baseline forecast.</p>
-    pub fn forecast_arn(&self) -> ::std::option::Option<&str> {
+    pub fn forecast_arn(&self) -> ::std::option::Option<& str> {
         self.forecast_arn.as_deref()
     }
     /// <p>Defines the set of time series that are used in the what-if analysis with a <code>TimeSeriesIdentifiers</code> object. What-if analyses are performed only for the time series in this object.</p>
@@ -40,14 +40,15 @@ impl CreateWhatIfAnalysisInput {
     /// <li>
     /// <p><code>Schema</code></p></li>
     /// </ul>
-    pub fn time_series_selector(&self) -> ::std::option::Option<&crate::types::TimeSeriesSelector> {
+    pub fn time_series_selector(&self) -> ::std::option::Option<& crate::types::TimeSeriesSelector> {
         self.time_series_selector.as_ref()
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateWhatIfAnalysisInput {
@@ -64,7 +65,7 @@ pub struct CreateWhatIfAnalysisInputBuilder {
     pub(crate) what_if_analysis_name: ::std::option::Option<::std::string::String>,
     pub(crate) forecast_arn: ::std::option::Option<::std::string::String>,
     pub(crate) time_series_selector: ::std::option::Option<crate::types::TimeSeriesSelector>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateWhatIfAnalysisInputBuilder {
     /// <p>The name of the what-if analysis. Each name must be unique.</p>
@@ -75,8 +76,7 @@ impl CreateWhatIfAnalysisInputBuilder {
     }
     /// <p>The name of the what-if analysis. Each name must be unique.</p>
     pub fn set_what_if_analysis_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.what_if_analysis_name = input;
-        self
+        self.what_if_analysis_name = input; self
     }
     /// <p>The name of the what-if analysis. Each name must be unique.</p>
     pub fn get_what_if_analysis_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +90,7 @@ impl CreateWhatIfAnalysisInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the baseline forecast.</p>
     pub fn set_forecast_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.forecast_arn = input;
-        self
+        self.forecast_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the baseline forecast.</p>
     pub fn get_forecast_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +121,7 @@ impl CreateWhatIfAnalysisInputBuilder {
     /// <p><code>Schema</code></p></li>
     /// </ul>
     pub fn set_time_series_selector(mut self, input: ::std::option::Option<crate::types::TimeSeriesSelector>) -> Self {
-        self.time_series_selector = input;
-        self
+        self.time_series_selector = input; self
     }
     /// <p>Defines the set of time series that are used in the what-if analysis with a <code>TimeSeriesIdentifiers</code> object. What-if analyses are performed only for the time series in this object.</p>
     /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
@@ -145,29 +143,32 @@ impl CreateWhatIfAnalysisInputBuilder {
     /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateWhatIfAnalysisInput`](crate::operation::create_what_if_analysis::CreateWhatIfAnalysisInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_what_if_analysis::CreateWhatIfAnalysisInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_what_if_analysis::CreateWhatIfAnalysisInput {
-            what_if_analysis_name: self.what_if_analysis_name,
-            forecast_arn: self.forecast_arn,
-            time_series_selector: self.time_series_selector,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_what_if_analysis::CreateWhatIfAnalysisInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_what_if_analysis::CreateWhatIfAnalysisInput {
+                what_if_analysis_name: self.what_if_analysis_name
+                ,
+                forecast_arn: self.forecast_arn
+                ,
+                time_series_selector: self.time_series_selector
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

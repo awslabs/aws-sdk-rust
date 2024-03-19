@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPropertyValueInput {
+pub struct GetPropertyValueInput  {
     /// <p>The name of the component whose property values the operation returns.</p>
     pub component_name: ::std::option::Option<::std::string::String>,
     /// <p>This string specifies the path to the composite component, starting from the top-level component.</p>
@@ -12,7 +12,7 @@ pub struct GetPropertyValueInput {
     /// <p>The ID of the entity whose property values the operation returns.</p>
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The properties whose values the operation returns.</p>
-    pub selected_properties: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub selected_properties: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The ID of the workspace whose values the operation returns.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
@@ -25,31 +25,32 @@ pub struct GetPropertyValueInput {
     /// <p>The tabular conditions.</p>
     pub tabular_conditions: ::std::option::Option<crate::types::TabularConditions>,
 }
-impl GetPropertyValueInput {
+impl  GetPropertyValueInput  {
     /// <p>The name of the component whose property values the operation returns.</p>
-    pub fn component_name(&self) -> ::std::option::Option<&str> {
+    pub fn component_name(&self) -> ::std::option::Option<& str> {
         self.component_name.as_deref()
     }
     /// <p>This string specifies the path to the composite component, starting from the top-level component.</p>
-    pub fn component_path(&self) -> ::std::option::Option<&str> {
+    pub fn component_path(&self) -> ::std::option::Option<& str> {
         self.component_path.as_deref()
     }
     /// <p>The ID of the component type whose property values the operation returns.</p>
-    pub fn component_type_id(&self) -> ::std::option::Option<&str> {
+    pub fn component_type_id(&self) -> ::std::option::Option<& str> {
         self.component_type_id.as_deref()
     }
     /// <p>The ID of the entity whose property values the operation returns.</p>
-    pub fn entity_id(&self) -> ::std::option::Option<&str> {
+    pub fn entity_id(&self) -> ::std::option::Option<& str> {
         self.entity_id.as_deref()
     }
     /// <p>The properties whose values the operation returns.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.selected_properties.is_none()`.
-    pub fn selected_properties(&self) -> &[::std::string::String] {
-        self.selected_properties.as_deref().unwrap_or_default()
+    pub fn selected_properties(&self) -> & [::std::string::String] {
+        self.selected_properties.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the workspace whose values the operation returns.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
@@ -58,15 +59,15 @@ impl GetPropertyValueInput {
         self.max_results
     }
     /// <p>The string that specifies the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The property group name.</p>
-    pub fn property_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn property_group_name(&self) -> ::std::option::Option<& str> {
         self.property_group_name.as_deref()
     }
     /// <p>The tabular conditions.</p>
-    pub fn tabular_conditions(&self) -> ::std::option::Option<&crate::types::TabularConditions> {
+    pub fn tabular_conditions(&self) -> ::std::option::Option<& crate::types::TabularConditions> {
         self.tabular_conditions.as_ref()
     }
 }
@@ -85,7 +86,7 @@ pub struct GetPropertyValueInputBuilder {
     pub(crate) component_path: ::std::option::Option<::std::string::String>,
     pub(crate) component_type_id: ::std::option::Option<::std::string::String>,
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,
-    pub(crate) selected_properties: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) selected_properties: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -100,8 +101,7 @@ impl GetPropertyValueInputBuilder {
     }
     /// <p>The name of the component whose property values the operation returns.</p>
     pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_name = input;
-        self
+        self.component_name = input; self
     }
     /// <p>The name of the component whose property values the operation returns.</p>
     pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +114,7 @@ impl GetPropertyValueInputBuilder {
     }
     /// <p>This string specifies the path to the composite component, starting from the top-level component.</p>
     pub fn set_component_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_path = input;
-        self
+        self.component_path = input; self
     }
     /// <p>This string specifies the path to the composite component, starting from the top-level component.</p>
     pub fn get_component_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +127,7 @@ impl GetPropertyValueInputBuilder {
     }
     /// <p>The ID of the component type whose property values the operation returns.</p>
     pub fn set_component_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_type_id = input;
-        self
+        self.component_type_id = input; self
     }
     /// <p>The ID of the component type whose property values the operation returns.</p>
     pub fn get_component_type_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +140,7 @@ impl GetPropertyValueInputBuilder {
     }
     /// <p>The ID of the entity whose property values the operation returns.</p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>The ID of the entity whose property values the operation returns.</p>
     pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,17 +153,16 @@ impl GetPropertyValueInputBuilder {
     /// <p>The properties whose values the operation returns.</p>
     pub fn selected_properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.selected_properties.unwrap_or_default();
-        v.push(input.into());
-        self.selected_properties = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.selected_properties = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The properties whose values the operation returns.</p>
-    pub fn set_selected_properties(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.selected_properties = input;
-        self
+    pub fn set_selected_properties(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.selected_properties = input; self
     }
     /// <p>The properties whose values the operation returns.</p>
-    pub fn get_selected_properties(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_selected_properties(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.selected_properties
     }
     /// <p>The ID of the workspace whose values the operation returns.</p>
@@ -177,8 +173,7 @@ impl GetPropertyValueInputBuilder {
     }
     /// <p>The ID of the workspace whose values the operation returns.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The ID of the workspace whose values the operation returns.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -193,8 +188,7 @@ impl GetPropertyValueInputBuilder {
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
@@ -208,8 +202,7 @@ impl GetPropertyValueInputBuilder {
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -222,8 +215,7 @@ impl GetPropertyValueInputBuilder {
     }
     /// <p>The property group name.</p>
     pub fn set_property_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.property_group_name = input;
-        self
+        self.property_group_name = input; self
     }
     /// <p>The property group name.</p>
     pub fn get_property_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -236,28 +228,38 @@ impl GetPropertyValueInputBuilder {
     }
     /// <p>The tabular conditions.</p>
     pub fn set_tabular_conditions(mut self, input: ::std::option::Option<crate::types::TabularConditions>) -> Self {
-        self.tabular_conditions = input;
-        self
+        self.tabular_conditions = input; self
     }
     /// <p>The tabular conditions.</p>
     pub fn get_tabular_conditions(&self) -> &::std::option::Option<crate::types::TabularConditions> {
         &self.tabular_conditions
     }
     /// Consumes the builder and constructs a [`GetPropertyValueInput`](crate::operation::get_property_value::GetPropertyValueInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_property_value::GetPropertyValueInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_property_value::GetPropertyValueInput {
-            component_name: self.component_name,
-            component_path: self.component_path,
-            component_type_id: self.component_type_id,
-            entity_id: self.entity_id,
-            selected_properties: self.selected_properties,
-            workspace_id: self.workspace_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            property_group_name: self.property_group_name,
-            tabular_conditions: self.tabular_conditions,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_property_value::GetPropertyValueInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_property_value::GetPropertyValueInput {
+                component_name: self.component_name
+                ,
+                component_path: self.component_path
+                ,
+                component_type_id: self.component_type_id
+                ,
+                entity_id: self.entity_id
+                ,
+                selected_properties: self.selected_properties
+                ,
+                workspace_id: self.workspace_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                property_group_name: self.property_group_name
+                ,
+                tabular_conditions: self.tabular_conditions
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutResolverQueryLogConfigPolicyInput {
+pub struct PutResolverQueryLogConfigPolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the account that you want to share rules with.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>An Identity and Access Management policy statement that lists the query logging configurations that you want to share with another Amazon Web Services account and the operations that you want the account to be able to perform. You can specify the following operations in the <code>Actions</code> section of the statement:</p>
@@ -17,9 +17,9 @@ pub struct PutResolverQueryLogConfigPolicyInput {
     /// <p>In the <code>Resource</code> section of the statement, you specify the ARNs for the query logging configurations that you want to share with the account that you specified in <code>Arn</code>.</p>
     pub resolver_query_log_config_policy: ::std::option::Option<::std::string::String>,
 }
-impl PutResolverQueryLogConfigPolicyInput {
+impl  PutResolverQueryLogConfigPolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the account that you want to share rules with.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>An Identity and Access Management policy statement that lists the query logging configurations that you want to share with another Amazon Web Services account and the operations that you want the account to be able to perform. You can specify the following operations in the <code>Actions</code> section of the statement:</p>
@@ -32,7 +32,7 @@ impl PutResolverQueryLogConfigPolicyInput {
     /// <p><code>route53resolver:ListResolverQueryLogConfigs</code></p></li>
     /// </ul>
     /// <p>In the <code>Resource</code> section of the statement, you specify the ARNs for the query logging configurations that you want to share with the account that you specified in <code>Arn</code>.</p>
-    pub fn resolver_query_log_config_policy(&self) -> ::std::option::Option<&str> {
+    pub fn resolver_query_log_config_policy(&self) -> ::std::option::Option<& str> {
         self.resolver_query_log_config_policy.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl PutResolverQueryLogConfigPolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the account that you want to share rules with.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the account that you want to share rules with.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +91,7 @@ impl PutResolverQueryLogConfigPolicyInputBuilder {
     /// </ul>
     /// <p>In the <code>Resource</code> section of the statement, you specify the ARNs for the query logging configurations that you want to share with the account that you specified in <code>Arn</code>.</p>
     pub fn set_resolver_query_log_config_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resolver_query_log_config_policy = input;
-        self
+        self.resolver_query_log_config_policy = input; self
     }
     /// <p>An Identity and Access Management policy statement that lists the query logging configurations that you want to share with another Amazon Web Services account and the operations that you want the account to be able to perform. You can specify the following operations in the <code>Actions</code> section of the statement:</p>
     /// <ul>
@@ -109,17 +107,15 @@ impl PutResolverQueryLogConfigPolicyInputBuilder {
         &self.resolver_query_log_config_policy
     }
     /// Consumes the builder and constructs a [`PutResolverQueryLogConfigPolicyInput`](crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyInput {
-                arn: self.arn,
-                resolver_query_log_config_policy: self.resolver_query_log_config_policy,
-            },
+                arn: self.arn
+                ,
+                resolver_query_log_config_policy: self.resolver_query_log_config_policy
+                ,
+            }
         )
     }
 }
+

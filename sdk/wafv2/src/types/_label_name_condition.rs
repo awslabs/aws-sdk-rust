@@ -3,15 +3,14 @@
 /// <p>A single label name condition for a <code>Condition</code> in a logging filter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LabelNameCondition {
+pub struct LabelNameCondition  {
     /// <p>The label name that a log record must contain in order to meet the condition. This must be a fully qualified label name. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label.</p>
     pub label_name: ::std::string::String,
 }
-impl LabelNameCondition {
+impl  LabelNameCondition  {
     /// <p>The label name that a log record must contain in order to meet the condition. This must be a fully qualified label name. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label.</p>
-    pub fn label_name(&self) -> &str {
-        use std::ops::Deref;
-        self.label_name.deref()
+    pub fn label_name(&self) -> & str {
+        use std::ops::Deref; self.label_name.deref()
     }
 }
 impl LabelNameCondition {
@@ -36,8 +35,7 @@ impl LabelNameConditionBuilder {
     }
     /// <p>The label name that a log record must contain in order to meet the condition. This must be a fully qualified label name. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label.</p>
     pub fn set_label_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label_name = input;
-        self
+        self.label_name = input; self
     }
     /// <p>The label name that a log record must contain in order to meet the condition. This must be a fully qualified label name. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label.</p>
     pub fn get_label_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl LabelNameConditionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`label_name`](crate::types::builders::LabelNameConditionBuilder::label_name)
     pub fn build(self) -> ::std::result::Result<crate::types::LabelNameCondition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LabelNameCondition {
-            label_name: self.label_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "label_name",
-                    "label_name was not specified but it is required when building LabelNameCondition",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LabelNameCondition {
+                label_name: self.label_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("label_name", "label_name was not specified but it is required when building LabelNameCondition")
+                    )?
+                ,
+            }
+        )
     }
 }
+

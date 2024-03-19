@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreatePolicyTemplateInput {
+pub struct CreatePolicyTemplateInput  {
     /// <p>Specifies a unique, case-sensitive ID that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>ConflictException</code> error.</p>
@@ -15,28 +15,28 @@ pub struct CreatePolicyTemplateInput {
     /// <p>Specifies the content that you want to use for the new policy template, written in the Cedar policy language.</p>
     pub statement: ::std::option::Option<::std::string::String>,
 }
-impl CreatePolicyTemplateInput {
+impl  CreatePolicyTemplateInput  {
     /// <p>Specifies a unique, case-sensitive ID that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>ConflictException</code> error.</p>
     /// <p>Verified Permissions recognizes a <code>ClientToken</code> for eight hours. After eight hours, the next request with the same parameters performs the operation again regardless of the value of <code>ClientToken</code>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The ID of the policy store in which to create the policy template.</p>
-    pub fn policy_store_id(&self) -> ::std::option::Option<&str> {
+    pub fn policy_store_id(&self) -> ::std::option::Option<& str> {
         self.policy_store_id.as_deref()
     }
     /// <p>Specifies a description for the policy template.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Specifies the content that you want to use for the new policy template, written in the Cedar policy language.</p>
-    pub fn statement(&self) -> ::std::option::Option<&str> {
+    pub fn statement(&self) -> ::std::option::Option<& str> {
         self.statement.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreatePolicyTemplateInput {
+impl  ::std::fmt::Debug for CreatePolicyTemplateInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreatePolicyTemplateInput");
         formatter.field("client_token", &self.client_token);
@@ -76,8 +76,7 @@ impl CreatePolicyTemplateInputBuilder {
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>ConflictException</code> error.</p>
     /// <p>Verified Permissions recognizes a <code>ClientToken</code> for eight hours. After eight hours, the next request with the same parameters performs the operation again regardless of the value of <code>ClientToken</code>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Specifies a unique, case-sensitive ID that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
@@ -94,8 +93,7 @@ impl CreatePolicyTemplateInputBuilder {
     }
     /// <p>The ID of the policy store in which to create the policy template.</p>
     pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_store_id = input;
-        self
+        self.policy_store_id = input; self
     }
     /// <p>The ID of the policy store in which to create the policy template.</p>
     pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +106,7 @@ impl CreatePolicyTemplateInputBuilder {
     }
     /// <p>Specifies a description for the policy template.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Specifies a description for the policy template.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,24 +120,26 @@ impl CreatePolicyTemplateInputBuilder {
     }
     /// <p>Specifies the content that you want to use for the new policy template, written in the Cedar policy language.</p>
     pub fn set_statement(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.statement = input;
-        self
+        self.statement = input; self
     }
     /// <p>Specifies the content that you want to use for the new policy template, written in the Cedar policy language.</p>
     pub fn get_statement(&self) -> &::std::option::Option<::std::string::String> {
         &self.statement
     }
     /// Consumes the builder and constructs a [`CreatePolicyTemplateInput`](crate::operation::create_policy_template::CreatePolicyTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_policy_template::CreatePolicyTemplateInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_policy_template::CreatePolicyTemplateInput {
-            client_token: self.client_token,
-            policy_store_id: self.policy_store_id,
-            description: self.description,
-            statement: self.statement,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_policy_template::CreatePolicyTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_policy_template::CreatePolicyTemplateInput {
+                client_token: self.client_token
+                ,
+                policy_store_id: self.policy_store_id
+                ,
+                description: self.description
+                ,
+                statement: self.statement
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreatePolicyTemplateInputBuilder {
@@ -153,3 +152,4 @@ impl ::std::fmt::Debug for CreatePolicyTemplateInputBuilder {
         formatter.finish()
     }
 }
+

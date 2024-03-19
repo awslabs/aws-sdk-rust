@@ -21,11 +21,7 @@ impl MetadataUpdates {
     /// Tries to convert the enum instance into [`DicomUpdates`](crate::types::MetadataUpdates::DicomUpdates), extracting the inner [`DicomUpdates`](crate::types::DicomUpdates).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_dicom_updates(&self) -> ::std::result::Result<&crate::types::DicomUpdates, &Self> {
-        if let MetadataUpdates::DicomUpdates(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let MetadataUpdates::DicomUpdates(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`DicomUpdates`](crate::types::MetadataUpdates::DicomUpdates).
     pub fn is_dicom_updates(&self) -> bool {
@@ -36,3 +32,4 @@ impl MetadataUpdates {
         matches!(self, Self::Unknown)
     }
 }
+

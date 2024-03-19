@@ -3,7 +3,7 @@
 /// <p>The data type TokenValidityUnits specifies the time units you use when you set the duration of ID, access, and refresh tokens.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TokenValidityUnitsType {
+pub struct TokenValidityUnitsType  {
     /// <p>A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value that you set in the <code>AccessTokenValidity</code> parameter. The default <code>AccessTokenValidity</code> time unit is hours. <code>AccessTokenValidity</code> duration can range from five minutes to one day.</p>
     pub access_token: ::std::option::Option<crate::types::TimeUnitsType>,
     /// <p>A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value that you set in the <code>IdTokenValidity</code> parameter. The default <code>IdTokenValidity</code> time unit is hours. <code>IdTokenValidity</code> duration can range from five minutes to one day.</p>
@@ -11,17 +11,17 @@ pub struct TokenValidityUnitsType {
     /// <p>A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value that you set in the <code>RefreshTokenValidity</code> parameter. The default <code>RefreshTokenValidity</code> time unit is days. <code>RefreshTokenValidity</code> duration can range from 60 minutes to 10 years.</p>
     pub refresh_token: ::std::option::Option<crate::types::TimeUnitsType>,
 }
-impl TokenValidityUnitsType {
+impl  TokenValidityUnitsType  {
     /// <p>A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value that you set in the <code>AccessTokenValidity</code> parameter. The default <code>AccessTokenValidity</code> time unit is hours. <code>AccessTokenValidity</code> duration can range from five minutes to one day.</p>
-    pub fn access_token(&self) -> ::std::option::Option<&crate::types::TimeUnitsType> {
+    pub fn access_token(&self) -> ::std::option::Option<& crate::types::TimeUnitsType> {
         self.access_token.as_ref()
     }
     /// <p>A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value that you set in the <code>IdTokenValidity</code> parameter. The default <code>IdTokenValidity</code> time unit is hours. <code>IdTokenValidity</code> duration can range from five minutes to one day.</p>
-    pub fn id_token(&self) -> ::std::option::Option<&crate::types::TimeUnitsType> {
+    pub fn id_token(&self) -> ::std::option::Option<& crate::types::TimeUnitsType> {
         self.id_token.as_ref()
     }
     /// <p>A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value that you set in the <code>RefreshTokenValidity</code> parameter. The default <code>RefreshTokenValidity</code> time unit is days. <code>RefreshTokenValidity</code> duration can range from 60 minutes to 10 years.</p>
-    pub fn refresh_token(&self) -> ::std::option::Option<&crate::types::TimeUnitsType> {
+    pub fn refresh_token(&self) -> ::std::option::Option<& crate::types::TimeUnitsType> {
         self.refresh_token.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl TokenValidityUnitsTypeBuilder {
     }
     /// <p>A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value that you set in the <code>AccessTokenValidity</code> parameter. The default <code>AccessTokenValidity</code> time unit is hours. <code>AccessTokenValidity</code> duration can range from five minutes to one day.</p>
     pub fn set_access_token(mut self, input: ::std::option::Option<crate::types::TimeUnitsType>) -> Self {
-        self.access_token = input;
-        self
+        self.access_token = input; self
     }
     /// <p>A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value that you set in the <code>AccessTokenValidity</code> parameter. The default <code>AccessTokenValidity</code> time unit is hours. <code>AccessTokenValidity</code> duration can range from five minutes to one day.</p>
     pub fn get_access_token(&self) -> &::std::option::Option<crate::types::TimeUnitsType> {
@@ -62,8 +61,7 @@ impl TokenValidityUnitsTypeBuilder {
     }
     /// <p>A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value that you set in the <code>IdTokenValidity</code> parameter. The default <code>IdTokenValidity</code> time unit is hours. <code>IdTokenValidity</code> duration can range from five minutes to one day.</p>
     pub fn set_id_token(mut self, input: ::std::option::Option<crate::types::TimeUnitsType>) -> Self {
-        self.id_token = input;
-        self
+        self.id_token = input; self
     }
     /// <p>A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value that you set in the <code>IdTokenValidity</code> parameter. The default <code>IdTokenValidity</code> time unit is hours. <code>IdTokenValidity</code> duration can range from five minutes to one day.</p>
     pub fn get_id_token(&self) -> &::std::option::Option<crate::types::TimeUnitsType> {
@@ -76,8 +74,7 @@ impl TokenValidityUnitsTypeBuilder {
     }
     /// <p>A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value that you set in the <code>RefreshTokenValidity</code> parameter. The default <code>RefreshTokenValidity</code> time unit is days. <code>RefreshTokenValidity</code> duration can range from 60 minutes to 10 years.</p>
     pub fn set_refresh_token(mut self, input: ::std::option::Option<crate::types::TimeUnitsType>) -> Self {
-        self.refresh_token = input;
-        self
+        self.refresh_token = input; self
     }
     /// <p>A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value that you set in the <code>RefreshTokenValidity</code> parameter. The default <code>RefreshTokenValidity</code> time unit is days. <code>RefreshTokenValidity</code> duration can range from 60 minutes to 10 years.</p>
     pub fn get_refresh_token(&self) -> &::std::option::Option<crate::types::TimeUnitsType> {
@@ -86,9 +83,13 @@ impl TokenValidityUnitsTypeBuilder {
     /// Consumes the builder and constructs a [`TokenValidityUnitsType`](crate::types::TokenValidityUnitsType).
     pub fn build(self) -> crate::types::TokenValidityUnitsType {
         crate::types::TokenValidityUnitsType {
-            access_token: self.access_token,
-            id_token: self.id_token,
-            refresh_token: self.refresh_token,
+            access_token: self.access_token
+            ,
+            id_token: self.id_token
+            ,
+            refresh_token: self.refresh_token
+            ,
         }
     }
 }
+

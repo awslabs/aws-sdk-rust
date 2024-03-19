@@ -21,11 +21,7 @@ impl SchemaDefinition {
     /// Tries to convert the enum instance into [`CedarJson`](crate::types::SchemaDefinition::CedarJson), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_cedar_json(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let SchemaDefinition::CedarJson(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let SchemaDefinition::CedarJson(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`CedarJson`](crate::types::SchemaDefinition::CedarJson).
     pub fn is_cedar_json(&self) -> bool {
@@ -44,3 +40,4 @@ impl ::std::fmt::Debug for SchemaDefinition {
         }
     }
 }
+

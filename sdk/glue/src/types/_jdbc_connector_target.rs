@@ -3,11 +3,11 @@
 /// <p>Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JdbcConnectorTarget {
+pub struct JdbcConnectorTarget  {
     /// <p>The name of the data target.</p>
     pub name: ::std::string::String,
     /// <p>The nodes that are inputs to the data target.</p>
-    pub inputs: ::std::vec::Vec<::std::string::String>,
+    pub inputs: ::std::vec::Vec::<::std::string::String>,
     /// <p>The name of the connection that is associated with the connector.</p>
     pub connection_name: ::std::string::String,
     /// <p>The name of the table in the data target.</p>
@@ -17,50 +17,45 @@ pub struct JdbcConnectorTarget {
     /// <p>The type of connection, such as marketplace.jdbc or custom.jdbc, designating a connection to a JDBC data target.</p>
     pub connection_type: ::std::string::String,
     /// <p>Additional connection options for the connector.</p>
-    pub additional_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub additional_options: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Specifies the data schema for the JDBC target.</p>
-    pub output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
+    pub output_schemas: ::std::option::Option<::std::vec::Vec::<crate::types::GlueSchema>>,
 }
-impl JdbcConnectorTarget {
+impl  JdbcConnectorTarget  {
     /// <p>The name of the data target.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn inputs(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.inputs.deref()
+    pub fn inputs(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.inputs.deref()
     }
     /// <p>The name of the connection that is associated with the connector.</p>
-    pub fn connection_name(&self) -> &str {
-        use std::ops::Deref;
-        self.connection_name.deref()
+    pub fn connection_name(&self) -> & str {
+        use std::ops::Deref; self.connection_name.deref()
     }
     /// <p>The name of the table in the data target.</p>
-    pub fn connection_table(&self) -> &str {
-        use std::ops::Deref;
-        self.connection_table.deref()
+    pub fn connection_table(&self) -> & str {
+        use std::ops::Deref; self.connection_table.deref()
     }
     /// <p>The name of a connector that will be used.</p>
-    pub fn connector_name(&self) -> &str {
-        use std::ops::Deref;
-        self.connector_name.deref()
+    pub fn connector_name(&self) -> & str {
+        use std::ops::Deref; self.connector_name.deref()
     }
     /// <p>The type of connection, such as marketplace.jdbc or custom.jdbc, designating a connection to a JDBC data target.</p>
-    pub fn connection_type(&self) -> &str {
-        use std::ops::Deref;
-        self.connection_type.deref()
+    pub fn connection_type(&self) -> & str {
+        use std::ops::Deref; self.connection_type.deref()
     }
     /// <p>Additional connection options for the connector.</p>
-    pub fn additional_options(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn additional_options(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.additional_options.as_ref()
     }
     /// <p>Specifies the data schema for the JDBC target.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_schemas.is_none()`.
-    pub fn output_schemas(&self) -> &[crate::types::GlueSchema] {
-        self.output_schemas.as_deref().unwrap_or_default()
+    pub fn output_schemas(&self) -> & [crate::types::GlueSchema] {
+        self.output_schemas.as_deref()
+        .unwrap_or_default()
     }
 }
 impl JdbcConnectorTarget {
@@ -75,13 +70,13 @@ impl JdbcConnectorTarget {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JdbcConnectorTargetBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) inputs: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) connection_name: ::std::option::Option<::std::string::String>,
     pub(crate) connection_table: ::std::option::Option<::std::string::String>,
     pub(crate) connector_name: ::std::option::Option<::std::string::String>,
     pub(crate) connection_type: ::std::option::Option<::std::string::String>,
-    pub(crate) additional_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
+    pub(crate) additional_options: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) output_schemas: ::std::option::Option<::std::vec::Vec::<crate::types::GlueSchema>>,
 }
 impl JdbcConnectorTargetBuilder {
     /// <p>The name of the data target.</p>
@@ -92,8 +87,7 @@ impl JdbcConnectorTargetBuilder {
     }
     /// <p>The name of the data target.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the data target.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,17 +100,16 @@ impl JdbcConnectorTargetBuilder {
     /// <p>The nodes that are inputs to the data target.</p>
     pub fn inputs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
-        v.push(input.into());
-        self.inputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.inputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inputs = input;
-        self
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.inputs = input; self
     }
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.inputs
     }
     /// <p>The name of the connection that is associated with the connector.</p>
@@ -127,8 +120,7 @@ impl JdbcConnectorTargetBuilder {
     }
     /// <p>The name of the connection that is associated with the connector.</p>
     pub fn set_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_name = input;
-        self
+        self.connection_name = input; self
     }
     /// <p>The name of the connection that is associated with the connector.</p>
     pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +134,7 @@ impl JdbcConnectorTargetBuilder {
     }
     /// <p>The name of the table in the data target.</p>
     pub fn set_connection_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_table = input;
-        self
+        self.connection_table = input; self
     }
     /// <p>The name of the table in the data target.</p>
     pub fn get_connection_table(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,8 +148,7 @@ impl JdbcConnectorTargetBuilder {
     }
     /// <p>The name of a connector that will be used.</p>
     pub fn set_connector_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connector_name = input;
-        self
+        self.connector_name = input; self
     }
     /// <p>The name of a connector that will be used.</p>
     pub fn get_connector_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -172,8 +162,7 @@ impl JdbcConnectorTargetBuilder {
     }
     /// <p>The type of connection, such as marketplace.jdbc or custom.jdbc, designating a connection to a JDBC data target.</p>
     pub fn set_connection_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_type = input;
-        self
+        self.connection_type = input; self
     }
     /// <p>The type of connection, such as marketplace.jdbc or custom.jdbc, designating a connection to a JDBC data target.</p>
     pub fn get_connection_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -184,26 +173,18 @@ impl JdbcConnectorTargetBuilder {
     /// To override the contents of this collection use [`set_additional_options`](Self::set_additional_options).
     ///
     /// <p>Additional connection options for the connector.</p>
-    pub fn additional_options(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_options(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.additional_options.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.additional_options = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.additional_options = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Additional connection options for the connector.</p>
-    pub fn set_additional_options(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.additional_options = input;
-        self
+    pub fn set_additional_options(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.additional_options = input; self
     }
     /// <p>Additional connection options for the connector.</p>
-    pub fn get_additional_options(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_additional_options(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.additional_options
     }
     /// Appends an item to `output_schemas`.
@@ -213,17 +194,16 @@ impl JdbcConnectorTargetBuilder {
     /// <p>Specifies the data schema for the JDBC target.</p>
     pub fn output_schemas(mut self, input: crate::types::GlueSchema) -> Self {
         let mut v = self.output_schemas.unwrap_or_default();
-        v.push(input);
-        self.output_schemas = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.output_schemas = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the data schema for the JDBC target.</p>
-    pub fn set_output_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>) -> Self {
-        self.output_schemas = input;
-        self
+    pub fn set_output_schemas(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GlueSchema>>) -> Self {
+        self.output_schemas = input; self
     }
     /// <p>Specifies the data schema for the JDBC target.</p>
-    pub fn get_output_schemas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
+    pub fn get_output_schemas(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GlueSchema>> {
         &self.output_schemas
     }
     /// Consumes the builder and constructs a [`JdbcConnectorTarget`](crate::types::JdbcConnectorTarget).
@@ -235,45 +215,44 @@ impl JdbcConnectorTargetBuilder {
     /// - [`connector_name`](crate::types::builders::JdbcConnectorTargetBuilder::connector_name)
     /// - [`connection_type`](crate::types::builders::JdbcConnectorTargetBuilder::connection_type)
     pub fn build(self) -> ::std::result::Result<crate::types::JdbcConnectorTarget, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::JdbcConnectorTarget {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building JdbcConnectorTarget",
-                )
-            })?,
-            inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "inputs",
-                    "inputs was not specified but it is required when building JdbcConnectorTarget",
-                )
-            })?,
-            connection_name: self.connection_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "connection_name",
-                    "connection_name was not specified but it is required when building JdbcConnectorTarget",
-                )
-            })?,
-            connection_table: self.connection_table.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "connection_table",
-                    "connection_table was not specified but it is required when building JdbcConnectorTarget",
-                )
-            })?,
-            connector_name: self.connector_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "connector_name",
-                    "connector_name was not specified but it is required when building JdbcConnectorTarget",
-                )
-            })?,
-            connection_type: self.connection_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "connection_type",
-                    "connection_type was not specified but it is required when building JdbcConnectorTarget",
-                )
-            })?,
-            additional_options: self.additional_options,
-            output_schemas: self.output_schemas,
-        })
+        ::std::result::Result::Ok(
+            crate::types::JdbcConnectorTarget {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building JdbcConnectorTarget")
+                    )?
+                ,
+                inputs: self.inputs
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("inputs", "inputs was not specified but it is required when building JdbcConnectorTarget")
+                    )?
+                ,
+                connection_name: self.connection_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("connection_name", "connection_name was not specified but it is required when building JdbcConnectorTarget")
+                    )?
+                ,
+                connection_table: self.connection_table
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("connection_table", "connection_table was not specified but it is required when building JdbcConnectorTarget")
+                    )?
+                ,
+                connector_name: self.connector_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("connector_name", "connector_name was not specified but it is required when building JdbcConnectorTarget")
+                    )?
+                ,
+                connection_type: self.connection_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("connection_type", "connection_type was not specified but it is required when building JdbcConnectorTarget")
+                    )?
+                ,
+                additional_options: self.additional_options
+                ,
+                output_schemas: self.output_schemas
+                ,
+            }
+        )
     }
 }
+

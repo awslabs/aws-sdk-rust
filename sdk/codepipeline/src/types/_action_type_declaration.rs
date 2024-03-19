@@ -3,7 +3,7 @@
 /// <p>The parameters for the action type definition that are provided when the action type is created or updated.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActionTypeDeclaration {
+pub struct ActionTypeDeclaration  {
     /// <p>The description for the action type to be updated.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information about the executor for an action type that was created with any supported integration model.</p>
@@ -17,43 +17,44 @@ pub struct ActionTypeDeclaration {
     /// <p>Details identifying the accounts with permissions to use the action type.</p>
     pub permissions: ::std::option::Option<crate::types::ActionTypePermissions>,
     /// <p>The properties of the action type to be updated.</p>
-    pub properties: ::std::option::Option<::std::vec::Vec<crate::types::ActionTypeProperty>>,
+    pub properties: ::std::option::Option<::std::vec::Vec::<crate::types::ActionTypeProperty>>,
     /// <p>The links associated with the action type to be updated.</p>
     pub urls: ::std::option::Option<crate::types::ActionTypeUrls>,
 }
-impl ActionTypeDeclaration {
+impl  ActionTypeDeclaration  {
     /// <p>The description for the action type to be updated.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Information about the executor for an action type that was created with any supported integration model.</p>
-    pub fn executor(&self) -> ::std::option::Option<&crate::types::ActionTypeExecutor> {
+    pub fn executor(&self) -> ::std::option::Option<& crate::types::ActionTypeExecutor> {
         self.executor.as_ref()
     }
     /// <p>The action category, owner, provider, and version of the action type to be updated.</p>
-    pub fn id(&self) -> ::std::option::Option<&crate::types::ActionTypeIdentifier> {
+    pub fn id(&self) -> ::std::option::Option<& crate::types::ActionTypeIdentifier> {
         self.id.as_ref()
     }
     /// <p>Details for the artifacts, such as application files, to be worked on by the action. For example, the minimum and maximum number of input artifacts allowed.</p>
-    pub fn input_artifact_details(&self) -> ::std::option::Option<&crate::types::ActionTypeArtifactDetails> {
+    pub fn input_artifact_details(&self) -> ::std::option::Option<& crate::types::ActionTypeArtifactDetails> {
         self.input_artifact_details.as_ref()
     }
     /// <p>Details for the output artifacts, such as a built application, that are the result of the action. For example, the minimum and maximum number of output artifacts allowed.</p>
-    pub fn output_artifact_details(&self) -> ::std::option::Option<&crate::types::ActionTypeArtifactDetails> {
+    pub fn output_artifact_details(&self) -> ::std::option::Option<& crate::types::ActionTypeArtifactDetails> {
         self.output_artifact_details.as_ref()
     }
     /// <p>Details identifying the accounts with permissions to use the action type.</p>
-    pub fn permissions(&self) -> ::std::option::Option<&crate::types::ActionTypePermissions> {
+    pub fn permissions(&self) -> ::std::option::Option<& crate::types::ActionTypePermissions> {
         self.permissions.as_ref()
     }
     /// <p>The properties of the action type to be updated.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.properties.is_none()`.
-    pub fn properties(&self) -> &[crate::types::ActionTypeProperty] {
-        self.properties.as_deref().unwrap_or_default()
+    pub fn properties(&self) -> & [crate::types::ActionTypeProperty] {
+        self.properties.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The links associated with the action type to be updated.</p>
-    pub fn urls(&self) -> ::std::option::Option<&crate::types::ActionTypeUrls> {
+    pub fn urls(&self) -> ::std::option::Option<& crate::types::ActionTypeUrls> {
         self.urls.as_ref()
     }
 }
@@ -74,7 +75,7 @@ pub struct ActionTypeDeclarationBuilder {
     pub(crate) input_artifact_details: ::std::option::Option<crate::types::ActionTypeArtifactDetails>,
     pub(crate) output_artifact_details: ::std::option::Option<crate::types::ActionTypeArtifactDetails>,
     pub(crate) permissions: ::std::option::Option<crate::types::ActionTypePermissions>,
-    pub(crate) properties: ::std::option::Option<::std::vec::Vec<crate::types::ActionTypeProperty>>,
+    pub(crate) properties: ::std::option::Option<::std::vec::Vec::<crate::types::ActionTypeProperty>>,
     pub(crate) urls: ::std::option::Option<crate::types::ActionTypeUrls>,
 }
 impl ActionTypeDeclarationBuilder {
@@ -85,8 +86,7 @@ impl ActionTypeDeclarationBuilder {
     }
     /// <p>The description for the action type to be updated.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description for the action type to be updated.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +100,7 @@ impl ActionTypeDeclarationBuilder {
     }
     /// <p>Information about the executor for an action type that was created with any supported integration model.</p>
     pub fn set_executor(mut self, input: ::std::option::Option<crate::types::ActionTypeExecutor>) -> Self {
-        self.executor = input;
-        self
+        self.executor = input; self
     }
     /// <p>Information about the executor for an action type that was created with any supported integration model.</p>
     pub fn get_executor(&self) -> &::std::option::Option<crate::types::ActionTypeExecutor> {
@@ -115,8 +114,7 @@ impl ActionTypeDeclarationBuilder {
     }
     /// <p>The action category, owner, provider, and version of the action type to be updated.</p>
     pub fn set_id(mut self, input: ::std::option::Option<crate::types::ActionTypeIdentifier>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The action category, owner, provider, and version of the action type to be updated.</p>
     pub fn get_id(&self) -> &::std::option::Option<crate::types::ActionTypeIdentifier> {
@@ -130,8 +128,7 @@ impl ActionTypeDeclarationBuilder {
     }
     /// <p>Details for the artifacts, such as application files, to be worked on by the action. For example, the minimum and maximum number of input artifacts allowed.</p>
     pub fn set_input_artifact_details(mut self, input: ::std::option::Option<crate::types::ActionTypeArtifactDetails>) -> Self {
-        self.input_artifact_details = input;
-        self
+        self.input_artifact_details = input; self
     }
     /// <p>Details for the artifacts, such as application files, to be worked on by the action. For example, the minimum and maximum number of input artifacts allowed.</p>
     pub fn get_input_artifact_details(&self) -> &::std::option::Option<crate::types::ActionTypeArtifactDetails> {
@@ -145,8 +142,7 @@ impl ActionTypeDeclarationBuilder {
     }
     /// <p>Details for the output artifacts, such as a built application, that are the result of the action. For example, the minimum and maximum number of output artifacts allowed.</p>
     pub fn set_output_artifact_details(mut self, input: ::std::option::Option<crate::types::ActionTypeArtifactDetails>) -> Self {
-        self.output_artifact_details = input;
-        self
+        self.output_artifact_details = input; self
     }
     /// <p>Details for the output artifacts, such as a built application, that are the result of the action. For example, the minimum and maximum number of output artifacts allowed.</p>
     pub fn get_output_artifact_details(&self) -> &::std::option::Option<crate::types::ActionTypeArtifactDetails> {
@@ -159,8 +155,7 @@ impl ActionTypeDeclarationBuilder {
     }
     /// <p>Details identifying the accounts with permissions to use the action type.</p>
     pub fn set_permissions(mut self, input: ::std::option::Option<crate::types::ActionTypePermissions>) -> Self {
-        self.permissions = input;
-        self
+        self.permissions = input; self
     }
     /// <p>Details identifying the accounts with permissions to use the action type.</p>
     pub fn get_permissions(&self) -> &::std::option::Option<crate::types::ActionTypePermissions> {
@@ -173,17 +168,16 @@ impl ActionTypeDeclarationBuilder {
     /// <p>The properties of the action type to be updated.</p>
     pub fn properties(mut self, input: crate::types::ActionTypeProperty) -> Self {
         let mut v = self.properties.unwrap_or_default();
-        v.push(input);
-        self.properties = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.properties = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The properties of the action type to be updated.</p>
-    pub fn set_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActionTypeProperty>>) -> Self {
-        self.properties = input;
-        self
+    pub fn set_properties(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ActionTypeProperty>>) -> Self {
+        self.properties = input; self
     }
     /// <p>The properties of the action type to be updated.</p>
-    pub fn get_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionTypeProperty>> {
+    pub fn get_properties(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ActionTypeProperty>> {
         &self.properties
     }
     /// <p>The links associated with the action type to be updated.</p>
@@ -193,8 +187,7 @@ impl ActionTypeDeclarationBuilder {
     }
     /// <p>The links associated with the action type to be updated.</p>
     pub fn set_urls(mut self, input: ::std::option::Option<crate::types::ActionTypeUrls>) -> Self {
-        self.urls = input;
-        self
+        self.urls = input; self
     }
     /// <p>The links associated with the action type to be updated.</p>
     pub fn get_urls(&self) -> &::std::option::Option<crate::types::ActionTypeUrls> {
@@ -203,14 +196,23 @@ impl ActionTypeDeclarationBuilder {
     /// Consumes the builder and constructs a [`ActionTypeDeclaration`](crate::types::ActionTypeDeclaration).
     pub fn build(self) -> crate::types::ActionTypeDeclaration {
         crate::types::ActionTypeDeclaration {
-            description: self.description,
-            executor: self.executor,
-            id: self.id,
-            input_artifact_details: self.input_artifact_details,
-            output_artifact_details: self.output_artifact_details,
-            permissions: self.permissions,
-            properties: self.properties,
-            urls: self.urls,
+            description: self.description
+            ,
+            executor: self.executor
+            ,
+            id: self.id
+            ,
+            input_artifact_details: self.input_artifact_details
+            ,
+            output_artifact_details: self.output_artifact_details
+            ,
+            permissions: self.permissions
+            ,
+            properties: self.properties
+            ,
+            urls: self.urls
+            ,
         }
     }
 }
+

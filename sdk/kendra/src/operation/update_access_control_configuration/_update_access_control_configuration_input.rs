@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAccessControlConfigurationInput {
+pub struct UpdateAccessControlConfigurationInput  {
     /// <p>The identifier of the index for an access control configuration.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the access control configuration you want to update.</p>
@@ -12,38 +12,40 @@ pub struct UpdateAccessControlConfigurationInput {
     /// <p>A new description for the access control configuration.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information you want to update on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
-    pub access_control_list: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>,
+    pub access_control_list: ::std::option::Option<::std::vec::Vec::<crate::types::Principal>>,
     /// <p>The updated list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
-    pub hierarchical_access_control_list: ::std::option::Option<::std::vec::Vec<crate::types::HierarchicalPrincipal>>,
+    pub hierarchical_access_control_list: ::std::option::Option<::std::vec::Vec::<crate::types::HierarchicalPrincipal>>,
 }
-impl UpdateAccessControlConfigurationInput {
+impl  UpdateAccessControlConfigurationInput  {
     /// <p>The identifier of the index for an access control configuration.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>The identifier of the access control configuration you want to update.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A new name for the access control configuration.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A new description for the access control configuration.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Information you want to update on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_control_list.is_none()`.
-    pub fn access_control_list(&self) -> &[crate::types::Principal] {
-        self.access_control_list.as_deref().unwrap_or_default()
+    pub fn access_control_list(&self) -> & [crate::types::Principal] {
+        self.access_control_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The updated list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hierarchical_access_control_list.is_none()`.
-    pub fn hierarchical_access_control_list(&self) -> &[crate::types::HierarchicalPrincipal] {
-        self.hierarchical_access_control_list.as_deref().unwrap_or_default()
+    pub fn hierarchical_access_control_list(&self) -> & [crate::types::HierarchicalPrincipal] {
+        self.hierarchical_access_control_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateAccessControlConfigurationInput {
@@ -61,8 +63,8 @@ pub struct UpdateAccessControlConfigurationInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) access_control_list: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>,
-    pub(crate) hierarchical_access_control_list: ::std::option::Option<::std::vec::Vec<crate::types::HierarchicalPrincipal>>,
+    pub(crate) access_control_list: ::std::option::Option<::std::vec::Vec::<crate::types::Principal>>,
+    pub(crate) hierarchical_access_control_list: ::std::option::Option<::std::vec::Vec::<crate::types::HierarchicalPrincipal>>,
 }
 impl UpdateAccessControlConfigurationInputBuilder {
     /// <p>The identifier of the index for an access control configuration.</p>
@@ -73,8 +75,7 @@ impl UpdateAccessControlConfigurationInputBuilder {
     }
     /// <p>The identifier of the index for an access control configuration.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>The identifier of the index for an access control configuration.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +89,7 @@ impl UpdateAccessControlConfigurationInputBuilder {
     }
     /// <p>The identifier of the access control configuration you want to update.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the access control configuration you want to update.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +102,7 @@ impl UpdateAccessControlConfigurationInputBuilder {
     }
     /// <p>A new name for the access control configuration.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A new name for the access control configuration.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +115,7 @@ impl UpdateAccessControlConfigurationInputBuilder {
     }
     /// <p>A new description for the access control configuration.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A new description for the access control configuration.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,17 +128,16 @@ impl UpdateAccessControlConfigurationInputBuilder {
     /// <p>Information you want to update on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
     pub fn access_control_list(mut self, input: crate::types::Principal) -> Self {
         let mut v = self.access_control_list.unwrap_or_default();
-        v.push(input);
-        self.access_control_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.access_control_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information you want to update on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
-    pub fn set_access_control_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>) -> Self {
-        self.access_control_list = input;
-        self
+    pub fn set_access_control_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Principal>>) -> Self {
+        self.access_control_list = input; self
     }
     /// <p>Information you want to update on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
-    pub fn get_access_control_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Principal>> {
+    pub fn get_access_control_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Principal>> {
         &self.access_control_list
     }
     /// Appends an item to `hierarchical_access_control_list`.
@@ -150,38 +147,36 @@ impl UpdateAccessControlConfigurationInputBuilder {
     /// <p>The updated list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
     pub fn hierarchical_access_control_list(mut self, input: crate::types::HierarchicalPrincipal) -> Self {
         let mut v = self.hierarchical_access_control_list.unwrap_or_default();
-        v.push(input);
-        self.hierarchical_access_control_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.hierarchical_access_control_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The updated list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
-    pub fn set_hierarchical_access_control_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HierarchicalPrincipal>>,
-    ) -> Self {
-        self.hierarchical_access_control_list = input;
-        self
+    pub fn set_hierarchical_access_control_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::HierarchicalPrincipal>>) -> Self {
+        self.hierarchical_access_control_list = input; self
     }
     /// <p>The updated list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
-    pub fn get_hierarchical_access_control_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HierarchicalPrincipal>> {
+    pub fn get_hierarchical_access_control_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::HierarchicalPrincipal>> {
         &self.hierarchical_access_control_list
     }
     /// Consumes the builder and constructs a [`UpdateAccessControlConfigurationInput`](crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationInput {
-                index_id: self.index_id,
-                id: self.id,
-                name: self.name,
-                description: self.description,
-                access_control_list: self.access_control_list,
-                hierarchical_access_control_list: self.hierarchical_access_control_list,
-            },
+                index_id: self.index_id
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                access_control_list: self.access_control_list
+                ,
+                hierarchical_access_control_list: self.hierarchical_access_control_list
+                ,
+            }
         )
     }
 }
+

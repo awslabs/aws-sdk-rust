@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReverseReplicationOutput {
+pub struct ReverseReplicationOutput  {
     /// <p>ARN of created SourceServer.</p>
     pub reversed_direction_source_server_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ReverseReplicationOutput {
+impl  ReverseReplicationOutput  {
     /// <p>ARN of created SourceServer.</p>
-    pub fn reversed_direction_source_server_arn(&self) -> ::std::option::Option<&str> {
+    pub fn reversed_direction_source_server_arn(&self) -> ::std::option::Option<& str> {
         self.reversed_direction_source_server_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ReverseReplicationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ReverseReplicationOutput {
     /// Creates a new builder-style object to manufacture [`ReverseReplicationOutput`](crate::operation::reverse_replication::ReverseReplicationOutput).
     pub fn builder() -> crate::operation::reverse_replication::builders::ReverseReplicationOutputBuilder {
@@ -40,27 +40,28 @@ impl ReverseReplicationOutputBuilder {
     }
     /// <p>ARN of created SourceServer.</p>
     pub fn set_reversed_direction_source_server_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reversed_direction_source_server_arn = input;
-        self
+        self.reversed_direction_source_server_arn = input; self
     }
     /// <p>ARN of created SourceServer.</p>
     pub fn get_reversed_direction_source_server_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.reversed_direction_source_server_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ReverseReplicationOutput`](crate::operation::reverse_replication::ReverseReplicationOutput).
     pub fn build(self) -> crate::operation::reverse_replication::ReverseReplicationOutput {
         crate::operation::reverse_replication::ReverseReplicationOutput {
-            reversed_direction_source_server_arn: self.reversed_direction_source_server_arn,
+            reversed_direction_source_server_arn: self.reversed_direction_source_server_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

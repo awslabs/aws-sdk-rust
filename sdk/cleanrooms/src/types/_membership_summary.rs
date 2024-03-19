@@ -3,7 +3,7 @@
 /// <p>The membership object listed by the request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MembershipSummary {
+pub struct MembershipSummary  {
     /// <p>The unique ID for the membership's collaboration.</p>
     pub id: ::std::string::String,
     /// <p>The unique ARN for the membership.</p>
@@ -25,65 +25,57 @@ pub struct MembershipSummary {
     /// <p>The status of the membership.</p>
     pub status: crate::types::MembershipStatus,
     /// <p>The abilities granted to the collaboration member.</p>
-    pub member_abilities: ::std::vec::Vec<crate::types::MemberAbility>,
+    pub member_abilities: ::std::vec::Vec::<crate::types::MemberAbility>,
     /// <p>The payment responsibilities accepted by the collaboration member.</p>
     pub payment_configuration: ::std::option::Option<crate::types::MembershipPaymentConfiguration>,
 }
-impl MembershipSummary {
+impl  MembershipSummary  {
     /// <p>The unique ID for the membership's collaboration.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The unique ARN for the membership.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The unique ARN for the membership's associated collaboration.</p>
-    pub fn collaboration_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.collaboration_arn.deref()
+    pub fn collaboration_arn(&self) -> & str {
+        use std::ops::Deref; self.collaboration_arn.deref()
     }
     /// <p>The unique ID for the membership's collaboration.</p>
-    pub fn collaboration_id(&self) -> &str {
-        use std::ops::Deref;
-        self.collaboration_id.deref()
+    pub fn collaboration_id(&self) -> & str {
+        use std::ops::Deref; self.collaboration_id.deref()
     }
     /// <p>The identifier of the Amazon Web Services principal that created the collaboration. Currently only supports Amazon Web Services account ID.</p>
-    pub fn collaboration_creator_account_id(&self) -> &str {
-        use std::ops::Deref;
-        self.collaboration_creator_account_id.deref()
+    pub fn collaboration_creator_account_id(&self) -> & str {
+        use std::ops::Deref; self.collaboration_creator_account_id.deref()
     }
     /// <p>The display name of the collaboration creator.</p>
-    pub fn collaboration_creator_display_name(&self) -> &str {
-        use std::ops::Deref;
-        self.collaboration_creator_display_name.deref()
+    pub fn collaboration_creator_display_name(&self) -> & str {
+        use std::ops::Deref; self.collaboration_creator_display_name.deref()
     }
     /// <p>The name for the membership's collaboration.</p>
-    pub fn collaboration_name(&self) -> &str {
-        use std::ops::Deref;
-        self.collaboration_name.deref()
+    pub fn collaboration_name(&self) -> & str {
+        use std::ops::Deref; self.collaboration_name.deref()
     }
     /// <p>The time when the membership was created.</p>
-    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn create_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.create_time
     }
     /// <p>The time the membership metadata was last updated.</p>
-    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_time
     }
     /// <p>The status of the membership.</p>
-    pub fn status(&self) -> &crate::types::MembershipStatus {
+    pub fn status(&self) -> & crate::types::MembershipStatus {
         &self.status
     }
     /// <p>The abilities granted to the collaboration member.</p>
-    pub fn member_abilities(&self) -> &[crate::types::MemberAbility] {
-        use std::ops::Deref;
-        self.member_abilities.deref()
+    pub fn member_abilities(&self) -> & [crate::types::MemberAbility] {
+        use std::ops::Deref; self.member_abilities.deref()
     }
     /// <p>The payment responsibilities accepted by the collaboration member.</p>
-    pub fn payment_configuration(&self) -> ::std::option::Option<&crate::types::MembershipPaymentConfiguration> {
+    pub fn payment_configuration(&self) -> ::std::option::Option<& crate::types::MembershipPaymentConfiguration> {
         self.payment_configuration.as_ref()
     }
 }
@@ -108,7 +100,7 @@ pub struct MembershipSummaryBuilder {
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::MembershipStatus>,
-    pub(crate) member_abilities: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>,
+    pub(crate) member_abilities: ::std::option::Option<::std::vec::Vec::<crate::types::MemberAbility>>,
     pub(crate) payment_configuration: ::std::option::Option<crate::types::MembershipPaymentConfiguration>,
 }
 impl MembershipSummaryBuilder {
@@ -120,8 +112,7 @@ impl MembershipSummaryBuilder {
     }
     /// <p>The unique ID for the membership's collaboration.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique ID for the membership's collaboration.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +126,7 @@ impl MembershipSummaryBuilder {
     }
     /// <p>The unique ARN for the membership.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The unique ARN for the membership.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +140,7 @@ impl MembershipSummaryBuilder {
     }
     /// <p>The unique ARN for the membership's associated collaboration.</p>
     pub fn set_collaboration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collaboration_arn = input;
-        self
+        self.collaboration_arn = input; self
     }
     /// <p>The unique ARN for the membership's associated collaboration.</p>
     pub fn get_collaboration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,8 +154,7 @@ impl MembershipSummaryBuilder {
     }
     /// <p>The unique ID for the membership's collaboration.</p>
     pub fn set_collaboration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collaboration_id = input;
-        self
+        self.collaboration_id = input; self
     }
     /// <p>The unique ID for the membership's collaboration.</p>
     pub fn get_collaboration_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -180,8 +168,7 @@ impl MembershipSummaryBuilder {
     }
     /// <p>The identifier of the Amazon Web Services principal that created the collaboration. Currently only supports Amazon Web Services account ID.</p>
     pub fn set_collaboration_creator_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collaboration_creator_account_id = input;
-        self
+        self.collaboration_creator_account_id = input; self
     }
     /// <p>The identifier of the Amazon Web Services principal that created the collaboration. Currently only supports Amazon Web Services account ID.</p>
     pub fn get_collaboration_creator_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -195,8 +182,7 @@ impl MembershipSummaryBuilder {
     }
     /// <p>The display name of the collaboration creator.</p>
     pub fn set_collaboration_creator_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collaboration_creator_display_name = input;
-        self
+        self.collaboration_creator_display_name = input; self
     }
     /// <p>The display name of the collaboration creator.</p>
     pub fn get_collaboration_creator_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -210,8 +196,7 @@ impl MembershipSummaryBuilder {
     }
     /// <p>The name for the membership's collaboration.</p>
     pub fn set_collaboration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collaboration_name = input;
-        self
+        self.collaboration_name = input; self
     }
     /// <p>The name for the membership's collaboration.</p>
     pub fn get_collaboration_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -225,8 +210,7 @@ impl MembershipSummaryBuilder {
     }
     /// <p>The time when the membership was created.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The time when the membership was created.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -240,8 +224,7 @@ impl MembershipSummaryBuilder {
     }
     /// <p>The time the membership metadata was last updated.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input;
-        self
+        self.update_time = input; self
     }
     /// <p>The time the membership metadata was last updated.</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -255,8 +238,7 @@ impl MembershipSummaryBuilder {
     }
     /// <p>The status of the membership.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MembershipStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the membership.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::MembershipStatus> {
@@ -269,17 +251,16 @@ impl MembershipSummaryBuilder {
     /// <p>The abilities granted to the collaboration member.</p>
     pub fn member_abilities(mut self, input: crate::types::MemberAbility) -> Self {
         let mut v = self.member_abilities.unwrap_or_default();
-        v.push(input);
-        self.member_abilities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.member_abilities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The abilities granted to the collaboration member.</p>
-    pub fn set_member_abilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>) -> Self {
-        self.member_abilities = input;
-        self
+    pub fn set_member_abilities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MemberAbility>>) -> Self {
+        self.member_abilities = input; self
     }
     /// <p>The abilities granted to the collaboration member.</p>
-    pub fn get_member_abilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>> {
+    pub fn get_member_abilities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MemberAbility>> {
         &self.member_abilities
     }
     /// <p>The payment responsibilities accepted by the collaboration member.</p>
@@ -290,8 +271,7 @@ impl MembershipSummaryBuilder {
     }
     /// <p>The payment responsibilities accepted by the collaboration member.</p>
     pub fn set_payment_configuration(mut self, input: ::std::option::Option<crate::types::MembershipPaymentConfiguration>) -> Self {
-        self.payment_configuration = input;
-        self
+        self.payment_configuration = input; self
     }
     /// <p>The payment responsibilities accepted by the collaboration member.</p>
     pub fn get_payment_configuration(&self) -> &::std::option::Option<crate::types::MembershipPaymentConfiguration> {
@@ -311,74 +291,67 @@ impl MembershipSummaryBuilder {
     /// - [`status`](crate::types::builders::MembershipSummaryBuilder::status)
     /// - [`member_abilities`](crate::types::builders::MembershipSummaryBuilder::member_abilities)
     pub fn build(self) -> ::std::result::Result<crate::types::MembershipSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MembershipSummary {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building MembershipSummary",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building MembershipSummary",
-                )
-            })?,
-            collaboration_arn: self.collaboration_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "collaboration_arn",
-                    "collaboration_arn was not specified but it is required when building MembershipSummary",
-                )
-            })?,
-            collaboration_id: self.collaboration_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "collaboration_id",
-                    "collaboration_id was not specified but it is required when building MembershipSummary",
-                )
-            })?,
-            collaboration_creator_account_id: self.collaboration_creator_account_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "collaboration_creator_account_id",
-                    "collaboration_creator_account_id was not specified but it is required when building MembershipSummary",
-                )
-            })?,
-            collaboration_creator_display_name: self.collaboration_creator_display_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "collaboration_creator_display_name",
-                    "collaboration_creator_display_name was not specified but it is required when building MembershipSummary",
-                )
-            })?,
-            collaboration_name: self.collaboration_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "collaboration_name",
-                    "collaboration_name was not specified but it is required when building MembershipSummary",
-                )
-            })?,
-            create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "create_time",
-                    "create_time was not specified but it is required when building MembershipSummary",
-                )
-            })?,
-            update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_time",
-                    "update_time was not specified but it is required when building MembershipSummary",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building MembershipSummary",
-                )
-            })?,
-            member_abilities: self.member_abilities.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "member_abilities",
-                    "member_abilities was not specified but it is required when building MembershipSummary",
-                )
-            })?,
-            payment_configuration: self.payment_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MembershipSummary {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building MembershipSummary")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building MembershipSummary")
+                    )?
+                ,
+                collaboration_arn: self.collaboration_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("collaboration_arn", "collaboration_arn was not specified but it is required when building MembershipSummary")
+                    )?
+                ,
+                collaboration_id: self.collaboration_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("collaboration_id", "collaboration_id was not specified but it is required when building MembershipSummary")
+                    )?
+                ,
+                collaboration_creator_account_id: self.collaboration_creator_account_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("collaboration_creator_account_id", "collaboration_creator_account_id was not specified but it is required when building MembershipSummary")
+                    )?
+                ,
+                collaboration_creator_display_name: self.collaboration_creator_display_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("collaboration_creator_display_name", "collaboration_creator_display_name was not specified but it is required when building MembershipSummary")
+                    )?
+                ,
+                collaboration_name: self.collaboration_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("collaboration_name", "collaboration_name was not specified but it is required when building MembershipSummary")
+                    )?
+                ,
+                create_time: self.create_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("create_time", "create_time was not specified but it is required when building MembershipSummary")
+                    )?
+                ,
+                update_time: self.update_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_time", "update_time was not specified but it is required when building MembershipSummary")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building MembershipSummary")
+                    )?
+                ,
+                member_abilities: self.member_abilities
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("member_abilities", "member_abilities was not specified but it is required when building MembershipSummary")
+                    )?
+                ,
+                payment_configuration: self.payment_configuration
+                ,
+            }
+        )
     }
 }
+

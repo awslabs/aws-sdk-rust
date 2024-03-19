@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateServiceSpecificCredentialInput {
+pub struct UpdateServiceSpecificCredentialInput  {
     /// <p>The name of the IAM user associated with the service-specific credential. If you do not specify this value, then the operation assumes the user whose credentials are used to call the operation.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub user_name: ::std::option::Option<::std::string::String>,
@@ -12,19 +12,19 @@ pub struct UpdateServiceSpecificCredentialInput {
     /// <p>The status to be assigned to the service-specific credential.</p>
     pub status: ::std::option::Option<crate::types::StatusType>,
 }
-impl UpdateServiceSpecificCredentialInput {
+impl  UpdateServiceSpecificCredentialInput  {
     /// <p>The name of the IAM user associated with the service-specific credential. If you do not specify this value, then the operation assumes the user whose credentials are used to call the operation.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>The unique identifier of the service-specific credential.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
-    pub fn service_specific_credential_id(&self) -> ::std::option::Option<&str> {
+    pub fn service_specific_credential_id(&self) -> ::std::option::Option<& str> {
         self.service_specific_credential_id.as_deref()
     }
     /// <p>The status to be assigned to the service-specific credential.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::StatusType> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::StatusType> {
         self.status.as_ref()
     }
 }
@@ -53,8 +53,7 @@ impl UpdateServiceSpecificCredentialInputBuilder {
     /// <p>The name of the IAM user associated with the service-specific credential. If you do not specify this value, then the operation assumes the user whose credentials are used to call the operation.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>The name of the IAM user associated with the service-specific credential. If you do not specify this value, then the operation assumes the user whose credentials are used to call the operation.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
@@ -71,8 +70,7 @@ impl UpdateServiceSpecificCredentialInputBuilder {
     /// <p>The unique identifier of the service-specific credential.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
     pub fn set_service_specific_credential_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_specific_credential_id = input;
-        self
+        self.service_specific_credential_id = input; self
     }
     /// <p>The unique identifier of the service-specific credential.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
@@ -87,26 +85,24 @@ impl UpdateServiceSpecificCredentialInputBuilder {
     }
     /// <p>The status to be assigned to the service-specific credential.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StatusType>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status to be assigned to the service-specific credential.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::StatusType> {
         &self.status
     }
     /// Consumes the builder and constructs a [`UpdateServiceSpecificCredentialInput`](crate::operation::update_service_specific_credential::UpdateServiceSpecificCredentialInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_service_specific_credential::UpdateServiceSpecificCredentialInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_service_specific_credential::UpdateServiceSpecificCredentialInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_service_specific_credential::UpdateServiceSpecificCredentialInput {
-                user_name: self.user_name,
-                service_specific_credential_id: self.service_specific_credential_id,
-                status: self.status,
-            },
+                user_name: self.user_name
+                ,
+                service_specific_credential_id: self.service_specific_credential_id
+                ,
+                status: self.status
+                ,
+            }
         )
     }
 }
+

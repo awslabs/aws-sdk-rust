@@ -3,11 +3,11 @@
 /// <p>Specifies the text input specifications.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TextInputSpecification {
+pub struct TextInputSpecification  {
     /// <p>Time for which a bot waits before re-prompting a customer for text input.</p>
     pub start_timeout_ms: i32,
 }
-impl TextInputSpecification {
+impl  TextInputSpecification  {
     /// <p>Time for which a bot waits before re-prompting a customer for text input.</p>
     pub fn start_timeout_ms(&self) -> i32 {
         self.start_timeout_ms
@@ -35,8 +35,7 @@ impl TextInputSpecificationBuilder {
     }
     /// <p>Time for which a bot waits before re-prompting a customer for text input.</p>
     pub fn set_start_timeout_ms(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.start_timeout_ms = input;
-        self
+        self.start_timeout_ms = input; self
     }
     /// <p>Time for which a bot waits before re-prompting a customer for text input.</p>
     pub fn get_start_timeout_ms(&self) -> &::std::option::Option<i32> {
@@ -46,13 +45,15 @@ impl TextInputSpecificationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`start_timeout_ms`](crate::types::builders::TextInputSpecificationBuilder::start_timeout_ms)
     pub fn build(self) -> ::std::result::Result<crate::types::TextInputSpecification, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TextInputSpecification {
-            start_timeout_ms: self.start_timeout_ms.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start_timeout_ms",
-                    "start_timeout_ms was not specified but it is required when building TextInputSpecification",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TextInputSpecification {
+                start_timeout_ms: self.start_timeout_ms
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start_timeout_ms", "start_timeout_ms was not specified but it is required when building TextInputSpecification")
+                    )?
+                ,
+            }
+        )
     }
 }
+

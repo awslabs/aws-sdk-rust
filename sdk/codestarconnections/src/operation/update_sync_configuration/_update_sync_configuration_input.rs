@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSyncConfigurationInput {
+pub struct UpdateSyncConfigurationInput  {
     /// <p>The branch for the sync configuration to be updated.</p>
     pub branch: ::std::option::Option<::std::string::String>,
     /// <p>The configuration file for the sync configuration to be updated.</p>
@@ -20,37 +20,37 @@ pub struct UpdateSyncConfigurationInput {
     /// <p>When to trigger Git sync to begin the stack update.</p>
     pub trigger_resource_update_on: ::std::option::Option<crate::types::TriggerResourceUpdateOn>,
 }
-impl UpdateSyncConfigurationInput {
+impl  UpdateSyncConfigurationInput  {
     /// <p>The branch for the sync configuration to be updated.</p>
-    pub fn branch(&self) -> ::std::option::Option<&str> {
+    pub fn branch(&self) -> ::std::option::Option<& str> {
         self.branch.as_deref()
     }
     /// <p>The configuration file for the sync configuration to be updated.</p>
-    pub fn config_file(&self) -> ::std::option::Option<&str> {
+    pub fn config_file(&self) -> ::std::option::Option<& str> {
         self.config_file.as_deref()
     }
     /// <p>The ID of the repository link for the sync configuration to be updated.</p>
-    pub fn repository_link_id(&self) -> ::std::option::Option<&str> {
+    pub fn repository_link_id(&self) -> ::std::option::Option<& str> {
         self.repository_link_id.as_deref()
     }
     /// <p>The name of the Amazon Web Services resource for the sync configuration to be updated.</p>
-    pub fn resource_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_name(&self) -> ::std::option::Option<& str> {
         self.resource_name.as_deref()
     }
     /// <p>The ARN of the IAM role for the sync configuration to be updated.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The sync type for the sync configuration to be updated.</p>
-    pub fn sync_type(&self) -> ::std::option::Option<&crate::types::SyncConfigurationType> {
+    pub fn sync_type(&self) -> ::std::option::Option<& crate::types::SyncConfigurationType> {
         self.sync_type.as_ref()
     }
     /// <p>Whether to enable or disable publishing of deployment status to source providers.</p>
-    pub fn publish_deployment_status(&self) -> ::std::option::Option<&crate::types::PublishDeploymentStatus> {
+    pub fn publish_deployment_status(&self) -> ::std::option::Option<& crate::types::PublishDeploymentStatus> {
         self.publish_deployment_status.as_ref()
     }
     /// <p>When to trigger Git sync to begin the stack update.</p>
-    pub fn trigger_resource_update_on(&self) -> ::std::option::Option<&crate::types::TriggerResourceUpdateOn> {
+    pub fn trigger_resource_update_on(&self) -> ::std::option::Option<& crate::types::TriggerResourceUpdateOn> {
         self.trigger_resource_update_on.as_ref()
     }
 }
@@ -82,8 +82,7 @@ impl UpdateSyncConfigurationInputBuilder {
     }
     /// <p>The branch for the sync configuration to be updated.</p>
     pub fn set_branch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.branch = input;
-        self
+        self.branch = input; self
     }
     /// <p>The branch for the sync configuration to be updated.</p>
     pub fn get_branch(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +95,7 @@ impl UpdateSyncConfigurationInputBuilder {
     }
     /// <p>The configuration file for the sync configuration to be updated.</p>
     pub fn set_config_file(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.config_file = input;
-        self
+        self.config_file = input; self
     }
     /// <p>The configuration file for the sync configuration to be updated.</p>
     pub fn get_config_file(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +108,7 @@ impl UpdateSyncConfigurationInputBuilder {
     }
     /// <p>The ID of the repository link for the sync configuration to be updated.</p>
     pub fn set_repository_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_link_id = input;
-        self
+        self.repository_link_id = input; self
     }
     /// <p>The ID of the repository link for the sync configuration to be updated.</p>
     pub fn get_repository_link_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +122,7 @@ impl UpdateSyncConfigurationInputBuilder {
     }
     /// <p>The name of the Amazon Web Services resource for the sync configuration to be updated.</p>
     pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_name = input;
-        self
+        self.resource_name = input; self
     }
     /// <p>The name of the Amazon Web Services resource for the sync configuration to be updated.</p>
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +135,7 @@ impl UpdateSyncConfigurationInputBuilder {
     }
     /// <p>The ARN of the IAM role for the sync configuration to be updated.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the IAM role for the sync configuration to be updated.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,8 +149,7 @@ impl UpdateSyncConfigurationInputBuilder {
     }
     /// <p>The sync type for the sync configuration to be updated.</p>
     pub fn set_sync_type(mut self, input: ::std::option::Option<crate::types::SyncConfigurationType>) -> Self {
-        self.sync_type = input;
-        self
+        self.sync_type = input; self
     }
     /// <p>The sync type for the sync configuration to be updated.</p>
     pub fn get_sync_type(&self) -> &::std::option::Option<crate::types::SyncConfigurationType> {
@@ -168,8 +162,7 @@ impl UpdateSyncConfigurationInputBuilder {
     }
     /// <p>Whether to enable or disable publishing of deployment status to source providers.</p>
     pub fn set_publish_deployment_status(mut self, input: ::std::option::Option<crate::types::PublishDeploymentStatus>) -> Self {
-        self.publish_deployment_status = input;
-        self
+        self.publish_deployment_status = input; self
     }
     /// <p>Whether to enable or disable publishing of deployment status to source providers.</p>
     pub fn get_publish_deployment_status(&self) -> &::std::option::Option<crate::types::PublishDeploymentStatus> {
@@ -182,29 +175,34 @@ impl UpdateSyncConfigurationInputBuilder {
     }
     /// <p>When to trigger Git sync to begin the stack update.</p>
     pub fn set_trigger_resource_update_on(mut self, input: ::std::option::Option<crate::types::TriggerResourceUpdateOn>) -> Self {
-        self.trigger_resource_update_on = input;
-        self
+        self.trigger_resource_update_on = input; self
     }
     /// <p>When to trigger Git sync to begin the stack update.</p>
     pub fn get_trigger_resource_update_on(&self) -> &::std::option::Option<crate::types::TriggerResourceUpdateOn> {
         &self.trigger_resource_update_on
     }
     /// Consumes the builder and constructs a [`UpdateSyncConfigurationInput`](crate::operation::update_sync_configuration::UpdateSyncConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_sync_configuration::UpdateSyncConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_sync_configuration::UpdateSyncConfigurationInput {
-            branch: self.branch,
-            config_file: self.config_file,
-            repository_link_id: self.repository_link_id,
-            resource_name: self.resource_name,
-            role_arn: self.role_arn,
-            sync_type: self.sync_type,
-            publish_deployment_status: self.publish_deployment_status,
-            trigger_resource_update_on: self.trigger_resource_update_on,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_sync_configuration::UpdateSyncConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_sync_configuration::UpdateSyncConfigurationInput {
+                branch: self.branch
+                ,
+                config_file: self.config_file
+                ,
+                repository_link_id: self.repository_link_id
+                ,
+                resource_name: self.resource_name
+                ,
+                role_arn: self.role_arn
+                ,
+                sync_type: self.sync_type
+                ,
+                publish_deployment_status: self.publish_deployment_status
+                ,
+                trigger_resource_update_on: self.trigger_resource_update_on
+                ,
+            }
+        )
     }
 }
+

@@ -22,11 +22,7 @@ impl FormatOptions {
     /// Tries to convert the enum instance into [`TsvOptions`](crate::types::FormatOptions::TsvOptions), extracting the inner [`TsvOptions`](crate::types::TsvOptions).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_tsv_options(&self) -> ::std::result::Result<&crate::types::TsvOptions, &Self> {
-        if let FormatOptions::TsvOptions(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let FormatOptions::TsvOptions(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`TsvOptions`](crate::types::FormatOptions::TsvOptions).
     pub fn is_tsv_options(&self) -> bool {
@@ -35,11 +31,7 @@ impl FormatOptions {
     /// Tries to convert the enum instance into [`VcfOptions`](crate::types::FormatOptions::VcfOptions), extracting the inner [`VcfOptions`](crate::types::VcfOptions).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_vcf_options(&self) -> ::std::result::Result<&crate::types::VcfOptions, &Self> {
-        if let FormatOptions::VcfOptions(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let FormatOptions::VcfOptions(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`VcfOptions`](crate::types::FormatOptions::VcfOptions).
     pub fn is_vcf_options(&self) -> bool {
@@ -50,3 +42,4 @@ impl FormatOptions {
         matches!(self, Self::Unknown)
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateVpceConfigurationOutput {
+pub struct UpdateVpceConfigurationOutput  {
     /// <p>An object that contains information about your VPC endpoint configuration.</p>
     pub vpce_configuration: ::std::option::Option<crate::types::VpceConfiguration>,
     _request_id: Option<String>,
 }
-impl UpdateVpceConfigurationOutput {
+impl  UpdateVpceConfigurationOutput  {
     /// <p>An object that contains information about your VPC endpoint configuration.</p>
-    pub fn vpce_configuration(&self) -> ::std::option::Option<&crate::types::VpceConfiguration> {
+    pub fn vpce_configuration(&self) -> ::std::option::Option<& crate::types::VpceConfiguration> {
         self.vpce_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateVpceConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateVpceConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateVpceConfigurationOutput`](crate::operation::update_vpce_configuration::UpdateVpceConfigurationOutput).
     pub fn builder() -> crate::operation::update_vpce_configuration::builders::UpdateVpceConfigurationOutputBuilder {
@@ -40,27 +40,28 @@ impl UpdateVpceConfigurationOutputBuilder {
     }
     /// <p>An object that contains information about your VPC endpoint configuration.</p>
     pub fn set_vpce_configuration(mut self, input: ::std::option::Option<crate::types::VpceConfiguration>) -> Self {
-        self.vpce_configuration = input;
-        self
+        self.vpce_configuration = input; self
     }
     /// <p>An object that contains information about your VPC endpoint configuration.</p>
     pub fn get_vpce_configuration(&self) -> &::std::option::Option<crate::types::VpceConfiguration> {
         &self.vpce_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateVpceConfigurationOutput`](crate::operation::update_vpce_configuration::UpdateVpceConfigurationOutput).
     pub fn build(self) -> crate::operation::update_vpce_configuration::UpdateVpceConfigurationOutput {
         crate::operation::update_vpce_configuration::UpdateVpceConfigurationOutput {
-            vpce_configuration: self.vpce_configuration,
+            vpce_configuration: self.vpce_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

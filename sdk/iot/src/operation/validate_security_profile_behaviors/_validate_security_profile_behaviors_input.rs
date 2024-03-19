@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ValidateSecurityProfileBehaviorsInput {
+pub struct ValidateSecurityProfileBehaviorsInput  {
     /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
-    pub behaviors: ::std::option::Option<::std::vec::Vec<crate::types::Behavior>>,
+    pub behaviors: ::std::option::Option<::std::vec::Vec::<crate::types::Behavior>>,
 }
-impl ValidateSecurityProfileBehaviorsInput {
+impl  ValidateSecurityProfileBehaviorsInput  {
     /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.behaviors.is_none()`.
-    pub fn behaviors(&self) -> &[crate::types::Behavior] {
-        self.behaviors.as_deref().unwrap_or_default()
+    pub fn behaviors(&self) -> & [crate::types::Behavior] {
+        self.behaviors.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ValidateSecurityProfileBehaviorsInput {
@@ -25,7 +26,7 @@ impl ValidateSecurityProfileBehaviorsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidateSecurityProfileBehaviorsInputBuilder {
-    pub(crate) behaviors: ::std::option::Option<::std::vec::Vec<crate::types::Behavior>>,
+    pub(crate) behaviors: ::std::option::Option<::std::vec::Vec::<crate::types::Behavior>>,
 }
 impl ValidateSecurityProfileBehaviorsInputBuilder {
     /// Appends an item to `behaviors`.
@@ -35,28 +36,26 @@ impl ValidateSecurityProfileBehaviorsInputBuilder {
     /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
     pub fn behaviors(mut self, input: crate::types::Behavior) -> Self {
         let mut v = self.behaviors.unwrap_or_default();
-        v.push(input);
-        self.behaviors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.behaviors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
-    pub fn set_behaviors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Behavior>>) -> Self {
-        self.behaviors = input;
-        self
+    pub fn set_behaviors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Behavior>>) -> Self {
+        self.behaviors = input; self
     }
     /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
-    pub fn get_behaviors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Behavior>> {
+    pub fn get_behaviors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Behavior>> {
         &self.behaviors
     }
     /// Consumes the builder and constructs a [`ValidateSecurityProfileBehaviorsInput`](crate::operation::validate_security_profile_behaviors::ValidateSecurityProfileBehaviorsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::validate_security_profile_behaviors::ValidateSecurityProfileBehaviorsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::validate_security_profile_behaviors::ValidateSecurityProfileBehaviorsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::validate_security_profile_behaviors::ValidateSecurityProfileBehaviorsInput { behaviors: self.behaviors },
+            crate::operation::validate_security_profile_behaviors::ValidateSecurityProfileBehaviorsInput {
+                behaviors: self.behaviors
+                ,
+            }
         )
     }
 }
+

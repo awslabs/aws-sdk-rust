@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePublishingDestinationInput {
+pub struct CreatePublishingDestinationInput  {
     /// <p>The ID of the GuardDuty detector associated with the publishing destination.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.</p>
@@ -12,21 +12,21 @@ pub struct CreatePublishingDestinationInput {
     /// <p>The idempotency token for the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreatePublishingDestinationInput {
+impl  CreatePublishingDestinationInput  {
     /// <p>The ID of the GuardDuty detector associated with the publishing destination.</p>
-    pub fn detector_id(&self) -> ::std::option::Option<&str> {
+    pub fn detector_id(&self) -> ::std::option::Option<& str> {
         self.detector_id.as_deref()
     }
     /// <p>The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.</p>
-    pub fn destination_type(&self) -> ::std::option::Option<&crate::types::DestinationType> {
+    pub fn destination_type(&self) -> ::std::option::Option<& crate::types::DestinationType> {
         self.destination_type.as_ref()
     }
     /// <p>The properties of the publishing destination, including the ARNs for the destination and the KMS key used for encryption.</p>
-    pub fn destination_properties(&self) -> ::std::option::Option<&crate::types::DestinationProperties> {
+    pub fn destination_properties(&self) -> ::std::option::Option<& crate::types::DestinationProperties> {
         self.destination_properties.as_ref()
     }
     /// <p>The idempotency token for the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl CreatePublishingDestinationInputBuilder {
     }
     /// <p>The ID of the GuardDuty detector associated with the publishing destination.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
     }
     /// <p>The ID of the GuardDuty detector associated with the publishing destination.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl CreatePublishingDestinationInputBuilder {
     }
     /// <p>The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.</p>
     pub fn set_destination_type(mut self, input: ::std::option::Option<crate::types::DestinationType>) -> Self {
-        self.destination_type = input;
-        self
+        self.destination_type = input; self
     }
     /// <p>The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.</p>
     pub fn get_destination_type(&self) -> &::std::option::Option<crate::types::DestinationType> {
@@ -85,8 +83,7 @@ impl CreatePublishingDestinationInputBuilder {
     }
     /// <p>The properties of the publishing destination, including the ARNs for the destination and the KMS key used for encryption.</p>
     pub fn set_destination_properties(mut self, input: ::std::option::Option<crate::types::DestinationProperties>) -> Self {
-        self.destination_properties = input;
-        self
+        self.destination_properties = input; self
     }
     /// <p>The properties of the publishing destination, including the ARNs for the destination and the KMS key used for encryption.</p>
     pub fn get_destination_properties(&self) -> &::std::option::Option<crate::types::DestinationProperties> {
@@ -99,25 +96,26 @@ impl CreatePublishingDestinationInputBuilder {
     }
     /// <p>The idempotency token for the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The idempotency token for the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreatePublishingDestinationInput`](crate::operation::create_publishing_destination::CreatePublishingDestinationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_publishing_destination::CreatePublishingDestinationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_publishing_destination::CreatePublishingDestinationInput {
-            detector_id: self.detector_id,
-            destination_type: self.destination_type,
-            destination_properties: self.destination_properties,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_publishing_destination::CreatePublishingDestinationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_publishing_destination::CreatePublishingDestinationInput {
+                detector_id: self.detector_id
+                ,
+                destination_type: self.destination_type
+                ,
+                destination_properties: self.destination_properties
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

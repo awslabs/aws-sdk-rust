@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSolutionInput {
+pub struct DescribeSolutionInput  {
     /// <p>The Amazon Resource Name (ARN) of the solution to describe.</p>
     pub solution_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeSolutionInput {
+impl  DescribeSolutionInput  {
     /// <p>The Amazon Resource Name (ARN) of the solution to describe.</p>
-    pub fn solution_arn(&self) -> ::std::option::Option<&str> {
+    pub fn solution_arn(&self) -> ::std::option::Option<& str> {
         self.solution_arn.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DescribeSolutionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the solution to describe.</p>
     pub fn set_solution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.solution_arn = input;
-        self
+        self.solution_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the solution to describe.</p>
     pub fn get_solution_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.solution_arn
     }
     /// Consumes the builder and constructs a [`DescribeSolutionInput`](crate::operation::describe_solution::DescribeSolutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_solution::DescribeSolutionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_solution::DescribeSolutionInput {
-            solution_arn: self.solution_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_solution::DescribeSolutionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_solution::DescribeSolutionInput {
+                solution_arn: self.solution_arn
+                ,
+            }
+        )
     }
 }
+

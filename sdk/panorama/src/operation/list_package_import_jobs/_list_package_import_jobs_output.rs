@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPackageImportJobsOutput {
+pub struct ListPackageImportJobsOutput  {
     /// <p>A list of package import jobs.</p>
-    pub package_import_jobs: ::std::vec::Vec<crate::types::PackageImportJob>,
+    pub package_import_jobs: ::std::vec::Vec::<crate::types::PackageImportJob>,
     /// <p>A pagination token that's included if more results are available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListPackageImportJobsOutput {
+impl  ListPackageImportJobsOutput  {
     /// <p>A list of package import jobs.</p>
-    pub fn package_import_jobs(&self) -> &[crate::types::PackageImportJob] {
-        use std::ops::Deref;
-        self.package_import_jobs.deref()
+    pub fn package_import_jobs(&self) -> & [crate::types::PackageImportJob] {
+        use std::ops::Deref; self.package_import_jobs.deref()
     }
     /// <p>A pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListPackageImportJobsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListPackageImportJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListPackageImportJobsOutput`](crate::operation::list_package_import_jobs::ListPackageImportJobsOutput).
     pub fn builder() -> crate::operation::list_package_import_jobs::builders::ListPackageImportJobsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListPackageImportJobsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPackageImportJobsOutputBuilder {
-    pub(crate) package_import_jobs: ::std::option::Option<::std::vec::Vec<crate::types::PackageImportJob>>,
+    pub(crate) package_import_jobs: ::std::option::Option<::std::vec::Vec::<crate::types::PackageImportJob>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListPackageImportJobsOutputBuilder {
     /// <p>A list of package import jobs.</p>
     pub fn package_import_jobs(mut self, input: crate::types::PackageImportJob) -> Self {
         let mut v = self.package_import_jobs.unwrap_or_default();
-        v.push(input);
-        self.package_import_jobs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.package_import_jobs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of package import jobs.</p>
-    pub fn set_package_import_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PackageImportJob>>) -> Self {
-        self.package_import_jobs = input;
-        self
+    pub fn set_package_import_jobs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PackageImportJob>>) -> Self {
+        self.package_import_jobs = input; self
     }
     /// <p>A list of package import jobs.</p>
-    pub fn get_package_import_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PackageImportJob>> {
+    pub fn get_package_import_jobs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PackageImportJob>> {
         &self.package_import_jobs
     }
     /// <p>A pagination token that's included if more results are available.</p>
@@ -68,40 +66,37 @@ impl ListPackageImportJobsOutputBuilder {
     }
     /// <p>A pagination token that's included if more results are available.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token that's included if more results are available.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListPackageImportJobsOutput`](crate::operation::list_package_import_jobs::ListPackageImportJobsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`package_import_jobs`](crate::operation::list_package_import_jobs::builders::ListPackageImportJobsOutputBuilder::package_import_jobs)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_package_import_jobs::ListPackageImportJobsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_package_import_jobs::ListPackageImportJobsOutput {
-            package_import_jobs: self.package_import_jobs.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "package_import_jobs",
-                    "package_import_jobs was not specified but it is required when building ListPackageImportJobsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_package_import_jobs::ListPackageImportJobsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_package_import_jobs::ListPackageImportJobsOutput {
+                package_import_jobs: self.package_import_jobs
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("package_import_jobs", "package_import_jobs was not specified but it is required when building ListPackageImportJobsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

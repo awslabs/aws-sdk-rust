@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteMedicalScribeJobInput {
+pub struct DeleteMedicalScribeJobInput  {
     /// <p>The name of the Medical Scribe job you want to delete. Job names are case sensitive.</p>
     pub medical_scribe_job_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteMedicalScribeJobInput {
+impl  DeleteMedicalScribeJobInput  {
     /// <p>The name of the Medical Scribe job you want to delete. Job names are case sensitive.</p>
-    pub fn medical_scribe_job_name(&self) -> ::std::option::Option<&str> {
+    pub fn medical_scribe_job_name(&self) -> ::std::option::Option<& str> {
         self.medical_scribe_job_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteMedicalScribeJobInputBuilder {
     }
     /// <p>The name of the Medical Scribe job you want to delete. Job names are case sensitive.</p>
     pub fn set_medical_scribe_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.medical_scribe_job_name = input;
-        self
+        self.medical_scribe_job_name = input; self
     }
     /// <p>The name of the Medical Scribe job you want to delete. Job names are case sensitive.</p>
     pub fn get_medical_scribe_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.medical_scribe_job_name
     }
     /// Consumes the builder and constructs a [`DeleteMedicalScribeJobInput`](crate::operation::delete_medical_scribe_job::DeleteMedicalScribeJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_medical_scribe_job::DeleteMedicalScribeJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_medical_scribe_job::DeleteMedicalScribeJobInput {
-            medical_scribe_job_name: self.medical_scribe_job_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_medical_scribe_job::DeleteMedicalScribeJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_medical_scribe_job::DeleteMedicalScribeJobInput {
+                medical_scribe_job_name: self.medical_scribe_job_name
+                ,
+            }
+        )
     }
 }
+

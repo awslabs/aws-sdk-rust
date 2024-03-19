@@ -2,38 +2,39 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDataLakeSourcesOutput {
+pub struct GetDataLakeSourcesOutput  {
     /// <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and how to use them in policies, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-management.html">Amazon Security Lake User Guide</a>.</p>
     pub data_lake_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of enabled accounts and enabled sources.</p>
-    pub data_lake_sources: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeSource>>,
+    pub data_lake_sources: ::std::option::Option<::std::vec::Vec::<crate::types::DataLakeSource>>,
     /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetDataLakeSourcesOutput {
+impl  GetDataLakeSourcesOutput  {
     /// <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and how to use them in policies, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-management.html">Amazon Security Lake User Guide</a>.</p>
-    pub fn data_lake_arn(&self) -> ::std::option::Option<&str> {
+    pub fn data_lake_arn(&self) -> ::std::option::Option<& str> {
         self.data_lake_arn.as_deref()
     }
     /// <p>The list of enabled accounts and enabled sources.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_lake_sources.is_none()`.
-    pub fn data_lake_sources(&self) -> &[crate::types::DataLakeSource] {
-        self.data_lake_sources.as_deref().unwrap_or_default()
+    pub fn data_lake_sources(&self) -> & [crate::types::DataLakeSource] {
+        self.data_lake_sources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDataLakeSourcesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDataLakeSourcesOutput {
     /// Creates a new builder-style object to manufacture [`GetDataLakeSourcesOutput`](crate::operation::get_data_lake_sources::GetDataLakeSourcesOutput).
     pub fn builder() -> crate::operation::get_data_lake_sources::builders::GetDataLakeSourcesOutputBuilder {
@@ -46,7 +47,7 @@ impl GetDataLakeSourcesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataLakeSourcesOutputBuilder {
     pub(crate) data_lake_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) data_lake_sources: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeSource>>,
+    pub(crate) data_lake_sources: ::std::option::Option<::std::vec::Vec::<crate::types::DataLakeSource>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,8 +59,7 @@ impl GetDataLakeSourcesOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and how to use them in policies, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-management.html">Amazon Security Lake User Guide</a>.</p>
     pub fn set_data_lake_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_lake_arn = input;
-        self
+        self.data_lake_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and how to use them in policies, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-management.html">Amazon Security Lake User Guide</a>.</p>
     pub fn get_data_lake_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,17 +72,16 @@ impl GetDataLakeSourcesOutputBuilder {
     /// <p>The list of enabled accounts and enabled sources.</p>
     pub fn data_lake_sources(mut self, input: crate::types::DataLakeSource) -> Self {
         let mut v = self.data_lake_sources.unwrap_or_default();
-        v.push(input);
-        self.data_lake_sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.data_lake_sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of enabled accounts and enabled sources.</p>
-    pub fn set_data_lake_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeSource>>) -> Self {
-        self.data_lake_sources = input;
-        self
+    pub fn set_data_lake_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataLakeSource>>) -> Self {
+        self.data_lake_sources = input; self
     }
     /// <p>The list of enabled accounts and enabled sources.</p>
-    pub fn get_data_lake_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakeSource>> {
+    pub fn get_data_lake_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataLakeSource>> {
         &self.data_lake_sources
     }
     /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
@@ -94,8 +93,7 @@ impl GetDataLakeSourcesOutputBuilder {
     /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
@@ -103,21 +101,25 @@ impl GetDataLakeSourcesOutputBuilder {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDataLakeSourcesOutput`](crate::operation::get_data_lake_sources::GetDataLakeSourcesOutput).
     pub fn build(self) -> crate::operation::get_data_lake_sources::GetDataLakeSourcesOutput {
         crate::operation::get_data_lake_sources::GetDataLakeSourcesOutput {
-            data_lake_arn: self.data_lake_arn,
-            data_lake_sources: self.data_lake_sources,
-            next_token: self.next_token,
+            data_lake_arn: self.data_lake_arn
+            ,
+            data_lake_sources: self.data_lake_sources
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

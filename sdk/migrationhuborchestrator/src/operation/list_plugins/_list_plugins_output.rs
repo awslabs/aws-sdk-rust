@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPluginsOutput {
+pub struct ListPluginsOutput  {
     /// <p>The pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Migration Hub Orchestrator plugins.</p>
-    pub plugins: ::std::option::Option<::std::vec::Vec<crate::types::PluginSummary>>,
+    pub plugins: ::std::option::Option<::std::vec::Vec::<crate::types::PluginSummary>>,
     _request_id: Option<String>,
 }
-impl ListPluginsOutput {
+impl  ListPluginsOutput  {
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Migration Hub Orchestrator plugins.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.plugins.is_none()`.
-    pub fn plugins(&self) -> &[crate::types::PluginSummary] {
-        self.plugins.as_deref().unwrap_or_default()
+    pub fn plugins(&self) -> & [crate::types::PluginSummary] {
+        self.plugins.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListPluginsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListPluginsOutput {
     /// Creates a new builder-style object to manufacture [`ListPluginsOutput`](crate::operation::list_plugins::ListPluginsOutput).
     pub fn builder() -> crate::operation::list_plugins::builders::ListPluginsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListPluginsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPluginsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) plugins: ::std::option::Option<::std::vec::Vec<crate::types::PluginSummary>>,
+    pub(crate) plugins: ::std::option::Option<::std::vec::Vec::<crate::types::PluginSummary>>,
     _request_id: Option<String>,
 }
 impl ListPluginsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListPluginsOutputBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListPluginsOutputBuilder {
     /// <p>Migration Hub Orchestrator plugins.</p>
     pub fn plugins(mut self, input: crate::types::PluginSummary) -> Self {
         let mut v = self.plugins.unwrap_or_default();
-        v.push(input);
-        self.plugins = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.plugins = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Migration Hub Orchestrator plugins.</p>
-    pub fn set_plugins(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PluginSummary>>) -> Self {
-        self.plugins = input;
-        self
+    pub fn set_plugins(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PluginSummary>>) -> Self {
+        self.plugins = input; self
     }
     /// <p>Migration Hub Orchestrator plugins.</p>
-    pub fn get_plugins(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PluginSummary>> {
+    pub fn get_plugins(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PluginSummary>> {
         &self.plugins
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListPluginsOutput`](crate::operation::list_plugins::ListPluginsOutput).
     pub fn build(self) -> crate::operation::list_plugins::ListPluginsOutput {
         crate::operation::list_plugins::ListPluginsOutput {
-            next_token: self.next_token,
-            plugins: self.plugins,
+            next_token: self.next_token
+            ,
+            plugins: self.plugins
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

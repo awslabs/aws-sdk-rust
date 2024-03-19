@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeBudgetActionHistoriesOutput {
+pub struct DescribeBudgetActionHistoriesOutput  {
     /// <p>The historical record of the budget action resource.</p>
-    pub action_histories: ::std::vec::Vec<crate::types::ActionHistory>,
+    pub action_histories: ::std::vec::Vec::<crate::types::ActionHistory>,
     /// <p>A generic string.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeBudgetActionHistoriesOutput {
+impl  DescribeBudgetActionHistoriesOutput  {
     /// <p>The historical record of the budget action resource.</p>
-    pub fn action_histories(&self) -> &[crate::types::ActionHistory] {
-        use std::ops::Deref;
-        self.action_histories.deref()
+    pub fn action_histories(&self) -> & [crate::types::ActionHistory] {
+        use std::ops::Deref; self.action_histories.deref()
     }
     /// <p>A generic string.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeBudgetActionHistoriesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeBudgetActionHistoriesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBudgetActionHistoriesOutput`](crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesOutput).
     pub fn builder() -> crate::operation::describe_budget_action_histories::builders::DescribeBudgetActionHistoriesOutputBuilder {
@@ -36,7 +35,7 @@ impl DescribeBudgetActionHistoriesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBudgetActionHistoriesOutputBuilder {
-    pub(crate) action_histories: ::std::option::Option<::std::vec::Vec<crate::types::ActionHistory>>,
+    pub(crate) action_histories: ::std::option::Option<::std::vec::Vec::<crate::types::ActionHistory>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl DescribeBudgetActionHistoriesOutputBuilder {
     /// <p>The historical record of the budget action resource.</p>
     pub fn action_histories(mut self, input: crate::types::ActionHistory) -> Self {
         let mut v = self.action_histories.unwrap_or_default();
-        v.push(input);
-        self.action_histories = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.action_histories = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The historical record of the budget action resource.</p>
-    pub fn set_action_histories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActionHistory>>) -> Self {
-        self.action_histories = input;
-        self
+    pub fn set_action_histories(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ActionHistory>>) -> Self {
+        self.action_histories = input; self
     }
     /// <p>The historical record of the budget action resource.</p>
-    pub fn get_action_histories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionHistory>> {
+    pub fn get_action_histories(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ActionHistory>> {
         &self.action_histories
     }
     /// <p>A generic string.</p>
@@ -68,40 +66,37 @@ impl DescribeBudgetActionHistoriesOutputBuilder {
     }
     /// <p>A generic string.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A generic string.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeBudgetActionHistoriesOutput`](crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`action_histories`](crate::operation::describe_budget_action_histories::builders::DescribeBudgetActionHistoriesOutputBuilder::action_histories)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesOutput {
-            action_histories: self.action_histories.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "action_histories",
-                    "action_histories was not specified but it is required when building DescribeBudgetActionHistoriesOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesOutput {
+                action_histories: self.action_histories
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("action_histories", "action_histories was not specified but it is required when building DescribeBudgetActionHistoriesOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

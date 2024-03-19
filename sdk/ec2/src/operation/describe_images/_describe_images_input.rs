@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeImagesInput {
+pub struct DescribeImagesInput  {
     /// <p>Scopes the images by users with explicit launch permissions. Specify an Amazon Web Services account ID, <code>self</code> (the sender of the request), or <code>all</code> (public AMIs).</p>
     /// <ul>
     /// <li>
@@ -12,7 +12,7 @@ pub struct DescribeImagesInput {
     /// <li>
     /// <p>If you specify <code>all</code>, all public AMIs are returned.</p></li>
     /// </ul>
-    pub executable_users: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub executable_users: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
@@ -77,10 +77,10 @@ pub struct DescribeImagesInput {
     /// <p><code>sriov-net-support</code> - A value of <code>simple</code> indicates that enhanced networking with the Intel 82599 VF interface is enabled.</p></li>
     /// <li>
     /// <p><code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
+    /// <code>Owner</code> and the value 
+    /// <code>TeamA</code>, specify 
+    /// <code>tag:Owner</code> for the filter name and 
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
     /// <li>
@@ -88,12 +88,12 @@ pub struct DescribeImagesInput {
     /// <li>
     /// <p><code>virtualization-type</code> - The virtualization type (<code>paravirtual</code> | <code>hvm</code>).</p></li>
     /// </ul>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     /// <p>The image IDs.</p>
     /// <p>Default: Describes all images available to you.</p>
-    pub image_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub image_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Scopes the results to images with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this parameter, the results include all images for which you have launch permissions, regardless of ownership.</p>
-    pub owners: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub owners: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies whether to include deprecated AMIs.</p>
     /// <p>Default: No deprecated AMIs are included in the response.</p><note>
     /// <p>If you are the AMI owner, all deprecated AMIs appear in the response regardless of what you specify for this parameter.</p>
@@ -109,7 +109,7 @@ pub struct DescribeImagesInput {
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeImagesInput {
+impl  DescribeImagesInput  {
     /// <p>Scopes the images by users with explicit launch permissions. Specify an Amazon Web Services account ID, <code>self</code> (the sender of the request), or <code>all</code> (public AMIs).</p>
     /// <ul>
     /// <li>
@@ -119,10 +119,11 @@ impl DescribeImagesInput {
     /// <li>
     /// <p>If you specify <code>all</code>, all public AMIs are returned.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.executable_users.is_none()`.
-    pub fn executable_users(&self) -> &[::std::string::String] {
-        self.executable_users.as_deref().unwrap_or_default()
+    pub fn executable_users(&self) -> & [::std::string::String] {
+        self.executable_users.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The filters.</p>
     /// <ul>
@@ -188,10 +189,10 @@ impl DescribeImagesInput {
     /// <p><code>sriov-net-support</code> - A value of <code>simple</code> indicates that enhanced networking with the Intel 82599 VF interface is enabled.</p></li>
     /// <li>
     /// <p><code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
+    /// <code>Owner</code> and the value 
+    /// <code>TeamA</code>, specify 
+    /// <code>tag:Owner</code> for the filter name and 
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
     /// <li>
@@ -199,23 +200,26 @@ impl DescribeImagesInput {
     /// <li>
     /// <p><code>virtualization-type</code> - The virtualization type (<code>paravirtual</code> | <code>hvm</code>).</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The image IDs.</p>
     /// <p>Default: Describes all images available to you.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_ids.is_none()`.
-    pub fn image_ids(&self) -> &[::std::string::String] {
-        self.image_ids.as_deref().unwrap_or_default()
+    pub fn image_ids(&self) -> & [::std::string::String] {
+        self.image_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Scopes the results to images with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this parameter, the results include all images for which you have launch permissions, regardless of ownership.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.owners.is_none()`.
-    pub fn owners(&self) -> &[::std::string::String] {
-        self.owners.as_deref().unwrap_or_default()
+    pub fn owners(&self) -> & [::std::string::String] {
+        self.owners.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies whether to include deprecated AMIs.</p>
     /// <p>Default: No deprecated AMIs are included in the response.</p><note>
@@ -238,7 +242,7 @@ impl DescribeImagesInput {
         self.max_results
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -253,10 +257,10 @@ impl DescribeImagesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeImagesInputBuilder {
-    pub(crate) executable_users: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    pub(crate) image_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) owners: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) executable_users: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
+    pub(crate) image_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) owners: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) include_deprecated: ::std::option::Option<bool>,
     pub(crate) include_disabled: ::std::option::Option<bool>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -279,9 +283,9 @@ impl DescribeImagesInputBuilder {
     /// </ul>
     pub fn executable_users(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.executable_users.unwrap_or_default();
-        v.push(input.into());
-        self.executable_users = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.executable_users = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Scopes the images by users with explicit launch permissions. Specify an Amazon Web Services account ID, <code>self</code> (the sender of the request), or <code>all</code> (public AMIs).</p>
     /// <ul>
@@ -292,9 +296,8 @@ impl DescribeImagesInputBuilder {
     /// <li>
     /// <p>If you specify <code>all</code>, all public AMIs are returned.</p></li>
     /// </ul>
-    pub fn set_executable_users(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.executable_users = input;
-        self
+    pub fn set_executable_users(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.executable_users = input; self
     }
     /// <p>Scopes the images by users with explicit launch permissions. Specify an Amazon Web Services account ID, <code>self</code> (the sender of the request), or <code>all</code> (public AMIs).</p>
     /// <ul>
@@ -305,7 +308,7 @@ impl DescribeImagesInputBuilder {
     /// <li>
     /// <p>If you specify <code>all</code>, all public AMIs are returned.</p></li>
     /// </ul>
-    pub fn get_executable_users(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_executable_users(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.executable_users
     }
     /// Appends an item to `filters`.
@@ -376,10 +379,10 @@ impl DescribeImagesInputBuilder {
     /// <p><code>sriov-net-support</code> - A value of <code>simple</code> indicates that enhanced networking with the Intel 82599 VF interface is enabled.</p></li>
     /// <li>
     /// <p><code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
+    /// <code>Owner</code> and the value 
+    /// <code>TeamA</code>, specify 
+    /// <code>tag:Owner</code> for the filter name and 
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
     /// <li>
@@ -389,9 +392,9 @@ impl DescribeImagesInputBuilder {
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The filters.</p>
     /// <ul>
@@ -457,10 +460,10 @@ impl DescribeImagesInputBuilder {
     /// <p><code>sriov-net-support</code> - A value of <code>simple</code> indicates that enhanced networking with the Intel 82599 VF interface is enabled.</p></li>
     /// <li>
     /// <p><code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
+    /// <code>Owner</code> and the value 
+    /// <code>TeamA</code>, specify 
+    /// <code>tag:Owner</code> for the filter name and 
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
     /// <li>
@@ -468,9 +471,8 @@ impl DescribeImagesInputBuilder {
     /// <li>
     /// <p><code>virtualization-type</code> - The virtualization type (<code>paravirtual</code> | <code>hvm</code>).</p></li>
     /// </ul>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The filters.</p>
     /// <ul>
@@ -536,10 +538,10 @@ impl DescribeImagesInputBuilder {
     /// <p><code>sriov-net-support</code> - A value of <code>simple</code> indicates that enhanced networking with the Intel 82599 VF interface is enabled.</p></li>
     /// <li>
     /// <p><code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
-    /// <code>Owner</code> and the value
-    /// <code>TeamA</code>, specify
-    /// <code>tag:Owner</code> for the filter name and
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
+    /// <code>Owner</code> and the value 
+    /// <code>TeamA</code>, specify 
+    /// <code>tag:Owner</code> for the filter name and 
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
     /// <li>
@@ -547,7 +549,7 @@ impl DescribeImagesInputBuilder {
     /// <li>
     /// <p><code>virtualization-type</code> - The virtualization type (<code>paravirtual</code> | <code>hvm</code>).</p></li>
     /// </ul>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// Appends an item to `image_ids`.
@@ -558,19 +560,18 @@ impl DescribeImagesInputBuilder {
     /// <p>Default: Describes all images available to you.</p>
     pub fn image_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.image_ids.unwrap_or_default();
-        v.push(input.into());
-        self.image_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.image_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The image IDs.</p>
     /// <p>Default: Describes all images available to you.</p>
-    pub fn set_image_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.image_ids = input;
-        self
+    pub fn set_image_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.image_ids = input; self
     }
     /// <p>The image IDs.</p>
     /// <p>Default: Describes all images available to you.</p>
-    pub fn get_image_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_image_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.image_ids
     }
     /// Appends an item to `owners`.
@@ -580,17 +581,16 @@ impl DescribeImagesInputBuilder {
     /// <p>Scopes the results to images with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this parameter, the results include all images for which you have launch permissions, regardless of ownership.</p>
     pub fn owners(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.owners.unwrap_or_default();
-        v.push(input.into());
-        self.owners = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.owners = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Scopes the results to images with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this parameter, the results include all images for which you have launch permissions, regardless of ownership.</p>
-    pub fn set_owners(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.owners = input;
-        self
+    pub fn set_owners(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.owners = input; self
     }
     /// <p>Scopes the results to images with the specified owners. You can specify a combination of Amazon Web Services account IDs, <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this parameter, the results include all images for which you have launch permissions, regardless of ownership.</p>
-    pub fn get_owners(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_owners(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.owners
     }
     /// <p>Specifies whether to include deprecated AMIs.</p>
@@ -606,8 +606,7 @@ impl DescribeImagesInputBuilder {
     /// <p>If you are the AMI owner, all deprecated AMIs appear in the response regardless of what you specify for this parameter.</p>
     /// </note>
     pub fn set_include_deprecated(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_deprecated = input;
-        self
+        self.include_deprecated = input; self
     }
     /// <p>Specifies whether to include deprecated AMIs.</p>
     /// <p>Default: No deprecated AMIs are included in the response.</p><note>
@@ -625,8 +624,7 @@ impl DescribeImagesInputBuilder {
     /// <p>Specifies whether to include disabled AMIs.</p>
     /// <p>Default: No disabled AMIs are included in the response.</p>
     pub fn set_include_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_disabled = input;
-        self
+        self.include_disabled = input; self
     }
     /// <p>Specifies whether to include disabled AMIs.</p>
     /// <p>Default: No disabled AMIs are included in the response.</p>
@@ -640,8 +638,7 @@ impl DescribeImagesInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -654,8 +651,7 @@ impl DescribeImagesInputBuilder {
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -668,27 +664,36 @@ impl DescribeImagesInputBuilder {
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeImagesInput`](crate::operation::describe_images::DescribeImagesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_images::DescribeImagesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_images::DescribeImagesInput {
-            executable_users: self.executable_users,
-            filters: self.filters,
-            image_ids: self.image_ids,
-            owners: self.owners,
-            include_deprecated: self.include_deprecated,
-            include_disabled: self.include_disabled,
-            dry_run: self.dry_run,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_images::DescribeImagesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_images::DescribeImagesInput {
+                executable_users: self.executable_users
+                ,
+                filters: self.filters
+                ,
+                image_ids: self.image_ids
+                ,
+                owners: self.owners
+                ,
+                include_deprecated: self.include_deprecated
+                ,
+                include_disabled: self.include_disabled
+                ,
+                dry_run: self.dry_run
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

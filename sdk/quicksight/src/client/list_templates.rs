@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTemplates`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`aws_account_id(impl Into<String>)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::set_aws_account_id):<br>required: **true**<br><p>The ID of the Amazon Web Services account that contains the templates that you're listing.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results, or null if there are no more results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to be returned per request.</p><br>
-    /// - On success, responds with [`ListTemplatesOutput`](crate::operation::list_templates::ListTemplatesOutput) with field(s):
+                            /// - On success, responds with [`ListTemplatesOutput`](crate::operation::list_templates::ListTemplatesOutput) with field(s):
     ///   - [`template_summary_list(Option<Vec::<TemplateSummary>>)`](crate::operation::list_templates::ListTemplatesOutput::template_summary_list): <p>A structure containing information about the templates in the list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_templates::ListTemplatesOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     ///   - [`status(i32)`](crate::operation::list_templates::ListTemplatesOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::list_templates::ListTemplatesOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
-    /// - On failure, responds with [`SdkError<ListTemplatesError>`](crate::operation::list_templates::ListTemplatesError)
+                            /// - On failure, responds with [`SdkError<ListTemplatesError>`](crate::operation::list_templates::ListTemplatesError)
     pub fn list_templates(&self) -> crate::operation::list_templates::builders::ListTemplatesFluentBuilder {
-        crate::operation::list_templates::builders::ListTemplatesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_templates::builders::ListTemplatesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

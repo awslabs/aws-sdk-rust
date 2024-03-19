@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTagsInput {
+pub struct GetTagsInput  {
     /// <p>The value that you want to search for.</p>
     pub search_string: ::std::option::Option<::std::string::String>,
     /// <p>The start and end dates for retrieving the dimension values. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
@@ -83,24 +83,24 @@ pub struct GetTagsInput {
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     /// <p>When you use <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
-    pub sort_by: ::std::option::Option<::std::vec::Vec<crate::types::SortDefinition>>,
+    pub sort_by: ::std::option::Option<::std::vec::Vec::<crate::types::SortDefinition>>,
     /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that are returned for this request. If MaxResults isn't specified with SortBy, the request returns 1000 results as the default value for this parameter.</p>
     /// <p>For <code>GetTags</code>, MaxResults has an upper quota of 1000.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
 }
-impl GetTagsInput {
+impl  GetTagsInput  {
     /// <p>The value that you want to search for.</p>
-    pub fn search_string(&self) -> ::std::option::Option<&str> {
+    pub fn search_string(&self) -> ::std::option::Option<& str> {
         self.search_string.as_deref()
     }
     /// <p>The start and end dates for retrieving the dimension values. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
-    pub fn time_period(&self) -> ::std::option::Option<&crate::types::DateInterval> {
+    pub fn time_period(&self) -> ::std::option::Option<& crate::types::DateInterval> {
         self.time_period.as_ref()
     }
     /// <p>The key of the tag that you want to return values for.</p>
-    pub fn tag_key(&self) -> ::std::option::Option<&str> {
+    pub fn tag_key(&self) -> ::std::option::Option<& str> {
         self.tag_key.as_deref()
     }
     /// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p>
@@ -156,7 +156,7 @@ impl GetTagsInput {
     /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
     /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::Expression> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::Expression> {
         self.filter.as_ref()
     }
     /// <p>The value that you want to sort the data by.</p>
@@ -179,10 +179,11 @@ impl GetTagsInput {
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     /// <p>When you use <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sort_by.is_none()`.
-    pub fn sort_by(&self) -> &[crate::types::SortDefinition] {
-        self.sort_by.as_deref().unwrap_or_default()
+    pub fn sort_by(&self) -> & [crate::types::SortDefinition] {
+        self.sort_by.as_deref()
+        .unwrap_or_default()
     }
     /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that are returned for this request. If MaxResults isn't specified with SortBy, the request returns 1000 results as the default value for this parameter.</p>
     /// <p>For <code>GetTags</code>, MaxResults has an upper quota of 1000.</p>
@@ -190,7 +191,7 @@ impl GetTagsInput {
         self.max_results
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_page_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_page_token(&self) -> ::std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
@@ -209,7 +210,7 @@ pub struct GetTagsInputBuilder {
     pub(crate) time_period: ::std::option::Option<crate::types::DateInterval>,
     pub(crate) tag_key: ::std::option::Option<::std::string::String>,
     pub(crate) filter: ::std::option::Option<crate::types::Expression>,
-    pub(crate) sort_by: ::std::option::Option<::std::vec::Vec<crate::types::SortDefinition>>,
+    pub(crate) sort_by: ::std::option::Option<::std::vec::Vec::<crate::types::SortDefinition>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
 }
@@ -221,8 +222,7 @@ impl GetTagsInputBuilder {
     }
     /// <p>The value that you want to search for.</p>
     pub fn set_search_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.search_string = input;
-        self
+        self.search_string = input; self
     }
     /// <p>The value that you want to search for.</p>
     pub fn get_search_string(&self) -> &::std::option::Option<::std::string::String> {
@@ -236,8 +236,7 @@ impl GetTagsInputBuilder {
     }
     /// <p>The start and end dates for retrieving the dimension values. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
     pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
-        self.time_period = input;
-        self
+        self.time_period = input; self
     }
     /// <p>The start and end dates for retrieving the dimension values. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
     pub fn get_time_period(&self) -> &::std::option::Option<crate::types::DateInterval> {
@@ -250,8 +249,7 @@ impl GetTagsInputBuilder {
     }
     /// <p>The key of the tag that you want to return values for.</p>
     pub fn set_tag_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tag_key = input;
-        self
+        self.tag_key = input; self
     }
     /// <p>The key of the tag that you want to return values for.</p>
     pub fn get_tag_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -368,8 +366,7 @@ impl GetTagsInputBuilder {
     /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p>
     /// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
@@ -453,9 +450,9 @@ impl GetTagsInputBuilder {
     /// <p>When you use <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
     pub fn sort_by(mut self, input: crate::types::SortDefinition) -> Self {
         let mut v = self.sort_by.unwrap_or_default();
-        v.push(input);
-        self.sort_by = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sort_by = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The key represents cost and usage metrics. The following values are supported:</p>
@@ -477,9 +474,8 @@ impl GetTagsInputBuilder {
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     /// <p>When you use <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
-    pub fn set_sort_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SortDefinition>>) -> Self {
-        self.sort_by = input;
-        self
+    pub fn set_sort_by(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SortDefinition>>) -> Self {
+        self.sort_by = input; self
     }
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The key represents cost and usage metrics. The following values are supported:</p>
@@ -501,7 +497,7 @@ impl GetTagsInputBuilder {
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     /// <p>When you use <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
-    pub fn get_sort_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SortDefinition>> {
+    pub fn get_sort_by(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SortDefinition>> {
         &self.sort_by
     }
     /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that are returned for this request. If MaxResults isn't specified with SortBy, the request returns 1000 results as the default value for this parameter.</p>
@@ -513,8 +509,7 @@ impl GetTagsInputBuilder {
     /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that are returned for this request. If MaxResults isn't specified with SortBy, the request returns 1000 results as the default value for this parameter.</p>
     /// <p>For <code>GetTags</code>, MaxResults has an upper quota of 1000.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that are returned for this request. If MaxResults isn't specified with SortBy, the request returns 1000 results as the default value for this parameter.</p>
     /// <p>For <code>GetTags</code>, MaxResults has an upper quota of 1000.</p>
@@ -528,8 +523,7 @@ impl GetTagsInputBuilder {
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_page_token = input;
-        self
+        self.next_page_token = input; self
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -537,14 +531,24 @@ impl GetTagsInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetTagsInput`](crate::operation::get_tags::GetTagsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_tags::GetTagsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_tags::GetTagsInput {
-            search_string: self.search_string,
-            time_period: self.time_period,
-            tag_key: self.tag_key,
-            filter: self.filter,
-            sort_by: self.sort_by,
-            max_results: self.max_results,
-            next_page_token: self.next_page_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_tags::GetTagsInput {
+                search_string: self.search_string
+                ,
+                time_period: self.time_period
+                ,
+                tag_key: self.tag_key
+                ,
+                filter: self.filter
+                ,
+                sort_by: self.sort_by
+                ,
+                max_results: self.max_results
+                ,
+                next_page_token: self.next_page_token
+                ,
+            }
+        )
     }
 }
+

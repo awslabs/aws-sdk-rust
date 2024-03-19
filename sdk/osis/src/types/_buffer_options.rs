@@ -3,11 +3,11 @@
 /// <p>Options that specify the configuration of a persistent buffer. To configure how OpenSearch Ingestion encrypts this data, set the EncryptionAtRestOptions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BufferOptions {
+pub struct BufferOptions  {
     /// <p>Whether persistent buffering should be enabled.</p>
     pub persistent_buffer_enabled: bool,
 }
-impl BufferOptions {
+impl  BufferOptions  {
     /// <p>Whether persistent buffering should be enabled.</p>
     pub fn persistent_buffer_enabled(&self) -> bool {
         self.persistent_buffer_enabled
@@ -35,8 +35,7 @@ impl BufferOptionsBuilder {
     }
     /// <p>Whether persistent buffering should be enabled.</p>
     pub fn set_persistent_buffer_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.persistent_buffer_enabled = input;
-        self
+        self.persistent_buffer_enabled = input; self
     }
     /// <p>Whether persistent buffering should be enabled.</p>
     pub fn get_persistent_buffer_enabled(&self) -> &::std::option::Option<bool> {
@@ -46,13 +45,15 @@ impl BufferOptionsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`persistent_buffer_enabled`](crate::types::builders::BufferOptionsBuilder::persistent_buffer_enabled)
     pub fn build(self) -> ::std::result::Result<crate::types::BufferOptions, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BufferOptions {
-            persistent_buffer_enabled: self.persistent_buffer_enabled.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "persistent_buffer_enabled",
-                    "persistent_buffer_enabled was not specified but it is required when building BufferOptions",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BufferOptions {
+                persistent_buffer_enabled: self.persistent_buffer_enabled
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("persistent_buffer_enabled", "persistent_buffer_enabled was not specified but it is required when building BufferOptions")
+                    )?
+                ,
+            }
+        )
     }
 }
+

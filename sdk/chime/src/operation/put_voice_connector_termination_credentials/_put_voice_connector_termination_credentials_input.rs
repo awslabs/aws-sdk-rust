@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutVoiceConnectorTerminationCredentialsInput {
+pub struct PutVoiceConnectorTerminationCredentialsInput  {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     pub voice_connector_id: ::std::option::Option<::std::string::String>,
     /// <p>The termination SIP credentials.</p>
-    pub credentials: ::std::option::Option<::std::vec::Vec<crate::types::Credential>>,
+    pub credentials: ::std::option::Option<::std::vec::Vec::<crate::types::Credential>>,
 }
-impl PutVoiceConnectorTerminationCredentialsInput {
+impl  PutVoiceConnectorTerminationCredentialsInput  {
     /// <p>The Amazon Chime Voice Connector ID.</p>
-    pub fn voice_connector_id(&self) -> ::std::option::Option<&str> {
+    pub fn voice_connector_id(&self) -> ::std::option::Option<& str> {
         self.voice_connector_id.as_deref()
     }
     /// <p>The termination SIP credentials.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.credentials.is_none()`.
-    pub fn credentials(&self) -> &[crate::types::Credential] {
-        self.credentials.as_deref().unwrap_or_default()
+    pub fn credentials(&self) -> & [crate::types::Credential] {
+        self.credentials.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PutVoiceConnectorTerminationCredentialsInput {
@@ -32,7 +33,7 @@ impl PutVoiceConnectorTerminationCredentialsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutVoiceConnectorTerminationCredentialsInputBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
-    pub(crate) credentials: ::std::option::Option<::std::vec::Vec<crate::types::Credential>>,
+    pub(crate) credentials: ::std::option::Option<::std::vec::Vec::<crate::types::Credential>>,
 }
 impl PutVoiceConnectorTerminationCredentialsInputBuilder {
     /// <p>The Amazon Chime Voice Connector ID.</p>
@@ -43,8 +44,7 @@ impl PutVoiceConnectorTerminationCredentialsInputBuilder {
     }
     /// <p>The Amazon Chime Voice Connector ID.</p>
     pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.voice_connector_id = input;
-        self
+        self.voice_connector_id = input; self
     }
     /// <p>The Amazon Chime Voice Connector ID.</p>
     pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,31 +57,28 @@ impl PutVoiceConnectorTerminationCredentialsInputBuilder {
     /// <p>The termination SIP credentials.</p>
     pub fn credentials(mut self, input: crate::types::Credential) -> Self {
         let mut v = self.credentials.unwrap_or_default();
-        v.push(input);
-        self.credentials = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.credentials = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The termination SIP credentials.</p>
-    pub fn set_credentials(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Credential>>) -> Self {
-        self.credentials = input;
-        self
+    pub fn set_credentials(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Credential>>) -> Self {
+        self.credentials = input; self
     }
     /// <p>The termination SIP credentials.</p>
-    pub fn get_credentials(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Credential>> {
+    pub fn get_credentials(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Credential>> {
         &self.credentials
     }
     /// Consumes the builder and constructs a [`PutVoiceConnectorTerminationCredentialsInput`](crate::operation::put_voice_connector_termination_credentials::PutVoiceConnectorTerminationCredentialsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_voice_connector_termination_credentials::PutVoiceConnectorTerminationCredentialsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_voice_connector_termination_credentials::PutVoiceConnectorTerminationCredentialsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_voice_connector_termination_credentials::PutVoiceConnectorTerminationCredentialsInput {
-                voice_connector_id: self.voice_connector_id,
-                credentials: self.credentials,
-            },
+                voice_connector_id: self.voice_connector_id
+                ,
+                credentials: self.credentials
+                ,
+            }
         )
     }
 }
+

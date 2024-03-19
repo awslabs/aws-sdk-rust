@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let emotionname = unimplemented!();
 /// match emotionname {
@@ -37,16 +37,14 @@
 /// Specifically, when `emotionname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EmotionName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// _Note: `EmotionName::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum EmotionName {
     #[allow(missing_docs)] // documentation missing in model
     Angry,
@@ -68,82 +66,83 @@ pub enum EmotionName {
     UnknownValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for EmotionName {
-    fn from(s: &str) -> Self {
-        match s {
-            "ANGRY" => EmotionName::Angry,
-            "CALM" => EmotionName::Calm,
-            "CONFUSED" => EmotionName::Confused,
-            "DISGUSTED" => EmotionName::Disgusted,
-            "FEAR" => EmotionName::Fear,
-            "HAPPY" => EmotionName::Happy,
-            "SAD" => EmotionName::Sad,
-            "SURPRISED" => EmotionName::Surprised,
-            "UNKNOWN" => EmotionName::UnknownValue,
-            other => EmotionName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ANGRY" => EmotionName::Angry,
+"CALM" => EmotionName::Calm,
+"CONFUSED" => EmotionName::Confused,
+"DISGUSTED" => EmotionName::Disgusted,
+"FEAR" => EmotionName::Fear,
+"HAPPY" => EmotionName::Happy,
+"SAD" => EmotionName::Sad,
+"SURPRISED" => EmotionName::Surprised,
+"UNKNOWN" => EmotionName::UnknownValue,
+other => EmotionName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for EmotionName {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(EmotionName::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(EmotionName::from(s))
+                    }
+                }
 impl EmotionName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EmotionName::Angry => "ANGRY",
-            EmotionName::Calm => "CALM",
-            EmotionName::Confused => "CONFUSED",
-            EmotionName::Disgusted => "DISGUSTED",
-            EmotionName::Fear => "FEAR",
-            EmotionName::Happy => "HAPPY",
-            EmotionName::Sad => "SAD",
-            EmotionName::Surprised => "SURPRISED",
-            EmotionName::UnknownValue => "UNKNOWN",
-            EmotionName::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["ANGRY", "CALM", "CONFUSED", "DISGUSTED", "FEAR", "HAPPY", "SAD", "SURPRISED", "UNKNOWN"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EmotionName::Angry => "ANGRY",
+    EmotionName::Calm => "CALM",
+    EmotionName::Confused => "CONFUSED",
+    EmotionName::Disgusted => "DISGUSTED",
+    EmotionName::Fear => "FEAR",
+    EmotionName::Happy => "HAPPY",
+    EmotionName::Sad => "SAD",
+    EmotionName::Surprised => "SURPRISED",
+    EmotionName::UnknownValue => "UNKNOWN",
+    EmotionName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ANGRY", "CALM", "CONFUSED", "DISGUSTED", "FEAR", "HAPPY", "SAD", "SURPRISED", "UNKNOWN"]
+                }
+            }
 impl ::std::convert::AsRef<str> for EmotionName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl EmotionName {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for EmotionName {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            EmotionName::Angry => write!(f, "ANGRY"),
-            EmotionName::Calm => write!(f, "CALM"),
-            EmotionName::Confused => write!(f, "CONFUSED"),
-            EmotionName::Disgusted => write!(f, "DISGUSTED"),
-            EmotionName::Fear => write!(f, "FEAR"),
-            EmotionName::Happy => write!(f, "HAPPY"),
-            EmotionName::Sad => write!(f, "SAD"),
-            EmotionName::Surprised => write!(f, "SURPRISED"),
-            EmotionName::UnknownValue => write!(f, "UNKNOWN"),
-            EmotionName::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                EmotionName::Angry => write!(f, "ANGRY"),
+EmotionName::Calm => write!(f, "CALM"),
+EmotionName::Confused => write!(f, "CONFUSED"),
+EmotionName::Disgusted => write!(f, "DISGUSTED"),
+EmotionName::Fear => write!(f, "FEAR"),
+EmotionName::Happy => write!(f, "HAPPY"),
+EmotionName::Sad => write!(f, "SAD"),
+EmotionName::Surprised => write!(f, "SURPRISED"),
+EmotionName::UnknownValue => write!(f, "UNKNOWN"),
+EmotionName::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

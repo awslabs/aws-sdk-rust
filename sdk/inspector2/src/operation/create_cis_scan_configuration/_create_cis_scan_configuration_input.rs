@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCisScanConfigurationInput {
+pub struct CreateCisScanConfigurationInput  {
     /// <p>The scan name for the CIS scan configuration.</p>
     pub scan_name: ::std::option::Option<::std::string::String>,
     /// <p>The security level for the CIS scan configuration. Security level refers to the Benchmark levels that CIS assigns to a profile.</p>
@@ -12,27 +12,27 @@ pub struct CreateCisScanConfigurationInput {
     /// <p>The targets for the CIS scan configuration.</p>
     pub targets: ::std::option::Option<crate::types::CreateCisTargets>,
     /// <p>The tags for the CIS scan configuration.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateCisScanConfigurationInput {
+impl  CreateCisScanConfigurationInput  {
     /// <p>The scan name for the CIS scan configuration.</p>
-    pub fn scan_name(&self) -> ::std::option::Option<&str> {
+    pub fn scan_name(&self) -> ::std::option::Option<& str> {
         self.scan_name.as_deref()
     }
     /// <p>The security level for the CIS scan configuration. Security level refers to the Benchmark levels that CIS assigns to a profile.</p>
-    pub fn security_level(&self) -> ::std::option::Option<&crate::types::CisSecurityLevel> {
+    pub fn security_level(&self) -> ::std::option::Option<& crate::types::CisSecurityLevel> {
         self.security_level.as_ref()
     }
     /// <p>The schedule for the CIS scan configuration.</p>
-    pub fn schedule(&self) -> ::std::option::Option<&crate::types::Schedule> {
+    pub fn schedule(&self) -> ::std::option::Option<& crate::types::Schedule> {
         self.schedule.as_ref()
     }
     /// <p>The targets for the CIS scan configuration.</p>
-    pub fn targets(&self) -> ::std::option::Option<&crate::types::CreateCisTargets> {
+    pub fn targets(&self) -> ::std::option::Option<& crate::types::CreateCisTargets> {
         self.targets.as_ref()
     }
     /// <p>The tags for the CIS scan configuration.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -51,7 +51,7 @@ pub struct CreateCisScanConfigurationInputBuilder {
     pub(crate) security_level: ::std::option::Option<crate::types::CisSecurityLevel>,
     pub(crate) schedule: ::std::option::Option<crate::types::Schedule>,
     pub(crate) targets: ::std::option::Option<crate::types::CreateCisTargets>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateCisScanConfigurationInputBuilder {
     /// <p>The scan name for the CIS scan configuration.</p>
@@ -62,8 +62,7 @@ impl CreateCisScanConfigurationInputBuilder {
     }
     /// <p>The scan name for the CIS scan configuration.</p>
     pub fn set_scan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scan_name = input;
-        self
+        self.scan_name = input; self
     }
     /// <p>The scan name for the CIS scan configuration.</p>
     pub fn get_scan_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl CreateCisScanConfigurationInputBuilder {
     }
     /// <p>The security level for the CIS scan configuration. Security level refers to the Benchmark levels that CIS assigns to a profile.</p>
     pub fn set_security_level(mut self, input: ::std::option::Option<crate::types::CisSecurityLevel>) -> Self {
-        self.security_level = input;
-        self
+        self.security_level = input; self
     }
     /// <p>The security level for the CIS scan configuration. Security level refers to the Benchmark levels that CIS assigns to a profile.</p>
     pub fn get_security_level(&self) -> &::std::option::Option<crate::types::CisSecurityLevel> {
@@ -92,8 +90,7 @@ impl CreateCisScanConfigurationInputBuilder {
     }
     /// <p>The schedule for the CIS scan configuration.</p>
     pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::Schedule>) -> Self {
-        self.schedule = input;
-        self
+        self.schedule = input; self
     }
     /// <p>The schedule for the CIS scan configuration.</p>
     pub fn get_schedule(&self) -> &::std::option::Option<crate::types::Schedule> {
@@ -107,8 +104,7 @@ impl CreateCisScanConfigurationInputBuilder {
     }
     /// <p>The targets for the CIS scan configuration.</p>
     pub fn set_targets(mut self, input: ::std::option::Option<crate::types::CreateCisTargets>) -> Self {
-        self.targets = input;
-        self
+        self.targets = input; self
     }
     /// <p>The targets for the CIS scan configuration.</p>
     pub fn get_targets(&self) -> &::std::option::Option<crate::types::CreateCisTargets> {
@@ -121,32 +117,34 @@ impl CreateCisScanConfigurationInputBuilder {
     /// <p>The tags for the CIS scan configuration.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags for the CIS scan configuration.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags for the CIS scan configuration.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateCisScanConfigurationInput`](crate::operation::create_cis_scan_configuration::CreateCisScanConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_cis_scan_configuration::CreateCisScanConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_cis_scan_configuration::CreateCisScanConfigurationInput {
-            scan_name: self.scan_name,
-            security_level: self.security_level,
-            schedule: self.schedule,
-            targets: self.targets,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_cis_scan_configuration::CreateCisScanConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_cis_scan_configuration::CreateCisScanConfigurationInput {
+                scan_name: self.scan_name
+                ,
+                security_level: self.security_level
+                ,
+                schedule: self.schedule
+                ,
+                targets: self.targets
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

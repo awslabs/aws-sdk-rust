@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddClientIdToOpenIdConnectProviderInput {
+pub struct AddClientIdToOpenIdConnectProviderInput  {
     /// <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider resource to add the client ID to. You can get a list of OIDC provider ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>
     pub open_id_connect_provider_arn: ::std::option::Option<::std::string::String>,
     /// <p>The client ID (also known as audience) to add to the IAM OpenID Connect provider resource.</p>
     pub client_id: ::std::option::Option<::std::string::String>,
 }
-impl AddClientIdToOpenIdConnectProviderInput {
+impl  AddClientIdToOpenIdConnectProviderInput  {
     /// <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider resource to add the client ID to. You can get a list of OIDC provider ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>
-    pub fn open_id_connect_provider_arn(&self) -> ::std::option::Option<&str> {
+    pub fn open_id_connect_provider_arn(&self) -> ::std::option::Option<& str> {
         self.open_id_connect_provider_arn.as_deref()
     }
     /// <p>The client ID (also known as audience) to add to the IAM OpenID Connect provider resource.</p>
-    pub fn client_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_id(&self) -> ::std::option::Option<& str> {
         self.client_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AddClientIdToOpenIdConnectProviderInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider resource to add the client ID to. You can get a list of OIDC provider ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>
     pub fn set_open_id_connect_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.open_id_connect_provider_arn = input;
-        self
+        self.open_id_connect_provider_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider resource to add the client ID to. You can get a list of OIDC provider ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>
     pub fn get_open_id_connect_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl AddClientIdToOpenIdConnectProviderInputBuilder {
     }
     /// <p>The client ID (also known as audience) to add to the IAM OpenID Connect provider resource.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_id = input;
-        self
+        self.client_id = input; self
     }
     /// <p>The client ID (also known as audience) to add to the IAM OpenID Connect provider resource.</p>
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_id
     }
     /// Consumes the builder and constructs a [`AddClientIdToOpenIdConnectProviderInput`](crate::operation::add_client_id_to_open_id_connect_provider::AddClientIdToOpenIdConnectProviderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::add_client_id_to_open_id_connect_provider::AddClientIdToOpenIdConnectProviderInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_client_id_to_open_id_connect_provider::AddClientIdToOpenIdConnectProviderInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::add_client_id_to_open_id_connect_provider::AddClientIdToOpenIdConnectProviderInput {
-                open_id_connect_provider_arn: self.open_id_connect_provider_arn,
-                client_id: self.client_id,
-            },
+                open_id_connect_provider_arn: self.open_id_connect_provider_arn
+                ,
+                client_id: self.client_id
+                ,
+            }
         )
     }
 }
+

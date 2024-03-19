@@ -3,15 +3,14 @@
 /// <p>This parameter contains the criteria (either InstanceIds or a tag) used to specify which EC2 instances are to be sent the command.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RunCommandParameters {
+pub struct RunCommandParameters  {
     /// <p>Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds or a tag.</p>
-    pub run_command_targets: ::std::vec::Vec<crate::types::RunCommandTarget>,
+    pub run_command_targets: ::std::vec::Vec::<crate::types::RunCommandTarget>,
 }
-impl RunCommandParameters {
+impl  RunCommandParameters  {
     /// <p>Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds or a tag.</p>
-    pub fn run_command_targets(&self) -> &[crate::types::RunCommandTarget] {
-        use std::ops::Deref;
-        self.run_command_targets.deref()
+    pub fn run_command_targets(&self) -> & [crate::types::RunCommandTarget] {
+        use std::ops::Deref; self.run_command_targets.deref()
     }
 }
 impl RunCommandParameters {
@@ -25,7 +24,7 @@ impl RunCommandParameters {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RunCommandParametersBuilder {
-    pub(crate) run_command_targets: ::std::option::Option<::std::vec::Vec<crate::types::RunCommandTarget>>,
+    pub(crate) run_command_targets: ::std::option::Option<::std::vec::Vec::<crate::types::RunCommandTarget>>,
 }
 impl RunCommandParametersBuilder {
     /// Appends an item to `run_command_targets`.
@@ -35,30 +34,31 @@ impl RunCommandParametersBuilder {
     /// <p>Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds or a tag.</p>
     pub fn run_command_targets(mut self, input: crate::types::RunCommandTarget) -> Self {
         let mut v = self.run_command_targets.unwrap_or_default();
-        v.push(input);
-        self.run_command_targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.run_command_targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds or a tag.</p>
-    pub fn set_run_command_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RunCommandTarget>>) -> Self {
-        self.run_command_targets = input;
-        self
+    pub fn set_run_command_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RunCommandTarget>>) -> Self {
+        self.run_command_targets = input; self
     }
     /// <p>Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds or a tag.</p>
-    pub fn get_run_command_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RunCommandTarget>> {
+    pub fn get_run_command_targets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RunCommandTarget>> {
         &self.run_command_targets
     }
     /// Consumes the builder and constructs a [`RunCommandParameters`](crate::types::RunCommandParameters).
     /// This method will fail if any of the following fields are not set:
     /// - [`run_command_targets`](crate::types::builders::RunCommandParametersBuilder::run_command_targets)
     pub fn build(self) -> ::std::result::Result<crate::types::RunCommandParameters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RunCommandParameters {
-            run_command_targets: self.run_command_targets.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "run_command_targets",
-                    "run_command_targets was not specified but it is required when building RunCommandParameters",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RunCommandParameters {
+                run_command_targets: self.run_command_targets
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("run_command_targets", "run_command_targets was not specified but it is required when building RunCommandParameters")
+                    )?
+                ,
+            }
+        )
     }
 }
+

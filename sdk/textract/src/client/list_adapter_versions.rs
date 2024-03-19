@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAdapterVersions`](crate::operation::list_adapter_versions::builders::ListAdapterVersionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_adapter_versions::builders::ListAdapterVersionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`adapter_id(impl Into<String>)`](crate::operation::list_adapter_versions::builders::ListAdapterVersionsFluentBuilder::adapter_id) / [`set_adapter_id(Option<String>)`](crate::operation::list_adapter_versions::builders::ListAdapterVersionsFluentBuilder::set_adapter_id):<br>required: **false**<br><p>A string containing a unique ID for the adapter to match for when listing adapter versions.</p><br>
     ///   - [`after_creation_time(DateTime)`](crate::operation::list_adapter_versions::builders::ListAdapterVersionsFluentBuilder::after_creation_time) / [`set_after_creation_time(Option<DateTime>)`](crate::operation::list_adapter_versions::builders::ListAdapterVersionsFluentBuilder::set_after_creation_time):<br>required: **false**<br><p>Specifies the lower bound for the ListAdapterVersions operation. Ensures ListAdapterVersions returns only adapter versions created after the specified creation time.</p><br>
     ///   - [`before_creation_time(DateTime)`](crate::operation::list_adapter_versions::builders::ListAdapterVersionsFluentBuilder::before_creation_time) / [`set_before_creation_time(Option<DateTime>)`](crate::operation::list_adapter_versions::builders::ListAdapterVersionsFluentBuilder::set_before_creation_time):<br>required: **false**<br><p>Specifies the upper bound for the ListAdapterVersions operation. Ensures ListAdapterVersions returns only adapter versions created after the specified creation time.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_adapter_versions::builders::ListAdapterVersionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_adapter_versions::builders::ListAdapterVersionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return when listing adapter versions.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_adapter_versions::builders::ListAdapterVersionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_adapter_versions::builders::ListAdapterVersionsFluentBuilder::set_next_token):<br>required: **false**<br><p>Identifies the next page of results to return when listing adapter versions.</p><br>
-    /// - On success, responds with [`ListAdapterVersionsOutput`](crate::operation::list_adapter_versions::ListAdapterVersionsOutput) with field(s):
+                            /// - On success, responds with [`ListAdapterVersionsOutput`](crate::operation::list_adapter_versions::ListAdapterVersionsOutput) with field(s):
     ///   - [`adapter_versions(Option<Vec::<AdapterVersionOverview>>)`](crate::operation::list_adapter_versions::ListAdapterVersionsOutput::adapter_versions): <p>Adapter versions that match the filtering criteria specified when calling ListAdapters.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_adapter_versions::ListAdapterVersionsOutput::next_token): <p>Identifies the next page of results to return when listing adapter versions.</p>
-    /// - On failure, responds with [`SdkError<ListAdapterVersionsError>`](crate::operation::list_adapter_versions::ListAdapterVersionsError)
+                            /// - On failure, responds with [`SdkError<ListAdapterVersionsError>`](crate::operation::list_adapter_versions::ListAdapterVersionsError)
     pub fn list_adapter_versions(&self) -> crate::operation::list_adapter_versions::builders::ListAdapterVersionsFluentBuilder {
-        crate::operation::list_adapter_versions::builders::ListAdapterVersionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_adapter_versions::builders::ListAdapterVersionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

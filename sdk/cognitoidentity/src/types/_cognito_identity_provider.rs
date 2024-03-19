@@ -3,7 +3,7 @@
 /// <p>A provider representing an Amazon Cognito user pool and its client ID.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CognitoIdentityProvider {
+pub struct CognitoIdentityProvider  {
     /// <p>The provider name for an Amazon Cognito user pool. For example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
     pub provider_name: ::std::option::Option<::std::string::String>,
     /// <p>The client ID for the Amazon Cognito user pool.</p>
@@ -13,13 +13,13 @@ pub struct CognitoIdentityProvider {
     /// <p>If the user is signed out or deleted, the identity pool will return a 400 Not Authorized error.</p>
     pub server_side_token_check: ::std::option::Option<bool>,
 }
-impl CognitoIdentityProvider {
+impl  CognitoIdentityProvider  {
     /// <p>The provider name for an Amazon Cognito user pool. For example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
-    pub fn provider_name(&self) -> ::std::option::Option<&str> {
+    pub fn provider_name(&self) -> ::std::option::Option<& str> {
         self.provider_name.as_deref()
     }
     /// <p>The client ID for the Amazon Cognito user pool.</p>
-    pub fn client_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_id(&self) -> ::std::option::Option<& str> {
         self.client_id.as_deref()
     }
     /// <p>TRUE if server-side token validation is enabled for the identity provider’s token.</p>
@@ -52,8 +52,7 @@ impl CognitoIdentityProviderBuilder {
     }
     /// <p>The provider name for an Amazon Cognito user pool. For example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
     pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider_name = input;
-        self
+        self.provider_name = input; self
     }
     /// <p>The provider name for an Amazon Cognito user pool. For example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
     pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +65,7 @@ impl CognitoIdentityProviderBuilder {
     }
     /// <p>The client ID for the Amazon Cognito user pool.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_id = input;
-        self
+        self.client_id = input; self
     }
     /// <p>The client ID for the Amazon Cognito user pool.</p>
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl CognitoIdentityProviderBuilder {
     /// <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will check with the integrated user pools to make sure that the user has not been globally signed out or deleted before the identity pool provides an OIDC token or AWS credentials for the user.</p>
     /// <p>If the user is signed out or deleted, the identity pool will return a 400 Not Authorized error.</p>
     pub fn set_server_side_token_check(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.server_side_token_check = input;
-        self
+        self.server_side_token_check = input; self
     }
     /// <p>TRUE if server-side token validation is enabled for the identity provider’s token.</p>
     /// <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will check with the integrated user pools to make sure that the user has not been globally signed out or deleted before the identity pool provides an OIDC token or AWS credentials for the user.</p>
@@ -96,9 +93,13 @@ impl CognitoIdentityProviderBuilder {
     /// Consumes the builder and constructs a [`CognitoIdentityProvider`](crate::types::CognitoIdentityProvider).
     pub fn build(self) -> crate::types::CognitoIdentityProvider {
         crate::types::CognitoIdentityProvider {
-            provider_name: self.provider_name,
-            client_id: self.client_id,
-            server_side_token_check: self.server_side_token_check,
+            provider_name: self.provider_name
+            ,
+            client_id: self.client_id
+            ,
+            server_side_token_check: self.server_side_token_check
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSparqlStatisticsOutput {
+pub struct DeleteSparqlStatisticsOutput  {
     /// <p>The HTTP response code: 200 if the delete was successful, or 204 if there were no statistics to delete.</p>
     pub status_code: ::std::option::Option<i32>,
     /// <p>The cancel status.</p>
@@ -11,25 +11,25 @@ pub struct DeleteSparqlStatisticsOutput {
     pub payload: ::std::option::Option<crate::types::DeleteStatisticsValueMap>,
     _request_id: Option<String>,
 }
-impl DeleteSparqlStatisticsOutput {
+impl  DeleteSparqlStatisticsOutput  {
     /// <p>The HTTP response code: 200 if the delete was successful, or 204 if there were no statistics to delete.</p>
     pub fn status_code(&self) -> ::std::option::Option<i32> {
         self.status_code
     }
     /// <p>The cancel status.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The deletion payload.</p>
-    pub fn payload(&self) -> ::std::option::Option<&crate::types::DeleteStatisticsValueMap> {
+    pub fn payload(&self) -> ::std::option::Option<& crate::types::DeleteStatisticsValueMap> {
         self.payload.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteSparqlStatisticsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteSparqlStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSparqlStatisticsOutput`](crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsOutput).
     pub fn builder() -> crate::operation::delete_sparql_statistics::builders::DeleteSparqlStatisticsOutputBuilder {
@@ -54,8 +54,7 @@ impl DeleteSparqlStatisticsOutputBuilder {
     }
     /// <p>The HTTP response code: 200 if the delete was successful, or 204 if there were no statistics to delete.</p>
     pub fn set_status_code(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status_code = input;
-        self
+        self.status_code = input; self
     }
     /// <p>The HTTP response code: 200 if the delete was successful, or 204 if there were no statistics to delete.</p>
     pub fn get_status_code(&self) -> &::std::option::Option<i32> {
@@ -68,8 +67,7 @@ impl DeleteSparqlStatisticsOutputBuilder {
     }
     /// <p>The cancel status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The cancel status.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl DeleteSparqlStatisticsOutputBuilder {
     }
     /// <p>The deletion payload.</p>
     pub fn set_payload(mut self, input: ::std::option::Option<crate::types::DeleteStatisticsValueMap>) -> Self {
-        self.payload = input;
-        self
+        self.payload = input; self
     }
     /// <p>The deletion payload.</p>
     pub fn get_payload(&self) -> &::std::option::Option<crate::types::DeleteStatisticsValueMap> {
         &self.payload
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteSparqlStatisticsOutput`](crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsOutput).
     pub fn build(self) -> crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsOutput {
         crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsOutput {
-            status_code: self.status_code,
-            status: self.status,
-            payload: self.payload,
+            status_code: self.status_code
+            ,
+            status: self.status
+            ,
+            payload: self.payload
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

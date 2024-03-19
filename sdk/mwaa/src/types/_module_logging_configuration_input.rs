@@ -3,19 +3,19 @@
 /// <p>Enables the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) and defines the log level to send to CloudWatch Logs (e.g. <code>INFO</code>).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModuleLoggingConfigurationInput {
+pub struct ModuleLoggingConfigurationInput  {
     /// <p>Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>).</p>
     pub enabled: bool,
     /// <p>Defines the Apache Airflow log level (e.g. <code>INFO</code>) to send to CloudWatch Logs.</p>
     pub log_level: crate::types::LoggingLevel,
 }
-impl ModuleLoggingConfigurationInput {
+impl  ModuleLoggingConfigurationInput  {
     /// <p>Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>).</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
     /// <p>Defines the Apache Airflow log level (e.g. <code>INFO</code>) to send to CloudWatch Logs.</p>
-    pub fn log_level(&self) -> &crate::types::LoggingLevel {
+    pub fn log_level(&self) -> & crate::types::LoggingLevel {
         &self.log_level
     }
 }
@@ -42,8 +42,7 @@ impl ModuleLoggingConfigurationInputBuilder {
     }
     /// <p>Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>).</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>).</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -57,8 +56,7 @@ impl ModuleLoggingConfigurationInputBuilder {
     }
     /// <p>Defines the Apache Airflow log level (e.g. <code>INFO</code>) to send to CloudWatch Logs.</p>
     pub fn set_log_level(mut self, input: ::std::option::Option<crate::types::LoggingLevel>) -> Self {
-        self.log_level = input;
-        self
+        self.log_level = input; self
     }
     /// <p>Defines the Apache Airflow log level (e.g. <code>INFO</code>) to send to CloudWatch Logs.</p>
     pub fn get_log_level(&self) -> &::std::option::Option<crate::types::LoggingLevel> {
@@ -69,19 +67,20 @@ impl ModuleLoggingConfigurationInputBuilder {
     /// - [`enabled`](crate::types::builders::ModuleLoggingConfigurationInputBuilder::enabled)
     /// - [`log_level`](crate::types::builders::ModuleLoggingConfigurationInputBuilder::log_level)
     pub fn build(self) -> ::std::result::Result<crate::types::ModuleLoggingConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ModuleLoggingConfigurationInput {
-            enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "enabled",
-                    "enabled was not specified but it is required when building ModuleLoggingConfigurationInput",
-                )
-            })?,
-            log_level: self.log_level.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "log_level",
-                    "log_level was not specified but it is required when building ModuleLoggingConfigurationInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ModuleLoggingConfigurationInput {
+                enabled: self.enabled
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("enabled", "enabled was not specified but it is required when building ModuleLoggingConfigurationInput")
+                    )?
+                ,
+                log_level: self.log_level
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("log_level", "log_level was not specified but it is required when building ModuleLoggingConfigurationInput")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,32 +3,31 @@
 /// <p>The request couldn't be completed because it contains signals that aren't valid.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InvalidSignalsException {
+pub struct InvalidSignalsException  {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The signals which caused the exception.</p>
-    pub invalid_signals: ::std::option::Option<::std::vec::Vec<crate::types::InvalidSignal>>,
+    pub invalid_signals: ::std::option::Option<::std::vec::Vec::<crate::types::InvalidSignal>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl InvalidSignalsException {
+impl  InvalidSignalsException  {
     /// <p>The signals which caused the exception.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.invalid_signals.is_none()`.
-    pub fn invalid_signals(&self) -> &[crate::types::InvalidSignal] {
-        self.invalid_signals.as_deref().unwrap_or_default()
+    pub fn invalid_signals(&self) -> & [crate::types::InvalidSignal] {
+        self.invalid_signals.as_deref()
+        .unwrap_or_default()
     }
 }
 impl InvalidSignalsException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for InvalidSignalsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "InvalidSignalsException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -43,9 +42,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::InvalidSignalsE
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidSignalsException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl InvalidSignalsException {
     /// Creates a new builder-style object to manufacture [`InvalidSignalsException`](crate::types::error::InvalidSignalsException).
@@ -59,7 +56,7 @@ impl InvalidSignalsException {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InvalidSignalsExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
-    pub(crate) invalid_signals: ::std::option::Option<::std::vec::Vec<crate::types::InvalidSignal>>,
+    pub(crate) invalid_signals: ::std::option::Option<::std::vec::Vec::<crate::types::InvalidSignal>>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl InvalidSignalsExceptionBuilder {
@@ -70,8 +67,7 @@ impl InvalidSignalsExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,36 +80,38 @@ impl InvalidSignalsExceptionBuilder {
     /// <p>The signals which caused the exception.</p>
     pub fn invalid_signals(mut self, input: crate::types::InvalidSignal) -> Self {
         let mut v = self.invalid_signals.unwrap_or_default();
-        v.push(input);
-        self.invalid_signals = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.invalid_signals = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The signals which caused the exception.</p>
-    pub fn set_invalid_signals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InvalidSignal>>) -> Self {
-        self.invalid_signals = input;
-        self
+    pub fn set_invalid_signals(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InvalidSignal>>) -> Self {
+        self.invalid_signals = input; self
     }
     /// <p>The signals which caused the exception.</p>
-    pub fn get_invalid_signals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InvalidSignal>> {
+    pub fn get_invalid_signals(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InvalidSignal>> {
         &self.invalid_signals
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`InvalidSignalsException`](crate::types::error::InvalidSignalsException).
     pub fn build(self) -> crate::types::error::InvalidSignalsException {
         crate::types::error::InvalidSignalsException {
-            message: self.message,
-            invalid_signals: self.invalid_signals,
+            message: self.message
+            ,
+            invalid_signals: self.invalid_signals
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

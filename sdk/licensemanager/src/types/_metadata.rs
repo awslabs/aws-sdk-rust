@@ -3,19 +3,19 @@
 /// <p>Describes key/value pairs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Metadata {
+pub struct Metadata  {
     /// <p>The key name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl Metadata {
+impl  Metadata  {
     /// <p>The key name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The value.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl MetadataBuilder {
     }
     /// <p>The key name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The key name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl MetadataBuilder {
     }
     /// <p>The value.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl MetadataBuilder {
     /// Consumes the builder and constructs a [`Metadata`](crate::types::Metadata).
     pub fn build(self) -> crate::types::Metadata {
         crate::types::Metadata {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

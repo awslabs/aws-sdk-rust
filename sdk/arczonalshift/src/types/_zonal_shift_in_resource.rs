@@ -3,7 +3,7 @@
 /// <p>A complex structure that lists the zonal shifts for a managed resource and their statuses for the resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ZonalShiftInResource {
+pub struct ZonalShiftInResource  {
     /// <p>The <code>appliedStatus</code> field specifies which application traffic shift is in effect for a resource when there is more than one traffic shift active. There can be more than one application traffic shift in progress at the same time - that is, practice run zonal shifts, customer-started zonal shifts, or an autoshift. The <code>appliedStatus</code> field for an autoshift for a resource can have one of two values: <code>APPLIED</code> or <code>NOT_APPLIED</code>. The zonal shift or autoshift that is currently in effect for the resource has an applied status set to <code>APPLIED</code>.</p>
     /// <p>The overall principle for precedence is that zonal shifts that you start as a customer take precedence autoshifts, which take precedence over practice runs. That is, customer-started zonal shifts &gt; autoshifts &gt; practice run zonal shifts.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.how-it-works.html">How zonal autoshift and practice runs work</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
@@ -36,42 +36,38 @@ pub struct ZonalShiftInResource {
     /// <p>For more information about practice run outcomes, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.configure.html"> Considerations when you configure zonal autoshift</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
     pub practice_run_outcome: ::std::option::Option<crate::types::PracticeRunOutcome>,
 }
-impl ZonalShiftInResource {
+impl  ZonalShiftInResource  {
     /// <p>The <code>appliedStatus</code> field specifies which application traffic shift is in effect for a resource when there is more than one traffic shift active. There can be more than one application traffic shift in progress at the same time - that is, practice run zonal shifts, customer-started zonal shifts, or an autoshift. The <code>appliedStatus</code> field for an autoshift for a resource can have one of two values: <code>APPLIED</code> or <code>NOT_APPLIED</code>. The zonal shift or autoshift that is currently in effect for the resource has an applied status set to <code>APPLIED</code>.</p>
     /// <p>The overall principle for precedence is that zonal shifts that you start as a customer take precedence autoshifts, which take precedence over practice runs. That is, customer-started zonal shifts &gt; autoshifts &gt; practice run zonal shifts.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.how-it-works.html">How zonal autoshift and practice runs work</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
-    pub fn applied_status(&self) -> &crate::types::AppliedStatus {
+    pub fn applied_status(&self) -> & crate::types::AppliedStatus {
         &self.applied_status
     }
     /// <p>The identifier of a zonal shift.</p>
-    pub fn zonal_shift_id(&self) -> &str {
-        use std::ops::Deref;
-        self.zonal_shift_id.deref()
+    pub fn zonal_shift_id(&self) -> & str {
+        use std::ops::Deref; self.zonal_shift_id.deref()
     }
     /// <p>The identifier for the resource to include in a zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     /// <p>At this time, you can only start a zonal shift for Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
-    pub fn resource_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_identifier.deref()
+    pub fn resource_identifier(&self) -> & str {
+        use std::ops::Deref; self.resource_identifier.deref()
     }
     /// <p>The Availability Zone that traffic is moved away from for a resource when you start a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource is instead moved to other Availability Zones in the Amazon Web Services Region.</p>
-    pub fn away_from(&self) -> &str {
-        use std::ops::Deref;
-        self.away_from.deref()
+    pub fn away_from(&self) -> & str {
+        use std::ops::Deref; self.away_from.deref()
     }
     /// <p>The expiry time (expiration time) for a customer-started zonal shift. A zonal shift is temporary and must be set to expire when you start the zonal shift. You can initially set a zonal shift to expire in a maximum of three days (72 hours). However, you can update a zonal shift to set a new expiration at any time.</p>
     /// <p>When you start a zonal shift, you specify how long you want it to be active, which Route 53 ARC converts to an expiry time (expiration time). You can cancel a zonal shift when you're ready to restore traffic to the Availability Zone, or just wait for it to expire. Or you can update the zonal shift to specify another length of time to expire in.</p>
-    pub fn expiry_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn expiry_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.expiry_time
     }
     /// <p>The time (UTC) when the zonal shift starts.</p>
-    pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn start_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.start_time
     }
     /// <p>A comment that you enter about the zonal shift. Only the latest comment is retained; no comment history is maintained. That is, a new comment overwrites any existing comment string.</p>
-    pub fn comment(&self) -> &str {
-        use std::ops::Deref;
-        self.comment.deref()
+    pub fn comment(&self) -> & str {
+        use std::ops::Deref; self.comment.deref()
     }
     /// <p>The outcome, or end state, returned for a practice run. The following values can be returned:</p>
     /// <ul>
@@ -85,7 +81,7 @@ impl ZonalShiftInResource {
     /// <p><b>FAILED:</b> Outcome value when the outcome alarm specified for the practice run configuration goes into an <code>ALARM</code> state during the practice run, and the practice run was not interrupted before it completed.</p></li>
     /// </ul>
     /// <p>For more information about practice run outcomes, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.configure.html"> Considerations when you configure zonal autoshift</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
-    pub fn practice_run_outcome(&self) -> ::std::option::Option<&crate::types::PracticeRunOutcome> {
+    pub fn practice_run_outcome(&self) -> ::std::option::Option<& crate::types::PracticeRunOutcome> {
         self.practice_run_outcome.as_ref()
     }
 }
@@ -122,8 +118,7 @@ impl ZonalShiftInResourceBuilder {
     /// <p>The overall principle for precedence is that zonal shifts that you start as a customer take precedence autoshifts, which take precedence over practice runs. That is, customer-started zonal shifts &gt; autoshifts &gt; practice run zonal shifts.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.how-it-works.html">How zonal autoshift and practice runs work</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
     pub fn set_applied_status(mut self, input: ::std::option::Option<crate::types::AppliedStatus>) -> Self {
-        self.applied_status = input;
-        self
+        self.applied_status = input; self
     }
     /// <p>The <code>appliedStatus</code> field specifies which application traffic shift is in effect for a resource when there is more than one traffic shift active. There can be more than one application traffic shift in progress at the same time - that is, practice run zonal shifts, customer-started zonal shifts, or an autoshift. The <code>appliedStatus</code> field for an autoshift for a resource can have one of two values: <code>APPLIED</code> or <code>NOT_APPLIED</code>. The zonal shift or autoshift that is currently in effect for the resource has an applied status set to <code>APPLIED</code>.</p>
     /// <p>The overall principle for precedence is that zonal shifts that you start as a customer take precedence autoshifts, which take precedence over practice runs. That is, customer-started zonal shifts &gt; autoshifts &gt; practice run zonal shifts.</p>
@@ -139,8 +134,7 @@ impl ZonalShiftInResourceBuilder {
     }
     /// <p>The identifier of a zonal shift.</p>
     pub fn set_zonal_shift_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.zonal_shift_id = input;
-        self
+        self.zonal_shift_id = input; self
     }
     /// <p>The identifier of a zonal shift.</p>
     pub fn get_zonal_shift_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,8 +150,7 @@ impl ZonalShiftInResourceBuilder {
     /// <p>The identifier for the resource to include in a zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     /// <p>At this time, you can only start a zonal shift for Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
     pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_identifier = input;
-        self
+        self.resource_identifier = input; self
     }
     /// <p>The identifier for the resource to include in a zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     /// <p>At this time, you can only start a zonal shift for Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
@@ -172,8 +165,7 @@ impl ZonalShiftInResourceBuilder {
     }
     /// <p>The Availability Zone that traffic is moved away from for a resource when you start a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource is instead moved to other Availability Zones in the Amazon Web Services Region.</p>
     pub fn set_away_from(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.away_from = input;
-        self
+        self.away_from = input; self
     }
     /// <p>The Availability Zone that traffic is moved away from for a resource when you start a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource is instead moved to other Availability Zones in the Amazon Web Services Region.</p>
     pub fn get_away_from(&self) -> &::std::option::Option<::std::string::String> {
@@ -189,8 +181,7 @@ impl ZonalShiftInResourceBuilder {
     /// <p>The expiry time (expiration time) for a customer-started zonal shift. A zonal shift is temporary and must be set to expire when you start the zonal shift. You can initially set a zonal shift to expire in a maximum of three days (72 hours). However, you can update a zonal shift to set a new expiration at any time.</p>
     /// <p>When you start a zonal shift, you specify how long you want it to be active, which Route 53 ARC converts to an expiry time (expiration time). You can cancel a zonal shift when you're ready to restore traffic to the Availability Zone, or just wait for it to expire. Or you can update the zonal shift to specify another length of time to expire in.</p>
     pub fn set_expiry_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.expiry_time = input;
-        self
+        self.expiry_time = input; self
     }
     /// <p>The expiry time (expiration time) for a customer-started zonal shift. A zonal shift is temporary and must be set to expire when you start the zonal shift. You can initially set a zonal shift to expire in a maximum of three days (72 hours). However, you can update a zonal shift to set a new expiration at any time.</p>
     /// <p>When you start a zonal shift, you specify how long you want it to be active, which Route 53 ARC converts to an expiry time (expiration time). You can cancel a zonal shift when you're ready to restore traffic to the Availability Zone, or just wait for it to expire. Or you can update the zonal shift to specify another length of time to expire in.</p>
@@ -205,8 +196,7 @@ impl ZonalShiftInResourceBuilder {
     }
     /// <p>The time (UTC) when the zonal shift starts.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The time (UTC) when the zonal shift starts.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -220,8 +210,7 @@ impl ZonalShiftInResourceBuilder {
     }
     /// <p>A comment that you enter about the zonal shift. Only the latest comment is retained; no comment history is maintained. That is, a new comment overwrites any existing comment string.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// <p>A comment that you enter about the zonal shift. Only the latest comment is retained; no comment history is maintained. That is, a new comment overwrites any existing comment string.</p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
@@ -256,8 +245,7 @@ impl ZonalShiftInResourceBuilder {
     /// </ul>
     /// <p>For more information about practice run outcomes, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.configure.html"> Considerations when you configure zonal autoshift</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
     pub fn set_practice_run_outcome(mut self, input: ::std::option::Option<crate::types::PracticeRunOutcome>) -> Self {
-        self.practice_run_outcome = input;
-        self
+        self.practice_run_outcome = input; self
     }
     /// <p>The outcome, or end state, returned for a practice run. The following values can be returned:</p>
     /// <ul>
@@ -284,50 +272,47 @@ impl ZonalShiftInResourceBuilder {
     /// - [`start_time`](crate::types::builders::ZonalShiftInResourceBuilder::start_time)
     /// - [`comment`](crate::types::builders::ZonalShiftInResourceBuilder::comment)
     pub fn build(self) -> ::std::result::Result<crate::types::ZonalShiftInResource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ZonalShiftInResource {
-            applied_status: self.applied_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "applied_status",
-                    "applied_status was not specified but it is required when building ZonalShiftInResource",
-                )
-            })?,
-            zonal_shift_id: self.zonal_shift_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "zonal_shift_id",
-                    "zonal_shift_id was not specified but it is required when building ZonalShiftInResource",
-                )
-            })?,
-            resource_identifier: self.resource_identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_identifier",
-                    "resource_identifier was not specified but it is required when building ZonalShiftInResource",
-                )
-            })?,
-            away_from: self.away_from.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "away_from",
-                    "away_from was not specified but it is required when building ZonalShiftInResource",
-                )
-            })?,
-            expiry_time: self.expiry_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "expiry_time",
-                    "expiry_time was not specified but it is required when building ZonalShiftInResource",
-                )
-            })?,
-            start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start_time",
-                    "start_time was not specified but it is required when building ZonalShiftInResource",
-                )
-            })?,
-            comment: self.comment.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "comment",
-                    "comment was not specified but it is required when building ZonalShiftInResource",
-                )
-            })?,
-            practice_run_outcome: self.practice_run_outcome,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ZonalShiftInResource {
+                applied_status: self.applied_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("applied_status", "applied_status was not specified but it is required when building ZonalShiftInResource")
+                    )?
+                ,
+                zonal_shift_id: self.zonal_shift_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("zonal_shift_id", "zonal_shift_id was not specified but it is required when building ZonalShiftInResource")
+                    )?
+                ,
+                resource_identifier: self.resource_identifier
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_identifier", "resource_identifier was not specified but it is required when building ZonalShiftInResource")
+                    )?
+                ,
+                away_from: self.away_from
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("away_from", "away_from was not specified but it is required when building ZonalShiftInResource")
+                    )?
+                ,
+                expiry_time: self.expiry_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("expiry_time", "expiry_time was not specified but it is required when building ZonalShiftInResource")
+                    )?
+                ,
+                start_time: self.start_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start_time", "start_time was not specified but it is required when building ZonalShiftInResource")
+                    )?
+                ,
+                comment: self.comment
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("comment", "comment was not specified but it is required when building ZonalShiftInResource")
+                    )?
+                ,
+                practice_run_outcome: self.practice_run_outcome
+                ,
+            }
+        )
     }
 }
+

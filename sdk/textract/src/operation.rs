@@ -75,3 +75,4 @@ pub mod untag_resource;
 
 /// Types for the `UpdateAdapter` operation.
 pub mod update_adapter;
+

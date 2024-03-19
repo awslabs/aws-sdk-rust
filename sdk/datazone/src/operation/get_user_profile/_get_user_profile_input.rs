@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetUserProfileInput {
+pub struct GetUserProfileInput  {
     /// <p>the ID of the Amazon DataZone domain the data portal of which you want to get.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the user for which you want to get the user profile.</p>
@@ -10,17 +10,17 @@ pub struct GetUserProfileInput {
     /// <p>The type of the user profile.</p>
     pub r#type: ::std::option::Option<crate::types::UserProfileType>,
 }
-impl GetUserProfileInput {
+impl  GetUserProfileInput  {
     /// <p>the ID of the Amazon DataZone domain the data portal of which you want to get.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The identifier of the user for which you want to get the user profile.</p>
-    pub fn user_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn user_identifier(&self) -> ::std::option::Option<& str> {
         self.user_identifier.as_deref()
     }
     /// <p>The type of the user profile.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::UserProfileType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::UserProfileType> {
         self.r#type.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl GetUserProfileInputBuilder {
     }
     /// <p>the ID of the Amazon DataZone domain the data portal of which you want to get.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>the ID of the Amazon DataZone domain the data portal of which you want to get.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl GetUserProfileInputBuilder {
     }
     /// <p>The identifier of the user for which you want to get the user profile.</p>
     pub fn set_user_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_identifier = input;
-        self
+        self.user_identifier = input; self
     }
     /// <p>The identifier of the user for which you want to get the user profile.</p>
     pub fn get_user_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,21 +75,24 @@ impl GetUserProfileInputBuilder {
     }
     /// <p>The type of the user profile.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::UserProfileType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the user profile.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::UserProfileType> {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`GetUserProfileInput`](crate::operation::get_user_profile::GetUserProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_user_profile::GetUserProfileInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_user_profile::GetUserProfileInput {
-            domain_identifier: self.domain_identifier,
-            user_identifier: self.user_identifier,
-            r#type: self.r#type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_user_profile::GetUserProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_user_profile::GetUserProfileInput {
+                domain_identifier: self.domain_identifier
+                ,
+                user_identifier: self.user_identifier
+                ,
+                r#type: self.r#type
+                ,
+            }
+        )
     }
 }
+

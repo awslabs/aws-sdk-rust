@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let numericquestionpropertyautomationlabel = unimplemented!();
 /// match numericquestionpropertyautomationlabel {
@@ -36,16 +36,14 @@
 /// Specifically, when `numericquestionpropertyautomationlabel` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NumericQuestionPropertyAutomationLabel::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum NumericQuestionPropertyAutomationLabel {
     #[allow(missing_docs)] // documentation missing in model
     AgentInteractionDuration,
@@ -65,88 +63,80 @@ pub enum NumericQuestionPropertyAutomationLabel {
     OverallCustomerSentimentScore,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for NumericQuestionPropertyAutomationLabel {
-    fn from(s: &str) -> Self {
-        match s {
-            "AGENT_INTERACTION_DURATION" => NumericQuestionPropertyAutomationLabel::AgentInteractionDuration,
-            "CONTACT_DURATION" => NumericQuestionPropertyAutomationLabel::ContactDuration,
-            "CUSTOMER_HOLD_TIME" => NumericQuestionPropertyAutomationLabel::CustomerHoldTime,
-            "NON_TALK_TIME" => NumericQuestionPropertyAutomationLabel::NonTalkTime,
-            "NON_TALK_TIME_PERCENTAGE" => NumericQuestionPropertyAutomationLabel::NonTalkTimePercentage,
-            "NUMBER_OF_INTERRUPTIONS" => NumericQuestionPropertyAutomationLabel::NumberOfInterruptions,
-            "OVERALL_AGENT_SENTIMENT_SCORE" => NumericQuestionPropertyAutomationLabel::OverallAgentSentimentScore,
-            "OVERALL_CUSTOMER_SENTIMENT_SCORE" => NumericQuestionPropertyAutomationLabel::OverallCustomerSentimentScore,
-            other => NumericQuestionPropertyAutomationLabel::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "AGENT_INTERACTION_DURATION" => NumericQuestionPropertyAutomationLabel::AgentInteractionDuration,
+"CONTACT_DURATION" => NumericQuestionPropertyAutomationLabel::ContactDuration,
+"CUSTOMER_HOLD_TIME" => NumericQuestionPropertyAutomationLabel::CustomerHoldTime,
+"NON_TALK_TIME" => NumericQuestionPropertyAutomationLabel::NonTalkTime,
+"NON_TALK_TIME_PERCENTAGE" => NumericQuestionPropertyAutomationLabel::NonTalkTimePercentage,
+"NUMBER_OF_INTERRUPTIONS" => NumericQuestionPropertyAutomationLabel::NumberOfInterruptions,
+"OVERALL_AGENT_SENTIMENT_SCORE" => NumericQuestionPropertyAutomationLabel::OverallAgentSentimentScore,
+"OVERALL_CUSTOMER_SENTIMENT_SCORE" => NumericQuestionPropertyAutomationLabel::OverallCustomerSentimentScore,
+other => NumericQuestionPropertyAutomationLabel::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for NumericQuestionPropertyAutomationLabel {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(NumericQuestionPropertyAutomationLabel::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(NumericQuestionPropertyAutomationLabel::from(s))
+                    }
+                }
 impl NumericQuestionPropertyAutomationLabel {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            NumericQuestionPropertyAutomationLabel::AgentInteractionDuration => "AGENT_INTERACTION_DURATION",
-            NumericQuestionPropertyAutomationLabel::ContactDuration => "CONTACT_DURATION",
-            NumericQuestionPropertyAutomationLabel::CustomerHoldTime => "CUSTOMER_HOLD_TIME",
-            NumericQuestionPropertyAutomationLabel::NonTalkTime => "NON_TALK_TIME",
-            NumericQuestionPropertyAutomationLabel::NonTalkTimePercentage => "NON_TALK_TIME_PERCENTAGE",
-            NumericQuestionPropertyAutomationLabel::NumberOfInterruptions => "NUMBER_OF_INTERRUPTIONS",
-            NumericQuestionPropertyAutomationLabel::OverallAgentSentimentScore => "OVERALL_AGENT_SENTIMENT_SCORE",
-            NumericQuestionPropertyAutomationLabel::OverallCustomerSentimentScore => "OVERALL_CUSTOMER_SENTIMENT_SCORE",
-            NumericQuestionPropertyAutomationLabel::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AGENT_INTERACTION_DURATION",
-            "CONTACT_DURATION",
-            "CUSTOMER_HOLD_TIME",
-            "NON_TALK_TIME",
-            "NON_TALK_TIME_PERCENTAGE",
-            "NUMBER_OF_INTERRUPTIONS",
-            "OVERALL_AGENT_SENTIMENT_SCORE",
-            "OVERALL_CUSTOMER_SENTIMENT_SCORE",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    NumericQuestionPropertyAutomationLabel::AgentInteractionDuration => "AGENT_INTERACTION_DURATION",
+    NumericQuestionPropertyAutomationLabel::ContactDuration => "CONTACT_DURATION",
+    NumericQuestionPropertyAutomationLabel::CustomerHoldTime => "CUSTOMER_HOLD_TIME",
+    NumericQuestionPropertyAutomationLabel::NonTalkTime => "NON_TALK_TIME",
+    NumericQuestionPropertyAutomationLabel::NonTalkTimePercentage => "NON_TALK_TIME_PERCENTAGE",
+    NumericQuestionPropertyAutomationLabel::NumberOfInterruptions => "NUMBER_OF_INTERRUPTIONS",
+    NumericQuestionPropertyAutomationLabel::OverallAgentSentimentScore => "OVERALL_AGENT_SENTIMENT_SCORE",
+    NumericQuestionPropertyAutomationLabel::OverallCustomerSentimentScore => "OVERALL_CUSTOMER_SENTIMENT_SCORE",
+    NumericQuestionPropertyAutomationLabel::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AGENT_INTERACTION_DURATION", "CONTACT_DURATION", "CUSTOMER_HOLD_TIME", "NON_TALK_TIME", "NON_TALK_TIME_PERCENTAGE", "NUMBER_OF_INTERRUPTIONS", "OVERALL_AGENT_SENTIMENT_SCORE", "OVERALL_CUSTOMER_SENTIMENT_SCORE"]
+                }
+            }
 impl ::std::convert::AsRef<str> for NumericQuestionPropertyAutomationLabel {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl NumericQuestionPropertyAutomationLabel {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for NumericQuestionPropertyAutomationLabel {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            NumericQuestionPropertyAutomationLabel::AgentInteractionDuration => write!(f, "AGENT_INTERACTION_DURATION"),
-            NumericQuestionPropertyAutomationLabel::ContactDuration => write!(f, "CONTACT_DURATION"),
-            NumericQuestionPropertyAutomationLabel::CustomerHoldTime => write!(f, "CUSTOMER_HOLD_TIME"),
-            NumericQuestionPropertyAutomationLabel::NonTalkTime => write!(f, "NON_TALK_TIME"),
-            NumericQuestionPropertyAutomationLabel::NonTalkTimePercentage => write!(f, "NON_TALK_TIME_PERCENTAGE"),
-            NumericQuestionPropertyAutomationLabel::NumberOfInterruptions => write!(f, "NUMBER_OF_INTERRUPTIONS"),
-            NumericQuestionPropertyAutomationLabel::OverallAgentSentimentScore => write!(f, "OVERALL_AGENT_SENTIMENT_SCORE"),
-            NumericQuestionPropertyAutomationLabel::OverallCustomerSentimentScore => write!(f, "OVERALL_CUSTOMER_SENTIMENT_SCORE"),
-            NumericQuestionPropertyAutomationLabel::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                NumericQuestionPropertyAutomationLabel::AgentInteractionDuration => write!(f, "AGENT_INTERACTION_DURATION"),
+NumericQuestionPropertyAutomationLabel::ContactDuration => write!(f, "CONTACT_DURATION"),
+NumericQuestionPropertyAutomationLabel::CustomerHoldTime => write!(f, "CUSTOMER_HOLD_TIME"),
+NumericQuestionPropertyAutomationLabel::NonTalkTime => write!(f, "NON_TALK_TIME"),
+NumericQuestionPropertyAutomationLabel::NonTalkTimePercentage => write!(f, "NON_TALK_TIME_PERCENTAGE"),
+NumericQuestionPropertyAutomationLabel::NumberOfInterruptions => write!(f, "NUMBER_OF_INTERRUPTIONS"),
+NumericQuestionPropertyAutomationLabel::OverallAgentSentimentScore => write!(f, "OVERALL_AGENT_SENTIMENT_SCORE"),
+NumericQuestionPropertyAutomationLabel::OverallCustomerSentimentScore => write!(f, "OVERALL_CUSTOMER_SENTIMENT_SCORE"),
+NumericQuestionPropertyAutomationLabel::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

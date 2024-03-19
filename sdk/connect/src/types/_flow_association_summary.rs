@@ -3,7 +3,7 @@
 /// <p>Information about flow associations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FlowAssociationSummary {
+pub struct FlowAssociationSummary  {
     /// <p>The identifier of the resource.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the flow.</p>
@@ -11,17 +11,17 @@ pub struct FlowAssociationSummary {
     /// <p>The type of resource association.</p>
     pub resource_type: ::std::option::Option<crate::types::ListFlowAssociationResourceType>,
 }
-impl FlowAssociationSummary {
+impl  FlowAssociationSummary  {
     /// <p>The identifier of the resource.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The identifier of the flow.</p>
-    pub fn flow_id(&self) -> ::std::option::Option<&str> {
+    pub fn flow_id(&self) -> ::std::option::Option<& str> {
         self.flow_id.as_deref()
     }
     /// <p>The type of resource association.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ListFlowAssociationResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ListFlowAssociationResourceType> {
         self.resource_type.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl FlowAssociationSummaryBuilder {
     }
     /// <p>The identifier of the resource.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The identifier of the resource.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl FlowAssociationSummaryBuilder {
     }
     /// <p>The identifier of the flow.</p>
     pub fn set_flow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flow_id = input;
-        self
+        self.flow_id = input; self
     }
     /// <p>The identifier of the flow.</p>
     pub fn get_flow_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl FlowAssociationSummaryBuilder {
     }
     /// <p>The type of resource association.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ListFlowAssociationResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of resource association.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ListFlowAssociationResourceType> {
@@ -86,9 +83,13 @@ impl FlowAssociationSummaryBuilder {
     /// Consumes the builder and constructs a [`FlowAssociationSummary`](crate::types::FlowAssociationSummary).
     pub fn build(self) -> crate::types::FlowAssociationSummary {
         crate::types::FlowAssociationSummary {
-            resource_id: self.resource_id,
-            flow_id: self.flow_id,
-            resource_type: self.resource_type,
+            resource_id: self.resource_id
+            ,
+            flow_id: self.flow_id
+            ,
+            resource_type: self.resource_type
+            ,
         }
     }
 }
+

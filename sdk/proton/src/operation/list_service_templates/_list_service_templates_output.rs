@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListServiceTemplatesOutput {
+pub struct ListServiceTemplatesOutput  {
     /// <p>A token that indicates the location of the next service template in the array of service templates, after the current requested list of service templates.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of service templates with detail data.</p>
-    pub templates: ::std::vec::Vec<crate::types::ServiceTemplateSummary>,
+    pub templates: ::std::vec::Vec::<crate::types::ServiceTemplateSummary>,
     _request_id: Option<String>,
 }
-impl ListServiceTemplatesOutput {
+impl  ListServiceTemplatesOutput  {
     /// <p>A token that indicates the location of the next service template in the array of service templates, after the current requested list of service templates.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of service templates with detail data.</p>
-    pub fn templates(&self) -> &[crate::types::ServiceTemplateSummary] {
-        use std::ops::Deref;
-        self.templates.deref()
+    pub fn templates(&self) -> & [crate::types::ServiceTemplateSummary] {
+        use std::ops::Deref; self.templates.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListServiceTemplatesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListServiceTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListServiceTemplatesOutput`](crate::operation::list_service_templates::ListServiceTemplatesOutput).
     pub fn builder() -> crate::operation::list_service_templates::builders::ListServiceTemplatesOutputBuilder {
@@ -37,7 +36,7 @@ impl ListServiceTemplatesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServiceTemplatesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) templates: ::std::option::Option<::std::vec::Vec<crate::types::ServiceTemplateSummary>>,
+    pub(crate) templates: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceTemplateSummary>>,
     _request_id: Option<String>,
 }
 impl ListServiceTemplatesOutputBuilder {
@@ -48,8 +47,7 @@ impl ListServiceTemplatesOutputBuilder {
     }
     /// <p>A token that indicates the location of the next service template in the array of service templates, after the current requested list of service templates.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates the location of the next service template in the array of service templates, after the current requested list of service templates.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,44 +60,43 @@ impl ListServiceTemplatesOutputBuilder {
     /// <p>An array of service templates with detail data.</p>
     pub fn templates(mut self, input: crate::types::ServiceTemplateSummary) -> Self {
         let mut v = self.templates.unwrap_or_default();
-        v.push(input);
-        self.templates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.templates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of service templates with detail data.</p>
-    pub fn set_templates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceTemplateSummary>>) -> Self {
-        self.templates = input;
-        self
+    pub fn set_templates(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceTemplateSummary>>) -> Self {
+        self.templates = input; self
     }
     /// <p>An array of service templates with detail data.</p>
-    pub fn get_templates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceTemplateSummary>> {
+    pub fn get_templates(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ServiceTemplateSummary>> {
         &self.templates
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListServiceTemplatesOutput`](crate::operation::list_service_templates::ListServiceTemplatesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`templates`](crate::operation::list_service_templates::builders::ListServiceTemplatesOutputBuilder::templates)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_service_templates::ListServiceTemplatesOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_service_templates::ListServiceTemplatesOutput {
-            next_token: self.next_token,
-            templates: self.templates.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "templates",
-                    "templates was not specified but it is required when building ListServiceTemplatesOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_service_templates::ListServiceTemplatesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_service_templates::ListServiceTemplatesOutput {
+                next_token: self.next_token
+                ,
+                templates: self.templates
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("templates", "templates was not specified but it is required when building ListServiceTemplatesOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -2,14 +2,14 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetLabelDetection`](crate::operation::get_label_detection::builders::GetLabelDetectionFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_label_detection::builders::GetLabelDetectionFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`job_id(impl Into<String>)`](crate::operation::get_label_detection::builders::GetLabelDetectionFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_label_detection::builders::GetLabelDetectionFluentBuilder::set_job_id):<br>required: **true**<br><p>Job identifier for the label detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartlabelDetection</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_label_detection::builders::GetLabelDetectionFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_label_detection::builders::GetLabelDetectionFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_label_detection::builders::GetLabelDetectionFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_label_detection::builders::GetLabelDetectionFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of labels.</p><br>
     ///   - [`sort_by(LabelDetectionSortBy)`](crate::operation::get_label_detection::builders::GetLabelDetectionFluentBuilder::sort_by) / [`set_sort_by(Option<LabelDetectionSortBy>)`](crate::operation::get_label_detection::builders::GetLabelDetectionFluentBuilder::set_sort_by):<br>required: **false**<br><p>Sort to use for elements in the <code>Labels</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected. Use <code>NAME</code> to alphabetically group elements for a label together. Within each label group, the array element are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p><br>
     ///   - [`aggregate_by(LabelDetectionAggregateBy)`](crate::operation::get_label_detection::builders::GetLabelDetectionFluentBuilder::aggregate_by) / [`set_aggregate_by(Option<LabelDetectionAggregateBy>)`](crate::operation::get_label_detection::builders::GetLabelDetectionFluentBuilder::set_aggregate_by):<br>required: **false**<br><p>Defines how to aggregate the returned results. Results can be aggregated by timestamps or segments.</p><br>
-    /// - On success, responds with [`GetLabelDetectionOutput`](crate::operation::get_label_detection::GetLabelDetectionOutput) with field(s):
+                            /// - On success, responds with [`GetLabelDetectionOutput`](crate::operation::get_label_detection::GetLabelDetectionOutput) with field(s):
     ///   - [`job_status(Option<VideoJobStatus>)`](crate::operation::get_label_detection::GetLabelDetectionOutput::job_status): <p>The current status of the label detection job.</p>
     ///   - [`status_message(Option<String>)`](crate::operation::get_label_detection::GetLabelDetectionOutput::status_message): <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
     ///   - [`video_metadata(Option<VideoMetadata>)`](crate::operation::get_label_detection::GetLabelDetectionOutput::video_metadata): <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
@@ -20,8 +20,9 @@ impl super::Client {
     ///   - [`video(Option<Video>)`](crate::operation::get_label_detection::GetLabelDetectionOutput::video): <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
     ///   - [`job_tag(Option<String>)`](crate::operation::get_label_detection::GetLabelDetectionOutput::job_tag): <p>A job identifier specified in the call to StartLabelDetection and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
     ///   - [`get_request_metadata(Option<GetLabelDetectionRequestMetadata>)`](crate::operation::get_label_detection::GetLabelDetectionOutput::get_request_metadata): <p>Information about the paramters used when getting a response. Includes information on aggregation and sorting methods.</p>
-    /// - On failure, responds with [`SdkError<GetLabelDetectionError>`](crate::operation::get_label_detection::GetLabelDetectionError)
+                            /// - On failure, responds with [`SdkError<GetLabelDetectionError>`](crate::operation::get_label_detection::GetLabelDetectionError)
     pub fn get_label_detection(&self) -> crate::operation::get_label_detection::builders::GetLabelDetectionFluentBuilder {
-        crate::operation::get_label_detection::builders::GetLabelDetectionFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_label_detection::builders::GetLabelDetectionFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -219,3 +219,4 @@ pub mod update_workspace_bundle;
 
 /// Types for the `UpdateWorkspaceImagePermission` operation.
 pub mod update_workspace_image_permission;
+

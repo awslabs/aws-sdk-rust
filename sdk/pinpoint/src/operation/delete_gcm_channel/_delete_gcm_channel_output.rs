@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteGcmChannelOutput {
+pub struct DeleteGcmChannelOutput  {
     /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
     pub gcm_channel_response: ::std::option::Option<crate::types::GcmChannelResponse>,
     _request_id: Option<String>,
 }
-impl DeleteGcmChannelOutput {
+impl  DeleteGcmChannelOutput  {
     /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
-    pub fn gcm_channel_response(&self) -> ::std::option::Option<&crate::types::GcmChannelResponse> {
+    pub fn gcm_channel_response(&self) -> ::std::option::Option<& crate::types::GcmChannelResponse> {
         self.gcm_channel_response.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteGcmChannelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteGcmChannelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteGcmChannelOutput`](crate::operation::delete_gcm_channel::DeleteGcmChannelOutput).
     pub fn builder() -> crate::operation::delete_gcm_channel::builders::DeleteGcmChannelOutputBuilder {
@@ -41,27 +41,28 @@ impl DeleteGcmChannelOutputBuilder {
     }
     /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
     pub fn set_gcm_channel_response(mut self, input: ::std::option::Option<crate::types::GcmChannelResponse>) -> Self {
-        self.gcm_channel_response = input;
-        self
+        self.gcm_channel_response = input; self
     }
     /// <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
     pub fn get_gcm_channel_response(&self) -> &::std::option::Option<crate::types::GcmChannelResponse> {
         &self.gcm_channel_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteGcmChannelOutput`](crate::operation::delete_gcm_channel::DeleteGcmChannelOutput).
     pub fn build(self) -> crate::operation::delete_gcm_channel::DeleteGcmChannelOutput {
         crate::operation::delete_gcm_channel::DeleteGcmChannelOutput {
-            gcm_channel_response: self.gcm_channel_response,
+            gcm_channel_response: self.gcm_channel_response
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

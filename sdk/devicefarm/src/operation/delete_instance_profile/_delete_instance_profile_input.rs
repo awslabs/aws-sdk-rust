@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteInstanceProfileInput {
+pub struct DeleteInstanceProfileInput  {
     /// <p>The Amazon Resource Name (ARN) of the instance profile you are requesting to delete.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteInstanceProfileInput {
+impl  DeleteInstanceProfileInput  {
     /// <p>The Amazon Resource Name (ARN) of the instance profile you are requesting to delete.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl DeleteInstanceProfileInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the instance profile you are requesting to delete.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the instance profile you are requesting to delete.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
     /// Consumes the builder and constructs a [`DeleteInstanceProfileInput`](crate::operation::delete_instance_profile::DeleteInstanceProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_instance_profile::DeleteInstanceProfileInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_instance_profile::DeleteInstanceProfileInput { arn: self.arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_instance_profile::DeleteInstanceProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_instance_profile::DeleteInstanceProfileInput {
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

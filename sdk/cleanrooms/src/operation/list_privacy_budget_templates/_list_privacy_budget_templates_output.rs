@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPrivacyBudgetTemplatesOutput {
+pub struct ListPrivacyBudgetTemplatesOutput  {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array that summarizes the privacy budget templates. The summary includes collaboration information, creation information, and privacy budget type.</p>
-    pub privacy_budget_template_summaries: ::std::vec::Vec<crate::types::PrivacyBudgetTemplateSummary>,
+    pub privacy_budget_template_summaries: ::std::vec::Vec::<crate::types::PrivacyBudgetTemplateSummary>,
     _request_id: Option<String>,
 }
-impl ListPrivacyBudgetTemplatesOutput {
+impl  ListPrivacyBudgetTemplatesOutput  {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array that summarizes the privacy budget templates. The summary includes collaboration information, creation information, and privacy budget type.</p>
-    pub fn privacy_budget_template_summaries(&self) -> &[crate::types::PrivacyBudgetTemplateSummary] {
-        use std::ops::Deref;
-        self.privacy_budget_template_summaries.deref()
+    pub fn privacy_budget_template_summaries(&self) -> & [crate::types::PrivacyBudgetTemplateSummary] {
+        use std::ops::Deref; self.privacy_budget_template_summaries.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListPrivacyBudgetTemplatesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListPrivacyBudgetTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListPrivacyBudgetTemplatesOutput`](crate::operation::list_privacy_budget_templates::ListPrivacyBudgetTemplatesOutput).
     pub fn builder() -> crate::operation::list_privacy_budget_templates::builders::ListPrivacyBudgetTemplatesOutputBuilder {
@@ -37,7 +36,7 @@ impl ListPrivacyBudgetTemplatesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPrivacyBudgetTemplatesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) privacy_budget_template_summaries: ::std::option::Option<::std::vec::Vec<crate::types::PrivacyBudgetTemplateSummary>>,
+    pub(crate) privacy_budget_template_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::PrivacyBudgetTemplateSummary>>,
     _request_id: Option<String>,
 }
 impl ListPrivacyBudgetTemplatesOutputBuilder {
@@ -48,8 +47,7 @@ impl ListPrivacyBudgetTemplatesOutputBuilder {
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,49 +60,43 @@ impl ListPrivacyBudgetTemplatesOutputBuilder {
     /// <p>An array that summarizes the privacy budget templates. The summary includes collaboration information, creation information, and privacy budget type.</p>
     pub fn privacy_budget_template_summaries(mut self, input: crate::types::PrivacyBudgetTemplateSummary) -> Self {
         let mut v = self.privacy_budget_template_summaries.unwrap_or_default();
-        v.push(input);
-        self.privacy_budget_template_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.privacy_budget_template_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array that summarizes the privacy budget templates. The summary includes collaboration information, creation information, and privacy budget type.</p>
-    pub fn set_privacy_budget_template_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PrivacyBudgetTemplateSummary>>,
-    ) -> Self {
-        self.privacy_budget_template_summaries = input;
-        self
+    pub fn set_privacy_budget_template_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PrivacyBudgetTemplateSummary>>) -> Self {
+        self.privacy_budget_template_summaries = input; self
     }
     /// <p>An array that summarizes the privacy budget templates. The summary includes collaboration information, creation information, and privacy budget type.</p>
-    pub fn get_privacy_budget_template_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrivacyBudgetTemplateSummary>> {
+    pub fn get_privacy_budget_template_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PrivacyBudgetTemplateSummary>> {
         &self.privacy_budget_template_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListPrivacyBudgetTemplatesOutput`](crate::operation::list_privacy_budget_templates::ListPrivacyBudgetTemplatesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`privacy_budget_template_summaries`](crate::operation::list_privacy_budget_templates::builders::ListPrivacyBudgetTemplatesOutputBuilder::privacy_budget_template_summaries)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_privacy_budget_templates::ListPrivacyBudgetTemplatesOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_privacy_budget_templates::ListPrivacyBudgetTemplatesOutput {
-            next_token: self.next_token,
-            privacy_budget_template_summaries: self.privacy_budget_template_summaries.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "privacy_budget_template_summaries",
-                    "privacy_budget_template_summaries was not specified but it is required when building ListPrivacyBudgetTemplatesOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_privacy_budget_templates::ListPrivacyBudgetTemplatesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_privacy_budget_templates::ListPrivacyBudgetTemplatesOutput {
+                next_token: self.next_token
+                ,
+                privacy_budget_template_summaries: self.privacy_budget_template_summaries
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("privacy_budget_template_summaries", "privacy_budget_template_summaries was not specified but it is required when building ListPrivacyBudgetTemplatesOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

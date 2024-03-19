@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTopicRules`](crate::operation::list_topic_rules::builders::ListTopicRulesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_topic_rules::builders::ListTopicRulesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`topic(impl Into<String>)`](crate::operation::list_topic_rules::builders::ListTopicRulesFluentBuilder::topic) / [`set_topic(Option<String>)`](crate::operation::list_topic_rules::builders::ListTopicRulesFluentBuilder::set_topic):<br>required: **false**<br><p>The topic.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_topic_rules::builders::ListTopicRulesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_topic_rules::builders::ListTopicRulesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_topic_rules::builders::ListTopicRulesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_topic_rules::builders::ListTopicRulesFluentBuilder::set_next_token):<br>required: **false**<br><p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p><br>
     ///   - [`rule_disabled(bool)`](crate::operation::list_topic_rules::builders::ListTopicRulesFluentBuilder::rule_disabled) / [`set_rule_disabled(Option<bool>)`](crate::operation::list_topic_rules::builders::ListTopicRulesFluentBuilder::set_rule_disabled):<br>required: **false**<br><p>Specifies whether the rule is disabled.</p><br>
-    /// - On success, responds with [`ListTopicRulesOutput`](crate::operation::list_topic_rules::ListTopicRulesOutput) with field(s):
+                            /// - On success, responds with [`ListTopicRulesOutput`](crate::operation::list_topic_rules::ListTopicRulesOutput) with field(s):
     ///   - [`rules(Option<Vec::<TopicRuleListItem>>)`](crate::operation::list_topic_rules::ListTopicRulesOutput::rules): <p>The rules.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_topic_rules::ListTopicRulesOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<ListTopicRulesError>`](crate::operation::list_topic_rules::ListTopicRulesError)
+                            /// - On failure, responds with [`SdkError<ListTopicRulesError>`](crate::operation::list_topic_rules::ListTopicRulesError)
     pub fn list_topic_rules(&self) -> crate::operation::list_topic_rules::builders::ListTopicRulesFluentBuilder {
-        crate::operation::list_topic_rules::builders::ListTopicRulesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_topic_rules::builders::ListTopicRulesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

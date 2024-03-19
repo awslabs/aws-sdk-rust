@@ -3,7 +3,7 @@
 /// <p>Describes the ID format for a resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IdFormat {
+pub struct IdFormat  {
     /// <p>The date in UTC at which you are permanently switched over to using longer IDs. If a deadline is not yet available for this resource type, this field is not returned.</p>
     pub deadline: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of resource.</p>
@@ -11,13 +11,13 @@ pub struct IdFormat {
     /// <p>Indicates whether longer IDs (17-character IDs) are enabled for the resource.</p>
     pub use_long_ids: ::std::option::Option<bool>,
 }
-impl IdFormat {
+impl  IdFormat  {
     /// <p>The date in UTC at which you are permanently switched over to using longer IDs. If a deadline is not yet available for this resource type, this field is not returned.</p>
-    pub fn deadline(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn deadline(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.deadline.as_ref()
     }
     /// <p>The type of resource.</p>
-    pub fn resource(&self) -> ::std::option::Option<&str> {
+    pub fn resource(&self) -> ::std::option::Option<& str> {
         self.resource.as_deref()
     }
     /// <p>Indicates whether longer IDs (17-character IDs) are enabled for the resource.</p>
@@ -48,8 +48,7 @@ impl IdFormatBuilder {
     }
     /// <p>The date in UTC at which you are permanently switched over to using longer IDs. If a deadline is not yet available for this resource type, this field is not returned.</p>
     pub fn set_deadline(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.deadline = input;
-        self
+        self.deadline = input; self
     }
     /// <p>The date in UTC at which you are permanently switched over to using longer IDs. If a deadline is not yet available for this resource type, this field is not returned.</p>
     pub fn get_deadline(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -62,8 +61,7 @@ impl IdFormatBuilder {
     }
     /// <p>The type of resource.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
     }
     /// <p>The type of resource.</p>
     pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl IdFormatBuilder {
     }
     /// <p>Indicates whether longer IDs (17-character IDs) are enabled for the resource.</p>
     pub fn set_use_long_ids(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.use_long_ids = input;
-        self
+        self.use_long_ids = input; self
     }
     /// <p>Indicates whether longer IDs (17-character IDs) are enabled for the resource.</p>
     pub fn get_use_long_ids(&self) -> &::std::option::Option<bool> {
@@ -86,9 +83,13 @@ impl IdFormatBuilder {
     /// Consumes the builder and constructs a [`IdFormat`](crate::types::IdFormat).
     pub fn build(self) -> crate::types::IdFormat {
         crate::types::IdFormat {
-            deadline: self.deadline,
-            resource: self.resource,
-            use_long_ids: self.use_long_ids,
+            deadline: self.deadline
+            ,
+            resource: self.resource
+            ,
+            use_long_ids: self.use_long_ids
+            ,
         }
     }
 }
+

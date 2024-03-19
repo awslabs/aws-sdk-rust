@@ -3,7 +3,7 @@
 /// <p>Describes an address range of an IPv4 address pool.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PublicIpv4PoolRange {
+pub struct PublicIpv4PoolRange  {
     /// <p>The first IP address in the range.</p>
     pub first_address: ::std::option::Option<::std::string::String>,
     /// <p>The last IP address in the range.</p>
@@ -13,13 +13,13 @@ pub struct PublicIpv4PoolRange {
     /// <p>The number of available addresses in the range.</p>
     pub available_address_count: ::std::option::Option<i32>,
 }
-impl PublicIpv4PoolRange {
+impl  PublicIpv4PoolRange  {
     /// <p>The first IP address in the range.</p>
-    pub fn first_address(&self) -> ::std::option::Option<&str> {
+    pub fn first_address(&self) -> ::std::option::Option<& str> {
         self.first_address.as_deref()
     }
     /// <p>The last IP address in the range.</p>
-    pub fn last_address(&self) -> ::std::option::Option<&str> {
+    pub fn last_address(&self) -> ::std::option::Option<& str> {
         self.last_address.as_deref()
     }
     /// <p>The number of addresses in the range.</p>
@@ -55,8 +55,7 @@ impl PublicIpv4PoolRangeBuilder {
     }
     /// <p>The first IP address in the range.</p>
     pub fn set_first_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.first_address = input;
-        self
+        self.first_address = input; self
     }
     /// <p>The first IP address in the range.</p>
     pub fn get_first_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl PublicIpv4PoolRangeBuilder {
     }
     /// <p>The last IP address in the range.</p>
     pub fn set_last_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_address = input;
-        self
+        self.last_address = input; self
     }
     /// <p>The last IP address in the range.</p>
     pub fn get_last_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl PublicIpv4PoolRangeBuilder {
     }
     /// <p>The number of addresses in the range.</p>
     pub fn set_address_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.address_count = input;
-        self
+        self.address_count = input; self
     }
     /// <p>The number of addresses in the range.</p>
     pub fn get_address_count(&self) -> &::std::option::Option<i32> {
@@ -97,8 +94,7 @@ impl PublicIpv4PoolRangeBuilder {
     }
     /// <p>The number of available addresses in the range.</p>
     pub fn set_available_address_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.available_address_count = input;
-        self
+        self.available_address_count = input; self
     }
     /// <p>The number of available addresses in the range.</p>
     pub fn get_available_address_count(&self) -> &::std::option::Option<i32> {
@@ -107,10 +103,15 @@ impl PublicIpv4PoolRangeBuilder {
     /// Consumes the builder and constructs a [`PublicIpv4PoolRange`](crate::types::PublicIpv4PoolRange).
     pub fn build(self) -> crate::types::PublicIpv4PoolRange {
         crate::types::PublicIpv4PoolRange {
-            first_address: self.first_address,
-            last_address: self.last_address,
-            address_count: self.address_count,
-            available_address_count: self.available_address_count,
+            first_address: self.first_address
+            ,
+            last_address: self.last_address
+            ,
+            address_count: self.address_count
+            ,
+            available_address_count: self.available_address_count
+            ,
         }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Describes whether S3 data event logs will be enabled as a data source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3LogsConfigurationResult {
+pub struct S3LogsConfigurationResult  {
     /// <p>A value that describes whether S3 data event logs are automatically enabled for new members of the organization.</p>
     pub status: ::std::option::Option<crate::types::DataSourceStatus>,
 }
-impl S3LogsConfigurationResult {
+impl  S3LogsConfigurationResult  {
     /// <p>A value that describes whether S3 data event logs are automatically enabled for new members of the organization.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DataSourceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DataSourceStatus> {
         self.status.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl S3LogsConfigurationResultBuilder {
     }
     /// <p>A value that describes whether S3 data event logs are automatically enabled for new members of the organization.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataSourceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>A value that describes whether S3 data event logs are automatically enabled for new members of the organization.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DataSourceStatus> {
@@ -44,6 +43,10 @@ impl S3LogsConfigurationResultBuilder {
     }
     /// Consumes the builder and constructs a [`S3LogsConfigurationResult`](crate::types::S3LogsConfigurationResult).
     pub fn build(self) -> crate::types::S3LogsConfigurationResult {
-        crate::types::S3LogsConfigurationResult { status: self.status }
+        crate::types::S3LogsConfigurationResult {
+            status: self.status
+            ,
+        }
     }
 }
+

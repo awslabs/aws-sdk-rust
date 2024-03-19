@@ -3,7 +3,7 @@
 /// <p>Describes the options for Verified Access logs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VerifiedAccessLogs {
+pub struct VerifiedAccessLogs  {
     /// <p>Amazon S3 logging options.</p>
     pub s3: ::std::option::Option<crate::types::VerifiedAccessLogS3Destination>,
     /// <p>CloudWatch Logs logging destination.</p>
@@ -15,21 +15,21 @@ pub struct VerifiedAccessLogs {
     /// <p>Indicates whether trust data is included in the logs.</p>
     pub include_trust_context: ::std::option::Option<bool>,
 }
-impl VerifiedAccessLogs {
+impl  VerifiedAccessLogs  {
     /// <p>Amazon S3 logging options.</p>
-    pub fn s3(&self) -> ::std::option::Option<&crate::types::VerifiedAccessLogS3Destination> {
+    pub fn s3(&self) -> ::std::option::Option<& crate::types::VerifiedAccessLogS3Destination> {
         self.s3.as_ref()
     }
     /// <p>CloudWatch Logs logging destination.</p>
-    pub fn cloud_watch_logs(&self) -> ::std::option::Option<&crate::types::VerifiedAccessLogCloudWatchLogsDestination> {
+    pub fn cloud_watch_logs(&self) -> ::std::option::Option<& crate::types::VerifiedAccessLogCloudWatchLogsDestination> {
         self.cloud_watch_logs.as_ref()
     }
     /// <p>Kinesis logging destination.</p>
-    pub fn kinesis_data_firehose(&self) -> ::std::option::Option<&crate::types::VerifiedAccessLogKinesisDataFirehoseDestination> {
+    pub fn kinesis_data_firehose(&self) -> ::std::option::Option<& crate::types::VerifiedAccessLogKinesisDataFirehoseDestination> {
         self.kinesis_data_firehose.as_ref()
     }
     /// <p>The log version.</p>
-    pub fn log_version(&self) -> ::std::option::Option<&str> {
+    pub fn log_version(&self) -> ::std::option::Option<& str> {
         self.log_version.as_deref()
     }
     /// <p>Indicates whether trust data is included in the logs.</p>
@@ -62,8 +62,7 @@ impl VerifiedAccessLogsBuilder {
     }
     /// <p>Amazon S3 logging options.</p>
     pub fn set_s3(mut self, input: ::std::option::Option<crate::types::VerifiedAccessLogS3Destination>) -> Self {
-        self.s3 = input;
-        self
+        self.s3 = input; self
     }
     /// <p>Amazon S3 logging options.</p>
     pub fn get_s3(&self) -> &::std::option::Option<crate::types::VerifiedAccessLogS3Destination> {
@@ -76,8 +75,7 @@ impl VerifiedAccessLogsBuilder {
     }
     /// <p>CloudWatch Logs logging destination.</p>
     pub fn set_cloud_watch_logs(mut self, input: ::std::option::Option<crate::types::VerifiedAccessLogCloudWatchLogsDestination>) -> Self {
-        self.cloud_watch_logs = input;
-        self
+        self.cloud_watch_logs = input; self
     }
     /// <p>CloudWatch Logs logging destination.</p>
     pub fn get_cloud_watch_logs(&self) -> &::std::option::Option<crate::types::VerifiedAccessLogCloudWatchLogsDestination> {
@@ -90,8 +88,7 @@ impl VerifiedAccessLogsBuilder {
     }
     /// <p>Kinesis logging destination.</p>
     pub fn set_kinesis_data_firehose(mut self, input: ::std::option::Option<crate::types::VerifiedAccessLogKinesisDataFirehoseDestination>) -> Self {
-        self.kinesis_data_firehose = input;
-        self
+        self.kinesis_data_firehose = input; self
     }
     /// <p>Kinesis logging destination.</p>
     pub fn get_kinesis_data_firehose(&self) -> &::std::option::Option<crate::types::VerifiedAccessLogKinesisDataFirehoseDestination> {
@@ -104,8 +101,7 @@ impl VerifiedAccessLogsBuilder {
     }
     /// <p>The log version.</p>
     pub fn set_log_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_version = input;
-        self
+        self.log_version = input; self
     }
     /// <p>The log version.</p>
     pub fn get_log_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl VerifiedAccessLogsBuilder {
     }
     /// <p>Indicates whether trust data is included in the logs.</p>
     pub fn set_include_trust_context(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_trust_context = input;
-        self
+        self.include_trust_context = input; self
     }
     /// <p>Indicates whether trust data is included in the logs.</p>
     pub fn get_include_trust_context(&self) -> &::std::option::Option<bool> {
@@ -128,11 +123,17 @@ impl VerifiedAccessLogsBuilder {
     /// Consumes the builder and constructs a [`VerifiedAccessLogs`](crate::types::VerifiedAccessLogs).
     pub fn build(self) -> crate::types::VerifiedAccessLogs {
         crate::types::VerifiedAccessLogs {
-            s3: self.s3,
-            cloud_watch_logs: self.cloud_watch_logs,
-            kinesis_data_firehose: self.kinesis_data_firehose,
-            log_version: self.log_version,
-            include_trust_context: self.include_trust_context,
+            s3: self.s3
+            ,
+            cloud_watch_logs: self.cloud_watch_logs
+            ,
+            kinesis_data_firehose: self.kinesis_data_firehose
+            ,
+            log_version: self.log_version
+            ,
+            include_trust_context: self.include_trust_context
+            ,
         }
     }
 }
+

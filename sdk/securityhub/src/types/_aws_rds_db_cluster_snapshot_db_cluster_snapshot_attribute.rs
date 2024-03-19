@@ -3,22 +3,23 @@
 /// <p>Contains the name and values of a manual Amazon Relational Database Service (RDS) DB cluster snapshot attribute.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute {
+pub struct AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute  {
     /// <p>The name of the manual DB cluster snapshot attribute. The attribute named <code>restore</code> refers to the list of Amazon Web Services accounts that have permission to copy or restore the manual DB cluster snapshot.</p>
     pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The value(s) for the manual DB cluster snapshot attribute. If the <code>AttributeName</code> field is set to <code>restore</code>, then this element returns a list of IDs of the Amazon Web Services accounts that are authorized to copy or restore the manual DB cluster snapshot. If a value of <code>all</code> is in the list, then the manual DB cluster snapshot is public and available for any Amazon Web Services account to copy or restore.</p>
-    pub attribute_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub attribute_values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute {
+impl  AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute  {
     /// <p>The name of the manual DB cluster snapshot attribute. The attribute named <code>restore</code> refers to the list of Amazon Web Services accounts that have permission to copy or restore the manual DB cluster snapshot.</p>
-    pub fn attribute_name(&self) -> ::std::option::Option<&str> {
+    pub fn attribute_name(&self) -> ::std::option::Option<& str> {
         self.attribute_name.as_deref()
     }
     /// <p>The value(s) for the manual DB cluster snapshot attribute. If the <code>AttributeName</code> field is set to <code>restore</code>, then this element returns a list of IDs of the Amazon Web Services accounts that are authorized to copy or restore the manual DB cluster snapshot. If a value of <code>all</code> is in the list, then the manual DB cluster snapshot is public and available for any Amazon Web Services account to copy or restore.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_values.is_none()`.
-    pub fn attribute_values(&self) -> &[::std::string::String] {
-        self.attribute_values.as_deref().unwrap_or_default()
+    pub fn attribute_values(&self) -> & [::std::string::String] {
+        self.attribute_values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute {
@@ -33,7 +34,7 @@ impl AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsRdsDbClusterSnapshotDbClusterSnapshotAttributeBuilder {
     pub(crate) attribute_name: ::std::option::Option<::std::string::String>,
-    pub(crate) attribute_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) attribute_values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AwsRdsDbClusterSnapshotDbClusterSnapshotAttributeBuilder {
     /// <p>The name of the manual DB cluster snapshot attribute. The attribute named <code>restore</code> refers to the list of Amazon Web Services accounts that have permission to copy or restore the manual DB cluster snapshot.</p>
@@ -43,8 +44,7 @@ impl AwsRdsDbClusterSnapshotDbClusterSnapshotAttributeBuilder {
     }
     /// <p>The name of the manual DB cluster snapshot attribute. The attribute named <code>restore</code> refers to the list of Amazon Web Services accounts that have permission to copy or restore the manual DB cluster snapshot.</p>
     pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attribute_name = input;
-        self
+        self.attribute_name = input; self
     }
     /// <p>The name of the manual DB cluster snapshot attribute. The attribute named <code>restore</code> refers to the list of Amazon Web Services accounts that have permission to copy or restore the manual DB cluster snapshot.</p>
     pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl AwsRdsDbClusterSnapshotDbClusterSnapshotAttributeBuilder {
     /// <p>The value(s) for the manual DB cluster snapshot attribute. If the <code>AttributeName</code> field is set to <code>restore</code>, then this element returns a list of IDs of the Amazon Web Services accounts that are authorized to copy or restore the manual DB cluster snapshot. If a value of <code>all</code> is in the list, then the manual DB cluster snapshot is public and available for any Amazon Web Services account to copy or restore.</p>
     pub fn attribute_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.attribute_values.unwrap_or_default();
-        v.push(input.into());
-        self.attribute_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.attribute_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The value(s) for the manual DB cluster snapshot attribute. If the <code>AttributeName</code> field is set to <code>restore</code>, then this element returns a list of IDs of the Amazon Web Services accounts that are authorized to copy or restore the manual DB cluster snapshot. If a value of <code>all</code> is in the list, then the manual DB cluster snapshot is public and available for any Amazon Web Services account to copy or restore.</p>
-    pub fn set_attribute_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.attribute_values = input;
-        self
+    pub fn set_attribute_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.attribute_values = input; self
     }
     /// <p>The value(s) for the manual DB cluster snapshot attribute. If the <code>AttributeName</code> field is set to <code>restore</code>, then this element returns a list of IDs of the Amazon Web Services accounts that are authorized to copy or restore the manual DB cluster snapshot. If a value of <code>all</code> is in the list, then the manual DB cluster snapshot is public and available for any Amazon Web Services account to copy or restore.</p>
-    pub fn get_attribute_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_attribute_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.attribute_values
     }
     /// Consumes the builder and constructs a [`AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute`](crate::types::AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute).
     pub fn build(self) -> crate::types::AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute {
         crate::types::AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute {
-            attribute_name: self.attribute_name,
-            attribute_values: self.attribute_values,
+            attribute_name: self.attribute_name
+            ,
+            attribute_values: self.attribute_values
+            ,
         }
     }
 }
+

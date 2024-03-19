@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCustomPluginsInput {
+pub struct ListCustomPluginsInput  {
     /// <p>The maximum number of custom plugins to list in one response.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>If the response of a ListCustomPlugins operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
@@ -10,17 +10,17 @@ pub struct ListCustomPluginsInput {
     /// <p>Lists custom plugin names that start with the specified text string.</p>
     pub name_prefix: ::std::option::Option<::std::string::String>,
 }
-impl ListCustomPluginsInput {
+impl  ListCustomPluginsInput  {
     /// <p>The maximum number of custom plugins to list in one response.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>If the response of a ListCustomPlugins operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Lists custom plugin names that start with the specified text string.</p>
-    pub fn name_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn name_prefix(&self) -> ::std::option::Option<& str> {
         self.name_prefix.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl ListCustomPluginsInputBuilder {
     }
     /// <p>The maximum number of custom plugins to list in one response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of custom plugins to list in one response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -61,8 +60,7 @@ impl ListCustomPluginsInputBuilder {
     }
     /// <p>If the response of a ListCustomPlugins operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the response of a ListCustomPlugins operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,21 +73,24 @@ impl ListCustomPluginsInputBuilder {
     }
     /// <p>Lists custom plugin names that start with the specified text string.</p>
     pub fn set_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name_prefix = input;
-        self
+        self.name_prefix = input; self
     }
     /// <p>Lists custom plugin names that start with the specified text string.</p>
     pub fn get_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.name_prefix
     }
     /// Consumes the builder and constructs a [`ListCustomPluginsInput`](crate::operation::list_custom_plugins::ListCustomPluginsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_custom_plugins::ListCustomPluginsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_custom_plugins::ListCustomPluginsInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-            name_prefix: self.name_prefix,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_custom_plugins::ListCustomPluginsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_custom_plugins::ListCustomPluginsInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                name_prefix: self.name_prefix
+                ,
+            }
+        )
     }
 }
+

@@ -3,15 +3,14 @@
 /// <p>Configures the quantum processing units (QPUs) or simulator used to create and run an Amazon Braket job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeviceConfig {
+pub struct DeviceConfig  {
     /// <p>The primary quantum processing unit (QPU) or simulator used to create and run an Amazon Braket job.</p>
     pub device: ::std::string::String,
 }
-impl DeviceConfig {
+impl  DeviceConfig  {
     /// <p>The primary quantum processing unit (QPU) or simulator used to create and run an Amazon Braket job.</p>
-    pub fn device(&self) -> &str {
-        use std::ops::Deref;
-        self.device.deref()
+    pub fn device(&self) -> & str {
+        use std::ops::Deref; self.device.deref()
     }
 }
 impl DeviceConfig {
@@ -36,8 +35,7 @@ impl DeviceConfigBuilder {
     }
     /// <p>The primary quantum processing unit (QPU) or simulator used to create and run an Amazon Braket job.</p>
     pub fn set_device(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device = input;
-        self
+        self.device = input; self
     }
     /// <p>The primary quantum processing unit (QPU) or simulator used to create and run an Amazon Braket job.</p>
     pub fn get_device(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl DeviceConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`device`](crate::types::builders::DeviceConfigBuilder::device)
     pub fn build(self) -> ::std::result::Result<crate::types::DeviceConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DeviceConfig {
-            device: self.device.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "device",
-                    "device was not specified but it is required when building DeviceConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DeviceConfig {
+                device: self.device
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("device", "device was not specified but it is required when building DeviceConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

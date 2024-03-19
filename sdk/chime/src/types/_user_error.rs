@@ -3,7 +3,7 @@
 /// <p>The list of errors returned when errors are encountered during the <code>BatchSuspendUser</code>, <code>BatchUnsuspendUser</code>, or <code>BatchUpdateUser</code> actions. This includes user IDs, error codes, and error messages.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserError {
+pub struct UserError  {
     /// <p>The user ID for which the action failed.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The error code.</p>
@@ -11,17 +11,17 @@ pub struct UserError {
     /// <p>The error message.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
-impl UserError {
+impl  UserError  {
     /// <p>The user ID for which the action failed.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&crate::types::ErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<& crate::types::ErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The error message.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UserErrorBuilder {
     }
     /// <p>The user ID for which the action failed.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The user ID for which the action failed.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UserErrorBuilder {
     }
     /// <p>The error code.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
@@ -76,8 +74,7 @@ impl UserErrorBuilder {
     }
     /// <p>The error message.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The error message.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl UserErrorBuilder {
     /// Consumes the builder and constructs a [`UserError`](crate::types::UserError).
     pub fn build(self) -> crate::types::UserError {
         crate::types::UserError {
-            user_id: self.user_id,
-            error_code: self.error_code,
-            error_message: self.error_message,
+            user_id: self.user_id
+            ,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

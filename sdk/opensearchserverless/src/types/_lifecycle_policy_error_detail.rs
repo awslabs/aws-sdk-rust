@@ -3,7 +3,7 @@
 /// <p>Error information for an OpenSearch Serverless request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LifecyclePolicyErrorDetail {
+pub struct LifecyclePolicyErrorDetail  {
     /// <p>The type of lifecycle policy.</p>
     pub r#type: ::std::option::Option<crate::types::LifecyclePolicyType>,
     /// <p>The name of the lifecycle policy.</p>
@@ -13,21 +13,21 @@ pub struct LifecyclePolicyErrorDetail {
     /// <p>The error code for the request. For example, <code>NOT_FOUND</code>.</p>
     pub error_code: ::std::option::Option<::std::string::String>,
 }
-impl LifecyclePolicyErrorDetail {
+impl  LifecyclePolicyErrorDetail  {
     /// <p>The type of lifecycle policy.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::LifecyclePolicyType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::LifecyclePolicyType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the lifecycle policy.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the error. For example, <code>The specified Lifecycle Policy is not found</code>.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>The error code for the request. For example, <code>NOT_FOUND</code>.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl LifecyclePolicyErrorDetailBuilder {
     }
     /// <p>The type of lifecycle policy.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of lifecycle policy.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::LifecyclePolicyType> {
@@ -69,8 +68,7 @@ impl LifecyclePolicyErrorDetailBuilder {
     }
     /// <p>The name of the lifecycle policy.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the lifecycle policy.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl LifecyclePolicyErrorDetailBuilder {
     }
     /// <p>A description of the error. For example, <code>The specified Lifecycle Policy is not found</code>.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>A description of the error. For example, <code>The specified Lifecycle Policy is not found</code>.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl LifecyclePolicyErrorDetailBuilder {
     }
     /// <p>The error code for the request. For example, <code>NOT_FOUND</code>.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code for the request. For example, <code>NOT_FOUND</code>.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl LifecyclePolicyErrorDetailBuilder {
     /// Consumes the builder and constructs a [`LifecyclePolicyErrorDetail`](crate::types::LifecyclePolicyErrorDetail).
     pub fn build(self) -> crate::types::LifecyclePolicyErrorDetail {
         crate::types::LifecyclePolicyErrorDetail {
-            r#type: self.r#type,
-            name: self.name,
-            error_message: self.error_message,
-            error_code: self.error_code,
+            r#type: self.r#type
+            ,
+            name: self.name
+            ,
+            error_message: self.error_message
+            ,
+            error_code: self.error_code
+            ,
         }
     }
 }
+

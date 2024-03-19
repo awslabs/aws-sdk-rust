@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteIntegrationInput {
+pub struct DeleteIntegrationInput  {
     /// <p>The unique name of the domain.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The URI of the S3 bucket or any other type of data source.</p>
     pub uri: ::std::option::Option<::std::string::String>,
 }
-impl DeleteIntegrationInput {
+impl  DeleteIntegrationInput  {
     /// <p>The unique name of the domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The URI of the S3 bucket or any other type of data source.</p>
-    pub fn uri(&self) -> ::std::option::Option<&str> {
+    pub fn uri(&self) -> ::std::option::Option<& str> {
         self.uri.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteIntegrationInputBuilder {
     }
     /// <p>The unique name of the domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The unique name of the domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DeleteIntegrationInputBuilder {
     }
     /// <p>The URI of the S3 bucket or any other type of data source.</p>
     pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.uri = input;
-        self
+        self.uri = input; self
     }
     /// <p>The URI of the S3 bucket or any other type of data source.</p>
     pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.uri
     }
     /// Consumes the builder and constructs a [`DeleteIntegrationInput`](crate::operation::delete_integration::DeleteIntegrationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_integration::DeleteIntegrationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_integration::DeleteIntegrationInput {
-            domain_name: self.domain_name,
-            uri: self.uri,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_integration::DeleteIntegrationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_integration::DeleteIntegrationInput {
+                domain_name: self.domain_name
+                ,
+                uri: self.uri
+                ,
+            }
+        )
     }
 }
+

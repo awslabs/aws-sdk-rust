@@ -6,58 +6,64 @@
 /// <p><code>FromEmailAddress</code>, <code>Destination</code>, and <code>Subject</code> filters support partial match. A partial match is performed by using the <code>*</code> wildcard character placed at the beginning (suffix match), the end (prefix match) or both ends of the string (contains match). In order to match the literal characters <code>*</code> or <code>\</code>, they must be escaped using the <code>\</code> character. If no wildcard character is present, an exact match is performed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MessageInsightsFilters {
+pub struct MessageInsightsFilters  {
     /// <p>The from address used to send the message.</p>
-    pub from_email_address: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub from_email_address: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The recipient's email address.</p>
-    pub destination: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub destination: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The subject line of the message.</p>
-    pub subject: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subject: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The recipient's ISP (e.g., <code>Gmail</code>, <code>Yahoo</code>, etc.).</p>
-    pub isp: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub isp: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The last delivery-related event for the email, where the ordering is as follows: <code>SEND</code> &lt; <code>BOUNCE</code> &lt; <code>DELIVERY</code> &lt; <code>COMPLAINT</code>.</p>
-    pub last_delivery_event: ::std::option::Option<::std::vec::Vec<crate::types::DeliveryEventType>>,
+    pub last_delivery_event: ::std::option::Option<::std::vec::Vec::<crate::types::DeliveryEventType>>,
     /// <p>The last engagement-related event for the email, where the ordering is as follows: <code>OPEN</code> &lt; <code>CLICK</code>.</p>
     /// <p>Engagement events are only available if <a href="https://docs.aws.amazon.com/ses/latest/dg/vdm-settings.html">Engagement tracking</a> is enabled.</p>
-    pub last_engagement_event: ::std::option::Option<::std::vec::Vec<crate::types::EngagementEventType>>,
+    pub last_engagement_event: ::std::option::Option<::std::vec::Vec::<crate::types::EngagementEventType>>,
 }
-impl MessageInsightsFilters {
+impl  MessageInsightsFilters  {
     /// <p>The from address used to send the message.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.from_email_address.is_none()`.
-    pub fn from_email_address(&self) -> &[::std::string::String] {
-        self.from_email_address.as_deref().unwrap_or_default()
+    pub fn from_email_address(&self) -> & [::std::string::String] {
+        self.from_email_address.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The recipient's email address.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination.is_none()`.
-    pub fn destination(&self) -> &[::std::string::String] {
-        self.destination.as_deref().unwrap_or_default()
+    pub fn destination(&self) -> & [::std::string::String] {
+        self.destination.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The subject line of the message.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subject.is_none()`.
-    pub fn subject(&self) -> &[::std::string::String] {
-        self.subject.as_deref().unwrap_or_default()
+    pub fn subject(&self) -> & [::std::string::String] {
+        self.subject.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The recipient's ISP (e.g., <code>Gmail</code>, <code>Yahoo</code>, etc.).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.isp.is_none()`.
-    pub fn isp(&self) -> &[::std::string::String] {
-        self.isp.as_deref().unwrap_or_default()
+    pub fn isp(&self) -> & [::std::string::String] {
+        self.isp.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The last delivery-related event for the email, where the ordering is as follows: <code>SEND</code> &lt; <code>BOUNCE</code> &lt; <code>DELIVERY</code> &lt; <code>COMPLAINT</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.last_delivery_event.is_none()`.
-    pub fn last_delivery_event(&self) -> &[crate::types::DeliveryEventType] {
-        self.last_delivery_event.as_deref().unwrap_or_default()
+    pub fn last_delivery_event(&self) -> & [crate::types::DeliveryEventType] {
+        self.last_delivery_event.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The last engagement-related event for the email, where the ordering is as follows: <code>OPEN</code> &lt; <code>CLICK</code>.</p>
     /// <p>Engagement events are only available if <a href="https://docs.aws.amazon.com/ses/latest/dg/vdm-settings.html">Engagement tracking</a> is enabled.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.last_engagement_event.is_none()`.
-    pub fn last_engagement_event(&self) -> &[crate::types::EngagementEventType] {
-        self.last_engagement_event.as_deref().unwrap_or_default()
+    pub fn last_engagement_event(&self) -> & [crate::types::EngagementEventType] {
+        self.last_engagement_event.as_deref()
+        .unwrap_or_default()
     }
 }
 impl MessageInsightsFilters {
@@ -71,12 +77,12 @@ impl MessageInsightsFilters {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MessageInsightsFiltersBuilder {
-    pub(crate) from_email_address: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) destination: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) subject: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) isp: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) last_delivery_event: ::std::option::Option<::std::vec::Vec<crate::types::DeliveryEventType>>,
-    pub(crate) last_engagement_event: ::std::option::Option<::std::vec::Vec<crate::types::EngagementEventType>>,
+    pub(crate) from_email_address: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) destination: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) subject: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) isp: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) last_delivery_event: ::std::option::Option<::std::vec::Vec::<crate::types::DeliveryEventType>>,
+    pub(crate) last_engagement_event: ::std::option::Option<::std::vec::Vec::<crate::types::EngagementEventType>>,
 }
 impl MessageInsightsFiltersBuilder {
     /// Appends an item to `from_email_address`.
@@ -86,17 +92,16 @@ impl MessageInsightsFiltersBuilder {
     /// <p>The from address used to send the message.</p>
     pub fn from_email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.from_email_address.unwrap_or_default();
-        v.push(input.into());
-        self.from_email_address = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.from_email_address = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The from address used to send the message.</p>
-    pub fn set_from_email_address(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.from_email_address = input;
-        self
+    pub fn set_from_email_address(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.from_email_address = input; self
     }
     /// <p>The from address used to send the message.</p>
-    pub fn get_from_email_address(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_from_email_address(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.from_email_address
     }
     /// Appends an item to `destination`.
@@ -106,17 +111,16 @@ impl MessageInsightsFiltersBuilder {
     /// <p>The recipient's email address.</p>
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.destination.unwrap_or_default();
-        v.push(input.into());
-        self.destination = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.destination = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The recipient's email address.</p>
-    pub fn set_destination(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.destination = input;
-        self
+    pub fn set_destination(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.destination = input; self
     }
     /// <p>The recipient's email address.</p>
-    pub fn get_destination(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_destination(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.destination
     }
     /// Appends an item to `subject`.
@@ -126,17 +130,16 @@ impl MessageInsightsFiltersBuilder {
     /// <p>The subject line of the message.</p>
     pub fn subject(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subject.unwrap_or_default();
-        v.push(input.into());
-        self.subject = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subject = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The subject line of the message.</p>
-    pub fn set_subject(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subject = input;
-        self
+    pub fn set_subject(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subject = input; self
     }
     /// <p>The subject line of the message.</p>
-    pub fn get_subject(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subject(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subject
     }
     /// Appends an item to `isp`.
@@ -146,17 +149,16 @@ impl MessageInsightsFiltersBuilder {
     /// <p>The recipient's ISP (e.g., <code>Gmail</code>, <code>Yahoo</code>, etc.).</p>
     pub fn isp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.isp.unwrap_or_default();
-        v.push(input.into());
-        self.isp = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.isp = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The recipient's ISP (e.g., <code>Gmail</code>, <code>Yahoo</code>, etc.).</p>
-    pub fn set_isp(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.isp = input;
-        self
+    pub fn set_isp(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.isp = input; self
     }
     /// <p>The recipient's ISP (e.g., <code>Gmail</code>, <code>Yahoo</code>, etc.).</p>
-    pub fn get_isp(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_isp(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.isp
     }
     /// Appends an item to `last_delivery_event`.
@@ -166,17 +168,16 @@ impl MessageInsightsFiltersBuilder {
     /// <p>The last delivery-related event for the email, where the ordering is as follows: <code>SEND</code> &lt; <code>BOUNCE</code> &lt; <code>DELIVERY</code> &lt; <code>COMPLAINT</code>.</p>
     pub fn last_delivery_event(mut self, input: crate::types::DeliveryEventType) -> Self {
         let mut v = self.last_delivery_event.unwrap_or_default();
-        v.push(input);
-        self.last_delivery_event = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.last_delivery_event = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The last delivery-related event for the email, where the ordering is as follows: <code>SEND</code> &lt; <code>BOUNCE</code> &lt; <code>DELIVERY</code> &lt; <code>COMPLAINT</code>.</p>
-    pub fn set_last_delivery_event(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeliveryEventType>>) -> Self {
-        self.last_delivery_event = input;
-        self
+    pub fn set_last_delivery_event(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DeliveryEventType>>) -> Self {
+        self.last_delivery_event = input; self
     }
     /// <p>The last delivery-related event for the email, where the ordering is as follows: <code>SEND</code> &lt; <code>BOUNCE</code> &lt; <code>DELIVERY</code> &lt; <code>COMPLAINT</code>.</p>
-    pub fn get_last_delivery_event(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeliveryEventType>> {
+    pub fn get_last_delivery_event(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DeliveryEventType>> {
         &self.last_delivery_event
     }
     /// Appends an item to `last_engagement_event`.
@@ -187,30 +188,36 @@ impl MessageInsightsFiltersBuilder {
     /// <p>Engagement events are only available if <a href="https://docs.aws.amazon.com/ses/latest/dg/vdm-settings.html">Engagement tracking</a> is enabled.</p>
     pub fn last_engagement_event(mut self, input: crate::types::EngagementEventType) -> Self {
         let mut v = self.last_engagement_event.unwrap_or_default();
-        v.push(input);
-        self.last_engagement_event = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.last_engagement_event = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The last engagement-related event for the email, where the ordering is as follows: <code>OPEN</code> &lt; <code>CLICK</code>.</p>
     /// <p>Engagement events are only available if <a href="https://docs.aws.amazon.com/ses/latest/dg/vdm-settings.html">Engagement tracking</a> is enabled.</p>
-    pub fn set_last_engagement_event(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EngagementEventType>>) -> Self {
-        self.last_engagement_event = input;
-        self
+    pub fn set_last_engagement_event(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EngagementEventType>>) -> Self {
+        self.last_engagement_event = input; self
     }
     /// <p>The last engagement-related event for the email, where the ordering is as follows: <code>OPEN</code> &lt; <code>CLICK</code>.</p>
     /// <p>Engagement events are only available if <a href="https://docs.aws.amazon.com/ses/latest/dg/vdm-settings.html">Engagement tracking</a> is enabled.</p>
-    pub fn get_last_engagement_event(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EngagementEventType>> {
+    pub fn get_last_engagement_event(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EngagementEventType>> {
         &self.last_engagement_event
     }
     /// Consumes the builder and constructs a [`MessageInsightsFilters`](crate::types::MessageInsightsFilters).
     pub fn build(self) -> crate::types::MessageInsightsFilters {
         crate::types::MessageInsightsFilters {
-            from_email_address: self.from_email_address,
-            destination: self.destination,
-            subject: self.subject,
-            isp: self.isp,
-            last_delivery_event: self.last_delivery_event,
-            last_engagement_event: self.last_engagement_event,
+            from_email_address: self.from_email_address
+            ,
+            destination: self.destination
+            ,
+            subject: self.subject
+            ,
+            isp: self.isp
+            ,
+            last_delivery_event: self.last_delivery_event
+            ,
+            last_engagement_event: self.last_engagement_event
+            ,
         }
     }
 }
+

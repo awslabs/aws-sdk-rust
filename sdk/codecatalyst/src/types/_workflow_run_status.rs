@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let workflowrunstatus = unimplemented!();
 /// match workflowrunstatus {
@@ -39,16 +39,14 @@
 /// Specifically, when `workflowrunstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `WorkflowRunStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum WorkflowRunStatus {
     #[allow(missing_docs)] // documentation missing in model
     Abandoned,
@@ -74,100 +72,89 @@ pub enum WorkflowRunStatus {
     Validating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for WorkflowRunStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ABANDONED" => WorkflowRunStatus::Abandoned,
-            "CANCELLED" => WorkflowRunStatus::Cancelled,
-            "FAILED" => WorkflowRunStatus::Failed,
-            "IN_PROGRESS" => WorkflowRunStatus::InProgress,
-            "NOT_RUN" => WorkflowRunStatus::NotRun,
-            "PROVISIONING" => WorkflowRunStatus::Provisioning,
-            "STOPPED" => WorkflowRunStatus::Stopped,
-            "STOPPING" => WorkflowRunStatus::Stopping,
-            "SUCCEEDED" => WorkflowRunStatus::Succeeded,
-            "SUPERSEDED" => WorkflowRunStatus::Superseded,
-            "VALIDATING" => WorkflowRunStatus::Validating,
-            other => WorkflowRunStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ABANDONED" => WorkflowRunStatus::Abandoned,
+"CANCELLED" => WorkflowRunStatus::Cancelled,
+"FAILED" => WorkflowRunStatus::Failed,
+"IN_PROGRESS" => WorkflowRunStatus::InProgress,
+"NOT_RUN" => WorkflowRunStatus::NotRun,
+"PROVISIONING" => WorkflowRunStatus::Provisioning,
+"STOPPED" => WorkflowRunStatus::Stopped,
+"STOPPING" => WorkflowRunStatus::Stopping,
+"SUCCEEDED" => WorkflowRunStatus::Succeeded,
+"SUPERSEDED" => WorkflowRunStatus::Superseded,
+"VALIDATING" => WorkflowRunStatus::Validating,
+other => WorkflowRunStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for WorkflowRunStatus {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(WorkflowRunStatus::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(WorkflowRunStatus::from(s))
+                    }
+                }
 impl WorkflowRunStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            WorkflowRunStatus::Abandoned => "ABANDONED",
-            WorkflowRunStatus::Cancelled => "CANCELLED",
-            WorkflowRunStatus::Failed => "FAILED",
-            WorkflowRunStatus::InProgress => "IN_PROGRESS",
-            WorkflowRunStatus::NotRun => "NOT_RUN",
-            WorkflowRunStatus::Provisioning => "PROVISIONING",
-            WorkflowRunStatus::Stopped => "STOPPED",
-            WorkflowRunStatus::Stopping => "STOPPING",
-            WorkflowRunStatus::Succeeded => "SUCCEEDED",
-            WorkflowRunStatus::Superseded => "SUPERSEDED",
-            WorkflowRunStatus::Validating => "VALIDATING",
-            WorkflowRunStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ABANDONED",
-            "CANCELLED",
-            "FAILED",
-            "IN_PROGRESS",
-            "NOT_RUN",
-            "PROVISIONING",
-            "STOPPED",
-            "STOPPING",
-            "SUCCEEDED",
-            "SUPERSEDED",
-            "VALIDATING",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    WorkflowRunStatus::Abandoned => "ABANDONED",
+    WorkflowRunStatus::Cancelled => "CANCELLED",
+    WorkflowRunStatus::Failed => "FAILED",
+    WorkflowRunStatus::InProgress => "IN_PROGRESS",
+    WorkflowRunStatus::NotRun => "NOT_RUN",
+    WorkflowRunStatus::Provisioning => "PROVISIONING",
+    WorkflowRunStatus::Stopped => "STOPPED",
+    WorkflowRunStatus::Stopping => "STOPPING",
+    WorkflowRunStatus::Succeeded => "SUCCEEDED",
+    WorkflowRunStatus::Superseded => "SUPERSEDED",
+    WorkflowRunStatus::Validating => "VALIDATING",
+    WorkflowRunStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ABANDONED", "CANCELLED", "FAILED", "IN_PROGRESS", "NOT_RUN", "PROVISIONING", "STOPPED", "STOPPING", "SUCCEEDED", "SUPERSEDED", "VALIDATING"]
+                }
+            }
 impl ::std::convert::AsRef<str> for WorkflowRunStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl WorkflowRunStatus {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for WorkflowRunStatus {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            WorkflowRunStatus::Abandoned => write!(f, "ABANDONED"),
-            WorkflowRunStatus::Cancelled => write!(f, "CANCELLED"),
-            WorkflowRunStatus::Failed => write!(f, "FAILED"),
-            WorkflowRunStatus::InProgress => write!(f, "IN_PROGRESS"),
-            WorkflowRunStatus::NotRun => write!(f, "NOT_RUN"),
-            WorkflowRunStatus::Provisioning => write!(f, "PROVISIONING"),
-            WorkflowRunStatus::Stopped => write!(f, "STOPPED"),
-            WorkflowRunStatus::Stopping => write!(f, "STOPPING"),
-            WorkflowRunStatus::Succeeded => write!(f, "SUCCEEDED"),
-            WorkflowRunStatus::Superseded => write!(f, "SUPERSEDED"),
-            WorkflowRunStatus::Validating => write!(f, "VALIDATING"),
-            WorkflowRunStatus::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                WorkflowRunStatus::Abandoned => write!(f, "ABANDONED"),
+WorkflowRunStatus::Cancelled => write!(f, "CANCELLED"),
+WorkflowRunStatus::Failed => write!(f, "FAILED"),
+WorkflowRunStatus::InProgress => write!(f, "IN_PROGRESS"),
+WorkflowRunStatus::NotRun => write!(f, "NOT_RUN"),
+WorkflowRunStatus::Provisioning => write!(f, "PROVISIONING"),
+WorkflowRunStatus::Stopped => write!(f, "STOPPED"),
+WorkflowRunStatus::Stopping => write!(f, "STOPPING"),
+WorkflowRunStatus::Succeeded => write!(f, "SUCCEEDED"),
+WorkflowRunStatus::Superseded => write!(f, "SUPERSEDED"),
+WorkflowRunStatus::Validating => write!(f, "VALIDATING"),
+WorkflowRunStatus::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

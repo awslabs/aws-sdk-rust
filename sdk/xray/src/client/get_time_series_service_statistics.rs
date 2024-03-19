@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetTimeSeriesServiceStatistics`](crate::operation::get_time_series_service_statistics::builders::GetTimeSeriesServiceStatisticsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_time_series_service_statistics::builders::GetTimeSeriesServiceStatisticsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`start_time(DateTime)`](crate::operation::get_time_series_service_statistics::builders::GetTimeSeriesServiceStatisticsFluentBuilder::start_time) / [`set_start_time(Option<DateTime>)`](crate::operation::get_time_series_service_statistics::builders::GetTimeSeriesServiceStatisticsFluentBuilder::set_start_time):<br>required: **true**<br><p>The start of the time frame for which to aggregate statistics.</p><br>
     ///   - [`end_time(DateTime)`](crate::operation::get_time_series_service_statistics::builders::GetTimeSeriesServiceStatisticsFluentBuilder::end_time) / [`set_end_time(Option<DateTime>)`](crate::operation::get_time_series_service_statistics::builders::GetTimeSeriesServiceStatisticsFluentBuilder::set_end_time):<br>required: **true**<br><p>The end of the time frame for which to aggregate statistics.</p><br>
     ///   - [`group_name(impl Into<String>)`](crate::operation::get_time_series_service_statistics::builders::GetTimeSeriesServiceStatisticsFluentBuilder::group_name) / [`set_group_name(Option<String>)`](crate::operation::get_time_series_service_statistics::builders::GetTimeSeriesServiceStatisticsFluentBuilder::set_group_name):<br>required: **false**<br><p>The case-sensitive name of the group for which to pull statistics from.</p><br>
@@ -12,14 +12,13 @@ impl super::Client {
     ///   - [`period(i32)`](crate::operation::get_time_series_service_statistics::builders::GetTimeSeriesServiceStatisticsFluentBuilder::period) / [`set_period(Option<i32>)`](crate::operation::get_time_series_service_statistics::builders::GetTimeSeriesServiceStatisticsFluentBuilder::set_period):<br>required: **false**<br><p>Aggregation period in seconds.</p><br>
     ///   - [`forecast_statistics(bool)`](crate::operation::get_time_series_service_statistics::builders::GetTimeSeriesServiceStatisticsFluentBuilder::forecast_statistics) / [`set_forecast_statistics(Option<bool>)`](crate::operation::get_time_series_service_statistics::builders::GetTimeSeriesServiceStatisticsFluentBuilder::set_forecast_statistics):<br>required: **false**<br><p>The forecasted high and low fault count values. Forecast enabled requests require the EntitySelectorExpression ID be provided.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_time_series_service_statistics::builders::GetTimeSeriesServiceStatisticsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_time_series_service_statistics::builders::GetTimeSeriesServiceStatisticsFluentBuilder::set_next_token):<br>required: **false**<br><p>Pagination token.</p><br>
-    /// - On success, responds with [`GetTimeSeriesServiceStatisticsOutput`](crate::operation::get_time_series_service_statistics::GetTimeSeriesServiceStatisticsOutput) with field(s):
+                            /// - On success, responds with [`GetTimeSeriesServiceStatisticsOutput`](crate::operation::get_time_series_service_statistics::GetTimeSeriesServiceStatisticsOutput) with field(s):
     ///   - [`time_series_service_statistics(Option<Vec::<TimeSeriesServiceStatistics>>)`](crate::operation::get_time_series_service_statistics::GetTimeSeriesServiceStatisticsOutput::time_series_service_statistics): <p>The collection of statistics.</p>
     ///   - [`contains_old_group_versions(bool)`](crate::operation::get_time_series_service_statistics::GetTimeSeriesServiceStatisticsOutput::contains_old_group_versions): <p>A flag indicating whether or not a group's filter expression has been consistent, or if a returned aggregation might show statistics from an older version of the group's filter expression.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_time_series_service_statistics::GetTimeSeriesServiceStatisticsOutput::next_token): <p>Pagination token.</p>
-    /// - On failure, responds with [`SdkError<GetTimeSeriesServiceStatisticsError>`](crate::operation::get_time_series_service_statistics::GetTimeSeriesServiceStatisticsError)
-    pub fn get_time_series_service_statistics(
-        &self,
-    ) -> crate::operation::get_time_series_service_statistics::builders::GetTimeSeriesServiceStatisticsFluentBuilder {
-        crate::operation::get_time_series_service_statistics::builders::GetTimeSeriesServiceStatisticsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<GetTimeSeriesServiceStatisticsError>`](crate::operation::get_time_series_service_statistics::GetTimeSeriesServiceStatisticsError)
+    pub fn get_time_series_service_statistics(&self) -> crate::operation::get_time_series_service_statistics::builders::GetTimeSeriesServiceStatisticsFluentBuilder {
+                                crate::operation::get_time_series_service_statistics::builders::GetTimeSeriesServiceStatisticsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

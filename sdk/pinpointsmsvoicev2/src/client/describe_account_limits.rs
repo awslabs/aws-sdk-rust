@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAccountLimits`](crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per each request.</p><br>
-    /// - On success, responds with [`DescribeAccountLimitsOutput`](crate::operation::describe_account_limits::DescribeAccountLimitsOutput) with field(s):
+                            /// - On success, responds with [`DescribeAccountLimitsOutput`](crate::operation::describe_account_limits::DescribeAccountLimitsOutput) with field(s):
     ///   - [`account_limits(Option<Vec::<AccountLimit>>)`](crate::operation::describe_account_limits::DescribeAccountLimitsOutput::account_limits): <p>An array of AccountLimit objects that show the current spend limits.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_account_limits::DescribeAccountLimitsOutput::next_token): <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
-    /// - On failure, responds with [`SdkError<DescribeAccountLimitsError>`](crate::operation::describe_account_limits::DescribeAccountLimitsError)
+                            /// - On failure, responds with [`SdkError<DescribeAccountLimitsError>`](crate::operation::describe_account_limits::DescribeAccountLimitsError)
     pub fn describe_account_limits(&self) -> crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder {
-        crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_account_limits::builders::DescribeAccountLimitsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

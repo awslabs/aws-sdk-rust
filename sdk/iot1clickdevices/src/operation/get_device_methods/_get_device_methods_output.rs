@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDeviceMethodsOutput {
+pub struct GetDeviceMethodsOutput  {
     /// <p>List of available device APIs.</p>
-    pub device_methods: ::std::option::Option<::std::vec::Vec<crate::types::DeviceMethod>>,
+    pub device_methods: ::std::option::Option<::std::vec::Vec::<crate::types::DeviceMethod>>,
     _request_id: Option<String>,
 }
-impl GetDeviceMethodsOutput {
+impl  GetDeviceMethodsOutput  {
     /// <p>List of available device APIs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_methods.is_none()`.
-    pub fn device_methods(&self) -> &[crate::types::DeviceMethod] {
-        self.device_methods.as_deref().unwrap_or_default()
+    pub fn device_methods(&self) -> & [crate::types::DeviceMethod] {
+        self.device_methods.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDeviceMethodsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDeviceMethodsOutput {
     /// Creates a new builder-style object to manufacture [`GetDeviceMethodsOutput`](crate::operation::get_device_methods::GetDeviceMethodsOutput).
     pub fn builder() -> crate::operation::get_device_methods::builders::GetDeviceMethodsOutputBuilder {
@@ -31,7 +32,7 @@ impl GetDeviceMethodsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDeviceMethodsOutputBuilder {
-    pub(crate) device_methods: ::std::option::Option<::std::vec::Vec<crate::types::DeviceMethod>>,
+    pub(crate) device_methods: ::std::option::Option<::std::vec::Vec::<crate::types::DeviceMethod>>,
     _request_id: Option<String>,
 }
 impl GetDeviceMethodsOutputBuilder {
@@ -42,33 +43,34 @@ impl GetDeviceMethodsOutputBuilder {
     /// <p>List of available device APIs.</p>
     pub fn device_methods(mut self, input: crate::types::DeviceMethod) -> Self {
         let mut v = self.device_methods.unwrap_or_default();
-        v.push(input);
-        self.device_methods = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.device_methods = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of available device APIs.</p>
-    pub fn set_device_methods(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceMethod>>) -> Self {
-        self.device_methods = input;
-        self
+    pub fn set_device_methods(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DeviceMethod>>) -> Self {
+        self.device_methods = input; self
     }
     /// <p>List of available device APIs.</p>
-    pub fn get_device_methods(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceMethod>> {
+    pub fn get_device_methods(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DeviceMethod>> {
         &self.device_methods
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDeviceMethodsOutput`](crate::operation::get_device_methods::GetDeviceMethodsOutput).
     pub fn build(self) -> crate::operation::get_device_methods::GetDeviceMethodsOutput {
         crate::operation::get_device_methods::GetDeviceMethodsOutput {
-            device_methods: self.device_methods,
+            device_methods: self.device_methods
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

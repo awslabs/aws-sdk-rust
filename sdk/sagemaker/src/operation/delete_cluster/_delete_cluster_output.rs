@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteClusterOutput {
+pub struct DeleteClusterOutput  {
     /// <p>The Amazon Resource Name (ARN) of the SageMaker HyperPod cluster to delete.</p>
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DeleteClusterOutput {
+impl  DeleteClusterOutput  {
     /// <p>The Amazon Resource Name (ARN) of the SageMaker HyperPod cluster to delete.</p>
-    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> ::std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteClusterOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteClusterOutput {
     /// Creates a new builder-style object to manufacture [`DeleteClusterOutput`](crate::operation::delete_cluster::DeleteClusterOutput).
     pub fn builder() -> crate::operation::delete_cluster::builders::DeleteClusterOutputBuilder {
@@ -41,27 +41,28 @@ impl DeleteClusterOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the SageMaker HyperPod cluster to delete.</p>
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the SageMaker HyperPod cluster to delete.</p>
     pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteClusterOutput`](crate::operation::delete_cluster::DeleteClusterOutput).
     pub fn build(self) -> crate::operation::delete_cluster::DeleteClusterOutput {
         crate::operation::delete_cluster::DeleteClusterOutput {
-            cluster_arn: self.cluster_arn,
+            cluster_arn: self.cluster_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

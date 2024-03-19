@@ -56,7 +56,7 @@ pub enum Error {
     &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
      \
     See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-Error) for what information is available for the error.")]
-    Unhandled(crate::error::sealed_unhandled::Unhandled),
+    Unhandled(crate::error::sealed_unhandled::Unhandled)
 }
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -76,115 +76,84 @@ impl ::std::fmt::Display for Error {
             Error::StatementTimeoutException(inner) => inner.fmt(f),
             Error::TransactionNotFoundException(inner) => inner.fmt(f),
             Error::UnsupportedResultException(inner) => inner.fmt(f),
-            Error::Unhandled(_) => {
-                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
-                    write!(f, "unhandled error ({code})")
-                } else {
-                    f.write_str("unhandled error")
-                }
-            }
+            Error::Unhandled(_) => if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                                        write!(f, "unhandled error ({code})")
+                                    } else {
+                                        f.write_str("unhandled error")
+                                    }
         }
     }
 }
 impl From<::aws_smithy_types::error::operation::BuildError> for Error {
-    fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
-        Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source: value.into(),
-            meta: ::std::default::Default::default(),
-        })
-    }
-}
+                fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
+                    Error::Unhandled(crate::error::sealed_unhandled::Unhandled { source: value.into(), meta: ::std::default::Default::default() })
+                }
+            }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
-    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
-        match self {
-            Self::AccessDeniedException(inner) => inner.meta(),
-            Self::BadRequestException(inner) => inner.meta(),
-            Self::DatabaseErrorException(inner) => inner.meta(),
-            Self::DatabaseNotFoundException(inner) => inner.meta(),
-            Self::DatabaseUnavailableException(inner) => inner.meta(),
-            Self::ForbiddenException(inner) => inner.meta(),
-            Self::HttpEndpointNotEnabledException(inner) => inner.meta(),
-            Self::InternalServerErrorException(inner) => inner.meta(),
-            Self::InvalidSecretException(inner) => inner.meta(),
-            Self::NotFoundException(inner) => inner.meta(),
-            Self::SecretsErrorException(inner) => inner.meta(),
-            Self::ServiceUnavailableError(inner) => inner.meta(),
-            Self::StatementTimeoutException(inner) => inner.meta(),
-            Self::TransactionNotFoundException(inner) => inner.meta(),
-            Self::UnsupportedResultException(inner) => inner.meta(),
-            Self::Unhandled(inner) => &inner.meta,
-        }
-    }
-}
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_execute_statement::BatchExecuteStatementError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_execute_statement::BatchExecuteStatementError, R>,
-    ) -> Self {
+                fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+                    match self {
+                        Self::AccessDeniedException(inner) => inner.meta(),
+Self::BadRequestException(inner) => inner.meta(),
+Self::DatabaseErrorException(inner) => inner.meta(),
+Self::DatabaseNotFoundException(inner) => inner.meta(),
+Self::DatabaseUnavailableException(inner) => inner.meta(),
+Self::ForbiddenException(inner) => inner.meta(),
+Self::HttpEndpointNotEnabledException(inner) => inner.meta(),
+Self::InternalServerErrorException(inner) => inner.meta(),
+Self::InvalidSecretException(inner) => inner.meta(),
+Self::NotFoundException(inner) => inner.meta(),
+Self::SecretsErrorException(inner) => inner.meta(),
+Self::ServiceUnavailableError(inner) => inner.meta(),
+Self::StatementTimeoutException(inner) => inner.meta(),
+Self::TransactionNotFoundException(inner) => inner.meta(),
+Self::UnsupportedResultException(inner) => inner.meta(),
+                        Self::Unhandled(inner) => &inner.meta,
+                    }
+                }
+            }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_execute_statement::BatchExecuteStatementError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_execute_statement::BatchExecuteStatementError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::batch_execute_statement::BatchExecuteStatementError> for Error {
     fn from(err: crate::operation::batch_execute_statement::BatchExecuteStatementError) -> Self {
         match err {
-            crate::operation::batch_execute_statement::BatchExecuteStatementError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
+            crate::operation::batch_execute_statement::BatchExecuteStatementError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::batch_execute_statement::BatchExecuteStatementError::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::operation::batch_execute_statement::BatchExecuteStatementError::DatabaseErrorException(inner) => {
-                Error::DatabaseErrorException(inner)
-            }
-            crate::operation::batch_execute_statement::BatchExecuteStatementError::DatabaseNotFoundException(inner) => {
-                Error::DatabaseNotFoundException(inner)
-            }
-            crate::operation::batch_execute_statement::BatchExecuteStatementError::DatabaseUnavailableException(inner) => {
-                Error::DatabaseUnavailableException(inner)
-            }
+            crate::operation::batch_execute_statement::BatchExecuteStatementError::DatabaseErrorException(inner) => Error::DatabaseErrorException(inner),
+            crate::operation::batch_execute_statement::BatchExecuteStatementError::DatabaseNotFoundException(inner) => Error::DatabaseNotFoundException(inner),
+            crate::operation::batch_execute_statement::BatchExecuteStatementError::DatabaseUnavailableException(inner) => Error::DatabaseUnavailableException(inner),
             crate::operation::batch_execute_statement::BatchExecuteStatementError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::batch_execute_statement::BatchExecuteStatementError::HttpEndpointNotEnabledException(inner) => {
-                Error::HttpEndpointNotEnabledException(inner)
-            }
-            crate::operation::batch_execute_statement::BatchExecuteStatementError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::operation::batch_execute_statement::BatchExecuteStatementError::InvalidSecretException(inner) => {
-                Error::InvalidSecretException(inner)
-            }
-            crate::operation::batch_execute_statement::BatchExecuteStatementError::SecretsErrorException(inner) => {
-                Error::SecretsErrorException(inner)
-            }
-            crate::operation::batch_execute_statement::BatchExecuteStatementError::ServiceUnavailableError(inner) => {
-                Error::ServiceUnavailableError(inner)
-            }
-            crate::operation::batch_execute_statement::BatchExecuteStatementError::StatementTimeoutException(inner) => {
-                Error::StatementTimeoutException(inner)
-            }
-            crate::operation::batch_execute_statement::BatchExecuteStatementError::TransactionNotFoundException(inner) => {
-                Error::TransactionNotFoundException(inner)
-            }
+            crate::operation::batch_execute_statement::BatchExecuteStatementError::HttpEndpointNotEnabledException(inner) => Error::HttpEndpointNotEnabledException(inner),
+            crate::operation::batch_execute_statement::BatchExecuteStatementError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::batch_execute_statement::BatchExecuteStatementError::InvalidSecretException(inner) => Error::InvalidSecretException(inner),
+            crate::operation::batch_execute_statement::BatchExecuteStatementError::SecretsErrorException(inner) => Error::SecretsErrorException(inner),
+            crate::operation::batch_execute_statement::BatchExecuteStatementError::ServiceUnavailableError(inner) => Error::ServiceUnavailableError(inner),
+            crate::operation::batch_execute_statement::BatchExecuteStatementError::StatementTimeoutException(inner) => Error::StatementTimeoutException(inner),
+            crate::operation::batch_execute_statement::BatchExecuteStatementError::TransactionNotFoundException(inner) => Error::TransactionNotFoundException(inner),
             crate::operation::batch_execute_statement::BatchExecuteStatementError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::begin_transaction::BeginTransactionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::begin_transaction::BeginTransactionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::begin_transaction::BeginTransactionError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -195,38 +164,29 @@ impl From<crate::operation::begin_transaction::BeginTransactionError> for Error 
             crate::operation::begin_transaction::BeginTransactionError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::begin_transaction::BeginTransactionError::DatabaseErrorException(inner) => Error::DatabaseErrorException(inner),
             crate::operation::begin_transaction::BeginTransactionError::DatabaseNotFoundException(inner) => Error::DatabaseNotFoundException(inner),
-            crate::operation::begin_transaction::BeginTransactionError::DatabaseUnavailableException(inner) => {
-                Error::DatabaseUnavailableException(inner)
-            }
+            crate::operation::begin_transaction::BeginTransactionError::DatabaseUnavailableException(inner) => Error::DatabaseUnavailableException(inner),
             crate::operation::begin_transaction::BeginTransactionError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::begin_transaction::BeginTransactionError::HttpEndpointNotEnabledException(inner) => {
-                Error::HttpEndpointNotEnabledException(inner)
-            }
-            crate::operation::begin_transaction::BeginTransactionError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
+            crate::operation::begin_transaction::BeginTransactionError::HttpEndpointNotEnabledException(inner) => Error::HttpEndpointNotEnabledException(inner),
+            crate::operation::begin_transaction::BeginTransactionError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::begin_transaction::BeginTransactionError::InvalidSecretException(inner) => Error::InvalidSecretException(inner),
             crate::operation::begin_transaction::BeginTransactionError::SecretsErrorException(inner) => Error::SecretsErrorException(inner),
             crate::operation::begin_transaction::BeginTransactionError::ServiceUnavailableError(inner) => Error::ServiceUnavailableError(inner),
             crate::operation::begin_transaction::BeginTransactionError::StatementTimeoutException(inner) => Error::StatementTimeoutException(inner),
-            crate::operation::begin_transaction::BeginTransactionError::TransactionNotFoundException(inner) => {
-                Error::TransactionNotFoundException(inner)
-            }
+            crate::operation::begin_transaction::BeginTransactionError::TransactionNotFoundException(inner) => Error::TransactionNotFoundException(inner),
             crate::operation::begin_transaction::BeginTransactionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::commit_transaction::CommitTransactionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::commit_transaction::CommitTransactionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::commit_transaction::CommitTransactionError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -237,39 +197,30 @@ impl From<crate::operation::commit_transaction::CommitTransactionError> for Erro
             crate::operation::commit_transaction::CommitTransactionError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::commit_transaction::CommitTransactionError::DatabaseErrorException(inner) => Error::DatabaseErrorException(inner),
             crate::operation::commit_transaction::CommitTransactionError::DatabaseNotFoundException(inner) => Error::DatabaseNotFoundException(inner),
-            crate::operation::commit_transaction::CommitTransactionError::DatabaseUnavailableException(inner) => {
-                Error::DatabaseUnavailableException(inner)
-            }
+            crate::operation::commit_transaction::CommitTransactionError::DatabaseUnavailableException(inner) => Error::DatabaseUnavailableException(inner),
             crate::operation::commit_transaction::CommitTransactionError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::commit_transaction::CommitTransactionError::HttpEndpointNotEnabledException(inner) => {
-                Error::HttpEndpointNotEnabledException(inner)
-            }
-            crate::operation::commit_transaction::CommitTransactionError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
+            crate::operation::commit_transaction::CommitTransactionError::HttpEndpointNotEnabledException(inner) => Error::HttpEndpointNotEnabledException(inner),
+            crate::operation::commit_transaction::CommitTransactionError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::commit_transaction::CommitTransactionError::InvalidSecretException(inner) => Error::InvalidSecretException(inner),
             crate::operation::commit_transaction::CommitTransactionError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::commit_transaction::CommitTransactionError::SecretsErrorException(inner) => Error::SecretsErrorException(inner),
             crate::operation::commit_transaction::CommitTransactionError::ServiceUnavailableError(inner) => Error::ServiceUnavailableError(inner),
             crate::operation::commit_transaction::CommitTransactionError::StatementTimeoutException(inner) => Error::StatementTimeoutException(inner),
-            crate::operation::commit_transaction::CommitTransactionError::TransactionNotFoundException(inner) => {
-                Error::TransactionNotFoundException(inner)
-            }
+            crate::operation::commit_transaction::CommitTransactionError::TransactionNotFoundException(inner) => Error::TransactionNotFoundException(inner),
             crate::operation::commit_transaction::CommitTransactionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::execute_sql::ExecuteSqlError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::execute_sql::ExecuteSqlError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::execute_sql::ExecuteSqlError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -285,17 +236,16 @@ impl From<crate::operation::execute_sql::ExecuteSqlError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::execute_statement::ExecuteStatementError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::execute_statement::ExecuteStatementError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::execute_statement::ExecuteStatementError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -306,39 +256,30 @@ impl From<crate::operation::execute_statement::ExecuteStatementError> for Error 
             crate::operation::execute_statement::ExecuteStatementError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::execute_statement::ExecuteStatementError::DatabaseErrorException(inner) => Error::DatabaseErrorException(inner),
             crate::operation::execute_statement::ExecuteStatementError::DatabaseNotFoundException(inner) => Error::DatabaseNotFoundException(inner),
-            crate::operation::execute_statement::ExecuteStatementError::DatabaseUnavailableException(inner) => {
-                Error::DatabaseUnavailableException(inner)
-            }
+            crate::operation::execute_statement::ExecuteStatementError::DatabaseUnavailableException(inner) => Error::DatabaseUnavailableException(inner),
             crate::operation::execute_statement::ExecuteStatementError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::execute_statement::ExecuteStatementError::HttpEndpointNotEnabledException(inner) => {
-                Error::HttpEndpointNotEnabledException(inner)
-            }
-            crate::operation::execute_statement::ExecuteStatementError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
+            crate::operation::execute_statement::ExecuteStatementError::HttpEndpointNotEnabledException(inner) => Error::HttpEndpointNotEnabledException(inner),
+            crate::operation::execute_statement::ExecuteStatementError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::execute_statement::ExecuteStatementError::InvalidSecretException(inner) => Error::InvalidSecretException(inner),
             crate::operation::execute_statement::ExecuteStatementError::SecretsErrorException(inner) => Error::SecretsErrorException(inner),
             crate::operation::execute_statement::ExecuteStatementError::ServiceUnavailableError(inner) => Error::ServiceUnavailableError(inner),
             crate::operation::execute_statement::ExecuteStatementError::StatementTimeoutException(inner) => Error::StatementTimeoutException(inner),
-            crate::operation::execute_statement::ExecuteStatementError::TransactionNotFoundException(inner) => {
-                Error::TransactionNotFoundException(inner)
-            }
+            crate::operation::execute_statement::ExecuteStatementError::TransactionNotFoundException(inner) => Error::TransactionNotFoundException(inner),
             crate::operation::execute_statement::ExecuteStatementError::UnsupportedResultException(inner) => Error::UnsupportedResultException(inner),
             crate::operation::execute_statement::ExecuteStatementError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::rollback_transaction::RollbackTransactionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::rollback_transaction::RollbackTransactionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::rollback_transaction::RollbackTransactionError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -348,29 +289,17 @@ impl From<crate::operation::rollback_transaction::RollbackTransactionError> for 
             crate::operation::rollback_transaction::RollbackTransactionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::rollback_transaction::RollbackTransactionError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::rollback_transaction::RollbackTransactionError::DatabaseErrorException(inner) => Error::DatabaseErrorException(inner),
-            crate::operation::rollback_transaction::RollbackTransactionError::DatabaseNotFoundException(inner) => {
-                Error::DatabaseNotFoundException(inner)
-            }
-            crate::operation::rollback_transaction::RollbackTransactionError::DatabaseUnavailableException(inner) => {
-                Error::DatabaseUnavailableException(inner)
-            }
+            crate::operation::rollback_transaction::RollbackTransactionError::DatabaseNotFoundException(inner) => Error::DatabaseNotFoundException(inner),
+            crate::operation::rollback_transaction::RollbackTransactionError::DatabaseUnavailableException(inner) => Error::DatabaseUnavailableException(inner),
             crate::operation::rollback_transaction::RollbackTransactionError::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::operation::rollback_transaction::RollbackTransactionError::HttpEndpointNotEnabledException(inner) => {
-                Error::HttpEndpointNotEnabledException(inner)
-            }
-            crate::operation::rollback_transaction::RollbackTransactionError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
+            crate::operation::rollback_transaction::RollbackTransactionError::HttpEndpointNotEnabledException(inner) => Error::HttpEndpointNotEnabledException(inner),
+            crate::operation::rollback_transaction::RollbackTransactionError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::rollback_transaction::RollbackTransactionError::InvalidSecretException(inner) => Error::InvalidSecretException(inner),
             crate::operation::rollback_transaction::RollbackTransactionError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::rollback_transaction::RollbackTransactionError::SecretsErrorException(inner) => Error::SecretsErrorException(inner),
             crate::operation::rollback_transaction::RollbackTransactionError::ServiceUnavailableError(inner) => Error::ServiceUnavailableError(inner),
-            crate::operation::rollback_transaction::RollbackTransactionError::StatementTimeoutException(inner) => {
-                Error::StatementTimeoutException(inner)
-            }
-            crate::operation::rollback_transaction::RollbackTransactionError::TransactionNotFoundException(inner) => {
-                Error::TransactionNotFoundException(inner)
-            }
+            crate::operation::rollback_transaction::RollbackTransactionError::StatementTimeoutException(inner) => Error::StatementTimeoutException(inner),
+            crate::operation::rollback_transaction::RollbackTransactionError::TransactionNotFoundException(inner) => Error::TransactionNotFoundException(inner),
             crate::operation::rollback_transaction::RollbackTransactionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -393,7 +322,7 @@ impl ::std::error::Error for Error {
             Error::StatementTimeoutException(inner) => inner.source(),
             Error::TransactionNotFoundException(inner) => inner.source(),
             Error::UnsupportedResultException(inner) => inner.source(),
-            Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
+            Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source)
         }
     }
 }
@@ -419,3 +348,4 @@ impl ::aws_types::request_id::RequestId for Error {
         }
     }
 }
+

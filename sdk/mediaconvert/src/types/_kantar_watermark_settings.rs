@@ -3,7 +3,7 @@
 /// Use these settings only when you use Kantar watermarking. Specify the values that MediaConvert uses to generate and place Kantar watermarks in your output audio. These settings apply to every output in your job. In addition to specifying these values, you also need to store your Kantar credentials in AWS Secrets Manager. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KantarWatermarkSettings {
+pub struct KantarWatermarkSettings  {
     /// Provide an audio channel name from your Kantar audio license.
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// Specify a unique identifier for Kantar to use for this piece of content.
@@ -31,17 +31,17 @@ pub struct KantarWatermarkSettings {
     /// Additional metadata that MediaConvert sends to Kantar. Maximum length is 50 characters.
     pub metadata8: ::std::option::Option<::std::string::String>,
 }
-impl KantarWatermarkSettings {
+impl  KantarWatermarkSettings  {
     /// Provide an audio channel name from your Kantar audio license.
-    pub fn channel_name(&self) -> ::std::option::Option<&str> {
+    pub fn channel_name(&self) -> ::std::option::Option<& str> {
         self.channel_name.as_deref()
     }
     /// Specify a unique identifier for Kantar to use for this piece of content.
-    pub fn content_reference(&self) -> ::std::option::Option<&str> {
+    pub fn content_reference(&self) -> ::std::option::Option<& str> {
         self.content_reference.as_deref()
     }
     /// Provide the name of the AWS Secrets Manager secret where your Kantar credentials are stored. Note that your MediaConvert service role must provide access to this secret. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/granting-permissions-for-mediaconvert-to-access-secrets-manager-secret.html. For instructions on creating a secret, see https://docs.aws.amazon.com/secretsmanager/latest/userguide/tutorials_basic.html, in the AWS Secrets Manager User Guide.
-    pub fn credentials_secret_name(&self) -> ::std::option::Option<&str> {
+    pub fn credentials_secret_name(&self) -> ::std::option::Option<& str> {
         self.credentials_secret_name.as_deref()
     }
     /// Optional. Specify an offset, in whole seconds, from the start of your output and the beginning of the watermarking. When you don't specify an offset, Kantar defaults to zero.
@@ -53,35 +53,35 @@ impl KantarWatermarkSettings {
         self.kantar_license_id
     }
     /// Provide the HTTPS endpoint to the Kantar server. You should get this endpoint from Kantar.
-    pub fn kantar_server_url(&self) -> ::std::option::Option<&str> {
+    pub fn kantar_server_url(&self) -> ::std::option::Option<& str> {
         self.kantar_server_url.as_deref()
     }
     /// Optional. Specify the Amazon S3 bucket where you want MediaConvert to store your Kantar watermark XML logs. When you don't specify a bucket, MediaConvert doesn't save these logs. Note that your MediaConvert service role must provide access to this location. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
-    pub fn log_destination(&self) -> ::std::option::Option<&str> {
+    pub fn log_destination(&self) -> ::std::option::Option<& str> {
         self.log_destination.as_deref()
     }
     /// You can optionally use this field to specify the first timestamp that Kantar embeds during watermarking. Kantar suggests that you be very cautious when using this Kantar feature, and that you use it only on channels that are managed specifically for use with this feature by your Audience Measurement Operator. For more information about this feature, contact Kantar technical support.
-    pub fn metadata3(&self) -> ::std::option::Option<&str> {
+    pub fn metadata3(&self) -> ::std::option::Option<& str> {
         self.metadata3.as_deref()
     }
     /// Additional metadata that MediaConvert sends to Kantar. Maximum length is 50 characters.
-    pub fn metadata4(&self) -> ::std::option::Option<&str> {
+    pub fn metadata4(&self) -> ::std::option::Option<& str> {
         self.metadata4.as_deref()
     }
     /// Additional metadata that MediaConvert sends to Kantar. Maximum length is 50 characters.
-    pub fn metadata5(&self) -> ::std::option::Option<&str> {
+    pub fn metadata5(&self) -> ::std::option::Option<& str> {
         self.metadata5.as_deref()
     }
     /// Additional metadata that MediaConvert sends to Kantar. Maximum length is 50 characters.
-    pub fn metadata6(&self) -> ::std::option::Option<&str> {
+    pub fn metadata6(&self) -> ::std::option::Option<& str> {
         self.metadata6.as_deref()
     }
     /// Additional metadata that MediaConvert sends to Kantar. Maximum length is 50 characters.
-    pub fn metadata7(&self) -> ::std::option::Option<&str> {
+    pub fn metadata7(&self) -> ::std::option::Option<& str> {
         self.metadata7.as_deref()
     }
     /// Additional metadata that MediaConvert sends to Kantar. Maximum length is 50 characters.
-    pub fn metadata8(&self) -> ::std::option::Option<&str> {
+    pub fn metadata8(&self) -> ::std::option::Option<& str> {
         self.metadata8.as_deref()
     }
 }
@@ -118,8 +118,7 @@ impl KantarWatermarkSettingsBuilder {
     }
     /// Provide an audio channel name from your Kantar audio license.
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_name = input;
-        self
+        self.channel_name = input; self
     }
     /// Provide an audio channel name from your Kantar audio license.
     pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +131,7 @@ impl KantarWatermarkSettingsBuilder {
     }
     /// Specify a unique identifier for Kantar to use for this piece of content.
     pub fn set_content_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_reference = input;
-        self
+        self.content_reference = input; self
     }
     /// Specify a unique identifier for Kantar to use for this piece of content.
     pub fn get_content_reference(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +144,7 @@ impl KantarWatermarkSettingsBuilder {
     }
     /// Provide the name of the AWS Secrets Manager secret where your Kantar credentials are stored. Note that your MediaConvert service role must provide access to this secret. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/granting-permissions-for-mediaconvert-to-access-secrets-manager-secret.html. For instructions on creating a secret, see https://docs.aws.amazon.com/secretsmanager/latest/userguide/tutorials_basic.html, in the AWS Secrets Manager User Guide.
     pub fn set_credentials_secret_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.credentials_secret_name = input;
-        self
+        self.credentials_secret_name = input; self
     }
     /// Provide the name of the AWS Secrets Manager secret where your Kantar credentials are stored. Note that your MediaConvert service role must provide access to this secret. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/granting-permissions-for-mediaconvert-to-access-secrets-manager-secret.html. For instructions on creating a secret, see https://docs.aws.amazon.com/secretsmanager/latest/userguide/tutorials_basic.html, in the AWS Secrets Manager User Guide.
     pub fn get_credentials_secret_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +157,7 @@ impl KantarWatermarkSettingsBuilder {
     }
     /// Optional. Specify an offset, in whole seconds, from the start of your output and the beginning of the watermarking. When you don't specify an offset, Kantar defaults to zero.
     pub fn set_file_offset(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.file_offset = input;
-        self
+        self.file_offset = input; self
     }
     /// Optional. Specify an offset, in whole seconds, from the start of your output and the beginning of the watermarking. When you don't specify an offset, Kantar defaults to zero.
     pub fn get_file_offset(&self) -> &::std::option::Option<f64> {
@@ -174,8 +170,7 @@ impl KantarWatermarkSettingsBuilder {
     }
     /// Provide your Kantar license ID number. You should get this number from Kantar.
     pub fn set_kantar_license_id(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.kantar_license_id = input;
-        self
+        self.kantar_license_id = input; self
     }
     /// Provide your Kantar license ID number. You should get this number from Kantar.
     pub fn get_kantar_license_id(&self) -> &::std::option::Option<i32> {
@@ -188,8 +183,7 @@ impl KantarWatermarkSettingsBuilder {
     }
     /// Provide the HTTPS endpoint to the Kantar server. You should get this endpoint from Kantar.
     pub fn set_kantar_server_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kantar_server_url = input;
-        self
+        self.kantar_server_url = input; self
     }
     /// Provide the HTTPS endpoint to the Kantar server. You should get this endpoint from Kantar.
     pub fn get_kantar_server_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +196,7 @@ impl KantarWatermarkSettingsBuilder {
     }
     /// Optional. Specify the Amazon S3 bucket where you want MediaConvert to store your Kantar watermark XML logs. When you don't specify a bucket, MediaConvert doesn't save these logs. Note that your MediaConvert service role must provide access to this location. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
     pub fn set_log_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_destination = input;
-        self
+        self.log_destination = input; self
     }
     /// Optional. Specify the Amazon S3 bucket where you want MediaConvert to store your Kantar watermark XML logs. When you don't specify a bucket, MediaConvert doesn't save these logs. Note that your MediaConvert service role must provide access to this location. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
     pub fn get_log_destination(&self) -> &::std::option::Option<::std::string::String> {
@@ -216,8 +209,7 @@ impl KantarWatermarkSettingsBuilder {
     }
     /// You can optionally use this field to specify the first timestamp that Kantar embeds during watermarking. Kantar suggests that you be very cautious when using this Kantar feature, and that you use it only on channels that are managed specifically for use with this feature by your Audience Measurement Operator. For more information about this feature, contact Kantar technical support.
     pub fn set_metadata3(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata3 = input;
-        self
+        self.metadata3 = input; self
     }
     /// You can optionally use this field to specify the first timestamp that Kantar embeds during watermarking. Kantar suggests that you be very cautious when using this Kantar feature, and that you use it only on channels that are managed specifically for use with this feature by your Audience Measurement Operator. For more information about this feature, contact Kantar technical support.
     pub fn get_metadata3(&self) -> &::std::option::Option<::std::string::String> {
@@ -230,8 +222,7 @@ impl KantarWatermarkSettingsBuilder {
     }
     /// Additional metadata that MediaConvert sends to Kantar. Maximum length is 50 characters.
     pub fn set_metadata4(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata4 = input;
-        self
+        self.metadata4 = input; self
     }
     /// Additional metadata that MediaConvert sends to Kantar. Maximum length is 50 characters.
     pub fn get_metadata4(&self) -> &::std::option::Option<::std::string::String> {
@@ -244,8 +235,7 @@ impl KantarWatermarkSettingsBuilder {
     }
     /// Additional metadata that MediaConvert sends to Kantar. Maximum length is 50 characters.
     pub fn set_metadata5(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata5 = input;
-        self
+        self.metadata5 = input; self
     }
     /// Additional metadata that MediaConvert sends to Kantar. Maximum length is 50 characters.
     pub fn get_metadata5(&self) -> &::std::option::Option<::std::string::String> {
@@ -258,8 +248,7 @@ impl KantarWatermarkSettingsBuilder {
     }
     /// Additional metadata that MediaConvert sends to Kantar. Maximum length is 50 characters.
     pub fn set_metadata6(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata6 = input;
-        self
+        self.metadata6 = input; self
     }
     /// Additional metadata that MediaConvert sends to Kantar. Maximum length is 50 characters.
     pub fn get_metadata6(&self) -> &::std::option::Option<::std::string::String> {
@@ -272,8 +261,7 @@ impl KantarWatermarkSettingsBuilder {
     }
     /// Additional metadata that MediaConvert sends to Kantar. Maximum length is 50 characters.
     pub fn set_metadata7(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata7 = input;
-        self
+        self.metadata7 = input; self
     }
     /// Additional metadata that MediaConvert sends to Kantar. Maximum length is 50 characters.
     pub fn get_metadata7(&self) -> &::std::option::Option<::std::string::String> {
@@ -286,8 +274,7 @@ impl KantarWatermarkSettingsBuilder {
     }
     /// Additional metadata that MediaConvert sends to Kantar. Maximum length is 50 characters.
     pub fn set_metadata8(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata8 = input;
-        self
+        self.metadata8 = input; self
     }
     /// Additional metadata that MediaConvert sends to Kantar. Maximum length is 50 characters.
     pub fn get_metadata8(&self) -> &::std::option::Option<::std::string::String> {
@@ -296,19 +283,33 @@ impl KantarWatermarkSettingsBuilder {
     /// Consumes the builder and constructs a [`KantarWatermarkSettings`](crate::types::KantarWatermarkSettings).
     pub fn build(self) -> crate::types::KantarWatermarkSettings {
         crate::types::KantarWatermarkSettings {
-            channel_name: self.channel_name,
-            content_reference: self.content_reference,
-            credentials_secret_name: self.credentials_secret_name,
-            file_offset: self.file_offset,
-            kantar_license_id: self.kantar_license_id,
-            kantar_server_url: self.kantar_server_url,
-            log_destination: self.log_destination,
-            metadata3: self.metadata3,
-            metadata4: self.metadata4,
-            metadata5: self.metadata5,
-            metadata6: self.metadata6,
-            metadata7: self.metadata7,
-            metadata8: self.metadata8,
+            channel_name: self.channel_name
+            ,
+            content_reference: self.content_reference
+            ,
+            credentials_secret_name: self.credentials_secret_name
+            ,
+            file_offset: self.file_offset
+            ,
+            kantar_license_id: self.kantar_license_id
+            ,
+            kantar_server_url: self.kantar_server_url
+            ,
+            log_destination: self.log_destination
+            ,
+            metadata3: self.metadata3
+            ,
+            metadata4: self.metadata4
+            ,
+            metadata5: self.metadata5
+            ,
+            metadata6: self.metadata6
+            ,
+            metadata7: self.metadata7
+            ,
+            metadata8: self.metadata8
+            ,
         }
     }
 }
+

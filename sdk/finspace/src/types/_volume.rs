@@ -3,19 +3,19 @@
 /// <p>The structure that consists of name and type of volume.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Volume {
+pub struct Volume  {
     /// <p>A unique identifier for the volume.</p>
     pub volume_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type.</p>
     pub volume_type: ::std::option::Option<crate::types::VolumeType>,
 }
-impl Volume {
+impl  Volume  {
     /// <p>A unique identifier for the volume.</p>
-    pub fn volume_name(&self) -> ::std::option::Option<&str> {
+    pub fn volume_name(&self) -> ::std::option::Option<& str> {
         self.volume_name.as_deref()
     }
     /// <p>The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type.</p>
-    pub fn volume_type(&self) -> ::std::option::Option<&crate::types::VolumeType> {
+    pub fn volume_type(&self) -> ::std::option::Option<& crate::types::VolumeType> {
         self.volume_type.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl VolumeBuilder {
     }
     /// <p>A unique identifier for the volume.</p>
     pub fn set_volume_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_name = input;
-        self
+        self.volume_name = input; self
     }
     /// <p>A unique identifier for the volume.</p>
     pub fn get_volume_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl VolumeBuilder {
     }
     /// <p>The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type.</p>
     pub fn set_volume_type(mut self, input: ::std::option::Option<crate::types::VolumeType>) -> Self {
-        self.volume_type = input;
-        self
+        self.volume_type = input; self
     }
     /// <p>The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code> volume type.</p>
     pub fn get_volume_type(&self) -> &::std::option::Option<crate::types::VolumeType> {
@@ -65,8 +63,11 @@ impl VolumeBuilder {
     /// Consumes the builder and constructs a [`Volume`](crate::types::Volume).
     pub fn build(self) -> crate::types::Volume {
         crate::types::Volume {
-            volume_name: self.volume_name,
-            volume_type: self.volume_type,
+            volume_name: self.volume_name
+            ,
+            volume_type: self.volume_type
+            ,
         }
     }
 }
+

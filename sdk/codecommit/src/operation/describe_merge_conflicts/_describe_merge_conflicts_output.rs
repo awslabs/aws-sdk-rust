@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeMergeConflictsOutput {
+pub struct DescribeMergeConflictsOutput  {
     /// <p>Contains metadata about the conflicts found in the merge.</p>
     pub conflict_metadata: ::std::option::Option<crate::types::ConflictMetadata>,
     /// <p>A list of merge hunks of the differences between the files or lines.</p>
-    pub merge_hunks: ::std::vec::Vec<crate::types::MergeHunk>,
+    pub merge_hunks: ::std::vec::Vec::<crate::types::MergeHunk>,
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
@@ -17,40 +17,37 @@ pub struct DescribeMergeConflictsOutput {
     pub base_commit_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeMergeConflictsOutput {
+impl  DescribeMergeConflictsOutput  {
     /// <p>Contains metadata about the conflicts found in the merge.</p>
-    pub fn conflict_metadata(&self) -> ::std::option::Option<&crate::types::ConflictMetadata> {
+    pub fn conflict_metadata(&self) -> ::std::option::Option<& crate::types::ConflictMetadata> {
         self.conflict_metadata.as_ref()
     }
     /// <p>A list of merge hunks of the differences between the files or lines.</p>
-    pub fn merge_hunks(&self) -> &[crate::types::MergeHunk] {
-        use std::ops::Deref;
-        self.merge_hunks.deref()
+    pub fn merge_hunks(&self) -> & [crate::types::MergeHunk] {
+        use std::ops::Deref; self.merge_hunks.deref()
     }
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
-    pub fn destination_commit_id(&self) -> &str {
-        use std::ops::Deref;
-        self.destination_commit_id.deref()
+    pub fn destination_commit_id(&self) -> & str {
+        use std::ops::Deref; self.destination_commit_id.deref()
     }
     /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
-    pub fn source_commit_id(&self) -> &str {
-        use std::ops::Deref;
-        self.source_commit_id.deref()
+    pub fn source_commit_id(&self) -> & str {
+        use std::ops::Deref; self.source_commit_id.deref()
     }
     /// <p>The commit ID of the merge base.</p>
-    pub fn base_commit_id(&self) -> ::std::option::Option<&str> {
+    pub fn base_commit_id(&self) -> ::std::option::Option<& str> {
         self.base_commit_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeMergeConflictsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeMergeConflictsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMergeConflictsOutput`](crate::operation::describe_merge_conflicts::DescribeMergeConflictsOutput).
     pub fn builder() -> crate::operation::describe_merge_conflicts::builders::DescribeMergeConflictsOutputBuilder {
@@ -63,7 +60,7 @@ impl DescribeMergeConflictsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMergeConflictsOutputBuilder {
     pub(crate) conflict_metadata: ::std::option::Option<crate::types::ConflictMetadata>,
-    pub(crate) merge_hunks: ::std::option::Option<::std::vec::Vec<crate::types::MergeHunk>>,
+    pub(crate) merge_hunks: ::std::option::Option<::std::vec::Vec::<crate::types::MergeHunk>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) destination_commit_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_commit_id: ::std::option::Option<::std::string::String>,
@@ -79,8 +76,7 @@ impl DescribeMergeConflictsOutputBuilder {
     }
     /// <p>Contains metadata about the conflicts found in the merge.</p>
     pub fn set_conflict_metadata(mut self, input: ::std::option::Option<crate::types::ConflictMetadata>) -> Self {
-        self.conflict_metadata = input;
-        self
+        self.conflict_metadata = input; self
     }
     /// <p>Contains metadata about the conflicts found in the merge.</p>
     pub fn get_conflict_metadata(&self) -> &::std::option::Option<crate::types::ConflictMetadata> {
@@ -93,17 +89,16 @@ impl DescribeMergeConflictsOutputBuilder {
     /// <p>A list of merge hunks of the differences between the files or lines.</p>
     pub fn merge_hunks(mut self, input: crate::types::MergeHunk) -> Self {
         let mut v = self.merge_hunks.unwrap_or_default();
-        v.push(input);
-        self.merge_hunks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.merge_hunks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of merge hunks of the differences between the files or lines.</p>
-    pub fn set_merge_hunks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MergeHunk>>) -> Self {
-        self.merge_hunks = input;
-        self
+    pub fn set_merge_hunks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MergeHunk>>) -> Self {
+        self.merge_hunks = input; self
     }
     /// <p>A list of merge hunks of the differences between the files or lines.</p>
-    pub fn get_merge_hunks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MergeHunk>> {
+    pub fn get_merge_hunks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MergeHunk>> {
         &self.merge_hunks
     }
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
@@ -113,8 +108,7 @@ impl DescribeMergeConflictsOutputBuilder {
     }
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +122,7 @@ impl DescribeMergeConflictsOutputBuilder {
     }
     /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
     pub fn set_destination_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_commit_id = input;
-        self
+        self.destination_commit_id = input; self
     }
     /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
     pub fn get_destination_commit_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +136,7 @@ impl DescribeMergeConflictsOutputBuilder {
     }
     /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
     pub fn set_source_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_commit_id = input;
-        self
+        self.source_commit_id = input; self
     }
     /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
     pub fn get_source_commit_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,56 +149,53 @@ impl DescribeMergeConflictsOutputBuilder {
     }
     /// <p>The commit ID of the merge base.</p>
     pub fn set_base_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.base_commit_id = input;
-        self
+        self.base_commit_id = input; self
     }
     /// <p>The commit ID of the merge base.</p>
     pub fn get_base_commit_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.base_commit_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeMergeConflictsOutput`](crate::operation::describe_merge_conflicts::DescribeMergeConflictsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`merge_hunks`](crate::operation::describe_merge_conflicts::builders::DescribeMergeConflictsOutputBuilder::merge_hunks)
     /// - [`destination_commit_id`](crate::operation::describe_merge_conflicts::builders::DescribeMergeConflictsOutputBuilder::destination_commit_id)
     /// - [`source_commit_id`](crate::operation::describe_merge_conflicts::builders::DescribeMergeConflictsOutputBuilder::source_commit_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_merge_conflicts::DescribeMergeConflictsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_merge_conflicts::DescribeMergeConflictsOutput {
-            conflict_metadata: self.conflict_metadata,
-            merge_hunks: self.merge_hunks.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "merge_hunks",
-                    "merge_hunks was not specified but it is required when building DescribeMergeConflictsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            destination_commit_id: self.destination_commit_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "destination_commit_id",
-                    "destination_commit_id was not specified but it is required when building DescribeMergeConflictsOutput",
-                )
-            })?,
-            source_commit_id: self.source_commit_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_commit_id",
-                    "source_commit_id was not specified but it is required when building DescribeMergeConflictsOutput",
-                )
-            })?,
-            base_commit_id: self.base_commit_id,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_merge_conflicts::DescribeMergeConflictsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_merge_conflicts::DescribeMergeConflictsOutput {
+                conflict_metadata: self.conflict_metadata
+                ,
+                merge_hunks: self.merge_hunks
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("merge_hunks", "merge_hunks was not specified but it is required when building DescribeMergeConflictsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                destination_commit_id: self.destination_commit_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("destination_commit_id", "destination_commit_id was not specified but it is required when building DescribeMergeConflictsOutput")
+                    )?
+                ,
+                source_commit_id: self.source_commit_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source_commit_id", "source_commit_id was not specified but it is required when building DescribeMergeConflictsOutput")
+                    )?
+                ,
+                base_commit_id: self.base_commit_id
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -3,15 +3,14 @@
 /// <p>Contains information about a metric attribution associated with an event. For more information about metric attributions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetricAttribution {
+pub struct MetricAttribution  {
     /// <p>The source of the event, such as a third party.</p>
     pub event_attribution_source: ::std::string::String,
 }
-impl MetricAttribution {
+impl  MetricAttribution  {
     /// <p>The source of the event, such as a third party.</p>
-    pub fn event_attribution_source(&self) -> &str {
-        use std::ops::Deref;
-        self.event_attribution_source.deref()
+    pub fn event_attribution_source(&self) -> & str {
+        use std::ops::Deref; self.event_attribution_source.deref()
     }
 }
 impl MetricAttribution {
@@ -36,8 +35,7 @@ impl MetricAttributionBuilder {
     }
     /// <p>The source of the event, such as a third party.</p>
     pub fn set_event_attribution_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_attribution_source = input;
-        self
+        self.event_attribution_source = input; self
     }
     /// <p>The source of the event, such as a third party.</p>
     pub fn get_event_attribution_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl MetricAttributionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`event_attribution_source`](crate::types::builders::MetricAttributionBuilder::event_attribution_source)
     pub fn build(self) -> ::std::result::Result<crate::types::MetricAttribution, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MetricAttribution {
-            event_attribution_source: self.event_attribution_source.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "event_attribution_source",
-                    "event_attribution_source was not specified but it is required when building MetricAttribution",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MetricAttribution {
+                event_attribution_source: self.event_attribution_source
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("event_attribution_source", "event_attribution_source was not specified but it is required when building MetricAttribution")
+                    )?
+                ,
+            }
+        )
     }
 }
+

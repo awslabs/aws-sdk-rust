@@ -3,7 +3,8 @@
 /// <p>The connector metadata specific to Veeva.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VeevaMetadata {}
+pub struct VeevaMetadata  {
+}
 impl VeevaMetadata {
     /// Creates a new builder-style object to manufacture [`VeevaMetadata`](crate::types::VeevaMetadata).
     pub fn builder() -> crate::types::builders::VeevaMetadataBuilder {
@@ -14,10 +15,13 @@ impl VeevaMetadata {
 /// A builder for [`VeevaMetadata`](crate::types::VeevaMetadata).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct VeevaMetadataBuilder {}
+pub struct VeevaMetadataBuilder {
+}
 impl VeevaMetadataBuilder {
     /// Consumes the builder and constructs a [`VeevaMetadata`](crate::types::VeevaMetadata).
     pub fn build(self) -> crate::types::VeevaMetadata {
-        crate::types::VeevaMetadata {}
+        crate::types::VeevaMetadata {
+        }
     }
 }
+

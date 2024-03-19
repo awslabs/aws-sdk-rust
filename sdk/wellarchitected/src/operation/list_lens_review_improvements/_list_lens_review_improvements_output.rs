@@ -3,7 +3,7 @@
 /// <p>Output of a list lens review improvements call.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLensReviewImprovementsOutput {
+pub struct ListLensReviewImprovementsOutput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>The milestone number.</p>
@@ -17,14 +17,14 @@ pub struct ListLensReviewImprovementsOutput {
     /// <p>The ARN for the lens.</p>
     pub lens_arn: ::std::option::Option<::std::string::String>,
     /// <p>List of improvement summaries of lens review in a workload.</p>
-    pub improvement_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ImprovementSummary>>,
+    pub improvement_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ImprovementSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListLensReviewImprovementsOutput {
+impl  ListLensReviewImprovementsOutput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> ::std::option::Option<&str> {
+    pub fn workload_id(&self) -> ::std::option::Option<& str> {
         self.workload_id.as_deref()
     }
     /// <p>The milestone number.</p>
@@ -36,29 +36,30 @@ impl ListLensReviewImprovementsOutput {
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn lens_alias(&self) -> ::std::option::Option<&str> {
+    pub fn lens_alias(&self) -> ::std::option::Option<& str> {
         self.lens_alias.as_deref()
     }
     /// <p>The ARN for the lens.</p>
-    pub fn lens_arn(&self) -> ::std::option::Option<&str> {
+    pub fn lens_arn(&self) -> ::std::option::Option<& str> {
         self.lens_arn.as_deref()
     }
     /// <p>List of improvement summaries of lens review in a workload.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.improvement_summaries.is_none()`.
-    pub fn improvement_summaries(&self) -> &[crate::types::ImprovementSummary] {
-        self.improvement_summaries.as_deref().unwrap_or_default()
+    pub fn improvement_summaries(&self) -> & [crate::types::ImprovementSummary] {
+        self.improvement_summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListLensReviewImprovementsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListLensReviewImprovementsOutput {
     /// Creates a new builder-style object to manufacture [`ListLensReviewImprovementsOutput`](crate::operation::list_lens_review_improvements::ListLensReviewImprovementsOutput).
     pub fn builder() -> crate::operation::list_lens_review_improvements::builders::ListLensReviewImprovementsOutputBuilder {
@@ -74,7 +75,7 @@ pub struct ListLensReviewImprovementsOutputBuilder {
     pub(crate) milestone_number: ::std::option::Option<i32>,
     pub(crate) lens_alias: ::std::option::Option<::std::string::String>,
     pub(crate) lens_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) improvement_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ImprovementSummary>>,
+    pub(crate) improvement_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ImprovementSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -86,8 +87,7 @@ impl ListLensReviewImprovementsOutputBuilder {
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_id = input;
-        self
+        self.workload_id = input; self
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +102,7 @@ impl ListLensReviewImprovementsOutputBuilder {
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub fn set_milestone_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.milestone_number = input;
-        self
+        self.milestone_number = input; self
     }
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
@@ -123,8 +122,7 @@ impl ListLensReviewImprovementsOutputBuilder {
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn set_lens_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lens_alias = input;
-        self
+        self.lens_alias = input; self
     }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
@@ -140,8 +138,7 @@ impl ListLensReviewImprovementsOutputBuilder {
     }
     /// <p>The ARN for the lens.</p>
     pub fn set_lens_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lens_arn = input;
-        self
+        self.lens_arn = input; self
     }
     /// <p>The ARN for the lens.</p>
     pub fn get_lens_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,17 +151,16 @@ impl ListLensReviewImprovementsOutputBuilder {
     /// <p>List of improvement summaries of lens review in a workload.</p>
     pub fn improvement_summaries(mut self, input: crate::types::ImprovementSummary) -> Self {
         let mut v = self.improvement_summaries.unwrap_or_default();
-        v.push(input);
-        self.improvement_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.improvement_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of improvement summaries of lens review in a workload.</p>
-    pub fn set_improvement_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImprovementSummary>>) -> Self {
-        self.improvement_summaries = input;
-        self
+    pub fn set_improvement_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ImprovementSummary>>) -> Self {
+        self.improvement_summaries = input; self
     }
     /// <p>List of improvement summaries of lens review in a workload.</p>
-    pub fn get_improvement_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImprovementSummary>> {
+    pub fn get_improvement_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ImprovementSummary>> {
         &self.improvement_summaries
     }
     /// <p>The token to use to retrieve the next set of results.</p>
@@ -174,32 +170,38 @@ impl ListLensReviewImprovementsOutputBuilder {
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListLensReviewImprovementsOutput`](crate::operation::list_lens_review_improvements::ListLensReviewImprovementsOutput).
     pub fn build(self) -> crate::operation::list_lens_review_improvements::ListLensReviewImprovementsOutput {
         crate::operation::list_lens_review_improvements::ListLensReviewImprovementsOutput {
-            workload_id: self.workload_id,
-            milestone_number: self.milestone_number,
-            lens_alias: self.lens_alias,
-            lens_arn: self.lens_arn,
-            improvement_summaries: self.improvement_summaries,
-            next_token: self.next_token,
+            workload_id: self.workload_id
+            ,
+            milestone_number: self.milestone_number
+            ,
+            lens_alias: self.lens_alias
+            ,
+            lens_arn: self.lens_arn
+            ,
+            improvement_summaries: self.improvement_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

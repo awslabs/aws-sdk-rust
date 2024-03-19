@@ -3,19 +3,19 @@
 /// Sorts the response returned by ListIngestionJobs operation.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IngestionJobSortBy {
+pub struct IngestionJobSortBy  {
     /// The name of the field to sort ingestion jobs.
     pub attribute: crate::types::IngestionJobSortByAttribute,
     /// Order to sort results by.
     pub order: crate::types::SortOrder,
 }
-impl IngestionJobSortBy {
+impl  IngestionJobSortBy  {
     /// The name of the field to sort ingestion jobs.
-    pub fn attribute(&self) -> &crate::types::IngestionJobSortByAttribute {
+    pub fn attribute(&self) -> & crate::types::IngestionJobSortByAttribute {
         &self.attribute
     }
     /// Order to sort results by.
-    pub fn order(&self) -> &crate::types::SortOrder {
+    pub fn order(&self) -> & crate::types::SortOrder {
         &self.order
     }
 }
@@ -42,8 +42,7 @@ impl IngestionJobSortByBuilder {
     }
     /// The name of the field to sort ingestion jobs.
     pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::IngestionJobSortByAttribute>) -> Self {
-        self.attribute = input;
-        self
+        self.attribute = input; self
     }
     /// The name of the field to sort ingestion jobs.
     pub fn get_attribute(&self) -> &::std::option::Option<crate::types::IngestionJobSortByAttribute> {
@@ -57,8 +56,7 @@ impl IngestionJobSortByBuilder {
     }
     /// Order to sort results by.
     pub fn set_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.order = input;
-        self
+        self.order = input; self
     }
     /// Order to sort results by.
     pub fn get_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -69,19 +67,20 @@ impl IngestionJobSortByBuilder {
     /// - [`attribute`](crate::types::builders::IngestionJobSortByBuilder::attribute)
     /// - [`order`](crate::types::builders::IngestionJobSortByBuilder::order)
     pub fn build(self) -> ::std::result::Result<crate::types::IngestionJobSortBy, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IngestionJobSortBy {
-            attribute: self.attribute.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attribute",
-                    "attribute was not specified but it is required when building IngestionJobSortBy",
-                )
-            })?,
-            order: self.order.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "order",
-                    "order was not specified but it is required when building IngestionJobSortBy",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IngestionJobSortBy {
+                attribute: self.attribute
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attribute", "attribute was not specified but it is required when building IngestionJobSortBy")
+                    )?
+                ,
+                order: self.order
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("order", "order was not specified but it is required when building IngestionJobSortBy")
+                    )?
+                ,
+            }
+        )
     }
 }
+

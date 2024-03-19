@@ -2,28 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAccessPointConfigurationForObjectLambdaOutput {
+pub struct GetAccessPointConfigurationForObjectLambdaOutput  {
     /// <p>Object Lambda Access Point configuration document.</p>
     pub configuration: ::std::option::Option<crate::types::ObjectLambdaConfiguration>,
     _request_id: Option<String>,
 }
-impl GetAccessPointConfigurationForObjectLambdaOutput {
+impl  GetAccessPointConfigurationForObjectLambdaOutput  {
     /// <p>Object Lambda Access Point configuration document.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::ObjectLambdaConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::ObjectLambdaConfiguration> {
         self.configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetAccessPointConfigurationForObjectLambdaOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetAccessPointConfigurationForObjectLambdaOutput {
     /// Creates a new builder-style object to manufacture [`GetAccessPointConfigurationForObjectLambdaOutput`](crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaOutput).
-    pub fn builder(
-    ) -> crate::operation::get_access_point_configuration_for_object_lambda::builders::GetAccessPointConfigurationForObjectLambdaOutputBuilder {
-        crate::operation::get_access_point_configuration_for_object_lambda::builders::GetAccessPointConfigurationForObjectLambdaOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_access_point_configuration_for_object_lambda::builders::GetAccessPointConfigurationForObjectLambdaOutputBuilder {
+        crate::operation::get_access_point_configuration_for_object_lambda::builders::GetAccessPointConfigurationForObjectLambdaOutputBuilder::default()
     }
 }
 
@@ -42,27 +40,28 @@ impl GetAccessPointConfigurationForObjectLambdaOutputBuilder {
     }
     /// <p>Object Lambda Access Point configuration document.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ObjectLambdaConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>Object Lambda Access Point configuration document.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ObjectLambdaConfiguration> {
         &self.configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetAccessPointConfigurationForObjectLambdaOutput`](crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaOutput).
     pub fn build(self) -> crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaOutput {
         crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaOutput {
-            configuration: self.configuration,
+            configuration: self.configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

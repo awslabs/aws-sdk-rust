@@ -9,3 +9,4 @@ pub mod invoke_endpoint_async;
 
 /// Types for the `InvokeEndpointWithResponseStream` operation.
 pub mod invoke_endpoint_with_response_stream;
+

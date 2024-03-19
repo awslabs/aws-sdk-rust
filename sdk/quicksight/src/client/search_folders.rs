@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`SearchFolders`](crate::operation::search_folders::builders::SearchFoldersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::search_folders::builders::SearchFoldersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`aws_account_id(impl Into<String>)`](crate::operation::search_folders::builders::SearchFoldersFluentBuilder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::operation::search_folders::builders::SearchFoldersFluentBuilder::set_aws_account_id):<br>required: **true**<br><p>The ID for the Amazon Web Services account that contains the folder.</p><br>
     ///   - [`filters(FolderSearchFilter)`](crate::operation::search_folders::builders::SearchFoldersFluentBuilder::filters) / [`set_filters(Option<Vec::<FolderSearchFilter>>)`](crate::operation::search_folders::builders::SearchFoldersFluentBuilder::set_filters):<br>required: **true**<br><p>The filters to apply to the search. Currently, you can search only by the parent folder ARN. For example, <code>"Filters": [ { "Name": "PARENT_FOLDER_ARN", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:folder/folderId" } ]</code>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::search_folders::builders::SearchFoldersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::search_folders::builders::SearchFoldersFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results, or null if there are no more results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::search_folders::builders::SearchFoldersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::search_folders::builders::SearchFoldersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to be returned per request.</p><br>
-    /// - On success, responds with [`SearchFoldersOutput`](crate::operation::search_folders::SearchFoldersOutput) with field(s):
+                            /// - On success, responds with [`SearchFoldersOutput`](crate::operation::search_folders::SearchFoldersOutput) with field(s):
     ///   - [`status(i32)`](crate::operation::search_folders::SearchFoldersOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`folder_summary_list(Option<Vec::<FolderSummary>>)`](crate::operation::search_folders::SearchFoldersOutput::folder_summary_list): <p>A structure that contains all of the folders in the Amazon Web Services account. This structure provides basic information about the folders.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_folders::SearchFoldersOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::search_folders::SearchFoldersOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
-    /// - On failure, responds with [`SdkError<SearchFoldersError>`](crate::operation::search_folders::SearchFoldersError)
+                            /// - On failure, responds with [`SdkError<SearchFoldersError>`](crate::operation::search_folders::SearchFoldersError)
     pub fn search_folders(&self) -> crate::operation::search_folders::builders::SearchFoldersFluentBuilder {
-        crate::operation::search_folders::builders::SearchFoldersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::search_folders::builders::SearchFoldersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

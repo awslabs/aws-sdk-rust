@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AcceptSharedDirectoryOutput {
+pub struct AcceptSharedDirectoryOutput  {
     /// <p>The shared directory in the directory consumer account.</p>
     pub shared_directory: ::std::option::Option<crate::types::SharedDirectory>,
     _request_id: Option<String>,
 }
-impl AcceptSharedDirectoryOutput {
+impl  AcceptSharedDirectoryOutput  {
     /// <p>The shared directory in the directory consumer account.</p>
-    pub fn shared_directory(&self) -> ::std::option::Option<&crate::types::SharedDirectory> {
+    pub fn shared_directory(&self) -> ::std::option::Option<& crate::types::SharedDirectory> {
         self.shared_directory.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for AcceptSharedDirectoryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AcceptSharedDirectoryOutput {
     /// Creates a new builder-style object to manufacture [`AcceptSharedDirectoryOutput`](crate::operation::accept_shared_directory::AcceptSharedDirectoryOutput).
     pub fn builder() -> crate::operation::accept_shared_directory::builders::AcceptSharedDirectoryOutputBuilder {
@@ -40,27 +40,28 @@ impl AcceptSharedDirectoryOutputBuilder {
     }
     /// <p>The shared directory in the directory consumer account.</p>
     pub fn set_shared_directory(mut self, input: ::std::option::Option<crate::types::SharedDirectory>) -> Self {
-        self.shared_directory = input;
-        self
+        self.shared_directory = input; self
     }
     /// <p>The shared directory in the directory consumer account.</p>
     pub fn get_shared_directory(&self) -> &::std::option::Option<crate::types::SharedDirectory> {
         &self.shared_directory
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AcceptSharedDirectoryOutput`](crate::operation::accept_shared_directory::AcceptSharedDirectoryOutput).
     pub fn build(self) -> crate::operation::accept_shared_directory::AcceptSharedDirectoryOutput {
         crate::operation::accept_shared_directory::AcceptSharedDirectoryOutput {
-            shared_directory: self.shared_directory,
+            shared_directory: self.shared_directory
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

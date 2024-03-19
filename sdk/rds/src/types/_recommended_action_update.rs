@@ -3,7 +3,7 @@
 /// <p>The recommended status to update for the specified recommendation action ID.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecommendedActionUpdate {
+pub struct RecommendedActionUpdate  {
     /// <p>A unique identifier of the updated recommendation action.</p>
     pub action_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the updated recommendation action.</p>
@@ -15,9 +15,9 @@ pub struct RecommendedActionUpdate {
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
 }
-impl RecommendedActionUpdate {
+impl  RecommendedActionUpdate  {
     /// <p>A unique identifier of the updated recommendation action.</p>
-    pub fn action_id(&self) -> ::std::option::Option<&str> {
+    pub fn action_id(&self) -> ::std::option::Option<& str> {
         self.action_id.as_deref()
     }
     /// <p>The status of the updated recommendation action.</p>
@@ -27,7 +27,7 @@ impl RecommendedActionUpdate {
     /// <li>
     /// <p><code>scheduled</code></p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -54,8 +54,7 @@ impl RecommendedActionUpdateBuilder {
     }
     /// <p>A unique identifier of the updated recommendation action.</p>
     pub fn set_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_id = input;
-        self
+        self.action_id = input; self
     }
     /// <p>A unique identifier of the updated recommendation action.</p>
     pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +80,7 @@ impl RecommendedActionUpdateBuilder {
     /// <p><code>scheduled</code></p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the updated recommendation action.</p>
     /// <ul>
@@ -97,8 +95,11 @@ impl RecommendedActionUpdateBuilder {
     /// Consumes the builder and constructs a [`RecommendedActionUpdate`](crate::types::RecommendedActionUpdate).
     pub fn build(self) -> crate::types::RecommendedActionUpdate {
         crate::types::RecommendedActionUpdate {
-            action_id: self.action_id,
-            status: self.status,
+            action_id: self.action_id
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateInfrastructureConfigurationOutput {
+pub struct CreateInfrastructureConfigurationOutput  {
     /// <p>The request ID that uniquely identifies this request.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The client token that uniquely identifies the request.</p>
@@ -11,25 +11,25 @@ pub struct CreateInfrastructureConfigurationOutput {
     pub infrastructure_configuration_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateInfrastructureConfigurationOutput {
+impl  CreateInfrastructureConfigurationOutput  {
     /// <p>The request ID that uniquely identifies this request.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The client token that uniquely identifies the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was created by this request.</p>
-    pub fn infrastructure_configuration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn infrastructure_configuration_arn(&self) -> ::std::option::Option<& str> {
         self.infrastructure_configuration_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateInfrastructureConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateInfrastructureConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateInfrastructureConfigurationOutput`](crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationOutput).
     pub fn builder() -> crate::operation::create_infrastructure_configuration::builders::CreateInfrastructureConfigurationOutputBuilder {
@@ -54,8 +54,7 @@ impl CreateInfrastructureConfigurationOutputBuilder {
     }
     /// <p>The request ID that uniquely identifies this request.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The request ID that uniquely identifies this request.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl CreateInfrastructureConfigurationOutputBuilder {
     }
     /// <p>The client token that uniquely identifies the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The client token that uniquely identifies the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl CreateInfrastructureConfigurationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was created by this request.</p>
     pub fn set_infrastructure_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.infrastructure_configuration_arn = input;
-        self
+        self.infrastructure_configuration_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was created by this request.</p>
     pub fn get_infrastructure_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.infrastructure_configuration_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateInfrastructureConfigurationOutput`](crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationOutput).
     pub fn build(self) -> crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationOutput {
         crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationOutput {
-            request_id: self.request_id,
-            client_token: self.client_token,
-            infrastructure_configuration_arn: self.infrastructure_configuration_arn,
+            request_id: self.request_id
+            ,
+            client_token: self.client_token
+            ,
+            infrastructure_configuration_arn: self.infrastructure_configuration_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAliasesInput {
+pub struct ListAliasesInput  {
     /// <p>Lists only aliases that are associated with the specified KMS key. Enter a KMS key in your Amazon Web Services account.</p>
     /// <p>This parameter is optional. If you omit it, <code>ListAliases</code> returns all aliases in the account and Region.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -21,7 +21,7 @@ pub struct ListAliasesInput {
     /// <p>Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the truncated response you just received.</p>
     pub marker: ::std::option::Option<::std::string::String>,
 }
-impl ListAliasesInput {
+impl  ListAliasesInput  {
     /// <p>Lists only aliases that are associated with the specified KMS key. Enter a KMS key in your Amazon Web Services account.</p>
     /// <p>This parameter is optional. If you omit it, <code>ListAliases</code> returns all aliases in the account and Region.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -33,7 +33,7 @@ impl ListAliasesInput {
     /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
-    pub fn key_id(&self) -> ::std::option::Option<&str> {
+    pub fn key_id(&self) -> ::std::option::Option<& str> {
         self.key_id.as_deref()
     }
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p>
@@ -42,7 +42,7 @@ impl ListAliasesInput {
         self.limit
     }
     /// <p>Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the truncated response you just received.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
@@ -89,8 +89,7 @@ impl ListAliasesInputBuilder {
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_id = input;
-        self
+        self.key_id = input; self
     }
     /// <p>Lists only aliases that are associated with the specified KMS key. Enter a KMS key in your Amazon Web Services account.</p>
     /// <p>This parameter is optional. If you omit it, <code>ListAliases</code> returns all aliases in the account and Region.</p>
@@ -115,8 +114,7 @@ impl ListAliasesInputBuilder {
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p>
     /// <p>This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p>
     /// <p>This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.</p>
@@ -130,8 +128,7 @@ impl ListAliasesInputBuilder {
     }
     /// <p>Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the truncated response you just received.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the truncated response you just received.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,10 +136,16 @@ impl ListAliasesInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListAliasesInput`](crate::operation::list_aliases::ListAliasesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_aliases::ListAliasesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_aliases::ListAliasesInput {
-            key_id: self.key_id,
-            limit: self.limit,
-            marker: self.marker,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_aliases::ListAliasesInput {
+                key_id: self.key_id
+                ,
+                limit: self.limit
+                ,
+                marker: self.marker
+                ,
+            }
+        )
     }
 }
+

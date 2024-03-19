@@ -2,32 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListResolverConfigsOutput {
+pub struct ListResolverConfigsOutput  {
     /// <p>If a response includes the last of the Resolver configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>
     /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another <code>ListResolverConfigs</code> request. Get the value of <code>NextToken</code> that Amazon Route&nbsp;53 returned in the previous response and include it in <code>NextToken</code> in the next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array that contains one <code>ResolverConfigs</code> element for each Resolver configuration that is associated with the current Amazon Web Services account.</p>
-    pub resolver_configs: ::std::option::Option<::std::vec::Vec<crate::types::ResolverConfig>>,
+    pub resolver_configs: ::std::option::Option<::std::vec::Vec::<crate::types::ResolverConfig>>,
     _request_id: Option<String>,
 }
-impl ListResolverConfigsOutput {
+impl  ListResolverConfigsOutput  {
     /// <p>If a response includes the last of the Resolver configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>
     /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another <code>ListResolverConfigs</code> request. Get the value of <code>NextToken</code> that Amazon Route&nbsp;53 returned in the previous response and include it in <code>NextToken</code> in the next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array that contains one <code>ResolverConfigs</code> element for each Resolver configuration that is associated with the current Amazon Web Services account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resolver_configs.is_none()`.
-    pub fn resolver_configs(&self) -> &[crate::types::ResolverConfig] {
-        self.resolver_configs.as_deref().unwrap_or_default()
+    pub fn resolver_configs(&self) -> & [crate::types::ResolverConfig] {
+        self.resolver_configs.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListResolverConfigsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListResolverConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListResolverConfigsOutput`](crate::operation::list_resolver_configs::ListResolverConfigsOutput).
     pub fn builder() -> crate::operation::list_resolver_configs::builders::ListResolverConfigsOutputBuilder {
@@ -40,7 +41,7 @@ impl ListResolverConfigsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResolverConfigsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) resolver_configs: ::std::option::Option<::std::vec::Vec<crate::types::ResolverConfig>>,
+    pub(crate) resolver_configs: ::std::option::Option<::std::vec::Vec::<crate::types::ResolverConfig>>,
     _request_id: Option<String>,
 }
 impl ListResolverConfigsOutputBuilder {
@@ -53,8 +54,7 @@ impl ListResolverConfigsOutputBuilder {
     /// <p>If a response includes the last of the Resolver configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>
     /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another <code>ListResolverConfigs</code> request. Get the value of <code>NextToken</code> that Amazon Route&nbsp;53 returned in the previous response and include it in <code>NextToken</code> in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If a response includes the last of the Resolver configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>
     /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another <code>ListResolverConfigs</code> request. Get the value of <code>NextToken</code> that Amazon Route&nbsp;53 returned in the previous response and include it in <code>NextToken</code> in the next request.</p>
@@ -68,34 +68,36 @@ impl ListResolverConfigsOutputBuilder {
     /// <p>An array that contains one <code>ResolverConfigs</code> element for each Resolver configuration that is associated with the current Amazon Web Services account.</p>
     pub fn resolver_configs(mut self, input: crate::types::ResolverConfig) -> Self {
         let mut v = self.resolver_configs.unwrap_or_default();
-        v.push(input);
-        self.resolver_configs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resolver_configs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array that contains one <code>ResolverConfigs</code> element for each Resolver configuration that is associated with the current Amazon Web Services account.</p>
-    pub fn set_resolver_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResolverConfig>>) -> Self {
-        self.resolver_configs = input;
-        self
+    pub fn set_resolver_configs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResolverConfig>>) -> Self {
+        self.resolver_configs = input; self
     }
     /// <p>An array that contains one <code>ResolverConfigs</code> element for each Resolver configuration that is associated with the current Amazon Web Services account.</p>
-    pub fn get_resolver_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResolverConfig>> {
+    pub fn get_resolver_configs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResolverConfig>> {
         &self.resolver_configs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListResolverConfigsOutput`](crate::operation::list_resolver_configs::ListResolverConfigsOutput).
     pub fn build(self) -> crate::operation::list_resolver_configs::ListResolverConfigsOutput {
         crate::operation::list_resolver_configs::ListResolverConfigsOutput {
-            next_token: self.next_token,
-            resolver_configs: self.resolver_configs,
+            next_token: self.next_token
+            ,
+            resolver_configs: self.resolver_configs
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateDataSourceInput {
+pub struct UpdateDataSourceInput  {
     /// <p>The identifier of the domain in which to update a data source.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the data source to be updated.</p>
@@ -16,7 +16,7 @@ pub struct UpdateDataSourceInput {
     /// <p>The publish on import setting to be updated as part of the <code>UpdateDataSource</code> action.</p>
     pub publish_on_import: ::std::option::Option<bool>,
     /// <p>The asset forms to be updated as part of the <code>UpdateDataSource</code> action.</p>
-    pub asset_forms_input: ::std::option::Option<::std::vec::Vec<crate::types::FormInput>>,
+    pub asset_forms_input: ::std::option::Option<::std::vec::Vec::<crate::types::FormInput>>,
     /// <p>The schedule to be updated as part of the <code>UpdateDataSource</code> action.</p>
     pub schedule: ::std::option::Option<crate::types::ScheduleConfiguration>,
     /// <p>The configuration to be updated as part of the <code>UpdateDataSource</code> action.</p>
@@ -24,25 +24,25 @@ pub struct UpdateDataSourceInput {
     /// <p>The recommendation to be updated as part of the <code>UpdateDataSource</code> action.</p>
     pub recommendation: ::std::option::Option<crate::types::RecommendationConfiguration>,
 }
-impl UpdateDataSourceInput {
+impl  UpdateDataSourceInput  {
     /// <p>The identifier of the domain in which to update a data source.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The identifier of the data source to be updated.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>The name to be updated as part of the <code>UpdateDataSource</code> action.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description to be updated as part of the <code>UpdateDataSource</code> action.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The enable setting to be updated as part of the <code>UpdateDataSource</code> action.</p>
-    pub fn enable_setting(&self) -> ::std::option::Option<&crate::types::EnableSetting> {
+    pub fn enable_setting(&self) -> ::std::option::Option<& crate::types::EnableSetting> {
         self.enable_setting.as_ref()
     }
     /// <p>The publish on import setting to be updated as part of the <code>UpdateDataSource</code> action.</p>
@@ -50,25 +50,26 @@ impl UpdateDataSourceInput {
         self.publish_on_import
     }
     /// <p>The asset forms to be updated as part of the <code>UpdateDataSource</code> action.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.asset_forms_input.is_none()`.
-    pub fn asset_forms_input(&self) -> &[crate::types::FormInput] {
-        self.asset_forms_input.as_deref().unwrap_or_default()
+    pub fn asset_forms_input(&self) -> & [crate::types::FormInput] {
+        self.asset_forms_input.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The schedule to be updated as part of the <code>UpdateDataSource</code> action.</p>
-    pub fn schedule(&self) -> ::std::option::Option<&crate::types::ScheduleConfiguration> {
+    pub fn schedule(&self) -> ::std::option::Option<& crate::types::ScheduleConfiguration> {
         self.schedule.as_ref()
     }
     /// <p>The configuration to be updated as part of the <code>UpdateDataSource</code> action.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::DataSourceConfigurationInput> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::DataSourceConfigurationInput> {
         self.configuration.as_ref()
     }
     /// <p>The recommendation to be updated as part of the <code>UpdateDataSource</code> action.</p>
-    pub fn recommendation(&self) -> ::std::option::Option<&crate::types::RecommendationConfiguration> {
+    pub fn recommendation(&self) -> ::std::option::Option<& crate::types::RecommendationConfiguration> {
         self.recommendation.as_ref()
     }
 }
-impl ::std::fmt::Debug for UpdateDataSourceInput {
+impl  ::std::fmt::Debug for UpdateDataSourceInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDataSourceInput");
         formatter.field("domain_identifier", &self.domain_identifier);
@@ -101,7 +102,7 @@ pub struct UpdateDataSourceInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) enable_setting: ::std::option::Option<crate::types::EnableSetting>,
     pub(crate) publish_on_import: ::std::option::Option<bool>,
-    pub(crate) asset_forms_input: ::std::option::Option<::std::vec::Vec<crate::types::FormInput>>,
+    pub(crate) asset_forms_input: ::std::option::Option<::std::vec::Vec::<crate::types::FormInput>>,
     pub(crate) schedule: ::std::option::Option<crate::types::ScheduleConfiguration>,
     pub(crate) configuration: ::std::option::Option<crate::types::DataSourceConfigurationInput>,
     pub(crate) recommendation: ::std::option::Option<crate::types::RecommendationConfiguration>,
@@ -115,8 +116,7 @@ impl UpdateDataSourceInputBuilder {
     }
     /// <p>The identifier of the domain in which to update a data source.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The identifier of the domain in which to update a data source.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,8 +130,7 @@ impl UpdateDataSourceInputBuilder {
     }
     /// <p>The identifier of the data source to be updated.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The identifier of the data source to be updated.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,8 +143,7 @@ impl UpdateDataSourceInputBuilder {
     }
     /// <p>The name to be updated as part of the <code>UpdateDataSource</code> action.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name to be updated as part of the <code>UpdateDataSource</code> action.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -158,8 +156,7 @@ impl UpdateDataSourceInputBuilder {
     }
     /// <p>The description to be updated as part of the <code>UpdateDataSource</code> action.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description to be updated as part of the <code>UpdateDataSource</code> action.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -172,8 +169,7 @@ impl UpdateDataSourceInputBuilder {
     }
     /// <p>The enable setting to be updated as part of the <code>UpdateDataSource</code> action.</p>
     pub fn set_enable_setting(mut self, input: ::std::option::Option<crate::types::EnableSetting>) -> Self {
-        self.enable_setting = input;
-        self
+        self.enable_setting = input; self
     }
     /// <p>The enable setting to be updated as part of the <code>UpdateDataSource</code> action.</p>
     pub fn get_enable_setting(&self) -> &::std::option::Option<crate::types::EnableSetting> {
@@ -186,8 +182,7 @@ impl UpdateDataSourceInputBuilder {
     }
     /// <p>The publish on import setting to be updated as part of the <code>UpdateDataSource</code> action.</p>
     pub fn set_publish_on_import(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.publish_on_import = input;
-        self
+        self.publish_on_import = input; self
     }
     /// <p>The publish on import setting to be updated as part of the <code>UpdateDataSource</code> action.</p>
     pub fn get_publish_on_import(&self) -> &::std::option::Option<bool> {
@@ -200,17 +195,16 @@ impl UpdateDataSourceInputBuilder {
     /// <p>The asset forms to be updated as part of the <code>UpdateDataSource</code> action.</p>
     pub fn asset_forms_input(mut self, input: crate::types::FormInput) -> Self {
         let mut v = self.asset_forms_input.unwrap_or_default();
-        v.push(input);
-        self.asset_forms_input = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.asset_forms_input = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The asset forms to be updated as part of the <code>UpdateDataSource</code> action.</p>
-    pub fn set_asset_forms_input(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FormInput>>) -> Self {
-        self.asset_forms_input = input;
-        self
+    pub fn set_asset_forms_input(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FormInput>>) -> Self {
+        self.asset_forms_input = input; self
     }
     /// <p>The asset forms to be updated as part of the <code>UpdateDataSource</code> action.</p>
-    pub fn get_asset_forms_input(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FormInput>> {
+    pub fn get_asset_forms_input(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FormInput>> {
         &self.asset_forms_input
     }
     /// <p>The schedule to be updated as part of the <code>UpdateDataSource</code> action.</p>
@@ -220,8 +214,7 @@ impl UpdateDataSourceInputBuilder {
     }
     /// <p>The schedule to be updated as part of the <code>UpdateDataSource</code> action.</p>
     pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::ScheduleConfiguration>) -> Self {
-        self.schedule = input;
-        self
+        self.schedule = input; self
     }
     /// <p>The schedule to be updated as part of the <code>UpdateDataSource</code> action.</p>
     pub fn get_schedule(&self) -> &::std::option::Option<crate::types::ScheduleConfiguration> {
@@ -234,8 +227,7 @@ impl UpdateDataSourceInputBuilder {
     }
     /// <p>The configuration to be updated as part of the <code>UpdateDataSource</code> action.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::DataSourceConfigurationInput>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>The configuration to be updated as part of the <code>UpdateDataSource</code> action.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::DataSourceConfigurationInput> {
@@ -248,29 +240,38 @@ impl UpdateDataSourceInputBuilder {
     }
     /// <p>The recommendation to be updated as part of the <code>UpdateDataSource</code> action.</p>
     pub fn set_recommendation(mut self, input: ::std::option::Option<crate::types::RecommendationConfiguration>) -> Self {
-        self.recommendation = input;
-        self
+        self.recommendation = input; self
     }
     /// <p>The recommendation to be updated as part of the <code>UpdateDataSource</code> action.</p>
     pub fn get_recommendation(&self) -> &::std::option::Option<crate::types::RecommendationConfiguration> {
         &self.recommendation
     }
     /// Consumes the builder and constructs a [`UpdateDataSourceInput`](crate::operation::update_data_source::UpdateDataSourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_data_source::UpdateDataSourceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_data_source::UpdateDataSourceInput {
-            domain_identifier: self.domain_identifier,
-            identifier: self.identifier,
-            name: self.name,
-            description: self.description,
-            enable_setting: self.enable_setting,
-            publish_on_import: self.publish_on_import,
-            asset_forms_input: self.asset_forms_input,
-            schedule: self.schedule,
-            configuration: self.configuration,
-            recommendation: self.recommendation,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_data_source::UpdateDataSourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_data_source::UpdateDataSourceInput {
+                domain_identifier: self.domain_identifier
+                ,
+                identifier: self.identifier
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                enable_setting: self.enable_setting
+                ,
+                publish_on_import: self.publish_on_import
+                ,
+                asset_forms_input: self.asset_forms_input
+                ,
+                schedule: self.schedule
+                ,
+                configuration: self.configuration
+                ,
+                recommendation: self.recommendation
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateDataSourceInputBuilder {
@@ -289,3 +290,4 @@ impl ::std::fmt::Debug for UpdateDataSourceInputBuilder {
         formatter.finish()
     }
 }
+

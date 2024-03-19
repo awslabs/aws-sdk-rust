@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeJobInput {
+pub struct DescribeJobInput  {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the job whose information you want to retrieve.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeJobInput {
+impl  DescribeJobInput  {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The ID for the job whose information you want to retrieve.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeJobInputBuilder {
     }
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl DescribeJobInputBuilder {
     }
     /// <p>The ID for the job whose information you want to retrieve.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The ID for the job whose information you want to retrieve.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,9 +63,14 @@ impl DescribeJobInputBuilder {
     }
     /// Consumes the builder and constructs a [`DescribeJobInput`](crate::operation::describe_job::DescribeJobInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_job::DescribeJobInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_job::DescribeJobInput {
-            account_id: self.account_id,
-            job_id: self.job_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::describe_job::DescribeJobInput {
+                account_id: self.account_id
+                ,
+                job_id: self.job_id
+                ,
+            }
+        )
     }
 }
+

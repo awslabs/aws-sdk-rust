@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let scheduleactivitytaskfailedcause = unimplemented!();
 /// match scheduleactivitytaskfailedcause {
@@ -39,16 +39,14 @@
 /// Specifically, when `scheduleactivitytaskfailedcause` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ScheduleActivityTaskFailedCause::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ScheduleActivityTaskFailedCause {
     #[allow(missing_docs)] // documentation missing in model
     ActivityCreationRateExceeded,
@@ -74,100 +72,89 @@ pub enum ScheduleActivityTaskFailedCause {
     OperationNotPermitted,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ScheduleActivityTaskFailedCause {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVITY_CREATION_RATE_EXCEEDED" => ScheduleActivityTaskFailedCause::ActivityCreationRateExceeded,
-            "ACTIVITY_ID_ALREADY_IN_USE" => ScheduleActivityTaskFailedCause::ActivityIdAlreadyInUse,
-            "ACTIVITY_TYPE_DEPRECATED" => ScheduleActivityTaskFailedCause::ActivityTypeDeprecated,
-            "ACTIVITY_TYPE_DOES_NOT_EXIST" => ScheduleActivityTaskFailedCause::ActivityTypeDoesNotExist,
-            "DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED" => ScheduleActivityTaskFailedCause::DefaultHeartbeatTimeoutUndefined,
-            "DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED" => ScheduleActivityTaskFailedCause::DefaultScheduleToCloseTimeoutUndefined,
-            "DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED" => ScheduleActivityTaskFailedCause::DefaultScheduleToStartTimeoutUndefined,
-            "DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED" => ScheduleActivityTaskFailedCause::DefaultStartToCloseTimeoutUndefined,
-            "DEFAULT_TASK_LIST_UNDEFINED" => ScheduleActivityTaskFailedCause::DefaultTaskListUndefined,
-            "OPEN_ACTIVITIES_LIMIT_EXCEEDED" => ScheduleActivityTaskFailedCause::OpenActivitiesLimitExceeded,
-            "OPERATION_NOT_PERMITTED" => ScheduleActivityTaskFailedCause::OperationNotPermitted,
-            other => ScheduleActivityTaskFailedCause::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ACTIVITY_CREATION_RATE_EXCEEDED" => ScheduleActivityTaskFailedCause::ActivityCreationRateExceeded,
+"ACTIVITY_ID_ALREADY_IN_USE" => ScheduleActivityTaskFailedCause::ActivityIdAlreadyInUse,
+"ACTIVITY_TYPE_DEPRECATED" => ScheduleActivityTaskFailedCause::ActivityTypeDeprecated,
+"ACTIVITY_TYPE_DOES_NOT_EXIST" => ScheduleActivityTaskFailedCause::ActivityTypeDoesNotExist,
+"DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED" => ScheduleActivityTaskFailedCause::DefaultHeartbeatTimeoutUndefined,
+"DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED" => ScheduleActivityTaskFailedCause::DefaultScheduleToCloseTimeoutUndefined,
+"DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED" => ScheduleActivityTaskFailedCause::DefaultScheduleToStartTimeoutUndefined,
+"DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED" => ScheduleActivityTaskFailedCause::DefaultStartToCloseTimeoutUndefined,
+"DEFAULT_TASK_LIST_UNDEFINED" => ScheduleActivityTaskFailedCause::DefaultTaskListUndefined,
+"OPEN_ACTIVITIES_LIMIT_EXCEEDED" => ScheduleActivityTaskFailedCause::OpenActivitiesLimitExceeded,
+"OPERATION_NOT_PERMITTED" => ScheduleActivityTaskFailedCause::OperationNotPermitted,
+other => ScheduleActivityTaskFailedCause::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ScheduleActivityTaskFailedCause {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ScheduleActivityTaskFailedCause::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ScheduleActivityTaskFailedCause::from(s))
+                    }
+                }
 impl ScheduleActivityTaskFailedCause {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ScheduleActivityTaskFailedCause::ActivityCreationRateExceeded => "ACTIVITY_CREATION_RATE_EXCEEDED",
-            ScheduleActivityTaskFailedCause::ActivityIdAlreadyInUse => "ACTIVITY_ID_ALREADY_IN_USE",
-            ScheduleActivityTaskFailedCause::ActivityTypeDeprecated => "ACTIVITY_TYPE_DEPRECATED",
-            ScheduleActivityTaskFailedCause::ActivityTypeDoesNotExist => "ACTIVITY_TYPE_DOES_NOT_EXIST",
-            ScheduleActivityTaskFailedCause::DefaultHeartbeatTimeoutUndefined => "DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED",
-            ScheduleActivityTaskFailedCause::DefaultScheduleToCloseTimeoutUndefined => "DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED",
-            ScheduleActivityTaskFailedCause::DefaultScheduleToStartTimeoutUndefined => "DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED",
-            ScheduleActivityTaskFailedCause::DefaultStartToCloseTimeoutUndefined => "DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED",
-            ScheduleActivityTaskFailedCause::DefaultTaskListUndefined => "DEFAULT_TASK_LIST_UNDEFINED",
-            ScheduleActivityTaskFailedCause::OpenActivitiesLimitExceeded => "OPEN_ACTIVITIES_LIMIT_EXCEEDED",
-            ScheduleActivityTaskFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
-            ScheduleActivityTaskFailedCause::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVITY_CREATION_RATE_EXCEEDED",
-            "ACTIVITY_ID_ALREADY_IN_USE",
-            "ACTIVITY_TYPE_DEPRECATED",
-            "ACTIVITY_TYPE_DOES_NOT_EXIST",
-            "DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED",
-            "DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED",
-            "DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED",
-            "DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED",
-            "DEFAULT_TASK_LIST_UNDEFINED",
-            "OPEN_ACTIVITIES_LIMIT_EXCEEDED",
-            "OPERATION_NOT_PERMITTED",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ScheduleActivityTaskFailedCause::ActivityCreationRateExceeded => "ACTIVITY_CREATION_RATE_EXCEEDED",
+    ScheduleActivityTaskFailedCause::ActivityIdAlreadyInUse => "ACTIVITY_ID_ALREADY_IN_USE",
+    ScheduleActivityTaskFailedCause::ActivityTypeDeprecated => "ACTIVITY_TYPE_DEPRECATED",
+    ScheduleActivityTaskFailedCause::ActivityTypeDoesNotExist => "ACTIVITY_TYPE_DOES_NOT_EXIST",
+    ScheduleActivityTaskFailedCause::DefaultHeartbeatTimeoutUndefined => "DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED",
+    ScheduleActivityTaskFailedCause::DefaultScheduleToCloseTimeoutUndefined => "DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED",
+    ScheduleActivityTaskFailedCause::DefaultScheduleToStartTimeoutUndefined => "DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED",
+    ScheduleActivityTaskFailedCause::DefaultStartToCloseTimeoutUndefined => "DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED",
+    ScheduleActivityTaskFailedCause::DefaultTaskListUndefined => "DEFAULT_TASK_LIST_UNDEFINED",
+    ScheduleActivityTaskFailedCause::OpenActivitiesLimitExceeded => "OPEN_ACTIVITIES_LIMIT_EXCEEDED",
+    ScheduleActivityTaskFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
+    ScheduleActivityTaskFailedCause::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVITY_CREATION_RATE_EXCEEDED", "ACTIVITY_ID_ALREADY_IN_USE", "ACTIVITY_TYPE_DEPRECATED", "ACTIVITY_TYPE_DOES_NOT_EXIST", "DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED", "DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED", "DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED", "DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED", "DEFAULT_TASK_LIST_UNDEFINED", "OPEN_ACTIVITIES_LIMIT_EXCEEDED", "OPERATION_NOT_PERMITTED"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ScheduleActivityTaskFailedCause {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ScheduleActivityTaskFailedCause {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ScheduleActivityTaskFailedCause {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ScheduleActivityTaskFailedCause::ActivityCreationRateExceeded => write!(f, "ACTIVITY_CREATION_RATE_EXCEEDED"),
-            ScheduleActivityTaskFailedCause::ActivityIdAlreadyInUse => write!(f, "ACTIVITY_ID_ALREADY_IN_USE"),
-            ScheduleActivityTaskFailedCause::ActivityTypeDeprecated => write!(f, "ACTIVITY_TYPE_DEPRECATED"),
-            ScheduleActivityTaskFailedCause::ActivityTypeDoesNotExist => write!(f, "ACTIVITY_TYPE_DOES_NOT_EXIST"),
-            ScheduleActivityTaskFailedCause::DefaultHeartbeatTimeoutUndefined => write!(f, "DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED"),
-            ScheduleActivityTaskFailedCause::DefaultScheduleToCloseTimeoutUndefined => write!(f, "DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED"),
-            ScheduleActivityTaskFailedCause::DefaultScheduleToStartTimeoutUndefined => write!(f, "DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED"),
-            ScheduleActivityTaskFailedCause::DefaultStartToCloseTimeoutUndefined => write!(f, "DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED"),
-            ScheduleActivityTaskFailedCause::DefaultTaskListUndefined => write!(f, "DEFAULT_TASK_LIST_UNDEFINED"),
-            ScheduleActivityTaskFailedCause::OpenActivitiesLimitExceeded => write!(f, "OPEN_ACTIVITIES_LIMIT_EXCEEDED"),
-            ScheduleActivityTaskFailedCause::OperationNotPermitted => write!(f, "OPERATION_NOT_PERMITTED"),
-            ScheduleActivityTaskFailedCause::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ScheduleActivityTaskFailedCause::ActivityCreationRateExceeded => write!(f, "ACTIVITY_CREATION_RATE_EXCEEDED"),
+ScheduleActivityTaskFailedCause::ActivityIdAlreadyInUse => write!(f, "ACTIVITY_ID_ALREADY_IN_USE"),
+ScheduleActivityTaskFailedCause::ActivityTypeDeprecated => write!(f, "ACTIVITY_TYPE_DEPRECATED"),
+ScheduleActivityTaskFailedCause::ActivityTypeDoesNotExist => write!(f, "ACTIVITY_TYPE_DOES_NOT_EXIST"),
+ScheduleActivityTaskFailedCause::DefaultHeartbeatTimeoutUndefined => write!(f, "DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED"),
+ScheduleActivityTaskFailedCause::DefaultScheduleToCloseTimeoutUndefined => write!(f, "DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED"),
+ScheduleActivityTaskFailedCause::DefaultScheduleToStartTimeoutUndefined => write!(f, "DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED"),
+ScheduleActivityTaskFailedCause::DefaultStartToCloseTimeoutUndefined => write!(f, "DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED"),
+ScheduleActivityTaskFailedCause::DefaultTaskListUndefined => write!(f, "DEFAULT_TASK_LIST_UNDEFINED"),
+ScheduleActivityTaskFailedCause::OpenActivitiesLimitExceeded => write!(f, "OPEN_ACTIVITIES_LIMIT_EXCEEDED"),
+ScheduleActivityTaskFailedCause::OperationNotPermitted => write!(f, "OPERATION_NOT_PERMITTED"),
+ScheduleActivityTaskFailedCause::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

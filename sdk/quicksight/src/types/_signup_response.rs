@@ -3,7 +3,7 @@
 /// <p>A <code>SignupResponse</code> object that contains a summary of a newly created account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SignupResponse {
+pub struct SignupResponse  {
     /// <p>A Boolean that is <code>TRUE</code> if the Amazon QuickSight uses IAM as an authentication method.</p>
     pub iam_user: bool,
     /// <p>The user login name for your Amazon QuickSight account.</p>
@@ -13,21 +13,21 @@ pub struct SignupResponse {
     /// <p>The type of Active Directory that is being used to authenticate the Amazon QuickSight account. Valid values are <code>SIMPLE_AD</code>, <code>AD_CONNECTOR</code>, and <code>MICROSOFT_AD</code>.</p>
     pub directory_type: ::std::option::Option<::std::string::String>,
 }
-impl SignupResponse {
+impl  SignupResponse  {
     /// <p>A Boolean that is <code>TRUE</code> if the Amazon QuickSight uses IAM as an authentication method.</p>
     pub fn iam_user(&self) -> bool {
         self.iam_user
     }
     /// <p>The user login name for your Amazon QuickSight account.</p>
-    pub fn user_login_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_login_name(&self) -> ::std::option::Option<& str> {
         self.user_login_name.as_deref()
     }
     /// <p>The name of your Amazon QuickSight account.</p>
-    pub fn account_name(&self) -> ::std::option::Option<&str> {
+    pub fn account_name(&self) -> ::std::option::Option<& str> {
         self.account_name.as_deref()
     }
     /// <p>The type of Active Directory that is being used to authenticate the Amazon QuickSight account. Valid values are <code>SIMPLE_AD</code>, <code>AD_CONNECTOR</code>, and <code>MICROSOFT_AD</code>.</p>
-    pub fn directory_type(&self) -> ::std::option::Option<&str> {
+    pub fn directory_type(&self) -> ::std::option::Option<& str> {
         self.directory_type.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl SignupResponseBuilder {
     }
     /// <p>A Boolean that is <code>TRUE</code> if the Amazon QuickSight uses IAM as an authentication method.</p>
     pub fn set_iam_user(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.iam_user = input;
-        self
+        self.iam_user = input; self
     }
     /// <p>A Boolean that is <code>TRUE</code> if the Amazon QuickSight uses IAM as an authentication method.</p>
     pub fn get_iam_user(&self) -> &::std::option::Option<bool> {
@@ -69,8 +68,7 @@ impl SignupResponseBuilder {
     }
     /// <p>The user login name for your Amazon QuickSight account.</p>
     pub fn set_user_login_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_login_name = input;
-        self
+        self.user_login_name = input; self
     }
     /// <p>The user login name for your Amazon QuickSight account.</p>
     pub fn get_user_login_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl SignupResponseBuilder {
     }
     /// <p>The name of your Amazon QuickSight account.</p>
     pub fn set_account_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_name = input;
-        self
+        self.account_name = input; self
     }
     /// <p>The name of your Amazon QuickSight account.</p>
     pub fn get_account_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl SignupResponseBuilder {
     }
     /// <p>The type of Active Directory that is being used to authenticate the Amazon QuickSight account. Valid values are <code>SIMPLE_AD</code>, <code>AD_CONNECTOR</code>, and <code>MICROSOFT_AD</code>.</p>
     pub fn set_directory_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_type = input;
-        self
+        self.directory_type = input; self
     }
     /// <p>The type of Active Directory that is being used to authenticate the Amazon QuickSight account. Valid values are <code>SIMPLE_AD</code>, <code>AD_CONNECTOR</code>, and <code>MICROSOFT_AD</code>.</p>
     pub fn get_directory_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,16 @@ impl SignupResponseBuilder {
     /// Consumes the builder and constructs a [`SignupResponse`](crate::types::SignupResponse).
     pub fn build(self) -> crate::types::SignupResponse {
         crate::types::SignupResponse {
-            iam_user: self.iam_user.unwrap_or_default(),
-            user_login_name: self.user_login_name,
-            account_name: self.account_name,
-            directory_type: self.directory_type,
+            iam_user: self.iam_user
+                .unwrap_or_default()
+            ,
+            user_login_name: self.user_login_name
+            ,
+            account_name: self.account_name
+            ,
+            directory_type: self.directory_type
+            ,
         }
     }
 }
+

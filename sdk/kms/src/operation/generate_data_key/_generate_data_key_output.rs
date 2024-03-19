@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GenerateDataKeyOutput {
+pub struct GenerateDataKeyOutput  {
     /// <p>The encrypted copy of the data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     pub ciphertext_blob: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The plaintext data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded. Use this data key to encrypt your data outside of KMS. Then, remove it from memory as soon as possible.</p>
@@ -15,27 +15,27 @@ pub struct GenerateDataKeyOutput {
     pub ciphertext_for_recipient: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,
 }
-impl GenerateDataKeyOutput {
+impl  GenerateDataKeyOutput  {
     /// <p>The encrypted copy of the data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
-    pub fn ciphertext_blob(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn ciphertext_blob(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.ciphertext_blob.as_ref()
     }
     /// <p>The plaintext data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded. Use this data key to encrypt your data outside of KMS. Then, remove it from memory as soon as possible.</p>
     /// <p>If the response includes the <code>CiphertextForRecipient</code> field, the <code>Plaintext</code> field is null or empty.</p>
-    pub fn plaintext(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn plaintext(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.plaintext.as_ref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the data key.</p>
-    pub fn key_id(&self) -> ::std::option::Option<&str> {
+    pub fn key_id(&self) -> ::std::option::Option<& str> {
         self.key_id.as_deref()
     }
     /// <p>The plaintext data key encrypted with the public key from the Nitro enclave. This ciphertext can be decrypted only by using a private key in the Nitro enclave.</p>
     /// <p>This field is included in the response only when the <code>Recipient</code> parameter in the request includes a valid attestation document from an Amazon Web Services Nitro enclave. For information about the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    pub fn ciphertext_for_recipient(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn ciphertext_for_recipient(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.ciphertext_for_recipient.as_ref()
     }
 }
-impl ::std::fmt::Debug for GenerateDataKeyOutput {
+impl  ::std::fmt::Debug for GenerateDataKeyOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GenerateDataKeyOutput");
         formatter.field("ciphertext_blob", &self.ciphertext_blob);
@@ -47,10 +47,10 @@ impl ::std::fmt::Debug for GenerateDataKeyOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GenerateDataKeyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GenerateDataKeyOutput {
     /// Creates a new builder-style object to manufacture [`GenerateDataKeyOutput`](crate::operation::generate_data_key::GenerateDataKeyOutput).
     pub fn builder() -> crate::operation::generate_data_key::builders::GenerateDataKeyOutputBuilder {
@@ -76,8 +76,7 @@ impl GenerateDataKeyOutputBuilder {
     }
     /// <p>The encrypted copy of the data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     pub fn set_ciphertext_blob(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.ciphertext_blob = input;
-        self
+        self.ciphertext_blob = input; self
     }
     /// <p>The encrypted copy of the data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     pub fn get_ciphertext_blob(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -92,8 +91,7 @@ impl GenerateDataKeyOutputBuilder {
     /// <p>The plaintext data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded. Use this data key to encrypt your data outside of KMS. Then, remove it from memory as soon as possible.</p>
     /// <p>If the response includes the <code>CiphertextForRecipient</code> field, the <code>Plaintext</code> field is null or empty.</p>
     pub fn set_plaintext(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.plaintext = input;
-        self
+        self.plaintext = input; self
     }
     /// <p>The plaintext data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded. Use this data key to encrypt your data outside of KMS. Then, remove it from memory as soon as possible.</p>
     /// <p>If the response includes the <code>CiphertextForRecipient</code> field, the <code>Plaintext</code> field is null or empty.</p>
@@ -107,8 +105,7 @@ impl GenerateDataKeyOutputBuilder {
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the data key.</p>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_id = input;
-        self
+        self.key_id = input; self
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the data key.</p>
     pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +120,7 @@ impl GenerateDataKeyOutputBuilder {
     /// <p>The plaintext data key encrypted with the public key from the Nitro enclave. This ciphertext can be decrypted only by using a private key in the Nitro enclave.</p>
     /// <p>This field is included in the response only when the <code>Recipient</code> parameter in the request includes a valid attestation document from an Amazon Web Services Nitro enclave. For information about the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn set_ciphertext_for_recipient(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.ciphertext_for_recipient = input;
-        self
+        self.ciphertext_for_recipient = input; self
     }
     /// <p>The plaintext data key encrypted with the public key from the Nitro enclave. This ciphertext can be decrypted only by using a private key in the Nitro enclave.</p>
     /// <p>This field is included in the response only when the <code>Recipient</code> parameter in the request includes a valid attestation document from an Amazon Web Services Nitro enclave. For information about the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
@@ -132,21 +128,25 @@ impl GenerateDataKeyOutputBuilder {
         &self.ciphertext_for_recipient
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GenerateDataKeyOutput`](crate::operation::generate_data_key::GenerateDataKeyOutput).
     pub fn build(self) -> crate::operation::generate_data_key::GenerateDataKeyOutput {
         crate::operation::generate_data_key::GenerateDataKeyOutput {
-            ciphertext_blob: self.ciphertext_blob,
-            plaintext: self.plaintext,
-            key_id: self.key_id,
-            ciphertext_for_recipient: self.ciphertext_for_recipient,
+            ciphertext_blob: self.ciphertext_blob
+            ,
+            plaintext: self.plaintext
+            ,
+            key_id: self.key_id
+            ,
+            ciphertext_for_recipient: self.ciphertext_for_recipient
+            ,
             _request_id: self._request_id,
         }
     }
@@ -162,3 +162,4 @@ impl ::std::fmt::Debug for GenerateDataKeyOutputBuilder {
         formatter.finish()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateContactInput {
+pub struct UpdateContactInput  {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan you're updating.</p>
     pub contact_id: ::std::option::Option<::std::string::String>,
     /// <p>The full name of the contact or escalation plan.</p>
@@ -10,17 +10,17 @@ pub struct UpdateContactInput {
     /// <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts.</p>
     pub plan: ::std::option::Option<crate::types::Plan>,
 }
-impl UpdateContactInput {
+impl  UpdateContactInput  {
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan you're updating.</p>
-    pub fn contact_id(&self) -> ::std::option::Option<&str> {
+    pub fn contact_id(&self) -> ::std::option::Option<& str> {
         self.contact_id.as_deref()
     }
     /// <p>The full name of the contact or escalation plan.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts.</p>
-    pub fn plan(&self) -> ::std::option::Option<&crate::types::Plan> {
+    pub fn plan(&self) -> ::std::option::Option<& crate::types::Plan> {
         self.plan.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateContactInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan you're updating.</p>
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_id = input;
-        self
+        self.contact_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan you're updating.</p>
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UpdateContactInputBuilder {
     }
     /// <p>The full name of the contact or escalation plan.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The full name of the contact or escalation plan.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,21 +74,24 @@ impl UpdateContactInputBuilder {
     }
     /// <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts.</p>
     pub fn set_plan(mut self, input: ::std::option::Option<crate::types::Plan>) -> Self {
-        self.plan = input;
-        self
+        self.plan = input; self
     }
     /// <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts.</p>
     pub fn get_plan(&self) -> &::std::option::Option<crate::types::Plan> {
         &self.plan
     }
     /// Consumes the builder and constructs a [`UpdateContactInput`](crate::operation::update_contact::UpdateContactInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_contact::UpdateContactInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_contact::UpdateContactInput {
-            contact_id: self.contact_id,
-            display_name: self.display_name,
-            plan: self.plan,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_contact::UpdateContactInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_contact::UpdateContactInput {
+                contact_id: self.contact_id
+                ,
+                display_name: self.display_name
+                ,
+                plan: self.plan
+                ,
+            }
+        )
     }
 }
+

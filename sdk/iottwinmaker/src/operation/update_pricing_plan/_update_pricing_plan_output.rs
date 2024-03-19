@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePricingPlanOutput {
+pub struct UpdatePricingPlanOutput  {
     /// <p>Update the current pricing plan.</p>
     pub current_pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
     /// <p>Update the pending pricing plan.</p>
     pub pending_pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
     _request_id: Option<String>,
 }
-impl UpdatePricingPlanOutput {
+impl  UpdatePricingPlanOutput  {
     /// <p>Update the current pricing plan.</p>
-    pub fn current_pricing_plan(&self) -> ::std::option::Option<&crate::types::PricingPlan> {
+    pub fn current_pricing_plan(&self) -> ::std::option::Option<& crate::types::PricingPlan> {
         self.current_pricing_plan.as_ref()
     }
     /// <p>Update the pending pricing plan.</p>
-    pub fn pending_pricing_plan(&self) -> ::std::option::Option<&crate::types::PricingPlan> {
+    pub fn pending_pricing_plan(&self) -> ::std::option::Option<& crate::types::PricingPlan> {
         self.pending_pricing_plan.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdatePricingPlanOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdatePricingPlanOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePricingPlanOutput`](crate::operation::update_pricing_plan::UpdatePricingPlanOutput).
     pub fn builder() -> crate::operation::update_pricing_plan::builders::UpdatePricingPlanOutputBuilder {
@@ -48,8 +48,7 @@ impl UpdatePricingPlanOutputBuilder {
     }
     /// <p>Update the current pricing plan.</p>
     pub fn set_current_pricing_plan(mut self, input: ::std::option::Option<crate::types::PricingPlan>) -> Self {
-        self.current_pricing_plan = input;
-        self
+        self.current_pricing_plan = input; self
     }
     /// <p>Update the current pricing plan.</p>
     pub fn get_current_pricing_plan(&self) -> &::std::option::Option<crate::types::PricingPlan> {
@@ -62,28 +61,30 @@ impl UpdatePricingPlanOutputBuilder {
     }
     /// <p>Update the pending pricing plan.</p>
     pub fn set_pending_pricing_plan(mut self, input: ::std::option::Option<crate::types::PricingPlan>) -> Self {
-        self.pending_pricing_plan = input;
-        self
+        self.pending_pricing_plan = input; self
     }
     /// <p>Update the pending pricing plan.</p>
     pub fn get_pending_pricing_plan(&self) -> &::std::option::Option<crate::types::PricingPlan> {
         &self.pending_pricing_plan
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdatePricingPlanOutput`](crate::operation::update_pricing_plan::UpdatePricingPlanOutput).
     pub fn build(self) -> crate::operation::update_pricing_plan::UpdatePricingPlanOutput {
         crate::operation::update_pricing_plan::UpdatePricingPlanOutput {
-            current_pricing_plan: self.current_pricing_plan,
-            pending_pricing_plan: self.pending_pricing_plan,
+            current_pricing_plan: self.current_pricing_plan
+            ,
+            pending_pricing_plan: self.pending_pricing_plan
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

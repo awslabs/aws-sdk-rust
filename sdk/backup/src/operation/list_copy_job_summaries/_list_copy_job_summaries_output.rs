@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCopyJobSummariesOutput {
+pub struct ListCopyJobSummariesOutput  {
     /// <p>This return shows a summary that contains Region, Account, State, ResourceType, MessageCategory, StartTime, EndTime, and Count of included jobs.</p>
-    pub copy_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::CopyJobSummary>>,
+    pub copy_job_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::CopyJobSummary>>,
     /// <p>This is the period that sets the boundaries for returned results.</p>
     /// <ul>
     /// <li>
@@ -19,12 +19,13 @@ pub struct ListCopyJobSummariesOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListCopyJobSummariesOutput {
+impl  ListCopyJobSummariesOutput  {
     /// <p>This return shows a summary that contains Region, Account, State, ResourceType, MessageCategory, StartTime, EndTime, and Count of included jobs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.copy_job_summaries.is_none()`.
-    pub fn copy_job_summaries(&self) -> &[crate::types::CopyJobSummary] {
-        self.copy_job_summaries.as_deref().unwrap_or_default()
+    pub fn copy_job_summaries(&self) -> & [crate::types::CopyJobSummary] {
+        self.copy_job_summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>This is the period that sets the boundaries for returned results.</p>
     /// <ul>
@@ -35,19 +36,19 @@ impl ListCopyJobSummariesOutput {
     /// <li>
     /// <p><code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p></li>
     /// </ul>
-    pub fn aggregation_period(&self) -> ::std::option::Option<&str> {
+    pub fn aggregation_period(&self) -> ::std::option::Option<& str> {
         self.aggregation_period.as_deref()
     }
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>MaxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListCopyJobSummariesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListCopyJobSummariesOutput {
     /// Creates a new builder-style object to manufacture [`ListCopyJobSummariesOutput`](crate::operation::list_copy_job_summaries::ListCopyJobSummariesOutput).
     pub fn builder() -> crate::operation::list_copy_job_summaries::builders::ListCopyJobSummariesOutputBuilder {
@@ -59,7 +60,7 @@ impl ListCopyJobSummariesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCopyJobSummariesOutputBuilder {
-    pub(crate) copy_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::CopyJobSummary>>,
+    pub(crate) copy_job_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::CopyJobSummary>>,
     pub(crate) aggregation_period: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -72,17 +73,16 @@ impl ListCopyJobSummariesOutputBuilder {
     /// <p>This return shows a summary that contains Region, Account, State, ResourceType, MessageCategory, StartTime, EndTime, and Count of included jobs.</p>
     pub fn copy_job_summaries(mut self, input: crate::types::CopyJobSummary) -> Self {
         let mut v = self.copy_job_summaries.unwrap_or_default();
-        v.push(input);
-        self.copy_job_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.copy_job_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>This return shows a summary that contains Region, Account, State, ResourceType, MessageCategory, StartTime, EndTime, and Count of included jobs.</p>
-    pub fn set_copy_job_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CopyJobSummary>>) -> Self {
-        self.copy_job_summaries = input;
-        self
+    pub fn set_copy_job_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CopyJobSummary>>) -> Self {
+        self.copy_job_summaries = input; self
     }
     /// <p>This return shows a summary that contains Region, Account, State, ResourceType, MessageCategory, StartTime, EndTime, and Count of included jobs.</p>
-    pub fn get_copy_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CopyJobSummary>> {
+    pub fn get_copy_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CopyJobSummary>> {
         &self.copy_job_summaries
     }
     /// <p>This is the period that sets the boundaries for returned results.</p>
@@ -108,8 +108,7 @@ impl ListCopyJobSummariesOutputBuilder {
     /// <p><code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p></li>
     /// </ul>
     pub fn set_aggregation_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aggregation_period = input;
-        self
+        self.aggregation_period = input; self
     }
     /// <p>This is the period that sets the boundaries for returned results.</p>
     /// <ul>
@@ -130,29 +129,32 @@ impl ListCopyJobSummariesOutputBuilder {
     }
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>MaxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>MaxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListCopyJobSummariesOutput`](crate::operation::list_copy_job_summaries::ListCopyJobSummariesOutput).
     pub fn build(self) -> crate::operation::list_copy_job_summaries::ListCopyJobSummariesOutput {
         crate::operation::list_copy_job_summaries::ListCopyJobSummariesOutput {
-            copy_job_summaries: self.copy_job_summaries,
-            aggregation_period: self.aggregation_period,
-            next_token: self.next_token,
+            copy_job_summaries: self.copy_job_summaries
+            ,
+            aggregation_period: self.aggregation_period
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,32 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDeleteAutomationRulesOutput {
+pub struct BatchDeleteAutomationRulesOutput  {
     /// <p>A list of properly processed rule ARNs.</p>
-    pub processed_automation_rules: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub processed_automation_rules: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of objects containing <code>RuleArn</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. This parameter tells you which automation rules the request didn't delete and why.</p>
-    pub unprocessed_automation_rules: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAutomationRule>>,
+    pub unprocessed_automation_rules: ::std::option::Option<::std::vec::Vec::<crate::types::UnprocessedAutomationRule>>,
     _request_id: Option<String>,
 }
-impl BatchDeleteAutomationRulesOutput {
+impl  BatchDeleteAutomationRulesOutput  {
     /// <p>A list of properly processed rule ARNs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.processed_automation_rules.is_none()`.
-    pub fn processed_automation_rules(&self) -> &[::std::string::String] {
-        self.processed_automation_rules.as_deref().unwrap_or_default()
+    pub fn processed_automation_rules(&self) -> & [::std::string::String] {
+        self.processed_automation_rules.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of objects containing <code>RuleArn</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. This parameter tells you which automation rules the request didn't delete and why.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unprocessed_automation_rules.is_none()`.
-    pub fn unprocessed_automation_rules(&self) -> &[crate::types::UnprocessedAutomationRule] {
-        self.unprocessed_automation_rules.as_deref().unwrap_or_default()
+    pub fn unprocessed_automation_rules(&self) -> & [crate::types::UnprocessedAutomationRule] {
+        self.unprocessed_automation_rules.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchDeleteAutomationRulesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchDeleteAutomationRulesOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteAutomationRulesOutput`](crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesOutput).
     pub fn builder() -> crate::operation::batch_delete_automation_rules::builders::BatchDeleteAutomationRulesOutputBuilder {
@@ -39,8 +41,8 @@ impl BatchDeleteAutomationRulesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteAutomationRulesOutputBuilder {
-    pub(crate) processed_automation_rules: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) unprocessed_automation_rules: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAutomationRule>>,
+    pub(crate) processed_automation_rules: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) unprocessed_automation_rules: ::std::option::Option<::std::vec::Vec::<crate::types::UnprocessedAutomationRule>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteAutomationRulesOutputBuilder {
@@ -51,17 +53,16 @@ impl BatchDeleteAutomationRulesOutputBuilder {
     /// <p>A list of properly processed rule ARNs.</p>
     pub fn processed_automation_rules(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.processed_automation_rules.unwrap_or_default();
-        v.push(input.into());
-        self.processed_automation_rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.processed_automation_rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of properly processed rule ARNs.</p>
-    pub fn set_processed_automation_rules(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.processed_automation_rules = input;
-        self
+    pub fn set_processed_automation_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.processed_automation_rules = input; self
     }
     /// <p>A list of properly processed rule ARNs.</p>
-    pub fn get_processed_automation_rules(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_processed_automation_rules(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.processed_automation_rules
     }
     /// Appends an item to `unprocessed_automation_rules`.
@@ -71,37 +72,36 @@ impl BatchDeleteAutomationRulesOutputBuilder {
     /// <p>A list of objects containing <code>RuleArn</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. This parameter tells you which automation rules the request didn't delete and why.</p>
     pub fn unprocessed_automation_rules(mut self, input: crate::types::UnprocessedAutomationRule) -> Self {
         let mut v = self.unprocessed_automation_rules.unwrap_or_default();
-        v.push(input);
-        self.unprocessed_automation_rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.unprocessed_automation_rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of objects containing <code>RuleArn</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. This parameter tells you which automation rules the request didn't delete and why.</p>
-    pub fn set_unprocessed_automation_rules(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAutomationRule>>,
-    ) -> Self {
-        self.unprocessed_automation_rules = input;
-        self
+    pub fn set_unprocessed_automation_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UnprocessedAutomationRule>>) -> Self {
+        self.unprocessed_automation_rules = input; self
     }
     /// <p>A list of objects containing <code>RuleArn</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. This parameter tells you which automation rules the request didn't delete and why.</p>
-    pub fn get_unprocessed_automation_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAutomationRule>> {
+    pub fn get_unprocessed_automation_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UnprocessedAutomationRule>> {
         &self.unprocessed_automation_rules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchDeleteAutomationRulesOutput`](crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesOutput).
     pub fn build(self) -> crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesOutput {
         crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesOutput {
-            processed_automation_rules: self.processed_automation_rules,
-            unprocessed_automation_rules: self.unprocessed_automation_rules,
+            processed_automation_rules: self.processed_automation_rules
+            ,
+            unprocessed_automation_rules: self.unprocessed_automation_rules
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>The color configuration of a waterfall visual.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WaterfallChartColorConfiguration {
+pub struct WaterfallChartColorConfiguration  {
     /// <p>The color configuration for individual groups within a waterfall visual.</p>
     pub group_color_configuration: ::std::option::Option<crate::types::WaterfallChartGroupColorConfiguration>,
 }
-impl WaterfallChartColorConfiguration {
+impl  WaterfallChartColorConfiguration  {
     /// <p>The color configuration for individual groups within a waterfall visual.</p>
-    pub fn group_color_configuration(&self) -> ::std::option::Option<&crate::types::WaterfallChartGroupColorConfiguration> {
+    pub fn group_color_configuration(&self) -> ::std::option::Option<& crate::types::WaterfallChartGroupColorConfiguration> {
         self.group_color_configuration.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl WaterfallChartColorConfigurationBuilder {
     }
     /// <p>The color configuration for individual groups within a waterfall visual.</p>
     pub fn set_group_color_configuration(mut self, input: ::std::option::Option<crate::types::WaterfallChartGroupColorConfiguration>) -> Self {
-        self.group_color_configuration = input;
-        self
+        self.group_color_configuration = input; self
     }
     /// <p>The color configuration for individual groups within a waterfall visual.</p>
     pub fn get_group_color_configuration(&self) -> &::std::option::Option<crate::types::WaterfallChartGroupColorConfiguration> {
@@ -44,7 +43,9 @@ impl WaterfallChartColorConfigurationBuilder {
     /// Consumes the builder and constructs a [`WaterfallChartColorConfiguration`](crate::types::WaterfallChartColorConfiguration).
     pub fn build(self) -> crate::types::WaterfallChartColorConfiguration {
         crate::types::WaterfallChartColorConfiguration {
-            group_color_configuration: self.group_color_configuration,
+            group_color_configuration: self.group_color_configuration
+            ,
         }
     }
 }
+

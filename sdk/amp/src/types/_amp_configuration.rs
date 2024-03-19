@@ -3,15 +3,14 @@
 /// <p>The <code>AmpConfiguration</code> structure defines the Amazon Managed Service for Prometheus instance a scraper should send metrics to.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AmpConfiguration {
+pub struct AmpConfiguration  {
     /// <p>ARN of the Amazon Managed Service for Prometheus workspace.</p>
     pub workspace_arn: ::std::string::String,
 }
-impl AmpConfiguration {
+impl  AmpConfiguration  {
     /// <p>ARN of the Amazon Managed Service for Prometheus workspace.</p>
-    pub fn workspace_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.workspace_arn.deref()
+    pub fn workspace_arn(&self) -> & str {
+        use std::ops::Deref; self.workspace_arn.deref()
     }
 }
 impl AmpConfiguration {
@@ -36,8 +35,7 @@ impl AmpConfigurationBuilder {
     }
     /// <p>ARN of the Amazon Managed Service for Prometheus workspace.</p>
     pub fn set_workspace_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_arn = input;
-        self
+        self.workspace_arn = input; self
     }
     /// <p>ARN of the Amazon Managed Service for Prometheus workspace.</p>
     pub fn get_workspace_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl AmpConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`workspace_arn`](crate::types::builders::AmpConfigurationBuilder::workspace_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::AmpConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AmpConfiguration {
-            workspace_arn: self.workspace_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "workspace_arn",
-                    "workspace_arn was not specified but it is required when building AmpConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AmpConfiguration {
+                workspace_arn: self.workspace_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("workspace_arn", "workspace_arn was not specified but it is required when building AmpConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

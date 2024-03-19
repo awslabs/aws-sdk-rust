@@ -3,7 +3,7 @@
 /// <p>A list of <code>IdMappingWorkflowSummary</code> objects, each of which contain the fields <code>WorkflowName</code>, <code>WorkflowArn</code>, <code>CreatedAt</code>, and <code>UpdatedAt</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IdMappingWorkflowSummary {
+pub struct IdMappingWorkflowSummary  {
     /// <p>The name of the workflow.</p>
     pub workflow_name: ::std::string::String,
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>IdMappingWorkflow</code>.</p>
@@ -13,23 +13,21 @@ pub struct IdMappingWorkflowSummary {
     /// <p>The timestamp of when the workflow was last updated.</p>
     pub updated_at: ::aws_smithy_types::DateTime,
 }
-impl IdMappingWorkflowSummary {
+impl  IdMappingWorkflowSummary  {
     /// <p>The name of the workflow.</p>
-    pub fn workflow_name(&self) -> &str {
-        use std::ops::Deref;
-        self.workflow_name.deref()
+    pub fn workflow_name(&self) -> & str {
+        use std::ops::Deref; self.workflow_name.deref()
     }
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>IdMappingWorkflow</code>.</p>
-    pub fn workflow_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.workflow_arn.deref()
+    pub fn workflow_arn(&self) -> & str {
+        use std::ops::Deref; self.workflow_arn.deref()
     }
     /// <p>The timestamp of when the workflow was created.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The timestamp of when the workflow was last updated.</p>
-    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.updated_at
     }
 }
@@ -58,8 +56,7 @@ impl IdMappingWorkflowSummaryBuilder {
     }
     /// <p>The name of the workflow.</p>
     pub fn set_workflow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_name = input;
-        self
+        self.workflow_name = input; self
     }
     /// <p>The name of the workflow.</p>
     pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +70,7 @@ impl IdMappingWorkflowSummaryBuilder {
     }
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>IdMappingWorkflow</code>.</p>
     pub fn set_workflow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_arn = input;
-        self
+        self.workflow_arn = input; self
     }
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>IdMappingWorkflow</code>.</p>
     pub fn get_workflow_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +84,7 @@ impl IdMappingWorkflowSummaryBuilder {
     }
     /// <p>The timestamp of when the workflow was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp of when the workflow was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -103,8 +98,7 @@ impl IdMappingWorkflowSummaryBuilder {
     }
     /// <p>The timestamp of when the workflow was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The timestamp of when the workflow was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -117,31 +111,30 @@ impl IdMappingWorkflowSummaryBuilder {
     /// - [`created_at`](crate::types::builders::IdMappingWorkflowSummaryBuilder::created_at)
     /// - [`updated_at`](crate::types::builders::IdMappingWorkflowSummaryBuilder::updated_at)
     pub fn build(self) -> ::std::result::Result<crate::types::IdMappingWorkflowSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IdMappingWorkflowSummary {
-            workflow_name: self.workflow_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "workflow_name",
-                    "workflow_name was not specified but it is required when building IdMappingWorkflowSummary",
-                )
-            })?,
-            workflow_arn: self.workflow_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "workflow_arn",
-                    "workflow_arn was not specified but it is required when building IdMappingWorkflowSummary",
-                )
-            })?,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building IdMappingWorkflowSummary",
-                )
-            })?,
-            updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "updated_at",
-                    "updated_at was not specified but it is required when building IdMappingWorkflowSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IdMappingWorkflowSummary {
+                workflow_name: self.workflow_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("workflow_name", "workflow_name was not specified but it is required when building IdMappingWorkflowSummary")
+                    )?
+                ,
+                workflow_arn: self.workflow_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("workflow_arn", "workflow_arn was not specified but it is required when building IdMappingWorkflowSummary")
+                    )?
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building IdMappingWorkflowSummary")
+                    )?
+                ,
+                updated_at: self.updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("updated_at", "updated_at was not specified but it is required when building IdMappingWorkflowSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

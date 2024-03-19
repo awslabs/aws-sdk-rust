@@ -3,7 +3,7 @@
 /// <p>The configuration details required to delete the connection of the stream from the Edge Agent.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletionConfig {
+pub struct DeletionConfig  {
     /// <p>The number of hours that you want to retain the data in the stream on the Edge Agent. The default value of the retention time is 720 hours, which translates to 30 days.</p>
     pub edge_retention_in_hours: ::std::option::Option<i32>,
     /// <p>The value of the local size required in order to delete the edge configuration.</p>
@@ -12,13 +12,13 @@ pub struct DeletionConfig {
     /// <p>Since the default value is set to <code>true</code>, configure the uploader schedule such that the media files are not being deleted before they are initially uploaded to the Amazon Web Services cloud.</p>
     pub delete_after_upload: ::std::option::Option<bool>,
 }
-impl DeletionConfig {
+impl  DeletionConfig  {
     /// <p>The number of hours that you want to retain the data in the stream on the Edge Agent. The default value of the retention time is 720 hours, which translates to 30 days.</p>
     pub fn edge_retention_in_hours(&self) -> ::std::option::Option<i32> {
         self.edge_retention_in_hours
     }
     /// <p>The value of the local size required in order to delete the edge configuration.</p>
-    pub fn local_size_config(&self) -> ::std::option::Option<&crate::types::LocalSizeConfig> {
+    pub fn local_size_config(&self) -> ::std::option::Option<& crate::types::LocalSizeConfig> {
         self.local_size_config.as_ref()
     }
     /// <p>The <code>boolean</code> value used to indicate whether or not you want to mark the media for deletion, once it has been uploaded to the Kinesis Video Stream cloud. The media files can be deleted if any of the deletion configuration values are set to <code>true</code>, such as when the limit for the <code>EdgeRetentionInHours</code>, or the <code>MaxLocalMediaSizeInMB</code>, has been reached.</p>
@@ -50,8 +50,7 @@ impl DeletionConfigBuilder {
     }
     /// <p>The number of hours that you want to retain the data in the stream on the Edge Agent. The default value of the retention time is 720 hours, which translates to 30 days.</p>
     pub fn set_edge_retention_in_hours(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.edge_retention_in_hours = input;
-        self
+        self.edge_retention_in_hours = input; self
     }
     /// <p>The number of hours that you want to retain the data in the stream on the Edge Agent. The default value of the retention time is 720 hours, which translates to 30 days.</p>
     pub fn get_edge_retention_in_hours(&self) -> &::std::option::Option<i32> {
@@ -64,8 +63,7 @@ impl DeletionConfigBuilder {
     }
     /// <p>The value of the local size required in order to delete the edge configuration.</p>
     pub fn set_local_size_config(mut self, input: ::std::option::Option<crate::types::LocalSizeConfig>) -> Self {
-        self.local_size_config = input;
-        self
+        self.local_size_config = input; self
     }
     /// <p>The value of the local size required in order to delete the edge configuration.</p>
     pub fn get_local_size_config(&self) -> &::std::option::Option<crate::types::LocalSizeConfig> {
@@ -80,8 +78,7 @@ impl DeletionConfigBuilder {
     /// <p>The <code>boolean</code> value used to indicate whether or not you want to mark the media for deletion, once it has been uploaded to the Kinesis Video Stream cloud. The media files can be deleted if any of the deletion configuration values are set to <code>true</code>, such as when the limit for the <code>EdgeRetentionInHours</code>, or the <code>MaxLocalMediaSizeInMB</code>, has been reached.</p>
     /// <p>Since the default value is set to <code>true</code>, configure the uploader schedule such that the media files are not being deleted before they are initially uploaded to the Amazon Web Services cloud.</p>
     pub fn set_delete_after_upload(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.delete_after_upload = input;
-        self
+        self.delete_after_upload = input; self
     }
     /// <p>The <code>boolean</code> value used to indicate whether or not you want to mark the media for deletion, once it has been uploaded to the Kinesis Video Stream cloud. The media files can be deleted if any of the deletion configuration values are set to <code>true</code>, such as when the limit for the <code>EdgeRetentionInHours</code>, or the <code>MaxLocalMediaSizeInMB</code>, has been reached.</p>
     /// <p>Since the default value is set to <code>true</code>, configure the uploader schedule such that the media files are not being deleted before they are initially uploaded to the Amazon Web Services cloud.</p>
@@ -91,9 +88,13 @@ impl DeletionConfigBuilder {
     /// Consumes the builder and constructs a [`DeletionConfig`](crate::types::DeletionConfig).
     pub fn build(self) -> crate::types::DeletionConfig {
         crate::types::DeletionConfig {
-            edge_retention_in_hours: self.edge_retention_in_hours,
-            local_size_config: self.local_size_config,
-            delete_after_upload: self.delete_after_upload,
+            edge_retention_in_hours: self.edge_retention_in_hours
+            ,
+            local_size_config: self.local_size_config
+            ,
+            delete_after_upload: self.delete_after_upload
+            ,
         }
     }
 }
+

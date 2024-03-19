@@ -4,16 +4,17 @@
 /// <p><code>Transcript</code> contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Transcript {
+pub struct Transcript  {
     /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
-    pub results: ::std::option::Option<::std::vec::Vec<crate::types::Result>>,
+    pub results: ::std::option::Option<::std::vec::Vec::<crate::types::Result>>,
 }
-impl Transcript {
+impl  Transcript  {
     /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.results.is_none()`.
-    pub fn results(&self) -> &[crate::types::Result] {
-        self.results.as_deref().unwrap_or_default()
+    pub fn results(&self) -> & [crate::types::Result] {
+        self.results.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Transcript {
@@ -27,7 +28,7 @@ impl Transcript {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TranscriptBuilder {
-    pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::Result>>,
+    pub(crate) results: ::std::option::Option<::std::vec::Vec::<crate::types::Result>>,
 }
 impl TranscriptBuilder {
     /// Appends an item to `results`.
@@ -37,21 +38,24 @@ impl TranscriptBuilder {
     /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
     pub fn results(mut self, input: crate::types::Result) -> Self {
         let mut v = self.results.unwrap_or_default();
-        v.push(input);
-        self.results = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.results = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
-    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Result>>) -> Self {
-        self.results = input;
-        self
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Result>>) -> Self {
+        self.results = input; self
     }
     /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
-    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Result>> {
+    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Result>> {
         &self.results
     }
     /// Consumes the builder and constructs a [`Transcript`](crate::types::Transcript).
     pub fn build(self) -> crate::types::Transcript {
-        crate::types::Transcript { results: self.results }
+        crate::types::Transcript {
+            results: self.results
+            ,
+        }
     }
 }
+

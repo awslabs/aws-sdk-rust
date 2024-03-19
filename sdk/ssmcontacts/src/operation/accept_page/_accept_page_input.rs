@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AcceptPageInput {
+pub struct AcceptPageInput  {
     /// <p>The Amazon Resource Name (ARN) of the engagement to a contact channel.</p>
     pub page_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the contact channel.</p>
@@ -17,30 +17,30 @@ pub struct AcceptPageInput {
     /// <p>Incident Manager can also <code>IGNORE</code> <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
     pub accept_code_validation: ::std::option::Option<crate::types::AcceptCodeValidation>,
 }
-impl AcceptPageInput {
+impl  AcceptPageInput  {
     /// <p>The Amazon Resource Name (ARN) of the engagement to a contact channel.</p>
-    pub fn page_id(&self) -> ::std::option::Option<&str> {
+    pub fn page_id(&self) -> ::std::option::Option<& str> {
         self.page_id.as_deref()
     }
     /// <p>The ARN of the contact channel.</p>
-    pub fn contact_channel_id(&self) -> ::std::option::Option<&str> {
+    pub fn contact_channel_id(&self) -> ::std::option::Option<& str> {
         self.contact_channel_id.as_deref()
     }
     /// <p>The type indicates if the page was <code>DELIVERED</code> or <code>READ</code>.</p>
-    pub fn accept_type(&self) -> ::std::option::Option<&crate::types::AcceptType> {
+    pub fn accept_type(&self) -> ::std::option::Option<& crate::types::AcceptType> {
         self.accept_type.as_ref()
     }
     /// <p>Information provided by the user when the user acknowledges the page.</p>
-    pub fn note(&self) -> ::std::option::Option<&str> {
+    pub fn note(&self) -> ::std::option::Option<& str> {
         self.note.as_deref()
     }
     /// <p>A 6-digit code used to acknowledge the page.</p>
-    pub fn accept_code(&self) -> ::std::option::Option<&str> {
+    pub fn accept_code(&self) -> ::std::option::Option<& str> {
         self.accept_code.as_deref()
     }
     /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code> <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode validation causes Incident Manager to verify that the code entered by the user matches the code sent by Incident Manager with the page.</p>
     /// <p>Incident Manager can also <code>IGNORE</code> <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
-    pub fn accept_code_validation(&self) -> ::std::option::Option<&crate::types::AcceptCodeValidation> {
+    pub fn accept_code_validation(&self) -> ::std::option::Option<& crate::types::AcceptCodeValidation> {
         self.accept_code_validation.as_ref()
     }
 }
@@ -71,8 +71,7 @@ impl AcceptPageInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the engagement to a contact channel.</p>
     pub fn set_page_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.page_id = input;
-        self
+        self.page_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the engagement to a contact channel.</p>
     pub fn get_page_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +84,7 @@ impl AcceptPageInputBuilder {
     }
     /// <p>The ARN of the contact channel.</p>
     pub fn set_contact_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_channel_id = input;
-        self
+        self.contact_channel_id = input; self
     }
     /// <p>The ARN of the contact channel.</p>
     pub fn get_contact_channel_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +98,7 @@ impl AcceptPageInputBuilder {
     }
     /// <p>The type indicates if the page was <code>DELIVERED</code> or <code>READ</code>.</p>
     pub fn set_accept_type(mut self, input: ::std::option::Option<crate::types::AcceptType>) -> Self {
-        self.accept_type = input;
-        self
+        self.accept_type = input; self
     }
     /// <p>The type indicates if the page was <code>DELIVERED</code> or <code>READ</code>.</p>
     pub fn get_accept_type(&self) -> &::std::option::Option<crate::types::AcceptType> {
@@ -114,8 +111,7 @@ impl AcceptPageInputBuilder {
     }
     /// <p>Information provided by the user when the user acknowledges the page.</p>
     pub fn set_note(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.note = input;
-        self
+        self.note = input; self
     }
     /// <p>Information provided by the user when the user acknowledges the page.</p>
     pub fn get_note(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +125,7 @@ impl AcceptPageInputBuilder {
     }
     /// <p>A 6-digit code used to acknowledge the page.</p>
     pub fn set_accept_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accept_code = input;
-        self
+        self.accept_code = input; self
     }
     /// <p>A 6-digit code used to acknowledge the page.</p>
     pub fn get_accept_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +140,7 @@ impl AcceptPageInputBuilder {
     /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code> <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode validation causes Incident Manager to verify that the code entered by the user matches the code sent by Incident Manager with the page.</p>
     /// <p>Incident Manager can also <code>IGNORE</code> <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
     pub fn set_accept_code_validation(mut self, input: ::std::option::Option<crate::types::AcceptCodeValidation>) -> Self {
-        self.accept_code_validation = input;
-        self
+        self.accept_code_validation = input; self
     }
     /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code> <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode validation causes Incident Manager to verify that the code entered by the user matches the code sent by Incident Manager with the page.</p>
     /// <p>Incident Manager can also <code>IGNORE</code> <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
@@ -155,13 +149,22 @@ impl AcceptPageInputBuilder {
     }
     /// Consumes the builder and constructs a [`AcceptPageInput`](crate::operation::accept_page::AcceptPageInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::accept_page::AcceptPageInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::accept_page::AcceptPageInput {
-            page_id: self.page_id,
-            contact_channel_id: self.contact_channel_id,
-            accept_type: self.accept_type,
-            note: self.note,
-            accept_code: self.accept_code,
-            accept_code_validation: self.accept_code_validation,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::accept_page::AcceptPageInput {
+                page_id: self.page_id
+                ,
+                contact_channel_id: self.contact_channel_id
+                ,
+                accept_type: self.accept_type
+                ,
+                note: self.note
+                ,
+                accept_code: self.accept_code
+                ,
+                accept_code_validation: self.accept_code_validation
+                ,
+            }
+        )
     }
 }
+

@@ -3,22 +3,20 @@
 /// <p>The stage has failed in a later run of the pipeline and the <code>pipelineExecutionId</code> associated with the request is out of date.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NotLatestPipelineExecutionException {
+pub struct NotLatestPipelineExecutionException  {
     /// <p>The message provided to the user in the event of an exception.</p>
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl NotLatestPipelineExecutionException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for NotLatestPipelineExecutionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "NotLatestPipelineExecutionException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -33,9 +31,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::NotLatestPipeli
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for NotLatestPipelineExecutionException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl NotLatestPipelineExecutionException {
     /// Creates a new builder-style object to manufacture [`NotLatestPipelineExecutionException`](crate::types::error::NotLatestPipelineExecutionException).
@@ -59,29 +55,30 @@ impl NotLatestPipelineExecutionExceptionBuilder {
     }
     /// <p>The message provided to the user in the event of an exception.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The message provided to the user in the event of an exception.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`NotLatestPipelineExecutionException`](crate::types::error::NotLatestPipelineExecutionException).
     pub fn build(self) -> crate::types::error::NotLatestPipelineExecutionException {
         crate::types::error::NotLatestPipelineExecutionException {
-            message: self.message,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

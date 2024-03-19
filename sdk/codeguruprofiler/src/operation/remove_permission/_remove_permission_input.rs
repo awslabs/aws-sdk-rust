@@ -3,7 +3,7 @@
 /// <p>The structure representing the <code>removePermissionRequest</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemovePermissionInput {
+pub struct RemovePermissionInput  {
     /// <p>The name of the profiling group.</p>
     pub profiling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies an action group that contains the permissions to remove from a profiling group's resource-based policy. One action group is supported, <code>agentPermissions</code>, which grants <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions.</p>
@@ -11,17 +11,17 @@ pub struct RemovePermissionInput {
     /// <p>A universally unique identifier (UUID) for the revision of the resource-based policy from which you want to remove permissions.</p>
     pub revision_id: ::std::option::Option<::std::string::String>,
 }
-impl RemovePermissionInput {
+impl  RemovePermissionInput  {
     /// <p>The name of the profiling group.</p>
-    pub fn profiling_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn profiling_group_name(&self) -> ::std::option::Option<& str> {
         self.profiling_group_name.as_deref()
     }
     /// <p>Specifies an action group that contains the permissions to remove from a profiling group's resource-based policy. One action group is supported, <code>agentPermissions</code>, which grants <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions.</p>
-    pub fn action_group(&self) -> ::std::option::Option<&crate::types::ActionGroup> {
+    pub fn action_group(&self) -> ::std::option::Option<& crate::types::ActionGroup> {
         self.action_group.as_ref()
     }
     /// <p>A universally unique identifier (UUID) for the revision of the resource-based policy from which you want to remove permissions.</p>
-    pub fn revision_id(&self) -> ::std::option::Option<&str> {
+    pub fn revision_id(&self) -> ::std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl RemovePermissionInputBuilder {
     }
     /// <p>The name of the profiling group.</p>
     pub fn set_profiling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profiling_group_name = input;
-        self
+        self.profiling_group_name = input; self
     }
     /// <p>The name of the profiling group.</p>
     pub fn get_profiling_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl RemovePermissionInputBuilder {
     }
     /// <p>Specifies an action group that contains the permissions to remove from a profiling group's resource-based policy. One action group is supported, <code>agentPermissions</code>, which grants <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions.</p>
     pub fn set_action_group(mut self, input: ::std::option::Option<crate::types::ActionGroup>) -> Self {
-        self.action_group = input;
-        self
+        self.action_group = input; self
     }
     /// <p>Specifies an action group that contains the permissions to remove from a profiling group's resource-based policy. One action group is supported, <code>agentPermissions</code>, which grants <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions.</p>
     pub fn get_action_group(&self) -> &::std::option::Option<crate::types::ActionGroup> {
@@ -79,21 +77,24 @@ impl RemovePermissionInputBuilder {
     }
     /// <p>A universally unique identifier (UUID) for the revision of the resource-based policy from which you want to remove permissions.</p>
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
     }
     /// <p>A universally unique identifier (UUID) for the revision of the resource-based policy from which you want to remove permissions.</p>
     pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.revision_id
     }
     /// Consumes the builder and constructs a [`RemovePermissionInput`](crate::operation::remove_permission::RemovePermissionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::remove_permission::RemovePermissionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::remove_permission::RemovePermissionInput {
-            profiling_group_name: self.profiling_group_name,
-            action_group: self.action_group,
-            revision_id: self.revision_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_permission::RemovePermissionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::remove_permission::RemovePermissionInput {
+                profiling_group_name: self.profiling_group_name
+                ,
+                action_group: self.action_group
+                ,
+                revision_id: self.revision_id
+                ,
+            }
+        )
     }
 }
+

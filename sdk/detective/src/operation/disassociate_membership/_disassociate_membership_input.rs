@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateMembershipInput {
+pub struct DisassociateMembershipInput  {
     /// <p>The ARN of the behavior graph to remove the member account from.</p>
     /// <p>The member account's member status in the behavior graph must be <code>ENABLED</code>.</p>
     pub graph_arn: ::std::option::Option<::std::string::String>,
 }
-impl DisassociateMembershipInput {
+impl  DisassociateMembershipInput  {
     /// <p>The ARN of the behavior graph to remove the member account from.</p>
     /// <p>The member account's member status in the behavior graph must be <code>ENABLED</code>.</p>
-    pub fn graph_arn(&self) -> ::std::option::Option<&str> {
+    pub fn graph_arn(&self) -> ::std::option::Option<& str> {
         self.graph_arn.as_deref()
     }
 }
@@ -38,8 +38,7 @@ impl DisassociateMembershipInputBuilder {
     /// <p>The ARN of the behavior graph to remove the member account from.</p>
     /// <p>The member account's member status in the behavior graph must be <code>ENABLED</code>.</p>
     pub fn set_graph_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.graph_arn = input;
-        self
+        self.graph_arn = input; self
     }
     /// <p>The ARN of the behavior graph to remove the member account from.</p>
     /// <p>The member account's member status in the behavior graph must be <code>ENABLED</code>.</p>
@@ -47,10 +46,13 @@ impl DisassociateMembershipInputBuilder {
         &self.graph_arn
     }
     /// Consumes the builder and constructs a [`DisassociateMembershipInput`](crate::operation::disassociate_membership::DisassociateMembershipInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::disassociate_membership::DisassociateMembershipInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::disassociate_membership::DisassociateMembershipInput { graph_arn: self.graph_arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_membership::DisassociateMembershipInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disassociate_membership::DisassociateMembershipInput {
+                graph_arn: self.graph_arn
+                ,
+            }
+        )
     }
 }
+

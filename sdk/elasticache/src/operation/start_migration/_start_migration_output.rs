@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartMigrationOutput {
+pub struct StartMigrationOutput  {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
     pub replication_group: ::std::option::Option<crate::types::ReplicationGroup>,
     _request_id: Option<String>,
 }
-impl StartMigrationOutput {
+impl  StartMigrationOutput  {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
-    pub fn replication_group(&self) -> ::std::option::Option<&crate::types::ReplicationGroup> {
+    pub fn replication_group(&self) -> ::std::option::Option<& crate::types::ReplicationGroup> {
         self.replication_group.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartMigrationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartMigrationOutput {
     /// Creates a new builder-style object to manufacture [`StartMigrationOutput`](crate::operation::start_migration::StartMigrationOutput).
     pub fn builder() -> crate::operation::start_migration::builders::StartMigrationOutputBuilder {
@@ -40,27 +40,28 @@ impl StartMigrationOutputBuilder {
     }
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
     pub fn set_replication_group(mut self, input: ::std::option::Option<crate::types::ReplicationGroup>) -> Self {
-        self.replication_group = input;
-        self
+        self.replication_group = input; self
     }
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
     pub fn get_replication_group(&self) -> &::std::option::Option<crate::types::ReplicationGroup> {
         &self.replication_group
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartMigrationOutput`](crate::operation::start_migration::StartMigrationOutput).
     pub fn build(self) -> crate::operation::start_migration::StartMigrationOutput {
         crate::operation::start_migration::StartMigrationOutput {
-            replication_group: self.replication_group,
+            replication_group: self.replication_group
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

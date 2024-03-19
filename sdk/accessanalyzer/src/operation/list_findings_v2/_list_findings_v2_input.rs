@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListFindingsV2Input {
+pub struct ListFindingsV2Input  {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve findings from.</p>
     pub analyzer_arn: ::std::option::Option<::std::string::String>,
     /// <p>A filter to match for the findings to return.</p>
-    pub filter: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>>,
+    pub filter: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Criterion>>,
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>A token used for pagination of results returned.</p>
@@ -14,13 +14,13 @@ pub struct ListFindingsV2Input {
     /// <p>The criteria used to sort.</p>
     pub sort: ::std::option::Option<crate::types::SortCriteria>,
 }
-impl ListFindingsV2Input {
+impl  ListFindingsV2Input  {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve findings from.</p>
-    pub fn analyzer_arn(&self) -> ::std::option::Option<&str> {
+    pub fn analyzer_arn(&self) -> ::std::option::Option<& str> {
         self.analyzer_arn.as_deref()
     }
     /// <p>A filter to match for the findings to return.</p>
-    pub fn filter(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Criterion>> {
+    pub fn filter(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::Criterion>> {
         self.filter.as_ref()
     }
     /// <p>The maximum number of results to return in the response.</p>
@@ -28,11 +28,11 @@ impl ListFindingsV2Input {
         self.max_results
     }
     /// <p>A token used for pagination of results returned.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The criteria used to sort.</p>
-    pub fn sort(&self) -> ::std::option::Option<&crate::types::SortCriteria> {
+    pub fn sort(&self) -> ::std::option::Option<& crate::types::SortCriteria> {
         self.sort.as_ref()
     }
 }
@@ -48,7 +48,7 @@ impl ListFindingsV2Input {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFindingsV2InputBuilder {
     pub(crate) analyzer_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) filter: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>>,
+    pub(crate) filter: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Criterion>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) sort: ::std::option::Option<crate::types::SortCriteria>,
@@ -62,8 +62,7 @@ impl ListFindingsV2InputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve findings from.</p>
     pub fn set_analyzer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.analyzer_arn = input;
-        self
+        self.analyzer_arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve findings from.</p>
     pub fn get_analyzer_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,17 +75,16 @@ impl ListFindingsV2InputBuilder {
     /// <p>A filter to match for the findings to return.</p>
     pub fn filter(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Criterion) -> Self {
         let mut hash_map = self.filter.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.filter = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.filter = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A filter to match for the findings to return.</p>
-    pub fn set_filter(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>>) -> Self {
-        self.filter = input;
-        self
+    pub fn set_filter(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Criterion>>) -> Self {
+        self.filter = input; self
     }
     /// <p>A filter to match for the findings to return.</p>
-    pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>> {
+    pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::Criterion>> {
         &self.filter
     }
     /// <p>The maximum number of results to return in the response.</p>
@@ -96,8 +94,7 @@ impl ListFindingsV2InputBuilder {
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -110,8 +107,7 @@ impl ListFindingsV2InputBuilder {
     }
     /// <p>A token used for pagination of results returned.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token used for pagination of results returned.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,23 +120,28 @@ impl ListFindingsV2InputBuilder {
     }
     /// <p>The criteria used to sort.</p>
     pub fn set_sort(mut self, input: ::std::option::Option<crate::types::SortCriteria>) -> Self {
-        self.sort = input;
-        self
+        self.sort = input; self
     }
     /// <p>The criteria used to sort.</p>
     pub fn get_sort(&self) -> &::std::option::Option<crate::types::SortCriteria> {
         &self.sort
     }
     /// Consumes the builder and constructs a [`ListFindingsV2Input`](crate::operation::list_findings_v2::ListFindingsV2Input).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_findings_v2::ListFindingsV2Input, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_findings_v2::ListFindingsV2Input {
-            analyzer_arn: self.analyzer_arn,
-            filter: self.filter,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            sort: self.sort,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_findings_v2::ListFindingsV2Input, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_findings_v2::ListFindingsV2Input {
+                analyzer_arn: self.analyzer_arn
+                ,
+                filter: self.filter
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                sort: self.sort
+                ,
+            }
+        )
     }
 }
+

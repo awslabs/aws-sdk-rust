@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSceneInput {
+pub struct CreateSceneInput  {
     /// <p>The ID of the workspace that contains the scene.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the scene.</p>
@@ -12,41 +12,42 @@ pub struct CreateSceneInput {
     /// <p>The description for this scene.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of capabilities that the scene uses to render itself.</p>
-    pub capabilities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub capabilities: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Metadata that you can use to manage the scene.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The request metadata.</p>
-    pub scene_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub scene_metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateSceneInput {
+impl  CreateSceneInput  {
     /// <p>The ID of the workspace that contains the scene.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// <p>The ID of the scene.</p>
-    pub fn scene_id(&self) -> ::std::option::Option<&str> {
+    pub fn scene_id(&self) -> ::std::option::Option<& str> {
         self.scene_id.as_deref()
     }
     /// <p>The relative path that specifies the location of the content definition file.</p>
-    pub fn content_location(&self) -> ::std::option::Option<&str> {
+    pub fn content_location(&self) -> ::std::option::Option<& str> {
         self.content_location.as_deref()
     }
     /// <p>The description for this scene.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A list of capabilities that the scene uses to render itself.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capabilities.is_none()`.
-    pub fn capabilities(&self) -> &[::std::string::String] {
-        self.capabilities.as_deref().unwrap_or_default()
+    pub fn capabilities(&self) -> & [::std::string::String] {
+        self.capabilities.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Metadata that you can use to manage the scene.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The request metadata.</p>
-    pub fn scene_metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn scene_metadata(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.scene_metadata.as_ref()
     }
 }
@@ -65,9 +66,9 @@ pub struct CreateSceneInputBuilder {
     pub(crate) scene_id: ::std::option::Option<::std::string::String>,
     pub(crate) content_location: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) capabilities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) scene_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) capabilities: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) scene_metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateSceneInputBuilder {
     /// <p>The ID of the workspace that contains the scene.</p>
@@ -78,8 +79,7 @@ impl CreateSceneInputBuilder {
     }
     /// <p>The ID of the workspace that contains the scene.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The ID of the workspace that contains the scene.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +93,7 @@ impl CreateSceneInputBuilder {
     }
     /// <p>The ID of the scene.</p>
     pub fn set_scene_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scene_id = input;
-        self
+        self.scene_id = input; self
     }
     /// <p>The ID of the scene.</p>
     pub fn get_scene_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +107,7 @@ impl CreateSceneInputBuilder {
     }
     /// <p>The relative path that specifies the location of the content definition file.</p>
     pub fn set_content_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_location = input;
-        self
+        self.content_location = input; self
     }
     /// <p>The relative path that specifies the location of the content definition file.</p>
     pub fn get_content_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +120,7 @@ impl CreateSceneInputBuilder {
     }
     /// <p>The description for this scene.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description for this scene.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,17 +133,16 @@ impl CreateSceneInputBuilder {
     /// <p>A list of capabilities that the scene uses to render itself.</p>
     pub fn capabilities(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.capabilities.unwrap_or_default();
-        v.push(input.into());
-        self.capabilities = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.capabilities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of capabilities that the scene uses to render itself.</p>
-    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.capabilities = input;
-        self
+    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.capabilities = input; self
     }
     /// <p>A list of capabilities that the scene uses to render itself.</p>
-    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.capabilities
     }
     /// Adds a key-value pair to `tags`.
@@ -156,17 +152,16 @@ impl CreateSceneInputBuilder {
     /// <p>Metadata that you can use to manage the scene.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Metadata that you can use to manage the scene.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Metadata that you can use to manage the scene.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Adds a key-value pair to `scene_metadata`.
@@ -174,38 +169,40 @@ impl CreateSceneInputBuilder {
     /// To override the contents of this collection use [`set_scene_metadata`](Self::set_scene_metadata).
     ///
     /// <p>The request metadata.</p>
-    pub fn scene_metadata(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn scene_metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.scene_metadata.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.scene_metadata = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.scene_metadata = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The request metadata.</p>
-    pub fn set_scene_metadata(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.scene_metadata = input;
-        self
+    pub fn set_scene_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.scene_metadata = input; self
     }
     /// <p>The request metadata.</p>
-    pub fn get_scene_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_scene_metadata(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.scene_metadata
     }
     /// Consumes the builder and constructs a [`CreateSceneInput`](crate::operation::create_scene::CreateSceneInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_scene::CreateSceneInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_scene::CreateSceneInput {
-            workspace_id: self.workspace_id,
-            scene_id: self.scene_id,
-            content_location: self.content_location,
-            description: self.description,
-            capabilities: self.capabilities,
-            tags: self.tags,
-            scene_metadata: self.scene_metadata,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_scene::CreateSceneInput {
+                workspace_id: self.workspace_id
+                ,
+                scene_id: self.scene_id
+                ,
+                content_location: self.content_location
+                ,
+                description: self.description
+                ,
+                capabilities: self.capabilities
+                ,
+                tags: self.tags
+                ,
+                scene_metadata: self.scene_metadata
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AdminLinkProviderForUserInput {
+pub struct AdminLinkProviderForUserInput  {
     /// <p>The user pool ID for the user pool.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The existing user in the user pool that you want to assign to the external IdP user account. This user can be a local (Username + Password) Amazon Cognito user pools user or a federated user (for example, a SAML or Facebook user). If the user doesn't exist, Amazon Cognito generates an exception. Amazon Cognito returns this user when the new user (with the linked IdP attribute) signs in.</p>
@@ -20,9 +20,9 @@ pub struct AdminLinkProviderForUserInput {
     /// <p>For both OIDC and SAML users, when you set <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Amazon Cognito will automatically parse the default unique identifier found in the subject from the IdP token.</p>
     pub source_user: ::std::option::Option<crate::types::ProviderUserIdentifierType>,
 }
-impl AdminLinkProviderForUserInput {
+impl  AdminLinkProviderForUserInput  {
     /// <p>The user pool ID for the user pool.</p>
-    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The existing user in the user pool that you want to assign to the external IdP user account. This user can be a local (Username + Password) Amazon Cognito user pools user or a federated user (for example, a SAML or Facebook user). If the user doesn't exist, Amazon Cognito generates an exception. Amazon Cognito returns this user when the new user (with the linked IdP attribute) signs in.</p>
@@ -31,7 +31,7 @@ impl AdminLinkProviderForUserInput {
     /// <p>The <code>ProviderName</code> should be set to <code>Cognito</code> for users in Cognito user pools.</p><important>
     /// <p>All attributes in the DestinationUser profile must be mutable. If you have assigned the user any immutable custom attributes, the operation won't succeed.</p>
     /// </important>
-    pub fn destination_user(&self) -> ::std::option::Option<&crate::types::ProviderUserIdentifierType> {
+    pub fn destination_user(&self) -> ::std::option::Option<& crate::types::ProviderUserIdentifierType> {
         self.destination_user.as_ref()
     }
     /// <p>An external IdP account for a user who doesn't exist yet in the user pool. This user must be a federated user (for example, a SAML or Facebook user), not another native user.</p>
@@ -40,7 +40,7 @@ impl AdminLinkProviderForUserInput {
     /// <p>For OIDC, the <code>ProviderAttributeName</code> can be any value that matches a claim in the ID token, or that your app retrieves from the <code>userInfo</code> endpoint. You must map the claim to a user pool attribute in your IdP configuration, and set the user pool attribute name as the value of <code>ProviderAttributeName</code> in your <code>AdminLinkProviderForUser</code> request.</p>
     /// <p>For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim in the SAML assertion. To link SAML users based on the subject of the SAML assertion, map the subject to a claim through the SAML IdP and set that claim name as the value of <code>ProviderAttributeName</code> in your <code>AdminLinkProviderForUser</code> request.</p>
     /// <p>For both OIDC and SAML users, when you set <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Amazon Cognito will automatically parse the default unique identifier found in the subject from the IdP token.</p>
-    pub fn source_user(&self) -> ::std::option::Option<&crate::types::ProviderUserIdentifierType> {
+    pub fn source_user(&self) -> ::std::option::Option<& crate::types::ProviderUserIdentifierType> {
         self.source_user.as_ref()
     }
 }
@@ -68,8 +68,7 @@ impl AdminLinkProviderForUserInputBuilder {
     }
     /// <p>The user pool ID for the user pool.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The user pool ID for the user pool.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +92,7 @@ impl AdminLinkProviderForUserInputBuilder {
     /// <p>All attributes in the DestinationUser profile must be mutable. If you have assigned the user any immutable custom attributes, the operation won't succeed.</p>
     /// </important>
     pub fn set_destination_user(mut self, input: ::std::option::Option<crate::types::ProviderUserIdentifierType>) -> Self {
-        self.destination_user = input;
-        self
+        self.destination_user = input; self
     }
     /// <p>The existing user in the user pool that you want to assign to the external IdP user account. This user can be a local (Username + Password) Amazon Cognito user pools user or a federated user (for example, a SAML or Facebook user). If the user doesn't exist, Amazon Cognito generates an exception. Amazon Cognito returns this user when the new user (with the linked IdP attribute) signs in.</p>
     /// <p>For a native username + password user, the <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> should be the username in the user pool. For a federated user, it should be the provider-specific <code>user_id</code>.</p>
@@ -123,8 +121,7 @@ impl AdminLinkProviderForUserInputBuilder {
     /// <p>For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim in the SAML assertion. To link SAML users based on the subject of the SAML assertion, map the subject to a claim through the SAML IdP and set that claim name as the value of <code>ProviderAttributeName</code> in your <code>AdminLinkProviderForUser</code> request.</p>
     /// <p>For both OIDC and SAML users, when you set <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Amazon Cognito will automatically parse the default unique identifier found in the subject from the IdP token.</p>
     pub fn set_source_user(mut self, input: ::std::option::Option<crate::types::ProviderUserIdentifierType>) -> Self {
-        self.source_user = input;
-        self
+        self.source_user = input; self
     }
     /// <p>An external IdP account for a user who doesn't exist yet in the user pool. This user must be a federated user (for example, a SAML or Facebook user), not another native user.</p>
     /// <p>If the <code>SourceUser</code> is using a federated social IdP, such as Facebook, Google, or Login with Amazon, you must set the <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>. For social IdPs, the <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or <code>LoginWithAmazon</code>, and Amazon Cognito will automatically parse the Facebook, Google, and Login with Amazon tokens for <code>id</code>, <code>sub</code>, and <code>user_id</code>, respectively. The <code>ProviderAttributeValue</code> for the user must be the same value as the <code>id</code>, <code>sub</code>, or <code>user_id</code> value found in the social IdP token.</p>
@@ -136,16 +133,17 @@ impl AdminLinkProviderForUserInputBuilder {
         &self.source_user
     }
     /// Consumes the builder and constructs a [`AdminLinkProviderForUserInput`](crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserInput {
-            user_pool_id: self.user_pool_id,
-            destination_user: self.destination_user,
-            source_user: self.source_user,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserInput {
+                user_pool_id: self.user_pool_id
+                ,
+                destination_user: self.destination_user
+                ,
+                source_user: self.source_user
+                ,
+            }
+        )
     }
 }
+

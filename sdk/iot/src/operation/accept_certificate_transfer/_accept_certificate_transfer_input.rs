@@ -3,15 +3,15 @@
 /// <p>The input for the AcceptCertificateTransfer operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AcceptCertificateTransferInput {
+pub struct AcceptCertificateTransferInput  {
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the certificate is active.</p>
     pub set_as_active: ::std::option::Option<bool>,
 }
-impl AcceptCertificateTransferInput {
+impl  AcceptCertificateTransferInput  {
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
-    pub fn certificate_id(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_id(&self) -> ::std::option::Option<& str> {
         self.certificate_id.as_deref()
     }
     /// <p>Specifies whether the certificate is active.</p>
@@ -42,8 +42,7 @@ impl AcceptCertificateTransferInputBuilder {
     }
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_id = input;
-        self
+        self.certificate_id = input; self
     }
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl AcceptCertificateTransferInputBuilder {
     }
     /// <p>Specifies whether the certificate is active.</p>
     pub fn set_set_as_active(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.set_as_active = input;
-        self
+        self.set_as_active = input; self
     }
     /// <p>Specifies whether the certificate is active.</p>
     pub fn get_set_as_active(&self) -> &::std::option::Option<bool> {
         &self.set_as_active
     }
     /// Consumes the builder and constructs a [`AcceptCertificateTransferInput`](crate::operation::accept_certificate_transfer::AcceptCertificateTransferInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::accept_certificate_transfer::AcceptCertificateTransferInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::accept_certificate_transfer::AcceptCertificateTransferInput {
-            certificate_id: self.certificate_id,
-            set_as_active: self.set_as_active,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::accept_certificate_transfer::AcceptCertificateTransferInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::accept_certificate_transfer::AcceptCertificateTransferInput {
+                certificate_id: self.certificate_id
+                ,
+                set_as_active: self.set_as_active
+                ,
+            }
+        )
     }
 }
+

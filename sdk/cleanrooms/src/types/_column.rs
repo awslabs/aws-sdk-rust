@@ -3,22 +3,20 @@
 /// <p>A column within a schema relation, derived from the underlying Glue table.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Column {
+pub struct Column  {
     /// <p>The name of the column.</p>
     pub name: ::std::string::String,
     /// <p>The type of the column.</p>
     pub r#type: ::std::string::String,
 }
-impl Column {
+impl  Column  {
     /// <p>The name of the column.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The type of the column.</p>
-    pub fn r#type(&self) -> &str {
-        use std::ops::Deref;
-        self.r#type.deref()
+    pub fn r#type(&self) -> & str {
+        use std::ops::Deref; self.r#type.deref()
     }
 }
 impl Column {
@@ -44,8 +42,7 @@ impl ColumnBuilder {
     }
     /// <p>The name of the column.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the column.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl ColumnBuilder {
     }
     /// <p>The type of the column.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the column.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl ColumnBuilder {
     /// - [`name`](crate::types::builders::ColumnBuilder::name)
     /// - [`r#type`](crate::types::builders::ColumnBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::Column, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Column {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building Column",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building Column",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Column {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building Column")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building Column")
+                    )?
+                ,
+            }
+        )
     }
 }
+

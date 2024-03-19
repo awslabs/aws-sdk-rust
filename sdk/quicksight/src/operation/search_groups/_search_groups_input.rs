@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchGroupsInput {
+pub struct SearchGroupsInput  {
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>A pagination token that can be used in a subsequent request.</p>
@@ -12,15 +12,15 @@ pub struct SearchGroupsInput {
     /// <p>The namespace that you want to search.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The structure for the search filters that you want to apply to your search.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::GroupSearchFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::GroupSearchFilter>>,
 }
-impl SearchGroupsInput {
+impl  SearchGroupsInput  {
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return from this request.</p>
@@ -28,14 +28,15 @@ impl SearchGroupsInput {
         self.max_results
     }
     /// <p>The namespace that you want to search.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The structure for the search filters that you want to apply to your search.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::GroupSearchFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::GroupSearchFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SearchGroupsInput {
@@ -53,7 +54,7 @@ pub struct SearchGroupsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::GroupSearchFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::GroupSearchFilter>>,
 }
 impl SearchGroupsInputBuilder {
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
@@ -64,8 +65,7 @@ impl SearchGroupsInputBuilder {
     }
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl SearchGroupsInputBuilder {
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +91,7 @@ impl SearchGroupsInputBuilder {
     }
     /// <p>The maximum number of results to return from this request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return from this request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -107,8 +105,7 @@ impl SearchGroupsInputBuilder {
     }
     /// <p>The namespace that you want to search.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The namespace that you want to search.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,29 +118,34 @@ impl SearchGroupsInputBuilder {
     /// <p>The structure for the search filters that you want to apply to your search.</p>
     pub fn filters(mut self, input: crate::types::GroupSearchFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The structure for the search filters that you want to apply to your search.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupSearchFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GroupSearchFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The structure for the search filters that you want to apply to your search.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupSearchFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GroupSearchFilter>> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`SearchGroupsInput`](crate::operation::search_groups::SearchGroupsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::search_groups::SearchGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::search_groups::SearchGroupsInput {
-            aws_account_id: self.aws_account_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            namespace: self.namespace,
-            filters: self.filters,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_groups::SearchGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::search_groups::SearchGroupsInput {
+                aws_account_id: self.aws_account_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                namespace: self.namespace
+                ,
+                filters: self.filters
+                ,
+            }
+        )
     }
 }
+

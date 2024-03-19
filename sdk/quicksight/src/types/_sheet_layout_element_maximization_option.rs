@@ -3,13 +3,13 @@
 /// <p>The sheet layout maximization options of a dashbaord.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SheetLayoutElementMaximizationOption {
+pub struct SheetLayoutElementMaximizationOption  {
     /// <p>The status of the sheet layout maximization options of a dashbaord.</p>
     pub availability_status: ::std::option::Option<crate::types::DashboardBehavior>,
 }
-impl SheetLayoutElementMaximizationOption {
+impl  SheetLayoutElementMaximizationOption  {
     /// <p>The status of the sheet layout maximization options of a dashbaord.</p>
-    pub fn availability_status(&self) -> ::std::option::Option<&crate::types::DashboardBehavior> {
+    pub fn availability_status(&self) -> ::std::option::Option<& crate::types::DashboardBehavior> {
         self.availability_status.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl SheetLayoutElementMaximizationOptionBuilder {
     }
     /// <p>The status of the sheet layout maximization options of a dashbaord.</p>
     pub fn set_availability_status(mut self, input: ::std::option::Option<crate::types::DashboardBehavior>) -> Self {
-        self.availability_status = input;
-        self
+        self.availability_status = input; self
     }
     /// <p>The status of the sheet layout maximization options of a dashbaord.</p>
     pub fn get_availability_status(&self) -> &::std::option::Option<crate::types::DashboardBehavior> {
@@ -44,7 +43,9 @@ impl SheetLayoutElementMaximizationOptionBuilder {
     /// Consumes the builder and constructs a [`SheetLayoutElementMaximizationOption`](crate::types::SheetLayoutElementMaximizationOption).
     pub fn build(self) -> crate::types::SheetLayoutElementMaximizationOption {
         crate::types::SheetLayoutElementMaximizationOption {
-            availability_status: self.availability_status,
+            availability_status: self.availability_status
+            ,
         }
     }
 }
+

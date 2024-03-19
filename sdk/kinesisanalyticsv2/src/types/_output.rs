@@ -4,7 +4,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Output {
+pub struct Output  {
     /// <p>The name of the in-application stream.</p>
     pub name: ::std::string::String,
     /// <p>Identifies a Kinesis data stream as the destination.</p>
@@ -16,26 +16,25 @@ pub struct Output {
     /// <p>Describes the data format when records are written to the destination.</p>
     pub destination_schema: ::std::option::Option<crate::types::DestinationSchema>,
 }
-impl Output {
+impl  Output  {
     /// <p>The name of the in-application stream.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Identifies a Kinesis data stream as the destination.</p>
-    pub fn kinesis_streams_output(&self) -> ::std::option::Option<&crate::types::KinesisStreamsOutput> {
+    pub fn kinesis_streams_output(&self) -> ::std::option::Option<& crate::types::KinesisStreamsOutput> {
         self.kinesis_streams_output.as_ref()
     }
     /// <p>Identifies a Kinesis Data Firehose delivery stream as the destination.</p>
-    pub fn kinesis_firehose_output(&self) -> ::std::option::Option<&crate::types::KinesisFirehoseOutput> {
+    pub fn kinesis_firehose_output(&self) -> ::std::option::Option<& crate::types::KinesisFirehoseOutput> {
         self.kinesis_firehose_output.as_ref()
     }
     /// <p>Identifies an Amazon Lambda function as the destination.</p>
-    pub fn lambda_output(&self) -> ::std::option::Option<&crate::types::LambdaOutput> {
+    pub fn lambda_output(&self) -> ::std::option::Option<& crate::types::LambdaOutput> {
         self.lambda_output.as_ref()
     }
     /// <p>Describes the data format when records are written to the destination.</p>
-    pub fn destination_schema(&self) -> ::std::option::Option<&crate::types::DestinationSchema> {
+    pub fn destination_schema(&self) -> ::std::option::Option<& crate::types::DestinationSchema> {
         self.destination_schema.as_ref()
     }
 }
@@ -65,8 +64,7 @@ impl OutputBuilder {
     }
     /// <p>The name of the in-application stream.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the in-application stream.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +77,7 @@ impl OutputBuilder {
     }
     /// <p>Identifies a Kinesis data stream as the destination.</p>
     pub fn set_kinesis_streams_output(mut self, input: ::std::option::Option<crate::types::KinesisStreamsOutput>) -> Self {
-        self.kinesis_streams_output = input;
-        self
+        self.kinesis_streams_output = input; self
     }
     /// <p>Identifies a Kinesis data stream as the destination.</p>
     pub fn get_kinesis_streams_output(&self) -> &::std::option::Option<crate::types::KinesisStreamsOutput> {
@@ -93,8 +90,7 @@ impl OutputBuilder {
     }
     /// <p>Identifies a Kinesis Data Firehose delivery stream as the destination.</p>
     pub fn set_kinesis_firehose_output(mut self, input: ::std::option::Option<crate::types::KinesisFirehoseOutput>) -> Self {
-        self.kinesis_firehose_output = input;
-        self
+        self.kinesis_firehose_output = input; self
     }
     /// <p>Identifies a Kinesis Data Firehose delivery stream as the destination.</p>
     pub fn get_kinesis_firehose_output(&self) -> &::std::option::Option<crate::types::KinesisFirehoseOutput> {
@@ -107,8 +103,7 @@ impl OutputBuilder {
     }
     /// <p>Identifies an Amazon Lambda function as the destination.</p>
     pub fn set_lambda_output(mut self, input: ::std::option::Option<crate::types::LambdaOutput>) -> Self {
-        self.lambda_output = input;
-        self
+        self.lambda_output = input; self
     }
     /// <p>Identifies an Amazon Lambda function as the destination.</p>
     pub fn get_lambda_output(&self) -> &::std::option::Option<crate::types::LambdaOutput> {
@@ -122,8 +117,7 @@ impl OutputBuilder {
     }
     /// <p>Describes the data format when records are written to the destination.</p>
     pub fn set_destination_schema(mut self, input: ::std::option::Option<crate::types::DestinationSchema>) -> Self {
-        self.destination_schema = input;
-        self
+        self.destination_schema = input; self
     }
     /// <p>Describes the data format when records are written to the destination.</p>
     pub fn get_destination_schema(&self) -> &::std::option::Option<crate::types::DestinationSchema> {
@@ -133,17 +127,23 @@ impl OutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::OutputBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::Output, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Output {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building Output",
-                )
-            })?,
-            kinesis_streams_output: self.kinesis_streams_output,
-            kinesis_firehose_output: self.kinesis_firehose_output,
-            lambda_output: self.lambda_output,
-            destination_schema: self.destination_schema,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Output {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building Output")
+                    )?
+                ,
+                kinesis_streams_output: self.kinesis_streams_output
+                ,
+                kinesis_firehose_output: self.kinesis_firehose_output
+                ,
+                lambda_output: self.lambda_output
+                ,
+                destination_schema: self.destination_schema
+                ,
+            }
+        )
     }
 }
+

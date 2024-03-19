@@ -3,22 +3,20 @@
 /// A Slack Workspace.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SlackWorkspace {
+pub struct SlackWorkspace  {
     /// The ID of the Slack workspace authorized with AWS Chatbot.
     pub slack_team_id: ::std::string::String,
     /// Name of the Slack Workspace.
     pub slack_team_name: ::std::string::String,
 }
-impl SlackWorkspace {
+impl  SlackWorkspace  {
     /// The ID of the Slack workspace authorized with AWS Chatbot.
-    pub fn slack_team_id(&self) -> &str {
-        use std::ops::Deref;
-        self.slack_team_id.deref()
+    pub fn slack_team_id(&self) -> & str {
+        use std::ops::Deref; self.slack_team_id.deref()
     }
     /// Name of the Slack Workspace.
-    pub fn slack_team_name(&self) -> &str {
-        use std::ops::Deref;
-        self.slack_team_name.deref()
+    pub fn slack_team_name(&self) -> & str {
+        use std::ops::Deref; self.slack_team_name.deref()
     }
 }
 impl SlackWorkspace {
@@ -44,8 +42,7 @@ impl SlackWorkspaceBuilder {
     }
     /// The ID of the Slack workspace authorized with AWS Chatbot.
     pub fn set_slack_team_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.slack_team_id = input;
-        self
+        self.slack_team_id = input; self
     }
     /// The ID of the Slack workspace authorized with AWS Chatbot.
     pub fn get_slack_team_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl SlackWorkspaceBuilder {
     }
     /// Name of the Slack Workspace.
     pub fn set_slack_team_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.slack_team_name = input;
-        self
+        self.slack_team_name = input; self
     }
     /// Name of the Slack Workspace.
     pub fn get_slack_team_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl SlackWorkspaceBuilder {
     /// - [`slack_team_id`](crate::types::builders::SlackWorkspaceBuilder::slack_team_id)
     /// - [`slack_team_name`](crate::types::builders::SlackWorkspaceBuilder::slack_team_name)
     pub fn build(self) -> ::std::result::Result<crate::types::SlackWorkspace, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SlackWorkspace {
-            slack_team_id: self.slack_team_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "slack_team_id",
-                    "slack_team_id was not specified but it is required when building SlackWorkspace",
-                )
-            })?,
-            slack_team_name: self.slack_team_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "slack_team_name",
-                    "slack_team_name was not specified but it is required when building SlackWorkspace",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SlackWorkspace {
+                slack_team_id: self.slack_team_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("slack_team_id", "slack_team_id was not specified but it is required when building SlackWorkspace")
+                    )?
+                ,
+                slack_team_name: self.slack_team_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("slack_team_name", "slack_team_name was not specified but it is required when building SlackWorkspace")
+                    )?
+                ,
+            }
+        )
     }
 }
+

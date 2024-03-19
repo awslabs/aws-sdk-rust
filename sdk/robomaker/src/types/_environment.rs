@@ -3,13 +3,13 @@
 /// <p>The object that contains the Docker image URI for either your robot or simulation applications.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Environment {
+pub struct Environment  {
     /// <p>The Docker image URI for either your robot or simulation applications.</p>
     pub uri: ::std::option::Option<::std::string::String>,
 }
-impl Environment {
+impl  Environment  {
     /// <p>The Docker image URI for either your robot or simulation applications.</p>
-    pub fn uri(&self) -> ::std::option::Option<&str> {
+    pub fn uri(&self) -> ::std::option::Option<& str> {
         self.uri.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl EnvironmentBuilder {
     }
     /// <p>The Docker image URI for either your robot or simulation applications.</p>
     pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.uri = input;
-        self
+        self.uri = input; self
     }
     /// <p>The Docker image URI for either your robot or simulation applications.</p>
     pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl EnvironmentBuilder {
     }
     /// Consumes the builder and constructs a [`Environment`](crate::types::Environment).
     pub fn build(self) -> crate::types::Environment {
-        crate::types::Environment { uri: self.uri }
+        crate::types::Environment {
+            uri: self.uri
+            ,
+        }
     }
 }
+

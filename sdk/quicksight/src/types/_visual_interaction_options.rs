@@ -3,19 +3,19 @@
 /// <p>The general visual interactions setup for visual publish options</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VisualInteractionOptions {
+pub struct VisualInteractionOptions  {
     /// <p>The on-visual menu options for a visual.</p>
     pub visual_menu_option: ::std::option::Option<crate::types::VisualMenuOption>,
     /// <p>The context menu options for a visual.</p>
     pub context_menu_option: ::std::option::Option<crate::types::ContextMenuOption>,
 }
-impl VisualInteractionOptions {
+impl  VisualInteractionOptions  {
     /// <p>The on-visual menu options for a visual.</p>
-    pub fn visual_menu_option(&self) -> ::std::option::Option<&crate::types::VisualMenuOption> {
+    pub fn visual_menu_option(&self) -> ::std::option::Option<& crate::types::VisualMenuOption> {
         self.visual_menu_option.as_ref()
     }
     /// <p>The context menu options for a visual.</p>
-    pub fn context_menu_option(&self) -> ::std::option::Option<&crate::types::ContextMenuOption> {
+    pub fn context_menu_option(&self) -> ::std::option::Option<& crate::types::ContextMenuOption> {
         self.context_menu_option.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl VisualInteractionOptionsBuilder {
     }
     /// <p>The on-visual menu options for a visual.</p>
     pub fn set_visual_menu_option(mut self, input: ::std::option::Option<crate::types::VisualMenuOption>) -> Self {
-        self.visual_menu_option = input;
-        self
+        self.visual_menu_option = input; self
     }
     /// <p>The on-visual menu options for a visual.</p>
     pub fn get_visual_menu_option(&self) -> &::std::option::Option<crate::types::VisualMenuOption> {
@@ -55,8 +54,7 @@ impl VisualInteractionOptionsBuilder {
     }
     /// <p>The context menu options for a visual.</p>
     pub fn set_context_menu_option(mut self, input: ::std::option::Option<crate::types::ContextMenuOption>) -> Self {
-        self.context_menu_option = input;
-        self
+        self.context_menu_option = input; self
     }
     /// <p>The context menu options for a visual.</p>
     pub fn get_context_menu_option(&self) -> &::std::option::Option<crate::types::ContextMenuOption> {
@@ -65,8 +63,11 @@ impl VisualInteractionOptionsBuilder {
     /// Consumes the builder and constructs a [`VisualInteractionOptions`](crate::types::VisualInteractionOptions).
     pub fn build(self) -> crate::types::VisualInteractionOptions {
         crate::types::VisualInteractionOptions {
-            visual_menu_option: self.visual_menu_option,
-            context_menu_option: self.context_menu_option,
+            visual_menu_option: self.visual_menu_option
+            ,
+            context_menu_option: self.context_menu_option
+            ,
         }
     }
 }
+

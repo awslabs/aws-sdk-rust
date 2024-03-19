@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateEdgeDeploymentStageInput {
+pub struct CreateEdgeDeploymentStageInput  {
     /// <p>The name of the edge deployment plan.</p>
     pub edge_deployment_plan_name: ::std::option::Option<::std::string::String>,
     /// <p>List of stages to be added to the edge deployment plan.</p>
-    pub stages: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStage>>,
+    pub stages: ::std::option::Option<::std::vec::Vec::<crate::types::DeploymentStage>>,
 }
-impl CreateEdgeDeploymentStageInput {
+impl  CreateEdgeDeploymentStageInput  {
     /// <p>The name of the edge deployment plan.</p>
-    pub fn edge_deployment_plan_name(&self) -> ::std::option::Option<&str> {
+    pub fn edge_deployment_plan_name(&self) -> ::std::option::Option<& str> {
         self.edge_deployment_plan_name.as_deref()
     }
     /// <p>List of stages to be added to the edge deployment plan.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stages.is_none()`.
-    pub fn stages(&self) -> &[crate::types::DeploymentStage] {
-        self.stages.as_deref().unwrap_or_default()
+    pub fn stages(&self) -> & [crate::types::DeploymentStage] {
+        self.stages.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateEdgeDeploymentStageInput {
@@ -32,7 +33,7 @@ impl CreateEdgeDeploymentStageInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEdgeDeploymentStageInputBuilder {
     pub(crate) edge_deployment_plan_name: ::std::option::Option<::std::string::String>,
-    pub(crate) stages: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStage>>,
+    pub(crate) stages: ::std::option::Option<::std::vec::Vec::<crate::types::DeploymentStage>>,
 }
 impl CreateEdgeDeploymentStageInputBuilder {
     /// <p>The name of the edge deployment plan.</p>
@@ -43,8 +44,7 @@ impl CreateEdgeDeploymentStageInputBuilder {
     }
     /// <p>The name of the edge deployment plan.</p>
     pub fn set_edge_deployment_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.edge_deployment_plan_name = input;
-        self
+        self.edge_deployment_plan_name = input; self
     }
     /// <p>The name of the edge deployment plan.</p>
     pub fn get_edge_deployment_plan_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,29 +57,28 @@ impl CreateEdgeDeploymentStageInputBuilder {
     /// <p>List of stages to be added to the edge deployment plan.</p>
     pub fn stages(mut self, input: crate::types::DeploymentStage) -> Self {
         let mut v = self.stages.unwrap_or_default();
-        v.push(input);
-        self.stages = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.stages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of stages to be added to the edge deployment plan.</p>
-    pub fn set_stages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStage>>) -> Self {
-        self.stages = input;
-        self
+    pub fn set_stages(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DeploymentStage>>) -> Self {
+        self.stages = input; self
     }
     /// <p>List of stages to be added to the edge deployment plan.</p>
-    pub fn get_stages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentStage>> {
+    pub fn get_stages(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DeploymentStage>> {
         &self.stages
     }
     /// Consumes the builder and constructs a [`CreateEdgeDeploymentStageInput`](crate::operation::create_edge_deployment_stage::CreateEdgeDeploymentStageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_edge_deployment_stage::CreateEdgeDeploymentStageInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_edge_deployment_stage::CreateEdgeDeploymentStageInput {
-            edge_deployment_plan_name: self.edge_deployment_plan_name,
-            stages: self.stages,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_edge_deployment_stage::CreateEdgeDeploymentStageInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_edge_deployment_stage::CreateEdgeDeploymentStageInput {
+                edge_deployment_plan_name: self.edge_deployment_plan_name
+                ,
+                stages: self.stages
+                ,
+            }
+        )
     }
 }
+

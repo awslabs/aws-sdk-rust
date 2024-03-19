@@ -3,7 +3,7 @@
 /// <p>The TransferDomain request includes the following elements.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct TransferDomainInput {
+pub struct TransferDomainInput  {
     /// <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>The domain name can contain only the following characters:</p>
     /// <ul>
@@ -23,7 +23,7 @@ pub struct TransferDomainInput {
     /// <p>Default: 1</p>
     pub duration_in_years: ::std::option::Option<i32>,
     /// <p>Contains details for the host and glue IP addresses.</p>
-    pub nameservers: ::std::option::Option<::std::vec::Vec<crate::types::Nameserver>>,
+    pub nameservers: ::std::option::Option<::std::vec::Vec::<crate::types::Nameserver>>,
     /// <p>The authorization code for the domain. You get this value from the current registrar.</p>
     pub auth_code: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the domain will be automatically renewed (true) or not (false). Auto renewal only takes effect after the account is charged.</p>
@@ -59,7 +59,7 @@ pub struct TransferDomainInput {
     /// </note>
     pub privacy_protect_billing_contact: ::std::option::Option<bool>,
 }
-impl TransferDomainInput {
+impl  TransferDomainInput  {
     /// <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>The domain name can contain only the following characters:</p>
     /// <ul>
@@ -72,11 +72,11 @@ impl TransferDomainInput {
     /// <li>
     /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p></li>
     /// </ul>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>Reserved for future use.</p>
-    pub fn idn_lang_code(&self) -> ::std::option::Option<&str> {
+    pub fn idn_lang_code(&self) -> ::std::option::Option<& str> {
         self.idn_lang_code.as_deref()
     }
     /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year. The maximum period depends on the top-level domain.</p>
@@ -85,13 +85,14 @@ impl TransferDomainInput {
         self.duration_in_years
     }
     /// <p>Contains details for the host and glue IP addresses.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nameservers.is_none()`.
-    pub fn nameservers(&self) -> &[crate::types::Nameserver] {
-        self.nameservers.as_deref().unwrap_or_default()
+    pub fn nameservers(&self) -> & [crate::types::Nameserver] {
+        self.nameservers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The authorization code for the domain. You get this value from the current registrar.</p>
-    pub fn auth_code(&self) -> ::std::option::Option<&str> {
+    pub fn auth_code(&self) -> ::std::option::Option<& str> {
         self.auth_code.as_deref()
     }
     /// <p>Indicates whether the domain will be automatically renewed (true) or not (false). Auto renewal only takes effect after the account is charged.</p>
@@ -100,15 +101,15 @@ impl TransferDomainInput {
         self.auto_renew
     }
     /// <p>Provides detailed contact information.</p>
-    pub fn admin_contact(&self) -> ::std::option::Option<&crate::types::ContactDetail> {
+    pub fn admin_contact(&self) -> ::std::option::Option<& crate::types::ContactDetail> {
         self.admin_contact.as_ref()
     }
     /// <p>Provides detailed contact information.</p>
-    pub fn registrant_contact(&self) -> ::std::option::Option<&crate::types::ContactDetail> {
+    pub fn registrant_contact(&self) -> ::std::option::Option<& crate::types::ContactDetail> {
         self.registrant_contact.as_ref()
     }
     /// <p>Provides detailed contact information.</p>
-    pub fn tech_contact(&self) -> ::std::option::Option<&crate::types::ContactDetail> {
+    pub fn tech_contact(&self) -> ::std::option::Option<& crate::types::ContactDetail> {
         self.tech_contact.as_ref()
     }
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information for the registrar, the phrase "REDACTED FOR PRIVACY", or "On behalf of <domain name>
@@ -135,7 +136,7 @@ impl TransferDomainInput {
         self.privacy_protect_tech_contact
     }
     /// <p>Provides detailed contact information.</p>
-    pub fn billing_contact(&self) -> ::std::option::Option<&crate::types::ContactDetail> {
+    pub fn billing_contact(&self) -> ::std::option::Option<& crate::types::ContactDetail> {
         self.billing_contact.as_ref()
     }
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify <code>false</code>, WHOIS queries return the information that you entered for the billing contact.</p><note>
@@ -145,7 +146,7 @@ impl TransferDomainInput {
         self.privacy_protect_billing_contact
     }
 }
-impl ::std::fmt::Debug for TransferDomainInput {
+impl  ::std::fmt::Debug for TransferDomainInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TransferDomainInput");
         formatter.field("domain_name", &self.domain_name);
@@ -179,7 +180,7 @@ pub struct TransferDomainInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) idn_lang_code: ::std::option::Option<::std::string::String>,
     pub(crate) duration_in_years: ::std::option::Option<i32>,
-    pub(crate) nameservers: ::std::option::Option<::std::vec::Vec<crate::types::Nameserver>>,
+    pub(crate) nameservers: ::std::option::Option<::std::vec::Vec::<crate::types::Nameserver>>,
     pub(crate) auth_code: ::std::option::Option<::std::string::String>,
     pub(crate) auto_renew: ::std::option::Option<bool>,
     pub(crate) admin_contact: ::std::option::Option<crate::types::ContactDetail>,
@@ -222,8 +223,7 @@ impl TransferDomainInputBuilder {
     /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p></li>
     /// </ul>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>The domain name can contain only the following characters:</p>
@@ -247,8 +247,7 @@ impl TransferDomainInputBuilder {
     }
     /// <p>Reserved for future use.</p>
     pub fn set_idn_lang_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.idn_lang_code = input;
-        self
+        self.idn_lang_code = input; self
     }
     /// <p>Reserved for future use.</p>
     pub fn get_idn_lang_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -264,8 +263,7 @@ impl TransferDomainInputBuilder {
     /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year. The maximum period depends on the top-level domain.</p>
     /// <p>Default: 1</p>
     pub fn set_duration_in_years(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration_in_years = input;
-        self
+        self.duration_in_years = input; self
     }
     /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year. The maximum period depends on the top-level domain.</p>
     /// <p>Default: 1</p>
@@ -279,17 +277,16 @@ impl TransferDomainInputBuilder {
     /// <p>Contains details for the host and glue IP addresses.</p>
     pub fn nameservers(mut self, input: crate::types::Nameserver) -> Self {
         let mut v = self.nameservers.unwrap_or_default();
-        v.push(input);
-        self.nameservers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.nameservers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains details for the host and glue IP addresses.</p>
-    pub fn set_nameservers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Nameserver>>) -> Self {
-        self.nameservers = input;
-        self
+    pub fn set_nameservers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Nameserver>>) -> Self {
+        self.nameservers = input; self
     }
     /// <p>Contains details for the host and glue IP addresses.</p>
-    pub fn get_nameservers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Nameserver>> {
+    pub fn get_nameservers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Nameserver>> {
         &self.nameservers
     }
     /// <p>The authorization code for the domain. You get this value from the current registrar.</p>
@@ -299,8 +296,7 @@ impl TransferDomainInputBuilder {
     }
     /// <p>The authorization code for the domain. You get this value from the current registrar.</p>
     pub fn set_auth_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auth_code = input;
-        self
+        self.auth_code = input; self
     }
     /// <p>The authorization code for the domain. You get this value from the current registrar.</p>
     pub fn get_auth_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -315,8 +311,7 @@ impl TransferDomainInputBuilder {
     /// <p>Indicates whether the domain will be automatically renewed (true) or not (false). Auto renewal only takes effect after the account is charged.</p>
     /// <p>Default: true</p>
     pub fn set_auto_renew(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_renew = input;
-        self
+        self.auto_renew = input; self
     }
     /// <p>Indicates whether the domain will be automatically renewed (true) or not (false). Auto renewal only takes effect after the account is charged.</p>
     /// <p>Default: true</p>
@@ -331,8 +326,7 @@ impl TransferDomainInputBuilder {
     }
     /// <p>Provides detailed contact information.</p>
     pub fn set_admin_contact(mut self, input: ::std::option::Option<crate::types::ContactDetail>) -> Self {
-        self.admin_contact = input;
-        self
+        self.admin_contact = input; self
     }
     /// <p>Provides detailed contact information.</p>
     pub fn get_admin_contact(&self) -> &::std::option::Option<crate::types::ContactDetail> {
@@ -346,8 +340,7 @@ impl TransferDomainInputBuilder {
     }
     /// <p>Provides detailed contact information.</p>
     pub fn set_registrant_contact(mut self, input: ::std::option::Option<crate::types::ContactDetail>) -> Self {
-        self.registrant_contact = input;
-        self
+        self.registrant_contact = input; self
     }
     /// <p>Provides detailed contact information.</p>
     pub fn get_registrant_contact(&self) -> &::std::option::Option<crate::types::ContactDetail> {
@@ -361,8 +354,7 @@ impl TransferDomainInputBuilder {
     }
     /// <p>Provides detailed contact information.</p>
     pub fn set_tech_contact(mut self, input: ::std::option::Option<crate::types::ContactDetail>) -> Self {
-        self.tech_contact = input;
-        self
+        self.tech_contact = input; self
     }
     /// <p>Provides detailed contact information.</p>
     pub fn get_tech_contact(&self) -> &::std::option::Option<crate::types::ContactDetail> {
@@ -385,8 +377,7 @@ impl TransferDomainInputBuilder {
     /// </note>
     /// <p>Default: <code>true</code></p>
     pub fn set_privacy_protect_admin_contact(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.privacy_protect_admin_contact = input;
-        self
+        self.privacy_protect_admin_contact = input; self
     }
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information for the registrar, the phrase "REDACTED FOR PRIVACY", or "On behalf of <domain name>
     /// owner.".
@@ -410,8 +401,7 @@ impl TransferDomainInputBuilder {
     /// </note>
     /// <p>Default: <code>true</code></p>
     pub fn set_privacy_protect_registrant_contact(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.privacy_protect_registrant_contact = input;
-        self
+        self.privacy_protect_registrant_contact = input; self
     }
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p><note>
     /// <p>You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.</p>
@@ -433,8 +423,7 @@ impl TransferDomainInputBuilder {
     /// </note>
     /// <p>Default: <code>true</code></p>
     pub fn set_privacy_protect_tech_contact(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.privacy_protect_tech_contact = input;
-        self
+        self.privacy_protect_tech_contact = input; self
     }
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p><note>
     /// <p>You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.</p>
@@ -450,8 +439,7 @@ impl TransferDomainInputBuilder {
     }
     /// <p>Provides detailed contact information.</p>
     pub fn set_billing_contact(mut self, input: ::std::option::Option<crate::types::ContactDetail>) -> Self {
-        self.billing_contact = input;
-        self
+        self.billing_contact = input; self
     }
     /// <p>Provides detailed contact information.</p>
     pub fn get_billing_contact(&self) -> &::std::option::Option<crate::types::ContactDetail> {
@@ -468,8 +456,7 @@ impl TransferDomainInputBuilder {
     /// <p>You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.</p>
     /// </note>
     pub fn set_privacy_protect_billing_contact(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.privacy_protect_billing_contact = input;
-        self
+        self.privacy_protect_billing_contact = input; self
     }
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify <code>false</code>, WHOIS queries return the information that you entered for the billing contact.</p><note>
     /// <p>You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.</p>
@@ -478,25 +465,39 @@ impl TransferDomainInputBuilder {
         &self.privacy_protect_billing_contact
     }
     /// Consumes the builder and constructs a [`TransferDomainInput`](crate::operation::transfer_domain::TransferDomainInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::transfer_domain::TransferDomainInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::transfer_domain::TransferDomainInput {
-            domain_name: self.domain_name,
-            idn_lang_code: self.idn_lang_code,
-            duration_in_years: self.duration_in_years,
-            nameservers: self.nameservers,
-            auth_code: self.auth_code,
-            auto_renew: self.auto_renew,
-            admin_contact: self.admin_contact,
-            registrant_contact: self.registrant_contact,
-            tech_contact: self.tech_contact,
-            privacy_protect_admin_contact: self.privacy_protect_admin_contact,
-            privacy_protect_registrant_contact: self.privacy_protect_registrant_contact,
-            privacy_protect_tech_contact: self.privacy_protect_tech_contact,
-            billing_contact: self.billing_contact,
-            privacy_protect_billing_contact: self.privacy_protect_billing_contact,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::transfer_domain::TransferDomainInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::transfer_domain::TransferDomainInput {
+                domain_name: self.domain_name
+                ,
+                idn_lang_code: self.idn_lang_code
+                ,
+                duration_in_years: self.duration_in_years
+                ,
+                nameservers: self.nameservers
+                ,
+                auth_code: self.auth_code
+                ,
+                auto_renew: self.auto_renew
+                ,
+                admin_contact: self.admin_contact
+                ,
+                registrant_contact: self.registrant_contact
+                ,
+                tech_contact: self.tech_contact
+                ,
+                privacy_protect_admin_contact: self.privacy_protect_admin_contact
+                ,
+                privacy_protect_registrant_contact: self.privacy_protect_registrant_contact
+                ,
+                privacy_protect_tech_contact: self.privacy_protect_tech_contact
+                ,
+                billing_contact: self.billing_contact
+                ,
+                privacy_protect_billing_contact: self.privacy_protect_billing_contact
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for TransferDomainInputBuilder {
@@ -519,3 +520,4 @@ impl ::std::fmt::Debug for TransferDomainInputBuilder {
         formatter.finish()
     }
 }
+

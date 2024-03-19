@@ -21,11 +21,7 @@ impl TrustedTokenIssuerConfiguration {
     /// Tries to convert the enum instance into [`OidcJwtConfiguration`](crate::types::TrustedTokenIssuerConfiguration::OidcJwtConfiguration), extracting the inner [`OidcJwtConfiguration`](crate::types::OidcJwtConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_oidc_jwt_configuration(&self) -> ::std::result::Result<&crate::types::OidcJwtConfiguration, &Self> {
-        if let TrustedTokenIssuerConfiguration::OidcJwtConfiguration(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let TrustedTokenIssuerConfiguration::OidcJwtConfiguration(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`OidcJwtConfiguration`](crate::types::TrustedTokenIssuerConfiguration::OidcJwtConfiguration).
     pub fn is_oidc_jwt_configuration(&self) -> bool {
@@ -36,3 +32,4 @@ impl TrustedTokenIssuerConfiguration {
         matches!(self, Self::Unknown)
     }
 }
+

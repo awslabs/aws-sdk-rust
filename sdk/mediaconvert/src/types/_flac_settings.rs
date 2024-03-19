@@ -3,7 +3,7 @@
 /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value FLAC.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FlacSettings {
+pub struct FlacSettings  {
     /// Specify Bit depth (BitDepth), in bits per sample, to choose the encoding quality for this audio track.
     pub bit_depth: ::std::option::Option<i32>,
     /// Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1 output channel; choosing Stereo gives you 2. In the API, valid values are between 1 and 8.
@@ -11,7 +11,7 @@ pub struct FlacSettings {
     /// Sample rate in Hz.
     pub sample_rate: ::std::option::Option<i32>,
 }
-impl FlacSettings {
+impl  FlacSettings  {
     /// Specify Bit depth (BitDepth), in bits per sample, to choose the encoding quality for this audio track.
     pub fn bit_depth(&self) -> ::std::option::Option<i32> {
         self.bit_depth
@@ -48,8 +48,7 @@ impl FlacSettingsBuilder {
     }
     /// Specify Bit depth (BitDepth), in bits per sample, to choose the encoding quality for this audio track.
     pub fn set_bit_depth(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.bit_depth = input;
-        self
+        self.bit_depth = input; self
     }
     /// Specify Bit depth (BitDepth), in bits per sample, to choose the encoding quality for this audio track.
     pub fn get_bit_depth(&self) -> &::std::option::Option<i32> {
@@ -62,8 +61,7 @@ impl FlacSettingsBuilder {
     }
     /// Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1 output channel; choosing Stereo gives you 2. In the API, valid values are between 1 and 8.
     pub fn set_channels(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.channels = input;
-        self
+        self.channels = input; self
     }
     /// Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1 output channel; choosing Stereo gives you 2. In the API, valid values are between 1 and 8.
     pub fn get_channels(&self) -> &::std::option::Option<i32> {
@@ -76,8 +74,7 @@ impl FlacSettingsBuilder {
     }
     /// Sample rate in Hz.
     pub fn set_sample_rate(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.sample_rate = input;
-        self
+        self.sample_rate = input; self
     }
     /// Sample rate in Hz.
     pub fn get_sample_rate(&self) -> &::std::option::Option<i32> {
@@ -86,9 +83,13 @@ impl FlacSettingsBuilder {
     /// Consumes the builder and constructs a [`FlacSettings`](crate::types::FlacSettings).
     pub fn build(self) -> crate::types::FlacSettings {
         crate::types::FlacSettings {
-            bit_depth: self.bit_depth,
-            channels: self.channels,
-            sample_rate: self.sample_rate,
+            bit_depth: self.bit_depth
+            ,
+            channels: self.channels
+            ,
+            sample_rate: self.sample_rate
+            ,
         }
     }
 }
+

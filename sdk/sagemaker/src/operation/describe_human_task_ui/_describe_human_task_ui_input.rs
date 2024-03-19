@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeHumanTaskUiInput {
+pub struct DescribeHumanTaskUiInput  {
     /// <p>The name of the human task user interface (worker task template) you want information about.</p>
     pub human_task_ui_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeHumanTaskUiInput {
+impl  DescribeHumanTaskUiInput  {
     /// <p>The name of the human task user interface (worker task template) you want information about.</p>
-    pub fn human_task_ui_name(&self) -> ::std::option::Option<&str> {
+    pub fn human_task_ui_name(&self) -> ::std::option::Option<& str> {
         self.human_task_ui_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DescribeHumanTaskUiInputBuilder {
     }
     /// <p>The name of the human task user interface (worker task template) you want information about.</p>
     pub fn set_human_task_ui_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.human_task_ui_name = input;
-        self
+        self.human_task_ui_name = input; self
     }
     /// <p>The name of the human task user interface (worker task template) you want information about.</p>
     pub fn get_human_task_ui_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.human_task_ui_name
     }
     /// Consumes the builder and constructs a [`DescribeHumanTaskUiInput`](crate::operation::describe_human_task_ui::DescribeHumanTaskUiInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_human_task_ui::DescribeHumanTaskUiInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_human_task_ui::DescribeHumanTaskUiInput {
-            human_task_ui_name: self.human_task_ui_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_human_task_ui::DescribeHumanTaskUiInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_human_task_ui::DescribeHumanTaskUiInput {
+                human_task_ui_name: self.human_task_ui_name
+                ,
+            }
+        )
     }
 }
+

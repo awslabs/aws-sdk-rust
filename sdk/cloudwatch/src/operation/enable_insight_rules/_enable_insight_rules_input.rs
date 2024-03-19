@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableInsightRulesInput {
+pub struct EnableInsightRulesInput  {
     /// <p>An array of the rule names to enable. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
-    pub rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub rule_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl EnableInsightRulesInput {
+impl  EnableInsightRulesInput  {
     /// <p>An array of the rule names to enable. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rule_names.is_none()`.
-    pub fn rule_names(&self) -> &[::std::string::String] {
-        self.rule_names.as_deref().unwrap_or_default()
+    pub fn rule_names(&self) -> & [::std::string::String] {
+        self.rule_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl EnableInsightRulesInput {
@@ -25,7 +26,7 @@ impl EnableInsightRulesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableInsightRulesInputBuilder {
-    pub(crate) rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) rule_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl EnableInsightRulesInputBuilder {
     /// Appends an item to `rule_names`.
@@ -35,24 +36,26 @@ impl EnableInsightRulesInputBuilder {
     /// <p>An array of the rule names to enable. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
     pub fn rule_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.rule_names.unwrap_or_default();
-        v.push(input.into());
-        self.rule_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.rule_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of the rule names to enable. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
-    pub fn set_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.rule_names = input;
-        self
+    pub fn set_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.rule_names = input; self
     }
     /// <p>An array of the rule names to enable. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
-    pub fn get_rule_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_rule_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.rule_names
     }
     /// Consumes the builder and constructs a [`EnableInsightRulesInput`](crate::operation::enable_insight_rules::EnableInsightRulesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::enable_insight_rules::EnableInsightRulesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::enable_insight_rules::EnableInsightRulesInput { rule_names: self.rule_names })
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_insight_rules::EnableInsightRulesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::enable_insight_rules::EnableInsightRulesInput {
+                rule_names: self.rule_names
+                ,
+            }
+        )
     }
 }
+

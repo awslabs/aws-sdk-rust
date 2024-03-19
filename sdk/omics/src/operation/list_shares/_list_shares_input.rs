@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSharesInput {
+pub struct ListSharesInput  {
     /// <p>The account that owns the analytics store shared.</p>
     pub resource_owner: ::std::option::Option<crate::types::ResourceOwner>,
     /// <p>Attributes used to filter for a specific subset of shares.</p>
@@ -12,17 +12,17 @@ pub struct ListSharesInput {
     /// <p>The maximum number of shares to return in one page of results.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListSharesInput {
+impl  ListSharesInput  {
     /// <p>The account that owns the analytics store shared.</p>
-    pub fn resource_owner(&self) -> ::std::option::Option<&crate::types::ResourceOwner> {
+    pub fn resource_owner(&self) -> ::std::option::Option<& crate::types::ResourceOwner> {
         self.resource_owner.as_ref()
     }
     /// <p>Attributes used to filter for a specific subset of shares.</p>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::Filter> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::Filter> {
         self.filter.as_ref()
     }
     /// <p>Next token returned in the response of a previous ListReadSetUploadPartsRequest call. Used to get the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of shares to return in one page of results.</p>
@@ -55,8 +55,7 @@ impl ListSharesInputBuilder {
     }
     /// <p>The account that owns the analytics store shared.</p>
     pub fn set_resource_owner(mut self, input: ::std::option::Option<crate::types::ResourceOwner>) -> Self {
-        self.resource_owner = input;
-        self
+        self.resource_owner = input; self
     }
     /// <p>The account that owns the analytics store shared.</p>
     pub fn get_resource_owner(&self) -> &::std::option::Option<crate::types::ResourceOwner> {
@@ -69,8 +68,7 @@ impl ListSharesInputBuilder {
     }
     /// <p>Attributes used to filter for a specific subset of shares.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::Filter>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>Attributes used to filter for a specific subset of shares.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::Filter> {
@@ -83,8 +81,7 @@ impl ListSharesInputBuilder {
     }
     /// <p>Next token returned in the response of a previous ListReadSetUploadPartsRequest call. Used to get the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Next token returned in the response of a previous ListReadSetUploadPartsRequest call. Used to get the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl ListSharesInputBuilder {
     }
     /// <p>The maximum number of shares to return in one page of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of shares to return in one page of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -106,11 +102,18 @@ impl ListSharesInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListSharesInput`](crate::operation::list_shares::ListSharesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_shares::ListSharesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_shares::ListSharesInput {
-            resource_owner: self.resource_owner,
-            filter: self.filter,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_shares::ListSharesInput {
+                resource_owner: self.resource_owner
+                ,
+                filter: self.filter
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

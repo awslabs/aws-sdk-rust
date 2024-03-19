@@ -3,11 +3,11 @@
 /// <p>Represents the settings used to enable point in time recovery.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PointInTimeRecoverySpecification {
+pub struct PointInTimeRecoverySpecification  {
     /// <p>Indicates whether point in time recovery is enabled (true) or disabled (false) on the table.</p>
     pub point_in_time_recovery_enabled: bool,
 }
-impl PointInTimeRecoverySpecification {
+impl  PointInTimeRecoverySpecification  {
     /// <p>Indicates whether point in time recovery is enabled (true) or disabled (false) on the table.</p>
     pub fn point_in_time_recovery_enabled(&self) -> bool {
         self.point_in_time_recovery_enabled
@@ -35,8 +35,7 @@ impl PointInTimeRecoverySpecificationBuilder {
     }
     /// <p>Indicates whether point in time recovery is enabled (true) or disabled (false) on the table.</p>
     pub fn set_point_in_time_recovery_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.point_in_time_recovery_enabled = input;
-        self
+        self.point_in_time_recovery_enabled = input; self
     }
     /// <p>Indicates whether point in time recovery is enabled (true) or disabled (false) on the table.</p>
     pub fn get_point_in_time_recovery_enabled(&self) -> &::std::option::Option<bool> {
@@ -46,13 +45,15 @@ impl PointInTimeRecoverySpecificationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`point_in_time_recovery_enabled`](crate::types::builders::PointInTimeRecoverySpecificationBuilder::point_in_time_recovery_enabled)
     pub fn build(self) -> ::std::result::Result<crate::types::PointInTimeRecoverySpecification, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PointInTimeRecoverySpecification {
-            point_in_time_recovery_enabled: self.point_in_time_recovery_enabled.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "point_in_time_recovery_enabled",
-                    "point_in_time_recovery_enabled was not specified but it is required when building PointInTimeRecoverySpecification",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PointInTimeRecoverySpecification {
+                point_in_time_recovery_enabled: self.point_in_time_recovery_enabled
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("point_in_time_recovery_enabled", "point_in_time_recovery_enabled was not specified but it is required when building PointInTimeRecoverySpecification")
+                    )?
+                ,
+            }
+        )
     }
 }
+

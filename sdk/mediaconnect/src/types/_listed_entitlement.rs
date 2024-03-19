@@ -3,7 +3,7 @@
 /// An entitlement that has been granted to you from other AWS accounts.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListedEntitlement {
+pub struct ListedEntitlement  {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
     pub data_transfer_subscriber_fee_percent: ::std::option::Option<i32>,
     /// The ARN of the entitlement.
@@ -11,17 +11,17 @@ pub struct ListedEntitlement {
     /// The name of the entitlement.
     pub entitlement_name: ::std::option::Option<::std::string::String>,
 }
-impl ListedEntitlement {
+impl  ListedEntitlement  {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
     pub fn data_transfer_subscriber_fee_percent(&self) -> ::std::option::Option<i32> {
         self.data_transfer_subscriber_fee_percent
     }
     /// The ARN of the entitlement.
-    pub fn entitlement_arn(&self) -> ::std::option::Option<&str> {
+    pub fn entitlement_arn(&self) -> ::std::option::Option<& str> {
         self.entitlement_arn.as_deref()
     }
     /// The name of the entitlement.
-    pub fn entitlement_name(&self) -> ::std::option::Option<&str> {
+    pub fn entitlement_name(&self) -> ::std::option::Option<& str> {
         self.entitlement_name.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ListedEntitlementBuilder {
     }
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
     pub fn set_data_transfer_subscriber_fee_percent(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.data_transfer_subscriber_fee_percent = input;
-        self
+        self.data_transfer_subscriber_fee_percent = input; self
     }
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
     pub fn get_data_transfer_subscriber_fee_percent(&self) -> &::std::option::Option<i32> {
@@ -63,8 +62,7 @@ impl ListedEntitlementBuilder {
     }
     /// The ARN of the entitlement.
     pub fn set_entitlement_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entitlement_arn = input;
-        self
+        self.entitlement_arn = input; self
     }
     /// The ARN of the entitlement.
     pub fn get_entitlement_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +76,7 @@ impl ListedEntitlementBuilder {
     }
     /// The name of the entitlement.
     pub fn set_entitlement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entitlement_name = input;
-        self
+        self.entitlement_name = input; self
     }
     /// The name of the entitlement.
     pub fn get_entitlement_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,9 +85,13 @@ impl ListedEntitlementBuilder {
     /// Consumes the builder and constructs a [`ListedEntitlement`](crate::types::ListedEntitlement).
     pub fn build(self) -> crate::types::ListedEntitlement {
         crate::types::ListedEntitlement {
-            data_transfer_subscriber_fee_percent: self.data_transfer_subscriber_fee_percent,
-            entitlement_arn: self.entitlement_arn,
-            entitlement_name: self.entitlement_name,
+            data_transfer_subscriber_fee_percent: self.data_transfer_subscriber_fee_percent
+            ,
+            entitlement_arn: self.entitlement_arn
+            ,
+            entitlement_name: self.entitlement_name
+            ,
         }
     }
 }
+

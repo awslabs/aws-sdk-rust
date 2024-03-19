@@ -3,7 +3,7 @@
 /// <p>Contains a summary of a time series (data stream).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TimeSeriesSummary {
+pub struct TimeSeriesSummary  {
     /// <p>The ID of the asset in which the asset property was created.</p>
     pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the asset property, in UUID format.</p>
@@ -26,47 +26,45 @@ pub struct TimeSeriesSummary {
     /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code></p>
     pub time_series_arn: ::std::string::String,
 }
-impl TimeSeriesSummary {
+impl  TimeSeriesSummary  {
     /// <p>The ID of the asset in which the asset property was created.</p>
-    pub fn asset_id(&self) -> ::std::option::Option<&str> {
+    pub fn asset_id(&self) -> ::std::option::Option<& str> {
         self.asset_id.as_deref()
     }
     /// <p>The ID of the asset property, in UUID format.</p>
-    pub fn property_id(&self) -> ::std::option::Option<&str> {
+    pub fn property_id(&self) -> ::std::option::Option<& str> {
         self.property_id.as_deref()
     }
     /// <p>The alias that identifies the time series.</p>
-    pub fn alias(&self) -> ::std::option::Option<&str> {
+    pub fn alias(&self) -> ::std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// <p>The ID of the time series.</p>
-    pub fn time_series_id(&self) -> &str {
-        use std::ops::Deref;
-        self.time_series_id.deref()
+    pub fn time_series_id(&self) -> & str {
+        use std::ops::Deref; self.time_series_id.deref()
     }
     /// <p>The data type of the time series.</p>
     /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this time series.</p>
-    pub fn data_type(&self) -> &crate::types::PropertyDataType {
+    pub fn data_type(&self) -> & crate::types::PropertyDataType {
         &self.data_type
     }
     /// <p>The data type of the structure for this time series. This parameter is required for time series that have the <code>STRUCT</code> data type.</p>
     /// <p>The options for this parameter depend on the type of the composite model in which you created the asset property that is associated with your time series. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
-    pub fn data_type_spec(&self) -> ::std::option::Option<&str> {
+    pub fn data_type_spec(&self) -> ::std::option::Option<& str> {
         self.data_type_spec.as_deref()
     }
     /// <p>The date that the time series was created, in Unix epoch time.</p>
-    pub fn time_series_creation_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn time_series_creation_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.time_series_creation_date
     }
     /// <p>The date that the time series was last updated, in Unix epoch time.</p>
-    pub fn time_series_last_update_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn time_series_last_update_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.time_series_last_update_date
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the time series, which has the following format.</p>
     /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code></p>
-    pub fn time_series_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.time_series_arn.deref()
+    pub fn time_series_arn(&self) -> & str {
+        use std::ops::Deref; self.time_series_arn.deref()
     }
 }
 impl TimeSeriesSummary {
@@ -98,8 +96,7 @@ impl TimeSeriesSummaryBuilder {
     }
     /// <p>The ID of the asset in which the asset property was created.</p>
     pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_id = input;
-        self
+        self.asset_id = input; self
     }
     /// <p>The ID of the asset in which the asset property was created.</p>
     pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +109,7 @@ impl TimeSeriesSummaryBuilder {
     }
     /// <p>The ID of the asset property, in UUID format.</p>
     pub fn set_property_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.property_id = input;
-        self
+        self.property_id = input; self
     }
     /// <p>The ID of the asset property, in UUID format.</p>
     pub fn get_property_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +122,7 @@ impl TimeSeriesSummaryBuilder {
     }
     /// <p>The alias that identifies the time series.</p>
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias = input;
-        self
+        self.alias = input; self
     }
     /// <p>The alias that identifies the time series.</p>
     pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +136,7 @@ impl TimeSeriesSummaryBuilder {
     }
     /// <p>The ID of the time series.</p>
     pub fn set_time_series_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.time_series_id = input;
-        self
+        self.time_series_id = input; self
     }
     /// <p>The ID of the time series.</p>
     pub fn get_time_series_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -158,8 +152,7 @@ impl TimeSeriesSummaryBuilder {
     /// <p>The data type of the time series.</p>
     /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this time series.</p>
     pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::PropertyDataType>) -> Self {
-        self.data_type = input;
-        self
+        self.data_type = input; self
     }
     /// <p>The data type of the time series.</p>
     /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this time series.</p>
@@ -175,8 +168,7 @@ impl TimeSeriesSummaryBuilder {
     /// <p>The data type of the structure for this time series. This parameter is required for time series that have the <code>STRUCT</code> data type.</p>
     /// <p>The options for this parameter depend on the type of the composite model in which you created the asset property that is associated with your time series. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
     pub fn set_data_type_spec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_type_spec = input;
-        self
+        self.data_type_spec = input; self
     }
     /// <p>The data type of the structure for this time series. This parameter is required for time series that have the <code>STRUCT</code> data type.</p>
     /// <p>The options for this parameter depend on the type of the composite model in which you created the asset property that is associated with your time series. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
@@ -191,8 +183,7 @@ impl TimeSeriesSummaryBuilder {
     }
     /// <p>The date that the time series was created, in Unix epoch time.</p>
     pub fn set_time_series_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.time_series_creation_date = input;
-        self
+        self.time_series_creation_date = input; self
     }
     /// <p>The date that the time series was created, in Unix epoch time.</p>
     pub fn get_time_series_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -206,8 +197,7 @@ impl TimeSeriesSummaryBuilder {
     }
     /// <p>The date that the time series was last updated, in Unix epoch time.</p>
     pub fn set_time_series_last_update_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.time_series_last_update_date = input;
-        self
+        self.time_series_last_update_date = input; self
     }
     /// <p>The date that the time series was last updated, in Unix epoch time.</p>
     pub fn get_time_series_last_update_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -223,8 +213,7 @@ impl TimeSeriesSummaryBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the time series, which has the following format.</p>
     /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code></p>
     pub fn set_time_series_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.time_series_arn = input;
-        self
+        self.time_series_arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the time series, which has the following format.</p>
     /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code></p>
@@ -239,41 +228,43 @@ impl TimeSeriesSummaryBuilder {
     /// - [`time_series_last_update_date`](crate::types::builders::TimeSeriesSummaryBuilder::time_series_last_update_date)
     /// - [`time_series_arn`](crate::types::builders::TimeSeriesSummaryBuilder::time_series_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::TimeSeriesSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TimeSeriesSummary {
-            asset_id: self.asset_id,
-            property_id: self.property_id,
-            alias: self.alias,
-            time_series_id: self.time_series_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "time_series_id",
-                    "time_series_id was not specified but it is required when building TimeSeriesSummary",
-                )
-            })?,
-            data_type: self.data_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_type",
-                    "data_type was not specified but it is required when building TimeSeriesSummary",
-                )
-            })?,
-            data_type_spec: self.data_type_spec,
-            time_series_creation_date: self.time_series_creation_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "time_series_creation_date",
-                    "time_series_creation_date was not specified but it is required when building TimeSeriesSummary",
-                )
-            })?,
-            time_series_last_update_date: self.time_series_last_update_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "time_series_last_update_date",
-                    "time_series_last_update_date was not specified but it is required when building TimeSeriesSummary",
-                )
-            })?,
-            time_series_arn: self.time_series_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "time_series_arn",
-                    "time_series_arn was not specified but it is required when building TimeSeriesSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TimeSeriesSummary {
+                asset_id: self.asset_id
+                ,
+                property_id: self.property_id
+                ,
+                alias: self.alias
+                ,
+                time_series_id: self.time_series_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("time_series_id", "time_series_id was not specified but it is required when building TimeSeriesSummary")
+                    )?
+                ,
+                data_type: self.data_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_type", "data_type was not specified but it is required when building TimeSeriesSummary")
+                    )?
+                ,
+                data_type_spec: self.data_type_spec
+                ,
+                time_series_creation_date: self.time_series_creation_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("time_series_creation_date", "time_series_creation_date was not specified but it is required when building TimeSeriesSummary")
+                    )?
+                ,
+                time_series_last_update_date: self.time_series_last_update_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("time_series_last_update_date", "time_series_last_update_date was not specified but it is required when building TimeSeriesSummary")
+                    )?
+                ,
+                time_series_arn: self.time_series_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("time_series_arn", "time_series_arn was not specified but it is required when building TimeSeriesSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

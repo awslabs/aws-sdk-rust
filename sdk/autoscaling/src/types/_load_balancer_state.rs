@@ -3,7 +3,7 @@
 /// <p>Describes the state of a Classic Load Balancer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoadBalancerState {
+pub struct LoadBalancerState  {
     /// <p>The name of the load balancer.</p>
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>One of the following load balancer states:</p>
@@ -21,9 +21,9 @@ pub struct LoadBalancerState {
     /// </ul>
     pub state: ::std::option::Option<::std::string::String>,
 }
-impl LoadBalancerState {
+impl  LoadBalancerState  {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> ::std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> ::std::option::Option<& str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>One of the following load balancer states:</p>
@@ -39,7 +39,7 @@ impl LoadBalancerState {
     /// <li>
     /// <p><code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer.</p></li>
     /// </ul>
-    pub fn state(&self) -> ::std::option::Option<&str> {
+    pub fn state(&self) -> ::std::option::Option<& str> {
         self.state.as_deref()
     }
 }
@@ -65,8 +65,7 @@ impl LoadBalancerStateBuilder {
     }
     /// <p>The name of the load balancer.</p>
     pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.load_balancer_name = input;
-        self
+        self.load_balancer_name = input; self
     }
     /// <p>The name of the load balancer.</p>
     pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl LoadBalancerStateBuilder {
     /// <p><code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer.</p></li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>One of the following load balancer states:</p>
     /// <ul>
@@ -125,8 +123,11 @@ impl LoadBalancerStateBuilder {
     /// Consumes the builder and constructs a [`LoadBalancerState`](crate::types::LoadBalancerState).
     pub fn build(self) -> crate::types::LoadBalancerState {
         crate::types::LoadBalancerState {
-            load_balancer_name: self.load_balancer_name,
-            state: self.state,
+            load_balancer_name: self.load_balancer_name
+            ,
+            state: self.state
+            ,
         }
     }
 }
+

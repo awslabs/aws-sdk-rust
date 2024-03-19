@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListProgressUpdateStreams`](crate::operation::list_progress_update_streams::builders::ListProgressUpdateStreamsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_progress_update_streams::builders::ListProgressUpdateStreamsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_progress_update_streams::builders::ListProgressUpdateStreamsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_progress_update_streams::builders::ListProgressUpdateStreamsFluentBuilder::set_next_token):<br>required: **false**<br><p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_progress_update_streams::builders::ListProgressUpdateStreamsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_progress_update_streams::builders::ListProgressUpdateStreamsFluentBuilder::set_max_results):<br>required: **false**<br><p>Filter to limit the maximum number of results to list per page.</p><br>
-    /// - On success, responds with [`ListProgressUpdateStreamsOutput`](crate::operation::list_progress_update_streams::ListProgressUpdateStreamsOutput) with field(s):
+                            /// - On success, responds with [`ListProgressUpdateStreamsOutput`](crate::operation::list_progress_update_streams::ListProgressUpdateStreamsOutput) with field(s):
     ///   - [`progress_update_stream_summary_list(Option<Vec::<ProgressUpdateStreamSummary>>)`](crate::operation::list_progress_update_streams::ListProgressUpdateStreamsOutput::progress_update_stream_summary_list): <p>List of progress update streams up to the max number of results passed in the input.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_progress_update_streams::ListProgressUpdateStreamsOutput::next_token): <p>If there are more streams created than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
-    /// - On failure, responds with [`SdkError<ListProgressUpdateStreamsError>`](crate::operation::list_progress_update_streams::ListProgressUpdateStreamsError)
+                            /// - On failure, responds with [`SdkError<ListProgressUpdateStreamsError>`](crate::operation::list_progress_update_streams::ListProgressUpdateStreamsError)
     pub fn list_progress_update_streams(&self) -> crate::operation::list_progress_update_streams::builders::ListProgressUpdateStreamsFluentBuilder {
-        crate::operation::list_progress_update_streams::builders::ListProgressUpdateStreamsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_progress_update_streams::builders::ListProgressUpdateStreamsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

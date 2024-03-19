@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateResolverRuleInput {
+pub struct CreateResolverRuleInput  {
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
     pub creator_request_id: ::std::option::Option<::std::string::String>,
     /// <p>A friendly name that lets you easily find a rule in the Resolver dashboard in the Route 53 console.</p>
@@ -16,48 +16,50 @@ pub struct CreateResolverRuleInput {
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The IPs that you want Resolver to forward DNS queries to. You can specify either Ipv4 or Ipv6 addresses but not both in the same rule. Separate IP addresses with a space.</p>
     /// <p><code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.</p>
-    pub target_ips: ::std::option::Option<::std::vec::Vec<crate::types::TargetAddress>>,
+    pub target_ips: ::std::option::Option<::std::vec::Vec::<crate::types::TargetAddress>>,
     /// <p>The ID of the outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
     pub resolver_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of the tag keys and values that you want to associate with the endpoint.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateResolverRuleInput {
+impl  CreateResolverRuleInput  {
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
-    pub fn creator_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn creator_request_id(&self) -> ::std::option::Option<& str> {
         self.creator_request_id.as_deref()
     }
     /// <p>A friendly name that lets you easily find a rule in the Resolver dashboard in the Route 53 console.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>When you want to forward DNS queries for specified domain name to resolvers on your network, specify <code>FORWARD</code>.</p>
     /// <p>When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to process queries for a subdomain of that domain, specify <code>SYSTEM</code>.</p>
     /// <p>For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for apex.example.com, you create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.</p>
     /// <p>Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for <code>RuleType</code>.</p>
-    pub fn rule_type(&self) -> ::std::option::Option<&crate::types::RuleTypeOption> {
+    pub fn rule_type(&self) -> ::std::option::Option<& crate::types::RuleTypeOption> {
         self.rule_type.as_ref()
     }
     /// <p>DNS queries for this domain name are forwarded to the IP addresses that you specify in <code>TargetIps</code>. If a query matches multiple Resolver rules (example.com and www.example.com), outbound DNS queries are routed using the Resolver rule that contains the most specific domain name (www.example.com).</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The IPs that you want Resolver to forward DNS queries to. You can specify either Ipv4 or Ipv6 addresses but not both in the same rule. Separate IP addresses with a space.</p>
     /// <p><code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_ips.is_none()`.
-    pub fn target_ips(&self) -> &[crate::types::TargetAddress] {
-        self.target_ips.as_deref().unwrap_or_default()
+    pub fn target_ips(&self) -> & [crate::types::TargetAddress] {
+        self.target_ips.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
-    pub fn resolver_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn resolver_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.resolver_endpoint_id.as_deref()
     }
     /// <p>A list of the tag keys and values that you want to associate with the endpoint.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateResolverRuleInput {
@@ -75,9 +77,9 @@ pub struct CreateResolverRuleInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) rule_type: ::std::option::Option<crate::types::RuleTypeOption>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
-    pub(crate) target_ips: ::std::option::Option<::std::vec::Vec<crate::types::TargetAddress>>,
+    pub(crate) target_ips: ::std::option::Option<::std::vec::Vec::<crate::types::TargetAddress>>,
     pub(crate) resolver_endpoint_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateResolverRuleInputBuilder {
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
@@ -88,8 +90,7 @@ impl CreateResolverRuleInputBuilder {
     }
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
     pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creator_request_id = input;
-        self
+        self.creator_request_id = input; self
     }
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
     pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +103,7 @@ impl CreateResolverRuleInputBuilder {
     }
     /// <p>A friendly name that lets you easily find a rule in the Resolver dashboard in the Route 53 console.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A friendly name that lets you easily find a rule in the Resolver dashboard in the Route 53 console.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +123,7 @@ impl CreateResolverRuleInputBuilder {
     /// <p>For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for apex.example.com, you create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.</p>
     /// <p>Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for <code>RuleType</code>.</p>
     pub fn set_rule_type(mut self, input: ::std::option::Option<crate::types::RuleTypeOption>) -> Self {
-        self.rule_type = input;
-        self
+        self.rule_type = input; self
     }
     /// <p>When you want to forward DNS queries for specified domain name to resolvers on your network, specify <code>FORWARD</code>.</p>
     /// <p>When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to process queries for a subdomain of that domain, specify <code>SYSTEM</code>.</p>
@@ -140,8 +139,7 @@ impl CreateResolverRuleInputBuilder {
     }
     /// <p>DNS queries for this domain name are forwarded to the IP addresses that you specify in <code>TargetIps</code>. If a query matches multiple Resolver rules (example.com and www.example.com), outbound DNS queries are routed using the Resolver rule that contains the most specific domain name (www.example.com).</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>DNS queries for this domain name are forwarded to the IP addresses that you specify in <code>TargetIps</code>. If a query matches multiple Resolver rules (example.com and www.example.com), outbound DNS queries are routed using the Resolver rule that contains the most specific domain name (www.example.com).</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,19 +153,18 @@ impl CreateResolverRuleInputBuilder {
     /// <p><code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.</p>
     pub fn target_ips(mut self, input: crate::types::TargetAddress) -> Self {
         let mut v = self.target_ips.unwrap_or_default();
-        v.push(input);
-        self.target_ips = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.target_ips = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IPs that you want Resolver to forward DNS queries to. You can specify either Ipv4 or Ipv6 addresses but not both in the same rule. Separate IP addresses with a space.</p>
     /// <p><code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.</p>
-    pub fn set_target_ips(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetAddress>>) -> Self {
-        self.target_ips = input;
-        self
+    pub fn set_target_ips(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TargetAddress>>) -> Self {
+        self.target_ips = input; self
     }
     /// <p>The IPs that you want Resolver to forward DNS queries to. You can specify either Ipv4 or Ipv6 addresses but not both in the same rule. Separate IP addresses with a space.</p>
     /// <p><code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.</p>
-    pub fn get_target_ips(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetAddress>> {
+    pub fn get_target_ips(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TargetAddress>> {
         &self.target_ips
     }
     /// <p>The ID of the outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
@@ -177,8 +174,7 @@ impl CreateResolverRuleInputBuilder {
     }
     /// <p>The ID of the outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
     pub fn set_resolver_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resolver_endpoint_id = input;
-        self
+        self.resolver_endpoint_id = input; self
     }
     /// <p>The ID of the outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
     pub fn get_resolver_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -191,32 +187,38 @@ impl CreateResolverRuleInputBuilder {
     /// <p>A list of the tag keys and values that you want to associate with the endpoint.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the tag keys and values that you want to associate with the endpoint.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of the tag keys and values that you want to associate with the endpoint.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateResolverRuleInput`](crate::operation::create_resolver_rule::CreateResolverRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_resolver_rule::CreateResolverRuleInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_resolver_rule::CreateResolverRuleInput {
-            creator_request_id: self.creator_request_id,
-            name: self.name,
-            rule_type: self.rule_type,
-            domain_name: self.domain_name,
-            target_ips: self.target_ips,
-            resolver_endpoint_id: self.resolver_endpoint_id,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_resolver_rule::CreateResolverRuleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_resolver_rule::CreateResolverRuleInput {
+                creator_request_id: self.creator_request_id
+                ,
+                name: self.name
+                ,
+                rule_type: self.rule_type
+                ,
+                domain_name: self.domain_name
+                ,
+                target_ips: self.target_ips
+                ,
+                resolver_endpoint_id: self.resolver_endpoint_id
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

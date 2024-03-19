@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetReservedNodeExchangeConfigurationOptionsInput {
+pub struct GetReservedNodeExchangeConfigurationOptionsInput  {
     /// <p>The action type of the reserved-node configuration. The action type can be an exchange initiated from either a snapshot or a resize.</p>
     pub action_type: ::std::option::Option<crate::types::ReservedNodeExchangeActionType>,
     /// <p>The identifier for the cluster that is the source for a reserved-node exchange.</p>
@@ -14,17 +14,17 @@ pub struct GetReservedNodeExchangeConfigurationOptionsInput {
     /// <p>An optional pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
     pub marker: ::std::option::Option<::std::string::String>,
 }
-impl GetReservedNodeExchangeConfigurationOptionsInput {
+impl  GetReservedNodeExchangeConfigurationOptionsInput  {
     /// <p>The action type of the reserved-node configuration. The action type can be an exchange initiated from either a snapshot or a resize.</p>
-    pub fn action_type(&self) -> ::std::option::Option<&crate::types::ReservedNodeExchangeActionType> {
+    pub fn action_type(&self) -> ::std::option::Option<& crate::types::ReservedNodeExchangeActionType> {
         self.action_type.as_ref()
     }
     /// <p>The identifier for the cluster that is the source for a reserved-node exchange.</p>
-    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The identifier for the snapshot that is the source for the reserved-node exchange.</p>
-    pub fn snapshot_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_identifier(&self) -> ::std::option::Option<& str> {
         self.snapshot_identifier.as_deref()
     }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>Marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p>
@@ -32,16 +32,14 @@ impl GetReservedNodeExchangeConfigurationOptionsInput {
         self.max_records
     }
     /// <p>An optional pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl GetReservedNodeExchangeConfigurationOptionsInput {
     /// Creates a new builder-style object to manufacture [`GetReservedNodeExchangeConfigurationOptionsInput`](crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsInput).
-    pub fn builder(
-    ) -> crate::operation::get_reserved_node_exchange_configuration_options::builders::GetReservedNodeExchangeConfigurationOptionsInputBuilder {
-        crate::operation::get_reserved_node_exchange_configuration_options::builders::GetReservedNodeExchangeConfigurationOptionsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_reserved_node_exchange_configuration_options::builders::GetReservedNodeExchangeConfigurationOptionsInputBuilder {
+        crate::operation::get_reserved_node_exchange_configuration_options::builders::GetReservedNodeExchangeConfigurationOptionsInputBuilder::default()
     }
 }
 
@@ -64,8 +62,7 @@ impl GetReservedNodeExchangeConfigurationOptionsInputBuilder {
     }
     /// <p>The action type of the reserved-node configuration. The action type can be an exchange initiated from either a snapshot or a resize.</p>
     pub fn set_action_type(mut self, input: ::std::option::Option<crate::types::ReservedNodeExchangeActionType>) -> Self {
-        self.action_type = input;
-        self
+        self.action_type = input; self
     }
     /// <p>The action type of the reserved-node configuration. The action type can be an exchange initiated from either a snapshot or a resize.</p>
     pub fn get_action_type(&self) -> &::std::option::Option<crate::types::ReservedNodeExchangeActionType> {
@@ -78,8 +75,7 @@ impl GetReservedNodeExchangeConfigurationOptionsInputBuilder {
     }
     /// <p>The identifier for the cluster that is the source for a reserved-node exchange.</p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_identifier = input;
-        self
+        self.cluster_identifier = input; self
     }
     /// <p>The identifier for the cluster that is the source for a reserved-node exchange.</p>
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +88,7 @@ impl GetReservedNodeExchangeConfigurationOptionsInputBuilder {
     }
     /// <p>The identifier for the snapshot that is the source for the reserved-node exchange.</p>
     pub fn set_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_identifier = input;
-        self
+        self.snapshot_identifier = input; self
     }
     /// <p>The identifier for the snapshot that is the source for the reserved-node exchange.</p>
     pub fn get_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +101,7 @@ impl GetReservedNodeExchangeConfigurationOptionsInputBuilder {
     }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>Marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>Marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p>
     pub fn get_max_records(&self) -> &::std::option::Option<i32> {
@@ -120,28 +114,28 @@ impl GetReservedNodeExchangeConfigurationOptionsInputBuilder {
     }
     /// <p>An optional pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     /// Consumes the builder and constructs a [`GetReservedNodeExchangeConfigurationOptionsInput`](crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsInput {
-                action_type: self.action_type,
-                cluster_identifier: self.cluster_identifier,
-                snapshot_identifier: self.snapshot_identifier,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
+                action_type: self.action_type
+                ,
+                cluster_identifier: self.cluster_identifier
+                ,
+                snapshot_identifier: self.snapshot_identifier
+                ,
+                max_records: self.max_records
+                ,
+                marker: self.marker
+                ,
+            }
         )
     }
 }
+

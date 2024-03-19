@@ -3,19 +3,19 @@
 /// The properties for a VPC type input destination.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputDestinationVpc {
+pub struct InputDestinationVpc  {
     /// The availability zone of the Input destination.
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// The network interface ID of the Input destination in the VPC.
     pub network_interface_id: ::std::option::Option<::std::string::String>,
 }
-impl InputDestinationVpc {
+impl  InputDestinationVpc  {
     /// The availability zone of the Input destination.
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// The network interface ID of the Input destination in the VPC.
-    pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> ::std::option::Option<& str> {
         self.network_interface_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl InputDestinationVpcBuilder {
     }
     /// The availability zone of the Input destination.
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// The availability zone of the Input destination.
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl InputDestinationVpcBuilder {
     }
     /// The network interface ID of the Input destination in the VPC.
     pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_interface_id = input;
-        self
+        self.network_interface_id = input; self
     }
     /// The network interface ID of the Input destination in the VPC.
     pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl InputDestinationVpcBuilder {
     /// Consumes the builder and constructs a [`InputDestinationVpc`](crate::types::InputDestinationVpc).
     pub fn build(self) -> crate::types::InputDestinationVpc {
         crate::types::InputDestinationVpc {
-            availability_zone: self.availability_zone,
-            network_interface_id: self.network_interface_id,
+            availability_zone: self.availability_zone
+            ,
+            network_interface_id: self.network_interface_id
+            ,
         }
     }
 }
+

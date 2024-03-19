@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetObjectAttributesOutput {
+pub struct GetObjectAttributesOutput  {
     /// <p>The attributes that are associated with the object.</p>
-    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
+    pub attributes: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeKeyAndValue>>,
     _request_id: Option<String>,
 }
-impl GetObjectAttributesOutput {
+impl  GetObjectAttributesOutput  {
     /// <p>The attributes that are associated with the object.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
-    pub fn attributes(&self) -> &[crate::types::AttributeKeyAndValue] {
-        self.attributes.as_deref().unwrap_or_default()
+    pub fn attributes(&self) -> & [crate::types::AttributeKeyAndValue] {
+        self.attributes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetObjectAttributesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetObjectAttributesOutput {
     /// Creates a new builder-style object to manufacture [`GetObjectAttributesOutput`](crate::operation::get_object_attributes::GetObjectAttributesOutput).
     pub fn builder() -> crate::operation::get_object_attributes::builders::GetObjectAttributesOutputBuilder {
@@ -31,7 +32,7 @@ impl GetObjectAttributesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetObjectAttributesOutputBuilder {
-    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeKeyAndValue>>,
     _request_id: Option<String>,
 }
 impl GetObjectAttributesOutputBuilder {
@@ -42,33 +43,34 @@ impl GetObjectAttributesOutputBuilder {
     /// <p>The attributes that are associated with the object.</p>
     pub fn attributes(mut self, input: crate::types::AttributeKeyAndValue) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The attributes that are associated with the object.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeKeyAndValue>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>The attributes that are associated with the object.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AttributeKeyAndValue>> {
         &self.attributes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetObjectAttributesOutput`](crate::operation::get_object_attributes::GetObjectAttributesOutput).
     pub fn build(self) -> crate::operation::get_object_attributes::GetObjectAttributesOutput {
         crate::operation::get_object_attributes::GetObjectAttributesOutput {
-            attributes: self.attributes,
+            attributes: self.attributes
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

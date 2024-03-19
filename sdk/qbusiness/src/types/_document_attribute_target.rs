@@ -6,7 +6,7 @@
 /// <p>You can also use this with <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeCondition.html"> <code>DocumentAttributeCondition</code> </a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DocumentAttributeTarget {
+pub struct DocumentAttributeTarget  {
     /// <p>The identifier of the target document attribute or metadata field. For example, 'Department' could be an identifier for the target attribute or metadata field that includes the department names associated with the documents.</p>
     pub key: ::std::string::String,
     /// <p>The value of a document attribute. You can only provide one value for a document attribute.</p>
@@ -14,18 +14,17 @@ pub struct DocumentAttributeTarget {
     /// <p><code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create a target value and set this to <code>TRUE</code>.</p>
     pub attribute_value_operator: ::std::option::Option<crate::types::AttributeValueOperator>,
 }
-impl DocumentAttributeTarget {
+impl  DocumentAttributeTarget  {
     /// <p>The identifier of the target document attribute or metadata field. For example, 'Department' could be an identifier for the target attribute or metadata field that includes the department names associated with the documents.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>The value of a document attribute. You can only provide one value for a document attribute.</p>
-    pub fn value(&self) -> ::std::option::Option<&crate::types::DocumentAttributeValue> {
+    pub fn value(&self) -> ::std::option::Option<& crate::types::DocumentAttributeValue> {
         self.value.as_ref()
     }
     /// <p><code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create a target value and set this to <code>TRUE</code>.</p>
-    pub fn attribute_value_operator(&self) -> ::std::option::Option<&crate::types::AttributeValueOperator> {
+    pub fn attribute_value_operator(&self) -> ::std::option::Option<& crate::types::AttributeValueOperator> {
         self.attribute_value_operator.as_ref()
     }
 }
@@ -53,8 +52,7 @@ impl DocumentAttributeTargetBuilder {
     }
     /// <p>The identifier of the target document attribute or metadata field. For example, 'Department' could be an identifier for the target attribute or metadata field that includes the department names associated with the documents.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The identifier of the target document attribute or metadata field. For example, 'Department' could be an identifier for the target attribute or metadata field that includes the department names associated with the documents.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +65,7 @@ impl DocumentAttributeTargetBuilder {
     }
     /// <p>The value of a document attribute. You can only provide one value for a document attribute.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::DocumentAttributeValue>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of a document attribute. You can only provide one value for a document attribute.</p>
     pub fn get_value(&self) -> &::std::option::Option<crate::types::DocumentAttributeValue> {
@@ -81,8 +78,7 @@ impl DocumentAttributeTargetBuilder {
     }
     /// <p><code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create a target value and set this to <code>TRUE</code>.</p>
     pub fn set_attribute_value_operator(mut self, input: ::std::option::Option<crate::types::AttributeValueOperator>) -> Self {
-        self.attribute_value_operator = input;
-        self
+        self.attribute_value_operator = input; self
     }
     /// <p><code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create a target value and set this to <code>TRUE</code>.</p>
     pub fn get_attribute_value_operator(&self) -> &::std::option::Option<crate::types::AttributeValueOperator> {
@@ -92,15 +88,19 @@ impl DocumentAttributeTargetBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`key`](crate::types::builders::DocumentAttributeTargetBuilder::key)
     pub fn build(self) -> ::std::result::Result<crate::types::DocumentAttributeTarget, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DocumentAttributeTarget {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building DocumentAttributeTarget",
-                )
-            })?,
-            value: self.value,
-            attribute_value_operator: self.attribute_value_operator,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DocumentAttributeTarget {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building DocumentAttributeTarget")
+                    )?
+                ,
+                value: self.value
+                ,
+                attribute_value_operator: self.attribute_value_operator
+                ,
+            }
+        )
     }
 }
+

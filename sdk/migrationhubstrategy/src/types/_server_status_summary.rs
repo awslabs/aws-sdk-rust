@@ -3,15 +3,15 @@
 /// <p>The status summary of the server analysis.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServerStatusSummary {
+pub struct ServerStatusSummary  {
     /// <p>The status of the run time.</p>
     pub run_time_assessment_status: ::std::option::Option<crate::types::RunTimeAssessmentStatus>,
     /// <p>The number of servers successfully analyzed, partially successful or failed analysis.</p>
     pub count: ::std::option::Option<i32>,
 }
-impl ServerStatusSummary {
+impl  ServerStatusSummary  {
     /// <p>The status of the run time.</p>
-    pub fn run_time_assessment_status(&self) -> ::std::option::Option<&crate::types::RunTimeAssessmentStatus> {
+    pub fn run_time_assessment_status(&self) -> ::std::option::Option<& crate::types::RunTimeAssessmentStatus> {
         self.run_time_assessment_status.as_ref()
     }
     /// <p>The number of servers successfully analyzed, partially successful or failed analysis.</p>
@@ -41,8 +41,7 @@ impl ServerStatusSummaryBuilder {
     }
     /// <p>The status of the run time.</p>
     pub fn set_run_time_assessment_status(mut self, input: ::std::option::Option<crate::types::RunTimeAssessmentStatus>) -> Self {
-        self.run_time_assessment_status = input;
-        self
+        self.run_time_assessment_status = input; self
     }
     /// <p>The status of the run time.</p>
     pub fn get_run_time_assessment_status(&self) -> &::std::option::Option<crate::types::RunTimeAssessmentStatus> {
@@ -55,8 +54,7 @@ impl ServerStatusSummaryBuilder {
     }
     /// <p>The number of servers successfully analyzed, partially successful or failed analysis.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>The number of servers successfully analyzed, partially successful or failed analysis.</p>
     pub fn get_count(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl ServerStatusSummaryBuilder {
     /// Consumes the builder and constructs a [`ServerStatusSummary`](crate::types::ServerStatusSummary).
     pub fn build(self) -> crate::types::ServerStatusSummary {
         crate::types::ServerStatusSummary {
-            run_time_assessment_status: self.run_time_assessment_status,
-            count: self.count,
+            run_time_assessment_status: self.run_time_assessment_status
+            ,
+            count: self.count
+            ,
         }
     }
 }
+

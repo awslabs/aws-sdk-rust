@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeEndpointSettings`](crate::operation::describe_endpoint_settings::builders::DescribeEndpointSettingsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_endpoint_settings::builders::DescribeEndpointSettingsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`engine_name(impl Into<String>)`](crate::operation::describe_endpoint_settings::builders::DescribeEndpointSettingsFluentBuilder::engine_name) / [`set_engine_name(Option<String>)`](crate::operation::describe_endpoint_settings::builders::DescribeEndpointSettingsFluentBuilder::set_engine_name):<br>required: **true**<br><p>The database engine used for your source or target endpoint.</p><br>
     ///   - [`max_records(i32)`](crate::operation::describe_endpoint_settings::builders::DescribeEndpointSettingsFluentBuilder::max_records) / [`set_max_records(Option<i32>)`](crate::operation::describe_endpoint_settings::builders::DescribeEndpointSettingsFluentBuilder::set_max_records):<br>required: **false**<br><p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::describe_endpoint_settings::builders::DescribeEndpointSettingsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_endpoint_settings::builders::DescribeEndpointSettingsFluentBuilder::set_marker):<br>required: **false**<br><p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p><br>
-    /// - On success, responds with [`DescribeEndpointSettingsOutput`](crate::operation::describe_endpoint_settings::DescribeEndpointSettingsOutput) with field(s):
+                            /// - On success, responds with [`DescribeEndpointSettingsOutput`](crate::operation::describe_endpoint_settings::DescribeEndpointSettingsOutput) with field(s):
     ///   - [`marker(Option<String>)`](crate::operation::describe_endpoint_settings::DescribeEndpointSettingsOutput::marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     ///   - [`endpoint_settings(Option<Vec::<EndpointSetting>>)`](crate::operation::describe_endpoint_settings::DescribeEndpointSettingsOutput::endpoint_settings): <p>Descriptions of the endpoint settings available for your source or target database engine.</p>
-    /// - On failure, responds with [`SdkError<DescribeEndpointSettingsError>`](crate::operation::describe_endpoint_settings::DescribeEndpointSettingsError)
+                            /// - On failure, responds with [`SdkError<DescribeEndpointSettingsError>`](crate::operation::describe_endpoint_settings::DescribeEndpointSettingsError)
     pub fn describe_endpoint_settings(&self) -> crate::operation::describe_endpoint_settings::builders::DescribeEndpointSettingsFluentBuilder {
-        crate::operation::describe_endpoint_settings::builders::DescribeEndpointSettingsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_endpoint_settings::builders::DescribeEndpointSettingsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

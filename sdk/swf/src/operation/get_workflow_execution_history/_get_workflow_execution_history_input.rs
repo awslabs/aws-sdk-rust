@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWorkflowExecutionHistoryInput {
+pub struct GetWorkflowExecutionHistoryInput  {
     /// <p>The name of the domain containing the workflow execution.</p>
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the workflow execution for which to return the history.</p>
@@ -15,18 +15,18 @@ pub struct GetWorkflowExecutionHistoryInput {
     /// <p>When set to <code>true</code>, returns the events in reverse order. By default the results are returned in ascending order of the <code>eventTimeStamp</code> of the events.</p>
     pub reverse_order: ::std::option::Option<bool>,
 }
-impl GetWorkflowExecutionHistoryInput {
+impl  GetWorkflowExecutionHistoryInput  {
     /// <p>The name of the domain containing the workflow execution.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>Specifies the workflow execution for which to return the history.</p>
-    pub fn execution(&self) -> ::std::option::Option<&crate::types::WorkflowExecution> {
+    pub fn execution(&self) -> ::std::option::Option<& crate::types::WorkflowExecution> {
         self.execution.as_ref()
     }
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>".</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    pub fn next_page_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_page_token(&self) -> ::std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
     /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results.</p>
@@ -64,8 +64,7 @@ impl GetWorkflowExecutionHistoryInputBuilder {
     }
     /// <p>The name of the domain containing the workflow execution.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The name of the domain containing the workflow execution.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl GetWorkflowExecutionHistoryInputBuilder {
     }
     /// <p>Specifies the workflow execution for which to return the history.</p>
     pub fn set_execution(mut self, input: ::std::option::Option<crate::types::WorkflowExecution>) -> Self {
-        self.execution = input;
-        self
+        self.execution = input; self
     }
     /// <p>Specifies the workflow execution for which to return the history.</p>
     pub fn get_execution(&self) -> &::std::option::Option<crate::types::WorkflowExecution> {
@@ -95,8 +93,7 @@ impl GetWorkflowExecutionHistoryInputBuilder {
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>".</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
     pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_page_token = input;
-        self
+        self.next_page_token = input; self
     }
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>".</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
@@ -110,8 +107,7 @@ impl GetWorkflowExecutionHistoryInputBuilder {
     }
     /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results.</p>
     pub fn set_maximum_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum_page_size = input;
-        self
+        self.maximum_page_size = input; self
     }
     /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results.</p>
     pub fn get_maximum_page_size(&self) -> &::std::option::Option<i32> {
@@ -124,26 +120,28 @@ impl GetWorkflowExecutionHistoryInputBuilder {
     }
     /// <p>When set to <code>true</code>, returns the events in reverse order. By default the results are returned in ascending order of the <code>eventTimeStamp</code> of the events.</p>
     pub fn set_reverse_order(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.reverse_order = input;
-        self
+        self.reverse_order = input; self
     }
     /// <p>When set to <code>true</code>, returns the events in reverse order. By default the results are returned in ascending order of the <code>eventTimeStamp</code> of the events.</p>
     pub fn get_reverse_order(&self) -> &::std::option::Option<bool> {
         &self.reverse_order
     }
     /// Consumes the builder and constructs a [`GetWorkflowExecutionHistoryInput`](crate::operation::get_workflow_execution_history::GetWorkflowExecutionHistoryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_workflow_execution_history::GetWorkflowExecutionHistoryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_workflow_execution_history::GetWorkflowExecutionHistoryInput {
-            domain: self.domain,
-            execution: self.execution,
-            next_page_token: self.next_page_token,
-            maximum_page_size: self.maximum_page_size,
-            reverse_order: self.reverse_order,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_workflow_execution_history::GetWorkflowExecutionHistoryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_workflow_execution_history::GetWorkflowExecutionHistoryInput {
+                domain: self.domain
+                ,
+                execution: self.execution
+                ,
+                next_page_token: self.next_page_token
+                ,
+                maximum_page_size: self.maximum_page_size
+                ,
+                reverse_order: self.reverse_order
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Defines the compute resources to allocate to run a model that you assign to an inference component. These resources include CPU cores, accelerators, and memory.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InferenceComponentComputeResourceRequirements {
+pub struct InferenceComponentComputeResourceRequirements  {
     /// <p>The number of CPU cores to allocate to run a model that you assign to an inference component.</p>
     pub number_of_cpu_cores_required: ::std::option::Option<f32>,
     /// <p>The number of accelerators to allocate to run a model that you assign to an inference component. Accelerators include GPUs and Amazon Web Services Inferentia.</p>
@@ -13,7 +13,7 @@ pub struct InferenceComponentComputeResourceRequirements {
     /// <p>The maximum MB of memory to allocate to run a model that you assign to an inference component.</p>
     pub max_memory_required_in_mb: ::std::option::Option<i32>,
 }
-impl InferenceComponentComputeResourceRequirements {
+impl  InferenceComponentComputeResourceRequirements  {
     /// <p>The number of CPU cores to allocate to run a model that you assign to an inference component.</p>
     pub fn number_of_cpu_cores_required(&self) -> ::std::option::Option<f32> {
         self.number_of_cpu_cores_required
@@ -55,8 +55,7 @@ impl InferenceComponentComputeResourceRequirementsBuilder {
     }
     /// <p>The number of CPU cores to allocate to run a model that you assign to an inference component.</p>
     pub fn set_number_of_cpu_cores_required(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.number_of_cpu_cores_required = input;
-        self
+        self.number_of_cpu_cores_required = input; self
     }
     /// <p>The number of CPU cores to allocate to run a model that you assign to an inference component.</p>
     pub fn get_number_of_cpu_cores_required(&self) -> &::std::option::Option<f32> {
@@ -69,8 +68,7 @@ impl InferenceComponentComputeResourceRequirementsBuilder {
     }
     /// <p>The number of accelerators to allocate to run a model that you assign to an inference component. Accelerators include GPUs and Amazon Web Services Inferentia.</p>
     pub fn set_number_of_accelerator_devices_required(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.number_of_accelerator_devices_required = input;
-        self
+        self.number_of_accelerator_devices_required = input; self
     }
     /// <p>The number of accelerators to allocate to run a model that you assign to an inference component. Accelerators include GPUs and Amazon Web Services Inferentia.</p>
     pub fn get_number_of_accelerator_devices_required(&self) -> &::std::option::Option<f32> {
@@ -84,8 +82,7 @@ impl InferenceComponentComputeResourceRequirementsBuilder {
     }
     /// <p>The minimum MB of memory to allocate to run a model that you assign to an inference component.</p>
     pub fn set_min_memory_required_in_mb(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_memory_required_in_mb = input;
-        self
+        self.min_memory_required_in_mb = input; self
     }
     /// <p>The minimum MB of memory to allocate to run a model that you assign to an inference component.</p>
     pub fn get_min_memory_required_in_mb(&self) -> &::std::option::Option<i32> {
@@ -98,8 +95,7 @@ impl InferenceComponentComputeResourceRequirementsBuilder {
     }
     /// <p>The maximum MB of memory to allocate to run a model that you assign to an inference component.</p>
     pub fn set_max_memory_required_in_mb(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_memory_required_in_mb = input;
-        self
+        self.max_memory_required_in_mb = input; self
     }
     /// <p>The maximum MB of memory to allocate to run a model that you assign to an inference component.</p>
     pub fn get_max_memory_required_in_mb(&self) -> &::std::option::Option<i32> {
@@ -108,10 +104,15 @@ impl InferenceComponentComputeResourceRequirementsBuilder {
     /// Consumes the builder and constructs a [`InferenceComponentComputeResourceRequirements`](crate::types::InferenceComponentComputeResourceRequirements).
     pub fn build(self) -> crate::types::InferenceComponentComputeResourceRequirements {
         crate::types::InferenceComponentComputeResourceRequirements {
-            number_of_cpu_cores_required: self.number_of_cpu_cores_required,
-            number_of_accelerator_devices_required: self.number_of_accelerator_devices_required,
-            min_memory_required_in_mb: self.min_memory_required_in_mb,
-            max_memory_required_in_mb: self.max_memory_required_in_mb,
+            number_of_cpu_cores_required: self.number_of_cpu_cores_required
+            ,
+            number_of_accelerator_devices_required: self.number_of_accelerator_devices_required
+            ,
+            min_memory_required_in_mb: self.min_memory_required_in_mb
+            ,
+            max_memory_required_in_mb: self.max_memory_required_in_mb
+            ,
         }
     }
 }
+

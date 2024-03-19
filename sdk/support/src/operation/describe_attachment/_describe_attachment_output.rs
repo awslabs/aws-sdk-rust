@@ -3,24 +3,24 @@
 /// <p>The content and file name of the attachment returned by the <code>DescribeAttachment</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAttachmentOutput {
+pub struct DescribeAttachmentOutput  {
     /// <p>This object includes the attachment content and file name.</p>
     /// <p>In the previous response syntax, the value for the <code>data</code> parameter appears as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
     pub attachment: ::std::option::Option<crate::types::Attachment>,
     _request_id: Option<String>,
 }
-impl DescribeAttachmentOutput {
+impl  DescribeAttachmentOutput  {
     /// <p>This object includes the attachment content and file name.</p>
     /// <p>In the previous response syntax, the value for the <code>data</code> parameter appears as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
-    pub fn attachment(&self) -> ::std::option::Option<&crate::types::Attachment> {
+    pub fn attachment(&self) -> ::std::option::Option<& crate::types::Attachment> {
         self.attachment.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAttachmentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAttachmentOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAttachmentOutput`](crate::operation::describe_attachment::DescribeAttachmentOutput).
     pub fn builder() -> crate::operation::describe_attachment::builders::DescribeAttachmentOutputBuilder {
@@ -45,8 +45,7 @@ impl DescribeAttachmentOutputBuilder {
     /// <p>This object includes the attachment content and file name.</p>
     /// <p>In the previous response syntax, the value for the <code>data</code> parameter appears as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
     pub fn set_attachment(mut self, input: ::std::option::Option<crate::types::Attachment>) -> Self {
-        self.attachment = input;
-        self
+        self.attachment = input; self
     }
     /// <p>This object includes the attachment content and file name.</p>
     /// <p>In the previous response syntax, the value for the <code>data</code> parameter appears as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
@@ -54,19 +53,21 @@ impl DescribeAttachmentOutputBuilder {
         &self.attachment
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAttachmentOutput`](crate::operation::describe_attachment::DescribeAttachmentOutput).
     pub fn build(self) -> crate::operation::describe_attachment::DescribeAttachmentOutput {
         crate::operation::describe_attachment::DescribeAttachmentOutput {
-            attachment: self.attachment,
+            attachment: self.attachment
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

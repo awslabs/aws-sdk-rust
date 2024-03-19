@@ -16,7 +16,7 @@ pub enum Error {
     &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
      \
     See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-Error) for what information is available for the error.")]
-    Unhandled(crate::error::sealed_unhandled::Unhandled),
+    Unhandled(crate::error::sealed_unhandled::Unhandled)
 }
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24,129 +24,85 @@ impl ::std::fmt::Display for Error {
             Error::InternalServiceError(inner) => inner.fmt(f),
             Error::InvalidArgumentException(inner) => inner.fmt(f),
             Error::NotAuthorizedException(inner) => inner.fmt(f),
-            Error::Unhandled(_) => {
-                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
-                    write!(f, "unhandled error ({code})")
-                } else {
-                    f.write_str("unhandled error")
-                }
-            }
+            Error::Unhandled(_) => if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                                        write!(f, "unhandled error ({code})")
+                                    } else {
+                                        f.write_str("unhandled error")
+                                    }
         }
     }
 }
 impl From<::aws_smithy_types::error::operation::BuildError> for Error {
-    fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
-        Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source: value.into(),
-            meta: ::std::default::Default::default(),
-        })
-    }
-}
+                fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
+                    Error::Unhandled(crate::error::sealed_unhandled::Unhandled { source: value.into(), meta: ::std::default::Default::default() })
+                }
+            }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
-    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
-        match self {
-            Self::InternalServiceError(inner) => inner.meta(),
-            Self::InvalidArgumentException(inner) => inner.meta(),
-            Self::NotAuthorizedException(inner) => inner.meta(),
-            Self::Unhandled(inner) => &inner.meta,
-        }
-    }
-}
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_performance_analysis_report::CreatePerformanceAnalysisReportError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_performance_analysis_report::CreatePerformanceAnalysisReportError,
-            R,
-        >,
-    ) -> Self {
+                fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+                    match self {
+                        Self::InternalServiceError(inner) => inner.meta(),
+Self::InvalidArgumentException(inner) => inner.meta(),
+Self::NotAuthorizedException(inner) => inner.meta(),
+                        Self::Unhandled(inner) => &inner.meta,
+                    }
+                }
+            }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_performance_analysis_report::CreatePerformanceAnalysisReportError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_performance_analysis_report::CreatePerformanceAnalysisReportError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::create_performance_analysis_report::CreatePerformanceAnalysisReportError> for Error {
     fn from(err: crate::operation::create_performance_analysis_report::CreatePerformanceAnalysisReportError) -> Self {
         match err {
-            crate::operation::create_performance_analysis_report::CreatePerformanceAnalysisReportError::InternalServiceError(inner) => {
-                Error::InternalServiceError(inner)
-            }
-            crate::operation::create_performance_analysis_report::CreatePerformanceAnalysisReportError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::create_performance_analysis_report::CreatePerformanceAnalysisReportError::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
+            crate::operation::create_performance_analysis_report::CreatePerformanceAnalysisReportError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::create_performance_analysis_report::CreatePerformanceAnalysisReportError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::create_performance_analysis_report::CreatePerformanceAnalysisReportError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
             crate::operation::create_performance_analysis_report::CreatePerformanceAnalysisReportError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_performance_analysis_report::DeletePerformanceAnalysisReportError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_performance_analysis_report::DeletePerformanceAnalysisReportError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_performance_analysis_report::DeletePerformanceAnalysisReportError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_performance_analysis_report::DeletePerformanceAnalysisReportError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_performance_analysis_report::DeletePerformanceAnalysisReportError> for Error {
     fn from(err: crate::operation::delete_performance_analysis_report::DeletePerformanceAnalysisReportError) -> Self {
         match err {
-            crate::operation::delete_performance_analysis_report::DeletePerformanceAnalysisReportError::InternalServiceError(inner) => {
-                Error::InternalServiceError(inner)
-            }
-            crate::operation::delete_performance_analysis_report::DeletePerformanceAnalysisReportError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::delete_performance_analysis_report::DeletePerformanceAnalysisReportError::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
+            crate::operation::delete_performance_analysis_report::DeletePerformanceAnalysisReportError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::delete_performance_analysis_report::DeletePerformanceAnalysisReportError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::delete_performance_analysis_report::DeletePerformanceAnalysisReportError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
             crate::operation::delete_performance_analysis_report::DeletePerformanceAnalysisReportError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_dimension_keys::DescribeDimensionKeysError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_dimension_keys::DescribeDimensionKeysError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_dimension_keys::DescribeDimensionKeysError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_dimension_keys::DescribeDimensionKeysError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -154,97 +110,68 @@ impl From<crate::operation::describe_dimension_keys::DescribeDimensionKeysError>
     fn from(err: crate::operation::describe_dimension_keys::DescribeDimensionKeysError) -> Self {
         match err {
             crate::operation::describe_dimension_keys::DescribeDimensionKeysError::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::operation::describe_dimension_keys::DescribeDimensionKeysError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::describe_dimension_keys::DescribeDimensionKeysError::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
+            crate::operation::describe_dimension_keys::DescribeDimensionKeysError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::describe_dimension_keys::DescribeDimensionKeysError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
             crate::operation::describe_dimension_keys::DescribeDimensionKeysError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError> for Error {
     fn from(err: crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError) -> Self {
         match err {
-            crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError::InternalServiceError(inner) => {
-                Error::InternalServiceError(inner)
-            }
-            crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
+            crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
             crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_performance_analysis_report::GetPerformanceAnalysisReportError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_performance_analysis_report::GetPerformanceAnalysisReportError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_performance_analysis_report::GetPerformanceAnalysisReportError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_performance_analysis_report::GetPerformanceAnalysisReportError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_performance_analysis_report::GetPerformanceAnalysisReportError> for Error {
     fn from(err: crate::operation::get_performance_analysis_report::GetPerformanceAnalysisReportError) -> Self {
         match err {
-            crate::operation::get_performance_analysis_report::GetPerformanceAnalysisReportError::InternalServiceError(inner) => {
-                Error::InternalServiceError(inner)
-            }
-            crate::operation::get_performance_analysis_report::GetPerformanceAnalysisReportError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::get_performance_analysis_report::GetPerformanceAnalysisReportError::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
+            crate::operation::get_performance_analysis_report::GetPerformanceAnalysisReportError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::get_performance_analysis_report::GetPerformanceAnalysisReportError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::get_performance_analysis_report::GetPerformanceAnalysisReportError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
             crate::operation::get_performance_analysis_report::GetPerformanceAnalysisReportError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resource_metadata::GetResourceMetadataError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resource_metadata::GetResourceMetadataError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resource_metadata::GetResourceMetadataError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -252,25 +179,22 @@ impl From<crate::operation::get_resource_metadata::GetResourceMetadataError> for
     fn from(err: crate::operation::get_resource_metadata::GetResourceMetadataError) -> Self {
         match err {
             crate::operation::get_resource_metadata::GetResourceMetadataError::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::operation::get_resource_metadata::GetResourceMetadataError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
+            crate::operation::get_resource_metadata::GetResourceMetadataError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
             crate::operation::get_resource_metadata::GetResourceMetadataError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
             crate::operation::get_resource_metadata::GetResourceMetadataError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resource_metrics::GetResourceMetricsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resource_metrics::GetResourceMetricsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resource_metrics::GetResourceMetricsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -278,144 +202,91 @@ impl From<crate::operation::get_resource_metrics::GetResourceMetricsError> for E
     fn from(err: crate::operation::get_resource_metrics::GetResourceMetricsError) -> Self {
         match err {
             crate::operation::get_resource_metrics::GetResourceMetricsError::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::operation::get_resource_metrics::GetResourceMetricsError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
+            crate::operation::get_resource_metrics::GetResourceMetricsError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
             crate::operation::get_resource_metrics::GetResourceMetricsError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
             crate::operation::get_resource_metrics::GetResourceMetricsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsError> for Error {
     fn from(err: crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsError) -> Self {
         match err {
-            crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsError::InternalServiceError(inner) => {
-                Error::InternalServiceError(inner)
-            }
-            crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsError::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
+            crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
             crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsError> for Error {
     fn from(err: crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsError) -> Self {
         match err {
-            crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsError::InternalServiceError(inner) => {
-                Error::InternalServiceError(inner)
-            }
-            crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsError::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
+            crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
             crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_performance_analysis_reports::ListPerformanceAnalysisReportsError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_performance_analysis_reports::ListPerformanceAnalysisReportsError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_performance_analysis_reports::ListPerformanceAnalysisReportsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_performance_analysis_reports::ListPerformanceAnalysisReportsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_performance_analysis_reports::ListPerformanceAnalysisReportsError> for Error {
     fn from(err: crate::operation::list_performance_analysis_reports::ListPerformanceAnalysisReportsError) -> Self {
         match err {
-            crate::operation::list_performance_analysis_reports::ListPerformanceAnalysisReportsError::InternalServiceError(inner) => {
-                Error::InternalServiceError(inner)
-            }
-            crate::operation::list_performance_analysis_reports::ListPerformanceAnalysisReportsError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::list_performance_analysis_reports::ListPerformanceAnalysisReportsError::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
+            crate::operation::list_performance_analysis_reports::ListPerformanceAnalysisReportsError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::list_performance_analysis_reports::ListPerformanceAnalysisReportsError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::list_performance_analysis_reports::ListPerformanceAnalysisReportsError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
             crate::operation::list_performance_analysis_reports::ListPerformanceAnalysisReportsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -423,25 +294,22 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
     fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
         match err {
             crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServiceError(inner) => Error::InternalServiceError(inner),
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -455,17 +323,16 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -485,7 +352,7 @@ impl ::std::error::Error for Error {
             Error::InternalServiceError(inner) => inner.source(),
             Error::InvalidArgumentException(inner) => inner.source(),
             Error::NotAuthorizedException(inner) => inner.source(),
-            Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
+            Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source)
         }
     }
 }
@@ -499,3 +366,4 @@ impl ::aws_types::request_id::RequestId for Error {
         }
     }
 }
+

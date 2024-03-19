@@ -3,13 +3,13 @@
 /// <p>If backup creation fails, this structure contains the details of that failure.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BackupFailureDetails {
+pub struct BackupFailureDetails  {
     /// <p>A message describing the backup-creation failure.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl BackupFailureDetails {
+impl  BackupFailureDetails  {
     /// <p>A message describing the backup-creation failure.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl BackupFailureDetailsBuilder {
     }
     /// <p>A message describing the backup-creation failure.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>A message describing the backup-creation failure.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl BackupFailureDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`BackupFailureDetails`](crate::types::BackupFailureDetails).
     pub fn build(self) -> crate::types::BackupFailureDetails {
-        crate::types::BackupFailureDetails { message: self.message }
+        crate::types::BackupFailureDetails {
+            message: self.message
+            ,
+        }
     }
 }
+

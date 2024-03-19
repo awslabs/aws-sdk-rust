@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAdapterOutput {
+pub struct UpdateAdapterOutput  {
     /// <p>A string containing a unique ID for the adapter that has been updated.</p>
     pub adapter_id: ::std::option::Option<::std::string::String>,
     /// <p>A string containing the name of the adapter that has been updated.</p>
@@ -12,44 +12,45 @@ pub struct UpdateAdapterOutput {
     /// <p>A string containing the description of the adapter that has been updated.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>List of the targeted feature types for the updated adapter.</p>
-    pub feature_types: ::std::option::Option<::std::vec::Vec<crate::types::FeatureType>>,
+    pub feature_types: ::std::option::Option<::std::vec::Vec::<crate::types::FeatureType>>,
     /// <p>The auto-update status of the adapter that has been updated.</p>
     pub auto_update: ::std::option::Option<crate::types::AutoUpdate>,
     _request_id: Option<String>,
 }
-impl UpdateAdapterOutput {
+impl  UpdateAdapterOutput  {
     /// <p>A string containing a unique ID for the adapter that has been updated.</p>
-    pub fn adapter_id(&self) -> ::std::option::Option<&str> {
+    pub fn adapter_id(&self) -> ::std::option::Option<& str> {
         self.adapter_id.as_deref()
     }
     /// <p>A string containing the name of the adapter that has been updated.</p>
-    pub fn adapter_name(&self) -> ::std::option::Option<&str> {
+    pub fn adapter_name(&self) -> ::std::option::Option<& str> {
         self.adapter_name.as_deref()
     }
     /// <p>An object specifying the creation time of the the adapter that has been updated.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A string containing the description of the adapter that has been updated.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>List of the targeted feature types for the updated adapter.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.feature_types.is_none()`.
-    pub fn feature_types(&self) -> &[crate::types::FeatureType] {
-        self.feature_types.as_deref().unwrap_or_default()
+    pub fn feature_types(&self) -> & [crate::types::FeatureType] {
+        self.feature_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The auto-update status of the adapter that has been updated.</p>
-    pub fn auto_update(&self) -> ::std::option::Option<&crate::types::AutoUpdate> {
+    pub fn auto_update(&self) -> ::std::option::Option<& crate::types::AutoUpdate> {
         self.auto_update.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateAdapterOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateAdapterOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAdapterOutput`](crate::operation::update_adapter::UpdateAdapterOutput).
     pub fn builder() -> crate::operation::update_adapter::builders::UpdateAdapterOutputBuilder {
@@ -65,7 +66,7 @@ pub struct UpdateAdapterOutputBuilder {
     pub(crate) adapter_name: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) feature_types: ::std::option::Option<::std::vec::Vec<crate::types::FeatureType>>,
+    pub(crate) feature_types: ::std::option::Option<::std::vec::Vec::<crate::types::FeatureType>>,
     pub(crate) auto_update: ::std::option::Option<crate::types::AutoUpdate>,
     _request_id: Option<String>,
 }
@@ -77,8 +78,7 @@ impl UpdateAdapterOutputBuilder {
     }
     /// <p>A string containing a unique ID for the adapter that has been updated.</p>
     pub fn set_adapter_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.adapter_id = input;
-        self
+        self.adapter_id = input; self
     }
     /// <p>A string containing a unique ID for the adapter that has been updated.</p>
     pub fn get_adapter_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +91,7 @@ impl UpdateAdapterOutputBuilder {
     }
     /// <p>A string containing the name of the adapter that has been updated.</p>
     pub fn set_adapter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.adapter_name = input;
-        self
+        self.adapter_name = input; self
     }
     /// <p>A string containing the name of the adapter that has been updated.</p>
     pub fn get_adapter_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +104,7 @@ impl UpdateAdapterOutputBuilder {
     }
     /// <p>An object specifying the creation time of the the adapter that has been updated.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>An object specifying the creation time of the the adapter that has been updated.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -119,8 +117,7 @@ impl UpdateAdapterOutputBuilder {
     }
     /// <p>A string containing the description of the adapter that has been updated.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A string containing the description of the adapter that has been updated.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,17 +130,16 @@ impl UpdateAdapterOutputBuilder {
     /// <p>List of the targeted feature types for the updated adapter.</p>
     pub fn feature_types(mut self, input: crate::types::FeatureType) -> Self {
         let mut v = self.feature_types.unwrap_or_default();
-        v.push(input);
-        self.feature_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.feature_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of the targeted feature types for the updated adapter.</p>
-    pub fn set_feature_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureType>>) -> Self {
-        self.feature_types = input;
-        self
+    pub fn set_feature_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FeatureType>>) -> Self {
+        self.feature_types = input; self
     }
     /// <p>List of the targeted feature types for the updated adapter.</p>
-    pub fn get_feature_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureType>> {
+    pub fn get_feature_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FeatureType>> {
         &self.feature_types
     }
     /// <p>The auto-update status of the adapter that has been updated.</p>
@@ -153,32 +149,38 @@ impl UpdateAdapterOutputBuilder {
     }
     /// <p>The auto-update status of the adapter that has been updated.</p>
     pub fn set_auto_update(mut self, input: ::std::option::Option<crate::types::AutoUpdate>) -> Self {
-        self.auto_update = input;
-        self
+        self.auto_update = input; self
     }
     /// <p>The auto-update status of the adapter that has been updated.</p>
     pub fn get_auto_update(&self) -> &::std::option::Option<crate::types::AutoUpdate> {
         &self.auto_update
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateAdapterOutput`](crate::operation::update_adapter::UpdateAdapterOutput).
     pub fn build(self) -> crate::operation::update_adapter::UpdateAdapterOutput {
         crate::operation::update_adapter::UpdateAdapterOutput {
-            adapter_id: self.adapter_id,
-            adapter_name: self.adapter_name,
-            creation_time: self.creation_time,
-            description: self.description,
-            feature_types: self.feature_types,
-            auto_update: self.auto_update,
+            adapter_id: self.adapter_id
+            ,
+            adapter_name: self.adapter_name
+            ,
+            creation_time: self.creation_time
+            ,
+            description: self.description
+            ,
+            feature_types: self.feature_types
+            ,
+            auto_update: self.auto_update
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

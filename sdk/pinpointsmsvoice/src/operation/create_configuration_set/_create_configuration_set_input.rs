@@ -3,13 +3,13 @@
 /// A request to create a new configuration set.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateConfigurationSetInput {
+pub struct CreateConfigurationSetInput  {
     /// The name that you want to give the configuration set.
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
 }
-impl CreateConfigurationSetInput {
+impl  CreateConfigurationSetInput  {
     /// The name that you want to give the configuration set.
-    pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> ::std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl CreateConfigurationSetInputBuilder {
     }
     /// The name that you want to give the configuration set.
     pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_set_name = input;
-        self
+        self.configuration_set_name = input; self
     }
     /// The name that you want to give the configuration set.
     pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_set_name
     }
     /// Consumes the builder and constructs a [`CreateConfigurationSetInput`](crate::operation::create_configuration_set::CreateConfigurationSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_configuration_set::CreateConfigurationSetInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_configuration_set::CreateConfigurationSetInput {
-            configuration_set_name: self.configuration_set_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_configuration_set::CreateConfigurationSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_configuration_set::CreateConfigurationSetInput {
+                configuration_set_name: self.configuration_set_name
+                ,
+            }
+        )
     }
 }
+

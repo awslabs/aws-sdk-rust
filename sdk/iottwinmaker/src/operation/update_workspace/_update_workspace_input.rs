@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateWorkspaceInput {
+pub struct UpdateWorkspaceInput  {
     /// <p>The ID of the workspace.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the workspace.</p>
@@ -12,21 +12,21 @@ pub struct UpdateWorkspaceInput {
     /// <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
     pub s3_location: ::std::option::Option<::std::string::String>,
 }
-impl UpdateWorkspaceInput {
+impl  UpdateWorkspaceInput  {
     /// <p>The ID of the workspace.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// <p>The description of the workspace.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the execution role associated with the workspace.</p>
-    pub fn role(&self) -> ::std::option::Option<&str> {
+    pub fn role(&self) -> ::std::option::Option<& str> {
         self.role.as_deref()
     }
     /// <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
-    pub fn s3_location(&self) -> ::std::option::Option<&str> {
+    pub fn s3_location(&self) -> ::std::option::Option<& str> {
         self.s3_location.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl UpdateWorkspaceInputBuilder {
     }
     /// <p>The ID of the workspace.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The ID of the workspace.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl UpdateWorkspaceInputBuilder {
     }
     /// <p>The description of the workspace.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the workspace.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl UpdateWorkspaceInputBuilder {
     }
     /// <p>The ARN of the execution role associated with the workspace.</p>
     pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role = input;
-        self
+        self.role = input; self
     }
     /// <p>The ARN of the execution role associated with the workspace.</p>
     pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,22 +94,26 @@ impl UpdateWorkspaceInputBuilder {
     }
     /// <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
     pub fn set_s3_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_location = input;
-        self
+        self.s3_location = input; self
     }
     /// <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
     pub fn get_s3_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_location
     }
     /// Consumes the builder and constructs a [`UpdateWorkspaceInput`](crate::operation::update_workspace::UpdateWorkspaceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_workspace::UpdateWorkspaceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_workspace::UpdateWorkspaceInput {
-            workspace_id: self.workspace_id,
-            description: self.description,
-            role: self.role,
-            s3_location: self.s3_location,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_workspace::UpdateWorkspaceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_workspace::UpdateWorkspaceInput {
+                workspace_id: self.workspace_id
+                ,
+                description: self.description
+                ,
+                role: self.role
+                ,
+                s3_location: self.s3_location
+                ,
+            }
+        )
     }
 }
+

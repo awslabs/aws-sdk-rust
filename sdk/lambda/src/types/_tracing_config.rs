@@ -3,13 +3,13 @@
 /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a> tracing configuration. To sample and record incoming requests, set <code>Mode</code> to <code>Active</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TracingConfig {
+pub struct TracingConfig  {
     /// <p>The tracing mode.</p>
     pub mode: ::std::option::Option<crate::types::TracingMode>,
 }
-impl TracingConfig {
+impl  TracingConfig  {
     /// <p>The tracing mode.</p>
-    pub fn mode(&self) -> ::std::option::Option<&crate::types::TracingMode> {
+    pub fn mode(&self) -> ::std::option::Option<& crate::types::TracingMode> {
         self.mode.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl TracingConfigBuilder {
     }
     /// <p>The tracing mode.</p>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::TracingMode>) -> Self {
-        self.mode = input;
-        self
+        self.mode = input; self
     }
     /// <p>The tracing mode.</p>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::TracingMode> {
@@ -43,6 +42,10 @@ impl TracingConfigBuilder {
     }
     /// Consumes the builder and constructs a [`TracingConfig`](crate::types::TracingConfig).
     pub fn build(self) -> crate::types::TracingConfig {
-        crate::types::TracingConfig { mode: self.mode }
+        crate::types::TracingConfig {
+            mode: self.mode
+            ,
+        }
     }
 }
+

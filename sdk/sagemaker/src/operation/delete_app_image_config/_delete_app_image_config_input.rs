@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAppImageConfigInput {
+pub struct DeleteAppImageConfigInput  {
     /// <p>The name of the AppImageConfig to delete.</p>
     pub app_image_config_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteAppImageConfigInput {
+impl  DeleteAppImageConfigInput  {
     /// <p>The name of the AppImageConfig to delete.</p>
-    pub fn app_image_config_name(&self) -> ::std::option::Option<&str> {
+    pub fn app_image_config_name(&self) -> ::std::option::Option<& str> {
         self.app_image_config_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteAppImageConfigInputBuilder {
     }
     /// <p>The name of the AppImageConfig to delete.</p>
     pub fn set_app_image_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_image_config_name = input;
-        self
+        self.app_image_config_name = input; self
     }
     /// <p>The name of the AppImageConfig to delete.</p>
     pub fn get_app_image_config_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_image_config_name
     }
     /// Consumes the builder and constructs a [`DeleteAppImageConfigInput`](crate::operation::delete_app_image_config::DeleteAppImageConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_app_image_config::DeleteAppImageConfigInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_app_image_config::DeleteAppImageConfigInput {
-            app_image_config_name: self.app_image_config_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_app_image_config::DeleteAppImageConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_app_image_config::DeleteAppImageConfigInput {
+                app_image_config_name: self.app_image_config_name
+                ,
+            }
+        )
     }
 }
+

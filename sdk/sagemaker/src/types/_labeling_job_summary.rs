@@ -3,7 +3,7 @@
 /// <p>Provides summary information about a labeling job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LabelingJobSummary {
+pub struct LabelingJobSummary  {
     /// <p>The name of the labeling job.</p>
     pub labeling_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) assigned to the labeling job when it was created.</p>
@@ -29,53 +29,53 @@ pub struct LabelingJobSummary {
     /// <p>Input configuration for the labeling job.</p>
     pub input_config: ::std::option::Option<crate::types::LabelingJobInputConfig>,
 }
-impl LabelingJobSummary {
+impl  LabelingJobSummary  {
     /// <p>The name of the labeling job.</p>
-    pub fn labeling_job_name(&self) -> ::std::option::Option<&str> {
+    pub fn labeling_job_name(&self) -> ::std::option::Option<& str> {
         self.labeling_job_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) assigned to the labeling job when it was created.</p>
-    pub fn labeling_job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn labeling_job_arn(&self) -> ::std::option::Option<& str> {
         self.labeling_job_arn.as_deref()
     }
     /// <p>The date and time that the job was created (timestamp).</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The date and time that the job was last modified (timestamp).</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The current status of the labeling job.</p>
-    pub fn labeling_job_status(&self) -> ::std::option::Option<&crate::types::LabelingJobStatus> {
+    pub fn labeling_job_status(&self) -> ::std::option::Option<& crate::types::LabelingJobStatus> {
         self.labeling_job_status.as_ref()
     }
     /// <p>Counts showing the progress of the labeling job.</p>
-    pub fn label_counters(&self) -> ::std::option::Option<&crate::types::LabelCounters> {
+    pub fn label_counters(&self) -> ::std::option::Option<& crate::types::LabelCounters> {
         self.label_counters.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the work team assigned to the job.</p>
-    pub fn workteam_arn(&self) -> ::std::option::Option<&str> {
+    pub fn workteam_arn(&self) -> ::std::option::Option<& str> {
         self.workteam_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of a Lambda function. The function is run before each data object is sent to a worker.</p>
-    pub fn pre_human_task_lambda_arn(&self) -> ::std::option::Option<&str> {
+    pub fn pre_human_task_lambda_arn(&self) -> ::std::option::Option<& str> {
         self.pre_human_task_lambda_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function used to consolidate the annotations from individual workers into a label for a data object. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation Consolidation</a>.</p>
-    pub fn annotation_consolidation_lambda_arn(&self) -> ::std::option::Option<&str> {
+    pub fn annotation_consolidation_lambda_arn(&self) -> ::std::option::Option<& str> {
         self.annotation_consolidation_lambda_arn.as_deref()
     }
     /// <p>If the <code>LabelingJobStatus</code> field is <code>Failed</code>, this field contains a description of the error.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The location of the output produced by the labeling job.</p>
-    pub fn labeling_job_output(&self) -> ::std::option::Option<&crate::types::LabelingJobOutput> {
+    pub fn labeling_job_output(&self) -> ::std::option::Option<& crate::types::LabelingJobOutput> {
         self.labeling_job_output.as_ref()
     }
     /// <p>Input configuration for the labeling job.</p>
-    pub fn input_config(&self) -> ::std::option::Option<&crate::types::LabelingJobInputConfig> {
+    pub fn input_config(&self) -> ::std::option::Option<& crate::types::LabelingJobInputConfig> {
         self.input_config.as_ref()
     }
 }
@@ -112,8 +112,7 @@ impl LabelingJobSummaryBuilder {
     }
     /// <p>The name of the labeling job.</p>
     pub fn set_labeling_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.labeling_job_name = input;
-        self
+        self.labeling_job_name = input; self
     }
     /// <p>The name of the labeling job.</p>
     pub fn get_labeling_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +126,7 @@ impl LabelingJobSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) assigned to the labeling job when it was created.</p>
     pub fn set_labeling_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.labeling_job_arn = input;
-        self
+        self.labeling_job_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) assigned to the labeling job when it was created.</p>
     pub fn get_labeling_job_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +140,7 @@ impl LabelingJobSummaryBuilder {
     }
     /// <p>The date and time that the job was created (timestamp).</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The date and time that the job was created (timestamp).</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -157,8 +154,7 @@ impl LabelingJobSummaryBuilder {
     }
     /// <p>The date and time that the job was last modified (timestamp).</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The date and time that the job was last modified (timestamp).</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -172,8 +168,7 @@ impl LabelingJobSummaryBuilder {
     }
     /// <p>The current status of the labeling job.</p>
     pub fn set_labeling_job_status(mut self, input: ::std::option::Option<crate::types::LabelingJobStatus>) -> Self {
-        self.labeling_job_status = input;
-        self
+        self.labeling_job_status = input; self
     }
     /// <p>The current status of the labeling job.</p>
     pub fn get_labeling_job_status(&self) -> &::std::option::Option<crate::types::LabelingJobStatus> {
@@ -187,8 +182,7 @@ impl LabelingJobSummaryBuilder {
     }
     /// <p>Counts showing the progress of the labeling job.</p>
     pub fn set_label_counters(mut self, input: ::std::option::Option<crate::types::LabelCounters>) -> Self {
-        self.label_counters = input;
-        self
+        self.label_counters = input; self
     }
     /// <p>Counts showing the progress of the labeling job.</p>
     pub fn get_label_counters(&self) -> &::std::option::Option<crate::types::LabelCounters> {
@@ -202,8 +196,7 @@ impl LabelingJobSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the work team assigned to the job.</p>
     pub fn set_workteam_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workteam_arn = input;
-        self
+        self.workteam_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the work team assigned to the job.</p>
     pub fn get_workteam_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -217,8 +210,7 @@ impl LabelingJobSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a Lambda function. The function is run before each data object is sent to a worker.</p>
     pub fn set_pre_human_task_lambda_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pre_human_task_lambda_arn = input;
-        self
+        self.pre_human_task_lambda_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of a Lambda function. The function is run before each data object is sent to a worker.</p>
     pub fn get_pre_human_task_lambda_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -231,8 +223,7 @@ impl LabelingJobSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function used to consolidate the annotations from individual workers into a label for a data object. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation Consolidation</a>.</p>
     pub fn set_annotation_consolidation_lambda_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.annotation_consolidation_lambda_arn = input;
-        self
+        self.annotation_consolidation_lambda_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function used to consolidate the annotations from individual workers into a label for a data object. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation Consolidation</a>.</p>
     pub fn get_annotation_consolidation_lambda_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -245,8 +236,7 @@ impl LabelingJobSummaryBuilder {
     }
     /// <p>If the <code>LabelingJobStatus</code> field is <code>Failed</code>, this field contains a description of the error.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>If the <code>LabelingJobStatus</code> field is <code>Failed</code>, this field contains a description of the error.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -259,8 +249,7 @@ impl LabelingJobSummaryBuilder {
     }
     /// <p>The location of the output produced by the labeling job.</p>
     pub fn set_labeling_job_output(mut self, input: ::std::option::Option<crate::types::LabelingJobOutput>) -> Self {
-        self.labeling_job_output = input;
-        self
+        self.labeling_job_output = input; self
     }
     /// <p>The location of the output produced by the labeling job.</p>
     pub fn get_labeling_job_output(&self) -> &::std::option::Option<crate::types::LabelingJobOutput> {
@@ -273,8 +262,7 @@ impl LabelingJobSummaryBuilder {
     }
     /// <p>Input configuration for the labeling job.</p>
     pub fn set_input_config(mut self, input: ::std::option::Option<crate::types::LabelingJobInputConfig>) -> Self {
-        self.input_config = input;
-        self
+        self.input_config = input; self
     }
     /// <p>Input configuration for the labeling job.</p>
     pub fn get_input_config(&self) -> &::std::option::Option<crate::types::LabelingJobInputConfig> {
@@ -283,18 +271,31 @@ impl LabelingJobSummaryBuilder {
     /// Consumes the builder and constructs a [`LabelingJobSummary`](crate::types::LabelingJobSummary).
     pub fn build(self) -> crate::types::LabelingJobSummary {
         crate::types::LabelingJobSummary {
-            labeling_job_name: self.labeling_job_name,
-            labeling_job_arn: self.labeling_job_arn,
-            creation_time: self.creation_time,
-            last_modified_time: self.last_modified_time,
-            labeling_job_status: self.labeling_job_status,
-            label_counters: self.label_counters,
-            workteam_arn: self.workteam_arn,
-            pre_human_task_lambda_arn: self.pre_human_task_lambda_arn,
-            annotation_consolidation_lambda_arn: self.annotation_consolidation_lambda_arn,
-            failure_reason: self.failure_reason,
-            labeling_job_output: self.labeling_job_output,
-            input_config: self.input_config,
+            labeling_job_name: self.labeling_job_name
+            ,
+            labeling_job_arn: self.labeling_job_arn
+            ,
+            creation_time: self.creation_time
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            labeling_job_status: self.labeling_job_status
+            ,
+            label_counters: self.label_counters
+            ,
+            workteam_arn: self.workteam_arn
+            ,
+            pre_human_task_lambda_arn: self.pre_human_task_lambda_arn
+            ,
+            annotation_consolidation_lambda_arn: self.annotation_consolidation_lambda_arn
+            ,
+            failure_reason: self.failure_reason
+            ,
+            labeling_job_output: self.labeling_job_output
+            ,
+            input_config: self.input_config
+            ,
         }
     }
 }
+

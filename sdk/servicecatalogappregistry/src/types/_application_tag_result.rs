@@ -3,33 +3,34 @@
 /// <p>The result of the application tag that's applied to a resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationTagResult {
+pub struct ApplicationTagResult  {
     /// <p>The application tag is in the process of being applied to a resource, was successfully applied to a resource, or failed to apply to a resource.</p>
     pub application_tag_status: ::std::option::Option<crate::types::ApplicationTagStatus>,
     /// <p>The message returned if the call fails.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The resources associated with an application</p>
-    pub resources: ::std::option::Option<::std::vec::Vec<crate::types::ResourcesListItem>>,
+    pub resources: ::std::option::Option<::std::vec::Vec::<crate::types::ResourcesListItem>>,
     /// <p>A unique pagination token for each page of results. Make the call again with the returned token to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ApplicationTagResult {
+impl  ApplicationTagResult  {
     /// <p>The application tag is in the process of being applied to a resource, was successfully applied to a resource, or failed to apply to a resource.</p>
-    pub fn application_tag_status(&self) -> ::std::option::Option<&crate::types::ApplicationTagStatus> {
+    pub fn application_tag_status(&self) -> ::std::option::Option<& crate::types::ApplicationTagStatus> {
         self.application_tag_status.as_ref()
     }
     /// <p>The message returned if the call fails.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>The resources associated with an application</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
-    pub fn resources(&self) -> &[crate::types::ResourcesListItem] {
-        self.resources.as_deref().unwrap_or_default()
+    pub fn resources(&self) -> & [crate::types::ResourcesListItem] {
+        self.resources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A unique pagination token for each page of results. Make the call again with the returned token to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -46,7 +47,7 @@ impl ApplicationTagResult {
 pub struct ApplicationTagResultBuilder {
     pub(crate) application_tag_status: ::std::option::Option<crate::types::ApplicationTagStatus>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
-    pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::ResourcesListItem>>,
+    pub(crate) resources: ::std::option::Option<::std::vec::Vec::<crate::types::ResourcesListItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ApplicationTagResultBuilder {
@@ -57,8 +58,7 @@ impl ApplicationTagResultBuilder {
     }
     /// <p>The application tag is in the process of being applied to a resource, was successfully applied to a resource, or failed to apply to a resource.</p>
     pub fn set_application_tag_status(mut self, input: ::std::option::Option<crate::types::ApplicationTagStatus>) -> Self {
-        self.application_tag_status = input;
-        self
+        self.application_tag_status = input; self
     }
     /// <p>The application tag is in the process of being applied to a resource, was successfully applied to a resource, or failed to apply to a resource.</p>
     pub fn get_application_tag_status(&self) -> &::std::option::Option<crate::types::ApplicationTagStatus> {
@@ -71,8 +71,7 @@ impl ApplicationTagResultBuilder {
     }
     /// <p>The message returned if the call fails.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The message returned if the call fails.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,17 +84,16 @@ impl ApplicationTagResultBuilder {
     /// <p>The resources associated with an application</p>
     pub fn resources(mut self, input: crate::types::ResourcesListItem) -> Self {
         let mut v = self.resources.unwrap_or_default();
-        v.push(input);
-        self.resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The resources associated with an application</p>
-    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcesListItem>>) -> Self {
-        self.resources = input;
-        self
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourcesListItem>>) -> Self {
+        self.resources = input; self
     }
     /// <p>The resources associated with an application</p>
-    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcesListItem>> {
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourcesListItem>> {
         &self.resources
     }
     /// <p>A unique pagination token for each page of results. Make the call again with the returned token to retrieve the next page of results.</p>
@@ -105,8 +103,7 @@ impl ApplicationTagResultBuilder {
     }
     /// <p>A unique pagination token for each page of results. Make the call again with the returned token to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A unique pagination token for each page of results. Make the call again with the returned token to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,10 +112,15 @@ impl ApplicationTagResultBuilder {
     /// Consumes the builder and constructs a [`ApplicationTagResult`](crate::types::ApplicationTagResult).
     pub fn build(self) -> crate::types::ApplicationTagResult {
         crate::types::ApplicationTagResult {
-            application_tag_status: self.application_tag_status,
-            error_message: self.error_message,
-            resources: self.resources,
-            next_token: self.next_token,
+            application_tag_status: self.application_tag_status
+            ,
+            error_message: self.error_message
+            ,
+            resources: self.resources
+            ,
+            next_token: self.next_token
+            ,
         }
     }
 }
+

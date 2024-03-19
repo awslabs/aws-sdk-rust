@@ -3,19 +3,19 @@
 /// <p>Represents filters for a dimension.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DimensionFilter {
+pub struct DimensionFilter  {
     /// <p>The dimension name to be matched.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the dimension to be matched.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl DimensionFilter {
+impl  DimensionFilter  {
     /// <p>The dimension name to be matched.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The value of the dimension to be matched.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DimensionFilterBuilder {
     }
     /// <p>The dimension name to be matched.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The dimension name to be matched.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl DimensionFilterBuilder {
     }
     /// <p>The value of the dimension to be matched.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the dimension to be matched.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,11 @@ impl DimensionFilterBuilder {
     /// Consumes the builder and constructs a [`DimensionFilter`](crate::types::DimensionFilter).
     pub fn build(self) -> crate::types::DimensionFilter {
         crate::types::DimensionFilter {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

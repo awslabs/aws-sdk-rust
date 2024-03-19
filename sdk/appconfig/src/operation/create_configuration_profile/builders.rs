@@ -5,23 +5,20 @@ pub use crate::operation::create_configuration_profile::_create_configuration_pr
 
 impl CreateConfigurationProfileInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_configuration_profile::CreateConfigurationProfileOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_configuration_profile::CreateConfigurationProfileError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_configuration_profile();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_configuration_profile::CreateConfigurationProfileOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_configuration_profile::CreateConfigurationProfileError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_configuration_profile();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateConfigurationProfile`.
-///
+/// 
 /// <p>Creates a configuration profile, which is information that enables AppConfig to access the configuration source. Valid configuration sources include the following:</p>
 /// <ul>
 /// <li>
@@ -50,33 +47,32 @@ impl CreateConfigurationProfileInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateConfigurationProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_configuration_profile::builders::CreateConfigurationProfileInputBuilder,
+                    inner: crate::operation::create_configuration_profile::builders::CreateConfigurationProfileInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_configuration_profile::CreateConfigurationProfileOutput,
-        crate::operation::create_configuration_profile::CreateConfigurationProfileError,
-    > for CreateConfigurationProfileFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_configuration_profile::CreateConfigurationProfileOutput,
-            crate::operation::create_configuration_profile::CreateConfigurationProfileError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_configuration_profile::CreateConfigurationProfileOutput,
+                    crate::operation::create_configuration_profile::CreateConfigurationProfileError,
+                > for CreateConfigurationProfileFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_configuration_profile::CreateConfigurationProfileOutput,
+                        crate::operation::create_configuration_profile::CreateConfigurationProfileError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateConfigurationProfileFluentBuilder {
     /// Creates a new `CreateConfigurationProfile`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -85,53 +81,44 @@ impl CreateConfigurationProfileFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_configuration_profile::CreateConfigurationProfileOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_configuration_profile::CreateConfigurationProfileError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_configuration_profile::CreateConfigurationProfile::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_configuration_profile::CreateConfigurationProfile::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_configuration_profile::CreateConfigurationProfileOutput,
-        crate::operation::create_configuration_profile::CreateConfigurationProfileError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_configuration_profile::CreateConfigurationProfileOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_configuration_profile::CreateConfigurationProfileError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_configuration_profile::CreateConfigurationProfile::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_configuration_profile::CreateConfigurationProfile::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_configuration_profile::CreateConfigurationProfileOutput, crate::operation::create_configuration_profile::CreateConfigurationProfileError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The application ID.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
@@ -284,12 +271,12 @@ impl CreateConfigurationProfileFluentBuilder {
         self
     }
     /// <p>A list of methods for validating the configuration.</p>
-    pub fn set_validators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Validator>>) -> Self {
+    pub fn set_validators(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Validator>>) -> Self {
         self.inner = self.inner.set_validators(input);
         self
     }
     /// <p>A list of methods for validating the configuration.</p>
-    pub fn get_validators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Validator>> {
+    pub fn get_validators(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Validator>> {
         self.inner.get_validators()
     }
     /// Adds a key-value pair to `Tags`.
@@ -302,12 +289,12 @@ impl CreateConfigurationProfileFluentBuilder {
         self
     }
     /// <p>Metadata to assign to the configuration profile. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Metadata to assign to the configuration profile. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
@@ -345,3 +332,4 @@ impl CreateConfigurationProfileFluentBuilder {
         self.inner.get_kms_key_identifier()
     }
 }
+

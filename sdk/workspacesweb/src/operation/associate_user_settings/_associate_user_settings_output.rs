@@ -2,30 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateUserSettingsOutput {
+pub struct AssociateUserSettingsOutput  {
     /// <p>The ARN of the web portal.</p>
     pub portal_arn: ::std::string::String,
     /// <p>The ARN of the user settings.</p>
     pub user_settings_arn: ::std::string::String,
     _request_id: Option<String>,
 }
-impl AssociateUserSettingsOutput {
+impl  AssociateUserSettingsOutput  {
     /// <p>The ARN of the web portal.</p>
-    pub fn portal_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.portal_arn.deref()
+    pub fn portal_arn(&self) -> & str {
+        use std::ops::Deref; self.portal_arn.deref()
     }
     /// <p>The ARN of the user settings.</p>
-    pub fn user_settings_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.user_settings_arn.deref()
+    pub fn user_settings_arn(&self) -> & str {
+        use std::ops::Deref; self.user_settings_arn.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for AssociateUserSettingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AssociateUserSettingsOutput {
     /// Creates a new builder-style object to manufacture [`AssociateUserSettingsOutput`](crate::operation::associate_user_settings::AssociateUserSettingsOutput).
     pub fn builder() -> crate::operation::associate_user_settings::builders::AssociateUserSettingsOutputBuilder {
@@ -50,8 +48,7 @@ impl AssociateUserSettingsOutputBuilder {
     }
     /// <p>The ARN of the web portal.</p>
     pub fn set_portal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.portal_arn = input;
-        self
+        self.portal_arn = input; self
     }
     /// <p>The ARN of the web portal.</p>
     pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,44 +62,41 @@ impl AssociateUserSettingsOutputBuilder {
     }
     /// <p>The ARN of the user settings.</p>
     pub fn set_user_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_settings_arn = input;
-        self
+        self.user_settings_arn = input; self
     }
     /// <p>The ARN of the user settings.</p>
     pub fn get_user_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_settings_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AssociateUserSettingsOutput`](crate::operation::associate_user_settings::AssociateUserSettingsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`portal_arn`](crate::operation::associate_user_settings::builders::AssociateUserSettingsOutputBuilder::portal_arn)
     /// - [`user_settings_arn`](crate::operation::associate_user_settings::builders::AssociateUserSettingsOutputBuilder::user_settings_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::associate_user_settings::AssociateUserSettingsOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::associate_user_settings::AssociateUserSettingsOutput {
-            portal_arn: self.portal_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "portal_arn",
-                    "portal_arn was not specified but it is required when building AssociateUserSettingsOutput",
-                )
-            })?,
-            user_settings_arn: self.user_settings_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user_settings_arn",
-                    "user_settings_arn was not specified but it is required when building AssociateUserSettingsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_user_settings::AssociateUserSettingsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_user_settings::AssociateUserSettingsOutput {
+                portal_arn: self.portal_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("portal_arn", "portal_arn was not specified but it is required when building AssociateUserSettingsOutput")
+                    )?
+                ,
+                user_settings_arn: self.user_settings_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user_settings_arn", "user_settings_arn was not specified but it is required when building AssociateUserSettingsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

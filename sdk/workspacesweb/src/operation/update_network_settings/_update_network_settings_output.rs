@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateNetworkSettingsOutput {
+pub struct UpdateNetworkSettingsOutput  {
     /// <p>The network settings.</p>
     pub network_settings: ::std::option::Option<crate::types::NetworkSettings>,
     _request_id: Option<String>,
 }
-impl UpdateNetworkSettingsOutput {
+impl  UpdateNetworkSettingsOutput  {
     /// <p>The network settings.</p>
-    pub fn network_settings(&self) -> ::std::option::Option<&crate::types::NetworkSettings> {
+    pub fn network_settings(&self) -> ::std::option::Option<& crate::types::NetworkSettings> {
         self.network_settings.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateNetworkSettingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateNetworkSettingsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateNetworkSettingsOutput`](crate::operation::update_network_settings::UpdateNetworkSettingsOutput).
     pub fn builder() -> crate::operation::update_network_settings::builders::UpdateNetworkSettingsOutputBuilder {
@@ -41,27 +41,28 @@ impl UpdateNetworkSettingsOutputBuilder {
     }
     /// <p>The network settings.</p>
     pub fn set_network_settings(mut self, input: ::std::option::Option<crate::types::NetworkSettings>) -> Self {
-        self.network_settings = input;
-        self
+        self.network_settings = input; self
     }
     /// <p>The network settings.</p>
     pub fn get_network_settings(&self) -> &::std::option::Option<crate::types::NetworkSettings> {
         &self.network_settings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateNetworkSettingsOutput`](crate::operation::update_network_settings::UpdateNetworkSettingsOutput).
     pub fn build(self) -> crate::operation::update_network_settings::UpdateNetworkSettingsOutput {
         crate::operation::update_network_settings::UpdateNetworkSettingsOutput {
-            network_settings: self.network_settings,
+            network_settings: self.network_settings
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

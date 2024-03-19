@@ -3,13 +3,13 @@
 /// <p>Represents a request to the delete upload operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteUploadInput {
+pub struct DeleteUploadInput  {
     /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm upload to delete.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteUploadInput {
+impl  DeleteUploadInput  {
     /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm upload to delete.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -35,17 +35,20 @@ impl DeleteUploadInputBuilder {
     }
     /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm upload to delete.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm upload to delete.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
     /// Consumes the builder and constructs a [`DeleteUploadInput`](crate::operation::delete_upload::DeleteUploadInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_upload::DeleteUploadInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_upload::DeleteUploadInput { arn: self.arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_upload::DeleteUploadInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_upload::DeleteUploadInput {
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

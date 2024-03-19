@@ -3,13 +3,13 @@
 /// <p>A value for a segment attribute. This is structured as a map where the key is <code>valueString</code> and the value is a string.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SegmentAttributeValue {
+pub struct SegmentAttributeValue  {
     /// <p>The value of a segment attribute.</p>
     pub value_string: ::std::option::Option<::std::string::String>,
 }
-impl SegmentAttributeValue {
+impl  SegmentAttributeValue  {
     /// <p>The value of a segment attribute.</p>
-    pub fn value_string(&self) -> ::std::option::Option<&str> {
+    pub fn value_string(&self) -> ::std::option::Option<& str> {
         self.value_string.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl SegmentAttributeValueBuilder {
     }
     /// <p>The value of a segment attribute.</p>
     pub fn set_value_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value_string = input;
-        self
+        self.value_string = input; self
     }
     /// <p>The value of a segment attribute.</p>
     pub fn get_value_string(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl SegmentAttributeValueBuilder {
     /// Consumes the builder and constructs a [`SegmentAttributeValue`](crate::types::SegmentAttributeValue).
     pub fn build(self) -> crate::types::SegmentAttributeValue {
         crate::types::SegmentAttributeValue {
-            value_string: self.value_string,
+            value_string: self.value_string
+            ,
         }
     }
 }
+

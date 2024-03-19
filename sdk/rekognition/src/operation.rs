@@ -225,3 +225,4 @@ pub mod update_dataset_entries;
 
 /// Types for the `UpdateStreamProcessor` operation.
 pub mod update_stream_processor;
+

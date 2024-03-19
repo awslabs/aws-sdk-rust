@@ -3,18 +3,17 @@
 /// <p>Contains the response generated from querying the knowledge base.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct RetrieveAndGenerateOutput {
+pub struct RetrieveAndGenerateOutput  {
     /// <p>The response generated from querying the knowledge base.</p>
     pub text: ::std::string::String,
 }
-impl RetrieveAndGenerateOutput {
+impl  RetrieveAndGenerateOutput  {
     /// <p>The response generated from querying the knowledge base.</p>
-    pub fn text(&self) -> &str {
-        use std::ops::Deref;
-        self.text.deref()
+    pub fn text(&self) -> & str {
+        use std::ops::Deref; self.text.deref()
     }
 }
-impl ::std::fmt::Debug for RetrieveAndGenerateOutput {
+impl  ::std::fmt::Debug for RetrieveAndGenerateOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RetrieveAndGenerateOutput");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
@@ -43,8 +42,7 @@ impl RetrieveAndGenerateOutputBuilder {
     }
     /// <p>The response generated from querying the knowledge base.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>The response generated from querying the knowledge base.</p>
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,14 +52,15 @@ impl RetrieveAndGenerateOutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`text`](crate::types::builders::RetrieveAndGenerateOutputBuilder::text)
     pub fn build(self) -> ::std::result::Result<crate::types::RetrieveAndGenerateOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RetrieveAndGenerateOutput {
-            text: self.text.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "text",
-                    "text was not specified but it is required when building RetrieveAndGenerateOutput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RetrieveAndGenerateOutput {
+                text: self.text
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("text", "text was not specified but it is required when building RetrieveAndGenerateOutput")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for RetrieveAndGenerateOutputBuilder {
@@ -71,3 +70,4 @@ impl ::std::fmt::Debug for RetrieveAndGenerateOutputBuilder {
         formatter.finish()
     }
 }
+

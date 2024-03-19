@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateFleetAdvisorCollectorInput {
+pub struct CreateFleetAdvisorCollectorInput  {
     /// <p>The name of your Fleet Advisor collector (for example, <code>sample-collector</code>).</p>
     pub collector_name: ::std::option::Option<::std::string::String>,
     /// <p>A summary description of your Fleet Advisor collector.</p>
@@ -12,21 +12,21 @@ pub struct CreateFleetAdvisorCollectorInput {
     /// <p>The Amazon S3 bucket that the Fleet Advisor collector uses to store inventory metadata.</p>
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
 }
-impl CreateFleetAdvisorCollectorInput {
+impl  CreateFleetAdvisorCollectorInput  {
     /// <p>The name of your Fleet Advisor collector (for example, <code>sample-collector</code>).</p>
-    pub fn collector_name(&self) -> ::std::option::Option<&str> {
+    pub fn collector_name(&self) -> ::std::option::Option<& str> {
         self.collector_name.as_deref()
     }
     /// <p>A summary description of your Fleet Advisor collector.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
-    pub fn service_access_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn service_access_role_arn(&self) -> ::std::option::Option<& str> {
         self.service_access_role_arn.as_deref()
     }
     /// <p>The Amazon S3 bucket that the Fleet Advisor collector uses to store inventory metadata.</p>
-    pub fn s3_bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> ::std::option::Option<& str> {
         self.s3_bucket_name.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl CreateFleetAdvisorCollectorInputBuilder {
     }
     /// <p>The name of your Fleet Advisor collector (for example, <code>sample-collector</code>).</p>
     pub fn set_collector_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collector_name = input;
-        self
+        self.collector_name = input; self
     }
     /// <p>The name of your Fleet Advisor collector (for example, <code>sample-collector</code>).</p>
     pub fn get_collector_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl CreateFleetAdvisorCollectorInputBuilder {
     }
     /// <p>A summary description of your Fleet Advisor collector.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A summary description of your Fleet Advisor collector.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl CreateFleetAdvisorCollectorInputBuilder {
     }
     /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
     pub fn set_service_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_access_role_arn = input;
-        self
+        self.service_access_role_arn = input; self
     }
     /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
     pub fn get_service_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,25 +96,26 @@ impl CreateFleetAdvisorCollectorInputBuilder {
     }
     /// <p>The Amazon S3 bucket that the Fleet Advisor collector uses to store inventory metadata.</p>
     pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket_name = input;
-        self
+        self.s3_bucket_name = input; self
     }
     /// <p>The Amazon S3 bucket that the Fleet Advisor collector uses to store inventory metadata.</p>
     pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_bucket_name
     }
     /// Consumes the builder and constructs a [`CreateFleetAdvisorCollectorInput`](crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorInput {
-            collector_name: self.collector_name,
-            description: self.description,
-            service_access_role_arn: self.service_access_role_arn,
-            s3_bucket_name: self.s3_bucket_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorInput {
+                collector_name: self.collector_name
+                ,
+                description: self.description
+                ,
+                service_access_role_arn: self.service_access_role_arn
+                ,
+                s3_bucket_name: self.s3_bucket_name
+                ,
+            }
+        )
     }
 }
+

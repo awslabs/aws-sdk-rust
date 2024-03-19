@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchUnsuspendUserOutput {
+pub struct BatchUnsuspendUserOutput  {
     /// <p>If the <code>BatchUnsuspendUser</code> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>
-    pub user_errors: ::std::option::Option<::std::vec::Vec<crate::types::UserError>>,
+    pub user_errors: ::std::option::Option<::std::vec::Vec::<crate::types::UserError>>,
     _request_id: Option<String>,
 }
-impl BatchUnsuspendUserOutput {
+impl  BatchUnsuspendUserOutput  {
     /// <p>If the <code>BatchUnsuspendUser</code> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_errors.is_none()`.
-    pub fn user_errors(&self) -> &[crate::types::UserError] {
-        self.user_errors.as_deref().unwrap_or_default()
+    pub fn user_errors(&self) -> & [crate::types::UserError] {
+        self.user_errors.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchUnsuspendUserOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchUnsuspendUserOutput {
     /// Creates a new builder-style object to manufacture [`BatchUnsuspendUserOutput`](crate::operation::batch_unsuspend_user::BatchUnsuspendUserOutput).
     pub fn builder() -> crate::operation::batch_unsuspend_user::builders::BatchUnsuspendUserOutputBuilder {
@@ -31,7 +32,7 @@ impl BatchUnsuspendUserOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUnsuspendUserOutputBuilder {
-    pub(crate) user_errors: ::std::option::Option<::std::vec::Vec<crate::types::UserError>>,
+    pub(crate) user_errors: ::std::option::Option<::std::vec::Vec::<crate::types::UserError>>,
     _request_id: Option<String>,
 }
 impl BatchUnsuspendUserOutputBuilder {
@@ -42,33 +43,34 @@ impl BatchUnsuspendUserOutputBuilder {
     /// <p>If the <code>BatchUnsuspendUser</code> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>
     pub fn user_errors(mut self, input: crate::types::UserError) -> Self {
         let mut v = self.user_errors.unwrap_or_default();
-        v.push(input);
-        self.user_errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.user_errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>If the <code>BatchUnsuspendUser</code> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>
-    pub fn set_user_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserError>>) -> Self {
-        self.user_errors = input;
-        self
+    pub fn set_user_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UserError>>) -> Self {
+        self.user_errors = input; self
     }
     /// <p>If the <code>BatchUnsuspendUser</code> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>
-    pub fn get_user_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserError>> {
+    pub fn get_user_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UserError>> {
         &self.user_errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchUnsuspendUserOutput`](crate::operation::batch_unsuspend_user::BatchUnsuspendUserOutput).
     pub fn build(self) -> crate::operation::batch_unsuspend_user::BatchUnsuspendUserOutput {
         crate::operation::batch_unsuspend_user::BatchUnsuspendUserOutput {
-            user_errors: self.user_errors,
+            user_errors: self.user_errors
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

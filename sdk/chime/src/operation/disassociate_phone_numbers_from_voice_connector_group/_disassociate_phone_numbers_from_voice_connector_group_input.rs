@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociatePhoneNumbersFromVoiceConnectorGroupInput {
+pub struct DisassociatePhoneNumbersFromVoiceConnectorGroupInput  {
     /// <p>The Amazon Chime Voice Connector group ID.</p>
     pub voice_connector_group_id: ::std::option::Option<::std::string::String>,
     /// <p>List of phone numbers, in E.164 format.</p>
-    pub e164_phone_numbers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub e164_phone_numbers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DisassociatePhoneNumbersFromVoiceConnectorGroupInput {
+impl  DisassociatePhoneNumbersFromVoiceConnectorGroupInput  {
     /// <p>The Amazon Chime Voice Connector group ID.</p>
-    pub fn voice_connector_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn voice_connector_group_id(&self) -> ::std::option::Option<& str> {
         self.voice_connector_group_id.as_deref()
     }
     /// <p>List of phone numbers, in E.164 format.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.e164_phone_numbers.is_none()`.
-    pub fn e164_phone_numbers(&self) -> &[::std::string::String] {
-        self.e164_phone_numbers.as_deref().unwrap_or_default()
+    pub fn e164_phone_numbers(&self) -> & [::std::string::String] {
+        self.e164_phone_numbers.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DisassociatePhoneNumbersFromVoiceConnectorGroupInput {
     /// Creates a new builder-style object to manufacture [`DisassociatePhoneNumbersFromVoiceConnectorGroupInput`](crate::operation::disassociate_phone_numbers_from_voice_connector_group::DisassociatePhoneNumbersFromVoiceConnectorGroupInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_phone_numbers_from_voice_connector_group::builders::DisassociatePhoneNumbersFromVoiceConnectorGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_phone_numbers_from_voice_connector_group::builders::DisassociatePhoneNumbersFromVoiceConnectorGroupInputBuilder {
         crate::operation::disassociate_phone_numbers_from_voice_connector_group::builders::DisassociatePhoneNumbersFromVoiceConnectorGroupInputBuilder::default()
     }
 }
@@ -34,7 +33,7 @@ impl DisassociatePhoneNumbersFromVoiceConnectorGroupInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociatePhoneNumbersFromVoiceConnectorGroupInputBuilder {
     pub(crate) voice_connector_group_id: ::std::option::Option<::std::string::String>,
-    pub(crate) e164_phone_numbers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) e164_phone_numbers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DisassociatePhoneNumbersFromVoiceConnectorGroupInputBuilder {
     /// <p>The Amazon Chime Voice Connector group ID.</p>
@@ -45,8 +44,7 @@ impl DisassociatePhoneNumbersFromVoiceConnectorGroupInputBuilder {
     }
     /// <p>The Amazon Chime Voice Connector group ID.</p>
     pub fn set_voice_connector_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.voice_connector_group_id = input;
-        self
+        self.voice_connector_group_id = input; self
     }
     /// <p>The Amazon Chime Voice Connector group ID.</p>
     pub fn get_voice_connector_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,31 +57,28 @@ impl DisassociatePhoneNumbersFromVoiceConnectorGroupInputBuilder {
     /// <p>List of phone numbers, in E.164 format.</p>
     pub fn e164_phone_numbers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.e164_phone_numbers.unwrap_or_default();
-        v.push(input.into());
-        self.e164_phone_numbers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.e164_phone_numbers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of phone numbers, in E.164 format.</p>
-    pub fn set_e164_phone_numbers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.e164_phone_numbers = input;
-        self
+    pub fn set_e164_phone_numbers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.e164_phone_numbers = input; self
     }
     /// <p>List of phone numbers, in E.164 format.</p>
-    pub fn get_e164_phone_numbers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_e164_phone_numbers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.e164_phone_numbers
     }
     /// Consumes the builder and constructs a [`DisassociatePhoneNumbersFromVoiceConnectorGroupInput`](crate::operation::disassociate_phone_numbers_from_voice_connector_group::DisassociatePhoneNumbersFromVoiceConnectorGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_phone_numbers_from_voice_connector_group::DisassociatePhoneNumbersFromVoiceConnectorGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_phone_numbers_from_voice_connector_group::DisassociatePhoneNumbersFromVoiceConnectorGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disassociate_phone_numbers_from_voice_connector_group::DisassociatePhoneNumbersFromVoiceConnectorGroupInput {
-                voice_connector_group_id: self.voice_connector_group_id,
-                e164_phone_numbers: self.e164_phone_numbers,
-            },
+                voice_connector_group_id: self.voice_connector_group_id
+                ,
+                e164_phone_numbers: self.e164_phone_numbers
+                ,
+            }
         )
     }
 }
+

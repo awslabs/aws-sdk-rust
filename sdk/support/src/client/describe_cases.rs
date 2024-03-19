@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeCases`](crate::operation::describe_cases::builders::DescribeCasesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_cases::builders::DescribeCasesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`case_id_list(impl Into<String>)`](crate::operation::describe_cases::builders::DescribeCasesFluentBuilder::case_id_list) / [`set_case_id_list(Option<Vec::<String>>)`](crate::operation::describe_cases::builders::DescribeCasesFluentBuilder::set_case_id_list):<br>required: **false**<br><p>A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.</p><br>
     ///   - [`display_id(impl Into<String>)`](crate::operation::describe_cases::builders::DescribeCasesFluentBuilder::display_id) / [`set_display_id(Option<String>)`](crate::operation::describe_cases::builders::DescribeCasesFluentBuilder::set_display_id):<br>required: **false**<br><p>The ID displayed for a case in the Amazon Web Services Support Center user interface.</p><br>
     ///   - [`after_time(impl Into<String>)`](crate::operation::describe_cases::builders::DescribeCasesFluentBuilder::after_time) / [`set_after_time(Option<String>)`](crate::operation::describe_cases::builders::DescribeCasesFluentBuilder::set_after_time):<br>required: **false**<br><p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p><br>
@@ -13,11 +13,12 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::describe_cases::builders::DescribeCasesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_cases::builders::DescribeCasesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return before paginating.</p><br>
     ///   - [`language(impl Into<String>)`](crate::operation::describe_cases::builders::DescribeCasesFluentBuilder::language) / [`set_language(Option<String>)`](crate::operation::describe_cases::builders::DescribeCasesFluentBuilder::set_language):<br>required: **false**<br><p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p><br>
     ///   - [`include_communications(bool)`](crate::operation::describe_cases::builders::DescribeCasesFluentBuilder::include_communications) / [`set_include_communications(Option<bool>)`](crate::operation::describe_cases::builders::DescribeCasesFluentBuilder::set_include_communications):<br>required: **false**<br><p>Specifies whether to include communications in the <code>DescribeCases</code> response. By default, communications are included.</p><br>
-    /// - On success, responds with [`DescribeCasesOutput`](crate::operation::describe_cases::DescribeCasesOutput) with field(s):
+                            /// - On success, responds with [`DescribeCasesOutput`](crate::operation::describe_cases::DescribeCasesOutput) with field(s):
     ///   - [`cases(Option<Vec::<CaseDetails>>)`](crate::operation::describe_cases::DescribeCasesOutput::cases): <p>The details for the cases that match the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_cases::DescribeCasesOutput::next_token): <p>A resumption point for pagination.</p>
-    /// - On failure, responds with [`SdkError<DescribeCasesError>`](crate::operation::describe_cases::DescribeCasesError)
+                            /// - On failure, responds with [`SdkError<DescribeCasesError>`](crate::operation::describe_cases::DescribeCasesError)
     pub fn describe_cases(&self) -> crate::operation::describe_cases::builders::DescribeCasesFluentBuilder {
-        crate::operation::describe_cases::builders::DescribeCasesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_cases::builders::DescribeCasesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

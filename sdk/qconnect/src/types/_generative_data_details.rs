@@ -3,31 +3,29 @@
 /// <p>Details about generative data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GenerativeDataDetails {
+pub struct GenerativeDataDetails  {
     /// <p>The LLM response.</p>
     pub completion: ::std::string::String,
     /// <p>The references used to generative the LLM response.</p>
-    pub references: ::std::vec::Vec<crate::types::DataSummary>,
+    pub references: ::std::vec::Vec::<crate::types::DataSummary>,
     /// <p>Details about the generative content ranking data.</p>
     pub ranking_data: ::std::option::Option<crate::types::RankingData>,
 }
-impl GenerativeDataDetails {
+impl  GenerativeDataDetails  {
     /// <p>The LLM response.</p>
-    pub fn completion(&self) -> &str {
-        use std::ops::Deref;
-        self.completion.deref()
+    pub fn completion(&self) -> & str {
+        use std::ops::Deref; self.completion.deref()
     }
     /// <p>The references used to generative the LLM response.</p>
-    pub fn references(&self) -> &[crate::types::DataSummary] {
-        use std::ops::Deref;
-        self.references.deref()
+    pub fn references(&self) -> & [crate::types::DataSummary] {
+        use std::ops::Deref; self.references.deref()
     }
     /// <p>Details about the generative content ranking data.</p>
-    pub fn ranking_data(&self) -> ::std::option::Option<&crate::types::RankingData> {
+    pub fn ranking_data(&self) -> ::std::option::Option<& crate::types::RankingData> {
         self.ranking_data.as_ref()
     }
 }
-impl ::std::fmt::Debug for GenerativeDataDetails {
+impl  ::std::fmt::Debug for GenerativeDataDetails  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GenerativeDataDetails");
         formatter.field("completion", &"*** Sensitive Data Redacted ***");
@@ -48,7 +46,7 @@ impl GenerativeDataDetails {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct GenerativeDataDetailsBuilder {
     pub(crate) completion: ::std::option::Option<::std::string::String>,
-    pub(crate) references: ::std::option::Option<::std::vec::Vec<crate::types::DataSummary>>,
+    pub(crate) references: ::std::option::Option<::std::vec::Vec::<crate::types::DataSummary>>,
     pub(crate) ranking_data: ::std::option::Option<crate::types::RankingData>,
 }
 impl GenerativeDataDetailsBuilder {
@@ -60,8 +58,7 @@ impl GenerativeDataDetailsBuilder {
     }
     /// <p>The LLM response.</p>
     pub fn set_completion(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.completion = input;
-        self
+        self.completion = input; self
     }
     /// <p>The LLM response.</p>
     pub fn get_completion(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,17 +71,16 @@ impl GenerativeDataDetailsBuilder {
     /// <p>The references used to generative the LLM response.</p>
     pub fn references(mut self, input: crate::types::DataSummary) -> Self {
         let mut v = self.references.unwrap_or_default();
-        v.push(input);
-        self.references = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.references = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The references used to generative the LLM response.</p>
-    pub fn set_references(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSummary>>) -> Self {
-        self.references = input;
-        self
+    pub fn set_references(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataSummary>>) -> Self {
+        self.references = input; self
     }
     /// <p>The references used to generative the LLM response.</p>
-    pub fn get_references(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSummary>> {
+    pub fn get_references(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataSummary>> {
         &self.references
     }
     /// <p>Details about the generative content ranking data.</p>
@@ -95,8 +91,7 @@ impl GenerativeDataDetailsBuilder {
     }
     /// <p>Details about the generative content ranking data.</p>
     pub fn set_ranking_data(mut self, input: ::std::option::Option<crate::types::RankingData>) -> Self {
-        self.ranking_data = input;
-        self
+        self.ranking_data = input; self
     }
     /// <p>Details about the generative content ranking data.</p>
     pub fn get_ranking_data(&self) -> &::std::option::Option<crate::types::RankingData> {
@@ -107,21 +102,22 @@ impl GenerativeDataDetailsBuilder {
     /// - [`completion`](crate::types::builders::GenerativeDataDetailsBuilder::completion)
     /// - [`references`](crate::types::builders::GenerativeDataDetailsBuilder::references)
     pub fn build(self) -> ::std::result::Result<crate::types::GenerativeDataDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GenerativeDataDetails {
-            completion: self.completion.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "completion",
-                    "completion was not specified but it is required when building GenerativeDataDetails",
-                )
-            })?,
-            references: self.references.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "references",
-                    "references was not specified but it is required when building GenerativeDataDetails",
-                )
-            })?,
-            ranking_data: self.ranking_data,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GenerativeDataDetails {
+                completion: self.completion
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("completion", "completion was not specified but it is required when building GenerativeDataDetails")
+                    )?
+                ,
+                references: self.references
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("references", "references was not specified but it is required when building GenerativeDataDetails")
+                    )?
+                ,
+                ranking_data: self.ranking_data
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for GenerativeDataDetailsBuilder {
@@ -133,3 +129,4 @@ impl ::std::fmt::Debug for GenerativeDataDetailsBuilder {
         formatter.finish()
     }
 }
+

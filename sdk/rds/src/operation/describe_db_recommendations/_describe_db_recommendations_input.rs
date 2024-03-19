@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDbRecommendationsInput {
+pub struct DescribeDbRecommendationsInput  {
     /// <p>A filter to include only the recommendations that were updated after this specified time.</p>
     pub last_updated_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A filter to include only the recommendations that were updated before this specified time.</p>
@@ -79,19 +79,19 @@ pub struct DescribeDbRecommendationsInput {
     /// <li>
     /// <p><code>cluster-pg-arn</code> - Accepts a list of cluster parameter group ARNs. The results list only includes the recommendations that generated for the specified cluster parameter groups.</p></li>
     /// </ul>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     /// <p>The maximum number of recommendations to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     pub max_records: ::std::option::Option<i32>,
     /// <p>An optional pagination token provided by a previous <code>DescribeDBRecommendations</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
 }
-impl DescribeDbRecommendationsInput {
+impl  DescribeDbRecommendationsInput  {
     /// <p>A filter to include only the recommendations that were updated after this specified time.</p>
-    pub fn last_updated_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_after.as_ref()
     }
     /// <p>A filter to include only the recommendations that were updated before this specified time.</p>
-    pub fn last_updated_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_before.as_ref()
     }
     /// <p>The language that you choose to return the list of recommendations.</p>
@@ -122,7 +122,7 @@ impl DescribeDbRecommendationsInput {
     /// <li>
     /// <p><code>zh_CN</code></p></li>
     /// </ul>
-    pub fn locale(&self) -> ::std::option::Option<&str> {
+    pub fn locale(&self) -> ::std::option::Option<& str> {
         self.locale.as_deref()
     }
     /// <p>A filter that specifies one or more recommendations to describe.</p>
@@ -168,17 +168,18 @@ impl DescribeDbRecommendationsInput {
     /// <li>
     /// <p><code>cluster-pg-arn</code> - Accepts a list of cluster parameter group ARNs. The results list only includes the recommendations that generated for the specified cluster parameter groups.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of recommendations to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     pub fn max_records(&self) -> ::std::option::Option<i32> {
         self.max_records
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeDBRecommendations</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
@@ -196,7 +197,7 @@ pub struct DescribeDbRecommendationsInputBuilder {
     pub(crate) last_updated_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) locale: ::std::option::Option<::std::string::String>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     pub(crate) max_records: ::std::option::Option<i32>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
 }
@@ -208,8 +209,7 @@ impl DescribeDbRecommendationsInputBuilder {
     }
     /// <p>A filter to include only the recommendations that were updated after this specified time.</p>
     pub fn set_last_updated_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_after = input;
-        self
+        self.last_updated_after = input; self
     }
     /// <p>A filter to include only the recommendations that were updated after this specified time.</p>
     pub fn get_last_updated_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -222,8 +222,7 @@ impl DescribeDbRecommendationsInputBuilder {
     }
     /// <p>A filter to include only the recommendations that were updated before this specified time.</p>
     pub fn set_last_updated_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_before = input;
-        self
+        self.last_updated_before = input; self
     }
     /// <p>A filter to include only the recommendations that were updated before this specified time.</p>
     pub fn get_last_updated_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -290,8 +289,7 @@ impl DescribeDbRecommendationsInputBuilder {
     /// <p><code>zh_CN</code></p></li>
     /// </ul>
     pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.locale = input;
-        self
+        self.locale = input; self
     }
     /// <p>The language that you choose to return the list of recommendations.</p>
     /// <p>Valid values:</p>
@@ -373,9 +371,9 @@ impl DescribeDbRecommendationsInputBuilder {
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A filter that specifies one or more recommendations to describe.</p>
     /// <p>Supported Filters:</p>
@@ -420,9 +418,8 @@ impl DescribeDbRecommendationsInputBuilder {
     /// <li>
     /// <p><code>cluster-pg-arn</code> - Accepts a list of cluster parameter group ARNs. The results list only includes the recommendations that generated for the specified cluster parameter groups.</p></li>
     /// </ul>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>A filter that specifies one or more recommendations to describe.</p>
     /// <p>Supported Filters:</p>
@@ -467,7 +464,7 @@ impl DescribeDbRecommendationsInputBuilder {
     /// <li>
     /// <p><code>cluster-pg-arn</code> - Accepts a list of cluster parameter group ARNs. The results list only includes the recommendations that generated for the specified cluster parameter groups.</p></li>
     /// </ul>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// <p>The maximum number of recommendations to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
@@ -477,8 +474,7 @@ impl DescribeDbRecommendationsInputBuilder {
     }
     /// <p>The maximum number of recommendations to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>The maximum number of recommendations to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     pub fn get_max_records(&self) -> &::std::option::Option<i32> {
@@ -491,27 +487,30 @@ impl DescribeDbRecommendationsInputBuilder {
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeDBRecommendations</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeDBRecommendations</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeDbRecommendationsInput`](crate::operation::describe_db_recommendations::DescribeDbRecommendationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_db_recommendations::DescribeDbRecommendationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_db_recommendations::DescribeDbRecommendationsInput {
-            last_updated_after: self.last_updated_after,
-            last_updated_before: self.last_updated_before,
-            locale: self.locale,
-            filters: self.filters,
-            max_records: self.max_records,
-            marker: self.marker,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_db_recommendations::DescribeDbRecommendationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_db_recommendations::DescribeDbRecommendationsInput {
+                last_updated_after: self.last_updated_after
+                ,
+                last_updated_before: self.last_updated_before
+                ,
+                locale: self.locale
+                ,
+                filters: self.filters
+                ,
+                max_records: self.max_records
+                ,
+                marker: self.marker
+                ,
+            }
+        )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Summary of the AWS resource used for access control that is implicitly linked to your AWS account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProgressUpdateStreamSummary {
+pub struct ProgressUpdateStreamSummary  {
     /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i></p>
     pub progress_update_stream_name: ::std::option::Option<::std::string::String>,
 }
-impl ProgressUpdateStreamSummary {
+impl  ProgressUpdateStreamSummary  {
     /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i></p>
-    pub fn progress_update_stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn progress_update_stream_name(&self) -> ::std::option::Option<& str> {
         self.progress_update_stream_name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl ProgressUpdateStreamSummaryBuilder {
     }
     /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i></p>
     pub fn set_progress_update_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.progress_update_stream_name = input;
-        self
+        self.progress_update_stream_name = input; self
     }
     /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i></p>
     pub fn get_progress_update_stream_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl ProgressUpdateStreamSummaryBuilder {
     /// Consumes the builder and constructs a [`ProgressUpdateStreamSummary`](crate::types::ProgressUpdateStreamSummary).
     pub fn build(self) -> crate::types::ProgressUpdateStreamSummary {
         crate::types::ProgressUpdateStreamSummary {
-            progress_update_stream_name: self.progress_update_stream_name,
+            progress_update_stream_name: self.progress_update_stream_name
+            ,
         }
     }
 }
+

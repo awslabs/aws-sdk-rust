@@ -14,19 +14,19 @@
 /// <p>If automatic domain delegation fails, or if you manage the DNS of your domain using a service other than Route&nbsp;53, then you must manually add the Lightsail DNS zone name servers to your domain in order to delegate management of its DNS to Lightsail. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/lightsail-how-to-create-dns-entry">Creating a DNS zone to manage your domain’s records in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisteredDomainDelegationInfo {
+pub struct RegisteredDomainDelegationInfo  {
     /// <p>An object that describes the state of the name server records that are automatically added to the Route&nbsp;53 domain by Lightsail.</p>
     pub name_servers_update_state: ::std::option::Option<crate::types::NameServersUpdateState>,
     /// <p>Describes the deletion state of an Amazon Route&nbsp;53 hosted zone for a domain that is being automatically delegated to an Amazon Lightsail DNS zone.</p>
     pub r53_hosted_zone_deletion_state: ::std::option::Option<crate::types::R53HostedZoneDeletionState>,
 }
-impl RegisteredDomainDelegationInfo {
+impl  RegisteredDomainDelegationInfo  {
     /// <p>An object that describes the state of the name server records that are automatically added to the Route&nbsp;53 domain by Lightsail.</p>
-    pub fn name_servers_update_state(&self) -> ::std::option::Option<&crate::types::NameServersUpdateState> {
+    pub fn name_servers_update_state(&self) -> ::std::option::Option<& crate::types::NameServersUpdateState> {
         self.name_servers_update_state.as_ref()
     }
     /// <p>Describes the deletion state of an Amazon Route&nbsp;53 hosted zone for a domain that is being automatically delegated to an Amazon Lightsail DNS zone.</p>
-    pub fn r53_hosted_zone_deletion_state(&self) -> ::std::option::Option<&crate::types::R53HostedZoneDeletionState> {
+    pub fn r53_hosted_zone_deletion_state(&self) -> ::std::option::Option<& crate::types::R53HostedZoneDeletionState> {
         self.r53_hosted_zone_deletion_state.as_ref()
     }
 }
@@ -52,8 +52,7 @@ impl RegisteredDomainDelegationInfoBuilder {
     }
     /// <p>An object that describes the state of the name server records that are automatically added to the Route&nbsp;53 domain by Lightsail.</p>
     pub fn set_name_servers_update_state(mut self, input: ::std::option::Option<crate::types::NameServersUpdateState>) -> Self {
-        self.name_servers_update_state = input;
-        self
+        self.name_servers_update_state = input; self
     }
     /// <p>An object that describes the state of the name server records that are automatically added to the Route&nbsp;53 domain by Lightsail.</p>
     pub fn get_name_servers_update_state(&self) -> &::std::option::Option<crate::types::NameServersUpdateState> {
@@ -66,8 +65,7 @@ impl RegisteredDomainDelegationInfoBuilder {
     }
     /// <p>Describes the deletion state of an Amazon Route&nbsp;53 hosted zone for a domain that is being automatically delegated to an Amazon Lightsail DNS zone.</p>
     pub fn set_r53_hosted_zone_deletion_state(mut self, input: ::std::option::Option<crate::types::R53HostedZoneDeletionState>) -> Self {
-        self.r53_hosted_zone_deletion_state = input;
-        self
+        self.r53_hosted_zone_deletion_state = input; self
     }
     /// <p>Describes the deletion state of an Amazon Route&nbsp;53 hosted zone for a domain that is being automatically delegated to an Amazon Lightsail DNS zone.</p>
     pub fn get_r53_hosted_zone_deletion_state(&self) -> &::std::option::Option<crate::types::R53HostedZoneDeletionState> {
@@ -76,8 +74,11 @@ impl RegisteredDomainDelegationInfoBuilder {
     /// Consumes the builder and constructs a [`RegisteredDomainDelegationInfo`](crate::types::RegisteredDomainDelegationInfo).
     pub fn build(self) -> crate::types::RegisteredDomainDelegationInfo {
         crate::types::RegisteredDomainDelegationInfo {
-            name_servers_update_state: self.name_servers_update_state,
-            r53_hosted_zone_deletion_state: self.r53_hosted_zone_deletion_state,
+            name_servers_update_state: self.name_servers_update_state
+            ,
+            r53_hosted_zone_deletion_state: self.r53_hosted_zone_deletion_state
+            ,
         }
     }
 }
+

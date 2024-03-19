@@ -3,20 +3,19 @@
 /// <p>A structure that contains the runtime settings for recording a Kinesis video stream.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KinesisVideoStreamRecordingSourceRuntimeConfiguration {
+pub struct KinesisVideoStreamRecordingSourceRuntimeConfiguration  {
     /// <p>The stream or streams to be recorded.</p>
-    pub streams: ::std::vec::Vec<crate::types::RecordingStreamConfiguration>,
+    pub streams: ::std::vec::Vec::<crate::types::RecordingStreamConfiguration>,
     /// <p>Describes the timestamp range and timestamp origin of a range of fragments in the Kinesis video stream.</p>
     pub fragment_selector: ::std::option::Option<crate::types::FragmentSelector>,
 }
-impl KinesisVideoStreamRecordingSourceRuntimeConfiguration {
+impl  KinesisVideoStreamRecordingSourceRuntimeConfiguration  {
     /// <p>The stream or streams to be recorded.</p>
-    pub fn streams(&self) -> &[crate::types::RecordingStreamConfiguration] {
-        use std::ops::Deref;
-        self.streams.deref()
+    pub fn streams(&self) -> & [crate::types::RecordingStreamConfiguration] {
+        use std::ops::Deref; self.streams.deref()
     }
     /// <p>Describes the timestamp range and timestamp origin of a range of fragments in the Kinesis video stream.</p>
-    pub fn fragment_selector(&self) -> ::std::option::Option<&crate::types::FragmentSelector> {
+    pub fn fragment_selector(&self) -> ::std::option::Option<& crate::types::FragmentSelector> {
         self.fragment_selector.as_ref()
     }
 }
@@ -31,7 +30,7 @@ impl KinesisVideoStreamRecordingSourceRuntimeConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KinesisVideoStreamRecordingSourceRuntimeConfigurationBuilder {
-    pub(crate) streams: ::std::option::Option<::std::vec::Vec<crate::types::RecordingStreamConfiguration>>,
+    pub(crate) streams: ::std::option::Option<::std::vec::Vec::<crate::types::RecordingStreamConfiguration>>,
     pub(crate) fragment_selector: ::std::option::Option<crate::types::FragmentSelector>,
 }
 impl KinesisVideoStreamRecordingSourceRuntimeConfigurationBuilder {
@@ -42,17 +41,16 @@ impl KinesisVideoStreamRecordingSourceRuntimeConfigurationBuilder {
     /// <p>The stream or streams to be recorded.</p>
     pub fn streams(mut self, input: crate::types::RecordingStreamConfiguration) -> Self {
         let mut v = self.streams.unwrap_or_default();
-        v.push(input);
-        self.streams = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.streams = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The stream or streams to be recorded.</p>
-    pub fn set_streams(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecordingStreamConfiguration>>) -> Self {
-        self.streams = input;
-        self
+    pub fn set_streams(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RecordingStreamConfiguration>>) -> Self {
+        self.streams = input; self
     }
     /// <p>The stream or streams to be recorded.</p>
-    pub fn get_streams(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecordingStreamConfiguration>> {
+    pub fn get_streams(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RecordingStreamConfiguration>> {
         &self.streams
     }
     /// <p>Describes the timestamp range and timestamp origin of a range of fragments in the Kinesis video stream.</p>
@@ -63,8 +61,7 @@ impl KinesisVideoStreamRecordingSourceRuntimeConfigurationBuilder {
     }
     /// <p>Describes the timestamp range and timestamp origin of a range of fragments in the Kinesis video stream.</p>
     pub fn set_fragment_selector(mut self, input: ::std::option::Option<crate::types::FragmentSelector>) -> Self {
-        self.fragment_selector = input;
-        self
+        self.fragment_selector = input; self
     }
     /// <p>Describes the timestamp range and timestamp origin of a range of fragments in the Kinesis video stream.</p>
     pub fn get_fragment_selector(&self) -> &::std::option::Option<crate::types::FragmentSelector> {
@@ -73,18 +70,18 @@ impl KinesisVideoStreamRecordingSourceRuntimeConfigurationBuilder {
     /// Consumes the builder and constructs a [`KinesisVideoStreamRecordingSourceRuntimeConfiguration`](crate::types::KinesisVideoStreamRecordingSourceRuntimeConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`streams`](crate::types::builders::KinesisVideoStreamRecordingSourceRuntimeConfigurationBuilder::streams)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::KinesisVideoStreamRecordingSourceRuntimeConfiguration, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::types::KinesisVideoStreamRecordingSourceRuntimeConfiguration {
-            streams: self.streams.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "streams",
-                    "streams was not specified but it is required when building KinesisVideoStreamRecordingSourceRuntimeConfiguration",
-                )
-            })?,
-            fragment_selector: self.fragment_selector,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::KinesisVideoStreamRecordingSourceRuntimeConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::KinesisVideoStreamRecordingSourceRuntimeConfiguration {
+                streams: self.streams
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("streams", "streams was not specified but it is required when building KinesisVideoStreamRecordingSourceRuntimeConfiguration")
+                    )?
+                ,
+                fragment_selector: self.fragment_selector
+                ,
+            }
+        )
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLandingZoneOperationOutput {
+pub struct GetLandingZoneOperationOutput  {
     /// <p>Details about a landing zone operation.</p>
     pub operation_details: ::std::option::Option<crate::types::LandingZoneOperationDetail>,
     _request_id: Option<String>,
 }
-impl GetLandingZoneOperationOutput {
+impl  GetLandingZoneOperationOutput  {
     /// <p>Details about a landing zone operation.</p>
-    pub fn operation_details(&self) -> ::std::option::Option<&crate::types::LandingZoneOperationDetail> {
+    pub fn operation_details(&self) -> ::std::option::Option<& crate::types::LandingZoneOperationDetail> {
         self.operation_details.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetLandingZoneOperationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetLandingZoneOperationOutput {
     /// Creates a new builder-style object to manufacture [`GetLandingZoneOperationOutput`](crate::operation::get_landing_zone_operation::GetLandingZoneOperationOutput).
     pub fn builder() -> crate::operation::get_landing_zone_operation::builders::GetLandingZoneOperationOutputBuilder {
@@ -41,27 +41,28 @@ impl GetLandingZoneOperationOutputBuilder {
     }
     /// <p>Details about a landing zone operation.</p>
     pub fn set_operation_details(mut self, input: ::std::option::Option<crate::types::LandingZoneOperationDetail>) -> Self {
-        self.operation_details = input;
-        self
+        self.operation_details = input; self
     }
     /// <p>Details about a landing zone operation.</p>
     pub fn get_operation_details(&self) -> &::std::option::Option<crate::types::LandingZoneOperationDetail> {
         &self.operation_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetLandingZoneOperationOutput`](crate::operation::get_landing_zone_operation::GetLandingZoneOperationOutput).
     pub fn build(self) -> crate::operation::get_landing_zone_operation::GetLandingZoneOperationOutput {
         crate::operation::get_landing_zone_operation::GetLandingZoneOperationOutput {
-            operation_details: self.operation_details,
+            operation_details: self.operation_details
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

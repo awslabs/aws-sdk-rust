@@ -3,7 +3,7 @@
 /// <p>A node input port.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NodeInputPort {
+pub struct NodeInputPort  {
     /// <p>The input port's name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The input port's description.</p>
@@ -15,21 +15,21 @@ pub struct NodeInputPort {
     /// <p>The input port's max connections.</p>
     pub max_connections: i32,
 }
-impl NodeInputPort {
+impl  NodeInputPort  {
     /// <p>The input port's name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The input port's description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The input port's type.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::PortType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::PortType> {
         self.r#type.as_ref()
     }
     /// <p>The input port's default value.</p>
-    pub fn default_value(&self) -> ::std::option::Option<&str> {
+    pub fn default_value(&self) -> ::std::option::Option<& str> {
         self.default_value.as_deref()
     }
     /// <p>The input port's max connections.</p>
@@ -62,8 +62,7 @@ impl NodeInputPortBuilder {
     }
     /// <p>The input port's name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The input port's name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl NodeInputPortBuilder {
     }
     /// <p>The input port's description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The input port's description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl NodeInputPortBuilder {
     }
     /// <p>The input port's type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::PortType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The input port's type.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::PortType> {
@@ -104,8 +101,7 @@ impl NodeInputPortBuilder {
     }
     /// <p>The input port's default value.</p>
     pub fn set_default_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_value = input;
-        self
+        self.default_value = input; self
     }
     /// <p>The input port's default value.</p>
     pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl NodeInputPortBuilder {
     }
     /// <p>The input port's max connections.</p>
     pub fn set_max_connections(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_connections = input;
-        self
+        self.max_connections = input; self
     }
     /// <p>The input port's max connections.</p>
     pub fn get_max_connections(&self) -> &::std::option::Option<i32> {
@@ -128,11 +123,18 @@ impl NodeInputPortBuilder {
     /// Consumes the builder and constructs a [`NodeInputPort`](crate::types::NodeInputPort).
     pub fn build(self) -> crate::types::NodeInputPort {
         crate::types::NodeInputPort {
-            name: self.name,
-            description: self.description,
-            r#type: self.r#type,
-            default_value: self.default_value,
-            max_connections: self.max_connections.unwrap_or_default(),
+            name: self.name
+            ,
+            description: self.description
+            ,
+            r#type: self.r#type
+            ,
+            default_value: self.default_value
+            ,
+            max_connections: self.max_connections
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListResourceEvaluations`](crate::operation::list_resource_evaluations::builders::ListResourceEvaluationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_resource_evaluations::builders::ListResourceEvaluationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filters(ResourceEvaluationFilters)`](crate::operation::list_resource_evaluations::builders::ListResourceEvaluationsFluentBuilder::filters) / [`set_filters(Option<ResourceEvaluationFilters>)`](crate::operation::list_resource_evaluations::builders::ListResourceEvaluationsFluentBuilder::set_filters):<br>required: **false**<br><p>Returns a <code>ResourceEvaluationFilters</code> object.</p><br>
     ///   - [`limit(i32)`](crate::operation::list_resource_evaluations::builders::ListResourceEvaluationsFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::list_resource_evaluations::builders::ListResourceEvaluationsFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of evaluations returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_resource_evaluations::builders::ListResourceEvaluationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_resource_evaluations::builders::ListResourceEvaluationsFluentBuilder::set_next_token):<br>required: **false**<br><p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p><br>
-    /// - On success, responds with [`ListResourceEvaluationsOutput`](crate::operation::list_resource_evaluations::ListResourceEvaluationsOutput) with field(s):
+                            /// - On success, responds with [`ListResourceEvaluationsOutput`](crate::operation::list_resource_evaluations::ListResourceEvaluationsOutput) with field(s):
     ///   - [`resource_evaluations(Option<Vec::<ResourceEvaluation>>)`](crate::operation::list_resource_evaluations::ListResourceEvaluationsOutput::resource_evaluations): <p>Returns a <code>ResourceEvaluations</code> object.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_resource_evaluations::ListResourceEvaluationsOutput::next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    /// - On failure, responds with [`SdkError<ListResourceEvaluationsError>`](crate::operation::list_resource_evaluations::ListResourceEvaluationsError)
+                            /// - On failure, responds with [`SdkError<ListResourceEvaluationsError>`](crate::operation::list_resource_evaluations::ListResourceEvaluationsError)
     pub fn list_resource_evaluations(&self) -> crate::operation::list_resource_evaluations::builders::ListResourceEvaluationsFluentBuilder {
-        crate::operation::list_resource_evaluations::builders::ListResourceEvaluationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_resource_evaluations::builders::ListResourceEvaluationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

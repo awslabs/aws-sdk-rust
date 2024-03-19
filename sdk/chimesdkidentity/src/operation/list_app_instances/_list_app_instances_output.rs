@@ -2,26 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ListAppInstancesOutput {
+pub struct ListAppInstancesOutput  {
     /// <p>The information for each <code>AppInstance</code>.</p>
-    pub app_instances: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceSummary>>,
+    pub app_instances: ::std::option::Option<::std::vec::Vec::<crate::types::AppInstanceSummary>>,
     /// <p>The token passed by previous API requests until the maximum number of <code>AppInstance</code>s is reached.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListAppInstancesOutput {
+impl  ListAppInstancesOutput  {
     /// <p>The information for each <code>AppInstance</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.app_instances.is_none()`.
-    pub fn app_instances(&self) -> &[crate::types::AppInstanceSummary] {
-        self.app_instances.as_deref().unwrap_or_default()
+    pub fn app_instances(&self) -> & [crate::types::AppInstanceSummary] {
+        self.app_instances.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token passed by previous API requests until the maximum number of <code>AppInstance</code>s is reached.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for ListAppInstancesOutput {
+impl  ::std::fmt::Debug for ListAppInstancesOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ListAppInstancesOutput");
         formatter.field("app_instances", &self.app_instances);
@@ -31,10 +32,10 @@ impl ::std::fmt::Debug for ListAppInstancesOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for ListAppInstancesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAppInstancesOutput {
     /// Creates a new builder-style object to manufacture [`ListAppInstancesOutput`](crate::operation::list_app_instances::ListAppInstancesOutput).
     pub fn builder() -> crate::operation::list_app_instances::builders::ListAppInstancesOutputBuilder {
@@ -46,7 +47,7 @@ impl ListAppInstancesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ListAppInstancesOutputBuilder {
-    pub(crate) app_instances: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceSummary>>,
+    pub(crate) app_instances: ::std::option::Option<::std::vec::Vec::<crate::types::AppInstanceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +59,16 @@ impl ListAppInstancesOutputBuilder {
     /// <p>The information for each <code>AppInstance</code>.</p>
     pub fn app_instances(mut self, input: crate::types::AppInstanceSummary) -> Self {
         let mut v = self.app_instances.unwrap_or_default();
-        v.push(input);
-        self.app_instances = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.app_instances = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The information for each <code>AppInstance</code>.</p>
-    pub fn set_app_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceSummary>>) -> Self {
-        self.app_instances = input;
-        self
+    pub fn set_app_instances(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AppInstanceSummary>>) -> Self {
+        self.app_instances = input; self
     }
     /// <p>The information for each <code>AppInstance</code>.</p>
-    pub fn get_app_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppInstanceSummary>> {
+    pub fn get_app_instances(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AppInstanceSummary>> {
         &self.app_instances
     }
     /// <p>The token passed by previous API requests until the maximum number of <code>AppInstance</code>s is reached.</p>
@@ -78,27 +78,28 @@ impl ListAppInstancesOutputBuilder {
     }
     /// <p>The token passed by previous API requests until the maximum number of <code>AppInstance</code>s is reached.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token passed by previous API requests until the maximum number of <code>AppInstance</code>s is reached.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAppInstancesOutput`](crate::operation::list_app_instances::ListAppInstancesOutput).
     pub fn build(self) -> crate::operation::list_app_instances::ListAppInstancesOutput {
         crate::operation::list_app_instances::ListAppInstancesOutput {
-            app_instances: self.app_instances,
-            next_token: self.next_token,
+            app_instances: self.app_instances
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
@@ -112,3 +113,4 @@ impl ::std::fmt::Debug for ListAppInstancesOutputBuilder {
         formatter.finish()
     }
 }
+

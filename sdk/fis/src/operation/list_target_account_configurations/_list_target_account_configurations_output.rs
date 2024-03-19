@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTargetAccountConfigurationsOutput {
+pub struct ListTargetAccountConfigurationsOutput  {
     /// <p>The target account configurations.</p>
-    pub target_account_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TargetAccountConfigurationSummary>>,
+    pub target_account_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::TargetAccountConfigurationSummary>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListTargetAccountConfigurationsOutput {
+impl  ListTargetAccountConfigurationsOutput  {
     /// <p>The target account configurations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_account_configurations.is_none()`.
-    pub fn target_account_configurations(&self) -> &[crate::types::TargetAccountConfigurationSummary] {
-        self.target_account_configurations.as_deref().unwrap_or_default()
+    pub fn target_account_configurations(&self) -> & [crate::types::TargetAccountConfigurationSummary] {
+        self.target_account_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListTargetAccountConfigurationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListTargetAccountConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListTargetAccountConfigurationsOutput`](crate::operation::list_target_account_configurations::ListTargetAccountConfigurationsOutput).
     pub fn builder() -> crate::operation::list_target_account_configurations::builders::ListTargetAccountConfigurationsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListTargetAccountConfigurationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTargetAccountConfigurationsOutputBuilder {
-    pub(crate) target_account_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TargetAccountConfigurationSummary>>,
+    pub(crate) target_account_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::TargetAccountConfigurationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,20 +50,16 @@ impl ListTargetAccountConfigurationsOutputBuilder {
     /// <p>The target account configurations.</p>
     pub fn target_account_configurations(mut self, input: crate::types::TargetAccountConfigurationSummary) -> Self {
         let mut v = self.target_account_configurations.unwrap_or_default();
-        v.push(input);
-        self.target_account_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.target_account_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The target account configurations.</p>
-    pub fn set_target_account_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetAccountConfigurationSummary>>,
-    ) -> Self {
-        self.target_account_configurations = input;
-        self
+    pub fn set_target_account_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TargetAccountConfigurationSummary>>) -> Self {
+        self.target_account_configurations = input; self
     }
     /// <p>The target account configurations.</p>
-    pub fn get_target_account_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetAccountConfigurationSummary>> {
+    pub fn get_target_account_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TargetAccountConfigurationSummary>> {
         &self.target_account_configurations
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
@@ -72,28 +69,30 @@ impl ListTargetAccountConfigurationsOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListTargetAccountConfigurationsOutput`](crate::operation::list_target_account_configurations::ListTargetAccountConfigurationsOutput).
     pub fn build(self) -> crate::operation::list_target_account_configurations::ListTargetAccountConfigurationsOutput {
         crate::operation::list_target_account_configurations::ListTargetAccountConfigurationsOutput {
-            target_account_configurations: self.target_account_configurations,
-            next_token: self.next_token,
+            target_account_configurations: self.target_account_configurations
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

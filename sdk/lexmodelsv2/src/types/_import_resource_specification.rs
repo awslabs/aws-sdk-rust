@@ -3,7 +3,7 @@
 /// <p>Provides information about the bot or bot locale that you want to import. You can specify the <code>botImportSpecification</code> or the <code>botLocaleImportSpecification</code>, but not both.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportResourceSpecification {
+pub struct ImportResourceSpecification  {
     /// <p>Parameters for importing a bot.</p>
     pub bot_import_specification: ::std::option::Option<crate::types::BotImportSpecification>,
     /// <p>Parameters for importing a bot locale.</p>
@@ -13,21 +13,21 @@ pub struct ImportResourceSpecification {
     /// <p>Specifications for the test set that is imported.</p>
     pub test_set_import_resource_specification: ::std::option::Option<crate::types::TestSetImportResourceSpecification>,
 }
-impl ImportResourceSpecification {
+impl  ImportResourceSpecification  {
     /// <p>Parameters for importing a bot.</p>
-    pub fn bot_import_specification(&self) -> ::std::option::Option<&crate::types::BotImportSpecification> {
+    pub fn bot_import_specification(&self) -> ::std::option::Option<& crate::types::BotImportSpecification> {
         self.bot_import_specification.as_ref()
     }
     /// <p>Parameters for importing a bot locale.</p>
-    pub fn bot_locale_import_specification(&self) -> ::std::option::Option<&crate::types::BotLocaleImportSpecification> {
+    pub fn bot_locale_import_specification(&self) -> ::std::option::Option<& crate::types::BotLocaleImportSpecification> {
         self.bot_locale_import_specification.as_ref()
     }
     /// <p>Provides the parameters required for importing a custom vocabulary.</p>
-    pub fn custom_vocabulary_import_specification(&self) -> ::std::option::Option<&crate::types::CustomVocabularyImportSpecification> {
+    pub fn custom_vocabulary_import_specification(&self) -> ::std::option::Option<& crate::types::CustomVocabularyImportSpecification> {
         self.custom_vocabulary_import_specification.as_ref()
     }
     /// <p>Specifications for the test set that is imported.</p>
-    pub fn test_set_import_resource_specification(&self) -> ::std::option::Option<&crate::types::TestSetImportResourceSpecification> {
+    pub fn test_set_import_resource_specification(&self) -> ::std::option::Option<& crate::types::TestSetImportResourceSpecification> {
         self.test_set_import_resource_specification.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl ImportResourceSpecificationBuilder {
     }
     /// <p>Parameters for importing a bot.</p>
     pub fn set_bot_import_specification(mut self, input: ::std::option::Option<crate::types::BotImportSpecification>) -> Self {
-        self.bot_import_specification = input;
-        self
+        self.bot_import_specification = input; self
     }
     /// <p>Parameters for importing a bot.</p>
     pub fn get_bot_import_specification(&self) -> &::std::option::Option<crate::types::BotImportSpecification> {
@@ -69,8 +68,7 @@ impl ImportResourceSpecificationBuilder {
     }
     /// <p>Parameters for importing a bot locale.</p>
     pub fn set_bot_locale_import_specification(mut self, input: ::std::option::Option<crate::types::BotLocaleImportSpecification>) -> Self {
-        self.bot_locale_import_specification = input;
-        self
+        self.bot_locale_import_specification = input; self
     }
     /// <p>Parameters for importing a bot locale.</p>
     pub fn get_bot_locale_import_specification(&self) -> &::std::option::Option<crate::types::BotLocaleImportSpecification> {
@@ -82,12 +80,8 @@ impl ImportResourceSpecificationBuilder {
         self
     }
     /// <p>Provides the parameters required for importing a custom vocabulary.</p>
-    pub fn set_custom_vocabulary_import_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::CustomVocabularyImportSpecification>,
-    ) -> Self {
-        self.custom_vocabulary_import_specification = input;
-        self
+    pub fn set_custom_vocabulary_import_specification(mut self, input: ::std::option::Option<crate::types::CustomVocabularyImportSpecification>) -> Self {
+        self.custom_vocabulary_import_specification = input; self
     }
     /// <p>Provides the parameters required for importing a custom vocabulary.</p>
     pub fn get_custom_vocabulary_import_specification(&self) -> &::std::option::Option<crate::types::CustomVocabularyImportSpecification> {
@@ -99,12 +93,8 @@ impl ImportResourceSpecificationBuilder {
         self
     }
     /// <p>Specifications for the test set that is imported.</p>
-    pub fn set_test_set_import_resource_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::TestSetImportResourceSpecification>,
-    ) -> Self {
-        self.test_set_import_resource_specification = input;
-        self
+    pub fn set_test_set_import_resource_specification(mut self, input: ::std::option::Option<crate::types::TestSetImportResourceSpecification>) -> Self {
+        self.test_set_import_resource_specification = input; self
     }
     /// <p>Specifications for the test set that is imported.</p>
     pub fn get_test_set_import_resource_specification(&self) -> &::std::option::Option<crate::types::TestSetImportResourceSpecification> {
@@ -113,10 +103,15 @@ impl ImportResourceSpecificationBuilder {
     /// Consumes the builder and constructs a [`ImportResourceSpecification`](crate::types::ImportResourceSpecification).
     pub fn build(self) -> crate::types::ImportResourceSpecification {
         crate::types::ImportResourceSpecification {
-            bot_import_specification: self.bot_import_specification,
-            bot_locale_import_specification: self.bot_locale_import_specification,
-            custom_vocabulary_import_specification: self.custom_vocabulary_import_specification,
-            test_set_import_resource_specification: self.test_set_import_resource_specification,
+            bot_import_specification: self.bot_import_specification
+            ,
+            bot_locale_import_specification: self.bot_locale_import_specification
+            ,
+            custom_vocabulary_import_specification: self.custom_vocabulary_import_specification
+            ,
+            test_set_import_resource_specification: self.test_set_import_resource_specification
+            ,
         }
     }
 }
+

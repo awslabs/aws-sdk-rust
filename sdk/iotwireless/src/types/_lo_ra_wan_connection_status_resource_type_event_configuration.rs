@@ -3,13 +3,13 @@
 /// <p>Object for LoRaWAN connection status resource type event configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoRaWanConnectionStatusResourceTypeEventConfiguration {
+pub struct LoRaWanConnectionStatusResourceTypeEventConfiguration  {
     /// <p>Denotes whether the wireless gateway connection status event topic is enabled or disabled.</p>
     pub wireless_gateway_event_topic: ::std::option::Option<crate::types::EventNotificationTopicStatus>,
 }
-impl LoRaWanConnectionStatusResourceTypeEventConfiguration {
+impl  LoRaWanConnectionStatusResourceTypeEventConfiguration  {
     /// <p>Denotes whether the wireless gateway connection status event topic is enabled or disabled.</p>
-    pub fn wireless_gateway_event_topic(&self) -> ::std::option::Option<&crate::types::EventNotificationTopicStatus> {
+    pub fn wireless_gateway_event_topic(&self) -> ::std::option::Option<& crate::types::EventNotificationTopicStatus> {
         self.wireless_gateway_event_topic.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl LoRaWanConnectionStatusResourceTypeEventConfigurationBuilder {
     }
     /// <p>Denotes whether the wireless gateway connection status event topic is enabled or disabled.</p>
     pub fn set_wireless_gateway_event_topic(mut self, input: ::std::option::Option<crate::types::EventNotificationTopicStatus>) -> Self {
-        self.wireless_gateway_event_topic = input;
-        self
+        self.wireless_gateway_event_topic = input; self
     }
     /// <p>Denotes whether the wireless gateway connection status event topic is enabled or disabled.</p>
     pub fn get_wireless_gateway_event_topic(&self) -> &::std::option::Option<crate::types::EventNotificationTopicStatus> {
@@ -44,7 +43,9 @@ impl LoRaWanConnectionStatusResourceTypeEventConfigurationBuilder {
     /// Consumes the builder and constructs a [`LoRaWanConnectionStatusResourceTypeEventConfiguration`](crate::types::LoRaWanConnectionStatusResourceTypeEventConfiguration).
     pub fn build(self) -> crate::types::LoRaWanConnectionStatusResourceTypeEventConfiguration {
         crate::types::LoRaWanConnectionStatusResourceTypeEventConfiguration {
-            wireless_gateway_event_topic: self.wireless_gateway_event_topic,
+            wireless_gateway_event_topic: self.wireless_gateway_event_topic
+            ,
         }
     }
 }
+

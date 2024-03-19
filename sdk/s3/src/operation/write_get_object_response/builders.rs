@@ -5,23 +5,20 @@ pub use crate::operation::write_get_object_response::_write_get_object_response_
 
 impl WriteGetObjectResponseInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::write_get_object_response::WriteGetObjectResponseOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::write_get_object_response::WriteGetObjectResponseError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.write_get_object_response();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::write_get_object_response::WriteGetObjectResponseOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::write_get_object_response::WriteGetObjectResponseError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.write_get_object_response();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `WriteGetObjectResponse`.
-///
+/// 
 /// <note>
 /// <p>This operation is not supported by directory buckets.</p>
 /// </note>
@@ -36,33 +33,32 @@ impl WriteGetObjectResponseInputBuilder {
 #[derive(::std::fmt::Debug)]
 pub struct WriteGetObjectResponseFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::write_get_object_response::builders::WriteGetObjectResponseInputBuilder,
+                    inner: crate::operation::write_get_object_response::builders::WriteGetObjectResponseInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::write_get_object_response::WriteGetObjectResponseOutput,
-        crate::operation::write_get_object_response::WriteGetObjectResponseError,
-    > for WriteGetObjectResponseFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::write_get_object_response::WriteGetObjectResponseOutput,
-            crate::operation::write_get_object_response::WriteGetObjectResponseError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::write_get_object_response::WriteGetObjectResponseOutput,
+                    crate::operation::write_get_object_response::WriteGetObjectResponseError,
+                > for WriteGetObjectResponseFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::write_get_object_response::WriteGetObjectResponseOutput,
+                        crate::operation::write_get_object_response::WriteGetObjectResponseError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl WriteGetObjectResponseFluentBuilder {
     /// Creates a new `WriteGetObjectResponse`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -71,53 +67,44 @@ impl WriteGetObjectResponseFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::write_get_object_response::WriteGetObjectResponseOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::write_get_object_response::WriteGetObjectResponseError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::write_get_object_response::WriteGetObjectResponse::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::write_get_object_response::WriteGetObjectResponse::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::write_get_object_response::WriteGetObjectResponseOutput,
-        crate::operation::write_get_object_response::WriteGetObjectResponseError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::write_get_object_response::WriteGetObjectResponseOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::write_get_object_response::WriteGetObjectResponseError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::write_get_object_response::WriteGetObjectResponse::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::write_get_object_response::WriteGetObjectResponse::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::write_get_object_response::WriteGetObjectResponseOutput, crate::operation::write_get_object_response::WriteGetObjectResponseError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Route prefix to the HTTP URL generated.</p>
     pub fn request_route(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.request_route(input.into());
@@ -279,8 +266,8 @@ impl WriteGetObjectResponseFluentBuilder {
         self.inner.get_error_code()
     }
     /// <p>Contains a generic description of the error condition. Returned in the <message>
-    /// tag of the error XML response for a corresponding
-    /// <code>GetObject</code> call. Cannot be used with a successful
+    /// tag of the error XML response for a corresponding 
+    /// <code>GetObject</code> call. Cannot be used with a successful 
     /// <code>StatusCode</code> header or when the transformed object is provided in body.
     /// </message></p>
     pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -288,8 +275,8 @@ impl WriteGetObjectResponseFluentBuilder {
         self
     }
     /// <p>Contains a generic description of the error condition. Returned in the <message>
-    /// tag of the error XML response for a corresponding
-    /// <code>GetObject</code> call. Cannot be used with a successful
+    /// tag of the error XML response for a corresponding 
+    /// <code>GetObject</code> call. Cannot be used with a successful 
     /// <code>StatusCode</code> header or when the transformed object is provided in body.
     /// </message></p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -297,8 +284,8 @@ impl WriteGetObjectResponseFluentBuilder {
         self
     }
     /// <p>Contains a generic description of the error condition. Returned in the <message>
-    /// tag of the error XML response for a corresponding
-    /// <code>GetObject</code> call. Cannot be used with a successful
+    /// tag of the error XML response for a corresponding 
+    /// <code>GetObject</code> call. Cannot be used with a successful 
     /// <code>StatusCode</code> header or when the transformed object is provided in body.
     /// </message></p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -581,12 +568,12 @@ impl WriteGetObjectResponseFluentBuilder {
         self
     }
     /// <p>A map of metadata to store with the object in S3.</p>
-    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_metadata(input);
         self
     }
     /// <p>A map of metadata to store with the object in S3.</p>
-    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_metadata()
     }
     /// <p>Indicates whether an object stored in Amazon S3 has Object Lock enabled. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html">Object Lock</a>.</p>
@@ -809,3 +796,4 @@ impl WriteGetObjectResponseFluentBuilder {
         self.inner.get_bucket_key_enabled()
     }
 }
+

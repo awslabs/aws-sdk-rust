@@ -3,27 +3,27 @@
 /// <p>This data type helps to determine Performance Insights metric to render for the insight.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PerformanceInsightsMetric {
+pub struct PerformanceInsightsMetric  {
     /// <p>The Performance Insights metric.</p>
     pub metric: ::std::option::Option<::std::string::String>,
     /// <p>The Performance Insights metric name.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>A dimension map that contains the dimensions for this partition.</p>
-    pub dimensions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub dimensions: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The value of the metric. For example, <code>9</code> for <code>db.load.avg</code>.</p>
     pub value: ::std::option::Option<f64>,
 }
-impl PerformanceInsightsMetric {
+impl  PerformanceInsightsMetric  {
     /// <p>The Performance Insights metric.</p>
-    pub fn metric(&self) -> ::std::option::Option<&str> {
+    pub fn metric(&self) -> ::std::option::Option<& str> {
         self.metric.as_deref()
     }
     /// <p>The Performance Insights metric name.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>A dimension map that contains the dimensions for this partition.</p>
-    pub fn dimensions(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn dimensions(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.dimensions.as_ref()
     }
     /// <p>The value of the metric. For example, <code>9</code> for <code>db.load.avg</code>.</p>
@@ -44,7 +44,7 @@ impl PerformanceInsightsMetric {
 pub struct PerformanceInsightsMetricBuilder {
     pub(crate) metric: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
-    pub(crate) dimensions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) dimensions: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) value: ::std::option::Option<f64>,
 }
 impl PerformanceInsightsMetricBuilder {
@@ -55,8 +55,7 @@ impl PerformanceInsightsMetricBuilder {
     }
     /// <p>The Performance Insights metric.</p>
     pub fn set_metric(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric = input;
-        self
+        self.metric = input; self
     }
     /// <p>The Performance Insights metric.</p>
     pub fn get_metric(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl PerformanceInsightsMetricBuilder {
     }
     /// <p>The Performance Insights metric name.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The Performance Insights metric name.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,17 +81,16 @@ impl PerformanceInsightsMetricBuilder {
     /// <p>A dimension map that contains the dimensions for this partition.</p>
     pub fn dimensions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.dimensions.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.dimensions = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.dimensions = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A dimension map that contains the dimensions for this partition.</p>
-    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.dimensions = input;
-        self
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.dimensions = input; self
     }
     /// <p>A dimension map that contains the dimensions for this partition.</p>
-    pub fn get_dimensions(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.dimensions
     }
     /// <p>The value of the metric. For example, <code>9</code> for <code>db.load.avg</code>.</p>
@@ -103,8 +100,7 @@ impl PerformanceInsightsMetricBuilder {
     }
     /// <p>The value of the metric. For example, <code>9</code> for <code>db.load.avg</code>.</p>
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the metric. For example, <code>9</code> for <code>db.load.avg</code>.</p>
     pub fn get_value(&self) -> &::std::option::Option<f64> {
@@ -113,10 +109,15 @@ impl PerformanceInsightsMetricBuilder {
     /// Consumes the builder and constructs a [`PerformanceInsightsMetric`](crate::types::PerformanceInsightsMetric).
     pub fn build(self) -> crate::types::PerformanceInsightsMetric {
         crate::types::PerformanceInsightsMetric {
-            metric: self.metric,
-            display_name: self.display_name,
-            dimensions: self.dimensions,
-            value: self.value,
+            metric: self.metric
+            ,
+            display_name: self.display_name
+            ,
+            dimensions: self.dimensions
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Represents the device instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeviceInstance {
+pub struct DeviceInstance  {
     /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the device.</p>
     pub device_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of strings that describe the device instance.</p>
-    pub labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub labels: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The status of the device instance. Valid values are listed here.</p>
     pub status: ::std::option::Option<crate::types::InstanceStatus>,
     /// <p>Unique device identifier for the device instance.</p>
@@ -17,31 +17,32 @@ pub struct DeviceInstance {
     /// <p>A object that contains information about the instance profile.</p>
     pub instance_profile: ::std::option::Option<crate::types::InstanceProfile>,
 }
-impl DeviceInstance {
+impl  DeviceInstance  {
     /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ARN of the device.</p>
-    pub fn device_arn(&self) -> ::std::option::Option<&str> {
+    pub fn device_arn(&self) -> ::std::option::Option<& str> {
         self.device_arn.as_deref()
     }
     /// <p>An array of strings that describe the device instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labels.is_none()`.
-    pub fn labels(&self) -> &[::std::string::String] {
-        self.labels.as_deref().unwrap_or_default()
+    pub fn labels(&self) -> & [::std::string::String] {
+        self.labels.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The status of the device instance. Valid values are listed here.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::InstanceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::InstanceStatus> {
         self.status.as_ref()
     }
     /// <p>Unique device identifier for the device instance.</p>
-    pub fn udid(&self) -> ::std::option::Option<&str> {
+    pub fn udid(&self) -> ::std::option::Option<& str> {
         self.udid.as_deref()
     }
     /// <p>A object that contains information about the instance profile.</p>
-    pub fn instance_profile(&self) -> ::std::option::Option<&crate::types::InstanceProfile> {
+    pub fn instance_profile(&self) -> ::std::option::Option<& crate::types::InstanceProfile> {
         self.instance_profile.as_ref()
     }
 }
@@ -58,7 +59,7 @@ impl DeviceInstance {
 pub struct DeviceInstanceBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) device_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) labels: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) status: ::std::option::Option<crate::types::InstanceStatus>,
     pub(crate) udid: ::std::option::Option<::std::string::String>,
     pub(crate) instance_profile: ::std::option::Option<crate::types::InstanceProfile>,
@@ -71,8 +72,7 @@ impl DeviceInstanceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +85,7 @@ impl DeviceInstanceBuilder {
     }
     /// <p>The ARN of the device.</p>
     pub fn set_device_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_arn = input;
-        self
+        self.device_arn = input; self
     }
     /// <p>The ARN of the device.</p>
     pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,17 +98,16 @@ impl DeviceInstanceBuilder {
     /// <p>An array of strings that describe the device instance.</p>
     pub fn labels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.labels.unwrap_or_default();
-        v.push(input.into());
-        self.labels = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.labels = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of strings that describe the device instance.</p>
-    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.labels = input;
-        self
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.labels = input; self
     }
     /// <p>An array of strings that describe the device instance.</p>
-    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.labels
     }
     /// <p>The status of the device instance. Valid values are listed here.</p>
@@ -119,8 +117,7 @@ impl DeviceInstanceBuilder {
     }
     /// <p>The status of the device instance. Valid values are listed here.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::InstanceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the device instance. Valid values are listed here.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::InstanceStatus> {
@@ -133,8 +130,7 @@ impl DeviceInstanceBuilder {
     }
     /// <p>Unique device identifier for the device instance.</p>
     pub fn set_udid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.udid = input;
-        self
+        self.udid = input; self
     }
     /// <p>Unique device identifier for the device instance.</p>
     pub fn get_udid(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +143,7 @@ impl DeviceInstanceBuilder {
     }
     /// <p>A object that contains information about the instance profile.</p>
     pub fn set_instance_profile(mut self, input: ::std::option::Option<crate::types::InstanceProfile>) -> Self {
-        self.instance_profile = input;
-        self
+        self.instance_profile = input; self
     }
     /// <p>A object that contains information about the instance profile.</p>
     pub fn get_instance_profile(&self) -> &::std::option::Option<crate::types::InstanceProfile> {
@@ -157,12 +152,19 @@ impl DeviceInstanceBuilder {
     /// Consumes the builder and constructs a [`DeviceInstance`](crate::types::DeviceInstance).
     pub fn build(self) -> crate::types::DeviceInstance {
         crate::types::DeviceInstance {
-            arn: self.arn,
-            device_arn: self.device_arn,
-            labels: self.labels,
-            status: self.status,
-            udid: self.udid,
-            instance_profile: self.instance_profile,
+            arn: self.arn
+            ,
+            device_arn: self.device_arn
+            ,
+            labels: self.labels
+            ,
+            status: self.status
+            ,
+            udid: self.udid
+            ,
+            instance_profile: self.instance_profile
+            ,
         }
     }
 }
+

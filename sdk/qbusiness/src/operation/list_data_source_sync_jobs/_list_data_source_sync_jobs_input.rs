@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDataSourceSyncJobsInput {
+pub struct ListDataSourceSyncJobsInput  {
     /// <p>The identifier of the data source connector.</p>
     pub data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Q application connected to the data source.</p>
@@ -20,21 +20,21 @@ pub struct ListDataSourceSyncJobsInput {
     /// <p>Only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p>
     pub status_filter: ::std::option::Option<crate::types::DataSourceSyncJobStatus>,
 }
-impl ListDataSourceSyncJobsInput {
+impl  ListDataSourceSyncJobsInput  {
     /// <p>The identifier of the data source connector.</p>
-    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_id(&self) -> ::std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
     /// <p>The identifier of the Amazon Q application connected to the data source.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The identifier of the index used with the Amazon Q data source connector.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>If the <code>maxResults</code> response was incpmplete because there is more data to retriever, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of responses.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of synchronization jobs to return in the response.</p>
@@ -42,15 +42,15 @@ impl ListDataSourceSyncJobsInput {
         self.max_results
     }
     /// <p>The start time of the data source connector sync.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time of the data source connector sync.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>Only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p>
-    pub fn status_filter(&self) -> ::std::option::Option<&crate::types::DataSourceSyncJobStatus> {
+    pub fn status_filter(&self) -> ::std::option::Option<& crate::types::DataSourceSyncJobStatus> {
         self.status_filter.as_ref()
     }
 }
@@ -83,8 +83,7 @@ impl ListDataSourceSyncJobsInputBuilder {
     }
     /// <p>The identifier of the data source connector.</p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_id = input;
-        self
+        self.data_source_id = input; self
     }
     /// <p>The identifier of the data source connector.</p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +97,7 @@ impl ListDataSourceSyncJobsInputBuilder {
     }
     /// <p>The identifier of the Amazon Q application connected to the data source.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier of the Amazon Q application connected to the data source.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +111,7 @@ impl ListDataSourceSyncJobsInputBuilder {
     }
     /// <p>The identifier of the index used with the Amazon Q data source connector.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>The identifier of the index used with the Amazon Q data source connector.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +124,7 @@ impl ListDataSourceSyncJobsInputBuilder {
     }
     /// <p>If the <code>maxResults</code> response was incpmplete because there is more data to retriever, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of responses.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the <code>maxResults</code> response was incpmplete because there is more data to retriever, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of responses.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +137,7 @@ impl ListDataSourceSyncJobsInputBuilder {
     }
     /// <p>The maximum number of synchronization jobs to return in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of synchronization jobs to return in the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -155,8 +150,7 @@ impl ListDataSourceSyncJobsInputBuilder {
     }
     /// <p>The start time of the data source connector sync.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The start time of the data source connector sync.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -169,8 +163,7 @@ impl ListDataSourceSyncJobsInputBuilder {
     }
     /// <p>The end time of the data source connector sync.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The end time of the data source connector sync.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -183,29 +176,34 @@ impl ListDataSourceSyncJobsInputBuilder {
     }
     /// <p>Only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p>
     pub fn set_status_filter(mut self, input: ::std::option::Option<crate::types::DataSourceSyncJobStatus>) -> Self {
-        self.status_filter = input;
-        self
+        self.status_filter = input; self
     }
     /// <p>Only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p>
     pub fn get_status_filter(&self) -> &::std::option::Option<crate::types::DataSourceSyncJobStatus> {
         &self.status_filter
     }
     /// Consumes the builder and constructs a [`ListDataSourceSyncJobsInput`](crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsInput {
-            data_source_id: self.data_source_id,
-            application_id: self.application_id,
-            index_id: self.index_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            status_filter: self.status_filter,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsInput {
+                data_source_id: self.data_source_id
+                ,
+                application_id: self.application_id
+                ,
+                index_id: self.index_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                status_filter: self.status_filter
+                ,
+            }
+        )
     }
 }
+

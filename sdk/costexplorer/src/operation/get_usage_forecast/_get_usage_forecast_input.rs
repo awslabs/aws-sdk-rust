@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetUsageForecastInput {
+pub struct GetUsageForecastInput  {
     /// <p>The start and end dates of the period that you want to retrieve usage forecast for. The start date is included in the period, but the end date isn't included in the period. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The start date must be equal to or later than the current date to avoid a validation error.</p>
     pub time_period: ::std::option::Option<crate::types::DateInterval>,
     /// <p>Which metric Cost Explorer uses to create your forecast.</p>
@@ -70,9 +70,9 @@ pub struct GetUsageForecastInput {
     /// <p>Amazon Web Services Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>
     pub prediction_interval_level: ::std::option::Option<i32>,
 }
-impl GetUsageForecastInput {
+impl  GetUsageForecastInput  {
     /// <p>The start and end dates of the period that you want to retrieve usage forecast for. The start date is included in the period, but the end date isn't included in the period. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The start date must be equal to or later than the current date to avoid a validation error.</p>
-    pub fn time_period(&self) -> ::std::option::Option<&crate::types::DateInterval> {
+    pub fn time_period(&self) -> ::std::option::Option<& crate::types::DateInterval> {
         self.time_period.as_ref()
     }
     /// <p>Which metric Cost Explorer uses to create your forecast.</p>
@@ -83,12 +83,12 @@ impl GetUsageForecastInput {
     /// <li>
     /// <p>NORMALIZED_USAGE_AMOUNT</p></li>
     /// </ul>
-    pub fn metric(&self) -> ::std::option::Option<&crate::types::Metric> {
+    pub fn metric(&self) -> ::std::option::Option<& crate::types::Metric> {
         self.metric.as_ref()
     }
     /// <p>How granular you want the forecast to be. You can get 3 months of <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
     /// <p>The <code>GetUsageForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
-    pub fn granularity(&self) -> ::std::option::Option<&crate::types::Granularity> {
+    pub fn granularity(&self) -> ::std::option::Option<& crate::types::Granularity> {
         self.granularity.as_ref()
     }
     /// <p>The filters that you want to use to filter your forecast. The <code>GetUsageForecast</code> API supports filtering by the following dimensions:</p>
@@ -140,7 +140,7 @@ impl GetUsageForecastInput {
     /// <li>
     /// <p><code>SAVINGS_PLAN_ARN</code></p></li>
     /// </ul>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::Expression> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::Expression> {
         self.filter.as_ref()
     }
     /// <p>Amazon Web Services Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>
@@ -174,8 +174,7 @@ impl GetUsageForecastInputBuilder {
     }
     /// <p>The start and end dates of the period that you want to retrieve usage forecast for. The start date is included in the period, but the end date isn't included in the period. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The start date must be equal to or later than the current date to avoid a validation error.</p>
     pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
-        self.time_period = input;
-        self
+        self.time_period = input; self
     }
     /// <p>The start and end dates of the period that you want to retrieve usage forecast for. The start date is included in the period, but the end date isn't included in the period. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The start date must be equal to or later than the current date to avoid a validation error.</p>
     pub fn get_time_period(&self) -> &::std::option::Option<crate::types::DateInterval> {
@@ -203,8 +202,7 @@ impl GetUsageForecastInputBuilder {
     /// <p>NORMALIZED_USAGE_AMOUNT</p></li>
     /// </ul>
     pub fn set_metric(mut self, input: ::std::option::Option<crate::types::Metric>) -> Self {
-        self.metric = input;
-        self
+        self.metric = input; self
     }
     /// <p>Which metric Cost Explorer uses to create your forecast.</p>
     /// <p>Valid values for a <code>GetUsageForecast</code> call are the following:</p>
@@ -227,8 +225,7 @@ impl GetUsageForecastInputBuilder {
     /// <p>How granular you want the forecast to be. You can get 3 months of <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
     /// <p>The <code>GetUsageForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
     pub fn set_granularity(mut self, input: ::std::option::Option<crate::types::Granularity>) -> Self {
-        self.granularity = input;
-        self
+        self.granularity = input; self
     }
     /// <p>How granular you want the forecast to be. You can get 3 months of <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
     /// <p>The <code>GetUsageForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
@@ -338,8 +335,7 @@ impl GetUsageForecastInputBuilder {
     /// <p><code>SAVINGS_PLAN_ARN</code></p></li>
     /// </ul>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>The filters that you want to use to filter your forecast. The <code>GetUsageForecast</code> API supports filtering by the following dimensions:</p>
     /// <ul>
@@ -400,23 +396,28 @@ impl GetUsageForecastInputBuilder {
     }
     /// <p>Amazon Web Services Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>
     pub fn set_prediction_interval_level(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.prediction_interval_level = input;
-        self
+        self.prediction_interval_level = input; self
     }
     /// <p>Amazon Web Services Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>
     pub fn get_prediction_interval_level(&self) -> &::std::option::Option<i32> {
         &self.prediction_interval_level
     }
     /// Consumes the builder and constructs a [`GetUsageForecastInput`](crate::operation::get_usage_forecast::GetUsageForecastInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_usage_forecast::GetUsageForecastInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_usage_forecast::GetUsageForecastInput {
-            time_period: self.time_period,
-            metric: self.metric,
-            granularity: self.granularity,
-            filter: self.filter,
-            prediction_interval_level: self.prediction_interval_level,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_usage_forecast::GetUsageForecastInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_usage_forecast::GetUsageForecastInput {
+                time_period: self.time_period
+                ,
+                metric: self.metric
+                ,
+                granularity: self.granularity
+                ,
+                filter: self.filter
+                ,
+                prediction_interval_level: self.prediction_interval_level
+                ,
+            }
+        )
     }
 }
+

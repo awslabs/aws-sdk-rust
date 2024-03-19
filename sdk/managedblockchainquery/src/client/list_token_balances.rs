@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTokenBalances`](crate::operation::list_token_balances::builders::ListTokenBalancesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_token_balances::builders::ListTokenBalancesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`owner_filter(OwnerFilter)`](crate::operation::list_token_balances::builders::ListTokenBalancesFluentBuilder::owner_filter) / [`set_owner_filter(Option<OwnerFilter>)`](crate::operation::list_token_balances::builders::ListTokenBalancesFluentBuilder::set_owner_filter):<br>required: **false**<br><p>The contract or wallet address on the blockchain network by which to filter the request. You must specify the <code>address</code> property of the <code>ownerFilter</code> when listing balances of tokens owned by the address.</p><br>
     ///   - [`token_filter(TokenFilter)`](crate::operation::list_token_balances::builders::ListTokenBalancesFluentBuilder::token_filter) / [`set_token_filter(Option<TokenFilter>)`](crate::operation::list_token_balances::builders::ListTokenBalancesFluentBuilder::set_token_filter):<br>required: **true**<br><p>The contract address or a token identifier on the blockchain network by which to filter the request. You must specify the <code>contractAddress</code> property of this container when listing tokens minted by a contract.</p><note>  <p>You must always specify the network property of this container when using this operation.</p> </note><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_token_balances::builders::ListTokenBalancesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_token_balances::builders::ListTokenBalancesFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token that indicates the next set of results to retrieve.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_token_balances::builders::ListTokenBalancesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_token_balances::builders::ListTokenBalancesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of token balances to return.</p> <p>Default: <code>100</code></p><note>  <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>  <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p> </note><br>
-    /// - On success, responds with [`ListTokenBalancesOutput`](crate::operation::list_token_balances::ListTokenBalancesOutput) with field(s):
+                            /// - On success, responds with [`ListTokenBalancesOutput`](crate::operation::list_token_balances::ListTokenBalancesOutput) with field(s):
     ///   - [`token_balances(Vec::<TokenBalance>)`](crate::operation::list_token_balances::ListTokenBalancesOutput::token_balances): <p>An array of <code>TokenBalance</code> objects. Each object contains details about the token balance.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_token_balances::ListTokenBalancesOutput::next_token): <p>The pagination token that indicates the next set of results to retrieve.</p>
-    /// - On failure, responds with [`SdkError<ListTokenBalancesError>`](crate::operation::list_token_balances::ListTokenBalancesError)
+                            /// - On failure, responds with [`SdkError<ListTokenBalancesError>`](crate::operation::list_token_balances::ListTokenBalancesError)
     pub fn list_token_balances(&self) -> crate::operation::list_token_balances::builders::ListTokenBalancesFluentBuilder {
-        crate::operation::list_token_balances::builders::ListTokenBalancesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_token_balances::builders::ListTokenBalancesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

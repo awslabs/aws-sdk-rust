@@ -3,7 +3,7 @@
 /// <p>A structure that contains a list of recommendation jobs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InferenceRecommendationsJob {
+pub struct InferenceRecommendationsJob  {
     /// <p>The name of the job.</p>
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The job description.</p>
@@ -31,57 +31,57 @@ pub struct InferenceRecommendationsJob {
     /// <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
     pub model_package_version_arn: ::std::option::Option<::std::string::String>,
 }
-impl InferenceRecommendationsJob {
+impl  InferenceRecommendationsJob  {
     /// <p>The name of the job.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The job description.</p>
-    pub fn job_description(&self) -> ::std::option::Option<&str> {
+    pub fn job_description(&self) -> ::std::option::Option<& str> {
         self.job_description.as_deref()
     }
     /// <p>The recommendation job type.</p>
-    pub fn job_type(&self) -> ::std::option::Option<&crate::types::RecommendationJobType> {
+    pub fn job_type(&self) -> ::std::option::Option<& crate::types::RecommendationJobType> {
         self.job_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the recommendation job.</p>
-    pub fn job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn job_arn(&self) -> ::std::option::Option<& str> {
         self.job_arn.as_deref()
     }
     /// <p>The status of the job.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::RecommendationJobStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::RecommendationJobStatus> {
         self.status.as_ref()
     }
     /// <p>A timestamp that shows when the job was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A timestamp that shows when the job completed.</p>
-    pub fn completion_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn completion_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>A timestamp that shows when the job was last modified.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>If the job fails, provides information why the job failed.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The name of the created model.</p>
-    pub fn model_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<& str> {
         self.model_name.as_deref()
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
-    pub fn sample_payload_url(&self) -> ::std::option::Option<&str> {
+    pub fn sample_payload_url(&self) -> ::std::option::Option<& str> {
         self.sample_payload_url.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
-    pub fn model_package_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn model_package_version_arn(&self) -> ::std::option::Option<& str> {
         self.model_package_version_arn.as_deref()
     }
 }
@@ -119,8 +119,7 @@ impl InferenceRecommendationsJobBuilder {
     }
     /// <p>The name of the job.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// <p>The name of the job.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +133,7 @@ impl InferenceRecommendationsJobBuilder {
     }
     /// <p>The job description.</p>
     pub fn set_job_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_description = input;
-        self
+        self.job_description = input; self
     }
     /// <p>The job description.</p>
     pub fn get_job_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +147,7 @@ impl InferenceRecommendationsJobBuilder {
     }
     /// <p>The recommendation job type.</p>
     pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::RecommendationJobType>) -> Self {
-        self.job_type = input;
-        self
+        self.job_type = input; self
     }
     /// <p>The recommendation job type.</p>
     pub fn get_job_type(&self) -> &::std::option::Option<crate::types::RecommendationJobType> {
@@ -164,8 +161,7 @@ impl InferenceRecommendationsJobBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the recommendation job.</p>
     pub fn set_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_arn = input;
-        self
+        self.job_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the recommendation job.</p>
     pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -179,8 +175,7 @@ impl InferenceRecommendationsJobBuilder {
     }
     /// <p>The status of the job.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RecommendationJobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the job.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RecommendationJobStatus> {
@@ -194,8 +189,7 @@ impl InferenceRecommendationsJobBuilder {
     }
     /// <p>A timestamp that shows when the job was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>A timestamp that shows when the job was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -208,8 +202,7 @@ impl InferenceRecommendationsJobBuilder {
     }
     /// <p>A timestamp that shows when the job completed.</p>
     pub fn set_completion_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.completion_time = input;
-        self
+        self.completion_time = input; self
     }
     /// <p>A timestamp that shows when the job completed.</p>
     pub fn get_completion_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -223,8 +216,7 @@ impl InferenceRecommendationsJobBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -238,8 +230,7 @@ impl InferenceRecommendationsJobBuilder {
     }
     /// <p>A timestamp that shows when the job was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>A timestamp that shows when the job was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -252,8 +243,7 @@ impl InferenceRecommendationsJobBuilder {
     }
     /// <p>If the job fails, provides information why the job failed.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>If the job fails, provides information why the job failed.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -266,8 +256,7 @@ impl InferenceRecommendationsJobBuilder {
     }
     /// <p>The name of the created model.</p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_name = input;
-        self
+        self.model_name = input; self
     }
     /// <p>The name of the created model.</p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -280,8 +269,7 @@ impl InferenceRecommendationsJobBuilder {
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
     pub fn set_sample_payload_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sample_payload_url = input;
-        self
+        self.sample_payload_url = input; self
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
     pub fn get_sample_payload_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -294,8 +282,7 @@ impl InferenceRecommendationsJobBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
     pub fn set_model_package_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_package_version_arn = input;
-        self
+        self.model_package_version_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
     pub fn get_model_package_version_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -304,19 +291,33 @@ impl InferenceRecommendationsJobBuilder {
     /// Consumes the builder and constructs a [`InferenceRecommendationsJob`](crate::types::InferenceRecommendationsJob).
     pub fn build(self) -> crate::types::InferenceRecommendationsJob {
         crate::types::InferenceRecommendationsJob {
-            job_name: self.job_name,
-            job_description: self.job_description,
-            job_type: self.job_type,
-            job_arn: self.job_arn,
-            status: self.status,
-            creation_time: self.creation_time,
-            completion_time: self.completion_time,
-            role_arn: self.role_arn,
-            last_modified_time: self.last_modified_time,
-            failure_reason: self.failure_reason,
-            model_name: self.model_name,
-            sample_payload_url: self.sample_payload_url,
-            model_package_version_arn: self.model_package_version_arn,
+            job_name: self.job_name
+            ,
+            job_description: self.job_description
+            ,
+            job_type: self.job_type
+            ,
+            job_arn: self.job_arn
+            ,
+            status: self.status
+            ,
+            creation_time: self.creation_time
+            ,
+            completion_time: self.completion_time
+            ,
+            role_arn: self.role_arn
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            failure_reason: self.failure_reason
+            ,
+            model_name: self.model_name
+            ,
+            sample_payload_url: self.sample_payload_url
+            ,
+            model_package_version_arn: self.model_package_version_arn
+            ,
         }
     }
 }
+

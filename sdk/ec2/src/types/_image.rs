@@ -3,7 +3,7 @@
 /// <p>Describes an image.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Image {
+pub struct Image  {
     /// <p>The architecture of the image.</p>
     pub architecture: ::std::option::Option<crate::types::ArchitectureValues>,
     /// <p>The date and time the image was created.</p>
@@ -27,13 +27,13 @@ pub struct Image {
     /// <p>The operation of the Amazon EC2 instance and the billing code that is associated with the AMI. <code>usageOperation</code> corresponds to the <a href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a> column on your Amazon Web Services Cost and Usage Report and in the <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">Amazon Web Services Price List API</a>. You can view these fields on the <b>Instances</b> or <b>AMIs</b> pages in the Amazon EC2 console, or in the responses that are returned by the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a> command in the Amazon EC2 API, or the <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-images.html">describe-images</a> command in the CLI.</p>
     pub usage_operation: ::std::option::Option<::std::string::String>,
     /// <p>Any product codes associated with the AMI.</p>
-    pub product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
+    pub product_codes: ::std::option::Option<::std::vec::Vec::<crate::types::ProductCode>>,
     /// <p>The RAM disk associated with the image, if any. Only applicable for machine images.</p>
     pub ramdisk_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the AMI. If the state is <code>available</code>, the image is successfully registered and can be used to launch an instance.</p>
     pub state: ::std::option::Option<crate::types::ImageState>,
     /// <p>Any block device mapping entries.</p>
-    pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
+    pub block_device_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::BlockDeviceMapping>>,
     /// <p>The description of the AMI that was provided during image creation.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether enhanced networking with ENA is enabled.</p>
@@ -53,7 +53,7 @@ pub struct Image {
     /// <p>The reason for the state change.</p>
     pub state_reason: ::std::option::Option<crate::types::StateReason>,
     /// <p>Any tags assigned to the image.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The type of virtualization of the AMI.</p>
     pub virtualization_type: ::std::option::Option<crate::types::VirtualizationType>,
     /// <p>The boot mode of the image. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -67,25 +67,25 @@ pub struct Image {
     /// <p>The ID of the instance that the AMI was created from if the AMI was created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>. This field only appears if the AMI was created using CreateImage.</p>
     pub source_instance_id: ::std::option::Option<::std::string::String>,
 }
-impl Image {
+impl  Image  {
     /// <p>The architecture of the image.</p>
-    pub fn architecture(&self) -> ::std::option::Option<&crate::types::ArchitectureValues> {
+    pub fn architecture(&self) -> ::std::option::Option<& crate::types::ArchitectureValues> {
         self.architecture.as_ref()
     }
     /// <p>The date and time the image was created.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&str> {
+    pub fn creation_date(&self) -> ::std::option::Option<& str> {
         self.creation_date.as_deref()
     }
     /// <p>The ID of the AMI.</p>
-    pub fn image_id(&self) -> ::std::option::Option<&str> {
+    pub fn image_id(&self) -> ::std::option::Option<& str> {
         self.image_id.as_deref()
     }
     /// <p>The location of the AMI.</p>
-    pub fn image_location(&self) -> ::std::option::Option<&str> {
+    pub fn image_location(&self) -> ::std::option::Option<& str> {
         self.image_location.as_deref()
     }
     /// <p>The type of image.</p>
-    pub fn image_type(&self) -> ::std::option::Option<&crate::types::ImageTypeValues> {
+    pub fn image_type(&self) -> ::std::option::Option<& crate::types::ImageTypeValues> {
         self.image_type.as_ref()
     }
     /// <p>Indicates whether the image has public launch permissions. The value is <code>true</code> if this image has public launch permissions or <code>false</code> if it has only implicit and explicit launch permissions.</p>
@@ -93,47 +93,49 @@ impl Image {
         self.public
     }
     /// <p>The kernel associated with the image, if any. Only applicable for machine images.</p>
-    pub fn kernel_id(&self) -> ::std::option::Option<&str> {
+    pub fn kernel_id(&self) -> ::std::option::Option<& str> {
         self.kernel_id.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the image.</p>
-    pub fn owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>This value is set to <code>windows</code> for Windows AMIs; otherwise, it is blank.</p>
-    pub fn platform(&self) -> ::std::option::Option<&crate::types::PlatformValues> {
+    pub fn platform(&self) -> ::std::option::Option<& crate::types::PlatformValues> {
         self.platform.as_ref()
     }
     /// <p>The platform details associated with the billing code of the AMI. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand AMI billing information</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn platform_details(&self) -> ::std::option::Option<&str> {
+    pub fn platform_details(&self) -> ::std::option::Option<& str> {
         self.platform_details.as_deref()
     }
     /// <p>The operation of the Amazon EC2 instance and the billing code that is associated with the AMI. <code>usageOperation</code> corresponds to the <a href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a> column on your Amazon Web Services Cost and Usage Report and in the <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">Amazon Web Services Price List API</a>. You can view these fields on the <b>Instances</b> or <b>AMIs</b> pages in the Amazon EC2 console, or in the responses that are returned by the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a> command in the Amazon EC2 API, or the <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-images.html">describe-images</a> command in the CLI.</p>
-    pub fn usage_operation(&self) -> ::std::option::Option<&str> {
+    pub fn usage_operation(&self) -> ::std::option::Option<& str> {
         self.usage_operation.as_deref()
     }
     /// <p>Any product codes associated with the AMI.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_codes.is_none()`.
-    pub fn product_codes(&self) -> &[crate::types::ProductCode] {
-        self.product_codes.as_deref().unwrap_or_default()
+    pub fn product_codes(&self) -> & [crate::types::ProductCode] {
+        self.product_codes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The RAM disk associated with the image, if any. Only applicable for machine images.</p>
-    pub fn ramdisk_id(&self) -> ::std::option::Option<&str> {
+    pub fn ramdisk_id(&self) -> ::std::option::Option<& str> {
         self.ramdisk_id.as_deref()
     }
     /// <p>The current state of the AMI. If the state is <code>available</code>, the image is successfully registered and can be used to launch an instance.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ImageState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ImageState> {
         self.state.as_ref()
     }
     /// <p>Any block device mapping entries.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
-    pub fn block_device_mappings(&self) -> &[crate::types::BlockDeviceMapping] {
-        self.block_device_mappings.as_deref().unwrap_or_default()
+    pub fn block_device_mappings(&self) -> & [crate::types::BlockDeviceMapping] {
+        self.block_device_mappings.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The description of the AMI that was provided during image creation.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Specifies whether enhanced networking with ENA is enabled.</p>
@@ -141,61 +143,62 @@ impl Image {
         self.ena_support
     }
     /// <p>The hypervisor type of the image. Only <code>xen</code> is supported. <code>ovm</code> is not supported.</p>
-    pub fn hypervisor(&self) -> ::std::option::Option<&crate::types::HypervisorType> {
+    pub fn hypervisor(&self) -> ::std::option::Option<& crate::types::HypervisorType> {
         self.hypervisor.as_ref()
     }
     /// <p>The Amazon Web Services account alias (for example, <code>amazon</code>, <code>self</code>) or the Amazon Web Services account ID of the AMI owner.</p>
-    pub fn image_owner_alias(&self) -> ::std::option::Option<&str> {
+    pub fn image_owner_alias(&self) -> ::std::option::Option<& str> {
         self.image_owner_alias.as_deref()
     }
     /// <p>The name of the AMI that was provided during image creation.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
-    pub fn root_device_name(&self) -> ::std::option::Option<&str> {
+    pub fn root_device_name(&self) -> ::std::option::Option<& str> {
         self.root_device_name.as_deref()
     }
     /// <p>The type of root device used by the AMI. The AMI can use an Amazon EBS volume or an instance store volume.</p>
-    pub fn root_device_type(&self) -> ::std::option::Option<&crate::types::DeviceType> {
+    pub fn root_device_type(&self) -> ::std::option::Option<& crate::types::DeviceType> {
         self.root_device_type.as_ref()
     }
     /// <p>Specifies whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.</p>
-    pub fn sriov_net_support(&self) -> ::std::option::Option<&str> {
+    pub fn sriov_net_support(&self) -> ::std::option::Option<& str> {
         self.sriov_net_support.as_deref()
     }
     /// <p>The reason for the state change.</p>
-    pub fn state_reason(&self) -> ::std::option::Option<&crate::types::StateReason> {
+    pub fn state_reason(&self) -> ::std::option::Option<& crate::types::StateReason> {
         self.state_reason.as_ref()
     }
     /// <p>Any tags assigned to the image.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The type of virtualization of the AMI.</p>
-    pub fn virtualization_type(&self) -> ::std::option::Option<&crate::types::VirtualizationType> {
+    pub fn virtualization_type(&self) -> ::std::option::Option<& crate::types::VirtualizationType> {
         self.virtualization_type.as_ref()
     }
     /// <p>The boot mode of the image. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn boot_mode(&self) -> ::std::option::Option<&crate::types::BootModeValues> {
+    pub fn boot_mode(&self) -> ::std::option::Option<& crate::types::BootModeValues> {
         self.boot_mode.as_ref()
     }
     /// <p>If the image is configured for NitroTPM support, the value is <code>v2.0</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn tpm_support(&self) -> ::std::option::Option<&crate::types::TpmSupportValues> {
+    pub fn tpm_support(&self) -> ::std::option::Option<& crate::types::TpmSupportValues> {
         self.tpm_support.as_ref()
     }
     /// <p>The date and time to deprecate the AMI, in UTC, in the following format: <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specified a value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
-    pub fn deprecation_time(&self) -> ::std::option::Option<&str> {
+    pub fn deprecation_time(&self) -> ::std::option::Option<& str> {
         self.deprecation_time.as_deref()
     }
     /// <p>If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn imds_support(&self) -> ::std::option::Option<&crate::types::ImdsSupportValues> {
+    pub fn imds_support(&self) -> ::std::option::Option<& crate::types::ImdsSupportValues> {
         self.imds_support.as_ref()
     }
     /// <p>The ID of the instance that the AMI was created from if the AMI was created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>. This field only appears if the AMI was created using CreateImage.</p>
-    pub fn source_instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_instance_id(&self) -> ::std::option::Option<& str> {
         self.source_instance_id.as_deref()
     }
 }
@@ -221,10 +224,10 @@ pub struct ImageBuilder {
     pub(crate) platform: ::std::option::Option<crate::types::PlatformValues>,
     pub(crate) platform_details: ::std::option::Option<::std::string::String>,
     pub(crate) usage_operation: ::std::option::Option<::std::string::String>,
-    pub(crate) product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
+    pub(crate) product_codes: ::std::option::Option<::std::vec::Vec::<crate::types::ProductCode>>,
     pub(crate) ramdisk_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ImageState>,
-    pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
+    pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::BlockDeviceMapping>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) ena_support: ::std::option::Option<bool>,
     pub(crate) hypervisor: ::std::option::Option<crate::types::HypervisorType>,
@@ -234,7 +237,7 @@ pub struct ImageBuilder {
     pub(crate) root_device_type: ::std::option::Option<crate::types::DeviceType>,
     pub(crate) sriov_net_support: ::std::option::Option<::std::string::String>,
     pub(crate) state_reason: ::std::option::Option<crate::types::StateReason>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) virtualization_type: ::std::option::Option<crate::types::VirtualizationType>,
     pub(crate) boot_mode: ::std::option::Option<crate::types::BootModeValues>,
     pub(crate) tpm_support: ::std::option::Option<crate::types::TpmSupportValues>,
@@ -250,8 +253,7 @@ impl ImageBuilder {
     }
     /// <p>The architecture of the image.</p>
     pub fn set_architecture(mut self, input: ::std::option::Option<crate::types::ArchitectureValues>) -> Self {
-        self.architecture = input;
-        self
+        self.architecture = input; self
     }
     /// <p>The architecture of the image.</p>
     pub fn get_architecture(&self) -> &::std::option::Option<crate::types::ArchitectureValues> {
@@ -264,8 +266,7 @@ impl ImageBuilder {
     }
     /// <p>The date and time the image was created.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The date and time the image was created.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -278,8 +279,7 @@ impl ImageBuilder {
     }
     /// <p>The ID of the AMI.</p>
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_id = input;
-        self
+        self.image_id = input; self
     }
     /// <p>The ID of the AMI.</p>
     pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -292,8 +292,7 @@ impl ImageBuilder {
     }
     /// <p>The location of the AMI.</p>
     pub fn set_image_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_location = input;
-        self
+        self.image_location = input; self
     }
     /// <p>The location of the AMI.</p>
     pub fn get_image_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -306,8 +305,7 @@ impl ImageBuilder {
     }
     /// <p>The type of image.</p>
     pub fn set_image_type(mut self, input: ::std::option::Option<crate::types::ImageTypeValues>) -> Self {
-        self.image_type = input;
-        self
+        self.image_type = input; self
     }
     /// <p>The type of image.</p>
     pub fn get_image_type(&self) -> &::std::option::Option<crate::types::ImageTypeValues> {
@@ -320,8 +318,7 @@ impl ImageBuilder {
     }
     /// <p>Indicates whether the image has public launch permissions. The value is <code>true</code> if this image has public launch permissions or <code>false</code> if it has only implicit and explicit launch permissions.</p>
     pub fn set_public(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.public = input;
-        self
+        self.public = input; self
     }
     /// <p>Indicates whether the image has public launch permissions. The value is <code>true</code> if this image has public launch permissions or <code>false</code> if it has only implicit and explicit launch permissions.</p>
     pub fn get_public(&self) -> &::std::option::Option<bool> {
@@ -334,8 +331,7 @@ impl ImageBuilder {
     }
     /// <p>The kernel associated with the image, if any. Only applicable for machine images.</p>
     pub fn set_kernel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kernel_id = input;
-        self
+        self.kernel_id = input; self
     }
     /// <p>The kernel associated with the image, if any. Only applicable for machine images.</p>
     pub fn get_kernel_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -348,8 +344,7 @@ impl ImageBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that owns the image.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that owns the image.</p>
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -362,8 +357,7 @@ impl ImageBuilder {
     }
     /// <p>This value is set to <code>windows</code> for Windows AMIs; otherwise, it is blank.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<crate::types::PlatformValues>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// <p>This value is set to <code>windows</code> for Windows AMIs; otherwise, it is blank.</p>
     pub fn get_platform(&self) -> &::std::option::Option<crate::types::PlatformValues> {
@@ -376,8 +370,7 @@ impl ImageBuilder {
     }
     /// <p>The platform details associated with the billing code of the AMI. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand AMI billing information</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_platform_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform_details = input;
-        self
+        self.platform_details = input; self
     }
     /// <p>The platform details associated with the billing code of the AMI. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand AMI billing information</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_platform_details(&self) -> &::std::option::Option<::std::string::String> {
@@ -390,8 +383,7 @@ impl ImageBuilder {
     }
     /// <p>The operation of the Amazon EC2 instance and the billing code that is associated with the AMI. <code>usageOperation</code> corresponds to the <a href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a> column on your Amazon Web Services Cost and Usage Report and in the <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">Amazon Web Services Price List API</a>. You can view these fields on the <b>Instances</b> or <b>AMIs</b> pages in the Amazon EC2 console, or in the responses that are returned by the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a> command in the Amazon EC2 API, or the <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-images.html">describe-images</a> command in the CLI.</p>
     pub fn set_usage_operation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.usage_operation = input;
-        self
+        self.usage_operation = input; self
     }
     /// <p>The operation of the Amazon EC2 instance and the billing code that is associated with the AMI. <code>usageOperation</code> corresponds to the <a href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a> column on your Amazon Web Services Cost and Usage Report and in the <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">Amazon Web Services Price List API</a>. You can view these fields on the <b>Instances</b> or <b>AMIs</b> pages in the Amazon EC2 console, or in the responses that are returned by the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a> command in the Amazon EC2 API, or the <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-images.html">describe-images</a> command in the CLI.</p>
     pub fn get_usage_operation(&self) -> &::std::option::Option<::std::string::String> {
@@ -404,17 +396,16 @@ impl ImageBuilder {
     /// <p>Any product codes associated with the AMI.</p>
     pub fn product_codes(mut self, input: crate::types::ProductCode) -> Self {
         let mut v = self.product_codes.unwrap_or_default();
-        v.push(input);
-        self.product_codes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.product_codes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Any product codes associated with the AMI.</p>
-    pub fn set_product_codes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>) -> Self {
-        self.product_codes = input;
-        self
+    pub fn set_product_codes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProductCode>>) -> Self {
+        self.product_codes = input; self
     }
     /// <p>Any product codes associated with the AMI.</p>
-    pub fn get_product_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductCode>> {
+    pub fn get_product_codes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProductCode>> {
         &self.product_codes
     }
     /// <p>The RAM disk associated with the image, if any. Only applicable for machine images.</p>
@@ -424,8 +415,7 @@ impl ImageBuilder {
     }
     /// <p>The RAM disk associated with the image, if any. Only applicable for machine images.</p>
     pub fn set_ramdisk_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ramdisk_id = input;
-        self
+        self.ramdisk_id = input; self
     }
     /// <p>The RAM disk associated with the image, if any. Only applicable for machine images.</p>
     pub fn get_ramdisk_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -438,8 +428,7 @@ impl ImageBuilder {
     }
     /// <p>The current state of the AMI. If the state is <code>available</code>, the image is successfully registered and can be used to launch an instance.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ImageState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The current state of the AMI. If the state is <code>available</code>, the image is successfully registered and can be used to launch an instance.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ImageState> {
@@ -452,17 +441,16 @@ impl ImageBuilder {
     /// <p>Any block device mapping entries.</p>
     pub fn block_device_mappings(mut self, input: crate::types::BlockDeviceMapping) -> Self {
         let mut v = self.block_device_mappings.unwrap_or_default();
-        v.push(input);
-        self.block_device_mappings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.block_device_mappings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Any block device mapping entries.</p>
-    pub fn set_block_device_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>) -> Self {
-        self.block_device_mappings = input;
-        self
+    pub fn set_block_device_mappings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BlockDeviceMapping>>) -> Self {
+        self.block_device_mappings = input; self
     }
     /// <p>Any block device mapping entries.</p>
-    pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>> {
+    pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BlockDeviceMapping>> {
         &self.block_device_mappings
     }
     /// <p>The description of the AMI that was provided during image creation.</p>
@@ -472,8 +460,7 @@ impl ImageBuilder {
     }
     /// <p>The description of the AMI that was provided during image creation.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the AMI that was provided during image creation.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -486,8 +473,7 @@ impl ImageBuilder {
     }
     /// <p>Specifies whether enhanced networking with ENA is enabled.</p>
     pub fn set_ena_support(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ena_support = input;
-        self
+        self.ena_support = input; self
     }
     /// <p>Specifies whether enhanced networking with ENA is enabled.</p>
     pub fn get_ena_support(&self) -> &::std::option::Option<bool> {
@@ -500,8 +486,7 @@ impl ImageBuilder {
     }
     /// <p>The hypervisor type of the image. Only <code>xen</code> is supported. <code>ovm</code> is not supported.</p>
     pub fn set_hypervisor(mut self, input: ::std::option::Option<crate::types::HypervisorType>) -> Self {
-        self.hypervisor = input;
-        self
+        self.hypervisor = input; self
     }
     /// <p>The hypervisor type of the image. Only <code>xen</code> is supported. <code>ovm</code> is not supported.</p>
     pub fn get_hypervisor(&self) -> &::std::option::Option<crate::types::HypervisorType> {
@@ -514,8 +499,7 @@ impl ImageBuilder {
     }
     /// <p>The Amazon Web Services account alias (for example, <code>amazon</code>, <code>self</code>) or the Amazon Web Services account ID of the AMI owner.</p>
     pub fn set_image_owner_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_owner_alias = input;
-        self
+        self.image_owner_alias = input; self
     }
     /// <p>The Amazon Web Services account alias (for example, <code>amazon</code>, <code>self</code>) or the Amazon Web Services account ID of the AMI owner.</p>
     pub fn get_image_owner_alias(&self) -> &::std::option::Option<::std::string::String> {
@@ -528,8 +512,7 @@ impl ImageBuilder {
     }
     /// <p>The name of the AMI that was provided during image creation.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the AMI that was provided during image creation.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -542,8 +525,7 @@ impl ImageBuilder {
     }
     /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
     pub fn set_root_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.root_device_name = input;
-        self
+        self.root_device_name = input; self
     }
     /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
     pub fn get_root_device_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -556,8 +538,7 @@ impl ImageBuilder {
     }
     /// <p>The type of root device used by the AMI. The AMI can use an Amazon EBS volume or an instance store volume.</p>
     pub fn set_root_device_type(mut self, input: ::std::option::Option<crate::types::DeviceType>) -> Self {
-        self.root_device_type = input;
-        self
+        self.root_device_type = input; self
     }
     /// <p>The type of root device used by the AMI. The AMI can use an Amazon EBS volume or an instance store volume.</p>
     pub fn get_root_device_type(&self) -> &::std::option::Option<crate::types::DeviceType> {
@@ -570,8 +551,7 @@ impl ImageBuilder {
     }
     /// <p>Specifies whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.</p>
     pub fn set_sriov_net_support(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sriov_net_support = input;
-        self
+        self.sriov_net_support = input; self
     }
     /// <p>Specifies whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.</p>
     pub fn get_sriov_net_support(&self) -> &::std::option::Option<::std::string::String> {
@@ -584,8 +564,7 @@ impl ImageBuilder {
     }
     /// <p>The reason for the state change.</p>
     pub fn set_state_reason(mut self, input: ::std::option::Option<crate::types::StateReason>) -> Self {
-        self.state_reason = input;
-        self
+        self.state_reason = input; self
     }
     /// <p>The reason for the state change.</p>
     pub fn get_state_reason(&self) -> &::std::option::Option<crate::types::StateReason> {
@@ -598,17 +577,16 @@ impl ImageBuilder {
     /// <p>Any tags assigned to the image.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Any tags assigned to the image.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Any tags assigned to the image.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The type of virtualization of the AMI.</p>
@@ -618,8 +596,7 @@ impl ImageBuilder {
     }
     /// <p>The type of virtualization of the AMI.</p>
     pub fn set_virtualization_type(mut self, input: ::std::option::Option<crate::types::VirtualizationType>) -> Self {
-        self.virtualization_type = input;
-        self
+        self.virtualization_type = input; self
     }
     /// <p>The type of virtualization of the AMI.</p>
     pub fn get_virtualization_type(&self) -> &::std::option::Option<crate::types::VirtualizationType> {
@@ -632,8 +609,7 @@ impl ImageBuilder {
     }
     /// <p>The boot mode of the image. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_boot_mode(mut self, input: ::std::option::Option<crate::types::BootModeValues>) -> Self {
-        self.boot_mode = input;
-        self
+        self.boot_mode = input; self
     }
     /// <p>The boot mode of the image. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_boot_mode(&self) -> &::std::option::Option<crate::types::BootModeValues> {
@@ -646,8 +622,7 @@ impl ImageBuilder {
     }
     /// <p>If the image is configured for NitroTPM support, the value is <code>v2.0</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_tpm_support(mut self, input: ::std::option::Option<crate::types::TpmSupportValues>) -> Self {
-        self.tpm_support = input;
-        self
+        self.tpm_support = input; self
     }
     /// <p>If the image is configured for NitroTPM support, the value is <code>v2.0</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_tpm_support(&self) -> &::std::option::Option<crate::types::TpmSupportValues> {
@@ -660,8 +635,7 @@ impl ImageBuilder {
     }
     /// <p>The date and time to deprecate the AMI, in UTC, in the following format: <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specified a value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
     pub fn set_deprecation_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deprecation_time = input;
-        self
+        self.deprecation_time = input; self
     }
     /// <p>The date and time to deprecate the AMI, in UTC, in the following format: <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specified a value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
     pub fn get_deprecation_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -674,8 +648,7 @@ impl ImageBuilder {
     }
     /// <p>If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_imds_support(mut self, input: ::std::option::Option<crate::types::ImdsSupportValues>) -> Self {
-        self.imds_support = input;
-        self
+        self.imds_support = input; self
     }
     /// <p>If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI. Instances launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code> so that, by default, the instance requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_imds_support(&self) -> &::std::option::Option<crate::types::ImdsSupportValues> {
@@ -688,8 +661,7 @@ impl ImageBuilder {
     }
     /// <p>The ID of the instance that the AMI was created from if the AMI was created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>. This field only appears if the AMI was created using CreateImage.</p>
     pub fn set_source_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_instance_id = input;
-        self
+        self.source_instance_id = input; self
     }
     /// <p>The ID of the instance that the AMI was created from if the AMI was created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>. This field only appears if the AMI was created using CreateImage.</p>
     pub fn get_source_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -698,37 +670,69 @@ impl ImageBuilder {
     /// Consumes the builder and constructs a [`Image`](crate::types::Image).
     pub fn build(self) -> crate::types::Image {
         crate::types::Image {
-            architecture: self.architecture,
-            creation_date: self.creation_date,
-            image_id: self.image_id,
-            image_location: self.image_location,
-            image_type: self.image_type,
-            public: self.public,
-            kernel_id: self.kernel_id,
-            owner_id: self.owner_id,
-            platform: self.platform,
-            platform_details: self.platform_details,
-            usage_operation: self.usage_operation,
-            product_codes: self.product_codes,
-            ramdisk_id: self.ramdisk_id,
-            state: self.state,
-            block_device_mappings: self.block_device_mappings,
-            description: self.description,
-            ena_support: self.ena_support,
-            hypervisor: self.hypervisor,
-            image_owner_alias: self.image_owner_alias,
-            name: self.name,
-            root_device_name: self.root_device_name,
-            root_device_type: self.root_device_type,
-            sriov_net_support: self.sriov_net_support,
-            state_reason: self.state_reason,
-            tags: self.tags,
-            virtualization_type: self.virtualization_type,
-            boot_mode: self.boot_mode,
-            tpm_support: self.tpm_support,
-            deprecation_time: self.deprecation_time,
-            imds_support: self.imds_support,
-            source_instance_id: self.source_instance_id,
+            architecture: self.architecture
+            ,
+            creation_date: self.creation_date
+            ,
+            image_id: self.image_id
+            ,
+            image_location: self.image_location
+            ,
+            image_type: self.image_type
+            ,
+            public: self.public
+            ,
+            kernel_id: self.kernel_id
+            ,
+            owner_id: self.owner_id
+            ,
+            platform: self.platform
+            ,
+            platform_details: self.platform_details
+            ,
+            usage_operation: self.usage_operation
+            ,
+            product_codes: self.product_codes
+            ,
+            ramdisk_id: self.ramdisk_id
+            ,
+            state: self.state
+            ,
+            block_device_mappings: self.block_device_mappings
+            ,
+            description: self.description
+            ,
+            ena_support: self.ena_support
+            ,
+            hypervisor: self.hypervisor
+            ,
+            image_owner_alias: self.image_owner_alias
+            ,
+            name: self.name
+            ,
+            root_device_name: self.root_device_name
+            ,
+            root_device_type: self.root_device_type
+            ,
+            sriov_net_support: self.sriov_net_support
+            ,
+            state_reason: self.state_reason
+            ,
+            tags: self.tags
+            ,
+            virtualization_type: self.virtualization_type
+            ,
+            boot_mode: self.boot_mode
+            ,
+            tpm_support: self.tpm_support
+            ,
+            deprecation_time: self.deprecation_time
+            ,
+            imds_support: self.imds_support
+            ,
+            source_instance_id: self.source_instance_id
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes the Inference accelerators for the instance type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InferenceDeviceInfo {
+pub struct InferenceDeviceInfo  {
     /// <p>The number of Inference accelerators for the instance type.</p>
     pub count: ::std::option::Option<i32>,
     /// <p>The name of the Inference accelerator.</p>
@@ -13,21 +13,21 @@ pub struct InferenceDeviceInfo {
     /// <p>Describes the memory available to the inference accelerator.</p>
     pub memory_info: ::std::option::Option<crate::types::InferenceDeviceMemoryInfo>,
 }
-impl InferenceDeviceInfo {
+impl  InferenceDeviceInfo  {
     /// <p>The number of Inference accelerators for the instance type.</p>
     pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
     }
     /// <p>The name of the Inference accelerator.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The manufacturer of the Inference accelerator.</p>
-    pub fn manufacturer(&self) -> ::std::option::Option<&str> {
+    pub fn manufacturer(&self) -> ::std::option::Option<& str> {
         self.manufacturer.as_deref()
     }
     /// <p>Describes the memory available to the inference accelerator.</p>
-    pub fn memory_info(&self) -> ::std::option::Option<&crate::types::InferenceDeviceMemoryInfo> {
+    pub fn memory_info(&self) -> ::std::option::Option<& crate::types::InferenceDeviceMemoryInfo> {
         self.memory_info.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl InferenceDeviceInfoBuilder {
     }
     /// <p>The number of Inference accelerators for the instance type.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>The number of Inference accelerators for the instance type.</p>
     pub fn get_count(&self) -> &::std::option::Option<i32> {
@@ -69,8 +68,7 @@ impl InferenceDeviceInfoBuilder {
     }
     /// <p>The name of the Inference accelerator.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Inference accelerator.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl InferenceDeviceInfoBuilder {
     }
     /// <p>The manufacturer of the Inference accelerator.</p>
     pub fn set_manufacturer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.manufacturer = input;
-        self
+        self.manufacturer = input; self
     }
     /// <p>The manufacturer of the Inference accelerator.</p>
     pub fn get_manufacturer(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl InferenceDeviceInfoBuilder {
     }
     /// <p>Describes the memory available to the inference accelerator.</p>
     pub fn set_memory_info(mut self, input: ::std::option::Option<crate::types::InferenceDeviceMemoryInfo>) -> Self {
-        self.memory_info = input;
-        self
+        self.memory_info = input; self
     }
     /// <p>Describes the memory available to the inference accelerator.</p>
     pub fn get_memory_info(&self) -> &::std::option::Option<crate::types::InferenceDeviceMemoryInfo> {
@@ -107,10 +103,15 @@ impl InferenceDeviceInfoBuilder {
     /// Consumes the builder and constructs a [`InferenceDeviceInfo`](crate::types::InferenceDeviceInfo).
     pub fn build(self) -> crate::types::InferenceDeviceInfo {
         crate::types::InferenceDeviceInfo {
-            count: self.count,
-            name: self.name,
-            manufacturer: self.manufacturer,
-            memory_info: self.memory_info,
+            count: self.count
+            ,
+            name: self.name
+            ,
+            manufacturer: self.manufacturer
+            ,
+            memory_info: self.memory_info
+            ,
         }
     }
 }
+

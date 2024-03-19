@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSessionOutput {
+pub struct CreateSessionOutput  {
     /// <p>Returns the session object in the response.</p>
     pub session: ::std::option::Option<crate::types::Session>,
     _request_id: Option<String>,
 }
-impl CreateSessionOutput {
+impl  CreateSessionOutput  {
     /// <p>Returns the session object in the response.</p>
-    pub fn session(&self) -> ::std::option::Option<&crate::types::Session> {
+    pub fn session(&self) -> ::std::option::Option<& crate::types::Session> {
         self.session.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateSessionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateSessionOutput {
     /// Creates a new builder-style object to manufacture [`CreateSessionOutput`](crate::operation::create_session::CreateSessionOutput).
     pub fn builder() -> crate::operation::create_session::builders::CreateSessionOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateSessionOutputBuilder {
     }
     /// <p>Returns the session object in the response.</p>
     pub fn set_session(mut self, input: ::std::option::Option<crate::types::Session>) -> Self {
-        self.session = input;
-        self
+        self.session = input; self
     }
     /// <p>Returns the session object in the response.</p>
     pub fn get_session(&self) -> &::std::option::Option<crate::types::Session> {
         &self.session
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateSessionOutput`](crate::operation::create_session::CreateSessionOutput).
     pub fn build(self) -> crate::operation::create_session::CreateSessionOutput {
         crate::operation::create_session::CreateSessionOutput {
-            session: self.session,
+            session: self.session
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

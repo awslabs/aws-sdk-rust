@@ -3,33 +3,31 @@
 /// <p>Details about a private graph endpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PrivateGraphEndpointSummary {
+pub struct PrivateGraphEndpointSummary  {
     /// <p>The ID of the VPC in which the private graph endpoint is located.</p>
     pub vpc_id: ::std::string::String,
     /// <p>The subnet IDs associated with the private graph endpoint.</p>
-    pub subnet_ids: ::std::vec::Vec<::std::string::String>,
+    pub subnet_ids: ::std::vec::Vec::<::std::string::String>,
     /// <p>The status of the private graph endpoint.</p>
     pub status: crate::types::PrivateGraphEndpointStatus,
     /// <p>The ID of the VPC endpoint.</p>
     pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
 }
-impl PrivateGraphEndpointSummary {
+impl  PrivateGraphEndpointSummary  {
     /// <p>The ID of the VPC in which the private graph endpoint is located.</p>
-    pub fn vpc_id(&self) -> &str {
-        use std::ops::Deref;
-        self.vpc_id.deref()
+    pub fn vpc_id(&self) -> & str {
+        use std::ops::Deref; self.vpc_id.deref()
     }
     /// <p>The subnet IDs associated with the private graph endpoint.</p>
-    pub fn subnet_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.subnet_ids.deref()
+    pub fn subnet_ids(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.subnet_ids.deref()
     }
     /// <p>The status of the private graph endpoint.</p>
-    pub fn status(&self) -> &crate::types::PrivateGraphEndpointStatus {
+    pub fn status(&self) -> & crate::types::PrivateGraphEndpointStatus {
         &self.status
     }
     /// <p>The ID of the VPC endpoint.</p>
-    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.vpc_endpoint_id.as_deref()
     }
 }
@@ -45,7 +43,7 @@ impl PrivateGraphEndpointSummary {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PrivateGraphEndpointSummaryBuilder {
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
-    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) status: ::std::option::Option<crate::types::PrivateGraphEndpointStatus>,
     pub(crate) vpc_endpoint_id: ::std::option::Option<::std::string::String>,
 }
@@ -58,8 +56,7 @@ impl PrivateGraphEndpointSummaryBuilder {
     }
     /// <p>The ID of the VPC in which the private graph endpoint is located.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The ID of the VPC in which the private graph endpoint is located.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,17 +69,16 @@ impl PrivateGraphEndpointSummaryBuilder {
     /// <p>The subnet IDs associated with the private graph endpoint.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The subnet IDs associated with the private graph endpoint.</p>
-    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
     /// <p>The subnet IDs associated with the private graph endpoint.</p>
-    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnet_ids
     }
     /// <p>The status of the private graph endpoint.</p>
@@ -93,8 +89,7 @@ impl PrivateGraphEndpointSummaryBuilder {
     }
     /// <p>The status of the private graph endpoint.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::PrivateGraphEndpointStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the private graph endpoint.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PrivateGraphEndpointStatus> {
@@ -107,8 +102,7 @@ impl PrivateGraphEndpointSummaryBuilder {
     }
     /// <p>The ID of the VPC endpoint.</p>
     pub fn set_vpc_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_endpoint_id = input;
-        self
+        self.vpc_endpoint_id = input; self
     }
     /// <p>The ID of the VPC endpoint.</p>
     pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,26 +114,27 @@ impl PrivateGraphEndpointSummaryBuilder {
     /// - [`subnet_ids`](crate::types::builders::PrivateGraphEndpointSummaryBuilder::subnet_ids)
     /// - [`status`](crate::types::builders::PrivateGraphEndpointSummaryBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::PrivateGraphEndpointSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PrivateGraphEndpointSummary {
-            vpc_id: self.vpc_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vpc_id",
-                    "vpc_id was not specified but it is required when building PrivateGraphEndpointSummary",
-                )
-            })?,
-            subnet_ids: self.subnet_ids.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "subnet_ids",
-                    "subnet_ids was not specified but it is required when building PrivateGraphEndpointSummary",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building PrivateGraphEndpointSummary",
-                )
-            })?,
-            vpc_endpoint_id: self.vpc_endpoint_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PrivateGraphEndpointSummary {
+                vpc_id: self.vpc_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vpc_id", "vpc_id was not specified but it is required when building PrivateGraphEndpointSummary")
+                    )?
+                ,
+                subnet_ids: self.subnet_ids
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("subnet_ids", "subnet_ids was not specified but it is required when building PrivateGraphEndpointSummary")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building PrivateGraphEndpointSummary")
+                    )?
+                ,
+                vpc_endpoint_id: self.vpc_endpoint_id
+                ,
+            }
+        )
     }
 }
+

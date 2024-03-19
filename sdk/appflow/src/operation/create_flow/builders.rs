@@ -5,54 +5,50 @@ pub use crate::operation::create_flow::_create_flow_input::CreateFlowInputBuilde
 
 impl CreateFlowInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_flow::CreateFlowOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_flow::CreateFlowError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_flow();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_flow::CreateFlowOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_flow::CreateFlowError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_flow();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateFlow`.
-///
+/// 
 /// <p>Enables your application to create a new flow using Amazon AppFlow. You must create a connector profile before calling this API. Please note that the Request Syntax below shows syntax for multiple destinations, however, you can only transfer data to one item in this list at a time. Amazon AppFlow does not currently support flows to multiple destinations at once.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFlowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_flow::builders::CreateFlowInputBuilder,
+                    inner: crate::operation::create_flow::builders::CreateFlowInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_flow::CreateFlowOutput,
-        crate::operation::create_flow::CreateFlowError,
-    > for CreateFlowFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_flow::CreateFlowOutput,
-            crate::operation::create_flow::CreateFlowError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_flow::CreateFlowOutput,
+                    crate::operation::create_flow::CreateFlowError,
+                > for CreateFlowFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_flow::CreateFlowOutput,
+                        crate::operation::create_flow::CreateFlowError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateFlowFluentBuilder {
     /// Creates a new `CreateFlow`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl CreateFlowFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_flow::CreateFlowOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_flow::CreateFlowError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_flow::CreateFlow::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_flow::CreateFlow::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_flow::CreateFlowOutput,
-        crate::operation::create_flow::CreateFlowError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_flow::CreateFlowOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_flow::CreateFlowError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_flow::CreateFlow::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_flow::CreateFlow::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_flow::CreateFlowOutput, crate::operation::create_flow::CreateFlowError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
     pub fn flow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_name(input.into());
@@ -188,12 +175,12 @@ impl CreateFlowFluentBuilder {
         self
     }
     /// <p>The configuration that controls how Amazon AppFlow places data in the destination connector.</p>
-    pub fn set_destination_flow_config_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>>) -> Self {
+    pub fn set_destination_flow_config_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DestinationFlowConfig>>) -> Self {
         self.inner = self.inner.set_destination_flow_config_list(input);
         self
     }
     /// <p>The configuration that controls how Amazon AppFlow places data in the destination connector.</p>
-    pub fn get_destination_flow_config_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>> {
+    pub fn get_destination_flow_config_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DestinationFlowConfig>> {
         self.inner.get_destination_flow_config_list()
     }
     /// Appends an item to `tasks`.
@@ -206,12 +193,12 @@ impl CreateFlowFluentBuilder {
         self
     }
     /// <p>A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.</p>
-    pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Task>>) -> Self {
+    pub fn set_tasks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Task>>) -> Self {
         self.inner = self.inner.set_tasks(input);
         self
     }
     /// <p>A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.</p>
-    pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Task>> {
+    pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Task>> {
         self.inner.get_tasks()
     }
     /// Adds a key-value pair to `tags`.
@@ -224,12 +211,12 @@ impl CreateFlowFluentBuilder {
         self
     }
     /// <p>The tags used to organize, track, or control access for your flow.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags used to organize, track, or control access for your flow.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
@@ -267,3 +254,4 @@ impl CreateFlowFluentBuilder {
         self.inner.get_client_token()
     }
 }
+

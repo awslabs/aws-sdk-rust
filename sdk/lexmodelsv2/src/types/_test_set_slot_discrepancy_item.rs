@@ -3,7 +3,7 @@
 /// <p>Contains information about discrepancy in a slot information between the test set and the bot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestSetSlotDiscrepancyItem {
+pub struct TestSetSlotDiscrepancyItem  {
     /// <p>The name of the intent associated with the slot in the discrepancy report.</p>
     pub intent_name: ::std::string::String,
     /// <p>The name of the slot in the discrepancy report.</p>
@@ -11,21 +11,18 @@ pub struct TestSetSlotDiscrepancyItem {
     /// <p>The error message for a discrepancy for an intent between the test set and the bot.</p>
     pub error_message: ::std::string::String,
 }
-impl TestSetSlotDiscrepancyItem {
+impl  TestSetSlotDiscrepancyItem  {
     /// <p>The name of the intent associated with the slot in the discrepancy report.</p>
-    pub fn intent_name(&self) -> &str {
-        use std::ops::Deref;
-        self.intent_name.deref()
+    pub fn intent_name(&self) -> & str {
+        use std::ops::Deref; self.intent_name.deref()
     }
     /// <p>The name of the slot in the discrepancy report.</p>
-    pub fn slot_name(&self) -> &str {
-        use std::ops::Deref;
-        self.slot_name.deref()
+    pub fn slot_name(&self) -> & str {
+        use std::ops::Deref; self.slot_name.deref()
     }
     /// <p>The error message for a discrepancy for an intent between the test set and the bot.</p>
-    pub fn error_message(&self) -> &str {
-        use std::ops::Deref;
-        self.error_message.deref()
+    pub fn error_message(&self) -> & str {
+        use std::ops::Deref; self.error_message.deref()
     }
 }
 impl TestSetSlotDiscrepancyItem {
@@ -52,8 +49,7 @@ impl TestSetSlotDiscrepancyItemBuilder {
     }
     /// <p>The name of the intent associated with the slot in the discrepancy report.</p>
     pub fn set_intent_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.intent_name = input;
-        self
+        self.intent_name = input; self
     }
     /// <p>The name of the intent associated with the slot in the discrepancy report.</p>
     pub fn get_intent_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +63,7 @@ impl TestSetSlotDiscrepancyItemBuilder {
     }
     /// <p>The name of the slot in the discrepancy report.</p>
     pub fn set_slot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.slot_name = input;
-        self
+        self.slot_name = input; self
     }
     /// <p>The name of the slot in the discrepancy report.</p>
     pub fn get_slot_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +77,7 @@ impl TestSetSlotDiscrepancyItemBuilder {
     }
     /// <p>The error message for a discrepancy for an intent between the test set and the bot.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The error message for a discrepancy for an intent between the test set and the bot.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,25 +89,25 @@ impl TestSetSlotDiscrepancyItemBuilder {
     /// - [`slot_name`](crate::types::builders::TestSetSlotDiscrepancyItemBuilder::slot_name)
     /// - [`error_message`](crate::types::builders::TestSetSlotDiscrepancyItemBuilder::error_message)
     pub fn build(self) -> ::std::result::Result<crate::types::TestSetSlotDiscrepancyItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TestSetSlotDiscrepancyItem {
-            intent_name: self.intent_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "intent_name",
-                    "intent_name was not specified but it is required when building TestSetSlotDiscrepancyItem",
-                )
-            })?,
-            slot_name: self.slot_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "slot_name",
-                    "slot_name was not specified but it is required when building TestSetSlotDiscrepancyItem",
-                )
-            })?,
-            error_message: self.error_message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_message",
-                    "error_message was not specified but it is required when building TestSetSlotDiscrepancyItem",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TestSetSlotDiscrepancyItem {
+                intent_name: self.intent_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("intent_name", "intent_name was not specified but it is required when building TestSetSlotDiscrepancyItem")
+                    )?
+                ,
+                slot_name: self.slot_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("slot_name", "slot_name was not specified but it is required when building TestSetSlotDiscrepancyItem")
+                    )?
+                ,
+                error_message: self.error_message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_message", "error_message was not specified but it is required when building TestSetSlotDiscrepancyItem")
+                    )?
+                ,
+            }
+        )
     }
 }
+

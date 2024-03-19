@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListApplicationsOutput {
+pub struct ListApplicationsOutput  {
     /// <p>A list of <code>ApplicationSummary</code> objects.</p>
-    pub application_summaries: ::std::vec::Vec<crate::types::ApplicationSummary>,
+    pub application_summaries: ::std::vec::Vec::<crate::types::ApplicationSummary>,
     /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. Pass this token into a subsequent command to retrieve the next set of items For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListApplicationsOutput {
+impl  ListApplicationsOutput  {
     /// <p>A list of <code>ApplicationSummary</code> objects.</p>
-    pub fn application_summaries(&self) -> &[crate::types::ApplicationSummary] {
-        use std::ops::Deref;
-        self.application_summaries.deref()
+    pub fn application_summaries(&self) -> & [crate::types::ApplicationSummary] {
+        use std::ops::Deref; self.application_summaries.deref()
     }
     /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. Pass this token into a subsequent command to retrieve the next set of items For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListApplicationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListApplicationsOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationsOutput`](crate::operation::list_applications::ListApplicationsOutput).
     pub fn builder() -> crate::operation::list_applications::builders::ListApplicationsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListApplicationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationsOutputBuilder {
-    pub(crate) application_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>>,
+    pub(crate) application_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListApplicationsOutputBuilder {
     /// <p>A list of <code>ApplicationSummary</code> objects.</p>
     pub fn application_summaries(mut self, input: crate::types::ApplicationSummary) -> Self {
         let mut v = self.application_summaries.unwrap_or_default();
-        v.push(input);
-        self.application_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.application_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>ApplicationSummary</code> objects.</p>
-    pub fn set_application_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>>) -> Self {
-        self.application_summaries = input;
-        self
+    pub fn set_application_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationSummary>>) -> Self {
+        self.application_summaries = input; self
     }
     /// <p>A list of <code>ApplicationSummary</code> objects.</p>
-    pub fn get_application_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>> {
+    pub fn get_application_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ApplicationSummary>> {
         &self.application_summaries
     }
     /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. Pass this token into a subsequent command to retrieve the next set of items For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
@@ -68,37 +66,37 @@ impl ListApplicationsOutputBuilder {
     }
     /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. Pass this token into a subsequent command to retrieve the next set of items For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token for the next set of results, or <code>null</code> if there are no additional results. Pass this token into a subsequent command to retrieve the next set of items For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListApplicationsOutput`](crate::operation::list_applications::ListApplicationsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`application_summaries`](crate::operation::list_applications::builders::ListApplicationsOutputBuilder::application_summaries)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_applications::ListApplicationsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_applications::ListApplicationsOutput {
-            application_summaries: self.application_summaries.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application_summaries",
-                    "application_summaries was not specified but it is required when building ListApplicationsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_applications::ListApplicationsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_applications::ListApplicationsOutput {
+                application_summaries: self.application_summaries
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_summaries", "application_summaries was not specified but it is required when building ListApplicationsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

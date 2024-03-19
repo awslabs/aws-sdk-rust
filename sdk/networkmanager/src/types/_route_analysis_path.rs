@@ -3,22 +3,23 @@
 /// <p>Describes a route analysis path.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RouteAnalysisPath {
+pub struct RouteAnalysisPath  {
     /// <p>The status of the analysis at completion.</p>
     pub completion_status: ::std::option::Option<crate::types::RouteAnalysisCompletion>,
     /// <p>The route analysis path.</p>
-    pub path: ::std::option::Option<::std::vec::Vec<crate::types::PathComponent>>,
+    pub path: ::std::option::Option<::std::vec::Vec::<crate::types::PathComponent>>,
 }
-impl RouteAnalysisPath {
+impl  RouteAnalysisPath  {
     /// <p>The status of the analysis at completion.</p>
-    pub fn completion_status(&self) -> ::std::option::Option<&crate::types::RouteAnalysisCompletion> {
+    pub fn completion_status(&self) -> ::std::option::Option<& crate::types::RouteAnalysisCompletion> {
         self.completion_status.as_ref()
     }
     /// <p>The route analysis path.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.path.is_none()`.
-    pub fn path(&self) -> &[crate::types::PathComponent] {
-        self.path.as_deref().unwrap_or_default()
+    pub fn path(&self) -> & [crate::types::PathComponent] {
+        self.path.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RouteAnalysisPath {
@@ -33,7 +34,7 @@ impl RouteAnalysisPath {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RouteAnalysisPathBuilder {
     pub(crate) completion_status: ::std::option::Option<crate::types::RouteAnalysisCompletion>,
-    pub(crate) path: ::std::option::Option<::std::vec::Vec<crate::types::PathComponent>>,
+    pub(crate) path: ::std::option::Option<::std::vec::Vec::<crate::types::PathComponent>>,
 }
 impl RouteAnalysisPathBuilder {
     /// <p>The status of the analysis at completion.</p>
@@ -43,8 +44,7 @@ impl RouteAnalysisPathBuilder {
     }
     /// <p>The status of the analysis at completion.</p>
     pub fn set_completion_status(mut self, input: ::std::option::Option<crate::types::RouteAnalysisCompletion>) -> Self {
-        self.completion_status = input;
-        self
+        self.completion_status = input; self
     }
     /// <p>The status of the analysis at completion.</p>
     pub fn get_completion_status(&self) -> &::std::option::Option<crate::types::RouteAnalysisCompletion> {
@@ -57,24 +57,26 @@ impl RouteAnalysisPathBuilder {
     /// <p>The route analysis path.</p>
     pub fn path(mut self, input: crate::types::PathComponent) -> Self {
         let mut v = self.path.unwrap_or_default();
-        v.push(input);
-        self.path = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.path = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The route analysis path.</p>
-    pub fn set_path(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PathComponent>>) -> Self {
-        self.path = input;
-        self
+    pub fn set_path(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PathComponent>>) -> Self {
+        self.path = input; self
     }
     /// <p>The route analysis path.</p>
-    pub fn get_path(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PathComponent>> {
+    pub fn get_path(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PathComponent>> {
         &self.path
     }
     /// Consumes the builder and constructs a [`RouteAnalysisPath`](crate::types::RouteAnalysisPath).
     pub fn build(self) -> crate::types::RouteAnalysisPath {
         crate::types::RouteAnalysisPath {
-            completion_status: self.completion_status,
-            path: self.path,
+            completion_status: self.completion_status
+            ,
+            path: self.path
+            ,
         }
     }
 }
+

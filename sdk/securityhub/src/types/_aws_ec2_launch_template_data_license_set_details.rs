@@ -3,13 +3,13 @@
 /// <p>Provides details about the license configuration for an Amazon EC2 instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2LaunchTemplateDataLicenseSetDetails {
+pub struct AwsEc2LaunchTemplateDataLicenseSetDetails  {
     /// <p>The Amazon Resource Name (ARN) of the license configuration.</p>
     pub license_configuration_arn: ::std::option::Option<::std::string::String>,
 }
-impl AwsEc2LaunchTemplateDataLicenseSetDetails {
+impl  AwsEc2LaunchTemplateDataLicenseSetDetails  {
     /// <p>The Amazon Resource Name (ARN) of the license configuration.</p>
-    pub fn license_configuration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn license_configuration_arn(&self) -> ::std::option::Option<& str> {
         self.license_configuration_arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AwsEc2LaunchTemplateDataLicenseSetDetailsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the license configuration.</p>
     pub fn set_license_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.license_configuration_arn = input;
-        self
+        self.license_configuration_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the license configuration.</p>
     pub fn get_license_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl AwsEc2LaunchTemplateDataLicenseSetDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataLicenseSetDetails`](crate::types::AwsEc2LaunchTemplateDataLicenseSetDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataLicenseSetDetails {
         crate::types::AwsEc2LaunchTemplateDataLicenseSetDetails {
-            license_configuration_arn: self.license_configuration_arn,
+            license_configuration_arn: self.license_configuration_arn
+            ,
         }
     }
 }
+

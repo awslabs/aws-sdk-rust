@@ -3,13 +3,13 @@
 /// <p>The service type information for a VPC endpoint service.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2VpcEndpointServiceServiceTypeDetails {
+pub struct AwsEc2VpcEndpointServiceServiceTypeDetails  {
     /// <p>The type of service.</p>
     pub service_type: ::std::option::Option<::std::string::String>,
 }
-impl AwsEc2VpcEndpointServiceServiceTypeDetails {
+impl  AwsEc2VpcEndpointServiceServiceTypeDetails  {
     /// <p>The type of service.</p>
-    pub fn service_type(&self) -> ::std::option::Option<&str> {
+    pub fn service_type(&self) -> ::std::option::Option<& str> {
         self.service_type.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AwsEc2VpcEndpointServiceServiceTypeDetailsBuilder {
     }
     /// <p>The type of service.</p>
     pub fn set_service_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_type = input;
-        self
+        self.service_type = input; self
     }
     /// <p>The type of service.</p>
     pub fn get_service_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl AwsEc2VpcEndpointServiceServiceTypeDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEc2VpcEndpointServiceServiceTypeDetails`](crate::types::AwsEc2VpcEndpointServiceServiceTypeDetails).
     pub fn build(self) -> crate::types::AwsEc2VpcEndpointServiceServiceTypeDetails {
         crate::types::AwsEc2VpcEndpointServiceServiceTypeDetails {
-            service_type: self.service_type,
+            service_type: self.service_type
+            ,
         }
     }
 }
+

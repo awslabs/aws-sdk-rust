@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDeleteAgentsInput {
+pub struct BatchDeleteAgentsInput  {
     /// <p>The list of agents to delete.</p>
-    pub delete_agents: ::std::option::Option<::std::vec::Vec<crate::types::DeleteAgent>>,
+    pub delete_agents: ::std::option::Option<::std::vec::Vec::<crate::types::DeleteAgent>>,
 }
-impl BatchDeleteAgentsInput {
+impl  BatchDeleteAgentsInput  {
     /// <p>The list of agents to delete.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.delete_agents.is_none()`.
-    pub fn delete_agents(&self) -> &[crate::types::DeleteAgent] {
-        self.delete_agents.as_deref().unwrap_or_default()
+    pub fn delete_agents(&self) -> & [crate::types::DeleteAgent] {
+        self.delete_agents.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchDeleteAgentsInput {
@@ -25,7 +26,7 @@ impl BatchDeleteAgentsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteAgentsInputBuilder {
-    pub(crate) delete_agents: ::std::option::Option<::std::vec::Vec<crate::types::DeleteAgent>>,
+    pub(crate) delete_agents: ::std::option::Option<::std::vec::Vec::<crate::types::DeleteAgent>>,
 }
 impl BatchDeleteAgentsInputBuilder {
     /// Appends an item to `delete_agents`.
@@ -35,25 +36,26 @@ impl BatchDeleteAgentsInputBuilder {
     /// <p>The list of agents to delete.</p>
     pub fn delete_agents(mut self, input: crate::types::DeleteAgent) -> Self {
         let mut v = self.delete_agents.unwrap_or_default();
-        v.push(input);
-        self.delete_agents = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.delete_agents = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of agents to delete.</p>
-    pub fn set_delete_agents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteAgent>>) -> Self {
-        self.delete_agents = input;
-        self
+    pub fn set_delete_agents(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DeleteAgent>>) -> Self {
+        self.delete_agents = input; self
     }
     /// <p>The list of agents to delete.</p>
-    pub fn get_delete_agents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteAgent>> {
+    pub fn get_delete_agents(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DeleteAgent>> {
         &self.delete_agents
     }
     /// Consumes the builder and constructs a [`BatchDeleteAgentsInput`](crate::operation::batch_delete_agents::BatchDeleteAgentsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_delete_agents::BatchDeleteAgentsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::batch_delete_agents::BatchDeleteAgentsInput {
-            delete_agents: self.delete_agents,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_delete_agents::BatchDeleteAgentsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_delete_agents::BatchDeleteAgentsInput {
+                delete_agents: self.delete_agents
+                ,
+            }
+        )
     }
 }
+

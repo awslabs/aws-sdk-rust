@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSyncBlockerInput {
+pub struct UpdateSyncBlockerInput  {
     /// <p>The ID of the sync blocker to be updated.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The sync type of the sync blocker to be updated.</p>
@@ -12,21 +12,21 @@ pub struct UpdateSyncBlockerInput {
     /// <p>The reason for resolving the sync blocker.</p>
     pub resolved_reason: ::std::option::Option<::std::string::String>,
 }
-impl UpdateSyncBlockerInput {
+impl  UpdateSyncBlockerInput  {
     /// <p>The ID of the sync blocker to be updated.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The sync type of the sync blocker to be updated.</p>
-    pub fn sync_type(&self) -> ::std::option::Option<&crate::types::SyncConfigurationType> {
+    pub fn sync_type(&self) -> ::std::option::Option<& crate::types::SyncConfigurationType> {
         self.sync_type.as_ref()
     }
     /// <p>The name of the resource for the sync blocker to be updated.</p>
-    pub fn resource_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_name(&self) -> ::std::option::Option<& str> {
         self.resource_name.as_deref()
     }
     /// <p>The reason for resolving the sync blocker.</p>
-    pub fn resolved_reason(&self) -> ::std::option::Option<&str> {
+    pub fn resolved_reason(&self) -> ::std::option::Option<& str> {
         self.resolved_reason.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl UpdateSyncBlockerInputBuilder {
     }
     /// <p>The ID of the sync blocker to be updated.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the sync blocker to be updated.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl UpdateSyncBlockerInputBuilder {
     }
     /// <p>The sync type of the sync blocker to be updated.</p>
     pub fn set_sync_type(mut self, input: ::std::option::Option<crate::types::SyncConfigurationType>) -> Self {
-        self.sync_type = input;
-        self
+        self.sync_type = input; self
     }
     /// <p>The sync type of the sync blocker to be updated.</p>
     pub fn get_sync_type(&self) -> &::std::option::Option<crate::types::SyncConfigurationType> {
@@ -85,8 +83,7 @@ impl UpdateSyncBlockerInputBuilder {
     }
     /// <p>The name of the resource for the sync blocker to be updated.</p>
     pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_name = input;
-        self
+        self.resource_name = input; self
     }
     /// <p>The name of the resource for the sync blocker to be updated.</p>
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,22 +97,26 @@ impl UpdateSyncBlockerInputBuilder {
     }
     /// <p>The reason for resolving the sync blocker.</p>
     pub fn set_resolved_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resolved_reason = input;
-        self
+        self.resolved_reason = input; self
     }
     /// <p>The reason for resolving the sync blocker.</p>
     pub fn get_resolved_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.resolved_reason
     }
     /// Consumes the builder and constructs a [`UpdateSyncBlockerInput`](crate::operation::update_sync_blocker::UpdateSyncBlockerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_sync_blocker::UpdateSyncBlockerInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_sync_blocker::UpdateSyncBlockerInput {
-            id: self.id,
-            sync_type: self.sync_type,
-            resource_name: self.resource_name,
-            resolved_reason: self.resolved_reason,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_sync_blocker::UpdateSyncBlockerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_sync_blocker::UpdateSyncBlockerInput {
+                id: self.id
+                ,
+                sync_type: self.sync_type
+                ,
+                resource_name: self.resource_name
+                ,
+                resolved_reason: self.resolved_reason
+                ,
+            }
+        )
     }
 }
+

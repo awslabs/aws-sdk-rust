@@ -3,28 +3,28 @@
 /// <p>Contains the parameters for DisableAvailabilityZonesForLoadBalancer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisableAvailabilityZonesForLoadBalancerInput {
+pub struct DisableAvailabilityZonesForLoadBalancerInput  {
     /// <p>The name of the load balancer.</p>
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zones.</p>
-    pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub availability_zones: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DisableAvailabilityZonesForLoadBalancerInput {
+impl  DisableAvailabilityZonesForLoadBalancerInput  {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> ::std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> ::std::option::Option<& str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The Availability Zones.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
-    pub fn availability_zones(&self) -> &[::std::string::String] {
-        self.availability_zones.as_deref().unwrap_or_default()
+    pub fn availability_zones(&self) -> & [::std::string::String] {
+        self.availability_zones.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DisableAvailabilityZonesForLoadBalancerInput {
     /// Creates a new builder-style object to manufacture [`DisableAvailabilityZonesForLoadBalancerInput`](crate::operation::disable_availability_zones_for_load_balancer::DisableAvailabilityZonesForLoadBalancerInput).
-    pub fn builder() -> crate::operation::disable_availability_zones_for_load_balancer::builders::DisableAvailabilityZonesForLoadBalancerInputBuilder
-    {
+    pub fn builder() -> crate::operation::disable_availability_zones_for_load_balancer::builders::DisableAvailabilityZonesForLoadBalancerInputBuilder {
         crate::operation::disable_availability_zones_for_load_balancer::builders::DisableAvailabilityZonesForLoadBalancerInputBuilder::default()
     }
 }
@@ -34,7 +34,7 @@ impl DisableAvailabilityZonesForLoadBalancerInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableAvailabilityZonesForLoadBalancerInputBuilder {
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
-    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DisableAvailabilityZonesForLoadBalancerInputBuilder {
     /// <p>The name of the load balancer.</p>
@@ -45,8 +45,7 @@ impl DisableAvailabilityZonesForLoadBalancerInputBuilder {
     }
     /// <p>The name of the load balancer.</p>
     pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.load_balancer_name = input;
-        self
+        self.load_balancer_name = input; self
     }
     /// <p>The name of the load balancer.</p>
     pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,31 +58,28 @@ impl DisableAvailabilityZonesForLoadBalancerInputBuilder {
     /// <p>The Availability Zones.</p>
     pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
-        v.push(input.into());
-        self.availability_zones = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.availability_zones = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Availability Zones.</p>
-    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.availability_zones = input;
-        self
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.availability_zones = input; self
     }
     /// <p>The Availability Zones.</p>
-    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.availability_zones
     }
     /// Consumes the builder and constructs a [`DisableAvailabilityZonesForLoadBalancerInput`](crate::operation::disable_availability_zones_for_load_balancer::DisableAvailabilityZonesForLoadBalancerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disable_availability_zones_for_load_balancer::DisableAvailabilityZonesForLoadBalancerInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disable_availability_zones_for_load_balancer::DisableAvailabilityZonesForLoadBalancerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disable_availability_zones_for_load_balancer::DisableAvailabilityZonesForLoadBalancerInput {
-                load_balancer_name: self.load_balancer_name,
-                availability_zones: self.availability_zones,
-            },
+                load_balancer_name: self.load_balancer_name
+                ,
+                availability_zones: self.availability_zones
+                ,
+            }
         )
     }
 }
+

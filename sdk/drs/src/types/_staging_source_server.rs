@@ -3,29 +3,29 @@
 /// <p>Source server in staging account that extended source server connected to.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct StagingSourceServer {
+pub struct StagingSourceServer  {
     /// <p>Hostname of staging source server.</p>
     pub hostname: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the source server.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags associated with the staging source server.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl StagingSourceServer {
+impl  StagingSourceServer  {
     /// <p>Hostname of staging source server.</p>
-    pub fn hostname(&self) -> ::std::option::Option<&str> {
+    pub fn hostname(&self) -> ::std::option::Option<& str> {
         self.hostname.as_deref()
     }
     /// <p>The ARN of the source server.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>A list of tags associated with the staging source server.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl ::std::fmt::Debug for StagingSourceServer {
+impl  ::std::fmt::Debug for StagingSourceServer  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StagingSourceServer");
         formatter.field("hostname", &self.hostname);
@@ -47,7 +47,7 @@ impl StagingSourceServer {
 pub struct StagingSourceServerBuilder {
     pub(crate) hostname: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl StagingSourceServerBuilder {
     /// <p>Hostname of staging source server.</p>
@@ -57,8 +57,7 @@ impl StagingSourceServerBuilder {
     }
     /// <p>Hostname of staging source server.</p>
     pub fn set_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hostname = input;
-        self
+        self.hostname = input; self
     }
     /// <p>Hostname of staging source server.</p>
     pub fn get_hostname(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl StagingSourceServerBuilder {
     }
     /// <p>The ARN of the source server.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the source server.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,25 +83,27 @@ impl StagingSourceServerBuilder {
     /// <p>A list of tags associated with the staging source server.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of tags associated with the staging source server.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags associated with the staging source server.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`StagingSourceServer`](crate::types::StagingSourceServer).
     pub fn build(self) -> crate::types::StagingSourceServer {
         crate::types::StagingSourceServer {
-            hostname: self.hostname,
-            arn: self.arn,
-            tags: self.tags,
+            hostname: self.hostname
+            ,
+            arn: self.arn
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
@@ -116,3 +116,4 @@ impl ::std::fmt::Debug for StagingSourceServerBuilder {
         formatter.finish()
     }
 }
+

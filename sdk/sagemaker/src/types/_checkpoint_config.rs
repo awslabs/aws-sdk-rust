@@ -3,19 +3,19 @@
 /// <p>Contains information about the output location for managed spot training checkpoint data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CheckpointConfig {
+pub struct CheckpointConfig  {
     /// <p>Identifies the S3 path where you want SageMaker to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
     pub s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) The local directory where checkpoints are written. The default directory is <code>/opt/ml/checkpoints/</code>.</p>
     pub local_path: ::std::option::Option<::std::string::String>,
 }
-impl CheckpointConfig {
+impl  CheckpointConfig  {
     /// <p>Identifies the S3 path where you want SageMaker to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
-    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn s3_uri(&self) -> ::std::option::Option<& str> {
         self.s3_uri.as_deref()
     }
     /// <p>(Optional) The local directory where checkpoints are written. The default directory is <code>/opt/ml/checkpoints/</code>.</p>
-    pub fn local_path(&self) -> ::std::option::Option<&str> {
+    pub fn local_path(&self) -> ::std::option::Option<& str> {
         self.local_path.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl CheckpointConfigBuilder {
     }
     /// <p>Identifies the S3 path where you want SageMaker to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
     }
     /// <p>Identifies the S3 path where you want SageMaker to store checkpoints. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
     pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl CheckpointConfigBuilder {
     }
     /// <p>(Optional) The local directory where checkpoints are written. The default directory is <code>/opt/ml/checkpoints/</code>.</p>
     pub fn set_local_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.local_path = input;
-        self
+        self.local_path = input; self
     }
     /// <p>(Optional) The local directory where checkpoints are written. The default directory is <code>/opt/ml/checkpoints/</code>.</p>
     pub fn get_local_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,11 @@ impl CheckpointConfigBuilder {
     /// Consumes the builder and constructs a [`CheckpointConfig`](crate::types::CheckpointConfig).
     pub fn build(self) -> crate::types::CheckpointConfig {
         crate::types::CheckpointConfig {
-            s3_uri: self.s3_uri,
-            local_path: self.local_path,
+            s3_uri: self.s3_uri
+            ,
+            local_path: self.local_path
+            ,
         }
     }
 }
+

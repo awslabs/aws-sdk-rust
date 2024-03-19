@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDataEndpointOutput {
+pub struct GetDataEndpointOutput  {
     /// <p>The endpoint value. To read data from the stream or to write data to it, specify this endpoint in your application.</p>
     pub data_endpoint: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetDataEndpointOutput {
+impl  GetDataEndpointOutput  {
     /// <p>The endpoint value. To read data from the stream or to write data to it, specify this endpoint in your application.</p>
-    pub fn data_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn data_endpoint(&self) -> ::std::option::Option<& str> {
         self.data_endpoint.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDataEndpointOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDataEndpointOutput {
     /// Creates a new builder-style object to manufacture [`GetDataEndpointOutput`](crate::operation::get_data_endpoint::GetDataEndpointOutput).
     pub fn builder() -> crate::operation::get_data_endpoint::builders::GetDataEndpointOutputBuilder {
@@ -40,27 +40,28 @@ impl GetDataEndpointOutputBuilder {
     }
     /// <p>The endpoint value. To read data from the stream or to write data to it, specify this endpoint in your application.</p>
     pub fn set_data_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_endpoint = input;
-        self
+        self.data_endpoint = input; self
     }
     /// <p>The endpoint value. To read data from the stream or to write data to it, specify this endpoint in your application.</p>
     pub fn get_data_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_endpoint
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDataEndpointOutput`](crate::operation::get_data_endpoint::GetDataEndpointOutput).
     pub fn build(self) -> crate::operation::get_data_endpoint::GetDataEndpointOutput {
         crate::operation::get_data_endpoint::GetDataEndpointOutput {
-            data_endpoint: self.data_endpoint,
+            data_endpoint: self.data_endpoint
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

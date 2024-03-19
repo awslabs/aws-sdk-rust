@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateTrustStoreInput {
+pub struct AssociateTrustStoreInput  {
     /// <p>The ARN of the web portal.</p>
     pub portal_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the trust store.</p>
     pub trust_store_arn: ::std::option::Option<::std::string::String>,
 }
-impl AssociateTrustStoreInput {
+impl  AssociateTrustStoreInput  {
     /// <p>The ARN of the web portal.</p>
-    pub fn portal_arn(&self) -> ::std::option::Option<&str> {
+    pub fn portal_arn(&self) -> ::std::option::Option<& str> {
         self.portal_arn.as_deref()
     }
     /// <p>The ARN of the trust store.</p>
-    pub fn trust_store_arn(&self) -> ::std::option::Option<&str> {
+    pub fn trust_store_arn(&self) -> ::std::option::Option<& str> {
         self.trust_store_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AssociateTrustStoreInputBuilder {
     }
     /// <p>The ARN of the web portal.</p>
     pub fn set_portal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.portal_arn = input;
-        self
+        self.portal_arn = input; self
     }
     /// <p>The ARN of the web portal.</p>
     pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl AssociateTrustStoreInputBuilder {
     }
     /// <p>The ARN of the trust store.</p>
     pub fn set_trust_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trust_store_arn = input;
-        self
+        self.trust_store_arn = input; self
     }
     /// <p>The ARN of the trust store.</p>
     pub fn get_trust_store_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.trust_store_arn
     }
     /// Consumes the builder and constructs a [`AssociateTrustStoreInput`](crate::operation::associate_trust_store::AssociateTrustStoreInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::associate_trust_store::AssociateTrustStoreInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::associate_trust_store::AssociateTrustStoreInput {
-            portal_arn: self.portal_arn,
-            trust_store_arn: self.trust_store_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_trust_store::AssociateTrustStoreInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_trust_store::AssociateTrustStoreInput {
+                portal_arn: self.portal_arn
+                ,
+                trust_store_arn: self.trust_store_arn
+                ,
+            }
+        )
     }
 }
+

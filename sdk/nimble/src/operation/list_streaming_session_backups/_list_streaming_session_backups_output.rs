@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListStreamingSessionBackupsOutput {
+pub struct ListStreamingSessionBackupsOutput  {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the streaming session backups.</p>
-    pub streaming_session_backups: ::std::option::Option<::std::vec::Vec<crate::types::StreamingSessionBackup>>,
+    pub streaming_session_backups: ::std::option::Option<::std::vec::Vec::<crate::types::StreamingSessionBackup>>,
     _request_id: Option<String>,
 }
-impl ListStreamingSessionBackupsOutput {
+impl  ListStreamingSessionBackupsOutput  {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Information about the streaming session backups.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.streaming_session_backups.is_none()`.
-    pub fn streaming_session_backups(&self) -> &[crate::types::StreamingSessionBackup] {
-        self.streaming_session_backups.as_deref().unwrap_or_default()
+    pub fn streaming_session_backups(&self) -> & [crate::types::StreamingSessionBackup] {
+        self.streaming_session_backups.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListStreamingSessionBackupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListStreamingSessionBackupsOutput {
     /// Creates a new builder-style object to manufacture [`ListStreamingSessionBackupsOutput`](crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsOutput).
     pub fn builder() -> crate::operation::list_streaming_session_backups::builders::ListStreamingSessionBackupsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListStreamingSessionBackupsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStreamingSessionBackupsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) streaming_session_backups: ::std::option::Option<::std::vec::Vec<crate::types::StreamingSessionBackup>>,
+    pub(crate) streaming_session_backups: ::std::option::Option<::std::vec::Vec::<crate::types::StreamingSessionBackup>>,
     _request_id: Option<String>,
 }
 impl ListStreamingSessionBackupsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListStreamingSessionBackupsOutputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListStreamingSessionBackupsOutputBuilder {
     /// <p>Information about the streaming session backups.</p>
     pub fn streaming_session_backups(mut self, input: crate::types::StreamingSessionBackup) -> Self {
         let mut v = self.streaming_session_backups.unwrap_or_default();
-        v.push(input);
-        self.streaming_session_backups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.streaming_session_backups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the streaming session backups.</p>
-    pub fn set_streaming_session_backups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StreamingSessionBackup>>) -> Self {
-        self.streaming_session_backups = input;
-        self
+    pub fn set_streaming_session_backups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StreamingSessionBackup>>) -> Self {
+        self.streaming_session_backups = input; self
     }
     /// <p>Information about the streaming session backups.</p>
-    pub fn get_streaming_session_backups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamingSessionBackup>> {
+    pub fn get_streaming_session_backups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StreamingSessionBackup>> {
         &self.streaming_session_backups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListStreamingSessionBackupsOutput`](crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsOutput).
     pub fn build(self) -> crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsOutput {
         crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsOutput {
-            next_token: self.next_token,
-            streaming_session_backups: self.streaming_session_backups,
+            next_token: self.next_token
+            ,
+            streaming_session_backups: self.streaming_session_backups
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

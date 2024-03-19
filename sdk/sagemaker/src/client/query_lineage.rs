@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`QueryLineage`](crate::operation::query_lineage::builders::QueryLineageFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::query_lineage::builders::QueryLineageFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`start_arns(impl Into<String>)`](crate::operation::query_lineage::builders::QueryLineageFluentBuilder::start_arns) / [`set_start_arns(Option<Vec::<String>>)`](crate::operation::query_lineage::builders::QueryLineageFluentBuilder::set_start_arns):<br>required: **false**<br><p>A list of resource Amazon Resource Name (ARN) that represent the starting point for your lineage query.</p><br>
     ///   - [`direction(Direction)`](crate::operation::query_lineage::builders::QueryLineageFluentBuilder::direction) / [`set_direction(Option<Direction>)`](crate::operation::query_lineage::builders::QueryLineageFluentBuilder::set_direction):<br>required: **false**<br><p>Associations between lineage entities have a direction. This parameter determines the direction from the StartArn(s) that the query traverses.</p><br>
     ///   - [`include_edges(bool)`](crate::operation::query_lineage::builders::QueryLineageFluentBuilder::include_edges) / [`set_include_edges(Option<bool>)`](crate::operation::query_lineage::builders::QueryLineageFluentBuilder::set_include_edges):<br>required: **false**<br><p>Setting this value to <code>True</code> retrieves not only the entities of interest but also the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.</p><br>
@@ -11,12 +11,13 @@ impl super::Client {
     ///   - [`max_depth(i32)`](crate::operation::query_lineage::builders::QueryLineageFluentBuilder::max_depth) / [`set_max_depth(Option<i32>)`](crate::operation::query_lineage::builders::QueryLineageFluentBuilder::set_max_depth):<br>required: **false**<br><p>The maximum depth in lineage relationships from the <code>StartArns</code> that are traversed. Depth is a measure of the number of <code>Associations</code> from the <code>StartArn</code> entity to the matched results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::query_lineage::builders::QueryLineageFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::query_lineage::builders::QueryLineageFluentBuilder::set_max_results):<br>required: **false**<br><p>Limits the number of vertices in the results. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::query_lineage::builders::QueryLineageFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::query_lineage::builders::QueryLineageFluentBuilder::set_next_token):<br>required: **false**<br><p>Limits the number of vertices in the request. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p><br>
-    /// - On success, responds with [`QueryLineageOutput`](crate::operation::query_lineage::QueryLineageOutput) with field(s):
+                            /// - On success, responds with [`QueryLineageOutput`](crate::operation::query_lineage::QueryLineageOutput) with field(s):
     ///   - [`vertices(Option<Vec::<Vertex>>)`](crate::operation::query_lineage::QueryLineageOutput::vertices): <p>A list of vertices connected to the start entity(ies) in the lineage graph.</p>
     ///   - [`edges(Option<Vec::<Edge>>)`](crate::operation::query_lineage::QueryLineageOutput::edges): <p>A list of edges that connect vertices in the response.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::query_lineage::QueryLineageOutput::next_token): <p>Limits the number of vertices in the response. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
-    /// - On failure, responds with [`SdkError<QueryLineageError>`](crate::operation::query_lineage::QueryLineageError)
+                            /// - On failure, responds with [`SdkError<QueryLineageError>`](crate::operation::query_lineage::QueryLineageError)
     pub fn query_lineage(&self) -> crate::operation::query_lineage::builders::QueryLineageFluentBuilder {
-        crate::operation::query_lineage::builders::QueryLineageFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::query_lineage::builders::QueryLineageFluentBuilder::new(self.handle.clone())
+                            }
 }
+

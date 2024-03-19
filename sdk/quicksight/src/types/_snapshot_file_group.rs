@@ -3,16 +3,17 @@
 /// <p>A structure that contains the information on the snapshot files.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SnapshotFileGroup {
+pub struct SnapshotFileGroup  {
     /// <p>A list of <code>SnapshotFile</code> objects that contain the information on the snapshot files that need to be generated. This structure can hold 1 configuration at a time.</p>
-    pub files: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotFile>>,
+    pub files: ::std::option::Option<::std::vec::Vec::<crate::types::SnapshotFile>>,
 }
-impl SnapshotFileGroup {
+impl  SnapshotFileGroup  {
     /// <p>A list of <code>SnapshotFile</code> objects that contain the information on the snapshot files that need to be generated. This structure can hold 1 configuration at a time.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.files.is_none()`.
-    pub fn files(&self) -> &[crate::types::SnapshotFile] {
-        self.files.as_deref().unwrap_or_default()
+    pub fn files(&self) -> & [crate::types::SnapshotFile] {
+        self.files.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SnapshotFileGroup {
@@ -26,7 +27,7 @@ impl SnapshotFileGroup {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnapshotFileGroupBuilder {
-    pub(crate) files: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotFile>>,
+    pub(crate) files: ::std::option::Option<::std::vec::Vec::<crate::types::SnapshotFile>>,
 }
 impl SnapshotFileGroupBuilder {
     /// Appends an item to `files`.
@@ -36,21 +37,24 @@ impl SnapshotFileGroupBuilder {
     /// <p>A list of <code>SnapshotFile</code> objects that contain the information on the snapshot files that need to be generated. This structure can hold 1 configuration at a time.</p>
     pub fn files(mut self, input: crate::types::SnapshotFile) -> Self {
         let mut v = self.files.unwrap_or_default();
-        v.push(input);
-        self.files = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.files = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>SnapshotFile</code> objects that contain the information on the snapshot files that need to be generated. This structure can hold 1 configuration at a time.</p>
-    pub fn set_files(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotFile>>) -> Self {
-        self.files = input;
-        self
+    pub fn set_files(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SnapshotFile>>) -> Self {
+        self.files = input; self
     }
     /// <p>A list of <code>SnapshotFile</code> objects that contain the information on the snapshot files that need to be generated. This structure can hold 1 configuration at a time.</p>
-    pub fn get_files(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotFile>> {
+    pub fn get_files(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SnapshotFile>> {
         &self.files
     }
     /// Consumes the builder and constructs a [`SnapshotFileGroup`](crate::types::SnapshotFileGroup).
     pub fn build(self) -> crate::types::SnapshotFileGroup {
-        crate::types::SnapshotFileGroup { files: self.files }
+        crate::types::SnapshotFileGroup {
+            files: self.files
+            ,
+        }
     }
 }
+

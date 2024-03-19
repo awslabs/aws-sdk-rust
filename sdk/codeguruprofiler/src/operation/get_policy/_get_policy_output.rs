@@ -3,30 +3,28 @@
 /// <p>The structure representing the <code>getPolicyResponse</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPolicyOutput {
+pub struct GetPolicyOutput  {
     /// <p>The JSON-formatted resource-based policy attached to the <code>ProfilingGroup</code>.</p>
     pub policy: ::std::string::String,
     /// <p>A unique identifier for the current revision of the returned policy.</p>
     pub revision_id: ::std::string::String,
     _request_id: Option<String>,
 }
-impl GetPolicyOutput {
+impl  GetPolicyOutput  {
     /// <p>The JSON-formatted resource-based policy attached to the <code>ProfilingGroup</code>.</p>
-    pub fn policy(&self) -> &str {
-        use std::ops::Deref;
-        self.policy.deref()
+    pub fn policy(&self) -> & str {
+        use std::ops::Deref; self.policy.deref()
     }
     /// <p>A unique identifier for the current revision of the returned policy.</p>
-    pub fn revision_id(&self) -> &str {
-        use std::ops::Deref;
-        self.revision_id.deref()
+    pub fn revision_id(&self) -> & str {
+        use std::ops::Deref; self.revision_id.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetPolicyOutput`](crate::operation::get_policy::GetPolicyOutput).
     pub fn builder() -> crate::operation::get_policy::builders::GetPolicyOutputBuilder {
@@ -51,8 +49,7 @@ impl GetPolicyOutputBuilder {
     }
     /// <p>The JSON-formatted resource-based policy attached to the <code>ProfilingGroup</code>.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>The JSON-formatted resource-based policy attached to the <code>ProfilingGroup</code>.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,41 +63,41 @@ impl GetPolicyOutputBuilder {
     }
     /// <p>A unique identifier for the current revision of the returned policy.</p>
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
     }
     /// <p>A unique identifier for the current revision of the returned policy.</p>
     pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.revision_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetPolicyOutput`](crate::operation::get_policy::GetPolicyOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`policy`](crate::operation::get_policy::builders::GetPolicyOutputBuilder::policy)
     /// - [`revision_id`](crate::operation::get_policy::builders::GetPolicyOutputBuilder::revision_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_policy::GetPolicyOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_policy::GetPolicyOutput {
-            policy: self.policy.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy",
-                    "policy was not specified but it is required when building GetPolicyOutput",
-                )
-            })?,
-            revision_id: self.revision_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "revision_id",
-                    "revision_id was not specified but it is required when building GetPolicyOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_policy::GetPolicyOutput {
+                policy: self.policy
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy", "policy was not specified but it is required when building GetPolicyOutput")
+                    )?
+                ,
+                revision_id: self.revision_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("revision_id", "revision_id was not specified but it is required when building GetPolicyOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

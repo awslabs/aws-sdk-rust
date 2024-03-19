@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAuditTasksInput {
+pub struct ListAuditTasksInput  {
     /// <p>The beginning of the time period. Audit information is retained for a limited time (90 days). Requesting a start time prior to what is retained results in an "InvalidRequestException".</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end of the time period.</p>
@@ -16,25 +16,25 @@ pub struct ListAuditTasksInput {
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListAuditTasksInput {
+impl  ListAuditTasksInput  {
     /// <p>The beginning of the time period. Audit information is retained for a limited time (90 days). Requesting a start time prior to what is retained results in an "InvalidRequestException".</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end of the time period.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>A filter to limit the output to the specified type of audit: can be one of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED__AUDIT_TASK".</p>
-    pub fn task_type(&self) -> ::std::option::Option<&crate::types::AuditTaskType> {
+    pub fn task_type(&self) -> ::std::option::Option<& crate::types::AuditTaskType> {
         self.task_type.as_ref()
     }
     /// <p>A filter to limit the output to audits with the specified completion status: can be one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
-    pub fn task_status(&self) -> ::std::option::Option<&crate::types::AuditTaskStatus> {
+    pub fn task_status(&self) -> ::std::option::Option<& crate::types::AuditTaskStatus> {
         self.task_status.as_ref()
     }
     /// <p>The token for the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
@@ -69,8 +69,7 @@ impl ListAuditTasksInputBuilder {
     }
     /// <p>The beginning of the time period. Audit information is retained for a limited time (90 days). Requesting a start time prior to what is retained results in an "InvalidRequestException".</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The beginning of the time period. Audit information is retained for a limited time (90 days). Requesting a start time prior to what is retained results in an "InvalidRequestException".</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -84,8 +83,7 @@ impl ListAuditTasksInputBuilder {
     }
     /// <p>The end of the time period.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The end of the time period.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -98,8 +96,7 @@ impl ListAuditTasksInputBuilder {
     }
     /// <p>A filter to limit the output to the specified type of audit: can be one of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED__AUDIT_TASK".</p>
     pub fn set_task_type(mut self, input: ::std::option::Option<crate::types::AuditTaskType>) -> Self {
-        self.task_type = input;
-        self
+        self.task_type = input; self
     }
     /// <p>A filter to limit the output to the specified type of audit: can be one of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED__AUDIT_TASK".</p>
     pub fn get_task_type(&self) -> &::std::option::Option<crate::types::AuditTaskType> {
@@ -112,8 +109,7 @@ impl ListAuditTasksInputBuilder {
     }
     /// <p>A filter to limit the output to audits with the specified completion status: can be one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
     pub fn set_task_status(mut self, input: ::std::option::Option<crate::types::AuditTaskStatus>) -> Self {
-        self.task_status = input;
-        self
+        self.task_status = input; self
     }
     /// <p>A filter to limit the output to audits with the specified completion status: can be one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
     pub fn get_task_status(&self) -> &::std::option::Option<crate::types::AuditTaskStatus> {
@@ -126,8 +122,7 @@ impl ListAuditTasksInputBuilder {
     }
     /// <p>The token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,24 +135,30 @@ impl ListAuditTasksInputBuilder {
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAuditTasksInput`](crate::operation::list_audit_tasks::ListAuditTasksInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_audit_tasks::ListAuditTasksInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_audit_tasks::ListAuditTasksInput {
-            start_time: self.start_time,
-            end_time: self.end_time,
-            task_type: self.task_type,
-            task_status: self.task_status,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_audit_tasks::ListAuditTasksInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_audit_tasks::ListAuditTasksInput {
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                task_type: self.task_type
+                ,
+                task_status: self.task_status
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

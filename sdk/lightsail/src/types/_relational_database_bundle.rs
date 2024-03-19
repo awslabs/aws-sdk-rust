@@ -3,7 +3,7 @@
 /// <p>Describes a database bundle. A bundle describes the performance specifications of the database.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RelationalDatabaseBundle {
+pub struct RelationalDatabaseBundle  {
     /// <p>The ID for the database bundle.</p>
     pub bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>The name for the database bundle.</p>
@@ -23,13 +23,13 @@ pub struct RelationalDatabaseBundle {
     /// <p>A Boolean value indicating whether the database bundle is active.</p>
     pub is_active: ::std::option::Option<bool>,
 }
-impl RelationalDatabaseBundle {
+impl  RelationalDatabaseBundle  {
     /// <p>The ID for the database bundle.</p>
-    pub fn bundle_id(&self) -> ::std::option::Option<&str> {
+    pub fn bundle_id(&self) -> ::std::option::Option<& str> {
         self.bundle_id.as_deref()
     }
     /// <p>The name for the database bundle.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The cost of the database bundle in US currency.</p>
@@ -90,8 +90,7 @@ impl RelationalDatabaseBundleBuilder {
     }
     /// <p>The ID for the database bundle.</p>
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bundle_id = input;
-        self
+        self.bundle_id = input; self
     }
     /// <p>The ID for the database bundle.</p>
     pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl RelationalDatabaseBundleBuilder {
     }
     /// <p>The name for the database bundle.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name for the database bundle.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +116,7 @@ impl RelationalDatabaseBundleBuilder {
     }
     /// <p>The cost of the database bundle in US currency.</p>
     pub fn set_price(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.price = input;
-        self
+        self.price = input; self
     }
     /// <p>The cost of the database bundle in US currency.</p>
     pub fn get_price(&self) -> &::std::option::Option<f32> {
@@ -132,8 +129,7 @@ impl RelationalDatabaseBundleBuilder {
     }
     /// <p>The amount of RAM in GB (for example, <code>2.0</code>) for the database bundle.</p>
     pub fn set_ram_size_in_gb(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.ram_size_in_gb = input;
-        self
+        self.ram_size_in_gb = input; self
     }
     /// <p>The amount of RAM in GB (for example, <code>2.0</code>) for the database bundle.</p>
     pub fn get_ram_size_in_gb(&self) -> &::std::option::Option<f32> {
@@ -146,8 +142,7 @@ impl RelationalDatabaseBundleBuilder {
     }
     /// <p>The size of the disk for the database bundle.</p>
     pub fn set_disk_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.disk_size_in_gb = input;
-        self
+        self.disk_size_in_gb = input; self
     }
     /// <p>The size of the disk for the database bundle.</p>
     pub fn get_disk_size_in_gb(&self) -> &::std::option::Option<i32> {
@@ -160,8 +155,7 @@ impl RelationalDatabaseBundleBuilder {
     }
     /// <p>The data transfer rate per month in GB for the database bundle.</p>
     pub fn set_transfer_per_month_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.transfer_per_month_in_gb = input;
-        self
+        self.transfer_per_month_in_gb = input; self
     }
     /// <p>The data transfer rate per month in GB for the database bundle.</p>
     pub fn get_transfer_per_month_in_gb(&self) -> &::std::option::Option<i32> {
@@ -174,8 +168,7 @@ impl RelationalDatabaseBundleBuilder {
     }
     /// <p>The number of virtual CPUs (vCPUs) for the database bundle.</p>
     pub fn set_cpu_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.cpu_count = input;
-        self
+        self.cpu_count = input; self
     }
     /// <p>The number of virtual CPUs (vCPUs) for the database bundle.</p>
     pub fn get_cpu_count(&self) -> &::std::option::Option<i32> {
@@ -188,8 +181,7 @@ impl RelationalDatabaseBundleBuilder {
     }
     /// <p>A Boolean value indicating whether the database bundle is encrypted.</p>
     pub fn set_is_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_encrypted = input;
-        self
+        self.is_encrypted = input; self
     }
     /// <p>A Boolean value indicating whether the database bundle is encrypted.</p>
     pub fn get_is_encrypted(&self) -> &::std::option::Option<bool> {
@@ -202,8 +194,7 @@ impl RelationalDatabaseBundleBuilder {
     }
     /// <p>A Boolean value indicating whether the database bundle is active.</p>
     pub fn set_is_active(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_active = input;
-        self
+        self.is_active = input; self
     }
     /// <p>A Boolean value indicating whether the database bundle is active.</p>
     pub fn get_is_active(&self) -> &::std::option::Option<bool> {
@@ -212,15 +203,25 @@ impl RelationalDatabaseBundleBuilder {
     /// Consumes the builder and constructs a [`RelationalDatabaseBundle`](crate::types::RelationalDatabaseBundle).
     pub fn build(self) -> crate::types::RelationalDatabaseBundle {
         crate::types::RelationalDatabaseBundle {
-            bundle_id: self.bundle_id,
-            name: self.name,
-            price: self.price,
-            ram_size_in_gb: self.ram_size_in_gb,
-            disk_size_in_gb: self.disk_size_in_gb,
-            transfer_per_month_in_gb: self.transfer_per_month_in_gb,
-            cpu_count: self.cpu_count,
-            is_encrypted: self.is_encrypted,
-            is_active: self.is_active,
+            bundle_id: self.bundle_id
+            ,
+            name: self.name
+            ,
+            price: self.price
+            ,
+            ram_size_in_gb: self.ram_size_in_gb
+            ,
+            disk_size_in_gb: self.disk_size_in_gb
+            ,
+            transfer_per_month_in_gb: self.transfer_per_month_in_gb
+            ,
+            cpu_count: self.cpu_count
+            ,
+            is_encrypted: self.is_encrypted
+            ,
+            is_active: self.is_active
+            ,
         }
     }
 }
+

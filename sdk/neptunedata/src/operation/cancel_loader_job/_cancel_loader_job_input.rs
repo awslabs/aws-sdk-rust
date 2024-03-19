@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelLoaderJobInput {
+pub struct CancelLoaderJobInput  {
     /// <p>The ID of the load job to be deleted.</p>
     pub load_id: ::std::option::Option<::std::string::String>,
 }
-impl CancelLoaderJobInput {
+impl  CancelLoaderJobInput  {
     /// <p>The ID of the load job to be deleted.</p>
-    pub fn load_id(&self) -> ::std::option::Option<&str> {
+    pub fn load_id(&self) -> ::std::option::Option<& str> {
         self.load_id.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl CancelLoaderJobInputBuilder {
     }
     /// <p>The ID of the load job to be deleted.</p>
     pub fn set_load_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.load_id = input;
-        self
+        self.load_id = input; self
     }
     /// <p>The ID of the load job to be deleted.</p>
     pub fn get_load_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.load_id
     }
     /// Consumes the builder and constructs a [`CancelLoaderJobInput`](crate::operation::cancel_loader_job::CancelLoaderJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::cancel_loader_job::CancelLoaderJobInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::cancel_loader_job::CancelLoaderJobInput { load_id: self.load_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_loader_job::CancelLoaderJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_loader_job::CancelLoaderJobInput {
+                load_id: self.load_id
+                ,
+            }
+        )
     }
 }
+

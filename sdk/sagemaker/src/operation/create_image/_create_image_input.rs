@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateImageInput {
+pub struct CreateImageInput  {
     /// <p>The description of the image.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the image. If not provided, <code>ImageName</code> is displayed.</p>
@@ -12,30 +12,31 @@ pub struct CreateImageInput {
     /// <p>The ARN of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to apply to the image.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateImageInput {
+impl  CreateImageInput  {
     /// <p>The description of the image.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The display name of the image. If not provided, <code>ImageName</code> is displayed.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The name of the image. Must be unique to your account.</p>
-    pub fn image_name(&self) -> ::std::option::Option<&str> {
+    pub fn image_name(&self) -> ::std::option::Option<& str> {
         self.image_name.as_deref()
     }
     /// <p>The ARN of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>A list of tags to apply to the image.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateImageInput {
@@ -53,7 +54,7 @@ pub struct CreateImageInputBuilder {
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) image_name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateImageInputBuilder {
     /// <p>The description of the image.</p>
@@ -63,8 +64,7 @@ impl CreateImageInputBuilder {
     }
     /// <p>The description of the image.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the image.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +77,7 @@ impl CreateImageInputBuilder {
     }
     /// <p>The display name of the image. If not provided, <code>ImageName</code> is displayed.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The display name of the image. If not provided, <code>ImageName</code> is displayed.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +91,7 @@ impl CreateImageInputBuilder {
     }
     /// <p>The name of the image. Must be unique to your account.</p>
     pub fn set_image_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_name = input;
-        self
+        self.image_name = input; self
     }
     /// <p>The name of the image. Must be unique to your account.</p>
     pub fn get_image_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +105,7 @@ impl CreateImageInputBuilder {
     }
     /// <p>The ARN of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,27 +118,34 @@ impl CreateImageInputBuilder {
     /// <p>A list of tags to apply to the image.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags to apply to the image.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags to apply to the image.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateImageInput`](crate::operation::create_image::CreateImageInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_image::CreateImageInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_image::CreateImageInput {
-            description: self.description,
-            display_name: self.display_name,
-            image_name: self.image_name,
-            role_arn: self.role_arn,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_image::CreateImageInput {
+                description: self.description
+                ,
+                display_name: self.display_name
+                ,
+                image_name: self.image_name
+                ,
+                role_arn: self.role_arn
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The connector-specific profile credentials required when using Salesforce Pardot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct PardotConnectorProfileCredentials {
+pub struct PardotConnectorProfileCredentials  {
     /// <p>The credentials used to access protected Salesforce Pardot resources.</p>
     pub access_token: ::std::option::Option<::std::string::String>,
     /// <p>The credentials used to acquire new access tokens.</p>
@@ -13,25 +13,25 @@ pub struct PardotConnectorProfileCredentials {
     /// <p>The secret manager ARN, which contains the client ID and client secret of the connected app.</p>
     pub client_credentials_arn: ::std::option::Option<::std::string::String>,
 }
-impl PardotConnectorProfileCredentials {
+impl  PardotConnectorProfileCredentials  {
     /// <p>The credentials used to access protected Salesforce Pardot resources.</p>
-    pub fn access_token(&self) -> ::std::option::Option<&str> {
+    pub fn access_token(&self) -> ::std::option::Option<& str> {
         self.access_token.as_deref()
     }
     /// <p>The credentials used to acquire new access tokens.</p>
-    pub fn refresh_token(&self) -> ::std::option::Option<&str> {
+    pub fn refresh_token(&self) -> ::std::option::Option<& str> {
         self.refresh_token.as_deref()
     }
     /// <p>Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack.</p>
-    pub fn o_auth_request(&self) -> ::std::option::Option<&crate::types::ConnectorOAuthRequest> {
+    pub fn o_auth_request(&self) -> ::std::option::Option<& crate::types::ConnectorOAuthRequest> {
         self.o_auth_request.as_ref()
     }
     /// <p>The secret manager ARN, which contains the client ID and client secret of the connected app.</p>
-    pub fn client_credentials_arn(&self) -> ::std::option::Option<&str> {
+    pub fn client_credentials_arn(&self) -> ::std::option::Option<& str> {
         self.client_credentials_arn.as_deref()
     }
 }
-impl ::std::fmt::Debug for PardotConnectorProfileCredentials {
+impl  ::std::fmt::Debug for PardotConnectorProfileCredentials  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PardotConnectorProfileCredentials");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
@@ -65,8 +65,7 @@ impl PardotConnectorProfileCredentialsBuilder {
     }
     /// <p>The credentials used to access protected Salesforce Pardot resources.</p>
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_token = input;
-        self
+        self.access_token = input; self
     }
     /// <p>The credentials used to access protected Salesforce Pardot resources.</p>
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl PardotConnectorProfileCredentialsBuilder {
     }
     /// <p>The credentials used to acquire new access tokens.</p>
     pub fn set_refresh_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.refresh_token = input;
-        self
+        self.refresh_token = input; self
     }
     /// <p>The credentials used to acquire new access tokens.</p>
     pub fn get_refresh_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +91,7 @@ impl PardotConnectorProfileCredentialsBuilder {
     }
     /// <p>Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack.</p>
     pub fn set_o_auth_request(mut self, input: ::std::option::Option<crate::types::ConnectorOAuthRequest>) -> Self {
-        self.o_auth_request = input;
-        self
+        self.o_auth_request = input; self
     }
     /// <p>Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack.</p>
     pub fn get_o_auth_request(&self) -> &::std::option::Option<crate::types::ConnectorOAuthRequest> {
@@ -107,8 +104,7 @@ impl PardotConnectorProfileCredentialsBuilder {
     }
     /// <p>The secret manager ARN, which contains the client ID and client secret of the connected app.</p>
     pub fn set_client_credentials_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_credentials_arn = input;
-        self
+        self.client_credentials_arn = input; self
     }
     /// <p>The secret manager ARN, which contains the client ID and client secret of the connected app.</p>
     pub fn get_client_credentials_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,10 +113,14 @@ impl PardotConnectorProfileCredentialsBuilder {
     /// Consumes the builder and constructs a [`PardotConnectorProfileCredentials`](crate::types::PardotConnectorProfileCredentials).
     pub fn build(self) -> crate::types::PardotConnectorProfileCredentials {
         crate::types::PardotConnectorProfileCredentials {
-            access_token: self.access_token,
-            refresh_token: self.refresh_token,
-            o_auth_request: self.o_auth_request,
-            client_credentials_arn: self.client_credentials_arn,
+            access_token: self.access_token
+            ,
+            refresh_token: self.refresh_token
+            ,
+            o_auth_request: self.o_auth_request
+            ,
+            client_credentials_arn: self.client_credentials_arn
+            ,
         }
     }
 }
@@ -134,3 +134,4 @@ impl ::std::fmt::Debug for PardotConnectorProfileCredentialsBuilder {
         formatter.finish()
     }
 }
+

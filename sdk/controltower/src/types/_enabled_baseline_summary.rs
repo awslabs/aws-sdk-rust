@@ -3,7 +3,7 @@
 /// <p>Returns a summary of information about an <code>EnabledBaseline</code> object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnabledBaselineSummary {
+pub struct EnabledBaselineSummary  {
     /// <p>The ARN of the <code>EnabledBaseline</code> resource</p>
     pub arn: ::std::string::String,
     /// <p>The specific baseline that is enabled as part of the <code>EnabledBaseline</code> resource.</p>
@@ -15,28 +15,25 @@ pub struct EnabledBaselineSummary {
     /// <p>The deployment summary of the enabled control.</p>
     pub status_summary: ::std::option::Option<crate::types::EnablementStatusSummary>,
 }
-impl EnabledBaselineSummary {
+impl  EnabledBaselineSummary  {
     /// <p>The ARN of the <code>EnabledBaseline</code> resource</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The specific baseline that is enabled as part of the <code>EnabledBaseline</code> resource.</p>
-    pub fn baseline_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.baseline_identifier.deref()
+    pub fn baseline_identifier(&self) -> & str {
+        use std::ops::Deref; self.baseline_identifier.deref()
     }
     /// <p>The enabled version of the baseline.</p>
-    pub fn baseline_version(&self) -> ::std::option::Option<&str> {
+    pub fn baseline_version(&self) -> ::std::option::Option<& str> {
         self.baseline_version.as_deref()
     }
     /// <p>The target upon which the baseline is enabled.</p>
-    pub fn target_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.target_identifier.deref()
+    pub fn target_identifier(&self) -> & str {
+        use std::ops::Deref; self.target_identifier.deref()
     }
     /// <p>The deployment summary of the enabled control.</p>
-    pub fn status_summary(&self) -> ::std::option::Option<&crate::types::EnablementStatusSummary> {
+    pub fn status_summary(&self) -> ::std::option::Option<& crate::types::EnablementStatusSummary> {
         self.status_summary.as_ref()
     }
 }
@@ -66,8 +63,7 @@ impl EnabledBaselineSummaryBuilder {
     }
     /// <p>The ARN of the <code>EnabledBaseline</code> resource</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the <code>EnabledBaseline</code> resource</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl EnabledBaselineSummaryBuilder {
     }
     /// <p>The specific baseline that is enabled as part of the <code>EnabledBaseline</code> resource.</p>
     pub fn set_baseline_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.baseline_identifier = input;
-        self
+        self.baseline_identifier = input; self
     }
     /// <p>The specific baseline that is enabled as part of the <code>EnabledBaseline</code> resource.</p>
     pub fn get_baseline_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +90,7 @@ impl EnabledBaselineSummaryBuilder {
     }
     /// <p>The enabled version of the baseline.</p>
     pub fn set_baseline_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.baseline_version = input;
-        self
+        self.baseline_version = input; self
     }
     /// <p>The enabled version of the baseline.</p>
     pub fn get_baseline_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +104,7 @@ impl EnabledBaselineSummaryBuilder {
     }
     /// <p>The target upon which the baseline is enabled.</p>
     pub fn set_target_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_identifier = input;
-        self
+        self.target_identifier = input; self
     }
     /// <p>The target upon which the baseline is enabled.</p>
     pub fn get_target_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +118,7 @@ impl EnabledBaselineSummaryBuilder {
     }
     /// <p>The deployment summary of the enabled control.</p>
     pub fn set_status_summary(mut self, input: ::std::option::Option<crate::types::EnablementStatusSummary>) -> Self {
-        self.status_summary = input;
-        self
+        self.status_summary = input; self
     }
     /// <p>The deployment summary of the enabled control.</p>
     pub fn get_status_summary(&self) -> &::std::option::Option<crate::types::EnablementStatusSummary> {
@@ -138,27 +130,29 @@ impl EnabledBaselineSummaryBuilder {
     /// - [`baseline_identifier`](crate::types::builders::EnabledBaselineSummaryBuilder::baseline_identifier)
     /// - [`target_identifier`](crate::types::builders::EnabledBaselineSummaryBuilder::target_identifier)
     pub fn build(self) -> ::std::result::Result<crate::types::EnabledBaselineSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EnabledBaselineSummary {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building EnabledBaselineSummary",
-                )
-            })?,
-            baseline_identifier: self.baseline_identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "baseline_identifier",
-                    "baseline_identifier was not specified but it is required when building EnabledBaselineSummary",
-                )
-            })?,
-            baseline_version: self.baseline_version,
-            target_identifier: self.target_identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "target_identifier",
-                    "target_identifier was not specified but it is required when building EnabledBaselineSummary",
-                )
-            })?,
-            status_summary: self.status_summary,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EnabledBaselineSummary {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building EnabledBaselineSummary")
+                    )?
+                ,
+                baseline_identifier: self.baseline_identifier
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("baseline_identifier", "baseline_identifier was not specified but it is required when building EnabledBaselineSummary")
+                    )?
+                ,
+                baseline_version: self.baseline_version
+                ,
+                target_identifier: self.target_identifier
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("target_identifier", "target_identifier was not specified but it is required when building EnabledBaselineSummary")
+                    )?
+                ,
+                status_summary: self.status_summary
+                ,
+            }
+        )
     }
 }
+

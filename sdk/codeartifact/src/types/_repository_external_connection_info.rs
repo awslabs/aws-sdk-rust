@@ -3,7 +3,7 @@
 /// <p>Contains information about the external connection of a repository.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RepositoryExternalConnectionInfo {
+pub struct RepositoryExternalConnectionInfo  {
     /// <p>The name of the external connection associated with a repository.</p>
     pub external_connection_name: ::std::option::Option<::std::string::String>,
     /// <p>The package format associated with a repository's external connection. The valid package formats are:</p>
@@ -21,9 +21,9 @@ pub struct RepositoryExternalConnectionInfo {
     /// <p>The status of the external connection of a repository. There is one valid value, <code>Available</code>.</p>
     pub status: ::std::option::Option<crate::types::ExternalConnectionStatus>,
 }
-impl RepositoryExternalConnectionInfo {
+impl  RepositoryExternalConnectionInfo  {
     /// <p>The name of the external connection associated with a repository.</p>
-    pub fn external_connection_name(&self) -> ::std::option::Option<&str> {
+    pub fn external_connection_name(&self) -> ::std::option::Option<& str> {
         self.external_connection_name.as_deref()
     }
     /// <p>The package format associated with a repository's external connection. The valid package formats are:</p>
@@ -37,11 +37,11 @@ impl RepositoryExternalConnectionInfo {
     /// <li>
     /// <p><code>nuget</code>: A NuGet package.</p></li>
     /// </ul>
-    pub fn package_format(&self) -> ::std::option::Option<&crate::types::PackageFormat> {
+    pub fn package_format(&self) -> ::std::option::Option<& crate::types::PackageFormat> {
         self.package_format.as_ref()
     }
     /// <p>The status of the external connection of a repository. There is one valid value, <code>Available</code>.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ExternalConnectionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ExternalConnectionStatus> {
         self.status.as_ref()
     }
 }
@@ -68,8 +68,7 @@ impl RepositoryExternalConnectionInfoBuilder {
     }
     /// <p>The name of the external connection associated with a repository.</p>
     pub fn set_external_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.external_connection_name = input;
-        self
+        self.external_connection_name = input; self
     }
     /// <p>The name of the external connection associated with a repository.</p>
     pub fn get_external_connection_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +101,7 @@ impl RepositoryExternalConnectionInfoBuilder {
     /// <p><code>nuget</code>: A NuGet package.</p></li>
     /// </ul>
     pub fn set_package_format(mut self, input: ::std::option::Option<crate::types::PackageFormat>) -> Self {
-        self.package_format = input;
-        self
+        self.package_format = input; self
     }
     /// <p>The package format associated with a repository's external connection. The valid package formats are:</p>
     /// <ul>
@@ -126,8 +124,7 @@ impl RepositoryExternalConnectionInfoBuilder {
     }
     /// <p>The status of the external connection of a repository. There is one valid value, <code>Available</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ExternalConnectionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the external connection of a repository. There is one valid value, <code>Available</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ExternalConnectionStatus> {
@@ -136,9 +133,13 @@ impl RepositoryExternalConnectionInfoBuilder {
     /// Consumes the builder and constructs a [`RepositoryExternalConnectionInfo`](crate::types::RepositoryExternalConnectionInfo).
     pub fn build(self) -> crate::types::RepositoryExternalConnectionInfo {
         crate::types::RepositoryExternalConnectionInfo {
-            external_connection_name: self.external_connection_name,
-            package_format: self.package_format,
-            status: self.status,
+            external_connection_name: self.external_connection_name
+            ,
+            package_format: self.package_format
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

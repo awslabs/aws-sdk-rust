@@ -3,13 +3,13 @@
 /// H265 Filter Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct H265FilterSettings {
+pub struct H265FilterSettings  {
     /// Temporal Filter Settings
     pub temporal_filter_settings: ::std::option::Option<crate::types::TemporalFilterSettings>,
 }
-impl H265FilterSettings {
+impl  H265FilterSettings  {
     /// Temporal Filter Settings
-    pub fn temporal_filter_settings(&self) -> ::std::option::Option<&crate::types::TemporalFilterSettings> {
+    pub fn temporal_filter_settings(&self) -> ::std::option::Option<& crate::types::TemporalFilterSettings> {
         self.temporal_filter_settings.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl H265FilterSettingsBuilder {
     }
     /// Temporal Filter Settings
     pub fn set_temporal_filter_settings(mut self, input: ::std::option::Option<crate::types::TemporalFilterSettings>) -> Self {
-        self.temporal_filter_settings = input;
-        self
+        self.temporal_filter_settings = input; self
     }
     /// Temporal Filter Settings
     pub fn get_temporal_filter_settings(&self) -> &::std::option::Option<crate::types::TemporalFilterSettings> {
@@ -44,7 +43,9 @@ impl H265FilterSettingsBuilder {
     /// Consumes the builder and constructs a [`H265FilterSettings`](crate::types::H265FilterSettings).
     pub fn build(self) -> crate::types::H265FilterSettings {
         crate::types::H265FilterSettings {
-            temporal_filter_settings: self.temporal_filter_settings,
+            temporal_filter_settings: self.temporal_filter_settings
+            ,
         }
     }
 }
+

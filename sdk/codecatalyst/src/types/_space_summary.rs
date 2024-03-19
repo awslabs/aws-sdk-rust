@@ -3,7 +3,7 @@
 /// <p>Information about an space.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SpaceSummary {
+pub struct SpaceSummary  {
     /// <p>The name of the space.</p>
     pub name: ::std::string::String,
     /// <p>The Amazon Web Services Region where the space exists.</p>
@@ -13,23 +13,21 @@ pub struct SpaceSummary {
     /// <p>The description of the space.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl SpaceSummary {
+impl  SpaceSummary  {
     /// <p>The name of the space.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The Amazon Web Services Region where the space exists.</p>
-    pub fn region_name(&self) -> &str {
-        use std::ops::Deref;
-        self.region_name.deref()
+    pub fn region_name(&self) -> & str {
+        use std::ops::Deref; self.region_name.deref()
     }
     /// <p>The friendly name of the space displayed to users.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The description of the space.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -58,8 +56,7 @@ impl SpaceSummaryBuilder {
     }
     /// <p>The name of the space.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the space.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +70,7 @@ impl SpaceSummaryBuilder {
     }
     /// <p>The Amazon Web Services Region where the space exists.</p>
     pub fn set_region_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region_name = input;
-        self
+        self.region_name = input; self
     }
     /// <p>The Amazon Web Services Region where the space exists.</p>
     pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +83,7 @@ impl SpaceSummaryBuilder {
     }
     /// <p>The friendly name of the space displayed to users.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The friendly name of the space displayed to users.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +96,7 @@ impl SpaceSummaryBuilder {
     }
     /// <p>The description of the space.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the space.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,21 +107,24 @@ impl SpaceSummaryBuilder {
     /// - [`name`](crate::types::builders::SpaceSummaryBuilder::name)
     /// - [`region_name`](crate::types::builders::SpaceSummaryBuilder::region_name)
     pub fn build(self) -> ::std::result::Result<crate::types::SpaceSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SpaceSummary {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building SpaceSummary",
-                )
-            })?,
-            region_name: self.region_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "region_name",
-                    "region_name was not specified but it is required when building SpaceSummary",
-                )
-            })?,
-            display_name: self.display_name,
-            description: self.description,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SpaceSummary {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building SpaceSummary")
+                    )?
+                ,
+                region_name: self.region_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("region_name", "region_name was not specified but it is required when building SpaceSummary")
+                    )?
+                ,
+                display_name: self.display_name
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSafetyRuleInput {
+pub struct DescribeSafetyRuleInput  {
     /// <p>The ARN of the safety rule.</p>
     pub safety_rule_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeSafetyRuleInput {
+impl  DescribeSafetyRuleInput  {
     /// <p>The ARN of the safety rule.</p>
-    pub fn safety_rule_arn(&self) -> ::std::option::Option<&str> {
+    pub fn safety_rule_arn(&self) -> ::std::option::Option<& str> {
         self.safety_rule_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DescribeSafetyRuleInputBuilder {
     }
     /// <p>The ARN of the safety rule.</p>
     pub fn set_safety_rule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.safety_rule_arn = input;
-        self
+        self.safety_rule_arn = input; self
     }
     /// <p>The ARN of the safety rule.</p>
     pub fn get_safety_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.safety_rule_arn
     }
     /// Consumes the builder and constructs a [`DescribeSafetyRuleInput`](crate::operation::describe_safety_rule::DescribeSafetyRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_safety_rule::DescribeSafetyRuleInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_safety_rule::DescribeSafetyRuleInput {
-            safety_rule_arn: self.safety_rule_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_safety_rule::DescribeSafetyRuleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_safety_rule::DescribeSafetyRuleInput {
+                safety_rule_arn: self.safety_rule_arn
+                ,
+            }
+        )
     }
 }
+

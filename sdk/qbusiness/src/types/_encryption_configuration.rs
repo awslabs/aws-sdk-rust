@@ -3,17 +3,17 @@
 /// <p>Provides the identifier of the KMS key used to encrypt data indexed by Amazon Q. Amazon Q doesn't support asymmetric keys.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct EncryptionConfiguration {
+pub struct EncryptionConfiguration  {
     /// <p>The identifier of the KMS key. Amazon Q doesn't support asymmetric keys.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
-impl EncryptionConfiguration {
+impl  EncryptionConfiguration  {
     /// <p>The identifier of the KMS key. Amazon Q doesn't support asymmetric keys.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for EncryptionConfiguration {
+impl  ::std::fmt::Debug for EncryptionConfiguration  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EncryptionConfiguration");
         formatter.field("kms_key_id", &"*** Sensitive Data Redacted ***");
@@ -41,8 +41,7 @@ impl EncryptionConfigurationBuilder {
     }
     /// <p>The identifier of the KMS key. Amazon Q doesn't support asymmetric keys.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The identifier of the KMS key. Amazon Q doesn't support asymmetric keys.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -50,7 +49,10 @@ impl EncryptionConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`EncryptionConfiguration`](crate::types::EncryptionConfiguration).
     pub fn build(self) -> crate::types::EncryptionConfiguration {
-        crate::types::EncryptionConfiguration { kms_key_id: self.kms_key_id }
+        crate::types::EncryptionConfiguration {
+            kms_key_id: self.kms_key_id
+            ,
+        }
     }
 }
 impl ::std::fmt::Debug for EncryptionConfigurationBuilder {
@@ -60,3 +62,4 @@ impl ::std::fmt::Debug for EncryptionConfigurationBuilder {
         formatter.finish()
     }
 }
+

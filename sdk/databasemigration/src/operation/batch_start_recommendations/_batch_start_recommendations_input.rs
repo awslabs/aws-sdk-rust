@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchStartRecommendationsInput {
+pub struct BatchStartRecommendationsInput  {
     /// <p>Provides information about source databases to analyze. After this analysis, Fleet Advisor recommends target engines for each source database.</p>
-    pub data: ::std::option::Option<::std::vec::Vec<crate::types::StartRecommendationsRequestEntry>>,
+    pub data: ::std::option::Option<::std::vec::Vec::<crate::types::StartRecommendationsRequestEntry>>,
 }
-impl BatchStartRecommendationsInput {
+impl  BatchStartRecommendationsInput  {
     /// <p>Provides information about source databases to analyze. After this analysis, Fleet Advisor recommends target engines for each source database.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data.is_none()`.
-    pub fn data(&self) -> &[crate::types::StartRecommendationsRequestEntry] {
-        self.data.as_deref().unwrap_or_default()
+    pub fn data(&self) -> & [crate::types::StartRecommendationsRequestEntry] {
+        self.data.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchStartRecommendationsInput {
@@ -25,7 +26,7 @@ impl BatchStartRecommendationsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchStartRecommendationsInputBuilder {
-    pub(crate) data: ::std::option::Option<::std::vec::Vec<crate::types::StartRecommendationsRequestEntry>>,
+    pub(crate) data: ::std::option::Option<::std::vec::Vec::<crate::types::StartRecommendationsRequestEntry>>,
 }
 impl BatchStartRecommendationsInputBuilder {
     /// Appends an item to `data`.
@@ -35,26 +36,26 @@ impl BatchStartRecommendationsInputBuilder {
     /// <p>Provides information about source databases to analyze. After this analysis, Fleet Advisor recommends target engines for each source database.</p>
     pub fn data(mut self, input: crate::types::StartRecommendationsRequestEntry) -> Self {
         let mut v = self.data.unwrap_or_default();
-        v.push(input);
-        self.data = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.data = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Provides information about source databases to analyze. After this analysis, Fleet Advisor recommends target engines for each source database.</p>
-    pub fn set_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StartRecommendationsRequestEntry>>) -> Self {
-        self.data = input;
-        self
+    pub fn set_data(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StartRecommendationsRequestEntry>>) -> Self {
+        self.data = input; self
     }
     /// <p>Provides information about source databases to analyze. After this analysis, Fleet Advisor recommends target engines for each source database.</p>
-    pub fn get_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StartRecommendationsRequestEntry>> {
+    pub fn get_data(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StartRecommendationsRequestEntry>> {
         &self.data
     }
     /// Consumes the builder and constructs a [`BatchStartRecommendationsInput`](crate::operation::batch_start_recommendations::BatchStartRecommendationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_start_recommendations::BatchStartRecommendationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_start_recommendations::BatchStartRecommendationsInput { data: self.data })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_start_recommendations::BatchStartRecommendationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_start_recommendations::BatchStartRecommendationsInput {
+                data: self.data
+                ,
+            }
+        )
     }
 }
+

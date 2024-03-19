@@ -3,19 +3,19 @@
 /// <p>This container is used to specify a time frame.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TimeFilter {
+pub struct TimeFilter  {
     /// <p>The container for time.</p>
     pub from: ::std::option::Option<crate::types::BlockchainInstant>,
     /// <p>The container for time.</p>
     pub to: ::std::option::Option<crate::types::BlockchainInstant>,
 }
-impl TimeFilter {
+impl  TimeFilter  {
     /// <p>The container for time.</p>
-    pub fn from(&self) -> ::std::option::Option<&crate::types::BlockchainInstant> {
+    pub fn from(&self) -> ::std::option::Option<& crate::types::BlockchainInstant> {
         self.from.as_ref()
     }
     /// <p>The container for time.</p>
-    pub fn to(&self) -> ::std::option::Option<&crate::types::BlockchainInstant> {
+    pub fn to(&self) -> ::std::option::Option<& crate::types::BlockchainInstant> {
         self.to.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl TimeFilterBuilder {
     }
     /// <p>The container for time.</p>
     pub fn set_from(mut self, input: ::std::option::Option<crate::types::BlockchainInstant>) -> Self {
-        self.from = input;
-        self
+        self.from = input; self
     }
     /// <p>The container for time.</p>
     pub fn get_from(&self) -> &::std::option::Option<crate::types::BlockchainInstant> {
@@ -55,8 +54,7 @@ impl TimeFilterBuilder {
     }
     /// <p>The container for time.</p>
     pub fn set_to(mut self, input: ::std::option::Option<crate::types::BlockchainInstant>) -> Self {
-        self.to = input;
-        self
+        self.to = input; self
     }
     /// <p>The container for time.</p>
     pub fn get_to(&self) -> &::std::option::Option<crate::types::BlockchainInstant> {
@@ -65,8 +63,11 @@ impl TimeFilterBuilder {
     /// Consumes the builder and constructs a [`TimeFilter`](crate::types::TimeFilter).
     pub fn build(self) -> crate::types::TimeFilter {
         crate::types::TimeFilter {
-            from: self.from,
-            to: self.to,
+            from: self.from
+            ,
+            to: self.to
+            ,
         }
     }
 }
+

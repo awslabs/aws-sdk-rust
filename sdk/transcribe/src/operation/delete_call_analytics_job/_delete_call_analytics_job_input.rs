@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCallAnalyticsJobInput {
+pub struct DeleteCallAnalyticsJobInput  {
     /// <p>The name of the Call Analytics job you want to delete. Job names are case sensitive.</p>
     pub call_analytics_job_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteCallAnalyticsJobInput {
+impl  DeleteCallAnalyticsJobInput  {
     /// <p>The name of the Call Analytics job you want to delete. Job names are case sensitive.</p>
-    pub fn call_analytics_job_name(&self) -> ::std::option::Option<&str> {
+    pub fn call_analytics_job_name(&self) -> ::std::option::Option<& str> {
         self.call_analytics_job_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteCallAnalyticsJobInputBuilder {
     }
     /// <p>The name of the Call Analytics job you want to delete. Job names are case sensitive.</p>
     pub fn set_call_analytics_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.call_analytics_job_name = input;
-        self
+        self.call_analytics_job_name = input; self
     }
     /// <p>The name of the Call Analytics job you want to delete. Job names are case sensitive.</p>
     pub fn get_call_analytics_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.call_analytics_job_name
     }
     /// Consumes the builder and constructs a [`DeleteCallAnalyticsJobInput`](crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobInput {
-            call_analytics_job_name: self.call_analytics_job_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobInput {
+                call_analytics_job_name: self.call_analytics_job_name
+                ,
+            }
+        )
     }
 }
+

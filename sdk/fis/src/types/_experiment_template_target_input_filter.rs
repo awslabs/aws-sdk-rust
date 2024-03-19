@@ -4,22 +4,20 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/targets.html#target-filters">Resource filters</a> in the <i>Fault Injection Service User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExperimentTemplateTargetInputFilter {
+pub struct ExperimentTemplateTargetInputFilter  {
     /// <p>The attribute path for the filter.</p>
     pub path: ::std::string::String,
     /// <p>The attribute values for the filter.</p>
-    pub values: ::std::vec::Vec<::std::string::String>,
+    pub values: ::std::vec::Vec::<::std::string::String>,
 }
-impl ExperimentTemplateTargetInputFilter {
+impl  ExperimentTemplateTargetInputFilter  {
     /// <p>The attribute path for the filter.</p>
-    pub fn path(&self) -> &str {
-        use std::ops::Deref;
-        self.path.deref()
+    pub fn path(&self) -> & str {
+        use std::ops::Deref; self.path.deref()
     }
     /// <p>The attribute values for the filter.</p>
-    pub fn values(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.values.deref()
+    pub fn values(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.values.deref()
     }
 }
 impl ExperimentTemplateTargetInputFilter {
@@ -34,7 +32,7 @@ impl ExperimentTemplateTargetInputFilter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExperimentTemplateTargetInputFilterBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ExperimentTemplateTargetInputFilterBuilder {
     /// <p>The attribute path for the filter.</p>
@@ -45,8 +43,7 @@ impl ExperimentTemplateTargetInputFilterBuilder {
     }
     /// <p>The attribute path for the filter.</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>The attribute path for the filter.</p>
     pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,17 +56,16 @@ impl ExperimentTemplateTargetInputFilterBuilder {
     /// <p>The attribute values for the filter.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The attribute values for the filter.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The attribute values for the filter.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`ExperimentTemplateTargetInputFilter`](crate::types::ExperimentTemplateTargetInputFilter).
@@ -77,19 +73,20 @@ impl ExperimentTemplateTargetInputFilterBuilder {
     /// - [`path`](crate::types::builders::ExperimentTemplateTargetInputFilterBuilder::path)
     /// - [`values`](crate::types::builders::ExperimentTemplateTargetInputFilterBuilder::values)
     pub fn build(self) -> ::std::result::Result<crate::types::ExperimentTemplateTargetInputFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ExperimentTemplateTargetInputFilter {
-            path: self.path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "path",
-                    "path was not specified but it is required when building ExperimentTemplateTargetInputFilter",
-                )
-            })?,
-            values: self.values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "values",
-                    "values was not specified but it is required when building ExperimentTemplateTargetInputFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ExperimentTemplateTargetInputFilter {
+                path: self.path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("path", "path was not specified but it is required when building ExperimentTemplateTargetInputFilter")
+                    )?
+                ,
+                values: self.values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("values", "values was not specified but it is required when building ExperimentTemplateTargetInputFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

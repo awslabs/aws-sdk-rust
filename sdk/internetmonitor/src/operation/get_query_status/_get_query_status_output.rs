@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetQueryStatusOutput {
+pub struct GetQueryStatusOutput  {
     /// <p>The current status for a query.</p>
     pub status: crate::types::QueryStatus,
     _request_id: Option<String>,
 }
-impl GetQueryStatusOutput {
+impl  GetQueryStatusOutput  {
     /// <p>The current status for a query.</p>
-    pub fn status(&self) -> &crate::types::QueryStatus {
+    pub fn status(&self) -> & crate::types::QueryStatus {
         &self.status
     }
 }
 impl ::aws_types::request_id::RequestId for GetQueryStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetQueryStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetQueryStatusOutput`](crate::operation::get_query_status::GetQueryStatusOutput).
     pub fn builder() -> crate::operation::get_query_status::builders::GetQueryStatusOutputBuilder {
@@ -41,36 +41,35 @@ impl GetQueryStatusOutputBuilder {
     }
     /// <p>The current status for a query.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::QueryStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status for a query.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::QueryStatus> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetQueryStatusOutput`](crate::operation::get_query_status::GetQueryStatusOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::operation::get_query_status::builders::GetQueryStatusOutputBuilder::status)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_query_status::GetQueryStatusOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_query_status::GetQueryStatusOutput {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building GetQueryStatusOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_query_status::GetQueryStatusOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_query_status::GetQueryStatusOutput {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building GetQueryStatusOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

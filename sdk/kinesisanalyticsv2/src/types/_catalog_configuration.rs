@@ -3,13 +3,13 @@
 /// <p>The configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Managed Service for Apache Flink Studio notebook.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CatalogConfiguration {
+pub struct CatalogConfiguration  {
     /// <p>The configuration parameters for the default Amazon Glue database. You use this database for Apache Flink SQL queries and table API transforms that you write in a Managed Service for Apache Flink Studio notebook.</p>
     pub glue_data_catalog_configuration: ::std::option::Option<crate::types::GlueDataCatalogConfiguration>,
 }
-impl CatalogConfiguration {
+impl  CatalogConfiguration  {
     /// <p>The configuration parameters for the default Amazon Glue database. You use this database for Apache Flink SQL queries and table API transforms that you write in a Managed Service for Apache Flink Studio notebook.</p>
-    pub fn glue_data_catalog_configuration(&self) -> ::std::option::Option<&crate::types::GlueDataCatalogConfiguration> {
+    pub fn glue_data_catalog_configuration(&self) -> ::std::option::Option<& crate::types::GlueDataCatalogConfiguration> {
         self.glue_data_catalog_configuration.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl CatalogConfigurationBuilder {
     }
     /// <p>The configuration parameters for the default Amazon Glue database. You use this database for Apache Flink SQL queries and table API transforms that you write in a Managed Service for Apache Flink Studio notebook.</p>
     pub fn set_glue_data_catalog_configuration(mut self, input: ::std::option::Option<crate::types::GlueDataCatalogConfiguration>) -> Self {
-        self.glue_data_catalog_configuration = input;
-        self
+        self.glue_data_catalog_configuration = input; self
     }
     /// <p>The configuration parameters for the default Amazon Glue database. You use this database for Apache Flink SQL queries and table API transforms that you write in a Managed Service for Apache Flink Studio notebook.</p>
     pub fn get_glue_data_catalog_configuration(&self) -> &::std::option::Option<crate::types::GlueDataCatalogConfiguration> {
@@ -45,7 +44,9 @@ impl CatalogConfigurationBuilder {
     /// Consumes the builder and constructs a [`CatalogConfiguration`](crate::types::CatalogConfiguration).
     pub fn build(self) -> crate::types::CatalogConfiguration {
         crate::types::CatalogConfiguration {
-            glue_data_catalog_configuration: self.glue_data_catalog_configuration,
+            glue_data_catalog_configuration: self.glue_data_catalog_configuration
+            ,
         }
     }
 }
+

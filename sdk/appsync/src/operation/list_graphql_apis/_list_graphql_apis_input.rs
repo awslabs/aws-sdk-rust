@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListGraphqlApisInput {
+pub struct ListGraphqlApisInput  {
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results that you want the request to return.</p>
@@ -12,9 +12,9 @@ pub struct ListGraphqlApisInput {
     /// <p>The account owner of the GraphQL API.</p>
     pub owner: ::std::option::Option<crate::types::Ownership>,
 }
-impl ListGraphqlApisInput {
+impl  ListGraphqlApisInput  {
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results that you want the request to return.</p>
@@ -22,11 +22,11 @@ impl ListGraphqlApisInput {
         self.max_results
     }
     /// <p>The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
-    pub fn api_type(&self) -> ::std::option::Option<&crate::types::GraphQlApiType> {
+    pub fn api_type(&self) -> ::std::option::Option<& crate::types::GraphQlApiType> {
         self.api_type.as_ref()
     }
     /// <p>The account owner of the GraphQL API.</p>
-    pub fn owner(&self) -> ::std::option::Option<&crate::types::Ownership> {
+    pub fn owner(&self) -> ::std::option::Option<& crate::types::Ownership> {
         self.owner.as_ref()
     }
 }
@@ -54,8 +54,7 @@ impl ListGraphqlApisInputBuilder {
     }
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl ListGraphqlApisInputBuilder {
     }
     /// <p>The maximum number of results that you want the request to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results that you want the request to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -82,8 +80,7 @@ impl ListGraphqlApisInputBuilder {
     }
     /// <p>The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
     pub fn set_api_type(mut self, input: ::std::option::Option<crate::types::GraphQlApiType>) -> Self {
-        self.api_type = input;
-        self
+        self.api_type = input; self
     }
     /// <p>The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
     pub fn get_api_type(&self) -> &::std::option::Option<crate::types::GraphQlApiType> {
@@ -96,22 +93,26 @@ impl ListGraphqlApisInputBuilder {
     }
     /// <p>The account owner of the GraphQL API.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<crate::types::Ownership>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// <p>The account owner of the GraphQL API.</p>
     pub fn get_owner(&self) -> &::std::option::Option<crate::types::Ownership> {
         &self.owner
     }
     /// Consumes the builder and constructs a [`ListGraphqlApisInput`](crate::operation::list_graphql_apis::ListGraphqlApisInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_graphql_apis::ListGraphqlApisInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_graphql_apis::ListGraphqlApisInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            api_type: self.api_type,
-            owner: self.owner,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_graphql_apis::ListGraphqlApisInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_graphql_apis::ListGraphqlApisInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                api_type: self.api_type
+                ,
+                owner: self.owner
+                ,
+            }
+        )
     }
 }
+

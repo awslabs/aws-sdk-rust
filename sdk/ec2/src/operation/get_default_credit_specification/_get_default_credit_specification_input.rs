@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDefaultCreditSpecificationInput {
+pub struct GetDefaultCreditSpecificationInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The instance family.</p>
     pub instance_family: ::std::option::Option<crate::types::UnlimitedSupportedInstanceFamily>,
 }
-impl GetDefaultCreditSpecificationInput {
+impl  GetDefaultCreditSpecificationInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The instance family.</p>
-    pub fn instance_family(&self) -> ::std::option::Option<&crate::types::UnlimitedSupportedInstanceFamily> {
+    pub fn instance_family(&self) -> ::std::option::Option<& crate::types::UnlimitedSupportedInstanceFamily> {
         self.instance_family.as_ref()
     }
 }
@@ -40,8 +40,7 @@ impl GetDefaultCreditSpecificationInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -55,23 +54,22 @@ impl GetDefaultCreditSpecificationInputBuilder {
     }
     /// <p>The instance family.</p>
     pub fn set_instance_family(mut self, input: ::std::option::Option<crate::types::UnlimitedSupportedInstanceFamily>) -> Self {
-        self.instance_family = input;
-        self
+        self.instance_family = input; self
     }
     /// <p>The instance family.</p>
     pub fn get_instance_family(&self) -> &::std::option::Option<crate::types::UnlimitedSupportedInstanceFamily> {
         &self.instance_family
     }
     /// Consumes the builder and constructs a [`GetDefaultCreditSpecificationInput`](crate::operation::get_default_credit_specification::GetDefaultCreditSpecificationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_default_credit_specification::GetDefaultCreditSpecificationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_default_credit_specification::GetDefaultCreditSpecificationInput {
-            dry_run: self.dry_run,
-            instance_family: self.instance_family,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_default_credit_specification::GetDefaultCreditSpecificationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_default_credit_specification::GetDefaultCreditSpecificationInput {
+                dry_run: self.dry_run
+                ,
+                instance_family: self.instance_family
+                ,
+            }
+        )
     }
 }
+

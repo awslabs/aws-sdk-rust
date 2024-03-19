@@ -3,31 +3,31 @@
 /// <p>Describes the data schema for a code generation job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CodegenJobGenericDataSchema {
+pub struct CodegenJobGenericDataSchema  {
     /// <p>The type of the data source for the schema. Currently, the only valid value is an Amplify <code>DataStore</code>.</p>
     pub data_source_type: crate::types::CodegenJobGenericDataSourceType,
     /// <p>The name of a <code>CodegenGenericDataModel</code>.</p>
-    pub models: ::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataModel>,
+    pub models: ::std::collections::HashMap::<::std::string::String, crate::types::CodegenGenericDataModel>,
     /// <p>The name of a <code>CodegenGenericDataEnum</code>.</p>
-    pub enums: ::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataEnum>,
+    pub enums: ::std::collections::HashMap::<::std::string::String, crate::types::CodegenGenericDataEnum>,
     /// <p>The name of a <code>CodegenGenericDataNonModel</code>.</p>
-    pub non_models: ::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataNonModel>,
+    pub non_models: ::std::collections::HashMap::<::std::string::String, crate::types::CodegenGenericDataNonModel>,
 }
-impl CodegenJobGenericDataSchema {
+impl  CodegenJobGenericDataSchema  {
     /// <p>The type of the data source for the schema. Currently, the only valid value is an Amplify <code>DataStore</code>.</p>
-    pub fn data_source_type(&self) -> &crate::types::CodegenJobGenericDataSourceType {
+    pub fn data_source_type(&self) -> & crate::types::CodegenJobGenericDataSourceType {
         &self.data_source_type
     }
     /// <p>The name of a <code>CodegenGenericDataModel</code>.</p>
-    pub fn models(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataModel> {
+    pub fn models(&self) -> & ::std::collections::HashMap::<::std::string::String, crate::types::CodegenGenericDataModel> {
         &self.models
     }
     /// <p>The name of a <code>CodegenGenericDataEnum</code>.</p>
-    pub fn enums(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataEnum> {
+    pub fn enums(&self) -> & ::std::collections::HashMap::<::std::string::String, crate::types::CodegenGenericDataEnum> {
         &self.enums
     }
     /// <p>The name of a <code>CodegenGenericDataNonModel</code>.</p>
-    pub fn non_models(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataNonModel> {
+    pub fn non_models(&self) -> & ::std::collections::HashMap::<::std::string::String, crate::types::CodegenGenericDataNonModel> {
         &self.non_models
     }
 }
@@ -43,9 +43,9 @@ impl CodegenJobGenericDataSchema {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CodegenJobGenericDataSchemaBuilder {
     pub(crate) data_source_type: ::std::option::Option<crate::types::CodegenJobGenericDataSourceType>,
-    pub(crate) models: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataModel>>,
-    pub(crate) enums: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataEnum>>,
-    pub(crate) non_models: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataNonModel>>,
+    pub(crate) models: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::CodegenGenericDataModel>>,
+    pub(crate) enums: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::CodegenGenericDataEnum>>,
+    pub(crate) non_models: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::CodegenGenericDataNonModel>>,
 }
 impl CodegenJobGenericDataSchemaBuilder {
     /// <p>The type of the data source for the schema. Currently, the only valid value is an Amplify <code>DataStore</code>.</p>
@@ -56,8 +56,7 @@ impl CodegenJobGenericDataSchemaBuilder {
     }
     /// <p>The type of the data source for the schema. Currently, the only valid value is an Amplify <code>DataStore</code>.</p>
     pub fn set_data_source_type(mut self, input: ::std::option::Option<crate::types::CodegenJobGenericDataSourceType>) -> Self {
-        self.data_source_type = input;
-        self
+        self.data_source_type = input; self
     }
     /// <p>The type of the data source for the schema. Currently, the only valid value is an Amplify <code>DataStore</code>.</p>
     pub fn get_data_source_type(&self) -> &::std::option::Option<crate::types::CodegenJobGenericDataSourceType> {
@@ -70,20 +69,16 @@ impl CodegenJobGenericDataSchemaBuilder {
     /// <p>The name of a <code>CodegenGenericDataModel</code>.</p>
     pub fn models(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::CodegenGenericDataModel) -> Self {
         let mut hash_map = self.models.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.models = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.models = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The name of a <code>CodegenGenericDataModel</code>.</p>
-    pub fn set_models(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataModel>>,
-    ) -> Self {
-        self.models = input;
-        self
+    pub fn set_models(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::CodegenGenericDataModel>>) -> Self {
+        self.models = input; self
     }
     /// <p>The name of a <code>CodegenGenericDataModel</code>.</p>
-    pub fn get_models(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataModel>> {
+    pub fn get_models(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::CodegenGenericDataModel>> {
         &self.models
     }
     /// Adds a key-value pair to `enums`.
@@ -93,20 +88,16 @@ impl CodegenJobGenericDataSchemaBuilder {
     /// <p>The name of a <code>CodegenGenericDataEnum</code>.</p>
     pub fn enums(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::CodegenGenericDataEnum) -> Self {
         let mut hash_map = self.enums.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.enums = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.enums = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The name of a <code>CodegenGenericDataEnum</code>.</p>
-    pub fn set_enums(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataEnum>>,
-    ) -> Self {
-        self.enums = input;
-        self
+    pub fn set_enums(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::CodegenGenericDataEnum>>) -> Self {
+        self.enums = input; self
     }
     /// <p>The name of a <code>CodegenGenericDataEnum</code>.</p>
-    pub fn get_enums(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataEnum>> {
+    pub fn get_enums(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::CodegenGenericDataEnum>> {
         &self.enums
     }
     /// Adds a key-value pair to `non_models`.
@@ -116,22 +107,16 @@ impl CodegenJobGenericDataSchemaBuilder {
     /// <p>The name of a <code>CodegenGenericDataNonModel</code>.</p>
     pub fn non_models(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::CodegenGenericDataNonModel) -> Self {
         let mut hash_map = self.non_models.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.non_models = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.non_models = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The name of a <code>CodegenGenericDataNonModel</code>.</p>
-    pub fn set_non_models(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataNonModel>>,
-    ) -> Self {
-        self.non_models = input;
-        self
+    pub fn set_non_models(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::CodegenGenericDataNonModel>>) -> Self {
+        self.non_models = input; self
     }
     /// <p>The name of a <code>CodegenGenericDataNonModel</code>.</p>
-    pub fn get_non_models(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataNonModel>> {
+    pub fn get_non_models(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::CodegenGenericDataNonModel>> {
         &self.non_models
     }
     /// Consumes the builder and constructs a [`CodegenJobGenericDataSchema`](crate::types::CodegenJobGenericDataSchema).
@@ -141,31 +126,30 @@ impl CodegenJobGenericDataSchemaBuilder {
     /// - [`enums`](crate::types::builders::CodegenJobGenericDataSchemaBuilder::enums)
     /// - [`non_models`](crate::types::builders::CodegenJobGenericDataSchemaBuilder::non_models)
     pub fn build(self) -> ::std::result::Result<crate::types::CodegenJobGenericDataSchema, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CodegenJobGenericDataSchema {
-            data_source_type: self.data_source_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_source_type",
-                    "data_source_type was not specified but it is required when building CodegenJobGenericDataSchema",
-                )
-            })?,
-            models: self.models.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "models",
-                    "models was not specified but it is required when building CodegenJobGenericDataSchema",
-                )
-            })?,
-            enums: self.enums.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "enums",
-                    "enums was not specified but it is required when building CodegenJobGenericDataSchema",
-                )
-            })?,
-            non_models: self.non_models.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "non_models",
-                    "non_models was not specified but it is required when building CodegenJobGenericDataSchema",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CodegenJobGenericDataSchema {
+                data_source_type: self.data_source_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_source_type", "data_source_type was not specified but it is required when building CodegenJobGenericDataSchema")
+                    )?
+                ,
+                models: self.models
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("models", "models was not specified but it is required when building CodegenJobGenericDataSchema")
+                    )?
+                ,
+                enums: self.enums
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("enums", "enums was not specified but it is required when building CodegenJobGenericDataSchema")
+                    )?
+                ,
+                non_models: self.non_models
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("non_models", "non_models was not specified but it is required when building CodegenJobGenericDataSchema")
+                    )?
+                ,
+            }
+        )
     }
 }
+

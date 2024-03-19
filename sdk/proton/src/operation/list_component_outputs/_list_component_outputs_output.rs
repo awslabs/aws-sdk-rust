@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListComponentOutputsOutput {
+pub struct ListComponentOutputsOutput  {
     /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of component Infrastructure as Code (IaC) outputs.</p>
-    pub outputs: ::std::vec::Vec<crate::types::Output>,
+    pub outputs: ::std::vec::Vec::<crate::types::Output>,
     _request_id: Option<String>,
 }
-impl ListComponentOutputsOutput {
+impl  ListComponentOutputsOutput  {
     /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of component Infrastructure as Code (IaC) outputs.</p>
-    pub fn outputs(&self) -> &[crate::types::Output] {
-        use std::ops::Deref;
-        self.outputs.deref()
+    pub fn outputs(&self) -> & [crate::types::Output] {
+        use std::ops::Deref; self.outputs.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListComponentOutputsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListComponentOutputsOutput {
     /// Creates a new builder-style object to manufacture [`ListComponentOutputsOutput`](crate::operation::list_component_outputs::ListComponentOutputsOutput).
     pub fn builder() -> crate::operation::list_component_outputs::builders::ListComponentOutputsOutputBuilder {
@@ -37,7 +36,7 @@ impl ListComponentOutputsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListComponentOutputsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
+    pub(crate) outputs: ::std::option::Option<::std::vec::Vec::<crate::types::Output>>,
     _request_id: Option<String>,
 }
 impl ListComponentOutputsOutputBuilder {
@@ -48,8 +47,7 @@ impl ListComponentOutputsOutputBuilder {
     }
     /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,44 +60,43 @@ impl ListComponentOutputsOutputBuilder {
     /// <p>An array of component Infrastructure as Code (IaC) outputs.</p>
     pub fn outputs(mut self, input: crate::types::Output) -> Self {
         let mut v = self.outputs.unwrap_or_default();
-        v.push(input);
-        self.outputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.outputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of component Infrastructure as Code (IaC) outputs.</p>
-    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>) -> Self {
-        self.outputs = input;
-        self
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Output>>) -> Self {
+        self.outputs = input; self
     }
     /// <p>An array of component Infrastructure as Code (IaC) outputs.</p>
-    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Output>> {
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Output>> {
         &self.outputs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListComponentOutputsOutput`](crate::operation::list_component_outputs::ListComponentOutputsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`outputs`](crate::operation::list_component_outputs::builders::ListComponentOutputsOutputBuilder::outputs)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_component_outputs::ListComponentOutputsOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_component_outputs::ListComponentOutputsOutput {
-            next_token: self.next_token,
-            outputs: self.outputs.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "outputs",
-                    "outputs was not specified but it is required when building ListComponentOutputsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_component_outputs::ListComponentOutputsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_component_outputs::ListComponentOutputsOutput {
+                next_token: self.next_token
+                ,
+                outputs: self.outputs
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("outputs", "outputs was not specified but it is required when building ListComponentOutputsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

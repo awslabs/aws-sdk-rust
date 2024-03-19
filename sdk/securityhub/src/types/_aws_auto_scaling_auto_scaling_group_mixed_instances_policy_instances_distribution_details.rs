@@ -3,7 +3,7 @@
 /// <p>Information about the instances distribution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails {
+pub struct AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails  {
     /// <p>How to allocate instance types to fulfill On-Demand capacity. The valid value is <code>prioritized</code>.</p>
     pub on_demand_allocation_strategy: ::std::option::Option<::std::string::String>,
     /// <p>The minimum amount of the Auto Scaling group's capacity that must be fulfilled by On-Demand Instances.</p>
@@ -25,9 +25,9 @@ pub struct AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributi
     /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance.</p>
     pub spot_max_price: ::std::option::Option<::std::string::String>,
 }
-impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails {
+impl  AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails  {
     /// <p>How to allocate instance types to fulfill On-Demand capacity. The valid value is <code>prioritized</code>.</p>
-    pub fn on_demand_allocation_strategy(&self) -> ::std::option::Option<&str> {
+    pub fn on_demand_allocation_strategy(&self) -> ::std::option::Option<& str> {
         self.on_demand_allocation_strategy.as_deref()
     }
     /// <p>The minimum amount of the Auto Scaling group's capacity that must be fulfilled by On-Demand Instances.</p>
@@ -47,7 +47,7 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDeta
     /// <li>
     /// <p><code>capacity-optimized-prioritized</code></p></li>
     /// </ul>
-    pub fn spot_allocation_strategy(&self) -> ::std::option::Option<&str> {
+    pub fn spot_allocation_strategy(&self) -> ::std::option::Option<& str> {
         self.spot_allocation_strategy.as_deref()
     }
     /// <p>The number of Spot Instance pools across which to allocate your Spot Instances.</p>
@@ -55,7 +55,7 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDeta
         self.spot_instance_pools
     }
     /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance.</p>
-    pub fn spot_max_price(&self) -> ::std::option::Option<&str> {
+    pub fn spot_max_price(&self) -> ::std::option::Option<& str> {
         self.spot_max_price.as_deref()
     }
 }
@@ -85,8 +85,7 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDeta
     }
     /// <p>How to allocate instance types to fulfill On-Demand capacity. The valid value is <code>prioritized</code>.</p>
     pub fn set_on_demand_allocation_strategy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.on_demand_allocation_strategy = input;
-        self
+        self.on_demand_allocation_strategy = input; self
     }
     /// <p>How to allocate instance types to fulfill On-Demand capacity. The valid value is <code>prioritized</code>.</p>
     pub fn get_on_demand_allocation_strategy(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +98,7 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDeta
     }
     /// <p>The minimum amount of the Auto Scaling group's capacity that must be fulfilled by On-Demand Instances.</p>
     pub fn set_on_demand_base_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.on_demand_base_capacity = input;
-        self
+        self.on_demand_base_capacity = input; self
     }
     /// <p>The minimum amount of the Auto Scaling group's capacity that must be fulfilled by On-Demand Instances.</p>
     pub fn get_on_demand_base_capacity(&self) -> &::std::option::Option<i32> {
@@ -113,8 +111,7 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDeta
     }
     /// <p>The percentage of On-Demand Instances and Spot Instances for additional capacity beyond <code>OnDemandBaseCapacity</code>.</p>
     pub fn set_on_demand_percentage_above_base_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.on_demand_percentage_above_base_capacity = input;
-        self
+        self.on_demand_percentage_above_base_capacity = input; self
     }
     /// <p>The percentage of On-Demand Instances and Spot Instances for additional capacity beyond <code>OnDemandBaseCapacity</code>.</p>
     pub fn get_on_demand_percentage_above_base_capacity(&self) -> &::std::option::Option<i32> {
@@ -143,8 +140,7 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDeta
     /// <p><code>capacity-optimized-prioritized</code></p></li>
     /// </ul>
     pub fn set_spot_allocation_strategy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.spot_allocation_strategy = input;
-        self
+        self.spot_allocation_strategy = input; self
     }
     /// <p>How to allocate instances across Spot Instance pools. Valid values are as follows:</p>
     /// <ul>
@@ -165,8 +161,7 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDeta
     }
     /// <p>The number of Spot Instance pools across which to allocate your Spot Instances.</p>
     pub fn set_spot_instance_pools(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.spot_instance_pools = input;
-        self
+        self.spot_instance_pools = input; self
     }
     /// <p>The number of Spot Instance pools across which to allocate your Spot Instances.</p>
     pub fn get_spot_instance_pools(&self) -> &::std::option::Option<i32> {
@@ -179,8 +174,7 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDeta
     }
     /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance.</p>
     pub fn set_spot_max_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.spot_max_price = input;
-        self
+        self.spot_max_price = input; self
     }
     /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance.</p>
     pub fn get_spot_max_price(&self) -> &::std::option::Option<::std::string::String> {
@@ -189,12 +183,19 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDeta
     /// Consumes the builder and constructs a [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails`](crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails).
     pub fn build(self) -> crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails {
         crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails {
-            on_demand_allocation_strategy: self.on_demand_allocation_strategy,
-            on_demand_base_capacity: self.on_demand_base_capacity,
-            on_demand_percentage_above_base_capacity: self.on_demand_percentage_above_base_capacity,
-            spot_allocation_strategy: self.spot_allocation_strategy,
-            spot_instance_pools: self.spot_instance_pools,
-            spot_max_price: self.spot_max_price,
+            on_demand_allocation_strategy: self.on_demand_allocation_strategy
+            ,
+            on_demand_base_capacity: self.on_demand_base_capacity
+            ,
+            on_demand_percentage_above_base_capacity: self.on_demand_percentage_above_base_capacity
+            ,
+            spot_allocation_strategy: self.spot_allocation_strategy
+            ,
+            spot_instance_pools: self.spot_instance_pools
+            ,
+            spot_max_price: self.spot_max_price
+            ,
         }
     }
 }
+

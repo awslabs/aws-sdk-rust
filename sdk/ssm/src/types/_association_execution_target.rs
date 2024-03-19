@@ -3,7 +3,7 @@
 /// <p>Includes information about the specified association execution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociationExecutionTarget {
+pub struct AssociationExecutionTarget  {
     /// <p>The association ID.</p>
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The association version.</p>
@@ -23,41 +23,41 @@ pub struct AssociationExecutionTarget {
     /// <p>The location where the association details are saved.</p>
     pub output_source: ::std::option::Option<crate::types::OutputSource>,
 }
-impl AssociationExecutionTarget {
+impl  AssociationExecutionTarget  {
     /// <p>The association ID.</p>
-    pub fn association_id(&self) -> ::std::option::Option<&str> {
+    pub fn association_id(&self) -> ::std::option::Option<& str> {
         self.association_id.as_deref()
     }
     /// <p>The association version.</p>
-    pub fn association_version(&self) -> ::std::option::Option<&str> {
+    pub fn association_version(&self) -> ::std::option::Option<& str> {
         self.association_version.as_deref()
     }
     /// <p>The execution ID.</p>
-    pub fn execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn execution_id(&self) -> ::std::option::Option<& str> {
         self.execution_id.as_deref()
     }
     /// <p>The resource ID, for example, the managed node ID where the association ran.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The resource type, for example, EC2.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The association execution status.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>Detailed information about the execution status.</p>
-    pub fn detailed_status(&self) -> ::std::option::Option<&str> {
+    pub fn detailed_status(&self) -> ::std::option::Option<& str> {
         self.detailed_status.as_deref()
     }
     /// <p>The date of the last execution.</p>
-    pub fn last_execution_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_execution_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_execution_date.as_ref()
     }
     /// <p>The location where the association details are saved.</p>
-    pub fn output_source(&self) -> ::std::option::Option<&crate::types::OutputSource> {
+    pub fn output_source(&self) -> ::std::option::Option<& crate::types::OutputSource> {
         self.output_source.as_ref()
     }
 }
@@ -90,8 +90,7 @@ impl AssociationExecutionTargetBuilder {
     }
     /// <p>The association ID.</p>
     pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.association_id = input;
-        self
+        self.association_id = input; self
     }
     /// <p>The association ID.</p>
     pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl AssociationExecutionTargetBuilder {
     }
     /// <p>The association version.</p>
     pub fn set_association_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.association_version = input;
-        self
+        self.association_version = input; self
     }
     /// <p>The association version.</p>
     pub fn get_association_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +116,7 @@ impl AssociationExecutionTargetBuilder {
     }
     /// <p>The execution ID.</p>
     pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_id = input;
-        self
+        self.execution_id = input; self
     }
     /// <p>The execution ID.</p>
     pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +129,7 @@ impl AssociationExecutionTargetBuilder {
     }
     /// <p>The resource ID, for example, the managed node ID where the association ran.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The resource ID, for example, the managed node ID where the association ran.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +142,7 @@ impl AssociationExecutionTargetBuilder {
     }
     /// <p>The resource type, for example, EC2.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type, for example, EC2.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +155,7 @@ impl AssociationExecutionTargetBuilder {
     }
     /// <p>The association execution status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The association execution status.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +168,7 @@ impl AssociationExecutionTargetBuilder {
     }
     /// <p>Detailed information about the execution status.</p>
     pub fn set_detailed_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detailed_status = input;
-        self
+        self.detailed_status = input; self
     }
     /// <p>Detailed information about the execution status.</p>
     pub fn get_detailed_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +181,7 @@ impl AssociationExecutionTargetBuilder {
     }
     /// <p>The date of the last execution.</p>
     pub fn set_last_execution_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_execution_date = input;
-        self
+        self.last_execution_date = input; self
     }
     /// <p>The date of the last execution.</p>
     pub fn get_last_execution_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -202,8 +194,7 @@ impl AssociationExecutionTargetBuilder {
     }
     /// <p>The location where the association details are saved.</p>
     pub fn set_output_source(mut self, input: ::std::option::Option<crate::types::OutputSource>) -> Self {
-        self.output_source = input;
-        self
+        self.output_source = input; self
     }
     /// <p>The location where the association details are saved.</p>
     pub fn get_output_source(&self) -> &::std::option::Option<crate::types::OutputSource> {
@@ -212,15 +203,25 @@ impl AssociationExecutionTargetBuilder {
     /// Consumes the builder and constructs a [`AssociationExecutionTarget`](crate::types::AssociationExecutionTarget).
     pub fn build(self) -> crate::types::AssociationExecutionTarget {
         crate::types::AssociationExecutionTarget {
-            association_id: self.association_id,
-            association_version: self.association_version,
-            execution_id: self.execution_id,
-            resource_id: self.resource_id,
-            resource_type: self.resource_type,
-            status: self.status,
-            detailed_status: self.detailed_status,
-            last_execution_date: self.last_execution_date,
-            output_source: self.output_source,
+            association_id: self.association_id
+            ,
+            association_version: self.association_version
+            ,
+            execution_id: self.execution_id
+            ,
+            resource_id: self.resource_id
+            ,
+            resource_type: self.resource_type
+            ,
+            status: self.status
+            ,
+            detailed_status: self.detailed_status
+            ,
+            last_execution_date: self.last_execution_date
+            ,
+            output_source: self.output_source
+            ,
         }
     }
 }
+

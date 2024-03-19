@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateChannelInput {
+pub struct UpdateChannelInput  {
     /// <p>ARN of the channel to be updated.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Channel name.</p>
@@ -22,21 +22,21 @@ pub struct UpdateChannelInput {
     /// <p>Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback restriction. If this is set to an empty string, playback restriction policy is disabled.</p>
     pub playback_restriction_policy_arn: ::std::option::Option<::std::string::String>,
 }
-impl UpdateChannelInput {
+impl  UpdateChannelInput  {
     /// <p>ARN of the channel to be updated.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Channel name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers.</p>
-    pub fn latency_mode(&self) -> ::std::option::Option<&crate::types::ChannelLatencyMode> {
+    pub fn latency_mode(&self) -> ::std::option::Option<& crate::types::ChannelLatencyMode> {
         self.latency_mode.as_ref()
     }
     /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable input resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel Types</a>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ChannelType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ChannelType> {
         self.r#type.as_ref()
     }
     /// <p>Whether the channel is private (enabled for playback authorization).</p>
@@ -44,7 +44,7 @@ impl UpdateChannelInput {
         self.authorized
     }
     /// <p>Recording-configuration ARN. A valid ARN value here both specifies the ARN and enables recording. If this is set to an empty string, recording is disabled.</p>
-    pub fn recording_configuration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn recording_configuration_arn(&self) -> ::std::option::Option<& str> {
         self.recording_configuration_arn.as_deref()
     }
     /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
@@ -52,11 +52,11 @@ impl UpdateChannelInput {
         self.insecure_ingest
     }
     /// <p>Optional transcode preset for the channel. This is selectable only for <code>ADVANCED_HD</code> and <code>ADVANCED_SD</code> channel types. For those channel types, the default <code>preset</code> is <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types (<code>BASIC</code> and <code>STANDARD</code>), <code>preset</code> is the empty string (<code>""</code>).</p>
-    pub fn preset(&self) -> ::std::option::Option<&crate::types::TranscodePreset> {
+    pub fn preset(&self) -> ::std::option::Option<& crate::types::TranscodePreset> {
         self.preset.as_ref()
     }
     /// <p>Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback restriction. If this is set to an empty string, playback restriction policy is disabled.</p>
-    pub fn playback_restriction_policy_arn(&self) -> ::std::option::Option<&str> {
+    pub fn playback_restriction_policy_arn(&self) -> ::std::option::Option<& str> {
         self.playback_restriction_policy_arn.as_deref()
     }
 }
@@ -90,8 +90,7 @@ impl UpdateChannelInputBuilder {
     }
     /// <p>ARN of the channel to be updated.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>ARN of the channel to be updated.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl UpdateChannelInputBuilder {
     }
     /// <p>Channel name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Channel name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +116,7 @@ impl UpdateChannelInputBuilder {
     }
     /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers.</p>
     pub fn set_latency_mode(mut self, input: ::std::option::Option<crate::types::ChannelLatencyMode>) -> Self {
-        self.latency_mode = input;
-        self
+        self.latency_mode = input; self
     }
     /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers.</p>
     pub fn get_latency_mode(&self) -> &::std::option::Option<crate::types::ChannelLatencyMode> {
@@ -132,8 +129,7 @@ impl UpdateChannelInputBuilder {
     }
     /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable input resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel Types</a>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ChannelType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable input resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel Types</a>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ChannelType> {
@@ -146,8 +142,7 @@ impl UpdateChannelInputBuilder {
     }
     /// <p>Whether the channel is private (enabled for playback authorization).</p>
     pub fn set_authorized(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.authorized = input;
-        self
+        self.authorized = input; self
     }
     /// <p>Whether the channel is private (enabled for playback authorization).</p>
     pub fn get_authorized(&self) -> &::std::option::Option<bool> {
@@ -160,8 +155,7 @@ impl UpdateChannelInputBuilder {
     }
     /// <p>Recording-configuration ARN. A valid ARN value here both specifies the ARN and enables recording. If this is set to an empty string, recording is disabled.</p>
     pub fn set_recording_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recording_configuration_arn = input;
-        self
+        self.recording_configuration_arn = input; self
     }
     /// <p>Recording-configuration ARN. A valid ARN value here both specifies the ARN and enables recording. If this is set to an empty string, recording is disabled.</p>
     pub fn get_recording_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +168,7 @@ impl UpdateChannelInputBuilder {
     }
     /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
     pub fn set_insecure_ingest(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.insecure_ingest = input;
-        self
+        self.insecure_ingest = input; self
     }
     /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
     pub fn get_insecure_ingest(&self) -> &::std::option::Option<bool> {
@@ -188,8 +181,7 @@ impl UpdateChannelInputBuilder {
     }
     /// <p>Optional transcode preset for the channel. This is selectable only for <code>ADVANCED_HD</code> and <code>ADVANCED_SD</code> channel types. For those channel types, the default <code>preset</code> is <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types (<code>BASIC</code> and <code>STANDARD</code>), <code>preset</code> is the empty string (<code>""</code>).</p>
     pub fn set_preset(mut self, input: ::std::option::Option<crate::types::TranscodePreset>) -> Self {
-        self.preset = input;
-        self
+        self.preset = input; self
     }
     /// <p>Optional transcode preset for the channel. This is selectable only for <code>ADVANCED_HD</code> and <code>ADVANCED_SD</code> channel types. For those channel types, the default <code>preset</code> is <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types (<code>BASIC</code> and <code>STANDARD</code>), <code>preset</code> is the empty string (<code>""</code>).</p>
     pub fn get_preset(&self) -> &::std::option::Option<crate::types::TranscodePreset> {
@@ -202,27 +194,36 @@ impl UpdateChannelInputBuilder {
     }
     /// <p>Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback restriction. If this is set to an empty string, playback restriction policy is disabled.</p>
     pub fn set_playback_restriction_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.playback_restriction_policy_arn = input;
-        self
+        self.playback_restriction_policy_arn = input; self
     }
     /// <p>Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback restriction. If this is set to an empty string, playback restriction policy is disabled.</p>
     pub fn get_playback_restriction_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.playback_restriction_policy_arn
     }
     /// Consumes the builder and constructs a [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_channel::UpdateChannelInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_channel::UpdateChannelInput {
-            arn: self.arn,
-            name: self.name,
-            latency_mode: self.latency_mode,
-            r#type: self.r#type,
-            authorized: self.authorized,
-            recording_configuration_arn: self.recording_configuration_arn,
-            insecure_ingest: self.insecure_ingest,
-            preset: self.preset,
-            playback_restriction_policy_arn: self.playback_restriction_policy_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_channel::UpdateChannelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_channel::UpdateChannelInput {
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                latency_mode: self.latency_mode
+                ,
+                r#type: self.r#type
+                ,
+                authorized: self.authorized
+                ,
+                recording_configuration_arn: self.recording_configuration_arn
+                ,
+                insecure_ingest: self.insecure_ingest
+                ,
+                preset: self.preset
+                ,
+                playback_restriction_policy_arn: self.playback_restriction_policy_arn
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartRetrainingSchedulerOutput {
+pub struct StartRetrainingSchedulerOutput  {
     /// <p>The name of the model whose retraining scheduler is being started.</p>
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the model whose retraining scheduler is being started.</p>
@@ -11,25 +11,25 @@ pub struct StartRetrainingSchedulerOutput {
     pub status: ::std::option::Option<crate::types::RetrainingSchedulerStatus>,
     _request_id: Option<String>,
 }
-impl StartRetrainingSchedulerOutput {
+impl  StartRetrainingSchedulerOutput  {
     /// <p>The name of the model whose retraining scheduler is being started.</p>
-    pub fn model_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<& str> {
         self.model_name.as_deref()
     }
     /// <p>The ARN of the model whose retraining scheduler is being started.</p>
-    pub fn model_arn(&self) -> ::std::option::Option<&str> {
+    pub fn model_arn(&self) -> ::std::option::Option<& str> {
         self.model_arn.as_deref()
     }
     /// <p>The status of the retraining scheduler.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::RetrainingSchedulerStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::RetrainingSchedulerStatus> {
         self.status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartRetrainingSchedulerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartRetrainingSchedulerOutput {
     /// Creates a new builder-style object to manufacture [`StartRetrainingSchedulerOutput`](crate::operation::start_retraining_scheduler::StartRetrainingSchedulerOutput).
     pub fn builder() -> crate::operation::start_retraining_scheduler::builders::StartRetrainingSchedulerOutputBuilder {
@@ -54,8 +54,7 @@ impl StartRetrainingSchedulerOutputBuilder {
     }
     /// <p>The name of the model whose retraining scheduler is being started.</p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_name = input;
-        self
+        self.model_name = input; self
     }
     /// <p>The name of the model whose retraining scheduler is being started.</p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl StartRetrainingSchedulerOutputBuilder {
     }
     /// <p>The ARN of the model whose retraining scheduler is being started.</p>
     pub fn set_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_arn = input;
-        self
+        self.model_arn = input; self
     }
     /// <p>The ARN of the model whose retraining scheduler is being started.</p>
     pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl StartRetrainingSchedulerOutputBuilder {
     }
     /// <p>The status of the retraining scheduler.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RetrainingSchedulerStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the retraining scheduler.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RetrainingSchedulerStatus> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartRetrainingSchedulerOutput`](crate::operation::start_retraining_scheduler::StartRetrainingSchedulerOutput).
     pub fn build(self) -> crate::operation::start_retraining_scheduler::StartRetrainingSchedulerOutput {
         crate::operation::start_retraining_scheduler::StartRetrainingSchedulerOutput {
-            model_name: self.model_name,
-            model_arn: self.model_arn,
-            status: self.status,
+            model_name: self.model_name
+            ,
+            model_arn: self.model_arn
+            ,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

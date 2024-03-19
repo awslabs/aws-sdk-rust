@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeHomeRegionControlsInput {
+pub struct DescribeHomeRegionControlsInput  {
     /// <p>The <code>ControlID</code> is a unique identifier string of your <code>HomeRegionControl</code> object.</p>
     pub control_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the home region you'd like to view.</p>
@@ -14,17 +14,17 @@ pub struct DescribeHomeRegionControlsInput {
     /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeHomeRegionControlsInput {
+impl  DescribeHomeRegionControlsInput  {
     /// <p>The <code>ControlID</code> is a unique identifier string of your <code>HomeRegionControl</code> object.</p>
-    pub fn control_id(&self) -> ::std::option::Option<&str> {
+    pub fn control_id(&self) -> ::std::option::Option<& str> {
         self.control_id.as_deref()
     }
     /// <p>The name of the home region you'd like to view.</p>
-    pub fn home_region(&self) -> ::std::option::Option<&str> {
+    pub fn home_region(&self) -> ::std::option::Option<& str> {
         self.home_region.as_deref()
     }
     /// <p>The target parameter specifies the identifier to which the home region is applied, which is always of type <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.</p>
-    pub fn target(&self) -> ::std::option::Option<&crate::types::Target> {
+    pub fn target(&self) -> ::std::option::Option<& crate::types::Target> {
         self.target.as_ref()
     }
     /// <p>The maximum number of filtering results to display per page.</p>
@@ -32,7 +32,7 @@ impl DescribeHomeRegionControlsInput {
         self.max_results
     }
     /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -61,8 +61,7 @@ impl DescribeHomeRegionControlsInputBuilder {
     }
     /// <p>The <code>ControlID</code> is a unique identifier string of your <code>HomeRegionControl</code> object.</p>
     pub fn set_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.control_id = input;
-        self
+        self.control_id = input; self
     }
     /// <p>The <code>ControlID</code> is a unique identifier string of your <code>HomeRegionControl</code> object.</p>
     pub fn get_control_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl DescribeHomeRegionControlsInputBuilder {
     }
     /// <p>The name of the home region you'd like to view.</p>
     pub fn set_home_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.home_region = input;
-        self
+        self.home_region = input; self
     }
     /// <p>The name of the home region you'd like to view.</p>
     pub fn get_home_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl DescribeHomeRegionControlsInputBuilder {
     }
     /// <p>The target parameter specifies the identifier to which the home region is applied, which is always of type <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.</p>
     pub fn set_target(mut self, input: ::std::option::Option<crate::types::Target>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
     }
     /// <p>The target parameter specifies the identifier to which the home region is applied, which is always of type <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.</p>
     pub fn get_target(&self) -> &::std::option::Option<crate::types::Target> {
@@ -103,8 +100,7 @@ impl DescribeHomeRegionControlsInputBuilder {
     }
     /// <p>The maximum number of filtering results to display per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of filtering results to display per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -117,26 +113,28 @@ impl DescribeHomeRegionControlsInputBuilder {
     }
     /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeHomeRegionControlsInput`](crate::operation::describe_home_region_controls::DescribeHomeRegionControlsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_home_region_controls::DescribeHomeRegionControlsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_home_region_controls::DescribeHomeRegionControlsInput {
-            control_id: self.control_id,
-            home_region: self.home_region,
-            target: self.target,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_home_region_controls::DescribeHomeRegionControlsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsInput {
+                control_id: self.control_id
+                ,
+                home_region: self.home_region
+                ,
+                target: self.target
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

@@ -3,15 +3,14 @@
 /// <p>An object that represents a Transport Layer Security (TLS) validation context trust for a local file.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TlsValidationContextFileTrust {
+pub struct TlsValidationContextFileTrust  {
     /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
     pub certificate_chain: ::std::string::String,
 }
-impl TlsValidationContextFileTrust {
+impl  TlsValidationContextFileTrust  {
     /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
-    pub fn certificate_chain(&self) -> &str {
-        use std::ops::Deref;
-        self.certificate_chain.deref()
+    pub fn certificate_chain(&self) -> & str {
+        use std::ops::Deref; self.certificate_chain.deref()
     }
 }
 impl TlsValidationContextFileTrust {
@@ -36,8 +35,7 @@ impl TlsValidationContextFileTrustBuilder {
     }
     /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
     pub fn set_certificate_chain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_chain = input;
-        self
+        self.certificate_chain = input; self
     }
     /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
     pub fn get_certificate_chain(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl TlsValidationContextFileTrustBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`certificate_chain`](crate::types::builders::TlsValidationContextFileTrustBuilder::certificate_chain)
     pub fn build(self) -> ::std::result::Result<crate::types::TlsValidationContextFileTrust, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TlsValidationContextFileTrust {
-            certificate_chain: self.certificate_chain.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "certificate_chain",
-                    "certificate_chain was not specified but it is required when building TlsValidationContextFileTrust",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TlsValidationContextFileTrust {
+                certificate_chain: self.certificate_chain
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("certificate_chain", "certificate_chain was not specified but it is required when building TlsValidationContextFileTrust")
+                    )?
+                ,
+            }
+        )
     }
 }
+

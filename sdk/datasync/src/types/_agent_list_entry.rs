@@ -3,7 +3,7 @@
 /// <p>Represents a single entry in a list (or array) of DataSync agents when you call the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListAgents.html">ListAgents</a> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AgentListEntry {
+pub struct AgentListEntry  {
     /// <p>The Amazon Resource Name (ARN) of a DataSync agent.</p>
     pub agent_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of an agent.</p>
@@ -19,13 +19,13 @@ pub struct AgentListEntry {
     /// <p>The platform-related details about the agent, such as the version number.</p>
     pub platform: ::std::option::Option<crate::types::Platform>,
 }
-impl AgentListEntry {
+impl  AgentListEntry  {
     /// <p>The Amazon Resource Name (ARN) of a DataSync agent.</p>
-    pub fn agent_arn(&self) -> ::std::option::Option<&str> {
+    pub fn agent_arn(&self) -> ::std::option::Option<& str> {
         self.agent_arn.as_deref()
     }
     /// <p>The name of an agent.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The status of an agent.</p>
@@ -35,11 +35,11 @@ impl AgentListEntry {
     /// <li>
     /// <p>If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync for five minutes or longer. This can happen for a few reasons. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline">What do I do if my agent is offline?</a></p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::AgentStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::AgentStatus> {
         self.status.as_ref()
     }
     /// <p>The platform-related details about the agent, such as the version number.</p>
-    pub fn platform(&self) -> ::std::option::Option<&crate::types::Platform> {
+    pub fn platform(&self) -> ::std::option::Option<& crate::types::Platform> {
         self.platform.as_ref()
     }
 }
@@ -67,8 +67,7 @@ impl AgentListEntryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a DataSync agent.</p>
     pub fn set_agent_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_arn = input;
-        self
+        self.agent_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of a DataSync agent.</p>
     pub fn get_agent_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +80,7 @@ impl AgentListEntryBuilder {
     }
     /// <p>The name of an agent.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of an agent.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +105,7 @@ impl AgentListEntryBuilder {
     /// <p>If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync for five minutes or longer. This can happen for a few reasons. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline">What do I do if my agent is offline?</a></p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgentStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of an agent.</p>
     /// <ul>
@@ -127,8 +124,7 @@ impl AgentListEntryBuilder {
     }
     /// <p>The platform-related details about the agent, such as the version number.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<crate::types::Platform>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// <p>The platform-related details about the agent, such as the version number.</p>
     pub fn get_platform(&self) -> &::std::option::Option<crate::types::Platform> {
@@ -137,10 +133,15 @@ impl AgentListEntryBuilder {
     /// Consumes the builder and constructs a [`AgentListEntry`](crate::types::AgentListEntry).
     pub fn build(self) -> crate::types::AgentListEntry {
         crate::types::AgentListEntry {
-            agent_arn: self.agent_arn,
-            name: self.name,
-            status: self.status,
-            platform: self.platform,
+            agent_arn: self.agent_arn
+            ,
+            name: self.name
+            ,
+            status: self.status
+            ,
+            platform: self.platform
+            ,
         }
     }
 }
+

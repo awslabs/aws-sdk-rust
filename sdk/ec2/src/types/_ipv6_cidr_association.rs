@@ -3,19 +3,19 @@
 /// <p>Describes an IPv6 CIDR block association.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Ipv6CidrAssociation {
+pub struct Ipv6CidrAssociation  {
     /// <p>The IPv6 CIDR block.</p>
     pub ipv6_cidr: ::std::option::Option<::std::string::String>,
     /// <p>The resource that's associated with the IPv6 CIDR block.</p>
     pub associated_resource: ::std::option::Option<::std::string::String>,
 }
-impl Ipv6CidrAssociation {
+impl  Ipv6CidrAssociation  {
     /// <p>The IPv6 CIDR block.</p>
-    pub fn ipv6_cidr(&self) -> ::std::option::Option<&str> {
+    pub fn ipv6_cidr(&self) -> ::std::option::Option<& str> {
         self.ipv6_cidr.as_deref()
     }
     /// <p>The resource that's associated with the IPv6 CIDR block.</p>
-    pub fn associated_resource(&self) -> ::std::option::Option<&str> {
+    pub fn associated_resource(&self) -> ::std::option::Option<& str> {
         self.associated_resource.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl Ipv6CidrAssociationBuilder {
     }
     /// <p>The IPv6 CIDR block.</p>
     pub fn set_ipv6_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipv6_cidr = input;
-        self
+        self.ipv6_cidr = input; self
     }
     /// <p>The IPv6 CIDR block.</p>
     pub fn get_ipv6_cidr(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl Ipv6CidrAssociationBuilder {
     }
     /// <p>The resource that's associated with the IPv6 CIDR block.</p>
     pub fn set_associated_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.associated_resource = input;
-        self
+        self.associated_resource = input; self
     }
     /// <p>The resource that's associated with the IPv6 CIDR block.</p>
     pub fn get_associated_resource(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl Ipv6CidrAssociationBuilder {
     /// Consumes the builder and constructs a [`Ipv6CidrAssociation`](crate::types::Ipv6CidrAssociation).
     pub fn build(self) -> crate::types::Ipv6CidrAssociation {
         crate::types::Ipv6CidrAssociation {
-            ipv6_cidr: self.ipv6_cidr,
-            associated_resource: self.associated_resource,
+            ipv6_cidr: self.ipv6_cidr
+            ,
+            associated_resource: self.associated_resource
+            ,
         }
     }
 }
+

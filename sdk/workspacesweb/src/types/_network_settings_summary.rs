@@ -3,20 +3,19 @@
 /// <p>The summary of network settings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkSettingsSummary {
+pub struct NetworkSettingsSummary  {
     /// <p>The ARN of the network settings.</p>
     pub network_settings_arn: ::std::string::String,
     /// <p>The VPC ID of the network settings.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
 }
-impl NetworkSettingsSummary {
+impl  NetworkSettingsSummary  {
     /// <p>The ARN of the network settings.</p>
-    pub fn network_settings_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.network_settings_arn.deref()
+    pub fn network_settings_arn(&self) -> & str {
+        use std::ops::Deref; self.network_settings_arn.deref()
     }
     /// <p>The VPC ID of the network settings.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl NetworkSettingsSummaryBuilder {
     }
     /// <p>The ARN of the network settings.</p>
     pub fn set_network_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_settings_arn = input;
-        self
+        self.network_settings_arn = input; self
     }
     /// <p>The ARN of the network settings.</p>
     pub fn get_network_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl NetworkSettingsSummaryBuilder {
     }
     /// <p>The VPC ID of the network settings.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The VPC ID of the network settings.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl NetworkSettingsSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`network_settings_arn`](crate::types::builders::NetworkSettingsSummaryBuilder::network_settings_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::NetworkSettingsSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::NetworkSettingsSummary {
-            network_settings_arn: self.network_settings_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "network_settings_arn",
-                    "network_settings_arn was not specified but it is required when building NetworkSettingsSummary",
-                )
-            })?,
-            vpc_id: self.vpc_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::NetworkSettingsSummary {
+                network_settings_arn: self.network_settings_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("network_settings_arn", "network_settings_arn was not specified but it is required when building NetworkSettingsSummary")
+                    )?
+                ,
+                vpc_id: self.vpc_id
+                ,
+            }
+        )
     }
 }
+

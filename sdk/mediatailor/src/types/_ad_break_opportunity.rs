@@ -3,11 +3,11 @@
 /// <p>A location at which a zero-duration ad marker was detected in a VOD source manifest.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AdBreakOpportunity {
+pub struct AdBreakOpportunity  {
     /// <p>The offset in milliseconds from the start of the VOD source at which an ad marker was detected.</p>
     pub offset_millis: i64,
 }
-impl AdBreakOpportunity {
+impl  AdBreakOpportunity  {
     /// <p>The offset in milliseconds from the start of the VOD source at which an ad marker was detected.</p>
     pub fn offset_millis(&self) -> i64 {
         self.offset_millis
@@ -35,8 +35,7 @@ impl AdBreakOpportunityBuilder {
     }
     /// <p>The offset in milliseconds from the start of the VOD source at which an ad marker was detected.</p>
     pub fn set_offset_millis(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.offset_millis = input;
-        self
+        self.offset_millis = input; self
     }
     /// <p>The offset in milliseconds from the start of the VOD source at which an ad marker was detected.</p>
     pub fn get_offset_millis(&self) -> &::std::option::Option<i64> {
@@ -45,7 +44,10 @@ impl AdBreakOpportunityBuilder {
     /// Consumes the builder and constructs a [`AdBreakOpportunity`](crate::types::AdBreakOpportunity).
     pub fn build(self) -> crate::types::AdBreakOpportunity {
         crate::types::AdBreakOpportunity {
-            offset_millis: self.offset_millis.unwrap_or_default(),
+            offset_millis: self.offset_millis
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

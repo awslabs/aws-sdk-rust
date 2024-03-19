@@ -102,3 +102,4 @@ pub mod untag_resource;
 
 /// Types for the `UpdateDeviceMetadata` operation.
 pub mod update_device_metadata;
+

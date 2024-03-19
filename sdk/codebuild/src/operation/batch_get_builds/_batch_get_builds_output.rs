@@ -2,32 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetBuildsOutput {
+pub struct BatchGetBuildsOutput  {
     /// <p>Information about the requested builds.</p>
-    pub builds: ::std::option::Option<::std::vec::Vec<crate::types::Build>>,
+    pub builds: ::std::option::Option<::std::vec::Vec::<crate::types::Build>>,
     /// <p>The IDs of builds for which information could not be found.</p>
-    pub builds_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub builds_not_found: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl BatchGetBuildsOutput {
+impl  BatchGetBuildsOutput  {
     /// <p>Information about the requested builds.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.builds.is_none()`.
-    pub fn builds(&self) -> &[crate::types::Build] {
-        self.builds.as_deref().unwrap_or_default()
+    pub fn builds(&self) -> & [crate::types::Build] {
+        self.builds.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The IDs of builds for which information could not be found.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.builds_not_found.is_none()`.
-    pub fn builds_not_found(&self) -> &[::std::string::String] {
-        self.builds_not_found.as_deref().unwrap_or_default()
+    pub fn builds_not_found(&self) -> & [::std::string::String] {
+        self.builds_not_found.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchGetBuildsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchGetBuildsOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetBuildsOutput`](crate::operation::batch_get_builds::BatchGetBuildsOutput).
     pub fn builder() -> crate::operation::batch_get_builds::builders::BatchGetBuildsOutputBuilder {
@@ -39,8 +41,8 @@ impl BatchGetBuildsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetBuildsOutputBuilder {
-    pub(crate) builds: ::std::option::Option<::std::vec::Vec<crate::types::Build>>,
-    pub(crate) builds_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) builds: ::std::option::Option<::std::vec::Vec::<crate::types::Build>>,
+    pub(crate) builds_not_found: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl BatchGetBuildsOutputBuilder {
@@ -51,17 +53,16 @@ impl BatchGetBuildsOutputBuilder {
     /// <p>Information about the requested builds.</p>
     pub fn builds(mut self, input: crate::types::Build) -> Self {
         let mut v = self.builds.unwrap_or_default();
-        v.push(input);
-        self.builds = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.builds = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the requested builds.</p>
-    pub fn set_builds(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Build>>) -> Self {
-        self.builds = input;
-        self
+    pub fn set_builds(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Build>>) -> Self {
+        self.builds = input; self
     }
     /// <p>Information about the requested builds.</p>
-    pub fn get_builds(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Build>> {
+    pub fn get_builds(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Build>> {
         &self.builds
     }
     /// Appends an item to `builds_not_found`.
@@ -71,34 +72,36 @@ impl BatchGetBuildsOutputBuilder {
     /// <p>The IDs of builds for which information could not be found.</p>
     pub fn builds_not_found(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.builds_not_found.unwrap_or_default();
-        v.push(input.into());
-        self.builds_not_found = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.builds_not_found = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of builds for which information could not be found.</p>
-    pub fn set_builds_not_found(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.builds_not_found = input;
-        self
+    pub fn set_builds_not_found(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.builds_not_found = input; self
     }
     /// <p>The IDs of builds for which information could not be found.</p>
-    pub fn get_builds_not_found(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_builds_not_found(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.builds_not_found
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchGetBuildsOutput`](crate::operation::batch_get_builds::BatchGetBuildsOutput).
     pub fn build(self) -> crate::operation::batch_get_builds::BatchGetBuildsOutput {
         crate::operation::batch_get_builds::BatchGetBuildsOutput {
-            builds: self.builds,
-            builds_not_found: self.builds_not_found,
+            builds: self.builds
+            ,
+            builds_not_found: self.builds_not_found
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

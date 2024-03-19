@@ -5,54 +5,50 @@ pub use crate::operation::describe_nfs_file_shares::_describe_nfs_file_shares_in
 
 impl DescribeNfsFileSharesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_nfs_file_shares::DescribeNfsFileSharesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_nfs_file_shares::DescribeNFSFileSharesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_nfs_file_shares();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_nfs_file_shares::DescribeNfsFileSharesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_nfs_file_shares::DescribeNFSFileSharesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_nfs_file_shares();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeNFSFileShares`.
-///
+/// 
 /// <p>Gets a description for one or more Network File System (NFS) file shares from an S3 File Gateway. This operation is only supported for S3 File Gateways.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeNFSFileSharesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_nfs_file_shares::builders::DescribeNfsFileSharesInputBuilder,
+                    inner: crate::operation::describe_nfs_file_shares::builders::DescribeNfsFileSharesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_nfs_file_shares::DescribeNfsFileSharesOutput,
-        crate::operation::describe_nfs_file_shares::DescribeNFSFileSharesError,
-    > for DescribeNFSFileSharesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_nfs_file_shares::DescribeNfsFileSharesOutput,
-            crate::operation::describe_nfs_file_shares::DescribeNFSFileSharesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_nfs_file_shares::DescribeNfsFileSharesOutput,
+                    crate::operation::describe_nfs_file_shares::DescribeNFSFileSharesError,
+                > for DescribeNFSFileSharesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_nfs_file_shares::DescribeNfsFileSharesOutput,
+                        crate::operation::describe_nfs_file_shares::DescribeNFSFileSharesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeNFSFileSharesFluentBuilder {
     /// Creates a new `DescribeNFSFileShares`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl DescribeNFSFileSharesFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_nfs_file_shares::DescribeNfsFileSharesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_nfs_file_shares::DescribeNFSFileSharesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_nfs_file_shares::DescribeNFSFileShares::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_nfs_file_shares::DescribeNFSFileShares::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_nfs_file_shares::DescribeNfsFileSharesOutput,
-        crate::operation::describe_nfs_file_shares::DescribeNFSFileSharesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_nfs_file_shares::DescribeNfsFileSharesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_nfs_file_shares::DescribeNFSFileSharesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_nfs_file_shares::DescribeNFSFileShares::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_nfs_file_shares::DescribeNFSFileShares::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_nfs_file_shares::DescribeNfsFileSharesOutput, crate::operation::describe_nfs_file_shares::DescribeNFSFileSharesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `FileShareARNList`.
     ///
     /// To override the contents of this collection use [`set_file_share_arn_list`](Self::set_file_share_arn_list).
@@ -118,12 +105,13 @@ impl DescribeNFSFileSharesFluentBuilder {
         self
     }
     /// <p>An array containing the Amazon Resource Name (ARN) of each file share to be described.</p>
-    pub fn set_file_share_arn_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_file_share_arn_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_file_share_arn_list(input);
         self
     }
     /// <p>An array containing the Amazon Resource Name (ARN) of each file share to be described.</p>
-    pub fn get_file_share_arn_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_file_share_arn_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_file_share_arn_list()
     }
 }
+

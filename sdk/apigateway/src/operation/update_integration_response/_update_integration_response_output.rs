@@ -3,48 +3,48 @@
 /// <p>Represents an integration response. The status code must map to an existing MethodResponse, and parameters and templates can be used to transform the back-end response.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateIntegrationResponseOutput {
+pub struct UpdateIntegrationResponseOutput  {
     /// <p>Specifies the status code that is used to map the integration response to an existing MethodResponse.</p>
     pub status_code: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the regular expression (regex) pattern used to choose an integration response based on the response from the back end. For example, if the success response returns nothing and the error response returns some string, you could use the <code>.+</code> regex to match error response. However, make sure that the error response does not contain any newline (<code>\n</code>) character in such cases. If the back end is an Lambda function, the Lambda function error header is matched. For all other HTTP and Amazon Web Services back ends, the HTTP status code is matched.</p>
     pub selection_pattern: ::std::option::Option<::std::string::String>,
     /// <p>A key-value map specifying response parameters that are passed to the method response from the back end. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The mapped non-static value must match the pattern of <code>integration.response.header.{name}</code> or <code>integration.response.body.{JSON-expression}</code>, where <code>name</code> is a valid and unique response header name and <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.</p>
-    pub response_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub response_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Specifies the templates used to transform the integration response body. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
-    pub response_templates: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub response_templates: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Specifies how to handle response payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
     pub content_handling: ::std::option::Option<crate::types::ContentHandlingStrategy>,
     _request_id: Option<String>,
 }
-impl UpdateIntegrationResponseOutput {
+impl  UpdateIntegrationResponseOutput  {
     /// <p>Specifies the status code that is used to map the integration response to an existing MethodResponse.</p>
-    pub fn status_code(&self) -> ::std::option::Option<&str> {
+    pub fn status_code(&self) -> ::std::option::Option<& str> {
         self.status_code.as_deref()
     }
     /// <p>Specifies the regular expression (regex) pattern used to choose an integration response based on the response from the back end. For example, if the success response returns nothing and the error response returns some string, you could use the <code>.+</code> regex to match error response. However, make sure that the error response does not contain any newline (<code>\n</code>) character in such cases. If the back end is an Lambda function, the Lambda function error header is matched. For all other HTTP and Amazon Web Services back ends, the HTTP status code is matched.</p>
-    pub fn selection_pattern(&self) -> ::std::option::Option<&str> {
+    pub fn selection_pattern(&self) -> ::std::option::Option<& str> {
         self.selection_pattern.as_deref()
     }
     /// <p>A key-value map specifying response parameters that are passed to the method response from the back end. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The mapped non-static value must match the pattern of <code>integration.response.header.{name}</code> or <code>integration.response.body.{JSON-expression}</code>, where <code>name</code> is a valid and unique response header name and <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.</p>
-    pub fn response_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn response_parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.response_parameters.as_ref()
     }
     /// <p>Specifies the templates used to transform the integration response body. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
-    pub fn response_templates(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn response_templates(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.response_templates.as_ref()
     }
     /// <p>Specifies how to handle response payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
-    pub fn content_handling(&self) -> ::std::option::Option<&crate::types::ContentHandlingStrategy> {
+    pub fn content_handling(&self) -> ::std::option::Option<& crate::types::ContentHandlingStrategy> {
         self.content_handling.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateIntegrationResponseOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateIntegrationResponseOutput {
     /// Creates a new builder-style object to manufacture [`UpdateIntegrationResponseOutput`](crate::operation::update_integration_response::UpdateIntegrationResponseOutput).
     pub fn builder() -> crate::operation::update_integration_response::builders::UpdateIntegrationResponseOutputBuilder {
@@ -58,8 +58,8 @@ impl UpdateIntegrationResponseOutput {
 pub struct UpdateIntegrationResponseOutputBuilder {
     pub(crate) status_code: ::std::option::Option<::std::string::String>,
     pub(crate) selection_pattern: ::std::option::Option<::std::string::String>,
-    pub(crate) response_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) response_templates: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) response_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) response_templates: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) content_handling: ::std::option::Option<crate::types::ContentHandlingStrategy>,
     _request_id: Option<String>,
 }
@@ -71,8 +71,7 @@ impl UpdateIntegrationResponseOutputBuilder {
     }
     /// <p>Specifies the status code that is used to map the integration response to an existing MethodResponse.</p>
     pub fn set_status_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_code = input;
-        self
+        self.status_code = input; self
     }
     /// <p>Specifies the status code that is used to map the integration response to an existing MethodResponse.</p>
     pub fn get_status_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +84,7 @@ impl UpdateIntegrationResponseOutputBuilder {
     }
     /// <p>Specifies the regular expression (regex) pattern used to choose an integration response based on the response from the back end. For example, if the success response returns nothing and the error response returns some string, you could use the <code>.+</code> regex to match error response. However, make sure that the error response does not contain any newline (<code>\n</code>) character in such cases. If the back end is an Lambda function, the Lambda function error header is matched. For all other HTTP and Amazon Web Services back ends, the HTTP status code is matched.</p>
     pub fn set_selection_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.selection_pattern = input;
-        self
+        self.selection_pattern = input; self
     }
     /// <p>Specifies the regular expression (regex) pattern used to choose an integration response based on the response from the back end. For example, if the success response returns nothing and the error response returns some string, you could use the <code>.+</code> regex to match error response. However, make sure that the error response does not contain any newline (<code>\n</code>) character in such cases. If the back end is an Lambda function, the Lambda function error header is matched. For all other HTTP and Amazon Web Services back ends, the HTTP status code is matched.</p>
     pub fn get_selection_pattern(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,26 +95,18 @@ impl UpdateIntegrationResponseOutputBuilder {
     /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
     ///
     /// <p>A key-value map specifying response parameters that are passed to the method response from the back end. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The mapped non-static value must match the pattern of <code>integration.response.header.{name}</code> or <code>integration.response.body.{JSON-expression}</code>, where <code>name</code> is a valid and unique response header name and <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.</p>
-    pub fn response_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn response_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.response_parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.response_parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.response_parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A key-value map specifying response parameters that are passed to the method response from the back end. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The mapped non-static value must match the pattern of <code>integration.response.header.{name}</code> or <code>integration.response.body.{JSON-expression}</code>, where <code>name</code> is a valid and unique response header name and <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.</p>
-    pub fn set_response_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.response_parameters = input;
-        self
+    pub fn set_response_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.response_parameters = input; self
     }
     /// <p>A key-value map specifying response parameters that are passed to the method response from the back end. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The mapped non-static value must match the pattern of <code>integration.response.header.{name}</code> or <code>integration.response.body.{JSON-expression}</code>, where <code>name</code> is a valid and unique response header name and <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.</p>
-    pub fn get_response_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_response_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.response_parameters
     }
     /// Adds a key-value pair to `response_templates`.
@@ -124,26 +114,18 @@ impl UpdateIntegrationResponseOutputBuilder {
     /// To override the contents of this collection use [`set_response_templates`](Self::set_response_templates).
     ///
     /// <p>Specifies the templates used to transform the integration response body. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
-    pub fn response_templates(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn response_templates(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.response_templates.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.response_templates = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.response_templates = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Specifies the templates used to transform the integration response body. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
-    pub fn set_response_templates(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.response_templates = input;
-        self
+    pub fn set_response_templates(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.response_templates = input; self
     }
     /// <p>Specifies the templates used to transform the integration response body. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
-    pub fn get_response_templates(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_response_templates(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.response_templates
     }
     /// <p>Specifies how to handle response payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
@@ -155,8 +137,7 @@ impl UpdateIntegrationResponseOutputBuilder {
     /// <p>Specifies how to handle response payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
     pub fn set_content_handling(mut self, input: ::std::option::Option<crate::types::ContentHandlingStrategy>) -> Self {
-        self.content_handling = input;
-        self
+        self.content_handling = input; self
     }
     /// <p>Specifies how to handle response payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
     /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
@@ -164,23 +145,29 @@ impl UpdateIntegrationResponseOutputBuilder {
         &self.content_handling
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateIntegrationResponseOutput`](crate::operation::update_integration_response::UpdateIntegrationResponseOutput).
     pub fn build(self) -> crate::operation::update_integration_response::UpdateIntegrationResponseOutput {
         crate::operation::update_integration_response::UpdateIntegrationResponseOutput {
-            status_code: self.status_code,
-            selection_pattern: self.selection_pattern,
-            response_parameters: self.response_parameters,
-            response_templates: self.response_templates,
-            content_handling: self.content_handling,
+            status_code: self.status_code
+            ,
+            selection_pattern: self.selection_pattern
+            ,
+            response_parameters: self.response_parameters
+            ,
+            response_templates: self.response_templates
+            ,
+            content_handling: self.content_handling
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

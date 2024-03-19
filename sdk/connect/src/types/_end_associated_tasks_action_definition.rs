@@ -3,7 +3,8 @@
 /// <p>End associated tasks related to a case.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EndAssociatedTasksActionDefinition {}
+pub struct EndAssociatedTasksActionDefinition  {
+}
 impl EndAssociatedTasksActionDefinition {
     /// Creates a new builder-style object to manufacture [`EndAssociatedTasksActionDefinition`](crate::types::EndAssociatedTasksActionDefinition).
     pub fn builder() -> crate::types::builders::EndAssociatedTasksActionDefinitionBuilder {
@@ -14,10 +15,13 @@ impl EndAssociatedTasksActionDefinition {
 /// A builder for [`EndAssociatedTasksActionDefinition`](crate::types::EndAssociatedTasksActionDefinition).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct EndAssociatedTasksActionDefinitionBuilder {}
+pub struct EndAssociatedTasksActionDefinitionBuilder {
+}
 impl EndAssociatedTasksActionDefinitionBuilder {
     /// Consumes the builder and constructs a [`EndAssociatedTasksActionDefinition`](crate::types::EndAssociatedTasksActionDefinition).
     pub fn build(self) -> crate::types::EndAssociatedTasksActionDefinition {
-        crate::types::EndAssociatedTasksActionDefinition {}
+        crate::types::EndAssociatedTasksActionDefinition {
+        }
     }
 }
+

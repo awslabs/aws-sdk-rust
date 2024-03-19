@@ -3,7 +3,7 @@
 /// <p>A description of a unique event within a stream.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Record {
+pub struct Record  {
     /// <p>A globally unique identifier for the event that was recorded in this stream record.</p>
     pub event_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of data modification that was performed on the DynamoDB table:</p>
@@ -36,9 +36,9 @@ pub struct Record {
     /// </ul>
     pub user_identity: ::std::option::Option<crate::types::Identity>,
 }
-impl Record {
+impl  Record  {
     /// <p>A globally unique identifier for the event that was recorded in this stream record.</p>
-    pub fn event_id(&self) -> ::std::option::Option<&str> {
+    pub fn event_id(&self) -> ::std::option::Option<& str> {
         self.event_id.as_deref()
     }
     /// <p>The type of data modification that was performed on the DynamoDB table:</p>
@@ -50,24 +50,24 @@ impl Record {
     /// <li>
     /// <p><code>REMOVE</code> - the item was deleted from the table</p></li>
     /// </ul>
-    pub fn event_name(&self) -> ::std::option::Option<&crate::types::OperationType> {
+    pub fn event_name(&self) -> ::std::option::Option<& crate::types::OperationType> {
         self.event_name.as_ref()
     }
     /// <p>The version number of the stream record format. This number is updated whenever the structure of <code>Record</code> is modified.</p>
     /// <p>Client applications must not assume that <code>eventVersion</code> will remain at a particular value, as this number is subject to change at any time. In general, <code>eventVersion</code> will only increase as the low-level DynamoDB Streams API evolves.</p>
-    pub fn event_version(&self) -> ::std::option::Option<&str> {
+    pub fn event_version(&self) -> ::std::option::Option<& str> {
         self.event_version.as_deref()
     }
     /// <p>The Amazon Web Services service from which the stream record originated. For DynamoDB Streams, this is <code>aws:dynamodb</code>.</p>
-    pub fn event_source(&self) -> ::std::option::Option<&str> {
+    pub fn event_source(&self) -> ::std::option::Option<& str> {
         self.event_source.as_deref()
     }
     /// <p>The region in which the <code>GetRecords</code> request was received.</p>
-    pub fn aws_region(&self) -> ::std::option::Option<&str> {
+    pub fn aws_region(&self) -> ::std::option::Option<& str> {
         self.aws_region.as_deref()
     }
     /// <p>The main body of the stream record, containing all of the DynamoDB-specific fields.</p>
-    pub fn dynamodb(&self) -> ::std::option::Option<&crate::types::StreamRecord> {
+    pub fn dynamodb(&self) -> ::std::option::Option<& crate::types::StreamRecord> {
         self.dynamodb.as_ref()
     }
     /// <p>Items that are deleted by the Time to Live process after expiration have the following fields:</p>
@@ -79,7 +79,7 @@ impl Record {
     /// <p>Records[].userIdentity.principalId</p>
     /// <p>"dynamodb.amazonaws.com"</p></li>
     /// </ul>
-    pub fn user_identity(&self) -> ::std::option::Option<&crate::types::Identity> {
+    pub fn user_identity(&self) -> ::std::option::Option<& crate::types::Identity> {
         self.user_identity.as_ref()
     }
 }
@@ -110,8 +110,7 @@ impl RecordBuilder {
     }
     /// <p>A globally unique identifier for the event that was recorded in this stream record.</p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_id = input;
-        self
+        self.event_id = input; self
     }
     /// <p>A globally unique identifier for the event that was recorded in this stream record.</p>
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +139,7 @@ impl RecordBuilder {
     /// <p><code>REMOVE</code> - the item was deleted from the table</p></li>
     /// </ul>
     pub fn set_event_name(mut self, input: ::std::option::Option<crate::types::OperationType>) -> Self {
-        self.event_name = input;
-        self
+        self.event_name = input; self
     }
     /// <p>The type of data modification that was performed on the DynamoDB table:</p>
     /// <ul>
@@ -164,8 +162,7 @@ impl RecordBuilder {
     /// <p>The version number of the stream record format. This number is updated whenever the structure of <code>Record</code> is modified.</p>
     /// <p>Client applications must not assume that <code>eventVersion</code> will remain at a particular value, as this number is subject to change at any time. In general, <code>eventVersion</code> will only increase as the low-level DynamoDB Streams API evolves.</p>
     pub fn set_event_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_version = input;
-        self
+        self.event_version = input; self
     }
     /// <p>The version number of the stream record format. This number is updated whenever the structure of <code>Record</code> is modified.</p>
     /// <p>Client applications must not assume that <code>eventVersion</code> will remain at a particular value, as this number is subject to change at any time. In general, <code>eventVersion</code> will only increase as the low-level DynamoDB Streams API evolves.</p>
@@ -179,8 +176,7 @@ impl RecordBuilder {
     }
     /// <p>The Amazon Web Services service from which the stream record originated. For DynamoDB Streams, this is <code>aws:dynamodb</code>.</p>
     pub fn set_event_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_source = input;
-        self
+        self.event_source = input; self
     }
     /// <p>The Amazon Web Services service from which the stream record originated. For DynamoDB Streams, this is <code>aws:dynamodb</code>.</p>
     pub fn get_event_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -193,8 +189,7 @@ impl RecordBuilder {
     }
     /// <p>The region in which the <code>GetRecords</code> request was received.</p>
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_region = input;
-        self
+        self.aws_region = input; self
     }
     /// <p>The region in which the <code>GetRecords</code> request was received.</p>
     pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -207,8 +202,7 @@ impl RecordBuilder {
     }
     /// <p>The main body of the stream record, containing all of the DynamoDB-specific fields.</p>
     pub fn set_dynamodb(mut self, input: ::std::option::Option<crate::types::StreamRecord>) -> Self {
-        self.dynamodb = input;
-        self
+        self.dynamodb = input; self
     }
     /// <p>The main body of the stream record, containing all of the DynamoDB-specific fields.</p>
     pub fn get_dynamodb(&self) -> &::std::option::Option<crate::types::StreamRecord> {
@@ -237,8 +231,7 @@ impl RecordBuilder {
     /// <p>"dynamodb.amazonaws.com"</p></li>
     /// </ul>
     pub fn set_user_identity(mut self, input: ::std::option::Option<crate::types::Identity>) -> Self {
-        self.user_identity = input;
-        self
+        self.user_identity = input; self
     }
     /// <p>Items that are deleted by the Time to Live process after expiration have the following fields:</p>
     /// <ul>
@@ -255,13 +248,21 @@ impl RecordBuilder {
     /// Consumes the builder and constructs a [`Record`](crate::types::Record).
     pub fn build(self) -> crate::types::Record {
         crate::types::Record {
-            event_id: self.event_id,
-            event_name: self.event_name,
-            event_version: self.event_version,
-            event_source: self.event_source,
-            aws_region: self.aws_region,
-            dynamodb: self.dynamodb,
-            user_identity: self.user_identity,
+            event_id: self.event_id
+            ,
+            event_name: self.event_name
+            ,
+            event_version: self.event_version
+            ,
+            event_source: self.event_source
+            ,
+            aws_region: self.aws_region
+            ,
+            dynamodb: self.dynamodb
+            ,
+            user_identity: self.user_identity
+            ,
         }
     }
 }
+

@@ -5,23 +5,20 @@ pub use crate::operation::put_slot_type::_put_slot_type_input::PutSlotTypeInputB
 
 impl PutSlotTypeInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::put_slot_type::PutSlotTypeOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_slot_type::PutSlotTypeError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.put_slot_type();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::put_slot_type::PutSlotTypeOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::put_slot_type::PutSlotTypeError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.put_slot_type();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `PutSlotType`.
-///
+/// 
 /// <p>Creates a custom slot type or replaces an existing custom slot type.</p>
 /// <p>To create a custom slot type, specify a name for the slot type and a set of enumeration values, which are the values that a slot of this type can assume. For more information, see <code>how-it-works</code>.</p>
 /// <p>If you specify the name of an existing slot type, the fields in the request replace the existing values in the <code>$LATEST</code> version of the slot type. Amazon Lex removes the fields that you don't provide in the request. If you don't specify required fields, Amazon Lex throws an exception. When you update the <code>$LATEST</code> version of a slot type, if a bot uses the <code>$LATEST</code> version of an intent that contains the slot type, the bot's <code>status</code> field is set to <code>NOT_BUILT</code>.</p>
@@ -29,33 +26,32 @@ impl PutSlotTypeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutSlotTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_slot_type::builders::PutSlotTypeInputBuilder,
+                    inner: crate::operation::put_slot_type::builders::PutSlotTypeInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::put_slot_type::PutSlotTypeOutput,
-        crate::operation::put_slot_type::PutSlotTypeError,
-    > for PutSlotTypeFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::put_slot_type::PutSlotTypeOutput,
-            crate::operation::put_slot_type::PutSlotTypeError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::put_slot_type::PutSlotTypeOutput,
+                    crate::operation::put_slot_type::PutSlotTypeError,
+                > for PutSlotTypeFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::put_slot_type::PutSlotTypeOutput,
+                        crate::operation::put_slot_type::PutSlotTypeError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl PutSlotTypeFluentBuilder {
     /// Creates a new `PutSlotType`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,53 +60,44 @@ impl PutSlotTypeFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_slot_type::PutSlotTypeOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_slot_type::PutSlotTypeError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::put_slot_type::PutSlotType::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::put_slot_type::PutSlotType::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::put_slot_type::PutSlotTypeOutput,
-        crate::operation::put_slot_type::PutSlotTypeError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::put_slot_type::PutSlotTypeOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_slot_type::PutSlotTypeError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::put_slot_type::PutSlotType::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::put_slot_type::PutSlotType::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::put_slot_type::PutSlotTypeOutput, crate::operation::put_slot_type::PutSlotTypeError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the slot type. The name is <i>not</i> case sensitive.</p>
     /// <p>The name can't match a built-in slot type name, or a built-in slot type name with "AMAZON." removed. For example, because there is a built-in slot type called <code>AMAZON.DATE</code>, you can't create a custom slot type called <code>DATE</code>.</p>
     /// <p>For a list of built-in slot types, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference">Slot Type Reference</a> in the <i>Alexa Skills Kit</i>.</p>
@@ -159,14 +146,14 @@ impl PutSlotTypeFluentBuilder {
     /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take. Each value can have a list of <code>synonyms</code>, which are additional values that help train the machine learning model about the values that it resolves for a slot.</p>
     /// <p>A regular expression slot type doesn't require enumeration values. All other slot types require a list of enumeration values.</p>
     /// <p>When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values for the slot. If you are using a Lambda function, this resolution list is passed to the function. If you are not using a Lambda function you can choose to return the value that the user entered or the first value in the resolution list as the slot value. The <code>valueSelectionStrategy</code> field indicates the option to use.</p>
-    pub fn set_enumeration_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnumerationValue>>) -> Self {
+    pub fn set_enumeration_values(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EnumerationValue>>) -> Self {
         self.inner = self.inner.set_enumeration_values(input);
         self
     }
     /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take. Each value can have a list of <code>synonyms</code>, which are additional values that help train the machine learning model about the values that it resolves for a slot.</p>
     /// <p>A regular expression slot type doesn't require enumeration values. All other slot types require a list of enumeration values.</p>
     /// <p>When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values for the slot. If you are using a Lambda function, this resolution list is passed to the function. If you are not using a Lambda function you can choose to return the value that the user entered or the first value in the resolution list as the slot value. The <code>valueSelectionStrategy</code> field indicates the option to use.</p>
-    pub fn get_enumeration_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnumerationValue>> {
+    pub fn get_enumeration_values(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EnumerationValue>> {
         self.inner.get_enumeration_values()
     }
     /// <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
@@ -265,12 +252,13 @@ impl PutSlotTypeFluentBuilder {
         self
     }
     /// <p>Configuration information that extends the parent built-in slot type. The configuration is added to the settings for the parent slot type.</p>
-    pub fn set_slot_type_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeConfiguration>>) -> Self {
+    pub fn set_slot_type_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SlotTypeConfiguration>>) -> Self {
         self.inner = self.inner.set_slot_type_configurations(input);
         self
     }
     /// <p>Configuration information that extends the parent built-in slot type. The configuration is added to the settings for the parent slot type.</p>
-    pub fn get_slot_type_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotTypeConfiguration>> {
+    pub fn get_slot_type_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SlotTypeConfiguration>> {
         self.inner.get_slot_type_configurations()
     }
 }
+

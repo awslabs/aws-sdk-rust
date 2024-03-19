@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateJobInput {
+pub struct CreateJobInput  {
     /// <p>The Amazon Web Services account ID that creates the job.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether confirmation is required before Amazon S3 runs the job. Confirmation is only required for jobs created through the Amazon S3 console.</p>
@@ -22,13 +22,13 @@ pub struct CreateJobInput {
     /// <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role that Batch Operations will use to run this job's action on every object in the manifest.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A set of tags to associate with the S3 Batch Operations job. This is an optional parameter.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::S3Tag>>,
     /// <p>The attribute container for the ManifestGenerator details. Jobs must be created with either a manifest file or a ManifestGenerator, but not both.</p>
     pub manifest_generator: ::std::option::Option<crate::types::JobManifestGenerator>,
 }
-impl CreateJobInput {
+impl  CreateJobInput  {
     /// <p>The Amazon Web Services account ID that creates the job.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>Indicates whether confirmation is required before Amazon S3 runs the job. Confirmation is only required for jobs created through the Amazon S3 console.</p>
@@ -36,23 +36,23 @@ impl CreateJobInput {
         self.confirmation_required
     }
     /// <p>The action that you want this job to perform on every object listed in the manifest. For more information about the available actions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn operation(&self) -> ::std::option::Option<&crate::types::JobOperation> {
+    pub fn operation(&self) -> ::std::option::Option<& crate::types::JobOperation> {
         self.operation.as_ref()
     }
     /// <p>Configuration parameters for the optional job-completion report.</p>
-    pub fn report(&self) -> ::std::option::Option<&crate::types::JobReport> {
+    pub fn report(&self) -> ::std::option::Option<& crate::types::JobReport> {
         self.report.as_ref()
     }
     /// <p>An idempotency token to ensure that you don't accidentally submit the same request twice. You can use any string up to the maximum length.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>Configuration parameters for the manifest.</p>
-    pub fn manifest(&self) -> ::std::option::Option<&crate::types::JobManifest> {
+    pub fn manifest(&self) -> ::std::option::Option<& crate::types::JobManifest> {
         self.manifest.as_ref()
     }
     /// <p>A description for this job. You can use any string within the permitted length. Descriptions don't need to be unique and can be used for multiple jobs.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The numerical priority for this job. Higher numbers indicate higher priority.</p>
@@ -60,17 +60,18 @@ impl CreateJobInput {
         self.priority
     }
     /// <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role that Batch Operations will use to run this job's action on every object in the manifest.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>A set of tags to associate with the S3 Batch Operations job. This is an optional parameter.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::S3Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::S3Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The attribute container for the ManifestGenerator details. Jobs must be created with either a manifest file or a ManifestGenerator, but not both.</p>
-    pub fn manifest_generator(&self) -> ::std::option::Option<&crate::types::JobManifestGenerator> {
+    pub fn manifest_generator(&self) -> ::std::option::Option<& crate::types::JobManifestGenerator> {
         self.manifest_generator.as_ref()
     }
 }
@@ -94,7 +95,7 @@ pub struct CreateJobInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::S3Tag>>,
     pub(crate) manifest_generator: ::std::option::Option<crate::types::JobManifestGenerator>,
 }
 impl CreateJobInputBuilder {
@@ -106,8 +107,7 @@ impl CreateJobInputBuilder {
     }
     /// <p>The Amazon Web Services account ID that creates the job.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID that creates the job.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +120,7 @@ impl CreateJobInputBuilder {
     }
     /// <p>Indicates whether confirmation is required before Amazon S3 runs the job. Confirmation is only required for jobs created through the Amazon S3 console.</p>
     pub fn set_confirmation_required(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.confirmation_required = input;
-        self
+        self.confirmation_required = input; self
     }
     /// <p>Indicates whether confirmation is required before Amazon S3 runs the job. Confirmation is only required for jobs created through the Amazon S3 console.</p>
     pub fn get_confirmation_required(&self) -> &::std::option::Option<bool> {
@@ -135,8 +134,7 @@ impl CreateJobInputBuilder {
     }
     /// <p>The action that you want this job to perform on every object listed in the manifest. For more information about the available actions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_operation(mut self, input: ::std::option::Option<crate::types::JobOperation>) -> Self {
-        self.operation = input;
-        self
+        self.operation = input; self
     }
     /// <p>The action that you want this job to perform on every object listed in the manifest. For more information about the available actions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn get_operation(&self) -> &::std::option::Option<crate::types::JobOperation> {
@@ -150,8 +148,7 @@ impl CreateJobInputBuilder {
     }
     /// <p>Configuration parameters for the optional job-completion report.</p>
     pub fn set_report(mut self, input: ::std::option::Option<crate::types::JobReport>) -> Self {
-        self.report = input;
-        self
+        self.report = input; self
     }
     /// <p>Configuration parameters for the optional job-completion report.</p>
     pub fn get_report(&self) -> &::std::option::Option<crate::types::JobReport> {
@@ -165,8 +162,7 @@ impl CreateJobInputBuilder {
     }
     /// <p>An idempotency token to ensure that you don't accidentally submit the same request twice. You can use any string up to the maximum length.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>An idempotency token to ensure that you don't accidentally submit the same request twice. You can use any string up to the maximum length.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -179,8 +175,7 @@ impl CreateJobInputBuilder {
     }
     /// <p>Configuration parameters for the manifest.</p>
     pub fn set_manifest(mut self, input: ::std::option::Option<crate::types::JobManifest>) -> Self {
-        self.manifest = input;
-        self
+        self.manifest = input; self
     }
     /// <p>Configuration parameters for the manifest.</p>
     pub fn get_manifest(&self) -> &::std::option::Option<crate::types::JobManifest> {
@@ -193,8 +188,7 @@ impl CreateJobInputBuilder {
     }
     /// <p>A description for this job. You can use any string within the permitted length. Descriptions don't need to be unique and can be used for multiple jobs.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description for this job. You can use any string within the permitted length. Descriptions don't need to be unique and can be used for multiple jobs.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -208,8 +202,7 @@ impl CreateJobInputBuilder {
     }
     /// <p>The numerical priority for this job. Higher numbers indicate higher priority.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// <p>The numerical priority for this job. Higher numbers indicate higher priority.</p>
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
@@ -223,8 +216,7 @@ impl CreateJobInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role that Batch Operations will use to run this job's action on every object in the manifest.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role that Batch Operations will use to run this job's action on every object in the manifest.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -237,17 +229,16 @@ impl CreateJobInputBuilder {
     /// <p>A set of tags to associate with the S3 Batch Operations job. This is an optional parameter.</p>
     pub fn tags(mut self, input: crate::types::S3Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A set of tags to associate with the S3 Batch Operations job. This is an optional parameter.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::S3Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A set of tags to associate with the S3 Batch Operations job. This is an optional parameter.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::S3Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::S3Tag>> {
         &self.tags
     }
     /// <p>The attribute container for the ManifestGenerator details. Jobs must be created with either a manifest file or a ManifestGenerator, but not both.</p>
@@ -257,8 +248,7 @@ impl CreateJobInputBuilder {
     }
     /// <p>The attribute container for the ManifestGenerator details. Jobs must be created with either a manifest file or a ManifestGenerator, but not both.</p>
     pub fn set_manifest_generator(mut self, input: ::std::option::Option<crate::types::JobManifestGenerator>) -> Self {
-        self.manifest_generator = input;
-        self
+        self.manifest_generator = input; self
     }
     /// <p>The attribute container for the ManifestGenerator details. Jobs must be created with either a manifest file or a ManifestGenerator, but not both.</p>
     pub fn get_manifest_generator(&self) -> &::std::option::Option<crate::types::JobManifestGenerator> {
@@ -266,18 +256,32 @@ impl CreateJobInputBuilder {
     }
     /// Consumes the builder and constructs a [`CreateJobInput`](crate::operation::create_job::CreateJobInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_job::CreateJobInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_job::CreateJobInput {
-            account_id: self.account_id,
-            confirmation_required: self.confirmation_required,
-            operation: self.operation,
-            report: self.report,
-            client_request_token: self.client_request_token,
-            manifest: self.manifest,
-            description: self.description,
-            priority: self.priority,
-            role_arn: self.role_arn,
-            tags: self.tags,
-            manifest_generator: self.manifest_generator,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_job::CreateJobInput {
+                account_id: self.account_id
+                ,
+                confirmation_required: self.confirmation_required
+                ,
+                operation: self.operation
+                ,
+                report: self.report
+                ,
+                client_request_token: self.client_request_token
+                ,
+                manifest: self.manifest
+                ,
+                description: self.description
+                ,
+                priority: self.priority
+                ,
+                role_arn: self.role_arn
+                ,
+                tags: self.tags
+                ,
+                manifest_generator: self.manifest_generator
+                ,
+            }
+        )
     }
 }
+

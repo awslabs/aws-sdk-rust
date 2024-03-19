@@ -60,3 +60,4 @@ pub use crate::types::_legal_term::LegalTermBuilder;
 pub use crate::types::_document_item::DocumentItemBuilder;
 
 pub use crate::types::_estimated_charges::EstimatedChargesBuilder;
+

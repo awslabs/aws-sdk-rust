@@ -4,15 +4,15 @@
 /// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCustomVerificationEmailTemplatesInput {
+pub struct ListCustomVerificationEmailTemplatesInput  {
     /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES account.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of custom verification email templates to return. This value must be at least 1 and less than or equal to 50. If you do not specify a value, or if you specify a value less than 1 or greater than 50, the operation returns up to 50 results.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListCustomVerificationEmailTemplatesInput {
+impl  ListCustomVerificationEmailTemplatesInput  {
     /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES account.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of custom verification email templates to return. This value must be at least 1 and less than or equal to 50. If you do not specify a value, or if you specify a value less than 1 or greater than 50, the operation returns up to 50 results.</p>
@@ -42,8 +42,7 @@ impl ListCustomVerificationEmailTemplatesInputBuilder {
     }
     /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES account.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES account.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl ListCustomVerificationEmailTemplatesInputBuilder {
     }
     /// <p>The maximum number of custom verification email templates to return. This value must be at least 1 and less than or equal to 50. If you do not specify a value, or if you specify a value less than 1 or greater than 50, the operation returns up to 50 results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of custom verification email templates to return. This value must be at least 1 and less than or equal to 50. If you do not specify a value, or if you specify a value less than 1 or greater than 50, the operation returns up to 50 results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListCustomVerificationEmailTemplatesInput`](crate::operation::list_custom_verification_email_templates::ListCustomVerificationEmailTemplatesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_custom_verification_email_templates::ListCustomVerificationEmailTemplatesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_custom_verification_email_templates::ListCustomVerificationEmailTemplatesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_custom_verification_email_templates::ListCustomVerificationEmailTemplatesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

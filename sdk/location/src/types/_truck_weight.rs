@@ -3,7 +3,7 @@
 /// <p>Contains details about the truck's weight specifications. Used to avoid roads that can't support or allow the total weight for requests that specify <code>TravelMode</code> as <code>Truck</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TruckWeight {
+pub struct TruckWeight  {
     /// <p>The total weight of the truck.</p>
     /// <ul>
     /// <li>
@@ -14,7 +14,7 @@ pub struct TruckWeight {
     /// <p>Default Value: <code>Kilograms</code></p>
     pub unit: ::std::option::Option<crate::types::VehicleWeightUnit>,
 }
-impl TruckWeight {
+impl  TruckWeight  {
     /// <p>The total weight of the truck.</p>
     /// <ul>
     /// <li>
@@ -25,7 +25,7 @@ impl TruckWeight {
     }
     /// <p>The unit of measurement to use for the truck weight.</p>
     /// <p>Default Value: <code>Kilograms</code></p>
-    pub fn unit(&self) -> ::std::option::Option<&crate::types::VehicleWeightUnit> {
+    pub fn unit(&self) -> ::std::option::Option<& crate::types::VehicleWeightUnit> {
         self.unit.as_ref()
     }
 }
@@ -59,8 +59,7 @@ impl TruckWeightBuilder {
     /// <p>For example, <code>3500</code>.</p></li>
     /// </ul>
     pub fn set_total(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.total = input;
-        self
+        self.total = input; self
     }
     /// <p>The total weight of the truck.</p>
     /// <ul>
@@ -79,8 +78,7 @@ impl TruckWeightBuilder {
     /// <p>The unit of measurement to use for the truck weight.</p>
     /// <p>Default Value: <code>Kilograms</code></p>
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::VehicleWeightUnit>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// <p>The unit of measurement to use for the truck weight.</p>
     /// <p>Default Value: <code>Kilograms</code></p>
@@ -90,8 +88,11 @@ impl TruckWeightBuilder {
     /// Consumes the builder and constructs a [`TruckWeight`](crate::types::TruckWeight).
     pub fn build(self) -> crate::types::TruckWeight {
         crate::types::TruckWeight {
-            total: self.total,
-            unit: self.unit,
+            total: self.total
+            ,
+            unit: self.unit
+            ,
         }
     }
 }
+

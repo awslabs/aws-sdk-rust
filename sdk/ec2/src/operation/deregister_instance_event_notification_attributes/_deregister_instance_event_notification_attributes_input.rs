@@ -2,27 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterInstanceEventNotificationAttributesInput {
+pub struct DeregisterInstanceEventNotificationAttributesInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>Information about the tag keys to deregister.</p>
     pub instance_tag_attribute: ::std::option::Option<crate::types::DeregisterInstanceTagAttributeRequest>,
 }
-impl DeregisterInstanceEventNotificationAttributesInput {
+impl  DeregisterInstanceEventNotificationAttributesInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>Information about the tag keys to deregister.</p>
-    pub fn instance_tag_attribute(&self) -> ::std::option::Option<&crate::types::DeregisterInstanceTagAttributeRequest> {
+    pub fn instance_tag_attribute(&self) -> ::std::option::Option<& crate::types::DeregisterInstanceTagAttributeRequest> {
         self.instance_tag_attribute.as_ref()
     }
 }
 impl DeregisterInstanceEventNotificationAttributesInput {
     /// Creates a new builder-style object to manufacture [`DeregisterInstanceEventNotificationAttributesInput`](crate::operation::deregister_instance_event_notification_attributes::DeregisterInstanceEventNotificationAttributesInput).
-    pub fn builder(
-    ) -> crate::operation::deregister_instance_event_notification_attributes::builders::DeregisterInstanceEventNotificationAttributesInputBuilder
-    {
+    pub fn builder() -> crate::operation::deregister_instance_event_notification_attributes::builders::DeregisterInstanceEventNotificationAttributesInputBuilder {
         crate::operation::deregister_instance_event_notification_attributes::builders::DeregisterInstanceEventNotificationAttributesInputBuilder::default()
     }
 }
@@ -42,8 +40,7 @@ impl DeregisterInstanceEventNotificationAttributesInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -57,25 +54,22 @@ impl DeregisterInstanceEventNotificationAttributesInputBuilder {
     }
     /// <p>Information about the tag keys to deregister.</p>
     pub fn set_instance_tag_attribute(mut self, input: ::std::option::Option<crate::types::DeregisterInstanceTagAttributeRequest>) -> Self {
-        self.instance_tag_attribute = input;
-        self
+        self.instance_tag_attribute = input; self
     }
     /// <p>Information about the tag keys to deregister.</p>
     pub fn get_instance_tag_attribute(&self) -> &::std::option::Option<crate::types::DeregisterInstanceTagAttributeRequest> {
         &self.instance_tag_attribute
     }
     /// Consumes the builder and constructs a [`DeregisterInstanceEventNotificationAttributesInput`](crate::operation::deregister_instance_event_notification_attributes::DeregisterInstanceEventNotificationAttributesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_instance_event_notification_attributes::DeregisterInstanceEventNotificationAttributesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_instance_event_notification_attributes::DeregisterInstanceEventNotificationAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::deregister_instance_event_notification_attributes::DeregisterInstanceEventNotificationAttributesInput {
-                dry_run: self.dry_run,
-                instance_tag_attribute: self.instance_tag_attribute,
-            },
+                dry_run: self.dry_run
+                ,
+                instance_tag_attribute: self.instance_tag_attribute
+                ,
+            }
         )
     }
 }
+

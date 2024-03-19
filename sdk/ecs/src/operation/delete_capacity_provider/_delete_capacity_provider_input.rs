@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCapacityProviderInput {
+pub struct DeleteCapacityProviderInput  {
     /// <p>The short name or full Amazon Resource Name (ARN) of the capacity provider to delete.</p>
     pub capacity_provider: ::std::option::Option<::std::string::String>,
 }
-impl DeleteCapacityProviderInput {
+impl  DeleteCapacityProviderInput  {
     /// <p>The short name or full Amazon Resource Name (ARN) of the capacity provider to delete.</p>
-    pub fn capacity_provider(&self) -> ::std::option::Option<&str> {
+    pub fn capacity_provider(&self) -> ::std::option::Option<& str> {
         self.capacity_provider.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteCapacityProviderInputBuilder {
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the capacity provider to delete.</p>
     pub fn set_capacity_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.capacity_provider = input;
-        self
+        self.capacity_provider = input; self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the capacity provider to delete.</p>
     pub fn get_capacity_provider(&self) -> &::std::option::Option<::std::string::String> {
         &self.capacity_provider
     }
     /// Consumes the builder and constructs a [`DeleteCapacityProviderInput`](crate::operation::delete_capacity_provider::DeleteCapacityProviderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_capacity_provider::DeleteCapacityProviderInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_capacity_provider::DeleteCapacityProviderInput {
-            capacity_provider: self.capacity_provider,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_capacity_provider::DeleteCapacityProviderInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_capacity_provider::DeleteCapacityProviderInput {
+                capacity_provider: self.capacity_provider
+                ,
+            }
+        )
     }
 }
+

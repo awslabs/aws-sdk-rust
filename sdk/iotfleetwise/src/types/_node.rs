@@ -38,11 +38,7 @@ impl Node {
     /// Tries to convert the enum instance into [`Actuator`](crate::types::Node::Actuator), extracting the inner [`Actuator`](crate::types::Actuator).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_actuator(&self) -> ::std::result::Result<&crate::types::Actuator, &Self> {
-        if let Node::Actuator(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Node::Actuator(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Actuator`](crate::types::Node::Actuator).
     pub fn is_actuator(&self) -> bool {
@@ -51,11 +47,7 @@ impl Node {
     /// Tries to convert the enum instance into [`Attribute`](crate::types::Node::Attribute), extracting the inner [`Attribute`](crate::types::Attribute).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_attribute(&self) -> ::std::result::Result<&crate::types::Attribute, &Self> {
-        if let Node::Attribute(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Node::Attribute(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Attribute`](crate::types::Node::Attribute).
     pub fn is_attribute(&self) -> bool {
@@ -64,11 +56,7 @@ impl Node {
     /// Tries to convert the enum instance into [`Branch`](crate::types::Node::Branch), extracting the inner [`Branch`](crate::types::Branch).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_branch(&self) -> ::std::result::Result<&crate::types::Branch, &Self> {
-        if let Node::Branch(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Node::Branch(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Branch`](crate::types::Node::Branch).
     pub fn is_branch(&self) -> bool {
@@ -77,11 +65,7 @@ impl Node {
     /// Tries to convert the enum instance into [`Property`](crate::types::Node::Property), extracting the inner [`CustomProperty`](crate::types::CustomProperty).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_property(&self) -> ::std::result::Result<&crate::types::CustomProperty, &Self> {
-        if let Node::Property(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Node::Property(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Property`](crate::types::Node::Property).
     pub fn is_property(&self) -> bool {
@@ -90,11 +74,7 @@ impl Node {
     /// Tries to convert the enum instance into [`Sensor`](crate::types::Node::Sensor), extracting the inner [`Sensor`](crate::types::Sensor).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sensor(&self) -> ::std::result::Result<&crate::types::Sensor, &Self> {
-        if let Node::Sensor(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Node::Sensor(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Sensor`](crate::types::Node::Sensor).
     pub fn is_sensor(&self) -> bool {
@@ -103,11 +83,7 @@ impl Node {
     /// Tries to convert the enum instance into [`Struct`](crate::types::Node::Struct), extracting the inner [`CustomStruct`](crate::types::CustomStruct).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_struct(&self) -> ::std::result::Result<&crate::types::CustomStruct, &Self> {
-        if let Node::Struct(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Node::Struct(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Struct`](crate::types::Node::Struct).
     pub fn is_struct(&self) -> bool {
@@ -118,3 +94,4 @@ impl Node {
         matches!(self, Self::Unknown)
     }
 }
+

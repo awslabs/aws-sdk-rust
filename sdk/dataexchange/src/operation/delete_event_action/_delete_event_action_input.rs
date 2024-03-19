@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteEventActionInput {
+pub struct DeleteEventActionInput  {
     /// <p>The unique identifier for the event action.</p>
     pub event_action_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteEventActionInput {
+impl  DeleteEventActionInput  {
     /// <p>The unique identifier for the event action.</p>
-    pub fn event_action_id(&self) -> ::std::option::Option<&str> {
+    pub fn event_action_id(&self) -> ::std::option::Option<& str> {
         self.event_action_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteEventActionInputBuilder {
     }
     /// <p>The unique identifier for the event action.</p>
     pub fn set_event_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_action_id = input;
-        self
+        self.event_action_id = input; self
     }
     /// <p>The unique identifier for the event action.</p>
     pub fn get_event_action_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_action_id
     }
     /// Consumes the builder and constructs a [`DeleteEventActionInput`](crate::operation::delete_event_action::DeleteEventActionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_event_action::DeleteEventActionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_event_action::DeleteEventActionInput {
-            event_action_id: self.event_action_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_event_action::DeleteEventActionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_event_action::DeleteEventActionInput {
+                event_action_id: self.event_action_id
+                ,
+            }
+        )
     }
 }
+

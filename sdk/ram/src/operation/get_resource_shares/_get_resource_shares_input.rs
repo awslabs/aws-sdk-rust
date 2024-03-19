@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetResourceSharesInput {
+pub struct GetResourceSharesInput  {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of individual resource shares that you want information about.</p>
-    pub resource_share_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resource_share_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies that you want to retrieve details of only those resource shares that have this status.</p>
     pub resource_share_status: ::std::option::Option<crate::types::ResourceShareStatus>,
     /// <p>Specifies that you want to retrieve details of only those resource shares that match the following:</p>
@@ -18,7 +18,7 @@ pub struct GetResourceSharesInput {
     /// <p>Specifies the name of an individual resource share that you want to retrieve details about.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies that you want to retrieve details of only those resource shares that match the specified tag keys and values.</p>
-    pub tag_filters: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>,
+    pub tag_filters: ::std::option::Option<::std::vec::Vec::<crate::types::TagFilter>>,
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
@@ -28,15 +28,16 @@ pub struct GetResourceSharesInput {
     /// <p>Specifies that you want to retrieve details for only those resource shares that use the specified version of the managed permission.</p>
     pub permission_version: ::std::option::Option<i32>,
 }
-impl GetResourceSharesInput {
+impl  GetResourceSharesInput  {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of individual resource shares that you want information about.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_share_arns.is_none()`.
-    pub fn resource_share_arns(&self) -> &[::std::string::String] {
-        self.resource_share_arns.as_deref().unwrap_or_default()
+    pub fn resource_share_arns(&self) -> & [::std::string::String] {
+        self.resource_share_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies that you want to retrieve details of only those resource shares that have this status.</p>
-    pub fn resource_share_status(&self) -> ::std::option::Option<&crate::types::ResourceShareStatus> {
+    pub fn resource_share_status(&self) -> ::std::option::Option<& crate::types::ResourceShareStatus> {
         self.resource_share_status.as_ref()
     }
     /// <p>Specifies that you want to retrieve details of only those resource shares that match the following:</p>
@@ -46,21 +47,22 @@ impl GetResourceSharesInput {
     /// <li>
     /// <p><b> <code>OTHER-ACCOUNTS</code> </b> – resource shares that other accounts share with your account</p></li>
     /// </ul>
-    pub fn resource_owner(&self) -> ::std::option::Option<&crate::types::ResourceOwner> {
+    pub fn resource_owner(&self) -> ::std::option::Option<& crate::types::ResourceOwner> {
         self.resource_owner.as_ref()
     }
     /// <p>Specifies the name of an individual resource share that you want to retrieve details about.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies that you want to retrieve details of only those resource shares that match the specified tag keys and values.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_filters.is_none()`.
-    pub fn tag_filters(&self) -> &[crate::types::TagFilter] {
-        self.tag_filters.as_deref().unwrap_or_default()
+    pub fn tag_filters(&self) -> & [crate::types::TagFilter] {
+        self.tag_filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
@@ -68,7 +70,7 @@ impl GetResourceSharesInput {
         self.max_results
     }
     /// <p>Specifies that you want to retrieve details of only those resource shares that use the managed permission with this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>.</p>
-    pub fn permission_arn(&self) -> ::std::option::Option<&str> {
+    pub fn permission_arn(&self) -> ::std::option::Option<& str> {
         self.permission_arn.as_deref()
     }
     /// <p>Specifies that you want to retrieve details for only those resource shares that use the specified version of the managed permission.</p>
@@ -87,11 +89,11 @@ impl GetResourceSharesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetResourceSharesInputBuilder {
-    pub(crate) resource_share_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) resource_share_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) resource_share_status: ::std::option::Option<crate::types::ResourceShareStatus>,
     pub(crate) resource_owner: ::std::option::Option<crate::types::ResourceOwner>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_filters: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>,
+    pub(crate) tag_filters: ::std::option::Option<::std::vec::Vec::<crate::types::TagFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) permission_arn: ::std::option::Option<::std::string::String>,
@@ -105,17 +107,16 @@ impl GetResourceSharesInputBuilder {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of individual resource shares that you want information about.</p>
     pub fn resource_share_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_share_arns.unwrap_or_default();
-        v.push(input.into());
-        self.resource_share_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_share_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of individual resource shares that you want information about.</p>
-    pub fn set_resource_share_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.resource_share_arns = input;
-        self
+    pub fn set_resource_share_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.resource_share_arns = input; self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of individual resource shares that you want information about.</p>
-    pub fn get_resource_share_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_share_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.resource_share_arns
     }
     /// <p>Specifies that you want to retrieve details of only those resource shares that have this status.</p>
@@ -125,8 +126,7 @@ impl GetResourceSharesInputBuilder {
     }
     /// <p>Specifies that you want to retrieve details of only those resource shares that have this status.</p>
     pub fn set_resource_share_status(mut self, input: ::std::option::Option<crate::types::ResourceShareStatus>) -> Self {
-        self.resource_share_status = input;
-        self
+        self.resource_share_status = input; self
     }
     /// <p>Specifies that you want to retrieve details of only those resource shares that have this status.</p>
     pub fn get_resource_share_status(&self) -> &::std::option::Option<crate::types::ResourceShareStatus> {
@@ -152,8 +152,7 @@ impl GetResourceSharesInputBuilder {
     /// <p><b> <code>OTHER-ACCOUNTS</code> </b> – resource shares that other accounts share with your account</p></li>
     /// </ul>
     pub fn set_resource_owner(mut self, input: ::std::option::Option<crate::types::ResourceOwner>) -> Self {
-        self.resource_owner = input;
-        self
+        self.resource_owner = input; self
     }
     /// <p>Specifies that you want to retrieve details of only those resource shares that match the following:</p>
     /// <ul>
@@ -172,8 +171,7 @@ impl GetResourceSharesInputBuilder {
     }
     /// <p>Specifies the name of an individual resource share that you want to retrieve details about.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Specifies the name of an individual resource share that you want to retrieve details about.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -186,17 +184,16 @@ impl GetResourceSharesInputBuilder {
     /// <p>Specifies that you want to retrieve details of only those resource shares that match the specified tag keys and values.</p>
     pub fn tag_filters(mut self, input: crate::types::TagFilter) -> Self {
         let mut v = self.tag_filters.unwrap_or_default();
-        v.push(input);
-        self.tag_filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies that you want to retrieve details of only those resource shares that match the specified tag keys and values.</p>
-    pub fn set_tag_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>) -> Self {
-        self.tag_filters = input;
-        self
+    pub fn set_tag_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagFilter>>) -> Self {
+        self.tag_filters = input; self
     }
     /// <p>Specifies that you want to retrieve details of only those resource shares that match the specified tag keys and values.</p>
-    pub fn get_tag_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagFilter>> {
+    pub fn get_tag_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagFilter>> {
         &self.tag_filters
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
@@ -206,8 +203,7 @@ impl GetResourceSharesInputBuilder {
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -220,8 +216,7 @@ impl GetResourceSharesInputBuilder {
     }
     /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -234,8 +229,7 @@ impl GetResourceSharesInputBuilder {
     }
     /// <p>Specifies that you want to retrieve details of only those resource shares that use the managed permission with this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>.</p>
     pub fn set_permission_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.permission_arn = input;
-        self
+        self.permission_arn = input; self
     }
     /// <p>Specifies that you want to retrieve details of only those resource shares that use the managed permission with this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>.</p>
     pub fn get_permission_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -248,27 +242,36 @@ impl GetResourceSharesInputBuilder {
     }
     /// <p>Specifies that you want to retrieve details for only those resource shares that use the specified version of the managed permission.</p>
     pub fn set_permission_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.permission_version = input;
-        self
+        self.permission_version = input; self
     }
     /// <p>Specifies that you want to retrieve details for only those resource shares that use the specified version of the managed permission.</p>
     pub fn get_permission_version(&self) -> &::std::option::Option<i32> {
         &self.permission_version
     }
     /// Consumes the builder and constructs a [`GetResourceSharesInput`](crate::operation::get_resource_shares::GetResourceSharesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_resource_shares::GetResourceSharesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_resource_shares::GetResourceSharesInput {
-            resource_share_arns: self.resource_share_arns,
-            resource_share_status: self.resource_share_status,
-            resource_owner: self.resource_owner,
-            name: self.name,
-            tag_filters: self.tag_filters,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            permission_arn: self.permission_arn,
-            permission_version: self.permission_version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_resource_shares::GetResourceSharesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_resource_shares::GetResourceSharesInput {
+                resource_share_arns: self.resource_share_arns
+                ,
+                resource_share_status: self.resource_share_status
+                ,
+                resource_owner: self.resource_owner
+                ,
+                name: self.name
+                ,
+                tag_filters: self.tag_filters
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                permission_arn: self.permission_arn
+                ,
+                permission_version: self.permission_version
+                ,
+            }
+        )
     }
 }
+

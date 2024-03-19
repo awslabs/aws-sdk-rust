@@ -3,7 +3,7 @@
 /// <p>Represents an API stage.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Stage {
+pub struct Stage  {
     /// <p>Settings for logging access in this stage.</p>
     pub access_log_settings: ::std::option::Option<crate::types::AccessLogSettings>,
     /// <p>Specifies whether a stage is managed by API Gateway. If you created an API using quick create, the $default stage is managed by API Gateway. You can't modify the $default stage.</p>
@@ -25,17 +25,17 @@ pub struct Stage {
     /// <p>The timestamp when the stage was last updated.</p>
     pub last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Route settings for the stage, by routeKey.</p>
-    pub route_settings: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RouteSettings>>,
+    pub route_settings: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::RouteSettings>>,
     /// <p>The name of the stage.</p>
     pub stage_name: ::std::option::Option<::std::string::String>,
     /// <p>A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
-    pub stage_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub stage_variables: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl Stage {
+impl  Stage  {
     /// <p>Settings for logging access in this stage.</p>
-    pub fn access_log_settings(&self) -> ::std::option::Option<&crate::types::AccessLogSettings> {
+    pub fn access_log_settings(&self) -> ::std::option::Option<& crate::types::AccessLogSettings> {
         self.access_log_settings.as_ref()
     }
     /// <p>Specifies whether a stage is managed by API Gateway. If you created an API using quick create, the $default stage is managed by API Gateway. You can't modify the $default stage.</p>
@@ -47,47 +47,47 @@ impl Stage {
         self.auto_deploy
     }
     /// <p>The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.</p>
-    pub fn client_certificate_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_certificate_id(&self) -> ::std::option::Option<& str> {
         self.client_certificate_id.as_deref()
     }
     /// <p>The timestamp when the stage was created.</p>
-    pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>Default route settings for the stage.</p>
-    pub fn default_route_settings(&self) -> ::std::option::Option<&crate::types::RouteSettings> {
+    pub fn default_route_settings(&self) -> ::std::option::Option<& crate::types::RouteSettings> {
         self.default_route_settings.as_ref()
     }
     /// <p>The identifier of the Deployment that the Stage is associated with. Can't be updated if autoDeploy is enabled.</p>
-    pub fn deployment_id(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_id(&self) -> ::std::option::Option<& str> {
         self.deployment_id.as_deref()
     }
     /// <p>The description of the stage.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Describes the status of the last deployment of a stage. Supported only for stages with autoDeploy enabled.</p>
-    pub fn last_deployment_status_message(&self) -> ::std::option::Option<&str> {
+    pub fn last_deployment_status_message(&self) -> ::std::option::Option<& str> {
         self.last_deployment_status_message.as_deref()
     }
     /// <p>The timestamp when the stage was last updated.</p>
-    pub fn last_updated_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
     /// <p>Route settings for the stage, by routeKey.</p>
-    pub fn route_settings(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::RouteSettings>> {
+    pub fn route_settings(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::RouteSettings>> {
         self.route_settings.as_ref()
     }
     /// <p>The name of the stage.</p>
-    pub fn stage_name(&self) -> ::std::option::Option<&str> {
+    pub fn stage_name(&self) -> ::std::option::Option<& str> {
         self.stage_name.as_deref()
     }
     /// <p>A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
-    pub fn stage_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn stage_variables(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.stage_variables.as_ref()
     }
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -112,10 +112,10 @@ pub struct StageBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) last_deployment_status_message: ::std::option::Option<::std::string::String>,
     pub(crate) last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) route_settings: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RouteSettings>>,
+    pub(crate) route_settings: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::RouteSettings>>,
     pub(crate) stage_name: ::std::option::Option<::std::string::String>,
-    pub(crate) stage_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) stage_variables: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl StageBuilder {
     /// <p>Settings for logging access in this stage.</p>
@@ -125,8 +125,7 @@ impl StageBuilder {
     }
     /// <p>Settings for logging access in this stage.</p>
     pub fn set_access_log_settings(mut self, input: ::std::option::Option<crate::types::AccessLogSettings>) -> Self {
-        self.access_log_settings = input;
-        self
+        self.access_log_settings = input; self
     }
     /// <p>Settings for logging access in this stage.</p>
     pub fn get_access_log_settings(&self) -> &::std::option::Option<crate::types::AccessLogSettings> {
@@ -139,8 +138,7 @@ impl StageBuilder {
     }
     /// <p>Specifies whether a stage is managed by API Gateway. If you created an API using quick create, the $default stage is managed by API Gateway. You can't modify the $default stage.</p>
     pub fn set_api_gateway_managed(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.api_gateway_managed = input;
-        self
+        self.api_gateway_managed = input; self
     }
     /// <p>Specifies whether a stage is managed by API Gateway. If you created an API using quick create, the $default stage is managed by API Gateway. You can't modify the $default stage.</p>
     pub fn get_api_gateway_managed(&self) -> &::std::option::Option<bool> {
@@ -153,8 +151,7 @@ impl StageBuilder {
     }
     /// <p>Specifies whether updates to an API automatically trigger a new deployment. The default value is false.</p>
     pub fn set_auto_deploy(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_deploy = input;
-        self
+        self.auto_deploy = input; self
     }
     /// <p>Specifies whether updates to an API automatically trigger a new deployment. The default value is false.</p>
     pub fn get_auto_deploy(&self) -> &::std::option::Option<bool> {
@@ -167,8 +164,7 @@ impl StageBuilder {
     }
     /// <p>The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.</p>
     pub fn set_client_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_certificate_id = input;
-        self
+        self.client_certificate_id = input; self
     }
     /// <p>The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.</p>
     pub fn get_client_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +177,7 @@ impl StageBuilder {
     }
     /// <p>The timestamp when the stage was created.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>The timestamp when the stage was created.</p>
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -195,8 +190,7 @@ impl StageBuilder {
     }
     /// <p>Default route settings for the stage.</p>
     pub fn set_default_route_settings(mut self, input: ::std::option::Option<crate::types::RouteSettings>) -> Self {
-        self.default_route_settings = input;
-        self
+        self.default_route_settings = input; self
     }
     /// <p>Default route settings for the stage.</p>
     pub fn get_default_route_settings(&self) -> &::std::option::Option<crate::types::RouteSettings> {
@@ -209,8 +203,7 @@ impl StageBuilder {
     }
     /// <p>The identifier of the Deployment that the Stage is associated with. Can't be updated if autoDeploy is enabled.</p>
     pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_id = input;
-        self
+        self.deployment_id = input; self
     }
     /// <p>The identifier of the Deployment that the Stage is associated with. Can't be updated if autoDeploy is enabled.</p>
     pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -223,8 +216,7 @@ impl StageBuilder {
     }
     /// <p>The description of the stage.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the stage.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -237,8 +229,7 @@ impl StageBuilder {
     }
     /// <p>Describes the status of the last deployment of a stage. Supported only for stages with autoDeploy enabled.</p>
     pub fn set_last_deployment_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_deployment_status_message = input;
-        self
+        self.last_deployment_status_message = input; self
     }
     /// <p>Describes the status of the last deployment of a stage. Supported only for stages with autoDeploy enabled.</p>
     pub fn get_last_deployment_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -251,8 +242,7 @@ impl StageBuilder {
     }
     /// <p>The timestamp when the stage was last updated.</p>
     pub fn set_last_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date = input;
-        self
+        self.last_updated_date = input; self
     }
     /// <p>The timestamp when the stage was last updated.</p>
     pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -265,20 +255,16 @@ impl StageBuilder {
     /// <p>Route settings for the stage, by routeKey.</p>
     pub fn route_settings(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::RouteSettings) -> Self {
         let mut hash_map = self.route_settings.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.route_settings = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.route_settings = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Route settings for the stage, by routeKey.</p>
-    pub fn set_route_settings(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RouteSettings>>,
-    ) -> Self {
-        self.route_settings = input;
-        self
+    pub fn set_route_settings(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::RouteSettings>>) -> Self {
+        self.route_settings = input; self
     }
     /// <p>Route settings for the stage, by routeKey.</p>
-    pub fn get_route_settings(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RouteSettings>> {
+    pub fn get_route_settings(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::RouteSettings>> {
         &self.route_settings
     }
     /// <p>The name of the stage.</p>
@@ -289,8 +275,7 @@ impl StageBuilder {
     }
     /// <p>The name of the stage.</p>
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stage_name = input;
-        self
+        self.stage_name = input; self
     }
     /// <p>The name of the stage.</p>
     pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -301,26 +286,18 @@ impl StageBuilder {
     /// To override the contents of this collection use [`set_stage_variables`](Self::set_stage_variables).
     ///
     /// <p>A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
-    pub fn stage_variables(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stage_variables(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.stage_variables.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.stage_variables = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.stage_variables = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
-    pub fn set_stage_variables(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.stage_variables = input;
-        self
+    pub fn set_stage_variables(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.stage_variables = input; self
     }
     /// <p>A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
-    pub fn get_stage_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_stage_variables(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.stage_variables
     }
     /// Adds a key-value pair to `tags`.
@@ -330,36 +307,50 @@ impl StageBuilder {
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`Stage`](crate::types::Stage).
     pub fn build(self) -> crate::types::Stage {
         crate::types::Stage {
-            access_log_settings: self.access_log_settings,
-            api_gateway_managed: self.api_gateway_managed,
-            auto_deploy: self.auto_deploy,
-            client_certificate_id: self.client_certificate_id,
-            created_date: self.created_date,
-            default_route_settings: self.default_route_settings,
-            deployment_id: self.deployment_id,
-            description: self.description,
-            last_deployment_status_message: self.last_deployment_status_message,
-            last_updated_date: self.last_updated_date,
-            route_settings: self.route_settings,
-            stage_name: self.stage_name,
-            stage_variables: self.stage_variables,
-            tags: self.tags,
+            access_log_settings: self.access_log_settings
+            ,
+            api_gateway_managed: self.api_gateway_managed
+            ,
+            auto_deploy: self.auto_deploy
+            ,
+            client_certificate_id: self.client_certificate_id
+            ,
+            created_date: self.created_date
+            ,
+            default_route_settings: self.default_route_settings
+            ,
+            deployment_id: self.deployment_id
+            ,
+            description: self.description
+            ,
+            last_deployment_status_message: self.last_deployment_status_message
+            ,
+            last_updated_date: self.last_updated_date
+            ,
+            route_settings: self.route_settings
+            ,
+            stage_name: self.stage_name
+            ,
+            stage_variables: self.stage_variables
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

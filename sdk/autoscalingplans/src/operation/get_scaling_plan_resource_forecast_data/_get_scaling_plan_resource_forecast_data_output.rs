@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetScalingPlanResourceForecastDataOutput {
+pub struct GetScalingPlanResourceForecastDataOutput  {
     /// <p>The data points to return.</p>
-    pub datapoints: ::std::vec::Vec<crate::types::Datapoint>,
+    pub datapoints: ::std::vec::Vec::<crate::types::Datapoint>,
     _request_id: Option<String>,
 }
-impl GetScalingPlanResourceForecastDataOutput {
+impl  GetScalingPlanResourceForecastDataOutput  {
     /// <p>The data points to return.</p>
-    pub fn datapoints(&self) -> &[crate::types::Datapoint] {
-        use std::ops::Deref;
-        self.datapoints.deref()
+    pub fn datapoints(&self) -> & [crate::types::Datapoint] {
+        use std::ops::Deref; self.datapoints.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetScalingPlanResourceForecastDataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetScalingPlanResourceForecastDataOutput {
     /// Creates a new builder-style object to manufacture [`GetScalingPlanResourceForecastDataOutput`](crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataOutput).
     pub fn builder() -> crate::operation::get_scaling_plan_resource_forecast_data::builders::GetScalingPlanResourceForecastDataOutputBuilder {
@@ -30,7 +29,7 @@ impl GetScalingPlanResourceForecastDataOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetScalingPlanResourceForecastDataOutputBuilder {
-    pub(crate) datapoints: ::std::option::Option<::std::vec::Vec<crate::types::Datapoint>>,
+    pub(crate) datapoints: ::std::option::Option<::std::vec::Vec::<crate::types::Datapoint>>,
     _request_id: Option<String>,
 }
 impl GetScalingPlanResourceForecastDataOutputBuilder {
@@ -41,47 +40,41 @@ impl GetScalingPlanResourceForecastDataOutputBuilder {
     /// <p>The data points to return.</p>
     pub fn datapoints(mut self, input: crate::types::Datapoint) -> Self {
         let mut v = self.datapoints.unwrap_or_default();
-        v.push(input);
-        self.datapoints = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.datapoints = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The data points to return.</p>
-    pub fn set_datapoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Datapoint>>) -> Self {
-        self.datapoints = input;
-        self
+    pub fn set_datapoints(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Datapoint>>) -> Self {
+        self.datapoints = input; self
     }
     /// <p>The data points to return.</p>
-    pub fn get_datapoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Datapoint>> {
+    pub fn get_datapoints(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Datapoint>> {
         &self.datapoints
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetScalingPlanResourceForecastDataOutput`](crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`datapoints`](crate::operation::get_scaling_plan_resource_forecast_data::builders::GetScalingPlanResourceForecastDataOutputBuilder::datapoints)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataOutput {
-                datapoints: self.datapoints.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "datapoints",
-                        "datapoints was not specified but it is required when building GetScalingPlanResourceForecastDataOutput",
-                    )
-                })?,
+                datapoints: self.datapoints
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("datapoints", "datapoints was not specified but it is required when building GetScalingPlanResourceForecastDataOutput")
+                    )?
+                ,
                 _request_id: self._request_id,
-            },
+            }
         )
     }
 }
+

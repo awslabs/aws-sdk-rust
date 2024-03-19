@@ -3,11 +3,11 @@
 /// <p>A serialized SPARQL stream record capturing a change-log entry for the RDF graph.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SparqlRecord {
+pub struct SparqlRecord  {
     /// <p>The time at which the commit for the transaction was requested, in milliseconds from the Unix epoch.</p>
     pub commit_timestamp_in_millis: i64,
     /// <p>The sequence identifier of the stream change record.</p>
-    pub event_id: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    pub event_id: ::std::collections::HashMap::<::std::string::String, ::std::string::String>,
     /// <p>The serialized SPARQL change record. The serialization formats of each record are described in more detail in <a href="https://docs.aws.amazon.com/neptune/latest/userguide/streams-change-formats.html">Serialization Formats in Neptune Streams</a>.</p>
     pub data: ::std::option::Option<crate::types::SparqlData>,
     /// <p>The operation that created the change.</p>
@@ -15,23 +15,22 @@ pub struct SparqlRecord {
     /// <p>Only present if this operation is the last one in its transaction. If present, it is set to true. It is useful for ensuring that an entire transaction is consumed.</p>
     pub is_last_op: ::std::option::Option<bool>,
 }
-impl SparqlRecord {
+impl  SparqlRecord  {
     /// <p>The time at which the commit for the transaction was requested, in milliseconds from the Unix epoch.</p>
     pub fn commit_timestamp_in_millis(&self) -> i64 {
         self.commit_timestamp_in_millis
     }
     /// <p>The sequence identifier of the stream change record.</p>
-    pub fn event_id(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+    pub fn event_id(&self) -> & ::std::collections::HashMap::<::std::string::String, ::std::string::String> {
         &self.event_id
     }
     /// <p>The serialized SPARQL change record. The serialization formats of each record are described in more detail in <a href="https://docs.aws.amazon.com/neptune/latest/userguide/streams-change-formats.html">Serialization Formats in Neptune Streams</a>.</p>
-    pub fn data(&self) -> ::std::option::Option<&crate::types::SparqlData> {
+    pub fn data(&self) -> ::std::option::Option<& crate::types::SparqlData> {
         self.data.as_ref()
     }
     /// <p>The operation that created the change.</p>
-    pub fn op(&self) -> &str {
-        use std::ops::Deref;
-        self.op.deref()
+    pub fn op(&self) -> & str {
+        use std::ops::Deref; self.op.deref()
     }
     /// <p>Only present if this operation is the last one in its transaction. If present, it is set to true. It is useful for ensuring that an entire transaction is consumed.</p>
     pub fn is_last_op(&self) -> ::std::option::Option<bool> {
@@ -50,7 +49,7 @@ impl SparqlRecord {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SparqlRecordBuilder {
     pub(crate) commit_timestamp_in_millis: ::std::option::Option<i64>,
-    pub(crate) event_id: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) event_id: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) data: ::std::option::Option<crate::types::SparqlData>,
     pub(crate) op: ::std::option::Option<::std::string::String>,
     pub(crate) is_last_op: ::std::option::Option<bool>,
@@ -64,8 +63,7 @@ impl SparqlRecordBuilder {
     }
     /// <p>The time at which the commit for the transaction was requested, in milliseconds from the Unix epoch.</p>
     pub fn set_commit_timestamp_in_millis(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.commit_timestamp_in_millis = input;
-        self
+        self.commit_timestamp_in_millis = input; self
     }
     /// <p>The time at which the commit for the transaction was requested, in milliseconds from the Unix epoch.</p>
     pub fn get_commit_timestamp_in_millis(&self) -> &::std::option::Option<i64> {
@@ -78,17 +76,16 @@ impl SparqlRecordBuilder {
     /// <p>The sequence identifier of the stream change record.</p>
     pub fn event_id(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.event_id.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.event_id = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.event_id = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The sequence identifier of the stream change record.</p>
-    pub fn set_event_id(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.event_id = input;
-        self
+    pub fn set_event_id(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.event_id = input; self
     }
     /// <p>The sequence identifier of the stream change record.</p>
-    pub fn get_event_id(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_event_id(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.event_id
     }
     /// <p>The serialized SPARQL change record. The serialization formats of each record are described in more detail in <a href="https://docs.aws.amazon.com/neptune/latest/userguide/streams-change-formats.html">Serialization Formats in Neptune Streams</a>.</p>
@@ -99,8 +96,7 @@ impl SparqlRecordBuilder {
     }
     /// <p>The serialized SPARQL change record. The serialization formats of each record are described in more detail in <a href="https://docs.aws.amazon.com/neptune/latest/userguide/streams-change-formats.html">Serialization Formats in Neptune Streams</a>.</p>
     pub fn set_data(mut self, input: ::std::option::Option<crate::types::SparqlData>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
     }
     /// <p>The serialized SPARQL change record. The serialization formats of each record are described in more detail in <a href="https://docs.aws.amazon.com/neptune/latest/userguide/streams-change-formats.html">Serialization Formats in Neptune Streams</a>.</p>
     pub fn get_data(&self) -> &::std::option::Option<crate::types::SparqlData> {
@@ -114,8 +110,7 @@ impl SparqlRecordBuilder {
     }
     /// <p>The operation that created the change.</p>
     pub fn set_op(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.op = input;
-        self
+        self.op = input; self
     }
     /// <p>The operation that created the change.</p>
     pub fn get_op(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +123,7 @@ impl SparqlRecordBuilder {
     }
     /// <p>Only present if this operation is the last one in its transaction. If present, it is set to true. It is useful for ensuring that an entire transaction is consumed.</p>
     pub fn set_is_last_op(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_last_op = input;
-        self
+        self.is_last_op = input; self
     }
     /// <p>Only present if this operation is the last one in its transaction. If present, it is set to true. It is useful for ensuring that an entire transaction is consumed.</p>
     pub fn get_is_last_op(&self) -> &::std::option::Option<bool> {
@@ -141,27 +135,29 @@ impl SparqlRecordBuilder {
     /// - [`event_id`](crate::types::builders::SparqlRecordBuilder::event_id)
     /// - [`op`](crate::types::builders::SparqlRecordBuilder::op)
     pub fn build(self) -> ::std::result::Result<crate::types::SparqlRecord, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SparqlRecord {
-            commit_timestamp_in_millis: self.commit_timestamp_in_millis.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "commit_timestamp_in_millis",
-                    "commit_timestamp_in_millis was not specified but it is required when building SparqlRecord",
-                )
-            })?,
-            event_id: self.event_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "event_id",
-                    "event_id was not specified but it is required when building SparqlRecord",
-                )
-            })?,
-            data: self.data,
-            op: self.op.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "op",
-                    "op was not specified but it is required when building SparqlRecord",
-                )
-            })?,
-            is_last_op: self.is_last_op,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SparqlRecord {
+                commit_timestamp_in_millis: self.commit_timestamp_in_millis
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("commit_timestamp_in_millis", "commit_timestamp_in_millis was not specified but it is required when building SparqlRecord")
+                    )?
+                ,
+                event_id: self.event_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("event_id", "event_id was not specified but it is required when building SparqlRecord")
+                    )?
+                ,
+                data: self.data
+                ,
+                op: self.op
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("op", "op was not specified but it is required when building SparqlRecord")
+                    )?
+                ,
+                is_last_op: self.is_last_op
+                ,
+            }
+        )
     }
 }
+

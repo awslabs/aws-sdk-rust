@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeApplicationProviderInput {
+pub struct DescribeApplicationProviderInput  {
     /// <p>Specifies the ARN of the application provider for which you want details.</p>
     pub application_provider_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeApplicationProviderInput {
+impl  DescribeApplicationProviderInput  {
     /// <p>Specifies the ARN of the application provider for which you want details.</p>
-    pub fn application_provider_arn(&self) -> ::std::option::Option<&str> {
+    pub fn application_provider_arn(&self) -> ::std::option::Option<& str> {
         self.application_provider_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeApplicationProviderInputBuilder {
     }
     /// <p>Specifies the ARN of the application provider for which you want details.</p>
     pub fn set_application_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_provider_arn = input;
-        self
+        self.application_provider_arn = input; self
     }
     /// <p>Specifies the ARN of the application provider for which you want details.</p>
     pub fn get_application_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_provider_arn
     }
     /// Consumes the builder and constructs a [`DescribeApplicationProviderInput`](crate::operation::describe_application_provider::DescribeApplicationProviderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_application_provider::DescribeApplicationProviderInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_application_provider::DescribeApplicationProviderInput {
-            application_provider_arn: self.application_provider_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_application_provider::DescribeApplicationProviderInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_application_provider::DescribeApplicationProviderInput {
+                application_provider_arn: self.application_provider_arn
+                ,
+            }
+        )
     }
 }
+

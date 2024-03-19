@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCollectionInput {
+pub struct DescribeCollectionInput  {
     /// <p>The ID of the collection to describe.</p>
     pub collection_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeCollectionInput {
+impl  DescribeCollectionInput  {
     /// <p>The ID of the collection to describe.</p>
-    pub fn collection_id(&self) -> ::std::option::Option<&str> {
+    pub fn collection_id(&self) -> ::std::option::Option<& str> {
         self.collection_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DescribeCollectionInputBuilder {
     }
     /// <p>The ID of the collection to describe.</p>
     pub fn set_collection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collection_id = input;
-        self
+        self.collection_id = input; self
     }
     /// <p>The ID of the collection to describe.</p>
     pub fn get_collection_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.collection_id
     }
     /// Consumes the builder and constructs a [`DescribeCollectionInput`](crate::operation::describe_collection::DescribeCollectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_collection::DescribeCollectionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_collection::DescribeCollectionInput {
-            collection_id: self.collection_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_collection::DescribeCollectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_collection::DescribeCollectionInput {
+                collection_id: self.collection_id
+                ,
+            }
+        )
     }
 }
+

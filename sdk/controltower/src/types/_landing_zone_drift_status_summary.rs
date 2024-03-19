@@ -4,7 +4,7 @@
 /// <p>If the landing zone differs from the expected configuration, it is defined to be in a state of drift. You can repair this drift by resetting the landing zone.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LandingZoneDriftStatusSummary {
+pub struct LandingZoneDriftStatusSummary  {
     /// <p>The drift status of the landing zone.</p>
     /// <p>Valid values:</p>
     /// <ul>
@@ -15,7 +15,7 @@ pub struct LandingZoneDriftStatusSummary {
     /// </ul>
     pub status: ::std::option::Option<crate::types::LandingZoneDriftStatus>,
 }
-impl LandingZoneDriftStatusSummary {
+impl  LandingZoneDriftStatusSummary  {
     /// <p>The drift status of the landing zone.</p>
     /// <p>Valid values:</p>
     /// <ul>
@@ -24,7 +24,7 @@ impl LandingZoneDriftStatusSummary {
     /// <li>
     /// <p><code>IN_SYNC</code>: The landing zone deployed in this configuration matches the configuration that Amazon Web Services Control Tower expected.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::LandingZoneDriftStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::LandingZoneDriftStatus> {
         self.status.as_ref()
     }
 }
@@ -63,8 +63,7 @@ impl LandingZoneDriftStatusSummaryBuilder {
     /// <p><code>IN_SYNC</code>: The landing zone deployed in this configuration matches the configuration that Amazon Web Services Control Tower expected.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::LandingZoneDriftStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The drift status of the landing zone.</p>
     /// <p>Valid values:</p>
@@ -79,6 +78,10 @@ impl LandingZoneDriftStatusSummaryBuilder {
     }
     /// Consumes the builder and constructs a [`LandingZoneDriftStatusSummary`](crate::types::LandingZoneDriftStatusSummary).
     pub fn build(self) -> crate::types::LandingZoneDriftStatusSummary {
-        crate::types::LandingZoneDriftStatusSummary { status: self.status }
+        crate::types::LandingZoneDriftStatusSummary {
+            status: self.status
+            ,
+        }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>An individual VPC security group and its status.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SecurityGroupMembership {
+pub struct SecurityGroupMembership  {
     /// <p>The unique ID for this security group.</p>
     pub security_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The status of this security group.</p>
     pub status: ::std::option::Option<::std::string::String>,
 }
-impl SecurityGroupMembership {
+impl  SecurityGroupMembership  {
     /// <p>The unique ID for this security group.</p>
-    pub fn security_group_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn security_group_identifier(&self) -> ::std::option::Option<& str> {
         self.security_group_identifier.as_deref()
     }
     /// <p>The status of this security group.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl SecurityGroupMembershipBuilder {
     }
     /// <p>The unique ID for this security group.</p>
     pub fn set_security_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.security_group_identifier = input;
-        self
+        self.security_group_identifier = input; self
     }
     /// <p>The unique ID for this security group.</p>
     pub fn get_security_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl SecurityGroupMembershipBuilder {
     }
     /// <p>The status of this security group.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of this security group.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl SecurityGroupMembershipBuilder {
     /// Consumes the builder and constructs a [`SecurityGroupMembership`](crate::types::SecurityGroupMembership).
     pub fn build(self) -> crate::types::SecurityGroupMembership {
         crate::types::SecurityGroupMembership {
-            security_group_identifier: self.security_group_identifier,
-            status: self.status,
+            security_group_identifier: self.security_group_identifier
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

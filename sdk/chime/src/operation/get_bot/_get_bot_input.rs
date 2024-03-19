@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBotInput {
+pub struct GetBotInput  {
     /// <p>The Amazon Chime account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The bot ID.</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
 }
-impl GetBotInput {
+impl  GetBotInput  {
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The bot ID.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetBotInputBuilder {
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl GetBotInputBuilder {
     }
     /// <p>The bot ID.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The bot ID.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,9 +63,14 @@ impl GetBotInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetBotInput`](crate::operation::get_bot::GetBotInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_bot::GetBotInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_bot::GetBotInput {
-            account_id: self.account_id,
-            bot_id: self.bot_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_bot::GetBotInput {
+                account_id: self.account_id
+                ,
+                bot_id: self.bot_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSubscriptions`](crate::operation::list_subscriptions::builders::ListSubscriptionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_subscriptions::builders::ListSubscriptionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`domain_identifier(impl Into<String>)`](crate::operation::list_subscriptions::builders::ListSubscriptionsFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::list_subscriptions::builders::ListSubscriptionsFluentBuilder::set_domain_identifier):<br>required: **true**<br><p>The identifier of the Amazon DataZone domain.</p><br>
     ///   - [`subscription_request_identifier(impl Into<String>)`](crate::operation::list_subscriptions::builders::ListSubscriptionsFluentBuilder::subscription_request_identifier) / [`set_subscription_request_identifier(Option<String>)`](crate::operation::list_subscriptions::builders::ListSubscriptionsFluentBuilder::set_subscription_request_identifier):<br>required: **false**<br><p>The identifier of the subscription request for the subscriptions that you want to list.</p><br>
     ///   - [`status(SubscriptionStatus)`](crate::operation::list_subscriptions::builders::ListSubscriptionsFluentBuilder::status) / [`set_status(Option<SubscriptionStatus>)`](crate::operation::list_subscriptions::builders::ListSubscriptionsFluentBuilder::set_status):<br>required: **false**<br><p>The status of the subscriptions that you want to list.</p><br>
@@ -14,11 +14,12 @@ impl super::Client {
     ///   - [`sort_order(SortOrder)`](crate::operation::list_subscriptions::builders::ListSubscriptionsFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_subscriptions::builders::ListSubscriptionsFluentBuilder::set_sort_order):<br>required: **false**<br><p>Specifies the sort order for the results of this action.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_subscriptions::builders::ListSubscriptionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_subscriptions::builders::ListSubscriptionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of subscriptions to return in a single call to <code>ListSubscriptions</code>. When the number of subscriptions to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListSubscriptions</code> to list the next set of Subscriptions.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_subscriptions::builders::ListSubscriptionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_subscriptions::builders::ListSubscriptionsFluentBuilder::set_next_token):<br>required: **false**<br><p>When the number of subscriptions is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of subscriptions, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListSubscriptions</code> to list the next set of subscriptions.</p><br>
-    /// - On success, responds with [`ListSubscriptionsOutput`](crate::operation::list_subscriptions::ListSubscriptionsOutput) with field(s):
+                            /// - On success, responds with [`ListSubscriptionsOutput`](crate::operation::list_subscriptions::ListSubscriptionsOutput) with field(s):
     ///   - [`items(Vec::<SubscriptionSummary>)`](crate::operation::list_subscriptions::ListSubscriptionsOutput::items): <p>The results of the <code>ListSubscriptions</code> action.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_subscriptions::ListSubscriptionsOutput::next_token): <p>When the number of subscriptions is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of subscriptions, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListSubscriptions</code> to list the next set of subscriptions.</p>
-    /// - On failure, responds with [`SdkError<ListSubscriptionsError>`](crate::operation::list_subscriptions::ListSubscriptionsError)
+                            /// - On failure, responds with [`SdkError<ListSubscriptionsError>`](crate::operation::list_subscriptions::ListSubscriptionsError)
     pub fn list_subscriptions(&self) -> crate::operation::list_subscriptions::builders::ListSubscriptionsFluentBuilder {
-        crate::operation::list_subscriptions::builders::ListSubscriptionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_subscriptions::builders::ListSubscriptionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

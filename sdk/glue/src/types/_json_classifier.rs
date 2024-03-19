@@ -3,7 +3,7 @@
 /// <p>A classifier for <code>JSON</code> content.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JsonClassifier {
+pub struct JsonClassifier  {
     /// <p>The name of the classifier.</p>
     pub name: ::std::string::String,
     /// <p>The time that this classifier was registered.</p>
@@ -15,18 +15,17 @@ pub struct JsonClassifier {
     /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
     pub json_path: ::std::string::String,
 }
-impl JsonClassifier {
+impl  JsonClassifier  {
     /// <p>The name of the classifier.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The time that this classifier was registered.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time that this classifier was last updated.</p>
-    pub fn last_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// <p>The version of this classifier.</p>
@@ -34,9 +33,8 @@ impl JsonClassifier {
         self.version
     }
     /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
-    pub fn json_path(&self) -> &str {
-        use std::ops::Deref;
-        self.json_path.deref()
+    pub fn json_path(&self) -> & str {
+        use std::ops::Deref; self.json_path.deref()
     }
 }
 impl JsonClassifier {
@@ -65,8 +63,7 @@ impl JsonClassifierBuilder {
     }
     /// <p>The name of the classifier.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the classifier.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +76,7 @@ impl JsonClassifierBuilder {
     }
     /// <p>The time that this classifier was registered.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time that this classifier was registered.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -93,8 +89,7 @@ impl JsonClassifierBuilder {
     }
     /// <p>The time that this classifier was last updated.</p>
     pub fn set_last_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated = input;
-        self
+        self.last_updated = input; self
     }
     /// <p>The time that this classifier was last updated.</p>
     pub fn get_last_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -107,8 +102,7 @@ impl JsonClassifierBuilder {
     }
     /// <p>The version of this classifier.</p>
     pub fn set_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of this classifier.</p>
     pub fn get_version(&self) -> &::std::option::Option<i64> {
@@ -122,8 +116,7 @@ impl JsonClassifierBuilder {
     }
     /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
     pub fn set_json_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.json_path = input;
-        self
+        self.json_path = input; self
     }
     /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
     pub fn get_json_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,22 +127,27 @@ impl JsonClassifierBuilder {
     /// - [`name`](crate::types::builders::JsonClassifierBuilder::name)
     /// - [`json_path`](crate::types::builders::JsonClassifierBuilder::json_path)
     pub fn build(self) -> ::std::result::Result<crate::types::JsonClassifier, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::JsonClassifier {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building JsonClassifier",
-                )
-            })?,
-            creation_time: self.creation_time,
-            last_updated: self.last_updated,
-            version: self.version.unwrap_or_default(),
-            json_path: self.json_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "json_path",
-                    "json_path was not specified but it is required when building JsonClassifier",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::JsonClassifier {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building JsonClassifier")
+                    )?
+                ,
+                creation_time: self.creation_time
+                ,
+                last_updated: self.last_updated
+                ,
+                version: self.version
+                    .unwrap_or_default()
+                ,
+                json_path: self.json_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("json_path", "json_path was not specified but it is required when building JsonClassifier")
+                    )?
+                ,
+            }
+        )
     }
 }
+

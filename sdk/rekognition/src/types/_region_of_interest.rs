@@ -4,22 +4,23 @@
 /// <p>A word, face, or label is included in the region if it is more than half in that region. If there is more than one region, the word, face, or label is compared with all regions of the screen. Any object of interest that is more than half in a region is kept in the results.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegionOfInterest {
+pub struct RegionOfInterest  {
     /// <p>The box representing a region of interest on screen.</p>
     pub bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     /// <p>Specifies a shape made up of up to 10 <code>Point</code> objects to define a region of interest.</p>
-    pub polygon: ::std::option::Option<::std::vec::Vec<crate::types::Point>>,
+    pub polygon: ::std::option::Option<::std::vec::Vec::<crate::types::Point>>,
 }
-impl RegionOfInterest {
+impl  RegionOfInterest  {
     /// <p>The box representing a region of interest on screen.</p>
-    pub fn bounding_box(&self) -> ::std::option::Option<&crate::types::BoundingBox> {
+    pub fn bounding_box(&self) -> ::std::option::Option<& crate::types::BoundingBox> {
         self.bounding_box.as_ref()
     }
     /// <p>Specifies a shape made up of up to 10 <code>Point</code> objects to define a region of interest.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.polygon.is_none()`.
-    pub fn polygon(&self) -> &[crate::types::Point] {
-        self.polygon.as_deref().unwrap_or_default()
+    pub fn polygon(&self) -> & [crate::types::Point] {
+        self.polygon.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RegionOfInterest {
@@ -34,7 +35,7 @@ impl RegionOfInterest {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegionOfInterestBuilder {
     pub(crate) bounding_box: ::std::option::Option<crate::types::BoundingBox>,
-    pub(crate) polygon: ::std::option::Option<::std::vec::Vec<crate::types::Point>>,
+    pub(crate) polygon: ::std::option::Option<::std::vec::Vec::<crate::types::Point>>,
 }
 impl RegionOfInterestBuilder {
     /// <p>The box representing a region of interest on screen.</p>
@@ -44,8 +45,7 @@ impl RegionOfInterestBuilder {
     }
     /// <p>The box representing a region of interest on screen.</p>
     pub fn set_bounding_box(mut self, input: ::std::option::Option<crate::types::BoundingBox>) -> Self {
-        self.bounding_box = input;
-        self
+        self.bounding_box = input; self
     }
     /// <p>The box representing a region of interest on screen.</p>
     pub fn get_bounding_box(&self) -> &::std::option::Option<crate::types::BoundingBox> {
@@ -58,24 +58,26 @@ impl RegionOfInterestBuilder {
     /// <p>Specifies a shape made up of up to 10 <code>Point</code> objects to define a region of interest.</p>
     pub fn polygon(mut self, input: crate::types::Point) -> Self {
         let mut v = self.polygon.unwrap_or_default();
-        v.push(input);
-        self.polygon = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.polygon = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies a shape made up of up to 10 <code>Point</code> objects to define a region of interest.</p>
-    pub fn set_polygon(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Point>>) -> Self {
-        self.polygon = input;
-        self
+    pub fn set_polygon(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Point>>) -> Self {
+        self.polygon = input; self
     }
     /// <p>Specifies a shape made up of up to 10 <code>Point</code> objects to define a region of interest.</p>
-    pub fn get_polygon(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Point>> {
+    pub fn get_polygon(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Point>> {
         &self.polygon
     }
     /// Consumes the builder and constructs a [`RegionOfInterest`](crate::types::RegionOfInterest).
     pub fn build(self) -> crate::types::RegionOfInterest {
         crate::types::RegionOfInterest {
-            bounding_box: self.bounding_box,
-            polygon: self.polygon,
+            bounding_box: self.bounding_box
+            ,
+            polygon: self.polygon
+            ,
         }
     }
 }
+

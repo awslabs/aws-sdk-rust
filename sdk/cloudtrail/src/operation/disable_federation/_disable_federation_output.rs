@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisableFederationOutput {
+pub struct DisableFederationOutput  {
     /// <p>The ARN of the event data store for which you disabled Lake query federation.</p>
     pub event_data_store_arn: ::std::option::Option<::std::string::String>,
     /// <p>The federation status.</p>
     pub federation_status: ::std::option::Option<crate::types::FederationStatus>,
     _request_id: Option<String>,
 }
-impl DisableFederationOutput {
+impl  DisableFederationOutput  {
     /// <p>The ARN of the event data store for which you disabled Lake query federation.</p>
-    pub fn event_data_store_arn(&self) -> ::std::option::Option<&str> {
+    pub fn event_data_store_arn(&self) -> ::std::option::Option<& str> {
         self.event_data_store_arn.as_deref()
     }
     /// <p>The federation status.</p>
-    pub fn federation_status(&self) -> ::std::option::Option<&crate::types::FederationStatus> {
+    pub fn federation_status(&self) -> ::std::option::Option<& crate::types::FederationStatus> {
         self.federation_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DisableFederationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DisableFederationOutput {
     /// Creates a new builder-style object to manufacture [`DisableFederationOutput`](crate::operation::disable_federation::DisableFederationOutput).
     pub fn builder() -> crate::operation::disable_federation::builders::DisableFederationOutputBuilder {
@@ -47,8 +47,7 @@ impl DisableFederationOutputBuilder {
     }
     /// <p>The ARN of the event data store for which you disabled Lake query federation.</p>
     pub fn set_event_data_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_data_store_arn = input;
-        self
+        self.event_data_store_arn = input; self
     }
     /// <p>The ARN of the event data store for which you disabled Lake query federation.</p>
     pub fn get_event_data_store_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl DisableFederationOutputBuilder {
     }
     /// <p>The federation status.</p>
     pub fn set_federation_status(mut self, input: ::std::option::Option<crate::types::FederationStatus>) -> Self {
-        self.federation_status = input;
-        self
+        self.federation_status = input; self
     }
     /// <p>The federation status.</p>
     pub fn get_federation_status(&self) -> &::std::option::Option<crate::types::FederationStatus> {
         &self.federation_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DisableFederationOutput`](crate::operation::disable_federation::DisableFederationOutput).
     pub fn build(self) -> crate::operation::disable_federation::DisableFederationOutput {
         crate::operation::disable_federation::DisableFederationOutput {
-            event_data_store_arn: self.event_data_store_arn,
-            federation_status: self.federation_status,
+            event_data_store_arn: self.event_data_store_arn
+            ,
+            federation_status: self.federation_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

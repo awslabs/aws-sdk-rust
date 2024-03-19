@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListJobRunsOutput {
+pub struct ListJobRunsOutput  {
     /// <p>This output lists information about the specified job runs.</p>
-    pub job_runs: ::std::option::Option<::std::vec::Vec<crate::types::JobRun>>,
+    pub job_runs: ::std::option::Option<::std::vec::Vec::<crate::types::JobRun>>,
     /// <p>This output displays the token for the next set of job runs.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListJobRunsOutput {
+impl  ListJobRunsOutput  {
     /// <p>This output lists information about the specified job runs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_runs.is_none()`.
-    pub fn job_runs(&self) -> &[crate::types::JobRun] {
-        self.job_runs.as_deref().unwrap_or_default()
+    pub fn job_runs(&self) -> & [crate::types::JobRun] {
+        self.job_runs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>This output displays the token for the next set of job runs.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListJobRunsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListJobRunsOutput {
     /// Creates a new builder-style object to manufacture [`ListJobRunsOutput`](crate::operation::list_job_runs::ListJobRunsOutput).
     pub fn builder() -> crate::operation::list_job_runs::builders::ListJobRunsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListJobRunsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListJobRunsOutputBuilder {
-    pub(crate) job_runs: ::std::option::Option<::std::vec::Vec<crate::types::JobRun>>,
+    pub(crate) job_runs: ::std::option::Option<::std::vec::Vec::<crate::types::JobRun>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListJobRunsOutputBuilder {
     /// <p>This output lists information about the specified job runs.</p>
     pub fn job_runs(mut self, input: crate::types::JobRun) -> Self {
         let mut v = self.job_runs.unwrap_or_default();
-        v.push(input);
-        self.job_runs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.job_runs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>This output lists information about the specified job runs.</p>
-    pub fn set_job_runs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobRun>>) -> Self {
-        self.job_runs = input;
-        self
+    pub fn set_job_runs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::JobRun>>) -> Self {
+        self.job_runs = input; self
     }
     /// <p>This output lists information about the specified job runs.</p>
-    pub fn get_job_runs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobRun>> {
+    pub fn get_job_runs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::JobRun>> {
         &self.job_runs
     }
     /// <p>This output displays the token for the next set of job runs.</p>
@@ -69,28 +69,30 @@ impl ListJobRunsOutputBuilder {
     }
     /// <p>This output displays the token for the next set of job runs.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>This output displays the token for the next set of job runs.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListJobRunsOutput`](crate::operation::list_job_runs::ListJobRunsOutput).
     pub fn build(self) -> crate::operation::list_job_runs::ListJobRunsOutput {
         crate::operation::list_job_runs::ListJobRunsOutput {
-            job_runs: self.job_runs,
-            next_token: self.next_token,
+            job_runs: self.job_runs
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

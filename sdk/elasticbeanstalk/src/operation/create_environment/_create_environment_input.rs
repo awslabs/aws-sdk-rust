@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateEnvironmentInput {
+pub struct CreateEnvironmentInput  {
     /// <p>The name of the application that is associated with this environment.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique name for the environment.</p>
@@ -19,7 +19,7 @@ pub struct CreateEnvironmentInput {
     /// <p>Specifies the tier to use in creating this environment. The environment tier that you choose determines whether Elastic Beanstalk provisions resources to support a web application that handles HTTP(S) requests or a web application that handles background-processing tasks.</p>
     pub tier: ::std::option::Option<crate::types::EnvironmentTier>,
     /// <p>Specifies the tags applied to resources in the environment.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The name of the application version to deploy.</p>
     /// <p>Default: If not specified, Elastic Beanstalk attempts to deploy the sample application.</p>
     pub version_label: ::std::option::Option<::std::string::String>,
@@ -36,82 +36,85 @@ pub struct CreateEnvironmentInput {
     /// </note>
     pub platform_arn: ::std::option::Option<::std::string::String>,
     /// <p>If specified, AWS Elastic Beanstalk sets the specified configuration options to the requested value in the configuration set for the new environment. These override the values obtained from the solution stack or the configuration template.</p>
-    pub option_settings: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>>,
+    pub option_settings: ::std::option::Option<::std::vec::Vec::<crate::types::ConfigurationOptionSetting>>,
     /// <p>A list of custom user-defined configuration options to remove from the configuration set for this new environment.</p>
-    pub options_to_remove: ::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>>,
+    pub options_to_remove: ::std::option::Option<::std::vec::Vec::<crate::types::OptionSpecification>>,
     /// <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role. If specified, Elastic Beanstalk uses the operations role for permissions to downstream services during this call and during subsequent calls acting on this environment. To specify an operations role, you must have the <code>iam:PassRole</code> permission for the role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
     pub operations_role: ::std::option::Option<::std::string::String>,
 }
-impl CreateEnvironmentInput {
+impl  CreateEnvironmentInput  {
     /// <p>The name of the application that is associated with this environment.</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>A unique name for the environment.</p>
     /// <p>Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and hyphens. It can't start or end with a hyphen. This name must be unique within a region in your account. If the specified name already exists in the region, Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.</p>
     /// <p>If you don't specify the <code>CNAMEPrefix</code> parameter, the environment name becomes part of the CNAME, and therefore part of the visible URL for your application.</p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn environment_name(&self) -> ::std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>The name of the group to which the target environment belongs. Specify a group name only if the environment's name is specified in an environment manifest and not with the environment name parameter. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>Your description for this environment.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>If specified, the environment attempts to use this value as the prefix for the CNAME in your Elastic Beanstalk environment URL. If not specified, the CNAME is generated automatically by appending a random alphanumeric string to the environment name.</p>
-    pub fn cname_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn cname_prefix(&self) -> ::std::option::Option<& str> {
         self.cname_prefix.as_deref()
     }
     /// <p>Specifies the tier to use in creating this environment. The environment tier that you choose determines whether Elastic Beanstalk provisions resources to support a web application that handles HTTP(S) requests or a web application that handles background-processing tasks.</p>
-    pub fn tier(&self) -> ::std::option::Option<&crate::types::EnvironmentTier> {
+    pub fn tier(&self) -> ::std::option::Option<& crate::types::EnvironmentTier> {
         self.tier.as_ref()
     }
     /// <p>Specifies the tags applied to resources in the environment.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the application version to deploy.</p>
     /// <p>Default: If not specified, Elastic Beanstalk attempts to deploy the sample application.</p>
-    pub fn version_label(&self) -> ::std::option::Option<&str> {
+    pub fn version_label(&self) -> ::std::option::Option<& str> {
         self.version_label.as_deref()
     }
     /// <p>The name of the Elastic Beanstalk configuration template to use with the environment.</p><note>
     /// <p>If you specify <code>TemplateName</code>, then don't specify <code>SolutionStackName</code>.</p>
     /// </note>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The name of an Elastic Beanstalk solution stack (platform version) to use with the environment. If specified, Elastic Beanstalk sets the configuration values to the default values associated with the specified solution stack. For a list of current solution stacks, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic Beanstalk Supported Platforms</a> in the <i>AWS Elastic Beanstalk Platforms</i> guide.</p><note>
     /// <p>If you specify <code>SolutionStackName</code>, don't specify <code>PlatformArn</code> or <code>TemplateName</code>.</p>
     /// </note>
-    pub fn solution_stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn solution_stack_name(&self) -> ::std::option::Option<& str> {
         self.solution_stack_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the custom platform to use with the environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p><note>
     /// <p>If you specify <code>PlatformArn</code>, don't specify <code>SolutionStackName</code>.</p>
     /// </note>
-    pub fn platform_arn(&self) -> ::std::option::Option<&str> {
+    pub fn platform_arn(&self) -> ::std::option::Option<& str> {
         self.platform_arn.as_deref()
     }
     /// <p>If specified, AWS Elastic Beanstalk sets the specified configuration options to the requested value in the configuration set for the new environment. These override the values obtained from the solution stack or the configuration template.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.option_settings.is_none()`.
-    pub fn option_settings(&self) -> &[crate::types::ConfigurationOptionSetting] {
-        self.option_settings.as_deref().unwrap_or_default()
+    pub fn option_settings(&self) -> & [crate::types::ConfigurationOptionSetting] {
+        self.option_settings.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of custom user-defined configuration options to remove from the configuration set for this new environment.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.options_to_remove.is_none()`.
-    pub fn options_to_remove(&self) -> &[crate::types::OptionSpecification] {
-        self.options_to_remove.as_deref().unwrap_or_default()
+    pub fn options_to_remove(&self) -> & [crate::types::OptionSpecification] {
+        self.options_to_remove.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role. If specified, Elastic Beanstalk uses the operations role for permissions to downstream services during this call and during subsequent calls acting on this environment. To specify an operations role, you must have the <code>iam:PassRole</code> permission for the role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
-    pub fn operations_role(&self) -> ::std::option::Option<&str> {
+    pub fn operations_role(&self) -> ::std::option::Option<& str> {
         self.operations_role.as_deref()
     }
 }
@@ -132,13 +135,13 @@ pub struct CreateEnvironmentInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) cname_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) tier: ::std::option::Option<crate::types::EnvironmentTier>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) version_label: ::std::option::Option<::std::string::String>,
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) solution_stack_name: ::std::option::Option<::std::string::String>,
     pub(crate) platform_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) option_settings: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>>,
-    pub(crate) options_to_remove: ::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>>,
+    pub(crate) option_settings: ::std::option::Option<::std::vec::Vec::<crate::types::ConfigurationOptionSetting>>,
+    pub(crate) options_to_remove: ::std::option::Option<::std::vec::Vec::<crate::types::OptionSpecification>>,
     pub(crate) operations_role: ::std::option::Option<::std::string::String>,
 }
 impl CreateEnvironmentInputBuilder {
@@ -150,8 +153,7 @@ impl CreateEnvironmentInputBuilder {
     }
     /// <p>The name of the application that is associated with this environment.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The name of the application that is associated with this environment.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -168,8 +170,7 @@ impl CreateEnvironmentInputBuilder {
     /// <p>Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and hyphens. It can't start or end with a hyphen. This name must be unique within a region in your account. If the specified name already exists in the region, Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.</p>
     /// <p>If you don't specify the <code>CNAMEPrefix</code> parameter, the environment name becomes part of the CNAME, and therefore part of the visible URL for your application.</p>
     pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_name = input;
-        self
+        self.environment_name = input; self
     }
     /// <p>A unique name for the environment.</p>
     /// <p>Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and hyphens. It can't start or end with a hyphen. This name must be unique within a region in your account. If the specified name already exists in the region, Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.</p>
@@ -184,8 +185,7 @@ impl CreateEnvironmentInputBuilder {
     }
     /// <p>The name of the group to which the target environment belongs. Specify a group name only if the environment's name is specified in an environment manifest and not with the environment name parameter. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>The name of the group to which the target environment belongs. Specify a group name only if the environment's name is specified in an environment manifest and not with the environment name parameter. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -198,8 +198,7 @@ impl CreateEnvironmentInputBuilder {
     }
     /// <p>Your description for this environment.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Your description for this environment.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -212,8 +211,7 @@ impl CreateEnvironmentInputBuilder {
     }
     /// <p>If specified, the environment attempts to use this value as the prefix for the CNAME in your Elastic Beanstalk environment URL. If not specified, the CNAME is generated automatically by appending a random alphanumeric string to the environment name.</p>
     pub fn set_cname_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cname_prefix = input;
-        self
+        self.cname_prefix = input; self
     }
     /// <p>If specified, the environment attempts to use this value as the prefix for the CNAME in your Elastic Beanstalk environment URL. If not specified, the CNAME is generated automatically by appending a random alphanumeric string to the environment name.</p>
     pub fn get_cname_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -226,8 +224,7 @@ impl CreateEnvironmentInputBuilder {
     }
     /// <p>Specifies the tier to use in creating this environment. The environment tier that you choose determines whether Elastic Beanstalk provisions resources to support a web application that handles HTTP(S) requests or a web application that handles background-processing tasks.</p>
     pub fn set_tier(mut self, input: ::std::option::Option<crate::types::EnvironmentTier>) -> Self {
-        self.tier = input;
-        self
+        self.tier = input; self
     }
     /// <p>Specifies the tier to use in creating this environment. The environment tier that you choose determines whether Elastic Beanstalk provisions resources to support a web application that handles HTTP(S) requests or a web application that handles background-processing tasks.</p>
     pub fn get_tier(&self) -> &::std::option::Option<crate::types::EnvironmentTier> {
@@ -240,17 +237,16 @@ impl CreateEnvironmentInputBuilder {
     /// <p>Specifies the tags applied to resources in the environment.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the tags applied to resources in the environment.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Specifies the tags applied to resources in the environment.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The name of the application version to deploy.</p>
@@ -262,8 +258,7 @@ impl CreateEnvironmentInputBuilder {
     /// <p>The name of the application version to deploy.</p>
     /// <p>Default: If not specified, Elastic Beanstalk attempts to deploy the sample application.</p>
     pub fn set_version_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_label = input;
-        self
+        self.version_label = input; self
     }
     /// <p>The name of the application version to deploy.</p>
     /// <p>Default: If not specified, Elastic Beanstalk attempts to deploy the sample application.</p>
@@ -281,8 +276,7 @@ impl CreateEnvironmentInputBuilder {
     /// <p>If you specify <code>TemplateName</code>, then don't specify <code>SolutionStackName</code>.</p>
     /// </note>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The name of the Elastic Beanstalk configuration template to use with the environment.</p><note>
     /// <p>If you specify <code>TemplateName</code>, then don't specify <code>SolutionStackName</code>.</p>
@@ -301,8 +295,7 @@ impl CreateEnvironmentInputBuilder {
     /// <p>If you specify <code>SolutionStackName</code>, don't specify <code>PlatformArn</code> or <code>TemplateName</code>.</p>
     /// </note>
     pub fn set_solution_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.solution_stack_name = input;
-        self
+        self.solution_stack_name = input; self
     }
     /// <p>The name of an Elastic Beanstalk solution stack (platform version) to use with the environment. If specified, Elastic Beanstalk sets the configuration values to the default values associated with the specified solution stack. For a list of current solution stacks, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic Beanstalk Supported Platforms</a> in the <i>AWS Elastic Beanstalk Platforms</i> guide.</p><note>
     /// <p>If you specify <code>SolutionStackName</code>, don't specify <code>PlatformArn</code> or <code>TemplateName</code>.</p>
@@ -321,8 +314,7 @@ impl CreateEnvironmentInputBuilder {
     /// <p>If you specify <code>PlatformArn</code>, don't specify <code>SolutionStackName</code>.</p>
     /// </note>
     pub fn set_platform_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform_arn = input;
-        self
+        self.platform_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the custom platform to use with the environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p><note>
     /// <p>If you specify <code>PlatformArn</code>, don't specify <code>SolutionStackName</code>.</p>
@@ -337,17 +329,16 @@ impl CreateEnvironmentInputBuilder {
     /// <p>If specified, AWS Elastic Beanstalk sets the specified configuration options to the requested value in the configuration set for the new environment. These override the values obtained from the solution stack or the configuration template.</p>
     pub fn option_settings(mut self, input: crate::types::ConfigurationOptionSetting) -> Self {
         let mut v = self.option_settings.unwrap_or_default();
-        v.push(input);
-        self.option_settings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.option_settings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>If specified, AWS Elastic Beanstalk sets the specified configuration options to the requested value in the configuration set for the new environment. These override the values obtained from the solution stack or the configuration template.</p>
-    pub fn set_option_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>>) -> Self {
-        self.option_settings = input;
-        self
+    pub fn set_option_settings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ConfigurationOptionSetting>>) -> Self {
+        self.option_settings = input; self
     }
     /// <p>If specified, AWS Elastic Beanstalk sets the specified configuration options to the requested value in the configuration set for the new environment. These override the values obtained from the solution stack or the configuration template.</p>
-    pub fn get_option_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>> {
+    pub fn get_option_settings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ConfigurationOptionSetting>> {
         &self.option_settings
     }
     /// Appends an item to `options_to_remove`.
@@ -357,17 +348,16 @@ impl CreateEnvironmentInputBuilder {
     /// <p>A list of custom user-defined configuration options to remove from the configuration set for this new environment.</p>
     pub fn options_to_remove(mut self, input: crate::types::OptionSpecification) -> Self {
         let mut v = self.options_to_remove.unwrap_or_default();
-        v.push(input);
-        self.options_to_remove = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.options_to_remove = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of custom user-defined configuration options to remove from the configuration set for this new environment.</p>
-    pub fn set_options_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>>) -> Self {
-        self.options_to_remove = input;
-        self
+    pub fn set_options_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OptionSpecification>>) -> Self {
+        self.options_to_remove = input; self
     }
     /// <p>A list of custom user-defined configuration options to remove from the configuration set for this new environment.</p>
-    pub fn get_options_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>> {
+    pub fn get_options_to_remove(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OptionSpecification>> {
         &self.options_to_remove
     }
     /// <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role. If specified, Elastic Beanstalk uses the operations role for permissions to downstream services during this call and during subsequent calls acting on this environment. To specify an operations role, you must have the <code>iam:PassRole</code> permission for the role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
@@ -377,32 +367,46 @@ impl CreateEnvironmentInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role. If specified, Elastic Beanstalk uses the operations role for permissions to downstream services during this call and during subsequent calls acting on this environment. To specify an operations role, you must have the <code>iam:PassRole</code> permission for the role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
     pub fn set_operations_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operations_role = input;
-        self
+        self.operations_role = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role. If specified, Elastic Beanstalk uses the operations role for permissions to downstream services during this call and during subsequent calls acting on this environment. To specify an operations role, you must have the <code>iam:PassRole</code> permission for the role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
     pub fn get_operations_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.operations_role
     }
     /// Consumes the builder and constructs a [`CreateEnvironmentInput`](crate::operation::create_environment::CreateEnvironmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_environment::CreateEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_environment::CreateEnvironmentInput {
-            application_name: self.application_name,
-            environment_name: self.environment_name,
-            group_name: self.group_name,
-            description: self.description,
-            cname_prefix: self.cname_prefix,
-            tier: self.tier,
-            tags: self.tags,
-            version_label: self.version_label,
-            template_name: self.template_name,
-            solution_stack_name: self.solution_stack_name,
-            platform_arn: self.platform_arn,
-            option_settings: self.option_settings,
-            options_to_remove: self.options_to_remove,
-            operations_role: self.operations_role,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_environment::CreateEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_environment::CreateEnvironmentInput {
+                application_name: self.application_name
+                ,
+                environment_name: self.environment_name
+                ,
+                group_name: self.group_name
+                ,
+                description: self.description
+                ,
+                cname_prefix: self.cname_prefix
+                ,
+                tier: self.tier
+                ,
+                tags: self.tags
+                ,
+                version_label: self.version_label
+                ,
+                template_name: self.template_name
+                ,
+                solution_stack_name: self.solution_stack_name
+                ,
+                platform_arn: self.platform_arn
+                ,
+                option_settings: self.option_settings
+                ,
+                options_to_remove: self.options_to_remove
+                ,
+                operations_role: self.operations_role
+                ,
+            }
+        )
     }
 }
+

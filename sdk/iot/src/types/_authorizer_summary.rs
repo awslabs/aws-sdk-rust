@@ -3,19 +3,19 @@
 /// <p>The authorizer summary.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AuthorizerSummary {
+pub struct AuthorizerSummary  {
     /// <p>The authorizer name.</p>
     pub authorizer_name: ::std::option::Option<::std::string::String>,
     /// <p>The authorizer ARN.</p>
     pub authorizer_arn: ::std::option::Option<::std::string::String>,
 }
-impl AuthorizerSummary {
+impl  AuthorizerSummary  {
     /// <p>The authorizer name.</p>
-    pub fn authorizer_name(&self) -> ::std::option::Option<&str> {
+    pub fn authorizer_name(&self) -> ::std::option::Option<& str> {
         self.authorizer_name.as_deref()
     }
     /// <p>The authorizer ARN.</p>
-    pub fn authorizer_arn(&self) -> ::std::option::Option<&str> {
+    pub fn authorizer_arn(&self) -> ::std::option::Option<& str> {
         self.authorizer_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AuthorizerSummaryBuilder {
     }
     /// <p>The authorizer name.</p>
     pub fn set_authorizer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.authorizer_name = input;
-        self
+        self.authorizer_name = input; self
     }
     /// <p>The authorizer name.</p>
     pub fn get_authorizer_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AuthorizerSummaryBuilder {
     }
     /// <p>The authorizer ARN.</p>
     pub fn set_authorizer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.authorizer_arn = input;
-        self
+        self.authorizer_arn = input; self
     }
     /// <p>The authorizer ARN.</p>
     pub fn get_authorizer_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AuthorizerSummaryBuilder {
     /// Consumes the builder and constructs a [`AuthorizerSummary`](crate::types::AuthorizerSummary).
     pub fn build(self) -> crate::types::AuthorizerSummary {
         crate::types::AuthorizerSummary {
-            authorizer_name: self.authorizer_name,
-            authorizer_arn: self.authorizer_arn,
+            authorizer_name: self.authorizer_name
+            ,
+            authorizer_arn: self.authorizer_arn
+            ,
         }
     }
 }
+

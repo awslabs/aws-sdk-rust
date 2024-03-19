@@ -3,29 +3,28 @@
 /// <p>The result structure for the list backend environments result.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBackendEnvironmentsOutput {
+pub struct ListBackendEnvironmentsOutput  {
     /// <p>The list of backend environments for an Amplify app.</p>
-    pub backend_environments: ::std::vec::Vec<crate::types::BackendEnvironment>,
+    pub backend_environments: ::std::vec::Vec::<crate::types::BackendEnvironment>,
     /// <p>A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListBackendEnvironmentsOutput {
+impl  ListBackendEnvironmentsOutput  {
     /// <p>The list of backend environments for an Amplify app.</p>
-    pub fn backend_environments(&self) -> &[crate::types::BackendEnvironment] {
-        use std::ops::Deref;
-        self.backend_environments.deref()
+    pub fn backend_environments(&self) -> & [crate::types::BackendEnvironment] {
+        use std::ops::Deref; self.backend_environments.deref()
     }
     /// <p>A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListBackendEnvironmentsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListBackendEnvironmentsOutput {
     /// Creates a new builder-style object to manufacture [`ListBackendEnvironmentsOutput`](crate::operation::list_backend_environments::ListBackendEnvironmentsOutput).
     pub fn builder() -> crate::operation::list_backend_environments::builders::ListBackendEnvironmentsOutputBuilder {
@@ -37,7 +36,7 @@ impl ListBackendEnvironmentsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBackendEnvironmentsOutputBuilder {
-    pub(crate) backend_environments: ::std::option::Option<::std::vec::Vec<crate::types::BackendEnvironment>>,
+    pub(crate) backend_environments: ::std::option::Option<::std::vec::Vec::<crate::types::BackendEnvironment>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +48,16 @@ impl ListBackendEnvironmentsOutputBuilder {
     /// <p>The list of backend environments for an Amplify app.</p>
     pub fn backend_environments(mut self, input: crate::types::BackendEnvironment) -> Self {
         let mut v = self.backend_environments.unwrap_or_default();
-        v.push(input);
-        self.backend_environments = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.backend_environments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of backend environments for an Amplify app.</p>
-    pub fn set_backend_environments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BackendEnvironment>>) -> Self {
-        self.backend_environments = input;
-        self
+    pub fn set_backend_environments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BackendEnvironment>>) -> Self {
+        self.backend_environments = input; self
     }
     /// <p>The list of backend environments for an Amplify app.</p>
-    pub fn get_backend_environments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BackendEnvironment>> {
+    pub fn get_backend_environments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BackendEnvironment>> {
         &self.backend_environments
     }
     /// <p>A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries.</p>
@@ -69,40 +67,37 @@ impl ListBackendEnvironmentsOutputBuilder {
     }
     /// <p>A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListBackendEnvironmentsOutput`](crate::operation::list_backend_environments::ListBackendEnvironmentsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`backend_environments`](crate::operation::list_backend_environments::builders::ListBackendEnvironmentsOutputBuilder::backend_environments)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_backend_environments::ListBackendEnvironmentsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_backend_environments::ListBackendEnvironmentsOutput {
-            backend_environments: self.backend_environments.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "backend_environments",
-                    "backend_environments was not specified but it is required when building ListBackendEnvironmentsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_backend_environments::ListBackendEnvironmentsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_backend_environments::ListBackendEnvironmentsOutput {
+                backend_environments: self.backend_environments
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("backend_environments", "backend_environments was not specified but it is required when building ListBackendEnvironmentsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

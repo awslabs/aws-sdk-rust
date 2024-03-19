@@ -3,19 +3,19 @@
 /// <p>Details about a Kinesis data stream used as the source for a Firehose delivery stream.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SourceDescription {
+pub struct SourceDescription  {
     /// <p>The <code>KinesisStreamSourceDescription</code> value for the source Kinesis data stream.</p>
     pub kinesis_stream_source_description: ::std::option::Option<crate::types::KinesisStreamSourceDescription>,
     /// <p>The configuration description for the Amazon MSK cluster to be used as the source for a delivery stream.</p>
     pub msk_source_description: ::std::option::Option<crate::types::MskSourceDescription>,
 }
-impl SourceDescription {
+impl  SourceDescription  {
     /// <p>The <code>KinesisStreamSourceDescription</code> value for the source Kinesis data stream.</p>
-    pub fn kinesis_stream_source_description(&self) -> ::std::option::Option<&crate::types::KinesisStreamSourceDescription> {
+    pub fn kinesis_stream_source_description(&self) -> ::std::option::Option<& crate::types::KinesisStreamSourceDescription> {
         self.kinesis_stream_source_description.as_ref()
     }
     /// <p>The configuration description for the Amazon MSK cluster to be used as the source for a delivery stream.</p>
-    pub fn msk_source_description(&self) -> ::std::option::Option<&crate::types::MskSourceDescription> {
+    pub fn msk_source_description(&self) -> ::std::option::Option<& crate::types::MskSourceDescription> {
         self.msk_source_description.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl SourceDescriptionBuilder {
     }
     /// <p>The <code>KinesisStreamSourceDescription</code> value for the source Kinesis data stream.</p>
     pub fn set_kinesis_stream_source_description(mut self, input: ::std::option::Option<crate::types::KinesisStreamSourceDescription>) -> Self {
-        self.kinesis_stream_source_description = input;
-        self
+        self.kinesis_stream_source_description = input; self
     }
     /// <p>The <code>KinesisStreamSourceDescription</code> value for the source Kinesis data stream.</p>
     pub fn get_kinesis_stream_source_description(&self) -> &::std::option::Option<crate::types::KinesisStreamSourceDescription> {
@@ -55,8 +54,7 @@ impl SourceDescriptionBuilder {
     }
     /// <p>The configuration description for the Amazon MSK cluster to be used as the source for a delivery stream.</p>
     pub fn set_msk_source_description(mut self, input: ::std::option::Option<crate::types::MskSourceDescription>) -> Self {
-        self.msk_source_description = input;
-        self
+        self.msk_source_description = input; self
     }
     /// <p>The configuration description for the Amazon MSK cluster to be used as the source for a delivery stream.</p>
     pub fn get_msk_source_description(&self) -> &::std::option::Option<crate::types::MskSourceDescription> {
@@ -65,8 +63,11 @@ impl SourceDescriptionBuilder {
     /// Consumes the builder and constructs a [`SourceDescription`](crate::types::SourceDescription).
     pub fn build(self) -> crate::types::SourceDescription {
         crate::types::SourceDescription {
-            kinesis_stream_source_description: self.kinesis_stream_source_description,
-            msk_source_description: self.msk_source_description,
+            kinesis_stream_source_description: self.kinesis_stream_source_description
+            ,
+            msk_source_description: self.msk_source_description
+            ,
         }
     }
 }
+

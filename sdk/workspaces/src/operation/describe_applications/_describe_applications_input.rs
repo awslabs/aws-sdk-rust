@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeApplicationsInput {
+pub struct DescribeApplicationsInput  {
     /// <p>The identifiers of one or more applications.</p>
-    pub application_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub application_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The compute types supported by the applications.</p>
-    pub compute_type_names: ::std::option::Option<::std::vec::Vec<crate::types::Compute>>,
+    pub compute_type_names: ::std::option::Option<::std::vec::Vec::<crate::types::Compute>>,
     /// <p>The license availability for the applications.</p>
     pub license_type: ::std::option::Option<crate::types::WorkSpaceApplicationLicenseType>,
     /// <p>The operating systems supported by the applications.</p>
-    pub operating_system_names: ::std::option::Option<::std::vec::Vec<crate::types::OperatingSystemName>>,
+    pub operating_system_names: ::std::option::Option<::std::vec::Vec::<crate::types::OperatingSystemName>>,
     /// <p>The owner of the applications.</p>
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of applications to return.</p>
@@ -18,31 +18,34 @@ pub struct DescribeApplicationsInput {
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeApplicationsInput {
+impl  DescribeApplicationsInput  {
     /// <p>The identifiers of one or more applications.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_ids.is_none()`.
-    pub fn application_ids(&self) -> &[::std::string::String] {
-        self.application_ids.as_deref().unwrap_or_default()
+    pub fn application_ids(&self) -> & [::std::string::String] {
+        self.application_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The compute types supported by the applications.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compute_type_names.is_none()`.
-    pub fn compute_type_names(&self) -> &[crate::types::Compute] {
-        self.compute_type_names.as_deref().unwrap_or_default()
+    pub fn compute_type_names(&self) -> & [crate::types::Compute] {
+        self.compute_type_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The license availability for the applications.</p>
-    pub fn license_type(&self) -> ::std::option::Option<&crate::types::WorkSpaceApplicationLicenseType> {
+    pub fn license_type(&self) -> ::std::option::Option<& crate::types::WorkSpaceApplicationLicenseType> {
         self.license_type.as_ref()
     }
     /// <p>The operating systems supported by the applications.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operating_system_names.is_none()`.
-    pub fn operating_system_names(&self) -> &[crate::types::OperatingSystemName] {
-        self.operating_system_names.as_deref().unwrap_or_default()
+    pub fn operating_system_names(&self) -> & [crate::types::OperatingSystemName] {
+        self.operating_system_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The owner of the applications.</p>
-    pub fn owner(&self) -> ::std::option::Option<&str> {
+    pub fn owner(&self) -> ::std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>The maximum number of applications to return.</p>
@@ -50,7 +53,7 @@ impl DescribeApplicationsInput {
         self.max_results
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -65,10 +68,10 @@ impl DescribeApplicationsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeApplicationsInputBuilder {
-    pub(crate) application_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) compute_type_names: ::std::option::Option<::std::vec::Vec<crate::types::Compute>>,
+    pub(crate) application_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) compute_type_names: ::std::option::Option<::std::vec::Vec::<crate::types::Compute>>,
     pub(crate) license_type: ::std::option::Option<crate::types::WorkSpaceApplicationLicenseType>,
-    pub(crate) operating_system_names: ::std::option::Option<::std::vec::Vec<crate::types::OperatingSystemName>>,
+    pub(crate) operating_system_names: ::std::option::Option<::std::vec::Vec::<crate::types::OperatingSystemName>>,
     pub(crate) owner: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -81,17 +84,16 @@ impl DescribeApplicationsInputBuilder {
     /// <p>The identifiers of one or more applications.</p>
     pub fn application_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.application_ids.unwrap_or_default();
-        v.push(input.into());
-        self.application_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.application_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The identifiers of one or more applications.</p>
-    pub fn set_application_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.application_ids = input;
-        self
+    pub fn set_application_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.application_ids = input; self
     }
     /// <p>The identifiers of one or more applications.</p>
-    pub fn get_application_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_application_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.application_ids
     }
     /// Appends an item to `compute_type_names`.
@@ -101,17 +103,16 @@ impl DescribeApplicationsInputBuilder {
     /// <p>The compute types supported by the applications.</p>
     pub fn compute_type_names(mut self, input: crate::types::Compute) -> Self {
         let mut v = self.compute_type_names.unwrap_or_default();
-        v.push(input);
-        self.compute_type_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.compute_type_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The compute types supported by the applications.</p>
-    pub fn set_compute_type_names(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Compute>>) -> Self {
-        self.compute_type_names = input;
-        self
+    pub fn set_compute_type_names(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Compute>>) -> Self {
+        self.compute_type_names = input; self
     }
     /// <p>The compute types supported by the applications.</p>
-    pub fn get_compute_type_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Compute>> {
+    pub fn get_compute_type_names(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Compute>> {
         &self.compute_type_names
     }
     /// <p>The license availability for the applications.</p>
@@ -121,8 +122,7 @@ impl DescribeApplicationsInputBuilder {
     }
     /// <p>The license availability for the applications.</p>
     pub fn set_license_type(mut self, input: ::std::option::Option<crate::types::WorkSpaceApplicationLicenseType>) -> Self {
-        self.license_type = input;
-        self
+        self.license_type = input; self
     }
     /// <p>The license availability for the applications.</p>
     pub fn get_license_type(&self) -> &::std::option::Option<crate::types::WorkSpaceApplicationLicenseType> {
@@ -135,17 +135,16 @@ impl DescribeApplicationsInputBuilder {
     /// <p>The operating systems supported by the applications.</p>
     pub fn operating_system_names(mut self, input: crate::types::OperatingSystemName) -> Self {
         let mut v = self.operating_system_names.unwrap_or_default();
-        v.push(input);
-        self.operating_system_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.operating_system_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The operating systems supported by the applications.</p>
-    pub fn set_operating_system_names(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OperatingSystemName>>) -> Self {
-        self.operating_system_names = input;
-        self
+    pub fn set_operating_system_names(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OperatingSystemName>>) -> Self {
+        self.operating_system_names = input; self
     }
     /// <p>The operating systems supported by the applications.</p>
-    pub fn get_operating_system_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OperatingSystemName>> {
+    pub fn get_operating_system_names(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OperatingSystemName>> {
         &self.operating_system_names
     }
     /// <p>The owner of the applications.</p>
@@ -155,8 +154,7 @@ impl DescribeApplicationsInputBuilder {
     }
     /// <p>The owner of the applications.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// <p>The owner of the applications.</p>
     pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,8 +167,7 @@ impl DescribeApplicationsInputBuilder {
     }
     /// <p>The maximum number of applications to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of applications to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -183,26 +180,32 @@ impl DescribeApplicationsInputBuilder {
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeApplicationsInput`](crate::operation::describe_applications::DescribeApplicationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_applications::DescribeApplicationsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_applications::DescribeApplicationsInput {
-            application_ids: self.application_ids,
-            compute_type_names: self.compute_type_names,
-            license_type: self.license_type,
-            operating_system_names: self.operating_system_names,
-            owner: self.owner,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_applications::DescribeApplicationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_applications::DescribeApplicationsInput {
+                application_ids: self.application_ids
+                ,
+                compute_type_names: self.compute_type_names
+                ,
+                license_type: self.license_type
+                ,
+                operating_system_names: self.operating_system_names
+                ,
+                owner: self.owner
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

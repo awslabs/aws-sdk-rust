@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ManageSparqlStatisticsInput {
+pub struct ManageSparqlStatisticsInput  {
     /// <p>The statistics generation mode. One of: <code>DISABLE_AUTOCOMPUTE</code>, <code>ENABLE_AUTOCOMPUTE</code>, or <code>REFRESH</code>, the last of which manually triggers DFE statistics generation.</p>
     pub mode: ::std::option::Option<crate::types::StatisticsAutoGenerationMode>,
 }
-impl ManageSparqlStatisticsInput {
+impl  ManageSparqlStatisticsInput  {
     /// <p>The statistics generation mode. One of: <code>DISABLE_AUTOCOMPUTE</code>, <code>ENABLE_AUTOCOMPUTE</code>, or <code>REFRESH</code>, the last of which manually triggers DFE statistics generation.</p>
-    pub fn mode(&self) -> ::std::option::Option<&crate::types::StatisticsAutoGenerationMode> {
+    pub fn mode(&self) -> ::std::option::Option<& crate::types::StatisticsAutoGenerationMode> {
         self.mode.as_ref()
     }
 }
@@ -33,20 +33,20 @@ impl ManageSparqlStatisticsInputBuilder {
     }
     /// <p>The statistics generation mode. One of: <code>DISABLE_AUTOCOMPUTE</code>, <code>ENABLE_AUTOCOMPUTE</code>, or <code>REFRESH</code>, the last of which manually triggers DFE statistics generation.</p>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::StatisticsAutoGenerationMode>) -> Self {
-        self.mode = input;
-        self
+        self.mode = input; self
     }
     /// <p>The statistics generation mode. One of: <code>DISABLE_AUTOCOMPUTE</code>, <code>ENABLE_AUTOCOMPUTE</code>, or <code>REFRESH</code>, the last of which manually triggers DFE statistics generation.</p>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::StatisticsAutoGenerationMode> {
         &self.mode
     }
     /// Consumes the builder and constructs a [`ManageSparqlStatisticsInput`](crate::operation::manage_sparql_statistics::ManageSparqlStatisticsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::manage_sparql_statistics::ManageSparqlStatisticsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::manage_sparql_statistics::ManageSparqlStatisticsInput { mode: self.mode })
+    pub fn build(self) -> ::std::result::Result<crate::operation::manage_sparql_statistics::ManageSparqlStatisticsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::manage_sparql_statistics::ManageSparqlStatisticsInput {
+                mode: self.mode
+                ,
+            }
+        )
     }
 }
+

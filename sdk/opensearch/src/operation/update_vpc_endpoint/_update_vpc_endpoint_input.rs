@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateVpcEndpointInput {
+pub struct UpdateVpcEndpointInput  {
     /// <p>The unique identifier of the endpoint.</p>
     pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The security groups and/or subnets to add, remove, or modify.</p>
     pub vpc_options: ::std::option::Option<crate::types::VpcOptions>,
 }
-impl UpdateVpcEndpointInput {
+impl  UpdateVpcEndpointInput  {
     /// <p>The unique identifier of the endpoint.</p>
-    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.vpc_endpoint_id.as_deref()
     }
     /// <p>The security groups and/or subnets to add, remove, or modify.</p>
-    pub fn vpc_options(&self) -> ::std::option::Option<&crate::types::VpcOptions> {
+    pub fn vpc_options(&self) -> ::std::option::Option<& crate::types::VpcOptions> {
         self.vpc_options.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateVpcEndpointInputBuilder {
     }
     /// <p>The unique identifier of the endpoint.</p>
     pub fn set_vpc_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_endpoint_id = input;
-        self
+        self.vpc_endpoint_id = input; self
     }
     /// <p>The unique identifier of the endpoint.</p>
     pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl UpdateVpcEndpointInputBuilder {
     }
     /// <p>The security groups and/or subnets to add, remove, or modify.</p>
     pub fn set_vpc_options(mut self, input: ::std::option::Option<crate::types::VpcOptions>) -> Self {
-        self.vpc_options = input;
-        self
+        self.vpc_options = input; self
     }
     /// <p>The security groups and/or subnets to add, remove, or modify.</p>
     pub fn get_vpc_options(&self) -> &::std::option::Option<crate::types::VpcOptions> {
         &self.vpc_options
     }
     /// Consumes the builder and constructs a [`UpdateVpcEndpointInput`](crate::operation::update_vpc_endpoint::UpdateVpcEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_vpc_endpoint::UpdateVpcEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_vpc_endpoint::UpdateVpcEndpointInput {
-            vpc_endpoint_id: self.vpc_endpoint_id,
-            vpc_options: self.vpc_options,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_vpc_endpoint::UpdateVpcEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_vpc_endpoint::UpdateVpcEndpointInput {
+                vpc_endpoint_id: self.vpc_endpoint_id
+                ,
+                vpc_options: self.vpc_options
+                ,
+            }
+        )
     }
 }
+

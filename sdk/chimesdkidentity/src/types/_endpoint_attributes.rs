@@ -3,24 +3,23 @@
 /// <p>The attributes of an <code>Endpoint</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct EndpointAttributes {
+pub struct EndpointAttributes  {
     /// <p>The device token for the GCM, APNS, and APNS_SANDBOX endpoint types.</p>
     pub device_token: ::std::string::String,
     /// <p>The VOIP device token for the APNS and APNS_SANDBOX endpoint types.</p>
     pub voip_device_token: ::std::option::Option<::std::string::String>,
 }
-impl EndpointAttributes {
+impl  EndpointAttributes  {
     /// <p>The device token for the GCM, APNS, and APNS_SANDBOX endpoint types.</p>
-    pub fn device_token(&self) -> &str {
-        use std::ops::Deref;
-        self.device_token.deref()
+    pub fn device_token(&self) -> & str {
+        use std::ops::Deref; self.device_token.deref()
     }
     /// <p>The VOIP device token for the APNS and APNS_SANDBOX endpoint types.</p>
-    pub fn voip_device_token(&self) -> ::std::option::Option<&str> {
+    pub fn voip_device_token(&self) -> ::std::option::Option<& str> {
         self.voip_device_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for EndpointAttributes {
+impl  ::std::fmt::Debug for EndpointAttributes  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EndpointAttributes");
         formatter.field("device_token", &"*** Sensitive Data Redacted ***");
@@ -51,8 +50,7 @@ impl EndpointAttributesBuilder {
     }
     /// <p>The device token for the GCM, APNS, and APNS_SANDBOX endpoint types.</p>
     pub fn set_device_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_token = input;
-        self
+        self.device_token = input; self
     }
     /// <p>The device token for the GCM, APNS, and APNS_SANDBOX endpoint types.</p>
     pub fn get_device_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl EndpointAttributesBuilder {
     }
     /// <p>The VOIP device token for the APNS and APNS_SANDBOX endpoint types.</p>
     pub fn set_voip_device_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.voip_device_token = input;
-        self
+        self.voip_device_token = input; self
     }
     /// <p>The VOIP device token for the APNS and APNS_SANDBOX endpoint types.</p>
     pub fn get_voip_device_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,15 +73,17 @@ impl EndpointAttributesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`device_token`](crate::types::builders::EndpointAttributesBuilder::device_token)
     pub fn build(self) -> ::std::result::Result<crate::types::EndpointAttributes, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EndpointAttributes {
-            device_token: self.device_token.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "device_token",
-                    "device_token was not specified but it is required when building EndpointAttributes",
-                )
-            })?,
-            voip_device_token: self.voip_device_token,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EndpointAttributes {
+                device_token: self.device_token
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("device_token", "device_token was not specified but it is required when building EndpointAttributes")
+                    )?
+                ,
+                voip_device_token: self.voip_device_token
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for EndpointAttributesBuilder {
@@ -95,3 +94,4 @@ impl ::std::fmt::Debug for EndpointAttributesBuilder {
         formatter.finish()
     }
 }
+

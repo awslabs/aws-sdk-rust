@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssignInstanceInput {
+pub struct AssignInstanceInput  {
     /// <p>The instance ID.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The layer ID, which must correspond to a custom layer. You cannot assign a registered instance to a built-in layer.</p>
-    pub layer_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub layer_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl AssignInstanceInput {
+impl  AssignInstanceInput  {
     /// <p>The instance ID.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The layer ID, which must correspond to a custom layer. You cannot assign a registered instance to a built-in layer.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.layer_ids.is_none()`.
-    pub fn layer_ids(&self) -> &[::std::string::String] {
-        self.layer_ids.as_deref().unwrap_or_default()
+    pub fn layer_ids(&self) -> & [::std::string::String] {
+        self.layer_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AssignInstanceInput {
@@ -32,7 +33,7 @@ impl AssignInstanceInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssignInstanceInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
-    pub(crate) layer_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) layer_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AssignInstanceInputBuilder {
     /// <p>The instance ID.</p>
@@ -43,8 +44,7 @@ impl AssignInstanceInputBuilder {
     }
     /// <p>The instance ID.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The instance ID.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,26 +57,28 @@ impl AssignInstanceInputBuilder {
     /// <p>The layer ID, which must correspond to a custom layer. You cannot assign a registered instance to a built-in layer.</p>
     pub fn layer_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.layer_ids.unwrap_or_default();
-        v.push(input.into());
-        self.layer_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.layer_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The layer ID, which must correspond to a custom layer. You cannot assign a registered instance to a built-in layer.</p>
-    pub fn set_layer_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.layer_ids = input;
-        self
+    pub fn set_layer_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.layer_ids = input; self
     }
     /// <p>The layer ID, which must correspond to a custom layer. You cannot assign a registered instance to a built-in layer.</p>
-    pub fn get_layer_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_layer_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.layer_ids
     }
     /// Consumes the builder and constructs a [`AssignInstanceInput`](crate::operation::assign_instance::AssignInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::assign_instance::AssignInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::assign_instance::AssignInstanceInput {
-            instance_id: self.instance_id,
-            layer_ids: self.layer_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::assign_instance::AssignInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::assign_instance::AssignInstanceInput {
+                instance_id: self.instance_id
+                ,
+                layer_ids: self.layer_ids
+                ,
+            }
+        )
     }
 }
+

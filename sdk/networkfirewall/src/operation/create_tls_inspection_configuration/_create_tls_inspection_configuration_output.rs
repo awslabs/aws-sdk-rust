@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTlsInspectionConfigurationOutput {
+pub struct CreateTlsInspectionConfigurationOutput  {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the TLS inspection configuration. The token marks the state of the TLS inspection configuration resource at the time of the request.</p>
     /// <p>To make changes to the TLS inspection configuration, you provide the token in your request. Network Firewall uses the token to ensure that the TLS inspection configuration hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the TLS inspection configuration again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token.</p>
     pub update_token: ::std::string::String,
@@ -10,23 +10,22 @@ pub struct CreateTlsInspectionConfigurationOutput {
     pub tls_inspection_configuration_response: ::std::option::Option<crate::types::TlsInspectionConfigurationResponse>,
     _request_id: Option<String>,
 }
-impl CreateTlsInspectionConfigurationOutput {
+impl  CreateTlsInspectionConfigurationOutput  {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the TLS inspection configuration. The token marks the state of the TLS inspection configuration resource at the time of the request.</p>
     /// <p>To make changes to the TLS inspection configuration, you provide the token in your request. Network Firewall uses the token to ensure that the TLS inspection configuration hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the TLS inspection configuration again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token.</p>
-    pub fn update_token(&self) -> &str {
-        use std::ops::Deref;
-        self.update_token.deref()
+    pub fn update_token(&self) -> & str {
+        use std::ops::Deref; self.update_token.deref()
     }
     /// <p>The high-level properties of a TLS inspection configuration. This, along with the <code>TLSInspectionConfiguration</code>, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code>.</p>
-    pub fn tls_inspection_configuration_response(&self) -> ::std::option::Option<&crate::types::TlsInspectionConfigurationResponse> {
+    pub fn tls_inspection_configuration_response(&self) -> ::std::option::Option<& crate::types::TlsInspectionConfigurationResponse> {
         self.tls_inspection_configuration_response.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateTlsInspectionConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateTlsInspectionConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateTlsInspectionConfigurationOutput`](crate::operation::create_tls_inspection_configuration::CreateTlsInspectionConfigurationOutput).
     pub fn builder() -> crate::operation::create_tls_inspection_configuration::builders::CreateTlsInspectionConfigurationOutputBuilder {
@@ -53,8 +52,7 @@ impl CreateTlsInspectionConfigurationOutputBuilder {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the TLS inspection configuration. The token marks the state of the TLS inspection configuration resource at the time of the request.</p>
     /// <p>To make changes to the TLS inspection configuration, you provide the token in your request. Network Firewall uses the token to ensure that the TLS inspection configuration hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the TLS inspection configuration again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token.</p>
     pub fn set_update_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.update_token = input;
-        self
+        self.update_token = input; self
     }
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the TLS inspection configuration. The token marks the state of the TLS inspection configuration resource at the time of the request.</p>
     /// <p>To make changes to the TLS inspection configuration, you provide the token in your request. Network Firewall uses the token to ensure that the TLS inspection configuration hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the TLS inspection configuration again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token.</p>
@@ -68,46 +66,38 @@ impl CreateTlsInspectionConfigurationOutputBuilder {
         self
     }
     /// <p>The high-level properties of a TLS inspection configuration. This, along with the <code>TLSInspectionConfiguration</code>, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code>.</p>
-    pub fn set_tls_inspection_configuration_response(
-        mut self,
-        input: ::std::option::Option<crate::types::TlsInspectionConfigurationResponse>,
-    ) -> Self {
-        self.tls_inspection_configuration_response = input;
-        self
+    pub fn set_tls_inspection_configuration_response(mut self, input: ::std::option::Option<crate::types::TlsInspectionConfigurationResponse>) -> Self {
+        self.tls_inspection_configuration_response = input; self
     }
     /// <p>The high-level properties of a TLS inspection configuration. This, along with the <code>TLSInspectionConfiguration</code>, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code>.</p>
     pub fn get_tls_inspection_configuration_response(&self) -> &::std::option::Option<crate::types::TlsInspectionConfigurationResponse> {
         &self.tls_inspection_configuration_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateTlsInspectionConfigurationOutput`](crate::operation::create_tls_inspection_configuration::CreateTlsInspectionConfigurationOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`update_token`](crate::operation::create_tls_inspection_configuration::builders::CreateTlsInspectionConfigurationOutputBuilder::update_token)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_tls_inspection_configuration::CreateTlsInspectionConfigurationOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_tls_inspection_configuration::CreateTlsInspectionConfigurationOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_tls_inspection_configuration::CreateTlsInspectionConfigurationOutput {
-                update_token: self.update_token.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "update_token",
-                        "update_token was not specified but it is required when building CreateTlsInspectionConfigurationOutput",
-                    )
-                })?,
-                tls_inspection_configuration_response: self.tls_inspection_configuration_response,
+                update_token: self.update_token
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_token", "update_token was not specified but it is required when building CreateTlsInspectionConfigurationOutput")
+                    )?
+                ,
+                tls_inspection_configuration_response: self.tls_inspection_configuration_response
+                ,
                 _request_id: self._request_id,
-            },
+            }
         )
     }
 }
+

@@ -7,7 +7,7 @@
 /// <p>Specifies where in a web request to look for <code>TargetString</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FieldToMatch {
+pub struct FieldToMatch  {
     /// <p>The part of the web request that you want AWS WAF to search for a specified string. Parts of a request that you can search include the following:</p>
     /// <ul>
     /// <li>
@@ -31,7 +31,7 @@ pub struct FieldToMatch {
     /// <p>If the value of <code>Type</code> is any other value, omit <code>Data</code>.</p>
     pub data: ::std::option::Option<::std::string::String>,
 }
-impl FieldToMatch {
+impl  FieldToMatch  {
     /// <p>The part of the web request that you want AWS WAF to search for a specified string. Parts of a request that you can search include the following:</p>
     /// <ul>
     /// <li>
@@ -49,13 +49,13 @@ impl FieldToMatch {
     /// <li>
     /// <p><code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but rather than inspecting a single parameter, AWS WAF will inspect all parameters within the query for the value or regex pattern that you specify in <code>TargetString</code>.</p></li>
     /// </ul>
-    pub fn r#type(&self) -> &crate::types::MatchFieldType {
+    pub fn r#type(&self) -> & crate::types::MatchFieldType {
         &self.r#type
     }
     /// <p>When the value of <code>Type</code> is <code>HEADER</code>, enter the name of the header that you want AWS WAF to search, for example, <code>User-Agent</code> or <code>Referer</code>. The name of the header is not case sensitive.</p>
     /// <p>When the value of <code>Type</code> is <code>SINGLE_QUERY_ARG</code>, enter the name of the parameter that you want AWS WAF to search, for example, <code>UserName</code> or <code>SalesRegion</code>. The parameter name is not case sensitive.</p>
     /// <p>If the value of <code>Type</code> is any other value, omit <code>Data</code>.</p>
-    pub fn data(&self) -> ::std::option::Option<&str> {
+    pub fn data(&self) -> ::std::option::Option<& str> {
         self.data.as_deref()
     }
 }
@@ -114,8 +114,7 @@ impl FieldToMatchBuilder {
     /// <p><code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but rather than inspecting a single parameter, AWS WAF will inspect all parameters within the query for the value or regex pattern that you specify in <code>TargetString</code>.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::MatchFieldType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The part of the web request that you want AWS WAF to search for a specified string. Parts of a request that you can search include the following:</p>
     /// <ul>
@@ -148,8 +147,7 @@ impl FieldToMatchBuilder {
     /// <p>When the value of <code>Type</code> is <code>SINGLE_QUERY_ARG</code>, enter the name of the parameter that you want AWS WAF to search, for example, <code>UserName</code> or <code>SalesRegion</code>. The parameter name is not case sensitive.</p>
     /// <p>If the value of <code>Type</code> is any other value, omit <code>Data</code>.</p>
     pub fn set_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
     }
     /// <p>When the value of <code>Type</code> is <code>HEADER</code>, enter the name of the header that you want AWS WAF to search, for example, <code>User-Agent</code> or <code>Referer</code>. The name of the header is not case sensitive.</p>
     /// <p>When the value of <code>Type</code> is <code>SINGLE_QUERY_ARG</code>, enter the name of the parameter that you want AWS WAF to search, for example, <code>UserName</code> or <code>SalesRegion</code>. The parameter name is not case sensitive.</p>
@@ -161,14 +159,17 @@ impl FieldToMatchBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::FieldToMatchBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::FieldToMatch, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FieldToMatch {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building FieldToMatch",
-                )
-            })?,
-            data: self.data,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FieldToMatch {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building FieldToMatch")
+                    )?
+                ,
+                data: self.data
+                ,
+            }
+        )
     }
 }
+

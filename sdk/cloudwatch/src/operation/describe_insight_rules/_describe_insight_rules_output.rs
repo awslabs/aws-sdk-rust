@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeInsightRulesOutput {
+pub struct DescribeInsightRulesOutput  {
     /// <p>If this parameter is present, it is a token that marks the start of the next batch of returned results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The rules returned by the operation.</p>
-    pub insight_rules: ::std::option::Option<::std::vec::Vec<crate::types::InsightRule>>,
+    pub insight_rules: ::std::option::Option<::std::vec::Vec::<crate::types::InsightRule>>,
     _request_id: Option<String>,
 }
-impl DescribeInsightRulesOutput {
+impl  DescribeInsightRulesOutput  {
     /// <p>If this parameter is present, it is a token that marks the start of the next batch of returned results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The rules returned by the operation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.insight_rules.is_none()`.
-    pub fn insight_rules(&self) -> &[crate::types::InsightRule] {
-        self.insight_rules.as_deref().unwrap_or_default()
+    pub fn insight_rules(&self) -> & [crate::types::InsightRule] {
+        self.insight_rules.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeInsightRulesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeInsightRulesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInsightRulesOutput`](crate::operation::describe_insight_rules::DescribeInsightRulesOutput).
     pub fn builder() -> crate::operation::describe_insight_rules::builders::DescribeInsightRulesOutputBuilder {
@@ -38,7 +39,7 @@ impl DescribeInsightRulesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInsightRulesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) insight_rules: ::std::option::Option<::std::vec::Vec<crate::types::InsightRule>>,
+    pub(crate) insight_rules: ::std::option::Option<::std::vec::Vec::<crate::types::InsightRule>>,
     _request_id: Option<String>,
 }
 impl DescribeInsightRulesOutputBuilder {
@@ -49,8 +50,7 @@ impl DescribeInsightRulesOutputBuilder {
     }
     /// <p>If this parameter is present, it is a token that marks the start of the next batch of returned results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If this parameter is present, it is a token that marks the start of the next batch of returned results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl DescribeInsightRulesOutputBuilder {
     /// <p>The rules returned by the operation.</p>
     pub fn insight_rules(mut self, input: crate::types::InsightRule) -> Self {
         let mut v = self.insight_rules.unwrap_or_default();
-        v.push(input);
-        self.insight_rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.insight_rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The rules returned by the operation.</p>
-    pub fn set_insight_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InsightRule>>) -> Self {
-        self.insight_rules = input;
-        self
+    pub fn set_insight_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InsightRule>>) -> Self {
+        self.insight_rules = input; self
     }
     /// <p>The rules returned by the operation.</p>
-    pub fn get_insight_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightRule>> {
+    pub fn get_insight_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InsightRule>> {
         &self.insight_rules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeInsightRulesOutput`](crate::operation::describe_insight_rules::DescribeInsightRulesOutput).
     pub fn build(self) -> crate::operation::describe_insight_rules::DescribeInsightRulesOutput {
         crate::operation::describe_insight_rules::DescribeInsightRulesOutput {
-            next_token: self.next_token,
-            insight_rules: self.insight_rules,
+            next_token: self.next_token
+            ,
+            insight_rules: self.insight_rules
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

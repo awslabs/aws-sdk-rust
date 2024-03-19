@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRevealConfigurationInput {
+pub struct UpdateRevealConfigurationInput  {
     /// <p>The KMS key to use to encrypt the sensitive data, and the status of the configuration for the Amazon Macie account.</p>
     pub configuration: ::std::option::Option<crate::types::RevealConfiguration>,
     /// <p>The access method and settings to use when retrieving the sensitive data.</p>
     pub retrieval_configuration: ::std::option::Option<crate::types::UpdateRetrievalConfiguration>,
 }
-impl UpdateRevealConfigurationInput {
+impl  UpdateRevealConfigurationInput  {
     /// <p>The KMS key to use to encrypt the sensitive data, and the status of the configuration for the Amazon Macie account.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::RevealConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::RevealConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>The access method and settings to use when retrieving the sensitive data.</p>
-    pub fn retrieval_configuration(&self) -> ::std::option::Option<&crate::types::UpdateRetrievalConfiguration> {
+    pub fn retrieval_configuration(&self) -> ::std::option::Option<& crate::types::UpdateRetrievalConfiguration> {
         self.retrieval_configuration.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateRevealConfigurationInputBuilder {
     }
     /// <p>The KMS key to use to encrypt the sensitive data, and the status of the configuration for the Amazon Macie account.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::RevealConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>The KMS key to use to encrypt the sensitive data, and the status of the configuration for the Amazon Macie account.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::RevealConfiguration> {
@@ -55,23 +54,22 @@ impl UpdateRevealConfigurationInputBuilder {
     }
     /// <p>The access method and settings to use when retrieving the sensitive data.</p>
     pub fn set_retrieval_configuration(mut self, input: ::std::option::Option<crate::types::UpdateRetrievalConfiguration>) -> Self {
-        self.retrieval_configuration = input;
-        self
+        self.retrieval_configuration = input; self
     }
     /// <p>The access method and settings to use when retrieving the sensitive data.</p>
     pub fn get_retrieval_configuration(&self) -> &::std::option::Option<crate::types::UpdateRetrievalConfiguration> {
         &self.retrieval_configuration
     }
     /// Consumes the builder and constructs a [`UpdateRevealConfigurationInput`](crate::operation::update_reveal_configuration::UpdateRevealConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_reveal_configuration::UpdateRevealConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_reveal_configuration::UpdateRevealConfigurationInput {
-            configuration: self.configuration,
-            retrieval_configuration: self.retrieval_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_reveal_configuration::UpdateRevealConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_reveal_configuration::UpdateRevealConfigurationInput {
+                configuration: self.configuration
+                ,
+                retrieval_configuration: self.retrieval_configuration
+                ,
+            }
+        )
     }
 }
+

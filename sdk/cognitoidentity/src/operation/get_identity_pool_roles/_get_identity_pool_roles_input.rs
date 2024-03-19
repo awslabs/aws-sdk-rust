@@ -3,13 +3,13 @@
 /// <p>Input to the <code>GetIdentityPoolRoles</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetIdentityPoolRolesInput {
+pub struct GetIdentityPoolRolesInput  {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     pub identity_pool_id: ::std::option::Option<::std::string::String>,
 }
-impl GetIdentityPoolRolesInput {
+impl  GetIdentityPoolRolesInput  {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> ::std::option::Option<& str> {
         self.identity_pool_id.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl GetIdentityPoolRolesInputBuilder {
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_pool_id = input;
-        self
+        self.identity_pool_id = input; self
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_pool_id
     }
     /// Consumes the builder and constructs a [`GetIdentityPoolRolesInput`](crate::operation::get_identity_pool_roles::GetIdentityPoolRolesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_identity_pool_roles::GetIdentityPoolRolesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_identity_pool_roles::GetIdentityPoolRolesInput {
-            identity_pool_id: self.identity_pool_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_identity_pool_roles::GetIdentityPoolRolesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_identity_pool_roles::GetIdentityPoolRolesInput {
+                identity_pool_id: self.identity_pool_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The request parameters represent the input of a request to run a SQL statement against a database.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecuteStatementInput {
+pub struct ExecuteStatementInput  {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
@@ -20,7 +20,7 @@ pub struct ExecuteStatementInput {
     /// <p>The parameters for the SQL statement.</p><note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
-    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec::<crate::types::SqlParameter>>,
     /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
     /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
     pub transaction_id: ::std::option::Option<::std::string::String>,
@@ -36,41 +36,42 @@ pub struct ExecuteStatementInput {
     /// <p>For usage information about the JSON format for result sets, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub format_records_as: ::std::option::Option<crate::types::RecordsFormatType>,
 }
-impl ExecuteStatementInput {
+impl  ExecuteStatementInput  {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
     /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
-    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
+    pub fn secret_arn(&self) -> ::std::option::Option<& str> {
         self.secret_arn.as_deref()
     }
     /// <p>The SQL statement to run.</p>
-    pub fn sql(&self) -> ::std::option::Option<&str> {
+    pub fn sql(&self) -> ::std::option::Option<& str> {
         self.sql.as_deref()
     }
     /// <p>The name of the database.</p>
-    pub fn database(&self) -> ::std::option::Option<&str> {
+    pub fn database(&self) -> ::std::option::Option<& str> {
         self.database.as_deref()
     }
     /// <p>The name of the database schema.</p><note>
     /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
     /// </note>
-    pub fn schema(&self) -> ::std::option::Option<&str> {
+    pub fn schema(&self) -> ::std::option::Option<& str> {
         self.schema.as_deref()
     }
     /// <p>The parameters for the SQL statement.</p><note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
-    pub fn parameters(&self) -> &[crate::types::SqlParameter] {
-        self.parameters.as_deref().unwrap_or_default()
+    pub fn parameters(&self) -> & [crate::types::SqlParameter] {
+        self.parameters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
     /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
-    pub fn transaction_id(&self) -> ::std::option::Option<&str> {
+    pub fn transaction_id(&self) -> ::std::option::Option<& str> {
         self.transaction_id.as_deref()
     }
     /// <p>A value that indicates whether to include metadata in the results.</p>
@@ -84,12 +85,12 @@ impl ExecuteStatementInput {
         self.continue_after_timeout
     }
     /// <p>Options that control how the result set is returned.</p>
-    pub fn result_set_options(&self) -> ::std::option::Option<&crate::types::ResultSetOptions> {
+    pub fn result_set_options(&self) -> ::std::option::Option<& crate::types::ResultSetOptions> {
         self.result_set_options.as_ref()
     }
     /// <p>A value that indicates whether to format the result set as a single JSON string. This parameter only applies to <code>SELECT</code> statements and is ignored for other types of statements. Allowed values are <code>NONE</code> and <code>JSON</code>. The default value is <code>NONE</code>. The result is returned in the <code>formattedRecords</code> field.</p>
     /// <p>For usage information about the JSON format for result sets, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn format_records_as(&self) -> ::std::option::Option<&crate::types::RecordsFormatType> {
+    pub fn format_records_as(&self) -> ::std::option::Option<& crate::types::RecordsFormatType> {
         self.format_records_as.as_ref()
     }
 }
@@ -109,7 +110,7 @@ pub struct ExecuteStatementInputBuilder {
     pub(crate) sql: ::std::option::Option<::std::string::String>,
     pub(crate) database: ::std::option::Option<::std::string::String>,
     pub(crate) schema: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec::<crate::types::SqlParameter>>,
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
     pub(crate) include_result_metadata: ::std::option::Option<bool>,
     pub(crate) continue_after_timeout: ::std::option::Option<bool>,
@@ -125,8 +126,7 @@ impl ExecuteStatementInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +142,7 @@ impl ExecuteStatementInputBuilder {
     /// <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
     /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_arn = input;
-        self
+        self.secret_arn = input; self
     }
     /// <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
     /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
@@ -158,8 +157,7 @@ impl ExecuteStatementInputBuilder {
     }
     /// <p>The SQL statement to run.</p>
     pub fn set_sql(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sql = input;
-        self
+        self.sql = input; self
     }
     /// <p>The SQL statement to run.</p>
     pub fn get_sql(&self) -> &::std::option::Option<::std::string::String> {
@@ -172,8 +170,7 @@ impl ExecuteStatementInputBuilder {
     }
     /// <p>The name of the database.</p>
     pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>The name of the database.</p>
     pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
@@ -190,8 +187,7 @@ impl ExecuteStatementInputBuilder {
     /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
     /// </note>
     pub fn set_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema = input;
-        self
+        self.schema = input; self
     }
     /// <p>The name of the database schema.</p><note>
     /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
@@ -208,21 +204,20 @@ impl ExecuteStatementInputBuilder {
     /// </note>
     pub fn parameters(mut self, input: crate::types::SqlParameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The parameters for the SQL statement.</p><note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SqlParameter>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>The parameters for the SQL statement.</p><note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SqlParameter>> {
         &self.parameters
     }
     /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
@@ -234,8 +229,7 @@ impl ExecuteStatementInputBuilder {
     /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
     /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
     pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transaction_id = input;
-        self
+        self.transaction_id = input; self
     }
     /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
     /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
@@ -249,8 +243,7 @@ impl ExecuteStatementInputBuilder {
     }
     /// <p>A value that indicates whether to include metadata in the results.</p>
     pub fn set_include_result_metadata(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_result_metadata = input;
-        self
+        self.include_result_metadata = input; self
     }
     /// <p>A value that indicates whether to include metadata in the results.</p>
     pub fn get_include_result_metadata(&self) -> &::std::option::Option<bool> {
@@ -267,8 +260,7 @@ impl ExecuteStatementInputBuilder {
     /// <p>For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.</p>
     /// </note>
     pub fn set_continue_after_timeout(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.continue_after_timeout = input;
-        self
+        self.continue_after_timeout = input; self
     }
     /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p><note>
     /// <p>For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.</p>
@@ -283,8 +275,7 @@ impl ExecuteStatementInputBuilder {
     }
     /// <p>Options that control how the result set is returned.</p>
     pub fn set_result_set_options(mut self, input: ::std::option::Option<crate::types::ResultSetOptions>) -> Self {
-        self.result_set_options = input;
-        self
+        self.result_set_options = input; self
     }
     /// <p>Options that control how the result set is returned.</p>
     pub fn get_result_set_options(&self) -> &::std::option::Option<crate::types::ResultSetOptions> {
@@ -299,8 +290,7 @@ impl ExecuteStatementInputBuilder {
     /// <p>A value that indicates whether to format the result set as a single JSON string. This parameter only applies to <code>SELECT</code> statements and is ignored for other types of statements. Allowed values are <code>NONE</code> and <code>JSON</code>. The default value is <code>NONE</code>. The result is returned in the <code>formattedRecords</code> field.</p>
     /// <p>For usage information about the JSON format for result sets, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn set_format_records_as(mut self, input: ::std::option::Option<crate::types::RecordsFormatType>) -> Self {
-        self.format_records_as = input;
-        self
+        self.format_records_as = input; self
     }
     /// <p>A value that indicates whether to format the result set as a single JSON string. This parameter only applies to <code>SELECT</code> statements and is ignored for other types of statements. Allowed values are <code>NONE</code> and <code>JSON</code>. The default value is <code>NONE</code>. The result is returned in the <code>formattedRecords</code> field.</p>
     /// <p>For usage information about the JSON format for result sets, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -308,21 +298,33 @@ impl ExecuteStatementInputBuilder {
         &self.format_records_as
     }
     /// Consumes the builder and constructs a [`ExecuteStatementInput`](crate::operation::execute_statement::ExecuteStatementInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::execute_statement::ExecuteStatementInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::execute_statement::ExecuteStatementInput {
-            resource_arn: self.resource_arn,
-            secret_arn: self.secret_arn,
-            sql: self.sql,
-            database: self.database,
-            schema: self.schema,
-            parameters: self.parameters,
-            transaction_id: self.transaction_id,
-            include_result_metadata: self.include_result_metadata,
-            continue_after_timeout: self.continue_after_timeout,
-            result_set_options: self.result_set_options,
-            format_records_as: self.format_records_as,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::execute_statement::ExecuteStatementInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::execute_statement::ExecuteStatementInput {
+                resource_arn: self.resource_arn
+                ,
+                secret_arn: self.secret_arn
+                ,
+                sql: self.sql
+                ,
+                database: self.database
+                ,
+                schema: self.schema
+                ,
+                parameters: self.parameters
+                ,
+                transaction_id: self.transaction_id
+                ,
+                include_result_metadata: self.include_result_metadata
+                ,
+                continue_after_timeout: self.continue_after_timeout
+                ,
+                result_set_options: self.result_set_options
+                ,
+                format_records_as: self.format_records_as
+                ,
+            }
+        )
     }
 }
+

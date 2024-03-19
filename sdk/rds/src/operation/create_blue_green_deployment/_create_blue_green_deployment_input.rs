@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateBlueGreenDeploymentInput {
+pub struct CreateBlueGreenDeploymentInput  {
     /// <p>The name of the blue/green deployment.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -23,52 +23,53 @@ pub struct CreateBlueGreenDeploymentInput {
     /// <p>To test parameter changes, specify a DB cluster parameter group that is different from the one associated with the source DB cluster.</p>
     pub target_db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Tags to assign to the blue/green deployment.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Specify the DB instance class for the databases in the green environment.</p>
     /// <p>This parameter only applies to RDS DB instances, because DB instances within an Aurora DB cluster can have multiple different instance classes. If you're creating a blue/green deployment from an Aurora DB cluster, don't specify this parameter. After the green environment is created, you can individually modify the instance classes of the DB instances within the green DB cluster.</p>
     pub target_db_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>Whether to upgrade the storage file system configuration on the green database. This option migrates the green DB instance from the older 32-bit file system to the preferred configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading the storage file system for a DB instance</a>.</p>
     pub upgrade_target_storage_config: ::std::option::Option<bool>,
 }
-impl CreateBlueGreenDeploymentInput {
+impl  CreateBlueGreenDeploymentInput  {
     /// <p>The name of the blue/green deployment.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
     /// <p>Can't be the same as an existing blue/green deployment name in the same account and Amazon Web Services Region.</p></li>
     /// </ul>
-    pub fn blue_green_deployment_name(&self) -> ::std::option::Option<&str> {
+    pub fn blue_green_deployment_name(&self) -> ::std::option::Option<& str> {
         self.blue_green_deployment_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the source production database.</p>
     /// <p>Specify the database that you want to clone. The blue/green deployment creates this database in the green environment. You can make updates to the database in the green environment, such as an engine version upgrade. When you are ready, you can switch the database in the green environment to be the production database.</p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
+    pub fn source(&self) -> ::std::option::Option<& str> {
         self.source.as_deref()
     }
     /// <p>The engine version of the database in the green environment.</p>
     /// <p>Specify the engine version to upgrade to in the green environment.</p>
-    pub fn target_engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn target_engine_version(&self) -> ::std::option::Option<& str> {
         self.target_engine_version.as_deref()
     }
     /// <p>The DB parameter group associated with the DB instance in the green environment.</p>
     /// <p>To test parameter changes, specify a DB parameter group that is different from the one associated with the source DB instance.</p>
-    pub fn target_db_parameter_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn target_db_parameter_group_name(&self) -> ::std::option::Option<& str> {
         self.target_db_parameter_group_name.as_deref()
     }
     /// <p>The DB cluster parameter group associated with the Aurora DB cluster in the green environment.</p>
     /// <p>To test parameter changes, specify a DB cluster parameter group that is different from the one associated with the source DB cluster.</p>
-    pub fn target_db_cluster_parameter_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn target_db_cluster_parameter_group_name(&self) -> ::std::option::Option<& str> {
         self.target_db_cluster_parameter_group_name.as_deref()
     }
     /// <p>Tags to assign to the blue/green deployment.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specify the DB instance class for the databases in the green environment.</p>
     /// <p>This parameter only applies to RDS DB instances, because DB instances within an Aurora DB cluster can have multiple different instance classes. If you're creating a blue/green deployment from an Aurora DB cluster, don't specify this parameter. After the green environment is created, you can individually modify the instance classes of the DB instances within the green DB cluster.</p>
-    pub fn target_db_instance_class(&self) -> ::std::option::Option<&str> {
+    pub fn target_db_instance_class(&self) -> ::std::option::Option<& str> {
         self.target_db_instance_class.as_deref()
     }
     /// <p>Whether to upgrade the storage file system configuration on the green database. This option migrates the green DB instance from the older 32-bit file system to the preferred configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading the storage file system for a DB instance</a>.</p>
@@ -92,7 +93,7 @@ pub struct CreateBlueGreenDeploymentInputBuilder {
     pub(crate) target_engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) target_db_parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) target_db_instance_class: ::std::option::Option<::std::string::String>,
     pub(crate) upgrade_target_storage_config: ::std::option::Option<bool>,
 }
@@ -115,8 +116,7 @@ impl CreateBlueGreenDeploymentInputBuilder {
     /// <p>Can't be the same as an existing blue/green deployment name in the same account and Amazon Web Services Region.</p></li>
     /// </ul>
     pub fn set_blue_green_deployment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.blue_green_deployment_name = input;
-        self
+        self.blue_green_deployment_name = input; self
     }
     /// <p>The name of the blue/green deployment.</p>
     /// <p>Constraints:</p>
@@ -137,8 +137,7 @@ impl CreateBlueGreenDeploymentInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the source production database.</p>
     /// <p>Specify the database that you want to clone. The blue/green deployment creates this database in the green environment. You can make updates to the database in the green environment, such as an engine version upgrade. When you are ready, you can switch the database in the green environment to be the production database.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the source production database.</p>
     /// <p>Specify the database that you want to clone. The blue/green deployment creates this database in the green environment. You can make updates to the database in the green environment, such as an engine version upgrade. When you are ready, you can switch the database in the green environment to be the production database.</p>
@@ -154,8 +153,7 @@ impl CreateBlueGreenDeploymentInputBuilder {
     /// <p>The engine version of the database in the green environment.</p>
     /// <p>Specify the engine version to upgrade to in the green environment.</p>
     pub fn set_target_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_engine_version = input;
-        self
+        self.target_engine_version = input; self
     }
     /// <p>The engine version of the database in the green environment.</p>
     /// <p>Specify the engine version to upgrade to in the green environment.</p>
@@ -171,8 +169,7 @@ impl CreateBlueGreenDeploymentInputBuilder {
     /// <p>The DB parameter group associated with the DB instance in the green environment.</p>
     /// <p>To test parameter changes, specify a DB parameter group that is different from the one associated with the source DB instance.</p>
     pub fn set_target_db_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_db_parameter_group_name = input;
-        self
+        self.target_db_parameter_group_name = input; self
     }
     /// <p>The DB parameter group associated with the DB instance in the green environment.</p>
     /// <p>To test parameter changes, specify a DB parameter group that is different from the one associated with the source DB instance.</p>
@@ -188,8 +185,7 @@ impl CreateBlueGreenDeploymentInputBuilder {
     /// <p>The DB cluster parameter group associated with the Aurora DB cluster in the green environment.</p>
     /// <p>To test parameter changes, specify a DB cluster parameter group that is different from the one associated with the source DB cluster.</p>
     pub fn set_target_db_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_db_cluster_parameter_group_name = input;
-        self
+        self.target_db_cluster_parameter_group_name = input; self
     }
     /// <p>The DB cluster parameter group associated with the Aurora DB cluster in the green environment.</p>
     /// <p>To test parameter changes, specify a DB cluster parameter group that is different from the one associated with the source DB cluster.</p>
@@ -203,17 +199,16 @@ impl CreateBlueGreenDeploymentInputBuilder {
     /// <p>Tags to assign to the blue/green deployment.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Tags to assign to the blue/green deployment.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags to assign to the blue/green deployment.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>Specify the DB instance class for the databases in the green environment.</p>
@@ -225,8 +220,7 @@ impl CreateBlueGreenDeploymentInputBuilder {
     /// <p>Specify the DB instance class for the databases in the green environment.</p>
     /// <p>This parameter only applies to RDS DB instances, because DB instances within an Aurora DB cluster can have multiple different instance classes. If you're creating a blue/green deployment from an Aurora DB cluster, don't specify this parameter. After the green environment is created, you can individually modify the instance classes of the DB instances within the green DB cluster.</p>
     pub fn set_target_db_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_db_instance_class = input;
-        self
+        self.target_db_instance_class = input; self
     }
     /// <p>Specify the DB instance class for the databases in the green environment.</p>
     /// <p>This parameter only applies to RDS DB instances, because DB instances within an Aurora DB cluster can have multiple different instance classes. If you're creating a blue/green deployment from an Aurora DB cluster, don't specify this parameter. After the green environment is created, you can individually modify the instance classes of the DB instances within the green DB cluster.</p>
@@ -240,29 +234,34 @@ impl CreateBlueGreenDeploymentInputBuilder {
     }
     /// <p>Whether to upgrade the storage file system configuration on the green database. This option migrates the green DB instance from the older 32-bit file system to the preferred configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading the storage file system for a DB instance</a>.</p>
     pub fn set_upgrade_target_storage_config(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.upgrade_target_storage_config = input;
-        self
+        self.upgrade_target_storage_config = input; self
     }
     /// <p>Whether to upgrade the storage file system configuration on the green database. This option migrates the green DB instance from the older 32-bit file system to the preferred configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading the storage file system for a DB instance</a>.</p>
     pub fn get_upgrade_target_storage_config(&self) -> &::std::option::Option<bool> {
         &self.upgrade_target_storage_config
     }
     /// Consumes the builder and constructs a [`CreateBlueGreenDeploymentInput`](crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentInput {
-            blue_green_deployment_name: self.blue_green_deployment_name,
-            source: self.source,
-            target_engine_version: self.target_engine_version,
-            target_db_parameter_group_name: self.target_db_parameter_group_name,
-            target_db_cluster_parameter_group_name: self.target_db_cluster_parameter_group_name,
-            tags: self.tags,
-            target_db_instance_class: self.target_db_instance_class,
-            upgrade_target_storage_config: self.upgrade_target_storage_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentInput {
+                blue_green_deployment_name: self.blue_green_deployment_name
+                ,
+                source: self.source
+                ,
+                target_engine_version: self.target_engine_version
+                ,
+                target_db_parameter_group_name: self.target_db_parameter_group_name
+                ,
+                target_db_cluster_parameter_group_name: self.target_db_cluster_parameter_group_name
+                ,
+                tags: self.tags
+                ,
+                target_db_instance_class: self.target_db_instance_class
+                ,
+                upgrade_target_storage_config: self.upgrade_target_storage_config
+                ,
+            }
+        )
     }
 }
+

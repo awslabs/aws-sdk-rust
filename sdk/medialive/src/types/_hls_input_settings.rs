@@ -3,7 +3,7 @@
 /// Hls Input Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HlsInputSettings {
+pub struct HlsInputSettings  {
     /// When specified the HLS stream with the m3u8 BANDWIDTH that most closely matches this value will be chosen, otherwise the highest bandwidth stream in the m3u8 will be chosen. The bitrate is specified in bits per second, as in an HLS manifest.
     pub bandwidth: ::std::option::Option<i32>,
     /// When specified, reading of the HLS input will begin this many buffer segments from the end (most recently written segment). When not specified, the HLS input will begin with the first segment specified in the m3u8.
@@ -15,7 +15,7 @@ pub struct HlsInputSettings {
     /// Identifies the source for the SCTE-35 messages that MediaLive will ingest. Messages can be ingested from the content segments (in the stream) or from tags in the playlist (the HLS manifest). MediaLive ignores SCTE-35 information in the source that is not selected.
     pub scte35_source: ::std::option::Option<crate::types::HlsScte35SourceType>,
 }
-impl HlsInputSettings {
+impl  HlsInputSettings  {
     /// When specified the HLS stream with the m3u8 BANDWIDTH that most closely matches this value will be chosen, otherwise the highest bandwidth stream in the m3u8 will be chosen. The bitrate is specified in bits per second, as in an HLS manifest.
     pub fn bandwidth(&self) -> ::std::option::Option<i32> {
         self.bandwidth
@@ -33,7 +33,7 @@ impl HlsInputSettings {
         self.retry_interval
     }
     /// Identifies the source for the SCTE-35 messages that MediaLive will ingest. Messages can be ingested from the content segments (in the stream) or from tags in the playlist (the HLS manifest). MediaLive ignores SCTE-35 information in the source that is not selected.
-    pub fn scte35_source(&self) -> ::std::option::Option<&crate::types::HlsScte35SourceType> {
+    pub fn scte35_source(&self) -> ::std::option::Option<& crate::types::HlsScte35SourceType> {
         self.scte35_source.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl HlsInputSettingsBuilder {
     }
     /// When specified the HLS stream with the m3u8 BANDWIDTH that most closely matches this value will be chosen, otherwise the highest bandwidth stream in the m3u8 will be chosen. The bitrate is specified in bits per second, as in an HLS manifest.
     pub fn set_bandwidth(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.bandwidth = input;
-        self
+        self.bandwidth = input; self
     }
     /// When specified the HLS stream with the m3u8 BANDWIDTH that most closely matches this value will be chosen, otherwise the highest bandwidth stream in the m3u8 will be chosen. The bitrate is specified in bits per second, as in an HLS manifest.
     pub fn get_bandwidth(&self) -> &::std::option::Option<i32> {
@@ -76,8 +75,7 @@ impl HlsInputSettingsBuilder {
     }
     /// When specified, reading of the HLS input will begin this many buffer segments from the end (most recently written segment). When not specified, the HLS input will begin with the first segment specified in the m3u8.
     pub fn set_buffer_segments(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.buffer_segments = input;
-        self
+        self.buffer_segments = input; self
     }
     /// When specified, reading of the HLS input will begin this many buffer segments from the end (most recently written segment). When not specified, the HLS input will begin with the first segment specified in the m3u8.
     pub fn get_buffer_segments(&self) -> &::std::option::Option<i32> {
@@ -90,8 +88,7 @@ impl HlsInputSettingsBuilder {
     }
     /// The number of consecutive times that attempts to read a manifest or segment must fail before the input is considered unavailable.
     pub fn set_retries(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.retries = input;
-        self
+        self.retries = input; self
     }
     /// The number of consecutive times that attempts to read a manifest or segment must fail before the input is considered unavailable.
     pub fn get_retries(&self) -> &::std::option::Option<i32> {
@@ -104,8 +101,7 @@ impl HlsInputSettingsBuilder {
     }
     /// The number of seconds between retries when an attempt to read a manifest or segment fails.
     pub fn set_retry_interval(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.retry_interval = input;
-        self
+        self.retry_interval = input; self
     }
     /// The number of seconds between retries when an attempt to read a manifest or segment fails.
     pub fn get_retry_interval(&self) -> &::std::option::Option<i32> {
@@ -118,8 +114,7 @@ impl HlsInputSettingsBuilder {
     }
     /// Identifies the source for the SCTE-35 messages that MediaLive will ingest. Messages can be ingested from the content segments (in the stream) or from tags in the playlist (the HLS manifest). MediaLive ignores SCTE-35 information in the source that is not selected.
     pub fn set_scte35_source(mut self, input: ::std::option::Option<crate::types::HlsScte35SourceType>) -> Self {
-        self.scte35_source = input;
-        self
+        self.scte35_source = input; self
     }
     /// Identifies the source for the SCTE-35 messages that MediaLive will ingest. Messages can be ingested from the content segments (in the stream) or from tags in the playlist (the HLS manifest). MediaLive ignores SCTE-35 information in the source that is not selected.
     pub fn get_scte35_source(&self) -> &::std::option::Option<crate::types::HlsScte35SourceType> {
@@ -128,11 +123,17 @@ impl HlsInputSettingsBuilder {
     /// Consumes the builder and constructs a [`HlsInputSettings`](crate::types::HlsInputSettings).
     pub fn build(self) -> crate::types::HlsInputSettings {
         crate::types::HlsInputSettings {
-            bandwidth: self.bandwidth,
-            buffer_segments: self.buffer_segments,
-            retries: self.retries,
-            retry_interval: self.retry_interval,
-            scte35_source: self.scte35_source,
+            bandwidth: self.bandwidth
+            ,
+            buffer_segments: self.buffer_segments
+            ,
+            retries: self.retries
+            ,
+            retry_interval: self.retry_interval
+            ,
+            scte35_source: self.scte35_source
+            ,
         }
     }
 }
+

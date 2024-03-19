@@ -3,30 +3,31 @@
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMultipartUploadsOutput {
+pub struct ListMultipartUploadsOutput  {
     /// <p>A list of in-progress multipart uploads.</p>
-    pub uploads_list: ::std::option::Option<::std::vec::Vec<crate::types::UploadListElement>>,
+    pub uploads_list: ::std::option::Option<::std::vec::Vec::<crate::types::UploadListElement>>,
     /// <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Multipart Uploads request to obtain more uploads in the list. If there are no more uploads, this value is <code>null</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListMultipartUploadsOutput {
+impl  ListMultipartUploadsOutput  {
     /// <p>A list of in-progress multipart uploads.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.uploads_list.is_none()`.
-    pub fn uploads_list(&self) -> &[crate::types::UploadListElement] {
-        self.uploads_list.as_deref().unwrap_or_default()
+    pub fn uploads_list(&self) -> & [crate::types::UploadListElement] {
+        self.uploads_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Multipart Uploads request to obtain more uploads in the list. If there are no more uploads, this value is <code>null</code>.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListMultipartUploadsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListMultipartUploadsOutput {
     /// Creates a new builder-style object to manufacture [`ListMultipartUploadsOutput`](crate::operation::list_multipart_uploads::ListMultipartUploadsOutput).
     pub fn builder() -> crate::operation::list_multipart_uploads::builders::ListMultipartUploadsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListMultipartUploadsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMultipartUploadsOutputBuilder {
-    pub(crate) uploads_list: ::std::option::Option<::std::vec::Vec<crate::types::UploadListElement>>,
+    pub(crate) uploads_list: ::std::option::Option<::std::vec::Vec::<crate::types::UploadListElement>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +51,16 @@ impl ListMultipartUploadsOutputBuilder {
     /// <p>A list of in-progress multipart uploads.</p>
     pub fn uploads_list(mut self, input: crate::types::UploadListElement) -> Self {
         let mut v = self.uploads_list.unwrap_or_default();
-        v.push(input);
-        self.uploads_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.uploads_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of in-progress multipart uploads.</p>
-    pub fn set_uploads_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UploadListElement>>) -> Self {
-        self.uploads_list = input;
-        self
+    pub fn set_uploads_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UploadListElement>>) -> Self {
+        self.uploads_list = input; self
     }
     /// <p>A list of in-progress multipart uploads.</p>
-    pub fn get_uploads_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UploadListElement>> {
+    pub fn get_uploads_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UploadListElement>> {
         &self.uploads_list
     }
     /// <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Multipart Uploads request to obtain more uploads in the list. If there are no more uploads, this value is <code>null</code>.</p>
@@ -70,28 +70,30 @@ impl ListMultipartUploadsOutputBuilder {
     }
     /// <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Multipart Uploads request to obtain more uploads in the list. If there are no more uploads, this value is <code>null</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Multipart Uploads request to obtain more uploads in the list. If there are no more uploads, this value is <code>null</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListMultipartUploadsOutput`](crate::operation::list_multipart_uploads::ListMultipartUploadsOutput).
     pub fn build(self) -> crate::operation::list_multipart_uploads::ListMultipartUploadsOutput {
         crate::operation::list_multipart_uploads::ListMultipartUploadsOutput {
-            uploads_list: self.uploads_list,
-            marker: self.marker,
+            uploads_list: self.uploads_list
+            ,
+            marker: self.marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

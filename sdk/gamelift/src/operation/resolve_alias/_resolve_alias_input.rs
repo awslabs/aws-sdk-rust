@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResolveAliasInput {
+pub struct ResolveAliasInput  {
     /// <p>The unique identifier of the alias that you want to retrieve a fleet ID for. You can use either the alias ID or ARN value.</p>
     pub alias_id: ::std::option::Option<::std::string::String>,
 }
-impl ResolveAliasInput {
+impl  ResolveAliasInput  {
     /// <p>The unique identifier of the alias that you want to retrieve a fleet ID for. You can use either the alias ID or ARN value.</p>
-    pub fn alias_id(&self) -> ::std::option::Option<&str> {
+    pub fn alias_id(&self) -> ::std::option::Option<& str> {
         self.alias_id.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl ResolveAliasInputBuilder {
     }
     /// <p>The unique identifier of the alias that you want to retrieve a fleet ID for. You can use either the alias ID or ARN value.</p>
     pub fn set_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias_id = input;
-        self
+        self.alias_id = input; self
     }
     /// <p>The unique identifier of the alias that you want to retrieve a fleet ID for. You can use either the alias ID or ARN value.</p>
     pub fn get_alias_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.alias_id
     }
     /// Consumes the builder and constructs a [`ResolveAliasInput`](crate::operation::resolve_alias::ResolveAliasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::resolve_alias::ResolveAliasInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::resolve_alias::ResolveAliasInput { alias_id: self.alias_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::resolve_alias::ResolveAliasInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::resolve_alias::ResolveAliasInput {
+                alias_id: self.alias_id
+                ,
+            }
+        )
     }
 }
+

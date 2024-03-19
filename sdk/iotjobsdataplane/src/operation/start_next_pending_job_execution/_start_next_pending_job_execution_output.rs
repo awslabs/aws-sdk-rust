@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartNextPendingJobExecutionOutput {
+pub struct StartNextPendingJobExecutionOutput  {
     /// <p>A JobExecution object.</p>
     pub execution: ::std::option::Option<crate::types::JobExecution>,
     _request_id: Option<String>,
 }
-impl StartNextPendingJobExecutionOutput {
+impl  StartNextPendingJobExecutionOutput  {
     /// <p>A JobExecution object.</p>
-    pub fn execution(&self) -> ::std::option::Option<&crate::types::JobExecution> {
+    pub fn execution(&self) -> ::std::option::Option<& crate::types::JobExecution> {
         self.execution.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartNextPendingJobExecutionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartNextPendingJobExecutionOutput {
     /// Creates a new builder-style object to manufacture [`StartNextPendingJobExecutionOutput`](crate::operation::start_next_pending_job_execution::StartNextPendingJobExecutionOutput).
     pub fn builder() -> crate::operation::start_next_pending_job_execution::builders::StartNextPendingJobExecutionOutputBuilder {
@@ -40,27 +40,28 @@ impl StartNextPendingJobExecutionOutputBuilder {
     }
     /// <p>A JobExecution object.</p>
     pub fn set_execution(mut self, input: ::std::option::Option<crate::types::JobExecution>) -> Self {
-        self.execution = input;
-        self
+        self.execution = input; self
     }
     /// <p>A JobExecution object.</p>
     pub fn get_execution(&self) -> &::std::option::Option<crate::types::JobExecution> {
         &self.execution
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartNextPendingJobExecutionOutput`](crate::operation::start_next_pending_job_execution::StartNextPendingJobExecutionOutput).
     pub fn build(self) -> crate::operation::start_next_pending_job_execution::StartNextPendingJobExecutionOutput {
         crate::operation::start_next_pending_job_execution::StartNextPendingJobExecutionOutput {
-            execution: self.execution,
+            execution: self.execution
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

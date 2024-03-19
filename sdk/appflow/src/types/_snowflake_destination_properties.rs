@@ -3,7 +3,7 @@
 /// <p>The properties that are applied when Snowflake is being used as a destination.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SnowflakeDestinationProperties {
+pub struct SnowflakeDestinationProperties  {
     /// <p>The object specified in the Snowflake flow destination.</p>
     pub object: ::std::string::String,
     /// <p>The intermediate bucket that Amazon AppFlow uses when moving data into Snowflake.</p>
@@ -13,23 +13,21 @@ pub struct SnowflakeDestinationProperties {
     /// <p>The settings that determine how Amazon AppFlow handles an error when placing data in the Snowflake destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details.</p>
     pub error_handling_config: ::std::option::Option<crate::types::ErrorHandlingConfig>,
 }
-impl SnowflakeDestinationProperties {
+impl  SnowflakeDestinationProperties  {
     /// <p>The object specified in the Snowflake flow destination.</p>
-    pub fn object(&self) -> &str {
-        use std::ops::Deref;
-        self.object.deref()
+    pub fn object(&self) -> & str {
+        use std::ops::Deref; self.object.deref()
     }
     /// <p>The intermediate bucket that Amazon AppFlow uses when moving data into Snowflake.</p>
-    pub fn intermediate_bucket_name(&self) -> &str {
-        use std::ops::Deref;
-        self.intermediate_bucket_name.deref()
+    pub fn intermediate_bucket_name(&self) -> & str {
+        use std::ops::Deref; self.intermediate_bucket_name.deref()
     }
     /// <p>The object key for the destination bucket in which Amazon AppFlow places the files.</p>
-    pub fn bucket_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_prefix(&self) -> ::std::option::Option<& str> {
         self.bucket_prefix.as_deref()
     }
     /// <p>The settings that determine how Amazon AppFlow handles an error when placing data in the Snowflake destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details.</p>
-    pub fn error_handling_config(&self) -> ::std::option::Option<&crate::types::ErrorHandlingConfig> {
+    pub fn error_handling_config(&self) -> ::std::option::Option<& crate::types::ErrorHandlingConfig> {
         self.error_handling_config.as_ref()
     }
 }
@@ -58,8 +56,7 @@ impl SnowflakeDestinationPropertiesBuilder {
     }
     /// <p>The object specified in the Snowflake flow destination.</p>
     pub fn set_object(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object = input;
-        self
+        self.object = input; self
     }
     /// <p>The object specified in the Snowflake flow destination.</p>
     pub fn get_object(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +70,7 @@ impl SnowflakeDestinationPropertiesBuilder {
     }
     /// <p>The intermediate bucket that Amazon AppFlow uses when moving data into Snowflake.</p>
     pub fn set_intermediate_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.intermediate_bucket_name = input;
-        self
+        self.intermediate_bucket_name = input; self
     }
     /// <p>The intermediate bucket that Amazon AppFlow uses when moving data into Snowflake.</p>
     pub fn get_intermediate_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +83,7 @@ impl SnowflakeDestinationPropertiesBuilder {
     }
     /// <p>The object key for the destination bucket in which Amazon AppFlow places the files.</p>
     pub fn set_bucket_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_prefix = input;
-        self
+        self.bucket_prefix = input; self
     }
     /// <p>The object key for the destination bucket in which Amazon AppFlow places the files.</p>
     pub fn get_bucket_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +96,7 @@ impl SnowflakeDestinationPropertiesBuilder {
     }
     /// <p>The settings that determine how Amazon AppFlow handles an error when placing data in the Snowflake destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details.</p>
     pub fn set_error_handling_config(mut self, input: ::std::option::Option<crate::types::ErrorHandlingConfig>) -> Self {
-        self.error_handling_config = input;
-        self
+        self.error_handling_config = input; self
     }
     /// <p>The settings that determine how Amazon AppFlow handles an error when placing data in the Snowflake destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details.</p>
     pub fn get_error_handling_config(&self) -> &::std::option::Option<crate::types::ErrorHandlingConfig> {
@@ -113,21 +107,24 @@ impl SnowflakeDestinationPropertiesBuilder {
     /// - [`object`](crate::types::builders::SnowflakeDestinationPropertiesBuilder::object)
     /// - [`intermediate_bucket_name`](crate::types::builders::SnowflakeDestinationPropertiesBuilder::intermediate_bucket_name)
     pub fn build(self) -> ::std::result::Result<crate::types::SnowflakeDestinationProperties, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SnowflakeDestinationProperties {
-            object: self.object.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "object",
-                    "object was not specified but it is required when building SnowflakeDestinationProperties",
-                )
-            })?,
-            intermediate_bucket_name: self.intermediate_bucket_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "intermediate_bucket_name",
-                    "intermediate_bucket_name was not specified but it is required when building SnowflakeDestinationProperties",
-                )
-            })?,
-            bucket_prefix: self.bucket_prefix,
-            error_handling_config: self.error_handling_config,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SnowflakeDestinationProperties {
+                object: self.object
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("object", "object was not specified but it is required when building SnowflakeDestinationProperties")
+                    )?
+                ,
+                intermediate_bucket_name: self.intermediate_bucket_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("intermediate_bucket_name", "intermediate_bucket_name was not specified but it is required when building SnowflakeDestinationProperties")
+                    )?
+                ,
+                bucket_prefix: self.bucket_prefix
+                ,
+                error_handling_config: self.error_handling_config
+                ,
+            }
+        )
     }
 }
+

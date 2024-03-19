@@ -26,11 +26,7 @@ impl Schedule {
     /// Tries to convert the enum instance into [`Daily`](crate::types::Schedule::Daily), extracting the inner [`DailySchedule`](crate::types::DailySchedule).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_daily(&self) -> ::std::result::Result<&crate::types::DailySchedule, &Self> {
-        if let Schedule::Daily(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Schedule::Daily(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Daily`](crate::types::Schedule::Daily).
     pub fn is_daily(&self) -> bool {
@@ -39,11 +35,7 @@ impl Schedule {
     /// Tries to convert the enum instance into [`Monthly`](crate::types::Schedule::Monthly), extracting the inner [`MonthlySchedule`](crate::types::MonthlySchedule).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_monthly(&self) -> ::std::result::Result<&crate::types::MonthlySchedule, &Self> {
-        if let Schedule::Monthly(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Schedule::Monthly(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Monthly`](crate::types::Schedule::Monthly).
     pub fn is_monthly(&self) -> bool {
@@ -52,11 +44,7 @@ impl Schedule {
     /// Tries to convert the enum instance into [`OneTime`](crate::types::Schedule::OneTime), extracting the inner [`OneTimeSchedule`](crate::types::OneTimeSchedule).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_one_time(&self) -> ::std::result::Result<&crate::types::OneTimeSchedule, &Self> {
-        if let Schedule::OneTime(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Schedule::OneTime(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`OneTime`](crate::types::Schedule::OneTime).
     pub fn is_one_time(&self) -> bool {
@@ -65,11 +53,7 @@ impl Schedule {
     /// Tries to convert the enum instance into [`Weekly`](crate::types::Schedule::Weekly), extracting the inner [`WeeklySchedule`](crate::types::WeeklySchedule).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_weekly(&self) -> ::std::result::Result<&crate::types::WeeklySchedule, &Self> {
-        if let Schedule::Weekly(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Schedule::Weekly(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Weekly`](crate::types::Schedule::Weekly).
     pub fn is_weekly(&self) -> bool {
@@ -80,3 +64,4 @@ impl Schedule {
         matches!(self, Self::Unknown)
     }
 }
+

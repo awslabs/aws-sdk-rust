@@ -3,7 +3,7 @@
 /// <p>The directory registration represents the authorization of the connector service with the Active Directory.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DirectoryRegistrationSummary {
+pub struct DirectoryRegistrationSummary  {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateDirectoryRegistration.html">CreateDirectoryRegistration</a>.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Active Directory.</p>
@@ -17,29 +17,29 @@ pub struct DirectoryRegistrationSummary {
     /// <p>The date and time that the directory registration was updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl DirectoryRegistrationSummary {
+impl  DirectoryRegistrationSummary  {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateDirectoryRegistration.html">CreateDirectoryRegistration</a>.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The identifier of the Active Directory.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>Status of the directory registration.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DirectoryRegistrationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DirectoryRegistrationStatus> {
         self.status.as_ref()
     }
     /// <p>Additional information about the directory registration status if the status is failed.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&crate::types::DirectoryRegistrationStatusReason> {
+    pub fn status_reason(&self) -> ::std::option::Option<& crate::types::DirectoryRegistrationStatusReason> {
         self.status_reason.as_ref()
     }
     /// <p>The date and time that the directory registration was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The date and time that the directory registration was updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl DirectoryRegistrationSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateDirectoryRegistration.html">CreateDirectoryRegistration</a>.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateDirectoryRegistration.html">CreateDirectoryRegistration</a>.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl DirectoryRegistrationSummaryBuilder {
     }
     /// <p>The identifier of the Active Directory.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>The identifier of the Active Directory.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl DirectoryRegistrationSummaryBuilder {
     }
     /// <p>Status of the directory registration.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DirectoryRegistrationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Status of the directory registration.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DirectoryRegistrationStatus> {
@@ -111,8 +108,7 @@ impl DirectoryRegistrationSummaryBuilder {
     }
     /// <p>Additional information about the directory registration status if the status is failed.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<crate::types::DirectoryRegistrationStatusReason>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>Additional information about the directory registration status if the status is failed.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<crate::types::DirectoryRegistrationStatusReason> {
@@ -125,8 +121,7 @@ impl DirectoryRegistrationSummaryBuilder {
     }
     /// <p>The date and time that the directory registration was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time that the directory registration was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -139,8 +134,7 @@ impl DirectoryRegistrationSummaryBuilder {
     }
     /// <p>The date and time that the directory registration was updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The date and time that the directory registration was updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -149,12 +143,19 @@ impl DirectoryRegistrationSummaryBuilder {
     /// Consumes the builder and constructs a [`DirectoryRegistrationSummary`](crate::types::DirectoryRegistrationSummary).
     pub fn build(self) -> crate::types::DirectoryRegistrationSummary {
         crate::types::DirectoryRegistrationSummary {
-            arn: self.arn,
-            directory_id: self.directory_id,
-            status: self.status,
-            status_reason: self.status_reason,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
+            arn: self.arn
+            ,
+            directory_id: self.directory_id
+            ,
+            status: self.status
+            ,
+            status_reason: self.status_reason
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
         }
     }
 }
+

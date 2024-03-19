@@ -3,22 +3,20 @@
 /// <p>A decimal parameter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DecimalParameter {
+pub struct DecimalParameter  {
     /// <p>A display name for the decimal parameter.</p>
     pub name: ::std::string::String,
     /// <p>The values for the decimal parameter.</p>
-    pub values: ::std::vec::Vec<f64>,
+    pub values: ::std::vec::Vec::<f64>,
 }
-impl DecimalParameter {
+impl  DecimalParameter  {
     /// <p>A display name for the decimal parameter.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The values for the decimal parameter.</p>
-    pub fn values(&self) -> &[f64] {
-        use std::ops::Deref;
-        self.values.deref()
+    pub fn values(&self) -> & [f64] {
+        use std::ops::Deref; self.values.deref()
     }
 }
 impl DecimalParameter {
@@ -33,7 +31,7 @@ impl DecimalParameter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DecimalParameterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<f64>>,
 }
 impl DecimalParameterBuilder {
     /// <p>A display name for the decimal parameter.</p>
@@ -44,8 +42,7 @@ impl DecimalParameterBuilder {
     }
     /// <p>A display name for the decimal parameter.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A display name for the decimal parameter.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,17 +55,16 @@ impl DecimalParameterBuilder {
     /// <p>The values for the decimal parameter.</p>
     pub fn values(mut self, input: f64) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input);
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The values for the decimal parameter.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<f64>>) -> Self {
+        self.values = input; self
     }
     /// <p>The values for the decimal parameter.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<f64>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`DecimalParameter`](crate::types::DecimalParameter).
@@ -76,19 +72,20 @@ impl DecimalParameterBuilder {
     /// - [`name`](crate::types::builders::DecimalParameterBuilder::name)
     /// - [`values`](crate::types::builders::DecimalParameterBuilder::values)
     pub fn build(self) -> ::std::result::Result<crate::types::DecimalParameter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DecimalParameter {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building DecimalParameter",
-                )
-            })?,
-            values: self.values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "values",
-                    "values was not specified but it is required when building DecimalParameter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DecimalParameter {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building DecimalParameter")
+                    )?
+                ,
+                values: self.values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("values", "values was not specified but it is required when building DecimalParameter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

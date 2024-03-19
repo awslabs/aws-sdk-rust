@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePackageVersionsInput {
+pub struct DeletePackageVersionsInput  {
     /// <p>The name of the domain that contains the package to delete.</p>
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
@@ -26,25 +26,25 @@ pub struct DeletePackageVersionsInput {
     /// <p>The name of the package with the versions to delete.</p>
     pub package: ::std::option::Option<::std::string::String>,
     /// <p>An array of strings that specify the versions of the package to delete.</p>
-    pub versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub versions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The expected status of the package version to delete.</p>
     pub expected_status: ::std::option::Option<crate::types::PackageVersionStatus>,
 }
-impl DeletePackageVersionsInput {
+impl  DeletePackageVersionsInput  {
     /// <p>The name of the domain that contains the package to delete.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
-    pub fn domain_owner(&self) -> ::std::option::Option<&str> {
+    pub fn domain_owner(&self) -> ::std::option::Option<& str> {
         self.domain_owner.as_deref()
     }
     /// <p>The name of the repository that contains the package versions to delete.</p>
-    pub fn repository(&self) -> ::std::option::Option<&str> {
+    pub fn repository(&self) -> ::std::option::Option<& str> {
         self.repository.as_deref()
     }
     /// <p>The format of the package versions to delete.</p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::PackageFormat> {
+    pub fn format(&self) -> ::std::option::Option<& crate::types::PackageFormat> {
         self.format.as_ref()
     }
     /// <p>The namespace of the package versions to be deleted. The package version component that specifies its namespace depends on its type. For example:</p>
@@ -58,21 +58,22 @@ impl DeletePackageVersionsInput {
     /// <li>
     /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// </ul>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the package with the versions to delete.</p>
-    pub fn package(&self) -> ::std::option::Option<&str> {
+    pub fn package(&self) -> ::std::option::Option<& str> {
         self.package.as_deref()
     }
     /// <p>An array of strings that specify the versions of the package to delete.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.versions.is_none()`.
-    pub fn versions(&self) -> &[::std::string::String] {
-        self.versions.as_deref().unwrap_or_default()
+    pub fn versions(&self) -> & [::std::string::String] {
+        self.versions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The expected status of the package version to delete.</p>
-    pub fn expected_status(&self) -> ::std::option::Option<&crate::types::PackageVersionStatus> {
+    pub fn expected_status(&self) -> ::std::option::Option<& crate::types::PackageVersionStatus> {
         self.expected_status.as_ref()
     }
 }
@@ -93,7 +94,7 @@ pub struct DeletePackageVersionsInputBuilder {
     pub(crate) format: ::std::option::Option<crate::types::PackageFormat>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) package: ::std::option::Option<::std::string::String>,
-    pub(crate) versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) versions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) expected_status: ::std::option::Option<crate::types::PackageVersionStatus>,
 }
 impl DeletePackageVersionsInputBuilder {
@@ -105,8 +106,7 @@ impl DeletePackageVersionsInputBuilder {
     }
     /// <p>The name of the domain that contains the package to delete.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The name of the domain that contains the package to delete.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +119,7 @@ impl DeletePackageVersionsInputBuilder {
     }
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_owner = input;
-        self
+        self.domain_owner = input; self
     }
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +133,7 @@ impl DeletePackageVersionsInputBuilder {
     }
     /// <p>The name of the repository that contains the package versions to delete.</p>
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository = input;
-        self
+        self.repository = input; self
     }
     /// <p>The name of the repository that contains the package versions to delete.</p>
     pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +147,7 @@ impl DeletePackageVersionsInputBuilder {
     }
     /// <p>The format of the package versions to delete.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::PackageFormat>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>The format of the package versions to delete.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::PackageFormat> {
@@ -183,8 +180,7 @@ impl DeletePackageVersionsInputBuilder {
     /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// </ul>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The namespace of the package versions to be deleted. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -208,8 +204,7 @@ impl DeletePackageVersionsInputBuilder {
     }
     /// <p>The name of the package with the versions to delete.</p>
     pub fn set_package(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package = input;
-        self
+        self.package = input; self
     }
     /// <p>The name of the package with the versions to delete.</p>
     pub fn get_package(&self) -> &::std::option::Option<::std::string::String> {
@@ -222,17 +217,16 @@ impl DeletePackageVersionsInputBuilder {
     /// <p>An array of strings that specify the versions of the package to delete.</p>
     pub fn versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.versions.unwrap_or_default();
-        v.push(input.into());
-        self.versions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.versions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of strings that specify the versions of the package to delete.</p>
-    pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.versions = input;
-        self
+    pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.versions = input; self
     }
     /// <p>An array of strings that specify the versions of the package to delete.</p>
-    pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.versions
     }
     /// <p>The expected status of the package version to delete.</p>
@@ -242,27 +236,34 @@ impl DeletePackageVersionsInputBuilder {
     }
     /// <p>The expected status of the package version to delete.</p>
     pub fn set_expected_status(mut self, input: ::std::option::Option<crate::types::PackageVersionStatus>) -> Self {
-        self.expected_status = input;
-        self
+        self.expected_status = input; self
     }
     /// <p>The expected status of the package version to delete.</p>
     pub fn get_expected_status(&self) -> &::std::option::Option<crate::types::PackageVersionStatus> {
         &self.expected_status
     }
     /// Consumes the builder and constructs a [`DeletePackageVersionsInput`](crate::operation::delete_package_versions::DeletePackageVersionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_package_versions::DeletePackageVersionsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_package_versions::DeletePackageVersionsInput {
-            domain: self.domain,
-            domain_owner: self.domain_owner,
-            repository: self.repository,
-            format: self.format,
-            namespace: self.namespace,
-            package: self.package,
-            versions: self.versions,
-            expected_status: self.expected_status,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_package_versions::DeletePackageVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_package_versions::DeletePackageVersionsInput {
+                domain: self.domain
+                ,
+                domain_owner: self.domain_owner
+                ,
+                repository: self.repository
+                ,
+                format: self.format
+                ,
+                namespace: self.namespace
+                ,
+                package: self.package
+                ,
+                versions: self.versions
+                ,
+                expected_status: self.expected_status
+                ,
+            }
+        )
     }
 }
+

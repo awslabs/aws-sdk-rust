@@ -5,23 +5,20 @@ pub use crate::operation::create_blue_green_deployment::_create_blue_green_deplo
 
 impl CreateBlueGreenDeploymentInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_blue_green_deployment();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_blue_green_deployment();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateBlueGreenDeployment`.
-///
+/// 
 /// <p>Creates a blue/green deployment.</p>
 /// <p>A blue/green deployment creates a staging environment that copies the production environment. In a blue/green deployment, the blue environment is the current production environment. The green environment is the staging environment. The staging environment stays in sync with the current production environment using logical replication.</p>
 /// <p>You can make changes to the databases in the green environment without affecting production workloads. For example, you can upgrade the major or minor DB engine version, change database parameters, or make schema changes in the staging environment. You can thoroughly test changes in the green environment. When ready, you can switch over the environments to promote the green environment to be the new production environment. The switchover typically takes under a minute.</p>
@@ -29,33 +26,32 @@ impl CreateBlueGreenDeploymentInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateBlueGreenDeploymentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_blue_green_deployment::builders::CreateBlueGreenDeploymentInputBuilder,
+                    inner: crate::operation::create_blue_green_deployment::builders::CreateBlueGreenDeploymentInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentOutput,
-        crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError,
-    > for CreateBlueGreenDeploymentFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentOutput,
-            crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentOutput,
+                    crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError,
+                > for CreateBlueGreenDeploymentFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentOutput,
+                        crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateBlueGreenDeploymentFluentBuilder {
     /// Creates a new `CreateBlueGreenDeployment`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,53 +60,44 @@ impl CreateBlueGreenDeploymentFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_blue_green_deployment::CreateBlueGreenDeployment::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_blue_green_deployment::CreateBlueGreenDeployment::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentOutput,
-        crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_blue_green_deployment::CreateBlueGreenDeployment::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_blue_green_deployment::CreateBlueGreenDeployment::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentOutput, crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the blue/green deployment.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -218,12 +205,12 @@ impl CreateBlueGreenDeploymentFluentBuilder {
         self
     }
     /// <p>Tags to assign to the blue/green deployment.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Tags to assign to the blue/green deployment.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
     /// <p>Specify the DB instance class for the databases in the green environment.</p>
@@ -258,3 +245,4 @@ impl CreateBlueGreenDeploymentFluentBuilder {
         self.inner.get_upgrade_target_storage_config()
     }
 }
+

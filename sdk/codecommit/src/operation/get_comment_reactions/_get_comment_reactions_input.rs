@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCommentReactionsInput {
+pub struct GetCommentReactionsInput  {
     /// <p>The ID of the comment for which you want to get reactions information.</p>
     pub comment_id: ::std::option::Option<::std::string::String>,
     /// <p>Optional. The Amazon Resource Name (ARN) of the user or identity for which you want to get reaction information.</p>
@@ -12,17 +12,17 @@ pub struct GetCommentReactionsInput {
     /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is the same as the allowed maximum, 1,000.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl GetCommentReactionsInput {
+impl  GetCommentReactionsInput  {
     /// <p>The ID of the comment for which you want to get reactions information.</p>
-    pub fn comment_id(&self) -> ::std::option::Option<&str> {
+    pub fn comment_id(&self) -> ::std::option::Option<& str> {
         self.comment_id.as_deref()
     }
     /// <p>Optional. The Amazon Resource Name (ARN) of the user or identity for which you want to get reaction information.</p>
-    pub fn reaction_user_arn(&self) -> ::std::option::Option<&str> {
+    pub fn reaction_user_arn(&self) -> ::std::option::Option<& str> {
         self.reaction_user_arn.as_deref()
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is the same as the allowed maximum, 1,000.</p>
@@ -55,8 +55,7 @@ impl GetCommentReactionsInputBuilder {
     }
     /// <p>The ID of the comment for which you want to get reactions information.</p>
     pub fn set_comment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comment_id = input;
-        self
+        self.comment_id = input; self
     }
     /// <p>The ID of the comment for which you want to get reactions information.</p>
     pub fn get_comment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl GetCommentReactionsInputBuilder {
     }
     /// <p>Optional. The Amazon Resource Name (ARN) of the user or identity for which you want to get reaction information.</p>
     pub fn set_reaction_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reaction_user_arn = input;
-        self
+        self.reaction_user_arn = input; self
     }
     /// <p>Optional. The Amazon Resource Name (ARN) of the user or identity for which you want to get reaction information.</p>
     pub fn get_reaction_user_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl GetCommentReactionsInputBuilder {
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,23 +94,26 @@ impl GetCommentReactionsInputBuilder {
     }
     /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is the same as the allowed maximum, 1,000.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is the same as the allowed maximum, 1,000.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetCommentReactionsInput`](crate::operation::get_comment_reactions::GetCommentReactionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_comment_reactions::GetCommentReactionsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_comment_reactions::GetCommentReactionsInput {
-            comment_id: self.comment_id,
-            reaction_user_arn: self.reaction_user_arn,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_comment_reactions::GetCommentReactionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_comment_reactions::GetCommentReactionsInput {
+                comment_id: self.comment_id
+                ,
+                reaction_user_arn: self.reaction_user_arn
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

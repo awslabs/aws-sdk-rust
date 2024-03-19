@@ -3,21 +3,20 @@
 /// <p>Information about a filter to apply to the list of returned notification rules. You can filter by event type, owner, resource, or target.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListNotificationRulesFilter {
+pub struct ListNotificationRulesFilter  {
     /// <p>The name of the attribute you want to use to filter the returned notification rules.</p>
     pub name: crate::types::ListNotificationRulesFilterName,
     /// <p>The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in CodePipeline for the value.</p>
     pub value: ::std::string::String,
 }
-impl ListNotificationRulesFilter {
+impl  ListNotificationRulesFilter  {
     /// <p>The name of the attribute you want to use to filter the returned notification rules.</p>
-    pub fn name(&self) -> &crate::types::ListNotificationRulesFilterName {
+    pub fn name(&self) -> & crate::types::ListNotificationRulesFilterName {
         &self.name
     }
     /// <p>The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in CodePipeline for the value.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl ListNotificationRulesFilter {
@@ -43,8 +42,7 @@ impl ListNotificationRulesFilterBuilder {
     }
     /// <p>The name of the attribute you want to use to filter the returned notification rules.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::ListNotificationRulesFilterName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the attribute you want to use to filter the returned notification rules.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::ListNotificationRulesFilterName> {
@@ -58,8 +56,7 @@ impl ListNotificationRulesFilterBuilder {
     }
     /// <p>The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in CodePipeline for the value.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in CodePipeline for the value.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,19 +67,20 @@ impl ListNotificationRulesFilterBuilder {
     /// - [`name`](crate::types::builders::ListNotificationRulesFilterBuilder::name)
     /// - [`value`](crate::types::builders::ListNotificationRulesFilterBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::ListNotificationRulesFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ListNotificationRulesFilter {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ListNotificationRulesFilter",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building ListNotificationRulesFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ListNotificationRulesFilter {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ListNotificationRulesFilter")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building ListNotificationRulesFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

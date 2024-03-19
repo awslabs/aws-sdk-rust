@@ -3,24 +3,23 @@
 /// <p>The source configuration object of a media capture pipeline.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct MediaCapturePipelineSourceConfiguration {
+pub struct MediaCapturePipelineSourceConfiguration  {
     /// <p>The media pipeline ARN in the configuration object of a media capture pipeline.</p>
     pub media_pipeline_arn: ::std::string::String,
     /// <p>The meeting configuration settings in a media capture pipeline configuration object.</p>
     pub chime_sdk_meeting_configuration: ::std::option::Option<crate::types::ChimeSdkMeetingConcatenationConfiguration>,
 }
-impl MediaCapturePipelineSourceConfiguration {
+impl  MediaCapturePipelineSourceConfiguration  {
     /// <p>The media pipeline ARN in the configuration object of a media capture pipeline.</p>
-    pub fn media_pipeline_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.media_pipeline_arn.deref()
+    pub fn media_pipeline_arn(&self) -> & str {
+        use std::ops::Deref; self.media_pipeline_arn.deref()
     }
     /// <p>The meeting configuration settings in a media capture pipeline configuration object.</p>
-    pub fn chime_sdk_meeting_configuration(&self) -> ::std::option::Option<&crate::types::ChimeSdkMeetingConcatenationConfiguration> {
+    pub fn chime_sdk_meeting_configuration(&self) -> ::std::option::Option<& crate::types::ChimeSdkMeetingConcatenationConfiguration> {
         self.chime_sdk_meeting_configuration.as_ref()
     }
 }
-impl ::std::fmt::Debug for MediaCapturePipelineSourceConfiguration {
+impl  ::std::fmt::Debug for MediaCapturePipelineSourceConfiguration  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MediaCapturePipelineSourceConfiguration");
         formatter.field("media_pipeline_arn", &"*** Sensitive Data Redacted ***");
@@ -51,8 +50,7 @@ impl MediaCapturePipelineSourceConfigurationBuilder {
     }
     /// <p>The media pipeline ARN in the configuration object of a media capture pipeline.</p>
     pub fn set_media_pipeline_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.media_pipeline_arn = input;
-        self
+        self.media_pipeline_arn = input; self
     }
     /// <p>The media pipeline ARN in the configuration object of a media capture pipeline.</p>
     pub fn get_media_pipeline_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,12 +63,8 @@ impl MediaCapturePipelineSourceConfigurationBuilder {
         self
     }
     /// <p>The meeting configuration settings in a media capture pipeline configuration object.</p>
-    pub fn set_chime_sdk_meeting_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ChimeSdkMeetingConcatenationConfiguration>,
-    ) -> Self {
-        self.chime_sdk_meeting_configuration = input;
-        self
+    pub fn set_chime_sdk_meeting_configuration(mut self, input: ::std::option::Option<crate::types::ChimeSdkMeetingConcatenationConfiguration>) -> Self {
+        self.chime_sdk_meeting_configuration = input; self
     }
     /// <p>The meeting configuration settings in a media capture pipeline configuration object.</p>
     pub fn get_chime_sdk_meeting_configuration(&self) -> &::std::option::Option<crate::types::ChimeSdkMeetingConcatenationConfiguration> {
@@ -79,18 +73,18 @@ impl MediaCapturePipelineSourceConfigurationBuilder {
     /// Consumes the builder and constructs a [`MediaCapturePipelineSourceConfiguration`](crate::types::MediaCapturePipelineSourceConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`media_pipeline_arn`](crate::types::builders::MediaCapturePipelineSourceConfigurationBuilder::media_pipeline_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::MediaCapturePipelineSourceConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MediaCapturePipelineSourceConfiguration {
-            media_pipeline_arn: self.media_pipeline_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "media_pipeline_arn",
-                    "media_pipeline_arn was not specified but it is required when building MediaCapturePipelineSourceConfiguration",
-                )
-            })?,
-            chime_sdk_meeting_configuration: self.chime_sdk_meeting_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::MediaCapturePipelineSourceConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::MediaCapturePipelineSourceConfiguration {
+                media_pipeline_arn: self.media_pipeline_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("media_pipeline_arn", "media_pipeline_arn was not specified but it is required when building MediaCapturePipelineSourceConfiguration")
+                    )?
+                ,
+                chime_sdk_meeting_configuration: self.chime_sdk_meeting_configuration
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for MediaCapturePipelineSourceConfigurationBuilder {
@@ -101,3 +95,4 @@ impl ::std::fmt::Debug for MediaCapturePipelineSourceConfigurationBuilder {
         formatter.finish()
     }
 }
+

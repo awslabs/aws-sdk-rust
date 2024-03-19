@@ -3,19 +3,19 @@
 /// <p>The value of an <code>Expression</code> and its current status.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExpressionStatus {
+pub struct ExpressionStatus  {
     /// <p>The expression that is evaluated for sorting while processing a search request.</p>
     pub options: ::std::option::Option<crate::types::Expression>,
     /// <p>The status of domain configuration option.</p>
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
-impl ExpressionStatus {
+impl  ExpressionStatus  {
     /// <p>The expression that is evaluated for sorting while processing a search request.</p>
-    pub fn options(&self) -> ::std::option::Option<&crate::types::Expression> {
+    pub fn options(&self) -> ::std::option::Option<& crate::types::Expression> {
         self.options.as_ref()
     }
     /// <p>The status of domain configuration option.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::OptionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::OptionStatus> {
         self.status.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl ExpressionStatusBuilder {
     }
     /// <p>The expression that is evaluated for sorting while processing a search request.</p>
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
-        self.options = input;
-        self
+        self.options = input; self
     }
     /// <p>The expression that is evaluated for sorting while processing a search request.</p>
     pub fn get_options(&self) -> &::std::option::Option<crate::types::Expression> {
@@ -57,8 +56,7 @@ impl ExpressionStatusBuilder {
     }
     /// <p>The status of domain configuration option.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of domain configuration option.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::OptionStatus> {
@@ -67,8 +65,11 @@ impl ExpressionStatusBuilder {
     /// Consumes the builder and constructs a [`ExpressionStatus`](crate::types::ExpressionStatus).
     pub fn build(self) -> crate::types::ExpressionStatus {
         crate::types::ExpressionStatus {
-            options: self.options,
-            status: self.status,
+            options: self.options
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

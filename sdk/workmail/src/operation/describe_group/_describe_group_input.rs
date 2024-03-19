@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeGroupInput {
+pub struct DescribeGroupInput  {
     /// <p>The identifier for the organization under which the group exists.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the group to be described.</p>
@@ -17,9 +17,9 @@ pub struct DescribeGroupInput {
     /// </ul>
     pub group_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeGroupInput {
+impl  DescribeGroupInput  {
     /// <p>The identifier for the organization under which the group exists.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The identifier for the group to be described.</p>
@@ -32,7 +32,7 @@ impl DescribeGroupInput {
     /// <li>
     /// <p>Group name: group</p></li>
     /// </ul>
-    pub fn group_id(&self) -> ::std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<& str> {
         self.group_id.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl DescribeGroupInputBuilder {
     }
     /// <p>The identifier for the organization under which the group exists.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The identifier for the organization under which the group exists.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +91,7 @@ impl DescribeGroupInputBuilder {
     /// <p>Group name: group</p></li>
     /// </ul>
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// <p>The identifier for the group to be described.</p>
     /// <p>The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity formats are available:</p>
@@ -109,12 +107,15 @@ impl DescribeGroupInputBuilder {
         &self.group_id
     }
     /// Consumes the builder and constructs a [`DescribeGroupInput`](crate::operation::describe_group::DescribeGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_group::DescribeGroupInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_group::DescribeGroupInput {
-            organization_id: self.organization_id,
-            group_id: self.group_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_group::DescribeGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_group::DescribeGroupInput {
+                organization_id: self.organization_id
+                ,
+                group_id: self.group_id
+                ,
+            }
+        )
     }
 }
+

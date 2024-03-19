@@ -3,7 +3,7 @@
 /// <p>Information about a portfolio.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PortfolioDetail {
+pub struct PortfolioDetail  {
     /// <p>The portfolio identifier.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN assigned to the portfolio.</p>
@@ -17,29 +17,29 @@ pub struct PortfolioDetail {
     /// <p>The name of the portfolio provider.</p>
     pub provider_name: ::std::option::Option<::std::string::String>,
 }
-impl PortfolioDetail {
+impl  PortfolioDetail  {
     /// <p>The portfolio identifier.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ARN assigned to the portfolio.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name to use for display purposes.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The description of the portfolio.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The UTC time stamp of the creation time.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The name of the portfolio provider.</p>
-    pub fn provider_name(&self) -> ::std::option::Option<&str> {
+    pub fn provider_name(&self) -> ::std::option::Option<& str> {
         self.provider_name.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl PortfolioDetailBuilder {
     }
     /// <p>The portfolio identifier.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The portfolio identifier.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl PortfolioDetailBuilder {
     }
     /// <p>The ARN assigned to the portfolio.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN assigned to the portfolio.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl PortfolioDetailBuilder {
     }
     /// <p>The name to use for display purposes.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The name to use for display purposes.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl PortfolioDetailBuilder {
     }
     /// <p>The description of the portfolio.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the portfolio.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl PortfolioDetailBuilder {
     }
     /// <p>The UTC time stamp of the creation time.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The UTC time stamp of the creation time.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -139,8 +134,7 @@ impl PortfolioDetailBuilder {
     }
     /// <p>The name of the portfolio provider.</p>
     pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider_name = input;
-        self
+        self.provider_name = input; self
     }
     /// <p>The name of the portfolio provider.</p>
     pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,12 +143,19 @@ impl PortfolioDetailBuilder {
     /// Consumes the builder and constructs a [`PortfolioDetail`](crate::types::PortfolioDetail).
     pub fn build(self) -> crate::types::PortfolioDetail {
         crate::types::PortfolioDetail {
-            id: self.id,
-            arn: self.arn,
-            display_name: self.display_name,
-            description: self.description,
-            created_time: self.created_time,
-            provider_name: self.provider_name,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            display_name: self.display_name
+            ,
+            description: self.description
+            ,
+            created_time: self.created_time
+            ,
+            provider_name: self.provider_name
+            ,
         }
     }
 }
+

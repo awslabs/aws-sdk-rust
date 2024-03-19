@@ -3,16 +3,17 @@
 /// <p>Specifies one or more property- and tag-based conditions that define criteria for including or excluding S3 buckets from a classification job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CriteriaBlockForJob {
+pub struct CriteriaBlockForJob  {
     /// <p>An array of conditions, one for each condition that determines which buckets to include or exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
-    pub and: ::std::option::Option<::std::vec::Vec<crate::types::CriteriaForJob>>,
+    pub and: ::std::option::Option<::std::vec::Vec::<crate::types::CriteriaForJob>>,
 }
-impl CriteriaBlockForJob {
+impl  CriteriaBlockForJob  {
     /// <p>An array of conditions, one for each condition that determines which buckets to include or exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.and.is_none()`.
-    pub fn and(&self) -> &[crate::types::CriteriaForJob] {
-        self.and.as_deref().unwrap_or_default()
+    pub fn and(&self) -> & [crate::types::CriteriaForJob] {
+        self.and.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CriteriaBlockForJob {
@@ -26,7 +27,7 @@ impl CriteriaBlockForJob {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CriteriaBlockForJobBuilder {
-    pub(crate) and: ::std::option::Option<::std::vec::Vec<crate::types::CriteriaForJob>>,
+    pub(crate) and: ::std::option::Option<::std::vec::Vec::<crate::types::CriteriaForJob>>,
 }
 impl CriteriaBlockForJobBuilder {
     /// Appends an item to `and`.
@@ -36,21 +37,24 @@ impl CriteriaBlockForJobBuilder {
     /// <p>An array of conditions, one for each condition that determines which buckets to include or exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
     pub fn and(mut self, input: crate::types::CriteriaForJob) -> Self {
         let mut v = self.and.unwrap_or_default();
-        v.push(input);
-        self.and = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.and = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of conditions, one for each condition that determines which buckets to include or exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
-    pub fn set_and(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CriteriaForJob>>) -> Self {
-        self.and = input;
-        self
+    pub fn set_and(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CriteriaForJob>>) -> Self {
+        self.and = input; self
     }
     /// <p>An array of conditions, one for each condition that determines which buckets to include or exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
-    pub fn get_and(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CriteriaForJob>> {
+    pub fn get_and(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CriteriaForJob>> {
         &self.and
     }
     /// Consumes the builder and constructs a [`CriteriaBlockForJob`](crate::types::CriteriaBlockForJob).
     pub fn build(self) -> crate::types::CriteriaBlockForJob {
-        crate::types::CriteriaBlockForJob { and: self.and }
+        crate::types::CriteriaBlockForJob {
+            and: self.and
+            ,
+        }
     }
 }
+

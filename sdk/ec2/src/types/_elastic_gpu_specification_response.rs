@@ -5,17 +5,17 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ElasticGpuSpecificationResponse {
+pub struct ElasticGpuSpecificationResponse  {
     /// <p>Deprecated.</p><note>
     /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
     /// </note>
     pub r#type: ::std::option::Option<::std::string::String>,
 }
-impl ElasticGpuSpecificationResponse {
+impl  ElasticGpuSpecificationResponse  {
     /// <p>Deprecated.</p><note>
     /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
     /// </note>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
@@ -44,8 +44,7 @@ impl ElasticGpuSpecificationResponseBuilder {
     /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
     /// </note>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Deprecated.</p><note>
     /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
@@ -55,6 +54,10 @@ impl ElasticGpuSpecificationResponseBuilder {
     }
     /// Consumes the builder and constructs a [`ElasticGpuSpecificationResponse`](crate::types::ElasticGpuSpecificationResponse).
     pub fn build(self) -> crate::types::ElasticGpuSpecificationResponse {
-        crate::types::ElasticGpuSpecificationResponse { r#type: self.r#type }
+        crate::types::ElasticGpuSpecificationResponse {
+            r#type: self.r#type
+            ,
+        }
     }
 }
+

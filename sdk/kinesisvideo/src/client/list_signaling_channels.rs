@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSignalingChannels`](crate::operation::list_signaling_channels::builders::ListSignalingChannelsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_signaling_channels::builders::ListSignalingChannelsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_signaling_channels::builders::ListSignalingChannelsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_signaling_channels::builders::ListSignalingChannelsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of channels to return in the response. The default is 500.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_signaling_channels::builders::ListSignalingChannelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_signaling_channels::builders::ListSignalingChannelsFluentBuilder::set_next_token):<br>required: **false**<br><p>If you specify this parameter, when the result of a <code>ListSignalingChannels</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of channels, provide this token in your next request.</p><br>
     ///   - [`channel_name_condition(ChannelNameCondition)`](crate::operation::list_signaling_channels::builders::ListSignalingChannelsFluentBuilder::channel_name_condition) / [`set_channel_name_condition(Option<ChannelNameCondition>)`](crate::operation::list_signaling_channels::builders::ListSignalingChannelsFluentBuilder::set_channel_name_condition):<br>required: **false**<br><p>Optional: Returns only the channels that satisfy a specific condition.</p><br>
-    /// - On success, responds with [`ListSignalingChannelsOutput`](crate::operation::list_signaling_channels::ListSignalingChannelsOutput) with field(s):
+                            /// - On success, responds with [`ListSignalingChannelsOutput`](crate::operation::list_signaling_channels::ListSignalingChannelsOutput) with field(s):
     ///   - [`channel_info_list(Option<Vec::<ChannelInfo>>)`](crate::operation::list_signaling_channels::ListSignalingChannelsOutput::channel_info_list): <p>An array of <code>ChannelInfo</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_signaling_channels::ListSignalingChannelsOutput::next_token): <p>If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request.</p>
-    /// - On failure, responds with [`SdkError<ListSignalingChannelsError>`](crate::operation::list_signaling_channels::ListSignalingChannelsError)
+                            /// - On failure, responds with [`SdkError<ListSignalingChannelsError>`](crate::operation::list_signaling_channels::ListSignalingChannelsError)
     pub fn list_signaling_channels(&self) -> crate::operation::list_signaling_channels::builders::ListSignalingChannelsFluentBuilder {
-        crate::operation::list_signaling_channels::builders::ListSignalingChannelsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_signaling_channels::builders::ListSignalingChannelsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

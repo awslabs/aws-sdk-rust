@@ -3,13 +3,13 @@
 /// Server-side encryption configuration.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServerSideEncryptionConfiguration {
+pub struct ServerSideEncryptionConfiguration  {
     /// A KMS key ARN
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
-impl ServerSideEncryptionConfiguration {
+impl  ServerSideEncryptionConfiguration  {
     /// A KMS key ARN
-    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl ServerSideEncryptionConfigurationBuilder {
     }
     /// A KMS key ARN
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
     }
     /// A KMS key ARN
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl ServerSideEncryptionConfigurationBuilder {
     /// Consumes the builder and constructs a [`ServerSideEncryptionConfiguration`](crate::types::ServerSideEncryptionConfiguration).
     pub fn build(self) -> crate::types::ServerSideEncryptionConfiguration {
         crate::types::ServerSideEncryptionConfiguration {
-            kms_key_arn: self.kms_key_arn,
+            kms_key_arn: self.kms_key_arn
+            ,
         }
     }
 }
+

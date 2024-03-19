@@ -3,7 +3,7 @@
 /// <p>Changes to a DB instance that are currently pending.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsRdsDbPendingModifiedValues {
+pub struct AwsRdsDbPendingModifiedValues  {
     /// <p>The new DB instance class for the DB instance.</p>
     pub db_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>The new value of the allocated storage for the DB instance.</p>
@@ -33,11 +33,11 @@ pub struct AwsRdsDbPendingModifiedValues {
     /// <p>A list of log types that are being enabled or disabled.</p>
     pub pending_cloud_watch_logs_exports: ::std::option::Option<crate::types::AwsRdsPendingCloudWatchLogsExports>,
     /// <p>Processor features that are being updated.</p>
-    pub processor_features: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbProcessorFeature>>,
+    pub processor_features: ::std::option::Option<::std::vec::Vec::<crate::types::AwsRdsDbProcessorFeature>>,
 }
-impl AwsRdsDbPendingModifiedValues {
+impl  AwsRdsDbPendingModifiedValues  {
     /// <p>The new DB instance class for the DB instance.</p>
-    pub fn db_instance_class(&self) -> ::std::option::Option<&str> {
+    pub fn db_instance_class(&self) -> ::std::option::Option<& str> {
         self.db_instance_class.as_deref()
     }
     /// <p>The new value of the allocated storage for the DB instance.</p>
@@ -45,7 +45,7 @@ impl AwsRdsDbPendingModifiedValues {
         self.allocated_storage
     }
     /// <p>The new master user password for the DB instance.</p>
-    pub fn master_user_password(&self) -> ::std::option::Option<&str> {
+    pub fn master_user_password(&self) -> ::std::option::Option<& str> {
         self.master_user_password.as_deref()
     }
     /// <p>The new port for the DB instance.</p>
@@ -61,11 +61,11 @@ impl AwsRdsDbPendingModifiedValues {
         self.multi_az
     }
     /// <p>The new engine version for the DB instance.</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>The new license model value for the DB instance.</p>
-    pub fn license_model(&self) -> ::std::option::Option<&str> {
+    pub fn license_model(&self) -> ::std::option::Option<& str> {
         self.license_model.as_deref()
     }
     /// <p>The new provisioned IOPS value for the DB instance.</p>
@@ -73,30 +73,31 @@ impl AwsRdsDbPendingModifiedValues {
         self.iops
     }
     /// <p>The new DB instance identifier for the DB instance.</p>
-    pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_instance_identifier(&self) -> ::std::option::Option<& str> {
         self.db_instance_identifier.as_deref()
     }
     /// <p>The new storage type for the DB instance.</p>
-    pub fn storage_type(&self) -> ::std::option::Option<&str> {
+    pub fn storage_type(&self) -> ::std::option::Option<& str> {
         self.storage_type.as_deref()
     }
     /// <p>The new CA certificate identifier for the DB instance.</p>
-    pub fn ca_certificate_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn ca_certificate_identifier(&self) -> ::std::option::Option<& str> {
         self.ca_certificate_identifier.as_deref()
     }
     /// <p>The name of the new subnet group for the DB instance.</p>
-    pub fn db_subnet_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn db_subnet_group_name(&self) -> ::std::option::Option<& str> {
         self.db_subnet_group_name.as_deref()
     }
     /// <p>A list of log types that are being enabled or disabled.</p>
-    pub fn pending_cloud_watch_logs_exports(&self) -> ::std::option::Option<&crate::types::AwsRdsPendingCloudWatchLogsExports> {
+    pub fn pending_cloud_watch_logs_exports(&self) -> ::std::option::Option<& crate::types::AwsRdsPendingCloudWatchLogsExports> {
         self.pending_cloud_watch_logs_exports.as_ref()
     }
     /// <p>Processor features that are being updated.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.processor_features.is_none()`.
-    pub fn processor_features(&self) -> &[crate::types::AwsRdsDbProcessorFeature] {
-        self.processor_features.as_deref().unwrap_or_default()
+    pub fn processor_features(&self) -> & [crate::types::AwsRdsDbProcessorFeature] {
+        self.processor_features.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AwsRdsDbPendingModifiedValues {
@@ -124,7 +125,7 @@ pub struct AwsRdsDbPendingModifiedValuesBuilder {
     pub(crate) ca_certificate_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) db_subnet_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) pending_cloud_watch_logs_exports: ::std::option::Option<crate::types::AwsRdsPendingCloudWatchLogsExports>,
-    pub(crate) processor_features: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbProcessorFeature>>,
+    pub(crate) processor_features: ::std::option::Option<::std::vec::Vec::<crate::types::AwsRdsDbProcessorFeature>>,
 }
 impl AwsRdsDbPendingModifiedValuesBuilder {
     /// <p>The new DB instance class for the DB instance.</p>
@@ -134,8 +135,7 @@ impl AwsRdsDbPendingModifiedValuesBuilder {
     }
     /// <p>The new DB instance class for the DB instance.</p>
     pub fn set_db_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_instance_class = input;
-        self
+        self.db_instance_class = input; self
     }
     /// <p>The new DB instance class for the DB instance.</p>
     pub fn get_db_instance_class(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +148,7 @@ impl AwsRdsDbPendingModifiedValuesBuilder {
     }
     /// <p>The new value of the allocated storage for the DB instance.</p>
     pub fn set_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.allocated_storage = input;
-        self
+        self.allocated_storage = input; self
     }
     /// <p>The new value of the allocated storage for the DB instance.</p>
     pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
@@ -162,8 +161,7 @@ impl AwsRdsDbPendingModifiedValuesBuilder {
     }
     /// <p>The new master user password for the DB instance.</p>
     pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.master_user_password = input;
-        self
+        self.master_user_password = input; self
     }
     /// <p>The new master user password for the DB instance.</p>
     pub fn get_master_user_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -176,8 +174,7 @@ impl AwsRdsDbPendingModifiedValuesBuilder {
     }
     /// <p>The new port for the DB instance.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The new port for the DB instance.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -190,8 +187,7 @@ impl AwsRdsDbPendingModifiedValuesBuilder {
     }
     /// <p>The new backup retention period for the DB instance.</p>
     pub fn set_backup_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.backup_retention_period = input;
-        self
+        self.backup_retention_period = input; self
     }
     /// <p>The new backup retention period for the DB instance.</p>
     pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
@@ -204,8 +200,7 @@ impl AwsRdsDbPendingModifiedValuesBuilder {
     }
     /// <p>Indicates that a single Availability Zone DB instance is changing to a multiple Availability Zone deployment.</p>
     pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.multi_az = input;
-        self
+        self.multi_az = input; self
     }
     /// <p>Indicates that a single Availability Zone DB instance is changing to a multiple Availability Zone deployment.</p>
     pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
@@ -218,8 +213,7 @@ impl AwsRdsDbPendingModifiedValuesBuilder {
     }
     /// <p>The new engine version for the DB instance.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The new engine version for the DB instance.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -232,8 +226,7 @@ impl AwsRdsDbPendingModifiedValuesBuilder {
     }
     /// <p>The new license model value for the DB instance.</p>
     pub fn set_license_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.license_model = input;
-        self
+        self.license_model = input; self
     }
     /// <p>The new license model value for the DB instance.</p>
     pub fn get_license_model(&self) -> &::std::option::Option<::std::string::String> {
@@ -246,8 +239,7 @@ impl AwsRdsDbPendingModifiedValuesBuilder {
     }
     /// <p>The new provisioned IOPS value for the DB instance.</p>
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.iops = input;
-        self
+        self.iops = input; self
     }
     /// <p>The new provisioned IOPS value for the DB instance.</p>
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
@@ -260,8 +252,7 @@ impl AwsRdsDbPendingModifiedValuesBuilder {
     }
     /// <p>The new DB instance identifier for the DB instance.</p>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_instance_identifier = input;
-        self
+        self.db_instance_identifier = input; self
     }
     /// <p>The new DB instance identifier for the DB instance.</p>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -274,8 +265,7 @@ impl AwsRdsDbPendingModifiedValuesBuilder {
     }
     /// <p>The new storage type for the DB instance.</p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.storage_type = input;
-        self
+        self.storage_type = input; self
     }
     /// <p>The new storage type for the DB instance.</p>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -288,8 +278,7 @@ impl AwsRdsDbPendingModifiedValuesBuilder {
     }
     /// <p>The new CA certificate identifier for the DB instance.</p>
     pub fn set_ca_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ca_certificate_identifier = input;
-        self
+        self.ca_certificate_identifier = input; self
     }
     /// <p>The new CA certificate identifier for the DB instance.</p>
     pub fn get_ca_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -302,8 +291,7 @@ impl AwsRdsDbPendingModifiedValuesBuilder {
     }
     /// <p>The name of the new subnet group for the DB instance.</p>
     pub fn set_db_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_subnet_group_name = input;
-        self
+        self.db_subnet_group_name = input; self
     }
     /// <p>The name of the new subnet group for the DB instance.</p>
     pub fn get_db_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -316,8 +304,7 @@ impl AwsRdsDbPendingModifiedValuesBuilder {
     }
     /// <p>A list of log types that are being enabled or disabled.</p>
     pub fn set_pending_cloud_watch_logs_exports(mut self, input: ::std::option::Option<crate::types::AwsRdsPendingCloudWatchLogsExports>) -> Self {
-        self.pending_cloud_watch_logs_exports = input;
-        self
+        self.pending_cloud_watch_logs_exports = input; self
     }
     /// <p>A list of log types that are being enabled or disabled.</p>
     pub fn get_pending_cloud_watch_logs_exports(&self) -> &::std::option::Option<crate::types::AwsRdsPendingCloudWatchLogsExports> {
@@ -330,37 +317,52 @@ impl AwsRdsDbPendingModifiedValuesBuilder {
     /// <p>Processor features that are being updated.</p>
     pub fn processor_features(mut self, input: crate::types::AwsRdsDbProcessorFeature) -> Self {
         let mut v = self.processor_features.unwrap_or_default();
-        v.push(input);
-        self.processor_features = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.processor_features = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Processor features that are being updated.</p>
-    pub fn set_processor_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbProcessorFeature>>) -> Self {
-        self.processor_features = input;
-        self
+    pub fn set_processor_features(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsRdsDbProcessorFeature>>) -> Self {
+        self.processor_features = input; self
     }
     /// <p>Processor features that are being updated.</p>
-    pub fn get_processor_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbProcessorFeature>> {
+    pub fn get_processor_features(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsRdsDbProcessorFeature>> {
         &self.processor_features
     }
     /// Consumes the builder and constructs a [`AwsRdsDbPendingModifiedValues`](crate::types::AwsRdsDbPendingModifiedValues).
     pub fn build(self) -> crate::types::AwsRdsDbPendingModifiedValues {
         crate::types::AwsRdsDbPendingModifiedValues {
-            db_instance_class: self.db_instance_class,
-            allocated_storage: self.allocated_storage,
-            master_user_password: self.master_user_password,
-            port: self.port,
-            backup_retention_period: self.backup_retention_period,
-            multi_az: self.multi_az,
-            engine_version: self.engine_version,
-            license_model: self.license_model,
-            iops: self.iops,
-            db_instance_identifier: self.db_instance_identifier,
-            storage_type: self.storage_type,
-            ca_certificate_identifier: self.ca_certificate_identifier,
-            db_subnet_group_name: self.db_subnet_group_name,
-            pending_cloud_watch_logs_exports: self.pending_cloud_watch_logs_exports,
-            processor_features: self.processor_features,
+            db_instance_class: self.db_instance_class
+            ,
+            allocated_storage: self.allocated_storage
+            ,
+            master_user_password: self.master_user_password
+            ,
+            port: self.port
+            ,
+            backup_retention_period: self.backup_retention_period
+            ,
+            multi_az: self.multi_az
+            ,
+            engine_version: self.engine_version
+            ,
+            license_model: self.license_model
+            ,
+            iops: self.iops
+            ,
+            db_instance_identifier: self.db_instance_identifier
+            ,
+            storage_type: self.storage_type
+            ,
+            ca_certificate_identifier: self.ca_certificate_identifier
+            ,
+            db_subnet_group_name: self.db_subnet_group_name
+            ,
+            pending_cloud_watch_logs_exports: self.pending_cloud_watch_logs_exports
+            ,
+            processor_features: self.processor_features
+            ,
         }
     }
 }
+

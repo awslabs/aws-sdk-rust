@@ -3,13 +3,13 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteReplicationSubnetGroupInput {
+pub struct DeleteReplicationSubnetGroupInput  {
     /// <p>The subnet group name of the replication instance.</p>
     pub replication_subnet_group_identifier: ::std::option::Option<::std::string::String>,
 }
-impl DeleteReplicationSubnetGroupInput {
+impl  DeleteReplicationSubnetGroupInput  {
     /// <p>The subnet group name of the replication instance.</p>
-    pub fn replication_subnet_group_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn replication_subnet_group_identifier(&self) -> ::std::option::Option<& str> {
         self.replication_subnet_group_identifier.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl DeleteReplicationSubnetGroupInputBuilder {
     }
     /// <p>The subnet group name of the replication instance.</p>
     pub fn set_replication_subnet_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_subnet_group_identifier = input;
-        self
+        self.replication_subnet_group_identifier = input; self
     }
     /// <p>The subnet group name of the replication instance.</p>
     pub fn get_replication_subnet_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_subnet_group_identifier
     }
     /// Consumes the builder and constructs a [`DeleteReplicationSubnetGroupInput`](crate::operation::delete_replication_subnet_group::DeleteReplicationSubnetGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_replication_subnet_group::DeleteReplicationSubnetGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_replication_subnet_group::DeleteReplicationSubnetGroupInput {
-            replication_subnet_group_identifier: self.replication_subnet_group_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_replication_subnet_group::DeleteReplicationSubnetGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_replication_subnet_group::DeleteReplicationSubnetGroupInput {
+                replication_subnet_group_identifier: self.replication_subnet_group_identifier
+                ,
+            }
+        )
     }
 }
+

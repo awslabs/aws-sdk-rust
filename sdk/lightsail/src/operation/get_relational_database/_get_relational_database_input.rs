@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRelationalDatabaseInput {
+pub struct GetRelationalDatabaseInput  {
     /// <p>The name of the database that you are looking up.</p>
     pub relational_database_name: ::std::option::Option<::std::string::String>,
 }
-impl GetRelationalDatabaseInput {
+impl  GetRelationalDatabaseInput  {
     /// <p>The name of the database that you are looking up.</p>
-    pub fn relational_database_name(&self) -> ::std::option::Option<&str> {
+    pub fn relational_database_name(&self) -> ::std::option::Option<& str> {
         self.relational_database_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetRelationalDatabaseInputBuilder {
     }
     /// <p>The name of the database that you are looking up.</p>
     pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.relational_database_name = input;
-        self
+        self.relational_database_name = input; self
     }
     /// <p>The name of the database that you are looking up.</p>
     pub fn get_relational_database_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.relational_database_name
     }
     /// Consumes the builder and constructs a [`GetRelationalDatabaseInput`](crate::operation::get_relational_database::GetRelationalDatabaseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_relational_database::GetRelationalDatabaseInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_relational_database::GetRelationalDatabaseInput {
-            relational_database_name: self.relational_database_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_relational_database::GetRelationalDatabaseInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_relational_database::GetRelationalDatabaseInput {
+                relational_database_name: self.relational_database_name
+                ,
+            }
+        )
     }
 }
+

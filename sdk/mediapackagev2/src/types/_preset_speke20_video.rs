@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let presetspeke20video = unimplemented!();
 /// match presetspeke20video {
@@ -38,16 +38,14 @@
 /// Specifically, when `presetspeke20video` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PresetSpeke20Video::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum PresetSpeke20Video {
     #[allow(missing_docs)] // documentation missing in model
     PresetVideo1,
@@ -71,96 +69,86 @@ pub enum PresetSpeke20Video {
     Unencrypted,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for PresetSpeke20Video {
-    fn from(s: &str) -> Self {
-        match s {
-            "PRESET_VIDEO_1" => PresetSpeke20Video::PresetVideo1,
-            "PRESET_VIDEO_2" => PresetSpeke20Video::PresetVideo2,
-            "PRESET_VIDEO_3" => PresetSpeke20Video::PresetVideo3,
-            "PRESET_VIDEO_4" => PresetSpeke20Video::PresetVideo4,
-            "PRESET_VIDEO_5" => PresetSpeke20Video::PresetVideo5,
-            "PRESET_VIDEO_6" => PresetSpeke20Video::PresetVideo6,
-            "PRESET_VIDEO_7" => PresetSpeke20Video::PresetVideo7,
-            "PRESET_VIDEO_8" => PresetSpeke20Video::PresetVideo8,
-            "SHARED" => PresetSpeke20Video::Shared,
-            "UNENCRYPTED" => PresetSpeke20Video::Unencrypted,
-            other => PresetSpeke20Video::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "PRESET_VIDEO_1" => PresetSpeke20Video::PresetVideo1,
+"PRESET_VIDEO_2" => PresetSpeke20Video::PresetVideo2,
+"PRESET_VIDEO_3" => PresetSpeke20Video::PresetVideo3,
+"PRESET_VIDEO_4" => PresetSpeke20Video::PresetVideo4,
+"PRESET_VIDEO_5" => PresetSpeke20Video::PresetVideo5,
+"PRESET_VIDEO_6" => PresetSpeke20Video::PresetVideo6,
+"PRESET_VIDEO_7" => PresetSpeke20Video::PresetVideo7,
+"PRESET_VIDEO_8" => PresetSpeke20Video::PresetVideo8,
+"SHARED" => PresetSpeke20Video::Shared,
+"UNENCRYPTED" => PresetSpeke20Video::Unencrypted,
+other => PresetSpeke20Video::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for PresetSpeke20Video {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(PresetSpeke20Video::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(PresetSpeke20Video::from(s))
+                    }
+                }
 impl PresetSpeke20Video {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PresetSpeke20Video::PresetVideo1 => "PRESET_VIDEO_1",
-            PresetSpeke20Video::PresetVideo2 => "PRESET_VIDEO_2",
-            PresetSpeke20Video::PresetVideo3 => "PRESET_VIDEO_3",
-            PresetSpeke20Video::PresetVideo4 => "PRESET_VIDEO_4",
-            PresetSpeke20Video::PresetVideo5 => "PRESET_VIDEO_5",
-            PresetSpeke20Video::PresetVideo6 => "PRESET_VIDEO_6",
-            PresetSpeke20Video::PresetVideo7 => "PRESET_VIDEO_7",
-            PresetSpeke20Video::PresetVideo8 => "PRESET_VIDEO_8",
-            PresetSpeke20Video::Shared => "SHARED",
-            PresetSpeke20Video::Unencrypted => "UNENCRYPTED",
-            PresetSpeke20Video::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "PRESET_VIDEO_1",
-            "PRESET_VIDEO_2",
-            "PRESET_VIDEO_3",
-            "PRESET_VIDEO_4",
-            "PRESET_VIDEO_5",
-            "PRESET_VIDEO_6",
-            "PRESET_VIDEO_7",
-            "PRESET_VIDEO_8",
-            "SHARED",
-            "UNENCRYPTED",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PresetSpeke20Video::PresetVideo1 => "PRESET_VIDEO_1",
+    PresetSpeke20Video::PresetVideo2 => "PRESET_VIDEO_2",
+    PresetSpeke20Video::PresetVideo3 => "PRESET_VIDEO_3",
+    PresetSpeke20Video::PresetVideo4 => "PRESET_VIDEO_4",
+    PresetSpeke20Video::PresetVideo5 => "PRESET_VIDEO_5",
+    PresetSpeke20Video::PresetVideo6 => "PRESET_VIDEO_6",
+    PresetSpeke20Video::PresetVideo7 => "PRESET_VIDEO_7",
+    PresetSpeke20Video::PresetVideo8 => "PRESET_VIDEO_8",
+    PresetSpeke20Video::Shared => "SHARED",
+    PresetSpeke20Video::Unencrypted => "UNENCRYPTED",
+    PresetSpeke20Video::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["PRESET_VIDEO_1", "PRESET_VIDEO_2", "PRESET_VIDEO_3", "PRESET_VIDEO_4", "PRESET_VIDEO_5", "PRESET_VIDEO_6", "PRESET_VIDEO_7", "PRESET_VIDEO_8", "SHARED", "UNENCRYPTED"]
+                }
+            }
 impl ::std::convert::AsRef<str> for PresetSpeke20Video {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl PresetSpeke20Video {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for PresetSpeke20Video {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            PresetSpeke20Video::PresetVideo1 => write!(f, "PRESET_VIDEO_1"),
-            PresetSpeke20Video::PresetVideo2 => write!(f, "PRESET_VIDEO_2"),
-            PresetSpeke20Video::PresetVideo3 => write!(f, "PRESET_VIDEO_3"),
-            PresetSpeke20Video::PresetVideo4 => write!(f, "PRESET_VIDEO_4"),
-            PresetSpeke20Video::PresetVideo5 => write!(f, "PRESET_VIDEO_5"),
-            PresetSpeke20Video::PresetVideo6 => write!(f, "PRESET_VIDEO_6"),
-            PresetSpeke20Video::PresetVideo7 => write!(f, "PRESET_VIDEO_7"),
-            PresetSpeke20Video::PresetVideo8 => write!(f, "PRESET_VIDEO_8"),
-            PresetSpeke20Video::Shared => write!(f, "SHARED"),
-            PresetSpeke20Video::Unencrypted => write!(f, "UNENCRYPTED"),
-            PresetSpeke20Video::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                PresetSpeke20Video::PresetVideo1 => write!(f, "PRESET_VIDEO_1"),
+PresetSpeke20Video::PresetVideo2 => write!(f, "PRESET_VIDEO_2"),
+PresetSpeke20Video::PresetVideo3 => write!(f, "PRESET_VIDEO_3"),
+PresetSpeke20Video::PresetVideo4 => write!(f, "PRESET_VIDEO_4"),
+PresetSpeke20Video::PresetVideo5 => write!(f, "PRESET_VIDEO_5"),
+PresetSpeke20Video::PresetVideo6 => write!(f, "PRESET_VIDEO_6"),
+PresetSpeke20Video::PresetVideo7 => write!(f, "PRESET_VIDEO_7"),
+PresetSpeke20Video::PresetVideo8 => write!(f, "PRESET_VIDEO_8"),
+PresetSpeke20Video::Shared => write!(f, "SHARED"),
+PresetSpeke20Video::Unencrypted => write!(f, "UNENCRYPTED"),
+PresetSpeke20Video::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

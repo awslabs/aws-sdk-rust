@@ -3,7 +3,7 @@
 /// <p>Provides details about the status of the investigation into a finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Workflow {
+pub struct Workflow  {
     /// <p>The status of the investigation into the finding. The workflow status is specific to an individual finding. It does not affect the generation of new findings. For example, setting the workflow status to <code>SUPPRESSED</code> or <code>RESOLVED</code> does not prevent a new finding for the same issue.</p>
     /// <p>The allowed values are the following.</p>
     /// <ul>
@@ -25,7 +25,7 @@ pub struct Workflow {
     /// </ul>
     pub status: ::std::option::Option<crate::types::WorkflowStatus>,
 }
-impl Workflow {
+impl  Workflow  {
     /// <p>The status of the investigation into the finding. The workflow status is specific to an individual finding. It does not affect the generation of new findings. For example, setting the workflow status to <code>SUPPRESSED</code> or <code>RESOLVED</code> does not prevent a new finding for the same issue.</p>
     /// <p>The allowed values are the following.</p>
     /// <ul>
@@ -45,7 +45,7 @@ impl Workflow {
     /// <li>
     /// <p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::WorkflowStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::WorkflowStatus> {
         self.status.as_ref()
     }
 }
@@ -106,8 +106,7 @@ impl WorkflowBuilder {
     /// <p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::WorkflowStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the investigation into the finding. The workflow status is specific to an individual finding. It does not affect the generation of new findings. For example, setting the workflow status to <code>SUPPRESSED</code> or <code>RESOLVED</code> does not prevent a new finding for the same issue.</p>
     /// <p>The allowed values are the following.</p>
@@ -133,6 +132,10 @@ impl WorkflowBuilder {
     }
     /// Consumes the builder and constructs a [`Workflow`](crate::types::Workflow).
     pub fn build(self) -> crate::types::Workflow {
-        crate::types::Workflow { status: self.status }
+        crate::types::Workflow {
+            status: self.status
+            ,
+        }
     }
 }
+

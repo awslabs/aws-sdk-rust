@@ -5,22 +5,23 @@
 /// <p>If you don't want to invoke any Lambda@Edge functions for the requests that match <code>PathPattern</code>, specify <code>0</code> for <code>Quantity</code> and omit <code>Items</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LambdaFunctionAssociations {
+pub struct LambdaFunctionAssociations  {
     /// <p>The number of Lambda@Edge function associations for this cache behavior.</p>
     pub quantity: i32,
     /// <p><b>Optional</b>: A complex type that contains <code>LambdaFunctionAssociation</code> items for this cache behavior. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionAssociation>>,
+    pub items: ::std::option::Option<::std::vec::Vec::<crate::types::LambdaFunctionAssociation>>,
 }
-impl LambdaFunctionAssociations {
+impl  LambdaFunctionAssociations  {
     /// <p>The number of Lambda@Edge function associations for this cache behavior.</p>
     pub fn quantity(&self) -> i32 {
         self.quantity
     }
     /// <p><b>Optional</b>: A complex type that contains <code>LambdaFunctionAssociation</code> items for this cache behavior. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
-    pub fn items(&self) -> &[crate::types::LambdaFunctionAssociation] {
-        self.items.as_deref().unwrap_or_default()
+    pub fn items(&self) -> & [crate::types::LambdaFunctionAssociation] {
+        self.items.as_deref()
+        .unwrap_or_default()
     }
 }
 impl LambdaFunctionAssociations {
@@ -35,7 +36,7 @@ impl LambdaFunctionAssociations {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LambdaFunctionAssociationsBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionAssociation>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::LambdaFunctionAssociation>>,
 }
 impl LambdaFunctionAssociationsBuilder {
     /// <p>The number of Lambda@Edge function associations for this cache behavior.</p>
@@ -46,8 +47,7 @@ impl LambdaFunctionAssociationsBuilder {
     }
     /// <p>The number of Lambda@Edge function associations for this cache behavior.</p>
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.quantity = input;
-        self
+        self.quantity = input; self
     }
     /// <p>The number of Lambda@Edge function associations for this cache behavior.</p>
     pub fn get_quantity(&self) -> &::std::option::Option<i32> {
@@ -60,31 +60,33 @@ impl LambdaFunctionAssociationsBuilder {
     /// <p><b>Optional</b>: A complex type that contains <code>LambdaFunctionAssociation</code> items for this cache behavior. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
     pub fn items(mut self, input: crate::types::LambdaFunctionAssociation) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p><b>Optional</b>: A complex type that contains <code>LambdaFunctionAssociation</code> items for this cache behavior. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionAssociation>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LambdaFunctionAssociation>>) -> Self {
+        self.items = input; self
     }
     /// <p><b>Optional</b>: A complex type that contains <code>LambdaFunctionAssociation</code> items for this cache behavior. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionAssociation>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LambdaFunctionAssociation>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`LambdaFunctionAssociations`](crate::types::LambdaFunctionAssociations).
     /// This method will fail if any of the following fields are not set:
     /// - [`quantity`](crate::types::builders::LambdaFunctionAssociationsBuilder::quantity)
     pub fn build(self) -> ::std::result::Result<crate::types::LambdaFunctionAssociations, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LambdaFunctionAssociations {
-            quantity: self.quantity.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "quantity",
-                    "quantity was not specified but it is required when building LambdaFunctionAssociations",
-                )
-            })?,
-            items: self.items,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LambdaFunctionAssociations {
+                quantity: self.quantity
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("quantity", "quantity was not specified but it is required when building LambdaFunctionAssociations")
+                    )?
+                ,
+                items: self.items
+                ,
+            }
+        )
     }
 }
+

@@ -10,13 +10,13 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KnowledgeBaseRetrievalConfiguration {
+pub struct KnowledgeBaseRetrievalConfiguration  {
     /// <p>Contains details about how the results from the vector search should be returned.</p>
     pub vector_search_configuration: ::std::option::Option<crate::types::KnowledgeBaseVectorSearchConfiguration>,
 }
-impl KnowledgeBaseRetrievalConfiguration {
+impl  KnowledgeBaseRetrievalConfiguration  {
     /// <p>Contains details about how the results from the vector search should be returned.</p>
-    pub fn vector_search_configuration(&self) -> ::std::option::Option<&crate::types::KnowledgeBaseVectorSearchConfiguration> {
+    pub fn vector_search_configuration(&self) -> ::std::option::Option<& crate::types::KnowledgeBaseVectorSearchConfiguration> {
         self.vector_search_configuration.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl KnowledgeBaseRetrievalConfigurationBuilder {
     }
     /// <p>Contains details about how the results from the vector search should be returned.</p>
     pub fn set_vector_search_configuration(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseVectorSearchConfiguration>) -> Self {
-        self.vector_search_configuration = input;
-        self
+        self.vector_search_configuration = input; self
     }
     /// <p>Contains details about how the results from the vector search should be returned.</p>
     pub fn get_vector_search_configuration(&self) -> &::std::option::Option<crate::types::KnowledgeBaseVectorSearchConfiguration> {
@@ -52,7 +51,9 @@ impl KnowledgeBaseRetrievalConfigurationBuilder {
     /// Consumes the builder and constructs a [`KnowledgeBaseRetrievalConfiguration`](crate::types::KnowledgeBaseRetrievalConfiguration).
     pub fn build(self) -> crate::types::KnowledgeBaseRetrievalConfiguration {
         crate::types::KnowledgeBaseRetrievalConfiguration {
-            vector_search_configuration: self.vector_search_configuration,
+            vector_search_configuration: self.vector_search_configuration
+            ,
         }
     }
 }
+

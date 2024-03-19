@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAnnotationImportJobInput {
+pub struct GetAnnotationImportJobInput  {
     /// <p>The job's ID.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
 }
-impl GetAnnotationImportJobInput {
+impl  GetAnnotationImportJobInput  {
     /// <p>The job's ID.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetAnnotationImportJobInputBuilder {
     }
     /// <p>The job's ID.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The job's ID.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
     /// Consumes the builder and constructs a [`GetAnnotationImportJobInput`](crate::operation::get_annotation_import_job::GetAnnotationImportJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_annotation_import_job::GetAnnotationImportJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_annotation_import_job::GetAnnotationImportJobInput { job_id: self.job_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_annotation_import_job::GetAnnotationImportJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_annotation_import_job::GetAnnotationImportJobInput {
+                job_id: self.job_id
+                ,
+            }
+        )
     }
 }
+

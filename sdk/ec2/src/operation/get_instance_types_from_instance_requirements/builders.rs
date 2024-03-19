@@ -5,129 +5,104 @@ pub use crate::operation::get_instance_types_from_instance_requirements::_get_in
 
 impl GetInstanceTypesFromInstanceRequirementsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_instance_types_from_instance_requirements();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_instance_types_from_instance_requirements();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetInstanceTypesFromInstanceRequirements`.
-///
+/// 
 /// <p>Returns a list of instance types with the specified instance attributes. You can use the response to preview the instance types without launching instances. Note that the response does not consider capacity.</p>
 /// <p>When you specify multiple parameters, you get instance types that satisfy all of the specified parameters. If you specify multiple values for a parameter, you get instance types that satisfy any of the specified values.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-attribute-based-instance-type-selection.html#spotfleet-get-instance-types-from-instance-requirements">Preview instance types with specified attributes</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html">Attribute-based instance type selection for EC2 Fleet</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-attribute-based-instance-type-selection.html">Attribute-based instance type selection for Spot Fleet</a>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html">Spot placement score</a> in the <i>Amazon EC2 User Guide</i>, and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating an Auto Scaling group using attribute-based instance type selection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetInstanceTypesFromInstanceRequirementsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_instance_types_from_instance_requirements::builders::GetInstanceTypesFromInstanceRequirementsInputBuilder,
+                    inner: crate::operation::get_instance_types_from_instance_requirements::builders::GetInstanceTypesFromInstanceRequirementsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsOutput,
-        crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsError,
-    > for GetInstanceTypesFromInstanceRequirementsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsOutput,
-            crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsOutput,
+                    crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsError,
+                > for GetInstanceTypesFromInstanceRequirementsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsOutput,
+                        crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetInstanceTypesFromInstanceRequirementsFluentBuilder {
     /// Creates a new `GetInstanceTypesFromInstanceRequirements`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
     /// Access the GetInstanceTypesFromInstanceRequirements as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_instance_types_from_instance_requirements::builders::GetInstanceTypesFromInstanceRequirementsInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_instance_types_from_instance_requirements::builders::GetInstanceTypesFromInstanceRequirementsInputBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins =
-            crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirements::operation_runtime_plugins(
-                self.handle.runtime_plugins.clone(),
-                &self.handle.conf,
-                self.config_override,
-            );
-        crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirements::orchestrate(
-            &runtime_plugins,
-            input,
-        )
-        .await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsOutput,
-        crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirements::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirements::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsOutput, crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::get_instance_types_from_instance_requirements::paginator::GetInstanceTypesFromInstanceRequirementsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_instance_types_from_instance_requirements::paginator::GetInstanceTypesFromInstanceRequirementsPaginator {
-        crate::operation::get_instance_types_from_instance_requirements::paginator::GetInstanceTypesFromInstanceRequirementsPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_instance_types_from_instance_requirements::paginator::GetInstanceTypesFromInstanceRequirementsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::get_instance_types_from_instance_requirements::paginator::GetInstanceTypesFromInstanceRequirementsPaginator {
+                                crate::operation::get_instance_types_from_instance_requirements::paginator::GetInstanceTypesFromInstanceRequirementsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -152,12 +127,12 @@ impl GetInstanceTypesFromInstanceRequirementsFluentBuilder {
         self
     }
     /// <p>The processor architecture type.</p>
-    pub fn set_architecture_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ArchitectureType>>) -> Self {
+    pub fn set_architecture_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ArchitectureType>>) -> Self {
         self.inner = self.inner.set_architecture_types(input);
         self
     }
     /// <p>The processor architecture type.</p>
-    pub fn get_architecture_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ArchitectureType>> {
+    pub fn get_architecture_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ArchitectureType>> {
         self.inner.get_architecture_types()
     }
     /// Appends an item to `VirtualizationTypes`.
@@ -170,12 +145,12 @@ impl GetInstanceTypesFromInstanceRequirementsFluentBuilder {
         self
     }
     /// <p>The virtualization type.</p>
-    pub fn set_virtualization_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VirtualizationType>>) -> Self {
+    pub fn set_virtualization_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VirtualizationType>>) -> Self {
         self.inner = self.inner.set_virtualization_types(input);
         self
     }
     /// <p>The virtualization type.</p>
-    pub fn get_virtualization_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VirtualizationType>> {
+    pub fn get_virtualization_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VirtualizationType>> {
         self.inner.get_virtualization_types()
     }
     /// <p>The attributes required for the instance types.</p>
@@ -221,3 +196,4 @@ impl GetInstanceTypesFromInstanceRequirementsFluentBuilder {
         self.inner.get_next_token()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateBatchLoadTaskInput {
+pub struct CreateBatchLoadTaskInput  {
     /// <p></p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p></p>
@@ -18,29 +18,29 @@ pub struct CreateBatchLoadTaskInput {
     /// <p></p>
     pub record_version: ::std::option::Option<i64>,
 }
-impl CreateBatchLoadTaskInput {
+impl  CreateBatchLoadTaskInput  {
     /// <p></p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p></p>
-    pub fn data_model_configuration(&self) -> ::std::option::Option<&crate::types::DataModelConfiguration> {
+    pub fn data_model_configuration(&self) -> ::std::option::Option<& crate::types::DataModelConfiguration> {
         self.data_model_configuration.as_ref()
     }
     /// <p>Defines configuration details about the data source for a batch load task.</p>
-    pub fn data_source_configuration(&self) -> ::std::option::Option<&crate::types::DataSourceConfiguration> {
+    pub fn data_source_configuration(&self) -> ::std::option::Option<& crate::types::DataSourceConfiguration> {
         self.data_source_configuration.as_ref()
     }
     /// <p>Report configuration for a batch load task. This contains details about where error reports are stored.</p>
-    pub fn report_configuration(&self) -> ::std::option::Option<&crate::types::ReportConfiguration> {
+    pub fn report_configuration(&self) -> ::std::option::Option<& crate::types::ReportConfiguration> {
         self.report_configuration.as_ref()
     }
     /// <p>Target Timestream database for a batch load task.</p>
-    pub fn target_database_name(&self) -> ::std::option::Option<&str> {
+    pub fn target_database_name(&self) -> ::std::option::Option<& str> {
         self.target_database_name.as_deref()
     }
     /// <p>Target Timestream table for a batch load task.</p>
-    pub fn target_table_name(&self) -> ::std::option::Option<&str> {
+    pub fn target_table_name(&self) -> ::std::option::Option<& str> {
         self.target_table_name.as_deref()
     }
     /// <p></p>
@@ -48,7 +48,7 @@ impl CreateBatchLoadTaskInput {
         self.record_version
     }
 }
-impl ::std::fmt::Debug for CreateBatchLoadTaskInput {
+impl  ::std::fmt::Debug for CreateBatchLoadTaskInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBatchLoadTaskInput");
         formatter.field("client_token", &"*** Sensitive Data Redacted ***");
@@ -88,8 +88,7 @@ impl CreateBatchLoadTaskInputBuilder {
     }
     /// <p></p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p></p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +101,7 @@ impl CreateBatchLoadTaskInputBuilder {
     }
     /// <p></p>
     pub fn set_data_model_configuration(mut self, input: ::std::option::Option<crate::types::DataModelConfiguration>) -> Self {
-        self.data_model_configuration = input;
-        self
+        self.data_model_configuration = input; self
     }
     /// <p></p>
     pub fn get_data_model_configuration(&self) -> &::std::option::Option<crate::types::DataModelConfiguration> {
@@ -117,8 +115,7 @@ impl CreateBatchLoadTaskInputBuilder {
     }
     /// <p>Defines configuration details about the data source for a batch load task.</p>
     pub fn set_data_source_configuration(mut self, input: ::std::option::Option<crate::types::DataSourceConfiguration>) -> Self {
-        self.data_source_configuration = input;
-        self
+        self.data_source_configuration = input; self
     }
     /// <p>Defines configuration details about the data source for a batch load task.</p>
     pub fn get_data_source_configuration(&self) -> &::std::option::Option<crate::types::DataSourceConfiguration> {
@@ -132,8 +129,7 @@ impl CreateBatchLoadTaskInputBuilder {
     }
     /// <p>Report configuration for a batch load task. This contains details about where error reports are stored.</p>
     pub fn set_report_configuration(mut self, input: ::std::option::Option<crate::types::ReportConfiguration>) -> Self {
-        self.report_configuration = input;
-        self
+        self.report_configuration = input; self
     }
     /// <p>Report configuration for a batch load task. This contains details about where error reports are stored.</p>
     pub fn get_report_configuration(&self) -> &::std::option::Option<crate::types::ReportConfiguration> {
@@ -147,8 +143,7 @@ impl CreateBatchLoadTaskInputBuilder {
     }
     /// <p>Target Timestream database for a batch load task.</p>
     pub fn set_target_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_database_name = input;
-        self
+        self.target_database_name = input; self
     }
     /// <p>Target Timestream database for a batch load task.</p>
     pub fn get_target_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,8 +157,7 @@ impl CreateBatchLoadTaskInputBuilder {
     }
     /// <p>Target Timestream table for a batch load task.</p>
     pub fn set_target_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_table_name = input;
-        self
+        self.target_table_name = input; self
     }
     /// <p>Target Timestream table for a batch load task.</p>
     pub fn get_target_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -176,27 +170,32 @@ impl CreateBatchLoadTaskInputBuilder {
     }
     /// <p></p>
     pub fn set_record_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.record_version = input;
-        self
+        self.record_version = input; self
     }
     /// <p></p>
     pub fn get_record_version(&self) -> &::std::option::Option<i64> {
         &self.record_version
     }
     /// Consumes the builder and constructs a [`CreateBatchLoadTaskInput`](crate::operation::create_batch_load_task::CreateBatchLoadTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_batch_load_task::CreateBatchLoadTaskInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_batch_load_task::CreateBatchLoadTaskInput {
-            client_token: self.client_token,
-            data_model_configuration: self.data_model_configuration,
-            data_source_configuration: self.data_source_configuration,
-            report_configuration: self.report_configuration,
-            target_database_name: self.target_database_name,
-            target_table_name: self.target_table_name,
-            record_version: self.record_version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_batch_load_task::CreateBatchLoadTaskInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_batch_load_task::CreateBatchLoadTaskInput {
+                client_token: self.client_token
+                ,
+                data_model_configuration: self.data_model_configuration
+                ,
+                data_source_configuration: self.data_source_configuration
+                ,
+                report_configuration: self.report_configuration
+                ,
+                target_database_name: self.target_database_name
+                ,
+                target_table_name: self.target_table_name
+                ,
+                record_version: self.record_version
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateBatchLoadTaskInputBuilder {
@@ -212,3 +211,4 @@ impl ::std::fmt::Debug for CreateBatchLoadTaskInputBuilder {
         formatter.finish()
     }
 }
+

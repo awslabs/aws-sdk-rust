@@ -3,7 +3,7 @@
 /// <p>Specifies a source generated with standard connection options.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConnectorDataSource {
+pub struct ConnectorDataSource  {
     /// <p>The name of this source node.</p>
     pub name: ::std::string::String,
     /// <p>The <code>connectionType</code>, as provided to the underlying Glue library. This node type supports the following connection types:</p>
@@ -25,15 +25,14 @@ pub struct ConnectorDataSource {
     /// </ul>
     pub connection_type: ::std::string::String,
     /// <p>A map specifying connection options for the node. You can find standard connection options for the corresponding connection type in the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-connect.html"> Connection parameters</a> section of the Glue documentation.</p>
-    pub data: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    pub data: ::std::collections::HashMap::<::std::string::String, ::std::string::String>,
     /// <p>Specifies the data schema for this source.</p>
-    pub output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
+    pub output_schemas: ::std::option::Option<::std::vec::Vec::<crate::types::GlueSchema>>,
 }
-impl ConnectorDataSource {
+impl  ConnectorDataSource  {
     /// <p>The name of this source node.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The <code>connectionType</code>, as provided to the underlying Glue library. This node type supports the following connection types:</p>
     /// <ul>
@@ -52,19 +51,19 @@ impl ConnectorDataSource {
     /// <li>
     /// <p><code>vertica</code></p></li>
     /// </ul>
-    pub fn connection_type(&self) -> &str {
-        use std::ops::Deref;
-        self.connection_type.deref()
+    pub fn connection_type(&self) -> & str {
+        use std::ops::Deref; self.connection_type.deref()
     }
     /// <p>A map specifying connection options for the node. You can find standard connection options for the corresponding connection type in the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-connect.html"> Connection parameters</a> section of the Glue documentation.</p>
-    pub fn data(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+    pub fn data(&self) -> & ::std::collections::HashMap::<::std::string::String, ::std::string::String> {
         &self.data
     }
     /// <p>Specifies the data schema for this source.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_schemas.is_none()`.
-    pub fn output_schemas(&self) -> &[crate::types::GlueSchema] {
-        self.output_schemas.as_deref().unwrap_or_default()
+    pub fn output_schemas(&self) -> & [crate::types::GlueSchema] {
+        self.output_schemas.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ConnectorDataSource {
@@ -80,8 +79,8 @@ impl ConnectorDataSource {
 pub struct ConnectorDataSourceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) connection_type: ::std::option::Option<::std::string::String>,
-    pub(crate) data: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
+    pub(crate) data: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) output_schemas: ::std::option::Option<::std::vec::Vec::<crate::types::GlueSchema>>,
 }
 impl ConnectorDataSourceBuilder {
     /// <p>The name of this source node.</p>
@@ -92,8 +91,7 @@ impl ConnectorDataSourceBuilder {
     }
     /// <p>The name of this source node.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of this source node.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +137,7 @@ impl ConnectorDataSourceBuilder {
     /// <p><code>vertica</code></p></li>
     /// </ul>
     pub fn set_connection_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_type = input;
-        self
+        self.connection_type = input; self
     }
     /// <p>The <code>connectionType</code>, as provided to the underlying Glue library. This node type supports the following connection types:</p>
     /// <ul>
@@ -169,17 +166,16 @@ impl ConnectorDataSourceBuilder {
     /// <p>A map specifying connection options for the node. You can find standard connection options for the corresponding connection type in the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-connect.html"> Connection parameters</a> section of the Glue documentation.</p>
     pub fn data(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.data.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.data = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.data = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map specifying connection options for the node. You can find standard connection options for the corresponding connection type in the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-connect.html"> Connection parameters</a> section of the Glue documentation.</p>
-    pub fn set_data(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.data = input;
-        self
+    pub fn set_data(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.data = input; self
     }
     /// <p>A map specifying connection options for the node. You can find standard connection options for the corresponding connection type in the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-connect.html"> Connection parameters</a> section of the Glue documentation.</p>
-    pub fn get_data(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_data(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.data
     }
     /// Appends an item to `output_schemas`.
@@ -189,17 +185,16 @@ impl ConnectorDataSourceBuilder {
     /// <p>Specifies the data schema for this source.</p>
     pub fn output_schemas(mut self, input: crate::types::GlueSchema) -> Self {
         let mut v = self.output_schemas.unwrap_or_default();
-        v.push(input);
-        self.output_schemas = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.output_schemas = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the data schema for this source.</p>
-    pub fn set_output_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>) -> Self {
-        self.output_schemas = input;
-        self
+    pub fn set_output_schemas(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GlueSchema>>) -> Self {
+        self.output_schemas = input; self
     }
     /// <p>Specifies the data schema for this source.</p>
-    pub fn get_output_schemas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
+    pub fn get_output_schemas(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GlueSchema>> {
         &self.output_schemas
     }
     /// Consumes the builder and constructs a [`ConnectorDataSource`](crate::types::ConnectorDataSource).
@@ -208,26 +203,27 @@ impl ConnectorDataSourceBuilder {
     /// - [`connection_type`](crate::types::builders::ConnectorDataSourceBuilder::connection_type)
     /// - [`data`](crate::types::builders::ConnectorDataSourceBuilder::data)
     pub fn build(self) -> ::std::result::Result<crate::types::ConnectorDataSource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ConnectorDataSource {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ConnectorDataSource",
-                )
-            })?,
-            connection_type: self.connection_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "connection_type",
-                    "connection_type was not specified but it is required when building ConnectorDataSource",
-                )
-            })?,
-            data: self.data.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data",
-                    "data was not specified but it is required when building ConnectorDataSource",
-                )
-            })?,
-            output_schemas: self.output_schemas,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ConnectorDataSource {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ConnectorDataSource")
+                    )?
+                ,
+                connection_type: self.connection_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("connection_type", "connection_type was not specified but it is required when building ConnectorDataSource")
+                    )?
+                ,
+                data: self.data
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data", "data was not specified but it is required when building ConnectorDataSource")
+                    )?
+                ,
+                output_schemas: self.output_schemas
+                ,
+            }
+        )
     }
 }
+

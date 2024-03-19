@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListObjectAttributes`](crate::operation::list_object_attributes::builders::ListObjectAttributesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_object_attributes::builders::ListObjectAttributesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`directory_arn(impl Into<String>)`](crate::operation::list_object_attributes::builders::ListObjectAttributesFluentBuilder::directory_arn) / [`set_directory_arn(Option<String>)`](crate::operation::list_object_attributes::builders::ListObjectAttributesFluentBuilder::set_directory_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p><br>
     ///   - [`object_reference(ObjectReference)`](crate::operation::list_object_attributes::builders::ListObjectAttributesFluentBuilder::object_reference) / [`set_object_reference(Option<ObjectReference>)`](crate::operation::list_object_attributes::builders::ListObjectAttributesFluentBuilder::set_object_reference):<br>required: **true**<br><p>The reference that identifies the object whose attributes will be listed.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_object_attributes::builders::ListObjectAttributesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_object_attributes::builders::ListObjectAttributesFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_object_attributes::builders::ListObjectAttributesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_object_attributes::builders::ListObjectAttributesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p><br>
     ///   - [`consistency_level(ConsistencyLevel)`](crate::operation::list_object_attributes::builders::ListObjectAttributesFluentBuilder::consistency_level) / [`set_consistency_level(Option<ConsistencyLevel>)`](crate::operation::list_object_attributes::builders::ListObjectAttributesFluentBuilder::set_consistency_level):<br>required: **false**<br><p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p><br>
     ///   - [`facet_filter(SchemaFacet)`](crate::operation::list_object_attributes::builders::ListObjectAttributesFluentBuilder::facet_filter) / [`set_facet_filter(Option<SchemaFacet>)`](crate::operation::list_object_attributes::builders::ListObjectAttributesFluentBuilder::set_facet_filter):<br>required: **false**<br><p>Used to filter the list of object attributes that are associated with a certain facet.</p><br>
-    /// - On success, responds with [`ListObjectAttributesOutput`](crate::operation::list_object_attributes::ListObjectAttributesOutput) with field(s):
+                            /// - On success, responds with [`ListObjectAttributesOutput`](crate::operation::list_object_attributes::ListObjectAttributesOutput) with field(s):
     ///   - [`attributes(Option<Vec::<AttributeKeyAndValue>>)`](crate::operation::list_object_attributes::ListObjectAttributesOutput::attributes): <p>Attributes map that is associated with the object. <code>AttributeArn</code> is the key, and attribute value is the value.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_object_attributes::ListObjectAttributesOutput::next_token): <p>The pagination token.</p>
-    /// - On failure, responds with [`SdkError<ListObjectAttributesError>`](crate::operation::list_object_attributes::ListObjectAttributesError)
+                            /// - On failure, responds with [`SdkError<ListObjectAttributesError>`](crate::operation::list_object_attributes::ListObjectAttributesError)
     pub fn list_object_attributes(&self) -> crate::operation::list_object_attributes::builders::ListObjectAttributesFluentBuilder {
-        crate::operation::list_object_attributes::builders::ListObjectAttributesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_object_attributes::builders::ListObjectAttributesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

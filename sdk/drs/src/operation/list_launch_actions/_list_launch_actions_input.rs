@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLaunchActionsInput {
+pub struct ListLaunchActionsInput  {
     /// <p>Launch configuration template Id or Source Server Id</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Filters to apply when listing resource launch actions.</p>
@@ -12,13 +12,13 @@ pub struct ListLaunchActionsInput {
     /// <p>Next token to use when listing resource launch actions.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListLaunchActionsInput {
+impl  ListLaunchActionsInput  {
     /// <p>Launch configuration template Id or Source Server Id</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>Filters to apply when listing resource launch actions.</p>
-    pub fn filters(&self) -> ::std::option::Option<&crate::types::LaunchActionsRequestFilters> {
+    pub fn filters(&self) -> ::std::option::Option<& crate::types::LaunchActionsRequestFilters> {
         self.filters.as_ref()
     }
     /// <p>Maximum amount of items to return when listing resource launch actions.</p>
@@ -26,7 +26,7 @@ impl ListLaunchActionsInput {
         self.max_results
     }
     /// <p>Next token to use when listing resource launch actions.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl ListLaunchActionsInputBuilder {
     }
     /// <p>Launch configuration template Id or Source Server Id</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>Launch configuration template Id or Source Server Id</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ListLaunchActionsInputBuilder {
     }
     /// <p>Filters to apply when listing resource launch actions.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::LaunchActionsRequestFilters>) -> Self {
-        self.filters = input;
-        self
+        self.filters = input; self
     }
     /// <p>Filters to apply when listing resource launch actions.</p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::LaunchActionsRequestFilters> {
@@ -83,8 +81,7 @@ impl ListLaunchActionsInputBuilder {
     }
     /// <p>Maximum amount of items to return when listing resource launch actions.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Maximum amount of items to return when listing resource launch actions.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -97,22 +94,26 @@ impl ListLaunchActionsInputBuilder {
     }
     /// <p>Next token to use when listing resource launch actions.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Next token to use when listing resource launch actions.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListLaunchActionsInput`](crate::operation::list_launch_actions::ListLaunchActionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_launch_actions::ListLaunchActionsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_launch_actions::ListLaunchActionsInput {
-            resource_id: self.resource_id,
-            filters: self.filters,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_launch_actions::ListLaunchActionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_launch_actions::ListLaunchActionsInput {
+                resource_id: self.resource_id
+                ,
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

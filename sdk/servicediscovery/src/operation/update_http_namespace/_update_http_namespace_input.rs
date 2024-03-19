@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateHttpNamespaceInput {
+pub struct UpdateHttpNamespaceInput  {
     /// <p>The ID of the namespace that you want to update.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A unique string that identifies the request and that allows failed <code>UpdateHttpNamespace</code> requests to be retried without the risk of running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a date/timestamp).</p>
@@ -10,17 +10,17 @@ pub struct UpdateHttpNamespaceInput {
     /// <p>Updated properties for the the HTTP namespace.</p>
     pub namespace: ::std::option::Option<crate::types::HttpNamespaceChange>,
 }
-impl UpdateHttpNamespaceInput {
+impl  UpdateHttpNamespaceInput  {
     /// <p>The ID of the namespace that you want to update.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A unique string that identifies the request and that allows failed <code>UpdateHttpNamespace</code> requests to be retried without the risk of running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a date/timestamp).</p>
-    pub fn updater_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn updater_request_id(&self) -> ::std::option::Option<& str> {
         self.updater_request_id.as_deref()
     }
     /// <p>Updated properties for the the HTTP namespace.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&crate::types::HttpNamespaceChange> {
+    pub fn namespace(&self) -> ::std::option::Option<& crate::types::HttpNamespaceChange> {
         self.namespace.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateHttpNamespaceInputBuilder {
     }
     /// <p>The ID of the namespace that you want to update.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the namespace that you want to update.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UpdateHttpNamespaceInputBuilder {
     }
     /// <p>A unique string that identifies the request and that allows failed <code>UpdateHttpNamespace</code> requests to be retried without the risk of running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a date/timestamp).</p>
     pub fn set_updater_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.updater_request_id = input;
-        self
+        self.updater_request_id = input; self
     }
     /// <p>A unique string that identifies the request and that allows failed <code>UpdateHttpNamespace</code> requests to be retried without the risk of running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a date/timestamp).</p>
     pub fn get_updater_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,22 +75,24 @@ impl UpdateHttpNamespaceInputBuilder {
     }
     /// <p>Updated properties for the the HTTP namespace.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<crate::types::HttpNamespaceChange>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>Updated properties for the the HTTP namespace.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<crate::types::HttpNamespaceChange> {
         &self.namespace
     }
     /// Consumes the builder and constructs a [`UpdateHttpNamespaceInput`](crate::operation::update_http_namespace::UpdateHttpNamespaceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_http_namespace::UpdateHttpNamespaceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_http_namespace::UpdateHttpNamespaceInput {
-            id: self.id,
-            updater_request_id: self.updater_request_id,
-            namespace: self.namespace,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_http_namespace::UpdateHttpNamespaceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_http_namespace::UpdateHttpNamespaceInput {
+                id: self.id
+                ,
+                updater_request_id: self.updater_request_id
+                ,
+                namespace: self.namespace
+                ,
+            }
+        )
     }
 }
+

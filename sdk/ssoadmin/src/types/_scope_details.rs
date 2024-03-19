@@ -3,23 +3,23 @@
 /// <p>A structure that describes an IAM Identity Center access scope and its authorized targets.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScopeDetails {
+pub struct ScopeDetails  {
     /// <p>The name of the access scope.</p>
     pub scope: ::std::string::String,
     /// <p>An array list of ARNs of applications.</p>
-    pub authorized_targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub authorized_targets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ScopeDetails {
+impl  ScopeDetails  {
     /// <p>The name of the access scope.</p>
-    pub fn scope(&self) -> &str {
-        use std::ops::Deref;
-        self.scope.deref()
+    pub fn scope(&self) -> & str {
+        use std::ops::Deref; self.scope.deref()
     }
     /// <p>An array list of ARNs of applications.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.authorized_targets.is_none()`.
-    pub fn authorized_targets(&self) -> &[::std::string::String] {
-        self.authorized_targets.as_deref().unwrap_or_default()
+    pub fn authorized_targets(&self) -> & [::std::string::String] {
+        self.authorized_targets.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ScopeDetails {
@@ -34,7 +34,7 @@ impl ScopeDetails {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScopeDetailsBuilder {
     pub(crate) scope: ::std::option::Option<::std::string::String>,
-    pub(crate) authorized_targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) authorized_targets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ScopeDetailsBuilder {
     /// <p>The name of the access scope.</p>
@@ -45,8 +45,7 @@ impl ScopeDetailsBuilder {
     }
     /// <p>The name of the access scope.</p>
     pub fn set_scope(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scope = input;
-        self
+        self.scope = input; self
     }
     /// <p>The name of the access scope.</p>
     pub fn get_scope(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,31 +58,33 @@ impl ScopeDetailsBuilder {
     /// <p>An array list of ARNs of applications.</p>
     pub fn authorized_targets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.authorized_targets.unwrap_or_default();
-        v.push(input.into());
-        self.authorized_targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.authorized_targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array list of ARNs of applications.</p>
-    pub fn set_authorized_targets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.authorized_targets = input;
-        self
+    pub fn set_authorized_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.authorized_targets = input; self
     }
     /// <p>An array list of ARNs of applications.</p>
-    pub fn get_authorized_targets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_authorized_targets(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.authorized_targets
     }
     /// Consumes the builder and constructs a [`ScopeDetails`](crate::types::ScopeDetails).
     /// This method will fail if any of the following fields are not set:
     /// - [`scope`](crate::types::builders::ScopeDetailsBuilder::scope)
     pub fn build(self) -> ::std::result::Result<crate::types::ScopeDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ScopeDetails {
-            scope: self.scope.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "scope",
-                    "scope was not specified but it is required when building ScopeDetails",
-                )
-            })?,
-            authorized_targets: self.authorized_targets,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ScopeDetails {
+                scope: self.scope
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("scope", "scope was not specified but it is required when building ScopeDetails")
+                    )?
+                ,
+                authorized_targets: self.authorized_targets
+                ,
+            }
+        )
     }
 }
+

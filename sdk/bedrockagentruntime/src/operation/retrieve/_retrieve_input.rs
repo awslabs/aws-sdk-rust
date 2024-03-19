@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct RetrieveInput {
+pub struct RetrieveInput  {
     /// <p>The unique identifier of the knowledge base to query.</p>
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
     /// <p>The query to send the knowledge base.</p>
@@ -12,25 +12,25 @@ pub struct RetrieveInput {
     /// <p>If there are more results than can fit in the response, the response returns a <code>nextToken</code>. Use this token in the <code>nextToken</code> field of another request to retrieve the next batch of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl RetrieveInput {
+impl  RetrieveInput  {
     /// <p>The unique identifier of the knowledge base to query.</p>
-    pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
+    pub fn knowledge_base_id(&self) -> ::std::option::Option<& str> {
         self.knowledge_base_id.as_deref()
     }
     /// <p>The query to send the knowledge base.</p>
-    pub fn retrieval_query(&self) -> ::std::option::Option<&crate::types::KnowledgeBaseQuery> {
+    pub fn retrieval_query(&self) -> ::std::option::Option<& crate::types::KnowledgeBaseQuery> {
         self.retrieval_query.as_ref()
     }
     /// <p>Contains details about how the results should be returned.</p>
-    pub fn retrieval_configuration(&self) -> ::std::option::Option<&crate::types::KnowledgeBaseRetrievalConfiguration> {
+    pub fn retrieval_configuration(&self) -> ::std::option::Option<& crate::types::KnowledgeBaseRetrievalConfiguration> {
         self.retrieval_configuration.as_ref()
     }
     /// <p>If there are more results than can fit in the response, the response returns a <code>nextToken</code>. Use this token in the <code>nextToken</code> field of another request to retrieve the next batch of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for RetrieveInput {
+impl  ::std::fmt::Debug for RetrieveInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RetrieveInput");
         formatter.field("knowledge_base_id", &self.knowledge_base_id);
@@ -65,8 +65,7 @@ impl RetrieveInputBuilder {
     }
     /// <p>The unique identifier of the knowledge base to query.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.knowledge_base_id = input;
-        self
+        self.knowledge_base_id = input; self
     }
     /// <p>The unique identifier of the knowledge base to query.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +79,7 @@ impl RetrieveInputBuilder {
     }
     /// <p>The query to send the knowledge base.</p>
     pub fn set_retrieval_query(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseQuery>) -> Self {
-        self.retrieval_query = input;
-        self
+        self.retrieval_query = input; self
     }
     /// <p>The query to send the knowledge base.</p>
     pub fn get_retrieval_query(&self) -> &::std::option::Option<crate::types::KnowledgeBaseQuery> {
@@ -94,8 +92,7 @@ impl RetrieveInputBuilder {
     }
     /// <p>Contains details about how the results should be returned.</p>
     pub fn set_retrieval_configuration(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseRetrievalConfiguration>) -> Self {
-        self.retrieval_configuration = input;
-        self
+        self.retrieval_configuration = input; self
     }
     /// <p>Contains details about how the results should be returned.</p>
     pub fn get_retrieval_configuration(&self) -> &::std::option::Option<crate::types::KnowledgeBaseRetrievalConfiguration> {
@@ -108,8 +105,7 @@ impl RetrieveInputBuilder {
     }
     /// <p>If there are more results than can fit in the response, the response returns a <code>nextToken</code>. Use this token in the <code>nextToken</code> field of another request to retrieve the next batch of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If there are more results than can fit in the response, the response returns a <code>nextToken</code>. Use this token in the <code>nextToken</code> field of another request to retrieve the next batch of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,12 +113,18 @@ impl RetrieveInputBuilder {
     }
     /// Consumes the builder and constructs a [`RetrieveInput`](crate::operation::retrieve::RetrieveInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::retrieve::RetrieveInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::retrieve::RetrieveInput {
-            knowledge_base_id: self.knowledge_base_id,
-            retrieval_query: self.retrieval_query,
-            retrieval_configuration: self.retrieval_configuration,
-            next_token: self.next_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::retrieve::RetrieveInput {
+                knowledge_base_id: self.knowledge_base_id
+                ,
+                retrieval_query: self.retrieval_query
+                ,
+                retrieval_configuration: self.retrieval_configuration
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for RetrieveInputBuilder {
@@ -135,3 +137,4 @@ impl ::std::fmt::Debug for RetrieveInputBuilder {
         formatter.finish()
     }
 }
+

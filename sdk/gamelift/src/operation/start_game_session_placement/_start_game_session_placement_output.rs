@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartGameSessionPlacementOutput {
+pub struct StartGameSessionPlacementOutput  {
     /// <p>Object that describes the newly created game session placement. This object includes all the information provided in the request, as well as start/end time stamps and placement status.</p>
     pub game_session_placement: ::std::option::Option<crate::types::GameSessionPlacement>,
     _request_id: Option<String>,
 }
-impl StartGameSessionPlacementOutput {
+impl  StartGameSessionPlacementOutput  {
     /// <p>Object that describes the newly created game session placement. This object includes all the information provided in the request, as well as start/end time stamps and placement status.</p>
-    pub fn game_session_placement(&self) -> ::std::option::Option<&crate::types::GameSessionPlacement> {
+    pub fn game_session_placement(&self) -> ::std::option::Option<& crate::types::GameSessionPlacement> {
         self.game_session_placement.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartGameSessionPlacementOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartGameSessionPlacementOutput {
     /// Creates a new builder-style object to manufacture [`StartGameSessionPlacementOutput`](crate::operation::start_game_session_placement::StartGameSessionPlacementOutput).
     pub fn builder() -> crate::operation::start_game_session_placement::builders::StartGameSessionPlacementOutputBuilder {
@@ -40,27 +40,28 @@ impl StartGameSessionPlacementOutputBuilder {
     }
     /// <p>Object that describes the newly created game session placement. This object includes all the information provided in the request, as well as start/end time stamps and placement status.</p>
     pub fn set_game_session_placement(mut self, input: ::std::option::Option<crate::types::GameSessionPlacement>) -> Self {
-        self.game_session_placement = input;
-        self
+        self.game_session_placement = input; self
     }
     /// <p>Object that describes the newly created game session placement. This object includes all the information provided in the request, as well as start/end time stamps and placement status.</p>
     pub fn get_game_session_placement(&self) -> &::std::option::Option<crate::types::GameSessionPlacement> {
         &self.game_session_placement
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartGameSessionPlacementOutput`](crate::operation::start_game_session_placement::StartGameSessionPlacementOutput).
     pub fn build(self) -> crate::operation::start_game_session_placement::StartGameSessionPlacementOutput {
         crate::operation::start_game_session_placement::StartGameSessionPlacementOutput {
-            game_session_placement: self.game_session_placement,
+            game_session_placement: self.game_session_placement
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

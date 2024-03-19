@@ -3,7 +3,7 @@
 /// <p>The new throughput configuration for the feature group. You can switch between on-demand and provisioned modes or update the read / write capacity of provisioned feature groups. You can switch a feature group to on-demand only once in a 24 hour period.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ThroughputConfigUpdate {
+pub struct ThroughputConfigUpdate  {
     /// <p>Target throughput mode of the feature group. Throughput update is an asynchronous operation, and the outcome should be monitored by polling <code>LastUpdateStatus</code> field in <code>DescribeFeatureGroup</code> response. You cannot update a feature group's throughput while another update is in progress.</p>
     pub throughput_mode: ::std::option::Option<crate::types::ThroughputMode>,
     /// <p>For provisioned feature groups with online store enabled, this indicates the read throughput you are billed for and can consume without throttling.</p>
@@ -11,9 +11,9 @@ pub struct ThroughputConfigUpdate {
     /// <p>For provisioned feature groups, this indicates the write throughput you are billed for and can consume without throttling.</p>
     pub provisioned_write_capacity_units: ::std::option::Option<i32>,
 }
-impl ThroughputConfigUpdate {
+impl  ThroughputConfigUpdate  {
     /// <p>Target throughput mode of the feature group. Throughput update is an asynchronous operation, and the outcome should be monitored by polling <code>LastUpdateStatus</code> field in <code>DescribeFeatureGroup</code> response. You cannot update a feature group's throughput while another update is in progress.</p>
-    pub fn throughput_mode(&self) -> ::std::option::Option<&crate::types::ThroughputMode> {
+    pub fn throughput_mode(&self) -> ::std::option::Option<& crate::types::ThroughputMode> {
         self.throughput_mode.as_ref()
     }
     /// <p>For provisioned feature groups with online store enabled, this indicates the read throughput you are billed for and can consume without throttling.</p>
@@ -48,8 +48,7 @@ impl ThroughputConfigUpdateBuilder {
     }
     /// <p>Target throughput mode of the feature group. Throughput update is an asynchronous operation, and the outcome should be monitored by polling <code>LastUpdateStatus</code> field in <code>DescribeFeatureGroup</code> response. You cannot update a feature group's throughput while another update is in progress.</p>
     pub fn set_throughput_mode(mut self, input: ::std::option::Option<crate::types::ThroughputMode>) -> Self {
-        self.throughput_mode = input;
-        self
+        self.throughput_mode = input; self
     }
     /// <p>Target throughput mode of the feature group. Throughput update is an asynchronous operation, and the outcome should be monitored by polling <code>LastUpdateStatus</code> field in <code>DescribeFeatureGroup</code> response. You cannot update a feature group's throughput while another update is in progress.</p>
     pub fn get_throughput_mode(&self) -> &::std::option::Option<crate::types::ThroughputMode> {
@@ -62,8 +61,7 @@ impl ThroughputConfigUpdateBuilder {
     }
     /// <p>For provisioned feature groups with online store enabled, this indicates the read throughput you are billed for and can consume without throttling.</p>
     pub fn set_provisioned_read_capacity_units(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.provisioned_read_capacity_units = input;
-        self
+        self.provisioned_read_capacity_units = input; self
     }
     /// <p>For provisioned feature groups with online store enabled, this indicates the read throughput you are billed for and can consume without throttling.</p>
     pub fn get_provisioned_read_capacity_units(&self) -> &::std::option::Option<i32> {
@@ -76,8 +74,7 @@ impl ThroughputConfigUpdateBuilder {
     }
     /// <p>For provisioned feature groups, this indicates the write throughput you are billed for and can consume without throttling.</p>
     pub fn set_provisioned_write_capacity_units(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.provisioned_write_capacity_units = input;
-        self
+        self.provisioned_write_capacity_units = input; self
     }
     /// <p>For provisioned feature groups, this indicates the write throughput you are billed for and can consume without throttling.</p>
     pub fn get_provisioned_write_capacity_units(&self) -> &::std::option::Option<i32> {
@@ -86,9 +83,13 @@ impl ThroughputConfigUpdateBuilder {
     /// Consumes the builder and constructs a [`ThroughputConfigUpdate`](crate::types::ThroughputConfigUpdate).
     pub fn build(self) -> crate::types::ThroughputConfigUpdate {
         crate::types::ThroughputConfigUpdate {
-            throughput_mode: self.throughput_mode,
-            provisioned_read_capacity_units: self.provisioned_read_capacity_units,
-            provisioned_write_capacity_units: self.provisioned_write_capacity_units,
+            throughput_mode: self.throughput_mode
+            ,
+            provisioned_read_capacity_units: self.provisioned_read_capacity_units
+            ,
+            provisioned_write_capacity_units: self.provisioned_write_capacity_units
+            ,
         }
     }
 }
+

@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyInstanceMetadataOptionsOutput {
+pub struct ModifyInstanceMetadataOptionsOutput  {
     /// <p>The ID of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The metadata options for the instance.</p>
     pub instance_metadata_options: ::std::option::Option<crate::types::InstanceMetadataOptionsResponse>,
     _request_id: Option<String>,
 }
-impl ModifyInstanceMetadataOptionsOutput {
+impl  ModifyInstanceMetadataOptionsOutput  {
     /// <p>The ID of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The metadata options for the instance.</p>
-    pub fn instance_metadata_options(&self) -> ::std::option::Option<&crate::types::InstanceMetadataOptionsResponse> {
+    pub fn instance_metadata_options(&self) -> ::std::option::Option<& crate::types::InstanceMetadataOptionsResponse> {
         self.instance_metadata_options.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ModifyInstanceMetadataOptionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ModifyInstanceMetadataOptionsOutput {
     /// Creates a new builder-style object to manufacture [`ModifyInstanceMetadataOptionsOutput`](crate::operation::modify_instance_metadata_options::ModifyInstanceMetadataOptionsOutput).
     pub fn builder() -> crate::operation::modify_instance_metadata_options::builders::ModifyInstanceMetadataOptionsOutputBuilder {
@@ -47,8 +47,7 @@ impl ModifyInstanceMetadataOptionsOutputBuilder {
     }
     /// <p>The ID of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl ModifyInstanceMetadataOptionsOutputBuilder {
     }
     /// <p>The metadata options for the instance.</p>
     pub fn set_instance_metadata_options(mut self, input: ::std::option::Option<crate::types::InstanceMetadataOptionsResponse>) -> Self {
-        self.instance_metadata_options = input;
-        self
+        self.instance_metadata_options = input; self
     }
     /// <p>The metadata options for the instance.</p>
     pub fn get_instance_metadata_options(&self) -> &::std::option::Option<crate::types::InstanceMetadataOptionsResponse> {
         &self.instance_metadata_options
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ModifyInstanceMetadataOptionsOutput`](crate::operation::modify_instance_metadata_options::ModifyInstanceMetadataOptionsOutput).
     pub fn build(self) -> crate::operation::modify_instance_metadata_options::ModifyInstanceMetadataOptionsOutput {
         crate::operation::modify_instance_metadata_options::ModifyInstanceMetadataOptionsOutput {
-            instance_id: self.instance_id,
-            instance_metadata_options: self.instance_metadata_options,
+            instance_id: self.instance_id
+            ,
+            instance_metadata_options: self.instance_metadata_options
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -11,7 +11,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GlobalSecondaryIndexUpdate {
+pub struct GlobalSecondaryIndexUpdate  {
     /// <p>The name of an existing global secondary index, along with new provisioned throughput settings to be applied to that index.</p>
     pub update: ::std::option::Option<crate::types::UpdateGlobalSecondaryIndexAction>,
     /// <p>The parameters required for creating a global secondary index on an existing table:</p>
@@ -31,9 +31,9 @@ pub struct GlobalSecondaryIndexUpdate {
     /// <p>The name of an existing global secondary index to be removed.</p>
     pub delete: ::std::option::Option<crate::types::DeleteGlobalSecondaryIndexAction>,
 }
-impl GlobalSecondaryIndexUpdate {
+impl  GlobalSecondaryIndexUpdate  {
     /// <p>The name of an existing global secondary index, along with new provisioned throughput settings to be applied to that index.</p>
-    pub fn update(&self) -> ::std::option::Option<&crate::types::UpdateGlobalSecondaryIndexAction> {
+    pub fn update(&self) -> ::std::option::Option<& crate::types::UpdateGlobalSecondaryIndexAction> {
         self.update.as_ref()
     }
     /// <p>The parameters required for creating a global secondary index on an existing table:</p>
@@ -49,11 +49,11 @@ impl GlobalSecondaryIndexUpdate {
     /// <li>
     /// <p><code>ProvisionedThroughput </code></p></li>
     /// </ul>
-    pub fn create(&self) -> ::std::option::Option<&crate::types::CreateGlobalSecondaryIndexAction> {
+    pub fn create(&self) -> ::std::option::Option<& crate::types::CreateGlobalSecondaryIndexAction> {
         self.create.as_ref()
     }
     /// <p>The name of an existing global secondary index to be removed.</p>
-    pub fn delete(&self) -> ::std::option::Option<&crate::types::DeleteGlobalSecondaryIndexAction> {
+    pub fn delete(&self) -> ::std::option::Option<& crate::types::DeleteGlobalSecondaryIndexAction> {
         self.delete.as_ref()
     }
 }
@@ -80,8 +80,7 @@ impl GlobalSecondaryIndexUpdateBuilder {
     }
     /// <p>The name of an existing global secondary index, along with new provisioned throughput settings to be applied to that index.</p>
     pub fn set_update(mut self, input: ::std::option::Option<crate::types::UpdateGlobalSecondaryIndexAction>) -> Self {
-        self.update = input;
-        self
+        self.update = input; self
     }
     /// <p>The name of an existing global secondary index, along with new provisioned throughput settings to be applied to that index.</p>
     pub fn get_update(&self) -> &::std::option::Option<crate::types::UpdateGlobalSecondaryIndexAction> {
@@ -118,8 +117,7 @@ impl GlobalSecondaryIndexUpdateBuilder {
     /// <p><code>ProvisionedThroughput </code></p></li>
     /// </ul>
     pub fn set_create(mut self, input: ::std::option::Option<crate::types::CreateGlobalSecondaryIndexAction>) -> Self {
-        self.create = input;
-        self
+        self.create = input; self
     }
     /// <p>The parameters required for creating a global secondary index on an existing table:</p>
     /// <ul>
@@ -144,8 +142,7 @@ impl GlobalSecondaryIndexUpdateBuilder {
     }
     /// <p>The name of an existing global secondary index to be removed.</p>
     pub fn set_delete(mut self, input: ::std::option::Option<crate::types::DeleteGlobalSecondaryIndexAction>) -> Self {
-        self.delete = input;
-        self
+        self.delete = input; self
     }
     /// <p>The name of an existing global secondary index to be removed.</p>
     pub fn get_delete(&self) -> &::std::option::Option<crate::types::DeleteGlobalSecondaryIndexAction> {
@@ -154,9 +151,13 @@ impl GlobalSecondaryIndexUpdateBuilder {
     /// Consumes the builder and constructs a [`GlobalSecondaryIndexUpdate`](crate::types::GlobalSecondaryIndexUpdate).
     pub fn build(self) -> crate::types::GlobalSecondaryIndexUpdate {
         crate::types::GlobalSecondaryIndexUpdate {
-            update: self.update,
-            create: self.create,
-            delete: self.delete,
+            update: self.update
+            ,
+            create: self.create
+            ,
+            delete: self.delete
+            ,
         }
     }
 }
+

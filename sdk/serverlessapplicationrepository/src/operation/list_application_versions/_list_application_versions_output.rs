@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListApplicationVersionsOutput {
+pub struct ListApplicationVersionsOutput  {
     /// <p>The token to request the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of version summaries for the application.</p>
-    pub versions: ::std::option::Option<::std::vec::Vec<crate::types::VersionSummary>>,
+    pub versions: ::std::option::Option<::std::vec::Vec::<crate::types::VersionSummary>>,
     _request_id: Option<String>,
 }
-impl ListApplicationVersionsOutput {
+impl  ListApplicationVersionsOutput  {
     /// <p>The token to request the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of version summaries for the application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.versions.is_none()`.
-    pub fn versions(&self) -> &[crate::types::VersionSummary] {
-        self.versions.as_deref().unwrap_or_default()
+    pub fn versions(&self) -> & [crate::types::VersionSummary] {
+        self.versions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListApplicationVersionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListApplicationVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationVersionsOutput`](crate::operation::list_application_versions::ListApplicationVersionsOutput).
     pub fn builder() -> crate::operation::list_application_versions::builders::ListApplicationVersionsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListApplicationVersionsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationVersionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) versions: ::std::option::Option<::std::vec::Vec<crate::types::VersionSummary>>,
+    pub(crate) versions: ::std::option::Option<::std::vec::Vec::<crate::types::VersionSummary>>,
     _request_id: Option<String>,
 }
 impl ListApplicationVersionsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListApplicationVersionsOutputBuilder {
     }
     /// <p>The token to request the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to request the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListApplicationVersionsOutputBuilder {
     /// <p>An array of version summaries for the application.</p>
     pub fn versions(mut self, input: crate::types::VersionSummary) -> Self {
         let mut v = self.versions.unwrap_or_default();
-        v.push(input);
-        self.versions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.versions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of version summaries for the application.</p>
-    pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VersionSummary>>) -> Self {
-        self.versions = input;
-        self
+    pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VersionSummary>>) -> Self {
+        self.versions = input; self
     }
     /// <p>An array of version summaries for the application.</p>
-    pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VersionSummary>> {
+    pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VersionSummary>> {
         &self.versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListApplicationVersionsOutput`](crate::operation::list_application_versions::ListApplicationVersionsOutput).
     pub fn build(self) -> crate::operation::list_application_versions::ListApplicationVersionsOutput {
         crate::operation::list_application_versions::ListApplicationVersionsOutput {
-            next_token: self.next_token,
-            versions: self.versions,
+            next_token: self.next_token
+            ,
+            versions: self.versions
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

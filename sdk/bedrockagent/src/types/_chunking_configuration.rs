@@ -3,19 +3,19 @@
 /// Configures chunking strategy
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChunkingConfiguration {
+pub struct ChunkingConfiguration  {
     /// The type of chunking strategy
     pub chunking_strategy: crate::types::ChunkingStrategy,
     /// Configures fixed size chunking strategy
     pub fixed_size_chunking_configuration: ::std::option::Option<crate::types::FixedSizeChunkingConfiguration>,
 }
-impl ChunkingConfiguration {
+impl  ChunkingConfiguration  {
     /// The type of chunking strategy
-    pub fn chunking_strategy(&self) -> &crate::types::ChunkingStrategy {
+    pub fn chunking_strategy(&self) -> & crate::types::ChunkingStrategy {
         &self.chunking_strategy
     }
     /// Configures fixed size chunking strategy
-    pub fn fixed_size_chunking_configuration(&self) -> ::std::option::Option<&crate::types::FixedSizeChunkingConfiguration> {
+    pub fn fixed_size_chunking_configuration(&self) -> ::std::option::Option<& crate::types::FixedSizeChunkingConfiguration> {
         self.fixed_size_chunking_configuration.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl ChunkingConfigurationBuilder {
     }
     /// The type of chunking strategy
     pub fn set_chunking_strategy(mut self, input: ::std::option::Option<crate::types::ChunkingStrategy>) -> Self {
-        self.chunking_strategy = input;
-        self
+        self.chunking_strategy = input; self
     }
     /// The type of chunking strategy
     pub fn get_chunking_strategy(&self) -> &::std::option::Option<crate::types::ChunkingStrategy> {
@@ -56,8 +55,7 @@ impl ChunkingConfigurationBuilder {
     }
     /// Configures fixed size chunking strategy
     pub fn set_fixed_size_chunking_configuration(mut self, input: ::std::option::Option<crate::types::FixedSizeChunkingConfiguration>) -> Self {
-        self.fixed_size_chunking_configuration = input;
-        self
+        self.fixed_size_chunking_configuration = input; self
     }
     /// Configures fixed size chunking strategy
     pub fn get_fixed_size_chunking_configuration(&self) -> &::std::option::Option<crate::types::FixedSizeChunkingConfiguration> {
@@ -67,14 +65,17 @@ impl ChunkingConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`chunking_strategy`](crate::types::builders::ChunkingConfigurationBuilder::chunking_strategy)
     pub fn build(self) -> ::std::result::Result<crate::types::ChunkingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ChunkingConfiguration {
-            chunking_strategy: self.chunking_strategy.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "chunking_strategy",
-                    "chunking_strategy was not specified but it is required when building ChunkingConfiguration",
-                )
-            })?,
-            fixed_size_chunking_configuration: self.fixed_size_chunking_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ChunkingConfiguration {
+                chunking_strategy: self.chunking_strategy
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("chunking_strategy", "chunking_strategy was not specified but it is required when building ChunkingConfiguration")
+                    )?
+                ,
+                fixed_size_chunking_configuration: self.fixed_size_chunking_configuration
+                ,
+            }
+        )
     }
 }
+

@@ -5,113 +5,96 @@ pub use crate::operation::disable_application_layer_automatic_response::_disable
 
 impl DisableApplicationLayerAutomaticResponseInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.disable_application_layer_automatic_response();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.disable_application_layer_automatic_response();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DisableApplicationLayerAutomaticResponse`.
-///
+/// 
 /// <p>Disable the Shield Advanced automatic application layer DDoS mitigation feature for the protected resource. This stops Shield Advanced from creating, verifying, and applying WAF rules for attacks that it detects for the resource.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableApplicationLayerAutomaticResponseFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::disable_application_layer_automatic_response::builders::DisableApplicationLayerAutomaticResponseInputBuilder,
+                    inner: crate::operation::disable_application_layer_automatic_response::builders::DisableApplicationLayerAutomaticResponseInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseOutput,
-        crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseError,
-    > for DisableApplicationLayerAutomaticResponseFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseOutput,
-            crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseOutput,
+                    crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseError,
+                > for DisableApplicationLayerAutomaticResponseFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseOutput,
+                        crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DisableApplicationLayerAutomaticResponseFluentBuilder {
     /// Creates a new `DisableApplicationLayerAutomaticResponse`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
     /// Access the DisableApplicationLayerAutomaticResponse as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::disable_application_layer_automatic_response::builders::DisableApplicationLayerAutomaticResponseInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::disable_application_layer_automatic_response::builders::DisableApplicationLayerAutomaticResponseInputBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins =
-            crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponse::operation_runtime_plugins(
-                self.handle.runtime_plugins.clone(),
-                &self.handle.conf,
-                self.config_override,
-            );
-        crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponse::orchestrate(&runtime_plugins, input)
-            .await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseOutput,
-        crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponse::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponse::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseOutput, crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ARN (Amazon Resource Name) of the protected resource.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
@@ -127,3 +110,4 @@ impl DisableApplicationLayerAutomaticResponseFluentBuilder {
         self.inner.get_resource_arn()
     }
 }
+

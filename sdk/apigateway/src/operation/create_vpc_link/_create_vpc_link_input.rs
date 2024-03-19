@@ -3,33 +3,34 @@
 /// <p>Creates a VPC link, under the caller's account in a selected region, in an asynchronous operation that typically takes 2-4 minutes to complete and become operational. The caller must have permissions to create and update VPC Endpoint services.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateVpcLinkInput {
+pub struct CreateVpcLinkInput  {
     /// <p>The name used to label and identify the VPC link.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the VPC link.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same Amazon Web Services account of the API owner.</p>
-    pub target_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub target_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateVpcLinkInput {
+impl  CreateVpcLinkInput  {
     /// <p>The name used to label and identify the VPC link.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the VPC link.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same Amazon Web Services account of the API owner.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_arns.is_none()`.
-    pub fn target_arns(&self) -> &[::std::string::String] {
-        self.target_arns.as_deref().unwrap_or_default()
+    pub fn target_arns(&self) -> & [::std::string::String] {
+        self.target_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -46,8 +47,8 @@ impl CreateVpcLinkInput {
 pub struct CreateVpcLinkInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) target_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) target_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateVpcLinkInputBuilder {
     /// <p>The name used to label and identify the VPC link.</p>
@@ -58,8 +59,7 @@ impl CreateVpcLinkInputBuilder {
     }
     /// <p>The name used to label and identify the VPC link.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name used to label and identify the VPC link.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +72,7 @@ impl CreateVpcLinkInputBuilder {
     }
     /// <p>The description of the VPC link.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the VPC link.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,17 +85,16 @@ impl CreateVpcLinkInputBuilder {
     /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same Amazon Web Services account of the API owner.</p>
     pub fn target_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_arns.unwrap_or_default();
-        v.push(input.into());
-        self.target_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.target_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same Amazon Web Services account of the API owner.</p>
-    pub fn set_target_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.target_arns = input;
-        self
+    pub fn set_target_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.target_arns = input; self
     }
     /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same Amazon Web Services account of the API owner.</p>
-    pub fn get_target_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.target_arns
     }
     /// Adds a key-value pair to `tags`.
@@ -106,28 +104,32 @@ impl CreateVpcLinkInputBuilder {
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateVpcLinkInput`](crate::operation::create_vpc_link::CreateVpcLinkInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_vpc_link::CreateVpcLinkInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_vpc_link::CreateVpcLinkInput {
-            name: self.name,
-            description: self.description,
-            target_arns: self.target_arns,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_vpc_link::CreateVpcLinkInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_vpc_link::CreateVpcLinkInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                target_arns: self.target_arns
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

@@ -65,14 +65,14 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HealthCheck {
+pub struct HealthCheck  {
     /// <p>A string array representing the command that the container runs to determine if it is healthy. The string array must start with <code>CMD</code> to run the command arguments directly, or <code>CMD-SHELL</code> to run the command with the container's default shell.</p>
     /// <p>When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the APIs, enclose the list of commands in double quotes and brackets.</p>
     /// <p><code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code></p>
     /// <p>You don't include the double quotes and brackets when you use the Amazon Web Services Management Console.</p>
     /// <p><code> CMD-SHELL, curl -f http://localhost/ || exit 1</code></p>
     /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
-    pub command: ::std::vec::Vec<::std::string::String>,
+    pub command: ::std::vec::Vec::<::std::string::String>,
     /// <p>The time period in seconds between each health check execution. You may specify between 5 and 300 seconds. The default value is 30 seconds.</p>
     pub interval: ::std::option::Option<i32>,
     /// <p>The time period in seconds to wait for a health check to succeed before it is considered a failure. You may specify between 2 and 60 seconds. The default value is 5.</p>
@@ -84,16 +84,15 @@ pub struct HealthCheck {
     /// </note>
     pub start_period: ::std::option::Option<i32>,
 }
-impl HealthCheck {
+impl  HealthCheck  {
     /// <p>A string array representing the command that the container runs to determine if it is healthy. The string array must start with <code>CMD</code> to run the command arguments directly, or <code>CMD-SHELL</code> to run the command with the container's default shell.</p>
     /// <p>When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the APIs, enclose the list of commands in double quotes and brackets.</p>
     /// <p><code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code></p>
     /// <p>You don't include the double quotes and brackets when you use the Amazon Web Services Management Console.</p>
     /// <p><code> CMD-SHELL, curl -f http://localhost/ || exit 1</code></p>
     /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
-    pub fn command(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.command.deref()
+    pub fn command(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.command.deref()
     }
     /// <p>The time period in seconds between each health check execution. You may specify between 5 and 300 seconds. The default value is 30 seconds.</p>
     pub fn interval(&self) -> ::std::option::Option<i32> {
@@ -125,7 +124,7 @@ impl HealthCheck {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HealthCheckBuilder {
-    pub(crate) command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) command: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) interval: ::std::option::Option<i32>,
     pub(crate) timeout: ::std::option::Option<i32>,
     pub(crate) retries: ::std::option::Option<i32>,
@@ -144,9 +143,9 @@ impl HealthCheckBuilder {
     /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
     pub fn command(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.command.unwrap_or_default();
-        v.push(input.into());
-        self.command = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.command = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A string array representing the command that the container runs to determine if it is healthy. The string array must start with <code>CMD</code> to run the command arguments directly, or <code>CMD-SHELL</code> to run the command with the container's default shell.</p>
     /// <p>When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the APIs, enclose the list of commands in double quotes and brackets.</p>
@@ -154,9 +153,8 @@ impl HealthCheckBuilder {
     /// <p>You don't include the double quotes and brackets when you use the Amazon Web Services Management Console.</p>
     /// <p><code> CMD-SHELL, curl -f http://localhost/ || exit 1</code></p>
     /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
-    pub fn set_command(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.command = input;
-        self
+    pub fn set_command(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.command = input; self
     }
     /// <p>A string array representing the command that the container runs to determine if it is healthy. The string array must start with <code>CMD</code> to run the command arguments directly, or <code>CMD-SHELL</code> to run the command with the container's default shell.</p>
     /// <p>When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the APIs, enclose the list of commands in double quotes and brackets.</p>
@@ -164,7 +162,7 @@ impl HealthCheckBuilder {
     /// <p>You don't include the double quotes and brackets when you use the Amazon Web Services Management Console.</p>
     /// <p><code> CMD-SHELL, curl -f http://localhost/ || exit 1</code></p>
     /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
-    pub fn get_command(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_command(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.command
     }
     /// <p>The time period in seconds between each health check execution. You may specify between 5 and 300 seconds. The default value is 30 seconds.</p>
@@ -174,8 +172,7 @@ impl HealthCheckBuilder {
     }
     /// <p>The time period in seconds between each health check execution. You may specify between 5 and 300 seconds. The default value is 30 seconds.</p>
     pub fn set_interval(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.interval = input;
-        self
+        self.interval = input; self
     }
     /// <p>The time period in seconds between each health check execution. You may specify between 5 and 300 seconds. The default value is 30 seconds.</p>
     pub fn get_interval(&self) -> &::std::option::Option<i32> {
@@ -188,8 +185,7 @@ impl HealthCheckBuilder {
     }
     /// <p>The time period in seconds to wait for a health check to succeed before it is considered a failure. You may specify between 2 and 60 seconds. The default value is 5.</p>
     pub fn set_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.timeout = input;
-        self
+        self.timeout = input; self
     }
     /// <p>The time period in seconds to wait for a health check to succeed before it is considered a failure. You may specify between 2 and 60 seconds. The default value is 5.</p>
     pub fn get_timeout(&self) -> &::std::option::Option<i32> {
@@ -202,8 +198,7 @@ impl HealthCheckBuilder {
     }
     /// <p>The number of times to retry a failed health check before the container is considered unhealthy. You may specify between 1 and 10 retries. The default value is 3.</p>
     pub fn set_retries(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.retries = input;
-        self
+        self.retries = input; self
     }
     /// <p>The number of times to retry a failed health check before the container is considered unhealthy. You may specify between 1 and 10 retries. The default value is 3.</p>
     pub fn get_retries(&self) -> &::std::option::Option<i32> {
@@ -220,8 +215,7 @@ impl HealthCheckBuilder {
     /// <p>If a health check succeeds within the <code>startPeriod</code>, then the container is considered healthy and any subsequent failures count toward the maximum number of retries.</p>
     /// </note>
     pub fn set_start_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.start_period = input;
-        self
+        self.start_period = input; self
     }
     /// <p>The optional grace period to provide containers time to bootstrap before failed health checks count towards the maximum number of retries. You can specify between 0 and 300 seconds. By default, the <code>startPeriod</code> is off.</p><note>
     /// <p>If a health check succeeds within the <code>startPeriod</code>, then the container is considered healthy and any subsequent failures count toward the maximum number of retries.</p>
@@ -233,17 +227,23 @@ impl HealthCheckBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`command`](crate::types::builders::HealthCheckBuilder::command)
     pub fn build(self) -> ::std::result::Result<crate::types::HealthCheck, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::HealthCheck {
-            command: self.command.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "command",
-                    "command was not specified but it is required when building HealthCheck",
-                )
-            })?,
-            interval: self.interval,
-            timeout: self.timeout,
-            retries: self.retries,
-            start_period: self.start_period,
-        })
+        ::std::result::Result::Ok(
+            crate::types::HealthCheck {
+                command: self.command
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("command", "command was not specified but it is required when building HealthCheck")
+                    )?
+                ,
+                interval: self.interval
+                ,
+                timeout: self.timeout
+                ,
+                retries: self.retries
+                ,
+                start_period: self.start_period
+                ,
+            }
+        )
     }
 }
+

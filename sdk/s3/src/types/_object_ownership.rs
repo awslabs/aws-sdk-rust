@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let objectownership = unimplemented!();
 /// match objectownership {
@@ -31,7 +31,7 @@
 /// Specifically, when `objectownership` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ObjectOwnership::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
@@ -48,7 +48,7 @@
 /// <code>BucketOwnerEnforced</code> - Access control lists (ACLs) are disabled and no longer affect
 /// permissions. The bucket owner automatically owns and has full control over every object in
 /// the bucket. The bucket only accepts PUT requests that don't specify an ACL or specify bucket owner
-/// full control ACLs (such as the predefined <code>bucket-owner-full-control</code> canned ACL or a custom ACL
+/// full control ACLs (such as the predefined <code>bucket-owner-full-control</code> canned ACL or a custom ACL 
 /// in XML format that grants the same permissions).</p>
 /// <p>By default, <code>ObjectOwnership</code> is set to <code>BucketOwnerEnforced</code> and ACLs are disabled. We recommend
 /// keeping ACLs disabled, except in uncommon use cases where you must control access for each object individually. For more information about S3 Object Ownership, see
@@ -58,9 +58,7 @@
 /// <p>This functionality is not supported for directory buckets. Directory buckets use the bucket owner enforced setting for S3 Object Ownership.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ObjectOwnership {
     #[allow(missing_docs)] // documentation missing in model
     BucketOwnerEnforced,
@@ -70,64 +68,65 @@ pub enum ObjectOwnership {
     ObjectWriter,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ObjectOwnership {
-    fn from(s: &str) -> Self {
-        match s {
-            "BucketOwnerEnforced" => ObjectOwnership::BucketOwnerEnforced,
-            "BucketOwnerPreferred" => ObjectOwnership::BucketOwnerPreferred,
-            "ObjectWriter" => ObjectOwnership::ObjectWriter,
-            other => ObjectOwnership::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "BucketOwnerEnforced" => ObjectOwnership::BucketOwnerEnforced,
+"BucketOwnerPreferred" => ObjectOwnership::BucketOwnerPreferred,
+"ObjectWriter" => ObjectOwnership::ObjectWriter,
+other => ObjectOwnership::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ObjectOwnership {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ObjectOwnership::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ObjectOwnership::from(s))
+                    }
+                }
 impl ObjectOwnership {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ObjectOwnership::BucketOwnerEnforced => "BucketOwnerEnforced",
-            ObjectOwnership::BucketOwnerPreferred => "BucketOwnerPreferred",
-            ObjectOwnership::ObjectWriter => "ObjectWriter",
-            ObjectOwnership::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["BucketOwnerEnforced", "BucketOwnerPreferred", "ObjectWriter"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ObjectOwnership::BucketOwnerEnforced => "BucketOwnerEnforced",
+    ObjectOwnership::BucketOwnerPreferred => "BucketOwnerPreferred",
+    ObjectOwnership::ObjectWriter => "ObjectWriter",
+    ObjectOwnership::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BucketOwnerEnforced", "BucketOwnerPreferred", "ObjectWriter"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ObjectOwnership {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ObjectOwnership {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ObjectOwnership {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ObjectOwnership::BucketOwnerEnforced => write!(f, "BucketOwnerEnforced"),
-            ObjectOwnership::BucketOwnerPreferred => write!(f, "BucketOwnerPreferred"),
-            ObjectOwnership::ObjectWriter => write!(f, "ObjectWriter"),
-            ObjectOwnership::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ObjectOwnership::BucketOwnerEnforced => write!(f, "BucketOwnerEnforced"),
+ObjectOwnership::BucketOwnerPreferred => write!(f, "BucketOwnerPreferred"),
+ObjectOwnership::ObjectWriter => write!(f, "ObjectWriter"),
+ObjectOwnership::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

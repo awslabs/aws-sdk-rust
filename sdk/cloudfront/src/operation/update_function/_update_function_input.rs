@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateFunctionInput {
+pub struct UpdateFunctionInput  {
     /// <p>The name of the function that you are updating.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current version (<code>ETag</code> value) of the function that you are updating, which you can get using <code>DescribeFunction</code>.</p>
@@ -12,25 +12,25 @@ pub struct UpdateFunctionInput {
     /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub function_code: ::std::option::Option<::aws_smithy_types::Blob>,
 }
-impl UpdateFunctionInput {
+impl  UpdateFunctionInput  {
     /// <p>The name of the function that you are updating.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current version (<code>ETag</code> value) of the function that you are updating, which you can get using <code>DescribeFunction</code>.</p>
-    pub fn if_match(&self) -> ::std::option::Option<&str> {
+    pub fn if_match(&self) -> ::std::option::Option<& str> {
         self.if_match.as_deref()
     }
     /// <p>Configuration information about the function.</p>
-    pub fn function_config(&self) -> ::std::option::Option<&crate::types::FunctionConfig> {
+    pub fn function_config(&self) -> ::std::option::Option<& crate::types::FunctionConfig> {
         self.function_config.as_ref()
     }
     /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn function_code(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn function_code(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.function_code.as_ref()
     }
 }
-impl ::std::fmt::Debug for UpdateFunctionInput {
+impl  ::std::fmt::Debug for UpdateFunctionInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFunctionInput");
         formatter.field("name", &self.name);
@@ -65,8 +65,7 @@ impl UpdateFunctionInputBuilder {
     }
     /// <p>The name of the function that you are updating.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the function that you are updating.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +79,7 @@ impl UpdateFunctionInputBuilder {
     }
     /// <p>The current version (<code>ETag</code> value) of the function that you are updating, which you can get using <code>DescribeFunction</code>.</p>
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.if_match = input;
-        self
+        self.if_match = input; self
     }
     /// <p>The current version (<code>ETag</code> value) of the function that you are updating, which you can get using <code>DescribeFunction</code>.</p>
     pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +93,7 @@ impl UpdateFunctionInputBuilder {
     }
     /// <p>Configuration information about the function.</p>
     pub fn set_function_config(mut self, input: ::std::option::Option<crate::types::FunctionConfig>) -> Self {
-        self.function_config = input;
-        self
+        self.function_config = input; self
     }
     /// <p>Configuration information about the function.</p>
     pub fn get_function_config(&self) -> &::std::option::Option<crate::types::FunctionConfig> {
@@ -110,23 +107,26 @@ impl UpdateFunctionInputBuilder {
     }
     /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn set_function_code(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.function_code = input;
-        self
+        self.function_code = input; self
     }
     /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn get_function_code(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.function_code
     }
     /// Consumes the builder and constructs a [`UpdateFunctionInput`](crate::operation::update_function::UpdateFunctionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_function::UpdateFunctionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_function::UpdateFunctionInput {
-            name: self.name,
-            if_match: self.if_match,
-            function_config: self.function_config,
-            function_code: self.function_code,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_function::UpdateFunctionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_function::UpdateFunctionInput {
+                name: self.name
+                ,
+                if_match: self.if_match
+                ,
+                function_config: self.function_config
+                ,
+                function_code: self.function_code
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateFunctionInputBuilder {
@@ -139,3 +139,4 @@ impl ::std::fmt::Debug for UpdateFunctionInputBuilder {
         formatter.finish()
     }
 }
+

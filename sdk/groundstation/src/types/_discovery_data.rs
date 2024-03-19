@@ -3,29 +3,26 @@
 /// <p>Data for agent discovery.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DiscoveryData {
+pub struct DiscoveryData  {
     /// <p>List of public IP addresses to associate with agent.</p>
-    pub public_ip_addresses: ::std::vec::Vec<::std::string::String>,
+    pub public_ip_addresses: ::std::vec::Vec::<::std::string::String>,
     /// <p>List of private IP addresses to associate with agent.</p>
-    pub private_ip_addresses: ::std::vec::Vec<::std::string::String>,
+    pub private_ip_addresses: ::std::vec::Vec::<::std::string::String>,
     /// <p>List of capabilities to associate with agent.</p>
-    pub capability_arns: ::std::vec::Vec<::std::string::String>,
+    pub capability_arns: ::std::vec::Vec::<::std::string::String>,
 }
-impl DiscoveryData {
+impl  DiscoveryData  {
     /// <p>List of public IP addresses to associate with agent.</p>
-    pub fn public_ip_addresses(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.public_ip_addresses.deref()
+    pub fn public_ip_addresses(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.public_ip_addresses.deref()
     }
     /// <p>List of private IP addresses to associate with agent.</p>
-    pub fn private_ip_addresses(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.private_ip_addresses.deref()
+    pub fn private_ip_addresses(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.private_ip_addresses.deref()
     }
     /// <p>List of capabilities to associate with agent.</p>
-    pub fn capability_arns(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.capability_arns.deref()
+    pub fn capability_arns(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.capability_arns.deref()
     }
 }
 impl DiscoveryData {
@@ -39,9 +36,9 @@ impl DiscoveryData {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DiscoveryDataBuilder {
-    pub(crate) public_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) private_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) capability_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) public_ip_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) private_ip_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) capability_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DiscoveryDataBuilder {
     /// Appends an item to `public_ip_addresses`.
@@ -51,17 +48,16 @@ impl DiscoveryDataBuilder {
     /// <p>List of public IP addresses to associate with agent.</p>
     pub fn public_ip_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.public_ip_addresses.unwrap_or_default();
-        v.push(input.into());
-        self.public_ip_addresses = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.public_ip_addresses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of public IP addresses to associate with agent.</p>
-    pub fn set_public_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.public_ip_addresses = input;
-        self
+    pub fn set_public_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.public_ip_addresses = input; self
     }
     /// <p>List of public IP addresses to associate with agent.</p>
-    pub fn get_public_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_public_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.public_ip_addresses
     }
     /// Appends an item to `private_ip_addresses`.
@@ -71,17 +67,16 @@ impl DiscoveryDataBuilder {
     /// <p>List of private IP addresses to associate with agent.</p>
     pub fn private_ip_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.private_ip_addresses.unwrap_or_default();
-        v.push(input.into());
-        self.private_ip_addresses = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.private_ip_addresses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of private IP addresses to associate with agent.</p>
-    pub fn set_private_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.private_ip_addresses = input;
-        self
+    pub fn set_private_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.private_ip_addresses = input; self
     }
     /// <p>List of private IP addresses to associate with agent.</p>
-    pub fn get_private_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_private_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.private_ip_addresses
     }
     /// Appends an item to `capability_arns`.
@@ -91,17 +86,16 @@ impl DiscoveryDataBuilder {
     /// <p>List of capabilities to associate with agent.</p>
     pub fn capability_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.capability_arns.unwrap_or_default();
-        v.push(input.into());
-        self.capability_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.capability_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of capabilities to associate with agent.</p>
-    pub fn set_capability_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.capability_arns = input;
-        self
+    pub fn set_capability_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.capability_arns = input; self
     }
     /// <p>List of capabilities to associate with agent.</p>
-    pub fn get_capability_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_capability_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.capability_arns
     }
     /// Consumes the builder and constructs a [`DiscoveryData`](crate::types::DiscoveryData).
@@ -110,25 +104,25 @@ impl DiscoveryDataBuilder {
     /// - [`private_ip_addresses`](crate::types::builders::DiscoveryDataBuilder::private_ip_addresses)
     /// - [`capability_arns`](crate::types::builders::DiscoveryDataBuilder::capability_arns)
     pub fn build(self) -> ::std::result::Result<crate::types::DiscoveryData, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DiscoveryData {
-            public_ip_addresses: self.public_ip_addresses.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "public_ip_addresses",
-                    "public_ip_addresses was not specified but it is required when building DiscoveryData",
-                )
-            })?,
-            private_ip_addresses: self.private_ip_addresses.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "private_ip_addresses",
-                    "private_ip_addresses was not specified but it is required when building DiscoveryData",
-                )
-            })?,
-            capability_arns: self.capability_arns.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "capability_arns",
-                    "capability_arns was not specified but it is required when building DiscoveryData",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DiscoveryData {
+                public_ip_addresses: self.public_ip_addresses
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("public_ip_addresses", "public_ip_addresses was not specified but it is required when building DiscoveryData")
+                    )?
+                ,
+                private_ip_addresses: self.private_ip_addresses
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("private_ip_addresses", "private_ip_addresses was not specified but it is required when building DiscoveryData")
+                    )?
+                ,
+                capability_arns: self.capability_arns
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("capability_arns", "capability_arns was not specified but it is required when building DiscoveryData")
+                    )?
+                ,
+            }
+        )
     }
 }
+

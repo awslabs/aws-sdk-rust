@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartChatContactOutput {
+pub struct StartChatContactOutput  {
     /// <p>The identifier of this contact within the Amazon Connect instance.</p>
     pub contact_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for a chat participant. The participantId for a chat participant is the same throughout the chat lifecycle.</p>
@@ -13,29 +13,29 @@ pub struct StartChatContactOutput {
     pub continued_from_contact_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl StartChatContactOutput {
+impl  StartChatContactOutput  {
     /// <p>The identifier of this contact within the Amazon Connect instance.</p>
-    pub fn contact_id(&self) -> ::std::option::Option<&str> {
+    pub fn contact_id(&self) -> ::std::option::Option<& str> {
         self.contact_id.as_deref()
     }
     /// <p>The identifier for a chat participant. The participantId for a chat participant is the same throughout the chat lifecycle.</p>
-    pub fn participant_id(&self) -> ::std::option::Option<&str> {
+    pub fn participant_id(&self) -> ::std::option::Option<& str> {
         self.participant_id.as_deref()
     }
     /// <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat participant.</p>
-    pub fn participant_token(&self) -> ::std::option::Option<&str> {
+    pub fn participant_token(&self) -> ::std::option::Option<& str> {
         self.participant_token.as_deref()
     }
     /// <p>The contactId from which a persistent chat session is started. This field is populated only for persistent chats.</p>
-    pub fn continued_from_contact_id(&self) -> ::std::option::Option<&str> {
+    pub fn continued_from_contact_id(&self) -> ::std::option::Option<& str> {
         self.continued_from_contact_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartChatContactOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartChatContactOutput {
     /// Creates a new builder-style object to manufacture [`StartChatContactOutput`](crate::operation::start_chat_contact::StartChatContactOutput).
     pub fn builder() -> crate::operation::start_chat_contact::builders::StartChatContactOutputBuilder {
@@ -61,8 +61,7 @@ impl StartChatContactOutputBuilder {
     }
     /// <p>The identifier of this contact within the Amazon Connect instance.</p>
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_id = input;
-        self
+        self.contact_id = input; self
     }
     /// <p>The identifier of this contact within the Amazon Connect instance.</p>
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl StartChatContactOutputBuilder {
     }
     /// <p>The identifier for a chat participant. The participantId for a chat participant is the same throughout the chat lifecycle.</p>
     pub fn set_participant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.participant_id = input;
-        self
+        self.participant_id = input; self
     }
     /// <p>The identifier for a chat participant. The participantId for a chat participant is the same throughout the chat lifecycle.</p>
     pub fn get_participant_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl StartChatContactOutputBuilder {
     }
     /// <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat participant.</p>
     pub fn set_participant_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.participant_token = input;
-        self
+        self.participant_token = input; self
     }
     /// <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat participant.</p>
     pub fn get_participant_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,30 +100,34 @@ impl StartChatContactOutputBuilder {
     }
     /// <p>The contactId from which a persistent chat session is started. This field is populated only for persistent chats.</p>
     pub fn set_continued_from_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.continued_from_contact_id = input;
-        self
+        self.continued_from_contact_id = input; self
     }
     /// <p>The contactId from which a persistent chat session is started. This field is populated only for persistent chats.</p>
     pub fn get_continued_from_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.continued_from_contact_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartChatContactOutput`](crate::operation::start_chat_contact::StartChatContactOutput).
     pub fn build(self) -> crate::operation::start_chat_contact::StartChatContactOutput {
         crate::operation::start_chat_contact::StartChatContactOutput {
-            contact_id: self.contact_id,
-            participant_id: self.participant_id,
-            participant_token: self.participant_token,
-            continued_from_contact_id: self.continued_from_contact_id,
+            contact_id: self.contact_id
+            ,
+            participant_id: self.participant_id
+            ,
+            participant_token: self.participant_token
+            ,
+            continued_from_contact_id: self.continued_from_contact_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

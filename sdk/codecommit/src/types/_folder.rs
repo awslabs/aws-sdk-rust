@@ -3,7 +3,7 @@
 /// <p>Returns information about a folder in a repository.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Folder {
+pub struct Folder  {
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the folder.</p>
     pub tree_id: ::std::option::Option<::std::string::String>,
     /// <p>The fully qualified path of the folder in the repository.</p>
@@ -11,17 +11,17 @@ pub struct Folder {
     /// <p>The relative path of the specified folder from the folder where the query originated.</p>
     pub relative_path: ::std::option::Option<::std::string::String>,
 }
-impl Folder {
+impl  Folder  {
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the folder.</p>
-    pub fn tree_id(&self) -> ::std::option::Option<&str> {
+    pub fn tree_id(&self) -> ::std::option::Option<& str> {
         self.tree_id.as_deref()
     }
     /// <p>The fully qualified path of the folder in the repository.</p>
-    pub fn absolute_path(&self) -> ::std::option::Option<&str> {
+    pub fn absolute_path(&self) -> ::std::option::Option<& str> {
         self.absolute_path.as_deref()
     }
     /// <p>The relative path of the specified folder from the folder where the query originated.</p>
-    pub fn relative_path(&self) -> ::std::option::Option<&str> {
+    pub fn relative_path(&self) -> ::std::option::Option<& str> {
         self.relative_path.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl FolderBuilder {
     }
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the folder.</p>
     pub fn set_tree_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tree_id = input;
-        self
+        self.tree_id = input; self
     }
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the folder.</p>
     pub fn get_tree_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl FolderBuilder {
     }
     /// <p>The fully qualified path of the folder in the repository.</p>
     pub fn set_absolute_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.absolute_path = input;
-        self
+        self.absolute_path = input; self
     }
     /// <p>The fully qualified path of the folder in the repository.</p>
     pub fn get_absolute_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl FolderBuilder {
     }
     /// <p>The relative path of the specified folder from the folder where the query originated.</p>
     pub fn set_relative_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.relative_path = input;
-        self
+        self.relative_path = input; self
     }
     /// <p>The relative path of the specified folder from the folder where the query originated.</p>
     pub fn get_relative_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl FolderBuilder {
     /// Consumes the builder and constructs a [`Folder`](crate::types::Folder).
     pub fn build(self) -> crate::types::Folder {
         crate::types::Folder {
-            tree_id: self.tree_id,
-            absolute_path: self.absolute_path,
-            relative_path: self.relative_path,
+            tree_id: self.tree_id
+            ,
+            absolute_path: self.absolute_path
+            ,
+            relative_path: self.relative_path
+            ,
         }
     }
 }
+

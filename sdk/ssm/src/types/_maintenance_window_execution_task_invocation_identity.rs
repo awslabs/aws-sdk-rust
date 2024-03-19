@@ -3,7 +3,7 @@
 /// <p>Describes the information about a task invocation for a particular target as part of a task execution performed as part of a maintenance window execution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct MaintenanceWindowExecutionTaskInvocationIdentity {
+pub struct MaintenanceWindowExecutionTaskInvocationIdentity  {
     /// <p>The ID of the maintenance window execution that ran the task.</p>
     pub window_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the specific task execution in the maintenance window execution.</p>
@@ -29,57 +29,57 @@ pub struct MaintenanceWindowExecutionTaskInvocationIdentity {
     /// <p>The ID of the target definition in this maintenance window the invocation was performed for.</p>
     pub window_target_id: ::std::option::Option<::std::string::String>,
 }
-impl MaintenanceWindowExecutionTaskInvocationIdentity {
+impl  MaintenanceWindowExecutionTaskInvocationIdentity  {
     /// <p>The ID of the maintenance window execution that ran the task.</p>
-    pub fn window_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn window_execution_id(&self) -> ::std::option::Option<& str> {
         self.window_execution_id.as_deref()
     }
     /// <p>The ID of the specific task execution in the maintenance window execution.</p>
-    pub fn task_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_execution_id(&self) -> ::std::option::Option<& str> {
         self.task_execution_id.as_deref()
     }
     /// <p>The ID of the task invocation.</p>
-    pub fn invocation_id(&self) -> ::std::option::Option<&str> {
+    pub fn invocation_id(&self) -> ::std::option::Option<& str> {
         self.invocation_id.as_deref()
     }
     /// <p>The ID of the action performed in the service that actually handled the task invocation. If the task type is <code>RUN_COMMAND</code>, this value is the command ID.</p>
-    pub fn execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn execution_id(&self) -> ::std::option::Option<& str> {
         self.execution_id.as_deref()
     }
     /// <p>The task type.</p>
-    pub fn task_type(&self) -> ::std::option::Option<&crate::types::MaintenanceWindowTaskType> {
+    pub fn task_type(&self) -> ::std::option::Option<& crate::types::MaintenanceWindowTaskType> {
         self.task_type.as_ref()
     }
     /// <p>The parameters that were provided for the invocation when it was run.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&str> {
+    pub fn parameters(&self) -> ::std::option::Option<& str> {
         self.parameters.as_deref()
     }
     /// <p>The status of the task invocation.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::MaintenanceWindowExecutionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::MaintenanceWindowExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>The details explaining the status of the task invocation. Not available for all status values.</p>
-    pub fn status_details(&self) -> ::std::option::Option<&str> {
+    pub fn status_details(&self) -> ::std::option::Option<& str> {
         self.status_details.as_deref()
     }
     /// <p>The time the invocation started.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time the invocation finished.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>User-provided value that was specified when the target was registered with the maintenance window. This was also included in any Amazon CloudWatch Events events raised during the task invocation.</p>
-    pub fn owner_information(&self) -> ::std::option::Option<&str> {
+    pub fn owner_information(&self) -> ::std::option::Option<& str> {
         self.owner_information.as_deref()
     }
     /// <p>The ID of the target definition in this maintenance window the invocation was performed for.</p>
-    pub fn window_target_id(&self) -> ::std::option::Option<&str> {
+    pub fn window_target_id(&self) -> ::std::option::Option<& str> {
         self.window_target_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for MaintenanceWindowExecutionTaskInvocationIdentity {
+impl  ::std::fmt::Debug for MaintenanceWindowExecutionTaskInvocationIdentity  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MaintenanceWindowExecutionTaskInvocationIdentity");
         formatter.field("window_execution_id", &self.window_execution_id);
@@ -129,8 +129,7 @@ impl MaintenanceWindowExecutionTaskInvocationIdentityBuilder {
     }
     /// <p>The ID of the maintenance window execution that ran the task.</p>
     pub fn set_window_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.window_execution_id = input;
-        self
+        self.window_execution_id = input; self
     }
     /// <p>The ID of the maintenance window execution that ran the task.</p>
     pub fn get_window_execution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +142,7 @@ impl MaintenanceWindowExecutionTaskInvocationIdentityBuilder {
     }
     /// <p>The ID of the specific task execution in the maintenance window execution.</p>
     pub fn set_task_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_execution_id = input;
-        self
+        self.task_execution_id = input; self
     }
     /// <p>The ID of the specific task execution in the maintenance window execution.</p>
     pub fn get_task_execution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,8 +155,7 @@ impl MaintenanceWindowExecutionTaskInvocationIdentityBuilder {
     }
     /// <p>The ID of the task invocation.</p>
     pub fn set_invocation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.invocation_id = input;
-        self
+        self.invocation_id = input; self
     }
     /// <p>The ID of the task invocation.</p>
     pub fn get_invocation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,8 +168,7 @@ impl MaintenanceWindowExecutionTaskInvocationIdentityBuilder {
     }
     /// <p>The ID of the action performed in the service that actually handled the task invocation. If the task type is <code>RUN_COMMAND</code>, this value is the command ID.</p>
     pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_id = input;
-        self
+        self.execution_id = input; self
     }
     /// <p>The ID of the action performed in the service that actually handled the task invocation. If the task type is <code>RUN_COMMAND</code>, this value is the command ID.</p>
     pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -185,8 +181,7 @@ impl MaintenanceWindowExecutionTaskInvocationIdentityBuilder {
     }
     /// <p>The task type.</p>
     pub fn set_task_type(mut self, input: ::std::option::Option<crate::types::MaintenanceWindowTaskType>) -> Self {
-        self.task_type = input;
-        self
+        self.task_type = input; self
     }
     /// <p>The task type.</p>
     pub fn get_task_type(&self) -> &::std::option::Option<crate::types::MaintenanceWindowTaskType> {
@@ -199,8 +194,7 @@ impl MaintenanceWindowExecutionTaskInvocationIdentityBuilder {
     }
     /// <p>The parameters that were provided for the invocation when it was run.</p>
     pub fn set_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameters = input;
-        self
+        self.parameters = input; self
     }
     /// <p>The parameters that were provided for the invocation when it was run.</p>
     pub fn get_parameters(&self) -> &::std::option::Option<::std::string::String> {
@@ -213,8 +207,7 @@ impl MaintenanceWindowExecutionTaskInvocationIdentityBuilder {
     }
     /// <p>The status of the task invocation.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MaintenanceWindowExecutionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the task invocation.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::MaintenanceWindowExecutionStatus> {
@@ -227,8 +220,7 @@ impl MaintenanceWindowExecutionTaskInvocationIdentityBuilder {
     }
     /// <p>The details explaining the status of the task invocation. Not available for all status values.</p>
     pub fn set_status_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_details = input;
-        self
+        self.status_details = input; self
     }
     /// <p>The details explaining the status of the task invocation. Not available for all status values.</p>
     pub fn get_status_details(&self) -> &::std::option::Option<::std::string::String> {
@@ -241,8 +233,7 @@ impl MaintenanceWindowExecutionTaskInvocationIdentityBuilder {
     }
     /// <p>The time the invocation started.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The time the invocation started.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -255,8 +246,7 @@ impl MaintenanceWindowExecutionTaskInvocationIdentityBuilder {
     }
     /// <p>The time the invocation finished.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The time the invocation finished.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -269,8 +259,7 @@ impl MaintenanceWindowExecutionTaskInvocationIdentityBuilder {
     }
     /// <p>User-provided value that was specified when the target was registered with the maintenance window. This was also included in any Amazon CloudWatch Events events raised during the task invocation.</p>
     pub fn set_owner_information(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_information = input;
-        self
+        self.owner_information = input; self
     }
     /// <p>User-provided value that was specified when the target was registered with the maintenance window. This was also included in any Amazon CloudWatch Events events raised during the task invocation.</p>
     pub fn get_owner_information(&self) -> &::std::option::Option<::std::string::String> {
@@ -283,8 +272,7 @@ impl MaintenanceWindowExecutionTaskInvocationIdentityBuilder {
     }
     /// <p>The ID of the target definition in this maintenance window the invocation was performed for.</p>
     pub fn set_window_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.window_target_id = input;
-        self
+        self.window_target_id = input; self
     }
     /// <p>The ID of the target definition in this maintenance window the invocation was performed for.</p>
     pub fn get_window_target_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -293,18 +281,30 @@ impl MaintenanceWindowExecutionTaskInvocationIdentityBuilder {
     /// Consumes the builder and constructs a [`MaintenanceWindowExecutionTaskInvocationIdentity`](crate::types::MaintenanceWindowExecutionTaskInvocationIdentity).
     pub fn build(self) -> crate::types::MaintenanceWindowExecutionTaskInvocationIdentity {
         crate::types::MaintenanceWindowExecutionTaskInvocationIdentity {
-            window_execution_id: self.window_execution_id,
-            task_execution_id: self.task_execution_id,
-            invocation_id: self.invocation_id,
-            execution_id: self.execution_id,
-            task_type: self.task_type,
-            parameters: self.parameters,
-            status: self.status,
-            status_details: self.status_details,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            owner_information: self.owner_information,
-            window_target_id: self.window_target_id,
+            window_execution_id: self.window_execution_id
+            ,
+            task_execution_id: self.task_execution_id
+            ,
+            invocation_id: self.invocation_id
+            ,
+            execution_id: self.execution_id
+            ,
+            task_type: self.task_type
+            ,
+            parameters: self.parameters
+            ,
+            status: self.status
+            ,
+            status_details: self.status_details
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
+            owner_information: self.owner_information
+            ,
+            window_target_id: self.window_target_id
+            ,
         }
     }
 }
@@ -326,3 +326,4 @@ impl ::std::fmt::Debug for MaintenanceWindowExecutionTaskInvocationIdentityBuild
         formatter.finish()
     }
 }
+

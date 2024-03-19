@@ -5,56 +5,52 @@ pub use crate::operation::describe_opt_out_lists::_describe_opt_out_lists_input:
 
 impl DescribeOptOutListsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_opt_out_lists::DescribeOptOutListsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_opt_out_lists::DescribeOptOutListsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_opt_out_lists();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_opt_out_lists::DescribeOptOutListsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_opt_out_lists::DescribeOptOutListsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_opt_out_lists();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeOptOutLists`.
-///
+/// 
 /// <p>Describes the specified opt-out list or all opt-out lists in your account.</p>
 /// <p>If you specify opt-out list names, the output includes information for only the specified opt-out lists. Opt-out lists include only those that meet the filter criteria. If you don't specify opt-out list names or filters, the output includes information for all opt-out lists.</p>
 /// <p>If you specify an opt-out list name that isn't valid, an error is returned.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeOptOutListsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_opt_out_lists::builders::DescribeOptOutListsInputBuilder,
+                    inner: crate::operation::describe_opt_out_lists::builders::DescribeOptOutListsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_opt_out_lists::DescribeOptOutListsOutput,
-        crate::operation::describe_opt_out_lists::DescribeOptOutListsError,
-    > for DescribeOptOutListsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_opt_out_lists::DescribeOptOutListsOutput,
-            crate::operation::describe_opt_out_lists::DescribeOptOutListsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_opt_out_lists::DescribeOptOutListsOutput,
+                    crate::operation::describe_opt_out_lists::DescribeOptOutListsError,
+                > for DescribeOptOutListsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_opt_out_lists::DescribeOptOutListsOutput,
+                        crate::operation::describe_opt_out_lists::DescribeOptOutListsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeOptOutListsFluentBuilder {
     /// Creates a new `DescribeOptOutLists`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,59 +59,50 @@ impl DescribeOptOutListsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_opt_out_lists::DescribeOptOutListsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_opt_out_lists::DescribeOptOutListsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_opt_out_lists::DescribeOptOutLists::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_opt_out_lists::DescribeOptOutLists::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_opt_out_lists::DescribeOptOutListsOutput,
-        crate::operation::describe_opt_out_lists::DescribeOptOutListsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_opt_out_lists::DescribeOptOutListsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_opt_out_lists::DescribeOptOutListsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_opt_out_lists::DescribeOptOutLists::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_opt_out_lists::DescribeOptOutLists::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_opt_out_lists::DescribeOptOutListsOutput, crate::operation::describe_opt_out_lists::DescribeOptOutListsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_opt_out_lists::paginator::DescribeOptOutListsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::describe_opt_out_lists::paginator::DescribeOptOutListsPaginator {
-        crate::operation::describe_opt_out_lists::paginator::DescribeOptOutListsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_opt_out_lists::paginator::DescribeOptOutListsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::describe_opt_out_lists::paginator::DescribeOptOutListsPaginator {
+                                crate::operation::describe_opt_out_lists::paginator::DescribeOptOutListsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `OptOutListNames`.
     ///
     /// To override the contents of this collection use [`set_opt_out_list_names`](Self::set_opt_out_list_names).
@@ -126,12 +113,12 @@ impl DescribeOptOutListsFluentBuilder {
         self
     }
     /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p>
-    pub fn set_opt_out_list_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_opt_out_list_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_opt_out_list_names(input);
         self
     }
     /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p>
-    pub fn get_opt_out_list_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_opt_out_list_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_opt_out_list_names()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
@@ -163,3 +150,4 @@ impl DescribeOptOutListsFluentBuilder {
         self.inner.get_max_results()
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportSourceNetworkCfnTemplateOutput {
+pub struct ExportSourceNetworkCfnTemplateOutput  {
     /// <p>S3 bucket URL where the Source Network CloudFormation template was exported to.</p>
     pub s3_destination_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ExportSourceNetworkCfnTemplateOutput {
+impl  ExportSourceNetworkCfnTemplateOutput  {
     /// <p>S3 bucket URL where the Source Network CloudFormation template was exported to.</p>
-    pub fn s3_destination_url(&self) -> ::std::option::Option<&str> {
+    pub fn s3_destination_url(&self) -> ::std::option::Option<& str> {
         self.s3_destination_url.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ExportSourceNetworkCfnTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ExportSourceNetworkCfnTemplateOutput {
     /// Creates a new builder-style object to manufacture [`ExportSourceNetworkCfnTemplateOutput`](crate::operation::export_source_network_cfn_template::ExportSourceNetworkCfnTemplateOutput).
     pub fn builder() -> crate::operation::export_source_network_cfn_template::builders::ExportSourceNetworkCfnTemplateOutputBuilder {
@@ -40,27 +40,28 @@ impl ExportSourceNetworkCfnTemplateOutputBuilder {
     }
     /// <p>S3 bucket URL where the Source Network CloudFormation template was exported to.</p>
     pub fn set_s3_destination_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_destination_url = input;
-        self
+        self.s3_destination_url = input; self
     }
     /// <p>S3 bucket URL where the Source Network CloudFormation template was exported to.</p>
     pub fn get_s3_destination_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_destination_url
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ExportSourceNetworkCfnTemplateOutput`](crate::operation::export_source_network_cfn_template::ExportSourceNetworkCfnTemplateOutput).
     pub fn build(self) -> crate::operation::export_source_network_cfn_template::ExportSourceNetworkCfnTemplateOutput {
         crate::operation::export_source_network_cfn_template::ExportSourceNetworkCfnTemplateOutput {
-            s3_destination_url: self.s3_destination_url,
+            s3_destination_url: self.s3_destination_url
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

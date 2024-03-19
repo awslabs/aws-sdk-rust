@@ -3,11 +3,11 @@
 /// <p>The current status of the retry policy executed on the job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RetryPolicyExecution {
+pub struct RetryPolicyExecution  {
     /// <p>The current number of attempts made on the driver of the job.</p>
     pub current_attempt_count: i32,
 }
-impl RetryPolicyExecution {
+impl  RetryPolicyExecution  {
     /// <p>The current number of attempts made on the driver of the job.</p>
     pub fn current_attempt_count(&self) -> i32 {
         self.current_attempt_count
@@ -35,8 +35,7 @@ impl RetryPolicyExecutionBuilder {
     }
     /// <p>The current number of attempts made on the driver of the job.</p>
     pub fn set_current_attempt_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.current_attempt_count = input;
-        self
+        self.current_attempt_count = input; self
     }
     /// <p>The current number of attempts made on the driver of the job.</p>
     pub fn get_current_attempt_count(&self) -> &::std::option::Option<i32> {
@@ -46,13 +45,15 @@ impl RetryPolicyExecutionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`current_attempt_count`](crate::types::builders::RetryPolicyExecutionBuilder::current_attempt_count)
     pub fn build(self) -> ::std::result::Result<crate::types::RetryPolicyExecution, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RetryPolicyExecution {
-            current_attempt_count: self.current_attempt_count.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "current_attempt_count",
-                    "current_attempt_count was not specified but it is required when building RetryPolicyExecution",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RetryPolicyExecution {
+                current_attempt_count: self.current_attempt_count
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("current_attempt_count", "current_attempt_count was not specified but it is required when building RetryPolicyExecution")
+                    )?
+                ,
+            }
+        )
     }
 }
+

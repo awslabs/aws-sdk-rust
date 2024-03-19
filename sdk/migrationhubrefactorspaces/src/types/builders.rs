@@ -32,3 +32,4 @@ pub use crate::types::_uri_path_route_input::UriPathRouteInputBuilder;
 pub use crate::types::_default_route_input::DefaultRouteInputBuilder;
 
 pub use crate::types::_api_gateway_proxy_input::ApiGatewayProxyInputBuilder;
+

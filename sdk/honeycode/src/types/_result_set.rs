@@ -3,24 +3,22 @@
 /// <p>ResultSet contains the results of the request for a single block or list defined on the screen.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResultSet {
+pub struct ResultSet  {
     /// <p>List of headers for all the data cells in the block. The header identifies the name and default format of the data cell. Data cells appear in the same order in all rows as defined in the header. The names and formats are not repeated in the rows. If a particular row does not have a value for a data cell, a blank value is used.</p>
     /// <p>For example, a task list that displays the task name, due date and assigned person might have headers [ { "name": "Task Name"}, {"name": "Due Date", "format": "DATE"}, {"name": "Assigned", "format": "CONTACT"} ]. Every row in the result will have the task name as the first item, due date as the second item and assigned person as the third item. If a particular task does not have a due date, that row will still have a blank value in the second element and the assigned person will still be in the third element.</p>
-    pub headers: ::std::vec::Vec<crate::types::ColumnMetadata>,
+    pub headers: ::std::vec::Vec::<crate::types::ColumnMetadata>,
     /// <p>List of rows returned by the request. Each row has a row Id and a list of data cells in that row. The data cells will be present in the same order as they are defined in the header.</p>
-    pub rows: ::std::vec::Vec<crate::types::ResultRow>,
+    pub rows: ::std::vec::Vec::<crate::types::ResultRow>,
 }
-impl ResultSet {
+impl  ResultSet  {
     /// <p>List of headers for all the data cells in the block. The header identifies the name and default format of the data cell. Data cells appear in the same order in all rows as defined in the header. The names and formats are not repeated in the rows. If a particular row does not have a value for a data cell, a blank value is used.</p>
     /// <p>For example, a task list that displays the task name, due date and assigned person might have headers [ { "name": "Task Name"}, {"name": "Due Date", "format": "DATE"}, {"name": "Assigned", "format": "CONTACT"} ]. Every row in the result will have the task name as the first item, due date as the second item and assigned person as the third item. If a particular task does not have a due date, that row will still have a blank value in the second element and the assigned person will still be in the third element.</p>
-    pub fn headers(&self) -> &[crate::types::ColumnMetadata] {
-        use std::ops::Deref;
-        self.headers.deref()
+    pub fn headers(&self) -> & [crate::types::ColumnMetadata] {
+        use std::ops::Deref; self.headers.deref()
     }
     /// <p>List of rows returned by the request. Each row has a row Id and a list of data cells in that row. The data cells will be present in the same order as they are defined in the header.</p>
-    pub fn rows(&self) -> &[crate::types::ResultRow] {
-        use std::ops::Deref;
-        self.rows.deref()
+    pub fn rows(&self) -> & [crate::types::ResultRow] {
+        use std::ops::Deref; self.rows.deref()
     }
 }
 impl ResultSet {
@@ -34,8 +32,8 @@ impl ResultSet {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResultSetBuilder {
-    pub(crate) headers: ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>,
-    pub(crate) rows: ::std::option::Option<::std::vec::Vec<crate::types::ResultRow>>,
+    pub(crate) headers: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnMetadata>>,
+    pub(crate) rows: ::std::option::Option<::std::vec::Vec::<crate::types::ResultRow>>,
 }
 impl ResultSetBuilder {
     /// Appends an item to `headers`.
@@ -46,19 +44,18 @@ impl ResultSetBuilder {
     /// <p>For example, a task list that displays the task name, due date and assigned person might have headers [ { "name": "Task Name"}, {"name": "Due Date", "format": "DATE"}, {"name": "Assigned", "format": "CONTACT"} ]. Every row in the result will have the task name as the first item, due date as the second item and assigned person as the third item. If a particular task does not have a due date, that row will still have a blank value in the second element and the assigned person will still be in the third element.</p>
     pub fn headers(mut self, input: crate::types::ColumnMetadata) -> Self {
         let mut v = self.headers.unwrap_or_default();
-        v.push(input);
-        self.headers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.headers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of headers for all the data cells in the block. The header identifies the name and default format of the data cell. Data cells appear in the same order in all rows as defined in the header. The names and formats are not repeated in the rows. If a particular row does not have a value for a data cell, a blank value is used.</p>
     /// <p>For example, a task list that displays the task name, due date and assigned person might have headers [ { "name": "Task Name"}, {"name": "Due Date", "format": "DATE"}, {"name": "Assigned", "format": "CONTACT"} ]. Every row in the result will have the task name as the first item, due date as the second item and assigned person as the third item. If a particular task does not have a due date, that row will still have a blank value in the second element and the assigned person will still be in the third element.</p>
-    pub fn set_headers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>) -> Self {
-        self.headers = input;
-        self
+    pub fn set_headers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnMetadata>>) -> Self {
+        self.headers = input; self
     }
     /// <p>List of headers for all the data cells in the block. The header identifies the name and default format of the data cell. Data cells appear in the same order in all rows as defined in the header. The names and formats are not repeated in the rows. If a particular row does not have a value for a data cell, a blank value is used.</p>
     /// <p>For example, a task list that displays the task name, due date and assigned person might have headers [ { "name": "Task Name"}, {"name": "Due Date", "format": "DATE"}, {"name": "Assigned", "format": "CONTACT"} ]. Every row in the result will have the task name as the first item, due date as the second item and assigned person as the third item. If a particular task does not have a due date, that row will still have a blank value in the second element and the assigned person will still be in the third element.</p>
-    pub fn get_headers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>> {
+    pub fn get_headers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ColumnMetadata>> {
         &self.headers
     }
     /// Appends an item to `rows`.
@@ -68,17 +65,16 @@ impl ResultSetBuilder {
     /// <p>List of rows returned by the request. Each row has a row Id and a list of data cells in that row. The data cells will be present in the same order as they are defined in the header.</p>
     pub fn rows(mut self, input: crate::types::ResultRow) -> Self {
         let mut v = self.rows.unwrap_or_default();
-        v.push(input);
-        self.rows = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rows = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of rows returned by the request. Each row has a row Id and a list of data cells in that row. The data cells will be present in the same order as they are defined in the header.</p>
-    pub fn set_rows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResultRow>>) -> Self {
-        self.rows = input;
-        self
+    pub fn set_rows(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResultRow>>) -> Self {
+        self.rows = input; self
     }
     /// <p>List of rows returned by the request. Each row has a row Id and a list of data cells in that row. The data cells will be present in the same order as they are defined in the header.</p>
-    pub fn get_rows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResultRow>> {
+    pub fn get_rows(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResultRow>> {
         &self.rows
     }
     /// Consumes the builder and constructs a [`ResultSet`](crate::types::ResultSet).
@@ -86,19 +82,20 @@ impl ResultSetBuilder {
     /// - [`headers`](crate::types::builders::ResultSetBuilder::headers)
     /// - [`rows`](crate::types::builders::ResultSetBuilder::rows)
     pub fn build(self) -> ::std::result::Result<crate::types::ResultSet, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResultSet {
-            headers: self.headers.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "headers",
-                    "headers was not specified but it is required when building ResultSet",
-                )
-            })?,
-            rows: self.rows.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rows",
-                    "rows was not specified but it is required when building ResultSet",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResultSet {
+                headers: self.headers
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("headers", "headers was not specified but it is required when building ResultSet")
+                    )?
+                ,
+                rows: self.rows
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rows", "rows was not specified but it is required when building ResultSet")
+                    )?
+                ,
+            }
+        )
     }
 }
+

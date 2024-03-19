@@ -3,19 +3,19 @@
 /// <p>S3 report location for the scheduled query run.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3ReportLocation {
+pub struct S3ReportLocation  {
     /// <p>S3 bucket name.</p>
     pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>S3 key.</p>
     pub object_key: ::std::option::Option<::std::string::String>,
 }
-impl S3ReportLocation {
+impl  S3ReportLocation  {
     /// <p>S3 bucket name.</p>
-    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_name(&self) -> ::std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p>S3 key.</p>
-    pub fn object_key(&self) -> ::std::option::Option<&str> {
+    pub fn object_key(&self) -> ::std::option::Option<& str> {
         self.object_key.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl S3ReportLocationBuilder {
     }
     /// <p>S3 bucket name.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>S3 bucket name.</p>
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl S3ReportLocationBuilder {
     }
     /// <p>S3 key.</p>
     pub fn set_object_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object_key = input;
-        self
+        self.object_key = input; self
     }
     /// <p>S3 key.</p>
     pub fn get_object_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl S3ReportLocationBuilder {
     /// Consumes the builder and constructs a [`S3ReportLocation`](crate::types::S3ReportLocation).
     pub fn build(self) -> crate::types::S3ReportLocation {
         crate::types::S3ReportLocation {
-            bucket_name: self.bucket_name,
-            object_key: self.object_key,
+            bucket_name: self.bucket_name
+            ,
+            object_key: self.object_key
+            ,
         }
     }
 }
+

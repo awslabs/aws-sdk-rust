@@ -3,22 +3,22 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplyPendingMaintenanceActionOutput {
+pub struct ApplyPendingMaintenanceActionOutput  {
     /// <p>The DMS resource that the pending maintenance action will be applied to.</p>
     pub resource_pending_maintenance_actions: ::std::option::Option<crate::types::ResourcePendingMaintenanceActions>,
     _request_id: Option<String>,
 }
-impl ApplyPendingMaintenanceActionOutput {
+impl  ApplyPendingMaintenanceActionOutput  {
     /// <p>The DMS resource that the pending maintenance action will be applied to.</p>
-    pub fn resource_pending_maintenance_actions(&self) -> ::std::option::Option<&crate::types::ResourcePendingMaintenanceActions> {
+    pub fn resource_pending_maintenance_actions(&self) -> ::std::option::Option<& crate::types::ResourcePendingMaintenanceActions> {
         self.resource_pending_maintenance_actions.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ApplyPendingMaintenanceActionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ApplyPendingMaintenanceActionOutput {
     /// Creates a new builder-style object to manufacture [`ApplyPendingMaintenanceActionOutput`](crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionOutput).
     pub fn builder() -> crate::operation::apply_pending_maintenance_action::builders::ApplyPendingMaintenanceActionOutputBuilder {
@@ -41,27 +41,28 @@ impl ApplyPendingMaintenanceActionOutputBuilder {
     }
     /// <p>The DMS resource that the pending maintenance action will be applied to.</p>
     pub fn set_resource_pending_maintenance_actions(mut self, input: ::std::option::Option<crate::types::ResourcePendingMaintenanceActions>) -> Self {
-        self.resource_pending_maintenance_actions = input;
-        self
+        self.resource_pending_maintenance_actions = input; self
     }
     /// <p>The DMS resource that the pending maintenance action will be applied to.</p>
     pub fn get_resource_pending_maintenance_actions(&self) -> &::std::option::Option<crate::types::ResourcePendingMaintenanceActions> {
         &self.resource_pending_maintenance_actions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ApplyPendingMaintenanceActionOutput`](crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionOutput).
     pub fn build(self) -> crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionOutput {
         crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionOutput {
-            resource_pending_maintenance_actions: self.resource_pending_maintenance_actions,
+            resource_pending_maintenance_actions: self.resource_pending_maintenance_actions
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

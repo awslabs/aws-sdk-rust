@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchUpdateTableRowsInput {
+pub struct BatchUpdateTableRowsInput  {
     /// <p>The ID of the workbook where the rows are being updated.</p>
     /// <p>If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.</p>
     pub workbook_id: ::std::option::Option<::std::string::String>,
@@ -11,32 +11,33 @@ pub struct BatchUpdateTableRowsInput {
     pub table_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of rows to update in the table. Each item in this list needs to contain the row id to update along with the map of column id to cell values for each column in that row that needs to be updated. You need to specify at least one row in this list, and for each row, you need to specify at least one column to update.</p>
     /// <p>Note that if one of the row or column ids in the request does not exist in the table, then the request fails and no updates are made to the table.</p>
-    pub rows_to_update: ::std::option::Option<::std::vec::Vec<crate::types::UpdateRowData>>,
+    pub rows_to_update: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateRowData>>,
     /// <p>The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again.</p>
     /// <p>Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
-impl BatchUpdateTableRowsInput {
+impl  BatchUpdateTableRowsInput  {
     /// <p>The ID of the workbook where the rows are being updated.</p>
     /// <p>If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.</p>
-    pub fn workbook_id(&self) -> ::std::option::Option<&str> {
+    pub fn workbook_id(&self) -> ::std::option::Option<& str> {
         self.workbook_id.as_deref()
     }
     /// <p>The ID of the table where the rows are being updated.</p>
     /// <p>If a table with the specified id could not be found, this API throws ResourceNotFoundException.</p>
-    pub fn table_id(&self) -> ::std::option::Option<&str> {
+    pub fn table_id(&self) -> ::std::option::Option<& str> {
         self.table_id.as_deref()
     }
     /// <p>The list of rows to update in the table. Each item in this list needs to contain the row id to update along with the map of column id to cell values for each column in that row that needs to be updated. You need to specify at least one row in this list, and for each row, you need to specify at least one column to update.</p>
     /// <p>Note that if one of the row or column ids in the request does not exist in the table, then the request fails and no updates are made to the table.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rows_to_update.is_none()`.
-    pub fn rows_to_update(&self) -> &[crate::types::UpdateRowData] {
-        self.rows_to_update.as_deref().unwrap_or_default()
+    pub fn rows_to_update(&self) -> & [crate::types::UpdateRowData] {
+        self.rows_to_update.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again.</p>
     /// <p>Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
 }
@@ -53,7 +54,7 @@ impl BatchUpdateTableRowsInput {
 pub struct BatchUpdateTableRowsInputBuilder {
     pub(crate) workbook_id: ::std::option::Option<::std::string::String>,
     pub(crate) table_id: ::std::option::Option<::std::string::String>,
-    pub(crate) rows_to_update: ::std::option::Option<::std::vec::Vec<crate::types::UpdateRowData>>,
+    pub(crate) rows_to_update: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateRowData>>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl BatchUpdateTableRowsInputBuilder {
@@ -67,8 +68,7 @@ impl BatchUpdateTableRowsInputBuilder {
     /// <p>The ID of the workbook where the rows are being updated.</p>
     /// <p>If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.</p>
     pub fn set_workbook_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workbook_id = input;
-        self
+        self.workbook_id = input; self
     }
     /// <p>The ID of the workbook where the rows are being updated.</p>
     /// <p>If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.</p>
@@ -85,8 +85,7 @@ impl BatchUpdateTableRowsInputBuilder {
     /// <p>The ID of the table where the rows are being updated.</p>
     /// <p>If a table with the specified id could not be found, this API throws ResourceNotFoundException.</p>
     pub fn set_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_id = input;
-        self
+        self.table_id = input; self
     }
     /// <p>The ID of the table where the rows are being updated.</p>
     /// <p>If a table with the specified id could not be found, this API throws ResourceNotFoundException.</p>
@@ -101,19 +100,18 @@ impl BatchUpdateTableRowsInputBuilder {
     /// <p>Note that if one of the row or column ids in the request does not exist in the table, then the request fails and no updates are made to the table.</p>
     pub fn rows_to_update(mut self, input: crate::types::UpdateRowData) -> Self {
         let mut v = self.rows_to_update.unwrap_or_default();
-        v.push(input);
-        self.rows_to_update = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rows_to_update = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of rows to update in the table. Each item in this list needs to contain the row id to update along with the map of column id to cell values for each column in that row that needs to be updated. You need to specify at least one row in this list, and for each row, you need to specify at least one column to update.</p>
     /// <p>Note that if one of the row or column ids in the request does not exist in the table, then the request fails and no updates are made to the table.</p>
-    pub fn set_rows_to_update(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateRowData>>) -> Self {
-        self.rows_to_update = input;
-        self
+    pub fn set_rows_to_update(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateRowData>>) -> Self {
+        self.rows_to_update = input; self
     }
     /// <p>The list of rows to update in the table. Each item in this list needs to contain the row id to update along with the map of column id to cell values for each column in that row that needs to be updated. You need to specify at least one row in this list, and for each row, you need to specify at least one column to update.</p>
     /// <p>Note that if one of the row or column ids in the request does not exist in the table, then the request fails and no updates are made to the table.</p>
-    pub fn get_rows_to_update(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateRowData>> {
+    pub fn get_rows_to_update(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UpdateRowData>> {
         &self.rows_to_update
     }
     /// <p>The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again.</p>
@@ -125,8 +123,7 @@ impl BatchUpdateTableRowsInputBuilder {
     /// <p>The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again.</p>
     /// <p>Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again.</p>
     /// <p>Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days.</p>
@@ -134,15 +131,19 @@ impl BatchUpdateTableRowsInputBuilder {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`BatchUpdateTableRowsInput`](crate::operation::batch_update_table_rows::BatchUpdateTableRowsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_update_table_rows::BatchUpdateTableRowsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::batch_update_table_rows::BatchUpdateTableRowsInput {
-            workbook_id: self.workbook_id,
-            table_id: self.table_id,
-            rows_to_update: self.rows_to_update,
-            client_request_token: self.client_request_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_update_table_rows::BatchUpdateTableRowsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_update_table_rows::BatchUpdateTableRowsInput {
+                workbook_id: self.workbook_id
+                ,
+                table_id: self.table_id
+                ,
+                rows_to_update: self.rows_to_update
+                ,
+                client_request_token: self.client_request_token
+                ,
+            }
+        )
     }
 }
+

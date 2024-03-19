@@ -2,33 +2,35 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRealtimeLogConfigInput {
+pub struct CreateRealtimeLogConfigInput  {
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
-    pub end_points: ::std::option::Option<::std::vec::Vec<crate::types::EndPoint>>,
+    pub end_points: ::std::option::Option<::std::vec::Vec::<crate::types::EndPoint>>,
     /// <p>A list of fields to include in each real-time log record.</p>
     /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub fields: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A unique name to identify this real-time log configuration.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. You must provide an integer between 1 and 100, inclusive.</p>
     pub sampling_rate: ::std::option::Option<i64>,
 }
-impl CreateRealtimeLogConfigInput {
+impl  CreateRealtimeLogConfigInput  {
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.end_points.is_none()`.
-    pub fn end_points(&self) -> &[crate::types::EndPoint] {
-        self.end_points.as_deref().unwrap_or_default()
+    pub fn end_points(&self) -> & [crate::types::EndPoint] {
+        self.end_points.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of fields to include in each real-time log record.</p>
     /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fields.is_none()`.
-    pub fn fields(&self) -> &[::std::string::String] {
-        self.fields.as_deref().unwrap_or_default()
+    pub fn fields(&self) -> & [::std::string::String] {
+        self.fields.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A unique name to identify this real-time log configuration.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. You must provide an integer between 1 and 100, inclusive.</p>
@@ -47,8 +49,8 @@ impl CreateRealtimeLogConfigInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRealtimeLogConfigInputBuilder {
-    pub(crate) end_points: ::std::option::Option<::std::vec::Vec<crate::types::EndPoint>>,
-    pub(crate) fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) end_points: ::std::option::Option<::std::vec::Vec::<crate::types::EndPoint>>,
+    pub(crate) fields: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) sampling_rate: ::std::option::Option<i64>,
 }
@@ -60,17 +62,16 @@ impl CreateRealtimeLogConfigInputBuilder {
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
     pub fn end_points(mut self, input: crate::types::EndPoint) -> Self {
         let mut v = self.end_points.unwrap_or_default();
-        v.push(input);
-        self.end_points = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.end_points = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
-    pub fn set_end_points(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndPoint>>) -> Self {
-        self.end_points = input;
-        self
+    pub fn set_end_points(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EndPoint>>) -> Self {
+        self.end_points = input; self
     }
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
-    pub fn get_end_points(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndPoint>> {
+    pub fn get_end_points(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EndPoint>> {
         &self.end_points
     }
     /// Appends an item to `fields`.
@@ -81,19 +82,18 @@ impl CreateRealtimeLogConfigInputBuilder {
     /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn fields(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.fields.unwrap_or_default();
-        v.push(input.into());
-        self.fields = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.fields = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of fields to include in each real-time log record.</p>
     /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.fields = input;
-        self
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.fields = input; self
     }
     /// <p>A list of fields to include in each real-time log record.</p>
     /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.fields
     }
     /// <p>A unique name to identify this real-time log configuration.</p>
@@ -104,8 +104,7 @@ impl CreateRealtimeLogConfigInputBuilder {
     }
     /// <p>A unique name to identify this real-time log configuration.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A unique name to identify this real-time log configuration.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,25 +118,26 @@ impl CreateRealtimeLogConfigInputBuilder {
     }
     /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. You must provide an integer between 1 and 100, inclusive.</p>
     pub fn set_sampling_rate(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.sampling_rate = input;
-        self
+        self.sampling_rate = input; self
     }
     /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. You must provide an integer between 1 and 100, inclusive.</p>
     pub fn get_sampling_rate(&self) -> &::std::option::Option<i64> {
         &self.sampling_rate
     }
     /// Consumes the builder and constructs a [`CreateRealtimeLogConfigInput`](crate::operation::create_realtime_log_config::CreateRealtimeLogConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_realtime_log_config::CreateRealtimeLogConfigInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_realtime_log_config::CreateRealtimeLogConfigInput {
-            end_points: self.end_points,
-            fields: self.fields,
-            name: self.name,
-            sampling_rate: self.sampling_rate,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_realtime_log_config::CreateRealtimeLogConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_realtime_log_config::CreateRealtimeLogConfigInput {
+                end_points: self.end_points
+                ,
+                fields: self.fields
+                ,
+                name: self.name
+                ,
+                sampling_rate: self.sampling_rate
+                ,
+            }
+        )
     }
 }
+

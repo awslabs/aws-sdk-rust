@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopKeyUsageOutput {
+pub struct StopKeyUsageOutput  {
     /// <p>The <code>KeyARN</code> of the key.</p>
     pub key: ::std::option::Option<crate::types::Key>,
     _request_id: Option<String>,
 }
-impl StopKeyUsageOutput {
+impl  StopKeyUsageOutput  {
     /// <p>The <code>KeyARN</code> of the key.</p>
-    pub fn key(&self) -> ::std::option::Option<&crate::types::Key> {
+    pub fn key(&self) -> ::std::option::Option<& crate::types::Key> {
         self.key.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StopKeyUsageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StopKeyUsageOutput {
     /// Creates a new builder-style object to manufacture [`StopKeyUsageOutput`](crate::operation::stop_key_usage::StopKeyUsageOutput).
     pub fn builder() -> crate::operation::stop_key_usage::builders::StopKeyUsageOutputBuilder {
@@ -41,27 +41,28 @@ impl StopKeyUsageOutputBuilder {
     }
     /// <p>The <code>KeyARN</code> of the key.</p>
     pub fn set_key(mut self, input: ::std::option::Option<crate::types::Key>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The <code>KeyARN</code> of the key.</p>
     pub fn get_key(&self) -> &::std::option::Option<crate::types::Key> {
         &self.key
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StopKeyUsageOutput`](crate::operation::stop_key_usage::StopKeyUsageOutput).
     pub fn build(self) -> crate::operation::stop_key_usage::StopKeyUsageOutput {
         crate::operation::stop_key_usage::StopKeyUsageOutput {
-            key: self.key,
+            key: self.key
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

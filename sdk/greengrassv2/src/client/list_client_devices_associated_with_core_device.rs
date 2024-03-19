@@ -2,20 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListClientDevicesAssociatedWithCoreDevice`](crate::operation::list_client_devices_associated_with_core_device::builders::ListClientDevicesAssociatedWithCoreDeviceFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_client_devices_associated_with_core_device::builders::ListClientDevicesAssociatedWithCoreDeviceFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`core_device_thing_name(impl Into<String>)`](crate::operation::list_client_devices_associated_with_core_device::builders::ListClientDevicesAssociatedWithCoreDeviceFluentBuilder::core_device_thing_name) / [`set_core_device_thing_name(Option<String>)`](crate::operation::list_client_devices_associated_with_core_device::builders::ListClientDevicesAssociatedWithCoreDeviceFluentBuilder::set_core_device_thing_name):<br>required: **true**<br><p>The name of the core device. This is also the name of the IoT thing.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_client_devices_associated_with_core_device::builders::ListClientDevicesAssociatedWithCoreDeviceFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_client_devices_associated_with_core_device::builders::ListClientDevicesAssociatedWithCoreDeviceFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to be returned per paginated request.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_client_devices_associated_with_core_device::builders::ListClientDevicesAssociatedWithCoreDeviceFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_client_devices_associated_with_core_device::builders::ListClientDevicesAssociatedWithCoreDeviceFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to be used for the next set of paginated results.</p><br>
-    /// - On success, responds with [`ListClientDevicesAssociatedWithCoreDeviceOutput`](crate::operation::list_client_devices_associated_with_core_device::ListClientDevicesAssociatedWithCoreDeviceOutput) with field(s):
+                            /// - On success, responds with [`ListClientDevicesAssociatedWithCoreDeviceOutput`](crate::operation::list_client_devices_associated_with_core_device::ListClientDevicesAssociatedWithCoreDeviceOutput) with field(s):
     ///   - [`associated_client_devices(Option<Vec::<AssociatedClientDevice>>)`](crate::operation::list_client_devices_associated_with_core_device::ListClientDevicesAssociatedWithCoreDeviceOutput::associated_client_devices): <p>A list that describes the client devices that are associated with the core device.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_client_devices_associated_with_core_device::ListClientDevicesAssociatedWithCoreDeviceOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<ListClientDevicesAssociatedWithCoreDeviceError>`](crate::operation::list_client_devices_associated_with_core_device::ListClientDevicesAssociatedWithCoreDeviceError)
-    pub fn list_client_devices_associated_with_core_device(
-        &self,
-    ) -> crate::operation::list_client_devices_associated_with_core_device::builders::ListClientDevicesAssociatedWithCoreDeviceFluentBuilder {
-        crate::operation::list_client_devices_associated_with_core_device::builders::ListClientDevicesAssociatedWithCoreDeviceFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<ListClientDevicesAssociatedWithCoreDeviceError>`](crate::operation::list_client_devices_associated_with_core_device::ListClientDevicesAssociatedWithCoreDeviceError)
+    pub fn list_client_devices_associated_with_core_device(&self) -> crate::operation::list_client_devices_associated_with_core_device::builders::ListClientDevicesAssociatedWithCoreDeviceFluentBuilder {
+                                crate::operation::list_client_devices_associated_with_core_device::builders::ListClientDevicesAssociatedWithCoreDeviceFluentBuilder::new(self.handle.clone())
+                            }
 }
+

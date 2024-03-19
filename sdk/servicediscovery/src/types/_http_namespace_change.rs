@@ -3,15 +3,14 @@
 /// <p>Updated properties for the HTTP namespace.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HttpNamespaceChange {
+pub struct HttpNamespaceChange  {
     /// <p>An updated description for the HTTP namespace.</p>
     pub description: ::std::string::String,
 }
-impl HttpNamespaceChange {
+impl  HttpNamespaceChange  {
     /// <p>An updated description for the HTTP namespace.</p>
-    pub fn description(&self) -> &str {
-        use std::ops::Deref;
-        self.description.deref()
+    pub fn description(&self) -> & str {
+        use std::ops::Deref; self.description.deref()
     }
 }
 impl HttpNamespaceChange {
@@ -36,8 +35,7 @@ impl HttpNamespaceChangeBuilder {
     }
     /// <p>An updated description for the HTTP namespace.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>An updated description for the HTTP namespace.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl HttpNamespaceChangeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`description`](crate::types::builders::HttpNamespaceChangeBuilder::description)
     pub fn build(self) -> ::std::result::Result<crate::types::HttpNamespaceChange, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::HttpNamespaceChange {
-            description: self.description.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "description",
-                    "description was not specified but it is required when building HttpNamespaceChange",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::HttpNamespaceChange {
+                description: self.description
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("description", "description was not specified but it is required when building HttpNamespaceChange")
+                    )?
+                ,
+            }
+        )
     }
 }
+

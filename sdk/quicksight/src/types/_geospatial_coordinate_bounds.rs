@@ -3,7 +3,7 @@
 /// <p>The bound options (north, south, west, east) of the geospatial window options.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GeospatialCoordinateBounds {
+pub struct GeospatialCoordinateBounds  {
     /// <p>The latitude of the north bound of the geospatial coordinate bounds.</p>
     pub north: f64,
     /// <p>The latitude of the south bound of the geospatial coordinate bounds.</p>
@@ -13,7 +13,7 @@ pub struct GeospatialCoordinateBounds {
     /// <p>The longitude of the east bound of the geospatial coordinate bounds.</p>
     pub east: f64,
 }
-impl GeospatialCoordinateBounds {
+impl  GeospatialCoordinateBounds  {
     /// <p>The latitude of the north bound of the geospatial coordinate bounds.</p>
     pub fn north(&self) -> f64 {
         self.north
@@ -56,8 +56,7 @@ impl GeospatialCoordinateBoundsBuilder {
     }
     /// <p>The latitude of the north bound of the geospatial coordinate bounds.</p>
     pub fn set_north(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.north = input;
-        self
+        self.north = input; self
     }
     /// <p>The latitude of the north bound of the geospatial coordinate bounds.</p>
     pub fn get_north(&self) -> &::std::option::Option<f64> {
@@ -71,8 +70,7 @@ impl GeospatialCoordinateBoundsBuilder {
     }
     /// <p>The latitude of the south bound of the geospatial coordinate bounds.</p>
     pub fn set_south(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.south = input;
-        self
+        self.south = input; self
     }
     /// <p>The latitude of the south bound of the geospatial coordinate bounds.</p>
     pub fn get_south(&self) -> &::std::option::Option<f64> {
@@ -86,8 +84,7 @@ impl GeospatialCoordinateBoundsBuilder {
     }
     /// <p>The longitude of the west bound of the geospatial coordinate bounds.</p>
     pub fn set_west(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.west = input;
-        self
+        self.west = input; self
     }
     /// <p>The longitude of the west bound of the geospatial coordinate bounds.</p>
     pub fn get_west(&self) -> &::std::option::Option<f64> {
@@ -101,8 +98,7 @@ impl GeospatialCoordinateBoundsBuilder {
     }
     /// <p>The longitude of the east bound of the geospatial coordinate bounds.</p>
     pub fn set_east(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.east = input;
-        self
+        self.east = input; self
     }
     /// <p>The longitude of the east bound of the geospatial coordinate bounds.</p>
     pub fn get_east(&self) -> &::std::option::Option<f64> {
@@ -115,31 +111,30 @@ impl GeospatialCoordinateBoundsBuilder {
     /// - [`west`](crate::types::builders::GeospatialCoordinateBoundsBuilder::west)
     /// - [`east`](crate::types::builders::GeospatialCoordinateBoundsBuilder::east)
     pub fn build(self) -> ::std::result::Result<crate::types::GeospatialCoordinateBounds, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GeospatialCoordinateBounds {
-            north: self.north.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "north",
-                    "north was not specified but it is required when building GeospatialCoordinateBounds",
-                )
-            })?,
-            south: self.south.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "south",
-                    "south was not specified but it is required when building GeospatialCoordinateBounds",
-                )
-            })?,
-            west: self.west.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "west",
-                    "west was not specified but it is required when building GeospatialCoordinateBounds",
-                )
-            })?,
-            east: self.east.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "east",
-                    "east was not specified but it is required when building GeospatialCoordinateBounds",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GeospatialCoordinateBounds {
+                north: self.north
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("north", "north was not specified but it is required when building GeospatialCoordinateBounds")
+                    )?
+                ,
+                south: self.south
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("south", "south was not specified but it is required when building GeospatialCoordinateBounds")
+                    )?
+                ,
+                west: self.west
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("west", "west was not specified but it is required when building GeospatialCoordinateBounds")
+                    )?
+                ,
+                east: self.east
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("east", "east was not specified but it is required when building GeospatialCoordinateBounds")
+                    )?
+                ,
+            }
+        )
     }
 }
+

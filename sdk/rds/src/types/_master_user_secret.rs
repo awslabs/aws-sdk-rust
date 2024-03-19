@@ -4,7 +4,7 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MasterUserSecret {
+pub struct MasterUserSecret  {
     /// <p>The Amazon Resource Name (ARN) of the secret.</p>
     pub secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the secret.</p>
@@ -24,9 +24,9 @@ pub struct MasterUserSecret {
     /// <p>The Amazon Web Services KMS key identifier that is used to encrypt the secret.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
-impl MasterUserSecret {
+impl  MasterUserSecret  {
     /// <p>The Amazon Resource Name (ARN) of the secret.</p>
-    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
+    pub fn secret_arn(&self) -> ::std::option::Option<& str> {
         self.secret_arn.as_deref()
     }
     /// <p>The status of the secret.</p>
@@ -42,11 +42,11 @@ impl MasterUserSecret {
     /// <p><code>impaired</code> - The secret can be used to access database credentials, but it can't be rotated. A secret might have this status if, for example, permissions are changed so that RDS can no longer access either the secret or the KMS key for the secret.</p>
     /// <p>When a secret has this status, you can correct the condition that caused the status. Alternatively, modify the DB instance to turn off automatic management of database credentials, and then modify the DB instance again to turn on automatic management of database credentials.</p></li>
     /// </ul>
-    pub fn secret_status(&self) -> ::std::option::Option<&str> {
+    pub fn secret_status(&self) -> ::std::option::Option<& str> {
         self.secret_status.as_deref()
     }
     /// <p>The Amazon Web Services KMS key identifier that is used to encrypt the secret.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
@@ -73,8 +73,7 @@ impl MasterUserSecretBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the secret.</p>
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_arn = input;
-        self
+        self.secret_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the secret.</p>
     pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl MasterUserSecretBuilder {
     /// <p>When a secret has this status, you can correct the condition that caused the status. Alternatively, modify the DB instance to turn off automatic management of database credentials, and then modify the DB instance again to turn on automatic management of database credentials.</p></li>
     /// </ul>
     pub fn set_secret_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_status = input;
-        self
+        self.secret_status = input; self
     }
     /// <p>The status of the secret.</p>
     /// <p>The possible status values include the following:</p>
@@ -137,8 +135,7 @@ impl MasterUserSecretBuilder {
     }
     /// <p>The Amazon Web Services KMS key identifier that is used to encrypt the secret.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The Amazon Web Services KMS key identifier that is used to encrypt the secret.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,9 +144,13 @@ impl MasterUserSecretBuilder {
     /// Consumes the builder and constructs a [`MasterUserSecret`](crate::types::MasterUserSecret).
     pub fn build(self) -> crate::types::MasterUserSecret {
         crate::types::MasterUserSecret {
-            secret_arn: self.secret_arn,
-            secret_status: self.secret_status,
-            kms_key_id: self.kms_key_id,
+            secret_arn: self.secret_arn
+            ,
+            secret_status: self.secret_status
+            ,
+            kms_key_id: self.kms_key_id
+            ,
         }
     }
 }
+

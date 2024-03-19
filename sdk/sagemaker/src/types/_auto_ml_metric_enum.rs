@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let automlmetricenum = unimplemented!();
 /// match automlmetricenum {
@@ -45,16 +45,14 @@
 /// Specifically, when `automlmetricenum` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AutoMlMetricEnum::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum AutoMlMetricEnum {
     #[allow(missing_docs)] // documentation missing in model
     Auc,
@@ -92,124 +90,107 @@ pub enum AutoMlMetricEnum {
     Wape,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for AutoMlMetricEnum {
-    fn from(s: &str) -> Self {
-        match s {
-            "AUC" => AutoMlMetricEnum::Auc,
-            "Accuracy" => AutoMlMetricEnum::Accuracy,
-            "AverageWeightedQuantileLoss" => AutoMlMetricEnum::AverageWeightedQuantileLoss,
-            "BalancedAccuracy" => AutoMlMetricEnum::BalancedAccuracy,
-            "F1" => AutoMlMetricEnum::F1,
-            "F1macro" => AutoMlMetricEnum::F1Macro,
-            "MAE" => AutoMlMetricEnum::Mae,
-            "MAPE" => AutoMlMetricEnum::Mape,
-            "MASE" => AutoMlMetricEnum::Mase,
-            "MSE" => AutoMlMetricEnum::Mse,
-            "Precision" => AutoMlMetricEnum::Precision,
-            "PrecisionMacro" => AutoMlMetricEnum::PrecisionMacro,
-            "R2" => AutoMlMetricEnum::R2,
-            "RMSE" => AutoMlMetricEnum::Rmse,
-            "Recall" => AutoMlMetricEnum::Recall,
-            "RecallMacro" => AutoMlMetricEnum::RecallMacro,
-            "WAPE" => AutoMlMetricEnum::Wape,
-            other => AutoMlMetricEnum::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "AUC" => AutoMlMetricEnum::Auc,
+"Accuracy" => AutoMlMetricEnum::Accuracy,
+"AverageWeightedQuantileLoss" => AutoMlMetricEnum::AverageWeightedQuantileLoss,
+"BalancedAccuracy" => AutoMlMetricEnum::BalancedAccuracy,
+"F1" => AutoMlMetricEnum::F1,
+"F1macro" => AutoMlMetricEnum::F1Macro,
+"MAE" => AutoMlMetricEnum::Mae,
+"MAPE" => AutoMlMetricEnum::Mape,
+"MASE" => AutoMlMetricEnum::Mase,
+"MSE" => AutoMlMetricEnum::Mse,
+"Precision" => AutoMlMetricEnum::Precision,
+"PrecisionMacro" => AutoMlMetricEnum::PrecisionMacro,
+"R2" => AutoMlMetricEnum::R2,
+"RMSE" => AutoMlMetricEnum::Rmse,
+"Recall" => AutoMlMetricEnum::Recall,
+"RecallMacro" => AutoMlMetricEnum::RecallMacro,
+"WAPE" => AutoMlMetricEnum::Wape,
+other => AutoMlMetricEnum::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for AutoMlMetricEnum {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(AutoMlMetricEnum::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(AutoMlMetricEnum::from(s))
+                    }
+                }
 impl AutoMlMetricEnum {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AutoMlMetricEnum::Auc => "AUC",
-            AutoMlMetricEnum::Accuracy => "Accuracy",
-            AutoMlMetricEnum::AverageWeightedQuantileLoss => "AverageWeightedQuantileLoss",
-            AutoMlMetricEnum::BalancedAccuracy => "BalancedAccuracy",
-            AutoMlMetricEnum::F1 => "F1",
-            AutoMlMetricEnum::F1Macro => "F1macro",
-            AutoMlMetricEnum::Mae => "MAE",
-            AutoMlMetricEnum::Mape => "MAPE",
-            AutoMlMetricEnum::Mase => "MASE",
-            AutoMlMetricEnum::Mse => "MSE",
-            AutoMlMetricEnum::Precision => "Precision",
-            AutoMlMetricEnum::PrecisionMacro => "PrecisionMacro",
-            AutoMlMetricEnum::R2 => "R2",
-            AutoMlMetricEnum::Rmse => "RMSE",
-            AutoMlMetricEnum::Recall => "Recall",
-            AutoMlMetricEnum::RecallMacro => "RecallMacro",
-            AutoMlMetricEnum::Wape => "WAPE",
-            AutoMlMetricEnum::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AUC",
-            "Accuracy",
-            "AverageWeightedQuantileLoss",
-            "BalancedAccuracy",
-            "F1",
-            "F1macro",
-            "MAE",
-            "MAPE",
-            "MASE",
-            "MSE",
-            "Precision",
-            "PrecisionMacro",
-            "R2",
-            "RMSE",
-            "Recall",
-            "RecallMacro",
-            "WAPE",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AutoMlMetricEnum::Auc => "AUC",
+    AutoMlMetricEnum::Accuracy => "Accuracy",
+    AutoMlMetricEnum::AverageWeightedQuantileLoss => "AverageWeightedQuantileLoss",
+    AutoMlMetricEnum::BalancedAccuracy => "BalancedAccuracy",
+    AutoMlMetricEnum::F1 => "F1",
+    AutoMlMetricEnum::F1Macro => "F1macro",
+    AutoMlMetricEnum::Mae => "MAE",
+    AutoMlMetricEnum::Mape => "MAPE",
+    AutoMlMetricEnum::Mase => "MASE",
+    AutoMlMetricEnum::Mse => "MSE",
+    AutoMlMetricEnum::Precision => "Precision",
+    AutoMlMetricEnum::PrecisionMacro => "PrecisionMacro",
+    AutoMlMetricEnum::R2 => "R2",
+    AutoMlMetricEnum::Rmse => "RMSE",
+    AutoMlMetricEnum::Recall => "Recall",
+    AutoMlMetricEnum::RecallMacro => "RecallMacro",
+    AutoMlMetricEnum::Wape => "WAPE",
+    AutoMlMetricEnum::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AUC", "Accuracy", "AverageWeightedQuantileLoss", "BalancedAccuracy", "F1", "F1macro", "MAE", "MAPE", "MASE", "MSE", "Precision", "PrecisionMacro", "R2", "RMSE", "Recall", "RecallMacro", "WAPE"]
+                }
+            }
 impl ::std::convert::AsRef<str> for AutoMlMetricEnum {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl AutoMlMetricEnum {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for AutoMlMetricEnum {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            AutoMlMetricEnum::Auc => write!(f, "AUC"),
-            AutoMlMetricEnum::Accuracy => write!(f, "Accuracy"),
-            AutoMlMetricEnum::AverageWeightedQuantileLoss => write!(f, "AverageWeightedQuantileLoss"),
-            AutoMlMetricEnum::BalancedAccuracy => write!(f, "BalancedAccuracy"),
-            AutoMlMetricEnum::F1 => write!(f, "F1"),
-            AutoMlMetricEnum::F1Macro => write!(f, "F1macro"),
-            AutoMlMetricEnum::Mae => write!(f, "MAE"),
-            AutoMlMetricEnum::Mape => write!(f, "MAPE"),
-            AutoMlMetricEnum::Mase => write!(f, "MASE"),
-            AutoMlMetricEnum::Mse => write!(f, "MSE"),
-            AutoMlMetricEnum::Precision => write!(f, "Precision"),
-            AutoMlMetricEnum::PrecisionMacro => write!(f, "PrecisionMacro"),
-            AutoMlMetricEnum::R2 => write!(f, "R2"),
-            AutoMlMetricEnum::Rmse => write!(f, "RMSE"),
-            AutoMlMetricEnum::Recall => write!(f, "Recall"),
-            AutoMlMetricEnum::RecallMacro => write!(f, "RecallMacro"),
-            AutoMlMetricEnum::Wape => write!(f, "WAPE"),
-            AutoMlMetricEnum::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                AutoMlMetricEnum::Auc => write!(f, "AUC"),
+AutoMlMetricEnum::Accuracy => write!(f, "Accuracy"),
+AutoMlMetricEnum::AverageWeightedQuantileLoss => write!(f, "AverageWeightedQuantileLoss"),
+AutoMlMetricEnum::BalancedAccuracy => write!(f, "BalancedAccuracy"),
+AutoMlMetricEnum::F1 => write!(f, "F1"),
+AutoMlMetricEnum::F1Macro => write!(f, "F1macro"),
+AutoMlMetricEnum::Mae => write!(f, "MAE"),
+AutoMlMetricEnum::Mape => write!(f, "MAPE"),
+AutoMlMetricEnum::Mase => write!(f, "MASE"),
+AutoMlMetricEnum::Mse => write!(f, "MSE"),
+AutoMlMetricEnum::Precision => write!(f, "Precision"),
+AutoMlMetricEnum::PrecisionMacro => write!(f, "PrecisionMacro"),
+AutoMlMetricEnum::R2 => write!(f, "R2"),
+AutoMlMetricEnum::Rmse => write!(f, "RMSE"),
+AutoMlMetricEnum::Recall => write!(f, "Recall"),
+AutoMlMetricEnum::RecallMacro => write!(f, "RecallMacro"),
+AutoMlMetricEnum::Wape => write!(f, "WAPE"),
+AutoMlMetricEnum::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

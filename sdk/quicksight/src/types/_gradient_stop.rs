@@ -3,7 +3,7 @@
 /// <p>Determines the gradient stop configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GradientStop {
+pub struct GradientStop  {
     /// <p>Determines gradient offset value.</p>
     pub gradient_offset: f64,
     /// <p>Determines the data value.</p>
@@ -11,7 +11,7 @@ pub struct GradientStop {
     /// <p>Determines the color.</p>
     pub color: ::std::option::Option<::std::string::String>,
 }
-impl GradientStop {
+impl  GradientStop  {
     /// <p>Determines gradient offset value.</p>
     pub fn gradient_offset(&self) -> f64 {
         self.gradient_offset
@@ -21,7 +21,7 @@ impl GradientStop {
         self.data_value
     }
     /// <p>Determines the color.</p>
-    pub fn color(&self) -> ::std::option::Option<&str> {
+    pub fn color(&self) -> ::std::option::Option<& str> {
         self.color.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl GradientStopBuilder {
     }
     /// <p>Determines gradient offset value.</p>
     pub fn set_gradient_offset(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.gradient_offset = input;
-        self
+        self.gradient_offset = input; self
     }
     /// <p>Determines gradient offset value.</p>
     pub fn get_gradient_offset(&self) -> &::std::option::Option<f64> {
@@ -63,8 +62,7 @@ impl GradientStopBuilder {
     }
     /// <p>Determines the data value.</p>
     pub fn set_data_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.data_value = input;
-        self
+        self.data_value = input; self
     }
     /// <p>Determines the data value.</p>
     pub fn get_data_value(&self) -> &::std::option::Option<f64> {
@@ -77,8 +75,7 @@ impl GradientStopBuilder {
     }
     /// <p>Determines the color.</p>
     pub fn set_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.color = input;
-        self
+        self.color = input; self
     }
     /// <p>Determines the color.</p>
     pub fn get_color(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,9 +84,14 @@ impl GradientStopBuilder {
     /// Consumes the builder and constructs a [`GradientStop`](crate::types::GradientStop).
     pub fn build(self) -> crate::types::GradientStop {
         crate::types::GradientStop {
-            gradient_offset: self.gradient_offset.unwrap_or_default(),
-            data_value: self.data_value,
-            color: self.color,
+            gradient_offset: self.gradient_offset
+                .unwrap_or_default()
+            ,
+            data_value: self.data_value
+            ,
+            color: self.color
+            ,
         }
     }
 }
+

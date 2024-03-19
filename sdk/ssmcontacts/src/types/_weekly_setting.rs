@@ -3,19 +3,19 @@
 /// <p>Information about rotations that recur weekly.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WeeklySetting {
+pub struct WeeklySetting  {
     /// <p>The day of the week when weekly recurring on-call shift rotations begins.</p>
     pub day_of_week: crate::types::DayOfWeek,
     /// <p>The time of day when a weekly recurring on-call shift rotation begins.</p>
     pub hand_off_time: ::std::option::Option<crate::types::HandOffTime>,
 }
-impl WeeklySetting {
+impl  WeeklySetting  {
     /// <p>The day of the week when weekly recurring on-call shift rotations begins.</p>
-    pub fn day_of_week(&self) -> &crate::types::DayOfWeek {
+    pub fn day_of_week(&self) -> & crate::types::DayOfWeek {
         &self.day_of_week
     }
     /// <p>The time of day when a weekly recurring on-call shift rotation begins.</p>
-    pub fn hand_off_time(&self) -> ::std::option::Option<&crate::types::HandOffTime> {
+    pub fn hand_off_time(&self) -> ::std::option::Option<& crate::types::HandOffTime> {
         self.hand_off_time.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl WeeklySettingBuilder {
     }
     /// <p>The day of the week when weekly recurring on-call shift rotations begins.</p>
     pub fn set_day_of_week(mut self, input: ::std::option::Option<crate::types::DayOfWeek>) -> Self {
-        self.day_of_week = input;
-        self
+        self.day_of_week = input; self
     }
     /// <p>The day of the week when weekly recurring on-call shift rotations begins.</p>
     pub fn get_day_of_week(&self) -> &::std::option::Option<crate::types::DayOfWeek> {
@@ -57,8 +56,7 @@ impl WeeklySettingBuilder {
     }
     /// <p>The time of day when a weekly recurring on-call shift rotation begins.</p>
     pub fn set_hand_off_time(mut self, input: ::std::option::Option<crate::types::HandOffTime>) -> Self {
-        self.hand_off_time = input;
-        self
+        self.hand_off_time = input; self
     }
     /// <p>The time of day when a weekly recurring on-call shift rotation begins.</p>
     pub fn get_hand_off_time(&self) -> &::std::option::Option<crate::types::HandOffTime> {
@@ -68,14 +66,17 @@ impl WeeklySettingBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`day_of_week`](crate::types::builders::WeeklySettingBuilder::day_of_week)
     pub fn build(self) -> ::std::result::Result<crate::types::WeeklySetting, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::WeeklySetting {
-            day_of_week: self.day_of_week.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "day_of_week",
-                    "day_of_week was not specified but it is required when building WeeklySetting",
-                )
-            })?,
-            hand_off_time: self.hand_off_time,
-        })
+        ::std::result::Result::Ok(
+            crate::types::WeeklySetting {
+                day_of_week: self.day_of_week
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("day_of_week", "day_of_week was not specified but it is required when building WeeklySetting")
+                    )?
+                ,
+                hand_off_time: self.hand_off_time
+                ,
+            }
+        )
     }
 }
+

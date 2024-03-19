@@ -2,36 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRecoveryGroupReadinessSummaryOutput {
+pub struct GetRecoveryGroupReadinessSummaryOutput  {
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The readiness status at a recovery group level.</p>
     pub readiness: ::std::option::Option<crate::types::Readiness>,
     /// <p>Summaries of the readiness checks for the recovery group.</p>
-    pub readiness_checks: ::std::option::Option<::std::vec::Vec<crate::types::ReadinessCheckSummary>>,
+    pub readiness_checks: ::std::option::Option<::std::vec::Vec::<crate::types::ReadinessCheckSummary>>,
     _request_id: Option<String>,
 }
-impl GetRecoveryGroupReadinessSummaryOutput {
+impl  GetRecoveryGroupReadinessSummaryOutput  {
     /// <p>The token that identifies which batch of results you want to see.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The readiness status at a recovery group level.</p>
-    pub fn readiness(&self) -> ::std::option::Option<&crate::types::Readiness> {
+    pub fn readiness(&self) -> ::std::option::Option<& crate::types::Readiness> {
         self.readiness.as_ref()
     }
     /// <p>Summaries of the readiness checks for the recovery group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.readiness_checks.is_none()`.
-    pub fn readiness_checks(&self) -> &[crate::types::ReadinessCheckSummary] {
-        self.readiness_checks.as_deref().unwrap_or_default()
+    pub fn readiness_checks(&self) -> & [crate::types::ReadinessCheckSummary] {
+        self.readiness_checks.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetRecoveryGroupReadinessSummaryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetRecoveryGroupReadinessSummaryOutput {
     /// Creates a new builder-style object to manufacture [`GetRecoveryGroupReadinessSummaryOutput`](crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryOutput).
     pub fn builder() -> crate::operation::get_recovery_group_readiness_summary::builders::GetRecoveryGroupReadinessSummaryOutputBuilder {
@@ -45,7 +46,7 @@ impl GetRecoveryGroupReadinessSummaryOutput {
 pub struct GetRecoveryGroupReadinessSummaryOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) readiness: ::std::option::Option<crate::types::Readiness>,
-    pub(crate) readiness_checks: ::std::option::Option<::std::vec::Vec<crate::types::ReadinessCheckSummary>>,
+    pub(crate) readiness_checks: ::std::option::Option<::std::vec::Vec::<crate::types::ReadinessCheckSummary>>,
     _request_id: Option<String>,
 }
 impl GetRecoveryGroupReadinessSummaryOutputBuilder {
@@ -56,8 +57,7 @@ impl GetRecoveryGroupReadinessSummaryOutputBuilder {
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +70,7 @@ impl GetRecoveryGroupReadinessSummaryOutputBuilder {
     }
     /// <p>The readiness status at a recovery group level.</p>
     pub fn set_readiness(mut self, input: ::std::option::Option<crate::types::Readiness>) -> Self {
-        self.readiness = input;
-        self
+        self.readiness = input; self
     }
     /// <p>The readiness status at a recovery group level.</p>
     pub fn get_readiness(&self) -> &::std::option::Option<crate::types::Readiness> {
@@ -84,35 +83,38 @@ impl GetRecoveryGroupReadinessSummaryOutputBuilder {
     /// <p>Summaries of the readiness checks for the recovery group.</p>
     pub fn readiness_checks(mut self, input: crate::types::ReadinessCheckSummary) -> Self {
         let mut v = self.readiness_checks.unwrap_or_default();
-        v.push(input);
-        self.readiness_checks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.readiness_checks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Summaries of the readiness checks for the recovery group.</p>
-    pub fn set_readiness_checks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReadinessCheckSummary>>) -> Self {
-        self.readiness_checks = input;
-        self
+    pub fn set_readiness_checks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReadinessCheckSummary>>) -> Self {
+        self.readiness_checks = input; self
     }
     /// <p>Summaries of the readiness checks for the recovery group.</p>
-    pub fn get_readiness_checks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReadinessCheckSummary>> {
+    pub fn get_readiness_checks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReadinessCheckSummary>> {
         &self.readiness_checks
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetRecoveryGroupReadinessSummaryOutput`](crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryOutput).
     pub fn build(self) -> crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryOutput {
         crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryOutput {
-            next_token: self.next_token,
-            readiness: self.readiness,
-            readiness_checks: self.readiness_checks,
+            next_token: self.next_token
+            ,
+            readiness: self.readiness
+            ,
+            readiness_checks: self.readiness_checks
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

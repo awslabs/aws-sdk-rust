@@ -3,7 +3,7 @@
 /// <p>The analyzed transcript segment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RealTimeContactAnalysisSegmentTranscript {
+pub struct RealTimeContactAnalysisSegmentTranscript  {
     /// <p>The identifier of the transcript.</p>
     pub id: ::std::string::String,
     /// <p>The identifier of the participant.</p>
@@ -23,44 +23,41 @@ pub struct RealTimeContactAnalysisSegmentTranscript {
     /// <p>The sentiment detected for this piece of transcript.</p>
     pub sentiment: ::std::option::Option<crate::types::RealTimeContactAnalysisSentimentLabel>,
 }
-impl RealTimeContactAnalysisSegmentTranscript {
+impl  RealTimeContactAnalysisSegmentTranscript  {
     /// <p>The identifier of the transcript.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The identifier of the participant.</p>
-    pub fn participant_id(&self) -> &str {
-        use std::ops::Deref;
-        self.participant_id.deref()
+    pub fn participant_id(&self) -> & str {
+        use std::ops::Deref; self.participant_id.deref()
     }
     /// <p>The role of the participant. For example, is it a customer, agent, or system.</p>
-    pub fn participant_role(&self) -> &crate::types::ParticipantRole {
+    pub fn participant_role(&self) -> & crate::types::ParticipantRole {
         &self.participant_role
     }
     /// <p>The display name of the participant.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The content of the transcript. Can be redacted.</p>
-    pub fn content(&self) -> &str {
-        use std::ops::Deref;
-        self.content.deref()
+    pub fn content(&self) -> & str {
+        use std::ops::Deref; self.content.deref()
     }
     /// <p>The type of content of the item. For example, <code>text/plain</code>.</p>
-    pub fn content_type(&self) -> ::std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>Field describing the time of the event. It can have different representations of time.</p>
-    pub fn time(&self) -> ::std::option::Option<&crate::types::RealTimeContactAnalysisTimeData> {
+    pub fn time(&self) -> ::std::option::Option<& crate::types::RealTimeContactAnalysisTimeData> {
         self.time.as_ref()
     }
     /// <p>Object describing redaction that was applied to the transcript. If transcript has the field it means part of the transcript was redacted.</p>
-    pub fn redaction(&self) -> ::std::option::Option<&crate::types::RealTimeContactAnalysisTranscriptItemRedaction> {
+    pub fn redaction(&self) -> ::std::option::Option<& crate::types::RealTimeContactAnalysisTranscriptItemRedaction> {
         self.redaction.as_ref()
     }
     /// <p>The sentiment detected for this piece of transcript.</p>
-    pub fn sentiment(&self) -> ::std::option::Option<&crate::types::RealTimeContactAnalysisSentimentLabel> {
+    pub fn sentiment(&self) -> ::std::option::Option<& crate::types::RealTimeContactAnalysisSentimentLabel> {
         self.sentiment.as_ref()
     }
 }
@@ -94,8 +91,7 @@ impl RealTimeContactAnalysisSegmentTranscriptBuilder {
     }
     /// <p>The identifier of the transcript.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the transcript.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +105,7 @@ impl RealTimeContactAnalysisSegmentTranscriptBuilder {
     }
     /// <p>The identifier of the participant.</p>
     pub fn set_participant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.participant_id = input;
-        self
+        self.participant_id = input; self
     }
     /// <p>The identifier of the participant.</p>
     pub fn get_participant_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +119,7 @@ impl RealTimeContactAnalysisSegmentTranscriptBuilder {
     }
     /// <p>The role of the participant. For example, is it a customer, agent, or system.</p>
     pub fn set_participant_role(mut self, input: ::std::option::Option<crate::types::ParticipantRole>) -> Self {
-        self.participant_role = input;
-        self
+        self.participant_role = input; self
     }
     /// <p>The role of the participant. For example, is it a customer, agent, or system.</p>
     pub fn get_participant_role(&self) -> &::std::option::Option<crate::types::ParticipantRole> {
@@ -138,8 +132,7 @@ impl RealTimeContactAnalysisSegmentTranscriptBuilder {
     }
     /// <p>The display name of the participant.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The display name of the participant.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +146,7 @@ impl RealTimeContactAnalysisSegmentTranscriptBuilder {
     }
     /// <p>The content of the transcript. Can be redacted.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>The content of the transcript. Can be redacted.</p>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +159,7 @@ impl RealTimeContactAnalysisSegmentTranscriptBuilder {
     }
     /// <p>The type of content of the item. For example, <code>text/plain</code>.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>The type of content of the item. For example, <code>text/plain</code>.</p>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -182,8 +173,7 @@ impl RealTimeContactAnalysisSegmentTranscriptBuilder {
     }
     /// <p>Field describing the time of the event. It can have different representations of time.</p>
     pub fn set_time(mut self, input: ::std::option::Option<crate::types::RealTimeContactAnalysisTimeData>) -> Self {
-        self.time = input;
-        self
+        self.time = input; self
     }
     /// <p>Field describing the time of the event. It can have different representations of time.</p>
     pub fn get_time(&self) -> &::std::option::Option<crate::types::RealTimeContactAnalysisTimeData> {
@@ -196,8 +186,7 @@ impl RealTimeContactAnalysisSegmentTranscriptBuilder {
     }
     /// <p>Object describing redaction that was applied to the transcript. If transcript has the field it means part of the transcript was redacted.</p>
     pub fn set_redaction(mut self, input: ::std::option::Option<crate::types::RealTimeContactAnalysisTranscriptItemRedaction>) -> Self {
-        self.redaction = input;
-        self
+        self.redaction = input; self
     }
     /// <p>Object describing redaction that was applied to the transcript. If transcript has the field it means part of the transcript was redacted.</p>
     pub fn get_redaction(&self) -> &::std::option::Option<crate::types::RealTimeContactAnalysisTranscriptItemRedaction> {
@@ -210,8 +199,7 @@ impl RealTimeContactAnalysisSegmentTranscriptBuilder {
     }
     /// <p>The sentiment detected for this piece of transcript.</p>
     pub fn set_sentiment(mut self, input: ::std::option::Option<crate::types::RealTimeContactAnalysisSentimentLabel>) -> Self {
-        self.sentiment = input;
-        self
+        self.sentiment = input; self
     }
     /// <p>The sentiment detected for this piece of transcript.</p>
     pub fn get_sentiment(&self) -> &::std::option::Option<crate::types::RealTimeContactAnalysisSentimentLabel> {
@@ -223,39 +211,41 @@ impl RealTimeContactAnalysisSegmentTranscriptBuilder {
     /// - [`participant_id`](crate::types::builders::RealTimeContactAnalysisSegmentTranscriptBuilder::participant_id)
     /// - [`participant_role`](crate::types::builders::RealTimeContactAnalysisSegmentTranscriptBuilder::participant_role)
     /// - [`content`](crate::types::builders::RealTimeContactAnalysisSegmentTranscriptBuilder::content)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::RealTimeContactAnalysisSegmentTranscript, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RealTimeContactAnalysisSegmentTranscript {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building RealTimeContactAnalysisSegmentTranscript",
-                )
-            })?,
-            participant_id: self.participant_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "participant_id",
-                    "participant_id was not specified but it is required when building RealTimeContactAnalysisSegmentTranscript",
-                )
-            })?,
-            participant_role: self.participant_role.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "participant_role",
-                    "participant_role was not specified but it is required when building RealTimeContactAnalysisSegmentTranscript",
-                )
-            })?,
-            display_name: self.display_name,
-            content: self.content.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "content",
-                    "content was not specified but it is required when building RealTimeContactAnalysisSegmentTranscript",
-                )
-            })?,
-            content_type: self.content_type,
-            time: self.time,
-            redaction: self.redaction,
-            sentiment: self.sentiment,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::RealTimeContactAnalysisSegmentTranscript, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::RealTimeContactAnalysisSegmentTranscript {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building RealTimeContactAnalysisSegmentTranscript")
+                    )?
+                ,
+                participant_id: self.participant_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("participant_id", "participant_id was not specified but it is required when building RealTimeContactAnalysisSegmentTranscript")
+                    )?
+                ,
+                participant_role: self.participant_role
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("participant_role", "participant_role was not specified but it is required when building RealTimeContactAnalysisSegmentTranscript")
+                    )?
+                ,
+                display_name: self.display_name
+                ,
+                content: self.content
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("content", "content was not specified but it is required when building RealTimeContactAnalysisSegmentTranscript")
+                    )?
+                ,
+                content_type: self.content_type
+                ,
+                time: self.time
+                ,
+                redaction: self.redaction
+                ,
+                sentiment: self.sentiment
+                ,
+            }
+        )
     }
 }
+

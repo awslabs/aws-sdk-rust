@@ -3,7 +3,7 @@
 /// <p>Information about the DeleteRoute action in Amazon EC2.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Ec2DeleteRouteAction {
+pub struct Ec2DeleteRouteAction  {
     /// <p>A description of the DeleteRoute action.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information about the IPv4 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
@@ -15,25 +15,25 @@ pub struct Ec2DeleteRouteAction {
     /// <p>Information about the ID of the route table.</p>
     pub route_table_id: ::std::option::Option<crate::types::ActionTarget>,
 }
-impl Ec2DeleteRouteAction {
+impl  Ec2DeleteRouteAction  {
     /// <p>A description of the DeleteRoute action.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Information about the IPv4 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
-    pub fn destination_cidr_block(&self) -> ::std::option::Option<&str> {
+    pub fn destination_cidr_block(&self) -> ::std::option::Option<& str> {
         self.destination_cidr_block.as_deref()
     }
     /// <p>Information about the ID of the prefix list for the route.</p>
-    pub fn destination_prefix_list_id(&self) -> ::std::option::Option<&str> {
+    pub fn destination_prefix_list_id(&self) -> ::std::option::Option<& str> {
         self.destination_prefix_list_id.as_deref()
     }
     /// <p>Information about the IPv6 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
-    pub fn destination_ipv6_cidr_block(&self) -> ::std::option::Option<&str> {
+    pub fn destination_ipv6_cidr_block(&self) -> ::std::option::Option<& str> {
         self.destination_ipv6_cidr_block.as_deref()
     }
     /// <p>Information about the ID of the route table.</p>
-    pub fn route_table_id(&self) -> ::std::option::Option<&crate::types::ActionTarget> {
+    pub fn route_table_id(&self) -> ::std::option::Option<& crate::types::ActionTarget> {
         self.route_table_id.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl Ec2DeleteRouteActionBuilder {
     }
     /// <p>A description of the DeleteRoute action.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the DeleteRoute action.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl Ec2DeleteRouteActionBuilder {
     }
     /// <p>Information about the IPv4 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
     pub fn set_destination_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_cidr_block = input;
-        self
+        self.destination_cidr_block = input; self
     }
     /// <p>Information about the IPv4 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
     pub fn get_destination_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl Ec2DeleteRouteActionBuilder {
     }
     /// <p>Information about the ID of the prefix list for the route.</p>
     pub fn set_destination_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_prefix_list_id = input;
-        self
+        self.destination_prefix_list_id = input; self
     }
     /// <p>Information about the ID of the prefix list for the route.</p>
     pub fn get_destination_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl Ec2DeleteRouteActionBuilder {
     }
     /// <p>Information about the IPv6 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
     pub fn set_destination_ipv6_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_ipv6_cidr_block = input;
-        self
+        self.destination_ipv6_cidr_block = input; self
     }
     /// <p>Information about the IPv6 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
     pub fn get_destination_ipv6_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +115,7 @@ impl Ec2DeleteRouteActionBuilder {
     }
     /// <p>Information about the ID of the route table.</p>
     pub fn set_route_table_id(mut self, input: ::std::option::Option<crate::types::ActionTarget>) -> Self {
-        self.route_table_id = input;
-        self
+        self.route_table_id = input; self
     }
     /// <p>Information about the ID of the route table.</p>
     pub fn get_route_table_id(&self) -> &::std::option::Option<crate::types::ActionTarget> {
@@ -129,11 +124,17 @@ impl Ec2DeleteRouteActionBuilder {
     /// Consumes the builder and constructs a [`Ec2DeleteRouteAction`](crate::types::Ec2DeleteRouteAction).
     pub fn build(self) -> crate::types::Ec2DeleteRouteAction {
         crate::types::Ec2DeleteRouteAction {
-            description: self.description,
-            destination_cidr_block: self.destination_cidr_block,
-            destination_prefix_list_id: self.destination_prefix_list_id,
-            destination_ipv6_cidr_block: self.destination_ipv6_cidr_block,
-            route_table_id: self.route_table_id,
+            description: self.description
+            ,
+            destination_cidr_block: self.destination_cidr_block
+            ,
+            destination_prefix_list_id: self.destination_prefix_list_id
+            ,
+            destination_ipv6_cidr_block: self.destination_ipv6_cidr_block
+            ,
+            route_table_id: self.route_table_id
+            ,
         }
     }
 }
+

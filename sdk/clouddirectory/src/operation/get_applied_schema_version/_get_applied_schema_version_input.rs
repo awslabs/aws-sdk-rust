@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAppliedSchemaVersionInput {
+pub struct GetAppliedSchemaVersionInput  {
     /// <p>The ARN of the applied schema.</p>
     pub schema_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetAppliedSchemaVersionInput {
+impl  GetAppliedSchemaVersionInput  {
     /// <p>The ARN of the applied schema.</p>
-    pub fn schema_arn(&self) -> ::std::option::Option<&str> {
+    pub fn schema_arn(&self) -> ::std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetAppliedSchemaVersionInputBuilder {
     }
     /// <p>The ARN of the applied schema.</p>
     pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_arn = input;
-        self
+        self.schema_arn = input; self
     }
     /// <p>The ARN of the applied schema.</p>
     pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.schema_arn
     }
     /// Consumes the builder and constructs a [`GetAppliedSchemaVersionInput`](crate::operation::get_applied_schema_version::GetAppliedSchemaVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_applied_schema_version::GetAppliedSchemaVersionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_applied_schema_version::GetAppliedSchemaVersionInput { schema_arn: self.schema_arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_applied_schema_version::GetAppliedSchemaVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_applied_schema_version::GetAppliedSchemaVersionInput {
+                schema_arn: self.schema_arn
+                ,
+            }
+        )
     }
 }
+

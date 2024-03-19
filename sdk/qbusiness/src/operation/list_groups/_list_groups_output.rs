@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListGroupsOutput {
+pub struct ListGroupsOutput  {
     /// <p>If the response is truncated, Amazon Q returns this token that you can use in the subsequent request to retrieve the next set of groups that are mapped to users.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Summary information for list of groups that are mapped to users.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::GroupSummary>>,
+    pub items: ::std::option::Option<::std::vec::Vec::<crate::types::GroupSummary>>,
     _request_id: Option<String>,
 }
-impl ListGroupsOutput {
+impl  ListGroupsOutput  {
     /// <p>If the response is truncated, Amazon Q returns this token that you can use in the subsequent request to retrieve the next set of groups that are mapped to users.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Summary information for list of groups that are mapped to users.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
-    pub fn items(&self) -> &[crate::types::GroupSummary] {
-        self.items.as_deref().unwrap_or_default()
+    pub fn items(&self) -> & [crate::types::GroupSummary] {
+        self.items.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListGroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListGroupsOutput`](crate::operation::list_groups::ListGroupsOutput).
     pub fn builder() -> crate::operation::list_groups::builders::ListGroupsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListGroupsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGroupsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::GroupSummary>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::GroupSummary>>,
     _request_id: Option<String>,
 }
 impl ListGroupsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListGroupsOutputBuilder {
     }
     /// <p>If the response is truncated, Amazon Q returns this token that you can use in the subsequent request to retrieve the next set of groups that are mapped to users.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the response is truncated, Amazon Q returns this token that you can use in the subsequent request to retrieve the next set of groups that are mapped to users.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListGroupsOutputBuilder {
     /// <p>Summary information for list of groups that are mapped to users.</p>
     pub fn items(mut self, input: crate::types::GroupSummary) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Summary information for list of groups that are mapped to users.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupSummary>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GroupSummary>>) -> Self {
+        self.items = input; self
     }
     /// <p>Summary information for list of groups that are mapped to users.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupSummary>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GroupSummary>> {
         &self.items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListGroupsOutput`](crate::operation::list_groups::ListGroupsOutput).
     pub fn build(self) -> crate::operation::list_groups::ListGroupsOutput {
         crate::operation::list_groups::ListGroupsOutput {
-            next_token: self.next_token,
-            items: self.items,
+            next_token: self.next_token
+            ,
+            items: self.items
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

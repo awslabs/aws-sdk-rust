@@ -3,15 +3,14 @@
 /// <p>Contains details for a gateway that runs on IoT Greengrass V2. To create a gateway that runs on IoT Greengrass V2, you must deploy the IoT SiteWise Edge component to your gateway device. Your <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/device-service-role.html">Greengrass device role</a> must use the <code>AWSIoTSiteWiseEdgeAccess</code> policy. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/sw-gateways.html">Using IoT SiteWise at the edge</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GreengrassV2 {
+pub struct GreengrassV2  {
     /// <p>The name of the IoT thing for your IoT Greengrass V2 core device.</p>
     pub core_device_thing_name: ::std::string::String,
 }
-impl GreengrassV2 {
+impl  GreengrassV2  {
     /// <p>The name of the IoT thing for your IoT Greengrass V2 core device.</p>
-    pub fn core_device_thing_name(&self) -> &str {
-        use std::ops::Deref;
-        self.core_device_thing_name.deref()
+    pub fn core_device_thing_name(&self) -> & str {
+        use std::ops::Deref; self.core_device_thing_name.deref()
     }
 }
 impl GreengrassV2 {
@@ -36,8 +35,7 @@ impl GreengrassV2Builder {
     }
     /// <p>The name of the IoT thing for your IoT Greengrass V2 core device.</p>
     pub fn set_core_device_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.core_device_thing_name = input;
-        self
+        self.core_device_thing_name = input; self
     }
     /// <p>The name of the IoT thing for your IoT Greengrass V2 core device.</p>
     pub fn get_core_device_thing_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl GreengrassV2Builder {
     /// This method will fail if any of the following fields are not set:
     /// - [`core_device_thing_name`](crate::types::builders::GreengrassV2Builder::core_device_thing_name)
     pub fn build(self) -> ::std::result::Result<crate::types::GreengrassV2, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GreengrassV2 {
-            core_device_thing_name: self.core_device_thing_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "core_device_thing_name",
-                    "core_device_thing_name was not specified but it is required when building GreengrassV2",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GreengrassV2 {
+                core_device_thing_name: self.core_device_thing_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("core_device_thing_name", "core_device_thing_name was not specified but it is required when building GreengrassV2")
+                    )?
+                ,
+            }
+        )
     }
 }
+

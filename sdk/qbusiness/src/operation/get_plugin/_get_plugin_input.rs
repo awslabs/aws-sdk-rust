@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPluginInput {
+pub struct GetPluginInput  {
     /// <p>The identifier of the application which contains the plugin.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the plugin.</p>
     pub plugin_id: ::std::option::Option<::std::string::String>,
 }
-impl GetPluginInput {
+impl  GetPluginInput  {
     /// <p>The identifier of the application which contains the plugin.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The identifier of the plugin.</p>
-    pub fn plugin_id(&self) -> ::std::option::Option<&str> {
+    pub fn plugin_id(&self) -> ::std::option::Option<& str> {
         self.plugin_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetPluginInputBuilder {
     }
     /// <p>The identifier of the application which contains the plugin.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier of the application which contains the plugin.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl GetPluginInputBuilder {
     }
     /// <p>The identifier of the plugin.</p>
     pub fn set_plugin_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.plugin_id = input;
-        self
+        self.plugin_id = input; self
     }
     /// <p>The identifier of the plugin.</p>
     pub fn get_plugin_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,9 +63,14 @@ impl GetPluginInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetPluginInput`](crate::operation::get_plugin::GetPluginInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_plugin::GetPluginInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_plugin::GetPluginInput {
-            application_id: self.application_id,
-            plugin_id: self.plugin_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_plugin::GetPluginInput {
+                application_id: self.application_id
+                ,
+                plugin_id: self.plugin_id
+                ,
+            }
+        )
     }
 }
+

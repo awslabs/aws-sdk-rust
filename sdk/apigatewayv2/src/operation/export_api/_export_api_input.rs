@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportApiInput {
+pub struct ExportApiInput  {
     /// <p>The API identifier.</p>
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the API Gateway export algorithm. API Gateway uses the latest version by default. Currently, the only supported version is 1.0.</p>
@@ -16,13 +16,13 @@ pub struct ExportApiInput {
     /// <p>The name of the API stage to export. If you don't specify this property, a representation of the latest API configuration is exported.</p>
     pub stage_name: ::std::option::Option<::std::string::String>,
 }
-impl ExportApiInput {
+impl  ExportApiInput  {
     /// <p>The API identifier.</p>
-    pub fn api_id(&self) -> ::std::option::Option<&str> {
+    pub fn api_id(&self) -> ::std::option::Option<& str> {
         self.api_id.as_deref()
     }
     /// <p>The version of the API Gateway export algorithm. API Gateway uses the latest version by default. Currently, the only supported version is 1.0.</p>
-    pub fn export_version(&self) -> ::std::option::Option<&str> {
+    pub fn export_version(&self) -> ::std::option::Option<& str> {
         self.export_version.as_deref()
     }
     /// <p>Specifies whether to include <a href="https://docs.aws.amazon.com//apigateway/latest/developerguide/api-gateway-swagger-extensions.html">API Gateway extensions</a> in the exported API definition. API Gateway extensions are included by default.</p>
@@ -30,15 +30,15 @@ impl ExportApiInput {
         self.include_extensions
     }
     /// <p>The output type of the exported definition file. Valid values are JSON and YAML.</p>
-    pub fn output_type(&self) -> ::std::option::Option<&str> {
+    pub fn output_type(&self) -> ::std::option::Option<& str> {
         self.output_type.as_deref()
     }
     /// <p>The version of the API specification to use. OAS30, for OpenAPI 3.0, is the only supported value.</p>
-    pub fn specification(&self) -> ::std::option::Option<&str> {
+    pub fn specification(&self) -> ::std::option::Option<& str> {
         self.specification.as_deref()
     }
     /// <p>The name of the API stage to export. If you don't specify this property, a representation of the latest API configuration is exported.</p>
-    pub fn stage_name(&self) -> ::std::option::Option<&str> {
+    pub fn stage_name(&self) -> ::std::option::Option<& str> {
         self.stage_name.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl ExportApiInputBuilder {
     }
     /// <p>The API identifier.</p>
     pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_id = input;
-        self
+        self.api_id = input; self
     }
     /// <p>The API identifier.</p>
     pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl ExportApiInputBuilder {
     }
     /// <p>The version of the API Gateway export algorithm. API Gateway uses the latest version by default. Currently, the only supported version is 1.0.</p>
     pub fn set_export_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.export_version = input;
-        self
+        self.export_version = input; self
     }
     /// <p>The version of the API Gateway export algorithm. API Gateway uses the latest version by default. Currently, the only supported version is 1.0.</p>
     pub fn get_export_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl ExportApiInputBuilder {
     }
     /// <p>Specifies whether to include <a href="https://docs.aws.amazon.com//apigateway/latest/developerguide/api-gateway-swagger-extensions.html">API Gateway extensions</a> in the exported API definition. API Gateway extensions are included by default.</p>
     pub fn set_include_extensions(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_extensions = input;
-        self
+        self.include_extensions = input; self
     }
     /// <p>Specifies whether to include <a href="https://docs.aws.amazon.com//apigateway/latest/developerguide/api-gateway-swagger-extensions.html">API Gateway extensions</a> in the exported API definition. API Gateway extensions are included by default.</p>
     pub fn get_include_extensions(&self) -> &::std::option::Option<bool> {
@@ -112,8 +109,7 @@ impl ExportApiInputBuilder {
     }
     /// <p>The output type of the exported definition file. Valid values are JSON and YAML.</p>
     pub fn set_output_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output_type = input;
-        self
+        self.output_type = input; self
     }
     /// <p>The output type of the exported definition file. Valid values are JSON and YAML.</p>
     pub fn get_output_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +123,7 @@ impl ExportApiInputBuilder {
     }
     /// <p>The version of the API specification to use. OAS30, for OpenAPI 3.0, is the only supported value.</p>
     pub fn set_specification(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.specification = input;
-        self
+        self.specification = input; self
     }
     /// <p>The version of the API specification to use. OAS30, for OpenAPI 3.0, is the only supported value.</p>
     pub fn get_specification(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +136,7 @@ impl ExportApiInputBuilder {
     }
     /// <p>The name of the API stage to export. If you don't specify this property, a representation of the latest API configuration is exported.</p>
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stage_name = input;
-        self
+        self.stage_name = input; self
     }
     /// <p>The name of the API stage to export. If you don't specify this property, a representation of the latest API configuration is exported.</p>
     pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,13 +144,22 @@ impl ExportApiInputBuilder {
     }
     /// Consumes the builder and constructs a [`ExportApiInput`](crate::operation::export_api::ExportApiInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::export_api::ExportApiInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::export_api::ExportApiInput {
-            api_id: self.api_id,
-            export_version: self.export_version,
-            include_extensions: self.include_extensions,
-            output_type: self.output_type,
-            specification: self.specification,
-            stage_name: self.stage_name,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::export_api::ExportApiInput {
+                api_id: self.api_id
+                ,
+                export_version: self.export_version
+                ,
+                include_extensions: self.include_extensions
+                ,
+                output_type: self.output_type
+                ,
+                specification: self.specification
+                ,
+                stage_name: self.stage_name
+                ,
+            }
+        )
     }
 }
+

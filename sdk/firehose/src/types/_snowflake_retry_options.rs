@@ -3,11 +3,11 @@
 /// <p>Specify how long Firehose retries sending data to the New Relic HTTP endpoint. After sending data, Firehose first waits for an acknowledgment from the HTTP endpoint. If an error occurs or the acknowledgment doesn’t arrive within the acknowledgment timeout period, Firehose starts the retry duration counter. It keeps retrying until the retry duration expires. After that, Firehose considers it a data delivery failure and backs up the data to your Amazon S3 bucket. Every time that Firehose sends data to the HTTP endpoint (either the initial attempt or a retry), it restarts the acknowledgement timeout counter and waits for an acknowledgement from the HTTP endpoint. Even if the retry duration expires, Firehose still waits for the acknowledgment until it receives it or the acknowledgement timeout period is reached. If the acknowledgment times out, Firehose determines whether there's time left in the retry counter. If there is time left, it retries again and repeats the logic until it receives an acknowledgment or determines that the retry time has expired. If you don't want Firehose to retry sending data, set this value to 0.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SnowflakeRetryOptions {
+pub struct SnowflakeRetryOptions  {
     /// <p>the time period where Firehose will retry sending data to the chosen HTTP endpoint.</p>
     pub duration_in_seconds: ::std::option::Option<i32>,
 }
-impl SnowflakeRetryOptions {
+impl  SnowflakeRetryOptions  {
     /// <p>the time period where Firehose will retry sending data to the chosen HTTP endpoint.</p>
     pub fn duration_in_seconds(&self) -> ::std::option::Option<i32> {
         self.duration_in_seconds
@@ -34,8 +34,7 @@ impl SnowflakeRetryOptionsBuilder {
     }
     /// <p>the time period where Firehose will retry sending data to the chosen HTTP endpoint.</p>
     pub fn set_duration_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration_in_seconds = input;
-        self
+        self.duration_in_seconds = input; self
     }
     /// <p>the time period where Firehose will retry sending data to the chosen HTTP endpoint.</p>
     pub fn get_duration_in_seconds(&self) -> &::std::option::Option<i32> {
@@ -44,7 +43,9 @@ impl SnowflakeRetryOptionsBuilder {
     /// Consumes the builder and constructs a [`SnowflakeRetryOptions`](crate::types::SnowflakeRetryOptions).
     pub fn build(self) -> crate::types::SnowflakeRetryOptions {
         crate::types::SnowflakeRetryOptions {
-            duration_in_seconds: self.duration_in_seconds,
+            duration_in_seconds: self.duration_in_seconds
+            ,
         }
     }
 }
+

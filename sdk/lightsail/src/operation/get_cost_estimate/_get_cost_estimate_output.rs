@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCostEstimateOutput {
+pub struct GetCostEstimateOutput  {
     /// <p>Returns the estimate's forecasted cost or usage.</p>
-    pub resources_budget_estimate: ::std::option::Option<::std::vec::Vec<crate::types::ResourceBudgetEstimate>>,
+    pub resources_budget_estimate: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceBudgetEstimate>>,
     _request_id: Option<String>,
 }
-impl GetCostEstimateOutput {
+impl  GetCostEstimateOutput  {
     /// <p>Returns the estimate's forecasted cost or usage.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources_budget_estimate.is_none()`.
-    pub fn resources_budget_estimate(&self) -> &[crate::types::ResourceBudgetEstimate] {
-        self.resources_budget_estimate.as_deref().unwrap_or_default()
+    pub fn resources_budget_estimate(&self) -> & [crate::types::ResourceBudgetEstimate] {
+        self.resources_budget_estimate.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetCostEstimateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetCostEstimateOutput {
     /// Creates a new builder-style object to manufacture [`GetCostEstimateOutput`](crate::operation::get_cost_estimate::GetCostEstimateOutput).
     pub fn builder() -> crate::operation::get_cost_estimate::builders::GetCostEstimateOutputBuilder {
@@ -31,7 +32,7 @@ impl GetCostEstimateOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCostEstimateOutputBuilder {
-    pub(crate) resources_budget_estimate: ::std::option::Option<::std::vec::Vec<crate::types::ResourceBudgetEstimate>>,
+    pub(crate) resources_budget_estimate: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceBudgetEstimate>>,
     _request_id: Option<String>,
 }
 impl GetCostEstimateOutputBuilder {
@@ -42,33 +43,34 @@ impl GetCostEstimateOutputBuilder {
     /// <p>Returns the estimate's forecasted cost or usage.</p>
     pub fn resources_budget_estimate(mut self, input: crate::types::ResourceBudgetEstimate) -> Self {
         let mut v = self.resources_budget_estimate.unwrap_or_default();
-        v.push(input);
-        self.resources_budget_estimate = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resources_budget_estimate = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Returns the estimate's forecasted cost or usage.</p>
-    pub fn set_resources_budget_estimate(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceBudgetEstimate>>) -> Self {
-        self.resources_budget_estimate = input;
-        self
+    pub fn set_resources_budget_estimate(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceBudgetEstimate>>) -> Self {
+        self.resources_budget_estimate = input; self
     }
     /// <p>Returns the estimate's forecasted cost or usage.</p>
-    pub fn get_resources_budget_estimate(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceBudgetEstimate>> {
+    pub fn get_resources_budget_estimate(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceBudgetEstimate>> {
         &self.resources_budget_estimate
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetCostEstimateOutput`](crate::operation::get_cost_estimate::GetCostEstimateOutput).
     pub fn build(self) -> crate::operation::get_cost_estimate::GetCostEstimateOutput {
         crate::operation::get_cost_estimate::GetCostEstimateOutput {
-            resources_budget_estimate: self.resources_budget_estimate,
+            resources_budget_estimate: self.resources_budget_estimate
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

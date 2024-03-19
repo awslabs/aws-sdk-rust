@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCells`](crate::operation::list_cells::builders::ListCellsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_cells::builders::ListCellsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_cells::builders::ListCellsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_cells::builders::ListCellsFluentBuilder::set_max_results):<br>required: **false**<br><p>The number of objects that you want to return with this call.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_cells::builders::ListCellsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_cells::builders::ListCellsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token that identifies which batch of results you want to see.</p><br>
-    /// - On success, responds with [`ListCellsOutput`](crate::operation::list_cells::ListCellsOutput) with field(s):
+                            /// - On success, responds with [`ListCellsOutput`](crate::operation::list_cells::ListCellsOutput) with field(s):
     ///   - [`cells(Option<Vec::<CellOutput>>)`](crate::operation::list_cells::ListCellsOutput::cells): <p>A list of cells.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_cells::ListCellsOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
-    /// - On failure, responds with [`SdkError<ListCellsError>`](crate::operation::list_cells::ListCellsError)
+                            /// - On failure, responds with [`SdkError<ListCellsError>`](crate::operation::list_cells::ListCellsError)
     pub fn list_cells(&self) -> crate::operation::list_cells::builders::ListCellsFluentBuilder {
-        crate::operation::list_cells::builders::ListCellsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_cells::builders::ListCellsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

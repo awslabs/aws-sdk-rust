@@ -5,55 +5,51 @@ pub use crate::operation::get_license_recommendations::_get_license_recommendati
 
 impl GetLicenseRecommendationsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_license_recommendations::GetLicenseRecommendationsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_license_recommendations::GetLicenseRecommendationsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_license_recommendations();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_license_recommendations::GetLicenseRecommendationsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_license_recommendations::GetLicenseRecommendationsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_license_recommendations();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetLicenseRecommendations`.
-///
+/// 
 /// <p>Returns license recommendations for Amazon EC2 instances that run on a specific license.</p>
 /// <p>Compute Optimizer generates recommendations for licenses that meet a specific set of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported resources and requirements</a> in the <i>Compute Optimizer User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetLicenseRecommendationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_license_recommendations::builders::GetLicenseRecommendationsInputBuilder,
+                    inner: crate::operation::get_license_recommendations::builders::GetLicenseRecommendationsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_license_recommendations::GetLicenseRecommendationsOutput,
-        crate::operation::get_license_recommendations::GetLicenseRecommendationsError,
-    > for GetLicenseRecommendationsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_license_recommendations::GetLicenseRecommendationsOutput,
-            crate::operation::get_license_recommendations::GetLicenseRecommendationsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_license_recommendations::GetLicenseRecommendationsOutput,
+                    crate::operation::get_license_recommendations::GetLicenseRecommendationsError,
+                > for GetLicenseRecommendationsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_license_recommendations::GetLicenseRecommendationsOutput,
+                        crate::operation::get_license_recommendations::GetLicenseRecommendationsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetLicenseRecommendationsFluentBuilder {
     /// Creates a new `GetLicenseRecommendations`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl GetLicenseRecommendationsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_license_recommendations::GetLicenseRecommendationsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_license_recommendations::GetLicenseRecommendationsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::get_license_recommendations::GetLicenseRecommendations::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::get_license_recommendations::GetLicenseRecommendations::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_license_recommendations::GetLicenseRecommendationsOutput,
-        crate::operation::get_license_recommendations::GetLicenseRecommendationsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_license_recommendations::GetLicenseRecommendationsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_license_recommendations::GetLicenseRecommendationsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_license_recommendations::GetLicenseRecommendations::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_license_recommendations::GetLicenseRecommendations::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_license_recommendations::GetLicenseRecommendationsOutput, crate::operation::get_license_recommendations::GetLicenseRecommendationsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `resourceArns`.
     ///
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
@@ -123,14 +110,14 @@ impl GetLicenseRecommendationsFluentBuilder {
     /// <p>The ARN that identifies the Amazon EC2 instance.</p>
     /// <p>The following is the format of the ARN:</p>
     /// <p><code>arn:aws:ec2:region:aws_account_id:instance/instance-id</code></p>
-    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_arns(input);
         self
     }
     /// <p>The ARN that identifies the Amazon EC2 instance.</p>
     /// <p>The following is the format of the ARN:</p>
     /// <p><code>arn:aws:ec2:region:aws_account_id:instance/instance-id</code></p>
-    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_resource_arns()
     }
     /// <p>The token to advance to the next page of license recommendations.</p>
@@ -174,12 +161,12 @@ impl GetLicenseRecommendationsFluentBuilder {
         self
     }
     /// <p>An array of objects to specify a filter that returns a more specific list of license recommendations.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LicenseRecommendationFilter>>) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LicenseRecommendationFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>An array of objects to specify a filter that returns a more specific list of license recommendations.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseRecommendationFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LicenseRecommendationFilter>> {
         self.inner.get_filters()
     }
     /// Appends an item to `accountIds`.
@@ -196,14 +183,15 @@ impl GetLicenseRecommendationsFluentBuilder {
     /// <p>The ID of the Amazon Web Services account for which to return license recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return license recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
     /// <p>The ID of the Amazon Web Services account for which to return license recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return license recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_account_ids()
     }
 }
+

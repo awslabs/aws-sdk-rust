@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListExperiences`](crate::operation::list_experiences::builders::ListExperiencesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_experiences::builders::ListExperiencesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`index_id(impl Into<String>)`](crate::operation::list_experiences::builders::ListExperiencesFluentBuilder::index_id) / [`set_index_id(Option<String>)`](crate::operation::list_experiences::builders::ListExperiencesFluentBuilder::set_index_id):<br>required: **true**<br><p>The identifier of the index for your Amazon Kendra experience.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_experiences::builders::ListExperiencesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_experiences::builders::ListExperiencesFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Kendra experiences.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_experiences::builders::ListExperiencesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_experiences::builders::ListExperiencesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of returned Amazon Kendra experiences.</p><br>
-    /// - On success, responds with [`ListExperiencesOutput`](crate::operation::list_experiences::ListExperiencesOutput) with field(s):
+                            /// - On success, responds with [`ListExperiencesOutput`](crate::operation::list_experiences::ListExperiencesOutput) with field(s):
     ///   - [`summary_items(Option<Vec::<ExperiencesSummary>>)`](crate::operation::list_experiences::ListExperiencesOutput::summary_items): <p>An array of summary information for one or more Amazon Kendra experiences.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_experiences::ListExperiencesOutput::next_token): <p>If the response is truncated, Amazon Kendra returns this token, which you can use in a later request to retrieve the next set of Amazon Kendra experiences.</p>
-    /// - On failure, responds with [`SdkError<ListExperiencesError>`](crate::operation::list_experiences::ListExperiencesError)
+                            /// - On failure, responds with [`SdkError<ListExperiencesError>`](crate::operation::list_experiences::ListExperiencesError)
     pub fn list_experiences(&self) -> crate::operation::list_experiences::builders::ListExperiencesFluentBuilder {
-        crate::operation::list_experiences::builders::ListExperiencesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_experiences::builders::ListExperiencesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

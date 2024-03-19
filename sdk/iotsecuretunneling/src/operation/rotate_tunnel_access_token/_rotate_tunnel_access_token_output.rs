@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct RotateTunnelAccessTokenOutput {
+pub struct RotateTunnelAccessTokenOutput  {
     /// <p>The Amazon Resource Name for the tunnel.</p>
     pub tunnel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The client access token that the source local proxy uses to connect to IoT Secure Tunneling.</p>
@@ -11,21 +11,21 @@ pub struct RotateTunnelAccessTokenOutput {
     pub destination_access_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl RotateTunnelAccessTokenOutput {
+impl  RotateTunnelAccessTokenOutput  {
     /// <p>The Amazon Resource Name for the tunnel.</p>
-    pub fn tunnel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn tunnel_arn(&self) -> ::std::option::Option<& str> {
         self.tunnel_arn.as_deref()
     }
     /// <p>The client access token that the source local proxy uses to connect to IoT Secure Tunneling.</p>
-    pub fn source_access_token(&self) -> ::std::option::Option<&str> {
+    pub fn source_access_token(&self) -> ::std::option::Option<& str> {
         self.source_access_token.as_deref()
     }
     /// <p>The client access token that the destination local proxy uses to connect to IoT Secure Tunneling.</p>
-    pub fn destination_access_token(&self) -> ::std::option::Option<&str> {
+    pub fn destination_access_token(&self) -> ::std::option::Option<& str> {
         self.destination_access_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for RotateTunnelAccessTokenOutput {
+impl  ::std::fmt::Debug for RotateTunnelAccessTokenOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RotateTunnelAccessTokenOutput");
         formatter.field("tunnel_arn", &self.tunnel_arn);
@@ -36,10 +36,10 @@ impl ::std::fmt::Debug for RotateTunnelAccessTokenOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for RotateTunnelAccessTokenOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RotateTunnelAccessTokenOutput {
     /// Creates a new builder-style object to manufacture [`RotateTunnelAccessTokenOutput`](crate::operation::rotate_tunnel_access_token::RotateTunnelAccessTokenOutput).
     pub fn builder() -> crate::operation::rotate_tunnel_access_token::builders::RotateTunnelAccessTokenOutputBuilder {
@@ -64,8 +64,7 @@ impl RotateTunnelAccessTokenOutputBuilder {
     }
     /// <p>The Amazon Resource Name for the tunnel.</p>
     pub fn set_tunnel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tunnel_arn = input;
-        self
+        self.tunnel_arn = input; self
     }
     /// <p>The Amazon Resource Name for the tunnel.</p>
     pub fn get_tunnel_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +77,7 @@ impl RotateTunnelAccessTokenOutputBuilder {
     }
     /// <p>The client access token that the source local proxy uses to connect to IoT Secure Tunneling.</p>
     pub fn set_source_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_access_token = input;
-        self
+        self.source_access_token = input; self
     }
     /// <p>The client access token that the source local proxy uses to connect to IoT Secure Tunneling.</p>
     pub fn get_source_access_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,28 +90,30 @@ impl RotateTunnelAccessTokenOutputBuilder {
     }
     /// <p>The client access token that the destination local proxy uses to connect to IoT Secure Tunneling.</p>
     pub fn set_destination_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_access_token = input;
-        self
+        self.destination_access_token = input; self
     }
     /// <p>The client access token that the destination local proxy uses to connect to IoT Secure Tunneling.</p>
     pub fn get_destination_access_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_access_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RotateTunnelAccessTokenOutput`](crate::operation::rotate_tunnel_access_token::RotateTunnelAccessTokenOutput).
     pub fn build(self) -> crate::operation::rotate_tunnel_access_token::RotateTunnelAccessTokenOutput {
         crate::operation::rotate_tunnel_access_token::RotateTunnelAccessTokenOutput {
-            tunnel_arn: self.tunnel_arn,
-            source_access_token: self.source_access_token,
-            destination_access_token: self.destination_access_token,
+            tunnel_arn: self.tunnel_arn
+            ,
+            source_access_token: self.source_access_token
+            ,
+            destination_access_token: self.destination_access_token
+            ,
             _request_id: self._request_id,
         }
     }
@@ -128,3 +128,4 @@ impl ::std::fmt::Debug for RotateTunnelAccessTokenOutputBuilder {
         formatter.finish()
     }
 }
+

@@ -3,21 +3,21 @@
 /// <p>Contains information about an extended key usage X.509 v3 extension object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsCertificateManagerCertificateExtendedKeyUsage {
+pub struct AwsCertificateManagerCertificateExtendedKeyUsage  {
     /// <p>The name of an extension value. Indicates the purpose for which the certificate public key can be used.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An object identifier (OID) for the extension value.</p>
     /// <p>The format is numbers separated by periods.</p>
     pub o_id: ::std::option::Option<::std::string::String>,
 }
-impl AwsCertificateManagerCertificateExtendedKeyUsage {
+impl  AwsCertificateManagerCertificateExtendedKeyUsage  {
     /// <p>The name of an extension value. Indicates the purpose for which the certificate public key can be used.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>An object identifier (OID) for the extension value.</p>
     /// <p>The format is numbers separated by periods.</p>
-    pub fn o_id(&self) -> ::std::option::Option<&str> {
+    pub fn o_id(&self) -> ::std::option::Option<& str> {
         self.o_id.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl AwsCertificateManagerCertificateExtendedKeyUsageBuilder {
     }
     /// <p>The name of an extension value. Indicates the purpose for which the certificate public key can be used.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of an extension value. Indicates the purpose for which the certificate public key can be used.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +58,7 @@ impl AwsCertificateManagerCertificateExtendedKeyUsageBuilder {
     /// <p>An object identifier (OID) for the extension value.</p>
     /// <p>The format is numbers separated by periods.</p>
     pub fn set_o_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.o_id = input;
-        self
+        self.o_id = input; self
     }
     /// <p>An object identifier (OID) for the extension value.</p>
     /// <p>The format is numbers separated by periods.</p>
@@ -70,8 +68,11 @@ impl AwsCertificateManagerCertificateExtendedKeyUsageBuilder {
     /// Consumes the builder and constructs a [`AwsCertificateManagerCertificateExtendedKeyUsage`](crate::types::AwsCertificateManagerCertificateExtendedKeyUsage).
     pub fn build(self) -> crate::types::AwsCertificateManagerCertificateExtendedKeyUsage {
         crate::types::AwsCertificateManagerCertificateExtendedKeyUsage {
-            name: self.name,
-            o_id: self.o_id,
+            name: self.name
+            ,
+            o_id: self.o_id
+            ,
         }
     }
 }
+

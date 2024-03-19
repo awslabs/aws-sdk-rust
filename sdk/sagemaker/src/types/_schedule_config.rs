@@ -3,7 +3,7 @@
 /// <p>Configuration details about the monitoring schedule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScheduleConfig {
+pub struct ScheduleConfig  {
     /// <p>A cron expression that describes details about the monitoring schedule.</p>
     /// <p>The supported cron expressions are:</p>
     /// <ul>
@@ -51,7 +51,7 @@ pub struct ScheduleConfig {
     /// <p>If you set <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is required.</p>
     pub data_analysis_end_time: ::std::option::Option<::std::string::String>,
 }
-impl ScheduleConfig {
+impl  ScheduleConfig  {
     /// <p>A cron expression that describes details about the monitoring schedule.</p>
     /// <p>The supported cron expressions are:</p>
     /// <ul>
@@ -89,19 +89,19 @@ impl ScheduleConfig {
     /// </ul>
     /// </note>
     /// <p>You can also specify the keyword <code>NOW</code> to run the monitoring job immediately, one time, without recurring.</p>
-    pub fn schedule_expression(&self) -> ::std::option::Option<&str> {
+    pub fn schedule_expression(&self) -> ::std::option::Option<& str> {
         self.schedule_expression.as_deref()
     }
     /// <p>Sets the start time for a monitoring job window. Express this time as an offset to the times that you schedule your monitoring jobs to run. You schedule monitoring jobs with the <code>ScheduleExpression</code> parameter. Specify this offset in ISO 8601 duration format. For example, if you want to monitor the five hours of data in your dataset that precede the start of each monitoring job, you would specify: <code>"-PT5H"</code>.</p>
     /// <p>The start time that you specify must not precede the end time that you specify by more than 24 hours. You specify the end time with the <code>DataAnalysisEndTime</code> parameter.</p>
     /// <p>If you set <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is required.</p>
-    pub fn data_analysis_start_time(&self) -> ::std::option::Option<&str> {
+    pub fn data_analysis_start_time(&self) -> ::std::option::Option<& str> {
         self.data_analysis_start_time.as_deref()
     }
     /// <p>Sets the end time for a monitoring job window. Express this time as an offset to the times that you schedule your monitoring jobs to run. You schedule monitoring jobs with the <code>ScheduleExpression</code> parameter. Specify this offset in ISO 8601 duration format. For example, if you want to end the window one hour before the start of each monitoring job, you would specify: <code>"-PT1H"</code>.</p>
     /// <p>The end time that you specify must not follow the start time that you specify by more than 24 hours. You specify the start time with the <code>DataAnalysisStartTime</code> parameter.</p>
     /// <p>If you set <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is required.</p>
-    pub fn data_analysis_end_time(&self) -> ::std::option::Option<&str> {
+    pub fn data_analysis_end_time(&self) -> ::std::option::Option<& str> {
         self.data_analysis_end_time.as_deref()
     }
 }
@@ -201,8 +201,7 @@ impl ScheduleConfigBuilder {
     /// </note>
     /// <p>You can also specify the keyword <code>NOW</code> to run the monitoring job immediately, one time, without recurring.</p>
     pub fn set_schedule_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schedule_expression = input;
-        self
+        self.schedule_expression = input; self
     }
     /// <p>A cron expression that describes details about the monitoring schedule.</p>
     /// <p>The supported cron expressions are:</p>
@@ -255,8 +254,7 @@ impl ScheduleConfigBuilder {
     /// <p>The start time that you specify must not precede the end time that you specify by more than 24 hours. You specify the end time with the <code>DataAnalysisEndTime</code> parameter.</p>
     /// <p>If you set <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is required.</p>
     pub fn set_data_analysis_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_analysis_start_time = input;
-        self
+        self.data_analysis_start_time = input; self
     }
     /// <p>Sets the start time for a monitoring job window. Express this time as an offset to the times that you schedule your monitoring jobs to run. You schedule monitoring jobs with the <code>ScheduleExpression</code> parameter. Specify this offset in ISO 8601 duration format. For example, if you want to monitor the five hours of data in your dataset that precede the start of each monitoring job, you would specify: <code>"-PT5H"</code>.</p>
     /// <p>The start time that you specify must not precede the end time that you specify by more than 24 hours. You specify the end time with the <code>DataAnalysisEndTime</code> parameter.</p>
@@ -275,8 +273,7 @@ impl ScheduleConfigBuilder {
     /// <p>The end time that you specify must not follow the start time that you specify by more than 24 hours. You specify the start time with the <code>DataAnalysisStartTime</code> parameter.</p>
     /// <p>If you set <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is required.</p>
     pub fn set_data_analysis_end_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_analysis_end_time = input;
-        self
+        self.data_analysis_end_time = input; self
     }
     /// <p>Sets the end time for a monitoring job window. Express this time as an offset to the times that you schedule your monitoring jobs to run. You schedule monitoring jobs with the <code>ScheduleExpression</code> parameter. Specify this offset in ISO 8601 duration format. For example, if you want to end the window one hour before the start of each monitoring job, you would specify: <code>"-PT1H"</code>.</p>
     /// <p>The end time that you specify must not follow the start time that you specify by more than 24 hours. You specify the start time with the <code>DataAnalysisStartTime</code> parameter.</p>
@@ -287,9 +284,13 @@ impl ScheduleConfigBuilder {
     /// Consumes the builder and constructs a [`ScheduleConfig`](crate::types::ScheduleConfig).
     pub fn build(self) -> crate::types::ScheduleConfig {
         crate::types::ScheduleConfig {
-            schedule_expression: self.schedule_expression,
-            data_analysis_start_time: self.data_analysis_start_time,
-            data_analysis_end_time: self.data_analysis_end_time,
+            schedule_expression: self.schedule_expression
+            ,
+            data_analysis_start_time: self.data_analysis_start_time
+            ,
+            data_analysis_end_time: self.data_analysis_end_time
+            ,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>An error associated with a zero-ETL integration with Amazon Redshift.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IntegrationError {
+pub struct IntegrationError  {
     /// <p>The error code associated with the integration.</p>
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>A message explaining the error.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
-impl IntegrationError {
+impl  IntegrationError  {
     /// <p>The error code associated with the integration.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>A message explaining the error.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl IntegrationErrorBuilder {
     }
     /// <p>The error code associated with the integration.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code associated with the integration.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl IntegrationErrorBuilder {
     }
     /// <p>A message explaining the error.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>A message explaining the error.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,11 @@ impl IntegrationErrorBuilder {
     /// Consumes the builder and constructs a [`IntegrationError`](crate::types::IntegrationError).
     pub fn build(self) -> crate::types::IntegrationError {
         crate::types::IntegrationError {
-            error_code: self.error_code,
-            error_message: self.error_message,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

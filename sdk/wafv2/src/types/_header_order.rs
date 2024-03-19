@@ -3,7 +3,7 @@
 /// <p>Inspect a string containing the list of the request's header names, ordered as they appear in the web request that WAF receives for inspection. WAF generates the string and then uses that as the field to match component in its inspection. WAF separates the header names in the string using colons and no added spaces, for example <code>host:user-agent:accept:authorization:referer</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HeaderOrder {
+pub struct HeaderOrder  {
     /// <p>What WAF should do if the headers of the request are more numerous or larger than WAF can inspect. WAF does not support inspecting the entire contents of request headers when they exceed 8 KB (8192 bytes) or 200 total headers. The underlying host service forwards a maximum of 200 headers and at most 8 KB of header contents to WAF.</p>
     /// <p>The options for oversize handling are the following:</p>
     /// <ul>
@@ -16,7 +16,7 @@ pub struct HeaderOrder {
     /// </ul>
     pub oversize_handling: crate::types::OversizeHandling,
 }
-impl HeaderOrder {
+impl  HeaderOrder  {
     /// <p>What WAF should do if the headers of the request are more numerous or larger than WAF can inspect. WAF does not support inspecting the entire contents of request headers when they exceed 8 KB (8192 bytes) or 200 total headers. The underlying host service forwards a maximum of 200 headers and at most 8 KB of header contents to WAF.</p>
     /// <p>The options for oversize handling are the following:</p>
     /// <ul>
@@ -27,7 +27,7 @@ impl HeaderOrder {
     /// <li>
     /// <p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
     /// </ul>
-    pub fn oversize_handling(&self) -> &crate::types::OversizeHandling {
+    pub fn oversize_handling(&self) -> & crate::types::OversizeHandling {
         &self.oversize_handling
     }
 }
@@ -71,8 +71,7 @@ impl HeaderOrderBuilder {
     /// <p><code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p></li>
     /// </ul>
     pub fn set_oversize_handling(mut self, input: ::std::option::Option<crate::types::OversizeHandling>) -> Self {
-        self.oversize_handling = input;
-        self
+        self.oversize_handling = input; self
     }
     /// <p>What WAF should do if the headers of the request are more numerous or larger than WAF can inspect. WAF does not support inspecting the entire contents of request headers when they exceed 8 KB (8192 bytes) or 200 total headers. The underlying host service forwards a maximum of 200 headers and at most 8 KB of header contents to WAF.</p>
     /// <p>The options for oversize handling are the following:</p>
@@ -91,13 +90,15 @@ impl HeaderOrderBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`oversize_handling`](crate::types::builders::HeaderOrderBuilder::oversize_handling)
     pub fn build(self) -> ::std::result::Result<crate::types::HeaderOrder, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::HeaderOrder {
-            oversize_handling: self.oversize_handling.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "oversize_handling",
-                    "oversize_handling was not specified but it is required when building HeaderOrder",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::HeaderOrder {
+                oversize_handling: self.oversize_handling
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("oversize_handling", "oversize_handling was not specified but it is required when building HeaderOrder")
+                    )?
+                ,
+            }
+        )
     }
 }
+

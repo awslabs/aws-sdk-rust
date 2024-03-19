@@ -3,7 +3,7 @@
 /// <p>Details of the evidence for a vulnerability identified in a finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Evidence {
+pub struct Evidence  {
     /// <p>The evidence rule.</p>
     pub evidence_rule: ::std::option::Option<::std::string::String>,
     /// <p>The evidence details.</p>
@@ -11,17 +11,17 @@ pub struct Evidence {
     /// <p>The evidence severity.</p>
     pub severity: ::std::option::Option<::std::string::String>,
 }
-impl Evidence {
+impl  Evidence  {
     /// <p>The evidence rule.</p>
-    pub fn evidence_rule(&self) -> ::std::option::Option<&str> {
+    pub fn evidence_rule(&self) -> ::std::option::Option<& str> {
         self.evidence_rule.as_deref()
     }
     /// <p>The evidence details.</p>
-    pub fn evidence_detail(&self) -> ::std::option::Option<&str> {
+    pub fn evidence_detail(&self) -> ::std::option::Option<& str> {
         self.evidence_detail.as_deref()
     }
     /// <p>The evidence severity.</p>
-    pub fn severity(&self) -> ::std::option::Option<&str> {
+    pub fn severity(&self) -> ::std::option::Option<& str> {
         self.severity.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl EvidenceBuilder {
     }
     /// <p>The evidence rule.</p>
     pub fn set_evidence_rule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.evidence_rule = input;
-        self
+        self.evidence_rule = input; self
     }
     /// <p>The evidence rule.</p>
     pub fn get_evidence_rule(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl EvidenceBuilder {
     }
     /// <p>The evidence details.</p>
     pub fn set_evidence_detail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.evidence_detail = input;
-        self
+        self.evidence_detail = input; self
     }
     /// <p>The evidence details.</p>
     pub fn get_evidence_detail(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl EvidenceBuilder {
     }
     /// <p>The evidence severity.</p>
     pub fn set_severity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.severity = input;
-        self
+        self.severity = input; self
     }
     /// <p>The evidence severity.</p>
     pub fn get_severity(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl EvidenceBuilder {
     /// Consumes the builder and constructs a [`Evidence`](crate::types::Evidence).
     pub fn build(self) -> crate::types::Evidence {
         crate::types::Evidence {
-            evidence_rule: self.evidence_rule,
-            evidence_detail: self.evidence_detail,
-            severity: self.severity,
+            evidence_rule: self.evidence_rule
+            ,
+            evidence_detail: self.evidence_detail
+            ,
+            severity: self.severity
+            ,
         }
     }
 }
+

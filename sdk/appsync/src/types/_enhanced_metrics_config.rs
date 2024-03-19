@@ -53,7 +53,7 @@
 /// </ol>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnhancedMetricsConfig {
+pub struct EnhancedMetricsConfig  {
     /// <p>Controls how resolver metrics will be emitted to CloudWatch. Resolver metrics include:</p>
     /// <ul>
     /// <li>
@@ -102,7 +102,7 @@ pub struct EnhancedMetricsConfig {
     /// <p>Metrics will be recorded by API ID and operation name. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
     pub operation_level_metrics_config: crate::types::OperationLevelMetricsConfig,
 }
-impl EnhancedMetricsConfig {
+impl  EnhancedMetricsConfig  {
     /// <p>Controls how resolver metrics will be emitted to CloudWatch. Resolver metrics include:</p>
     /// <ul>
     /// <li>
@@ -123,7 +123,7 @@ impl EnhancedMetricsConfig {
     /// <li>
     /// <p><code>PER_RESOLVER_METRICS</code>: Records and emits metric data for resolvers that have the <code>metricsConfig</code> value set to <code>ENABLED</code>.</p></li>
     /// </ul>
-    pub fn resolver_level_metrics_behavior(&self) -> &crate::types::ResolverLevelMetricsBehavior {
+    pub fn resolver_level_metrics_behavior(&self) -> & crate::types::ResolverLevelMetricsBehavior {
         &self.resolver_level_metrics_behavior
     }
     /// <p>Controls how data source metrics will be emitted to CloudWatch. Data source metrics include:</p>
@@ -142,7 +142,7 @@ impl EnhancedMetricsConfig {
     /// <li>
     /// <p><code>PER_DATA_SOURCE_METRICS</code>: Records and emits metric data for data sources that have the <code>metricsConfig</code> value set to <code>ENABLED</code>.</p></li>
     /// </ul>
-    pub fn data_source_level_metrics_behavior(&self) -> &crate::types::DataSourceLevelMetricsBehavior {
+    pub fn data_source_level_metrics_behavior(&self) -> & crate::types::DataSourceLevelMetricsBehavior {
         &self.data_source_level_metrics_behavior
     }
     /// <p>Controls how operation metrics will be emitted to CloudWatch. Operation metrics include:</p>
@@ -153,7 +153,7 @@ impl EnhancedMetricsConfig {
     /// <p>GraphQL errors: The number of GraphQL errors that occurred during a specified GraphQL operation.</p></li>
     /// </ul>
     /// <p>Metrics will be recorded by API ID and operation name. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
-    pub fn operation_level_metrics_config(&self) -> &crate::types::OperationLevelMetricsConfig {
+    pub fn operation_level_metrics_config(&self) -> & crate::types::OperationLevelMetricsConfig {
         &self.operation_level_metrics_config
     }
 }
@@ -219,8 +219,7 @@ impl EnhancedMetricsConfigBuilder {
     /// <p><code>PER_RESOLVER_METRICS</code>: Records and emits metric data for resolvers that have the <code>metricsConfig</code> value set to <code>ENABLED</code>.</p></li>
     /// </ul>
     pub fn set_resolver_level_metrics_behavior(mut self, input: ::std::option::Option<crate::types::ResolverLevelMetricsBehavior>) -> Self {
-        self.resolver_level_metrics_behavior = input;
-        self
+        self.resolver_level_metrics_behavior = input; self
     }
     /// <p>Controls how resolver metrics will be emitted to CloudWatch. Resolver metrics include:</p>
     /// <ul>
@@ -283,8 +282,7 @@ impl EnhancedMetricsConfigBuilder {
     /// <p><code>PER_DATA_SOURCE_METRICS</code>: Records and emits metric data for data sources that have the <code>metricsConfig</code> value set to <code>ENABLED</code>.</p></li>
     /// </ul>
     pub fn set_data_source_level_metrics_behavior(mut self, input: ::std::option::Option<crate::types::DataSourceLevelMetricsBehavior>) -> Self {
-        self.data_source_level_metrics_behavior = input;
-        self
+        self.data_source_level_metrics_behavior = input; self
     }
     /// <p>Controls how data source metrics will be emitted to CloudWatch. Data source metrics include:</p>
     /// <ul>
@@ -327,8 +325,7 @@ impl EnhancedMetricsConfigBuilder {
     /// </ul>
     /// <p>Metrics will be recorded by API ID and operation name. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
     pub fn set_operation_level_metrics_config(mut self, input: ::std::option::Option<crate::types::OperationLevelMetricsConfig>) -> Self {
-        self.operation_level_metrics_config = input;
-        self
+        self.operation_level_metrics_config = input; self
     }
     /// <p>Controls how operation metrics will be emitted to CloudWatch. Operation metrics include:</p>
     /// <ul>
@@ -347,25 +344,25 @@ impl EnhancedMetricsConfigBuilder {
     /// - [`data_source_level_metrics_behavior`](crate::types::builders::EnhancedMetricsConfigBuilder::data_source_level_metrics_behavior)
     /// - [`operation_level_metrics_config`](crate::types::builders::EnhancedMetricsConfigBuilder::operation_level_metrics_config)
     pub fn build(self) -> ::std::result::Result<crate::types::EnhancedMetricsConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EnhancedMetricsConfig {
-            resolver_level_metrics_behavior: self.resolver_level_metrics_behavior.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resolver_level_metrics_behavior",
-                    "resolver_level_metrics_behavior was not specified but it is required when building EnhancedMetricsConfig",
-                )
-            })?,
-            data_source_level_metrics_behavior: self.data_source_level_metrics_behavior.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_source_level_metrics_behavior",
-                    "data_source_level_metrics_behavior was not specified but it is required when building EnhancedMetricsConfig",
-                )
-            })?,
-            operation_level_metrics_config: self.operation_level_metrics_config.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "operation_level_metrics_config",
-                    "operation_level_metrics_config was not specified but it is required when building EnhancedMetricsConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EnhancedMetricsConfig {
+                resolver_level_metrics_behavior: self.resolver_level_metrics_behavior
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resolver_level_metrics_behavior", "resolver_level_metrics_behavior was not specified but it is required when building EnhancedMetricsConfig")
+                    )?
+                ,
+                data_source_level_metrics_behavior: self.data_source_level_metrics_behavior
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_source_level_metrics_behavior", "data_source_level_metrics_behavior was not specified but it is required when building EnhancedMetricsConfig")
+                    )?
+                ,
+                operation_level_metrics_config: self.operation_level_metrics_config
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("operation_level_metrics_config", "operation_level_metrics_config was not specified but it is required when building EnhancedMetricsConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

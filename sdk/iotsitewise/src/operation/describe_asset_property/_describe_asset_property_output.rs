@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAssetPropertyOutput {
+pub struct DescribeAssetPropertyOutput  {
     /// <p>The ID of the asset, in UUID format.</p>
     pub asset_id: ::std::string::String,
     /// <p>The name of the asset.</p>
@@ -18,41 +18,38 @@ pub struct DescribeAssetPropertyOutput {
     pub asset_external_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeAssetPropertyOutput {
+impl  DescribeAssetPropertyOutput  {
     /// <p>The ID of the asset, in UUID format.</p>
-    pub fn asset_id(&self) -> &str {
-        use std::ops::Deref;
-        self.asset_id.deref()
+    pub fn asset_id(&self) -> & str {
+        use std::ops::Deref; self.asset_id.deref()
     }
     /// <p>The name of the asset.</p>
-    pub fn asset_name(&self) -> &str {
-        use std::ops::Deref;
-        self.asset_name.deref()
+    pub fn asset_name(&self) -> & str {
+        use std::ops::Deref; self.asset_name.deref()
     }
     /// <p>The ID of the asset model, in UUID format.</p>
-    pub fn asset_model_id(&self) -> &str {
-        use std::ops::Deref;
-        self.asset_model_id.deref()
+    pub fn asset_model_id(&self) -> & str {
+        use std::ops::Deref; self.asset_model_id.deref()
     }
     /// <p>The asset property's definition, alias, and notification state.</p>
     /// <p>This response includes this object for normal asset properties. If you describe an asset property in a composite model, this response includes the asset property information in <code>compositeModel</code>.</p>
-    pub fn asset_property(&self) -> ::std::option::Option<&crate::types::Property> {
+    pub fn asset_property(&self) -> ::std::option::Option<& crate::types::Property> {
         self.asset_property.as_ref()
     }
     /// <p>The composite model that declares this asset property, if this asset property exists in a composite model.</p>
-    pub fn composite_model(&self) -> ::std::option::Option<&crate::types::CompositeModelProperty> {
+    pub fn composite_model(&self) -> ::std::option::Option<& crate::types::CompositeModelProperty> {
         self.composite_model.as_ref()
     }
     /// <p>The external ID of the asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn asset_external_id(&self) -> ::std::option::Option<&str> {
+    pub fn asset_external_id(&self) -> ::std::option::Option<& str> {
         self.asset_external_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAssetPropertyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAssetPropertyOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAssetPropertyOutput`](crate::operation::describe_asset_property::DescribeAssetPropertyOutput).
     pub fn builder() -> crate::operation::describe_asset_property::builders::DescribeAssetPropertyOutputBuilder {
@@ -81,8 +78,7 @@ impl DescribeAssetPropertyOutputBuilder {
     }
     /// <p>The ID of the asset, in UUID format.</p>
     pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_id = input;
-        self
+        self.asset_id = input; self
     }
     /// <p>The ID of the asset, in UUID format.</p>
     pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +92,7 @@ impl DescribeAssetPropertyOutputBuilder {
     }
     /// <p>The name of the asset.</p>
     pub fn set_asset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_name = input;
-        self
+        self.asset_name = input; self
     }
     /// <p>The name of the asset.</p>
     pub fn get_asset_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +106,7 @@ impl DescribeAssetPropertyOutputBuilder {
     }
     /// <p>The ID of the asset model, in UUID format.</p>
     pub fn set_asset_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_model_id = input;
-        self
+        self.asset_model_id = input; self
     }
     /// <p>The ID of the asset model, in UUID format.</p>
     pub fn get_asset_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +121,7 @@ impl DescribeAssetPropertyOutputBuilder {
     /// <p>The asset property's definition, alias, and notification state.</p>
     /// <p>This response includes this object for normal asset properties. If you describe an asset property in a composite model, this response includes the asset property information in <code>compositeModel</code>.</p>
     pub fn set_asset_property(mut self, input: ::std::option::Option<crate::types::Property>) -> Self {
-        self.asset_property = input;
-        self
+        self.asset_property = input; self
     }
     /// <p>The asset property's definition, alias, and notification state.</p>
     /// <p>This response includes this object for normal asset properties. If you describe an asset property in a composite model, this response includes the asset property information in <code>compositeModel</code>.</p>
@@ -142,8 +135,7 @@ impl DescribeAssetPropertyOutputBuilder {
     }
     /// <p>The composite model that declares this asset property, if this asset property exists in a composite model.</p>
     pub fn set_composite_model(mut self, input: ::std::option::Option<crate::types::CompositeModelProperty>) -> Self {
-        self.composite_model = input;
-        self
+        self.composite_model = input; self
     }
     /// <p>The composite model that declares this asset property, if this asset property exists in a composite model.</p>
     pub fn get_composite_model(&self) -> &::std::option::Option<crate::types::CompositeModelProperty> {
@@ -156,54 +148,53 @@ impl DescribeAssetPropertyOutputBuilder {
     }
     /// <p>The external ID of the asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_asset_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_external_id = input;
-        self
+        self.asset_external_id = input; self
     }
     /// <p>The external ID of the asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn get_asset_external_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_external_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAssetPropertyOutput`](crate::operation::describe_asset_property::DescribeAssetPropertyOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`asset_id`](crate::operation::describe_asset_property::builders::DescribeAssetPropertyOutputBuilder::asset_id)
     /// - [`asset_name`](crate::operation::describe_asset_property::builders::DescribeAssetPropertyOutputBuilder::asset_name)
     /// - [`asset_model_id`](crate::operation::describe_asset_property::builders::DescribeAssetPropertyOutputBuilder::asset_model_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_asset_property::DescribeAssetPropertyOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_asset_property::DescribeAssetPropertyOutput {
-            asset_id: self.asset_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "asset_id",
-                    "asset_id was not specified but it is required when building DescribeAssetPropertyOutput",
-                )
-            })?,
-            asset_name: self.asset_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "asset_name",
-                    "asset_name was not specified but it is required when building DescribeAssetPropertyOutput",
-                )
-            })?,
-            asset_model_id: self.asset_model_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "asset_model_id",
-                    "asset_model_id was not specified but it is required when building DescribeAssetPropertyOutput",
-                )
-            })?,
-            asset_property: self.asset_property,
-            composite_model: self.composite_model,
-            asset_external_id: self.asset_external_id,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_asset_property::DescribeAssetPropertyOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_asset_property::DescribeAssetPropertyOutput {
+                asset_id: self.asset_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("asset_id", "asset_id was not specified but it is required when building DescribeAssetPropertyOutput")
+                    )?
+                ,
+                asset_name: self.asset_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("asset_name", "asset_name was not specified but it is required when building DescribeAssetPropertyOutput")
+                    )?
+                ,
+                asset_model_id: self.asset_model_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("asset_model_id", "asset_model_id was not specified but it is required when building DescribeAssetPropertyOutput")
+                    )?
+                ,
+                asset_property: self.asset_property
+                ,
+                composite_model: self.composite_model
+                ,
+                asset_external_id: self.asset_external_id
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

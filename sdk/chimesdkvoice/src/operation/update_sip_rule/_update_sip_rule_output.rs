@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSipRuleOutput {
+pub struct UpdateSipRuleOutput  {
     /// <p>The updated SIP rule details.</p>
     pub sip_rule: ::std::option::Option<crate::types::SipRule>,
     _request_id: Option<String>,
 }
-impl UpdateSipRuleOutput {
+impl  UpdateSipRuleOutput  {
     /// <p>The updated SIP rule details.</p>
-    pub fn sip_rule(&self) -> ::std::option::Option<&crate::types::SipRule> {
+    pub fn sip_rule(&self) -> ::std::option::Option<& crate::types::SipRule> {
         self.sip_rule.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateSipRuleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateSipRuleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSipRuleOutput`](crate::operation::update_sip_rule::UpdateSipRuleOutput).
     pub fn builder() -> crate::operation::update_sip_rule::builders::UpdateSipRuleOutputBuilder {
@@ -40,27 +40,28 @@ impl UpdateSipRuleOutputBuilder {
     }
     /// <p>The updated SIP rule details.</p>
     pub fn set_sip_rule(mut self, input: ::std::option::Option<crate::types::SipRule>) -> Self {
-        self.sip_rule = input;
-        self
+        self.sip_rule = input; self
     }
     /// <p>The updated SIP rule details.</p>
     pub fn get_sip_rule(&self) -> &::std::option::Option<crate::types::SipRule> {
         &self.sip_rule
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateSipRuleOutput`](crate::operation::update_sip_rule::UpdateSipRuleOutput).
     pub fn build(self) -> crate::operation::update_sip_rule::UpdateSipRuleOutput {
         crate::operation::update_sip_rule::UpdateSipRuleOutput {
-            sip_rule: self.sip_rule,
+            sip_rule: self.sip_rule
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

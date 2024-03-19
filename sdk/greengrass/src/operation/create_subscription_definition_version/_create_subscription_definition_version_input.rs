@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSubscriptionDefinitionVersionInput {
+pub struct CreateSubscriptionDefinitionVersionInput  {
     /// A client token used to correlate requests and responses.
     pub amzn_client_token: ::std::option::Option<::std::string::String>,
     /// The ID of the subscription definition.
     pub subscription_definition_id: ::std::option::Option<::std::string::String>,
     /// A list of subscriptions.
-    pub subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>,
+    pub subscriptions: ::std::option::Option<::std::vec::Vec::<crate::types::Subscription>>,
 }
-impl CreateSubscriptionDefinitionVersionInput {
+impl  CreateSubscriptionDefinitionVersionInput  {
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(&self) -> ::std::option::Option<&str> {
+    pub fn amzn_client_token(&self) -> ::std::option::Option<& str> {
         self.amzn_client_token.as_deref()
     }
     /// The ID of the subscription definition.
-    pub fn subscription_definition_id(&self) -> ::std::option::Option<&str> {
+    pub fn subscription_definition_id(&self) -> ::std::option::Option<& str> {
         self.subscription_definition_id.as_deref()
     }
     /// A list of subscriptions.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscriptions.is_none()`.
-    pub fn subscriptions(&self) -> &[crate::types::Subscription] {
-        self.subscriptions.as_deref().unwrap_or_default()
+    pub fn subscriptions(&self) -> & [crate::types::Subscription] {
+        self.subscriptions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateSubscriptionDefinitionVersionInput {
@@ -39,7 +40,7 @@ impl CreateSubscriptionDefinitionVersionInput {
 pub struct CreateSubscriptionDefinitionVersionInputBuilder {
     pub(crate) amzn_client_token: ::std::option::Option<::std::string::String>,
     pub(crate) subscription_definition_id: ::std::option::Option<::std::string::String>,
-    pub(crate) subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>,
+    pub(crate) subscriptions: ::std::option::Option<::std::vec::Vec::<crate::types::Subscription>>,
 }
 impl CreateSubscriptionDefinitionVersionInputBuilder {
     /// A client token used to correlate requests and responses.
@@ -49,8 +50,7 @@ impl CreateSubscriptionDefinitionVersionInputBuilder {
     }
     /// A client token used to correlate requests and responses.
     pub fn set_amzn_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.amzn_client_token = input;
-        self
+        self.amzn_client_token = input; self
     }
     /// A client token used to correlate requests and responses.
     pub fn get_amzn_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl CreateSubscriptionDefinitionVersionInputBuilder {
     }
     /// The ID of the subscription definition.
     pub fn set_subscription_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subscription_definition_id = input;
-        self
+        self.subscription_definition_id = input; self
     }
     /// The ID of the subscription definition.
     pub fn get_subscription_definition_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,32 +77,30 @@ impl CreateSubscriptionDefinitionVersionInputBuilder {
     /// A list of subscriptions.
     pub fn subscriptions(mut self, input: crate::types::Subscription) -> Self {
         let mut v = self.subscriptions.unwrap_or_default();
-        v.push(input);
-        self.subscriptions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.subscriptions = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of subscriptions.
-    pub fn set_subscriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>) -> Self {
-        self.subscriptions = input;
-        self
+    pub fn set_subscriptions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Subscription>>) -> Self {
+        self.subscriptions = input; self
     }
     /// A list of subscriptions.
-    pub fn get_subscriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscription>> {
+    pub fn get_subscriptions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Subscription>> {
         &self.subscriptions
     }
     /// Consumes the builder and constructs a [`CreateSubscriptionDefinitionVersionInput`](crate::operation::create_subscription_definition_version::CreateSubscriptionDefinitionVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_subscription_definition_version::CreateSubscriptionDefinitionVersionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_subscription_definition_version::CreateSubscriptionDefinitionVersionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_subscription_definition_version::CreateSubscriptionDefinitionVersionInput {
-                amzn_client_token: self.amzn_client_token,
-                subscription_definition_id: self.subscription_definition_id,
-                subscriptions: self.subscriptions,
-            },
+                amzn_client_token: self.amzn_client_token
+                ,
+                subscription_definition_id: self.subscription_definition_id
+                ,
+                subscriptions: self.subscriptions
+                ,
+            }
         )
     }
 }
+

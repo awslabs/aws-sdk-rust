@@ -3,17 +3,16 @@
 /// <p>A container for rules.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RulesConfigurationType {
+pub struct RulesConfigurationType  {
     /// <p>An array of rules. You can specify up to 25 rules per identity provider.</p>
     /// <p>Rules are evaluated in order. The first one to match specifies the role.</p>
-    pub rules: ::std::vec::Vec<crate::types::MappingRule>,
+    pub rules: ::std::vec::Vec::<crate::types::MappingRule>,
 }
-impl RulesConfigurationType {
+impl  RulesConfigurationType  {
     /// <p>An array of rules. You can specify up to 25 rules per identity provider.</p>
     /// <p>Rules are evaluated in order. The first one to match specifies the role.</p>
-    pub fn rules(&self) -> &[crate::types::MappingRule] {
-        use std::ops::Deref;
-        self.rules.deref()
+    pub fn rules(&self) -> & [crate::types::MappingRule] {
+        use std::ops::Deref; self.rules.deref()
     }
 }
 impl RulesConfigurationType {
@@ -27,7 +26,7 @@ impl RulesConfigurationType {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RulesConfigurationTypeBuilder {
-    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::MappingRule>>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec::<crate::types::MappingRule>>,
 }
 impl RulesConfigurationTypeBuilder {
     /// Appends an item to `rules`.
@@ -38,32 +37,33 @@ impl RulesConfigurationTypeBuilder {
     /// <p>Rules are evaluated in order. The first one to match specifies the role.</p>
     pub fn rules(mut self, input: crate::types::MappingRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
-        v.push(input);
-        self.rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of rules. You can specify up to 25 rules per identity provider.</p>
     /// <p>Rules are evaluated in order. The first one to match specifies the role.</p>
-    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MappingRule>>) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MappingRule>>) -> Self {
+        self.rules = input; self
     }
     /// <p>An array of rules. You can specify up to 25 rules per identity provider.</p>
     /// <p>Rules are evaluated in order. The first one to match specifies the role.</p>
-    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MappingRule>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MappingRule>> {
         &self.rules
     }
     /// Consumes the builder and constructs a [`RulesConfigurationType`](crate::types::RulesConfigurationType).
     /// This method will fail if any of the following fields are not set:
     /// - [`rules`](crate::types::builders::RulesConfigurationTypeBuilder::rules)
     pub fn build(self) -> ::std::result::Result<crate::types::RulesConfigurationType, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RulesConfigurationType {
-            rules: self.rules.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rules",
-                    "rules was not specified but it is required when building RulesConfigurationType",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RulesConfigurationType {
+                rules: self.rules
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rules", "rules was not specified but it is required when building RulesConfigurationType")
+                    )?
+                ,
+            }
+        )
     }
 }
+

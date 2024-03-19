@@ -30,11 +30,7 @@ impl PostProcessingTrace {
     /// Tries to convert the enum instance into [`ModelInvocationInput`](crate::types::PostProcessingTrace::ModelInvocationInput), extracting the inner [`ModelInvocationInput`](crate::types::ModelInvocationInput).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_model_invocation_input(&self) -> ::std::result::Result<&crate::types::ModelInvocationInput, &Self> {
-        if let PostProcessingTrace::ModelInvocationInput(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let PostProcessingTrace::ModelInvocationInput(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ModelInvocationInput`](crate::types::PostProcessingTrace::ModelInvocationInput).
     pub fn is_model_invocation_input(&self) -> bool {
@@ -43,11 +39,7 @@ impl PostProcessingTrace {
     /// Tries to convert the enum instance into [`ModelInvocationOutput`](crate::types::PostProcessingTrace::ModelInvocationOutput), extracting the inner [`PostProcessingModelInvocationOutput`](crate::types::PostProcessingModelInvocationOutput).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_model_invocation_output(&self) -> ::std::result::Result<&crate::types::PostProcessingModelInvocationOutput, &Self> {
-        if let PostProcessingTrace::ModelInvocationOutput(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let PostProcessingTrace::ModelInvocationOutput(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ModelInvocationOutput`](crate::types::PostProcessingTrace::ModelInvocationOutput).
     pub fn is_model_invocation_output(&self) -> bool {
@@ -59,7 +51,8 @@ impl PostProcessingTrace {
     }
 }
 impl ::std::fmt::Debug for PostProcessingTrace {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        ::std::write!(f, "*** Sensitive Data Redacted ***")
-    }
-}
+                fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+                    ::std::write!(f, "*** Sensitive Data Redacted ***")
+                }
+            }
+

@@ -3,7 +3,7 @@
 /// <p>This is an object that represents the properties of the node range for a multi-node parallel job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NodeRangeProperty {
+pub struct NodeRangeProperty  {
     /// <p>The range of nodes, using node index values. A range of <code>0:3</code> indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the highest possible node index is used to end the range. Your accumulative node ranges must account for all nodes (<code>0:n</code>). You can nest node ranges (for example, <code>0:10</code> and <code>4:5</code>). In this case, the <code>4:5</code> range properties override the <code>0:10</code> properties.</p>
     pub target_nodes: ::std::option::Option<::std::string::String>,
     /// <p>The container details for the node range.</p>
@@ -12,30 +12,31 @@ pub struct NodeRangeProperty {
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources.</p>
     /// <p>In addition, this list object is currently limited to one element.</p>
     /// </note>
-    pub instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub instance_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>This is an object that represents the properties of the node range for a multi-node parallel job.</p>
     pub ecs_properties: ::std::option::Option<crate::types::EcsProperties>,
 }
-impl NodeRangeProperty {
+impl  NodeRangeProperty  {
     /// <p>The range of nodes, using node index values. A range of <code>0:3</code> indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the highest possible node index is used to end the range. Your accumulative node ranges must account for all nodes (<code>0:n</code>). You can nest node ranges (for example, <code>0:10</code> and <code>4:5</code>). In this case, the <code>4:5</code> range properties override the <code>0:10</code> properties.</p>
-    pub fn target_nodes(&self) -> ::std::option::Option<&str> {
+    pub fn target_nodes(&self) -> ::std::option::Option<& str> {
         self.target_nodes.as_deref()
     }
     /// <p>The container details for the node range.</p>
-    pub fn container(&self) -> ::std::option::Option<&crate::types::ContainerProperties> {
+    pub fn container(&self) -> ::std::option::Option<& crate::types::ContainerProperties> {
         self.container.as_ref()
     }
     /// <p>The instance types of the underlying host infrastructure of a multi-node parallel job.</p><note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources.</p>
     /// <p>In addition, this list object is currently limited to one element.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_types.is_none()`.
-    pub fn instance_types(&self) -> &[::std::string::String] {
-        self.instance_types.as_deref().unwrap_or_default()
+    pub fn instance_types(&self) -> & [::std::string::String] {
+        self.instance_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>This is an object that represents the properties of the node range for a multi-node parallel job.</p>
-    pub fn ecs_properties(&self) -> ::std::option::Option<&crate::types::EcsProperties> {
+    pub fn ecs_properties(&self) -> ::std::option::Option<& crate::types::EcsProperties> {
         self.ecs_properties.as_ref()
     }
 }
@@ -52,7 +53,7 @@ impl NodeRangeProperty {
 pub struct NodeRangePropertyBuilder {
     pub(crate) target_nodes: ::std::option::Option<::std::string::String>,
     pub(crate) container: ::std::option::Option<crate::types::ContainerProperties>,
-    pub(crate) instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) instance_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) ecs_properties: ::std::option::Option<crate::types::EcsProperties>,
 }
 impl NodeRangePropertyBuilder {
@@ -64,8 +65,7 @@ impl NodeRangePropertyBuilder {
     }
     /// <p>The range of nodes, using node index values. A range of <code>0:3</code> indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the highest possible node index is used to end the range. Your accumulative node ranges must account for all nodes (<code>0:n</code>). You can nest node ranges (for example, <code>0:10</code> and <code>4:5</code>). In this case, the <code>4:5</code> range properties override the <code>0:10</code> properties.</p>
     pub fn set_target_nodes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_nodes = input;
-        self
+        self.target_nodes = input; self
     }
     /// <p>The range of nodes, using node index values. A range of <code>0:3</code> indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the highest possible node index is used to end the range. Your accumulative node ranges must account for all nodes (<code>0:n</code>). You can nest node ranges (for example, <code>0:10</code> and <code>4:5</code>). In this case, the <code>4:5</code> range properties override the <code>0:10</code> properties.</p>
     pub fn get_target_nodes(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl NodeRangePropertyBuilder {
     }
     /// <p>The container details for the node range.</p>
     pub fn set_container(mut self, input: ::std::option::Option<crate::types::ContainerProperties>) -> Self {
-        self.container = input;
-        self
+        self.container = input; self
     }
     /// <p>The container details for the node range.</p>
     pub fn get_container(&self) -> &::std::option::Option<crate::types::ContainerProperties> {
@@ -95,23 +94,22 @@ impl NodeRangePropertyBuilder {
     /// </note>
     pub fn instance_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_types.unwrap_or_default();
-        v.push(input.into());
-        self.instance_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.instance_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The instance types of the underlying host infrastructure of a multi-node parallel job.</p><note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources.</p>
     /// <p>In addition, this list object is currently limited to one element.</p>
     /// </note>
-    pub fn set_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.instance_types = input;
-        self
+    pub fn set_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.instance_types = input; self
     }
     /// <p>The instance types of the underlying host infrastructure of a multi-node parallel job.</p><note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources.</p>
     /// <p>In addition, this list object is currently limited to one element.</p>
     /// </note>
-    pub fn get_instance_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.instance_types
     }
     /// <p>This is an object that represents the properties of the node range for a multi-node parallel job.</p>
@@ -121,8 +119,7 @@ impl NodeRangePropertyBuilder {
     }
     /// <p>This is an object that represents the properties of the node range for a multi-node parallel job.</p>
     pub fn set_ecs_properties(mut self, input: ::std::option::Option<crate::types::EcsProperties>) -> Self {
-        self.ecs_properties = input;
-        self
+        self.ecs_properties = input; self
     }
     /// <p>This is an object that represents the properties of the node range for a multi-node parallel job.</p>
     pub fn get_ecs_properties(&self) -> &::std::option::Option<crate::types::EcsProperties> {
@@ -131,10 +128,15 @@ impl NodeRangePropertyBuilder {
     /// Consumes the builder and constructs a [`NodeRangeProperty`](crate::types::NodeRangeProperty).
     pub fn build(self) -> crate::types::NodeRangeProperty {
         crate::types::NodeRangeProperty {
-            target_nodes: self.target_nodes,
-            container: self.container,
-            instance_types: self.instance_types,
-            ecs_properties: self.ecs_properties,
+            target_nodes: self.target_nodes
+            ,
+            container: self.container
+            ,
+            instance_types: self.instance_types
+            ,
+            ecs_properties: self.ecs_properties
+            ,
         }
     }
 }
+

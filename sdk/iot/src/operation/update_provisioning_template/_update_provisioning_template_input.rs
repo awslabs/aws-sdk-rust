@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateProvisioningTemplateInput {
+pub struct UpdateProvisioningTemplateInput  {
     /// <p>The name of the provisioning template.</p>
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the provisioning template.</p>
@@ -18,13 +18,13 @@ pub struct UpdateProvisioningTemplateInput {
     /// <p>Removes pre-provisioning hook template.</p>
     pub remove_pre_provisioning_hook: ::std::option::Option<bool>,
 }
-impl UpdateProvisioningTemplateInput {
+impl  UpdateProvisioningTemplateInput  {
     /// <p>The name of the provisioning template.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The description of the provisioning template.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>True to enable the provisioning template, otherwise false.</p>
@@ -36,11 +36,11 @@ impl UpdateProvisioningTemplateInput {
         self.default_version_id
     }
     /// <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
-    pub fn provisioning_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn provisioning_role_arn(&self) -> ::std::option::Option<& str> {
         self.provisioning_role_arn.as_deref()
     }
     /// <p>Updates the pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>. For more information about provisioning template types, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type">type</a>.</p>
-    pub fn pre_provisioning_hook(&self) -> ::std::option::Option<&crate::types::ProvisioningHook> {
+    pub fn pre_provisioning_hook(&self) -> ::std::option::Option<& crate::types::ProvisioningHook> {
         self.pre_provisioning_hook.as_ref()
     }
     /// <p>Removes pre-provisioning hook template.</p>
@@ -76,8 +76,7 @@ impl UpdateProvisioningTemplateInputBuilder {
     }
     /// <p>The name of the provisioning template.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The name of the provisioning template.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl UpdateProvisioningTemplateInputBuilder {
     }
     /// <p>The description of the provisioning template.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the provisioning template.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl UpdateProvisioningTemplateInputBuilder {
     }
     /// <p>True to enable the provisioning template, otherwise false.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>True to enable the provisioning template, otherwise false.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -118,8 +115,7 @@ impl UpdateProvisioningTemplateInputBuilder {
     }
     /// <p>The ID of the default provisioning template version.</p>
     pub fn set_default_version_id(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.default_version_id = input;
-        self
+        self.default_version_id = input; self
     }
     /// <p>The ID of the default provisioning template version.</p>
     pub fn get_default_version_id(&self) -> &::std::option::Option<i32> {
@@ -132,8 +128,7 @@ impl UpdateProvisioningTemplateInputBuilder {
     }
     /// <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
     pub fn set_provisioning_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provisioning_role_arn = input;
-        self
+        self.provisioning_role_arn = input; self
     }
     /// <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
     pub fn get_provisioning_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +141,7 @@ impl UpdateProvisioningTemplateInputBuilder {
     }
     /// <p>Updates the pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>. For more information about provisioning template types, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type">type</a>.</p>
     pub fn set_pre_provisioning_hook(mut self, input: ::std::option::Option<crate::types::ProvisioningHook>) -> Self {
-        self.pre_provisioning_hook = input;
-        self
+        self.pre_provisioning_hook = input; self
     }
     /// <p>Updates the pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>. For more information about provisioning template types, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type">type</a>.</p>
     pub fn get_pre_provisioning_hook(&self) -> &::std::option::Option<crate::types::ProvisioningHook> {
@@ -160,28 +154,32 @@ impl UpdateProvisioningTemplateInputBuilder {
     }
     /// <p>Removes pre-provisioning hook template.</p>
     pub fn set_remove_pre_provisioning_hook(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.remove_pre_provisioning_hook = input;
-        self
+        self.remove_pre_provisioning_hook = input; self
     }
     /// <p>Removes pre-provisioning hook template.</p>
     pub fn get_remove_pre_provisioning_hook(&self) -> &::std::option::Option<bool> {
         &self.remove_pre_provisioning_hook
     }
     /// Consumes the builder and constructs a [`UpdateProvisioningTemplateInput`](crate::operation::update_provisioning_template::UpdateProvisioningTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_provisioning_template::UpdateProvisioningTemplateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_provisioning_template::UpdateProvisioningTemplateInput {
-            template_name: self.template_name,
-            description: self.description,
-            enabled: self.enabled,
-            default_version_id: self.default_version_id,
-            provisioning_role_arn: self.provisioning_role_arn,
-            pre_provisioning_hook: self.pre_provisioning_hook,
-            remove_pre_provisioning_hook: self.remove_pre_provisioning_hook,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_provisioning_template::UpdateProvisioningTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_provisioning_template::UpdateProvisioningTemplateInput {
+                template_name: self.template_name
+                ,
+                description: self.description
+                ,
+                enabled: self.enabled
+                ,
+                default_version_id: self.default_version_id
+                ,
+                provisioning_role_arn: self.provisioning_role_arn
+                ,
+                pre_provisioning_hook: self.pre_provisioning_hook
+                ,
+                remove_pre_provisioning_hook: self.remove_pre_provisioning_hook
+                ,
+            }
+        )
     }
 }
+

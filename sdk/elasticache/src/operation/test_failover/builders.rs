@@ -5,23 +5,20 @@ pub use crate::operation::test_failover::_test_failover_input::TestFailoverInput
 
 impl TestFailoverInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::test_failover::TestFailoverOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::test_failover::TestFailoverError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.test_failover();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::test_failover::TestFailoverOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::test_failover::TestFailoverError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.test_failover();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `TestFailover`.
-///
+/// 
 /// <p>Represents the input of a <code>TestFailover</code> operation which test automatic failover on a specified node group (called shard in the console) in a replication group (called cluster in the console).</p>
 /// <p>This API is designed for testing the behavior of your application in case of ElastiCache failover. It is not designed to be an operational tool for initiating a failover to overcome a problem you may have with the cluster. Moreover, in certain conditions such as large-scale operational events, Amazon may block this API.</p>
 /// <p class="title"><b>Note the following</b></p>
@@ -40,14 +37,14 @@ impl TestFailoverInputBuilder {
 /// <p>Replication group message: <code>Test Failover API called for node group <node-group-id></node-group-id></code></p></li>
 /// <li>
 /// <p>Cache cluster message: <code>Failover from primary node <primary-node-id>
-/// to replica node
+/// to replica node 
 /// <node-id>
 /// completed
 /// </node-id>
 /// </primary-node-id></code></p></li>
 /// <li>
 /// <p>Replication group message: <code>Failover from primary node <primary-node-id>
-/// to replica node
+/// to replica node 
 /// <node-id>
 /// completed
 /// </node-id>
@@ -69,33 +66,32 @@ impl TestFailoverInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TestFailoverFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::test_failover::builders::TestFailoverInputBuilder,
+                    inner: crate::operation::test_failover::builders::TestFailoverInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::test_failover::TestFailoverOutput,
-        crate::operation::test_failover::TestFailoverError,
-    > for TestFailoverFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::test_failover::TestFailoverOutput,
-            crate::operation::test_failover::TestFailoverError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::test_failover::TestFailoverOutput,
+                    crate::operation::test_failover::TestFailoverError,
+                > for TestFailoverFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::test_failover::TestFailoverOutput,
+                        crate::operation::test_failover::TestFailoverError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl TestFailoverFluentBuilder {
     /// Creates a new `TestFailover`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -104,53 +100,44 @@ impl TestFailoverFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::test_failover::TestFailoverOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::test_failover::TestFailoverError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::test_failover::TestFailover::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::test_failover::TestFailover::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::test_failover::TestFailoverOutput,
-        crate::operation::test_failover::TestFailoverError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::test_failover::TestFailoverOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::test_failover::TestFailoverError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::test_failover::TestFailover::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::test_failover::TestFailover::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::test_failover::TestFailoverOutput, crate::operation::test_failover::TestFailoverError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the replication group (console: cluster) whose automatic failover is being tested by this operation.</p>
     pub fn replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.replication_group_id(input.into());
@@ -180,3 +167,4 @@ impl TestFailoverFluentBuilder {
         self.inner.get_node_group_id()
     }
 }
+

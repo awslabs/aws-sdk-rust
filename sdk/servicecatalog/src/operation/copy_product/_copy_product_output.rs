@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CopyProductOutput {
+pub struct CopyProductOutput  {
     /// <p>The token to use to track the progress of the operation.</p>
     pub copy_product_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CopyProductOutput {
+impl  CopyProductOutput  {
     /// <p>The token to use to track the progress of the operation.</p>
-    pub fn copy_product_token(&self) -> ::std::option::Option<&str> {
+    pub fn copy_product_token(&self) -> ::std::option::Option<& str> {
         self.copy_product_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CopyProductOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CopyProductOutput {
     /// Creates a new builder-style object to manufacture [`CopyProductOutput`](crate::operation::copy_product::CopyProductOutput).
     pub fn builder() -> crate::operation::copy_product::builders::CopyProductOutputBuilder {
@@ -40,27 +40,28 @@ impl CopyProductOutputBuilder {
     }
     /// <p>The token to use to track the progress of the operation.</p>
     pub fn set_copy_product_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.copy_product_token = input;
-        self
+        self.copy_product_token = input; self
     }
     /// <p>The token to use to track the progress of the operation.</p>
     pub fn get_copy_product_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.copy_product_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CopyProductOutput`](crate::operation::copy_product::CopyProductOutput).
     pub fn build(self) -> crate::operation::copy_product::CopyProductOutput {
         crate::operation::copy_product::CopyProductOutput {
-            copy_product_token: self.copy_product_token,
+            copy_product_token: self.copy_product_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

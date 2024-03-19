@@ -3,13 +3,13 @@
 /// <p>A port range to specify the destination ports to inspect for.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts {
+pub struct RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts  {
     /// <p>The starting port value for the port range.</p>
     pub from_port: ::std::option::Option<i32>,
     /// <p>The ending port value for the port range.</p>
     pub to_port: ::std::option::Option<i32>,
 }
-impl RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts {
+impl  RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts  {
     /// <p>The starting port value for the port range.</p>
     pub fn from_port(&self) -> ::std::option::Option<i32> {
         self.from_port
@@ -41,8 +41,7 @@ impl RuleGroupSourceStatelessRuleMatchAttributesDestinationPortsBuilder {
     }
     /// <p>The starting port value for the port range.</p>
     pub fn set_from_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.from_port = input;
-        self
+        self.from_port = input; self
     }
     /// <p>The starting port value for the port range.</p>
     pub fn get_from_port(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl RuleGroupSourceStatelessRuleMatchAttributesDestinationPortsBuilder {
     }
     /// <p>The ending port value for the port range.</p>
     pub fn set_to_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.to_port = input;
-        self
+        self.to_port = input; self
     }
     /// <p>The ending port value for the port range.</p>
     pub fn get_to_port(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl RuleGroupSourceStatelessRuleMatchAttributesDestinationPortsBuilder {
     /// Consumes the builder and constructs a [`RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts`](crate::types::RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts).
     pub fn build(self) -> crate::types::RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts {
         crate::types::RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts {
-            from_port: self.from_port,
-            to_port: self.to_port,
+            from_port: self.from_port
+            ,
+            to_port: self.to_port
+            ,
         }
     }
 }
+

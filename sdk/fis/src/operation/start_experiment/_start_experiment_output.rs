@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartExperimentOutput {
+pub struct StartExperimentOutput  {
     /// <p>Information about the experiment.</p>
     pub experiment: ::std::option::Option<crate::types::Experiment>,
     _request_id: Option<String>,
 }
-impl StartExperimentOutput {
+impl  StartExperimentOutput  {
     /// <p>Information about the experiment.</p>
-    pub fn experiment(&self) -> ::std::option::Option<&crate::types::Experiment> {
+    pub fn experiment(&self) -> ::std::option::Option<& crate::types::Experiment> {
         self.experiment.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartExperimentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartExperimentOutput {
     /// Creates a new builder-style object to manufacture [`StartExperimentOutput`](crate::operation::start_experiment::StartExperimentOutput).
     pub fn builder() -> crate::operation::start_experiment::builders::StartExperimentOutputBuilder {
@@ -40,27 +40,28 @@ impl StartExperimentOutputBuilder {
     }
     /// <p>Information about the experiment.</p>
     pub fn set_experiment(mut self, input: ::std::option::Option<crate::types::Experiment>) -> Self {
-        self.experiment = input;
-        self
+        self.experiment = input; self
     }
     /// <p>Information about the experiment.</p>
     pub fn get_experiment(&self) -> &::std::option::Option<crate::types::Experiment> {
         &self.experiment
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartExperimentOutput`](crate::operation::start_experiment::StartExperimentOutput).
     pub fn build(self) -> crate::operation::start_experiment::StartExperimentOutput {
         crate::operation::start_experiment::StartExperimentOutput {
-            experiment: self.experiment,
+            experiment: self.experiment
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

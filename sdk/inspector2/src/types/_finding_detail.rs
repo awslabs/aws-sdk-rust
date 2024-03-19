@@ -3,7 +3,7 @@
 /// <p>Details of the vulnerability identified in a finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FindingDetail {
+pub struct FindingDetail  {
     /// <p>The finding ARN that the vulnerability details are associated with.</p>
     pub finding_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Cybersecurity and Infrastructure Security Agency (CISA) details for a specific vulnerability.</p>
@@ -11,27 +11,27 @@ pub struct FindingDetail {
     /// <p>The risk score of the vulnerability.</p>
     pub risk_score: ::std::option::Option<i32>,
     /// <p>Information on the evidence of the vulnerability.</p>
-    pub evidences: ::std::option::Option<::std::vec::Vec<crate::types::Evidence>>,
+    pub evidences: ::std::option::Option<::std::vec::Vec::<crate::types::Evidence>>,
     /// <p>The MITRE adversary tactics, techniques, or procedures (TTPs) associated with the vulnerability.</p>
-    pub ttps: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub ttps: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The known malware tools or kits that can exploit the vulnerability.</p>
-    pub tools: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub tools: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Contains information on when this exploit was observed.</p>
     pub exploit_observed: ::std::option::Option<crate::types::ExploitObserved>,
     /// <p>The reference URLs for the vulnerability data.</p>
-    pub reference_urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub reference_urls: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The Common Weakness Enumerations (CWEs) associated with the vulnerability.</p>
-    pub cwes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub cwes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The Exploit Prediction Scoring System (EPSS) score of the vulnerability.</p>
     pub epss_score: ::std::option::Option<f64>,
 }
-impl FindingDetail {
+impl  FindingDetail  {
     /// <p>The finding ARN that the vulnerability details are associated with.</p>
-    pub fn finding_arn(&self) -> ::std::option::Option<&str> {
+    pub fn finding_arn(&self) -> ::std::option::Option<& str> {
         self.finding_arn.as_deref()
     }
     /// <p>The Cybersecurity and Infrastructure Security Agency (CISA) details for a specific vulnerability.</p>
-    pub fn cisa_data(&self) -> ::std::option::Option<&crate::types::CisaData> {
+    pub fn cisa_data(&self) -> ::std::option::Option<& crate::types::CisaData> {
         self.cisa_data.as_ref()
     }
     /// <p>The risk score of the vulnerability.</p>
@@ -39,38 +39,43 @@ impl FindingDetail {
         self.risk_score
     }
     /// <p>Information on the evidence of the vulnerability.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.evidences.is_none()`.
-    pub fn evidences(&self) -> &[crate::types::Evidence] {
-        self.evidences.as_deref().unwrap_or_default()
+    pub fn evidences(&self) -> & [crate::types::Evidence] {
+        self.evidences.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The MITRE adversary tactics, techniques, or procedures (TTPs) associated with the vulnerability.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ttps.is_none()`.
-    pub fn ttps(&self) -> &[::std::string::String] {
-        self.ttps.as_deref().unwrap_or_default()
+    pub fn ttps(&self) -> & [::std::string::String] {
+        self.ttps.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The known malware tools or kits that can exploit the vulnerability.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tools.is_none()`.
-    pub fn tools(&self) -> &[::std::string::String] {
-        self.tools.as_deref().unwrap_or_default()
+    pub fn tools(&self) -> & [::std::string::String] {
+        self.tools.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Contains information on when this exploit was observed.</p>
-    pub fn exploit_observed(&self) -> ::std::option::Option<&crate::types::ExploitObserved> {
+    pub fn exploit_observed(&self) -> ::std::option::Option<& crate::types::ExploitObserved> {
         self.exploit_observed.as_ref()
     }
     /// <p>The reference URLs for the vulnerability data.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reference_urls.is_none()`.
-    pub fn reference_urls(&self) -> &[::std::string::String] {
-        self.reference_urls.as_deref().unwrap_or_default()
+    pub fn reference_urls(&self) -> & [::std::string::String] {
+        self.reference_urls.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Common Weakness Enumerations (CWEs) associated with the vulnerability.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cwes.is_none()`.
-    pub fn cwes(&self) -> &[::std::string::String] {
-        self.cwes.as_deref().unwrap_or_default()
+    pub fn cwes(&self) -> & [::std::string::String] {
+        self.cwes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Exploit Prediction Scoring System (EPSS) score of the vulnerability.</p>
     pub fn epss_score(&self) -> ::std::option::Option<f64> {
@@ -91,12 +96,12 @@ pub struct FindingDetailBuilder {
     pub(crate) finding_arn: ::std::option::Option<::std::string::String>,
     pub(crate) cisa_data: ::std::option::Option<crate::types::CisaData>,
     pub(crate) risk_score: ::std::option::Option<i32>,
-    pub(crate) evidences: ::std::option::Option<::std::vec::Vec<crate::types::Evidence>>,
-    pub(crate) ttps: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tools: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) evidences: ::std::option::Option<::std::vec::Vec::<crate::types::Evidence>>,
+    pub(crate) ttps: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tools: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) exploit_observed: ::std::option::Option<crate::types::ExploitObserved>,
-    pub(crate) reference_urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) cwes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) reference_urls: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) cwes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) epss_score: ::std::option::Option<f64>,
 }
 impl FindingDetailBuilder {
@@ -107,8 +112,7 @@ impl FindingDetailBuilder {
     }
     /// <p>The finding ARN that the vulnerability details are associated with.</p>
     pub fn set_finding_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.finding_arn = input;
-        self
+        self.finding_arn = input; self
     }
     /// <p>The finding ARN that the vulnerability details are associated with.</p>
     pub fn get_finding_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +125,7 @@ impl FindingDetailBuilder {
     }
     /// <p>The Cybersecurity and Infrastructure Security Agency (CISA) details for a specific vulnerability.</p>
     pub fn set_cisa_data(mut self, input: ::std::option::Option<crate::types::CisaData>) -> Self {
-        self.cisa_data = input;
-        self
+        self.cisa_data = input; self
     }
     /// <p>The Cybersecurity and Infrastructure Security Agency (CISA) details for a specific vulnerability.</p>
     pub fn get_cisa_data(&self) -> &::std::option::Option<crate::types::CisaData> {
@@ -135,8 +138,7 @@ impl FindingDetailBuilder {
     }
     /// <p>The risk score of the vulnerability.</p>
     pub fn set_risk_score(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.risk_score = input;
-        self
+        self.risk_score = input; self
     }
     /// <p>The risk score of the vulnerability.</p>
     pub fn get_risk_score(&self) -> &::std::option::Option<i32> {
@@ -149,17 +151,16 @@ impl FindingDetailBuilder {
     /// <p>Information on the evidence of the vulnerability.</p>
     pub fn evidences(mut self, input: crate::types::Evidence) -> Self {
         let mut v = self.evidences.unwrap_or_default();
-        v.push(input);
-        self.evidences = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.evidences = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information on the evidence of the vulnerability.</p>
-    pub fn set_evidences(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Evidence>>) -> Self {
-        self.evidences = input;
-        self
+    pub fn set_evidences(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Evidence>>) -> Self {
+        self.evidences = input; self
     }
     /// <p>Information on the evidence of the vulnerability.</p>
-    pub fn get_evidences(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Evidence>> {
+    pub fn get_evidences(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Evidence>> {
         &self.evidences
     }
     /// Appends an item to `ttps`.
@@ -169,17 +170,16 @@ impl FindingDetailBuilder {
     /// <p>The MITRE adversary tactics, techniques, or procedures (TTPs) associated with the vulnerability.</p>
     pub fn ttps(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ttps.unwrap_or_default();
-        v.push(input.into());
-        self.ttps = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.ttps = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The MITRE adversary tactics, techniques, or procedures (TTPs) associated with the vulnerability.</p>
-    pub fn set_ttps(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.ttps = input;
-        self
+    pub fn set_ttps(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.ttps = input; self
     }
     /// <p>The MITRE adversary tactics, techniques, or procedures (TTPs) associated with the vulnerability.</p>
-    pub fn get_ttps(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ttps(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.ttps
     }
     /// Appends an item to `tools`.
@@ -189,17 +189,16 @@ impl FindingDetailBuilder {
     /// <p>The known malware tools or kits that can exploit the vulnerability.</p>
     pub fn tools(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tools.unwrap_or_default();
-        v.push(input.into());
-        self.tools = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.tools = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The known malware tools or kits that can exploit the vulnerability.</p>
-    pub fn set_tools(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.tools = input;
-        self
+    pub fn set_tools(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.tools = input; self
     }
     /// <p>The known malware tools or kits that can exploit the vulnerability.</p>
-    pub fn get_tools(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tools(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.tools
     }
     /// <p>Contains information on when this exploit was observed.</p>
@@ -209,8 +208,7 @@ impl FindingDetailBuilder {
     }
     /// <p>Contains information on when this exploit was observed.</p>
     pub fn set_exploit_observed(mut self, input: ::std::option::Option<crate::types::ExploitObserved>) -> Self {
-        self.exploit_observed = input;
-        self
+        self.exploit_observed = input; self
     }
     /// <p>Contains information on when this exploit was observed.</p>
     pub fn get_exploit_observed(&self) -> &::std::option::Option<crate::types::ExploitObserved> {
@@ -223,17 +221,16 @@ impl FindingDetailBuilder {
     /// <p>The reference URLs for the vulnerability data.</p>
     pub fn reference_urls(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.reference_urls.unwrap_or_default();
-        v.push(input.into());
-        self.reference_urls = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.reference_urls = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The reference URLs for the vulnerability data.</p>
-    pub fn set_reference_urls(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.reference_urls = input;
-        self
+    pub fn set_reference_urls(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.reference_urls = input; self
     }
     /// <p>The reference URLs for the vulnerability data.</p>
-    pub fn get_reference_urls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_reference_urls(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.reference_urls
     }
     /// Appends an item to `cwes`.
@@ -243,17 +240,16 @@ impl FindingDetailBuilder {
     /// <p>The Common Weakness Enumerations (CWEs) associated with the vulnerability.</p>
     pub fn cwes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cwes.unwrap_or_default();
-        v.push(input.into());
-        self.cwes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.cwes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Common Weakness Enumerations (CWEs) associated with the vulnerability.</p>
-    pub fn set_cwes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.cwes = input;
-        self
+    pub fn set_cwes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.cwes = input; self
     }
     /// <p>The Common Weakness Enumerations (CWEs) associated with the vulnerability.</p>
-    pub fn get_cwes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cwes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.cwes
     }
     /// <p>The Exploit Prediction Scoring System (EPSS) score of the vulnerability.</p>
@@ -263,8 +259,7 @@ impl FindingDetailBuilder {
     }
     /// <p>The Exploit Prediction Scoring System (EPSS) score of the vulnerability.</p>
     pub fn set_epss_score(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.epss_score = input;
-        self
+        self.epss_score = input; self
     }
     /// <p>The Exploit Prediction Scoring System (EPSS) score of the vulnerability.</p>
     pub fn get_epss_score(&self) -> &::std::option::Option<f64> {
@@ -273,16 +268,27 @@ impl FindingDetailBuilder {
     /// Consumes the builder and constructs a [`FindingDetail`](crate::types::FindingDetail).
     pub fn build(self) -> crate::types::FindingDetail {
         crate::types::FindingDetail {
-            finding_arn: self.finding_arn,
-            cisa_data: self.cisa_data,
-            risk_score: self.risk_score,
-            evidences: self.evidences,
-            ttps: self.ttps,
-            tools: self.tools,
-            exploit_observed: self.exploit_observed,
-            reference_urls: self.reference_urls,
-            cwes: self.cwes,
-            epss_score: self.epss_score,
+            finding_arn: self.finding_arn
+            ,
+            cisa_data: self.cisa_data
+            ,
+            risk_score: self.risk_score
+            ,
+            evidences: self.evidences
+            ,
+            ttps: self.ttps
+            ,
+            tools: self.tools
+            ,
+            exploit_observed: self.exploit_observed
+            ,
+            reference_urls: self.reference_urls
+            ,
+            cwes: self.cwes
+            ,
+            epss_score: self.epss_score
+            ,
         }
     }
 }
+

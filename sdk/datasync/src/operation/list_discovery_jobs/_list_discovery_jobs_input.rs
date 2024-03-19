@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDiscoveryJobsInput {
+pub struct ListDiscoveryJobsInput  {
     /// <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system. Use this parameter if you only want to list the discovery jobs that are associated with a specific storage system.</p>
     pub storage_system_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies how many results you want in the response.</p>
@@ -10,9 +10,9 @@ pub struct ListDiscoveryJobsInput {
     /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListDiscoveryJobsInput {
+impl  ListDiscoveryJobsInput  {
     /// <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system. Use this parameter if you only want to list the discovery jobs that are associated with a specific storage system.</p>
-    pub fn storage_system_arn(&self) -> ::std::option::Option<&str> {
+    pub fn storage_system_arn(&self) -> ::std::option::Option<& str> {
         self.storage_system_arn.as_deref()
     }
     /// <p>Specifies how many results you want in the response.</p>
@@ -20,7 +20,7 @@ impl ListDiscoveryJobsInput {
         self.max_results
     }
     /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl ListDiscoveryJobsInputBuilder {
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system. Use this parameter if you only want to list the discovery jobs that are associated with a specific storage system.</p>
     pub fn set_storage_system_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.storage_system_arn = input;
-        self
+        self.storage_system_arn = input; self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system. Use this parameter if you only want to list the discovery jobs that are associated with a specific storage system.</p>
     pub fn get_storage_system_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl ListDiscoveryJobsInputBuilder {
     }
     /// <p>Specifies how many results you want in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Specifies how many results you want in the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -75,21 +73,24 @@ impl ListDiscoveryJobsInputBuilder {
     }
     /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListDiscoveryJobsInput`](crate::operation::list_discovery_jobs::ListDiscoveryJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_discovery_jobs::ListDiscoveryJobsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_discovery_jobs::ListDiscoveryJobsInput {
-            storage_system_arn: self.storage_system_arn,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_discovery_jobs::ListDiscoveryJobsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_discovery_jobs::ListDiscoveryJobsInput {
+                storage_system_arn: self.storage_system_arn
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

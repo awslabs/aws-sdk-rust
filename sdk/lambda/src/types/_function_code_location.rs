@@ -3,7 +3,7 @@
 /// <p>Details about a function's deployment package.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FunctionCodeLocation {
+pub struct FunctionCodeLocation  {
     /// <p>The service that's hosting the file.</p>
     pub repository_type: ::std::option::Option<::std::string::String>,
     /// <p>A presigned URL that you can use to download the deployment package.</p>
@@ -13,21 +13,21 @@ pub struct FunctionCodeLocation {
     /// <p>The resolved URI for the image.</p>
     pub resolved_image_uri: ::std::option::Option<::std::string::String>,
 }
-impl FunctionCodeLocation {
+impl  FunctionCodeLocation  {
     /// <p>The service that's hosting the file.</p>
-    pub fn repository_type(&self) -> ::std::option::Option<&str> {
+    pub fn repository_type(&self) -> ::std::option::Option<& str> {
         self.repository_type.as_deref()
     }
     /// <p>A presigned URL that you can use to download the deployment package.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>URI of a container image in the Amazon ECR registry.</p>
-    pub fn image_uri(&self) -> ::std::option::Option<&str> {
+    pub fn image_uri(&self) -> ::std::option::Option<& str> {
         self.image_uri.as_deref()
     }
     /// <p>The resolved URI for the image.</p>
-    pub fn resolved_image_uri(&self) -> ::std::option::Option<&str> {
+    pub fn resolved_image_uri(&self) -> ::std::option::Option<& str> {
         self.resolved_image_uri.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl FunctionCodeLocationBuilder {
     }
     /// <p>The service that's hosting the file.</p>
     pub fn set_repository_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_type = input;
-        self
+        self.repository_type = input; self
     }
     /// <p>The service that's hosting the file.</p>
     pub fn get_repository_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl FunctionCodeLocationBuilder {
     }
     /// <p>A presigned URL that you can use to download the deployment package.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>A presigned URL that you can use to download the deployment package.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl FunctionCodeLocationBuilder {
     }
     /// <p>URI of a container image in the Amazon ECR registry.</p>
     pub fn set_image_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_uri = input;
-        self
+        self.image_uri = input; self
     }
     /// <p>URI of a container image in the Amazon ECR registry.</p>
     pub fn get_image_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl FunctionCodeLocationBuilder {
     }
     /// <p>The resolved URI for the image.</p>
     pub fn set_resolved_image_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resolved_image_uri = input;
-        self
+        self.resolved_image_uri = input; self
     }
     /// <p>The resolved URI for the image.</p>
     pub fn get_resolved_image_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl FunctionCodeLocationBuilder {
     /// Consumes the builder and constructs a [`FunctionCodeLocation`](crate::types::FunctionCodeLocation).
     pub fn build(self) -> crate::types::FunctionCodeLocation {
         crate::types::FunctionCodeLocation {
-            repository_type: self.repository_type,
-            location: self.location,
-            image_uri: self.image_uri,
-            resolved_image_uri: self.resolved_image_uri,
+            repository_type: self.repository_type
+            ,
+            location: self.location
+            ,
+            image_uri: self.image_uri
+            ,
+            resolved_image_uri: self.resolved_image_uri
+            ,
         }
     }
 }
+

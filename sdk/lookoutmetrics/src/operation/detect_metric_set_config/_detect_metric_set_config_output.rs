@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetectMetricSetConfigOutput {
+pub struct DetectMetricSetConfigOutput  {
     /// <p>The inferred dataset configuration for the datasource.</p>
     pub detected_metric_set_config: ::std::option::Option<crate::types::DetectedMetricSetConfig>,
     _request_id: Option<String>,
 }
-impl DetectMetricSetConfigOutput {
+impl  DetectMetricSetConfigOutput  {
     /// <p>The inferred dataset configuration for the datasource.</p>
-    pub fn detected_metric_set_config(&self) -> ::std::option::Option<&crate::types::DetectedMetricSetConfig> {
+    pub fn detected_metric_set_config(&self) -> ::std::option::Option<& crate::types::DetectedMetricSetConfig> {
         self.detected_metric_set_config.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DetectMetricSetConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DetectMetricSetConfigOutput {
     /// Creates a new builder-style object to manufacture [`DetectMetricSetConfigOutput`](crate::operation::detect_metric_set_config::DetectMetricSetConfigOutput).
     pub fn builder() -> crate::operation::detect_metric_set_config::builders::DetectMetricSetConfigOutputBuilder {
@@ -40,27 +40,28 @@ impl DetectMetricSetConfigOutputBuilder {
     }
     /// <p>The inferred dataset configuration for the datasource.</p>
     pub fn set_detected_metric_set_config(mut self, input: ::std::option::Option<crate::types::DetectedMetricSetConfig>) -> Self {
-        self.detected_metric_set_config = input;
-        self
+        self.detected_metric_set_config = input; self
     }
     /// <p>The inferred dataset configuration for the datasource.</p>
     pub fn get_detected_metric_set_config(&self) -> &::std::option::Option<crate::types::DetectedMetricSetConfig> {
         &self.detected_metric_set_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DetectMetricSetConfigOutput`](crate::operation::detect_metric_set_config::DetectMetricSetConfigOutput).
     pub fn build(self) -> crate::operation::detect_metric_set_config::DetectMetricSetConfigOutput {
         crate::operation::detect_metric_set_config::DetectMetricSetConfigOutput {
-            detected_metric_set_config: self.detected_metric_set_config,
+            detected_metric_set_config: self.detected_metric_set_config
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

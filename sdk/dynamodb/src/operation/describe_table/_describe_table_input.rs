@@ -3,13 +3,13 @@
 /// <p>Represents the input of a <code>DescribeTable</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTableInput {
+pub struct DescribeTableInput  {
     /// <p>The name of the table to describe.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeTableInput {
+impl  DescribeTableInput  {
     /// <p>The name of the table to describe.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
 }
@@ -35,17 +35,20 @@ impl DescribeTableInputBuilder {
     }
     /// <p>The name of the table to describe.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the table to describe.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_name
     }
     /// Consumes the builder and constructs a [`DescribeTableInput`](crate::operation::describe_table::DescribeTableInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_table::DescribeTableInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_table::DescribeTableInput { table_name: self.table_name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_table::DescribeTableInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_table::DescribeTableInput {
+                table_name: self.table_name
+                ,
+            }
+        )
     }
 }
+

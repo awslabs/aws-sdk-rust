@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let dataassetactivitystatus = unimplemented!();
 /// match dataassetactivitystatus {
@@ -36,16 +36,14 @@
 /// Specifically, when `dataassetactivitystatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DataAssetActivityStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum DataAssetActivityStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -65,88 +63,80 @@ pub enum DataAssetActivityStatus {
     Unchanged,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for DataAssetActivityStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "FAILED" => DataAssetActivityStatus::Failed,
-            "PUBLISHING_FAILED" => DataAssetActivityStatus::PublishingFailed,
-            "SKIPPED_ALREADY_IMPORTED" => DataAssetActivityStatus::SkippedAlreadyImported,
-            "SKIPPED_ARCHIVED" => DataAssetActivityStatus::SkippedArchived,
-            "SKIPPED_NO_ACCESS" => DataAssetActivityStatus::SkippedNoAccess,
-            "SUCCEEDED_CREATED" => DataAssetActivityStatus::SucceededCreated,
-            "SUCCEEDED_UPDATED" => DataAssetActivityStatus::SucceededUpdated,
-            "UNCHANGED" => DataAssetActivityStatus::Unchanged,
-            other => DataAssetActivityStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "FAILED" => DataAssetActivityStatus::Failed,
+"PUBLISHING_FAILED" => DataAssetActivityStatus::PublishingFailed,
+"SKIPPED_ALREADY_IMPORTED" => DataAssetActivityStatus::SkippedAlreadyImported,
+"SKIPPED_ARCHIVED" => DataAssetActivityStatus::SkippedArchived,
+"SKIPPED_NO_ACCESS" => DataAssetActivityStatus::SkippedNoAccess,
+"SUCCEEDED_CREATED" => DataAssetActivityStatus::SucceededCreated,
+"SUCCEEDED_UPDATED" => DataAssetActivityStatus::SucceededUpdated,
+"UNCHANGED" => DataAssetActivityStatus::Unchanged,
+other => DataAssetActivityStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for DataAssetActivityStatus {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(DataAssetActivityStatus::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(DataAssetActivityStatus::from(s))
+                    }
+                }
 impl DataAssetActivityStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DataAssetActivityStatus::Failed => "FAILED",
-            DataAssetActivityStatus::PublishingFailed => "PUBLISHING_FAILED",
-            DataAssetActivityStatus::SkippedAlreadyImported => "SKIPPED_ALREADY_IMPORTED",
-            DataAssetActivityStatus::SkippedArchived => "SKIPPED_ARCHIVED",
-            DataAssetActivityStatus::SkippedNoAccess => "SKIPPED_NO_ACCESS",
-            DataAssetActivityStatus::SucceededCreated => "SUCCEEDED_CREATED",
-            DataAssetActivityStatus::SucceededUpdated => "SUCCEEDED_UPDATED",
-            DataAssetActivityStatus::Unchanged => "UNCHANGED",
-            DataAssetActivityStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FAILED",
-            "PUBLISHING_FAILED",
-            "SKIPPED_ALREADY_IMPORTED",
-            "SKIPPED_ARCHIVED",
-            "SKIPPED_NO_ACCESS",
-            "SUCCEEDED_CREATED",
-            "SUCCEEDED_UPDATED",
-            "UNCHANGED",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DataAssetActivityStatus::Failed => "FAILED",
+    DataAssetActivityStatus::PublishingFailed => "PUBLISHING_FAILED",
+    DataAssetActivityStatus::SkippedAlreadyImported => "SKIPPED_ALREADY_IMPORTED",
+    DataAssetActivityStatus::SkippedArchived => "SKIPPED_ARCHIVED",
+    DataAssetActivityStatus::SkippedNoAccess => "SKIPPED_NO_ACCESS",
+    DataAssetActivityStatus::SucceededCreated => "SUCCEEDED_CREATED",
+    DataAssetActivityStatus::SucceededUpdated => "SUCCEEDED_UPDATED",
+    DataAssetActivityStatus::Unchanged => "UNCHANGED",
+    DataAssetActivityStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FAILED", "PUBLISHING_FAILED", "SKIPPED_ALREADY_IMPORTED", "SKIPPED_ARCHIVED", "SKIPPED_NO_ACCESS", "SUCCEEDED_CREATED", "SUCCEEDED_UPDATED", "UNCHANGED"]
+                }
+            }
 impl ::std::convert::AsRef<str> for DataAssetActivityStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl DataAssetActivityStatus {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for DataAssetActivityStatus {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            DataAssetActivityStatus::Failed => write!(f, "FAILED"),
-            DataAssetActivityStatus::PublishingFailed => write!(f, "PUBLISHING_FAILED"),
-            DataAssetActivityStatus::SkippedAlreadyImported => write!(f, "SKIPPED_ALREADY_IMPORTED"),
-            DataAssetActivityStatus::SkippedArchived => write!(f, "SKIPPED_ARCHIVED"),
-            DataAssetActivityStatus::SkippedNoAccess => write!(f, "SKIPPED_NO_ACCESS"),
-            DataAssetActivityStatus::SucceededCreated => write!(f, "SUCCEEDED_CREATED"),
-            DataAssetActivityStatus::SucceededUpdated => write!(f, "SUCCEEDED_UPDATED"),
-            DataAssetActivityStatus::Unchanged => write!(f, "UNCHANGED"),
-            DataAssetActivityStatus::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                DataAssetActivityStatus::Failed => write!(f, "FAILED"),
+DataAssetActivityStatus::PublishingFailed => write!(f, "PUBLISHING_FAILED"),
+DataAssetActivityStatus::SkippedAlreadyImported => write!(f, "SKIPPED_ALREADY_IMPORTED"),
+DataAssetActivityStatus::SkippedArchived => write!(f, "SKIPPED_ARCHIVED"),
+DataAssetActivityStatus::SkippedNoAccess => write!(f, "SKIPPED_NO_ACCESS"),
+DataAssetActivityStatus::SucceededCreated => write!(f, "SUCCEEDED_CREATED"),
+DataAssetActivityStatus::SucceededUpdated => write!(f, "SUCCEEDED_UPDATED"),
+DataAssetActivityStatus::Unchanged => write!(f, "UNCHANGED"),
+DataAssetActivityStatus::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>ListDeployments</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDeploymentsInput {
+pub struct ListDeploymentsInput  {
     /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p><note>
     /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified.</p>
     /// </note>
@@ -29,27 +29,27 @@ pub struct ListDeploymentsInput {
     /// <li>
     /// <p><code>Stopped</code>: Include stopped deployments in the resulting list.</p></li>
     /// </ul>
-    pub include_only_statuses: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStatus>>,
+    pub include_only_statuses: ::std::option::Option<::std::vec::Vec::<crate::types::DeploymentStatus>>,
     /// <p>A time range (start and end) for returning a subset of the list of deployments.</p>
     pub create_time_range: ::std::option::Option<crate::types::TimeRange>,
     /// <p>An identifier returned from the previous list deployments call. It can be used to return the next set of deployments in the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListDeploymentsInput {
+impl  ListDeploymentsInput  {
     /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p><note>
     /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified.</p>
     /// </note>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>The name of a deployment group for the specified application.</p><note>
     /// <p>If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is not specified, then <code>applicationName</code> must not be specified.</p>
     /// </note>
-    pub fn deployment_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_group_name(&self) -> ::std::option::Option<& str> {
         self.deployment_group_name.as_deref()
     }
     /// <p>The unique ID of an external resource for returning deployments linked to the external resource.</p>
-    pub fn external_id(&self) -> ::std::option::Option<&str> {
+    pub fn external_id(&self) -> ::std::option::Option<& str> {
         self.external_id.as_deref()
     }
     /// <p>A subset of deployments to list by status:</p>
@@ -67,17 +67,18 @@ impl ListDeploymentsInput {
     /// <li>
     /// <p><code>Stopped</code>: Include stopped deployments in the resulting list.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.include_only_statuses.is_none()`.
-    pub fn include_only_statuses(&self) -> &[crate::types::DeploymentStatus] {
-        self.include_only_statuses.as_deref().unwrap_or_default()
+    pub fn include_only_statuses(&self) -> & [crate::types::DeploymentStatus] {
+        self.include_only_statuses.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A time range (start and end) for returning a subset of the list of deployments.</p>
-    pub fn create_time_range(&self) -> ::std::option::Option<&crate::types::TimeRange> {
+    pub fn create_time_range(&self) -> ::std::option::Option<& crate::types::TimeRange> {
         self.create_time_range.as_ref()
     }
     /// <p>An identifier returned from the previous list deployments call. It can be used to return the next set of deployments in the list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -95,7 +96,7 @@ pub struct ListDeploymentsInputBuilder {
     pub(crate) application_name: ::std::option::Option<::std::string::String>,
     pub(crate) deployment_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) external_id: ::std::option::Option<::std::string::String>,
-    pub(crate) include_only_statuses: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStatus>>,
+    pub(crate) include_only_statuses: ::std::option::Option<::std::vec::Vec::<crate::types::DeploymentStatus>>,
     pub(crate) create_time_range: ::std::option::Option<crate::types::TimeRange>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -111,8 +112,7 @@ impl ListDeploymentsInputBuilder {
     /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified.</p>
     /// </note>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p><note>
     /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified.</p>
@@ -131,8 +131,7 @@ impl ListDeploymentsInputBuilder {
     /// <p>If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is not specified, then <code>applicationName</code> must not be specified.</p>
     /// </note>
     pub fn set_deployment_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_group_name = input;
-        self
+        self.deployment_group_name = input; self
     }
     /// <p>The name of a deployment group for the specified application.</p><note>
     /// <p>If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is not specified, then <code>applicationName</code> must not be specified.</p>
@@ -147,8 +146,7 @@ impl ListDeploymentsInputBuilder {
     }
     /// <p>The unique ID of an external resource for returning deployments linked to the external resource.</p>
     pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.external_id = input;
-        self
+        self.external_id = input; self
     }
     /// <p>The unique ID of an external resource for returning deployments linked to the external resource.</p>
     pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,9 +173,9 @@ impl ListDeploymentsInputBuilder {
     /// </ul>
     pub fn include_only_statuses(mut self, input: crate::types::DeploymentStatus) -> Self {
         let mut v = self.include_only_statuses.unwrap_or_default();
-        v.push(input);
-        self.include_only_statuses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.include_only_statuses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A subset of deployments to list by status:</p>
     /// <ul>
@@ -194,9 +192,8 @@ impl ListDeploymentsInputBuilder {
     /// <li>
     /// <p><code>Stopped</code>: Include stopped deployments in the resulting list.</p></li>
     /// </ul>
-    pub fn set_include_only_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStatus>>) -> Self {
-        self.include_only_statuses = input;
-        self
+    pub fn set_include_only_statuses(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DeploymentStatus>>) -> Self {
+        self.include_only_statuses = input; self
     }
     /// <p>A subset of deployments to list by status:</p>
     /// <ul>
@@ -213,7 +210,7 @@ impl ListDeploymentsInputBuilder {
     /// <li>
     /// <p><code>Stopped</code>: Include stopped deployments in the resulting list.</p></li>
     /// </ul>
-    pub fn get_include_only_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentStatus>> {
+    pub fn get_include_only_statuses(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DeploymentStatus>> {
         &self.include_only_statuses
     }
     /// <p>A time range (start and end) for returning a subset of the list of deployments.</p>
@@ -223,8 +220,7 @@ impl ListDeploymentsInputBuilder {
     }
     /// <p>A time range (start and end) for returning a subset of the list of deployments.</p>
     pub fn set_create_time_range(mut self, input: ::std::option::Option<crate::types::TimeRange>) -> Self {
-        self.create_time_range = input;
-        self
+        self.create_time_range = input; self
     }
     /// <p>A time range (start and end) for returning a subset of the list of deployments.</p>
     pub fn get_create_time_range(&self) -> &::std::option::Option<crate::types::TimeRange> {
@@ -237,24 +233,30 @@ impl ListDeploymentsInputBuilder {
     }
     /// <p>An identifier returned from the previous list deployments call. It can be used to return the next set of deployments in the list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An identifier returned from the previous list deployments call. It can be used to return the next set of deployments in the list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListDeploymentsInput`](crate::operation::list_deployments::ListDeploymentsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_deployments::ListDeploymentsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_deployments::ListDeploymentsInput {
-            application_name: self.application_name,
-            deployment_group_name: self.deployment_group_name,
-            external_id: self.external_id,
-            include_only_statuses: self.include_only_statuses,
-            create_time_range: self.create_time_range,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_deployments::ListDeploymentsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_deployments::ListDeploymentsInput {
+                application_name: self.application_name
+                ,
+                deployment_group_name: self.deployment_group_name
+                ,
+                external_id: self.external_id
+                ,
+                include_only_statuses: self.include_only_statuses
+                ,
+                create_time_range: self.create_time_range
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

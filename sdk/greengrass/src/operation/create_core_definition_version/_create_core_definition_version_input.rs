@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCoreDefinitionVersionInput {
+pub struct CreateCoreDefinitionVersionInput  {
     /// A client token used to correlate requests and responses.
     pub amzn_client_token: ::std::option::Option<::std::string::String>,
     /// The ID of the core definition.
     pub core_definition_id: ::std::option::Option<::std::string::String>,
     /// A list of cores in the core definition version.
-    pub cores: ::std::option::Option<::std::vec::Vec<crate::types::Core>>,
+    pub cores: ::std::option::Option<::std::vec::Vec::<crate::types::Core>>,
 }
-impl CreateCoreDefinitionVersionInput {
+impl  CreateCoreDefinitionVersionInput  {
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(&self) -> ::std::option::Option<&str> {
+    pub fn amzn_client_token(&self) -> ::std::option::Option<& str> {
         self.amzn_client_token.as_deref()
     }
     /// The ID of the core definition.
-    pub fn core_definition_id(&self) -> ::std::option::Option<&str> {
+    pub fn core_definition_id(&self) -> ::std::option::Option<& str> {
         self.core_definition_id.as_deref()
     }
     /// A list of cores in the core definition version.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cores.is_none()`.
-    pub fn cores(&self) -> &[crate::types::Core] {
-        self.cores.as_deref().unwrap_or_default()
+    pub fn cores(&self) -> & [crate::types::Core] {
+        self.cores.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateCoreDefinitionVersionInput {
@@ -39,7 +40,7 @@ impl CreateCoreDefinitionVersionInput {
 pub struct CreateCoreDefinitionVersionInputBuilder {
     pub(crate) amzn_client_token: ::std::option::Option<::std::string::String>,
     pub(crate) core_definition_id: ::std::option::Option<::std::string::String>,
-    pub(crate) cores: ::std::option::Option<::std::vec::Vec<crate::types::Core>>,
+    pub(crate) cores: ::std::option::Option<::std::vec::Vec::<crate::types::Core>>,
 }
 impl CreateCoreDefinitionVersionInputBuilder {
     /// A client token used to correlate requests and responses.
@@ -49,8 +50,7 @@ impl CreateCoreDefinitionVersionInputBuilder {
     }
     /// A client token used to correlate requests and responses.
     pub fn set_amzn_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.amzn_client_token = input;
-        self
+        self.amzn_client_token = input; self
     }
     /// A client token used to correlate requests and responses.
     pub fn get_amzn_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl CreateCoreDefinitionVersionInputBuilder {
     }
     /// The ID of the core definition.
     pub fn set_core_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.core_definition_id = input;
-        self
+        self.core_definition_id = input; self
     }
     /// The ID of the core definition.
     pub fn get_core_definition_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,30 +77,30 @@ impl CreateCoreDefinitionVersionInputBuilder {
     /// A list of cores in the core definition version.
     pub fn cores(mut self, input: crate::types::Core) -> Self {
         let mut v = self.cores.unwrap_or_default();
-        v.push(input);
-        self.cores = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cores = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of cores in the core definition version.
-    pub fn set_cores(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Core>>) -> Self {
-        self.cores = input;
-        self
+    pub fn set_cores(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Core>>) -> Self {
+        self.cores = input; self
     }
     /// A list of cores in the core definition version.
-    pub fn get_cores(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Core>> {
+    pub fn get_cores(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Core>> {
         &self.cores
     }
     /// Consumes the builder and constructs a [`CreateCoreDefinitionVersionInput`](crate::operation::create_core_definition_version::CreateCoreDefinitionVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_core_definition_version::CreateCoreDefinitionVersionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_core_definition_version::CreateCoreDefinitionVersionInput {
-            amzn_client_token: self.amzn_client_token,
-            core_definition_id: self.core_definition_id,
-            cores: self.cores,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_core_definition_version::CreateCoreDefinitionVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_core_definition_version::CreateCoreDefinitionVersionInput {
+                amzn_client_token: self.amzn_client_token
+                ,
+                core_definition_id: self.core_definition_id
+                ,
+                cores: self.cores
+                ,
+            }
+        )
     }
 }
+

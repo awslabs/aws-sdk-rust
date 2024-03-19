@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListImages`](crate::operation::list_images::builders::ListImagesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_images::builders::ListImagesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`creation_time_after(DateTime)`](crate::operation::list_images::builders::ListImagesFluentBuilder::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::operation::list_images::builders::ListImagesFluentBuilder::set_creation_time_after):<br>required: **false**<br><p>A filter that returns only images created on or after the specified time.</p><br>
     ///   - [`creation_time_before(DateTime)`](crate::operation::list_images::builders::ListImagesFluentBuilder::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::operation::list_images::builders::ListImagesFluentBuilder::set_creation_time_before):<br>required: **false**<br><p>A filter that returns only images created on or before the specified time.</p><br>
     ///   - [`last_modified_time_after(DateTime)`](crate::operation::list_images::builders::ListImagesFluentBuilder::last_modified_time_after) / [`set_last_modified_time_after(Option<DateTime>)`](crate::operation::list_images::builders::ListImagesFluentBuilder::set_last_modified_time_after):<br>required: **false**<br><p>A filter that returns only images modified on or after the specified time.</p><br>
@@ -13,11 +13,12 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_images::builders::ListImagesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_images::builders::ListImagesFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous call to <code>ListImages</code> didn't return the full set of images, the call returns a token for getting the next set of images.</p><br>
     ///   - [`sort_by(ImageSortBy)`](crate::operation::list_images::builders::ListImagesFluentBuilder::sort_by) / [`set_sort_by(Option<ImageSortBy>)`](crate::operation::list_images::builders::ListImagesFluentBuilder::set_sort_by):<br>required: **false**<br><p>The property used to sort results. The default value is <code>CREATION_TIME</code>.</p><br>
     ///   - [`sort_order(ImageSortOrder)`](crate::operation::list_images::builders::ListImagesFluentBuilder::sort_order) / [`set_sort_order(Option<ImageSortOrder>)`](crate::operation::list_images::builders::ListImagesFluentBuilder::set_sort_order):<br>required: **false**<br><p>The sort order. The default value is <code>DESCENDING</code>.</p><br>
-    /// - On success, responds with [`ListImagesOutput`](crate::operation::list_images::ListImagesOutput) with field(s):
+                            /// - On success, responds with [`ListImagesOutput`](crate::operation::list_images::ListImagesOutput) with field(s):
     ///   - [`images(Option<Vec::<Image>>)`](crate::operation::list_images::ListImagesOutput::images): <p>A list of images and their properties.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_images::ListImagesOutput::next_token): <p>A token for getting the next set of images, if there are any.</p>
-    /// - On failure, responds with [`SdkError<ListImagesError>`](crate::operation::list_images::ListImagesError)
+                            /// - On failure, responds with [`SdkError<ListImagesError>`](crate::operation::list_images::ListImagesError)
     pub fn list_images(&self) -> crate::operation::list_images::builders::ListImagesFluentBuilder {
-        crate::operation::list_images::builders::ListImagesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_images::builders::ListImagesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

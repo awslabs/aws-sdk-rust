@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListGraphs`](crate::operation::list_graphs::builders::ListGraphsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_graphs::builders::ListGraphsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_graphs::builders::ListGraphsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_graphs::builders::ListGraphsFluentBuilder::set_next_token):<br>required: **false**<br><p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_graphs::builders::ListGraphsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_graphs::builders::ListGraphsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of graphs to return at a time. The total must be less than the overall limit on the number of results to return, which is currently 200.</p><br>
-    /// - On success, responds with [`ListGraphsOutput`](crate::operation::list_graphs::ListGraphsOutput) with field(s):
+                            /// - On success, responds with [`ListGraphsOutput`](crate::operation::list_graphs::ListGraphsOutput) with field(s):
     ///   - [`graph_list(Option<Vec::<Graph>>)`](crate::operation::list_graphs::ListGraphsOutput::graph_list): <p>A list of behavior graphs that the account is an administrator account for.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_graphs::ListGraphsOutput::next_token): <p>If there are more behavior graphs remaining in the results, then this is the pagination token to use to request the next page of behavior graphs.</p>
-    /// - On failure, responds with [`SdkError<ListGraphsError>`](crate::operation::list_graphs::ListGraphsError)
+                            /// - On failure, responds with [`SdkError<ListGraphsError>`](crate::operation::list_graphs::ListGraphsError)
     pub fn list_graphs(&self) -> crate::operation::list_graphs::builders::ListGraphsFluentBuilder {
-        crate::operation::list_graphs::builders::ListGraphsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_graphs::builders::ListGraphsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

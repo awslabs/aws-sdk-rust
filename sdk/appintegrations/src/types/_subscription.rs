@@ -3,20 +3,19 @@
 /// <p>The configuration of an event that the application subscribes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Subscription {
+pub struct Subscription  {
     /// <p>The name of the subscription.</p>
     pub event: ::std::string::String,
     /// <p>The description of the subscription.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl Subscription {
+impl  Subscription  {
     /// <p>The name of the subscription.</p>
-    pub fn event(&self) -> &str {
-        use std::ops::Deref;
-        self.event.deref()
+    pub fn event(&self) -> & str {
+        use std::ops::Deref; self.event.deref()
     }
     /// <p>The description of the subscription.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl SubscriptionBuilder {
     }
     /// <p>The name of the subscription.</p>
     pub fn set_event(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event = input;
-        self
+        self.event = input; self
     }
     /// <p>The name of the subscription.</p>
     pub fn get_event(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl SubscriptionBuilder {
     }
     /// <p>The description of the subscription.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the subscription.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl SubscriptionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`event`](crate::types::builders::SubscriptionBuilder::event)
     pub fn build(self) -> ::std::result::Result<crate::types::Subscription, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Subscription {
-            event: self.event.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "event",
-                    "event was not specified but it is required when building Subscription",
-                )
-            })?,
-            description: self.description,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Subscription {
+                event: self.event
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("event", "event was not specified but it is required when building Subscription")
+                    )?
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

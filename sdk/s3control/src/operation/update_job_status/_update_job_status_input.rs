@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateJobStatusInput {
+pub struct UpdateJobStatusInput  {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the job whose status you want to update.</p>
@@ -12,21 +12,21 @@ pub struct UpdateJobStatusInput {
     /// <p>A description of the reason why you want to change the specified job's status. This field can be any string up to the maximum length.</p>
     pub status_update_reason: ::std::option::Option<::std::string::String>,
 }
-impl UpdateJobStatusInput {
+impl  UpdateJobStatusInput  {
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The ID of the job whose status you want to update.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The status that you want to move the specified job to.</p>
-    pub fn requested_job_status(&self) -> ::std::option::Option<&crate::types::RequestedJobStatus> {
+    pub fn requested_job_status(&self) -> ::std::option::Option<& crate::types::RequestedJobStatus> {
         self.requested_job_status.as_ref()
     }
     /// <p>A description of the reason why you want to change the specified job's status. This field can be any string up to the maximum length.</p>
-    pub fn status_update_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_update_reason(&self) -> ::std::option::Option<& str> {
         self.status_update_reason.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl UpdateJobStatusInputBuilder {
     }
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl UpdateJobStatusInputBuilder {
     }
     /// <p>The ID of the job whose status you want to update.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The ID of the job whose status you want to update.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl UpdateJobStatusInputBuilder {
     }
     /// <p>The status that you want to move the specified job to.</p>
     pub fn set_requested_job_status(mut self, input: ::std::option::Option<crate::types::RequestedJobStatus>) -> Self {
-        self.requested_job_status = input;
-        self
+        self.requested_job_status = input; self
     }
     /// <p>The status that you want to move the specified job to.</p>
     pub fn get_requested_job_status(&self) -> &::std::option::Option<crate::types::RequestedJobStatus> {
@@ -99,22 +96,26 @@ impl UpdateJobStatusInputBuilder {
     }
     /// <p>A description of the reason why you want to change the specified job's status. This field can be any string up to the maximum length.</p>
     pub fn set_status_update_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_update_reason = input;
-        self
+        self.status_update_reason = input; self
     }
     /// <p>A description of the reason why you want to change the specified job's status. This field can be any string up to the maximum length.</p>
     pub fn get_status_update_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_update_reason
     }
     /// Consumes the builder and constructs a [`UpdateJobStatusInput`](crate::operation::update_job_status::UpdateJobStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_job_status::UpdateJobStatusInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_job_status::UpdateJobStatusInput {
-            account_id: self.account_id,
-            job_id: self.job_id,
-            requested_job_status: self.requested_job_status,
-            status_update_reason: self.status_update_reason,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_job_status::UpdateJobStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_job_status::UpdateJobStatusInput {
+                account_id: self.account_id
+                ,
+                job_id: self.job_id
+                ,
+                requested_job_status: self.requested_job_status
+                ,
+                status_update_reason: self.status_update_reason
+                ,
+            }
+        )
     }
 }
+

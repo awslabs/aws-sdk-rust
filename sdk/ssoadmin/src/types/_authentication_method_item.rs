@@ -3,19 +3,19 @@
 /// <p>A structure that describes an authentication method and its type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AuthenticationMethodItem {
+pub struct AuthenticationMethodItem  {
     /// <p>The type of authentication that is used by this method.</p>
     pub authentication_method_type: ::std::option::Option<crate::types::AuthenticationMethodType>,
     /// <p>A structure that describes an authentication method. The contents of this structure is determined by the <code>AuthenticationMethodType</code>.</p>
     pub authentication_method: ::std::option::Option<crate::types::AuthenticationMethod>,
 }
-impl AuthenticationMethodItem {
+impl  AuthenticationMethodItem  {
     /// <p>The type of authentication that is used by this method.</p>
-    pub fn authentication_method_type(&self) -> ::std::option::Option<&crate::types::AuthenticationMethodType> {
+    pub fn authentication_method_type(&self) -> ::std::option::Option<& crate::types::AuthenticationMethodType> {
         self.authentication_method_type.as_ref()
     }
     /// <p>A structure that describes an authentication method. The contents of this structure is determined by the <code>AuthenticationMethodType</code>.</p>
-    pub fn authentication_method(&self) -> ::std::option::Option<&crate::types::AuthenticationMethod> {
+    pub fn authentication_method(&self) -> ::std::option::Option<& crate::types::AuthenticationMethod> {
         self.authentication_method.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl AuthenticationMethodItemBuilder {
     }
     /// <p>The type of authentication that is used by this method.</p>
     pub fn set_authentication_method_type(mut self, input: ::std::option::Option<crate::types::AuthenticationMethodType>) -> Self {
-        self.authentication_method_type = input;
-        self
+        self.authentication_method_type = input; self
     }
     /// <p>The type of authentication that is used by this method.</p>
     pub fn get_authentication_method_type(&self) -> &::std::option::Option<crate::types::AuthenticationMethodType> {
@@ -55,8 +54,7 @@ impl AuthenticationMethodItemBuilder {
     }
     /// <p>A structure that describes an authentication method. The contents of this structure is determined by the <code>AuthenticationMethodType</code>.</p>
     pub fn set_authentication_method(mut self, input: ::std::option::Option<crate::types::AuthenticationMethod>) -> Self {
-        self.authentication_method = input;
-        self
+        self.authentication_method = input; self
     }
     /// <p>A structure that describes an authentication method. The contents of this structure is determined by the <code>AuthenticationMethodType</code>.</p>
     pub fn get_authentication_method(&self) -> &::std::option::Option<crate::types::AuthenticationMethod> {
@@ -65,8 +63,11 @@ impl AuthenticationMethodItemBuilder {
     /// Consumes the builder and constructs a [`AuthenticationMethodItem`](crate::types::AuthenticationMethodItem).
     pub fn build(self) -> crate::types::AuthenticationMethodItem {
         crate::types::AuthenticationMethodItem {
-            authentication_method_type: self.authentication_method_type,
-            authentication_method: self.authentication_method,
+            authentication_method_type: self.authentication_method_type
+            ,
+            authentication_method: self.authentication_method
+            ,
         }
     }
 }
+

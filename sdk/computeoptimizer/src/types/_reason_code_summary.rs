@@ -3,15 +3,15 @@
 /// <p>A summary of a finding reason code.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReasonCodeSummary {
+pub struct ReasonCodeSummary  {
     /// <p>The name of the finding reason code.</p>
     pub name: ::std::option::Option<crate::types::FindingReasonCode>,
     /// <p>The value of the finding reason code summary.</p>
     pub value: f64,
 }
-impl ReasonCodeSummary {
+impl  ReasonCodeSummary  {
     /// <p>The name of the finding reason code.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::FindingReasonCode> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::FindingReasonCode> {
         self.name.as_ref()
     }
     /// <p>The value of the finding reason code summary.</p>
@@ -41,8 +41,7 @@ impl ReasonCodeSummaryBuilder {
     }
     /// <p>The name of the finding reason code.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::FindingReasonCode>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the finding reason code.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::FindingReasonCode> {
@@ -55,8 +54,7 @@ impl ReasonCodeSummaryBuilder {
     }
     /// <p>The value of the finding reason code summary.</p>
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the finding reason code summary.</p>
     pub fn get_value(&self) -> &::std::option::Option<f64> {
@@ -65,8 +63,12 @@ impl ReasonCodeSummaryBuilder {
     /// Consumes the builder and constructs a [`ReasonCodeSummary`](crate::types::ReasonCodeSummary).
     pub fn build(self) -> crate::types::ReasonCodeSummary {
         crate::types::ReasonCodeSummary {
-            name: self.name,
-            value: self.value.unwrap_or_default(),
+            name: self.name
+            ,
+            value: self.value
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

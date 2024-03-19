@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMetricSetsOutput {
+pub struct ListMetricSetsOutput  {
     /// <p>A list of the datasets in the AWS Region, with configuration details for each.</p>
-    pub metric_set_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::MetricSetSummary>>,
+    pub metric_set_summary_list: ::std::option::Option<::std::vec::Vec::<crate::types::MetricSetSummary>>,
     /// <p>If the response is truncated, the list call returns this token. To retrieve the next set of results, use the token in the next list request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListMetricSetsOutput {
+impl  ListMetricSetsOutput  {
     /// <p>A list of the datasets in the AWS Region, with configuration details for each.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_set_summary_list.is_none()`.
-    pub fn metric_set_summary_list(&self) -> &[crate::types::MetricSetSummary] {
-        self.metric_set_summary_list.as_deref().unwrap_or_default()
+    pub fn metric_set_summary_list(&self) -> & [crate::types::MetricSetSummary] {
+        self.metric_set_summary_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If the response is truncated, the list call returns this token. To retrieve the next set of results, use the token in the next list request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListMetricSetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListMetricSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListMetricSetsOutput`](crate::operation::list_metric_sets::ListMetricSetsOutput).
     pub fn builder() -> crate::operation::list_metric_sets::builders::ListMetricSetsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListMetricSetsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMetricSetsOutputBuilder {
-    pub(crate) metric_set_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::MetricSetSummary>>,
+    pub(crate) metric_set_summary_list: ::std::option::Option<::std::vec::Vec::<crate::types::MetricSetSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListMetricSetsOutputBuilder {
     /// <p>A list of the datasets in the AWS Region, with configuration details for each.</p>
     pub fn metric_set_summary_list(mut self, input: crate::types::MetricSetSummary) -> Self {
         let mut v = self.metric_set_summary_list.unwrap_or_default();
-        v.push(input);
-        self.metric_set_summary_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.metric_set_summary_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the datasets in the AWS Region, with configuration details for each.</p>
-    pub fn set_metric_set_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricSetSummary>>) -> Self {
-        self.metric_set_summary_list = input;
-        self
+    pub fn set_metric_set_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MetricSetSummary>>) -> Self {
+        self.metric_set_summary_list = input; self
     }
     /// <p>A list of the datasets in the AWS Region, with configuration details for each.</p>
-    pub fn get_metric_set_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricSetSummary>> {
+    pub fn get_metric_set_summary_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MetricSetSummary>> {
         &self.metric_set_summary_list
     }
     /// <p>If the response is truncated, the list call returns this token. To retrieve the next set of results, use the token in the next list request.</p>
@@ -69,28 +69,30 @@ impl ListMetricSetsOutputBuilder {
     }
     /// <p>If the response is truncated, the list call returns this token. To retrieve the next set of results, use the token in the next list request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the response is truncated, the list call returns this token. To retrieve the next set of results, use the token in the next list request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListMetricSetsOutput`](crate::operation::list_metric_sets::ListMetricSetsOutput).
     pub fn build(self) -> crate::operation::list_metric_sets::ListMetricSetsOutput {
         crate::operation::list_metric_sets::ListMetricSetsOutput {
-            metric_set_summary_list: self.metric_set_summary_list,
-            next_token: self.next_token,
+            metric_set_summary_list: self.metric_set_summary_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDifferencesOutput {
+pub struct GetDifferencesOutput  {
     /// <p>A data type object that contains information about the differences, including whether the difference is added, modified, or deleted (A, D, M).</p>
-    pub differences: ::std::option::Option<::std::vec::Vec<crate::types::Difference>>,
+    pub differences: ::std::option::Option<::std::vec::Vec::<crate::types::Difference>>,
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetDifferencesOutput {
+impl  GetDifferencesOutput  {
     /// <p>A data type object that contains information about the differences, including whether the difference is added, modified, or deleted (A, D, M).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.differences.is_none()`.
-    pub fn differences(&self) -> &[crate::types::Difference] {
-        self.differences.as_deref().unwrap_or_default()
+    pub fn differences(&self) -> & [crate::types::Difference] {
+        self.differences.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDifferencesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDifferencesOutput {
     /// Creates a new builder-style object to manufacture [`GetDifferencesOutput`](crate::operation::get_differences::GetDifferencesOutput).
     pub fn builder() -> crate::operation::get_differences::builders::GetDifferencesOutputBuilder {
@@ -37,7 +38,7 @@ impl GetDifferencesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDifferencesOutputBuilder {
-    pub(crate) differences: ::std::option::Option<::std::vec::Vec<crate::types::Difference>>,
+    pub(crate) differences: ::std::option::Option<::std::vec::Vec::<crate::types::Difference>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl GetDifferencesOutputBuilder {
     /// <p>A data type object that contains information about the differences, including whether the difference is added, modified, or deleted (A, D, M).</p>
     pub fn differences(mut self, input: crate::types::Difference) -> Self {
         let mut v = self.differences.unwrap_or_default();
-        v.push(input);
-        self.differences = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.differences = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A data type object that contains information about the differences, including whether the difference is added, modified, or deleted (A, D, M).</p>
-    pub fn set_differences(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Difference>>) -> Self {
-        self.differences = input;
-        self
+    pub fn set_differences(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Difference>>) -> Self {
+        self.differences = input; self
     }
     /// <p>A data type object that contains information about the differences, including whether the difference is added, modified, or deleted (A, D, M).</p>
-    pub fn get_differences(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Difference>> {
+    pub fn get_differences(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Difference>> {
         &self.differences
     }
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
@@ -69,28 +69,30 @@ impl GetDifferencesOutputBuilder {
     }
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDifferencesOutput`](crate::operation::get_differences::GetDifferencesOutput).
     pub fn build(self) -> crate::operation::get_differences::GetDifferencesOutput {
         crate::operation::get_differences::GetDifferencesOutput {
-            differences: self.differences,
-            next_token: self.next_token,
+            differences: self.differences
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Details of the Semtech GNSS solver object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SemtechGnssDetail {
+pub struct SemtechGnssDetail  {
     /// <p>The vendor of the solver object.</p>
     pub provider: ::std::option::Option<crate::types::PositionSolverProvider>,
     /// <p>The type of positioning solver used.</p>
@@ -13,21 +13,21 @@ pub struct SemtechGnssDetail {
     /// <p>Whether forward error correction is enabled.</p>
     pub fec: ::std::option::Option<crate::types::PositionConfigurationFec>,
 }
-impl SemtechGnssDetail {
+impl  SemtechGnssDetail  {
     /// <p>The vendor of the solver object.</p>
-    pub fn provider(&self) -> ::std::option::Option<&crate::types::PositionSolverProvider> {
+    pub fn provider(&self) -> ::std::option::Option<& crate::types::PositionSolverProvider> {
         self.provider.as_ref()
     }
     /// <p>The type of positioning solver used.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::PositionSolverType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::PositionSolverType> {
         self.r#type.as_ref()
     }
     /// <p>The status indicating whether the solver is enabled.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::PositionConfigurationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::PositionConfigurationStatus> {
         self.status.as_ref()
     }
     /// <p>Whether forward error correction is enabled.</p>
-    pub fn fec(&self) -> ::std::option::Option<&crate::types::PositionConfigurationFec> {
+    pub fn fec(&self) -> ::std::option::Option<& crate::types::PositionConfigurationFec> {
         self.fec.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl SemtechGnssDetailBuilder {
     }
     /// <p>The vendor of the solver object.</p>
     pub fn set_provider(mut self, input: ::std::option::Option<crate::types::PositionSolverProvider>) -> Self {
-        self.provider = input;
-        self
+        self.provider = input; self
     }
     /// <p>The vendor of the solver object.</p>
     pub fn get_provider(&self) -> &::std::option::Option<crate::types::PositionSolverProvider> {
@@ -69,8 +68,7 @@ impl SemtechGnssDetailBuilder {
     }
     /// <p>The type of positioning solver used.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::PositionSolverType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of positioning solver used.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::PositionSolverType> {
@@ -83,8 +81,7 @@ impl SemtechGnssDetailBuilder {
     }
     /// <p>The status indicating whether the solver is enabled.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::PositionConfigurationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status indicating whether the solver is enabled.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PositionConfigurationStatus> {
@@ -97,8 +94,7 @@ impl SemtechGnssDetailBuilder {
     }
     /// <p>Whether forward error correction is enabled.</p>
     pub fn set_fec(mut self, input: ::std::option::Option<crate::types::PositionConfigurationFec>) -> Self {
-        self.fec = input;
-        self
+        self.fec = input; self
     }
     /// <p>Whether forward error correction is enabled.</p>
     pub fn get_fec(&self) -> &::std::option::Option<crate::types::PositionConfigurationFec> {
@@ -107,10 +103,15 @@ impl SemtechGnssDetailBuilder {
     /// Consumes the builder and constructs a [`SemtechGnssDetail`](crate::types::SemtechGnssDetail).
     pub fn build(self) -> crate::types::SemtechGnssDetail {
         crate::types::SemtechGnssDetail {
-            provider: self.provider,
-            r#type: self.r#type,
-            status: self.status,
-            fec: self.fec,
+            provider: self.provider
+            ,
+            r#type: self.r#type
+            ,
+            status: self.status
+            ,
+            fec: self.fec
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetNetworkTelemetryInput {
+pub struct GetNetworkTelemetryInput  {
     /// <p>The ID of the global network.</p>
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a core network.</p>
@@ -57,25 +57,25 @@ pub struct GetNetworkTelemetryInput {
     /// <p>The token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl GetNetworkTelemetryInput {
+impl  GetNetworkTelemetryInput  {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn global_network_id(&self) -> ::std::option::Option<& str> {
         self.global_network_id.as_deref()
     }
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn core_network_id(&self) -> ::std::option::Option<& str> {
         self.core_network_id.as_deref()
     }
     /// <p>The ARN of the gateway.</p>
-    pub fn registered_gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn registered_gateway_arn(&self) -> ::std::option::Option<& str> {
         self.registered_gateway_arn.as_deref()
     }
     /// <p>The Amazon Web Services Region.</p>
-    pub fn aws_region(&self) -> ::std::option::Option<&str> {
+    pub fn aws_region(&self) -> ::std::option::Option<& str> {
         self.aws_region.as_deref()
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The resource type.</p>
@@ -114,11 +114,11 @@ impl GetNetworkTelemetryInput {
     /// <li>
     /// <p><code>vpn-connection</code></p></li>
     /// </ul>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The ARN of the resource.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -126,7 +126,7 @@ impl GetNetworkTelemetryInput {
         self.max_results
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -160,8 +160,7 @@ impl GetNetworkTelemetryInputBuilder {
     }
     /// <p>The ID of the global network.</p>
     pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_network_id = input;
-        self
+        self.global_network_id = input; self
     }
     /// <p>The ID of the global network.</p>
     pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +173,7 @@ impl GetNetworkTelemetryInputBuilder {
     }
     /// <p>The ID of a core network.</p>
     pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.core_network_id = input;
-        self
+        self.core_network_id = input; self
     }
     /// <p>The ID of a core network.</p>
     pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +186,7 @@ impl GetNetworkTelemetryInputBuilder {
     }
     /// <p>The ARN of the gateway.</p>
     pub fn set_registered_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registered_gateway_arn = input;
-        self
+        self.registered_gateway_arn = input; self
     }
     /// <p>The ARN of the gateway.</p>
     pub fn get_registered_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +199,7 @@ impl GetNetworkTelemetryInputBuilder {
     }
     /// <p>The Amazon Web Services Region.</p>
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_region = input;
-        self
+        self.aws_region = input; self
     }
     /// <p>The Amazon Web Services Region.</p>
     pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -216,8 +212,7 @@ impl GetNetworkTelemetryInputBuilder {
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -300,8 +295,7 @@ impl GetNetworkTelemetryInputBuilder {
     /// <p><code>vpn-connection</code></p></li>
     /// </ul>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type.</p>
     /// <p>The following are the supported resource types for Direct Connect:</p>
@@ -349,8 +343,7 @@ impl GetNetworkTelemetryInputBuilder {
     }
     /// <p>The ARN of the resource.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The ARN of the resource.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -363,8 +356,7 @@ impl GetNetworkTelemetryInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -377,28 +369,36 @@ impl GetNetworkTelemetryInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetNetworkTelemetryInput`](crate::operation::get_network_telemetry::GetNetworkTelemetryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_network_telemetry::GetNetworkTelemetryInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_network_telemetry::GetNetworkTelemetryInput {
-            global_network_id: self.global_network_id,
-            core_network_id: self.core_network_id,
-            registered_gateway_arn: self.registered_gateway_arn,
-            aws_region: self.aws_region,
-            account_id: self.account_id,
-            resource_type: self.resource_type,
-            resource_arn: self.resource_arn,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_network_telemetry::GetNetworkTelemetryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_network_telemetry::GetNetworkTelemetryInput {
+                global_network_id: self.global_network_id
+                ,
+                core_network_id: self.core_network_id
+                ,
+                registered_gateway_arn: self.registered_gateway_arn
+                ,
+                aws_region: self.aws_region
+                ,
+                account_id: self.account_id
+                ,
+                resource_type: self.resource_type
+                ,
+                resource_arn: self.resource_arn
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

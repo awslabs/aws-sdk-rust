@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBucketBundlesInput {
+pub struct GetBucketBundlesInput  {
     /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
     pub include_inactive: ::std::option::Option<bool>,
 }
-impl GetBucketBundlesInput {
+impl  GetBucketBundlesInput  {
     /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
     pub fn include_inactive(&self) -> ::std::option::Option<bool> {
         self.include_inactive
@@ -33,19 +33,20 @@ impl GetBucketBundlesInputBuilder {
     }
     /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
     pub fn set_include_inactive(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_inactive = input;
-        self
+        self.include_inactive = input; self
     }
     /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
     pub fn get_include_inactive(&self) -> &::std::option::Option<bool> {
         &self.include_inactive
     }
     /// Consumes the builder and constructs a [`GetBucketBundlesInput`](crate::operation::get_bucket_bundles::GetBucketBundlesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_bucket_bundles::GetBucketBundlesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_bucket_bundles::GetBucketBundlesInput {
-            include_inactive: self.include_inactive,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_bucket_bundles::GetBucketBundlesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_bucket_bundles::GetBucketBundlesInput {
+                include_inactive: self.include_inactive
+                ,
+            }
+        )
     }
 }
+

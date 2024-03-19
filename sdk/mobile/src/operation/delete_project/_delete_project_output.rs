@@ -3,32 +3,34 @@
 /// <p>Result structure used in response to request to delete a project.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteProjectOutput {
+pub struct DeleteProjectOutput  {
     /// <p>Resources which were deleted.</p>
-    pub deleted_resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
+    pub deleted_resources: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>,
     /// <p>Resources which were not deleted, due to a risk of losing potentially important data or files.</p>
-    pub orphaned_resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
+    pub orphaned_resources: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>,
     _request_id: Option<String>,
 }
-impl DeleteProjectOutput {
+impl  DeleteProjectOutput  {
     /// <p>Resources which were deleted.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deleted_resources.is_none()`.
-    pub fn deleted_resources(&self) -> &[crate::types::Resource] {
-        self.deleted_resources.as_deref().unwrap_or_default()
+    pub fn deleted_resources(&self) -> & [crate::types::Resource] {
+        self.deleted_resources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Resources which were not deleted, due to a risk of losing potentially important data or files.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.orphaned_resources.is_none()`.
-    pub fn orphaned_resources(&self) -> &[crate::types::Resource] {
-        self.orphaned_resources.as_deref().unwrap_or_default()
+    pub fn orphaned_resources(&self) -> & [crate::types::Resource] {
+        self.orphaned_resources.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteProjectOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteProjectOutput {
     /// Creates a new builder-style object to manufacture [`DeleteProjectOutput`](crate::operation::delete_project::DeleteProjectOutput).
     pub fn builder() -> crate::operation::delete_project::builders::DeleteProjectOutputBuilder {
@@ -40,8 +42,8 @@ impl DeleteProjectOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteProjectOutputBuilder {
-    pub(crate) deleted_resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
-    pub(crate) orphaned_resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
+    pub(crate) deleted_resources: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>,
+    pub(crate) orphaned_resources: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>,
     _request_id: Option<String>,
 }
 impl DeleteProjectOutputBuilder {
@@ -52,17 +54,16 @@ impl DeleteProjectOutputBuilder {
     /// <p>Resources which were deleted.</p>
     pub fn deleted_resources(mut self, input: crate::types::Resource) -> Self {
         let mut v = self.deleted_resources.unwrap_or_default();
-        v.push(input);
-        self.deleted_resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.deleted_resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Resources which were deleted.</p>
-    pub fn set_deleted_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
-        self.deleted_resources = input;
-        self
+    pub fn set_deleted_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>) -> Self {
+        self.deleted_resources = input; self
     }
     /// <p>Resources which were deleted.</p>
-    pub fn get_deleted_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
+    pub fn get_deleted_resources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Resource>> {
         &self.deleted_resources
     }
     /// Appends an item to `orphaned_resources`.
@@ -72,34 +73,36 @@ impl DeleteProjectOutputBuilder {
     /// <p>Resources which were not deleted, due to a risk of losing potentially important data or files.</p>
     pub fn orphaned_resources(mut self, input: crate::types::Resource) -> Self {
         let mut v = self.orphaned_resources.unwrap_or_default();
-        v.push(input);
-        self.orphaned_resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.orphaned_resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Resources which were not deleted, due to a risk of losing potentially important data or files.</p>
-    pub fn set_orphaned_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
-        self.orphaned_resources = input;
-        self
+    pub fn set_orphaned_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>) -> Self {
+        self.orphaned_resources = input; self
     }
     /// <p>Resources which were not deleted, due to a risk of losing potentially important data or files.</p>
-    pub fn get_orphaned_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
+    pub fn get_orphaned_resources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Resource>> {
         &self.orphaned_resources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteProjectOutput`](crate::operation::delete_project::DeleteProjectOutput).
     pub fn build(self) -> crate::operation::delete_project::DeleteProjectOutput {
         crate::operation::delete_project::DeleteProjectOutput {
-            deleted_resources: self.deleted_resources,
-            orphaned_resources: self.orphaned_resources,
+            deleted_resources: self.deleted_resources
+            ,
+            orphaned_resources: self.orphaned_resources
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

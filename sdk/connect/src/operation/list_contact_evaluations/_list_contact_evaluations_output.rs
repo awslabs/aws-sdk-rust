@@ -2,33 +2,32 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListContactEvaluationsOutput {
+pub struct ListContactEvaluationsOutput  {
     /// <p>Provides details about a list of contact evaluations belonging to an instance.</p>
-    pub evaluation_summary_list: ::std::vec::Vec<crate::types::EvaluationSummary>,
+    pub evaluation_summary_list: ::std::vec::Vec::<crate::types::EvaluationSummary>,
     /// <p>If there are additional results, this is the token for the next set of results.</p><important>
     /// <p>This is always returned as null in the response.</p>
     /// </important>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListContactEvaluationsOutput {
+impl  ListContactEvaluationsOutput  {
     /// <p>Provides details about a list of contact evaluations belonging to an instance.</p>
-    pub fn evaluation_summary_list(&self) -> &[crate::types::EvaluationSummary] {
-        use std::ops::Deref;
-        self.evaluation_summary_list.deref()
+    pub fn evaluation_summary_list(&self) -> & [crate::types::EvaluationSummary] {
+        use std::ops::Deref; self.evaluation_summary_list.deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p><important>
     /// <p>This is always returned as null in the response.</p>
     /// </important>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListContactEvaluationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListContactEvaluationsOutput {
     /// Creates a new builder-style object to manufacture [`ListContactEvaluationsOutput`](crate::operation::list_contact_evaluations::ListContactEvaluationsOutput).
     pub fn builder() -> crate::operation::list_contact_evaluations::builders::ListContactEvaluationsOutputBuilder {
@@ -40,7 +39,7 @@ impl ListContactEvaluationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListContactEvaluationsOutputBuilder {
-    pub(crate) evaluation_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationSummary>>,
+    pub(crate) evaluation_summary_list: ::std::option::Option<::std::vec::Vec::<crate::types::EvaluationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -52,17 +51,16 @@ impl ListContactEvaluationsOutputBuilder {
     /// <p>Provides details about a list of contact evaluations belonging to an instance.</p>
     pub fn evaluation_summary_list(mut self, input: crate::types::EvaluationSummary) -> Self {
         let mut v = self.evaluation_summary_list.unwrap_or_default();
-        v.push(input);
-        self.evaluation_summary_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.evaluation_summary_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Provides details about a list of contact evaluations belonging to an instance.</p>
-    pub fn set_evaluation_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationSummary>>) -> Self {
-        self.evaluation_summary_list = input;
-        self
+    pub fn set_evaluation_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EvaluationSummary>>) -> Self {
+        self.evaluation_summary_list = input; self
     }
     /// <p>Provides details about a list of contact evaluations belonging to an instance.</p>
-    pub fn get_evaluation_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationSummary>> {
+    pub fn get_evaluation_summary_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EvaluationSummary>> {
         &self.evaluation_summary_list
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p><important>
@@ -76,8 +74,7 @@ impl ListContactEvaluationsOutputBuilder {
     /// <p>This is always returned as null in the response.</p>
     /// </important>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p><important>
     /// <p>This is always returned as null in the response.</p>
@@ -86,32 +83,30 @@ impl ListContactEvaluationsOutputBuilder {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListContactEvaluationsOutput`](crate::operation::list_contact_evaluations::ListContactEvaluationsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`evaluation_summary_list`](crate::operation::list_contact_evaluations::builders::ListContactEvaluationsOutputBuilder::evaluation_summary_list)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_contact_evaluations::ListContactEvaluationsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_contact_evaluations::ListContactEvaluationsOutput {
-            evaluation_summary_list: self.evaluation_summary_list.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "evaluation_summary_list",
-                    "evaluation_summary_list was not specified but it is required when building ListContactEvaluationsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_contact_evaluations::ListContactEvaluationsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_contact_evaluations::ListContactEvaluationsOutput {
+                evaluation_summary_list: self.evaluation_summary_list
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("evaluation_summary_list", "evaluation_summary_list was not specified but it is required when building ListContactEvaluationsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

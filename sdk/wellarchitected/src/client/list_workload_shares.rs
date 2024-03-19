@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListWorkloadShares`](crate::operation::list_workload_shares::builders::ListWorkloadSharesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_workload_shares::builders::ListWorkloadSharesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`workload_id(impl Into<String>)`](crate::operation::list_workload_shares::builders::ListWorkloadSharesFluentBuilder::workload_id) / [`set_workload_id(Option<String>)`](crate::operation::list_workload_shares::builders::ListWorkloadSharesFluentBuilder::set_workload_id):<br>required: **true**<br><p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p><br>
     ///   - [`shared_with_prefix(impl Into<String>)`](crate::operation::list_workload_shares::builders::ListWorkloadSharesFluentBuilder::shared_with_prefix) / [`set_shared_with_prefix(Option<String>)`](crate::operation::list_workload_shares::builders::ListWorkloadSharesFluentBuilder::set_shared_with_prefix):<br>required: **false**<br><p>The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the workload is shared.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_workload_shares::builders::ListWorkloadSharesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_workload_shares::builders::ListWorkloadSharesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_workload_shares::builders::ListWorkloadSharesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_workload_shares::builders::ListWorkloadSharesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return for this request.</p><br>
     ///   - [`status(ShareStatus)`](crate::operation::list_workload_shares::builders::ListWorkloadSharesFluentBuilder::status) / [`set_status(Option<ShareStatus>)`](crate::operation::list_workload_shares::builders::ListWorkloadSharesFluentBuilder::set_status):<br>required: **false**<br><p>The status of the share request.</p><br>
-    /// - On success, responds with [`ListWorkloadSharesOutput`](crate::operation::list_workload_shares::ListWorkloadSharesOutput) with field(s):
+                            /// - On success, responds with [`ListWorkloadSharesOutput`](crate::operation::list_workload_shares::ListWorkloadSharesOutput) with field(s):
     ///   - [`workload_id(Option<String>)`](crate::operation::list_workload_shares::ListWorkloadSharesOutput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     ///   - [`workload_share_summaries(Option<Vec::<WorkloadShareSummary>>)`](crate::operation::list_workload_shares::ListWorkloadSharesOutput::workload_share_summaries): <p>A list of workload share summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_workload_shares::ListWorkloadSharesOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListWorkloadSharesError>`](crate::operation::list_workload_shares::ListWorkloadSharesError)
+                            /// - On failure, responds with [`SdkError<ListWorkloadSharesError>`](crate::operation::list_workload_shares::ListWorkloadSharesError)
     pub fn list_workload_shares(&self) -> crate::operation::list_workload_shares::builders::ListWorkloadSharesFluentBuilder {
-        crate::operation::list_workload_shares::builders::ListWorkloadSharesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_workload_shares::builders::ListWorkloadSharesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

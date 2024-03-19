@@ -7,7 +7,7 @@
 /// <p><code>"name": <i>string</i>, "version": <i>string</i> } }</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceInUseException {
+pub struct ResourceInUseException  {
     #[allow(missing_docs)] // documentation missing in model
     pub reference_type: ::std::option::Option<crate::types::ReferenceType>,
     /// <p>Describes the resource that refers to the resource that you are attempting to delete. This object is returned as part of the <code>ResourceInUseException</code> exception.</p>
@@ -16,27 +16,25 @@ pub struct ResourceInUseException {
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl ResourceInUseException {
+impl  ResourceInUseException  {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn reference_type(&self) -> ::std::option::Option<&crate::types::ReferenceType> {
+    pub fn reference_type(&self) -> ::std::option::Option<& crate::types::ReferenceType> {
         self.reference_type.as_ref()
     }
     /// <p>Describes the resource that refers to the resource that you are attempting to delete. This object is returned as part of the <code>ResourceInUseException</code> exception.</p>
-    pub fn example_reference(&self) -> ::std::option::Option<&crate::types::ResourceReference> {
+    pub fn example_reference(&self) -> ::std::option::Option<& crate::types::ResourceReference> {
         self.example_reference.as_ref()
     }
 }
 impl ResourceInUseException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for ResourceInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ResourceInUseException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -51,9 +49,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::ResourceInUseEx
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ResourceInUseException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl ResourceInUseException {
     /// Creates a new builder-style object to manufacture [`ResourceInUseException`](crate::types::error::ResourceInUseException).
@@ -79,8 +75,7 @@ impl ResourceInUseExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_reference_type(mut self, input: ::std::option::Option<crate::types::ReferenceType>) -> Self {
-        self.reference_type = input;
-        self
+        self.reference_type = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_reference_type(&self) -> &::std::option::Option<crate::types::ReferenceType> {
@@ -93,8 +88,7 @@ impl ResourceInUseExceptionBuilder {
     }
     /// <p>Describes the resource that refers to the resource that you are attempting to delete. This object is returned as part of the <code>ResourceInUseException</code> exception.</p>
     pub fn set_example_reference(mut self, input: ::std::option::Option<crate::types::ResourceReference>) -> Self {
-        self.example_reference = input;
-        self
+        self.example_reference = input; self
     }
     /// <p>Describes the resource that refers to the resource that you are attempting to delete. This object is returned as part of the <code>ResourceInUseException</code> exception.</p>
     pub fn get_example_reference(&self) -> &::std::option::Option<crate::types::ResourceReference> {
@@ -107,31 +101,34 @@ impl ResourceInUseExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`ResourceInUseException`](crate::types::error::ResourceInUseException).
     pub fn build(self) -> crate::types::error::ResourceInUseException {
         crate::types::error::ResourceInUseException {
-            reference_type: self.reference_type,
-            example_reference: self.example_reference,
-            message: self.message,
+            reference_type: self.reference_type
+            ,
+            example_reference: self.example_reference
+            ,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

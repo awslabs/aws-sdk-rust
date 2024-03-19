@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RestoreServerOutput {
+pub struct RestoreServerOutput  {
     /// <p>Describes a configuration management server.</p>
     pub server: ::std::option::Option<crate::types::Server>,
     _request_id: Option<String>,
 }
-impl RestoreServerOutput {
+impl  RestoreServerOutput  {
     /// <p>Describes a configuration management server.</p>
-    pub fn server(&self) -> ::std::option::Option<&crate::types::Server> {
+    pub fn server(&self) -> ::std::option::Option<& crate::types::Server> {
         self.server.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for RestoreServerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RestoreServerOutput {
     /// Creates a new builder-style object to manufacture [`RestoreServerOutput`](crate::operation::restore_server::RestoreServerOutput).
     pub fn builder() -> crate::operation::restore_server::builders::RestoreServerOutputBuilder {
@@ -40,27 +40,28 @@ impl RestoreServerOutputBuilder {
     }
     /// <p>Describes a configuration management server.</p>
     pub fn set_server(mut self, input: ::std::option::Option<crate::types::Server>) -> Self {
-        self.server = input;
-        self
+        self.server = input; self
     }
     /// <p>Describes a configuration management server.</p>
     pub fn get_server(&self) -> &::std::option::Option<crate::types::Server> {
         &self.server
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RestoreServerOutput`](crate::operation::restore_server::RestoreServerOutput).
     pub fn build(self) -> crate::operation::restore_server::RestoreServerOutput {
         crate::operation::restore_server::RestoreServerOutput {
-            server: self.server,
+            server: self.server
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

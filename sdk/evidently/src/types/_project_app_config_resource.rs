@@ -3,7 +3,7 @@
 /// <p>This is a structure that defines the configuration of how your application integrates with AppConfig to run client-side evaluation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProjectAppConfigResource {
+pub struct ProjectAppConfigResource  {
     /// <p>The ID of the AppConfig application to use for client-side evaluation.</p>
     pub application_id: ::std::string::String,
     /// <p>The ID of the AppConfig environment to use for client-side evaluation. This must be an environment that is within the application that you specify for <code>applicationId</code>.</p>
@@ -11,21 +11,18 @@ pub struct ProjectAppConfigResource {
     /// <p>The ID of the AppConfig profile to use for client-side evaluation.</p>
     pub configuration_profile_id: ::std::string::String,
 }
-impl ProjectAppConfigResource {
+impl  ProjectAppConfigResource  {
     /// <p>The ID of the AppConfig application to use for client-side evaluation.</p>
-    pub fn application_id(&self) -> &str {
-        use std::ops::Deref;
-        self.application_id.deref()
+    pub fn application_id(&self) -> & str {
+        use std::ops::Deref; self.application_id.deref()
     }
     /// <p>The ID of the AppConfig environment to use for client-side evaluation. This must be an environment that is within the application that you specify for <code>applicationId</code>.</p>
-    pub fn environment_id(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_id.deref()
+    pub fn environment_id(&self) -> & str {
+        use std::ops::Deref; self.environment_id.deref()
     }
     /// <p>The ID of the AppConfig profile to use for client-side evaluation.</p>
-    pub fn configuration_profile_id(&self) -> &str {
-        use std::ops::Deref;
-        self.configuration_profile_id.deref()
+    pub fn configuration_profile_id(&self) -> & str {
+        use std::ops::Deref; self.configuration_profile_id.deref()
     }
 }
 impl ProjectAppConfigResource {
@@ -52,8 +49,7 @@ impl ProjectAppConfigResourceBuilder {
     }
     /// <p>The ID of the AppConfig application to use for client-side evaluation.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The ID of the AppConfig application to use for client-side evaluation.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +63,7 @@ impl ProjectAppConfigResourceBuilder {
     }
     /// <p>The ID of the AppConfig environment to use for client-side evaluation. This must be an environment that is within the application that you specify for <code>applicationId</code>.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>The ID of the AppConfig environment to use for client-side evaluation. This must be an environment that is within the application that you specify for <code>applicationId</code>.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +77,7 @@ impl ProjectAppConfigResourceBuilder {
     }
     /// <p>The ID of the AppConfig profile to use for client-side evaluation.</p>
     pub fn set_configuration_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_profile_id = input;
-        self
+        self.configuration_profile_id = input; self
     }
     /// <p>The ID of the AppConfig profile to use for client-side evaluation.</p>
     pub fn get_configuration_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,25 +89,25 @@ impl ProjectAppConfigResourceBuilder {
     /// - [`environment_id`](crate::types::builders::ProjectAppConfigResourceBuilder::environment_id)
     /// - [`configuration_profile_id`](crate::types::builders::ProjectAppConfigResourceBuilder::configuration_profile_id)
     pub fn build(self) -> ::std::result::Result<crate::types::ProjectAppConfigResource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ProjectAppConfigResource {
-            application_id: self.application_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application_id",
-                    "application_id was not specified but it is required when building ProjectAppConfigResource",
-                )
-            })?,
-            environment_id: self.environment_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "environment_id",
-                    "environment_id was not specified but it is required when building ProjectAppConfigResource",
-                )
-            })?,
-            configuration_profile_id: self.configuration_profile_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "configuration_profile_id",
-                    "configuration_profile_id was not specified but it is required when building ProjectAppConfigResource",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ProjectAppConfigResource {
+                application_id: self.application_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_id", "application_id was not specified but it is required when building ProjectAppConfigResource")
+                    )?
+                ,
+                environment_id: self.environment_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("environment_id", "environment_id was not specified but it is required when building ProjectAppConfigResource")
+                    )?
+                ,
+                configuration_profile_id: self.configuration_profile_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("configuration_profile_id", "configuration_profile_id was not specified but it is required when building ProjectAppConfigResource")
+                    )?
+                ,
+            }
+        )
     }
 }
+

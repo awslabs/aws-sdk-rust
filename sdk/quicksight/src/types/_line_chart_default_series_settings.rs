@@ -3,7 +3,7 @@
 /// <p>The options that determine the default presentation of all line series in <code>LineChartVisual</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LineChartDefaultSeriesSettings {
+pub struct LineChartDefaultSeriesSettings  {
     /// <p>The axis to which you are binding all line series to.</p>
     pub axis_binding: ::std::option::Option<crate::types::AxisBinding>,
     /// <p>Line styles options for all line series in the visual.</p>
@@ -11,17 +11,17 @@ pub struct LineChartDefaultSeriesSettings {
     /// <p>Marker styles options for all line series in the visual.</p>
     pub marker_style_settings: ::std::option::Option<crate::types::LineChartMarkerStyleSettings>,
 }
-impl LineChartDefaultSeriesSettings {
+impl  LineChartDefaultSeriesSettings  {
     /// <p>The axis to which you are binding all line series to.</p>
-    pub fn axis_binding(&self) -> ::std::option::Option<&crate::types::AxisBinding> {
+    pub fn axis_binding(&self) -> ::std::option::Option<& crate::types::AxisBinding> {
         self.axis_binding.as_ref()
     }
     /// <p>Line styles options for all line series in the visual.</p>
-    pub fn line_style_settings(&self) -> ::std::option::Option<&crate::types::LineChartLineStyleSettings> {
+    pub fn line_style_settings(&self) -> ::std::option::Option<& crate::types::LineChartLineStyleSettings> {
         self.line_style_settings.as_ref()
     }
     /// <p>Marker styles options for all line series in the visual.</p>
-    pub fn marker_style_settings(&self) -> ::std::option::Option<&crate::types::LineChartMarkerStyleSettings> {
+    pub fn marker_style_settings(&self) -> ::std::option::Option<& crate::types::LineChartMarkerStyleSettings> {
         self.marker_style_settings.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl LineChartDefaultSeriesSettingsBuilder {
     }
     /// <p>The axis to which you are binding all line series to.</p>
     pub fn set_axis_binding(mut self, input: ::std::option::Option<crate::types::AxisBinding>) -> Self {
-        self.axis_binding = input;
-        self
+        self.axis_binding = input; self
     }
     /// <p>The axis to which you are binding all line series to.</p>
     pub fn get_axis_binding(&self) -> &::std::option::Option<crate::types::AxisBinding> {
@@ -62,8 +61,7 @@ impl LineChartDefaultSeriesSettingsBuilder {
     }
     /// <p>Line styles options for all line series in the visual.</p>
     pub fn set_line_style_settings(mut self, input: ::std::option::Option<crate::types::LineChartLineStyleSettings>) -> Self {
-        self.line_style_settings = input;
-        self
+        self.line_style_settings = input; self
     }
     /// <p>Line styles options for all line series in the visual.</p>
     pub fn get_line_style_settings(&self) -> &::std::option::Option<crate::types::LineChartLineStyleSettings> {
@@ -76,8 +74,7 @@ impl LineChartDefaultSeriesSettingsBuilder {
     }
     /// <p>Marker styles options for all line series in the visual.</p>
     pub fn set_marker_style_settings(mut self, input: ::std::option::Option<crate::types::LineChartMarkerStyleSettings>) -> Self {
-        self.marker_style_settings = input;
-        self
+        self.marker_style_settings = input; self
     }
     /// <p>Marker styles options for all line series in the visual.</p>
     pub fn get_marker_style_settings(&self) -> &::std::option::Option<crate::types::LineChartMarkerStyleSettings> {
@@ -86,9 +83,13 @@ impl LineChartDefaultSeriesSettingsBuilder {
     /// Consumes the builder and constructs a [`LineChartDefaultSeriesSettings`](crate::types::LineChartDefaultSeriesSettings).
     pub fn build(self) -> crate::types::LineChartDefaultSeriesSettings {
         crate::types::LineChartDefaultSeriesSettings {
-            axis_binding: self.axis_binding,
-            line_style_settings: self.line_style_settings,
-            marker_style_settings: self.marker_style_settings,
+            axis_binding: self.axis_binding
+            ,
+            line_style_settings: self.line_style_settings
+            ,
+            marker_style_settings: self.marker_style_settings
+            ,
         }
     }
 }
+

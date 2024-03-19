@@ -3,19 +3,19 @@
 /// <p>A reference to a unique stage identified in the format <code>{restApiId}/{stage}</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StageKey {
+pub struct StageKey  {
     /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The stage name associated with the stage key.</p>
     pub stage_name: ::std::option::Option<::std::string::String>,
 }
-impl StageKey {
+impl  StageKey  {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<& str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The stage name associated with the stage key.</p>
-    pub fn stage_name(&self) -> ::std::option::Option<&str> {
+    pub fn stage_name(&self) -> ::std::option::Option<& str> {
         self.stage_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl StageKeyBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rest_api_id = input;
-        self
+        self.rest_api_id = input; self
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl StageKeyBuilder {
     }
     /// <p>The stage name associated with the stage key.</p>
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stage_name = input;
-        self
+        self.stage_name = input; self
     }
     /// <p>The stage name associated with the stage key.</p>
     pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl StageKeyBuilder {
     /// Consumes the builder and constructs a [`StageKey`](crate::types::StageKey).
     pub fn build(self) -> crate::types::StageKey {
         crate::types::StageKey {
-            rest_api_id: self.rest_api_id,
-            stage_name: self.stage_name,
+            rest_api_id: self.rest_api_id
+            ,
+            stage_name: self.stage_name
+            ,
         }
     }
 }
+

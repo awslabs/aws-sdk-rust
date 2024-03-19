@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRoleAliasInput {
+pub struct DescribeRoleAliasInput  {
     /// <p>The role alias to describe.</p>
     pub role_alias: ::std::option::Option<::std::string::String>,
 }
-impl DescribeRoleAliasInput {
+impl  DescribeRoleAliasInput  {
     /// <p>The role alias to describe.</p>
-    pub fn role_alias(&self) -> ::std::option::Option<&str> {
+    pub fn role_alias(&self) -> ::std::option::Option<& str> {
         self.role_alias.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl DescribeRoleAliasInputBuilder {
     }
     /// <p>The role alias to describe.</p>
     pub fn set_role_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_alias = input;
-        self
+        self.role_alias = input; self
     }
     /// <p>The role alias to describe.</p>
     pub fn get_role_alias(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_alias
     }
     /// Consumes the builder and constructs a [`DescribeRoleAliasInput`](crate::operation::describe_role_alias::DescribeRoleAliasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_role_alias::DescribeRoleAliasInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_role_alias::DescribeRoleAliasInput { role_alias: self.role_alias })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_role_alias::DescribeRoleAliasInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_role_alias::DescribeRoleAliasInput {
+                role_alias: self.role_alias
+                ,
+            }
+        )
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePackageOutput {
+pub struct DeletePackageOutput  {
     /// <p>Details about a package, including its format, namespace, and name.</p>
     pub deleted_package: ::std::option::Option<crate::types::PackageSummary>,
     _request_id: Option<String>,
 }
-impl DeletePackageOutput {
+impl  DeletePackageOutput  {
     /// <p>Details about a package, including its format, namespace, and name.</p>
-    pub fn deleted_package(&self) -> ::std::option::Option<&crate::types::PackageSummary> {
+    pub fn deleted_package(&self) -> ::std::option::Option<& crate::types::PackageSummary> {
         self.deleted_package.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeletePackageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeletePackageOutput {
     /// Creates a new builder-style object to manufacture [`DeletePackageOutput`](crate::operation::delete_package::DeletePackageOutput).
     pub fn builder() -> crate::operation::delete_package::builders::DeletePackageOutputBuilder {
@@ -40,27 +40,28 @@ impl DeletePackageOutputBuilder {
     }
     /// <p>Details about a package, including its format, namespace, and name.</p>
     pub fn set_deleted_package(mut self, input: ::std::option::Option<crate::types::PackageSummary>) -> Self {
-        self.deleted_package = input;
-        self
+        self.deleted_package = input; self
     }
     /// <p>Details about a package, including its format, namespace, and name.</p>
     pub fn get_deleted_package(&self) -> &::std::option::Option<crate::types::PackageSummary> {
         &self.deleted_package
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeletePackageOutput`](crate::operation::delete_package::DeletePackageOutput).
     pub fn build(self) -> crate::operation::delete_package::DeletePackageOutput {
         crate::operation::delete_package::DeletePackageOutput {
-            deleted_package: self.deleted_package,
+            deleted_package: self.deleted_package
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

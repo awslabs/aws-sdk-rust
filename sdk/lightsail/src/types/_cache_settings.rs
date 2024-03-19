@@ -4,7 +4,7 @@
 /// <p>These settings apply only to your distribution's <code>cacheBehaviors</code> (including the <code>defaultCacheBehavior</code>) that have a <code>behavior</code> of <code>cache</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CacheSettings {
+pub struct CacheSettings  {
     /// <p>The default amount of time that objects stay in the distribution's cache before the distribution forwards another request to the origin to determine whether the content has been updated.</p><note>
     /// <p>The value specified applies only when the origin does not add HTTP headers such as <code>Cache-Control max-age</code>, <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects.</p>
     /// </note>
@@ -43,7 +43,7 @@ pub struct CacheSettings {
     /// <p>An object that describes the query strings that are forwarded to the origin. Your content is cached based on the query strings that are forwarded.</p>
     pub forwarded_query_strings: ::std::option::Option<crate::types::QueryStringObject>,
 }
-impl CacheSettings {
+impl  CacheSettings  {
     /// <p>The default amount of time that objects stay in the distribution's cache before the distribution forwards another request to the origin to determine whether the content has been updated.</p><note>
     /// <p>The value specified applies only when the origin does not add HTTP headers such as <code>Cache-Control max-age</code>, <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects.</p>
     /// </note>
@@ -71,7 +71,7 @@ impl CacheSettings {
     /// <p><code>GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE</code> - The distribution forwards the <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PUT</code>, <code>PATCH</code>, <code>POST</code>, and <code>DELETE</code> methods.</p></li>
     /// </ul>
     /// <p>If you specify the third option, you might need to restrict access to your distribution's origin so users can't perform operations that you don't want them to. For example, you might not want users to have permission to delete objects from your origin.</p>
-    pub fn allowed_http_methods(&self) -> ::std::option::Option<&str> {
+    pub fn allowed_http_methods(&self) -> ::std::option::Option<& str> {
         self.allowed_http_methods.as_deref()
     }
     /// <p>The HTTP method responses that are cached by your distribution.</p>
@@ -82,19 +82,19 @@ impl CacheSettings {
     /// <li>
     /// <p><code>GET,HEAD,OPTIONS</code> - The distribution caches responses to the <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> methods.</p></li>
     /// </ul>
-    pub fn cached_http_methods(&self) -> ::std::option::Option<&str> {
+    pub fn cached_http_methods(&self) -> ::std::option::Option<& str> {
         self.cached_http_methods.as_deref()
     }
     /// <p>An object that describes the cookies that are forwarded to the origin. Your content is cached based on the cookies that are forwarded.</p>
-    pub fn forwarded_cookies(&self) -> ::std::option::Option<&crate::types::CookieObject> {
+    pub fn forwarded_cookies(&self) -> ::std::option::Option<& crate::types::CookieObject> {
         self.forwarded_cookies.as_ref()
     }
     /// <p>An object that describes the headers that are forwarded to the origin. Your content is cached based on the headers that are forwarded.</p>
-    pub fn forwarded_headers(&self) -> ::std::option::Option<&crate::types::HeaderObject> {
+    pub fn forwarded_headers(&self) -> ::std::option::Option<& crate::types::HeaderObject> {
         self.forwarded_headers.as_ref()
     }
     /// <p>An object that describes the query strings that are forwarded to the origin. Your content is cached based on the query strings that are forwarded.</p>
-    pub fn forwarded_query_strings(&self) -> ::std::option::Option<&crate::types::QueryStringObject> {
+    pub fn forwarded_query_strings(&self) -> ::std::option::Option<& crate::types::QueryStringObject> {
         self.forwarded_query_strings.as_ref()
     }
 }
@@ -130,8 +130,7 @@ impl CacheSettingsBuilder {
     /// <p>The value specified applies only when the origin does not add HTTP headers such as <code>Cache-Control max-age</code>, <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects.</p>
     /// </note>
     pub fn set_default_ttl(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.default_ttl = input;
-        self
+        self.default_ttl = input; self
     }
     /// <p>The default amount of time that objects stay in the distribution's cache before the distribution forwards another request to the origin to determine whether the content has been updated.</p><note>
     /// <p>The value specified applies only when the origin does not add HTTP headers such as <code>Cache-Control max-age</code>, <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects.</p>
@@ -148,8 +147,7 @@ impl CacheSettingsBuilder {
     /// <p>The minimum amount of time that objects stay in the distribution's cache before the distribution forwards another request to the origin to determine whether the object has been updated.</p>
     /// <p>A value of <code>0</code> must be specified for <code>minimumTTL</code> if the distribution is configured to forward all headers to the origin.</p>
     pub fn set_minimum_ttl(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.minimum_ttl = input;
-        self
+        self.minimum_ttl = input; self
     }
     /// <p>The minimum amount of time that objects stay in the distribution's cache before the distribution forwards another request to the origin to determine whether the object has been updated.</p>
     /// <p>A value of <code>0</code> must be specified for <code>minimumTTL</code> if the distribution is configured to forward all headers to the origin.</p>
@@ -165,8 +163,7 @@ impl CacheSettingsBuilder {
     /// <p>The maximum amount of time that objects stay in the distribution's cache before the distribution forwards another request to the origin to determine whether the object has been updated.</p>
     /// <p>The value specified applies only when the origin adds HTTP headers such as <code>Cache-Control max-age</code>, <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects.</p>
     pub fn set_maximum_ttl(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.maximum_ttl = input;
-        self
+        self.maximum_ttl = input; self
     }
     /// <p>The maximum amount of time that objects stay in the distribution's cache before the distribution forwards another request to the origin to determine whether the object has been updated.</p>
     /// <p>The value specified applies only when the origin adds HTTP headers such as <code>Cache-Control max-age</code>, <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects.</p>
@@ -200,8 +197,7 @@ impl CacheSettingsBuilder {
     /// </ul>
     /// <p>If you specify the third option, you might need to restrict access to your distribution's origin so users can't perform operations that you don't want them to. For example, you might not want users to have permission to delete objects from your origin.</p>
     pub fn set_allowed_http_methods(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.allowed_http_methods = input;
-        self
+        self.allowed_http_methods = input; self
     }
     /// <p>The HTTP methods that are processed and forwarded to the distribution's origin.</p>
     /// <p>You can specify the following options:</p>
@@ -238,8 +234,7 @@ impl CacheSettingsBuilder {
     /// <p><code>GET,HEAD,OPTIONS</code> - The distribution caches responses to the <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> methods.</p></li>
     /// </ul>
     pub fn set_cached_http_methods(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cached_http_methods = input;
-        self
+        self.cached_http_methods = input; self
     }
     /// <p>The HTTP method responses that are cached by your distribution.</p>
     /// <p>You can specify the following options:</p>
@@ -259,8 +254,7 @@ impl CacheSettingsBuilder {
     }
     /// <p>An object that describes the cookies that are forwarded to the origin. Your content is cached based on the cookies that are forwarded.</p>
     pub fn set_forwarded_cookies(mut self, input: ::std::option::Option<crate::types::CookieObject>) -> Self {
-        self.forwarded_cookies = input;
-        self
+        self.forwarded_cookies = input; self
     }
     /// <p>An object that describes the cookies that are forwarded to the origin. Your content is cached based on the cookies that are forwarded.</p>
     pub fn get_forwarded_cookies(&self) -> &::std::option::Option<crate::types::CookieObject> {
@@ -273,8 +267,7 @@ impl CacheSettingsBuilder {
     }
     /// <p>An object that describes the headers that are forwarded to the origin. Your content is cached based on the headers that are forwarded.</p>
     pub fn set_forwarded_headers(mut self, input: ::std::option::Option<crate::types::HeaderObject>) -> Self {
-        self.forwarded_headers = input;
-        self
+        self.forwarded_headers = input; self
     }
     /// <p>An object that describes the headers that are forwarded to the origin. Your content is cached based on the headers that are forwarded.</p>
     pub fn get_forwarded_headers(&self) -> &::std::option::Option<crate::types::HeaderObject> {
@@ -287,8 +280,7 @@ impl CacheSettingsBuilder {
     }
     /// <p>An object that describes the query strings that are forwarded to the origin. Your content is cached based on the query strings that are forwarded.</p>
     pub fn set_forwarded_query_strings(mut self, input: ::std::option::Option<crate::types::QueryStringObject>) -> Self {
-        self.forwarded_query_strings = input;
-        self
+        self.forwarded_query_strings = input; self
     }
     /// <p>An object that describes the query strings that are forwarded to the origin. Your content is cached based on the query strings that are forwarded.</p>
     pub fn get_forwarded_query_strings(&self) -> &::std::option::Option<crate::types::QueryStringObject> {
@@ -297,14 +289,23 @@ impl CacheSettingsBuilder {
     /// Consumes the builder and constructs a [`CacheSettings`](crate::types::CacheSettings).
     pub fn build(self) -> crate::types::CacheSettings {
         crate::types::CacheSettings {
-            default_ttl: self.default_ttl,
-            minimum_ttl: self.minimum_ttl,
-            maximum_ttl: self.maximum_ttl,
-            allowed_http_methods: self.allowed_http_methods,
-            cached_http_methods: self.cached_http_methods,
-            forwarded_cookies: self.forwarded_cookies,
-            forwarded_headers: self.forwarded_headers,
-            forwarded_query_strings: self.forwarded_query_strings,
+            default_ttl: self.default_ttl
+            ,
+            minimum_ttl: self.minimum_ttl
+            ,
+            maximum_ttl: self.maximum_ttl
+            ,
+            allowed_http_methods: self.allowed_http_methods
+            ,
+            cached_http_methods: self.cached_http_methods
+            ,
+            forwarded_cookies: self.forwarded_cookies
+            ,
+            forwarded_headers: self.forwarded_headers
+            ,
+            forwarded_query_strings: self.forwarded_query_strings
+            ,
         }
     }
 }
+

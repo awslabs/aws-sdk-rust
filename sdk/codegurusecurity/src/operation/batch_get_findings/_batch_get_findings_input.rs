@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetFindingsInput {
+pub struct BatchGetFindingsInput  {
     /// <p>A list of finding identifiers. Each identifier consists of a <code>scanName</code> and a <code>findingId</code>. You retrieve the <code>findingId</code> when you call <code>GetFindings</code>.</p>
-    pub finding_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::FindingIdentifier>>,
+    pub finding_identifiers: ::std::option::Option<::std::vec::Vec::<crate::types::FindingIdentifier>>,
 }
-impl BatchGetFindingsInput {
+impl  BatchGetFindingsInput  {
     /// <p>A list of finding identifiers. Each identifier consists of a <code>scanName</code> and a <code>findingId</code>. You retrieve the <code>findingId</code> when you call <code>GetFindings</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_identifiers.is_none()`.
-    pub fn finding_identifiers(&self) -> &[crate::types::FindingIdentifier] {
-        self.finding_identifiers.as_deref().unwrap_or_default()
+    pub fn finding_identifiers(&self) -> & [crate::types::FindingIdentifier] {
+        self.finding_identifiers.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchGetFindingsInput {
@@ -25,7 +26,7 @@ impl BatchGetFindingsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetFindingsInputBuilder {
-    pub(crate) finding_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::FindingIdentifier>>,
+    pub(crate) finding_identifiers: ::std::option::Option<::std::vec::Vec::<crate::types::FindingIdentifier>>,
 }
 impl BatchGetFindingsInputBuilder {
     /// Appends an item to `finding_identifiers`.
@@ -35,25 +36,26 @@ impl BatchGetFindingsInputBuilder {
     /// <p>A list of finding identifiers. Each identifier consists of a <code>scanName</code> and a <code>findingId</code>. You retrieve the <code>findingId</code> when you call <code>GetFindings</code>.</p>
     pub fn finding_identifiers(mut self, input: crate::types::FindingIdentifier) -> Self {
         let mut v = self.finding_identifiers.unwrap_or_default();
-        v.push(input);
-        self.finding_identifiers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.finding_identifiers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of finding identifiers. Each identifier consists of a <code>scanName</code> and a <code>findingId</code>. You retrieve the <code>findingId</code> when you call <code>GetFindings</code>.</p>
-    pub fn set_finding_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FindingIdentifier>>) -> Self {
-        self.finding_identifiers = input;
-        self
+    pub fn set_finding_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FindingIdentifier>>) -> Self {
+        self.finding_identifiers = input; self
     }
     /// <p>A list of finding identifiers. Each identifier consists of a <code>scanName</code> and a <code>findingId</code>. You retrieve the <code>findingId</code> when you call <code>GetFindings</code>.</p>
-    pub fn get_finding_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingIdentifier>> {
+    pub fn get_finding_identifiers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FindingIdentifier>> {
         &self.finding_identifiers
     }
     /// Consumes the builder and constructs a [`BatchGetFindingsInput`](crate::operation::batch_get_findings::BatchGetFindingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_get_findings::BatchGetFindingsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::batch_get_findings::BatchGetFindingsInput {
-            finding_identifiers: self.finding_identifiers,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_findings::BatchGetFindingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_findings::BatchGetFindingsInput {
+                finding_identifiers: self.finding_identifiers
+                ,
+            }
+        )
     }
 }
+

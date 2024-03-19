@@ -3,7 +3,7 @@
 /// <p>Represents the input for <code>DisableEnhancedMonitoring</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisableEnhancedMonitoringInput {
+pub struct DisableEnhancedMonitoringInput  {
     /// <p>The name of the Kinesis data stream for which to disable enhanced monitoring.</p>
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>List of shard-level metrics to disable.</p>
@@ -27,13 +27,13 @@ pub struct DisableEnhancedMonitoringInput {
     /// <p><code>ALL</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
-    pub shard_level_metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
+    pub shard_level_metrics: ::std::option::Option<::std::vec::Vec::<crate::types::MetricsName>>,
     /// <p>The ARN of the stream.</p>
     pub stream_arn: ::std::option::Option<::std::string::String>,
 }
-impl DisableEnhancedMonitoringInput {
+impl  DisableEnhancedMonitoringInput  {
     /// <p>The name of the Kinesis data stream for which to disable enhanced monitoring.</p>
-    pub fn stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn stream_name(&self) -> ::std::option::Option<& str> {
         self.stream_name.as_deref()
     }
     /// <p>List of shard-level metrics to disable.</p>
@@ -57,13 +57,14 @@ impl DisableEnhancedMonitoringInput {
     /// <p><code>ALL</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.shard_level_metrics.is_none()`.
-    pub fn shard_level_metrics(&self) -> &[crate::types::MetricsName] {
-        self.shard_level_metrics.as_deref().unwrap_or_default()
+    pub fn shard_level_metrics(&self) -> & [crate::types::MetricsName] {
+        self.shard_level_metrics.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ARN of the stream.</p>
-    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
 }
@@ -79,7 +80,7 @@ impl DisableEnhancedMonitoringInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableEnhancedMonitoringInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
-    pub(crate) shard_level_metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
+    pub(crate) shard_level_metrics: ::std::option::Option<::std::vec::Vec::<crate::types::MetricsName>>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
 }
 impl DisableEnhancedMonitoringInputBuilder {
@@ -90,8 +91,7 @@ impl DisableEnhancedMonitoringInputBuilder {
     }
     /// <p>The name of the Kinesis data stream for which to disable enhanced monitoring.</p>
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_name = input;
-        self
+        self.stream_name = input; self
     }
     /// <p>The name of the Kinesis data stream for which to disable enhanced monitoring.</p>
     pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,9 +124,9 @@ impl DisableEnhancedMonitoringInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
     pub fn shard_level_metrics(mut self, input: crate::types::MetricsName) -> Self {
         let mut v = self.shard_level_metrics.unwrap_or_default();
-        v.push(input);
-        self.shard_level_metrics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.shard_level_metrics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of shard-level metrics to disable.</p>
     /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" disables every metric.</p>
@@ -149,9 +149,8 @@ impl DisableEnhancedMonitoringInputBuilder {
     /// <p><code>ALL</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
-    pub fn set_shard_level_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>) -> Self {
-        self.shard_level_metrics = input;
-        self
+    pub fn set_shard_level_metrics(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MetricsName>>) -> Self {
+        self.shard_level_metrics = input; self
     }
     /// <p>List of shard-level metrics to disable.</p>
     /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" disables every metric.</p>
@@ -174,7 +173,7 @@ impl DisableEnhancedMonitoringInputBuilder {
     /// <p><code>ALL</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
-    pub fn get_shard_level_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricsName>> {
+    pub fn get_shard_level_metrics(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MetricsName>> {
         &self.shard_level_metrics
     }
     /// <p>The ARN of the stream.</p>
@@ -184,24 +183,24 @@ impl DisableEnhancedMonitoringInputBuilder {
     }
     /// <p>The ARN of the stream.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// <p>The ARN of the stream.</p>
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_arn
     }
     /// Consumes the builder and constructs a [`DisableEnhancedMonitoringInput`](crate::operation::disable_enhanced_monitoring::DisableEnhancedMonitoringInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disable_enhanced_monitoring::DisableEnhancedMonitoringInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::disable_enhanced_monitoring::DisableEnhancedMonitoringInput {
-            stream_name: self.stream_name,
-            shard_level_metrics: self.shard_level_metrics,
-            stream_arn: self.stream_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disable_enhanced_monitoring::DisableEnhancedMonitoringInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disable_enhanced_monitoring::DisableEnhancedMonitoringInput {
+                stream_name: self.stream_name
+                ,
+                shard_level_metrics: self.shard_level_metrics
+                ,
+                stream_arn: self.stream_arn
+                ,
+            }
+        )
     }
 }
+

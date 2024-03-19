@@ -3,7 +3,7 @@
 /// <p>Specifies an Amazon Redshift data store.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RedshiftSource {
+pub struct RedshiftSource  {
     /// <p>The name of the Amazon Redshift data store.</p>
     pub name: ::std::string::String,
     /// <p>The database to read from.</p>
@@ -15,28 +15,25 @@ pub struct RedshiftSource {
     /// <p>The IAM role with permissions.</p>
     pub tmp_dir_iam_role: ::std::option::Option<::std::string::String>,
 }
-impl RedshiftSource {
+impl  RedshiftSource  {
     /// <p>The name of the Amazon Redshift data store.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The database to read from.</p>
-    pub fn database(&self) -> &str {
-        use std::ops::Deref;
-        self.database.deref()
+    pub fn database(&self) -> & str {
+        use std::ops::Deref; self.database.deref()
     }
     /// <p>The database table to read from.</p>
-    pub fn table(&self) -> &str {
-        use std::ops::Deref;
-        self.table.deref()
+    pub fn table(&self) -> & str {
+        use std::ops::Deref; self.table.deref()
     }
     /// <p>The Amazon S3 path where temporary data can be staged when copying out of the database.</p>
-    pub fn redshift_tmp_dir(&self) -> ::std::option::Option<&str> {
+    pub fn redshift_tmp_dir(&self) -> ::std::option::Option<& str> {
         self.redshift_tmp_dir.as_deref()
     }
     /// <p>The IAM role with permissions.</p>
-    pub fn tmp_dir_iam_role(&self) -> ::std::option::Option<&str> {
+    pub fn tmp_dir_iam_role(&self) -> ::std::option::Option<& str> {
         self.tmp_dir_iam_role.as_deref()
     }
 }
@@ -66,8 +63,7 @@ impl RedshiftSourceBuilder {
     }
     /// <p>The name of the Amazon Redshift data store.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Amazon Redshift data store.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl RedshiftSourceBuilder {
     }
     /// <p>The database to read from.</p>
     pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>The database to read from.</p>
     pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +91,7 @@ impl RedshiftSourceBuilder {
     }
     /// <p>The database table to read from.</p>
     pub fn set_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table = input;
-        self
+        self.table = input; self
     }
     /// <p>The database table to read from.</p>
     pub fn get_table(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +104,7 @@ impl RedshiftSourceBuilder {
     }
     /// <p>The Amazon S3 path where temporary data can be staged when copying out of the database.</p>
     pub fn set_redshift_tmp_dir(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.redshift_tmp_dir = input;
-        self
+        self.redshift_tmp_dir = input; self
     }
     /// <p>The Amazon S3 path where temporary data can be staged when copying out of the database.</p>
     pub fn get_redshift_tmp_dir(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +117,7 @@ impl RedshiftSourceBuilder {
     }
     /// <p>The IAM role with permissions.</p>
     pub fn set_tmp_dir_iam_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tmp_dir_iam_role = input;
-        self
+        self.tmp_dir_iam_role = input; self
     }
     /// <p>The IAM role with permissions.</p>
     pub fn get_tmp_dir_iam_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,27 +129,29 @@ impl RedshiftSourceBuilder {
     /// - [`database`](crate::types::builders::RedshiftSourceBuilder::database)
     /// - [`table`](crate::types::builders::RedshiftSourceBuilder::table)
     pub fn build(self) -> ::std::result::Result<crate::types::RedshiftSource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RedshiftSource {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building RedshiftSource",
-                )
-            })?,
-            database: self.database.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "database",
-                    "database was not specified but it is required when building RedshiftSource",
-                )
-            })?,
-            table: self.table.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "table",
-                    "table was not specified but it is required when building RedshiftSource",
-                )
-            })?,
-            redshift_tmp_dir: self.redshift_tmp_dir,
-            tmp_dir_iam_role: self.tmp_dir_iam_role,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RedshiftSource {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building RedshiftSource")
+                    )?
+                ,
+                database: self.database
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("database", "database was not specified but it is required when building RedshiftSource")
+                    )?
+                ,
+                table: self.table
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("table", "table was not specified but it is required when building RedshiftSource")
+                    )?
+                ,
+                redshift_tmp_dir: self.redshift_tmp_dir
+                ,
+                tmp_dir_iam_role: self.tmp_dir_iam_role
+                ,
+            }
+        )
     }
 }
+

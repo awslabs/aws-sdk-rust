@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListJobRunsInput {
+pub struct ListJobRunsInput  {
     /// <p>The ID of the application for which to list the job run.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The token for the next set of job run results.</p>
@@ -14,15 +14,15 @@ pub struct ListJobRunsInput {
     /// <p>The upper bound of the option to filter by creation date and time.</p>
     pub created_at_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An optional filter for job run states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</p>
-    pub states: ::std::option::Option<::std::vec::Vec<crate::types::JobRunState>>,
+    pub states: ::std::option::Option<::std::vec::Vec::<crate::types::JobRunState>>,
 }
-impl ListJobRunsInput {
+impl  ListJobRunsInput  {
     /// <p>The ID of the application for which to list the job run.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The token for the next set of job run results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of job runs that can be listed.</p>
@@ -30,18 +30,19 @@ impl ListJobRunsInput {
         self.max_results
     }
     /// <p>The lower bound of the option to filter by creation date and time.</p>
-    pub fn created_at_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at_after.as_ref()
     }
     /// <p>The upper bound of the option to filter by creation date and time.</p>
-    pub fn created_at_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at_before.as_ref()
     }
     /// <p>An optional filter for job run states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.states.is_none()`.
-    pub fn states(&self) -> &[crate::types::JobRunState] {
-        self.states.as_deref().unwrap_or_default()
+    pub fn states(&self) -> & [crate::types::JobRunState] {
+        self.states.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ListJobRunsInput {
@@ -60,7 +61,7 @@ pub struct ListJobRunsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) created_at_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_at_before: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) states: ::std::option::Option<::std::vec::Vec<crate::types::JobRunState>>,
+    pub(crate) states: ::std::option::Option<::std::vec::Vec::<crate::types::JobRunState>>,
 }
 impl ListJobRunsInputBuilder {
     /// <p>The ID of the application for which to list the job run.</p>
@@ -71,8 +72,7 @@ impl ListJobRunsInputBuilder {
     }
     /// <p>The ID of the application for which to list the job run.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The ID of the application for which to list the job run.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +85,7 @@ impl ListJobRunsInputBuilder {
     }
     /// <p>The token for the next set of job run results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of job run results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +98,7 @@ impl ListJobRunsInputBuilder {
     }
     /// <p>The maximum number of job runs that can be listed.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of job runs that can be listed.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -113,8 +111,7 @@ impl ListJobRunsInputBuilder {
     }
     /// <p>The lower bound of the option to filter by creation date and time.</p>
     pub fn set_created_at_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at_after = input;
-        self
+        self.created_at_after = input; self
     }
     /// <p>The lower bound of the option to filter by creation date and time.</p>
     pub fn get_created_at_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -127,8 +124,7 @@ impl ListJobRunsInputBuilder {
     }
     /// <p>The upper bound of the option to filter by creation date and time.</p>
     pub fn set_created_at_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at_before = input;
-        self
+        self.created_at_before = input; self
     }
     /// <p>The upper bound of the option to filter by creation date and time.</p>
     pub fn get_created_at_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -141,28 +137,36 @@ impl ListJobRunsInputBuilder {
     /// <p>An optional filter for job run states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</p>
     pub fn states(mut self, input: crate::types::JobRunState) -> Self {
         let mut v = self.states.unwrap_or_default();
-        v.push(input);
-        self.states = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.states = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An optional filter for job run states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</p>
-    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobRunState>>) -> Self {
-        self.states = input;
-        self
+    pub fn set_states(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::JobRunState>>) -> Self {
+        self.states = input; self
     }
     /// <p>An optional filter for job run states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</p>
-    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobRunState>> {
+    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::JobRunState>> {
         &self.states
     }
     /// Consumes the builder and constructs a [`ListJobRunsInput`](crate::operation::list_job_runs::ListJobRunsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_job_runs::ListJobRunsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_job_runs::ListJobRunsInput {
-            application_id: self.application_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            created_at_after: self.created_at_after,
-            created_at_before: self.created_at_before,
-            states: self.states,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_job_runs::ListJobRunsInput {
+                application_id: self.application_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                created_at_after: self.created_at_after
+                ,
+                created_at_before: self.created_at_before
+                ,
+                states: self.states
+                ,
+            }
+        )
     }
 }
+

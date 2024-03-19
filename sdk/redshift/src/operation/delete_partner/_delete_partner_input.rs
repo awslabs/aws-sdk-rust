@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePartnerInput {
+pub struct DeletePartnerInput  {
     /// <p>The Amazon Web Services account ID that owns the cluster.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The cluster identifier of the cluster that receives data from the partner.</p>
@@ -12,21 +12,21 @@ pub struct DeletePartnerInput {
     /// <p>The name of the partner that is authorized to send data.</p>
     pub partner_name: ::std::option::Option<::std::string::String>,
 }
-impl DeletePartnerInput {
+impl  DeletePartnerInput  {
     /// <p>The Amazon Web Services account ID that owns the cluster.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The cluster identifier of the cluster that receives data from the partner.</p>
-    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The name of the database that receives data from the partner.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the partner that is authorized to send data.</p>
-    pub fn partner_name(&self) -> ::std::option::Option<&str> {
+    pub fn partner_name(&self) -> ::std::option::Option<& str> {
         self.partner_name.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl DeletePartnerInputBuilder {
     }
     /// <p>The Amazon Web Services account ID that owns the cluster.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID that owns the cluster.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl DeletePartnerInputBuilder {
     }
     /// <p>The cluster identifier of the cluster that receives data from the partner.</p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_identifier = input;
-        self
+        self.cluster_identifier = input; self
     }
     /// <p>The cluster identifier of the cluster that receives data from the partner.</p>
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl DeletePartnerInputBuilder {
     }
     /// <p>The name of the database that receives data from the partner.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the database that receives data from the partner.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,22 +97,26 @@ impl DeletePartnerInputBuilder {
     }
     /// <p>The name of the partner that is authorized to send data.</p>
     pub fn set_partner_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.partner_name = input;
-        self
+        self.partner_name = input; self
     }
     /// <p>The name of the partner that is authorized to send data.</p>
     pub fn get_partner_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.partner_name
     }
     /// Consumes the builder and constructs a [`DeletePartnerInput`](crate::operation::delete_partner::DeletePartnerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_partner::DeletePartnerInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_partner::DeletePartnerInput {
-            account_id: self.account_id,
-            cluster_identifier: self.cluster_identifier,
-            database_name: self.database_name,
-            partner_name: self.partner_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_partner::DeletePartnerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_partner::DeletePartnerInput {
+                account_id: self.account_id
+                ,
+                cluster_identifier: self.cluster_identifier
+                ,
+                database_name: self.database_name
+                ,
+                partner_name: self.partner_name
+                ,
+            }
+        )
     }
 }
+

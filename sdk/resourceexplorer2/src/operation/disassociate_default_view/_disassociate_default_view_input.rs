@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateDefaultViewInput {}
+pub struct DisassociateDefaultViewInput  {
+}
 impl DisassociateDefaultViewInput {
     /// Creates a new builder-style object to manufacture [`DisassociateDefaultViewInput`](crate::operation::disassociate_default_view::DisassociateDefaultViewInput).
     pub fn builder() -> crate::operation::disassociate_default_view::builders::DisassociateDefaultViewInputBuilder {
@@ -13,15 +14,15 @@ impl DisassociateDefaultViewInput {
 /// A builder for [`DisassociateDefaultViewInput`](crate::operation::disassociate_default_view::DisassociateDefaultViewInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct DisassociateDefaultViewInputBuilder {}
+pub struct DisassociateDefaultViewInputBuilder {
+}
 impl DisassociateDefaultViewInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateDefaultViewInput`](crate::operation::disassociate_default_view::DisassociateDefaultViewInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_default_view::DisassociateDefaultViewInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::disassociate_default_view::DisassociateDefaultViewInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_default_view::DisassociateDefaultViewInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disassociate_default_view::DisassociateDefaultViewInput {
+            }
+        )
     }
 }
+

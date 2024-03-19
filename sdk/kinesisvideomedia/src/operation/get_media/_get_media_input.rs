@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMediaInput {
+pub struct GetMediaInput  {
     /// <p>The Kinesis video stream name from where you want to get the media content. If you don't specify the <code>streamName</code>, you must specify the <code>streamARN</code>.</p>
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the stream from where you want to get the media content. If you don't specify the <code>streamARN</code>, you must specify the <code>streamName</code>.</p>
@@ -10,17 +10,17 @@ pub struct GetMediaInput {
     /// <p>Identifies the starting chunk to get from the specified stream.</p>
     pub start_selector: ::std::option::Option<crate::types::StartSelector>,
 }
-impl GetMediaInput {
+impl  GetMediaInput  {
     /// <p>The Kinesis video stream name from where you want to get the media content. If you don't specify the <code>streamName</code>, you must specify the <code>streamARN</code>.</p>
-    pub fn stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn stream_name(&self) -> ::std::option::Option<& str> {
         self.stream_name.as_deref()
     }
     /// <p>The ARN of the stream from where you want to get the media content. If you don't specify the <code>streamARN</code>, you must specify the <code>streamName</code>.</p>
-    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
     /// <p>Identifies the starting chunk to get from the specified stream.</p>
-    pub fn start_selector(&self) -> ::std::option::Option<&crate::types::StartSelector> {
+    pub fn start_selector(&self) -> ::std::option::Option<& crate::types::StartSelector> {
         self.start_selector.as_ref()
     }
 }
@@ -47,8 +47,7 @@ impl GetMediaInputBuilder {
     }
     /// <p>The Kinesis video stream name from where you want to get the media content. If you don't specify the <code>streamName</code>, you must specify the <code>streamARN</code>.</p>
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_name = input;
-        self
+        self.stream_name = input; self
     }
     /// <p>The Kinesis video stream name from where you want to get the media content. If you don't specify the <code>streamName</code>, you must specify the <code>streamARN</code>.</p>
     pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl GetMediaInputBuilder {
     }
     /// <p>The ARN of the stream from where you want to get the media content. If you don't specify the <code>streamARN</code>, you must specify the <code>streamName</code>.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// <p>The ARN of the stream from where you want to get the media content. If you don't specify the <code>streamARN</code>, you must specify the <code>streamName</code>.</p>
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl GetMediaInputBuilder {
     }
     /// <p>Identifies the starting chunk to get from the specified stream.</p>
     pub fn set_start_selector(mut self, input: ::std::option::Option<crate::types::StartSelector>) -> Self {
-        self.start_selector = input;
-        self
+        self.start_selector = input; self
     }
     /// <p>Identifies the starting chunk to get from the specified stream.</p>
     pub fn get_start_selector(&self) -> &::std::option::Option<crate::types::StartSelector> {
@@ -85,10 +82,16 @@ impl GetMediaInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetMediaInput`](crate::operation::get_media::GetMediaInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_media::GetMediaInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_media::GetMediaInput {
-            stream_name: self.stream_name,
-            stream_arn: self.stream_arn,
-            start_selector: self.start_selector,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_media::GetMediaInput {
+                stream_name: self.stream_name
+                ,
+                stream_arn: self.stream_arn
+                ,
+                start_selector: self.start_selector
+                ,
+            }
+        )
     }
 }
+

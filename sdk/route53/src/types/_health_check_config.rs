@@ -3,7 +3,7 @@
 /// <p>A complex type that contains information about the health check.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HealthCheckConfig {
+pub struct HealthCheckConfig  {
     /// <p>The IPv4 or IPv6 IP address of the endpoint that you want Amazon Route 53 to perform health checks on. If you don't specify a value for <code>IPAddress</code>, Route 53 sends a DNS request to resolve the domain name that you specify in <code>FullyQualifiedDomainName</code> at the interval that you specify in <code>RequestInterval</code>. Using an IP address returned by DNS, Route 53 then checks the health of the endpoint.</p>
     /// <p>Use one of the following formats for the value of <code>IPAddress</code>:</p>
     /// <ul>
@@ -118,7 +118,7 @@ pub struct HealthCheckConfig {
     /// </ul>
     pub health_threshold: ::std::option::Option<i32>,
     /// <p>(CALCULATED Health Checks Only) A complex type that contains one <code>ChildHealthCheck</code> element for each health check that you want to associate with a <code>CALCULATED</code> health check.</p>
-    pub child_health_checks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub child_health_checks: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specify whether you want Amazon Route 53 to send the value of <code>FullyQualifiedDomainName</code> to the endpoint in the <code>client_hello</code> message during TLS negotiation. This allows the endpoint to respond to <code>HTTPS</code> health check requests with the applicable SSL/TLS certificate.</p>
     /// <p>Some endpoints require that <code>HTTPS</code> requests include the host name in the <code>client_hello</code> message. If you don't enable SNI, the status of the health check will be <code>SSL alert handshake_failure</code>. A health check can also have that status for other reasons. If SNI is enabled and you're still getting the error, check the SSL/TLS configuration on your endpoint and confirm that your certificate is valid.</p>
     /// <p>The SSL/TLS certificate on your endpoint includes a domain name in the <code>Common Name</code> field and possibly several more in the <code>Subject Alternative Names</code> field. One of the domain names in the certificate should match the value that you specify for <code>FullyQualifiedDomainName</code>. If the endpoint responds to the <code>client_hello</code> message with a certificate that does not include the domain name that you specified in <code>FullyQualifiedDomainName</code>, a health checker will retry the handshake. In the second attempt, the health checker will omit <code>FullyQualifiedDomainName</code> from the <code>client_hello</code> message.</p>
@@ -126,7 +126,7 @@ pub struct HealthCheckConfig {
     /// <p>A complex type that contains one <code>Region</code> element for each region from which you want Amazon Route 53 health checkers to check the specified endpoint.</p>
     /// <p>If you don't specify any regions, Route 53 health checkers automatically performs checks from all of the regions that are listed under <b>Valid Values</b>.</p>
     /// <p>If you update a health check to remove a region that has been performing health checks, Route 53 will briefly continue to perform checks from that region to ensure that some health checkers are always checking the endpoint (for example, if you replace three regions with four different regions).</p>
-    pub regions: ::std::option::Option<::std::vec::Vec<crate::types::HealthCheckRegion>>,
+    pub regions: ::std::option::Option<::std::vec::Vec::<crate::types::HealthCheckRegion>>,
     /// <p>A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy.</p>
     pub alarm_identifier: ::std::option::Option<crate::types::AlarmIdentifier>,
     /// <p>When CloudWatch has insufficient data about the metric to determine the alarm state, the status that you want Amazon Route 53 to assign to the health check:</p>
@@ -143,7 +143,7 @@ pub struct HealthCheckConfig {
     /// <p>For more information about Route 53 Application Recovery Controller, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route-53-recovery.html">Route 53 Application Recovery Controller Developer Guide.</a>.</p>
     pub routing_control_arn: ::std::option::Option<::std::string::String>,
 }
-impl HealthCheckConfig {
+impl  HealthCheckConfig  {
     /// <p>The IPv4 or IPv6 IP address of the endpoint that you want Amazon Route 53 to perform health checks on. If you don't specify a value for <code>IPAddress</code>, Route 53 sends a DNS request to resolve the domain name that you specify in <code>FullyQualifiedDomainName</code> at the interval that you specify in <code>RequestInterval</code>. Using an IP address returned by DNS, Route 53 then checks the health of the endpoint.</p>
     /// <p>Use one of the following formats for the value of <code>IPAddress</code>:</p>
     /// <ul>
@@ -164,7 +164,7 @@ impl HealthCheckConfig {
     /// <p><a href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6 Addresses</a></p></li>
     /// </ul>
     /// <p>When the value of <code>Type</code> is <code>CALCULATED</code> or <code>CLOUDWATCH_METRIC</code>, omit <code>IPAddress</code>.</p>
-    pub fn ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn ip_address(&self) -> ::std::option::Option<& str> {
         self.ip_address.as_deref()
     }
     /// <p>The port on the endpoint that you want Amazon Route 53 to perform health checks on.</p><note>
@@ -198,11 +198,11 @@ impl HealthCheckConfig {
     /// <p><b>RECOVERY_CONTROL</b>: The health check is associated with a Route53 Application Recovery Controller routing control. If the routing control state is <code>ON</code>, the health check is considered healthy. If the state is <code>OFF</code>, the health check is considered unhealthy.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    pub fn r#type(&self) -> &crate::types::HealthCheckType {
+    pub fn r#type(&self) -> & crate::types::HealthCheckType {
         &self.r#type
     }
     /// <p>The path, if any, that you want Amazon Route 53 to request when performing health checks. The path can be any value for which your endpoint will return an HTTP status code of 2xx or 3xx when the endpoint is healthy, for example, the file /docs/route53-health-check.html. You can also include query string parameters, for example, <code>/welcome.html?language=jp&amp;login=y</code>.</p>
-    pub fn resource_path(&self) -> ::std::option::Option<&str> {
+    pub fn resource_path(&self) -> ::std::option::Option<& str> {
         self.resource_path.as_deref()
     }
     /// <p>Amazon Route 53 behavior depends on whether you specify a value for <code>IPAddress</code>.</p>
@@ -226,12 +226,12 @@ impl HealthCheckConfig {
     /// <p>In this configuration, if you create a health check for which the value of <code>FullyQualifiedDomainName</code> matches the name of the resource record sets and you then associate the health check with those resource record sets, health check results will be unpredictable.</p>
     /// </important>
     /// <p>In addition, if the value that you specify for <code>Type</code> is <code>HTTP</code>, <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or <code>HTTPS_STR_MATCH</code>, Route 53 passes the value of <code>FullyQualifiedDomainName</code> in the <code>Host</code> header, as it does when you specify a value for <code>IPAddress</code>. If the value of <code>Type</code> is <code>TCP</code>, Route 53 doesn't pass a <code>Host</code> header.</p>
-    pub fn fully_qualified_domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn fully_qualified_domain_name(&self) -> ::std::option::Option<& str> {
         self.fully_qualified_domain_name.as_deref()
     }
     /// <p>If the value of Type is <code>HTTP_STR_MATCH</code> or <code>HTTPS_STR_MATCH</code>, the string that you want Amazon Route 53 to search for in the response body from the specified resource. If the string appears in the response body, Route 53 considers the resource healthy.</p>
     /// <p>Route 53 considers case when searching for <code>SearchString</code> in the response body.</p>
-    pub fn search_string(&self) -> ::std::option::Option<&str> {
+    pub fn search_string(&self) -> ::std::option::Option<& str> {
         self.search_string.as_deref()
     }
     /// <p>The number of seconds between the time that Amazon Route 53 gets a response from your endpoint and the time that it sends the next health check request. Each Route 53 health checker makes requests at this interval.</p><important>
@@ -282,10 +282,11 @@ impl HealthCheckConfig {
         self.health_threshold
     }
     /// <p>(CALCULATED Health Checks Only) A complex type that contains one <code>ChildHealthCheck</code> element for each health check that you want to associate with a <code>CALCULATED</code> health check.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.child_health_checks.is_none()`.
-    pub fn child_health_checks(&self) -> &[::std::string::String] {
-        self.child_health_checks.as_deref().unwrap_or_default()
+    pub fn child_health_checks(&self) -> & [::std::string::String] {
+        self.child_health_checks.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specify whether you want Amazon Route 53 to send the value of <code>FullyQualifiedDomainName</code> to the endpoint in the <code>client_hello</code> message during TLS negotiation. This allows the endpoint to respond to <code>HTTPS</code> health check requests with the applicable SSL/TLS certificate.</p>
     /// <p>Some endpoints require that <code>HTTPS</code> requests include the host name in the <code>client_hello</code> message. If you don't enable SNI, the status of the health check will be <code>SSL alert handshake_failure</code>. A health check can also have that status for other reasons. If SNI is enabled and you're still getting the error, check the SSL/TLS configuration on your endpoint and confirm that your certificate is valid.</p>
@@ -296,13 +297,14 @@ impl HealthCheckConfig {
     /// <p>A complex type that contains one <code>Region</code> element for each region from which you want Amazon Route 53 health checkers to check the specified endpoint.</p>
     /// <p>If you don't specify any regions, Route 53 health checkers automatically performs checks from all of the regions that are listed under <b>Valid Values</b>.</p>
     /// <p>If you update a health check to remove a region that has been performing health checks, Route 53 will briefly continue to perform checks from that region to ensure that some health checkers are always checking the endpoint (for example, if you replace three regions with four different regions).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions.is_none()`.
-    pub fn regions(&self) -> &[crate::types::HealthCheckRegion] {
-        self.regions.as_deref().unwrap_or_default()
+    pub fn regions(&self) -> & [crate::types::HealthCheckRegion] {
+        self.regions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy.</p>
-    pub fn alarm_identifier(&self) -> ::std::option::Option<&crate::types::AlarmIdentifier> {
+    pub fn alarm_identifier(&self) -> ::std::option::Option<& crate::types::AlarmIdentifier> {
         self.alarm_identifier.as_ref()
     }
     /// <p>When CloudWatch has insufficient data about the metric to determine the alarm state, the status that you want Amazon Route 53 to assign to the health check:</p>
@@ -314,12 +316,12 @@ impl HealthCheckConfig {
     /// <li>
     /// <p><code>LastKnownStatus</code>: Route 53 uses the status of the health check from the last time that CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known status, the default status for the health check is healthy.</p></li>
     /// </ul>
-    pub fn insufficient_data_health_status(&self) -> ::std::option::Option<&crate::types::InsufficientDataHealthStatus> {
+    pub fn insufficient_data_health_status(&self) -> ::std::option::Option<& crate::types::InsufficientDataHealthStatus> {
         self.insufficient_data_health_status.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for the Route 53 Application Recovery Controller routing control.</p>
     /// <p>For more information about Route 53 Application Recovery Controller, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route-53-recovery.html">Route 53 Application Recovery Controller Developer Guide.</a>.</p>
-    pub fn routing_control_arn(&self) -> ::std::option::Option<&str> {
+    pub fn routing_control_arn(&self) -> ::std::option::Option<& str> {
         self.routing_control_arn.as_deref()
     }
 }
@@ -346,9 +348,9 @@ pub struct HealthCheckConfigBuilder {
     pub(crate) inverted: ::std::option::Option<bool>,
     pub(crate) disabled: ::std::option::Option<bool>,
     pub(crate) health_threshold: ::std::option::Option<i32>,
-    pub(crate) child_health_checks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) child_health_checks: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) enable_sni: ::std::option::Option<bool>,
-    pub(crate) regions: ::std::option::Option<::std::vec::Vec<crate::types::HealthCheckRegion>>,
+    pub(crate) regions: ::std::option::Option<::std::vec::Vec::<crate::types::HealthCheckRegion>>,
     pub(crate) alarm_identifier: ::std::option::Option<crate::types::AlarmIdentifier>,
     pub(crate) insufficient_data_health_status: ::std::option::Option<crate::types::InsufficientDataHealthStatus>,
     pub(crate) routing_control_arn: ::std::option::Option<::std::string::String>,
@@ -399,8 +401,7 @@ impl HealthCheckConfigBuilder {
     /// </ul>
     /// <p>When the value of <code>Type</code> is <code>CALCULATED</code> or <code>CLOUDWATCH_METRIC</code>, omit <code>IPAddress</code>.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
     }
     /// <p>The IPv4 or IPv6 IP address of the endpoint that you want Amazon Route 53 to perform health checks on. If you don't specify a value for <code>IPAddress</code>, Route 53 sends a DNS request to resolve the domain name that you specify in <code>FullyQualifiedDomainName</code> at the interval that you specify in <code>RequestInterval</code>. Using an IP address returned by DNS, Route 53 then checks the health of the endpoint.</p>
     /// <p>Use one of the following formats for the value of <code>IPAddress</code>:</p>
@@ -436,8 +437,7 @@ impl HealthCheckConfigBuilder {
     /// <p>Don't specify a value for <code>Port</code> when you specify a value for <code>Type</code> of <code>CLOUDWATCH_METRIC</code> or <code>CALCULATED</code>.</p>
     /// </note>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port on the endpoint that you want Amazon Route 53 to perform health checks on.</p><note>
     /// <p>Don't specify a value for <code>Port</code> when you specify a value for <code>Type</code> of <code>CLOUDWATCH_METRIC</code> or <code>CALCULATED</code>.</p>
@@ -501,8 +501,7 @@ impl HealthCheckConfigBuilder {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::HealthCheckType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of health check that you want to create, which indicates how Amazon Route 53 determines whether an endpoint is healthy.</p><important>
     /// <p>You can't change the value of <code>Type</code> after you create a health check.</p>
@@ -539,8 +538,7 @@ impl HealthCheckConfigBuilder {
     }
     /// <p>The path, if any, that you want Amazon Route 53 to request when performing health checks. The path can be any value for which your endpoint will return an HTTP status code of 2xx or 3xx when the endpoint is healthy, for example, the file /docs/route53-health-check.html. You can also include query string parameters, for example, <code>/welcome.html?language=jp&amp;login=y</code>.</p>
     pub fn set_resource_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_path = input;
-        self
+        self.resource_path = input; self
     }
     /// <p>The path, if any, that you want Amazon Route 53 to request when performing health checks. The path can be any value for which your endpoint will return an HTTP status code of 2xx or 3xx when the endpoint is healthy, for example, the file /docs/route53-health-check.html. You can also include query string parameters, for example, <code>/welcome.html?language=jp&amp;login=y</code>.</p>
     pub fn get_resource_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -593,8 +591,7 @@ impl HealthCheckConfigBuilder {
     /// </important>
     /// <p>In addition, if the value that you specify for <code>Type</code> is <code>HTTP</code>, <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or <code>HTTPS_STR_MATCH</code>, Route 53 passes the value of <code>FullyQualifiedDomainName</code> in the <code>Host</code> header, as it does when you specify a value for <code>IPAddress</code>. If the value of <code>Type</code> is <code>TCP</code>, Route 53 doesn't pass a <code>Host</code> header.</p>
     pub fn set_fully_qualified_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fully_qualified_domain_name = input;
-        self
+        self.fully_qualified_domain_name = input; self
     }
     /// <p>Amazon Route 53 behavior depends on whether you specify a value for <code>IPAddress</code>.</p>
     /// <p><b>If you specify a value for</b> <code>IPAddress</code>:</p>
@@ -629,8 +626,7 @@ impl HealthCheckConfigBuilder {
     /// <p>If the value of Type is <code>HTTP_STR_MATCH</code> or <code>HTTPS_STR_MATCH</code>, the string that you want Amazon Route 53 to search for in the response body from the specified resource. If the string appears in the response body, Route 53 considers the resource healthy.</p>
     /// <p>Route 53 considers case when searching for <code>SearchString</code> in the response body.</p>
     pub fn set_search_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.search_string = input;
-        self
+        self.search_string = input; self
     }
     /// <p>If the value of Type is <code>HTTP_STR_MATCH</code> or <code>HTTPS_STR_MATCH</code>, the string that you want Amazon Route 53 to search for in the response body from the specified resource. If the string appears in the response body, Route 53 considers the resource healthy.</p>
     /// <p>Route 53 considers case when searching for <code>SearchString</code> in the response body.</p>
@@ -650,8 +646,7 @@ impl HealthCheckConfigBuilder {
     /// </important>
     /// <p>If you don't specify a value for <code>RequestInterval</code>, the default value is <code>30</code> seconds.</p>
     pub fn set_request_interval(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.request_interval = input;
-        self
+        self.request_interval = input; self
     }
     /// <p>The number of seconds between the time that Amazon Route 53 gets a response from your endpoint and the time that it sends the next health check request. Each Route 53 health checker makes requests at this interval.</p><important>
     /// <p>You can't change the value of <code>RequestInterval</code> after you create a health check.</p>
@@ -669,8 +664,7 @@ impl HealthCheckConfigBuilder {
     /// <p>The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change the current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>If you don't specify a value for <code>FailureThreshold</code>, the default value is three health checks.</p>
     pub fn set_failure_threshold(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.failure_threshold = input;
-        self
+        self.failure_threshold = input; self
     }
     /// <p>The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change the current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>If you don't specify a value for <code>FailureThreshold</code>, the default value is three health checks.</p>
@@ -688,8 +682,7 @@ impl HealthCheckConfigBuilder {
     /// <p>You can't change the value of <code>MeasureLatency</code> after you create a health check.</p>
     /// </important>
     pub fn set_measure_latency(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.measure_latency = input;
-        self
+        self.measure_latency = input; self
     }
     /// <p>Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple Amazon Web Services regions and your endpoint, and to display CloudWatch latency graphs on the <b>Health Checks</b> page in the Route 53 console.</p><important>
     /// <p>You can't change the value of <code>MeasureLatency</code> after you create a health check.</p>
@@ -704,8 +697,7 @@ impl HealthCheckConfigBuilder {
     }
     /// <p>Specify whether you want Amazon Route 53 to invert the status of a health check, for example, to consider a health check unhealthy when it otherwise would be considered healthy.</p>
     pub fn set_inverted(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inverted = input;
-        self
+        self.inverted = input; self
     }
     /// <p>Specify whether you want Amazon Route 53 to invert the status of a health check, for example, to consider a health check unhealthy when it otherwise would be considered healthy.</p>
     pub fn get_inverted(&self) -> &::std::option::Option<bool> {
@@ -738,8 +730,7 @@ impl HealthCheckConfigBuilder {
     /// <p>After you disable a health check, Route 53 considers the status of the health check to always be healthy. If you configured DNS failover, Route 53 continues to route traffic to the corresponding resources. If you want to stop routing traffic to a resource, change the value of <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-Inverted">Inverted</a>.</p>
     /// <p>Charges for a health check still apply when the health check is disabled. For more information, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
     pub fn set_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.disabled = input;
-        self
+        self.disabled = input; self
     }
     /// <p>Stops Route 53 from performing health checks. When you disable a health check, here's what happens:</p>
     /// <ul>
@@ -776,8 +767,7 @@ impl HealthCheckConfigBuilder {
     /// <p>If you specify <code>0</code>, Route 53 always considers this health check to be healthy.</p></li>
     /// </ul>
     pub fn set_health_threshold(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.health_threshold = input;
-        self
+        self.health_threshold = input; self
     }
     /// <p>The number of child health checks that are associated with a <code>CALCULATED</code> health check that Amazon Route 53 must consider healthy for the <code>CALCULATED</code> health check to be considered healthy. To specify the child health checks that you want to associate with a <code>CALCULATED</code> health check, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-ChildHealthChecks">ChildHealthChecks</a> element.</p>
     /// <p>Note the following:</p>
@@ -797,17 +787,16 @@ impl HealthCheckConfigBuilder {
     /// <p>(CALCULATED Health Checks Only) A complex type that contains one <code>ChildHealthCheck</code> element for each health check that you want to associate with a <code>CALCULATED</code> health check.</p>
     pub fn child_health_checks(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.child_health_checks.unwrap_or_default();
-        v.push(input.into());
-        self.child_health_checks = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.child_health_checks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>(CALCULATED Health Checks Only) A complex type that contains one <code>ChildHealthCheck</code> element for each health check that you want to associate with a <code>CALCULATED</code> health check.</p>
-    pub fn set_child_health_checks(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.child_health_checks = input;
-        self
+    pub fn set_child_health_checks(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.child_health_checks = input; self
     }
     /// <p>(CALCULATED Health Checks Only) A complex type that contains one <code>ChildHealthCheck</code> element for each health check that you want to associate with a <code>CALCULATED</code> health check.</p>
-    pub fn get_child_health_checks(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_child_health_checks(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.child_health_checks
     }
     /// <p>Specify whether you want Amazon Route 53 to send the value of <code>FullyQualifiedDomainName</code> to the endpoint in the <code>client_hello</code> message during TLS negotiation. This allows the endpoint to respond to <code>HTTPS</code> health check requests with the applicable SSL/TLS certificate.</p>
@@ -821,8 +810,7 @@ impl HealthCheckConfigBuilder {
     /// <p>Some endpoints require that <code>HTTPS</code> requests include the host name in the <code>client_hello</code> message. If you don't enable SNI, the status of the health check will be <code>SSL alert handshake_failure</code>. A health check can also have that status for other reasons. If SNI is enabled and you're still getting the error, check the SSL/TLS configuration on your endpoint and confirm that your certificate is valid.</p>
     /// <p>The SSL/TLS certificate on your endpoint includes a domain name in the <code>Common Name</code> field and possibly several more in the <code>Subject Alternative Names</code> field. One of the domain names in the certificate should match the value that you specify for <code>FullyQualifiedDomainName</code>. If the endpoint responds to the <code>client_hello</code> message with a certificate that does not include the domain name that you specified in <code>FullyQualifiedDomainName</code>, a health checker will retry the handshake. In the second attempt, the health checker will omit <code>FullyQualifiedDomainName</code> from the <code>client_hello</code> message.</p>
     pub fn set_enable_sni(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_sni = input;
-        self
+        self.enable_sni = input; self
     }
     /// <p>Specify whether you want Amazon Route 53 to send the value of <code>FullyQualifiedDomainName</code> to the endpoint in the <code>client_hello</code> message during TLS negotiation. This allows the endpoint to respond to <code>HTTPS</code> health check requests with the applicable SSL/TLS certificate.</p>
     /// <p>Some endpoints require that <code>HTTPS</code> requests include the host name in the <code>client_hello</code> message. If you don't enable SNI, the status of the health check will be <code>SSL alert handshake_failure</code>. A health check can also have that status for other reasons. If SNI is enabled and you're still getting the error, check the SSL/TLS configuration on your endpoint and confirm that your certificate is valid.</p>
@@ -839,21 +827,20 @@ impl HealthCheckConfigBuilder {
     /// <p>If you update a health check to remove a region that has been performing health checks, Route 53 will briefly continue to perform checks from that region to ensure that some health checkers are always checking the endpoint (for example, if you replace three regions with four different regions).</p>
     pub fn regions(mut self, input: crate::types::HealthCheckRegion) -> Self {
         let mut v = self.regions.unwrap_or_default();
-        v.push(input);
-        self.regions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.regions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A complex type that contains one <code>Region</code> element for each region from which you want Amazon Route 53 health checkers to check the specified endpoint.</p>
     /// <p>If you don't specify any regions, Route 53 health checkers automatically performs checks from all of the regions that are listed under <b>Valid Values</b>.</p>
     /// <p>If you update a health check to remove a region that has been performing health checks, Route 53 will briefly continue to perform checks from that region to ensure that some health checkers are always checking the endpoint (for example, if you replace three regions with four different regions).</p>
-    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HealthCheckRegion>>) -> Self {
-        self.regions = input;
-        self
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::HealthCheckRegion>>) -> Self {
+        self.regions = input; self
     }
     /// <p>A complex type that contains one <code>Region</code> element for each region from which you want Amazon Route 53 health checkers to check the specified endpoint.</p>
     /// <p>If you don't specify any regions, Route 53 health checkers automatically performs checks from all of the regions that are listed under <b>Valid Values</b>.</p>
     /// <p>If you update a health check to remove a region that has been performing health checks, Route 53 will briefly continue to perform checks from that region to ensure that some health checkers are always checking the endpoint (for example, if you replace three regions with four different regions).</p>
-    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HealthCheckRegion>> {
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::HealthCheckRegion>> {
         &self.regions
     }
     /// <p>A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy.</p>
@@ -863,8 +850,7 @@ impl HealthCheckConfigBuilder {
     }
     /// <p>A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy.</p>
     pub fn set_alarm_identifier(mut self, input: ::std::option::Option<crate::types::AlarmIdentifier>) -> Self {
-        self.alarm_identifier = input;
-        self
+        self.alarm_identifier = input; self
     }
     /// <p>A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy.</p>
     pub fn get_alarm_identifier(&self) -> &::std::option::Option<crate::types::AlarmIdentifier> {
@@ -893,8 +879,7 @@ impl HealthCheckConfigBuilder {
     /// <p><code>LastKnownStatus</code>: Route 53 uses the status of the health check from the last time that CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known status, the default status for the health check is healthy.</p></li>
     /// </ul>
     pub fn set_insufficient_data_health_status(mut self, input: ::std::option::Option<crate::types::InsufficientDataHealthStatus>) -> Self {
-        self.insufficient_data_health_status = input;
-        self
+        self.insufficient_data_health_status = input; self
     }
     /// <p>When CloudWatch has insufficient data about the metric to determine the alarm state, the status that you want Amazon Route 53 to assign to the health check:</p>
     /// <ul>
@@ -917,8 +902,7 @@ impl HealthCheckConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) for the Route 53 Application Recovery Controller routing control.</p>
     /// <p>For more information about Route 53 Application Recovery Controller, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route-53-recovery.html">Route 53 Application Recovery Controller Developer Guide.</a>.</p>
     pub fn set_routing_control_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.routing_control_arn = input;
-        self
+        self.routing_control_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the Route 53 Application Recovery Controller routing control.</p>
     /// <p>For more information about Route 53 Application Recovery Controller, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route-53-recovery.html">Route 53 Application Recovery Controller Developer Guide.</a>.</p>
@@ -929,30 +913,49 @@ impl HealthCheckConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::HealthCheckConfigBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::HealthCheckConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::HealthCheckConfig {
-            ip_address: self.ip_address,
-            port: self.port,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building HealthCheckConfig",
-                )
-            })?,
-            resource_path: self.resource_path,
-            fully_qualified_domain_name: self.fully_qualified_domain_name,
-            search_string: self.search_string,
-            request_interval: self.request_interval,
-            failure_threshold: self.failure_threshold,
-            measure_latency: self.measure_latency,
-            inverted: self.inverted,
-            disabled: self.disabled,
-            health_threshold: self.health_threshold,
-            child_health_checks: self.child_health_checks,
-            enable_sni: self.enable_sni,
-            regions: self.regions,
-            alarm_identifier: self.alarm_identifier,
-            insufficient_data_health_status: self.insufficient_data_health_status,
-            routing_control_arn: self.routing_control_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::types::HealthCheckConfig {
+                ip_address: self.ip_address
+                ,
+                port: self.port
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building HealthCheckConfig")
+                    )?
+                ,
+                resource_path: self.resource_path
+                ,
+                fully_qualified_domain_name: self.fully_qualified_domain_name
+                ,
+                search_string: self.search_string
+                ,
+                request_interval: self.request_interval
+                ,
+                failure_threshold: self.failure_threshold
+                ,
+                measure_latency: self.measure_latency
+                ,
+                inverted: self.inverted
+                ,
+                disabled: self.disabled
+                ,
+                health_threshold: self.health_threshold
+                ,
+                child_health_checks: self.child_health_checks
+                ,
+                enable_sni: self.enable_sni
+                ,
+                regions: self.regions
+                ,
+                alarm_identifier: self.alarm_identifier
+                ,
+                insufficient_data_health_status: self.insufficient_data_health_status
+                ,
+                routing_control_arn: self.routing_control_arn
+                ,
+            }
+        )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Represents a set of options that define how DataBrew will write a comma-separated value (CSV) file.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CsvOutputOptions {
+pub struct CsvOutputOptions  {
     /// <p>A single character that specifies the delimiter used to create CSV job output.</p>
     pub delimiter: ::std::option::Option<::std::string::String>,
 }
-impl CsvOutputOptions {
+impl  CsvOutputOptions  {
     /// <p>A single character that specifies the delimiter used to create CSV job output.</p>
-    pub fn delimiter(&self) -> ::std::option::Option<&str> {
+    pub fn delimiter(&self) -> ::std::option::Option<& str> {
         self.delimiter.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl CsvOutputOptionsBuilder {
     }
     /// <p>A single character that specifies the delimiter used to create CSV job output.</p>
     pub fn set_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delimiter = input;
-        self
+        self.delimiter = input; self
     }
     /// <p>A single character that specifies the delimiter used to create CSV job output.</p>
     pub fn get_delimiter(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl CsvOutputOptionsBuilder {
     }
     /// Consumes the builder and constructs a [`CsvOutputOptions`](crate::types::CsvOutputOptions).
     pub fn build(self) -> crate::types::CsvOutputOptions {
-        crate::types::CsvOutputOptions { delimiter: self.delimiter }
+        crate::types::CsvOutputOptions {
+            delimiter: self.delimiter
+            ,
+        }
     }
 }
+

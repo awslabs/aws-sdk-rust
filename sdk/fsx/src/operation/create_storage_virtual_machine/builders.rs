@@ -5,54 +5,50 @@ pub use crate::operation::create_storage_virtual_machine::_create_storage_virtua
 
 impl CreateStorageVirtualMachineInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_storage_virtual_machine();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_storage_virtual_machine();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateStorageVirtualMachine`.
-///
+/// 
 /// <p>Creates a storage virtual machine (SVM) for an Amazon FSx for ONTAP file system.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateStorageVirtualMachineFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_storage_virtual_machine::builders::CreateStorageVirtualMachineInputBuilder,
+                    inner: crate::operation::create_storage_virtual_machine::builders::CreateStorageVirtualMachineInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineOutput,
-        crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineError,
-    > for CreateStorageVirtualMachineFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineOutput,
-            crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineOutput,
+                    crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineError,
+                > for CreateStorageVirtualMachineFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineOutput,
+                        crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateStorageVirtualMachineFluentBuilder {
     /// Creates a new `CreateStorageVirtualMachine`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl CreateStorageVirtualMachineFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachine::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachine::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineOutput,
-        crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachine::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachine::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineOutput, crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Describes the self-managed Microsoft Active Directory to which you want to join the SVM. Joining an Active Directory provides user authentication and access control for SMB clients, including Microsoft Windows and macOS clients accessing the file system.</p>
     pub fn active_directory_configuration(mut self, input: crate::types::CreateSvmActiveDirectoryConfiguration) -> Self {
         self.inner = self.inner.active_directory_configuration(input);
@@ -188,12 +175,12 @@ impl CreateStorageVirtualMachineFluentBuilder {
         self
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
     /// <p>The security style of the root volume of the SVM. Specify one of the following values:</p>
@@ -220,10 +207,7 @@ impl CreateStorageVirtualMachineFluentBuilder {
     /// <p><code>MIXED</code> This is an advanced setting. For more information, see <a href="fsx/latest/ONTAPGuide/volume-security-style.html">Volume security style</a> in the Amazon FSx for NetApp ONTAP User Guide.</p></li>
     /// </ul>
     /// <p></p>
-    pub fn set_root_volume_security_style(
-        mut self,
-        input: ::std::option::Option<crate::types::StorageVirtualMachineRootVolumeSecurityStyle>,
-    ) -> Self {
+    pub fn set_root_volume_security_style(mut self, input: ::std::option::Option<crate::types::StorageVirtualMachineRootVolumeSecurityStyle>) -> Self {
         self.inner = self.inner.set_root_volume_security_style(input);
         self
     }
@@ -241,3 +225,4 @@ impl CreateStorageVirtualMachineFluentBuilder {
         self.inner.get_root_volume_security_style()
     }
 }
+

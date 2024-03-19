@@ -2,59 +2,61 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterApplicationInput {
+pub struct RegisterApplicationInput  {
     /// <p>The ID of the application.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the application.</p>
     pub application_type: ::std::option::Option<crate::types::ApplicationType>,
     /// <p>The Amazon EC2 instances on which your SAP application is running.</p>
-    pub instances: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub instances: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The SAP instance number of the application.</p>
     pub sap_instance_number: ::std::option::Option<::std::string::String>,
     /// <p>The System ID of the application.</p>
     pub sid: ::std::option::Option<::std::string::String>,
     /// <p>The tags to be attached to the SAP application.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The credentials of the SAP application.</p>
-    pub credentials: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
+    pub credentials: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationCredential>>,
     /// <p>The Amazon Resource Name of the SAP HANA database.</p>
     pub database_arn: ::std::option::Option<::std::string::String>,
 }
-impl RegisterApplicationInput {
+impl  RegisterApplicationInput  {
     /// <p>The ID of the application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The type of the application.</p>
-    pub fn application_type(&self) -> ::std::option::Option<&crate::types::ApplicationType> {
+    pub fn application_type(&self) -> ::std::option::Option<& crate::types::ApplicationType> {
         self.application_type.as_ref()
     }
     /// <p>The Amazon EC2 instances on which your SAP application is running.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances.is_none()`.
-    pub fn instances(&self) -> &[::std::string::String] {
-        self.instances.as_deref().unwrap_or_default()
+    pub fn instances(&self) -> & [::std::string::String] {
+        self.instances.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The SAP instance number of the application.</p>
-    pub fn sap_instance_number(&self) -> ::std::option::Option<&str> {
+    pub fn sap_instance_number(&self) -> ::std::option::Option<& str> {
         self.sap_instance_number.as_deref()
     }
     /// <p>The System ID of the application.</p>
-    pub fn sid(&self) -> ::std::option::Option<&str> {
+    pub fn sid(&self) -> ::std::option::Option<& str> {
         self.sid.as_deref()
     }
     /// <p>The tags to be attached to the SAP application.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The credentials of the SAP application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.credentials.is_none()`.
-    pub fn credentials(&self) -> &[crate::types::ApplicationCredential] {
-        self.credentials.as_deref().unwrap_or_default()
+    pub fn credentials(&self) -> & [crate::types::ApplicationCredential] {
+        self.credentials.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name of the SAP HANA database.</p>
-    pub fn database_arn(&self) -> ::std::option::Option<&str> {
+    pub fn database_arn(&self) -> ::std::option::Option<& str> {
         self.database_arn.as_deref()
     }
 }
@@ -71,11 +73,11 @@ impl RegisterApplicationInput {
 pub struct RegisterApplicationInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) application_type: ::std::option::Option<crate::types::ApplicationType>,
-    pub(crate) instances: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) instances: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) sap_instance_number: ::std::option::Option<::std::string::String>,
     pub(crate) sid: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) credentials: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) credentials: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationCredential>>,
     pub(crate) database_arn: ::std::option::Option<::std::string::String>,
 }
 impl RegisterApplicationInputBuilder {
@@ -87,8 +89,7 @@ impl RegisterApplicationInputBuilder {
     }
     /// <p>The ID of the application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The ID of the application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +103,7 @@ impl RegisterApplicationInputBuilder {
     }
     /// <p>The type of the application.</p>
     pub fn set_application_type(mut self, input: ::std::option::Option<crate::types::ApplicationType>) -> Self {
-        self.application_type = input;
-        self
+        self.application_type = input; self
     }
     /// <p>The type of the application.</p>
     pub fn get_application_type(&self) -> &::std::option::Option<crate::types::ApplicationType> {
@@ -116,17 +116,16 @@ impl RegisterApplicationInputBuilder {
     /// <p>The Amazon EC2 instances on which your SAP application is running.</p>
     pub fn instances(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instances.unwrap_or_default();
-        v.push(input.into());
-        self.instances = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.instances = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon EC2 instances on which your SAP application is running.</p>
-    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.instances = input;
-        self
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.instances = input; self
     }
     /// <p>The Amazon EC2 instances on which your SAP application is running.</p>
-    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.instances
     }
     /// <p>The SAP instance number of the application.</p>
@@ -136,8 +135,7 @@ impl RegisterApplicationInputBuilder {
     }
     /// <p>The SAP instance number of the application.</p>
     pub fn set_sap_instance_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sap_instance_number = input;
-        self
+        self.sap_instance_number = input; self
     }
     /// <p>The SAP instance number of the application.</p>
     pub fn get_sap_instance_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +148,7 @@ impl RegisterApplicationInputBuilder {
     }
     /// <p>The System ID of the application.</p>
     pub fn set_sid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sid = input;
-        self
+        self.sid = input; self
     }
     /// <p>The System ID of the application.</p>
     pub fn get_sid(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,17 +161,16 @@ impl RegisterApplicationInputBuilder {
     /// <p>The tags to be attached to the SAP application.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags to be attached to the SAP application.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to be attached to the SAP application.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Appends an item to `credentials`.
@@ -184,17 +180,16 @@ impl RegisterApplicationInputBuilder {
     /// <p>The credentials of the SAP application.</p>
     pub fn credentials(mut self, input: crate::types::ApplicationCredential) -> Self {
         let mut v = self.credentials.unwrap_or_default();
-        v.push(input);
-        self.credentials = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.credentials = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The credentials of the SAP application.</p>
-    pub fn set_credentials(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>) -> Self {
-        self.credentials = input;
-        self
+    pub fn set_credentials(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationCredential>>) -> Self {
+        self.credentials = input; self
     }
     /// <p>The credentials of the SAP application.</p>
-    pub fn get_credentials(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>> {
+    pub fn get_credentials(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ApplicationCredential>> {
         &self.credentials
     }
     /// <p>The Amazon Resource Name of the SAP HANA database.</p>
@@ -204,27 +199,34 @@ impl RegisterApplicationInputBuilder {
     }
     /// <p>The Amazon Resource Name of the SAP HANA database.</p>
     pub fn set_database_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_arn = input;
-        self
+        self.database_arn = input; self
     }
     /// <p>The Amazon Resource Name of the SAP HANA database.</p>
     pub fn get_database_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.database_arn
     }
     /// Consumes the builder and constructs a [`RegisterApplicationInput`](crate::operation::register_application::RegisterApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::register_application::RegisterApplicationInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::register_application::RegisterApplicationInput {
-            application_id: self.application_id,
-            application_type: self.application_type,
-            instances: self.instances,
-            sap_instance_number: self.sap_instance_number,
-            sid: self.sid,
-            tags: self.tags,
-            credentials: self.credentials,
-            database_arn: self.database_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::register_application::RegisterApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::register_application::RegisterApplicationInput {
+                application_id: self.application_id
+                ,
+                application_type: self.application_type
+                ,
+                instances: self.instances
+                ,
+                sap_instance_number: self.sap_instance_number
+                ,
+                sid: self.sid
+                ,
+                tags: self.tags
+                ,
+                credentials: self.credentials
+                ,
+                database_arn: self.database_arn
+                ,
+            }
+        )
     }
 }
+

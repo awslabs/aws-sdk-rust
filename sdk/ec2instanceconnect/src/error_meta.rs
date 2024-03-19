@@ -34,7 +34,7 @@ pub enum Error {
     &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
      \
     See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-Error) for what information is available for the error.")]
-    Unhandled(crate::error::sealed_unhandled::Unhandled),
+    Unhandled(crate::error::sealed_unhandled::Unhandled)
 }
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -51,122 +51,80 @@ impl ::std::fmt::Display for Error {
             Error::SerialConsoleSessionUnsupportedException(inner) => inner.fmt(f),
             Error::ServiceException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
-            Error::Unhandled(_) => {
-                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
-                    write!(f, "unhandled error ({code})")
-                } else {
-                    f.write_str("unhandled error")
-                }
-            }
+            Error::Unhandled(_) => if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                                        write!(f, "unhandled error ({code})")
+                                    } else {
+                                        f.write_str("unhandled error")
+                                    }
         }
     }
 }
 impl From<::aws_smithy_types::error::operation::BuildError> for Error {
-    fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
-        Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source: value.into(),
-            meta: ::std::default::Default::default(),
-        })
-    }
-}
+                fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
+                    Error::Unhandled(crate::error::sealed_unhandled::Unhandled { source: value.into(), meta: ::std::default::Default::default() })
+                }
+            }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
-    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
-        match self {
-            Self::AuthException(inner) => inner.meta(),
-            Self::Ec2InstanceNotFoundException(inner) => inner.meta(),
-            Self::Ec2InstanceStateInvalidException(inner) => inner.meta(),
-            Self::Ec2InstanceTypeInvalidException(inner) => inner.meta(),
-            Self::Ec2InstanceUnavailableException(inner) => inner.meta(),
-            Self::InvalidArgsException(inner) => inner.meta(),
-            Self::SerialConsoleAccessDisabledException(inner) => inner.meta(),
-            Self::SerialConsoleSessionLimitExceededException(inner) => inner.meta(),
-            Self::SerialConsoleSessionUnavailableException(inner) => inner.meta(),
-            Self::SerialConsoleSessionUnsupportedException(inner) => inner.meta(),
-            Self::ServiceException(inner) => inner.meta(),
-            Self::ThrottlingException(inner) => inner.meta(),
-            Self::Unhandled(inner) => &inner.meta,
-        }
-    }
-}
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError,
-            R,
-        >,
-    ) -> Self {
+                fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+                    match self {
+                        Self::AuthException(inner) => inner.meta(),
+Self::Ec2InstanceNotFoundException(inner) => inner.meta(),
+Self::Ec2InstanceStateInvalidException(inner) => inner.meta(),
+Self::Ec2InstanceTypeInvalidException(inner) => inner.meta(),
+Self::Ec2InstanceUnavailableException(inner) => inner.meta(),
+Self::InvalidArgsException(inner) => inner.meta(),
+Self::SerialConsoleAccessDisabledException(inner) => inner.meta(),
+Self::SerialConsoleSessionLimitExceededException(inner) => inner.meta(),
+Self::SerialConsoleSessionUnavailableException(inner) => inner.meta(),
+Self::SerialConsoleSessionUnsupportedException(inner) => inner.meta(),
+Self::ServiceException(inner) => inner.meta(),
+Self::ThrottlingException(inner) => inner.meta(),
+                        Self::Unhandled(inner) => &inner.meta,
+                    }
+                }
+            }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError> for Error {
     fn from(err: crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError) -> Self {
         match err {
-            crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::AuthException(inner) => {
-                Error::AuthException(inner)
-            }
-            crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::Ec2InstanceNotFoundException(inner) => {
-                Error::Ec2InstanceNotFoundException(inner)
-            }
-            crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::Ec2InstanceStateInvalidException(inner) => {
-                Error::Ec2InstanceStateInvalidException(inner)
-            }
-            crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::Ec2InstanceTypeInvalidException(inner) => {
-                Error::Ec2InstanceTypeInvalidException(inner)
-            }
-            crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::Ec2InstanceUnavailableException(inner) => {
-                Error::Ec2InstanceUnavailableException(inner)
-            }
-            crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::InvalidArgsException(inner) => {
-                Error::InvalidArgsException(inner)
-            }
-            crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::SerialConsoleAccessDisabledException(inner) => {
-                Error::SerialConsoleAccessDisabledException(inner)
-            }
-            crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::SerialConsoleSessionLimitExceededException(
-                inner,
-            ) => Error::SerialConsoleSessionLimitExceededException(inner),
-            crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::SerialConsoleSessionUnavailableException(
-                inner,
-            ) => Error::SerialConsoleSessionUnavailableException(inner),
-            crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::SerialConsoleSessionUnsupportedException(
-                inner,
-            ) => Error::SerialConsoleSessionUnsupportedException(inner),
-            crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::ServiceException(inner) => {
-                Error::ServiceException(inner)
-            }
-            crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
+            crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::AuthException(inner) => Error::AuthException(inner),
+            crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::Ec2InstanceNotFoundException(inner) => Error::Ec2InstanceNotFoundException(inner),
+            crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::Ec2InstanceStateInvalidException(inner) => Error::Ec2InstanceStateInvalidException(inner),
+            crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::Ec2InstanceTypeInvalidException(inner) => Error::Ec2InstanceTypeInvalidException(inner),
+            crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::Ec2InstanceUnavailableException(inner) => Error::Ec2InstanceUnavailableException(inner),
+            crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::InvalidArgsException(inner) => Error::InvalidArgsException(inner),
+            crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::SerialConsoleAccessDisabledException(inner) => Error::SerialConsoleAccessDisabledException(inner),
+            crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::SerialConsoleSessionLimitExceededException(inner) => Error::SerialConsoleSessionLimitExceededException(inner),
+            crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::SerialConsoleSessionUnavailableException(inner) => Error::SerialConsoleSessionUnavailableException(inner),
+            crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::SerialConsoleSessionUnsupportedException(inner) => Error::SerialConsoleSessionUnsupportedException(inner),
+            crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_ssh_public_key::SendSSHPublicKeyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_ssh_public_key::SendSSHPublicKeyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_ssh_public_key::SendSSHPublicKeyError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -174,15 +132,9 @@ impl From<crate::operation::send_ssh_public_key::SendSSHPublicKeyError> for Erro
     fn from(err: crate::operation::send_ssh_public_key::SendSSHPublicKeyError) -> Self {
         match err {
             crate::operation::send_ssh_public_key::SendSSHPublicKeyError::AuthException(inner) => Error::AuthException(inner),
-            crate::operation::send_ssh_public_key::SendSSHPublicKeyError::Ec2InstanceNotFoundException(inner) => {
-                Error::Ec2InstanceNotFoundException(inner)
-            }
-            crate::operation::send_ssh_public_key::SendSSHPublicKeyError::Ec2InstanceStateInvalidException(inner) => {
-                Error::Ec2InstanceStateInvalidException(inner)
-            }
-            crate::operation::send_ssh_public_key::SendSSHPublicKeyError::Ec2InstanceUnavailableException(inner) => {
-                Error::Ec2InstanceUnavailableException(inner)
-            }
+            crate::operation::send_ssh_public_key::SendSSHPublicKeyError::Ec2InstanceNotFoundException(inner) => Error::Ec2InstanceNotFoundException(inner),
+            crate::operation::send_ssh_public_key::SendSSHPublicKeyError::Ec2InstanceStateInvalidException(inner) => Error::Ec2InstanceStateInvalidException(inner),
+            crate::operation::send_ssh_public_key::SendSSHPublicKeyError::Ec2InstanceUnavailableException(inner) => Error::Ec2InstanceUnavailableException(inner),
             crate::operation::send_ssh_public_key::SendSSHPublicKeyError::InvalidArgsException(inner) => Error::InvalidArgsException(inner),
             crate::operation::send_ssh_public_key::SendSSHPublicKeyError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::send_ssh_public_key::SendSSHPublicKeyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
@@ -205,7 +157,7 @@ impl ::std::error::Error for Error {
             Error::SerialConsoleSessionUnsupportedException(inner) => inner.source(),
             Error::ServiceException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
-            Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
+            Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source)
         }
     }
 }
@@ -228,3 +180,4 @@ impl ::aws_types::request_id::RequestId for Error {
         }
     }
 }
+

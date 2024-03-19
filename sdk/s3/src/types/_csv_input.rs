@@ -3,7 +3,7 @@
 /// <p>Describes how an uncompressed comma-separated values (CSV)-formatted input object is formatted.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CsvInput {
+pub struct CsvInput  {
     /// <p>Describes the first line of input. Valid values are:</p>
     /// <ul>
     /// <li>
@@ -31,7 +31,7 @@ pub struct CsvInput {
     /// <p>Specifies that CSV field values may contain quoted record delimiters and such records should be allowed. Default value is FALSE. Setting this value to TRUE may lower performance.</p>
     pub allow_quoted_record_delimiter: ::std::option::Option<bool>,
 }
-impl CsvInput {
+impl  CsvInput  {
     /// <p>Describes the first line of input. Valid values are:</p>
     /// <ul>
     /// <li>
@@ -41,31 +41,31 @@ impl CsvInput {
     /// <li>
     /// <p><code>Use</code>: First line is a header, and you can use the header value to identify a column in an expression (<code>SELECT "name" FROM OBJECT</code>).</p></li>
     /// </ul>
-    pub fn file_header_info(&self) -> ::std::option::Option<&crate::types::FileHeaderInfo> {
+    pub fn file_header_info(&self) -> ::std::option::Option<& crate::types::FileHeaderInfo> {
         self.file_header_info.as_ref()
     }
     /// <p>A single character used to indicate that a row should be ignored when the character is present at the start of that row. You can specify any character to indicate a comment line. The default character is <code>#</code>.</p>
     /// <p>Default: <code>#</code></p>
-    pub fn comments(&self) -> ::std::option::Option<&str> {
+    pub fn comments(&self) -> ::std::option::Option<& str> {
         self.comments.as_deref()
     }
     /// <p>A single character used for escaping the quotation mark character inside an already escaped value. For example, the value <code>""" a , b """</code> is parsed as <code>" a , b "</code>.</p>
-    pub fn quote_escape_character(&self) -> ::std::option::Option<&str> {
+    pub fn quote_escape_character(&self) -> ::std::option::Option<& str> {
         self.quote_escape_character.as_deref()
     }
     /// <p>A single character used to separate individual records in the input. Instead of the default value, you can specify an arbitrary delimiter.</p>
-    pub fn record_delimiter(&self) -> ::std::option::Option<&str> {
+    pub fn record_delimiter(&self) -> ::std::option::Option<& str> {
         self.record_delimiter.as_deref()
     }
     /// <p>A single character used to separate individual fields in a record. You can specify an arbitrary delimiter.</p>
-    pub fn field_delimiter(&self) -> ::std::option::Option<&str> {
+    pub fn field_delimiter(&self) -> ::std::option::Option<& str> {
         self.field_delimiter.as_deref()
     }
     /// <p>A single character used for escaping when the field delimiter is part of the value. For example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks, as follows: <code>" a , b "</code>.</p>
     /// <p>Type: String</p>
     /// <p>Default: <code>"</code></p>
     /// <p>Ancestors: <code>CSV</code></p>
-    pub fn quote_character(&self) -> ::std::option::Option<&str> {
+    pub fn quote_character(&self) -> ::std::option::Option<& str> {
         self.quote_character.as_deref()
     }
     /// <p>Specifies that CSV field values may contain quoted record delimiters and such records should be allowed. Default value is FALSE. Setting this value to TRUE may lower performance.</p>
@@ -116,8 +116,7 @@ impl CsvInputBuilder {
     /// <p><code>Use</code>: First line is a header, and you can use the header value to identify a column in an expression (<code>SELECT "name" FROM OBJECT</code>).</p></li>
     /// </ul>
     pub fn set_file_header_info(mut self, input: ::std::option::Option<crate::types::FileHeaderInfo>) -> Self {
-        self.file_header_info = input;
-        self
+        self.file_header_info = input; self
     }
     /// <p>Describes the first line of input. Valid values are:</p>
     /// <ul>
@@ -140,8 +139,7 @@ impl CsvInputBuilder {
     /// <p>A single character used to indicate that a row should be ignored when the character is present at the start of that row. You can specify any character to indicate a comment line. The default character is <code>#</code>.</p>
     /// <p>Default: <code>#</code></p>
     pub fn set_comments(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comments = input;
-        self
+        self.comments = input; self
     }
     /// <p>A single character used to indicate that a row should be ignored when the character is present at the start of that row. You can specify any character to indicate a comment line. The default character is <code>#</code>.</p>
     /// <p>Default: <code>#</code></p>
@@ -155,8 +153,7 @@ impl CsvInputBuilder {
     }
     /// <p>A single character used for escaping the quotation mark character inside an already escaped value. For example, the value <code>""" a , b """</code> is parsed as <code>" a , b "</code>.</p>
     pub fn set_quote_escape_character(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.quote_escape_character = input;
-        self
+        self.quote_escape_character = input; self
     }
     /// <p>A single character used for escaping the quotation mark character inside an already escaped value. For example, the value <code>""" a , b """</code> is parsed as <code>" a , b "</code>.</p>
     pub fn get_quote_escape_character(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,8 +166,7 @@ impl CsvInputBuilder {
     }
     /// <p>A single character used to separate individual records in the input. Instead of the default value, you can specify an arbitrary delimiter.</p>
     pub fn set_record_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.record_delimiter = input;
-        self
+        self.record_delimiter = input; self
     }
     /// <p>A single character used to separate individual records in the input. Instead of the default value, you can specify an arbitrary delimiter.</p>
     pub fn get_record_delimiter(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,8 +179,7 @@ impl CsvInputBuilder {
     }
     /// <p>A single character used to separate individual fields in a record. You can specify an arbitrary delimiter.</p>
     pub fn set_field_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_delimiter = input;
-        self
+        self.field_delimiter = input; self
     }
     /// <p>A single character used to separate individual fields in a record. You can specify an arbitrary delimiter.</p>
     pub fn get_field_delimiter(&self) -> &::std::option::Option<::std::string::String> {
@@ -203,8 +198,7 @@ impl CsvInputBuilder {
     /// <p>Default: <code>"</code></p>
     /// <p>Ancestors: <code>CSV</code></p>
     pub fn set_quote_character(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.quote_character = input;
-        self
+        self.quote_character = input; self
     }
     /// <p>A single character used for escaping when the field delimiter is part of the value. For example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks, as follows: <code>" a , b "</code>.</p>
     /// <p>Type: String</p>
@@ -220,8 +214,7 @@ impl CsvInputBuilder {
     }
     /// <p>Specifies that CSV field values may contain quoted record delimiters and such records should be allowed. Default value is FALSE. Setting this value to TRUE may lower performance.</p>
     pub fn set_allow_quoted_record_delimiter(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_quoted_record_delimiter = input;
-        self
+        self.allow_quoted_record_delimiter = input; self
     }
     /// <p>Specifies that CSV field values may contain quoted record delimiters and such records should be allowed. Default value is FALSE. Setting this value to TRUE may lower performance.</p>
     pub fn get_allow_quoted_record_delimiter(&self) -> &::std::option::Option<bool> {
@@ -230,13 +223,21 @@ impl CsvInputBuilder {
     /// Consumes the builder and constructs a [`CsvInput`](crate::types::CsvInput).
     pub fn build(self) -> crate::types::CsvInput {
         crate::types::CsvInput {
-            file_header_info: self.file_header_info,
-            comments: self.comments,
-            quote_escape_character: self.quote_escape_character,
-            record_delimiter: self.record_delimiter,
-            field_delimiter: self.field_delimiter,
-            quote_character: self.quote_character,
-            allow_quoted_record_delimiter: self.allow_quoted_record_delimiter,
+            file_header_info: self.file_header_info
+            ,
+            comments: self.comments
+            ,
+            quote_escape_character: self.quote_escape_character
+            ,
+            record_delimiter: self.record_delimiter
+            ,
+            field_delimiter: self.field_delimiter
+            ,
+            quote_character: self.quote_character
+            ,
+            allow_quoted_record_delimiter: self.allow_quoted_record_delimiter
+            ,
         }
     }
 }
+

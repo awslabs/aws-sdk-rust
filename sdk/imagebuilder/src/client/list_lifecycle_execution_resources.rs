@@ -2,21 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListLifecycleExecutionResources`](crate::operation::list_lifecycle_execution_resources::builders::ListLifecycleExecutionResourcesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_lifecycle_execution_resources::builders::ListLifecycleExecutionResourcesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`lifecycle_execution_id(impl Into<String>)`](crate::operation::list_lifecycle_execution_resources::builders::ListLifecycleExecutionResourcesFluentBuilder::lifecycle_execution_id) / [`set_lifecycle_execution_id(Option<String>)`](crate::operation::list_lifecycle_execution_resources::builders::ListLifecycleExecutionResourcesFluentBuilder::set_lifecycle_execution_id):<br>required: **true**<br><p>Use the unique identifier for a runtime instance of the lifecycle policy to get runtime details.</p><br>
     ///   - [`parent_resource_id(impl Into<String>)`](crate::operation::list_lifecycle_execution_resources::builders::ListLifecycleExecutionResourcesFluentBuilder::parent_resource_id) / [`set_parent_resource_id(Option<String>)`](crate::operation::list_lifecycle_execution_resources::builders::ListLifecycleExecutionResourcesFluentBuilder::set_parent_resource_id):<br>required: **false**<br><p>You can leave this empty to get a list of Image Builder resources that were identified for lifecycle actions.</p> <p>To get a list of associated resources that are impacted for an individual resource (the parent), specify its Amazon Resource Name (ARN). Associated resources are produced from your image and distributed when you run a build, such as AMIs or container images stored in ECR repositories.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_lifecycle_execution_resources::builders::ListLifecycleExecutionResourcesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_lifecycle_execution_resources::builders::ListLifecycleExecutionResourcesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum items to return in a request.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_lifecycle_execution_resources::builders::ListLifecycleExecutionResourcesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_lifecycle_execution_resources::builders::ListLifecycleExecutionResourcesFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p><br>
-    /// - On success, responds with [`ListLifecycleExecutionResourcesOutput`](crate::operation::list_lifecycle_execution_resources::ListLifecycleExecutionResourcesOutput) with field(s):
+                            /// - On success, responds with [`ListLifecycleExecutionResourcesOutput`](crate::operation::list_lifecycle_execution_resources::ListLifecycleExecutionResourcesOutput) with field(s):
     ///   - [`lifecycle_execution_id(Option<String>)`](crate::operation::list_lifecycle_execution_resources::ListLifecycleExecutionResourcesOutput::lifecycle_execution_id): <p>Runtime details for the specified runtime instance of the lifecycle policy.</p>
     ///   - [`lifecycle_execution_state(Option<LifecycleExecutionState>)`](crate::operation::list_lifecycle_execution_resources::ListLifecycleExecutionResourcesOutput::lifecycle_execution_state): <p>The current state of the lifecycle runtime instance.</p>
     ///   - [`resources(Option<Vec::<LifecycleExecutionResource>>)`](crate::operation::list_lifecycle_execution_resources::ListLifecycleExecutionResourcesOutput::resources): <p>A list of resources that were identified for lifecycle actions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_lifecycle_execution_resources::ListLifecycleExecutionResourcesOutput::next_token): <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service hasn't included in this request. Use this token with the next request to retrieve additional objects.</p>
-    /// - On failure, responds with [`SdkError<ListLifecycleExecutionResourcesError>`](crate::operation::list_lifecycle_execution_resources::ListLifecycleExecutionResourcesError)
-    pub fn list_lifecycle_execution_resources(
-        &self,
-    ) -> crate::operation::list_lifecycle_execution_resources::builders::ListLifecycleExecutionResourcesFluentBuilder {
-        crate::operation::list_lifecycle_execution_resources::builders::ListLifecycleExecutionResourcesFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListLifecycleExecutionResourcesError>`](crate::operation::list_lifecycle_execution_resources::ListLifecycleExecutionResourcesError)
+    pub fn list_lifecycle_execution_resources(&self) -> crate::operation::list_lifecycle_execution_resources::builders::ListLifecycleExecutionResourcesFluentBuilder {
+                                crate::operation::list_lifecycle_execution_resources::builders::ListLifecycleExecutionResourcesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

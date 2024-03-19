@@ -4,7 +4,7 @@
 /// <p>For more information and the input format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/wfsx-volumes.html">Amazon FSx for Windows File Server volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FSxWindowsFileServerVolumeConfiguration {
+pub struct FSxWindowsFileServerVolumeConfiguration  {
     /// <p>The Amazon FSx for Windows File Server file system ID to use.</p>
     pub file_system_id: ::std::string::String,
     /// <p>The directory within the Amazon FSx for Windows File Server file system to mount as the root directory inside the host.</p>
@@ -12,19 +12,17 @@ pub struct FSxWindowsFileServerVolumeConfiguration {
     /// <p>The authorization configuration details for the Amazon FSx for Windows File Server file system.</p>
     pub authorization_config: ::std::option::Option<crate::types::FSxWindowsFileServerAuthorizationConfig>,
 }
-impl FSxWindowsFileServerVolumeConfiguration {
+impl  FSxWindowsFileServerVolumeConfiguration  {
     /// <p>The Amazon FSx for Windows File Server file system ID to use.</p>
-    pub fn file_system_id(&self) -> &str {
-        use std::ops::Deref;
-        self.file_system_id.deref()
+    pub fn file_system_id(&self) -> & str {
+        use std::ops::Deref; self.file_system_id.deref()
     }
     /// <p>The directory within the Amazon FSx for Windows File Server file system to mount as the root directory inside the host.</p>
-    pub fn root_directory(&self) -> &str {
-        use std::ops::Deref;
-        self.root_directory.deref()
+    pub fn root_directory(&self) -> & str {
+        use std::ops::Deref; self.root_directory.deref()
     }
     /// <p>The authorization configuration details for the Amazon FSx for Windows File Server file system.</p>
-    pub fn authorization_config(&self) -> ::std::option::Option<&crate::types::FSxWindowsFileServerAuthorizationConfig> {
+    pub fn authorization_config(&self) -> ::std::option::Option<& crate::types::FSxWindowsFileServerAuthorizationConfig> {
         self.authorization_config.as_ref()
     }
 }
@@ -52,8 +50,7 @@ impl FSxWindowsFileServerVolumeConfigurationBuilder {
     }
     /// <p>The Amazon FSx for Windows File Server file system ID to use.</p>
     pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_system_id = input;
-        self
+        self.file_system_id = input; self
     }
     /// <p>The Amazon FSx for Windows File Server file system ID to use.</p>
     pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +64,7 @@ impl FSxWindowsFileServerVolumeConfigurationBuilder {
     }
     /// <p>The directory within the Amazon FSx for Windows File Server file system to mount as the root directory inside the host.</p>
     pub fn set_root_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.root_directory = input;
-        self
+        self.root_directory = input; self
     }
     /// <p>The directory within the Amazon FSx for Windows File Server file system to mount as the root directory inside the host.</p>
     pub fn get_root_directory(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +78,7 @@ impl FSxWindowsFileServerVolumeConfigurationBuilder {
     }
     /// <p>The authorization configuration details for the Amazon FSx for Windows File Server file system.</p>
     pub fn set_authorization_config(mut self, input: ::std::option::Option<crate::types::FSxWindowsFileServerAuthorizationConfig>) -> Self {
-        self.authorization_config = input;
-        self
+        self.authorization_config = input; self
     }
     /// <p>The authorization configuration details for the Amazon FSx for Windows File Server file system.</p>
     pub fn get_authorization_config(&self) -> &::std::option::Option<crate::types::FSxWindowsFileServerAuthorizationConfig> {
@@ -93,23 +88,23 @@ impl FSxWindowsFileServerVolumeConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`file_system_id`](crate::types::builders::FSxWindowsFileServerVolumeConfigurationBuilder::file_system_id)
     /// - [`root_directory`](crate::types::builders::FSxWindowsFileServerVolumeConfigurationBuilder::root_directory)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::FSxWindowsFileServerVolumeConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FSxWindowsFileServerVolumeConfiguration {
-            file_system_id: self.file_system_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "file_system_id",
-                    "file_system_id was not specified but it is required when building FSxWindowsFileServerVolumeConfiguration",
-                )
-            })?,
-            root_directory: self.root_directory.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "root_directory",
-                    "root_directory was not specified but it is required when building FSxWindowsFileServerVolumeConfiguration",
-                )
-            })?,
-            authorization_config: self.authorization_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::FSxWindowsFileServerVolumeConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::FSxWindowsFileServerVolumeConfiguration {
+                file_system_id: self.file_system_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("file_system_id", "file_system_id was not specified but it is required when building FSxWindowsFileServerVolumeConfiguration")
+                    )?
+                ,
+                root_directory: self.root_directory
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("root_directory", "root_directory was not specified but it is required when building FSxWindowsFileServerVolumeConfiguration")
+                    )?
+                ,
+                authorization_config: self.authorization_config
+                ,
+            }
+        )
     }
 }
+

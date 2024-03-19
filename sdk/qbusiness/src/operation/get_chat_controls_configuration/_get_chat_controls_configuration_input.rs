@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetChatControlsConfigurationInput {
+pub struct GetChatControlsConfigurationInput  {
     /// <p>The identifier of the application for which the chat controls are configured.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of configured chat controls to return.</p>
@@ -10,9 +10,9 @@ pub struct GetChatControlsConfigurationInput {
     /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q chat controls configured.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl GetChatControlsConfigurationInput {
+impl  GetChatControlsConfigurationInput  {
     /// <p>The identifier of the application for which the chat controls are configured.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The maximum number of configured chat controls to return.</p>
@@ -20,7 +20,7 @@ impl GetChatControlsConfigurationInput {
         self.max_results
     }
     /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q chat controls configured.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl GetChatControlsConfigurationInputBuilder {
     }
     /// <p>The identifier of the application for which the chat controls are configured.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier of the application for which the chat controls are configured.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl GetChatControlsConfigurationInputBuilder {
     }
     /// <p>The maximum number of configured chat controls to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of configured chat controls to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -76,24 +74,24 @@ impl GetChatControlsConfigurationInputBuilder {
     }
     /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q chat controls configured.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q chat controls configured.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetChatControlsConfigurationInput`](crate::operation::get_chat_controls_configuration::GetChatControlsConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_chat_controls_configuration::GetChatControlsConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_chat_controls_configuration::GetChatControlsConfigurationInput {
-            application_id: self.application_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_chat_controls_configuration::GetChatControlsConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_chat_controls_configuration::GetChatControlsConfigurationInput {
+                application_id: self.application_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

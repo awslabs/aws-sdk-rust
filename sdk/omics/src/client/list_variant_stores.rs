@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListVariantStores`](crate::operation::list_variant_stores::builders::ListVariantStoresFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_variant_stores::builders::ListVariantStoresFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_variant_stores::builders::ListVariantStoresFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_variant_stores::builders::ListVariantStoresFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of stores to return in one page of results.</p><br>
     ///   - [`ids(impl Into<String>)`](crate::operation::list_variant_stores::builders::ListVariantStoresFluentBuilder::ids) / [`set_ids(Option<Vec::<String>>)`](crate::operation::list_variant_stores::builders::ListVariantStoresFluentBuilder::set_ids):<br>required: **false**<br><p>A list of store IDs.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_variant_stores::builders::ListVariantStoresFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_variant_stores::builders::ListVariantStoresFluentBuilder::set_next_token):<br>required: **false**<br><p>Specify the pagination token from a previous request to retrieve the next page of results.</p><br>
     ///   - [`filter(ListVariantStoresFilter)`](crate::operation::list_variant_stores::builders::ListVariantStoresFluentBuilder::filter) / [`set_filter(Option<ListVariantStoresFilter>)`](crate::operation::list_variant_stores::builders::ListVariantStoresFluentBuilder::set_filter):<br>required: **false**<br><p>A filter to apply to the list.</p><br>
-    /// - On success, responds with [`ListVariantStoresOutput`](crate::operation::list_variant_stores::ListVariantStoresOutput) with field(s):
+                            /// - On success, responds with [`ListVariantStoresOutput`](crate::operation::list_variant_stores::ListVariantStoresOutput) with field(s):
     ///   - [`variant_stores(Option<Vec::<VariantStoreItem>>)`](crate::operation::list_variant_stores::ListVariantStoresOutput::variant_stores): <p>A list of variant stores.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_variant_stores::ListVariantStoresOutput::next_token): <p>A pagination token that's included if more results are available.</p>
-    /// - On failure, responds with [`SdkError<ListVariantStoresError>`](crate::operation::list_variant_stores::ListVariantStoresError)
+                            /// - On failure, responds with [`SdkError<ListVariantStoresError>`](crate::operation::list_variant_stores::ListVariantStoresError)
     pub fn list_variant_stores(&self) -> crate::operation::list_variant_stores::builders::ListVariantStoresFluentBuilder {
-        crate::operation::list_variant_stores::builders::ListVariantStoresFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_variant_stores::builders::ListVariantStoresFluentBuilder::new(self.handle.clone())
+                            }
 }
+

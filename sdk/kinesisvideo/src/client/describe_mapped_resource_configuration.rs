@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeMappedResourceConfiguration`](crate::operation::describe_mapped_resource_configuration::builders::DescribeMappedResourceConfigurationFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_mapped_resource_configuration::builders::DescribeMappedResourceConfigurationFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`stream_name(impl Into<String>)`](crate::operation::describe_mapped_resource_configuration::builders::DescribeMappedResourceConfigurationFluentBuilder::stream_name) / [`set_stream_name(Option<String>)`](crate::operation::describe_mapped_resource_configuration::builders::DescribeMappedResourceConfigurationFluentBuilder::set_stream_name):<br>required: **false**<br><p>The name of the stream.</p><br>
     ///   - [`stream_arn(impl Into<String>)`](crate::operation::describe_mapped_resource_configuration::builders::DescribeMappedResourceConfigurationFluentBuilder::stream_arn) / [`set_stream_arn(Option<String>)`](crate::operation::describe_mapped_resource_configuration::builders::DescribeMappedResourceConfigurationFluentBuilder::set_stream_arn):<br>required: **false**<br><p>The Amazon Resource Name (ARN) of the stream.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_mapped_resource_configuration::builders::DescribeMappedResourceConfigurationFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_mapped_resource_configuration::builders::DescribeMappedResourceConfigurationFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the response.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_mapped_resource_configuration::builders::DescribeMappedResourceConfigurationFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_mapped_resource_configuration::builders::DescribeMappedResourceConfigurationFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to provide in your next request, to get another batch of results.</p><br>
-    /// - On success, responds with [`DescribeMappedResourceConfigurationOutput`](crate::operation::describe_mapped_resource_configuration::DescribeMappedResourceConfigurationOutput) with field(s):
+                            /// - On success, responds with [`DescribeMappedResourceConfigurationOutput`](crate::operation::describe_mapped_resource_configuration::DescribeMappedResourceConfigurationOutput) with field(s):
     ///   - [`mapped_resource_configuration_list(Option<Vec::<MappedResourceConfigurationListItem>>)`](crate::operation::describe_mapped_resource_configuration::DescribeMappedResourceConfigurationOutput::mapped_resource_configuration_list): <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_mapped_resource_configuration::DescribeMappedResourceConfigurationOutput::next_token): <p>The token that was used in the <code>NextToken</code>request to fetch the next set of results.</p>
-    /// - On failure, responds with [`SdkError<DescribeMappedResourceConfigurationError>`](crate::operation::describe_mapped_resource_configuration::DescribeMappedResourceConfigurationError)
-    pub fn describe_mapped_resource_configuration(
-        &self,
-    ) -> crate::operation::describe_mapped_resource_configuration::builders::DescribeMappedResourceConfigurationFluentBuilder {
-        crate::operation::describe_mapped_resource_configuration::builders::DescribeMappedResourceConfigurationFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeMappedResourceConfigurationError>`](crate::operation::describe_mapped_resource_configuration::DescribeMappedResourceConfigurationError)
+    pub fn describe_mapped_resource_configuration(&self) -> crate::operation::describe_mapped_resource_configuration::builders::DescribeMappedResourceConfigurationFluentBuilder {
+                                crate::operation::describe_mapped_resource_configuration::builders::DescribeMappedResourceConfigurationFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutMetricDataInput {
+pub struct PutMetricDataInput  {
     /// <p>The namespace for the metric data. You can use ASCII characters for the namespace, except for control characters which are not supported.</p>
     /// <p>To avoid conflicts with Amazon Web Services service namespaces, you should not specify a namespace that begins with <code>AWS/</code></p>
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The data for the metric. The array can include no more than 1000 metrics per call.</p>
-    pub metric_data: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>>,
+    pub metric_data: ::std::option::Option<::std::vec::Vec::<crate::types::MetricDatum>>,
 }
-impl PutMetricDataInput {
+impl  PutMetricDataInput  {
     /// <p>The namespace for the metric data. You can use ASCII characters for the namespace, except for control characters which are not supported.</p>
     /// <p>To avoid conflicts with Amazon Web Services service namespaces, you should not specify a namespace that begins with <code>AWS/</code></p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The data for the metric. The array can include no more than 1000 metrics per call.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_data.is_none()`.
-    pub fn metric_data(&self) -> &[crate::types::MetricDatum] {
-        self.metric_data.as_deref().unwrap_or_default()
+    pub fn metric_data(&self) -> & [crate::types::MetricDatum] {
+        self.metric_data.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PutMetricDataInput {
@@ -34,7 +35,7 @@ impl PutMetricDataInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutMetricDataInputBuilder {
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
-    pub(crate) metric_data: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>>,
+    pub(crate) metric_data: ::std::option::Option<::std::vec::Vec::<crate::types::MetricDatum>>,
 }
 impl PutMetricDataInputBuilder {
     /// <p>The namespace for the metric data. You can use ASCII characters for the namespace, except for control characters which are not supported.</p>
@@ -47,8 +48,7 @@ impl PutMetricDataInputBuilder {
     /// <p>The namespace for the metric data. You can use ASCII characters for the namespace, except for control characters which are not supported.</p>
     /// <p>To avoid conflicts with Amazon Web Services service namespaces, you should not specify a namespace that begins with <code>AWS/</code></p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The namespace for the metric data. You can use ASCII characters for the namespace, except for control characters which are not supported.</p>
     /// <p>To avoid conflicts with Amazon Web Services service namespaces, you should not specify a namespace that begins with <code>AWS/</code></p>
@@ -62,26 +62,28 @@ impl PutMetricDataInputBuilder {
     /// <p>The data for the metric. The array can include no more than 1000 metrics per call.</p>
     pub fn metric_data(mut self, input: crate::types::MetricDatum) -> Self {
         let mut v = self.metric_data.unwrap_or_default();
-        v.push(input);
-        self.metric_data = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.metric_data = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The data for the metric. The array can include no more than 1000 metrics per call.</p>
-    pub fn set_metric_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>>) -> Self {
-        self.metric_data = input;
-        self
+    pub fn set_metric_data(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MetricDatum>>) -> Self {
+        self.metric_data = input; self
     }
     /// <p>The data for the metric. The array can include no more than 1000 metrics per call.</p>
-    pub fn get_metric_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>> {
+    pub fn get_metric_data(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MetricDatum>> {
         &self.metric_data
     }
     /// Consumes the builder and constructs a [`PutMetricDataInput`](crate::operation::put_metric_data::PutMetricDataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_metric_data::PutMetricDataInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_metric_data::PutMetricDataInput {
-            namespace: self.namespace,
-            metric_data: self.metric_data,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_metric_data::PutMetricDataInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_metric_data::PutMetricDataInput {
+                namespace: self.namespace
+                ,
+                metric_data: self.metric_data
+                ,
+            }
+        )
     }
 }
+

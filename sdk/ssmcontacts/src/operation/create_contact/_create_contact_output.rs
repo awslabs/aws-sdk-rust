@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateContactOutput {
+pub struct CreateContactOutput  {
     /// <p>The Amazon Resource Name (ARN) of the created contact or escalation plan.</p>
     pub contact_arn: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CreateContactOutput {
+impl  CreateContactOutput  {
     /// <p>The Amazon Resource Name (ARN) of the created contact or escalation plan.</p>
-    pub fn contact_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.contact_arn.deref()
+    pub fn contact_arn(&self) -> & str {
+        use std::ops::Deref; self.contact_arn.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateContactOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateContactOutput {
     /// Creates a new builder-style object to manufacture [`CreateContactOutput`](crate::operation::create_contact::CreateContactOutput).
     pub fn builder() -> crate::operation::create_contact::builders::CreateContactOutputBuilder {
@@ -42,36 +41,35 @@ impl CreateContactOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the created contact or escalation plan.</p>
     pub fn set_contact_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_arn = input;
-        self
+        self.contact_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the created contact or escalation plan.</p>
     pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateContactOutput`](crate::operation::create_contact::CreateContactOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`contact_arn`](crate::operation::create_contact::builders::CreateContactOutputBuilder::contact_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_contact::CreateContactOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_contact::CreateContactOutput {
-            contact_arn: self.contact_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "contact_arn",
-                    "contact_arn was not specified but it is required when building CreateContactOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_contact::CreateContactOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_contact::CreateContactOutput {
+                contact_arn: self.contact_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("contact_arn", "contact_arn was not specified but it is required when building CreateContactOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

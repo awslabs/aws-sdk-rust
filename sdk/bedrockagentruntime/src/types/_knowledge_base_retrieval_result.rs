@@ -3,7 +3,7 @@
 /// <p>Details about a result from querying the knowledge base.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct KnowledgeBaseRetrievalResult {
+pub struct KnowledgeBaseRetrievalResult  {
     /// <p>Contains a chunk of text from a data source in the knowledge base.</p>
     pub content: ::std::option::Option<crate::types::RetrievalResultContent>,
     /// <p>Contains information about the location of the data source.</p>
@@ -11,13 +11,13 @@ pub struct KnowledgeBaseRetrievalResult {
     /// <p>The level of relevance of the result to the query.</p>
     pub score: ::std::option::Option<f64>,
 }
-impl KnowledgeBaseRetrievalResult {
+impl  KnowledgeBaseRetrievalResult  {
     /// <p>Contains a chunk of text from a data source in the knowledge base.</p>
-    pub fn content(&self) -> ::std::option::Option<&crate::types::RetrievalResultContent> {
+    pub fn content(&self) -> ::std::option::Option<& crate::types::RetrievalResultContent> {
         self.content.as_ref()
     }
     /// <p>Contains information about the location of the data source.</p>
-    pub fn location(&self) -> ::std::option::Option<&crate::types::RetrievalResultLocation> {
+    pub fn location(&self) -> ::std::option::Option<& crate::types::RetrievalResultLocation> {
         self.location.as_ref()
     }
     /// <p>The level of relevance of the result to the query.</p>
@@ -25,7 +25,7 @@ impl KnowledgeBaseRetrievalResult {
         self.score
     }
 }
-impl ::std::fmt::Debug for KnowledgeBaseRetrievalResult {
+impl  ::std::fmt::Debug for KnowledgeBaseRetrievalResult  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("KnowledgeBaseRetrievalResult");
         formatter.field("content", &"*** Sensitive Data Redacted ***");
@@ -58,8 +58,7 @@ impl KnowledgeBaseRetrievalResultBuilder {
     }
     /// <p>Contains a chunk of text from a data source in the knowledge base.</p>
     pub fn set_content(mut self, input: ::std::option::Option<crate::types::RetrievalResultContent>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>Contains a chunk of text from a data source in the knowledge base.</p>
     pub fn get_content(&self) -> &::std::option::Option<crate::types::RetrievalResultContent> {
@@ -72,8 +71,7 @@ impl KnowledgeBaseRetrievalResultBuilder {
     }
     /// <p>Contains information about the location of the data source.</p>
     pub fn set_location(mut self, input: ::std::option::Option<crate::types::RetrievalResultLocation>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>Contains information about the location of the data source.</p>
     pub fn get_location(&self) -> &::std::option::Option<crate::types::RetrievalResultLocation> {
@@ -86,8 +84,7 @@ impl KnowledgeBaseRetrievalResultBuilder {
     }
     /// <p>The level of relevance of the result to the query.</p>
     pub fn set_score(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.score = input;
-        self
+        self.score = input; self
     }
     /// <p>The level of relevance of the result to the query.</p>
     pub fn get_score(&self) -> &::std::option::Option<f64> {
@@ -96,9 +93,12 @@ impl KnowledgeBaseRetrievalResultBuilder {
     /// Consumes the builder and constructs a [`KnowledgeBaseRetrievalResult`](crate::types::KnowledgeBaseRetrievalResult).
     pub fn build(self) -> crate::types::KnowledgeBaseRetrievalResult {
         crate::types::KnowledgeBaseRetrievalResult {
-            content: self.content,
-            location: self.location,
-            score: self.score,
+            content: self.content
+            ,
+            location: self.location
+            ,
+            score: self.score
+            ,
         }
     }
 }
@@ -111,3 +111,4 @@ impl ::std::fmt::Debug for KnowledgeBaseRetrievalResultBuilder {
         formatter.finish()
     }
 }
+

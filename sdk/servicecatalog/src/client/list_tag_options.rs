@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTagOptions`](crate::operation::list_tag_options::builders::ListTagOptionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_tag_options::builders::ListTagOptionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filters(ListTagOptionsFilters)`](crate::operation::list_tag_options::builders::ListTagOptionsFluentBuilder::filters) / [`set_filters(Option<ListTagOptionsFilters>)`](crate::operation::list_tag_options::builders::ListTagOptionsFluentBuilder::set_filters):<br>required: **false**<br><p>The search filters. If no search filters are specified, the output includes all TagOptions.</p><br>
     ///   - [`page_size(i32)`](crate::operation::list_tag_options::builders::ListTagOptionsFluentBuilder::page_size) / [`set_page_size(Option<i32>)`](crate::operation::list_tag_options::builders::ListTagOptionsFluentBuilder::set_page_size):<br>required: **false**<br><p>The maximum number of items to return with this call.</p><br>
     ///   - [`page_token(impl Into<String>)`](crate::operation::list_tag_options::builders::ListTagOptionsFluentBuilder::page_token) / [`set_page_token(Option<String>)`](crate::operation::list_tag_options::builders::ListTagOptionsFluentBuilder::set_page_token):<br>required: **false**<br><p>The page token for the next set of results. To retrieve the first set of results, use null.</p><br>
-    /// - On success, responds with [`ListTagOptionsOutput`](crate::operation::list_tag_options::ListTagOptionsOutput) with field(s):
+                            /// - On success, responds with [`ListTagOptionsOutput`](crate::operation::list_tag_options::ListTagOptionsOutput) with field(s):
     ///   - [`tag_option_details(Option<Vec::<TagOptionDetail>>)`](crate::operation::list_tag_options::ListTagOptionsOutput::tag_option_details): <p>Information about the TagOptions.</p>
     ///   - [`page_token(Option<String>)`](crate::operation::list_tag_options::ListTagOptionsOutput::page_token): <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    /// - On failure, responds with [`SdkError<ListTagOptionsError>`](crate::operation::list_tag_options::ListTagOptionsError)
+                            /// - On failure, responds with [`SdkError<ListTagOptionsError>`](crate::operation::list_tag_options::ListTagOptionsError)
     pub fn list_tag_options(&self) -> crate::operation::list_tag_options::builders::ListTagOptionsFluentBuilder {
-        crate::operation::list_tag_options::builders::ListTagOptionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_tag_options::builders::ListTagOptionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

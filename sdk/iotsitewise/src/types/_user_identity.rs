@@ -3,15 +3,14 @@
 /// <p>Contains information for a user identity in an access policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserIdentity {
+pub struct UserIdentity  {
     /// <p>The IAM Identity Center ID of the user.</p>
     pub id: ::std::string::String,
 }
-impl UserIdentity {
+impl  UserIdentity  {
     /// <p>The IAM Identity Center ID of the user.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
 }
 impl UserIdentity {
@@ -36,8 +35,7 @@ impl UserIdentityBuilder {
     }
     /// <p>The IAM Identity Center ID of the user.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The IAM Identity Center ID of the user.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl UserIdentityBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::UserIdentityBuilder::id)
     pub fn build(self) -> ::std::result::Result<crate::types::UserIdentity, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UserIdentity {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building UserIdentity",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UserIdentity {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building UserIdentity")
+                    )?
+                ,
+            }
+        )
     }
 }
+

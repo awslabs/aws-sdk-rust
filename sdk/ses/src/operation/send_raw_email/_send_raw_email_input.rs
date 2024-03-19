@@ -3,14 +3,14 @@
 /// <p>Represents a request to send a single raw email using Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SendRawEmailInput {
+pub struct SendRawEmailInput  {
     /// <p>The identity's email address. If you do not provide a value for this parameter, you must specify a "From" address in the raw text of the message. (You can also specify both.)</p><note>
     /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in<a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the email address string must be 7-bit ASCII. If you want to send to or from email addresses that contain Unicode characters in the domain part of an address, you must encode the domain using Punycode. Punycode is not permitted in the local part of the email address (the part before the @ sign) nor in the "friendly from" name. If you want to use Unicode characters in the "friendly from" name, you must encode the "friendly from" name using MIME encoded-word syntax, as described in <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending raw email using the Amazon SES API</a>. For more information about Punycode, see <a href="http://tools.ietf.org/html/rfc3492">RFC 3492</a>.</p>
     /// </note>
     /// <p>If you specify the <code>Source</code> parameter and have feedback forwarding enabled, then bounces and complaints are sent to this email address. This takes precedence over any Return-Path header that you might include in the raw text of the message.</p>
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>A list of destinations for the message, consisting of To:, CC:, and BCC: addresses.</p>
-    pub destinations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub destinations: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The raw email message itself. The message has to meet the following criteria:</p>
     /// <ul>
     /// <li>
@@ -49,23 +49,24 @@ pub struct SendRawEmailInput {
     /// </note>
     pub return_path_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using <code>SendRawEmail</code>. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::MessageTag>>,
     /// <p>The name of the configuration set to use when you send an email using <code>SendRawEmail</code>.</p>
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
 }
-impl SendRawEmailInput {
+impl  SendRawEmailInput  {
     /// <p>The identity's email address. If you do not provide a value for this parameter, you must specify a "From" address in the raw text of the message. (You can also specify both.)</p><note>
     /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in<a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the email address string must be 7-bit ASCII. If you want to send to or from email addresses that contain Unicode characters in the domain part of an address, you must encode the domain using Punycode. Punycode is not permitted in the local part of the email address (the part before the @ sign) nor in the "friendly from" name. If you want to use Unicode characters in the "friendly from" name, you must encode the "friendly from" name using MIME encoded-word syntax, as described in <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending raw email using the Amazon SES API</a>. For more information about Punycode, see <a href="http://tools.ietf.org/html/rfc3492">RFC 3492</a>.</p>
     /// </note>
     /// <p>If you specify the <code>Source</code> parameter and have feedback forwarding enabled, then bounces and complaints are sent to this email address. This takes precedence over any Return-Path header that you might include in the raw text of the message.</p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
+    pub fn source(&self) -> ::std::option::Option<& str> {
         self.source.as_deref()
     }
     /// <p>A list of destinations for the message, consisting of To:, CC:, and BCC: addresses.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
-    pub fn destinations(&self) -> &[::std::string::String] {
-        self.destinations.as_deref().unwrap_or_default()
+    pub fn destinations(&self) -> & [::std::string::String] {
+        self.destinations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The raw email message itself. The message has to meet the following criteria:</p>
     /// <ul>
@@ -86,14 +87,14 @@ impl SendRawEmailInput {
     /// , must not exceed 1,000 characters.
     /// </crlf></p></li>
     /// </ul>
-    pub fn raw_message(&self) -> ::std::option::Option<&crate::types::RawMessage> {
+    pub fn raw_message(&self) -> ::std::option::Option<& crate::types::RawMessage> {
         self.raw_message.as_ref()
     }
     /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to specify a particular "From" address in the header of the raw email.</p>
     /// <p>Instead of using this parameter, you can use the X-header <code>X-SES-FROM-ARN</code> in the raw message of the email. If you use both the <code>FromArn</code> parameter and the corresponding X-header, Amazon SES uses the value of the <code>FromArn</code> parameter.</p><note>
     /// <p>For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
     /// </note>
-    pub fn from_arn(&self) -> ::std::option::Option<&str> {
+    pub fn from_arn(&self) -> ::std::option::Option<& str> {
         self.from_arn.as_deref()
     }
     /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to send for the email address specified in the <code>Source</code> parameter.</p>
@@ -101,7 +102,7 @@ impl SendRawEmailInput {
     /// <p>Instead of using this parameter, you can use the X-header <code>X-SES-SOURCE-ARN</code> in the raw message of the email. If you use both the <code>SourceArn</code> parameter and the corresponding X-header, Amazon SES uses the value of the <code>SourceArn</code> parameter.</p><note>
     /// <p>For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
     /// </note>
-    pub fn source_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_arn(&self) -> ::std::option::Option<& str> {
         self.source_arn.as_deref()
     }
     /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>ReturnPath</code> parameter.</p>
@@ -109,17 +110,18 @@ impl SendRawEmailInput {
     /// <p>Instead of using this parameter, you can use the X-header <code>X-SES-RETURN-PATH-ARN</code> in the raw message of the email. If you use both the <code>ReturnPathArn</code> parameter and the corresponding X-header, Amazon SES uses the value of the <code>ReturnPathArn</code> parameter.</p><note>
     /// <p>For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
     /// </note>
-    pub fn return_path_arn(&self) -> ::std::option::Option<&str> {
+    pub fn return_path_arn(&self) -> ::std::option::Option<& str> {
         self.return_path_arn.as_deref()
     }
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using <code>SendRawEmail</code>. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::MessageTag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::MessageTag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the configuration set to use when you send an email using <code>SendRawEmail</code>.</p>
-    pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> ::std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
 }
@@ -135,12 +137,12 @@ impl SendRawEmailInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendRawEmailInputBuilder {
     pub(crate) source: ::std::option::Option<::std::string::String>,
-    pub(crate) destinations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) destinations: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) raw_message: ::std::option::Option<crate::types::RawMessage>,
     pub(crate) from_arn: ::std::option::Option<::std::string::String>,
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) return_path_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::MessageTag>>,
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
 }
 impl SendRawEmailInputBuilder {
@@ -157,8 +159,7 @@ impl SendRawEmailInputBuilder {
     /// </note>
     /// <p>If you specify the <code>Source</code> parameter and have feedback forwarding enabled, then bounces and complaints are sent to this email address. This takes precedence over any Return-Path header that you might include in the raw text of the message.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The identity's email address. If you do not provide a value for this parameter, you must specify a "From" address in the raw text of the message. (You can also specify both.)</p><note>
     /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in<a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the email address string must be 7-bit ASCII. If you want to send to or from email addresses that contain Unicode characters in the domain part of an address, you must encode the domain using Punycode. Punycode is not permitted in the local part of the email address (the part before the @ sign) nor in the "friendly from" name. If you want to use Unicode characters in the "friendly from" name, you must encode the "friendly from" name using MIME encoded-word syntax, as described in <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending raw email using the Amazon SES API</a>. For more information about Punycode, see <a href="http://tools.ietf.org/html/rfc3492">RFC 3492</a>.</p>
@@ -174,17 +175,16 @@ impl SendRawEmailInputBuilder {
     /// <p>A list of destinations for the message, consisting of To:, CC:, and BCC: addresses.</p>
     pub fn destinations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.destinations.unwrap_or_default();
-        v.push(input.into());
-        self.destinations = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.destinations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of destinations for the message, consisting of To:, CC:, and BCC: addresses.</p>
-    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.destinations = input;
-        self
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.destinations = input; self
     }
     /// <p>A list of destinations for the message, consisting of To:, CC:, and BCC: addresses.</p>
-    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.destinations
     }
     /// <p>The raw email message itself. The message has to meet the following criteria:</p>
@@ -231,8 +231,7 @@ impl SendRawEmailInputBuilder {
     /// </crlf></p></li>
     /// </ul>
     pub fn set_raw_message(mut self, input: ::std::option::Option<crate::types::RawMessage>) -> Self {
-        self.raw_message = input;
-        self
+        self.raw_message = input; self
     }
     /// <p>The raw email message itself. The message has to meet the following criteria:</p>
     /// <ul>
@@ -269,8 +268,7 @@ impl SendRawEmailInputBuilder {
     /// <p>For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
     /// </note>
     pub fn set_from_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.from_arn = input;
-        self
+        self.from_arn = input; self
     }
     /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to specify a particular "From" address in the header of the raw email.</p>
     /// <p>Instead of using this parameter, you can use the X-header <code>X-SES-FROM-ARN</code> in the raw message of the email. If you use both the <code>FromArn</code> parameter and the corresponding X-header, Amazon SES uses the value of the <code>FromArn</code> parameter.</p><note>
@@ -294,8 +292,7 @@ impl SendRawEmailInputBuilder {
     /// <p>For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
     /// </note>
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_arn = input;
-        self
+        self.source_arn = input; self
     }
     /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to send for the email address specified in the <code>Source</code> parameter.</p>
     /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to send from <code>user@example.com</code>, then you would specify the <code>SourceArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>Source</code> to be <code>user@example.com</code>.</p>
@@ -320,8 +317,7 @@ impl SendRawEmailInputBuilder {
     /// <p>For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
     /// </note>
     pub fn set_return_path_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.return_path_arn = input;
-        self
+        self.return_path_arn = input; self
     }
     /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>ReturnPath</code> parameter.</p>
     /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to use <code>feedback@example.com</code>, then you would specify the <code>ReturnPathArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
@@ -338,17 +334,16 @@ impl SendRawEmailInputBuilder {
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using <code>SendRawEmail</code>. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
     pub fn tags(mut self, input: crate::types::MessageTag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using <code>SendRawEmail</code>. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MessageTag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using <code>SendRawEmail</code>. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageTag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MessageTag>> {
         &self.tags
     }
     /// <p>The name of the configuration set to use when you send an email using <code>SendRawEmail</code>.</p>
@@ -358,26 +353,34 @@ impl SendRawEmailInputBuilder {
     }
     /// <p>The name of the configuration set to use when you send an email using <code>SendRawEmail</code>.</p>
     pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_set_name = input;
-        self
+        self.configuration_set_name = input; self
     }
     /// <p>The name of the configuration set to use when you send an email using <code>SendRawEmail</code>.</p>
     pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_set_name
     }
     /// Consumes the builder and constructs a [`SendRawEmailInput`](crate::operation::send_raw_email::SendRawEmailInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::send_raw_email::SendRawEmailInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::send_raw_email::SendRawEmailInput {
-            source: self.source,
-            destinations: self.destinations,
-            raw_message: self.raw_message,
-            from_arn: self.from_arn,
-            source_arn: self.source_arn,
-            return_path_arn: self.return_path_arn,
-            tags: self.tags,
-            configuration_set_name: self.configuration_set_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::send_raw_email::SendRawEmailInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::send_raw_email::SendRawEmailInput {
+                source: self.source
+                ,
+                destinations: self.destinations
+                ,
+                raw_message: self.raw_message
+                ,
+                from_arn: self.from_arn
+                ,
+                source_arn: self.source_arn
+                ,
+                return_path_arn: self.return_path_arn
+                ,
+                tags: self.tags
+                ,
+                configuration_set_name: self.configuration_set_name
+                ,
+            }
+        )
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPerformanceAnalysisReportOutput {
+pub struct GetPerformanceAnalysisReportOutput  {
     /// <p>The summary of the performance analysis report created for a time period.</p>
     pub analysis_report: ::std::option::Option<crate::types::AnalysisReport>,
     _request_id: Option<String>,
 }
-impl GetPerformanceAnalysisReportOutput {
+impl  GetPerformanceAnalysisReportOutput  {
     /// <p>The summary of the performance analysis report created for a time period.</p>
-    pub fn analysis_report(&self) -> ::std::option::Option<&crate::types::AnalysisReport> {
+    pub fn analysis_report(&self) -> ::std::option::Option<& crate::types::AnalysisReport> {
         self.analysis_report.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetPerformanceAnalysisReportOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetPerformanceAnalysisReportOutput {
     /// Creates a new builder-style object to manufacture [`GetPerformanceAnalysisReportOutput`](crate::operation::get_performance_analysis_report::GetPerformanceAnalysisReportOutput).
     pub fn builder() -> crate::operation::get_performance_analysis_report::builders::GetPerformanceAnalysisReportOutputBuilder {
@@ -40,27 +40,28 @@ impl GetPerformanceAnalysisReportOutputBuilder {
     }
     /// <p>The summary of the performance analysis report created for a time period.</p>
     pub fn set_analysis_report(mut self, input: ::std::option::Option<crate::types::AnalysisReport>) -> Self {
-        self.analysis_report = input;
-        self
+        self.analysis_report = input; self
     }
     /// <p>The summary of the performance analysis report created for a time period.</p>
     pub fn get_analysis_report(&self) -> &::std::option::Option<crate::types::AnalysisReport> {
         &self.analysis_report
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetPerformanceAnalysisReportOutput`](crate::operation::get_performance_analysis_report::GetPerformanceAnalysisReportOutput).
     pub fn build(self) -> crate::operation::get_performance_analysis_report::GetPerformanceAnalysisReportOutput {
         crate::operation::get_performance_analysis_report::GetPerformanceAnalysisReportOutput {
-            analysis_report: self.analysis_report,
+            analysis_report: self.analysis_report
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

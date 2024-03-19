@@ -3,7 +3,7 @@
 /// <p>Template configurations for v3 template schema.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnrollmentFlagsV3 {
+pub struct EnrollmentFlagsV3  {
     /// <p>Include symmetric algorithms allowed by the subject.</p>
     pub include_symmetric_algorithms: ::std::option::Option<bool>,
     /// <p>Require user interaction when the subject is enrolled and the private key associated with the certificate is used.</p>
@@ -15,7 +15,7 @@ pub struct EnrollmentFlagsV3 {
     /// <p>Allow renewal using the same key.</p>
     pub enable_key_reuse_on_nt_token_keyset_storage_full: ::std::option::Option<bool>,
 }
-impl EnrollmentFlagsV3 {
+impl  EnrollmentFlagsV3  {
     /// <p>Include symmetric algorithms allowed by the subject.</p>
     pub fn include_symmetric_algorithms(&self) -> ::std::option::Option<bool> {
         self.include_symmetric_algorithms
@@ -62,8 +62,7 @@ impl EnrollmentFlagsV3Builder {
     }
     /// <p>Include symmetric algorithms allowed by the subject.</p>
     pub fn set_include_symmetric_algorithms(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_symmetric_algorithms = input;
-        self
+        self.include_symmetric_algorithms = input; self
     }
     /// <p>Include symmetric algorithms allowed by the subject.</p>
     pub fn get_include_symmetric_algorithms(&self) -> &::std::option::Option<bool> {
@@ -76,8 +75,7 @@ impl EnrollmentFlagsV3Builder {
     }
     /// <p>Require user interaction when the subject is enrolled and the private key associated with the certificate is used.</p>
     pub fn set_user_interaction_required(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.user_interaction_required = input;
-        self
+        self.user_interaction_required = input; self
     }
     /// <p>Require user interaction when the subject is enrolled and the private key associated with the certificate is used.</p>
     pub fn get_user_interaction_required(&self) -> &::std::option::Option<bool> {
@@ -90,8 +88,7 @@ impl EnrollmentFlagsV3Builder {
     }
     /// <p>Delete expired or revoked certificates instead of archiving them.</p>
     pub fn set_remove_invalid_certificate_from_personal_store(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.remove_invalid_certificate_from_personal_store = input;
-        self
+        self.remove_invalid_certificate_from_personal_store = input; self
     }
     /// <p>Delete expired or revoked certificates instead of archiving them.</p>
     pub fn get_remove_invalid_certificate_from_personal_store(&self) -> &::std::option::Option<bool> {
@@ -104,8 +101,7 @@ impl EnrollmentFlagsV3Builder {
     }
     /// <p>This flag instructs the CA to not include the security extension szOID_NTDS_CA_SECURITY_EXT (OID:1.3.6.1.4.1.311.25.2), as specified in [MS-WCCE] sections 2.2.2.7.7.4 and 3.2.2.6.2.1.4.5.9, in the issued certificate. This addresses a Windows Kerberos elevation-of-privilege vulnerability.</p>
     pub fn set_no_security_extension(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.no_security_extension = input;
-        self
+        self.no_security_extension = input; self
     }
     /// <p>This flag instructs the CA to not include the security extension szOID_NTDS_CA_SECURITY_EXT (OID:1.3.6.1.4.1.311.25.2), as specified in [MS-WCCE] sections 2.2.2.7.7.4 and 3.2.2.6.2.1.4.5.9, in the issued certificate. This addresses a Windows Kerberos elevation-of-privilege vulnerability.</p>
     pub fn get_no_security_extension(&self) -> &::std::option::Option<bool> {
@@ -118,8 +114,7 @@ impl EnrollmentFlagsV3Builder {
     }
     /// <p>Allow renewal using the same key.</p>
     pub fn set_enable_key_reuse_on_nt_token_keyset_storage_full(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_key_reuse_on_nt_token_keyset_storage_full = input;
-        self
+        self.enable_key_reuse_on_nt_token_keyset_storage_full = input; self
     }
     /// <p>Allow renewal using the same key.</p>
     pub fn get_enable_key_reuse_on_nt_token_keyset_storage_full(&self) -> &::std::option::Option<bool> {
@@ -128,11 +123,17 @@ impl EnrollmentFlagsV3Builder {
     /// Consumes the builder and constructs a [`EnrollmentFlagsV3`](crate::types::EnrollmentFlagsV3).
     pub fn build(self) -> crate::types::EnrollmentFlagsV3 {
         crate::types::EnrollmentFlagsV3 {
-            include_symmetric_algorithms: self.include_symmetric_algorithms,
-            user_interaction_required: self.user_interaction_required,
-            remove_invalid_certificate_from_personal_store: self.remove_invalid_certificate_from_personal_store,
-            no_security_extension: self.no_security_extension,
-            enable_key_reuse_on_nt_token_keyset_storage_full: self.enable_key_reuse_on_nt_token_keyset_storage_full,
+            include_symmetric_algorithms: self.include_symmetric_algorithms
+            ,
+            user_interaction_required: self.user_interaction_required
+            ,
+            remove_invalid_certificate_from_personal_store: self.remove_invalid_certificate_from_personal_store
+            ,
+            no_security_extension: self.no_security_extension
+            ,
+            enable_key_reuse_on_nt_token_keyset_storage_full: self.enable_key_reuse_on_nt_token_keyset_storage_full
+            ,
         }
     }
 }
+

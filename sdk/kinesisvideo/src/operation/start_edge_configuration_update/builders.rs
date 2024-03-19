@@ -5,56 +5,52 @@ pub use crate::operation::start_edge_configuration_update::_start_edge_configura
 
 impl StartEdgeConfigurationUpdateInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.start_edge_configuration_update();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.start_edge_configuration_update();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `StartEdgeConfigurationUpdate`.
-///
+/// 
 /// <p>An asynchronous API that updates a stream’s existing edge configuration. The Kinesis Video Stream will sync the stream’s edge configuration with the Edge Agent IoT Greengrass component that runs on an IoT Hub Device, setup at your premise. The time to sync can vary and depends on the connectivity of the Hub Device. The <code>SyncStatus</code> will be updated as the edge configuration is acknowledged, and synced with the Edge Agent.</p>
 /// <p>If this API is invoked for the first time, a new edge configuration will be created for the stream, and the sync status will be set to <code>SYNCING</code>. You will have to wait for the sync status to reach a terminal state such as: <code>IN_SYNC</code>, or <code>SYNC_FAILED</code>, before using this API again. If you invoke this API during the syncing process, a <code>ResourceInUseException</code> will be thrown. The connectivity of the stream’s edge configuration and the Edge Agent will be retried for 15 minutes. After 15 minutes, the status will transition into the <code>SYNC_FAILED</code> state.</p>
 /// <p>To move an edge configuration from one device to another, use <code>DeleteEdgeConfiguration</code> to delete the current edge configuration. You can then invoke StartEdgeConfigurationUpdate with an updated Hub Device ARN.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartEdgeConfigurationUpdateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::start_edge_configuration_update::builders::StartEdgeConfigurationUpdateInputBuilder,
+                    inner: crate::operation::start_edge_configuration_update::builders::StartEdgeConfigurationUpdateInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateOutput,
-        crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateError,
-    > for StartEdgeConfigurationUpdateFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateOutput,
-            crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateOutput,
+                    crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateError,
+                > for StartEdgeConfigurationUpdateFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateOutput,
+                        crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl StartEdgeConfigurationUpdateFluentBuilder {
     /// Creates a new `StartEdgeConfigurationUpdate`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl StartEdgeConfigurationUpdateFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdate::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdate::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateOutput,
-        crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdate::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdate::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateOutput, crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the stream whose edge configuration you want to update. Specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
     pub fn stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_name(input.into());
@@ -153,3 +140,4 @@ impl StartEdgeConfigurationUpdateFluentBuilder {
         self.inner.get_edge_config()
     }
 }
+

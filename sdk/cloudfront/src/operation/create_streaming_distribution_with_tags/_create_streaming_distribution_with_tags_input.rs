@@ -3,13 +3,13 @@
 /// <p>The request to create a new streaming distribution with tags.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateStreamingDistributionWithTagsInput {
+pub struct CreateStreamingDistributionWithTagsInput  {
     /// <p>The streaming distribution's configuration information.</p>
     pub streaming_distribution_config_with_tags: ::std::option::Option<crate::types::StreamingDistributionConfigWithTags>,
 }
-impl CreateStreamingDistributionWithTagsInput {
+impl  CreateStreamingDistributionWithTagsInput  {
     /// <p>The streaming distribution's configuration information.</p>
-    pub fn streaming_distribution_config_with_tags(&self) -> ::std::option::Option<&crate::types::StreamingDistributionConfigWithTags> {
+    pub fn streaming_distribution_config_with_tags(&self) -> ::std::option::Option<& crate::types::StreamingDistributionConfigWithTags> {
         self.streaming_distribution_config_with_tags.as_ref()
     }
 }
@@ -34,28 +34,21 @@ impl CreateStreamingDistributionWithTagsInputBuilder {
         self
     }
     /// <p>The streaming distribution's configuration information.</p>
-    pub fn set_streaming_distribution_config_with_tags(
-        mut self,
-        input: ::std::option::Option<crate::types::StreamingDistributionConfigWithTags>,
-    ) -> Self {
-        self.streaming_distribution_config_with_tags = input;
-        self
+    pub fn set_streaming_distribution_config_with_tags(mut self, input: ::std::option::Option<crate::types::StreamingDistributionConfigWithTags>) -> Self {
+        self.streaming_distribution_config_with_tags = input; self
     }
     /// <p>The streaming distribution's configuration information.</p>
     pub fn get_streaming_distribution_config_with_tags(&self) -> &::std::option::Option<crate::types::StreamingDistributionConfigWithTags> {
         &self.streaming_distribution_config_with_tags
     }
     /// Consumes the builder and constructs a [`CreateStreamingDistributionWithTagsInput`](crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsInput {
-                streaming_distribution_config_with_tags: self.streaming_distribution_config_with_tags,
-            },
+                streaming_distribution_config_with_tags: self.streaming_distribution_config_with_tags
+                ,
+            }
         )
     }
 }
+

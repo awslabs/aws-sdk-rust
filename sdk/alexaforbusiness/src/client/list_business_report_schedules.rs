@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListBusinessReportSchedules`](crate::operation::list_business_report_schedules::builders::ListBusinessReportSchedulesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_business_report_schedules::builders::ListBusinessReportSchedulesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_business_report_schedules::builders::ListBusinessReportSchedulesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_business_report_schedules::builders::ListBusinessReportSchedulesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token used to list the remaining schedules from the previous API call.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_business_report_schedules::builders::ListBusinessReportSchedulesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_business_report_schedules::builders::ListBusinessReportSchedulesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of schedules listed in the call.</p><br>
-    /// - On success, responds with [`ListBusinessReportSchedulesOutput`](crate::operation::list_business_report_schedules::ListBusinessReportSchedulesOutput) with field(s):
+                            /// - On success, responds with [`ListBusinessReportSchedulesOutput`](crate::operation::list_business_report_schedules::ListBusinessReportSchedulesOutput) with field(s):
     ///   - [`business_report_schedules(Option<Vec::<BusinessReportSchedule>>)`](crate::operation::list_business_report_schedules::ListBusinessReportSchedulesOutput::business_report_schedules): <p>The schedule of the reports.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_business_report_schedules::ListBusinessReportSchedulesOutput::next_token): <p>The token used to list the remaining schedules from the previous API call.</p>
-    /// - On failure, responds with [`SdkError<ListBusinessReportSchedulesError>`](crate::operation::list_business_report_schedules::ListBusinessReportSchedulesError)
+                            /// - On failure, responds with [`SdkError<ListBusinessReportSchedulesError>`](crate::operation::list_business_report_schedules::ListBusinessReportSchedulesError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
-    pub fn list_business_report_schedules(
-        &self,
-    ) -> crate::operation::list_business_report_schedules::builders::ListBusinessReportSchedulesFluentBuilder {
-        crate::operation::list_business_report_schedules::builders::ListBusinessReportSchedulesFluentBuilder::new(self.handle.clone())
-    }
+    pub fn list_business_report_schedules(&self) -> crate::operation::list_business_report_schedules::builders::ListBusinessReportSchedulesFluentBuilder {
+                                crate::operation::list_business_report_schedules::builders::ListBusinessReportSchedulesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

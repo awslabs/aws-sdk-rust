@@ -3,17 +3,16 @@
 /// <p>An internet service provider (ISP) or network in Amazon CloudWatch Internet Monitor.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Network {
+pub struct Network  {
     /// <p>The internet provider name or network name.</p>
     pub as_name: ::std::string::String,
     /// <p>The Autonomous System Number (ASN) of the internet provider or network.</p>
     pub as_number: i64,
 }
-impl Network {
+impl  Network  {
     /// <p>The internet provider name or network name.</p>
-    pub fn as_name(&self) -> &str {
-        use std::ops::Deref;
-        self.as_name.deref()
+    pub fn as_name(&self) -> & str {
+        use std::ops::Deref; self.as_name.deref()
     }
     /// <p>The Autonomous System Number (ASN) of the internet provider or network.</p>
     pub fn as_number(&self) -> i64 {
@@ -43,8 +42,7 @@ impl NetworkBuilder {
     }
     /// <p>The internet provider name or network name.</p>
     pub fn set_as_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.as_name = input;
-        self
+        self.as_name = input; self
     }
     /// <p>The internet provider name or network name.</p>
     pub fn get_as_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl NetworkBuilder {
     }
     /// <p>The Autonomous System Number (ASN) of the internet provider or network.</p>
     pub fn set_as_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.as_number = input;
-        self
+        self.as_number = input; self
     }
     /// <p>The Autonomous System Number (ASN) of the internet provider or network.</p>
     pub fn get_as_number(&self) -> &::std::option::Option<i64> {
@@ -70,19 +67,20 @@ impl NetworkBuilder {
     /// - [`as_name`](crate::types::builders::NetworkBuilder::as_name)
     /// - [`as_number`](crate::types::builders::NetworkBuilder::as_number)
     pub fn build(self) -> ::std::result::Result<crate::types::Network, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Network {
-            as_name: self.as_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "as_name",
-                    "as_name was not specified but it is required when building Network",
-                )
-            })?,
-            as_number: self.as_number.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "as_number",
-                    "as_number was not specified but it is required when building Network",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Network {
+                as_name: self.as_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("as_name", "as_name was not specified but it is required when building Network")
+                    )?
+                ,
+                as_number: self.as_number
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("as_number", "as_number was not specified but it is required when building Network")
+                    )?
+                ,
+            }
+        )
     }
 }
+

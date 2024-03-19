@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetDeploymentTargetsOutput {
+pub struct BatchGetDeploymentTargetsOutput  {
     /// <p>A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform.</p>
     /// <ul>
     /// <li>
@@ -14,10 +14,10 @@ pub struct BatchGetDeploymentTargetsOutput {
     /// <li>
     /// <p><b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment.</p></li>
     /// </ul>
-    pub deployment_targets: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentTarget>>,
+    pub deployment_targets: ::std::option::Option<::std::vec::Vec::<crate::types::DeploymentTarget>>,
     _request_id: Option<String>,
 }
-impl BatchGetDeploymentTargetsOutput {
+impl  BatchGetDeploymentTargetsOutput  {
     /// <p>A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform.</p>
     /// <ul>
     /// <li>
@@ -29,17 +29,18 @@ impl BatchGetDeploymentTargetsOutput {
     /// <li>
     /// <p><b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deployment_targets.is_none()`.
-    pub fn deployment_targets(&self) -> &[crate::types::DeploymentTarget] {
-        self.deployment_targets.as_deref().unwrap_or_default()
+    pub fn deployment_targets(&self) -> & [crate::types::DeploymentTarget] {
+        self.deployment_targets.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchGetDeploymentTargetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchGetDeploymentTargetsOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetDeploymentTargetsOutput`](crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargetsOutput).
     pub fn builder() -> crate::operation::batch_get_deployment_targets::builders::BatchGetDeploymentTargetsOutputBuilder {
@@ -51,7 +52,7 @@ impl BatchGetDeploymentTargetsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetDeploymentTargetsOutputBuilder {
-    pub(crate) deployment_targets: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentTarget>>,
+    pub(crate) deployment_targets: ::std::option::Option<::std::vec::Vec::<crate::types::DeploymentTarget>>,
     _request_id: Option<String>,
 }
 impl BatchGetDeploymentTargetsOutputBuilder {
@@ -72,9 +73,9 @@ impl BatchGetDeploymentTargetsOutputBuilder {
     /// </ul>
     pub fn deployment_targets(mut self, input: crate::types::DeploymentTarget) -> Self {
         let mut v = self.deployment_targets.unwrap_or_default();
-        v.push(input);
-        self.deployment_targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.deployment_targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform.</p>
     /// <ul>
@@ -87,9 +88,8 @@ impl BatchGetDeploymentTargetsOutputBuilder {
     /// <li>
     /// <p><b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment.</p></li>
     /// </ul>
-    pub fn set_deployment_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentTarget>>) -> Self {
-        self.deployment_targets = input;
-        self
+    pub fn set_deployment_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DeploymentTarget>>) -> Self {
+        self.deployment_targets = input; self
     }
     /// <p>A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform.</p>
     /// <ul>
@@ -102,23 +102,25 @@ impl BatchGetDeploymentTargetsOutputBuilder {
     /// <li>
     /// <p><b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment.</p></li>
     /// </ul>
-    pub fn get_deployment_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentTarget>> {
+    pub fn get_deployment_targets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DeploymentTarget>> {
         &self.deployment_targets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchGetDeploymentTargetsOutput`](crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargetsOutput).
     pub fn build(self) -> crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargetsOutput {
         crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargetsOutput {
-            deployment_targets: self.deployment_targets,
+            deployment_targets: self.deployment_targets
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

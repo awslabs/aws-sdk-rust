@@ -3,7 +3,7 @@
 /// <p>Object for field Options errors.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FieldOptionError {
+pub struct FieldOptionError  {
     /// <p>Error message from creating or updating field option.</p>
     pub message: ::std::string::String,
     /// <p>Error code from creating or updating field option.</p>
@@ -11,21 +11,18 @@ pub struct FieldOptionError {
     /// <p>The field option value that caused the error.</p>
     pub value: ::std::string::String,
 }
-impl FieldOptionError {
+impl  FieldOptionError  {
     /// <p>Error message from creating or updating field option.</p>
-    pub fn message(&self) -> &str {
-        use std::ops::Deref;
-        self.message.deref()
+    pub fn message(&self) -> & str {
+        use std::ops::Deref; self.message.deref()
     }
     /// <p>Error code from creating or updating field option.</p>
-    pub fn error_code(&self) -> &str {
-        use std::ops::Deref;
-        self.error_code.deref()
+    pub fn error_code(&self) -> & str {
+        use std::ops::Deref; self.error_code.deref()
     }
     /// <p>The field option value that caused the error.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl FieldOptionError {
@@ -52,8 +49,7 @@ impl FieldOptionErrorBuilder {
     }
     /// <p>Error message from creating or updating field option.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Error message from creating or updating field option.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +63,7 @@ impl FieldOptionErrorBuilder {
     }
     /// <p>Error code from creating or updating field option.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>Error code from creating or updating field option.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +77,7 @@ impl FieldOptionErrorBuilder {
     }
     /// <p>The field option value that caused the error.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The field option value that caused the error.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,25 +89,25 @@ impl FieldOptionErrorBuilder {
     /// - [`error_code`](crate::types::builders::FieldOptionErrorBuilder::error_code)
     /// - [`value`](crate::types::builders::FieldOptionErrorBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::FieldOptionError, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FieldOptionError {
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building FieldOptionError",
-                )
-            })?,
-            error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_code",
-                    "error_code was not specified but it is required when building FieldOptionError",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building FieldOptionError",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FieldOptionError {
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building FieldOptionError")
+                    )?
+                ,
+                error_code: self.error_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_code", "error_code was not specified but it is required when building FieldOptionError")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building FieldOptionError")
+                    )?
+                ,
+            }
+        )
     }
 }
+

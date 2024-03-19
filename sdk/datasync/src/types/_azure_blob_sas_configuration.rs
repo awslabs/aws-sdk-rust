@@ -4,22 +4,21 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-sas-tokens">SAS tokens</a> for accessing your Azure Blob Storage.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AzureBlobSasConfiguration {
+pub struct AzureBlobSasConfiguration  {
     /// <p>Specifies a SAS token that provides permissions to access your Azure Blob Storage.</p>
     /// <p>The token is part of the SAS URI string that comes after the storage resource URI and a question mark. A token looks something like this:</p>
     /// <p><code>sp=r&amp;st=2023-12-20T14:54:52Z&amp;se=2023-12-20T22:54:52Z&amp;spr=https&amp;sv=2021-06-08&amp;sr=c&amp;sig=aBBKDWQvyuVcTPH9EBp%2FXTI9E%2F%2Fmq171%2BZU178wcwqU%3D</code></p>
     pub token: ::std::string::String,
 }
-impl AzureBlobSasConfiguration {
+impl  AzureBlobSasConfiguration  {
     /// <p>Specifies a SAS token that provides permissions to access your Azure Blob Storage.</p>
     /// <p>The token is part of the SAS URI string that comes after the storage resource URI and a question mark. A token looks something like this:</p>
     /// <p><code>sp=r&amp;st=2023-12-20T14:54:52Z&amp;se=2023-12-20T22:54:52Z&amp;spr=https&amp;sv=2021-06-08&amp;sr=c&amp;sig=aBBKDWQvyuVcTPH9EBp%2FXTI9E%2F%2Fmq171%2BZU178wcwqU%3D</code></p>
-    pub fn token(&self) -> &str {
-        use std::ops::Deref;
-        self.token.deref()
+    pub fn token(&self) -> & str {
+        use std::ops::Deref; self.token.deref()
     }
 }
-impl ::std::fmt::Debug for AzureBlobSasConfiguration {
+impl  ::std::fmt::Debug for AzureBlobSasConfiguration  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AzureBlobSasConfiguration");
         formatter.field("token", &"*** Sensitive Data Redacted ***");
@@ -52,8 +51,7 @@ impl AzureBlobSasConfigurationBuilder {
     /// <p>The token is part of the SAS URI string that comes after the storage resource URI and a question mark. A token looks something like this:</p>
     /// <p><code>sp=r&amp;st=2023-12-20T14:54:52Z&amp;se=2023-12-20T22:54:52Z&amp;spr=https&amp;sv=2021-06-08&amp;sr=c&amp;sig=aBBKDWQvyuVcTPH9EBp%2FXTI9E%2F%2Fmq171%2BZU178wcwqU%3D</code></p>
     pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.token = input;
-        self
+        self.token = input; self
     }
     /// <p>Specifies a SAS token that provides permissions to access your Azure Blob Storage.</p>
     /// <p>The token is part of the SAS URI string that comes after the storage resource URI and a question mark. A token looks something like this:</p>
@@ -65,14 +63,15 @@ impl AzureBlobSasConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`token`](crate::types::builders::AzureBlobSasConfigurationBuilder::token)
     pub fn build(self) -> ::std::result::Result<crate::types::AzureBlobSasConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AzureBlobSasConfiguration {
-            token: self.token.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "token",
-                    "token was not specified but it is required when building AzureBlobSasConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AzureBlobSasConfiguration {
+                token: self.token
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("token", "token was not specified but it is required when building AzureBlobSasConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for AzureBlobSasConfigurationBuilder {
@@ -82,3 +81,4 @@ impl ::std::fmt::Debug for AzureBlobSasConfigurationBuilder {
         formatter.finish()
     }
 }
+

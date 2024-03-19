@@ -6,7 +6,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Scope {
+pub struct Scope  {
     /// <p>The name of the scope.</p>
     /// <p>The following scopes are possible:</p>
     /// <ul>
@@ -31,7 +31,7 @@ pub struct Scope {
     /// <p>Only EC2 instance and Auto Scaling group ARNs are currently supported.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl Scope {
+impl  Scope  {
     /// <p>The name of the scope.</p>
     /// <p>The following scopes are possible:</p>
     /// <ul>
@@ -42,7 +42,7 @@ impl Scope {
     /// <li>
     /// <p><code>ResourceArn</code> - Specifies that the recommendation preference applies at the individual resource level.</p></li>
     /// </ul>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::ScopeName> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::ScopeName> {
         self.name.as_ref()
     }
     /// <p>The value of the scope.</p>
@@ -56,7 +56,7 @@ impl Scope {
     /// <p><code>ResourceArn</code> - The <code>value</code> must be the Amazon Resource Name (ARN) of an EC2 instance or an Auto Scaling group.</p></li>
     /// </ul>
     /// <p>Only EC2 instance and Auto Scaling group ARNs are currently supported.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -100,8 +100,7 @@ impl ScopeBuilder {
     /// <p><code>ResourceArn</code> - Specifies that the recommendation preference applies at the individual resource level.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::ScopeName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the scope.</p>
     /// <p>The following scopes are possible:</p>
@@ -143,8 +142,7 @@ impl ScopeBuilder {
     /// </ul>
     /// <p>Only EC2 instance and Auto Scaling group ARNs are currently supported.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the scope.</p>
     /// <p>If you specified the <code>name</code> of the scope as:</p>
@@ -163,8 +161,11 @@ impl ScopeBuilder {
     /// Consumes the builder and constructs a [`Scope`](crate::types::Scope).
     pub fn build(self) -> crate::types::Scope {
         crate::types::Scope {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

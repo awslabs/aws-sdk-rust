@@ -5,55 +5,51 @@ pub use crate::operation::update_ops_item::_update_ops_item_input::UpdateOpsItem
 
 impl UpdateOpsItemInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_ops_item::UpdateOpsItemOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_ops_item::UpdateOpsItemError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_ops_item();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_ops_item::UpdateOpsItemOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_ops_item::UpdateOpsItemError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_ops_item();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateOpsItem`.
-///
+/// 
 /// <p>Edit or change an OpsItem. You must have permission in Identity and Access Management (IAM) to update an OpsItem. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setup.html">Set up OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
 /// <p>Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate, and remediate operational issues impacting the performance and health of their Amazon Web Services resources. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">Amazon Web Services Systems Manager OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateOpsItemFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_ops_item::builders::UpdateOpsItemInputBuilder,
+                    inner: crate::operation::update_ops_item::builders::UpdateOpsItemInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_ops_item::UpdateOpsItemOutput,
-        crate::operation::update_ops_item::UpdateOpsItemError,
-    > for UpdateOpsItemFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_ops_item::UpdateOpsItemOutput,
-            crate::operation::update_ops_item::UpdateOpsItemError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_ops_item::UpdateOpsItemOutput,
+                    crate::operation::update_ops_item::UpdateOpsItemError,
+                > for UpdateOpsItemFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_ops_item::UpdateOpsItemOutput,
+                        crate::operation::update_ops_item::UpdateOpsItemError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateOpsItemFluentBuilder {
     /// Creates a new `UpdateOpsItem`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl UpdateOpsItemFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_ops_item::UpdateOpsItemOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_ops_item::UpdateOpsItemError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_ops_item::UpdateOpsItem::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_ops_item::UpdateOpsItem::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_ops_item::UpdateOpsItemOutput,
-        crate::operation::update_ops_item::UpdateOpsItemError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_ops_item::UpdateOpsItemOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_ops_item::UpdateOpsItemError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_ops_item::UpdateOpsItem::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_ops_item::UpdateOpsItem::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_ops_item::UpdateOpsItemOutput, crate::operation::update_ops_item::UpdateOpsItemError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>User-defined text that contains information about the OpsItem, in Markdown format.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -143,10 +130,7 @@ impl UpdateOpsItemFluentBuilder {
     /// </important>
     /// <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <code>DescribeOpsItems</code> API operation) can view and search on the specified data. Operational data that isn't searchable is only viewable by users who have access to the OpsItem (as provided by the <code>GetOpsItem</code> API operation).</p>
     /// <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html">Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn set_operational_data(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::OpsItemDataValue>>,
-    ) -> Self {
+    pub fn set_operational_data(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::OpsItemDataValue>>) -> Self {
         self.inner = self.inner.set_operational_data(input);
         self
     }
@@ -156,7 +140,7 @@ impl UpdateOpsItemFluentBuilder {
     /// </important>
     /// <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <code>DescribeOpsItems</code> API operation) can view and search on the specified data. Operational data that isn't searchable is only viewable by users who have access to the OpsItem (as provided by the <code>GetOpsItem</code> API operation).</p>
     /// <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html">Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn get_operational_data(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::OpsItemDataValue>> {
+    pub fn get_operational_data(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::OpsItemDataValue>> {
         self.inner.get_operational_data()
     }
     /// Appends an item to `OperationalDataToDelete`.
@@ -169,12 +153,12 @@ impl UpdateOpsItemFluentBuilder {
         self
     }
     /// <p>Keys that you want to remove from the OperationalData map.</p>
-    pub fn set_operational_data_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_operational_data_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_operational_data_to_delete(input);
         self
     }
     /// <p>Keys that you want to remove from the OperationalData map.</p>
-    pub fn get_operational_data_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_operational_data_to_delete(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_operational_data_to_delete()
     }
     /// Appends an item to `Notifications`.
@@ -187,12 +171,12 @@ impl UpdateOpsItemFluentBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this OpsItem is edited or changed.</p>
-    pub fn set_notifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemNotification>>) -> Self {
+    pub fn set_notifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OpsItemNotification>>) -> Self {
         self.inner = self.inner.set_notifications(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this OpsItem is edited or changed.</p>
-    pub fn get_notifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsItemNotification>> {
+    pub fn get_notifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OpsItemNotification>> {
         self.inner.get_notifications()
     }
     /// <p>The importance of this OpsItem in relation to other OpsItems in the system.</p>
@@ -219,12 +203,12 @@ impl UpdateOpsItemFluentBuilder {
         self
     }
     /// <p>One or more OpsItems that share something in common with the current OpsItems. For example, related OpsItems can include OpsItems with similar error messages, impacted resources, or statuses for the impacted resource.</p>
-    pub fn set_related_ops_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedOpsItem>>) -> Self {
+    pub fn set_related_ops_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RelatedOpsItem>>) -> Self {
         self.inner = self.inner.set_related_ops_items(input);
         self
     }
     /// <p>One or more OpsItems that share something in common with the current OpsItems. For example, related OpsItems can include OpsItems with similar error messages, impacted resources, or statuses for the impacted resource.</p>
-    pub fn get_related_ops_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedOpsItem>> {
+    pub fn get_related_ops_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RelatedOpsItem>> {
         self.inner.get_related_ops_items()
     }
     /// <p>The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html">Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
@@ -368,3 +352,4 @@ impl UpdateOpsItemFluentBuilder {
         self.inner.get_ops_item_arn()
     }
 }
+

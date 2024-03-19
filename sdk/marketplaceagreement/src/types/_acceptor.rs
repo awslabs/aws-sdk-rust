@@ -3,13 +3,13 @@
 /// <p>The details of the party accepting the agreement terms. This is commonly the buyer for <code>PurchaseAgreement</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Acceptor {
+pub struct Acceptor  {
     /// <p>The AWS account ID of the acceptor.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl Acceptor {
+impl  Acceptor  {
     /// <p>The AWS account ID of the acceptor.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AcceptorBuilder {
     }
     /// <p>The AWS account ID of the acceptor.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The AWS account ID of the acceptor.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl AcceptorBuilder {
     }
     /// Consumes the builder and constructs a [`Acceptor`](crate::types::Acceptor).
     pub fn build(self) -> crate::types::Acceptor {
-        crate::types::Acceptor { account_id: self.account_id }
+        crate::types::Acceptor {
+            account_id: self.account_id
+            ,
+        }
     }
 }
+

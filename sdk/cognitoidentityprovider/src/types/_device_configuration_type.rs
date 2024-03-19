@@ -6,7 +6,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeviceConfigurationType {
+pub struct DeviceConfigurationType  {
     /// <p>When true, a remembered device can sign in with device authentication instead of SMS and time-based one-time password (TOTP) factors for multi-factor authentication (MFA).</p><note>
     /// <p>Whether or not <code>ChallengeRequiredOnNewDevice</code> is true, users who sign in with devices that have not been confirmed or remembered must still provide a second factor in a user pool that requires MFA.</p>
     /// </note>
@@ -15,7 +15,7 @@ pub struct DeviceConfigurationType {
     /// <p>When <code>DeviceOnlyRememberedOnUserPrompt</code> is <code>false</code>, Amazon Cognito immediately remembers devices that you register in a <code>ConfirmDevice</code> API request.</p>
     pub device_only_remembered_on_user_prompt: bool,
 }
-impl DeviceConfigurationType {
+impl  DeviceConfigurationType  {
     /// <p>When true, a remembered device can sign in with device authentication instead of SMS and time-based one-time password (TOTP) factors for multi-factor authentication (MFA).</p><note>
     /// <p>Whether or not <code>ChallengeRequiredOnNewDevice</code> is true, users who sign in with devices that have not been confirmed or remembered must still provide a second factor in a user pool that requires MFA.</p>
     /// </note>
@@ -54,8 +54,7 @@ impl DeviceConfigurationTypeBuilder {
     /// <p>Whether or not <code>ChallengeRequiredOnNewDevice</code> is true, users who sign in with devices that have not been confirmed or remembered must still provide a second factor in a user pool that requires MFA.</p>
     /// </note>
     pub fn set_challenge_required_on_new_device(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.challenge_required_on_new_device = input;
-        self
+        self.challenge_required_on_new_device = input; self
     }
     /// <p>When true, a remembered device can sign in with device authentication instead of SMS and time-based one-time password (TOTP) factors for multi-factor authentication (MFA).</p><note>
     /// <p>Whether or not <code>ChallengeRequiredOnNewDevice</code> is true, users who sign in with devices that have not been confirmed or remembered must still provide a second factor in a user pool that requires MFA.</p>
@@ -72,8 +71,7 @@ impl DeviceConfigurationTypeBuilder {
     /// <p>When true, Amazon Cognito doesn't automatically remember a user's device when your app sends a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmDevice.html"> ConfirmDevice</a> API request. In your app, create a prompt for your user to choose whether they want to remember their device. Return the user's choice in an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html"> UpdateDeviceStatus</a> API request.</p>
     /// <p>When <code>DeviceOnlyRememberedOnUserPrompt</code> is <code>false</code>, Amazon Cognito immediately remembers devices that you register in a <code>ConfirmDevice</code> API request.</p>
     pub fn set_device_only_remembered_on_user_prompt(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.device_only_remembered_on_user_prompt = input;
-        self
+        self.device_only_remembered_on_user_prompt = input; self
     }
     /// <p>When true, Amazon Cognito doesn't automatically remember a user's device when your app sends a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmDevice.html"> ConfirmDevice</a> API request. In your app, create a prompt for your user to choose whether they want to remember their device. Return the user's choice in an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html"> UpdateDeviceStatus</a> API request.</p>
     /// <p>When <code>DeviceOnlyRememberedOnUserPrompt</code> is <code>false</code>, Amazon Cognito immediately remembers devices that you register in a <code>ConfirmDevice</code> API request.</p>
@@ -83,8 +81,13 @@ impl DeviceConfigurationTypeBuilder {
     /// Consumes the builder and constructs a [`DeviceConfigurationType`](crate::types::DeviceConfigurationType).
     pub fn build(self) -> crate::types::DeviceConfigurationType {
         crate::types::DeviceConfigurationType {
-            challenge_required_on_new_device: self.challenge_required_on_new_device.unwrap_or_default(),
-            device_only_remembered_on_user_prompt: self.device_only_remembered_on_user_prompt.unwrap_or_default(),
+            challenge_required_on_new_device: self.challenge_required_on_new_device
+                .unwrap_or_default()
+            ,
+            device_only_remembered_on_user_prompt: self.device_only_remembered_on_user_prompt
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

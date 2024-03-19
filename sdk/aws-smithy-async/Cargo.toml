@@ -1,6 +1,6 @@
 [package]
 name = "aws-smithy-async"
-version = "1.1.8"
+version = "1.2.0"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "John DiSanti <jdisanti@amazon.com>"]
 description = "Async runtime agnostic abstractions for smithy-rs."
 edition = "2021"
@@ -9,7 +9,7 @@ repository = "https://github.com/smithy-lang/smithy-rs"
 
 [features]
 rt-tokio = ["tokio/time"]
-test-util = ["rt-tokio"]
+test-util = ["rt-tokio", "tokio/rt"]
 
 [dependencies]
 pin-project-lite = "0.2"

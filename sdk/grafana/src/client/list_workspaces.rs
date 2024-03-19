@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListWorkspaces`](crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of workspaces to include in the results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of workspaces to return. (You receive this token from a previous <code>ListWorkspaces</code> operation.)</p><br>
-    /// - On success, responds with [`ListWorkspacesOutput`](crate::operation::list_workspaces::ListWorkspacesOutput) with field(s):
+                            /// - On success, responds with [`ListWorkspacesOutput`](crate::operation::list_workspaces::ListWorkspacesOutput) with field(s):
     ///   - [`workspaces(Vec::<WorkspaceSummary>)`](crate::operation::list_workspaces::ListWorkspacesOutput::workspaces): <p>An array of structures that contain some information about the workspaces in the account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_workspaces::ListWorkspacesOutput::next_token): <p>The token to use when requesting the next set of workspaces.</p>
-    /// - On failure, responds with [`SdkError<ListWorkspacesError>`](crate::operation::list_workspaces::ListWorkspacesError)
+                            /// - On failure, responds with [`SdkError<ListWorkspacesError>`](crate::operation::list_workspaces::ListWorkspacesError)
     pub fn list_workspaces(&self) -> crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder {
-        crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_workspaces::builders::ListWorkspacesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

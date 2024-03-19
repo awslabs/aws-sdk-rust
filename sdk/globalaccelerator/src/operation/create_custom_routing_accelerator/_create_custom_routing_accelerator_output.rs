@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCustomRoutingAcceleratorOutput {
+pub struct CreateCustomRoutingAcceleratorOutput  {
     /// <p>The accelerator that is created.</p>
     pub accelerator: ::std::option::Option<crate::types::CustomRoutingAccelerator>,
     _request_id: Option<String>,
 }
-impl CreateCustomRoutingAcceleratorOutput {
+impl  CreateCustomRoutingAcceleratorOutput  {
     /// <p>The accelerator that is created.</p>
-    pub fn accelerator(&self) -> ::std::option::Option<&crate::types::CustomRoutingAccelerator> {
+    pub fn accelerator(&self) -> ::std::option::Option<& crate::types::CustomRoutingAccelerator> {
         self.accelerator.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateCustomRoutingAcceleratorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateCustomRoutingAcceleratorOutput {
     /// Creates a new builder-style object to manufacture [`CreateCustomRoutingAcceleratorOutput`](crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAcceleratorOutput).
     pub fn builder() -> crate::operation::create_custom_routing_accelerator::builders::CreateCustomRoutingAcceleratorOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateCustomRoutingAcceleratorOutputBuilder {
     }
     /// <p>The accelerator that is created.</p>
     pub fn set_accelerator(mut self, input: ::std::option::Option<crate::types::CustomRoutingAccelerator>) -> Self {
-        self.accelerator = input;
-        self
+        self.accelerator = input; self
     }
     /// <p>The accelerator that is created.</p>
     pub fn get_accelerator(&self) -> &::std::option::Option<crate::types::CustomRoutingAccelerator> {
         &self.accelerator
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateCustomRoutingAcceleratorOutput`](crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAcceleratorOutput).
     pub fn build(self) -> crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAcceleratorOutput {
         crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAcceleratorOutput {
-            accelerator: self.accelerator,
+            accelerator: self.accelerator
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

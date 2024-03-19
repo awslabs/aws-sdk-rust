@@ -3,21 +3,20 @@
 /// <p>A rule statement that inspects for cross-site scripting (XSS) attacks. In XSS attacks, the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious client-site scripts into other legitimate web browsers.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct XssMatchStatement {
+pub struct XssMatchStatement  {
     /// <p>The part of the web request that you want WAF to inspect.</p>
     pub field_to_match: ::std::option::Option<crate::types::FieldToMatch>,
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents.</p>
-    pub text_transformations: ::std::vec::Vec<crate::types::TextTransformation>,
+    pub text_transformations: ::std::vec::Vec::<crate::types::TextTransformation>,
 }
-impl XssMatchStatement {
+impl  XssMatchStatement  {
     /// <p>The part of the web request that you want WAF to inspect.</p>
-    pub fn field_to_match(&self) -> ::std::option::Option<&crate::types::FieldToMatch> {
+    pub fn field_to_match(&self) -> ::std::option::Option<& crate::types::FieldToMatch> {
         self.field_to_match.as_ref()
     }
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents.</p>
-    pub fn text_transformations(&self) -> &[crate::types::TextTransformation] {
-        use std::ops::Deref;
-        self.text_transformations.deref()
+    pub fn text_transformations(&self) -> & [crate::types::TextTransformation] {
+        use std::ops::Deref; self.text_transformations.deref()
     }
 }
 impl XssMatchStatement {
@@ -32,7 +31,7 @@ impl XssMatchStatement {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct XssMatchStatementBuilder {
     pub(crate) field_to_match: ::std::option::Option<crate::types::FieldToMatch>,
-    pub(crate) text_transformations: ::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>>,
+    pub(crate) text_transformations: ::std::option::Option<::std::vec::Vec::<crate::types::TextTransformation>>,
 }
 impl XssMatchStatementBuilder {
     /// <p>The part of the web request that you want WAF to inspect.</p>
@@ -43,8 +42,7 @@ impl XssMatchStatementBuilder {
     }
     /// <p>The part of the web request that you want WAF to inspect.</p>
     pub fn set_field_to_match(mut self, input: ::std::option::Option<crate::types::FieldToMatch>) -> Self {
-        self.field_to_match = input;
-        self
+        self.field_to_match = input; self
     }
     /// <p>The part of the web request that you want WAF to inspect.</p>
     pub fn get_field_to_match(&self) -> &::std::option::Option<crate::types::FieldToMatch> {
@@ -57,31 +55,33 @@ impl XssMatchStatementBuilder {
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents.</p>
     pub fn text_transformations(mut self, input: crate::types::TextTransformation) -> Self {
         let mut v = self.text_transformations.unwrap_or_default();
-        v.push(input);
-        self.text_transformations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.text_transformations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents.</p>
-    pub fn set_text_transformations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>>) -> Self {
-        self.text_transformations = input;
-        self
+    pub fn set_text_transformations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TextTransformation>>) -> Self {
+        self.text_transformations = input; self
     }
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents.</p>
-    pub fn get_text_transformations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>> {
+    pub fn get_text_transformations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TextTransformation>> {
         &self.text_transformations
     }
     /// Consumes the builder and constructs a [`XssMatchStatement`](crate::types::XssMatchStatement).
     /// This method will fail if any of the following fields are not set:
     /// - [`text_transformations`](crate::types::builders::XssMatchStatementBuilder::text_transformations)
     pub fn build(self) -> ::std::result::Result<crate::types::XssMatchStatement, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::XssMatchStatement {
-            field_to_match: self.field_to_match,
-            text_transformations: self.text_transformations.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "text_transformations",
-                    "text_transformations was not specified but it is required when building XssMatchStatement",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::XssMatchStatement {
+                field_to_match: self.field_to_match
+                ,
+                text_transformations: self.text_transformations
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("text_transformations", "text_transformations was not specified but it is required when building XssMatchStatement")
+                    )?
+                ,
+            }
+        )
     }
 }
+

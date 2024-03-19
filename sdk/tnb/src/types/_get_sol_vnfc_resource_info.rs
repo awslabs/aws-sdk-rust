@@ -4,13 +4,13 @@
 /// <p>A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSolVnfcResourceInfo {
+pub struct GetSolVnfcResourceInfo  {
     /// <p>The metadata of the network function compute.</p>
     pub metadata: ::std::option::Option<crate::types::GetSolVnfcResourceInfoMetadata>,
 }
-impl GetSolVnfcResourceInfo {
+impl  GetSolVnfcResourceInfo  {
     /// <p>The metadata of the network function compute.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&crate::types::GetSolVnfcResourceInfoMetadata> {
+    pub fn metadata(&self) -> ::std::option::Option<& crate::types::GetSolVnfcResourceInfoMetadata> {
         self.metadata.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl GetSolVnfcResourceInfoBuilder {
     }
     /// <p>The metadata of the network function compute.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::GetSolVnfcResourceInfoMetadata>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// <p>The metadata of the network function compute.</p>
     pub fn get_metadata(&self) -> &::std::option::Option<crate::types::GetSolVnfcResourceInfoMetadata> {
@@ -44,6 +43,10 @@ impl GetSolVnfcResourceInfoBuilder {
     }
     /// Consumes the builder and constructs a [`GetSolVnfcResourceInfo`](crate::types::GetSolVnfcResourceInfo).
     pub fn build(self) -> crate::types::GetSolVnfcResourceInfo {
-        crate::types::GetSolVnfcResourceInfo { metadata: self.metadata }
+        crate::types::GetSolVnfcResourceInfo {
+            metadata: self.metadata
+            ,
+        }
     }
 }
+

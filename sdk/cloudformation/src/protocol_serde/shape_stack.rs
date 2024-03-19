@@ -314,3 +314,4 @@ pub fn de_stack(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result
     }
     Ok(crate::serde_util::stack_correct_errors(builder).build())
 }
+

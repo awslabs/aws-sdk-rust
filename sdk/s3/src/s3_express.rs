@@ -32,7 +32,10 @@ pub(crate) mod auth {
             SCHEME_ID
         }
 
-        fn identity_resolver(&self, identity_resolvers: &dyn GetIdentityResolver) -> Option<SharedIdentityResolver> {
+        fn identity_resolver(
+            &self,
+            identity_resolvers: &dyn GetIdentityResolver,
+        ) -> Option<SharedIdentityResolver> {
             identity_resolvers.identity_resolver(self.scheme_id())
         }
 
@@ -94,7 +97,11 @@ pub(crate) mod identity_cache {
     }
 
     impl S3ExpressIdentityCache {
-        pub(crate) fn new(capacity: usize, time_source: SharedTimeSource, buffer_time: Duration) -> Self {
+        pub(crate) fn new(
+            capacity: usize,
+            time_source: SharedTimeSource,
+            buffer_time: Duration,
+        ) -> Self {
             // It'd be nice to use a cryptographically secure random generator but not necessary.
             // The cache is memory only and randomization here is mostly to obfuscate the key and
             // make it reasonable length.
@@ -111,7 +118,8 @@ pub(crate) mod identity_cache {
 
         pub(crate) fn key(&self, bucket_name: &str, creds: &Credentials) -> CacheKey {
             CacheKey({
-                let mut mac = Hmac::<Sha256>::new_from_slice(self.random_bytes.as_slice()).expect("should be created from random 64 bytes");
+                let mut mac = Hmac::<Sha256>::new_from_slice(self.random_bytes.as_slice())
+                    .expect("should be created from random 64 bytes");
                 let input = format!("{}{}", creds.access_key_id(), creds.secret_access_key());
                 mac.update(input.as_ref());
                 let mut inner = hex::encode(mac.finalize_fixed());
@@ -120,14 +128,20 @@ pub(crate) mod identity_cache {
             })
         }
 
-        pub(crate) async fn get_or_load<F, Fut>(&self, key: CacheKey, loader: F) -> Result<Identity, BoxError>
+        pub(crate) async fn get_or_load<F, Fut>(
+            &self,
+            key: CacheKey,
+            loader: F,
+        ) -> Result<Identity, BoxError>
         where
             F: FnOnce() -> Fut,
             Fut: Future<Output = Result<(Identity, SystemTime), BoxError>>,
         {
             let expiring_cache = {
                 let mut inner = self.inner.lock().unwrap();
-                inner.get_or_insert_mut(key, || ExpiringCache::new(self.buffer_time)).clone()
+                inner
+                    .get_or_insert_mut(key, || ExpiringCache::new(self.buffer_time))
+                    .clone()
             };
 
             let now = self.time_source.now();
@@ -145,7 +159,9 @@ pub(crate) mod identity_cache {
                 None => {
                     let start_time = self.time_source.now();
                     let identity = expiring_cache.get_or_load(loader).await?;
-                    let expiration = identity.expiration().ok_or("SessionCredentials` always has expiration")?;
+                    let expiration = identity
+                        .expiration()
+                        .ok_or("SessionCredentials` always has expiration")?;
                     let printable = DateTime::from(expiration);
                     tracing::info!(
                         new_expiration=%printable,
@@ -165,8 +181,12 @@ pub(crate) mod identity_cache {
         use aws_smithy_async::rt::sleep::TokioSleep;
         use aws_smithy_async::test_util::ManualTimeSource;
         use aws_smithy_runtime_api::client::identity::http::Token;
-        use aws_smithy_runtime_api::client::identity::{IdentityFuture, ResolveIdentity, SharedIdentityResolver};
-        use aws_smithy_runtime_api::client::runtime_components::{RuntimeComponents, RuntimeComponentsBuilder};
+        use aws_smithy_runtime_api::client::identity::{
+            IdentityFuture, ResolveIdentity, SharedIdentityResolver,
+        };
+        use aws_smithy_runtime_api::client::runtime_components::{
+            RuntimeComponents, RuntimeComponentsBuilder,
+        };
         use aws_smithy_runtime_api::shared::IntoShared;
         use aws_smithy_types::config_bag::ConfigBag;
         use futures_util::stream::FuturesUnordered;
@@ -183,11 +203,17 @@ pub(crate) mod identity_cache {
             Identity::new(Token::new("test", expiration), expiration)
         }
 
-        fn test_identity_resolver(load_list: Vec<Result<Identity, BoxError>>) -> SharedIdentityResolver {
+        fn test_identity_resolver(
+            load_list: Vec<Result<Identity, BoxError>>,
+        ) -> SharedIdentityResolver {
             #[derive(Debug)]
             struct Resolver(Mutex<Vec<Result<Identity, BoxError>>>);
             impl ResolveIdentity for Resolver {
-                fn resolve_identity<'a>(&'a self, _: &'a RuntimeComponents, _config_bag: &'a ConfigBag) -> IdentityFuture<'a> {
+                fn resolve_identity<'a>(
+                    &'a self,
+                    _: &'a RuntimeComponents,
+                    _config_bag: &'a ConfigBag,
+                ) -> IdentityFuture<'a> {
                     let mut list = self.0.lock().unwrap();
                     if list.len() > 0 {
                         let next = list.remove(0);
@@ -203,13 +229,23 @@ pub(crate) mod identity_cache {
             SharedIdentityResolver::new(Resolver(Mutex::new(load_list)))
         }
 
-        async fn load(identity_resolver: SharedIdentityResolver, runtime_components: &RuntimeComponents) -> Result<(Identity, SystemTime), BoxError> {
-            let identity = identity_resolver.resolve_identity(&runtime_components, &ConfigBag::base()).await.unwrap();
+        async fn load(
+            identity_resolver: SharedIdentityResolver,
+            runtime_components: &RuntimeComponents,
+        ) -> Result<(Identity, SystemTime), BoxError> {
+            let identity = identity_resolver
+                .resolve_identity(&runtime_components, &ConfigBag::base())
+                .await
+                .unwrap();
             Ok((identity.clone(), identity.expiration().unwrap()))
         }
 
-        async fn expect_identity<F, Fut>(expired_secs: u64, sut: &S3ExpressIdentityCache, key: CacheKey, loader: F)
-        where
+        async fn expect_identity<F, Fut>(
+            expired_secs: u64,
+            sut: &S3ExpressIdentityCache,
+            key: CacheKey,
+            loader: F,
+        ) where
             F: FnOnce() -> Fut,
             Fut: Future<Output = Result<(Identity, SystemTime), BoxError>>,
         {
@@ -226,11 +262,18 @@ pub(crate) mod identity_cache {
                 .build()
                 .unwrap();
 
-            let sut = S3ExpressIdentityCache::new(1, time.clone().into_shared(), DEFAULT_BUFFER_TIME);
+            let sut =
+                S3ExpressIdentityCache::new(1, time.clone().into_shared(), DEFAULT_BUFFER_TIME);
 
-            let identity_resolver = test_identity_resolver(vec![Ok(identity_expiring_in(1000)), Ok(identity_expiring_in(2000))]);
+            let identity_resolver = test_identity_resolver(vec![
+                Ok(identity_expiring_in(1000)),
+                Ok(identity_expiring_in(2000)),
+            ]);
 
-            let key = sut.key("test-bucket--usw2-az1--x-s3", &Credentials::for_tests_with_session_token());
+            let key = sut.key(
+                "test-bucket--usw2-az1--x-s3",
+                &Credentials::for_tests_with_session_token(),
+            );
 
             // First call to the cache, populating a cache entry.
             expect_identity(1000, &sut, key.clone(), || {
@@ -244,13 +287,19 @@ pub(crate) mod identity_cache {
             // i.e. 500 < 1000.
             time.set_time(epoch_secs(500));
 
-            expect_identity(1000, &sut, key.clone(), || async move { panic!("new identity should not be loaded") }).await;
+            expect_identity(1000, &sut, key.clone(), || async move {
+                panic!("new identity should not be loaded")
+            })
+            .await;
 
             // Testing for a cache miss by advancing time such that the updated time is now after the expiration of the first identity
             // and before the expiration of the second identity i.e. 1000 < 1500 && 1500 < 2000.
             time.set_time(epoch_secs(1500));
 
-            expect_identity(2000, &sut, key, || async move { load(identity_resolver, &runtime_components).await }).await;
+            expect_identity(2000, &sut, key, || async move {
+                load(identity_resolver, &runtime_components).await
+            })
+            .await;
         }
 
         #[test]
@@ -287,7 +336,10 @@ pub(crate) mod identity_cache {
 
             let mut tasks = Vec::new();
             for i in 0..number_of_buckets {
-                let key = sut.key(&format!("test-bucket-{i}-usw2-az1--x-s3"), &Credentials::for_tests_with_session_token());
+                let key = sut.key(
+                    &format!("test-bucket-{i}-usw2-az1--x-s3"),
+                    &Credentials::for_tests_with_session_token(),
+                );
                 for _ in 0..50 {
                     let sut = sut.clone();
                     let key = key.clone();
@@ -297,11 +349,18 @@ pub(crate) mod identity_cache {
                     tasks.push(rt.spawn(async move {
                         let now = time.advance(Duration::from_secs(1));
                         let identity: Identity = sut
-                            .get_or_load(key, || async move { load(identity_resolver, &runtime_components).await })
+                            .get_or_load(key, || async move {
+                                load(identity_resolver, &runtime_components).await
+                            })
                             .await
                             .unwrap();
 
-                        assert!(identity.expiration().unwrap() >= now, "{:?} >= {:?}", identity.expiration(), now);
+                        assert!(
+                            identity.expiration().unwrap() >= now,
+                            "{:?} >= {:?}",
+                            identity.expiration(),
+                            now
+                        );
                     }));
                 }
             }
@@ -330,8 +389,12 @@ pub(crate) mod identity_cache {
                 Ok(identity_expiring_in(4000)),
             ]);
 
-            let [key1, key2, key3] =
-                [1, 2, 3].map(|i| sut.key(&format!("test-bucket-{i}--usw2-az1--x-s3"), &Credentials::for_tests_with_session_token()));
+            let [key1, key2, key3] = [1, 2, 3].map(|i| {
+                sut.key(
+                    &format!("test-bucket-{i}--usw2-az1--x-s3"),
+                    &Credentials::for_tests_with_session_token(),
+                )
+            });
 
             // This should pupulate a cache entry for `key1`.
             expect_identity(1000, &sut, key1.clone(), || {
@@ -341,7 +404,10 @@ pub(crate) mod identity_cache {
             })
             .await;
             // This immediate next call for `key1` should be a cache hit.
-            expect_identity(1000, &sut, key1.clone(), || async move { panic!("new identity should not be loaded") }).await;
+            expect_identity(1000, &sut, key1.clone(), || async move {
+                panic!("new identity should not be loaded")
+            })
+            .await;
 
             // This should pupulate a cache entry for `key2`.
             expect_identity(2000, &sut, key2, || {
@@ -361,10 +427,16 @@ pub(crate) mod identity_cache {
 
             // Attempt to get an identity for `key1` should end up fetching a new one since its cache entry has been evicted.
             // This fetch should now evict a cache entry for `key2`.
-            expect_identity(4000, &sut, key1, || async move { load(identity_resolver, &runtime_components).await }).await;
+            expect_identity(4000, &sut, key1, || async move {
+                load(identity_resolver, &runtime_components).await
+            })
+            .await;
 
             // A cache entry for `key3` should still exist in the cache.
-            expect_identity(3000, &sut, key3, || async move { panic!("new identity should not be loaded") }).await;
+            expect_identity(3000, &sut, key3, || async move {
+                panic!("new identity should not be loaded")
+            })
+            .await;
         }
     }
 }
@@ -379,9 +451,13 @@ pub(crate) mod identity_provider {
     use aws_smithy_async::time::{SharedTimeSource, TimeSource};
     use aws_smithy_runtime_api::box_error::BoxError;
     use aws_smithy_runtime_api::client::endpoint::EndpointResolverParams;
-    use aws_smithy_runtime_api::client::identity::{Identity, IdentityCacheLocation, IdentityFuture, ResolveCachedIdentity, ResolveIdentity};
+    use aws_smithy_runtime_api::client::identity::{
+        Identity, IdentityCacheLocation, IdentityFuture, ResolveCachedIdentity, ResolveIdentity,
+    };
     use aws_smithy_runtime_api::client::interceptors::SharedInterceptor;
-    use aws_smithy_runtime_api::client::runtime_components::{GetIdentityResolver, RuntimeComponents};
+    use aws_smithy_runtime_api::client::runtime_components::{
+        GetIdentityResolver, RuntimeComponents,
+    };
     use aws_smithy_runtime_api::shared::IntoShared;
     use aws_smithy_types::config_bag::ConfigBag;
 
@@ -389,6 +465,7 @@ pub(crate) mod identity_provider {
 
     #[derive(Debug)]
     pub(crate) struct DefaultS3ExpressIdentityProvider {
+        behavior_version: crate::config::BehaviorVersion,
         cache: S3ExpressIdentityCache,
     }
 
@@ -400,10 +477,11 @@ pub(crate) mod identity_provider {
                 session_creds.access_key_id,
                 session_creds.secret_access_key,
                 Some(session_creds.session_token),
-                Some(
-                    SystemTime::try_from(session_creds.expiration)
-                        .map_err(|_| CredentialsError::unhandled("credential expiration time cannot be represented by a SystemTime"))?,
-                ),
+                Some(SystemTime::try_from(session_creds.expiration).map_err(|_| {
+                    CredentialsError::unhandled(
+                        "credential expiration time cannot be represented by a SystemTime",
+                    )
+                })?),
                 "s3express",
             ))
         }
@@ -414,7 +492,11 @@ pub(crate) mod identity_provider {
             Builder::default()
         }
 
-        async fn identity<'a>(&'a self, runtime_components: &'a RuntimeComponents, config_bag: &'a ConfigBag) -> Result<Identity, BoxError> {
+        async fn identity<'a>(
+            &'a self,
+            runtime_components: &'a RuntimeComponents,
+            config_bag: &'a ConfigBag,
+        ) -> Result<Identity, BoxError> {
             let bucket_name = self.bucket_name(config_bag)?;
 
             let sigv4_identity_resolver = runtime_components
@@ -425,26 +507,35 @@ pub(crate) mod identity_provider {
                 .resolve_cached_identity(sigv4_identity_resolver, runtime_components, config_bag)
                 .await?;
 
-            let credentials = aws_identity
-                .data::<Credentials>()
-                .ok_or("wrong identity type for SigV4. Expected AWS credentials but got `{identity:?}")?;
+            let credentials = aws_identity.data::<Credentials>().ok_or(
+                "wrong identity type for SigV4. Expected AWS credentials but got `{identity:?}",
+            )?;
 
             let key = self.cache.key(bucket_name, credentials);
             self.cache
                 .get_or_load(key, || async move {
-                    let creds = self.express_session_credentials(bucket_name, runtime_components, config_bag).await?;
+                    let creds = self
+                        .express_session_credentials(bucket_name, runtime_components, config_bag)
+                        .await?;
                     let data = Credentials::try_from(creds)?;
-                    Ok((Identity::new(data.clone(), data.expiry()), data.expiry().unwrap()))
+                    Ok((
+                        Identity::new(data.clone(), data.expiry()),
+                        data.expiry().unwrap(),
+                    ))
                 })
                 .await
         }
 
         fn bucket_name<'a>(&'a self, config_bag: &'a ConfigBag) -> Result<&'a str, BoxError> {
-            let params = config_bag.load::<EndpointResolverParams>().expect("endpoint resolver params must be set");
+            let params = config_bag
+                .load::<EndpointResolverParams>()
+                .expect("endpoint resolver params must be set");
             let params = params
                 .get::<crate::config::endpoint::Params>()
                 .expect("`Params` should be wrapped in `EndpointResolverParams`");
-            params.bucket().ok_or("A bucket was not set in endpoint params".into())
+            params
+                .bucket()
+                .ok_or("A bucket was not set in endpoint params".into())
         }
 
         async fn express_session_credentials<'a>(
@@ -453,8 +544,8 @@ pub(crate) mod identity_provider {
             runtime_components: &'a RuntimeComponents,
             config_bag: &'a ConfigBag,
         ) -> Result<SessionCredentials, BoxError> {
-            // TODO(Post S3Express release): Thread through `BehaviorVersion` from the outer S3 client
-            let mut config_builder = crate::config::Builder::from_config_bag(config_bag).behavior_version(crate::config::BehaviorVersion::latest());
+            let mut config_builder = crate::config::Builder::from_config_bag(config_bag)
+                .behavior_version(self.behavior_version.clone());
 
             // inherits all runtime components from a current S3 operation but clears out
             // out interceptors configured for that operation
@@ -470,17 +561,34 @@ pub(crate) mod identity_provider {
                 .send()
                 .await?;
 
-            response.credentials.ok_or("no session credentials in response".into())
+            response
+                .credentials
+                .ok_or("no session credentials in response".into())
         }
     }
 
     #[derive(Default)]
     pub(crate) struct Builder {
+        behavior_version: Option<crate::config::BehaviorVersion>,
         time_source: Option<SharedTimeSource>,
         buffer_time: Option<Duration>,
     }
 
     impl Builder {
+        pub(crate) fn behavior_version(
+            mut self,
+            behavior_version: crate::config::BehaviorVersion,
+        ) -> Self {
+            self.set_behavior_version(Some(behavior_version));
+            self
+        }
+        pub(crate) fn set_behavior_version(
+            &mut self,
+            behavior_version: Option<crate::config::BehaviorVersion>,
+        ) -> &mut Self {
+            self.behavior_version = behavior_version;
+            self
+        }
         pub(crate) fn time_source(mut self, time_source: impl TimeSource + 'static) -> Self {
             self.set_time_source(time_source.into_shared());
             self
@@ -501,6 +609,9 @@ pub(crate) mod identity_provider {
         }
         pub(crate) fn build(self) -> DefaultS3ExpressIdentityProvider {
             DefaultS3ExpressIdentityProvider {
+                behavior_version: self
+                    .behavior_version
+                    .expect("required field `behavior_version` should be set"),
                 cache: S3ExpressIdentityCache::new(
                     DEFAULT_MAX_CACHE_CAPACITY,
                     self.time_source.unwrap_or_default(),
@@ -511,7 +622,11 @@ pub(crate) mod identity_provider {
     }
 
     impl ResolveIdentity for DefaultS3ExpressIdentityProvider {
-        fn resolve_identity<'a>(&'a self, runtime_components: &'a RuntimeComponents, config_bag: &'a ConfigBag) -> IdentityFuture<'a> {
+        fn resolve_identity<'a>(
+            &'a self,
+            runtime_components: &'a RuntimeComponents,
+            config_bag: &'a ConfigBag,
+        ) -> IdentityFuture<'a> {
             IdentityFuture::new(async move { self.identity(runtime_components, config_bag).await })
         }
 
@@ -530,7 +645,8 @@ pub(crate) mod runtime_plugin {
     use aws_types::os_shim_internal::Env;
 
     mod env {
-        pub(super) const S3_DISABLE_EXPRESS_SESSION_AUTH: &str = "AWS_S3_DISABLE_EXPRESS_SESSION_AUTH";
+        pub(super) const S3_DISABLE_EXPRESS_SESSION_AUTH: &str =
+            "AWS_S3_DISABLE_EXPRESS_SESSION_AUTH";
     }
 
     #[derive(Debug)]
@@ -539,24 +655,35 @@ pub(crate) mod runtime_plugin {
     }
 
     impl S3ExpressRuntimePlugin {
-        pub(crate) fn new(disable_s3_express_session_token: Option<crate::config::DisableS3ExpressSessionAuth>) -> Self {
+        pub(crate) fn new(
+            disable_s3_express_session_token: Option<crate::config::DisableS3ExpressSessionAuth>,
+        ) -> Self {
             Self::new_with(disable_s3_express_session_token, Env::real())
         }
 
-        fn new_with(disable_s3_express_session_token: Option<crate::config::DisableS3ExpressSessionAuth>, env: Env) -> Self {
+        fn new_with(
+            disable_s3_express_session_token: Option<crate::config::DisableS3ExpressSessionAuth>,
+            env: Env,
+        ) -> Self {
             let mut layer = Layer::new("S3ExpressRuntimePlugin");
             if disable_s3_express_session_token.is_none() {
                 match env.get(env::S3_DISABLE_EXPRESS_SESSION_AUTH) {
-                    Ok(value) if value.eq_ignore_ascii_case("true") || value.eq_ignore_ascii_case("false") => {
-                        let value = value.to_lowercase().parse::<bool>().expect("just checked to be a bool-valued string");
-                        layer.store_or_unset(Some(crate::config::DisableS3ExpressSessionAuth(value)));
+                    Ok(value)
+                        if value.eq_ignore_ascii_case("true")
+                            || value.eq_ignore_ascii_case("false") =>
+                    {
+                        let value = value
+                            .to_lowercase()
+                            .parse::<bool>()
+                            .expect("just checked to be a bool-valued string");
+                        layer.store_or_unset(Some(crate::config::DisableS3ExpressSessionAuth(
+                            value,
+                        )));
                     }
                     Ok(value) => {
-                        tracing::warn!(
-                            "environment variable `{}` ignored since it only accepts either `true` or `false` (case-insensitive), but got `{}`.",
+                        tracing::warn!("environment variable `{}` ignored since it only accepts either `true` or `false` (case-insensitive), but got `{}`.",
                             env::S3_DISABLE_EXPRESS_SESSION_AUTH,
-                            value
-                        )
+                            value)
                     }
                     _ => {
                         // TODO(aws-sdk-rust#1073): Transfer a value of
@@ -565,13 +692,14 @@ pub(crate) mod runtime_plugin {
                 }
             }
 
-            let session_token_name_override = SigV4SessionTokenNameOverride::new(|settings: &SigningSettings, cfg: &ConfigBag| {
-                // Not configured for S3 express, use the original session token name override
-                if !crate::s3_express::utils::for_s3_express(cfg) {
-                    return Ok(settings.session_token_name_override);
-                }
+            let session_token_name_override = SigV4SessionTokenNameOverride::new(
+                |settings: &SigningSettings, cfg: &ConfigBag| {
+                    // Not configured for S3 express, use the original session token name override
+                    if !crate::s3_express::utils::for_s3_express(cfg) {
+                        return Ok(settings.session_token_name_override);
+                    }
 
-                let session_token_name_override = Some(match settings.signature_location {
+                    let session_token_name_override = Some(match settings.signature_location {
                     SignatureLocation::Headers => "x-amz-s3session-token",
                     SignatureLocation::QueryParams => "X-Amz-S3session-Token",
                     _ => {
@@ -580,11 +708,14 @@ pub(crate) mod runtime_plugin {
                         ))
                     }
                 });
-                Ok(session_token_name_override)
-            });
+                    Ok(session_token_name_override)
+                },
+            );
             layer.store_or_unset(Some(session_token_name_override));
 
-            Self { config: layer.freeze() }
+            Self {
+                config: layer.freeze(),
+            }
         }
     }
 
@@ -612,18 +743,25 @@ pub(crate) mod runtime_plugin {
 
             // While this runtime plugin does not contain the config value, `ServiceRuntimePlugin`
             // will eventually provide it when a config bag is fully set up in the orchestrator.
-            assert!(sut
-                .config()
-                .is_some_and(|cfg| cfg.load::<crate::config::DisableS3ExpressSessionAuth>().is_none()));
+            assert!(sut.config().is_some_and(|cfg| cfg
+                .load::<crate::config::DisableS3ExpressSessionAuth>()
+                .is_none()));
         }
 
         #[test]
         fn disable_option_set_from_env_should_take_the_second_highest_precedence() {
             // An environment variable says session auth is disabled
-            let sut = S3ExpressRuntimePlugin::new_with(None, Env::from_slice(&[(super::env::S3_DISABLE_EXPRESS_SESSION_AUTH, "true")]));
+            let sut = S3ExpressRuntimePlugin::new_with(
+                None,
+                Env::from_slice(&[(super::env::S3_DISABLE_EXPRESS_SESSION_AUTH, "true")]),
+            );
 
             let cfg = sut.config().unwrap();
-            assert!(cfg.load::<crate::config::DisableS3ExpressSessionAuth>().unwrap().0);
+            assert!(
+                cfg.load::<crate::config::DisableS3ExpressSessionAuth>()
+                    .unwrap()
+                    .0
+            );
         }
 
         #[should_panic]
@@ -640,7 +778,9 @@ pub(crate) mod runtime_plugin {
             let sut = S3ExpressRuntimePlugin::new_with(None, Env::from_slice(&[]));
 
             let cfg = sut.config().unwrap();
-            assert!(cfg.load::<crate::config::DisableS3ExpressSessionAuth>().is_none());
+            assert!(cfg
+                .load::<crate::config::DisableS3ExpressSessionAuth>()
+                .is_none());
         }
     }
 }
@@ -650,8 +790,12 @@ pub(crate) mod checksum {
     use aws_smithy_checksums::ChecksumAlgorithm;
     use aws_smithy_types::config_bag::ConfigBag;
 
-    pub(crate) fn provide_default_checksum_algorithm() -> crate::http_request_checksum::DefaultRequestChecksumOverride {
-        fn _provide_default_checksum_algorithm(original_checksum: Option<ChecksumAlgorithm>, cfg: &ConfigBag) -> Option<ChecksumAlgorithm> {
+    pub(crate) fn provide_default_checksum_algorithm(
+    ) -> crate::http_request_checksum::DefaultRequestChecksumOverride {
+        fn _provide_default_checksum_algorithm(
+            original_checksum: Option<ChecksumAlgorithm>,
+            cfg: &ConfigBag,
+        ) -> Option<ChecksumAlgorithm> {
             // S3 does not have the `ChecksumAlgorithm::Md5`, therefore customers cannot set it
             // from outside.
             if original_checksum != Some(ChecksumAlgorithm::Md5) {
@@ -683,8 +827,12 @@ pub(crate) mod utils {
             _ => return false,
         };
         auth_schemes.iter().any(|doc| {
-            let config_scheme_id = doc.as_object().and_then(|object| object.get("name")).and_then(Document::as_string);
+            let config_scheme_id = doc
+                .as_object()
+                .and_then(|object| object.get("name"))
+                .and_then(Document::as_string);
             config_scheme_id == Some(crate::s3_express::auth::SCHEME_ID.as_str())
         })
     }
 }
+

@@ -23,7 +23,7 @@
 /// </payload-field></code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DynamoDbAction {
+pub struct DynamoDbAction  {
     /// <p>The data type for the hash key (also called the partition key). You can specify the following values:</p>
     /// <ul>
     /// <li>
@@ -70,7 +70,7 @@ pub struct DynamoDbAction {
     /// <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p>
     pub payload: ::std::option::Option<crate::types::Payload>,
 }
-impl DynamoDbAction {
+impl  DynamoDbAction  {
     /// <p>The data type for the hash key (also called the partition key). You can specify the following values:</p>
     /// <ul>
     /// <li>
@@ -79,18 +79,16 @@ impl DynamoDbAction {
     /// <p><code>'NUMBER'</code> - The hash key is a number.</p></li>
     /// </ul>
     /// <p>If you don't specify <code>hashKeyType</code>, the default value is <code>'STRING'</code>.</p>
-    pub fn hash_key_type(&self) -> ::std::option::Option<&str> {
+    pub fn hash_key_type(&self) -> ::std::option::Option<& str> {
         self.hash_key_type.as_deref()
     }
     /// <p>The name of the hash key (also called the partition key). The <code>hashKeyField</code> value must match the partition key of the target DynamoDB table.</p>
-    pub fn hash_key_field(&self) -> &str {
-        use std::ops::Deref;
-        self.hash_key_field.deref()
+    pub fn hash_key_field(&self) -> & str {
+        use std::ops::Deref; self.hash_key_field.deref()
     }
     /// <p>The value of the hash key (also called the partition key).</p>
-    pub fn hash_key_value(&self) -> &str {
-        use std::ops::Deref;
-        self.hash_key_value.deref()
+    pub fn hash_key_value(&self) -> & str {
+        use std::ops::Deref; self.hash_key_value.deref()
     }
     /// <p>The data type for the range key (also called the sort key), You can specify the following values:</p>
     /// <ul>
@@ -100,15 +98,15 @@ impl DynamoDbAction {
     /// <p><code>'NUMBER'</code> - The range key is number.</p></li>
     /// </ul>
     /// <p>If you don't specify <code>rangeKeyField</code>, the default value is <code>'STRING'</code>.</p>
-    pub fn range_key_type(&self) -> ::std::option::Option<&str> {
+    pub fn range_key_type(&self) -> ::std::option::Option<& str> {
         self.range_key_type.as_deref()
     }
     /// <p>The name of the range key (also called the sort key). The <code>rangeKeyField</code> value must match the sort key of the target DynamoDB table.</p>
-    pub fn range_key_field(&self) -> ::std::option::Option<&str> {
+    pub fn range_key_field(&self) -> ::std::option::Option<& str> {
         self.range_key_field.as_deref()
     }
     /// <p>The value of the range key (also called the sort key).</p>
-    pub fn range_key_value(&self) -> ::std::option::Option<&str> {
+    pub fn range_key_value(&self) -> ::std::option::Option<& str> {
         self.range_key_value.as_deref()
     }
     /// <p>The type of operation to perform. You can specify the following values:</p>
@@ -121,22 +119,21 @@ impl DynamoDbAction {
     /// <p><code>'DELETE'</code> - Delete an existing item of the DynamoDB table. This item's partition key must match the specified hash key. If you specified a range key, the range key must match the item's sort key.</p></li>
     /// </ul>
     /// <p>If you don't specify this parameter, AWS IoT Events triggers the <code>'INSERT'</code> operation.</p>
-    pub fn operation(&self) -> ::std::option::Option<&str> {
+    pub fn operation(&self) -> ::std::option::Option<& str> {
         self.operation.as_deref()
     }
     /// <p>The name of the DynamoDB column that receives the action payload.</p>
     /// <p>If you don't specify this parameter, the name of the DynamoDB column is <code>payload</code>.</p>
-    pub fn payload_field(&self) -> ::std::option::Option<&str> {
+    pub fn payload_field(&self) -> ::std::option::Option<& str> {
         self.payload_field.as_deref()
     }
     /// <p>The name of the DynamoDB table. The <code>tableName</code> value must match the table name of the target DynamoDB table.</p>
-    pub fn table_name(&self) -> &str {
-        use std::ops::Deref;
-        self.table_name.deref()
+    pub fn table_name(&self) -> & str {
+        use std::ops::Deref; self.table_name.deref()
     }
     /// <p>Information needed to configure the payload.</p>
     /// <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p>
-    pub fn payload(&self) -> ::std::option::Option<&crate::types::Payload> {
+    pub fn payload(&self) -> ::std::option::Option<& crate::types::Payload> {
         self.payload.as_ref()
     }
 }
@@ -184,8 +181,7 @@ impl DynamoDbActionBuilder {
     /// </ul>
     /// <p>If you don't specify <code>hashKeyType</code>, the default value is <code>'STRING'</code>.</p>
     pub fn set_hash_key_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hash_key_type = input;
-        self
+        self.hash_key_type = input; self
     }
     /// <p>The data type for the hash key (also called the partition key). You can specify the following values:</p>
     /// <ul>
@@ -206,8 +202,7 @@ impl DynamoDbActionBuilder {
     }
     /// <p>The name of the hash key (also called the partition key). The <code>hashKeyField</code> value must match the partition key of the target DynamoDB table.</p>
     pub fn set_hash_key_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hash_key_field = input;
-        self
+        self.hash_key_field = input; self
     }
     /// <p>The name of the hash key (also called the partition key). The <code>hashKeyField</code> value must match the partition key of the target DynamoDB table.</p>
     pub fn get_hash_key_field(&self) -> &::std::option::Option<::std::string::String> {
@@ -221,8 +216,7 @@ impl DynamoDbActionBuilder {
     }
     /// <p>The value of the hash key (also called the partition key).</p>
     pub fn set_hash_key_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hash_key_value = input;
-        self
+        self.hash_key_value = input; self
     }
     /// <p>The value of the hash key (also called the partition key).</p>
     pub fn get_hash_key_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -249,8 +243,7 @@ impl DynamoDbActionBuilder {
     /// </ul>
     /// <p>If you don't specify <code>rangeKeyField</code>, the default value is <code>'STRING'</code>.</p>
     pub fn set_range_key_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.range_key_type = input;
-        self
+        self.range_key_type = input; self
     }
     /// <p>The data type for the range key (also called the sort key), You can specify the following values:</p>
     /// <ul>
@@ -270,8 +263,7 @@ impl DynamoDbActionBuilder {
     }
     /// <p>The name of the range key (also called the sort key). The <code>rangeKeyField</code> value must match the sort key of the target DynamoDB table.</p>
     pub fn set_range_key_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.range_key_field = input;
-        self
+        self.range_key_field = input; self
     }
     /// <p>The name of the range key (also called the sort key). The <code>rangeKeyField</code> value must match the sort key of the target DynamoDB table.</p>
     pub fn get_range_key_field(&self) -> &::std::option::Option<::std::string::String> {
@@ -284,8 +276,7 @@ impl DynamoDbActionBuilder {
     }
     /// <p>The value of the range key (also called the sort key).</p>
     pub fn set_range_key_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.range_key_value = input;
-        self
+        self.range_key_value = input; self
     }
     /// <p>The value of the range key (also called the sort key).</p>
     pub fn get_range_key_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -316,8 +307,7 @@ impl DynamoDbActionBuilder {
     /// </ul>
     /// <p>If you don't specify this parameter, AWS IoT Events triggers the <code>'INSERT'</code> operation.</p>
     pub fn set_operation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operation = input;
-        self
+        self.operation = input; self
     }
     /// <p>The type of operation to perform. You can specify the following values:</p>
     /// <ul>
@@ -341,8 +331,7 @@ impl DynamoDbActionBuilder {
     /// <p>The name of the DynamoDB column that receives the action payload.</p>
     /// <p>If you don't specify this parameter, the name of the DynamoDB column is <code>payload</code>.</p>
     pub fn set_payload_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.payload_field = input;
-        self
+        self.payload_field = input; self
     }
     /// <p>The name of the DynamoDB column that receives the action payload.</p>
     /// <p>If you don't specify this parameter, the name of the DynamoDB column is <code>payload</code>.</p>
@@ -357,8 +346,7 @@ impl DynamoDbActionBuilder {
     }
     /// <p>The name of the DynamoDB table. The <code>tableName</code> value must match the table name of the target DynamoDB table.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the DynamoDB table. The <code>tableName</code> value must match the table name of the target DynamoDB table.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -373,8 +361,7 @@ impl DynamoDbActionBuilder {
     /// <p>Information needed to configure the payload.</p>
     /// <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p>
     pub fn set_payload(mut self, input: ::std::option::Option<crate::types::Payload>) -> Self {
-        self.payload = input;
-        self
+        self.payload = input; self
     }
     /// <p>Information needed to configure the payload.</p>
     /// <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p>
@@ -387,32 +374,39 @@ impl DynamoDbActionBuilder {
     /// - [`hash_key_value`](crate::types::builders::DynamoDbActionBuilder::hash_key_value)
     /// - [`table_name`](crate::types::builders::DynamoDbActionBuilder::table_name)
     pub fn build(self) -> ::std::result::Result<crate::types::DynamoDbAction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DynamoDbAction {
-            hash_key_type: self.hash_key_type,
-            hash_key_field: self.hash_key_field.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "hash_key_field",
-                    "hash_key_field was not specified but it is required when building DynamoDbAction",
-                )
-            })?,
-            hash_key_value: self.hash_key_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "hash_key_value",
-                    "hash_key_value was not specified but it is required when building DynamoDbAction",
-                )
-            })?,
-            range_key_type: self.range_key_type,
-            range_key_field: self.range_key_field,
-            range_key_value: self.range_key_value,
-            operation: self.operation,
-            payload_field: self.payload_field,
-            table_name: self.table_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "table_name",
-                    "table_name was not specified but it is required when building DynamoDbAction",
-                )
-            })?,
-            payload: self.payload,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DynamoDbAction {
+                hash_key_type: self.hash_key_type
+                ,
+                hash_key_field: self.hash_key_field
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("hash_key_field", "hash_key_field was not specified but it is required when building DynamoDbAction")
+                    )?
+                ,
+                hash_key_value: self.hash_key_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("hash_key_value", "hash_key_value was not specified but it is required when building DynamoDbAction")
+                    )?
+                ,
+                range_key_type: self.range_key_type
+                ,
+                range_key_field: self.range_key_field
+                ,
+                range_key_value: self.range_key_value
+                ,
+                operation: self.operation
+                ,
+                payload_field: self.payload_field
+                ,
+                table_name: self.table_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("table_name", "table_name was not specified but it is required when building DynamoDbAction")
+                    )?
+                ,
+                payload: self.payload
+                ,
+            }
+        )
     }
 }
+

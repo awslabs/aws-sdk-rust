@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCertificates`](crate::operation::list_certificates::builders::ListCertificatesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of certificates to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::set_next_token):<br>required: **false**<br><p>When you can get additional results from the <code>ListCertificates</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional certificates.</p><br>
-    /// - On success, responds with [`ListCertificatesOutput`](crate::operation::list_certificates::ListCertificatesOutput) with field(s):
+                            /// - On success, responds with [`ListCertificatesOutput`](crate::operation::list_certificates::ListCertificatesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_certificates::ListCertificatesOutput::next_token): <p>Returns the next token, which you can use to list the next certificate.</p>
     ///   - [`certificates(Vec::<ListedCertificate>)`](crate::operation::list_certificates::ListCertificatesOutput::certificates): <p>Returns an array of the certificates that are specified in the <code>ListCertificates</code> call.</p>
-    /// - On failure, responds with [`SdkError<ListCertificatesError>`](crate::operation::list_certificates::ListCertificatesError)
+                            /// - On failure, responds with [`SdkError<ListCertificatesError>`](crate::operation::list_certificates::ListCertificatesError)
     pub fn list_certificates(&self) -> crate::operation::list_certificates::builders::ListCertificatesFluentBuilder {
-        crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

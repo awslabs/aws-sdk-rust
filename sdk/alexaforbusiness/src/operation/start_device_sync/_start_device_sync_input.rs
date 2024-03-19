@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartDeviceSyncInput {
+pub struct StartDeviceSyncInput  {
     /// <p>The ARN of the room with which the device to sync is associated. Required.</p>
     pub room_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the device to sync. Required.</p>
     pub device_arn: ::std::option::Option<::std::string::String>,
     /// <p>Request structure to start the device sync. Required.</p>
-    pub features: ::std::option::Option<::std::vec::Vec<crate::types::Feature>>,
+    pub features: ::std::option::Option<::std::vec::Vec::<crate::types::Feature>>,
 }
-impl StartDeviceSyncInput {
+impl  StartDeviceSyncInput  {
     /// <p>The ARN of the room with which the device to sync is associated. Required.</p>
-    pub fn room_arn(&self) -> ::std::option::Option<&str> {
+    pub fn room_arn(&self) -> ::std::option::Option<& str> {
         self.room_arn.as_deref()
     }
     /// <p>The ARN of the device to sync. Required.</p>
-    pub fn device_arn(&self) -> ::std::option::Option<&str> {
+    pub fn device_arn(&self) -> ::std::option::Option<& str> {
         self.device_arn.as_deref()
     }
     /// <p>Request structure to start the device sync. Required.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.features.is_none()`.
-    pub fn features(&self) -> &[crate::types::Feature] {
-        self.features.as_deref().unwrap_or_default()
+    pub fn features(&self) -> & [crate::types::Feature] {
+        self.features.as_deref()
+        .unwrap_or_default()
     }
 }
 impl StartDeviceSyncInput {
@@ -39,7 +40,7 @@ impl StartDeviceSyncInput {
 pub struct StartDeviceSyncInputBuilder {
     pub(crate) room_arn: ::std::option::Option<::std::string::String>,
     pub(crate) device_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) features: ::std::option::Option<::std::vec::Vec<crate::types::Feature>>,
+    pub(crate) features: ::std::option::Option<::std::vec::Vec::<crate::types::Feature>>,
 }
 impl StartDeviceSyncInputBuilder {
     /// <p>The ARN of the room with which the device to sync is associated. Required.</p>
@@ -49,8 +50,7 @@ impl StartDeviceSyncInputBuilder {
     }
     /// <p>The ARN of the room with which the device to sync is associated. Required.</p>
     pub fn set_room_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.room_arn = input;
-        self
+        self.room_arn = input; self
     }
     /// <p>The ARN of the room with which the device to sync is associated. Required.</p>
     pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +63,7 @@ impl StartDeviceSyncInputBuilder {
     }
     /// <p>The ARN of the device to sync. Required.</p>
     pub fn set_device_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_arn = input;
-        self
+        self.device_arn = input; self
     }
     /// <p>The ARN of the device to sync. Required.</p>
     pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,27 +76,30 @@ impl StartDeviceSyncInputBuilder {
     /// <p>Request structure to start the device sync. Required.</p>
     pub fn features(mut self, input: crate::types::Feature) -> Self {
         let mut v = self.features.unwrap_or_default();
-        v.push(input);
-        self.features = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.features = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Request structure to start the device sync. Required.</p>
-    pub fn set_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Feature>>) -> Self {
-        self.features = input;
-        self
+    pub fn set_features(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Feature>>) -> Self {
+        self.features = input; self
     }
     /// <p>Request structure to start the device sync. Required.</p>
-    pub fn get_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Feature>> {
+    pub fn get_features(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Feature>> {
         &self.features
     }
     /// Consumes the builder and constructs a [`StartDeviceSyncInput`](crate::operation::start_device_sync::StartDeviceSyncInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_device_sync::StartDeviceSyncInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_device_sync::StartDeviceSyncInput {
-            room_arn: self.room_arn,
-            device_arn: self.device_arn,
-            features: self.features,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_device_sync::StartDeviceSyncInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_device_sync::StartDeviceSyncInput {
+                room_arn: self.room_arn
+                ,
+                device_arn: self.device_arn
+                ,
+                features: self.features
+                ,
+            }
+        )
     }
 }
+

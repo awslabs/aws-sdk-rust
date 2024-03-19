@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchQuickResponsesOutput {
+pub struct SearchQuickResponsesOutput  {
     /// <p>The results of the quick response search.</p>
-    pub results: ::std::vec::Vec<crate::types::QuickResponseSearchResultData>,
+    pub results: ::std::vec::Vec::<crate::types::QuickResponseSearchResultData>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl SearchQuickResponsesOutput {
+impl  SearchQuickResponsesOutput  {
     /// <p>The results of the quick response search.</p>
-    pub fn results(&self) -> &[crate::types::QuickResponseSearchResultData] {
-        use std::ops::Deref;
-        self.results.deref()
+    pub fn results(&self) -> & [crate::types::QuickResponseSearchResultData] {
+        use std::ops::Deref; self.results.deref()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for SearchQuickResponsesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SearchQuickResponsesOutput {
     /// Creates a new builder-style object to manufacture [`SearchQuickResponsesOutput`](crate::operation::search_quick_responses::SearchQuickResponsesOutput).
     pub fn builder() -> crate::operation::search_quick_responses::builders::SearchQuickResponsesOutputBuilder {
@@ -36,7 +35,7 @@ impl SearchQuickResponsesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchQuickResponsesOutputBuilder {
-    pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::QuickResponseSearchResultData>>,
+    pub(crate) results: ::std::option::Option<::std::vec::Vec::<crate::types::QuickResponseSearchResultData>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl SearchQuickResponsesOutputBuilder {
     /// <p>The results of the quick response search.</p>
     pub fn results(mut self, input: crate::types::QuickResponseSearchResultData) -> Self {
         let mut v = self.results.unwrap_or_default();
-        v.push(input);
-        self.results = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.results = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The results of the quick response search.</p>
-    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QuickResponseSearchResultData>>) -> Self {
-        self.results = input;
-        self
+    pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::QuickResponseSearchResultData>>) -> Self {
+        self.results = input; self
     }
     /// <p>The results of the quick response search.</p>
-    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QuickResponseSearchResultData>> {
+    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::QuickResponseSearchResultData>> {
         &self.results
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
@@ -68,38 +66,37 @@ impl SearchQuickResponsesOutputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SearchQuickResponsesOutput`](crate::operation::search_quick_responses::SearchQuickResponsesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`results`](crate::operation::search_quick_responses::builders::SearchQuickResponsesOutputBuilder::results)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::search_quick_responses::SearchQuickResponsesOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::search_quick_responses::SearchQuickResponsesOutput {
-            results: self.results.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "results",
-                    "results was not specified but it is required when building SearchQuickResponsesOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_quick_responses::SearchQuickResponsesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::search_quick_responses::SearchQuickResponsesOutput {
+                results: self.results
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("results", "results was not specified but it is required when building SearchQuickResponsesOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

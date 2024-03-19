@@ -3,7 +3,7 @@
 /// <p>A structure that contains the configuration settings for a sentiment analysis task.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SentimentConfiguration {
+pub struct SentimentConfiguration  {
     /// <p>The name of the rule in the sentiment configuration.</p>
     pub rule_name: ::std::string::String,
     /// <p>The type of sentiment, <code>POSITIVE</code>, <code>NEGATIVE</code>, or <code>NEUTRAL</code>.</p>
@@ -11,14 +11,13 @@ pub struct SentimentConfiguration {
     /// <p>Specifies the analysis interval.</p>
     pub time_period: i32,
 }
-impl SentimentConfiguration {
+impl  SentimentConfiguration  {
     /// <p>The name of the rule in the sentiment configuration.</p>
-    pub fn rule_name(&self) -> &str {
-        use std::ops::Deref;
-        self.rule_name.deref()
+    pub fn rule_name(&self) -> & str {
+        use std::ops::Deref; self.rule_name.deref()
     }
     /// <p>The type of sentiment, <code>POSITIVE</code>, <code>NEGATIVE</code>, or <code>NEUTRAL</code>.</p>
-    pub fn sentiment_type(&self) -> &crate::types::SentimentType {
+    pub fn sentiment_type(&self) -> & crate::types::SentimentType {
         &self.sentiment_type
     }
     /// <p>Specifies the analysis interval.</p>
@@ -50,8 +49,7 @@ impl SentimentConfigurationBuilder {
     }
     /// <p>The name of the rule in the sentiment configuration.</p>
     pub fn set_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_name = input;
-        self
+        self.rule_name = input; self
     }
     /// <p>The name of the rule in the sentiment configuration.</p>
     pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl SentimentConfigurationBuilder {
     }
     /// <p>The type of sentiment, <code>POSITIVE</code>, <code>NEGATIVE</code>, or <code>NEUTRAL</code>.</p>
     pub fn set_sentiment_type(mut self, input: ::std::option::Option<crate::types::SentimentType>) -> Self {
-        self.sentiment_type = input;
-        self
+        self.sentiment_type = input; self
     }
     /// <p>The type of sentiment, <code>POSITIVE</code>, <code>NEGATIVE</code>, or <code>NEUTRAL</code>.</p>
     pub fn get_sentiment_type(&self) -> &::std::option::Option<crate::types::SentimentType> {
@@ -80,8 +77,7 @@ impl SentimentConfigurationBuilder {
     }
     /// <p>Specifies the analysis interval.</p>
     pub fn set_time_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.time_period = input;
-        self
+        self.time_period = input; self
     }
     /// <p>Specifies the analysis interval.</p>
     pub fn get_time_period(&self) -> &::std::option::Option<i32> {
@@ -93,25 +89,25 @@ impl SentimentConfigurationBuilder {
     /// - [`sentiment_type`](crate::types::builders::SentimentConfigurationBuilder::sentiment_type)
     /// - [`time_period`](crate::types::builders::SentimentConfigurationBuilder::time_period)
     pub fn build(self) -> ::std::result::Result<crate::types::SentimentConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SentimentConfiguration {
-            rule_name: self.rule_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rule_name",
-                    "rule_name was not specified but it is required when building SentimentConfiguration",
-                )
-            })?,
-            sentiment_type: self.sentiment_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sentiment_type",
-                    "sentiment_type was not specified but it is required when building SentimentConfiguration",
-                )
-            })?,
-            time_period: self.time_period.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "time_period",
-                    "time_period was not specified but it is required when building SentimentConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SentimentConfiguration {
+                rule_name: self.rule_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rule_name", "rule_name was not specified but it is required when building SentimentConfiguration")
+                    )?
+                ,
+                sentiment_type: self.sentiment_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sentiment_type", "sentiment_type was not specified but it is required when building SentimentConfiguration")
+                    )?
+                ,
+                time_period: self.time_period
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("time_period", "time_period was not specified but it is required when building SentimentConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

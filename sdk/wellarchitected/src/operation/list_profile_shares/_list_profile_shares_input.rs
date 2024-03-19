@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListProfileSharesInput {
+pub struct ListProfileSharesInput  {
     /// <p>The profile ARN.</p>
     pub profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the profile is shared.</p>
@@ -14,17 +14,17 @@ pub struct ListProfileSharesInput {
     /// <p>The status of the share request.</p>
     pub status: ::std::option::Option<crate::types::ShareStatus>,
 }
-impl ListProfileSharesInput {
+impl  ListProfileSharesInput  {
     /// <p>The profile ARN.</p>
-    pub fn profile_arn(&self) -> ::std::option::Option<&str> {
+    pub fn profile_arn(&self) -> ::std::option::Option<& str> {
         self.profile_arn.as_deref()
     }
     /// <p>The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the profile is shared.</p>
-    pub fn shared_with_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn shared_with_prefix(&self) -> ::std::option::Option<& str> {
         self.shared_with_prefix.as_deref()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return for this request.</p>
@@ -32,7 +32,7 @@ impl ListProfileSharesInput {
         self.max_results
     }
     /// <p>The status of the share request.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ShareStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ShareStatus> {
         self.status.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl ListProfileSharesInputBuilder {
     }
     /// <p>The profile ARN.</p>
     pub fn set_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_arn = input;
-        self
+        self.profile_arn = input; self
     }
     /// <p>The profile ARN.</p>
     pub fn get_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl ListProfileSharesInputBuilder {
     }
     /// <p>The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the profile is shared.</p>
     pub fn set_shared_with_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.shared_with_prefix = input;
-        self
+        self.shared_with_prefix = input; self
     }
     /// <p>The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the profile is shared.</p>
     pub fn get_shared_with_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl ListProfileSharesInputBuilder {
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl ListProfileSharesInputBuilder {
     }
     /// <p>The maximum number of results to return for this request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return for this request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -118,23 +114,28 @@ impl ListProfileSharesInputBuilder {
     }
     /// <p>The status of the share request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ShareStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the share request.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ShareStatus> {
         &self.status
     }
     /// Consumes the builder and constructs a [`ListProfileSharesInput`](crate::operation::list_profile_shares::ListProfileSharesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_profile_shares::ListProfileSharesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_profile_shares::ListProfileSharesInput {
-            profile_arn: self.profile_arn,
-            shared_with_prefix: self.shared_with_prefix,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            status: self.status,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_profile_shares::ListProfileSharesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_profile_shares::ListProfileSharesInput {
+                profile_arn: self.profile_arn
+                ,
+                shared_with_prefix: self.shared_with_prefix
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

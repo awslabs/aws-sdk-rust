@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartDetectorModelAnalysisInput {
+pub struct StartDetectorModelAnalysisInput  {
     /// <p>Information that defines how a detector operates.</p>
     pub detector_model_definition: ::std::option::Option<crate::types::DetectorModelDefinition>,
 }
-impl StartDetectorModelAnalysisInput {
+impl  StartDetectorModelAnalysisInput  {
     /// <p>Information that defines how a detector operates.</p>
-    pub fn detector_model_definition(&self) -> ::std::option::Option<&crate::types::DetectorModelDefinition> {
+    pub fn detector_model_definition(&self) -> ::std::option::Option<& crate::types::DetectorModelDefinition> {
         self.detector_model_definition.as_ref()
     }
 }
@@ -34,22 +34,20 @@ impl StartDetectorModelAnalysisInputBuilder {
     }
     /// <p>Information that defines how a detector operates.</p>
     pub fn set_detector_model_definition(mut self, input: ::std::option::Option<crate::types::DetectorModelDefinition>) -> Self {
-        self.detector_model_definition = input;
-        self
+        self.detector_model_definition = input; self
     }
     /// <p>Information that defines how a detector operates.</p>
     pub fn get_detector_model_definition(&self) -> &::std::option::Option<crate::types::DetectorModelDefinition> {
         &self.detector_model_definition
     }
     /// Consumes the builder and constructs a [`StartDetectorModelAnalysisInput`](crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisInput {
-            detector_model_definition: self.detector_model_definition,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisInput {
+                detector_model_definition: self.detector_model_definition
+                ,
+            }
+        )
     }
 }
+

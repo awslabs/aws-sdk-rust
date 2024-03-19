@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let environmentstatus = unimplemented!();
 /// match environmentstatus {
@@ -41,16 +41,14 @@
 /// Specifically, when `environmentstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EnvironmentStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum EnvironmentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Created,
@@ -80,108 +78,95 @@ pub enum EnvironmentStatus {
     UpdatingNetwork,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for EnvironmentStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATED" => EnvironmentStatus::Created,
-            "CREATE_REQUESTED" => EnvironmentStatus::CreateRequested,
-            "CREATING" => EnvironmentStatus::Creating,
-            "DELETED" => EnvironmentStatus::Deleted,
-            "DELETE_REQUESTED" => EnvironmentStatus::DeleteRequested,
-            "DELETING" => EnvironmentStatus::Deleting,
-            "FAILED_CREATION" => EnvironmentStatus::FailedCreation,
-            "FAILED_DELETION" => EnvironmentStatus::FailedDeletion,
-            "FAILED_UPDATING_NETWORK" => EnvironmentStatus::FailedUpdatingNetwork,
-            "RETRY_DELETION" => EnvironmentStatus::RetryDeletion,
-            "SUSPENDED" => EnvironmentStatus::Suspended,
-            "UPDATE_NETWORK_REQUESTED" => EnvironmentStatus::UpdateNetworkRequested,
-            "UPDATING_NETWORK" => EnvironmentStatus::UpdatingNetwork,
-            other => EnvironmentStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "CREATED" => EnvironmentStatus::Created,
+"CREATE_REQUESTED" => EnvironmentStatus::CreateRequested,
+"CREATING" => EnvironmentStatus::Creating,
+"DELETED" => EnvironmentStatus::Deleted,
+"DELETE_REQUESTED" => EnvironmentStatus::DeleteRequested,
+"DELETING" => EnvironmentStatus::Deleting,
+"FAILED_CREATION" => EnvironmentStatus::FailedCreation,
+"FAILED_DELETION" => EnvironmentStatus::FailedDeletion,
+"FAILED_UPDATING_NETWORK" => EnvironmentStatus::FailedUpdatingNetwork,
+"RETRY_DELETION" => EnvironmentStatus::RetryDeletion,
+"SUSPENDED" => EnvironmentStatus::Suspended,
+"UPDATE_NETWORK_REQUESTED" => EnvironmentStatus::UpdateNetworkRequested,
+"UPDATING_NETWORK" => EnvironmentStatus::UpdatingNetwork,
+other => EnvironmentStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for EnvironmentStatus {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(EnvironmentStatus::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(EnvironmentStatus::from(s))
+                    }
+                }
 impl EnvironmentStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EnvironmentStatus::Created => "CREATED",
-            EnvironmentStatus::CreateRequested => "CREATE_REQUESTED",
-            EnvironmentStatus::Creating => "CREATING",
-            EnvironmentStatus::Deleted => "DELETED",
-            EnvironmentStatus::DeleteRequested => "DELETE_REQUESTED",
-            EnvironmentStatus::Deleting => "DELETING",
-            EnvironmentStatus::FailedCreation => "FAILED_CREATION",
-            EnvironmentStatus::FailedDeletion => "FAILED_DELETION",
-            EnvironmentStatus::FailedUpdatingNetwork => "FAILED_UPDATING_NETWORK",
-            EnvironmentStatus::RetryDeletion => "RETRY_DELETION",
-            EnvironmentStatus::Suspended => "SUSPENDED",
-            EnvironmentStatus::UpdateNetworkRequested => "UPDATE_NETWORK_REQUESTED",
-            EnvironmentStatus::UpdatingNetwork => "UPDATING_NETWORK",
-            EnvironmentStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATED",
-            "CREATE_REQUESTED",
-            "CREATING",
-            "DELETED",
-            "DELETE_REQUESTED",
-            "DELETING",
-            "FAILED_CREATION",
-            "FAILED_DELETION",
-            "FAILED_UPDATING_NETWORK",
-            "RETRY_DELETION",
-            "SUSPENDED",
-            "UPDATE_NETWORK_REQUESTED",
-            "UPDATING_NETWORK",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EnvironmentStatus::Created => "CREATED",
+    EnvironmentStatus::CreateRequested => "CREATE_REQUESTED",
+    EnvironmentStatus::Creating => "CREATING",
+    EnvironmentStatus::Deleted => "DELETED",
+    EnvironmentStatus::DeleteRequested => "DELETE_REQUESTED",
+    EnvironmentStatus::Deleting => "DELETING",
+    EnvironmentStatus::FailedCreation => "FAILED_CREATION",
+    EnvironmentStatus::FailedDeletion => "FAILED_DELETION",
+    EnvironmentStatus::FailedUpdatingNetwork => "FAILED_UPDATING_NETWORK",
+    EnvironmentStatus::RetryDeletion => "RETRY_DELETION",
+    EnvironmentStatus::Suspended => "SUSPENDED",
+    EnvironmentStatus::UpdateNetworkRequested => "UPDATE_NETWORK_REQUESTED",
+    EnvironmentStatus::UpdatingNetwork => "UPDATING_NETWORK",
+    EnvironmentStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATED", "CREATE_REQUESTED", "CREATING", "DELETED", "DELETE_REQUESTED", "DELETING", "FAILED_CREATION", "FAILED_DELETION", "FAILED_UPDATING_NETWORK", "RETRY_DELETION", "SUSPENDED", "UPDATE_NETWORK_REQUESTED", "UPDATING_NETWORK"]
+                }
+            }
 impl ::std::convert::AsRef<str> for EnvironmentStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl EnvironmentStatus {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for EnvironmentStatus {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            EnvironmentStatus::Created => write!(f, "CREATED"),
-            EnvironmentStatus::CreateRequested => write!(f, "CREATE_REQUESTED"),
-            EnvironmentStatus::Creating => write!(f, "CREATING"),
-            EnvironmentStatus::Deleted => write!(f, "DELETED"),
-            EnvironmentStatus::DeleteRequested => write!(f, "DELETE_REQUESTED"),
-            EnvironmentStatus::Deleting => write!(f, "DELETING"),
-            EnvironmentStatus::FailedCreation => write!(f, "FAILED_CREATION"),
-            EnvironmentStatus::FailedDeletion => write!(f, "FAILED_DELETION"),
-            EnvironmentStatus::FailedUpdatingNetwork => write!(f, "FAILED_UPDATING_NETWORK"),
-            EnvironmentStatus::RetryDeletion => write!(f, "RETRY_DELETION"),
-            EnvironmentStatus::Suspended => write!(f, "SUSPENDED"),
-            EnvironmentStatus::UpdateNetworkRequested => write!(f, "UPDATE_NETWORK_REQUESTED"),
-            EnvironmentStatus::UpdatingNetwork => write!(f, "UPDATING_NETWORK"),
-            EnvironmentStatus::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                EnvironmentStatus::Created => write!(f, "CREATED"),
+EnvironmentStatus::CreateRequested => write!(f, "CREATE_REQUESTED"),
+EnvironmentStatus::Creating => write!(f, "CREATING"),
+EnvironmentStatus::Deleted => write!(f, "DELETED"),
+EnvironmentStatus::DeleteRequested => write!(f, "DELETE_REQUESTED"),
+EnvironmentStatus::Deleting => write!(f, "DELETING"),
+EnvironmentStatus::FailedCreation => write!(f, "FAILED_CREATION"),
+EnvironmentStatus::FailedDeletion => write!(f, "FAILED_DELETION"),
+EnvironmentStatus::FailedUpdatingNetwork => write!(f, "FAILED_UPDATING_NETWORK"),
+EnvironmentStatus::RetryDeletion => write!(f, "RETRY_DELETION"),
+EnvironmentStatus::Suspended => write!(f, "SUSPENDED"),
+EnvironmentStatus::UpdateNetworkRequested => write!(f, "UPDATE_NETWORK_REQUESTED"),
+EnvironmentStatus::UpdatingNetwork => write!(f, "UPDATING_NETWORK"),
+EnvironmentStatus::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

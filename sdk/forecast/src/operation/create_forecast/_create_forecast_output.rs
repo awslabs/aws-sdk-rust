@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateForecastOutput {
+pub struct CreateForecastOutput  {
     /// <p>The Amazon Resource Name (ARN) of the forecast.</p>
     pub forecast_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateForecastOutput {
+impl  CreateForecastOutput  {
     /// <p>The Amazon Resource Name (ARN) of the forecast.</p>
-    pub fn forecast_arn(&self) -> ::std::option::Option<&str> {
+    pub fn forecast_arn(&self) -> ::std::option::Option<& str> {
         self.forecast_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateForecastOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateForecastOutput {
     /// Creates a new builder-style object to manufacture [`CreateForecastOutput`](crate::operation::create_forecast::CreateForecastOutput).
     pub fn builder() -> crate::operation::create_forecast::builders::CreateForecastOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateForecastOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the forecast.</p>
     pub fn set_forecast_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.forecast_arn = input;
-        self
+        self.forecast_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the forecast.</p>
     pub fn get_forecast_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.forecast_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateForecastOutput`](crate::operation::create_forecast::CreateForecastOutput).
     pub fn build(self) -> crate::operation::create_forecast::CreateForecastOutput {
         crate::operation::create_forecast::CreateForecastOutput {
-            forecast_arn: self.forecast_arn,
+            forecast_arn: self.forecast_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

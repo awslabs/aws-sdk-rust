@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDeploymentOutput {
+pub struct GetDeploymentOutput  {
     /// <p>The unique identifier of the deployment.</p>
     pub deployment_id: ::std::string::String,
     /// <p>The unique identifier of the application.</p>
@@ -19,44 +19,41 @@ pub struct GetDeploymentOutput {
     pub status_reason: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetDeploymentOutput {
+impl  GetDeploymentOutput  {
     /// <p>The unique identifier of the deployment.</p>
-    pub fn deployment_id(&self) -> &str {
-        use std::ops::Deref;
-        self.deployment_id.deref()
+    pub fn deployment_id(&self) -> & str {
+        use std::ops::Deref; self.deployment_id.deref()
     }
     /// <p>The unique identifier of the application.</p>
-    pub fn application_id(&self) -> &str {
-        use std::ops::Deref;
-        self.application_id.deref()
+    pub fn application_id(&self) -> & str {
+        use std::ops::Deref; self.application_id.deref()
     }
     /// <p>The unique identifier of the runtime environment.</p>
-    pub fn environment_id(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_id.deref()
+    pub fn environment_id(&self) -> & str {
+        use std::ops::Deref; self.environment_id.deref()
     }
     /// <p>The application version.</p>
     pub fn application_version(&self) -> i32 {
         self.application_version
     }
     /// <p>The status of the deployment.</p>
-    pub fn status(&self) -> &crate::types::DeploymentLifecycle {
+    pub fn status(&self) -> & crate::types::DeploymentLifecycle {
         &self.status
     }
     /// <p>The timestamp when the deployment was created.</p>
-    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_time
     }
     /// <p>The reason for the reported status.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDeploymentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`GetDeploymentOutput`](crate::operation::get_deployment::GetDeploymentOutput).
     pub fn builder() -> crate::operation::get_deployment::builders::GetDeploymentOutputBuilder {
@@ -86,8 +83,7 @@ impl GetDeploymentOutputBuilder {
     }
     /// <p>The unique identifier of the deployment.</p>
     pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_id = input;
-        self
+        self.deployment_id = input; self
     }
     /// <p>The unique identifier of the deployment.</p>
     pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +97,7 @@ impl GetDeploymentOutputBuilder {
     }
     /// <p>The unique identifier of the application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The unique identifier of the application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +111,7 @@ impl GetDeploymentOutputBuilder {
     }
     /// <p>The unique identifier of the runtime environment.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>The unique identifier of the runtime environment.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +125,7 @@ impl GetDeploymentOutputBuilder {
     }
     /// <p>The application version.</p>
     pub fn set_application_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.application_version = input;
-        self
+        self.application_version = input; self
     }
     /// <p>The application version.</p>
     pub fn get_application_version(&self) -> &::std::option::Option<i32> {
@@ -146,8 +139,7 @@ impl GetDeploymentOutputBuilder {
     }
     /// <p>The status of the deployment.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DeploymentLifecycle>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the deployment.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DeploymentLifecycle> {
@@ -161,8 +153,7 @@ impl GetDeploymentOutputBuilder {
     }
     /// <p>The timestamp when the deployment was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The timestamp when the deployment was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -175,22 +166,21 @@ impl GetDeploymentOutputBuilder {
     }
     /// <p>The reason for the reported status.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>The reason for the reported status.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_reason
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDeploymentOutput`](crate::operation::get_deployment::GetDeploymentOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`deployment_id`](crate::operation::get_deployment::builders::GetDeploymentOutputBuilder::deployment_id)
@@ -199,48 +189,44 @@ impl GetDeploymentOutputBuilder {
     /// - [`application_version`](crate::operation::get_deployment::builders::GetDeploymentOutputBuilder::application_version)
     /// - [`status`](crate::operation::get_deployment::builders::GetDeploymentOutputBuilder::status)
     /// - [`creation_time`](crate::operation::get_deployment::builders::GetDeploymentOutputBuilder::creation_time)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_deployment::GetDeploymentOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_deployment::GetDeploymentOutput {
-            deployment_id: self.deployment_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "deployment_id",
-                    "deployment_id was not specified but it is required when building GetDeploymentOutput",
-                )
-            })?,
-            application_id: self.application_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application_id",
-                    "application_id was not specified but it is required when building GetDeploymentOutput",
-                )
-            })?,
-            environment_id: self.environment_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "environment_id",
-                    "environment_id was not specified but it is required when building GetDeploymentOutput",
-                )
-            })?,
-            application_version: self.application_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application_version",
-                    "application_version was not specified but it is required when building GetDeploymentOutput",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building GetDeploymentOutput",
-                )
-            })?,
-            creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_time",
-                    "creation_time was not specified but it is required when building GetDeploymentOutput",
-                )
-            })?,
-            status_reason: self.status_reason,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_deployment::GetDeploymentOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_deployment::GetDeploymentOutput {
+                deployment_id: self.deployment_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("deployment_id", "deployment_id was not specified but it is required when building GetDeploymentOutput")
+                    )?
+                ,
+                application_id: self.application_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_id", "application_id was not specified but it is required when building GetDeploymentOutput")
+                    )?
+                ,
+                environment_id: self.environment_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("environment_id", "environment_id was not specified but it is required when building GetDeploymentOutput")
+                    )?
+                ,
+                application_version: self.application_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_version", "application_version was not specified but it is required when building GetDeploymentOutput")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building GetDeploymentOutput")
+                    )?
+                ,
+                creation_time: self.creation_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_time", "creation_time was not specified but it is required when building GetDeploymentOutput")
+                    )?
+                ,
+                status_reason: self.status_reason
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

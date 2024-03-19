@@ -3,7 +3,7 @@
 /// <p>Provides summary information about an algorithm.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AlgorithmSummary {
+pub struct AlgorithmSummary  {
     /// <p>The name of the algorithm that is described by the summary.</p>
     pub algorithm_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the algorithm.</p>
@@ -15,25 +15,25 @@ pub struct AlgorithmSummary {
     /// <p>The overall status of the algorithm.</p>
     pub algorithm_status: ::std::option::Option<crate::types::AlgorithmStatus>,
 }
-impl AlgorithmSummary {
+impl  AlgorithmSummary  {
     /// <p>The name of the algorithm that is described by the summary.</p>
-    pub fn algorithm_name(&self) -> ::std::option::Option<&str> {
+    pub fn algorithm_name(&self) -> ::std::option::Option<& str> {
         self.algorithm_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the algorithm.</p>
-    pub fn algorithm_arn(&self) -> ::std::option::Option<&str> {
+    pub fn algorithm_arn(&self) -> ::std::option::Option<& str> {
         self.algorithm_arn.as_deref()
     }
     /// <p>A brief description of the algorithm.</p>
-    pub fn algorithm_description(&self) -> ::std::option::Option<&str> {
+    pub fn algorithm_description(&self) -> ::std::option::Option<& str> {
         self.algorithm_description.as_deref()
     }
     /// <p>A timestamp that shows when the algorithm was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The overall status of the algorithm.</p>
-    pub fn algorithm_status(&self) -> ::std::option::Option<&crate::types::AlgorithmStatus> {
+    pub fn algorithm_status(&self) -> ::std::option::Option<& crate::types::AlgorithmStatus> {
         self.algorithm_status.as_ref()
     }
 }
@@ -63,8 +63,7 @@ impl AlgorithmSummaryBuilder {
     }
     /// <p>The name of the algorithm that is described by the summary.</p>
     pub fn set_algorithm_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.algorithm_name = input;
-        self
+        self.algorithm_name = input; self
     }
     /// <p>The name of the algorithm that is described by the summary.</p>
     pub fn get_algorithm_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +77,7 @@ impl AlgorithmSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the algorithm.</p>
     pub fn set_algorithm_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.algorithm_arn = input;
-        self
+        self.algorithm_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the algorithm.</p>
     pub fn get_algorithm_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +90,7 @@ impl AlgorithmSummaryBuilder {
     }
     /// <p>A brief description of the algorithm.</p>
     pub fn set_algorithm_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.algorithm_description = input;
-        self
+        self.algorithm_description = input; self
     }
     /// <p>A brief description of the algorithm.</p>
     pub fn get_algorithm_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +104,7 @@ impl AlgorithmSummaryBuilder {
     }
     /// <p>A timestamp that shows when the algorithm was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>A timestamp that shows when the algorithm was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -122,8 +118,7 @@ impl AlgorithmSummaryBuilder {
     }
     /// <p>The overall status of the algorithm.</p>
     pub fn set_algorithm_status(mut self, input: ::std::option::Option<crate::types::AlgorithmStatus>) -> Self {
-        self.algorithm_status = input;
-        self
+        self.algorithm_status = input; self
     }
     /// <p>The overall status of the algorithm.</p>
     pub fn get_algorithm_status(&self) -> &::std::option::Option<crate::types::AlgorithmStatus> {
@@ -132,11 +127,17 @@ impl AlgorithmSummaryBuilder {
     /// Consumes the builder and constructs a [`AlgorithmSummary`](crate::types::AlgorithmSummary).
     pub fn build(self) -> crate::types::AlgorithmSummary {
         crate::types::AlgorithmSummary {
-            algorithm_name: self.algorithm_name,
-            algorithm_arn: self.algorithm_arn,
-            algorithm_description: self.algorithm_description,
-            creation_time: self.creation_time,
-            algorithm_status: self.algorithm_status,
+            algorithm_name: self.algorithm_name
+            ,
+            algorithm_arn: self.algorithm_arn
+            ,
+            algorithm_description: self.algorithm_description
+            ,
+            creation_time: self.creation_time
+            ,
+            algorithm_status: self.algorithm_status
+            ,
         }
     }
 }
+

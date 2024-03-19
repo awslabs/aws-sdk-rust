@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListRetainedMessages`](crate::operation::list_retained_messages::builders::ListRetainedMessagesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_retained_messages::builders::ListRetainedMessagesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_retained_messages::builders::ListRetainedMessagesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_retained_messages::builders::ListRetainedMessagesFluentBuilder::set_next_token):<br>required: **false**<br><p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_retained_messages::builders::ListRetainedMessagesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_retained_messages::builders::ListRetainedMessagesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return at one time.</p><br>
-    /// - On success, responds with [`ListRetainedMessagesOutput`](crate::operation::list_retained_messages::ListRetainedMessagesOutput) with field(s):
+                            /// - On success, responds with [`ListRetainedMessagesOutput`](crate::operation::list_retained_messages::ListRetainedMessagesOutput) with field(s):
     ///   - [`retained_topics(Option<Vec::<RetainedMessageSummary>>)`](crate::operation::list_retained_messages::ListRetainedMessagesOutput::retained_topics): <p>A summary list the account's retained messages. The information returned doesn't include the message payloads of the retained messages.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_retained_messages::ListRetainedMessagesOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<ListRetainedMessagesError>`](crate::operation::list_retained_messages::ListRetainedMessagesError)
+                            /// - On failure, responds with [`SdkError<ListRetainedMessagesError>`](crate::operation::list_retained_messages::ListRetainedMessagesError)
     pub fn list_retained_messages(&self) -> crate::operation::list_retained_messages::builders::ListRetainedMessagesFluentBuilder {
-        crate::operation::list_retained_messages::builders::ListRetainedMessagesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_retained_messages::builders::ListRetainedMessagesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

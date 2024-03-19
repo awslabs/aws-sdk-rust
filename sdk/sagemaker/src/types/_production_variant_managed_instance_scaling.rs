@@ -3,7 +3,7 @@
 /// <p>Settings that control the range in the number of instances that the endpoint provisions as it scales up or down to accommodate traffic.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProductionVariantManagedInstanceScaling {
+pub struct ProductionVariantManagedInstanceScaling  {
     /// <p>Indicates whether managed instance scaling is enabled.</p>
     pub status: ::std::option::Option<crate::types::ManagedInstanceScalingStatus>,
     /// <p>The minimum number of instances that the endpoint must retain when it scales down to accommodate a decrease in traffic.</p>
@@ -11,9 +11,9 @@ pub struct ProductionVariantManagedInstanceScaling {
     /// <p>The maximum number of instances that the endpoint can provision when it scales up to accommodate an increase in traffic.</p>
     pub max_instance_count: ::std::option::Option<i32>,
 }
-impl ProductionVariantManagedInstanceScaling {
+impl  ProductionVariantManagedInstanceScaling  {
     /// <p>Indicates whether managed instance scaling is enabled.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ManagedInstanceScalingStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ManagedInstanceScalingStatus> {
         self.status.as_ref()
     }
     /// <p>The minimum number of instances that the endpoint must retain when it scales down to accommodate a decrease in traffic.</p>
@@ -48,8 +48,7 @@ impl ProductionVariantManagedInstanceScalingBuilder {
     }
     /// <p>Indicates whether managed instance scaling is enabled.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ManagedInstanceScalingStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Indicates whether managed instance scaling is enabled.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ManagedInstanceScalingStatus> {
@@ -62,8 +61,7 @@ impl ProductionVariantManagedInstanceScalingBuilder {
     }
     /// <p>The minimum number of instances that the endpoint must retain when it scales down to accommodate a decrease in traffic.</p>
     pub fn set_min_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_instance_count = input;
-        self
+        self.min_instance_count = input; self
     }
     /// <p>The minimum number of instances that the endpoint must retain when it scales down to accommodate a decrease in traffic.</p>
     pub fn get_min_instance_count(&self) -> &::std::option::Option<i32> {
@@ -76,8 +74,7 @@ impl ProductionVariantManagedInstanceScalingBuilder {
     }
     /// <p>The maximum number of instances that the endpoint can provision when it scales up to accommodate an increase in traffic.</p>
     pub fn set_max_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_instance_count = input;
-        self
+        self.max_instance_count = input; self
     }
     /// <p>The maximum number of instances that the endpoint can provision when it scales up to accommodate an increase in traffic.</p>
     pub fn get_max_instance_count(&self) -> &::std::option::Option<i32> {
@@ -86,9 +83,13 @@ impl ProductionVariantManagedInstanceScalingBuilder {
     /// Consumes the builder and constructs a [`ProductionVariantManagedInstanceScaling`](crate::types::ProductionVariantManagedInstanceScaling).
     pub fn build(self) -> crate::types::ProductionVariantManagedInstanceScaling {
         crate::types::ProductionVariantManagedInstanceScaling {
-            status: self.status,
-            min_instance_count: self.min_instance_count,
-            max_instance_count: self.max_instance_count,
+            status: self.status
+            ,
+            min_instance_count: self.min_instance_count
+            ,
+            max_instance_count: self.max_instance_count
+            ,
         }
     }
 }
+

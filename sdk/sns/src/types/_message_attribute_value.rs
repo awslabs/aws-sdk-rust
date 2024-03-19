@@ -4,7 +4,7 @@
 /// <p>Name, type, and value must not be empty or null. In addition, the message body should not be empty or null. All parts of the message attribute, including name, type, and value, are included in the message size restriction, which is currently 256 KB (262,144 bytes). For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html">Amazon SNS message attributes</a> and <a href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Publishing to a mobile phone</a> in the <i>Amazon SNS Developer Guide.</i></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MessageAttributeValue {
+pub struct MessageAttributeValue  {
     /// <p>Amazon SNS supports the following logical data types: String, String.Array, Number, and Binary. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message Attribute Data Types</a>.</p>
     pub data_type: ::std::string::String,
     /// <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.</p>
@@ -12,18 +12,17 @@ pub struct MessageAttributeValue {
     /// <p>Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.</p>
     pub binary_value: ::std::option::Option<::aws_smithy_types::Blob>,
 }
-impl MessageAttributeValue {
+impl  MessageAttributeValue  {
     /// <p>Amazon SNS supports the following logical data types: String, String.Array, Number, and Binary. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message Attribute Data Types</a>.</p>
-    pub fn data_type(&self) -> &str {
-        use std::ops::Deref;
-        self.data_type.deref()
+    pub fn data_type(&self) -> & str {
+        use std::ops::Deref; self.data_type.deref()
     }
     /// <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.</p>
-    pub fn string_value(&self) -> ::std::option::Option<&str> {
+    pub fn string_value(&self) -> ::std::option::Option<& str> {
         self.string_value.as_deref()
     }
     /// <p>Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.</p>
-    pub fn binary_value(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn binary_value(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.binary_value.as_ref()
     }
 }
@@ -51,8 +50,7 @@ impl MessageAttributeValueBuilder {
     }
     /// <p>Amazon SNS supports the following logical data types: String, String.Array, Number, and Binary. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message Attribute Data Types</a>.</p>
     pub fn set_data_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_type = input;
-        self
+        self.data_type = input; self
     }
     /// <p>Amazon SNS supports the following logical data types: String, String.Array, Number, and Binary. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message Attribute Data Types</a>.</p>
     pub fn get_data_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl MessageAttributeValueBuilder {
     }
     /// <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.</p>
     pub fn set_string_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.string_value = input;
-        self
+        self.string_value = input; self
     }
     /// <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.</p>
     pub fn get_string_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +76,7 @@ impl MessageAttributeValueBuilder {
     }
     /// <p>Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.</p>
     pub fn set_binary_value(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.binary_value = input;
-        self
+        self.binary_value = input; self
     }
     /// <p>Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.</p>
     pub fn get_binary_value(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -90,15 +86,19 @@ impl MessageAttributeValueBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`data_type`](crate::types::builders::MessageAttributeValueBuilder::data_type)
     pub fn build(self) -> ::std::result::Result<crate::types::MessageAttributeValue, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MessageAttributeValue {
-            data_type: self.data_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_type",
-                    "data_type was not specified but it is required when building MessageAttributeValue",
-                )
-            })?,
-            string_value: self.string_value,
-            binary_value: self.binary_value,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MessageAttributeValue {
+                data_type: self.data_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_type", "data_type was not specified but it is required when building MessageAttributeValue")
+                    )?
+                ,
+                string_value: self.string_value
+                ,
+                binary_value: self.binary_value
+                ,
+            }
+        )
     }
 }
+

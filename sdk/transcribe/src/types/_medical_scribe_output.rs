@@ -3,22 +3,20 @@
 /// <p>The location of the output of your Medical Scribe job. <code>ClinicalDocumentUri</code> holds the Amazon S3 URI for the Clinical Document and <code>TranscriptFileUri</code> holds the Amazon S3 URI for the Transcript.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MedicalScribeOutput {
+pub struct MedicalScribeOutput  {
     /// <p>Holds the Amazon S3 URI for the Transcript.</p>
     pub transcript_file_uri: ::std::string::String,
     /// <p>Holds the Amazon S3 URI for the Clinical Document.</p>
     pub clinical_document_uri: ::std::string::String,
 }
-impl MedicalScribeOutput {
+impl  MedicalScribeOutput  {
     /// <p>Holds the Amazon S3 URI for the Transcript.</p>
-    pub fn transcript_file_uri(&self) -> &str {
-        use std::ops::Deref;
-        self.transcript_file_uri.deref()
+    pub fn transcript_file_uri(&self) -> & str {
+        use std::ops::Deref; self.transcript_file_uri.deref()
     }
     /// <p>Holds the Amazon S3 URI for the Clinical Document.</p>
-    pub fn clinical_document_uri(&self) -> &str {
-        use std::ops::Deref;
-        self.clinical_document_uri.deref()
+    pub fn clinical_document_uri(&self) -> & str {
+        use std::ops::Deref; self.clinical_document_uri.deref()
     }
 }
 impl MedicalScribeOutput {
@@ -44,8 +42,7 @@ impl MedicalScribeOutputBuilder {
     }
     /// <p>Holds the Amazon S3 URI for the Transcript.</p>
     pub fn set_transcript_file_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transcript_file_uri = input;
-        self
+        self.transcript_file_uri = input; self
     }
     /// <p>Holds the Amazon S3 URI for the Transcript.</p>
     pub fn get_transcript_file_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl MedicalScribeOutputBuilder {
     }
     /// <p>Holds the Amazon S3 URI for the Clinical Document.</p>
     pub fn set_clinical_document_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.clinical_document_uri = input;
-        self
+        self.clinical_document_uri = input; self
     }
     /// <p>Holds the Amazon S3 URI for the Clinical Document.</p>
     pub fn get_clinical_document_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl MedicalScribeOutputBuilder {
     /// - [`transcript_file_uri`](crate::types::builders::MedicalScribeOutputBuilder::transcript_file_uri)
     /// - [`clinical_document_uri`](crate::types::builders::MedicalScribeOutputBuilder::clinical_document_uri)
     pub fn build(self) -> ::std::result::Result<crate::types::MedicalScribeOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MedicalScribeOutput {
-            transcript_file_uri: self.transcript_file_uri.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "transcript_file_uri",
-                    "transcript_file_uri was not specified but it is required when building MedicalScribeOutput",
-                )
-            })?,
-            clinical_document_uri: self.clinical_document_uri.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "clinical_document_uri",
-                    "clinical_document_uri was not specified but it is required when building MedicalScribeOutput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MedicalScribeOutput {
+                transcript_file_uri: self.transcript_file_uri
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("transcript_file_uri", "transcript_file_uri was not specified but it is required when building MedicalScribeOutput")
+                    )?
+                ,
+                clinical_document_uri: self.clinical_document_uri
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("clinical_document_uri", "clinical_document_uri was not specified but it is required when building MedicalScribeOutput")
+                    )?
+                ,
+            }
+        )
     }
 }
+

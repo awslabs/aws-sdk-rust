@@ -3,7 +3,8 @@
 /// <p>Describes the DataStore configuration for an API for a code generation job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataStoreRenderConfig {}
+pub struct DataStoreRenderConfig  {
+}
 impl DataStoreRenderConfig {
     /// Creates a new builder-style object to manufacture [`DataStoreRenderConfig`](crate::types::DataStoreRenderConfig).
     pub fn builder() -> crate::types::builders::DataStoreRenderConfigBuilder {
@@ -14,10 +15,13 @@ impl DataStoreRenderConfig {
 /// A builder for [`DataStoreRenderConfig`](crate::types::DataStoreRenderConfig).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct DataStoreRenderConfigBuilder {}
+pub struct DataStoreRenderConfigBuilder {
+}
 impl DataStoreRenderConfigBuilder {
     /// Consumes the builder and constructs a [`DataStoreRenderConfig`](crate::types::DataStoreRenderConfig).
     pub fn build(self) -> crate::types::DataStoreRenderConfig {
-        crate::types::DataStoreRenderConfig {}
+        crate::types::DataStoreRenderConfig {
+        }
     }
 }
+

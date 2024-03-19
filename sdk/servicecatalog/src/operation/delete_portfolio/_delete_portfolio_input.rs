@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePortfolioInput {
+pub struct DeletePortfolioInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -14,7 +14,7 @@ pub struct DeletePortfolioInput {
     /// <p>The portfolio identifier.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl DeletePortfolioInput {
+impl  DeletePortfolioInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -22,11 +22,11 @@ impl DeletePortfolioInput {
     /// <li>
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
-    pub fn accept_language(&self) -> ::std::option::Option<&str> {
+    pub fn accept_language(&self) -> ::std::option::Option<& str> {
         self.accept_language.as_deref()
     }
     /// <p>The portfolio identifier.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -64,8 +64,7 @@ impl DeletePortfolioInputBuilder {
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accept_language = input;
-        self
+        self.accept_language = input; self
     }
     /// <p>The language code.</p>
     /// <ul>
@@ -85,20 +84,22 @@ impl DeletePortfolioInputBuilder {
     }
     /// <p>The portfolio identifier.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The portfolio identifier.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     /// Consumes the builder and constructs a [`DeletePortfolioInput`](crate::operation::delete_portfolio::DeletePortfolioInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_portfolio::DeletePortfolioInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_portfolio::DeletePortfolioInput {
-            accept_language: self.accept_language,
-            id: self.id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_portfolio::DeletePortfolioInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_portfolio::DeletePortfolioInput {
+                accept_language: self.accept_language
+                ,
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

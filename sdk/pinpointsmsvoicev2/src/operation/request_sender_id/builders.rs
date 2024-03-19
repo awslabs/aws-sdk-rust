@@ -5,54 +5,50 @@ pub use crate::operation::request_sender_id::_request_sender_id_input::RequestSe
 
 impl RequestSenderIdInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::request_sender_id::RequestSenderIdOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::request_sender_id::RequestSenderIdError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.request_sender_id();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::request_sender_id::RequestSenderIdOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::request_sender_id::RequestSenderIdError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.request_sender_id();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `RequestSenderId`.
-///
+/// 
 /// <p>Request a new sender ID that doesn't require registration.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RequestSenderIdFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::request_sender_id::builders::RequestSenderIdInputBuilder,
+                    inner: crate::operation::request_sender_id::builders::RequestSenderIdInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::request_sender_id::RequestSenderIdOutput,
-        crate::operation::request_sender_id::RequestSenderIdError,
-    > for RequestSenderIdFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::request_sender_id::RequestSenderIdOutput,
-            crate::operation::request_sender_id::RequestSenderIdError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::request_sender_id::RequestSenderIdOutput,
+                    crate::operation::request_sender_id::RequestSenderIdError,
+                > for RequestSenderIdFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::request_sender_id::RequestSenderIdOutput,
+                        crate::operation::request_sender_id::RequestSenderIdError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl RequestSenderIdFluentBuilder {
     /// Creates a new `RequestSenderId`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl RequestSenderIdFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::request_sender_id::RequestSenderIdOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::request_sender_id::RequestSenderIdError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::request_sender_id::RequestSenderId::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::request_sender_id::RequestSenderId::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::request_sender_id::RequestSenderIdOutput,
-        crate::operation::request_sender_id::RequestSenderIdError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::request_sender_id::RequestSenderIdOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::request_sender_id::RequestSenderIdError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::request_sender_id::RequestSenderId::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::request_sender_id::RequestSenderId::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::request_sender_id::RequestSenderIdOutput, crate::operation::request_sender_id::RequestSenderIdError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The sender ID string to request.</p>
     pub fn sender_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sender_id(input.into());
@@ -146,12 +133,12 @@ impl RequestSenderIdFluentBuilder {
         self
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub fn set_message_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MessageType>>) -> Self {
+    pub fn set_message_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MessageType>>) -> Self {
         self.inner = self.inner.set_message_types(input);
         self
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub fn get_message_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageType>> {
+    pub fn get_message_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MessageType>> {
         self.inner.get_message_types()
     }
     /// <p>By default this is set to false. When set to true the sender ID can't be deleted.</p>
@@ -178,12 +165,12 @@ impl RequestSenderIdFluentBuilder {
         self
     }
     /// <p>An array of tags (key and value pairs) to associate with the sender ID.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>An array of tags (key and value pairs) to associate with the sender ID.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
@@ -201,3 +188,4 @@ impl RequestSenderIdFluentBuilder {
         self.inner.get_client_token()
     }
 }
+

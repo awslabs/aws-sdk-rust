@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartMetadataModelAssessmentInput {
+pub struct StartMetadataModelAssessmentInput  {
     /// <p>The migration project name or Amazon Resource Name (ARN).</p>
     pub migration_project_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A value that specifies the database objects to assess.</p>
     pub selection_rules: ::std::option::Option<::std::string::String>,
 }
-impl StartMetadataModelAssessmentInput {
+impl  StartMetadataModelAssessmentInput  {
     /// <p>The migration project name or Amazon Resource Name (ARN).</p>
-    pub fn migration_project_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn migration_project_identifier(&self) -> ::std::option::Option<& str> {
         self.migration_project_identifier.as_deref()
     }
     /// <p>A value that specifies the database objects to assess.</p>
-    pub fn selection_rules(&self) -> ::std::option::Option<&str> {
+    pub fn selection_rules(&self) -> ::std::option::Option<& str> {
         self.selection_rules.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl StartMetadataModelAssessmentInputBuilder {
     }
     /// <p>The migration project name or Amazon Resource Name (ARN).</p>
     pub fn set_migration_project_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.migration_project_identifier = input;
-        self
+        self.migration_project_identifier = input; self
     }
     /// <p>The migration project name or Amazon Resource Name (ARN).</p>
     pub fn get_migration_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl StartMetadataModelAssessmentInputBuilder {
     }
     /// <p>A value that specifies the database objects to assess.</p>
     pub fn set_selection_rules(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.selection_rules = input;
-        self
+        self.selection_rules = input; self
     }
     /// <p>A value that specifies the database objects to assess.</p>
     pub fn get_selection_rules(&self) -> &::std::option::Option<::std::string::String> {
         &self.selection_rules
     }
     /// Consumes the builder and constructs a [`StartMetadataModelAssessmentInput`](crate::operation::start_metadata_model_assessment::StartMetadataModelAssessmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_metadata_model_assessment::StartMetadataModelAssessmentInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_metadata_model_assessment::StartMetadataModelAssessmentInput {
-            migration_project_identifier: self.migration_project_identifier,
-            selection_rules: self.selection_rules,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_metadata_model_assessment::StartMetadataModelAssessmentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_metadata_model_assessment::StartMetadataModelAssessmentInput {
+                migration_project_identifier: self.migration_project_identifier
+                ,
+                selection_rules: self.selection_rules
+                ,
+            }
+        )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCostCategoryDefinitionInput {
+pub struct DeleteCostCategoryDefinitionInput  {
     /// <p>The unique identifier for your Cost Category.</p>
     pub cost_category_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteCostCategoryDefinitionInput {
+impl  DeleteCostCategoryDefinitionInput  {
     /// <p>The unique identifier for your Cost Category.</p>
-    pub fn cost_category_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cost_category_arn(&self) -> ::std::option::Option<& str> {
         self.cost_category_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteCostCategoryDefinitionInputBuilder {
     }
     /// <p>The unique identifier for your Cost Category.</p>
     pub fn set_cost_category_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cost_category_arn = input;
-        self
+        self.cost_category_arn = input; self
     }
     /// <p>The unique identifier for your Cost Category.</p>
     pub fn get_cost_category_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cost_category_arn
     }
     /// Consumes the builder and constructs a [`DeleteCostCategoryDefinitionInput`](crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionInput {
-            cost_category_arn: self.cost_category_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionInput {
+                cost_category_arn: self.cost_category_arn
+                ,
+            }
+        )
     }
 }
+

@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTransactionEventsOutput {
+pub struct ListTransactionEventsOutput  {
     /// <p>An array of <code>TransactionEvent</code> objects. Each object contains details about the transaction events.</p>
-    pub events: ::std::vec::Vec<crate::types::TransactionEvent>,
+    pub events: ::std::vec::Vec::<crate::types::TransactionEvent>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListTransactionEventsOutput {
+impl  ListTransactionEventsOutput  {
     /// <p>An array of <code>TransactionEvent</code> objects. Each object contains details about the transaction events.</p>
-    pub fn events(&self) -> &[crate::types::TransactionEvent] {
-        use std::ops::Deref;
-        self.events.deref()
+    pub fn events(&self) -> & [crate::types::TransactionEvent] {
+        use std::ops::Deref; self.events.deref()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListTransactionEventsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListTransactionEventsOutput {
     /// Creates a new builder-style object to manufacture [`ListTransactionEventsOutput`](crate::operation::list_transaction_events::ListTransactionEventsOutput).
     pub fn builder() -> crate::operation::list_transaction_events::builders::ListTransactionEventsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListTransactionEventsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTransactionEventsOutputBuilder {
-    pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::TransactionEvent>>,
+    pub(crate) events: ::std::option::Option<::std::vec::Vec::<crate::types::TransactionEvent>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListTransactionEventsOutputBuilder {
     /// <p>An array of <code>TransactionEvent</code> objects. Each object contains details about the transaction events.</p>
     pub fn events(mut self, input: crate::types::TransactionEvent) -> Self {
         let mut v = self.events.unwrap_or_default();
-        v.push(input);
-        self.events = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.events = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>TransactionEvent</code> objects. Each object contains details about the transaction events.</p>
-    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TransactionEvent>>) -> Self {
-        self.events = input;
-        self
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TransactionEvent>>) -> Self {
+        self.events = input; self
     }
     /// <p>An array of <code>TransactionEvent</code> objects. Each object contains details about the transaction events.</p>
-    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TransactionEvent>> {
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TransactionEvent>> {
         &self.events
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -68,38 +66,37 @@ impl ListTransactionEventsOutputBuilder {
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListTransactionEventsOutput`](crate::operation::list_transaction_events::ListTransactionEventsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`events`](crate::operation::list_transaction_events::builders::ListTransactionEventsOutputBuilder::events)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_transaction_events::ListTransactionEventsOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_transaction_events::ListTransactionEventsOutput {
-            events: self.events.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "events",
-                    "events was not specified but it is required when building ListTransactionEventsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_transaction_events::ListTransactionEventsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_transaction_events::ListTransactionEventsOutput {
+                events: self.events
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("events", "events was not specified but it is required when building ListTransactionEventsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

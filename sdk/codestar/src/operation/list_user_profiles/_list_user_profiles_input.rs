@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListUserProfilesInput {
+pub struct ListUserProfilesInput  {
     /// <p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in a response.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListUserProfilesInput {
+impl  ListUserProfilesInput  {
     /// <p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in a response.</p>
@@ -40,8 +40,7 @@ impl ListUserProfilesInputBuilder {
     }
     /// <p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,20 +53,22 @@ impl ListUserProfilesInputBuilder {
     }
     /// <p>The maximum number of results to return in a response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in a response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListUserProfilesInput`](crate::operation::list_user_profiles::ListUserProfilesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_user_profiles::ListUserProfilesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_user_profiles::ListUserProfilesInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_user_profiles::ListUserProfilesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_user_profiles::ListUserProfilesInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

@@ -3,11 +3,11 @@
 /// <p>The current configuration of Kubernetes audit logs as a data source for the organization.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OrganizationKubernetesAuditLogsConfigurationResult {
+pub struct OrganizationKubernetesAuditLogsConfigurationResult  {
     /// <p>Whether Kubernetes audit logs data source should be auto-enabled for new members joining the organization.</p>
     pub auto_enable: ::std::option::Option<bool>,
 }
-impl OrganizationKubernetesAuditLogsConfigurationResult {
+impl  OrganizationKubernetesAuditLogsConfigurationResult  {
     /// <p>Whether Kubernetes audit logs data source should be auto-enabled for new members joining the organization.</p>
     pub fn auto_enable(&self) -> ::std::option::Option<bool> {
         self.auto_enable
@@ -35,8 +35,7 @@ impl OrganizationKubernetesAuditLogsConfigurationResultBuilder {
     }
     /// <p>Whether Kubernetes audit logs data source should be auto-enabled for new members joining the organization.</p>
     pub fn set_auto_enable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_enable = input;
-        self
+        self.auto_enable = input; self
     }
     /// <p>Whether Kubernetes audit logs data source should be auto-enabled for new members joining the organization.</p>
     pub fn get_auto_enable(&self) -> &::std::option::Option<bool> {
@@ -45,7 +44,9 @@ impl OrganizationKubernetesAuditLogsConfigurationResultBuilder {
     /// Consumes the builder and constructs a [`OrganizationKubernetesAuditLogsConfigurationResult`](crate::types::OrganizationKubernetesAuditLogsConfigurationResult).
     pub fn build(self) -> crate::types::OrganizationKubernetesAuditLogsConfigurationResult {
         crate::types::OrganizationKubernetesAuditLogsConfigurationResult {
-            auto_enable: self.auto_enable,
+            auto_enable: self.auto_enable
+            ,
         }
     }
 }
+

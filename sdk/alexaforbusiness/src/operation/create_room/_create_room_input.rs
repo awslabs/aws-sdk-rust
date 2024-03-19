@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRoomInput {
+pub struct CreateRoomInput  {
     /// <p>The name for the room.</p>
     pub room_name: ::std::option::Option<::std::string::String>,
     /// <p>The description for the room.</p>
@@ -14,34 +14,35 @@ pub struct CreateRoomInput {
     /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags for the room.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateRoomInput {
+impl  CreateRoomInput  {
     /// <p>The name for the room.</p>
-    pub fn room_name(&self) -> ::std::option::Option<&str> {
+    pub fn room_name(&self) -> ::std::option::Option<& str> {
         self.room_name.as_deref()
     }
     /// <p>The description for the room.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The profile ARN for the room. This is required.</p>
-    pub fn profile_arn(&self) -> ::std::option::Option<&str> {
+    pub fn profile_arn(&self) -> ::std::option::Option<& str> {
         self.profile_arn.as_deref()
     }
     /// <p>The calendar ARN for the room.</p>
-    pub fn provider_calendar_id(&self) -> ::std::option::Option<&str> {
+    pub fn provider_calendar_id(&self) -> ::std::option::Option<& str> {
         self.provider_calendar_id.as_deref()
     }
     /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The tags for the room.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateRoomInput {
@@ -60,7 +61,7 @@ pub struct CreateRoomInputBuilder {
     pub(crate) profile_arn: ::std::option::Option<::std::string::String>,
     pub(crate) provider_calendar_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateRoomInputBuilder {
     /// <p>The name for the room.</p>
@@ -71,8 +72,7 @@ impl CreateRoomInputBuilder {
     }
     /// <p>The name for the room.</p>
     pub fn set_room_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.room_name = input;
-        self
+        self.room_name = input; self
     }
     /// <p>The name for the room.</p>
     pub fn get_room_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +85,7 @@ impl CreateRoomInputBuilder {
     }
     /// <p>The description for the room.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description for the room.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +98,7 @@ impl CreateRoomInputBuilder {
     }
     /// <p>The profile ARN for the room. This is required.</p>
     pub fn set_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_arn = input;
-        self
+        self.profile_arn = input; self
     }
     /// <p>The profile ARN for the room. This is required.</p>
     pub fn get_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +111,7 @@ impl CreateRoomInputBuilder {
     }
     /// <p>The calendar ARN for the room.</p>
     pub fn set_provider_calendar_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider_calendar_id = input;
-        self
+        self.provider_calendar_id = input; self
     }
     /// <p>The calendar ARN for the room.</p>
     pub fn get_provider_calendar_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +124,7 @@ impl CreateRoomInputBuilder {
     }
     /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,28 +137,36 @@ impl CreateRoomInputBuilder {
     /// <p>The tags for the room.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags for the room.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags for the room.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRoomInput`](crate::operation::create_room::CreateRoomInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_room::CreateRoomInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_room::CreateRoomInput {
-            room_name: self.room_name,
-            description: self.description,
-            profile_arn: self.profile_arn,
-            provider_calendar_id: self.provider_calendar_id,
-            client_request_token: self.client_request_token,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_room::CreateRoomInput {
+                room_name: self.room_name
+                ,
+                description: self.description
+                ,
+                profile_arn: self.profile_arn
+                ,
+                provider_calendar_id: self.provider_calendar_id
+                ,
+                client_request_token: self.client_request_token
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

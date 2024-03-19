@@ -3,7 +3,7 @@
 /// <p>Provides a regular expression used to validate the value of a slot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SlotValueRegexFilter {
+pub struct SlotValueRegexFilter  {
     /// <p>A regular expression used to validate the value of a slot.</p>
     /// <p>Use a standard regular expression. Amazon Lex supports the following characters in the regular expression:</p>
     /// <ul>
@@ -26,7 +26,7 @@ pub struct SlotValueRegexFilter {
     /// </ul>
     pub pattern: ::std::string::String,
 }
-impl SlotValueRegexFilter {
+impl  SlotValueRegexFilter  {
     /// <p>A regular expression used to validate the value of a slot.</p>
     /// <p>Use a standard regular expression. Amazon Lex supports the following characters in the regular expression:</p>
     /// <ul>
@@ -47,9 +47,8 @@ impl SlotValueRegexFilter {
     /// <li>
     /// <p>Wild card (.)</p></li>
     /// </ul>
-    pub fn pattern(&self) -> &str {
-        use std::ops::Deref;
-        self.pattern.deref()
+    pub fn pattern(&self) -> & str {
+        use std::ops::Deref; self.pattern.deref()
     }
 }
 impl SlotValueRegexFilter {
@@ -112,8 +111,7 @@ impl SlotValueRegexFilterBuilder {
     /// <p>Wild card (.)</p></li>
     /// </ul>
     pub fn set_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pattern = input;
-        self
+        self.pattern = input; self
     }
     /// <p>A regular expression used to validate the value of a slot.</p>
     /// <p>Use a standard regular expression. Amazon Lex supports the following characters in the regular expression:</p>
@@ -142,13 +140,15 @@ impl SlotValueRegexFilterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`pattern`](crate::types::builders::SlotValueRegexFilterBuilder::pattern)
     pub fn build(self) -> ::std::result::Result<crate::types::SlotValueRegexFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SlotValueRegexFilter {
-            pattern: self.pattern.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "pattern",
-                    "pattern was not specified but it is required when building SlotValueRegexFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SlotValueRegexFilter {
+                pattern: self.pattern
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("pattern", "pattern was not specified but it is required when building SlotValueRegexFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

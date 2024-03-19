@@ -2,26 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateConnectionAliasInput {
+pub struct CreateConnectionAliasInput  {
     /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p><important>
     /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same connection string with a different account, even if you delete all instances of it from the original account. The connection string is globally reserved for your account.</p>
     /// </important>
     pub connection_string: ::std::option::Option<::std::string::String>,
     /// <p>The tags to associate with the connection alias.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateConnectionAliasInput {
+impl  CreateConnectionAliasInput  {
     /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p><important>
     /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same connection string with a different account, even if you delete all instances of it from the original account. The connection string is globally reserved for your account.</p>
     /// </important>
-    pub fn connection_string(&self) -> ::std::option::Option<&str> {
+    pub fn connection_string(&self) -> ::std::option::Option<& str> {
         self.connection_string.as_deref()
     }
     /// <p>The tags to associate with the connection alias.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateConnectionAliasInput {
@@ -36,7 +37,7 @@ impl CreateConnectionAliasInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateConnectionAliasInputBuilder {
     pub(crate) connection_string: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateConnectionAliasInputBuilder {
     /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p><important>
@@ -51,8 +52,7 @@ impl CreateConnectionAliasInputBuilder {
     /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same connection string with a different account, even if you delete all instances of it from the original account. The connection string is globally reserved for your account.</p>
     /// </important>
     pub fn set_connection_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_string = input;
-        self
+        self.connection_string = input; self
     }
     /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p><important>
     /// <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same connection string with a different account, even if you delete all instances of it from the original account. The connection string is globally reserved for your account.</p>
@@ -67,27 +67,28 @@ impl CreateConnectionAliasInputBuilder {
     /// <p>The tags to associate with the connection alias.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to associate with the connection alias.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to associate with the connection alias.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateConnectionAliasInput`](crate::operation::create_connection_alias::CreateConnectionAliasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_connection_alias::CreateConnectionAliasInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_connection_alias::CreateConnectionAliasInput {
-            connection_string: self.connection_string,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_connection_alias::CreateConnectionAliasInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_connection_alias::CreateConnectionAliasInput {
+                connection_string: self.connection_string
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

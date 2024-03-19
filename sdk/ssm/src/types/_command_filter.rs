@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CommandFilter {
+pub struct CommandFilter  {
     /// <p>The name of the filter.</p><note>
     /// <p>The <code>ExecutionStage</code> filter can't be used with the <code>ListCommandInvocations</code> operation, only with <code>ListCommands</code>.</p>
     /// </note>
@@ -87,11 +87,11 @@ pub struct CommandFilter {
     /// </ul>
     pub value: ::std::string::String,
 }
-impl CommandFilter {
+impl  CommandFilter  {
     /// <p>The name of the filter.</p><note>
     /// <p>The <code>ExecutionStage</code> filter can't be used with the <code>ListCommandInvocations</code> operation, only with <code>ListCommands</code>.</p>
     /// </note>
-    pub fn key(&self) -> &crate::types::CommandFilterKey {
+    pub fn key(&self) -> & crate::types::CommandFilterKey {
         &self.key
     }
     /// <p>The filter value. Valid values for each filter key are as follows:</p>
@@ -169,9 +169,8 @@ impl CommandFilter {
     /// <p><code>Complete</code>: Returns a list of command executions that have already completed.</p></li>
     /// </ul></li>
     /// </ul>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl CommandFilter {
@@ -201,8 +200,7 @@ impl CommandFilterBuilder {
     /// <p>The <code>ExecutionStage</code> filter can't be used with the <code>ListCommandInvocations</code> operation, only with <code>ListCommands</code>.</p>
     /// </note>
     pub fn set_key(mut self, input: ::std::option::Option<crate::types::CommandFilterKey>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The name of the filter.</p><note>
     /// <p>The <code>ExecutionStage</code> filter can't be used with the <code>ListCommandInvocations</code> operation, only with <code>ListCommands</code>.</p>
@@ -366,8 +364,7 @@ impl CommandFilterBuilder {
     /// </ul></li>
     /// </ul>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The filter value. Valid values for each filter key are as follows:</p>
     /// <ul>
@@ -452,19 +449,20 @@ impl CommandFilterBuilder {
     /// - [`key`](crate::types::builders::CommandFilterBuilder::key)
     /// - [`value`](crate::types::builders::CommandFilterBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::CommandFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CommandFilter {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building CommandFilter",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building CommandFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CommandFilter {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building CommandFilter")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building CommandFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

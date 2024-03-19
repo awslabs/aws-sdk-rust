@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListJobTemplatesOutput {
+pub struct ListJobTemplatesOutput  {
     /// <p>A list of objects that contain information about the job templates.</p>
-    pub job_templates: ::std::option::Option<::std::vec::Vec<crate::types::JobTemplateSummary>>,
+    pub job_templates: ::std::option::Option<::std::vec::Vec::<crate::types::JobTemplateSummary>>,
     /// <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListJobTemplatesOutput {
+impl  ListJobTemplatesOutput  {
     /// <p>A list of objects that contain information about the job templates.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_templates.is_none()`.
-    pub fn job_templates(&self) -> &[crate::types::JobTemplateSummary] {
-        self.job_templates.as_deref().unwrap_or_default()
+    pub fn job_templates(&self) -> & [crate::types::JobTemplateSummary] {
+        self.job_templates.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListJobTemplatesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListJobTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListJobTemplatesOutput`](crate::operation::list_job_templates::ListJobTemplatesOutput).
     pub fn builder() -> crate::operation::list_job_templates::builders::ListJobTemplatesOutputBuilder {
@@ -37,7 +38,7 @@ impl ListJobTemplatesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListJobTemplatesOutputBuilder {
-    pub(crate) job_templates: ::std::option::Option<::std::vec::Vec<crate::types::JobTemplateSummary>>,
+    pub(crate) job_templates: ::std::option::Option<::std::vec::Vec::<crate::types::JobTemplateSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListJobTemplatesOutputBuilder {
     /// <p>A list of objects that contain information about the job templates.</p>
     pub fn job_templates(mut self, input: crate::types::JobTemplateSummary) -> Self {
         let mut v = self.job_templates.unwrap_or_default();
-        v.push(input);
-        self.job_templates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.job_templates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of objects that contain information about the job templates.</p>
-    pub fn set_job_templates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobTemplateSummary>>) -> Self {
-        self.job_templates = input;
-        self
+    pub fn set_job_templates(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::JobTemplateSummary>>) -> Self {
+        self.job_templates = input; self
     }
     /// <p>A list of objects that contain information about the job templates.</p>
-    pub fn get_job_templates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobTemplateSummary>> {
+    pub fn get_job_templates(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::JobTemplateSummary>> {
         &self.job_templates
     }
     /// <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
@@ -69,28 +69,30 @@ impl ListJobTemplatesOutputBuilder {
     }
     /// <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListJobTemplatesOutput`](crate::operation::list_job_templates::ListJobTemplatesOutput).
     pub fn build(self) -> crate::operation::list_job_templates::ListJobTemplatesOutput {
         crate::operation::list_job_templates::ListJobTemplatesOutput {
-            job_templates: self.job_templates,
-            next_token: self.next_token,
+            job_templates: self.job_templates
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

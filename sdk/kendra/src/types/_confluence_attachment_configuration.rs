@@ -3,24 +3,25 @@
 /// <p>Configuration of attachment settings for the Confluence data source. Attachment settings are optional, if you don't specify settings attachments, Amazon Kendra won't index them.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfluenceAttachmentConfiguration {
+pub struct ConfluenceAttachmentConfiguration  {
     /// <p><code>TRUE</code> to index attachments of pages and blogs in Confluence.</p>
     pub crawl_attachments: bool,
     /// <p>Maps attributes or field names of Confluence attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
     /// <p>If you specify the <code>AttachentFieldMappings</code> parameter, you must specify at least one field mapping.</p>
-    pub attachment_field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::ConfluenceAttachmentToIndexFieldMapping>>,
+    pub attachment_field_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::ConfluenceAttachmentToIndexFieldMapping>>,
 }
-impl ConfluenceAttachmentConfiguration {
+impl  ConfluenceAttachmentConfiguration  {
     /// <p><code>TRUE</code> to index attachments of pages and blogs in Confluence.</p>
     pub fn crawl_attachments(&self) -> bool {
         self.crawl_attachments
     }
     /// <p>Maps attributes or field names of Confluence attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
     /// <p>If you specify the <code>AttachentFieldMappings</code> parameter, you must specify at least one field mapping.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachment_field_mappings.is_none()`.
-    pub fn attachment_field_mappings(&self) -> &[crate::types::ConfluenceAttachmentToIndexFieldMapping] {
-        self.attachment_field_mappings.as_deref().unwrap_or_default()
+    pub fn attachment_field_mappings(&self) -> & [crate::types::ConfluenceAttachmentToIndexFieldMapping] {
+        self.attachment_field_mappings.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ConfluenceAttachmentConfiguration {
@@ -35,7 +36,7 @@ impl ConfluenceAttachmentConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfluenceAttachmentConfigurationBuilder {
     pub(crate) crawl_attachments: ::std::option::Option<bool>,
-    pub(crate) attachment_field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::ConfluenceAttachmentToIndexFieldMapping>>,
+    pub(crate) attachment_field_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::ConfluenceAttachmentToIndexFieldMapping>>,
 }
 impl ConfluenceAttachmentConfigurationBuilder {
     /// <p><code>TRUE</code> to index attachments of pages and blogs in Confluence.</p>
@@ -45,8 +46,7 @@ impl ConfluenceAttachmentConfigurationBuilder {
     }
     /// <p><code>TRUE</code> to index attachments of pages and blogs in Confluence.</p>
     pub fn set_crawl_attachments(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.crawl_attachments = input;
-        self
+        self.crawl_attachments = input; self
     }
     /// <p><code>TRUE</code> to index attachments of pages and blogs in Confluence.</p>
     pub fn get_crawl_attachments(&self) -> &::std::option::Option<bool> {
@@ -60,29 +60,29 @@ impl ConfluenceAttachmentConfigurationBuilder {
     /// <p>If you specify the <code>AttachentFieldMappings</code> parameter, you must specify at least one field mapping.</p>
     pub fn attachment_field_mappings(mut self, input: crate::types::ConfluenceAttachmentToIndexFieldMapping) -> Self {
         let mut v = self.attachment_field_mappings.unwrap_or_default();
-        v.push(input);
-        self.attachment_field_mappings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attachment_field_mappings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Maps attributes or field names of Confluence attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
     /// <p>If you specify the <code>AttachentFieldMappings</code> parameter, you must specify at least one field mapping.</p>
-    pub fn set_attachment_field_mappings(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfluenceAttachmentToIndexFieldMapping>>,
-    ) -> Self {
-        self.attachment_field_mappings = input;
-        self
+    pub fn set_attachment_field_mappings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ConfluenceAttachmentToIndexFieldMapping>>) -> Self {
+        self.attachment_field_mappings = input; self
     }
     /// <p>Maps attributes or field names of Confluence attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
     /// <p>If you specify the <code>AttachentFieldMappings</code> parameter, you must specify at least one field mapping.</p>
-    pub fn get_attachment_field_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfluenceAttachmentToIndexFieldMapping>> {
+    pub fn get_attachment_field_mappings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ConfluenceAttachmentToIndexFieldMapping>> {
         &self.attachment_field_mappings
     }
     /// Consumes the builder and constructs a [`ConfluenceAttachmentConfiguration`](crate::types::ConfluenceAttachmentConfiguration).
     pub fn build(self) -> crate::types::ConfluenceAttachmentConfiguration {
         crate::types::ConfluenceAttachmentConfiguration {
-            crawl_attachments: self.crawl_attachments.unwrap_or_default(),
-            attachment_field_mappings: self.attachment_field_mappings,
+            crawl_attachments: self.crawl_attachments
+                .unwrap_or_default()
+            ,
+            attachment_field_mappings: self.attachment_field_mappings
+            ,
         }
     }
 }
+

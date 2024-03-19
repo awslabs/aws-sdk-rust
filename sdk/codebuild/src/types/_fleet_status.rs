@@ -3,7 +3,7 @@
 /// <p>The status of the compute fleet.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FleetStatus {
+pub struct FleetStatus  {
     /// <p>The status code of the compute fleet. Valid values include:</p>
     /// <ul>
     /// <li>
@@ -33,7 +33,7 @@ pub struct FleetStatus {
     /// <p>A message associated with the status of a compute fleet.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl FleetStatus {
+impl  FleetStatus  {
     /// <p>The status code of the compute fleet. Valid values include:</p>
     /// <ul>
     /// <li>
@@ -51,7 +51,7 @@ impl FleetStatus {
     /// <li>
     /// <p><code>ACTIVE</code>: The compute fleet has succeeded and is active.</p></li>
     /// </ul>
-    pub fn status_code(&self) -> ::std::option::Option<&crate::types::FleetStatusCode> {
+    pub fn status_code(&self) -> ::std::option::Option<& crate::types::FleetStatusCode> {
         self.status_code.as_ref()
     }
     /// <p>Additional information about a compute fleet. Valid values include:</p>
@@ -61,11 +61,11 @@ impl FleetStatus {
     /// <li>
     /// <p><code>UPDATE_FAILED</code>: The compute fleet has failed to update.</p></li>
     /// </ul>
-    pub fn context(&self) -> ::std::option::Option<&crate::types::FleetContextCode> {
+    pub fn context(&self) -> ::std::option::Option<& crate::types::FleetContextCode> {
         self.context.as_ref()
     }
     /// <p>A message associated with the status of a compute fleet.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -124,8 +124,7 @@ impl FleetStatusBuilder {
     /// <p><code>ACTIVE</code>: The compute fleet has succeeded and is active.</p></li>
     /// </ul>
     pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::FleetStatusCode>) -> Self {
-        self.status_code = input;
-        self
+        self.status_code = input; self
     }
     /// <p>The status code of the compute fleet. Valid values include:</p>
     /// <ul>
@@ -166,8 +165,7 @@ impl FleetStatusBuilder {
     /// <p><code>UPDATE_FAILED</code>: The compute fleet has failed to update.</p></li>
     /// </ul>
     pub fn set_context(mut self, input: ::std::option::Option<crate::types::FleetContextCode>) -> Self {
-        self.context = input;
-        self
+        self.context = input; self
     }
     /// <p>Additional information about a compute fleet. Valid values include:</p>
     /// <ul>
@@ -186,8 +184,7 @@ impl FleetStatusBuilder {
     }
     /// <p>A message associated with the status of a compute fleet.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>A message associated with the status of a compute fleet.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -196,9 +193,13 @@ impl FleetStatusBuilder {
     /// Consumes the builder and constructs a [`FleetStatus`](crate::types::FleetStatus).
     pub fn build(self) -> crate::types::FleetStatus {
         crate::types::FleetStatus {
-            status_code: self.status_code,
-            context: self.context,
-            message: self.message,
+            status_code: self.status_code
+            ,
+            context: self.context
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopProcessingJobInput {
+pub struct StopProcessingJobInput  {
     /// <p>The name of the processing job to stop.</p>
     pub processing_job_name: ::std::option::Option<::std::string::String>,
 }
-impl StopProcessingJobInput {
+impl  StopProcessingJobInput  {
     /// <p>The name of the processing job to stop.</p>
-    pub fn processing_job_name(&self) -> ::std::option::Option<&str> {
+    pub fn processing_job_name(&self) -> ::std::option::Option<& str> {
         self.processing_job_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl StopProcessingJobInputBuilder {
     }
     /// <p>The name of the processing job to stop.</p>
     pub fn set_processing_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.processing_job_name = input;
-        self
+        self.processing_job_name = input; self
     }
     /// <p>The name of the processing job to stop.</p>
     pub fn get_processing_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.processing_job_name
     }
     /// Consumes the builder and constructs a [`StopProcessingJobInput`](crate::operation::stop_processing_job::StopProcessingJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::stop_processing_job::StopProcessingJobInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::stop_processing_job::StopProcessingJobInput {
-            processing_job_name: self.processing_job_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_processing_job::StopProcessingJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_processing_job::StopProcessingJobInput {
+                processing_job_name: self.processing_job_name
+                ,
+            }
+        )
     }
 }
+

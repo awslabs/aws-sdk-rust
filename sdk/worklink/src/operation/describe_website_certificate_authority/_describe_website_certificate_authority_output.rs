@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeWebsiteCertificateAuthorityOutput {
+pub struct DescribeWebsiteCertificateAuthorityOutput  {
     /// <p>The root certificate of the certificate authority.</p>
     pub certificate: ::std::option::Option<::std::string::String>,
     /// <p>The time that the certificate authority was added.</p>
@@ -11,25 +11,25 @@ pub struct DescribeWebsiteCertificateAuthorityOutput {
     pub display_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeWebsiteCertificateAuthorityOutput {
+impl  DescribeWebsiteCertificateAuthorityOutput  {
     /// <p>The root certificate of the certificate authority.</p>
-    pub fn certificate(&self) -> ::std::option::Option<&str> {
+    pub fn certificate(&self) -> ::std::option::Option<& str> {
         self.certificate.as_deref()
     }
     /// <p>The time that the certificate authority was added.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The certificate name to display.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeWebsiteCertificateAuthorityOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeWebsiteCertificateAuthorityOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWebsiteCertificateAuthorityOutput`](crate::operation::describe_website_certificate_authority::DescribeWebsiteCertificateAuthorityOutput).
     pub fn builder() -> crate::operation::describe_website_certificate_authority::builders::DescribeWebsiteCertificateAuthorityOutputBuilder {
@@ -54,8 +54,7 @@ impl DescribeWebsiteCertificateAuthorityOutputBuilder {
     }
     /// <p>The root certificate of the certificate authority.</p>
     pub fn set_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate = input;
-        self
+        self.certificate = input; self
     }
     /// <p>The root certificate of the certificate authority.</p>
     pub fn get_certificate(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl DescribeWebsiteCertificateAuthorityOutputBuilder {
     }
     /// <p>The time that the certificate authority was added.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The time that the certificate authority was added.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -82,29 +80,32 @@ impl DescribeWebsiteCertificateAuthorityOutputBuilder {
     }
     /// <p>The certificate name to display.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The certificate name to display.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeWebsiteCertificateAuthorityOutput`](crate::operation::describe_website_certificate_authority::DescribeWebsiteCertificateAuthorityOutput).
     pub fn build(self) -> crate::operation::describe_website_certificate_authority::DescribeWebsiteCertificateAuthorityOutput {
         crate::operation::describe_website_certificate_authority::DescribeWebsiteCertificateAuthorityOutput {
-            certificate: self.certificate,
-            created_time: self.created_time,
-            display_name: self.display_name,
+            certificate: self.certificate
+            ,
+            created_time: self.created_time
+            ,
+            display_name: self.display_name
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

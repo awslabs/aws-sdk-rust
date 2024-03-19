@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetQueryExecutionInput {
+pub struct GetQueryExecutionInput  {
     /// <p>The unique ID of the query execution.</p>
     pub query_execution_id: ::std::option::Option<::std::string::String>,
 }
-impl GetQueryExecutionInput {
+impl  GetQueryExecutionInput  {
     /// <p>The unique ID of the query execution.</p>
-    pub fn query_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn query_execution_id(&self) -> ::std::option::Option<& str> {
         self.query_execution_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetQueryExecutionInputBuilder {
     }
     /// <p>The unique ID of the query execution.</p>
     pub fn set_query_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_execution_id = input;
-        self
+        self.query_execution_id = input; self
     }
     /// <p>The unique ID of the query execution.</p>
     pub fn get_query_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_execution_id
     }
     /// Consumes the builder and constructs a [`GetQueryExecutionInput`](crate::operation::get_query_execution::GetQueryExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_query_execution::GetQueryExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_query_execution::GetQueryExecutionInput {
-            query_execution_id: self.query_execution_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_query_execution::GetQueryExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_query_execution::GetQueryExecutionInput {
+                query_execution_id: self.query_execution_id
+                ,
+            }
+        )
     }
 }
+

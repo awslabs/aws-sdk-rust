@@ -3,7 +3,7 @@
 /// <p>Provides information that defines a Microsoft SQL Server data provider.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MicrosoftSqlServerDataProviderSettings {
+pub struct MicrosoftSqlServerDataProviderSettings  {
     /// <p>The name of the Microsoft SQL Server server.</p>
     pub server_name: ::std::option::Option<::std::string::String>,
     /// <p>The port value for the Microsoft SQL Server data provider.</p>
@@ -15,9 +15,9 @@ pub struct MicrosoftSqlServerDataProviderSettings {
     /// <p>The Amazon Resource Name (ARN) of the certificate used for SSL connection.</p>
     pub certificate_arn: ::std::option::Option<::std::string::String>,
 }
-impl MicrosoftSqlServerDataProviderSettings {
+impl  MicrosoftSqlServerDataProviderSettings  {
     /// <p>The name of the Microsoft SQL Server server.</p>
-    pub fn server_name(&self) -> ::std::option::Option<&str> {
+    pub fn server_name(&self) -> ::std::option::Option<& str> {
         self.server_name.as_deref()
     }
     /// <p>The port value for the Microsoft SQL Server data provider.</p>
@@ -25,15 +25,15 @@ impl MicrosoftSqlServerDataProviderSettings {
         self.port
     }
     /// <p>The database name on the Microsoft SQL Server data provider.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The SSL mode used to connect to the Microsoft SQL Server data provider. The default value is <code>none</code>.</p>
-    pub fn ssl_mode(&self) -> ::std::option::Option<&crate::types::DmsSslModeValue> {
+    pub fn ssl_mode(&self) -> ::std::option::Option<& crate::types::DmsSslModeValue> {
         self.ssl_mode.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate used for SSL connection.</p>
-    pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> ::std::option::Option<& str> {
         self.certificate_arn.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl MicrosoftSqlServerDataProviderSettingsBuilder {
     }
     /// <p>The name of the Microsoft SQL Server server.</p>
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_name = input;
-        self
+        self.server_name = input; self
     }
     /// <p>The name of the Microsoft SQL Server server.</p>
     pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl MicrosoftSqlServerDataProviderSettingsBuilder {
     }
     /// <p>The port value for the Microsoft SQL Server data provider.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port value for the Microsoft SQL Server data provider.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -90,8 +88,7 @@ impl MicrosoftSqlServerDataProviderSettingsBuilder {
     }
     /// <p>The database name on the Microsoft SQL Server data provider.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The database name on the Microsoft SQL Server data provider.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl MicrosoftSqlServerDataProviderSettingsBuilder {
     }
     /// <p>The SSL mode used to connect to the Microsoft SQL Server data provider. The default value is <code>none</code>.</p>
     pub fn set_ssl_mode(mut self, input: ::std::option::Option<crate::types::DmsSslModeValue>) -> Self {
-        self.ssl_mode = input;
-        self
+        self.ssl_mode = input; self
     }
     /// <p>The SSL mode used to connect to the Microsoft SQL Server data provider. The default value is <code>none</code>.</p>
     pub fn get_ssl_mode(&self) -> &::std::option::Option<crate::types::DmsSslModeValue> {
@@ -118,8 +114,7 @@ impl MicrosoftSqlServerDataProviderSettingsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate used for SSL connection.</p>
     pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_arn = input;
-        self
+        self.certificate_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate used for SSL connection.</p>
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,11 +123,17 @@ impl MicrosoftSqlServerDataProviderSettingsBuilder {
     /// Consumes the builder and constructs a [`MicrosoftSqlServerDataProviderSettings`](crate::types::MicrosoftSqlServerDataProviderSettings).
     pub fn build(self) -> crate::types::MicrosoftSqlServerDataProviderSettings {
         crate::types::MicrosoftSqlServerDataProviderSettings {
-            server_name: self.server_name,
-            port: self.port,
-            database_name: self.database_name,
-            ssl_mode: self.ssl_mode,
-            certificate_arn: self.certificate_arn,
+            server_name: self.server_name
+            ,
+            port: self.port
+            ,
+            database_name: self.database_name
+            ,
+            ssl_mode: self.ssl_mode
+            ,
+            certificate_arn: self.certificate_arn
+            ,
         }
     }
 }
+

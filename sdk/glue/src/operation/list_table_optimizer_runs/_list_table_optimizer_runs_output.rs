@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTableOptimizerRunsOutput {
+pub struct ListTableOptimizerRunsOutput  {
     /// <p>The Catalog ID of the table.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database in the catalog in which the table resides.</p>
@@ -12,38 +12,39 @@ pub struct ListTableOptimizerRunsOutput {
     /// <p>A continuation token for paginating the returned list of optimizer runs, returned if the current segment of the list is not the last.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of the optimizer runs associated with a table.</p>
-    pub table_optimizer_runs: ::std::option::Option<::std::vec::Vec<crate::types::TableOptimizerRun>>,
+    pub table_optimizer_runs: ::std::option::Option<::std::vec::Vec::<crate::types::TableOptimizerRun>>,
     _request_id: Option<String>,
 }
-impl ListTableOptimizerRunsOutput {
+impl  ListTableOptimizerRunsOutput  {
     /// <p>The Catalog ID of the table.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the database in the catalog in which the table resides.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the table.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>A continuation token for paginating the returned list of optimizer runs, returned if the current segment of the list is not the last.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of the optimizer runs associated with a table.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.table_optimizer_runs.is_none()`.
-    pub fn table_optimizer_runs(&self) -> &[crate::types::TableOptimizerRun] {
-        self.table_optimizer_runs.as_deref().unwrap_or_default()
+    pub fn table_optimizer_runs(&self) -> & [crate::types::TableOptimizerRun] {
+        self.table_optimizer_runs.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListTableOptimizerRunsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListTableOptimizerRunsOutput {
     /// Creates a new builder-style object to manufacture [`ListTableOptimizerRunsOutput`](crate::operation::list_table_optimizer_runs::ListTableOptimizerRunsOutput).
     pub fn builder() -> crate::operation::list_table_optimizer_runs::builders::ListTableOptimizerRunsOutputBuilder {
@@ -59,7 +60,7 @@ pub struct ListTableOptimizerRunsOutputBuilder {
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) table_optimizer_runs: ::std::option::Option<::std::vec::Vec<crate::types::TableOptimizerRun>>,
+    pub(crate) table_optimizer_runs: ::std::option::Option<::std::vec::Vec::<crate::types::TableOptimizerRun>>,
     _request_id: Option<String>,
 }
 impl ListTableOptimizerRunsOutputBuilder {
@@ -70,8 +71,7 @@ impl ListTableOptimizerRunsOutputBuilder {
     }
     /// <p>The Catalog ID of the table.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The Catalog ID of the table.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +84,7 @@ impl ListTableOptimizerRunsOutputBuilder {
     }
     /// <p>The name of the database in the catalog in which the table resides.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the database in the catalog in which the table resides.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +97,7 @@ impl ListTableOptimizerRunsOutputBuilder {
     }
     /// <p>The name of the table.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the table.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +110,7 @@ impl ListTableOptimizerRunsOutputBuilder {
     }
     /// <p>A continuation token for paginating the returned list of optimizer runs, returned if the current segment of the list is not the last.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A continuation token for paginating the returned list of optimizer runs, returned if the current segment of the list is not the last.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,37 +123,42 @@ impl ListTableOptimizerRunsOutputBuilder {
     /// <p>A list of the optimizer runs associated with a table.</p>
     pub fn table_optimizer_runs(mut self, input: crate::types::TableOptimizerRun) -> Self {
         let mut v = self.table_optimizer_runs.unwrap_or_default();
-        v.push(input);
-        self.table_optimizer_runs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.table_optimizer_runs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the optimizer runs associated with a table.</p>
-    pub fn set_table_optimizer_runs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableOptimizerRun>>) -> Self {
-        self.table_optimizer_runs = input;
-        self
+    pub fn set_table_optimizer_runs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TableOptimizerRun>>) -> Self {
+        self.table_optimizer_runs = input; self
     }
     /// <p>A list of the optimizer runs associated with a table.</p>
-    pub fn get_table_optimizer_runs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableOptimizerRun>> {
+    pub fn get_table_optimizer_runs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TableOptimizerRun>> {
         &self.table_optimizer_runs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListTableOptimizerRunsOutput`](crate::operation::list_table_optimizer_runs::ListTableOptimizerRunsOutput).
     pub fn build(self) -> crate::operation::list_table_optimizer_runs::ListTableOptimizerRunsOutput {
         crate::operation::list_table_optimizer_runs::ListTableOptimizerRunsOutput {
-            catalog_id: self.catalog_id,
-            database_name: self.database_name,
-            table_name: self.table_name,
-            next_token: self.next_token,
-            table_optimizer_runs: self.table_optimizer_runs,
+            catalog_id: self.catalog_id
+            ,
+            database_name: self.database_name
+            ,
+            table_name: self.table_name
+            ,
+            next_token: self.next_token
+            ,
+            table_optimizer_runs: self.table_optimizer_runs
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

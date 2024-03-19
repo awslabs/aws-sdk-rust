@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListOrganizationRecommendationAccountsInput {
+pub struct ListOrganizationRecommendationAccountsInput  {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
@@ -12,9 +12,9 @@ pub struct ListOrganizationRecommendationAccountsInput {
     /// <p>An account affected by this organization recommendation</p>
     pub affected_account_id: ::std::option::Option<::std::string::String>,
 }
-impl ListOrganizationRecommendationAccountsInput {
+impl  ListOrganizationRecommendationAccountsInput  {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per page.</p>
@@ -22,11 +22,11 @@ impl ListOrganizationRecommendationAccountsInput {
         self.max_results
     }
     /// <p>The Recommendation identifier</p>
-    pub fn organization_recommendation_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn organization_recommendation_identifier(&self) -> ::std::option::Option<& str> {
         self.organization_recommendation_identifier.as_deref()
     }
     /// <p>An account affected by this organization recommendation</p>
-    pub fn affected_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn affected_account_id(&self) -> ::std::option::Option<& str> {
         self.affected_account_id.as_deref()
     }
 }
@@ -54,8 +54,7 @@ impl ListOrganizationRecommendationAccountsInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl ListOrganizationRecommendationAccountsInputBuilder {
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -83,8 +81,7 @@ impl ListOrganizationRecommendationAccountsInputBuilder {
     }
     /// <p>The Recommendation identifier</p>
     pub fn set_organization_recommendation_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_recommendation_identifier = input;
-        self
+        self.organization_recommendation_identifier = input; self
     }
     /// <p>The Recommendation identifier</p>
     pub fn get_organization_recommendation_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,27 +94,26 @@ impl ListOrganizationRecommendationAccountsInputBuilder {
     }
     /// <p>An account affected by this organization recommendation</p>
     pub fn set_affected_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.affected_account_id = input;
-        self
+        self.affected_account_id = input; self
     }
     /// <p>An account affected by this organization recommendation</p>
     pub fn get_affected_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.affected_account_id
     }
     /// Consumes the builder and constructs a [`ListOrganizationRecommendationAccountsInput`](crate::operation::list_organization_recommendation_accounts::ListOrganizationRecommendationAccountsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_organization_recommendation_accounts::ListOrganizationRecommendationAccountsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_organization_recommendation_accounts::ListOrganizationRecommendationAccountsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_organization_recommendation_accounts::ListOrganizationRecommendationAccountsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                organization_recommendation_identifier: self.organization_recommendation_identifier,
-                affected_account_id: self.affected_account_id,
-            },
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                organization_recommendation_identifier: self.organization_recommendation_identifier
+                ,
+                affected_account_id: self.affected_account_id
+                ,
+            }
         )
     }
 }
+

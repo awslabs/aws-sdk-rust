@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAgreementOutput {
+pub struct UpdateAgreementOutput  {
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
     pub agreement_id: ::std::string::String,
     _request_id: Option<String>,
 }
-impl UpdateAgreementOutput {
+impl  UpdateAgreementOutput  {
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
-    pub fn agreement_id(&self) -> &str {
-        use std::ops::Deref;
-        self.agreement_id.deref()
+    pub fn agreement_id(&self) -> & str {
+        use std::ops::Deref; self.agreement_id.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateAgreementOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateAgreementOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAgreementOutput`](crate::operation::update_agreement::UpdateAgreementOutput).
     pub fn builder() -> crate::operation::update_agreement::builders::UpdateAgreementOutputBuilder {
@@ -42,36 +41,35 @@ impl UpdateAgreementOutputBuilder {
     }
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
     pub fn set_agreement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agreement_id = input;
-        self
+        self.agreement_id = input; self
     }
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
     pub fn get_agreement_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.agreement_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateAgreementOutput`](crate::operation::update_agreement::UpdateAgreementOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`agreement_id`](crate::operation::update_agreement::builders::UpdateAgreementOutputBuilder::agreement_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_agreement::UpdateAgreementOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_agreement::UpdateAgreementOutput {
-            agreement_id: self.agreement_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "agreement_id",
-                    "agreement_id was not specified but it is required when building UpdateAgreementOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_agreement::UpdateAgreementOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_agreement::UpdateAgreementOutput {
+                agreement_id: self.agreement_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("agreement_id", "agreement_id was not specified but it is required when building UpdateAgreementOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

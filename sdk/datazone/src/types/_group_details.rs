@@ -3,15 +3,14 @@
 /// <p>The details of a group in Amazon DataZone.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GroupDetails {
+pub struct GroupDetails  {
     /// <p>The identifier of the group in Amazon DataZone.</p>
     pub group_id: ::std::string::String,
 }
-impl GroupDetails {
+impl  GroupDetails  {
     /// <p>The identifier of the group in Amazon DataZone.</p>
-    pub fn group_id(&self) -> &str {
-        use std::ops::Deref;
-        self.group_id.deref()
+    pub fn group_id(&self) -> & str {
+        use std::ops::Deref; self.group_id.deref()
     }
 }
 impl GroupDetails {
@@ -36,8 +35,7 @@ impl GroupDetailsBuilder {
     }
     /// <p>The identifier of the group in Amazon DataZone.</p>
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// <p>The identifier of the group in Amazon DataZone.</p>
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl GroupDetailsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`group_id`](crate::types::builders::GroupDetailsBuilder::group_id)
     pub fn build(self) -> ::std::result::Result<crate::types::GroupDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GroupDetails {
-            group_id: self.group_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "group_id",
-                    "group_id was not specified but it is required when building GroupDetails",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GroupDetails {
+                group_id: self.group_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("group_id", "group_id was not specified but it is required when building GroupDetails")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Filters cost anomalies based on the total impact.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TotalImpactFilter {
+pub struct TotalImpactFilter  {
     /// <p>The comparing value that's used in the filter.</p>
     pub numeric_operator: crate::types::NumericOperator,
     /// <p>The lower bound dollar value that's used in the filter.</p>
@@ -11,9 +11,9 @@ pub struct TotalImpactFilter {
     /// <p>The upper bound dollar value that's used in the filter.</p>
     pub end_value: f64,
 }
-impl TotalImpactFilter {
+impl  TotalImpactFilter  {
     /// <p>The comparing value that's used in the filter.</p>
-    pub fn numeric_operator(&self) -> &crate::types::NumericOperator {
+    pub fn numeric_operator(&self) -> & crate::types::NumericOperator {
         &self.numeric_operator
     }
     /// <p>The lower bound dollar value that's used in the filter.</p>
@@ -49,8 +49,7 @@ impl TotalImpactFilterBuilder {
     }
     /// <p>The comparing value that's used in the filter.</p>
     pub fn set_numeric_operator(mut self, input: ::std::option::Option<crate::types::NumericOperator>) -> Self {
-        self.numeric_operator = input;
-        self
+        self.numeric_operator = input; self
     }
     /// <p>The comparing value that's used in the filter.</p>
     pub fn get_numeric_operator(&self) -> &::std::option::Option<crate::types::NumericOperator> {
@@ -64,8 +63,7 @@ impl TotalImpactFilterBuilder {
     }
     /// <p>The lower bound dollar value that's used in the filter.</p>
     pub fn set_start_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.start_value = input;
-        self
+        self.start_value = input; self
     }
     /// <p>The lower bound dollar value that's used in the filter.</p>
     pub fn get_start_value(&self) -> &::std::option::Option<f64> {
@@ -78,8 +76,7 @@ impl TotalImpactFilterBuilder {
     }
     /// <p>The upper bound dollar value that's used in the filter.</p>
     pub fn set_end_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.end_value = input;
-        self
+        self.end_value = input; self
     }
     /// <p>The upper bound dollar value that's used in the filter.</p>
     pub fn get_end_value(&self) -> &::std::option::Option<f64> {
@@ -89,15 +86,21 @@ impl TotalImpactFilterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`numeric_operator`](crate::types::builders::TotalImpactFilterBuilder::numeric_operator)
     pub fn build(self) -> ::std::result::Result<crate::types::TotalImpactFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TotalImpactFilter {
-            numeric_operator: self.numeric_operator.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "numeric_operator",
-                    "numeric_operator was not specified but it is required when building TotalImpactFilter",
-                )
-            })?,
-            start_value: self.start_value.unwrap_or_default(),
-            end_value: self.end_value.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::TotalImpactFilter {
+                numeric_operator: self.numeric_operator
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("numeric_operator", "numeric_operator was not specified but it is required when building TotalImpactFilter")
+                    )?
+                ,
+                start_value: self.start_value
+                    .unwrap_or_default()
+                ,
+                end_value: self.end_value
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

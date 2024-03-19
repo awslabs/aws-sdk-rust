@@ -3,22 +3,22 @@
 /// <p>Represents the output of a <code>GetApiCache</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetApiCacheOutput {
+pub struct GetApiCacheOutput  {
     /// <p>The <code>ApiCache</code> object.</p>
     pub api_cache: ::std::option::Option<crate::types::ApiCache>,
     _request_id: Option<String>,
 }
-impl GetApiCacheOutput {
+impl  GetApiCacheOutput  {
     /// <p>The <code>ApiCache</code> object.</p>
-    pub fn api_cache(&self) -> ::std::option::Option<&crate::types::ApiCache> {
+    pub fn api_cache(&self) -> ::std::option::Option<& crate::types::ApiCache> {
         self.api_cache.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetApiCacheOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetApiCacheOutput {
     /// Creates a new builder-style object to manufacture [`GetApiCacheOutput`](crate::operation::get_api_cache::GetApiCacheOutput).
     pub fn builder() -> crate::operation::get_api_cache::builders::GetApiCacheOutputBuilder {
@@ -41,27 +41,28 @@ impl GetApiCacheOutputBuilder {
     }
     /// <p>The <code>ApiCache</code> object.</p>
     pub fn set_api_cache(mut self, input: ::std::option::Option<crate::types::ApiCache>) -> Self {
-        self.api_cache = input;
-        self
+        self.api_cache = input; self
     }
     /// <p>The <code>ApiCache</code> object.</p>
     pub fn get_api_cache(&self) -> &::std::option::Option<crate::types::ApiCache> {
         &self.api_cache
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetApiCacheOutput`](crate::operation::get_api_cache::GetApiCacheOutput).
     pub fn build(self) -> crate::operation::get_api_cache::GetApiCacheOutput {
         crate::operation::get_api_cache::GetApiCacheOutput {
-            api_cache: self.api_cache,
+            api_cache: self.api_cache
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

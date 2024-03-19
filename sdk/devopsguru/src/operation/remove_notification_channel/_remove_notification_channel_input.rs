@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveNotificationChannelInput {
+pub struct RemoveNotificationChannelInput  {
     /// <p>The ID of the notification channel to be removed.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl RemoveNotificationChannelInput {
+impl  RemoveNotificationChannelInput  {
     /// <p>The ID of the notification channel to be removed.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl RemoveNotificationChannelInputBuilder {
     }
     /// <p>The ID of the notification channel to be removed.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the notification channel to be removed.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     /// Consumes the builder and constructs a [`RemoveNotificationChannelInput`](crate::operation::remove_notification_channel::RemoveNotificationChannelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_notification_channel::RemoveNotificationChannelInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::remove_notification_channel::RemoveNotificationChannelInput { id: self.id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_notification_channel::RemoveNotificationChannelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::remove_notification_channel::RemoveNotificationChannelInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

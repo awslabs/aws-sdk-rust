@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeImageAssociationsInput {
+pub struct DescribeImageAssociationsInput  {
     /// <p>The identifier of the image.</p>
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource types of the associated resource.</p>
-    pub associated_resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ImageAssociatedResourceType>>,
+    pub associated_resource_types: ::std::option::Option<::std::vec::Vec::<crate::types::ImageAssociatedResourceType>>,
 }
-impl DescribeImageAssociationsInput {
+impl  DescribeImageAssociationsInput  {
     /// <p>The identifier of the image.</p>
-    pub fn image_id(&self) -> ::std::option::Option<&str> {
+    pub fn image_id(&self) -> ::std::option::Option<& str> {
         self.image_id.as_deref()
     }
     /// <p>The resource types of the associated resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_resource_types.is_none()`.
-    pub fn associated_resource_types(&self) -> &[crate::types::ImageAssociatedResourceType] {
-        self.associated_resource_types.as_deref().unwrap_or_default()
+    pub fn associated_resource_types(&self) -> & [crate::types::ImageAssociatedResourceType] {
+        self.associated_resource_types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeImageAssociationsInput {
@@ -32,7 +33,7 @@ impl DescribeImageAssociationsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeImageAssociationsInputBuilder {
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
-    pub(crate) associated_resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ImageAssociatedResourceType>>,
+    pub(crate) associated_resource_types: ::std::option::Option<::std::vec::Vec::<crate::types::ImageAssociatedResourceType>>,
 }
 impl DescribeImageAssociationsInputBuilder {
     /// <p>The identifier of the image.</p>
@@ -43,8 +44,7 @@ impl DescribeImageAssociationsInputBuilder {
     }
     /// <p>The identifier of the image.</p>
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_id = input;
-        self
+        self.image_id = input; self
     }
     /// <p>The identifier of the image.</p>
     pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,29 +57,28 @@ impl DescribeImageAssociationsInputBuilder {
     /// <p>The resource types of the associated resource.</p>
     pub fn associated_resource_types(mut self, input: crate::types::ImageAssociatedResourceType) -> Self {
         let mut v = self.associated_resource_types.unwrap_or_default();
-        v.push(input);
-        self.associated_resource_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.associated_resource_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The resource types of the associated resource.</p>
-    pub fn set_associated_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageAssociatedResourceType>>) -> Self {
-        self.associated_resource_types = input;
-        self
+    pub fn set_associated_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ImageAssociatedResourceType>>) -> Self {
+        self.associated_resource_types = input; self
     }
     /// <p>The resource types of the associated resource.</p>
-    pub fn get_associated_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageAssociatedResourceType>> {
+    pub fn get_associated_resource_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ImageAssociatedResourceType>> {
         &self.associated_resource_types
     }
     /// Consumes the builder and constructs a [`DescribeImageAssociationsInput`](crate::operation::describe_image_associations::DescribeImageAssociationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_image_associations::DescribeImageAssociationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_image_associations::DescribeImageAssociationsInput {
-            image_id: self.image_id,
-            associated_resource_types: self.associated_resource_types,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_image_associations::DescribeImageAssociationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_image_associations::DescribeImageAssociationsInput {
+                image_id: self.image_id
+                ,
+                associated_resource_types: self.associated_resource_types
+                ,
+            }
+        )
     }
 }
+

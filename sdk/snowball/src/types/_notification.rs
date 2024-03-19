@@ -4,35 +4,36 @@
 /// <p>When the notification settings are defined during job creation, you can choose to notify based on a specific set of job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Notification {
+pub struct Notification  {
     /// <p>The new SNS <code>TopicArn</code> that you want to associate with this job. You can create Amazon Resource Names (ARNs) for topics by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a> Amazon SNS API action.</p>
     /// <p>You can subscribe email addresses to an Amazon SNS topic through the Amazon Web Services Management Console, or by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple Notification Service (Amazon SNS) API action.</p>
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of job states that will trigger a notification for this job.</p>
-    pub job_states_to_notify: ::std::option::Option<::std::vec::Vec<crate::types::JobState>>,
+    pub job_states_to_notify: ::std::option::Option<::std::vec::Vec::<crate::types::JobState>>,
     /// <p>Any change in job state will trigger a notification for this job.</p>
     pub notify_all: bool,
     /// <p>Used to send SNS notifications for the person picking up the device (identified during job creation).</p>
     pub device_pickup_sns_topic_arn: ::std::option::Option<::std::string::String>,
 }
-impl Notification {
+impl  Notification  {
     /// <p>The new SNS <code>TopicArn</code> that you want to associate with this job. You can create Amazon Resource Names (ARNs) for topics by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a> Amazon SNS API action.</p>
     /// <p>You can subscribe email addresses to an Amazon SNS topic through the Amazon Web Services Management Console, or by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple Notification Service (Amazon SNS) API action.</p>
-    pub fn sns_topic_arn(&self) -> ::std::option::Option<&str> {
+    pub fn sns_topic_arn(&self) -> ::std::option::Option<& str> {
         self.sns_topic_arn.as_deref()
     }
     /// <p>The list of job states that will trigger a notification for this job.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_states_to_notify.is_none()`.
-    pub fn job_states_to_notify(&self) -> &[crate::types::JobState] {
-        self.job_states_to_notify.as_deref().unwrap_or_default()
+    pub fn job_states_to_notify(&self) -> & [crate::types::JobState] {
+        self.job_states_to_notify.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Any change in job state will trigger a notification for this job.</p>
     pub fn notify_all(&self) -> bool {
         self.notify_all
     }
     /// <p>Used to send SNS notifications for the person picking up the device (identified during job creation).</p>
-    pub fn device_pickup_sns_topic_arn(&self) -> ::std::option::Option<&str> {
+    pub fn device_pickup_sns_topic_arn(&self) -> ::std::option::Option<& str> {
         self.device_pickup_sns_topic_arn.as_deref()
     }
 }
@@ -48,7 +49,7 @@ impl Notification {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NotificationBuilder {
     pub(crate) sns_topic_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) job_states_to_notify: ::std::option::Option<::std::vec::Vec<crate::types::JobState>>,
+    pub(crate) job_states_to_notify: ::std::option::Option<::std::vec::Vec::<crate::types::JobState>>,
     pub(crate) notify_all: ::std::option::Option<bool>,
     pub(crate) device_pickup_sns_topic_arn: ::std::option::Option<::std::string::String>,
 }
@@ -62,8 +63,7 @@ impl NotificationBuilder {
     /// <p>The new SNS <code>TopicArn</code> that you want to associate with this job. You can create Amazon Resource Names (ARNs) for topics by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a> Amazon SNS API action.</p>
     /// <p>You can subscribe email addresses to an Amazon SNS topic through the Amazon Web Services Management Console, or by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple Notification Service (Amazon SNS) API action.</p>
     pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sns_topic_arn = input;
-        self
+        self.sns_topic_arn = input; self
     }
     /// <p>The new SNS <code>TopicArn</code> that you want to associate with this job. You can create Amazon Resource Names (ARNs) for topics by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a> Amazon SNS API action.</p>
     /// <p>You can subscribe email addresses to an Amazon SNS topic through the Amazon Web Services Management Console, or by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple Notification Service (Amazon SNS) API action.</p>
@@ -77,17 +77,16 @@ impl NotificationBuilder {
     /// <p>The list of job states that will trigger a notification for this job.</p>
     pub fn job_states_to_notify(mut self, input: crate::types::JobState) -> Self {
         let mut v = self.job_states_to_notify.unwrap_or_default();
-        v.push(input);
-        self.job_states_to_notify = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.job_states_to_notify = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of job states that will trigger a notification for this job.</p>
-    pub fn set_job_states_to_notify(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobState>>) -> Self {
-        self.job_states_to_notify = input;
-        self
+    pub fn set_job_states_to_notify(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::JobState>>) -> Self {
+        self.job_states_to_notify = input; self
     }
     /// <p>The list of job states that will trigger a notification for this job.</p>
-    pub fn get_job_states_to_notify(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobState>> {
+    pub fn get_job_states_to_notify(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::JobState>> {
         &self.job_states_to_notify
     }
     /// <p>Any change in job state will trigger a notification for this job.</p>
@@ -97,8 +96,7 @@ impl NotificationBuilder {
     }
     /// <p>Any change in job state will trigger a notification for this job.</p>
     pub fn set_notify_all(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.notify_all = input;
-        self
+        self.notify_all = input; self
     }
     /// <p>Any change in job state will trigger a notification for this job.</p>
     pub fn get_notify_all(&self) -> &::std::option::Option<bool> {
@@ -111,8 +109,7 @@ impl NotificationBuilder {
     }
     /// <p>Used to send SNS notifications for the person picking up the device (identified during job creation).</p>
     pub fn set_device_pickup_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_pickup_sns_topic_arn = input;
-        self
+        self.device_pickup_sns_topic_arn = input; self
     }
     /// <p>Used to send SNS notifications for the person picking up the device (identified during job creation).</p>
     pub fn get_device_pickup_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,10 +118,16 @@ impl NotificationBuilder {
     /// Consumes the builder and constructs a [`Notification`](crate::types::Notification).
     pub fn build(self) -> crate::types::Notification {
         crate::types::Notification {
-            sns_topic_arn: self.sns_topic_arn,
-            job_states_to_notify: self.job_states_to_notify,
-            notify_all: self.notify_all.unwrap_or_default(),
-            device_pickup_sns_topic_arn: self.device_pickup_sns_topic_arn,
+            sns_topic_arn: self.sns_topic_arn
+            ,
+            job_states_to_notify: self.job_states_to_notify
+            ,
+            notify_all: self.notify_all
+                .unwrap_or_default()
+            ,
+            device_pickup_sns_topic_arn: self.device_pickup_sns_topic_arn
+            ,
         }
     }
 }
+

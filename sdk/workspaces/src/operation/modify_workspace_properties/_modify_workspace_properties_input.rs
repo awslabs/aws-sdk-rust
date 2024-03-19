@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyWorkspacePropertiesInput {
+pub struct ModifyWorkspacePropertiesInput  {
     /// <p>The identifier of the WorkSpace.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The properties of the WorkSpace.</p>
@@ -10,17 +10,17 @@ pub struct ModifyWorkspacePropertiesInput {
     /// <p>Indicates the data replication status.</p>
     pub data_replication: ::std::option::Option<crate::types::DataReplication>,
 }
-impl ModifyWorkspacePropertiesInput {
+impl  ModifyWorkspacePropertiesInput  {
     /// <p>The identifier of the WorkSpace.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// <p>The properties of the WorkSpace.</p>
-    pub fn workspace_properties(&self) -> ::std::option::Option<&crate::types::WorkspaceProperties> {
+    pub fn workspace_properties(&self) -> ::std::option::Option<& crate::types::WorkspaceProperties> {
         self.workspace_properties.as_ref()
     }
     /// <p>Indicates the data replication status.</p>
-    pub fn data_replication(&self) -> ::std::option::Option<&crate::types::DataReplication> {
+    pub fn data_replication(&self) -> ::std::option::Option<& crate::types::DataReplication> {
         self.data_replication.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl ModifyWorkspacePropertiesInputBuilder {
     }
     /// <p>The identifier of the WorkSpace.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The identifier of the WorkSpace.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ModifyWorkspacePropertiesInputBuilder {
     }
     /// <p>The properties of the WorkSpace.</p>
     pub fn set_workspace_properties(mut self, input: ::std::option::Option<crate::types::WorkspaceProperties>) -> Self {
-        self.workspace_properties = input;
-        self
+        self.workspace_properties = input; self
     }
     /// <p>The properties of the WorkSpace.</p>
     pub fn get_workspace_properties(&self) -> &::std::option::Option<crate::types::WorkspaceProperties> {
@@ -76,24 +74,24 @@ impl ModifyWorkspacePropertiesInputBuilder {
     }
     /// <p>Indicates the data replication status.</p>
     pub fn set_data_replication(mut self, input: ::std::option::Option<crate::types::DataReplication>) -> Self {
-        self.data_replication = input;
-        self
+        self.data_replication = input; self
     }
     /// <p>Indicates the data replication status.</p>
     pub fn get_data_replication(&self) -> &::std::option::Option<crate::types::DataReplication> {
         &self.data_replication
     }
     /// Consumes the builder and constructs a [`ModifyWorkspacePropertiesInput`](crate::operation::modify_workspace_properties::ModifyWorkspacePropertiesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_workspace_properties::ModifyWorkspacePropertiesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::modify_workspace_properties::ModifyWorkspacePropertiesInput {
-            workspace_id: self.workspace_id,
-            workspace_properties: self.workspace_properties,
-            data_replication: self.data_replication,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_workspace_properties::ModifyWorkspacePropertiesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_workspace_properties::ModifyWorkspacePropertiesInput {
+                workspace_id: self.workspace_id
+                ,
+                workspace_properties: self.workspace_properties
+                ,
+                data_replication: self.data_replication
+                ,
+            }
+        )
     }
 }
+

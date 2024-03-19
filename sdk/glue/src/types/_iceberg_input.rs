@@ -3,19 +3,19 @@
 /// <p>A structure that defines an Apache Iceberg metadata table to create in the catalog.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IcebergInput {
+pub struct IcebergInput  {
     /// <p>A required metadata operation. Can only be set to <code>CREATE</code>.</p>
     pub metadata_operation: crate::types::MetadataOperation,
     /// <p>The table version for the Iceberg table. Defaults to 2.</p>
     pub version: ::std::option::Option<::std::string::String>,
 }
-impl IcebergInput {
+impl  IcebergInput  {
     /// <p>A required metadata operation. Can only be set to <code>CREATE</code>.</p>
-    pub fn metadata_operation(&self) -> &crate::types::MetadataOperation {
+    pub fn metadata_operation(&self) -> & crate::types::MetadataOperation {
         &self.metadata_operation
     }
     /// <p>The table version for the Iceberg table. Defaults to 2.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl IcebergInputBuilder {
     }
     /// <p>A required metadata operation. Can only be set to <code>CREATE</code>.</p>
     pub fn set_metadata_operation(mut self, input: ::std::option::Option<crate::types::MetadataOperation>) -> Self {
-        self.metadata_operation = input;
-        self
+        self.metadata_operation = input; self
     }
     /// <p>A required metadata operation. Can only be set to <code>CREATE</code>.</p>
     pub fn get_metadata_operation(&self) -> &::std::option::Option<crate::types::MetadataOperation> {
@@ -56,8 +55,7 @@ impl IcebergInputBuilder {
     }
     /// <p>The table version for the Iceberg table. Defaults to 2.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The table version for the Iceberg table. Defaults to 2.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,14 +65,17 @@ impl IcebergInputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`metadata_operation`](crate::types::builders::IcebergInputBuilder::metadata_operation)
     pub fn build(self) -> ::std::result::Result<crate::types::IcebergInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IcebergInput {
-            metadata_operation: self.metadata_operation.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "metadata_operation",
-                    "metadata_operation was not specified but it is required when building IcebergInput",
-                )
-            })?,
-            version: self.version,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IcebergInput {
+                metadata_operation: self.metadata_operation
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("metadata_operation", "metadata_operation was not specified but it is required when building IcebergInput")
+                    )?
+                ,
+                version: self.version
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A collection of statuses for a Multi-Region Access Point in the various Regions it supports.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MultiRegionAccessPointReport {
+pub struct MultiRegionAccessPointReport  {
     /// <p>The name of the Multi-Region Access Point.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The alias for the Multi-Region Access Point. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a>.</p>
@@ -17,36 +17,37 @@ pub struct MultiRegionAccessPointReport {
     /// <p><code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propagating and being completed. If a Multi-Region Access Point has a status of <code>PARTIALLY_CREATED</code>, you can retry creation or send a request to delete the Multi-Region Access Point. If a Multi-Region Access Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a delete request to finish the deletion of the Multi-Region Access Point.</p>
     pub status: ::std::option::Option<crate::types::MultiRegionAccessPointStatus>,
     /// <p>A collection of the Regions and buckets associated with the Multi-Region Access Point.</p>
-    pub regions: ::std::option::Option<::std::vec::Vec<crate::types::RegionReport>>,
+    pub regions: ::std::option::Option<::std::vec::Vec::<crate::types::RegionReport>>,
 }
-impl MultiRegionAccessPointReport {
+impl  MultiRegionAccessPointReport  {
     /// <p>The name of the Multi-Region Access Point.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The alias for the Multi-Region Access Point. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a>.</p>
-    pub fn alias(&self) -> ::std::option::Option<&str> {
+    pub fn alias(&self) -> ::std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// <p>When the Multi-Region Access Point create request was received.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
-    pub fn public_access_block(&self) -> ::std::option::Option<&crate::types::PublicAccessBlockConfiguration> {
+    pub fn public_access_block(&self) -> ::std::option::Option<& crate::types::PublicAccessBlockConfiguration> {
         self.public_access_block.as_ref()
     }
     /// <p>The current status of the Multi-Region Access Point.</p>
     /// <p><code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propagating and being completed. If a Multi-Region Access Point has a status of <code>PARTIALLY_CREATED</code>, you can retry creation or send a request to delete the Multi-Region Access Point. If a Multi-Region Access Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a delete request to finish the deletion of the Multi-Region Access Point.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::MultiRegionAccessPointStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::MultiRegionAccessPointStatus> {
         self.status.as_ref()
     }
     /// <p>A collection of the Regions and buckets associated with the Multi-Region Access Point.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions.is_none()`.
-    pub fn regions(&self) -> &[crate::types::RegionReport] {
-        self.regions.as_deref().unwrap_or_default()
+    pub fn regions(&self) -> & [crate::types::RegionReport] {
+        self.regions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl MultiRegionAccessPointReport {
@@ -65,7 +66,7 @@ pub struct MultiRegionAccessPointReportBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) public_access_block: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>,
     pub(crate) status: ::std::option::Option<crate::types::MultiRegionAccessPointStatus>,
-    pub(crate) regions: ::std::option::Option<::std::vec::Vec<crate::types::RegionReport>>,
+    pub(crate) regions: ::std::option::Option<::std::vec::Vec::<crate::types::RegionReport>>,
 }
 impl MultiRegionAccessPointReportBuilder {
     /// <p>The name of the Multi-Region Access Point.</p>
@@ -75,8 +76,7 @@ impl MultiRegionAccessPointReportBuilder {
     }
     /// <p>The name of the Multi-Region Access Point.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Multi-Region Access Point.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +89,7 @@ impl MultiRegionAccessPointReportBuilder {
     }
     /// <p>The alias for the Multi-Region Access Point. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a>.</p>
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias = input;
-        self
+        self.alias = input; self
     }
     /// <p>The alias for the Multi-Region Access Point. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a>.</p>
     pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl MultiRegionAccessPointReportBuilder {
     }
     /// <p>When the Multi-Region Access Point create request was received.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>When the Multi-Region Access Point create request was received.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -119,8 +117,7 @@ impl MultiRegionAccessPointReportBuilder {
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
     pub fn set_public_access_block(mut self, input: ::std::option::Option<crate::types::PublicAccessBlockConfiguration>) -> Self {
-        self.public_access_block = input;
-        self
+        self.public_access_block = input; self
     }
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
@@ -136,8 +133,7 @@ impl MultiRegionAccessPointReportBuilder {
     /// <p>The current status of the Multi-Region Access Point.</p>
     /// <p><code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propagating and being completed. If a Multi-Region Access Point has a status of <code>PARTIALLY_CREATED</code>, you can retry creation or send a request to delete the Multi-Region Access Point. If a Multi-Region Access Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a delete request to finish the deletion of the Multi-Region Access Point.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MultiRegionAccessPointStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the Multi-Region Access Point.</p>
     /// <p><code>CREATING</code> and <code>DELETING</code> are temporary states that exist while the request is propagating and being completed. If a Multi-Region Access Point has a status of <code>PARTIALLY_CREATED</code>, you can retry creation or send a request to delete the Multi-Region Access Point. If a Multi-Region Access Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a delete request to finish the deletion of the Multi-Region Access Point.</p>
@@ -151,28 +147,34 @@ impl MultiRegionAccessPointReportBuilder {
     /// <p>A collection of the Regions and buckets associated with the Multi-Region Access Point.</p>
     pub fn regions(mut self, input: crate::types::RegionReport) -> Self {
         let mut v = self.regions.unwrap_or_default();
-        v.push(input);
-        self.regions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.regions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A collection of the Regions and buckets associated with the Multi-Region Access Point.</p>
-    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegionReport>>) -> Self {
-        self.regions = input;
-        self
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RegionReport>>) -> Self {
+        self.regions = input; self
     }
     /// <p>A collection of the Regions and buckets associated with the Multi-Region Access Point.</p>
-    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegionReport>> {
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RegionReport>> {
         &self.regions
     }
     /// Consumes the builder and constructs a [`MultiRegionAccessPointReport`](crate::types::MultiRegionAccessPointReport).
     pub fn build(self) -> crate::types::MultiRegionAccessPointReport {
         crate::types::MultiRegionAccessPointReport {
-            name: self.name,
-            alias: self.alias,
-            created_at: self.created_at,
-            public_access_block: self.public_access_block,
-            status: self.status,
-            regions: self.regions,
+            name: self.name
+            ,
+            alias: self.alias
+            ,
+            created_at: self.created_at
+            ,
+            public_access_block: self.public_access_block
+            ,
+            status: self.status
+            ,
+            regions: self.regions
+            ,
         }
     }
 }
+

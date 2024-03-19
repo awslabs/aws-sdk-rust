@@ -3,19 +3,19 @@
 /// <p>Container for the parameters to the <code>GetDataSource</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDataSourceInput {
+pub struct GetDataSourceInput  {
     /// <p>The name of the domain.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the data source to get information about.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl GetDataSourceInput {
+impl  GetDataSourceInput  {
     /// <p>The name of the domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The name of the data source to get information about.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl GetDataSourceInputBuilder {
     }
     /// <p>The name of the domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The name of the domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,20 +56,22 @@ impl GetDataSourceInputBuilder {
     }
     /// <p>The name of the data source to get information about.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the data source to get information about.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetDataSourceInput`](crate::operation::get_data_source::GetDataSourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_data_source::GetDataSourceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_data_source::GetDataSourceInput {
-            domain_name: self.domain_name,
-            name: self.name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_data_source::GetDataSourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_data_source::GetDataSourceInput {
+                domain_name: self.domain_name
+                ,
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

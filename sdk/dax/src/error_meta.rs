@@ -64,7 +64,7 @@ pub enum Error {
     &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
      \
     See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-Error) for what information is available for the error.")]
-    Unhandled(crate::error::sealed_unhandled::Unhandled),
+    Unhandled(crate::error::sealed_unhandled::Unhandled)
 }
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -96,69 +96,63 @@ impl ::std::fmt::Display for Error {
             Error::SubnetQuotaExceededFault(inner) => inner.fmt(f),
             Error::TagNotFoundFault(inner) => inner.fmt(f),
             Error::TagQuotaPerResourceExceeded(inner) => inner.fmt(f),
-            Error::Unhandled(_) => {
-                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
-                    write!(f, "unhandled error ({code})")
-                } else {
-                    f.write_str("unhandled error")
-                }
-            }
+            Error::Unhandled(_) => if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                                        write!(f, "unhandled error ({code})")
+                                    } else {
+                                        f.write_str("unhandled error")
+                                    }
         }
     }
 }
 impl From<::aws_smithy_types::error::operation::BuildError> for Error {
-    fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
-        Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source: value.into(),
-            meta: ::std::default::Default::default(),
-        })
-    }
-}
+                fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
+                    Error::Unhandled(crate::error::sealed_unhandled::Unhandled { source: value.into(), meta: ::std::default::Default::default() })
+                }
+            }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
-    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
-        match self {
-            Self::ClusterAlreadyExistsFault(inner) => inner.meta(),
-            Self::ClusterNotFoundFault(inner) => inner.meta(),
-            Self::ClusterQuotaForCustomerExceededFault(inner) => inner.meta(),
-            Self::InsufficientClusterCapacityFault(inner) => inner.meta(),
-            Self::InvalidArnFault(inner) => inner.meta(),
-            Self::InvalidClusterStateFault(inner) => inner.meta(),
-            Self::InvalidParameterCombinationException(inner) => inner.meta(),
-            Self::InvalidParameterGroupStateFault(inner) => inner.meta(),
-            Self::InvalidParameterValueException(inner) => inner.meta(),
-            Self::InvalidSubnet(inner) => inner.meta(),
-            Self::InvalidVpcNetworkStateFault(inner) => inner.meta(),
-            Self::NodeNotFoundFault(inner) => inner.meta(),
-            Self::NodeQuotaForClusterExceededFault(inner) => inner.meta(),
-            Self::NodeQuotaForCustomerExceededFault(inner) => inner.meta(),
-            Self::ParameterGroupAlreadyExistsFault(inner) => inner.meta(),
-            Self::ParameterGroupNotFoundFault(inner) => inner.meta(),
-            Self::ParameterGroupQuotaExceededFault(inner) => inner.meta(),
-            Self::ServiceLinkedRoleNotFoundFault(inner) => inner.meta(),
-            Self::ServiceQuotaExceededException(inner) => inner.meta(),
-            Self::SubnetGroupAlreadyExistsFault(inner) => inner.meta(),
-            Self::SubnetGroupInUseFault(inner) => inner.meta(),
-            Self::SubnetGroupNotFoundFault(inner) => inner.meta(),
-            Self::SubnetGroupQuotaExceededFault(inner) => inner.meta(),
-            Self::SubnetInUse(inner) => inner.meta(),
-            Self::SubnetQuotaExceededFault(inner) => inner.meta(),
-            Self::TagNotFoundFault(inner) => inner.meta(),
-            Self::TagQuotaPerResourceExceeded(inner) => inner.meta(),
-            Self::Unhandled(inner) => &inner.meta,
-        }
-    }
-}
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_cluster::CreateClusterError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+                fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+                    match self {
+                        Self::ClusterAlreadyExistsFault(inner) => inner.meta(),
+Self::ClusterNotFoundFault(inner) => inner.meta(),
+Self::ClusterQuotaForCustomerExceededFault(inner) => inner.meta(),
+Self::InsufficientClusterCapacityFault(inner) => inner.meta(),
+Self::InvalidArnFault(inner) => inner.meta(),
+Self::InvalidClusterStateFault(inner) => inner.meta(),
+Self::InvalidParameterCombinationException(inner) => inner.meta(),
+Self::InvalidParameterGroupStateFault(inner) => inner.meta(),
+Self::InvalidParameterValueException(inner) => inner.meta(),
+Self::InvalidSubnet(inner) => inner.meta(),
+Self::InvalidVpcNetworkStateFault(inner) => inner.meta(),
+Self::NodeNotFoundFault(inner) => inner.meta(),
+Self::NodeQuotaForClusterExceededFault(inner) => inner.meta(),
+Self::NodeQuotaForCustomerExceededFault(inner) => inner.meta(),
+Self::ParameterGroupAlreadyExistsFault(inner) => inner.meta(),
+Self::ParameterGroupNotFoundFault(inner) => inner.meta(),
+Self::ParameterGroupQuotaExceededFault(inner) => inner.meta(),
+Self::ServiceLinkedRoleNotFoundFault(inner) => inner.meta(),
+Self::ServiceQuotaExceededException(inner) => inner.meta(),
+Self::SubnetGroupAlreadyExistsFault(inner) => inner.meta(),
+Self::SubnetGroupInUseFault(inner) => inner.meta(),
+Self::SubnetGroupNotFoundFault(inner) => inner.meta(),
+Self::SubnetGroupQuotaExceededFault(inner) => inner.meta(),
+Self::SubnetInUse(inner) => inner.meta(),
+Self::SubnetQuotaExceededFault(inner) => inner.meta(),
+Self::TagNotFoundFault(inner) => inner.meta(),
+Self::TagQuotaPerResourceExceeded(inner) => inner.meta(),
+                        Self::Unhandled(inner) => &inner.meta,
+                    }
+                }
+            }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_cluster::CreateClusterError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_cluster::CreateClusterError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -166,33 +160,17 @@ impl From<crate::operation::create_cluster::CreateClusterError> for Error {
     fn from(err: crate::operation::create_cluster::CreateClusterError) -> Self {
         match err {
             crate::operation::create_cluster::CreateClusterError::ClusterAlreadyExistsFault(inner) => Error::ClusterAlreadyExistsFault(inner),
-            crate::operation::create_cluster::CreateClusterError::ClusterQuotaForCustomerExceededFault(inner) => {
-                Error::ClusterQuotaForCustomerExceededFault(inner)
-            }
-            crate::operation::create_cluster::CreateClusterError::InsufficientClusterCapacityFault(inner) => {
-                Error::InsufficientClusterCapacityFault(inner)
-            }
+            crate::operation::create_cluster::CreateClusterError::ClusterQuotaForCustomerExceededFault(inner) => Error::ClusterQuotaForCustomerExceededFault(inner),
+            crate::operation::create_cluster::CreateClusterError::InsufficientClusterCapacityFault(inner) => Error::InsufficientClusterCapacityFault(inner),
             crate::operation::create_cluster::CreateClusterError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
-            crate::operation::create_cluster::CreateClusterError::InvalidParameterCombinationException(inner) => {
-                Error::InvalidParameterCombinationException(inner)
-            }
-            crate::operation::create_cluster::CreateClusterError::InvalidParameterGroupStateFault(inner) => {
-                Error::InvalidParameterGroupStateFault(inner)
-            }
-            crate::operation::create_cluster::CreateClusterError::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
+            crate::operation::create_cluster::CreateClusterError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::create_cluster::CreateClusterError::InvalidParameterGroupStateFault(inner) => Error::InvalidParameterGroupStateFault(inner),
+            crate::operation::create_cluster::CreateClusterError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::create_cluster::CreateClusterError::InvalidVpcNetworkStateFault(inner) => Error::InvalidVpcNetworkStateFault(inner),
-            crate::operation::create_cluster::CreateClusterError::NodeQuotaForClusterExceededFault(inner) => {
-                Error::NodeQuotaForClusterExceededFault(inner)
-            }
-            crate::operation::create_cluster::CreateClusterError::NodeQuotaForCustomerExceededFault(inner) => {
-                Error::NodeQuotaForCustomerExceededFault(inner)
-            }
+            crate::operation::create_cluster::CreateClusterError::NodeQuotaForClusterExceededFault(inner) => Error::NodeQuotaForClusterExceededFault(inner),
+            crate::operation::create_cluster::CreateClusterError::NodeQuotaForCustomerExceededFault(inner) => Error::NodeQuotaForCustomerExceededFault(inner),
             crate::operation::create_cluster::CreateClusterError::ParameterGroupNotFoundFault(inner) => Error::ParameterGroupNotFoundFault(inner),
-            crate::operation::create_cluster::CreateClusterError::ServiceLinkedRoleNotFoundFault(inner) => {
-                Error::ServiceLinkedRoleNotFoundFault(inner)
-            }
+            crate::operation::create_cluster::CreateClusterError::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
             crate::operation::create_cluster::CreateClusterError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::create_cluster::CreateClusterError::SubnetGroupNotFoundFault(inner) => Error::SubnetGroupNotFoundFault(inner),
             crate::operation::create_cluster::CreateClusterError::TagQuotaPerResourceExceeded(inner) => Error::TagQuotaPerResourceExceeded(inner),
@@ -200,56 +178,42 @@ impl From<crate::operation::create_cluster::CreateClusterError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_parameter_group::CreateParameterGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_parameter_group::CreateParameterGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_parameter_group::CreateParameterGroupError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::create_parameter_group::CreateParameterGroupError> for Error {
     fn from(err: crate::operation::create_parameter_group::CreateParameterGroupError) -> Self {
         match err {
-            crate::operation::create_parameter_group::CreateParameterGroupError::InvalidParameterCombinationException(inner) => {
-                Error::InvalidParameterCombinationException(inner)
-            }
-            crate::operation::create_parameter_group::CreateParameterGroupError::InvalidParameterGroupStateFault(inner) => {
-                Error::InvalidParameterGroupStateFault(inner)
-            }
-            crate::operation::create_parameter_group::CreateParameterGroupError::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::operation::create_parameter_group::CreateParameterGroupError::ParameterGroupAlreadyExistsFault(inner) => {
-                Error::ParameterGroupAlreadyExistsFault(inner)
-            }
-            crate::operation::create_parameter_group::CreateParameterGroupError::ParameterGroupQuotaExceededFault(inner) => {
-                Error::ParameterGroupQuotaExceededFault(inner)
-            }
-            crate::operation::create_parameter_group::CreateParameterGroupError::ServiceLinkedRoleNotFoundFault(inner) => {
-                Error::ServiceLinkedRoleNotFoundFault(inner)
-            }
+            crate::operation::create_parameter_group::CreateParameterGroupError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::create_parameter_group::CreateParameterGroupError::InvalidParameterGroupStateFault(inner) => Error::InvalidParameterGroupStateFault(inner),
+            crate::operation::create_parameter_group::CreateParameterGroupError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::create_parameter_group::CreateParameterGroupError::ParameterGroupAlreadyExistsFault(inner) => Error::ParameterGroupAlreadyExistsFault(inner),
+            crate::operation::create_parameter_group::CreateParameterGroupError::ParameterGroupQuotaExceededFault(inner) => Error::ParameterGroupQuotaExceededFault(inner),
+            crate::operation::create_parameter_group::CreateParameterGroupError::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
             crate::operation::create_parameter_group::CreateParameterGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_subnet_group::CreateSubnetGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_subnet_group::CreateSubnetGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_subnet_group::CreateSubnetGroupError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -257,73 +221,50 @@ impl From<crate::operation::create_subnet_group::CreateSubnetGroupError> for Err
     fn from(err: crate::operation::create_subnet_group::CreateSubnetGroupError) -> Self {
         match err {
             crate::operation::create_subnet_group::CreateSubnetGroupError::InvalidSubnet(inner) => Error::InvalidSubnet(inner),
-            crate::operation::create_subnet_group::CreateSubnetGroupError::ServiceLinkedRoleNotFoundFault(inner) => {
-                Error::ServiceLinkedRoleNotFoundFault(inner)
-            }
-            crate::operation::create_subnet_group::CreateSubnetGroupError::SubnetGroupAlreadyExistsFault(inner) => {
-                Error::SubnetGroupAlreadyExistsFault(inner)
-            }
-            crate::operation::create_subnet_group::CreateSubnetGroupError::SubnetGroupQuotaExceededFault(inner) => {
-                Error::SubnetGroupQuotaExceededFault(inner)
-            }
+            crate::operation::create_subnet_group::CreateSubnetGroupError::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
+            crate::operation::create_subnet_group::CreateSubnetGroupError::SubnetGroupAlreadyExistsFault(inner) => Error::SubnetGroupAlreadyExistsFault(inner),
+            crate::operation::create_subnet_group::CreateSubnetGroupError::SubnetGroupQuotaExceededFault(inner) => Error::SubnetGroupQuotaExceededFault(inner),
             crate::operation::create_subnet_group::CreateSubnetGroupError::SubnetQuotaExceededFault(inner) => Error::SubnetQuotaExceededFault(inner),
             crate::operation::create_subnet_group::CreateSubnetGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::decrease_replication_factor::DecreaseReplicationFactorError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::decrease_replication_factor::DecreaseReplicationFactorError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::decrease_replication_factor::DecreaseReplicationFactorError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::decrease_replication_factor::DecreaseReplicationFactorError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::decrease_replication_factor::DecreaseReplicationFactorError> for Error {
     fn from(err: crate::operation::decrease_replication_factor::DecreaseReplicationFactorError) -> Self {
         match err {
-            crate::operation::decrease_replication_factor::DecreaseReplicationFactorError::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::operation::decrease_replication_factor::DecreaseReplicationFactorError::InvalidClusterStateFault(inner) => {
-                Error::InvalidClusterStateFault(inner)
-            }
-            crate::operation::decrease_replication_factor::DecreaseReplicationFactorError::InvalidParameterCombinationException(inner) => {
-                Error::InvalidParameterCombinationException(inner)
-            }
-            crate::operation::decrease_replication_factor::DecreaseReplicationFactorError::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::operation::decrease_replication_factor::DecreaseReplicationFactorError::NodeNotFoundFault(inner) => {
-                Error::NodeNotFoundFault(inner)
-            }
-            crate::operation::decrease_replication_factor::DecreaseReplicationFactorError::ServiceLinkedRoleNotFoundFault(inner) => {
-                Error::ServiceLinkedRoleNotFoundFault(inner)
-            }
+            crate::operation::decrease_replication_factor::DecreaseReplicationFactorError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::decrease_replication_factor::DecreaseReplicationFactorError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
+            crate::operation::decrease_replication_factor::DecreaseReplicationFactorError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::decrease_replication_factor::DecreaseReplicationFactorError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::decrease_replication_factor::DecreaseReplicationFactorError::NodeNotFoundFault(inner) => Error::NodeNotFoundFault(inner),
+            crate::operation::decrease_replication_factor::DecreaseReplicationFactorError::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
             crate::operation::decrease_replication_factor::DecreaseReplicationFactorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_cluster::DeleteClusterError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_cluster::DeleteClusterError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_cluster::DeleteClusterError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -332,92 +273,71 @@ impl From<crate::operation::delete_cluster::DeleteClusterError> for Error {
         match err {
             crate::operation::delete_cluster::DeleteClusterError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
             crate::operation::delete_cluster::DeleteClusterError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
-            crate::operation::delete_cluster::DeleteClusterError::InvalidParameterCombinationException(inner) => {
-                Error::InvalidParameterCombinationException(inner)
-            }
-            crate::operation::delete_cluster::DeleteClusterError::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::operation::delete_cluster::DeleteClusterError::ServiceLinkedRoleNotFoundFault(inner) => {
-                Error::ServiceLinkedRoleNotFoundFault(inner)
-            }
+            crate::operation::delete_cluster::DeleteClusterError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::delete_cluster::DeleteClusterError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::delete_cluster::DeleteClusterError::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
             crate::operation::delete_cluster::DeleteClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_parameter_group::DeleteParameterGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_parameter_group::DeleteParameterGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_parameter_group::DeleteParameterGroupError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_parameter_group::DeleteParameterGroupError> for Error {
     fn from(err: crate::operation::delete_parameter_group::DeleteParameterGroupError) -> Self {
         match err {
-            crate::operation::delete_parameter_group::DeleteParameterGroupError::InvalidParameterCombinationException(inner) => {
-                Error::InvalidParameterCombinationException(inner)
-            }
-            crate::operation::delete_parameter_group::DeleteParameterGroupError::InvalidParameterGroupStateFault(inner) => {
-                Error::InvalidParameterGroupStateFault(inner)
-            }
-            crate::operation::delete_parameter_group::DeleteParameterGroupError::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::operation::delete_parameter_group::DeleteParameterGroupError::ParameterGroupNotFoundFault(inner) => {
-                Error::ParameterGroupNotFoundFault(inner)
-            }
-            crate::operation::delete_parameter_group::DeleteParameterGroupError::ServiceLinkedRoleNotFoundFault(inner) => {
-                Error::ServiceLinkedRoleNotFoundFault(inner)
-            }
+            crate::operation::delete_parameter_group::DeleteParameterGroupError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::delete_parameter_group::DeleteParameterGroupError::InvalidParameterGroupStateFault(inner) => Error::InvalidParameterGroupStateFault(inner),
+            crate::operation::delete_parameter_group::DeleteParameterGroupError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::delete_parameter_group::DeleteParameterGroupError::ParameterGroupNotFoundFault(inner) => Error::ParameterGroupNotFoundFault(inner),
+            crate::operation::delete_parameter_group::DeleteParameterGroupError::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
             crate::operation::delete_parameter_group::DeleteParameterGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_subnet_group::DeleteSubnetGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_subnet_group::DeleteSubnetGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_subnet_group::DeleteSubnetGroupError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_subnet_group::DeleteSubnetGroupError> for Error {
     fn from(err: crate::operation::delete_subnet_group::DeleteSubnetGroupError) -> Self {
         match err {
-            crate::operation::delete_subnet_group::DeleteSubnetGroupError::ServiceLinkedRoleNotFoundFault(inner) => {
-                Error::ServiceLinkedRoleNotFoundFault(inner)
-            }
+            crate::operation::delete_subnet_group::DeleteSubnetGroupError::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
             crate::operation::delete_subnet_group::DeleteSubnetGroupError::SubnetGroupInUseFault(inner) => Error::SubnetGroupInUseFault(inner),
             crate::operation::delete_subnet_group::DeleteSubnetGroupError::SubnetGroupNotFoundFault(inner) => Error::SubnetGroupNotFoundFault(inner),
             crate::operation::delete_subnet_group::DeleteSubnetGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_clusters::DescribeClustersError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_clusters::DescribeClustersError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_clusters::DescribeClustersError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -425,240 +345,168 @@ impl From<crate::operation::describe_clusters::DescribeClustersError> for Error 
     fn from(err: crate::operation::describe_clusters::DescribeClustersError) -> Self {
         match err {
             crate::operation::describe_clusters::DescribeClustersError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
-            crate::operation::describe_clusters::DescribeClustersError::InvalidParameterCombinationException(inner) => {
-                Error::InvalidParameterCombinationException(inner)
-            }
-            crate::operation::describe_clusters::DescribeClustersError::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::operation::describe_clusters::DescribeClustersError::ServiceLinkedRoleNotFoundFault(inner) => {
-                Error::ServiceLinkedRoleNotFoundFault(inner)
-            }
+            crate::operation::describe_clusters::DescribeClustersError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::describe_clusters::DescribeClustersError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_clusters::DescribeClustersError::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
             crate::operation::describe_clusters::DescribeClustersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_default_parameters::DescribeDefaultParametersError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_default_parameters::DescribeDefaultParametersError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_default_parameters::DescribeDefaultParametersError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_default_parameters::DescribeDefaultParametersError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::describe_default_parameters::DescribeDefaultParametersError> for Error {
     fn from(err: crate::operation::describe_default_parameters::DescribeDefaultParametersError) -> Self {
         match err {
-            crate::operation::describe_default_parameters::DescribeDefaultParametersError::InvalidParameterCombinationException(inner) => {
-                Error::InvalidParameterCombinationException(inner)
-            }
-            crate::operation::describe_default_parameters::DescribeDefaultParametersError::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::operation::describe_default_parameters::DescribeDefaultParametersError::ServiceLinkedRoleNotFoundFault(inner) => {
-                Error::ServiceLinkedRoleNotFoundFault(inner)
-            }
+            crate::operation::describe_default_parameters::DescribeDefaultParametersError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::describe_default_parameters::DescribeDefaultParametersError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_default_parameters::DescribeDefaultParametersError::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
             crate::operation::describe_default_parameters::DescribeDefaultParametersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_events::DescribeEventsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_events::DescribeEventsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_events::DescribeEventsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::describe_events::DescribeEventsError> for Error {
     fn from(err: crate::operation::describe_events::DescribeEventsError) -> Self {
         match err {
-            crate::operation::describe_events::DescribeEventsError::InvalidParameterCombinationException(inner) => {
-                Error::InvalidParameterCombinationException(inner)
-            }
-            crate::operation::describe_events::DescribeEventsError::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::operation::describe_events::DescribeEventsError::ServiceLinkedRoleNotFoundFault(inner) => {
-                Error::ServiceLinkedRoleNotFoundFault(inner)
-            }
+            crate::operation::describe_events::DescribeEventsError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::describe_events::DescribeEventsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_events::DescribeEventsError::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
             crate::operation::describe_events::DescribeEventsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_parameter_groups::DescribeParameterGroupsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_parameter_groups::DescribeParameterGroupsError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_parameter_groups::DescribeParameterGroupsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_parameter_groups::DescribeParameterGroupsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::describe_parameter_groups::DescribeParameterGroupsError> for Error {
     fn from(err: crate::operation::describe_parameter_groups::DescribeParameterGroupsError) -> Self {
         match err {
-            crate::operation::describe_parameter_groups::DescribeParameterGroupsError::InvalidParameterCombinationException(inner) => {
-                Error::InvalidParameterCombinationException(inner)
-            }
-            crate::operation::describe_parameter_groups::DescribeParameterGroupsError::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::operation::describe_parameter_groups::DescribeParameterGroupsError::ParameterGroupNotFoundFault(inner) => {
-                Error::ParameterGroupNotFoundFault(inner)
-            }
-            crate::operation::describe_parameter_groups::DescribeParameterGroupsError::ServiceLinkedRoleNotFoundFault(inner) => {
-                Error::ServiceLinkedRoleNotFoundFault(inner)
-            }
+            crate::operation::describe_parameter_groups::DescribeParameterGroupsError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::describe_parameter_groups::DescribeParameterGroupsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_parameter_groups::DescribeParameterGroupsError::ParameterGroupNotFoundFault(inner) => Error::ParameterGroupNotFoundFault(inner),
+            crate::operation::describe_parameter_groups::DescribeParameterGroupsError::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
             crate::operation::describe_parameter_groups::DescribeParameterGroupsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_parameters::DescribeParametersError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_parameters::DescribeParametersError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_parameters::DescribeParametersError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::describe_parameters::DescribeParametersError> for Error {
     fn from(err: crate::operation::describe_parameters::DescribeParametersError) -> Self {
         match err {
-            crate::operation::describe_parameters::DescribeParametersError::InvalidParameterCombinationException(inner) => {
-                Error::InvalidParameterCombinationException(inner)
-            }
-            crate::operation::describe_parameters::DescribeParametersError::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::operation::describe_parameters::DescribeParametersError::ParameterGroupNotFoundFault(inner) => {
-                Error::ParameterGroupNotFoundFault(inner)
-            }
-            crate::operation::describe_parameters::DescribeParametersError::ServiceLinkedRoleNotFoundFault(inner) => {
-                Error::ServiceLinkedRoleNotFoundFault(inner)
-            }
+            crate::operation::describe_parameters::DescribeParametersError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::describe_parameters::DescribeParametersError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_parameters::DescribeParametersError::ParameterGroupNotFoundFault(inner) => Error::ParameterGroupNotFoundFault(inner),
+            crate::operation::describe_parameters::DescribeParametersError::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
             crate::operation::describe_parameters::DescribeParametersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_subnet_groups::DescribeSubnetGroupsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_subnet_groups::DescribeSubnetGroupsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_subnet_groups::DescribeSubnetGroupsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::describe_subnet_groups::DescribeSubnetGroupsError> for Error {
     fn from(err: crate::operation::describe_subnet_groups::DescribeSubnetGroupsError) -> Self {
         match err {
-            crate::operation::describe_subnet_groups::DescribeSubnetGroupsError::ServiceLinkedRoleNotFoundFault(inner) => {
-                Error::ServiceLinkedRoleNotFoundFault(inner)
-            }
-            crate::operation::describe_subnet_groups::DescribeSubnetGroupsError::SubnetGroupNotFoundFault(inner) => {
-                Error::SubnetGroupNotFoundFault(inner)
-            }
+            crate::operation::describe_subnet_groups::DescribeSubnetGroupsError::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
+            crate::operation::describe_subnet_groups::DescribeSubnetGroupsError::SubnetGroupNotFoundFault(inner) => Error::SubnetGroupNotFoundFault(inner),
             crate::operation::describe_subnet_groups::DescribeSubnetGroupsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::increase_replication_factor::IncreaseReplicationFactorError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::increase_replication_factor::IncreaseReplicationFactorError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::increase_replication_factor::IncreaseReplicationFactorError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::increase_replication_factor::IncreaseReplicationFactorError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::increase_replication_factor::IncreaseReplicationFactorError> for Error {
     fn from(err: crate::operation::increase_replication_factor::IncreaseReplicationFactorError) -> Self {
         match err {
-            crate::operation::increase_replication_factor::IncreaseReplicationFactorError::ClusterNotFoundFault(inner) => {
-                Error::ClusterNotFoundFault(inner)
-            }
-            crate::operation::increase_replication_factor::IncreaseReplicationFactorError::InsufficientClusterCapacityFault(inner) => {
-                Error::InsufficientClusterCapacityFault(inner)
-            }
-            crate::operation::increase_replication_factor::IncreaseReplicationFactorError::InvalidClusterStateFault(inner) => {
-                Error::InvalidClusterStateFault(inner)
-            }
-            crate::operation::increase_replication_factor::IncreaseReplicationFactorError::InvalidParameterCombinationException(inner) => {
-                Error::InvalidParameterCombinationException(inner)
-            }
-            crate::operation::increase_replication_factor::IncreaseReplicationFactorError::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::operation::increase_replication_factor::IncreaseReplicationFactorError::InvalidVpcNetworkStateFault(inner) => {
-                Error::InvalidVpcNetworkStateFault(inner)
-            }
-            crate::operation::increase_replication_factor::IncreaseReplicationFactorError::NodeQuotaForClusterExceededFault(inner) => {
-                Error::NodeQuotaForClusterExceededFault(inner)
-            }
-            crate::operation::increase_replication_factor::IncreaseReplicationFactorError::NodeQuotaForCustomerExceededFault(inner) => {
-                Error::NodeQuotaForCustomerExceededFault(inner)
-            }
-            crate::operation::increase_replication_factor::IncreaseReplicationFactorError::ServiceLinkedRoleNotFoundFault(inner) => {
-                Error::ServiceLinkedRoleNotFoundFault(inner)
-            }
+            crate::operation::increase_replication_factor::IncreaseReplicationFactorError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
+            crate::operation::increase_replication_factor::IncreaseReplicationFactorError::InsufficientClusterCapacityFault(inner) => Error::InsufficientClusterCapacityFault(inner),
+            crate::operation::increase_replication_factor::IncreaseReplicationFactorError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
+            crate::operation::increase_replication_factor::IncreaseReplicationFactorError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::increase_replication_factor::IncreaseReplicationFactorError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::increase_replication_factor::IncreaseReplicationFactorError::InvalidVpcNetworkStateFault(inner) => Error::InvalidVpcNetworkStateFault(inner),
+            crate::operation::increase_replication_factor::IncreaseReplicationFactorError::NodeQuotaForClusterExceededFault(inner) => Error::NodeQuotaForClusterExceededFault(inner),
+            crate::operation::increase_replication_factor::IncreaseReplicationFactorError::NodeQuotaForCustomerExceededFault(inner) => Error::NodeQuotaForCustomerExceededFault(inner),
+            crate::operation::increase_replication_factor::IncreaseReplicationFactorError::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
             crate::operation::increase_replication_factor::IncreaseReplicationFactorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags::ListTagsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags::ListTagsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags::ListTagsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -668,26 +516,23 @@ impl From<crate::operation::list_tags::ListTagsError> for Error {
             crate::operation::list_tags::ListTagsError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
             crate::operation::list_tags::ListTagsError::InvalidArnFault(inner) => Error::InvalidArnFault(inner),
             crate::operation::list_tags::ListTagsError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
-            crate::operation::list_tags::ListTagsError::InvalidParameterCombinationException(inner) => {
-                Error::InvalidParameterCombinationException(inner)
-            }
+            crate::operation::list_tags::ListTagsError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
             crate::operation::list_tags::ListTagsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::list_tags::ListTagsError::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
             crate::operation::list_tags::ListTagsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::reboot_node::RebootNodeError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::reboot_node::RebootNodeError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::reboot_node::RebootNodeError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -696,9 +541,7 @@ impl From<crate::operation::reboot_node::RebootNodeError> for Error {
         match err {
             crate::operation::reboot_node::RebootNodeError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
             crate::operation::reboot_node::RebootNodeError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
-            crate::operation::reboot_node::RebootNodeError::InvalidParameterCombinationException(inner) => {
-                Error::InvalidParameterCombinationException(inner)
-            }
+            crate::operation::reboot_node::RebootNodeError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
             crate::operation::reboot_node::RebootNodeError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::reboot_node::RebootNodeError::NodeNotFoundFault(inner) => Error::NodeNotFoundFault(inner),
             crate::operation::reboot_node::RebootNodeError::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
@@ -706,17 +549,16 @@ impl From<crate::operation::reboot_node::RebootNodeError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -726,9 +568,7 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
             crate::operation::tag_resource::TagResourceError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
             crate::operation::tag_resource::TagResourceError::InvalidArnFault(inner) => Error::InvalidArnFault(inner),
             crate::operation::tag_resource::TagResourceError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
-            crate::operation::tag_resource::TagResourceError::InvalidParameterCombinationException(inner) => {
-                Error::InvalidParameterCombinationException(inner)
-            }
+            crate::operation::tag_resource::TagResourceError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
             crate::operation::tag_resource::TagResourceError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::tag_resource::TagResourceError::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
             crate::operation::tag_resource::TagResourceError::TagQuotaPerResourceExceeded(inner) => Error::TagQuotaPerResourceExceeded(inner),
@@ -736,17 +576,16 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -756,31 +595,24 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
             crate::operation::untag_resource::UntagResourceError::InvalidArnFault(inner) => Error::InvalidArnFault(inner),
             crate::operation::untag_resource::UntagResourceError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
-            crate::operation::untag_resource::UntagResourceError::InvalidParameterCombinationException(inner) => {
-                Error::InvalidParameterCombinationException(inner)
-            }
-            crate::operation::untag_resource::UntagResourceError::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::operation::untag_resource::UntagResourceError::ServiceLinkedRoleNotFoundFault(inner) => {
-                Error::ServiceLinkedRoleNotFoundFault(inner)
-            }
+            crate::operation::untag_resource::UntagResourceError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::untag_resource::UntagResourceError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::untag_resource::UntagResourceError::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
             crate::operation::untag_resource::UntagResourceError::TagNotFoundFault(inner) => Error::TagNotFoundFault(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_cluster::UpdateClusterError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_cluster::UpdateClusterError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_cluster::UpdateClusterError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -789,70 +621,50 @@ impl From<crate::operation::update_cluster::UpdateClusterError> for Error {
         match err {
             crate::operation::update_cluster::UpdateClusterError::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
             crate::operation::update_cluster::UpdateClusterError::InvalidClusterStateFault(inner) => Error::InvalidClusterStateFault(inner),
-            crate::operation::update_cluster::UpdateClusterError::InvalidParameterCombinationException(inner) => {
-                Error::InvalidParameterCombinationException(inner)
-            }
-            crate::operation::update_cluster::UpdateClusterError::InvalidParameterGroupStateFault(inner) => {
-                Error::InvalidParameterGroupStateFault(inner)
-            }
-            crate::operation::update_cluster::UpdateClusterError::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
+            crate::operation::update_cluster::UpdateClusterError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::update_cluster::UpdateClusterError::InvalidParameterGroupStateFault(inner) => Error::InvalidParameterGroupStateFault(inner),
+            crate::operation::update_cluster::UpdateClusterError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::update_cluster::UpdateClusterError::ParameterGroupNotFoundFault(inner) => Error::ParameterGroupNotFoundFault(inner),
-            crate::operation::update_cluster::UpdateClusterError::ServiceLinkedRoleNotFoundFault(inner) => {
-                Error::ServiceLinkedRoleNotFoundFault(inner)
-            }
+            crate::operation::update_cluster::UpdateClusterError::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
             crate::operation::update_cluster::UpdateClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_parameter_group::UpdateParameterGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_parameter_group::UpdateParameterGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_parameter_group::UpdateParameterGroupError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::update_parameter_group::UpdateParameterGroupError> for Error {
     fn from(err: crate::operation::update_parameter_group::UpdateParameterGroupError) -> Self {
         match err {
-            crate::operation::update_parameter_group::UpdateParameterGroupError::InvalidParameterCombinationException(inner) => {
-                Error::InvalidParameterCombinationException(inner)
-            }
-            crate::operation::update_parameter_group::UpdateParameterGroupError::InvalidParameterGroupStateFault(inner) => {
-                Error::InvalidParameterGroupStateFault(inner)
-            }
-            crate::operation::update_parameter_group::UpdateParameterGroupError::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::operation::update_parameter_group::UpdateParameterGroupError::ParameterGroupNotFoundFault(inner) => {
-                Error::ParameterGroupNotFoundFault(inner)
-            }
-            crate::operation::update_parameter_group::UpdateParameterGroupError::ServiceLinkedRoleNotFoundFault(inner) => {
-                Error::ServiceLinkedRoleNotFoundFault(inner)
-            }
+            crate::operation::update_parameter_group::UpdateParameterGroupError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::update_parameter_group::UpdateParameterGroupError::InvalidParameterGroupStateFault(inner) => Error::InvalidParameterGroupStateFault(inner),
+            crate::operation::update_parameter_group::UpdateParameterGroupError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::update_parameter_group::UpdateParameterGroupError::ParameterGroupNotFoundFault(inner) => Error::ParameterGroupNotFoundFault(inner),
+            crate::operation::update_parameter_group::UpdateParameterGroupError::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
             crate::operation::update_parameter_group::UpdateParameterGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_subnet_group::UpdateSubnetGroupError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_subnet_group::UpdateSubnetGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_subnet_group::UpdateSubnetGroupError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -860,9 +672,7 @@ impl From<crate::operation::update_subnet_group::UpdateSubnetGroupError> for Err
     fn from(err: crate::operation::update_subnet_group::UpdateSubnetGroupError) -> Self {
         match err {
             crate::operation::update_subnet_group::UpdateSubnetGroupError::InvalidSubnet(inner) => Error::InvalidSubnet(inner),
-            crate::operation::update_subnet_group::UpdateSubnetGroupError::ServiceLinkedRoleNotFoundFault(inner) => {
-                Error::ServiceLinkedRoleNotFoundFault(inner)
-            }
+            crate::operation::update_subnet_group::UpdateSubnetGroupError::ServiceLinkedRoleNotFoundFault(inner) => Error::ServiceLinkedRoleNotFoundFault(inner),
             crate::operation::update_subnet_group::UpdateSubnetGroupError::SubnetGroupNotFoundFault(inner) => Error::SubnetGroupNotFoundFault(inner),
             crate::operation::update_subnet_group::UpdateSubnetGroupError::SubnetInUse(inner) => Error::SubnetInUse(inner),
             crate::operation::update_subnet_group::UpdateSubnetGroupError::SubnetQuotaExceededFault(inner) => Error::SubnetQuotaExceededFault(inner),
@@ -900,7 +710,7 @@ impl ::std::error::Error for Error {
             Error::SubnetQuotaExceededFault(inner) => inner.source(),
             Error::TagNotFoundFault(inner) => inner.source(),
             Error::TagQuotaPerResourceExceeded(inner) => inner.source(),
-            Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
+            Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source)
         }
     }
 }
@@ -938,3 +748,4 @@ impl ::aws_types::request_id::RequestId for Error {
         }
     }
 }
+

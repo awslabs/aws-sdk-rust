@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let zendeskconnectoroperator = unimplemented!();
 /// match zendeskconnectoroperator {
@@ -42,16 +42,14 @@
 /// Specifically, when `zendeskconnectoroperator` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ZendeskConnectorOperator::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ZendeskConnectorOperator {
     #[allow(missing_docs)] // documentation missing in model
     Addition,
@@ -83,112 +81,98 @@ pub enum ZendeskConnectorOperator {
     ValidateNumeric,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ZendeskConnectorOperator {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADDITION" => ZendeskConnectorOperator::Addition,
-            "DIVISION" => ZendeskConnectorOperator::Division,
-            "GREATER_THAN" => ZendeskConnectorOperator::GreaterThan,
-            "MASK_ALL" => ZendeskConnectorOperator::MaskAll,
-            "MASK_FIRST_N" => ZendeskConnectorOperator::MaskFirstN,
-            "MASK_LAST_N" => ZendeskConnectorOperator::MaskLastN,
-            "MULTIPLICATION" => ZendeskConnectorOperator::Multiplication,
-            "NO_OP" => ZendeskConnectorOperator::NoOp,
-            "PROJECTION" => ZendeskConnectorOperator::Projection,
-            "SUBTRACTION" => ZendeskConnectorOperator::Subtraction,
-            "VALIDATE_NON_NEGATIVE" => ZendeskConnectorOperator::ValidateNonNegative,
-            "VALIDATE_NON_NULL" => ZendeskConnectorOperator::ValidateNonNull,
-            "VALIDATE_NON_ZERO" => ZendeskConnectorOperator::ValidateNonZero,
-            "VALIDATE_NUMERIC" => ZendeskConnectorOperator::ValidateNumeric,
-            other => ZendeskConnectorOperator::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ADDITION" => ZendeskConnectorOperator::Addition,
+"DIVISION" => ZendeskConnectorOperator::Division,
+"GREATER_THAN" => ZendeskConnectorOperator::GreaterThan,
+"MASK_ALL" => ZendeskConnectorOperator::MaskAll,
+"MASK_FIRST_N" => ZendeskConnectorOperator::MaskFirstN,
+"MASK_LAST_N" => ZendeskConnectorOperator::MaskLastN,
+"MULTIPLICATION" => ZendeskConnectorOperator::Multiplication,
+"NO_OP" => ZendeskConnectorOperator::NoOp,
+"PROJECTION" => ZendeskConnectorOperator::Projection,
+"SUBTRACTION" => ZendeskConnectorOperator::Subtraction,
+"VALIDATE_NON_NEGATIVE" => ZendeskConnectorOperator::ValidateNonNegative,
+"VALIDATE_NON_NULL" => ZendeskConnectorOperator::ValidateNonNull,
+"VALIDATE_NON_ZERO" => ZendeskConnectorOperator::ValidateNonZero,
+"VALIDATE_NUMERIC" => ZendeskConnectorOperator::ValidateNumeric,
+other => ZendeskConnectorOperator::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ZendeskConnectorOperator {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ZendeskConnectorOperator::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ZendeskConnectorOperator::from(s))
+                    }
+                }
 impl ZendeskConnectorOperator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ZendeskConnectorOperator::Addition => "ADDITION",
-            ZendeskConnectorOperator::Division => "DIVISION",
-            ZendeskConnectorOperator::GreaterThan => "GREATER_THAN",
-            ZendeskConnectorOperator::MaskAll => "MASK_ALL",
-            ZendeskConnectorOperator::MaskFirstN => "MASK_FIRST_N",
-            ZendeskConnectorOperator::MaskLastN => "MASK_LAST_N",
-            ZendeskConnectorOperator::Multiplication => "MULTIPLICATION",
-            ZendeskConnectorOperator::NoOp => "NO_OP",
-            ZendeskConnectorOperator::Projection => "PROJECTION",
-            ZendeskConnectorOperator::Subtraction => "SUBTRACTION",
-            ZendeskConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
-            ZendeskConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
-            ZendeskConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
-            ZendeskConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
-            ZendeskConnectorOperator::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADDITION",
-            "DIVISION",
-            "GREATER_THAN",
-            "MASK_ALL",
-            "MASK_FIRST_N",
-            "MASK_LAST_N",
-            "MULTIPLICATION",
-            "NO_OP",
-            "PROJECTION",
-            "SUBTRACTION",
-            "VALIDATE_NON_NEGATIVE",
-            "VALIDATE_NON_NULL",
-            "VALIDATE_NON_ZERO",
-            "VALIDATE_NUMERIC",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ZendeskConnectorOperator::Addition => "ADDITION",
+    ZendeskConnectorOperator::Division => "DIVISION",
+    ZendeskConnectorOperator::GreaterThan => "GREATER_THAN",
+    ZendeskConnectorOperator::MaskAll => "MASK_ALL",
+    ZendeskConnectorOperator::MaskFirstN => "MASK_FIRST_N",
+    ZendeskConnectorOperator::MaskLastN => "MASK_LAST_N",
+    ZendeskConnectorOperator::Multiplication => "MULTIPLICATION",
+    ZendeskConnectorOperator::NoOp => "NO_OP",
+    ZendeskConnectorOperator::Projection => "PROJECTION",
+    ZendeskConnectorOperator::Subtraction => "SUBTRACTION",
+    ZendeskConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
+    ZendeskConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
+    ZendeskConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
+    ZendeskConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
+    ZendeskConnectorOperator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADDITION", "DIVISION", "GREATER_THAN", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ZendeskConnectorOperator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ZendeskConnectorOperator {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ZendeskConnectorOperator {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ZendeskConnectorOperator::Addition => write!(f, "ADDITION"),
-            ZendeskConnectorOperator::Division => write!(f, "DIVISION"),
-            ZendeskConnectorOperator::GreaterThan => write!(f, "GREATER_THAN"),
-            ZendeskConnectorOperator::MaskAll => write!(f, "MASK_ALL"),
-            ZendeskConnectorOperator::MaskFirstN => write!(f, "MASK_FIRST_N"),
-            ZendeskConnectorOperator::MaskLastN => write!(f, "MASK_LAST_N"),
-            ZendeskConnectorOperator::Multiplication => write!(f, "MULTIPLICATION"),
-            ZendeskConnectorOperator::NoOp => write!(f, "NO_OP"),
-            ZendeskConnectorOperator::Projection => write!(f, "PROJECTION"),
-            ZendeskConnectorOperator::Subtraction => write!(f, "SUBTRACTION"),
-            ZendeskConnectorOperator::ValidateNonNegative => write!(f, "VALIDATE_NON_NEGATIVE"),
-            ZendeskConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
-            ZendeskConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
-            ZendeskConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
-            ZendeskConnectorOperator::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ZendeskConnectorOperator::Addition => write!(f, "ADDITION"),
+ZendeskConnectorOperator::Division => write!(f, "DIVISION"),
+ZendeskConnectorOperator::GreaterThan => write!(f, "GREATER_THAN"),
+ZendeskConnectorOperator::MaskAll => write!(f, "MASK_ALL"),
+ZendeskConnectorOperator::MaskFirstN => write!(f, "MASK_FIRST_N"),
+ZendeskConnectorOperator::MaskLastN => write!(f, "MASK_LAST_N"),
+ZendeskConnectorOperator::Multiplication => write!(f, "MULTIPLICATION"),
+ZendeskConnectorOperator::NoOp => write!(f, "NO_OP"),
+ZendeskConnectorOperator::Projection => write!(f, "PROJECTION"),
+ZendeskConnectorOperator::Subtraction => write!(f, "SUBTRACTION"),
+ZendeskConnectorOperator::ValidateNonNegative => write!(f, "VALIDATE_NON_NEGATIVE"),
+ZendeskConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
+ZendeskConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
+ZendeskConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
+ZendeskConnectorOperator::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

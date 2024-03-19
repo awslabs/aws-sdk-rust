@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetApplicationPolicyInput {
+pub struct GetApplicationPolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
 }
-impl GetApplicationPolicyInput {
+impl  GetApplicationPolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetApplicationPolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }
     /// Consumes the builder and constructs a [`GetApplicationPolicyInput`](crate::operation::get_application_policy::GetApplicationPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_application_policy::GetApplicationPolicyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_application_policy::GetApplicationPolicyInput {
-            application_id: self.application_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_application_policy::GetApplicationPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_application_policy::GetApplicationPolicyInput {
+                application_id: self.application_id
+                ,
+            }
+        )
     }
 }
+

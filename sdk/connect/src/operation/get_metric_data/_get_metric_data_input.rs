@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMetricDataInput {
+pub struct GetMetricDataInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the retrieval of historical metrics data. The time must be specified using a multiple of 5 minutes, such as 10:05, 10:10, 10:15.</p>
@@ -19,7 +19,7 @@ pub struct GetMetricDataInput {
     /// <p>The grouping applied to the metrics returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values returned apply to the metrics for each queue rather than aggregated for all queues.</p>
     /// <p>If no grouping is specified, a summary of metrics for all queues is returned.</p>
     /// <p>RoutingStepExpression is not a valid filter for GetMetricData and we recommend switching to GetMetricDataV2 for more up-to-date features.</p>
-    pub groupings: ::std::option::Option<::std::vec::Vec<crate::types::Grouping>>,
+    pub groupings: ::std::option::Option<::std::vec::Vec::<crate::types::Grouping>>,
     /// <p>The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p><note>
     /// <p>This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list).</p>
     /// </note>
@@ -202,41 +202,42 @@ pub struct GetMetricDataInput {
     /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").</p>
     /// </dd>
     /// </dl>
-    pub historical_metrics: ::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetric>>,
+    pub historical_metrics: ::std::option::Option<::std::vec::Vec::<crate::types::HistoricalMetric>>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl GetMetricDataInput {
+impl  GetMetricDataInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the retrieval of historical metrics data. The time must be specified using a multiple of 5 minutes, such as 10:05, 10:10, 10:15.</p>
     /// <p>The start time cannot be earlier than 24 hours before the time of the request. Historical metrics are available only for 24 hours.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be specified using an interval of 5 minutes, such as 11:00, 11:05, 11:10, and must be later than the start time timestamp.</p>
     /// <p>The time range between the start and end time must be less than 24 hours.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the resources associated with the queues or channels included in the filter. You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p>
     /// <p>RoutingStepExpression is not a valid filter for GetMetricData and we recommend switching to GetMetricDataV2 for more up-to-date features.</p><note>
     /// <p>To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the queue.</p>
     /// </note>
-    pub fn filters(&self) -> ::std::option::Option<&crate::types::Filters> {
+    pub fn filters(&self) -> ::std::option::Option<& crate::types::Filters> {
         self.filters.as_ref()
     }
     /// <p>The grouping applied to the metrics returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values returned apply to the metrics for each queue rather than aggregated for all queues.</p>
     /// <p>If no grouping is specified, a summary of metrics for all queues is returned.</p>
     /// <p>RoutingStepExpression is not a valid filter for GetMetricData and we recommend switching to GetMetricDataV2 for more up-to-date features.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groupings.is_none()`.
-    pub fn groupings(&self) -> &[crate::types::Grouping] {
-        self.groupings.as_deref().unwrap_or_default()
+    pub fn groupings(&self) -> & [crate::types::Grouping] {
+        self.groupings.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p><note>
     /// <p>This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list).</p>
@@ -420,13 +421,14 @@ impl GetMetricDataInput {
     /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").</p>
     /// </dd>
     /// </dl>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.historical_metrics.is_none()`.
-    pub fn historical_metrics(&self) -> &[crate::types::HistoricalMetric] {
-        self.historical_metrics.as_deref().unwrap_or_default()
+    pub fn historical_metrics(&self) -> & [crate::types::HistoricalMetric] {
+        self.historical_metrics.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per page.</p>
@@ -449,8 +451,8 @@ pub struct GetMetricDataInputBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) filters: ::std::option::Option<crate::types::Filters>,
-    pub(crate) groupings: ::std::option::Option<::std::vec::Vec<crate::types::Grouping>>,
-    pub(crate) historical_metrics: ::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetric>>,
+    pub(crate) groupings: ::std::option::Option<::std::vec::Vec::<crate::types::Grouping>>,
+    pub(crate) historical_metrics: ::std::option::Option<::std::vec::Vec::<crate::types::HistoricalMetric>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -463,8 +465,7 @@ impl GetMetricDataInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -480,8 +481,7 @@ impl GetMetricDataInputBuilder {
     /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the retrieval of historical metrics data. The time must be specified using a multiple of 5 minutes, such as 10:05, 10:10, 10:15.</p>
     /// <p>The start time cannot be earlier than 24 hours before the time of the request. Historical metrics are available only for 24 hours.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the retrieval of historical metrics data. The time must be specified using a multiple of 5 minutes, such as 10:05, 10:10, 10:15.</p>
     /// <p>The start time cannot be earlier than 24 hours before the time of the request. Historical metrics are available only for 24 hours.</p>
@@ -498,8 +498,7 @@ impl GetMetricDataInputBuilder {
     /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be specified using an interval of 5 minutes, such as 11:00, 11:05, 11:10, and must be later than the start time timestamp.</p>
     /// <p>The time range between the start and end time must be less than 24 hours.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be specified using an interval of 5 minutes, such as 11:00, 11:05, 11:10, and must be later than the start time timestamp.</p>
     /// <p>The time range between the start and end time must be less than 24 hours.</p>
@@ -520,8 +519,7 @@ impl GetMetricDataInputBuilder {
     /// <p>To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the queue.</p>
     /// </note>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::Filters>) -> Self {
-        self.filters = input;
-        self
+        self.filters = input; self
     }
     /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the resources associated with the queues or channels included in the filter. You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p>
     /// <p>RoutingStepExpression is not a valid filter for GetMetricData and we recommend switching to GetMetricDataV2 for more up-to-date features.</p><note>
@@ -539,21 +537,20 @@ impl GetMetricDataInputBuilder {
     /// <p>RoutingStepExpression is not a valid filter for GetMetricData and we recommend switching to GetMetricDataV2 for more up-to-date features.</p>
     pub fn groupings(mut self, input: crate::types::Grouping) -> Self {
         let mut v = self.groupings.unwrap_or_default();
-        v.push(input);
-        self.groupings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.groupings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The grouping applied to the metrics returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values returned apply to the metrics for each queue rather than aggregated for all queues.</p>
     /// <p>If no grouping is specified, a summary of metrics for all queues is returned.</p>
     /// <p>RoutingStepExpression is not a valid filter for GetMetricData and we recommend switching to GetMetricDataV2 for more up-to-date features.</p>
-    pub fn set_groupings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Grouping>>) -> Self {
-        self.groupings = input;
-        self
+    pub fn set_groupings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Grouping>>) -> Self {
+        self.groupings = input; self
     }
     /// <p>The grouping applied to the metrics returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values returned apply to the metrics for each queue rather than aggregated for all queues.</p>
     /// <p>If no grouping is specified, a summary of metrics for all queues is returned.</p>
     /// <p>RoutingStepExpression is not a valid filter for GetMetricData and we recommend switching to GetMetricDataV2 for more up-to-date features.</p>
-    pub fn get_groupings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Grouping>> {
+    pub fn get_groupings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Grouping>> {
         &self.groupings
     }
     /// Appends an item to `historical_metrics`.
@@ -744,9 +741,9 @@ impl GetMetricDataInputBuilder {
     /// </dl>
     pub fn historical_metrics(mut self, input: crate::types::HistoricalMetric) -> Self {
         let mut v = self.historical_metrics.unwrap_or_default();
-        v.push(input);
-        self.historical_metrics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.historical_metrics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p><note>
     /// <p>This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list).</p>
@@ -930,9 +927,8 @@ impl GetMetricDataInputBuilder {
     /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").</p>
     /// </dd>
     /// </dl>
-    pub fn set_historical_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetric>>) -> Self {
-        self.historical_metrics = input;
-        self
+    pub fn set_historical_metrics(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::HistoricalMetric>>) -> Self {
+        self.historical_metrics = input; self
     }
     /// <p>The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p><note>
     /// <p>This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list).</p>
@@ -1116,7 +1112,7 @@ impl GetMetricDataInputBuilder {
     /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").</p>
     /// </dd>
     /// </dl>
-    pub fn get_historical_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetric>> {
+    pub fn get_historical_metrics(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::HistoricalMetric>> {
         &self.historical_metrics
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
@@ -1126,8 +1122,7 @@ impl GetMetricDataInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -1140,26 +1135,34 @@ impl GetMetricDataInputBuilder {
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetMetricDataInput`](crate::operation::get_metric_data::GetMetricDataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_metric_data::GetMetricDataInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_metric_data::GetMetricDataInput {
-            instance_id: self.instance_id,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            filters: self.filters,
-            groupings: self.groupings,
-            historical_metrics: self.historical_metrics,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_metric_data::GetMetricDataInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_metric_data::GetMetricDataInput {
+                instance_id: self.instance_id
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                filters: self.filters
+                ,
+                groupings: self.groupings
+                ,
+                historical_metrics: self.historical_metrics
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

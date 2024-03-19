@@ -3,22 +3,20 @@
 /// <p>The location of an output object in Amazon S3.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OutPutS3Location {
+pub struct OutPutS3Location  {
     /// <p>The object's bucket.</p>
     pub bucket_name: ::std::string::String,
     /// <p>The object's key.</p>
     pub object_key: ::std::string::String,
 }
-impl OutPutS3Location {
+impl  OutPutS3Location  {
     /// <p>The object's bucket.</p>
-    pub fn bucket_name(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket_name.deref()
+    pub fn bucket_name(&self) -> & str {
+        use std::ops::Deref; self.bucket_name.deref()
     }
     /// <p>The object's key.</p>
-    pub fn object_key(&self) -> &str {
-        use std::ops::Deref;
-        self.object_key.deref()
+    pub fn object_key(&self) -> & str {
+        use std::ops::Deref; self.object_key.deref()
     }
 }
 impl OutPutS3Location {
@@ -44,8 +42,7 @@ impl OutPutS3LocationBuilder {
     }
     /// <p>The object's bucket.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>The object's bucket.</p>
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl OutPutS3LocationBuilder {
     }
     /// <p>The object's key.</p>
     pub fn set_object_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object_key = input;
-        self
+        self.object_key = input; self
     }
     /// <p>The object's key.</p>
     pub fn get_object_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl OutPutS3LocationBuilder {
     /// - [`bucket_name`](crate::types::builders::OutPutS3LocationBuilder::bucket_name)
     /// - [`object_key`](crate::types::builders::OutPutS3LocationBuilder::object_key)
     pub fn build(self) -> ::std::result::Result<crate::types::OutPutS3Location, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OutPutS3Location {
-            bucket_name: self.bucket_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket_name",
-                    "bucket_name was not specified but it is required when building OutPutS3Location",
-                )
-            })?,
-            object_key: self.object_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "object_key",
-                    "object_key was not specified but it is required when building OutPutS3Location",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OutPutS3Location {
+                bucket_name: self.bucket_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket_name", "bucket_name was not specified but it is required when building OutPutS3Location")
+                    )?
+                ,
+                object_key: self.object_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("object_key", "object_key was not specified but it is required when building OutPutS3Location")
+                    )?
+                ,
+            }
+        )
     }
 }
+

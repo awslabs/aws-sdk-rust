@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FastLaunchLaunchTemplateSpecificationRequest {
+pub struct FastLaunchLaunchTemplateSpecificationRequest  {
     /// <p>Specify the ID of the launch template that the AMI should use for Windows fast launch.</p>
     pub launch_template_id: ::std::option::Option<::std::string::String>,
     /// <p>Specify the name of the launch template that the AMI should use for Windows fast launch.</p>
@@ -13,17 +13,17 @@ pub struct FastLaunchLaunchTemplateSpecificationRequest {
     /// <p>Specify the version of the launch template that the AMI should use for Windows fast launch.</p>
     pub version: ::std::option::Option<::std::string::String>,
 }
-impl FastLaunchLaunchTemplateSpecificationRequest {
+impl  FastLaunchLaunchTemplateSpecificationRequest  {
     /// <p>Specify the ID of the launch template that the AMI should use for Windows fast launch.</p>
-    pub fn launch_template_id(&self) -> ::std::option::Option<&str> {
+    pub fn launch_template_id(&self) -> ::std::option::Option<& str> {
         self.launch_template_id.as_deref()
     }
     /// <p>Specify the name of the launch template that the AMI should use for Windows fast launch.</p>
-    pub fn launch_template_name(&self) -> ::std::option::Option<&str> {
+    pub fn launch_template_name(&self) -> ::std::option::Option<& str> {
         self.launch_template_name.as_deref()
     }
     /// <p>Specify the version of the launch template that the AMI should use for Windows fast launch.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -50,8 +50,7 @@ impl FastLaunchLaunchTemplateSpecificationRequestBuilder {
     }
     /// <p>Specify the ID of the launch template that the AMI should use for Windows fast launch.</p>
     pub fn set_launch_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.launch_template_id = input;
-        self
+        self.launch_template_id = input; self
     }
     /// <p>Specify the ID of the launch template that the AMI should use for Windows fast launch.</p>
     pub fn get_launch_template_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl FastLaunchLaunchTemplateSpecificationRequestBuilder {
     }
     /// <p>Specify the name of the launch template that the AMI should use for Windows fast launch.</p>
     pub fn set_launch_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.launch_template_name = input;
-        self
+        self.launch_template_name = input; self
     }
     /// <p>Specify the name of the launch template that the AMI should use for Windows fast launch.</p>
     pub fn get_launch_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +77,7 @@ impl FastLaunchLaunchTemplateSpecificationRequestBuilder {
     }
     /// <p>Specify the version of the launch template that the AMI should use for Windows fast launch.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>Specify the version of the launch template that the AMI should use for Windows fast launch.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,9 +86,13 @@ impl FastLaunchLaunchTemplateSpecificationRequestBuilder {
     /// Consumes the builder and constructs a [`FastLaunchLaunchTemplateSpecificationRequest`](crate::types::FastLaunchLaunchTemplateSpecificationRequest).
     pub fn build(self) -> crate::types::FastLaunchLaunchTemplateSpecificationRequest {
         crate::types::FastLaunchLaunchTemplateSpecificationRequest {
-            launch_template_id: self.launch_template_id,
-            launch_template_name: self.launch_template_name,
-            version: self.version,
+            launch_template_id: self.launch_template_id
+            ,
+            launch_template_name: self.launch_template_name
+            ,
+            version: self.version
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDataSourceOutput {
+pub struct GetDataSourceOutput  {
     /// <p>The identifier of the Amazon Q application.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the index linked to the data source connector.</p>
@@ -38,78 +38,78 @@ pub struct GetDataSourceOutput {
     pub document_enrichment_configuration: ::std::option::Option<crate::types::DocumentEnrichmentConfiguration>,
     _request_id: Option<String>,
 }
-impl GetDataSourceOutput {
+impl  GetDataSourceOutput  {
     /// <p>The identifier of the Amazon Q application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The identifier of the index linked to the data source connector.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>The identifier of the data source connector.</p>
-    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_id(&self) -> ::std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
-    pub fn data_source_arn(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_arn(&self) -> ::std::option::Option<& str> {
         self.data_source_arn.as_deref()
     }
     /// <p>The name for the data source connector.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The type of the data source connector. For example, <code>S3</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The details of how the data source connector is configured.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+    pub fn configuration(&self) -> ::std::option::Option<& ::aws_smithy_types::Document> {
         self.configuration.as_ref()
     }
     /// <p>Configuration information for an Amazon VPC (Virtual Private Cloud) to connect to your data source.</p>
-    pub fn vpc_configuration(&self) -> ::std::option::Option<&crate::types::DataSourceVpcConfiguration> {
+    pub fn vpc_configuration(&self) -> ::std::option::Option<& crate::types::DataSourceVpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
     /// <p>The Unix timestamp when the data source connector was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix timestamp when the data source connector was last updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The description for the data source connector.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The current status of the data source connector. When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source connector to fail.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DataSourceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DataSourceStatus> {
         self.status.as_ref()
     }
     /// <p>The schedule for Amazon Q to update the index.</p>
-    pub fn sync_schedule(&self) -> ::std::option::Option<&str> {
+    pub fn sync_schedule(&self) -> ::std::option::Option<& str> {
         self.sync_schedule.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the role with permission to access the data source and required resources.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source connector to fail.</p>
-    pub fn error(&self) -> ::std::option::Option<&crate::types::ErrorDetail> {
+    pub fn error(&self) -> ::std::option::Option<& crate::types::ErrorDetail> {
         self.error.as_ref()
     }
     /// <p>Provides the configuration information for altering document metadata and content during the document ingestion process.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>.</p>
-    pub fn document_enrichment_configuration(&self) -> ::std::option::Option<&crate::types::DocumentEnrichmentConfiguration> {
+    pub fn document_enrichment_configuration(&self) -> ::std::option::Option<& crate::types::DocumentEnrichmentConfiguration> {
         self.document_enrichment_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDataSourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDataSourceOutput {
     /// Creates a new builder-style object to manufacture [`GetDataSourceOutput`](crate::operation::get_data_source::GetDataSourceOutput).
     pub fn builder() -> crate::operation::get_data_source::builders::GetDataSourceOutputBuilder {
@@ -147,8 +147,7 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>The identifier of the Amazon Q application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier of the Amazon Q application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,8 +160,7 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>The identifier of the index linked to the data source connector.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>The identifier of the index linked to the data source connector.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,8 +173,7 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>The identifier of the data source connector.</p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_id = input;
-        self
+        self.data_source_id = input; self
     }
     /// <p>The identifier of the data source connector.</p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -189,8 +186,7 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
     pub fn set_data_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_arn = input;
-        self
+        self.data_source_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
     pub fn get_data_source_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -203,8 +199,7 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>The name for the data source connector.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The name for the data source connector.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -217,8 +212,7 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>The type of the data source connector. For example, <code>S3</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the data source connector. For example, <code>S3</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -231,8 +225,7 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>The details of how the data source connector is configured.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>The details of how the data source connector is configured.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
@@ -245,8 +238,7 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>Configuration information for an Amazon VPC (Virtual Private Cloud) to connect to your data source.</p>
     pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::DataSourceVpcConfiguration>) -> Self {
-        self.vpc_configuration = input;
-        self
+        self.vpc_configuration = input; self
     }
     /// <p>Configuration information for an Amazon VPC (Virtual Private Cloud) to connect to your data source.</p>
     pub fn get_vpc_configuration(&self) -> &::std::option::Option<crate::types::DataSourceVpcConfiguration> {
@@ -259,8 +251,7 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>The Unix timestamp when the data source connector was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The Unix timestamp when the data source connector was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -273,8 +264,7 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>The Unix timestamp when the data source connector was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The Unix timestamp when the data source connector was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -287,8 +277,7 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>The description for the data source connector.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description for the data source connector.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -301,8 +290,7 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>The current status of the data source connector. When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source connector to fail.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataSourceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the data source connector. When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source connector to fail.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DataSourceStatus> {
@@ -315,8 +303,7 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>The schedule for Amazon Q to update the index.</p>
     pub fn set_sync_schedule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sync_schedule = input;
-        self
+        self.sync_schedule = input; self
     }
     /// <p>The schedule for Amazon Q to update the index.</p>
     pub fn get_sync_schedule(&self) -> &::std::option::Option<::std::string::String> {
@@ -329,8 +316,7 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the role with permission to access the data source and required resources.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the role with permission to access the data source and required resources.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -343,8 +329,7 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source connector to fail.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ErrorDetail>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source connector to fail.</p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::ErrorDetail> {
@@ -359,8 +344,7 @@ impl GetDataSourceOutputBuilder {
     /// <p>Provides the configuration information for altering document metadata and content during the document ingestion process.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>.</p>
     pub fn set_document_enrichment_configuration(mut self, input: ::std::option::Option<crate::types::DocumentEnrichmentConfiguration>) -> Self {
-        self.document_enrichment_configuration = input;
-        self
+        self.document_enrichment_configuration = input; self
     }
     /// <p>Provides the configuration information for altering document metadata and content during the document ingestion process.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>.</p>
@@ -368,34 +352,51 @@ impl GetDataSourceOutputBuilder {
         &self.document_enrichment_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDataSourceOutput`](crate::operation::get_data_source::GetDataSourceOutput).
     pub fn build(self) -> crate::operation::get_data_source::GetDataSourceOutput {
         crate::operation::get_data_source::GetDataSourceOutput {
-            application_id: self.application_id,
-            index_id: self.index_id,
-            data_source_id: self.data_source_id,
-            data_source_arn: self.data_source_arn,
-            display_name: self.display_name,
-            r#type: self.r#type,
-            configuration: self.configuration,
-            vpc_configuration: self.vpc_configuration,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-            description: self.description,
-            status: self.status,
-            sync_schedule: self.sync_schedule,
-            role_arn: self.role_arn,
-            error: self.error,
-            document_enrichment_configuration: self.document_enrichment_configuration,
+            application_id: self.application_id
+            ,
+            index_id: self.index_id
+            ,
+            data_source_id: self.data_source_id
+            ,
+            data_source_arn: self.data_source_arn
+            ,
+            display_name: self.display_name
+            ,
+            r#type: self.r#type
+            ,
+            configuration: self.configuration
+            ,
+            vpc_configuration: self.vpc_configuration
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
+            description: self.description
+            ,
+            status: self.status
+            ,
+            sync_schedule: self.sync_schedule
+            ,
+            role_arn: self.role_arn
+            ,
+            error: self.error
+            ,
+            document_enrichment_configuration: self.document_enrichment_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

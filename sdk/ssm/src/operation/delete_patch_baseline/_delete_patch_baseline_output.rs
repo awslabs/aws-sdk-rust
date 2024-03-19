@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePatchBaselineOutput {
+pub struct DeletePatchBaselineOutput  {
     /// <p>The ID of the deleted patch baseline.</p>
     pub baseline_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DeletePatchBaselineOutput {
+impl  DeletePatchBaselineOutput  {
     /// <p>The ID of the deleted patch baseline.</p>
-    pub fn baseline_id(&self) -> ::std::option::Option<&str> {
+    pub fn baseline_id(&self) -> ::std::option::Option<& str> {
         self.baseline_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeletePatchBaselineOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeletePatchBaselineOutput {
     /// Creates a new builder-style object to manufacture [`DeletePatchBaselineOutput`](crate::operation::delete_patch_baseline::DeletePatchBaselineOutput).
     pub fn builder() -> crate::operation::delete_patch_baseline::builders::DeletePatchBaselineOutputBuilder {
@@ -40,27 +40,28 @@ impl DeletePatchBaselineOutputBuilder {
     }
     /// <p>The ID of the deleted patch baseline.</p>
     pub fn set_baseline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.baseline_id = input;
-        self
+        self.baseline_id = input; self
     }
     /// <p>The ID of the deleted patch baseline.</p>
     pub fn get_baseline_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.baseline_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeletePatchBaselineOutput`](crate::operation::delete_patch_baseline::DeletePatchBaselineOutput).
     pub fn build(self) -> crate::operation::delete_patch_baseline::DeletePatchBaselineOutput {
         crate::operation::delete_patch_baseline::DeletePatchBaselineOutput {
-            baseline_id: self.baseline_id,
+            baseline_id: self.baseline_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

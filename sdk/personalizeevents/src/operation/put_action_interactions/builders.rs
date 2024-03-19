@@ -5,55 +5,51 @@ pub use crate::operation::put_action_interactions::_put_action_interactions_inpu
 
 impl PutActionInteractionsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::put_action_interactions::PutActionInteractionsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_action_interactions::PutActionInteractionsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.put_action_interactions();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::put_action_interactions::PutActionInteractionsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::put_action_interactions::PutActionInteractionsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.put_action_interactions();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `PutActionInteractions`.
-///
+/// 
 /// <p>Records action interaction event data. An <i>action interaction</i> event is an interaction between a user and an <i>action</i>. For example, a user taking an action, such a enrolling in a membership program or downloading your app.</p>
 /// <p>For more information about recording action interactions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-action-interaction-events.html">Recording action interaction events</a>. For more information about actions in an Actions dataset, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/actions-datasets.html">Actions dataset</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutActionInteractionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_action_interactions::builders::PutActionInteractionsInputBuilder,
+                    inner: crate::operation::put_action_interactions::builders::PutActionInteractionsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::put_action_interactions::PutActionInteractionsOutput,
-        crate::operation::put_action_interactions::PutActionInteractionsError,
-    > for PutActionInteractionsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::put_action_interactions::PutActionInteractionsOutput,
-            crate::operation::put_action_interactions::PutActionInteractionsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::put_action_interactions::PutActionInteractionsOutput,
+                    crate::operation::put_action_interactions::PutActionInteractionsError,
+                > for PutActionInteractionsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::put_action_interactions::PutActionInteractionsOutput,
+                        crate::operation::put_action_interactions::PutActionInteractionsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl PutActionInteractionsFluentBuilder {
     /// Creates a new `PutActionInteractions`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl PutActionInteractionsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_action_interactions::PutActionInteractionsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_action_interactions::PutActionInteractionsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::put_action_interactions::PutActionInteractions::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::put_action_interactions::PutActionInteractions::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::put_action_interactions::PutActionInteractionsOutput,
-        crate::operation::put_action_interactions::PutActionInteractionsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::put_action_interactions::PutActionInteractionsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_action_interactions::PutActionInteractionsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::put_action_interactions::PutActionInteractions::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::put_action_interactions::PutActionInteractions::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::put_action_interactions::PutActionInteractionsOutput, crate::operation::put_action_interactions::PutActionInteractionsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID of your action interaction event tracker. When you create an Action interactions dataset, Amazon Personalize creates an action interaction event tracker for you. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/action-interaction-tracker-id.html">Action interaction event tracker ID</a>.</p>
     pub fn tracking_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tracking_id(input.into());
@@ -133,12 +120,13 @@ impl PutActionInteractionsFluentBuilder {
         self
     }
     /// <p>A list of action interaction events from the session.</p>
-    pub fn set_action_interactions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActionInteraction>>) -> Self {
+    pub fn set_action_interactions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ActionInteraction>>) -> Self {
         self.inner = self.inner.set_action_interactions(input);
         self
     }
     /// <p>A list of action interaction events from the session.</p>
-    pub fn get_action_interactions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionInteraction>> {
+    pub fn get_action_interactions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ActionInteraction>> {
         self.inner.get_action_interactions()
     }
 }
+

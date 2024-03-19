@@ -3,7 +3,7 @@
 /// <p>Request sampling results for a single rule from a service. Results are for the last 10 seconds unless the service has been assigned a longer reporting interval after a previous call to <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SamplingStatisticsDocument {
+pub struct SamplingStatisticsDocument  {
     /// <p>The name of the sampling rule.</p>
     pub rule_name: ::std::string::String,
     /// <p>A unique identifier for the service in hexadecimal.</p>
@@ -17,19 +17,17 @@ pub struct SamplingStatisticsDocument {
     /// <p>The number of requests recorded with borrowed reservoir quota.</p>
     pub borrow_count: i32,
 }
-impl SamplingStatisticsDocument {
+impl  SamplingStatisticsDocument  {
     /// <p>The name of the sampling rule.</p>
-    pub fn rule_name(&self) -> &str {
-        use std::ops::Deref;
-        self.rule_name.deref()
+    pub fn rule_name(&self) -> & str {
+        use std::ops::Deref; self.rule_name.deref()
     }
     /// <p>A unique identifier for the service in hexadecimal.</p>
-    pub fn client_id(&self) -> &str {
-        use std::ops::Deref;
-        self.client_id.deref()
+    pub fn client_id(&self) -> & str {
+        use std::ops::Deref; self.client_id.deref()
     }
     /// <p>The current time.</p>
-    pub fn timestamp(&self) -> &::aws_smithy_types::DateTime {
+    pub fn timestamp(&self) -> & ::aws_smithy_types::DateTime {
         &self.timestamp
     }
     /// <p>The number of requests that matched the rule.</p>
@@ -72,8 +70,7 @@ impl SamplingStatisticsDocumentBuilder {
     }
     /// <p>The name of the sampling rule.</p>
     pub fn set_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_name = input;
-        self
+        self.rule_name = input; self
     }
     /// <p>The name of the sampling rule.</p>
     pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +84,7 @@ impl SamplingStatisticsDocumentBuilder {
     }
     /// <p>A unique identifier for the service in hexadecimal.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_id = input;
-        self
+        self.client_id = input; self
     }
     /// <p>A unique identifier for the service in hexadecimal.</p>
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +98,7 @@ impl SamplingStatisticsDocumentBuilder {
     }
     /// <p>The current time.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p>The current time.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -117,8 +112,7 @@ impl SamplingStatisticsDocumentBuilder {
     }
     /// <p>The number of requests that matched the rule.</p>
     pub fn set_request_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.request_count = input;
-        self
+        self.request_count = input; self
     }
     /// <p>The number of requests that matched the rule.</p>
     pub fn get_request_count(&self) -> &::std::option::Option<i32> {
@@ -132,8 +126,7 @@ impl SamplingStatisticsDocumentBuilder {
     }
     /// <p>The number of requests recorded.</p>
     pub fn set_sampled_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.sampled_count = input;
-        self
+        self.sampled_count = input; self
     }
     /// <p>The number of requests recorded.</p>
     pub fn get_sampled_count(&self) -> &::std::option::Option<i32> {
@@ -146,8 +139,7 @@ impl SamplingStatisticsDocumentBuilder {
     }
     /// <p>The number of requests recorded with borrowed reservoir quota.</p>
     pub fn set_borrow_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.borrow_count = input;
-        self
+        self.borrow_count = input; self
     }
     /// <p>The number of requests recorded with borrowed reservoir quota.</p>
     pub fn get_borrow_count(&self) -> &::std::option::Option<i32> {
@@ -159,28 +151,34 @@ impl SamplingStatisticsDocumentBuilder {
     /// - [`client_id`](crate::types::builders::SamplingStatisticsDocumentBuilder::client_id)
     /// - [`timestamp`](crate::types::builders::SamplingStatisticsDocumentBuilder::timestamp)
     pub fn build(self) -> ::std::result::Result<crate::types::SamplingStatisticsDocument, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SamplingStatisticsDocument {
-            rule_name: self.rule_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rule_name",
-                    "rule_name was not specified but it is required when building SamplingStatisticsDocument",
-                )
-            })?,
-            client_id: self.client_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "client_id",
-                    "client_id was not specified but it is required when building SamplingStatisticsDocument",
-                )
-            })?,
-            timestamp: self.timestamp.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "timestamp",
-                    "timestamp was not specified but it is required when building SamplingStatisticsDocument",
-                )
-            })?,
-            request_count: self.request_count.unwrap_or_default(),
-            sampled_count: self.sampled_count.unwrap_or_default(),
-            borrow_count: self.borrow_count.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::SamplingStatisticsDocument {
+                rule_name: self.rule_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rule_name", "rule_name was not specified but it is required when building SamplingStatisticsDocument")
+                    )?
+                ,
+                client_id: self.client_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("client_id", "client_id was not specified but it is required when building SamplingStatisticsDocument")
+                    )?
+                ,
+                timestamp: self.timestamp
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("timestamp", "timestamp was not specified but it is required when building SamplingStatisticsDocument")
+                    )?
+                ,
+                request_count: self.request_count
+                    .unwrap_or_default()
+                ,
+                sampled_count: self.sampled_count
+                    .unwrap_or_default()
+                ,
+                borrow_count: self.borrow_count
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

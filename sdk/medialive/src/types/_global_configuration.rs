@@ -3,7 +3,7 @@
 /// Global Configuration
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GlobalConfiguration {
+pub struct GlobalConfiguration  {
     /// Value to set the initial audio gain for the Live Event.
     pub initial_audio_gain: ::std::option::Option<i32>,
     /// Indicates the action to take when the current input completes (e.g. end-of-file). When switchAndLoopInputs is configured the encoder will restart at the beginning of the first input. When "none" is configured the encoder will transcode either black, a solid color, or a user specified slate images per the "Input Loss Behavior" configuration until the next input switch occurs (which is controlled through the Channel Schedule API).
@@ -19,33 +19,33 @@ pub struct GlobalConfiguration {
     /// Advanced output locking settings
     pub output_locking_settings: ::std::option::Option<crate::types::OutputLockingSettings>,
 }
-impl GlobalConfiguration {
+impl  GlobalConfiguration  {
     /// Value to set the initial audio gain for the Live Event.
     pub fn initial_audio_gain(&self) -> ::std::option::Option<i32> {
         self.initial_audio_gain
     }
     /// Indicates the action to take when the current input completes (e.g. end-of-file). When switchAndLoopInputs is configured the encoder will restart at the beginning of the first input. When "none" is configured the encoder will transcode either black, a solid color, or a user specified slate images per the "Input Loss Behavior" configuration until the next input switch occurs (which is controlled through the Channel Schedule API).
-    pub fn input_end_action(&self) -> ::std::option::Option<&crate::types::GlobalConfigurationInputEndAction> {
+    pub fn input_end_action(&self) -> ::std::option::Option<& crate::types::GlobalConfigurationInputEndAction> {
         self.input_end_action.as_ref()
     }
     /// Settings for system actions when input is lost.
-    pub fn input_loss_behavior(&self) -> ::std::option::Option<&crate::types::InputLossBehavior> {
+    pub fn input_loss_behavior(&self) -> ::std::option::Option<& crate::types::InputLossBehavior> {
         self.input_loss_behavior.as_ref()
     }
     /// Indicates how MediaLive pipelines are synchronized. PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
-    pub fn output_locking_mode(&self) -> ::std::option::Option<&crate::types::GlobalConfigurationOutputLockingMode> {
+    pub fn output_locking_mode(&self) -> ::std::option::Option<& crate::types::GlobalConfigurationOutputLockingMode> {
         self.output_locking_mode.as_ref()
     }
     /// Indicates whether the rate of frames emitted by the Live encoder should be paced by its system clock (which optionally may be locked to another source via NTP) or should be locked to the clock of the source that is providing the input stream.
-    pub fn output_timing_source(&self) -> ::std::option::Option<&crate::types::GlobalConfigurationOutputTimingSource> {
+    pub fn output_timing_source(&self) -> ::std::option::Option<& crate::types::GlobalConfigurationOutputTimingSource> {
         self.output_timing_source.as_ref()
     }
     /// Adjusts video input buffer for streams with very low video framerates. This is commonly set to enabled for music channels with less than one video frame per second.
-    pub fn support_low_framerate_inputs(&self) -> ::std::option::Option<&crate::types::GlobalConfigurationLowFramerateInputs> {
+    pub fn support_low_framerate_inputs(&self) -> ::std::option::Option<& crate::types::GlobalConfigurationLowFramerateInputs> {
         self.support_low_framerate_inputs.as_ref()
     }
     /// Advanced output locking settings
-    pub fn output_locking_settings(&self) -> ::std::option::Option<&crate::types::OutputLockingSettings> {
+    pub fn output_locking_settings(&self) -> ::std::option::Option<& crate::types::OutputLockingSettings> {
         self.output_locking_settings.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl GlobalConfigurationBuilder {
     }
     /// Value to set the initial audio gain for the Live Event.
     pub fn set_initial_audio_gain(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.initial_audio_gain = input;
-        self
+        self.initial_audio_gain = input; self
     }
     /// Value to set the initial audio gain for the Live Event.
     pub fn get_initial_audio_gain(&self) -> &::std::option::Option<i32> {
@@ -90,8 +89,7 @@ impl GlobalConfigurationBuilder {
     }
     /// Indicates the action to take when the current input completes (e.g. end-of-file). When switchAndLoopInputs is configured the encoder will restart at the beginning of the first input. When "none" is configured the encoder will transcode either black, a solid color, or a user specified slate images per the "Input Loss Behavior" configuration until the next input switch occurs (which is controlled through the Channel Schedule API).
     pub fn set_input_end_action(mut self, input: ::std::option::Option<crate::types::GlobalConfigurationInputEndAction>) -> Self {
-        self.input_end_action = input;
-        self
+        self.input_end_action = input; self
     }
     /// Indicates the action to take when the current input completes (e.g. end-of-file). When switchAndLoopInputs is configured the encoder will restart at the beginning of the first input. When "none" is configured the encoder will transcode either black, a solid color, or a user specified slate images per the "Input Loss Behavior" configuration until the next input switch occurs (which is controlled through the Channel Schedule API).
     pub fn get_input_end_action(&self) -> &::std::option::Option<crate::types::GlobalConfigurationInputEndAction> {
@@ -104,8 +102,7 @@ impl GlobalConfigurationBuilder {
     }
     /// Settings for system actions when input is lost.
     pub fn set_input_loss_behavior(mut self, input: ::std::option::Option<crate::types::InputLossBehavior>) -> Self {
-        self.input_loss_behavior = input;
-        self
+        self.input_loss_behavior = input; self
     }
     /// Settings for system actions when input is lost.
     pub fn get_input_loss_behavior(&self) -> &::std::option::Option<crate::types::InputLossBehavior> {
@@ -118,8 +115,7 @@ impl GlobalConfigurationBuilder {
     }
     /// Indicates how MediaLive pipelines are synchronized. PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
     pub fn set_output_locking_mode(mut self, input: ::std::option::Option<crate::types::GlobalConfigurationOutputLockingMode>) -> Self {
-        self.output_locking_mode = input;
-        self
+        self.output_locking_mode = input; self
     }
     /// Indicates how MediaLive pipelines are synchronized. PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
     pub fn get_output_locking_mode(&self) -> &::std::option::Option<crate::types::GlobalConfigurationOutputLockingMode> {
@@ -132,8 +128,7 @@ impl GlobalConfigurationBuilder {
     }
     /// Indicates whether the rate of frames emitted by the Live encoder should be paced by its system clock (which optionally may be locked to another source via NTP) or should be locked to the clock of the source that is providing the input stream.
     pub fn set_output_timing_source(mut self, input: ::std::option::Option<crate::types::GlobalConfigurationOutputTimingSource>) -> Self {
-        self.output_timing_source = input;
-        self
+        self.output_timing_source = input; self
     }
     /// Indicates whether the rate of frames emitted by the Live encoder should be paced by its system clock (which optionally may be locked to another source via NTP) or should be locked to the clock of the source that is providing the input stream.
     pub fn get_output_timing_source(&self) -> &::std::option::Option<crate::types::GlobalConfigurationOutputTimingSource> {
@@ -146,8 +141,7 @@ impl GlobalConfigurationBuilder {
     }
     /// Adjusts video input buffer for streams with very low video framerates. This is commonly set to enabled for music channels with less than one video frame per second.
     pub fn set_support_low_framerate_inputs(mut self, input: ::std::option::Option<crate::types::GlobalConfigurationLowFramerateInputs>) -> Self {
-        self.support_low_framerate_inputs = input;
-        self
+        self.support_low_framerate_inputs = input; self
     }
     /// Adjusts video input buffer for streams with very low video framerates. This is commonly set to enabled for music channels with less than one video frame per second.
     pub fn get_support_low_framerate_inputs(&self) -> &::std::option::Option<crate::types::GlobalConfigurationLowFramerateInputs> {
@@ -160,8 +154,7 @@ impl GlobalConfigurationBuilder {
     }
     /// Advanced output locking settings
     pub fn set_output_locking_settings(mut self, input: ::std::option::Option<crate::types::OutputLockingSettings>) -> Self {
-        self.output_locking_settings = input;
-        self
+        self.output_locking_settings = input; self
     }
     /// Advanced output locking settings
     pub fn get_output_locking_settings(&self) -> &::std::option::Option<crate::types::OutputLockingSettings> {
@@ -170,13 +163,21 @@ impl GlobalConfigurationBuilder {
     /// Consumes the builder and constructs a [`GlobalConfiguration`](crate::types::GlobalConfiguration).
     pub fn build(self) -> crate::types::GlobalConfiguration {
         crate::types::GlobalConfiguration {
-            initial_audio_gain: self.initial_audio_gain,
-            input_end_action: self.input_end_action,
-            input_loss_behavior: self.input_loss_behavior,
-            output_locking_mode: self.output_locking_mode,
-            output_timing_source: self.output_timing_source,
-            support_low_framerate_inputs: self.support_low_framerate_inputs,
-            output_locking_settings: self.output_locking_settings,
+            initial_audio_gain: self.initial_audio_gain
+            ,
+            input_end_action: self.input_end_action
+            ,
+            input_loss_behavior: self.input_loss_behavior
+            ,
+            output_locking_mode: self.output_locking_mode
+            ,
+            output_timing_source: self.output_timing_source
+            ,
+            support_low_framerate_inputs: self.support_low_framerate_inputs
+            ,
+            output_locking_settings: self.output_locking_settings
+            ,
         }
     }
 }
+

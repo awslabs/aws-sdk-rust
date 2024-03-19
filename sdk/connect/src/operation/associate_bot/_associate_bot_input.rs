@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateBotInput {
+pub struct AssociateBotInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Configuration information of an Amazon Lex bot.</p>
@@ -10,17 +10,17 @@ pub struct AssociateBotInput {
     /// <p>The Amazon Lex V2 bot to associate with the instance.</p>
     pub lex_v2_bot: ::std::option::Option<crate::types::LexV2Bot>,
 }
-impl AssociateBotInput {
+impl  AssociateBotInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>Configuration information of an Amazon Lex bot.</p>
-    pub fn lex_bot(&self) -> ::std::option::Option<&crate::types::LexBot> {
+    pub fn lex_bot(&self) -> ::std::option::Option<& crate::types::LexBot> {
         self.lex_bot.as_ref()
     }
     /// <p>The Amazon Lex V2 bot to associate with the instance.</p>
-    pub fn lex_v2_bot(&self) -> ::std::option::Option<&crate::types::LexV2Bot> {
+    pub fn lex_v2_bot(&self) -> ::std::option::Option<& crate::types::LexV2Bot> {
         self.lex_v2_bot.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl AssociateBotInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl AssociateBotInputBuilder {
     }
     /// <p>Configuration information of an Amazon Lex bot.</p>
     pub fn set_lex_bot(mut self, input: ::std::option::Option<crate::types::LexBot>) -> Self {
-        self.lex_bot = input;
-        self
+        self.lex_bot = input; self
     }
     /// <p>Configuration information of an Amazon Lex bot.</p>
     pub fn get_lex_bot(&self) -> &::std::option::Option<crate::types::LexBot> {
@@ -76,21 +74,24 @@ impl AssociateBotInputBuilder {
     }
     /// <p>The Amazon Lex V2 bot to associate with the instance.</p>
     pub fn set_lex_v2_bot(mut self, input: ::std::option::Option<crate::types::LexV2Bot>) -> Self {
-        self.lex_v2_bot = input;
-        self
+        self.lex_v2_bot = input; self
     }
     /// <p>The Amazon Lex V2 bot to associate with the instance.</p>
     pub fn get_lex_v2_bot(&self) -> &::std::option::Option<crate::types::LexV2Bot> {
         &self.lex_v2_bot
     }
     /// Consumes the builder and constructs a [`AssociateBotInput`](crate::operation::associate_bot::AssociateBotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::associate_bot::AssociateBotInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::associate_bot::AssociateBotInput {
-            instance_id: self.instance_id,
-            lex_bot: self.lex_bot,
-            lex_v2_bot: self.lex_v2_bot,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_bot::AssociateBotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_bot::AssociateBotInput {
+                instance_id: self.instance_id
+                ,
+                lex_bot: self.lex_bot
+                ,
+                lex_v2_bot: self.lex_v2_bot
+                ,
+            }
+        )
     }
 }
+

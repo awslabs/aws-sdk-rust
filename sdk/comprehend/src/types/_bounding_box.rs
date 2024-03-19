@@ -4,7 +4,7 @@
 /// <p>For additional information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/API_BoundingBox.html">BoundingBox</a> in the Amazon Textract API reference.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BoundingBox {
+pub struct BoundingBox  {
     /// <p>The height of the bounding box as a ratio of the overall document page height.</p>
     pub height: ::std::option::Option<f32>,
     /// <p>The left coordinate of the bounding box as a ratio of overall document page width.</p>
@@ -14,7 +14,7 @@ pub struct BoundingBox {
     /// <p>The width of the bounding box as a ratio of the overall document page width.</p>
     pub width: ::std::option::Option<f32>,
 }
-impl BoundingBox {
+impl  BoundingBox  {
     /// <p>The height of the bounding box as a ratio of the overall document page height.</p>
     pub fn height(&self) -> ::std::option::Option<f32> {
         self.height
@@ -56,8 +56,7 @@ impl BoundingBoxBuilder {
     }
     /// <p>The height of the bounding box as a ratio of the overall document page height.</p>
     pub fn set_height(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.height = input;
-        self
+        self.height = input; self
     }
     /// <p>The height of the bounding box as a ratio of the overall document page height.</p>
     pub fn get_height(&self) -> &::std::option::Option<f32> {
@@ -70,8 +69,7 @@ impl BoundingBoxBuilder {
     }
     /// <p>The left coordinate of the bounding box as a ratio of overall document page width.</p>
     pub fn set_left(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.left = input;
-        self
+        self.left = input; self
     }
     /// <p>The left coordinate of the bounding box as a ratio of overall document page width.</p>
     pub fn get_left(&self) -> &::std::option::Option<f32> {
@@ -84,8 +82,7 @@ impl BoundingBoxBuilder {
     }
     /// <p>The top coordinate of the bounding box as a ratio of overall document page height.</p>
     pub fn set_top(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.top = input;
-        self
+        self.top = input; self
     }
     /// <p>The top coordinate of the bounding box as a ratio of overall document page height.</p>
     pub fn get_top(&self) -> &::std::option::Option<f32> {
@@ -98,8 +95,7 @@ impl BoundingBoxBuilder {
     }
     /// <p>The width of the bounding box as a ratio of the overall document page width.</p>
     pub fn set_width(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.width = input;
-        self
+        self.width = input; self
     }
     /// <p>The width of the bounding box as a ratio of the overall document page width.</p>
     pub fn get_width(&self) -> &::std::option::Option<f32> {
@@ -108,10 +104,15 @@ impl BoundingBoxBuilder {
     /// Consumes the builder and constructs a [`BoundingBox`](crate::types::BoundingBox).
     pub fn build(self) -> crate::types::BoundingBox {
         crate::types::BoundingBox {
-            height: self.height,
-            left: self.left,
-            top: self.top,
-            width: self.width,
+            height: self.height
+            ,
+            left: self.left
+            ,
+            top: self.top
+            ,
+            width: self.width
+            ,
         }
     }
 }
+

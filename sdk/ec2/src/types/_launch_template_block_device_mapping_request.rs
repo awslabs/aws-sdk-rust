@@ -3,7 +3,7 @@
 /// <p>Describes a block device mapping.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LaunchTemplateBlockDeviceMappingRequest {
+pub struct LaunchTemplateBlockDeviceMappingRequest  {
     /// <p>The device name (for example, /dev/sdh or xvdh).</p>
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>The virtual device name (ephemeralN). Instance store volumes are numbered starting from 0. An instance type with 2 available instance store volumes can specify mappings for ephemeral0 and ephemeral1. The number of available instance store volumes depends on the instance type. After you connect to the instance, you must mount the volume.</p>
@@ -13,21 +13,21 @@ pub struct LaunchTemplateBlockDeviceMappingRequest {
     /// <p>To omit the device from the block device mapping, specify an empty string.</p>
     pub no_device: ::std::option::Option<::std::string::String>,
 }
-impl LaunchTemplateBlockDeviceMappingRequest {
+impl  LaunchTemplateBlockDeviceMappingRequest  {
     /// <p>The device name (for example, /dev/sdh or xvdh).</p>
-    pub fn device_name(&self) -> ::std::option::Option<&str> {
+    pub fn device_name(&self) -> ::std::option::Option<& str> {
         self.device_name.as_deref()
     }
     /// <p>The virtual device name (ephemeralN). Instance store volumes are numbered starting from 0. An instance type with 2 available instance store volumes can specify mappings for ephemeral0 and ephemeral1. The number of available instance store volumes depends on the instance type. After you connect to the instance, you must mount the volume.</p>
-    pub fn virtual_name(&self) -> ::std::option::Option<&str> {
+    pub fn virtual_name(&self) -> ::std::option::Option<& str> {
         self.virtual_name.as_deref()
     }
     /// <p>Parameters used to automatically set up EBS volumes when the instance is launched.</p>
-    pub fn ebs(&self) -> ::std::option::Option<&crate::types::LaunchTemplateEbsBlockDeviceRequest> {
+    pub fn ebs(&self) -> ::std::option::Option<& crate::types::LaunchTemplateEbsBlockDeviceRequest> {
         self.ebs.as_ref()
     }
     /// <p>To omit the device from the block device mapping, specify an empty string.</p>
-    pub fn no_device(&self) -> ::std::option::Option<&str> {
+    pub fn no_device(&self) -> ::std::option::Option<& str> {
         self.no_device.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl LaunchTemplateBlockDeviceMappingRequestBuilder {
     }
     /// <p>The device name (for example, /dev/sdh or xvdh).</p>
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_name = input;
-        self
+        self.device_name = input; self
     }
     /// <p>The device name (for example, /dev/sdh or xvdh).</p>
     pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl LaunchTemplateBlockDeviceMappingRequestBuilder {
     }
     /// <p>The virtual device name (ephemeralN). Instance store volumes are numbered starting from 0. An instance type with 2 available instance store volumes can specify mappings for ephemeral0 and ephemeral1. The number of available instance store volumes depends on the instance type. After you connect to the instance, you must mount the volume.</p>
     pub fn set_virtual_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.virtual_name = input;
-        self
+        self.virtual_name = input; self
     }
     /// <p>The virtual device name (ephemeralN). Instance store volumes are numbered starting from 0. An instance type with 2 available instance store volumes can specify mappings for ephemeral0 and ephemeral1. The number of available instance store volumes depends on the instance type. After you connect to the instance, you must mount the volume.</p>
     pub fn get_virtual_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl LaunchTemplateBlockDeviceMappingRequestBuilder {
     }
     /// <p>Parameters used to automatically set up EBS volumes when the instance is launched.</p>
     pub fn set_ebs(mut self, input: ::std::option::Option<crate::types::LaunchTemplateEbsBlockDeviceRequest>) -> Self {
-        self.ebs = input;
-        self
+        self.ebs = input; self
     }
     /// <p>Parameters used to automatically set up EBS volumes when the instance is launched.</p>
     pub fn get_ebs(&self) -> &::std::option::Option<crate::types::LaunchTemplateEbsBlockDeviceRequest> {
@@ -97,8 +94,7 @@ impl LaunchTemplateBlockDeviceMappingRequestBuilder {
     }
     /// <p>To omit the device from the block device mapping, specify an empty string.</p>
     pub fn set_no_device(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.no_device = input;
-        self
+        self.no_device = input; self
     }
     /// <p>To omit the device from the block device mapping, specify an empty string.</p>
     pub fn get_no_device(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl LaunchTemplateBlockDeviceMappingRequestBuilder {
     /// Consumes the builder and constructs a [`LaunchTemplateBlockDeviceMappingRequest`](crate::types::LaunchTemplateBlockDeviceMappingRequest).
     pub fn build(self) -> crate::types::LaunchTemplateBlockDeviceMappingRequest {
         crate::types::LaunchTemplateBlockDeviceMappingRequest {
-            device_name: self.device_name,
-            virtual_name: self.virtual_name,
-            ebs: self.ebs,
-            no_device: self.no_device,
+            device_name: self.device_name
+            ,
+            virtual_name: self.virtual_name
+            ,
+            ebs: self.ebs
+            ,
+            no_device: self.no_device
+            ,
         }
     }
 }
+

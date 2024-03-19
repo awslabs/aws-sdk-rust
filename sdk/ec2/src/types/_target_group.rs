@@ -3,13 +3,13 @@
 /// <p>Describes a load balancer target group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TargetGroup {
+pub struct TargetGroup  {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl TargetGroup {
+impl  TargetGroup  {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl TargetGroupBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl TargetGroupBuilder {
     }
     /// Consumes the builder and constructs a [`TargetGroup`](crate::types::TargetGroup).
     pub fn build(self) -> crate::types::TargetGroup {
-        crate::types::TargetGroup { arn: self.arn }
+        crate::types::TargetGroup {
+            arn: self.arn
+            ,
+        }
     }
 }
+

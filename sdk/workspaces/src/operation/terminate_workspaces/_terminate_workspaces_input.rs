@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TerminateWorkspacesInput {
+pub struct TerminateWorkspacesInput  {
     /// <p>The WorkSpaces to terminate. You can specify up to 25 WorkSpaces.</p>
-    pub terminate_workspace_requests: ::std::option::Option<::std::vec::Vec<crate::types::TerminateRequest>>,
+    pub terminate_workspace_requests: ::std::option::Option<::std::vec::Vec::<crate::types::TerminateRequest>>,
 }
-impl TerminateWorkspacesInput {
+impl  TerminateWorkspacesInput  {
     /// <p>The WorkSpaces to terminate. You can specify up to 25 WorkSpaces.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.terminate_workspace_requests.is_none()`.
-    pub fn terminate_workspace_requests(&self) -> &[crate::types::TerminateRequest] {
-        self.terminate_workspace_requests.as_deref().unwrap_or_default()
+    pub fn terminate_workspace_requests(&self) -> & [crate::types::TerminateRequest] {
+        self.terminate_workspace_requests.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TerminateWorkspacesInput {
@@ -25,7 +26,7 @@ impl TerminateWorkspacesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TerminateWorkspacesInputBuilder {
-    pub(crate) terminate_workspace_requests: ::std::option::Option<::std::vec::Vec<crate::types::TerminateRequest>>,
+    pub(crate) terminate_workspace_requests: ::std::option::Option<::std::vec::Vec::<crate::types::TerminateRequest>>,
 }
 impl TerminateWorkspacesInputBuilder {
     /// Appends an item to `terminate_workspace_requests`.
@@ -35,26 +36,26 @@ impl TerminateWorkspacesInputBuilder {
     /// <p>The WorkSpaces to terminate. You can specify up to 25 WorkSpaces.</p>
     pub fn terminate_workspace_requests(mut self, input: crate::types::TerminateRequest) -> Self {
         let mut v = self.terminate_workspace_requests.unwrap_or_default();
-        v.push(input);
-        self.terminate_workspace_requests = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.terminate_workspace_requests = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The WorkSpaces to terminate. You can specify up to 25 WorkSpaces.</p>
-    pub fn set_terminate_workspace_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TerminateRequest>>) -> Self {
-        self.terminate_workspace_requests = input;
-        self
+    pub fn set_terminate_workspace_requests(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TerminateRequest>>) -> Self {
+        self.terminate_workspace_requests = input; self
     }
     /// <p>The WorkSpaces to terminate. You can specify up to 25 WorkSpaces.</p>
-    pub fn get_terminate_workspace_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TerminateRequest>> {
+    pub fn get_terminate_workspace_requests(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TerminateRequest>> {
         &self.terminate_workspace_requests
     }
     /// Consumes the builder and constructs a [`TerminateWorkspacesInput`](crate::operation::terminate_workspaces::TerminateWorkspacesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::terminate_workspaces::TerminateWorkspacesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::terminate_workspaces::TerminateWorkspacesInput {
-            terminate_workspace_requests: self.terminate_workspace_requests,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::terminate_workspaces::TerminateWorkspacesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::terminate_workspaces::TerminateWorkspacesInput {
+                terminate_workspace_requests: self.terminate_workspace_requests
+                ,
+            }
+        )
     }
 }
+

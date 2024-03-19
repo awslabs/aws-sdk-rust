@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeQuerySuggestionsConfigInput {
+pub struct DescribeQuerySuggestionsConfigInput  {
     /// <p>The identifier of the index with query suggestions that you want to get information on.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeQuerySuggestionsConfigInput {
+impl  DescribeQuerySuggestionsConfigInput  {
     /// <p>The identifier of the index with query suggestions that you want to get information on.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeQuerySuggestionsConfigInputBuilder {
     }
     /// <p>The identifier of the index with query suggestions that you want to get information on.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>The identifier of the index with query suggestions that you want to get information on.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.index_id
     }
     /// Consumes the builder and constructs a [`DescribeQuerySuggestionsConfigInput`](crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigInput {
-            index_id: self.index_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigInput {
+                index_id: self.index_id
+                ,
+            }
+        )
     }
 }
+

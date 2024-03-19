@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateTemplateActiveVersionInput {
+pub struct UpdateTemplateActiveVersionInput  {
     /// <p>Specifies which version of a message template to use as the active version of the template.</p>
     pub template_active_version_request: ::std::option::Option<crate::types::TemplateActiveVersionRequest>,
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -10,17 +10,17 @@ pub struct UpdateTemplateActiveVersionInput {
     /// <p>The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.</p>
     pub template_type: ::std::option::Option<::std::string::String>,
 }
-impl UpdateTemplateActiveVersionInput {
+impl  UpdateTemplateActiveVersionInput  {
     /// <p>Specifies which version of a message template to use as the active version of the template.</p>
-    pub fn template_active_version_request(&self) -> ::std::option::Option<&crate::types::TemplateActiveVersionRequest> {
+    pub fn template_active_version_request(&self) -> ::std::option::Option<& crate::types::TemplateActiveVersionRequest> {
         self.template_active_version_request.as_ref()
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.</p>
-    pub fn template_type(&self) -> ::std::option::Option<&str> {
+    pub fn template_type(&self) -> ::std::option::Option<& str> {
         self.template_type.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateTemplateActiveVersionInputBuilder {
     }
     /// <p>Specifies which version of a message template to use as the active version of the template.</p>
     pub fn set_template_active_version_request(mut self, input: ::std::option::Option<crate::types::TemplateActiveVersionRequest>) -> Self {
-        self.template_active_version_request = input;
-        self
+        self.template_active_version_request = input; self
     }
     /// <p>Specifies which version of a message template to use as the active version of the template.</p>
     pub fn get_template_active_version_request(&self) -> &::std::option::Option<crate::types::TemplateActiveVersionRequest> {
@@ -63,8 +62,7 @@ impl UpdateTemplateActiveVersionInputBuilder {
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl UpdateTemplateActiveVersionInputBuilder {
     }
     /// <p>The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.</p>
     pub fn set_template_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_type = input;
-        self
+        self.template_type = input; self
     }
     /// <p>The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.</p>
     pub fn get_template_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.template_type
     }
     /// Consumes the builder and constructs a [`UpdateTemplateActiveVersionInput`](crate::operation::update_template_active_version::UpdateTemplateActiveVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_template_active_version::UpdateTemplateActiveVersionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_template_active_version::UpdateTemplateActiveVersionInput {
-            template_active_version_request: self.template_active_version_request,
-            template_name: self.template_name,
-            template_type: self.template_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_template_active_version::UpdateTemplateActiveVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_template_active_version::UpdateTemplateActiveVersionInput {
+                template_active_version_request: self.template_active_version_request
+                ,
+                template_name: self.template_name
+                ,
+                template_type: self.template_type
+                ,
+            }
+        )
     }
 }
+

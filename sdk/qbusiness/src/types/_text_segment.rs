@@ -3,13 +3,13 @@
 /// <p>Provides information about a text extract in a chat response that can be attributed to a source document.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TextSegment {
+pub struct TextSegment  {
     /// <p>The zero-based location in the response string where the source attribution starts.</p>
     pub begin_offset: ::std::option::Option<i32>,
     /// <p>The zero-based location in the response string where the source attribution ends.</p>
     pub end_offset: ::std::option::Option<i32>,
 }
-impl TextSegment {
+impl  TextSegment  {
     /// <p>The zero-based location in the response string where the source attribution starts.</p>
     pub fn begin_offset(&self) -> ::std::option::Option<i32> {
         self.begin_offset
@@ -41,8 +41,7 @@ impl TextSegmentBuilder {
     }
     /// <p>The zero-based location in the response string where the source attribution starts.</p>
     pub fn set_begin_offset(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.begin_offset = input;
-        self
+        self.begin_offset = input; self
     }
     /// <p>The zero-based location in the response string where the source attribution starts.</p>
     pub fn get_begin_offset(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl TextSegmentBuilder {
     }
     /// <p>The zero-based location in the response string where the source attribution ends.</p>
     pub fn set_end_offset(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.end_offset = input;
-        self
+        self.end_offset = input; self
     }
     /// <p>The zero-based location in the response string where the source attribution ends.</p>
     pub fn get_end_offset(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl TextSegmentBuilder {
     /// Consumes the builder and constructs a [`TextSegment`](crate::types::TextSegment).
     pub fn build(self) -> crate::types::TextSegment {
         crate::types::TextSegment {
-            begin_offset: self.begin_offset,
-            end_offset: self.end_offset,
+            begin_offset: self.begin_offset
+            ,
+            end_offset: self.end_offset
+            ,
         }
     }
 }
+

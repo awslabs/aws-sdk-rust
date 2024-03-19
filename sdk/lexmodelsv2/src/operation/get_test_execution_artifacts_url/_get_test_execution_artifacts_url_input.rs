@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTestExecutionArtifactsUrlInput {
+pub struct GetTestExecutionArtifactsUrlInput  {
     /// <p>The unique identifier of the completed test execution.</p>
     pub test_execution_id: ::std::option::Option<::std::string::String>,
 }
-impl GetTestExecutionArtifactsUrlInput {
+impl  GetTestExecutionArtifactsUrlInput  {
     /// <p>The unique identifier of the completed test execution.</p>
-    pub fn test_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn test_execution_id(&self) -> ::std::option::Option<& str> {
         self.test_execution_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetTestExecutionArtifactsUrlInputBuilder {
     }
     /// <p>The unique identifier of the completed test execution.</p>
     pub fn set_test_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.test_execution_id = input;
-        self
+        self.test_execution_id = input; self
     }
     /// <p>The unique identifier of the completed test execution.</p>
     pub fn get_test_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.test_execution_id
     }
     /// Consumes the builder and constructs a [`GetTestExecutionArtifactsUrlInput`](crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlInput {
-            test_execution_id: self.test_execution_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlInput {
+                test_execution_id: self.test_execution_id
+                ,
+            }
+        )
     }
 }
+

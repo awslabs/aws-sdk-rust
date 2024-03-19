@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let month = unimplemented!();
 /// match month {
@@ -40,16 +40,14 @@
 /// Specifically, when `month` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Month::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum Month {
     #[allow(missing_docs)] // documentation missing in model
     April,
@@ -77,104 +75,92 @@ pub enum Month {
     September,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for Month {
-    fn from(s: &str) -> Self {
-        match s {
-            "APRIL" => Month::April,
-            "AUGUST" => Month::August,
-            "DECEMBER" => Month::December,
-            "FEBRUARY" => Month::February,
-            "JANUARY" => Month::January,
-            "JULY" => Month::July,
-            "JUNE" => Month::June,
-            "MARCH" => Month::March,
-            "MAY" => Month::May,
-            "NOVEMBER" => Month::November,
-            "OCTOBER" => Month::October,
-            "SEPTEMBER" => Month::September,
-            other => Month::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "APRIL" => Month::April,
+"AUGUST" => Month::August,
+"DECEMBER" => Month::December,
+"FEBRUARY" => Month::February,
+"JANUARY" => Month::January,
+"JULY" => Month::July,
+"JUNE" => Month::June,
+"MARCH" => Month::March,
+"MAY" => Month::May,
+"NOVEMBER" => Month::November,
+"OCTOBER" => Month::October,
+"SEPTEMBER" => Month::September,
+other => Month::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for Month {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(Month::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(Month::from(s))
+                    }
+                }
 impl Month {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Month::April => "APRIL",
-            Month::August => "AUGUST",
-            Month::December => "DECEMBER",
-            Month::February => "FEBRUARY",
-            Month::January => "JANUARY",
-            Month::July => "JULY",
-            Month::June => "JUNE",
-            Month::March => "MARCH",
-            Month::May => "MAY",
-            Month::November => "NOVEMBER",
-            Month::October => "OCTOBER",
-            Month::September => "SEPTEMBER",
-            Month::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "APRIL",
-            "AUGUST",
-            "DECEMBER",
-            "FEBRUARY",
-            "JANUARY",
-            "JULY",
-            "JUNE",
-            "MARCH",
-            "MAY",
-            "NOVEMBER",
-            "OCTOBER",
-            "SEPTEMBER",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Month::April => "APRIL",
+    Month::August => "AUGUST",
+    Month::December => "DECEMBER",
+    Month::February => "FEBRUARY",
+    Month::January => "JANUARY",
+    Month::July => "JULY",
+    Month::June => "JUNE",
+    Month::March => "MARCH",
+    Month::May => "MAY",
+    Month::November => "NOVEMBER",
+    Month::October => "OCTOBER",
+    Month::September => "SEPTEMBER",
+    Month::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["APRIL", "AUGUST", "DECEMBER", "FEBRUARY", "JANUARY", "JULY", "JUNE", "MARCH", "MAY", "NOVEMBER", "OCTOBER", "SEPTEMBER"]
+                }
+            }
 impl ::std::convert::AsRef<str> for Month {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl Month {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for Month {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            Month::April => write!(f, "APRIL"),
-            Month::August => write!(f, "AUGUST"),
-            Month::December => write!(f, "DECEMBER"),
-            Month::February => write!(f, "FEBRUARY"),
-            Month::January => write!(f, "JANUARY"),
-            Month::July => write!(f, "JULY"),
-            Month::June => write!(f, "JUNE"),
-            Month::March => write!(f, "MARCH"),
-            Month::May => write!(f, "MAY"),
-            Month::November => write!(f, "NOVEMBER"),
-            Month::October => write!(f, "OCTOBER"),
-            Month::September => write!(f, "SEPTEMBER"),
-            Month::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                Month::April => write!(f, "APRIL"),
+Month::August => write!(f, "AUGUST"),
+Month::December => write!(f, "DECEMBER"),
+Month::February => write!(f, "FEBRUARY"),
+Month::January => write!(f, "JANUARY"),
+Month::July => write!(f, "JULY"),
+Month::June => write!(f, "JUNE"),
+Month::March => write!(f, "MARCH"),
+Month::May => write!(f, "MAY"),
+Month::November => write!(f, "NOVEMBER"),
+Month::October => write!(f, "OCTOBER"),
+Month::September => write!(f, "SEPTEMBER"),
+Month::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

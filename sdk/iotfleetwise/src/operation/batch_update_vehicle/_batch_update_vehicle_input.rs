@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchUpdateVehicleInput {
+pub struct BatchUpdateVehicleInput  {
     /// <p>A list of information about the vehicles to update. For more information, see the API data type.</p>
-    pub vehicles: ::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleRequestItem>>,
+    pub vehicles: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateVehicleRequestItem>>,
 }
-impl BatchUpdateVehicleInput {
+impl  BatchUpdateVehicleInput  {
     /// <p>A list of information about the vehicles to update. For more information, see the API data type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vehicles.is_none()`.
-    pub fn vehicles(&self) -> &[crate::types::UpdateVehicleRequestItem] {
-        self.vehicles.as_deref().unwrap_or_default()
+    pub fn vehicles(&self) -> & [crate::types::UpdateVehicleRequestItem] {
+        self.vehicles.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchUpdateVehicleInput {
@@ -25,7 +26,7 @@ impl BatchUpdateVehicleInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUpdateVehicleInputBuilder {
-    pub(crate) vehicles: ::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleRequestItem>>,
+    pub(crate) vehicles: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateVehicleRequestItem>>,
 }
 impl BatchUpdateVehicleInputBuilder {
     /// Appends an item to `vehicles`.
@@ -35,24 +36,26 @@ impl BatchUpdateVehicleInputBuilder {
     /// <p>A list of information about the vehicles to update. For more information, see the API data type.</p>
     pub fn vehicles(mut self, input: crate::types::UpdateVehicleRequestItem) -> Self {
         let mut v = self.vehicles.unwrap_or_default();
-        v.push(input);
-        self.vehicles = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.vehicles = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of information about the vehicles to update. For more information, see the API data type.</p>
-    pub fn set_vehicles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleRequestItem>>) -> Self {
-        self.vehicles = input;
-        self
+    pub fn set_vehicles(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateVehicleRequestItem>>) -> Self {
+        self.vehicles = input; self
     }
     /// <p>A list of information about the vehicles to update. For more information, see the API data type.</p>
-    pub fn get_vehicles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleRequestItem>> {
+    pub fn get_vehicles(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UpdateVehicleRequestItem>> {
         &self.vehicles
     }
     /// Consumes the builder and constructs a [`BatchUpdateVehicleInput`](crate::operation::batch_update_vehicle::BatchUpdateVehicleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_update_vehicle::BatchUpdateVehicleInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::batch_update_vehicle::BatchUpdateVehicleInput { vehicles: self.vehicles })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_update_vehicle::BatchUpdateVehicleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_update_vehicle::BatchUpdateVehicleInput {
+                vehicles: self.vehicles
+                ,
+            }
+        )
     }
 }
+

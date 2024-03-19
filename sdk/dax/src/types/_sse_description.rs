@@ -3,7 +3,7 @@
 /// <p>The description of the server-side encryption status on the specified DAX cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SseDescription {
+pub struct SseDescription  {
     /// <p>The current state of server-side encryption:</p>
     /// <ul>
     /// <li>
@@ -17,7 +17,7 @@ pub struct SseDescription {
     /// </ul>
     pub status: ::std::option::Option<crate::types::SseStatus>,
 }
-impl SseDescription {
+impl  SseDescription  {
     /// <p>The current state of server-side encryption:</p>
     /// <ul>
     /// <li>
@@ -29,7 +29,7 @@ impl SseDescription {
     /// <li>
     /// <p><code>DISABLED</code> - Server-side encryption is disabled.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::SseStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::SseStatus> {
         self.status.as_ref()
     }
 }
@@ -74,8 +74,7 @@ impl SseDescriptionBuilder {
     /// <p><code>DISABLED</code> - Server-side encryption is disabled.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SseStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current state of server-side encryption:</p>
     /// <ul>
@@ -93,6 +92,10 @@ impl SseDescriptionBuilder {
     }
     /// Consumes the builder and constructs a [`SseDescription`](crate::types::SseDescription).
     pub fn build(self) -> crate::types::SseDescription {
-        crate::types::SseDescription { status: self.status }
+        crate::types::SseDescription {
+            status: self.status
+            ,
+        }
     }
 }
+

@@ -3,17 +3,17 @@
 /// <p>A structure that contains the configuration settings for a Kinesis Data Stream sink.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct KinesisDataStreamSinkConfiguration {
+pub struct KinesisDataStreamSinkConfiguration  {
     /// <p>The ARN of the sink.</p>
     pub insights_target: ::std::option::Option<::std::string::String>,
 }
-impl KinesisDataStreamSinkConfiguration {
+impl  KinesisDataStreamSinkConfiguration  {
     /// <p>The ARN of the sink.</p>
-    pub fn insights_target(&self) -> ::std::option::Option<&str> {
+    pub fn insights_target(&self) -> ::std::option::Option<& str> {
         self.insights_target.as_deref()
     }
 }
-impl ::std::fmt::Debug for KinesisDataStreamSinkConfiguration {
+impl  ::std::fmt::Debug for KinesisDataStreamSinkConfiguration  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("KinesisDataStreamSinkConfiguration");
         formatter.field("insights_target", &"*** Sensitive Data Redacted ***");
@@ -41,8 +41,7 @@ impl KinesisDataStreamSinkConfigurationBuilder {
     }
     /// <p>The ARN of the sink.</p>
     pub fn set_insights_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.insights_target = input;
-        self
+        self.insights_target = input; self
     }
     /// <p>The ARN of the sink.</p>
     pub fn get_insights_target(&self) -> &::std::option::Option<::std::string::String> {
@@ -51,7 +50,8 @@ impl KinesisDataStreamSinkConfigurationBuilder {
     /// Consumes the builder and constructs a [`KinesisDataStreamSinkConfiguration`](crate::types::KinesisDataStreamSinkConfiguration).
     pub fn build(self) -> crate::types::KinesisDataStreamSinkConfiguration {
         crate::types::KinesisDataStreamSinkConfiguration {
-            insights_target: self.insights_target,
+            insights_target: self.insights_target
+            ,
         }
     }
 }
@@ -62,3 +62,4 @@ impl ::std::fmt::Debug for KinesisDataStreamSinkConfigurationBuilder {
         formatter.finish()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateAssessmentInput {
+pub struct UpdateAssessmentInput  {
     /// <p>The unique identifier for the assessment.</p>
     pub assessment_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the assessment to be updated.</p>
@@ -14,37 +14,38 @@ pub struct UpdateAssessmentInput {
     /// <p>The assessment report storage destination for the assessment that's being updated.</p>
     pub assessment_reports_destination: ::std::option::Option<crate::types::AssessmentReportsDestination>,
     /// <p>The list of roles for the assessment.</p>
-    pub roles: ::std::option::Option<::std::vec::Vec<crate::types::Role>>,
+    pub roles: ::std::option::Option<::std::vec::Vec::<crate::types::Role>>,
 }
-impl UpdateAssessmentInput {
+impl  UpdateAssessmentInput  {
     /// <p>The unique identifier for the assessment.</p>
-    pub fn assessment_id(&self) -> ::std::option::Option<&str> {
+    pub fn assessment_id(&self) -> ::std::option::Option<& str> {
         self.assessment_id.as_deref()
     }
     /// <p>The name of the assessment to be updated.</p>
-    pub fn assessment_name(&self) -> ::std::option::Option<&str> {
+    pub fn assessment_name(&self) -> ::std::option::Option<& str> {
         self.assessment_name.as_deref()
     }
     /// <p>The description of the assessment.</p>
-    pub fn assessment_description(&self) -> ::std::option::Option<&str> {
+    pub fn assessment_description(&self) -> ::std::option::Option<& str> {
         self.assessment_description.as_deref()
     }
     /// <p>The scope of the assessment.</p>
-    pub fn scope(&self) -> ::std::option::Option<&crate::types::Scope> {
+    pub fn scope(&self) -> ::std::option::Option<& crate::types::Scope> {
         self.scope.as_ref()
     }
     /// <p>The assessment report storage destination for the assessment that's being updated.</p>
-    pub fn assessment_reports_destination(&self) -> ::std::option::Option<&crate::types::AssessmentReportsDestination> {
+    pub fn assessment_reports_destination(&self) -> ::std::option::Option<& crate::types::AssessmentReportsDestination> {
         self.assessment_reports_destination.as_ref()
     }
     /// <p>The list of roles for the assessment.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.roles.is_none()`.
-    pub fn roles(&self) -> &[crate::types::Role] {
-        self.roles.as_deref().unwrap_or_default()
+    pub fn roles(&self) -> & [crate::types::Role] {
+        self.roles.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for UpdateAssessmentInput {
+impl  ::std::fmt::Debug for UpdateAssessmentInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAssessmentInput");
         formatter.field("assessment_id", &self.assessment_id);
@@ -72,7 +73,7 @@ pub struct UpdateAssessmentInputBuilder {
     pub(crate) assessment_description: ::std::option::Option<::std::string::String>,
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
     pub(crate) assessment_reports_destination: ::std::option::Option<crate::types::AssessmentReportsDestination>,
-    pub(crate) roles: ::std::option::Option<::std::vec::Vec<crate::types::Role>>,
+    pub(crate) roles: ::std::option::Option<::std::vec::Vec::<crate::types::Role>>,
 }
 impl UpdateAssessmentInputBuilder {
     /// <p>The unique identifier for the assessment.</p>
@@ -83,8 +84,7 @@ impl UpdateAssessmentInputBuilder {
     }
     /// <p>The unique identifier for the assessment.</p>
     pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_id = input;
-        self
+        self.assessment_id = input; self
     }
     /// <p>The unique identifier for the assessment.</p>
     pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +97,7 @@ impl UpdateAssessmentInputBuilder {
     }
     /// <p>The name of the assessment to be updated.</p>
     pub fn set_assessment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_name = input;
-        self
+        self.assessment_name = input; self
     }
     /// <p>The name of the assessment to be updated.</p>
     pub fn get_assessment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl UpdateAssessmentInputBuilder {
     }
     /// <p>The description of the assessment.</p>
     pub fn set_assessment_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_description = input;
-        self
+        self.assessment_description = input; self
     }
     /// <p>The description of the assessment.</p>
     pub fn get_assessment_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +124,7 @@ impl UpdateAssessmentInputBuilder {
     }
     /// <p>The scope of the assessment.</p>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
-        self.scope = input;
-        self
+        self.scope = input; self
     }
     /// <p>The scope of the assessment.</p>
     pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
@@ -140,8 +137,7 @@ impl UpdateAssessmentInputBuilder {
     }
     /// <p>The assessment report storage destination for the assessment that's being updated.</p>
     pub fn set_assessment_reports_destination(mut self, input: ::std::option::Option<crate::types::AssessmentReportsDestination>) -> Self {
-        self.assessment_reports_destination = input;
-        self
+        self.assessment_reports_destination = input; self
     }
     /// <p>The assessment report storage destination for the assessment that's being updated.</p>
     pub fn get_assessment_reports_destination(&self) -> &::std::option::Option<crate::types::AssessmentReportsDestination> {
@@ -154,31 +150,36 @@ impl UpdateAssessmentInputBuilder {
     /// <p>The list of roles for the assessment.</p>
     pub fn roles(mut self, input: crate::types::Role) -> Self {
         let mut v = self.roles.unwrap_or_default();
-        v.push(input);
-        self.roles = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.roles = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of roles for the assessment.</p>
-    pub fn set_roles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Role>>) -> Self {
-        self.roles = input;
-        self
+    pub fn set_roles(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Role>>) -> Self {
+        self.roles = input; self
     }
     /// <p>The list of roles for the assessment.</p>
-    pub fn get_roles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Role>> {
+    pub fn get_roles(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Role>> {
         &self.roles
     }
     /// Consumes the builder and constructs a [`UpdateAssessmentInput`](crate::operation::update_assessment::UpdateAssessmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_assessment::UpdateAssessmentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_assessment::UpdateAssessmentInput {
-            assessment_id: self.assessment_id,
-            assessment_name: self.assessment_name,
-            assessment_description: self.assessment_description,
-            scope: self.scope,
-            assessment_reports_destination: self.assessment_reports_destination,
-            roles: self.roles,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_assessment::UpdateAssessmentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_assessment::UpdateAssessmentInput {
+                assessment_id: self.assessment_id
+                ,
+                assessment_name: self.assessment_name
+                ,
+                assessment_description: self.assessment_description
+                ,
+                scope: self.scope
+                ,
+                assessment_reports_destination: self.assessment_reports_destination
+                ,
+                roles: self.roles
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateAssessmentInputBuilder {
@@ -193,3 +194,4 @@ impl ::std::fmt::Debug for UpdateAssessmentInputBuilder {
         formatter.finish()
     }
 }
+

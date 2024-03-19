@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableOrganizationAdminAccountInput {
+pub struct EnableOrganizationAdminAccountInput  {
     /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator account.</p>
     pub admin_account_id: ::std::option::Option<::std::string::String>,
 }
-impl EnableOrganizationAdminAccountInput {
+impl  EnableOrganizationAdminAccountInput  {
     /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator account.</p>
-    pub fn admin_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn admin_account_id(&self) -> ::std::option::Option<& str> {
         self.admin_account_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl EnableOrganizationAdminAccountInputBuilder {
     }
     /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator account.</p>
     pub fn set_admin_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.admin_account_id = input;
-        self
+        self.admin_account_id = input; self
     }
     /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator account.</p>
     pub fn get_admin_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.admin_account_id
     }
     /// Consumes the builder and constructs a [`EnableOrganizationAdminAccountInput`](crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountInput {
-            admin_account_id: self.admin_account_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountInput {
+                admin_account_id: self.admin_account_id
+                ,
+            }
+        )
     }
 }
+

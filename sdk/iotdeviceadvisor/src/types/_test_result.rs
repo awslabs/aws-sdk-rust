@@ -3,16 +3,17 @@
 /// <p>Show each group result.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestResult {
+pub struct TestResult  {
     /// <p>Show each group of test results.</p>
-    pub groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupResult>>,
+    pub groups: ::std::option::Option<::std::vec::Vec::<crate::types::GroupResult>>,
 }
-impl TestResult {
+impl  TestResult  {
     /// <p>Show each group of test results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
-    pub fn groups(&self) -> &[crate::types::GroupResult] {
-        self.groups.as_deref().unwrap_or_default()
+    pub fn groups(&self) -> & [crate::types::GroupResult] {
+        self.groups.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TestResult {
@@ -26,7 +27,7 @@ impl TestResult {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TestResultBuilder {
-    pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupResult>>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec::<crate::types::GroupResult>>,
 }
 impl TestResultBuilder {
     /// Appends an item to `groups`.
@@ -36,21 +37,24 @@ impl TestResultBuilder {
     /// <p>Show each group of test results.</p>
     pub fn groups(mut self, input: crate::types::GroupResult) -> Self {
         let mut v = self.groups.unwrap_or_default();
-        v.push(input);
-        self.groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Show each group of test results.</p>
-    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupResult>>) -> Self {
-        self.groups = input;
-        self
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GroupResult>>) -> Self {
+        self.groups = input; self
     }
     /// <p>Show each group of test results.</p>
-    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupResult>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GroupResult>> {
         &self.groups
     }
     /// Consumes the builder and constructs a [`TestResult`](crate::types::TestResult).
     pub fn build(self) -> crate::types::TestResult {
-        crate::types::TestResult { groups: self.groups }
+        crate::types::TestResult {
+            groups: self.groups
+            ,
+        }
     }
 }
+

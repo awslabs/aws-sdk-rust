@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCisScanResultsAggregatedByTargetResourceInput {
+pub struct ListCisScanResultsAggregatedByTargetResourceInput  {
     /// <p>The scan ARN.</p>
     pub scan_arn: ::std::option::Option<::std::string::String>,
     /// <p>The filter criteria.</p>
@@ -16,25 +16,25 @@ pub struct ListCisScanResultsAggregatedByTargetResourceInput {
     /// <p>The maximum number of scan results aggregated by a target resource to be returned in a single page of results.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListCisScanResultsAggregatedByTargetResourceInput {
+impl  ListCisScanResultsAggregatedByTargetResourceInput  {
     /// <p>The scan ARN.</p>
-    pub fn scan_arn(&self) -> ::std::option::Option<&str> {
+    pub fn scan_arn(&self) -> ::std::option::Option<& str> {
         self.scan_arn.as_deref()
     }
     /// <p>The filter criteria.</p>
-    pub fn filter_criteria(&self) -> ::std::option::Option<&crate::types::CisScanResultsAggregatedByTargetResourceFilterCriteria> {
+    pub fn filter_criteria(&self) -> ::std::option::Option<& crate::types::CisScanResultsAggregatedByTargetResourceFilterCriteria> {
         self.filter_criteria.as_ref()
     }
     /// <p>The sort by order.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::CisScanResultsAggregatedByTargetResourceSortBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::CisScanResultsAggregatedByTargetResourceSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>The sort order.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::CisSortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::CisSortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>The pagination token from a previous request that's used to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of scan results aggregated by a target resource to be returned in a single page of results.</p>
@@ -44,9 +44,7 @@ impl ListCisScanResultsAggregatedByTargetResourceInput {
 }
 impl ListCisScanResultsAggregatedByTargetResourceInput {
     /// Creates a new builder-style object to manufacture [`ListCisScanResultsAggregatedByTargetResourceInput`](crate::operation::list_cis_scan_results_aggregated_by_target_resource::ListCisScanResultsAggregatedByTargetResourceInput).
-    pub fn builder(
-    ) -> crate::operation::list_cis_scan_results_aggregated_by_target_resource::builders::ListCisScanResultsAggregatedByTargetResourceInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_cis_scan_results_aggregated_by_target_resource::builders::ListCisScanResultsAggregatedByTargetResourceInputBuilder {
         crate::operation::list_cis_scan_results_aggregated_by_target_resource::builders::ListCisScanResultsAggregatedByTargetResourceInputBuilder::default()
     }
 }
@@ -71,8 +69,7 @@ impl ListCisScanResultsAggregatedByTargetResourceInputBuilder {
     }
     /// <p>The scan ARN.</p>
     pub fn set_scan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scan_arn = input;
-        self
+        self.scan_arn = input; self
     }
     /// <p>The scan ARN.</p>
     pub fn get_scan_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +82,7 @@ impl ListCisScanResultsAggregatedByTargetResourceInputBuilder {
     }
     /// <p>The filter criteria.</p>
     pub fn set_filter_criteria(mut self, input: ::std::option::Option<crate::types::CisScanResultsAggregatedByTargetResourceFilterCriteria>) -> Self {
-        self.filter_criteria = input;
-        self
+        self.filter_criteria = input; self
     }
     /// <p>The filter criteria.</p>
     pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::CisScanResultsAggregatedByTargetResourceFilterCriteria> {
@@ -99,8 +95,7 @@ impl ListCisScanResultsAggregatedByTargetResourceInputBuilder {
     }
     /// <p>The sort by order.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::CisScanResultsAggregatedByTargetResourceSortBy>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The sort by order.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::CisScanResultsAggregatedByTargetResourceSortBy> {
@@ -113,8 +108,7 @@ impl ListCisScanResultsAggregatedByTargetResourceInputBuilder {
     }
     /// <p>The sort order.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::CisSortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The sort order.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::CisSortOrder> {
@@ -127,8 +121,7 @@ impl ListCisScanResultsAggregatedByTargetResourceInputBuilder {
     }
     /// <p>The pagination token from a previous request that's used to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token from a previous request that's used to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,29 +134,30 @@ impl ListCisScanResultsAggregatedByTargetResourceInputBuilder {
     }
     /// <p>The maximum number of scan results aggregated by a target resource to be returned in a single page of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of scan results aggregated by a target resource to be returned in a single page of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListCisScanResultsAggregatedByTargetResourceInput`](crate::operation::list_cis_scan_results_aggregated_by_target_resource::ListCisScanResultsAggregatedByTargetResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_cis_scan_results_aggregated_by_target_resource::ListCisScanResultsAggregatedByTargetResourceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_cis_scan_results_aggregated_by_target_resource::ListCisScanResultsAggregatedByTargetResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_cis_scan_results_aggregated_by_target_resource::ListCisScanResultsAggregatedByTargetResourceInput {
-                scan_arn: self.scan_arn,
-                filter_criteria: self.filter_criteria,
-                sort_by: self.sort_by,
-                sort_order: self.sort_order,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                scan_arn: self.scan_arn
+                ,
+                filter_criteria: self.filter_criteria
+                ,
+                sort_by: self.sort_by
+                ,
+                sort_order: self.sort_order
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

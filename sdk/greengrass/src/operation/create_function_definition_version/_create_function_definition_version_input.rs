@@ -3,7 +3,7 @@
 /// Information needed to create a function definition version.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateFunctionDefinitionVersionInput {
+pub struct CreateFunctionDefinitionVersionInput  {
     /// A client token used to correlate requests and responses.
     pub amzn_client_token: ::std::option::Option<::std::string::String>,
     /// The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
@@ -11,26 +11,27 @@ pub struct CreateFunctionDefinitionVersionInput {
     /// The ID of the Lambda function definition.
     pub function_definition_id: ::std::option::Option<::std::string::String>,
     /// A list of Lambda functions in this function definition version.
-    pub functions: ::std::option::Option<::std::vec::Vec<crate::types::Function>>,
+    pub functions: ::std::option::Option<::std::vec::Vec::<crate::types::Function>>,
 }
-impl CreateFunctionDefinitionVersionInput {
+impl  CreateFunctionDefinitionVersionInput  {
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(&self) -> ::std::option::Option<&str> {
+    pub fn amzn_client_token(&self) -> ::std::option::Option<& str> {
         self.amzn_client_token.as_deref()
     }
     /// The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
-    pub fn default_config(&self) -> ::std::option::Option<&crate::types::FunctionDefaultConfig> {
+    pub fn default_config(&self) -> ::std::option::Option<& crate::types::FunctionDefaultConfig> {
         self.default_config.as_ref()
     }
     /// The ID of the Lambda function definition.
-    pub fn function_definition_id(&self) -> ::std::option::Option<&str> {
+    pub fn function_definition_id(&self) -> ::std::option::Option<& str> {
         self.function_definition_id.as_deref()
     }
     /// A list of Lambda functions in this function definition version.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.functions.is_none()`.
-    pub fn functions(&self) -> &[crate::types::Function] {
-        self.functions.as_deref().unwrap_or_default()
+    pub fn functions(&self) -> & [crate::types::Function] {
+        self.functions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateFunctionDefinitionVersionInput {
@@ -47,7 +48,7 @@ pub struct CreateFunctionDefinitionVersionInputBuilder {
     pub(crate) amzn_client_token: ::std::option::Option<::std::string::String>,
     pub(crate) default_config: ::std::option::Option<crate::types::FunctionDefaultConfig>,
     pub(crate) function_definition_id: ::std::option::Option<::std::string::String>,
-    pub(crate) functions: ::std::option::Option<::std::vec::Vec<crate::types::Function>>,
+    pub(crate) functions: ::std::option::Option<::std::vec::Vec::<crate::types::Function>>,
 }
 impl CreateFunctionDefinitionVersionInputBuilder {
     /// A client token used to correlate requests and responses.
@@ -57,8 +58,7 @@ impl CreateFunctionDefinitionVersionInputBuilder {
     }
     /// A client token used to correlate requests and responses.
     pub fn set_amzn_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.amzn_client_token = input;
-        self
+        self.amzn_client_token = input; self
     }
     /// A client token used to correlate requests and responses.
     pub fn get_amzn_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl CreateFunctionDefinitionVersionInputBuilder {
     }
     /// The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
     pub fn set_default_config(mut self, input: ::std::option::Option<crate::types::FunctionDefaultConfig>) -> Self {
-        self.default_config = input;
-        self
+        self.default_config = input; self
     }
     /// The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
     pub fn get_default_config(&self) -> &::std::option::Option<crate::types::FunctionDefaultConfig> {
@@ -86,8 +85,7 @@ impl CreateFunctionDefinitionVersionInputBuilder {
     }
     /// The ID of the Lambda function definition.
     pub fn set_function_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_definition_id = input;
-        self
+        self.function_definition_id = input; self
     }
     /// The ID of the Lambda function definition.
     pub fn get_function_definition_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,33 +98,32 @@ impl CreateFunctionDefinitionVersionInputBuilder {
     /// A list of Lambda functions in this function definition version.
     pub fn functions(mut self, input: crate::types::Function) -> Self {
         let mut v = self.functions.unwrap_or_default();
-        v.push(input);
-        self.functions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.functions = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of Lambda functions in this function definition version.
-    pub fn set_functions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Function>>) -> Self {
-        self.functions = input;
-        self
+    pub fn set_functions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Function>>) -> Self {
+        self.functions = input; self
     }
     /// A list of Lambda functions in this function definition version.
-    pub fn get_functions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Function>> {
+    pub fn get_functions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Function>> {
         &self.functions
     }
     /// Consumes the builder and constructs a [`CreateFunctionDefinitionVersionInput`](crate::operation::create_function_definition_version::CreateFunctionDefinitionVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_function_definition_version::CreateFunctionDefinitionVersionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_function_definition_version::CreateFunctionDefinitionVersionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_function_definition_version::CreateFunctionDefinitionVersionInput {
-                amzn_client_token: self.amzn_client_token,
-                default_config: self.default_config,
-                function_definition_id: self.function_definition_id,
-                functions: self.functions,
-            },
+                amzn_client_token: self.amzn_client_token
+                ,
+                default_config: self.default_config
+                ,
+                function_definition_id: self.function_definition_id
+                ,
+                functions: self.functions
+                ,
+            }
         )
     }
 }
+

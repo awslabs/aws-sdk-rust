@@ -3,7 +3,7 @@
 /// <p>Describes an EC2 Fleet or Spot Fleet event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EventInformation {
+pub struct EventInformation  {
     /// <p>The description of the event.</p>
     pub event_description: ::std::option::Option<::std::string::String>,
     /// <p>The event.</p>
@@ -63,9 +63,9 @@ pub struct EventInformation {
     /// <p>The ID of the instance. This information is available only for <code>instanceChange</code> events.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
 }
-impl EventInformation {
+impl  EventInformation  {
     /// <p>The description of the event.</p>
-    pub fn event_description(&self) -> ::std::option::Option<&str> {
+    pub fn event_description(&self) -> ::std::option::Option<& str> {
         self.event_description.as_deref()
     }
     /// <p>The event.</p>
@@ -121,11 +121,11 @@ impl EventInformation {
     /// <li>
     /// <p><code>registerWithLoadBalancersFailed</code> - An attempt to register instances with load balancers failed. For more information, see the description of the event.</p></li>
     /// </ul>
-    pub fn event_sub_type(&self) -> ::std::option::Option<&str> {
+    pub fn event_sub_type(&self) -> ::std::option::Option<& str> {
         self.event_sub_type.as_deref()
     }
     /// <p>The ID of the instance. This information is available only for <code>instanceChange</code> events.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
 }
@@ -152,8 +152,7 @@ impl EventInformationBuilder {
     }
     /// <p>The description of the event.</p>
     pub fn set_event_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_description = input;
-        self
+        self.event_description = input; self
     }
     /// <p>The description of the event.</p>
     pub fn get_event_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -270,8 +269,7 @@ impl EventInformationBuilder {
     /// <p><code>registerWithLoadBalancersFailed</code> - An attempt to register instances with load balancers failed. For more information, see the description of the event.</p></li>
     /// </ul>
     pub fn set_event_sub_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_sub_type = input;
-        self
+        self.event_sub_type = input; self
     }
     /// <p>The event.</p>
     /// <p><code>error</code> events:</p>
@@ -336,8 +334,7 @@ impl EventInformationBuilder {
     }
     /// <p>The ID of the instance. This information is available only for <code>instanceChange</code> events.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID of the instance. This information is available only for <code>instanceChange</code> events.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -346,9 +343,13 @@ impl EventInformationBuilder {
     /// Consumes the builder and constructs a [`EventInformation`](crate::types::EventInformation).
     pub fn build(self) -> crate::types::EventInformation {
         crate::types::EventInformation {
-            event_description: self.event_description,
-            event_sub_type: self.event_sub_type,
-            instance_id: self.instance_id,
+            event_description: self.event_description
+            ,
+            event_sub_type: self.event_sub_type
+            ,
+            instance_id: self.instance_id
+            ,
         }
     }
 }
+

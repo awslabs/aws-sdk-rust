@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListNetworkProfilesInput {
+pub struct ListNetworkProfilesInput  {
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to list network profiles.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of network profile to return information about. Valid values are listed here.</p>
@@ -10,17 +10,17 @@ pub struct ListNetworkProfilesInput {
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListNetworkProfilesInput {
+impl  ListNetworkProfilesInput  {
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to list network profiles.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The type of network profile to return information about. Valid values are listed here.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::NetworkProfileType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::NetworkProfileType> {
         self.r#type.as_ref()
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ListNetworkProfilesInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to list network profiles.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to list network profiles.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListNetworkProfilesInputBuilder {
     }
     /// <p>The type of network profile to return information about. Valid values are listed here.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::NetworkProfileType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of network profile to return information about. Valid values are listed here.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::NetworkProfileType> {
@@ -76,22 +74,24 @@ impl ListNetworkProfilesInputBuilder {
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListNetworkProfilesInput`](crate::operation::list_network_profiles::ListNetworkProfilesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_network_profiles::ListNetworkProfilesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_network_profiles::ListNetworkProfilesInput {
-            arn: self.arn,
-            r#type: self.r#type,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_network_profiles::ListNetworkProfilesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_network_profiles::ListNetworkProfilesInput {
+                arn: self.arn
+                ,
+                r#type: self.r#type
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

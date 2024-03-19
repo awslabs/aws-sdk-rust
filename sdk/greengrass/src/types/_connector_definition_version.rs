@@ -3,16 +3,17 @@
 /// Information about the connector definition version, which is a container for connectors.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConnectorDefinitionVersion {
+pub struct ConnectorDefinitionVersion  {
     /// A list of references to connectors in this version, with their corresponding configuration settings.
-    pub connectors: ::std::option::Option<::std::vec::Vec<crate::types::Connector>>,
+    pub connectors: ::std::option::Option<::std::vec::Vec::<crate::types::Connector>>,
 }
-impl ConnectorDefinitionVersion {
+impl  ConnectorDefinitionVersion  {
     /// A list of references to connectors in this version, with their corresponding configuration settings.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connectors.is_none()`.
-    pub fn connectors(&self) -> &[crate::types::Connector] {
-        self.connectors.as_deref().unwrap_or_default()
+    pub fn connectors(&self) -> & [crate::types::Connector] {
+        self.connectors.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ConnectorDefinitionVersion {
@@ -26,7 +27,7 @@ impl ConnectorDefinitionVersion {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConnectorDefinitionVersionBuilder {
-    pub(crate) connectors: ::std::option::Option<::std::vec::Vec<crate::types::Connector>>,
+    pub(crate) connectors: ::std::option::Option<::std::vec::Vec::<crate::types::Connector>>,
 }
 impl ConnectorDefinitionVersionBuilder {
     /// Appends an item to `connectors`.
@@ -36,21 +37,24 @@ impl ConnectorDefinitionVersionBuilder {
     /// A list of references to connectors in this version, with their corresponding configuration settings.
     pub fn connectors(mut self, input: crate::types::Connector) -> Self {
         let mut v = self.connectors.unwrap_or_default();
-        v.push(input);
-        self.connectors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.connectors = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of references to connectors in this version, with their corresponding configuration settings.
-    pub fn set_connectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Connector>>) -> Self {
-        self.connectors = input;
-        self
+    pub fn set_connectors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Connector>>) -> Self {
+        self.connectors = input; self
     }
     /// A list of references to connectors in this version, with their corresponding configuration settings.
-    pub fn get_connectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Connector>> {
+    pub fn get_connectors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Connector>> {
         &self.connectors
     }
     /// Consumes the builder and constructs a [`ConnectorDefinitionVersion`](crate::types::ConnectorDefinitionVersion).
     pub fn build(self) -> crate::types::ConnectorDefinitionVersion {
-        crate::types::ConnectorDefinitionVersion { connectors: self.connectors }
+        crate::types::ConnectorDefinitionVersion {
+            connectors: self.connectors
+            ,
+        }
     }
 }
+

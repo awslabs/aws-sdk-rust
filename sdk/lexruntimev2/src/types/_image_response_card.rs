@@ -4,7 +4,7 @@
 /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImageResponseCard {
+pub struct ImageResponseCard  {
     /// <p>The title to display on the response card. The format of the title is determined by the platform displaying the response card.</p>
     pub title: ::std::string::String,
     /// <p>The subtitle to display on the response card. The format of the subtitle is determined by the platform displaying the response card.</p>
@@ -12,27 +12,27 @@ pub struct ImageResponseCard {
     /// <p>The URL of an image to display on the response card. The image URL must be publicly available so that the platform displaying the response card has access to the image.</p>
     pub image_url: ::std::option::Option<::std::string::String>,
     /// <p>A list of buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button.</p>
-    pub buttons: ::std::option::Option<::std::vec::Vec<crate::types::Button>>,
+    pub buttons: ::std::option::Option<::std::vec::Vec::<crate::types::Button>>,
 }
-impl ImageResponseCard {
+impl  ImageResponseCard  {
     /// <p>The title to display on the response card. The format of the title is determined by the platform displaying the response card.</p>
-    pub fn title(&self) -> &str {
-        use std::ops::Deref;
-        self.title.deref()
+    pub fn title(&self) -> & str {
+        use std::ops::Deref; self.title.deref()
     }
     /// <p>The subtitle to display on the response card. The format of the subtitle is determined by the platform displaying the response card.</p>
-    pub fn subtitle(&self) -> ::std::option::Option<&str> {
+    pub fn subtitle(&self) -> ::std::option::Option<& str> {
         self.subtitle.as_deref()
     }
     /// <p>The URL of an image to display on the response card. The image URL must be publicly available so that the platform displaying the response card has access to the image.</p>
-    pub fn image_url(&self) -> ::std::option::Option<&str> {
+    pub fn image_url(&self) -> ::std::option::Option<& str> {
         self.image_url.as_deref()
     }
     /// <p>A list of buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.buttons.is_none()`.
-    pub fn buttons(&self) -> &[crate::types::Button] {
-        self.buttons.as_deref().unwrap_or_default()
+    pub fn buttons(&self) -> & [crate::types::Button] {
+        self.buttons.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ImageResponseCard {
@@ -49,7 +49,7 @@ pub struct ImageResponseCardBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) subtitle: ::std::option::Option<::std::string::String>,
     pub(crate) image_url: ::std::option::Option<::std::string::String>,
-    pub(crate) buttons: ::std::option::Option<::std::vec::Vec<crate::types::Button>>,
+    pub(crate) buttons: ::std::option::Option<::std::vec::Vec::<crate::types::Button>>,
 }
 impl ImageResponseCardBuilder {
     /// <p>The title to display on the response card. The format of the title is determined by the platform displaying the response card.</p>
@@ -60,8 +60,7 @@ impl ImageResponseCardBuilder {
     }
     /// <p>The title to display on the response card. The format of the title is determined by the platform displaying the response card.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The title to display on the response card. The format of the title is determined by the platform displaying the response card.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +73,7 @@ impl ImageResponseCardBuilder {
     }
     /// <p>The subtitle to display on the response card. The format of the subtitle is determined by the platform displaying the response card.</p>
     pub fn set_subtitle(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subtitle = input;
-        self
+        self.subtitle = input; self
     }
     /// <p>The subtitle to display on the response card. The format of the subtitle is determined by the platform displaying the response card.</p>
     pub fn get_subtitle(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +86,7 @@ impl ImageResponseCardBuilder {
     }
     /// <p>The URL of an image to display on the response card. The image URL must be publicly available so that the platform displaying the response card has access to the image.</p>
     pub fn set_image_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_url = input;
-        self
+        self.image_url = input; self
     }
     /// <p>The URL of an image to display on the response card. The image URL must be publicly available so that the platform displaying the response card has access to the image.</p>
     pub fn get_image_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,33 +99,37 @@ impl ImageResponseCardBuilder {
     /// <p>A list of buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button.</p>
     pub fn buttons(mut self, input: crate::types::Button) -> Self {
         let mut v = self.buttons.unwrap_or_default();
-        v.push(input);
-        self.buttons = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.buttons = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button.</p>
-    pub fn set_buttons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Button>>) -> Self {
-        self.buttons = input;
-        self
+    pub fn set_buttons(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Button>>) -> Self {
+        self.buttons = input; self
     }
     /// <p>A list of buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button.</p>
-    pub fn get_buttons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Button>> {
+    pub fn get_buttons(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Button>> {
         &self.buttons
     }
     /// Consumes the builder and constructs a [`ImageResponseCard`](crate::types::ImageResponseCard).
     /// This method will fail if any of the following fields are not set:
     /// - [`title`](crate::types::builders::ImageResponseCardBuilder::title)
     pub fn build(self) -> ::std::result::Result<crate::types::ImageResponseCard, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ImageResponseCard {
-            title: self.title.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "title",
-                    "title was not specified but it is required when building ImageResponseCard",
-                )
-            })?,
-            subtitle: self.subtitle,
-            image_url: self.image_url,
-            buttons: self.buttons,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ImageResponseCard {
+                title: self.title
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("title", "title was not specified but it is required when building ImageResponseCard")
+                    )?
+                ,
+                subtitle: self.subtitle
+                ,
+                image_url: self.image_url
+                ,
+                buttons: self.buttons
+                ,
+            }
+        )
     }
 }
+

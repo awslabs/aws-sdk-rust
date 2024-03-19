@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMobileDeviceAccessOverridesInput {
+pub struct ListMobileDeviceAccessOverridesInput  {
     /// <p>The WorkMail organization under which to list mobile device access overrides.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The WorkMail user under which you list the mobile device access overrides. Accepts the following types of user identities:</p>
@@ -22,9 +22,9 @@ pub struct ListMobileDeviceAccessOverridesInput {
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListMobileDeviceAccessOverridesInput {
+impl  ListMobileDeviceAccessOverridesInput  {
     /// <p>The WorkMail organization under which to list mobile device access overrides.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The WorkMail user under which you list the mobile device access overrides. Accepts the following types of user identities:</p>
@@ -36,15 +36,15 @@ impl ListMobileDeviceAccessOverridesInput {
     /// <li>
     /// <p>User name: <code>user</code></p></li>
     /// </ul>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The mobile device to which the access override applies.</p>
-    pub fn device_id(&self) -> ::std::option::Option<&str> {
+    pub fn device_id(&self) -> ::std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in a single call.</p>
@@ -78,8 +78,7 @@ impl ListMobileDeviceAccessOverridesInputBuilder {
     }
     /// <p>The WorkMail organization under which to list mobile device access overrides.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The WorkMail organization under which to list mobile device access overrides.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +107,7 @@ impl ListMobileDeviceAccessOverridesInputBuilder {
     /// <p>User name: <code>user</code></p></li>
     /// </ul>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The WorkMail user under which you list the mobile device access overrides. Accepts the following types of user identities:</p>
     /// <ul>
@@ -130,8 +128,7 @@ impl ListMobileDeviceAccessOverridesInputBuilder {
     }
     /// <p>The mobile device to which the access override applies.</p>
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_id = input;
-        self
+        self.device_id = input; self
     }
     /// <p>The mobile device to which the access override applies.</p>
     pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,8 +141,7 @@ impl ListMobileDeviceAccessOverridesInputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -158,28 +154,28 @@ impl ListMobileDeviceAccessOverridesInputBuilder {
     }
     /// <p>The maximum number of results to return in a single call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in a single call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListMobileDeviceAccessOverridesInput`](crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesInput {
-                organization_id: self.organization_id,
-                user_id: self.user_id,
-                device_id: self.device_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                organization_id: self.organization_id
+                ,
+                user_id: self.user_id
+                ,
+                device_id: self.device_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

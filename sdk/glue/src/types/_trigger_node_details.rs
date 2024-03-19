@@ -3,13 +3,13 @@
 /// <p>The details of a Trigger node present in the workflow.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TriggerNodeDetails {
+pub struct TriggerNodeDetails  {
     /// <p>The information of the trigger represented by the trigger node.</p>
     pub trigger: ::std::option::Option<crate::types::Trigger>,
 }
-impl TriggerNodeDetails {
+impl  TriggerNodeDetails  {
     /// <p>The information of the trigger represented by the trigger node.</p>
-    pub fn trigger(&self) -> ::std::option::Option<&crate::types::Trigger> {
+    pub fn trigger(&self) -> ::std::option::Option<& crate::types::Trigger> {
         self.trigger.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl TriggerNodeDetailsBuilder {
     }
     /// <p>The information of the trigger represented by the trigger node.</p>
     pub fn set_trigger(mut self, input: ::std::option::Option<crate::types::Trigger>) -> Self {
-        self.trigger = input;
-        self
+        self.trigger = input; self
     }
     /// <p>The information of the trigger represented by the trigger node.</p>
     pub fn get_trigger(&self) -> &::std::option::Option<crate::types::Trigger> {
@@ -43,6 +42,10 @@ impl TriggerNodeDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`TriggerNodeDetails`](crate::types::TriggerNodeDetails).
     pub fn build(self) -> crate::types::TriggerNodeDetails {
-        crate::types::TriggerNodeDetails { trigger: self.trigger }
+        crate::types::TriggerNodeDetails {
+            trigger: self.trigger
+            ,
+        }
     }
 }
+

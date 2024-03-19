@@ -2,26 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateParameterGroupInput {
+pub struct UpdateParameterGroupInput  {
     /// <p>The name of the parameter group.</p>
     pub parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of name-value pairs for the parameters in the group. Each element in the array represents a single parameter.</p><note>
     /// <p><code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names. For more details, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl">Configuring TTL Settings</a>.</p>
     /// </note>
-    pub parameter_name_values: ::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>>,
+    pub parameter_name_values: ::std::option::Option<::std::vec::Vec::<crate::types::ParameterNameValue>>,
 }
-impl UpdateParameterGroupInput {
+impl  UpdateParameterGroupInput  {
     /// <p>The name of the parameter group.</p>
-    pub fn parameter_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn parameter_group_name(&self) -> ::std::option::Option<& str> {
         self.parameter_group_name.as_deref()
     }
     /// <p>An array of name-value pairs for the parameters in the group. Each element in the array represents a single parameter.</p><note>
     /// <p><code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names. For more details, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl">Configuring TTL Settings</a>.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_name_values.is_none()`.
-    pub fn parameter_name_values(&self) -> &[crate::types::ParameterNameValue] {
-        self.parameter_name_values.as_deref().unwrap_or_default()
+    pub fn parameter_name_values(&self) -> & [crate::types::ParameterNameValue] {
+        self.parameter_name_values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateParameterGroupInput {
@@ -36,7 +37,7 @@ impl UpdateParameterGroupInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateParameterGroupInputBuilder {
     pub(crate) parameter_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) parameter_name_values: ::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>>,
+    pub(crate) parameter_name_values: ::std::option::Option<::std::vec::Vec::<crate::types::ParameterNameValue>>,
 }
 impl UpdateParameterGroupInputBuilder {
     /// <p>The name of the parameter group.</p>
@@ -47,8 +48,7 @@ impl UpdateParameterGroupInputBuilder {
     }
     /// <p>The name of the parameter group.</p>
     pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_group_name = input;
-        self
+        self.parameter_group_name = input; self
     }
     /// <p>The name of the parameter group.</p>
     pub fn get_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,31 +63,32 @@ impl UpdateParameterGroupInputBuilder {
     /// </note>
     pub fn parameter_name_values(mut self, input: crate::types::ParameterNameValue) -> Self {
         let mut v = self.parameter_name_values.unwrap_or_default();
-        v.push(input);
-        self.parameter_name_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameter_name_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of name-value pairs for the parameters in the group. Each element in the array represents a single parameter.</p><note>
     /// <p><code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names. For more details, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl">Configuring TTL Settings</a>.</p>
     /// </note>
-    pub fn set_parameter_name_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>>) -> Self {
-        self.parameter_name_values = input;
-        self
+    pub fn set_parameter_name_values(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ParameterNameValue>>) -> Self {
+        self.parameter_name_values = input; self
     }
     /// <p>An array of name-value pairs for the parameters in the group. Each element in the array represents a single parameter.</p><note>
     /// <p><code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names. For more details, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl">Configuring TTL Settings</a>.</p>
     /// </note>
-    pub fn get_parameter_name_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>> {
+    pub fn get_parameter_name_values(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ParameterNameValue>> {
         &self.parameter_name_values
     }
     /// Consumes the builder and constructs a [`UpdateParameterGroupInput`](crate::operation::update_parameter_group::UpdateParameterGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_parameter_group::UpdateParameterGroupInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_parameter_group::UpdateParameterGroupInput {
-            parameter_group_name: self.parameter_group_name,
-            parameter_name_values: self.parameter_name_values,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_parameter_group::UpdateParameterGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_parameter_group::UpdateParameterGroupInput {
+                parameter_group_name: self.parameter_group_name
+                ,
+                parameter_name_values: self.parameter_name_values
+                ,
+            }
+        )
     }
 }
+

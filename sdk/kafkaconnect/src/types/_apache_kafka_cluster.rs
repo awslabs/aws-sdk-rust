@@ -3,20 +3,19 @@
 /// <p>The details of the Apache Kafka cluster to which the connector is connected.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApacheKafkaCluster {
+pub struct ApacheKafkaCluster  {
     /// <p>The bootstrap servers of the cluster.</p>
     pub bootstrap_servers: ::std::string::String,
     /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
     pub vpc: ::std::option::Option<crate::types::Vpc>,
 }
-impl ApacheKafkaCluster {
+impl  ApacheKafkaCluster  {
     /// <p>The bootstrap servers of the cluster.</p>
-    pub fn bootstrap_servers(&self) -> &str {
-        use std::ops::Deref;
-        self.bootstrap_servers.deref()
+    pub fn bootstrap_servers(&self) -> & str {
+        use std::ops::Deref; self.bootstrap_servers.deref()
     }
     /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
-    pub fn vpc(&self) -> ::std::option::Option<&crate::types::Vpc> {
+    pub fn vpc(&self) -> ::std::option::Option<& crate::types::Vpc> {
         self.vpc.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl ApacheKafkaClusterBuilder {
     }
     /// <p>The bootstrap servers of the cluster.</p>
     pub fn set_bootstrap_servers(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bootstrap_servers = input;
-        self
+        self.bootstrap_servers = input; self
     }
     /// <p>The bootstrap servers of the cluster.</p>
     pub fn get_bootstrap_servers(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl ApacheKafkaClusterBuilder {
     }
     /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
     pub fn set_vpc(mut self, input: ::std::option::Option<crate::types::Vpc>) -> Self {
-        self.vpc = input;
-        self
+        self.vpc = input; self
     }
     /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
     pub fn get_vpc(&self) -> &::std::option::Option<crate::types::Vpc> {
@@ -69,14 +66,17 @@ impl ApacheKafkaClusterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`bootstrap_servers`](crate::types::builders::ApacheKafkaClusterBuilder::bootstrap_servers)
     pub fn build(self) -> ::std::result::Result<crate::types::ApacheKafkaCluster, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ApacheKafkaCluster {
-            bootstrap_servers: self.bootstrap_servers.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bootstrap_servers",
-                    "bootstrap_servers was not specified but it is required when building ApacheKafkaCluster",
-                )
-            })?,
-            vpc: self.vpc,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ApacheKafkaCluster {
+                bootstrap_servers: self.bootstrap_servers
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bootstrap_servers", "bootstrap_servers was not specified but it is required when building ApacheKafkaCluster")
+                    )?
+                ,
+                vpc: self.vpc
+                ,
+            }
+        )
     }
 }
+

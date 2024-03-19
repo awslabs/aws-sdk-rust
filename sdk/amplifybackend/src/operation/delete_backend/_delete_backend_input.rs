@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteBackendInput {
+pub struct DeleteBackendInput  {
     /// <p>The app ID.</p>
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the backend environment.</p>
     pub backend_environment_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteBackendInput {
+impl  DeleteBackendInput  {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn backend_environment_name(&self) -> ::std::option::Option<& str> {
         self.backend_environment_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteBackendInputBuilder {
     }
     /// <p>The app ID.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The app ID.</p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DeleteBackendInputBuilder {
     }
     /// <p>The name of the backend environment.</p>
     pub fn set_backend_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backend_environment_name = input;
-        self
+        self.backend_environment_name = input; self
     }
     /// <p>The name of the backend environment.</p>
     pub fn get_backend_environment_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.backend_environment_name
     }
     /// Consumes the builder and constructs a [`DeleteBackendInput`](crate::operation::delete_backend::DeleteBackendInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_backend::DeleteBackendInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_backend::DeleteBackendInput {
-            app_id: self.app_id,
-            backend_environment_name: self.backend_environment_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_backend::DeleteBackendInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_backend::DeleteBackendInput {
+                app_id: self.app_id
+                ,
+                backend_environment_name: self.backend_environment_name
+                ,
+            }
+        )
     }
 }
+

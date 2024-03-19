@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDocumentClassifierOutput {
+pub struct DescribeDocumentClassifierOutput  {
     /// <p>An object that contains the properties associated with a document classifier.</p>
     pub document_classifier_properties: ::std::option::Option<crate::types::DocumentClassifierProperties>,
     _request_id: Option<String>,
 }
-impl DescribeDocumentClassifierOutput {
+impl  DescribeDocumentClassifierOutput  {
     /// <p>An object that contains the properties associated with a document classifier.</p>
-    pub fn document_classifier_properties(&self) -> ::std::option::Option<&crate::types::DocumentClassifierProperties> {
+    pub fn document_classifier_properties(&self) -> ::std::option::Option<& crate::types::DocumentClassifierProperties> {
         self.document_classifier_properties.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeDocumentClassifierOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeDocumentClassifierOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDocumentClassifierOutput`](crate::operation::describe_document_classifier::DescribeDocumentClassifierOutput).
     pub fn builder() -> crate::operation::describe_document_classifier::builders::DescribeDocumentClassifierOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeDocumentClassifierOutputBuilder {
     }
     /// <p>An object that contains the properties associated with a document classifier.</p>
     pub fn set_document_classifier_properties(mut self, input: ::std::option::Option<crate::types::DocumentClassifierProperties>) -> Self {
-        self.document_classifier_properties = input;
-        self
+        self.document_classifier_properties = input; self
     }
     /// <p>An object that contains the properties associated with a document classifier.</p>
     pub fn get_document_classifier_properties(&self) -> &::std::option::Option<crate::types::DocumentClassifierProperties> {
         &self.document_classifier_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeDocumentClassifierOutput`](crate::operation::describe_document_classifier::DescribeDocumentClassifierOutput).
     pub fn build(self) -> crate::operation::describe_document_classifier::DescribeDocumentClassifierOutput {
         crate::operation::describe_document_classifier::DescribeDocumentClassifierOutput {
-            document_classifier_properties: self.document_classifier_properties,
+            document_classifier_properties: self.document_classifier_properties
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

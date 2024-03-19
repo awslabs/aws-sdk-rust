@@ -3,19 +3,19 @@
 /// <p>The source of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FindingSource {
+pub struct FindingSource  {
     /// <p>Indicates the type of access that generated the finding.</p>
     pub r#type: crate::types::FindingSourceType,
     /// <p>Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
     pub detail: ::std::option::Option<crate::types::FindingSourceDetail>,
 }
-impl FindingSource {
+impl  FindingSource  {
     /// <p>Indicates the type of access that generated the finding.</p>
-    pub fn r#type(&self) -> &crate::types::FindingSourceType {
+    pub fn r#type(&self) -> & crate::types::FindingSourceType {
         &self.r#type
     }
     /// <p>Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
-    pub fn detail(&self) -> ::std::option::Option<&crate::types::FindingSourceDetail> {
+    pub fn detail(&self) -> ::std::option::Option<& crate::types::FindingSourceDetail> {
         self.detail.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl FindingSourceBuilder {
     }
     /// <p>Indicates the type of access that generated the finding.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::FindingSourceType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Indicates the type of access that generated the finding.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::FindingSourceType> {
@@ -56,8 +55,7 @@ impl FindingSourceBuilder {
     }
     /// <p>Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
     pub fn set_detail(mut self, input: ::std::option::Option<crate::types::FindingSourceDetail>) -> Self {
-        self.detail = input;
-        self
+        self.detail = input; self
     }
     /// <p>Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
     pub fn get_detail(&self) -> &::std::option::Option<crate::types::FindingSourceDetail> {
@@ -67,14 +65,17 @@ impl FindingSourceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::FindingSourceBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::FindingSource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FindingSource {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building FindingSource",
-                )
-            })?,
-            detail: self.detail,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FindingSource {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building FindingSource")
+                    )?
+                ,
+                detail: self.detail
+                ,
+            }
+        )
     }
 }
+

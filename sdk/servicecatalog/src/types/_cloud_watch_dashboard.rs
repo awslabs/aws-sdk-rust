@@ -3,13 +3,13 @@
 /// <p>Information about a CloudWatch dashboard.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CloudWatchDashboard {
+pub struct CloudWatchDashboard  {
     /// <p>The name of the CloudWatch dashboard.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl CloudWatchDashboard {
+impl  CloudWatchDashboard  {
     /// <p>The name of the CloudWatch dashboard.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl CloudWatchDashboardBuilder {
     }
     /// <p>The name of the CloudWatch dashboard.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the CloudWatch dashboard.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl CloudWatchDashboardBuilder {
     }
     /// Consumes the builder and constructs a [`CloudWatchDashboard`](crate::types::CloudWatchDashboard).
     pub fn build(self) -> crate::types::CloudWatchDashboard {
-        crate::types::CloudWatchDashboard { name: self.name }
+        crate::types::CloudWatchDashboard {
+            name: self.name
+            ,
+        }
     }
 }
+

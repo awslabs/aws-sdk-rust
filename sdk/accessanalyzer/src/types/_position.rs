@@ -3,7 +3,7 @@
 /// <p>A position in a policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Position {
+pub struct Position  {
     /// <p>The line of the position, starting from 1.</p>
     pub line: i32,
     /// <p>The column of the position, starting from 0.</p>
@@ -11,7 +11,7 @@ pub struct Position {
     /// <p>The offset within the policy that corresponds to the position, starting from 0.</p>
     pub offset: i32,
 }
-impl Position {
+impl  Position  {
     /// <p>The line of the position, starting from 1.</p>
     pub fn line(&self) -> i32 {
         self.line
@@ -49,8 +49,7 @@ impl PositionBuilder {
     }
     /// <p>The line of the position, starting from 1.</p>
     pub fn set_line(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.line = input;
-        self
+        self.line = input; self
     }
     /// <p>The line of the position, starting from 1.</p>
     pub fn get_line(&self) -> &::std::option::Option<i32> {
@@ -64,8 +63,7 @@ impl PositionBuilder {
     }
     /// <p>The column of the position, starting from 0.</p>
     pub fn set_column(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.column = input;
-        self
+        self.column = input; self
     }
     /// <p>The column of the position, starting from 0.</p>
     pub fn get_column(&self) -> &::std::option::Option<i32> {
@@ -79,8 +77,7 @@ impl PositionBuilder {
     }
     /// <p>The offset within the policy that corresponds to the position, starting from 0.</p>
     pub fn set_offset(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.offset = input;
-        self
+        self.offset = input; self
     }
     /// <p>The offset within the policy that corresponds to the position, starting from 0.</p>
     pub fn get_offset(&self) -> &::std::option::Option<i32> {
@@ -92,25 +89,25 @@ impl PositionBuilder {
     /// - [`column`](crate::types::builders::PositionBuilder::column)
     /// - [`offset`](crate::types::builders::PositionBuilder::offset)
     pub fn build(self) -> ::std::result::Result<crate::types::Position, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Position {
-            line: self.line.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "line",
-                    "line was not specified but it is required when building Position",
-                )
-            })?,
-            column: self.column.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "column",
-                    "column was not specified but it is required when building Position",
-                )
-            })?,
-            offset: self.offset.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "offset",
-                    "offset was not specified but it is required when building Position",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Position {
+                line: self.line
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("line", "line was not specified but it is required when building Position")
+                    )?
+                ,
+                column: self.column
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("column", "column was not specified but it is required when building Position")
+                    )?
+                ,
+                offset: self.offset
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("offset", "offset was not specified but it is required when building Position")
+                    )?
+                ,
+            }
+        )
     }
 }
+

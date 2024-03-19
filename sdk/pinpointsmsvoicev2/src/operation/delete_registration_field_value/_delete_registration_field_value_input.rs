@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRegistrationFieldValueInput {
+pub struct DeleteRegistrationFieldValueInput  {
     /// <p>The unique identifier for the registration.</p>
     pub registration_id: ::std::option::Option<::std::string::String>,
     /// <p>The path to the registration form field. You can use <code>DescribeRegistrationFieldDefinitions</code> for a list of <b>FieldPaths</b>.</p>
     pub field_path: ::std::option::Option<::std::string::String>,
 }
-impl DeleteRegistrationFieldValueInput {
+impl  DeleteRegistrationFieldValueInput  {
     /// <p>The unique identifier for the registration.</p>
-    pub fn registration_id(&self) -> ::std::option::Option<&str> {
+    pub fn registration_id(&self) -> ::std::option::Option<& str> {
         self.registration_id.as_deref()
     }
     /// <p>The path to the registration form field. You can use <code>DescribeRegistrationFieldDefinitions</code> for a list of <b>FieldPaths</b>.</p>
-    pub fn field_path(&self) -> ::std::option::Option<&str> {
+    pub fn field_path(&self) -> ::std::option::Option<& str> {
         self.field_path.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteRegistrationFieldValueInputBuilder {
     }
     /// <p>The unique identifier for the registration.</p>
     pub fn set_registration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registration_id = input;
-        self
+        self.registration_id = input; self
     }
     /// <p>The unique identifier for the registration.</p>
     pub fn get_registration_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DeleteRegistrationFieldValueInputBuilder {
     }
     /// <p>The path to the registration form field. You can use <code>DescribeRegistrationFieldDefinitions</code> for a list of <b>FieldPaths</b>.</p>
     pub fn set_field_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_path = input;
-        self
+        self.field_path = input; self
     }
     /// <p>The path to the registration form field. You can use <code>DescribeRegistrationFieldDefinitions</code> for a list of <b>FieldPaths</b>.</p>
     pub fn get_field_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.field_path
     }
     /// Consumes the builder and constructs a [`DeleteRegistrationFieldValueInput`](crate::operation::delete_registration_field_value::DeleteRegistrationFieldValueInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_registration_field_value::DeleteRegistrationFieldValueInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_registration_field_value::DeleteRegistrationFieldValueInput {
-            registration_id: self.registration_id,
-            field_path: self.field_path,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_registration_field_value::DeleteRegistrationFieldValueInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_registration_field_value::DeleteRegistrationFieldValueInput {
+                registration_id: self.registration_id
+                ,
+                field_path: self.field_path
+                ,
+            }
+        )
     }
 }
+

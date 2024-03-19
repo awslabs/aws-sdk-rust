@@ -3,13 +3,13 @@
 /// <p>Specifies a segment to associate with an activity in a journey.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SegmentCondition {
+pub struct SegmentCondition  {
     /// <p>The unique identifier for the segment to associate with the activity.</p>
     pub segment_id: ::std::option::Option<::std::string::String>,
 }
-impl SegmentCondition {
+impl  SegmentCondition  {
     /// <p>The unique identifier for the segment to associate with the activity.</p>
-    pub fn segment_id(&self) -> ::std::option::Option<&str> {
+    pub fn segment_id(&self) -> ::std::option::Option<& str> {
         self.segment_id.as_deref()
     }
 }
@@ -35,8 +35,7 @@ impl SegmentConditionBuilder {
     }
     /// <p>The unique identifier for the segment to associate with the activity.</p>
     pub fn set_segment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.segment_id = input;
-        self
+        self.segment_id = input; self
     }
     /// <p>The unique identifier for the segment to associate with the activity.</p>
     pub fn get_segment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,6 +43,10 @@ impl SegmentConditionBuilder {
     }
     /// Consumes the builder and constructs a [`SegmentCondition`](crate::types::SegmentCondition).
     pub fn build(self) -> crate::types::SegmentCondition {
-        crate::types::SegmentCondition { segment_id: self.segment_id }
+        crate::types::SegmentCondition {
+            segment_id: self.segment_id
+            ,
+        }
     }
 }
+

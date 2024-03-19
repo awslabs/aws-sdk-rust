@@ -3,31 +3,32 @@
 /// <p>An email's insights contain metadata and delivery information about a specific email.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct EmailInsights {
+pub struct EmailInsights  {
     /// <p>The recipient of the email.</p>
     pub destination: ::std::option::Option<::std::string::String>,
     /// <p>The recipient's ISP (e.g., <code>Gmail</code>, <code>Yahoo</code>, etc.).</p>
     pub isp: ::std::option::Option<::std::string::String>,
     /// <p>A list of events associated with the sent email.</p>
-    pub events: ::std::option::Option<::std::vec::Vec<crate::types::InsightsEvent>>,
+    pub events: ::std::option::Option<::std::vec::Vec::<crate::types::InsightsEvent>>,
 }
-impl EmailInsights {
+impl  EmailInsights  {
     /// <p>The recipient of the email.</p>
-    pub fn destination(&self) -> ::std::option::Option<&str> {
+    pub fn destination(&self) -> ::std::option::Option<& str> {
         self.destination.as_deref()
     }
     /// <p>The recipient's ISP (e.g., <code>Gmail</code>, <code>Yahoo</code>, etc.).</p>
-    pub fn isp(&self) -> ::std::option::Option<&str> {
+    pub fn isp(&self) -> ::std::option::Option<& str> {
         self.isp.as_deref()
     }
     /// <p>A list of events associated with the sent email.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.events.is_none()`.
-    pub fn events(&self) -> &[crate::types::InsightsEvent] {
-        self.events.as_deref().unwrap_or_default()
+    pub fn events(&self) -> & [crate::types::InsightsEvent] {
+        self.events.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for EmailInsights {
+impl  ::std::fmt::Debug for EmailInsights  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EmailInsights");
         formatter.field("destination", &"*** Sensitive Data Redacted ***");
@@ -49,7 +50,7 @@ impl EmailInsights {
 pub struct EmailInsightsBuilder {
     pub(crate) destination: ::std::option::Option<::std::string::String>,
     pub(crate) isp: ::std::option::Option<::std::string::String>,
-    pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::InsightsEvent>>,
+    pub(crate) events: ::std::option::Option<::std::vec::Vec::<crate::types::InsightsEvent>>,
 }
 impl EmailInsightsBuilder {
     /// <p>The recipient of the email.</p>
@@ -59,8 +60,7 @@ impl EmailInsightsBuilder {
     }
     /// <p>The recipient of the email.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>The recipient of the email.</p>
     pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +73,7 @@ impl EmailInsightsBuilder {
     }
     /// <p>The recipient's ISP (e.g., <code>Gmail</code>, <code>Yahoo</code>, etc.).</p>
     pub fn set_isp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.isp = input;
-        self
+        self.isp = input; self
     }
     /// <p>The recipient's ISP (e.g., <code>Gmail</code>, <code>Yahoo</code>, etc.).</p>
     pub fn get_isp(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,25 +86,27 @@ impl EmailInsightsBuilder {
     /// <p>A list of events associated with the sent email.</p>
     pub fn events(mut self, input: crate::types::InsightsEvent) -> Self {
         let mut v = self.events.unwrap_or_default();
-        v.push(input);
-        self.events = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.events = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of events associated with the sent email.</p>
-    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InsightsEvent>>) -> Self {
-        self.events = input;
-        self
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InsightsEvent>>) -> Self {
+        self.events = input; self
     }
     /// <p>A list of events associated with the sent email.</p>
-    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightsEvent>> {
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InsightsEvent>> {
         &self.events
     }
     /// Consumes the builder and constructs a [`EmailInsights`](crate::types::EmailInsights).
     pub fn build(self) -> crate::types::EmailInsights {
         crate::types::EmailInsights {
-            destination: self.destination,
-            isp: self.isp,
-            events: self.events,
+            destination: self.destination
+            ,
+            isp: self.isp
+            ,
+            events: self.events
+            ,
         }
     }
 }
@@ -118,3 +119,4 @@ impl ::std::fmt::Debug for EmailInsightsBuilder {
         formatter.finish()
     }
 }
+

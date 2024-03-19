@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCheckDetails`](crate::operation::list_check_details::builders::ListCheckDetailsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_check_details::builders::ListCheckDetailsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`workload_id(impl Into<String>)`](crate::operation::list_check_details::builders::ListCheckDetailsFluentBuilder::workload_id) / [`set_workload_id(Option<String>)`](crate::operation::list_check_details::builders::ListCheckDetailsFluentBuilder::set_workload_id):<br>required: **true**<br><p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_check_details::builders::ListCheckDetailsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_check_details::builders::ListCheckDetailsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_check_details::builders::ListCheckDetailsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_check_details::builders::ListCheckDetailsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return for this request.</p><br>
@@ -11,11 +11,12 @@ impl super::Client {
     ///   - [`pillar_id(impl Into<String>)`](crate::operation::list_check_details::builders::ListCheckDetailsFluentBuilder::pillar_id) / [`set_pillar_id(Option<String>)`](crate::operation::list_check_details::builders::ListCheckDetailsFluentBuilder::set_pillar_id):<br>required: **true**<br><p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p><br>
     ///   - [`question_id(impl Into<String>)`](crate::operation::list_check_details::builders::ListCheckDetailsFluentBuilder::question_id) / [`set_question_id(Option<String>)`](crate::operation::list_check_details::builders::ListCheckDetailsFluentBuilder::set_question_id):<br>required: **true**<br><p>The ID of the question.</p><br>
     ///   - [`choice_id(impl Into<String>)`](crate::operation::list_check_details::builders::ListCheckDetailsFluentBuilder::choice_id) / [`set_choice_id(Option<String>)`](crate::operation::list_check_details::builders::ListCheckDetailsFluentBuilder::set_choice_id):<br>required: **true**<br><p>The ID of a choice.</p><br>
-    /// - On success, responds with [`ListCheckDetailsOutput`](crate::operation::list_check_details::ListCheckDetailsOutput) with field(s):
+                            /// - On success, responds with [`ListCheckDetailsOutput`](crate::operation::list_check_details::ListCheckDetailsOutput) with field(s):
     ///   - [`check_details(Option<Vec::<CheckDetail>>)`](crate::operation::list_check_details::ListCheckDetailsOutput::check_details): <p>The details about the Trusted Advisor checks related to the Well-Architected best practice.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_check_details::ListCheckDetailsOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListCheckDetailsError>`](crate::operation::list_check_details::ListCheckDetailsError)
+                            /// - On failure, responds with [`SdkError<ListCheckDetailsError>`](crate::operation::list_check_details::ListCheckDetailsError)
     pub fn list_check_details(&self) -> crate::operation::list_check_details::builders::ListCheckDetailsFluentBuilder {
-        crate::operation::list_check_details::builders::ListCheckDetailsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_check_details::builders::ListCheckDetailsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

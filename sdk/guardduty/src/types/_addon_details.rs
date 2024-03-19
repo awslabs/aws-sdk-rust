@@ -3,19 +3,19 @@
 /// <p>Information about the installed EKS add-on (GuardDuty security agent).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddonDetails {
+pub struct AddonDetails  {
     /// <p>Version of the installed EKS add-on.</p>
     pub addon_version: ::std::option::Option<::std::string::String>,
     /// <p>Status of the installed EKS add-on.</p>
     pub addon_status: ::std::option::Option<::std::string::String>,
 }
-impl AddonDetails {
+impl  AddonDetails  {
     /// <p>Version of the installed EKS add-on.</p>
-    pub fn addon_version(&self) -> ::std::option::Option<&str> {
+    pub fn addon_version(&self) -> ::std::option::Option<& str> {
         self.addon_version.as_deref()
     }
     /// <p>Status of the installed EKS add-on.</p>
-    pub fn addon_status(&self) -> ::std::option::Option<&str> {
+    pub fn addon_status(&self) -> ::std::option::Option<& str> {
         self.addon_status.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AddonDetailsBuilder {
     }
     /// <p>Version of the installed EKS add-on.</p>
     pub fn set_addon_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.addon_version = input;
-        self
+        self.addon_version = input; self
     }
     /// <p>Version of the installed EKS add-on.</p>
     pub fn get_addon_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AddonDetailsBuilder {
     }
     /// <p>Status of the installed EKS add-on.</p>
     pub fn set_addon_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.addon_status = input;
-        self
+        self.addon_status = input; self
     }
     /// <p>Status of the installed EKS add-on.</p>
     pub fn get_addon_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AddonDetailsBuilder {
     /// Consumes the builder and constructs a [`AddonDetails`](crate::types::AddonDetails).
     pub fn build(self) -> crate::types::AddonDetails {
         crate::types::AddonDetails {
-            addon_version: self.addon_version,
-            addon_status: self.addon_status,
+            addon_version: self.addon_version
+            ,
+            addon_status: self.addon_status
+            ,
         }
     }
 }
+

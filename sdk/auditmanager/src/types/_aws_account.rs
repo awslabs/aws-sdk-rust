@@ -3,7 +3,7 @@
 /// <p>The wrapper of Amazon Web Services account details, such as account ID or email address.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AwsAccount {
+pub struct AwsAccount  {
     /// <p>The identifier for the Amazon Web Services account.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The email address that's associated with the Amazon Web Services account.</p>
@@ -11,21 +11,21 @@ pub struct AwsAccount {
     /// <p>The name of the Amazon Web Services account.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl AwsAccount {
+impl  AwsAccount  {
     /// <p>The identifier for the Amazon Web Services account.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The email address that's associated with the Amazon Web Services account.</p>
-    pub fn email_address(&self) -> ::std::option::Option<&str> {
+    pub fn email_address(&self) -> ::std::option::Option<& str> {
         self.email_address.as_deref()
     }
     /// <p>The name of the Amazon Web Services account.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
-impl ::std::fmt::Debug for AwsAccount {
+impl  ::std::fmt::Debug for AwsAccount  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AwsAccount");
         formatter.field("id", &self.id);
@@ -57,8 +57,7 @@ impl AwsAccountBuilder {
     }
     /// <p>The identifier for the Amazon Web Services account.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier for the Amazon Web Services account.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl AwsAccountBuilder {
     }
     /// <p>The email address that's associated with the Amazon Web Services account.</p>
     pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email_address = input;
-        self
+        self.email_address = input; self
     }
     /// <p>The email address that's associated with the Amazon Web Services account.</p>
     pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl AwsAccountBuilder {
     }
     /// <p>The name of the Amazon Web Services account.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Amazon Web Services account.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,9 +92,12 @@ impl AwsAccountBuilder {
     /// Consumes the builder and constructs a [`AwsAccount`](crate::types::AwsAccount).
     pub fn build(self) -> crate::types::AwsAccount {
         crate::types::AwsAccount {
-            id: self.id,
-            email_address: self.email_address,
-            name: self.name,
+            id: self.id
+            ,
+            email_address: self.email_address
+            ,
+            name: self.name
+            ,
         }
     }
 }
@@ -110,3 +110,4 @@ impl ::std::fmt::Debug for AwsAccountBuilder {
         formatter.finish()
     }
 }
+

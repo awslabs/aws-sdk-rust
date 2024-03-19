@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAssessmentFrameworkInput {
+pub struct GetAssessmentFrameworkInput  {
     /// <p>The identifier for the framework.</p>
     pub framework_id: ::std::option::Option<::std::string::String>,
 }
-impl GetAssessmentFrameworkInput {
+impl  GetAssessmentFrameworkInput  {
     /// <p>The identifier for the framework.</p>
-    pub fn framework_id(&self) -> ::std::option::Option<&str> {
+    pub fn framework_id(&self) -> ::std::option::Option<& str> {
         self.framework_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetAssessmentFrameworkInputBuilder {
     }
     /// <p>The identifier for the framework.</p>
     pub fn set_framework_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.framework_id = input;
-        self
+        self.framework_id = input; self
     }
     /// <p>The identifier for the framework.</p>
     pub fn get_framework_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.framework_id
     }
     /// Consumes the builder and constructs a [`GetAssessmentFrameworkInput`](crate::operation::get_assessment_framework::GetAssessmentFrameworkInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_assessment_framework::GetAssessmentFrameworkInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_assessment_framework::GetAssessmentFrameworkInput {
-            framework_id: self.framework_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_assessment_framework::GetAssessmentFrameworkInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_assessment_framework::GetAssessmentFrameworkInput {
+                framework_id: self.framework_id
+                ,
+            }
+        )
     }
 }
+

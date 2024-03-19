@@ -3,22 +3,20 @@
 /// <p>The time.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Time {
+pub struct Time  {
     /// <p>The time of day in 24-hour format (00:00).</p>
     pub time_of_day: ::std::string::String,
     /// <p>The timezone.</p>
     pub timezone: ::std::string::String,
 }
-impl Time {
+impl  Time  {
     /// <p>The time of day in 24-hour format (00:00).</p>
-    pub fn time_of_day(&self) -> &str {
-        use std::ops::Deref;
-        self.time_of_day.deref()
+    pub fn time_of_day(&self) -> & str {
+        use std::ops::Deref; self.time_of_day.deref()
     }
     /// <p>The timezone.</p>
-    pub fn timezone(&self) -> &str {
-        use std::ops::Deref;
-        self.timezone.deref()
+    pub fn timezone(&self) -> & str {
+        use std::ops::Deref; self.timezone.deref()
     }
 }
 impl Time {
@@ -44,8 +42,7 @@ impl TimeBuilder {
     }
     /// <p>The time of day in 24-hour format (00:00).</p>
     pub fn set_time_of_day(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.time_of_day = input;
-        self
+        self.time_of_day = input; self
     }
     /// <p>The time of day in 24-hour format (00:00).</p>
     pub fn get_time_of_day(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl TimeBuilder {
     }
     /// <p>The timezone.</p>
     pub fn set_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.timezone = input;
-        self
+        self.timezone = input; self
     }
     /// <p>The timezone.</p>
     pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl TimeBuilder {
     /// - [`time_of_day`](crate::types::builders::TimeBuilder::time_of_day)
     /// - [`timezone`](crate::types::builders::TimeBuilder::timezone)
     pub fn build(self) -> ::std::result::Result<crate::types::Time, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Time {
-            time_of_day: self.time_of_day.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "time_of_day",
-                    "time_of_day was not specified but it is required when building Time",
-                )
-            })?,
-            timezone: self.timezone.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "timezone",
-                    "timezone was not specified but it is required when building Time",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Time {
+                time_of_day: self.time_of_day
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("time_of_day", "time_of_day was not specified but it is required when building Time")
+                    )?
+                ,
+                timezone: self.timezone
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("timezone", "timezone was not specified but it is required when building Time")
+                    )?
+                ,
+            }
+        )
     }
 }
+

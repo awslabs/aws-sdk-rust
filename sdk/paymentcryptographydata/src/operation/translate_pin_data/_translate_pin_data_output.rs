@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TranslatePinDataOutput {
+pub struct TranslatePinDataOutput  {
     /// <p>The outgoing encrypted PIN block data after translation.</p>
     pub pin_block: ::std::string::String,
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses to encrypt outgoing PIN block data after translation.</p>
@@ -12,29 +12,26 @@ pub struct TranslatePinDataOutput {
     pub key_check_value: ::std::string::String,
     _request_id: Option<String>,
 }
-impl TranslatePinDataOutput {
+impl  TranslatePinDataOutput  {
     /// <p>The outgoing encrypted PIN block data after translation.</p>
-    pub fn pin_block(&self) -> &str {
-        use std::ops::Deref;
-        self.pin_block.deref()
+    pub fn pin_block(&self) -> & str {
+        use std::ops::Deref; self.pin_block.deref()
     }
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses to encrypt outgoing PIN block data after translation.</p>
-    pub fn key_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.key_arn.deref()
+    pub fn key_arn(&self) -> & str {
+        use std::ops::Deref; self.key_arn.deref()
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed.</p>
     /// <p>Amazon Web Services Payment Cryptography computes the KCV according to the CMAC specification.</p>
-    pub fn key_check_value(&self) -> &str {
-        use std::ops::Deref;
-        self.key_check_value.deref()
+    pub fn key_check_value(&self) -> & str {
+        use std::ops::Deref; self.key_check_value.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for TranslatePinDataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl TranslatePinDataOutput {
     /// Creates a new builder-style object to manufacture [`TranslatePinDataOutput`](crate::operation::translate_pin_data::TranslatePinDataOutput).
     pub fn builder() -> crate::operation::translate_pin_data::builders::TranslatePinDataOutputBuilder {
@@ -60,8 +57,7 @@ impl TranslatePinDataOutputBuilder {
     }
     /// <p>The outgoing encrypted PIN block data after translation.</p>
     pub fn set_pin_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pin_block = input;
-        self
+        self.pin_block = input; self
     }
     /// <p>The outgoing encrypted PIN block data after translation.</p>
     pub fn get_pin_block(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +71,7 @@ impl TranslatePinDataOutputBuilder {
     }
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses to encrypt outgoing PIN block data after translation.</p>
     pub fn set_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_arn = input;
-        self
+        self.key_arn = input; self
     }
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses to encrypt outgoing PIN block data after translation.</p>
     pub fn get_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +87,7 @@ impl TranslatePinDataOutputBuilder {
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed.</p>
     /// <p>Amazon Web Services Payment Cryptography computes the KCV according to the CMAC specification.</p>
     pub fn set_key_check_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_check_value = input;
-        self
+        self.key_check_value = input; self
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed.</p>
     /// <p>Amazon Web Services Payment Cryptography computes the KCV according to the CMAC specification.</p>
@@ -101,42 +95,40 @@ impl TranslatePinDataOutputBuilder {
         &self.key_check_value
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`TranslatePinDataOutput`](crate::operation::translate_pin_data::TranslatePinDataOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`pin_block`](crate::operation::translate_pin_data::builders::TranslatePinDataOutputBuilder::pin_block)
     /// - [`key_arn`](crate::operation::translate_pin_data::builders::TranslatePinDataOutputBuilder::key_arn)
     /// - [`key_check_value`](crate::operation::translate_pin_data::builders::TranslatePinDataOutputBuilder::key_check_value)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::translate_pin_data::TranslatePinDataOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::translate_pin_data::TranslatePinDataOutput {
-            pin_block: self.pin_block.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "pin_block",
-                    "pin_block was not specified but it is required when building TranslatePinDataOutput",
-                )
-            })?,
-            key_arn: self.key_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key_arn",
-                    "key_arn was not specified but it is required when building TranslatePinDataOutput",
-                )
-            })?,
-            key_check_value: self.key_check_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key_check_value",
-                    "key_check_value was not specified but it is required when building TranslatePinDataOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::translate_pin_data::TranslatePinDataOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::translate_pin_data::TranslatePinDataOutput {
+                pin_block: self.pin_block
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("pin_block", "pin_block was not specified but it is required when building TranslatePinDataOutput")
+                    )?
+                ,
+                key_arn: self.key_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key_arn", "key_arn was not specified but it is required when building TranslatePinDataOutput")
+                    )?
+                ,
+                key_check_value: self.key_check_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key_check_value", "key_check_value was not specified but it is required when building TranslatePinDataOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -3,7 +3,8 @@
 /// <p>Represents a request to return the metadata and receipt rules for the receipt rule set that is currently active. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeActiveReceiptRuleSetInput {}
+pub struct DescribeActiveReceiptRuleSetInput  {
+}
 impl DescribeActiveReceiptRuleSetInput {
     /// Creates a new builder-style object to manufacture [`DescribeActiveReceiptRuleSetInput`](crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSetInput).
     pub fn builder() -> crate::operation::describe_active_receipt_rule_set::builders::DescribeActiveReceiptRuleSetInputBuilder {
@@ -14,15 +15,15 @@ impl DescribeActiveReceiptRuleSetInput {
 /// A builder for [`DescribeActiveReceiptRuleSetInput`](crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSetInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct DescribeActiveReceiptRuleSetInputBuilder {}
+pub struct DescribeActiveReceiptRuleSetInputBuilder {
+}
 impl DescribeActiveReceiptRuleSetInputBuilder {
     /// Consumes the builder and constructs a [`DescribeActiveReceiptRuleSetInput`](crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSetInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSetInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSetInput {
+            }
+        )
     }
 }
+

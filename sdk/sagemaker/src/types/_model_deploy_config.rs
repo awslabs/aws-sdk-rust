@@ -3,7 +3,7 @@
 /// <p>Specifies how to generate the endpoint name for an automatic one-click Autopilot model deployment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModelDeployConfig {
+pub struct ModelDeployConfig  {
     /// <p>Set to <code>True</code> to automatically generate an endpoint name for a one-click Autopilot model deployment; set to <code>False</code> otherwise. The default value is <code>False</code>.</p><note>
     /// <p>If you set <code>AutoGenerateEndpointName</code> to <code>True</code>, do not specify the <code>EndpointName</code>; otherwise a 400 error is thrown.</p>
     /// </note>
@@ -13,7 +13,7 @@ pub struct ModelDeployConfig {
     /// </note>
     pub endpoint_name: ::std::option::Option<::std::string::String>,
 }
-impl ModelDeployConfig {
+impl  ModelDeployConfig  {
     /// <p>Set to <code>True</code> to automatically generate an endpoint name for a one-click Autopilot model deployment; set to <code>False</code> otherwise. The default value is <code>False</code>.</p><note>
     /// <p>If you set <code>AutoGenerateEndpointName</code> to <code>True</code>, do not specify the <code>EndpointName</code>; otherwise a 400 error is thrown.</p>
     /// </note>
@@ -23,7 +23,7 @@ impl ModelDeployConfig {
     /// <p>Specifies the endpoint name to use for a one-click Autopilot model deployment if the endpoint name is not generated automatically.</p><note>
     /// <p>Specify the <code>EndpointName</code> if and only if you set <code>AutoGenerateEndpointName</code> to <code>False</code>; otherwise a 400 error is thrown.</p>
     /// </note>
-    pub fn endpoint_name(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_name(&self) -> ::std::option::Option<& str> {
         self.endpoint_name.as_deref()
     }
 }
@@ -53,8 +53,7 @@ impl ModelDeployConfigBuilder {
     /// <p>If you set <code>AutoGenerateEndpointName</code> to <code>True</code>, do not specify the <code>EndpointName</code>; otherwise a 400 error is thrown.</p>
     /// </note>
     pub fn set_auto_generate_endpoint_name(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_generate_endpoint_name = input;
-        self
+        self.auto_generate_endpoint_name = input; self
     }
     /// <p>Set to <code>True</code> to automatically generate an endpoint name for a one-click Autopilot model deployment; set to <code>False</code> otherwise. The default value is <code>False</code>.</p><note>
     /// <p>If you set <code>AutoGenerateEndpointName</code> to <code>True</code>, do not specify the <code>EndpointName</code>; otherwise a 400 error is thrown.</p>
@@ -73,8 +72,7 @@ impl ModelDeployConfigBuilder {
     /// <p>Specify the <code>EndpointName</code> if and only if you set <code>AutoGenerateEndpointName</code> to <code>False</code>; otherwise a 400 error is thrown.</p>
     /// </note>
     pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_name = input;
-        self
+        self.endpoint_name = input; self
     }
     /// <p>Specifies the endpoint name to use for a one-click Autopilot model deployment if the endpoint name is not generated automatically.</p><note>
     /// <p>Specify the <code>EndpointName</code> if and only if you set <code>AutoGenerateEndpointName</code> to <code>False</code>; otherwise a 400 error is thrown.</p>
@@ -85,8 +83,11 @@ impl ModelDeployConfigBuilder {
     /// Consumes the builder and constructs a [`ModelDeployConfig`](crate::types::ModelDeployConfig).
     pub fn build(self) -> crate::types::ModelDeployConfig {
         crate::types::ModelDeployConfig {
-            auto_generate_endpoint_name: self.auto_generate_endpoint_name,
-            endpoint_name: self.endpoint_name,
+            auto_generate_endpoint_name: self.auto_generate_endpoint_name
+            ,
+            endpoint_name: self.endpoint_name
+            ,
         }
     }
 }
+

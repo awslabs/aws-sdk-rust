@@ -3,15 +3,14 @@
 /// <p>Contains information about a phone number for a quick connect.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PhoneNumberQuickConnectConfig {
+pub struct PhoneNumberQuickConnectConfig  {
     /// <p>The phone number in E.164 format.</p>
     pub phone_number: ::std::string::String,
 }
-impl PhoneNumberQuickConnectConfig {
+impl  PhoneNumberQuickConnectConfig  {
     /// <p>The phone number in E.164 format.</p>
-    pub fn phone_number(&self) -> &str {
-        use std::ops::Deref;
-        self.phone_number.deref()
+    pub fn phone_number(&self) -> & str {
+        use std::ops::Deref; self.phone_number.deref()
     }
 }
 impl PhoneNumberQuickConnectConfig {
@@ -36,8 +35,7 @@ impl PhoneNumberQuickConnectConfigBuilder {
     }
     /// <p>The phone number in E.164 format.</p>
     pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone_number = input;
-        self
+        self.phone_number = input; self
     }
     /// <p>The phone number in E.164 format.</p>
     pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl PhoneNumberQuickConnectConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`phone_number`](crate::types::builders::PhoneNumberQuickConnectConfigBuilder::phone_number)
     pub fn build(self) -> ::std::result::Result<crate::types::PhoneNumberQuickConnectConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PhoneNumberQuickConnectConfig {
-            phone_number: self.phone_number.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "phone_number",
-                    "phone_number was not specified but it is required when building PhoneNumberQuickConnectConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PhoneNumberQuickConnectConfig {
+                phone_number: self.phone_number
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("phone_number", "phone_number was not specified but it is required when building PhoneNumberQuickConnectConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

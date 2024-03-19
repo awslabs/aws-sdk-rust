@@ -3,7 +3,7 @@
 /// <p>Represents the input of a CreateCacheCluster operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCacheClusterInput {
+pub struct CreateCacheClusterInput  {
     /// <p>The node group (shard) identifier. This parameter is stored as a lowercase string.</p>
     /// <p><b>Constraints:</b></p>
     /// <ul>
@@ -35,7 +35,7 @@ pub struct CreateCacheClusterInput {
     /// </note>
     /// <p>If you want all the nodes in the same Availability Zone, use <code>PreferredAvailabilityZone</code> instead, or repeat the Availability Zone multiple times in the list.</p>
     /// <p>Default: System chosen Availability Zones.</p>
-    pub preferred_availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub preferred_availability_zones: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The initial number of cache nodes that the cluster has.</p>
     /// <p>For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
     /// <p>If you need more than 40 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase Request form at <a href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</p>
@@ -114,17 +114,17 @@ pub struct CreateCacheClusterInput {
     pub cache_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of security group names to associate with this cluster.</p>
     /// <p>Use this parameter only when you are creating a cluster outside of an Amazon Virtual Private Cloud (Amazon VPC).</p>
-    pub cache_security_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub cache_security_group_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>One or more VPC security groups associated with the cluster.</p>
     /// <p>Use this parameter only when you are creating a cluster in an Amazon Virtual Private Cloud (Amazon VPC).</p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of tags to be added to this resource.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>A single-element string list containing an Amazon Resource Name (ARN) that uniquely identifies a Redis RDB snapshot file stored in Amazon S3. The snapshot file is used to populate the node group (shard). The Amazon S3 object name in the ARN cannot contain any commas.</p><note>
     /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
     /// </note>
     /// <p>Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code></p>
-    pub snapshot_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub snapshot_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The name of a Redis snapshot from which to restore data into the new node group (shard). The snapshot status changes to <code>restoring</code> while the new node group (shard) is being created.</p><note>
     /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
     /// </note>
@@ -167,9 +167,9 @@ pub struct CreateCacheClusterInput {
     /// <p>The outpost ARN in which the cache cluster is created.</p>
     pub preferred_outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>The outpost ARNs in which the cache cluster is created.</p>
-    pub preferred_outpost_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub preferred_outpost_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies the destination, format and type of the logs.</p>
-    pub log_delivery_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfigurationRequest>>,
+    pub log_delivery_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::LogDeliveryConfigurationRequest>>,
     /// <p>A flag that enables in-transit encryption when set to true.</p>
     pub transit_encryption_enabled: ::std::option::Option<bool>,
     /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
@@ -177,7 +177,7 @@ pub struct CreateCacheClusterInput {
     /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub ip_discovery: ::std::option::Option<crate::types::IpDiscovery>,
 }
-impl CreateCacheClusterInput {
+impl  CreateCacheClusterInput  {
     /// <p>The node group (shard) identifier. This parameter is stored as a lowercase string.</p>
     /// <p><b>Constraints:</b></p>
     /// <ul>
@@ -188,26 +188,26 @@ impl CreateCacheClusterInput {
     /// <li>
     /// <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    pub fn cache_cluster_id(&self) -> ::std::option::Option<&str> {
+    pub fn cache_cluster_id(&self) -> ::std::option::Option<& str> {
         self.cache_cluster_id.as_deref()
     }
     /// <p>The ID of the replication group to which this cluster should belong. If this parameter is specified, the cluster is added to the specified replication group as a read replica; otherwise, the cluster is a standalone primary that is not part of any replication group.</p>
     /// <p>If the specified replication group is Multi-AZ enabled and the Availability Zone is not specified, the cluster is created in Availability Zones that provide the best spread of read replicas across Availability Zones.</p><note>
     /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
     /// </note>
-    pub fn replication_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn replication_group_id(&self) -> ::std::option::Option<& str> {
         self.replication_group_id.as_deref()
     }
     /// <p>Specifies whether the nodes in this Memcached cluster are created in a single Availability Zone or created across multiple Availability Zones in the cluster's region.</p>
     /// <p>This parameter is only supported for Memcached clusters.</p>
     /// <p>If the <code>AZMode</code> and <code>PreferredAvailabilityZones</code> are not specified, ElastiCache assumes <code>single-az</code> mode.</p>
-    pub fn az_mode(&self) -> ::std::option::Option<&crate::types::AzMode> {
+    pub fn az_mode(&self) -> ::std::option::Option<& crate::types::AzMode> {
         self.az_mode.as_ref()
     }
     /// <p>The EC2 Availability Zone in which the cluster is created.</p>
     /// <p>All nodes belonging to this cluster are placed in the preferred Availability Zone. If you want to create your nodes across multiple Availability Zones, use <code>PreferredAvailabilityZones</code>.</p>
     /// <p>Default: System chosen Availability Zone.</p>
-    pub fn preferred_availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_availability_zone(&self) -> ::std::option::Option<& str> {
         self.preferred_availability_zone.as_deref()
     }
     /// <p>A list of the Availability Zones in which cache nodes are created. The order of the zones in the list is not important.</p>
@@ -217,10 +217,11 @@ impl CreateCacheClusterInput {
     /// </note>
     /// <p>If you want all the nodes in the same Availability Zone, use <code>PreferredAvailabilityZone</code> instead, or repeat the Availability Zone multiple times in the list.</p>
     /// <p>Default: System chosen Availability Zones.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.preferred_availability_zones.is_none()`.
-    pub fn preferred_availability_zones(&self) -> &[::std::string::String] {
-        self.preferred_availability_zones.as_deref().unwrap_or_default()
+    pub fn preferred_availability_zones(&self) -> & [::std::string::String] {
+        self.preferred_availability_zones.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The initial number of cache nodes that the cluster has.</p>
     /// <p>For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
@@ -286,67 +287,71 @@ impl CreateCacheClusterInput {
     /// <li>
     /// <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p></li>
     /// </ul>
-    pub fn cache_node_type(&self) -> ::std::option::Option<&str> {
+    pub fn cache_node_type(&self) -> ::std::option::Option<& str> {
         self.cache_node_type.as_deref()
     }
     /// <p>The name of the cache engine to be used for this cluster.</p>
     /// <p>Valid values for this parameter are: <code>memcached</code> | <code>redis</code></p>
-    pub fn engine(&self) -> ::std::option::Option<&str> {
+    pub fn engine(&self) -> ::std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The version number of the cache engine to be used for this cluster. To view the supported cache engine versions, use the DescribeCacheEngineVersions operation.</p>
     /// <p><b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster or replication group and create it anew with the earlier engine version.</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>The name of the parameter group to associate with this cluster. If this argument is omitted, the default parameter group for the specified engine is used. You cannot use any parameter group which has <code>cluster-enabled='yes'</code> when creating a cluster.</p>
-    pub fn cache_parameter_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn cache_parameter_group_name(&self) -> ::std::option::Option<& str> {
         self.cache_parameter_group_name.as_deref()
     }
     /// <p>The name of the subnet group to be used for the cluster.</p>
     /// <p>Use this parameter only when you are creating a cluster in an Amazon Virtual Private Cloud (Amazon VPC).</p><important>
     /// <p>If you're going to launch your cluster in an Amazon VPC, you need to create a subnet group before you start creating a cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets and Subnet Groups</a>.</p>
     /// </important>
-    pub fn cache_subnet_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn cache_subnet_group_name(&self) -> ::std::option::Option<& str> {
         self.cache_subnet_group_name.as_deref()
     }
     /// <p>A list of security group names to associate with this cluster.</p>
     /// <p>Use this parameter only when you are creating a cluster outside of an Amazon Virtual Private Cloud (Amazon VPC).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_security_group_names.is_none()`.
-    pub fn cache_security_group_names(&self) -> &[::std::string::String] {
-        self.cache_security_group_names.as_deref().unwrap_or_default()
+    pub fn cache_security_group_names(&self) -> & [::std::string::String] {
+        self.cache_security_group_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>One or more VPC security groups associated with the cluster.</p>
     /// <p>Use this parameter only when you are creating a cluster in an Amazon Virtual Private Cloud (Amazon VPC).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
-    pub fn security_group_ids(&self) -> &[::std::string::String] {
-        self.security_group_ids.as_deref().unwrap_or_default()
+    pub fn security_group_ids(&self) -> & [::std::string::String] {
+        self.security_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of tags to be added to this resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A single-element string list containing an Amazon Resource Name (ARN) that uniquely identifies a Redis RDB snapshot file stored in Amazon S3. The snapshot file is used to populate the node group (shard). The Amazon S3 object name in the ARN cannot contain any commas.</p><note>
     /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
     /// </note>
     /// <p>Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshot_arns.is_none()`.
-    pub fn snapshot_arns(&self) -> &[::std::string::String] {
-        self.snapshot_arns.as_deref().unwrap_or_default()
+    pub fn snapshot_arns(&self) -> & [::std::string::String] {
+        self.snapshot_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of a Redis snapshot from which to restore data into the new node group (shard). The snapshot status changes to <code>restoring</code> while the new node group (shard) is being created.</p><note>
     /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
     /// </note>
-    pub fn snapshot_name(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_name(&self) -> ::std::option::Option<& str> {
         self.snapshot_name.as_deref()
     }
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
-    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<& str> {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>The port number on which each of the cache nodes accepts connections.</p>
@@ -356,7 +361,7 @@ impl CreateCacheClusterInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which notifications are sent.</p><note>
     /// <p>The Amazon SNS topic owner must be the same as the cluster owner.</p>
     /// </note>
-    pub fn notification_topic_arn(&self) -> ::std::option::Option<&str> {
+    pub fn notification_topic_arn(&self) -> ::std::option::Option<& str> {
         self.notification_topic_arn.as_deref()
     }
     /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp;</p>
@@ -375,7 +380,7 @@ impl CreateCacheClusterInput {
     /// <p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p><note>
     /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
     /// </note>
-    pub fn snapshot_window(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_window(&self) -> ::std::option::Option<& str> {
         self.snapshot_window.as_deref()
     }
     /// <p><b>Reserved parameter.</b> The password used to access a password protected server.</p>
@@ -389,39 +394,41 @@ impl CreateCacheClusterInput {
     /// <p>The only permitted printable special characters are !, &amp;, #, $, ^, &lt;, &gt;, and -. Other printable special characters cannot be used in the AUTH token.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at http://redis.io/commands/AUTH.</p>
-    pub fn auth_token(&self) -> ::std::option::Option<&str> {
+    pub fn auth_token(&self) -> ::std::option::Option<& str> {
         self.auth_token.as_deref()
     }
     /// <p>Specifies whether the nodes in the cluster are created in a single outpost or across multiple outposts.</p>
-    pub fn outpost_mode(&self) -> ::std::option::Option<&crate::types::OutpostMode> {
+    pub fn outpost_mode(&self) -> ::std::option::Option<& crate::types::OutpostMode> {
         self.outpost_mode.as_ref()
     }
     /// <p>The outpost ARN in which the cache cluster is created.</p>
-    pub fn preferred_outpost_arn(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_outpost_arn(&self) -> ::std::option::Option<& str> {
         self.preferred_outpost_arn.as_deref()
     }
     /// <p>The outpost ARNs in which the cache cluster is created.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.preferred_outpost_arns.is_none()`.
-    pub fn preferred_outpost_arns(&self) -> &[::std::string::String] {
-        self.preferred_outpost_arns.as_deref().unwrap_or_default()
+    pub fn preferred_outpost_arns(&self) -> & [::std::string::String] {
+        self.preferred_outpost_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the destination, format and type of the logs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_delivery_configurations.is_none()`.
-    pub fn log_delivery_configurations(&self) -> &[crate::types::LogDeliveryConfigurationRequest] {
-        self.log_delivery_configurations.as_deref().unwrap_or_default()
+    pub fn log_delivery_configurations(&self) -> & [crate::types::LogDeliveryConfigurationRequest] {
+        self.log_delivery_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A flag that enables in-transit encryption when set to true.</p>
     pub fn transit_encryption_enabled(&self) -> ::std::option::Option<bool> {
         self.transit_encryption_enabled
     }
     /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
-    pub fn network_type(&self) -> ::std::option::Option<&crate::types::NetworkType> {
+    pub fn network_type(&self) -> ::std::option::Option<& crate::types::NetworkType> {
         self.network_type.as_ref()
     }
     /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
-    pub fn ip_discovery(&self) -> ::std::option::Option<&crate::types::IpDiscovery> {
+    pub fn ip_discovery(&self) -> ::std::option::Option<& crate::types::IpDiscovery> {
         self.ip_discovery.as_ref()
     }
 }
@@ -440,17 +447,17 @@ pub struct CreateCacheClusterInputBuilder {
     pub(crate) replication_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) az_mode: ::std::option::Option<crate::types::AzMode>,
     pub(crate) preferred_availability_zone: ::std::option::Option<::std::string::String>,
-    pub(crate) preferred_availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) preferred_availability_zones: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) num_cache_nodes: ::std::option::Option<i32>,
     pub(crate) cache_node_type: ::std::option::Option<::std::string::String>,
     pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) cache_parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) cache_subnet_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) cache_security_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) snapshot_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) cache_security_group_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
+    pub(crate) snapshot_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) snapshot_name: ::std::option::Option<::std::string::String>,
     pub(crate) preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,
@@ -461,8 +468,8 @@ pub struct CreateCacheClusterInputBuilder {
     pub(crate) auth_token: ::std::option::Option<::std::string::String>,
     pub(crate) outpost_mode: ::std::option::Option<crate::types::OutpostMode>,
     pub(crate) preferred_outpost_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) preferred_outpost_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) log_delivery_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfigurationRequest>>,
+    pub(crate) preferred_outpost_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) log_delivery_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::LogDeliveryConfigurationRequest>>,
     pub(crate) transit_encryption_enabled: ::std::option::Option<bool>,
     pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
     pub(crate) ip_discovery: ::std::option::Option<crate::types::IpDiscovery>,
@@ -494,8 +501,7 @@ impl CreateCacheClusterInputBuilder {
     /// <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     pub fn set_cache_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cache_cluster_id = input;
-        self
+        self.cache_cluster_id = input; self
     }
     /// <p>The node group (shard) identifier. This parameter is stored as a lowercase string.</p>
     /// <p><b>Constraints:</b></p>
@@ -523,8 +529,7 @@ impl CreateCacheClusterInputBuilder {
     /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
     /// </note>
     pub fn set_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_group_id = input;
-        self
+        self.replication_group_id = input; self
     }
     /// <p>The ID of the replication group to which this cluster should belong. If this parameter is specified, the cluster is added to the specified replication group as a read replica; otherwise, the cluster is a standalone primary that is not part of any replication group.</p>
     /// <p>If the specified replication group is Multi-AZ enabled and the Availability Zone is not specified, the cluster is created in Availability Zones that provide the best spread of read replicas across Availability Zones.</p><note>
@@ -544,8 +549,7 @@ impl CreateCacheClusterInputBuilder {
     /// <p>This parameter is only supported for Memcached clusters.</p>
     /// <p>If the <code>AZMode</code> and <code>PreferredAvailabilityZones</code> are not specified, ElastiCache assumes <code>single-az</code> mode.</p>
     pub fn set_az_mode(mut self, input: ::std::option::Option<crate::types::AzMode>) -> Self {
-        self.az_mode = input;
-        self
+        self.az_mode = input; self
     }
     /// <p>Specifies whether the nodes in this Memcached cluster are created in a single Availability Zone or created across multiple Availability Zones in the cluster's region.</p>
     /// <p>This parameter is only supported for Memcached clusters.</p>
@@ -564,8 +568,7 @@ impl CreateCacheClusterInputBuilder {
     /// <p>All nodes belonging to this cluster are placed in the preferred Availability Zone. If you want to create your nodes across multiple Availability Zones, use <code>PreferredAvailabilityZones</code>.</p>
     /// <p>Default: System chosen Availability Zone.</p>
     pub fn set_preferred_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_availability_zone = input;
-        self
+        self.preferred_availability_zone = input; self
     }
     /// <p>The EC2 Availability Zone in which the cluster is created.</p>
     /// <p>All nodes belonging to this cluster are placed in the preferred Availability Zone. If you want to create your nodes across multiple Availability Zones, use <code>PreferredAvailabilityZones</code>.</p>
@@ -586,9 +589,9 @@ impl CreateCacheClusterInputBuilder {
     /// <p>Default: System chosen Availability Zones.</p>
     pub fn preferred_availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.preferred_availability_zones.unwrap_or_default();
-        v.push(input.into());
-        self.preferred_availability_zones = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.preferred_availability_zones = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the Availability Zones in which cache nodes are created. The order of the zones in the list is not important.</p>
     /// <p>This option is only supported on Memcached.</p><note>
@@ -597,9 +600,8 @@ impl CreateCacheClusterInputBuilder {
     /// </note>
     /// <p>If you want all the nodes in the same Availability Zone, use <code>PreferredAvailabilityZone</code> instead, or repeat the Availability Zone multiple times in the list.</p>
     /// <p>Default: System chosen Availability Zones.</p>
-    pub fn set_preferred_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.preferred_availability_zones = input;
-        self
+    pub fn set_preferred_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.preferred_availability_zones = input; self
     }
     /// <p>A list of the Availability Zones in which cache nodes are created. The order of the zones in the list is not important.</p>
     /// <p>This option is only supported on Memcached.</p><note>
@@ -608,7 +610,7 @@ impl CreateCacheClusterInputBuilder {
     /// </note>
     /// <p>If you want all the nodes in the same Availability Zone, use <code>PreferredAvailabilityZone</code> instead, or repeat the Availability Zone multiple times in the list.</p>
     /// <p>Default: System chosen Availability Zones.</p>
-    pub fn get_preferred_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_preferred_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.preferred_availability_zones
     }
     /// <p>The initial number of cache nodes that the cluster has.</p>
@@ -622,8 +624,7 @@ impl CreateCacheClusterInputBuilder {
     /// <p>For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
     /// <p>If you need more than 40 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase Request form at <a href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</p>
     pub fn set_num_cache_nodes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.num_cache_nodes = input;
-        self
+        self.num_cache_nodes = input; self
     }
     /// <p>The initial number of cache nodes that the cluster has.</p>
     /// <p>For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
@@ -752,8 +753,7 @@ impl CreateCacheClusterInputBuilder {
     /// <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p></li>
     /// </ul>
     pub fn set_cache_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cache_node_type = input;
-        self
+        self.cache_node_type = input; self
     }
     /// <p>The compute and memory capacity of the nodes in the node group (shard).</p>
     /// <p>The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.</p>
@@ -825,8 +825,7 @@ impl CreateCacheClusterInputBuilder {
     /// <p>The name of the cache engine to be used for this cluster.</p>
     /// <p>Valid values for this parameter are: <code>memcached</code> | <code>redis</code></p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine = input;
-        self
+        self.engine = input; self
     }
     /// <p>The name of the cache engine to be used for this cluster.</p>
     /// <p>Valid values for this parameter are: <code>memcached</code> | <code>redis</code></p>
@@ -842,8 +841,7 @@ impl CreateCacheClusterInputBuilder {
     /// <p>The version number of the cache engine to be used for this cluster. To view the supported cache engine versions, use the DescribeCacheEngineVersions operation.</p>
     /// <p><b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster or replication group and create it anew with the earlier engine version.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The version number of the cache engine to be used for this cluster. To view the supported cache engine versions, use the DescribeCacheEngineVersions operation.</p>
     /// <p><b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster or replication group and create it anew with the earlier engine version.</p>
@@ -857,8 +855,7 @@ impl CreateCacheClusterInputBuilder {
     }
     /// <p>The name of the parameter group to associate with this cluster. If this argument is omitted, the default parameter group for the specified engine is used. You cannot use any parameter group which has <code>cluster-enabled='yes'</code> when creating a cluster.</p>
     pub fn set_cache_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cache_parameter_group_name = input;
-        self
+        self.cache_parameter_group_name = input; self
     }
     /// <p>The name of the parameter group to associate with this cluster. If this argument is omitted, the default parameter group for the specified engine is used. You cannot use any parameter group which has <code>cluster-enabled='yes'</code> when creating a cluster.</p>
     pub fn get_cache_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -877,8 +874,7 @@ impl CreateCacheClusterInputBuilder {
     /// <p>If you're going to launch your cluster in an Amazon VPC, you need to create a subnet group before you start creating a cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets and Subnet Groups</a>.</p>
     /// </important>
     pub fn set_cache_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cache_subnet_group_name = input;
-        self
+        self.cache_subnet_group_name = input; self
     }
     /// <p>The name of the subnet group to be used for the cluster.</p>
     /// <p>Use this parameter only when you are creating a cluster in an Amazon Virtual Private Cloud (Amazon VPC).</p><important>
@@ -895,19 +891,18 @@ impl CreateCacheClusterInputBuilder {
     /// <p>Use this parameter only when you are creating a cluster outside of an Amazon Virtual Private Cloud (Amazon VPC).</p>
     pub fn cache_security_group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cache_security_group_names.unwrap_or_default();
-        v.push(input.into());
-        self.cache_security_group_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.cache_security_group_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of security group names to associate with this cluster.</p>
     /// <p>Use this parameter only when you are creating a cluster outside of an Amazon Virtual Private Cloud (Amazon VPC).</p>
-    pub fn set_cache_security_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.cache_security_group_names = input;
-        self
+    pub fn set_cache_security_group_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.cache_security_group_names = input; self
     }
     /// <p>A list of security group names to associate with this cluster.</p>
     /// <p>Use this parameter only when you are creating a cluster outside of an Amazon Virtual Private Cloud (Amazon VPC).</p>
-    pub fn get_cache_security_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cache_security_group_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.cache_security_group_names
     }
     /// Appends an item to `security_group_ids`.
@@ -918,19 +913,18 @@ impl CreateCacheClusterInputBuilder {
     /// <p>Use this parameter only when you are creating a cluster in an Amazon Virtual Private Cloud (Amazon VPC).</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more VPC security groups associated with the cluster.</p>
     /// <p>Use this parameter only when you are creating a cluster in an Amazon Virtual Private Cloud (Amazon VPC).</p>
-    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_group_ids = input; self
     }
     /// <p>One or more VPC security groups associated with the cluster.</p>
     /// <p>Use this parameter only when you are creating a cluster in an Amazon Virtual Private Cloud (Amazon VPC).</p>
-    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_group_ids
     }
     /// Appends an item to `tags`.
@@ -940,17 +934,16 @@ impl CreateCacheClusterInputBuilder {
     /// <p>A list of tags to be added to this resource.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags to be added to this resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags to be added to this resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Appends an item to `snapshot_arns`.
@@ -963,23 +956,22 @@ impl CreateCacheClusterInputBuilder {
     /// <p>Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code></p>
     pub fn snapshot_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.snapshot_arns.unwrap_or_default();
-        v.push(input.into());
-        self.snapshot_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.snapshot_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A single-element string list containing an Amazon Resource Name (ARN) that uniquely identifies a Redis RDB snapshot file stored in Amazon S3. The snapshot file is used to populate the node group (shard). The Amazon S3 object name in the ARN cannot contain any commas.</p><note>
     /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
     /// </note>
     /// <p>Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code></p>
-    pub fn set_snapshot_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.snapshot_arns = input;
-        self
+    pub fn set_snapshot_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.snapshot_arns = input; self
     }
     /// <p>A single-element string list containing an Amazon Resource Name (ARN) that uniquely identifies a Redis RDB snapshot file stored in Amazon S3. The snapshot file is used to populate the node group (shard). The Amazon S3 object name in the ARN cannot contain any commas.</p><note>
     /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
     /// </note>
     /// <p>Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code></p>
-    pub fn get_snapshot_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_snapshot_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.snapshot_arns
     }
     /// <p>The name of a Redis snapshot from which to restore data into the new node group (shard). The snapshot status changes to <code>restoring</code> while the new node group (shard) is being created.</p><note>
@@ -993,8 +985,7 @@ impl CreateCacheClusterInputBuilder {
     /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
     /// </note>
     pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_name = input;
-        self
+        self.snapshot_name = input; self
     }
     /// <p>The name of a Redis snapshot from which to restore data into the new node group (shard). The snapshot status changes to <code>restoring</code> while the new node group (shard) is being created.</p><note>
     /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
@@ -1009,8 +1000,7 @@ impl CreateCacheClusterInputBuilder {
     }
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_maintenance_window = input;
-        self
+        self.preferred_maintenance_window = input; self
     }
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
@@ -1023,8 +1013,7 @@ impl CreateCacheClusterInputBuilder {
     }
     /// <p>The port number on which each of the cache nodes accepts connections.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port number on which each of the cache nodes accepts connections.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -1041,8 +1030,7 @@ impl CreateCacheClusterInputBuilder {
     /// <p>The Amazon SNS topic owner must be the same as the cluster owner.</p>
     /// </note>
     pub fn set_notification_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.notification_topic_arn = input;
-        self
+        self.notification_topic_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which notifications are sent.</p><note>
     /// <p>The Amazon SNS topic owner must be the same as the cluster owner.</p>
@@ -1057,8 +1045,7 @@ impl CreateCacheClusterInputBuilder {
     }
     /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp;</p>
     pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_minor_version_upgrade = input;
-        self
+        self.auto_minor_version_upgrade = input; self
     }
     /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp;</p>
     pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
@@ -1077,8 +1064,7 @@ impl CreateCacheClusterInputBuilder {
     /// </note>
     /// <p>Default: 0 (i.e., automatic backups are disabled for this cache cluster).</p>
     pub fn set_snapshot_retention_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.snapshot_retention_limit = input;
-        self
+        self.snapshot_retention_limit = input; self
     }
     /// <p>The number of days for which ElastiCache retains automatic snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot taken today is retained for 5 days before being deleted.</p><note>
     /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
@@ -1102,8 +1088,7 @@ impl CreateCacheClusterInputBuilder {
     /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
     /// </note>
     pub fn set_snapshot_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_window = input;
-        self
+        self.snapshot_window = input; self
     }
     /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group (shard).</p>
     /// <p>Example: <code>05:00-09:00</code></p>
@@ -1140,8 +1125,7 @@ impl CreateCacheClusterInputBuilder {
     /// </ul>
     /// <p>For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at http://redis.io/commands/AUTH.</p>
     pub fn set_auth_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auth_token = input;
-        self
+        self.auth_token = input; self
     }
     /// <p><b>Reserved parameter.</b> The password used to access a password protected server.</p>
     /// <p>Password constraints:</p>
@@ -1164,8 +1148,7 @@ impl CreateCacheClusterInputBuilder {
     }
     /// <p>Specifies whether the nodes in the cluster are created in a single outpost or across multiple outposts.</p>
     pub fn set_outpost_mode(mut self, input: ::std::option::Option<crate::types::OutpostMode>) -> Self {
-        self.outpost_mode = input;
-        self
+        self.outpost_mode = input; self
     }
     /// <p>Specifies whether the nodes in the cluster are created in a single outpost or across multiple outposts.</p>
     pub fn get_outpost_mode(&self) -> &::std::option::Option<crate::types::OutpostMode> {
@@ -1178,8 +1161,7 @@ impl CreateCacheClusterInputBuilder {
     }
     /// <p>The outpost ARN in which the cache cluster is created.</p>
     pub fn set_preferred_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_outpost_arn = input;
-        self
+        self.preferred_outpost_arn = input; self
     }
     /// <p>The outpost ARN in which the cache cluster is created.</p>
     pub fn get_preferred_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -1192,17 +1174,16 @@ impl CreateCacheClusterInputBuilder {
     /// <p>The outpost ARNs in which the cache cluster is created.</p>
     pub fn preferred_outpost_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.preferred_outpost_arns.unwrap_or_default();
-        v.push(input.into());
-        self.preferred_outpost_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.preferred_outpost_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The outpost ARNs in which the cache cluster is created.</p>
-    pub fn set_preferred_outpost_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.preferred_outpost_arns = input;
-        self
+    pub fn set_preferred_outpost_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.preferred_outpost_arns = input; self
     }
     /// <p>The outpost ARNs in which the cache cluster is created.</p>
-    pub fn get_preferred_outpost_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_preferred_outpost_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.preferred_outpost_arns
     }
     /// Appends an item to `log_delivery_configurations`.
@@ -1212,20 +1193,16 @@ impl CreateCacheClusterInputBuilder {
     /// <p>Specifies the destination, format and type of the logs.</p>
     pub fn log_delivery_configurations(mut self, input: crate::types::LogDeliveryConfigurationRequest) -> Self {
         let mut v = self.log_delivery_configurations.unwrap_or_default();
-        v.push(input);
-        self.log_delivery_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.log_delivery_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the destination, format and type of the logs.</p>
-    pub fn set_log_delivery_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfigurationRequest>>,
-    ) -> Self {
-        self.log_delivery_configurations = input;
-        self
+    pub fn set_log_delivery_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LogDeliveryConfigurationRequest>>) -> Self {
+        self.log_delivery_configurations = input; self
     }
     /// <p>Specifies the destination, format and type of the logs.</p>
-    pub fn get_log_delivery_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogDeliveryConfigurationRequest>> {
+    pub fn get_log_delivery_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LogDeliveryConfigurationRequest>> {
         &self.log_delivery_configurations
     }
     /// <p>A flag that enables in-transit encryption when set to true.</p>
@@ -1235,8 +1212,7 @@ impl CreateCacheClusterInputBuilder {
     }
     /// <p>A flag that enables in-transit encryption when set to true.</p>
     pub fn set_transit_encryption_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.transit_encryption_enabled = input;
-        self
+        self.transit_encryption_enabled = input; self
     }
     /// <p>A flag that enables in-transit encryption when set to true.</p>
     pub fn get_transit_encryption_enabled(&self) -> &::std::option::Option<bool> {
@@ -1249,8 +1225,7 @@ impl CreateCacheClusterInputBuilder {
     }
     /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
-        self.network_type = input;
-        self
+        self.network_type = input; self
     }
     /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
@@ -1263,49 +1238,78 @@ impl CreateCacheClusterInputBuilder {
     }
     /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn set_ip_discovery(mut self, input: ::std::option::Option<crate::types::IpDiscovery>) -> Self {
-        self.ip_discovery = input;
-        self
+        self.ip_discovery = input; self
     }
     /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn get_ip_discovery(&self) -> &::std::option::Option<crate::types::IpDiscovery> {
         &self.ip_discovery
     }
     /// Consumes the builder and constructs a [`CreateCacheClusterInput`](crate::operation::create_cache_cluster::CreateCacheClusterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_cache_cluster::CreateCacheClusterInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_cache_cluster::CreateCacheClusterInput {
-            cache_cluster_id: self.cache_cluster_id,
-            replication_group_id: self.replication_group_id,
-            az_mode: self.az_mode,
-            preferred_availability_zone: self.preferred_availability_zone,
-            preferred_availability_zones: self.preferred_availability_zones,
-            num_cache_nodes: self.num_cache_nodes,
-            cache_node_type: self.cache_node_type,
-            engine: self.engine,
-            engine_version: self.engine_version,
-            cache_parameter_group_name: self.cache_parameter_group_name,
-            cache_subnet_group_name: self.cache_subnet_group_name,
-            cache_security_group_names: self.cache_security_group_names,
-            security_group_ids: self.security_group_ids,
-            tags: self.tags,
-            snapshot_arns: self.snapshot_arns,
-            snapshot_name: self.snapshot_name,
-            preferred_maintenance_window: self.preferred_maintenance_window,
-            port: self.port,
-            notification_topic_arn: self.notification_topic_arn,
-            auto_minor_version_upgrade: self.auto_minor_version_upgrade,
-            snapshot_retention_limit: self.snapshot_retention_limit,
-            snapshot_window: self.snapshot_window,
-            auth_token: self.auth_token,
-            outpost_mode: self.outpost_mode,
-            preferred_outpost_arn: self.preferred_outpost_arn,
-            preferred_outpost_arns: self.preferred_outpost_arns,
-            log_delivery_configurations: self.log_delivery_configurations,
-            transit_encryption_enabled: self.transit_encryption_enabled,
-            network_type: self.network_type,
-            ip_discovery: self.ip_discovery,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_cache_cluster::CreateCacheClusterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_cache_cluster::CreateCacheClusterInput {
+                cache_cluster_id: self.cache_cluster_id
+                ,
+                replication_group_id: self.replication_group_id
+                ,
+                az_mode: self.az_mode
+                ,
+                preferred_availability_zone: self.preferred_availability_zone
+                ,
+                preferred_availability_zones: self.preferred_availability_zones
+                ,
+                num_cache_nodes: self.num_cache_nodes
+                ,
+                cache_node_type: self.cache_node_type
+                ,
+                engine: self.engine
+                ,
+                engine_version: self.engine_version
+                ,
+                cache_parameter_group_name: self.cache_parameter_group_name
+                ,
+                cache_subnet_group_name: self.cache_subnet_group_name
+                ,
+                cache_security_group_names: self.cache_security_group_names
+                ,
+                security_group_ids: self.security_group_ids
+                ,
+                tags: self.tags
+                ,
+                snapshot_arns: self.snapshot_arns
+                ,
+                snapshot_name: self.snapshot_name
+                ,
+                preferred_maintenance_window: self.preferred_maintenance_window
+                ,
+                port: self.port
+                ,
+                notification_topic_arn: self.notification_topic_arn
+                ,
+                auto_minor_version_upgrade: self.auto_minor_version_upgrade
+                ,
+                snapshot_retention_limit: self.snapshot_retention_limit
+                ,
+                snapshot_window: self.snapshot_window
+                ,
+                auth_token: self.auth_token
+                ,
+                outpost_mode: self.outpost_mode
+                ,
+                preferred_outpost_arn: self.preferred_outpost_arn
+                ,
+                preferred_outpost_arns: self.preferred_outpost_arns
+                ,
+                log_delivery_configurations: self.log_delivery_configurations
+                ,
+                transit_encryption_enabled: self.transit_encryption_enabled
+                ,
+                network_type: self.network_type
+                ,
+                ip_discovery: self.ip_discovery
+                ,
+            }
+        )
     }
 }
+

@@ -4,7 +4,7 @@
 /// <p>This data type is used as a response element in the <code>DescribeDBProxies</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DbProxy {
+pub struct DbProxy  {
     /// <p>The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
     pub db_proxy_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the proxy.</p>
@@ -16,11 +16,11 @@ pub struct DbProxy {
     /// <p>Provides the VPC ID of the DB proxy.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides a list of VPC security groups that the proxy belongs to.</p>
-    pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The EC2 subnet IDs for the proxy.</p>
-    pub vpc_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub vpc_subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>One or more data structures specifying the authorization mechanism to connect to the associated RDS DB instance or Aurora DB cluster.</p>
-    pub auth: ::std::option::Option<::std::vec::Vec<crate::types::UserAuthConfigInfo>>,
+    pub auth: ::std::option::Option<::std::vec::Vec::<crate::types::UserAuthConfigInfo>>,
     /// <p>The Amazon Resource Name (ARN) for the IAM role that the proxy uses to access Amazon Secrets Manager.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint that you can use to connect to the DB proxy. You include the endpoint value in the connection string for a database client application.</p>
@@ -38,51 +38,54 @@ pub struct DbProxy {
     /// <p>The date and time when the proxy was last updated.</p>
     pub updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl DbProxy {
+impl  DbProxy  {
     /// <p>The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
-    pub fn db_proxy_name(&self) -> ::std::option::Option<&str> {
+    pub fn db_proxy_name(&self) -> ::std::option::Option<& str> {
         self.db_proxy_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the proxy.</p>
-    pub fn db_proxy_arn(&self) -> ::std::option::Option<&str> {
+    pub fn db_proxy_arn(&self) -> ::std::option::Option<& str> {
         self.db_proxy_arn.as_deref()
     }
     /// <p>The current status of this proxy. A status of <code>available</code> means the proxy is ready to handle requests. Other values indicate that you must wait for the proxy to be ready, or take some action to resolve an issue.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DbProxyStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DbProxyStatus> {
         self.status.as_ref()
     }
     /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases. <code>POSTGRESQL</code> supports Aurora PostgreSQL and RDS for PostgreSQL databases. <code>SQLSERVER</code> supports RDS for Microsoft SQL Server databases.</p>
-    pub fn engine_family(&self) -> ::std::option::Option<&str> {
+    pub fn engine_family(&self) -> ::std::option::Option<& str> {
         self.engine_family.as_deref()
     }
     /// <p>Provides the VPC ID of the DB proxy.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>Provides a list of VPC security groups that the proxy belongs to.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
-    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
-        self.vpc_security_group_ids.as_deref().unwrap_or_default()
+    pub fn vpc_security_group_ids(&self) -> & [::std::string::String] {
+        self.vpc_security_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The EC2 subnet IDs for the proxy.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_subnet_ids.is_none()`.
-    pub fn vpc_subnet_ids(&self) -> &[::std::string::String] {
-        self.vpc_subnet_ids.as_deref().unwrap_or_default()
+    pub fn vpc_subnet_ids(&self) -> & [::std::string::String] {
+        self.vpc_subnet_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>One or more data structures specifying the authorization mechanism to connect to the associated RDS DB instance or Aurora DB cluster.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auth.is_none()`.
-    pub fn auth(&self) -> &[crate::types::UserAuthConfigInfo] {
-        self.auth.as_deref().unwrap_or_default()
+    pub fn auth(&self) -> & [crate::types::UserAuthConfigInfo] {
+        self.auth.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) for the IAM role that the proxy uses to access Amazon Secrets Manager.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The endpoint that you can use to connect to the DB proxy. You include the endpoint value in the connection string for a database client application.</p>
-    pub fn endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint(&self) -> ::std::option::Option<& str> {
         self.endpoint.as_deref()
     }
     /// <p>Indicates whether Transport Layer Security (TLS) encryption is required for connections to the proxy.</p>
@@ -100,11 +103,11 @@ impl DbProxy {
         self.debug_logging
     }
     /// <p>The date and time when the proxy was first created.</p>
-    pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The date and time when the proxy was last updated.</p>
-    pub fn updated_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_date.as_ref()
     }
 }
@@ -124,9 +127,9 @@ pub struct DbProxyBuilder {
     pub(crate) status: ::std::option::Option<crate::types::DbProxyStatus>,
     pub(crate) engine_family: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
-    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) vpc_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) auth: ::std::option::Option<::std::vec::Vec<crate::types::UserAuthConfigInfo>>,
+    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) vpc_subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) auth: ::std::option::Option<::std::vec::Vec::<crate::types::UserAuthConfigInfo>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) require_tls: ::std::option::Option<bool>,
@@ -143,8 +146,7 @@ impl DbProxyBuilder {
     }
     /// <p>The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
     pub fn set_db_proxy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_proxy_name = input;
-        self
+        self.db_proxy_name = input; self
     }
     /// <p>The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
     pub fn get_db_proxy_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,8 +159,7 @@ impl DbProxyBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the proxy.</p>
     pub fn set_db_proxy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_proxy_arn = input;
-        self
+        self.db_proxy_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the proxy.</p>
     pub fn get_db_proxy_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,8 +172,7 @@ impl DbProxyBuilder {
     }
     /// <p>The current status of this proxy. A status of <code>available</code> means the proxy is ready to handle requests. Other values indicate that you must wait for the proxy to be ready, or take some action to resolve an issue.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DbProxyStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of this proxy. A status of <code>available</code> means the proxy is ready to handle requests. Other values indicate that you must wait for the proxy to be ready, or take some action to resolve an issue.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DbProxyStatus> {
@@ -185,8 +185,7 @@ impl DbProxyBuilder {
     }
     /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases. <code>POSTGRESQL</code> supports Aurora PostgreSQL and RDS for PostgreSQL databases. <code>SQLSERVER</code> supports RDS for Microsoft SQL Server databases.</p>
     pub fn set_engine_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_family = input;
-        self
+        self.engine_family = input; self
     }
     /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases. <code>POSTGRESQL</code> supports Aurora PostgreSQL and RDS for PostgreSQL databases. <code>SQLSERVER</code> supports RDS for Microsoft SQL Server databases.</p>
     pub fn get_engine_family(&self) -> &::std::option::Option<::std::string::String> {
@@ -199,8 +198,7 @@ impl DbProxyBuilder {
     }
     /// <p>Provides the VPC ID of the DB proxy.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>Provides the VPC ID of the DB proxy.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -213,17 +211,16 @@ impl DbProxyBuilder {
     /// <p>Provides a list of VPC security groups that the proxy belongs to.</p>
     pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.vpc_security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.vpc_security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Provides a list of VPC security groups that the proxy belongs to.</p>
-    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.vpc_security_group_ids = input;
-        self
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.vpc_security_group_ids = input; self
     }
     /// <p>Provides a list of VPC security groups that the proxy belongs to.</p>
-    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.vpc_security_group_ids
     }
     /// Appends an item to `vpc_subnet_ids`.
@@ -233,17 +230,16 @@ impl DbProxyBuilder {
     /// <p>The EC2 subnet IDs for the proxy.</p>
     pub fn vpc_subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.vpc_subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.vpc_subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The EC2 subnet IDs for the proxy.</p>
-    pub fn set_vpc_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.vpc_subnet_ids = input;
-        self
+    pub fn set_vpc_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.vpc_subnet_ids = input; self
     }
     /// <p>The EC2 subnet IDs for the proxy.</p>
-    pub fn get_vpc_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.vpc_subnet_ids
     }
     /// Appends an item to `auth`.
@@ -253,17 +249,16 @@ impl DbProxyBuilder {
     /// <p>One or more data structures specifying the authorization mechanism to connect to the associated RDS DB instance or Aurora DB cluster.</p>
     pub fn auth(mut self, input: crate::types::UserAuthConfigInfo) -> Self {
         let mut v = self.auth.unwrap_or_default();
-        v.push(input);
-        self.auth = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.auth = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more data structures specifying the authorization mechanism to connect to the associated RDS DB instance or Aurora DB cluster.</p>
-    pub fn set_auth(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserAuthConfigInfo>>) -> Self {
-        self.auth = input;
-        self
+    pub fn set_auth(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UserAuthConfigInfo>>) -> Self {
+        self.auth = input; self
     }
     /// <p>One or more data structures specifying the authorization mechanism to connect to the associated RDS DB instance or Aurora DB cluster.</p>
-    pub fn get_auth(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserAuthConfigInfo>> {
+    pub fn get_auth(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UserAuthConfigInfo>> {
         &self.auth
     }
     /// <p>The Amazon Resource Name (ARN) for the IAM role that the proxy uses to access Amazon Secrets Manager.</p>
@@ -273,8 +268,7 @@ impl DbProxyBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the IAM role that the proxy uses to access Amazon Secrets Manager.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the IAM role that the proxy uses to access Amazon Secrets Manager.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -287,8 +281,7 @@ impl DbProxyBuilder {
     }
     /// <p>The endpoint that you can use to connect to the DB proxy. You include the endpoint value in the connection string for a database client application.</p>
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint = input;
-        self
+        self.endpoint = input; self
     }
     /// <p>The endpoint that you can use to connect to the DB proxy. You include the endpoint value in the connection string for a database client application.</p>
     pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -301,8 +294,7 @@ impl DbProxyBuilder {
     }
     /// <p>Indicates whether Transport Layer Security (TLS) encryption is required for connections to the proxy.</p>
     pub fn set_require_tls(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.require_tls = input;
-        self
+        self.require_tls = input; self
     }
     /// <p>Indicates whether Transport Layer Security (TLS) encryption is required for connections to the proxy.</p>
     pub fn get_require_tls(&self) -> &::std::option::Option<bool> {
@@ -319,8 +311,7 @@ impl DbProxyBuilder {
     /// <p>Default: 1800 (30 minutes)</p>
     /// <p>Constraints: 1 to 28,800</p>
     pub fn set_idle_client_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.idle_client_timeout = input;
-        self
+        self.idle_client_timeout = input; self
     }
     /// <p>The number of seconds a connection to the proxy can have no activity before the proxy drops the client connection. The proxy keeps the underlying database connection open and puts it back into the connection pool for reuse by later connection requests.</p>
     /// <p>Default: 1800 (30 minutes)</p>
@@ -335,8 +326,7 @@ impl DbProxyBuilder {
     }
     /// <p>Indicates whether the proxy includes detailed information about SQL statements in its logs. This information helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive information that appears in the logs.</p>
     pub fn set_debug_logging(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.debug_logging = input;
-        self
+        self.debug_logging = input; self
     }
     /// <p>Indicates whether the proxy includes detailed information about SQL statements in its logs. This information helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive information that appears in the logs.</p>
     pub fn get_debug_logging(&self) -> &::std::option::Option<bool> {
@@ -349,8 +339,7 @@ impl DbProxyBuilder {
     }
     /// <p>The date and time when the proxy was first created.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>The date and time when the proxy was first created.</p>
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -363,8 +352,7 @@ impl DbProxyBuilder {
     }
     /// <p>The date and time when the proxy was last updated.</p>
     pub fn set_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_date = input;
-        self
+        self.updated_date = input; self
     }
     /// <p>The date and time when the proxy was last updated.</p>
     pub fn get_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -373,21 +361,37 @@ impl DbProxyBuilder {
     /// Consumes the builder and constructs a [`DbProxy`](crate::types::DbProxy).
     pub fn build(self) -> crate::types::DbProxy {
         crate::types::DbProxy {
-            db_proxy_name: self.db_proxy_name,
-            db_proxy_arn: self.db_proxy_arn,
-            status: self.status,
-            engine_family: self.engine_family,
-            vpc_id: self.vpc_id,
-            vpc_security_group_ids: self.vpc_security_group_ids,
-            vpc_subnet_ids: self.vpc_subnet_ids,
-            auth: self.auth,
-            role_arn: self.role_arn,
-            endpoint: self.endpoint,
-            require_tls: self.require_tls,
-            idle_client_timeout: self.idle_client_timeout,
-            debug_logging: self.debug_logging,
-            created_date: self.created_date,
-            updated_date: self.updated_date,
+            db_proxy_name: self.db_proxy_name
+            ,
+            db_proxy_arn: self.db_proxy_arn
+            ,
+            status: self.status
+            ,
+            engine_family: self.engine_family
+            ,
+            vpc_id: self.vpc_id
+            ,
+            vpc_security_group_ids: self.vpc_security_group_ids
+            ,
+            vpc_subnet_ids: self.vpc_subnet_ids
+            ,
+            auth: self.auth
+            ,
+            role_arn: self.role_arn
+            ,
+            endpoint: self.endpoint
+            ,
+            require_tls: self.require_tls
+            ,
+            idle_client_timeout: self.idle_client_timeout
+            ,
+            debug_logging: self.debug_logging
+            ,
+            created_date: self.created_date
+            ,
+            updated_date: self.updated_date
+            ,
         }
     }
 }
+

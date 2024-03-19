@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateParameterGroupInput {
+pub struct CreateParameterGroupInput  {
     /// <p>The name of the parameter group to apply to all of the clusters in this replication group.</p>
     pub parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the parameter group.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl CreateParameterGroupInput {
+impl  CreateParameterGroupInput  {
     /// <p>The name of the parameter group to apply to all of the clusters in this replication group.</p>
-    pub fn parameter_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn parameter_group_name(&self) -> ::std::option::Option<& str> {
         self.parameter_group_name.as_deref()
     }
     /// <p>A description of the parameter group.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl CreateParameterGroupInputBuilder {
     }
     /// <p>The name of the parameter group to apply to all of the clusters in this replication group.</p>
     pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_group_name = input;
-        self
+        self.parameter_group_name = input; self
     }
     /// <p>The name of the parameter group to apply to all of the clusters in this replication group.</p>
     pub fn get_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,21 +54,22 @@ impl CreateParameterGroupInputBuilder {
     }
     /// <p>A description of the parameter group.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the parameter group.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`CreateParameterGroupInput`](crate::operation::create_parameter_group::CreateParameterGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_parameter_group::CreateParameterGroupInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_parameter_group::CreateParameterGroupInput {
-            parameter_group_name: self.parameter_group_name,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_parameter_group::CreateParameterGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_parameter_group::CreateParameterGroupInput {
+                parameter_group_name: self.parameter_group_name
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

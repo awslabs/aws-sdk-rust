@@ -3,15 +3,14 @@
 /// <p>Defines an ASCII text message to send to the user.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PlainTextMessage {
+pub struct PlainTextMessage  {
     /// <p>The message to send to the user.</p>
     pub value: ::std::string::String,
 }
-impl PlainTextMessage {
+impl  PlainTextMessage  {
     /// <p>The message to send to the user.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl PlainTextMessage {
@@ -36,8 +35,7 @@ impl PlainTextMessageBuilder {
     }
     /// <p>The message to send to the user.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The message to send to the user.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl PlainTextMessageBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`value`](crate::types::builders::PlainTextMessageBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::PlainTextMessage, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PlainTextMessage {
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building PlainTextMessage",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PlainTextMessage {
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building PlainTextMessage")
+                    )?
+                ,
+            }
+        )
     }
 }
+

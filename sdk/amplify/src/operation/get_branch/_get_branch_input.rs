@@ -3,19 +3,19 @@
 /// <p>The request structure for the get branch request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBranchInput {
+pub struct GetBranchInput  {
     /// <p>The unique ID for an Amplify app.</p>
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the branch.</p>
     pub branch_name: ::std::option::Option<::std::string::String>,
 }
-impl GetBranchInput {
+impl  GetBranchInput  {
     /// <p>The unique ID for an Amplify app.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the branch.</p>
-    pub fn branch_name(&self) -> ::std::option::Option<&str> {
+    pub fn branch_name(&self) -> ::std::option::Option<& str> {
         self.branch_name.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl GetBranchInputBuilder {
     }
     /// <p>The unique ID for an Amplify app.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The unique ID for an Amplify app.</p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +56,7 @@ impl GetBranchInputBuilder {
     }
     /// <p>The name of the branch.</p>
     pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.branch_name = input;
-        self
+        self.branch_name = input; self
     }
     /// <p>The name of the branch.</p>
     pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,9 +64,14 @@ impl GetBranchInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetBranchInput`](crate::operation::get_branch::GetBranchInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_branch::GetBranchInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_branch::GetBranchInput {
-            app_id: self.app_id,
-            branch_name: self.branch_name,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_branch::GetBranchInput {
+                app_id: self.app_id
+                ,
+                branch_name: self.branch_name
+                ,
+            }
+        )
     }
 }
+

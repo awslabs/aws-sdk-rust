@@ -3,21 +3,20 @@
 /// <p>Defines the Amazon S3 bucket where the training data for the configured audience is stored.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AudienceGenerationJobDataSource {
+pub struct AudienceGenerationJobDataSource  {
     /// <p>The Amazon S3 bucket where the training data for the configured audience is stored.</p>
     pub data_source: ::std::option::Option<crate::types::S3ConfigMap>,
     /// <p>The ARN of the IAM role that can read the Amazon S3 bucket where the training data is stored.</p>
     pub role_arn: ::std::string::String,
 }
-impl AudienceGenerationJobDataSource {
+impl  AudienceGenerationJobDataSource  {
     /// <p>The Amazon S3 bucket where the training data for the configured audience is stored.</p>
-    pub fn data_source(&self) -> ::std::option::Option<&crate::types::S3ConfigMap> {
+    pub fn data_source(&self) -> ::std::option::Option<& crate::types::S3ConfigMap> {
         self.data_source.as_ref()
     }
     /// <p>The ARN of the IAM role that can read the Amazon S3 bucket where the training data is stored.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
 }
 impl AudienceGenerationJobDataSource {
@@ -43,8 +42,7 @@ impl AudienceGenerationJobDataSourceBuilder {
     }
     /// <p>The Amazon S3 bucket where the training data for the configured audience is stored.</p>
     pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::S3ConfigMap>) -> Self {
-        self.data_source = input;
-        self
+        self.data_source = input; self
     }
     /// <p>The Amazon S3 bucket where the training data for the configured audience is stored.</p>
     pub fn get_data_source(&self) -> &::std::option::Option<crate::types::S3ConfigMap> {
@@ -58,8 +56,7 @@ impl AudienceGenerationJobDataSourceBuilder {
     }
     /// <p>The ARN of the IAM role that can read the Amazon S3 bucket where the training data is stored.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the IAM role that can read the Amazon S3 bucket where the training data is stored.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,14 +66,17 @@ impl AudienceGenerationJobDataSourceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`role_arn`](crate::types::builders::AudienceGenerationJobDataSourceBuilder::role_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::AudienceGenerationJobDataSource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AudienceGenerationJobDataSource {
-            data_source: self.data_source,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building AudienceGenerationJobDataSource",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AudienceGenerationJobDataSource {
+                data_source: self.data_source
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building AudienceGenerationJobDataSource")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about a section from an evaluation form. A section can contain sections and/or questions. Evaluation forms can only contain sections and subsections (two level nesting).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EvaluationFormSection {
+pub struct EvaluationFormSection  {
     /// <p>The title of the section.</p>
     pub title: ::std::string::String,
     /// <p>The identifier of the section. An identifier must be unique within the evaluation form.</p>
@@ -11,29 +11,26 @@ pub struct EvaluationFormSection {
     /// <p>The instructions of the section.</p>
     pub instructions: ::std::option::Option<::std::string::String>,
     /// <p>The items of the section.</p>
-    pub items: ::std::vec::Vec<crate::types::EvaluationFormItem>,
+    pub items: ::std::vec::Vec::<crate::types::EvaluationFormItem>,
     /// <p>The scoring weight of the section.</p>
     pub weight: f64,
 }
-impl EvaluationFormSection {
+impl  EvaluationFormSection  {
     /// <p>The title of the section.</p>
-    pub fn title(&self) -> &str {
-        use std::ops::Deref;
-        self.title.deref()
+    pub fn title(&self) -> & str {
+        use std::ops::Deref; self.title.deref()
     }
     /// <p>The identifier of the section. An identifier must be unique within the evaluation form.</p>
-    pub fn ref_id(&self) -> &str {
-        use std::ops::Deref;
-        self.ref_id.deref()
+    pub fn ref_id(&self) -> & str {
+        use std::ops::Deref; self.ref_id.deref()
     }
     /// <p>The instructions of the section.</p>
-    pub fn instructions(&self) -> ::std::option::Option<&str> {
+    pub fn instructions(&self) -> ::std::option::Option<& str> {
         self.instructions.as_deref()
     }
     /// <p>The items of the section.</p>
-    pub fn items(&self) -> &[crate::types::EvaluationFormItem] {
-        use std::ops::Deref;
-        self.items.deref()
+    pub fn items(&self) -> & [crate::types::EvaluationFormItem] {
+        use std::ops::Deref; self.items.deref()
     }
     /// <p>The scoring weight of the section.</p>
     pub fn weight(&self) -> f64 {
@@ -54,7 +51,7 @@ pub struct EvaluationFormSectionBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) ref_id: ::std::option::Option<::std::string::String>,
     pub(crate) instructions: ::std::option::Option<::std::string::String>,
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::EvaluationFormItem>>,
     pub(crate) weight: ::std::option::Option<f64>,
 }
 impl EvaluationFormSectionBuilder {
@@ -66,8 +63,7 @@ impl EvaluationFormSectionBuilder {
     }
     /// <p>The title of the section.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The title of the section.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl EvaluationFormSectionBuilder {
     }
     /// <p>The identifier of the section. An identifier must be unique within the evaluation form.</p>
     pub fn set_ref_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ref_id = input;
-        self
+        self.ref_id = input; self
     }
     /// <p>The identifier of the section. An identifier must be unique within the evaluation form.</p>
     pub fn get_ref_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +90,7 @@ impl EvaluationFormSectionBuilder {
     }
     /// <p>The instructions of the section.</p>
     pub fn set_instructions(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instructions = input;
-        self
+        self.instructions = input; self
     }
     /// <p>The instructions of the section.</p>
     pub fn get_instructions(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,17 +103,16 @@ impl EvaluationFormSectionBuilder {
     /// <p>The items of the section.</p>
     pub fn items(mut self, input: crate::types::EvaluationFormItem) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The items of the section.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EvaluationFormItem>>) -> Self {
+        self.items = input; self
     }
     /// <p>The items of the section.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EvaluationFormItem>> {
         &self.items
     }
     /// <p>The scoring weight of the section.</p>
@@ -129,8 +122,7 @@ impl EvaluationFormSectionBuilder {
     }
     /// <p>The scoring weight of the section.</p>
     pub fn set_weight(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.weight = input;
-        self
+        self.weight = input; self
     }
     /// <p>The scoring weight of the section.</p>
     pub fn get_weight(&self) -> &::std::option::Option<f64> {
@@ -142,27 +134,30 @@ impl EvaluationFormSectionBuilder {
     /// - [`ref_id`](crate::types::builders::EvaluationFormSectionBuilder::ref_id)
     /// - [`items`](crate::types::builders::EvaluationFormSectionBuilder::items)
     pub fn build(self) -> ::std::result::Result<crate::types::EvaluationFormSection, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EvaluationFormSection {
-            title: self.title.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "title",
-                    "title was not specified but it is required when building EvaluationFormSection",
-                )
-            })?,
-            ref_id: self.ref_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ref_id",
-                    "ref_id was not specified but it is required when building EvaluationFormSection",
-                )
-            })?,
-            instructions: self.instructions,
-            items: self.items.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "items",
-                    "items was not specified but it is required when building EvaluationFormSection",
-                )
-            })?,
-            weight: self.weight.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::EvaluationFormSection {
+                title: self.title
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("title", "title was not specified but it is required when building EvaluationFormSection")
+                    )?
+                ,
+                ref_id: self.ref_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ref_id", "ref_id was not specified but it is required when building EvaluationFormSection")
+                    )?
+                ,
+                instructions: self.instructions
+                ,
+                items: self.items
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("items", "items was not specified but it is required when building EvaluationFormSection")
+                    )?
+                ,
+                weight: self.weight
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAssetTypeInput {
+pub struct GetAssetTypeInput  {
     /// <p>The ID of the Amazon DataZone domain in which the asset type exists.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the asset type.</p>
@@ -10,17 +10,17 @@ pub struct GetAssetTypeInput {
     /// <p>The revision of the asset type.</p>
     pub revision: ::std::option::Option<::std::string::String>,
 }
-impl GetAssetTypeInput {
+impl  GetAssetTypeInput  {
     /// <p>The ID of the Amazon DataZone domain in which the asset type exists.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The ID of the asset type.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>The revision of the asset type.</p>
-    pub fn revision(&self) -> ::std::option::Option<&str> {
+    pub fn revision(&self) -> ::std::option::Option<& str> {
         self.revision.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl GetAssetTypeInputBuilder {
     }
     /// <p>The ID of the Amazon DataZone domain in which the asset type exists.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The ID of the Amazon DataZone domain in which the asset type exists.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl GetAssetTypeInputBuilder {
     }
     /// <p>The ID of the asset type.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The ID of the asset type.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,21 +75,24 @@ impl GetAssetTypeInputBuilder {
     }
     /// <p>The revision of the asset type.</p>
     pub fn set_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision = input;
-        self
+        self.revision = input; self
     }
     /// <p>The revision of the asset type.</p>
     pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
         &self.revision
     }
     /// Consumes the builder and constructs a [`GetAssetTypeInput`](crate::operation::get_asset_type::GetAssetTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_asset_type::GetAssetTypeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_asset_type::GetAssetTypeInput {
-            domain_identifier: self.domain_identifier,
-            identifier: self.identifier,
-            revision: self.revision,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_asset_type::GetAssetTypeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_asset_type::GetAssetTypeInput {
+                domain_identifier: self.domain_identifier
+                ,
+                identifier: self.identifier
+                ,
+                revision: self.revision
+                ,
+            }
+        )
     }
 }
+

@@ -99,3 +99,4 @@ pub mod validate_sol_function_package_content;
 
 /// Types for the `ValidateSolNetworkPackageContent` operation.
 pub mod validate_sol_network_package_content;
+

@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTrustStoreRevocationContentInput {
+pub struct GetTrustStoreRevocationContentInput  {
     /// <p>The Amazon Resource Name (ARN) of the trust store.</p>
     pub trust_store_arn: ::std::option::Option<::std::string::String>,
     /// <p>The revocation ID of the revocation file.</p>
     pub revocation_id: ::std::option::Option<i64>,
 }
-impl GetTrustStoreRevocationContentInput {
+impl  GetTrustStoreRevocationContentInput  {
     /// <p>The Amazon Resource Name (ARN) of the trust store.</p>
-    pub fn trust_store_arn(&self) -> ::std::option::Option<&str> {
+    pub fn trust_store_arn(&self) -> ::std::option::Option<& str> {
         self.trust_store_arn.as_deref()
     }
     /// <p>The revocation ID of the revocation file.</p>
@@ -41,8 +41,7 @@ impl GetTrustStoreRevocationContentInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the trust store.</p>
     pub fn set_trust_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trust_store_arn = input;
-        self
+        self.trust_store_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the trust store.</p>
     pub fn get_trust_store_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl GetTrustStoreRevocationContentInputBuilder {
     }
     /// <p>The revocation ID of the revocation file.</p>
     pub fn set_revocation_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.revocation_id = input;
-        self
+        self.revocation_id = input; self
     }
     /// <p>The revocation ID of the revocation file.</p>
     pub fn get_revocation_id(&self) -> &::std::option::Option<i64> {
         &self.revocation_id
     }
     /// Consumes the builder and constructs a [`GetTrustStoreRevocationContentInput`](crate::operation::get_trust_store_revocation_content::GetTrustStoreRevocationContentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_trust_store_revocation_content::GetTrustStoreRevocationContentInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_trust_store_revocation_content::GetTrustStoreRevocationContentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_trust_store_revocation_content::GetTrustStoreRevocationContentInput {
-                trust_store_arn: self.trust_store_arn,
-                revocation_id: self.revocation_id,
-            },
+                trust_store_arn: self.trust_store_arn
+                ,
+                revocation_id: self.revocation_id
+                ,
+            }
         )
     }
 }
+

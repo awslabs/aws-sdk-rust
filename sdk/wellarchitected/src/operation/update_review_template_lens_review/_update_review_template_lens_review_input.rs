@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateReviewTemplateLensReviewInput {
+pub struct UpdateReviewTemplateLensReviewInput  {
     /// <p>The review template ARN.</p>
     pub template_arn: ::std::option::Option<::std::string::String>,
     /// <p>The alias of the lens.</p>
@@ -15,28 +15,28 @@ pub struct UpdateReviewTemplateLensReviewInput {
     pub lens_notes: ::std::option::Option<::std::string::String>,
     /// <p>List of pillar notes of a lens review in a workload.</p>
     /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
-    pub pillar_notes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub pillar_notes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl UpdateReviewTemplateLensReviewInput {
+impl  UpdateReviewTemplateLensReviewInput  {
     /// <p>The review template ARN.</p>
-    pub fn template_arn(&self) -> ::std::option::Option<&str> {
+    pub fn template_arn(&self) -> ::std::option::Option<& str> {
         self.template_arn.as_deref()
     }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn lens_alias(&self) -> ::std::option::Option<&str> {
+    pub fn lens_alias(&self) -> ::std::option::Option<& str> {
         self.lens_alias.as_deref()
     }
     /// <p>The notes associated with the workload.</p>
     /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
-    pub fn lens_notes(&self) -> ::std::option::Option<&str> {
+    pub fn lens_notes(&self) -> ::std::option::Option<& str> {
         self.lens_notes.as_deref()
     }
     /// <p>List of pillar notes of a lens review in a workload.</p>
     /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
-    pub fn pillar_notes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn pillar_notes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.pillar_notes.as_ref()
     }
 }
@@ -54,7 +54,7 @@ pub struct UpdateReviewTemplateLensReviewInputBuilder {
     pub(crate) template_arn: ::std::option::Option<::std::string::String>,
     pub(crate) lens_alias: ::std::option::Option<::std::string::String>,
     pub(crate) lens_notes: ::std::option::Option<::std::string::String>,
-    pub(crate) pillar_notes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) pillar_notes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl UpdateReviewTemplateLensReviewInputBuilder {
     /// <p>The review template ARN.</p>
@@ -65,8 +65,7 @@ impl UpdateReviewTemplateLensReviewInputBuilder {
     }
     /// <p>The review template ARN.</p>
     pub fn set_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_arn = input;
-        self
+        self.template_arn = input; self
     }
     /// <p>The review template ARN.</p>
     pub fn get_template_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +85,7 @@ impl UpdateReviewTemplateLensReviewInputBuilder {
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn set_lens_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lens_alias = input;
-        self
+        self.lens_alias = input; self
     }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
@@ -105,8 +103,7 @@ impl UpdateReviewTemplateLensReviewInputBuilder {
     /// <p>The notes associated with the workload.</p>
     /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn set_lens_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lens_notes = input;
-        self
+        self.lens_notes = input; self
     }
     /// <p>The notes associated with the workload.</p>
     /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
@@ -121,38 +118,34 @@ impl UpdateReviewTemplateLensReviewInputBuilder {
     /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
     pub fn pillar_notes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.pillar_notes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.pillar_notes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.pillar_notes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>List of pillar notes of a lens review in a workload.</p>
     /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
-    pub fn set_pillar_notes(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.pillar_notes = input;
-        self
+    pub fn set_pillar_notes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.pillar_notes = input; self
     }
     /// <p>List of pillar notes of a lens review in a workload.</p>
     /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
-    pub fn get_pillar_notes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_pillar_notes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.pillar_notes
     }
     /// Consumes the builder and constructs a [`UpdateReviewTemplateLensReviewInput`](crate::operation::update_review_template_lens_review::UpdateReviewTemplateLensReviewInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_review_template_lens_review::UpdateReviewTemplateLensReviewInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_review_template_lens_review::UpdateReviewTemplateLensReviewInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_review_template_lens_review::UpdateReviewTemplateLensReviewInput {
-                template_arn: self.template_arn,
-                lens_alias: self.lens_alias,
-                lens_notes: self.lens_notes,
-                pillar_notes: self.pillar_notes,
-            },
+                template_arn: self.template_arn
+                ,
+                lens_alias: self.lens_alias
+                ,
+                lens_notes: self.lens_notes
+                ,
+                pillar_notes: self.pillar_notes
+                ,
+            }
         )
     }
 }
+

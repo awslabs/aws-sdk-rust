@@ -3,13 +3,13 @@
 /// <p>Complex data type that defines destination-detail objects.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DestinationDetail {
+pub struct DestinationDetail  {
     /// <p>An S3 detail object to return information about the S3 destination.</p>
     pub s3: ::std::option::Option<crate::types::S3Detail>,
 }
-impl DestinationDetail {
+impl  DestinationDetail  {
     /// <p>An S3 detail object to return information about the S3 destination.</p>
-    pub fn s3(&self) -> ::std::option::Option<&crate::types::S3Detail> {
+    pub fn s3(&self) -> ::std::option::Option<& crate::types::S3Detail> {
         self.s3.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl DestinationDetailBuilder {
     }
     /// <p>An S3 detail object to return information about the S3 destination.</p>
     pub fn set_s3(mut self, input: ::std::option::Option<crate::types::S3Detail>) -> Self {
-        self.s3 = input;
-        self
+        self.s3 = input; self
     }
     /// <p>An S3 detail object to return information about the S3 destination.</p>
     pub fn get_s3(&self) -> &::std::option::Option<crate::types::S3Detail> {
@@ -43,6 +42,10 @@ impl DestinationDetailBuilder {
     }
     /// Consumes the builder and constructs a [`DestinationDetail`](crate::types::DestinationDetail).
     pub fn build(self) -> crate::types::DestinationDetail {
-        crate::types::DestinationDetail { s3: self.s3 }
+        crate::types::DestinationDetail {
+            s3: self.s3
+            ,
+        }
     }
 }
+

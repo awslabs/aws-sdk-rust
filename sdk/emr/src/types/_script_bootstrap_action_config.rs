@@ -3,22 +3,23 @@
 /// <p>Configuration of the script to run during a bootstrap action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScriptBootstrapActionConfig {
+pub struct ScriptBootstrapActionConfig  {
     /// <p>Location in Amazon S3 of the script to run during a bootstrap action.</p>
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>A list of command line arguments to pass to the bootstrap action script.</p>
-    pub args: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub args: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ScriptBootstrapActionConfig {
+impl  ScriptBootstrapActionConfig  {
     /// <p>Location in Amazon S3 of the script to run during a bootstrap action.</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>A list of command line arguments to pass to the bootstrap action script.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.args.is_none()`.
-    pub fn args(&self) -> &[::std::string::String] {
-        self.args.as_deref().unwrap_or_default()
+    pub fn args(&self) -> & [::std::string::String] {
+        self.args.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ScriptBootstrapActionConfig {
@@ -33,7 +34,7 @@ impl ScriptBootstrapActionConfig {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ScriptBootstrapActionConfigBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
-    pub(crate) args: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) args: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ScriptBootstrapActionConfigBuilder {
     /// <p>Location in Amazon S3 of the script to run during a bootstrap action.</p>
@@ -44,8 +45,7 @@ impl ScriptBootstrapActionConfigBuilder {
     }
     /// <p>Location in Amazon S3 of the script to run during a bootstrap action.</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>Location in Amazon S3 of the script to run during a bootstrap action.</p>
     pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,24 +58,26 @@ impl ScriptBootstrapActionConfigBuilder {
     /// <p>A list of command line arguments to pass to the bootstrap action script.</p>
     pub fn args(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.args.unwrap_or_default();
-        v.push(input.into());
-        self.args = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.args = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of command line arguments to pass to the bootstrap action script.</p>
-    pub fn set_args(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.args = input;
-        self
+    pub fn set_args(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.args = input; self
     }
     /// <p>A list of command line arguments to pass to the bootstrap action script.</p>
-    pub fn get_args(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_args(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.args
     }
     /// Consumes the builder and constructs a [`ScriptBootstrapActionConfig`](crate::types::ScriptBootstrapActionConfig).
     pub fn build(self) -> crate::types::ScriptBootstrapActionConfig {
         crate::types::ScriptBootstrapActionConfig {
-            path: self.path,
-            args: self.args,
+            path: self.path
+            ,
+            args: self.args
+            ,
         }
     }
 }
+

@@ -3,22 +3,20 @@
 /// <p>Contains information about a queue for a quick connect. The flow must be of type Transfer to Queue.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QueueQuickConnectConfig {
+pub struct QueueQuickConnectConfig  {
     /// <p>The identifier for the queue.</p>
     pub queue_id: ::std::string::String,
     /// <p>The identifier of the flow.</p>
     pub contact_flow_id: ::std::string::String,
 }
-impl QueueQuickConnectConfig {
+impl  QueueQuickConnectConfig  {
     /// <p>The identifier for the queue.</p>
-    pub fn queue_id(&self) -> &str {
-        use std::ops::Deref;
-        self.queue_id.deref()
+    pub fn queue_id(&self) -> & str {
+        use std::ops::Deref; self.queue_id.deref()
     }
     /// <p>The identifier of the flow.</p>
-    pub fn contact_flow_id(&self) -> &str {
-        use std::ops::Deref;
-        self.contact_flow_id.deref()
+    pub fn contact_flow_id(&self) -> & str {
+        use std::ops::Deref; self.contact_flow_id.deref()
     }
 }
 impl QueueQuickConnectConfig {
@@ -44,8 +42,7 @@ impl QueueQuickConnectConfigBuilder {
     }
     /// <p>The identifier for the queue.</p>
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.queue_id = input;
-        self
+        self.queue_id = input; self
     }
     /// <p>The identifier for the queue.</p>
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl QueueQuickConnectConfigBuilder {
     }
     /// <p>The identifier of the flow.</p>
     pub fn set_contact_flow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_flow_id = input;
-        self
+        self.contact_flow_id = input; self
     }
     /// <p>The identifier of the flow.</p>
     pub fn get_contact_flow_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl QueueQuickConnectConfigBuilder {
     /// - [`queue_id`](crate::types::builders::QueueQuickConnectConfigBuilder::queue_id)
     /// - [`contact_flow_id`](crate::types::builders::QueueQuickConnectConfigBuilder::contact_flow_id)
     pub fn build(self) -> ::std::result::Result<crate::types::QueueQuickConnectConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::QueueQuickConnectConfig {
-            queue_id: self.queue_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "queue_id",
-                    "queue_id was not specified but it is required when building QueueQuickConnectConfig",
-                )
-            })?,
-            contact_flow_id: self.contact_flow_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "contact_flow_id",
-                    "contact_flow_id was not specified but it is required when building QueueQuickConnectConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::QueueQuickConnectConfig {
+                queue_id: self.queue_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("queue_id", "queue_id was not specified but it is required when building QueueQuickConnectConfig")
+                    )?
+                ,
+                contact_flow_id: self.contact_flow_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("contact_flow_id", "contact_flow_id was not specified but it is required when building QueueQuickConnectConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

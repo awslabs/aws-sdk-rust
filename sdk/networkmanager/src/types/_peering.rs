@@ -3,7 +3,7 @@
 /// <p>Describes a peering connection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Peering {
+pub struct Peering  {
     /// <p>The ID of the core network for the peering request.</p>
     pub core_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of a core network.</p>
@@ -21,51 +21,52 @@ pub struct Peering {
     /// <p>The resource ARN of the peer.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of key-value tags associated with the peering.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The timestamp when the attachment peer was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl Peering {
+impl  Peering  {
     /// <p>The ID of the core network for the peering request.</p>
-    pub fn core_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn core_network_id(&self) -> ::std::option::Option<& str> {
         self.core_network_id.as_deref()
     }
     /// <p>The ARN of a core network.</p>
-    pub fn core_network_arn(&self) -> ::std::option::Option<&str> {
+    pub fn core_network_arn(&self) -> ::std::option::Option<& str> {
         self.core_network_arn.as_deref()
     }
     /// <p>The ID of the peering attachment.</p>
-    pub fn peering_id(&self) -> ::std::option::Option<&str> {
+    pub fn peering_id(&self) -> ::std::option::Option<& str> {
         self.peering_id.as_deref()
     }
     /// <p>The ID of the account owner.</p>
-    pub fn owner_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_account_id(&self) -> ::std::option::Option<& str> {
         self.owner_account_id.as_deref()
     }
     /// <p>The type of peering. This will be <code>TRANSIT_GATEWAY</code>.</p>
-    pub fn peering_type(&self) -> ::std::option::Option<&crate::types::PeeringType> {
+    pub fn peering_type(&self) -> ::std::option::Option<& crate::types::PeeringType> {
         self.peering_type.as_ref()
     }
     /// <p>The current state of the peering connection.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::PeeringState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::PeeringState> {
         self.state.as_ref()
     }
     /// <p>The edge location for the peer.</p>
-    pub fn edge_location(&self) -> ::std::option::Option<&str> {
+    pub fn edge_location(&self) -> ::std::option::Option<& str> {
         self.edge_location.as_deref()
     }
     /// <p>The resource ARN of the peer.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The list of key-value tags associated with the peering.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The timestamp when the attachment peer was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
@@ -88,7 +89,7 @@ pub struct PeeringBuilder {
     pub(crate) state: ::std::option::Option<crate::types::PeeringState>,
     pub(crate) edge_location: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PeeringBuilder {
@@ -99,8 +100,7 @@ impl PeeringBuilder {
     }
     /// <p>The ID of the core network for the peering request.</p>
     pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.core_network_id = input;
-        self
+        self.core_network_id = input; self
     }
     /// <p>The ID of the core network for the peering request.</p>
     pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +113,7 @@ impl PeeringBuilder {
     }
     /// <p>The ARN of a core network.</p>
     pub fn set_core_network_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.core_network_arn = input;
-        self
+        self.core_network_arn = input; self
     }
     /// <p>The ARN of a core network.</p>
     pub fn get_core_network_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +126,7 @@ impl PeeringBuilder {
     }
     /// <p>The ID of the peering attachment.</p>
     pub fn set_peering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.peering_id = input;
-        self
+        self.peering_id = input; self
     }
     /// <p>The ID of the peering attachment.</p>
     pub fn get_peering_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +139,7 @@ impl PeeringBuilder {
     }
     /// <p>The ID of the account owner.</p>
     pub fn set_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_account_id = input;
-        self
+        self.owner_account_id = input; self
     }
     /// <p>The ID of the account owner.</p>
     pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +152,7 @@ impl PeeringBuilder {
     }
     /// <p>The type of peering. This will be <code>TRANSIT_GATEWAY</code>.</p>
     pub fn set_peering_type(mut self, input: ::std::option::Option<crate::types::PeeringType>) -> Self {
-        self.peering_type = input;
-        self
+        self.peering_type = input; self
     }
     /// <p>The type of peering. This will be <code>TRANSIT_GATEWAY</code>.</p>
     pub fn get_peering_type(&self) -> &::std::option::Option<crate::types::PeeringType> {
@@ -169,8 +165,7 @@ impl PeeringBuilder {
     }
     /// <p>The current state of the peering connection.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::PeeringState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The current state of the peering connection.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::PeeringState> {
@@ -183,8 +178,7 @@ impl PeeringBuilder {
     }
     /// <p>The edge location for the peer.</p>
     pub fn set_edge_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.edge_location = input;
-        self
+        self.edge_location = input; self
     }
     /// <p>The edge location for the peer.</p>
     pub fn get_edge_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -197,8 +191,7 @@ impl PeeringBuilder {
     }
     /// <p>The resource ARN of the peer.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The resource ARN of the peer.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -211,17 +204,16 @@ impl PeeringBuilder {
     /// <p>The list of key-value tags associated with the peering.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of key-value tags associated with the peering.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The list of key-value tags associated with the peering.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The timestamp when the attachment peer was created.</p>
@@ -231,8 +223,7 @@ impl PeeringBuilder {
     }
     /// <p>The timestamp when the attachment peer was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp when the attachment peer was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -241,16 +232,27 @@ impl PeeringBuilder {
     /// Consumes the builder and constructs a [`Peering`](crate::types::Peering).
     pub fn build(self) -> crate::types::Peering {
         crate::types::Peering {
-            core_network_id: self.core_network_id,
-            core_network_arn: self.core_network_arn,
-            peering_id: self.peering_id,
-            owner_account_id: self.owner_account_id,
-            peering_type: self.peering_type,
-            state: self.state,
-            edge_location: self.edge_location,
-            resource_arn: self.resource_arn,
-            tags: self.tags,
-            created_at: self.created_at,
+            core_network_id: self.core_network_id
+            ,
+            core_network_arn: self.core_network_arn
+            ,
+            peering_id: self.peering_id
+            ,
+            owner_account_id: self.owner_account_id
+            ,
+            peering_type: self.peering_type
+            ,
+            state: self.state
+            ,
+            edge_location: self.edge_location
+            ,
+            resource_arn: self.resource_arn
+            ,
+            tags: self.tags
+            ,
+            created_at: self.created_at
+            ,
         }
     }
 }
+

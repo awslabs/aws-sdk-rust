@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetInstanceAccessInput {
+pub struct GetInstanceAccessInput  {
     /// <p>A unique identifier for the fleet that contains the instance you want to access. You can request access to instances in EC2 fleets with the following statuses: <code>ACTIVATING</code>, <code>ACTIVE</code>, or <code>ERROR</code>. Use either a fleet ID or an ARN value.</p><note>
     /// <p>You can access fleets in <code>ERROR</code> status for a short period of time before Amazon GameLift deletes them.</p>
     /// </note>
@@ -10,15 +10,15 @@ pub struct GetInstanceAccessInput {
     /// <p>A unique identifier for the instance you want to access. You can access an instance in any status.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
 }
-impl GetInstanceAccessInput {
+impl  GetInstanceAccessInput  {
     /// <p>A unique identifier for the fleet that contains the instance you want to access. You can request access to instances in EC2 fleets with the following statuses: <code>ACTIVATING</code>, <code>ACTIVE</code>, or <code>ERROR</code>. Use either a fleet ID or an ARN value.</p><note>
     /// <p>You can access fleets in <code>ERROR</code> status for a short period of time before Amazon GameLift deletes them.</p>
     /// </note>
-    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_id(&self) -> ::std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>A unique identifier for the instance you want to access. You can access an instance in any status.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl GetInstanceAccessInputBuilder {
     /// <p>You can access fleets in <code>ERROR</code> status for a short period of time before Amazon GameLift deletes them.</p>
     /// </note>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_id = input;
-        self
+        self.fleet_id = input; self
     }
     /// <p>A unique identifier for the fleet that contains the instance you want to access. You can request access to instances in EC2 fleets with the following statuses: <code>ACTIVATING</code>, <code>ACTIVE</code>, or <code>ERROR</code>. Use either a fleet ID or an ARN value.</p><note>
     /// <p>You can access fleets in <code>ERROR</code> status for a short period of time before Amazon GameLift deletes them.</p>
@@ -66,20 +65,22 @@ impl GetInstanceAccessInputBuilder {
     }
     /// <p>A unique identifier for the instance you want to access. You can access an instance in any status.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>A unique identifier for the instance you want to access. You can access an instance in any status.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
     /// Consumes the builder and constructs a [`GetInstanceAccessInput`](crate::operation::get_instance_access::GetInstanceAccessInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_instance_access::GetInstanceAccessInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_instance_access::GetInstanceAccessInput {
-            fleet_id: self.fleet_id,
-            instance_id: self.instance_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_instance_access::GetInstanceAccessInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_instance_access::GetInstanceAccessInput {
+                fleet_id: self.fleet_id
+                ,
+                instance_id: self.instance_id
+                ,
+            }
+        )
     }
 }
+

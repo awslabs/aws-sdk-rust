@@ -3,11 +3,11 @@
 /// <p>Information about an action that returns a custom HTTP response.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FixedResponseAction {
+pub struct FixedResponseAction  {
     /// <p>The HTTP response code.</p>
     pub status_code: i32,
 }
-impl FixedResponseAction {
+impl  FixedResponseAction  {
     /// <p>The HTTP response code.</p>
     pub fn status_code(&self) -> i32 {
         self.status_code
@@ -35,8 +35,7 @@ impl FixedResponseActionBuilder {
     }
     /// <p>The HTTP response code.</p>
     pub fn set_status_code(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status_code = input;
-        self
+        self.status_code = input; self
     }
     /// <p>The HTTP response code.</p>
     pub fn get_status_code(&self) -> &::std::option::Option<i32> {
@@ -46,13 +45,15 @@ impl FixedResponseActionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`status_code`](crate::types::builders::FixedResponseActionBuilder::status_code)
     pub fn build(self) -> ::std::result::Result<crate::types::FixedResponseAction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FixedResponseAction {
-            status_code: self.status_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status_code",
-                    "status_code was not specified but it is required when building FixedResponseAction",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FixedResponseAction {
+                status_code: self.status_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status_code", "status_code was not specified but it is required when building FixedResponseAction")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,15 +3,14 @@
 /// <p>A CloudWatch alarm you apply to an automation or command.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Alarm {
+pub struct Alarm  {
     /// <p>The name of your CloudWatch alarm.</p>
     pub name: ::std::string::String,
 }
-impl Alarm {
+impl  Alarm  {
     /// <p>The name of your CloudWatch alarm.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
 }
 impl Alarm {
@@ -36,8 +35,7 @@ impl AlarmBuilder {
     }
     /// <p>The name of your CloudWatch alarm.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of your CloudWatch alarm.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl AlarmBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::AlarmBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::Alarm, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Alarm {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building Alarm",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Alarm {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building Alarm")
+                    )?
+                ,
+            }
+        )
     }
 }
+

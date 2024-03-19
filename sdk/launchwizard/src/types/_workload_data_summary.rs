@@ -3,19 +3,19 @@
 /// <p>Describes workload data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkloadDataSummary {
+pub struct WorkloadDataSummary  {
     /// <p>The name of the workload.</p>
     pub workload_name: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the workload data.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
 }
-impl WorkloadDataSummary {
+impl  WorkloadDataSummary  {
     /// <p>The name of the workload.</p>
-    pub fn workload_name(&self) -> ::std::option::Option<&str> {
+    pub fn workload_name(&self) -> ::std::option::Option<& str> {
         self.workload_name.as_deref()
     }
     /// <p>The display name of the workload data.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl WorkloadDataSummaryBuilder {
     }
     /// <p>The name of the workload.</p>
     pub fn set_workload_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_name = input;
-        self
+        self.workload_name = input; self
     }
     /// <p>The name of the workload.</p>
     pub fn get_workload_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl WorkloadDataSummaryBuilder {
     }
     /// <p>The display name of the workload data.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The display name of the workload data.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl WorkloadDataSummaryBuilder {
     /// Consumes the builder and constructs a [`WorkloadDataSummary`](crate::types::WorkloadDataSummary).
     pub fn build(self) -> crate::types::WorkloadDataSummary {
         crate::types::WorkloadDataSummary {
-            workload_name: self.workload_name,
-            display_name: self.display_name,
+            workload_name: self.workload_name
+            ,
+            display_name: self.display_name
+            ,
         }
     }
 }
+

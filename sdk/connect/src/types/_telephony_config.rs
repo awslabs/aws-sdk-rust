@@ -3,15 +3,14 @@
 /// <p>The distribution of traffic between the instance and its replicas.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TelephonyConfig {
+pub struct TelephonyConfig  {
     /// <p>Information about traffic distributions.</p>
-    pub distributions: ::std::vec::Vec<crate::types::Distribution>,
+    pub distributions: ::std::vec::Vec::<crate::types::Distribution>,
 }
-impl TelephonyConfig {
+impl  TelephonyConfig  {
     /// <p>Information about traffic distributions.</p>
-    pub fn distributions(&self) -> &[crate::types::Distribution] {
-        use std::ops::Deref;
-        self.distributions.deref()
+    pub fn distributions(&self) -> & [crate::types::Distribution] {
+        use std::ops::Deref; self.distributions.deref()
     }
 }
 impl TelephonyConfig {
@@ -25,7 +24,7 @@ impl TelephonyConfig {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TelephonyConfigBuilder {
-    pub(crate) distributions: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>,
+    pub(crate) distributions: ::std::option::Option<::std::vec::Vec::<crate::types::Distribution>>,
 }
 impl TelephonyConfigBuilder {
     /// Appends an item to `distributions`.
@@ -35,30 +34,31 @@ impl TelephonyConfigBuilder {
     /// <p>Information about traffic distributions.</p>
     pub fn distributions(mut self, input: crate::types::Distribution) -> Self {
         let mut v = self.distributions.unwrap_or_default();
-        v.push(input);
-        self.distributions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.distributions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about traffic distributions.</p>
-    pub fn set_distributions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>) -> Self {
-        self.distributions = input;
-        self
+    pub fn set_distributions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Distribution>>) -> Self {
+        self.distributions = input; self
     }
     /// <p>Information about traffic distributions.</p>
-    pub fn get_distributions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Distribution>> {
+    pub fn get_distributions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Distribution>> {
         &self.distributions
     }
     /// Consumes the builder and constructs a [`TelephonyConfig`](crate::types::TelephonyConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`distributions`](crate::types::builders::TelephonyConfigBuilder::distributions)
     pub fn build(self) -> ::std::result::Result<crate::types::TelephonyConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TelephonyConfig {
-            distributions: self.distributions.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "distributions",
-                    "distributions was not specified but it is required when building TelephonyConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TelephonyConfig {
+                distributions: self.distributions
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("distributions", "distributions was not specified but it is required when building TelephonyConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

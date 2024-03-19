@@ -3,9 +3,9 @@
 /// The output that you want to add to this flow.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddOutputRequest {
+pub struct AddOutputRequest  {
     /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    pub cidr_allow_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub cidr_allow_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.
     pub description: ::std::option::Option<::std::string::String>,
     /// The IP address from which video will be sent to output destinations.
@@ -15,7 +15,7 @@ pub struct AddOutputRequest {
     /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
     pub max_latency: ::std::option::Option<i32>,
     /// The media streams that are associated with the output, and the parameters for those associations.
-    pub media_stream_output_configurations: ::std::option::Option<::std::vec::Vec<crate::types::MediaStreamOutputConfigurationRequest>>,
+    pub media_stream_output_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::MediaStreamOutputConfigurationRequest>>,
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
     pub min_latency: ::std::option::Option<i32>,
     /// The name of the output. This value must be unique within the current flow.
@@ -35,23 +35,24 @@ pub struct AddOutputRequest {
     /// The name of the VPC interface attachment to use for this output.
     pub vpc_interface_attachment: ::std::option::Option<crate::types::VpcInterfaceAttachment>,
 }
-impl AddOutputRequest {
+impl  AddOutputRequest  {
     /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cidr_allow_list.is_none()`.
-    pub fn cidr_allow_list(&self) -> &[::std::string::String] {
-        self.cidr_allow_list.as_deref().unwrap_or_default()
+    pub fn cidr_allow_list(&self) -> & [::std::string::String] {
+        self.cidr_allow_list.as_deref()
+        .unwrap_or_default()
     }
     /// A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// The IP address from which video will be sent to output destinations.
-    pub fn destination(&self) -> ::std::option::Option<&str> {
+    pub fn destination(&self) -> ::std::option::Option<& str> {
         self.destination.as_deref()
     }
     /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key). Allowable encryption types: static-key.
-    pub fn encryption(&self) -> ::std::option::Option<&crate::types::Encryption> {
+    pub fn encryption(&self) -> ::std::option::Option<& crate::types::Encryption> {
         self.encryption.as_ref()
     }
     /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
@@ -59,17 +60,18 @@ impl AddOutputRequest {
         self.max_latency
     }
     /// The media streams that are associated with the output, and the parameters for those associations.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.media_stream_output_configurations.is_none()`.
-    pub fn media_stream_output_configurations(&self) -> &[crate::types::MediaStreamOutputConfigurationRequest] {
-        self.media_stream_output_configurations.as_deref().unwrap_or_default()
+    pub fn media_stream_output_configurations(&self) -> & [crate::types::MediaStreamOutputConfigurationRequest] {
+        self.media_stream_output_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
     pub fn min_latency(&self) -> ::std::option::Option<i32> {
         self.min_latency
     }
     /// The name of the output. This value must be unique within the current flow.
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// The port to use when content is distributed to this output.
@@ -77,11 +79,11 @@ impl AddOutputRequest {
         self.port
     }
     /// The protocol to use for the output.
-    pub fn protocol(&self) -> ::std::option::Option<&crate::types::Protocol> {
+    pub fn protocol(&self) -> ::std::option::Option<& crate::types::Protocol> {
         self.protocol.as_ref()
     }
     /// The remote ID for the Zixi-pull output stream.
-    pub fn remote_id(&self) -> ::std::option::Option<&str> {
+    pub fn remote_id(&self) -> ::std::option::Option<& str> {
         self.remote_id.as_deref()
     }
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
@@ -93,11 +95,11 @@ impl AddOutputRequest {
         self.smoothing_latency
     }
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams.
-    pub fn stream_id(&self) -> ::std::option::Option<&str> {
+    pub fn stream_id(&self) -> ::std::option::Option<& str> {
         self.stream_id.as_deref()
     }
     /// The name of the VPC interface attachment to use for this output.
-    pub fn vpc_interface_attachment(&self) -> ::std::option::Option<&crate::types::VpcInterfaceAttachment> {
+    pub fn vpc_interface_attachment(&self) -> ::std::option::Option<& crate::types::VpcInterfaceAttachment> {
         self.vpc_interface_attachment.as_ref()
     }
 }
@@ -112,12 +114,12 @@ impl AddOutputRequest {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddOutputRequestBuilder {
-    pub(crate) cidr_allow_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) cidr_allow_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) destination: ::std::option::Option<::std::string::String>,
     pub(crate) encryption: ::std::option::Option<crate::types::Encryption>,
     pub(crate) max_latency: ::std::option::Option<i32>,
-    pub(crate) media_stream_output_configurations: ::std::option::Option<::std::vec::Vec<crate::types::MediaStreamOutputConfigurationRequest>>,
+    pub(crate) media_stream_output_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::MediaStreamOutputConfigurationRequest>>,
     pub(crate) min_latency: ::std::option::Option<i32>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,
@@ -136,17 +138,16 @@ impl AddOutputRequestBuilder {
     /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
     pub fn cidr_allow_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cidr_allow_list.unwrap_or_default();
-        v.push(input.into());
-        self.cidr_allow_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.cidr_allow_list = ::std::option::Option::Some(v);
+                        self
     }
     /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    pub fn set_cidr_allow_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.cidr_allow_list = input;
-        self
+    pub fn set_cidr_allow_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.cidr_allow_list = input; self
     }
     /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    pub fn get_cidr_allow_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cidr_allow_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.cidr_allow_list
     }
     /// A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.
@@ -156,8 +157,7 @@ impl AddOutputRequestBuilder {
     }
     /// A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,8 +170,7 @@ impl AddOutputRequestBuilder {
     }
     /// The IP address from which video will be sent to output destinations.
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// The IP address from which video will be sent to output destinations.
     pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
@@ -184,8 +183,7 @@ impl AddOutputRequestBuilder {
     }
     /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key). Allowable encryption types: static-key.
     pub fn set_encryption(mut self, input: ::std::option::Option<crate::types::Encryption>) -> Self {
-        self.encryption = input;
-        self
+        self.encryption = input; self
     }
     /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key). Allowable encryption types: static-key.
     pub fn get_encryption(&self) -> &::std::option::Option<crate::types::Encryption> {
@@ -198,8 +196,7 @@ impl AddOutputRequestBuilder {
     }
     /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
     pub fn set_max_latency(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_latency = input;
-        self
+        self.max_latency = input; self
     }
     /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
     pub fn get_max_latency(&self) -> &::std::option::Option<i32> {
@@ -212,22 +209,16 @@ impl AddOutputRequestBuilder {
     /// The media streams that are associated with the output, and the parameters for those associations.
     pub fn media_stream_output_configurations(mut self, input: crate::types::MediaStreamOutputConfigurationRequest) -> Self {
         let mut v = self.media_stream_output_configurations.unwrap_or_default();
-        v.push(input);
-        self.media_stream_output_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.media_stream_output_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// The media streams that are associated with the output, and the parameters for those associations.
-    pub fn set_media_stream_output_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::MediaStreamOutputConfigurationRequest>>,
-    ) -> Self {
-        self.media_stream_output_configurations = input;
-        self
+    pub fn set_media_stream_output_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MediaStreamOutputConfigurationRequest>>) -> Self {
+        self.media_stream_output_configurations = input; self
     }
     /// The media streams that are associated with the output, and the parameters for those associations.
-    pub fn get_media_stream_output_configurations(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaStreamOutputConfigurationRequest>> {
+    pub fn get_media_stream_output_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MediaStreamOutputConfigurationRequest>> {
         &self.media_stream_output_configurations
     }
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
@@ -237,8 +228,7 @@ impl AddOutputRequestBuilder {
     }
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
     pub fn set_min_latency(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_latency = input;
-        self
+        self.min_latency = input; self
     }
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
     pub fn get_min_latency(&self) -> &::std::option::Option<i32> {
@@ -251,8 +241,7 @@ impl AddOutputRequestBuilder {
     }
     /// The name of the output. This value must be unique within the current flow.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// The name of the output. This value must be unique within the current flow.
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -265,8 +254,7 @@ impl AddOutputRequestBuilder {
     }
     /// The port to use when content is distributed to this output.
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// The port to use when content is distributed to this output.
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -280,8 +268,7 @@ impl AddOutputRequestBuilder {
     }
     /// The protocol to use for the output.
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::Protocol>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// The protocol to use for the output.
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::Protocol> {
@@ -294,8 +281,7 @@ impl AddOutputRequestBuilder {
     }
     /// The remote ID for the Zixi-pull output stream.
     pub fn set_remote_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.remote_id = input;
-        self
+        self.remote_id = input; self
     }
     /// The remote ID for the Zixi-pull output stream.
     pub fn get_remote_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -308,8 +294,7 @@ impl AddOutputRequestBuilder {
     }
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
     pub fn set_sender_control_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.sender_control_port = input;
-        self
+        self.sender_control_port = input; self
     }
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
     pub fn get_sender_control_port(&self) -> &::std::option::Option<i32> {
@@ -322,8 +307,7 @@ impl AddOutputRequestBuilder {
     }
     /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
     pub fn set_smoothing_latency(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.smoothing_latency = input;
-        self
+        self.smoothing_latency = input; self
     }
     /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
     pub fn get_smoothing_latency(&self) -> &::std::option::Option<i32> {
@@ -336,8 +320,7 @@ impl AddOutputRequestBuilder {
     }
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams.
     pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_id = input;
-        self
+        self.stream_id = input; self
     }
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams.
     pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -350,8 +333,7 @@ impl AddOutputRequestBuilder {
     }
     /// The name of the VPC interface attachment to use for this output.
     pub fn set_vpc_interface_attachment(mut self, input: ::std::option::Option<crate::types::VpcInterfaceAttachment>) -> Self {
-        self.vpc_interface_attachment = input;
-        self
+        self.vpc_interface_attachment = input; self
     }
     /// The name of the VPC interface attachment to use for this output.
     pub fn get_vpc_interface_attachment(&self) -> &::std::option::Option<crate::types::VpcInterfaceAttachment> {
@@ -360,21 +342,37 @@ impl AddOutputRequestBuilder {
     /// Consumes the builder and constructs a [`AddOutputRequest`](crate::types::AddOutputRequest).
     pub fn build(self) -> crate::types::AddOutputRequest {
         crate::types::AddOutputRequest {
-            cidr_allow_list: self.cidr_allow_list,
-            description: self.description,
-            destination: self.destination,
-            encryption: self.encryption,
-            max_latency: self.max_latency,
-            media_stream_output_configurations: self.media_stream_output_configurations,
-            min_latency: self.min_latency,
-            name: self.name,
-            port: self.port,
-            protocol: self.protocol,
-            remote_id: self.remote_id,
-            sender_control_port: self.sender_control_port,
-            smoothing_latency: self.smoothing_latency,
-            stream_id: self.stream_id,
-            vpc_interface_attachment: self.vpc_interface_attachment,
+            cidr_allow_list: self.cidr_allow_list
+            ,
+            description: self.description
+            ,
+            destination: self.destination
+            ,
+            encryption: self.encryption
+            ,
+            max_latency: self.max_latency
+            ,
+            media_stream_output_configurations: self.media_stream_output_configurations
+            ,
+            min_latency: self.min_latency
+            ,
+            name: self.name
+            ,
+            port: self.port
+            ,
+            protocol: self.protocol
+            ,
+            remote_id: self.remote_id
+            ,
+            sender_control_port: self.sender_control_port
+            ,
+            smoothing_latency: self.smoothing_latency
+            ,
+            stream_id: self.stream_id
+            ,
+            vpc_interface_attachment: self.vpc_interface_attachment
+            ,
         }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>An object that contains information on the status of whether Malware Protection for EC2 instances with findings will be enabled as a data source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScanEc2InstanceWithFindingsResult {
+pub struct ScanEc2InstanceWithFindingsResult  {
     /// <p>Describes the configuration of scanning EBS volumes as a data source.</p>
     pub ebs_volumes: ::std::option::Option<crate::types::EbsVolumesResult>,
 }
-impl ScanEc2InstanceWithFindingsResult {
+impl  ScanEc2InstanceWithFindingsResult  {
     /// <p>Describes the configuration of scanning EBS volumes as a data source.</p>
-    pub fn ebs_volumes(&self) -> ::std::option::Option<&crate::types::EbsVolumesResult> {
+    pub fn ebs_volumes(&self) -> ::std::option::Option<& crate::types::EbsVolumesResult> {
         self.ebs_volumes.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ScanEc2InstanceWithFindingsResultBuilder {
     }
     /// <p>Describes the configuration of scanning EBS volumes as a data source.</p>
     pub fn set_ebs_volumes(mut self, input: ::std::option::Option<crate::types::EbsVolumesResult>) -> Self {
-        self.ebs_volumes = input;
-        self
+        self.ebs_volumes = input; self
     }
     /// <p>Describes the configuration of scanning EBS volumes as a data source.</p>
     pub fn get_ebs_volumes(&self) -> &::std::option::Option<crate::types::EbsVolumesResult> {
@@ -44,7 +43,9 @@ impl ScanEc2InstanceWithFindingsResultBuilder {
     /// Consumes the builder and constructs a [`ScanEc2InstanceWithFindingsResult`](crate::types::ScanEc2InstanceWithFindingsResult).
     pub fn build(self) -> crate::types::ScanEc2InstanceWithFindingsResult {
         crate::types::ScanEc2InstanceWithFindingsResult {
-            ebs_volumes: self.ebs_volumes,
+            ebs_volumes: self.ebs_volumes
+            ,
         }
     }
 }
+

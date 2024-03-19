@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListWorldTemplatesOutput {
+pub struct ListWorldTemplatesOutput  {
     /// <p>Summary information for templates.</p>
-    pub template_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>>,
+    pub template_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::TemplateSummary>>,
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldTemplates</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListWorldTemplatesOutput {
+impl  ListWorldTemplatesOutput  {
     /// <p>Summary information for templates.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.template_summaries.is_none()`.
-    pub fn template_summaries(&self) -> &[crate::types::TemplateSummary] {
-        self.template_summaries.as_deref().unwrap_or_default()
+    pub fn template_summaries(&self) -> & [crate::types::TemplateSummary] {
+        self.template_summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldTemplates</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListWorldTemplatesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListWorldTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListWorldTemplatesOutput`](crate::operation::list_world_templates::ListWorldTemplatesOutput).
     pub fn builder() -> crate::operation::list_world_templates::builders::ListWorldTemplatesOutputBuilder {
@@ -37,7 +38,7 @@ impl ListWorldTemplatesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorldTemplatesOutputBuilder {
-    pub(crate) template_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>>,
+    pub(crate) template_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::TemplateSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListWorldTemplatesOutputBuilder {
     /// <p>Summary information for templates.</p>
     pub fn template_summaries(mut self, input: crate::types::TemplateSummary) -> Self {
         let mut v = self.template_summaries.unwrap_or_default();
-        v.push(input);
-        self.template_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.template_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Summary information for templates.</p>
-    pub fn set_template_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>>) -> Self {
-        self.template_summaries = input;
-        self
+    pub fn set_template_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TemplateSummary>>) -> Self {
+        self.template_summaries = input; self
     }
     /// <p>Summary information for templates.</p>
-    pub fn get_template_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>> {
+    pub fn get_template_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TemplateSummary>> {
         &self.template_summaries
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldTemplates</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.</p>
@@ -69,28 +69,30 @@ impl ListWorldTemplatesOutputBuilder {
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldTemplates</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldTemplates</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListWorldTemplatesOutput`](crate::operation::list_world_templates::ListWorldTemplatesOutput).
     pub fn build(self) -> crate::operation::list_world_templates::ListWorldTemplatesOutput {
         crate::operation::list_world_templates::ListWorldTemplatesOutput {
-            template_summaries: self.template_summaries,
-            next_token: self.next_token,
+            template_summaries: self.template_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

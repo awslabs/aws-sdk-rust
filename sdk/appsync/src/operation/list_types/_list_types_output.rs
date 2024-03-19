@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTypesOutput {
+pub struct ListTypesOutput  {
     /// <p>The <code>Type</code> objects.</p>
-    pub types: ::std::option::Option<::std::vec::Vec<crate::types::Type>>,
+    pub types: ::std::option::Option<::std::vec::Vec::<crate::types::Type>>,
     /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListTypesOutput {
+impl  ListTypesOutput  {
     /// <p>The <code>Type</code> objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.types.is_none()`.
-    pub fn types(&self) -> &[crate::types::Type] {
-        self.types.as_deref().unwrap_or_default()
+    pub fn types(&self) -> & [crate::types::Type] {
+        self.types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListTypesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListTypesOutput {
     /// Creates a new builder-style object to manufacture [`ListTypesOutput`](crate::operation::list_types::ListTypesOutput).
     pub fn builder() -> crate::operation::list_types::builders::ListTypesOutputBuilder {
@@ -37,7 +38,7 @@ impl ListTypesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTypesOutputBuilder {
-    pub(crate) types: ::std::option::Option<::std::vec::Vec<crate::types::Type>>,
+    pub(crate) types: ::std::option::Option<::std::vec::Vec::<crate::types::Type>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListTypesOutputBuilder {
     /// <p>The <code>Type</code> objects.</p>
     pub fn types(mut self, input: crate::types::Type) -> Self {
         let mut v = self.types.unwrap_or_default();
-        v.push(input);
-        self.types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The <code>Type</code> objects.</p>
-    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Type>>) -> Self {
-        self.types = input;
-        self
+    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Type>>) -> Self {
+        self.types = input; self
     }
     /// <p>The <code>Type</code> objects.</p>
-    pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Type>> {
+    pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Type>> {
         &self.types
     }
     /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
@@ -69,28 +69,30 @@ impl ListTypesOutputBuilder {
     }
     /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListTypesOutput`](crate::operation::list_types::ListTypesOutput).
     pub fn build(self) -> crate::operation::list_types::ListTypesOutput {
         crate::operation::list_types::ListTypesOutput {
-            types: self.types,
-            next_token: self.next_token,
+            types: self.types
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

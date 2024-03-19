@@ -3,13 +3,13 @@
 /// <p>A request to get information about a specified reusable delegation set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetReusableDelegationSetInput {
+pub struct GetReusableDelegationSetInput  {
     /// <p>The ID of the reusable delegation set that you want to get a list of name servers for.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl GetReusableDelegationSetInput {
+impl  GetReusableDelegationSetInput  {
     /// <p>The ID of the reusable delegation set that you want to get a list of name servers for.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl GetReusableDelegationSetInputBuilder {
     }
     /// <p>The ID of the reusable delegation set that you want to get a list of name servers for.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the reusable delegation set that you want to get a list of name servers for.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetReusableDelegationSetInput`](crate::operation::get_reusable_delegation_set::GetReusableDelegationSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_reusable_delegation_set::GetReusableDelegationSetInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_reusable_delegation_set::GetReusableDelegationSetInput { id: self.id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_reusable_delegation_set::GetReusableDelegationSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_reusable_delegation_set::GetReusableDelegationSetInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

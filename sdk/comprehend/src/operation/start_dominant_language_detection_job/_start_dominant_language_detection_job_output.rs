@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartDominantLanguageDetectionJobOutput {
+pub struct StartDominantLanguageDetectionJobOutput  {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dominant language detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
@@ -33,9 +33,9 @@ pub struct StartDominantLanguageDetectionJobOutput {
     pub job_status: ::std::option::Option<crate::types::JobStatus>,
     _request_id: Option<String>,
 }
-impl StartDominantLanguageDetectionJobOutput {
+impl  StartDominantLanguageDetectionJobOutput  {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dominant language detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
@@ -51,7 +51,7 @@ impl StartDominantLanguageDetectionJobOutput {
     /// </partition></code></p>
     /// <p>The following is an example job ARN:</p>
     /// <p><code>arn:aws:comprehend:us-west-2:111122223333:dominant-language-detection-job/1234abcd12ab34cd56ef1234567890ab</code></p>
-    pub fn job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn job_arn(&self) -> ::std::option::Option<& str> {
         self.job_arn.as_deref()
     }
     /// <p>The status of the job.</p>
@@ -65,15 +65,15 @@ impl StartDominantLanguageDetectionJobOutput {
     /// <li>
     /// <p>FAILED - The job did not complete. To get details, use the operation.</p></li>
     /// </ul>
-    pub fn job_status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
+    pub fn job_status(&self) -> ::std::option::Option<& crate::types::JobStatus> {
         self.job_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartDominantLanguageDetectionJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartDominantLanguageDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`StartDominantLanguageDetectionJobOutput`](crate::operation::start_dominant_language_detection_job::StartDominantLanguageDetectionJobOutput).
     pub fn builder() -> crate::operation::start_dominant_language_detection_job::builders::StartDominantLanguageDetectionJobOutputBuilder {
@@ -98,8 +98,7 @@ impl StartDominantLanguageDetectionJobOutputBuilder {
     }
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +135,7 @@ impl StartDominantLanguageDetectionJobOutputBuilder {
     /// <p>The following is an example job ARN:</p>
     /// <p><code>arn:aws:comprehend:us-west-2:111122223333:dominant-language-detection-job/1234abcd12ab34cd56ef1234567890ab</code></p>
     pub fn set_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_arn = input;
-        self
+        self.job_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the dominant language detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p><code>arn:<partition>
@@ -182,8 +180,7 @@ impl StartDominantLanguageDetectionJobOutputBuilder {
     /// <p>FAILED - The job did not complete. To get details, use the operation.</p></li>
     /// </ul>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
-        self.job_status = input;
-        self
+        self.job_status = input; self
     }
     /// <p>The status of the job.</p>
     /// <ul>
@@ -200,21 +197,25 @@ impl StartDominantLanguageDetectionJobOutputBuilder {
         &self.job_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartDominantLanguageDetectionJobOutput`](crate::operation::start_dominant_language_detection_job::StartDominantLanguageDetectionJobOutput).
     pub fn build(self) -> crate::operation::start_dominant_language_detection_job::StartDominantLanguageDetectionJobOutput {
         crate::operation::start_dominant_language_detection_job::StartDominantLanguageDetectionJobOutput {
-            job_id: self.job_id,
-            job_arn: self.job_arn,
-            job_status: self.job_status,
+            job_id: self.job_id
+            ,
+            job_arn: self.job_arn
+            ,
+            job_status: self.job_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

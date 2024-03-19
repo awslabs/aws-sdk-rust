@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteActivationInput {
+pub struct DeleteActivationInput  {
     /// <p>The ID of the activation that you want to delete.</p>
     pub activation_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteActivationInput {
+impl  DeleteActivationInput  {
     /// <p>The ID of the activation that you want to delete.</p>
-    pub fn activation_id(&self) -> ::std::option::Option<&str> {
+    pub fn activation_id(&self) -> ::std::option::Option<& str> {
         self.activation_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteActivationInputBuilder {
     }
     /// <p>The ID of the activation that you want to delete.</p>
     pub fn set_activation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.activation_id = input;
-        self
+        self.activation_id = input; self
     }
     /// <p>The ID of the activation that you want to delete.</p>
     pub fn get_activation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.activation_id
     }
     /// Consumes the builder and constructs a [`DeleteActivationInput`](crate::operation::delete_activation::DeleteActivationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_activation::DeleteActivationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_activation::DeleteActivationInput {
-            activation_id: self.activation_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_activation::DeleteActivationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_activation::DeleteActivationInput {
+                activation_id: self.activation_id
+                ,
+            }
+        )
     }
 }
+

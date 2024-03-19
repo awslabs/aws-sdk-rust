@@ -3,19 +3,19 @@
 /// <p>The request parameters for GetBillOfMaterialsImportJob.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBillOfMaterialsImportJobInput {
+pub struct GetBillOfMaterialsImportJobInput  {
     /// <p>The AWS Supply Chain instance identifier.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The BillOfMaterialsImportJob identifier.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
 }
-impl GetBillOfMaterialsImportJobInput {
+impl  GetBillOfMaterialsImportJobInput  {
     /// <p>The AWS Supply Chain instance identifier.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The BillOfMaterialsImportJob identifier.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl GetBillOfMaterialsImportJobInputBuilder {
     }
     /// <p>The AWS Supply Chain instance identifier.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The AWS Supply Chain instance identifier.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,23 +56,22 @@ impl GetBillOfMaterialsImportJobInputBuilder {
     }
     /// <p>The BillOfMaterialsImportJob identifier.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The BillOfMaterialsImportJob identifier.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
     /// Consumes the builder and constructs a [`GetBillOfMaterialsImportJobInput`](crate::operation::get_bill_of_materials_import_job::GetBillOfMaterialsImportJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_bill_of_materials_import_job::GetBillOfMaterialsImportJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_bill_of_materials_import_job::GetBillOfMaterialsImportJobInput {
-            instance_id: self.instance_id,
-            job_id: self.job_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_bill_of_materials_import_job::GetBillOfMaterialsImportJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_bill_of_materials_import_job::GetBillOfMaterialsImportJobInput {
+                instance_id: self.instance_id
+                ,
+                job_id: self.job_id
+                ,
+            }
+        )
     }
 }
+

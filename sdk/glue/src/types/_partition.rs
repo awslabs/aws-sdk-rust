@@ -3,9 +3,9 @@
 /// <p>Represents a slice of table data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Partition {
+pub struct Partition  {
     /// <p>The values of the partition.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The name of the catalog database in which to create the partition.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database table in which to create the partition.</p>
@@ -17,49 +17,50 @@ pub struct Partition {
     /// <p>Provides information about the physical location where the partition is stored.</p>
     pub storage_descriptor: ::std::option::Option<crate::types::StorageDescriptor>,
     /// <p>These key-value pairs define partition parameters.</p>
-    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The last time at which column statistics were computed for this partition.</p>
     pub last_analyzed_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the Data Catalog in which the partition resides.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
 }
-impl Partition {
+impl  Partition  {
     /// <p>The values of the partition.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[::std::string::String] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [::std::string::String] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the catalog database in which to create the partition.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the database table in which to create the partition.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The time at which the partition was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The last time at which the partition was accessed.</p>
-    pub fn last_access_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_access_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_access_time.as_ref()
     }
     /// <p>Provides information about the physical location where the partition is stored.</p>
-    pub fn storage_descriptor(&self) -> ::std::option::Option<&crate::types::StorageDescriptor> {
+    pub fn storage_descriptor(&self) -> ::std::option::Option<& crate::types::StorageDescriptor> {
         self.storage_descriptor.as_ref()
     }
     /// <p>These key-value pairs define partition parameters.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
     /// <p>The last time at which column statistics were computed for this partition.</p>
-    pub fn last_analyzed_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_analyzed_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_analyzed_time.as_ref()
     }
     /// <p>The ID of the Data Catalog in which the partition resides.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
 }
@@ -74,13 +75,13 @@ impl Partition {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PartitionBuilder {
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_access_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) storage_descriptor: ::std::option::Option<crate::types::StorageDescriptor>,
-    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) last_analyzed_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
 }
@@ -92,17 +93,16 @@ impl PartitionBuilder {
     /// <p>The values of the partition.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The values of the partition.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The values of the partition.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// <p>The name of the catalog database in which to create the partition.</p>
@@ -112,8 +112,7 @@ impl PartitionBuilder {
     }
     /// <p>The name of the catalog database in which to create the partition.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the catalog database in which to create the partition.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +125,7 @@ impl PartitionBuilder {
     }
     /// <p>The name of the database table in which to create the partition.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the database table in which to create the partition.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +138,7 @@ impl PartitionBuilder {
     }
     /// <p>The time at which the partition was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time at which the partition was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -154,8 +151,7 @@ impl PartitionBuilder {
     }
     /// <p>The last time at which the partition was accessed.</p>
     pub fn set_last_access_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_access_time = input;
-        self
+        self.last_access_time = input; self
     }
     /// <p>The last time at which the partition was accessed.</p>
     pub fn get_last_access_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -168,8 +164,7 @@ impl PartitionBuilder {
     }
     /// <p>Provides information about the physical location where the partition is stored.</p>
     pub fn set_storage_descriptor(mut self, input: ::std::option::Option<crate::types::StorageDescriptor>) -> Self {
-        self.storage_descriptor = input;
-        self
+        self.storage_descriptor = input; self
     }
     /// <p>Provides information about the physical location where the partition is stored.</p>
     pub fn get_storage_descriptor(&self) -> &::std::option::Option<crate::types::StorageDescriptor> {
@@ -182,17 +177,16 @@ impl PartitionBuilder {
     /// <p>These key-value pairs define partition parameters.</p>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>These key-value pairs define partition parameters.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>These key-value pairs define partition parameters.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
     /// <p>The last time at which column statistics were computed for this partition.</p>
@@ -202,8 +196,7 @@ impl PartitionBuilder {
     }
     /// <p>The last time at which column statistics were computed for this partition.</p>
     pub fn set_last_analyzed_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_analyzed_time = input;
-        self
+        self.last_analyzed_time = input; self
     }
     /// <p>The last time at which column statistics were computed for this partition.</p>
     pub fn get_last_analyzed_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -216,8 +209,7 @@ impl PartitionBuilder {
     }
     /// <p>The ID of the Data Catalog in which the partition resides.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The ID of the Data Catalog in which the partition resides.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -226,15 +218,25 @@ impl PartitionBuilder {
     /// Consumes the builder and constructs a [`Partition`](crate::types::Partition).
     pub fn build(self) -> crate::types::Partition {
         crate::types::Partition {
-            values: self.values,
-            database_name: self.database_name,
-            table_name: self.table_name,
-            creation_time: self.creation_time,
-            last_access_time: self.last_access_time,
-            storage_descriptor: self.storage_descriptor,
-            parameters: self.parameters,
-            last_analyzed_time: self.last_analyzed_time,
-            catalog_id: self.catalog_id,
+            values: self.values
+            ,
+            database_name: self.database_name
+            ,
+            table_name: self.table_name
+            ,
+            creation_time: self.creation_time
+            ,
+            last_access_time: self.last_access_time
+            ,
+            storage_descriptor: self.storage_descriptor
+            ,
+            parameters: self.parameters
+            ,
+            last_analyzed_time: self.last_analyzed_time
+            ,
+            catalog_id: self.catalog_id
+            ,
         }
     }
 }
+

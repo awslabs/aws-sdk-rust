@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDevicePolicyConfigurationInput {
+pub struct UpdateDevicePolicyConfigurationInput  {
     /// <p>The ARN of the fleet.</p>
     pub fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
     pub device_ca_certificate: ::std::option::Option<::std::string::String>,
 }
-impl UpdateDevicePolicyConfigurationInput {
+impl  UpdateDevicePolicyConfigurationInput  {
     /// <p>The ARN of the fleet.</p>
-    pub fn fleet_arn(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> ::std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
     /// <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
-    pub fn device_ca_certificate(&self) -> ::std::option::Option<&str> {
+    pub fn device_ca_certificate(&self) -> ::std::option::Option<& str> {
         self.device_ca_certificate.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateDevicePolicyConfigurationInputBuilder {
     }
     /// <p>The ARN of the fleet.</p>
     pub fn set_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_arn = input;
-        self
+        self.fleet_arn = input; self
     }
     /// <p>The ARN of the fleet.</p>
     pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,25 +54,22 @@ impl UpdateDevicePolicyConfigurationInputBuilder {
     }
     /// <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
     pub fn set_device_ca_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_ca_certificate = input;
-        self
+        self.device_ca_certificate = input; self
     }
     /// <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
     pub fn get_device_ca_certificate(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_ca_certificate
     }
     /// Consumes the builder and constructs a [`UpdateDevicePolicyConfigurationInput`](crate::operation::update_device_policy_configuration::UpdateDevicePolicyConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_device_policy_configuration::UpdateDevicePolicyConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_device_policy_configuration::UpdateDevicePolicyConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_device_policy_configuration::UpdateDevicePolicyConfigurationInput {
-                fleet_arn: self.fleet_arn,
-                device_ca_certificate: self.device_ca_certificate,
-            },
+                fleet_arn: self.fleet_arn
+                ,
+                device_ca_certificate: self.device_ca_certificate
+                ,
+            }
         )
     }
 }
+

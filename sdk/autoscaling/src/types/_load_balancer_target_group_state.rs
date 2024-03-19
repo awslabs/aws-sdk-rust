@@ -3,7 +3,7 @@
 /// <p>Describes the state of a target group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoadBalancerTargetGroupState {
+pub struct LoadBalancerTargetGroupState  {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     pub load_balancer_target_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the target group.</p>
@@ -21,9 +21,9 @@ pub struct LoadBalancerTargetGroupState {
     /// </ul>
     pub state: ::std::option::Option<::std::string::String>,
 }
-impl LoadBalancerTargetGroupState {
+impl  LoadBalancerTargetGroupState  {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn load_balancer_target_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn load_balancer_target_group_arn(&self) -> ::std::option::Option<& str> {
         self.load_balancer_target_group_arn.as_deref()
     }
     /// <p>The state of the target group.</p>
@@ -39,7 +39,7 @@ impl LoadBalancerTargetGroupState {
     /// <li>
     /// <p><code>Removed</code> - All Auto Scaling instances are deregistered from the target group.</p></li>
     /// </ul>
-    pub fn state(&self) -> ::std::option::Option<&str> {
+    pub fn state(&self) -> ::std::option::Option<& str> {
         self.state.as_deref()
     }
 }
@@ -65,8 +65,7 @@ impl LoadBalancerTargetGroupStateBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     pub fn set_load_balancer_target_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.load_balancer_target_group_arn = input;
-        self
+        self.load_balancer_target_group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     pub fn get_load_balancer_target_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl LoadBalancerTargetGroupStateBuilder {
     /// <p><code>Removed</code> - All Auto Scaling instances are deregistered from the target group.</p></li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the target group.</p>
     /// <ul>
@@ -125,8 +123,11 @@ impl LoadBalancerTargetGroupStateBuilder {
     /// Consumes the builder and constructs a [`LoadBalancerTargetGroupState`](crate::types::LoadBalancerTargetGroupState).
     pub fn build(self) -> crate::types::LoadBalancerTargetGroupState {
         crate::types::LoadBalancerTargetGroupState {
-            load_balancer_target_group_arn: self.load_balancer_target_group_arn,
-            state: self.state,
+            load_balancer_target_group_arn: self.load_balancer_target_group_arn
+            ,
+            state: self.state
+            ,
         }
     }
 }
+

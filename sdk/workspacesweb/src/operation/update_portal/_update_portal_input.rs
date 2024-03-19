@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdatePortalInput {
+pub struct UpdatePortalInput  {
     /// <p>The ARN of the web portal.</p>
     pub portal_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the web portal. This is not visible to users who log into the web portal.</p>
@@ -12,23 +12,23 @@ pub struct UpdatePortalInput {
     /// <p><code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
     pub authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
 }
-impl UpdatePortalInput {
+impl  UpdatePortalInput  {
     /// <p>The ARN of the web portal.</p>
-    pub fn portal_arn(&self) -> ::std::option::Option<&str> {
+    pub fn portal_arn(&self) -> ::std::option::Option<& str> {
         self.portal_arn.as_deref()
     }
     /// <p>The name of the web portal. This is not visible to users who log into the web portal.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
     /// <p><code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
     /// <p><code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
-    pub fn authentication_type(&self) -> ::std::option::Option<&crate::types::AuthenticationType> {
+    pub fn authentication_type(&self) -> ::std::option::Option<& crate::types::AuthenticationType> {
         self.authentication_type.as_ref()
     }
 }
-impl ::std::fmt::Debug for UpdatePortalInput {
+impl  ::std::fmt::Debug for UpdatePortalInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePortalInput");
         formatter.field("portal_arn", &self.portal_arn);
@@ -61,8 +61,7 @@ impl UpdatePortalInputBuilder {
     }
     /// <p>The ARN of the web portal.</p>
     pub fn set_portal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.portal_arn = input;
-        self
+        self.portal_arn = input; self
     }
     /// <p>The ARN of the web portal.</p>
     pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl UpdatePortalInputBuilder {
     }
     /// <p>The name of the web portal. This is not visible to users who log into the web portal.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The name of the web portal. This is not visible to users who log into the web portal.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +91,7 @@ impl UpdatePortalInputBuilder {
     /// <p><code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
     /// <p><code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
     pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::AuthenticationType>) -> Self {
-        self.authentication_type = input;
-        self
+        self.authentication_type = input; self
     }
     /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
     /// <p><code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
@@ -103,14 +100,17 @@ impl UpdatePortalInputBuilder {
         &self.authentication_type
     }
     /// Consumes the builder and constructs a [`UpdatePortalInput`](crate::operation::update_portal::UpdatePortalInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_portal::UpdatePortalInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_portal::UpdatePortalInput {
-            portal_arn: self.portal_arn,
-            display_name: self.display_name,
-            authentication_type: self.authentication_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_portal::UpdatePortalInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_portal::UpdatePortalInput {
+                portal_arn: self.portal_arn
+                ,
+                display_name: self.display_name
+                ,
+                authentication_type: self.authentication_type
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdatePortalInputBuilder {
@@ -122,3 +122,4 @@ impl ::std::fmt::Debug for UpdatePortalInputBuilder {
         formatter.finish()
     }
 }
+

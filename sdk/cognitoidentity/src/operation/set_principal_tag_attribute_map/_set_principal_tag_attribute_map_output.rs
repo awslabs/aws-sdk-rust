@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetPrincipalTagAttributeMapOutput {
+pub struct SetPrincipalTagAttributeMapOutput  {
     /// <p>The ID of the Identity Pool you want to set attribute mappings for.</p>
     pub identity_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The provider name you want to use for attribute mappings.</p>
@@ -10,16 +10,16 @@ pub struct SetPrincipalTagAttributeMapOutput {
     /// <p>You can use this operation to select default (username and clientID) attribute mappings.</p>
     pub use_defaults: ::std::option::Option<bool>,
     /// <p>You can use this operation to add principal tags. The <code>PrincipalTags</code>operation enables you to reference user attributes in your IAM permissions policy.</p>
-    pub principal_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub principal_tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl SetPrincipalTagAttributeMapOutput {
+impl  SetPrincipalTagAttributeMapOutput  {
     /// <p>The ID of the Identity Pool you want to set attribute mappings for.</p>
-    pub fn identity_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> ::std::option::Option<& str> {
         self.identity_pool_id.as_deref()
     }
     /// <p>The provider name you want to use for attribute mappings.</p>
-    pub fn identity_provider_name(&self) -> ::std::option::Option<&str> {
+    pub fn identity_provider_name(&self) -> ::std::option::Option<& str> {
         self.identity_provider_name.as_deref()
     }
     /// <p>You can use this operation to select default (username and clientID) attribute mappings.</p>
@@ -27,15 +27,15 @@ impl SetPrincipalTagAttributeMapOutput {
         self.use_defaults
     }
     /// <p>You can use this operation to add principal tags. The <code>PrincipalTags</code>operation enables you to reference user attributes in your IAM permissions policy.</p>
-    pub fn principal_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn principal_tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.principal_tags.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for SetPrincipalTagAttributeMapOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SetPrincipalTagAttributeMapOutput {
     /// Creates a new builder-style object to manufacture [`SetPrincipalTagAttributeMapOutput`](crate::operation::set_principal_tag_attribute_map::SetPrincipalTagAttributeMapOutput).
     pub fn builder() -> crate::operation::set_principal_tag_attribute_map::builders::SetPrincipalTagAttributeMapOutputBuilder {
@@ -50,7 +50,7 @@ pub struct SetPrincipalTagAttributeMapOutputBuilder {
     pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) identity_provider_name: ::std::option::Option<::std::string::String>,
     pub(crate) use_defaults: ::std::option::Option<bool>,
-    pub(crate) principal_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) principal_tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl SetPrincipalTagAttributeMapOutputBuilder {
@@ -61,8 +61,7 @@ impl SetPrincipalTagAttributeMapOutputBuilder {
     }
     /// <p>The ID of the Identity Pool you want to set attribute mappings for.</p>
     pub fn set_identity_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_pool_id = input;
-        self
+        self.identity_pool_id = input; self
     }
     /// <p>The ID of the Identity Pool you want to set attribute mappings for.</p>
     pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl SetPrincipalTagAttributeMapOutputBuilder {
     }
     /// <p>The provider name you want to use for attribute mappings.</p>
     pub fn set_identity_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_provider_name = input;
-        self
+        self.identity_provider_name = input; self
     }
     /// <p>The provider name you want to use for attribute mappings.</p>
     pub fn get_identity_provider_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl SetPrincipalTagAttributeMapOutputBuilder {
     }
     /// <p>You can use this operation to select default (username and clientID) attribute mappings.</p>
     pub fn set_use_defaults(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.use_defaults = input;
-        self
+        self.use_defaults = input; self
     }
     /// <p>You can use this operation to select default (username and clientID) attribute mappings.</p>
     pub fn get_use_defaults(&self) -> &::std::option::Option<bool> {
@@ -101,45 +98,42 @@ impl SetPrincipalTagAttributeMapOutputBuilder {
     /// To override the contents of this collection use [`set_principal_tags`](Self::set_principal_tags).
     ///
     /// <p>You can use this operation to add principal tags. The <code>PrincipalTags</code>operation enables you to reference user attributes in your IAM permissions policy.</p>
-    pub fn principal_tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn principal_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.principal_tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.principal_tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.principal_tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>You can use this operation to add principal tags. The <code>PrincipalTags</code>operation enables you to reference user attributes in your IAM permissions policy.</p>
-    pub fn set_principal_tags(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.principal_tags = input;
-        self
+    pub fn set_principal_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.principal_tags = input; self
     }
     /// <p>You can use this operation to add principal tags. The <code>PrincipalTags</code>operation enables you to reference user attributes in your IAM permissions policy.</p>
-    pub fn get_principal_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_principal_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.principal_tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SetPrincipalTagAttributeMapOutput`](crate::operation::set_principal_tag_attribute_map::SetPrincipalTagAttributeMapOutput).
     pub fn build(self) -> crate::operation::set_principal_tag_attribute_map::SetPrincipalTagAttributeMapOutput {
         crate::operation::set_principal_tag_attribute_map::SetPrincipalTagAttributeMapOutput {
-            identity_pool_id: self.identity_pool_id,
-            identity_provider_name: self.identity_provider_name,
-            use_defaults: self.use_defaults,
-            principal_tags: self.principal_tags,
+            identity_pool_id: self.identity_pool_id
+            ,
+            identity_provider_name: self.identity_provider_name
+            ,
+            use_defaults: self.use_defaults
+            ,
+            principal_tags: self.principal_tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

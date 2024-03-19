@@ -2,43 +2,43 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListServiceVersionsOutput {
+pub struct ListServiceVersionsOutput  {
     /// <p>A list of supported versions.</p>
-    pub service_versions: ::std::vec::Vec<crate::types::ServiceVersion>,
+    pub service_versions: ::std::vec::Vec::<crate::types::ServiceVersion>,
     /// <p>The name of the service for which the system provided supported versions.</p>
     pub service_name: crate::types::ServiceName,
     /// <p>A list of names and versions of dependant services of the service for which the system provided supported versions.</p>
-    pub dependent_services: ::std::option::Option<::std::vec::Vec<crate::types::DependentService>>,
+    pub dependent_services: ::std::option::Option<::std::vec::Vec::<crate::types::DependentService>>,
     /// <p>Because HTTP requests are stateless, this is the starting point of the next list of returned <code>ListServiceVersionsResult</code> results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListServiceVersionsOutput {
+impl  ListServiceVersionsOutput  {
     /// <p>A list of supported versions.</p>
-    pub fn service_versions(&self) -> &[crate::types::ServiceVersion] {
-        use std::ops::Deref;
-        self.service_versions.deref()
+    pub fn service_versions(&self) -> & [crate::types::ServiceVersion] {
+        use std::ops::Deref; self.service_versions.deref()
     }
     /// <p>The name of the service for which the system provided supported versions.</p>
-    pub fn service_name(&self) -> &crate::types::ServiceName {
+    pub fn service_name(&self) -> & crate::types::ServiceName {
         &self.service_name
     }
     /// <p>A list of names and versions of dependant services of the service for which the system provided supported versions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dependent_services.is_none()`.
-    pub fn dependent_services(&self) -> &[crate::types::DependentService] {
-        self.dependent_services.as_deref().unwrap_or_default()
+    pub fn dependent_services(&self) -> & [crate::types::DependentService] {
+        self.dependent_services.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Because HTTP requests are stateless, this is the starting point of the next list of returned <code>ListServiceVersionsResult</code> results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListServiceVersionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListServiceVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListServiceVersionsOutput`](crate::operation::list_service_versions::ListServiceVersionsOutput).
     pub fn builder() -> crate::operation::list_service_versions::builders::ListServiceVersionsOutputBuilder {
@@ -50,9 +50,9 @@ impl ListServiceVersionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServiceVersionsOutputBuilder {
-    pub(crate) service_versions: ::std::option::Option<::std::vec::Vec<crate::types::ServiceVersion>>,
+    pub(crate) service_versions: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceVersion>>,
     pub(crate) service_name: ::std::option::Option<crate::types::ServiceName>,
-    pub(crate) dependent_services: ::std::option::Option<::std::vec::Vec<crate::types::DependentService>>,
+    pub(crate) dependent_services: ::std::option::Option<::std::vec::Vec::<crate::types::DependentService>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -64,17 +64,16 @@ impl ListServiceVersionsOutputBuilder {
     /// <p>A list of supported versions.</p>
     pub fn service_versions(mut self, input: crate::types::ServiceVersion) -> Self {
         let mut v = self.service_versions.unwrap_or_default();
-        v.push(input);
-        self.service_versions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.service_versions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of supported versions.</p>
-    pub fn set_service_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceVersion>>) -> Self {
-        self.service_versions = input;
-        self
+    pub fn set_service_versions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceVersion>>) -> Self {
+        self.service_versions = input; self
     }
     /// <p>A list of supported versions.</p>
-    pub fn get_service_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceVersion>> {
+    pub fn get_service_versions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ServiceVersion>> {
         &self.service_versions
     }
     /// <p>The name of the service for which the system provided supported versions.</p>
@@ -85,8 +84,7 @@ impl ListServiceVersionsOutputBuilder {
     }
     /// <p>The name of the service for which the system provided supported versions.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<crate::types::ServiceName>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>The name of the service for which the system provided supported versions.</p>
     pub fn get_service_name(&self) -> &::std::option::Option<crate::types::ServiceName> {
@@ -99,17 +97,16 @@ impl ListServiceVersionsOutputBuilder {
     /// <p>A list of names and versions of dependant services of the service for which the system provided supported versions.</p>
     pub fn dependent_services(mut self, input: crate::types::DependentService) -> Self {
         let mut v = self.dependent_services.unwrap_or_default();
-        v.push(input);
-        self.dependent_services = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.dependent_services = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of names and versions of dependant services of the service for which the system provided supported versions.</p>
-    pub fn set_dependent_services(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DependentService>>) -> Self {
-        self.dependent_services = input;
-        self
+    pub fn set_dependent_services(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DependentService>>) -> Self {
+        self.dependent_services = input; self
     }
     /// <p>A list of names and versions of dependant services of the service for which the system provided supported versions.</p>
-    pub fn get_dependent_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DependentService>> {
+    pub fn get_dependent_services(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DependentService>> {
         &self.dependent_services
     }
     /// <p>Because HTTP requests are stateless, this is the starting point of the next list of returned <code>ListServiceVersionsResult</code> results.</p>
@@ -119,46 +116,45 @@ impl ListServiceVersionsOutputBuilder {
     }
     /// <p>Because HTTP requests are stateless, this is the starting point of the next list of returned <code>ListServiceVersionsResult</code> results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Because HTTP requests are stateless, this is the starting point of the next list of returned <code>ListServiceVersionsResult</code> results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListServiceVersionsOutput`](crate::operation::list_service_versions::ListServiceVersionsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`service_versions`](crate::operation::list_service_versions::builders::ListServiceVersionsOutputBuilder::service_versions)
     /// - [`service_name`](crate::operation::list_service_versions::builders::ListServiceVersionsOutputBuilder::service_name)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_service_versions::ListServiceVersionsOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_service_versions::ListServiceVersionsOutput {
-            service_versions: self.service_versions.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "service_versions",
-                    "service_versions was not specified but it is required when building ListServiceVersionsOutput",
-                )
-            })?,
-            service_name: self.service_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "service_name",
-                    "service_name was not specified but it is required when building ListServiceVersionsOutput",
-                )
-            })?,
-            dependent_services: self.dependent_services,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_service_versions::ListServiceVersionsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_service_versions::ListServiceVersionsOutput {
+                service_versions: self.service_versions
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("service_versions", "service_versions was not specified but it is required when building ListServiceVersionsOutput")
+                    )?
+                ,
+                service_name: self.service_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("service_name", "service_name was not specified but it is required when building ListServiceVersionsOutput")
+                    )?
+                ,
+                dependent_services: self.dependent_services
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

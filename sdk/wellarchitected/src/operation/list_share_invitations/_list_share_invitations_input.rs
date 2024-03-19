@@ -3,7 +3,7 @@
 /// <p>Input for List Share Invitations</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListShareInvitationsInput {
+pub struct ListShareInvitationsInput  {
     /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
     pub workload_name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>An optional string added to the beginning of each lens name returned in the results.</p>
@@ -19,21 +19,21 @@ pub struct ListShareInvitationsInput {
     /// <p>An optional string added to the beginning of each review template name returned in the results.</p>
     pub template_name_prefix: ::std::option::Option<::std::string::String>,
 }
-impl ListShareInvitationsInput {
+impl  ListShareInvitationsInput  {
     /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
-    pub fn workload_name_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn workload_name_prefix(&self) -> ::std::option::Option<& str> {
         self.workload_name_prefix.as_deref()
     }
     /// <p>An optional string added to the beginning of each lens name returned in the results.</p>
-    pub fn lens_name_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn lens_name_prefix(&self) -> ::std::option::Option<& str> {
         self.lens_name_prefix.as_deref()
     }
     /// <p>The type of share invitations to be returned.</p>
-    pub fn share_resource_type(&self) -> ::std::option::Option<&crate::types::ShareResourceType> {
+    pub fn share_resource_type(&self) -> ::std::option::Option<& crate::types::ShareResourceType> {
         self.share_resource_type.as_ref()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return for this request.</p>
@@ -41,11 +41,11 @@ impl ListShareInvitationsInput {
         self.max_results
     }
     /// <p>An optional string added to the beginning of each profile name returned in the results.</p>
-    pub fn profile_name_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn profile_name_prefix(&self) -> ::std::option::Option<& str> {
         self.profile_name_prefix.as_deref()
     }
     /// <p>An optional string added to the beginning of each review template name returned in the results.</p>
-    pub fn template_name_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn template_name_prefix(&self) -> ::std::option::Option<& str> {
         self.template_name_prefix.as_deref()
     }
 }
@@ -76,8 +76,7 @@ impl ListShareInvitationsInputBuilder {
     }
     /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
     pub fn set_workload_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_name_prefix = input;
-        self
+        self.workload_name_prefix = input; self
     }
     /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
     pub fn get_workload_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl ListShareInvitationsInputBuilder {
     }
     /// <p>An optional string added to the beginning of each lens name returned in the results.</p>
     pub fn set_lens_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lens_name_prefix = input;
-        self
+        self.lens_name_prefix = input; self
     }
     /// <p>An optional string added to the beginning of each lens name returned in the results.</p>
     pub fn get_lens_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl ListShareInvitationsInputBuilder {
     }
     /// <p>The type of share invitations to be returned.</p>
     pub fn set_share_resource_type(mut self, input: ::std::option::Option<crate::types::ShareResourceType>) -> Self {
-        self.share_resource_type = input;
-        self
+        self.share_resource_type = input; self
     }
     /// <p>The type of share invitations to be returned.</p>
     pub fn get_share_resource_type(&self) -> &::std::option::Option<crate::types::ShareResourceType> {
@@ -118,8 +115,7 @@ impl ListShareInvitationsInputBuilder {
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl ListShareInvitationsInputBuilder {
     }
     /// <p>The maximum number of results to return for this request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return for this request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -146,8 +141,7 @@ impl ListShareInvitationsInputBuilder {
     }
     /// <p>An optional string added to the beginning of each profile name returned in the results.</p>
     pub fn set_profile_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_name_prefix = input;
-        self
+        self.profile_name_prefix = input; self
     }
     /// <p>An optional string added to the beginning of each profile name returned in the results.</p>
     pub fn get_profile_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,26 +154,32 @@ impl ListShareInvitationsInputBuilder {
     }
     /// <p>An optional string added to the beginning of each review template name returned in the results.</p>
     pub fn set_template_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name_prefix = input;
-        self
+        self.template_name_prefix = input; self
     }
     /// <p>An optional string added to the beginning of each review template name returned in the results.</p>
     pub fn get_template_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.template_name_prefix
     }
     /// Consumes the builder and constructs a [`ListShareInvitationsInput`](crate::operation::list_share_invitations::ListShareInvitationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_share_invitations::ListShareInvitationsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_share_invitations::ListShareInvitationsInput {
-            workload_name_prefix: self.workload_name_prefix,
-            lens_name_prefix: self.lens_name_prefix,
-            share_resource_type: self.share_resource_type,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            profile_name_prefix: self.profile_name_prefix,
-            template_name_prefix: self.template_name_prefix,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_share_invitations::ListShareInvitationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_share_invitations::ListShareInvitationsInput {
+                workload_name_prefix: self.workload_name_prefix
+                ,
+                lens_name_prefix: self.lens_name_prefix
+                ,
+                share_resource_type: self.share_resource_type
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                profile_name_prefix: self.profile_name_prefix
+                ,
+                template_name_prefix: self.template_name_prefix
+                ,
+            }
+        )
     }
 }
+

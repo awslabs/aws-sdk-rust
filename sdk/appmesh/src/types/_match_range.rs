@@ -3,13 +3,13 @@
 /// <p>An object that represents the range of values to match on. The first character of the range is included in the range, though the last character is not. For example, if the range specified were 1-100, only values 1-99 would be matched.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MatchRange {
+pub struct MatchRange  {
     /// <p>The start of the range.</p>
     pub start: i64,
     /// <p>The end of the range.</p>
     pub end: i64,
 }
-impl MatchRange {
+impl  MatchRange  {
     /// <p>The start of the range.</p>
     pub fn start(&self) -> i64 {
         self.start
@@ -42,8 +42,7 @@ impl MatchRangeBuilder {
     }
     /// <p>The start of the range.</p>
     pub fn set_start(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.start = input;
-        self
+        self.start = input; self
     }
     /// <p>The start of the range.</p>
     pub fn get_start(&self) -> &::std::option::Option<i64> {
@@ -57,8 +56,7 @@ impl MatchRangeBuilder {
     }
     /// <p>The end of the range.</p>
     pub fn set_end(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.end = input;
-        self
+        self.end = input; self
     }
     /// <p>The end of the range.</p>
     pub fn get_end(&self) -> &::std::option::Option<i64> {
@@ -69,19 +67,20 @@ impl MatchRangeBuilder {
     /// - [`start`](crate::types::builders::MatchRangeBuilder::start)
     /// - [`end`](crate::types::builders::MatchRangeBuilder::end)
     pub fn build(self) -> ::std::result::Result<crate::types::MatchRange, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MatchRange {
-            start: self.start.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start",
-                    "start was not specified but it is required when building MatchRange",
-                )
-            })?,
-            end: self.end.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "end",
-                    "end was not specified but it is required when building MatchRange",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MatchRange {
+                start: self.start
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start", "start was not specified but it is required when building MatchRange")
+                    )?
+                ,
+                end: self.end
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("end", "end was not specified but it is required when building MatchRange")
+                    )?
+                ,
+            }
+        )
     }
 }
+

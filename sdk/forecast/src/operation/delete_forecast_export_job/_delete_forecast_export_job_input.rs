@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteForecastExportJobInput {
+pub struct DeleteForecastExportJobInput  {
     /// <p>The Amazon Resource Name (ARN) of the forecast export job to delete.</p>
     pub forecast_export_job_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteForecastExportJobInput {
+impl  DeleteForecastExportJobInput  {
     /// <p>The Amazon Resource Name (ARN) of the forecast export job to delete.</p>
-    pub fn forecast_export_job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn forecast_export_job_arn(&self) -> ::std::option::Option<& str> {
         self.forecast_export_job_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteForecastExportJobInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the forecast export job to delete.</p>
     pub fn set_forecast_export_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.forecast_export_job_arn = input;
-        self
+        self.forecast_export_job_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the forecast export job to delete.</p>
     pub fn get_forecast_export_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.forecast_export_job_arn
     }
     /// Consumes the builder and constructs a [`DeleteForecastExportJobInput`](crate::operation::delete_forecast_export_job::DeleteForecastExportJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_forecast_export_job::DeleteForecastExportJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_forecast_export_job::DeleteForecastExportJobInput {
-            forecast_export_job_arn: self.forecast_export_job_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_forecast_export_job::DeleteForecastExportJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_forecast_export_job::DeleteForecastExportJobInput {
+                forecast_export_job_arn: self.forecast_export_job_arn
+                ,
+            }
+        )
     }
 }
+

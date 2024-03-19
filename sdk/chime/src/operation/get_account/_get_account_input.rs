@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAccountInput {
+pub struct GetAccountInput  {
     /// <p>The Amazon Chime account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl GetAccountInput {
+impl  GetAccountInput  {
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetAccountInputBuilder {
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl GetAccountInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetAccountInput`](crate::operation::get_account::GetAccountInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_account::GetAccountInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_account::GetAccountInput { account_id: self.account_id })
+        ::std::result::Result::Ok(
+            crate::operation::get_account::GetAccountInput {
+                account_id: self.account_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateApplicationOutput {
+pub struct CreateApplicationOutput  {
     /// <p>The application Amazon Resource Name (ARN).</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the author publishing the app.</p>
@@ -21,7 +21,7 @@ pub struct CreateApplicationOutput {
     /// <p>Labels to improve discovery of apps in search results.</p>
     /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
     /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
-    pub labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub labels: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p>
     /// <p>Maximum size 5 MB</p>
     pub license_url: ::std::option::Option<::std::string::String>,
@@ -40,28 +40,28 @@ pub struct CreateApplicationOutput {
     pub version: ::std::option::Option<crate::types::Version>,
     _request_id: Option<String>,
 }
-impl CreateApplicationOutput {
+impl  CreateApplicationOutput  {
     /// <p>The application Amazon Resource Name (ARN).</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The name of the author publishing the app.</p>
     /// <p>Minimum length=1. Maximum length=127.</p>
     /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
-    pub fn author(&self) -> ::std::option::Option<&str> {
+    pub fn author(&self) -> ::std::option::Option<& str> {
         self.author.as_deref()
     }
     /// <p>The date and time this resource was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&str> {
+    pub fn creation_time(&self) -> ::std::option::Option<& str> {
         self.creation_time.as_deref()
     }
     /// <p>The description of the application.</p>
     /// <p>Minimum length=1. Maximum length=256</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
-    pub fn home_page_url(&self) -> ::std::option::Option<&str> {
+    pub fn home_page_url(&self) -> ::std::option::Option<& str> {
         self.home_page_url.as_deref()
     }
     /// <p>Whether the author of this application has been verified. This means means that AWS has made a good faith review, as a reasonable and prudent service provider, of the information provided by the requester and has confirmed that the requester's identity is as claimed.</p>
@@ -71,45 +71,46 @@ impl CreateApplicationOutput {
     /// <p>Labels to improve discovery of apps in search results.</p>
     /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
     /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labels.is_none()`.
-    pub fn labels(&self) -> &[::std::string::String] {
-        self.labels.as_deref().unwrap_or_default()
+    pub fn labels(&self) -> & [::std::string::String] {
+        self.labels.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p>
     /// <p>Maximum size 5 MB</p>
-    pub fn license_url(&self) -> ::std::option::Option<&str> {
+    pub fn license_url(&self) -> ::std::option::Option<& str> {
         self.license_url.as_deref()
     }
     /// <p>The name of the application.</p>
     /// <p>Minimum length=1. Maximum length=140</p>
     /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
     /// <p>Maximum size 5 MB</p>
-    pub fn readme_url(&self) -> ::std::option::Option<&str> {
+    pub fn readme_url(&self) -> ::std::option::Option<& str> {
         self.readme_url.as_deref()
     }
     /// <p>A valid identifier from https://spdx.org/licenses/.</p>
-    pub fn spdx_license_id(&self) -> ::std::option::Option<&str> {
+    pub fn spdx_license_id(&self) -> ::std::option::Option<& str> {
         self.spdx_license_id.as_deref()
     }
     /// <p>The URL to the public profile of a verified author. This URL is submitted by the author.</p>
-    pub fn verified_author_url(&self) -> ::std::option::Option<&str> {
+    pub fn verified_author_url(&self) -> ::std::option::Option<& str> {
         self.verified_author_url.as_deref()
     }
     /// <p>Version information about the application.</p>
-    pub fn version(&self) -> ::std::option::Option<&crate::types::Version> {
+    pub fn version(&self) -> ::std::option::Option<& crate::types::Version> {
         self.version.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateApplicationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateApplicationOutput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationOutput`](crate::operation::create_application::CreateApplicationOutput).
     pub fn builder() -> crate::operation::create_application::builders::CreateApplicationOutputBuilder {
@@ -127,7 +128,7 @@ pub struct CreateApplicationOutputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) home_page_url: ::std::option::Option<::std::string::String>,
     pub(crate) is_verified_author: ::std::option::Option<bool>,
-    pub(crate) labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) labels: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) license_url: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) readme_url: ::std::option::Option<::std::string::String>,
@@ -144,8 +145,7 @@ impl CreateApplicationOutputBuilder {
     }
     /// <p>The application Amazon Resource Name (ARN).</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The application Amazon Resource Name (ARN).</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,8 +162,7 @@ impl CreateApplicationOutputBuilder {
     /// <p>Minimum length=1. Maximum length=127.</p>
     /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
     pub fn set_author(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.author = input;
-        self
+        self.author = input; self
     }
     /// <p>The name of the author publishing the app.</p>
     /// <p>Minimum length=1. Maximum length=127.</p>
@@ -178,8 +177,7 @@ impl CreateApplicationOutputBuilder {
     }
     /// <p>The date and time this resource was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The date and time this resource was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,8 +192,7 @@ impl CreateApplicationOutputBuilder {
     /// <p>The description of the application.</p>
     /// <p>Minimum length=1. Maximum length=256</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the application.</p>
     /// <p>Minimum length=1. Maximum length=256</p>
@@ -209,8 +206,7 @@ impl CreateApplicationOutputBuilder {
     }
     /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
     pub fn set_home_page_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.home_page_url = input;
-        self
+        self.home_page_url = input; self
     }
     /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
     pub fn get_home_page_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -223,8 +219,7 @@ impl CreateApplicationOutputBuilder {
     }
     /// <p>Whether the author of this application has been verified. This means means that AWS has made a good faith review, as a reasonable and prudent service provider, of the information provided by the requester and has confirmed that the requester's identity is as claimed.</p>
     pub fn set_is_verified_author(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_verified_author = input;
-        self
+        self.is_verified_author = input; self
     }
     /// <p>Whether the author of this application has been verified. This means means that AWS has made a good faith review, as a reasonable and prudent service provider, of the information provided by the requester and has confirmed that the requester's identity is as claimed.</p>
     pub fn get_is_verified_author(&self) -> &::std::option::Option<bool> {
@@ -239,21 +234,20 @@ impl CreateApplicationOutputBuilder {
     /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
     pub fn labels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.labels.unwrap_or_default();
-        v.push(input.into());
-        self.labels = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.labels = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Labels to improve discovery of apps in search results.</p>
     /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
     /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
-    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.labels = input;
-        self
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.labels = input; self
     }
     /// <p>Labels to improve discovery of apps in search results.</p>
     /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
     /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
-    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.labels
     }
     /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p>
@@ -265,8 +259,7 @@ impl CreateApplicationOutputBuilder {
     /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p>
     /// <p>Maximum size 5 MB</p>
     pub fn set_license_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.license_url = input;
-        self
+        self.license_url = input; self
     }
     /// <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p>
     /// <p>Maximum size 5 MB</p>
@@ -284,8 +277,7 @@ impl CreateApplicationOutputBuilder {
     /// <p>Minimum length=1. Maximum length=140</p>
     /// <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the application.</p>
     /// <p>Minimum length=1. Maximum length=140</p>
@@ -302,8 +294,7 @@ impl CreateApplicationOutputBuilder {
     /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
     /// <p>Maximum size 5 MB</p>
     pub fn set_readme_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.readme_url = input;
-        self
+        self.readme_url = input; self
     }
     /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
     /// <p>Maximum size 5 MB</p>
@@ -317,8 +308,7 @@ impl CreateApplicationOutputBuilder {
     }
     /// <p>A valid identifier from https://spdx.org/licenses/.</p>
     pub fn set_spdx_license_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.spdx_license_id = input;
-        self
+        self.spdx_license_id = input; self
     }
     /// <p>A valid identifier from https://spdx.org/licenses/.</p>
     pub fn get_spdx_license_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -331,8 +321,7 @@ impl CreateApplicationOutputBuilder {
     }
     /// <p>The URL to the public profile of a verified author. This URL is submitted by the author.</p>
     pub fn set_verified_author_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.verified_author_url = input;
-        self
+        self.verified_author_url = input; self
     }
     /// <p>The URL to the public profile of a verified author. This URL is submitted by the author.</p>
     pub fn get_verified_author_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -345,39 +334,52 @@ impl CreateApplicationOutputBuilder {
     }
     /// <p>Version information about the application.</p>
     pub fn set_version(mut self, input: ::std::option::Option<crate::types::Version>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>Version information about the application.</p>
     pub fn get_version(&self) -> &::std::option::Option<crate::types::Version> {
         &self.version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateApplicationOutput`](crate::operation::create_application::CreateApplicationOutput).
     pub fn build(self) -> crate::operation::create_application::CreateApplicationOutput {
         crate::operation::create_application::CreateApplicationOutput {
-            application_id: self.application_id,
-            author: self.author,
-            creation_time: self.creation_time,
-            description: self.description,
-            home_page_url: self.home_page_url,
-            is_verified_author: self.is_verified_author,
-            labels: self.labels,
-            license_url: self.license_url,
-            name: self.name,
-            readme_url: self.readme_url,
-            spdx_license_id: self.spdx_license_id,
-            verified_author_url: self.verified_author_url,
-            version: self.version,
+            application_id: self.application_id
+            ,
+            author: self.author
+            ,
+            creation_time: self.creation_time
+            ,
+            description: self.description
+            ,
+            home_page_url: self.home_page_url
+            ,
+            is_verified_author: self.is_verified_author
+            ,
+            labels: self.labels
+            ,
+            license_url: self.license_url
+            ,
+            name: self.name
+            ,
+            readme_url: self.readme_url
+            ,
+            spdx_license_id: self.spdx_license_id
+            ,
+            verified_author_url: self.verified_author_url
+            ,
+            version: self.version
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

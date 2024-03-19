@@ -3,7 +3,7 @@
 /// <p>The <code>Permission</code> structure.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Permission {
+pub struct Permission  {
     /// <p>The type of value that appears in the Grantee object:</p>
     /// <ul>
     /// <li>
@@ -29,9 +29,9 @@ pub struct Permission {
     /// <li>
     /// <p><code>FULL_CONTROL</code>: The grantee has READ, READ_ACP, and WRITE_ACP permissions for the thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</p></li>
     /// </ul>
-    pub access: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub access: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl Permission {
+impl  Permission  {
     /// <p>The type of value that appears in the Grantee object:</p>
     /// <ul>
     /// <li>
@@ -43,11 +43,11 @@ impl Permission {
     /// <li>
     /// <p><code>Group</code>: One of the following predefined Amazon S3 groups: <code>AllUsers</code>, <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</p></li>
     /// </ul>
-    pub fn grantee_type(&self) -> ::std::option::Option<&str> {
+    pub fn grantee_type(&self) -> ::std::option::Option<& str> {
         self.grantee_type.as_deref()
     }
     /// <p>The AWS user or group that you want to have access to transcoded files and playlists. To identify the user or group, you can specify the canonical user ID for an AWS account, an origin access identity for a CloudFront distribution, the registered email address of an AWS account, or a predefined Amazon S3 group.</p>
-    pub fn grantee(&self) -> ::std::option::Option<&str> {
+    pub fn grantee(&self) -> ::std::option::Option<& str> {
         self.grantee.as_deref()
     }
     /// <p>The permission that you want to give to the AWS user that is listed in Grantee. Valid values include:</p>
@@ -61,10 +61,11 @@ impl Permission {
     /// <li>
     /// <p><code>FULL_CONTROL</code>: The grantee has READ, READ_ACP, and WRITE_ACP permissions for the thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access.is_none()`.
-    pub fn access(&self) -> &[::std::string::String] {
-        self.access.as_deref().unwrap_or_default()
+    pub fn access(&self) -> & [::std::string::String] {
+        self.access.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Permission {
@@ -80,7 +81,7 @@ impl Permission {
 pub struct PermissionBuilder {
     pub(crate) grantee_type: ::std::option::Option<::std::string::String>,
     pub(crate) grantee: ::std::option::Option<::std::string::String>,
-    pub(crate) access: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) access: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl PermissionBuilder {
     /// <p>The type of value that appears in the Grantee object:</p>
@@ -110,8 +111,7 @@ impl PermissionBuilder {
     /// <p><code>Group</code>: One of the following predefined Amazon S3 groups: <code>AllUsers</code>, <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</p></li>
     /// </ul>
     pub fn set_grantee_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.grantee_type = input;
-        self
+        self.grantee_type = input; self
     }
     /// <p>The type of value that appears in the Grantee object:</p>
     /// <ul>
@@ -134,8 +134,7 @@ impl PermissionBuilder {
     }
     /// <p>The AWS user or group that you want to have access to transcoded files and playlists. To identify the user or group, you can specify the canonical user ID for an AWS account, an origin access identity for a CloudFront distribution, the registered email address of an AWS account, or a predefined Amazon S3 group.</p>
     pub fn set_grantee(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.grantee = input;
-        self
+        self.grantee = input; self
     }
     /// <p>The AWS user or group that you want to have access to transcoded files and playlists. To identify the user or group, you can specify the canonical user ID for an AWS account, an origin access identity for a CloudFront distribution, the registered email address of an AWS account, or a predefined Amazon S3 group.</p>
     pub fn get_grantee(&self) -> &::std::option::Option<::std::string::String> {
@@ -158,9 +157,9 @@ impl PermissionBuilder {
     /// </ul>
     pub fn access(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.access.unwrap_or_default();
-        v.push(input.into());
-        self.access = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.access = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The permission that you want to give to the AWS user that is listed in Grantee. Valid values include:</p>
     /// <ul>
@@ -173,9 +172,8 @@ impl PermissionBuilder {
     /// <li>
     /// <p><code>FULL_CONTROL</code>: The grantee has READ, READ_ACP, and WRITE_ACP permissions for the thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</p></li>
     /// </ul>
-    pub fn set_access(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.access = input;
-        self
+    pub fn set_access(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.access = input; self
     }
     /// <p>The permission that you want to give to the AWS user that is listed in Grantee. Valid values include:</p>
     /// <ul>
@@ -188,15 +186,19 @@ impl PermissionBuilder {
     /// <li>
     /// <p><code>FULL_CONTROL</code>: The grantee has READ, READ_ACP, and WRITE_ACP permissions for the thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</p></li>
     /// </ul>
-    pub fn get_access(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_access(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.access
     }
     /// Consumes the builder and constructs a [`Permission`](crate::types::Permission).
     pub fn build(self) -> crate::types::Permission {
         crate::types::Permission {
-            grantee_type: self.grantee_type,
-            grantee: self.grantee,
-            access: self.access,
+            grantee_type: self.grantee_type
+            ,
+            grantee: self.grantee
+            ,
+            access: self.access
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// A single track or stream of media that contains video, audio, or ancillary data. After you add a media stream to a flow, you can associate it with sources and outputs on that flow, as long as they use the CDI protocol or the ST 2110 JPEG XS protocol. Each source or output can consist of one or many media streams.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MediaStream {
+pub struct MediaStream  {
     /// Attributes that are related to the media stream.
     pub attributes: ::std::option::Option<crate::types::MediaStreamAttributes>,
     /// The sample rate for the stream. This value is measured in Hz.
@@ -21,9 +21,9 @@ pub struct MediaStream {
     /// The resolution of the video.
     pub video_format: ::std::option::Option<::std::string::String>,
 }
-impl MediaStream {
+impl  MediaStream  {
     /// Attributes that are related to the media stream.
-    pub fn attributes(&self) -> ::std::option::Option<&crate::types::MediaStreamAttributes> {
+    pub fn attributes(&self) -> ::std::option::Option<& crate::types::MediaStreamAttributes> {
         self.attributes.as_ref()
     }
     /// The sample rate for the stream. This value is measured in Hz.
@@ -31,7 +31,7 @@ impl MediaStream {
         self.clock_rate
     }
     /// A description that can help you quickly identify what your media stream is used for.
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// The format type number (sometimes referred to as RTP payload type) of the media stream. MediaConnect assigns this value to the media stream. For ST 2110 JPEG XS outputs, you need to provide this value to the receiver.
@@ -43,15 +43,15 @@ impl MediaStream {
         self.media_stream_id
     }
     /// A name that helps you distinguish one media stream from another.
-    pub fn media_stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn media_stream_name(&self) -> ::std::option::Option<& str> {
         self.media_stream_name.as_deref()
     }
     /// The type of media stream.
-    pub fn media_stream_type(&self) -> ::std::option::Option<&crate::types::MediaStreamType> {
+    pub fn media_stream_type(&self) -> ::std::option::Option<& crate::types::MediaStreamType> {
         self.media_stream_type.as_ref()
     }
     /// The resolution of the video.
-    pub fn video_format(&self) -> ::std::option::Option<&str> {
+    pub fn video_format(&self) -> ::std::option::Option<& str> {
         self.video_format.as_deref()
     }
 }
@@ -83,8 +83,7 @@ impl MediaStreamBuilder {
     }
     /// Attributes that are related to the media stream.
     pub fn set_attributes(mut self, input: ::std::option::Option<crate::types::MediaStreamAttributes>) -> Self {
-        self.attributes = input;
-        self
+        self.attributes = input; self
     }
     /// Attributes that are related to the media stream.
     pub fn get_attributes(&self) -> &::std::option::Option<crate::types::MediaStreamAttributes> {
@@ -97,8 +96,7 @@ impl MediaStreamBuilder {
     }
     /// The sample rate for the stream. This value is measured in Hz.
     pub fn set_clock_rate(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.clock_rate = input;
-        self
+        self.clock_rate = input; self
     }
     /// The sample rate for the stream. This value is measured in Hz.
     pub fn get_clock_rate(&self) -> &::std::option::Option<i32> {
@@ -111,8 +109,7 @@ impl MediaStreamBuilder {
     }
     /// A description that can help you quickly identify what your media stream is used for.
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// A description that can help you quickly identify what your media stream is used for.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +123,7 @@ impl MediaStreamBuilder {
     }
     /// The format type number (sometimes referred to as RTP payload type) of the media stream. MediaConnect assigns this value to the media stream. For ST 2110 JPEG XS outputs, you need to provide this value to the receiver.
     pub fn set_fmt(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.fmt = input;
-        self
+        self.fmt = input; self
     }
     /// The format type number (sometimes referred to as RTP payload type) of the media stream. MediaConnect assigns this value to the media stream. For ST 2110 JPEG XS outputs, you need to provide this value to the receiver.
     pub fn get_fmt(&self) -> &::std::option::Option<i32> {
@@ -141,8 +137,7 @@ impl MediaStreamBuilder {
     }
     /// A unique identifier for the media stream.
     pub fn set_media_stream_id(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.media_stream_id = input;
-        self
+        self.media_stream_id = input; self
     }
     /// A unique identifier for the media stream.
     pub fn get_media_stream_id(&self) -> &::std::option::Option<i32> {
@@ -156,8 +151,7 @@ impl MediaStreamBuilder {
     }
     /// A name that helps you distinguish one media stream from another.
     pub fn set_media_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.media_stream_name = input;
-        self
+        self.media_stream_name = input; self
     }
     /// A name that helps you distinguish one media stream from another.
     pub fn get_media_stream_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,8 +165,7 @@ impl MediaStreamBuilder {
     }
     /// The type of media stream.
     pub fn set_media_stream_type(mut self, input: ::std::option::Option<crate::types::MediaStreamType>) -> Self {
-        self.media_stream_type = input;
-        self
+        self.media_stream_type = input; self
     }
     /// The type of media stream.
     pub fn get_media_stream_type(&self) -> &::std::option::Option<crate::types::MediaStreamType> {
@@ -185,8 +178,7 @@ impl MediaStreamBuilder {
     }
     /// The resolution of the video.
     pub fn set_video_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.video_format = input;
-        self
+        self.video_format = input; self
     }
     /// The resolution of the video.
     pub fn get_video_format(&self) -> &::std::option::Option<::std::string::String> {
@@ -195,14 +187,23 @@ impl MediaStreamBuilder {
     /// Consumes the builder and constructs a [`MediaStream`](crate::types::MediaStream).
     pub fn build(self) -> crate::types::MediaStream {
         crate::types::MediaStream {
-            attributes: self.attributes,
-            clock_rate: self.clock_rate,
-            description: self.description,
-            fmt: self.fmt,
-            media_stream_id: self.media_stream_id,
-            media_stream_name: self.media_stream_name,
-            media_stream_type: self.media_stream_type,
-            video_format: self.video_format,
+            attributes: self.attributes
+            ,
+            clock_rate: self.clock_rate
+            ,
+            description: self.description
+            ,
+            fmt: self.fmt
+            ,
+            media_stream_id: self.media_stream_id
+            ,
+            media_stream_name: self.media_stream_name
+            ,
+            media_stream_type: self.media_stream_type
+            ,
+            video_format: self.video_format
+            ,
         }
     }
 }
+

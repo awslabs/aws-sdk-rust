@@ -3,7 +3,7 @@
 /// <p>Parameter information for key material import using the asymmetric TR-34 key exchange method.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ImportTr34KeyBlock {
+pub struct ImportTr34KeyBlock  {
     /// <p>The <code>KeyARN</code> of the certificate chain that signs the signing key certificate during TR-34 key import.</p>
     pub certificate_authority_public_key_identifier: ::std::string::String,
     /// <p>The public key component in PEM certificate format of the private key that signs the KDH TR-34 WrappedKeyBlock.</p>
@@ -17,43 +17,36 @@ pub struct ImportTr34KeyBlock {
     /// <p>A random number value that is unique to the TR-34 key block generated using 2 pass. The operation will fail, if a random nonce value is not provided for a TR-34 key block generated using 2 pass.</p>
     pub random_nonce: ::std::option::Option<::std::string::String>,
 }
-impl ImportTr34KeyBlock {
+impl  ImportTr34KeyBlock  {
     /// <p>The <code>KeyARN</code> of the certificate chain that signs the signing key certificate during TR-34 key import.</p>
-    pub fn certificate_authority_public_key_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.certificate_authority_public_key_identifier.deref()
+    pub fn certificate_authority_public_key_identifier(&self) -> & str {
+        use std::ops::Deref; self.certificate_authority_public_key_identifier.deref()
     }
     /// <p>The public key component in PEM certificate format of the private key that signs the KDH TR-34 WrappedKeyBlock.</p>
-    pub fn signing_key_certificate(&self) -> &str {
-        use std::ops::Deref;
-        self.signing_key_certificate.deref()
+    pub fn signing_key_certificate(&self) -> & str {
+        use std::ops::Deref; self.signing_key_certificate.deref()
     }
     /// <p>The import token that initiates key import using the asymmetric TR-34 key exchange method into Amazon Web Services Payment Cryptography. It expires after 7 days. You can use the same import token to import multiple keys to the same service account.</p>
-    pub fn import_token(&self) -> &str {
-        use std::ops::Deref;
-        self.import_token.deref()
+    pub fn import_token(&self) -> & str {
+        use std::ops::Deref; self.import_token.deref()
     }
     /// <p>The TR-34 wrapped key block to import.</p>
-    pub fn wrapped_key_block(&self) -> &str {
-        use std::ops::Deref;
-        self.wrapped_key_block.deref()
+    pub fn wrapped_key_block(&self) -> & str {
+        use std::ops::Deref; self.wrapped_key_block.deref()
     }
     /// <p>The key block format to use during key import. The only value allowed is <code>X9_TR34_2012</code>.</p>
-    pub fn key_block_format(&self) -> &crate::types::Tr34KeyBlockFormat {
+    pub fn key_block_format(&self) -> & crate::types::Tr34KeyBlockFormat {
         &self.key_block_format
     }
     /// <p>A random number value that is unique to the TR-34 key block generated using 2 pass. The operation will fail, if a random nonce value is not provided for a TR-34 key block generated using 2 pass.</p>
-    pub fn random_nonce(&self) -> ::std::option::Option<&str> {
+    pub fn random_nonce(&self) -> ::std::option::Option<& str> {
         self.random_nonce.as_deref()
     }
 }
-impl ::std::fmt::Debug for ImportTr34KeyBlock {
+impl  ::std::fmt::Debug for ImportTr34KeyBlock  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ImportTr34KeyBlock");
-        formatter.field(
-            "certificate_authority_public_key_identifier",
-            &self.certificate_authority_public_key_identifier,
-        );
+        formatter.field("certificate_authority_public_key_identifier", &self.certificate_authority_public_key_identifier);
         formatter.field("signing_key_certificate", &"*** Sensitive Data Redacted ***");
         formatter.field("import_token", &self.import_token);
         formatter.field("wrapped_key_block", &self.wrapped_key_block);
@@ -89,8 +82,7 @@ impl ImportTr34KeyBlockBuilder {
     }
     /// <p>The <code>KeyARN</code> of the certificate chain that signs the signing key certificate during TR-34 key import.</p>
     pub fn set_certificate_authority_public_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_authority_public_key_identifier = input;
-        self
+        self.certificate_authority_public_key_identifier = input; self
     }
     /// <p>The <code>KeyARN</code> of the certificate chain that signs the signing key certificate during TR-34 key import.</p>
     pub fn get_certificate_authority_public_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +96,7 @@ impl ImportTr34KeyBlockBuilder {
     }
     /// <p>The public key component in PEM certificate format of the private key that signs the KDH TR-34 WrappedKeyBlock.</p>
     pub fn set_signing_key_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.signing_key_certificate = input;
-        self
+        self.signing_key_certificate = input; self
     }
     /// <p>The public key component in PEM certificate format of the private key that signs the KDH TR-34 WrappedKeyBlock.</p>
     pub fn get_signing_key_certificate(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +110,7 @@ impl ImportTr34KeyBlockBuilder {
     }
     /// <p>The import token that initiates key import using the asymmetric TR-34 key exchange method into Amazon Web Services Payment Cryptography. It expires after 7 days. You can use the same import token to import multiple keys to the same service account.</p>
     pub fn set_import_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.import_token = input;
-        self
+        self.import_token = input; self
     }
     /// <p>The import token that initiates key import using the asymmetric TR-34 key exchange method into Amazon Web Services Payment Cryptography. It expires after 7 days. You can use the same import token to import multiple keys to the same service account.</p>
     pub fn get_import_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +124,7 @@ impl ImportTr34KeyBlockBuilder {
     }
     /// <p>The TR-34 wrapped key block to import.</p>
     pub fn set_wrapped_key_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.wrapped_key_block = input;
-        self
+        self.wrapped_key_block = input; self
     }
     /// <p>The TR-34 wrapped key block to import.</p>
     pub fn get_wrapped_key_block(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +138,7 @@ impl ImportTr34KeyBlockBuilder {
     }
     /// <p>The key block format to use during key import. The only value allowed is <code>X9_TR34_2012</code>.</p>
     pub fn set_key_block_format(mut self, input: ::std::option::Option<crate::types::Tr34KeyBlockFormat>) -> Self {
-        self.key_block_format = input;
-        self
+        self.key_block_format = input; self
     }
     /// <p>The key block format to use during key import. The only value allowed is <code>X9_TR34_2012</code>.</p>
     pub fn get_key_block_format(&self) -> &::std::option::Option<crate::types::Tr34KeyBlockFormat> {
@@ -163,8 +151,7 @@ impl ImportTr34KeyBlockBuilder {
     }
     /// <p>A random number value that is unique to the TR-34 key block generated using 2 pass. The operation will fail, if a random nonce value is not provided for a TR-34 key block generated using 2 pass.</p>
     pub fn set_random_nonce(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.random_nonce = input;
-        self
+        self.random_nonce = input; self
     }
     /// <p>A random number value that is unique to the TR-34 key block generated using 2 pass. The operation will fail, if a random nonce value is not provided for a TR-34 key block generated using 2 pass.</p>
     pub fn get_random_nonce(&self) -> &::std::option::Option<::std::string::String> {
@@ -178,48 +165,43 @@ impl ImportTr34KeyBlockBuilder {
     /// - [`wrapped_key_block`](crate::types::builders::ImportTr34KeyBlockBuilder::wrapped_key_block)
     /// - [`key_block_format`](crate::types::builders::ImportTr34KeyBlockBuilder::key_block_format)
     pub fn build(self) -> ::std::result::Result<crate::types::ImportTr34KeyBlock, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ImportTr34KeyBlock {
-            certificate_authority_public_key_identifier: self.certificate_authority_public_key_identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "certificate_authority_public_key_identifier",
-                    "certificate_authority_public_key_identifier was not specified but it is required when building ImportTr34KeyBlock",
-                )
-            })?,
-            signing_key_certificate: self.signing_key_certificate.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "signing_key_certificate",
-                    "signing_key_certificate was not specified but it is required when building ImportTr34KeyBlock",
-                )
-            })?,
-            import_token: self.import_token.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "import_token",
-                    "import_token was not specified but it is required when building ImportTr34KeyBlock",
-                )
-            })?,
-            wrapped_key_block: self.wrapped_key_block.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "wrapped_key_block",
-                    "wrapped_key_block was not specified but it is required when building ImportTr34KeyBlock",
-                )
-            })?,
-            key_block_format: self.key_block_format.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key_block_format",
-                    "key_block_format was not specified but it is required when building ImportTr34KeyBlock",
-                )
-            })?,
-            random_nonce: self.random_nonce,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ImportTr34KeyBlock {
+                certificate_authority_public_key_identifier: self.certificate_authority_public_key_identifier
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("certificate_authority_public_key_identifier", "certificate_authority_public_key_identifier was not specified but it is required when building ImportTr34KeyBlock")
+                    )?
+                ,
+                signing_key_certificate: self.signing_key_certificate
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("signing_key_certificate", "signing_key_certificate was not specified but it is required when building ImportTr34KeyBlock")
+                    )?
+                ,
+                import_token: self.import_token
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("import_token", "import_token was not specified but it is required when building ImportTr34KeyBlock")
+                    )?
+                ,
+                wrapped_key_block: self.wrapped_key_block
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("wrapped_key_block", "wrapped_key_block was not specified but it is required when building ImportTr34KeyBlock")
+                    )?
+                ,
+                key_block_format: self.key_block_format
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key_block_format", "key_block_format was not specified but it is required when building ImportTr34KeyBlock")
+                    )?
+                ,
+                random_nonce: self.random_nonce
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ImportTr34KeyBlockBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ImportTr34KeyBlockBuilder");
-        formatter.field(
-            "certificate_authority_public_key_identifier",
-            &self.certificate_authority_public_key_identifier,
-        );
+        formatter.field("certificate_authority_public_key_identifier", &self.certificate_authority_public_key_identifier);
         formatter.field("signing_key_certificate", &"*** Sensitive Data Redacted ***");
         formatter.field("import_token", &self.import_token);
         formatter.field("wrapped_key_block", &self.wrapped_key_block);
@@ -228,3 +210,4 @@ impl ::std::fmt::Debug for ImportTr34KeyBlockBuilder {
         formatter.finish()
     }
 }
+

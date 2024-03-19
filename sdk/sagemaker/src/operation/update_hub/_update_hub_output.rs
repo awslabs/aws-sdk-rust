@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateHubOutput {
+pub struct UpdateHubOutput  {
     /// <p>The Amazon Resource Name (ARN) of the updated hub.</p>
     pub hub_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl UpdateHubOutput {
+impl  UpdateHubOutput  {
     /// <p>The Amazon Resource Name (ARN) of the updated hub.</p>
-    pub fn hub_arn(&self) -> ::std::option::Option<&str> {
+    pub fn hub_arn(&self) -> ::std::option::Option<& str> {
         self.hub_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateHubOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateHubOutput {
     /// Creates a new builder-style object to manufacture [`UpdateHubOutput`](crate::operation::update_hub::UpdateHubOutput).
     pub fn builder() -> crate::operation::update_hub::builders::UpdateHubOutputBuilder {
@@ -41,27 +41,28 @@ impl UpdateHubOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the updated hub.</p>
     pub fn set_hub_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hub_arn = input;
-        self
+        self.hub_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the updated hub.</p>
     pub fn get_hub_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.hub_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateHubOutput`](crate::operation::update_hub::UpdateHubOutput).
     pub fn build(self) -> crate::operation::update_hub::UpdateHubOutput {
         crate::operation::update_hub::UpdateHubOutput {
-            hub_arn: self.hub_arn,
+            hub_arn: self.hub_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

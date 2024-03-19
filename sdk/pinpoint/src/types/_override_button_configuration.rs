@@ -3,19 +3,19 @@
 /// <p>Override button configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OverrideButtonConfiguration {
+pub struct OverrideButtonConfiguration  {
     /// <p>Action triggered by the button.</p>
     pub button_action: ::std::option::Option<crate::types::ButtonAction>,
     /// <p>Button destination.</p>
     pub link: ::std::option::Option<::std::string::String>,
 }
-impl OverrideButtonConfiguration {
+impl  OverrideButtonConfiguration  {
     /// <p>Action triggered by the button.</p>
-    pub fn button_action(&self) -> ::std::option::Option<&crate::types::ButtonAction> {
+    pub fn button_action(&self) -> ::std::option::Option<& crate::types::ButtonAction> {
         self.button_action.as_ref()
     }
     /// <p>Button destination.</p>
-    pub fn link(&self) -> ::std::option::Option<&str> {
+    pub fn link(&self) -> ::std::option::Option<& str> {
         self.link.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl OverrideButtonConfigurationBuilder {
     }
     /// <p>Action triggered by the button.</p>
     pub fn set_button_action(mut self, input: ::std::option::Option<crate::types::ButtonAction>) -> Self {
-        self.button_action = input;
-        self
+        self.button_action = input; self
     }
     /// <p>Action triggered by the button.</p>
     pub fn get_button_action(&self) -> &::std::option::Option<crate::types::ButtonAction> {
@@ -56,8 +55,7 @@ impl OverrideButtonConfigurationBuilder {
     }
     /// <p>Button destination.</p>
     pub fn set_link(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.link = input;
-        self
+        self.link = input; self
     }
     /// <p>Button destination.</p>
     pub fn get_link(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,11 @@ impl OverrideButtonConfigurationBuilder {
     /// Consumes the builder and constructs a [`OverrideButtonConfiguration`](crate::types::OverrideButtonConfiguration).
     pub fn build(self) -> crate::types::OverrideButtonConfiguration {
         crate::types::OverrideButtonConfiguration {
-            button_action: self.button_action,
-            link: self.link,
+            button_action: self.button_action
+            ,
+            link: self.link
+            ,
         }
     }
 }
+

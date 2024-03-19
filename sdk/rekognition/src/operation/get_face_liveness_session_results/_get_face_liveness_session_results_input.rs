@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFaceLivenessSessionResultsInput {
+pub struct GetFaceLivenessSessionResultsInput  {
     /// <p>A unique 128-bit UUID. This is used to uniquely identify the session and also acts as an idempotency token for all operations associated with the session.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
 }
-impl GetFaceLivenessSessionResultsInput {
+impl  GetFaceLivenessSessionResultsInput  {
     /// <p>A unique 128-bit UUID. This is used to uniquely identify the session and also acts as an idempotency token for all operations associated with the session.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<& str> {
         self.session_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetFaceLivenessSessionResultsInputBuilder {
     }
     /// <p>A unique 128-bit UUID. This is used to uniquely identify the session and also acts as an idempotency token for all operations associated with the session.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>A unique 128-bit UUID. This is used to uniquely identify the session and also acts as an idempotency token for all operations associated with the session.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_id
     }
     /// Consumes the builder and constructs a [`GetFaceLivenessSessionResultsInput`](crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsInput {
-            session_id: self.session_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsInput {
+                session_id: self.session_id
+                ,
+            }
+        )
     }
 }
+

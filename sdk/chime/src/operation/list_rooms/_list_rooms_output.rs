@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRoomsOutput {
+pub struct ListRoomsOutput  {
     /// <p>The room details.</p>
-    pub rooms: ::std::option::Option<::std::vec::Vec<crate::types::Room>>,
+    pub rooms: ::std::option::Option<::std::vec::Vec::<crate::types::Room>>,
     /// <p>The token to use to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListRoomsOutput {
+impl  ListRoomsOutput  {
     /// <p>The room details.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rooms.is_none()`.
-    pub fn rooms(&self) -> &[crate::types::Room] {
-        self.rooms.as_deref().unwrap_or_default()
+    pub fn rooms(&self) -> & [crate::types::Room] {
+        self.rooms.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListRoomsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListRoomsOutput {
     /// Creates a new builder-style object to manufacture [`ListRoomsOutput`](crate::operation::list_rooms::ListRoomsOutput).
     pub fn builder() -> crate::operation::list_rooms::builders::ListRoomsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListRoomsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRoomsOutputBuilder {
-    pub(crate) rooms: ::std::option::Option<::std::vec::Vec<crate::types::Room>>,
+    pub(crate) rooms: ::std::option::Option<::std::vec::Vec::<crate::types::Room>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListRoomsOutputBuilder {
     /// <p>The room details.</p>
     pub fn rooms(mut self, input: crate::types::Room) -> Self {
         let mut v = self.rooms.unwrap_or_default();
-        v.push(input);
-        self.rooms = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rooms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The room details.</p>
-    pub fn set_rooms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Room>>) -> Self {
-        self.rooms = input;
-        self
+    pub fn set_rooms(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Room>>) -> Self {
+        self.rooms = input; self
     }
     /// <p>The room details.</p>
-    pub fn get_rooms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Room>> {
+    pub fn get_rooms(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Room>> {
         &self.rooms
     }
     /// <p>The token to use to retrieve the next page of results.</p>
@@ -69,28 +69,30 @@ impl ListRoomsOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListRoomsOutput`](crate::operation::list_rooms::ListRoomsOutput).
     pub fn build(self) -> crate::operation::list_rooms::ListRoomsOutput {
         crate::operation::list_rooms::ListRoomsOutput {
-            rooms: self.rooms,
-            next_token: self.next_token,
+            rooms: self.rooms
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

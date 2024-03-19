@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListNamedShadowsForThingInput {
+pub struct ListNamedShadowsForThingInput  {
     /// <p>The name of the thing.</p>
     pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The token to retrieve the next set of results.</p>
@@ -10,13 +10,13 @@ pub struct ListNamedShadowsForThingInput {
     /// <p>The result page size.</p>
     pub page_size: ::std::option::Option<i32>,
 }
-impl ListNamedShadowsForThingInput {
+impl  ListNamedShadowsForThingInput  {
     /// <p>The name of the thing.</p>
-    pub fn thing_name(&self) -> ::std::option::Option<&str> {
+    pub fn thing_name(&self) -> ::std::option::Option<& str> {
         self.thing_name.as_deref()
     }
     /// <p>The token to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The result page size.</p>
@@ -48,8 +48,7 @@ impl ListNamedShadowsForThingInputBuilder {
     }
     /// <p>The name of the thing.</p>
     pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_name = input;
-        self
+        self.thing_name = input; self
     }
     /// <p>The name of the thing.</p>
     pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListNamedShadowsForThingInputBuilder {
     }
     /// <p>The token to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,24 +74,24 @@ impl ListNamedShadowsForThingInputBuilder {
     }
     /// <p>The result page size.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// <p>The result page size.</p>
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
         &self.page_size
     }
     /// Consumes the builder and constructs a [`ListNamedShadowsForThingInput`](crate::operation::list_named_shadows_for_thing::ListNamedShadowsForThingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_named_shadows_for_thing::ListNamedShadowsForThingInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_named_shadows_for_thing::ListNamedShadowsForThingInput {
-            thing_name: self.thing_name,
-            next_token: self.next_token,
-            page_size: self.page_size,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_named_shadows_for_thing::ListNamedShadowsForThingInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_named_shadows_for_thing::ListNamedShadowsForThingInput {
+                thing_name: self.thing_name
+                ,
+                next_token: self.next_token
+                ,
+                page_size: self.page_size
+                ,
+            }
+        )
     }
 }
+

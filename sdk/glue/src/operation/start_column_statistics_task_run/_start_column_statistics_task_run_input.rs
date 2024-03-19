@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartColumnStatisticsTaskRunInput {
+pub struct StartColumnStatisticsTaskRunInput  {
     /// <p>The name of the database where the table resides.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table to generate statistics.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of the column names to generate statistics. If none is supplied, all column names for the table will be used by default.</p>
-    pub column_name_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub column_name_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The IAM role that the service assumes to generate statistics.</p>
     pub role: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of rows used to generate statistics. If none is supplied, the entire table will be used to generate stats.</p>
@@ -18,23 +18,24 @@ pub struct StartColumnStatisticsTaskRunInput {
     /// <p>Name of the security configuration that is used to encrypt CloudWatch logs for the column stats task run.</p>
     pub security_configuration: ::std::option::Option<::std::string::String>,
 }
-impl StartColumnStatisticsTaskRunInput {
+impl  StartColumnStatisticsTaskRunInput  {
     /// <p>The name of the database where the table resides.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the table to generate statistics.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>A list of the column names to generate statistics. If none is supplied, all column names for the table will be used by default.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_name_list.is_none()`.
-    pub fn column_name_list(&self) -> &[::std::string::String] {
-        self.column_name_list.as_deref().unwrap_or_default()
+    pub fn column_name_list(&self) -> & [::std::string::String] {
+        self.column_name_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The IAM role that the service assumes to generate statistics.</p>
-    pub fn role(&self) -> ::std::option::Option<&str> {
+    pub fn role(&self) -> ::std::option::Option<& str> {
         self.role.as_deref()
     }
     /// <p>The percentage of rows used to generate statistics. If none is supplied, the entire table will be used to generate stats.</p>
@@ -42,11 +43,11 @@ impl StartColumnStatisticsTaskRunInput {
         self.sample_size
     }
     /// <p>The ID of the Data Catalog where the table reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>Name of the security configuration that is used to encrypt CloudWatch logs for the column stats task run.</p>
-    pub fn security_configuration(&self) -> ::std::option::Option<&str> {
+    pub fn security_configuration(&self) -> ::std::option::Option<& str> {
         self.security_configuration.as_deref()
     }
 }
@@ -63,7 +64,7 @@ impl StartColumnStatisticsTaskRunInput {
 pub struct StartColumnStatisticsTaskRunInputBuilder {
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
-    pub(crate) column_name_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) column_name_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) role: ::std::option::Option<::std::string::String>,
     pub(crate) sample_size: ::std::option::Option<f64>,
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
@@ -78,8 +79,7 @@ impl StartColumnStatisticsTaskRunInputBuilder {
     }
     /// <p>The name of the database where the table resides.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the database where the table resides.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +93,7 @@ impl StartColumnStatisticsTaskRunInputBuilder {
     }
     /// <p>The name of the table to generate statistics.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the table to generate statistics.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,17 +106,16 @@ impl StartColumnStatisticsTaskRunInputBuilder {
     /// <p>A list of the column names to generate statistics. If none is supplied, all column names for the table will be used by default.</p>
     pub fn column_name_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.column_name_list.unwrap_or_default();
-        v.push(input.into());
-        self.column_name_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.column_name_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the column names to generate statistics. If none is supplied, all column names for the table will be used by default.</p>
-    pub fn set_column_name_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.column_name_list = input;
-        self
+    pub fn set_column_name_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.column_name_list = input; self
     }
     /// <p>A list of the column names to generate statistics. If none is supplied, all column names for the table will be used by default.</p>
-    pub fn get_column_name_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_column_name_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.column_name_list
     }
     /// <p>The IAM role that the service assumes to generate statistics.</p>
@@ -128,8 +126,7 @@ impl StartColumnStatisticsTaskRunInputBuilder {
     }
     /// <p>The IAM role that the service assumes to generate statistics.</p>
     pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role = input;
-        self
+        self.role = input; self
     }
     /// <p>The IAM role that the service assumes to generate statistics.</p>
     pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +139,7 @@ impl StartColumnStatisticsTaskRunInputBuilder {
     }
     /// <p>The percentage of rows used to generate statistics. If none is supplied, the entire table will be used to generate stats.</p>
     pub fn set_sample_size(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.sample_size = input;
-        self
+        self.sample_size = input; self
     }
     /// <p>The percentage of rows used to generate statistics. If none is supplied, the entire table will be used to generate stats.</p>
     pub fn get_sample_size(&self) -> &::std::option::Option<f64> {
@@ -156,8 +152,7 @@ impl StartColumnStatisticsTaskRunInputBuilder {
     }
     /// <p>The ID of the Data Catalog where the table reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The ID of the Data Catalog where the table reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,28 +165,32 @@ impl StartColumnStatisticsTaskRunInputBuilder {
     }
     /// <p>Name of the security configuration that is used to encrypt CloudWatch logs for the column stats task run.</p>
     pub fn set_security_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.security_configuration = input;
-        self
+        self.security_configuration = input; self
     }
     /// <p>Name of the security configuration that is used to encrypt CloudWatch logs for the column stats task run.</p>
     pub fn get_security_configuration(&self) -> &::std::option::Option<::std::string::String> {
         &self.security_configuration
     }
     /// Consumes the builder and constructs a [`StartColumnStatisticsTaskRunInput`](crate::operation::start_column_statistics_task_run::StartColumnStatisticsTaskRunInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_column_statistics_task_run::StartColumnStatisticsTaskRunInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_column_statistics_task_run::StartColumnStatisticsTaskRunInput {
-            database_name: self.database_name,
-            table_name: self.table_name,
-            column_name_list: self.column_name_list,
-            role: self.role,
-            sample_size: self.sample_size,
-            catalog_id: self.catalog_id,
-            security_configuration: self.security_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_column_statistics_task_run::StartColumnStatisticsTaskRunInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_column_statistics_task_run::StartColumnStatisticsTaskRunInput {
+                database_name: self.database_name
+                ,
+                table_name: self.table_name
+                ,
+                column_name_list: self.column_name_list
+                ,
+                role: self.role
+                ,
+                sample_size: self.sample_size
+                ,
+                catalog_id: self.catalog_id
+                ,
+                security_configuration: self.security_configuration
+                ,
+            }
+        )
     }
 }
+

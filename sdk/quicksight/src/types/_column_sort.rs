@@ -3,7 +3,7 @@
 /// <p>The sort configuration for a column that is not used in a field well.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ColumnSort {
+pub struct ColumnSort  {
     /// <p>A column of a data set.</p>
     pub sort_by: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>The sort direction.</p>
@@ -11,17 +11,17 @@ pub struct ColumnSort {
     /// <p>The aggregation function that is defined in the column sort.</p>
     pub aggregation_function: ::std::option::Option<crate::types::AggregationFunction>,
 }
-impl ColumnSort {
+impl  ColumnSort  {
     /// <p>A column of a data set.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::ColumnIdentifier> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::ColumnIdentifier> {
         self.sort_by.as_ref()
     }
     /// <p>The sort direction.</p>
-    pub fn direction(&self) -> &crate::types::SortDirection {
+    pub fn direction(&self) -> & crate::types::SortDirection {
         &self.direction
     }
     /// <p>The aggregation function that is defined in the column sort.</p>
-    pub fn aggregation_function(&self) -> ::std::option::Option<&crate::types::AggregationFunction> {
+    pub fn aggregation_function(&self) -> ::std::option::Option<& crate::types::AggregationFunction> {
         self.aggregation_function.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl ColumnSortBuilder {
     }
     /// <p>A column of a data set.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ColumnIdentifier>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>A column of a data set.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ColumnIdentifier> {
@@ -64,8 +63,7 @@ impl ColumnSortBuilder {
     }
     /// <p>The sort direction.</p>
     pub fn set_direction(mut self, input: ::std::option::Option<crate::types::SortDirection>) -> Self {
-        self.direction = input;
-        self
+        self.direction = input; self
     }
     /// <p>The sort direction.</p>
     pub fn get_direction(&self) -> &::std::option::Option<crate::types::SortDirection> {
@@ -78,8 +76,7 @@ impl ColumnSortBuilder {
     }
     /// <p>The aggregation function that is defined in the column sort.</p>
     pub fn set_aggregation_function(mut self, input: ::std::option::Option<crate::types::AggregationFunction>) -> Self {
-        self.aggregation_function = input;
-        self
+        self.aggregation_function = input; self
     }
     /// <p>The aggregation function that is defined in the column sort.</p>
     pub fn get_aggregation_function(&self) -> &::std::option::Option<crate::types::AggregationFunction> {
@@ -89,15 +86,19 @@ impl ColumnSortBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`direction`](crate::types::builders::ColumnSortBuilder::direction)
     pub fn build(self) -> ::std::result::Result<crate::types::ColumnSort, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ColumnSort {
-            sort_by: self.sort_by,
-            direction: self.direction.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "direction",
-                    "direction was not specified but it is required when building ColumnSort",
-                )
-            })?,
-            aggregation_function: self.aggregation_function,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ColumnSort {
+                sort_by: self.sort_by
+                ,
+                direction: self.direction
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("direction", "direction was not specified but it is required when building ColumnSort")
+                    )?
+                ,
+                aggregation_function: self.aggregation_function
+                ,
+            }
+        )
     }
 }
+

@@ -8,7 +8,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct MaintenanceWindowLambdaParameters {
+pub struct MaintenanceWindowLambdaParameters  {
     /// <p>Pass client-specific information to the Lambda function that you are invoking. You can then process the client information in your Lambda function as you choose through the context variable.</p>
     pub client_context: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) Specify an Lambda function version or alias name. If you specify a function version, the operation uses the qualified function Amazon Resource Name (ARN) to invoke a specific Lambda function. If you specify an alias name, the operation uses the alias ARN to invoke the Lambda function version to which the alias points.</p>
@@ -16,21 +16,21 @@ pub struct MaintenanceWindowLambdaParameters {
     /// <p>JSON to provide to your Lambda function as input.</p>
     pub payload: ::std::option::Option<::aws_smithy_types::Blob>,
 }
-impl MaintenanceWindowLambdaParameters {
+impl  MaintenanceWindowLambdaParameters  {
     /// <p>Pass client-specific information to the Lambda function that you are invoking. You can then process the client information in your Lambda function as you choose through the context variable.</p>
-    pub fn client_context(&self) -> ::std::option::Option<&str> {
+    pub fn client_context(&self) -> ::std::option::Option<& str> {
         self.client_context.as_deref()
     }
     /// <p>(Optional) Specify an Lambda function version or alias name. If you specify a function version, the operation uses the qualified function Amazon Resource Name (ARN) to invoke a specific Lambda function. If you specify an alias name, the operation uses the alias ARN to invoke the Lambda function version to which the alias points.</p>
-    pub fn qualifier(&self) -> ::std::option::Option<&str> {
+    pub fn qualifier(&self) -> ::std::option::Option<& str> {
         self.qualifier.as_deref()
     }
     /// <p>JSON to provide to your Lambda function as input.</p>
-    pub fn payload(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn payload(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.payload.as_ref()
     }
 }
-impl ::std::fmt::Debug for MaintenanceWindowLambdaParameters {
+impl  ::std::fmt::Debug for MaintenanceWindowLambdaParameters  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MaintenanceWindowLambdaParameters");
         formatter.field("client_context", &self.client_context);
@@ -62,8 +62,7 @@ impl MaintenanceWindowLambdaParametersBuilder {
     }
     /// <p>Pass client-specific information to the Lambda function that you are invoking. You can then process the client information in your Lambda function as you choose through the context variable.</p>
     pub fn set_client_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_context = input;
-        self
+        self.client_context = input; self
     }
     /// <p>Pass client-specific information to the Lambda function that you are invoking. You can then process the client information in your Lambda function as you choose through the context variable.</p>
     pub fn get_client_context(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl MaintenanceWindowLambdaParametersBuilder {
     }
     /// <p>(Optional) Specify an Lambda function version or alias name. If you specify a function version, the operation uses the qualified function Amazon Resource Name (ARN) to invoke a specific Lambda function. If you specify an alias name, the operation uses the alias ARN to invoke the Lambda function version to which the alias points.</p>
     pub fn set_qualifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.qualifier = input;
-        self
+        self.qualifier = input; self
     }
     /// <p>(Optional) Specify an Lambda function version or alias name. If you specify a function version, the operation uses the qualified function Amazon Resource Name (ARN) to invoke a specific Lambda function. If you specify an alias name, the operation uses the alias ARN to invoke the Lambda function version to which the alias points.</p>
     pub fn get_qualifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl MaintenanceWindowLambdaParametersBuilder {
     }
     /// <p>JSON to provide to your Lambda function as input.</p>
     pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.payload = input;
-        self
+        self.payload = input; self
     }
     /// <p>JSON to provide to your Lambda function as input.</p>
     pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -100,9 +97,12 @@ impl MaintenanceWindowLambdaParametersBuilder {
     /// Consumes the builder and constructs a [`MaintenanceWindowLambdaParameters`](crate::types::MaintenanceWindowLambdaParameters).
     pub fn build(self) -> crate::types::MaintenanceWindowLambdaParameters {
         crate::types::MaintenanceWindowLambdaParameters {
-            client_context: self.client_context,
-            qualifier: self.qualifier,
-            payload: self.payload,
+            client_context: self.client_context
+            ,
+            qualifier: self.qualifier
+            ,
+            payload: self.payload
+            ,
         }
     }
 }
@@ -115,3 +115,4 @@ impl ::std::fmt::Debug for MaintenanceWindowLambdaParametersBuilder {
         formatter.finish()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTemplateOutput {
+pub struct GetTemplateOutput  {
     /// <p>A unique identifier of a template.</p>
     pub template_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
@@ -14,57 +14,55 @@ pub struct GetTemplateOutput {
     /// <p>Configuration of layouts associated to the template.</p>
     pub layout_configuration: ::std::option::Option<crate::types::LayoutConfiguration>,
     /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
-    pub required_fields: ::std::option::Option<::std::vec::Vec<crate::types::RequiredField>>,
+    pub required_fields: ::std::option::Option<::std::vec::Vec::<crate::types::RequiredField>>,
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>>,
     /// <p>The status of the template.</p>
     pub status: crate::types::TemplateStatus,
     _request_id: Option<String>,
 }
-impl GetTemplateOutput {
+impl  GetTemplateOutput  {
     /// <p>A unique identifier of a template.</p>
-    pub fn template_id(&self) -> &str {
-        use std::ops::Deref;
-        self.template_id.deref()
+    pub fn template_id(&self) -> & str {
+        use std::ops::Deref; self.template_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
-    pub fn template_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.template_arn.deref()
+    pub fn template_arn(&self) -> & str {
+        use std::ops::Deref; self.template_arn.deref()
     }
     /// <p>The name of the template.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>A brief description of the template.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Configuration of layouts associated to the template.</p>
-    pub fn layout_configuration(&self) -> ::std::option::Option<&crate::types::LayoutConfiguration> {
+    pub fn layout_configuration(&self) -> ::std::option::Option<& crate::types::LayoutConfiguration> {
         self.layout_configuration.as_ref()
     }
     /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.required_fields.is_none()`.
-    pub fn required_fields(&self) -> &[crate::types::RequiredField] {
-        self.required_fields.as_deref().unwrap_or_default()
+    pub fn required_fields(&self) -> & [crate::types::RequiredField] {
+        self.required_fields.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>> {
         self.tags.as_ref()
     }
     /// <p>The status of the template.</p>
-    pub fn status(&self) -> &crate::types::TemplateStatus {
+    pub fn status(&self) -> & crate::types::TemplateStatus {
         &self.status
     }
 }
 impl ::aws_types::request_id::RequestId for GetTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetTemplateOutput`](crate::operation::get_template::GetTemplateOutput).
     pub fn builder() -> crate::operation::get_template::builders::GetTemplateOutputBuilder {
@@ -81,8 +79,8 @@ pub struct GetTemplateOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) layout_configuration: ::std::option::Option<crate::types::LayoutConfiguration>,
-    pub(crate) required_fields: ::std::option::Option<::std::vec::Vec<crate::types::RequiredField>>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
+    pub(crate) required_fields: ::std::option::Option<::std::vec::Vec::<crate::types::RequiredField>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>>,
     pub(crate) status: ::std::option::Option<crate::types::TemplateStatus>,
     _request_id: Option<String>,
 }
@@ -95,8 +93,7 @@ impl GetTemplateOutputBuilder {
     }
     /// <p>A unique identifier of a template.</p>
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_id = input;
-        self
+        self.template_id = input; self
     }
     /// <p>A unique identifier of a template.</p>
     pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +107,7 @@ impl GetTemplateOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
     pub fn set_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_arn = input;
-        self
+        self.template_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
     pub fn get_template_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl GetTemplateOutputBuilder {
     }
     /// <p>The name of the template.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the template.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +134,7 @@ impl GetTemplateOutputBuilder {
     }
     /// <p>A brief description of the template.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A brief description of the template.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +147,7 @@ impl GetTemplateOutputBuilder {
     }
     /// <p>Configuration of layouts associated to the template.</p>
     pub fn set_layout_configuration(mut self, input: ::std::option::Option<crate::types::LayoutConfiguration>) -> Self {
-        self.layout_configuration = input;
-        self
+        self.layout_configuration = input; self
     }
     /// <p>Configuration of layouts associated to the template.</p>
     pub fn get_layout_configuration(&self) -> &::std::option::Option<crate::types::LayoutConfiguration> {
@@ -167,17 +160,16 @@ impl GetTemplateOutputBuilder {
     /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
     pub fn required_fields(mut self, input: crate::types::RequiredField) -> Self {
         let mut v = self.required_fields.unwrap_or_default();
-        v.push(input);
-        self.required_fields = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.required_fields = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
-    pub fn set_required_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RequiredField>>) -> Self {
-        self.required_fields = input;
-        self
+    pub fn set_required_fields(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RequiredField>>) -> Self {
+        self.required_fields = input; self
     }
     /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
-    pub fn get_required_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RequiredField>> {
+    pub fn get_required_fields(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RequiredField>> {
         &self.required_fields
     }
     /// Adds a key-value pair to `tags`.
@@ -187,22 +179,16 @@ impl GetTemplateOutputBuilder {
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::option::Option<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>> {
         &self.tags
     }
     /// <p>The status of the template.</p>
@@ -213,22 +199,21 @@ impl GetTemplateOutputBuilder {
     }
     /// <p>The status of the template.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TemplateStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the template.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TemplateStatus> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetTemplateOutput`](crate::operation::get_template::GetTemplateOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`template_id`](crate::operation::get_template::builders::GetTemplateOutputBuilder::template_id)
@@ -236,36 +221,39 @@ impl GetTemplateOutputBuilder {
     /// - [`name`](crate::operation::get_template::builders::GetTemplateOutputBuilder::name)
     /// - [`status`](crate::operation::get_template::builders::GetTemplateOutputBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_template::GetTemplateOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_template::GetTemplateOutput {
-            template_id: self.template_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "template_id",
-                    "template_id was not specified but it is required when building GetTemplateOutput",
-                )
-            })?,
-            template_arn: self.template_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "template_arn",
-                    "template_arn was not specified but it is required when building GetTemplateOutput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building GetTemplateOutput",
-                )
-            })?,
-            description: self.description,
-            layout_configuration: self.layout_configuration,
-            required_fields: self.required_fields,
-            tags: self.tags,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building GetTemplateOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_template::GetTemplateOutput {
+                template_id: self.template_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("template_id", "template_id was not specified but it is required when building GetTemplateOutput")
+                    )?
+                ,
+                template_arn: self.template_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("template_arn", "template_arn was not specified but it is required when building GetTemplateOutput")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building GetTemplateOutput")
+                    )?
+                ,
+                description: self.description
+                ,
+                layout_configuration: self.layout_configuration
+                ,
+                required_fields: self.required_fields
+                ,
+                tags: self.tags
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building GetTemplateOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

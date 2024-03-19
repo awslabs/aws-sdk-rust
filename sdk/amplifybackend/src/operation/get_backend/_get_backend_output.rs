@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBackendOutput {
+pub struct GetBackendOutput  {
     /// <p>A stringified version of the cli.json file for your Amplify project.</p>
     pub amplify_feature_flags: ::std::option::Option<::std::string::String>,
     /// <p>A stringified version of the current configs for your Amplify project.</p>
@@ -12,50 +12,51 @@ pub struct GetBackendOutput {
     /// <p>The name of the app.</p>
     pub app_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of backend environments in an array.</p>
-    pub backend_environment_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub backend_environment_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The name of the backend environment.</p>
     pub backend_environment_name: ::std::option::Option<::std::string::String>,
     /// <p>If the request failed, this is the returned error.</p>
     pub error: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetBackendOutput {
+impl  GetBackendOutput  {
     /// <p>A stringified version of the cli.json file for your Amplify project.</p>
-    pub fn amplify_feature_flags(&self) -> ::std::option::Option<&str> {
+    pub fn amplify_feature_flags(&self) -> ::std::option::Option<& str> {
         self.amplify_feature_flags.as_deref()
     }
     /// <p>A stringified version of the current configs for your Amplify project.</p>
-    pub fn amplify_meta_config(&self) -> ::std::option::Option<&str> {
+    pub fn amplify_meta_config(&self) -> ::std::option::Option<& str> {
         self.amplify_meta_config.as_deref()
     }
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the app.</p>
-    pub fn app_name(&self) -> ::std::option::Option<&str> {
+    pub fn app_name(&self) -> ::std::option::Option<& str> {
         self.app_name.as_deref()
     }
     /// <p>A list of backend environments in an array.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.backend_environment_list.is_none()`.
-    pub fn backend_environment_list(&self) -> &[::std::string::String] {
-        self.backend_environment_list.as_deref().unwrap_or_default()
+    pub fn backend_environment_list(&self) -> & [::std::string::String] {
+        self.backend_environment_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn backend_environment_name(&self) -> ::std::option::Option<& str> {
         self.backend_environment_name.as_deref()
     }
     /// <p>If the request failed, this is the returned error.</p>
-    pub fn error(&self) -> ::std::option::Option<&str> {
+    pub fn error(&self) -> ::std::option::Option<& str> {
         self.error.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetBackendOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetBackendOutput {
     /// Creates a new builder-style object to manufacture [`GetBackendOutput`](crate::operation::get_backend::GetBackendOutput).
     pub fn builder() -> crate::operation::get_backend::builders::GetBackendOutputBuilder {
@@ -71,7 +72,7 @@ pub struct GetBackendOutputBuilder {
     pub(crate) amplify_meta_config: ::std::option::Option<::std::string::String>,
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) app_name: ::std::option::Option<::std::string::String>,
-    pub(crate) backend_environment_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) backend_environment_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) backend_environment_name: ::std::option::Option<::std::string::String>,
     pub(crate) error: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -84,8 +85,7 @@ impl GetBackendOutputBuilder {
     }
     /// <p>A stringified version of the cli.json file for your Amplify project.</p>
     pub fn set_amplify_feature_flags(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.amplify_feature_flags = input;
-        self
+        self.amplify_feature_flags = input; self
     }
     /// <p>A stringified version of the cli.json file for your Amplify project.</p>
     pub fn get_amplify_feature_flags(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +98,7 @@ impl GetBackendOutputBuilder {
     }
     /// <p>A stringified version of the current configs for your Amplify project.</p>
     pub fn set_amplify_meta_config(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.amplify_meta_config = input;
-        self
+        self.amplify_meta_config = input; self
     }
     /// <p>A stringified version of the current configs for your Amplify project.</p>
     pub fn get_amplify_meta_config(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +111,7 @@ impl GetBackendOutputBuilder {
     }
     /// <p>The app ID.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The app ID.</p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +124,7 @@ impl GetBackendOutputBuilder {
     }
     /// <p>The name of the app.</p>
     pub fn set_app_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_name = input;
-        self
+        self.app_name = input; self
     }
     /// <p>The name of the app.</p>
     pub fn get_app_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,17 +137,16 @@ impl GetBackendOutputBuilder {
     /// <p>A list of backend environments in an array.</p>
     pub fn backend_environment_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.backend_environment_list.unwrap_or_default();
-        v.push(input.into());
-        self.backend_environment_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.backend_environment_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of backend environments in an array.</p>
-    pub fn set_backend_environment_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.backend_environment_list = input;
-        self
+    pub fn set_backend_environment_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.backend_environment_list = input; self
     }
     /// <p>A list of backend environments in an array.</p>
-    pub fn get_backend_environment_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_backend_environment_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.backend_environment_list
     }
     /// <p>The name of the backend environment.</p>
@@ -160,8 +156,7 @@ impl GetBackendOutputBuilder {
     }
     /// <p>The name of the backend environment.</p>
     pub fn set_backend_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backend_environment_name = input;
-        self
+        self.backend_environment_name = input; self
     }
     /// <p>The name of the backend environment.</p>
     pub fn get_backend_environment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,33 +169,40 @@ impl GetBackendOutputBuilder {
     }
     /// <p>If the request failed, this is the returned error.</p>
     pub fn set_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>If the request failed, this is the returned error.</p>
     pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
         &self.error
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetBackendOutput`](crate::operation::get_backend::GetBackendOutput).
     pub fn build(self) -> crate::operation::get_backend::GetBackendOutput {
         crate::operation::get_backend::GetBackendOutput {
-            amplify_feature_flags: self.amplify_feature_flags,
-            amplify_meta_config: self.amplify_meta_config,
-            app_id: self.app_id,
-            app_name: self.app_name,
-            backend_environment_list: self.backend_environment_list,
-            backend_environment_name: self.backend_environment_name,
-            error: self.error,
+            amplify_feature_flags: self.amplify_feature_flags
+            ,
+            amplify_meta_config: self.amplify_meta_config
+            ,
+            app_id: self.app_id
+            ,
+            app_name: self.app_name
+            ,
+            backend_environment_list: self.backend_environment_list
+            ,
+            backend_environment_name: self.backend_environment_name
+            ,
+            error: self.error
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,15 +3,15 @@
 /// <p>Describes a parameter for an action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActionParameter {
+pub struct ActionParameter  {
     /// <p>The parameter description.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the parameter is required.</p>
     pub required: ::std::option::Option<bool>,
 }
-impl ActionParameter {
+impl  ActionParameter  {
     /// <p>The parameter description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Indicates whether the parameter is required.</p>
@@ -41,8 +41,7 @@ impl ActionParameterBuilder {
     }
     /// <p>The parameter description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The parameter description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ActionParameterBuilder {
     }
     /// <p>Indicates whether the parameter is required.</p>
     pub fn set_required(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.required = input;
-        self
+        self.required = input; self
     }
     /// <p>Indicates whether the parameter is required.</p>
     pub fn get_required(&self) -> &::std::option::Option<bool> {
@@ -65,8 +63,11 @@ impl ActionParameterBuilder {
     /// Consumes the builder and constructs a [`ActionParameter`](crate::types::ActionParameter).
     pub fn build(self) -> crate::types::ActionParameter {
         crate::types::ActionParameter {
-            description: self.description,
-            required: self.required,
+            description: self.description
+            ,
+            required: self.required
+            ,
         }
     }
 }
+

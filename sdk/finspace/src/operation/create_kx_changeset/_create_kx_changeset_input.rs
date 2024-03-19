@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateKxChangesetInput {
+pub struct CreateKxChangesetInput  {
     /// <p>A unique identifier of the kdb environment.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the kdb database.</p>
@@ -33,17 +33,17 @@ pub struct CreateKxChangesetInput {
     /// <p>The <i>DELETE</i> request allows you to delete the existing files under the 2020.01.02 partition of the database, and the <i>PUT</i> request adds a new taq table under it.</p>
     /// <p><code>[ {"changeType": "DELETE", "dbPath":"/2020.01.02/"}, {"changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code></p></li>
     /// </ol>
-    pub change_requests: ::std::option::Option<::std::vec::Vec<crate::types::ChangeRequest>>,
+    pub change_requests: ::std::option::Option<::std::vec::Vec::<crate::types::ChangeRequest>>,
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateKxChangesetInput {
+impl  CreateKxChangesetInput  {
     /// <p>A unique identifier of the kdb environment.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The name of the kdb database.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>A list of change request objects that are run in order. A change request object consists of <code>changeType</code> , <code>s3Path</code>, and <code>dbPath</code>. A changeType can has the following values:</p>
@@ -72,13 +72,14 @@ impl CreateKxChangesetInput {
     /// <p>The <i>DELETE</i> request allows you to delete the existing files under the 2020.01.02 partition of the database, and the <i>PUT</i> request adds a new taq table under it.</p>
     /// <p><code>[ {"changeType": "DELETE", "dbPath":"/2020.01.02/"}, {"changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code></p></li>
     /// </ol>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.change_requests.is_none()`.
-    pub fn change_requests(&self) -> &[crate::types::ChangeRequest] {
-        self.change_requests.as_deref().unwrap_or_default()
+    pub fn change_requests(&self) -> & [crate::types::ChangeRequest] {
+        self.change_requests.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -95,7 +96,7 @@ impl CreateKxChangesetInput {
 pub struct CreateKxChangesetInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
-    pub(crate) change_requests: ::std::option::Option<::std::vec::Vec<crate::types::ChangeRequest>>,
+    pub(crate) change_requests: ::std::option::Option<::std::vec::Vec::<crate::types::ChangeRequest>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateKxChangesetInputBuilder {
@@ -107,8 +108,7 @@ impl CreateKxChangesetInputBuilder {
     }
     /// <p>A unique identifier of the kdb environment.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>A unique identifier of the kdb environment.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +122,7 @@ impl CreateKxChangesetInputBuilder {
     }
     /// <p>The name of the kdb database.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the kdb database.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,9 +160,9 @@ impl CreateKxChangesetInputBuilder {
     /// </ol>
     pub fn change_requests(mut self, input: crate::types::ChangeRequest) -> Self {
         let mut v = self.change_requests.unwrap_or_default();
-        v.push(input);
-        self.change_requests = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.change_requests = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of change request objects that are run in order. A change request object consists of <code>changeType</code> , <code>s3Path</code>, and <code>dbPath</code>. A changeType can has the following values:</p>
     /// <ul>
@@ -191,9 +190,8 @@ impl CreateKxChangesetInputBuilder {
     /// <p>The <i>DELETE</i> request allows you to delete the existing files under the 2020.01.02 partition of the database, and the <i>PUT</i> request adds a new taq table under it.</p>
     /// <p><code>[ {"changeType": "DELETE", "dbPath":"/2020.01.02/"}, {"changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code></p></li>
     /// </ol>
-    pub fn set_change_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChangeRequest>>) -> Self {
-        self.change_requests = input;
-        self
+    pub fn set_change_requests(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ChangeRequest>>) -> Self {
+        self.change_requests = input; self
     }
     /// <p>A list of change request objects that are run in order. A change request object consists of <code>changeType</code> , <code>s3Path</code>, and <code>dbPath</code>. A changeType can has the following values:</p>
     /// <ul>
@@ -221,7 +219,7 @@ impl CreateKxChangesetInputBuilder {
     /// <p>The <i>DELETE</i> request allows you to delete the existing files under the 2020.01.02 partition of the database, and the <i>PUT</i> request adds a new taq table under it.</p>
     /// <p><code>[ {"changeType": "DELETE", "dbPath":"/2020.01.02/"}, {"changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code></p></li>
     /// </ol>
-    pub fn get_change_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeRequest>> {
+    pub fn get_change_requests(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ChangeRequest>> {
         &self.change_requests
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
@@ -232,22 +230,26 @@ impl CreateKxChangesetInputBuilder {
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateKxChangesetInput`](crate::operation::create_kx_changeset::CreateKxChangesetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_kx_changeset::CreateKxChangesetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_kx_changeset::CreateKxChangesetInput {
-            environment_id: self.environment_id,
-            database_name: self.database_name,
-            change_requests: self.change_requests,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_kx_changeset::CreateKxChangesetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_kx_changeset::CreateKxChangesetInput {
+                environment_id: self.environment_id
+                ,
+                database_name: self.database_name
+                ,
+                change_requests: self.change_requests
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

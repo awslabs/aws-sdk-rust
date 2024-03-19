@@ -3,7 +3,7 @@
 /// <p>Represents a single entry in a list of tasks. <code>TaskListEntry</code> returns an array that contains a list of tasks when the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListTasks.html">ListTasks</a> operation is called. A task includes the source and destination file systems to sync and the options to use for the tasks.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TaskListEntry {
+pub struct TaskListEntry  {
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
     pub task_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the task.</p>
@@ -11,17 +11,17 @@ pub struct TaskListEntry {
     /// <p>The name of the task.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl TaskListEntry {
+impl  TaskListEntry  {
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
-    pub fn task_arn(&self) -> ::std::option::Option<&str> {
+    pub fn task_arn(&self) -> ::std::option::Option<& str> {
         self.task_arn.as_deref()
     }
     /// <p>The status of the task.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::TaskStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::TaskStatus> {
         self.status.as_ref()
     }
     /// <p>The name of the task.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl TaskListEntryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
     pub fn set_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_arn = input;
-        self
+        self.task_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
     pub fn get_task_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl TaskListEntryBuilder {
     }
     /// <p>The status of the task.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the task.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TaskStatus> {
@@ -76,8 +74,7 @@ impl TaskListEntryBuilder {
     }
     /// <p>The name of the task.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the task.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl TaskListEntryBuilder {
     /// Consumes the builder and constructs a [`TaskListEntry`](crate::types::TaskListEntry).
     pub fn build(self) -> crate::types::TaskListEntry {
         crate::types::TaskListEntry {
-            task_arn: self.task_arn,
-            status: self.status,
-            name: self.name,
+            task_arn: self.task_arn
+            ,
+            status: self.status
+            ,
+            name: self.name
+            ,
         }
     }
 }
+

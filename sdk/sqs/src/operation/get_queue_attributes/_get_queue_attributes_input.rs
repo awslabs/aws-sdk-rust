@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetQueueAttributesInput {
+pub struct GetQueueAttributesInput  {
     /// <p>The URL of the Amazon SQS queue whose attribute information is retrieved.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub queue_url: ::std::option::Option<::std::string::String>,
@@ -105,12 +105,12 @@ pub struct GetQueueAttributesInput {
     /// </ul>
     /// <p>If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified.</p>
     /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    pub attribute_names: ::std::option::Option<::std::vec::Vec<crate::types::QueueAttributeName>>,
+    pub attribute_names: ::std::option::Option<::std::vec::Vec::<crate::types::QueueAttributeName>>,
 }
-impl GetQueueAttributesInput {
+impl  GetQueueAttributesInput  {
     /// <p>The URL of the Amazon SQS queue whose attribute information is retrieved.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn queue_url(&self) -> ::std::option::Option<&str> {
+    pub fn queue_url(&self) -> ::std::option::Option<& str> {
         self.queue_url.as_deref()
     }
     /// <p>A list of attributes for which to retrieve information.</p>
@@ -211,10 +211,11 @@ impl GetQueueAttributesInput {
     /// </ul>
     /// <p>If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified.</p>
     /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_names.is_none()`.
-    pub fn attribute_names(&self) -> &[crate::types::QueueAttributeName] {
-        self.attribute_names.as_deref().unwrap_or_default()
+    pub fn attribute_names(&self) -> & [crate::types::QueueAttributeName] {
+        self.attribute_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl GetQueueAttributesInput {
@@ -229,7 +230,7 @@ impl GetQueueAttributesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetQueueAttributesInputBuilder {
     pub(crate) queue_url: ::std::option::Option<::std::string::String>,
-    pub(crate) attribute_names: ::std::option::Option<::std::vec::Vec<crate::types::QueueAttributeName>>,
+    pub(crate) attribute_names: ::std::option::Option<::std::vec::Vec::<crate::types::QueueAttributeName>>,
 }
 impl GetQueueAttributesInputBuilder {
     /// <p>The URL of the Amazon SQS queue whose attribute information is retrieved.</p>
@@ -242,8 +243,7 @@ impl GetQueueAttributesInputBuilder {
     /// <p>The URL of the Amazon SQS queue whose attribute information is retrieved.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub fn set_queue_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.queue_url = input;
-        self
+        self.queue_url = input; self
     }
     /// <p>The URL of the Amazon SQS queue whose attribute information is retrieved.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -354,9 +354,9 @@ impl GetQueueAttributesInputBuilder {
     /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub fn attribute_names(mut self, input: crate::types::QueueAttributeName) -> Self {
         let mut v = self.attribute_names.unwrap_or_default();
-        v.push(input);
-        self.attribute_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attribute_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of attributes for which to retrieve information.</p>
     /// <p>The <code>AttributeNames</code> parameter is optional, but if you don't specify values for this parameter, the request returns empty results.</p><note>
@@ -456,9 +456,8 @@ impl GetQueueAttributesInputBuilder {
     /// </ul>
     /// <p>If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified.</p>
     /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    pub fn set_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QueueAttributeName>>) -> Self {
-        self.attribute_names = input;
-        self
+    pub fn set_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::QueueAttributeName>>) -> Self {
+        self.attribute_names = input; self
     }
     /// <p>A list of attributes for which to retrieve information.</p>
     /// <p>The <code>AttributeNames</code> parameter is optional, but if you don't specify values for this parameter, the request returns empty results.</p><note>
@@ -558,17 +557,19 @@ impl GetQueueAttributesInputBuilder {
     /// </ul>
     /// <p>If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified.</p>
     /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    pub fn get_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QueueAttributeName>> {
+    pub fn get_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::QueueAttributeName>> {
         &self.attribute_names
     }
     /// Consumes the builder and constructs a [`GetQueueAttributesInput`](crate::operation::get_queue_attributes::GetQueueAttributesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_queue_attributes::GetQueueAttributesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_queue_attributes::GetQueueAttributesInput {
-            queue_url: self.queue_url,
-            attribute_names: self.attribute_names,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_queue_attributes::GetQueueAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_queue_attributes::GetQueueAttributesInput {
+                queue_url: self.queue_url
+                ,
+                attribute_names: self.attribute_names
+                ,
+            }
+        )
     }
 }
+

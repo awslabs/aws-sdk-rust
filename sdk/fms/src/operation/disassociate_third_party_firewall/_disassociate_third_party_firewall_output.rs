@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateThirdPartyFirewallOutput {
+pub struct DisassociateThirdPartyFirewallOutput  {
     /// <p>The current status for the disassociation of a Firewall Manager administrators account with a third-party firewall.</p>
     pub third_party_firewall_status: ::std::option::Option<crate::types::ThirdPartyFirewallAssociationStatus>,
     _request_id: Option<String>,
 }
-impl DisassociateThirdPartyFirewallOutput {
+impl  DisassociateThirdPartyFirewallOutput  {
     /// <p>The current status for the disassociation of a Firewall Manager administrators account with a third-party firewall.</p>
-    pub fn third_party_firewall_status(&self) -> ::std::option::Option<&crate::types::ThirdPartyFirewallAssociationStatus> {
+    pub fn third_party_firewall_status(&self) -> ::std::option::Option<& crate::types::ThirdPartyFirewallAssociationStatus> {
         self.third_party_firewall_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DisassociateThirdPartyFirewallOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DisassociateThirdPartyFirewallOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateThirdPartyFirewallOutput`](crate::operation::disassociate_third_party_firewall::DisassociateThirdPartyFirewallOutput).
     pub fn builder() -> crate::operation::disassociate_third_party_firewall::builders::DisassociateThirdPartyFirewallOutputBuilder {
@@ -40,27 +40,28 @@ impl DisassociateThirdPartyFirewallOutputBuilder {
     }
     /// <p>The current status for the disassociation of a Firewall Manager administrators account with a third-party firewall.</p>
     pub fn set_third_party_firewall_status(mut self, input: ::std::option::Option<crate::types::ThirdPartyFirewallAssociationStatus>) -> Self {
-        self.third_party_firewall_status = input;
-        self
+        self.third_party_firewall_status = input; self
     }
     /// <p>The current status for the disassociation of a Firewall Manager administrators account with a third-party firewall.</p>
     pub fn get_third_party_firewall_status(&self) -> &::std::option::Option<crate::types::ThirdPartyFirewallAssociationStatus> {
         &self.third_party_firewall_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DisassociateThirdPartyFirewallOutput`](crate::operation::disassociate_third_party_firewall::DisassociateThirdPartyFirewallOutput).
     pub fn build(self) -> crate::operation::disassociate_third_party_firewall::DisassociateThirdPartyFirewallOutput {
         crate::operation::disassociate_third_party_firewall::DisassociateThirdPartyFirewallOutput {
-            third_party_firewall_status: self.third_party_firewall_status,
+            third_party_firewall_status: self.third_party_firewall_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

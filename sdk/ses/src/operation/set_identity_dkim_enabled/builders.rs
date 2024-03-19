@@ -5,23 +5,20 @@ pub use crate::operation::set_identity_dkim_enabled::_set_identity_dkim_enabled_
 
 impl SetIdentityDkimEnabledInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.set_identity_dkim_enabled();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.set_identity_dkim_enabled();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `SetIdentityDkimEnabled`.
-///
+/// 
 /// <p>Enables or disables Easy DKIM signing of email sent from an identity. If Easy DKIM signing is enabled for a domain, then Amazon SES uses DKIM to sign all email that it sends from addresses on that domain. If Easy DKIM signing is enabled for an email address, then Amazon SES uses DKIM to sign all email it sends from that address.</p><note>
 /// <p>For email addresses (for example, <code>user@example.com</code>), you can only enable DKIM signing if the corresponding domain (in this case, <code>example.com</code>) has been set up to use Easy DKIM.</p>
 /// </note>
@@ -31,33 +28,32 @@ impl SetIdentityDkimEnabledInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetIdentityDkimEnabledFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::set_identity_dkim_enabled::builders::SetIdentityDkimEnabledInputBuilder,
+                    inner: crate::operation::set_identity_dkim_enabled::builders::SetIdentityDkimEnabledInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledOutput,
-        crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledError,
-    > for SetIdentityDkimEnabledFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledOutput,
-            crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledOutput,
+                    crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledError,
+                > for SetIdentityDkimEnabledFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledOutput,
+                        crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl SetIdentityDkimEnabledFluentBuilder {
     /// Creates a new `SetIdentityDkimEnabled`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -66,53 +62,44 @@ impl SetIdentityDkimEnabledFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabled::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabled::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledOutput,
-        crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabled::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabled::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledOutput, crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The identity for which DKIM signing should be enabled or disabled.</p>
     pub fn identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity(input.into());
@@ -142,3 +129,4 @@ impl SetIdentityDkimEnabledFluentBuilder {
         self.inner.get_dkim_enabled()
     }
 }
+

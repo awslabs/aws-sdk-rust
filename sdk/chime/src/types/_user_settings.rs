@@ -3,13 +3,13 @@
 /// <p>Settings associated with an Amazon Chime user, including inbound and outbound calling and text messaging.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserSettings {
+pub struct UserSettings  {
     /// <p>The telephony settings associated with the user.</p>
     pub telephony: ::std::option::Option<crate::types::TelephonySettings>,
 }
-impl UserSettings {
+impl  UserSettings  {
     /// <p>The telephony settings associated with the user.</p>
-    pub fn telephony(&self) -> ::std::option::Option<&crate::types::TelephonySettings> {
+    pub fn telephony(&self) -> ::std::option::Option<& crate::types::TelephonySettings> {
         self.telephony.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl UserSettingsBuilder {
     }
     /// <p>The telephony settings associated with the user.</p>
     pub fn set_telephony(mut self, input: ::std::option::Option<crate::types::TelephonySettings>) -> Self {
-        self.telephony = input;
-        self
+        self.telephony = input; self
     }
     /// <p>The telephony settings associated with the user.</p>
     pub fn get_telephony(&self) -> &::std::option::Option<crate::types::TelephonySettings> {
@@ -44,6 +43,10 @@ impl UserSettingsBuilder {
     }
     /// Consumes the builder and constructs a [`UserSettings`](crate::types::UserSettings).
     pub fn build(self) -> crate::types::UserSettings {
-        crate::types::UserSettings { telephony: self.telephony }
+        crate::types::UserSettings {
+            telephony: self.telephony
+            ,
+        }
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let defaultaggregation = unimplemented!();
 /// match defaultaggregation {
@@ -39,16 +39,14 @@
 /// Specifically, when `defaultaggregation` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DefaultAggregation::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum DefaultAggregation {
     #[allow(missing_docs)] // documentation missing in model
     Average,
@@ -74,100 +72,89 @@ pub enum DefaultAggregation {
     Varp,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for DefaultAggregation {
-    fn from(s: &str) -> Self {
-        match s {
-            "AVERAGE" => DefaultAggregation::Average,
-            "COUNT" => DefaultAggregation::Count,
-            "DISTINCT_COUNT" => DefaultAggregation::DistinctCount,
-            "MAX" => DefaultAggregation::Max,
-            "MEDIAN" => DefaultAggregation::Median,
-            "MIN" => DefaultAggregation::Min,
-            "STDEV" => DefaultAggregation::Stdev,
-            "STDEVP" => DefaultAggregation::Stdevp,
-            "SUM" => DefaultAggregation::Sum,
-            "VAR" => DefaultAggregation::Var,
-            "VARP" => DefaultAggregation::Varp,
-            other => DefaultAggregation::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "AVERAGE" => DefaultAggregation::Average,
+"COUNT" => DefaultAggregation::Count,
+"DISTINCT_COUNT" => DefaultAggregation::DistinctCount,
+"MAX" => DefaultAggregation::Max,
+"MEDIAN" => DefaultAggregation::Median,
+"MIN" => DefaultAggregation::Min,
+"STDEV" => DefaultAggregation::Stdev,
+"STDEVP" => DefaultAggregation::Stdevp,
+"SUM" => DefaultAggregation::Sum,
+"VAR" => DefaultAggregation::Var,
+"VARP" => DefaultAggregation::Varp,
+other => DefaultAggregation::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for DefaultAggregation {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(DefaultAggregation::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(DefaultAggregation::from(s))
+                    }
+                }
 impl DefaultAggregation {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DefaultAggregation::Average => "AVERAGE",
-            DefaultAggregation::Count => "COUNT",
-            DefaultAggregation::DistinctCount => "DISTINCT_COUNT",
-            DefaultAggregation::Max => "MAX",
-            DefaultAggregation::Median => "MEDIAN",
-            DefaultAggregation::Min => "MIN",
-            DefaultAggregation::Stdev => "STDEV",
-            DefaultAggregation::Stdevp => "STDEVP",
-            DefaultAggregation::Sum => "SUM",
-            DefaultAggregation::Var => "VAR",
-            DefaultAggregation::Varp => "VARP",
-            DefaultAggregation::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AVERAGE",
-            "COUNT",
-            "DISTINCT_COUNT",
-            "MAX",
-            "MEDIAN",
-            "MIN",
-            "STDEV",
-            "STDEVP",
-            "SUM",
-            "VAR",
-            "VARP",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DefaultAggregation::Average => "AVERAGE",
+    DefaultAggregation::Count => "COUNT",
+    DefaultAggregation::DistinctCount => "DISTINCT_COUNT",
+    DefaultAggregation::Max => "MAX",
+    DefaultAggregation::Median => "MEDIAN",
+    DefaultAggregation::Min => "MIN",
+    DefaultAggregation::Stdev => "STDEV",
+    DefaultAggregation::Stdevp => "STDEVP",
+    DefaultAggregation::Sum => "SUM",
+    DefaultAggregation::Var => "VAR",
+    DefaultAggregation::Varp => "VARP",
+    DefaultAggregation::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AVERAGE", "COUNT", "DISTINCT_COUNT", "MAX", "MEDIAN", "MIN", "STDEV", "STDEVP", "SUM", "VAR", "VARP"]
+                }
+            }
 impl ::std::convert::AsRef<str> for DefaultAggregation {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl DefaultAggregation {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for DefaultAggregation {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            DefaultAggregation::Average => write!(f, "AVERAGE"),
-            DefaultAggregation::Count => write!(f, "COUNT"),
-            DefaultAggregation::DistinctCount => write!(f, "DISTINCT_COUNT"),
-            DefaultAggregation::Max => write!(f, "MAX"),
-            DefaultAggregation::Median => write!(f, "MEDIAN"),
-            DefaultAggregation::Min => write!(f, "MIN"),
-            DefaultAggregation::Stdev => write!(f, "STDEV"),
-            DefaultAggregation::Stdevp => write!(f, "STDEVP"),
-            DefaultAggregation::Sum => write!(f, "SUM"),
-            DefaultAggregation::Var => write!(f, "VAR"),
-            DefaultAggregation::Varp => write!(f, "VARP"),
-            DefaultAggregation::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                DefaultAggregation::Average => write!(f, "AVERAGE"),
+DefaultAggregation::Count => write!(f, "COUNT"),
+DefaultAggregation::DistinctCount => write!(f, "DISTINCT_COUNT"),
+DefaultAggregation::Max => write!(f, "MAX"),
+DefaultAggregation::Median => write!(f, "MEDIAN"),
+DefaultAggregation::Min => write!(f, "MIN"),
+DefaultAggregation::Stdev => write!(f, "STDEV"),
+DefaultAggregation::Stdevp => write!(f, "STDEVP"),
+DefaultAggregation::Sum => write!(f, "SUM"),
+DefaultAggregation::Var => write!(f, "VAR"),
+DefaultAggregation::Varp => write!(f, "VARP"),
+DefaultAggregation::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

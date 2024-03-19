@@ -3,13 +3,13 @@
 /// <p>Cross-cluster search specific connection properties.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CrossClusterSearchConnectionProperties {
+pub struct CrossClusterSearchConnectionProperties  {
     /// <p>The status of the <code>SkipUnavailable</code> setting for the outbound connection. This feature allows you to specify some clusters as optional and ensure that your cross-cluster queries return partial results despite failures on one or more remote clusters.</p>
     pub skip_unavailable: ::std::option::Option<crate::types::SkipUnavailableStatus>,
 }
-impl CrossClusterSearchConnectionProperties {
+impl  CrossClusterSearchConnectionProperties  {
     /// <p>The status of the <code>SkipUnavailable</code> setting for the outbound connection. This feature allows you to specify some clusters as optional and ensure that your cross-cluster queries return partial results despite failures on one or more remote clusters.</p>
-    pub fn skip_unavailable(&self) -> ::std::option::Option<&crate::types::SkipUnavailableStatus> {
+    pub fn skip_unavailable(&self) -> ::std::option::Option<& crate::types::SkipUnavailableStatus> {
         self.skip_unavailable.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl CrossClusterSearchConnectionPropertiesBuilder {
     }
     /// <p>The status of the <code>SkipUnavailable</code> setting for the outbound connection. This feature allows you to specify some clusters as optional and ensure that your cross-cluster queries return partial results despite failures on one or more remote clusters.</p>
     pub fn set_skip_unavailable(mut self, input: ::std::option::Option<crate::types::SkipUnavailableStatus>) -> Self {
-        self.skip_unavailable = input;
-        self
+        self.skip_unavailable = input; self
     }
     /// <p>The status of the <code>SkipUnavailable</code> setting for the outbound connection. This feature allows you to specify some clusters as optional and ensure that your cross-cluster queries return partial results despite failures on one or more remote clusters.</p>
     pub fn get_skip_unavailable(&self) -> &::std::option::Option<crate::types::SkipUnavailableStatus> {
@@ -44,7 +43,9 @@ impl CrossClusterSearchConnectionPropertiesBuilder {
     /// Consumes the builder and constructs a [`CrossClusterSearchConnectionProperties`](crate::types::CrossClusterSearchConnectionProperties).
     pub fn build(self) -> crate::types::CrossClusterSearchConnectionProperties {
         crate::types::CrossClusterSearchConnectionProperties {
-            skip_unavailable: self.skip_unavailable,
+            skip_unavailable: self.skip_unavailable
+            ,
         }
     }
 }
+

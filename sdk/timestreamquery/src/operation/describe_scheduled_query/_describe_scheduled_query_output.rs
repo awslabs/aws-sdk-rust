@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeScheduledQueryOutput {
+pub struct DescribeScheduledQueryOutput  {
     /// <p>The scheduled query.</p>
     pub scheduled_query: ::std::option::Option<crate::types::ScheduledQueryDescription>,
     _request_id: Option<String>,
 }
-impl DescribeScheduledQueryOutput {
+impl  DescribeScheduledQueryOutput  {
     /// <p>The scheduled query.</p>
-    pub fn scheduled_query(&self) -> ::std::option::Option<&crate::types::ScheduledQueryDescription> {
+    pub fn scheduled_query(&self) -> ::std::option::Option<& crate::types::ScheduledQueryDescription> {
         self.scheduled_query.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeScheduledQueryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeScheduledQueryOutput {
     /// Creates a new builder-style object to manufacture [`DescribeScheduledQueryOutput`](crate::operation::describe_scheduled_query::DescribeScheduledQueryOutput).
     pub fn builder() -> crate::operation::describe_scheduled_query::builders::DescribeScheduledQueryOutputBuilder {
@@ -41,27 +41,28 @@ impl DescribeScheduledQueryOutputBuilder {
     }
     /// <p>The scheduled query.</p>
     pub fn set_scheduled_query(mut self, input: ::std::option::Option<crate::types::ScheduledQueryDescription>) -> Self {
-        self.scheduled_query = input;
-        self
+        self.scheduled_query = input; self
     }
     /// <p>The scheduled query.</p>
     pub fn get_scheduled_query(&self) -> &::std::option::Option<crate::types::ScheduledQueryDescription> {
         &self.scheduled_query
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeScheduledQueryOutput`](crate::operation::describe_scheduled_query::DescribeScheduledQueryOutput).
     pub fn build(self) -> crate::operation::describe_scheduled_query::DescribeScheduledQueryOutput {
         crate::operation::describe_scheduled_query::DescribeScheduledQueryOutput {
-            scheduled_query: self.scheduled_query,
+            scheduled_query: self.scheduled_query
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

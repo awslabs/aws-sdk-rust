@@ -3,7 +3,7 @@
 /// <p>Information required for edge device metrics.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EdgeMetric {
+pub struct EdgeMetric  {
     /// <p>The dimension of metrics published.</p>
     pub dimension: ::std::option::Option<::std::string::String>,
     /// <p>Returns the name of the metric.</p>
@@ -13,13 +13,13 @@ pub struct EdgeMetric {
     /// <p>Timestamp of when the metric was requested.</p>
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl EdgeMetric {
+impl  EdgeMetric  {
     /// <p>The dimension of metrics published.</p>
-    pub fn dimension(&self) -> ::std::option::Option<&str> {
+    pub fn dimension(&self) -> ::std::option::Option<& str> {
         self.dimension.as_deref()
     }
     /// <p>Returns the name of the metric.</p>
-    pub fn metric_name(&self) -> ::std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>Returns the value of the metric.</p>
@@ -27,7 +27,7 @@ impl EdgeMetric {
         self.value
     }
     /// <p>Timestamp of when the metric was requested.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl EdgeMetricBuilder {
     }
     /// <p>The dimension of metrics published.</p>
     pub fn set_dimension(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dimension = input;
-        self
+        self.dimension = input; self
     }
     /// <p>The dimension of metrics published.</p>
     pub fn get_dimension(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl EdgeMetricBuilder {
     }
     /// <p>Returns the name of the metric.</p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// <p>Returns the name of the metric.</p>
     pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl EdgeMetricBuilder {
     }
     /// <p>Returns the value of the metric.</p>
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>Returns the value of the metric.</p>
     pub fn get_value(&self) -> &::std::option::Option<f64> {
@@ -97,8 +94,7 @@ impl EdgeMetricBuilder {
     }
     /// <p>Timestamp of when the metric was requested.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p>Timestamp of when the metric was requested.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -107,10 +103,15 @@ impl EdgeMetricBuilder {
     /// Consumes the builder and constructs a [`EdgeMetric`](crate::types::EdgeMetric).
     pub fn build(self) -> crate::types::EdgeMetric {
         crate::types::EdgeMetric {
-            dimension: self.dimension,
-            metric_name: self.metric_name,
-            value: self.value,
-            timestamp: self.timestamp,
+            dimension: self.dimension
+            ,
+            metric_name: self.metric_name
+            ,
+            value: self.value
+            ,
+            timestamp: self.timestamp
+            ,
         }
     }
 }
+

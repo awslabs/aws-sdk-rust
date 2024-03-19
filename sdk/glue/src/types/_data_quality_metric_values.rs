@@ -3,7 +3,7 @@
 /// <p>Describes the data quality metric value according to the analysis of historical data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataQualityMetricValues {
+pub struct DataQualityMetricValues  {
     /// <p>The actual value of the data quality metric.</p>
     pub actual_value: ::std::option::Option<f64>,
     /// <p>The expected value of the data quality metric according to the analysis of historical data.</p>
@@ -13,7 +13,7 @@ pub struct DataQualityMetricValues {
     /// <p>The upper limit of the data quality metric value according to the analysis of historical data.</p>
     pub upper_limit: ::std::option::Option<f64>,
 }
-impl DataQualityMetricValues {
+impl  DataQualityMetricValues  {
     /// <p>The actual value of the data quality metric.</p>
     pub fn actual_value(&self) -> ::std::option::Option<f64> {
         self.actual_value
@@ -55,8 +55,7 @@ impl DataQualityMetricValuesBuilder {
     }
     /// <p>The actual value of the data quality metric.</p>
     pub fn set_actual_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.actual_value = input;
-        self
+        self.actual_value = input; self
     }
     /// <p>The actual value of the data quality metric.</p>
     pub fn get_actual_value(&self) -> &::std::option::Option<f64> {
@@ -69,8 +68,7 @@ impl DataQualityMetricValuesBuilder {
     }
     /// <p>The expected value of the data quality metric according to the analysis of historical data.</p>
     pub fn set_expected_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.expected_value = input;
-        self
+        self.expected_value = input; self
     }
     /// <p>The expected value of the data quality metric according to the analysis of historical data.</p>
     pub fn get_expected_value(&self) -> &::std::option::Option<f64> {
@@ -83,8 +81,7 @@ impl DataQualityMetricValuesBuilder {
     }
     /// <p>The lower limit of the data quality metric value according to the analysis of historical data.</p>
     pub fn set_lower_limit(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.lower_limit = input;
-        self
+        self.lower_limit = input; self
     }
     /// <p>The lower limit of the data quality metric value according to the analysis of historical data.</p>
     pub fn get_lower_limit(&self) -> &::std::option::Option<f64> {
@@ -97,8 +94,7 @@ impl DataQualityMetricValuesBuilder {
     }
     /// <p>The upper limit of the data quality metric value according to the analysis of historical data.</p>
     pub fn set_upper_limit(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.upper_limit = input;
-        self
+        self.upper_limit = input; self
     }
     /// <p>The upper limit of the data quality metric value according to the analysis of historical data.</p>
     pub fn get_upper_limit(&self) -> &::std::option::Option<f64> {
@@ -107,10 +103,15 @@ impl DataQualityMetricValuesBuilder {
     /// Consumes the builder and constructs a [`DataQualityMetricValues`](crate::types::DataQualityMetricValues).
     pub fn build(self) -> crate::types::DataQualityMetricValues {
         crate::types::DataQualityMetricValues {
-            actual_value: self.actual_value,
-            expected_value: self.expected_value,
-            lower_limit: self.lower_limit,
-            upper_limit: self.upper_limit,
+            actual_value: self.actual_value
+            ,
+            expected_value: self.expected_value
+            ,
+            lower_limit: self.lower_limit
+            ,
+            upper_limit: self.upper_limit
+            ,
         }
     }
 }
+

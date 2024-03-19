@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListInputRoutingsInput {
+pub struct ListInputRoutingsInput  {
     /// <p>The identifer of the routed input.</p>
     pub input_identifier: ::std::option::Option<crate::types::InputIdentifier>,
     /// <p>The maximum number of results to be returned per request.</p>
@@ -10,9 +10,9 @@ pub struct ListInputRoutingsInput {
     /// <p>The token that you can use to return the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListInputRoutingsInput {
+impl  ListInputRoutingsInput  {
     /// <p>The identifer of the routed input.</p>
-    pub fn input_identifier(&self) -> ::std::option::Option<&crate::types::InputIdentifier> {
+    pub fn input_identifier(&self) -> ::std::option::Option<& crate::types::InputIdentifier> {
         self.input_identifier.as_ref()
     }
     /// <p>The maximum number of results to be returned per request.</p>
@@ -20,7 +20,7 @@ impl ListInputRoutingsInput {
         self.max_results
     }
     /// <p>The token that you can use to return the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ListInputRoutingsInputBuilder {
     }
     /// <p>The identifer of the routed input.</p>
     pub fn set_input_identifier(mut self, input: ::std::option::Option<crate::types::InputIdentifier>) -> Self {
-        self.input_identifier = input;
-        self
+        self.input_identifier = input; self
     }
     /// <p>The identifer of the routed input.</p>
     pub fn get_input_identifier(&self) -> &::std::option::Option<crate::types::InputIdentifier> {
@@ -62,8 +61,7 @@ impl ListInputRoutingsInputBuilder {
     }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -76,21 +74,24 @@ impl ListInputRoutingsInputBuilder {
     }
     /// <p>The token that you can use to return the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token that you can use to return the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListInputRoutingsInput`](crate::operation::list_input_routings::ListInputRoutingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_input_routings::ListInputRoutingsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_input_routings::ListInputRoutingsInput {
-            input_identifier: self.input_identifier,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_input_routings::ListInputRoutingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_input_routings::ListInputRoutingsInput {
+                input_identifier: self.input_identifier
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

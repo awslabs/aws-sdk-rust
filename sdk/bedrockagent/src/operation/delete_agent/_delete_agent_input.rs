@@ -3,15 +3,15 @@
 /// Delete Agent Request
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAgentInput {
+pub struct DeleteAgentInput  {
     /// Id generated at the server side when an Agent is created
     pub agent_id: ::std::option::Option<::std::string::String>,
     /// Skips checking if resource is in use when set to true. Defaults to false
     pub skip_resource_in_use_check: ::std::option::Option<bool>,
 }
-impl DeleteAgentInput {
+impl  DeleteAgentInput  {
     /// Id generated at the server side when an Agent is created
-    pub fn agent_id(&self) -> ::std::option::Option<&str> {
+    pub fn agent_id(&self) -> ::std::option::Option<& str> {
         self.agent_id.as_deref()
     }
     /// Skips checking if resource is in use when set to true. Defaults to false
@@ -42,8 +42,7 @@ impl DeleteAgentInputBuilder {
     }
     /// Id generated at the server side when an Agent is created
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_id = input;
-        self
+        self.agent_id = input; self
     }
     /// Id generated at the server side when an Agent is created
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl DeleteAgentInputBuilder {
     }
     /// Skips checking if resource is in use when set to true. Defaults to false
     pub fn set_skip_resource_in_use_check(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.skip_resource_in_use_check = input;
-        self
+        self.skip_resource_in_use_check = input; self
     }
     /// Skips checking if resource is in use when set to true. Defaults to false
     pub fn get_skip_resource_in_use_check(&self) -> &::std::option::Option<bool> {
@@ -65,9 +63,14 @@ impl DeleteAgentInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteAgentInput`](crate::operation::delete_agent::DeleteAgentInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_agent::DeleteAgentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_agent::DeleteAgentInput {
-            agent_id: self.agent_id,
-            skip_resource_in_use_check: self.skip_resource_in_use_check,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::delete_agent::DeleteAgentInput {
+                agent_id: self.agent_id
+                ,
+                skip_resource_in_use_check: self.skip_resource_in_use_check
+                ,
+            }
+        )
     }
 }
+

@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListExclusions`](crate::operation::list_exclusions::builders::ListExclusionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_exclusions::builders::ListExclusionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`assessment_run_arn(impl Into<String>)`](crate::operation::list_exclusions::builders::ListExclusionsFluentBuilder::assessment_run_arn) / [`set_assessment_run_arn(Option<String>)`](crate::operation::list_exclusions::builders::ListExclusionsFluentBuilder::set_assessment_run_arn):<br>required: **true**<br><p>The ARN of the assessment run that generated the exclusions that you want to list.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_exclusions::builders::ListExclusionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_exclusions::builders::ListExclusionsFluentBuilder::set_next_token):<br>required: **false**<br><p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the ListExclusionsRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_exclusions::builders::ListExclusionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_exclusions::builders::ListExclusionsFluentBuilder::set_max_results):<br>required: **false**<br><p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p><br>
-    /// - On success, responds with [`ListExclusionsOutput`](crate::operation::list_exclusions::ListExclusionsOutput) with field(s):
+                            /// - On success, responds with [`ListExclusionsOutput`](crate::operation::list_exclusions::ListExclusionsOutput) with field(s):
     ///   - [`exclusion_arns(Vec::<String>)`](crate::operation::list_exclusions::ListExclusionsOutput::exclusion_arns): <p>A list of exclusions' ARNs returned by the action.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_exclusions::ListExclusionsOutput::next_token): <p>When a response is generated, if there is more data to be listed, this parameters is present in the response and contains the value to use for the nextToken parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
-    /// - On failure, responds with [`SdkError<ListExclusionsError>`](crate::operation::list_exclusions::ListExclusionsError)
+                            /// - On failure, responds with [`SdkError<ListExclusionsError>`](crate::operation::list_exclusions::ListExclusionsError)
     pub fn list_exclusions(&self) -> crate::operation::list_exclusions::builders::ListExclusionsFluentBuilder {
-        crate::operation::list_exclusions::builders::ListExclusionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_exclusions::builders::ListExclusionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

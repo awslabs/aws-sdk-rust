@@ -3,7 +3,7 @@
 /// <p>Data retrieval policy rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataRetrievalRule {
+pub struct DataRetrievalRule  {
     /// <p>The type of data retrieval policy to set.</p>
     /// <p>Valid values: BytesPerHour|FreeTier|None</p>
     pub strategy: ::std::option::Option<::std::string::String>,
@@ -11,10 +11,10 @@ pub struct DataRetrievalRule {
     /// <p>This field is required only if the value of the Strategy field is <code>BytesPerHour</code>. Your PUT operation will be rejected if the Strategy field is not set to <code>BytesPerHour</code> and you set this field.</p>
     pub bytes_per_hour: ::std::option::Option<i64>,
 }
-impl DataRetrievalRule {
+impl  DataRetrievalRule  {
     /// <p>The type of data retrieval policy to set.</p>
     /// <p>Valid values: BytesPerHour|FreeTier|None</p>
-    pub fn strategy(&self) -> ::std::option::Option<&str> {
+    pub fn strategy(&self) -> ::std::option::Option<& str> {
         self.strategy.as_deref()
     }
     /// <p>The maximum number of bytes that can be retrieved in an hour.</p>
@@ -47,8 +47,7 @@ impl DataRetrievalRuleBuilder {
     /// <p>The type of data retrieval policy to set.</p>
     /// <p>Valid values: BytesPerHour|FreeTier|None</p>
     pub fn set_strategy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.strategy = input;
-        self
+        self.strategy = input; self
     }
     /// <p>The type of data retrieval policy to set.</p>
     /// <p>Valid values: BytesPerHour|FreeTier|None</p>
@@ -64,8 +63,7 @@ impl DataRetrievalRuleBuilder {
     /// <p>The maximum number of bytes that can be retrieved in an hour.</p>
     /// <p>This field is required only if the value of the Strategy field is <code>BytesPerHour</code>. Your PUT operation will be rejected if the Strategy field is not set to <code>BytesPerHour</code> and you set this field.</p>
     pub fn set_bytes_per_hour(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.bytes_per_hour = input;
-        self
+        self.bytes_per_hour = input; self
     }
     /// <p>The maximum number of bytes that can be retrieved in an hour.</p>
     /// <p>This field is required only if the value of the Strategy field is <code>BytesPerHour</code>. Your PUT operation will be rejected if the Strategy field is not set to <code>BytesPerHour</code> and you set this field.</p>
@@ -75,8 +73,11 @@ impl DataRetrievalRuleBuilder {
     /// Consumes the builder and constructs a [`DataRetrievalRule`](crate::types::DataRetrievalRule).
     pub fn build(self) -> crate::types::DataRetrievalRule {
         crate::types::DataRetrievalRule {
-            strategy: self.strategy,
-            bytes_per_hour: self.bytes_per_hour,
+            strategy: self.strategy
+            ,
+            bytes_per_hour: self.bytes_per_hour
+            ,
         }
     }
 }
+

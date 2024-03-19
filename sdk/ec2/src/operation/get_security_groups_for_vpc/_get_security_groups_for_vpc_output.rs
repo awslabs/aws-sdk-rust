@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSecurityGroupsForVpcOutput {
+pub struct GetSecurityGroupsForVpcOutput  {
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The security group that can be used by interfaces in the VPC.</p>
-    pub security_group_for_vpcs: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupForVpc>>,
+    pub security_group_for_vpcs: ::std::option::Option<::std::vec::Vec::<crate::types::SecurityGroupForVpc>>,
     _request_id: Option<String>,
 }
-impl GetSecurityGroupsForVpcOutput {
+impl  GetSecurityGroupsForVpcOutput  {
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The security group that can be used by interfaces in the VPC.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_for_vpcs.is_none()`.
-    pub fn security_group_for_vpcs(&self) -> &[crate::types::SecurityGroupForVpc] {
-        self.security_group_for_vpcs.as_deref().unwrap_or_default()
+    pub fn security_group_for_vpcs(&self) -> & [crate::types::SecurityGroupForVpc] {
+        self.security_group_for_vpcs.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetSecurityGroupsForVpcOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSecurityGroupsForVpcOutput {
     /// Creates a new builder-style object to manufacture [`GetSecurityGroupsForVpcOutput`](crate::operation::get_security_groups_for_vpc::GetSecurityGroupsForVpcOutput).
     pub fn builder() -> crate::operation::get_security_groups_for_vpc::builders::GetSecurityGroupsForVpcOutputBuilder {
@@ -38,7 +39,7 @@ impl GetSecurityGroupsForVpcOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSecurityGroupsForVpcOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) security_group_for_vpcs: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupForVpc>>,
+    pub(crate) security_group_for_vpcs: ::std::option::Option<::std::vec::Vec::<crate::types::SecurityGroupForVpc>>,
     _request_id: Option<String>,
 }
 impl GetSecurityGroupsForVpcOutputBuilder {
@@ -49,8 +50,7 @@ impl GetSecurityGroupsForVpcOutputBuilder {
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl GetSecurityGroupsForVpcOutputBuilder {
     /// <p>The security group that can be used by interfaces in the VPC.</p>
     pub fn security_group_for_vpcs(mut self, input: crate::types::SecurityGroupForVpc) -> Self {
         let mut v = self.security_group_for_vpcs.unwrap_or_default();
-        v.push(input);
-        self.security_group_for_vpcs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.security_group_for_vpcs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The security group that can be used by interfaces in the VPC.</p>
-    pub fn set_security_group_for_vpcs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupForVpc>>) -> Self {
-        self.security_group_for_vpcs = input;
-        self
+    pub fn set_security_group_for_vpcs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SecurityGroupForVpc>>) -> Self {
+        self.security_group_for_vpcs = input; self
     }
     /// <p>The security group that can be used by interfaces in the VPC.</p>
-    pub fn get_security_group_for_vpcs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupForVpc>> {
+    pub fn get_security_group_for_vpcs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SecurityGroupForVpc>> {
         &self.security_group_for_vpcs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSecurityGroupsForVpcOutput`](crate::operation::get_security_groups_for_vpc::GetSecurityGroupsForVpcOutput).
     pub fn build(self) -> crate::operation::get_security_groups_for_vpc::GetSecurityGroupsForVpcOutput {
         crate::operation::get_security_groups_for_vpc::GetSecurityGroupsForVpcOutput {
-            next_token: self.next_token,
-            security_group_for_vpcs: self.security_group_for_vpcs,
+            next_token: self.next_token
+            ,
+            security_group_for_vpcs: self.security_group_for_vpcs
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

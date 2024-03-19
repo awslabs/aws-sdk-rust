@@ -3,19 +3,19 @@
 /// <p>A geolocation target that you select to index. Each geolocation target contains a <code>name</code> and <code>order</code> key-value pair that specifies the geolocation target fields.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GeoLocationTarget {
+pub struct GeoLocationTarget  {
     /// <p>The <code>name</code> of the geolocation target field. If the target field is part of a named shadow, you must select the named shadow using the <code>namedShadow</code> filter.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The <code>order</code> of the geolocation target field. This field is optional. The default value is <code>LatLon</code>.</p>
     pub order: ::std::option::Option<crate::types::TargetFieldOrder>,
 }
-impl GeoLocationTarget {
+impl  GeoLocationTarget  {
     /// <p>The <code>name</code> of the geolocation target field. If the target field is part of a named shadow, you must select the named shadow using the <code>namedShadow</code> filter.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The <code>order</code> of the geolocation target field. This field is optional. The default value is <code>LatLon</code>.</p>
-    pub fn order(&self) -> ::std::option::Option<&crate::types::TargetFieldOrder> {
+    pub fn order(&self) -> ::std::option::Option<& crate::types::TargetFieldOrder> {
         self.order.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl GeoLocationTargetBuilder {
     }
     /// <p>The <code>name</code> of the geolocation target field. If the target field is part of a named shadow, you must select the named shadow using the <code>namedShadow</code> filter.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The <code>name</code> of the geolocation target field. If the target field is part of a named shadow, you must select the named shadow using the <code>namedShadow</code> filter.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl GeoLocationTargetBuilder {
     }
     /// <p>The <code>order</code> of the geolocation target field. This field is optional. The default value is <code>LatLon</code>.</p>
     pub fn set_order(mut self, input: ::std::option::Option<crate::types::TargetFieldOrder>) -> Self {
-        self.order = input;
-        self
+        self.order = input; self
     }
     /// <p>The <code>order</code> of the geolocation target field. This field is optional. The default value is <code>LatLon</code>.</p>
     pub fn get_order(&self) -> &::std::option::Option<crate::types::TargetFieldOrder> {
@@ -65,8 +63,11 @@ impl GeoLocationTargetBuilder {
     /// Consumes the builder and constructs a [`GeoLocationTarget`](crate::types::GeoLocationTarget).
     pub fn build(self) -> crate::types::GeoLocationTarget {
         crate::types::GeoLocationTarget {
-            name: self.name,
-            order: self.order,
+            name: self.name
+            ,
+            order: self.order
+            ,
         }
     }
 }
+

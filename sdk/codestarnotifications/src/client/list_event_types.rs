@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListEventTypes`](crate::operation::list_event_types::builders::ListEventTypesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_event_types::builders::ListEventTypesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filters(ListEventTypesFilter)`](crate::operation::list_event_types::builders::ListEventTypesFluentBuilder::filters) / [`set_filters(Option<Vec::<ListEventTypesFilter>>)`](crate::operation::list_event_types::builders::ListEventTypesFluentBuilder::set_filters):<br>required: **false**<br><p>The filters to use to return information by service or resource type.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_event_types::builders::ListEventTypesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_event_types::builders::ListEventTypesFluentBuilder::set_next_token):<br>required: **false**<br><p>An enumeration token that, when provided in a request, returns the next batch of the results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_event_types::builders::ListEventTypesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_event_types::builders::ListEventTypesFluentBuilder::set_max_results):<br>required: **false**<br><p>A non-negative integer used to limit the number of returned results. The default number is 50. The maximum number of results that can be returned is 100.</p><br>
-    /// - On success, responds with [`ListEventTypesOutput`](crate::operation::list_event_types::ListEventTypesOutput) with field(s):
+                            /// - On success, responds with [`ListEventTypesOutput`](crate::operation::list_event_types::ListEventTypesOutput) with field(s):
     ///   - [`event_types(Option<Vec::<EventTypeSummary>>)`](crate::operation::list_event_types::ListEventTypesOutput::event_types): <p>Information about each event, including service name, resource type, event ID, and event name.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_event_types::ListEventTypesOutput::next_token): <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
-    /// - On failure, responds with [`SdkError<ListEventTypesError>`](crate::operation::list_event_types::ListEventTypesError)
+                            /// - On failure, responds with [`SdkError<ListEventTypesError>`](crate::operation::list_event_types::ListEventTypesError)
     pub fn list_event_types(&self) -> crate::operation::list_event_types::builders::ListEventTypesFluentBuilder {
-        crate::operation::list_event_types::builders::ListEventTypesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_event_types::builders::ListEventTypesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

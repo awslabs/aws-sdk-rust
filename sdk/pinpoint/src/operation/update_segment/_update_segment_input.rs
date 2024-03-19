@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSegmentInput {
+pub struct UpdateSegmentInput  {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the segment.</p>
@@ -10,17 +10,17 @@ pub struct UpdateSegmentInput {
     /// <p>Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.</p>
     pub write_segment_request: ::std::option::Option<crate::types::WriteSegmentRequest>,
 }
-impl UpdateSegmentInput {
+impl  UpdateSegmentInput  {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The unique identifier for the segment.</p>
-    pub fn segment_id(&self) -> ::std::option::Option<&str> {
+    pub fn segment_id(&self) -> ::std::option::Option<& str> {
         self.segment_id.as_deref()
     }
     /// <p>Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.</p>
-    pub fn write_segment_request(&self) -> ::std::option::Option<&crate::types::WriteSegmentRequest> {
+    pub fn write_segment_request(&self) -> ::std::option::Option<& crate::types::WriteSegmentRequest> {
         self.write_segment_request.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateSegmentInputBuilder {
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateSegmentInputBuilder {
     }
     /// <p>The unique identifier for the segment.</p>
     pub fn set_segment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.segment_id = input;
-        self
+        self.segment_id = input; self
     }
     /// <p>The unique identifier for the segment.</p>
     pub fn get_segment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,21 +76,24 @@ impl UpdateSegmentInputBuilder {
     }
     /// <p>Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.</p>
     pub fn set_write_segment_request(mut self, input: ::std::option::Option<crate::types::WriteSegmentRequest>) -> Self {
-        self.write_segment_request = input;
-        self
+        self.write_segment_request = input; self
     }
     /// <p>Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.</p>
     pub fn get_write_segment_request(&self) -> &::std::option::Option<crate::types::WriteSegmentRequest> {
         &self.write_segment_request
     }
     /// Consumes the builder and constructs a [`UpdateSegmentInput`](crate::operation::update_segment::UpdateSegmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_segment::UpdateSegmentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_segment::UpdateSegmentInput {
-            application_id: self.application_id,
-            segment_id: self.segment_id,
-            write_segment_request: self.write_segment_request,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_segment::UpdateSegmentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_segment::UpdateSegmentInput {
+                application_id: self.application_id
+                ,
+                segment_id: self.segment_id
+                ,
+                write_segment_request: self.write_segment_request
+                ,
+            }
+        )
     }
 }
+

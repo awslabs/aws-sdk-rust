@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterPatchBaselineForPatchGroupInput {
+pub struct DeregisterPatchBaselineForPatchGroupInput  {
     /// <p>The ID of the patch baseline to deregister the patch group from.</p>
     pub baseline_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the patch group that should be deregistered from the patch baseline.</p>
     pub patch_group: ::std::option::Option<::std::string::String>,
 }
-impl DeregisterPatchBaselineForPatchGroupInput {
+impl  DeregisterPatchBaselineForPatchGroupInput  {
     /// <p>The ID of the patch baseline to deregister the patch group from.</p>
-    pub fn baseline_id(&self) -> ::std::option::Option<&str> {
+    pub fn baseline_id(&self) -> ::std::option::Option<& str> {
         self.baseline_id.as_deref()
     }
     /// <p>The name of the patch group that should be deregistered from the patch baseline.</p>
-    pub fn patch_group(&self) -> ::std::option::Option<&str> {
+    pub fn patch_group(&self) -> ::std::option::Option<& str> {
         self.patch_group.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeregisterPatchBaselineForPatchGroupInputBuilder {
     }
     /// <p>The ID of the patch baseline to deregister the patch group from.</p>
     pub fn set_baseline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.baseline_id = input;
-        self
+        self.baseline_id = input; self
     }
     /// <p>The ID of the patch baseline to deregister the patch group from.</p>
     pub fn get_baseline_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl DeregisterPatchBaselineForPatchGroupInputBuilder {
     }
     /// <p>The name of the patch group that should be deregistered from the patch baseline.</p>
     pub fn set_patch_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.patch_group = input;
-        self
+        self.patch_group = input; self
     }
     /// <p>The name of the patch group that should be deregistered from the patch baseline.</p>
     pub fn get_patch_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.patch_group
     }
     /// Consumes the builder and constructs a [`DeregisterPatchBaselineForPatchGroupInput`](crate::operation::deregister_patch_baseline_for_patch_group::DeregisterPatchBaselineForPatchGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_patch_baseline_for_patch_group::DeregisterPatchBaselineForPatchGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_patch_baseline_for_patch_group::DeregisterPatchBaselineForPatchGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::deregister_patch_baseline_for_patch_group::DeregisterPatchBaselineForPatchGroupInput {
-                baseline_id: self.baseline_id,
-                patch_group: self.patch_group,
-            },
+                baseline_id: self.baseline_id
+                ,
+                patch_group: self.patch_group
+                ,
+            }
         )
     }
 }
+

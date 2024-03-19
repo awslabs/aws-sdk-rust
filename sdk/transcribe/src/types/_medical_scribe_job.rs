@@ -4,7 +4,7 @@
 /// <p>To view the status of the specified Medical Scribe job, check the <code>MedicalScribeJobStatus</code> field. If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the locations specified in <code>MedicalScribeOutput</code>. If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your Medical Scribe job failed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MedicalScribeJob {
+pub struct MedicalScribeJob  {
     /// <p>The name of the Medical Scribe job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
     pub medical_scribe_job_name: ::std::option::Option<::std::string::String>,
     /// <p>Provides the status of the specified Medical Scribe job.</p>
@@ -35,75 +35,77 @@ pub struct MedicalScribeJob {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Makes it possible to specify which speaker is on which channel. For example, if the clinician is the first participant to speak, you would set <code>ChannelId</code> of the first <code>ChannelDefinition</code> in the list to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>CLINICIAN</code> (to indicate that it's the clinician speaking). Then you would set the <code>ChannelId</code> of the second <code>ChannelDefinition</code> in the list to <code>1</code> (to indicate the second channel) and <code>ParticipantRole</code> to <code>PATIENT</code> (to indicate that it's the patient speaking).</p>
-    pub channel_definitions: ::std::option::Option<::std::vec::Vec<crate::types::MedicalScribeChannelDefinition>>,
+    pub channel_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::MedicalScribeChannelDefinition>>,
     /// <p>Adds one or more custom tags, each in the form of a key:value pair, to the Medica Scribe job.</p>
     /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl MedicalScribeJob {
+impl  MedicalScribeJob  {
     /// <p>The name of the Medical Scribe job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
-    pub fn medical_scribe_job_name(&self) -> ::std::option::Option<&str> {
+    pub fn medical_scribe_job_name(&self) -> ::std::option::Option<& str> {
         self.medical_scribe_job_name.as_deref()
     }
     /// <p>Provides the status of the specified Medical Scribe job.</p>
     /// <p>If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>MedicalScribeOutput</code> If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your Medical Scribe job failed.</p>
-    pub fn medical_scribe_job_status(&self) -> ::std::option::Option<&crate::types::MedicalScribeJobStatus> {
+    pub fn medical_scribe_job_status(&self) -> ::std::option::Option<& crate::types::MedicalScribeJobStatus> {
         self.medical_scribe_job_status.as_ref()
     }
     /// <p>The language code used to create your Medical Scribe job. US English (<code>en-US</code>) is the only supported language for Medical Scribe jobs.</p>
-    pub fn language_code(&self) -> ::std::option::Option<&crate::types::MedicalScribeLanguageCode> {
+    pub fn language_code(&self) -> ::std::option::Option<& crate::types::MedicalScribeLanguageCode> {
         self.language_code.as_ref()
     }
     /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
     /// <p>For information on supported media formats, refer to the <code>MediaFormat</code> parameter or the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> section in the Amazon S3 Developer Guide.</p>
-    pub fn media(&self) -> ::std::option::Option<&crate::types::Media> {
+    pub fn media(&self) -> ::std::option::Option<& crate::types::Media> {
         self.media.as_ref()
     }
     /// <p>The location of the output of your Medical Scribe job. <code>ClinicalDocumentUri</code> holds the Amazon S3 URI for the Clinical Document and <code>TranscriptFileUri</code> holds the Amazon S3 URI for the Transcript.</p>
-    pub fn medical_scribe_output(&self) -> ::std::option::Option<&crate::types::MedicalScribeOutput> {
+    pub fn medical_scribe_output(&self) -> ::std::option::Option<& crate::types::MedicalScribeOutput> {
         self.medical_scribe_output.as_ref()
     }
     /// <p>The date and time your Medical Scribe job began processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.789000-07:00</code> represents a Medical Scribe job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The date and time the specified Medical Scribe job request was made.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents a Medical Scribe job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The date and time the specified Medical Scribe job finished processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents a Medical Scribe job that finished processing at 12:32 PM UTC-7 on May 4, 2022.</p>
-    pub fn completion_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn completion_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
     /// <p>If <code>MedicalScribeJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the transcription job failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>Makes it possible to control how your Medical Scribe job is processed using a <code>MedicalScribeSettings</code> object. Specify <code>ChannelIdentification</code> if <code>ChannelDefinitions</code> are set. Enabled <code>ShowSpeakerLabels</code> if <code>ChannelIdentification</code> and <code>ChannelDefinitions</code> are not set. One and only one of <code>ChannelIdentification</code> and <code>ShowSpeakerLabels</code> must be set. If <code>ShowSpeakerLabels</code> is set, <code>MaxSpeakerLabels</code> must also be set. Use <code>Settings</code> to specify a vocabulary or vocabulary filter or both using <code>VocabularyName</code>, <code>VocabularyFilterName</code>. <code>VocabularyFilterMethod</code> must be specified if <code>VocabularyFilterName</code> is set.</p>
-    pub fn settings(&self) -> ::std::option::Option<&crate::types::MedicalScribeSettings> {
+    pub fn settings(&self) -> ::std::option::Option<& crate::types::MedicalScribeSettings> {
         self.settings.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files, write to the output bucket, and use your KMS key if supplied. If the role that you specify doesn’t have the appropriate permissions your request fails.</p>
     /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
-    pub fn data_access_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn data_access_role_arn(&self) -> ::std::option::Option<& str> {
         self.data_access_role_arn.as_deref()
     }
     /// <p>Makes it possible to specify which speaker is on which channel. For example, if the clinician is the first participant to speak, you would set <code>ChannelId</code> of the first <code>ChannelDefinition</code> in the list to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>CLINICIAN</code> (to indicate that it's the clinician speaking). Then you would set the <code>ChannelId</code> of the second <code>ChannelDefinition</code> in the list to <code>1</code> (to indicate the second channel) and <code>ParticipantRole</code> to <code>PATIENT</code> (to indicate that it's the patient speaking).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channel_definitions.is_none()`.
-    pub fn channel_definitions(&self) -> &[crate::types::MedicalScribeChannelDefinition] {
-        self.channel_definitions.as_deref().unwrap_or_default()
+    pub fn channel_definitions(&self) -> & [crate::types::MedicalScribeChannelDefinition] {
+        self.channel_definitions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Adds one or more custom tags, each in the form of a key:value pair, to the Medica Scribe job.</p>
     /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl MedicalScribeJob {
@@ -128,8 +130,8 @@ pub struct MedicalScribeJobBuilder {
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) settings: ::std::option::Option<crate::types::MedicalScribeSettings>,
     pub(crate) data_access_role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) channel_definitions: ::std::option::Option<::std::vec::Vec<crate::types::MedicalScribeChannelDefinition>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) channel_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::MedicalScribeChannelDefinition>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl MedicalScribeJobBuilder {
     /// <p>The name of the Medical Scribe job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
@@ -139,8 +141,7 @@ impl MedicalScribeJobBuilder {
     }
     /// <p>The name of the Medical Scribe job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
     pub fn set_medical_scribe_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.medical_scribe_job_name = input;
-        self
+        self.medical_scribe_job_name = input; self
     }
     /// <p>The name of the Medical Scribe job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
     pub fn get_medical_scribe_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +156,7 @@ impl MedicalScribeJobBuilder {
     /// <p>Provides the status of the specified Medical Scribe job.</p>
     /// <p>If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>MedicalScribeOutput</code> If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your Medical Scribe job failed.</p>
     pub fn set_medical_scribe_job_status(mut self, input: ::std::option::Option<crate::types::MedicalScribeJobStatus>) -> Self {
-        self.medical_scribe_job_status = input;
-        self
+        self.medical_scribe_job_status = input; self
     }
     /// <p>Provides the status of the specified Medical Scribe job.</p>
     /// <p>If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>MedicalScribeOutput</code> If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your Medical Scribe job failed.</p>
@@ -170,8 +170,7 @@ impl MedicalScribeJobBuilder {
     }
     /// <p>The language code used to create your Medical Scribe job. US English (<code>en-US</code>) is the only supported language for Medical Scribe jobs.</p>
     pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::MedicalScribeLanguageCode>) -> Self {
-        self.language_code = input;
-        self
+        self.language_code = input; self
     }
     /// <p>The language code used to create your Medical Scribe job. US English (<code>en-US</code>) is the only supported language for Medical Scribe jobs.</p>
     pub fn get_language_code(&self) -> &::std::option::Option<crate::types::MedicalScribeLanguageCode> {
@@ -186,8 +185,7 @@ impl MedicalScribeJobBuilder {
     /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
     /// <p>For information on supported media formats, refer to the <code>MediaFormat</code> parameter or the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> section in the Amazon S3 Developer Guide.</p>
     pub fn set_media(mut self, input: ::std::option::Option<crate::types::Media>) -> Self {
-        self.media = input;
-        self
+        self.media = input; self
     }
     /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
     /// <p>For information on supported media formats, refer to the <code>MediaFormat</code> parameter or the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> section in the Amazon S3 Developer Guide.</p>
@@ -201,8 +199,7 @@ impl MedicalScribeJobBuilder {
     }
     /// <p>The location of the output of your Medical Scribe job. <code>ClinicalDocumentUri</code> holds the Amazon S3 URI for the Clinical Document and <code>TranscriptFileUri</code> holds the Amazon S3 URI for the Transcript.</p>
     pub fn set_medical_scribe_output(mut self, input: ::std::option::Option<crate::types::MedicalScribeOutput>) -> Self {
-        self.medical_scribe_output = input;
-        self
+        self.medical_scribe_output = input; self
     }
     /// <p>The location of the output of your Medical Scribe job. <code>ClinicalDocumentUri</code> holds the Amazon S3 URI for the Clinical Document and <code>TranscriptFileUri</code> holds the Amazon S3 URI for the Transcript.</p>
     pub fn get_medical_scribe_output(&self) -> &::std::option::Option<crate::types::MedicalScribeOutput> {
@@ -217,8 +214,7 @@ impl MedicalScribeJobBuilder {
     /// <p>The date and time your Medical Scribe job began processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.789000-07:00</code> represents a Medical Scribe job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The date and time your Medical Scribe job began processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.789000-07:00</code> represents a Medical Scribe job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
@@ -234,8 +230,7 @@ impl MedicalScribeJobBuilder {
     /// <p>The date and time the specified Medical Scribe job request was made.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents a Medical Scribe job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The date and time the specified Medical Scribe job request was made.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents a Medical Scribe job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
@@ -251,8 +246,7 @@ impl MedicalScribeJobBuilder {
     /// <p>The date and time the specified Medical Scribe job finished processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents a Medical Scribe job that finished processing at 12:32 PM UTC-7 on May 4, 2022.</p>
     pub fn set_completion_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.completion_time = input;
-        self
+        self.completion_time = input; self
     }
     /// <p>The date and time the specified Medical Scribe job finished processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents a Medical Scribe job that finished processing at 12:32 PM UTC-7 on May 4, 2022.</p>
@@ -266,8 +260,7 @@ impl MedicalScribeJobBuilder {
     }
     /// <p>If <code>MedicalScribeJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the transcription job failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>If <code>MedicalScribeJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the transcription job failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -280,8 +273,7 @@ impl MedicalScribeJobBuilder {
     }
     /// <p>Makes it possible to control how your Medical Scribe job is processed using a <code>MedicalScribeSettings</code> object. Specify <code>ChannelIdentification</code> if <code>ChannelDefinitions</code> are set. Enabled <code>ShowSpeakerLabels</code> if <code>ChannelIdentification</code> and <code>ChannelDefinitions</code> are not set. One and only one of <code>ChannelIdentification</code> and <code>ShowSpeakerLabels</code> must be set. If <code>ShowSpeakerLabels</code> is set, <code>MaxSpeakerLabels</code> must also be set. Use <code>Settings</code> to specify a vocabulary or vocabulary filter or both using <code>VocabularyName</code>, <code>VocabularyFilterName</code>. <code>VocabularyFilterMethod</code> must be specified if <code>VocabularyFilterName</code> is set.</p>
     pub fn set_settings(mut self, input: ::std::option::Option<crate::types::MedicalScribeSettings>) -> Self {
-        self.settings = input;
-        self
+        self.settings = input; self
     }
     /// <p>Makes it possible to control how your Medical Scribe job is processed using a <code>MedicalScribeSettings</code> object. Specify <code>ChannelIdentification</code> if <code>ChannelDefinitions</code> are set. Enabled <code>ShowSpeakerLabels</code> if <code>ChannelIdentification</code> and <code>ChannelDefinitions</code> are not set. One and only one of <code>ChannelIdentification</code> and <code>ShowSpeakerLabels</code> must be set. If <code>ShowSpeakerLabels</code> is set, <code>MaxSpeakerLabels</code> must also be set. Use <code>Settings</code> to specify a vocabulary or vocabulary filter or both using <code>VocabularyName</code>, <code>VocabularyFilterName</code>. <code>VocabularyFilterMethod</code> must be specified if <code>VocabularyFilterName</code> is set.</p>
     pub fn get_settings(&self) -> &::std::option::Option<crate::types::MedicalScribeSettings> {
@@ -298,8 +290,7 @@ impl MedicalScribeJobBuilder {
     /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
     pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_access_role_arn = input;
-        self
+        self.data_access_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files, write to the output bucket, and use your KMS key if supplied. If the role that you specify doesn’t have the appropriate permissions your request fails.</p>
     /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
@@ -314,17 +305,16 @@ impl MedicalScribeJobBuilder {
     /// <p>Makes it possible to specify which speaker is on which channel. For example, if the clinician is the first participant to speak, you would set <code>ChannelId</code> of the first <code>ChannelDefinition</code> in the list to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>CLINICIAN</code> (to indicate that it's the clinician speaking). Then you would set the <code>ChannelId</code> of the second <code>ChannelDefinition</code> in the list to <code>1</code> (to indicate the second channel) and <code>ParticipantRole</code> to <code>PATIENT</code> (to indicate that it's the patient speaking).</p>
     pub fn channel_definitions(mut self, input: crate::types::MedicalScribeChannelDefinition) -> Self {
         let mut v = self.channel_definitions.unwrap_or_default();
-        v.push(input);
-        self.channel_definitions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.channel_definitions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Makes it possible to specify which speaker is on which channel. For example, if the clinician is the first participant to speak, you would set <code>ChannelId</code> of the first <code>ChannelDefinition</code> in the list to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>CLINICIAN</code> (to indicate that it's the clinician speaking). Then you would set the <code>ChannelId</code> of the second <code>ChannelDefinition</code> in the list to <code>1</code> (to indicate the second channel) and <code>ParticipantRole</code> to <code>PATIENT</code> (to indicate that it's the patient speaking).</p>
-    pub fn set_channel_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MedicalScribeChannelDefinition>>) -> Self {
-        self.channel_definitions = input;
-        self
+    pub fn set_channel_definitions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MedicalScribeChannelDefinition>>) -> Self {
+        self.channel_definitions = input; self
     }
     /// <p>Makes it possible to specify which speaker is on which channel. For example, if the clinician is the first participant to speak, you would set <code>ChannelId</code> of the first <code>ChannelDefinition</code> in the list to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>CLINICIAN</code> (to indicate that it's the clinician speaking). Then you would set the <code>ChannelId</code> of the second <code>ChannelDefinition</code> in the list to <code>1</code> (to indicate the second channel) and <code>ParticipantRole</code> to <code>PATIENT</code> (to indicate that it's the patient speaking).</p>
-    pub fn get_channel_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MedicalScribeChannelDefinition>> {
+    pub fn get_channel_definitions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MedicalScribeChannelDefinition>> {
         &self.channel_definitions
     }
     /// Appends an item to `tags`.
@@ -335,37 +325,50 @@ impl MedicalScribeJobBuilder {
     /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Adds one or more custom tags, each in the form of a key:value pair, to the Medica Scribe job.</p>
     /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Adds one or more custom tags, each in the form of a key:value pair, to the Medica Scribe job.</p>
     /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`MedicalScribeJob`](crate::types::MedicalScribeJob).
     pub fn build(self) -> crate::types::MedicalScribeJob {
         crate::types::MedicalScribeJob {
-            medical_scribe_job_name: self.medical_scribe_job_name,
-            medical_scribe_job_status: self.medical_scribe_job_status,
-            language_code: self.language_code,
-            media: self.media,
-            medical_scribe_output: self.medical_scribe_output,
-            start_time: self.start_time,
-            creation_time: self.creation_time,
-            completion_time: self.completion_time,
-            failure_reason: self.failure_reason,
-            settings: self.settings,
-            data_access_role_arn: self.data_access_role_arn,
-            channel_definitions: self.channel_definitions,
-            tags: self.tags,
+            medical_scribe_job_name: self.medical_scribe_job_name
+            ,
+            medical_scribe_job_status: self.medical_scribe_job_status
+            ,
+            language_code: self.language_code
+            ,
+            media: self.media
+            ,
+            medical_scribe_output: self.medical_scribe_output
+            ,
+            start_time: self.start_time
+            ,
+            creation_time: self.creation_time
+            ,
+            completion_time: self.completion_time
+            ,
+            failure_reason: self.failure_reason
+            ,
+            settings: self.settings
+            ,
+            data_access_role_arn: self.data_access_role_arn
+            ,
+            channel_definitions: self.channel_definitions
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

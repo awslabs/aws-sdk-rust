@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMembersInput {
+pub struct ListMembersInput  {
     /// <p>The unique identifier of the network for which to list members.</p>
     pub network_id: ::std::option::Option<::std::string::String>,
     /// <p>The optional name of the member to list.</p>
@@ -16,17 +16,17 @@ pub struct ListMembersInput {
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListMembersInput {
+impl  ListMembersInput  {
     /// <p>The unique identifier of the network for which to list members.</p>
-    pub fn network_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_id(&self) -> ::std::option::Option<& str> {
         self.network_id.as_deref()
     }
     /// <p>The optional name of the member to list.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>An optional status specifier. If provided, only members currently in this status are listed.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::MemberStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::MemberStatus> {
         self.status.as_ref()
     }
     /// <p>An optional Boolean value. If provided, the request is limited either to members that the current Amazon Web Services account owns (<code>true</code>) or that other Amazon Web Services accountsn own (<code>false</code>). If omitted, all members are listed.</p>
@@ -38,7 +38,7 @@ impl ListMembersInput {
         self.max_results
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl ListMembersInputBuilder {
     }
     /// <p>The unique identifier of the network for which to list members.</p>
     pub fn set_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_id = input;
-        self
+        self.network_id = input; self
     }
     /// <p>The unique identifier of the network for which to list members.</p>
     pub fn get_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl ListMembersInputBuilder {
     }
     /// <p>The optional name of the member to list.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The optional name of the member to list.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl ListMembersInputBuilder {
     }
     /// <p>An optional status specifier. If provided, only members currently in this status are listed.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MemberStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>An optional status specifier. If provided, only members currently in this status are listed.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::MemberStatus> {
@@ -111,8 +108,7 @@ impl ListMembersInputBuilder {
     }
     /// <p>An optional Boolean value. If provided, the request is limited either to members that the current Amazon Web Services account owns (<code>true</code>) or that other Amazon Web Services accountsn own (<code>false</code>). If omitted, all members are listed.</p>
     pub fn set_is_owned(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_owned = input;
-        self
+        self.is_owned = input; self
     }
     /// <p>An optional Boolean value. If provided, the request is limited either to members that the current Amazon Web Services account owns (<code>true</code>) or that other Amazon Web Services accountsn own (<code>false</code>). If omitted, all members are listed.</p>
     pub fn get_is_owned(&self) -> &::std::option::Option<bool> {
@@ -125,8 +121,7 @@ impl ListMembersInputBuilder {
     }
     /// <p>The maximum number of members to return in the request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of members to return in the request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -139,8 +134,7 @@ impl ListMembersInputBuilder {
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,13 +142,22 @@ impl ListMembersInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListMembersInput`](crate::operation::list_members::ListMembersInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_members::ListMembersInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_members::ListMembersInput {
-            network_id: self.network_id,
-            name: self.name,
-            status: self.status,
-            is_owned: self.is_owned,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_members::ListMembersInput {
+                network_id: self.network_id
+                ,
+                name: self.name
+                ,
+                status: self.status
+                ,
+                is_owned: self.is_owned
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

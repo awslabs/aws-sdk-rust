@@ -21,11 +21,7 @@ impl LayoutContent {
     /// Tries to convert the enum instance into [`Basic`](crate::types::LayoutContent::Basic), extracting the inner [`BasicLayout`](crate::types::BasicLayout).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_basic(&self) -> ::std::result::Result<&crate::types::BasicLayout, &Self> {
-        if let LayoutContent::Basic(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let LayoutContent::Basic(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Basic`](crate::types::LayoutContent::Basic).
     pub fn is_basic(&self) -> bool {
@@ -36,3 +32,4 @@ impl LayoutContent {
         matches!(self, Self::Unknown)
     }
 }
+

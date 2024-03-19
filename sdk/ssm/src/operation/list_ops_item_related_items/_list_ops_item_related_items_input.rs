@@ -2,33 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListOpsItemRelatedItemsInput {
+pub struct ListOpsItemRelatedItemsInput  {
     /// <p>The ID of the OpsItem for which you want to list all related-item resources.</p>
     pub ops_item_id: ::std::option::Option<::std::string::String>,
     /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemRelatedItemsFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::OpsItemRelatedItemsFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListOpsItemRelatedItemsInput {
+impl  ListOpsItemRelatedItemsInput  {
     /// <p>The ID of the OpsItem for which you want to list all related-item resources.</p>
-    pub fn ops_item_id(&self) -> ::std::option::Option<&str> {
+    pub fn ops_item_id(&self) -> ::std::option::Option<& str> {
         self.ops_item_id.as_deref()
     }
     /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::OpsItemRelatedItemsFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::OpsItemRelatedItemsFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -44,7 +45,7 @@ impl ListOpsItemRelatedItemsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOpsItemRelatedItemsInputBuilder {
     pub(crate) ops_item_id: ::std::option::Option<::std::string::String>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemRelatedItemsFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::OpsItemRelatedItemsFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -56,8 +57,7 @@ impl ListOpsItemRelatedItemsInputBuilder {
     }
     /// <p>The ID of the OpsItem for which you want to list all related-item resources.</p>
     pub fn set_ops_item_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ops_item_id = input;
-        self
+        self.ops_item_id = input; self
     }
     /// <p>The ID of the OpsItem for which you want to list all related-item resources.</p>
     pub fn get_ops_item_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,17 +70,16 @@ impl ListOpsItemRelatedItemsInputBuilder {
     /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results.</p>
     pub fn filters(mut self, input: crate::types::OpsItemRelatedItemsFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemRelatedItemsFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OpsItemRelatedItemsFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsItemRelatedItemsFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OpsItemRelatedItemsFilter>> {
         &self.filters
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -90,8 +89,7 @@ impl ListOpsItemRelatedItemsInputBuilder {
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -104,25 +102,26 @@ impl ListOpsItemRelatedItemsInputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListOpsItemRelatedItemsInput`](crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsInput {
-            ops_item_id: self.ops_item_id,
-            filters: self.filters,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsInput {
+                ops_item_id: self.ops_item_id
+                ,
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

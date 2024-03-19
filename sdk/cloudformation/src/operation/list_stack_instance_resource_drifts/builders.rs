@@ -5,56 +5,52 @@ pub use crate::operation::list_stack_instance_resource_drifts::_list_stack_insta
 
 impl ListStackInstanceResourceDriftsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.list_stack_instance_resource_drifts();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.list_stack_instance_resource_drifts();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ListStackInstanceResourceDrifts`.
-///
+/// 
 /// <p>Returns drift information for resources in a stack instance.</p><note>
 /// <p><code>ListStackInstanceResourceDrifts</code> returns drift information for the most recent drift detection operation. If an operation is in progress, it may only return partial results.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListStackInstanceResourceDriftsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_stack_instance_resource_drifts::builders::ListStackInstanceResourceDriftsInputBuilder,
+                    inner: crate::operation::list_stack_instance_resource_drifts::builders::ListStackInstanceResourceDriftsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsOutput,
-        crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsError,
-    > for ListStackInstanceResourceDriftsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsOutput,
-            crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsOutput,
+                    crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsError,
+                > for ListStackInstanceResourceDriftsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsOutput,
+                        crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ListStackInstanceResourceDriftsFluentBuilder {
     /// Creates a new `ListStackInstanceResourceDrifts`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl ListStackInstanceResourceDriftsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDrifts::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDrifts::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsOutput,
-        crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDrifts::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDrifts::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsOutput, crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name or unique ID of the stack set that you want to list drifted resources for.</p>
     pub fn stack_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_set_name(input.into());
@@ -182,10 +169,7 @@ impl ListStackInstanceResourceDriftsFluentBuilder {
     /// <li>
     /// <p><code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p></li>
     /// </ul>
-    pub fn set_stack_instance_resource_drift_statuses(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StackResourceDriftStatus>>,
-    ) -> Self {
+    pub fn set_stack_instance_resource_drift_statuses(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StackResourceDriftStatus>>) -> Self {
         self.inner = self.inner.set_stack_instance_resource_drift_statuses(input);
         self
     }
@@ -200,7 +184,7 @@ impl ListStackInstanceResourceDriftsFluentBuilder {
     /// <li>
     /// <p><code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p></li>
     /// </ul>
-    pub fn get_stack_instance_resource_drift_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StackResourceDriftStatus>> {
+    pub fn get_stack_instance_resource_drift_statuses(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StackResourceDriftStatus>> {
         self.inner.get_stack_instance_resource_drift_statuses()
     }
     /// <p>The name of the Amazon Web Services account that you want to list resource drifts for.</p>
@@ -284,3 +268,4 @@ impl ListStackInstanceResourceDriftsFluentBuilder {
         self.inner.get_call_as()
     }
 }
+

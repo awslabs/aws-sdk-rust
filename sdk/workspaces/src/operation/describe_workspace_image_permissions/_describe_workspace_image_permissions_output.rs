@@ -2,36 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeWorkspaceImagePermissionsOutput {
+pub struct DescribeWorkspaceImagePermissionsOutput  {
     /// <p>The identifier of the image.</p>
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifiers of the Amazon Web Services accounts that the image has been shared with.</p>
-    pub image_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ImagePermission>>,
+    pub image_permissions: ::std::option::Option<::std::vec::Vec::<crate::types::ImagePermission>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeWorkspaceImagePermissionsOutput {
+impl  DescribeWorkspaceImagePermissionsOutput  {
     /// <p>The identifier of the image.</p>
-    pub fn image_id(&self) -> ::std::option::Option<&str> {
+    pub fn image_id(&self) -> ::std::option::Option<& str> {
         self.image_id.as_deref()
     }
     /// <p>The identifiers of the Amazon Web Services accounts that the image has been shared with.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_permissions.is_none()`.
-    pub fn image_permissions(&self) -> &[crate::types::ImagePermission] {
-        self.image_permissions.as_deref().unwrap_or_default()
+    pub fn image_permissions(&self) -> & [crate::types::ImagePermission] {
+        self.image_permissions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeWorkspaceImagePermissionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeWorkspaceImagePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceImagePermissionsOutput`](crate::operation::describe_workspace_image_permissions::DescribeWorkspaceImagePermissionsOutput).
     pub fn builder() -> crate::operation::describe_workspace_image_permissions::builders::DescribeWorkspaceImagePermissionsOutputBuilder {
@@ -44,7 +45,7 @@ impl DescribeWorkspaceImagePermissionsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkspaceImagePermissionsOutputBuilder {
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
-    pub(crate) image_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ImagePermission>>,
+    pub(crate) image_permissions: ::std::option::Option<::std::vec::Vec::<crate::types::ImagePermission>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -56,8 +57,7 @@ impl DescribeWorkspaceImagePermissionsOutputBuilder {
     }
     /// <p>The identifier of the image.</p>
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_id = input;
-        self
+        self.image_id = input; self
     }
     /// <p>The identifier of the image.</p>
     pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,17 +70,16 @@ impl DescribeWorkspaceImagePermissionsOutputBuilder {
     /// <p>The identifiers of the Amazon Web Services accounts that the image has been shared with.</p>
     pub fn image_permissions(mut self, input: crate::types::ImagePermission) -> Self {
         let mut v = self.image_permissions.unwrap_or_default();
-        v.push(input);
-        self.image_permissions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.image_permissions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The identifiers of the Amazon Web Services accounts that the image has been shared with.</p>
-    pub fn set_image_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImagePermission>>) -> Self {
-        self.image_permissions = input;
-        self
+    pub fn set_image_permissions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ImagePermission>>) -> Self {
+        self.image_permissions = input; self
     }
     /// <p>The identifiers of the Amazon Web Services accounts that the image has been shared with.</p>
-    pub fn get_image_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImagePermission>> {
+    pub fn get_image_permissions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ImagePermission>> {
         &self.image_permissions
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
@@ -90,29 +89,32 @@ impl DescribeWorkspaceImagePermissionsOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeWorkspaceImagePermissionsOutput`](crate::operation::describe_workspace_image_permissions::DescribeWorkspaceImagePermissionsOutput).
     pub fn build(self) -> crate::operation::describe_workspace_image_permissions::DescribeWorkspaceImagePermissionsOutput {
         crate::operation::describe_workspace_image_permissions::DescribeWorkspaceImagePermissionsOutput {
-            image_id: self.image_id,
-            image_permissions: self.image_permissions,
-            next_token: self.next_token,
+            image_id: self.image_id
+            ,
+            image_permissions: self.image_permissions
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+
